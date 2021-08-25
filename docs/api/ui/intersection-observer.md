@@ -5,7 +5,7 @@
 
 **this说明：**
 
-自定义组件实例。**支付宝小程序不支持此参数，传入仅为抹平写法差异**
+自定义组件实例。
 
 **options 的可选参数为：**
 
@@ -58,7 +58,7 @@ uni.createIntersectionObserver(this).relativeTo('.scroll',{bottom: 100}).observe
 
 ### 代码示例
 
-```
+```html
 <template>
 	<view class="container">
 		<text>{{appear ? '小球出现' : '小球消失'}}</text>

@@ -5,22 +5,15 @@ MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如
 
 **this说明：**
 
-自定义组件实例。**小程序端不支持此参数，传入仅为抹平写法差异**
+自定义组件实例。仅App 2.8.12+，app-vue支持。
 
-**平台兼容性**
-
-|app|微信小程序|支付宝小程序|qq小程序|百度小程序|字节小程序|360小程序|快应用|
-|:-|:-|:-|:-|:-|:-|:-|:-|
-|2.8.12+，app-vue|基础库 2.11.1+|√|√|√|√|√|X|
-
-注意：支付宝小程序、qq小程序、百度小程序、字节小程序，暂不支持监听屏幕动态改变，即只执行一次媒体查询。
 
 ### MediaQueryObserver 对象的方法列表
 
 >tips: 和 UI 相关的 api 在组件 mounted 后执行
 
 |方法|说明|
-|:-|:-|:-|
+|:-|:-|
 |MediaQueryObserver.observe(Object descriptor, function callback)|开始监听页面 media query 变化情况|
 |MediaQueryObserver.disconnect()|停止监听，回调函数将不再触发|
 
@@ -46,7 +39,7 @@ MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如
 
 以下示例代码，推荐使用HBuilderX，新建uni-app项目，可直接体验完整示例。
 
-```
+```html
 <template>
     <view class="content">
         <view class="">

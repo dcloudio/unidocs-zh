@@ -8,8 +8,8 @@
 |:-|:-|:-|:-|:-|:-|
 |title|String|是|提示的内容，长度与 icon 取值有关。||
 |icon|String|否|图标，有效值详见下方说明。||
-|image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序|
-|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序|
+|image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5|
+|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App|
 |duration|Number|否|提示的延迟时间，单位毫秒，默认：1500||
 |position|String|否|纯文本轻提示显示位置，填写有效值后只有 `title` 属性生效， 有效值详见下方说明。|App|
 |success|Function|否|接口调用成功的回调函数||
@@ -66,7 +66,7 @@ uni.hideToast();
 |参数|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的文字内容，显示在loading的下方||
-|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序、百度小程序|
+|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
@@ -107,9 +107,9 @@ setTimeout(function () {
 |content|String|否|提示的内容||
 |showCancel|Boolean|否|是否显示取消按钮，默认为 true||
 |cancelText|String|否|取消按钮的文字，默认为"取消"，最多 4 个字符||
-|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序|
+|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5|
 |confirmText|String|否|确定按钮的文字，默认为"确定"，最多 4 个字符||
-|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序|
+|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"|H5|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
@@ -142,7 +142,6 @@ uni.showModal({
 - 弹框同时使用确定取消时，需注意不同平台的确认取消按钮位置不同。在微信、H5中，确认按钮默认在右边。在App中，iOS的确认按钮默认在右边，而Android默认在左边。产生这种差异的原因是uni.showModa在App和小程序上调用的是原生提供的弹出框，原生平台的策略本身就不同。如果需要调整，可以通过自行控制按钮的文字，即“确定”按钮的文字其实可以设置为“取消”。
 - showModal不满足需求时，可以自行开发组件弹框。插件市场有很多自定义弹框的组件，需注意在非H5平台，前端组件无法覆盖原生组件（如地图、video），遮罩也无法盖住tabbar和navigationbar。如需覆盖原生组件或遮罩tabbar等，App端推荐使用[subNvue](https://uniapp.dcloud.net.cn/api/window/subNVues)。
 - App端还有原生的[prompt API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.prompt)，弹出界面中内置一个输入框。其他平台需自行封装前端组件实现。
-- 钉钉小程序真机与模拟器表现有差异，真机title，content均为必填项
 
 
 ### uni.showActionSheet(OBJECT)
@@ -153,8 +152,8 @@ uni.showModal({
 
 |参数|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
-|itemList|Array&lt;String&gt;|是|按钮的文字数组|微信、百度、字节跳动小程序数组长度最大为6个|
-|itemColor|HexColor|否|按钮的文字颜色，字符串格式，默认为"#000000"|App-iOS、字节跳动小程序不支持|
+|itemList|Array&lt;String&gt;|是|按钮的文字数组||
+|itemColor|HexColor|否|按钮的文字颜色，字符串格式，默认为"#000000"|App-iOS不支持|
 |popover|Object|否|大屏设备弹出原生选择按钮框的指示区域，默认居中显示|App-iPad（2.6.6+）、H5（2.9.2）|
 |success|Function|否|接口调用成功的回调函数，详见返回参数说明||
 |fail|Function|否|接口调用失败的回调函数||

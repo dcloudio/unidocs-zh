@@ -24,9 +24,6 @@ query.select('#id').boundingClientRect(data => {
 }).exec();
 ```
 
-**注意**
-
-- 支付宝小程序不支持in(component)，使用无效果
 
 ### selectorQuery.select(selector)
 
@@ -68,13 +65,13 @@ query.select('#id').boundingClientRect(data => {
 |字段名|类型|默认值|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
 |id|Boolean|false|否|是否返回节点 ``id``||
-|dataset|Boolean|false|否|是否返回节点 ``dataset``| App、微信小程序、H5 |
+|dataset|Boolean|false|否|是否返回节点 ``dataset``| App、H5 |
 |rect|Boolean|false|否|是否返回节点布局位置（``left`` ``right`` ``top`` ``bottom``）||
 |size|Boolean|false|否|是否返回节点尺寸（``width`` ``height``）||
 |scrollOffset|Boolean|false|否|是否返回节点的 ``scrollLeft`` ``scrollTop``，节点必须是 ``scroll-view`` 或者 ``viewport``||
-| properties | Array＜string＞ | [] | 否 | 指定属性名列表，返回节点对应属性名的当前属性值（只能获得组件文档中标注的常规属性值，id class style 和事件绑定的属性值不可获取） | 仅 App 和微信小程序支持 |
-| computedStyle | Array＜string＞ | [] | 否 | 指定样式名列表，返回节点对应样式名的当前值 | 仅 App 和微信小程序支持 |
-| context | Boolean | false | 否 | 是否返回节点对应的 Context 对象 | 仅 App 和微信小程序支持 |
+| properties | Array＜string＞ | [] | 否 | 指定属性名列表，返回节点对应属性名的当前属性值（只能获得组件文档中标注的常规属性值，id class style 和事件绑定的属性值不可获取） | 仅 App支持 |
+| computedStyle | Array＜string＞ | [] | 否 | 指定样式名列表，返回节点对应样式名的当前值 | 仅 App 支持 |
+| context | Boolean | false | 否 | 是否返回节点对应的 Context 对象 | 仅 App支持 |
 
 ### nodesRef.boundingClientRect(callback)
 
@@ -112,9 +109,9 @@ query.select('#id').boundingClientRect(data => {
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|HBuilderX 2.4.7+|√|x|x|x|√|√|
+|App|H5|
+|:-:|:-:|
+|√|HBuilderX 2.4.7+|
 
 **callback 返回参数**
 
@@ -122,26 +119,6 @@ query.select('#id').boundingClientRect(data => {
 | --- | --- | --- |
 | context | Object | 节点对应的 Context 对象 |
 
-### nodesRef.node(callback)
-
-获取 `Node` 节点实例。目前支持 `Canvas` 的获取。
-
-**平台差异说明**
-
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|x|x|√|√|
-
-**callback 返回参数**
-
-| 属性 | 类型 | 说明 |
-| --- | --- | --- |
-| node | Object | 节点对应的 Node 实例 |
-
-**注意**
-
-- 目前仅能用于`canvas`
-- `canvas`需设置`type="webgl"`才能正常使用
 
 ### 代码示例
 
@@ -169,7 +146,7 @@ view.boundingClientRect(data => {
 **注意**
 - nvue 暂不支持 uni.createSelectorQuery，暂时使用下面的方案
 
-```
+```html
 <template>
   <view class="wrapper">
     <view ref="box" class="box">

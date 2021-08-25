@@ -2,9 +2,9 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|
+|App|H5|
+|:-:|:-:|
+|√|√|
 
 App-nvue下如需使用canvas，暂未封装为uni API，可参考[文档](https://github.com/dcloudio/NvueCanvasDemo)使用。
 
@@ -66,16 +66,15 @@ App-nvue下如需使用canvas，暂未封装为uni API，可参考[文档](https
 
 目前支持的操作有
 * App和H5端：source-over、destination-over、source-in、destination-in、source-out、destination-out、source-atop、destination-atop、lighter、darker、xor、copy
-* 微信小程序安卓端：xor, source-over, source-atop, destination-out, lighter, overlay, darken, lighten, hard-light
-* 微信小程序iOS端：xor, source-over, source-atop, destination-over, destination-out, lighter, multiply, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, saturation, luminosity
+
 
 **方法**
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|
+|App|H5|
+|:-:|:-:|
+|√|√|
 
 ### CanvasContext.arc
 

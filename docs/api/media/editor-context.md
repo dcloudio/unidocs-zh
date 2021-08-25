@@ -10,70 +10,17 @@ editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery
 }
 ```
 
-百度小程序 ```Editor``` 富文本编辑器动态库提供了 ```createEditorContext``` 的方法来获取。
-
-```js
- onEditorReady() {
-    this.editorCtx = requireDynamicLib('editorLib').createEditorContext('editorId');
-  }
-```
 
 
 `editorContext` 通过 `id` 跟一个 [`<editor>`](/component/editor) 组件绑定，操作对应的 [`<editor>`](/component/editor) 组件。
 
 
 
-
-
-
 **平台差异说明**
 
-|App|H5			|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序	|QQ小程序	|
-|:-:|:-:		|:-:				|:-:					|:-:				|:-:						|:-:			|
-|√	|2.4.5+	|√					|x						|需引入动态库					|x							|x				|
-
-
-**百度小程序引入动态库**
-
-
-1. 在项目中引用动态库，在 ```manifest.json``` 中增添一项 ```dynamicLib``` 
- 
-```js
-  "mp-baidu" : {
-    "usingComponents" : true,
-    "appid" : "",
-    "setting" : {
-      "urlCheck" : true
-    },
-    "dynamicLib": {//引入百度小程序动态库
-      "editorLib": {
-        "provider": "swan-editor"
-      }
-    }
-  },
-
-```
-
-2. 在每个使用到富文本编辑器组件的页面，配置 ```pages.json``` 文件如下：
-
-``` js 
-{
-	"pages": [ 
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app",
-				"usingSwanComponents": {
-					"editor": "dynamicLib://editorLib/editor"
-				}
-			}
-		}
-	]
-}
-
-```
-
-
+|App	|H5		|
+|:-:	|:-:		|
+|√	|2.4.5+	|
 
 
 ## editorContext.format(name, value)
@@ -238,9 +185,9 @@ editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|x|x|x|x|
+|App|H5|
+|:-:|:-:|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|
 
 **OBJECT 参数说明**
 
@@ -256,9 +203,9 @@ editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|x|x|x|x|
+|App|H5|
+|:-:|:-:|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|
 
 **OBJECT 参数说明**
 
@@ -274,9 +221,9 @@ editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.10.2`|x|x|x|x|x|
+|App|H5|
+|:-:|:-:|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|
 
 **OBJECT 参数说明**
 

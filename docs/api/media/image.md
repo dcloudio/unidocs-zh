@@ -8,12 +8,12 @@ App端如需要更丰富的相机拍照API（如直接调用前置摄像头）�
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |count|Number|否|最多可以选择的图片张数，默认9|见下方说明|
-|sizeType|Array&lt;String&gt;|否|original 原图，compressed 压缩图，默认二者都有|App、微信小程序、支付宝小程序、百度小程序|
+|sizeType|Array&lt;String&gt;|否|original 原图，compressed 压缩图，默认二者都有|App|
 |extension|Array&lt;String&gt;|否|根据文件拓展名过滤，每一项都不能是空字符串。默认不过滤。|H5(HBuilder X2.9.9+)|
 |sourceType|Array&lt;String&gt;|否|album 从相册选图，camera 使用相机，默认二者都有。如需直接开相机或直接选相册，请只使用一个选项||
 |crop|Object|否|图像裁剪参数，设置后 sizeType 失效|App 3.1.19+|
 |success|Function|是|成功则返回图片的本地文件路径列表 tempFilePaths||
-|fail|Function|否|接口调用失败的回调函数|小程序、App|
+|fail|Function|否|接口调用失败的回调函数|App|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
 **crop 参数说明**
@@ -97,7 +97,7 @@ current 为当前显示图片的链接/索引值，不填或填写的值无效�
 一组图片 `[A, B1, C, B2, D]`，其中 B1 与 B2 的图片链接是一样的。
 
 - 传 B2 的链接，预览的结果是 B1，前一张是 A，下一张是 C。
-- 传 B2 的索引值 3，预览的结果是 B2，前一张是 C，下一张是 D。此时在微信/百度/字节跳动小程序平台，最终传入的 urls 是 `[A, C, B2, D]`，过滤掉了与 B2 重复的 B1。
+- 传 B2 的索引值 3，预览的结果是 B2，前一张是 C，下一张是 D。
 
 **longPressActions 参数说明**
 
@@ -151,13 +151,11 @@ uni.chooseImage({
 
 获取图片信息。
 
-小程序下获取网络图片信息需先配置download域名白名单才能生效。
-
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|
+|App|H5|
+|:-:|:-:|
+|√|√|
 
 **OBJECT 参数说明**
 
@@ -175,8 +173,8 @@ uni.chooseImage({
 |width|Number|图片宽度，单位px||
 |height|Number|图片高度，单位px||
 |path|String|返回图片的本地路径||
-|orientation|String|返回图片的方向，有效值见下表|App、小程序|
-|type|String|返回图片的格式|App、小程序|
+|orientation|String|返回图片的方向，有效值见下表|App|
+|type|String|返回图片的格式|App|
 
 **orientation 参数说明**
 
@@ -214,9 +212,9 @@ uni.chooseImage({
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|
+|App|H5|
+|:-:|:-:|
+|√|x|
 
 **OBJECT 参数说明**
 
@@ -262,9 +260,9 @@ uni.chooseImage({
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√(基础库版本>=3.110.3)|√|√|√|
+|App|H5|
+|:-:|:-:|
+|√|x|
 
 **OBJECT 参数说明**
 

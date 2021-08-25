@@ -8,22 +8,22 @@
 
 **平台差异说明**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序	|QQ小程序	|
-|:-	|:-	|:-					|:-						|:-					|:-					|:-				|
-|√（2.3.8+）	|x	|√					|x						|x					|x					|x				|
+|App				|H5|
+|:-				|:-|
+|√（2.3.8+）	|x	|
 
 App端在2.3.8版以前，可在插件市场获取[指纹相关插件](https://ext.dcloud.net.cn/plugin?id=358)。
 
 **OBJECT参数说明**
 
-|属性							|类型			|默认值	|必填	|说明																																																																																																		| 平台差异说明	|
-|:-								|:-				|:-			|:-		|:-																																																																																																			|:-							|
-|requestAuthModes	|Array		|				|是		|请求使用的可接受的生物认证方式																																																																																					|APP、微信小程序|
-|challenge				|String		|				|是		|挑战因子。挑战因子为调用者为此次生物鉴权准备的用于签名的字符串关键识别信息，将作为 resultJSON 的一部分，供调用者识别本次请求。例如：如果场景为请求用户对某订单进行授权确认，则可以将订单号填入此参数。	|微信小程序			|
-|authContent			|String		|''			|否		|验证描述，即识别过程中显示在界面上的对话框提示内容																																																																											|APP、微信小程序|
-|success					|Function	|				|否		|接口调用成功的回调函数																																																																																									|								|
-|fail							|Function	|				|否		|接口调用失败的回调函数																																																																																									|								|
-|complete					|Function	|				|否		|接口调用结束的回调函数（调用成功、失败都会执行）																																																																												|								|
+|属性					|类型		|默认值	|必填	|说明					| 平台差异说明	|
+|:-					|:-		|:-		|:-	|:-				|:-					|
+|requestAuthModes	|Array	|			|是	|请求使用的可接受的生物认证方式		|APP		|
+|authContent		|String	|''		|否	|验证描述，即识别过程中显示在界面上的对话框提示内容	|APP|
+|success				|Function|			|否	|接口调用成功的回调函数	|						|
+|fail					|Function|			|否	|接口调用失败的回调函数	|						|
+|complete			|Function|			|否	|接口调用结束的回调函数（调用成功、失败都会执行）	|						|
+
 
 **OBJECT.requestAuthModes说明**
 
@@ -39,29 +39,12 @@ App端在2.3.8版以前，可在插件市场获取[指纹相关插件](https://e
 
 **OBJECT.success返回值说明**
 
-|属性								|类型		|说明																																																																						|平台差异说明		|
-|:-									|:-			|:-																																																																							|:-							|
-|authMode						|string	|生物认证方式																																																																		|APP、微信小程序|
-|resultJSON					|string	|在设备安全区域（TEE）内获得的本机安全信息（如TEE名称版本号等以及防重放参数）以及本次认证信息（仅Android支持，本次认证的指纹ID）。具体说明见下文							|微信小程序			|
-|resultJSONSignature|string	|用SOTER安全密钥对 resultJSON 的签名(SHA256 with RSA/PSS, saltlen=20)																																						|微信小程序			|
-|errCode						|number	|错误码																																																																					|								|
-|errMsg							|string	|错误信息																																																																				|								|
+|属性						|类型		|说明			|平台差异说明	|
+|:-						|:-		|:-			|:-				|
+|authMode				|string	|生物认证方式|APP				|
+|errCode					|number	|错误码		|					|
+|errMsg					|string	|错误信息		|					|
 
-**resultJSON说明**
-
-此数据为设备TEE中，将传入的challenge和TEE内其他安全信息组成的数据进行组装而来的JSON，对下述字段的解释如下表。例子如下：
-
-|字段名	|说明																																											|
-|:-			|:-																																												|
-|raw		|调用者传入的challenge																																		|
-|fid		|（仅Android支持）本次生物识别认证的生物信息编号（如指纹识别则是指纹信息在本设备内部编号）|
-|counter|防重放特征参数																																						|
-|tee_n	|TEE名称（如高通或者trustonic等）																													|
-|tee_v	|TEE版本号																																								|
-|fp_n		|指纹以及相关逻辑模块提供商（如FPC等）																										|
-|fp_v		|指纹以及相关模块版本号																																		|
-|cpu_id	|机器唯一识别ID																																						|
-|uid		|概念同Android系统定义uid，即应用程序编号																									|
 
 **错误码说明**
 
@@ -241,6 +224,3 @@ App端在2.3.8版以前，可在插件市场获取[指纹相关插件](https://e
 - App端的人脸识别，仅支持iOS端的faceID。Android端需要依赖三方SDK方可实现，可在插件市场搜索[人脸识别](https://ext.dcloud.net.cn/search?q=%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB)插件
 - App端打包时，注意需要在manifest的模块中选择指纹和faceID，否则打包后无法运行相关功能。
 - hello uni-app已经集成相关示例，最新版HBuilderX新建新版hello uni-app示例项目真机运行可见，在API-设备-生物认证里。
-- 微信小程序如果使用腾讯云的SDK，可参考[网友分享](https://segmentfault.com/a/1190000020102601)
-- 支付宝小程序只支持人脸识别，[规范详情](https://docs.alipay.com/mini/api/facecapture)
-- 百度小程序只支持人脸识别，[规范详情](https://smartprogram.baidu.com/docs/develop/api/ai_face/#swan-ai-faceDetect/)

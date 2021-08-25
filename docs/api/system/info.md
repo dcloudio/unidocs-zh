@@ -13,7 +13,7 @@
 
 |参数|说明|平台差异说明|
 |:-|:-|:-|
-|brand|设备品牌|App、微信小程序、百度小程序、字节跳动小程序、QQ小程序|
+|brand|设备品牌|App|
 |model|设备型号|全平台支持。H5（3.1.10+）新增`PC`|
 |pixelRatio|设备像素比||
 |screenWidth|屏幕宽度||
@@ -22,38 +22,14 @@
 |windowHeight|可使用窗口高度||
 |windowTop|可使用窗口的顶部位置|App、H5|
 |windowBottom|可使用窗口的底部位置|App、H5|
-|statusBarHeight|状态栏的高度|字节跳动小程序不支持|
-|navigationBarHeight|导航栏的高度|百度小程序|
-|titleBarHeight|标题栏高度|支付宝小程序|
-|language|应用设置的语言|字节跳动小程序不支持|
+|statusBarHeight|状态栏的高度||
+|language|应用设置的语言||
 |version|引擎版本号|H5不支持|
-|storage|设备磁盘容量|支付宝小程序|
-|currentBattery|当前电量百分比|支付宝小程序|
-|appName|宿主APP名称|字节跳动小程序|
-|AppPlatform|App平台|QQ小程序|
-|host|宿主平台|百度小程序|
-|app|当前运行的客户端|支付宝小程序|
-|cacheLocation|上一次缓存的位置信息|百度小程序|
 |system|操作系统名称及版本，如Android 10||
 |platform|客户端平台，值域为：`ios`、`android`、`mac（3.1.10+）`、`windows（3.1.10+）`、`linux（3.1.10+）`||
-|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序|
-|SDKVersion|客户端基础库版本|支付宝小程序和H5不支持|
-|swanNativeVersion|宿主平台版本号|百度小程序|
-|benchmarkLevel|设备性能等级。取值为：-2 或 0（该设备无法运行小游戏），-1（性能未知），>=1（设备性能值，该值越高，设备性能越好，目前最高不到50）|微信小程序Android版|
-|batteryLevel	|	剩余电量百分比（仅 iOS 有效）	|微信小程序|
-|albumAuthorized	|	允许微信使用相册的开关（仅 iOS 有效）	|微信小程序|
-|cameraAuthorized	|	允许微信使用摄像头的开关	|微信小程序|
-|locationAuthorized	|	允许微信使用定位的开关	|微信小程序|
-|microphoneAuthorized	|	允许微信使用麦克风的开关	|微信小程序|
-|notificationAuthorized	|	允许微信通知的开关	|微信小程序|
-|notificationAlertAuthorized	|	允许微信通知带有提醒的开关（仅 iOS 有效）	|微信小程序|
-|notificationBadgeAuthorized	|	允许微信通知带有标记的开关（仅 iOS 有效）	|微信小程序|
-|notificationSoundAuthorized	|	允许微信通知带有声音的开关（仅 iOS 有效）	|微信小程序|
-|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序|
-|locationEnabled	|	地理位置的系统开关	|微信小程序|
-|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序|
-|safeArea|在竖屏正方向下的安全区域|App、H5、微信小程序|
-|safeAreaInsets|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、H5、微信小程序|
+|SDKVersion|客户端基础库版本|H5不支持|
+|safeArea|在竖屏正方向下的安全区域|App、H5|
+|safeAreaInsets|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、H5|
 |deviceId|设备 id|非 App 端由 uni-app 框架生成并存储，清空 Storage 会导致改变|
 
 **Tips**
@@ -107,7 +83,7 @@ uni.getSystemInfo({
 
 |参数|说明|平台差异说明|
 |:-|:-|:-|
-|brand|设备品牌|App、微信小程序、百度小程序、字节跳动小程序、QQ小程序|
+|brand|设备品牌|App|
 |model|设备型号|全平台支持。H5（3.1.10+）新增`PC`|
 |pixelRatio|设备像素比||
 |screenWidth|屏幕宽度||
@@ -116,36 +92,14 @@ uni.getSystemInfo({
 |windowHeight|可使用窗口高度||
 |windowTop|可使用窗口的顶部位置|App、H5|
 |windowBottom|可使用窗口的底部位置|App、H5|
-|statusBarHeight|状态栏的高度|字节跳动小程序不支持|
-|navigationBarHeight|导航栏的高度|百度小程序|
-|titleBarHeight|标题栏高度|支付宝小程序|
-|language|应用设置的语言|字节跳动小程序不支持|
+|statusBarHeight|状态栏的高度||
+|language|应用设置的语言||
 |version|引擎版本号|H5不支持|
-|storage|设备磁盘容量|支付宝小程序|
-|currentBattery|当前电量百分比|支付宝小程序|
-|appName|宿主APP名称|字节跳动小程序|
-|AppPlatform|App平台|QQ小程序|
-|host|宿主平台|百度小程序|
-|app|当前运行的客户端|支付宝小程序|
-|cacheLocation|上一次缓存的位置信息|百度小程序|
 |system|操作系统版本||
 |platform|客户端平台，值域为：`ios`、`android`、`mac（3.1.10+）`、`windows（3.1.10+）`、`linux（3.1.10+）`||
-|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序|
-|SDKVersion|客户端基础库版本|支付宝小程序和H5不支持|
-|swanNativeVersion|宿主平台版本号|百度小程序|
-|albumAuthorized	|	允许微信使用相册的开关（仅 iOS 有效）	|微信小程序|
-|cameraAuthorized	|	允许微信使用摄像头的开关	|微信小程序|
-|locationAuthorized	|	允许微信使用定位的开关	|微信小程序|
-|microphoneAuthorized	|	允许微信使用麦克风的开关	|微信小程序|
-|notificationAuthorized	|	允许微信通知的开关	|微信小程序|
-|notificationAlertAuthorized	|	允许微信通知带有提醒的开关（仅 iOS 有效）	|微信小程序|
-|notificationBadgeAuthorized	|	允许微信通知带有标记的开关（仅 iOS 有效）	|微信小程序|
-|notificationSoundAuthorized	|	允许微信通知带有声音的开关（仅 iOS 有效）	|微信小程序|
-|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序|
-|locationEnabled	|	地理位置的系统开关	|微信小程序|
-|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序|
-|safeArea|在竖屏正方向下的安全区域|App、H5、微信小程序|
-|safeAreaInsets|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、H5、微信小程序|
+|SDKVersion|客户端基础库版本|H5不支持|
+|safeArea|在竖屏正方向下的安全区域|App、H5|
+|safeAreaInsets|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、H5|
 |deviceId|设备 id|非 App 端由 uni-app 框架生成并存储，清空 Storage 会导致改变|
 
 **Tips**
@@ -191,14 +145,12 @@ try {
 
 **获取设备标记**
 
-H5、小程序、iOS，属于对用户隐私保护比较严格的平台，在这些平台很难获取有效的设备唯一标记。
+H5、iOS，属于对用户隐私保护比较严格的平台，在这些平台很难获取有效的设备唯一标记。
 
 Android已经改进用户隐私保护，在很多新手机上，获取imei等信息时需要弹框让用户授权。而Android10已经无法获取imei了。
 
 - H5平台：
 常用的方式是uv，即在uni.storage里存一个随机数，本质是存在浏览器的localstorage里。将随机数发给服务器，进行用户身份识别和统计。当然如果用户浏览器清空了localstorage、更换了浏览器、或使用隐私模式，那么就统计数据就会有误差。
-- 小程序平台：
-小程序也可以采用与H5类似的方式，在uni.storage里存一个随机数。如果想获取用户的微信唯一ID，也可以弹框请求用户授权。
 - App iOS平台：
 iOS并不提供imei的获取API，可通过[plus.device.getInfo](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo) 可以获得设备的唯一标识（uuid），这个id其实也是一种随机数概念，类似于h5的uv计算，卸载app重装会发生变化；
 
@@ -217,9 +169,9 @@ Android10以上，部分国产手机支持OAID，详见[匿名设备标识符（
 
 平台差异说明
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|
+|App|H5|
+|:-:|:-:|
+|√|x|
 
 **String 参数说明**
 

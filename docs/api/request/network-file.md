@@ -2,7 +2,6 @@
 将本地资源上传到开发者服务器，客户端发起一个 ``POST`` 请求，其中 ``content-type`` 为 ``multipart/form-data``。  
 如页面通过 [uni.chooseImage](api/media/image?id=chooseimage) 等接口获取到一个本地资源的临时文件路径后，可通过此接口将本地资源上传到指定服务器。另外选择和上传非图像、视频文件参考：[https://ask.dcloud.net.cn/article/35547](https://ask.dcloud.net.cn/article/35547)。
 
-> 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
 
 **推荐开发者上传到uniCloud，uniCloud提供了免费CDN和更好的易用性，包括安全的cdn直传。**
 - uniCloud的上传API：[https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile](https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile)
@@ -14,7 +13,6 @@
 |:-|:-|:-|:-|:-|
 |url|String|是|开发者服务器 url||
 |files|Array|否|需要上传的文件列表。**使用 files 时，filePath 和 name 不生效。**|App、H5（ 2.6.15+）|
-|fileType|String|见平台差异说明|文件类型，image/video/audio|仅支付宝小程序，且必填。|
 |file|File|否|要上传的文件对象。|仅H5（2.6.15+）支持|
 |filePath|String|是|要上传文件资源的路径。||
 |name|String|是|文件对应的 key , 开发者在服务器端通过这个 key 可以获取到文件二进制内容||
@@ -31,7 +29,7 @@
 - hello uni-app中的客服反馈，支持多图上传。[uni-app插件市场](https://ext.dcloud.net.cn/)中也有多个封装的组件。
 - App平台选择和上传非图像、视频文件，参考[https://ask.dcloud.net.cn/article/35547](https://ask.dcloud.net.cn/article/35547)
 - 网络请求的 ``超时时间`` 可以统一在 ``manifest.json`` 中配置 [networkTimeout](/collocation/manifest?id=networktimeout)。
-- 支付宝小程序开发工具上传文件返回的http状态码为字符串形式，支付宝小程序真机返回的状态码为数字形式
+
 
 **files参数说明**
 
@@ -97,9 +95,7 @@ uploadTask.abort();
 |:-|:-|:-|
 |abort||中断上传任务|
 |onProgressUpdate|callback|监听上传进度变化|
-|onHeadersReceived|callback|监听 HTTP Response Header 事件。会比请求完成事件更早,仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/UploadTask.onHeadersReceived.html)|    
-|offProgressUpdate|callback|取消监听上传进度变化事件，仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/UploadTask.offProgressUpdate.html)|
-|offHeadersReceived|callback|取消监听 HTTP Response Header 事件，仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/UploadTask.offHeadersReceived.html)|
+
 
 **onProgressUpdate 返回参数说明**
 
@@ -144,7 +140,6 @@ uni.chooseImage({
 ### uni.downloadFile(OBJECT)
 下载文件资源到本地，客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径。
 
-> 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。在h5上是跨域的，用户需要处理好跨域问题。
 
 **OBJECT 参数说明**
 
@@ -156,7 +151,7 @@ uni.chooseImage({
 |success|Function|否|下载成功后以 tempFilePath 的形式传给页面，res = {tempFilePath: '文件的临时路径'}| |
 |fail|Function|否|接口调用失败的回调函数| |
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）| |
-|filePath|string|否|指定文件下载后存储的路径 (本地路径)|微信小程序（IOS小程序保存到相册需要添加此字段才可以正常保存）|
+
 
 **注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](/api/file/file?id=savefile)，才能在应用下次启动时访问得到。**
 
@@ -205,9 +200,6 @@ downloadTask.abort();
 |:-|:-|:-|:-|
 |abort||中断下载任务|*|
 |onProgressUpdate|callback|监听下载进度变化|*|
-|onHeadersReceived|callback|监听 HTTP Response Header 事件，会比请求完成事件更早,仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/DownloadTask.onHeadersReceived.html)| | 
-|offProgressUpdate|callback|取消监听下载进度变化事件，仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/DownloadTask.offProgressUpdate.html)|
-|offHeadersReceived|callback|取消监听 HTTP Response Header 事件，仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/DownloadTask.offHeadersReceived.html)| |
 
 **onProgressUpdate 返回参数说明**
 

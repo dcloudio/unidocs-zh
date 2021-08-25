@@ -1,7 +1,6 @@
 ### uni.request(OBJECT)
 发起网络请求。
 
-> 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
 
 **OBJECT 参数说明**
 
@@ -11,9 +10,9 @@
 |data|Object/String/ArrayBuffer|否||请求的参数|App（自定义组件编译模式）不支持ArrayBuffer类型|
 |header|Object|否||设置请求的 header，header 中不能设置 Referer。|App、H5端会自动带上cookie，且H5端不可手动修改|
 |method|String|否|GET|有效值详见下方说明||
-|timeout|Number|否|60000|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)、微信小程序（2.10.0）、支付宝小程序|
+|timeout|Number|否|60000|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)|
 |dataType|String|否|json	|如果设为 json，会尝试对返回的数据做一次 JSON.parse||
-|responseType|String|否|text	|设置响应的数据类型。合法值：text、arraybuffer|支付宝小程序不支持|
+|responseType|String|否|text	|设置响应的数据类型。合法值：text、arraybuffer||
 |sslVerify|Boolean|否|true|验证 ssl 证书|仅App安卓端支持（HBuilderX 2.3.3+）|
 |withCredentials|Boolean|否|false|跨域请求时是否携带凭证（cookies）|仅H5支持（HBuilderX 2.6.15+）|
 |firstIpv4|Boolean|否|false|DNS解析时优先使用ipv4|仅 App-Android 支持 (HBuilderX 2.8.0+)|
@@ -25,16 +24,16 @@
 
 必须大写，有效值在不同平台差异说明不同。
 
-|method|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|GET|√|√|√|√|√|√|
-|POST|√|√|√|√|√|√|
-|PUT|√|√|√|x|√|√|
-|DELETE|√|√|√|x|√|x|
-|CONNECT|x|√|√|x|x|x|
-|HEAD|x|√|√|x|√|x|
-|OPTIONS|√|√|√|x|√|x|
-|TRACE|x|√|√|x|x|x|
+|method|App|H5|
+|:-:|:-:|:-:|
+|GET|√|√|
+|POST|√|√|
+|PUT|√|√|
+|DELETE|√|√|
+|CONNECT|x|√|
+|HEAD|x|√|
+|OPTIONS|√|√|
+|TRACE|x|√|
 
 **success 返回参数说明**
 
@@ -92,8 +91,7 @@ requestTask.abort();
 |方法|参数|说明|
 |:-|:-|:-|
 |abort||中断请求任务|
-|offHeadersReceived||取消监听 HTTP Response Header 事件，仅`微信小程序平台`支持，[文档详情](https://developers.weixin.qq.com/miniprogram/dev/api/RequestTask.offHeadersReceived.html)|
-|onHeadersReceived||监听 HTTP Response Header 事件。会比请求完成事件更早，仅`微信小程序平台`支持，[文档详情](https://developers.weixin.qq.com/miniprogram/dev/api/RequestTask.onHeadersReceived.html)|
+
 
 **示例**
 
@@ -116,11 +114,8 @@ requestTask.abort();
 **Tips**
 
 - 请求的 ``header`` 中 ``content-type`` 默认为 ``application/json``。
-- 避免在 ``header`` 中使用中文，或者使用 encodeURIComponent 进行编码，否则在百度小程序报错。（来自：[快狗打车前端团队](https://juejin.im/user/2612095359650712)）
 - 网络请求的 ``超时时间`` 可以统一在 ``manifest.json`` 中配置 [networkTimeout](/collocation/manifest?id=networktimeout)。
 - H5 端本地调试需注意跨域问题，参考：[调试跨域问题解决方案](https://ask.dcloud.net.cn/article/35267)
-- 注意由于百度小程序iOS客户端，请求失败时会进入fail回调，需要针对百度增加相应的处理以解决该问题。
-- 注意小程序端不支持自动保持 cookie，服务器应避免验证 cookie。如果服务器无法修改，也可以使用一些模拟手段，比如这样的工具[https://github.com/charleslo1/weapp-cookie](https://github.com/charleslo1/weapp-cookie) 可以请求时带上 cookie 并将响应的 cookie 保存在本地。
 - H5端 cookie 受跨域限制（和平时开发网站时一样），旧版的 uni.request 未支持 withCredentials 配置，可以直接使用 xhr 对象或者其他类库。
 - 根据 W3C 规范，H5 端无法获取 response header 中 Set-Cookie、Set-Cookie2 这2个字段，对于跨域请求，允许获取的 response header 字段只限于“simple response header”和“Access-Control-Expose-Headers”（[详情](https://www.w3.org/TR/cors/#access-control-allow-credentials-response-header)）
 - [uni-app 插件市场](https://ext.dcloud.net.cn/search?q=%E6%8B%A6%E6%88%AA%E5%99%A8)有flyio、axios等三方封装的拦截器可用

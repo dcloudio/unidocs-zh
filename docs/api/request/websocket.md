@@ -1,16 +1,14 @@
 ### uni.connectSocket(OBJECT)
 创建一个 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) 连接。
 
-> 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
 
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
-|url|String|是|服务器接口地址|小程序中必须是 `wss://` 协议|
-|header|Object|否|HTTP Header , header 中不能设置 Referer|小程序、App 2.9.6+|
-|method|String|否|默认是GET，有效值：OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT|仅微信小程序支持|
-|protocols|Array&lt;String&gt;|否|子协议数组|App、H5、微信小程序、百度小程序、字节跳动小程序|
+|url|String|是|服务器接口地址||
+|header|Object|否|HTTP Header , header 中不能设置 Referer|App 2.9.6+|
+|protocols|Array&lt;String&gt;|否|子协议数组|App、H5|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
@@ -51,10 +49,7 @@ var socketTask = uni.connectSocket({
 
 - 网络请求的 ``超时时间`` 可以统一在 ``manifest.json`` 中配置 [networkTimeout](/collocation/manifest?id=networktimeout)。
 - App平台，2.2.6以下的版本，不支持 ``ArrayBuffer`` 类型的数据收发。老版本不愿升级也可以使用 [plus-websocket插件](https://ext.dcloud.net.cn/plugin?id=647) 插件替代。
-- App平台自定义组件模式下，以及支付宝小程序下，所有 `vue` 页面只能使用一个 `websocket` 连接。App下可以使用 [plus-websocket](https://ext.dcloud.net.cn/plugin?id=647) 插件替代实现多链接。App平台，2.2.6+起支持多个socket链接，数量没有限制。
-- 微信小程序平台1.7.0 及以上版本，最多可以同时存在5个WebSocket 连接。老版本只支持一个socket连接
-- 百度小程序平台自基础库版本 1.9.4 及以后支持多个socket连接。老版本只支持一个socket连接
-- QQ小程序平台最多支持同时存在5个socket链接
+- App平台自定义组件模式下，所有 `vue` 页面只能使用一个 `websocket` 连接。App下可以使用 [plus-websocket](https://ext.dcloud.net.cn/plugin?id=647) 插件替代实现多链接。App平台，2.2.6+起支持多个socket链接，数量没有限制。
 
 
 ### uni.onSocketOpen(CALLBACK)

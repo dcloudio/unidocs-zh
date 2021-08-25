@@ -77,12 +77,14 @@ async function request () {
 |API|说明|
 |:-|:-|
 |[uni.request](api/request/request?id=request)|发起网络请求|
+
 ##### 上传、下载
 
 |API|说明|
 |:-|:-|
 |[uni.uploadFile](api/request/network-file?id=uploadfile)|上传文件|
 |[uni.downloadFile](api/request/network-file?id=downloadfile)|下载文件|
+
 ##### WebSocket
 
 |API|说明|
@@ -94,6 +96,7 @@ async function request () {
 |[uni.onSocketMessage](api/request/websocket?id=onsocketmessage)|接受 WebSocket 消息|
 |[uni.closeSocket](api/request/websocket?id=closesocket)|关闭 WebSocket 连接|
 |[uni.onSocketClose](api/request/websocket?id=onsocketclose)|监听 WebSocket 关闭|
+
 ##### SocketTask
 
 |API|说明|
@@ -114,26 +117,31 @@ async function request () {
 |[uni.previewImage](api/media/image?id=previewimage)|预览图片|
 |[uni.getImageInfo](api/media/image?id=getimageinfo)|获取图片信息|
 |[uni.saveImageToPhotosAlbum](api/media/image?id=saveimagetophotosalbum)|保存图片到系统相册|
+
 ##### 文件
 
 |API|说明|
 |:-|:-|
 |[uni.chooseFile](api/media/file?id=chooseFile)|从本地选择文件|
+
 ##### 录音管理
 
 |API|说明|
 |:-|:-|
 |[uni.getRecorderManager](api/media/record-manager)|录音管理|
+
 ##### 背景音频播放管理
 
 |API|说明|
 |:-|:-|
 |[uni.getBackgroundAudioManager](api/media/background-audio-manager)|背景音频播放管理|
+
 ##### 音频组件管理
 
 |API|说明|
 |:-|:-|
 |[uni.createInnerAudioContext](api/media/audio-context)|音频组件管理|
+
 ##### 视频
 
 |API|说明|
@@ -148,6 +156,7 @@ async function request () {
 |API|说明|
 |:-|:-|
 |[uni.createCameraContext](api/media/camera-context.md)|相机组件管理|
+
 ##### 直播组件管理
 
 |API|说明|
@@ -189,11 +198,13 @@ async function request () {
 |:-|:-|
 |[uni.getLocation](api/location/location?id=getlocation)|获取当前位置|
 |[uni.chooseLocation](api/location/location?id=chooselocation)|打开地图选择位置|
+
 ##### 查看位置
 
 |API|说明|
 |:-|:-|
 |[uni.openLocation](api/location/open-location?id=openlocation)|打开内置地图|
+
 ##### 地图组件控制
 
 |API|说明|
@@ -202,6 +213,7 @@ async function request () {
 
 
 #### 设备
+
 ##### 系统信息
 
 |API|说明|
@@ -209,11 +221,7 @@ async function request () {
 |[uni.getSystemInfo](api/system/info?id=getsysteminfo)|获取系统信息|
 |[uni.getSystemInfoSync](api/system/info?id=getsysteminfosync)|获取系统信息|
 |[uni.canIUse](/api/system/info?id=caniuse)|判断应用的 API，回调，参数，组件等是否在当前版本可用|
-##### 内存
 
-|API|说明|
-|:-|:-|
-|[uni.onMemoryWarning](/api/system/memory?id=wxonmemorywarning)|监听内存不足告警事件|
 ##### 网络状态
 
 |API|说明|
@@ -221,6 +229,7 @@ async function request () {
 |[uni.getNetworkType](api/system/network?id=getnetworktype)|获取网络类型|
 |[uni.onNetworkStatusChange](api/system/network?id=onnetworkstatuschange)|监听网络状态变化|
 |[uni.offNetworkStatusChange](api/system/network?id=offnetworkstatuschange)|取消监听网络状态变化|
+
 ##### 加速度计
 
 |API|说明|
@@ -229,6 +238,7 @@ async function request () {
 |[uni.offAccelerometerChange](api/system/accelerometer?id=offaccelerometerchange)|取消监听加速度数据|
 |[uni.startAccelerometer](api/system/accelerometer?id=startaccelerometer)|开始监听加速度数据|
 |[uni.stopAccelerometer](api/system/accelerometer?id=stopaccelerometer)|停止监听加速度数据|
+
 ##### 罗盘
 
 |API|说明|
@@ -237,29 +247,27 @@ async function request () {
 |[uni.offCompassChange](api/system/compass?id=offcompasschange)|取消监听罗盘数据|
 |[uni.startCompass](api/system/compass?id=startcompass)|开始监听罗盘数据|
 |[uni.stopCompass](api/system/compass?id=stopcompass)|停止监听罗盘数据|
-##### 陀螺仪
 
-|API|说明|
-|:-|:-|
-|[uni.onGyroscopeChange](/api/system/gyroscope?id=ongyroscopechange)|监听陀螺仪数据|
-|[uni.startGyroscope](/api/system/gyroscope?id=startgyroscope)|开始监听陀螺仪数据|
-|[uni.stopGyroscope](/api/system/gyroscope?id=stopgyroscope)|停止监听陀螺仪数据|
+
 ##### 拨打电话
 
 |API|说明|
 |:-|:-|
 |[uni.makePhoneCall](api/system/phone?id=makephonecall)|拨打电话|
+
 ##### 扫码
 
 |API|说明|
 |:-|:-|
 |[uni.scanCode](api/system/barcode?id=scancode)|扫码|
+
 ##### 剪切板
 
 |API|说明|
 |:-|:-|
 |[uni.setClipboardData](api/system/clipboard?id=setclipboarddata)|设置剪贴板内容|
 |[uni.getClipboardData](api/system/clipboard?id=getclipboarddata)|获取剪贴板内容|
+
 ##### 屏幕亮度
 
 |API|说明|
@@ -267,11 +275,8 @@ async function request () {
 |[uni.setScreenBrightness](api/system/brightness?id=setscreenbrightness)|设置屏幕亮度|
 |[uni.getScreenBrightness](api/system/brightness?id=getscreenbrightness)|获取屏幕亮度|
 |[uni.setKeepScreenOn](api/system/brightness?id=setkeepscreenon)|设置是否保持常亮状态|
-##### 用户截屏事件
 
-|API|说明|
-|:-|:-|
-|[uni.onUserCaptureScreen](/api/system/capture-screen)|监听用户截屏事件|
+
 ##### 振动
 
 |API|说明|
@@ -279,11 +284,13 @@ async function request () {
 |[uni.vibrate](api/system/vibrate?id=vibrate)|使手机发生振动|
 |[uni.vibrateLong](api/system/vibrate?id=vibratelong)|使手机发生较长时间的振动|
 |[uni.vibrateShort](api/system/vibrate?id=vibrateshort)|使手机发生较短时间的振动|
+
 ##### 手机联系人
 
 |API|说明|
 |:-|:-|
 |[uni.addPhoneContact](api/system/contact?id=addphonecontact)|添加手机通讯录|
+
 ##### 蓝牙
 
 |API|说明|
@@ -297,6 +304,7 @@ async function request () {
 |[uni.getBluetoothDevices](/api/system/bluetooth?id=getbluetoothdevices)|获取已发现的蓝牙设备|
 |[uni.getBluetoothAdapterState](/api/system/bluetooth?id=getbluetoothadapterstate)|获取本机蓝牙适配器状态|
 |[uni.closeBluetoothAdapter](/api/system/bluetooth?id=closebluetoothadapter)|关闭蓝牙模块|
+
 ##### 低耗蓝牙
 
 |API|说明|
@@ -310,6 +318,7 @@ async function request () {
 |[uni.getBLEDeviceCharacteristics](/api/system/ble?id=getbledevicecharacteristics)|获取蓝牙设备某个服务中所有特征值(characteristic)|
 |[uni.createBLEConnection](/api/system/ble?id=createbleconnection)|连接低功耗蓝牙设备|
 |[uni.closeBLEConnection](/api/system/ble?id=closebleconnection)|断开与低功耗蓝牙设备的连接|
+
 ##### iBeacon
 
 |API|说明|
@@ -329,6 +338,7 @@ async function request () {
 |[uni.checkIsSoterEnrolledInDevice](/api/system/authentication?id=checkissoterenrolledindevice)|获取设备内是否录入如指纹等生物信息的接口|
 
 #### 界面
+
 ##### 交互反馈
 
 |API|说明|
@@ -339,6 +349,7 @@ async function request () {
 |[uni.hideLoading](api/ui/prompt?id=hideloading)|隐藏加载提示框|
 |[uni.showModal](api/ui/prompt?id=showmodal)|显示模态弹窗|
 |[uni.showActionSheet](api/ui/prompt?id=showactionsheet)|显示菜单列表|
+
 ##### 设置导航条
 
 |API|说明|
@@ -347,6 +358,7 @@ async function request () {
 |[uni.setNavigationBarColor](/api/ui/navigationbar?id=setnavigationbarcolor)|设置页面导航条颜色|
 |[uni.showNavigationBarLoading](api/ui/navigationbar?id=shownavigationbarloading)|显示导航条加载动画|
 |[uni.hideNavigationBarLoading](api/ui/navigationbar?id=hidenavigationbarloading)|隐藏导航条加载动画|
+
 ##### 设置TabBar
 
 |API|说明|
@@ -359,12 +371,7 @@ async function request () {
 |[uni.removeTabBarBadge](/api/ui/tabbar?id=removetabbarbadge)|移除 tabBar 某一项右上角的文本|
 |[uni.showTabBarRedDot](/api/ui/tabbar?id=showtabbarreddot)|显示 tabBar 某一项的右上角的红点|
 |[uni.hideTabBarRedDot](/api/ui/tabbar?id=hidetabbarreddot)|隐藏 tabBar 某一项的右上角的红点|
-##### 背景
 
-|API|说明|
-|:-|:-|
-|[uni.setBackgroundColor](/api/ui/bgcolor?id=setbackgroundcolor)|动态设置窗口的背景色。|
-|[uni.setBackgroundTextStyle](/api/ui/bgcolor?id=setbackgroundtextstyle)|动态设置下拉背景字体、loading 图的样式。|
 
 ##### 动画
 
@@ -386,6 +393,7 @@ async function request () {
 |[uni.canvasToTempFilePath](/api/canvas/canvasToTempFilePath)|将画布内容保存成文件|
 |[uni.canvasGetImageData](/api/canvas/canvasGetImageData)|获取画布图像数据|
 |[uni.canvasPutImageData](/api/canvas/canvasPutImageData)|设置画布图像数据|
+
 ##### 下拉刷新
 
 |API|说明|
@@ -393,6 +401,7 @@ async function request () {
 |[onPullDownRefresh](/api/ui/pulldown?id=onpulldownrefresh)|监听该页面用户下拉刷新事件|
 |[uni.startPullDownRefresh](/api/ui/pulldown?id=startpulldownrefresh)|开始下拉刷新|
 |[uni.stopPullDownRefresh](/api/ui/pulldown?id=stoppulldownrefresh)|停止当前页面下拉刷新|
+
 ##### 节点信息
 
 |API|说明|
@@ -405,6 +414,7 @@ async function request () {
 |[nodesRef.boundingClientRect](/api/ui/nodes-info?id=nodesref-对象的方法列表)|获取布局位置和尺寸|
 |[nodesRef.scrollOffset](/api/ui/nodes-info?id=nodesref-对象的方法列表)|获取滚动位置|
 |[nodesRef.fields](/api/ui/nodes-info?id=nodesref-对象的方法列表)|获取任意字段|
+
 ##### 节点布局相交状态
 
 |API|说明|
@@ -449,62 +459,7 @@ async function request () {
 |:-|:-|
 |[uni.requireNativePlugin](/api/extend/native-plugin?id=requirenativeplugin)|引入 App 原生插件|
 
-#### 其他
-##### 授权
 
-|API|说明|
-|:-|:-|
-|[uni.authorize](/api/other/authorize?id=authorize)|提前向用户发起授权请求|
-##### 设置
-
-|API|说明|
-|:-|:-|
-|[uni.openSetting](/api/other/setting?id=opensetting)|调起客户端小程序设置界面，返回用户设置的操作结果。|
-|[uni.getSetting](/api/other/setting?id=getsetting)|获取用户的当前设置。|
-##### 收货地址
-
-|API|说明|
-|:-|:-|
-|[uni.chooseAddress](/api/other/choose-address?id=chooseaddress)|获取用户收货地址|
-##### 获取发票抬头
-
-|API|说明|
-|:-|:-|
-|[uni.chooseInvoiceTitle](/api/other/invoice-title?id=chooseinvoicetitle)|选择用户的发票抬头，需要用户授权 scope.invoiceTitle。|
-##### 小程序跳转
-
-|API|说明|
-|:-|:-|
-|[uni.navigateToMiniProgram](/api/other/open-miniprogram?id=navigatetominiprogram)|打开另一个小程序。|
-|[uni.navigateBackMiniProgram](/api/other/open-miniprogram?id=navigatebackminiprogram)|跳转回上一个小程序，只有当另一个小程序跳转到当前小程序时才会能调用成功。|
-##### 模板消息
-
-|API|说明|
-|:-|:-|
-|[addTemplate](/api/other/template?id=addtemplate)|组合模板并添加至帐号下的个人模板库。|
-|[deleteTemplate](/api/other/template?id=deletetemplate)|删除帐号下的某个模板。|
-|[getTemplateLibraryById](/api/other/template?id=gettemplatelibrarybyid)|获取模板库某个模板标题下关键词库。|
-|[getTemplateLibraryList](/api/other/template?id=gettemplatelibrarylist)|获取APP模板库标题列表|
-|[getTemplateList](/api/other/template?id=gettemplatelist)|获取帐号下已存在的模板列表。|
-|[sendTemplateMessage](/api/other/template?id=sendtemplatemessage)|发送模板消息|
-|[alipay.open.app.mini.templatemessage.send](/api/other/template?id=alipayopenappminitemplatemessagesend)|支付宝小程序通过 openapi 给用户触达消息，主要为支付后的触达（通过消费id）和用户提交表单后的触达（通过formId）。|
-##### 小程序更新
-
-|API|说明|
-|:-|:-|
-|[uni.getUpdateManager](/api/other/update?id=getupdatemanager)|返回全局唯一的版本更新管理器对象： updateManager，用于管理小程序更新。|
-##### 调试
-
-|API|说明|
-|:-|:-|
-|[uni.setEnableDebug](/api/other/set-enable-debug?id=setenabledebug)|设置是否打开调试开关。此开关对正式版也能生效。|
-
-##### 获取第三方平台数据
-
-|API|说明|
-|:-|:-|
-|[uni.getExtConfig](/api/other/get-extconfig?id=getextconfig)|获取第三方平台自定义的数据字段。|
-|[uni.getExtConfigSync](/api/other/get-extconfig?id=getextconfigsync)|uni.getExtConfig 的同步版本。|
 
 
 

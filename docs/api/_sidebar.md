@@ -4,7 +4,6 @@
   * [uni.base64ToArrayBuffer](api/base64ToArrayBuffer?id=base64toarraybuffer)
   * [uni.arrayBufferToBase64](api/arrayBufferToBase64?id=arraybuffertobase64)
   * [生命周期](api/lifecycle.md)
-  * [应用级事件](api/application.md)
   * [拦截器](api/interceptor.md)
   * [全局API](api/global.md)
 * 网络
@@ -12,8 +11,6 @@
   * [上传、下载](api/request/network-file.md)
   * [WebSocket](api/request/websocket.md)
   * [SocketTask](api/request/socket-task.md)
-  * [mDNS](api/request/mDNS.md)
-  * [UDP 通信](api/request/UDP.md)
 * 路由与页面跳转
   * [uni.navigateTo](/api/router?id=navigateto)
   * [uni.redirectTo](/api/router?id=redirectto)
@@ -45,23 +42,18 @@
   * [音频组件控制](api/media/audio-context.md)
   * [视频](api/media/video.md)
   * [视频组件控制](api/media/video-context.md)
-  * [相机组件控制](api/media/camera-context.md)
   * [直播组件控制](api/media/live-player-context.md)
   * [富文本](api/media/editor-context.md)
-  * [音视频合成](api/media/media-container.md)
 * 设备
   * [系统信息](api/system/info.md)
-  * [内存](api/system/memory.md)
   * [网络状态](api/system/network.md)
   * [系统主题](api/system/theme.md)
   * [加速度计](api/system/accelerometer.md)
   * [罗盘](api/system/compass.md)
-  * [陀螺仪](api/system/gyroscope.md)
   * [拨打电话](api/system/phone.md)
   * [扫码](api/system/barcode.md)
   * [剪贴板](api/system/clipboard.md)
   * [屏幕](api/system/brightness.md)
-  * [用户截屏事件](api/system/capture-screen.md)
   * [振动](api/system/vibrate.md)
   * [手机联系人](api/system/contact.md)
   * [蓝牙](api/system/bluetooth.md)
@@ -72,7 +64,6 @@
   * [NFC](api/system/nfc.md)
   * [设备方向](api/system/deviceMotion.md)
   * [生物认证](api/system/authentication.md)
-* [Worker](api/worker.md)
 * 键盘
   * [uni.hideKeyboard](/api/key?id=hidekeyboard)
   * [uni.onKeyboardHeightChange](/api/key?id=onkeyboardheightchange)
@@ -81,7 +72,6 @@
   * [交互反馈](api/ui/prompt.md)
   * [设置导航条](api/ui/navigationbar.md)
   * [设置TabBar](api/ui/tabbar.md)
-  * [背景](api/ui/bgcolor.md)
   * [动画](api/ui/animation?id=unicreateanimationobject)
   * [滚动](api/ui/scroll)
   * [窗口](api/ui/window.md)
@@ -91,8 +81,6 @@
   * [节点信息](api/ui/nodes-info.md)
   * [节点布局相交状态](api/ui/intersection-observer.md)
   * [媒体查询](api/ui/media-query-observer.md)
-  * [自定义组件](api/ui/nextTick.md)
-  * [菜单](api/ui/menuButton.md)
 * 页面和窗体
   * [页面](api/window/window.md)
   * [页面通讯](api/window/communication.md) 
@@ -106,19 +94,12 @@
   * [uni.openDocument](/api/file/file?id=openDocument)
   * [uni.getFileSystemManager](/api/file/getFileSystemManager)
 * 绘画
-	* [uni.createOffscreenCanvas](api/canvas/createOffscreenCanvas.md)
 	* [uni.createCanvasContext](api/canvas/createCanvasContext.md)
 	* [uni.canvasToTempFilePath](api/canvas/canvasToTempFilePath.md)
 	* [uni.canvasPutImageData](api/canvas/canvasPutImageData.md)
 	* [uni.canvasGetImageData](api/canvas/canvasGetImageData.md)
 	* [CanvasContext](api/canvas/CanvasContext.md)
 	* [CanvasGradient](api/canvas/CanvasGradient.md)
-* 广告
-  * [激励视频广告](api/a-d/rewarded-video.md)
-  * [全屏视频广告](api/a-d/full-screen-video.md)
-  * [内容联盟广告](api/a-d/content-page.md)
-  * [插屏广告](api/a-d/interstitial.md)
-  * [互动游戏](api/a-d/interactive.md)
 * 第三方服务
   * [获取服务供应商](api/plugins/provider.md)
   * [登录](api/plugins/login.md)
@@ -130,21 +111,7 @@
 * [uniCloud](api/uniCloud.md)
 * 平台扩展
   * [App原生插件](api/extend/native-plugin.md)
-* 其他
-  * [授权](api/other/authorize.md)
-  * [设置](api/other/setting.md)
-  * [收货地址](api/other/choose-address.md)
-  * [获取发票抬头](api/other/invoice-title.md)
-  * [小程序跳转](api/other/open-miniprogram.md)
-  * [账号信息](api/other/getAccountInfoSync.md)
-  * [运动(计步器)](api/other/sport.md)
-  * [统计](api/other/report.md)
-  * [卡券](api/other/card.md)
-  * [模板消息](api/other/template.md)
-  * [订阅消息](api/other/requestSubscribeMessage.md)
-  * [小程序更新](api/other/update.md)
-  * [调试](api/other/set-enable-debug.md)
-  * [获取第三方平台数据](api/other/get-extconfig.md)
+
 <li></li>
 <div class="contact-box">
   <a href="//unicloud.dcloud.net.cn" target="_blank" class="contact-item">

@@ -29,7 +29,6 @@
 │     └─list.vue        list页面
 ├─static                存放应用引用的本地静态资源（如图片、视频等）的目录，<b>注意：</b>静态资源只能存放于此
 ├─uni_modules           存放[uni_module](/uni_modules)规范的插件。
-├─wxcomponents          存放小程序组件的目录，<a href="/frame?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81">详见</a>
 ├─main.js               Vue初始化入口文件
 ├─App.vue               应用配置，用来配置App全局样式以及监听 <a href="/collocation/frame/lifecycle?id=应用生命周期">应用生命周期</a>
 ├─manifest.json         配置应用名称、appid、logo、版本等打包信息，<a href="/collocation/manifest">详见</a>
@@ -41,18 +40,11 @@
 - 编译到任意平台时，`static` 目录下的文件均会被完整打包进去，且不会编译。非 `static` 目录下的文件（vue、js、css 等）只有被引用到才会被打包编译进去。
 - `static` 目录下的 `js` 文件不会被编译，如果里面有 `es6` 的代码，不经过转换直接运行，在手机设备上会报错。
 - `css`、`less/scss` 等资源不要放在 `static` 目录下，建议这些公用的资源放在自建的 `common` 目录下。
-- HbuilderX 1.9.0+ 支持在根目录创建 `ext.json`、`sitemap.json` 等小程序需要的文件。
 
 |有效目录|说明|
 |:-:|:-:|
 |app-plus|App|
 |h5|H5|
-|mp-weixin|微信小程序|
-|mp-alipay|支付宝小程序|
-|mp-baidu|百度小程序|
-|mp-qq|QQ小程序|
-|mp-toutiao|字节小程序|
-|mp-kuaishou|快手小程序|
 
 ## 资源路径说明
 
@@ -77,7 +69,6 @@
 - H5平台，小于4kb的资源会被转换成base64，其余不转。
 - 自`HBuilderX 2.6.6`起`template`内支持`@`开头路径引入静态资源，旧版本不支持此方式
 - App平台自`HBuilderX 2.6.9`起`template`节点中引用静态资源文件时（如：图片），调整查找策略为【基于当前文件的路径搜索】，与其他平台保持一致
-- 支付宝小程序组件内 image 标签不可使用相对路径
 
 ### js文件引入
 
@@ -110,7 +101,7 @@ import add from '../../common/add.js'
 
 - 自`HBuilderX 2.6.6`起支持绝对路径引入静态资源，旧版本不支持此方式
 
-> `css`文件或`style标签`内引用的图片路径可以使用相对路径也可以使用绝对路径，需要注意的是，有些小程序端css文件不允许引用本地文件（请看注意事项）。
+> `css`文件或`style标签`内引用的图片路径可以使用相对路径也可以使用绝对路径。
 
 ```css
 /* 绝对路径 */
@@ -141,7 +132,7 @@ background-image: url(../../static/logo.png);
 
 ## 路由
 
-``uni-app``页面路由为框架统一管理，开发者需要在[pages.json](/collocation/pages?id=pages)里配置每个路由页面的路径及页面样式。类似小程序在app.json中配置页面路由一样。所以 `uni-app` 的路由用法与 ``Vue Router`` 不同，如仍希望采用 `Vue Router` 方式管理路由，可在插件市场搜索 [Vue-Router](https://ext.dcloud.net.cn/search?q=vue-router)。
+``uni-app``页面路由为框架统一管理，开发者需要在[pages.json](/collocation/pages?id=pages)里配置每个路由页面的路径及页面样式。所以 `uni-app` 的路由用法与 ``Vue Router`` 不同，如仍希望采用 `Vue Router` 方式管理路由，可在插件市场搜索 [Vue-Router](https://ext.dcloud.net.cn/search?q=vue-router)。
 
 ### 路由跳转
 
@@ -208,7 +199,7 @@ if (process.env.NODE_ENV === 'production') {
 如上代码只会编译到H5的发行包里，其他平台的包不会包含如上代码。
 
 - 运行期判断
-运行期判断是指代码已经打入包中，仍然需要在运行期判断平台，此时可使用 ``uni.getSystemInfoSync().platform`` 判断客户端环境是 Android、iOS 还是小程序开发工具（在百度小程序开发工具、微信小程序开发工具、支付宝小程序开发工具中使用 ``uni.getSystemInfoSync().platform`` 返回值均为 devtools）。
+运行期判断是指代码已经打入包中，仍然需要在运行期判断平台，此时可使用 ``uni.getSystemInfoSync().platform`` 判断客户端环境是 Android、iOS。
 
 ```javascript
 switch(uni.getSystemInfoSync().platform){
@@ -246,7 +237,7 @@ uni-app有vue页面和nvue页面。vue页面是webview渲染的、app端的nvue�
 - rpx 即响应式px，一种根据屏幕宽度自适应的动态单位。以750宽的屏幕为基准，750rpx恰好为屏幕宽度。屏幕变宽，rpx 实际显示效果会等比放大，但在 App 端和 H5 端屏幕宽度达到 960px 时，默认将按照 375px 的屏幕宽度进行计算，具体配置参考：[rpx计算配置](https://uniapp.dcloud.io/collocation/pages?id=globalstyle) 。
 
 vue页面支持下面这些普通H5单位，但在nvue里不支持：
-- rem 根字体大小可以通过 [page-meta](/component/page-meta?id=page-meta) 配置<span style="display:none">字节跳动小程序：屏幕宽度/20、百度小程序：16px、支付宝小程序：50px</span>
+- rem 根字体大小可以通过 [page-meta](/component/page-meta?id=page-meta) 配置
 - vh viewpoint height，视窗高度，1vh等于视窗高度的1%
 - vw viewpoint width，视窗宽度，1vw等于视窗宽度的1%
 
@@ -340,7 +331,6 @@ rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应�
 
 **注意：** 
 - 在 ```uni-app``` 中不能使用 ```*``` 选择器。
-- 微信小程序自定义组件中仅支持 class 选择器
 - ```page``` 相当于 ```body``` 节点，例如：
 
   ```css
@@ -362,17 +352,17 @@ rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应�
 
 uni-app 提供内置 CSS 变量
 
-|CSS变量|描述|App|小程序|H5|
-|:-|:-|:-|:-|:-|
-|--status-bar-height|系统状态栏高度|[系统状态栏高度](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getStatusbarHeight)、nvue注意见下|25px|0|
-|--window-top|内容区域距离顶部的距离|0|0|NavigationBar 的高度|
-|--window-bottom|内容区域距离底部的距离|0|0|TabBar 的高度|
+|CSS变量|描述|App|H5|
+|:-|:-|:-|:-|
+|--status-bar-height|系统状态栏高度|[系统状态栏高度](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getStatusbarHeight)、nvue注意见下|0|
+|--window-top|内容区域距离顶部的距离|0|NavigationBar 的高度|
+|--window-bottom|内容区域距离底部的距离|0|TabBar 的高度|
 
 
 **注意：**
-- ``var(--status-bar-height)`` 此变量在微信小程序环境为固定 ``25px``，在 App 里为手机实际状态栏高度。
+- ``var(--status-bar-height)`` 此变量在 App 里为手机实际状态栏高度。
 - 当设置 ``"navigationStyle":"custom"`` 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 ``var(--status-bar-height)`` 的 view 放在页面顶部，避免页面内容出现在状态栏。
-- 由于在H5端，不存在原生导航栏和tabbar，也是前端div模拟。如果设置了一个固定位置的居底view，在小程序和App端是在tabbar上方，但在H5端会与tabbar重叠。此时可使用`--window-bottom`，不管在哪个端，都是固定在tabbar上方。
+- 由于在H5端，不存在原生导航栏和tabbar，也是前端div模拟。如果设置了一个固定位置的居底view，在App端是在tabbar上方，但在H5端会与tabbar重叠。此时可使用`--window-bottom`，不管在哪个端，都是固定在tabbar上方。
 - 目前 nvue 在App端，还不支持 `--status-bar-height`变量，替代方案是在页面onLoad时通过uni.getSystemInfoSync().statusBarHeight获取状态栏高度，然后通过style绑定方式给占位view设定高度。下方提供了示例代码
 
 **代码块**
@@ -448,8 +438,6 @@ uni-app 提供内置 CSS 变量
 |NavigationBar|导航栏|44px|44px|
 |TabBar|底部选项卡|HBuilderX 2.3.4之前为56px，2.3.4起和H5调为一致，统一为 50px。但可以自主更改高度）|50px|
 
-各小程序平台，包括同小程序平台的iOS和Android的高度也不一样。
-
 ### Flex布局
 
 为支持跨平台，框架建议使用Flex布局，关于Flex布局可以参考外部文档[A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)、[阮一峰的flex教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)等。
@@ -460,7 +448,6 @@ uni-app 提供内置 CSS 变量
 
 - 支持 base64 格式图片。
 - 支持网络路径图片。
-- 小程序不支持在css中使用本地文件，包括本地的背景图和字体文件。需以base64方式方可使用。App端在v3模式以前，也有相同限制。v3编译模式起支持直接使用本地背景图和字体。
 - 使用本地路径背景图片需注意：
     1. 为方便开发者，在背景图片小于 40kb 时，``uni-app`` 编译到不支持本地背景图的平台时，会自动将其转化为 base64 格式；
     2. 图片大于等于 40kb，会有性能问题，不建议使用太大的背景图，如开发者必须使用，则需自己将其转换为 base64 格式使用，或将其挪到服务器上，从网络地址引用。
@@ -471,17 +458,12 @@ uni-app 提供内置 CSS 变量
         }
    ```
 
-**注意**
-- 微信小程序不支持相对路径（真机不支持，开发工具支持）
-
-
 ### 字体图标
 
 ``uni-app`` 支持使用字体图标，使用方式与普通 ``web`` 项目相同，需要注意以下几点：
 
 - 支持 base64 格式字体图标。
 - 支持网络路径字体图标。
-- 小程序不支持在css中使用本地文件，包括本地的背景图和字体文件。需以base64方式方可使用。App端在v3模式以前，也有相同限制。v3编译模式起支持直接使用本地背景图和字体。
 - 网络路径必须加协议头 ``https``。
 - 从 [http://www.iconfont.cn](http://www.iconfont.cn) 上拷贝的代码，默认是没加协议头的。 
 - 从 [http://www.iconfont.cn](http://www.iconfont.cn) 上下载的字体文件，都是同名字体（字体名都叫iconfont，安装字体文件时可以看到），在nvue内使用时需要注意，此字体名重复可能会显示不正常，可以使用工具修改。
@@ -569,15 +551,10 @@ domModule.addRule('fontFace', {
 uni-app 在支持绝大部分 ES6 API 的同时，也支持了 ES7 的 await/async。
 
 ES6 API 的支持，详见如下表格部分（`x` 表示不支持，无特殊说明则表示支持）：
-- 因为iOS上不允许三方js引擎，所以iOS上不区分App、小程序、H5，各端均仅依赖iOS版本。
+- 因为iOS上不允许三方js引擎，所以iOS上不区分App、H5，各端均仅依赖iOS版本。
 - 各端Android版本有差异：
 * App端的数据见下表；
 * H5端数据见caniuse；
-* 微信小程序[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/js-support.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%20ES6%20API%20%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)
-* 阿里小程序[详见](https://docs.alipay.com/mini/framework/implementation-detail)
-* 百度小程序[详见](https://smartprogram.baidu.com/docs/develop/framework/operating-environment/)
-* 字节跳动小程序[详见](https://developer.toutiao.com/dev/cn/mini-app/develop/framework/mini-app-runtime/javascript-support)
-* QQ小程序[详见](https://q.qq.com/wiki/develop/miniprogram/frame/useful/useful_env.html#es6%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)
 
 |String|iOS8|iOS9|iOS10|Android|
 |:-|:-|:-|:-|:-|
@@ -688,16 +665,15 @@ const package = require('packageName')
 **注意**
 
 * 为多端兼容考虑，建议优先从 [uni-app插件市场](https://ext.dcloud.net.cn/) 获取插件。直接从 npm 下载库很容易只兼容H5端。
-* 非 H5 端不支持使用含有 dom、window 等操作的 vue 组件和 js 模块，安装的模块及其依赖的模块使用的 API 必须是 uni-app 已有的 [API](./api/README)（兼容小程序 API），比如：支持[高德地图微信小程序 SDK](https://www.npmjs.com/package/amap-wx)。类似[jQuery](https://www.npmjs.com/package/jquery) 等库只能用于H5端。
+* 非 H5 端不支持使用含有 dom、window 等操作的 vue 组件和 js 模块，安装的模块及其依赖的模块使用的 API 必须是 uni-app 已有的 [API](./api/README)。类似[jQuery](https://www.npmjs.com/package/jquery) 等库只能用于H5端。
 * node_modules 目录必须在项目根目录下。不管是cli项目还是HBuilderX创建的项目。
-* 支持安装 mpvue 组件，但npm方式不支持小程序自定义组件（如 wxml格式的vant-weapp），使用小程序自定义组件请参考：[小程序组件支持](./frame?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81)。
 * 关于ui库的获取，详见[多端UI库](https://ask.dcloud.net.cn/article/35489)
 
 ## TypeScript 支持
 在 uni-app 中使用 ts 开发，请参考 [Vue.js TypeScript 支持](https://cn.vuejs.org/v2/guide/typescript.html) 说明。
 
 
-类型定义文件由 @dcloudio/types 模块提供，安装后请注意配置 tsconfig.json 文件中的 compilerOptions > types 部分，如需其他小程序平台类型定义也可以安装，如：miniprogram-api-typings、mini-types。对于缺少或者错误的类型定义，可以自行在本地新增或修改并同时报告给官方请求更新。
+类型定义文件由 @dcloudio/types 模块提供，安装后请注意配置 tsconfig.json 文件中的 compilerOptions > types 部分。对于缺少或者错误的类型定义，可以自行在本地新增或修改并同时报告给官方请求更新。
 
 ### 注意事项
 在 uni-app 中使用 ts 需要注意以下事项。
@@ -764,465 +740,9 @@ const package = require('packageName')
 	});
 </script>
 ```
-## 小程序自定义组件支持
-
-``uni-app`` 支持在 App 和 小程序 中使用**小程序自定义组件**，从HBuilderX2.4.7起，H5端也可以运行微信小程序组件。
-
-小程序组件不是vue组件，并且每家小程序都有自己的组件规范，比如微信小程序的组件是wxml格式。
-
-**平台差异说明**
-
-|平台|支持情况|小程序组件存放目录|
-|---|---|---|
-|H5|支持微信小程序组件（2.4.7+）|wxcomponents|
-|App（不含nvue）|支持微信小程序组件|wxcomponents|
-|微信小程序|支持微信小程序组件|wxcomponents|
-|支付宝小程序|支持支付宝小程序组件|mycomponents|
-|百度小程序|支持百度小程序组件|swancomponents|
-|字节跳动小程序|支持字节跳动小程序组件|ttcomponents|
-|QQ小程序|支持QQ小程序组件|wxcomponents|
-|快手小程序|支持快手小程序组件|kscomponents|
-
-此文档要求开发者对各端小程序的**自定义组件**有一定了解，没接触过小程序**自定义组件**的可以参考：
-
-- [微信小程序自定义组件](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
-- [百度小程序自定义组件](https://smartprogram.baidu.com/docs/develop/framework/custom-component/)
-- [支付宝小程序自定义组件](https://docs.alipay.com/mini/framework/custom-component-overview)
-- [字节跳动小程序自定义组件](https://developer.toutiao.com/docs/framework/custom_component_intro.html)
-- [QQ小程序自定义组件](https://q.qq.com/wiki/develop/miniprogram/frame/diy_components/)
-- [快手小程序自定义组件](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
-
-**目录结构**
-
-<pre v-pre="" data-lang="">
-	<code class="lang-" style="padding:0">
-┌─wxcomponents                  微信小程序自定义组件存放目录
-│   └──custom                   微信小程序自定义组件
-│		├─index.js
-│		├─index.wxml
-│		├─index.json
-│		└─index.wxss
-├─mycomponents                  支付宝小程序自定义组件存放目录
-│   └──custom                   支付宝小程序自定义组件
-│		├─index.js
-│		├─index.axml
-│		├─index.json
-│		└─index.acss
-├─swancomponents                百度小程序自定义组件存放目录
-│   └──custom                   百度小程序自定义组件
-│		├─index.js
-│		├─index.swan
-│		├─index.json
-│		└─index.css
-├─pages
-│  └─index
-│		└─index.vue
-│
-├─static
-├─main.js
-├─App.vue
-├─manifest.json
-└─pages.json
-	</code>
-</pre>
-
-**使用方式**
-
-在 ``pages.json`` 对应页面的 style -> usingComponents 引入组件：
-
-```javascript
-{
-	"pages": [{
-		"path": "index/index",
-		"style": {
-			// #ifdef APP-PLUS || H5 || MP-WEIXIN || MP-QQ
-			"usingComponents": {
-				"custom": "/wxcomponents/custom/index"
-			},
-			// #endif
-			// #ifdef MP-BAIDU
-			"usingComponents": {
-				"custom": "/swancomponents/custom/index"
-			},
-			// #endif
-			// #ifdef MP-ALIPAY
-			"usingComponents": {
-				"custom": "/mycomponents/custom/index"
-			},
-			// #endif
-			"navigationBarTitleText": "uni-app"
-		}
-	}]
-}
-
-```
-
-在页面中使用
-
-```html
-<!-- 页面模板 (index.vue) -->
-<view>
-    <!-- 在页面中对自定义组件进行引用 -->
-    <custom name="uni-app"></custom>
-</view>
-```
-
-**代码示例**
-
-下面以微信小程序官方自定义组件示例 [miniprogram-slide-view](https://github.com/wechat-miniprogram/slide-view) 为例演示小程序自定义组件的使用方式。
-其他组件使用示例见GitHub：[wxcomponents-template](https://github.com/dcloudio/uni-app/tree/master/examples/wxcomponents-template)。
-插件市场有一个完整的``vant weapp`` 引用好的示例工程，详见[https://ext.dcloud.net.cn/plugin?id=302](https://ext.dcloud.net.cn/plugin?id=302)。
-
-目录结构
-<pre v-pre="" data-lang="">
-	<code class="lang-" style="padding:0">
-┌─components
-├─wxcomponents
-│   └──miniprogram-slide-view
-│		├─index.js
-│		├─index.wxml
-│		├─index.json
-│		└─index.wxss
-│
-├─pages
-│  └─slide-view
-│		└─slide-view.vue
-│
-├─static
-├─main.js
-├─App.vue
-├─manifest.json
-└─pages.json
-	</code>
-</pre>
-pages.json
-```json
-{
-    "pages": [
-        {
-        	"path": "slide-view/slide-view",
-        	"style": {
-        		"navigationBarTitleText": "slide-view",
-        		"usingComponents": {
-        			"slide-view": "/wxcomponents/miniprogram-slide-view/index"
-        		}
-        	}
-        }
-    ]
-}
-```
-slide-view.vue
-```html
-<template>
-	<view class='slide'>
-		<slide-view width="750" height="110" slide-width="500">
-			<view slot="left" class="l">
-				<image src="/static/file_transfer.jpg" class="img"></image>
-				<view class='text'>
-					<view class='title'>文件传输助手</view>
-					<view class='time'>7:00 PM</view>
-				</view>
-			</view>
-			<view slot="right" class="r">
-				<view class='read'>标为已读</view>
-				<view class='delete'>删除</view>
-			</view>
-		</slide-view>
-	</view>
-</template>
-<script>
-	export default {}
-</script>
-<style>
-	.slide {
-		border-bottom: 1px solid #DEDEDE;
-	}
-	.l {
-		background-color: white;
-		height: 110rpx;
-		width: 750rpx;
-		display: flex;
-		flex-direction: row;
-	}
-	.r {
-		height: 110rpx;
-		display: flex;
-		direction: row;
-		text-align: center;
-		vertical-align: middle;
-		line-height: 110rpx;
-	}
-	.read {
-		background-color: #ccc;
-		color: #fff;
-		width: 350rpx;
-	}
-	.delete {
-		background-color: red;
-		color: #fff;
-		width: 150rpx;
-	}
-	.img {
-		width: 90rpx;
-		height: 90rpx;
-		border-radius: 10rpx;
-		margin: 10rpx 15rpx;
-	}
-	.text {
-		display: flex;
-		flex-direction: row;
-	}
-
-	.title {
-		margin-top: 15rpx;
-		font-size: 33rpx;
-	}
-	.time {
-		margin-top: 15rpx;
-		color: #ccc;
-		font-size: 25rpx;
-		margin-left: 330rpx;
-	}
-</style>
-```
-
-**注意事项**
-
-* 小程序组件需要放在项目特殊文件夹 ``wxcomponents``（或 mycomponents、swancomponents）。HBuilderX 建立的工程 ``wxcomponents`` 文件夹在 项目根目录下。vue-cli 建立的工程 ``wxcomponents`` 文件夹在 ``src`` 目录下。可以在 vue.config.js 中自定义其他目录
-* 小程序组件的性能，不如vue组件。使用小程序组件，需要自己手动setData，很难自动管理差量数据更新。而使用vue组件会自动diff更新差量数据。所以如无明显必要，建议使用vue组件而不是小程序组件。比如某些小程序ui组件，完全可以用更高性能的uni ui替代。
-* 当需要在 `vue` 组件中使用小程序组件时，注意在 `pages.json` 的 `globalStyle` 中配置 `usingComponents`，而不是页面级配置。
-* 注意数据和事件绑定的差异，组件使用时应按照 `vue` 的数据和事件绑定方式
-	- 属性绑定从 `attr="{{ a }}"`，改为 `:attr="a"`；从 `title="复选框{{ item }}"` 改为 `:title="'复选框' + item"`
-	- 事件绑定从 `bind:click="toggleActionSheet1"` 改为 `@click="toggleActionSheet1"`，目前支付宝小程序不支持 `vue` 的事件绑定方式，具体参考：[支付宝小程序组件事件监听示例](https://github.com/dcloudio/uni-app/issues/917#issuecomment-653329693)
-	- 阻止事件冒泡 从 `catch:tap="xx"` 改为 `@tap.native.stop="xx"`
-	- `wx:if` 改为 `v-if`
-	- `wx:for="{{ list }}" wx:key="{{ index }}"` 改为`v-for="(item,index) in list"`
-
-详细的小程序转uni-app语法差异可参考文档[https://ask.dcloud.net.cn/article/35786](https://ask.dcloud.net.cn/article/35786)。
-
-## WXS
-
-WXS是一套运行在视图层的脚本语言，[微信端的规范详见](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/)。
-
-它的特点是运行在视图层。当需要避免逻辑层和渲染层交互通信折损时，可采用wxs。
-
-uni-app可以将wxs代码编译到微信小程序、QQ小程序、app-vue、H5上（`uni-app 2.2.5`及以上版本）
-
-与wxs类似，百度小程序提供了Filter、阿里小程序提供了SJS，uni-app也支持使用这些功能，并将它们编译到百度和阿里的小程序端。不过它们的功能还不如wxs强大。此外头条系小程序自身不支持类似功能。
-
-**平台差异说明**
-
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(不支持nvue)|√|√|SJS|Filter|x|√|
-
-App端nvue解决此类需求，不应该使用wxs，而是使用bindingx。
-
-**wxs示例**
-
-以下是一些使用 WXS 的简单示例，要完整了解 WXS 语法，请参考[WXS 语法参考](https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/)。本示例使用wxs响应`touchmove`事件，减少视图层与逻辑层通信，使滑动更加丝滑。
-
-```html
-<template>
-	<view>
-		<view class="area">
-			<view @touchstart="test.touchstart" @touchmove="test.touchmove" class="movable">{{test.msg}}</view>
-		</view>
-	</view>
-</template>
-<script module="test" lang="wxs">
-	var startX = 0
-	var startY = 0
-	var lastLeft = 50; var lastTop = 50
-	function touchstart(event, ins) {
-		console.log("touchstart")
-	  var touch = event.touches[0] || event.changedTouches[0]
-	  startX = touch.pageX
-	  startY = touch.pageY
-	}
-	function touchmove(event, ins) {
-	  var touch = event.touches[0] || event.changedTouches[0]
-	  var pageX = touch.pageX
-	  var pageY = touch.pageY
-	  var left = pageX - startX + lastLeft
-	  var top = pageY - startY + lastTop
-	  startX = pageX
-	  startY = pageY
-	  lastLeft = left
-	  lastTop = top
-	  ins.selectComponent('.movable').setStyle({
-	    left: left + 'px',
-	    top: top + 'px'
-	  })
-		return false
-	}
-	module.exports = {
-		msg: 'Hello',
-	  touchstart: touchstart,
-	  touchmove: touchmove
-	}
-</script>
-
-<script>
-	export default {
-		data() {
-			return {
-			}
-		},
-		methods: {
-		}
-	}
-</script>
-
-<style>
-.area{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-}
-.movable{
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	left: 50px;
-	top: 50px;
-	color: white;
-	text-align: center;
-	line-height: 100px;
-	background-color: red;
-}
-</style>
-```
-
-支付宝小程序，百度小程序官方暂未支持事件响应，不过也可以使用对应的SJS、Filter过滤器实现一些数据处理的操作，以下代码展示了一个时间格式化的小功能
-
-`index.vue`
-
-```html
-<template>
-	<view>
-		<view>
-			{{timestr}} 是
-		</view>
-		<view>
-			{{utils.friendlyDate(timestamp)}}
-		</view>
-	</view>
-</template>
-<script module="utils" lang="filter" src="./utils.filter.js"></script>
-<script module="utils" lang="sjs" src="./utils.sjs"></script>
-
-<script>
-	export default {
-		data() {
-			return {
-				timestr: '2019/08/22 10:10:10',
-				timestamp: 0
-			}
-		},
-		created() {
-			this.timestamp = new Date(this.timestr).getTime()
-		},
-		methods: {
-		}
-	}
-</script>
-```
-
-`utils.sjs` 与 `utils.filter.js` 内容一致
-
-```js
-export default {
-	friendlyDate: (timestamp) => {
-		var formats = {
-			'year': '%n% 年前',
-			'month': '%n% 月前',
-			'day': '%n% 天前',
-			'hour': '%n% 小时前',
-			'minute': '%n% 分钟前',
-			'second': '%n% 秒前',
-		};
-		var now = Date.now();
-		var seconds = Math.floor((now - parseInt(timestamp)) / 1000);
-		var minutes = Math.floor(seconds / 60);
-		var hours = Math.floor(minutes / 60);
-		var days = Math.floor(hours / 24);
-		var months = Math.floor(days / 30);
-		var years = Math.floor(months / 12);
-
-		var diffType = '';
-		var diffValue = 0;
-		if (years > 0) {
-			diffType = 'year';
-			diffValue = years;
-		} else {
-			if (months > 0) {
-				diffType = 'month';
-				diffValue = months;
-			} else {
-				if (days > 0) {
-					diffType = 'day';
-					diffValue = days;
-				} else {
-					if (hours > 0) {
-						diffType = 'hour';
-						diffValue = hours;
-					} else {
-						if (minutes > 0) {
-							diffType = 'minute';
-							diffValue = minutes;
-						} else {
-							diffType = 'second';
-							diffValue = seconds === 0 ? (seconds = 1) : seconds;
-						}
-					}
-				}
-			}
-		}
-		return formats[diffType].replace('%n%', diffValue);
-	}
-}
-```
-
-**注意**
-
-引入方式
-
-```html
-<!-- 内联 -->
-<script module="test" lang="wxs">
-  //...code
-</script>
-<script module="utils" lang="filter">
-  //...code
-</script>
-
-
-<!-- 外部引入 -->
-<script module="utils" lang="wxs" src="./utils.wxs"></script>
-<script module="utils" lang="filter" src="./utils.filter.js"></script>
-<script module="utils" lang="sjs" src="./utils.sjs"></script>
-```
-
-- **【重要】** 编写wxs、sjs、filter.js 内容时必须遵循相应语法规范
-- **【重要】** `module`所指定的模块名不可与`data`、`methods`、`computed`内的属性重名
-- 目前各个小程序正在完善相关规范，可能会有较大改动，请务必仔细阅读相应平台的文档
-- 支付宝小程序请使用sjs规范，[详见](https://docs.alipay.com/mini/framework/sjs)
-- 支付宝小程序sjs只能定义在.sjs 文件中，然后使用```<script>```标签引入
-- 支付宝小程序`script`的标签属性`name`、`from`被统一为了`module`、`src`以便后续实现多平台统一写法
-- 百度小程序中请使用Filter规范，[详见](https://smartprogram.baidu.com/docs/develop/framework/view_filter/)
-- 百度小程序Filter只能导出`function`函数
-- 暂不支持在 wxs、sjs、filter.js 中调用其他同类型文件
-- wxs、filter.js既能内联使用又可以外部引入，sjs只能外部引入
-- QQ小程序目前对内联的 wxs 支持不好，部分写法可能会导致编译出错，尽量使用外部引入的方式
-- 在微信自定义组件中`wxcomponents`也可以使用wxs
-- `nvue`页面暂不支持wxs、sjs、filter.js
-- 各个`script`标签会分别被打包至对应支持平台，不需要额外写条件编译
-- 自`HBuilderX 2.2.5`开始，不推荐使用各个小程序自有的引入方式，推荐使用`script`标签引入
-- App和H5端，提供了wxs的升级版，更加强大，见下面的 [renderjs](?id=renderjs) 章节
 
 ## renderjs
-`renderjs`是一个运行在视图层的js。它比[WXS](?id=wxs)更加强大。它只支持app-vue和h5。
+`renderjs`是一个运行在视图层的js。它只支持app-vue和h5。
 
 `renderjs`的主要作用有2个：
 - 大幅降低逻辑层和视图层的通讯损耗，提供高性能视图交互能力
@@ -1230,9 +750,9 @@ export default {
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(2.5.5+，仅支持vue，并要求v3编译器)|√|x|x|x|x|x|
+|App|H5|
+|:-:|:-:|
+|√(2.5.5+，仅支持vue，并要求v3编译器)|√|
 
 ### 使用方式
 
@@ -1257,14 +777,14 @@ export default {
 ### 功能详解
 - 大幅降低逻辑层和视图层的通讯损耗，提供高性能视图交互能力
 
-逻辑层和视图层分离有很多好处，但也有一个副作用是在造成了两层之间通信阻塞。尤其是小程序和App的Android端阻塞问题影响了高性能应用的制作。
+逻辑层和视图层分离有很多好处，但也有一个副作用是在造成了两层之间通信阻塞。
 
 `renderjs`运行在视图层，可以直接操作视图层的元素，避免通信折损。
 
-在hello uni-app的canvas示例中，App端使用了`renderjs`，由运行在视图层的`renderjs`直接操作视图层的canvas，实现了远超微信小程序的流畅canvas动画示例。具体在[hello uni-app](https://m3w.cn/uniapp)示例中体验，对比App端和小程序端的性能差异。
+在hello uni-app的canvas示例中，App端使用了`renderjs`，由运行在视图层的`renderjs`直接操作视图层的canvas，实现了流畅canvas动画示例。具体在[hello uni-app](https://m3w.cn/uniapp)示例中体验。
 
 - 在视图层操作dom，运行for web的js库
-官方不建议在uni-app里操作dom，但如果你不开发小程序，想使用一些操作了dom、window的库，其实可以使用`renderjs`来解决。
+官方不建议在uni-app里操作dom，但如果你想使用一些操作了dom、window的库，其实可以使用`renderjs`来解决。
 
 在app-vue环境下，视图层由webview渲染，而`renderjs`运行在视图层，自然可以操作dom和window。
 
@@ -1290,5 +810,3 @@ export default {
 ```uni-app```使用 ```vue``` 语法，开发多端应用，感谢```Vue```团队！！
 
 为了减少开发者的学习成本，```uni-app```的组件和api设计，基本参考了微信小程序，学过微信小程序开发，了解```vue```，就能直接上手```uni-app```；感谢微信小程序团队！
-
-```uni-app``` 在小程序端，学习参考了[mpvue](https://mpvue.com/)及[Megalo](https://megalojs.org/)，感谢美团点评技术团队、网易考拉团队!

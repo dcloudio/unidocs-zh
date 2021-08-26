@@ -6,8 +6,6 @@
 
 **uni-app 引用 npm 第三方库：** [https://ask.dcloud.net.cn/article/19727](https://ask.dcloud.net.cn/article/19727)
 
-**uni-app 中使用微信小程序第三方 SDK 及资源汇总：**[https://ask.dcloud.net.cn/article/35070](https://ask.dcloud.net.cn/article/35070)
-
 **原生控件层级过高无法覆盖的解决方案：**[https://uniapp.dcloud.io/component/native-component](https://uniapp.dcloud.io/component/native-component)
 
 **国际化/多语言/i18n方案：**[https://ask.dcloud.net.cn/article/35872](https://ask.dcloud.net.cn/article/35872)
@@ -35,10 +33,6 @@
 **Android App字体跟随Rom默认字体/系统字体**[详见](https://uniapp.dcloud.net.cn/component/native-component?id=android%e7%b3%bb%e7%bb%9f%e4%b8%bb%e9%a2%98%e5%ad%97%e4%bd%93%e5%af%b9%e5%8e%9f%e7%94%9f%e7%bb%84%e4%bb%b6%e6%b8%b2%e6%9f%93%e7%9a%84%e5%bd%b1%e5%93%8d)
 
 **uni-app 中使用 5+ 的原生界面控件（包括map、video、livepusher、barcode、nview）：**[https://ask.dcloud.net.cn/article/35036](https://ask.dcloud.net.cn/article/35036)
-
-**App分享到微信时分享为小程序：**[使用plus.share，设置分享类型为miniProgram](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.WeixinMiniProgramOptions)。注意uni-app不需要plus ready，将plus ready里的代码写到页面的onLoad生命周期即可
-
-**App启动微信小程序：**[使用plus.share的launchMiniProgram](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.launchMiniProgram)。注意uni-app不需要plus ready，将plus ready里的代码写到页面的onLoad生命周期即可
 
 **App初期启动的引导轮播：** 因为是App专用，为了更好的性能，推荐使用nvue制作。参考插件市场已经封装的插件[https://ext.dcloud.net.cn/plugin?id=676](https://ext.dcloud.net.cn/plugin?id=676)
 

@@ -3,7 +3,7 @@
 
 在App端，如果使用vue页面，则使用webview渲染；如果使用nvue页面(native vue的缩写)，则使用原生渲染。一个App中可以同时使用两种页面，比如首页使用nvue，二级页使用vue页面，hello uni-app示例就是如此。
 
-虽然nvue也可以多端编译，输出H5和小程序，但nvue的css写法受限，所以如果你不开发App，那么不需要使用nvue。
+虽然nvue也可以多端编译，输出H5，但nvue的css写法受限，所以如果你不开发App，那么不需要使用nvue。
 
 以往的 weex ，有个很大的问题是它只是一个高性能的渲染器，没有足够的API能力（比如各种push sdk集成、蓝牙等能力调用），使得开发时非常依赖原生工程师协作，开发者本来想节约成本，结果需要前端、iOS、Android 3拨人开发，适得其反。 nvue 解决了这个问题，让前端工程师可以直接开发完整 App，并提供丰富的插件生态和云打包。这些组合方案，帮助开发者切实的提高效率、降低成本。
 
@@ -31,9 +31,9 @@ nvue的组件和API写法与vue页面一致，其内置组件还比vue页面内�
 4. 实现区域滚动长列表+左右拖动列表+吸顶的复杂排版效果，效果可参考hello uni-app模板里的```swiper-list```。[详见](https://ext.dcloud.net.cn/plugin?id=2128)
 5. 如需要将软键盘右下角按钮文字改为“发送”，则需要使用nvue。比如聊天场景，除了软键盘右下角的按钮文字处理外，还涉及聊天记录区域长列表滚动，适合nvue来做。
 6. 解决前端控件无法覆盖原生控件的层级问题。当你使用```map```、```video```、```live-pusher```等原生组件时，会发现前端写的```view```等组件无法覆盖原生组件，层级问题处理比较麻烦，此时使用nvue更好。或者在vue页面上也可以覆盖一个subnvue（一种非全屏的nvue页面覆盖在webview上），以解决App上的原生控件层级问题。[详见](https://uniapp.dcloud.io/component/native-component)
-7. 如深度使用```map```组件，建议使用nvue。除了层级问题，App端nvue文件的map功能更完善，和小程序拉齐度更高，多端一致性更好。
+7. 如深度使用```map```组件，建议使用nvue。除了层级问题，App端nvue文件的map功能更完善。
 8. 如深度使用```video```，建议使用nvue。比如如下2个场景：video内嵌到swiper中，以实现抖音式视频滑动切换，例子见[插件市场](https://ext.dcloud.net.cn/search?q=%E4%BB%BF%E6%8A%96%E9%9F%B3)；nvue的视频全屏后，通过```cover-view```实现内容覆盖，比如增加文字标题、分享按钮。
-9. 直播推流：nvue下有```live-pusher```组件，和小程序对齐，功能更完善，也没有层级问题。
+9. 直播推流：nvue下有```live-pusher```组件，功能更完善，也没有层级问题。
 10. 对App启动速度要求极致化。App端v3编译器模式下，如果首页使用nvue且在manifest里配置fast模式，那么App的启动速度可以控制在1秒左右。而使用vue页面的话，App的启动速度一般是3秒起，取决于你的代码性能和体积。
 
 但注意，在某些场景下，nvue不如vue页面，如下：
@@ -70,7 +70,7 @@ uni-app在App端，支持vue页面和nvue页面混搭、互相跳转。也支持
 
 如你之前是weex开发者，可以继续查阅本章节，否则可以跳过看下一节[快速上手](#快速上手)。
 
-weex的组件和JS API，与uni-app不同。uni-app与微信小程序相同。
+weex的组件和JS API，与uni-app不同。
 
 考虑到weex用户的迁移，uni-app 也支持weex的代码写法。在manifest.json中可以配置使用**weex编译模式**或**uni-app编译模式**。选择weex编译模式时将不支持uni-app的组件和jsapi，需要开发者参考weex官方文档的写法来写代码。 比如 weex 编译模式用```<div>```。uni-app 编译模式则使用```<view>```。
 
@@ -79,7 +79,7 @@ weex的组件和JS API，与uni-app不同。uni-app与微信小程序相同。
 
 |			|weex编译模式						|uni-app编译模式					|
 |--			|--									|--								|
-|平台		|仅App								|所有端，包含小程序和H5			|
+|平台		|仅App								|所有端，包含H5			|
 |组件		|weex组件如div						|uni-app组件如view				|
 |生命周期	|只支持weex生命周期					|支持所有uni-app生命周期			|
 |JS API		|weex API、uni API、Plus API			|weex API、uni API、Plus API		|
@@ -230,7 +230,7 @@ HBuilderX内置了weex调试工具的强化版，包括审查界面元素、看l
 1. nvue 页面控制显隐只可以使用```v-if```不可以使用```v-show```
 2. nvue 页面只能使用``` flex ```布局，不支持其他布局方式。页面开发前，首先想清楚这个页面的纵向内容有什么，哪些是要滚动的，然后每个纵向内容的横轴排布有什么，按 flex 布局设计好界面。
 3. nvue 页面的布局排列方向默认为竖排（```column```），如需改变布局方向，可以在 ```manifest.json``` -> ```app-plus``` -> ```nvue``` -> ```flex-direction``` 节点下修改，仅在 uni-app 模式下生效。[详情](https://uniapp.dcloud.io/collocation/manifest?id=nvue)。
-4. nvue页面编译为H5、小程序时，会做一件css默认值对齐的工作。因为weex渲染引擎只支持flex，并且默认flex方向是垂直。而H5和小程序端，使用web渲染，默认不是flex，并且设置```display:flex```后，它的flex方向默认是水平而不是垂直的。所以nvue编译为H5、小程序时，会自动把页面默认布局设为flex、方向为垂直。当然开发者手动设置后会覆盖默认设置。
+4. nvue页面编译为H5时，会做一件css默认值对齐的工作。因为weex渲染引擎只支持flex，并且默认flex方向是垂直。而H5端，使用web渲染，默认不是flex，并且设置```display:flex```后，它的flex方向默认是水平而不是垂直的。所以nvue编译为H5时，会自动把页面默认布局设为flex、方向为垂直。当然开发者手动设置后会覆盖默认设置。
 5. 文字内容，必须、只能在```<text>```组件下。不能在```<div>```、```<view>```的```text```区域里直接写文字。否则即使渲染了，也无法绑定js里的变量。
 6. 只有```text```标签可以设置字体大小，字体颜色。
 7. 布局不能使用百分比、没有媒体查询。

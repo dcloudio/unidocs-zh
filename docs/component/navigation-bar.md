@@ -4,9 +4,9 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√ 2.6.3+|2.6.3+|√ 2.9.0+|√|√|√|√|x|
+|App|H5|
+|:-:|:-:|
+|√ 2.6.3+|2.6.3+|
 
 从HBuilderX 2.9.3起，编译到所有平台均支持`navigation-bar`，但编译到微信时，受微信基础库版本限制；编译到其他平台不受平台版本限制。
 
@@ -25,11 +25,7 @@
 |background-image|string||否|支持以下类型： 背景图片路径 - 如"./img/t.png"，仅支持本地文件路径， 相对路径，相对于当前页面的host位置，根据实际标题栏宽高拉伸绘制； 渐变色 - 仅支持线性渐变，两种颜色的渐变，如“linear-gradient(to top, #a80077, #66ff00)”， 其中第一个参数为渐变方向，可取值： "to right"表示从左向右渐变， “to left"表示从右向左渐变， “to bottom"表示从上到下渐变， “to top"表示从下到上渐变， “to bottom right"表示从左上角到右下角， “to top left"表示从右下角到左上角|App 2.6.7+|
 |background-repeat|string||否|仅在backgroundImage设置为图片路径时有效。 可取值： "repeat" - 背景图片在垂直方向和水平方向平铺； "repeat-x" - 背景图片在水平方向平铺，垂直方向拉伸； “repeat-y” - 背景图片在垂直方向平铺，水平方向拉伸； “no-repeat” - 背景图片在垂直方向和水平方向都拉伸。 默认使用 “no-repeat"|App 2.6.7+|
 |blur-effect|string|"none"|否|此效果将会高斯模糊显示标题栏后的内容，仅在type为"transparent"或"float"时有效。 可取值： "dark" - 暗风格模糊，对应iOS原生UIBlurEffectStyleDark效果； "extralight" - 高亮风格模糊，对应iOS原生UIBlurEffectStyleExtraLight效果； "light" - 亮风格模糊，对应iOS原生UIBlurEffectStyleLight效果； "none" - 无模糊效果。 注意：使用模糊效果时应避免设置背景颜色，设置背景颜色可能覆盖模糊效果。|App 2.6.7+|
-|loading|string|false|否|是否在导航条显示 loading 加载提示|微信基础库 2.9.0|
-|front-color|string||否|导航条前景颜色值，包括按钮、标题、状态栏的颜色，仅支持 #ffffff 和 #000000|微信基础库 2.9.0|
-|background-color|string||否|导航条背景颜色值，有效值为十六进制颜色|微信基础库 2.9.0|
-|color-animation-duration|number|0|否|改变导航栏颜色时的动画时长，默认为 0 （即没有动画效果）|微信基础库 2.9.0|
-|color-animation-timing-func|string|"linear"|否|改变导航栏颜色时的动画方式，支持 linear 、 easeIn 、 easeOut 和 easeInOut|微信基础库 2.9.0|
+
 
 属性说明 [/collocation/pages?id=app-titlenview](/collocation/pages?id=app-titlenview)
 

@@ -6,10 +6,7 @@
 |:-|:-|:-|:-|:-|
 |src|String||图片资源地址||
 |mode|String|'scaleToFill'|图片裁剪、缩放的模式|<div style="width:68px;"></div>|
-|lazy-load|Boolean|false|图片懒加载。只针对page与scroll-view下的image有效|微信小程序、百度小程序、字节跳动小程序|
 |fade-show|Boolean|true|图片显示动画效果|仅App-nvue 2.3.4+ Android有效|
-|webp|boolean|false|默认不解析 webP 格式，只支持网络资源|微信小程序2.9.0|
-|show-menu-by-longpress|boolean|false|开启长按图片显示识别小程序码菜单|微信小程序2.7.0|
 |draggable|boolean|true|鼠标长按是否能拖动图片|仅 H5 平台 3.1.1+ 有效|
 |@error|HandleEvent||当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: 'something wrong'}||
 |@load|HandleEvent||当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:'图片高度px', width:'图片宽度px'}|&nbsp;|
@@ -34,7 +31,7 @@ mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。
 |缩放|aspectFit|保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。|
 |缩放|aspectFill|保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。|
 |缩放|widthFix|宽度不变，高度自动变化，保持原图宽高比不变|
-|缩放|heightFix|高度不变，宽度自动变化，保持原图宽高比不变 **App 和 H5 平台 HBuilderX 2.9.3+ 支持、微信小程序需要基础库 2.10.3**|
+|缩放|heightFix|高度不变，宽度自动变化，保持原图宽高比不变 **App 和 H5 平台 HBuilderX 2.9.3+ 支持**|
 |裁剪|top|不缩放图片，只显示图片的顶部区域|
 |裁剪|bottom|不缩放图片，只显示图片的底部区域|
 |裁剪|center|不缩放图片，只显示图片的中间区域|

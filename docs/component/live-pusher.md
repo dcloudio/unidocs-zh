@@ -4,9 +4,9 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快应用|360小程序|快手小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(仅nvue)|x|√|x|x|x|x|x|x|x|x|
+|App|H5|
+|:-:|:-:|
+|√(仅nvue)|x|
 
 如app平台的vue页面需要支持直播推流，需编写条件编译代码，使用 `plus.video.LivePusher`，[业务指南](https://ask.dcloud.net.cn/article/13416)、[规范文档](http://www.html5plus.org/doc/zh_cn/video.html#plus.video.LivePusher)。还是推荐直接使用nvue里的`live-pusher`组件。
 
@@ -34,25 +34,10 @@ whiteness|Number|0|否|美白，取值范围 0-9（iOS取值范围为1） ，0 �
 orientation|String|"vertical"|否|画面方向|
 min-bitrate|Number|200|否|最小码率。|
 max-bitrate|Number|1000|否|最大码率。|
-audio-quality|string|high|否|高音质(48KHz)或低音质(16KHz)，值为high, low|微信小程序1.7.0
-waiting-image|string||否|进入后台时推流的等待画面|微信小程序1.7.0
-waiting-image-hash|string||否|等待画面资源的MD5值|微信小程序1.7.0
-zoom|boolean|false|否|调整焦距|微信小程序2.1.0
-device-position|string|front|否|前置或后置，值为front, back|微信小程序2.3.0
-background-mute|boolean|false|否|进入后台时是否静音|微信小程序1.7.0
-remote-mirror|boolean|false|否|设置推流画面是否镜像，产生的效果在 live-player 反应到|微信小程序2.10.0
-local-mirror|string|auto|否|控制本地预览画面是否镜像|微信小程序2.10.0
-audio-reverb-type|number|0|否|音频混响类型|微信小程序2.10.0
-enable-mic|boolean|true|否|开启或关闭麦克风|微信小程序2.10.0
-enable-agc|boolean|false|否|是否开启音频自动增益|微信小程序2.10.0
-enable-ans|boolean|false|否|是否开启音频噪声抑制|微信小程序2.10.0
-audio-volume-type|string|voicecall|否|音量类型|微信小程序2.10.0
 @statechange|EventHandle|||状态变化事件，detail = {code}|
 @netstatus|EventHandle|||网络状态通知，detail = {info}|
 @error|EventHandle|||渲染错误事件，detail = {errMsg, errCode}|
-@bgmstart|EventHandle|||背景音开始播放时触发|微信小程序2.4.0
-@bgmprogress|EventHandle|||背景音进度变化时触发，detail = {progress, duration}|微信小程序2.4.0
-@bgmcomplete|EventHandle|||背景音播放完成时触发|微信小程序2.4.0
+
 
 
 orientation 的合法值
@@ -62,36 +47,6 @@ orientation 的合法值
 |vertical|竖直|
 |horizontal|水平|
 
-
-local-mirror 的合法值
-
-|值|说明|
-|:-|:-|
-|auto|前置摄像头镜像，后置摄像头不镜像|
-|enable|前后置摄像头均镜像|
-|disable|前后置摄像头均不镜像|
-
-
-audio-reverb-type 的合法值
-
-|值|说明|
-|:-|:-|
-|0|关闭|
-|1|KTV|
-|2|小房间|
-|3|大会堂|
-|4|低沉|
-|5|洪亮|
-|6|金属声|
-|7|磁性|
-
-
-audio-volume-type 的合法值
-
-|值|说明|
-|:-|:-|
-|media|媒体音量|
-|voicecall|通话音量|
 
 网络状态数据（info）安卓
 
@@ -227,5 +182,4 @@ message|string| 具体的网络状态信息
 
 **注意**
 
-* live-pusher 是原生组件，在小程序端层级高于前端组件，需使用cover-view覆盖。在低版本微信中，live-pusher无法内嵌于 scroll-view、swiper、picker-view、movable-view 中。在App端的nvue文件中，live-pusher没有这类限制。
 * App平台：使用 `<live-pusher/>` 组件，打包 App 时必须勾选 manifest.json->App 模块权限配置->LivePusher(直播推流) 模块。

@@ -17,10 +17,10 @@
 
 **src**
 
-|来源|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快应用|360小程序|快手小程序|
-|:-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|网络|√|√|√|√|√|√|√|√|√|√|
-|本地|√|√|x|x|x|x|x|x|x|x|
+|来源|App|H5|
+|:-|:-:|:-:|
+|网络|√|√|
+|本地|√|√|
 
 **webview-styles**
 
@@ -61,9 +61,8 @@
 ```
 
 注意：
-- 小程序仅支持加载网络网页，不支持本地html
+
 - 补充说明：app-vue下web-view组件不支持自定义样式，而v-show的本质是改变组件的样式。即组件支持v-if而不是支持v-show。
-- 小程序端 web-view 组件一定有原生导航栏，下面一定是全屏的 web-view 组件，navigationStyle: custom 对 web-view 组件无效。
 - App 端使用 `自定义组件模式` 时，uni.web-view.js 的最低版为 [uni.webview.1.5.2.js](https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js)
 - App 平台同时支持网络网页和本地网页，但本地网页及相关资源（js、css等文件）必须放在 `uni-app 项目根目录->hybrid->html` 文件夹下或者 `static` 目录下，如下为一个加载本地网页的`uni-app`项目文件目录示例：
 - nvue `web-view` 必须指定样式宽高
@@ -111,8 +110,8 @@
 |uni.reLaunch|[reLaunch](/api/router?id=relaunch)||
 |uni.switchTab|[switchTab](/api/router?id=switchtab)||
 |uni.navigateBack|[navigateBack](/api/router?id=navigateback)||
-|uni.postMessage|向应用发送消息|字节跳动小程序不支持、H5 暂不支持（可以直接使用 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)）|
-|uni.getEnv|获取当前环境|字节跳动小程序不支持|
+|uni.postMessage|向应用发送消息|H5 暂不支持（可以直接使用 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)）|
+|uni.getEnv|获取当前环境||
 
 ##### uni.postMessage(OBJECT)
 网页向应用发送消息，在 `<web-view>` 的 `message` 事件回调 `event.detail.data` 中接收消息。
@@ -129,9 +128,7 @@
 |属性|类型|说明|
 |:-|:-|:-|
 |plus|Boolean|App|
-|miniprogram|Boolean|微信小程序|
-|smartprogram|Boolean|百度小程序|
-|miniprogram|Boolean|支付宝小程序|
+
 
 **示例**
 

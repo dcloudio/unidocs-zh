@@ -7,8 +7,6 @@
 
 |属性名|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
-|report-submit|Boolean|是否返回 formId 用于发送[模板消息](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/template-message.html)|微信小程序、支付宝小程序|
-|report-submit-timeout|number|等待一段时间（毫秒数）以确认 formId 是否生效。如果未指定这个参数，formId 有很小的概率是无效的（如遇到网络失败的情况）。指定这个参数将可以检测 formId 是否有效，以这个参数的时间作为这项检测的超时时间。如果失败，将返回 requestFormId:fail 开头的 formId|微信小程序2.6.2|
 |@submit|EventHandle|携带 form 中的数据触发 submit 事件，event.detail = {value : {'name': 'value'} , formId: ''}，report-submit 为 true 时才会返回 formId||
 |@reset|EventHandle|表单重置时会触发 reset 事件|&nbsp;|
 
@@ -100,13 +98,13 @@
 
 **使用内置 behaviors**
 
-小程序端在`form`内的自定义组件内有`input`表单控件时，或者用普通标签实现表单控件，例如``评分``等，无法在`form`的`submit`事件内获取组件内表单控件值，此时可以使用`behaviors`。
+无法在`form`的`submit`事件内获取组件内表单控件值，此时可以使用`behaviors`。
 
 对于 form 组件，目前可以自动识别下列内置 behaviors:
 
 uni://form-field
 
-> 目前仅支持 微信小程序、QQ小程序、百度小程序、h5。
+> 目前仅支持h5。
 
 **uni://form-field**
 

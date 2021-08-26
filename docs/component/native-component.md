@@ -1,6 +1,6 @@
 #### 原生组件说明
 
-小程序和App的vue页面，主体是webview渲染的。为了提升性能，小程序和App的vue页面下部分ui元素，比如导航栏、tabbar、video、map使用了原生控件。这种方式被称为混合渲染。
+App的vue页面，主体是webview渲染的。为了提升性能，App的vue页面下部分ui元素，比如导航栏、tabbar、video、map使用了原生控件。这种方式被称为混合渲染。
 
 虽然提升了性能，但原生组件带来了其他问题：
 1. 前端组件无法覆盖原生控件的层级问题
@@ -13,15 +13,11 @@ H5、App的nvue页面，不存在混合渲染的情况，它们或者全部是�
 ``uni-app`` 中原生组件清单如下：
 * [map](/component/map)
 * [video](/component/video)
-* [camera](/component/camera)（仅微信小程序、百度小程序支持）
-* [canvas](/component/canvas)（仅在微信小程序、百度小程序表现为原生组件）
-* [input](/component/input)（仅在微信小程序、支付宝小程序、字节跳动小程序、QQ小程序中且input置焦时表现为原生组件，其中支付宝小程序的input仅为text且置焦时才表现为原生组件）
-* [textarea](/component/textarea)（仅在微信小程序、百度小程序、字节跳动小程序表现为原生组件）
-* [live-player](/component/live-player)（仅微信小程序、百度小程序支持，App端直接使用video组件可同时实现拉流）
-* [live-pusher](/component/live-pusher)（仅微信小程序、百度小程序、app-nvue支持，app-vue使用plus.video.LivePusher可实现推流）
+* [live-player](/component/live-player)（仅App端直接使用video组件可同时实现拉流）
+* [live-pusher](/component/live-pusher)（仅app-nvue支持，app-vue使用plus.video.LivePusher可实现推流）
 * [cover-view](/component/cover-view)
 * [cover-image](/component/cover-view?id=cover-image)
-* [ad](/component/ad) (仅app、微信小程序、百度小程序、字节跳动小程序、QQ小程序支持)
+
 
 
 #### 混合渲染模式下原生组件的使用限制
@@ -30,20 +26,19 @@ H5、App的nvue页面，不存在混合渲染的情况，它们或者全部是�
 
 * 原生组件的层级是**最高**的，所以页面中的其他组件无论设置 z-index 为多少，都无法盖在原生组件上。后插入的原生组件可以覆盖之前的原生组件。
 * 原生组件无法在 scroll-view、swiper、picker-view、movable-view 中使用。
-* 同层渲染支持：微信基础库2.4.4起支持了video的同层渲染、微信基础库2.8.3支持map的同层渲染。支持同层渲染后，相关组件的时候不再有层级问题，无需再使用cover-view覆盖，也可以内嵌入swiper等组件。app-nvue 不涉及层级问题，自然所有组件都是同层渲染。
-* 需要注意的是，微信原生组件的「同层渲染」能力可能会在特定情况下失效，一方面你需要在开发时稍加注意，另一方面同层渲染失败会触发 ``bindrendererror`` 事件，可在必要时根据该回调做好 UI 的回退。
+* app-nvue 不涉及层级问题，自然所有组件都是同层渲染。
+
 
 可在组件中监听同层失败回调 bindrendererror 来判断
 * 部分CSS样式无法应用于原生组件，例如：
     * 无法对原生组件设置 CSS 动画；
     * 无法定义原生组件为 position: fixed；
     * 不能在父级节点使用 overflow: hidden 来裁剪原生组件的显示区域。
-* 在小程序端真机上，原生组件会遮挡 vConsole 弹出的调试面板。
 
 #### 其他原生界面元素
 除了原生组件外，uni-app在非H5端还有其他原生界面元素，清单如下：
 * 原生navigationBar和tabbar（pages.json里配置的）。
-* web-view组件虽然不是原生的，但这个组件相当于一个原生webview覆盖在页面上，并且小程序上web-view组件是强制全屏的，无法在上面覆盖前端元素
+* web-view组件虽然不是原生的，但这个组件相当于一个原生webview覆盖在页面上
 * 弹出框：picker、showModal、showToast、showLoading、showActionSheet、previewImage、chooseImage、chooseVideo等弹出元素也无法被前端组件覆盖
 * plus下的plus.nativeObj.view、plus.video.LivePusher、plus.nativeUI、plus.webview，层级均高于前端元素
 
@@ -59,9 +54,8 @@ H5、App的nvue页面，不存在混合渲染的情况，它们或者全部是�
 
 `cover-view`只能覆盖原生组件，不能覆盖其他原生界面元素。比如cover-view可以覆盖video、map，但无法覆盖原生导航栏、tabbar、web-view。
 
-微信小程序在基础库 2.4.0 起已支持 video 组件的同层渲染，2.7.0 起支持 map 组件的同层渲染。可以被前端元素通过调节zindex来遮挡，也支持在scroll-view等组件中内嵌这2个原生组件。但video全屏时，仍需要cover-view覆盖。
 
-app-vue的`cover-view`相比小程序端还有一些限制，1) 无法嵌套、 2) 无法内部滚动，即cover-view无法内部出现滚动条、 3) 无法覆盖到视频的全屏界面。
+app-vue的`cover-view`还有一些限制，1) 无法嵌套、 2) 无法内部滚动，即cover-view无法内部出现滚动条、 3) 无法覆盖到视频的全屏界面。
 app-nvue的`cover-view`无这些限制。
 
 另外cover-view无论如何都无法解决原生导航栏、tabbar、web-view组件的覆盖，为此App端补充了2个层级覆盖方案plus.nativeObj.view和subNVue
@@ -106,8 +100,6 @@ nvue页面全部都是原生组件，互相之间没有层级问题。
 在Android手机上，调整系统主题字体，所有原生渲染的控件的字体都会变化，而webview渲染的字体则不一定会变化，有的rom的系统webview会跟随变，有的不会变。
 
 对于webview字体不会跟随rom变的情况，如果原生渲染和webview渲染出现在同一页面，就会发现字体不一致。
-
-部分小程序通过修改了自带的webview内核，实现了webview也可以使用rom主题字体，比如微信、qq、支付宝。
 
 app-nvue因为是原生渲染，没有字体不一致的问题。而app-vue下，在某些rom下，webview字体与系统字体不一致。
 

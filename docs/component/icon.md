@@ -4,9 +4,9 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快应用|360小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√(2.2.3+)|√|√|√|√|√|√|√|√|
+|App|H5|
+|:-:|:-:|
+|√|√(2.2.3+)|
 
 **Tips**
 
@@ -24,9 +24,7 @@
 
 |平台|type 有效值|
 |:-:|:-:|
-|App、H5、微信小程序、QQ小程序|success, success_no_circle, info, warn, waiting, cancel, download, search, clear|
-|支付宝小程序|info, warn, waiting, cancel, download, search, clear, success, success_no_circle,loading|
-|百度小程序|success, info, warn, waiting, success_no_circle, clear, search, personal, setting, top, close, cancel, download, checkboxSelected, radioSelected, radioUnselect|
+|App、H5|success, success_no_circle, info, warn, waiting, cancel, download, search, clear|
 
 
 **示例**

@@ -6,9 +6,9 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快应用|360小程序|
-|:-:		|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x(见下)|x	|√	|x	|√	|√(基础库版本>=1.52.0)	|√	|x |x |
+|App|H5|
+|:-:		|:-:|
+|x(见下)|x	|
 
 - App的实时音视频播放，不是使用 live-player，而是直接使用 video 组件。
 - H5 下可用 video 播放符合 HTML5 规范的流媒体，rtmp 等非 HTML5 标准的流媒体格式，仅在部分支持 flash 的国内手机浏览器上可播放。在 pc 浏览器上，需要安装 flash 插件才能播放 rtmp 等格式。
@@ -19,8 +19,7 @@
 |属性名|类型|默认值|说明|平台差异说明|
 |:-:|:-:|:-:|:-:|:-:|
 |id|String||live-player 属性的唯一标志符||
-|src|String||音视频地址。百度小程序支持 m3u8 格式；微信小程序支持 flv, rtmp 格式||
-|mode|String|live|live（直播），RTC（实时通话，该模式时延更低）|微信小程序|
+|src|String||音视频地址。||
 |autoplay|Boolean|false|自动播放||
 |muted|Boolean|false|是否静音||
 |orientation|String|vertical|画面方向，可选值有 vertical，horizontal||
@@ -28,21 +27,11 @@
 |background-mute|Boolean|false|进入后台时是否静音||
 |min-cache|Number|1|最小缓冲区，单位s||
 |max-cache|Number|3|最大缓冲区，单位s||
-|picture-in-picture-mode|string/Array|3|设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]）|微信小程序（2.10.3）|
 |@statechange|EventHandle||播放状态变化事件，detail = {code}||
 |@netstatus|EventHandle||网络状态通知，detail = {info}|| 
 |@fullscreenchange|EventHandle||全屏变化事件，detail = {direction, fullScreen}。|&nbsp;|
-|@audiovolumenotify|EventHandle||播放音量大小通知，detail = {}|微信小程序（2.10.0）|
-|@enterpictureinpicture|EventHandle||播放器进入小窗|微信小程序（2.11.0）|
 |@leavepictureinpicture|EventHandle||播放器退出小窗|2.11.0|
 
-
-mode 的合法值
-
-|值|说明|
-|:-|:-|
-|live|直播|
-|RTC|实时通话，该模式时延更低|
 
 
 orientation 的合法值
@@ -61,23 +50,11 @@ object-fit 的合法值
 |fillCrop|图像铺满屏幕，超出显示区域的部分将被截掉|
 
 
-sound-mode 的合法值
-
-|值|说明|
-|:-|:-|
-|speaker|扬声器|
-|ear|听筒|
-
-
 **Tips**
 
-* 百度小程序 iOS 端不支持设置 orientation 属性；
-* 微信小程序已废弃 background-mute 属性，默认为进入后台静音；
 * live-player 默认宽度 300px、高度 225px；
 * live-player 是原生组件，层级高于前端组件，请勿在 scroll-view、swiper、picker-view、movable-view 中使用
-* 小程序下覆盖live-player需要使用cover-view。[详见](/component/native-component)
 * live-player 组件相关 JS API：[createLivePlayerContext](/api/media/live-player-context)
-* 小程序平台使用live-player有审核限制，请注意参考各家文档。
 * App端使用直播，推荐nvue页面下用video组件，可避免复杂的层级问题和全屏覆盖问题。
 
 

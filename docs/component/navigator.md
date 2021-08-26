@@ -16,10 +16,9 @@
 |animation-type|String|pop-in/out|当 open-type 为 navigate、navigateBack 时有效，窗口的显示/关闭动画效果，详见：[窗口动画](api/router?id=animation)|App|
 |animation-duration|Number|300|当 open-type 为 navigate、navigateBack 时有效，窗口显示/关闭动画的持续时间。|App|
 |hover-class|String|navigator-hover|指定点击时的样式类，当hover-class="none"时，没有点击态效果||
-|hover-stop-propagation|Boolean|false|指定是否阻止本节点的祖先节点出现点击态|微信小程序|
 |hover-start-time|Number|50|按住后多久出现点击态，单位毫秒||
 |hover-stay-time|Number|600|手指松开后点击态保留时间，单位毫秒|&nbsp;|
-|target|String|self|在哪个小程序目标上发生跳转，默认当前小程序，值域self/miniProgram|微信2.0.7+、百度2.5.2+、QQ|
+
 
 **open-type 有效值**
 
@@ -28,9 +27,8 @@
 |navigate|对应 uni.navigateTo 的功能||
 |redirect|对应 uni.redirectTo 的功能||
 |switchTab|对应 uni.switchTab 的功能||
-|reLaunch|对应 uni.reLaunch 的功能|字节跳动小程序不支持|
+|reLaunch|对应 uni.reLaunch 的功能||
 |navigateBack|对应 uni.navigateBack 的功能||
-|exit|退出小程序，target="miniProgram"时生效|微信2.1.0+、百度2.5.2+、QQ1.4.7+|
 
 
 **注意**

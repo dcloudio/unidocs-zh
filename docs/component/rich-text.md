@@ -6,14 +6,12 @@
 |属性名|类型|默认值|说明|平台兼容|
 |:-|:-|:-|:-|:-|
 |nodes|Array / String|[]|节点列表 / HTML String||
-|space|string||显示连续空格|微信基础库2.4.1+[详见](https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html)、QQ小程序、快手小程序[详见](https://mp.kuaishou.com/docs/develop/components/basicComponents/richText.html)|
-|selectable|Boolean|false|富文本是否可以长按选中，可用于复制，粘贴等场景|百度小程序（真机）|
+
 
 **注意**
 
 - app-nvue 平台 nodes 属性只支持使用 Array 类型
 
-- 支付宝小程序 nodes 属性只支持使用 Array 类型。
 
 如果需要支持 HTML String，则需要自己将 HTML String转化为 nodes 数组，可使用 [html-parser](https://github.com/dcloudio/hello-uniapp/blob/master/common/html-parser.js) 转换。
 

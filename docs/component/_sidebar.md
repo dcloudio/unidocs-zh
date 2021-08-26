@@ -31,7 +31,6 @@
   * [navigator](component/navigator.md)
 * 媒体组件
   * [audio](component/audio.md)
-  * [camera](component/camera.md)
   * [image](component/image.md)
   * [video](component/video.md)
   * [live-player](component/live-player.md)
@@ -42,18 +41,10 @@
   * [canvas](component/canvas.md)
 * webview
   * [web-view](component/web-view.md)
-* 广告
-  * [ad](component/ad.md)
-  * [ad-draw](component/ad-draw.md)
-  * [ad-content-page](component/ad-content-page.md)
-  * [Grid 广告](component/ad-grid.md)
 * 页面属性配置节点
   * [page-meta](component/page-meta.md)
   * [navigation-bar](component/navigation-bar.md)
   * [custom-tab-bar](component/custom-tab-bar.md)
-* 小程序开放能力组件
-  * [official-account](component/official-account.md)
-  * [open-data](component/open-data.md)
 * App nvue专用组件
   * [barcode](component/barcode.md)
   * [list](component/list.md)
@@ -108,7 +99,7 @@
   * [更多插件市场的组件](https://ext.dcloud.net.cn/?cat1=2)
 * [datacom组件规范](component/datacom)
 * [App原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)
-* [小程序插件](component/mp-weixin-plugin.md)
+
 <li></li>
 <div class="contact-box">
   <a href="//unicloud.dcloud.net.cn" target="_blank" class="contact-item">

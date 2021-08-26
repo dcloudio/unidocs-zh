@@ -147,7 +147,7 @@ uni-app为开发者提供了一系列基础组件，类似HTML里的基础标签
 开发者可以通过组合这些基础组件进行快速开发。在需要复用的情况下可封装成扩展组件。
 
 
-`uni-app` 基础组件规范，与小程序规范相近。如果了解小程序开发的话，uni-app的基础组件会感觉很熟悉。但需要注意组件上的事件绑定，需要以 vue 的事件绑定语法来绑定，如 bindchange="eventName" 事件，需要写成 `@change="eventName"`
+`uni-app` 基础组件规范，需要注意组件上的事件绑定，需要以 vue 的事件绑定语法来绑定，如 bindchange="eventName" 事件，需要写成 `@change="eventName"`
 
 ```html
 	<picker mode="date" :value="date" start="2015-09-01" end="2020-09-01" @change="bindDateChange">

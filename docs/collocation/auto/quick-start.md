@@ -15,9 +15,9 @@ uni-app提供了一批API，这些API可以操控uni-app应用，包括运行、
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快应用|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(ios仅支持模拟器)|√|√|x|x|x|x|x|x|
+|App|H5|
+|:-:|:-:|
+|√(ios仅支持模拟器)|√|
 
 
 目前仅 [cli](https://uniapp.dcloud.net.cn/quickstart?id=_2-通过vue-cli命令行) 工程支持。有利于持续集成。
@@ -25,7 +25,6 @@ uni-app提供了一批API，这些API可以操控uni-app应用，包括运行、
 [HBuilderX uniapp自动化测试插件](https://ext.dcloud.net.cn/plugin?id=5708), 支持在HBuilderX内对uniapp普通项目、cli项目进行自动化测试。此插件简化了测试环境安装、测试用例创建、测试运行、测试设备选择等步骤。
 推荐使用方式：研发提交源码到版本库后，持续集成系统自动拉取源码，自动运行自动化测试。
 
-暂不支持百度，先忽略百度相关测试代码
 
 创建 `cli` 工程
 ```
@@ -50,9 +49,7 @@ npm install @dcloudio/uni-automator --save-dev
 ```
 "test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
 "test:android": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=android jest -i",
-"test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
-"test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
-"test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i"
+"test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i"
 ```
 
 #### H5平台测试流程
@@ -124,26 +121,6 @@ npm install node-simctl --save-dev
 5. 运行测试
 ```
 npm run test:ios
-```
-
-
-
-#### 微信小程序测试流程
-
-1. 创建cli项目，同H5平台 (必须配置微信小程序 appid, manifest.json -> mp-weixin -> appid)
-
-2. 运行测试(如果微信开发者工具无法成功打开项目，请手动打开)
-```
-npm run test:mp-weixin
-```
-
-3. 测试结果
-```
-> cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch "--auto-port" "9520"
-Test Suites: 1 passed, 1 total
-Tests:       4 passed, 4 total
-Snapshots:   0 total
-Time:        14.995s, estimated 16s
 ```
 
 
@@ -291,25 +268,6 @@ module.exports = {
         id: "",
         executablePath: "HBuilderX/plugins/launcher/base/Pandora_simulator.app" // ipa 目录
       }
-    },
-    "mp-weixin": {
-      port: 9420, // 默认 9420
-      account: "", // 测试账号
-      args: "", // 指定开发者工具参数
-      cwd: "", // 指定开发者工具工作目录
-      launch: true, // 是否主动拉起开发者工具
-      teardown: "disconnect", // 可选值 "disconnect"|"close" 运行测试结束后，断开开发者工具或关闭开发者工具
-      remote: false, // 是否真机自动化测试
-      executablePath: "", // 开发者工具cli路径，默认会自动查找,  windows: C:/Program Files (x86)/Tencent/微信web开发者工具/cli.bat", mac: /Applications/wechatwebdevtools.app/Contents/MacOS/cli
-    },
-    "mp-baidu": {
-      port: 9430, // 默认 9430
-      args: "", // 指定开发者工具参数
-      cwd: "", // 指定开发者工具工作目录
-      launch: true, // 是否主动拉起开发者工具
-      teardown: "disconnect", // 可选值 "disconnect"|"close" 运行测试结束后，断开开发者工具或关闭开发者工具
-      remote: false, // 是否真机自动化测试
-      executablePath: "", // 开发者工具cli路径，默认会自动查找
     }
   },
   testTimeout: 15000,
@@ -330,31 +288,11 @@ module.exports = {
 **注意事项**
 
 1. 如果页面涉及到分包加载问题，`reLaunch` 获取的页面路径可能会出现问题 ，解决方案如下 ：
-```javascript
-// 重新 reLaunch至首页，并获取 page 对象（其中 program 是 uni-automator 自动注入的全局对象）
-page = await program.reLaunch('/pages/extUI/calendar/calendar')
-// 微信小程序如果是分包页面，需要延迟大概 7s 以上，保证可以正确获取page对象
-await page.waitFor(7000)
-page = await program.currentPage()
-```
 
-2. 微信小程序 element 不能跨组件选择元素，首先要先获取当前组件，再继续查找
+    ```javascript
+    // 重新 reLaunch至首页，并获取 page 对象（其中 program 是 uni-automator 自动注入的全局对象）
+    page = await program.reLaunch('/pages/extUI/calendar/calendar')
+    page = await program.currentPage()
+    ```
 
-```html
-<uni-tag>
-  <view class="test"></view>
-</uni-tag>
-```
-
-```javascript
-// 错误，取不到元素
-await page.$('.test')
-
-// 可以取到元素
-let tag = await page.$('uni-tag')
-await tag.$('.test')
-```
-
-3. 微信小程序暂不支持父子选择器
-4. 百度小程序选择元素必须有事件的元素才能被选中，否则提示元素不存在
-5. 分包中的页面，打开之后要延迟时间长一点，否则不能正确获取到页面信息
+2. 分包中的页面，打开之后要延迟时间长一点，否则不能正确获取到页面信息

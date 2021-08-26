@@ -1,10 +1,7 @@
 #### uni-app选型评估23问
 
 如果你关心竞品对比，这里有几份详尽对比：
-1. 多端开发框架对比横评，参考：[https://juejin.im/post/5e8e8d5a6fb9a03c6d3d9f42](https://juejin.im/post/5e8e8d5a6fb9a03c6d3d9f42)
 2. 只做App，flutter、react native等App跨平台框架对比，参考：[https://ask.dcloud.net.cn/article/36083](https://ask.dcloud.net.cn/article/36083)
-3. 只做小程序，原生wxml开发、wepy、mpvue、taro的对比，[https://ask.dcloud.net.cn/article/35867](https://ask.dcloud.net.cn/article/35867)
-4. uni-app和微信原生开发的详细比较评测，参考：[https://ask.dcloud.net.cn/article/36484](https://ask.dcloud.net.cn/article/36484)
 
 
 **uni-app 有哪些已上线的成功案例？**
@@ -23,49 +20,30 @@ DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供�
 
 应用开发中，90%的常规开发，比如界面组件、联网等api，```uni-app```封装为可跨多端的API。
 
-而各个端的特色功能，```uni-app```引入[条件编译](http://uniapp.dcloud.io/platform)。可以优雅的在一个项目里调用不同平台的特色能力。比如push，微信小程序里不支持，但可以在App里使用，还有很多原生sdk，在App时难免涉及，这些都可以正常的在```uni-app```框架下使用。
+而各个端的特色功能，```uni-app```引入[条件编译](http://uniapp.dcloud.io/platform)。可以优雅的在一个项目里调用不同平台的特色能力。比如push，H5里不支持，但可以在App里使用，还有很多原生sdk，在App时难免涉及，这些都可以正常的在```uni-app```框架下使用。
 
-下图是```uni-app```产品功能框架图，```uni-app```在保持uni规范跨平台的前提下，还可实现每个平台特有的平台能力(如微信小程序平台，可继续调用微信卡劵等微信特有业务API)。
+下图是```uni-app```产品功能框架图，```uni-app```在保持uni规范跨平台的前提下，还可实现每个平台特有的平台能力。
 
 ![](//img.cdn.aliyun.dcloud.net.cn/uni-app/doc/uni-app-frame-0310.png)
 
-在做小程序时，小程序所有的api都可以使用；而输出到App时，原生渲染引擎、原生sdk集成和混写都支持，使得原生的所有api都可以使用。
+在做H5时，H5所有的api都可以使用；而输出到App时，原生渲染引擎、原生sdk集成和混写都支持，使得原生的所有api都可以使用。
 
 同时注意，条件编译不同于代码里if逻辑判断。条件编译块里的代码或指定的文件，只有在特定平台才会被编译进去，不会把不能用的其他平台代码混在一个包里。如果大量使用if判断，会增大体积和影响性能，而条件编译则没有这些问题，减少包体积，减少互相的干扰。
 
 **uni-app的手机端用户体验如何？**
 
-使用```uni-app```开发的微信小程序，因为智能的处理的数据的diff，比大多人手写的原生小程序的性能还好。详细数据评测参考：[https://juejin.im/post/5ca1736af265da30ae314248](https://juejin.im/post/5ca1736af265da30ae314248)
-
 ```uni-app```打包成App后，支持webview渲染和weex原生渲染这2种引擎，可以任由开发者切换使用。
 
-- webview渲染方式，架构和微信小程序一样。微信小程序的Hybrid应用框架是业内体验上的标杆，实践证明这种体验足以承载一线互联网开发商获得上亿用户。uni-app的App端体验同微信小程序，超过其他平台的小程序，超过一般的hybrid框架。
+- webview渲染方式，架构和微信小程序一样。微信小程序的Hybrid应用框架是业内体验上的标杆，实践证明这种体验足以承载一线互联网开发商获得上亿用户。uni-app的App端体验超过一般的hybrid框架。
 - 原生渲染方式，是DCloud改造了weex引擎，在原生渲染引擎上实现了uni-app的组件和API。达到更优秀的用户体验。
 
-由于有丰富的插件市场，以及支持所有小程序SDK在App端的使用，使得```uni-app```拥有更庞大的应用生态。
-
-**只开发小程序，需要uni-app吗？**
-
-是的，单独开发小程序，也应该使用uni-app。它比其他小程序框架或原生小程序开发更有优势。原因如下：
-1. uni-app无需追随微信升级，可不受限在条件编译里使用wx的现在或未来的所有api
-2. uni-app的性能比一般人手写的微信原生代码性能更高。就像vue操作比一般人写js操作dom性能更高一样。底层自动diff差量更新数据，比手动setData性能更高。评测数据见下文
-3. uni-app是纯vue语法，不必另学一种dsl。开发不同项目时，思维不用切换
-4. uni-app的组件、模板非常丰富，插件市场数千款插件。如富文本解析、图表、自定义下拉刷新等组件，uni-app版插件性能均超过了wxparse、wx-echart等微信小程序组件
-5. HBuilderX比微信工具更强大，开发效率更高。哪怕使用vscode等工具，由于这些工具对vue的支持强于对wxml的支持，所以开发效果也会更高
-6. 微信原生开发对webpack、预编译语言、工程流程管理很多功能都不支持，大公司很少用微信原生开发，都是在用框架来提升开发效率
-7. uni-app支持双向数据绑定、vuex状态管理，比小程序原生开发方便的多
-8. 迟早会有多端需求，使用`uni-app`再无后续顾虑
-9. uni-app并非仅用于做跨端的，只用uni-app做小程序、只做H5、只做App的，案例是一样多的，详见：[https://uniapp.dcloud.io/case](https://uniapp.dcloud.io/case)
-关于uni-app和微信开发的详细比较评测，参考：[https://ask.dcloud.net.cn/article/36484](https://ask.dcloud.net.cn/article/36484)
-
-- 评测1、uni-app和原生wxml开发、wepy、mpvue、taro的对比，[https://ask.dcloud.net.cn/article/35867](https://ask.dcloud.net.cn/article/35867)
-- 评测2、uni-app和微信原生开发的详细比较评测，参考：[https://ask.dcloud.net.cn/article/36484](https://ask.dcloud.net.cn/article/36484)
+由于有丰富的插件市场，使得```uni-app```拥有更庞大的应用生态。
 
 **只开发App，需要uni-app吗？**
 
 ```uni-app```是更好的跨平台开发框架，开发一次iOS、Android都有了。体验好、开发效率高。
 
-<!-- ```uni-app```在App侧可以使用小程序引擎或weex引擎渲染，性能体验高于其他Hybrid框架。 -->
+<!-- ```uni-app```在App侧可以使用weex引擎渲染，性能体验高于其他Hybrid框架。 -->
 
 ```uni-app```在App端，基于能力层/渲染层分离的架构设计（见下图），渲染层是webview和weex二选一，能力调用都是共同的plus api，比如蓝牙、扫码等能力；也就是weex被内置到```uni-app```中，并且被强化了。
 
@@ -74,8 +52,6 @@ DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供�
 过去weex有个很大的问题是api太少，开发时必须iOS、Android原生和前端3拨团队协作开发，实际上react native也如此，因为他们的核心只是高性能渲染器。
 
 uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟多样的插件生态，大多数App的开发不再需要原生介入了，从而把跨平台开发省成本这个核心目的落地了。
-
-```uni-app```在App侧可以使用丰富的小程序sdk，如网易云信、环信、七牛等众多sdk厂商均原厂维护其小程序sdk版本，而这些sdk均可直接用于uni-app并发布为iOS、Android的App。
 
 ```uni-app```的插件市场里有非常多的ui库、组件、模板，可以大幅提升开发效率。
 
@@ -96,8 +72,6 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 ```uni-app```简单来说是 vue的语法 + 小程序的api。
 
 它遵循```Vue.js```语法规范，组件和API遵循```微信小程序命名```，这些都属于通用技术栈，学习它们是前端必备技能，```uni-app```没有太多额外学习成本。
-
-有一定 Vue.js 和微信小程序开发经验的开发者可快速上手 ```uni-app``` 。
 
 没学过vue的同学，也不用掌握vue的全部，只需了解vue基础语法、虚拟dom、数据绑定、组件、vuex，其他如路由、loader 不用学，cli、node.js、webpack也不需要学。
 
@@ -120,8 +94,6 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 ```uni-app``` 提供了开放性的生态：
 
 - 丰富的插件市场为开发者提供数千款现成的轮子，[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
-- 兼容微信小程序 JS SDK，丰富的小程序生态内容可直接引入uni-app，并且在App侧通用，[参考](http://ask.dcloud.net.cn/article/35070)
-- 兼容微信小程序自定义组件，并且App、H5侧通用，[参考](http://uniapp.dcloud.io/frame?id=小程序组件支持)
 - App和H5提供了renderjs，使得浏览器专用的库也可以在App和H5里使用，[参考](https://uniapp.dcloud.io/frame?id=renderjs)
 - 支持 NPM 包管理系统，[参考](http://uniapp.dcloud.io/frame?id=npm%E6%94%AF%E6%8C%81)
 - 支持 mpvue 项目及组件，[参考](http://ask.dcloud.net.cn/article/34945)
@@ -179,7 +151,6 @@ DCloud是一家遵纪守法的公司，不会做损害自己名誉的事情。�
 ```uni-app``` 是DCloud全力打造的重点产品，不是非专业公司的KPI项目。不会因为某些负责人的流动导致框架烂尾。
 ```uni-app``` 的github上的dev分支是频繁更新的，可随时修复bug。并且作为开源产品，开发者也可以修改源码。
 ```uni-app``` 的app引擎，支持原生扩展，只要你会原生扩展，就不怕app引擎有限制，大不了自己补一个原生插件进去。
-```uni-app``` 开发小程序，无需依赖微信等平台升级。它们升级后，uni-app是可以直接使用的，不需要等待uni-app升级才能使用微信的新功能。
 
 开发者碰到问题，可以通过如下途径进行反馈交流：
 - ask社区：[https://ask.dcloud.net.cn/explore/category-12](https://ask.dcloud.net.cn/explore/category-12)

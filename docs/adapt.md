@@ -141,7 +141,7 @@ leftWindow除了适用于手机应用适配大屏，也适用于重新开发的P
 
 DCloud官方基于uni-app的pc版，推出了unicloud Admin：[https://uniapp.dcloud.net.cn/uniCloud/admin](https://uniapp.dcloud.net.cn/uniCloud/admin)
 
-目前的leftWindow、rightWindow、topWindow 只支持web端。计划后续在Pad App上实现该配置。小程序无法支持该配置。
+目前的leftWindow、rightWindow、topWindow 只支持web端。计划后续在Pad App上实现该配置。
 
 
 #### 2. 组件级适配方案：match-media组件

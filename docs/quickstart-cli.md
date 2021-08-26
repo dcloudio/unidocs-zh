@@ -62,34 +62,8 @@ npm run build:%PLATFORM%
 |---|---|
 |app-plus|app平台生成打包资源（支持npm run build:app-plus，可用于持续集成。不支持run，运行调试仍需在HBuilderX中操作）|
 |h5|H5|
-|mp-alipay|支付宝小程序|
-|mp-baidu|百度小程序|
-|mp-weixin|微信小程序|
-|mp-toutiao|字节跳动小程序|
-|mp-qq|qq 小程序|
-|mp-360|360 小程序|
-|mp-kuaishou|快手小程序|
-|quickapp-webview|快应用(webview)|
-|quickapp-webview-union|快应用联盟|
-|quickapp-webview-huawei|快应用华为|
 
-可以自定义更多条件编译平台，比如钉钉小程序，参考[package.json文档](https://uniapp.dcloud.io/collocation/package)。
-
-## 运行并发布快应用@quickapp
-快应用有两种开发方式，uni-app均支持：
-- 类小程序webview渲染方式：[https://ask.dcloud.net.cn/article/37182](https://ask.dcloud.net.cn/article/37182)
-- 原生渲染方式：[https://ask.dcloud.net.cn/article/37145](https://ask.dcloud.net.cn/article/37145)
-
-
-#### 运行并发布快应用(webview)@quickapp-webview
-HBuilderX 2.7.12+ 版支持
-
-
-#### 运行并发布快应用(webview)-华为@quickapp-webview-huawei
-HBuilderX 2.7.10+ 版支持
-
-华为快应用文档-小程序转快应用 [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure)
-
+可以自定义更多条件编译平台，参考[package.json文档](https://uniapp.dcloud.io/collocation/package)。
 
 **其他：**
 
@@ -114,7 +88,7 @@ HBuilderX 2.7.10+ 版支持
 * ``cli``创建的项目，内置了d.ts，同其他常规npm库一样，可在[vscode](https://ask.dcloud.net.cn/article/36286)、[webstorm](https://ask.dcloud.net.cn/article/36307)等支持d.ts的开发工具里正常开发并有语法提示。
 * 使用HBuilderX创建的项目不带d.ts，HBuilderX内置了uni-app语法提示库。如需把HBuilderX创建的项目在其他编辑器打开并且补充d.ts，可以在项目下先执行 ``npm init``，然后``npm i @types/uni-app -D``，来补充d.ts。
 * 但vscode等其他开发工具，在vue或uni-app领域，开发效率比不过HBuilderX。详见：[https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
-* 发布App时，仍然需要使用HBuilderX。其他开发工具无法发布App，但可以发布H5、各种小程序。如需开发App，可以先在HBuilderX里运行起来，然后在其他编辑器里修改保存代码，代码修改后会自动同步到手机基座。
+* 发布App时，仍然需要使用HBuilderX。其他开发工具无法发布App，但可以发布H5。如需开发App，可以先在HBuilderX里运行起来，然后在其他编辑器里修改保存代码，代码修改后会自动同步到手机基座。
 * 如果使用``cli``创建项目，那下载HBuilderX时只需下载10M的标准版即可。因为编译器已经安装到项目下了。
 * 对 `cli` 使用有疑问，欢迎扫码加入 uni-app 微信交流群讨论：
     <br/><img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/wx-barcode.png" width="250"/>

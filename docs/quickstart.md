@@ -46,64 +46,6 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
 	如手机无法识别，请点击菜单运行-运行到手机或模拟器-真机运行常见故障排查指南。
 	注意目前开发App也需要安装微信开发者工具。
 	
-3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。
-    <br/>
-    <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/afd79970-4f37-11eb-b680-7980c8a877b8.png"/>
-    </div>
-    
-    **注意：**如果是第一次使用，需要先配置小程序ide的相关路径，才能运行成功。如下图，需在输入框输入微信开发者工具的安装路径。 若HBuilderX不能正常启动微信开发者工具，需要开发者手动启动，然后将uni-app生成小程序工程的路径拷贝到微信开发者工具里面，在HBuilderX里面开发，在微信开发者工具里面就可看到实时的效果。
-    
-    uni-app默认把项目编译到根目录的unpackage目录。
-    <br/>
-    <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bde30720-4f37-11eb-8ff1-d5dcf8779628.png"/>
-    </div>
-		
-4. 在支付宝小程序开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 支付宝小程序开发者工具，即可在支付宝小程序开发者工具里面体验uni-app。
-    <br/>
-    <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b1d08340-4f37-11eb-a16f-5b3e54966275.png"/>
-    </div>
-
-5. 在百度开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 百度开发者工具，即可在百度开发者工具里面体验uni-app。
-    <br/>
-    <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b0a17920-4f37-11eb-8a36-ebb87efcf8c0.png"/>
-    </div>
- 
-6. 在字节跳动开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 字节跳动开发者工具，即可在字节跳动开发者工具里面体验uni-app。
-    <br/>
-    <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b29e0c70-4f37-11eb-b997-9918a5dda011.png"/>
-    </div>
-
-7. 在360开发工具中导入：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 360开发工具，即可在360开发工具里面体验uni-app。
-    <br/>
-    <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b9edff30-4f37-11eb-97b7-0dc4655d6e68.png"/>
-    </div>
-
-8. 在快应用联盟工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 快应用联盟工具，即可在快应用联盟工具里面体验uni-app。
-    <br/>
-    <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bba35050-4f37-11eb-8ff1-d5dcf8779628.png"/>
-    </div>
-
-9. 在华为开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 华为开发者工具，即可在华为开发者工具里面体验uni-app。
-    <br/>
-    <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bece2a70-4f37-11eb-8ff1-d5dcf8779628.png"/>
-    </div>
-
-10. 在QQ小程序开发工具里运行：内容同上，不再重复。
-
-**Tips**
-
-* 如果是第一次使用，需要配置开发工具的相关路径。点击工具栏的运行 -> 运行到小程序模拟器 -> 运行设置，配置相应小程序开发者工具的路径。
-* 支付宝/百度/字节跳动/360小程序工具，不支持直接指定项目启动并运行。因此开发工具启动后，请将 HBuilderX 控制台中提示的项目路径，在相应小程序开发者工具中打开。
-* 如果自动启动小程序开发工具失败，请手动启动小程序开发工具并将 HBuilderX 控制台提示的项目路径，打开项目。
-
 运行的快捷键是`Ctrl+r`。
 HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行的设备：
 <div align=center>
@@ -151,75 +93,6 @@ HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行�
 **注意**
 - `history` 模式发行需要后台配置支持，详见：[history 模式的后端配置](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
 - 打包部署后，在服务器上开启 gzip 可以进一步压缩文件。具体的配置，可以参考网上的分享：https://juejin.im/post/5af003286fb9a07aac24611b
-
-### 发布为小程序
-
-**发布为微信小程序：**
-1. 申请微信小程序AppID，参考：[微信教程](https://developers.weixin.qq.com/miniprogram/dev/#申请帐号)。
-2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-微信"，输入小程序名称和appid点击发行即可在 ``unpackage/dist/build/mp-weixin`` 生成微信小程序项目代码。
-<div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b36294f0-4f37-11eb-8a36-ebb87efcf8c0.png"/>
-</div>
-3. 在微信小程序开发者工具中，导入生成的微信小程序项目，测试项目代码运行正常后，点击“上传”按钮，之后按照 “提交审核” => “发布” 小程序标准流程，逐步操作即可，详细查看：[微信官方教程](https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/release.html)。
-
-**发布为百度小程序：**
-1. 入驻小程序并申请百度小程序AppID，参考：[百度小程序教程](https://smartprogram.baidu.com/docs/introduction/enter_application/)。
-2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-百度"，输入小程序名称和appid点击发行即可在 ``/unpackage/dist/build/mp-baidu`` 生成百度小程序项目代码。
-<div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b42a03a0-4f37-11eb-8a36-ebb87efcf8c0.png"/>
-</div>
-3. 在百度小程序开发者工具中，导入生成的百度小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，之后在百度小程序的 [管理中心](https://smartprogram.baidu.com/developer/applist.html) 选择创建的应用点击前往发布，选择对应的版本然后提交审核。
-
-
-**发布为支付宝小程序：**
-1. 入驻支付宝小程序，参考：[支付宝小程序教程](https://docs.alipay.com/mini/introduce)。
-2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-支付宝"，即可在 ``/unpackage/dist/build/mp-alipay`` 生成支付宝小程序项目代码。
-<div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b636c390-4f37-11eb-bd01-97bc1429a9ff.png"/>
-</div>
-3. 在支付宝小程序开发者工具中，导入生成的支付宝小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，在 [支付宝小程序后台](https://open.alipay.com/platform/mini.htm#/app)，选择刚提交的版本点击提交审核，详见：[支付宝小程序文档](https://docs.alipay.com/mini/developer/publish)。
-
-
-**发布为字节跳动小程序：**
-1. 入驻字节跳动小程序，参考：[字节跳动小程序教程](https://developer.toutiao.com/dev/cn/mini-app/introduction/plug-in/registration)。
-2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-字节跳动"，即可在 ``/unpackage/dist/build/mp-alipay`` 生成字节跳动小程序项目代码。
-<div align=center>
-  <img style="max-width:300px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a6ba4ed0-4f39-11eb-b997-9918a5dda011.jpg"/>
-</div>
-3. 在字节跳动小程序开发者工具中，导入生成的字节跳动小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，在 [字节跳动小程序后台](https://developer.toutiao.com/app/applist)，选择刚提交的版本点击提交审核，详见：[字节跳动小程序文档](https://developer.toutiao.com/dev/cn/mini-app/introduction/plug-in/verification)。
-
-**发布为360小程序：**
-1. 入驻360小程序，参考：[360小程序教程](https://mp.360.cn/doc/miniprogram/dev/#/)。
-2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-360"，即可在 ``/unpackage/dist/build/mp-360`` 生成360小程序项目代码。
-<div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/baba28d0-4f37-11eb-bdc1-8bd33eb6adaa.png"/>
-</div>
-3. 在360浏览器中，导入生成的360小程序项目
-
-**注意**
-- 目前仅windows平台支持。360浏览器自身不支持mac平台。
-
-
-**发布为快应用(webview)：**
-1. 入驻快应用(webview)，参考：[快应用(webview)教程](https://www.quickapp.cn/)。
-2. 在HBuilderX中顶部菜单依次点击 "发行" => "快应用联盟"，即可在 ``/unpackage/dist/build/quickapp-webview`` 生成快应用(webview)项目代码。
-<div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bd0db5c0-4f37-11eb-8ff1-d5dcf8779628.png"/>
-</div>
-3. 在快应用联盟工具中，导入生成的快应用联盟项目，测试项目代码运行正常后，点击”构建“打包正式版，在[快应用联盟后台](https://www.quickapp.cn/)上传
-
-
-**发布为快应用(webview) - 华为：**
-1. 入驻华为快应用，参考：[华为快应用教程](https://developer.huawei.com/consumer/cn/quickApp)。
-2. 在HBuilderX中顶部菜单依次点击 "发行" => "快应用-华为"，即可在 ``/unpackage/dist/build/quickapp-webview`` 生成华为快应用项目代码。
-<div align=center>
-  <img src="![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bece2a70-4f37-11eb-8ff1-d5dcf8779628.png)g"/>
-</div>
-3. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在[华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp)上传
-
-
-**发布为QQ小程序：**
-内容同上，不再重复。
 
 发布的快捷键是`Ctrl+u`。同样可拉下快速发布菜单并按数字键选择。
 
@@ -283,33 +156,8 @@ npm run build:%PLATFORM%
 |---|---|
 |app-plus|app平台生成打包资源（支持npm run build:app-plus，可用于持续集成。不支持run，运行调试仍需在HBuilderX中操作）|
 |h5|H5|
-|mp-alipay|支付宝小程序|
-|mp-baidu|百度小程序|
-|mp-weixin|微信小程序|
-|mp-toutiao|字节跳动小程序|
-|mp-qq|qq 小程序|
-|mp-360|360 小程序|
-|mp-kuaishou|快手小程序|
-|quickapp-webview|快应用(webview)|
-|quickapp-webview-union|快应用联盟|
-|quickapp-webview-huawei|快应用华为|
 
-可以自定义更多条件编译平台，比如钉钉小程序，参考[package.json文档](https://uniapp.dcloud.io/collocation/package)。
-
-## 运行并发布快应用@quickapp
-快应用有两种开发方式，uni-app均支持：
-- 类小程序webview渲染方式：[https://ask.dcloud.net.cn/article/37182](https://ask.dcloud.net.cn/article/37182)
-- 原生渲染方式：[https://ask.dcloud.net.cn/article/37145](https://ask.dcloud.net.cn/article/37145)
-
-
-#### 运行并发布快应用(webview)@quickapp-webview
-HBuilderX 2.7.12+ 版支持
-
-
-#### 运行并发布快应用(webview)-华为@quickapp-webview-huawei
-HBuilderX 2.7.10+ 版支持
-
-华为快应用文档-小程序转快应用 [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure)
+可以自定义更多条件编译平台，参考[package.json文档](https://uniapp.dcloud.io/collocation/package)。
 
 
 **其他：**
@@ -335,7 +183,7 @@ HBuilderX 2.7.10+ 版支持
 * ``cli``创建的项目，内置了d.ts，同其他常规npm库一样，可在[vscode](https://ask.dcloud.net.cn/article/36286)、[webstorm](https://ask.dcloud.net.cn/article/36307)等支持d.ts的开发工具里正常开发并有语法提示。
 * 使用HBuilderX创建的项目不带d.ts，HBuilderX内置了uni-app语法提示库。如需把HBuilderX创建的项目在其他编辑器打开并且补充d.ts，可以在项目下先执行 ``npm init``，然后``npm i @types/uni-app -D``，来补充d.ts。
 * 但vscode等其他开发工具，在vue或uni-app领域，开发效率比不过HBuilderX。详见：[https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
-* 发布App时，仍然需要使用HBuilderX。其他开发工具无法发布App，但可以发布H5、各种小程序。如需开发App，可以先在HBuilderX里运行起来，然后在其他编辑器里修改保存代码，代码修改后会自动同步到手机基座。
+* 发布App时，仍然需要使用HBuilderX。其他开发工具无法发布App，但可以发布H5。如需开发App，可以先在HBuilderX里运行起来，然后在其他编辑器里修改保存代码，代码修改后会自动同步到手机基座。
 * 如果使用``cli``创建项目，那下载HBuilderX时只需下载10M的标准版即可。因为编译器已经安装到项目下了。
 * 对 `cli` 使用有疑问，欢迎扫码加入 uni-app 微信交流群讨论：
     <br/><img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/wx-barcode.png" width="250"/>

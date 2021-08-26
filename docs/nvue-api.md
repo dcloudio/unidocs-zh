@@ -682,7 +682,7 @@ BindingX类似一种强化版的css，运行性能高，但没有js那样足够�
 2. **uni.storage:**
 	- vue和nvue页面可以使用相同的```uni.storage```存储。这个存储是持久化的。 比如登录状态可以保存在这里。
 	- App端还支持```plus.sqlite```，也是共享通用的。
-3. **globalData:** 小程序有```globalData```机制，这套机制在```uni-app```里也可以使用，全端通用。 在App.vue文件里定义```globalData```，如下：
+3. **globalData:** ```globalData```机制全端通用。 在App.vue文件里定义```globalData```，如下：
 
 ```javascript
 	<script>  

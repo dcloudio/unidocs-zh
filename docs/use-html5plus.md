@@ -2,7 +2,7 @@
 
 #### 条件编译调用 HTML5+
 
-小程序及 H5 等平台是没有 HTML5+ 扩展规范的，因此在 `uni-app` 调用 HTML5+ 的扩展规范时，需要注意使用条件编译。否则运行到h5、小程序等平台会出现 `plus is not defined`错误。
+H5 等平台是没有 HTML5+ 扩展规范的，因此在 `uni-app` 调用 HTML5+ 的扩展规范时，需要注意使用条件编译。否则运行到h5等平台会出现 `plus is not defined`错误。
 
 ```javascript
 // #ifdef APP-PLUS

@@ -149,13 +149,13 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 ### 组件/标签的变化
 
-以前是html标签，比如 `<div>` ，现在是小程序组件，比如 `<view>` 。
+以前是html标签，比如 `<div>` ，现在是组件，比如 `<view>` 。
 
 那么标签和组件有什么区别，不都是用尖括号包围起来一段英文吗？
 - 其实标签是老的概念，标签属于浏览器内置的东西。
 - 但组件，是可以自由扩展的。类似你可以把一段js封装成函数或模块，你也可以把一个ui控件封装成一个组件。
 
-`uni-app` 参考小程序规范，提供了一批[内置组件](https://uniapp.dcloud.io/component/README)。
+`uni-app` 提供了一批[内置组件](https://uniapp.dcloud.io/component/README)。
 
 
 ### js的变化
@@ -219,12 +219,12 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 ## 在 uni-app 中使用差异
 
-`uni-app` 在发布到H5时支持所有vue的语法；发布到App和小程序时，由于平台限制，无法实现全部vue语法，但 `uni-app` 仍是对vue语法支持度最高的跨端框架。
+`uni-app` 在发布到H5时支持所有vue的语法；发布到App时，由于平台限制，无法实现全部vue语法，但 `uni-app` 仍是对vue语法支持度最高的跨端框架。
 
 相比Web平台， Vue.js 在 `uni-app` 中使用差异主要集中在两个方面：
 
 - 新增：`uni-app` 除了支持Vue实例的生命周期，还支持[应用生命周期](/collocation/frame/lifecycle?id=应用生命周期)以及[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)。
-- 受限：相比web平台，在小程序和App端部分功能受限，[具体见](/vue-api)。
+- 受限：相比web平台，在App端部分功能受限，[具体见](/vue-api)。
 - uni-app 完整支持 Vue 模板语法。
 - App端可以使用更多的vue特性，[详见](https://ask.dcloud.net.cn/article/36599)。
 
@@ -430,7 +430,7 @@ v-on 指令，它用于监听 DOM 事件。v-on缩写为‘ @ ’，下文简称
 
 和前端框架中的理解不同，客户端里要实现复用的逻辑，会标记模板节点的状态，添加了 `v-once` 能保证节点只渲染一次，但是并不一定能优化渲染性能，反而可能会拖慢客户端复用节点时的比对效率。
 
->  h5、微信小程序均不支持
+>  h5不支持
 
 ```html
 	<view v-once>This will never change: {{msg}}</view>
@@ -448,7 +448,7 @@ v-on 指令，它用于监听 DOM 事件。v-on缩写为‘ @ ’，下文简称
 
 - 注意：**内容按普通 HTML 插入 - 不会作为 Vue 模板进行编译。**
 - 如果试图使用 v-html 组合模板，可以重新考虑是否通过使用组件来替代。
-- App端和H5端支持 `v-html` ，微信小程序会被转为 `rich-text`，其他端不支持 `v-html` 。
+- App端和H5端支持 `v-html`  。
 
 
 跨端的富文本处理方案详见：[https://ask.dcloud.net.cn/article/35772](https://ask.dcloud.net.cn/article/35772)
@@ -949,7 +949,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 
 - 在H5平台 使用 v-for 循环整数时和其他平台存在差异，如 `v-for="(item, index) in 10"` 中，在H5平台 item 从 1 开始，其他平台 item 从 0 开始，可使用第二个参数 index 来保持一致。
 - 在非H5平台 循环对象时不支持第三个参数，如 `v-for="(value, name, index) in object"` 中，index 参数是不支持的。
-- 小程序端数据为差量更新方式，由于小程序不支持删除对象属性，使用的设置值为 null 的方式替代，导致遍历时可能出现不符合预期的情况，需要自行过滤一下值为 null 的数据（[相关反馈](https://ask.dcloud.net.cn/question/103269)）。
+
 
 
 ### 在组件上使用 v-for
@@ -1109,7 +1109,6 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 
 **注意**
 
-- 为兼容各端，事件需使用 **@** 的方式绑定，请勿使用小程序端的 `bind` 和 `catch` 进行事件绑定；也不能在 JS 中使用`event.preventDefault()`和`event.stopPropagation()`方法；
 - 若需要禁止蒙版下的页面滚动，可使用 `@touchmove.stop.prevent="moveHandle"`，`moveHandle` 可以用来处理 `touchmove` 的事件，也可以是一个空函数。
 
 ```html

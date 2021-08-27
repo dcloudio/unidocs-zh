@@ -39,7 +39,6 @@ uni_modules                                项目根目录下
     ├── hybrid                             存放本地网页的目录，<a href="/component/web-view">详见</a>
     ├── pages                              业务页面文件存放的目录 
     ├── static                             存放应用引用静态资源（如图片、视频等）的目录，<b>注意：</b>静态资源只能存放于此
-    ├── wxcomponents                       存放小程序组件的目录，<a href="/frame?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81">详见</a>
     ├── license.md                         插件使用协议说明
     ├── package.json                       插件配置，必选(除此之外均`可选`)                          
     ├── readme.md                          插件文档
@@ -117,17 +116,6 @@ package.json在每个`uni_modules`插件中都必须存在，包含了插件的�
                     "Edge": "u",
                     "Firefox": "u",
                     "Safari": "u"
-                },
-                "小程序": {
-                    "微信": "y",
-                    "阿里": "y",
-                    "百度": "y",
-                    "字节跳动": "y",
-                    "QQ": "y"
-                },
-                "快应用": {
-                    "华为": "u",
-                    "联盟": "u"
                 }
             }
         }

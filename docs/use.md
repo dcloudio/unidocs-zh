@@ -5,11 +5,11 @@
 
 **************************************
 
-``uni-app`` 在发布到H5时支持所有vue的语法；发布到App和小程序时，由于平台限制，无法实现全部vue语法，但``uni-app``仍是是对vue语法支持度最高的跨端框架。本文将详细讲解差异。
+``uni-app`` 在发布到H5时支持所有vue的语法；发布到App时，由于平台限制，无法实现全部vue语法，但``uni-app``仍是是对vue语法支持度最高的跨端框架。本文将详细讲解差异。
 
 相比Web平台， ``Vue.js`` 在 ``uni-app`` 中使用差异主要集中在两个方面：
 - 新增：uni-app除了支持Vue实例的生命周期，还支持应用启动、页面显示等生命周期
-- 受限：相比web平台，在小程序和App端部分功能受限，具体见下。
+- 受限：相比web平台，在App端部分功能受限，具体见下。
 - v3版本App端可以使用更多的vue特性，[详见](https://ask.dcloud.net.cn/article/36599)
 
 ## 生命周期
@@ -57,30 +57,9 @@ data() {
 }
 ```
 
-### 注意事项
-* 由于小程序端不支持更新属性值为 undefined，框架内部将替换 undefined 为 null，此时可能出现预期之外的情况（[相关反馈](https://github.com/dcloudio/uni-app/issues/1460)），需要自行判断一下。
-
 ## 全局变量
 
 实现全局变量的方式需要遵循 Vue 单文件模式的开发规范。详细参考：[uni-app全局变量的几种实现方式](https://ask.dcloud.net.cn/article/35021)
-
-## 其他配置
-
-Vue 组件编译到小程序平台的时候会编译为对应平台的组件，部分小程序平台支持 options 选项（具体选项参考对应小程序平台文档的自定义组件部分），一般情况默认即可，如有特殊需求可在 Vue 组件中增加 options 属性。
-
-```js
-export default {
-  props: ['data'],
-  data(){ return { } },
-  options: {
-    // 微信小程序中 options 选项
-    multipleSlots: true, //  在组件定义时的选项中启动多slot支持，默认启用
-    styleIsolation: "isolated",  //  启动样式隔离。当使用页面自定义组件，希望父组件影响子组件样式时可能需要配置。具体配置选项参见：微信小程序自定义组件的样式
-    addGlobalClass: true, //  表示页面样式将影响到自定义组件，但自定义组件中指定的样式不会影响页面。这个选项等价于设置 styleIsolation: apply-shared
-    virtualHost: true,  //  将自定义节点设置成虚拟的，更加接近Vue组件的表现。我们不希望自定义组件的这个节点本身可以设置样式、响应 flex 布局等，而是希望自定义组件内部的第一层节点能够响应 flex 布局或者样式由自定义组件本身完全决定
-  }
-}
-```
 
 ## Class 与 Style 绑定
 
@@ -231,7 +210,6 @@ export default {
 ### 注意事项
 * 在H5平台 使用 v-for 循环整数时和其他平台存在差异，如 `v-for="(item, index) in 10"` 中，在H5平台 item 从 1 开始，其他平台 item 从 0 开始，可使用第二个参数 index 来保持一致。
 * 在非H5平台 循环对象时不支持第三个参数，如 `v-for="(value, name, index) in object"` 中，index 参数是不支持的。
-* 小程序端数据为差量更新方式，由于小程序不支持删除对象属性，使用的设置值为 null 的方式替代，导致遍历时可能出现不符合预期的情况，需要自行过滤一下值为 null 的数据（[相关反馈](https://ask.dcloud.net.cn/question/103269)）。
 
 ## 事件处理器
 
@@ -267,7 +245,7 @@ export default {
 
 <!-- * 事件映射表中没有的原生事件也可以使用，例如``map``组件的``regionchange`` 事件直接在组件上写成 ``@regionchange``,同时这个事件也非常特殊，它的 ``event`` ``type`` 有 ``begin`` 和 ``end`` 两个，导致我们无法在``handleProxy`` 中区分到底是什么事件，所以你在监听此类事件的时候同时监听事件名和事件类型既 
 ``<map @regionchange="functionName" @end="functionName" @begin="functionName"><map>``。 -->
-* 为兼容各端，事件需使用 ``v-on`` 或 ``@`` 的方式绑定，请勿使用小程序端的``bind`` 和 ``catch`` 进行事件绑定。
+* 为兼容各端，事件需使用 ``v-on`` 或 ``@`` 的方式绑定。
 * 事件修饰符
  * ``.stop``：各平台均支持， 使用时会阻止事件冒泡，在非 H5 端同时也会阻止事件的默认行为
  * ``.native``：监听原生事件，仅在 H5 平台支持
@@ -395,24 +373,9 @@ export default {
 - `2.5.0+`版本支持在pages.json内引入组件，[详见](/collocation/pages?id=easycom)
 - **uni-app只支持vue单文件组件（.vue 组件）**。其他的诸如：动态组件，自定义 ``render``，和``<script type="text/x-template">`` 字符串模版等，在非H5端不支持。
 
-
-详细的小程序端不支持列表：
-
-* 作用域插槽（HBuilderX 3.1.19 以下仅支持解构插槽且不可使用作用域外数据以及使用复杂的表达式）
-* 动态组件
-* 异步组件
-* ``inline-template``
-* ``X-Templates``
-* ``keep-alive``（App端也未支持）
-* ``transition`` （可使用 [animation](/api/ui/animation) 或 CSS 动画替代）
-* [老的非自定义组件编译模式](https://ask.dcloud.net.cn/article/35843)不支持在组件引用时，在组件上定义 ``click`` 等原生事件、``v-show``（可用 ``v-if`` 代替）和 ``class`` ``style`` 等样式属性(例：``<card class="class-name"> </card>`` 样式是不会生效的)。建议更新为自定义组件模式
-* [老的非自定义组件编译模式](https://ask.dcloud.net.cn/article/35843)组件里使用 ``slot`` 嵌套的其他组件时不支持 ``v-for``。建议更新为自定义组件模式
-
-[Vue官方文档参考：组件](https://cn.vuejs.org/v2/guide/components.html) 。
-
 ### uni-app内置基础组件
 
-``uni-app`` 内置了小程序的所有[组件](component/)，比如： ``picker``,``map`` 等，需要注意的是原生组件上的事件绑定，需要以 ``vue`` 的事件绑定语法来绑定，如 ``bindchange="eventName"`` 事件，需要写成 ``@change="eventName"`` 
+``uni-app`` 内置了小程序的所有[组件](component/)，比如： ``picker``,``map`` 等。
 
 **示例**
 
@@ -502,7 +465,6 @@ index.vue 里可直接使用组件
 **Tips**
 
 - 除以上列表中的名称外，标准的 HTML 及 SVG 标签名也不能作为组件名。
-- 在百度小程序中使用时，不要在 data 内使用 hidden ，可能会导致渲染错误
 - `methods`中不可使用与生命周期同名的方法名
 
 
@@ -630,151 +592,151 @@ export default {
 
 #### 全局配置
 
-|Vue 全局配置											|H5		|App端旧版|App端V3|微信小程序|说明																					|
-|--																|--		|--				|--			|--				|--																						|
-|Vue.config.silent								|支持	|支持			|支持		|支持			|-																						|
-|Vue.config.optionMergeStrategies	|支持	|支持			|支持		|支持			|-																						|
-|Vue.config.devtools							|支持	|不支持		|不支持	|不支持		|只在`Web`环境下支持													|
-|Vue.config.errorHandler					|支持	|支持			|支持		|支持			|-																						|
-|Vue.config.warnHandler						|支持	|支持			|支持		|支持			|-																						|
-|Vue.config.ignoredElements				|支持	|支持			|支持		|支持			|强烈不推荐，会覆盖`uni-app`框架配置的内置组件|
-|Vue.config.keyCodes							|支持	|不支持		|不支持	|不支持		|-																						|
-|Vue.config.performance						|支持	|不支持		|不支持	|不支持		|只在`Web`环境下支持													|
-|Vue.config.productionTip					|支持	|支持			|支持		|支持			|-																						|
+|Vue 全局配置											|H5		|App端|说明																					|
+|--																|--		|--			|--																						|
+|Vue.config.silent								|支持	|支持		|-																						|
+|Vue.config.optionMergeStrategies	|支持	|支持		|-																						|
+|Vue.config.devtools							|支持	|不支持	|只在`Web`环境下支持													|
+|Vue.config.errorHandler					|支持	|支持		|-																						|
+|Vue.config.warnHandler						|支持	|支持		|-																						|
+|Vue.config.ignoredElements				|支持	|支持		|强烈不推荐，会覆盖`uni-app`框架配置的内置组件|
+|Vue.config.keyCodes							|支持	|不支持	|-																						|
+|Vue.config.performance						|支持	|不支持	|只在`Web`环境下支持													|
+|Vue.config.productionTip					|支持	|支持		|-																						|
 
 
 #### 全局 API
 
-|Vue 全局 API	|H5		|App端旧版|App端V3|微信小程序|说明																		|
-|--						|--		|--				|--			|--				|--																			|
-|Vue.extend		|支持	|不支持		|支持		|不支持		|不可作为组件使用												|
-|Vue.nextTick	|支持	|不支持		|不支持	|不支持		|-																			|
-|Vue.set			|支持	|支持			|支持		|支持			|-																			|
-|Vue.delete		|支持	|支持			|支持		|支持			|-																			|
-|Vue.directive|支持	|不支持		|支持		|不支持		|-																			|
-|Vue.filter		|支持	|支持			|支持		|支持			|App端旧版不可以在`class`中使用					|
-|Vue.component|支持	|支持			|支持		|支持			|-																			|
-|Vue.use			|支持	|支持			|支持		|支持			|-																			|
-|Vue.mixin		|支持	|支持			|支持		|支持			|-																			|
-|Vue.version	|支持	|支持			|支持		|支持			|-																			|
-|Vue.compile	|支持	|不支持		|不支持	|不支持		|`uni-app`使用的`vue`是只包含运行时的版本	|
+|Vue 全局 API	|H5		|App端|说明																		|
+|--						|--		|--			|--																			|
+|Vue.extend		|支持	|支持		|不可作为组件使用												|
+|Vue.nextTick	|支持	|不支持	|-																			|
+|Vue.set			|支持	|支持		|-																			|
+|Vue.delete		|支持	|支持		|-																			|
+|Vue.directive|支持	|支持		|-																			|
+|Vue.filter		|支持	|支持		|App端旧版不可以在`class`中使用					|
+|Vue.component|支持	|支持		|-																			|
+|Vue.use			|支持	|支持		|-																			|
+|Vue.mixin		|支持	|支持		|-																			|
+|Vue.version	|支持	|支持		|-																			|
+|Vue.compile	|支持	|不支持	|`uni-app`使用的`vue`是只包含运行时的版本	|
 
 
 #### 选项
 
-|Vue 选项				|H5		|App端旧版|App端V3|微信小程序|说明																			|
-|--							|--		|--				|--			|--				|--																				|
-|data						|支持	|支持			|支持		|支持			|-																				|
-|props					|支持	|支持			|支持		|支持			|App端旧版不可以传递函数									|
-|propsData			|支持	|支持			|支持		|支持			|-																				|
-|computed				|支持	|支持			|支持		|支持			|-																				|
-|methods				|支持	|支持			|支持		|支持			|-																				|
-|watch					|支持	|支持			|支持		|支持			|-																				|
-|el							|支持	|不支持		|不支持	|不支持		|																					|
-|template				|支持	|不支持		|不支持	|不支持		|`uni-app`使用的`vue`是只包含运行时的版本	|
-|render					|支持	|不支持		|不支持	|不支持		|-																				|
-|renderError		|支持	|不支持		|不支持	|不支持		|-																				|
-|directives			|支持	|不支持		|支持		|不支持		|-																				|
-|filters				|支持	|支持			|支持		|支持			|App端旧版不可以在`class`中使用						|
-|components			|支持	|支持			|支持		|支持			|-																				|
-|parent					|支持	|支持			|支持		|支持			|不推荐																		|
-|mixins					|支持	|支持			|支持		|支持			|-																				|
-|extends				|支持	|支持			|支持		|支持			|-																				|
-|provide/inject	|支持	|支持			|支持		|支持			|App端旧版部分支持												|
-|name						|支持	|支持			|支持		|支持			|App端旧版不支持递归组件									|
-|delimiters			|支持	|不支持		|不支持	|不支持		|-																				|
-|functional			|支持	|不支持		|不支持	|不支持		|-																				|
-|model					|支持	|不支持		|支持		|不支持		|-																				|
-|inheritAttrs		|支持	|不支持		|支持		|不支持		|-																				|
-|comments				|支持	|不支持		|不支持	|不支持		|-																				|
+|Vue 选项				|H5		|App端|说明																			|
+|--							|--		|--			|--																				|
+|data						|支持	|支持		|-																				|
+|props					|支持	|支持		|App端旧版不可以传递函数									|
+|propsData			|支持	|支持		|-																				|
+|computed				|支持	|支持		|-																				|
+|methods				|支持	|支持		|-																				|
+|watch					|支持	|支持		|-																				|
+|el							|支持	|不支持	|																					|
+|template				|支持	|不支持	|`uni-app`使用的`vue`是只包含运行时的版本	|
+|render					|支持	|不支持	|-																				|
+|renderError		|支持	|不支持	|-																				|
+|directives			|支持	|支持		|-																				|
+|filters				|支持	|支持		|App端旧版不可以在`class`中使用						|
+|components			|支持	|支持		|-																				|
+|parent					|支持	|支持		|不推荐																		|
+|mixins					|支持	|支持		|-																				|
+|extends				|支持	|支持		|-																				|
+|provide/inject	|支持	|支持		|App端旧版部分支持												|
+|name						|支持	|支持		|App端旧版不支持递归组件									|
+|delimiters			|支持	|不支持	|-																				|
+|functional			|支持	|不支持	|-																				|
+|model					|支持	|支持		|-																				|
+|inheritAttrs		|支持	|支持		|-																				|
+|comments				|支持	|不支持	|-																				|
 
 
 #### 生命周期钩子
 
-|Vue 生命周期钩子	|H5		|App端旧版|App端V3|微信小程序|说明	|
-|--								|--		|--				|--			|--				|--		|
-|beforeCreate			|支持	|支持			|支持		|支持			|-		|
-|created					|支持	|支持			|支持		|支持			|-		|
-|beforeMount			|支持	|支持			|支持		|支持			|-		|
-|mounted					|支持	|支持			|支持		|支持			|-		|
-|beforeUpdate			|支持	|支持			|支持		|支持			|-		|
-|updated					|支持	|支持			|支持		|支持			|-		|
-|activated				|支持	|不支持		|支持		|不支持		|-		|
-|deactivated			|支持	|不支持		|支持		|不支持		|-		|
-|beforeDestroy		|支持	|支持			|支持		|支持			|-		|
-|destroyed				|支持	|支持			|支持		|支持			|-		|
-|errorCaptured		|支持	|支持			|支持		|支持			|-		|
+|Vue 生命周期钩子	|H5		|App端|说明	|
+|--								|--		|--			|---		|
+|beforeCreate			|支持	|支持		|		|
+|created					|支持	|支持		|-		|
+|beforeMount			|支持	|支持		|-		|
+|mounted					|支持	|支持		|-		|
+|beforeUpdate			|支持	|支持		|-		|
+|updated					|支持	|支持		|-		|
+|activated				|支持	|支持		|-		|
+|deactivated			|支持	|支持		|-		|
+|beforeDestroy		|支持	|支持		|-		|
+|destroyed				|支持	|支持		|-		|
+|errorCaptured		|支持	|支持		|-		|
 
 #### 实例属性
 
-|Vue 实例属性		|H5		|App端旧版|App端V3|微信小程序|说明																																				|
-|--							|--		|--				|--			|--				|--																																					|
-|vm.$data				|支持	|支持			|支持		|支持			|-																																					|
-|vm.$props			|支持	|支持			|支持		|支持			|-																																					|
-|vm.$el					|支持	|不支持		|不支持	|不支持		|-																																					|
-|vm.$options		|支持	|支持			|支持		|支持			|-																																					|
-|vm.$parent			|支持	|支持			|支持		|支持			|H5端 `view`、`text` 等内置标签是以 Vue 组件方式实现，`$parent` 会获取这些到内置组件，导致的问题是 `this.$parent` 与其他平台不一致，解决方式是使用 `this.$parent.$parent` 获取或自定义组件根节点由 `view` 改为 `div`|
-|vm.$root				|支持	|支持			|支持		|支持			|-																																					|
-|vm.$children		|支持	|支持			|支持		|支持			|H5端 `view`、`text` 等内置标签是以 Vue 组件方式实现，`$children` 会获取到这些内置组件，导致的问题是 `this.$children` 与其他平台不一致，解决方式是使用 `this.$children.$children` 获取或自定义组件根节点由 `view` 改为 `div`|
-|vm.$slots			|支持	|支持			|不支持	|支持			|App端旧版获取值为`{'slotName':true/false}`比如：`{"footer":true}`					|
-|vm.$scopedSlots|支持	|支持			|支持		|支持			|App端旧版获取值为`{'slotName':true/false}`比如：`{"footer":true}`					|
-|vm.$refs				|支持	|支持			|支持		|支持			|非H5端只能用于获取自定义组件，不能用于获取内置组件实例（如：view、text）|
-|vm.$isServer		|支持	|不支持		|支持		|不支持		|App端V3总是返回false																												|
-|vm.$attrs			|支持	|不支持		|支持		|不支持		|-																																					|
-|vm.$listeners	|支持	|不支持		|支持		|不支持		|-																																					|
+|Vue 实例属性		|H5		|App端|说明																																				|
+|--							|--		|--			|--																																					|
+|vm.$data				|支持	|支持		|-																																					|
+|vm.$props			|支持	|支持		|-																																					|
+|vm.$el					|支持	|不支持	|-																																					|
+|vm.$options		|支持	|支持		|-																																					|
+|vm.$parent			|支持	|支持		|H5端 `view`、`text` 等内置标签是以 Vue 组件方式实现，`$parent` 会获取这些到内置组件，导致的问题是 `this.$parent` 与其他平台不一致，解决方式是使用 `this.$parent.$parent` 获取或自定义组件根节点由 `view` 改为 `div`|
+|vm.$root				|支持	|支持		|-																																					|
+|vm.$children		|支持	|支持		|H5端 `view`、`text` 等内置标签是以 Vue 组件方式实现，`$children` 会获取到这些内置组件，导致的问题是 `this.$children` 与其他平台不一致，解决方式是使用 `this.$children.$children` 获取或自定义组件根节点由 `view` 改为 `div`|
+|vm.$slots			|支持	|不支持	|App端旧版获取值为`{'slotName':true/false}`比如：`{"footer":true}`					|
+|vm.$scopedSlots|支持	|支持		|App端旧版获取值为`{'slotName':true/false}`比如：`{"footer":true}`					|
+|vm.$refs				|支持	|支持		|非H5端只能用于获取自定义组件，不能用于获取内置组件实例（如：view、text）|
+|vm.$isServer		|支持	|支持		|App端V3总是返回false																												|
+|vm.$attrs			|支持	|支持		|-																																					|
+|vm.$listeners	|支持	|支持		|-																																					|
 
 
 #### 实例方法
 
-|Vue 实例方法			|H5		|App端旧版|App端V3|微信小程序|说明	|
-|--								|--		|--				|--			|--				|--		|
-|vm.$watch()			|支持	|支持			|支持		|支持			|-		|
-|vm.$set()				|支持	|支持			|支持		|支持			|-		|
-|vm.$delete()			|支持	|支持			|支持		|支持			|-		|
-|vm.$on()					|支持	|支持			|支持		|支持			|-		|
-|vm.$once()				|支持	|支持			|支持		|支持			|-		|
-|vm.$off()				|支持	|支持			|支持		|支持			|-		|
-|vm.$emit()				|支持	|支持			|支持		|支持			|-		|
-|vm.$mount()			|支持	|不支持		|不支持	|不支持		|-		|
-|vm.$forceUpdate()|支持	|支持			|支持		|支持			|-		|
-|vm.$nextTick()		|支持	|支持			|支持		|支持			|-		|
-|vm.$destroy()		|支持	|支持			|支持		|支持			|-		|
+|Vue 实例方法			|H5		|App端|说明	|
+|--								|--		|--			|--		|
+|vm.$watch()			|支持	|支持		|-		|
+|vm.$set()				|支持	|支持		|-		|
+|vm.$delete()			|支持	|支持		|-		|
+|vm.$on()					|支持	|支持		|-		|
+|vm.$once()				|支持	|支持		|-		|
+|vm.$off()				|支持	|支持		|-		|
+|vm.$emit()				|支持	|支持		|-		|
+|vm.$mount()			|支持	|不支持	|-		|
+|vm.$forceUpdate()|支持	|支持		|-		|
+|vm.$nextTick()		|支持	|支持		|-		|
+|vm.$destroy()		|支持	|支持		|-		|
 
 
 #### 模板指令
 
-|Vue 指令	|H5		|App端旧版|App端V3|微信小程序|说明																					|
-|--				|--		|--				|--			|--				|--																						|
-|v-text		|支持	|支持			|支持		|支持			|-																						|
-|v-html		|支持	|不支持		|支持		|不支持		|-																						|
-|v-show		|支持	|支持			|支持		|支持			|-																						|
-|v-if			|支持	|支持			|支持		|支持			|-																						|
-|v-else		|支持	|支持			|支持		|支持			|-																						|
-|v-else-if|支持	|支持			|支持		|支持			|-																						|
-|v-for		|支持	|支持			|支持		|支持			|-																						|
-|v-on			|支持	|支持			|支持		|支持			|-																						|
-|v-bind		|支持	|支持			|支持		|支持			|App端旧版不支持`v-bind="{key:value}"`类似用法|
-|v-model	|支持	|支持			|支持		|支持			|-																						|
-|v-pre		|支持	|不支持		|支持		|不支持		|-																						|
-|v-cloak	|支持	|不支持		|不支持	|不支持		|-																						|
-|v-once		|支持	|不支持		|支持		|不支持		|-																						|
+|Vue 指令	|H5		|App端|说明																					|
+|--				|--		|--			|--																						|
+|v-text		|支持	|支持		|-																						|
+|v-html		|支持	|支持		|-																						|
+|v-show		|支持	|支持		|-																						|
+|v-if			|支持	|支持		|-																						|
+|v-else		|支持	|支持		|-																						|
+|v-else-if|支持	|支持		|-																						|
+|v-for		|支持	|支持		|-																						|
+|v-on			|支持	|支持		|-																						|
+|v-bind		|支持	|支持		|App端旧版不支持`v-bind="{key:value}"`类似用法|
+|v-model	|支持	|支持		|-																						|
+|v-pre		|支持	|支持		|-																						|
+|v-cloak	|支持	|不支持	|-																						|
+|v-once		|支持	|支持		|-																						|
 
 
 #### 特殊属性
 
-|Vue 特殊属性	|H5		|App端旧版|App端V3|微信小程序|说明									|
-|--						|--		|--				|--			|--				|--										|
-|key					|支持	|支持			|支持		|支持			|App端旧版不支持表达式|
-|ref					|支持	|支持			|支持		|支持			|-										|
-|is						|支持	|不支持		|支持		|不支持		|-										|
+|Vue 特殊属性	|H5		|App端|说明									|
+|--						|--		|--			|--										|
+|key					|支持	|支持		|App端旧版不支持表达式|
+|ref					|支持	|支持		|-										|
+|is						|支持	|支持		|-										|
 
 
 #### 内置组件
 
-|Vue 内置组件			|H5		|App端旧版|App端V3|微信小程序	|说明	|
-|--								|--		|--				|--			|--					|--		|
-|component				|支持	|不支持		|支持		|不支持			|-		|
-|transition				|支持	|不支持		|不支持	|不支持			|-		|
-|transition-group	|支持	|不支持		|不支持	|不支持			|-		|
-|keep-alive				|支持	|不支持		|不支持		|不支持			|-		|
-|slot							|支持	|支持			|支持		|支持				|-		|
+|Vue 内置组件			|H5		|App端|说明	|
+|--								|--		|--			|--					|--		|
+|component				|支持	|支持		|-		|
+|transition				|支持	|不支持	|-		|
+|transition-group	|支持	|不支持	|-		|
+|keep-alive				|支持	|不支持		|-		|
+|slot							|支持	|支持		|-		|

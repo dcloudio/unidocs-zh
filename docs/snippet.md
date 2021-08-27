@@ -106,18 +106,6 @@ uni.showToast({
 
 `点击工具栏的运行 -> 运行到浏览器 -> 选择 Chrome`，也可将 `uni-app`运行到 浏览器，可参考 [运行uni-app](/quickstart?id=运行uni-app)。
 
-### 使用各家小程序开发工具调试
-
-``uni-app`` 运行到微信web开发者工具等小程序开发工具里，可在这些工具的控制台查看 ``console`` 信息，网络请求等信息等。
-
-页面样式调试和一般的`web`项目一样，通过调试的箭头选中元素即可查看相应的节点和样式，如下图：
-
-![uni-app](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/51d2b830-4f34-11eb-a16f-5b3e54966275.png)
-
-调试 `js` 时需要切换到 `Sources` 栏，根据sourcemap，找到 `webpack` 里正确的目录，选中想要调试的那个页面的`js`，进行调试（如果`js`代码是压缩过的，点击右下角的{}可格式化代码），如下图：
-
-![uni-app](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/52889ab0-4f34-11eb-b680-7980c8a877b8.png)
-
 ### 关于 App 的调试debug
 
 常规开发里，在HBuilderX的运行菜单里运行App，手机端的错误或console.log日志信息会直接打印到控制台。
@@ -175,8 +163,6 @@ Tip
 - App端提供真机运行的`console.log`日志输出，运行到真机或模拟器时，不用点`debug`按钮，运行手机App，会在`HBuilderX`的控制台直接输出日志。
 - 如果是调试`App`的界面和常规API，推荐编译到H5端，点`HBuilderX`右上角的预览，在内置浏览器里调`Dom`，保存后立即看到结果，调试更方便。并且H5端也支持`titleNView`的各种复杂设置。唯一要注意的就是`css`兼容性，使用太新的`css`在`pc`上预览可能正常，但低端`Android`上异常，具体可查询`caniuse`等网站。
 - 常用的开发模式就是`pc`上使用内置浏览器预览调dom，运行到真机上看`console.log`。如果是很复杂的问题才使用`debug`。
-- vue页面也可以在微信开发者工具里调试，除了plus API，其他是一样的，微信开发者工具的查看`Dom`和网络和存储等调试工具相对而言更完善些。
-注意：即使不发布微信小程序、只发布`App`，也需要安装微信开发者工具。
 - uni-app的App端的webkit remote debug，只能调试视图层，不能调试逻辑层。因为uni-app的js不是运行在webview里，而是独立的jscore里。
 - 部分manifest配置，如三方sdk配置，需要打包后生效的，可以打包一个自定义运行基座。打包自定义基座后运行这个自定义基座，同样可以真机运行和debug。打包正式包将无法真机运行和debug。
 

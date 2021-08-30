@@ -97,7 +97,3 @@ module.exports = {
 	}
 }
 ```
-
-启用压缩的方法：
-- HBuilderX创建的项目勾选运行-->运行到小程序模拟器-->运行时是否压缩代码
-- cli创建的项目可以在`pacakge.json`中添加参数`--minimize`，示例：`"dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"`

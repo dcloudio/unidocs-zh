@@ -161,7 +161,6 @@ describe('pages/tabBar/component/component.nvue', () => {
         expect(await (await page.$('.uni-panel-text')).text()).toBe('视图容器')
         // 检测首个 panel 切换展开
         const panelH = await page.$('.uni-panel-h');
-        // 不能做完全匹配，百度小程序会生成额外的class
         expect(await panelH.attribute('class')).toContain('uni-panel-h')
         await panelH.tap()
         await page.waitFor(500)

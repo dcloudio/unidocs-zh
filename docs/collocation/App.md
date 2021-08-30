@@ -29,7 +29,7 @@
 - `App.vue` 不能写模板
 
 ### globalData
-小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用。
+这是一种简单的全局变量机制。全端通用。
 
 **以下是 App.vue 中定义globalData的相关配置：**
 

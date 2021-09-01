@@ -50,7 +50,7 @@
 * [微信云开发转uniCloud](uniCloud/wx2unicloud.md)
 * [uniCloud产品服务协议](uniCloud/agreement.md)
 * [更新日志](uniCloud/release.md)
-<li></li>
+
 <div class="contact-box">
   <a href="//unicloud.dcloud.net.cn" target="_blank" class="contact-item">
   	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7962e8e0-4f2d-11eb-a16f-5b3e54966275.jpg" width="20" height="20"/>

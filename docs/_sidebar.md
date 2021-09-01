@@ -35,11 +35,7 @@
 * 更新日志
   * [正式版](release.md)
   * [Alpha版](release-note-alpha.md)
-<!-- * [更新日志](//update.dcloud.net.cn/hbuilderx/changelog/2.1.1.20190716.html) -->
-<!--  <li><a id="update-hock" href="javascript:;" target="__blank">更新日志</a></li> -->
-  <li class="show-sponsor-in-phone show-last"><a href="//ext.dcloud.net.cn/" target="__blank">插件市场</a></li>
-  <li class="show-sponsor-in-phone"><a href="//dev.dcloud.net.cn/wish/?channel=uniapp" target="__blank">需求墙</a></li>
-  <li class="show-sponsor-in-phone"><a href="//dev.dcloud.net.cn/sponsor/?channel=uniapp" target="__blank">赞助我们</a></li>
+
 <div class="contact-box">
   <a href="//unicloud.dcloud.net.cn" target="_blank" class="contact-item">
   	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7962e8e0-4f2d-11eb-a16f-5b3e54966275.jpg" width="20" height="20"/>

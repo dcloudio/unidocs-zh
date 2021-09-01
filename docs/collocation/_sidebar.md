@@ -18,7 +18,7 @@
 * 自动化测试
   * [快速开始](collocation/auto/quick-start.md)
   * [API](collocation/auto/api.md)
-<li></li>
+
 <div class="contact-box">
   <a href="//unicloud.dcloud.net.cn" target="_blank" class="contact-item">
   	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7962e8e0-4f2d-11eb-a16f-5b3e54966275.jpg" width="20" height="20"/>

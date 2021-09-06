@@ -18,26 +18,3 @@
 * 自动化测试
   * [快速开始](collocation/auto/quick-start.md)
   * [API](collocation/auto/api.md)
-
-<div class="contact-box">
-  <a href="//unicloud.dcloud.net.cn" target="_blank" class="contact-item">
-  	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7962e8e0-4f2d-11eb-a16f-5b3e54966275.jpg" width="20" height="20"/>
-  	<div class="contact-smg">
-  		<div>uniCloud Web控制台</div>
-  	</div>
-  </a>
-  <a href="//ask.dcloud.net.cn/explore/" target="_blank" class="contact-item">
-  	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/73fc4f90-4f2d-11eb-a16f-5b3e54966275.png" width="20" height="20"/>
-  	<div class="contact-smg">
-  		<div>论坛</div>
-  	</div>
-  </a>
-	<div class="contact-item">
-		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/74cda950-4f2d-11eb-a16f-5b3e54966275.png" width="20" height="20"/>
-		<div class="contact-smg">
-			<div>
-	      代码仓库：<a href="https://gitee.com/dcloud/uni-app" target="_blank">码云</a>、<a href="http://github.com/dcloudio/uni-app" target="_blank">GitHub</a>
-	    </div>
-		</div>
-	</div>
-</div>

@@ -14,7 +14,6 @@ app开发，推荐使用nvue做直播，比使用vue的优势有：
 1. nvue也可一套代码编译多端。
 2. nvue的cover-view比vue的cover-view更强大，在视频上绘制元素更容易。如果只考虑App端的话，不用cover-view，任意组件都可以覆盖live-pusher组件，因为nvue没有层级问题。
 3. 若需要视频内嵌在swiper里上下滑动（类抖音、映客首页模式），App端只有nvue才能实现
-当然nvue相比vue的坏处是css写法受限，如果只开发微信小程序，不考虑App，那么使用vue页面也是一样的。
 
 
 **参数说明**
@@ -40,7 +39,7 @@ max-bitrate|Number|1000|否|最大码率。|
 
 
 
-orientation 的合法值
+#### orientation 的合法值
 
 |值|说明|
 |:-|:-|
@@ -48,7 +47,7 @@ orientation 的合法值
 |horizontal|水平|
 
 
-网络状态数据（info）安卓
+#### 网络状态数据（info）安卓
 
 键名|说明
 :--|:--|
@@ -61,12 +60,56 @@ netJitter | 网络抖动情况，抖动越大，网络越不稳定
 videoWidth | 视频画面的宽度
 videoHeight | 视频画面的高度
 
-网络状态数据（info）iOS
+#### 网络状态数据（info）iOS
 
 参数|类型 |说明
 :--|:--|:--|
 code|Number|  code码
 message|string| 具体的网络状态信息
+
+#### 事件
+
+#### statechange
+> 状态变化事件
+
+#####  返回参数（detail）的详细说明
+参数|类型|说明
+:--|:--|:--|
+code|Number|
+message|string|
+
+
+#### netstatus
+> 网络状态通知事件
+
+#####  安卓 返回参数（detail）的详细说明
+键名|说明
+:--|:--|
+videoBitrate | 当前视频编/码器输出的比特率，单位 kbps
+audioBitrate | 当前音频编/码器输出的比特率，单位 kbps
+videoFPS | 当前视频帧率
+videoGOP | 当前视频 GOP,也就是每两个关键帧(I帧)间隔时长，单位 s
+netSpeed | 当前的发送/接收速度
+netJitter | 网络抖动情况，抖动越大，网络越不稳定
+videoWidth | 视频画面的宽度
+videoHeight | 视频画面的高度
+
+##### iOS 返回参数（detail）的详细说明
+参数|类型 |说明
+:--|:--|:--|
+code|Number| code码
+message|string| 具体的网络状态信息
+
+
+#### error
+> 渲染错误事件
+
+#####  返回参数（detail）的详细说明
+参数|类型 |说明
+:--|:--|:--|
+errCode|Number|
+errMsg|string|
+
 
 
 ```html

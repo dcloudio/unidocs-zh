@@ -20,8 +20,8 @@
 
 |属性|类型|默认值|必填|说明|版本要求
 |:-|:-|:-|:-|:-|:-|
-|page-style|string|""|否|页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点|H5 2.6.7、App 2.6.7|
-|root-font-size|string|""|否|页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 1rem 等于这个字体大小|H5 2.6.7、App 2.6.7|
+|page-style|string|""|否|页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点|H5 2.6.7、App-vue 2.6.7|
+|root-font-size|string|""|否|页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 1rem 等于这个字体大小|H5 2.6.7、App-vue 2.6.7|
 |enable-pull-down-refresh|Boolean|""|否|是否开启下拉刷新|App 2.6.7|
 
 

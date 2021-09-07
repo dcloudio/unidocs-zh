@@ -81,6 +81,7 @@
   * [节点信息](api/ui/nodes-info.md)
   * [节点布局相交状态](api/ui/intersection-observer.md)
   * [媒体查询](api/ui/media-query-observer.md)
+  * [语言](api/ui/locale.md)
 * 页面和窗体
   * [页面](api/window/window.md)
   * [页面通讯](api/window/communication.md) 

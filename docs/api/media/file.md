@@ -87,6 +87,3 @@ uni.chooseFile({
   }
 })
 ```
-
-
-

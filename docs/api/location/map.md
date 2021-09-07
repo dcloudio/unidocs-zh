@@ -26,18 +26,14 @@ mapContext
 |includePoints|OBJECT|缩放视野展示所有经纬度|app-nvue 2.1.5+||
 |getRegion|OBJECT|获取当前地图的视野范围|||
 |getScale|OBJECT|获取当前地图的缩放级别|||
-|addCustomLayer|OBJECT|添加个性化图层||App暂不支持 (**SDK不支持**)|
 |addGroundOverlay|OBJECT|创建自定义图片图层，图片会随着地图缩放而缩放||App-nvue 3.1.0+|
 |addMarkers |OBJECT|添加 marker||App-nvue 3.1.0+|
 |fromScreenLocation|OBJECT|获取屏幕上的点对应的经纬度，坐标原点为地图左上角||App暂不支持|
 |initMarkerCluster|OBJECT|初始化点聚合的配置，未调用时采用默认配置||App-nvue 3.1.0+|
 |moveAlong|OBJECT|沿指定路径移动 marker，用于轨迹回放等场景。动画完成时触发回调事件，若动画进行中，对同一 marker 再次调用 moveAlong 方法，前一次的动画将被打断。|支持 android 不支持autoRotate属性设置 默认ture|App-nvue 3.1.0+|
 |openMapApp|OBJECT|拉起地图APP选择导航。||App-nvue 3.1.0+|
-|removeCustomLayer|OBJECT|移除个性化图层 ||App暂时不支持  (**SDK不支持**)|
 |removeGroundOverlay|OBJECT|移除自定义图片图层||App-nvue 3.1.0+|
 |removeMarkers|OBJECT|移除 marker。||App-nvue 3.1.0+|
-|setCenterOffset|OBJECT|设置地图中心点偏移，向后向下为增长，屏幕比例范围(0.25~0.75)，默认偏移为[0.5, 0.5]||App暂时不支持|
-|toScreenLocation|OBJECT|获取经纬度对应的屏幕坐标，坐标原点为地图左上角。||App暂时不支持|
 |updateGroundOverlay|OBJECT|更新自定义图片图层。||App-nvue 3.1.0+|
 |on|EventHandle|监听地图事件。||App-nvue 3.1.0+|
 |$getAppMap||获取原生地图对象 [plus.maps.Map](https://www.html5plus.org/doc/zh_cn/maps.html#plus.maps.Map)|app-vue自定义组件模式|1.9.3|
@@ -161,6 +157,14 @@ mapContext
 |fail		|function	|		|否		|接口调用失败的回调函数								|
 |complete	|function	|		|否		|接口调用结束的回调函数（调用成功、失败都会执行）	|
 
+**removeMarkers 的 OBJECT 参数列表**
+
+|属性		|类型		|默认值	|必填	|说明												|
+|:-|:-|:-|:-|:-|
+|markerIds	|Array		|		|是		|要被删除的marker的id属性组成的数组						|
+|success	|function	|		|否		|接口调用成功的回调函数								|
+|fail		|function	|		|否		|接口调用失败的回调函数								|
+|complete	|function	|		|否		|接口调用结束的回调函数（调用成功、失败都会执行）	|
 
 **MapContext.on()** (app-nvue支持)
 

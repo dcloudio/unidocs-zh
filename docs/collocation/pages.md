@@ -338,7 +338,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |mp-baidu|Object||设置编译到 mp-baidu 平台的特定样式|百度小程序|
 |mp-toutiao|Object||设置编译到 mp-toutiao 平台的特定样式|字节跳动小程序|
 |mp-qq|Object||设置编译到 mp-qq 平台的特定样式|QQ小程序|
-|mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|QQ小程序|
+|mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
 |usingComponents|Object||引用小程序组件，参考 [小程序组件](/frame?id=小程序组件支持)|App、微信小程序、支付宝小程序、百度小程序|
 |leftWindow|Boolean|true|当存在 leftWindow时，当前页面是否显示 leftWindow|H5|
 |topWindow|Boolean|true|当存在 topWindow 时，当前页面是否显示 topWindow|H5|
@@ -1082,7 +1082,7 @@ subPackages 节点接收一个数组，数组每一项都是应用的子包，�
 - ```subPackages``` 里的pages的路径是 ``root`` 下的相对路径，不是全路径。
 - 微信小程序每个分包的大小是2M，总体积一共不能超过20M。
 - 百度小程序每个分包的大小是2M，总体积一共不能超过8M。
-- 支付宝小程序每个分包的大小是2M，总体积一共不能超过4M。
+- 支付宝小程序每个分包的大小是2M，总体积一共不能超过8M。
 - QQ小程序每个分包的大小是2M，总体积一共不能超过24M。
 - 字节小程序每个分包的大小是2M，总体积一共不能超过16M（字节小程序基础库 1.88.0 及以上版本开始支持，字节小程序开发者工具请使用大于等于 2.0.6 且小于 3.0.0 的版本）。
 - 分包下支持独立的 ```static``` 目录，用来对静态资源进行分包。

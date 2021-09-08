@@ -33,7 +33,6 @@
   * [audio](component/audio.md)
   * [image](component/image.md)
   * [video](component/video.md)
-  * [live-player](component/live-player.md)
   * [live-pusher](component/live-pusher.md)
 * 地图
   * [map](component/map.md)

@@ -28,7 +28,6 @@ mapContext
 |getScale|OBJECT|获取当前地图的缩放级别|||
 |addGroundOverlay|OBJECT|创建自定义图片图层，图片会随着地图缩放而缩放||App-nvue 3.1.0+|
 |addMarkers |OBJECT|添加 marker||App-nvue 3.1.0+|
-|fromScreenLocation|OBJECT|获取屏幕上的点对应的经纬度，坐标原点为地图左上角||App暂不支持|
 |initMarkerCluster|OBJECT|初始化点聚合的配置，未调用时采用默认配置||App-nvue 3.1.0+|
 |moveAlong|OBJECT|沿指定路径移动 marker，用于轨迹回放等场景。动画完成时触发回调事件，若动画进行中，对同一 marker 再次调用 moveAlong 方法，前一次的动画将被打断。|支持 android 不支持autoRotate属性设置 默认ture|App-nvue 3.1.0+|
 |openMapApp|OBJECT|拉起地图APP选择导航。||App-nvue 3.1.0+|

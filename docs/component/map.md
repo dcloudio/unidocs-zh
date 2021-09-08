@@ -139,7 +139,6 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |borderColor|线的边框颜色|String|否||H5|
 |borderWidth|线的厚度|Number|否||H5|
 |colorList|彩虹线|Array|false|存在时忽略 color 值|App-nvue 3.1.0+|
-|level|压盖关系，默认为 abovelabels|String|false||App不支持（**需SDK提供支持**）|
 
 **polygon**<br>
 指定一系列坐标点，根据 points 坐标数据生成闭合多边形
@@ -151,7 +150,6 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |strokeColor|描边的颜色|String|否|十六进制|
 |fillColor|填充颜色|String|否|十六进制|
 |zIndex|设置多边形 Z 轴数值|Number|否||
-|level|压盖关系，默认为 abovelabels|String|false|App不支持（**需SDK提供支持**）|
 
 **circles**
 
@@ -165,7 +163,6 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |fillColor|填充颜色|String|否|8位十六进制表示，后两位表示alpha值，如：#0000AA|
 |radius|半径|Number|是||
 |strokeWidth|描边的宽度|Number|否|&nbsp;|
-|level|压盖关系，默认为 abovelabels|String|false|App不支持（**需SDK提供支持**）|
 
 **controls**
 

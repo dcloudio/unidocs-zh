@@ -23,7 +23,7 @@
 |show-center-play-btn|Boolean|true|是否显示视频中间的播放按钮|字节跳动小程序不支持|
 |show-loading|Boolean|true|是否显示loading控件|仅app 2.8.12+|
 |enable-progress-gesture|Boolean|true|是否开启控制进度的手势|字节跳动小程序不支持|
-|object-fit|String|contain|当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|微信小程序、字节跳动小程序、H5|
+|object-fit|String|contain|当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|App、微信小程序、字节跳动小程序、H5|
 |poster|String||视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效||
 |show-mute-btn|Boolean|false|是否显示静音按钮|微信小程序|
 |title|String||视频的标题，全屏时在顶部展示|微信小程序|

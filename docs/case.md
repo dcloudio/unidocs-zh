@@ -50,7 +50,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目，
 		<span style="margin-top:15px;">微信小程序</span>
 	</a>
   <a href="https://m.qinxuan.hihonor.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-alicdn/1fa35320-c559-11ea-81ea-f115fe74321c.png" width="200"/>
+		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/7504b932-c7be-4338-a278-4b23b6612aed.png" width="200"/>
 		<span style="margin-top:15px;">H5</span>
 	</a>
   <a href="https://appgallery1.huawei.com/#/app/C100382765" target="_blank" class="clear-style barcode-view">

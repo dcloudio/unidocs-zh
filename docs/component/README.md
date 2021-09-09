@@ -504,3 +504,4 @@ uni ui有几十个组件，详情的uni ui组件清单，请参考：[https://ex
 
 除了基础组件、uni-ui，插件市场还有更多扩展组件、模板，包括前端组件和原生扩展组件，具体见[插件市场](https://ext.dcloud.net.cn/)。
 
+关于其他vue的web组件库是否能在uni-app中使用的问题，参考[https://ask.dcloud.net.cn/article/35489](https://ask.dcloud.net.cn/article/35489)

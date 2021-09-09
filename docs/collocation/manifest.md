@@ -104,11 +104,9 @@ splash（启动封面）是App必然存在的、不可取消的。
 |Messaging|短彩邮件消息|
 |OAuth|登录授权|
 |Payment|支付|
-|Push|消息推送|
 |Share|社交分享|
 |Speech|语音识别|
 |SQLite|SQLite数据库|
-|Statistic|统计|
 |VideoPlayer|视频播放|
 
 **注意**
@@ -131,9 +129,7 @@ splash（启动封面）是App必然存在的、不可取消的。
 |:-|:-|:-|
 |oauth|Object|授权登录，配置后可调用 [uni.login](/api/plugins/login?id=login) 进行登录操作，目前支持的授权登录平台有：[QQ](http://open.qq.com/)、[微信](https://open.weixin.qq.com/)、[新浪微博](http://open.weibo.com/)。|
 |share|Object|分享，配置后可调用 [uni.share](/api/plugins/share?id=share) 进行分享，目前支持QQ、微信、新浪微博等分享， 具体配置 [详见](/api/plugins/share?id=app-端各平台分享配置说明)。|
-|push|Object|push配置，使用方式 [详见](http://ask.dcloud.net.cn/article/34)，目前支持：[uniPush](http://ask.dcloud.net.cn/article/35716)、[个推](http://www.igetui.com/)、[小米推送](https://dev.mi.com/console/appservice/push.html)，注意App仅支持一种 push 方式，配置多个 push 无效，建议使用 uniPush，支持多厂商推送。|
 |payment|Object|三方支付配置，配置后可调用 [uni.payment](/api/plugins/payment?id=payment) 进行支付，目前支持微信支付、支付宝支付、苹果内购， 具体配置 [详见](/api/plugins/payment?id=uni-app-app-平台支付流程)。|
-|statics|Object|统计配置，目前仅支付友盟统计，[详见](http://ask.dcloud.net.cn/article/74)，在uni-app中只用 [plus.statistic](http://www.html5plus.org/doc/zh_cn/statistic.html) 进行调用。|
 |speech|Object|语音识别配置，支持讯飞语音、百度语音，[详见](http://ask.dcloud.net.cn/article/35059)，在uni-app中只用 [plus.speech](http://www.html5plus.org/doc/zh_cn/speech.html) 进行调用。|
 |maps|Object|原生地图配置，目前仅支持 [高德地图](http://lbs.amap.com/)，申请方式可参考：[地图插件配置](http://ask.dcloud.net.cn/article/29)。|
 
@@ -382,7 +378,6 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
             "Push": {},
             "Share": {},
             "Speech": {},
-            "Statistic": {},
             "VideoPlayer": {},
             "LivePusher": {}
         },
@@ -467,13 +462,6 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
                         "appid": ""
                     }
                 },
-                "push": {
-                    "igexin": {
-                        "appid": "",
-                        "appkey": "",
-                        "appsecret": ""
-                    }
-                },
                 "share": {
                     "weixin": {
                         "appid": ""
@@ -485,14 +473,6 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
                     },
                     "qq": {
                         "appid": ""
-                    }
-                },
-                "statics": {
-                    "umeng": {
-                        "appkey_ios": "",
-                        "channelid_ios": "",
-                        "appkey_android": "",
-                        "channelid_android": ""
                     }
                 }
             },

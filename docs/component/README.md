@@ -474,15 +474,7 @@ ui是一种需求非常发散的产品，DCloud官方也无意用uni ui压制第
 
 uni ui里很多组件与uniCloud打通，可大幅提升开发效率
 
-5、与uni统计自动集成实现免打点
-
-uni统计是优秀的多端统计平台，见[tongji.dcloud.net.cn](https://tongji.dcloud.net.cn)。
-
-除了一张报表看全端，它的另一个重要特点是免打点。
-比如使用uni ui的navbar标题栏、收藏、购物车等组件，均可实现自动打点，统计页面标题等各种行为数据。
-当然你也可以关闭uni统计，这不是强制的。
-
-6、uni ui符合全套DCloud组件规范
+5、uni ui符合全套DCloud组件规范
 
 包括easycom、uni_module、datacom，全部遵循。
 

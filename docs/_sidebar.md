@@ -35,6 +35,3 @@
 * [选型评估指南](select.md)
 * [应用市场上架](store.md)
 * [常见问题](faq.md)
-* 更新日志
-  * [正式版](release.md)
-  * [Alpha版](release-note-alpha.md)

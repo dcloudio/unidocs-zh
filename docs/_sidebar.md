@@ -34,7 +34,6 @@
 * [uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
 * 运营服务
   * [App升级中心](uniCloud/upgrade-center.md)
-* [案例](case.md)
 * [选型评估指南](select.md)
 * [应用市场上架](store.md)
 * [常见问题](faq.md)

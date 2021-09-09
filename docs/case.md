@@ -1,4 +1,4 @@
-DCloud有**800万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机端月活**12亿+**。是开发者数量和案例最丰富的多端开发框架。
+DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机端月活**12亿+**。是开发者数量和案例最丰富的多端开发框架。
 
 欢迎知名开发商[提交案例](https://github.com/dcloudio/uni-app/issues/6)或接入[uni统计](https://tongji.dcloud.net.cn/)。
 
@@ -59,18 +59,6 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目，
 	</a>
 </div>
 
-
-<a href="https://discuz.chat/docs/" target="_blank" class="clear-style"><b>腾讯Discuz! Q：</b></a> 经典论坛新版本，站长利器。
-<div style="display:flex;justify-content: space-around;">
-  <a href="javascript:;" target="_self" class="clear-style barcode-view">
-		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-alicdn/6f1a9a90-c5ad-11ea-81ea-f115fe74321c.png" width="200"/>
-		<span style="margin-top:15px;">微信小程序</span>
-	</a>
-  <a href="https://discuz.chat/" target="_blank" class="clear-style barcode-view">
-		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-alicdn/c7d1be20-c562-11ea-81ea-f115fe74321c.png" width="200"/>
-		<span style="margin-top:15px;">H5</span>
-	</a>
-</div>
 
 <b>星巴克：</b>全球最大的咖啡连锁店，世界领先的特种咖啡零售商
 <div style="display:flex;justify-content: space-around;">

@@ -57,7 +57,7 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 
 相比纯原生开发，```uni-app```体验可商用，也不会限制功能调用，但开发效率和开发成本更优于原生开发。
 
-如果你已经有了原生App，那么可以局部使用```uni-app```，内嵌uni小程序SDK，把部分栏目小程序化，或者直接打造自己的小程序平台。
+如果你已经有了原生App，那么可以局部使用```uni-app```。
 
 **uni-app是多端写在一个项目统一升级维护，还是每个端不同的项目，只复用部分代码**
 
@@ -69,7 +69,7 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 
 **uni-app 学习成本高吗？基于什么技术栈？**
 
-```uni-app```简单来说是 vue的语法 + 小程序的api。
+```uni-app```简单来说是 vue的语法 + api。
 
 它遵循```Vue.js```语法规范，组件和API遵循```微信小程序命名```，这些都属于通用技术栈，学习它们是前端必备技能，```uni-app```没有太多额外学习成本。
 
@@ -98,7 +98,7 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 - 支持 NPM 包管理系统，[参考](http://uniapp.dcloud.io/frame?id=npm%E6%94%AF%E6%8C%81)
 - 支持 mpvue 项目及组件，[参考](http://ask.dcloud.net.cn/article/34945)
 - 支持原生插件，见插件市场：[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
-- 支持App原生工程里嵌入uni小程序sdk。
+
 
 
 **uni-app 支持的手机版本最低到多少？**
@@ -115,7 +115,7 @@ Android4.4、iOS9是官方会保障兼容的。
 
 加入```uni-app```的群就知道，几十个QQ/微信群每天数万条聊天记录，非常活跃。论坛里每天数百个帖子。
 
-插件市场内容也非常丰富，各种轮子方便可用。[https://ext.dcloud.net.cn/](https://ext.dcloud.net.cn/)，并且很多轮子的uni-app版，性能功能都强于微信小程序版。
+插件市场内容也非常丰富，各种轮子方便可用。[https://ext.dcloud.net.cn/](https://ext.dcloud.net.cn/)，并且很多轮子的uni-app版。
 
 基于```uni-app```的三方培训也很多。腾讯课堂官方亲自为uni-app制作了课程，各大培训网站均有uni-app的培训课程。
 

@@ -1,6 +1,6 @@
 `uni-app`的js API由标准ECMAScript的js API 和 uni 扩展 API 这两部分组成。
 
-标准ecmascript的API非常多，本文档没有必要列全，仅以console、settimeout为例做简要说明。扩展 API 命名与小程序相同。
+标准ecmascript的API非常多，本文档没有必要列全，仅以console、settimeout为例做简要说明。
 
 ## 标准js和浏览器js的区别
 
@@ -10,7 +10,7 @@
 
 开发者不要把浏览器里的js等价于标准js。
 
-ECMAScript由Ecma国际管理，是基础js语法。浏览器基于标准js扩充了window、document等js API；Node.js基于标准js扩充了fs等模块；小程序也基于标准js扩展了各种wx.xx、my.xx、swan.xx的API。
+ECMAScript由Ecma国际管理，是基础js语法。浏览器基于标准js扩充了window、document等js API；Node.js基于标准js扩充了fs等模块；
 
 所以uni-app的非H5端，一样支持标准js，支持if、for等语法，支持字符串、数组、时间等变量及各种处理方法。仅仅是不支持浏览器专用对象。
 

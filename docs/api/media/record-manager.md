@@ -27,7 +27,7 @@
 |:-|:-|:-|:-|:-|
 |duration|Number|否|指定录音的时长，单位 ms ，如果传入了合法的 duration ，在到达指定的 duration 后会自动停止录音，最大值 600000（10 分钟）,默认值 60000（1 分钟）|App|
 |sampleRate|Number|否|采样率，有效值 8000/16000/44100|App|
-|format|String|否|音频格式，有效值 aac/mp3/wav/PCM。App默认值为mp3，小程序默认值aac|App|
+|format|String|否|音频格式，有效值 aac/mp3/wav/PCM。App默认值为mp3|App|
 |frameSize|String|否|指定帧大小，单位 KB。传入 frameSize 后，每录制指定帧大小的内容后，会回调录制的文件内容，不指定则不会回调。暂仅支持 mp3 格式。|App不支持|
 
 

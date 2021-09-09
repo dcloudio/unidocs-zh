@@ -97,7 +97,7 @@ App的js运行在jscore下而不是浏览器里，没有浏览器专用的js对�
   - App端若要使用操作window、document的库，需要通过renderjs来实现。
 	- uni的api是多端可用的。在条件编译区，每个平台的专有api也可以使用，比如wx.、plus.等api可以分别在微信下和app下使用。
 2. Tag注意
-	- uni-app的tag同小程序的tag，和HTML的tag不一样，比如div要改成view，span要改成text、a要改成navigator。
+	- uni-app的tag，和HTML的tag不一样，比如div要改成view，span要改成text、a要改成navigator。
 	- 出于降低h5应用向uni-app迁移成本的考虑，写成div、span也可以运行在app上，因为uni-app编译器会把这些HTML标签编译为小程序标签。但仍然建议养成新习惯。
 3. Css注意
 	- 虽然大部分css样式app中都可以支持，但推荐使用flex布局模型，这种布局更灵活高效且支持更多平台(比如nvue、快应用只支持flex布局)

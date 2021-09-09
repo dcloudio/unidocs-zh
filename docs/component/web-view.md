@@ -2,7 +2,6 @@
 
 `web-view` 是一个 web 浏览器组件，可以用来承载网页的容器，会自动铺满整个页面（nvue 使用需要手动指定宽高）。
 
-> 各小程序平台，web-view 加载的 url 需要在后台配置域名白名单，包括内部再次 iframe 内嵌的其他 url 。
 
 **属性说明**
 
@@ -152,20 +151,16 @@
         height: 40px;
         width: 200px;
       }
-
       .btn-red {
         background-color: #dd524d;
       }
-
       .btn-yellow {
         background-color: #f0ad4e;
       }
-
       .desc {
         padding: 10px;
         color: #999999;
       }
-
       .post-message-section {
         visibility: hidden;
       }
@@ -181,41 +176,11 @@
       <button class="btn" type="button" data-action="switchTab">switchTab</button>
     </div>
     <div class="post-message-section">
-      <p class="desc">网页向应用发送消息，注意：小程序端应用会在此页面后退时接收到消息。</p>
+      <p class="desc">网页向应用发送消息</p>
       <div class="btn-list">
         <button class="btn btn-red" type="button" id="postMessage">postMessage</button>
       </div>
     </div>
-    <script type="text/javascript">
-      var userAgent = navigator.userAgent;
-      if (userAgent.indexOf('AlipayClient') > -1) {
-        // 支付宝小程序的 JS-SDK 防止 404 需要动态加载，如果不需要兼容支付宝小程序，则无需引用此 JS 文件。
-        document.writeln('<script src="https://appx/web-view.min.js"' + '>' + '<' + '/' + 'script>');
-      } else if (/QQ/i.test(userAgent) && /miniProgram/i.test(userAgent)) {
-        // QQ 小程序
-        document.write(
-          '<script type="text/javascript" src="https://qqq.gtimg.cn/miniprogram/webview_jssdk/qqjssdk-1.0.0.js"><\/script>'
-        );
-      } else if (/miniProgram/i.test(userAgent) && /micromessenger/i.test(userAgent)) {
-        // 微信小程序 JS-SDK 如果不需要兼容微信小程序，则无需引用此 JS 文件。
-        document.write('<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"><\/script>');
-      } else if (/toutiaomicroapp/i.test(userAgent)) {
-        // 头条小程序 JS-SDK 如果不需要兼容头条小程序，则无需引用此 JS 文件。
-        document.write(
-          '<script type="text/javascript" src="https://s3.pstatp.com/toutiao/tmajssdk/jssdk-1.0.1.js"><\/script>');
-      } else if (/swan/i.test(userAgent)) {
-        // 百度小程序 JS-SDK 如果不需要兼容百度小程序，则无需引用此 JS 文件。
-        document.write(
-          '<script type="text/javascript" src="https://b.bdstatic.com/searchbox/icms/searchbox/js/swan-2.0.18.js"><\/script>'
-        );
-      } else if (/quickapp/i.test(userAgent)) {
-        // quickapp
-        document.write('<script type="text/javascript" src="https://quickapp/jssdk.webview.min.js"><\/script>');
-      }
-      if (!/toutiaomicroapp/i.test(userAgent)) {
-        document.querySelector('.post-message-section').style.visibility = 'visible';
-      }
-    </script>
     <!-- uni 的 SDK -->
     <script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
     <script type="text/javascript">
@@ -345,15 +310,14 @@ onReady() {
 ```
 
 ##### `web-view`组件的层级问题解决
-web-view组件在App和小程序中层级较高，如需要在vue页面中写代码为web-view组件覆盖内容，小程序端无解，只能由web-view的组件自己弹出div。App端有如下若干方案：
-1. 比较简单的方式是actionsheet等原生弹出菜单（小程序也可以使用此方案）
+web-view组件在App中层级较高，如需要在vue页面中写代码为web-view组件覆盖内容，只能由web-view的组件自己弹出div。App端有如下若干方案：
+1. 比较简单的方式是actionsheet等原生弹出菜单
 2. 使用plus.nativeObj.view。这里有一个底部图标菜单的示例，可参考[https://ext.dcloud.net.cn/plugin?id=69](https://ext.dcloud.net.cn/plugin?id=69)
 3. 使用[原生子窗体subNvue](/api/window/subNVues)
 4. 可以在web-view组件内嵌的网页中弹出z-index更高的div。如果是外部网页，可以在vue中获得子webview对象后，通过[evalJS](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.evalJS)为这个子webview注入一段js，操作其弹出div层。
 
 ##### web-view组件的浏览器内核说明
 - H5端的web-view其实是被转为iframe运行，使用的是当前的浏览器
-- 小程序的web-view使用的是小程序自带的浏览器内核，不同厂商不一样，[详见](https://ask.dcloud.net.cn/article/1318)
 - App端，Android，默认使用的是os自带的浏览器内核，在设置-所有应用里，显示系统服务，可查看Android System Webview的版本。在Android5+，系统webview支持安装升级。
 - App端，Android，支持在manifest中配置选用腾讯X5浏览器内核。使用x5内核需要一些注意事项！具体请参考[详见](https://ask.dcloud.net.cn/article/36806)
 - App端，iOS，是分为UIWebview和WKWebview的，2.2.5+起默认为WKWebview，之前版本[详见](https://ask.dcloud.net.cn/article/36348)
@@ -364,8 +328,7 @@ web-view组件在App和小程序中层级较高，如需要在vue页面中写代
 - `<web-view>` 组件所在窗口的标题，跟随页面的 `<title>` 值的变化而变化（不含H5端）。
 - App-vue的`web-view`加载的html页面可以运行plus的api，但注意如果该页面调用了plus.key的API监听了back按键（或使用mui的封装），会造成back监听冲突。需要该html页面移除对back的监听。或按照上面的示例代码禁止网页使用plus对象。app-nvue页面的`web-view`组件不能运行plus API。
 - `uni.webview.js` 最新版地址：[https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js](https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js)
-- 小程序平台，个人类型与海外类型的小程序使用 `web-view` 组件，提交审核时注意微信等平台是否允许使用
-- 小程序平台， `src` 指向的链接需登录小程序管理后台配置域名白名单。`App`和`H5` 无此限制。
+
 
 ##### FAQ
 

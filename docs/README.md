@@ -1,5 +1,5 @@
 
-```uni-app``` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、PC或Mobile Web（响应式）、以及各种小程序多个平台。
+```uni-app``` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、PC或Mobile Web（响应式）多个平台。
 
 `DCloud`公司拥有900万开发者，他们创建了数百万的应用。
 
@@ -107,7 +107,7 @@ uni-app内置了一套完善的跨平台ui组件，App引擎内置了各种常�
 
 ### 一套代码，运行到多个平台
 
-```uni-app```实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、H5、微信开发者工具、支付宝小程序Studio、百度开发者工具、字节跳动开发者工具、QQ开发者工具（底部8个终端选项卡代表8个终端模拟器）：
+```uni-app```实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、H5（底部8个终端选项卡代表8个终端模拟器）：
 
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/efd8e280-60a9-11eb-a16f-5b3e54966275.jpg)
 

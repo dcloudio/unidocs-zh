@@ -69,7 +69,7 @@
 |latitude|纬度|Number|是|浮点数，范围 -90 ~ 90||
 |longitude|经度|Number|是|浮点数，范围 -180 ~ 180||
 |title|标注点名|String|否|点击时显示，callout存在时将被忽略|App-nvue 2.1.5+、H5|
-|iconPath|显示的图标|String|是|项目目录下的图片路径，支持相对路径写法，以'/'开头则表示相对小程序根目录；也支持临时路径||
+|iconPath|显示的图标|String|是|项目目录下的图片路径，支持相对路径写法，也支持临时路径||
 |rotate|旋转角度|Number|否|顺时针旋转的角度，范围 0 ~ 360，默认为 0|App-nvue 2.1.5+|
 |alpha|标注的透明度|Number|否|默认1，无透明，范围 0 ~ 1|App-nvue 2.1.5+|
 |width|标注图标宽度|Number|否|默认为图片实际宽度|App-nvue 2.1.5+、H5|
@@ -238,7 +238,7 @@ nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/3790
 - app-vue 中，css 动画对 `<map>` 组件无效。
 - map 组件使用的经纬度是国测局坐标，调用 uni.getLocation 接口需要指定 type 为 gcj02。
 - `<map>` 组件在不同平台的底层引擎是不同的：H5为腾讯地图；App为高德地图。app-vue也可以使用百度地图，在manifest中配置，打包后生效，但app-nvue只支持高德地图。另外选择地图、查看地图位置的API也仅支持高德地图。App端如无特殊必要，建议使用高德地图。
-- map 组件默认的api是参考微信小程序的，如需要使用plus.map，可以通过`$getAppMap`获取原生地图对象，[详见](https://uniapp.dcloud.io/api/location/map)。注意nvue的map组件不是plus.map对象，无法使用`$getAppMap`
+- map 组件，如需要使用plus.map，可以通过`$getAppMap`获取原生地图对象，[详见](https://uniapp.dcloud.io/api/location/map)。注意nvue的map组件不是plus.map对象，无法使用`$getAppMap`
 - H5 端获取定位信息，需要部署在 **https** 服务上，本地预览（localhost）仍然可以使用 http 协议。
 - 无GPS模块或GPS无信号的 PC 设备使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败。
 - App 端使用地图组件需要**向高德或百度等三方服务商申请SDK资质，获取AppKey，打包时需要在manifest文件中勾选相应模块，在SDK配置中填写Appkey。注意申请包名和打包时的包名需匹配一致，证书信息匹配**。在manifest可视化界面有详细申请指南。

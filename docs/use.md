@@ -375,7 +375,7 @@ export default {
 
 ### uni-app内置基础组件
 
-``uni-app`` 内置了小程序的所有[组件](component/)，比如： ``picker``,``map`` 等。
+``uni-app`` 内置了[组件](component/)，比如： ``picker``,``map`` 等。
 
 **示例**
 

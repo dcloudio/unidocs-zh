@@ -20,13 +20,13 @@
   <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/72ccebcc-e9e0-4b9f-9f7b-1249edde3aba.png">
 </a>
 
-- 合成游戏 该款网赚游戏是基于uni-app、uniCloud、uni-AD开发的合成类项目，源码和文档完全开放。
+- [合成类网赚游戏](https://ext.dcloud.net.cn/plugin?id=4095) 该款网赚游戏是基于uni-app、uniCloud、uni-AD开发的合成类项目，源码和文档完全开放。
 游戏主要功能：玩家通过签到等方式赚取金币，使用金币购买低等级猫然后合成为更高等级猫。金币不足时，通过观看激励视频广告，获取新的金币。玩家通过邀请好友一起养猫，下线观看激励视频，邀请者可获得激励红包。
 <a href="https://ext.dcloud.net.cn/plugin?id=4095">
   <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/04ab1423-4dd6-48a8-a4ae-53012684b2ae.png">
 </a>
 
-- 猜歌游戏 该游戏基于uni-app、uniCloud、uni-AD开发的小游戏，通过猜歌曲、观看广告赚取现金奖励。代码开源、文档公开。
+- [猜歌类网赚游戏](https://ext.dcloud.net.cn/plugin?id=4826) 该游戏基于uni-app、uniCloud、uni-AD开发的小游戏，通过猜歌曲、观看广告赚取现金奖励。代码开源、文档公开。
 游戏主要功能：玩家可以通过猜歌、做任务等方式直接获取现金奖励。玩家可以通过猜歌、拆红包、做任务等方式获取金币奖励，当金币累积到一定数量可以兑换现金。玩家可以通过做带有抽奖字样的任务获取现金抽奖次数
 <a href="https://ext.dcloud.net.cn/plugin?id=4826">
   <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-c26ec39a-f602-435d-b8bb-0453aa221eb0/b4812d7a-6438-4c33-89de-e2dc9752b028.png">

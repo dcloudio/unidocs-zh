@@ -22,6 +22,7 @@
 
 - [合成类网赚游戏](https://ext.dcloud.net.cn/plugin?id=4095) 该款网赚游戏是基于uni-app、uniCloud、uni-AD开发的合成类项目，源码和文档完全开放。
 游戏主要功能：玩家通过签到等方式赚取金币，使用金币购买低等级猫然后合成为更高等级猫。金币不足时，通过观看激励视频广告，获取新的金币。玩家通过邀请好友一起养猫，下线观看激励视频，邀请者可获得激励红包。
+
 <a href="https://ext.dcloud.net.cn/plugin?id=4095">
   <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/04ab1423-4dd6-48a8-a4ae-53012684b2ae.png">
 </a>
@@ -38,12 +39,7 @@
 
 - 登登多邻国：是登登教育公司为外语学习者提供的题库软件。其服务端整体基于uniCloud，前端包括PC和H5网站、微信小程序，均连接uniCloud。日请求量**百万级**。
   web体验地址：[https://duolingo.91ddedu.com](https://duolingo.91ddedu.com)；
-  微信小程序体验方式：微信搜索“登登多邻国真题库”，或扫描下方小程序码
-
-<a href="https://det.91ddedu.com" target="_blank">
-  <img width="150" src="https://duolingo.91ddedu.com/static/miniapp.4a4ddf6b.jpg">
-</a>
-
+  微信小程序体验方式：微信搜索“登登多邻国真题库”
 - [国云商城](https://ext.dcloud.net.cn/plugin?id=2413)：优秀的电商系统，购买本系统，快速上线属于你自己的电商应用。
 - [云上商城](https://ext.dcloud.net.cn/plugin?id=1989)：完整的线上生活超市，根据当前定位，就近匹配仓库。
 - 纸塘壁纸：精美壁纸小程序。微信小程序搜索“纸塘壁纸PRO”

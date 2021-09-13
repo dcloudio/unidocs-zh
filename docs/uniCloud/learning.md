@@ -3,10 +3,14 @@
 
 只需熟悉js即可，然后阅读uniCloud的文档，就像学习一个js框架。
 
-#### DCloud出品的视频教程：
-<video style="width:50vw;height:37.5vw;margin-bottom:20px;" id="video" preload="none" controls="controls" poster="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e5da48fa-33c1-4379-8927-65edc6d05d5f.mp4?x-oss-process=video/snapshot,t_1000,f_jpg" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e5da48fa-33c1-4379-8927-65edc6d05d5f.mp4"></video>
+#### 框架示例项目
+- [hello uniCloud](https://ext.dcloud.net.cn/plugin?id=4082)演示uniCloud框架常用Api和组件用法和效果
+- [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)基于uni-app+uniCloud演示商用项目常见功能如：登录注册、头像、设置、拦截器、banner...的云端一体应用快速开发基本项目模版。
 
-- [更多视频教程](https://www.bilibili.com/video/BV17p4y1a71x?p=9)
+#### DCloud出品的视频教程：
+<a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=1">
+    <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/707756af-e9a9-4d08-8db9-5d1f34b84ea6.jpg" alt="uniCloud视频教程" style="width: 70%;">
+</a>
 
 
 #### 三方提供的视频教程

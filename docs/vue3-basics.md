@@ -27,7 +27,7 @@ Vue (读音 /vjuː/，类似于 `view`) 是一套用于构建用户界面的**�
 - 更快，性能比Vue2快1.2~2倍(diff方法优化、静态提升、时间侦听器缓存、[ssr渲染](https://uniapp.dcloud.io/collocation/ssr))
 - 更小，按需编译，体积比Vue2更小
 - 组合API，加强API设计一致性，实现逻辑模块化和重用
-- 加强TypeScripe支持
+- 加强TypeScript支持
 - 暴露了自定义渲染API
 - 提高自身可维护性
 

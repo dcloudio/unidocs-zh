@@ -166,6 +166,8 @@ options 为 object 类型，属性如下：
             // 播放中途退出
             console.log("onClose " + res.isEnded);
           }
+
+          // 在此处理服务器回调逻辑
         }, (err) => {
           // 广告加载错误
           console.log(err)
@@ -540,7 +542,7 @@ rewardedVideoAd.onClose(res => {
 
 App平台 3.1.15+ 支持穿山甲/优量汇/快手
 
-激励视频广告可以支持广告服务器到业务服务器的回调，用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，广告服务器会访问配置的回调链接，通知用户完成观看激励视频。
+激励视频广告可以支持广告服务器到业务服务器的回调，用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，广告服务器会访问配置的云函数，通知用户完成观看激励视频。
 
 相对来讲服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
 
@@ -559,37 +561,11 @@ rewardedVideoAd = uni.createRewardedVideoAd({
     extra: 'testdata'
   }
 });
-```
 
-### 服务器回调事件
-- HBuilderX 2.6.8+
-
-穿山甲
-```js
-rewardedVideoAd.onVerify(e => {
-  console.log('服务器发送验证请求且回调校验完成');
+rewardedVideoAd.onClose(e => {
   var provider= e.provider;
-  var valid = e.isValid;   //获取校验结果
-  //valid为true表示通过了服务器的校验，false表示可能没有通过服务器的校验，或是服务器延迟或失败(此时需增加逻辑：轮询向服务器请求并验证结果)
-})
-```
-
-优量汇
-```js
-rewardedVideoAd.onVerify(e => {
-  console.log('服务器已发送验证请求');
-  var provider= e.provider;
-  var transId = e.transId;
-  // 需增加逻辑：轮询向服务器请求并验证结果
-})
-```
-
-快手
-```js
-rewardedVideoAd.onVerify(e => {
-  console.log('服务器已发送验证请求');
-  var provider= e.provider;
-  // 需增加逻辑：轮询向服务器请求并验证结果
+  // 1. 服务器先保存回调结果
+  // 2. 向服务器请求验证结果（服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果）
 })
 ```
 

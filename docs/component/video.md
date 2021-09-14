@@ -23,7 +23,7 @@
 |show-center-play-btn|Boolean|true|是否显示视频中间的播放按钮||
 |show-loading|Boolean|true|是否显示loading控件|仅app 2.8.12+|
 |enable-progress-gesture|Boolean|true|是否开启控制进度的手势||
-|object-fit|String|contain|当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|H5|
+|object-fit|String|contain|当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|App、H5|
 |poster|String||视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效||
 |codec|String|hardware|解码器选择，hardware：硬解码（硬解码可以增加解码算力，提高视频清晰度。少部分老旧硬件可能存在兼容性问题）；software：ffmpeg 软解码；|App-Android 3.1.0+|
 |http-cache|Boolean|true|是否对 http、https 视频源开启本地缓存。缓存策略:开启了此开关的视频源，在视频播放时会在本地保存缓存文件，如果本地缓存池已超过100M，在进行缓存前会清空之前的缓存（不适用于m3u8等流媒体协议）|App-Android 3.1.0+|

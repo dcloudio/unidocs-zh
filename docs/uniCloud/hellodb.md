@@ -471,7 +471,7 @@ uniCloud提供的`db_init.json`主要是为了对数据库进行初始化，并�
 
 以下为一个简单的脚本示例用于处理导出的json文件
 
-如果将此文件存储为`parse.js`，使用`node index.js 输入文件相对或绝对路径 输出文件相对或绝对路径`即可处理导出的json文件
+如果将此文件存储为`parse.js`，使用`node parse.js 输入文件相对或绝对路径 输出文件相对或绝对路径`即可处理导出的json文件
 
 ```js
 const fs = require('fs')

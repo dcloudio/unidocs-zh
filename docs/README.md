@@ -72,7 +72,7 @@
         <b>快手小程序版</b>
       </a>
       <a href="javascript:void(0)" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"></div>
+        <div class="barcode-img-box" style="width: 160px;"></div>
         <b></b>
       </a>
     </div>

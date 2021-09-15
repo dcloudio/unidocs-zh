@@ -257,8 +257,16 @@ class AdHelper {
 
   get(options) {
     const {
-      adpid
+      adpid,
+      singleton = true
     } = options
+    if (singleton === false) {
+      if (this._ads[adpid]) {
+        this._ads[adpid].destroy()
+        delete this._ads[adpid]
+      }
+    }
+    delete options.singleton
     if (!this._ads[adpid]) {
       this._ads[adpid] = this._createAdInstance(options)
     }

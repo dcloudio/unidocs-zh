@@ -71,6 +71,10 @@
         <div class="barcode-img-box"><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/04cb978b-070f-4122-b374-cb3cd9f9528f.png" width="160" /></div>
         <b>快手小程序版</b>
       </a>
+      <a href="javascript:void(0)" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box"></div>
+        <b></b>
+      </a>
     </div>
     <p>注：<br/>
         <em>- 某些平台不能提交简单demo，故补充了一些其他功能；hello uni-app示例代码可从[github](https://github.com/dcloudio/hello-uniapp)获取</em></br>

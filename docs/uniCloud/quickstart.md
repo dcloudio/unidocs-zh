@@ -233,9 +233,10 @@ exports.main = async (event, context) => {
         "h5": {
           "launchtype" : "remote" // h5平台连接云端云函数
         },
-        "provider" : "aliyun", // 如果项目仅关联一个服务空间无需此参数
-        "type" : "uniCloud" // 标识此项配置为uniCloud配置，必填
-     }
+        "provider": "aliyun", // 如果项目仅关联一个服务空间无需此参数
+        "type": "uniCloud", // 标识此项配置为uniCloud配置，必填
+        "systemLog": false // 设置为false之后关闭云函数控制台的系统日志（主要是云函数入参、返回值，错误信息不会关闭）
+      }
     ]
 }
 
@@ -471,7 +472,9 @@ H5前端js访问云函数，涉及跨域问题，导致前端js无法连接云�
 
 **注意**
 
-- 目前阿里云跨域配置不对云存储及前端网页托管生效，表现为云存储中图片绘制到canvas会[污染画布](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Using_images#Using_other_canvas_elements)，前端网页托管的网页不可在iframe中使用
+`2021年9月16日`之前阿里云跨域配置不对云存储及前端网页托管生效，表现为云存储中图片绘制到canvas会[污染画布](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Using_images#Using_other_canvas_elements)，前端网页托管的网页不可在iframe中使用。
+
+`2021年9月16日`之后阿里云跨域配置可以对前端网页托管生效，**仅对前端网页托管的自定义域名生效，不对默认域名生效，如何绑定自定义域名请参考：[前端网页托管绑定自定义域名](uniCloud/hosting.md?id=domain)**，设置之后可能需要几分钟才会生效。如果你在之前已经设置了跨域域名和前端网页托管的自定义域名，需要重新设置一次跨域域名才能生效。
 
 ## cli项目中使用uniCloud
 

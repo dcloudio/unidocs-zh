@@ -1,5 +1,8 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2021-09-16
+  + 阿里云 调整 跨域配置对前端网页托管自定义域名生效 [详情](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
+
 #### 2021-09-01
   + 【重要】clientDB 新增 支持使用 getTemp 对主表、副表过滤后再联表查询，大幅提升联表查询性能 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup-with-temp)
   + 阿里云 新增 redis扩展能力，加速云函数响应 [详情](https://uniapp.dcloud.net.cn/uniCloud/redis)

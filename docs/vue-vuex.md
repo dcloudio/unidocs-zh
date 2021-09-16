@@ -181,28 +181,6 @@ app.$mount()
 
 
 
-```html
-<!-- 页面路径：pages/index/index.vue -->
-<template>
-	<view>
-		<view>用户名：{{username}}</view>
-		<view>年龄：{{age}}</view>
-	</view>
-</template>
-<script>
-	import { mapState } from 'vuex'//引入mapState
-	export default {
-		data() {
-			return {}
-		},
-		computed: mapState({
-		    // 从state中拿到数据 箭头函数可使代码更简练
-		    username: state => state.username,
-			age: state => state.age,
-		}) 
-	}
-</script>
-```
 
 
 
@@ -218,37 +196,6 @@ app.$mount()
 
 在 `uni-app` 项目根目录下，`store` 目录 `index.js` 文件下：
 
-```js
-<!-- 页面路径：store/index.js -->
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex);
-
-const store = new Vuex.Store({
-	state: {
-		todos: [{
-				id: 1,
-				text: '我是内容一',
-				done: true
-			},
-			{
-				id: 2,
-				text: '我是内容二',
-				done: false
-			}
-		]
-	},
-	getters: {
-		doneTodos: state => {
-			return state.todos.filter(todo => todo.done)
-		}
-	}
-})
-
-export default store
-
-```
 
 
 
@@ -335,51 +282,6 @@ export default store
 
 - 在 `mutation` 传参（载荷）可以传递一个参数。
 
-```js
-<!-- 页面路径：store/index.js -->
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex);
-
-const store = new Vuex.Store({
-	state: {
-		count: 1
-	},
-	mutations: {
-		add(state, n) {
-			state.count += n
-		}
-	}
-})
-export default store
-```
-
-
-```html
-<!-- 页面路径：pages/index/index.vue -->
-<template>
-	<view>
-		<view>数量：{{count }}</view>
-		<button @click="addCount">增加</button>
-	</view>
-</template>
-<script>
-	import store from '@/store/index.js'
-	export default {
-		computed: {
-			count() {
-				return this.$store.state.count
-			}
-		},
-		methods: {
-			addCount() {
-				store.commit('add', 5)//每次累加 5
-			}
-		}
-	}
-</script>
-```
 
 - 在 `mutation` 传参（载荷）可以也可以传递一个对象。让我们修改上面累加器的例子：
 
@@ -476,43 +378,12 @@ export default store
 ```
 
 
-```js
-<!-- 页面路径：store/index.js -->
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex);
-
-const store = new Vuex.Store({
-	state: {
-		count: 1
-	},
-	mutations: {
-		add(state) {
-			// 变更状态
-			state.count += 2
-		}
-	}
-})
-export default store
-```
-
-
 
 
 
 我们要通过提交 `mutation` 的方式来改变状态数据，是因为我们想要更明确地追踪到状态的变化。如果是类似下面这样异步的话：
 
 
-```js
-	mutations: {
-		someMutation (state) {
-			api.callAsyncMethod(() => {
-				state.count++
-			})
-		}
-	}
-```
 
 我们就不知道什么时候状态会发生改变，所以也就无法追踪了，这与 `mutation` 的设计初心相悖，所以强制规定它必须是同步函数。
 
@@ -570,26 +441,9 @@ export default store
 
 - `mapActions` 也支持传入参数（载荷）：
 
-```js
-	methods: {
-		...mapActions([
-		    'addCountAction' 
-			// 将 `this.addCountAction(amount)` 映射为 
-			//`this.$store.dispatch('addCountAction', amount)`
-		]),
-	}
-```
 
 - `mapActions` 也支持传递一个对象：
 
-```js
-	methods: {
-		...mapActions({
-			addCount: 'addCountAction',
-			// 将 `this.addCount()` 映射为 `this.$store.dispatch('addCountAction')`
-		})
-	}
-```
 
 
 

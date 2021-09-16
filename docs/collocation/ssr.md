@@ -165,9 +165,31 @@ export default {
 
 #### 发行与部署@distribute
 
-- 部署到`uniCloud`
-  * 开通[uniCloud](https://unicloud.dcloud.net.cn)以及[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
-  * 配置`vite.config.js`中的`base`为`前端网页托管`地址
+发行ssr会得到两部分内容，云端部分和静态资源部分。在uniCloud内部署需要将云端部分部署到云函数内，静态资源部分部署在前端网页托管内。
+
+##### 部署到`uniCloud`@distribute-unicloud
+
+**前置步骤**
+
+- 开通[uniCloud](https://unicloud.dcloud.net.cn)以及[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
+- 云函数绑定自定义url化域名，参考文档：[云函数Url化](https://uniapp.dcloud.net.cn/uniCloud/http)
+- 前端网页托管绑定自定义域名，参考文档：[前端网页托管配置域名](https://uniapp.dcloud.net.cn/uniCloud/hosting?id=domain)
+- 将前两步部署的域名都配置在跨域配置内，即允许云函数跨域访问前端网页托管内的资源，也允许前端网页托管跨域访问云函数。参考文档：[H5中使用uniCloud的跨域处理](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
+- 从插件市场导入[uni-ssr](https://ext.dcloud.net.cn/plugin?id=5338)到项目内
+
+**编译发行**
+
+> 自动部署
+
+需要HBuilderX版本`3.2.7`及以上版本
+
+- 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
+- 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
+
+> 手动发行部署
+
+- 配置`vite.config.js`中的`base`为`前端网页托管`地址
+
 ```js
 import {
 	defineConfig
@@ -181,13 +203,21 @@ export default defineConfig({
 	],
 })
 ```
-  * 编译：
-  > cli工程：`npm run build:h5:ssr`或通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
+
+- 编译：
+  
+  cli工程：`npm run build:h5:ssr`或通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
+  
+  非cli工程：通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
   
   ![以ssr模式发行](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d7574ced-e253-4b73-8187-86d6a8811364.jpg)
   
-  * 部署静态资源到[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
-  > 将编译后的`dist/build/h5/client`中的资源上传至前端网页托管，推荐使用免费的阿里云服务空间
-  * 部署`uni-ssr`云函数
-  > 从插件市场导入[uni-ssr](https://ext.dcloud.net.cn/plugin?id=5338)，将编译后的`dist/build/h5/server`目录拷贝至`uni-ssr`云函数根目录，并上传。备注：阿里云的云函数绑定自定义域名功能正在调试中，现阶段推荐使用腾讯云版本的云函数。
-  * 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
+- 部署静态资源到[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
+
+  将编译后的`dist/build/h5/client`中的资源上传至前端网页托管，推荐使用免费的阿里云服务空间
+
+- 部署`uni-ssr`云函数
+
+  将编译后的`dist/build/h5/server`目录拷贝至`uni-ssr`云函数根目录，并上传。
+
+- 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)

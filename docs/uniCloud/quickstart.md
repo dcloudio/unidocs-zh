@@ -457,6 +457,8 @@ uniCloud支持云函数，但其实大多数场景下并不需要写云函数，
 
 如果遇到正确配置了合法域名但是依然报`url not in domain list`，请尝试删除手机上的小程序、清理小程序所在的客户端缓存、重启对应的小程序开发工具后重试
 
+如果遇到`invalid ip xxx, not in whitelist`，请检查是否在小程序管理后台开启了域名白名单。如果没用到可以关闭，如果确认需要使用ip白名单，请开通腾讯云收费空间并使用[固定IP](uniCloud/cf-functions.md?id=eip)功能
+
 ## H5中使用uniCloud的跨域处理@useinh5
 
 H5前端js访问云函数，涉及跨域问题，导致前端js无法连接云函数服务器。处理方式如下：。

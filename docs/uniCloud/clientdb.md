@@ -3342,9 +3342,30 @@ module.exports = {
 
 **如需在before和after内传参，建议直接在state上挂载。但是切勿覆盖上述属性**
 
-### action内可以使用的公共模块
+### action内可以使用的公共模块@common-for-action
 
 目前clientDB依赖了`uni-id`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action内使用的。
+
+自`HBuilderX 3.2.7-alpha`起，action内可使用任意公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和clientDB关联。
+
+一个在clientDB内使用的公共模块的package.json示例如下。
+
+```js
+{
+  "name": "test-common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "includeInClientDB": true
+}
+```
+
+**注意**
+
+- 尽量不要依赖体积过大的公共模块，会延长冷启动时间
 
 **参考：**
 

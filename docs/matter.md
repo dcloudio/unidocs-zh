@@ -212,7 +212,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 
 - 使用运行时代码压缩
   + `HBuilderX`创建的项目勾选`运行-->运行到小程序模拟器-->运行时是否压缩代码`
-  + `cli`创建的项目可以在`pacakge.json`中添加参数`--minimize`，示例：`"dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"`
+  + `cli`创建的项目可以在`package.json`中添加参数`--minimize`，示例：`"dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"`
 - 使用分包优化，[关于分包优化的说明](/collocation/manifest?id=关于分包优化的说明)
 
 #### 各家小程序开发工具下载地址

@@ -28,7 +28,7 @@
 
 ### uni.onLocaleChange(callback)
 
-设置当前语言
+用于监听应用语言切换
 
 **平台差异说明**
 

@@ -1,5 +1,10 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2021-09-19
+  + 本地调试插件 新增 设置启动调试参数（.hbuilderx/launch.json）关闭系统日志 [详情](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=calllocalfunction)
+  + 本地调试插件 优化 公共模块查找逻辑，减少调试错误
+  + clientDB 新增 action 依赖公共模块的功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=common-for-action)
+
 #### 2021-09-16
   + 阿里云 调整 跨域配置对前端网页托管自定义域名生效 [详情](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
 

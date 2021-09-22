@@ -1,3 +1,32 @@
+#### 3.2.7.20210919-alpha
+* 【uni-app】
+  + App平台、H5平台 新增 uni.onLocaleChange 接口，用于监听应用语言切换 [详情](https://uniapp.dcloud.io/api/ui/locale)
+  + App平台、H5平台 修复 canvas 组件 重复触发 resize 导致延迟绘图时 canvas 改变的Bug [详情](https://github.com/dcloudio/uni-app/issues/2847)
+  + App平台 新增 uni.configMTLS 支持 https 请求配置自签名证书 [详情](https://uniapp.dcloud.io/api/request/request?id=configmtls)
+  + App-iOS平台 修复 3.2.6 引出的 nvue 页面 css 伪类样式失效的Bug [详情](https://ask.dcloud.net.cn/question/130879)
+  + App-iOS平台 修复 tabbar 设置选中项图片为 gif 时动画速度太慢的Bug [详情](https://ask.dcloud.net.cn/question/125824)
+  + 支付宝小程序平台 新增 支持在 App.vue 文件内监听 onShareAppMessage 事件 [#2844](https://github.com/dcloudio/uni-app/pull/2844)
+  + 字节小程序平台 修复 差量编译失效的Bug
+* 【uniCloud】
+  + 本地调试插件 新增 设置启动调试参数（.hbuilderx/launch.json）关闭系统日志 [详情](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=calllocalfunction)
+  + 本地调试插件 优化 公共模块查找逻辑，减少调试错误
+  + clientDB 新增 action 依赖公共模块的功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=common-for-action)
+* 【App插件(含5+App和uni-app的App端)】
+  + 新增 登录鉴权 支持Google登录和Facebook登录 [详情](http://ask.dcloud.net.cn/article/192)
+  + 新增 微信分享 支持打开微信客服功能 [规范](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.openCustomerServiceChat)
+  + 更新 uni-AD 今日头条穿山甲广告SDK Android为4.0.0.1版；腾讯优量汇SDK Android为4.410.1280版；快手广告SDK Android为3.3.14版，iOS为3.3.15.1版；快手内容联盟SDK iOS为3.3.23.1版
+  + 更新 微信SDK Android为6.7.9版，iOS为1.9.2版
+  + Android平台 更新 友盟统计SDK为9.4.2版
+  + Android平台 优化 compressVideo 视频压缩性能，支持 resolution 参数
+  + Android平台 修复 系统相册中存在大量图片时图片选择界面操作卡顿的Bug[详情](https://ask.dcloud.net.cn/question/130582)
+  + Android平台 修复 视频播放控件 VideoPlayer 在 Android11 设备播放视频可能崩溃的Bug [详情](https://ask.dcloud.net.cn/question/129108)
+  + Android平台 修复 原生隐私政策提示框切换到横屏是显示异常的Bug [详情](https://ask.dcloud.net.cn/question/130403)
+  + Android平台 修复 Orientation 方向传感器在部分平板设备可能无法方向信息的Bug
+  + iOS平台 优化 compressVideo 视频压缩速度
+  + iOS平台 修复 一键登录 授权页面服务协议复选框不好点击的Bug [详情](https://ask.dcloud.net.cn/question/130881)
+  + iOS平台 修复 视频播放控件 VideoPlayer 播放直播视频无法触发 timeupdate 事件的Bug [详情](https://ask.dcloud.net.cn/question/129955)
+  + iOS平台 修复 视频播放控件 VideoPlayer 可能无法正常播放m3u8视频流的Bug [详情](https://ask.dcloud.net.cn/question/129884)
+
 #### 3.2.6.20210901-alpha
 * 【uni-app】
   + App平台 修复 3.2.1 引出的 uni.chooseImage 无法压缩拍照图像的Bug [详情](https://ask.dcloud.net.cn/question/129238)

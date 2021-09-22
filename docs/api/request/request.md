@@ -165,9 +165,9 @@ https 请求配置自签名证书
   2. `Base64String`：将证书文件的二进制转换为 `Base64String` 字符串，然后在字符串前面添加`'data:cert/pem;base64,'`前缀，示例：`'data:cert/pem;base64,xxx'` xxx 代表真实的证书 base64String 
 
 **callbackObject 参数说明**
-属性|类型 |说明
-:--|:--|:--|
-code|Number| 成功返回 0,失败返回相应 code 码
+|属性|类型 |说明|
+|:--|:--|:--|
+|code|Number| 成功返回 0,失败返回相应 code 码|
 
 **示例**
 ```js

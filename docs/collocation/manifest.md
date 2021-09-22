@@ -85,7 +85,7 @@ splash（启动封面）是App必然存在的、不可取消的。
 |属性|类型|默认值|描述|最低版本|
 |:-|:-|:-|:-|:-|
 |alwaysShowBeforeRender|Boolean|true|首页白屏时不关闭启动界面|1.6.0|
-|autoclose|Boolean|true|是否自动关闭程序启动界面。如果需要手动关闭启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
+|autoclose|Boolean|true|是否自动关闭程序启动界面。如果需要[手动关闭](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.closeSplashscreen)启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
 |waiting|Boolean|true|是否在程序启动界面显示等待圈或雪花||
 |delay|Number|0|启动界面在应用的首页面加载完毕后延迟关闭的时间，autoclose 为 true 时生效。|&nbsp;|
 

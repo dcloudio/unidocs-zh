@@ -113,55 +113,56 @@ export default {
   ```
 2. 然后修改 main.js
 
-```js
-import { createSSRApp } from 'vue'
-import App from './App.vue'
-import createStore from './store'
-export function createApp() {
-  const app = createSSRApp(App)
-  
-  const store = createStore() // 创建 store
-  app.use(store)
-  
-  return {
-    app,
-    store,// 必须返回 store
-  }
-}
+	```js
+	import { createSSRApp } from 'vue'
+	import App from './App.vue'
+	import createStore from './store'
+	export function createApp() {
+	  const app = createSSRApp(App)
+	  
+	  const store = createStore() // 创建 store
+	  app.use(store)
+	  
+	  return {
+		app,
+		store,// 必须返回 store
+	  }
+	}
 
-```
+	```
+	
 3. 在页面或组件中使用
 
-```html
-<template>
-  <text v-if="item">{{ item.title }}</text>
-  <text v-else>...</text>
-</template>
+	```html
+	<template>
+	  <text v-if="item">{{ item.title }}</text>
+	  <text v-else>...</text>
+	</template>
 
-<script>
-const id = 1;// 模拟ID
-export default {
-  computed: {
-    item() {
-      return this.$store.state.items[id]
-    }
-  },
-  serverPrefetch() {// 服务端预取数据的生命周期
-    return this.fetchItem()
-  },
-  mounted() { // 仅客户端执行的生命周期
-    if (!this.item) { // 判断服务端是否已正常获取，若未获取，重新调用加载数据
-      this.fetchItem()
-    }
-  },
-  methods: {
-    fetchItem() {
-      return this.$store.dispatch('fetchItem', id)
-    }
-  }
-}
-</script>
-```
+	<script>
+	const id = 1;// 模拟ID
+	export default {
+	  computed: {
+		item() {
+		  return this.$store.state.items[id]
+		}
+	  },
+	  serverPrefetch() {// 服务端预取数据的生命周期
+		return this.fetchItem()
+	  },
+	  mounted() { // 仅客户端执行的生命周期
+		if (!this.item) { // 判断服务端是否已正常获取，若未获取，重新调用加载数据
+		  this.fetchItem()
+		}
+	  },
+	  methods: {
+		fetchItem() {
+		  return this.$store.dispatch('fetchItem', id)
+		}
+	  }
+	}
+	</script>
+	```
 
 #### 发行与部署@distribute
 

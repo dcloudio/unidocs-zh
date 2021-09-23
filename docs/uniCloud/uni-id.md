@@ -2886,10 +2886,12 @@ const res = await uniID.forbidAppLogin({
 
 **wx_openid字段定义**
 
-| 字段    | 类型   | 必填 | 描述     |
-| ------- | ------ | ---- | -------- |
-| app-plus | String | 否   | app平台微信openid |
-| mp-weixin| String | 否   | 微信小程序平台openid  |
+| 字段		| 类型	| 必填	| 描述					|
+| -------	| ------| ----	| --------				|
+| app-plus	| String| 否	| app平台微信openid		|
+| mp-weixin	| String| 否	| 微信小程序平台openid	|
+| h5-web	| String| 否	| 微信网页应用openid	|
+| h5-weixin	| String| 否	| 微信公众号应用openid	|
 
 **realNameAuth 扩展字段定义**
 该字段存储实名认证信息。

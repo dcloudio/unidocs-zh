@@ -172,40 +172,45 @@ export default {
 
 **前置步骤**
 
-- 开通[uniCloud](https://unicloud.dcloud.net.cn)以及[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
-- 云函数绑定自定义url化域名，参考文档：[云函数Url化](https://uniapp.dcloud.net.cn/uniCloud/http)
-- 前端网页托管绑定自定义域名，参考文档：[前端网页托管配置域名](https://uniapp.dcloud.net.cn/uniCloud/hosting?id=domain)
-- 将前两步部署的域名都配置在跨域配置内，即允许云函数跨域访问前端网页托管内的资源，也允许前端网页托管跨域访问云函数。参考文档：[H5中使用uniCloud的跨域处理](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
-- 从插件市场导入[uni-ssr](https://ext.dcloud.net.cn/plugin?id=5338)到项目内
+> **务必完成前置步骤之后再进行后续操作**
+
+1. 开通[uniCloud](https://unicloud.dcloud.net.cn)以及[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
+2. 云函数绑定自定义url化域名，参考文档：[云函数Url化](https://uniapp.dcloud.net.cn/uniCloud/http)
+3. 前端网页托管绑定自定义域名，参考文档：[前端网页托管配置域名](https://uniapp.dcloud.net.cn/uniCloud/hosting?id=domain)
+4. 将前两步部署的域名都配置在跨域配置内，即允许云函数跨域访问前端网页托管内的资源，也允许前端网页托管跨域访问云函数。参考文档：[H5中使用uniCloud的跨域处理](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
+5. 从插件市场导入[uni-ssr](https://ext.dcloud.net.cn/plugin?id=5338)到项目内
 
 **编译发行**
 
-> 自动部署
+**使用HBuilderX发行并自动部署**
 
 需要HBuilderX版本`3.2.7`及以上版本
 
-- 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
-- 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
+1. 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
 
-> 手动发行部署
+	![自动部署](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c6f8ef98-1bb7-4e62-8981-4b507835ab51.jpg)
+	
+2. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
 
-- 配置`vite.config.js`中的`base`为`前端网页托管`地址
+**手动发行部署**
 
-```js
-import {
-	defineConfig
-} from 'vite'
-import uni from '@dcloudio/vite-plugin-uni'
-// https://vitejs.dev/config/
-export default defineConfig({
-	base: 'https://static-xxxx.bspapp.com/', // uniCloud 前端网页托管资源地址（主要是应用编译后的js，图片等静态资源，可以配置为二级目录）
-	plugins: [
-		uni(),
-	],
-})
-```
+1. 配置`vite.config.js`中的`base`为`前端网页托管`地址
 
-- 编译：
+	```js
+	import {
+		defineConfig
+	} from 'vite'
+	import uni from '@dcloudio/vite-plugin-uni'
+	// https://vitejs.dev/config/
+	export default defineConfig({
+		base: 'https://static-xxxx.bspapp.com/', // uniCloud 前端网页托管资源地址（主要是应用编译后的js，图片等静态资源，可以配置为二级目录）
+		plugins: [
+			uni(),
+		],
+	})
+	```
+
+2. 编译：
   
   cli工程：`npm run build:h5:ssr`或通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
   
@@ -213,12 +218,12 @@ export default defineConfig({
   
   ![以ssr模式发行](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d7574ced-e253-4b73-8187-86d6a8811364.jpg)
   
-- 部署静态资源到[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
+3. 部署静态资源到[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
 
   将编译后的`dist/build/h5/client`中的资源上传至前端网页托管，推荐使用免费的阿里云服务空间
 
-- 部署`uni-ssr`云函数
+4. 部署`uni-ssr`云函数
 
   将编译后的`dist/build/h5/server`目录拷贝至`uni-ssr`云函数根目录，并上传。
 
-- 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
+5. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)

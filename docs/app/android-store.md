@@ -159,6 +159,9 @@ uni-AD广告模块集成的三方SDK说明
 在开发uni-app中还需要注意以下问题：
 `不要在页面生命周期onShow中调用可能触发权限提示框的API，如` [uni.getLocation](https://uniapp.dcloud.io/api/location/location?id=getlocation)、[uni.chooseImage](https://uniapp.dcloud.io/api/media/image?id=chooseimage)`等`。
 
+#### 离线打包的apk！提交市场审核被报提前获取用户信息
+
+离线打包请使用3.2.3+版本的SDK。并配置uniapp的隐私协议弹窗。不要自行通过原生能力实现隐私弹窗，否则无法正常限制SDK内部获取用户信息逻辑。导致合规检测不合规！
 
 #### 如何解决“强制用户使用定向推送功能”问题
 

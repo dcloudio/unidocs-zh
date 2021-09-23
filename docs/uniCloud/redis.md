@@ -770,3 +770,96 @@ const [operationType, currentValue] = await redis.eval(`local val = redis.call('
 - 云函数本地调试
 
   目前不支持本地运行使用了Redis扩展能力的云函数，请上传到云端测试
+  
+  
+## 最佳实践
+
+### 高并发下抢购逻辑@snap-over-sell
+
+可以利用redis的原子操作保证在高并发下不会超卖，以下为一个简单示例
+
+在抢购活动开始前可以将商品库存同步到redis内，实际业务中可以通过提前访问一次抢购页面加载所有商品来实现。下面通过一个简单的演示代码来实现
+
+```js
+const redis = uniCloud.redis()
+
+const goodsList = [{ // 商品库存信息
+  id: 'g1',
+  stock: 100
+}, {
+  id: 'g2',
+  stock: 200
+}, {
+  id: 'g3',
+  stock: 400
+}]
+
+const stockKeyPrefix = 'stock_'
+
+async function init() { // 抢购活动开始前在redis初始化库存
+  for (let i = 0; i < goodsList.length; i++) {
+    const {
+      id,
+      stock
+    } = goodsList[i];
+    await redis.set(`${stockKeyPrefix}${id}`, stock)
+  }
+}
+
+init()
+```
+
+抢购的逻辑见以下代码
+
+```js
+exports.main = async function (event, context) {
+	// 一些判断抢购活动是否开始/结束的逻辑，未开始直接返回
+	const cart = [{ // 购物车信息，此处演示购物车抢购的例子，如果抢购每次下单只能购买一件商品，可以适当调整代码
+		id: 'g1', // 商品id
+		amount: parseInt(Math.random() * 5 + 5) // 购买数量
+	}, {
+		id: 'g2',
+		amount: parseInt(Math.random() * 5 + 5)
+	}]
+
+	/**
+	* 使用redis的eval方法执行lua脚本判断各个商品库存能否满足购物车购买的数量
+	* 如果不满足，返回库存不足的商品id
+	* 如果满足，返回一个空数组
+	* 
+	* eval为原子操作可以在高并发下保证不出错
+	**/ 
+	let checkAndSetStock = `
+	local cart = {${cart.map(item => `{id='${item.id}',amount=${item.amount}}`).join(',')}}
+	local amountList = redis.call('mget',${cart.map(item => `'${stockKeyPrefix}${item.id}'`).join(',')})
+	local invalidGoods = {}
+	for i,cartItem in ipairs(cart) do
+		if (cartItem['amount'] > tonumber(amountList[i])) then
+		  table.insert(invalidGoods, cartItem['id'])
+		  break
+		end
+	end
+	if(#invalidGoods > 0) then
+		return invalidGoods
+	end
+	for i,cartItem in ipairs(cart) do
+		redis.call('decrby', '${stockKeyPrefix}'..cartItem['id'], cartItem['amount'])
+	end
+	return invalidGoods
+	`
+	const invalidGoods = await redis.eval(checkAndSetStock, 0)
+	if (invalidGoods.length > 0) {
+		return {
+		  code: -1,
+		  message: `以下商品库存不足：${invalidGoods.join(',')}`, // 此处为简化演示代码直接返回商品id给客户端
+		  invalidGoods // 返回库存不足的商品列表
+		}
+	}
+	// redis库存已扣除，将库存同步到数据库。为用户创建订单
+	// 此处代码省略...
+	return {
+		code: 0,
+		message: '下单成功，跳转订单页面'
+	}
+}
+```

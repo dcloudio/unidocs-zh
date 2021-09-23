@@ -8,7 +8,7 @@ Redis（Remote Dictionary Server)，是一种充分利用内存的数据库。
 它是key-value存储系统，支持存储的value类型较多，包括：string(字符串)、list(链表)、set(集合)、sorted set 和hash（哈希类型）[详情](#金币制度)
 
 
-### 为什么有了mongoDB还要使用Redis？
+### 为什么要使用Redis
 mongoDB数据存储在磁盘里，对数据有强一致需求、持久存储需求的项目需要选择mongoDB。但是mongoDB支持并发访问的能力有限，当有大量并发请求的时候，mongoDB会挂掉。另外，有时候，我们需要更快的响应速度，而mongoDB速度有限，不能满足需求。所以我们需要内存型数据库Redis。
 
 ## 常用应用场景

@@ -127,15 +127,40 @@ const unipayIns = unipay.initAlipay({
 
 **入参说明**
 
-|   参数名	|  类型	|                必填														| 默认值|                                    说明																																						|         支持平台				|
-| :--------:| :----:| :--------------------------------:						| :----:| :------------------------------------------------------------------------:																				| :----------------------:|
-|   openid	| String| 支付宝小程序、微信小程序必填，App端支付不需要	|   -		|                  通过对应 [uni-account](https://ext.dcloud.net.cn/plugin?id=1834) 的 code2Session 获取						| 支付宝小程序、微信小程序|
-|  subject	| String| 支付宝支付必填，微信支付时忽略此项						|   -		|                                  订单标题																																					|        支付宝支付				|
-|    body		| String|            微信支付必填												|   -		|                                  商品描述																																					|         微信支付				|
-| outTradeNo| String|                必填														|   -		| 商户订单号,64 个字符以内、只能包含字母、数字、下划线；需保证在商户端不重复																				|													|
-|  totalFee	| Number|                必填														|   -		|                             订单金额，单位：分																																		| 支付宝小程序、微信小程序|
-| notifyUrl	| String|                必填														|   -		|                              支付结果通知地址，**需要注意支付宝支付时退款也会通知到此地址，务必处理好自己的业务逻辑**														|													|
-| tradeType	| String|             非小程序支付、App支付时必填				|   -		| `1.0.6+`交易类型"JSAPI": "公众号支付、微信小程序支付、支付宝小程序支付"、"APP:"APP支付"、"NATIVE":"网站二维码支付"|-												|
+|   参数名		|  类型	|                必填							| 默认值|                                    说明													|         支持平台			|
+| :--------:	| :----:| :--------------------------------:			| :----:| :------------------------------------------------------------------------:				| :----------------------:	|
+|   openid		| String|支付宝小程序、微信小程序必填，App端支付不需要	|   -	|通过对应 [uni-id](uniCloud/uni-id.md) 接口进行获取											| 支付宝小程序、微信小程序	|
+|  subject		| String|支付宝支付必填，微信支付时忽略此项				|   -	|订单标题																					|        支付宝支付			|
+|    body		| String|微信支付必填									|   -	|商品描述																					|         微信支付			|
+| outTradeNo	| String|必填											|   -	|商户订单号,64 个字符以内、只能包含字母、数字、下划线；需保证在商户端不重复					|							|
+|  totalFee		| Number|必填											|   -	|订单金额，单位：分																			| 支付宝小程序、微信小程序	|
+| notifyUrl		| String|必填											|   -	|支付结果通知地址，**需要注意支付宝支付时退款也会通知到此地址，务必处理好自己的业务逻辑**	|							|
+| tradeType		| String|非小程序支付、App支付时必填					|   -	| `1.0.6+`交易类型，见下方tradeType的说明													|-							|
+| spbillCreateIp| String|必填											|   -	|客户端IP，云函数内可以通过`context.CLIENTIP`获取											|-							|
+| sceneInfo	| Object|微信tradeType为MWEB时必填						|   -	|见下方sceneInfo的说明																		|-							|
+
+**tradeType的说明**
+
+tradeType支持以下选项
+
+- JSAPI 	适用于：微信公众号支付、微信小程序支付、支付宝小程序支付
+- APP		适用于：支付宝、微信APP支付
+- NATIVE	适用于：支付宝、微信PC网站扫码支付
+- MWEB		适用于：微信h5（非公众号）跳转微信页面支付（`新增于uni-pay 1.0.24`）
+
+**sceneInfo的说明**
+
+微信支付tradeType为MWEB时需要传递以下格式的sceneInfo
+
+```js
+{
+	"h5_info": {
+		"type": "Wap",
+		"wap_url": "https://pay.qq.com", // 开发者网站的网址
+		"wap_name": "腾讯充值" // 开发者网站名称
+	}
+}
+```
 
 **返回值说明**
 
@@ -143,7 +168,12 @@ const unipayIns = unipay.initAlipay({
 | :-------: | :----: | :----: | :--------------------------------------------------------------------: |
 | orderInfo | Object | String | 客户端支付所需参数，直接返回给客户端即可，下面会介绍如何搭配客户端使用 |
 
+
 **使用示例**
+
+tradeType为NATIVE时直接将orderInfo.codeUrl转为二维码使用对应的客户端扫码支付即可
+
+tradeType为MWEB时直接跳转到orderInfo.mwebUrl进行支付即可
 
 ```js
 // 云函数 - getOrderInfo
@@ -166,15 +196,15 @@ uniCloud.callFunction({
 	name: 'getOrderInfo',
 	success(res) {
 		uni.requestPayment({
-      // #ifdef APP-PLUS
-      provider: selectedProvider, // App端此参数必填，可以通过uni.getProvider获取
-      // #endif
-      // #ifdef MP-WEIXIN
-      ...res.result.orderInfo,
-      // #endif
-      // #ifdef APP-PLUS || MP-ALIPAY
-      orderInfo: res.result.orderInfo,
-      // #endif
+			// #ifdef APP-PLUS
+			provider: selectedProvider, // App端此参数必填，可以通过uni.getProvider获取
+			// #endif
+			// #ifdef MP-WEIXIN
+			...res.result.orderInfo,
+			// #endif
+			// #ifdef APP-PLUS || MP-ALIPAY
+			orderInfo: res.result.orderInfo,
+			// #endif
 			...res.result.orderInfo
 			success(){},
 			fail(){}

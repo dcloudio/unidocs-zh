@@ -1,3 +1,10 @@
+#### 3.2.8.20210923-alpha
+* 【uni-app】
+  + App平台 修复 生命周期 onLaunch、onShow 不触发的Bug [详情](https://ask.dcloud.net.cn/question/131152)
+  + App平台 修复 picker 组件按钮显示文本错误的Bug [详情](https://ask.dcloud.net.cn/question/131204)
+  + App-Android平台 修复 3.2.7 引出的 Android8及以上设备默认语言设置为英文的Bug [详情](https://ask.dcloud.net.cn/question/131302)
+  + App-iOS平台 修复 search 类型的 input 组件在 iOS15 默认显示搜索图标的Bug [详情](https://ask.dcloud.net.cn/question/129259)
+
 #### 3.2.7.20210919-alpha
 * 【uni-app】
   + App平台、H5平台 新增 uni.onLocaleChange 接口，用于监听应用语言切换 [详情](https://uniapp.dcloud.io/api/ui/locale)

@@ -43,7 +43,7 @@
 * [uniCloud响应体规范](uniCloud/unicloud-response-format.md)
 * [前端网页托管](uniCloud/hosting.md)
 * Redis扩展
-  * [简介](uniCloud/redis-Introduction.md)
+  * [简介](uniCloud/redis-introduction.md)
   * [费用说明](uniCloud/redis-buy.md)
   * [开发文档](uniCloud/redis.md)
 * [日志输出](uniCloud/cf-logger.md)

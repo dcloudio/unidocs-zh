@@ -3736,6 +3736,8 @@ let res = await db.collection('roles')
 
 ### sample@aggregate-sample
 
+> 注意此方法高频调用时会导致响应缓慢
+
 聚合阶段。随机从文档中选取指定数量的记录。
 
 **API 说明**

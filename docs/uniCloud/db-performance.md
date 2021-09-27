@@ -51,6 +51,10 @@ module.exports = async function(event,context) {
 
 使用上述写法后您应该使用上一页、下一页、上n页（其中n是一个比较小的数字）、下n页的翻页功能来替换随机翻页。您可以参考百度或者谷歌的搜索结果的分页功能，当结果页数非常多时，不展示共有多少页，仅支持在前10页中支持随机翻页；再往下翻页的过程中，不再支持随机翻页，仅支持向下翻一个较小的页数，这样就可以在已经查询出结果的基础上再使用where+skip（少量）+limit+orderBy的方式来快速查询到结果。
 
+### 抽样方法sample
+
+sample操作在高频触发时会响应缓慢，使用前请务必确定自己的业务场景适合使用sample方法
+
 ## clientDB联表查询超时@client-db-lookup
 
 请参考此文档调整优化，[使用getTemp进行联表查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup-with-temp)

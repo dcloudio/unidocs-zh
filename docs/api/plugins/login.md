@@ -23,7 +23,7 @@ H5平台登录注意事项：
 |scopes|String/Array|见平台差异说明|授权类型，默认 auth_base。支持 auth_base（静默授权）/ auth_user（主动授权） / auth_zhima（芝麻信用）|支付宝小程序|
 |timeout|Number|否|超时时间，单位ms|微信小程序、百度小程序|
 |univerifyStyle|Object|否|[一键登录](/univerify)页面样式|App 3.0.0+|
-|onlyAuthorize|Boolean|否|`微信登录`仅请求授权认证|App 3.2.3+|
+|onlyAuthorize|Boolean|否|`微信登录`仅请求授权认证|App 3.2.6+|
 |success|Function|否|接口调用成功的回调||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
@@ -34,8 +34,8 @@ H5平台登录注意事项：
 
 |参数名|说明|平台差异说明|
 |:-|:-|:-|
-|authResult|登录服务商提供的登录信息，服务商不同返回的结果不完全相同|微信登录配置`onlyAuthorize:true`则此项为空，App 3.2.3+ |
-|code|用户登录凭证。开发者需要在开发者服务器后台，使用 code 换取 openid 和 session_key 等信息|微信登录配置`onlyAuthorize:true`才会返回，App 3.2.3+ |
+|authResult|登录服务商提供的登录信息，服务商不同返回的结果不完全相同|微信登录配置`onlyAuthorize:true`则此项为空，App 3.2.6+ |
+|code|用户登录凭证。开发者需要在开发者服务器后台，使用 code 换取 openid 和 session_key 等信息|微信登录配置`onlyAuthorize:true`才会返回，App 3.2.6+ |
 |errMsg|描述信息||
 
 各个平台的登录流程存在差异，详细请参考相关平台的文档说明：

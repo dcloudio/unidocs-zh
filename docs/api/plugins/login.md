@@ -28,14 +28,14 @@ H5平台登录注意事项：
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-**注意：** 微信登录在未配置`onlyAuthorize`的情况下调用此接口，`code`值为使用过的，用以换取`authResult`，这样会导致使用`code`去和微信换取信息时会报错。配置`onlyAuthorize`会把未使用过的`code`值返回。
+**注意：** 微信登录在未配置`onlyAuthorize`的情况下调用此接口，`code`值不返回，用以换取`authResult`。配置`onlyAuthorize`会把未使用过的`code`值返回。
 
 **success 返回参数说明**
 
 |参数名|说明|平台差异说明|
 |:-|:-|:-|
-|authResult|登录服务商提供的登录信息，服务商不同返回的结果不完全相同|微信登录配置`onlyAuthorize`则此项为空，App 3.2.3+ |
-|code|用户登录凭证。开发者需要在开发者服务器后台，使用 code 换取 openid 和 session_key 等信息|微信登录配置`onlyAuthorize`code值有效，App 3.2.3+ |
+|authResult|登录服务商提供的登录信息，服务商不同返回的结果不完全相同|微信登录配置`onlyAuthorize:true`则此项为空，App 3.2.3+ |
+|code|用户登录凭证。开发者需要在开发者服务器后台，使用 code 换取 openid 和 session_key 等信息|微信登录配置`onlyAuthorize:true`才会返回，App 3.2.3+ |
 |errMsg|描述信息||
 
 各个平台的登录流程存在差异，详细请参考相关平台的文档说明：

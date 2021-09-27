@@ -184,7 +184,7 @@ export default {
 
 **使用HBuilderX发行并自动部署**
 
-需要HBuilderX版本`3.2.7`及以上版本
+需要HBuilderX版本`3.2.7`及以上版本，目前仅支持部署静态资源到阿里云的服务空间
 
 1. 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
 

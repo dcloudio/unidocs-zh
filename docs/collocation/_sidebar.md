@@ -7,6 +7,7 @@
   * [App.vue](collocation/App.md)
   * [main.js](collocation/main.md)
   * [env](collocation/env.md)
+  * [小程序插件](collocation/miniprogram-plugin.md)
 * 框架接口
   * [日志打印](collocation/frame/log.md)
   * [定时器](collocation/frame/timer.md)

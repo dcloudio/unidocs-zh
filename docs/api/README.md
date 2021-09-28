@@ -29,19 +29,40 @@ ECMAScript由Ecma国际管理，是基础js语法。浏览器基于标准js扩�
 - OBJECT 中可以指定 success，fail，complete 来接收接口调用结果。
 - **平台差异说明**若无特殊说明，则表示所有平台均支持。
 
-## Promise 封装
+## API `Promise 化`
 
-uni-app 对部分 API 进行了 Promise 封装，返回数据的第一个参数是错误对象，第二个参数是返回数据。
+1. 具体 API `Promise 化` 的策略：
+   - 异步的方法，如果不传入 success、fail、complete 等 callback 参数，将以 Promise 返回数据。例如：`uni.getImageInfo()`
+   - 异步的方法，且有返回对象，如果希望获取返回对象，必须至少传入一项 success、fail、complete 等 callback 参数。例如：
 
-详细策略如下：
+		```js
+			// 正常使用
+			const task = uni.connectSocket(
+				success(res){
+					console.log(res)
+				}
+			)
 
-- 异步的方法，如果不传入 success、fail、complete 等 callback 参数，将以 Promise 返回数据。例如：uni.getImageInfo()
-- 异步的方法且有返回对象，如果希望获取返回对象，必须至少传入一项 success、fail、complete 等 callback 参数。例如：uni.connectSocket()
-- 同步的方法（即以 sync 结束），不封装 Promise。例如：uni.getSystemInfoSync()
-- 以 create 开头的方法，不封装 Promise。例如：uni.createMapContext()
-- 以 manager 结束的方法，不封装 Promise。例如：uni.getBackgroundAudioManager()
+			// Promise 化
+			uni.connectSocket().then(res => {
+					// 此处即为 success 回调的 res
+					// 如果想获取 task ，则不要使用 Promise 化
+					console.log(res)
+			})
+		```
 
-使用示例：
+2. 不进行 `Promise 化` 的 API：
+   - 同步的方法（即以 sync 结束）。例如：`uni.getSystemInfoSync()`
+   - 以 create 开头的方法。例如：`uni.createMapContext()`
+   - 以 manager 结束的方法。例如：`uni.getBackgroundAudioManager()`
+
+### Vue 2 和 Vue 3 的 API `Promise 化`
+> 返回结果不一致，以下为 `不同点` 和 `互相转换`
+#### Vue 2
+
+> 对部分 API 进行了 Promise 封装，返回数据的第一个参数是错误对象，第二个参数是返回数据。
+
+**使用示例：**
 
 ```js
 // 默认方式
@@ -49,6 +70,9 @@ uni.request({
 	url: 'https://www.example.com/request',
 	success: (res) => {
 		console.log(res.data);
+	},
+	fail:(err) => {
+		console.error(err)
 	}
 });
 
@@ -56,18 +80,127 @@ uni.request({
 uni.request({
 		url: 'https://www.example.com/request'
 	})
-	.then(data => {//data为一个数组，数组第一项为错误信息，第二项为返回数据
-		var [error, res]  = data;
+	.then(data => {
+		// data为一个数组
+		// 数组第一项为错误信息 即为 fail 回调
+		// 第二项为返回数据
+		var [err, res]  = data;
         console.log(res.data);
 	})
 
 // Await
 async function request () {
-	var [error, res] = await uni.request({
+	var [err, res] = await uni.request({
 		url: 'https://www.example.com/request'
 	});
 	console.log(res.data);
 }
+```
+
+#### Vue 3
+
+> 对部分 API 进行了 Promise 封装，`then` 为 success 成功回调。`catch` 为 fail 失败回调
+
+**使用示例：**
+
+```js
+// 默认方式
+uni.request({
+	url: 'https://www.example.com/request',
+	success: (res) => {
+		console.log(res.data);
+	},
+	fail:(err) => {
+		console.error(err)
+	}
+});
+
+// Promise
+uni.request({
+		url: 'https://www.example.com/request'
+	})
+	.then(res => {	// 此处即为 success 回调中的 res
+		console.log(res.data);
+	})
+	.catch(err => {	// 此处即为 fail 回调中的 err
+		console.error(err)
+	})
+
+// Await
+async function request () {
+	try{
+		var res = await uni.request({
+			url: 'https://www.example.com/request'
+		});
+		console.log(res); // 此处即为 success 回调中的 res
+	} catch (err) {
+		console.error(err) // 此处即为 fail 回调中的 err
+	}
+}
+```
+
+#### Vue 2 写法转 Vue 3 写法
+
+```js
+// 在 main.js 中写入以下代码即可
+function isPromise (obj) {
+  return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function'
+}
+
+uni.addInterceptor({
+  returnValue (res) {
+    if (!isPromise(res)) {
+      return res
+    }
+    return new Promise((resolve, reject) => {
+      res.then(res => {
+        if (res[0]) {
+          reject(res[0])
+        } else {
+          resolve(res[1])
+        }
+      })
+    })
+  }
+})
+
+// 或
+
+// 此为框架内部提供
+uni.addInterceptor(uni.interceptors.promiseInterceptor)
+
+```
+
+#### Vue 3 写法转 Vue 2 写法
+
+```js
+// 在 main.js 中写入以下代码即可
+function isPromise (obj) {
+  return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function'
+}
+
+uni.addInterceptor({
+	returnValue(res) {
+		if (!isPromise(res)) {
+			return res
+		}
+		const returnValue = [undefined, undefined]
+		return res
+			.then((res) => {
+				returnValue[1] = res
+			})
+			.catch((err) => {
+				returnValue[0] = err
+			})
+			.then(() => returnValue)
+	}
+})
+
+// 或
+
+// 此为框架内部提供
+uni.addInterceptor(uni.interceptors.promiseInterceptor)
+
 ```
 
 ### API 列表

@@ -163,12 +163,6 @@ uni.addInterceptor({
     })
   }
 })
-
-// 或
-
-// 此为框架内部提供
-uni.addInterceptor(uni.interceptors.promiseInterceptor)
-
 ```
 
 #### Vue 3 写法转 Vue 2 写法
@@ -195,12 +189,6 @@ uni.addInterceptor({
 			.then(() => returnValue)
 	}
 })
-
-// 或
-
-// 此为框架内部提供
-uni.addInterceptor(uni.interceptors.promiseInterceptor)
-
 ```
 
 ### API 列表

@@ -94,7 +94,8 @@
 	  <div class="contact-smg">
 	  <div>uniCloud QQ交流群</div>
 	  <div>群1：1012245137 (2000人已满)</div>
-    <div>群2：749911289 &nbsp;<a target="_blank" href="//qm.qq.com/cgi-bin/qm/qr?k=iN4JdFAGhvlrOgw-gghF6cUOX1otsLpx&jump_from=webapi">点此加入</a></div>
+    <div>群2：749911289 (1000人已满)</div>
+    <div>群3：599819864 &nbsp;<a target="_blank" href="//qm.qq.com/cgi-bin/qm/qr?k=5iPtQlJt8cxKSwHEpMqcdDYwDX8Xk0dR&jump_from=webapi">点此加入</a></div>
 	  </div>
 	</div>
   <div class="contact-item">

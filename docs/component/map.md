@@ -143,6 +143,10 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |colorList|彩虹线|Array|false|存在时忽略 color 值|App-nvue 3.1.0+、微信小程序|
 |level|压盖关系，默认为 abovelabels|String|false||微信小程序|
 
+ **注意事项** 
+
+- App-nvue 当 arrowLine 为 true 时，显示的是带箭头的图片拼接的线 color 值会被忽略，替换箭头图片的方法[参考文档](https://ask.dcloud.net.cn/article/37901) 
+
 **polygon**<br>
 指定一系列坐标点，根据 points 坐标数据生成闭合多边形
 

@@ -146,7 +146,7 @@ https 请求配置自签名证书
 |参数|类型|必填|说明|
 |:--|:--|:--|:--|
 |certificates|Array&lt;`certificate`&gt;|是| `certificates` 为数组，支持为多个域名配置自签名证书|
-|success|Function(`callbackObject`)|否|收到开发者服务器成功返回的回调函数|
+|success|Function(`callbackObject`)|否|接口调用成功的回调函数|
 |fail|Function(`callbackObject`)|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 

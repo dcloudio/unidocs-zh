@@ -203,8 +203,6 @@ exports.main = async (event, context) => {
 
 ![发行与运行](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/04d44f25-ce5f-4b39-a221-6600a0b80417.jpg)
 
-**只支持本地运行打日志。暂不支持断点debug**
-
 **虽然云函数、数据库schema、validatefunction在本地，但云存储、数据库的数据和索引，仍然在云端。也就是开发机不能完全脱线开发。只是代码可以在本地写，免上传就能联调。**
 
 **使用方式**
@@ -246,6 +244,15 @@ exports.main = async (event, context) => {
 
 ```
 
+
+**断点调试**
+
+> HBuilderX 3.2.10-alpha起支持
+
+开启断点调试方式如下图所示，在HBuilderX内的uniCloud控制台点击虫子图标即可开启断点调试。
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/aacde8a9-7c9f-4d91-947a-11f5b0a9c10b.jpg)
+
 **注意事项**
 
 - 虽然云函数、数据库schema、validatefunction在本地，但云存储、数据库的数据和索引，仍然在云端。也就是开发机不能完全脱线开发。只是代码可以在本地写，免上传就能联调。
@@ -269,8 +276,6 @@ exports.main = async (event, context) => {
 
 自2.8.1版本起HBuilderX支持云函数本地运行，调试云函数更加方便快捷。此外还可以方便批量导入数据及文件，不再受云函数超时限制。
 
-**目前只支持本地运行打日志。暂不支持断点debug**
-
 **使用方式**
 
 在项目管理器选择要本地运行的云函数，右键选择本地运行。或者打开这个云函数内的文件，按`ctrl+r`回车。
@@ -291,6 +296,32 @@ exports.main = async (event, context) => {
 运行云函数时，如需要给云函数传参，除了在前端传参外，在调试阶段，可以通过配置json文件来传测试参数。
 
 在云函数对应的目录右键可以配置运行测试参数，如下图，选择之后会生成一个形如`${函数名}.param.json`的文件，此文件内容会在云函数`上传并运行`以及`本地运行云函数`时作为参数传入云函数内。详细用法可参考：[配置运行测试参数](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=runparam)
+
+**断点调试**
+
+> HBuilderX 3.2.10-alpha起支持
+
+开启断点调试方式如下图所示，在运行菜单选择`调试运行-本地云函数`即可。
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2bd8ba0b-1066-48e4-b8a3-ed6f671c2a4f.jpg)
+
+### 断点调试本地云函数@debug
+
+自HBuilderX 3.2.10起，本地运行云函数及客户端连接本地云函数支持断点调试
+
+如何使用请参考：[本地运行云函数](uniCloud/quickstart.md?id=runlocal)、[客户端连接本地云函数](uniCloud/quickstart.md?id=calllocalfunction)
+
+开启调试后会出现调试界面，如下图所示。和浏览器的调试功能类似，详情可以参考：[JavaScript调试器](https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/What_are_browser_developer_tools#javascript%E8%B0%83%E8%AF%95%E5%99%A8)
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ed6120d4-2882-44b5-892f-f3fec8493e8b.jpg)
+
+在调试文件的编辑器界面的行号点击右键可以插入断点
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fda77798-3cb8-4aaa-8ac9-ba718520352e.jpg)
+
+如需从调试界面切换回项目视图，可以在项目管理器底部点击按钮进行切换
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/9cc24dbe-cde9-4a82-8872-4803ada97298.jpg)
 
 ## 调用本地云函数注意事项
 

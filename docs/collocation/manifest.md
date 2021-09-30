@@ -419,7 +419,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |usingComponents			|Boolean| 是否启用自定义组件模式，`v2.0+`，默认为false，[编译模式区别详情](https://ask.dcloud.net.cn/article/35843)							|
 |plugins							|Object	|使用到的插件，[详见](https://opendocs.alipay.com/mini/plugin/plugin-usage)																							|
 |component2						|Boolean| 是否启用 `component2` 编译，默认为true，[查看详情](https://docs.alipay.com/mini/framework/custom-component-overview)	|
-|enableAppxNg         |Boolean| 是否启用 `enableAppxNg` 小程序基础库 2.0 构建，默认为true，[查看详情](https://opendocs.alipay.com/mini/framework/project)，HBuilderX 3.2.10+ |
+|enableAppxNg         |Boolean| 是否启用 `enableAppxNg` 小程序基础库 2.x 构建，默认为true，[查看详情](https://opendocs.alipay.com/mini/framework/project)，HBuilderX 3.2.10+ |
 |axmlStrictCheck			|Boolean| 是否启用 `axml` 严格语法检查，默认为false																																							|
 |enableParallelLoader	|Boolean| 是否启用多进程编译，默认为false																																												|
 |enableDistFileMinify	|Boolean| 是否压缩编译产物（仅在真机预览/真机调试时生效），默认为false																													|

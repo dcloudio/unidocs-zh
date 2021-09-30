@@ -302,6 +302,7 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` �
 ```json
 "h5": {
 	"sdkConfigs": {
+		// 使用地图或位置相关功能必须填写其一
 		"maps": {
 			"qqmap": {
 				// 腾讯地图秘钥 https://lbs.qq.com/dev/console/key/manage

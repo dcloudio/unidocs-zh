@@ -40,7 +40,7 @@ mapContext
 |toScreenLocation|OBJECT|获取经纬度对应的屏幕坐标，坐标原点为地图左上角。||微信小程序|
 |updateGroundOverlay|OBJECT|更新自定义图片图层。||App-nvue 3.1.0+，微信小程序|
 |on|EventHandle|监听地图事件。||App-nvue 3.1.0+，微信小程序|
-|$getAppMap||获取原生地图对象 [plus.maps.Map](https://www.html5plus.org/doc/zh_cn/maps.html#plus.maps.Map)|app-vue自定义组件模式|1.9.3|
+|$getAppMap||获取原生地图对象 [plus.maps.Map](https://www.html5plus.org/doc/zh_cn/maps.html#plus.maps.Map)|app-vue|1.9.3|
 
 `$getAppMap()` 注意事项：
 

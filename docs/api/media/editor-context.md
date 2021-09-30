@@ -40,7 +40,6 @@ editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery
  
 ```js
   "mp-baidu" : {
-    "usingComponents" : true,
     "appid" : "",
     "setting" : {
       "urlCheck" : true

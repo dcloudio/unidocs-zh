@@ -20,7 +20,7 @@ console.log('应用的 appid 为：' + appid);
 
 在普通的 H5+ 项目中，需要使用 `document.addEventListener` 监听原生扩展的事件。
 
- `uni-app` 中，没有 document。可以使用 `plus.globalEvent.addEventListener` 来实现（注意manifest中需开启新编译器，即自定义组件模式"usingComponents":true）。
+ `uni-app` 中，没有 document。可以使用 `plus.globalEvent.addEventListener` 来实现。
 
 ```javascript
 // #ifdef APP-PLUS
@@ -30,5 +30,3 @@ plus.globalEvent.addEventListener('netchange', function(){});
 ```
 
 同理，在 `uni-app` 中使用 Native.js 时，一些 Native.js 中对于原生事件的监听同样需要按照上面的方法去实现。
-
-注意：旧编译器（非自定义组件模式）不支持 `plus.globalEvent` 这个对象。

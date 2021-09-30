@@ -1,4 +1,4 @@
-> 自 HBuilderX 2.0.0 起自定义组件编译模式支持，[使用指南](https://ask.dcloud.net.cn/article/36010)
+> 自 HBuilderX 2.0.0 起支持，[使用指南](https://ask.dcloud.net.cn/article/36010)
 
 ### uni.$emit(eventName,OBJECT)
 

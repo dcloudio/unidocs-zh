@@ -25,10 +25,6 @@
 
 详见Vue官方文档：[模板语法](https://cn.vuejs.org/v2/guide/syntax.html)。
 
-**注意**
-如果使用**老版**的非自定义组件模式，即manifest中`"usingComponents":false`，部分模版语法不支持，但此模式已于2019年11月起下线。
-
-
 ## data 属性
 
 ``data`` 必须声明为返回一个初始数据对象的函数（注意函数内返回的数据对象不要直接引用函数外的对象）；否则页面关闭时，数据不会自动销毁，再次打开该页面时，会显示上次数据。
@@ -164,10 +160,6 @@ style 支持的语法:
     }
 </script>
 ```
-
-**用在组件上**
-
-非H5端（非自定义组件编译模式）暂不支持在自定义组件上使用 ``Class`` 与 ``Style`` 绑定
 
 ## 计算属性
 
@@ -405,8 +397,6 @@ export default {
 * ``X-Templates``
 * ``keep-alive``（App端也未支持）
 * ``transition`` （可使用 [animation](/api/ui/animation) 或 CSS 动画替代）
-* [老的非自定义组件编译模式](https://ask.dcloud.net.cn/article/35843)不支持在组件引用时，在组件上定义 ``click`` 等原生事件、``v-show``（可用 ``v-if`` 代替）和 ``class`` ``style`` 等样式属性(例：``<card class="class-name"> </card>`` 样式是不会生效的)。建议更新为自定义组件模式
-* [老的非自定义组件编译模式](https://ask.dcloud.net.cn/article/35843)组件里使用 ``slot`` 嵌套的其他组件时不支持 ``v-for``。建议更新为自定义组件模式
 
 [Vue官方文档参考：组件](https://cn.vuejs.org/v2/guide/components.html) 。
 

@@ -49,7 +49,7 @@
 * [日志输出](uniCloud/cf-logger.md)
 * [同时连多服务空间](uniCloud/init.md)
 * [案例](uniCloud/resource.md)
-* [开发者使用反馈](https://mp.weixin.qq.com/s/p9GbRqRQuvEbmbpHJhZGmw)
+* [开发者使用反馈](uniCloud/feedback.md)
 * [学习资料](uniCloud/learning.md)
 * [常见问题](uniCloud/faq.md)
 * [微信云开发转uniCloud](uniCloud/wx2unicloud.md)

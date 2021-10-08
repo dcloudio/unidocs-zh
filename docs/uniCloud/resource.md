@@ -21,7 +21,7 @@
 一个无需过多言语便懂你的慢社交轻社区。
 
 <a href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png" target="_blank">
-<img width="500" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png">
+<img width="800" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png">
 </a>
 
 - [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)

@@ -14,14 +14,15 @@
 </a>
 
 
-- 鲸鱼解忧馆 这是一个通过交流与诉说以消除烦恼的平台。
+- [鲸鱼解忧馆](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png) 一个通过交流与诉说以消除烦恼的平台。
 我们的愿望是每个用户在这里写下烦恼后能够得到解答与回应，并且找到与自己拥有同样烦恼的人和群体。
 也许回应不会那么迅速，但总归会得到暖心的回复。答案难道不是一种值得期待的事情吗？
 也许“答案”不是那么“准确”，因为人与人的心理与性格各异。但我们初心的是引导你走出心里的围墙。
 一个无需过多言语便懂你的慢社交轻社区。
 
-  <img width="500" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png">
-
+<a href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png" target="_blank">
+<img width="500" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png">
+</a>
 
 - [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)
 一个集成了大量商用项目常见功能的，云端一体应用快速开发基本项目模版。

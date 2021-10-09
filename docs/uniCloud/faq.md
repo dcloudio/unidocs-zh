@@ -392,3 +392,21 @@ uniCloud客户端callFunction及数据库相关接口会返回Promise类型结�
 **使用事务时出现`WriteConflict`错误**
 
 事务的执行会锁行，同时执行的不同事务在操作同一行数据是会存在冲突导致写入失败。尽量优化流程，避免事务互相冲突
+
+### 云函数通过https访问其他服务器时出现“certificate has expired”@lets-encrypt-cert
+
+> 本章节仅对let's encrypt证书调整进行说明，其他情况请检查对应网站证书是否过期
+
+let's encrypt于2021年9月30日根证书过期并切换到新版根证书。详情参考：[DST Root CA X3 Expiration (September 2021)](https://letsencrypt.org/docs/dst-root-ca-x3-expiration-september-2021/)。此次过期行为引起nodejs8请求使用了let's encrypt证书的网站时出现`certificate has expired`错误。
+
+解决方案有以下两种：
+
+1. 将云函数升级到nodejs12，删除旧云函数，配置node版本之后重新上传。详情参考：[云函数package.json](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=packagejson)
+
+2. （不推荐）使用`uniCloud.httpclient.request`时传入`rejectUnauthorized: false`。示例代码如下：
+
+  ```js
+  await uniCloud.httpclient.request('https://xxx.com/get', {
+  	rejectUnauthorized: false
+  })
+  ```

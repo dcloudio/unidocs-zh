@@ -982,7 +982,15 @@ midButton没有pagePath，需监听点击事件，自行处理点击后的行为
 - 如果是需要先登录、后进入tab页面，不需要把登录页设为首页，首页仍然是tabbar页，可参考HBuilderX新建uni-app项目时的登录模板
 - 前端弹出遮罩层挡不住tabbar的问题，跨端处理方式时动态隐藏tabbar。App端可以使用plus.nativeObj.view或subNVue做弹出和遮罩，可参考这个[底部原生图标分享菜单例子](https://ext.dcloud.net.cn/plugin?id=69)
 - 微信小程序模拟器1.02.1904090版有bug，在缩放模拟器页面百分比后，tabbar点击多次后就会卡死。真机无碍，使用时注意。[详见](https://developers.weixin.qq.com/community/develop/doc/0002e6e6bf0d602d8c783e10756400)
-- PC宽屏上，当页面存在topWindow或leftWindow或rightWindow等多窗体结构时，tabBar自动隐藏（HBuilderX 2.9.9），请使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 配置 tabBar 的位置。
+- PC宽屏上，当页面存在topWindow或leftWindow或rightWindow等多窗体结构时，若想改变 tabbar 显示的位置，请使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 配置，若想隐藏 tabbar，可以使用如下 css（好处是可以和 leftwindow 等窗体联动）：
+
+```html
+  .uni-app--showleftwindow + .uni-tabbar-bottom {
+  	display: none;
+  }
+```
+
+
 
 **代码示例**
 ```json

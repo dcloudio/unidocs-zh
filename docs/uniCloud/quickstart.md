@@ -438,7 +438,7 @@ uniCloud支持云函数，但其实大多数场景下并不需要写云函数，
 
 详细文档另见：[clientDB](https://uniapp.dcloud.io/uniCloud/database)
 
-## 小程序中使用uniCloud的白名单配置
+## 小程序中使用uniCloud的白名单配置@useinmp
 
 各家小程序平台，均要求在小程序管理后台配置小程序应用的联网服务器域名，否则无法联网。
 

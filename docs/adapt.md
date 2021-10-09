@@ -26,9 +26,20 @@ uni-app提供的屏幕适配方案，包括3部分：
 
 这套方案是已知的、最便捷的分栏式宽屏应用适配方案。
 
-__H5 宽屏下 tabBar(选项卡) 与窗体的关系__
+__H5 宽屏下 tabBar(选项卡) 的显示与隐藏__
 
-> 目前做如下调整：leftWindow、rightWindow、topWindow 中有其一存在，则 tabBar 隐藏；不存在，则不隐藏。
+如果在 PC 上不想显示 tabbar 页面可以参考 hello-uniapp，在 app 的首页加载时跳转一个 非tabbar 页, [hello-uniapp](https://hellouniapp.dcloud.net.cn/) 的隐藏 tabbar 不是媒体查询实现的，当前页不是 tabbar 页面（是pages/component/view/view页），所以没有显示tabbar。
+
+如果是想在有 leftwindow 等窗体的时候，隐藏 tabar 页面的 tabbar，可以用 css 实现（好处是可以和leftwindow等窗体联动）：
+
+```html
+  .uni-app--showleftwindow + .uni-tabbar-bottom {
+  	display: none;
+  }
+```
+
+
+
 
 leftWindow等配置，在pages.json里进行。文档见：[https://uniapp.dcloud.net.cn/collocation/pages?id=topwindow](https://uniapp.dcloud.net.cn/collocation/pages?id=topwindow)
 

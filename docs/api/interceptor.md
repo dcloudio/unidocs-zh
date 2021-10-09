@@ -61,7 +61,7 @@ uni.removeInterceptor('request')
 
 ```
 
-注意：拦截[uni.switchTab](https://uniapp.dcloud.io/api/router?id=switchtab)本身没有问题。但是在微信小程序端点击`tabbar`的底层逻辑并不是触发`uni.switchTab`。所以误认为拦截无效，此类场景的解决方案是在`tabbar`页面的`onShow`中处理。
+注意：拦截[uni.switchTab](https://uniapp.dcloud.io/api/router?id=switchtab)本身没有问题。但是在微信小程序端点击`tabbar`的底层逻辑并不是触发`uni.switchTab`。所以误认为拦截无效，此类场景的解决方案是在`tabbar`页面的页面生命周期`onShow`中处理。
 
 ##### 拦截器的适用场景非常多，比如路由拦截，权限引导等。
 > 你可以参考插件市场,拦截器应用示例：图片选择api时无权限，引导用户快捷打开系统设置：[https://ext.dcloud.net.cn/plugin?id=5095](https://ext.dcloud.net.cn/plugin?id=5095)

@@ -450,6 +450,7 @@ uniCloud提供的`db_init.json`主要是为了对数据库进行初始化，并�
 ### 云厂商之间的迁移@cross-provider
 
 目前可以使用云数据库的导入导出进行迁移，迁移数据库之前可以使用导出db_init.json功能将所有集合及索引导出。再使用数据导入导出功能进行迁移
+> 也可以直接使用插件：[unicloud数据库一键搬家工具，支持阿里云与腾讯云互转。支持跨账号转。](https://ext.dcloud.net.cn/plugin?id=6089)
 
 #### 腾讯云迁移到阿里云@tencent-to-aliyun
 

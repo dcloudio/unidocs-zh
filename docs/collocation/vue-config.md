@@ -98,6 +98,47 @@ module.exports = {
 }
 ```
 
+**发布时动态修改 manifest.json**
+
+```js
+// 读取 manifest.json ，修改后重新写入
+const fs = require('fs')
+
+const manifestPath = './src/manifest.json'
+let Manifest = fs.readFileSync(manifestPath, { encoding: 'utf-8' })
+function replaceManifest(path, value) {
+  const arr = path.split('.')
+  const len = arr.length
+  const lastItem = arr[len - 1]
+
+  let i = 0
+  let ManifestArr = Manifest.split(/\n/)
+
+  for (let index = 0; index < ManifestArr.length; index++) {
+    const item = ManifestArr[index]
+    if (new RegExp(`"${arr[i]}"`).test(item)) ++i;
+    if (i === len) {
+      const hasComma = /,/.test(item)
+      ManifestArr[index] = item.replace(new RegExp(`"${lastItem}"[\\s\\S]*:[\\s\\S]*`), `"${lastItem}": ${value}${hasComma ? ',' : ''}`)
+      break;
+    }
+  }
+
+  Manifest = ManifestArr.join('\n')
+}
+// 使用
+replaceManifest('app-plus.usingComponents', false)
+replaceManifest('app-plus.splashscreen.alwaysShowBeforeRender', false)
+replaceManifest('mp-baidu.usingComponents', false)
+fs.writeFileSync(manifestPath, Manifest, {
+  "flag": "w"
+})
+
+module.exports = {
+	// ...
+}
+```
+
 启用压缩的方法：
 - HBuilderX创建的项目勾选运行-->运行到小程序模拟器-->运行时是否压缩代码
 - cli创建的项目可以在`package.json`中添加参数`--minimize`，示例：`"dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"`

@@ -414,7 +414,7 @@ nvue webview通信示例
 <template>
 	<view>
 		<web-view ref="webview" class="webview" @onPostMessage="handlePostMessage"></web-view>
-		<button class="button" @click="evalJs">evalJs(改变webview背景颜色)</text>
+		<button class="button" @click="evalJs">evalJs(改变webview背景颜色)</button>
 	</view>
 </template>
 

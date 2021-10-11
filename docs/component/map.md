@@ -19,7 +19,7 @@
 |scale|Number|16|缩放级别，取值范围为3-20|高德地图缩放比例与微信小程序不同|
 |min-scale|Number|3|最小缩放级别|App-nvue 3.1.0+、微信小程序2.13+|
 |max-scale|Number|20|最大缩放级别|App-nvue 3.1.0+、微信小程序2.13+|
-|layer-style|Number|1|个性化地图|App-nvue 3.1.0+、微信小程序2.13+|
+|layer-style|Number/String|1|个性化地图|App-nvue 3.1.0+、微信小程序2.13+|
 |markers|Array||标记点||
 |polyline|Array||路线||
 |circles|Array||圆||

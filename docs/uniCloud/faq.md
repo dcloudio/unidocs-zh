@@ -211,9 +211,9 @@ uniCloud的每个云函数是一个独立进程，不存在云函数级别的多
 单路由云函数框架不止是官方提供的uni-cloud-router，插件市场有很多类似框架：[详见](https://ext.dcloud.net.cn/search?q=%E8%B7%AF%E7%94%B1&cat1=7&orderBy=TotalDownload)
 
 
-### 海外用户访问比较慢怎么办
+### 港澳台及境外用户访问比较慢怎么办@global-accelerate
 
-国外用户需要使用全球加速。uniCloud服务商为阿里云时支持配置全球加速，步骤如下：
+港澳台及境外用户需要使用全球加速。uniCloud服务商为阿里云时支持配置全球加速，步骤如下：
 
 1. 参考[阿里云全球加速](https://help.aliyun.com/document_detail/153198.html)文档，开通服务并对`自有域名`进行加速
 2. 将上述域名CNAME到`api.bspapp.com`

@@ -295,6 +295,13 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` �
 
 #### sdkconfig@h5sdkconfig
 
+三方SDK配置。三方SDK的使用需要向这些SDK提供商申请，并配置参数到此处。可在HBuilderX可视化界面（H5 配置）输入配置。
+
+|属性|类型|描述|
+|:-|:-|:-|
+|maps|Object|地图或位置相关SDK|
+
+#### maps@maps
 
 **示例**
 

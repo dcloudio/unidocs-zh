@@ -301,7 +301,7 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` �
 |:-|:-|:-|
 |maps|Object|地图或位置相关SDK|
 
-#### maps@maps
+#### maps@h5sdkconfigmaps
 
 **示例**
 

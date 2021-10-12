@@ -303,6 +303,8 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` �
 
 #### maps@h5sdkconfigmaps
 
+地图服务商 SDK 配置，使用地图以及位置（IP 定位及坐标转换）需要配置此项。
+
 **示例**
 
 ```json

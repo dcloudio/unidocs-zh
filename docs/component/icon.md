@@ -42,7 +42,7 @@ export default {
         }
     },
     onLoad() {
-        // #ifdef APP-PLUS|| MP-WEIXIN
+        // #ifdef APP|| MP-WEIXIN
         this.iconType = ['success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search','clear']
         // #endif
         // #ifdef MP-ALIPAY

@@ -38,7 +38,7 @@ DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供�
 
 <!-- `uni-app`在App侧可以使用weex引擎渲染，性能体验高于其他Hybrid框架。 -->
 
-`uni-app`在App端，基于能力层/渲染层分离的架构设计（见下图），渲染层是webview和weex二选一，能力调用都是共同的plus api，比如蓝牙、扫码等能力；也就是weex被内置到`uni-app`中，并且被强化了。
+`uni-app`在App端，基于能力层/渲染层分离的架构设计（见下图），渲染层是webview和weex二选一，能力调用都是共同的api，比如蓝牙、扫码等能力；也就是weex被内置到`uni-app`中，并且被强化了。
 
 ![](https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/frame_app.png)
 

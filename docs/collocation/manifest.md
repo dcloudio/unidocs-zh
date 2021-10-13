@@ -21,7 +21,6 @@
 - uni-app 的 `appid` 由 DCloud 云端分配，主要用于 DCloud 相关的云服务，请勿自行修改。[详见](https://ask.dcloud.net.cn/article/35907)
 - 注意区分 uni-app 的 `appid` 与 iOS 等其它平台分配的 `appid`，以及第三方 SDK 的 `appid`。
 - versionName在云打包App和生成wgt应用资源时会使用。如需升级App版本，先修改此处再云打包。导出wgt资源用于离线打包和热更新时也会以此版本为依据。
-- 在本地打包时和热更新时，App版本和wgt应用资源版本将不再保持一致。此时通过[plus.runtime.version](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.version)可获取App版本，通过[plus.runtime.getProperty](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.getProperty)获取wgt资源版本。
 
 #### networkTimeout
 
@@ -66,7 +65,6 @@ PS：这里只列出了核心部分，更多内容请参考 [完整的 manifest.
 
 - manifest.json 文件的配置，推荐在 HBuilderX 提供的可视化操作界面完成。
 - 部分配置在打包时的操作界面补全，例如：证书等信息。
-- Native.js 权限部分会根据配置的模块权限，在打包后自动填充。
 - 部分 modules 是默认的，不需要进行配置。
 
 
@@ -77,7 +75,7 @@ splash（启动封面）是App必然存在的、不可取消的。
 |属性|类型|默认值|描述|最低版本|
 |:-|:-|:-|:-|:-|
 |alwaysShowBeforeRender|Boolean|true|首页白屏时不关闭启动界面|1.6.0|
-|autoclose|Boolean|true|是否自动关闭程序启动界面。如果需要[手动关闭](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.closeSplashscreen)启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
+|autoclose|Boolean|true|是否自动关闭程序启动界面。如果需要手动关闭启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
 |waiting|Boolean|true|是否在程序启动界面显示等待圈或雪花||
 |delay|Number|0|启动界面在应用的首页面加载完毕后延迟关闭的时间，autoclose 为 true 时生效。|&nbsp;|
 
@@ -129,7 +127,6 @@ splash（启动封面）是App必然存在的、不可取消的。
 |oauth|Object|授权登录，配置后可调用 [uni.login](/api/plugins/login?id=login) 进行登录操作，目前支持的授权登录平台有：[QQ](http://open.qq.com/)、[微信](https://open.weixin.qq.com/)、[新浪微博](http://open.weibo.com/)。|
 |share|Object|分享，配置后可调用 [uni.share](/api/plugins/share?id=share) 进行分享，目前支持QQ、微信、新浪微博等分享， 具体配置 [详见](/api/plugins/share?id=app-端各平台分享配置说明)。|
 |payment|Object|三方支付配置，配置后可调用 [uni.payment](/api/plugins/payment?id=payment) 进行支付，目前支持微信支付、支付宝支付、苹果内购， 具体配置 [详见](/api/plugins/payment?id=uni-app-app-平台支付流程)。|
-|speech|Object|语音识别配置，支持讯飞语音、百度语音，[详见](http://ask.dcloud.net.cn/article/35059)，在uni-app中只用 [plus.speech](http://www.html5plus.org/doc/zh_cn/speech.html) 进行调用。|
 |maps|Object|原生地图配置，目前仅支持 [高德地图](http://lbs.amap.com/)，申请方式可参考：[地图插件配置](http://ask.dcloud.net.cn/article/29)。|
 
 #### optimization@app-vue-optimization
@@ -405,7 +402,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
                 ],
                 "theme": "程序使用的主题",
                 "android:name": "自定义程序入口类名",
-                "custompermissions": "Boolean类型，是否自定义android权限，true表示自定义权限，只使用permissions下指定的android权限，不根据用户使用的5+模块自动添加android权限，false表示自动根据用户使用的5+模块自动添加android权限",
+                "custompermissions": "Boolean类型，是否自定义android权限，true表示自定义权限，只使用permissions下指定的android权限，不根据用户使用的原生模块自动添加android权限，false表示自动根据用户使用的原生模块自动添加android权限",
                 "permissions": [
                     "要添加的额外的android权限，如<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\" />",
                     "<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\" />"
@@ -428,7 +425,6 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
                     }
                 ],
                 "frameworks": [
-                    "使用native.js调用API要引用的库文件名称，如CoreLocation.framework",
                     "QuartzCore.framework"
                 ],
                 "idfa": "true|false，是否使用广告标识符，默认值为false",

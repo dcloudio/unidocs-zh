@@ -219,11 +219,8 @@ try {
 
 uni-app的Storage在不同端的实现不同：
 - H5端为localStorage，浏览器限制5M大小，是缓存概念，可能会被清理
-- App端为原生的plus.storage，无大小限制，不是缓存，是持久化的
+- App端为原生的storage，无大小限制，不是缓存，是持久化的
 - 非App平台清空Storage会导致uni.getSystemInfo获取到的deviceId改变
 
 除此之外，其他数据存储方案：
 - H5端还支持websql、indexedDB、sessionStorage
-- App端还支持[SQLite](https://www.html5plus.org/doc/zh_cn/sqlite.html)、[IO文件](https://www.html5plus.org/doc/zh_cn/io.html)等本地存储方案。
-
-从HBuilderX2.6.6+起，App-Android平台对本地storage数据存储进行了性能优化，它的具体优化方式和升级注意事项，详见：[https://ask.dcloud.net.cn/article/37071](https://ask.dcloud.net.cn/article/37071)

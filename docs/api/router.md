@@ -96,7 +96,7 @@ onLoad: function (option) {
 
 * 页面跳转路径有层级限制，不能无限制跳转新页面
 * 跳转到 tabBar 页面只能使用 switchTab 跳转
-* 路由API的目标页面必须是在pages.json里注册的vue页面。如果想打开web url，在App平台可以使用 [plus.runtime.openURL](http://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.openURL)或web-view组件；H5平台使用 window.open；在hello uni-app中有个组件ulink.vue已对多端进行封装，可参考。
+* 路由API的目标页面必须是在pages.json里注册的vue页面。如果想打开web url，在App平台可以使用web-view组件；H5平台使用 window.open；在hello uni-app中有个组件ulink.vue已对多端进行封装，可参考。
 * APP-NVUE平台暂不支持以`this.getOpenerEventChannel()`方式获取`eventChannel`，请换用`this.$scope.eventChannel`来获取，具体方式请参考上述示例。
 
 #### uni.redirectTo(OBJECT)
@@ -363,11 +363,6 @@ pages.json 中配置的是窗口显示的动画
 |zoom-out|zoom-in|新窗体从小到大缩放显示|
 |zoom-fade-out|zoom-fade-in|新窗体从小到大逐渐放大并且从透明到不透明逐渐显示|
 |none|none|无动画|
-
-详细的窗口动画说明，请参考：
-
-- 窗口显示的动画：[AnimationTypeShow](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeShow)
-- 窗口关闭的动画：[AnimationTypeClose](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeClose)
 
 **注意**
 - 纯nvue项目（render为native），窗体动画默认进入动画为popin，返回为pop-out。如果想修改动画类型，只能通过uni.navigateTo API修改，在组件或pages.json里配置动画类型无效

@@ -50,7 +50,7 @@ js中操作globalData的方式如下：
 
 如果需要把globalData的数据绑定到页面上，可在页面的onShow页面生命周期里进行变量重赋值。
 
-nvue的weex编译模式中使用globalData的话，由于weex生命周期不支持onShow，但熟悉5+的话，可利用监听webview的addEventListener show事件实现onShow效果，或者直接使用weex生命周期中的beforeCreate。但建议开发者使用uni-app编译模式，而不是weex编译模式。
+nvue的weex编译模式中使用globalData的话，由于weex生命周期不支持onShow，直接使用weex生命周期中的beforeCreate。但建议开发者使用uni-app编译模式，而不是weex编译模式。
 
 globalData是简单的全局变量，如果使用状态管理，请使用`vuex`（main.js中定义）
 
@@ -60,7 +60,7 @@ globalData是简单的全局变量，如果使用状态管理，请使用`vuex`�
 注意如果工程下同时有vue和nvue文件，全局样式的所有css会应用于所有文件，而nvue支持的css有限，编译器会在控制台报警，提示某些css无法在nvue中支持。此时需要把nvue不支持的css写在单独的条件编译里。如：
 ```html
 <style>
-    /* #ifndef APP-PLUS-NVUE */
+    /* #ifndef APP-NVUE */
     @import './common/uni.css';
     /* #endif*/
 </style>

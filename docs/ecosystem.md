@@ -17,9 +17,8 @@ uni-app内置了`weex`，`weex`的原生插件或ui库均可使用。注意`weex
 
 - App端支持各种调用原生能力的方式
 1. 支持 原生[混合开发](hybrid)
-3. 支持 [Native.js](https://ask.dcloud.net.cn/docs/#//ask.dcloud.net.cn/article/88) 直接调用原生api
-4. 支持 [原生插件扩展](https://ask.dcloud.net.cn/article/35428)
-5. 支持 [云打包原生插件](https://ask.dcloud.net.cn/article/35412)。
+2. 支持 [原生插件扩展](https://ask.dcloud.net.cn/article/35428)
+3. 支持 [云打包原生插件](https://ask.dcloud.net.cn/article/35412)。
 
 - App端支持双渲染引擎
 `uni-app`逻辑层在独立jscore，而渲染层可选webview渲染和weex引擎渲染。

@@ -57,7 +57,6 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 
 - app-nvue 平台 2.2.5+ 支持 uni.createLivePusherContext(livePusherId, this)
 - app-nvue 平台 2.2.5以下，需要同时设置组件属性id和ref ``<live-pusher id="livepusher1" ref="livepusher1"></live-pusher>``，或者直接使用 ref，例如 ``this.$refs.livepusher1``
-- app-vue 平台，需要编写条件编译代码，使用 `plus.video.LivePusher`，[业务指南](https://ask.dcloud.net.cn/article/13416)、[规范文档](http://www.html5plus.org/doc/zh_cn/video.html#plus.video.LivePusher)
 
 使用nvue做直播，比使用vue的优势有：
 1. nvue可一套代码直接编译到App

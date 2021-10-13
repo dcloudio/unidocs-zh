@@ -35,14 +35,6 @@ mapContext
 |removeMarkers|OBJECT|移除 marker。||App-nvue 3.1.0+|
 |updateGroundOverlay|OBJECT|更新自定义图片图层。||App-nvue 3.1.0+|
 |on|EventHandle|监听地图事件。||App-nvue 3.1.0+|
-|$getAppMap||获取原生地图对象 [plus.maps.Map](https://www.html5plus.org/doc/zh_cn/maps.html#plus.maps.Map)|app-vue|1.9.3|
-
-`$getAppMap()` 注意事项：
-
-- 在页面中，必须在 `onReady` 中调用。
-- 在组件中，必须在 `mounted` 中调用。
-- nvue没有`$getAppMap()`，请使用`createMapContext`
-- `uni-app`中使用原生地图无需提供占位div，得到`$getAppMap()`后直接js使用即可。
 
 **getCenterLocation 的 OBJECT 参数列表**
 

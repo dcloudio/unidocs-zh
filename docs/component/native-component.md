@@ -14,7 +14,7 @@ H5、App的nvue页面，不存在混合渲染的情况，它们或者全部是�
 * [map](/component/map)
 * [video](/component/video)
 * [live-player](/component/live-player)（仅App端直接使用video组件可同时实现拉流）
-* [live-pusher](/component/live-pusher)（仅app-nvue支持，app-vue使用plus.video.LivePusher可实现推流）
+* [live-pusher](/component/live-pusher)（仅app-nvue支持）
 * [cover-view](/component/cover-view)
 * [cover-image](/component/cover-view?id=cover-image)
 
@@ -40,7 +40,6 @@ H5、App的nvue页面，不存在混合渲染的情况，它们或者全部是�
 * 原生navigationBar和tabbar（pages.json里配置的）。
 * web-view组件虽然不是原生的，但这个组件相当于一个原生webview覆盖在页面上
 * 弹出框：picker、showModal、showToast、showLoading、showActionSheet、previewImage、chooseImage、chooseVideo等弹出元素也无法被前端组件覆盖
-* plus下的plus.nativeObj.view、plus.video.LivePusher、plus.nativeUI、plus.webview，层级均高于前端元素
 
 注意：app的nvue页面里的组件虽然不涉及map、video等原生组件的层级遮挡问题，但pages.json中配置的原生tabbar、原生navigationBar，一样是nvue里的组件也无法遮挡的。
 
@@ -48,7 +47,7 @@ H5、App的nvue页面，不存在混合渲染的情况，它们或者全部是�
 
 为了解决webview渲染中原生组件层级最高的限制，uni-app提供了 [cover-view](/component/cover-view) 和 [cover-image](/component/cover-view?id=cover-image) 组件，让其覆盖在原生组件上。
 
-除了跨端的cover-view，App端还提供了3种方案：plus.nativeObj.view、subNVue、新开半透明nvue页面。详述如下
+除了跨端的cover-view，App端还提供了几种方案：subNVue、新开半透明nvue页面。详述如下
 
 - [cover-view](https://uniapp.dcloud.io/component/cover-view?id=cover-view)
 
@@ -58,27 +57,19 @@ H5、App的nvue页面，不存在混合渲染的情况，它们或者全部是�
 app-vue的`cover-view`还有一些限制，1) 无法嵌套、 2) 无法内部滚动，即cover-view无法内部出现滚动条、 3) 无法覆盖到视频的全屏界面。
 app-nvue的`cover-view`无这些限制。
 
-另外cover-view无论如何都无法解决原生导航栏、tabbar、web-view组件的覆盖，为此App端补充了2个层级覆盖方案plus.nativeObj.view和subNVue
-
-- [plus.nativeObj.view](https://www.html5plus.org/doc/zh_cn/nativeobj.html#plus.nativeObj.View)
-
-简称nview，它是一个原生的类画布的控件，其实cover-view也是用plus.nativeObj.view封装的。API文档详见：[https://www.html5plus.org/doc/zh_cn/nativeobj.html#plus.nativeObj.View](https://www.html5plus.org/doc/zh_cn/nativeobj.html#plus.nativeObj.View)
-
-plus.nativeObj.view的API比较原生，可以画出任何界面，但plus.nativeObj.view有3个问题：1. api很底层，开发比较复杂；2. 不支持动画；3. 不支持内部滚动。
+另外cover-view无论如何都无法解决原生导航栏、tabbar、web-view组件的覆盖，为此App端补充了一些层级覆盖方案
 
 - [subNVue](https://ask.dcloud.net.cn/article/35948)
 
-subNVue是原生渲染的nvue子窗体，把一个nvue页面以半屏的方式覆盖在vue页面上。它解决了plus.nativeObj.view的不足，提供了强大的层级问题解决方案。subNVue的详细介绍见：[https://ask.dcloud.net.cn/article/35948](https://ask.dcloud.net.cn/article/35948)
+subNVue是原生渲染的nvue子窗体，把一个nvue页面以半屏的方式覆盖在vue页面上。提供了强大的层级问题解决方案。subNVue的详细介绍见：[https://ask.dcloud.net.cn/article/35948](https://ask.dcloud.net.cn/article/35948)
 
 - [弹出部分区域透明的nvue页面](https://ext.dcloud.net.cn/plugin?id=953)
 
 uni-app支持在App端弹出半透明的nvue窗体。即看起来是在本窗体弹出一个元素，但实际上是弹出了一个部分区域蒙灰透明的新窗体。这样的窗体比subnvue有个优势就是可以全局复用。具体参考这个[插件](https://ext.dcloud.net.cn/plugin?id=953)
 
-subNVue或弹出部分区域透明的nvue页面，会比plus.nativeObj.view多占用一些内存。所以如果你要覆盖的内容很简单，cover-view或plus.nativeObj.view可以简单实现的话，就没必要用subNVue或nvue。
+subNVue或弹出部分区域透明的nvue页面，会多占用一些内存。所以如果你要覆盖的内容很简单，cover-view可以简单实现的话，就没必要用subNVue或nvue。
 
 所以如果你的层级覆盖问题比较简单，不用嵌套，且有跨端需求，就使用cover-view。
-
-如果App端cover-view无法满足需求，且需要覆盖的原生界面比较简单，可以用plus.nativeObj.view。否则，就使用subnvue或部分区域透明的nvue吧。
 
 **关于subNVue和Webview的层级问题**
 subNVue的层级高于前端元素，但多个subNVue以及Webview，它们之间的也存在层级关系。
@@ -91,7 +82,7 @@ subNVue的层级高于前端元素，但多个subNVue以及Webview，它们之�
 #### App的nvue页面层级问题
 nvue页面全部都是原生组件，互相之间没有层级问题。
 
-但如果在pages.json里注册了原生导航栏和tabbar，nvue里的界面元素默认也无法覆盖这些，也需要plus.nativeObj.view或subNVue。
+但如果在pages.json里注册了原生导航栏和tabbar，nvue里的界面元素默认也无法覆盖这些，也需要subNVue。
 
 如果仅开发App，不跨端，不愿涉及层级问题，也可以不使用pages.json里的原生导航栏和tabbar，nvue页面不需要这些来强化性能。
 

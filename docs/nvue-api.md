@@ -532,7 +532,7 @@ BindingX类似一种强化版的css，运行性能高，但没有js那样足够�
 ## nvue 和 vue 相互通讯@communication
 在 uni-app 中，nvue 和 vue 页面可以混搭使用。
 
-推荐使用 ```uni.$on``` , ```uni.$emit``` 的方式进行页面通讯，旧的通讯方式（uni.postMessage及plus.webview.postMessageToUniNView）不再推荐使用。
+推荐使用 ```uni.$on``` , ```uni.$emit``` 的方式进行页面通讯，旧的通讯方式不再推荐使用。
 
 ##### 通讯实现方式
 
@@ -595,84 +595,6 @@ BindingX类似一种强化版的css，运行性能高，但没有js那样足够�
 	</script>
 ```
 
-
-### vue 向 nvue 通讯（已过期，推荐使用上面的uni.$on、uni.$emit）
-
-##### 步骤：
-
-1. 在 ```vue``` 里使用 ```plus.webview.postMessageToUniNView(data,nvueId)``` 发送消息，```data``` 为 ```JSON``` 格式（键值对的值仅支持String），```nvueId``` 为 ```nvue``` 所在 webview 的 id，webview的 id 获取方式参考：[$getAppWebview()](https://uniapp.dcloud.net.cn/collocation/frame/window?id=getappwebview)。
-2. 在 ```nvue``` 里引用 ```globalEvent``` 模块监听 ```plusMessage``` 事件，如下： 
-
-
-```javascript
-	const globalEvent = uni.requireNativePlugin('globalEvent');
-	globalEvent.addEventListener("plusMessage", e => {
-		console.log(e.data);//得到数据
-	});
-```
-
-##### 代码示例:
-
-```javascript
-	//index.nvue
-	<template>
-	    <div @click="test">
-	        <text>点击页面发送数据{{num}}</text>
-	    </div>
-	</template>
-	<script>
-	    const globalEvent = uni.requireNativePlugin('globalEvent');
-	    export default {
-	        data() {
-	            return {
-	                num: "0"
-	            }
-	        },
-	        created() {
-	            globalEvent.addEventListener("plusMessage", e => {
-	                console.log(e.data);
-	                if (e.data.num) { //存在num时才赋值，在nvue里调用uni的API也会触发plusMessage事件，所以需要判断需要的数据是否存在
-	                    this.num = e.data.num
-	                }
-	            });
-	        },
-	        methods: {
-	            test(e) {
-	                uni.navigateTo({
-	                    url: '../test/test'
-	                })
-	            }
-	        }
-	    }
-```
-
-```html
-	//test.vue
-	<template>
-	    <view>
-	        <button type="primary" @click="test">点击改变nvue的数据</button>
-	    </view>
-	</template>
-	<script>
-	    export default {
-	        methods: {
-	            test() {
-	                var pages = getCurrentPages();
-	                var page = pages[pages.length - 2];
-	                var currentWebview = page.$getAppWebview();
-	                plus.webview.postMessageToUniNView({
-	                    num: "123"
-	                }, currentWebview.id);
-	                uni.navigateBack()
-	            }
-	        }
-	    }
-	</script>
-```
-
-
-
-
 ## vue 和 nvue 共享的变量和数据@sharevar
 
 除了通信事件，vue 和 nvue 页面之间还可以共享变量和存储。 ```uni-app```提供的共享变量和数据的方案如下：
@@ -681,7 +603,6 @@ BindingX类似一种强化版的css，运行性能高，但没有js那样足够�
 > 注意：不支持直接引入```store```使用，可以使用```mapState```、```mapGetters```、```mapMutations```等辅助方法或者使用```this.$store```
 2. **uni.storage:**
 	- vue和nvue页面可以使用相同的```uni.storage```存储。这个存储是持久化的。 比如登录状态可以保存在这里。
-	- App端还支持```plus.sqlite```，也是共享通用的。
 3. **globalData:** ```globalData```机制全端通用。 在App.vue文件里定义```globalData```，如下：
 
 ```javascript
@@ -706,15 +627,6 @@ BindingX类似一种强化版的css，运行性能高，但没有js那样足够�
 
 - js中操作```globalData```的方式如下： ```getApp().globalData.text = 'test'```
 - 如果需要把```globalData```的数据绑定到页面上，可在页面的onShow声明周期里进行变量重赋值。
-
-
-
-
-
-
-## nvue 里使用 HTML5Plus API
-nvue页面可直接使用plus的API，并且不需要等待plus ready。
-
 
 ## nvue 里不支持的 uni-app API
 nvue 支持大部分 uni-app API ，下面只列举目前还**不支持的 API** 。

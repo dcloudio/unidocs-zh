@@ -93,14 +93,6 @@ App平台在iOS上，webview中的软键盘弹出时，默认在软键盘上方�
 }
 ```
 
-- 如需使用js动态设置softinputNavBar
-```javascript
-this.$scope.$getAppWebview().setStyle({
-	softinputNavBar: 'none'
-})
-//this.$scope.$getAppWebview()相当于html5plus里的plus.webview.currentWebview()。在uni-app里vue页面直接使用plus.webview.currentWebview()无效，非v3编译模式使用this.$mp.page.$getAppWebview()
-```
-
 如果是nvue页面，iOS默认就没有键盘上方的横条，无需任何设置。
 
 #### 关于软键盘弹出的逻辑说明
@@ -132,7 +124,7 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 以上为默认逻辑，uni-app同时提供了隐藏软键盘的api：[uni.hideKeyboard()](https://uniapp.dcloud.io/api/key?id=hidekeyboard)
 
 #### App平台原生输入框的说明
-在app平台，有titleNView配置的[searchinput](/collocation/pages?id=app-titlenview)原生输入框和plus.nativeObj.view的drawinput。这两种方式的输入框都是原生的，不是webview里的。
+在app平台，有titleNView配置的[searchinput](/collocation/pages?id=app-titlenview)原生输入框。这些方式的输入框都是原生的，不是webview里的。
 - 原生输入框在iOS上不会有软键盘上方的横条
 - 原生输入框一样受配置的`adjustPan|adjustResize`模式影响
 

@@ -164,4 +164,4 @@ const dcRichAlert = uni.requireNativePlugin('DCloud-RichAlert')
 
 #### 注意事项
 1.可以在 插件市场 查看更多插件，如需开发uni原生插件请参考 [uni原生插件开发文档](https://nativesupport.dcloud.net.cn/NativePlugin/README)。
-2.如果插件需要传递文件路径，则需要传手机文件的绝对路径，可使用 5+ [IO模块](http://www.html5plus.org/doc/zh_cn/io.html) 的相关 API 得到文件的绝对路径。
+2.如果插件需要传递文件路径，则需要传手机文件的绝对路径。

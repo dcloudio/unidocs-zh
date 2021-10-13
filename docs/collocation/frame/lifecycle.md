@@ -92,7 +92,6 @@ onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代�
 
 **注意**
 - onTabItemTap常用于点击当前tabitem，滚动或刷新当前页面。如果是点击不同的tabitem，一定会触发页面切换。
-- 如果想在App端实现点击某个tabitem不跳转页面，不能使用onTabItemTap，可以使用[plus.nativeObj.view](http://www.html5plus.org/doc/zh_cn/nativeobj.html)放一个区块盖住原先的tabitem，并拦截点击事件。
 
 ```js
 onTabItemTap : function(e) {

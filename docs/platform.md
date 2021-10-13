@@ -32,7 +32,7 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
         <div class="code">
           <span class="token comment">
             <span style="color:#859900;">#ifdef</span>
-            <b style="color:#268BD2">APP-PLUS</b>
+            <b style="color:#268BD2">APP</b>
           </span>
           <br>需条件编译的代码<br>
           <span class="token comment">
@@ -63,7 +63,7 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
             <b style="color:#268BD2">H5</b>
           </span>
           <span style="color:#859900;">||</span>
-          <b style="color:#268BD2">APP-PLUS</b>
+          <b style="color:#268BD2">APP</b>
           <br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;">#endif</span></span>
         </div>
       </td>
@@ -78,8 +78,8 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 |值|生效条件|
 |:-|:-|
 |VUE3|HBuilderX 3.2.0+ [详情](https://ask.dcloud.net.cn/article/37834)|
-|APP-PLUS|App|
-|APP-PLUS-NVUE或APP-NVUE|App nvue|
+|APP|App|
+|APP-NVUE|App nvue|
 |H5|H5|
 
 **支持的文件**
@@ -93,7 +93,7 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 
 **注意：**
 * 条件编译是利用注释实现的，在不同语法里注释写法不一样，js使用 ``// 注释``、css 使用 ``/* 注释 */``、vue/nvue 模板里使用 ``<!-- 注释 -->``；
-* 条件编译APP-PLUS包含APP-NVUE和APP-VUE，APP-PLUS-NVUE和APP-NVUE没什么区别，为了简写后面出了APP-NVUE ；
+* 条件编译APP包含APP-NVUE和APP-VUE；
 * 使用条件编译请保证`编译前`和`编译后`文件的正确性，比如json文件中不能有多余的逗号；
 * `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`
 
@@ -128,7 +128,7 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 ````html
 <view>
     <view>
-        <!-- #ifdef APP-PLUS -->
+        <!-- #ifdef APP -->
 		        <my-test></my-test>
 		    <!-- #endif -->
     </view>

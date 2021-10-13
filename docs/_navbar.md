@@ -2,6 +2,5 @@
 * [框架](collocation/pages.md)
 * [组件](component/README.md)
 * [API](api/README.md)
-* [其它规范](http://www.html5plus.org/doc/h5p.html)
-  - [App扩展规范HTML5 Plus](http://www.html5plus.org/doc/h5p.html)
+* [其它规范](/)
   - [Weex](http://doc.weex.io/zh/guide/introduction.html)

@@ -82,7 +82,7 @@ weex的组件和JS API，与uni-app不同。
 |平台		|仅App								|所有端，包含H5			|
 |组件		|weex组件如div						|uni-app组件如view				|
 |生命周期	|只支持weex生命周期					|支持所有uni-app生命周期			|
-|JS API		|weex API、uni API、Plus API			|weex API、uni API、Plus API		|
+|JS API		|weex API、uni API			|weex API、uni API		|
 |单位		|750px是屏幕宽度，wx是固定像素单位		|750rpx是屏幕宽度，px是固定像素单位|
 |全局样式	|手动引入							|app.vue的样式即为全局样式		|
 |页面滚动	|必须给页面套或组件					|默认支持页面滚动					|
@@ -111,7 +111,7 @@ weex的组件和JS API，与uni-app不同。
 
 weex 编译模式不支持 ```onNavigationBarButtonTap``` 生命周期函数的写法。在 nvue 中监听原生标题栏按钮点击事件，详见：[uni.onNavigationBarButtonTap](https://uniapp.dcloud.net.cn/frame?id=%e9%a1%b5%e9%9d%a2%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f)。
 
-weex编译模式不支持onShow生命周期，但熟悉5+的话，可利用监听webview的```addEventListener``` show事件实现onShow效果。
+weex编译模式不支持onShow生命周期。
 
 weex 编译模式不支持`vuex`。
 
@@ -175,10 +175,9 @@ weex 编译模式下支持使用 weex ui ，例子[详见](https://ext.dcloud.ne
 	- uni-app组件，同uni-app写法。
 	- App端nvue专用组件，详见[https://uniapp.dcloud.io/component/barcode](https://uniapp.dcloud.io/component/barcode)。
 - style：由于采用原生渲染，**并非所有浏览器的 css 均支持，布局模型只支持 flex 布局**，虽然不会造成某些界面布局无法实现，但写法要注意。详见：[样式](/nvue-css)
-- script：写法同 vue，并支持3种API：
+- script：写法同 vue，并支持2种API：
 	- nvue API ：仅支持App端，uni-app编译模式也可使用。使用前需先引入对应模块，参考：[模块引入API](/nvue-api)
 	- uni API：[https://uniapp.dcloud.io/api/README](https://uniapp.dcloud.io/api/README)
-	- plus API：仅支持App端。[http://www.html5plus.org/doc/h5p.html](http://www.html5plus.org/doc/h5p.html)
 
 ### 3.调试 nvue 页面
 HBuilderX内置了weex调试工具的强化版，包括审查界面元素、看log、debug打断点，[详见](https://uniapp.dcloud.io/snippet?id=%e5%85%b3%e4%ba%8e-app-%e7%9a%84%e8%b0%83%e8%af%95)
@@ -244,8 +243,8 @@ HBuilderX内置了weex调试工具的强化版，包括审查界面元素、看l
 15. nvue页面没有```bounce```回弹效果，只有几个列表组件有```bounce```效果，包括 ```list```、```recycle-list```、```waterfall```。
 16. 原生开发没有页面滚动的概念，页面内容高过屏幕高度并不会自动滚动，只有部分组件可滚动（```list```、```waterfall```、```scroll-view/scroller```），要滚得内容需要套在可滚动组件下。这不符合前端开发的习惯，所以在 nvue 编译为 uni-app模式时，给页面外层自动套了一个 ```scroller```，页面内容过高会自动滚动。（组件不会套，页面有```recycle-list```时也不会套）。后续会提供配置，可以设置不自动套。
 17. 在 App.vue 中定义的全局js变量不会在 nvue 页面生效。```globalData```和```vuex```是生效的。
-18. App.vue 中定义的全局css，对nvue和vue页面同时生效。如果全局css中有些css在nvue下不支持，编译时控制台会报警，建议把这些不支持的css包裹在[条件编译](https://uniapp.dcloud.io/platform)里，```APP-PLUS-NVUE```
-19. 不能在 ```style``` 中引入字体文件，nvue 中字体图标的使用参考：[加载自定义字体](/nvue-api?id=addrule)。如果是本地字体，可以用```plus.io```的API转换路径。
+18. App.vue 中定义的全局css，对nvue和vue页面同时生效。如果全局css中有些css在nvue下不支持，编译时控制台会报警，建议把这些不支持的css包裹在[条件编译](https://uniapp.dcloud.io/platform)里，```APP-NVUE```
+19. 不能在 ```style``` 中引入字体文件，nvue 中字体图标的使用参考：[加载自定义字体](/nvue-api?id=addrule)。
 20. 目前不支持在 nvue 页面使用 ```typescript/ts```。
 21. nvue 页面关闭原生导航栏时，想要模拟状态栏，可以[参考文章](https://ask.dcloud.net.cn/article/35111)。但是，仍然强烈建议在nvue页面使用原生导航栏。nvue的渲染速度再快，也没有原生导航栏快。原生排版引擎解析```json```绘制原生导航栏耗时很少，而解析nvue的js绘制整个页面的耗时要大的多，尤其在新页面进入动画期间，对于复杂页面，没有原生导航栏会在动画期间产生整个屏幕的白屏或闪屏。
 

@@ -241,7 +241,7 @@ vue页面支持下面这些普通H5单位，但在nvue里不支持：
 
 nvue还不支持百分比单位。
 
-App端，在 pages.json 里的 titleNView 或页面里写的 plus api 中涉及的单位，只支持 px。**注意此时不支持 rpx**
+App端，在 pages.json 里的 titleNView 中涉及的单位，只支持 px。**注意此时不支持 rpx**
 
 nvue中，uni-app 模式（[nvue 不同编译模式介绍](https://ask.dcloud.net.cn/article/36074)）可以使用 px 、rpx，表现与 vue 中一致。weex 模式目前遵循weex的单位，它的单位比较特殊：
 
@@ -282,7 +282,7 @@ rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应�
 - rpx不支持动态横竖屏切换计算，使用rpx建议锁定屏幕方向
 - 设计师可以用 iPhone6 作为视觉稿的标准。
 - 如果设计稿不是750px，HBuilderX提供了自动换算的工具，详见：[https://ask.dcloud.net.cn/article/35445](https://ask.dcloud.net.cn/article/35445)。
-- App端，在 pages.json 里的 titleNView 或页面里写的 plus api 中涉及的单位，只支持 px，不支持 rpx。
+- App端，在 pages.json 里的 titleNView 中涉及的单位，只支持 px，不支持 rpx。
 - 早期 uni-app 提供了 upx ，目前已经推荐统一改为 rpx 了，[详见](http://ask.dcloud.net.cn/article/36130)
 
 ### 样式导入
@@ -352,7 +352,7 @@ uni-app 提供内置 CSS 变量
 
 |CSS变量|描述|App|H5|
 |:-|:-|:-|:-|
-|--status-bar-height|系统状态栏高度|[系统状态栏高度](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getStatusbarHeight)、nvue注意见下|0|
+|--status-bar-height|系统状态栏高度|系统状态栏高度、nvue注意见下|0|
 |--window-top|内容区域距离顶部的距离|0|NavigationBar 的高度|
 |--window-bottom|内容区域距离底部的距离|0|TabBar 的高度|
 

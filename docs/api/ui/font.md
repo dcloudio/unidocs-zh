@@ -5,12 +5,12 @@
 注意: 
 
 1. 引入中文字体，体积过大时会发生错误，建议抽离出部分中文，减少体积，或者用图片替代
-2. App支持网络或本地的字体（本地字体需使用[平台绝对路径](http://www.html5plus.org/doc/zh_cn/io.html#plus.io.convertLocalFileSystemURL)）。
+2. App支持网络或本地的字体（本地字体需使用平台绝对路径）。
 3. 工具里提示 Faild to load font可以忽略
 
 **平台差异说明**
 
-|5+App|H5|
+|App|H5|
 |:-:|:-:|
 |1.9.0+|2.3.4+|
 

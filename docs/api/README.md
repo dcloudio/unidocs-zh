@@ -18,7 +18,7 @@ ECMAScript由Ecma国际管理，是基础js语法。浏览器基于标准js扩�
 
 除了uni-app框架内置的跨端API，各端自己的特色API也可通过[条件编译](https://uniapp.dcloud.io/platform)自由使用。
 
-各端特色API规范参考各端的开发文档。其中App端的JS API参考[html5plus.org](https://www.html5plus.org/doc/h5p.html)；uni-app也支持通过扩展原生插件来丰富App端的开发能力，具体参考[插件开发文档](http://ask.dcloud.net.cn/article/35408)
+各端特色API规范参考各端的开发文档。uni-app也支持通过扩展原生插件来丰富App端的开发能力，具体参考[插件开发文档](http://ask.dcloud.net.cn/article/35408)
 
 各平台的API新增，不需要uni-app升级，开发者就可以直接使用。
 

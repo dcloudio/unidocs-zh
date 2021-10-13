@@ -81,7 +81,6 @@ uni.showToast({
 - rt：return true
 - clog：输出："console.log()"
 - clogvar：增强的日志输出，可同时把变量的名字打印出来
-- varcw：输出："var currentWebview = this.$mp.page.$getAppWebview()"
 - ifios：iOS的平台判断
 - ifAndroid：Android的平台判断
 

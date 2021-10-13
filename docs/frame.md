@@ -748,7 +748,7 @@ const package = require('packageName')
 
 |App|H5|
 |:-:|:-:|
-|√(2.5.5+，仅支持vue，并要求v3编译器)|√|
+|√(2.5.5+，仅支持vue)|√|
 
 ### 使用方式
 

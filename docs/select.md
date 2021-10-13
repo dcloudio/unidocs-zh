@@ -6,7 +6,7 @@ uni-app是当今主流的开发框架，DCloud有800万开发者，uni统计手�
 
 **uni-app收费吗？**
 
-`uni-app` 是免费并且属于Apache2.0开源协议的产品。DCloud官方承诺无论HBuilderX、uni-app，面向中国人永久免费。大家可以放心使用。
+`uni-app` 是免费并且属于Apache2.0开源协议的产品。DCloud官方承诺无论HBuilderX、uni-app，面向全球程序员永久免费。大家可以放心使用。
 
 DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供有价值的云服务（uniCloud）上，而不在开发工具收费上。
 

@@ -951,13 +951,13 @@ h5 平台下拉刷新动画，只有 circle 类型。
 
 其中 list 接收一个数组，数组中的每个项都是一个对象，其属性值如下：
 
-|属性|类型|必填|说明|
-|:-|:-|:-|:-|
-|pagePath|String|是|页面路径，必须在 pages 中先定义|
-|text|String|是|tab 上按钮文字，在 App 和 H5 平台为非必填。例如中间可放一个没有文字的+号图标|
-|iconPath|String|否|图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 position 为 top 时，此参数无效，不支持网络图片，不支持字体图标|
-|selectedIconPath|String|否|选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效|
-|visible|Boolean|否|该项是否显示，默认显示。App 3.2.10+、H5 3.2.10+|
+|属性|类型|必填|说明|平台差异|
+|:-|:-|:-|:-|:-|
+|pagePath|String|是|页面路径，必须在 pages 中先定义||
+|text|String|是|tab 上按钮文字，在 App 和 H5 平台为非必填。例如中间可放一个没有文字的+号图标||
+|iconPath|String|否|图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 position 为 top 时，此参数无效，不支持网络图片，不支持字体图标||
+|selectedIconPath|String|否|选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效||
+|visible|Boolean|否|该项是否显示，默认显示|App (3.2.10+)、H5 (3.2.10)+|
 
 **midButton 属性说明**
 

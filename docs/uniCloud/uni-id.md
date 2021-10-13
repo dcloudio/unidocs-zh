@@ -141,78 +141,78 @@ exports.main = async (event, context) => {
 ```json
 // 如果拷贝此内容切记去除注释
 {
-	"passwordSecret": "passwordSecret-demo", // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的密钥，注意修改为自己的密钥，使用一个较长的字符串即可
-	"tokenSecret": "tokenSecret-demo", // 生成token所用的密钥，注意修改为自己的，使用一个较长的字符串即可
-	"tokenExpiresIn": 7200, // 全平台token过期时间，未指定过期时间的平台会使用此值
-	"tokenExpiresThreshold": 600, // 新增于uni-id 1.1.7版本，checkToken时如果token有效期小于此值则自动获取新token，请注意将新token返回给前端保存，如果不配置此参数则不开启自动获取新token功能
-	"bindTokenToDevice": false, // 是否将token和设备绑定，设置为true会进行ua校验，uni-id 3.0.12前默认为true，3.0.12及以后版本默认调整为false
-	"passwordErrorLimit": 6, // 密码错误最大重试次数
-	"passwordErrorRetryTime": 3600, // 密码错误重试次数超限之后的冻结时间
-	"autoSetInviteCode": false, // 是否在用户注册时自动设置邀请码，默认不自动设置
-	"forceInviteCode": false, // 是否强制用户注册时必填邀请码，默认为false（需要注意的是目前只有短信验证码注册才可以填写邀请码）,设置为true时需要在loginBySms时指定type为register来使用注册，登录时也要传入type为login
-  "removePermissionAndRoleFromToken": false, // 新增于uni-id 3.0.0版本，如果配置为false则自动缓存用户的角色、权限到token中，默认值为false。详细说明见https://uniapp.dcloud.io/uniCloud/uni-id?id=cachepermissionintoken
-	"app-plus": {
-		"tokenExpiresIn": 2592000,
-		"oauth": {
-			// App微信登录所用到的appid、appsecret需要在微信开放平台获取，注意：不是公众平台而是开放平台
-			"weixin": {
-				"appid": "weixin appid",
-				"appsecret": "weixin appsecret"
-			},
-			// App QQ登录所用到的appid、appsecret需要在腾讯开放平台获取，注意：不是公众平台而是开放平台
+  "passwordSecret": "passwordSecret-demo", // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的密钥，注意修改为自己的密钥，使用一个较长的字符串即可
+  "tokenSecret": "tokenSecret-demo", // 生成token所用的密钥，注意修改为自己的，使用一个较长的字符串即可
+  "tokenExpiresIn": 7200, // 全平台token过期时间，未指定过期时间的平台会使用此值
+  "tokenExpiresThreshold": 600, // 新增于uni-id 1.1.7版本，checkToken时如果token有效期小于此值且在有效期内则自动获取新token，请注意将新token返回给前端保存，如果不配置此参数则不开启自动获取新token功能
+  "bindTokenToDevice": false, // 是否将token和设备绑定，设置为true会进行ua校验，uni-id 3.0.12前默认为true，3.0.12及以后版本默认调整为false
+  "passwordErrorLimit": 6, // 密码错误最大重试次数
+  "passwordErrorRetryTime": 3600, // 密码错误重试次数超限之后的冻结时间
+  "autoSetInviteCode": false, // 是否在用户注册时自动设置邀请码，默认不自动设置
+  "forceInviteCode": false, // 是否强制用户注册时必填邀请码，默认为false（需要注意的是目前只有短信验证码注册才可以填写邀请码）,设置为true时需要在loginBySms时指定type为register来使用注册，登录时也要传入type为login
+  "removePermissionAndRoleFromToken": false, // 新增于uni-id 3.0.0版本，如果配置为false则自动缓存用户的角色、权限到token中，默认值为false。详细说明见https://uniapp.dcloud.io/uniCloud/uni-id?id=cache-permission-in-token
+  "app-plus": {
+    "tokenExpiresIn": 2592000,
+    "oauth": {
+      // App微信登录所用到的appid、appsecret需要在微信开放平台获取，注意：不是公众平台而是开放平台
+      "weixin": {
+        "appid": "weixin appid",
+        "appsecret": "weixin appsecret"
+      },
+      // App QQ登录所用到的appid、appsecret需要在腾讯开放平台获取，注意：不是公众平台而是开放平台
       "qq": {
-				"appid": "qq appid",
-				"appsecret": "qq appsecret"
-			},
-			"apple": { // 使用苹果登录时需要
-				"bundleId": "your bundleId"
-			}
-		}
-	},
-	"mp-weixin": {
-		"tokenExpiresIn": 259200,
-		"oauth": {
-			// 微信小程序登录所用的appid、appsecret需要在对应的小程序管理控制台获取
-			"weixin": {
-				"appid": "weixin appid",
-				"appsecret": "weixin appsecret"
-			}
-		}
-	},
-	"mp-qq": {
-		"tokenExpiresIn": 259200,
-		"oauth": {
-			// QQ小程序登录所用的appid、appsecret需要在对应的小程序管理控制台获取
-			"qq": {
-				"appid": "qq appid",
-				"appsecret": "qq appsecret"
-			}
-		}
-	},
-	"mp-alipay": {
-		"tokenExpiresIn": 259200,
-		"oauth": {
-			// 支付宝小程序登录用到的appid、privateKey请参考支付宝小程序的文档进行设置或者获取，https://opendocs.alipay.com/open/291/105971#LDsXr
-			"alipay": {
-				"appid": "alipay appid",
-				"privateKey": "alipay privateKey", // 私钥
-				"keyType": "PKCS8" // 私钥类型，如果私钥类型不是PKCS8，需要填写此字段，否则会出现“error:0D0680A8:asn1 encoding routines:ASN1_CHECK_TLEN:wrong tag”错误
-			}
-		}
-	},
-	"service": {
-		"sms": {
-			"name": "your app name", // 应用名称，对应短信模版的name
-			"codeExpiresIn": 180, // 验证码过期时间，单位为秒，注意一定要是60的整数倍
-			"smsKey": "your sms key", // 短信密钥key，开通短信服务处可以看到
-			"smsSecret": "your sms secret" // 短信密钥secret，开通短信服务处可以看到
-		},
-		"univerify": {
+        "appid": "qq appid",
+        "appsecret": "qq appsecret"
+      },
+      "apple": { // 使用苹果登录时需要
+        "bundleId": "your bundleId"
+      }
+    }
+  },
+  "mp-weixin": {
+    "tokenExpiresIn": 259200,
+    "oauth": {
+      // 微信小程序登录所用的appid、appsecret需要在对应的小程序管理控制台获取
+      "weixin": {
+        "appid": "weixin appid",
+        "appsecret": "weixin appsecret"
+      }
+    }
+  },
+  "mp-qq": {
+    "tokenExpiresIn": 259200,
+    "oauth": {
+      // QQ小程序登录所用的appid、appsecret需要在对应的小程序管理控制台获取
+      "qq": {
+        "appid": "qq appid",
+        "appsecret": "qq appsecret"
+      }
+    }
+  },
+  "mp-alipay": {
+    "tokenExpiresIn": 259200,
+    "oauth": {
+      // 支付宝小程序登录用到的appid、privateKey请参考支付宝小程序的文档进行设置或者获取，https://opendocs.alipay.com/open/291/105971#LDsXr
+      "alipay": {
+        "appid": "alipay appid",
+        "privateKey": "alipay privateKey", // 私钥
+        "keyType": "PKCS8" // 私钥类型，如果私钥类型不是PKCS8，需要填写此字段，否则会出现“error:0D0680A8:asn1 encoding routines:ASN1_CHECK_TLEN:wrong tag”错误
+      }
+    }
+  },
+  "service": {
+    "sms": {
+      "name": "your app name", // 应用名称，对应短信模版的name
+      "codeExpiresIn": 180, // 验证码过期时间，单位为秒，注意一定要是60的整数倍
+      "smsKey": "your sms key", // 短信密钥key，开通短信服务处可以看到
+      "smsSecret": "your sms secret" // 短信密钥secret，开通短信服务处可以看到
+    },
+    "univerify": {
       "appid": "your appid", // 当前应用的appid，使用云函数URL化，此项必须配置
-			"apiKey": "your apiKey",// apiKey 和 apiSecret 在开发者中心获取，开发者中心：https://dev.dcloud.net.cn/uniLogin/index?type=0，文档：https://ask.dcloud.net.cn/article/37965
-			"apiSecret": "your apiSecret"
-		}
-	}
+      "apiKey": "your apiKey", // apiKey 和 apiSecret 在开发者中心获取，开发者中心：https://dev.dcloud.net.cn/uniLogin/index?type=0，文档：https://ask.dcloud.net.cn/article/37965
+      "apiSecret": "your apiSecret"
+    }
+  }
 }
 ```
 
@@ -223,6 +223,15 @@ tokenExpiresThreshold用于指定token还有多长时间过期时自动刷新tok
 例：指定`tokenExpiresThreshold:600,tokenExpiresIn:7200`，token过期时间为2小时，在token有效期不足10分钟时自动刷新token
 
 在token还有5分钟过期时调用checkToken接口会返回新的token和新的token的过期时间（新token有效时间也是2小时），需要前端主动保存此新token。
+
+## Token@token
+
+用户注册/登录成功之后均会返回token及其过期时间，token是一个[json web token](https://jwt.io/)字符串。开发者应在用户登录/注册成功后持久化保存token及其过期时间。同样的在用户登出之后应删除保存的token及其过期时间。
+
+参考：
+
+- [保存token及其过期时间](uniCloud/uni-id?id=save-token)
+- [删除token及其过期时间](uniCloud/uni-id?id=remove-token)
 
 # 用户角色权限@rbac
 
@@ -317,10 +326,11 @@ RBAC：Role-Based Access Control，基于角色的访问控制。
 如下是角色在clientDB中的配置示例：
 
 ```js
-// db-permission/uni-id-users.js
-
+// uni-id-users.schema.json
 {
-  "update":"doc._id == auth.uid || 'USER_ADMIN' in auth.role" //用户自己或人事管理员可执行用户表的.update操作
+  "permission": {
+    "update":"doc._id == auth.uid || 'USER_ADMIN' in auth.role" //用户自己或人事管理员可执行用户表的.update操作
+  } 
 }
 ```
 
@@ -364,10 +374,11 @@ RBAC：Role-Based Access Control，基于角色的访问控制。
 如下是权限在clientDB中的配置示例：
 
 ```js
-// db-permission/uni-id-users.js
-
+// uni-id-users.schema.json
 {
-  "update":"doc._id == auth.uid || 'USER_EDIT' in auth.permission" //用户自己或有`USER_EDIT`权限的用户，可执行用户表的.update操作
+  "permission": {
+    "update":"doc._id == auth.uid || 'USER_EDIT' in auth.permission" //用户自己或有`USER_EDIT`权限的用户，可执行用户表的.update操作
+  }
 }
 ```
 
@@ -376,6 +387,10 @@ RBAC：Role-Based Access Control，基于角色的访问控制。
 ## 其他说明
 
 uni-id针对角色权限模块封装了丰富的API，比如：获取用户角色、获取某角色下的所有权限等，详情参考：[角色权限API](uniCloud/uni-id.md?id=rbac-api)。
+
+> 自`uni-id 3.0.0`起，支持在token内缓存用户的角色权限，默认开启此功能，各登录接口的needPermission参数不再生效。如需关闭请在config内配置`"removePermissionAndRoleFromToken": true`。详情参考：[缓存角色权限](uniCloud/uni-id?id=cache-permission-in-token)。
+
+如果不在token内缓存角色权限，可以使用以下方式，在checkToken时返回数据库内对应用户的角色权限信息。
 
 uni-id登录注册接口可接收`needPermission`参数，若`needPermission`配置为true时，后续会在`checkToken`接口返回用户权限列表（permission）。如下是通过token判断权限的简单示例：
 
@@ -441,7 +456,7 @@ exports.main = async function(event,context) {
 
 **注意**
 
-- 注册成功之后会返回token，在获取token之后应进行持久化存储，键值为：`uni_id_token、uni_id_token_expired`，例：`uni.setStorageSync('uni_id_token',res.result.token)`
+- 注册成功之后会返回token、tokenExpired，在获取token之后应进行持久化存储，详情参考：[保存token及其有效期](uniCloud/uni-id.md?id=save-token)
 
 **参数说明**
 
@@ -541,15 +556,15 @@ uniCloud.callFunction({
 
 
 ### 用户登录 @login
+
 登录就是通过查询数据库验证，客户端传递的“用户名”和“密码”是否匹配并返回token、uid等响应参数（详见下文“响应参数”表）的过程。
 如果你允许用户同时使用多种方式登录，需要注意：必须限制用户注册用户名不为邮箱格式且不为手机号格式，uni-id内部并未做出此类限制。否则用户可以使用他人的手机号码作为用户名注册账号，这就成了一个漏洞。具体做法可以参考[云端一体应用快速开发模版"uniStarter"](https://ext.dcloud.net.cn/plugin?id=5057)
-
 
 用法：`uniID.login(Object LoginParams)`
 
 **注意**
 
-- 登录成功之后会返回token，在获取token之后应进行持久化存储，键值为：`uni_id_token、uni_id_token_expired`，例：`uni.setStorageSync('uni_id_token',res.result.token)`
+- 登录成功之后会返回token、tokenExpired，在获取token之后应进行持久化存储，详情参考：[保存token及其有效期](uniCloud/uni-id.md?id=save-token)
 - 登录时请注意自行验证数据有效性
 
 **参数说明**
@@ -628,7 +643,7 @@ exports.main = async function(event,context) {
 - 如果在token内缓存角色权限，建议将此`needUserInfo`参数配置为`false`
 - 角色内包含admin时返回的permission是一个空数组，因此判断一个用户是否有权限时应注意admin角色额外进行判断
 
-请务必阅读一下此文档：[关于缓存角色权限的说明](uniCloud/uni-id.md?id=cachepermissionintoken)
+请务必阅读一下此文档：[关于缓存角色权限的说明](uniCloud/uni-id.md?id=cache-permission-in-token)
 
 **响应参数**
 
@@ -701,19 +716,15 @@ uniCloud.callFunction({
 ```
 
 
-### 登出
+### 登出@logout
+
 登出就是一个验证客户端uniCloud.callFunction自带的uniIdToken通过token校验并获取uid，将对应uid的用户的token清除的过程（uniID登出api内部会自动完成，你传入uniIdToken即可）。
 
 用法：`uniID.logout(String token);`
 
 **注意**
 
-- 登出成功之后应删除持久化存储的token，键值为：`uni_id_token`，`uni.removeStorageSync('uni_id_token')`
-
-```js
-  uni.removeStorageSync('uni_id_token')
-  uni.removeStorageSync('uni_id_token_expired')
-```
+- 登出成功之后应删除持久化存储的token，参考：[客户端删除token及其有效期](uniCloud/uni-id?id=remove-token)
 
 **参数说明**
 
@@ -1094,6 +1105,24 @@ exports.main = async function(event,context) {
   })
 	return res
 }
+```
+
+### 客户端保存token及其有效期@save-token
+
+在用户登录/注册成功后应在storage内保存用户的token及其过期时间，示例代码如下：
+
+```js
+uni.setStorageSync('uni_id_token', token)
+uni.setStorageSync('uni_id_token_expired', tokenExpired)
+```
+
+### 客户端删除token及其有效期@remove-token
+
+在用户登出成功之后应删除持久化存储的token及其过期时间，示例代码如下：
+
+```js
+uni.removeStorageSync('uni_id_token')
+uni.removeStorageSync('uni_id_token_expired')
 ```
 
 ## 手机号码@mobile
@@ -1575,7 +1604,7 @@ exports.main = async function(event,context) {
 
 - 需要在config.json内使用微信登录的平台下配置appid和appsecret
 - uniId会自动判断客户端平台
-- 登录成功之后应持久化存储token、token过期时间，键值为：`uni_id_token、uni_id_token_expired`，例：`uni.setStorageSync('uni_id_token', res.result.token)`
+- 登录成功之后会返回token、tokenExpired，在获取token之后应进行持久化存储，详情参考：[保存token及其有效期](uniCloud/uni-id.md?id=save-token)
 - App端获取code不可直接调用`uni.login`，详细用法可以看下面示例
 
 **APP微信登录详细配置流程**
@@ -1854,7 +1883,7 @@ exports.main = async function(event,context) {
 
 - 需要在config.json内使用QQ登录的平台下配置appid和appsecret
 - uniId会自动判断客户端平台
-- 登录成功之后应持久化存储token、token过期时间，键值为：`uni_id_token、uni_id_token_expired`，例：`uni.setStorageSync('uni_id_token', res.result.token)`
+- 登录成功之后会返回token、tokenExpired，在获取token之后应进行持久化存储，详情参考：[保存token及其有效期](uniCloud/uni-id.md?id=save-token)
 
 **APP QQ登录详细配置流程**
 
@@ -2027,7 +2056,7 @@ export default {
 **注意**
 
 - 需要在config.json内支付宝平台下配置appid和privateKey（应用私钥）
-- 登录成功之后应持久化存储token，键值为：`uni_id_token、uni_id_token_expired`，例：`uni.setStorageSync('uni_id_token', res.result.token)`
+- 登录成功之后会返回token、tokenExpired，在获取token之后应进行持久化存储，详情参考：[保存token及其有效期](uniCloud/uni-id.md?id=save-token)
 
 **LoginByAlipayParams参数说明**
 
@@ -2176,7 +2205,7 @@ exports.main = async function(event,context) {
 **注意**
 
 - 需要在config.json内的 app-plus > oauth > apple 下配置 bundleId
-- 登录成功之后应持久化存储token，键值为：uni_id_token，`uni.setStorageSync('uni_id_token', res.result.token)`
+- 登录成功之后会返回token、tokenExpired，在获取token之后应进行持久化存储，详情参考：[保存token及其有效期](uniCloud/uni-id.md?id=save-token)
 
 **LoginByAppleParams参数说明**
 
@@ -3210,7 +3239,7 @@ uni-id-users表内存储的password字段为使用hmac-sha1生成的hash值，�
 
 由于是不可逆加密，理论上passwordSecret泄露不会造成用户的真实密码被泄露，自定义passwordSecret只是进一步加强安全性。
 
-## 缓存角色权限@cachepermissionintoken
+## 缓存角色权限@cache-permission-in-token
 
 自`uni-id 3.0.0`起，支持在token内缓存用户的角色权限，默认开启此功能，各登录接口的needPermission参数不再生效。如需关闭请在config内配置`"removePermissionAndRoleFromToken": true`。
 
@@ -3388,7 +3417,7 @@ exports.main = async function(event, context) {
 
 ## 自2.x.x版本升级到3.x.x@m2to3
 
-3.0.0版本起uni-id默认将缓存用户角色权限到token内，关于缓存角色权限的说明请参考：[缓存角色权限](uniCloud/uni-id?id=cachepermissionintoken)。从2.x.x版本升级到3.x.x版本需要根据自己需求分别处理。
+3.0.0版本起uni-id默认将缓存用户角色权限到token内，关于缓存角色权限的说明请参考：[缓存角色权限](uniCloud/uni-id?id=cache-permission-in-token)。从2.x.x版本升级到3.x.x版本需要根据自己需求分别处理。
 
 - 如果不希望缓存角色权限到token内，需要在config.json内配置`"removePermissionAndRoleFromToken": true`。
 - 如果希望升级为缓存角色权限到token内的方案，可以按照以下步骤迁移
@@ -3518,7 +3547,7 @@ exports.main = async function() {
 # FAQ
 
 - token数组为什么越来越长
-  + 每次登录成功都会新增一个token，并且检查所有token的有效期删除过期token。正常情况下客户端应该判断持久化存储的token是否还在有效期内，如果还有效就直接进入应用，不再执行登录。这样相当于用户的每个设备上都存在一个有效期内的token，云端也是。
+  + 每次登录成功/刷新token都会新增一个token，并且检查所有token的有效期删除过期token。正常情况下客户端应该判断持久化存储的token是否还在有效期内，如果还有效就直接进入应用，不再执行登录。这样相当于用户的每个设备上都存在一个有效期内的token，云端会保留所有仍在有效期内的token（部分过期token需要等待用户重新获取token之后才会删除）。
 
 - 复制token到其他环境校验不通过
   + uni-id内会校验客户端ua，如果是在本地调试可以在云函数内修改`context.CLIENTUA`为生成token的设备ua，切记上线删除此逻辑。如果不需要设备和token绑定，可以在config内配置`bindTokenToDevice: false`来关闭绑定，`uni-id 3.0.12`及以上版本bindTokenToDevice默认值调整为了false

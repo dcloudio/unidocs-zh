@@ -1,12 +1,8 @@
-#### uni-app选型评估23问
-
-如果你关心竞品对比，这里有几份详尽对比：
-2. 只做App，flutter、react native等App跨平台框架对比，参考：[https://ask.dcloud.net.cn/article/36083](https://ask.dcloud.net.cn/article/36083)
-
+#### uni-app选型评估常见问题
 
 **uni-app 有哪些已上线的成功案例？**
 
-uni-app是当今主流的开发框架，DCloud有600万开发者，uni统计手机端月活10亿，华为、阿里、腾讯、字节跳动、美团、京东、快手、vivo都在用，案例参考[uni-app 应用案例](http://uniapp.dcloud.io/case)
+uni-app是当今主流的开发框架，DCloud有800万开发者，uni统计手机端月活10亿，阿里、腾讯、字节跳动、美团、京东、vivo都在用，案例参考[uni-app 应用案例](http://uniapp.dcloud.io/case)
 
 **uni-app收费吗？**
 
@@ -70,7 +66,6 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 
 没学过vue的同学，也不用掌握vue的全部，只需了解vue基础语法、虚拟dom、数据绑定、组件、vuex，其他如路由、loader 不用学，cli、node.js、webpack也不需要学。
 
-
 **uni-app 开发体验如何？支持现代前端开发流程吗？**
 
 `uni-app` 积极拥抱社区现有的现代开发流程，包括但不限于：
@@ -90,7 +85,6 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 - 丰富的插件市场为开发者提供数千款现成的轮子，[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
 - App和H5提供了renderjs，使得浏览器专用的库也可以在App和H5里使用，[参考](https://uniapp.dcloud.io/frame?id=renderjs)
 - 支持 NPM 包管理系统，[参考](http://uniapp.dcloud.io/frame?id=npm%E6%94%AF%E6%8C%81)
-- 支持 mpvue 项目及组件，[参考](http://ask.dcloud.net.cn/article/34945)
 - 支持原生插件，见插件市场：[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
 
 
@@ -107,7 +101,7 @@ Android4.4、iOS9是官方会保障兼容的。
 
 **uni-app的社区活跃吗？**
 
-加入`uni-app`的群就知道，几十个QQ/微信群每天数万条聊天记录，非常活跃。论坛里每天数百个帖子。
+`uni-app`问答社区每天新增数百个帖子。
 
 插件市场内容也非常丰富，各种轮子方便可用。[https://ext.dcloud.net.cn/](https://ext.dcloud.net.cn/)，并且很多轮子的uni-app版。
 
@@ -128,26 +122,7 @@ DCloud是一家遵纪守法的公司，不会做损害自己名誉的事情。�
 
 **DCloud提供哪些技术支持？碰到框架bug影响业务怎么办？**
 
-`uni-app` 是DCloud全力打造的重点产品，不是非专业公司的KPI项目。不会因为某些负责人的流动导致框架烂尾。
 `uni-app` 的github上的dev分支是频繁更新的，可随时修复bug。并且作为开源产品，开发者也可以修改源码。
 `uni-app` 的app引擎，支持原生扩展，只要你会原生扩展，就不怕app引擎有限制，大不了自己补一个原生插件进去。
 
-开发者碰到问题，可以通过如下途径进行反馈交流：
-- ask社区：[https://ask.dcloud.net.cn/explore/category-12](https://ask.dcloud.net.cn/explore/category-12)
-- QQ群：参考官网左侧导航显示的QQ群列表
-
-另外，如果您确实需要商业化的保障才安心，也可以申请付费技术支持。[参考](https://ask.dcloud.net.cn/article/13015)
-
-**大型互联网公司发布的开源框架，是不是更有影响力？**
-
-大型互联网公司在自用某个项目时，解决了某个问题，把它剥离出来开源，这个是众多大公司开源项目的来源和初衷。
-
-而之所以把内部自用的框架开源出来，基本是为了在技术圈塑造形象和威望。对团队而言，有助于招聘；对负责人个人而言，有助于晋升和提升名气。
-
-这类开源项目被戏称为KPI项目，往往逃不开4个魔咒：
-1. 很多项目开源后一旦取得成绩，负责人就升职调岗，或者因为其他原因最初立项负责人离职，于是之前的开源项目就慢慢变凉。
-2. 其设计初衷是为公司内部使用的，不是站在广泛的开发者需求角度设计的，其他开发者使用时会遇到各种问题。
-3. 大型互联网公司的主业都是toC的，而不是to开发者。投很多资源持续维护这些开源项目并不是其公司目标，也不会有回报。
-4. 优秀的程序员和优秀的开发框架设计者是2个层面的问题，不是说某些互联网大厂的前端技术人员水平不足，而是他们缺少面向开发者设计产品的经验，这种经验需要长期为开发者提供服务的团队才能具备。经验不足者设计的产品不会好用。
-
-而```DCloud```这家公司就是为开发者而生的，优秀的人才和资源全部是为开发者服务的，产品立项之初广泛调研不同开发者的需求，产品发布后持续迭代，让开发者们使用的更便利。
+开发者碰到问题，可以到[github](https://github.com/dcloudio/uni-app)提交issue。

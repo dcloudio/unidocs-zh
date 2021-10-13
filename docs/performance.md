@@ -48,8 +48,6 @@ iOS还好，但Android低端机上，每次通信都要耗时几十毫秒。平�
 
 app端提供了[renderjs](https://uniapp.dcloud.io/frame?id=renderjs)，并兼容到H5平台。
 
-比如canvas动画，微信的canvas无法通过wxs操作，js不停绘制canvas动画因通信折损而无法流畅。uni-app的app-vue里的canvas对象设计在webview视图层的，通过renderjs可以在视图层直接操作canvas动画，将不再有通信折损，实现更流畅的效果，详见：[renderjs](https://uniapp.dcloud.io/frame?id=renderjs)
-
 - 原生渲染的视图层
 
 在app-nvue里，逻辑层和视图层的折损一样存在。包括react native也有这个问题。所以也千万别以为原生渲染就多么高级。
@@ -59,10 +57,6 @@ weex提供了一套[bindingx](https://uniapp.dcloud.io/nvue-api?id=nvue-%e9%87%8
 bindingx作为一种表达式，它的功能不及js强大，但手势监听、动画还是可以实现的，比如uni ui的swiperAction组件在app-nvue下运行时会自动启用bindingx，以实现流畅跟手。
 
 #### 优化建议
-
-##### App如果不是v3模式，请改为v3编译模式
-
-详见：[https://ask.dcloud.net.cn/article/36599](https://ask.dcloud.net.cn/article/36599)
 
 ##### 避免使用大图
 

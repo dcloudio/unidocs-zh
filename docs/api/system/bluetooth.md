@@ -87,7 +87,6 @@ uni.openBluetoothAdapter({
 **示例代码**
 
 ```javascript
-// 以微信硬件平台的蓝牙智能灯为例，主服务的 UUID 是 FEE7。传入这个参数，只搜索主服务 UUID 为 FEE7 的设备
 uni.startBluetoothDevicesDiscovery({
   services: ['FEE7'],
   success(res) {

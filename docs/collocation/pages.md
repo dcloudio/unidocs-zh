@@ -801,7 +801,6 @@ h5 平台下拉刷新动画，只有 circle 类型。
 
 - `titleImage`仅支持https地址，设置了`titleImage`会替换页面文字标题
 - `backgroundImageUrl`支持网络地址和本地地址，尽量使用绝对地址
-- 部分配置可能会只在真机运行的时候生效，支付宝未来应该会改善
 
 ## FAQ
 - Q：如何取消原生导航栏？或自定义导航
@@ -982,12 +981,6 @@ midButton没有pagePath，需监听点击事件，自行处理点击后的行为
 |path|String|是|启动页面路径|
 |query|String|否|启动参数，可在页面的 [onLoad](/collocation/frame/lifecycle?id=页面生命周期) 函数里获得|
 
-**注意：** 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
-
-<div style="text-align:center;">
-	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a4ceac70-4f2e-11eb-b680-7980c8a877b8.png" />
-</div>
-
 **代码示例：**
 
 ```javascript
@@ -1008,9 +1001,11 @@ midButton没有pagePath，需监听点击事件，自行处理点击后的行为
 
 # subPackages
 
-所谓的主包，即放置默认启动页面/TabBar 页面，以及一些所有分包都需用到公共资源/JS 脚本；而分包则是根据pages.json的配置进行划分。
+`uni-app`在App端支持分包加载，用于首页是vue时的App启动提速。
 
-App默认为整包。其目的不用于下载提速，而用于首页是vue时的启动提速。App下开启分包，除在pages.json中配置分包规则外，还需要在manifest中设置在app端开启分包设置，详见：[https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
+分包加载将App资源分为主包和分包。所谓的主包，即放置默认启动页面/TabBar 页面，以及一些所有分包都需用到公共资源/JS 脚本；而分包则是根据pages.json的配置进行划分。
+
+App平台默认为整包。若需开启分包，除在pages.json中配置分包规则外，还需要在manifest中设置在app端开启分包设置，详见：[https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
 
 subPackages 节点接收一个数组，数组每一项都是应用的子包，其属性值如下：
 

@@ -60,7 +60,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 - app-vue 平台，需要编写条件编译代码，使用 `plus.video.LivePusher`，[业务指南](https://ask.dcloud.net.cn/article/13416)、[规范文档](http://www.html5plus.org/doc/zh_cn/video.html#plus.video.LivePusher)
 
 使用nvue做直播，比使用vue的优势有：
-1. nvue可一套代码直接编译到App和微信
+1. nvue可一套代码直接编译到App
 2. nvue的cover-view比vue的cover-view更强大，在视频上绘制元素更容易。如果只考虑App端的话，不用cover-view，任意组件都可以覆盖live-pusher组件
 3. 若需要视频内嵌在swiper里上下滑动（类抖音、映客首页模式），App端只有nvue才能实现
 当然nvue相比vue的坏处是css写法受限。

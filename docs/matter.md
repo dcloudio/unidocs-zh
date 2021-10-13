@@ -95,7 +95,6 @@ App的js运行在jscore下而不是浏览器里，没有浏览器专用的js对�
 	- 没有这些浏览器自带对象并不影响业务开发，uni提供的api足够完成业务。
 	- uni的api在编译到web平台运行时，其实也会转为浏览器的js api。
   - App端若要使用操作window、document的库，需要通过renderjs来实现。
-	- uni的api是多端可用的。在条件编译区，每个平台的专有api也可以使用，比如wx.、plus.等api可以分别在微信下和app下使用。
 2. Tag注意
 	- uni-app的tag，和HTML的tag不一样，比如div要改成view，span要改成text、a要改成navigator。
 	- 出于降低h5应用向uni-app迁移成本的考虑，写成div、span也可以运行在app上，但仍然建议养成新习惯。

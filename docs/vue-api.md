@@ -25,7 +25,7 @@
 |Vue.set		| 向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新 [详情](https://cn.vuejs.org/v2/api/#Vue-set)|√	| √|√	|		|
 |Vue.delete	| 删除对象的 property。如果对象是响应式的，确保删除能触发更新视图 [详情](https://cn.vuejs.org/v2/api/#Vue-delete)		|√	| √		| √	| |
 |Vue.directive	| 注册或获取全局指令 [详情](https://cn.vuejs.org/v2/api/#Vue-directive)|√	|√		| x			|	|
-|Vue.filter		| 注册或获取全局过滤器 [详情](https://cn.vuejs.org/v2/api/#Vue-filter)|√	|√		| x		|App端旧版不可以在class中使用			|
+|Vue.filter		| 注册或获取全局过滤器 [详情](https://cn.vuejs.org/v2/api/#Vue-filter)|√	|√		| x		| |
 |Vue.component	| 注册或获取全局组件。注册还会自动使用给定的 id 设置组件的名称 [详情](https://cn.vuejs.org/v2/api/#Vue-component)	|√	| √		| √	| |
 |Vue.use		| 安装 Vue.js 插件 [详情](https://cn.vuejs.org/v2/api/#Vue-use)	|√	| √		| √		|		|
 |Vue.mixin		| 全局注册一个混入，影响注册之后所有创建的每个 Vue 实例 [详情](https://cn.vuejs.org/v2/api/#Vue-mixin)	|√	|√		| √		|	|
@@ -39,7 +39,7 @@
 |Vue 选项		|描述						|H5		|App端|微信小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
 |data	| Vue 实例的数据对象 [详情](https://cn.vuejs.org/v2/api/#data) 	|√	|√	| √		|		|
-|props	| props 可以是数组或对象，用于接收来自父组件的数据 [详情](https://cn.vuejs.org/v2/api/#props) 	|√	|√	| √		|App端旧版不可以传递函数		|
+|props	| props 可以是数组或对象，用于接收来自父组件的数据 [详情](https://cn.vuejs.org/v2/api/#props) 	|√	|√	| √		| |
 |propsData	| 创建实例时传递 props。主要作用是方便测试 [详情](https://cn.vuejs.org/v2/api/#propsData) 	|√	| √	| √		|		|
 |computed	| 计算属性将被混入到 Vue 实例中 [详情](https://cn.vuejs.org/v2/api/#computed) 	|√	| √	| √		|		|
 |methods	| methods 将被混入到 Vue 实例中 [详情](https://cn.vuejs.org/v2/api/#methods) 	|√	| √	| √		|		|
@@ -49,13 +49,13 @@
 |render	| 字符串模板的代替方案，该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。[详情](https://cn.vuejs.org/v2/api/#render) 	|√	| x	| x		|		|
 |renderError	| 当 render 函数遭遇错误时，提供另外一种渲染输出，只在开发者环境下工作 [详情](https://cn.vuejs.org/v2/api/#renderError) 	|√	| x	| x		|		|
 |directives	| 包含 Vue 实例可用指令的哈希表 [详情](https://cn.vuejs.org/v2/api/#directives) 	|√	| √	| x		|		|
-|filters	| 包含 Vue 实例可用过滤器的哈希表 [详情](https://cn.vuejs.org/v2/api/#filters) 	|√	| √	| √		|App端旧版不可以在class中使用		|
+|filters	| 包含 Vue 实例可用过滤器的哈希表 [详情](https://cn.vuejs.org/v2/api/#filters) 	|√	| √	| √		| |
 |components	| 包含 Vue 实例可用组件的哈希表 [详情](https://cn.vuejs.org/v2/api/#components) 	|√	| √	| √		|		|
 |parent	| 指定已创建的实例之父实例，在两者之间建立父子关系 [详情](https://cn.vuejs.org/v2/api/#parent) 	|√	| √	| √		|不推荐		|
 |mixins	|  选项接收一个混入对象的数组 [详情](https://cn.vuejs.org/v2/api/#mixins) 	|√	| √	| √		|		|
 |extends	| 允许声明扩展另一个组件 [详情](https://cn.vuejs.org/v2/api/#extends) 	|√	| √	| √		|		|
-|provide/inject	| 允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在其上下游关系成立的时间里始终生效 [详情](https://cn.vuejs.org/v2/api/#provide-inject) 	|√	|√	| √		|App端旧版部分支持		|
-|name	| 允许组件模板递归地调用自身 [详情](https://cn.vuejs.org/v2/api/#name) 	|√	| √	| √		|App端旧版不支持递归组件		|
+|provide/inject	| 允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在其上下游关系成立的时间里始终生效 [详情](https://cn.vuejs.org/v2/api/#provide-inject) 	|√	|√	| √		| |
+|name	| 允许组件模板递归地调用自身 [详情](https://cn.vuejs.org/v2/api/#name) 	|√	| √	| √		| |
 |delimiters	| 改变纯文本插入分隔符 [详情](https://cn.vuejs.org/v2/api/#delimiters) 	|√	|x	| x		|		|
 |functional	| 使组件无状态 (没有 data) 和无实例 (没有 this 上下文) [详情](https://cn.vuejs.org/v2/api/#functional) 	|√	| x	| x		|		|
 |model	| 允许一个自定义组件在使用 v-model 时定制 prop 和 event [详情](https://cn.vuejs.org/v2/api/#model) 	|√	|√	| x		|		|
@@ -99,10 +99,10 @@
 |vm.$parent	| 父实例，如果当前实例有的话 [详情](https://cn.vuejs.org/v2/api/#vm-parent) 	|√	|√	| √		|H5端 `view`、`text` 等内置标签是以 Vue 组件方式实现，`$parent` 会获取这些到内置组件，导致的问题是 `this.$parent` 与其他平台不一致，解决方式是使用 `this.$parent.$parent` 获取或自定义组件根节点由 `view` 改为 `div`|
 |vm.$root	| 当前组件树的根 Vue 实例 [详情](https://cn.vuejs.org/v2/api/#vm-root) 	|√	| √	| √		|		|
 |vm.$children	| 当前实例的直接子组件 [详情](https://cn.vuejs.org/v2/api/#vm-children) 	|√	| √	| √		|H5端 `view`、`text` 等内置标签是以 Vue 组件方式实现，`$children` 会获取到这些内置组件，导致的问题是 `this.$children` 与其他平台不一致，解决方式是使用 `this.$children.$children` 获取或自定义组件根节点由 `view` 改为 `div`|
-|vm.$slots	| 用来访问被插槽分发的内容 [详情](https://cn.vuejs.org/v2/api/#vm-slots) 	|√	| x	| √		|App端旧版获取值为{'slotName':true/false}比如：{"footer":true}		|
-|vm.$scopedSlots	| 用来访问作用域插槽 [详情](https://cn.vuejs.org/v2/api/#vm-scopedSlots) 	|√	| √	| √		|App端旧版获取值为{'slotName':true/false}比如：{"footer":true}		|
+|vm.$slots	| 用来访问被插槽分发的内容 [详情](https://cn.vuejs.org/v2/api/#vm-slots) 	|√	| x	| √		| |
+|vm.$scopedSlots	| 用来访问作用域插槽 [详情](https://cn.vuejs.org/v2/api/#vm-scopedSlots) 	|√	| √	| √		| |
 |vm.$refs	| 一个对象，持有注册过 ref attribute 的所有 DOM 元素和组件实例[详情](https://cn.vuejs.org/v2/api/#vm-refs) 	|√	| √	| √		|非H5端只能用于获取自定义组件，不能用于获取内置组件实例（如：view、text）		|
-|vm.$isServer	| 当前 Vue 实例是否运行于服务器 [详情](https://cn.vuejs.org/v2/api/#vm-isServer) 	|√	| √	| x		|App端V3总是返回false		|
+|vm.$isServer	| 当前 Vue 实例是否运行于服务器 [详情](https://cn.vuejs.org/v2/api/#vm-isServer) 	|√	| √	| x		|App端总是返回false		|
 |vm.$attrs	| 包含了父作用域中不作为 prop 被识别 (且获取) 的 attribute 绑定 [详情](https://cn.vuejs.org/v2/api/#vm-attrs) 	|√	| √	| x		|		|
 |vm.$listeners	| 包含了父作用域中的 (不含 .native 修饰器的) v-on 事件监听器 [详情](https://cn.vuejs.org/v2/api/#vm-listeners) 	|√	| √	| x		|	-	|
 
@@ -146,7 +146,7 @@
 |v-else-if| 表示 v-if 的“else if 块”。可以链式调用 [详情](https://cn.vuejs.org/v2/api/#v-else-if) 	|√	| √	| √		|		|
 |v-for	| 基于源数据多次渲染元素或模板块 [详情](https://cn.vuejs.org/v2/api/#v-for) 	|√	| √	| √		|		|
 |v-on	| 绑定事件监听器 [详情](https://cn.vuejs.org/v2/api/#v-on) 	|√	| √	| √		|		|
-|v-bind	| 动态地绑定一个或多个 attribute，或一个组件 prop 到表达式 [详情](https://cn.vuejs.org/v2/api/#v-bind) 	|√	| √	| √		|App端旧版不支持v-bind="{key:value}"类似用法		|
+|v-bind	| 动态地绑定一个或多个 attribute，或一个组件 prop 到表达式 [详情](https://cn.vuejs.org/v2/api/#v-bind) 	|√	| √	| √		| |
 |v-model| 在表单控件或者组件上创建双向绑定 [详情](https://cn.vuejs.org/v2/api/#v-model) 	|√	| √	| √		|		|
 |v-pre	| 跳过这个元素和它的子元素的编译过程 [详情](https://cn.vuejs.org/v2/api/#v-pre) 	|√	| √	| x		|		|
 |v-cloak| 这个指令保持在元素上直到关联实例结束编译 [详情](https://cn.vuejs.org/v2/api/#v-cloak) 	|√	| x	| x		|		|
@@ -160,7 +160,7 @@
 
 |特殊属性		|描述						|H5		|App端|微信小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
-|key	| 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 对比时辨识 VNodes [详情](https://cn.vuejs.org/v2/api/#key) 	|√	| √	| √		|App端旧版不支持表达式		|
+|key	| 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 对比时辨识 VNodes [详情](https://cn.vuejs.org/v2/api/#key) 	|√	| √	| √		| |
 |ref	| ref 被用来给元素或子组件注册引用信息 [详情](https://cn.vuejs.org/v2/api/#ref) 	|√	| √	| √		|非 H5 平台只能获取 vue 组件实例不能获取到内置组件实例|
 |is	| 用于动态组件且基于 DOM 内模板的限制来工作 [详情](https://cn.vuejs.org/v2/api/#is) 	|√	| √	| x		|	-	|
 

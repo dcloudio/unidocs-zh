@@ -868,7 +868,6 @@ code|message|
 - 多次调用 `RewardedVideoAd.onLoad()`、`RewardedVideoAd.onError()`、`RewardedVideoAd.onClose()` 等方法监听广告事件会产生多次事件回调，建议在创建广告后监听一次即可。
 - 为避免滥用广告资源，目前每个用户每天可观看激励式视频广告的次数有限，建议展示广告按钮前先判断广告是否拉取成功。
 - App平台，建议每个广告商每个设备每天调用次数不超过`15`，中间要有间隔时间，否则可能触发系统的反作弊策略导致流量收益下降。
-- 老版非V3编译项目不支持激励视频。
 
 ### 案例参考
 - [全民董事长](https://android.myapp.com/myapp/detail.htm?apkName=com.dlt.qmdsz&info=DF3F955B42F0B77FECA41F03E7F77C8D)

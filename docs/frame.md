@@ -1,14 +1,13 @@
 
-```uni-app``` 使用vue的语法+小程序的标签和API。
+`uni-app` 使用`Vue`的语法。
 
 ## 开发规范
 
-为了实现多端兼容，综合考虑编译速度、运行性能等因素，```uni-app``` 约定了如下开发规范：
+为了实现多端兼容，综合考虑编译速度、运行性能等因素，`uni-app` 约定了如下开发规范：
 
 - 页面文件遵循 [Vue 单文件组件 (SFC) 规范](https://vue-loader.vuejs.org/zh/spec.html)
-- 组件标签靠近小程序规范，详见[uni-app 组件规范](component/README.md)
-- 接口能力（JS API）靠近微信小程序规范，但需将前缀 ```wx``` 替换为 ```uni```，详见[uni-app接口规范](api/README.md)
-- 数据绑定及事件处理同 ```Vue.js``` 规范，同时补充了App及页面的生命周期
+- 组件标签采用自定义规范，详见[uni-app 组件规范](component/README.md)
+- 数据绑定及事件处理同 `Vue.js` 规范，同时补充了App及页面的生命周期
 - 为兼容多端运行，建议使用flex布局进行开发
 
 ## 目录结构
@@ -17,8 +16,7 @@
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─uniCloud              云空间目录，阿里云为uniCloud-aliyun,腾讯云为uniCloud-tcb（详见<a href="https://uniapp.dcloud.io/uniCloud/quickstart?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84">uniCloud</a>）
-│─components            符合vue组件规范的uni-app组件目录
+┌─components            符合vue组件规范的uni-app组件目录
 │  └─comp-a.vue         可复用的a组件
 ├─hybrid                App端存放本地html文件的目录，<a href="/component/web-view">详见</a>
 ├─platforms             存放各平台专用页面的目录，<a href="/platform?id=%E6%95%B4%E4%BD%93%E7%9B%AE%E5%BD%95%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91">详见</a>
@@ -261,7 +259,7 @@ nvue中，uni-app 模式（[nvue 不同编译模式介绍](https://ask.dcloud.ne
 
 微信小程序设计了 rpx 解决这个问题。`uni-app` 在 App 端、H5 端都支持了 `rpx`，并且可以配置不同屏幕宽度的计算方式，具体参考：[rpx计算配置](https://uniapp.dcloud.io/collocation/pages?id=globalstyle)。
 
-rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应。```uni-app``` 规定屏幕基准宽度 750rpx。
+rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应。`uni-app` 规定屏幕基准宽度 750rpx。
 
 开发者可以通过设计稿基准宽度计算页面元素 rpx 值，设计稿 1px 与框架样式 1rpx 转换公式如下：
 
@@ -330,7 +328,7 @@ rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应�
 |::before|view::before|在 view 组件前边插入内容，**仅 vue 页面生效**|
 
 **注意：** 
-- 在 ```uni-app``` 中不能使用 ```*``` 选择器。
+- 在 `uni-app` 中不能使用 ```*``` 选择器。
 - ```page``` 相当于 ```body``` 节点，例如：
 
   ```css
@@ -807,6 +805,5 @@ const package = require('packageName')
 
 ## 致谢
 
-```uni-app```使用 ```vue``` 语法，开发多端应用，感谢```Vue```团队！！
+`uni-app`使用 ```vue``` 语法，开发多端应用，感谢```Vue```团队！！
 
-为了减少开发者的学习成本，```uni-app```的组件和api设计，基本参考了微信小程序，学过微信小程序开发，了解```vue```，就能直接上手```uni-app```；感谢微信小程序团队！

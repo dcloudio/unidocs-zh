@@ -32,6 +32,7 @@ univerify是替代短信验证登录的下一代登录验证方式，能消除�
 ```js
 const res = await uniCloud.getPhoneNumber({
   provider: 'univerify',
+  appid: '_UNI_ABCDEFG', // 替换成自己开通一键登录的应用的DCloud appid
   apiKey: 'xxx', // 在开发者中心开通服务并获取apiKey
   apiSecret: 'xxx', // 在开发者中心开通服务并获取apiSecret
   access_token: event.access_token,

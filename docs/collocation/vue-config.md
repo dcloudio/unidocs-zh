@@ -129,7 +129,6 @@ function replaceManifest(path, value) {
 // 使用
 replaceManifest('app-plus.usingComponents', false)
 replaceManifest('app-plus.splashscreen.alwaysShowBeforeRender', false)
-replaceManifest('mp-baidu.usingComponents', false)
 fs.writeFileSync(manifestPath, Manifest, {
   "flag": "w"
 })

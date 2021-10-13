@@ -156,12 +156,6 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 				<view class="title">控制输入的input</view>
 				<input class="uni-input" @input="replaceInput" v-model="changeValue" placeholder="连续的两个1会变成2" />
 			</view>
-			<!-- #ifndef MP-BAIDU -->
-			<view class="uni-form-item uni-column">
-				<view class="title">控制键盘的input</view>
-				<input class="uni-input" ref="input1" @input="hideKeyboard" placeholder="输入123自动收起键盘" />
-			</view>
-			<!-- #endif -->
 			<view class="uni-form-item uni-column">
 				<view class="title">数字输入的input</view>
 				<input class="uni-input" type="number" placeholder="这是一个数字输入框" />

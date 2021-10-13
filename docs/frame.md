@@ -113,7 +113,6 @@ background-image: url(../../static/logo.png);
 
 - 引入字体图标请参考，[字体图标](frame?id=字体图标)
 - `@`开头的绝对路径以及相对路径会经过base64转换规则校验
-- 不支持本地图片的平台，小于40kb，一定会转base64。（共四个平台mp-weixin, mp-qq, mp-toutiao, app v2）
 - h5平台，小于4kb会转base64，超出4kb时不转。
 - 其余平台不会转base64
 

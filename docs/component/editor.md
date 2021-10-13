@@ -86,15 +86,9 @@ editor组件目前只有H5、App的vue页面支持，其他端平台自身未提
 		},
 		methods: {
 			onEditorReady() {
-			    // #ifdef MP-BAIDU
-			    this.editorCtx = requireDynamicLib('editorLib').createEditorContext('editorId');
-			    // #endif
-			    
-			    // #ifdef APP || H5 ||MP-WEIXIN
 			    uni.createSelectorQuery().select('#editor').context((res) => {
 			      this.editorCtx = res.context
 			    }).exec()
-			    // #endif
 			},
 			undo() {
 				this.editorCtx.undo()

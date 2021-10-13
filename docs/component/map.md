@@ -19,7 +19,7 @@
 |scale|Number|16|缩放级别，取值范围为3-20||
 |min-scale|Number|3|最小缩放级别|App-nvue 3.1.0+|
 |max-scale|Number|20|最大缩放级别|App-nvue 3.1.0+|
-|layer-style|Number|1|个性化地图|App-nvue 3.1.0+|
+|layer-style|Number/String|1|个性化地图|App-nvue 3.1.0+|
 |markers|Array||标记点||
 |polyline|Array||路线||
 |circles|Array||圆||
@@ -103,8 +103,6 @@
 |fontSize|文字大小|Number|App-nvue 2.1.5+、H5|
 |x|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、H5|
 |y|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、H5|
-|borderWidth|边框宽度|Number||
-|borderColor|边框颜色|String||
 |borderRadius|边框圆角|Number|App-nvue 2.1.5+|
 |bgColor|背景色|String|App-nvue 2.1.5+|
 |padding|文本边缘留白|Number|App-nvue 2.1.5+|
@@ -139,6 +137,10 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |borderColor|线的边框颜色|String|否||H5|
 |borderWidth|线的厚度|Number|否||H5|
 |colorList|彩虹线|Array|false|存在时忽略 color 值|App-nvue 3.1.0+|
+
+ **注意事项** 
+
+- App-nvue 当 arrowLine 为 true 时，显示的是带箭头的图片拼接的线 color 值会被忽略，替换箭头图片的方法[参考文档](https://ask.dcloud.net.cn/article/37901) 
 
 **polygon**<br>
 指定一系列坐标点，根据 points 坐标数据生成闭合多边形
@@ -242,7 +244,7 @@ nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/3790
 - H5 端获取定位信息，需要部署在 **https** 服务上，本地预览（localhost）仍然可以使用 http 协议。
 - 无GPS模块或GPS无信号的 PC 设备使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败。
 - App 端使用地图组件需要**向高德或百度等三方服务商申请SDK资质，获取AppKey，打包时需要在manifest文件中勾选相应模块，在SDK配置中填写Appkey。注意申请包名和打包时的包名需匹配一致，证书信息匹配**。在manifest可视化界面有详细申请指南。
-- H5 端使用地图和定位相关需要在[腾讯地图开放平台](https://lbs.qq.com/dev/console/key/manage)申请密钥，填写在 [manifest.json](https://uniapp.dcloud.io/collocation/manifest?id=h5sdkconfig) 中。
+- H5 端使用地图和定位相关，需要在 (manifest.json)[/collocation/manifest?id=h5sdkconfig] 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。
 - ios nvue Color 不支持 ARGB 十六进制，使用 rgba(r,g,b,a) 代替
 
 ##### FAQ

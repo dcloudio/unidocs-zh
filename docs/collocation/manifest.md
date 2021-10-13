@@ -7,7 +7,7 @@
 |name|String||应用名称||
 |appid|String|新建 uni-app 项目时，DCloud 云端分配。用途[详见](https://ask.dcloud.net.cn/article/35907)|应用标识|| 
 |description|String||应用描述||
-|locale|String|auto|设置当前默认语言，具体参考 [locale](/api/ui/prompt/locale)||
+|locale|String|auto|设置当前默认语言，具体参考 [locale](/api/ui/locale)||
 |versionName|String||版本名称，例如：1.0.0。详见下方Tips说明||
 |versionCode|String||版本号，例如：36||
 |transformPx|Boolean|true|是否转换项目的px，为true时将px转换为rpx，为false时，px为传统的实际像素||
@@ -52,7 +52,6 @@ uni 统计配置项
 |screenOrientation|Array|重力感应、横竖屏配置，可取值："portrait-primary"：竖屏正方向；"portrait-secondary"：竖屏反方向；"landscape-primary"：横屏正方向；"landscape-secondary"：横屏反方向。||
 |modules|Object|权限模块，[详见](/collocation/manifest?id=modules)||
 |distribute|Object|App 发布信息，[详见](/collocation/manifest?id=distribute)||
-|usingComponents|Boolean|是否启用自定义组件模式，默认为false，[编译模式区别详情](https://ask.dcloud.net.cn/article/35843)|1.9.0+|
 |nvueCompiler|String|切换 nvue 编译模式，可选值，`weex` ：老编译模式，`uni-app`： 新编译模式，默认为 `weex` 。[编译模式区别详情](http://ask.dcloud.net.cn/article/36074)|2.0.3+|
 |nvueStyleCompiler|String|切换 nvue 样式编译模式，可选值，`weex` ：老编译模式，`uni-app`： 新编译模式，默认为 `weex` 。[编译模式区别详情](https://ask.dcloud.net.cn/article/38751)|3.1.1+|
 |renderer|String|可不加载基于 webview 的运行框架，减少包体积、提升启动速度。可选值 `native`| App-nvue 2.2.0+|
@@ -78,7 +77,7 @@ splash（启动封面）是App必然存在的、不可取消的。
 |属性|类型|默认值|描述|最低版本|
 |:-|:-|:-|:-|:-|
 |alwaysShowBeforeRender|Boolean|true|首页白屏时不关闭启动界面|1.6.0|
-|autoclose|Boolean|true|是否自动关闭程序启动界面。如果需要手动关闭启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
+|autoclose|Boolean|true|是否自动关闭程序启动界面。如果需要[手动关闭](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.closeSplashscreen)启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
 |waiting|Boolean|true|是否在程序启动界面显示等待圈或雪花||
 |delay|Number|0|启动界面在应用的首页面加载完毕后延迟关闭的时间，autoclose 为 true 时生效。|&nbsp;|
 
@@ -281,15 +280,29 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` �
 
 #### sdkconfig@h5sdkconfig
 
+三方SDK配置。三方SDK的使用需要向这些SDK提供商申请，并配置参数到此处。可在HBuilderX可视化界面（H5 配置）输入配置。
+
+|属性|类型|描述|
+|:-|:-|:-|
+|maps|Object|地图或位置相关SDK|
+
+#### maps@h5sdkconfigmaps
+
+地图服务商 SDK 配置，使用地图以及位置（IP 定位及坐标转换）需要配置此项。
 
 **示例**
 
 ```json
 "h5": {
 	"sdkConfigs": {
+		// 使用地图或位置相关功能必须填写其一
 		"maps": {
 			"qqmap": {
-				// 腾讯地图秘钥（key）https://lbs.qq.com/dev/console/key/manage
+				// 腾讯地图秘钥 https://lbs.qq.com/dev/console/key/manage
+				"key": ""
+			},
+			"google": {
+				// 谷歌地图秘钥（HBuilderX 3.2.10+）https://developers.google.com/maps/documentation/javascript/get-api-key
 				"key": ""
 			}
 		}

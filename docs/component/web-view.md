@@ -62,7 +62,7 @@
 注意：
 
 - 补充说明：app-vue下web-view组件不支持自定义样式，而v-show的本质是改变组件的样式。即组件支持v-if而不是支持v-show。
-- App 端使用 `自定义组件模式` 时，uni.web-view.js 的最低版为 [uni.webview.1.5.2.js](https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js)
+- App 端使用 uni.web-view.js 的最低版为 [uni.webview.1.5.2.js](https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js)
 - App 平台同时支持网络网页和本地网页，但本地网页及相关资源（js、css等文件）必须放在 `uni-app 项目根目录->hybrid->html` 文件夹下或者 `static` 目录下，如下为一个加载本地网页的`uni-app`项目文件目录示例：
 - nvue `web-view` 必须指定样式宽高
 - V3 编译模式，网页向应用 `postMessage` 为实时消息
@@ -374,7 +374,7 @@ nvue webview通信示例
 <template>
 	<view>
 		<web-view ref="webview" class="webview" @onPostMessage="handlePostMessage"></web-view>
-		<button class="button" @click="evalJs">evalJs(改变webview背景颜色)</text>
+		<button class="button" @click="evalJs">evalJs(改变webview背景颜色)</button>
 	</view>
 </template>
 

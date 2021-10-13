@@ -5,7 +5,7 @@
 **Tips:** 
 
 * 使用 `uni.createSelectorQuery()` 需要在生命周期 `mounted` 后进行调用。
-* 自定义组件编译模式（默认模式），需要使用到 `selectorQuery.in` 方法。
+* 默认需要使用到 `selectorQuery.in` 方法。
 
 ## SelectorQuery
 

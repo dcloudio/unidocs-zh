@@ -906,6 +906,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 |text|String|是|tab 上按钮文字，在 App 和 H5 平台为非必填。例如中间可放一个没有文字的+号图标|
 |iconPath|String|否|图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 position 为 top 时，此参数无效，不支持网络图片，不支持字体图标|
 |selectedIconPath|String|否|选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效|
+|visible|Boolean|否|该项是否显示，默认显示。App 3.2.10+、H5 3.2.10+|
 
 **midButton 属性说明**
 
@@ -929,7 +930,15 @@ midButton没有pagePath，需监听点击事件，自行处理点击后的行为
 - 中间带+号的tabbar模板例子，[参考](https://ext.dcloud.net.cn/plugin?id=98)。可跨端，但+号不凸起。如需中间凸起，配置tabbar的midButton。
 - 如果是需要先登录、后进入tab页面，不需要把登录页设为首页，首页仍然是tabbar页，可参考HBuilderX新建uni-app项目时的登录模板
 - 前端弹出遮罩层挡不住tabbar的问题，跨端处理方式时动态隐藏tabbar。App端可以使用plus.nativeObj.view或subNVue做弹出和遮罩，可参考这个[底部原生图标分享菜单例子](https://ext.dcloud.net.cn/plugin?id=69)
-- PC宽屏上，当页面存在topWindow或leftWindow或rightWindow等多窗体结构时，tabBar自动隐藏（HBuilderX 2.9.9），请使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 配置 tabBar 的位置。
+- PC宽屏上，当页面存在topWindow或leftWindow或rightWindow等多窗体结构时，若想改变 tabbar 显示的位置，请使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 配置，若想隐藏 tabbar，可以使用如下 css（好处是可以和 leftwindow 等窗体联动）：
+    
+    ```html
+      .uni-app--showleftwindow + .uni-tabbar-bottom {
+      	display: none;
+      }
+    ```
+
+
 
 **代码示例**
 ```json

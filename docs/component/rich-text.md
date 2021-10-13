@@ -1,27 +1,21 @@
 #### rich-text
+
 富文本。
+
+支持默认事件，包括：click、touchstart、touchmove、touchcancel、touchend、longpress。
 
 **属性说明**
 
 |属性名|类型|默认值|说明|平台兼容|
 |:-|:-|:-|:-|:-|
 |nodes|Array / String|[]|节点列表 / HTML String||
-
-
-**注意**
-
-- app-nvue 平台 nodes 属性只支持使用 Array 类型
-
-
-如果需要支持 HTML String，则需要自己将 HTML String转化为 nodes 数组，可使用 [html-parser](https://github.com/dcloudio/hello-uniapp/blob/master/common/html-parser.js) 转换。
-
-支持默认事件，包括：click、touchstart、touchmove、touchcancel、touchend、longpress。
-
-**nodes 属性推荐使用 Array 类型，由于组件会将 String 类型转换为 Array 类型，因而性能会有所下降。**
+|space|string||显示连续空格||
 
 ##### nodes
 
-现支持两种节点，通过 type 来区分，分别是元素节点和文本节点，默认是元素节点，在富文本区域里显示的 HTML 节点。
+nodes 值为 HTML String 时，在组件内部将自动解析为节点列表，推荐直接使用 Array 类型避免内部转换导致的性能下降。App-nvue 不支持 HTML String 方式，仅支持直接使用节点列表即 Array 类型，如要使用 HTML String，则需自己将 HTML String 转化为 nodes 数组，可使用 [html-parser](https://github.com/dcloudio/hello-uniapp/blob/master/common/html-parser.js) 转换。
+
+节点列表内的节点现支持两种类型，通过 type 来区分，分别是元素节点和文本节点，默认是元素节点，在富文本区域里显示的 HTML 节点。
 
 **元素节点：type = node**
 
@@ -39,7 +33,7 @@
  
 ##### 受信任的HTML节点及属性
 
-全局支持class和style属性，**不支持id属性**。
+全局支持 class 和 style 属性，**不支持 id 属性**。
 
 |节点|属性|
 |:-|:-|
@@ -144,5 +138,5 @@ export default {
 - attrs 属性不支持 id ，支持 class 。
 - name 属性大小写不敏感。
 - 如果使用了不受信任的HTML节点，该节点及其所有子节点将会被移除。
-- img 标签仅支持网络图片。
+- 非 App 平台 img 标签仅支持网络图片。
 - 如果在自定义组件中使用 rich-text 组件，那么仅自定义组件的 css 样式对 rich-text 中的 class 生效。

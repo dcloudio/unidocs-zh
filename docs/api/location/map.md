@@ -35,7 +35,7 @@ mapContext
 |removeMarkers|OBJECT|移除 marker。||App-nvue 3.1.0+|
 |updateGroundOverlay|OBJECT|更新自定义图片图层。||App-nvue 3.1.0+|
 |on|EventHandle|监听地图事件。||App-nvue 3.1.0+|
-|$getAppMap||获取原生地图对象 [plus.maps.Map](https://www.html5plus.org/doc/zh_cn/maps.html#plus.maps.Map)|app-vue自定义组件模式|1.9.3|
+|$getAppMap||获取原生地图对象 [plus.maps.Map](https://www.html5plus.org/doc/zh_cn/maps.html#plus.maps.Map)|app-vue|1.9.3|
 
 `$getAppMap()` 注意事项：
 
@@ -261,4 +261,5 @@ address|String|地址
 - H5 端获取定位信息，需要部署在 **https** 服务上，本地预览（localhost）仍然可以使用 http 协议。
 - 无 GPS 模块的 PC 设备使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败。
 - App 端使用地图组件需要向高德或百度等三方服务商申请SDK资质，获取AppKey，打包时需要在manifest的SDK配置中填写Appkey。在manifest可视化界面有详细申请指南，详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)
+- H5 端使用地图和定位相关，需要在 (manifest.json)[/collocation/manifest?id=h5sdkconfig] 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。
 - ``<map>`` 组件默认为国测局坐标，调用 ``uni.getLocation`` 返回结果传递给 ``<map>`` 组件时，需指定 type 为 gcj02。

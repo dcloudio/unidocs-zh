@@ -110,6 +110,8 @@ setTimeout(function () {
 |cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5|
 |confirmText|String|否|确定按钮的文字，默认为"确定"，最多 4 个字符||
 |confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"|H5|
+|editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)|
+|placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|

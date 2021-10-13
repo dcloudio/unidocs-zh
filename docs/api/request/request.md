@@ -7,7 +7,7 @@
 |参数名|类型|必填|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
 |url|String|是||开发者服务器接口地址||
-|data|Object/String/ArrayBuffer|否||请求的参数|App（自定义组件编译模式）不支持ArrayBuffer类型|
+|data|Object/String/ArrayBuffer|否||请求的参数|App不支持ArrayBuffer类型|
 |header|Object|否||设置请求的 header，header 中不能设置 Referer。|App、H5端会自动带上cookie，且H5端不可手动修改|
 |method|String|否|GET|有效值详见下方说明||
 |timeout|Number|否|60000|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)|
@@ -127,3 +127,54 @@ requestTask.abort();
 - 部分安卓设备，真机运行或debug模式下的网速，低于release模式很多。
 - 使用一些比较小众的证书机构（如：CFCA OV OCA）签发的 ssl 证书在安卓设备请求会失败，因为这些机构的根证书不在系统内置根证书库，可以更换其他常见机构签发的证书（如：Let's Encrypt），或者配置 sslVerify 为 false 关闭 ssl 证书验证（不推荐）。
 - 单次网络请求数据量建议控制在50K以下（仅指json数据，不含图片），过多数据应分页获取，以提升应用体验。
+
+### uni.configMTLS(OBJECT)
+
+https 请求配置自签名证书
+
+|App|H5|
+|:-:|:-:|
+|√`(3.2.7+)`|x|
+
+**OBJECT 参数说明**
+
+|参数|类型|必填|说明|
+|:--|:--|:--|:--|
+|certificates|Array&lt;`certificate`&gt;|是| `certificates` 为数组，支持为多个域名配置自签名证书|
+|success|Function(`callbackObject`)|否|接口调用成功的回调函数|
+|fail|Function(`callbackObject`)|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+**certificate 参数说明**
+证书配置项
+
+|参数|类型|必填|说明|
+|:--|:--|:--|:--|
+| host | String |是| 对应请求的域名（注意：不要协议部分） |
+| client | String |否| 客户端证书（服务器端需要验证客户端证书时需要配置此项，格式要求请参考下面的证书格式说明，注意 `iOS` 平台客户端证书只支持 `.p12` 类型的证书）|
+| clientPassword | String |否| 客户端证书对应的密码（客户端证书存在时必须配置此项）|
+| server |Array&lt;String&gt;|否| 服务器端证书（客户端需要对服务器端证书做校验时需要配置此项，格式要求请参考下面的证书格式说明，注意 `iOS` 平台服务器端证书只支持 `.cer` 类型的证书）|
+
+**证书格式说明**
+  1. 文件路径形式：可将证书文件放到工程的 ‘static’ 目录中，然后填写文件路径，示例：`'/static/client.p12'`
+  2. `Base64String`：将证书文件的二进制转换为 `Base64String` 字符串，然后在字符串前面添加`'data:cert/pem;base64,'`前缀，示例：`'data:cert/pem;base64,xxx'` xxx 代表真实的证书 base64String 
+
+**callbackObject 参数说明**
+
+|属性|类型 |说明|
+|:--|:--|:--|
+|code|Number| 成功返回 0,失败返回相应 code 码|
+
+**示例**
+```js
+uni.configMTLS({
+    certificates: [{
+        'host': 'www.test.com',
+        'client': '/static/client.p12',
+        'clientPassword': '123456789',
+        'server': ['/static/server.cer'],
+    }],
+    success ({code}) {}
+});
+```
+

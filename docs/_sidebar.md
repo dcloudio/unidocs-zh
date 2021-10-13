@@ -88,7 +88,7 @@
 	  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/759713d0-4f2d-11eb-a16f-5b3e54966275.png" width="20" height="20"/>
 	  <div class="contact-smg">
 	     <div>官方QQ交流群</div>
-	  <div>群16：371046920 &nbsp;<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=2UD15NHzzA283Px2in1mey46VPWuCIw-&jump_from=webapi">点此加入</a></div>
+	  <div>群16：719211033 &nbsp;<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=2UD15NHzzA283Px2in1mey46VPWuCIw-&jump_from=webapi">点此加入</a></div>
 		<div>群35：713420817（2000人已满）</div>
 		<div>群34：530305531（2000人已满）</div>
 		<div>群33：498071674（2000人已满）</div>

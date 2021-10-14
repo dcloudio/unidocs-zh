@@ -24,7 +24,9 @@
 
 ### addRule
 
- Weex 提供 DOM.addRule 以**加载自定义字体**。开发者可以通过指定 font-family加载 iconfont 和 custom font。开发者可以使用下面的代码加载自定义字体：
+Weex provide the ability of loading custom through DOM.addRule. Developers can load iconfont and custom font by specifying the font-family.
+
+Developers may use the following code snippet to load their font:
 ``` html
 	<template>
 		<view>
@@ -57,31 +59,31 @@
 
 
 **addRule(type, contentObject)**
-- @fontFace 协议名称，不可修改。
-- @fontFamily ```font-family```的名称。
-- @src 字体地址，url('') 是保留字段，其参数如下:
-	- http. 从HTTP请求加载, e.g. ```url('http://at.alicdn.com/t/font_1469606063_76593.ttf')```
-	- https. 从HTTPS请求加载, e.g. ```url('https://at.alicdn.com/t/font_1469606063_76593.ttf')```
-	- local, Android ONLY. 从assets目录读取, e.g. url('local://foo.ttf'), foo.ttf 是文件名在你的assets目录中.
-	- file. 从本地文件读取, e.g. ```url('file://storage/emulated/0/Android/data/com.alibaba.weex/cache/http:__at.alicdn.com_t_font_1469606063_76593.ttf')```
-	- data. 从base64读取, e.g. ```url('data:font/truetype;charset=utf-8;base64,AAEAAAALAIAAAwAwR1NVQrD+....')```, 上述data字段不全。
+- @fontFace You should not change this as this is the name of the font rule
+- @fontFamily You should provide the name of your font-family there, the valid name should be a string.
+- @src The src of your custom font, and url('') is reserved for protocol reason, the supported parameters are listed below:
+	- `http`. Read from http, e.g. `url('http://at.alicdn.com/t/font_1469606063_76593.ttf')`
+  - `https`. Read from https, e.g. `url('https://at.alicdn.com/t/font_1469606063_76593.ttf')`
+  - `local`, *Android ONLY*. Read from assets directory e.g. `url('local://foo.ttf')`, the **foo.ttf** is in your android assets directory.
+  - `file`. Read from a local file, e.g. `url('file://storage/emulated/0/Android/data/com.alibaba.weex/cache/http:__at.alicdncom_t_font_1469606063_76593.ttf')`
+  - `data`. Read from a base64 data source, e.g. `url('data:font/truetype;charset=utf-8;base64,AAEAAAALAIAAAwAwR1NVQrD+....')`, the above data field is only a part of the actual data.
 	
 **注意**
-> addRule 方法里的 fontFamily 可以随意取。这个名字不是字体真正的名字。字体真正的名字（font-family），也就是注册到系统中的名字是保存在字体二进制文件中的。你需要确保你使用的字体的真正名字（font-family）足够特殊，否则在向系统注册时可能发生冲突，导致注册失败，你的字符被显示为‘?’。
-> 如果你使用 http://www.iconfont.cn/ 来构建你的 iconfont。确保在项目设置中，设置一个特殊的 font-family 名字。默认是 “iconfont”，但极大可能发生冲突。
-> 调用addRule 在 beforeCreate 中是被推荐的。
+> You can name `fontFamily` in `addRule` as you wish in your page, any string is OK. But this is not the real font-family name of the font file. The real name or system name for the font is stored in binrary data of ttf file. You must ensure that the real font-family name of font file is unique. Or your font may not be successfully registered to device and your text may display as a '?'.
+> Specially, if you are using http://www.iconfont.cn/ to build your iconfont. Make sure that you set a unique enough font-family name for your font in project settings.
+> Calling `addRule` in `beforeCreate` is recommended.
 
 
 
 ### scrollToElement<div id="scrollToElement"></div>
 
-让页面滚动到 ref 对应的组件，这个 API 只能用于可滚动组件的子节点，例如 ```<scroller>```，```<list>```, ```<waterfall>``` 等可滚动组件中。
+Scroll the scrollable component to the referenced component. This API should only be used in the children components of a scrollable component, such as in a `<scroller>` or `<list>` component.
 
 **scrollToElement(ref, options)**
-- @ref，要滚动到的那个节点。
-- @options
-	- offset，一个到其可见位置的偏移距离，默认是 0。
-	- animated，是否需要附带滚动动画，默认是 true。
+- @ref, the referenced component who is meant to scroll into the view.
+- @options,
+	- `offset`, an space on top of the ref component, which is also scrolling down to the visual viewport. Default is `0`.
+	- `animated`, a boolean indicates whether a scroll animation should be played. If set to false, the ref component will jump into the view without any transition animation. Default is true.
 
 ``` html
   <template>
@@ -175,13 +177,13 @@
 
 ### getComponentRect
 
-获取某个元素 View 的外框。
+You can get the bounding rect of the referenced component using this API.
 
 **getComponentRect(ref, callback)**
-- @ref，要获取外框的那个节点。
-- @callback，异步方法，通过回调返回信息。
+- @ref, the referenced component.
+- @callback, the callback function after executing this action.
 
-回调方法中的数据样例：
+An example callback result should be like:
 ```html
   {
     result: true,
@@ -200,15 +202,16 @@
 
 > 此方法需要在节点渲染后调用才能获取正确的信息，可在 mounted 或 更新数据后 updated 中调用
 > 
-> 如果想要获取到 Weex 视口容器的布局信息，可以指定 ref 为字符串 'viewport'，即 getComponentRect('viewport', callback).
+> If you want to get the bounding rect of outside viewport of the weex container, you can specify the `ref` as a literal string `'viewport'`, like `getComponentRect('viewport', callback)`.
 
 
 
 ## animation
 
-```animation```模块可以用来在组件上执行动画。JS-Animation可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。
+The `animation` module is used to perform animation on components.
+JS-Animation can perform a series of simple transformations  (position, size, rotation, background color, and opacity) on the component with Javascript.
 
-举个例子，如果有一个```image```组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。
+For example, if you have a `image` component, you can move, rotate, grow, or shrink it by animation.
 
 ```html
   <template>
@@ -263,24 +266,24 @@
 ### transition
 
 
-- @ref，将要执行动画的元素。例如指定动画的元素 ref 属性为 test，可以通过调用 this.$refs.test 来获取元素的引用。
-- @options，动画参数。
+- @ref, the element that will be animated. For example, if the value of `ref` for an element is `test`, you can start an animation with `this.$refs.test`.
+- @options, animation properties such as keys, duration.
 
 
 下表列出了options所有合法的参数：
 
-|可选值		|描述		|
+|Property		|Describe		|
 |--			|--			|
-|styles	|设置不同样式过渡效果的键值对|
-|duration		|指定动画的持续时间 (单位是毫秒)，默认值是 0，表示瞬间达到动画结束状态。																																				|
-|delay			|指定请求动画操作到执行动画之间的时间间隔 (单位是毫秒)，默认值是 0，表示没有延迟，在请求后立即执行动画。																												|
-|needLayout		|动画执行是否影响布局，默认值是false。																																													|
-|timingFunction	|描述动画执行的速度曲线，用于描述动画已消耗时间和动画完成进度间的映射关系。默认值是 ```linear```，表示动画从开始到结束都拥有同样的速度。详见下						|
+|styles	|specifies the names and values of styles to which a transition effect should be applied.|
+|duration		|specifies the duration of animation execution, the default value is `0`, meaning that the component get the desired property immediately.																																				|
+|delay			|specifies the waiting time before the animation starts. The default value is `0`. 																												|
+|needLayout		|Specifies whether the change to layout(width/height/etc..) is persistence and takes affect after the animation. Default value is `false`|
+|timingFunction	|describes how the intermediate values are calculated for the CSS properties being affected by the animation effect. default value is `linear`						|
 
 
-下表列出了styles所有合法的参数：
+The supported styles are listed below:
 
-|可选值		|描述		|
+|Property		|Describe		|
 |--			|--			|
 |width	|表示动画执行后应用到组件上的宽度值。如果你需要影响布局，设置needLayout为true。默认值为computed width。|
 |height		|表示动画执行后应用到组件上的高度值。如果你需要影响布局，设置设置为 needLayout为true。默认值为computed width。		|
@@ -292,7 +295,7 @@
 
 **transform** 
 
-|可选值							|描述																					|
+|Property							|Describe																					|
 |--								|--																						|
 |translate/translateX/translateY|指定元素要移动到的位置。单位是长度或百分比，默认值是0.									|
 |rotate/rotateX/rotateY			|v0.16+ 指定元素将被旋转的角度。单位是度 角度度，默认值是0								|
@@ -304,7 +307,7 @@
 
 **timingFunction**
 
-|可选值		|描述		|
+|Property		|Describe		|
 |--			|--			|
 |linear	|动画从头到尾的速度是相同的	|
 |ease-in		|动画速度由慢到快				|
@@ -312,12 +315,12 @@
 |ease-in-out		|动画先加速到达中间点后减速到达终点			|
 |cubic-bezier(x1, y1, x2, y2)		|在三次贝塞尔函数中定义变化过程，函数的参数值必须处于 0 到 1 之间。更多关于三次贝塞尔的信息请参阅 cubic-bezier 和 Bézier curve。|
 
-- @callback，callback是动画执行完毕之后的回调函数。在iOS平台上，你可以获取动画执行是否成功的信息。
+- @callback, callback is a function called after the completion of animation. In iOS platform, you can use function to get information of animation execution.
 
 
-**注意**
-- iOS上可以获取 ```animation``` 是否执行成功的信息，callback中的result参数会有两种，分别是是Success与Fail。
-- Android 的callback 函数不支持result参数。
+**Notes**
+- On iOS platform you can get animation's message about completion, there are two types of parameters with `result`, is `Success`and `Fail`, Android can not support until now.
+- Android doesn't support the result parameter.
 
 
 > 如果需要使用CSS动画，参考[transition](/nvue-css?id=transition)和[transform](/nvue-css?id=transform)。
@@ -633,21 +636,21 @@ nvue 支持大部分 uni-app API ，下面只列举目前还**不支持的 API**
 
 ##### 动画
 
-|API		|说明		|解决方案|
+|API		|Describe		|解决方案|
 |--			|--			|--			|
 |uni.createAnimation()	|创建一个动画实例	|[animation](/nvue-api?id=animation)|
 
 
 ##### 滚动
 
-|API		|说明		|解决方案|
+|API		|Describe		|解决方案|
 |--			|--			|--			|
 |uni.pageScrollTo()	|将页面滚动到目标位置	|[scrollToElement](#scrollToElement)|
 
 
 ##### 节点布局交互
 
-|API		|说明		|
+|API		|Describe		|
 |--			|--			|
 |uni.createIntersectionObserver()	|创建并返回一个 IntersectionObserver 对象实例	|
 

@@ -8,6 +8,7 @@
 |type|String|否|默认为 wgs84 返回 gps 坐标，gcj02 返回国测局坐标，可用于 ``uni.openLocation`` 的坐标，app平台高德SDK仅支持返回gcj02||
 |altitude|Boolean|否|传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度|App和字节跳动小程序不支持|
 |geocode|Boolean|否|默认false，是否解析地址信息|仅App平台支持|
+|highAccuracyExpireTime|number|否|高精度定位超时时间(ms)，指定时间内返回最高精度，该值3000ms以上高精度定位才有效果|App (3.2.11+)、H5 (3.2.11+)|
 |success|Function|是|接口调用成功的回调函数，返回内容详见返回参数说明。||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|

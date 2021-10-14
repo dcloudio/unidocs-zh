@@ -557,6 +557,12 @@ uni.addInterceptor({
 |[uni.getProvider](api/plugins/provider?id=getprovider)|获取服务供应商|
 |[uni.login](api/plugins/login?id=login)|登录|
 |[uni.getUserInfo](api/plugins/login?id=getuserinfo)|获取用户信息|
+|[uni.getuserprofile](api/plugins/login?id=getuserprofile)|获取用户信息。每次请求都会弹出授权窗口，用户同意后返回 userInfo|
+|[uni.checkSession](api/plugins/login?id=checkSession)|检查登录状态是否过期|
+|[uni.preLogin](api/plugins/login?id=prelogin)|预登录|
+|[uni.closeAuthView](api/plugins/login?id=closeauthview)|关闭一键登录页面|
+|[uni.getCheckBoxState](api/plugins/login?id=getcheckboxstate)|获取一键登录条款勾选框状态|
+|[uni.getOAuthManager](api/plugins/login?id=getOAuthManager)|获取全局唯一的 OAuth 管理器 oAuthManager|
 |[uni.share](api/plugins/share?id=share)|分享|
 |[uni.shareWithSystem](api/plugins/share?id=sharewithsystem)|使用系统分享|
 |[uni.requestPayment](api/plugins/payment?id=requestpayment)|支付|

@@ -300,3 +300,28 @@ uni.login({
 |:-|:-|:-|
 |state|Boolean|一键登录条款勾选框状态|
 |errMsg|String|描述信息|
+
+### uni.getOAuthManager(OBJECT)
+获取全局唯一的 OAuth 管理器 oAuthManager
+
+**平台差异说明**
+
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√ (3.2.11+)|x|x|x|x|x|x|x|
+
+**OBJECT 参数说明**
+
+|参数名|类型|必填|说明|平台差异说明|
+|:-|:-|:-|:-|:-|
+|provider|String|否|登录服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取，目前仅支持一键登录||
+
+**返回参数说明**
+
+|参数名|类型|说明|
+|:-|:-|:-|
+|preLogin|Function|一键登录预登录|
+|closeAuthView|Function|关闭一键登陆页面|
+|getCheckBoxState|Function|获取一键登录条款勾选框状态|
+|onUniverifyButtonsClick|Function|订阅一键登录自定义按钮点击事件|
+|offUniverifyButtonsClick|Function|取消订阅一键登录自定义按钮点击事件|

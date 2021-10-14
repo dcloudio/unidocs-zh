@@ -181,9 +181,9 @@ uni.login({
 
 **平台差异说明**
 
-|App|H5|微信小程序（基础库2.10.4）|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|x|x|x|
+|x|x|√（基础库2.10.4）|x|x|x|x|
 
 **注意：** 该API仅支持微信小程序端，微信小程序调整了相关接口（详见[《小程序登录、用户信息相关接口调整说明》](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)）。每次触发 uni.getUserProfile 均会弹出授权窗口，用户授权后可成功获取用户信息。该API暂不支持在事件中使用异步操作，否则会触发错误：{errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}
 
@@ -221,15 +221,15 @@ uni.login({
 
 **userInfo 参数说明**
 
-|参数|类型|说明|平台差异说明（仅支持微信小程序）|
-|:-|:-|:-||
-|nickName|String|用户昵称||
-|avatarUrl|String|用户头像|&nbsp;|
-|gender|Number|用户性别||
-|country|String|用户所在国家||
-|province|String|用户所在省份||
-|city|String|用户所在城市||
-|language|String|显示 country，province，city 所用的语言||
+|参数|类型|说明|
+|:-|:-|:-|
+|nickName|String|用户昵称|
+|avatarUrl|String|用户头像|
+|gender|Number|用户性别|
+|country|String|用户所在国家|
+|province|String|用户所在省份|
+|city|String|用户所在城市|
+|language|String|显示 country，province，city 所用的语言|
 
 **gender 的合法值**
 
@@ -312,9 +312,9 @@ uni.login({
 
 **OBJECT 参数说明**
 
-|参数名|类型|必填|说明|平台差异说明|
-|:-|:-|:-|:-|:-|
-|provider|String|否|登录服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取，目前仅支持一键登录||
+|参数名|类型|必填|说明|
+|:-|:-|:-|:-|
+|provider|String|否|登录服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取，目前仅支持一键登录|
 
 **返回参数说明**
 

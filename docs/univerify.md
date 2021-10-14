@@ -270,6 +270,32 @@ uni.closeAuthView()
 }
 ```
 
+> **3.2.11+ 版本：** 可以使用全局 [oAuthManager](https://uniapp.dcloud.io/api/plugins/login?id=getoauthmanager) 来获取按钮点击状态。
+> 
+> 此时点击按钮将不会触发`uni.login`的`fail`回调，也不会自动关闭一键登录弹框
+
+```js
+const oAuthManager = uni.getOAuthManager()
+const callback = (res) => {
+  oAuthManager.getCheckBoxState({
+    success(res) {
+      console.log("getCheckBoxState res: ", res);
+    },
+    fail(err) {
+      console.log("getCheckBoxState err: ", err);
+    },
+    complete() {
+      console.log('getCheckBoxState complete');
+    }
+  })
+}
+
+// 订阅
+oAuthManager.onUniverifyButtonsClick(callback)
+// 取消订阅
+oAuthManager.offUniverifyButtonsClick(callback)
+```
+
 ### 获取用户是否选中了勾选框（HBuilderX 3.2.5+ 版本支持）
 
 `uni.getCheckBoxState(options)`

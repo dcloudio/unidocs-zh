@@ -288,8 +288,10 @@ uni.getCheckBoxState({
 
 ```
 
-### **3.2.11+ 版本**可以使用全局 [univerifyManager](https://uniapp.dcloud.io/api/plugins/login?id=getUniverifyManager) 来更高效的使用一键登录
+### univerifyManager
 
+> **3.2.11+ 版本**可以使用全局 [univerifyManager](https://uniapp.dcloud.io/api/plugins/login?id=getUniverifyManager) 来更高效的使用一键登录
+>
 > 此时点击自定义按钮将不会触发`uni.login`的`fail`回调，也不会自动关闭一键登录弹框
 
 ```js

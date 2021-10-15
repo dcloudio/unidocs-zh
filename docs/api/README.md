@@ -562,7 +562,7 @@ uni.addInterceptor({
 |[uni.preLogin](api/plugins/login?id=prelogin)|预登录|
 |[uni.closeAuthView](api/plugins/login?id=closeauthview)|关闭一键登录页面|
 |[uni.getCheckBoxState](api/plugins/login?id=getcheckboxstate)|获取一键登录条款勾选框状态|
-|[uni.getOAuthManager](api/plugins/login?id=getOAuthManager)|获取全局唯一的 OAuth 管理器 oAuthManager|
+|[uni.getUniverifyManager](api/plugins/login?id=getUniverifyManager)|获取全局唯一的一键登录管理器 univerifyManager|
 |[uni.share](api/plugins/share?id=share)|分享|
 |[uni.shareWithSystem](api/plugins/share?id=sharewithsystem)|使用系统分享|
 |[uni.requestPayment](api/plugins/payment?id=requestpayment)|支付|

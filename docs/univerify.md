@@ -270,32 +270,6 @@ uni.closeAuthView()
 }
 ```
 
-> **3.2.11+ 版本：** 可以使用全局 [oAuthManager](https://uniapp.dcloud.io/api/plugins/login?id=getoauthmanager) 来获取按钮点击状态。
-> 
-> 此时点击按钮将不会触发`uni.login`的`fail`回调，也不会自动关闭一键登录弹框
-
-```js
-const oAuthManager = uni.getOAuthManager()
-const callback = (res) => {
-  oAuthManager.getCheckBoxState({
-    success(res) {
-      console.log("getCheckBoxState res: ", res);
-    },
-    fail(err) {
-      console.log("getCheckBoxState err: ", err);
-    },
-    complete() {
-      console.log('getCheckBoxState complete');
-    }
-  })
-}
-
-// 订阅
-oAuthManager.onUniverifyButtonsClick(callback)
-// 取消订阅
-oAuthManager.offUniverifyButtonsClick(callback)
-```
-
 ### 获取用户是否选中了勾选框（HBuilderX 3.2.5+ 版本支持）
 
 `uni.getCheckBoxState(options)`
@@ -312,6 +286,57 @@ uni.getCheckBoxState({
 	}
 })
 
+```
+
+### **3.2.11+ 版本**可以使用全局 [univerifyManager](https://uniapp.dcloud.io/api/plugins/login?id=getUniverifyManager) 来更高效的使用一键登录
+
+> 此时点击自定义按钮将不会触发`uni.login`的`fail`回调，也不会自动关闭一键登录弹框
+
+```js
+const univerifyManager = uni.getUniverifyManager()
+
+// 预登录
+univerifyManager.preLogin()
+
+// 调用一键登录弹框
+univerifyManager.login({
+  univerifyStyle: {
+    "fullScreen": true,
+    "buttons": {
+        "iconWidth": "45px",
+        "list": [
+            {
+                "provider": "apple",
+                "iconPath": "/static/apple.png"
+            }, 
+            {
+                "provider": "weixin",****
+                "iconPath": "/static/wechat.png"
+            }
+        ]
+    }
+  },
+  success (res) {
+    console.log('login success', res)
+  }
+})
+
+const callback = (res) => {
+  // 获取一键登录弹框协议勾选状态
+  univerifyManager.getCheckBoxState({
+    success(res) {
+      console.log("getCheckBoxState res: ", res);
+      if (res.state) {
+        // 关闭一键登录弹框
+        univerifyManager.close()
+      }
+    }
+  })
+}
+// 订阅自定义按钮点击事件
+univerifyManager.onButtonsClick(callback)
+// 取消订阅自定义按钮点击事件
+univerifyManager.offButtonsClick(callback)
 ```
 
 ### 用access_token换手机号

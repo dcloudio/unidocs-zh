@@ -301,8 +301,8 @@ uni.login({
 |state|Boolean|一键登录条款勾选框状态|
 |errMsg|String|描述信息|
 
-### uni.getOAuthManager(OBJECT)
-获取全局唯一的 OAuth 管理器 oAuthManager
+### uni.getUniverifyManager(OBJECT)
+获取全局唯一的一键登录管理器 univerifyManager
 
 **平台差异说明**
 
@@ -310,16 +310,11 @@ uni.login({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√ (3.2.11+)|x|x|x|x|x|x|x|
 
-**OBJECT 参数说明**
-
-|参数名|类型|必填|说明|
-|:-|:-|:-|:-|
-|provider|String|否|登录服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取，目前仅支持一键登录|
-
 **返回参数说明**
 
 |参数名|类型|说明|
 |:-|:-|:-|
+|login|Function|一键登录|
 |preLogin|Function|一键登录预登录|
 |closeAuthView|Function|关闭一键登陆页面|
 |getCheckBoxState|Function|获取一键登录条款勾选框状态|

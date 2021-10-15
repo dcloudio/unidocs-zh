@@ -316,7 +316,7 @@ uni.login({
 |:-|:-|:-|
 |login|Function|一键登录|
 |preLogin|Function|一键登录预登录|
-|closeAuthView|Function|关闭一键登陆页面|
+|close|Function|关闭一键登陆页面|
 |getCheckBoxState|Function|获取一键登录条款勾选框状态|
-|onUniverifyButtonsClick|Function|订阅一键登录自定义按钮点击事件|
-|offUniverifyButtonsClick|Function|取消订阅一键登录自定义按钮点击事件|
+|onButtonsClick|Function|订阅一键登录自定义按钮点击事件|
+|offButtonsClick|Function|取消订阅一键登录自定义按钮点击事件|

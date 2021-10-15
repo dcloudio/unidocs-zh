@@ -39,7 +39,7 @@ mapContext
 |setCenterOffset|OBJECT|设置地图中心点偏移，向后向下为增长，屏幕比例范围(0.25~0.75)，默认偏移为[0.5, 0.5]||微信小程序|
 |toScreenLocation|OBJECT|获取经纬度对应的屏幕坐标，坐标原点为地图左上角。||微信小程序|
 |updateGroundOverlay|OBJECT|更新自定义图片图层。||App-nvue 3.1.0+，微信小程序|
-|on|EventHandle|监听地图事件。||App-nvue 3.1.0+，微信小程序|
+|on|Method|监听地图事件。||App-nvue 3.1.0+，微信小程序|
 |$getAppMap||获取原生地图对象 [plus.maps.Map](https://www.html5plus.org/doc/zh_cn/maps.html#plus.maps.Map)|app-vue|1.9.3|
 
 `$getAppMap()` 注意事项：
@@ -207,6 +207,111 @@ mapContext
 ```
   MapContext.on('markerClusterCreate', (res) => {})
   MapContext.on('markerClusterClick', (res) => {})
+```
+
+
+地图聚合 API 示例(nvue)
+
+缩小地图可看到多个 marker 合并为 1 个并显示聚合数量，放大地图后恢复
+
+```
+<template>
+  <view class="content">
+    <map id="map" class="map" :show-location="true" :latitude="latitude" :longitude="longitude"></map>
+  </view>
+</template>
+
+<script>
+  const img = '/static/logo.png';
+
+  export default {
+    data() {
+      return {
+        latitude: 23.099994,
+        longitude: 113.324520,
+      }
+    },
+    onReady() {
+      this._mapContext = uni.createMapContext("map", this);
+
+      // 仅调用初始化，才会触发 on.("markerClusterCreate", (e) => {})
+      this._mapContext.initMarkerCluster({
+        enableDefaultStyle: false,
+        zoomOnClick: true,
+        gridSize: 60,
+        complete(res) {
+          console.log('initMarkerCluster', res)
+        }
+      });
+
+      this._mapContext.on("markerClusterCreate", (e) => {
+        console.log("markerClusterCreate", e);
+      });
+
+      this.addMarkers();
+    },
+    methods: {
+
+      addMarkers() {
+        const marker = {
+          id: 1,
+          iconPath: img,
+          width: 50,
+          height: 50,
+          joinCluster: true, // 指定了该参数才会参与聚合
+          label: {
+            width: 50,
+            height: 30,
+            borderWidth: 1,
+            borderRadius: 10,
+            bgColor: '#ffffff'
+          }
+        };
+
+        const positions = [{
+          latitude: 23.099994,
+          longitude: 113.324520,
+        }, {
+          latitude: 23.099994,
+          longitude: 113.322520,
+        }, {
+          latitude: 23.099994,
+          longitude: 113.326520,
+        }, {
+          latitude: 23.096994,
+          longitude: 113.329520,
+        }]
+
+        const markers = []
+
+        positions.forEach((p, i) => {
+          const newMarker = Object.assign(marker, p)
+          newMarker.id = i + 1
+          newMarker.label.content = `label ${i + 1}`
+          markers.push(newMarker)
+
+          this._mapContext.addMarkers({
+            markers,
+            clear: false,
+            complete(res) {
+              console.log('addMarkers', res)
+            }
+          })
+        })
+      }
+    }
+  }
+</script>
+
+<style>
+  .content {
+    flex: 1;
+  }
+
+  .map {
+    flex: 1;
+  }
+</style>
 ```
 
 

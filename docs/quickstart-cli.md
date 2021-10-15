@@ -41,7 +41,7 @@ vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
 * 在设备或路由器的网络设置中增加 DNS（如：8.8.8.8）
 * 在设备中增加固定的 hosts（如：140.82.113.4 github.com）
 
-#### 修改依赖为指定版本
+#### 修改依赖为指定版本@cliversion
 
 1. 查看 HBuilderX 对应的 NPM 依赖版本: 打开 [NPM版本记录](https://www.npmjs.com/package/@dcloudio/vue-cli-plugin-hbuilderx)，版本号 2.0.0- 后面是与 HBuilderX 对应的版本号且小版本不会超过9，比如 HBuilderX 2.7.5.20200518 对应的版本号 2.0.0-27520200518001，2.0.0-271420200618 对应的为 2.0.0-27920200618002。
 

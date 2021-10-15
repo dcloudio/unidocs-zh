@@ -4,7 +4,7 @@
 
 平台差异说明：App
 
-自 HXuilderX1.4 版本起，uni-app 支持引入原生插件，使用方式如下：
+自 HBuilderX 1.4 版本起，uni-app 支持引入原生插件，使用方式如下：
 
 ```js 
 	const PluginName = uni.requireNativePlugin(PluginName); // PluginName 为原生插件名称

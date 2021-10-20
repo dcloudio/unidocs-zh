@@ -419,6 +419,14 @@ this.$refs.udb.clear() //udb为unicloud-db组件的ref属性值
 this.$refs.udb.reset() //udb为unicloud-db组件的ref属性值
 ```
 
+### refresh
+
+清空并重新加载当前页面数据
+
+```js
+this.$refs.udb.refresh() //udb为unicloud-db组件的ref属性值
+```
+
 
 ### remove
 

@@ -50,6 +50,7 @@
 * [同时连多服务空间](uniCloud/init.md)
 * [案例](uniCloud/resource.md)
 * [开发者使用反馈](uniCloud/feedback.md)
+* [DCloud行业认证服务商](https://ask.dcloud.net.cn/article/39388)
 * [学习资料](uniCloud/learning.md)
 * [常见问题](uniCloud/faq.md)
 * [微信云开发转uniCloud](uniCloud/wx2unicloud.md)

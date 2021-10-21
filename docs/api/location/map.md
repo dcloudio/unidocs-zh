@@ -317,7 +317,7 @@ mapContext
 
 ## mapSearch 模块(仅app-nvue支持)
 
-#### reverseGeocode(Object,callback)
+#### reverseGeocode(Object,callback);@reverseGeocode
 > 反向地理编码
 
 ##### Object
@@ -333,7 +333,7 @@ code|Number| 成功返回 0,失败返回相应 code 码
 message|String|失败描述
 address|String|查询后地址 （成功时返回）
 
-#### poiSearchNearBy（Object,callback);
+#### poiSearchNearBy（Object,callback);@poiSearchNearBy
 > 周边检索
 
 ##### Object
@@ -364,6 +364,22 @@ name|String|名称
 type|String|类型
 distance|Number|距离（单位米）
 address|String|地址
+
+#### poiKeywordsSearch（Object,callback);@poiKeywordsSearch> 关键字检索##### Object属性|类型 |默认值|必填|说明:--|:--|:--|:--|:--|
+key|String| | 是|搜索关键字index|Number|1|否|要获取检索结果的页号索引（每页10条数据）
+city|String| |否|查询城市，可选值：cityname（中文或中文全拼）、citycode、adcode.[code 参考表](https://lbs.amap.com/api/webservice/download)
+types|String| |否| 类型，多个类型用“\|”分割 可选值:文本分类、分类代码 [code 参考表](https://lbs.amap.com/api/webservice/download)
+point|Object| |否|设置后，则返回结果会按照距离此点的距离来排序 {latitude: 纬度, longitude: 经度}
+sortrule|Number|0|否|排序规则, 0-距离排序；1-综合排序, 默认0##### callback 返回 Object 参数说明
+属性|类型 |说明:--|:--|:--|
+type|String|"success" 表示成功， "fail" 表示失败code|Number| 成功返回 0,失败返回相应 code 码
+message|String|失败描述
+totalNumber|Number|返回的POI数目
+currentNumber|Number|当前页POI数目
+pageNumber|Number|页数
+pageIndex|Number|当前页号索引
+poiList|Array.&lt;poiObject&gt;|POI信息数组
+
 
 
 **Tips**

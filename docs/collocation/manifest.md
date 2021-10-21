@@ -432,10 +432,6 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |uniStatistics				|Object	|[支付宝小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)														|
 |scopedSlotsCompiler|String|作用域插槽编译模式，HBuilderX 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 
-**注意**
-
-- 以上选项对应支付宝小程序内的`mini.project.json`，但是在支付宝小程序IDE启动的情况下中修改这个文件可能并不会生效，后续支付宝应该会修复这个问题
-
 ### mp-baidu
 
 |属性|类型|说明|

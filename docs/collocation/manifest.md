@@ -18,7 +18,7 @@
 |h5|Object||[H5 特有配置](/collocation/manifest?id=h5)||
 |quickapp|Object||快应用特有配置，即将支持||
 |mp-weixin|Object||[微信小程序特有配置](/collocation/manifest?id=mp-weixin)||
-|mp-alipay|Object||[支付宝小程序未提供可配置项](/collocation/manifest?id=mp-alipay)|
+|mp-alipay|Object||[支付宝小程序特有配置](/collocation/manifest?id=mp-alipay)|
 |mp-baidu|Object||[百度小程序特有配置](/collocation/manifest?id=mp-baidu)||
 |mp-toutiao|Object||[字节跳动小程序特有配置](/collocation/manifest?id=mp-toutiao)|1.6.0|
 |mp-qq|Object||[qq 小程序特有配置](/collocation/manifest?id=mp-qq)|2.1.0|

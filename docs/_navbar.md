@@ -9,6 +9,7 @@
   - [支付宝小程序](https://docs.alipay.com/mini/developer/getting-started)
   - [百度小程序](https://smartprogram.baidu.com/docs/develop/tutorial/codedir/)
   - [字节跳动小程序](https://developer.toutiao.com/dev/cn/mini-app/develop/component/introduction/basic-component)
+  - [飞书小程序](https://open.feishu.cn/document/uYjL24iN/uUDNzUjL1QzM14SN0MTN)
   - [QQ小程序](https://q.qq.com/wiki/develop/miniprogram/frame/)
   - [快手小程序](https://mp.kuaishou.com/docs/develop/frame/config/conf_appjson.html)
   - [华为快应用](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-component-view)

@@ -216,6 +216,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * [支付宝开发者工具](https://docs.alipay.com/mini/ide/download)
 * [百度开发者工具](https://smartprogram.baidu.com/docs/introduction/tool/)
 * [字节跳动开发者工具](https://developer.toutiao.com/dev/cn/mini-app/develop/developer-instrument/developer-instrument-update-and-download)
+* [飞书开发者工具](https://open.feishu.cn/document/uYjL24iN/ucDOzYjL3gzM24yN4MjN)
 
 #### 各家小程序更新日志列表
 
@@ -223,6 +224,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * [支付宝小程序更新日志](https://docs.alipay.com/mini/ide/framework-changelog)
 * [百度小程序更新日志](https://smartprogram.baidu.com/docs/develop/swan/swanchangelog/)
 * [字节跳动小程序更新日志](https://developer.toutiao.com/dev/cn/mini-app/develop/basic-library/update-log)
+* [飞书小程序更新日志](https://open.feishu.cn/document/uYjL24iN/uATM0YjLwEDN24CMxQjN)
 
 #### 微信小程序开发注意
 

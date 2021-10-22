@@ -33,7 +33,7 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 |MP-WEIXIN|微信小程序|
 |MP-ALIPAY|支付宝小程序|
 |MP-BAIDU|百度小程序|
-|MP-TOUTIAO|字节跳动小程序|
+|MP-TOUTIAO|字节跳动小程序、飞书小程序|
 |MP-QQ|QQ小程序|
 |MP-KUAISHOU|快手小程序|
 |MP-360|360小程序|

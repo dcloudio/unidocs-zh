@@ -15,7 +15,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|√|√|
 
@@ -24,16 +24,16 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-||
 |provider|String|是|服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取。||
-|orderInfo|String/Object|是|订单数据，[注意事项](/api/plugins/payment?id=orderinfo)|App、支付宝小程序、百度小程序、字节跳动小程序|
+|orderInfo|String/Object|是|订单数据，[注意事项](/api/plugins/payment?id=orderinfo)|App、支付宝小程序、百度小程序、字节跳动小程序、飞书小程序|
 |timeStamp|String|微信小程序必填|时间戳从1970年1月1日至今的秒数，即当前的时间。|微信小程序|
 |nonceStr|String|微信小程序必填|随机字符串，长度为32个字符以下。|微信小程序|
 |package|String|微信小程序必填|统一下单接口返回的 prepay_id 参数值，提交格式如：prepay_id=xx。|微信小程序|
 |signType|String|微信小程序必填|签名算法，暂支持 MD5。|微信小程序|
 |paySign|String|微信小程序必填|签名，具体签名方案参见 [微信小程序支付文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=3)|微信小程序|
 |bannedChannels|Array&lt;String&gt;|否|需要隐藏的支付方式，详见 [百度小程序支付文档](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)|百度小程序|
-|service|Number|字节跳动小程序必填|固定值：1（拉起小程序收银台）开发者如果不希望使用字节跳动小程序收银台，service设置为3/4时，可以直接拉起微信/支付宝进行支付：service=3： 微信API支付，不拉起小程序收银台；service=4： 支付宝API支付，不拉起小程序收银台。其中service=3、4，仅在1.35.0.1+基础库(头条743+)支持|字节跳动小程序|
-|_debug|Number|否|仅限调试用，上线前去掉该参数。_debug=1时，微信支付期间可以看到中间报错信息，方便调试|字节跳动小程序|
-|getOrderStatus|Function|字节跳动小程序必填|商户前端实现的查询支付订单状态方法（该方法需要返回个Promise对象）。 service=3、4时不需要传。|字节跳动小程序|
+|service|Number|字节跳动小程序必填|固定值：1（拉起小程序收银台）开发者如果不希望使用字节跳动小程序收银台，service设置为3/4时，可以直接拉起微信/支付宝进行支付：service=3： 微信API支付，不拉起小程序收银台；service=4： 支付宝API支付，不拉起小程序收银台。其中service=3、4，仅在1.35.0.1+基础库(头条743+)支持|字节跳动小程序、飞书小程序|
+|_debug|Number|否|仅限调试用，上线前去掉该参数。_debug=1时，微信支付期间可以看到中间报错信息，方便调试|字节跳动小程序、飞书小程序|
+|getOrderStatus|Function|字节跳动小程序必填|商户前端实现的查询支付订单状态方法（该方法需要返回个Promise对象）。 service=3、4时不需要传。|字节跳动小程序、飞书小程序|
 |success|Function|否|接口调用成功的回调||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|

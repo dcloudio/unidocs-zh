@@ -8,7 +8,7 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快手小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|x|1.9.0+|x|
 
@@ -365,14 +365,24 @@ type|String|类型
 distance|Number|距离（单位米）
 address|String|地址
 
-#### poiKeywordsSearch（Object,callback);@poiKeywordsSearch> 关键字检索##### Object属性|类型 |默认值|必填|说明:--|:--|:--|:--|:--|
-key|String| | 是|搜索关键字index|Number|1|否|要获取检索结果的页号索引（每页10条数据）
+#### poiKeywordsSearch（Object,callback);@poiKeywordsSearch
+> 关键字检索
+
+##### Object
+属性|类型 |默认值|必填|说明
+:--|:--|:--|:--|:--|
+key|String| | 是|搜索关键字
+index|Number|1|否|要获取检索结果的页号索引（每页10条数据）
 city|String| |否|查询城市，可选值：cityname（中文或中文全拼）、citycode、adcode.[code 参考表](https://lbs.amap.com/api/webservice/download)
 types|String| |否| 类型，多个类型用“\|”分割 可选值:文本分类、分类代码 [code 参考表](https://lbs.amap.com/api/webservice/download)
 point|Object| |否|设置后，则返回结果会按照距离此点的距离来排序 {latitude: 纬度, longitude: 经度}
-sortrule|Number|0|否|排序规则, 0-距离排序；1-综合排序, 默认0##### callback 返回 Object 参数说明
-属性|类型 |说明:--|:--|:--|
-type|String|"success" 表示成功， "fail" 表示失败code|Number| 成功返回 0,失败返回相应 code 码
+sortrule|Number|0|否|排序规则, 0-距离排序；1-综合排序, 默认0
+
+##### callback 返回 Object 参数说明
+属性|类型 |说明
+:--|:--|:--|
+type|String|"success" 表示成功， "fail" 表示失败
+code|Number| 成功返回 0,失败返回相应 code 码
 message|String|失败描述
 totalNumber|Number|返回的POI数目
 currentNumber|Number|当前页POI数目

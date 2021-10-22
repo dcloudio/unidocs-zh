@@ -371,6 +371,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 |属性名						| 类型			| 	默认值		| 说明|
 |:-:						| :-:			| :-:			| :-:	|
 |localdata					|Array			|				|本地数据，[详情](https://uniapp.dcloud.net.cn/component/datacom)|
+|spaceInfo					|Object     |				|服务空间信息，新增于`HBuilderX 3.2.11`。同uniCloud.init参数，参考：[uniCloud.init](uniCloud/init.md?id=init-unicloud)|
 |collection					|String			|				|表名。支持输入多个表名，用 `,` 分割|
 |field						|String			|				|查询字段，多个字段用 `,` 分割|
 |where						|String			|				|查询条件，内容较多，另见jql文档：[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|

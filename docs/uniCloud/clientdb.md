@@ -2938,6 +2938,8 @@ const res = await db.collection('test').aggregate()
 
 透传uni-id自动刷新的token给客户端
 
+> HBuilderX 3.2.11及以上版本，clientDB会自动将刷新的token及过期时间保存在storage内。
+
 **用法**
 
 ```js

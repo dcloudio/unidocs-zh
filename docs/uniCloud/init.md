@@ -54,9 +54,9 @@ myCloud.uploadFile()
 
 ## 获取其他服务空间的database@init-db
 
-> 仅腾讯云云函数支持
+> HBuilderX 3.2.11及更高版本支持客户端初始化其他服务空间database实例，此前仅腾讯云云函数环境支持。阿里云云函数环境不支持此用法。
 
-调用`uniCloud.database()`时可以传入对应的服务空间信息来获取指定服务空间的database实例。
+调用`uniCloud.database()`时可以传入对应的服务空间信息（参数同uniCloud.init，参考:[uniCloud.init](uniCloud/init.md?id=init-unicloud)）来获取指定服务空间的database实例。
 
 **示例**
 
@@ -75,5 +75,5 @@ db.collection('uni-id-users').get()
 |:-:					|:-:		|:-:	|:-:											|:-:																																										|
 |provider			|String	|是		|-												|aliyun、tencent																																				|
 |spaceId			|String	|是		|-												|服务空间ID，**注意是服务空间ID，不是服务空间名称**																			|
-<!-- |clientSecret	|String	|是		|-												|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
-|endpoint			|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云侧支持																														| -->
+|clientSecret	|String	|是		|-												|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
+|endpoint			|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云侧支持																														|

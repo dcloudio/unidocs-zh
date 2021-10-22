@@ -43,6 +43,7 @@ HBuilderX中敲下`udb`代码块，得到如下代码，然后通过collection�
 |:-|:-|:-|
 |v-slot:default||查询状态（失败、联网中）及结果（data）|
 |ref|string|vue组件引用标记|
+|spaceInfo|Object|服务空间信息，新增于`HBuilderX 3.2.11`。同uniCloud.init参数，参考：[uniCloud.init](uniCloud/init.md?id=init-unicloud)|
 |collection|string|表名。支持输入多个表名，用 `,` 分割，自`HBuilderX 3.2.6`起也支持传入tempCollection组成的数组|
 |field|string|指定要查询的字段，多个字段用 `,` 分割。不写本属性，即表示查询所有字段。支持用 oldname as newname方式对返回字段重命名|
 |where|string|查询条件，对记录进行过滤。[见下](/uniCloud/unicloud-db?id=where)|

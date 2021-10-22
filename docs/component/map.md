@@ -21,7 +21,7 @@
 |max-scale|Number|20|最大缩放级别|App-nvue 3.1.0+、微信小程序2.13+|
 |layer-style|Number/String|1|个性化地图|App-nvue 3.1.0+、微信小程序2.13+|
 |markers|Array||标记点||
-|polyline|Array||路线||
+|polyline|Array||路线|飞书小程序不支持|
 |circles|Array||圆||
 |controls|Array||控件||
 |include-points|Array||缩放视野以包含所有给定的坐标点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序|

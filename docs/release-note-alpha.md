@@ -1,3 +1,27 @@
+#### 3.2.11.20211021-alpha
+* 【uni-app】
+  + App平台、H5平台 修复 vue3 项目 picker-view 组件部分情况下 value 错误的Bug [详情](https://ask.dcloud.net.cn/question/132545)
+  + App-Android平台 修复 uni.setLocale 设置应用语言后无法正确获取系统语言的Bug
+  + App-Android平台 修复 nvue image 组件无法显示 webp 动图的Bug [详情](https://ask.dcloud.net.cn/question/132750)
+  + App-iOS平台 修复 应用长时间后台运行再回到前台 tabbar 页面可能显示白屏的Bug
+  + App-iOS平台 修复 nvue textarea 组件 padding 样式显示不正确的Bug [详情](https://ask.dcloud.net.cn/question/131761)
+  + App-iOS平台 修复 nvue list 中 header 组件在 iOS15 设备上存在默认 padding-top 的Bug [详情](https://ask.dcloud.net.cn/question/132524)
+  + 小程序平台 修复 3.2.10 版本引出的 vue3 项目运行报错的Bug [详情](https://ask.dcloud.net.cn/question/132368)
+  + 新增 Hello i18n 国际化示例项目 [详情](https://ext.dcloud.net.cn/plugin?id=6462)
+* 【uniCloud】
+  + clientDB 新增 调用 uniCloud.database 时传入其他服务空间配置，获取其他服务空间的数据库实例 [详情](https://uniapp.dcloud.net.cn/uniCloud/init?id=init-db)
+  + clientDB 调整 自动保存 uni-id 刷新用户token返回的token及过期时间到storage内  [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=refreshtoken)
+  + unicloud-db组件 新增 spaceInfo 参数，用于指定要使用的服务空间信息 [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db?id=props)
+  + mixinDatacom 新增 spaceInfo 参数，用于指定要使用的服务空间信息 [详情](https://uniapp.dcloud.net.cn/component/datacom?id=mixindatacom)
+* 【App插件(含5+App和uni-app的App端)】
+  + 更新 uni-AD Sigmob广告联盟SDK Android为3.4.1版，iOS为3.4.2版
+  + 修复 geolocation 设置 timeout 参数时无法获取位置信息并且在控制报错的Bug
+  + Android平台 新增 屏幕亮度参数值 -1 支持设置应用屏幕亮度与系统屏幕亮度保持一致
+  + Android平台 修复 3.2.2 版本引出的 toast 提示框设置图标后无法正常显示的Bug [详情](https://ask.dcloud.net.cn/question/131445)
+  + iOS平台 修复 显示模态弹窗如 actionSheet 引起系统状态栏文字颜色会自动变成黑色的Bug [详情](https://ask.dcloud.net.cn/question/132444)
+  + iOS平台 修复 打开悬浮红包广告可能引起崩溃或无法关闭广告页面的Bug [详情](https://ask.dcloud.net.cn/question/132543)
+  + iOS平台 修复 图片选择界面在 iOS15 设备上导航栏会显示白色的Bug [详情](https://ask.dcloud.net.cn/question/132528)
+
 #### 3.2.10.20211013-alpha
 * 【uni-app】
   + App平台、H5平台 新增 支持设置动态配置 tabBarItem 显示隐藏 [详情](https://uniapp.dcloud.io/api/ui/tabbar?id=settabbaritem)

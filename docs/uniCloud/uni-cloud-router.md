@@ -115,13 +115,16 @@ module.exports = class HelloService extends Service {
 
 **5.在页面里调用云函数**
 
-在页面中 URL 化访问 hello（controller）下 sayHello：
+在页面中通过callFunction访问 hello（controller）下 sayHello：
 
 ```js
 sayHello() {
   uniCloud.callFunction({
-    name: 'hello/sayHello',
-    data: {}
+		name: 'hello-uni-cloud-router',
+		data: {
+			action: 'hello/sayHello',
+			data: {}
+		}
   })
   .then(res => {
     this.title = res.data
@@ -369,7 +372,7 @@ module.exports = (options) => {
 }
 ```
 
-### 客户端使用云函数
+### 客户端使用云函数@use-in-client
 
 #### 发送请求
 

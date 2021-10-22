@@ -21,6 +21,7 @@
 |mp-alipay|Object||[支付宝小程序特有配置](/collocation/manifest?id=mp-alipay)|
 |mp-baidu|Object||[百度小程序特有配置](/collocation/manifest?id=mp-baidu)||
 |mp-toutiao|Object||[字节跳动小程序特有配置](/collocation/manifest?id=mp-toutiao)|1.6.0|
+|mp-lark|Object||[飞书小程序特有配置](/collocation/manifest?id=mp-lark)|3.2.12|
 |mp-qq|Object||[qq 小程序特有配置](/collocation/manifest?id=mp-qq)|2.1.0|
 **Tips**
 
@@ -470,6 +471,24 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |postcss|Boolean|上传代码时样式是否自动补全|
 |minified|Boolean|上传代码时是否自动压缩|
 
+### mp-lark
+
+|属性|类型|说明|
+|:-|:-|:-|
+|appid|String|飞书小程序的 AppID，登录 [https://developer.toutiao.com/](https://open.feishu.cn) 申请|
+|setting|Object|飞书小程序项目设置，参考[飞书小程序项目设置](/collocation/manifest?id=mp-lark-setting)|
+|uniStatistics|Object|[飞书小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
+|scopedSlotsCompiler|String|作用域插槽编译模式，HBuilderX 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
+
+#### 飞书小程序项目设置@mp-lark-setting
+
+|属性|类型|说明|
+|:-|:-|:-|
+|urlCheck|Boolean|是否检查安全域名和 TLS 版本|
+|es6|Boolean|ES6 转 ES5|
+|postcss|Boolean|上传代码时样式是否自动补全|
+|minified|Boolean|上传代码时是否自动压缩|
+
 ### mp-qq
 
 |属性							|类型			|说明																																												|
@@ -822,6 +841,9 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
     },
     "mp-toutiao": {
         "appid": "字节跳动小程序appid"
+    },
+    "mp-lark": {
+        "appid": "飞书小程序appid"
     },
     "h5": {
         "title": "演示",

@@ -123,7 +123,7 @@ uni.getSystemInfo({
 |version|引擎版本号|H5不支持|
 |storage|设备磁盘容量|支付宝小程序|
 |currentBattery|当前电量百分比|支付宝小程序|
-|appName|宿主APP名称|字节跳动小程序、飞书小程序|
+|appName|宿主APP名称|字节跳动小程序|
 |AppPlatform|App平台|QQ小程序|
 |host|宿主平台|百度小程序|
 |app|当前运行的客户端|支付宝小程序|

@@ -111,7 +111,7 @@
 |uni.reLaunch|[reLaunch](/api/router?id=relaunch)||
 |uni.switchTab|[switchTab](/api/router?id=switchtab)||
 |uni.navigateBack|[navigateBack](/api/router?id=navigateback)||
-|uni.postMessage|向应用发送消息|字节跳动小程序与飞书小程序不支持、H5 暂不支持（可以直接使用 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)）|
+|uni.postMessage|向应用发送消息|字节跳动小程序不支持、H5 暂不支持（可以直接使用 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)）|
 |uni.getEnv|获取当前环境|字节跳动小程序与飞书小程序不支持|
 
 ##### uni.postMessage(OBJECT)

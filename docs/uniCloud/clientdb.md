@@ -3430,7 +3430,7 @@ uniCloud的云数据库，提供了一批强大的运算方法。这些方法是
 |lt								|匹配两个值，如果前者小于后者则返回 true，否则返回 false																																					|lt(表达式1,表达式2)																																				|-																				|
 |lte							|匹配两个值，如果前者小于或等于后者则返回 true，否则返回 false																																		|lte(表达式1,表达式2)																																				|-																				|
 |neq							|匹配两个值，如果不相等则返回 true，否则返回 false																																								|neq(表达式1,表达式2)																																				|-																				|
-|cond							|计算布尔表达式，返回指定的两个值其中之一																																													|cond(表达式1,表达式2)																																			|-																				|
+|cond							|计算布尔表达式1，成立返回表达式2，否则返回表达式3																																													|cond(表达式1,表达式2,表达式3)																																			|-																				|
 |ifNull						|计算给定的表达式，如果表达式结果为 null、undefined 或者不存在，那么返回一个替代值；否则返回原值。																|ifNull(表达式1,表达式2)																																		|-																				|
 |switch						|根据给定的 switch-case-default 计算返回值																																												|switch(branches,default)																																		|-																				|
 |dateFromParts		|给定日期的相关信息，构建并返回一个日期对象																																												|dateFromParts(year,month,day,hour,minute,second,millisecond,timezone)											|-																				|

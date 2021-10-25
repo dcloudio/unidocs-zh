@@ -93,7 +93,7 @@ uniCloud在MongoDB的基础上改良，进一步提供了`DB Schema`和`JQL`。
 ### 支持websocket吗？
 websocket的实时特性导致serverless化比较复杂，目前曲线方案有：
 1. 如果使用三方sdk服务，比如推送、腾讯或声网等实时音视频方案，由于是连接三方服务器，不是连接uniCloud，这些方案仍然可以继续使用。
-2. 一些三方专业的websocket服务也可以使用，比如：[https://ext.dcloud.net.cn/plugin?id=1334](https://ext.dcloud.net.cn/plugin?id=1334)
+2. 一些三方专业的websocket服务也可以使用，比如：[GoEasy](https://ext.dcloud.net.cn/plugin?id=6510)
 3. 如果是im方面的需求，那么基于uniPush的im服务是非常推荐的选择：[https://ext.dcloud.net.cn/plugin?id=2670](https://ext.dcloud.net.cn/plugin?id=2670)
 4. 前端轮询获取服务器数据：[https://ext.dcloud.net.cn/plugin?id=2740](https://ext.dcloud.net.cn/plugin?id=2740)
 

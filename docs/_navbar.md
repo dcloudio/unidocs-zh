@@ -18,7 +18,7 @@
 
 <ul class="nav-href">
 	<li class="ext-link"><a href="//ext.dcloud.net.cn/" target="__blank">插件市场</a></li>
-	<li><a href="//dev.dcloud.net.cn/wish/?channel=uniapp" target="__blank">需求墙</a></li>
+	<li><a id="link-to-wish" href="javascript:void(0);">需求墙</a></li>
 	<li><a href="//dev.dcloud.net.cn/sponsor/?channel=uniapp" target="__blank" style="color:#FF6600!important;"><img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/45e691f0-4f3d-11eb-b680-7980c8a877b8.png" class="heart">赞助我们</a></li>
 </ul>
 

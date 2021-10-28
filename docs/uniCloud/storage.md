@@ -23,6 +23,10 @@
 
 在uni-app前端进行云存储的操作（不是在云函数里操作），包括在前端上传、删除文件。
 
+腾讯云支持配置云存储权限，需搭配腾讯云自定义登录使用，详情：[自定义登录](uniCloud/authentication.md)
+
+阿里云不支持控制前端访问云储存的权限
+
 ### uploadFile(Object object)@uploadfile
 
 直接上传文件到云存储。

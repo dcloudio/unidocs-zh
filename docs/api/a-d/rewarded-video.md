@@ -729,7 +729,7 @@ exports.main = async (event, context) => {
   }
 
   // 注意::必须验签请求来源
-  const secret = "";// uniad 后台开通激励视频回调后生成的 secret
+  const secret = "";// uniad 后台开通激励视频回调后生成的 Security key
   const trans_id = event.trans_id;
   const sign2 = crypto.createHash('sha256').update(`${secret}:${trans_id}`).digest('hex');
   if (event.sign !== sign2) {

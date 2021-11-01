@@ -2063,6 +2063,8 @@ exports.main = async (event) => {
 db.collection('scores').aggregate()
 ```
 
+**注意：聚合操作实例仅用于查询，不可执行增删改操作。在聚合操作实例上只能使用聚合操作方法，不能使用where/orderBy等基础方法，where需改为match，orderBy应使用sort实现，细节请阅读下方聚合操作文档。**
+
 ### 聚合表达式
 
 表达式可以是字段路径、常量、或聚合操作符。表达式可以嵌套表达式。

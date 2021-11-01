@@ -119,6 +119,23 @@ const unipayIns = unipay.initAlipay({
 
 - 支付宝支付时遇到`error:0D0680A8:asn1 encoding routines:ASN1_CHECK_TLEN:wrong tag`类似的错误时请确认一下自己的私钥格式，如果不是PKCS8需要在初始化时传入keyType参数，值为对应的私钥格式
 
+
+### 苹果内购(iap)支付
+
+**入参说明**
+
+|     参数名						|  类型		| 必填|                        默认值												|                  说明									|
+| :-------------:				| :-----:	| :--:| :--------------------------------------------------:| :------------------------------------:|
+|     sandbox			    	| Boolean	|  否 |                       false							|            是否启用沙箱环境 			|
+|     password			    	| String	|  否 |                         -							|     内购项目密钥     |
+
+```js
+const unipayIns = unipay.initIapPayment({
+  sandbox: true,
+  password: 'your password',
+})
+```
+
 ## Api 列表
 
 ### 获取支付参数
@@ -703,5 +720,37 @@ exports.main = async function (event) {
   } else if(res === 'payment') {
     // 支付结果通知
   }
+}
+```
+
+
+### iap校验支付凭证@verifyReceipt
+
+`unipayIns.verifyReceipt`, 校验iap支付凭证返回交易信息。
+
+**入参说明**
+
+|    参数名     |  类型  |          必填           | 默认值 |    说明    | 支持平台 |
+| :-----------: | :----: | :---------------------: | :----: | :--------: | :------: |
+| receiptData   | String |       是                |   -    | iap支付凭证|     -     |
+
+**返回值说明**
+
+|       参数名       |  类型  |                                                                                                                                                                          说明                                                                                                                                                                          | 支持平台 |
+| :----------------: | :----: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: |
+|   transactionId    | String |                                                                                                                                                                       交易标示                                                                                                                                                                       |      -    |
+|     tradeState     | String | 订单状态 ，微信支付： SUCCESS—支付成功，REFUND—转入退款，NOTPAY—未支付，PAYERROR--支付失败(其他原因，如银行返回失败)，SUCCESS（交易支付成功）。 |     -     |
+|      totalFee      | Number |                                                                                                                                                                  标价金额 ，单位：分                                                                                                                                                                   |     -     |
+| settlementTotalFee | Number |                                                                                                                                                                 应结订单金额，单位：分                                                                                                                                                                 |     -     |
+|      receipt       | Object |                                                                                                                                                                 收据信息                                                                                                                                                                               |  -  |
+
+**使用示例**
+
+```js
+exports.main = async function (event) {
+  let res = await unipayIns.verifyReceipt({
+    receiptData: 'transactionReceipt',
+  })
+  return res
 }
 ```

@@ -475,7 +475,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 
 |属性|类型|说明|
 |:-|:-|:-|
-|appid|String|飞书小程序的 AppID，登录 [https://developer.toutiao.com/](https://open.feishu.cn) 申请|
+|appid|String|飞书小程序的 AppID，登录 [https://open.feishu.cn](https://open.feishu.cn) 申请|
 |setting|Object|飞书小程序项目设置，参考[飞书小程序项目设置](/collocation/manifest?id=mp-lark-setting)|
 |uniStatistics|Object|[飞书小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|作用域插槽编译模式，HBuilderX 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|

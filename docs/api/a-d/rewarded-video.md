@@ -571,7 +571,6 @@ rewardedVideoAd = uni.createRewardedVideoAd({
 });
 
 rewardedVideoAd.onClose(e => {
-  var provider= e.provider;
   // 1. 服务器先保存回调结果
   // 2. 向服务器请求验证结果（服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果）
 })

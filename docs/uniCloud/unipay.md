@@ -127,7 +127,8 @@ const unipayIns = unipay.initAlipay({
 |     参数名						|  类型		| 必填|                        默认值												|                  说明									|
 | :-------------:				| :-----:	| :--:| :--------------------------------------------------:| :------------------------------------:|
 |     sandbox			    	| Boolean	|  否 |                       false							|            是否启用沙箱环境 			|
-|     password			    	| String	|  否 |                         -							|     内购项目密钥     |
+|     password			    	| String	|  否 |                         -							|            内购项目密钥                |
+|     timeout			    	| Number	|  否 |                       5000							|      请求超时时间，单位：毫秒           |
 
 ```js
 const unipayIns = unipay.initIapPayment({

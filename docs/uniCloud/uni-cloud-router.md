@@ -227,6 +227,18 @@ class PostController extends Controller {
 }
 ```
 
+#### 定制 URL 化返回响应头
+
+```js
+class PostController extends Controller {
+  async create() {
+    this.ctx.headers = {
+			'location': 'http://www.baidu.com'
+		}
+  }
+}
+```
+
 ### 服务（Service）
 
 业务逻辑封装的一个抽象层，有以下几个好处：

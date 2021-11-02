@@ -120,7 +120,7 @@ const unipayIns = unipay.initAlipay({
 - 支付宝支付时遇到`error:0D0680A8:asn1 encoding routines:ASN1_CHECK_TLEN:wrong tag`类似的错误时请确认一下自己的私钥格式，如果不是PKCS8需要在初始化时传入keyType参数，值为对应的私钥格式
 
 
-### 苹果内购(iap)支付
+### 苹果内购支付
 
 **入参说明**
 
@@ -131,7 +131,7 @@ const unipayIns = unipay.initAlipay({
 |     timeout			    	| Number	|  否 |                       5000							|      请求超时时间，单位：毫秒           |
 
 ```js
-const unipayIns = unipay.initIapPayment({
+const unipayIns = unipay.initAppleIapPayment({
   sandbox: true,
   password: 'your password',
 })
@@ -725,7 +725,7 @@ exports.main = async function (event) {
 ```
 
 
-### iap校验支付凭证@verifyReceipt
+### 苹果内购-校验支付凭证@verifyReceipt
 
 `unipayIns.verifyReceipt`, 校验iap支付凭证返回交易信息。
 
@@ -733,7 +733,7 @@ exports.main = async function (event) {
 
 |    参数名     |  类型  |          必填           | 默认值 |    说明    | 支持平台 |
 | :-----------: | :----: | :---------------------: | :----: | :--------: | :------: |
-| receiptData   | String |       是                |   -    | iap支付凭证|     -     |
+| receiptData   | String |       是                |   -    | 支付凭证 |    苹果内购支付     |
 
 **返回值说明**
 

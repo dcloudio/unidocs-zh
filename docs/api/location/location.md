@@ -63,19 +63,19 @@ uni.getLocation({
   - `安卓手机` 在原生App内嵌H5时，无法定位需要原生App处理Webview。
   - `移动端浏览器` 普遍仅支持GPS定位，在GPS信号弱的地方可能定位失败。
   - `PC 设备` 使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败。
-  - 使用地图和定位相关需要在[腾讯地图开放平台](https://lbs.qq.com/dev/console/key/manage)申请密钥，填写在 [manifest.json](https://uniapp.dcloud.io/collocation/manifest?id=h5sdkconfig) 中。
+  - 使用地图和定位相关需要在 [腾讯地图开放平台](https://lbs.qq.com/dev/console/key/manage) 申请密钥，填写在 [manifest.json](https://uniapp.dcloud.io/collocation/manifest?id=h5sdkconfig) 中。
   - 微信公众号可使用微信js sdk，[详见](https://ask.dcloud.net.cn/article/35380)
-  - 2.9.9 版本以上，优化 uni.getLocation 支持通过 IP 定位。默认通过 GPS 获取，如果获取失败，备选方案是通过 IP 定位获取，需填写地图服务平台的秘钥（key）。key配置：manifest.json ---> H5配置 ---> 定位和地图 ---> key。
+  - `2.9.9 版本以上`，优化 uni.getLocation 支持通过 IP 定位。默认通过 GPS 获取，如果获取失败，备选方案是通过 IP 定位获取，需填写地图服务平台的秘钥（key）。key配置：manifest.json ---> H5配置 ---> 定位和地图 ---> key。
 - `App 平台`
-  - Android由于谷歌服务被墙，或者手机上没有GMS，想正常定位就需要向高德等三方服务商申请SDK资质，获取AppKey。否则打包后定位就会不准。云打包时需要在manifest的SDK配置中填写Appkey。在manifest可视化界面有详细申请指南，详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)。离线打包自行在原生工程中配置。注意包名、appkey、证书信息必须匹配。真机运行可以正常定位，是因为真机运行基座使用了DCloud向高德申请的sdk配置，打包后必须由开发者自己申请。如果手机自带GMS且网络环境可以正常访问google定位服务器，此时无需在manifest填写高德定位的sdk配置。
-  - `<map>` 组件默认为国测局坐标gcj02，调用 `uni.getLocation` 返回结果传递给 `<map>` 组件时，需指定 type 为 gcj02。
-  - 定位和map是2个东西。通过 `getLocation` 得到位置坐标后，可以在任意map地图上展示，比如定位使用高德，地图使用google的webview版地图。如果坐标系不同时，注意转换坐标系。
+  - Android由于谷歌服务被墙，或者手机上没有GMS，想正常定位就需要向高德等三方服务商申请SDK资质，获取AppKey。否则打包后定位就会不准。云打包时需要在manifest的SDK配置中填写 Appkey。在 manifest 可视化界面有详细申请指南，详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)。离线打包自行在原生工程中配置。注意包名、appkey、证书信息必须匹配。真机运行可以正常定位，是因为真机运行基座使用了DCloud向高德申请的sdk配置，打包后必须由开发者自己申请。如果手机自带GMS且网络环境可以正常访问google定位服务器，此时无需在 manifest 填写高德定位的 sdk 配置。
+  - `<map>` 组件默认为国测局坐标 gcj02，调用 `uni.getLocation` 返回结果传递给 `<map>` 组件时，需指定 type 为 gcj02。
+  - 定位 和 map 是两个东西。通过 `getLocation` 得到位置坐标后，可以在任意map地图上展示，比如定位使用高德，地图使用 google 的 webview 版地图。如果坐标系不同时，注意转换坐标系。
   - 如果使用 `web-view` 加载地图，无需在manifest里配地图的sdk配置。
-  - 持续定位方案：iOS端可以申请持续定位权限，[参考](https://ask.dcloud.net.cn/article/12569)。Android如果进程被杀，代码无法执行。可以使用[unipush](https://ask.dcloud.net.cn/article/35622)，通过服务器激活App，执行透传消息，让App启动然后采集位置。Android上，即使自己写原生插件做后台进程，也很容易被杀，unipush是更合适的方案
+  - 持续定位方案：iOS端可以申请持续定位权限，[参考](https://ask.dcloud.net.cn/article/12569)。Android如果进程被杀，代码无法执行。可以使用 [unipush](https://ask.dcloud.net.cn/article/35622) ，通过服务器激活App，执行透传消息，让App启动然后采集位置。Android上，即使自己写原生插件做后台进程，也很容易被杀，unipush是更合适的方案
 - `小程序平台`
   - api默认不返回详细地址中文描述。需要中文地址有2种方式：1、使用高德地图小程序sdk，在app和微信上都可以获得中文地址，[参考](http://ask.dcloud.net.cn/article/35070)。2、只考虑app，使用``plus.geolocation``也可以获取中文地址。manifest里的App SDK配置仅用于app，小程序无需在这里配置。
   - 可以通过用户授权API来判断用户是否给应用授予定位权限，[详见](https://uniapp.dcloud.io/api/other/authorize)
-  - 在 `微信小程序` 中，当用户离开应用后，此接口无法调用，需要申请[后台持续定位权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html)，另外新版本中需要使用 [wx.onLocationChange](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html) 监听位置信息变化；当用户点击“显示在聊天顶部”时，此接口可继续调用。
+  - 在 `微信小程序` 中，当用户离开应用后，此接口无法调用，需要申请 [后台持续定位权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) ，另外新版本中需要使用 [wx.onLocationChange](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html) 监听位置信息变化；当用户点击“显示在聊天顶部”时，此接口可继续调用。
 
 ### uni.chooseLocation(OBJECT)
 打开地图选择位置。
@@ -128,9 +128,9 @@ uni.chooseLocation({
 
 **注意**
 - 不同端，使用地图选择时基于的底层地图引擎不一样，如 `微信小程序和H5` 是腾讯地图，`App和阿里小程序` 是高德地图，`百度小程序` 是百度地图，详见地图map组件的使用注意事项。
-  - `app` 中也可以使用百度定位，在manifest中配置，打包后生效。
+  - `app` 中也可以使用百度定位，在 manifest 中配置，打包后生效。
   - `app-nvue` 里只能用高德定位，不能用百度地图。另外选择地图、查看地图位置的API也仅支持高德地图。所以App端如无特殊必要，建议使用高德地图。
 - `H5 端` 使用地图和定位相关，需要在 [manifest.json](/collocation/manifest?id=h5sdkconfig) 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。
 - `微信内置浏览器` 中可使用微信js sdk，[详见](https://ask.dcloud.net.cn/article/35380)
-- chooseLocation 属于封装型API，开发者若觉得不够灵活，可自行基于原始的map组件进行封装。插件市场已经有各种封装样例了。
-- 若 `Android App端` 位置不准，见上文uni.getLocation的注意事项
+- chooseLocation 属于封装型API，开发者若觉得不够灵活，可自行基于原始的 map 组件进行封装。插件市场已经有各种封装样例了。
+- 若 `Android App端` 位置不准，见上文 uni.getLocation 的注意事项

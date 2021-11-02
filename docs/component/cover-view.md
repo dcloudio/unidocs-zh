@@ -13,7 +13,8 @@ app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，
 * app-nvue所有组件均为原生渲染，不存在前端组件无法覆盖原生组件的问题。但为了保持多端兼容，nvue里也实现了`cover-view`，作用于普通`view`一样。
 * 微信小程序部分原生组件实现了同层渲染，在指定的基础库版本上，某些原生组件可无需使用`cover-view`覆盖，[详见](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)
 * 字节跳动小程序不需要`cover-view`，因其原生组件均实现了同层渲染。
-* 360小程序不存在原生组件，无此概念
+* 360小程序不存在原生组件，无此概念。
+* cover-view 嵌套使用时，内部不可直接写文本节点，需要使用 cover-view 包裹。
 
 支持的事件：`click`
 

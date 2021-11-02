@@ -6,12 +6,12 @@
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-:|
 |type|String|否|默认为 wgs84 返回 gps 坐标，gcj02 返回国测局坐标，可用于 ``uni.openLocation`` 的坐标，app平台高德SDK仅支持返回gcj02||
-|altitude|Boolean|否|传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度|App，字节跳动小程序，飞书小程序和支付宝小程序不支持|
+|altitude|Boolean|否|传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度|字节跳动小程序、飞书小程序、支付宝小程序不支持|
 |geocode|Boolean|否|默认false，是否解析地址信息|仅App平台支持|
 |highAccuracyExpireTime|number|否|高精度定位超时时间(ms)，指定时间内返回最高精度，该值3000ms以上高精度定位才有效果|App (3.2.11+)、H5 (3.2.11+)|
 |timeout|String|否|默认为 5，定位超时时间，单位秒|仅飞书小程序支持|
-|cacheTimeout|Number|否|定位缓存超时时间，单位秒；每次定位缓存当前定位数据，并记下时间戳，当下次调用在cacheTimeout之内时，返回缓存数据|仅飞书小程序和支付宝小程序支持|
-|accuracy|String|否|默认为 high，指定期望精度，支持 high，best。当指定 high 时，期望精度值为100m，当指定 best 时期望精度值为20m。当定位得到的精度不符合条件时，在timeout之前会继续定位，尝试拿到符合要求的定位结果|仅飞书小程序支持
+|cacheTimeout|Number|否|定位缓存超时时间，单位秒；每次定位缓存当前定位数据，并记下时间戳，当下次调用在cacheTimeout之内时，返回缓存数据|仅飞书小程序、支付宝小程序支持|
+|accuracy|String|否|默认为 high，指定期望精度，支持 high，best。当指定 high 时，期望精度值为100m，当指定 best 时期望精度值为20m。当定位得到的精度不符合条件时，在timeout之前会继续定位，尝试拿到符合要求的定位结果|仅飞书小程序支持|
 |success|Function|是|接口调用成功的回调函数，返回内容详见返回参数说明。||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|

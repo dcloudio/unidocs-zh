@@ -137,7 +137,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目，
 		<span style="margin-top:15px;">Web及H5码</span>
 	</a>
   <a href="javascript:;" target="_self" class="clear-style barcode-view">
-		<img src="https://duolingo.91ddedu.com/static/miniapp.4a4ddf6b.jpg" width="200"/>
+		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/677e3dbb-112a-4d8b-a325-1d1049a8db75.png" width="200"/>
 		<span style="margin-top:15px;">微信小程序码</span>
 	</a>
 </div>

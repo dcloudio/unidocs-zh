@@ -1,3 +1,9 @@
+#### 3.2.12.20211028-alpha
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 uni-AD 开通增强广告在部分设备首次启动可能误报`应用的uni-AD业务状态异常（-9001）`提示的Bug
+  + Android平台 修复 上架某些应用市场审核检测可能误报存在收集安装列表行为的Bug [详情](https://ask.dcloud.net.cn/question/132948)
+  + iOS平台 更新 uni-AD 今日头条穿山甲广告SDK 为4.1.0.0版
+
 #### 3.2.11.20211021-alpha
 * 【uni-app】
   + App平台、H5平台 修复 vue3 项目 picker-view 组件部分情况下 value 错误的Bug [详情](https://ask.dcloud.net.cn/question/132545)

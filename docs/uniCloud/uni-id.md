@@ -1060,6 +1060,86 @@ exports.main = async function(event,context) {
 
 - 此接口仅校验token是否合法，从token中获取用户信息。不查库校验token，也不会查库获取用户信息。适用于不想使用checkToken获取用户信息的场景（checkToken内包含其他逻辑，比如自动刷新token等）
 
+### 封禁账户@ban-account
+
+- 由于客户端存在token缓存，执行封禁操作并不会实时生效。用户下次获取token（包括刷新token）时才会出现错误信息
+
+自`uni-id 3.3.8`起支持
+
+用法：`uniID.banAccount(Object BanAccountParams);`
+
+**BanAccountParams参数说明**
+
+| 字段| 类型	| 必填| 说明		|
+| ---	| ---		| ---	| ---			|
+| uid	| String| 是	|用户的id	|
+
+**响应参数**
+
+| 字段| 类型	| 必填| 说明						|
+| ---	| ---		| ---	| ---							|
+| code| Number| 是	|错误码，0表示成功|
+
+### 解禁账户@unban-account
+
+自`uni-id 3.3.8`起支持
+
+用法：`uniID.unbanAccount(Object UnbanAccountParams);`
+
+**UnbanAccountParams参数说明**
+
+| 字段| 类型	| 必填| 说明		|
+| ---	| ---		| ---	| ---			|
+| uid	| String| 是	|用户的id	|
+
+**响应参数**
+
+| 字段| 类型	| 必填| 说明						|
+| ---	| ---		| ---	| ---							|
+| code| Number| 是	|错误码，0表示成功|
+
+### 注销账户@close-account
+
+**注意**
+
+- uni-id不会真的删除用户记录，但是会将用户标记为已注销（用户记录内status为4），同时此用户不可使用同样的用户标识（手机号、邮箱、微信账号等）进行注册或登录。由于用户信息与业务有关联，如需真注销用户逻辑应由开发者自行实现。
+- 由于客户端存在token缓存，执行注销操作后应清理用户客户端token。如未清理在用户下次获取token（包括刷新token）时才会出现错误信息
+
+自`uni-id 3.3.8`起支持
+
+用法：`uniID.closeAccount(Object CloseAccountParams);`
+
+**CloseAccountParams参数说明**
+
+| 字段| 类型	| 必填| 说明		|
+| ---	| ---		| ---	| ---			|
+| uid	| String| 是	|用户的id	|
+
+**响应参数**
+
+| 字段| 类型	| 必填| 说明						|
+| ---	| ---		| ---	| ---							|
+| code| Number| 是	|错误码，0表示成功|
+
+### 取消注销账户@open-account
+
+自`uni-id 3.3.8`起支持
+
+用法：`uniID.openAccount(Object OpenAccountParams);`
+
+**OpenAccountParams参数说明**
+
+| 字段| 类型	| 必填| 说明		|
+| ---	| ---		| ---	| ---			|
+| uid	| String| 是	|用户的id	|
+
+**响应参数**
+
+| 字段| 类型	| 必填| 说明						|
+| ---	| ---		| ---	| ---							|
+| code| Number| 是	|错误码，0表示成功|
+
+
 ### 自行初始化uni-id@init
 
 > 此接口已废弃，如需自行传入配置请使用uniID.createInstance接口创建uniID实例来使用
@@ -2893,7 +2973,7 @@ const res = await uniID.forbidAppLogin({
 | password				| String		| 否	| 密码。加密存储																						|
 | nickname				| String		| 否	| 用户昵称																									|
 | gender					| Integer		| 否	| 用户性别：0 未知 1 男性 2 女性														|
-| status					| Integer		| 是	| 用户状态：0 正常 1 禁用 2 审核中 3 审核拒绝								|
+| status					| Integer		| 是	| 用户状态：0 正常，1 禁用，2 审核中，3 审核拒绝，4 已注销		|
 | mobile					| String		| 否	| 手机号码																									|
 | mobile_confirmed| Integer		| 否	| 手机号验证状态：0 未验证 1 已验证，未验证用户不可登录			|
 | email						| String		| 否	| 邮箱地址																									|

@@ -130,7 +130,7 @@ uni.chooseLocation({
 - 不同端，使用地图选择时基于的底层地图引擎不一样，如 `微信小程序和H5` 是腾讯地图，`App和阿里小程序` 是高德地图，`百度小程序` 是百度地图，详见地图map组件的使用注意事项。
   - `app` 中也可以使用百度定位，在manifest中配置，打包后生效。
   - `app-nvue` 里只能用高德定位，不能用百度地图。另外选择地图、查看地图位置的API也仅支持高德地图。所以App端如无特殊必要，建议使用高德地图。
-- `H5 端` 使用地图和定位相关，需要在 (manifest.json)[/collocation/manifest?id=h5sdkconfig] 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。
+- `H5 端` 使用地图和定位相关，需要在 [manifest.json](/collocation/manifest?id=h5sdkconfig) 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。
 - `微信内置浏览器` 中可使用微信js sdk，[详见](https://ask.dcloud.net.cn/article/35380)
 - chooseLocation 属于封装型API，开发者若觉得不够灵活，可自行基于原始的map组件进行封装。插件市场已经有各种封装样例了。
 - 若 `Android App端` 位置不准，见上文uni.getLocation的注意事项

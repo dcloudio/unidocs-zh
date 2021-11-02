@@ -154,8 +154,16 @@
 |属性名		|类型		|必填	|描述			|
 |:-:|:-:|:-:|:-:|
 |adpid	  |string	|	是 |广告位 id |
-|provider	|string	|	是 |服务商标识，即插件id |
+|provider	|string	|	是 |服务商标识，即插件id|
 |userData	|object	|	否 |对接App积分系统参数 |
+
+
+`provider` 值：
+
+|值		|描述			|
+|:-:|:-:|
+|BXM-AD	  |互动游戏变现猫|
+
 
 
 ### 广告创建
@@ -218,7 +226,7 @@ HBuilder基座的测试广告位 adpid: `1042956255` (游戏); `1620839118` (抽
     onReady() {
       this.adOption = {
         adpid: '1042956255',
-        provider: "BXM-AD"
+        provider: 'BXM-AD'
       };
 
       // 创建广告实例

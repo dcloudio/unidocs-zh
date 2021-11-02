@@ -127,8 +127,9 @@ const unipayIns = unipay.initAlipay({
 |     参数名						|  类型		| 必填|                        默认值												|                  说明									|
 | :-------------:				| :-----:	| :--:| :--------------------------------------------------:| :------------------------------------:|
 |     sandbox			    	| Boolean	|  否 |                       false							|            是否启用沙箱环境 			|
-|     password			    	| String	|  否 |                         -							|            内购项目密钥                |
+|     password		| String	|  否	|-				|  App 专用共享密钥，App 专用共享密钥是用于接收此 App 自动续期订阅收据的唯一代码。如果您要将此 App 转让给其他开发者或不想公开主共享密钥，建议使用 App 专用共享密钥。非自动续订场景不需要此参数|
 |     timeout			    	| Number	|  否 |                       5000							|      请求超时时间，单位：毫秒           |
+
 
 ```js
 const unipayIns = unipay.initAppleIapPayment({

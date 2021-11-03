@@ -130,6 +130,16 @@ db.collection('list')
 
 `clientDB`目前内置了3个变量可以供客户端使用，客户端并非直接获得这三个变量的值，而是需要传递给云端，云数据库在数据入库时会把变量替换为实际值。
 
+**HBuilderX 3.1.0及以上版本推荐写法**
+
+|参数名																|说明								|
+|:-:																	|:-:								|
+|db.getCloudEnv('$cloudEnv_uid')			|用户uid，依赖uni-id|
+|db.getCloudEnv('$cloudEnv_now')			|服务器时间戳				|
+|db.getCloudEnv('$cloudEnv_clientIP')	|当前客户端IP				|
+
+**HBuilderX 3.1.0之前版本写法**
+
 |参数名					|说明								|
 |:-:						|:-:								|
 |db.env.uid			|用户uid，依赖uni-id|

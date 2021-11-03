@@ -83,15 +83,15 @@
         </div>
         <b>钉钉小程序版</b>
       </a>
-      <a href="javascript:void(0)" target="_blank" class="clear-style barcode-view">
+      <a href="javascript:void(0)" οnclick="js_method()" class="clear-style barcode-view">
         <div class="barcode-img-box" style="width: 160px;"></div>
         <b></b>
       </a>
-      <a href="javascript:void(0)" target="_blank" class="clear-style barcode-view">
+      <a href="javascript:void(0)" οnclick="js_method()"  class="clear-style barcode-view">
         <div class="barcode-img-box" style="width: 160px;"></div>
         <b></b>
       </a>
-      <a href="javascript:void(0)" target="_blank" class="clear-style barcode-view">
+      <a href="javascript:void(0)" οnclick="js_method()" class="clear-style barcode-view">
         <div class="barcode-img-box" style="width: 160px;"></div>
         <b></b>
       </a>

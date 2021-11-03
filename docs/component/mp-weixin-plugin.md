@@ -20,7 +20,8 @@
   "plugins": {
     "myPlugin": {
       "version": "1.0.0",
-      "provider": "wxidxxxxxxxxxxxxxxxx"
+      "provider": "wxidxxxxxxxxxxxxxxxx",
+      "export": "index.js"
     }
   }
 }
@@ -30,7 +31,8 @@
   "plugins": {
     "myPlugin": {
       "version": "*",
-      "provider": "2019235609092837"
+      "provider": "2019235609092837",
+      "export": "index.js"
     }
   }
 }
@@ -45,11 +47,17 @@
 }
 ```
 
+**注意**
+
+- `HBuilder X 3.2.13+` 支持 `export` 字段，即小程序导出到插件。目前仅 微信小程序 和 支付宝小程序 支持
+
 #### 在页面中使用
 
-在页面内使用插件内包含的组件需要在`pages.json`内对应页面的`style`节点下配置对应平台的`usingComponents`或`usingSwanComponents`，示例如下。
+在页面内使用插件内包含的组件需要在`pages.json`内对应页面的`style`节点下配置对应平台的`usingComponents`或`usingSwanComponents`，示例如下：
 
-以`"hello-component": "plugin://myPlugin/hello-component"`为例，`key`（冒号前的`hello-component`）为在页面内使用的组件名称。`value`分为三段，`plugin`为协议（在百度小程序内为`dynamicLib`），`myPlugin`为插件名称即引入插件时的名称，`hello-component`为插件暴露的组件名称。
+以`"hello-component": "plugin://myPlugin/hello-component"`为例，`key`（冒号前的`hello-component`）为在页面内使用的组件名称。
+
+`value`分为三段，`plugin`为协议（在百度小程序内为`dynamicLib`），`myPlugin`为插件名称即引入插件时的名称，`hello-component`为插件暴露的组件名称。
 
 ```json
 // 微信小程序

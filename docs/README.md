@@ -79,7 +79,7 @@
     <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/1489404b-dacb-453e-994c-47316fea36e4.png" width="160" />
+          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/25463394-c584-4f68-bd57-6e05c43d55a7.png" width="160" />
         </div>
         <b>钉钉小程序版</b>
       </a>

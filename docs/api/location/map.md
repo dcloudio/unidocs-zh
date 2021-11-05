@@ -343,6 +343,7 @@ point|Object| |是|检索的中心点坐标 {latitude: 纬度, longitude: 经度
 key|String| | 是|搜索关键字
 radius|Number|3000|否|检索的半径，单位为米
 index|Number|1|否|要获取检索结果的页号索引
+offset|Number|10|否|设置每页条目数（默认每页10条数据）。HBuilder 3.2.13+
 
 ##### callback 返回 Object 参数说明
 属性|类型 |说明
@@ -377,6 +378,8 @@ city|String| |否|查询城市，可选值：cityname（中文或中文全拼）
 types|String| |否| 类型，多个类型用“\|”分割 可选值:文本分类、分类代码 [code 参考表](https://lbs.amap.com/api/webservice/download)
 point|Object| |否|设置后，则返回结果会按照距离此点的距离来排序 {latitude: 纬度, longitude: 经度}
 sortrule|Number|0|否|排序规则, 0-距离排序；1-综合排序, 默认0
+offset|Number|10|否|设置每页条目数（默认每页10条数据）。HBuilder 3.2.13+
+cityLimit| Boolean | false | 否 | 强制城市限制功能 默认 false，例如：在上海搜索天安门，如果citylimit为true，将不返回北京的天安门相关的POI。HBuilder 3.2.13+
 
 ##### callback 返回 Object 参数说明
 属性|类型 |说明

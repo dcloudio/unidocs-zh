@@ -151,7 +151,7 @@ const unipayIns = unipay.initAppleIapPayment({
 |   openid		| String|支付宝小程序、微信小程序必填，App端支付不需要	|   -	|通过对应 [uni-id](uniCloud/uni-id.md) 接口进行获取											| 支付宝小程序、微信小程序	|
 |  subject		| String|支付宝支付必填，微信支付时忽略此项				|   -	|订单标题																					|        支付宝支付			|
 |    body		| String|微信支付必填									|   -	|商品描述																					|         微信支付			|
-| outTradeNo	| String|必填											|   -	|商户订单号,64 个字符以内、只能包含字母、数字、下划线；需保证在商户端不重复					|							|
+| outTradeNo	| String|必填											|   -	|商户订单号,有长度限制（微信支付为32字符以内，支付宝为64字符以内）、只能包含字母、数字、下划线；需保证在商户端不重复					|							|
 |  totalFee		| Number|必填											|   -	|订单金额，单位：分																			| 支付宝小程序、微信小程序	|
 | notifyUrl		| String|必填											|   -	|支付结果通知地址，**需要注意支付宝支付时退款也会通知到此地址，务必处理好自己的业务逻辑**	|							|
 | tradeType		| String|非小程序支付、App支付时必填					|   -	| `1.0.6+`交易类型，见下方tradeType的说明													|-							|

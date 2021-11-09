@@ -102,8 +102,10 @@
 |content|文本|String||
 |color|文本颜色|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
 |fontSize|文字大小|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
-|x|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
-|y|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
+|x|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、H5、百度小程序|
+|y|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、H5、百度小程序|
+|anchorX|label的坐标，原点是 marker 对应的经纬度|Number|微信小程序|
+|anchorY|label的坐标，原点是 marker 对应的经纬度|Number|微信小程序|
 |borderWidth|边框宽度|Number|微信小程序、百度小程序|
 |borderColor|边框颜色|String|微信小程序、百度小程序|
 |borderRadius|边框圆角|Number|App-nvue 2.1.5+、微信小程序、百度小程序|

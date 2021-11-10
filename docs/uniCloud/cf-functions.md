@@ -467,7 +467,7 @@ package.json是一个标准json文件，不可带注释。下面是一个package
   "memorySize": 256, // 函数的最大可用内存，单位MB，可选值： 128|256|512|1024|2048，默认值256
   "timeout": 5, // 函数的超时时间，单位秒，默认值5。最长为60秒，阿里云在定时触发时最长可以是600秒
   // triggers 字段是触发器数组，目前仅支持一个触发器，即数组只能填写一个，不可添加多个
-  "triggers": [{
+  "triggers": [{ // 阿里云腾讯云均为此形式，请阅读下方说明
       // name: 触发器的名字，规则见https://uniapp.dcloud.net.cn/uniCloud/trigger，name不对阿里云生效
       "name": "myTrigger",
       // type: 触发器类型，目前仅支持 timer (即 定时触发器)，type不对阿里云生效
@@ -478,6 +478,22 @@ package.json是一个标准json文件，不可带注释。下面是一个package
   // 云函数Url化path部分，阿里云需要以/http/开头
   "path": "",
   "runtime": "" // nodejs版本，可选Nodejs8、Nodejs12，默认：Nodejs8
+}
+```
+
+**关于triggers**
+
+阿里云定时触发的cron表达式不支持代表年的第七位，但是在package.json内配置时仍需将第七位设置为*。
+
+**在web控制台配置trigger请参考：[定时触发](uniCloud/trigger.md)**
+
+package.json内统一了腾讯阿里的配置，两个平台都需要配置为如下形式
+
+```js
+{
+	"name": "myTrigger",
+	"type": "timer",
+	"config": "0 0 2 1 * * *"
 }
 ```
 

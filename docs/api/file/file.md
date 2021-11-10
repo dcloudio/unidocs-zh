@@ -197,6 +197,7 @@ uni.getSavedFileList({
 |:-|:-|:-|:-|:-|
 |filePath|String|是|文件路径，可通过 downFile 获得||
 |fileType|String|否|文件类型，指定文件类型打开文件，有效值 doc, xls, ppt, pdf, docx, xlsx, pptx|微信小程序|
+|showMenu|Boolean|否|右上角是否有可以转发分享的功能|微信小程序|
 |success|String|否|接口调用成功的回调函数||
 |fail|String|否|接口调用失败的回调函数|微信小程序|
 |complete|String|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
@@ -210,6 +211,7 @@ uni.downloadFile({
     var filePath = res.tempFilePath;
     uni.openDocument({
       filePath: filePath,
+      showMenu: true,
       success: function (res) {
         console.log('打开文档成功');
       }

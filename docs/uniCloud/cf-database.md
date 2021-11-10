@@ -3745,7 +3745,10 @@ let res = await db.collection('roles')
 
 ### sample@aggregate-sample
 
-> 注意此方法高频调用时会导致响应缓慢
+**注意**
+
+- 此方法在数据量大的集合高频调用时可能会导致响应缓慢
+- 腾讯云数据库操作有默认20的limit，如需使用sample返回20条以上数据，请额外指定limit，例：`sample({size:40}).limit(40)`
 
 聚合阶段。随机从文档中选取指定数量的记录。
 

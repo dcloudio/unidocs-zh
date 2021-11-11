@@ -1,7 +1,7 @@
 ## 介绍
 
 
-> 已经了解 Vue2，只想了解 Vue3 新功能可以参阅[vue3新功能](https://vue3js.cn/docs/zh/guide/migration/introduction.html#%E6%A6%82%E8%A7%88)！
+> 已经了解 Vue2，只想了解 Vue3 新功能可以参阅[vue3新功能](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8%A7%88)！
 >  
 > 已经有 Vue2 项目，需要适配 Vue3 的可参阅[vue2 项目迁移 vue3](https://uniapp.dcloud.io/migration-to-vue3)！
 

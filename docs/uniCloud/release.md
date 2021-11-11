@@ -1,5 +1,10 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2021-11-10
+  + 客户端sdk 修复 使用callback形式调用接口时 success 回调内抛出错误会触发 fail 回调的Bug
+  + uni-pay 新增 苹果应用内购凭证校验接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/unipay?id=verifyreceipt)
+  + JQL数据库管理 修复 multiSend 接口报错的Bug
+
 #### 2021-10-21
   + clientDB 新增 调用 uniCloud.database 时传入其他服务空间配置，获取其他服务空间的数据库实例 [详情](https://uniapp.dcloud.net.cn/uniCloud/init?id=init-db)
   + clientDB 调整 自动保存 uni-id 刷新用户token返回的token及过期时间到storage内  [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=refreshtoken)

@@ -63,7 +63,6 @@ uni.getLocation({
   - `安卓手机` 在原生App内嵌H5时，无法定位需要原生App处理Webview。
   - `移动端浏览器` 普遍仅支持GPS定位，在GPS信号弱的地方可能定位失败。
   - `PC 设备` 使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败。
-  - 使用地图和定位相关需要在 [腾讯地图开放平台](https://lbs.qq.com/dev/console/key/manage) 申请密钥，填写在 [manifest.json](https://uniapp.dcloud.io/collocation/manifest?id=h5sdkconfig) 中。
   - 微信公众号可使用微信js sdk，[详见](https://ask.dcloud.net.cn/article/35380)
   - `2.9.9 版本以上`，优化 uni.getLocation 支持通过 IP 定位。默认通过 GPS 获取，如果获取失败，备选方案是通过 IP 定位获取，需填写地图服务平台的秘钥（key）。key配置：manifest.json ---> H5配置 ---> 定位和地图 ---> key。
 - `App 平台`

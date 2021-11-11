@@ -425,7 +425,11 @@ CreateInstanceParams内可以传入云函数context
 const uniID = require('uni-id')
 exports.main = async function(event,context) {
   const uniIDIns = uniID.createInstance({ // 创建uni-id实例，其上方法同uniID
-    context: context,
+    context: {
+			APPID: '__UNI__xxxxxxx', // 替换为当前客户端的APPID，非url化的场景可以使用context.APPID获取
+			PLATFORM: 'h5', // 替换为当前客户端的平台类型，非url化的场景可以使用context.PLATFORM获取
+			LOCALE: 'zh-cn' // 替换为当前客户端的语言代码，非url化的场景可以使用context.LOCALE获取
+		},
     // config: {} // 完整uni-id配置信息，使用config.json进行配置时无需传此参数
   })
   payload = await uniIDIns.checkToken(event.uniIdToken) // 后续使用uniIDIns调用相关接口
@@ -442,7 +446,11 @@ exports.main = async function(event,context) {
 
 **为什么需要自行创建uni-id实例**
 
-默认情况下uni-id某些接口会自动从全局context内获取客户端的PLATFORM（平台，如：app-plus、h5、mp-weixin）信息。但是在单实例多并发的场景下可能无法正确获取（全局对象会被后面的请求覆盖，可能会导致前面一次请求使用了后面一次请求的PLATFORM信息）。因此推荐在开启云函数单实例多并发后，自行为uni-id传入context。
+默认情况下uni-id某些接口会自动从全局context内获取客户端的PLATFORM（平台，如：app-plus、h5、mp-weixin）信息。
+
+在单实例多并发的场景下可能无法正确获取（全局对象会被后面的请求覆盖，可能会导致前面一次请求使用了后面一次请求的PLATFORM信息）。因此推荐在开启云函数单实例多并发后，自行为uni-id传入context。
+
+此外云函数url化时无法获取客户端信息，也需要使用这种方式将客户端信息传入uni-id。
 
 ### 用户注册 @register
 用户注册就是将客户端用户输入的用户名和密码，经服务端：

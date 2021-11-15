@@ -1,3 +1,8 @@
+#### 3.2.14.20211112-alpha
+* 【uni-app】
+  + App平台、H5平台 修复 3.2.13 版本引出的 swiper 无法轮播的Bug [详情](https://ask.dcloud.net.cn/question/134100)
+  + App平台 修复 3.2.13 版本引出的 webview 页面无法显示的Bug [详情](https://ask.dcloud.net.cn/question/134109)
+
 #### 3.2.13.20211110-alpha
 * 【uni-app】
   + App平台、H5平台 新增 rich-text 组件支持 itemclick 事件 [详情](https://uniapp.dcloud.io/component/rich-text)

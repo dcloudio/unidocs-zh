@@ -17,7 +17,7 @@ Vue (读音 /vjuː/，类似于 `view`) 是一套用于构建用户界面的**�
 
  **致谢**
 
-本文大部分内容来源于[vue3中文文档官网](https://vue3js.cn/docs/zh/)，但结合 `uni-app` 做了部分调整，以更有利于开发者快速上手。感谢Vue团队！
+本文大部分内容来源于[vue3中文文档官网](https://v3.cn.vuejs.org/guide/introduction.html#vue-js-%E6%98%AF%E4%BB%80%E4%B9%88)，但结合 `uni-app` 做了部分调整，以更有利于开发者快速上手。感谢Vue团队！
 
 
 **vue3的优势：**

@@ -55,7 +55,7 @@ uni-app的App引擎已经封装了微信、QQ、微博的分享SDK，开发者�
 |值|说明|
 |:-|:-|
 |WXSceneSession|分享到聊天界面|
-|WXSenceTimeline|分享到朋友圈|
+|WXSceneTimeline|分享到朋友圈|
 |WXSceneFavorite|分享到微信收藏|
 
 **miniProgram 值说明**
@@ -144,7 +144,7 @@ uni.share({
 ```javascript
 uni.share({
 	provider: "weixin",
-	scene: "WXSenceTimeline",
+	scene: "WXSceneTimeline",
 	type: 1,
 	summary: "我正在使用HBuilderX开发uni-app，赶紧跟我一起来体验！",
 	success: function (res) {
@@ -160,7 +160,7 @@ uni.share({
 ```javascript
 uni.share({
 	provider: "weixin",
-	scene: "WXSenceTimeline",
+	scene: "WXSceneTimeline",
 	type: 2,
 	imageUrl: "https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/d8590190-4f28-11eb-b680-7980c8a877b8.png",
 	success: function (res) {
@@ -179,7 +179,7 @@ href、imageUrl 为必选参数，title、summary 至少有一项。
 ```javascript
 uni.share({
 	provider: "weixin",
-	scene: "WXSenceTimeline",
+	scene: "WXSceneTimeline",
 	type: 0,
 	href: "http://uniapp.dcloud.io/",
 	title: "uni-app分享",

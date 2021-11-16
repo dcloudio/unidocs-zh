@@ -984,6 +984,7 @@ errorMessage支持字符串，也支持json object。类型为object时，可定
   "properties": {
     "_id":{},
     "name":{},
+    "age": {},
     "pwd": {}
   }
 }
@@ -1001,7 +1002,7 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 
 也就是对于一个指定的字段，可以控制什么样的角色可以读取该字段内容，什么样的角色可以修改写入字段内容。
 
-以上述的user表为例，假如要限制前端禁止读取pwd字段，那么按如下配置，在字段pwd下面再写permission节点，设定read为false。
+以上述的user表为例，假如要限制前端禁止读取age字段，那么按如下配置，在字段age下面再写permission节点，设定read为false。
 
 ```json
 // user表的schema
@@ -1016,24 +1017,50 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
   },
   "properties": {
     "_id":{
-  },
-  "name":{
-  },
-  "pwd": {
-    "bsonType": "string",
-    "title": "密码",
-    "permission": {
-      "read": false, // 禁止读取 pwd 字段的数据（admin权限用户不受限）
-      "write": false // 禁止写入 pwd 字段的数据（admin权限用户不受限）
+    },
+    "name":{
+    },
+    "age": {
+      "bsonType": "number",
+      "title": "年龄",
+      "permission": {
+        "read": false, // 禁止读取 age 字段的数据（admin权限用户不受限）
+        "write": false // 禁止写入 age 字段的数据（admin权限用户不受限）
+      }
     }
-  }
   }
 }
 ```
 
-按上述配置，前端查询数据时，如果不包含pwd字段，仍然可以查询。但如果查询请求包含pwd字段，该请求会被拒绝，提示无权访问。
+按上述配置，前端查询数据时，如果不包含age字段，仍然可以查询。但如果查询请求包含age字段，该请求会被拒绝，提示无权访问。
 
 子级会继承父级的权限，即需要同时满足父级权限以及本节点权限，方可操作此节点。例如上述schema中如果配置表级read权限为false，在为name设置read权限为true的情况下，name字段仍不可读
+
+如果字段的bsonType配置为password，则clientDB完全不可操作此字段（即使是admin用户也不可以）。
+
+```js
+// user表的schema
+{
+  "bsonType": "object",
+  "required": [],
+  "permission": {
+    "read": true, // 任何用户都可以读
+    "create": false, // 禁止新增数据记录（admin权限用户不受限）
+    "update": false, // 禁止更新数据（admin权限用户不受限）
+    "delete": false // 禁止删除数据（admin权限用户不受限）
+  },
+  "properties": {
+    "_id":{
+    },
+    "name":{
+    },
+    "pwd": {
+      "bsonType": "password", // 即使不配置权限，此字段也无法在客户端读写
+      "title": "密码"
+    }
+  }
+}
+```
 
 #### 指定数据集权限控制
 

@@ -117,8 +117,9 @@ Map & Geolocation模块集成的三方SDK说明
 
 uni-AD广告模块集成的三方SDK说明
 
-|SDK名称|SDK包名|SDK用途|可能获取的个人信息类型|调用的设备权限|SDK隐私政策链接|
+|SDK名称|SDK包名|SDK用途|可能获取的个人信息类型|调用的设备权限|SDK隐私政策链接/目的|
 |:----|:----|:----|:----|:----|:----
+|uni-AD||广告|设备品牌、型号、操作系统版本、OAID、分辨率、IMEI、android ID、SIM 卡 IMSI 信息、应用名称、应用包名、应用版本号、网络信息、应用安装列表、位置信息|获取网络状态、位置信息、访问Wi-Fi状态、读取手机状态和身份|广告投放合作、广告主归因、反作弊
 |快手|com.kwad.sdk|广告|IMEI、openid、位置信息|获取网络状态、访问Wi-Fi状态、位置信息、读写外置存储器、读取手机状态和身份|[https://www.kuaishou.com/about/policy](https://www.kuaishou.com/about/policy)|
 |优量汇|com.qq.e|广告|IMEI、openid、位置信息|获取网络状态、访问Wi-Fi状态、位置信息、读写外置存储器、读取手机状态和身份|[https://imgcache.qq.com/..privacy](https://imgcache.qq.com/gdt/cdn/adn/uniondoc/ylh_sdk_privacy_statement.html)|
 |穿山甲|com.bytedance.sdk. openadsdk.adhost|广告|IMEI、openid、位置信息|获取网络状态、访问Wi-Fi状态、位置信息、读写外置存储器、读取手机状态和身份|[https://www.pangle.cn/privacy/partner](https://www.pangle.cn/privacy/partner)|
@@ -205,6 +206,11 @@ uni-AD广告基础功能包含管理其它三方广告SDK的逻辑，会通过�
 
 我们已经收到很多开发者反馈，其他应用市场都已上架成功。但华为检测时则上架被拒。猜测是华为应用市场提交新的apk检测后依然检测之前提交的apk，导致检测不通过的问题。
 这种情况请联系华为应用市场技术支持，告诉他新版本已经修改了，让华为应用市场重新检测审核。
+
+#### 应用安装运行会弹出`通知授权`申请。并未集成相关功能怎么会有这样的弹窗申请呢？
+
+1、如果你是VIVO手机设备则忽略即可。这是VIVO系统机制问题。非vivo应用市场安装的应用都会默认弹出通知授权弹窗。并非应用发起的授权。不会影响隐私政策
+2、检查集成的uniapp原生插件，可能是原生插件触发了权限申请。可以暂时去掉插件排查该问题。
 
 #### 看不懂文档不知道如何修改？
 

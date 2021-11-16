@@ -17,7 +17,7 @@ uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源
 
 下载地址：[https://ext.dcloud.net.cn/plugin?id=3268](https://ext.dcloud.net.cn/plugin?id=3268)
 
-[github 仓库可查看最新提交及修改](https://github.com/dcloudio/uniCloud-admin)，欢迎 issues、pr、star ！
+[github 仓库可查看最新提交及修改](https://github.com/dcloudio/uni-admin)，欢迎 issues、pr、star ！
 
 - 它基于 uni-app 的宽屏适配，可自动适配 PC 宽屏和手机各端。了解[宽屏适配](https://uniapp.dcloud.io/adapt)
 - 它基于 uniCloud，是 serverless 的云开发。了解[uniCloud](https://uniapp.dcloud.io/uniCloud/README)
@@ -73,7 +73,7 @@ PC 端如下图：
 
 ![download-admin](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/2baaddd0-11f5-11eb-81ea-f115fe74321c.png)
 
-<!-- 除了可视化向导外，也可以从[https://github.com/dcloudio/uniCloud-admin](https://github.com/dcloudio/uniCloud-admin)获取代码。 -->
+<!-- 除了可视化向导外，也可以从[https://github.com/dcloudio/uni-admin](https://github.com/dcloudio/uni-admin)获取代码。 -->
 
 #### 运行
 
@@ -171,7 +171,7 @@ $top-window-text-color: #999; /* 文字颜色 */
 
 ##### 管理静态菜单
 
-通过 [admin.config.js](https://github.com/dcloudio/uniCloud-admin/blob/master/admin.config.js) 配置侧边栏内容，所有用户都能看到静态菜单。
+通过 [admin.config.js](https://github.com/dcloudio/uni-admin/blob/master/admin.config.js) 配置侧边栏内容，所有用户都能看到静态菜单。
 
 ```js
 export default {
@@ -231,7 +231,7 @@ _添加菜单记录需要注意：_
 
 ##### 侧边栏样式管理
 
-通过 [uni.scss](https://github.com/dcloudio/uniCloud-admin/blob/master/uni.scss) 配置侧边栏样式
+通过 [uni.scss](https://github.com/dcloudio/uni-admin/blob/master/uni.scss) 配置侧边栏样式
 
 > 调整菜单颜色时，只需设置菜单背景色 `$menu-bg-color`，自行搭配文字前景色即可
 

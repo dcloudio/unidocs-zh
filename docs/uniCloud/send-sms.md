@@ -1,4 +1,9 @@
-## 短信发送 sendSms
+## 短信发送
+
+<!--
+/// meta
+keyword: 短信,sms
+-->
 
 从HBuilderX 2.8.1起，uniCloud内置了短信发送API。给开发者提供更方便、更便宜的短信发送能力。
 

@@ -5256,6 +5256,11 @@ let res = await db.collection('todos').doc('doc-id').update({
 
 #### abs
 
+<!--
+/// meta
+keyword: abs,绝对值
+-->
+
 返回一个数字的绝对值。  
 
 ##### API 说明
@@ -5305,9 +5310,13 @@ let res = await db.collection('ratings').aggregate()
 
 #### add
 
+<!--
+/// meta
+keyword: 相加,add,日期
+-->
+
 将数字相加或将数字加在日期上。如果数组中的其中一个值是日期，那么其他值将被视为毫秒数加在该日期上。  
 
-      
 #####  API 说明
  语法如下：  
 
@@ -9471,6 +9480,11 @@ let res = await db
 
 #### avg
 
+<!--
+/// meta
+keyword: 均值
+-->
+
 返回一组集合中，指定字段对应数据的平均值。  
 
       
@@ -9863,6 +9877,11 @@ let res = await db.collection('students').aggregate()
 用上面代码计算标准样本偏差时，`stdDevSamp` 会自动忽略类型不为 `number` 的记录，返回结果保持不变。
 
 #### sum
+
+<!--
+/// meta
+keyword: 求和
+-->
 
 计算并且返回一组字段所有数值的总和。  
 

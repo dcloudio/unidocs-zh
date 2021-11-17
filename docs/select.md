@@ -9,7 +9,7 @@
 
 **uni-app 有哪些已上线的成功案例？**
 
-uni-app是当今主流的开发框架，DCloud有600万开发者，uni统计手机端月活10亿，华为、阿里、腾讯、字节跳动、美团、京东、快手、vivo都在用，案例参考[uni-app 应用案例](http://uniapp.dcloud.io/case)
+uni-app是当今主流的开发框架，DCloud有900万开发者，uni统计手机端月活10亿，华为、阿里、腾讯、字节跳动、美团、京东、快手、vivo都在用，案例参考[uni-app 应用案例](http://uniapp.dcloud.io/case)
 
 **uni-app收费吗？**
 

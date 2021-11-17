@@ -296,7 +296,7 @@ uni-app支持的组件分为vue组件和小程序自定义组件。
 
 日常开发来讲，推荐使用vue组件。uni-app支持小程序组件主要是为了兼容更多生态资源。
 
-如果扩展组件符合uni-app的`easycom`组件规范，则可以免注册，直接使用。比如uni ui扩展组件就符合`easycom`组件规范。
+如果扩展组件符合uni-app的`easycom`组件规范，则可以免注册，直接使用。比如uni-ui扩展组件就符合`easycom`组件规范。
 
 如果组件不符合easycom规范，则需要在代码里手动import和注册组件，然后才能使用。
 
@@ -386,7 +386,7 @@ uni-app的基础组件中，有一个特殊基础组件是：`<unicloud-db>`组�
 
 相关文档详见：[unicloud-db组件](uniCloud/unicloud-db)
 
-除了内置的数据库组件，在uni ui扩展库里还有uniCloud的文件选择和上传组件，参考：[uni-file-picker](https://ext.dcloud.net.cn/plugin?id=4079)
+除了内置的数据库组件，在uni-ui扩展库里还有uniCloud的文件选择和上传组件，参考：[uni-file-picker](https://ext.dcloud.net.cn/plugin?id=4079)
 
 ### 原生组件和原生插件
 
@@ -427,91 +427,7 @@ datacom组件是一种数据驱动的、可云端一体的组件。
 
 ### 扩展组件（uni-ui）@uniui
 
-uni-ui是DCloud提供的一个跨端ui库，它是基于vue组件的、flex布局的、无dom的跨全端ui框架。
-
-uni-ui不包括基础组件，**它是基础组件的补充**。
-
-#### uni ui产品特点
-
-1、高性能
-
-目前为止，在小程序和混合app领域，uni ui是性能的标杆。
-
-- 自动差量更新数据
-
-虽然uni-app支持小程序自定义组件，所有小程序的ui库都可以用。但小程序自定义组件的ui库都需要使用setData手动更新数据，在大数据量时、或高频更新数据时，很容易产生性能问题。
-
-而uni ui属于vue组件，uni-app引擎底层自动diff更新数据。当然其实插件市场里众多vue组件都具备这个特点。
-
-- 优化逻辑层和视图层通讯折损
-
-非H5，不管是小程序还是App，不管是app的webview渲染还是原生渲染，全都是逻辑层和视图层分离的。这里就有一个逻辑层和视图层通讯的折损问题。
-比如在视图层拖动一个可跟手的组件，由于通讯的损耗，用js监听很难做到实时跟手。
-
-这时就需要使用css动画以及平台底层提供的wxs、bindingx等技术。不过这些技术都比较复杂，所以uni ui里做了封装，在需要跟手式操作的ui组件，比如swiperaction列表项左滑菜单，就在底层使用了这些技术，实现了高性能的交互体验
-
-- 背景停止
-
-很多ui组件是会一直动的，比如轮播图、跑马灯。即便这个窗体被新窗体挡住，它在背景层仍然在消耗着硬件资源。在Android的webview版本为chrome66以上，背景操作ui会引发很严重的性能问题，造成前台界面明显卡顿。
-
-而uni ui的组件，会自动判断自己的显示状态，在组件不再可见时，不会再消耗硬件资源。
-
-2、全端
-
-uni ui的组件都是多端自适应的，底层会抹平很多小程序平台的差异或bug。
-
-比如导航栏navbar组件，会自动处理不同端的状态栏；
-比如swiperaction组件，在app和微信小程序上会使用交互体验更好的wxs技术，但在不支持wxs的其他小程序端会使用js模拟类似效果。
-
-uni ui还支持nvue原生渲染。
-
-uni ui还支持pc等宽屏设备，可以通过PC浏览器访问[https://hellouniapp.dcloud.net.cn/pages/extUI/badge/badge](https://hellouniapp.dcloud.net.cn/pages/extUI/badge/badge)体验
-
-3、风格扩展
-
-uni ui的默认风格是中型的，与uni-app基础组件风格一致。但它支持[uni.scss](https://uniapp.dcloud.io/collocation/uni-scss)，可以方便的扩展和切换应用的风格。
-
-ui是一种需求非常发散的产品，DCloud官方也无意用uni ui压制第三方ui插件的空间，但官方有义务在性能和跨端方面提供一个开源的标杆给大家。
-
-我们欢迎更多优秀的ui组件出现，也欢迎更多人贡献uni ui的主题风格，满足更多用户的需求。
-
-4、与uniCloud协作
-
-uni ui里很多组件与uniCloud打通，可大幅提升开发效率
-
-5、与uni统计自动集成实现免打点
-
-uni统计是优秀的多端统计平台，见[tongji.dcloud.net.cn](https://tongji.dcloud.net.cn)。
-
-除了一张报表看全端，它的另一个重要特点是免打点。
-比如使用uni ui的navbar标题栏、收藏、购物车等组件，均可实现自动打点，统计页面标题等各种行为数据。
-当然你也可以关闭uni统计，这不是强制的。
-
-6、uni ui符合全套DCloud组件规范
-
-包括easycom、uni_module、datacom，全部遵循。
-
-#### uni ui的使用方式
-
-uni ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别组件等多种使用方式
-
-![HBuilderX内创建uni ui项目](https://img.cdn.aliyun.dcloud.net.cn/uni-app/doc/create-uni-ui-project.jpg)
-
-1. 在HBuilderX新建uni-app项目的模板中，选择uni ui模板
-由于uni-app独特的[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)技术，可以免引用、注册，直接使用各种符合规则的vue组件。
-
-在代码区键入`u`，拉出各种内置或uni ui的组件列表，选择其中一个，即可使用该组件。
-
-光标放在组件名称上，按F1，可以查阅组件的文档。
-
-![uni ui代码块](https://img.cdn.aliyun.dcloud.net.cn/uni-app/doc/uni-ui-snippet.jpg)
-
-2. npm安装参考：[https://ext.dcloud.net.cn/plugin?id=55](https://ext.dcloud.net.cn/plugin?id=55)
-
-3. 单独安装组件
-如果你没有创建uni ui项目模板，也可以在你的工程里，单独安装需要的那个组件。下表为uni-ui的扩展组件清单，点击每个组件在详情页面可以导入组件到项目下，导入后直接使用即可，无需import和注册。
-
-uni ui有几十个组件，详情的uni ui组件清单，请参考：[https://ext.dcloud.net.cn/plugin?id=55](https://ext.dcloud.net.cn/plugin?id=55)
+详见: [uni-ui介绍](component/uniui/uni-ui.md)
 
 **更多组件**
 

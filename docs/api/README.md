@@ -233,7 +233,8 @@ uni.addInterceptor({
 |API|说明|
 |:-|:-|
 |[uni.chooseImage](api/media/image?id=chooseimage)|从相册选择图片，或者拍照|
-|[uni.previewImage](api/media/image?id=previewimage)|预览图片|
+|[uni.previewImage](api/media/image?id=unipreviewimageobject)|预览图片|
+|[uni.closePreviewImage](api/media/image?id=closepreviewimage)|关闭预览图片|
 |[uni.getImageInfo](api/media/image?id=getimageinfo)|获取图片信息|
 |[uni.saveImageToPhotosAlbum](api/media/image?id=saveimagetophotosalbum)|保存图片到系统相册|
 ##### 文件

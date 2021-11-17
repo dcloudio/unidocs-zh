@@ -18,12 +18,13 @@ App端如需要更丰富的相机拍照API（如直接调用前置摄像头）�
 
 **crop 参数说明**
 
-|参数名|类型|必填|说明|
-|:-|:-|:-|:-|
-|quality|Number|否|取值范围为1-100，数值越小，质量越低（仅对jpg格式有效）。默认值为80。|
-|width|Number|是|裁剪的宽度，单位为px，用于计算裁剪宽高比。|
-|height|Number|是|裁剪的高度，单位为px，用于计算裁剪宽高比。|
-|resize|Boolean|否|是否将width和height作为裁剪保存图片真实的像素值。默认值为true。注：设置为false时在裁剪编辑界面显示图片的像素值，设置为true时不显示|
+|参数名|类型|必填|说明|平台差异说明|
+|:-|:-|:-|:-|:-|
+|quality|Number|否|取值范围为1-100，数值越小，质量越低（仅对jpg格式有效）。默认值为80。||
+|width|Number|是|裁剪的宽度，单位为px，用于计算裁剪宽高比。||
+|height|Number|是|裁剪的高度，单位为px，用于计算裁剪宽高比。||
+|resize|Boolean|否|是否将width和height作为裁剪保存图片真实的像素值。默认值为true。注：设置为false时在裁剪编辑界面显示图片的像素值，设置为true时不显示||
+|saveToAlbum|Boolean|否|是否将裁剪的图片保存到手机相册里，默认值为false。|App (3.2.15+)|
 
 **Tips**
 
@@ -146,6 +147,21 @@ uni.chooseImage({
 - 在非H5端，previewImage是原生实现的，界面自定义灵活度较低。
 - 插件市场有前端实现的previewImage，性能低于原生实现，但界面可随意定义；插件市场也有适于App端的previewImage原生插件，提供了更多功能。
 
+### uni.closePreviewImage(OBJECT)
+
+关闭预览图片。
+
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√ `(3.2.15+)`|√ `(3.2.15+)`|x|x|x|x|x|x|x|
+
+**OBJECT 参数说明**
+
+|参数名|类型|必填|说明|
+|:-|:-|:-|:-|
+|success|Function|否|接口调用成功的回调函数|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 ### uni.getImageInfo(OBJECT)
 

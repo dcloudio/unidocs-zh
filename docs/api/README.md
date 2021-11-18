@@ -100,7 +100,7 @@ async function request () {
 
 #### Vue 3
 
-> 对部分 API 进行了 Promise 封装，`then` 为 success 成功回调。`catch` 为 fail 失败回调
+> 对部分 API 进行了 Promise 封装，调用成功会进入 `then 方法` 回调。调用失败会进入 `catch 方法` 回调
 
 **使用示例：**
 
@@ -116,26 +116,30 @@ uni.request({
 	}
 });
 
-// Promise
+// 使用 Promise then/catch 方式调用
 uni.request({
 		url: 'https://www.example.com/request'
 	})
-	.then(res => {	// 此处即为 success 回调中的 res
+	.then(res => {
+		// 此处的 res 参数，与使用默认方式调用时 success 回调中的 res 参数一致
 		console.log(res.data);
 	})
-	.catch(err => {	// 此处即为 fail 回调中的 err
+	.catch(err => {
+		// 此处的 err 参数，与使用默认方式调用时 fail 回调中的 err 参数一致
 		console.error(err)
 	})
 
-// Await
+// 使用 Await/Await 方式调用
 async function request () {
 	try{
 		var res = await uni.request({
 			url: 'https://www.example.com/request'
 		});
-		console.log(res); // 此处即为 success 回调中的 res
+		// 此处的 res 参数，与使用默认方式调用时 success 回调中的 res 参数一致
+		console.log(res);
 	} catch (err) {
-		console.error(err) // 此处即为 fail 回调中的 err
+		// 此处的 err 参数，与使用默认方式调用时 fail 回调中的 err 参数一致
+		console.error(err)
 	}
 }
 ```

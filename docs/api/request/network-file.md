@@ -234,7 +234,7 @@ downloadTask.onProgressUpdate((res) => {
 	console.log('已经下载的数据长度' + res.totalBytesWritten);
 	console.log('预期需要下载的数据总长度' + res.totalBytesExpectedToWrite);
 
-	// 测试条件，取消下载任务。
+	// 满足测试条件，取消下载任务。
 	if (res.progress > 50) {
 		downloadTask.abort();
 	}

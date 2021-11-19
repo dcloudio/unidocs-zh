@@ -14,7 +14,6 @@
 > - 如需自定义组件默认边框颜色等，请使用插槽自定义内容并合理使用 `border ` 和 `title-border` 属性
 > - 折叠面板仅支持嵌套使用，请勿单独使用
 > - 组件支持 nvue ，需要在 `manifest.json > app-plus` 节点下配置 `"nvueStyleCompiler" : "uni-app"` 
-> - 如使用过程中有任何问题，或者您对uni-ui有一些好的建议，欢迎加入 uni-ui 交流群：871950839
 
 ### 基本用法
 

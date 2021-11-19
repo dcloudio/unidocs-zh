@@ -21,7 +21,6 @@
 > **注意事项**
 > 为了避免错误使用，给大家带来不好的开发体验，请在使用组件前仔细阅读下面的注意事项，可以帮你避免一些错误。
 > - 组件需要依赖 `sass` 插件 ，请自行手动安装
-> - 如使用过程中有任何问题，或者您对uni-ui有一些好的建议，欢迎加入 uni-ui 交流群：871950839
 > - `<uni-data-picker>` 内部包含了弹出层组件 `<uni-data-pickerview>` 外层的布局可能会影响弹出层，[详情](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Common_CSS_Questions)
 
 ## API

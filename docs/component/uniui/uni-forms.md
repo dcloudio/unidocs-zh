@@ -23,7 +23,6 @@ uni-app的内置组件已经有了 `<form>`组件，用于提交表单内容。
 > - 如果配置 `validateTrigger` 属性为 `bind` 且表单域组件使用 `input` 事件触发会耗损部分性能，请谨慎使用
 > - 组件支持 nvue ，需要在 `manifest.json > app-plus` 节点下配置 `"nvueStyleCompiler" : "uni-app"` 
 > - uni-forms 中不包含其他表单组件，如需使用 uni-easyinput、uni-data-checkbox 等组件，需要自行引入
-> - 如使用过程中有任何问题，或者您对uni-ui有一些好的建议，欢迎加入 uni-ui 交流群：871950839
 
 ### 基本用法 
 

@@ -310,9 +310,9 @@ uni.login({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√ (3.2.13+)|x|x|x|x|x|x|x|
 
-**univerifyManager 参数说明**
+**univerifyManager 方法说明**
 
-|参数名|类型|说明|
+|方法名|类型|说明|
 |:-|:-|:-|
 |login|Function|一键登录|
 |preLogin|Function|一键登录预登录|
@@ -363,6 +363,7 @@ const callback = (res) => {
       console.log("getCheckBoxState res: ", res);
       if (res.state) {
         // 关闭一键登录弹框
+        // 参数和 uni.closeAuthView 相同
         univerifyManager.close()
       }
     }

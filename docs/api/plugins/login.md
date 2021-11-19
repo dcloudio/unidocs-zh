@@ -310,7 +310,7 @@ uni.login({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√ (3.2.13+)|x|x|x|x|x|x|x|
 
-**返回参数说明**
+**univerifyManager 参数说明**
 
 |参数名|类型|说明|
 |:-|:-|:-|
@@ -320,3 +320,57 @@ uni.login({
 |getCheckBoxState|Function|获取一键登录条款勾选框状态|
 |onButtonsClick|Function|订阅一键登录自定义按钮点击事件|
 |offButtonsClick|Function|取消订阅一键登录自定义按钮点击事件|
+
+**使用示例**
+
+```js
+// 使用时不需要传递 provider 
+const univerifyManager = uni.getUniverifyManager()
+
+// 预登录
+// 参数和 uni.preLogin 相同
+univerifyManager.preLogin()
+
+// 调用一键登录弹框
+// 仅需传参 univerifyStyle 即可
+univerifyManager.login({
+  univerifyStyle: {
+    "fullScreen": true,
+    "buttons": {
+        "iconWidth": "45px",
+        "list": [
+            {
+                "provider": "apple",
+                "iconPath": "/static/apple.png"
+            }, 
+            {
+                "provider": "weixin",****
+                "iconPath": "/static/wechat.png"
+            }
+        ]
+    }
+  },
+  success (res) {
+    console.log('login success', res)
+  }
+})
+
+const callback = (res) => {
+  // 获取一键登录弹框协议勾选状态
+  // 参数和 uni.getCheckBoxState 相同
+  univerifyManager.getCheckBoxState({
+    success(res) {
+      console.log("getCheckBoxState res: ", res);
+      if (res.state) {
+        // 关闭一键登录弹框
+        univerifyManager.close()
+      }
+    }
+  })
+}
+
+// 订阅自定义按钮点击事件
+univerifyManager.onButtonsClick(callback)
+// 取消订阅自定义按钮点击事件
+univerifyManager.offButtonsClick(callback)
+```

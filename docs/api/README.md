@@ -56,7 +56,7 @@ ECMAScript由Ecma国际管理，是基础js语法。浏览器基于标准js扩�
    - 以 create 开头的方法。例如：`uni.createMapContext()`
    - 以 manager 结束的方法。例如：`uni.getBackgroundAudioManager()`
 
-### Vue 2 和 Vue 3 的 API `Promise 化`
+#### Vue 2 和 Vue 3 的 API `Promise 化`
 > 返回结果不一致，以下为 `不同点` 和 `互相转换`
 
 #### Vue 2
@@ -196,7 +196,7 @@ uni.addInterceptor({
 })
 ```
 
-### API 列表
+## API 列表
 #### 网络
 ##### 发起请求
 

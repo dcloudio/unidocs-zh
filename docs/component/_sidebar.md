@@ -110,7 +110,7 @@
   * [uni-tag 标签](component/uniui/uni-tag.md)
   * [uni-title 章节标题](component/uniui/uni-title.md)
   * [uni-transition 过渡动画](component/uniui/uni-transition.md)
-  * [更新日志](component/uniui/changelog.md)
+  * [更新日志](https://ext.dcloud.net.cn/plugin?id=55&update_log)
   * [更多插件市场的组件](https://ext.dcloud.net.cn/?cat1=2)
 * [datacom组件规范](component/datacom)
 * [App原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)

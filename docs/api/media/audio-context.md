@@ -25,33 +25,33 @@
 
 **innerAudioContext 对象的方法列表**
 
-|方法|参数|说明|
-|:-|:-|:-|
-|play||播放（H5端部分浏览器需在用户交互时进行）|
-|pause||暂停|
-|stop||停止|
-|seek|position|跳转到指定位置，单位 s|
-|destroy||销毁当前实例|
-|onCanplay|callback|音频进入可以播放状态，但不保证后面可以流畅播放|
-|onPlay|callback|音频播放事件|
-|onPause|callback|音频暂停事件|
-|onStop|callback|音频停止事件|
-|onEnded|callback|音频自然播放结束事件|
-|onTimeUpdate|callback|音频播放进度更新事件|
-|onError|callback|音频播放错误事件|
-|onWaiting|callback|音频加载中事件，当音频因为数据不足，需要停下来加载时会触发|
-|onSeeking|callback|音频进行 seek 操作事件|
-|onSeeked|callback|音频完成 seek 操作事件|
-|offCanplay|callback|取消监听 onCanplay 事件|
-|offPlay|callback|取消监听 onPlay 事件|
-|offPause|callback|取消监听 onPause 事件|
-|offStop|callback|取消监听 onStop 事件|
-|offEnded|callback|取消监听 onEnded 事件|
-|offTimeUpdate|callback|取消监听 onTimeUpdate 事件|
-|offError|callback|取消监听 onError 事件|
-|offWaiting|callback|取消监听 onWaiting 事件|
-|offSeeking|callback|取消监听 onSeeking 事件|
-|offSeeked|callback|取消监听 onSeeked 事件|
+|方法|参数|说明|平台差异说明|
+|:-|:-|:-|:-|
+|play||播放（H5端部分浏览器需在用户交互时进行）||
+|pause||暂停||
+|stop||停止||
+|seek|position|跳转到指定位置，单位 s||
+|destroy||销毁当前实例||
+|onCanplay|callback|音频进入可以播放状态，但不保证后面可以流畅播放||
+|onPlay|callback|音频播放事件||
+|onPause|callback|音频暂停事件||
+|onStop|callback|音频停止事件||
+|onEnded|callback|音频自然播放结束事件||
+|onTimeUpdate|callback|音频播放进度更新事件||
+|onError|callback|音频播放错误事件||
+|onWaiting|callback|音频加载中事件，当音频因为数据不足，需要停下来加载时会触发||
+|onSeeking|callback|音频进行 seek 操作事件||
+|onSeeked|callback|音频完成 seek 操作事件||
+|offCanplay|callback|取消监听 onCanplay 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
+|offPlay|callback|取消监听 onPlay 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
+|offPause|callback|取消监听 onPause 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
+|offStop|callback|取消监听 onStop 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
+|offEnded|callback|取消监听 onEnded 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
+|offTimeUpdate|callback|取消监听 onTimeUpdate 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
+|offError|callback|取消监听 onError 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
+|offWaiting|callback|取消监听 onWaiting 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
+|offSeeking|callback|取消监听 onSeeking 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
+|offSeeked|callback|取消监听 onSeeked 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
 
 errCode 说明
 

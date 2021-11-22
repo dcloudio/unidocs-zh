@@ -1,3 +1,12 @@
+#### 3.2.15.20211120-alpha
+* 【uni-app】
+  + App-Android平台 修复 showTabBarRedDot 设置红点可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/134420)
+  + App-Android平台 修复 nvue waterfall 中 cell 组件横竖屏切换后可能出现排版不正常的Bug [详情](https://ask.dcloud.net.cn/question/133738)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 上架某些应用市场审核检测可能检测到收集已安装应用列表行为的Bug
+  + Android平台 修复 3.2.13 版本引出的 webview页面作为子窗口时 WebviewStyles 的 top 属性不生效的Bug
+  + 【重要】iOS平台 修复 应用启动时间统计在网络服务异常时可能引起崩溃的Bug [详情](https://ask.dcloud.net.cn/article/39448)
+
 #### 3.2.14.20211112-alpha
 * 【uni-app】
   + App平台、H5平台 修复 3.2.13 版本引出的 swiper 无法轮播的Bug [详情](https://ask.dcloud.net.cn/question/134100)

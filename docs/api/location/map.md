@@ -172,6 +172,19 @@ mapContext
 |complete	|function	|		|否		|接口调用结束的回调函数（调用成功、失败都会执行）	|
 
 
+**moveAlong 的 OBJECT 参数列表**
+
+|属性				|类型			|默认值	|必填	|说明																							|
+|:-					|:-				|:-			|:-		|:-																								|
+|markerId		|Number		|				|是		|指定 marker																				|
+|path				|Array		|				|是		|移动路径的坐标串，坐标点格式 {longitude, latitude}	|
+|autoRotate	|boolean	|true		|否		|根据路径方向自动改变 marker 的旋转角度							|
+|duration		|number		|				|是		|平滑移动的时间																		|
+|success		|function	|				|否		|接口调用成功的回调函数															|
+|fail				|function	|				|否		|接口调用失败的回调函数															|
+|complete		|function	|				|否		|接口调用结束的回调函数（调用成功、失败都会执行）			|
+
+
 **MapContext.on()** (app-nvue、微信小程序支持)
 
 `markerClusterCreate`

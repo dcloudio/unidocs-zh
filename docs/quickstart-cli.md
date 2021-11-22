@@ -45,8 +45,21 @@ vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
 
 可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，示例：
 
+
+```
+npx @dcloudio/uvm
+```
+
+```
+npx @dcloudio/uvm alpha
+```
+
 ```
 npx @dcloudio/uvm 3.2.12.20211029
+```
+
+```
+npx @dcloudio/uvm 3.2.14.20211112-alpha
 ```
 
 ## 运行、发布uni-app

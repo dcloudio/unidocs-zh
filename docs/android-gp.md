@@ -1,4 +1,4 @@
-## Google Play上架
+#### Google Play上架
 
 首先App提交云端打包时请务必勾选“GooglePlay”渠道：
 

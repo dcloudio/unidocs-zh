@@ -41,7 +41,10 @@
   * [统一发行页面](m3w.md)
 * [案例](case.md)
 * [选型评估指南](select.md)
-* [应用市场上架](store.md)
+* 应用市场上架
+  * [国内应用市场上架](app/android/android-store.md)
+  * [Google Play上架](app/android/android-gp.md)
+  * [App Store上架](app/ios/app-store.md)
 * [常见问题](faq.md)
 * 更新日志
   * [正式版](release.md)

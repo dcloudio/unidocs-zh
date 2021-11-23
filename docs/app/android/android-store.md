@@ -1,6 +1,6 @@
 ## 国内应用市场上架
 
-## 背景
+### 背景
 
 为有效治理App强制授权、过度索权、超范围收集个人信息等现象，落实《网络安全法》《消费者权益保护法》的要求，保障个人信息安全，2019年1月，中央网信办、工信部、公安部、市场监管总局等四部委发布了《关于开展App违法违规收集使用个人信息专项治理的公告》，在全国范围组织开展App违法违规收集使用个人信息专项治理，并陆续出台完善了《App违法违规收集使用个人信息行为认定方法》、《GB/T 35273-2020 信息安全技术 个人信息安全规范》等标准规范。
 
@@ -14,24 +14,24 @@
 
 **`首先碰到此问题请更新到HbuilderX3.1.22及以上版本`**
 
-## 如何解决"违规收集个人信息"问题
+### 如何解决"违规收集个人信息"问题
 关于收集个人信息问题，首先应用必须配置“隐私与政策”协议框，其次必须在“隐私与政策”非常清楚、全面地说明（不要用可能收集、了解用户信息这种模糊不清晰的词语）收集用户个人信息的目的、方式和范围，用户个人信息包括但不限于mac地址、设备序列号、imei、imsi、软件安装列表、通讯录信息、短信信息等。
 
-## **注意：根据政策要求隐私提示框显示之前不能调用涉及个人信息相关API（如设备标识），因此需要更新到HBuilderX3.1.22及以上版本重新提交云端打包**
+### **注意：根据政策要求隐私提示框显示之前不能调用涉及个人信息相关API（如设备标识），因此需要更新到HBuilderX3.1.22及以上版本重新提交云端打包**
 
-### 第一步：配置隐私与政策提示框
+#### 第一步：配置隐私与政策提示框
 
 必须确保应用存在《隐私政策》，在应用首次启动时弹出提示并取得用户同意。
 
-## **注意：一定要配置使用`template`模式隐私与政策提示框，详情参考[https://ask.dcloud.net.cn/article/36937](https://ask.dcloud.net.cn/article/36937)**
+**注意：一定要配置使用`template`模式隐私与政策提示框，详情参考[https://ask.dcloud.net.cn/article/36937](https://ask.dcloud.net.cn/article/36937)**
 
-### 第二步：在隐私政策中添加DCloud相关条款
+#### 第二步：在隐私政策中添加DCloud相关条款
 
 请在《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发，添加如下参考条款：
 
 `我们的产品基于DCloud uni-app(5+ App/Wap2App)开发，应用运行期间需要收集您的设备唯一识别码（IMEI/android ID/DEVICE_ID/IDFA、SIM 卡 IMSI 信息）以提供统计分析服务，并通过应用启动数据及异常错误日志分析改进性能和用户体验，为用户提供更好的服务。`
 
-### 第三步：在隐私政策中添加其它三方SDK的条款
+#### 第三步：在隐私政策中添加其它三方SDK的条款
 
 #### uni-app默认集成三方SDK
 
@@ -149,7 +149,7 @@ uni-AD广告模块集成的三方SDK说明
 《隐私政策》必须非常清楚、全面地说明（不要用可能收集、了解用户信息这种模糊不清晰的词语）收集用户个人信息的目的、方式和范围。
 如果应用使用“通讯录”、“短信”等相关功能，请根据应用业务场景进行描述。
 
-## 常见问题
+### 常见问题
 
 #### 如何解决"强制、频繁、过度索取权限"问题
 
@@ -225,7 +225,7 @@ uni-AD广告基础功能包含管理其它三方广告SDK的逻辑，会通过�
 
 [安全漏洞参考文档](https://ask.dcloud.net.cn/article/39020)
 
-## 相关参考
-Android平台隐私与政策提示框配置方法：[https://ask.dcloud.net.cn/article/36937](https://ask.dcloud.net.cn/article/36937)
-Android平台应用启动时读写手机存储、访问设备信息(如IMEI)等权限策略及提示信息：[https://ask.dcloud.net.cn/article/36549](https://ask.dcloud.net.cn/article/36549)
-Android平台配置权限参考：[https://ask.dcloud.net.cn/article/36982](https://ask.dcloud.net.cn/article/36982)
+#### 相关参考
++ Android平台隐私与政策提示框配置方法：[https://ask.dcloud.net.cn/article/36937](https://ask.dcloud.net.cn/article/36937)
++ Android平台应用启动时读写手机存储、访问设备信息(如IMEI)等权限策略及提示信息：[https://ask.dcloud.net.cn/article/36549](https://ask.dcloud.net.cn/article/36549)
++ Android平台配置权限参考：[https://ask.dcloud.net.cn/article/36982](https://ask.dcloud.net.cn/article/36982)

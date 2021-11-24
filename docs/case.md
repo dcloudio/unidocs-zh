@@ -707,7 +707,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目，
 #### 更多小程序案例（可在微信小程序中搜索）@wx-more
 
 <div>
-<link rel="stylesheet" type="text/css" href="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/5a16cdf0-4f3f-11eb-8ff1-d5dcf8779628.css"/>
+<link rel="stylesheet" type="text/css" href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/f348df58-9b34-4682-9330-1c52464d08df.css"/>
 <ul class="wx-icon-group">
     <li class="wx-icon-item"><span class="wx-icon wx-icon0"></span><span>BAT全书</span></li>
     <li class="wx-icon-item"><span class="wx-icon wx-icon1"></span><span>逗图圈</span></li>

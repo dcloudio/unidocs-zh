@@ -28,9 +28,9 @@
 #### Status Options
 |参数名称|说明|
 |:-:|:-:|
-|more|loading前|
-|loading|loading前中	|
-|more|没有更多数据	|
+|more|加载前|
+|loading|加载中	|
+|no-more|没有更多数据	|
 
 #### IconType Options
 |参数名称|说明|

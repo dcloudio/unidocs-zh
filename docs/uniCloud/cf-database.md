@@ -1085,6 +1085,8 @@ db.collection("table1").doc("5f79fdb337d16d0001899566").remove()
 
 ### 更新指定文档@doc-update
 
+**使用腾讯云时更新方法必须搭配doc、where方法使用，`db.collection('test').update()`会报如下错误：`param should have required property 'query'`**
+
 collection.doc().update(Object data)
 
 > 未使用set、remove更新操作符的情况下，此方法不会删除字段，仅将更新数据和已有数据合并。

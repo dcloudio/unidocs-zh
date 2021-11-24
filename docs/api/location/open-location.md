@@ -23,7 +23,7 @@
 **示例**
 
 ```javascript
-uni.getLocation({
+uni.openLocation({
 	type: 'gcj02', //返回可以用于uni.openLocation的经纬度
 	success: function (res) {
 		const latitude = res.latitude;

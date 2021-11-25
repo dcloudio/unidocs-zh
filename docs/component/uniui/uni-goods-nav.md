@@ -1,6 +1,7 @@
 > **组件名：uni-goods-nav**
 > 代码块： `uGoodsNav`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-goods-nav)
 
 商品加入购物车，立即购买
 

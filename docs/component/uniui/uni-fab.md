@@ -1,6 +1,8 @@
 
 > **组件名：uni-fab**
 > 代码块： `uFab`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-fab)
 
 点击可展开一个图形按钮菜单
 

@@ -1,7 +1,8 @@
 
 > **组件名：uni-file-picker**
 >  代码块： `uFilePicker`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-file-picker)
 
 文件选择上传组件，可以选择图片、视频等任意文件并上传到当前绑定的服务空间
 

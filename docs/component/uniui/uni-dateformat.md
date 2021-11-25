@@ -2,6 +2,8 @@
 
 > **组件名：uni-dateformat**
 > 代码块： `uDateformat`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-dateformat)
 
 日期格式化组件。
 

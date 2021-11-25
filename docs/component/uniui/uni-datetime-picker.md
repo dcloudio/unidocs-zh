@@ -5,7 +5,8 @@
 
 > **组件名：uni-datetime-picker**
 > 代码块： `uDatetimePicker`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-datetime-picker)
 
 该组件的优势是，支持**时间戳**输入和输出（起始时间、终止时间也支持时间戳），可**同时选择**日期和时间。
 

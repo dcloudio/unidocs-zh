@@ -2,7 +2,8 @@
 > **组件名：uni-popup**
 > 代码块： `uPopup`
 > 关联组件：`uni-popup-dialog`,`uni-popup-message`,`uni-popup-share`,`uni-transition`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-popup)
 
 弹出层组件，在应用中弹出一个消息提示窗口、提示框等
 

@@ -2,7 +2,8 @@
 > **组件名：uni-forms**
 > 代码块： `uForms`、`uni-forms-item`
 > 关联组件：`uni-forms-item`、`uni-easyinput`、`uni-data-checkbox`、`uni-group`。
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-forms)
 
 uni-app的内置组件已经有了 `<form>`组件，用于提交表单内容。
 

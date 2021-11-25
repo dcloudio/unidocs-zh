@@ -1,6 +1,7 @@
 > **组件名：uni-combox**
 > 代码块： `uCombox`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-combox)
 
 组合框组件。
 

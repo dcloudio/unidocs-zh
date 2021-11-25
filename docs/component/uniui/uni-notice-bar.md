@@ -1,7 +1,8 @@
 
 > **组件名：uni-notice-bar**
 > 代码块： `uNoticeBar`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-notice-bar)
 
 通告栏组件 。
 

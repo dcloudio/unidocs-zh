@@ -1,5 +1,7 @@
 
 > 组件名：``uni-table``，代码块： `uTable`。
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-table)
 
 用于展示多条结构类似的数据
 

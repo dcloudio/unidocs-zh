@@ -1,7 +1,8 @@
 
 > **组件名：uni-steps**
 > 代码块： `uSteps`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-steps)
 
 步骤条，常用于显示进度
 

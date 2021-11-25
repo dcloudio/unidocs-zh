@@ -1,6 +1,8 @@
 
 > **组件名：uni-load-more**
 > 代码块： `uLoadMore`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-load-more)
 
 用于列表中，做滚动加载使用，展示 loading 的各种状态。
 

@@ -1,7 +1,8 @@
 
 > **组件名：uni-icons**
 > 代码块： `uIcons`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-icons)
 
 用于展示 icons 图标 。
 

@@ -1,7 +1,8 @@
 > **组件名：uni-collapse**
 > 代码块： `uCollapse`
 > 关联组件：`uni-collapse-item`、`uni-icons`。
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-collapse)
 
 折叠面板用来折叠/显示过长的内容或者是列表。通常是在多内容分类项使用，折叠不重要的内容，显示重要内容。点击可以展开折叠部分。
 

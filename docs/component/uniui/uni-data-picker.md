@@ -1,7 +1,8 @@
 > **组件名：uni-data-picker**
 > 代码块： `uDataPicker`
 > 关联组件：`uni-data-pickerview`、`uni-load-more`。
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-data-picker)
 
 `<uni-data-picker>` 是一个选择类[datacom组件](https://uniapp.dcloud.net.cn/component/datacom)。
 

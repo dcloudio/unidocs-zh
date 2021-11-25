@@ -1,7 +1,8 @@
 
 > **组件名 uni-row、uni-col**
 > 代码块： `uRow`、`uCol`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-row)
 
 流式栅格系统，随着屏幕或视口分为 24 份，可以迅速简便地创建布局。
 

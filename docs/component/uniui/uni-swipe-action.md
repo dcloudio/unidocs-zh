@@ -1,7 +1,8 @@
 
 > **组件名：uni-swipe-action**
 > 代码块： `uSwipeAction`、`uSwipeActionItem`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-swipe-action)
 
 通过滑动触发选项的容器
 

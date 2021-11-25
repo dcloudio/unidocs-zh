@@ -1,7 +1,8 @@
 
 > **组件名：uni-segmented-control**
 > 代码块： `uSegmentedControl`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-segmented-control)
 
 用作不同视图的显示
 

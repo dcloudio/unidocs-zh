@@ -1,7 +1,8 @@
 
 > **组件名：uni-tag**
 > 代码块： `uTag`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-tag)
 
 用于展示1个或多个文字标签，可点击切换选中、不选中的状态 。
 

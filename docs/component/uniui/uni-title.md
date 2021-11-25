@@ -1,7 +1,8 @@
 
 > **组件名：uni-title**
 > 代码块： `uTitle`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-title)
 
 章节标题，通常用于记录页面标题，使用当前组件，uni-app 如果开启统计，将会自动统计页面标题 。
 

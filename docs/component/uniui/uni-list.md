@@ -1,7 +1,8 @@
 > **组件名：uni-list**
 > 代码块： `uList`、`uListItem`
 > 关联组件：`uni-list-item`、`uni-badge`、`uni-icons`、`uni-list-chat`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-list)
 
 List 列表组件，包含基本列表样式、可扩展插槽机制、长列表性能优化、多端兼容。
 

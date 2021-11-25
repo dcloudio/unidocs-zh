@@ -1,6 +1,8 @@
 
 > **组件名：uni-nav-bar**
 > 代码块： `uNavBar`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-nav-bar)
 
 导航栏组件，主要用于头部导航。
 

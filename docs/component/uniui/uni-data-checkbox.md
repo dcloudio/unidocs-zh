@@ -1,8 +1,8 @@
 
-
 > **组件名：uni-data-checkbox**
 > 代码块： `uDataCheckbox`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-data-checkbox)
 
 本组件是基于uni-app基础组件checkbox的封装。本组件要解决问题包括：
 

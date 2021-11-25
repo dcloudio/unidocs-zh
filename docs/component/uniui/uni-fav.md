@@ -1,6 +1,8 @@
 
 > **组件名：uni-fav**
 > 代码块： `uFav`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-fav)
 
 用于收藏功能，可点击切换选中、不选中的状态。
 

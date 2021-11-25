@@ -1,6 +1,7 @@
 > **组件名：uni-calendar**
 > 代码块： `uCalendar`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-calendar)
 
 日历组件
 

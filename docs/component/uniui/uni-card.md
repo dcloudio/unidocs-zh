@@ -1,5 +1,7 @@
 > **组件名：uni-card**
 > 代码块： `uCard`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-card)
 
 卡片视图组件。
 

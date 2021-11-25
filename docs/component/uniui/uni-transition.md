@@ -1,7 +1,8 @@
 
 > **组件名：uni-transition**
 > 代码块： `uTransition`
-
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-transition)
 
 元素过渡动画
 

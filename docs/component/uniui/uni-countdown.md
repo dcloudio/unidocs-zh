@@ -1,7 +1,7 @@
-
-
 > **组件名：uni-countdown**
 > 代码块： `uCountDown`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-countdown)
 
 倒计时组件。
 

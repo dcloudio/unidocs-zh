@@ -1,5 +1,7 @@
 > **组件名：uni-search-bar**
 > 代码块： `uSearchBar`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-search-bar)
 
 评分组件
 

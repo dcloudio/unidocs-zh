@@ -1,5 +1,7 @@
 > **组件名：uni-indexed-list**
 > 代码块： `uIndexedList`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-indexed-list)
 
 用于展示索引列表。
 

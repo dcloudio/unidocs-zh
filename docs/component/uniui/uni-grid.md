@@ -1,6 +1,8 @@
 
 > **组件名：uni-grid**
 > 代码块： `uGrid`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-grid)
 
 宫格组件。
 

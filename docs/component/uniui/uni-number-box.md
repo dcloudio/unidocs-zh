@@ -1,6 +1,8 @@
 
 > **组件名：uni-number-box**
 > 代码块： `uNumberBox`
+> 
+>  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-number-box)
 
 带加减按钮的数字输入框。
 

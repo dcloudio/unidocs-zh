@@ -25,9 +25,10 @@
 + 必须确保应用存在《隐私政策》，在应用首次启动时弹出提示并取得用户同意。
 + 必须在《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发，添加如下参考条款：
 
-	`我们的产品基于DCloud uni-app(5+ App/Wap2App)开发，应用运行期间需要收集您的设备唯一识别码（IMEI/android ID/DEVICE_ID/IDFA、SIM 卡 IMSI 信息）以提供统计分析服务，并通过应用启动数据及异常错误日志分析改进性能和用户体验，为用户提供更好的服务。`
-
-	注意：一定要配置使用`template`模式隐私与政策提示框 [详情参考](https://ask.dcloud.net.cn/article/36937)
+```
+	我们的产品基于DCloud uni-app(5+ App/Wap2App)开发，应用运行期间需要收集您的设备唯一识别码（IMEI/android ID/DEVICE_ID/IDFA、SIM 卡 IMSI 信息）以提供统计分析服务，并通过应用启动数据及异常错误日志分析改进性能和用户体验，为用户提供更好的服务。
+```
++ 一定要配置使用`template`模式隐私与政策提示框 [详情参考](https://ask.dcloud.net.cn/article/36937)
 
 ### 常见问题
 

@@ -44,7 +44,7 @@ export default {
 ```
 
 ```
-// 2.8.9+ 支持
+// 在起始页面跳转到test.vue页面，并监听test.vue发送过来的事件数据
 uni.navigateTo({
   url: 'pages/test?id=1',
   events: {
@@ -59,21 +59,20 @@ uni.navigateTo({
   },
   success: function(res) {
     // 通过eventChannel向被打开页面传送数据
-    res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
+    res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'data from starter page' })
   }
 })
 
-// uni.navigateTo 目标页面 pages/test.vue
+// 在test.vue页面，向起始页通过事件传递数据
 onLoad: function(option) {
-  console.log(option.query)
   // #ifdef APP-NVUE
   const eventChannel = this.$scope.eventChannel; // 兼容APP-NVUE
   // #endif
   // #ifndef APP-NVUE
   const eventChannel = this.getOpenerEventChannel();
   // #endif
-  eventChannel.emit('acceptDataFromOpenedPage', {data: 'test'});
-  eventChannel.emit('someEvent', {data: 'test'});
+  eventChannel.emit('acceptDataFromOpenedPage', {data: 'data from test page'});
+  eventChannel.emit('someEvent', {data: 'data from test page for someEvent'});
   // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
   eventChannel.on('acceptDataFromOpenerPage', function(data) {
     console.log(data)

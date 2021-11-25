@@ -10,141 +10,24 @@
 
 针对以上问题，请参考下文的解决方案，务必仔细阅读，注意各细节问题。
 
-### 如何解决"违规收集个人信息"问题
+### APP因合规问题无法上架
 
-关于收集个人信息问题，首先应用必须配置“隐私与政策”协议框，其次必须在“隐私与政策”非常清楚、全面地说明（不要用可能收集、了解用户信息这种模糊不清晰的词语）收集用户个人信息的目的、方式和范围，用户个人信息包括但不限于mac地址、设备序列号、imei、imsi、软件安装列表、通讯录信息、短信信息等。
+请认真的阅读以下步骤来检测自己的APP！有效的解决上架问题
 
-注意：根据政策要求隐私提示框显示之前不能调用涉及个人信息相关API（如设备标识），因此需要更新到HBuilderX3.2.15及以上版本重新提交云端打包
++ 如果你的APP不是由HbuilderX3.2.15+云打包生产的请抓紧时间升级到HbuilderX3.2.15+版本。重新打包！
++ 如果你的APP是离线打包请升级SDK到3.2.15+版本重新编辑打包！
++ 如何你的APP没有配置隐私与政策提示框。请抓紧时间阅读[Android平台隐私与政策提示框配置方法](https://ask.dcloud.net.cn/article/36937)配置你APP的隐私弹窗！！！
++ 你的APP上面三条都符合要求。上架依然失败请向检测平台要求提供代码调用堆栈。请拿着堆栈信息去找管理人员吧！！！
 
-#### 第一步：配置隐私与政策提示框
+### 隐私政策需要注意
 
-必须确保应用存在《隐私政策》，在应用首次启动时弹出提示并取得用户同意。
++ 必须在“隐私与政策”非常清楚、全面地说明（不要用可能收集、了解用户信息这种模糊不清晰的词语）收集用户个人信息的目的、方式和范围，用户个人信息包括但不限于mac地址、设备序列号、imei、imsi、软件安装列表、通讯录信息、短信信息等。
++ 必须确保应用存在《隐私政策》，在应用首次启动时弹出提示并取得用户同意。
++ 必须在《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发，添加如下参考条款：
+
+	`我们的产品基于DCloud uni-app(5+ App/Wap2App)开发，应用运行期间需要收集您的设备唯一识别码（IMEI/android ID/DEVICE_ID/IDFA、SIM 卡 IMSI 信息）以提供统计分析服务，并通过应用启动数据及异常错误日志分析改进性能和用户体验，为用户提供更好的服务。`
 
 注意：一定要配置使用`template`模式隐私与政策提示框 [详情参考](https://ask.dcloud.net.cn/article/36937)
-
-#### 第二步：在隐私政策中添加DCloud相关条款
-
-请在《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发，添加如下参考条款：
-
-`我们的产品基于DCloud uni-app(5+ App/Wap2App)开发，应用运行期间需要收集您的设备唯一识别码（IMEI/android ID/DEVICE_ID/IDFA、SIM 卡 IMSI 信息）以提供统计分析服务，并通过应用启动数据及异常错误日志分析改进性能和用户体验，为用户提供更好的服务。`
-
-#### 第三步：在隐私政策中添加其它三方SDK的条款
-
-#### uni-app默认集成三方SDK
-
-|SDK名称|SDK包名|SDK用途|可能获取的个人信息类型|调用的设备权限|官网链接|
-|:----|:----|:----|:----|:----|:----
-|阿里weexSDK|com.taobao|uni-app基础模块默认集成，用于渲染uniapp的nvue页面引擎|存储的个人文件|读取外置存储器、写入外置存储器|[http://doc.weex.io/zh](http://doc.weex.io/zh/)|
-|fresco图片库|com.facebook.fresco|uni-app基础模块默认集成，用于nvue页面加载图片使用|存储的个人文件|读取外置存储器、写入外置存储器|[https://www.fresco-cn.org/](https://www.fresco-cn.org/)|
-
-#### UniPush
-
-UniPush是DCloud联合个推公司推出的集成型统一推送服务，使用了个推提供的SDK，因此需要在《隐私政策》中添加“个推消息推送SDK”相关说明。
-建议《隐私政策》添加 “与授权合作伙伴共享”条款中，将 个推的用户隐私政策 加入其中，并向终端用户逐一明示您嵌入的SDK收集使用个人信息的目的、方式和范围。参考内容如下：
-
-`消息推送服务供应商：由每日互动股份有限公司提供推送技术服务，我们可能会将您的设备平台、设备厂商、设备品牌、设备识别码等设备信息，应用列表信息、网络信息以及位置相关信息提供给每日互动股份有限公司，用于为您提供消息推送技术服务。我们在向您推送消息时，我们可能会授权每日互动股份有限公司进行链路调节，相互促活被关闭的SDK推送进程，保障您可以及时接收到我们向您推送的消息。详细内容请访问《个推用户隐私政策》（需将《个推用户隐私政策》超链至：http://docs.getui.com/privacy）`。
-
-UniPush模块集成的三方SDK说明
-
-|SDK名称|SDK包名|SDK用途|可能获取的个人信息类型|调用的设备权限|SDK隐私政策链接|
-|:----|:----|:----|:----|:----|:----
-|个推|com.getui.gtc 、com.igexin.sdk|UniPush推送|网络信息、IMEI、openid|获取网络状态、访问Wi-Fi状态、读取手机状态和身份|[https://docs.getui.com/privacy/](https://docs.getui.com/privacy/)
-
-#### Statistic
-
-HX3.1.14+ 友盟SDK已升级到9.3.8版本 适配合规问题
-
-+ 当你集成了统计模块。您需要确保App有《隐私政策》，并且在用户首次启动App时就弹出《隐私政策》取得用户同意！！！
-+ 您务必告知用户您选择友盟+SDK服务，请在《隐私政策》中增加如下参考条款：“我们的产品集成友盟+SDK，友盟+SDK需要收集您的设备Mac地址、唯一设备识别码（IMEI/android ID/IDFA/OPENUDID/GUID、SIM 卡 IMSI 信息）以提供统计分析服务，并通过地理位置校准报表数据准确性，提供基础反作弊能力。”
-+ 您务必确保用户同意《隐私政策》之后。再调用相关api！！！！
-
-Statistic模块集成的三方SDK说明
-
-|SDK名称|SDK包名|SDK用途|可能获取的个人信息类型|调用的设备权限|SDK隐私政策链接|
-|:----|:----|:----|:----|:----|:----
-|友盟|com.uc.crashsdk、com.efs、com.umeng|统计|网络信息、IMEI、openid|获取网络状态、访问Wi-Fi状态、读取手机状态和身份|[https://developer.umeng.com/docs/...](https://developer.umeng.com/docs/119267/detail/182050)
-
-#### OAuth
-
-OAuth模块集成的三方SDK说明
-
-|SDK名称|SDK包名|SDK用途|可能获取的信息类型|调用的设备权限|SDK隐私政策链接|
-|:----|:----|:----|:----|:----|:----
-|微信|com.tencent.mm|微信登录|存储的个人文件|读取外置存储器、写入外置存储器|[https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy](https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy)|
-|新浪微博|com.sina.weibo|新浪微博登录|存储的个人文件、IMEI、openid|读取外置存储器、写入外置存储器|[https://weibo.com/signup/v5/privacy?spm=a1zaa.8161610.0.0.4f8776217Wu8R1](https://weibo.com/signup/v5/privacy?spm=a1zaa.8161610.0.0.4f8776217Wu8R1)|
-|QQ登录|com.tencent.open|QQ登录|IMEI、openid、位置信息|访问粗略位置、访问精准定位、后台访问地理位置、读取外置存储器、写入外置存储器、读取手机状态和身份|[https://ti.qq.com/agreement/qqface.html?appname=mqq_2019](https://ti.qq.com/agreement/qqface.html?appname=mqq_2019)|
-|个验一键登录|com.g.elogin、com.g.gysdk|一键登录|运营商信息|读取外置存储器、写入外置存储器|[https://docs.getui.com/privacy/](https://docs.getui.com/privacy/)|
-
-#### Share
-Share模块集成的三方SDK说明
-
-|SDK名称|SDK包名|SDK用途|可能获取的信息类型|调用的设备权限|SDK隐私政策链接|
-|:----|:----|:----|:----|:----|:----
-|微信|com.tencent.mm|微信分享|存储的个人文件|读取外置存储器、写入外置存储器|[https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy](https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy)|
-|新浪微博|com.sina.weibo|新浪微博分享|存储的个人文件、IMEI、openid|读取外置存储器、写入外置存储器|[https://weibo.com/signup/v5/privacy?spm=a1zaa.8161610.0.0.4f8776217Wu8R1](https://weibo.com/signup/v5/privacy?spm=a1zaa.8161610.0.0.4f8776217Wu8R1)|
-|QQ|com.tencent.open|QQ分享|IMEI、openid、位置信息|访问粗略位置、访问精准定位、后台访问地理位置、读取外置存储器、写入外置存储器、读取手机状态和身份|[https://ti.qq.com/agreement/qqface.html?appname=mqq_2019](https://ti.qq.com/agreement/qqface.html?appname=mqq_2019)|
-
-#### Payment
-
-Payment模块集成的三方SDK说明
-
-|SDK名称|SDK包名|SDK用途|可能获取的信息类型|调用的设备权限|SDK隐私政策链接|
-|:----|:----|:----|:----|:----|:----
-|微信|com.tencent.mm|微信支付|存储的个人文件|读取外置存储器、写入外置存储器|[https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy](https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy)|
-|支付宝|com.alipay|支付宝支付|暂无|读取网络状态|[https://render.alipay.com/p/c/k2cx0tg8](https://render.alipay.com/p/c/k2cx0tg8)|
-
-#### Speech
-
-Speech模块集成的三方SDK说明
-
-|SDK名称|SDK包名|SDK用途|可能获取的个人信息类型|调用的设备权限|SDK隐私政策链接|
-|:----|:----|:----|:----|:----|:----
-|百度语音识别|com.baidu.speech|语音识别|IMEI、openid|获取网络状态、访问Wi-Fi状态、读取手机状态和身份|[https://ai.baidu.com/ai-doc/REFERENCE/Qkdykq1r3](https://ai.baidu.com/ai-doc/REFERENCE/Qkdykq1r3)|
-|讯飞语音|com.iflytek|语音识别|IMEI、openid|获取网络状态、访问Wi-Fi状态、读取手机状态和身份|[https://www.xfyun.cn/doc/policy/privacy.html](https://www.xfyun.cn/doc/policy/privacy.html)|
-
-#### Map & Geolocation
-
-Map & Geolocation模块集成的三方SDK说明
-
-|SDK名称|SDK包名|SDK用途|可能获取的个人信息类型|调用的设备权限|SDK隐私政策链接|
-|:----|:----|:----|:----|:----|:----
-|高德|com.amap.api, com.loc, com.autonavi|地图&定位|IMEI、openid、位置信息|获取网络状态、访问Wi-Fi状态、位置信息、访问粗略位置、访问精准定位、读取手机状态和身份|[https://lbs.amap.com/agreement/compliance](https://lbs.amap.com/agreement/compliance)|
-|百度|com.baidu|地图&定位|IMEI、openid、位置信息|获取网络状态、访问Wi-Fi状态、位置信息、访问粗略位置、访问精准定位、读取手机状态和身份|[https://map.baidu.com/zt/client/privacy/index.html](https://map.baidu.com/zt/client/privacy/index.html)|
-
-
-#### uni-AD
-
-uni-AD广告模块集成的三方SDK说明
-
-|SDK名称|SDK包名|SDK用途|可能获取的个人信息类型|调用的设备权限|SDK隐私政策链接/目的|
-|:----|:----|:----|:----|:----|:----
-|uni-AD||广告|设备品牌、型号、操作系统版本、OAID、分辨率、IMEI、android ID、SIM 卡 IMSI 信息、应用名称、应用包名、应用版本号、网络信息、应用安装列表、位置信息|获取网络状态、位置信息、访问Wi-Fi状态、读取手机状态和身份|广告投放合作、广告主归因、反作弊
-|快手|com.kwad.sdk|广告|IMEI、openid、位置信息|获取网络状态、访问Wi-Fi状态、位置信息、读写外置存储器、读取手机状态和身份|[https://www.kuaishou.com/about/policy](https://www.kuaishou.com/about/policy)|
-|优量汇|com.qq.e|广告|IMEI、openid、位置信息|获取网络状态、访问Wi-Fi状态、位置信息、读写外置存储器、读取手机状态和身份|[https://imgcache.qq.com/..privacy](https://imgcache.qq.com/gdt/cdn/adn/uniondoc/ylh_sdk_privacy_statement.html)|
-|穿山甲|com.bytedance.sdk. openadsdk.adhost|广告|IMEI、openid、位置信息|获取网络状态、访问Wi-Fi状态、位置信息、读写外置存储器、读取手机状态和身份|[https://www.pangle.cn/privacy/partner](https://www.pangle.cn/privacy/partner)|
-|Sigmob|com.sigmob.windad|广告|IMEI、openid、位置信息|获取网络状态、访问Wi-Fi状态、位置信息、读写外置存储器、读取手机状态和身份|[https://support.sigmob.com/#/隐私条款/](https://support.sigmob.com/#/%E9%9A%90%E7%A7%81%E6%9D%A1%E6%AC%BE/)|
-
-#### 腾讯x5内核
-
-|SDK名称|SDK包名|SDK用途|可能获取的个人信息类型|调用的设备权限|SDK隐私政策链接|
-|:----|:----|:----|:----|:----|:----
-|x5内核|com.tencent.tbs、com.tencent.smtt|x5内核渲染webview|IMEI、openid|读写外置存储器、读取手机状态和身份|[https://x5.tencent.com/docs/privacy.html](https://x5.tencent.com/docs/privacy.html)|
-
-
-如果您的应用使用了依赖三方SDK的模块也需要将其合规条款添加到《隐私政策》中
-
-#### uni原生插件
-
-如果应用使用了uni原生插件，需要注意一下几点：
-
-+ 使用插件时请查看插件详情页面中的 `隐私、权限声明` 。（插件使用什么sdk？获取了什么用户信息？都应由插件作者提供并填写在 `隐私、权限声明`中）
-+ 将插件中用到的三方SDK信息添加到用户隐私协议中。例如集成了`百度定位`。就需要在隐私协议中说明集成了百度定位SDK。获取了xxx用户信息!用于xxx.
-+ 如果发现插件有获取用户信息而插件详情页并没有提供`隐私、权限声明`，请与插件开发者或与我们反馈共同督促进行补充。
-
-#### 其它
-
-《隐私政策》必须非常清楚、全面地说明（不要用可能收集、了解用户信息这种模糊不清晰的词语）收集用户个人信息的目的、方式和范围。
-如果应用使用“通讯录”、“短信”等相关功能，请根据应用业务场景进行描述。
 
 ### 常见问题
 

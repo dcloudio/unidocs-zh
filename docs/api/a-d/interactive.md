@@ -107,8 +107,7 @@
 	</tbody>
 </table>
 
-注：活动名称在开通时不能选择，如需修改，请邮件联系[uniad@dcloud.io](mailto:uniad@dcloud.io)
-
+注：如要选择对应的活动，请在创建互动游戏广告位时把对应的活动名称填入到广告位名称内，创建后不可修改，如需修改，请邮件联系[uniad@dcloud.io](mailto:uniad@dcloud.io)
 
 ## 关于奖励发放的说明
 

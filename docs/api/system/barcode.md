@@ -12,10 +12,19 @@
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-:|
 |onlyFromCamera|Boolean|否|是否只能从相机扫码，不允许从相册选择图片|字节跳动小程序不支持此参数|
-|scanType|Array|否|扫码类型，参数类型是数组，二维码是'qrCode'，一维码是'barCode'，DataMatrix是‘datamatrix’，pdf417是‘pdf417’。|字节跳动小程序不支持此参数|
+|scanType|Array|否|扫码类型，参考下方`scanType的合法值`|字节跳动小程序不支持此参数|
 |success|Function|否|接口调用成功的回调，返回内容详见返回参数说明。||
 |fail|Function|否|接口调用失败的回调函数（识别失败、用户取消等情况下触发）||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+**scanType的合法值**
+
+|值|说明|
+|:-|:-|
+|barCode|一维码|
+|qrCode|二维码|
+|datamatrix|Data Matrix 码|
+|pdf417|PDF417 条码|
 
 **success 返回参数说明**
 

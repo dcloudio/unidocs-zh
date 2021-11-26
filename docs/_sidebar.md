@@ -31,6 +31,10 @@
 * [uni_modules插件规范](uni_modules.md)
 * [从其他项目转uni-app](translate.md)
 * [混合开发](hybrid.md)
+* App上架指南
+  * [国内应用市场上架](android-store.md)
+  * [Google Play上架](android-gp.md)
+  * [App Store上架](ios-app-store.md)
 * [uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
 * 运营服务
   * [App升级中心](uniCloud/upgrade-center.md)
@@ -41,10 +45,6 @@
   * [统一发行页面](m3w.md)
 * [案例](case.md)
 * [选型评估指南](select.md)
-* 应用市场上架
-  * [国内应用市场上架](android-store.md)
-  * [Google Play上架](android-gp.md)
-  * [App Store上架](ios-app-store.md)
 * [常见问题](faq.md)
 * 更新日志
   * [正式版](release.md)

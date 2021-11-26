@@ -7,7 +7,7 @@ Google Play上架审核要求比较严格，应用中不能存在以下行为：
 - 不能直接下载apk方式安装应用，需引导用户到Google Play安装
 - 不能存在动态加载代码行为
 
-uni-app中部分功能模块不符合Google Play审核要求，需注意使用。
+uni-app中部分功能模块不符合Google Play审核要求，请仔细阅读下面章节。
 
 ### 必须适配Android11
 “App常用其它设置”中需要将targetSdkVersion设置值大于等于30

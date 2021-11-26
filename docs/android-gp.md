@@ -1,4 +1,3 @@
-## Google Play上架注意事项
 
 首先App提交云端打包时请务必勾选“GooglePlay(AAB)”渠道
 
@@ -63,5 +62,5 @@ uni-AD国内增强广告（如穿山甲、广点通、快手等SDK）显示的�
 
 请不要集成X5相依赖库webview-x5-release.aar，如有请删除
 
-## 其它相关问题
+### 其它相关问题
 - Android App Bundle(AAB)格式相关说明：[https://ask.dcloud.net.cn/article/39052](https://ask.dcloud.net.cn/article/39052)

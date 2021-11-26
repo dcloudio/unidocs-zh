@@ -1,16 +1,46 @@
-#### Google Play上架
+## Google Play上架注意事项
 
-首先App提交云端打包时请务必勾选“GooglePlay”渠道：
+首先App提交云端打包时请务必勾选“GooglePlay(AAB)”渠道
 
-![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/doc/channel-google.png)
+![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/doc/app/android/googleplay/channel.png)
 
-Google Play上架审核要求比较严格，需要注意以下问题：
-- 应用中不能存在下载/安装apk的行为，不要勾选android.permission.INSTALL_PACKAGES、android.permission.REQUEST_INSTALL_PACKAGES权限‘
-- 应用中的任何功能都不能引导用户下载其它应用，以下模块不能使用：
-  + QQ登录、QQ分享：手机没有安装QQ应用时，会引导用户安装
-  + uni-AD 增强广告SDK：广告中存在下载安装其它三方应用的行为。**uni-AD 广告基础功能不受影响**
-- 应用中不能使用动态加载代码，因此无法配置使用X5内核，详情：[https://ask.dcloud.net.cn/article/36806](https://ask.dcloud.net.cn/article/36806)
+Google Play上架审核要求比较严格，应用中不能存在以下行为：
+- 不能直接下载apk方式安装应用，需引导用户到Google Play安装
+- 不能存在动态加载代码行为
 
-**应用必须适配Android11，设置targetSdkVersion大于等于30：**[https://ask.dcloud.net.cn/article/193](https://ask.dcloud.net.cn/article/193#targetsdkversion)
+uni-app中部分功能模块不符合Google Play审核要求，需注意使用。
 
-**上传安装包使用Android App Bundle（AAB）格式：**[https://ask.dcloud.net.cn/article/39052](https://ask.dcloud.net.cn/article/39052)
+### 必须适配Android11
+“App常用其它设置”中需要将targetSdkVersion设置值大于等于30
+
+![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/doc/app/android/googleplay/targetsdkversion.png)
+
+**注意：务必在Android11设备上进行测试，确保应用所有功能可以正常运行**
+
+
+### 不能包含安装应用权限
+在App权限配置中不要勾选 android.permission.INSTALL_PACKAGES、android.permission.REQUEST_INSTALL_PACKAGES 权限
+
+![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/doc/app/android/googleplay/permission-install.png)
+
+**注意：如果使用了uni原生插件，可能会添加安装应用权限，请联系uni原生插件作者确认**
+
+### 不要使用QQ登录、QQ分享模块
+使用QQ登录、分享功能时，如果当前设备上没有安装QQ应用时，会引导用户下载安装，不符合Google Play的审核要求，因此提交到Google Play时不要勾选QQ登录及QQ分享模块
+
+![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/doc/app/android/googleplay/qq.png)
+
+### 不要使用国内增强广告SDK
+uni-AD国内增强广告（如穿山甲、广点通、快手等SDK）显示的广告落地页可能会引导用户下载安装apk，不符合Google Play的审核要求，因此提交到Google Play时不要勾选增强广告SDK
+
+![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/doc/app/android/googleplay/ad.png)
+
+**注意：uni-AD 广告基础功能不受影响**
+
+### 不要使用X5内核
+腾讯TBS（X5）内核在Android平台解决了很多适配问题（详情可参考：[https://ask.dcloud.net.cn/article/36806](https://ask.dcloud.net.cn/article/36806)），但它使用了动态热更新技术，不符合Google Play的审核要求，因此提交Google Play时不要勾选使用“Android X5 Webview(腾讯TBS)”模块
+
+![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/doc/app/android/googleplay/x5.png)
+
+## 其它相关问题
+- Android App Bundle(AAB)格式相关说明：[https://ask.dcloud.net.cn/article/39052](https://ask.dcloud.net.cn/article/39052)

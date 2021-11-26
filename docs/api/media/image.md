@@ -24,7 +24,6 @@ App端如需要更丰富的相机拍照API（如直接调用前置摄像头）�
 |width|Number|是|裁剪的宽度，单位为px，用于计算裁剪宽高比。||
 |height|Number|是|裁剪的高度，单位为px，用于计算裁剪宽高比。||
 |resize|Boolean|否|是否将width和height作为裁剪保存图片真实的像素值。默认值为true。注：设置为false时在裁剪编辑界面显示图片的像素值，设置为true时不显示||
-|saveToAlbum|Boolean|否|是否将裁剪的图片保存到手机相册里，默认值为false。|App (3.2.15+)|
 
 **Tips**
 

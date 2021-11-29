@@ -5,7 +5,9 @@
 keyword: 短信,sms
 -->
 
-从HBuilderX 2.8.1起，uniCloud内置了短信发送API。给开发者提供更方便、更便宜的短信发送能力。
+> 自HBuilderX 3.3.0-alpha起，本接口支持传入phoneList参数批量发送短信，其他参数均于发送单条短信相同
+
+自HBuilderX 2.8.1起，uniCloud内置了短信发送API。给开发者提供更方便、更便宜的短信发送能力。
 
 该服务类似小程序的模板消息，在一个固定模板格式的文字里自定义某些字段，而不是所有文字都可以随便写。
 
@@ -141,6 +143,7 @@ keyword: 短信,sms
 **调用示例**
 
 ```js
+// 发送单条短信示例
 'use strict';
 exports.main = async (event, context) => {
   try {
@@ -149,7 +152,7 @@ exports.main = async (event, context) => {
       smsKey: '****************',
       smsSecret: '****************',
       phone: '188********',
-      templateId: 'uniID_code',
+      templateId: '100**', // 请替换为自己申请的模板id
       data: {
         name: 'DCloud',
         code: '123456',
@@ -170,6 +173,35 @@ exports.main = async (event, context) => {
   }
 };
 
+// 批量发送短信示例
+'use strict';
+exports.main = async (event, context) => {
+  try {
+    const res = await uniCloud.sendSms({
+      appid: '__UNI__xxxxxxx',
+      smsKey: '****************',
+      smsSecret: '****************',
+      phoneList: ['188********', '138********'],
+      templateId: '100**', // 请替换为自己申请的模板id
+      data: {
+        name: 'DCloud',
+        code: '123456',
+        action: '注册',
+        expMinute: '3',
+      }
+    })
+    // 调用成功，请注意这时不代表发送成功
+    return res
+  } catch(err) {
+    // 调用失败
+    console.log(err.errCode)
+    console.log(err.errMsg)
+    return {
+      code: err.errCode,
+      msg: err.errMsg
+    }
+  }
+};
 ```
 
 本示例使用的模板为：

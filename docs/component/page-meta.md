@@ -38,10 +38,53 @@
 - `<page-meta>` 目前支持的配置仅为上表所列，并不支持所有 page.json 的配置
 - `<page-meta>` 与 pages.json 的设置相冲突时，会覆盖 page.json 的配置
 
+#### head标签@head
+
+> 新增于`HBuilderX 3.3.0` 
+
+vue3 下还可以使用在`page-meta`内使用浏览器原生 head 标签，**此用法仅 vue3 版本可用**，方便在 编译为 ssr 时进行 seo 优化。
+
+```html
+<template>
+  <page-meta
+    :background-text-style="bgTextStyle"
+    :background-color="bgColor"
+    :background-color-top="bgColorTop"
+    :background-color-bottom="bgColorBottom"
+    :scroll-top="scrollTop"
+    page-style="color: green"
+    root-font-size="16px"
+  >
+		<head> // 仅vue3支持，此节点下的元素会被拷贝到h5页面的head标签下（服务端渲染时也会生效），可以利用此特性进行seo优化
+			<meta name="keyword" :content="title" />
+		</head>
+  </page-meta>
+  <view class="content">
+  </view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+				keyword: '',
+      }
+    },
+		serverPrefetch(){ // 仅vue3版本支持
+			this.keyword = "ServerKeyword"
+		},
+    onLoad() {
+    },
+    methods: {
+    }
+  }
+</script>
+```
+
 
 #### 示例代码
 
-```
+```html
 <template>
   <page-meta
     :background-text-style="bgTextStyle"
@@ -85,3 +128,4 @@
   }
 </script>
 ```
+

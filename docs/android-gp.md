@@ -10,6 +10,7 @@ Google Play上架审核要求比较严格，应用中不能存在以下行为：
 uni-app中部分功能模块不符合Google Play审核要求，请仔细阅读下面章节。
 
 ### 必须适配Android11
+
 “App常用其它设置”中需要将targetSdkVersion设置值大于等于30
 
 ![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/doc/app/android/googleplay/targetsdkversion.png)
@@ -24,7 +25,9 @@ uni-app中部分功能模块不符合Google Play审核要求，请仔细阅读�
 
 #### 离线打包:
 
-请查看原生项目中的AndroidManifest.xml。如果包含以下权限请手动删除：
+1. 更新SDK3.2.15+版本
+
+2. 请查看原生项目中的AndroidManifest.xml。如果包含以下权限请手动删除：
 
 ```
 <uses-permission android:name="android.permission.INSTALL_PACKAGES" />

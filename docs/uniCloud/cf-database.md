@@ -3410,6 +3410,101 @@ let res = await db.collection('orders').aggregate()
 ]
 ```
 
+**多表联表查询**
+
+假设 `orders` 集合有以下记录：
+```js
+[
+  {"_id":4,"book":"book1","price":30,"quantity":2},
+  {"_id":5,"book":"book2","price":20,"quantity":1}
+]
+```
+`books` 集合有以下记录：
+```js
+[
+  {"_id":"book1","author":"author1","title":"novel 1"},
+  {"_id":"book2","author":"author2","title":"science 1"},
+]
+```
+`authors` 集合有以下记录：
+```js
+[
+  {"_id":"author1","name":"A1"},
+  {"_id":"author2","author":"A2"}
+]
+```
+
+如需orders关联books，book再关联authors查询，可以在pipeline内再使用lookup
+
+```js
+const db = cloud.database()
+const $ = db.command.aggregate
+let res = await db.collection('orders').aggregate()
+  .lookup({
+    from: 'books',
+    let: {
+      book_id: '$book'
+    },
+    pipeline: $.pipeline()
+      .match(
+        $.expr($.eq(['$_id', '$$book_id']))
+      )
+      .lookup({
+        from: 'authors',
+        let: {
+          author_id: '$author'
+        },
+        pipeline: $.pipeline()
+          .match(
+            $.expr($.eq(['$_id', '$$author_id']))
+          )
+          .done(),
+        as: 'authorList'
+      })
+      .done(),
+    as: 'bookList',
+  })
+  .end()
+
+```
+
+结果如下
+
+```js
+[
+  {
+		"_id":4,
+		"book":"book1",
+		"price":30,
+		"quantity":2,
+		"bookList": [{
+			"_id":"book1",
+			"author":"author1",
+			"title":"novel 1",
+			authorList: [{
+				"_id":"author1",
+				"name":"A1"
+			}]
+		}]
+	},
+  {
+		"_id":5,
+		"book":"book2",
+		"price":20,
+		"quantity":1,
+		"bookList": [{
+			"_id":"book2",
+			"author":"author2",
+			"title":"science 1",
+			authorList: [{
+				"_id":"author2",
+				"name":"A2"
+			}]
+		}]
+	}
+]
+```
+
 ### match@aggregate-match
 
 聚合阶段。根据条件过滤文档，并且把符合条件的文档传递给下一个流水线阶段。

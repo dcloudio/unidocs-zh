@@ -614,6 +614,8 @@ let result = await uniCloud.downloadFile({
 
 使用阿里云作为服务商时，云存储支持直接使用**restful api**对资源进行处理，下表列出支持的操作类型。
 
+如果你的数据库及云函数使用腾讯云，也是可以使用阿里云云存储的。详细用法参考：[连接多个服务空间](uniCloud/init.md)
+
 |功能			|操作参数	|参考文档																													|
 |:-:			|:-:		|:-:																														|
 |图片缩放		|resize		|[点击查看](https://help.aliyun.com/document_detail/44688.html?spm=a2c4g.11186623.2.10.274651b0YkQ5hE#concept-hxj-c4n-vdb)	|

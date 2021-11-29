@@ -8,7 +8,7 @@ uniCloud.callFunction()
 uniCloud.uploadFile()
 ```
 
-若项目连接了多个服务空间，`uniCloud`无法自动绑定；需开发者在客户端代码中，手动调用初始化方法`uniCloud.init`，绑定服务空间。
+若项目内需要使用多个服务空间，`uniCloud`无法自动绑定；需开发者在客户端代码中，手动调用初始化方法`uniCloud.init`，绑定服务空间。
 
 `uniCloud.init`方法会返回一个`uniCloud`实例，之后云开发API的调用都需要通过该`uniCloud`实例发起（类似实例调用）。
 
@@ -28,9 +28,6 @@ function init(options):uniCloud
 |spaceId			|String	|是					|-			|服务空间ID，**注意是服务空间ID，不是服务空间名称**	|
 |clientSecret	|String	|是	|-			|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看				|
 |endpoint			|String	|否					|`https://api.bspapp.com`	|服务空间地址，仅阿里云侧支持																			|	
-
-<!-- |autoSignIn		|Boolean|否					|true										|是否自动匿名登录																	|仅腾讯云侧支持																																	| -->
-
 
 **示例代码**
 

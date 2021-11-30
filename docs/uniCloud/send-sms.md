@@ -5,7 +5,7 @@
 keyword: 短信,sms
 -->
 
-> 自HBuilderX 3.3.0-alpha起，本接口支持传入phoneList参数批量发送短信，其他参数均于发送单条短信相同
+> 自`HBuilderX 3.3.0`起，本接口支持传入phoneList参数批量发送短信，其他参数均于发送单条短信相同
 
 自HBuilderX 2.8.1起，uniCloud内置了短信发送API。给开发者提供更方便、更便宜的短信发送能力。
 
@@ -27,7 +27,7 @@ keyword: 短信,sms
 |smsKey			|String	|是								|调用短信接口的密钥key，从 dev.dcloud.net.cn/uniSms 后台获取															|
 |smsSecret	|String	|是								|调用短信接口的密钥secret，从 dev.dcloud.net.cn/uniSms 后台获取														|
 |phone			|String	|和phoneList二选一|发送目标手机号，暂仅支持中国大陆手机号																										|
-|phoneList	|Array	|和phone二选一		|发送目标手机号，暂仅支持中国大陆手机号，最多50个手机号码																	|
+|phoneList	|Array	|和phone二选一		|发送目标手机号，暂仅支持中国大陆手机号，最多50个手机号码，`HBuilderX 3.3.0`起支持				|
 |templateId	|String	|是								|模版Id，短信内容为固定模板，详见下方说明（应用开发阶段，可以使用 DCloud 提供的测试模板）	|
 |data				|Object	|是								|模版里的各个变量字段，json格式																														|
 

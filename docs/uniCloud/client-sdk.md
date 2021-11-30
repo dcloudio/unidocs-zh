@@ -23,9 +23,11 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 
 解析客户端token获取用户信息。常用于在前端判断当前登录的用户状态和用户权限，比如根据不同的权限显示隐藏某些按钮。
 
-注意：不会发送网络请求，**注意这个仅仅是客户端接口，不校验token的合法性**
+**注意**
 
-注意：需要搭配uni-id使用并要求客户端必须将token存储在storage内的`uni_id_token`内
+- 此接口不会发送网络请求，**此接口仅仅是客户端接口，不校验token的合法性**
+- 需要搭配uni-id使用并要求客户端必须将token存储在storage内的`uni_id_token`内
+- 如需获取role、permission需要将角色权限缓存在token内，此功能自uni-id 3.0.0其默认开启，参考：[缓存角色权限](uniCloud/uni-id.md?id=cache-permission-in-token)
 
 用法：`uniCloud.getCurrentUserInfo()`
 
@@ -33,11 +35,11 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 
 **响应参数**
 
-| 字段			| 类型	| 说明							|
-| ---			| ---	| ---							|
-| uid			| Number|当前用户uid						|
-| role			| Array	|用户角色列表。admin用户返回["admin"]			|
-| permission	| Array	|用户权限列表。注意admin角色此数组为空|
+| 字段			| 类型	| 说明																|
+| ---				| ---		| ---																	|
+| uid				| Number|当前用户uid													|
+| role			| Array	|用户角色列表。admin用户返回["admin"]	|
+| permission| Array	|用户权限列表。注意admin角色此数组为空|
 
 未能获取用户信息时返回以下结果
 

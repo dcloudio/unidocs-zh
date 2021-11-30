@@ -19,7 +19,7 @@
 **注意**
 
 - `clientDB`依赖uni-id（`1.1.10+版本`）提供用户身份和权限校验，如果你不了解uni-id，请参考[uni-id文档](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
-- `clientDB`依赖的uni-id需要在uni-id的config.json内添加uni-id相关配置，通过uni-id的init方法传递的参数不会对clientDB生效
+- `clientDB`依赖的uni-id需要在uni-id的config.json内添加uni-id相关配置，通过uni-id的init方法传递的参数不会对clientDB生效，参考：[uni-id 配置](uniCloud/uni-id.md?id=config)
 - 通常在管理控制台使用`clientDB`，需要获取不同角色用户拥有的权限（在权限规则内使用auth.permission），请先查阅[uni-id 角色权限](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=rbac)
 
 ## 对比：传统与clientDB云端协同的开发效率
@@ -59,7 +59,7 @@ js API可以执行所有数据库操作。`<unicloud-db>`组件是js API的再�
 - 在HBuilderX 3.0+，`<unicloud-db>`组件已经内置，可以直接使用。文档另见：[`<unicloud-db>`组件](/uniCloud/unicloud-db)
 - 在HBuilderX 3.0以前的版本，使用该组件需要在插件市场单独引用`<uni-clientDB>插件`，另见：[https://ext.dcloud.net.cn/plugin?id=3256](https://ext.dcloud.net.cn/plugin?id=3256)
 
-以下文章重点介绍`clientDB`的js API。至于组件的用法，另见[文档](/uniCloud/unicloud-db)。
+以下文章重点介绍`clientDB`的js API。至于组件的用法，另见[文档](uniCloud/unicloud-db.md)。
 
 ## clientDB前端API@jssdk
 
@@ -87,6 +87,23 @@ db.collection('list')
   })
 ```
 
+**jql查询语法示例**
+
+```js
+// 获取db引用
+const db = uniCloud.database() //代码块为cdb
+// 使用uni-clientDB
+db.collection('list')
+  .where('name=="hello-uni-app"')
+	.get()
+  .then((res)=>{
+    // res 为数据库查询结果
+  }).catch((err)=>{
+    console.log(err.code); // 打印错误码
+		console.log(err.message); // 打印错误内容
+  })
+```
+
 **使用说明**
 
 前端操作数据库的语法与云函数一致，但有以下限制（使用jql语法时也一样）：
@@ -94,9 +111,9 @@ db.collection('list')
 - 上传时会对query进行序列化，除Date类型、RegExp之外的所有不可序列化的参数类型均不支持（例如：undefined）
 - 为方便控制权限，禁止前端使用set方法，一般情况下也不需要前端使用set
 - 更新数据库时不可使用更新操作符`db.command.inc`等
-- 更新数据时键值不可使用`{'a.b.c': 1}`的形式，需要写成`{a:{b:{c:1}}}`形式（后续会对此进行优化）
+- 更新数据时键值不可使用`{'a.b.c': 1}`的形式，需要写成`{a:{b:{c:1}}}`形式
 
-### err返回值说明@returnvalue
+### 返回值说明@returnvalue
 
 `clientDB`如果云端返回错误，err的返回值形式如下，
 
@@ -291,7 +308,7 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 
 ```html
 <uni-clientdb v-slot:default="{loading, data, error, options}" :options="options"
- collection="list" where='name == "hello-uni-app"' :getone="true">
+ collection="list" where="name == 'hello-uni-app'" :getone="true">
 	<view v-if="error" class="error">{{error}}</view>
 	<view v-else>
 		{{item.name}}
@@ -330,9 +347,10 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 
 具体到这个正则 `/abc/.test(content)`，类似于sql中的`content like '%abc%'`，即查询所有字段content包含abc的数据记录。
 
-**注意：不支持非操作**
+**注意**
 
-**注意编写查询条件时，除test外，均为运算符左侧为数据库字段，右侧为常量**
+- 不支持非操作
+- 编写查询条件时，除test外，均为运算符左侧为数据库字段，右侧为常量
 
 #### 查询数组字段@querywitharr
 
@@ -365,7 +383,7 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 <template>
 	<view class="content">
 		<input @input="onKeyInput" placeholder="请输入搜索值" />
-		<unicloud-db v-slot:default="{data, loading, error, options}" collection="goods" :where=`${new RegExp(searchVal, 'i')}.test(name)`>
+		<unicloud-db v-slot:default="{data, loading, error, options}" collection="goods" :where="where">
 			<view v-if="error">{{error.message}}</view>
 			<view v-else>
 				
@@ -381,8 +399,13 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
         searchVal: ''
       }
 		},
+		computed: {
+			where() {
+				return `${new RegExp(searchVal, 'i')}.test(name)` // 使用计算属性得到完整where
+			}
+		},
 		methods: {
-      onKeyInput(e){
+      onKeyInput(e) {
         // 实际开发中这里应该还有防抖或者节流操作，这里不做演示
         this.searchVal = e.target.value
       }
@@ -405,6 +428,19 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 `JQL`提供了更简单的联表查询方案。不需要学习join、lookup等复杂方法。
 
 只需在db schema中，将两个表的关联字段建立映射关系，就可以把2个表当做一个虚拟表来直接查询。
+
+JQL联表查询有以下两种写法：
+
+```js
+// 直接关联多个表为虚拟表再进行查询
+const res = await db.collection('order,book').where('_id=="1"').get() // 直接关联order和book之后再过滤
+
+// 使用getTemp先过滤处理再联表查询
+const order = db.collection('order').where('_id=="1"').getTemp() // 注意结尾的方法是getTemp，对order表过滤得到临时表
+const res = await db.collection(order, 'book').get() // 将获取的order表的临时表和book表进行联表查询
+```
+
+上面两种写法最终结果一致，但是第二种写法性能更好。第一种写法会先将所有数据进行关联，如果数据量很大这一步会消耗浪费很多时间。详细示例见下方说明
 
 **关联查询后的虚拟表数据结构如下：**
 
@@ -715,7 +751,7 @@ db.collection('comment,user')
 
 **注意**
 
-- 联表查询时关联字段会被替换成被关联表的内容，因此不可在where内使用关联字段作为条件。举个例子，在上面的示例，`where({book_id:"1"})`，但是可以使用`where({'book_id._id':"1"})`
+- 联表查询时关联字段会被替换成被关联表的内容，因此不可在where内使用关联字段作为条件。举个例子，在上面的示例中，`where({book_id:"1"})`是无法筛选出正确结果的，但是可以使用`where({'book_id._id':"1"})`
 - 上述示例中如果order表的`book_id`字段是数组形式存放多个book_id，也跟上述写法一致，clientDB会自动根据字段类型进行联表查询
 - 各个表的_id字段会默认带上，即使没有指定返回
 

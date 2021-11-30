@@ -111,7 +111,7 @@ DCloud暂无计划开发百度、头条、QQ等小程序的登录，以及微博
 注意：
 
 - **config.json是一个标准json文件，不支持注释**
-- 如果不希望使用config.json初始化而是想自行传入参数（一般不推荐这么做），可以使用`init`方法[uniID.init](/uniCloud/uni-id?id=init)
+- 如果不希望使用config.json初始化而是想自行传入参数（一般不推荐这么做），可以使用`createInstance`方法[uniID.createInstance](uniCloud/uni-id.md?id=create-instance)
 
 > 在云函数URL化的场景无法获取客户端平台信息，可以在调用uni-id相关接口之前（推荐在云函数入口）通过修改context.PLATFORM手动传入客户端平台信息
 
@@ -232,6 +232,16 @@ tokenExpiresThreshold用于指定token还有多长时间过期时自动刷新tok
 
 - [保存token及其过期时间](uniCloud/uni-id?id=save-token)
 - [删除token及其过期时间](uniCloud/uni-id?id=remove-token)
+
+用户token为明文存储，可以在token内查看用户相关信息。uniCloud也提供了一个接口用于直接获取token内的用户信息，参考：[uniCloud.getUserInfo](uniCloud/client-sdk.md?id=client-getcurrentuserinfo)
+
+uniCloud.getUserInfo接口大致逻辑如下，需要注意的是某些小程序平台不支持atob，getUserInfo接口内已包含atob的polyfill
+
+```js
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE1OTNiYTkxYTc1MDAwMDE2NmY3OGQiLCJyb2xlIjpbImFkbWluIl0sInBlcm1pc3Npb24iOltdLCJpYXQiOjE2MzgyNDMzNjUsImV4cCI6MTYzODI1MDU2NX0.MRHEvNYhj9yXjPK04rhZOdnitaxRdF2Ek9BbZjPJyDE'
+const userSegment = token.split('.')[1]
+const userInfo = atob(userSegment) // '{"uid":"61a593ba91a750000166f78d","role":["admin"],"permission":[],"iat":1638243365,"exp":1638250565}'
+```
 
 # 用户角色权限@rbac
 
@@ -424,12 +434,11 @@ CreateInstanceParams内可以传入云函数context
 // 云函数代码
 const uniID = require('uni-id')
 exports.main = async function(event,context) {
+	context.APPID = '__UNI__xxxxxxx' // 替换为当前客户端的APPID，通过客户端callFunction请求的场景可以使用context.APPID获取
+	context.PLATFORM = 'h5' // 替换为当前客户端的平台类型，通过客户端callFunction请求的场景可以使用context.PLATFORM获取
+	context.LOCALE = 'zh-Hans' // 替换为当前客户端的语言代码，通过客户端callFunction请求的场景可以使用context.LOCALE获取
   const uniIDIns = uniID.createInstance({ // 创建uni-id实例，其上方法同uniID
-    context: {
-			APPID: '__UNI__xxxxxxx', // 替换为当前客户端的APPID，非url化的场景可以使用context.APPID获取
-			PLATFORM: 'h5', // 替换为当前客户端的平台类型，非url化的场景可以使用context.PLATFORM获取
-			LOCALE: 'zh-cn' // 替换为当前客户端的语言代码，非url化的场景可以使用context.LOCALE获取
-		},
+    context: context,
     // config: {} // 完整uni-id配置信息，使用config.json进行配置时无需传此参数
   })
   payload = await uniIDIns.checkToken(event.uniIdToken) // 后续使用uniIDIns调用相关接口

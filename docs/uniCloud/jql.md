@@ -1,203 +1,4 @@
-## clientDB简介
-
-> 自`HBuilderX 2.9.5`起支持在客户端直接使用`uniCloud.database()`方式获取数据库引用，即在前端直接操作数据库，这个功能被称为`clientDB`
-
-> `HBuilderX 2.9.5`以前的用户如使用过`clientDB`，在升级后请将`clientDB`的前端库和云函数删除，新版已经在前端和云端内置了`clientDB`
-
-大白话：传统的数据库操作只能在服务端实现，因为他在前端使用有安全问题。而uniCloud的云数据库有表结构(DB Schema)他通过简单的js表达式，配置了：各种角色权限的账号是否可以读取和写入某种规范的数据等，解决了在前端操作的安全问题；因此uniCloud的云数据库可以直接在前端调用。
-
-使用`clientDB`的好处：**不用写服务器代码了！**
-
-1个应用开发的一半的工作量，就此直接省去。
-
-当然使用`clientDB`需要扭转传统后台开发观念，不再编写服务端代码，直接在前端操作数据库。但是为了数据安全，需要在数据库上配置`DB Schema`。
-
-在`DB Schema`中，配置数据操作的权限和字段值域校验规则，阻止前端不恰当的数据读写。详见：[DB Schema](https://uniapp.dcloud.net.cn/uniCloud/schema)
-
-如果想在数据库操作之前或之后需要在云端执行额外的动作（比如获取文章详情之后阅读量+1），`clientDB`提供了action云函数机制。在HBuilderX项目的`cloudfunctions/uni-clientDB-actions`目录编写上传js，参考：[action](uniCloud/database?id=action)
-
-**注意**
-
-- `clientDB`依赖uni-id（`1.1.10+版本`）提供用户身份和权限校验，如果你不了解uni-id，请参考[uni-id文档](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
-- `clientDB`依赖的uni-id需要在uni-id的config.json内添加uni-id相关配置，通过uni-id的init方法传递的参数不会对clientDB生效，参考：[uni-id 配置](uniCloud/uni-id.md?id=config)
-- 通常在管理控制台使用`clientDB`，需要获取不同角色用户拥有的权限（在权限规则内使用auth.permission），请先查阅[uni-id 角色权限](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=rbac)
-
-## 对比：传统与clientDB云端协同的开发效率
-> 演示：在线通讯录项目，渲染云端数据到视图
-
-### 传统开发方式:
-1. 传统开发你需要先写服务端代码（这里用php+mysql作为演示）用sql语法查询数据库中的数据并输出，然后再开放API。
-
-需写27行代码，如图：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f0798882-cbcc-4b41-affc-7bce5ebaeb0e.png)
-
-2. 前端用ajax携带必要参数请求API，然后将请求结果赋值给data中的变量。最终把变量在视图中渲染出来。
-
-需写37行代码，如图：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d2194fea-c90e-4f02-b241-d27167ccb015.png)
-
-> 传统云端分离的开发方式，共计：64行代码。
-
-
-### clientDB的开发方式:
-- 云端协同的开发方式，unicloud-db组件渲染列表。
-
-仅：5行代码如图：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6d7fe2a6-1115-4535-8f3f-cdbb7c90e0ef.jpg)
-
-
-#### 总结：基于uniCloud云端协同的开发方式，不需要写js代码，不需要写服务端的代码。直接在视图模板中写6行代码，即可完成传统开发方式需要64行代码才能完成的效果。且不仅仅是代码量的问题。整个开发过程的体验，提高了完全不止10倍的开发效率。
-
-
-## clientDB图解
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b673c28f-c41b-406d-8b7a-c3f4bfbf4b31.jpg)
-
-`clientDB`的前端，有两种用法，可以用js API操作云数据库，也可以使用`<unicloud-db>`组件。
-
-js API可以执行所有数据库操作。`<unicloud-db>`组件是js API的再封装，进一步简化查询等常用数据库操作的代码量。
-
-- 在HBuilderX 3.0+，`<unicloud-db>`组件已经内置，可以直接使用。文档另见：[`<unicloud-db>`组件](/uniCloud/unicloud-db)
-- 在HBuilderX 3.0以前的版本，使用该组件需要在插件市场单独引用`<uni-clientDB>插件`，另见：[https://ext.dcloud.net.cn/plugin?id=3256](https://ext.dcloud.net.cn/plugin?id=3256)
-
-以下文章重点介绍`clientDB`的js API。至于组件的用法，另见[文档](uniCloud/unicloud-db.md)。
-
-## clientDB前端API@jssdk
-
-`clientDB`的客户端部分主要负责提供API，允许前端编写数据库操作指令，以及处理一些客户端不太方便表示的字段，比如用户ID（详情看下面语法扩展部分）
-
-`clientDB`支持传统的nosql查询语法，并新增了`jql`查询语法。`jql`是一种更易用的查询语法。
-
-**传统nosql查询语法示例**
-
-这段示例代码，在一个前端页面，直接查询了云数据库的`list`表，并且指定了`name`字段值为`hello-uni-app`的查询条件，then里的res即为返回的查询结果。
-
-```js
-// 获取db引用
-const db = uniCloud.database() //代码块为cdb
-// 使用uni-clientDB
-db.collection('list')
-  .where({
-    name: "hello-uni-app" //传统MongoDB写法，不是jql写法。实际开发中推荐使用jql写法
-  }).get()
-  .then((res)=>{
-    // res 为数据库查询结果
-  }).catch((err)=>{
-    console.log(err.code); // 打印错误码
-		console.log(err.message); // 打印错误内容
-  })
-```
-
-**jql查询语法示例**
-
-```js
-// 获取db引用
-const db = uniCloud.database() //代码块为cdb
-// 使用uni-clientDB
-db.collection('list')
-  .where('name=="hello-uni-app"')
-	.get()
-  .then((res)=>{
-    // res 为数据库查询结果
-  }).catch((err)=>{
-    console.log(err.code); // 打印错误码
-		console.log(err.message); // 打印错误内容
-  })
-```
-
-**使用说明**
-
-前端操作数据库的语法与云函数一致，但有以下限制（使用jql语法时也一样）：
-
-- 上传时会对query进行序列化，除Date类型、RegExp之外的所有不可序列化的参数类型均不支持（例如：undefined）
-- 为方便控制权限，禁止前端使用set方法，一般情况下也不需要前端使用set
-- 更新数据库时不可使用更新操作符`db.command.inc`等
-- 更新数据时键值不可使用`{'a.b.c': 1}`的形式，需要写成`{a:{b:{c:1}}}`形式
-
-### 返回值说明@returnvalue
-
-`clientDB`如果云端返回错误，err的返回值形式如下，
-
-```js
-{
-  code: "", // 错误码
-  message: "" // 错误信息
-  ... // 数据库指令执行结果
-}
-```
-
-**err.code错误码列表**
-
-|错误码													|描述																		|
-|:-:														|:-:																		|
-|TOKEN_INVALID_INVALID_CLIENTID	|token校验未通过（设备特征校验未通过）	|
-|TOKEN_INVALID									|token校验未通过（云端已不包含此token）	|
-|TOKEN_INVALID_TOKEN_EXPIRED		|token校验未通过（token已过期）					|
-|TOKEN_INVALID_WRONG_TOKEN			|token校验未通过（token校验未通过）			|
-|TOKEN_INVALID_ANONYMOUS_USER   |token校验未通过（当前用户为匿名用户）		|
-|SYNTAX_ERROR										|语法错误																|
-|PERMISSION_ERROR								|权限校验未通过													|
-|VALIDATION_ERROR								|数据格式未通过													|
-|DUPLICATE_KEY									|索引冲突																|
-|SYSTEM_ERROR										|系统错误																|
-
-如需自定义返回的err对象，可以在clientDB中挂一个[action云函数](uniCloud/database?id=action)，在action云函数的`after`内用js修改返回结果，传入`after`内的result不带code和message。
-
-
-### 云端环境变量@variable
-
-`clientDB`目前内置了3个变量可以供客户端使用，客户端并非直接获得这三个变量的值，而是需要传递给云端，云数据库在数据入库时会把变量替换为实际值。
-
-**HBuilderX 3.1.0及以上版本推荐写法**
-
-|参数名																|说明								|
-|:-:																	|:-:								|
-|db.getCloudEnv('$cloudEnv_uid')			|用户uid，依赖uni-id|
-|db.getCloudEnv('$cloudEnv_now')			|服务器时间戳				|
-|db.getCloudEnv('$cloudEnv_clientIP')	|当前客户端IP				|
-
-**HBuilderX 3.1.0之前版本写法**
-
-|参数名					|说明								|
-|:-:						|:-:								|
-|db.env.uid			|用户uid，依赖uni-id|
-|db.env.now			|服务器时间戳				|
-|db.env.clientIP|当前客户端IP				|
-
-使用这些变量，将可以避免过去在服务端代码中写代码获取用户uid、时间和客户端ip的麻烦。
-
-```js
-const db = uniCloud.database()
-let res = await db.collection('table').where({
-  user_id: db.env.uid // 查询当前用户的数据。虽然代码编写在客户端，但环境变量会在云端运算
-}).get()
-```
-
-自`HBuilderX 3.1.0`起，上述环境变量用法有调整（旧版依然兼容，但是推荐使用新用法），以下示例为在新版HBuilderX下如何获取上述变量
-
-```js
-const db = uniCloud.database()
-const uid = db.getCloudEnv('$cloudEnv_uid')
-const now = db.getCloudEnv('$cloudEnv_now')
-const clientIP = db.getCloudEnv('$cloudEnv_clientIP')
-```
-
-使用JQL查询语法时如需使用上述变量可以使用如下写法
-
-```js
-// HBuilderX 3.1.0及以上版本
-const db = uniCloud.database()
-const res = await db.collection()
-.where('user_id == $cloudEnv_uid')
-.get()
-
-// HBuilderX 3.1.0以下版本
-const db = uniCloud.database()
-const res = await db.collection()
-.where('user_id == $env.uid')  // $env.now、$env.clientIP
-.get()
-```
-
-### JQL查询语法@jsquery
+## JQL数据库操作
 
 `jql`，全称javascript query language，是一种js方式操作数据库的语法规范。
 
@@ -276,7 +77,6 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
   .end()
   ```
 
-
 这些问题竖起一堵墙，让后端开发难度加大，成为一个“专业领域”。但其实这堵墙是完全可以推倒的。
 
 `jql`将解决这些问题，让js工程师没有难操作的数据。
@@ -298,23 +98,48 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
     })
   ```
 
-除了js写法，uniCloud还提供了`<uni-clientdb>`组件，可以在前端页面中直接查询云端数据并绑定到界面上。[详情](https://ext.dcloud.net.cn/plugin?id=3256)
-比如下面的代码，list表中查询到符合条件的记录可以直接绑定渲染到界面上
+## JQL包含的模块@module
 
-```html
-<uni-clientdb v-slot:default="{loading, data, error, options}" :options="options"
- collection="list" where="name == 'hello-uni-app'" :getone="true">
-	<view v-if="error" class="error">{{error}}</view>
-	<view v-else>
-		{{item.name}}
-	</view>
-	<view class="loading" v-if="loading">加载中...</view>
-</uni-clientdb>
-```
+这里选择以使用了JQL完整功能clientDB为例，JQL操作数据库的流程如下。不同使用场景的区别请参考： [JQL的使用场景](uniCloud/jql.md?id=scene)
 
-**jql条件语句内变量**
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b673c28f-c41b-406d-8b7a-c3f4bfbf4b31.jpg)
 
-以下变量同[前端环境变量](uniCloud/clientdb.md?id=variable)
+## JQL的使用场景@scene
+
+你可以在以下三种场景使用JQL
+
+- 客户端clientDB，包括js内以及unicloud-db组件内，参考：[clientDB](uniCloud/clientdb.md)
+- HBuilderX JQL数据库管理器，参考：[JQL数据库管理器](uniCloud/jql-runner.md)
+- 启用了jql扩展的云函数，参考：[云函数内使用JQL](uniCloud/jql-cloud.md)
+
+### 不同场景的区别
+
+上述场景在新增、修改数据时都会执行数据校验，但是关于权限校验及action部分稍有不同
+
+**JQL数据库管理器：**
+
+- 不会校验任何权限，相当于以数据库管理员的身份执行
+- 即使是admin不能读写的password类型数据也可以读写
+- 不可以执行action
+
+**客户端clientDB：**
+
+- 完整的权限校验，执行操作的用户不可以操作自己权限之外的数据
+- admin用户不可操作password类型的数据
+
+**云函数JQL：**
+
+- 同clientDB，但是password类型的数据可以配置权限，默认权限是false，可以被admin用户操作。
+- 可以指定当前执行数据库操作的用户身份。
+
+## JQL的限制@limit
+
+- 会对数据库操作进行序列化，除Date类型、RegExp之外的所有不可JSON序列化的参数类型均不支持（例如：undefined）
+- 为了严格控制权限，禁止使用set方法
+- 为了数据校验能严格限制，更新数据库时不可使用更新操作符`db.command.inc`等
+- 更新数据时键值不可使用`{'a.b.c': 1}`的形式，需要写成`{a:{b:{c:1}}}`形式
+
+## jql语句内云端环境变量@variable
 
 |参数名							|说明								|
 |:-:								|:-:								|
@@ -322,7 +147,25 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 |$cloudEnv_now			|服务器时间戳				|
 |$cloudEnv_clientIP	|当前客户端IP				|
 
-**jql条件语句的运算符**
+在字符串内使用
+
+```js
+db.collection('user').where('_id==$cloudEnv_uid').get()
+```
+
+在对象内使用
+
+```js
+db.collection('user').where({
+	_id: db.getCloudEnv('$cloudEnv_uid')	
+}).get()
+```
+
+**注意**
+
+- 这些变量使用时并非直接获取对应的值，而是生成一个标记，在执行数据库操作时再将这个标记替换为实际的值
+
+## jql条件语句的运算符@operator
 
 |运算符			|说明			|示例								|示例解释(集合查询)																		|
 |:-:			|:-:			|:-:								|:-:																					|
@@ -347,7 +190,106 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 - 不支持非操作
 - 编写查询条件时，除test外，均为运算符左侧为数据库字段，右侧为常量
 
-#### 查询数组字段@querywitharr
+## 返回值说明@returnvalue
+
+### 正常请求返回结果
+
+不同数据库操作返回的结果结构不一样
+
+**查询数据**
+
+```js
+{
+	code: 0,
+	message: '',
+	data: []
+}
+```
+
+**批量发送数据库查询请求**
+
+只能批量发送查询请求
+
+```js
+{
+	code: 0,
+	message: '',
+	dataList: [] // dataList内每一项都是一个查询数据的响应结果 {code: 0, message: '', data: []}
+}
+```
+
+**新增数据**
+
+新增单条
+
+```js
+{
+	code: 0,
+	message: '',
+	id: '' // 新增数据的id
+}
+```
+
+新增多条
+
+```js
+{
+	code: 0,
+	message: '',
+	ids: [], // 新增数据的id列表
+	inserted: 3 // 新增成功的条数
+}
+```
+
+**删除数据**
+
+```js
+{
+	code: 0,
+	message: '',
+	deleted: 1 // 删除的条数
+}
+```
+
+**更新数据**
+
+```js
+{
+	code: 0,
+	message: '',
+	updated: 1 // 更新的条数，数据更新前后无变化则更新条数为0
+}
+```
+
+### 请求报错返回err格式
+
+```js
+{
+  code: "", // 错误码
+  message: "", // 错误信息
+}
+```
+
+**err.code错误码列表**
+
+|错误码													|描述																		|
+|:-:														|:-:																		|
+|TOKEN_INVALID_INVALID_CLIENTID	|token校验未通过（设备特征校验未通过）	|
+|TOKEN_INVALID									|token校验未通过（云端已不包含此token）	|
+|TOKEN_INVALID_TOKEN_EXPIRED		|token校验未通过（token已过期）					|
+|TOKEN_INVALID_WRONG_TOKEN			|token校验未通过（token校验未通过）			|
+|TOKEN_INVALID_ANONYMOUS_USER   |token校验未通过（当前用户为匿名用户）		|
+|SYNTAX_ERROR										|语法错误																|
+|PERMISSION_ERROR								|权限校验未通过													|
+|VALIDATION_ERROR								|数据格式未通过													|
+|DUPLICATE_KEY									|索引冲突																|
+|SYSTEM_ERROR										|系统错误																|
+
+如需自定义返回的err对象，可以在clientDB中挂一个[action云函数](uniCloud/database?id=action)，在action云函数的`after`内用js修改返回结果，传入`after`内的result不带code和message。
+
+## 查询数据
+
+### 查询数组字段@querywitharr
 
 如果数据库存在以下记录
 
@@ -368,11 +310,15 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 
 使用jql查询语法时，可以直接使用`student=='wang'`作为查询条件来查询students内包含wang的记录。
 
-#### 常见正则用法@regexp
+### 使用正则查询@regexp
 
-**搜索用户输入值**
+以搜索用户输入值为例
 
-如果使用[unicloud-db组件](uniCloud/unicloud-db.md)写法如下，使用clientDB jssdk同理
+```js
+const res = await db.collection('goods').where(`${new RegExp(searchVal, 'i')}.test(name)`).get()
+```
+
+如果使用[unicloud-db组件](uniCloud/unicloud-db.md)写法如下
 
 ```html
 <template>
@@ -413,12 +359,11 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 
 ```
 
-上面的示例中使用了正则修饰符`i`，用于表示忽略大小写，更多修饰符见[MDN 通过标志进行高级搜索](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions#%E9%80%9A%E8%BF%87%E6%A0%87%E5%BF%97%E8%BF%9B%E8%A1%8C%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2)
+上面的示例中使用了正则修饰符`i`，用于表示忽略大小写
 
+### 联表查询@lookup
 
-### JQL联表查询@lookup
-
-> clientDB于2021年4月28日优化了联表查询策略，详情参考：[联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
+> JQL于2021年4月28日优化了联表查询策略，详情参考：[联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
 
 `JQL`提供了更简单的联表查询方案。不需要学习join、lookup等复杂方法。
 
@@ -430,7 +375,7 @@ JQL联表查询有以下两种写法：
 // 直接关联多个表为虚拟表再进行查询
 const res = await db.collection('order,book').where('_id=="1"').get() // 直接关联order和book之后再过滤
 
-// 使用getTemp先过滤处理再联表查询
+// 使用getTemp先过滤处理获取临时表再联表查询
 const order = db.collection('order').where('_id=="1"').getTemp() // 注意结尾的方法是getTemp，对order表过滤得到临时表
 const res = await db.collection(order, 'book').get() // 将获取的order表的临时表和book表进行联表查询
 ```
@@ -460,7 +405,7 @@ const res = await db.collection(order, 'book').get() // 将获取的order表的�
 {
   "主表字段名1": "xxx",
   "主表字段名2": "xxx",
-  "副表foreignKey指向的主表字段名": { 
+  "主表内被副表foreignKey指向的字段名": { 
     "副表1表名": [{ // 一个主表字段可能对应多个副表字段的foreignKey
       "副表1字段名1": "xxx",
       "副表1字段名2": "xxx",
@@ -474,7 +419,7 @@ const res = await db.collection(order, 'book').get() // 将获取的order表的�
 }
 ```
 
-比如有2个表，book表，存放书籍商品；order表存放书籍销售订单记录。
+比如有以下两个表，book表，存放书籍商品；order表存放书籍销售订单记录。
 
 book表内有以下数据，title为书名、author为作者：
 
@@ -570,7 +515,7 @@ book表的DB Schema也要保持正确
 }
 ```
 
-schema保存后，即可在前端直接查询。查询表设为order和book这2个表名后，即可自动按照一个合并虚拟表来查询，field、where等设置均按合并虚拟表来设置。
+schema保存后，即使用JQL查询。查询表设为order和book这2个表名后，即可自动按照一个合并虚拟表来查询，field、where等设置均按合并虚拟表来设置。
 
 ```js
 // 客户端联表查询
@@ -586,10 +531,10 @@ db.collection('order,book') // 注意collection方法内需要传入所有用到
   })
 ```
 
-上面的写法是clientDB的jql语法，如果不使用jql的话，使用传统MongoDB写法，需要写很长并且不太容易看懂的代码，大致如下
+上面的写法是jql语法，如果不使用jql的话，使用传统MongoDB写法，需要写很长并且不太容易看懂的代码，大致如下
 
 ```js
-// 注意clientDB内联表查询需要用拼接子查询的方式（let+pipeline）
+// 注意JQL内联表查询需要用拼接子查询的方式（let+pipeline）
 const db = uniCloud.database()
 const dbCmd = db.command
 const $ = dbCmd.aggregate
@@ -656,6 +601,7 @@ db.collection('order')
 	"data": [{
 		"_id": "b8df3bd65f8f0d06018fdc250a5688bb",
 		"book_id": [{
+			"_id": "3",
 			"author": "罗贯中",
 			"title": "三国演义"
 		}],
@@ -663,6 +609,7 @@ db.collection('order')
 	}, {
 		"_id": "b8df3bd65f8f0d06018fdc2315af05ec",
 		"book_id": [{
+			"_id": "3",
 			"author": "罗贯中",
 			"title": "三国演义"
 		}],
@@ -686,9 +633,15 @@ db.collection('order')
 db.collection('order,book').get()
 ```
 
+**注意**
+
+- 生成联表查询虚拟表后关联字段会被替换成被关联表的内容，因此不可在生成虚拟表后的where内使用关联字段作为条件。举个例子，在上面的示例中，`where({book_id:"1"})`是无法筛选出正确结果的，但是可以使用`where({'book_id._id':"1"})`
+- 上述示例中如果order表的`book_id`字段是数组形式存放多个book_id，也跟上述写法一致，JQL会自动根据字段类型进行联表查询
+- 各个表的_id字段会默认带上，即使没有指定返回
+
 #### 设置字段别名@lookup-field-alias
 
-联表查询时也可以在field内对字段进行重命名，写法和简单查询时别名写法类似，`原字段名 as 新字段名`即可。[简单查询时的字段别名](uniCloud/clientdb.md?id=alias)
+联表查询时也可以在field内对字段进行重命名，写法和简单查询时别名写法类似，`原字段名 as 新字段名`即可。[简单查询时的字段别名](uniCloud/jql.md?id=alias)
 
 仍以上述order、book两个表为例，以下查询将联表查询时order表的quantity字段重命名为order_quantity，将book表的title重命名为book_title、author重命名为book_author
 
@@ -734,7 +687,7 @@ db.collection('order,book')
 
 如果存在多个foreignKey且只希望部分生效，可以使用foreignKey来指定要使用的foreignKey
 
-> 2021年4月28日10点前此方法仅用于兼容clientDB联表查询策略调整前后的写法，在此日期后更新的clientDB（上传schema、uni-id均会触发更新）才会有指定foreignKey的功能，关于此次调整请参考：[联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
+> 2021年4月28日10点前此方法仅用于兼容JQL联表查询策略调整前后的写法，在此日期后更新的clientDB（上传schema、uni-id均会触发更新）才会有指定foreignKey的功能，关于此次调整请参考：[联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
 
 ```js
 db.collection('comment,user')
@@ -744,16 +697,9 @@ db.collection('comment,user')
 .get()
 ```
 
-**注意**
-
-- 联表查询时关联字段会被替换成被关联表的内容，因此不可在where内使用关联字段作为条件。举个例子，在上面的示例中，`where({book_id:"1"})`是无法筛选出正确结果的，但是可以使用`where({'book_id._id':"1"})`
-- 上述示例中如果order表的`book_id`字段是数组形式存放多个book_id，也跟上述写法一致，clientDB会自动根据字段类型进行联表查询
-- 各个表的_id字段会默认带上，即使没有指定返回
-
-
 #### 副表foreignKey联查@st-foreign-key
 
-`2021年4月28日`之前的clientDB版本，只支持主表的foreignKey，把副表内容嵌入主表的foreignKey字段下面。不支持处理副本的foreignKey。
+`2021年4月28日`之前的JQL只支持主表的foreignKey，把副表内容嵌入主表的foreignKey字段下面。不支持处理副本的foreignKey。
 
 `2021年4月28日`调整后，新版支持副表foreignKey联查。副表的数据以数组的方式嵌入到主表中作为一个虚拟表使用。
 
@@ -1001,7 +947,7 @@ db.collection('article,comment')
 
 > 新增于`HBuilderX 3.2.6`
 
-在此之前clientDB联表查询只能直接使用虚拟表，而不能先对主表、副表过滤再生成虚拟表。由于生成虚拟表时需要需要整个主表和副表进行联表，在数据量大的情况下性能会很差。
+在此之前JQL联表查询只能直接使用虚拟表，而不能先对主表、副表过滤再生成虚拟表。由于生成虚拟表时需要需要整个主表和副表进行联表，在数据量大的情况下性能会很差。
 
 使用临时表进行联表查询，可以先对主表或者副表进行过滤，然后在处理后的临时表的基础上生成虚拟表。
 
@@ -1034,11 +980,6 @@ skip
 limit
 ```
 
-**field使用限制**
-
-- field内仅可以进行字段过滤，不可对字段重命名、进行运算，`field('name as value')`、`field('add(score1, score2) as totalScore')`都是不支持的用法
-- 进行联表查询时仅能使用临时表内已经过滤的字段间的关联关系，例如上面article、comment的查询，如果换成以下写法就无法联表查询
-  
   ```js
   const article = db.collection('article').where('article_id=="1"').field('title').getTemp() // 此处过滤article表，仅保留title字段。会导致下一步查询时找不到关联关系而查询失败
   const res = await db.collection(article, 'comment').get()
@@ -1063,11 +1004,14 @@ const comment = db.collection('comment').getTemp()
 const res = await db.collection(article, comment).orderBy('title desc').get() // 按照title倒序排列
 ```
 
+**field使用限制**
+
+- field内仅可以进行字段过滤，不可对字段重命名、进行运算，`field('name as value')`、`field('add(score1, score2) as totalScore')`都是不支持的用法
+- 进行联表查询时仅能使用临时表内已经过滤的字段间的关联关系，例如上面article、comment的查询，如果换成以下写法就无法联表查询
+
 **权限校验**
 
-要求各个临时表组成的虚拟表要满足权限限制，即权限校验不会计算组合成虚拟表之后使用的where、field
-
-> 如下情况不能通过权限校验：虚拟表本身不满足权限限制，但是虚拟表内还有一个where用来过滤数据，过滤之后满足权限限制
+要求组成虚拟表的各个临时表都要满足权限限制，即权限校验不会计算组合成虚拟表之后使用的where、field
 
 以下为一个订单表（order）和书籍表（book）的schema示例
 
@@ -1134,7 +1078,7 @@ const order = db.collection('order').getTemp()
 const res = await db.collection(order, 'book').where('uid==$cloudEnv_uid').get() // 对虚拟表过滤，无法通过权限校验
 ```
 
-### 查询记录过滤，where条件@where
+### 查询记录过滤where条件@where
 
 > 代码块`dbget`
 
@@ -1158,7 +1102,7 @@ const res = await db.collection('test')
 
 jql支持两种类型的查询条件，以下内容有助于理解两种的区别，实际书写的时候无需过于关心是简单查询条件还是复杂查询条件，**JQL会自动进行选择**
 
-where内还支持使用云端环境变量，详情参考：[云端环境变量](uniCloud/clientdb.md?id=variable)
+where内还支持使用云端环境变量，详情参考：[云端环境变量](uniCloud/jql.md?id=variable)
 
 #### 简单查询条件@simple-where
 
@@ -1185,7 +1129,7 @@ where内还支持使用云端环境变量，详情参考：[云端环境变量](
 
 > HBuilderX 3.1.0起支持
 
-复杂查询内可以使用[数据库运算方法](uniCloud/clientdb.md?id=aggregate-operator)。需要注意的是，与云函数内使用聚合操作符不同jql内对数据库运算方法的用法进行了简化。
+复杂查询内可以使用[数据库运算方法](uniCloud/jql.md?id=aggregate-operator)。需要注意的是，与云函数内使用聚合操作符不同jql内对数据库运算方法的用法进行了简化。
 
 例：数据表test内有以下数据
 
@@ -1283,9 +1227,8 @@ const res = await db.collection('test')
 **注意**
 
 - 使用了复杂查询条件时不可以使用正则查询
-- 不同于简单查询条件，复杂查询条件必然会进行查库校验权限
 
-### 查询列表分页
+### 查询列表分页@pagination
 
 可以通过skip+limit来进行分页查询
 
@@ -1314,7 +1257,7 @@ db.collection('book')
 
 ### 字段过滤field@field
 
-查询时可以使用field方法指定返回字段，在`<uni-clientDB>`组件中也支持field属性。不使用field方法时会返回所有字段
+查询时可以使用field方法指定返回字段。不使用field方法时会返回所有字段
 
 field可以指定字符串，也可以指定一个对象。
 
@@ -1377,7 +1320,7 @@ db.collection('order,book')
 
 ### 字段别名as@alias
 
-自`2020-11-20`起clientDB jql写法支持字段别名，主要用于在前端需要的字段名和数据库字段名称不一致的情况下对字段进行重命名。
+自`2020-11-20`起JQL支持字段别名，主要用于在前端需要的字段名和数据库字段名称不一致的情况下对字段进行重命名。
 
 用法形如：`author as book_author`，意思是将数据库的author字段重命名为book_author。
 
@@ -1487,7 +1430,6 @@ db.collection('order,book')
 }
 ```
 
-
 副表字段使用别名需要注意，如果写成`.field('book_id.title as book_id.book_title,book_id.author,quantity as order_quantity')` book_title将会是由book_id下每一项的title组成的数组，这点和mongoDB内数组表现一致
 
 ```js
@@ -1530,11 +1472,11 @@ db.collection('order,book')
 - mongoDB查询指令中，上一阶段处理完毕将结果输出到下一阶段。在上面的例子中表现为where中使用的是原名，orderBy中使用的是别名
 - 目前不支持对联表查询的关联字段使用别名，即上述示例中的book_id不可设置别名
 
-### 各种字段运算方法@operator
+### 各种字段运算方法@db-operator
 
-自`HBuilderX 3.1.0`起，clientDB支持在云端数据库对字段进行一定的操作运算之后再返回，详细可用的方法列表请参考：[数据库运算方法](uniCloud/clientdb.md?id=aggregate-operator)
+自`HBuilderX 3.1.0`起，JQL支持在云端数据库对字段进行一定的操作运算之后再返回，详细可用的方法列表请参考：[数据库运算方法](uniCloud/clientdb.md?id=aggregate-operator)
 
-> 需要注意的是，为方便书写，clientDB内将数据库运算方法的用法进行了简化（相对于云函数内使用数据库运算方法而言）。用法请参考上述链接
+> 需要注意的是，为方便书写，JQL内将数据库运算方法的用法进行了简化（相对于云函数内使用数据库运算方法而言）。用法请参考上述链接
 
 例：数据表class内有以下数据
 
@@ -1579,7 +1521,7 @@ const res = await db.collection('class')
 - 如果要访问数组的某一项请使用arrayElemAt操作符，形如：`arrayElemAt(arr,1)`
 - 在进行权限校验时，会计算field内访问的所有字段计算权限。上面的例子中会使用表的read权限和grade、class字段的权限，来进行权限校验。
 
-### 排序orderBy@orderby
+### 排序orderBy@order-by
 
 传统的MongoDB的排序参数是json格式，jql支持类sql的字符串格式，书写更为简单。
 
@@ -1635,7 +1577,7 @@ const db = uniCloud.database()
 // 这以上面的book表数据为例，查价格最高的一本书
   db.collection('book')
     .orderBy('price desc')
-	.limit(1)
+    .limit(1)
     .get()
 ```
 
@@ -1652,7 +1594,7 @@ limit有最大值，腾讯云限制为最大1000条，阿里云限制为最大50
 
 ### 只查一条记录getone@getone
 
-使用`clientDB`的API方式时，可以在get方法内传入参数`getOne:true`来返回一条数据。
+使用`JQL`的API方式时，可以在get方法内传入参数`getOne:true`来返回一条数据。
 
 getOne其实等价于上一节的limit(1)。
 
@@ -1725,7 +1667,7 @@ count计数又有2种场景：
 
 #### 查询记录的同时返回计数
 
-使用`clientDB`的API方式时，可以在get方法内传入参数`getCount:true`来同时返回总数
+使用`JQL`的API方式时，可以在get方法内传入参数`getCount:true`来同时返回总数
 
 ```js
 // 这以上面的order表数据为例
@@ -1761,7 +1703,7 @@ const db = uniCloud.database()
 
 ### 查询树形数据gettree@gettree
 
-HBuilderX 3.0.3+起，clientDB支持在get方法内传入getTree参数查询树状结构数据。（HBuilderX 3.0.5+ unicloud-db组件开始支持，之前版本只能通过js方式使用）
+HBuilderX 3.0.3+起，JQL支持在get方法内传入getTree参数查询树状结构数据。（HBuilderX 3.0.5+ unicloud-db组件开始支持，之前版本只能通过js方式使用）
 
 树形数据，在数据库里一般不会按照tree的层次来存储，因为按tree结构通过json对象的方式存储不同层级的数据，不利于对tree上的某个节点单独做增删改查。
 
@@ -1787,7 +1729,7 @@ HBuilderX 3.0.3+起，clientDB支持在get方法内传入getTree参数查询树�
 
 虽然存储格式是分条记录的，但查询反馈到前端的数据仍然需要是树形的。这种转换在过去比较复杂。
 
-clientDB提供了一种简单、优雅的方案，在DB Schema里配置parentKey来表达父子关系，然后查询时声明使用Tree查询，就可以直接查出树形数据。
+JQL提供了一种简单、优雅的方案，在DB Schema里配置parentKey来表达父子关系，然后查询时声明使用Tree查询，就可以直接查出树形数据。
 
 department部门表的schema中，将字段`parent_id`的"parentKey"设为"_id"，即指定了数据之间的父子关系，如下：
 
@@ -1828,7 +1770,7 @@ schema里描述好后，查询就变的特别简单。
 
 指定符合条件的记录，然后查询它的所有子节点，并且可以指定层级，返回的结果是以符合条件的记录为一级节点的所有子节点数据，并以树形方式嵌套呈现。
 
-只需要在clientDB的get方法中增加`getTree`参数，如下
+只需要在JQL的get方法中增加`getTree`参数，如下
 ```js
 // get方法示例
 get({
@@ -2169,7 +2111,7 @@ db.collection("department").get({
 
 分组统计有groupBy和groupField。和传统sql略有不同，传统sql没有单独的groupField。
 
-JQL的groupField里不能直接写field字段，只能使用[分组运算方法](uniCloud/clientdb.md?id=accumulator)来处理字段，常见的累积器计算符包括：count(*)、sum(字段名称)、avg(字段名称)。更多分组运算方法[详见](uniCloud/clientdb.md?id=accumulator)
+JQL的groupField里不能直接写field字段，只能使用[分组运算方法](uniCloud/jql.md?id=accumulator)来处理字段，常见的累积器计算符包括：count(*)、sum(字段名称)、avg(字段名称)。更多分组运算方法[详见](uniCloud/clientdb.md?id=accumulator)
 
 其中count(*)是固定写法。
 
@@ -2235,9 +2177,9 @@ const res = await db.collection('table1').groupBy('field1,field2').groupField('s
 
 #### 求和、求均值示例
 
-groupBy内也可以使用数据库运算方法对数据进行处理，为方便书写，clientDB内将数据库运算方法的用法进行了简化（相对于云函数内使用数据库运算方法而言）。用法请参考：[数据库运算方法](uniCloud/clientdb.md?id=aggregate-operator)
+groupBy内也可以使用数据库运算方法对数据进行处理，为方便书写，clientDB内将数据库运算方法的用法进行了简化（相对于云函数内使用数据库运算方法而言）。用法请参考：[数据库运算方法](uniCloud/jql.md?id=aggregate-operator)
 
-groupField内可以使用分组运算方法对分组结果进行统计，所有可用的累计方法请参考[分组运算方法](uniCloud/clientdb.md?id=accumulator)，下面以sum（求和）和avg（求均值）为例介绍如何使用
+groupField内可以使用分组运算方法对分组结果进行统计，所有可用的累计方法请参考[分组运算方法](uniCloud/jql.md?id=accumulator)，下面以sum（求和）和avg（求均值）为例介绍如何使用
 
 使用sum方法可以对数据进行求和统计。以上述数据为例，如下写法对不同班级进行分数统计
 
@@ -2491,7 +2433,7 @@ res = {
 }
 ```
 
-完整数据库运算方法列表请参考：[clientDB内可使用的数据库运算方法](uniCloud/clientdb.md?id=aggregate-operator)
+完整数据库运算方法列表请参考：[JQL内可使用的数据库运算方法](uniCloud/jql.md?id=aggregate-operator)
 
 #### count权限控制
 
@@ -2603,94 +2545,8 @@ const res = await db.collection('score')
 
 - distinct指对返回结果中完全相同的记录进行去重，重复的记录只保留一条。因为`_id`字段是必然不同的，所以使用distinct时必须同时指定field，且field中不可存在`_id`字段
 
-### 同时发送多条数据库请求@multi-send
 
-> HBuilderX 3.1.22及以上版本支持
-
-在实际业务中通常会遇到一个页面需要查询多次的情况，比如应用首页需要查询轮播图列表、公告列表、首页商品列表等。如果分开请求需要发送很多次网络请求，这样会影响性能。使用multiSend可以将多个数据库请求合并成一个发送。
-
-**用法**
-
-```js
-const bannerQuery = db.collection('banner').field('url,image').getTemp() // 这里使用getTemp不直接发送get请求，等到multiSend时再发送
-const noticeQuery = db.collection('notice').field('text,url,level').getTemp()
-const res = await db.multiSend(bannerQuery,noticeQuery)
-```
-
-**返回值**
-
-```js
-// 上述请求返回以下结构
-res = {
-  code: 0, // 请求整体执行错误码，注意如果多条查询执行失败，这里的code依然是0，只有出现网络错误等问题时这里才会出现错误
-  message: '', // 错误信息
-  dataList: [{
-    code: 0, // bannerQuery 对应的错误码
-    message: '', // bannerQuery 对应的错误信息
-    data: [] // bannerQuery 查询到的数据
-  }, {
-    code: 0, // noticeQuery 对应的错误码
-    message: '', // noticeQuery 对应的错误信息
-    data: [] // noticeQuery 查询到的数据
-  }]
-}
-```
-
-unicloud-db组件也支持使用getTemp方法，结合multiSend可以与其他数据库请求一起发送
-
-用法示例：
-
-```html
-<template>
-  <view>
-    <!-- 设置unicloud-db 组件为手动加载 loadtime="manual" -->
-    <unicloud-db collection="banner" loadtime="manual" ref="udb" v-slot:default="{data, error}">
-      <view v-if="error">{{error.message}}</view>
-      <view v-else>
-        <view v-for="(item,index) in data" :key="index">
-          <image :src="item.url"></image>
-        </view>
-      </view>
-    </unicloud-db>
-    <button type="default" @click="test">test</button>
-  </view>
-</template>
-
-<script>
-  export default {
-    data() {
-      return {
-        title: 'Hello'
-      }
-    },
-    onLoad() {
-
-    },
-    methods: {
-      test() {
-        const db = uniCloud.database()
-        const bannerQuery = this.$refs.udb.getTemp() // 调用模板内unicloud-db组件实例的getTemp方法
-        const noticeQuery = db.collection('notice').getTemp()
-        db.multiSend(bannerQuery, noticeQuery)
-          .then(res => {
-            console.log('banner', res.result.dataList[0]); // 使用unicloud-db组件的getTemp请求无需额外处理，查询结果会直接被设置到unicloud-db组件内
-            console.log('notice', res.result.dataList[1]); // 不使用unicloud-db组件的getTemp请求需要自行处理返回值
-          })
-          .catch(err => {
-            console.error(err)
-          })
-        // uniCloud.database().collection('test').get()
-      }
-    }
-  }
-</script>
-
-<style>
-</style>
-
-```
-
-### 新增数据记录add
+## 新增数据记录@add
 
 > 代码块`dbadd`
 
@@ -2772,17 +2628,18 @@ db.collection("user")
 ```
 
 **Tips**
-- 如果是非admin账户新增数据，需要在数据库中待操作表的`db schema`中要配置permission权限，赋予create为true。
+
+- 如果是非admin账户新增数据，需要在数据库中待操作表的`db schema`中要配置permission权限，赋予create允许用户操作的权限。
 - 云服务商选择阿里云时，若集合表不存在，调用add方法会自动创建集合表，并且不会报错。
 
 
-### 删除数据记录remove
+## 删除数据记录@remove
 
 > 代码块`dbremove`
 
 获取到db的表对象，然后指定要删除的记录，通过remove方法删除。
 
-注意：如果是非admin账户删除数据，需要在数据库中待操作表的`db schema`中要配置permission权限，赋予delete为true。
+注意：如果是非admin账户删除数据，需要在数据库中待操作表的`db schema`中要配置permission权限，赋予delete允许用户操作的权限。
 
 指定要删除的记录有2种方式：
 
@@ -2790,23 +2647,10 @@ db.collection("user")
 
 collection.doc(_id).remove()
 
-删除单条记录
 
 ```js
 const db = uniCloud.database();
 await db.collection("table1").doc("5f79fdb337d16d0001899566").remove()
-```
-
-删除该表所有数据
-
-注意：数据量很多的情况下这种方式删除会超时，但是数据仍会全部删除掉
-
-```js
-const dbCmd = db.command
-const db = uniCloud.database();
-await db.collection("table1").where({
-  _id: dbCmd.neq(null)
-}).remove()
 ```
 
 #### 方式2 条件查找文档后删除
@@ -2823,6 +2667,18 @@ try {
 		content: e.message
 	})
 }
+```
+
+删除该表所有数据
+
+注意：数据量很多的情况下这种方式删除会超时，但是数据仍会全部删除掉
+
+```js
+const dbCmd = db.command
+const db = uniCloud.database();
+await db.collection("table1").where({
+  _id: dbCmd.neq(null)
+}).remove()
 ```
 
 #### 回调的res响应参数
@@ -2855,7 +2711,7 @@ db.collection("table1")
 	})
 ```
 
-### 更新数据记录update
+## 更新数据记录@update
 
 > 代码块`dbupdate`
 
@@ -2950,15 +2806,103 @@ let res = await collection.where("name=='hey'").update({
 
 #### 更新数组内指定下标的元素
 
-clientDB暂不支持此用法
+JQL暂不支持此用法
 
 #### 更新数组内匹配条件的元素
 
-clientDB暂不支持此用法
+JQL暂不支持此用法
 
-### MongoDB聚合操作@aggregate
 
-clientDB API支持使用聚合操作读取数据，关于聚合操作请参考[聚合操作](uniCloud/cf-database.md?id=aggregate)
+## 同时发送多条数据库请求@multi-send
+
+> HBuilderX 3.1.22及以上版本支持
+
+在实际业务中通常会遇到一个页面需要查询多次的情况，比如应用首页需要查询轮播图列表、公告列表、首页商品列表等。如果分开请求需要发送很多次网络请求，这样会影响性能。使用multiSend可以将多个数据库请求合并成一个发送。
+
+**用法**
+
+```js
+const bannerQuery = db.collection('banner').field('url,image').getTemp() // 这里使用getTemp不直接发送get请求，等到multiSend时再发送
+const noticeQuery = db.collection('notice').field('text,url,level').getTemp()
+const res = await db.multiSend(bannerQuery,noticeQuery)
+```
+
+**返回值**
+
+```js
+// 上述请求返回以下结构
+res = {
+  code: 0, // 请求整体执行错误码，注意如果多条查询执行失败，这里的code依然是0，只有出现网络错误等问题时这里才会出现错误
+  message: '', // 错误信息
+  dataList: [{
+    code: 0, // bannerQuery 对应的错误码
+    message: '', // bannerQuery 对应的错误信息
+    data: [] // bannerQuery 查询到的数据
+  }, {
+    code: 0, // noticeQuery 对应的错误码
+    message: '', // noticeQuery 对应的错误信息
+    data: [] // noticeQuery 查询到的数据
+  }]
+}
+```
+
+unicloud-db组件也支持使用getTemp方法，结合multiSend可以与其他数据库请求一起发送
+
+用法示例：
+
+```html
+<template>
+  <view>
+    <!-- 设置unicloud-db 组件为手动加载 loadtime="manual" -->
+    <unicloud-db collection="banner" loadtime="manual" ref="udb" v-slot:default="{data, error}">
+      <view v-if="error">{{error.message}}</view>
+      <view v-else>
+        <view v-for="(item,index) in data" :key="index">
+          <image :src="item.url"></image>
+        </view>
+      </view>
+    </unicloud-db>
+    <button type="default" @click="test">test</button>
+  </view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        title: 'Hello'
+      }
+    },
+    onLoad() {
+
+    },
+    methods: {
+      test() {
+        const db = uniCloud.database()
+        const bannerQuery = this.$refs.udb.getTemp() // 调用模板内unicloud-db组件实例的getTemp方法
+        const noticeQuery = db.collection('notice').getTemp()
+        db.multiSend(bannerQuery, noticeQuery)
+          .then(res => {
+            console.log('banner', res.result.dataList[0]); // 使用unicloud-db组件的getTemp请求无需额外处理，查询结果会直接被设置到unicloud-db组件内
+            console.log('notice', res.result.dataList[1]); // 不使用unicloud-db组件的getTemp请求需要自行处理返回值
+          })
+          .catch(err => {
+            console.error(err)
+          })
+        // uniCloud.database().collection('test').get()
+      }
+    }
+  }
+</script>
+
+<style>
+</style>
+
+```
+
+## MongoDB聚合操作@aggregate
+
+JQL API支持使用聚合操作读取数据，关于聚合操作请参考[聚合操作](uniCloud/cf-database.md?id=aggregate)
 
 例：取status等于1的随机20条数据
 
@@ -2975,77 +2919,6 @@ const res = await db.collection('test').aggregate()
 ```
 
 
-### 刷新token@refreshtoken
-
-透传uni-id自动刷新的token给客户端
-
-> HBuilderX 3.2.11及以上版本，clientDB会自动将刷新的token及过期时间保存在storage内。
-
-**用法**
-
-```js
-const db = uniCloud.database()
-
-function refreshToken({
-  token,
-  tokenExpired
-}) {
-  uni.setStorageSync('uni_id_token', token)
-  uni.setStorageSync('uni_id_token_expired', tokenExpired)
-}
-// 绑定刷新token事件
-db.on('refreshToken', refreshToken)
-// 解绑刷新token事件
-db.off('refreshToken', refreshToken)
-```
-
-**注意：HBuilderX 3.0.0之前请使用db.auth.on、db.auth.off，HBuilderX 3.0.0以上版本仍兼容旧写法，但是推荐使用新写法db.on**
-
-### 错误处理@error
-
-全局clientDB错误事件，HBuilderX 3.0.0起支持。
-
-**用法**
-
-```js
-const db = uniCloud.database()
-
-function onDBError({
-  code, // 错误码详见https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=returnvalue
-  message
-}) {
-  // 处理错误
-}
-// 绑定clientDB错误事件
-db.on('error', onDBError)
-// 解绑clientDB错误事件
-db.off('error', onDBError)
-```
-
-<!-- ### 处理错误@error
-
-clientDB出现错误时触发，`HBuilderX 2.9.12+` 支持
-
-**用法**
-
-```js
-const db = uniCloud.database()
-
-function onError({
-  code, // 错误码详见https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=returnvalue
-  message
-}) {
-  uni.showModal({
-    content: message,
-    showCancel: false
-  })
-}
-// 绑定错误处理事件
-db.auth.on('error', onError)
-// 解绑错误处理事件
-db.auth.off('error', onError)
-``` -->
-
 ## DBSchema@schema
 
 `DB Schema`是基于 JSON 格式定义的数据结构的规范。
@@ -3061,7 +2934,7 @@ db.auth.off('error', onError)
 
 这些工具大幅减少了开发者的开发工作量和重复劳动。
 
-**`DB Schema`是`clientDB`紧密相关的配套，掌握clientDB离不开详读[DB Schema文档](uniCloud/schema)。**
+**`DB Schema`是`JQL`紧密相关的配套，掌握JQL离不开详读[DB Schema文档](uniCloud/schema)。**
 
 **下面示例中使用了注释，实际使用时schema是一个标准的json文件不可使用注释。**完整属性参考[schema字段](https://uniapp.dcloud.net.cn/uniCloud/schema?id=segment)
 
@@ -3095,7 +2968,7 @@ db.auth.off('error', onError)
 
 `DB Schema`中的数据权限配置功能非常强大，请详读[DB Schema的数据权限控制](uniCloud/schema?id=permission)
 
-在配置好`DB Schema`的权限后，clientDB的查询写法，尤其是非`JQL`的聚合查询写法有些限制，具体如下：
+在配置好`DB Schema`的权限后，JQL的查询写法，尤其是非`JQL`的聚合查询写法有些限制，具体如下：
 - 不使用聚合时collection方法之后需紧跟一个where方法，这个where方法内传入的条件必须满足权限控制规则
 - 使用聚合时aggregate方法之后需紧跟一个match方法，这个match方法内的条件需满足权限控制规则
 - 使用lookup时只可以使用拼接子查询的写法（let+pipeline模式），做这个限制主要是因为需要确保访问需要lookup的表时也会传入查询条件，即pipeline参数里面`db.command.pipeline()`之后的match方法也需要像上一条里面的match一样限制
@@ -3174,7 +3047,7 @@ db.collection('order')
   .get()
 ```
 
-在进行数据库操作之前，clientDB会使用permission内配置的规则对客户端操作进行一次校验，如果本次校验不通过还会通过数据库查询再进行一次校验
+在进行数据库操作之前，JQL会使用permission内配置的规则对客户端操作进行一次校验，如果本次校验不通过还会通过数据库查询再进行一次校验
 
 例1：
 
@@ -3278,9 +3151,9 @@ action的作用是在执行前端发起的数据库操作时，额外触发一�
 
 **尽量不要在action中使用全局变量，如果一定要用请务必确保自己已经阅读并理解了[云函数的启动模式](uniCloud/cf-functions.md?id=launchtype)**
 
-如果使用`<uni-clientdb>组件`，该组件也有action属性，设置action="someactionname"即可。
+如果使用`<unicloud-db>组件`，该组件也有action属性，设置action="someactionname"即可。
 ```html
-<uni-clientdb ref="udb" collection="table1" action="someactionname" v-slot:default="{data,pagination,loading,error}">
+<unicloud-db ref="udb" collection="table1" action="someactionname" v-slot:default="{data,pagination,loading,error}">
 ```
 
 action支持一次使用多个，比如使用`db.action("action-a,action-b")`，其执行流程为`action-a.before->action-b.before->执行数据库操作->action-b.after->action-a.after`。在任一before环节抛出错误直接进入after流程，在after流程内抛出的错误会被传到下一个after流程。
@@ -3293,15 +3166,15 @@ action是一种特殊的云函数，它不占用服务空间的云函数数量�
 
 每个action在uni-clientDB-actions目录下存放一个以action名称命名的js文件。
 
-在这个js文件的代码里，包括before和after两部分，分别代表clientDB具体操作数据库前和后。
+在这个js文件的代码里，包括before和after两部分，分别代表JQL具体操作数据库前和后。
 
-- before在clientDB执行前触发，before里的代码执行完毕后再开始操作数据库。before的常用用途：
+- before在数据库操作执行前触发，before里的代码执行完毕后再开始操作数据库。before的常用用途：
 	* 对前端传入的数据进行二次处理
 	* 在此处开启数据库事务，万一操作数据库失败，可以在after里回滚
 	* 使用throw阻止运行
 	* 如果权限或字段值域校验不想配在schema和validateFunction里，也可以在这里做校验
 	
-- after在clientDB执行后触发，clientDB操作数据库后触发after里的代码。after的常用用途：
+- after在数据库操作执行后触发，JQL操作数据库后触发after里的代码。after的常用用途：
 	* 对将要返回给前端的数据进行二次处理
 	* 也可以在此处处理错误，回滚数据库事务
 	* 对数据库进行二次操作，比如前端查询一篇文章详情后，在此处对文章的阅读数+1。因为permission里定义，一般是要禁止前端操作文章的阅读数字段的，此时就应该通过action，在云函数里对阅读数+1
@@ -3328,7 +3201,7 @@ db.action('add-todo') //注意action方法是db的方法，只能跟在db后面�
 module.exports = {
   // 在数据库操作之前执行
   before: async(state,event)=>{
-    // state为当前clientDB操作状态其格式见下方说明
+    // state为当前数据库操作状态其格式见下方说明
     // event为传入云函数的event对象
     
     // before内可以操作state上的newData对象对数据进行修改，比如：
@@ -3339,7 +3212,7 @@ module.exports = {
   },
   // 在数据库操作之后执行
   after:async (state,event,error,result)=>{
-    // state为当前clientDB操作状态其格式见下方说明
+    // state为当前数据库操作状态其格式见下方说明
     // event为传入云函数的event对象
     // error为执行操作的错误对象，如果没有错误error的值为null
     // result为执行command返回的结果
@@ -3368,7 +3241,6 @@ module.exports = {
     // setParam({name:'where',index: 0, param: [{a:1}]}) 设置第1个where方法的参数，调用之后where方法实际形式为：where({a:1})
     setParam
   },
-  // 需要注意的是clientDB可能尚未获取用户信息，如果权限规则内没使用auth对象且数据库指令里面没使用db.env.uid则clientDB不会自动取获取用户信息
   auth: {
     uid, // 用户ID，如果未获取或者获取失败uid值为null
     role, // 通过uni-id获取的用户角色，需要使用1.1.9以上版本的uni-id，如果未获取或者获取失败role值为[]
@@ -3389,11 +3261,11 @@ module.exports = {
 
 ### action内可以使用的公共模块@common-for-action
 
-目前clientDB依赖了`uni-id`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action内使用的。
+目前JQL依赖了`uni-id`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action内使用的。
 
-自`HBuilderX 3.2.7-alpha`起，action内可使用任意公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和clientDB关联。
+自`HBuilderX 3.2.7-alpha`起，action内可使用任意公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和JQL关联。
 
-一个在clientDB内使用的公共模块的package.json示例如下。
+一个在JQL内使用的公共模块的package.json示例如下。
 
 ```js
 {
@@ -3427,7 +3299,7 @@ uniCloud的云数据库，提供了一批强大的运算方法。这些方法是
 
 比如sum()方法，可以对多行记录的某个字段值求和、可以对单行记录的若干字段的值求和，如果字段是一个数组，还可以对数组的各项求和。
 
-为方便书写，clientDB内将数据库运算方法的用法进行了简化（相对于云函数内使用数据库运算方法而言），主要是参数摊平，以字符串方式表达。以下是可以在clientDB中使用的数据库运算方法
+为方便书写，JQL内将数据库运算方法的用法进行了简化（相对于云函数内使用数据库运算方法而言），主要是参数摊平，以字符串方式表达。以下是可以在JQL中使用的数据库运算方法
 
 |运算方法						|用途																																																															|JQL简化用法																																								|说明																			|
 |---							|---																																																															|---																																												|---																			|
@@ -3611,7 +3483,7 @@ let res = await db.collection('stats').aggregate()
   .end()
 ```
 
-clientDB JQL语法内同样功能的实现
+JQL语法内同样功能的实现
 
 ```js
 const db = uniCloud.database()

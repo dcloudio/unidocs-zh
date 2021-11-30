@@ -176,6 +176,8 @@ properties里的字段列表，每个字段都有很多可以设置的属性，�
 
 uniCloud推出了`openDB`开源数据库规范，包括用户表、文章表、商品表等很多模板表，这些模板表均已经内置`DB Schema`，可学习参考。[详见](https://gitee.com/dcloud/opendb)
 
+schema 国际化方案 [详见](/collocation/i18n?id=schema)
+
 
 #### 字段类型bsonType@bsontype
 

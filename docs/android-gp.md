@@ -1,5 +1,7 @@
 
-首先App提交云端打包时请务必勾选“GooglePlay(AAB)”渠道
+#### 务必确保将HBulider X升级到`3.2.15+`版本。离线打包需要将离线打包SDK升级到`3.2.15+`版本
+
+App提交云端打包时请务必勾选“GooglePlay(AAB)”渠道
 
 ![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/doc/app/android/googleplay/channel.png)
 

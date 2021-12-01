@@ -5340,7 +5340,7 @@ let res = await db.collection('todos').doc('doc-id').update({
 const dbCmd = db.command
 let res = await db.collection('todos').doc('doc-id').update({
   tags: dbCmd.addToSet({
-    each: ['database', 'cloud']
+    $each: ['database', 'cloud']
   })
 })
 ```

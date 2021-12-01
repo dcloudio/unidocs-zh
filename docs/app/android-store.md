@@ -33,7 +33,39 @@
   	<td>存储的个人文件</td>
   	<td><a href="https://www.fresco-cn.org/" target="_blank">https://www.fresco-cn.org/</a></td>
   </tr>
+  <tr>
+    <td>glide图库</td>
+    <td>com.bumptech.glide</td>
+  	<td>用于图片预览使用</td>
+  	<td style="font-size:12px">
+  		android.permission.WRITE_EXTERNAL_STORAGE<br>
+  		android.permission.READ_EXTERNAL_STORAG
+  	</td>
+  	<td>存储的个人文件</td>
+  	<td><a href="http://bumptech.github.io/glide/" target="_blank">http://bumptech.github.io/glide/</a></td>
+  </tr>
+  <tr>
+    <td>移动安全联盟 OAID</td>
+    <td>com.bun.miitmdid、com.zui.opendeviceidlibrary</td>
+  	<td>获取oaid</td>
+  	<td style="font-size:12px">
+  		android.permission.WRITE_EXTERNAL_STORAGE<br>
+  		android.permission.READ_EXTERNAL_STORAG
+  	</td>
+  	<td>设备信息</td>
+  	<td><a href="http://www.msa-alliance.cn/col.jsp?id=105" target="_blank">http://www.msa-alliance.cn/col.jsp?id=105</a></td>
+  </tr>
 </table>
+
+**关于移动安全联盟 OAID**
+
+移动智能终端补充设备标识体系与 SDK 隐私合规问题
+
+移动智能终端补充设备标识体系与 SDK 严格遵守我国《网络安全法》、《数据安全法》和《电信和互联网用户个人信息保护规定》等相关法律法规和《信息安全技术 个人信息安全规范》等国家标准要求。SDK 不会主动收集任何数据，只在 APP 调用时获取以下数据，用于本地判断，不会进行任何网络传输：
+­
+- 设备制造商、设备型号、设备品牌，用于判断终端调用接口
+- 设备网络运营商名称，用于判断虚拟机环境
+- APP 包名，用于校验签名
 
 ### UniPush
 

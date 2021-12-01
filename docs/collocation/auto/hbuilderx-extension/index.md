@@ -1,4 +1,4 @@
-# 自动化测试插件@hbuilderx-extension
+# 自动化测试插件@hbuilderxextension
 
 ## 插件说明@description
 
@@ -20,7 +20,7 @@
 5. 运行测试到Android手机，如果HBuilderX仅检测到一个android设备，直接运行测试到当前已连接设备。多个设备时，会弹窗要求选择手机。
 6. node: 当本机未安装node时，将使用HBuilderX`内置node`运行测试。反之，本机安装了node，则使用本机的node。
 
-## 插件安装@test_install
+## 插件安装@testInstall
 
 [插件安装地址](https://ext.dcloud.net.cn/plugin?id=5708)
 
@@ -30,7 +30,7 @@
 
 > 特别注意：插件安装，依赖HBuilderX 终端插件。
 
-## 测试环境安装@test_env
+## 测试环境安装@env
 
 **插件依赖：** 
 
@@ -53,7 +53,7 @@ uniapp普通项目，`初始化测试环境`或`运行测试`时，如果未安�
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ca0f9ce4-1d45-4103-9800-36a1608062d4.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 
-### uniapp-cli项目@uniapp-cli
+### uniapp-cli项目@uniappcli
 
 uniapp-cli项目，自动化测试运行，将使用**项目下的依赖库**。
 
@@ -96,7 +96,7 @@ uniapp项目，pages页面，右键菜单，创建测试用例
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/48721bc9-247c-461c-b6f8-8fca1838b734.png" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
 
 
-## 插件配置@extension_config
+## 插件配置@extensionConfig
 
 点击菜单【设置】【插件配置】，找到hbuilderx-for-uniapp-test项，即可看到设置项。
 
@@ -109,7 +109,7 @@ uniapp项目，pages页面，右键菜单，创建测试用例
 - 插件0.0.4+版本，新增配置项 支持自定义设置使用何种node版本进行uniapp编译。即您可以选择使用HBuilderX`内置的Node`、还是使用`操作系统`安装的Node进行uniapp编译。
 
 
-## 如何编写测试用例@how_to_write_testcase
+## 如何编写测试用例@howToWriteTestcase
 
 > uniapp自动化测试，使用了业内常见的jest测试库。
 
@@ -118,7 +118,7 @@ uniapp项目，pages页面，右键菜单，创建测试用例
 - 测试用例编写，请遵循jest规范。
 
 
-### jest用例解析@jest_testcase
+### jest用例解析@jestTestcase
 
 下面将使用一个最简单的示例，来讲解测试用例的组成。
 

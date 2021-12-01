@@ -95,7 +95,7 @@ plugin
 
 1. 宿主小程序是 `uniapp项目`，在 `manifest.json` 中配置相关信息即可，[详情](https://uniapp.dcloud.io/component/mp-weixin-plugin?id=%e9%85%8d%e7%bd%ae%e5%b0%8f%e7%a8%8b%e5%ba%8f%e6%8f%92%e4%bb%b6)
 2. 宿主为原生小程序，在项目的 `app.json` 中配置即可：
-   - [mp-wixin 配置](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)
+   - [mp-weixin 配置](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)
    - [mp-alipay 配置](https://opendocs.alipay.com/mini/plugin/plugin-development#app.json%20%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE)
 
 #### 在插件中使用条件编译

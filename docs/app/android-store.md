@@ -1,7 +1,5 @@
 ### uni-app默认集成功能模块
 
-#### Weex
-
 <table style="word-break:break-all">
   <tr>
     <th style="width:10%">SDK名称</th>
@@ -19,7 +17,7 @@
 		android.permission.WRITE_EXTERNAL_STORAGE<br>
 		android.permission.READ_EXTERNAL_STORAG
 	</td>
-	<td>存储的个人文件</td>
+	<td>存储文件</td>
 	<td><a href="http://doc.weex.io/zh/" target="_blank">http://doc.weex.io/zh</a></td>
   </tr>
   <tr>
@@ -30,7 +28,7 @@
   		android.permission.WRITE_EXTERNAL_STORAGE<br>
   		android.permission.READ_EXTERNAL_STORAG
   	</td>
-  	<td>存储的个人文件</td>
+  	<td>存储文件</td>
   	<td><a href="https://www.fresco-cn.org/" target="_blank">https://www.fresco-cn.org/</a></td>
   </tr>
   <tr>
@@ -41,16 +39,36 @@
   		android.permission.WRITE_EXTERNAL_STORAGE<br>
   		android.permission.READ_EXTERNAL_STORAG
   	</td>
-  	<td>存储的个人文件</td>
+  	<td>存储文件</td>
   	<td><a href="http://bumptech.github.io/glide/" target="_blank">http://bumptech.github.io/glide/</a></td>
+  </tr>
+  <tr>
+    <td>gif-drawable</td>
+    <td>pl.droidsonroids.gif</td>
+  	<td>加载gif图</td>
+  	<td style="font-size:12px">
+  		android.permission.WRITE_EXTERNAL_STORAGE<br>
+  		android.permission.READ_EXTERNAL_STORAG
+  	</td>
+  	<td>存储文件</td>
+  	<td><a href="https://github.com/alibaba/fastjson" target="_blank">https://github.com/alibaba/fastjson</a></td>
+  </tr>
+  <tr>
+    <td>fastjson</td>
+    <td>com.alibaba.fastjson</td>
+  	<td>JSON解析</td>
+  	<td style="font-size:12px">
+	无
+  	</td>
+  	<td>无</td>
+  	<td><a href="https://github.com/alibaba/fastjson" target="_blank">https://github.com/alibaba/fastjson</a></td>
   </tr>
   <tr>
     <td>移动安全联盟 OAID</td>
     <td>com.bun.miitmdid、com.zui.opendeviceidlibrary</td>
   	<td>获取oaid</td>
   	<td style="font-size:12px">
-  		android.permission.WRITE_EXTERNAL_STORAGE<br>
-  		android.permission.READ_EXTERNAL_STORAG
+		无
   	</td>
   	<td>设备信息</td>
   	<td><a href="http://www.msa-alliance.cn/col.jsp?id=105" target="_blank">http://www.msa-alliance.cn/col.jsp?id=105</a></td>

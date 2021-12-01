@@ -36,7 +36,9 @@
 </table>
 
 ### UniPush
+
 <a id="push"></a>
+
 UniPush是DCloud联合个推公司推出的集成型统一推送服务，使用了个推提供的SDK，因此需要在《隐私政策》中添加“个推消息推送SDK”相关说明。
 建议《隐私政策》添加 “与授权合作伙伴共享”条款中，将 个推的用户隐私政策 加入其中，并向终端用户逐一明示您嵌入的SDK收集使用个人信息的目的、方式和范围。参考内容如下：
 
@@ -98,7 +100,9 @@ UniPush模块集成的三方SDK说明
 </table>
 
 ### Statistic
+
 <a id="statistic"></a>
+
 HX3.1.14+ 友盟SDK已升级到9.3.8版本 适配合规问题
 
 + 当你集成了统计模块。您需要确保App有《隐私政策》，并且在用户首次启动App时就弹出《隐私政策》取得用户同意！！！
@@ -131,6 +135,7 @@ Statistic模块集成的三方SDK说明
 </table>
 
 ### OAuth、Share、Payment
+
 <a id="oauth"/>
 <a id="payment"/>
 <a id="share"/>
@@ -291,7 +296,9 @@ Map & Geolocation模块集成的三方SDK说明
   </tr>
 </table>
 ### uni-AD
+
 <a id="uniAd"/>
+
 uni-AD广告模块集成的三方SDK说明
 
 <table style="word-break:break-all">
@@ -417,8 +424,11 @@ uni-AD广告模块集成的三方SDK说明
     <td><a href="https://support.sigmob.com/#/%E9%9A%90%E7%A7%81%E6%9D%A1%E6%AC%BE/">Sigmob隐私协议</a></td>
   </tr>
 </table>
+
 ### 腾讯x5内核
+
 <a id="e885bee8aeafx5e58685e6a0b8"/>
+
 <table style="word-break:break-all">
   <tr>
     <th style="width:10%">SDK名称</th>
@@ -444,7 +454,9 @@ uni-AD广告模块集成的三方SDK说明
 </table>
 
 ### Contacts
+
 <a id="Contacts"/>
+
 管理系统通讯录，用于可对系统通讯录进行增、删、改、查等操作。通过plus.contacts获取系统通讯录管理对象。
 
 <table style="word-break:break-all">

@@ -31,7 +31,7 @@
 负责发布新版和管理历史版本的上下线。
 
 <div align="left">
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/42742d4d-ccbb-4c3e-bd37-d12d0439817c.png" alt="发布完成页面" width="800"></img>
+	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/c80f143d-a05b-493b-9db0-e87398a180b8.png" alt="发布完成页面" width="800"></img>
 </div>
 
 提供了如下功能：
@@ -57,8 +57,8 @@
 负责前台检查升级更新。
 
 <div align="left" style="display:flex;align-items:center;">
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/db1cedf7-e08f-4fbb-954f-dd3b2f0ad81d.jpg" alt="官方升级弹框样式" width="250"></img>
-	<img style="margin-left:20px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/f5c8e20d-847a-4c9e-b001-8600123aeb9f.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
+	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b47b89ad-1b81-45db-8115-d246fb5ca906.jpg" alt="官方升级弹框样式" width="250"></img>
+	<img style="margin-left:20px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9e2d38af-90e5-47fb-8a18-d2a76e7ae2b4.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
 </div>
 
 提供了如下功能：

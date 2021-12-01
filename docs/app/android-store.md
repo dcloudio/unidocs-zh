@@ -70,6 +70,7 @@ UniPush模块集成的三方SDK说明
 	<td><a href="http://docs.getui.com/privacy" target="_blank">http://docs.getui.com/privacy</a></td>
   </tr>
 </table>
+
 #### HMS push
 
 推送服务（Push Kit）是华为提供的消息推送平台，建立了从云端到终端的消息推送通道。您通过集成推送服务，可以向客户端应用实时推送消息，因此需要在《隐私政策》中添加"HMS push"相关说明。
@@ -479,7 +480,7 @@ uni-AD广告模块集成的三方SDK说明
 		android.permission.READ_CONTACTS
 	</td>
 	<td>获取联系人信息</td>
-	<td>(宿主根据APP自身逻辑 自行填写相关隐私政策信息)</td>
+	<td style="font-size:12px">(宿主根据APP自身逻辑 自行填写相关隐私政策信息)</td>
   </tr>
 </table>
 
@@ -505,7 +506,7 @@ uni-AD广告模块集成的三方SDK说明
 		android.permission.READ_SMS
 	</td>
 	<td>读写短信、彩信、邮件</td>
-	<td>(宿主根据APP自身逻辑 自行填写相关隐私政策信息)</td>
+	<td style="font-size:12px">(宿主根据APP自身逻辑 自行填写相关隐私政策信息)</td>
   </tr>
 </table>
 

@@ -12,7 +12,9 @@
 2. 开发 `支付宝小程序插件` 时，IDE 版本要求在 0.60 及以上
 
 #### 插件目录结构
-微信小程序编译结果
+
+> 编译到小程序插件结果
+
 ```
 plugin
 ├── components               // 插件提供的自定义组件（可以有多个）
@@ -31,7 +33,7 @@ plugin
 
 #### 插件配置文件
 
-> plugin.json 在uniapp项目中和 pages.json 同级。向第三方小程序开放的所有组件、页面和 js 接口都必须在 plugin.json 中声明
+> plugin.json 在 uniapp 项目中和 pages.json 同级。向第三方小程序开放的所有组件、页面和 js 接口都必须在 plugin.json 中声明
 
 - `mp-weixin`
 

@@ -25,7 +25,7 @@ Tips：
 
 但`uni-app`框架有自己的窗口管理机制，请不要自己创建和销毁webview，如有需求覆盖子窗体上去，请使用[原生子窗体subNvue](/api/window/subNVues)。
 
-**注意：此方法仅 App 支持**
+**注意：此方法仅 App-Vue 支持**
 
 **示例：**
 

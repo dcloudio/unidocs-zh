@@ -143,5 +143,5 @@
 
 ### 用uni-app制作小程序插件
 
-uni-app项目如何发布为小程序插件，另见文档：[https://uniapp.dcloud.io/collocation/miniprogram-plugin](https://uniapp.dcloud.io/collocation/miniprogram-plugin)
+uni-app项目如何发布为小程序插件，另见文档：[发布为小程序插件](/collocation/miniprogram-plugin)
 

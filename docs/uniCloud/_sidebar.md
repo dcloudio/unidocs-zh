@@ -19,7 +19,6 @@
   * [开发云函数](uniCloud/cf-functions.md)
   * [云函数公共模块](uniCloud/cf-common.md)
   * [日志输出](uniCloud/cf-logger.md)
-  * [身份认证](uniCloud/cf-authentication.md)
   * [定时触发](uniCloud/trigger.md)
   * [云函数URL化](uniCloud/http.md)
 * 云存储
@@ -42,7 +41,7 @@
   * [uni-sec-check 内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
 * [uniCloud响应体规范](uniCloud/unicloud-response-format.md)
 * [前端网页托管](uniCloud/hosting.md)
-* Redis扩展
+* Redis扩展库
   * [简介](uniCloud/redis-introduction.md)
   * [费用说明](uniCloud/redis-buy.md)
   * [开发文档](uniCloud/redis.md)

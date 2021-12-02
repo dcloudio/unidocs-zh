@@ -1,4 +1,8 @@
-现在可以使用 uniapp 编译到微信、支付宝小程序插件。小程序插件是对一组 js 接口、自定义组件或页面的封装，用于嵌入到小程序中使用。
+> 本文档意在介绍如何把uni-app项目编译为小程序插件，如果想了解如何在uni-app中引用和使用小程序插件，另见文档：[使用小程序插件](/component/mp-weixin-plugin)
+
+小程序插件规范由小程序厂商定义，插件是对一组 js 接口、自定义组件或页面的封装，用于嵌入到小程序中使用。
+
+uni-app 不仅仅可以开发完整的小程序，也可以编译为小程序插件。
 
 **平台差异说明**
 
@@ -9,11 +13,11 @@
 **注意**
 
 1. 开发 `微信小程序插件` 时，基础库版本 `1.9.6` 开始支持。（如果插件包含页面，则需要基础库版本 `2.1.0` 。）
-2. 开发 `支付宝小程序插件` 时，IDE 版本要求在 0.60 及以上
+2. 开发 `支付宝小程序插件` 时，支付宝 IDE 版本要求在 0.60 及以上
 
 #### 插件目录结构
 
-> 编译到小程序插件结果
+> 编译到微信小程序插件结果
 
 ```
 plugin
@@ -33,7 +37,7 @@ plugin
 
 #### 插件配置文件
 
-> plugin.json 在 uniapp 项目中和 pages.json 同级。向第三方小程序开放的所有组件、页面和 js 接口都必须在 plugin.json 中声明
+> plugin.json 在 uni-app 项目中和 pages.json 同级。向第三方小程序开放的所有组件、页面和 js 接口都必须在 plugin.json 中声明
 
 - `mp-weixin`
 
@@ -95,7 +99,7 @@ plugin
 
 #### 如何在项目中使用插件
 
-1. 宿主小程序是 `uniapp项目`，在 `manifest.json` 中配置相关信息即可，[详情](https://uniapp.dcloud.io/component/mp-weixin-plugin?id=%e9%85%8d%e7%bd%ae%e5%b0%8f%e7%a8%8b%e5%ba%8f%e6%8f%92%e4%bb%b6)
+1. 宿主小程序是 `uni-app项目`，在 `manifest.json` 中配置相关信息即可，[详情](https://uniapp.dcloud.io/component/mp-weixin-plugin?id=%e9%85%8d%e7%bd%ae%e5%b0%8f%e7%a8%8b%e5%ba%8f%e6%8f%92%e4%bb%b6)
 2. 宿主为原生小程序，在项目的 `app.json` 中配置即可：
    - [mp-weixin 配置](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)
    - [mp-alipay 配置](https://opendocs.alipay.com/mini/plugin/plugin-development#app.json%20%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE)
@@ -104,7 +108,7 @@ plugin
 
 > 有时候项目不仅要编译到插件，也需要作为一个正常的小程序运行，但有些 api 并不适用于两端，此时可以使用自定义条件编译区分开来。
 
-1. 自定义条件编译（[详情](https://uniapp.dcloud.io/collocation/package)），在`package.json`中添加如以下配置：
+1. 自定义条件编译（[详情](/collocation/package)），在`package.json`中添加如以下配置：
 
    ```json
    "uni-app": {
@@ -155,7 +159,7 @@ plugin
    Vue.component('hello-list', helloList);
    ```
 2. 插件中所编写的页面需要在 `pages.json` 中填写。
-3. 如果有多个 `uniapp` 编译的 `插件` 需要运行在同一个小程序中，**不要重名**。
+3. 如果有多个 `uni-app` 编译的 `插件` 需要运行在同一个小程序中，**不要重名**。
 4. 名称不要有特殊字符，比如 `\`。会用到这个名字来挂载一个方法。
 5. `-` 已经手动替换为 `_` ，其他的特殊字符不要写。
 6. 各家小程序插件对各 `api` 的支持情况不同，具体请查看小程序官方文档的相关描述

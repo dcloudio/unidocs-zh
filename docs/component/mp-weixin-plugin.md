@@ -1,16 +1,23 @@
-#### 配置小程序插件
+#### 什么是小程序插件
 
-小程序插件是可被添加到小程序内直接使用的功能组件，在不同的小程序内叫法可能略有区别。微信小程序、支付宝小程序中叫`插件`，百度小程序中叫`动态库`，方便起见，以下统一称为插件。
+小程序插件不同于小程序自定义组件。
+
+小程序自定义组件是将组件源码导入到工程中，整体发布。
+
+小程序插件是第三方插件作者按照微信等小程序厂商规范开发的独立插件，直接发布到小程序的插件平台。开发者在自己的小程序工程里只配置插件id，并不把插件源码导入工程。在运行期，由小程序引擎动态联网装载。开发者无法获取引入的三方小程序插件的源码。
+
+在不同的小程序内叫法可能略有区别。微信小程序、支付宝小程序中叫`插件`，百度小程序中叫`动态库`，方便起见，以下统一称为插件。
 
 **参考文档**
 
 - [微信小程序插件](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)
 - [支付宝小程序插件](https://opendocs.alipay.com/mini/plugin/plugin-usage)
 - [百度小程序动态库](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)
+- [QQ小程序插件](https://q.qq.com/wiki/develop/miniprogram/frame/plugins/)
 
-#### 引入插件代码包
+#### 在uni-app中引入插件
 
-使用插件之前开发者需要在`manifest.json`中的各平台对应的字段内声明使用的插件，具体配置参照所用插件的开发文档
+在`manifest.json`中的各平台对应的字段内声明使用的插件，具体配置参照所用插件的开发文档
 
 **代码示例**
 
@@ -134,5 +141,7 @@
 * 微信开发工具提示 “插件版本不存在”，可能是插件开发文档示例代码中使用的版本已经不存在，请在声明插件处更改版本
 
 
+### 用uni-app制作小程序插件
 
+uni-app项目如何发布为小程序插件，另见文档：[https://uniapp.dcloud.io/collocation/miniprogram-plugin](https://uniapp.dcloud.io/collocation/miniprogram-plugin)
 

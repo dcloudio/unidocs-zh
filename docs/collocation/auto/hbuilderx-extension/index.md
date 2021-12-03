@@ -1,19 +1,19 @@
-# 自动化测试插件@hbuilderxextension
+# 自动化测试插件@extension
 
 ## 插件说明@description
 
-本插件，用于在HBuilderX内运行uniapp自动化测试，支持H5、微信小程序、android、ios自动化测试。
+本插件，用于在HBuilderX内运行uni-app自动化测试，支持H5、微信小程序、android、ios自动化测试。
 
 主要功能有：
 
 - 初始化测试环境（创建测试配置文件、以及安装测试所需的环境）
 - 运行测试 (运行项目下所有测试用例、运行某一个测试用例)
-- 新建测试用例 （uniapp pages页面，右键菜单【新建测试用例】）
-- 查看历史测试报告 （hbuilderx顶部运行菜单）
+- 新建测试用例 （uni-app pages页面，右键菜单【新建测试用例】）
+- 查看历史测试报告 （HBuilderX顶部运行菜单）
 
 ## 测试注意事项@note
 
-1. 本插件支持`uniapp普通项目`和`uniapp-cli项目`。uniapp-cli项目，运行自动化测试，需要在当前项目下安装自动化测试依赖。
+1. 本插件支持`uni-app普通项目`和`uniapp-cli项目`。uniapp-cli项目，运行自动化测试，需要在当前项目下安装自动化测试依赖。
 2. Windows电脑不支持运行测试到`ios手机`。
 3. MacOSX电脑，仅支持运行测试到`ios模拟器`，不支持ios真机。
 4. 运行测试到H5，仅支持`chrome`浏览器，不支持其它浏览器。 
@@ -36,16 +36,16 @@
 
 - H5、微信、ios、android自动化测试依赖`puppeteer`、`adbkit`、`node-simctl`、`jest`、`playwright`，运行插件时，如果未安装此依赖，将会弹窗自动安装。
 - `注意`：本插件0.0.3版本及以下，node: 当本机未安装node时，将使用HBuilderX内置的node运行测试。反之，本机安装了node，则使用本机的node。
-- `注意`：本插件0.0.4+版本，新增配置项 支持自定义设置使用何种node版本进行uniapp编译
+- `注意`：本插件0.0.4+版本，新增配置项 支持自定义设置使用何种node版本进行uni-app编译
 
 **特别注意：**
 
-- uniapp普通项目，需要通过插件`hbuilderx-for-uniapp-test`来安装测试环境。
+- uni-app普通项目，需要通过插件`hbuilderx-for-uniapp-test`来安装测试环境。
 - uniapp-cli项目，只需在项目下安装相关测试依赖即可。[详情](#uniapp-cli项目)
 
-### uniapp普通项目@uniapp
+### uni-app普通项目@uniapp
 
-uniapp普通项目，`初始化测试环境`或`运行测试`时，如果未安装相关依赖，会自动安装。
+uni-app普通项目，`初始化测试环境`或`运行测试`时，如果未安装相关依赖，会自动安装。
 
 如下图所示，项目管理器，选中项目，右键菜单【初始化测试环境】
 
@@ -64,13 +64,13 @@ npm install --save cross-env puppeteer adbkit node-simctl jest playwright @playw
 
 ## 创建测试用例@createTestCase
 
-uniapp项目，pages页面，右键菜单，创建测试用例
+uni-app项目，pages页面，右键菜单，创建测试用例
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/2b15f277-5a79-425e-b978-19e16d3062f5.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 15px;"/>
 
 ## 测试运行@testRun
 
-创建测试用例之后，选中项目，右键菜单【运行uniapp自动化测试】，选择运行平台，即可开始运行测试。
+创建测试用例之后，选中项目，右键菜单【运行uni-app自动化测试】，选择运行平台，即可开始运行测试。
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/97a253eb-6c10-4b4d-a66f-1b45de1acc59.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 10px;"/>
 
@@ -106,14 +106,14 @@ uniapp项目，pages页面，右键菜单，创建测试用例
 
 - 支持自定义**`测试报告`**路径。
 - 自动修改jest.config.js文件中的testMatch，默认为`true`。去掉勾选后，将不再自动修改testMatch。
-- 插件0.0.4+版本，新增配置项 支持自定义设置使用何种node版本进行uniapp编译。即您可以选择使用HBuilderX`内置的Node`、还是使用`操作系统`安装的Node进行uniapp编译。
+- 插件0.0.4+版本，新增配置项 支持自定义设置使用何种node版本进行uni-app编译。即您可以选择使用HBuilderX`内置的Node`、还是使用`操作系统`安装的Node进行uni-app编译。
 
 
 ## 如何编写测试用例@howToWriteTestcase
 
-> uniapp自动化测试，使用了业内常见的jest测试库。
+> uni-app自动化测试，使用了业内常见的jest测试库。
 
-- uniapp项目，pages目录下，右键菜单【创建测试用例】，选择模板。
+- uni-app项目，pages目录下，右键菜单【创建测试用例】，选择模板。
 - 测试用例文件名，必须为xxx.test.js
 - 测试用例编写，请遵循jest规范。
 
@@ -144,9 +144,9 @@ describe("sum test", () => {
 ```
 
 
-### uniapp页面用例示例@example
+### uni-app页面用例示例@example
 
-以uniapp【默认模板】index页面为例。
+以uni-app【默认模板】index页面为例。
 
 编写测试用例，检查`index.vue`页面，标题是否为`Hello`
 

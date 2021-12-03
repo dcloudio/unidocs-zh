@@ -75,47 +75,6 @@ keyword: 短信,sms
 1. 每日最多给10个手机号发送不超过100条短信；
 2. 使用该模板也会正常收取费用，请保证账户有充足余额。
 
-<!--
-目前短信功能包括如下模版，暂不可扩展新模版，模版形式如下。参数data内的字段会填充到模版内容里。
-
-|模版Id				|模板内容																							|
-|:-:				|:-:																								|
-|`uniID_code`		|【uniID】“${name}”验证码：${code}，用于${action}，${expMinute}分钟内有效，请勿泄露并尽快验证。	|
-|`uni_verify_code`	|【uni验证】“${name}”验证码：${code}，用于${action}，${expMinute}分钟内有效，请勿泄露并尽快验证。	|
-|`uni_order_unpaid` |【uni订单通知】您在“${name}”的订单${orderNo}未支付，将在${minute}分钟后自动关闭，请及时完成订单|
-|`uni_booking` |【uni预约通知】您已成功预订“${name}”提供的${service}。预约时间${dateTime}。注意事项：${notice}|
-|`uni_order_shipped` |【uni订单通知】您在“${name}”的订单${orderNo}已发货，${expressCompany}单号${expressNo}，请注意签收|
-
-`uniID_code`模板为uni-ID业务专用。如使用uniCloud的uni-id账户服务，无需自行开发代码调用本API，直接用uni-id即可，内置了注册和忘记密码的短信验证码服务。[详见](https://uniapp.dcloud.io/uniCloud/uni-id)
-
-`uni_verify_code`模板为开发者自定义使用，如未使用uni-id，则可以使用本模板发送短信验证码，也可以在支付等需要再次验证身份的场景中使用。
-
-本地运行云函数时，需要`2.8.5+`版本的HBuilderX才可以使用`uni_order_unpaid`、`uni_booking`、`uni_order_shipped`三个模板，上传并运行不受HBuilderX版本影响。
-
-每个短信模板的商用均必须在运营商备案。上述模板之所以带有uni前缀，是因为它们是DCloud已经在运营商备案过的模板，这些模板开发者可以直接使用。
-
-开发者若需自定义短信模板（包括去掉前面的uni前缀），则需要人工处理，再次向运营商备案。如有相关需求的开发者，可以发送申请邮件到service@dcloud.io，说明账户、预计发送量和新模板格式。
-模板中`${}`中的内容为自定义字段，在data中填写每个自定义字段后拼接成完整的短信内容。
-
-**上述模版对应的data内参数限制如下**
-
-所有参数中均不可包含`【`或`】`
-
-|参数名					|类型		|长度限制		|说明																																									|
-|:-:						|:-:		|:-:				|:-:																																									|
-|name						|String	|长度最大15	|应用名称																																							|
-|code						|String	|长度最大6	|验证码串，注意一般需要自行提供随机数并在数据库中存储以方便校验，只允许使用字母或数字	|
-|action					|String	|长度最大6	|验证码用途																																						|
-|expMinute			|String	|长度最大2	|验证码过期时间，单位分钟，即不超过99分钟。过期校验逻辑需自行开发											|
-|orderNo				|String	|长度最大20	|订单号																																								|
-|minute					|String	|长度最大2	|单位分钟，即不超过99分钟。																														|
-|service				|String	|长度最大10	|-																																										|
-|dateTime				|String	|长度最大18	|-																																										|
-|notice					|String	|长度最大20	|-																																										|
-|expressCompany	|String	|长度最大12	|-																																										|
-|expressNo			|String	|长度最大20	|-																																										|
-
--->
 
 **返回值**
 

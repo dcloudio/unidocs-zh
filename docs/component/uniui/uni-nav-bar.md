@@ -28,6 +28,7 @@
 |fixed|Boolean|false|是否固定顶部|
 |statusBar|Boolean|false|是否包含状态栏|
 |shadow|Boolean|false|导航栏下是否有阴影|
+|border|Boolean|true|导航栏下是否有边框|
 
 ### NavBar Slots
 

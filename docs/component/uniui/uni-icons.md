@@ -73,7 +73,7 @@
 	```css
 	@font-face {
 		font-family: "iconfont"; 
-		src  : url('./iconfont.ttf) format('truetype');
+		src: url('./iconfont.ttf') format('truetype');
 	}
 	
 	.iconfont {

@@ -432,7 +432,7 @@ uni.addInterceptor({
 |[uni.readBLECharacteristicValue](/api/system/ble?id=readblecharacteristicvalue)|读取低功耗蓝牙设备的特征值的二进制数据值|
 |[uni.onBLEConnectionStateChange](/api/system/ble?id=onbleconnectionstatechange)|监听低功耗蓝牙连接状态的改变事件|
 |[uni.onBLECharacteristicValueChange](/api/system/ble?id=onblecharacteristicvaluechange)|监听低功耗蓝牙设备的特征值变化事件|
-|[uni.notifyBLECharacteristicValueChange](/api/system/ble?id=notifyblecharacteristicvaluechange)|启用(或关闭)低功耗蓝牙设备特征值变化时的 notify 功能|
+|[uni.notifyBLECharacteristicValueChange](/api/system/ble?id=notifyblecharacteristicvaluechange)|启用蓝牙低功耗设备特征值变化时的 notify 功能，订阅特征|
 |[uni.getBLEDeviceServices](/api/system/ble?id=getbledeviceservices)|获取蓝牙设备所有服务(service)|
 |[uni.getBLEDeviceCharacteristics](/api/system/ble?id=getbledevicecharacteristics)|获取蓝牙设备某个服务中所有特征值(characteristic)|
 |[uni.createBLEConnection](/api/system/ble?id=createbleconnection)|连接低功耗蓝牙设备|

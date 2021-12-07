@@ -17,4 +17,4 @@
 - 此处代码运行不受DB Schema的权限控制，移植代码到实际业务中注意在schema中配好permission
 - 不支持clientDB的action
 - 数据库查询有最大返回条数限制，详见：[limit](https://uniapp.dcloud.net.cn/uniCloud/cf-database?id=limit)
-- 详细JQL语法，请参考：[JQL](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=jsquery)
+- 详细JQL语法，请参考：[JQL](uniCloud/jql.md)

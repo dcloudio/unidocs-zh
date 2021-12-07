@@ -106,11 +106,11 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 
 ## JQL的使用场景@scene
 
-你可以在以下三种场景使用JQL
+你可以在以下几种场景使用JQL
 
 - 客户端clientDB，包括js内以及unicloud-db组件内，参考：[clientDB](uniCloud/clientdb.md)
 - HBuilderX JQL数据库管理器，参考：[JQL数据库管理器](uniCloud/jql-runner.md)
-- 启用了jql扩展的云函数，参考：[云函数内使用JQL](uniCloud/jql-cloud.md)
+<!-- - 启用了jql扩展的云函数，参考：[云函数内使用JQL](uniCloud/jql-cloud.md) -->
 
 ### 不同场景的区别
 
@@ -127,10 +127,10 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 - 完整的权限校验，执行操作的用户不可以操作自己权限之外的数据
 - admin用户不可操作password类型的数据
 
-**云函数JQL：**
+<!-- **云函数JQL：**
 
 - 同clientDB，但是password类型的数据可以配置权限，默认权限是false，可以被admin用户操作。
-- 可以指定当前执行数据库操作的用户身份。
+- 可以指定当前执行数据库操作的用户身份。 -->
 
 ## JQL的限制@limit
 
@@ -287,7 +287,7 @@ db.collection('user').where({
 
 如需自定义返回的err对象，可以在clientDB中挂一个[action云函数](uniCloud/database?id=action)，在action云函数的`after`内用js修改返回结果，传入`after`内的result不带code和message。
 
-## 查询数据
+## 查询数据@query
 
 ### 查询数组字段@querywitharr
 
@@ -947,7 +947,7 @@ db.collection('article,comment')
 
 > 新增于`HBuilderX 3.2.6`
 
-在此之前JQL联表查询只能直接使用虚拟表，而不能先对主表、副表过滤再生成虚拟表。由于生成虚拟表时需要需要整个主表和副表进行联表，在数据量大的情况下性能会很差。
+在此之前JQL联表查询只能直接使用虚拟表，而不能先对主表、副表过滤再生成虚拟表。由于生成虚拟表时需要整个主表和副表进行联表，在数据量大的情况下性能会很差。
 
 使用临时表进行联表查询，可以先对主表或者副表进行过滤，然后在处理后的临时表的基础上生成虚拟表。
 
@@ -1474,7 +1474,7 @@ db.collection('order,book')
 
 ### 各种字段运算方法@db-operator
 
-自`HBuilderX 3.1.0`起，JQL支持在云端数据库对字段进行一定的操作运算之后再返回，详细可用的方法列表请参考：[数据库运算方法](uniCloud/clientdb.md?id=aggregate-operator)
+自`HBuilderX 3.1.0`起，JQL支持在云端数据库对字段进行一定的操作运算之后再返回，详细可用的方法列表请参考：[数据库运算方法](uniCloud/jql.md?id=aggregate-operator)
 
 > 需要注意的是，为方便书写，JQL内将数据库运算方法的用法进行了简化（相对于云函数内使用数据库运算方法而言）。用法请参考上述链接
 
@@ -1519,7 +1519,7 @@ const res = await db.collection('class')
 **注意**
 
 - 如果要访问数组的某一项请使用arrayElemAt操作符，形如：`arrayElemAt(arr,1)`
-- 在进行权限校验时，会计算field内访问的所有字段计算权限。上面的例子中会使用表的read权限和grade、class字段的权限，来进行权限校验。
+- 在进行权限校验时，会以field内访问的所有字段计算权限。上面的例子中会使用表的read权限和grade、class字段的权限，来进行权限校验。
 
 ### 排序orderBy@order-by
 
@@ -2643,7 +2643,7 @@ db.collection("user")
 
 指定要删除的记录有2种方式：
 
-#### 方式1 通过指定文档ID删除
+### 通过指定文档ID删除
 
 collection.doc(_id).remove()
 
@@ -2653,7 +2653,7 @@ const db = uniCloud.database();
 await db.collection("table1").doc("5f79fdb337d16d0001899566").remove()
 ```
 
-#### 方式2 条件查找文档后删除
+### 条件查找文档后删除
 
 collection.where().remove()
 
@@ -2681,7 +2681,7 @@ await db.collection("table1").where({
 }).remove()
 ```
 
-#### 回调的res响应参数
+**响应结果**
 
 | 字段		| 类型		| 必填	| 说明						|
 | ---------	| -------	| ----	| ------------------------	|
@@ -2794,7 +2794,7 @@ let res = await collection.where({_id:'doc-id'})
 }
 ```
 
-#### 批量更新文档
+### 批量更新文档
 
 ```js
 const db = uniCloud.database();
@@ -2804,11 +2804,11 @@ let res = await collection.where("name=='hey'").update({
 })
 ```
 
-#### 更新数组内指定下标的元素
+### 更新数组内指定下标的元素
 
 JQL暂不支持此用法
 
-#### 更新数组内匹配条件的元素
+### 更新数组内匹配条件的元素
 
 JQL暂不支持此用法
 

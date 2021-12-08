@@ -20,7 +20,7 @@
 5. 运行测试到Android手机，如果HBuilderX仅检测到一个android设备，直接运行测试到当前已连接设备。多个设备时，会弹窗要求选择手机。
 6. node: 当本机未安装node时，将使用HBuilderX`内置node`运行测试。反之，本机安装了node，则使用本机的node。
 
-## 插件安装@testInstall
+## 插件安装@test_install
 
 [插件安装地址](https://ext.dcloud.net.cn/plugin?id=5708)
 
@@ -43,7 +43,7 @@
 - uni-app普通项目，需要通过插件`hbuilderx-for-uniapp-test`来安装测试环境。
 - uniapp-cli项目，只需在项目下安装相关测试依赖即可。[详情](#uniapp-cli项目)
 
-### uni-app普通项目@uniapp
+### uni-app普通项目
 
 uni-app普通项目，`初始化测试环境`或`运行测试`时，如果未安装相关依赖，会自动安装。
 
@@ -53,7 +53,7 @@ uni-app普通项目，`初始化测试环境`或`运行测试`时，如果未安
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ca0f9ce4-1d45-4103-9800-36a1608062d4.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 
-### uniapp-cli项目@uniappcli
+### uniapp-cli项目
 
 uniapp-cli项目，自动化测试运行，将使用**项目下的依赖库**。
 
@@ -62,13 +62,13 @@ uniapp-cli项目，自动化测试运行，将使用**项目下的依赖库**。
 npm install --save cross-env puppeteer adbkit node-simctl jest playwright @playwright/test
 ```
 
-## 创建测试用例@createTestCase
+## 创建测试用例@create_testcase
 
 uni-app项目，pages页面，右键菜单，创建测试用例
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/2b15f277-5a79-425e-b978-19e16d3062f5.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 15px;"/>
 
-## 测试运行@testRun
+## 测试运行@test_run
 
 创建测试用例之后，选中项目，右键菜单【运行uni-app自动化测试】，选择运行平台，即可开始运行测试。
 
@@ -83,20 +83,20 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 - 运行测试到H5，仅支持`chrome`浏览器，**不支持**其它浏览器。
 - 运行测试到Android手机，如果HBuilderX仅检测到**一个android设备**，直接运行测试到当前已连接设备。多个设备时，会弹窗要求选择手机。
 
-### 选择测试平台@selectPlatform
+### 选择测试平台@select_platform
 
 如下图所示，运行测试时，支持选择对应平台。
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/856d6345-3274-4856-8830-3bccfcc9d747.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
 
-### 选择设备@selectDevices
+### 选择设备@select_devices
 
 > 如果无法获取到设备信息，请[参考](https://ask.dcloud.net.cn/article/97)
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/48721bc9-247c-461c-b6f8-8fca1838b734.png" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
 
 
-## 插件配置@extensionConfig
+## 插件配置@extension_config
 
 点击菜单【设置】【插件配置】，找到hbuilderx-for-uniapp-test项，即可看到设置项。
 
@@ -118,7 +118,7 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 - 测试用例编写，请遵循jest规范。
 
 
-### jest用例解析@jestTestcase
+### jest用例解析@jest_testcase
 
 下面将使用一个最简单的示例，来讲解测试用例的组成。
 
@@ -234,7 +234,7 @@ Snapshots:   0 total
 Time:        0.454 s
 ```
 
-## 内置Jest代码块@codeblocks
+## 内置Jest代码块@snippets
 
 > 为了更快速的编写测试用例，本插件内置了jest部分代码块
 

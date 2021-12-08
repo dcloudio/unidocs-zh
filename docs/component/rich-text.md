@@ -13,7 +13,7 @@
 |selectable|Boolean|true|富文本是否可以长按选中，可用于复制，粘贴等场景|百度小程序（仅真机支持，基础库 3.150.1 以下版本默认为 false）|
 |image-menu-prevent|Boolean|false|阻止长按图片时弹起默认菜单（将该属性设置为image-menu-prevent或image-menu-prevent="true"），只在初始化时有效，不能动态变更；若不想阻止弹起默认菜单，则不需要设置此属性|百度小程序|
 |preview|Boolean||富文本中的图片是否可点击预览。在不设置的情况下，若 rich-text 未监听点击事件，则默认开启。未显示设置 preview 时会进行点击默认预览判断，建议显示设置 preview|百度小程序|
-|@itemclick|EventHandle||拦截点击事件（只支持 `a`、`img`标签），返回当前node信息 `event.detail={node}`|H5 (3.2.13+)、App-vue (3.2.13+)|
+|@itemclick|EventHandle||拦截点击事件（只支持 `a`、`img`标签），返回当前node信息 `event.detail={node}`|H5 (3.2.13+)、App-Vue (3.2.13+)|
 
 ##### nodes
 

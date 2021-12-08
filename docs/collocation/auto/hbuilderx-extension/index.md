@@ -83,13 +83,13 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 - 运行测试到H5，仅支持`chrome`浏览器，**不支持**其它浏览器。
 - 运行测试到Android手机，如果HBuilderX仅检测到**一个android设备**，直接运行测试到当前已连接设备。多个设备时，会弹窗要求选择手机。
 
-### 选择测试平台@select_platform
+### 选择测试平台@select-platform
 
 如下图所示，运行测试时，支持选择对应平台。
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/856d6345-3274-4856-8830-3bccfcc9d747.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
 
-### 选择设备@select_devices
+### 选择设备@select-devices
 
 > 如果无法获取到设备信息，请[参考](https://ask.dcloud.net.cn/article/97)
 

@@ -20,7 +20,7 @@
   * [快速开始](collocation/auto/quick-start.md)
   * [API](collocation/auto/api.md)
   * [HBuilderX自动化测试插件](collocation/auto/hbuilderx-extension/index.md)
-  * [CLI项目自动化测试](collocation/auto/hbuilderx-extension/index.md)
+  * [CLI项目自动化测试](collocation/auto/uniapp-cli-project.md)
 <li></li>
 <div class="contact-box">
   <a href="//unicloud.dcloud.net.cn" target="_blank" class="contact-item">

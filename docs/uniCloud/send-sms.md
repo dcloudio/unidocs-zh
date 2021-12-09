@@ -183,3 +183,4 @@ exports.main = async (event, context) => {
 - Android手机在App端获取短信验证码，参考：[https://ask.dcloud.net.cn/article/676](https://ask.dcloud.net.cn/article/676)
 - 短信内容超过70个字符时为长短信，需分条发送，每67个字按一条短信计算
 - 如果本地运行提示`不支持的模板ID`，请更新到`2.9.9+`版本的HBuilderX 
+- 单个手机号码使用同一短信模板发送短信时，1分钟内只能发送1次，超过1次会被运营商判定为短信重发而被拦截导致短信发送失败

@@ -38,7 +38,7 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
   	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/1ad34710-4f1a-11eb-8ff1-d5dcf8779628.png"/>
   </div>
 
-2. 真机运行：连接手机，开启USB调试，进入hello-uniapp项目，点击工具栏的运行 -> 真机运行 -> 选择运行的设备，即可在该设备里面体验uni-app。
+2. 运行App到手机或模拟器：连接手机，开启USB调试，进入hello-uniapp项目，点击工具栏的运行 -> 真机运行 -> 选择运行的设备，即可在该设备里面体验uni-app。
 	<div align=center>
 		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/3a1faaf0-4f1a-11eb-b680-7980c8a877b8.png"/>
 	</div>
@@ -78,7 +78,7 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
     	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/42de5370-4f1b-11eb-8ff1-d5dcf8779628.png"/>
     </div>
 
-7. 在360开发工具中导入：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 360开发工具，即可在360开发工具里面体验uni-app。
+7. 在360开发工具中导入：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 360开发工具，即可在360开发工具里面体验uni-app。注意360工具只有windows版
     <br/>
     <div align=center>
       <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b9edff30-4f37-11eb-97b7-0dc4655d6e68.png"/>
@@ -96,7 +96,7 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
       <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bc558950-4f37-11eb-bdc1-8bd33eb6adaa.png"/>
     </div>
 
-10. 在QQ小程序开发工具里运行：内容同上，不再重复。
+10. 在QQ、快手、飞书等小程序开发工具里运行：内容同上，不再重复。
 
 **Tips**
 
@@ -105,6 +105,7 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
 * 如果自动启动小程序开发工具失败，请手动启动小程序开发工具并将 HBuilderX 控制台提示的项目路径，打开项目。
 
 运行的快捷键是`Ctrl+r`。
+
 HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行的设备：
 <div align=center>
 	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/aef21b70-4f37-11eb-a16f-5b3e54966275.png"/>
@@ -131,6 +132,10 @@ HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行�
 云打包也支持cli模式，通过HBuilderX的cli方式（不是uni-app的cli），可以调用命令行打包，方便持续集成。详见：[https://hx.dcloud.net.cn/cli/pack](https://hx.dcloud.net.cn/cli/pack)
 
 虽然安心打包已经满足需求，但如仍然希望自己使用 xcode 或 Android studio 进行离线打包，则在 HBuilderX 发行菜单里找到本地打包菜单，生成离线打包资源，然后参考离线打包文档操作：[https://nativesupport.dcloud.net.cn/AppDocs/README](https://nativesupport.dcloud.net.cn/AppDocs/README)。
+
+App打包时，注意如何涉及三方sdk，需进行申请并在manifest.json里配置，否则相关功能无法使用。
+
+iOS App打包需要向Apple申请证书。
 
 
 ### 发布为H5
@@ -216,7 +221,7 @@ HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行�
 3. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在[华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp)上传。
 
 
-**发布为QQ小程序：**
+**发布为QQ、快手、飞书小程序：**
 内容同上，不再重复。
 
 发布的快捷键是`Ctrl+u`。同样可拉下快速发布菜单并按数字键选择。

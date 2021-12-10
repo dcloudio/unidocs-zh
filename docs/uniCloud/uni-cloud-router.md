@@ -158,12 +158,12 @@ const Controller = require("uni-cloud-router").Controller;
 module.exports = class PostController extends Controller {
   async create() {
     const { ctx, service } = this;
-    // 校验参数
+    // 校验参数，注意：uni-cloud-router本身不包含validate方法，此方法需要由用户自行实现建议在中间件挂载
     ctx.validate({
       title: { type: "string" },
       content: { type: "string" },
     });
-    // 组装参数
+    // 组装参数，ctx.auth.uid是由用户自己的auth中间件挂载到ctx上的
     const author = ctx.auth.uid;
     const post = Object.assign(ctx.data, { author });
     // 调用 Service 进行业务处理

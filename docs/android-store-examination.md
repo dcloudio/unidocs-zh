@@ -6,10 +6,11 @@
 
 为了帮助开发者同学避免合规风险，提供隐私协议自查指南。开发者可以按照以下顺序自查：
 
-#### 1、升级最新版本HbuilderX或离线打包SDK
-#### 2、隐私弹窗配置检测
-#### 3、隐私政策展示内容
+#### 1、[升级最新版本HbuilderX或离线打包SDK](#update)
+#### 2、[隐私弹窗配置检测](#check)
+#### 3、[隐私政策展示内容](#content)
 
+<a id="update"></a>
 ## 一、根据自身APP生产环境选择最新版本HbuilderX或SDK
 
 |打包方式		|推荐版本			|下载地址
@@ -17,6 +18,8 @@
 |HbuilderX打包	|`HbuilderX3.2.15+`	|【[HbuilderX下载地址](https://www.dcloud.io/hbuilderx.html)】
 |离线打包      	|`3.2.15+`         	|【[离线打包SDK下载地址](https://nativesupport.dcloud.net.cn/AppDocs/download/android)】
 
+<a id="check"></a>
+## 二、隐私弹窗配置检测
 
 #### 1 .检查uni-app项目目录下是否含有androidPrivacy.json文件 没有请查[参考文档](https://ask.dcloud.net.cn/article/36937)添加配置！
 #### 2 .查看androidPrivacy.json文件中`prompt`配置值域是不是`template`。[参考文档](https://ask.dcloud.net.cn/article/36937)
@@ -30,6 +33,7 @@
 		}
 		```
 
+<a id="content"></a>
 ## 三、隐私政策展示内容
 
 ### 务必在APP《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发

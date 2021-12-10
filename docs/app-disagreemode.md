@@ -178,7 +178,7 @@ var options = {
 plus.runtime.showPrivacyDialog(options);
 ```
 
-**注意：如果项目中使用了 map、push、Statistic，或者设置loadNativePlugins为false时，用户选择同意隐私政策协议后需要调用`plus.runtime.restart`重启应用才能生效需要注意！**
+**注意：如果项目中使用了 map、push、Statistic，或者设置loadNativePlugins为false时，用户选择同意隐私政策协议后需要调用`plus.runtime.restart`重启应用才能生效！**
 
 
 <a id="fqa"></a>

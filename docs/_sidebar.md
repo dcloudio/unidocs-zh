@@ -33,6 +33,7 @@
 * [混合开发](hybrid.md)
 * App上架指南
   * [国内应用市场上架](android-store.md)
+  * [未同意隐私政策模式运行](app-disagreemode.md)
   * [Google Play上架](android-gp.md)
   * [App Store上架](ios-app-store.md)
 * [uni小程序sdk](https://nativesupport.dcloud.net.cn/README)

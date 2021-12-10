@@ -9,6 +9,7 @@
 #### 1、[升级最新版本HbuilderX或离线打包SDK](#update)
 #### 2、[隐私弹窗配置检测](#check)
 #### 3、[隐私政策展示内容](#content)
+#### 4、[查看uni-app(5+ App/Wap2App)集成功能模块补充隐私协议](#feature)
 
 <a id="update"></a>
 ## 一、根据自身APP生产环境选择最新版本HbuilderX或SDK
@@ -92,7 +93,8 @@ android.permission.GET_TASKS
   </tr>
 </table>
 
-其他功能模块协议信息请查看[Android平台各功能模块隐私合规协议](https://ask.dcloud.net.cn/article/39484)
+<a id="feature"></a>
+## 四、查看uni-app(5+ App/Wap2App)集成模块补充隐私协议
 
 #### 查看uni-app(5+ App/Wap2App)应用功能模块
 

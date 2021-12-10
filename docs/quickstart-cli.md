@@ -24,7 +24,17 @@ vue create -p dcloudio/uni-preset-vue my-project
 vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
 ```
 
-此时，会提示选择项目模板，初次体验建议选择 `hello uni-app` 项目模板，如下所示：
+**使用Vue3/Vite版**
+
+```shell
+# 创建以 javascript 开发的工程  
+npx degit dcloudio/uni-preset-vue#vite my-vue3-project  
+
+# 创建以 typescript 开发的工程  
+npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project 
+```
+
+此时，会提示选择项目模板（使用Vue3/Vite版不会提示，目前只支持创建默认模板），初次体验建议选择 `hello uni-app` 项目模板，如下所示：
 
 <div>
 <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/h5-cli-01.png" width="300">

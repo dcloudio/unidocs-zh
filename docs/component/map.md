@@ -51,7 +51,7 @@
 **注意** 
 
 - `<map>` 组件的宽/高推荐写直接量，比如：750rpx，不要设置百分比值。
-- `uni-app` 只支持 `gcj02` 坐标
+- 谷歌地图使用 `wgs84` 坐标，其他地图使用 `gcj02` 坐标，用错坐标类型会显示偏移。
 - App平台 `layer-style` 属性需要在地图服务商后台创建，值设置为高德后台申请的字符串，[详情](https://developer.amap.com/api/android-sdk/guide/create-map/custom)
 
 ### 近期新增功能
@@ -102,10 +102,10 @@
 |content|文本|String||
 |color|文本颜色|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
 |fontSize|文字大小|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
-|x|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、H5、百度小程序|
-|y|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、H5、百度小程序|
-|anchorX|label的坐标，原点是 marker 对应的经纬度|Number|微信小程序|
-|anchorY|label的坐标，原点是 marker 对应的经纬度|Number|微信小程序|
+|x|label的坐标，原点是 marker 对应的经纬度|Number|H5、百度小程序|
+|y|label的坐标，原点是 marker 对应的经纬度|Number|H5、百度小程序|
+|anchorX|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
+|anchorY|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
 |borderWidth|边框宽度|Number|微信小程序、百度小程序|
 |borderColor|边框颜色|String|微信小程序、百度小程序|
 |borderRadius|边框圆角|Number|App-nvue 2.1.5+、微信小程序、百度小程序|

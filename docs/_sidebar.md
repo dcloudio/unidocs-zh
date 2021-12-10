@@ -38,6 +38,7 @@
 * [uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
 * 运营服务
   * [App升级中心](uniCloud/upgrade-center.md)
+  * [统一发布页uni-publish](uniCloud/uni-publish.md)
   * [uni一键登录](univerify.md)
   * [统一推送uniPush](unipush.md)
   * [uni统计](uni-stat.md)
@@ -91,7 +92,7 @@
 	  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/759713d0-4f2d-11eb-a16f-5b3e54966275.png" width="20" height="20"/>
 	  <div class="contact-smg">
 	     <div>官方QQ交流群</div>
-	  <div>群13：699478442 &nbsp;<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=Fb4-zKaMCOz4Vm5b-_e4Ry3MLnOaEGwI&jump_from=webapi">点此加入</a></div>
+	  <div>群2：901474938 &nbsp;<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=E-3RyF9wOtGobJB4Aze8H6zlHn4fZuDf&jump_from=webapi">点此加入</a></div>
 		<div>群35：713420817（2000人已满）</div>
 		<div>群34：530305531（2000人已满）</div>
 		<div>群33：498071674（2000人已满）</div>
@@ -114,7 +115,7 @@
 		<div>群16：719211033（2000人已满）</div>
 		<div>群15：516984120（2000人已满）</div>
 		<div>群14：465953250（2000人已满）</div>
-		<!-- <div>群13：699478442（2000人已满）</div>-->
+		<div>群13：699478442（2000人已满）</div>
 		<div>群12：884860657（2000人已满）</div>
 		<div>群11：296811328（2000人已满）</div>
 		<div>群10：959059626（2000人已满）</div>
@@ -125,7 +126,7 @@
 		<div>群5：731951419（2000人已满）</div>
 		<div>群4：942702595（2000人已满）</div>
 		<div>群3：773794803（2000人已满） </div>
-		<div>群2：901474938（2000人已满） </div>
+		<!-- <div>群2：901474938（2000人已满） </div>-->
 		<div>群1：531031261（2000人已满）</div>
 	  </div>
 	</div>

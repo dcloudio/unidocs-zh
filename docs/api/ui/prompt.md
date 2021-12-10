@@ -5,7 +5,7 @@
 **OBJECT参数说明**
 
 |参数|类型|必填|说明|平台差异说明|
-|:-|:-|:-|:-|:-|:-|
+|:-|:-|:-|:-|:-|
 |title|String|是|提示的内容，长度与 icon 取值有关。||
 |icon|String|否|图标，有效值详见下方说明。||
 |image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序|
@@ -20,9 +20,9 @@
 
 |值|说明|平台差异说明|
 |:-|:-|:-|
-|success|显示成功图标，此时 title 文本最多显示 7 个汉字长度。默认值||
-|error|显示错误图标，此时 title 文本最多显示 7 个汉字长度。||
-|loading|显示加载图标，此时 title 文本最多显示 7 个汉字长度。|支付宝小程序不支持|
+|success|显示成功图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度。||
+|error|显示错误图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度。||
+|loading|显示加载图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度。|支付宝小程序不支持|
 |none|不显示图标，此时 title 文本在`小程序`最多可显示两行，`App`仅支持单行显示。|&nbsp;|
 
 **示例**
@@ -106,9 +106,9 @@ setTimeout(function () {
 |title|String|否|提示的标题||
 |content|String|否|提示的内容||
 |showCancel|Boolean|否|是否显示取消按钮，默认为 true||
-|cancelText|String|否|取消按钮的文字，默认为"取消"，最多 4 个字符||
+|cancelText|String|否|取消按钮的文字，默认为"取消"||
 |cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序|
-|confirmText|String|否|确定按钮的文字，默认为"确定"，最多 4 个字符||
+|confirmText|String|否|确定按钮的文字，默认为"确定"||
 |confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序|
 |editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)|
 |placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)|
@@ -119,7 +119,7 @@ setTimeout(function () {
 **success返回参数说明**
 
 |参数|类型|说明|
-|:-|:-|:-|:-|
+|:-|:-|:-|
 |confirm|Boolean|为 true 时，表示用户点击了确定按钮|
 |cancel|Boolean|为 true 时，表示用户点击了取消（用于 Android 系统区分点击蒙层关闭还是点击取消按钮关闭）|
 
@@ -141,9 +141,10 @@ uni.showModal({
 ```
 
 **注意**
-- 弹框同时使用确定取消时，需注意不同平台的确认取消按钮位置不同。在微信、H5中，确认按钮默认在右边。在App中，iOS的确认按钮默认在右边，而Android默认在左边。产生这种差异的原因是uni.showModa在App和小程序上调用的是原生提供的弹出框，原生平台的策略本身就不同。如果需要调整，可以通过自行控制按钮的文字，即“确定”按钮的文字其实可以设置为“取消”。
-- showModal不满足需求时，可以自行开发组件弹框。插件市场有很多自定义弹框的组件，需注意在非H5平台，前端组件无法覆盖原生组件（如地图、video），遮罩也无法盖住tabbar和navigationbar。如需覆盖原生组件或遮罩tabbar等，App端推荐使用[subNvue](https://uniapp.dcloud.net.cn/api/window/subNVues)。
-- App端还有原生的[prompt API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.prompt)，弹出界面中内置一个输入框。其他平台需自行封装前端组件实现。
+- 弹框同时使用确定取消时，需注意不同平台的确认取消按钮位置不同。在微信、H5中，确认按钮默认在右边。在App中，iOS的确认按钮默认在右边，而Android默认在左边。产生这种差异的原因是uni.showModal在App和小程序上调用的是原生提供的弹出框，原生平台的策略本身就不同。如果需要调整，可以通过自行控制按钮的文字，即“确定”按钮的文字其实可以设置为“取消”；
+- showModal不满足需求时，可以自行开发组件弹框。插件市场有很多自定义弹框的组件，需注意在非H5平台，前端组件无法覆盖原生组件（如地图、video），遮罩也无法盖住tabbar和navigationbar。如需覆盖原生组件或遮罩tabbar等，App端推荐使用[subNvue](https://uniapp.dcloud.net.cn/api/window/subNVues)；
+- App端还有原生的[prompt API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.prompt)，弹出界面中内置一个输入框。其他平台需自行封装前端组件实现；
+- 小程序平台，`cancelText`和`confirmText`有长度限制，最多允许 4 个字符；
 - 钉钉小程序真机与模拟器表现有差异，真机title，content均为必填项
 
 

@@ -1,13 +1,13 @@
 * 配置
-  * [pages.json](collocation/pages.md)
-  * [manifest.json](collocation/manifest.md)
+  * [pages.json 页面路由](collocation/pages.md)
+  * [manifest.json 应用配置](collocation/manifest.md)
   * [package.json](collocation/package.md)
   * [vue.config.js](collocation/vue-config.md)
   * [uni.scss](collocation/uni-scss.md)
   * [App.vue](collocation/App.md)
   * [main.js](collocation/main.md)
   * [env](collocation/env.md)
-  * [小程序插件](collocation/miniprogram-plugin.md)
+  * [plugin.json 生成小程序插件](collocation/miniprogram-plugin.md)
 * 框架接口
   * [日志打印](collocation/frame/log.md)
   * [定时器](collocation/frame/timer.md)
@@ -19,7 +19,8 @@
 * 自动化测试
   * [快速开始](collocation/auto/quick-start.md)
   * [API](collocation/auto/api.md)
-  * [自动化测试插件](collocation/auto/hbuilderx-extension/index.md)
+  * [HBuilderX自动化测试插件](collocation/auto/hbuilderx-extension/index.md)
+  * [CLI项目自动化测试](collocation/auto/uniapp-cli-project.md)
 <li></li>
 <div class="contact-box">
   <a href="//unicloud.dcloud.net.cn" target="_blank" class="contact-item">

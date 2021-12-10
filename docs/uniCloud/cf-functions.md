@@ -70,7 +70,6 @@ exports.main = async (event, context) => {
 |uniCloud.logger			|云函数中打印日志到uniCloud日志记录系统（非HBuilderX控制台）[详情](uniCloud/cf-logger)	|
 |uniCloud.sendSms()			|发送短信 [详见](uniCloud/send-sms.md)													|
 
-
 ## 特殊属性
 
 **注意：下面所有的“客户端”均是相对于云函数而言，如果你使用自己的服务器调用云函数此时客户端是指你的服务器**
@@ -258,6 +257,29 @@ Tips:
 
 云函数支持公共模块。多个云函数的共享部分，可以抽离为公共模块，然后被多个云函数引用。[详见](uniCloud/cf-common)
 
+## 扩展库
+
+uniCloud内置了一些扩展库，但是为了减小云函数体积，并不会对所有云函数默认开启。如需使用需要在云函数的package.json内的extensions字段下配置。
+
+**目前支持的扩展库有以下几个**
+
+<!-- - 用于在云函数内使用JQL语法操作数据库的JQL扩展库[uni-cloud-jql]，参考：[JQL扩展库](uniCloud/jql-cloud.md) -->
+- 用于在云函数内使用redis的redis扩展库[uni-cloud-redis]，参考：[redis扩展库](uniCloud/redis.md)
+
+以下是一个开启了Redis扩展库的云函数package.json示例，注意此文件不支持注释，下方示例中的注释仅为演示
+
+```js
+{
+  "name": "add-article",
+  "version": "1.0.0",
+  "description": "新增文章",
+  "main": "index.js",
+	"extensions": {
+		"uni-cloud-redis": {} // 配置为空对象即可，后续如有扩展参数会在此处配置
+	}
+}
+```
+
 ## 客户端调用云函数@clientcallfunction
 
 前端代码（H5前端、App、小程序），不再执行uni.request联网，而是通过`uniCloud.callFunction`调用云函数，`callFunction`定义如下：
@@ -443,19 +465,22 @@ package.json是一个标准json文件，不可带注释。下面是一个package
   "description": "新增文章",
   "main": "index.js",
   "dependencies": {
-    
+    // 云函数的依赖，包括公共模块及自行安装的npm依赖
   },
+	"extensions": {
+		// 云函数使用的扩展库
+	},
   "cloudfunction-config": {
-      "memorySize": 256,
-      "timeout": 5,
-      "triggers": [{
-          "name": "myTrigger",
-          "type": "timer",
-          "config": "0 0 2 1 * * *"
-      }],
-      "path": "",
-      "runtime": "Nodejs8" 
-    }
+		"memorySize": 256,
+		"timeout": 5,
+		"triggers": [{
+				"name": "myTrigger",
+				"type": "timer",
+				"config": "0 0 2 1 * * *"
+		}],
+		"path": "",
+		"runtime": "Nodejs8" 
+	}
 }
 ```
 

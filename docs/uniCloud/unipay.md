@@ -56,7 +56,7 @@ const unipay = require('@dcloudio/unipay')
 |   subAppId| String	|   否	|                          -													|                 子商户appId								|
 |   subMchId| String	|   否	|                          -													|                 子商户号									|
 |    key		| String	|   是	|                          -													|            支付商户 key （API密钥）				|
-|    pfx		| String	| Buffer|                   使用退款功能必填									|       微信支付商户 API 证书，主要用于退款	|
+|    pfx		| String&#124;Buffer|                   使用退款功能必填|-									|       微信支付商户 API 证书，主要用于退款	|
 |  timeout	| Number	|   否	|                         5000												|        请求超时时间，单位：毫秒						|
 |  signType	| String	|   否	|                         MD5													|                签名类型										|
 |  sandbox	| Boolean	|   否	|                        false												|            是否启用沙箱环境								|
@@ -67,7 +67,7 @@ const unipayIns = unipay.initWeixin({
   appId: 'your appId',
   mchId: 'your mchId',
   key: 'you parterner key',
-  pfx: fs.readFileSync('/path/to/your/pfxfile'), // p12文件路径，使用微信退款时需要，需要注意的是阿里云目前不支持以相对路径读取文件，请使用绝对路径的形式
+  pfx: fs.readFileSync('/path/to/your/pfxfile'), // 建议以p12文件绝对路径进行读取，使用微信退款时需要
 })
 
 

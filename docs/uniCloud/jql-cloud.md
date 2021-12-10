@@ -6,11 +6,11 @@ HBuilderX 3.3.1之前JQL只能在clientDB及JQL数据库管理里面使用，此
 
 关于JQL语法及其他注意事项请参考此文档：[JQL数据库操作](uniCloud/jql.md)
 
-## 为云函数启用jql扩展能力@use-in-function
+## 为云函数启用jql扩展库@use-in-function
 
-需要开发者手动在云函数的package.json内添加云函数的扩展能力。（如果云函数目录下没有package.json，可以通过在云函数目录下执行`npm init -y`来生成）
+需要开发者手动在云函数的package.json内添加云函数的扩展库。（如果云函数目录下没有package.json，可以通过在云函数目录下执行`npm init -y`来生成）
 
-下面是一个开启了jql扩展能力的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
+下面是一个开启了jql扩展库的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
 
 ```js
 {
@@ -19,7 +19,7 @@ HBuilderX 3.3.1之前JQL只能在clientDB及JQL数据库管理里面使用，此
 	"description": "",
 	"main": "index.js",
 	"extensions": {
-		"uni-cloud-jql": {} // 配置为此云函数开启jql扩展能力，值为空对象留作后续追加参数，暂无内容
+		"uni-cloud-jql": {} // 配置为此云函数开启jql扩展库，值为空对象留作后续追加参数，暂无内容
 	},
 	"author": ""
 }

@@ -233,9 +233,9 @@ tokenExpiresThreshold用于指定token还有多长时间过期时自动刷新tok
 - [保存token及其过期时间](uniCloud/uni-id?id=save-token)
 - [删除token及其过期时间](uniCloud/uni-id?id=remove-token)
 
-用户token为明文存储，可以在token内查看用户相关信息。uniCloud也提供了一个接口用于直接获取token内的用户信息，参考：[uniCloud.getUserInfo](uniCloud/client-sdk.md?id=client-getcurrentuserinfo)
+用户token为明文存储，可以在token内查看用户相关信息。uniCloud也提供了一个接口用于直接获取token内的用户信息，参考：[uniCloud.getCurrentUserInfo](uniCloud/client-sdk.md?id=client-getcurrentuserinfo)
 
-uniCloud.getUserInfo接口大致逻辑如下，需要注意的是某些小程序平台不支持atob，getUserInfo接口内已包含atob的polyfill
+uniCloud.getCurrentUserInfo接口大致逻辑如下，需要注意的是某些小程序平台不支持atob，getCurrentUserInfo接口内已包含atob的polyfill
 
 ```js
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE1OTNiYTkxYTc1MDAwMDE2NmY3OGQiLCJyb2xlIjpbImFkbWluIl0sInBlcm1pc3Npb24iOltdLCJpYXQiOjE2MzgyNDMzNjUsImV4cCI6MTYzODI1MDU2NX0.MRHEvNYhj9yXjPK04rhZOdnitaxRdF2Ek9BbZjPJyDE'

@@ -727,7 +727,7 @@ font-weight {string}：字体粗细程度。默认值: ```normal```；
 |line-through	|定义穿过文本下的一条线	|
 
 
-> 只支持 ```text``` 和 ```ricthext```
+> 只支持 ```text``` 和 ```richtext```
 > 
 > 不支持 ```text-decoration:overline```
 
@@ -756,7 +756,7 @@ font-weight {string}：字体粗细程度。默认值: ```normal```；
 |--			|--								|
 |clip		|修剪文本						|
 |ellipsis	|显示省略符号来代表被修剪的文本	|
-> 只支持 ```text``` 和 ```ricthext```
+> 只支持 ```text``` 和 ```richtext```
 
 ### lines
 ```lines {number}```: 正整数，指定最大文本行数，默认```lines```值为0，表示不限制最大行数```lines```。如果文本不够长，实际展示行数会小于指定行数。

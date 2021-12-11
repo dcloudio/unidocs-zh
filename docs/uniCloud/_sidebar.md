@@ -13,7 +13,7 @@
   * [前端操作数据库的API](uniCloud/clientdb.md)
   * [unicloud-db前端组件](uniCloud/unicloud-db.md)
   * [JQL数据库管理](uniCloud/jql-runner.md)
-  <!-- * [云函数内使用JQL语法](uniCloud/jql-cloud.md) -->
+  * [云函数内使用JQL语法](uniCloud/jql-cloud.md)
   * [JQL语法](uniCloud/jql.md)
   * [openDB](https://gitee.com/dcloud/opendb)
   * [性能优化](uniCloud/db-performance.md)

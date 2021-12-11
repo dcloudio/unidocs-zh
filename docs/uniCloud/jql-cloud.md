@@ -65,6 +65,6 @@ exports.main = async (event, context) => {
 
 **注意**
 
-- 启用了JQL扩展的云函数暂不可本地调试，后续会提供支持
 - JQL扩展依赖`uni-id`公共模块
+- 启用了JQL扩展的云函数在本地调试时会自动使用本地schema、action、validateFunction以及uni-id公共模块
 - 由于此扩展会将`schema`、`action`、`validateFunction`带到模块内，如果你的上述文件较多会大幅增大云函数体积，因此启用此扩展的云函数**冷启动**时间会稍长，建议不要为太多云函数启用此扩展

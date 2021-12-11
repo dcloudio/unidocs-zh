@@ -62,14 +62,14 @@ disagreeMode表示用户未同意“隐私政策”，此时App仅提供基本�
 
 #### 判断是否运行在disagreeMode模式
 
-可通过`plus.runtime.isAgreePrivacy`查询当前应用是否用户同意隐私政策可判断是否运行在disagreeMode模式，示例代码如下：
+可通过[plus.runtime.isAgreePrivacy](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.isAgreePrivacy)查询当前应用是否用户同意隐私政策可判断是否运行在disagreeMode模式，示例代码如下：
 ```
 if(plus.runtime.isAgreePrivacy()) {
   // 用户同意隐私政策，可以调用限制API
 	// plus.device.getInfo();
 }else{
   // 运行在disagreeMode模式，不能调用限制API
-  // 这里可以引导用户
+  // 这里可以引导用户同意隐私政策
 }
 ```
 
@@ -159,7 +159,7 @@ plus.runtime.isAgreePrivacy()返回为true表示用户已经同意隐私政策�
 
 ### 引导用户同意“隐私政策”协议
 
-当用户在disagreeMode模式使用基本功能服务时，可能链接打开使用了限制API的业务功能，此时可调用`plus.runtime.showPrivacyDialog`弹出隐私政策协议框，引导用户同意隐私政策后再使用相关业务功能。示例代码如下：
+当用户在disagreeMode模式使用基本功能服务时，可能链接打开使用了限制API的业务功能，此时可调用[plus.runtime.showPrivacyDialog](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.showPrivacyDialog)弹出隐私政策协议框，引导用户同意隐私政策后再使用相关业务功能。示例代码如下：
 ```
 var options = {
 	success:function(response){

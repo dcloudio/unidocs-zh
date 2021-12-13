@@ -573,13 +573,14 @@ uni-app 在支持绝大部分 ES6 API 的同时，也支持了 ES7 的 await/asy
 ES6 API 的支持，详见如下表格部分（`x` 表示不支持，无特殊说明则表示支持）：
 - 因为iOS上不允许三方js引擎，所以iOS上不区分App、小程序、H5，各端均仅依赖iOS版本。
 - 各端Android版本有差异：
-* App端的数据见下表；
-* H5端数据见caniuse；
-* 微信小程序[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/js-support.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%20ES6%20API%20%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)
-* 阿里小程序[详见](https://docs.alipay.com/mini/framework/implementation-detail)
-* 百度小程序[详见](https://smartprogram.baidu.com/docs/develop/framework/operating-environment/)
-* 字节跳动小程序[详见](https://developer.toutiao.com/dev/cn/mini-app/develop/framework/mini-app-runtime/javascript-support)
-* QQ小程序[详见](https://q.qq.com/wiki/develop/miniprogram/frame/useful/useful_env.html#es6%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)
+
+    * App端的数据见下表；
+    * H5端数据见caniuse；
+    * 微信小程序[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/js-support.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%20ES6%20API%20%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)
+    * 阿里小程序[详见](https://docs.alipay.com/mini/framework/implementation-detail)
+    * 百度小程序[详见](https://smartprogram.baidu.com/docs/develop/framework/operating-environment/)
+    * 字节跳动小程序[详见](https://developer.toutiao.com/dev/cn/mini-app/develop/framework/mini-app-runtime/javascript-support)
+    * QQ小程序[详见](https://q.qq.com/wiki/develop/miniprogram/frame/useful/useful_env.html#es6%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)
 
 |String|iOS8|iOS9|iOS10|Android|
 |:-|:-|:-|:-|:-|
@@ -1287,11 +1288,3 @@ export default {
 * APP 端可以使用 dom、bom API，不可直接访问逻辑层数据，不可以使用 uni 相关接口（如：uni.request）
 * H5 端逻辑层和视图层实际运行在同一个环境中，相当于使用 mixin 方式，可以直接访问逻辑层数据。
 
-
-## 致谢
-
-```uni-app```使用 ```vue``` 语法，开发多端应用，感谢```Vue```团队！！
-
-为了减少开发者的学习成本，```uni-app```的组件和api设计，基本参考了微信小程序，学过微信小程序开发，了解```vue```，就能直接上手```uni-app```；感谢微信小程序团队！
-
-```uni-app``` 在小程序端，学习参考了[mpvue](https://mpvue.com/)及[Megalo](https://megalojs.org/)，感谢美团点评技术团队、网易考拉团队!

@@ -150,6 +150,7 @@
   ```
 
 - v-model 的适配
+
   Vue3 的 v-model 相对 Vue2 来说 ，有了较大的改变。可以使用多 `model`,相应语法也有变化。[更多](https://v3.cn.vuejs.org/guide/migration/v-model.html#%E6%A6%82%E8%A7%88)
 
   - 修改 modelValue
@@ -166,6 +167,7 @@
     ```
 
 - 事件返回
+
   将之前的 `this.$emit('input')` 修改为 `this.$emit('update:modelValue')`  ，vue3 中将省略这一步骤
 
   自定义组件上的 v-model 相当于传递了 modelValue prop 并接收抛出的 update:modelValue 事件：

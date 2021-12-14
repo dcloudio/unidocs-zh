@@ -1,3 +1,44 @@
+#### 3.3.1.20211214-alpha
+* 【uni-app】
+  + App平台 修复 vue3 项目使用 uni.canvasGetImageData 报错的Bug [详情](https://ask.dcloud.net.cn/question/134355)
+  + App平台 修复 vue3 项目使用 uni.showLoading 方法在不调用 hideLoading 时会运行两秒左右自动关闭的Bug [详情](https://ask.dcloud.net.cn/question/135551)
+  + App平台 修复 vue3 项目 开发期间页面热刷新不生效的Bug
+  + App平台 修复 vue3 项目 开发期间页面直达不生效的Bug
+  + App-Android平台 修复 uni.getBackgroundAudioManager 触发 seek、pause后再播放 onTimeUpdate 可能不触发的Bug [详情](https://ask.dcloud.net.cn/question/134439)
+  + App-Android平台 修复 nvue waterfall/list 组件横竖屏切换导致滚动偏移位置回到顶部的Bug [详情](https://ask.dcloud.net.cn/question/135845)
+  + App-Android平台 修复 nvue input/textarea 组件使用中文输入法切换到英文时无法输入的Bug [详情](https://ask.dcloud.net.cn/question/133523)
+  + App-Android平台 修复 nvue map 组件调用 addMarkers 设置 clear 参数不生效的Bug [详情](https://ask.dcloud.net.cn/question/132127)
+  + App-Android平台 修复 nvue map 组件 marker 中 callout 首次显示位置可能不正确的Bug [详情](https://ask.dcloud.net.cn/question/135351)
+  + App-iOS平台 修复 nvue rich-text 组件在页面中动态创建时可能引起崩溃的Bug [详情](https://ask.dcloud.net.cn/question/135136)
+  + H5平台 修复 vue3 项目 picker 组件无法动态赋值的Bug [详情](https://ask.dcloud.net.cn/question/135418)
+  + H5平台 修复 vue3 项目 uni.previewImage 长按按钮显示英文的Bug [详情](https://ask.dcloud.net.cn/question/135557)
+  + H5平台 修复 vue3 项目 safe-area-inset-* css 变量失效的Bug [详情](https://ask.dcloud.net.cn/question/134249)
+  + 小程序平台 修复 vue3 项目 import 文件不加后缀 .js 报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3041)
+  + 小程序平台 修复 vue3 项目 不支持 Template Refs 的Bug [详情](https://github.com/dcloudio/uni-app/issues/3031)
+  + 小程序平台 修复 vue3 项目 组件 props 不支持复杂对象的Bug [详情](https://github.com/dcloudio/uni-app/issues/3037)
+  + 小程序平台 修复 vue3 项目 manifest.json 部分平台配置不生效的Bug
+  + 微信小程序平台、支付宝小程序平台 修复 vue3 项目 引用插件不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3035)
+  + 支付宝小程序 修复 vue3 项目 组件自定义事件触发报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3053)
+  + 字节小程序 修复 vue3 项目 page-meta 组件 报错的Bug [详情](https://ask.dcloud.net.cn/question/135769)
+* 【uniCloud】
+  + 新增 支持云函数内使用 JQL 语法操作数据库的扩展库 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-cloud)
+  + 修复 腾讯云 geoNear 聚合阶段 maxDistance、minDistance 参数无法正常生效的Bug
+  + 修复 app 端 nvue 页面无法连接本地云函数的Bug [详情](https://ask.dcloud.net.cn/question/135703)
+* 【App插件(含5+App和uni-app的App端)】
+  + 更新 uni-AD 腾讯优量汇SDK Android为 4.431.1301 版；快手广告SDK Android为 3.3.19 版，iOS为 3.3.19 版；快手内容联盟SDK Android为 3.3.25 版， iOS为 3.3.25 版；Sigmob广告联盟SDK Android为 3.5.3 版
+  + 【重要】Android平台 新增 支持未同意隐私政策模式，解决应用市场上架合规检测违反“App不得因用户不同意提供非必要个人信息，而拒绝用户使用其基本功能服务”问题 [详情](https://uniapp.dcloud.io/app-disagreemode)
+  + Android平台 修复 3.2.13 版本引出的 更新UniPush使用的个推SDK导致出现App相同权限安装失败的Bug [详情](https://ask.dcloud.net.cn/question/135963)
+  + Android平台 修复 视频播放控件 VideoPlayer 设置 objectFit 可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/134278)
+  + Android平台 修复 视频播放控件 VideoPlayer 播放部分 rtsp 格式视频时加载进度条展示异常的Bug [详情](https://ask.dcloud.net.cn/question/135060)
+  + Android平台 修复 直播推流 LivePusher 设置宽高为100%时视频流可能变形的Bug [详情](https://ask.dcloud.net.cn/question/135749)
+  + Android平台 修复 设置 targetSdkVersion 为 31 时本地相册选择图片压缩失败的Bug [详情](https://ask.dcloud.net.cn/question/134897)
+  + iOS平台 修复 plus.nativeUI.showWaiting 在暗黑模式下默认文字颜色不正确的Bug
+  + iOS平台 修复 二维码扫码 pdf417 码时识别中文字符为乱码的Bug
+  + iOS平台 修复 本地相册选择进入编辑界面可能出现点击完成按钮无响应的Bug [详情](https://ask.dcloud.net.cn/question/135653)
+* 【uni小程序SDK】
+  + Android平台 修复 手动安装wgt模式下不支持 vue3 的Bug
+  + Android平台 修复 热启动模式下直达页面参数不生效的Bug
+
 #### 3.3.0.20211130-alpha
 * 【uni-app】
   + 【重要】小程序平台 优化 vue3 项目使用 vite 编译，提供更快的编译速度 [详情](https://ask.dcloud.net.cn/article/37834)

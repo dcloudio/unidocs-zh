@@ -17,7 +17,11 @@ uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源
 
 下载地址：[https://ext.dcloud.net.cn/plugin?id=3268](https://ext.dcloud.net.cn/plugin?id=3268)
 
-[github 仓库可查看最新提交及修改](https://github.com/dcloudio/uni-admin)，欢迎 issues、pr、star ！
+[github 仓库](https://github.com/dcloudio/uni-admin)
+
+[码云仓库](https://gitee.com/dcloud/uni-admin)
+
+欢迎 issues、pr、star ！
 
 - 它基于 uni-app 的宽屏适配，可自动适配 PC 宽屏和手机各端。了解[宽屏适配](https://uniapp.dcloud.io/adapt)
 - 它基于 uniCloud，是 serverless 的云开发。了解[uniCloud](https://uniapp.dcloud.io/uniCloud/README)

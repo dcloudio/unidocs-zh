@@ -421,7 +421,7 @@ nvue webview通信示例
 </template>
 
 <script>
-	module.exports = {
+	export default {
 		data: {
 		},
 		methods: {

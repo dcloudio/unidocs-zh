@@ -11,6 +11,10 @@ uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源
 
 对于uniCloud的开发者而言，其后台管理系统应该使用本框架。
 
+- 它基于 uni-app 的宽屏适配，可自动适配 PC 宽屏和手机各端。了解[宽屏适配](https://uniapp.dcloud.io/adapt)
+- 它基于 uniCloud，是 serverless 的云开发。了解[uniCloud](https://uniapp.dcloud.io/uniCloud/README)
+- 它基于 uni-id，使用 uni-id 的用户账户、角色、权限系统。了解[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id)
+
 版本支持：HBuilderX 3.0+
 
 演示地址：https://unicloudadmindemo.dcloud.net.cn
@@ -22,10 +26,6 @@ github 仓库：[https://github.com/dcloudio/uni-admin](https://github.com/dclou
 码云仓库：[https://gitee.com/dcloud/uni-admin.git](https://gitee.com/dcloud/uni-admin)
 
 欢迎 issues、pr、star ！
-
-- 它基于 uni-app 的宽屏适配，可自动适配 PC 宽屏和手机各端。了解[宽屏适配](https://uniapp.dcloud.io/adapt)
-- 它基于 uniCloud，是 serverless 的云开发。了解[uniCloud](https://uniapp.dcloud.io/uniCloud/README)
-- 它基于 uni-id，使用 uni-id 的用户账户、角色、权限系统。了解[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id)
 
 ### uni-admin 功能介绍
 uni-admin有预置功能、插件生态和数据表管理的代码生成工具。

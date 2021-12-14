@@ -17,9 +17,9 @@ uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源
 
 下载地址：[https://ext.dcloud.net.cn/plugin?id=3268](https://ext.dcloud.net.cn/plugin?id=3268)
 
-[github 仓库](https://github.com/dcloudio/uni-admin)
+github 仓库：[https://github.com/dcloudio/uni-admin](https://github.com/dcloudio/uni-admin)
 
-[码云仓库](https://gitee.com/dcloud/uni-admin)
+码云仓库：[https://gitee.com/dcloud/uni-admin.git](https://gitee.com/dcloud/uni-admin)
 
 欢迎 issues、pr、star ！
 

@@ -33,7 +33,7 @@ uni.preloadPage({url: "/pages/test/test"});
 注意事项
 1. App平台仅支持预加载 nvue 页面，执行页面预渲染，预载时触发生命周期 `onLoad`，`onReady`，不触发 `onShow`
 2. 打开新页面时，url 完全相同（包含参数）时，优先使用预加载页面，触发生命周期 onShow
-3. tabbar页面，仅支持预加载尚未显示过的页面，否者返回 fail，提示 already exists
+3. tabbar页面，仅支持预加载尚未显示过的页面，否则返回 fail，提示 already exists
 4. 同一时间，相同 url 仅 preloadPage 一次
 5. 当同一个预载页面已被打开(在路由栈)，再次打开相同url时，不再使用该预加载页面，而是打开新的非预载页面
 6. `uni.reLanuch`, `uni.switchTab`, `uni.navigateBack`(含Android返回键) 切换页面时，预加载页面不会被销毁，仅触发生命周期 `onHide`

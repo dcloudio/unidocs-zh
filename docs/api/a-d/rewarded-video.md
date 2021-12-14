@@ -156,7 +156,12 @@ options 为 object 类型，属性如下：
         // 调用后会显示 loading 界面
         AD.show({
           adpid: 1507000689, // HBuilder 基座测试广告位
-          adType: "RewardedVideo"
+          adType: "RewardedVideo",
+          urlCallback: {// 服务器回调透传参数
+            userId: 'testuser',
+            extra: 'testdata'
+          }
+          //singleton: false // 设置此参数后，每次调用 show 方法将重新创建广告实例，预载将失效，如果广告回调每次要透传用户信息需要设置 false
         }, (res) => {
           // 用户点击了【关闭广告】按钮
           if (res && res.isEnded) {
@@ -571,8 +576,6 @@ rewardedVideoAd = uni.createRewardedVideoAd({
 });
 
 rewardedVideoAd.onClose(e => {
-  // 1. 服务器先保存回调结果
-  // 2. 向服务器请求验证结果（服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果）
 })
 ```
 
@@ -603,7 +606,7 @@ A：
 |字段定义|类型|字段名称|备注|
 |:-:|:-:|:-:|:-:|
 |adpid|String|DCloud广告位id||
-|provider|String|广告服务商|csj、ks、gdt|
+|provider|String|广告服务商|csj、ks、gdt、sigmob|
 |platform|String|平台|iOS、Android|
 |trans_id|String|交易id|完成观看的唯一交易ID|
 |user_id|String|用户id|调用SDK透传，应用对用户的唯一标识|
@@ -747,9 +750,7 @@ exports.main = async (event, context) => {
   //const url = "https://"; // 用户业务服务器地址，为了避免请求被伪造，必须使用签名的方式请求
   //let reuslt = await UserServer.send(url, data);
 
-  return {
-    "isValid": true
-  }
+  return reuslt
 };
 ```
 
@@ -786,6 +787,7 @@ exports.main = async (event, context) => {
 |csj|穿山甲|
 |gdt|腾讯优量汇（前称广点通）|
 |ks|快手|
+|sigmob|Sigmob|
 
 
 ```js

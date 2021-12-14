@@ -47,6 +47,10 @@ key|可选属性，用于指定列表数据中可以作为唯一标识的键值�
 </recycle-list>
 ```
 
+
+注意：Android 平台目前仅支持放到 template 根节点，后续修复此问题
+
+
 可复用的组件
 
 在 `<recycle-list>` 中使用的子组件也将被视为模板，在开发组件时给 `<template>` 标签添加 recyclable 属性，才可以用在 `<recycle-list>` 中。

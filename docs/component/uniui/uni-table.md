@@ -127,7 +127,7 @@ e = {
 
 |属性名	|类型	|默认值	 	|可选值				|说明|
 |:-:		|:-:		|:-:			|:-:				|:-:|
-|align	|Boolean| left		|left/center/right	| 单元格对齐方式|
+|align	|String	| left		|left/center/right	| 单元格对齐方式|
 
 
 ## 组件示例

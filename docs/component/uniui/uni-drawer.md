@@ -40,7 +40,7 @@
 
 		}
 	}
-</script
+</script>
 ```
 
 ## API

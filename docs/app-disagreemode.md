@@ -131,7 +131,7 @@ plus.runtime.isAgreePrivacy()返回为true表示用户已经同意隐私政策�
 |模块名称|被限制调用的API|
 |---|---|
 |Ad|plus.ad.xxx 广告相关API被限制不可以调用
-|Device|plus.device.imei、plus.device.imsi、plus.device.uuid、plus.device.dialplus.device.getInfo、plus.device.getOAID、plus.device.getVAID、plus.device.getAAID
+|Device|plus.device.imei、plus.device.imsi、plus.device.uuid、plus.device.dial、plus.device.getInfo、plus.device.getOAID、plus.device.getVAID、plus.device.getAAID
 |Audio|plus.audio.getRecorder
 |Barcode|plus.barcode.scan、plus.barcode.getBarcodeById、plus.barcode.create
 |Bluetooth|plus.bluetooth.xxx 蓝牙相关API被限制不可以调用

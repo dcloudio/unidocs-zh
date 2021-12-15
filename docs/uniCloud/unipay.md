@@ -173,10 +173,10 @@ tradeType支持以下选项
 
 ```js
 {
-	"h5_info": {
+	"h5Info": {
 		"type": "Wap",
-		"wap_url": "https://pay.qq.com", // 开发者网站的网址
-		"wap_name": "腾讯充值" // 开发者网站名称
+		"wapUrl": "https://pay.qq.com", // 开发者网站的网址
+		"wapName": "腾讯充值" // 开发者网站名称
 	}
 }
 ```

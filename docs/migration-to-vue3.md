@@ -221,7 +221,7 @@
 
 - 从 Vue 3.0 开始，过滤器已删除，不再支持，建议用方法调用或计算属性替换它们。[更多](https://v3.cn.vuejs.org/guide/migration/filters.html#%E6%A6%82%E8%A7%88)
 
-- Vue3 的 API `Promise 化` 调用结果处理与 Vue2 不同。[更多](https://uniapp.dcloud.io/api/README?id=api-promise-%e5%8c%96)
+- 在 Vue3 中，处理 API `Promise 化` 调用结果的方式不同于 Vue2。[更多](https://uniapp.dcloud.io/api/README?id=api-promise-%e5%8c%96)
 
   - Vue3 中，调用成功会进入 then 方法，调用失败会进入 catch 方法
   - Vue2 中，调用无论成功还是失败，都会进入 then 方法，返回数据的第一个参数是错误对象，第二个参数是返回数据

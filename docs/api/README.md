@@ -45,8 +45,8 @@ uni-app基于ECMAScript扩展了uni对象，并且API命名与小程序保持兼
 
 			// Promise 化
 			uni.connectSocket().then(res => {
-					// 此处即为 success 回调的 res
-					// 如果想获取 task ，则不要使用 Promise 化
+					// 此处即为正常使用时 success 回调的 res
+					// uni.connectSocket() 正常使用时是会返回 task 对象的，如果想获取 task ，则不要使用 Promise 化
 					console.log(res)
 			})
 		```
@@ -57,11 +57,11 @@ uni-app基于ECMAScript扩展了uni对象，并且API命名与小程序保持兼
    - 以 manager 结束的方法。例如：`uni.getBackgroundAudioManager()`
 
 #### Vue 2 和 Vue 3 的 API `Promise 化`
-> 返回结果不一致，以下为 `不同点` 和 `互相转换`
+> Vue 2 和 Vue 3 项目中 `API Promise 化` 返回格式不一致，以下为 `不同点` 和 `返回格式互相转换`
 
 #### Vue 2
 
-> 对部分 API 进行了 Promise 封装，返回数据的第一个参数是错误对象，第二个参数是返回数据。
+> 对部分 API 进行了 Promise 封装，返回数据的第一个参数是错误对象，第二个参数是返回数据。此时使用 `catch` 是拿不到报错信息的，因为内部对错误进行了拦截。
 
 **使用示例：**
 
@@ -144,7 +144,7 @@ async function request () {
 }
 ```
 
-#### Vue 2 写法转 Vue 3 写法
+#### 在 Vue 2 项目中， 使用 Vue 3 项目 `API Promise 化` 返回格式
 
 ```js
 // 在 main.js 中写入以下代码即可
@@ -170,7 +170,7 @@ uni.addInterceptor({
 })
 ```
 
-#### Vue 3 写法转 Vue 2 写法
+#### 在 Vue 3 项目中， 使用 Vue 2 项目 `API Promise 化` 返回格式
 
 ```js
 // 在 main.js 中写入以下代码即可

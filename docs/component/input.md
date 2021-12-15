@@ -18,7 +18,7 @@
 |cursor-spacing|Number|0|指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离|App、微信小程序、百度小程序、QQ小程序|
 |focus|Boolean|false|获取焦点。|在 H5 平台能否聚焦以及软键盘是否跟随弹出，取决于当前浏览器本身的实现。nvue 页面不支持，需使用组件的 focus()、blur() 方法控制焦点|
 |confirm-type|String|done|设置键盘右下角按钮的文字，仅在 type="text" 时生效。|微信小程序、App、H5、快手小程序|
-|confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|微信小程序、支付宝小程序、百度小程序、QQ小程序|
+|confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|App-Vue (3.3.2+)、H5 (3.3.2+)、微信小程序、支付宝小程序、百度小程序、QQ小程序|
 |cursor|Number||指定focus时的光标位置||
 |selection-start|Number|-1|光标起始位置，自动聚集时有效，需与selection-end搭配使用||
 |selection-end|Number|-1|光标结束位置，自动聚集时有效，需与selection-start搭配使用||

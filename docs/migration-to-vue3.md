@@ -59,7 +59,10 @@
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+      <meta
+        name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      />
       <title></title>
       <!--preload-links-->
       <!--app-context-->
@@ -118,9 +121,9 @@
   > 而 Vue3 中，v-if 总是优先于 v-for 生效。以上写法将会在 Vue3 中与预期不符合，由于语法上存在歧义，建议避免在同一元素上同时使用两者（[更多](https://v3.cn.vuejs.org/guide/migration/v-if-v-for.html#%E6%A6%82%E8%A7%88)）。
 
 - 生命周期的适配
-  
-  在Vue3中组件卸载的生命周期被重新命名
-  
+
+  在 Vue3 中组件卸载的生命周期被重新命名
+
   - `destroyed` 修改为 `unmounted`
   - `beforeDestroy` 修改为 `beforeUnmount`
 
@@ -130,7 +133,6 @@
 
   **强烈建议使用`emits`记录每个组件发出的所有事件。**
 
-
   这一点特别重要，因为去除了`.native`修饰符。`emits` 现在在未使用声明的事件的所有侦听器都将包含在组件的中`$attrs`，默认情况下，该侦听器将绑定到组件的根节点。
 
   ```html
@@ -138,14 +140,14 @@
     <button @click="onClick">OK</button>
   </template>
   <script>
-  export default {
-    emits: ['click'],
-    methods:{
-      onClick(){
-        this.$emit('click', 'OK')
-      }
-    }
-  }
+    export default {
+      emits: ["click"],
+      methods: {
+        onClick() {
+          this.$emit("click", "OK");
+        },
+      },
+    };
   </script>
   ```
 
@@ -161,37 +163,36 @@
       props: {
         // value:String,
         // 替换 value 为 modelValue
-        modelValue:String
-      }
-    }
+        modelValue: String,
+      },
+    };
     ```
 
 - 事件返回
 
-  将之前的 `this.$emit('input')` 修改为 `this.$emit('update:modelValue')`  ，vue3 中将省略这一步骤
+  将之前的 `this.$emit('input')` 修改为 `this.$emit('update:modelValue')` ，vue3 中将省略这一步骤
 
   自定义组件上的 v-model 相当于传递了 modelValue prop 并接收抛出的 update:modelValue 事件：
 
   ```html
-    <ChildComponent v-model="pageTitle" />
-    
-    <!-- 是以下的简写: -->
-    
-    <ChildComponent
-      :modelValue="pageTitle"
-      @update:modelValue="pageTitle = $event"
-    />
-  ```
+  <ChildComponent v-model="pageTitle" />
 
+  <!-- 是以下的简写: -->
+
+  <ChildComponent
+    :modelValue="pageTitle"
+    @update:modelValue="pageTitle = $event"
+  />
+  ```
 
   若需要更改 model 名称，作为组件内 model 选项的替代，现在我们可以将一个 argument 传递给 v-model：
 
   ```html
-    <ChildComponent v-model:title="pageTitle" />
-    
-    <!-- 是以下的简写: -->
-    
-    <ChildComponent :title="pageTitle" @update:title="pageTitle = $event" />
+  <ChildComponent v-model:title="pageTitle" />
+
+  <!-- 是以下的简写: -->
+
+  <ChildComponent :title="pageTitle" @update:title="pageTitle = $event" />
   ```
 
 - 插槽的适配
@@ -219,3 +220,67 @@
   ```
 
 - 从 Vue 3.0 开始，过滤器已删除，不再支持，建议用方法调用或计算属性替换它们。[更多](https://v3.cn.vuejs.org/guide/migration/filters.html#%E6%A6%82%E8%A7%88)
+
+- Vue3 的 API `Promise 化` 调用结果处理与 Vue2 不同。[更多](https://uniapp.dcloud.io/api/README?id=api-promise-%e5%8c%96)
+
+  - Vue3 中，调用成功会进入 then 方法，调用失败会进入 catch 方法
+  - Vue2 中，调用无论成功还是失败，都会进入 then 方法，返回数据的第一个参数是错误对象，第二个参数是返回数据
+  - Vue 2 写法转 Vue 3 写法
+
+    ```js
+    // 在 main.js 中写入以下代码即可
+    function isPromise(obj) {
+      return (
+        !!obj &&
+        (typeof obj === "object" || typeof obj === "function") &&
+        typeof obj.then === "function"
+      );
+    }
+
+    uni.addInterceptor({
+      returnValue(res) {
+        if (!isPromise(res)) {
+          return res;
+        }
+        return new Promise((resolve, reject) => {
+          res.then((res) => {
+            if (res[0]) {
+              reject(res[0]);
+            } else {
+              resolve(res[1]);
+            }
+          });
+        });
+      },
+    });
+    ```
+
+  - Vue 3 写法转 Vue 2 写法
+
+    ```js
+    // 在 main.js 中写入以下代码即可
+    function isPromise(obj) {
+      return (
+        !!obj &&
+        (typeof obj === "object" || typeof obj === "function") &&
+        typeof obj.then === "function"
+      );
+    }
+
+    uni.addInterceptor({
+      returnValue(res) {
+        if (!isPromise(res)) {
+          return res;
+        }
+        const returnValue = [undefined, undefined];
+        return res
+          .then((res) => {
+            returnValue[1] = res;
+          })
+          .catch((err) => {
+            returnValue[0] = err;
+          })
+          .then(() => returnValue);
+      },
+    });
+    ```

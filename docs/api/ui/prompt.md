@@ -66,7 +66,7 @@ uni.hideToast();
 |参数|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的文字内容，显示在loading的下方||
-|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序、百度小程序|
+|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|H5、App、微信小程序、百度小程序|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|

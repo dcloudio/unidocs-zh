@@ -2154,6 +2154,7 @@ export default {
 
 - 需要在config.json内支付宝平台下配置appid和privateKey（应用私钥）
 - 登录成功之后会返回token、tokenExpired，在获取token之后应进行持久化存储，详情参考：[保存token及其有效期](uniCloud/uni-id.md?id=save-token)
+- uni.login仅支持使用支付宝小程序登录，不支持app使用支付宝登录，`uniID.loginByAlipay`也只支持小程序登录
 
 **LoginByAlipayParams参数说明**
 

@@ -1,7 +1,5 @@
 开发者使用`uniCloud`的云存储，无需再像传统模式那样单独去购买存储空间、CDN映射、流量采购等；
 
-并且`uniCloud`的阿里云云存储和cdn，免费提供给开发者使用！
-
 如果您还未开通过uniCloud，请在web界面开通：[https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)
 
 云存储的上传方式有3种：
@@ -630,4 +628,3 @@ let result = await uniCloud.downloadFile({
 **Tips**
 
 - 阿里云的云存储暂不支持分目录。阿里云的前端网页托管支持分目录。
-- 阿里云的云存储和cdn没有限制。腾讯云的免费版有一定用量限制，[详见](https://uniapp.dcloud.io/uniCloud/faq?id=unicloud%e8%b4%b9%e7%94%a8%e8%b4%b5%e4%b8%8d%e8%b4%b5%ef%bc%9f)

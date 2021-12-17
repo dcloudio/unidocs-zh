@@ -144,7 +144,7 @@ clientDB就是这种情况，因为clientDB内部有权限校验系统，某些�
 
 ### 发布H5时还得自己找个服务器部署前端网页，可以不用自己再找服务器吗？
 
-uniCloud支持[前端网页托管](https://uniapp.dcloud.io/uniCloud/hosting)，并且免费！
+uniCloud支持[前端网页托管](https://uniapp.dcloud.io/uniCloud/hosting)，选择阿里云作为云厂商时完全免费！
 
 - 如果你已经有备案过的域名，直接解析过来即可；
 - 如果你要新注册域名，备案流程和传统云主机略有不同，涉及一个uniCloud没有固定ip的问题。此时可以去买花生壳的备案服务；也可以临时买一个短期固定ip，走固定ip备案。这里有开发者分享的[经验贴](https://ask.dcloud.net.cn/article/38116)

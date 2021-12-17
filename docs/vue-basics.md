@@ -647,13 +647,16 @@ data 必须声明为返回一个初始数据对象的函数（注意函数内返
 
 
 
-> 非H5端不支持 `classObject` 和 `styleObject` 语法。
+> 小程序端不支持 `classObject` 和 `styleObject` 语法。
 
-不支持示例：
+小程序端不支持示例：
 
 ```html
 	<template>
-		<view :class="[activeClass]" :style="[baseStyles,overridingStyles]"></view>
+		<view>
+			<view :class="activeClass">hello uni-app</view>
+			<view :style="styleObject">hello uni-app</view>
+		</view>
 	</template>
 	<script>
 		export default {
@@ -663,17 +666,23 @@ data 必须声明为返回一个初始数据对象的函数（注意函数内返
 						'active': true,
 						'text-danger': false
 					},
-					baseStyles: {
-						color: 'green',
-						fontSize: '30px'
-					},
-					overridingStyles: {
-						'font-weight': 'bold'
+					styleObject: {
+						color: 'red',
+						fontSize: '20px'
 					}
 				}
 			}
 		}
 	</script>
+	<style>
+		.active {
+			background-color: #007AFF;
+		}
+		.text-danger {
+			font-size: 60rpx;
+			color: #DD524D;
+		}
+	</style>
 ```
 
 ## 条件渲染@condition

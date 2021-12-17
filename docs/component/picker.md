@@ -14,8 +14,8 @@
 |range-key|String||当 range 是一个 `Array＜Object＞` 时，通过 range-key 来指定 Object 中 key 的值作为选择器显示内容||
 |value|Number|0|value 的值表示选择了 range 中的第几个（下标从 0 开始）||
 |selector-type|String|auto|大屏时UI类型，支持 picker、select、auto，默认在 iPad 以 picker 样式展示而在 PC 以 select 样式展示|H5 2.9.9+|
-|@change|EventHandle||value 改变时触发 change 事件，event.detail = {value: value}||
 |disabled|Boolean|false|是否禁用|快手小程序不支持|
+|@change|EventHandle||value 改变时触发 change 事件，event.detail = {value: value}||
 |@cancel|EventHandle||取消选择或点遮罩层收起 picker 时触发|快手小程序不支持|
 
 - picker在各平台的实现是有UI差异的，有的平台如百度、支付宝小程序的Android端是从中间弹出的；有的平台支持循环滚动如百度小程序；有的平台没有取消按钮如App-iOS端。但均不影响功能使用。

@@ -9,8 +9,8 @@
 |checked|Boolean|false|是否选中||
 |disabled|Boolean|false|是否禁用|字节跳动小程序与飞书小程序不支持|
 |type|String|switch|样式，有效值：switch, checkbox||
-|@change|EventHandle||checked 改变时触发 change 事件，event.detail={ value:checked}||
 |color|Color||switch 的颜色，同 css 的 color|&nbsp;|
+|@change|EventHandle||checked 改变时触发 change 事件，event.detail={ value:checked}||
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/switch/switch)
  

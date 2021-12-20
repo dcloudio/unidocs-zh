@@ -117,7 +117,7 @@
 
 + 查看是否集成了UniPush
 + 如果集成UniPush请更新个推隐私协议条款！补充MAC信息[参考](https://ask.dcloud.net.cn/article/39484)
-+ 没有集成UniPush请向检测凭条获取java调用堆栈。拿着java调用堆栈找客服确认问题
++ 没有集成UniPush请向检测平台获取java调用堆栈。拿着java调用堆栈找客服确认问题
 
 #### 看不懂文档不知道如何修改？
 

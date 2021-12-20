@@ -410,3 +410,7 @@ let's encrypt于2021年9月30日根证书过期并切换到新版根证书。详
   	rejectUnauthorized: false
   })
   ```
+
+### 调用云函数时出现“Unauthenticated access is denied”@access-denied
+
+如使用腾讯云作为服务商，出现此问题时请检查前端是否有执行clearStorage操作。clearStorage会清理掉腾讯云设置的token，导致请求云函数报错。

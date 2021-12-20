@@ -563,7 +563,7 @@ BindingX类似一种强化版的css，运行性能高，但没有js那样足够�
 
 ##### 代码示例:
 ```html
-	//test.nvue
+	<!-- test.nvue -->
 	<template>
 	    <view @click="test">
 	        <text>点击页面发送数据</text>
@@ -581,7 +581,7 @@ BindingX类似一种强化版的css，运行性能高，但没有js那样足够�
 ```
 
 ```html
-	//App.vue
+	<!-- App.vue -->
 	<script>
 	    export default {
 	        onUniNViewMessage:function(e){
@@ -613,8 +613,8 @@ BindingX类似一种强化版的css，运行性能高，但没有js那样足够�
 
 ##### 代码示例:
 
-```javascript
-	//index.nvue
+```html
+	<!-- index.nvue -->
 	<template>
 	    <div @click="test">
 	        <text>点击页面发送数据{{num}}</text>
@@ -644,10 +644,11 @@ BindingX类似一种强化版的css，运行性能高，但没有js那样足够�
 	            }
 	        }
 	    }
+	</script>
 ```
 
 ```html
-	//test.vue
+	<!-- test.vue -->
 	<template>
 	    <view>
 	        <button type="primary" @click="test">点击改变nvue的数据</button>

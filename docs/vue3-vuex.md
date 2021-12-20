@@ -191,10 +191,10 @@ const Counter = {
 Vuex 通过 store 选项，提供了一种机制将状态从根组件“注入”到每一个子组件中（需调用 Vue.use(Vuex)）：
 
 
-1.在 `uni-app` 项目根目录下，新建 `store` 目录，在此目录下新建 `index.js` 文件。在 `index.js` 文件配置如下：
+1. 在 `uni-app` 项目根目录下，新建 `store` 目录，在此目录下新建 `index.js` 文件。在 `index.js` 文件配置如下：
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state:{//存放状态
@@ -207,10 +207,10 @@ export default store
 ```
 
 
-2.在 `main.js` 中导入文件。
+2. 在 `main.js` 中导入文件。
 
 ```js
-<!-- 页面路径：main.js -->
+// 页面路径：main.js 
 import App from './App'
 import store from './store'
 import {createSSRApp} from 'vue'
@@ -226,7 +226,7 @@ export function createApp() {
 **获取state**
 
 
-1.通过属性访问，需要在根节点注入 `store` 。
+1. 通过属性访问，需要在根节点注入 `store` 。
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -250,7 +250,7 @@ export function createApp() {
 </script>
 ```
 
-2.在组件中使用，通过 `this.$store` 访问到 `state` 里的数据。
+2. 在组件中使用，通过 `this.$store` 访问到 `state` 里的数据。
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -276,7 +276,7 @@ export function createApp() {
 
 #### mapState
 
-3.通过 `mapState` 辅助函数获取。
+3. 通过 `mapState` 辅助函数获取。
 
 当一个组件需要获取多个状态的时候，将这些状态都声明为计算属性会有些重复和冗余。
 为了解决这个问题，我们可以使用 **mapState 辅助函数** 帮助我们生成计算属性，让你少按几次键：
@@ -404,7 +404,7 @@ export function createApp() {
 在 `uni-app` 项目根目录下，`store` 目录 `index.js` 文件下：
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -437,7 +437,7 @@ export default store
 - getters, 等同于 store.getters
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js 
 
 import { createStore } from 'vuex'
 const store = createStore({
@@ -475,7 +475,7 @@ export default store
 **获取getters**
 
 
-1.通过属性访问，`Getter` 会暴露为 `store.getters` 对象，你可以以属性的形式访问这些值。
+1. 通过属性访问，`Getter` 会暴露为 `store.getters` 对象，你可以以属性的形式访问这些值。
 
 
 ```html
@@ -505,7 +505,7 @@ export default store
 
 
 
-2.通过 `this.$store` 访问。
+2. 通过 `this.$store` 访问。
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -530,7 +530,7 @@ export default store
 ```
 
 
-3.通过方法访问。
+3. 通过方法访问。
 
 你也可以通过让 `getter` 返回一个函数，来实现给 `getter` 传参。在你对 `store` 里的数组进行查询时非常有用。
 
@@ -561,7 +561,7 @@ export default store
 #### mapGetters
 
 
-4.通过 `mapGetters` 辅助函数访问。
+4. 通过 `mapGetters` 辅助函数访问。
 
 `mapGetters` 辅助函数仅仅是将 `store` 中的 `getter` 映射到局部计算属性：
 
@@ -626,7 +626,7 @@ Vuex 中的 `mutation` 非常类似于事件：每个 `mutation` 都有一个字
 
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -685,7 +685,7 @@ export default {
 - 在 `mutation` 传参（载荷）可以传递一个参数。
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js 
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -730,7 +730,7 @@ export default store
 
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js 
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -775,7 +775,7 @@ export default store
 **提交方式**
 
 
-1.对象风格的提交方式
+1. 对象风格的提交方式
 
 我们修改组件中 `store.commit` 提交方式：
 
@@ -821,7 +821,7 @@ export default store
 
 #### mapMutations
 
-2.通过 `mapMutations` 辅助函数提交。
+2. 通过 `mapMutations` 辅助函数提交。
 
 创建组件方法提交 `mutation`。
 
@@ -853,7 +853,7 @@ export default store
 
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -923,7 +923,7 @@ export default store
 让我们来注册一个简单的 `action` ：
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -964,7 +964,7 @@ export default store
 
 **分发 Action**
 
-1.`actions` 通过 `store.dispatch` 方法触发。
+1. `actions` 通过 `store.dispatch` 方法触发。
 
 ```html
 <!-- 页面路径：pages/index/index.vue -->
@@ -998,7 +998,7 @@ export default store
 
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js 
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -1068,7 +1068,7 @@ export default store
 
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -1120,7 +1120,7 @@ export default store
 
 #### mapActions 
 
-2.通过 `mapActions` 辅助函数分发。
+2. 通过 `mapActions` 辅助函数分发。
 
 创建组件方法分发 `action`。
 
@@ -1253,7 +1253,7 @@ export default store
 
 为了解决以上问题，`Vuex` 允许我们将 `store` 分割成模块（module）。每个模块拥有自己的 `state`、`mutation`、`action`、`getter`、甚至是嵌套子模块——从上至下进行同样方式的分割：
 
-1.在 `store` 文件夹下新建 `modules` 文件夹，并在下面新建 `moduleA.js` 和 `moduleB.js` 文件用来存放 `vuex` 的 `modules` 模块。
+1. 在 `store` 文件夹下新建 `modules` 文件夹，并在下面新建 `moduleA.js` 和 `moduleB.js` 文件用来存放 `vuex` 的 `modules` 模块。
 
 
 ```html
@@ -1277,10 +1277,10 @@ export default store
 ```
 
 
-2.在 `main.js` 文件中引入 `store`。
+2. 在 `main.js` 文件中引入 `store`。
 
 ```js
-<!-- 页面路径：main.js -->
+	// 页面路径：main.js
 	import {createSSRApp} from 'vue'
 	import store from './store'
 	export function createApp() {
@@ -1293,10 +1293,10 @@ export default store
 ```
 
 
-3.在项目根目录下，新建 `store` 文件夹，并在下面新建 `index.js` 文件，作为模块入口，引入各子模块。
+3. 在项目根目录下，新建 `store` 文件夹，并在下面新建 `index.js` 文件，作为模块入口，引入各子模块。
 
 ```js
-<!-- 页面路径：store/index.js -->
+// 页面路径：store/index.js
 import {createStore} from 'vuex'
 import moduleA from '@/store/modules/moduleA'
 import moduleB from '@/store/modules/moduleB'
@@ -1308,10 +1308,10 @@ export default createStore({
 })
 ```
 
-4.子模块 `moduleA` 页面内容。
+4. 子模块 `moduleA` 页面内容。
 
 ```js
-<!-- 子模块moduleA路径：store/modules/moduleA.js -->
+// 子模块moduleA路径：store/modules/moduleA.js 
 export default {
 	state: {
 		text:"我是moduleA模块下state.text的值"
@@ -1328,10 +1328,10 @@ export default {
 }
 ```
 
-5.子模块 `moduleB` 页面内容。
+5. 子模块 `moduleB` 页面内容。
 
 ```js
-<!-- 子模块moduleB路径：store/modules/moduleB.js -->
+// 子模块moduleB路径：store/modules/moduleB.js
 export default {
 	state: {
 		timestamp: 1608820295//初始时间戳
@@ -1362,7 +1362,7 @@ export default {
 ```
 
 
-6.在页面中引用组件 myButton ，并通过 `mapState` 读取 `state` 中的初始数据。
+6. 在页面中引用组件 myButton ，并通过 `mapState` 读取 `state` 中的初始数据。
 
 
 ```html
@@ -1391,7 +1391,7 @@ export default {
 </script>
 ```
 
-7.在组件 `myButton`中，通过 `mutations` 操作刷新当前时间。
+7. 在组件 `myButton`中，通过 `mutations` 操作刷新当前时间。
 
 ```html
 <!-- 组件路径：components/myButton/myButton.vue -->

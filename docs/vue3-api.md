@@ -364,7 +364,7 @@ export default {
 
 解决办法有两种（以`scroll-view`组件为例）：
 
-1.监听`scroll`事件，记录组件内部变化的值，在设置新值之前先设置为记录的当前值
+1. 监听`scroll`事件，记录组件内部变化的值，在设置新值之前先设置为记录的当前值
 
 
 
@@ -398,7 +398,7 @@ export default {
 
 ```
 
-2.监听scroll事件，获取组件内部变化的值，实时更新其绑定值
+2. 监听scroll事件，获取组件内部变化的值，实时更新其绑定值
 
 ```html
 	<scroll-view scroll-y="true" :scroll-top="scrollTop" @scroll="scroll"></scroll-view>

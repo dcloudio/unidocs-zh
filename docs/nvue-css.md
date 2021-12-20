@@ -250,7 +250,7 @@ flex {number}：值为 number 类型。
 
 
 ``` html
-	//Gird布局
+	<!-- Gird布局 -->
 	<template>
 		<view>
 			<view v-for="(v, i) in list" class="row">
@@ -295,7 +295,7 @@ flex {number}：值为 number 类型。
 
 
 ``` html
-	//等高模块
+	<!-- 等高模块 -->
 	<template>
 	  <view>
 	    <view style="width:300px; height:100px;">
@@ -325,7 +325,7 @@ flex {number}：值为 number 类型。
 
 
 ``` html
-	//水平垂直居中
+	<!-- 水平垂直居中 -->
 	<template>
 		<view class="wrapper">
 			<view class="box"></view>

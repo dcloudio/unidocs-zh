@@ -56,11 +56,11 @@ uni-app在App端，支持vue页面和nvue页面混搭、互相跳转。也支持
 ```javascript
 	// manifest.json    
 	{    
-	     // ...    
-		/* App平台特有配置 */    
-	    "app-plus": {    
-	        "renderer": "native", //App端纯原生渲染模式
-	    }    
+	   // ...    
+		// App平台特有配置  
+	   "app-plus": {    
+	      "renderer": "native", //App端纯原生渲染模式
+	   }    
 	}
 ```
 
@@ -95,14 +95,14 @@ weex的组件和JS API，与uni-app不同。uni-app与微信小程序相同。
 - uni-app
 
 ```javascript
-// manifest.json    
-{    
-	// ...    
-	/* App平台特有配置 */    
-	"app-plus": {    
-	    "nvueCompiler":"uni-app" //是否启用 uni-app 模式  
-	}    
-}
+	// manifest.json    
+	{    
+		// ...    
+		// App平台特有配置    
+		"app-plus": {    
+			"nvueCompiler":"uni-app" //是否启用 uni-app 模式  
+		}    
+	}
 ```
 
 
@@ -144,7 +144,7 @@ weex 编译模式下支持使用 weex ui ，例子[详见](https://ext.dcloud.ne
   // manifest.json  
   {        
       // ...        
-       /* App平台特有配置 */        
+      // App平台特有配置       
       "app-plus":  {  
           "nvueStyleCompiler": "uni-app"  
       }  
@@ -259,10 +259,10 @@ iOS平台默认情况下滚动容器组件（如```list```、```waterfall```组�
 ```html
 	<list class="scroll-v list" enableBackToTop="true" scroll-y alwaysScrollableVertical="true">
 		<refresh class="refresh" @refresh="onrefresh()" @pullingdown="onpullingdown">
-			//refresh content
+			<!-- refresh content -->
 		</refresh>
 		<cell v-for="(newsitem,index) in list" :key="newsitem.id">
-			//cell content
+			<!-- cell content -->
 		</cell>
 	</list>
 ```

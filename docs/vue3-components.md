@@ -95,7 +95,7 @@
 - app.component 的第一个参数必须是静态的字符串。
 - nvue 页面暂不支持全局组件。
 
-1.`main.js` 里进行全局导入和注册
+1. `main.js` 里进行全局导入和注册
 
 ```js
 	import App from './App'
@@ -112,7 +112,7 @@
 	}
 ```
 
-2.`index.vue` 里可直接使用组件
+2. `index.vue` 里可直接使用组件
  
 
 ```html
@@ -134,7 +134,7 @@
 
 如下通过两种方式导入一个角标的组件库，[详见](https://ext.dcloud.net.cn/plugin?id=21)，推荐使用 `easycom` 方式引入。
 
-1.**传统vue规范：** 在 index.vue 页面中，通过 `import` 方式引入组件 ，在 `components` 选项中定义你想要使用的组件。
+1. **传统vue规范：** 在 index.vue 页面中，通过 `import` 方式引入组件 ，在 `components` 选项中定义你想要使用的组件。
 
 ```html
 	<!-- 在index.vue引入 uni-badge 组件-->
@@ -159,7 +159,7 @@
 - 包含了这个组件选项的变量名(仅支持驼峰法命名)
 
 
-2.**通过uni-app的[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)：** 将组件引入精简为一步。只要组件安装在项目的 `components` 目录下，并符合 `components/组件名称/组件名称.vue` 目录结构。就可以不用引用、注册，直接在页面中使用。
+2. **通过uni-app的[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)：** 将组件引入精简为一步。只要组件安装在项目的 `components` 目录下，并符合 `components/组件名称/组件名称.vue` 目录结构。就可以不用引用、注册，直接在页面中使用。
 
 
 ```html
@@ -401,7 +401,7 @@
 
 
 
-2.**这个 `prop` 以一种原始的值传入且需要进行转换**。在这种情况下，最好使用这个 `prop` 的值来定义一个计算属性：
+2. **这个 `prop` 以一种原始的值传入且需要进行转换**。在这种情况下，最好使用这个 `prop` 的值来定义一个计算属性：
 
 
 ```html
@@ -607,7 +607,7 @@
 
 
 ```js
-	<!-- 我是子组件date-picker -->
+	// 我是子组件date-picker
 	export default {
 		created() {
 		  console.log(this.$attrs) // { onChange: () => {}  }
@@ -679,7 +679,7 @@
 
 有了这个新配置，`data status` attribute 将应用于 `input` 元素！
 
-```js
+```html
 	<!-- Date-picker 组件 使用非 prop attribute -->
 	<date-picker data-status="activated"></date-picker>
 
@@ -700,15 +700,15 @@
 ```
 
 ```html
-	// 我是custom-layout组件
-	// 这将发出警告
+	<!-- 我是custom-layout组件 -->
+	<!-- 这将发出警告 -->
 	<template>
 		<header>...</header>
 		<main>...</main>
 		<footer>...</footer>
 	</template>
 
-	// 没有警告，$attrs被传递到<main>元素
+	<!-- 没有警告，$attrs被传递到<main>元素 -->
 
 	<template>
 		<header>...</header>

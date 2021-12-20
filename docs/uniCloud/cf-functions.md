@@ -114,9 +114,12 @@ exports.main = async (event, context) => {
   // function 由其他云函数callFunction调用，仅阿里云支持，腾讯云这种方式调用也是client
 }
 ```
+
 ### 其他客户端信息@client-info
 
-**以下四个属性只有使用uni-app以callFunction方式调用才能获取**
+**注意：**
+- 以下四个属性只有使用uni-app以callFunction方式调用才能获取，由客户端传递到云函数
+- 实际业务中务必验证一下前端传来的数据的合法性
 
 ```js
 'use strict';

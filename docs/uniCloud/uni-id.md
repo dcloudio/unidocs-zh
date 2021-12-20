@@ -3484,6 +3484,8 @@ exports.main = async function(event, context){
 
 云函数url化时uni-id无法自行获取客户端相关信息，需要开发者自行创建uniID实例并传入相关信息，以下为一个简单示例
 
+**注意：实际业务中务必验证一下前端传来的数据的合法性，APPID、PLATFORM等均来自前端**
+
 ```js
 // 客户端代码示例
 uni.request({

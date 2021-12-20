@@ -1,3 +1,29 @@
+#### 3.3.2.20211218-alpha
+* 【uni-app】
+  + 修复 vue3 项目 部分组合式 API 参数缺少类型的Bug [详情](https://github.com/dcloudio/uni-app/issues/3076#issuecomment-994557108)
+  + App平台、H5平台 修复 vue2 项目缺失 uni.previewImage.cancel 国际化的Bug [详情](https://ask.dcloud.net.cn/question/136054)
+  + App平台 修复 vue3 项目 部分样式在低版本手机上不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3073)
+  + App-Android平台 修复 3.3.1 版本引出的 input 组件在执行 uni.chooseLocation 返回结果后可能无法获取焦点的Bug [详情](https://ask.dcloud.net.cn/question/136394)
+  + App-iOS平台 修复 nvue map 组件当聚合簇中只有1个 marker 时，markertap 事件返回的 id 不正确的Bug [详情](https://ask.dcloud.net.cn/question/136245)
+  + H5平台 修复 vue3 项目 运行至内置浏览器时，控制台日志输出没有文件行号的Bug
+  + H5平台 修复 vue3 项目 运行模式下热刷新报错的Bug
+  + H5平台 修复 vue3 项目 发行模式下 rpx 不生效的Bug [详情](https://ask.dcloud.net.cn/question/136238)
+  + H5平台 修复 vue3 项目 vite.config.js host 配置不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3083)
+  + 小程序平台 修复 vue3 项目 使用 behaviors 报错的Bug [详情](https://ask.dcloud.net.cn/question/131622)
+  + 小程序平台 修复 vue3 项目 引入小程序组件（如wxcomponents）不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3071)
+  + 小程序平台 修复 vue3 项目 defineExpose 不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3074)
+  + 小程序平台 修复 vue3 项目 部分情况下生成模板语法不正确的Bug [详情](https://github.com/dcloudio/uni-app/issues/3080)
+  + 小程序平台 修复 vue3 项目 pages.json condition 启动模式配置不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3079#issuecomment-995515310)
+  + 微信小程序平台、支付宝小程序平台 修复 vue3 项目 分包内引入插件不生效的Bug [详情](https://ask.dcloud.net.cn/question/136465)
+  + 微信小程序平台 修复 vue3 项目 页面 defineProps 不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3079)
+* 【App插件(含5+App和uni-app的App端)】
+  + 新增 uni-AD 支持设置是否关闭个性化推荐功能 [文档](https://www.html5plus.org/doc/zh_cn/ad.html#plus.ad.setPersonalizedAd)
+  + 优化 定位模块默认使用 wgs84 坐标系，优先使用系统定位
+  + Android平台 修复 uni-AD 开屏广告部分情况下点击事件可能透传的Bug
+  + Android平台 修复 爱加密等安全检测平台报StrandHogg漏洞的Bug
+  + 【重要】iOS平台 更新 云端打包环境 XCode 为 13.2.1 版、iOS SDK 为 15.2 版，解决提交 AppStore 审核报 ITMS-90901 警告的问题 [详情](https://ask.dcloud.net.cn/question/136405)
+  + iOS平台 修复 uni-AD 后台切前台时开屏广告展示间隔时间设置无效及可能重复展示的Bug
+
 #### 3.3.1.20211214-alpha
 * 【uni-app】
   + App平台 修复 vue3 项目使用 uni.canvasGetImageData 报错的Bug [详情](https://ask.dcloud.net.cn/question/134355)

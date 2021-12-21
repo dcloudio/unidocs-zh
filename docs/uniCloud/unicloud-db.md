@@ -690,7 +690,7 @@ H5平台，开发模式下浏览器控制台输入 `unidev.clientDB.data`，可�
 </template>
 ```
 
-联表查询详情参考 [https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup)
+联表查询详情参考 [https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup](https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup)
 
 ## 列表分页@page
 

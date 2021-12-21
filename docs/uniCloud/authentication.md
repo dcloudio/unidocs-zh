@@ -167,7 +167,7 @@ auth.linkAndRetrieveDataWithTicket(ticket).then(res => {
 当登录态失效时，会触发这个事件，开发者可以在这个事件回调内，尝试重新登录 uniCloud。
 
 ```js
-uniCloud.on('loginStateExpire', () => {
+auth.onLoginStateExpire(() => {
   // 尝试重新登录
 });
 ```
@@ -179,7 +179,7 @@ JS SDK 会在登录态生效期间，自动刷新和维护短期访问令牌（a
 对于两种登录态并存（uniCloud、自身业务登录态）的应用，这个事件可以用于同步登录态之间的状态。
 
 ```js
-uniCloud.on('refreshAccessToken', () => {
+auth.onAccessTokenRefreshed(() => {
   // 此时 uniCloud 短期访问令牌已经刷新，可以尝试刷新自身业务的登录态
 })
 ```

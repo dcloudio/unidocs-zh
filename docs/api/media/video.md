@@ -67,7 +67,6 @@ export default {
 		test: function () {
 			var self = this;
 			uni.chooseVideo({
-				count: 1,
 				sourceType: ['camera', 'album'],
 				success: function (res) {
 					self.src = res.tempFilePath;
@@ -217,7 +216,6 @@ export default {
 		test: function () {
 			var self = this;
 			uni.chooseVideo({
-				count: 1,
 				sourceType: ['camera'],
 				success: function (res) {
 					self.src = res.tempFilePath;

@@ -485,7 +485,7 @@ exports.main = async function(event,context) {
 | myInviteCode	| String	| 否	|自行设置用户的邀请码																														|
 | role	| Array	| 否	|设定用户角色												|
 
-username可以是字符串、可以是email、可以是手机号，本插件不约束，开发者可以自己定。
+username可以是字符串、可以是email、可以是手机号，本插件不约束，开发者可以自己定。如果使用登录接口时希望可以同时使用username、email、手机号登录，那么切记username不可以和手机号、email拥有相同格式，否则可能出现某一串字符串是一个用户的username同时又是另一个用户的email或者手机号的情况。
 
 比如要求username为手机号，则自行在前端界面上做好提示，在后台对格式进行校验。
 

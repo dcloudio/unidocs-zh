@@ -6,9 +6,11 @@ HBuilderX中查看日志的教程在 [快速上手章节](/uniCloud/quickstart?i
 
 ## 运行期记录日志，在web控制台查看
 
-系统上线后，也需要记录云函数的日志。此时不是打印在HBuilderX控制台，也不是使用`console.log`，而是使用下面的API来记录日志。
+使用腾讯云时还可以使用以下接口打印日志，以uniCloud.logger方式打印的日志会保留30天，console方式打印的日志会保留7天。
 
-调用这些API打印的日志，会记录在uniCloud的[web控制台](https://unicloud.dcloud.net.cn)。以此方式输出的日志会持久化存储（有效期30天）。
+使用阿里云时，两种方式都是只能保留7天。
+
+可以在uniCloud的[web控制台](https://unicloud.dcloud.net.cn)查看云函数在云端运行的日志。云函数在本地运行的日志请在HBuilderX的控制台内查看。
 
 |接口									|描述											|
 |:-:									|:-:											|

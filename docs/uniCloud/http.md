@@ -38,7 +38,7 @@
 1. 单击左侧菜单栏【云函数】，进入云函数页面。
 2. 单击【云函数域名绑定】，在弹出的配置窗口中进行配置。
 
-<img style="max-width:800px;height:auto;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/55897b30-5993-11eb-8ff1-d5dcf8779628.jpg"></img>
+<img style="max-width:800px;height:auto;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/61819e66-9c4d-432f-ab70-5f8f042ce783.jpg"></img>
 
 上一步中填写域名证书且绑定成功后会返回一个`CNAME域名`，将绑定的域名配置CNAME记录值为此`CNAME域名`即可
 

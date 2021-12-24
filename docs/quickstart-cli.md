@@ -56,19 +56,23 @@ npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，示例：
 
 
-```
+```shell
+# 更新到最新正式版
 npx @dcloudio/uvm
 ```
 
-```
+```shell
+# 更新到最新 alpha 版
 npx @dcloudio/uvm alpha
 ```
 
-```
+```shell
+# 更新到正式版指定版本
 npx @dcloudio/uvm 3.2.12.20211029
 ```
 
-```
+```shell
+# 更新到 alpha 版指定版本
 npx @dcloudio/uvm 3.2.14.20211112-alpha
 ```
 

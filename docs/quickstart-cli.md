@@ -12,27 +12,27 @@ npm install -g @vue/cli
 
 ## 创建uni-app
 
-**使用正式版**（对应HBuilderX最新正式版）
+* 使用正式版（对应HBuilderX最新正式版）
 
-```shell
-vue create -p dcloudio/uni-preset-vue my-project
-```
+  ```shell
+  vue create -p dcloudio/uni-preset-vue my-project
+  ```
 
-**使用alpha版**（对应HBuilderX最新alpha版）
+* 使用alpha版（对应HBuilderX最新alpha版）
 
-```shell
-vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
-```
+  ```shell
+  vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
+  ```
 
-**使用Vue3/Vite版**
-
-```shell
-# 创建以 javascript 开发的工程  
-npx degit dcloudio/uni-preset-vue#vite my-vue3-project  
-
-# 创建以 typescript 开发的工程  
-npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project 
-```
+* 使用Vue3/Vite版
+  * 创建以 javascript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite.zip) 下载模板）
+    ```shell
+    npx degit dcloudio/uni-preset-vue#vite my-vue3-project
+    ```
+  * 创建以 typescript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite-ts.zip) 下载模板）
+    ```shell
+    npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
+    ```
 
 此时，会提示选择项目模板（使用Vue3/Vite版不会提示，目前只支持创建默认模板），初次体验建议选择 `hello uni-app` 项目模板，如下所示：
 
@@ -56,23 +56,19 @@ npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，示例：
 
 
-```shell
-# 更新到最新正式版
+```
 npx @dcloudio/uvm
 ```
 
-```shell
-# 更新到最新 alpha 版
+```
 npx @dcloudio/uvm alpha
 ```
 
-```shell
-# 更新到正式版指定版本
+```
 npx @dcloudio/uvm 3.2.12.20211029
 ```
 
-```shell
-# 更新到 alpha 版指定版本
+```
 npx @dcloudio/uvm 3.2.14.20211112-alpha
 ```
 

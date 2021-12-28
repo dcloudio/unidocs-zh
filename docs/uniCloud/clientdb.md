@@ -1,3 +1,5 @@
+JQL语法相关文档已移至：[JQL语法](uniCloud/jql.md)
+
 ## clientDB简介
 
 > 自`HBuilderX 2.9.5`起支持在客户端直接使用`uniCloud.database()`方式获取数据库引用，即在前端直接操作数据库，这个功能被称为`clientDB`
@@ -114,6 +116,6 @@ db.collection('list')
 - 更新数据时键值不可使用`{'a.b.c': 1}`的形式，需要写成`{a:{b:{c:1}}}`形式
 
 
-## JQL查询语法@jsquery
+## JQL语法@jql
 
 clientDB使用JQL在客户端编写查询语句，关于JQL语法请参考：[JQL语法](uniCloud/jql.md)

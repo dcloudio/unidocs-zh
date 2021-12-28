@@ -7,7 +7,7 @@
   * [云函数](uniCloud/concepts/cloudfunction.md)
 * 云数据库
   * [云数据库入门](uniCloud/hellodb.md)
-  * [云函数操作云数据库](uniCloud/cf-database.md)
+  * [云函数内传统方式操作数据库](uniCloud/cf-database.md)
   * [前端操作数据库的API](uniCloud/clientdb.md)
   * [云函数内使用JQL语法](uniCloud/jql-cloud.md)
   * [数据库索引](uniCloud/db-index.md)

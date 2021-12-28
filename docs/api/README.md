@@ -12,7 +12,7 @@ uni-app基于ECMAScript扩展了uni对象，并且API命名与小程序保持兼
 
 请注意不要把浏览器里的js扩展对象等价于标准js。
 
-所以uni-app的非H5端，一样支持标准js，支持if、for等语法，支持字符串、数组、时间等变量及各种处理方法。仅仅是不支持window、document等浏览器专用对象。
+所以uni-app的非H5端，一样支持标准js，支持if、for等语法，支持字符串、数字、时间、布尔值、数组、自定义对象等变量类型及各种处理方法。仅仅是不支持window、document、navigator等浏览器专用对象。
 
 ## 各端特色API调用
 

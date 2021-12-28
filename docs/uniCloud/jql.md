@@ -110,7 +110,7 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 
 - 客户端clientDB，包括js内以及unicloud-db组件内，参考：[clientDB](uniCloud/clientdb.md)
 - HBuilderX JQL数据库管理器，参考：[JQL数据库管理器](uniCloud/jql-runner.md)
-<!-- - 启用了jql扩展的云函数，参考：[云函数内使用JQL](uniCloud/jql-cloud.md) -->
+- 启用了jql扩展的云函数，参考：[云函数内使用JQL](uniCloud/jql-cloud.md)
 
 ### 不同场景的区别
 
@@ -127,10 +127,10 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 - 完整的权限校验，执行操作的用户不可以操作自己权限之外的数据
 - admin用户不可操作password类型的数据
 
-<!-- **云函数JQL：**
+**云函数JQL：**
 
 - 同clientDB，但是password类型的数据可以配置权限，默认权限是false，可以被admin用户操作。
-- 可以指定当前执行数据库操作的用户身份。 -->
+- 可以指定当前执行数据库操作的用户身份。
 
 ## JQL的限制@limit
 

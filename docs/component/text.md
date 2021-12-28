@@ -95,3 +95,8 @@ export default {
 ```
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/245b9110-4f2f-11eb-97b7-0dc4655d6e68.png)
+
+
+**注意事项**
+
+- nvue 样式 `word-wrap` 在 Android 平台暂不支持

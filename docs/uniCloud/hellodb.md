@@ -1,16 +1,16 @@
-## 基础概念
+## 基础概念@base
 
 `uniCloud`提供了一个 JSON 格式的文档型数据库。顾名思义，数据库中的每条记录都是一个 JSON 格式的文档。
 
 它是nosql非关系型数据库，如果您之前熟悉sql关系型数据库，那么两者概念对应关系如下表：
 
-|关系型					|JSON 文档型							|
-|:-							|:-												|
-|数据库 database|数据库 database					|
-|表 table				|集合 collection。但行业里也经常称之为“表”。无需特意区分					|
-|行 row					|记录 record / doc				|
-|字段 column		|字段 field								|
-|使用sql语法操作|使用MongoDB语法或jql操作	|
+|关系型			|JSON 文档型												|
+|:-				|:-															|
+|数据库 database|数据库 database											|
+|表 table		|集合 collection。但行业里也经常称之为“表”。无需特意区分	|
+|行 row			|记录 record / doc											|
+|字段 column	|字段 field													|
+|使用sql语法操作|使用MongoDB语法或jql操作									|
 
 一个`uniCloud`服务空间，有且只有一个数据库。一个数据库支持多个集合（表）。一个集合可以有多个记录。每个记录可以有多个字段。
 
@@ -31,7 +31,8 @@
 
 ```json
 {
-	"name":"张三","tel":"13900000000","login_log":[
+	"name":"张三","tel":"13900000000",
+	"login_log":[
 		{"login_date":1604186605445,"login_ip":"192.168.1.1"},
 		{"login_date":1604186694137,"login_ip":"192.168.1.2"}
 	]
@@ -39,7 +40,7 @@
 {"name":"李四","tel":"13911111111"}
 ```
 
-上述数据表示张三登录了2次，login_date里的值是时间戳(timestamp)格式，后续会讲解timestamp。而李四没有登录过。
+上述数据表示张三登录了2次，login_date里的值是时间戳(timestamp)格式，在数据库内timestamp就是一个数字类型的数据。而李四没有登录过。
 
 可以看出json文档数据库相对于关系型数据库的灵活，李四可以没有login_log字段，也可以有这个字段但登录次数记录与张三不同。
 
@@ -51,49 +52,34 @@ _此处仅为举例，实际业务中，登录日志单独存放在另一个集�
 
 在uniCloud web控制台新建表时，在下面的模板中也可以选择各种`opendb`表模板，直接创建。
 
-**字段的值，支持以下类型：**
-* String：字符串
-* Number：数字
-* Object：对象
-* Array：数组
-* Bool：布尔值
-* GeoPoint：地理位置点
-* GeoLineStringL: 地理路径
-* GeoPolygon: 地理多边形
-* GeoMultiPoint: 多个地理位置点
-* GeoMultiLineString: 多个地理路径
-* GeoMultiPolygon: 多个地理多边形
-* Date：时间
-* Null：相当于一个占位符，表示一个字段存在但是值为空。
-
-DB Schema中还扩展了其他字段类型，但其实都是基本类型的扩展，比如file类型其实是一种特殊的object，而password类型是一种特殊的string类型。
-
 uniCloud同时支持阿里云和腾讯云，它们的数据库大体相同，有细微差异。阿里云的数据库是mongoDB4.0，腾讯云则使用自研的文档型数据库（兼容mongoDB 4.0版本）。uniCloud基本抹平了不同云厂商的差异，有差异的部分会在文档中单独标注。
 
-如果想在云函数连接其他数据库，如mysql/redis，用法和nodejs连接这些数据库是一样的。插件市场已经有人提供了插件，见下。但注意这些用法推荐用于数据导入，主业务开发不建议这么使用。因为其他服务器上的数据库和云函数环境物理上不在一起，连接会比较慢。
+如果想在云函数连接其他数据库，如mysql，用法和nodejs连接这些数据库是一样的。插件市场已经有人提供了插件，见下。但注意这些用法推荐用于数据导入，主业务开发不建议这么使用。因为其他服务器上的数据库和云函数环境物理上不在一起，连接会比较慢。
 
 - [云函数连接Mysql数据库示例](https://ext.dcloud.net.cn/plugin?id=1925)
-- [云函数连接Redis数据库示例](https://ext.dcloud.net.cn/plugin?id=1846)
 
-## 操作数据库的2种方法
+如需使用redis，请参考文档：[Redis扩展库](uniCloud/redis.md)
+
+## 操作数据库的方式@db-operation-type
 
 云数据库支持通过云函数访问，也支持在客户端访问云数据库。
 
-- 云函数操作数据库是较为传统的开发方式，使用nodejs写云函数、使用传统的MongoDB的API操作云数据库。
-
-- 客户端访问云数据库，称为[clientDB](https://uniapp.dcloud.net.cn/uniCloud/clientdb)。这种开发方式可大幅提升开发效率，避免开发者开发服务器代码，并且支持更易用的`jql`语法操作数据库，是更为推荐的开发方式。[clientDB](https://uniapp.dcloud.net.cn/uniCloud/clientdb)有单独一套权限和字段值控制系统，无需担心数据库安全。（使用[clientDB](https://uniapp.dcloud.net.cn/uniCloud/clientdb)推荐HBuilderX 2.9.5以上版本。2.9.5以下的版本需单独下载插件，并且不支持`jql`，不再推荐使用。）
+- 传统方式云函数操作数据库，使用nodejs写云函数、使用传统的MongoDB的API操作云数据库。
+- 客户端访问云数据库，称为[clientDB](uniCloud/clientdb.md)。这种开发方式可大幅提升开发效率，避免开发者开发服务器代码，并且支持更易用的`jql`语法操作数据库，是更为推荐的开发方式。[clientDB](uniCloud/clientdb.md)有单独一套权限和字段值控制系统，无需担心数据库安全。需要`HBuilderX 2.9.5`及以上版本
+- 云函数内使用jql语法操作数据库，需要使用[jql扩展库](uniCloud/jql-cloud.md)。与clientDB写法一致，仅在访问password类型的数据时有区别。clientDB完全不可访问password类型字段（即使为此字段设置permission也不生效）。云函数内password类型字段默认权限为false（可以被admin用户访问），开发者配置的字段权限会覆盖此默认权限。需要`HBuilderX 3.3.1`及以上版本
 
 不管使用哪种方法，都有很多公共的概念或功能。本文档将讲述这些公共的内容。
 
-同时左侧导航有2种方法的专项链接，描述它们各自特有的功能。
-- [云函数使用传统MongoDB语法操作数据库](uniCloud/cf-database)
-- [前端操作数据库，clientDB和jql](uniCloud/clientdb)
+同时左侧导航有三种方法的专项链接，描述它们各自特有的功能。
+- [云函数使用传统MongoDB语法操作数据库](uniCloud/cf-database.md)
+- [前端操作数据库clientDB](uniCloud/clientdb.md)
+- [云函数内使用JQL语法操作数据库](uniCloud/jql-cloud.md)
 
 ## 获取数据库对象@database
 
 想要通过代码操作数据库，第一步要获取服务空间里的数据库对象。
 
-不管云函数还是前端，获取数据库连接都是如下写法。前端写法需2.9.5起支持。
+**云函数使用传统MongoDB语法操作数据库以及客户端使用clientDB获取数据库实例：**
 
 ```js
 const db = uniCloud.database(); //代码块为cdb
@@ -101,13 +87,34 @@ const db = uniCloud.database(); //代码块为cdb
 
 js中敲下代码块`cdb`，即可快速输入上述代码。
 
+**云函数内使用JQL扩展库时获取数据库实例写法为：**
+
+```js
+// 简单的使用示例
+'use strict';
+exports.main = async (event, context) => {
+	const dbJQL = uniCloud.databaseForJQL({ // 获取JQL database引用，此处需要传入云函数的event和context，必传
+		event,
+		context 
+	})
+	const bookQueryRes = dbJQL.collection('book').where("name=='三国演义'").get() // 直接执行数据库操作
+	return {
+		bookQueryRes
+	}
+};
+```
+
+**获取其他服务空间的数据库实例**
+
+> 仅腾讯云在云函数内可用
+
+接口形式：`uniCloud.database(Object DBOptions)`
+
 **DBOptions参数说明**
 
-> DBOptions仅腾讯云在云函数内可用
-
-|字段		|类型		|必填	|描述											|平台差异说明	|
-|:-:		|:-:		|:-:	|:-:											|:-:					|
-|spaceId|String	|否		|同一账号下的，服务空间ID	|仅腾讯云支持	|
+|字段	|类型	|必填	|描述						|平台差异说明	|
+|:-:	|:-:	|:-:	|:-:						|:-:			|
+|spaceId|String	|否		|同一账号下的服务空间ID	|仅腾讯云支持	|
 
 ```js
 // 如果ID为tcb-space-demo的服务空间也在你的账号下，可以通过这种方式访问tcb-space-demo的数据库。调用此接口的服务空间和tcb-space-demo对应的服务空间均为腾讯云才可以正常使用
@@ -144,9 +151,178 @@ db.createCollection("table1")
 ```
 
 **注意**
-* 如果数据表已存在，腾讯云调用createCollection方法会报错
-* 腾讯云调用collection的add方法不会自动创建数据表，不存在的数据表会报错
-* 阿里云没有createCollection方法
+
+- 如果数据表已存在，腾讯云调用createCollection方法会报错
+- 腾讯云调用collection的add方法不会自动创建数据表，不存在的数据表会报错
+- 阿里云没有createCollection方法
+- 使用代码方式创建的表没有索引，请谨慎使用此方式
+
+## 获取集合/数据表对象@collection
+
+创建好数据表后，可以通过API获取数据表对象。
+
+```js
+const db = uniCloud.database();
+// 获取名为 `table1` 数据表的引用
+const collection = db.collection('table1');
+```
+
+**集合/数据表 Collection 的方法**
+
+通过 `db.collection(name)` 可以获取指定数据表的引用，在数据表上可以进行以下操作
+
+| 类型		| 接口		| 说明																														|
+| --------	| -------	| ----------------------------------------------------------------------------------										|
+| 写		| add		| 新增记录（触发请求）																										|
+| 计数		| count		| 获取符合条件的记录条数																									|
+| 读		| get		| 获取数据表中的记录，如果有使用 where 语句定义查询条件，则会返回匹配结果集 (触发请求)										|
+| 引用		| doc		| 获取对该数据表中指定 id 的记录的引用																						|
+| 查询条件	| where		| 通过指定条件筛选出匹配的记录，可搭配查询指令（eq, gt, in, ...）使用														|
+|			| skip		| 跳过指定数量的文档，常用于分页，传入 offset。clientDB组件有封装好的更易用的分页，[另见](uniCloud/uni-clientdb-component)	|
+|			| orderBy	| 排序方式																													|
+|			| limit		| 返回的结果集(文档数量)的限制，有默认值和上限值																			|
+|			| field		| 指定需要返回的字段																										|
+
+collection对象的方法可以增和查数据，删和改不能直接操作，需要collection对象通过doc或get得到指定的记录后再调用remove或update方法进行删改。
+
+具体前端clientDB和云函数各自增删改查的方法，请单独参考文档：
+- [云函数使用传统MongoDB语法操作数据库](uniCloud/cf-database)
+- [前端操作数据库，clientDB和jql](uniCloud/clientdb)
+
+## 数据类型@data-type
+
+数据库内数据基础类型有以下几种：
+
+* String：字符串
+* Number：数字
+* Object：对象
+* Array：数组
+* Bool：布尔值
+* GeoPoint：地理位置点
+* GeoLineStringLine: 地理路径
+* GeoPolygon: 地理多边形
+* GeoMultiPoint: 多个地理位置点
+* GeoMultiLineString: 多个地理路径
+* GeoMultiPolygon: 多个地理多边形
+* Date：时间
+* Null：相当于一个占位符，表示一个字段存在但是值为空。
+
+DB Schema中还扩展了其他字段类型，但其实都是基本类型的扩展，比如file类型其实是一种特殊的object，而password类型是一种特殊的string类型。
+
+### Date类型
+
+Date 类型用于表示时间，精确到毫秒，可以用 JavaScript 内置 Date 对象创建。需要特别注意的是，连接本地云函数时，用此方法创建的时间是客户端当前时间，不是服务端当前时间，只有连接云端云函数才是服务端当前时间。
+
+另外，我们还单独提供了一个 API 来创建服务端当前时间，使用 serverDate 对象来创建一个服务端当前时间的标记，**该对象暂时只支持腾讯云空间**，当使用了 serverDate 对象的请求抵达服务端处理时，该字段会被转换成服务端当前的时间，更棒的是，我们在构造 serverDate 对象时还可通过传入一个有 offset 字段的对象来标记一个与当前服务端时间偏移 offset 毫秒的时间，这样我们就可以达到比如如下效果：指定一个字段为服务端时间往后一个小时。
+
+```js
+// 服务端当前时间
+new db.serverDate()
+// 在云函数内使用new Date()和new db.serverDate()效果一样
+```
+
+```js
+//服务端当前时间加1S
+new db.serverDate({
+  offset: 1000
+})
+// 在云函数内使用new Date(Date.now() + 1000)和上面的用法效果一样
+```
+
+### 地理位置类型@geo-data-type
+
+#### Point@geo-point
+
+用于表示地理位置点，用经纬度唯一标记一个点，这是一个特殊的数据存储类型。
+
+签名：`Point(longitude: number, latitude: number)`
+
+示例：
+```js
+new db.Geo.Point(longitude, latitude)
+```
+
+#### LineString@geo-line-string
+
+用于表示地理路径，是由两个或者更多的 `Point` 组成的线段。
+
+签名：`LineString(points: Point[])`
+
+示例：
+
+```js
+new db.Geo.LineString([
+  new db.Geo.Point(lngA, latA),
+  new db.Geo.Point(lngB, latB),
+  // ...
+])
+```
+
+#### Polygon@geo-polygon
+
+用于表示地理上的一个多边形（有洞或无洞均可），它是由一个或多个**闭环** `LineString` 组成的几何图形。
+
+由一个环组成的 `Polygon` 是没有洞的多边形，由多个环组成的是有洞的多边形。对由多个环（`LineString`）组成的多边形（`Polygon`），第一个环是外环，所有其他环是内环（洞）。
+
+签名：`Polygon(lines: LineString[])`
+
+示例：
+
+```js
+new db.Geo.Polygon([
+  new db.Geo.LineString(...),
+  new db.Geo.LineString(...),
+  // ...
+])
+```
+
+#### MultiPoint@geo-multi-point
+
+用于表示多个点 `Point` 的集合。
+
+签名：`MultiPoint(points: Point[])`
+
+示例：
+
+```js
+new db.Geo.MultiPoint([
+  new db.Geo.Point(lngA, latA),
+  new db.Geo.Point(lngB, latB),
+  // ...
+])
+```
+
+#### MultiLineString@geo-multi-line-string
+
+用于表示多个地理路径 `LineString` 的集合。
+
+签名：`MultiLineString(lines: LineString[])`
+
+示例：
+
+```js
+new db.Geo.MultiLineString([
+  new db.Geo.LineString(...),
+  new db.Geo.LineString(...),
+  // ...
+])
+```
+
+#### MultiPolygon@geo-multi-polygon
+
+用于表示多个地理多边形 `Polygon` 的集合。
+
+签名：`MultiPolygon(polygons: Polygon[])`
+
+示例：
+
+```js
+new db.Geo.MultiPolygon([
+  new db.Geo.Polygon(...),
+  new db.Geo.Polygon(...),
+  // ...
+])
+```
 
 ## 集合/数据表的3个组成部分
 
@@ -185,7 +361,7 @@ data很简单，就是存放的数据记录(record)。
 
 如果我们要根据name字段来查询，为了提升查询速度，此时可以把name字段设为非唯一索引。
 
-索引内容较多，还有“组合索引”、“稀疏索引”、“地理位置索引”、“TTL索引”等概念。有单独的文档详细讲述索引，另见：[数据库索引](/uniCloud/db-index)
+索引内容较多，还有“组合索引”、“稀疏索引”、“地理位置索引”、“TTL索引”等概念。有单独的文档详细讲述索引，另见：[数据库索引](uniCloud/db-index.md)
 
 
 **在web控制台添加上述索引**
@@ -204,41 +380,17 @@ data很简单，就是存放的数据记录(record)。
 
 因为json文档数据库的灵活性，data数据的字段可以不在schema的描述范围内。
 
-`DB Schema`更多是为搭配clientDB使用的，如果使用clientDB则需要详细阅读`DB Schema`的文档。
+`DB Schema`更多是为搭配jql语法使用的，如果使用jql语法（clientDB或者使用了jql扩展库的云函数内）则需要详细阅读`DB Schema`的文档。
 
 `DB Schema`涉及内容较多，另见文档：[https://uniapp.dcloud.io/uniCloud/schema](uniCloud/schema)
 
+## 与传统开发区别@difference
 
-## 获取集合/数据表对象
+不同于传统开发，云函数连接数据库有单次操作时长限制，目前单次操作时间限制如下。超出此时间会报超时错误。一般情况下在设置了合适的索引时不会遇到超时错误，如何优化查询速度请参考：[数据库性能优化](uniCloud/db-performance.md)
 
-创建好数据表后，可以通过API获取数据表对象。
-```js
-const db = uniCloud.database();
-// 获取名为 `table1` 数据表的引用
-const collection = db.collection('table1');
-```
-
-**集合/数据表 Collection 的方法**
-
-通过 `db.collection(name)` 可以获取指定数据表的引用，在数据表上可以进行以下操作
-
-| 类型		| 接口		| 说明																														|
-| --------	| -------	| ----------------------------------------------------------------------------------										|
-| 写		| add		| 新增记录（触发请求）																										|
-| 计数		| count		| 获取符合条件的记录条数																									|
-| 读		| get		| 获取数据表中的记录，如果有使用 where 语句定义查询条件，则会返回匹配结果集 (触发请求)										|
-| 引用		| doc		| 获取对该数据表中指定 id 的记录的引用																						|
-| 查询条件	| where		| 通过指定条件筛选出匹配的记录，可搭配查询指令（eq, gt, in, ...）使用														|
-|			| skip		| 跳过指定数量的文档，常用于分页，传入 offset。clientDB组件有封装好的更易用的分页，[另见](uniCloud/uni-clientdb-component)	|
-|			| orderBy	| 排序方式																													|
-|			| limit		| 返回的结果集(文档数量)的限制，有默认值和上限值																			|
-|			| field		| 指定需要返回的字段																										|
-
-collection对象的方法可以增和查数据，删和改不能直接操作，需要collection对象通过doc或get得到指定的记录后再调用remove或update方法进行删改。
-
-具体前端clientDB和云函数各自增删改查的方法，请单独参考文档：
-- [云函数使用传统MongoDB语法操作数据库](uniCloud/cf-database)
-- [前端操作数据库，clientDB和jql](uniCloud/clientdb)
+|腾讯云	|阿里云	|
+|--		|--		|
+|5秒	|1秒	|
 
 ## 数据导入导出和备份@dbmigration
 

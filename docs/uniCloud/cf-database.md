@@ -2092,7 +2092,7 @@ exports.main = async function(){
 }
 ```
 
-### 聚合表达式
+### 聚合表达式@aggregate-expression
 
 表达式可以是字段路径、常量、或聚合操作符。表达式可以嵌套表达式。
 

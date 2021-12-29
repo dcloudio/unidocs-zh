@@ -22,12 +22,12 @@ function init(options):uniCloud
 
 **options 参数说明**
 
-|参数名				|类型		|必填				|默认值	|说明																								|
-|:-:					|:-:		|:-:				|:-:		|:-:																								|
-|provider			|String	|是					|-			|aliyun、tencent					|
-|spaceId			|String	|是					|-			|服务空间ID，**注意是服务空间ID，不是服务空间名称**	|
-|clientSecret	|String	|是	|-			|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看				|
-|endpoint			|String	|否					|`https://api.bspapp.com`	|服务空间地址，仅阿里云侧支持																			|	
+|参数名			|类型	|必填	|默认值						|说明																					|
+|:-:			|:-:	|:-:	|:-:						|:-:																					|
+|provider		|String	|是		|-							|aliyun、tencent																		|
+|spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
+|clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
+|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云侧支持															|
 
 **示例代码**
 
@@ -68,9 +68,9 @@ db.collection('uni-id-users').get()
 
 **参数说明**
 
-|参数名				|类型		|必填	|默认值										|说明																																										|
-|:-:					|:-:		|:-:	|:-:											|:-:																																										|
-|provider			|String	|是		|-												|aliyun、tencent																																				|
-|spaceId			|String	|是		|-												|服务空间ID，**注意是服务空间ID，不是服务空间名称**																			|
-|clientSecret	|String	|是		|-												|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
-|endpoint			|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云侧支持																														|
+|参数名			|类型	|必填	|默认值						|说明																					|
+|:-:			|:-:	|:-:	|:-:						|:-:																					|
+|provider		|String	|是		|-							|aliyun、tencent																		|
+|spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
+|clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
+|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云侧支持															|

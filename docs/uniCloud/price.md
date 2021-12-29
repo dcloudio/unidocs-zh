@@ -607,3 +607,96 @@ uniCloud提供包月、按量计费两种计费方式（仅腾讯云），具体
 ## 发生故障时如何判断故障点
 
 当你的线上系统故障时，可以参考此文档判断责任归属：[如何判断是DCloud或阿里云或腾讯云的问题](https://uniapp.dcloud.io/uniCloud/faq?id=fault)
+
+## 云厂商之间的迁移@cross-provider
+
+### 数据库迁移@cross-provider-db
+
+目前可以使用云数据库的导入导出进行迁移，迁移数据库之前可以使用导出db_init.json功能将所有集合及索引导出。再使用数据导入导出功能进行迁移。导入导出请参考：[数据导入导出和备份](uniCloud/hellodb.md?id=dbmigration)
+
+> 也可以直接使用第三方封装好的插件：[unicloud数据库一键搬家工具，支持阿里云与腾讯云互转。支持跨账号转。](https://ext.dcloud.net.cn/plugin?id=6089)
+
+#### 腾讯云迁移到阿里云@tencent-to-aliyun-db
+
+迁移数据可以通过在腾讯云服务空间导出数据表为json文件，在阿里云服务空间导入json文件到表的方式进行迁移。
+
+#### 阿里云迁移到腾讯云@aliyun-to-tencent-db
+
+由于此前腾讯云并未完全支持ObjectId类型的数据，在阿里云迁移到腾讯云时需要注意处理一下`ObjectId`类型的数据，包括自动生成的_id字段以及关联到其他表的_id的字段。简单来说就是将导出的数据内的ObjectId类型的数据处理成字符串且不满足ObjectId的格式。
+
+例：
+
+```js
+// 原始数据
+{"_id":{"$oid":"60fa6d25cd84d60001ec38a2"},"uid":{"$oid":"60fa6d1d2e5faa0001ade857"}}
+
+// 调整后的数据
+{"_id":"60fa6d25cd84d60001ec38a2a","uid":"60fa6d1d2e5faa0001ade857a"} // 在结尾追加了一个“a”使其不满足ObjectId格式
+```
+
+以下为一个简单的脚本示例用于处理导出的json文件
+
+如果将此文件存储为`parse.js`，使用`node parse.js 输入文件相对或绝对路径 输出文件相对或绝对路径`即可处理导出的json文件
+
+```js
+const fs = require('fs')
+const path = require('path')
+const readline = require('readline')
+
+const cwd = process.cwd()
+const inputPath = path.resolve(cwd, process.argv[2])
+const outputPath = path.resolve(cwd, process.argv[3])
+
+if (fs.existsSync(outputPath)) {
+  throw new Error(`输出路径（${outputPath}）已存在`)
+}
+
+function getType(val) {
+  return Object.prototype.toString.call(val).slice(8, -1).toLowerCase()
+}
+function parseRecord(obj) {
+  const type = getType(obj)
+  switch (type) {
+    case 'object':
+      if (obj.$oid) {
+        return obj.$oid + 'a'
+      }
+      const keys = Object.keys(obj)
+      for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        obj[key] = parseRecord(obj[key])
+      }
+      return obj
+    case 'array':
+      for (let i = 0; i < obj.length; i++) {
+        obj[i] = parseRecord(obj[i])
+      }
+      return obj
+    default:
+      return obj
+  }
+}
+
+async function parseCollection() {
+  const inputStream = fs.createReadStream(inputPath)
+  const outputStream = fs.createWriteStream(outputPath)
+
+  const rl = readline.createInterface({
+    input: inputStream
+  });
+
+  for await (const line of rl) {
+    const recordStr = line.trim()
+    if (!recordStr) {
+      continue
+    }
+    const record = parseRecord(JSON.parse(recordStr))
+    outputStream.write(JSON.stringify(record) + '\n')
+  }
+  rl.close()
+  console.log(`处理后的文件已输出到${outputPath}`)
+}
+
+parseCollection()
+
+```

@@ -53,11 +53,11 @@ module.exports = async function(event,context) {
 
 ### 抽样方法sample
 
-sample操作在高频触发时会响应缓慢，使用前请务必确定自己的业务场景适合使用sample方法
+sample操作在大数据量高频触发时会响应缓慢，使用前请务必确定自己的业务场景适合使用sample方法
 
 ## clientDB联表查询超时@client-db-lookup
 
-请参考此文档调整优化，[使用getTemp进行联表查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup-with-temp)
+请参考此文档调整优化，[使用getTemp进行联表查询](https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup-with-temp)
 
 ## 慢查询日志@slow
 

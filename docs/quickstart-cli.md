@@ -53,24 +53,24 @@ npm install -g @vue/cli
 
 #### 修改依赖为指定版本@cliversion
 
-可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，示例：
+可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本：
 
-
-```
-npx @dcloudio/uvm
-```
-
-```
-npx @dcloudio/uvm alpha
-```
-
-```
-npx @dcloudio/uvm 3.2.12.20211029
-```
-
-```
-npx @dcloudio/uvm 3.2.14.20211112-alpha
-```
+* 更新到最新正式版
+  ```shell
+  npx @dcloudio/uvm
+  ```
+* 更新到最新 alpha 版
+  ```shell
+  npx @dcloudio/uvm alpha
+  ```
+* 更新到正式版指定版本
+  ```shell
+  npx @dcloudio/uvm 3.2.12.20211029
+  ```
+* 更新到 alpha 版指定版本
+  ```shell
+  npx @dcloudio/uvm 3.2.14.20211112-alpha
+  ```
 
 ## 运行、发布uni-app
 

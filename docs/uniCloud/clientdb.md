@@ -16,7 +16,7 @@ JQL语法相关文档已移至：[JQL语法](uniCloud/jql.md)
 
 在`DB Schema`中，配置数据操作的权限和字段值域校验规则，阻止前端不恰当的数据读写。详见：[DB Schema](https://uniapp.dcloud.net.cn/uniCloud/schema)
 
-如果想在数据库操作之前或之后需要在云端执行额外的动作（比如获取文章详情之后阅读量+1），`clientDB`提供了action云函数机制。在HBuilderX项目的`cloudfunctions/uni-clientDB-actions`目录编写上传js，参考：[action](uniCloud/database?id=action)
+如果想在数据库操作之前或之后需要在云端执行额外的动作（比如获取文章详情之后阅读量+1），`clientDB`提供了action云函数机制。在HBuilderX项目的`cloudfunctions/uni-clientDB-actions`目录编写上传js，参考：[action](uniCloud/jql?id=action)
 
 **注意**
 
@@ -59,7 +59,6 @@ JQL语法相关文档已移至：[JQL语法](uniCloud/jql.md)
 js API可以执行所有数据库操作。`<unicloud-db>`组件是js API的再封装，进一步简化查询等常用数据库操作的代码量。
 
 - 在HBuilderX 3.0+，`<unicloud-db>`组件已经内置，可以直接使用。文档另见：[`<unicloud-db>`组件](/uniCloud/unicloud-db)
-- 在HBuilderX 3.0以前的版本，使用该组件需要在插件市场单独引用`<uni-clientDB>插件`，另见：[https://ext.dcloud.net.cn/plugin?id=3256](https://ext.dcloud.net.cn/plugin?id=3256)
 
 以下文章重点介绍`clientDB`的js API。至于组件的用法，另见[文档](uniCloud/unicloud-db.md)。
 
@@ -115,6 +114,53 @@ db.collection('list')
 - 更新数据库时不可使用更新操作符`db.command.inc`等
 - 更新数据时键值不可使用`{'a.b.c': 1}`的形式，需要写成`{a:{b:{c:1}}}`形式
 
+
+## 客户端事件@event
+
+### 刷新token@refreshtoken
+
+透传uni-id自动刷新的token给客户端
+
+> HBuilderX 3.2.11及以上版本，clientDB会自动将刷新的token及过期时间保存在storage内。
+
+**用法**
+
+```js
+const db = uniCloud.database()
+
+function refreshToken({
+  token,
+  tokenExpired
+}) {
+  uni.setStorageSync('uni_id_token', token)
+  uni.setStorageSync('uni_id_token_expired', tokenExpired)
+}
+// 绑定刷新token事件
+db.on('refreshToken', refreshToken)
+// 解绑刷新token事件
+db.off('refreshToken', refreshToken)
+```
+
+### 错误处理@error
+
+全局clientDB错误事件，HBuilderX 3.0.0起支持。
+
+**用法**
+
+```js
+const db = uniCloud.database()
+
+function onDBError({
+  code, // 错误码详见https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=returnvalue
+  message
+}) {
+  // 处理错误
+}
+// 绑定clientDB错误事件
+db.on('error', onDBError)
+// 解绑clientDB错误事件
+db.off('error', onDBError)
+```
 
 ## JQL语法@jql
 

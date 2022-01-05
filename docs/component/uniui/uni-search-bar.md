@@ -3,7 +3,7 @@
 > 
 >  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-search-bar)
 
-评分组件
+搜索栏组件
 
 ### 基本用法
 

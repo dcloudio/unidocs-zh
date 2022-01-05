@@ -947,6 +947,11 @@ db.collection('article,comment')
 
 > 新增于`HBuilderX 3.2.6`
 
+为方便文档描述定义以下两个概念：
+
+临时表：getTemp方法返回的结果，例：`const article = db.collection('article').getTemp() `，此处 article 就是一个临时表
+虚拟表：主表与副表联表产生的表，例：`db.collection(article, 'comment').get()`
+
 在此之前JQL联表查询只能直接使用虚拟表，而不能先对主表、副表过滤再生成虚拟表。由于生成虚拟表时需要整个主表和副表进行联表，在数据量大的情况下性能会很差。
 
 使用临时表进行联表查询，可以先对主表或者副表进行过滤，然后在处理后的临时表的基础上生成虚拟表。
@@ -968,7 +973,7 @@ const res = await db.collection(article, 'comment').get()
 
 直接使用虚拟表联表查询，在第一步生成虚拟表时会以主表所有数据和副表进行联表查询，如果主表数据量很大，这一步会浪费相当多的时间。先过滤主表则没有这个问题，过滤之后仅有一条数据和副表进行联表查询。
 
-**临时表（getTemp）内可以使用如下方法**
+**临时表内可以使用如下方法**
 
 > 方法调用必须严格按照顺序，比如field不能放在where之前
 
@@ -987,8 +992,10 @@ limit
 
 **组合出来的虚拟表查询时可以使用的方法**
 
+> 方法调用必须严格按照顺序，比如foreignKey不能放在where之后
+
 ```js
-foreignKey
+foreignKey // foreignKey自 HBuilderX 3.3.7版本支持
 where
 field // 关于field的使用限制见下方说明
 orderBy
@@ -1006,8 +1013,10 @@ const res = await db.collection(article, comment).orderBy('title desc').get() //
 
 **field使用限制**
 
-- field内仅可以进行字段过滤，不可对字段重命名、进行运算，`field('name as value')`、`field('add(score1, score2) as totalScore')`都是不支持的用法
+- `HBuilderX 3.3.7`之前 field 内仅可以进行字段过滤，不可对字段重命名、进行运算，`field('name as value')`、`field('add(score1, score2) as totalScore')`都是不支持的用法
+- `HBuilderX 3.3.7`及以上版本支持对字段重命名或运算
 - 进行联表查询时仅能使用临时表内已经过滤的字段间的关联关系，例如上面article、comment的查询，如果换成以下写法就无法联表查询
+- 不建议在虚拟表内再对副表字段重命名或者运算，如果有此类需求应在临时表内进行，会出现预期之外的结果，**为兼容旧版此用法仅输出警告不会抛出错误**
 
 **权限校验**
 

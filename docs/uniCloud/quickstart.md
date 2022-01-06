@@ -477,7 +477,7 @@ uniCloud支持云函数，但其实大多数场景下并不需要写云函数，
 
 根据下表，在小程序管理后台设置request合法域名、uploadFile合法域名（如没有上传文件业务，可不设置）。下表的域名均为阿里云或腾讯云自有域名，并非DCloud所属域名。
 
-|服务提供商	|request合法域名			|uploadFile合法域名					|download合法域名｜
+|服务提供商	|request合法域名			|uploadFile合法域名					|download合法域名
 |:-:		|:-:						|:-:								|:-:|
 |阿里云		|api.bspapp.com				|bsppub.oss-cn-shanghai.aliyuncs.com|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
 |腾讯云		|tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com		|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|

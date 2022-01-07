@@ -3394,6 +3394,26 @@ uni-id会自动加载custom-token.js进行处理，在所有生成token的操作
 - 使用custom-token时自行调用createToken接口会变为异步操作，需使用`await uniID.createToken(...)`
 - 不要删除原始token内的字段
 
+## 自定义国际化语言@custom-i8n
+
+> 新增于uni-id 3.3.10，此功能依赖于[uni-config-center]
+
+完整词句列表参考：[uni-id中文语言包](https://gitee.com/dcloud/uni-id/blob/master/src/lang/zh-Hans.js)
+
+**用法**
+
+在`cloudfunctions/common/uni-config-center/uni-id/lang/`目录下创建`index.js`，内容示例如下：
+
+```js
+module.exports = {
+	'zh-hant': { // 语言代码
+		'alipay': '支付寶'
+	}
+}
+```
+
+uni-id会自动进行语言匹配，无需额外配置
+
 ## 隔离不同端用户@isolate-user
 
 一个完整的项目，通常需要客户端、管理端等，但是不同端的用户在同一服务空间下使用uni-id会比较难处理。比如不同端需要不同的配置文件、登录接口需要开发者自行隔离开。自`uni-id 3.3.0`起，支持对不同端用户进行隔离，此功能在此版本是直接开启的。

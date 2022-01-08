@@ -16,7 +16,6 @@
 #### 2021-11-30
   + 新增 批量短信 发送功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/send-sms)
   + 新增 uniCloud DB Schema 支持国际化 [详情](https://uniapp.dcloud.net.cn/collocation/i18n?id=schema)
-  + 新增 腾讯云redis
 
 #### 2021-11-18
   + redis扩展能力 新增 支持腾讯云服务空间购买redis实例

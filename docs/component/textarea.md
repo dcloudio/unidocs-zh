@@ -91,6 +91,7 @@ export default {
 - 如需禁止点击其他位置收起键盘的默认行为，可以监听`touch`事件并使用`prevent`修饰符（仅支持App、H5，其他平台可以通过设置`focus`来使输入框重新获取焦点），例如在确认按钮上使用：```@touchend.prevent="onTap"```
 - js中给textarea组件赋值为字符串，在字符串中加\n可实现换行。
 - nvue 样式 `word-wrap` 在 Android 平台暂不支持
+- 旧版本chrome或同内核浏览器会将输入多个标点符号放在一行，此时可通过将textarea样式设置为`word-break: break-word;`实现自动换行。
 
 ```
 <template>

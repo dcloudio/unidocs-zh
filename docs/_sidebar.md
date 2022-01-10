@@ -36,6 +36,8 @@
   * [未同意隐私政策模式运行](app-disagreemode.md)
   * [Google Play上架](android-gp.md)
   * [App Store上架](ios-app-store.md)
+* App安全问题
+  * [Android安全漏洞问题解决方案](app-sec-android.md)
 * [uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
 * 运营服务
   * [App升级中心](uniCloud/upgrade-center.md)

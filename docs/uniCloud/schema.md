@@ -40,7 +40,9 @@
 1. 在`uniCloud`项目右键，选择`创建database目录`
 2. 在第一步创建的database目录右键选择`新建数据集合schema`
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a9ab149e-6293-49c0-af8e-2db893a956d4.jpg)
+<div align=center>
+  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a9ab149e-6293-49c0-af8e-2db893a956d4.jpg"/>
+</div>
 
 **HBuilderX内创建的schema新建和保存时不会自动上传**
 
@@ -1637,7 +1639,9 @@ const dbSearchFields = ['username', 'role_name', 'mobile', 'email'] // 模糊搜
 
 以城市选择举例。
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/e56e7cc0-50b8-11eb-97b7-0dc4655d6e68.png)
+<div align=center>
+  <img style="max-width:550px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/e56e7cc0-50b8-11eb-97b7-0dc4655d6e68.png"/>
+</div>
 
 在这个业务里涉及2个表，一个是用户的地址信息表[uni-id-address](https://gitee.com/dcloud/opendb/tree/master/collection/uni-id-address)，一个是候选的省市区数据表[opendb-city-china](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-city-china)。
 

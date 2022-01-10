@@ -10,12 +10,17 @@
 
 HBuilderX 3.0起版本，在`uniCloud/cloudfunctions`目录右键创建云函数，如下：
 
-![新建云函数1](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/a18b3bb0-53d8-11eb-8ff1-d5dcf8779628.jpg)
-
+<div align=center>
+  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/a18b3bb0-53d8-11eb-8ff1-d5dcf8779628.jpg"/>
+</div>
 
 
 HBuilderX 3.0之前版本，在项目下的`cloudfunctions`目录上右键、新建云函数，如下：
-![](https://img.cdn.aliyun.dcloud.net.cn/uni-app/uniCloud/unicloud-02.png)
+
+<div align=center>
+  <img style="max-width:750px;" src="https://img.cdn.aliyun.dcloud.net.cn/uni-app/uniCloud/unicloud-02.png"/>
+</div>
+
 
 注：从HBuilderX 3.0起，`cloudfunctions`目录位于项目下的 `uniCloud` 目录下。
 

@@ -31,12 +31,19 @@ JQL语法相关文档已移至：[JQL语法](uniCloud/jql.md)
 1. 传统开发你需要先写服务端代码（这里用php+mysql作为演示）用sql语法查询数据库中的数据并输出，然后再开放API。
 
 需写27行代码，如图：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f0798882-cbcc-4b41-affc-7bce5ebaeb0e.png)
+
+<div align=center>
+  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f0798882-cbcc-4b41-affc-7bce5ebaeb0e.png"/>
+</div>
 
 2. 前端用ajax携带必要参数请求API，然后将请求结果赋值给data中的变量。最终把变量在视图中渲染出来。
 
 需写37行代码，如图：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d2194fea-c90e-4f02-b241-d27167ccb015.png)
+
+<div align=center>
+  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d2194fea-c90e-4f02-b241-d27167ccb015.png"/>
+</div>
+
 
 > 传统云端分离的开发方式，共计：64行代码。
 
@@ -45,7 +52,10 @@ JQL语法相关文档已移至：[JQL语法](uniCloud/jql.md)
 - 云端协同的开发方式，unicloud-db组件渲染列表。
 
 仅：5行代码如图：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6d7fe2a6-1115-4535-8f3f-cdbb7c90e0ef.jpg)
+
+<div align=center>
+  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6d7fe2a6-1115-4535-8f3f-cdbb7c90e0ef.jpg"/>
+</div>
 
 
 **总结：基于uniCloud云端协同的开发方式，不需要写js代码，不需要写服务端的代码。直接在视图模板中写6行代码，即可完成传统开发方式需要64行代码才能完成的效果。且不仅仅是代码量的问题。整个开发过程的体验，提高了完全不止10倍的开发效率。**

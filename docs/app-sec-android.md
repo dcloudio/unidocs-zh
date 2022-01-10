@@ -107,7 +107,7 @@ HBuilderX3.0.0+版本新增[plus.navigator.getSignature](https://www.html5plus.o
 > 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[JS/NVUE文件原生混淆加密](https://ask.dcloud.net.cn/article/36437)，或者使用apk加固处理
 
 
-## APK可被反编译后取得源代码风险  
+#### APK可被反编译后取得源代码风险  
 **风险描述**  
 说的打包为App的原生APK可以被反编译获取Java源代码。
 
@@ -117,7 +117,7 @@ HBuilderX3.0.0+版本新增[plus.navigator.getSignature](https://www.html5plus.o
 
 <a id="webview_jsinterface"/>
 
-##  WebView远程代码执行漏洞  
+#### WebView远程代码执行漏洞  
 **风险描述**  
 用该漏洞可以根据客户端能力实现远程任意代码执行攻击。 WebView 远程代码执行漏洞触发前提条件：
 1. 使用addJavascriptInterface方法注册可供JavaScript调用的Java对象
@@ -128,7 +128,7 @@ HBuilderX3.0.0+版本新增[plus.navigator.getSignature](https://www.html5plus.o
 HBuilderX发布到App的Android平台最低支持Android4.4，即minSdkVersion大于等于19。也就是说Android4.4及以上版本并不存在此漏洞，如果你的项目配置了minSdkVersion低于19，则请参考[https://ask.dcloud.net.cn/article/193](https://ask.dcloud.net.cn/article/193)修改。
 
 
-## 密钥硬编码漏洞
+#### 密钥硬编码漏洞
 **风险描述**  
 应用程序在加解密时，使用硬编码在程序中的密钥，攻击者通过反编译拿到密钥可以轻易解密APP通信数据
 

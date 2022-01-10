@@ -34,7 +34,6 @@
   * [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)
   * [uni-admin](uniCloud/admin.md)
   * [uni-upgrade-center App升级中心](uniCloud/upgrade-center.md)
-  <!-- * [统一发布页uni-publish](uniCloud/uni-publish.md) -->
   * [uni-cloud-router](uniCloud/uni-cloud-router.md)
   * [unipay 统一支付](uniCloud/unipay.md)
   * [发送短信](uniCloud/send-sms.md)
@@ -42,6 +41,7 @@
   * [uSearch 云端一体搜索](https://ext.dcloud.net.cn/plugin?id=3851)
   * [uni-captcha 图形验证码](https://ext.dcloud.net.cn/plugin?id=4048)
   * [uni-sec-check 内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
+  * [统一发行页面](https://uniapp.dcloud.io/m3w)
 * [uniCloud响应体规范](uniCloud/unicloud-response-format.md)
 * [前端网页托管](uniCloud/hosting.md)
 * Redis扩展库

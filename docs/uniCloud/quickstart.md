@@ -237,7 +237,7 @@ exports.main = async (event, context) => {
 </div>
 
 
-切换连接云端云函数还是本地云函数之后会在项目下的`.hbuilderx`目录创建一个`launch.json`文件。关于此文件的说明请参考：【链接待补充】
+切换连接云端云函数还是本地云函数之后会在项目下的`.hbuilderx`目录创建一个`launch.json`文件。
 
 一个典型的`launch.json`是如下形式的（无需手动创建此文件）
 

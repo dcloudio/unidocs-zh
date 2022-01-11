@@ -21,6 +21,8 @@
 |paused|Boolean|当前是是否暂停或停止状态，true 表示暂停或停止，false 表示正在播放|是||
 |buffered|Number|音频缓冲的时间点，仅保证当前播放时间点到此时间点内容已缓冲。|是||
 |volume|Number|音量。范围 0~1。|否|&nbsp;|
+|sessionCategory|String|设置音频播放模式，可取值："ambient" - 不中止其他声音播放，不能后台播放，静音后无声音； "soloAmbient" - 中止其他声音播放，不能后台播放，静音后无声音； "playback" - 中止其他声音，可以后台播放，静音后有声音。 默认值为"ambient"。|否|App 3.3.7+|
+
 
 
 **innerAudioContext 对象的方法列表**

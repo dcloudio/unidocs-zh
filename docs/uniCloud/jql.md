@@ -363,6 +363,11 @@ const res = await db.collection('goods').where(`${new RegExp(searchVal, 'i')}.te
 
 ### 联表查询@lookup
 
+为方便文档描述定义以下两个概念：
+
+临时表：getTemp方法返回的结果，例：`const article = db.collection('article').getTemp() `，此处 article 就是一个临时表
+虚拟表：主表与副表联表产生的表，例：`db.collection(article, 'comment').get()`
+
 > JQL于2021年4月28日优化了联表查询策略，详情参考：[联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
 
 `JQL`提供了更简单的联表查询方案。不需要学习join、lookup等复杂方法。
@@ -372,10 +377,10 @@ const res = await db.collection('goods').where(`${new RegExp(searchVal, 'i')}.te
 JQL联表查询有以下两种写法：
 
 ```js
-// 直接关联多个表为虚拟表再进行查询
+// 直接关联多个表为虚拟表再进行查询，旧写法，目前更推荐使用getTemp进行联表查询
 const res = await db.collection('order,book').where('_id=="1"').get() // 直接关联order和book之后再过滤
 
-// 使用getTemp先过滤处理获取临时表再联表查询
+// 使用getTemp先过滤处理获取临时表再联表查询，推荐用法
 const order = db.collection('order').where('_id=="1"').getTemp() // 注意结尾的方法是getTemp，对order表过滤得到临时表
 const res = await db.collection(order, 'book').get() // 将获取的order表的临时表和book表进行联表查询
 ```
@@ -520,9 +525,10 @@ schema保存后，即使用JQL查询。查询表设为order和book这2个表名�
 ```js
 // 客户端联表查询
 const db = uniCloud.database()
-db.collection('order,book') // 注意collection方法内需要传入所有用到的表名，用逗号分隔，主表需要放在第一位
+const order = db.collection('order').field('book_id,quantity').getTemp() // 临时表field方法内需要包含关联字段，否则无法建立关联关系
+const book = db.collection('book').field('_id,title,author').getTemp() // 临时表field方法内需要包含关联字段，否则无法建立关联关系
+db.collection(order, book) // 注意collection方法内需要传入所有用到的表名，用逗号分隔，主表需要放在第一位
   .where('book_id.title == "三国演义"') // 查询order表内书名为“三国演义”的订单
-  .field('book_id{title,author},quantity') // 这里联表查询book表返回book表内的title、book表内的author、order表内的quantity
   .get()
   .then(res => {
     console.log(res);
@@ -639,318 +645,9 @@ db.collection('order,book').get()
 - 上述示例中如果order表的`book_id`字段是数组形式存放多个book_id，也跟上述写法一致，JQL会自动根据字段类型进行联表查询
 - 各个表的_id字段会默认带上，即使没有指定返回
 
-#### 设置字段别名@lookup-field-alias
-
-联表查询时也可以在field内对字段进行重命名，写法和简单查询时别名写法类似，`原字段名 as 新字段名`即可。[简单查询时的字段别名](uniCloud/jql.md?id=alias)
-
-仍以上述order、book两个表为例，以下查询将联表查询时order表的quantity字段重命名为order_quantity，将book表的title重命名为book_title、author重命名为book_author
-
-```js
-// 客户端联表查询
-const db = uniCloud.database()
-db.collection('order,book')
-  .where('book_id.title == "三国演义"')
-  .field('book_id{title as book_title,author as book_author},quantity as order_quantity')
-  .get()
-  .then(res => {
-    console.log(res);
-  }).catch(err => {
-    console.error(err)
-  })
-```
-
-查询结果如下
-
-```js
-{
-	"code": "",
-	"message": "",
-	"data": [{
-		"_id": "b8df3bd65f8f0d06018fdc250a5688bb",
-		"book_id": [{
-			"book_author": "罗贯中",
-			"book_title": "三国演义"
-		}],
-		"order_quantity": 555
-	}, {
-		"_id": "b8df3bd65f8f0d06018fdc2315af05ec",
-		"book_id": [{
-			"book_author": "罗贯中",
-			"book_title": "三国演义"
-		}],
-		"order_quantity": 333
-	}]
-}
-```
-
-#### 手动指定使用的foreignKey@lookup-foreign-key
-
-如果存在多个foreignKey且只希望部分生效，可以使用foreignKey来指定要使用的foreignKey
-
-> 2021年4月28日10点前此方法仅用于兼容JQL联表查询策略调整前后的写法，在此日期后更新的clientDB（上传schema、uni-id均会触发更新）才会有指定foreignKey的功能，关于此次调整请参考：[联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
-
-```js
-db.collection('comment,user')
-.where('comment_id=="1-1"')
-.field('content,sender,receiver.name')
-.foreignKey('comment.receiver') // 仅使用comment表内receiver字段下的foreignKey进行主表和副表之间的关联
-.get()
-```
-
-#### 副表foreignKey联查@st-foreign-key
-
-`2021年4月28日`之前的JQL只支持主表的foreignKey，把副表内容嵌入主表的foreignKey字段下面。不支持处理副本的foreignKey。
-
-`2021年4月28日`调整后，新版支持副表foreignKey联查。副表的数据以数组的方式嵌入到主表中作为一个虚拟表使用。
-
-**关联查询后的数据结构如下：**
-
-> 通过HBuilderX提供的[JQL数据库管理](uniCloud/jql-runner.md)功能方便的查看联表查询时的虚拟表结构
-
-主表某字段foreignKey指向副表时
-
-```js
-{
-  "主表字段名1": "xxx",
-  "主表字段名2": "xxx",
-  "主表内foreignKey指向副表的字段名": [{
-    "副表字段名1": "xxx",
-    "副表字段名2": "xxx",
-  }]
-}
-```
-
-副表某字段foreignKey指向主表时
-
-```js
-{
-  "主表字段名1": "xxx",
-  "主表字段名2": "xxx",
-  "副表foreignKey指向的主表字段名": { 
-    "副表1表名": [{ // 一个主表字段可能对应多个副表字段的foreignKey
-      "副表1字段名1": "xxx",
-      "副表1字段名2": "xxx",
-    }],
-    "副表2表名": [{ // 一个主表字段可能对应多个副表字段的foreignKey
-      "副表2字段名1": "xxx",
-      "副表2字段名2": "xxx",
-    }],
-    "_value": "主表字段原始值" // 使用副表foreignKey查询时会在关联的主表字段内以_value存储该字段的原始值，新增于HBuilderX 3.1.16-alpha
-  }
-}
-```
-
-例：
-
-数据库内schema及数据如下：
-
-```js
-// comment - 评论表
-
-// schema
-{
-  "bsonType": "object",
-  "required": [],
-  "permission": {
-    "read": true,
-    "create": false,
-    "update": false,
-    "delete": false
-  },
-  "properties": {
-    "comment_id": {
-      "bsonType": "string"
-    },
-    "content": {
-      "bsonType": "string"
-    },
-    "article": {
-      "bsonType": "string",
-      "foreignKey": "article.article_id"
-    },
-    "sender": {
-      "bsonType": "string",
-      "foreignKey": "user.uid"
-    },
-    "receiver": {
-      "bsonType": "string",
-      "foreignKey": "user.uid"
-    }
-  }
-}
-
-// data
-{
-  "comment_id": "1-1",
-  "content": "comment1-1",
-  "article": "1",
-  "sender": "1",
-  "receiver": "2"
-}
-{
-  "comment_id": "1-2",
-  "content": "comment1-2",
-  "article": "1",
-  "sender": "2",
-  "receiver": "1"
-}
-{
-  "comment_id": "2-1",
-  "content": "comment2-1",
-  "article": "2",
-  "sender": "1",
-  "receiver": "2"
-}
-{
-  "comment_id": "2-2",
-  "content": "comment2-2",
-  "article": "2",
-  "sender": "2",
-  "receiver": "1"
-}
-```
-
-```js
-// article - 文章表
-
-// schema
-{
-  "bsonType": "object",
-  "required": [],
-  "permission": {
-    "read": true,
-    "create": false,
-    "update": false,
-    "delete": false
-  },
-  "properties": {
-    "article_id": {
-      "bsonType": "string"
-    },
-    "title": {
-      "bsonType": "string"
-    },
-    "content": {
-      "bsonType": "string"
-    },
-    "author": {
-      "bsonType": "string",
-      "foreignKey": "user.uid"
-    }
-  }
-}
-
-// data
-{
-  "article_id": "1",
-  "title": "title1",
-  "content": "content1",
-  "author": "1"
-}
-{
-  "article_id": "2",
-  "title": "title2",
-  "content": "content2",
-  "author": "1"
-}
-{
-  "article_id": "3",
-  "title": "title3",
-  "content": "content3",
-  "author": "2"
-}
-```
-
-以下查询使用comment表的article字段对应的foreignKey进行关联查询
-
-```js
-db.collection('article,comment')
-.where('article_id._value=="1"')
-.field('content,article_id')
-.get()
-```
-
-查询结果如下：
-
-```js
-[{
-  "content": "content1",
-  "article_id": {
-    "comment": [{ // 使用副表foreignKey查询时此处会自动插入一层副表表名
-      "comment_id": "1-1",
-      "content": "comment1-1",
-      "article": "1",
-      "sender": "1",
-      "receiver": "2"
-    },
-    {
-      "comment_id": "1-2",
-      "content": "comment1-2",
-      "article": "1",
-      "sender": "2",
-      "receiver": "1"
-    }],
-    "_value": "1"
-  }
-}]
-```
-
-如需对上述查询的副表字段进行过滤，需要注意多插入的一层副表表名
-
-```js
-// 过滤副表字段
-db.collection('article,comment')
-.where('article_id._value=="1"')
-.field('content,article_id{comment{content}}')
-.get()
-
-// 查询结果如下
-[{
-  "content": "content1",
-  "article_id": {
-    "comment": [{ // 使用副表foreignKey联查时此处会自动插入一层副表表名
-      "content": "comment1-1"
-    },
-    {
-      "content": "comment1-2"
-    }],
-    "_value": "1"
-  }
-}]
-
-```
-
-副表内的字段也可以使用`as`进行重命名，例如上述查询中如果希望将副表的content重命名为value可以使用如下写法
-
-```js
-// 重命名副表字段
-db.collection('article,comment')
-.where('article_id._value=="1"')
-.field('content,article_id{comment{content as value}}')
-.get()
-
-// 查询结果如下
-[{
-  "content": "content1",
-  "article_id": {
-    "comment": [{ // 使用副本foreignKey联查时此处会自动插入一层副表表名
-      "value": "comment1-1"
-    },
-    {
-      "value": "comment1-2"
-    }]
-  }
-}]
-```
-
 #### 临时表联表查询@lookup-with-temp
 
 > 新增于`HBuilderX 3.2.6`
-
-为方便文档描述定义以下两个概念：
-
-临时表：getTemp方法返回的结果，例：`const article = db.collection('article').getTemp() `，此处 article 就是一个临时表
-虚拟表：主表与副表联表产生的表，例：`db.collection(article, 'comment').get()`
 
 在此之前JQL联表查询只能直接使用虚拟表，而不能先对主表、副表过滤再生成虚拟表。由于生成虚拟表时需要整个主表和副表进行联表，在数据量大的情况下性能会很差。
 
@@ -1085,6 +782,322 @@ const res = await db.collection(order, 'book').get() // 可以通过权限校验
 const order = db.collection('order').getTemp()
 
 const res = await db.collection(order, 'book').where('uid==$cloudEnv_uid').get() // 对虚拟表过滤，无法通过权限校验
+```
+
+#### 设置字段别名@lookup-field-alias
+
+联表查询时也可以在field内对字段进行重命名，写法和简单查询时别名写法类似，`原字段名 as 新字段名`即可。[简单查询时的字段别名](uniCloud/jql.md?id=alias)
+
+仍以上述order、book两个表为例，以下查询将联表查询时order表的quantity字段重命名为order_quantity，将book表的title重命名为book_title、author重命名为book_author
+
+```js
+// 客户端联表查询
+const db = uniCloud.database()
+
+const order = db.collection('order').field('book_id,quantity').getTemp()
+const book = db.collection('book').field('_id,title as book_title,author as book_author').getTemp()
+db.collection(order, book)
+  .where('book_id.book_title == "三国演义"') // 如果field内对副表字段title进行了重命名，where方法内则需要使用重命名之后的字段名
+  .get()
+  .then(res => {
+    console.log(res);
+  }).catch(err => {
+    console.error(err)
+  })
+```
+
+查询结果如下
+
+```js
+{
+	"code": "",
+	"message": "",
+	"data": [{
+		"_id": "b8df3bd65f8f0d06018fdc250a5688bb",
+		"book_id": [{
+			"book_author": "罗贯中",
+			"book_title": "三国演义"
+		}],
+		"order_quantity": 555
+	}, {
+		"_id": "b8df3bd65f8f0d06018fdc2315af05ec",
+		"book_id": [{
+			"book_author": "罗贯中",
+			"book_title": "三国演义"
+		}],
+		"order_quantity": 333
+	}]
+}
+```
+
+#### 手动指定使用的foreignKey@lookup-foreign-key
+
+如果存在多个foreignKey且只希望部分生效，可以使用foreignKey来指定要使用的foreignKey
+
+> 2021年4月28日10点前此方法仅用于兼容JQL联表查询策略调整前后的写法，在此日期后更新的clientDB（上传schema、uni-id均会触发更新）才会有指定foreignKey的功能，关于此次调整请参考：[联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
+
+
+例：
+
+数据库内schema及数据如下：
+
+```js
+// comment - 评论表
+
+// schema
+{
+  "bsonType": "object",
+  "required": [],
+  "permission": {
+    "read": true,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "comment_id": {
+      "bsonType": "string"
+    },
+    "content": {
+      "bsonType": "string"
+    },
+    "article": {
+      "bsonType": "string",
+      "foreignKey": "article.article_id"
+    },
+    "sender": {
+      "bsonType": "string",
+      "foreignKey": "user.uid"
+    },
+    "receiver": {
+      "bsonType": "string",
+      "foreignKey": "user.uid"
+    }
+  }
+}
+
+// data
+{
+  "comment_id": "1-1",
+  "content": "comment1-1",
+  "article": "1",
+  "sender": "1",
+  "receiver": "2"
+}
+{
+  "comment_id": "1-2",
+  "content": "comment1-2",
+  "article": "1",
+  "sender": "2",
+  "receiver": "1"
+}
+{
+  "comment_id": "2-1",
+  "content": "comment2-1",
+  "article": "2",
+  "sender": "1",
+  "receiver": "2"
+}
+{
+  "comment_id": "2-2",
+  "content": "comment2-2",
+  "article": "2",
+  "sender": "2",
+  "receiver": "1"
+}
+```
+
+```js
+// article - 文章表
+
+// schema
+{
+  "bsonType": "object",
+  "required": [],
+  "permission": {
+    "read": true,
+    "create": false,
+    "update": false,
+    "delete": false
+  },
+  "properties": {
+    "article_id": {
+      "bsonType": "string"
+    },
+    "title": {
+      "bsonType": "string"
+    },
+    "content": {
+      "bsonType": "string"
+    },
+    "author": {
+      "bsonType": "string",
+      "foreignKey": "user.uid"
+    }
+  }
+}
+
+// data
+{
+  "article_id": "1",
+  "title": "title1",
+  "content": "content1",
+  "author": "1"
+}
+{
+  "article_id": "2",
+  "title": "title2",
+  "content": "content2",
+  "author": "1"
+}
+{
+  "article_id": "3",
+  "title": "title3",
+  "content": "content3",
+  "author": "2"
+}
+```
+
+```js
+const comment = db.collection('comment').where('comment_id == "1-1"').getTemp()
+const user = db.collection('user').field('uid,name').getTemp()
+db.collection(comment, user)
+.foreignKey('comment.receiver') // 仅使用comment表内receiver字段下的foreignKey进行主表和副表之间的关联
+.get()
+```
+
+**注意**
+
+- `HBuilderX 3.3.7`及以上版本支持使用getTemp的虚拟表内使用foreignKey方法
+
+#### 副表foreignKey联查@st-foreign-key
+
+`2021年4月28日`之前的JQL只支持主表的foreignKey，把副表内容嵌入主表的foreignKey字段下面。不支持处理副本的foreignKey。
+
+`2021年4月28日`调整后，新版支持副表foreignKey联查。副表的数据以数组的方式嵌入到主表中作为一个虚拟表使用。
+
+**关联查询后的数据结构如下：**
+
+> 通过HBuilderX提供的[JQL数据库管理](uniCloud/jql-runner.md)功能方便的查看联表查询时的虚拟表结构
+
+主表某字段foreignKey指向副表时
+
+```js
+{
+  "主表字段名1": "xxx",
+  "主表字段名2": "xxx",
+  "主表内foreignKey指向副表的字段名": [{
+    "副表字段名1": "xxx",
+    "副表字段名2": "xxx",
+  }]
+}
+```
+
+副表某字段foreignKey指向主表时
+
+```js
+{
+  "主表字段名1": "xxx",
+  "主表字段名2": "xxx",
+  "副表foreignKey指向的主表字段名": { 
+    "副表1表名": [{ // 一个主表字段可能对应多个副表字段的foreignKey
+      "副表1字段名1": "xxx",
+      "副表1字段名2": "xxx",
+    }],
+    "副表2表名": [{ // 一个主表字段可能对应多个副表字段的foreignKey
+      "副表2字段名1": "xxx",
+      "副表2字段名2": "xxx",
+    }],
+    "_value": "主表字段原始值" // 使用副表foreignKey查询时会在关联的主表字段内以_value存储该字段的原始值，新增于HBuilderX 3.1.16-alpha
+  }
+}
+```
+
+以下查询使用comment表的article字段对应的foreignKey进行关联查询
+
+```js
+const article = db.collection('article').where('article_id == "1"').getTemp()
+const comment = db.collection('comment').getTemp()
+db.collection(article,comment)
+.field('content,article_id')
+.get()
+```
+
+查询结果如下：
+
+```js
+[{
+  "content": "content1",
+  "article_id": {
+    "comment": [{ // 使用副表foreignKey查询时此处会自动插入一层副表表名
+      "comment_id": "1-1",
+      "content": "comment1-1",
+      "article": "1",
+      "sender": "1",
+      "receiver": "2"
+    },
+    {
+      "comment_id": "1-2",
+      "content": "comment1-2",
+      "article": "1",
+      "sender": "2",
+      "receiver": "1"
+    }],
+    "_value": "1"
+  }
+}]
+```
+
+如需对上述查询的副表字段进行过滤，需要注意多插入的一层副表表名
+
+```js
+// 过滤副表字段
+const article = db.collection('article').where('article_id == "1"').getTemp()
+const comment = db.collection('comment').field('article,content').getTemp() // 如果有field方法，field内需包含关联字段以建立关联关系
+db.collection('article,comment').get()
+
+// 查询结果如下
+[{
+  "content": "content1",
+  "article_id": {
+    "comment": [{ // 使用副表foreignKey联查时此处会自动插入一层副表表名
+	  "article": "1",
+      "content": "comment1-1"
+    },
+    {
+	  "article": "1",
+      "content": "comment1-2"
+    }],
+    "_value": "1"
+  }
+}]
+
+```
+
+副表内的字段也可以使用`as`进行重命名，例如上述查询中如果希望将副表的content重命名为value可以使用如下写法
+
+> HBuilderX 3.3.7及以上版本支持getTemp内使用as
+
+```js
+// 重命名副表字段
+const article = db.collection('article').where('article_id == "1"').getTemp()
+const comment = db.collection('comment').field('article,content as value').getTemp() // 如果有field方法，field内需包含关联字段以建立关联关系
+db.collection(article,comment).get()
+
+// 查询结果如下
+[{
+  "content": "content1",
+  "article_id": {
+    "comment": [{ // 使用副本foreignKey联查时此处会自动插入一层副表表名
+	  "article": "1",
+      "value": "comment1-1"
+    },
+    {
+	  "article": "1",
+      "value": "comment1-2"
+    }]
+  }
+}]
 ```
 
 ### 查询记录过滤where条件@where

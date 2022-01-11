@@ -132,10 +132,10 @@
   + Android平台 修复 在部分红米设备可能无法触发关闭小程序回调的Bug
 
 #### 3.2.15.20211120-alpha
-* 调整 uniCloud admin 改名为 uni-admin [详情](https://uniapp.dcloud.net.cn/uniCloud/admin)
 * 【uni-app】
   + App-Android平台 修复 showTabBarRedDot 设置红点可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/134420)
   + App-Android平台 修复 nvue waterfall 中 cell 组件横竖屏切换后可能出现排版不正常的Bug [详情](https://ask.dcloud.net.cn/question/133738)
+  + 调整 uniCloud admin 改名为 uni-admin [详情](https://uniapp.dcloud.net.cn/uniCloud/admin)
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 修复 上架某些应用市场审核检测可能检测到收集已安装应用列表行为的Bug
   + Android平台 修复 3.2.13 版本引出的 webview页面作为子窗口时 WebviewStyles 的 top 属性不生效的Bug
@@ -302,9 +302,9 @@
   + 【重要】clientDB 新增 支持使用 getTemp 对主表、副表过滤后再联表查询，大幅提升联表查询性能 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup-with-temp)
 
 #### 3.2.5.20210827-alpha
-* 【重要】新增 uni-app Vue3 版本 支持运行和发行到 App
-* 新增 uni-app Vue3 版本 发行到H5 支持以SSR方式发行
 * 【uni-app】
+  + 【重要】新增 uni-app Vue3 版本 支持运行和发行到 App
+  + 新增 uni-app Vue3 版本 发行到H5 支持以SSR方式发行 [详情](https://uniapp.dcloud.io/collocation/ssr)
   + App平台、H5平台 新增 uni.getLocale、uni.setLocale 接口，用于获取和设置应用语言 [详情](https://uniapp.dcloud.io/api/ui/locale)
   + App平台、H5平台 修复 scroll-view 组件滚动过快时 scroll 事件回调返回信息不正确的Bug [详情](https://ask.dcloud.net.cn/question/128573)
   + App平台、H5平台 修复 canvas 组件 createPattern 方法无效的Bug [详情](https://ask.dcloud.net.cn/question/128793)

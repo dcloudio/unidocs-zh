@@ -1,15 +1,23 @@
-1. 登录支付宝开发者中心，创建应用，开通App支付功能，配置密钥
-   详见[支付宝官方文档](https://opendocs.alipay.com/open/204/105297/)
-
-2. 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“支付宝支付”项
+#### 申请开通支付宝支付
+1. 登录[支付宝开放平台](https://open.alipay.com/)
+2. [创建应用](https://opendocs.alipay.com/open/200/105310)
+![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/alipay_create_app.png)
+  
+3. [添加功能](https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD)
+![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/alipay_add_pay.png)
+1. [开发设置](https://opendocs.alipay.com/open/200/105310#%E9%85%8D%E7%BD%AE%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83)
+![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/alipay_develop_config.png)
+更多信息详见[支付宝官方文档](https://opendocs.alipay.com/open/204/105297/)
+#### 使用支付宝支付
+1. 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“支付宝支付”项
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/alipay_setup_manifest_info.png)
 
-3. 通过服务器生成支付订单,参考:
+2. 通过服务器生成支付订单,参考:
    [生成支付订单示例(PHP)](https://github.com/dcloudio/H5P.Server/tree/master/payment/alipayrsa2)
    [老版本"移动快捷支付"示例代码(PHP)](https://github.com/dcloudio/H5P.Server/tree/master/payment/alipay)
    [生成支付订单示例(C#)](http://ask.dcloud.net.cn/article/197)
 
-4. 应用中调用支付功能(支付参数如下)
+3. 应用中调用支付功能(支付参数如下)
 
 | 参数名称    | 参数说明 | 必须 | 
 |-------------|-------|-----|

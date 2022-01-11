@@ -1,4 +1,3 @@
-
 App端支付模块封装了市场上主流的三方支付平台SDK，提供JS API统一调用移动支付功能。
 
 |项目类型|API|
@@ -17,4 +16,16 @@ App端支付模块封装了市场上主流的三方支付平台SDK，提供JS AP
 - 向三方支付平台申请开通，有些平台（如微信支付）申请成功后会获取appid
 - 在服务端生成支付订单，获取支付订单数据
 - 在客户端调用API进行支付
+
+支持的三方支付平台：
+- [Apple应用内支付](https://uniapp.dcloud.io/app-payment-aip)  
+HBuilderX1.0.0+版本支持
+- [支付宝支付](https://uniapp.dcloud.io/app-payment-alipay)  
+- [微信支付](https://uniapp.dcloud.io/app-payment-weixin)  
+- [Paypal支付](https://uniapp.dcloud.io/app-payment-paypal)  
+HBuilderX3.3.7+版本支持
+- [Stripe支付](https://uniapp.dcloud.io/app-payment-stripe)  
+HBuilderX3.3.7+版本支持
+- [Google支付](https://uniapp.dcloud.io/app-payment-google)  
+HBuilderX3.3.7+版本支持
 

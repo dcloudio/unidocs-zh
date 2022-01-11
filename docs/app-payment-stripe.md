@@ -14,7 +14,7 @@
 
 #### 使用Stripe支付
 1. 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“stripe支付”项并配置returnURL(只需配置iOS),格式为'your-app://stripe'(示例 hbuilder://stripe)
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/stripe_setup_manifest_info.jpg)
+![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/stripe_setup_manifest_info.png)
 
    相关参考:[配置一个自定义页面内跳转协议 (URL Scheme)](https://ask.dcloud.net.cn/article/64)
 2. 服务器生成支付订单[参考stripeAPI](https://stripe.com/docs/payments/accept-a-payment)
@@ -31,7 +31,7 @@
       }
 	 })
     ```
-3. 应用中调用支付功能
+3. 应用中调用支付功能(支付参数如下)
     
 | 参数名称    | 参数说明 | 必须 | 
 |-------------|-------|-----|

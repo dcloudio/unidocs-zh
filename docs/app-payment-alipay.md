@@ -1,21 +1,11 @@
-#### 申请开通支付宝支付
+## 申请开通支付宝支付
 登录[支付宝开放平台](https://open.alipay.com/)
-
 [创建应用](https://opendocs.alipay.com/open/200/105310)
-
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/alipay_create_app.png)
-  
-
 [添加功能](https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD)
-
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/alipay_add_pay.png)
-
 [开发设置](https://opendocs.alipay.com/open/200/105310#%E9%85%8D%E7%BD%AE%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83)
 
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/alipay_develop_config.png)
-
 更多信息详见[支付宝官方文档](https://opendocs.alipay.com/open/204/105297/)
-#### 使用支付宝支付
+## 使用支付宝支付
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“支付宝支付”项
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/alipay_setup_manifest_info.png)
 

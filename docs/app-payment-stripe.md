@@ -1,22 +1,22 @@
-#### 申请开通Stripe
-1. [登录/注册](https://dashboard.stripe.com/login)
+## 申请开通Stripe
+[登录/注册](https://dashboard.stripe.com/login)
 
-2. 进入主页后，点击顶部继续按钮，完善公司信息
+进入主页后，点击顶部继续按钮
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/stripe_home_page.png)
 
-3. 完善信息
+完善公司信息
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/stripe_company_info.png)
 
-4. 完善公司信息后，回到首页即可在右侧查看密钥
+完善信息后，回到首页即可在右侧查看密钥
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/stripe_get_publishkey.png)
 
 ------
 
-#### 使用Stripe支付
-1. 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“stripe支付”项并添加配置
+## 使用Stripe支付
+在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“stripe支付”项并添加配置
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/stripe_setup_manifest_info.png)
 配置说明:returnURL(只需配置iOS),格式为'your-app://stripe'(示例 hbuilder://stripe),'your-app'为应用的自定义scheme,参考:[配置一个自定义页面内跳转协议 (URL Scheme)](https://ask.dcloud.net.cn/article/64)
-2. 服务器生成支付订单[参考stripeAPI](https://stripe.com/docs/payments/accept-a-payment)
+服务器生成支付订单[参考stripeAPI](https://stripe.com/docs/payments/accept-a-payment)
     ``` js
     uni.request({
       url: 'https://stripe-mobile-payment-sheet.glitch.me/checkout',//仅为示例
@@ -30,7 +30,7 @@
       }
 	 })
     ```
-3. 应用中调用支付功能(支付参数如下)
+应用中调用支付功能(支付参数如下)
     
 | 参数名称    | 参数说明 | 必须 | 
 |-------------|-------|-----|

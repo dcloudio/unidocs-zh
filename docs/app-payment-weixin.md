@@ -1,16 +1,16 @@
-#### 申请开通微信支付
-1. 登录[微信开放平台](https://open.weixin.qq.com/)，申请移动应用并开通支付功能，申请应用后可以获取 AppID 和 AppSecret 值
-2. 应用接入[微信商户平台](https://pay.weixin.qq.com/index.php/core/home/login?return_url=%2F)，选择 App 支付
-3. 开通支付功能后可获取支付业务服务器配置数据：PARTNER（财付通商户号）、PARTNER_KEY（财付通密钥）、PAYSIGNKEY（支付签名密钥）
+## 申请开通微信支付
+登录[微信开放平台](https://open.weixin.qq.com/)，申请移动应用并开通支付功能，申请应用后可以获取 AppID
+应用接入[微信商户平台](https://pay.weixin.qq.com/index.php/core/home/login?return_url=%2F)，选择 App 支付
+开通支付功能后可获取支付业务服务器配置数据：PARTNER（财付通商户号）、PARTNER_KEY（财付通密钥）、PAYSIGNKEY（支付签名密钥）
 更多信息详见[移动应用开发](https://open.weixin.qq.com/cgi-bin/frame?t=home/app_tmpl&lang=zh_CN)
 
-#### 使用微信支付
-1. 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“微信支付”项
+## 使用微信支付
+在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“微信支付”项
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/wxpay_setup_manifest_info.png)
 
-2. 通过服务器生成支付订单,参考:[微信支付示例(PHP)](https://github.com/dcloudio/H5P.Server/tree/master/payment/wxpayv3)
+通过服务器生成支付订单,参考:[微信支付示例(PHP)](https://github.com/dcloudio/H5P.Server/tree/master/payment/wxpayv3)
 
-3. 应用中调用支付功能(支付参数如下)
+应用中调用支付功能(支付参数如下)
 
 | 参数名称    | 参数说明 | 必须 | 
 |-------------|-------|-----|

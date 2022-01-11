@@ -16,10 +16,10 @@
 通过和用户联调我们发现在调用支付接口后，如果用户未绑定支付方式此时会触发支付失败回调方法，实际上用户可以跳转 AppStrore 绑卡然后继续支付，之前的逻辑在回调失败方法中框架会关闭订单，用户付完钱在回到App中也不会触发成功回调，这样就造成了丢单，解决方法就是在调用支付接口时添加optimize: true参数，并标记 restoreFlag = true;，支付成功回调中清除标记 restoreFlag = false; 然后在支付失败回调中框架就不会关闭订单了，并在页面显示的时候通过标记判断是否需要调用 restoreComplateRequest 方法，如果用户跳转App Store绑定支付方式付款成功后回到 App 就可以通过 restoreComplateRequest 方法恢复之前支付的订单信息，解决丢单的问题；
 
 #### 开发流程  
-1. 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“Apple应用内支付”项
+在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“Apple应用内支付”项
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/iap_setup_manifest_info.png)
 
-2. 获取支付渠道
+###### 获取支付渠道
 ```  js
 var iap = null;  
 plus.payment.getChannels(function(channels) {  
@@ -35,7 +35,7 @@ plus.payment.getChannels(function(channels) {
 });
 ```
 
-3. 获取订单信息
+###### 获取订单信息
 ```  js
 // ids 为在苹果开发者后台配置的应用内购项目的标识集合  
 var ids = ['商品1', '商品2'];   
@@ -49,7 +49,7 @@ iap.requestOrder(ids, function(e) {
 });
 ```
 
-4. 发起支付
+###### 发起支付
   * uni-app项目示例
 ```  js
 var restoreFlag = true;
@@ -91,7 +91,7 @@ plus.payment.request(iap, {
 });
 ```
 
-5. 恢复购买
+###### 恢复购买
 ```  js
 function restoreComplateRequest() {  
     iap.restoreComplateRequest({}, function(results) {  
@@ -104,7 +104,7 @@ function restoreComplateRequest() {
   * 丢单的商品（所有类型）
 注意事项：**丢单的消耗类型商品**在支付完成后，**首次**调用该接口可返回支付凭证
 
-6. 丢单检测
+###### 丢单检测
   * uni-app 在页面 onShow 方法中调用 restoreComplateRequest  
 ```  js
 onShow() {  

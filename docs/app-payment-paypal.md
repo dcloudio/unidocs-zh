@@ -1,39 +1,41 @@
-#### 申请开通Paypal
-1. [登录/注册](https://www.paypal.com/c2/signin)
+## 申请开通Paypal
+[登录/注册](https://www.paypal.com/c2/signin)
 
-2. 打开[paypal开发者中心](https://developer.paypal.com/developer/applications)
+打开[paypal开发者中心](https://developer.paypal.com/developer/applications)
 
-3. 如图，依次选择My Apps & Credentials -> Live(如果创建沙箱环境点击Sandbox) -> Create App
+如图，依次选择My Apps & Credentials -> Live(如果创建沙箱环境点击Sandbox) -> Create App
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/paypal_develop_center.png)
 
-4. 输入App Name,点击Create App
+输入App Name,点击Create App
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/paypal_create_app.png)
 
-5. 创建完成后，点击AppName
+创建完成后，点击AppName
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/paypal_setup_app_info.png)
 
-6. 查看Client ID 以及 Secret
+查看Client ID 以及 Secret
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/paypal_get_clientid.png)
 
-7. 添加return URL并保存(必须使用小写字母)
+添加return URL并保存(必须使用小写字母)
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/paypal_add_returnurl.png)
 
-8. 勾选Accept payments 并点击Advanced options选择详情配置(点击保存后生效)
+勾选Accept payments 并点击Advanced options选择详情配置(点击保存后生效)
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/paypal_accept_payments.png)
 
-9. 勾选Log in with PayPal 并点击Advanced options选择详情配置(点击保存后生效)
+勾选Log in with PayPal 并点击Advanced options选择详情配置(点击保存后生效)
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/paypal_log_in.png)
 
 ------
 
-#### 使用Paypal支付
+## 使用Paypal支付
 
-1. 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数
+在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/paypal_setup_manifest_info.png)
 配置说明:returnURL必须为paypal开发者中心配置的returnURL，否则无法调起支付
-2. 通过服务器生成支付订单并获取orderId(服务器获取订单信息详见[paypal API](https://developer.paypal.com/docs/api/orders/v2/)) 
 
-3. 应用中调用支付功能(支付参数如下)
+
+通过服务器生成支付订单并获取orderId(服务器获取订单信息详见[paypal API](https://developer.paypal.com/docs/api/orders/v2/)) 
+
+应用中调用支付功能(支付参数如下)
     
 | 参数名称    | 参数说明 | 必须 | 
 |-------------|-------|-----|
@@ -101,5 +103,5 @@ plus.payment.request(this.paypalSev, statement, function(result) {
 });
 ```
 
-4. 应用发起支付完成后，返回订单id，服务器捕获或授权订单[详见paypal API](https://developer.paypal.com/docs/api/orders/v2/)
+应用发起支付完成后，返回订单id，服务器捕获或授权订单[详见paypal API](https://developer.paypal.com/docs/api/orders/v2/)
 

@@ -36,3 +36,9 @@
 
 将 `google-services.json` 下载到本地，HBuilderX中云端打包需要配置使用此文件
 
+
+#### 使用Google统计
+
+在项目manifest.json文件的“App模块配置”页面，在“Statistic(统计)”下勾选“Google统计”项，并添加从Google统计平台申请的配置文件：
+![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/statistic/google.png)
+

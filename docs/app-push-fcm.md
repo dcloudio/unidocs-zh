@@ -35,23 +35,23 @@
 将 `google-services.json` 下载到本地，HBuilderX中云端打包需要使用此文件  
 
 
+####  Android平台FCM后台推送消息  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_1.jpg)  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_2.jpg)  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_3.jpg)  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_4.jpg)  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_5.jpg)  
+
+
 #### iOS平台FCM后台推送消息  
 
 1. 上传APNS证书  
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_ios_upload_profile.jpg)
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_ios_upload_profile.jpg)  
 
 2. 网页端实现推送客户端功能  
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_1.jpg)
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_2.jpg)
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_3.jpg)
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_4.jpg)
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_5.jpg)
-
-
-####  Android平台FCM后台推送消息  
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_1.jpg)
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_2.jpg)
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_3.jpg)
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_4.jpg)
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_5.jpg)
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_1.jpg)  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_2.jpg)  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_3.jpg)  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_4.jpg)  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_5.jpg)  
 

@@ -71,7 +71,7 @@
 |-------------|-------|-----|
 |merchant|PayPal的商户id|是|
 
-### 示例
+#### 示例
 
 ```js
 plus.payment.getChannels((providers) => {

@@ -366,18 +366,18 @@ const res = await db.collection('goods').where(`${new RegExp(searchVal, 'i')}.te
 为方便文档描述定义以下两个概念：
 
 - 临时表：getTemp方法返回的结果，例：`const article = db.collection('article').getTemp() `，此处 article 就是一个临时表
-- 虚拟表：主表与副表联表产生的表，例：`db.collection(article, 'comment').get()`
+- 虚拟联表：主表与副表联表产生的表，例：`db.collection(article, 'comment').get()`
 
 > JQL于2021年4月28日优化了联表查询策略，详情参考：[联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
 
 `JQL`提供了更简单的联表查询方案。不需要学习join、lookup等复杂方法。
 
-只需在db schema中，将两个表的关联字段建立映射关系，就可以把2个表当做一个虚拟表来直接查询。
+只需在db schema中，将两个表的关联字段建立映射关系，就可以把2个表当做一个虚拟联表来直接查询。
 
 JQL联表查询有以下两种写法：
 
 ```js
-// 直接关联多个表为虚拟表再进行查询，旧写法，目前更推荐使用getTemp进行联表查询
+// 直接关联多个表为虚拟联表再进行查询，旧写法，目前更推荐使用getTemp进行联表查询
 const res = await db.collection('order,book').where('_id=="1"').get() // 直接关联order和book之后再过滤
 
 // 使用getTemp先过滤处理获取临时表再联表查询，推荐用法
@@ -387,9 +387,9 @@ const res = await db.collection(order, 'book').get() // 将获取的order表的�
 
 上面两种写法最终结果一致，但是第二种写法性能更好。第一种写法会先将所有数据进行关联，如果数据量很大这一步会消耗很多时间。详细示例见下方说明
 
-**关联查询后的虚拟表数据结构如下：**
+**关联查询后的虚拟联表数据结构如下：**
 
-> 通过HBuilderX提供的[JQL数据库管理](uniCloud/jql-runner.md)功能方便的查看联表查询时的虚拟表结构
+> 通过HBuilderX提供的[JQL数据库管理](uniCloud/jql-runner.md)功能方便的查看联表查询时的虚拟联表结构
 
 主表某字段foreignKey指向副表时
 
@@ -520,7 +520,7 @@ book表的DB Schema也要保持正确
 }
 ```
 
-schema保存后，即使用JQL查询。查询表设为order和book这2个表名后，即可自动按照一个合并虚拟表来查询，field、where等设置均按合并虚拟表来设置。
+schema保存后，即使用JQL查询。查询表设为order和book这2个表名后，即可自动按照一个合并虚拟联表来查询，field、where等设置均按合并虚拟联表来设置。
 
 ```js
 // 客户端联表查询
@@ -631,9 +631,9 @@ db.collection('order')
 
 不止js，`<unicloud-db>`组件也支持所有`jql`功能，包括联表查询。
 
-在前端页面调试JQL联表查询且不过滤字段时会受权限影响，导致调试比较困难。可以通过HBuilderX提供的[JQL数据库管理](uniCloud/jql-runner.md)功能方便的查看联表查询时的虚拟表结构。
+在前端页面调试JQL联表查询且不过滤字段时会受权限影响，导致调试比较困难。可以通过HBuilderX提供的[JQL数据库管理](uniCloud/jql-runner.md)功能方便的查看联表查询时的虚拟联表结构。
 
-如上述查询可以直接在`JQL文件`中执行以下代码查看完整的虚拟表字段
+如上述查询可以直接在`JQL文件`中执行以下代码查看完整的虚拟联表字段
 
 ```js
 db.collection('order,book').get()
@@ -641,7 +641,7 @@ db.collection('order,book').get()
 
 **注意**
 
-- 生成联表查询虚拟表后关联字段会被替换成被关联表的内容，因此不可在生成虚拟表后的where内使用关联字段作为条件。举个例子，在上面的示例中，`where({book_id:"1"})`是无法筛选出正确结果的，但是可以使用`where({'book_id._id':"1"})`
+- 生成联表查询虚拟联表后关联字段会被替换成被关联表的内容，因此不可在生成虚拟联表后的where内使用关联字段作为条件。举个例子，在上面的示例中，`where({book_id:"1"})`是无法筛选出正确结果的，但是可以使用`where({'book_id._id':"1"})`
 - 上述示例中如果order表的`book_id`字段是数组形式存放多个book_id，也跟上述写法一致，JQL会自动根据字段类型进行联表查询
 - 各个表的_id字段会默认带上，即使没有指定返回
 
@@ -649,26 +649,26 @@ db.collection('order,book').get()
 
 > 新增于`HBuilderX 3.2.6`
 
-在此之前JQL联表查询只能直接使用虚拟表，而不能先对主表、副表过滤再生成虚拟表。由于生成虚拟表时需要整个主表和副表进行联表，在数据量大的情况下性能会很差。
+在此之前JQL联表查询只能直接使用虚拟联表，而不能先对主表、副表过滤再生成虚拟联表。由于生成虚拟联表时需要整个主表和副表进行联表，在数据量大的情况下性能会很差。
 
-使用临时表进行联表查询，可以先对主表或者副表进行过滤，然后在处理后的临时表的基础上生成虚拟表。
+使用临时表进行联表查询，可以先对主表或者副表进行过滤，然后在处理后的临时表的基础上生成虚拟联表。
 
 仍以上面article、comment两个表为例
 
 获取article_id为'1'的文章及其评论的数据库操作，在直接联表查询和使用临时表联表查询时写法分别如下
 
 ```js
-// 直接使用虚拟表查询
+// 直接使用虚拟联表查询
 const res = await db.collection('article,comment')
 .where('article_id._value=="1"')
 .get()
 
-// 先过滤article表，再获取虚拟表联表获取评论
+// 先过滤article表，再获取虚拟联表联表获取评论
 const article = db.collection('article').where('article_id=="1"').getTemp() // 注意是getTemp不是get
 const res = await db.collection(article, 'comment').get()
 ```
 
-直接使用虚拟表联表查询，在第一步生成虚拟表时会以主表所有数据和副表进行联表查询，如果主表数据量很大，这一步会浪费相当多的时间。先过滤主表则没有这个问题，过滤之后仅有一条数据和副表进行联表查询。
+直接使用虚拟联表联表查询，在第一步生成虚拟联表时会以主表所有数据和副表进行联表查询，如果主表数据量很大，这一步会浪费相当多的时间。先过滤主表则没有这个问题，过滤之后仅有一条数据和副表进行联表查询。
 
 **临时表内可以使用如下方法**
 
@@ -687,7 +687,7 @@ limit
   const res = await db.collection(article, 'comment').get()
   ```
 
-**组合出来的虚拟表查询时可以使用的方法**
+**组合出来的虚拟联表查询时可以使用的方法**
 
 > 方法调用必须严格按照顺序，比如foreignKey不能放在where之后
 
@@ -700,7 +700,7 @@ skip
 limit
 ```
 
-一般情况下不需要再对虚拟表额外处理，因为数据在临时表内已经进行了过滤排序等操作。以下代码仅供演示，并无实际意义
+一般情况下不需要再对虚拟联表额外处理，因为数据在临时表内已经进行了过滤排序等操作。以下代码仅供演示，并无实际意义
 
 ```js
 const article = db.collection('article').getTemp()
@@ -713,11 +713,11 @@ const res = await db.collection(article, comment).orderBy('title desc').get() //
 - `HBuilderX 3.3.7`之前 field 内仅可以进行字段过滤，不可对字段重命名、进行运算，`field('name as value')`、`field('add(score1, score2) as totalScore')`都是不支持的用法
 - `HBuilderX 3.3.7`及以上版本支持对字段重命名或运算
 - 进行联表查询时仅能使用临时表内已经过滤的字段间的关联关系，例如上面article、comment的查询，如果换成以下写法就无法联表查询
-- 不建议在虚拟表内再对副表字段重命名或者运算，如果有此类需求应在临时表内进行，会出现预期之外的结果，**为兼容旧版此用法仅输出警告不会抛出错误**
+- 不建议在虚拟联表内再对副表字段重命名或者运算，如果有此类需求应在临时表内进行，会出现预期之外的结果，**为兼容旧版此用法仅输出警告不会抛出错误**
 
 **权限校验**
 
-要求组成虚拟表的各个临时表都要满足权限限制，即权限校验不会计算组合成虚拟表之后使用的where、field
+要求组成虚拟联表的各个临时表都要满足权限限制，即权限校验不会计算组合成虚拟联表之后使用的where、field
 
 以下为一个订单表（order）和书籍表（book）的schema示例
 
@@ -776,12 +776,12 @@ const order = db.collection('order')
 const res = await db.collection(order, 'book').get() // 可以通过权限校验
 ```
 
-如果不对主表过滤，而是对虚拟表（联表结果）进行过滤，则无法满足权限限制（`order表的"doc.uid==auth.uid"`）
+如果不对主表过滤，而是对虚拟联表（联表结果）进行过滤，则无法满足权限限制（`order表的"doc.uid==auth.uid"`）
 
 ```js
 const order = db.collection('order').getTemp()
 
-const res = await db.collection(order, 'book').where('uid==$cloudEnv_uid').get() // 对虚拟表过滤，无法通过权限校验
+const res = await db.collection(order, 'book').where('uid==$cloudEnv_uid').get() // 对虚拟联表过滤，无法通过权限校验
 ```
 
 #### 设置字段别名@lookup-field-alias
@@ -968,17 +968,17 @@ db.collection(comment, user)
 
 **注意**
 
-- `HBuilderX 3.3.7`及以上版本支持使用getTemp的虚拟表内使用foreignKey方法
+- `HBuilderX 3.3.7`及以上版本支持使用getTemp的虚拟联表内使用foreignKey方法
 
 #### 副表foreignKey联查@st-foreign-key
 
 `2021年4月28日`之前的JQL只支持主表的foreignKey，把副表内容嵌入主表的foreignKey字段下面。不支持处理副本的foreignKey。
 
-`2021年4月28日`调整后，新版支持副表foreignKey联查。副表的数据以数组的方式嵌入到主表中作为一个虚拟表使用。
+`2021年4月28日`调整后，新版支持副表foreignKey联查。副表的数据以数组的方式嵌入到主表中作为一个虚拟联表使用。
 
 **关联查询后的数据结构如下：**
 
-> 通过HBuilderX提供的[JQL数据库管理](uniCloud/jql-runner.md)功能方便的查看联表查询时的虚拟表结构
+> 通过HBuilderX提供的[JQL数据库管理](uniCloud/jql-runner.md)功能方便的查看联表查询时的虚拟联表结构
 
 主表某字段foreignKey指向副表时
 
@@ -2951,7 +2951,7 @@ const res = await db.collection('test').aggregate()
 - 设定数据操作权限(permission)。什么样的角色可以读/写哪些数据，都在这里配置。
 - 设定字段值域能接受的格式(validator)，比如不能为空、需符合指定的正则格式。
 - 设置数据的默认值(defaultValue/forceDefaultValue)，比如服务器当前时间、当前用户id等。
-- 设定多个表的字段间映射关系(foreignKey)，将多个表按一个虚拟表直接查询，大幅简化联表查询。
+- 设定多个表的字段间映射关系(foreignKey)，将多个表按一个虚拟联表直接查询，大幅简化联表查询。
 - 根据schema自动生成表单维护界面，比如新建页面和编辑页面，自动处理校验规则。
 
 这些工具大幅减少了开发者的开发工作量和重复劳动。

@@ -4,7 +4,7 @@
   - 在右侧选择服务供应商
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/d24d7f30-4b16-11eb-bdc1-8bd33eb6adaa.jpg"/>
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9623d950-5652-493e-9e0f-7c9aa846f6f3.jpg"/>
 </div>
 
 

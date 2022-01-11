@@ -365,8 +365,8 @@ const res = await db.collection('goods').where(`${new RegExp(searchVal, 'i')}.te
 
 为方便文档描述定义以下两个概念：
 
-临时表：getTemp方法返回的结果，例：`const article = db.collection('article').getTemp() `，此处 article 就是一个临时表
-虚拟表：主表与副表联表产生的表，例：`db.collection(article, 'comment').get()`
+- 临时表：getTemp方法返回的结果，例：`const article = db.collection('article').getTemp() `，此处 article 就是一个临时表
+- 虚拟表：主表与副表联表产生的表，例：`db.collection(article, 'comment').get()`
 
 > JQL于2021年4月28日优化了联表查询策略，详情参考：[联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
 

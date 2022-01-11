@@ -26,11 +26,11 @@
 
 ------
 
-### 使用Paypal支付
+#### 使用Paypal支付
 
-1. 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数(returnURL必须为"开通paypal"中配置的returnURL)
+1. 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/paypal_setup_manifest_info.png)
-
+配置说明:returnURL必须为paypal开发者中心配置的returnURL，否则无法调起支付
 2. 通过服务器生成支付订单并获取orderId(服务器获取订单信息详见[paypal API](https://developer.paypal.com/docs/api/orders/v2/)) 
 
 3. 应用中调用支付功能(支付参数如下)

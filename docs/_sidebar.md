@@ -43,6 +43,9 @@
       * [Paypal支付](app-payment-paypal.md)
       * [Stripe支付](app-payment-stripe.md)
       * [Google支付](app-payment-google.md)
+    * [Statistic(统计)](app-statistic.md)
+      * [友盟统计](app-statistic-umeng.md)
+      * [Google统计](app-statistic-google.md)
 * App上架指南
   * [国内应用市场上架](android-store.md)
   * [未同意隐私政策模式运行](app-disagreemode.md)

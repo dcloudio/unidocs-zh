@@ -31,6 +31,12 @@
 * [uni_modules插件规范](uni_modules.md)
 * [从其他项目转uni-app](translate.md)
 * [混合开发](hybrid.md)
+* App打包配置
+  * [图标](app-icons.md)
+  * [启动界面](app-splashscreen.md)
+  * 功能模块
+    * [Geolocation(定位)](app-geolocation.md)
+    * [Payment(支付)](app-payment.md)
 * App上架指南
   * [国内应用市场上架](android-store.md)
   * [未同意隐私政策模式运行](app-disagreemode.md)

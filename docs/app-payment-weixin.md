@@ -7,6 +7,8 @@
 #### 配置
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“微信支付”项
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/wxpay_setup_manifest_info.png)
+* appid填写'开通'中的应用AppID 
+* 通用链接参考[生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links)
 
 #### 服务器生成订单
 通过服务器生成支付订单,参考:[微信支付示例(PHP)](https://github.com/dcloudio/H5P.Server/tree/master/payment/wxpayv3)

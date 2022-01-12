@@ -48,43 +48,43 @@ iap.requestOrder(ids, function(e) {
 #### 应用内发起支付
   * uni-app项目示例
 ```  js
-var restoreFlag = true;
-uni.requestPayment({
-   provider: 'appleiap',
-   orderInfo: {
-     productid: productId,
-     username: "appusername", // 用户标识
-     optimize: true  // 设置 optimize: true 解决丢单问题  
-   },
-   success: (e) => {
-   // 支付成功清除标记 restoreFlag = false  
-   // 支付成功，result 为 IAP商品交易信息对象 IAPTransaction 需将返回的支付凭证传给后端进行二次认证 
-      restoreFlag = false;
-   },
-   fail: (e) => {
-     // 支付失败的时候需要调用一下 restoreComplateRequest 方法  
-      restoreComplateRequest()
-   },
-   complete: () => {
-     console.log("payment结束")
-   }
-})
+    var restoreFlag = true;
+    uni.requestPayment({
+       provider: 'appleiap',
+       orderInfo: {
+         productid: productId,
+         username: "appusername", // 用户标识
+         optimize: true  // 设置 optimize: true 解决丢单问题  
+       },
+       success: (e) => {
+       // 支付成功清除标记 restoreFlag = false  
+       // 支付成功，result 为 IAP商品交易信息对象 IAPTransaction 需将返回的支付凭证传给后端进行二次认证 
+          restoreFlag = false;
+       },
+       fail: (e) => {
+         // 支付失败的时候需要调用一下 restoreComplateRequest 方法  
+          restoreComplateRequest()
+       },
+       complete: () => {
+         console.log("payment结束")
+       }
+    })
 ```
   *  5+App项目示例
 ```  js
-// restoreFlag 标记，用于判断在页面显示的时候是否需要调用 restoreComplateRequest 方法  
-var restoreFlag = true; // 调用支付接口时标记 restoreFlag = true , 实际应用请将标记存储在 storage 中  
-plus.payment.request(iap, {  
-    productid: "商品id",  
-    username: "appusername", // 用户标识  
-    optimize: true  // 设置 optimize: true 解决丢单问题  
-}, function(result) {  
-    restoreFlag = false; // 支付成功清除标记 restoreFlag = false  
-    // 支付成功，result 为 IAP商品交易信息对象 IAPTransaction 需将返回的支付凭证传给后端进行二次认证  
-}, function(e) {  
-    // 支付失败的时候需要调用一下 restoreComplateRequest 方法  
-    restoreComplateRequest()  
-});
+    // restoreFlag 标记，用于判断在页面显示的时候是否需要调用 restoreComplateRequest 方法  
+    var restoreFlag = true; // 调用支付接口时标记 restoreFlag = true , 实际应用请将标记存储在 storage 中  
+    plus.payment.request(iap, {  
+        productid: "商品id",  
+        username: "appusername", // 用户标识  
+        optimize: true  // 设置 optimize: true 解决丢单问题  
+    }, function(result) {  
+        restoreFlag = false; // 支付成功清除标记 restoreFlag = false  
+        // 支付成功，result 为 IAP商品交易信息对象 IAPTransaction 需将返回的支付凭证传给后端进行二次认证  
+    }, function(e) {  
+        // 支付失败的时候需要调用一下 restoreComplateRequest 方法  
+        restoreComplateRequest()  
+    });
 ```
 
 #### 恢复购买
@@ -103,18 +103,18 @@ restoreComplateRequest作用描述:
 #### 丢单检测
   * uni-app 在页面 onShow 方法中调用 restoreComplateRequest  
 ```  js
-onShow() {  
-    if(restoreFlag) {  
-        restoreComplateRequest()   
-    }  
-}
+    onShow() {  
+        if(restoreFlag) {  
+            restoreComplateRequest()   
+        }  
+    }
 ```
   * 5+App 在 resume 回调中调用 restoreComplateRequest 
 ```  js
-document.addEventListener('resume',function(){  
-    if(restoreFlag) {  
-        restoreComplateRequest()  
-    }  
-},false); 
+    document.addEventListener('resume',function(){  
+        if(restoreFlag) {  
+            restoreComplateRequest()  
+        }  
+    },false); 
 ```
 

@@ -172,6 +172,9 @@ univerifyStyle 数据结构：
     "icon": {  
         "path": "static/xxx.png" // 自定义显示在授权框中的logo，仅支持本地图片 默认显示App logo   
     },  
+    "closeIcon": {  
+        "path": "static/xxx.png" // 自定义关闭按钮，仅支持本地图片。 HBuilderX3.3.7+版本支持
+    },  
     "phoneNum": {  
         "color": "#202020"  // 手机号文字颜色 默认值：#202020  
     },  

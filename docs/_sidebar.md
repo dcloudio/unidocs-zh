@@ -46,7 +46,7 @@
     * [Statistic(统计)](app-statistic.md)
       * [友盟统计](app-statistic-umeng.md)
       * [Google统计](app-statistic-google.md)
-  * 其它
+  * 其它配置
     * [iOS符号表文件](app-ios-dsym.md)
 * App上架指南
   * [国内应用市场上架](android-store.md)

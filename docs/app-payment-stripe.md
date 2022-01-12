@@ -1,5 +1,9 @@
 #### 开通
-[stripe开通文档](https://uniapp.dcloud.io/app-payment-stripe-open)
+* [登录stripe](https://dashboard.stripe.com/login)
+* 完善公司信息
+* 获取密钥等相关信息
+
+更多信息详见[stripe开通文档](https://uniapp.dcloud.io/app-payment-stripe-open)
 
 #### 配置
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“stripe支付”项并添加配置
@@ -23,7 +27,7 @@
 ```
 
 #### 应用内发起支付
-应用中调用支付功能(支付参数如下)
+订单信息参数如下
     
 | 参数名称    | 参数说明 | 必须 | 
 |-------------|-------|-----|
@@ -35,7 +39,7 @@
 | isAllowDelay    | 是否支持延迟支付,默认不支持(将 isAllowDelay 设置为 true 后可使用一些较慢的支付方式，例如 SEPA 借记和 Sofort 对于这些支付方式，只有当 PaymentSheet 完成后才能知道最终的付款状态是成功还是失败。如果您允许这样，则通知客户您已确认他们的订单，但收到付款后才能履行（例如，发货）订单。)   | 否 |
 
 注：customer与ephemeralKey必须成对出现，只传其一无效
-  * uni-app项目示例
+  * uni-app项目示例(provider填写stripe)
   ``` js
   uni.getProvider({
    service: 'payment',

@@ -14,7 +14,7 @@
 通过服务器生成支付订单,参考:[微信支付示例(PHP)](https://github.com/dcloudio/H5P.Server/tree/master/payment/wxpayv3)
 
 #### 应用内发起支付
-应用中调用支付功能(支付参数如下)
+订单信息参数如下
 
 | 参数名称    | 参数说明 | 必须 | 
 |-------------|-------|-----|
@@ -26,7 +26,7 @@
 | timestamp    | 时间戳（单位：秒）   | 是 |
 | sign    | 签名，这里用的 MD5 签名   | 是 |
 
-  * uni-app项目示例  
+  * uni-app项目示例(provider填写wxpay)  
 ``` js
 uni.getProvider({
    service: 'payment',

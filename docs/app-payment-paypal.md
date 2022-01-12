@@ -1,5 +1,9 @@
 #### 开通
-[paypal开通文档](https://uniapp.dcloud.io/app-payment-paypal-open)
+* 登录[paypal开发者中心](https://developer.paypal.com/developer/applications)
+* 创建应用,获取ClientID
+* 添加returnURL等相关配置
+
+更多信息详见[paypal开通文档](https://uniapp.dcloud.io/app-payment-paypal-open)
 
 #### 配置
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数
@@ -10,7 +14,7 @@
 通过服务器生成支付订单并获取orderId(服务器获取订单信息详见[paypal API](https://developer.paypal.com/docs/api/orders/v2/)) 
 
 #### 应用内发起支付
-应用中调用支付功能(支付参数如下)
+订单信息参数如下
     
 | 参数名称    | 参数说明 | 必须 | 
 |-------------|-------|-----|
@@ -20,7 +24,7 @@
 | userAction  | 按钮样式(paynow/continue)  | 否 |
 | currency    | [币种](https://developer.paypal.com/docs/api/reference/currency-codes/) (必须大写)   | 否 |
 
-  * uni-app项目示例
+  * uni-app项目示例(provider填写paypal)
 ``` js
 uni.getProvider({
    service: 'payment',
@@ -78,6 +82,7 @@ uni.getProvider({
     });
 ```
 
-#### 服务器授权
-应用发起支付完成后，返回订单id，服务器捕获或授权订单[详见paypal API](https://developer.paypal.com/docs/api/orders/v2/)
+#### 服务器授权（完成授权后才会扣款）
+应用发起支付完成后，返回订单id，服务器捕获或授权订单
+[详见paypal API](https://developer.paypal.com/docs/api/orders/v2/)
 

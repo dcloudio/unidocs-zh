@@ -87,7 +87,7 @@ uni.showToast({
 
 预置代码块不满足需求的话，可以自定义代码块，教程参考[https://ask.dcloud.net.cn/article/35924](https://ask.dcloud.net.cn/article/35924)
 
-### 使用HBuilderX内置浏览器调试H5
+### 使用HBuilderX内置浏览器调试H5@h5-debug-hx
 
 打开 ``uni-app`` 项目的页面，点HBuilderX右上角的预览按钮，可以在内置浏览器里打开H5运行结果，也可以点右键打开控制台调试。
 
@@ -106,7 +106,7 @@ uni.showToast({
 
 `点击工具栏的运行 -> 运行到浏览器 -> 选择 Chrome`，也可将 `uni-app`运行到 浏览器，可参考 [运行uni-app](/quickstart?id=运行uni-app)。
 
-### 使用各家小程序开发工具调试
+### 使用各家小程序开发工具调试@mp-debug
 
 ``uni-app`` 运行到微信web开发者工具等小程序开发工具里，可在这些工具的控制台查看 ``console`` 信息，网络请求等信息等。
 
@@ -118,7 +118,7 @@ uni.showToast({
 
 ![uni-app](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/52889ab0-4f34-11eb-b680-7980c8a877b8.png)
 
-### 关于 App 的调试debug
+### 关于 App 的调试debug@app-debug
 
 常规开发里，在HBuilderX的运行菜单里运行App，手机端的错误或console.log日志信息会直接打印到控制台。
 

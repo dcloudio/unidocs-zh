@@ -46,6 +46,8 @@
     * [Statistic(统计)](app-statistic.md)
       * [友盟统计](app-statistic-umeng.md)
       * [Google统计](app-statistic-google.md)
+  * 其它配置
+    * [iOS符号表文件](app-ios-dsym.md)
 * App上架指南
   * [国内应用市场上架](android-store.md)
   * [未同意隐私政策模式运行](app-disagreemode.md)

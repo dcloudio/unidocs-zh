@@ -1,19 +1,21 @@
-## 申请开通支付宝支付
-登录[支付宝开放平台](https://open.alipay.com/)
-[创建应用](https://opendocs.alipay.com/open/200/105310)
-[添加功能](https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD)
-[开发设置](https://opendocs.alipay.com/open/200/105310#%E9%85%8D%E7%BD%AE%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83)
+#### 开通
+* 登录[支付宝开放平台](https://open.alipay.com/)
+* [创建应用](https://opendocs.alipay.com/open/200/105310)
+* [添加功能](https://opendocs.alipay.com/open/200/105310#%E6%B7%BB%E5%8A%A0%E5%BA%94%E7%94%A8%E5%8A%9F%E8%83%BD)
+* [开发设置](https://opendocs.alipay.com/open/200/105310#%E9%85%8D%E7%BD%AE%E5%BA%94%E7%94%A8%E7%8E%AF%E5%A2%83)
 
 更多信息详见[支付宝官方文档](https://opendocs.alipay.com/open/204/105297/)
-## 使用支付宝支付
+#### 配置
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“支付宝支付”项
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/alipay_setup_manifest_info.png)
 
+#### 服务器生成订单
 通过服务器生成支付订单,参考:
    [生成支付订单示例(PHP)](https://github.com/dcloudio/H5P.Server/tree/master/payment/alipayrsa2)
    [老版本"移动快捷支付"示例代码(PHP)](https://github.com/dcloudio/H5P.Server/tree/master/payment/alipay)
    [生成支付订单示例(C#)](http://ask.dcloud.net.cn/article/197)
 
+#### 应用内发起支付
 应用中调用支付功能(支付参数如下)
 
 | 参数名称    | 参数说明 | 必须 | 
@@ -47,27 +49,27 @@ uni.getProvider({
    }
 });
 ```
-  * 5+项目示例
+  * 5+App项目示例
 ``` js
-//获取支付渠道
-var alipaySev = null;
-plus.payment.getChannels(function(channels) {
-  for (var i in channels) {
-    var channel = channels[i];
-    if (channel.id === 'alipay') {
-      alipaySev = channel;
-    }
-	}
-}, function(e) {
-	console.log("获取支付渠道失败：" + e.message);
-});
-//发起支付
-var statement = orderInfo; //此处为服务器返回的订单信息字符串
-plus.payment.request(alipaySev, statement, function(result) {
-    var rawdata = JSON.parse(result.rawdata);
-    console.log("支付成功");
-}, function(e) {
-    console.log("支付失败：" + e.message);
-});
+    //获取支付渠道
+    var alipaySev = null;
+    plus.payment.getChannels(function(channels) {
+      for (var i in channels) {
+        var channel = channels[i];
+        if (channel.id === 'alipay') {
+          alipaySev = channel;
+        }
+    	}
+    }, function(e) {
+    	console.log("获取支付渠道失败：" + e.message);
+    });
+    //发起支付
+    var statement = orderInfo; //此处为服务器返回的订单信息字符串
+    plus.payment.request(alipaySev, statement, function(result) {
+        var rawdata = JSON.parse(result.rawdata);
+        console.log("支付成功");
+    }, function(e) {
+        console.log("支付失败：" + e.message);
+    });
 ```
 

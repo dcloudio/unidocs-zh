@@ -85,7 +85,7 @@
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b1b9288b-2749-4a17-8d88-bec82ed5ab65.png" width="160" />
+          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/96e072fe-f338-46bd-b2d7-7b3aac7df501.png" width="160" />
         </div>
         <b>京东小程序版</b>
       </a>

@@ -34,7 +34,7 @@
 * App打包配置
   * [图标](app-icons.md)
   * [启动界面](app-splashscreen.md)
-  * [功能模块](app-modules.md)
+  * 功能模块
     * [Geolocation(定位)](app-geolocation.md)
     * [Payment(支付)](app-payment.md)
       * [Apple应用内支付](app-payment-aip.md)

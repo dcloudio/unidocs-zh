@@ -28,7 +28,7 @@ exports.main = async (event, context) => {
   let spaceInfo = context.SPACEINFO // 当前环境信息 {spaceId:'xxx',provider:'tencent'}
   // 以下四个属性只有使用uni-app以callFunction方式调用才能获取
   let os = context.OS //客户端操作系统，返回值：android、ios	等
-  let platform = context.PLATFORM //运行平台，返回值为 mp-weixin、app-plus等
+  let platform = context.PLATFORM //运行平台，返回值为 mp-weixin、app-plus等。注意：vue3版本uni-app将app-plus修改为了app，此处为保证旧版本兼容性未进行统一，推荐后续在业务中都使用app作为客户端标识
   let appid = context.APPID // manifest.json中配置的appid
   let deviceId = context.DEVICEID // 客户端标识，新增于HBuilderX 3.1.0，同uni-app客户端getSystemInfo接口获取的deviceId
 	//... //其它业务代码
@@ -125,7 +125,7 @@ exports.main = async (event, context) => {
 'use strict';
 exports.main = async (event, context) => {
   let os = context.OS //客户端操作系统，返回值：android、ios	等
-  let platform = context.PLATFORM //运行平台，返回值为 mp-weixin、app-plus等
+  let platform = context.PLATFORM //运行平台，返回值为 mp-weixin、app-plus等。注意：vue3版本uni-app将app-plus修改为了app，此处为保证旧版本兼容性未进行统一，推荐后续在业务中都使用app作为客户端标识
   let appid = context.APPID // manifest.json中配置的appid
   let deviceId = context.DEVICEID // 客户端标识，新增于HBuilderX 3.1.0，同uni-app客户端getSystemInfo接口获取的deviceId
 }

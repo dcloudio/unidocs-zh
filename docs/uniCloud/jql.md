@@ -419,7 +419,7 @@ const res = await db.collection(order, 'book').get() // 将获取的order表的�
       "副表2字段名1": "xxx",
       "副表2字段名2": "xxx",
     }],
-    "_value": "主表字段原始值" // 使用副表foreignKey查询时会在关联的主表字段内以_value存储该字段的原始值，新增于HBuilderX 3.1.16-alpha
+    "_value": "主表字段原始值" // 使用副表foreignKey查询时会在关联的主表字段内以_value存储该字段的原始值，新增于HBuilderX 3.1.16
   }
 }
 ```
@@ -1008,7 +1008,7 @@ db.collection(comment, user)
       "副表2字段名1": "xxx",
       "副表2字段名2": "xxx",
     }],
-    "_value": "主表字段原始值" // 使用副表foreignKey查询时会在关联的主表字段内以_value存储该字段的原始值，新增于HBuilderX 3.1.16-alpha
+    "_value": "主表字段原始值" // 使用副表foreignKey查询时会在关联的主表字段内以_value存储该字段的原始值，新增于HBuilderX 3.1.16
   }
 }
 ```
@@ -3285,7 +3285,7 @@ module.exports = {
 
 目前JQL依赖了`uni-id`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action内使用的。
 
-自`HBuilderX 3.2.7-alpha`起，action内可使用任意公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和JQL关联。
+自`HBuilderX 3.2.7`起，action内可使用任意公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和JQL关联。
 
 一个在JQL内使用的公共模块的package.json示例如下。
 

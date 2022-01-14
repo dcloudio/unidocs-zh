@@ -1,6 +1,8 @@
 ## uniIDHasRole
 
-新增于`HBuilderX 3.1.15-alpha`，判断当前用户是否拥有某角色。
+新增于`HBuilderX 3.1.15`，判断当前用户是否拥有某角色。
+
+需要应用关联[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)服务空间并使用[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)。
 
 > 需要在token内缓存角色权限才可使用，请参考：[缓存角色权限](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=cachepermissionintoken)
 
@@ -29,7 +31,9 @@
 
 ## uniIDHasPermission
 
-新增于`HBuilderX 3.1.15-alpha`，判断当前用户是否拥有某权限，注意：admin角色的用户拥有所有权限
+新增于`HBuilderX 3.1.15`，判断当前用户是否拥有某权限，注意：admin角色的用户拥有所有权限。
+
+需要应用关联[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)服务空间并使用[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)。
 
 > 需要在token内缓存角色权限才可使用，请参考：[缓存角色权限](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=cachepermissionintoken)
 

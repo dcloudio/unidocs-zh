@@ -285,6 +285,8 @@ uniCloud内置了一些扩展库，但是为了减小云函数体积，并不会
 
 ## 客户端调用云函数@clientcallfunction
 
+如需通过url访问云函数请参考：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
+
 前端代码（H5前端、App、小程序），不再执行uni.request联网，而是通过`uniCloud.callFunction`调用云函数，`callFunction`定义如下：
 
 #### 请求参数

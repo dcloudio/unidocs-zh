@@ -151,7 +151,7 @@ exports.main = async (event, context) => {
   "autoSetInviteCode": false, // 是否在用户注册时自动设置邀请码，默认不自动设置
   "forceInviteCode": false, // 是否强制用户注册时必填邀请码，默认为false（需要注意的是目前只有短信验证码注册才可以填写邀请码）,设置为true时需要在loginBySms时指定type为register来使用注册，登录时也要传入type为login
   "removePermissionAndRoleFromToken": false, // 新增于uni-id 3.0.0版本，如果配置为false则自动缓存用户的角色、权限到token中，默认值为false。详细说明见https://uniapp.dcloud.io/uniCloud/uni-id?id=cache-permission-in-token
-  "preferedAppPlatform": "app", // 指定app端对应的PLATFORM名称，用于处理app-plus和app的兼容问题，详细说明见：https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=prefered-app-platform
+  "preferedAppPlatform": "app", // 新增于uni-id 3.3.12，指定app端对应的PLATFORM名称，用于处理app-plus和app的兼容问题，详细说明见：https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=prefered-app-platform
   "app": { // 此处需和preferedAppPlatform保持一致
     "tokenExpiresIn": 2592000,
     "oauth": {
@@ -245,6 +245,8 @@ const userInfo = atob(userSegment) // '{"uid":"61a593ba91a750000166f78d","role":
 ```
 
 ## preferedAppPlatform@prefered-app-platform
+
+> 新增于uni-id 3.3.12
 
 **前提介绍：** 
 

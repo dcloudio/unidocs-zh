@@ -55,9 +55,9 @@ iap.requestOrder(ids, function(e) {
 
 #### 发起支付
 - uni-app项目  
-调用[uni.requestPayment](https://uniapp.dcloud.io/api/plugins/payment?id=requestpayment)发起支付，provider属性值为`appleiap`，orderInfo属性值为订单对象
+调用 [uni.requestPayment(OBJECT)](https://uniapp.dcloud.io/api/plugins/payment?id=requestpayment) 发起支付，OBJECT参数中provider属性值固定为`appleiap`、orderInfo属性值为订单对象
 - 5+ App项目  
-调用[plus.payment.request(channel, orderInfo, successCB, errorCB)](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.request)发起支付, channel参数为获取应用内支付对象，orderInfo参数为订单对象
+调用 [plus.payment.request(channel, orderInfo, successCB, errorCB)](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.request) 发起支付, channel参数为应用内支付对象，orderInfo参数为订单对象
 
 ##### 订单对象参数说明  
 Object对象类型

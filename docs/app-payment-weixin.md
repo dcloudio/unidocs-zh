@@ -17,12 +17,14 @@
 - iOS平台通用链接（Universal Link）  
 在iOS平台微信支付使用的通用链接，必须与微信开放平台 “管理中心” > “应用详情” > “开发信息” 中的“Universal Links”项中配置一致，更多详情参考 [一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links)
 
+> 需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)；本地离线打包参考[Android平台微信支付模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/pay?id=%e5%be%ae%e4%bf%a1%e6%94%af%e4%bb%98)、[iOS平台微信支付模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/pay?id=%e5%be%ae%e4%bf%a1%e6%94%af%e4%bb%98)
+
 
 ### 服务器生成订单
 在 App 端调用支付前，需在业务服务器生成支付订单，可参考：
 - [微信支付示例(PHP)](https://github.com/dcloudio/H5P.Server/tree/master/payment/wxpayv3)
 
-更多信息详见微信支付官方文档 [APP支付统一下单](https://opendocs.alipay.com/open/204/01dcc0)
+更多信息详见微信支付官方文档 [APP支付统一下单](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1)
 
 
 ### 应用内发起支付

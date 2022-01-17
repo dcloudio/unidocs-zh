@@ -28,7 +28,7 @@ exports.main = async (event, context) => {
   let spaceInfo = context.SPACEINFO // 当前环境信息 {spaceId:'xxx',provider:'tencent'}
   // 以下四个属性只有使用uni-app以callFunction方式调用才能获取
   let os = context.OS //客户端操作系统，返回值：android、ios	等
-  let platform = context.PLATFORM //运行平台，返回值为 mp-weixin、app-plus等
+  let platform = context.PLATFORM //运行平台，返回值为 mp-weixin、app-plus等。注意：vue3版本uni-app将app-plus修改为了app，此处为保证旧版本兼容性未进行统一，推荐后续在业务中都使用app作为客户端标识
   let appid = context.APPID // manifest.json中配置的appid
   let deviceId = context.DEVICEID // 客户端标识，新增于HBuilderX 3.1.0，同uni-app客户端getSystemInfo接口获取的deviceId
 	//... //其它业务代码
@@ -110,8 +110,8 @@ exports.main = async (event, context) => {
   // client   客户端callFunction方式调用
   // http     云函数url化方式调用
   // timing   定时触发器调用
-  // server   由管理端调用，HBuilderX里上传并运行，仅阿里云支持，腾讯云这种方式调用也是client
-  // function 由其他云函数callFunction调用，仅阿里云支持，腾讯云这种方式调用也是client
+  // server   由管理端调用，HBuilderX里上传并运行
+  // function 由其他云函数callFunction调用
 }
 ```
 
@@ -125,7 +125,7 @@ exports.main = async (event, context) => {
 'use strict';
 exports.main = async (event, context) => {
   let os = context.OS //客户端操作系统，返回值：android、ios	等
-  let platform = context.PLATFORM //运行平台，返回值为 mp-weixin、app-plus等
+  let platform = context.PLATFORM //运行平台，返回值为 mp-weixin、app-plus等。注意：vue3版本uni-app将app-plus修改为了app，此处为保证旧版本兼容性未进行统一，推荐后续在业务中都使用app作为客户端标识
   let appid = context.APPID // manifest.json中配置的appid
   let deviceId = context.DEVICEID // 客户端标识，新增于HBuilderX 3.1.0，同uni-app客户端getSystemInfo接口获取的deviceId
 }
@@ -284,6 +284,8 @@ uniCloud内置了一些扩展库，但是为了减小云函数体积，并不会
 ```
 
 ## 客户端调用云函数@clientcallfunction
+
+如需通过url访问云函数请参考：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
 
 前端代码（H5前端、App、小程序），不再执行uni.request联网，而是通过`uniCloud.callFunction`调用云函数，`callFunction`定义如下：
 

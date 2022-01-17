@@ -239,6 +239,10 @@ class PostController extends Controller {
 }
 ```
 
+**注意**
+
+- 响应头内各个字段请使用全小写，例：'Content-Type' ×，'content-type' √
+
 ### 服务（Service）
 
 业务逻辑封装的一个抽象层，有以下几个好处：

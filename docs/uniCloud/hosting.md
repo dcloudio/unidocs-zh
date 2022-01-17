@@ -62,8 +62,9 @@ DCloud为开发者提供了`uni发布平台`，包括网站发布、App发布和
   > HBuilderX 2.8.9+，支持前端网页托管管理器。
 
   在菜单视图中，或者在左下角状态栏中，点击`前端网页托管`，可在左侧打开前端网页托管管理器。如下图
+  
+<img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/aa6a801a-3fbc-441d-98ce-156ccb221f3e.jpg"/>
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/aa6a801a-3fbc-441d-98ce-156ccb221f3e.jpg)
 
   在前端网页托管管理器中，可以看到当前用户的服务空间列表，置灰表示该服务空间还没有开通前端网页托管，点击后可根据提示开通。（如上图中置灰的ali1服务空间）。
 
@@ -132,6 +133,12 @@ DCloud为开发者提供了`uni发布平台`，包括网站发布、App发布和
 **404页面**
 
 访问静态网站出错后返回的页面。
+
+**history模式路径**
+
+> 仅阿里云支持
+
+为指定目录开启`uni-app history`模式支持，此路径下无法访问的文件会被重定向到此路径下的`index.html`, 并返回`200`状态码
 
 **重定向规则**
 

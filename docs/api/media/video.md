@@ -35,6 +35,7 @@
 |name|String|包含扩展名的文件名称|仅H5支持|
 
 **注意：**
+* sourceType 值在 H5 平台根据浏览器的不同而表现不同，一般不可限制仅使用相册，部分浏览器也无法限制是否使用相机。
 * app安卓端选择的视频最大只支持180MB，如需突破该限制请使用原生插件https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9 
 * 文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。
 * camera 部分 Android 手机下由于系统 ROM 不支持无法生效，打开拍摄界面后可操作切换
@@ -66,7 +67,6 @@ export default {
 		test: function () {
 			var self = this;
 			uni.chooseVideo({
-				count: 1,
 				sourceType: ['camera', 'album'],
 				success: function (res) {
 					self.src = res.tempFilePath;
@@ -216,7 +216,6 @@ export default {
 		test: function () {
 			var self = this;
 			uni.chooseVideo({
-				count: 1,
 				sourceType: ['camera'],
 				success: function (res) {
 					self.src = res.tempFilePath;

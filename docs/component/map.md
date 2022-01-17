@@ -75,7 +75,7 @@
 |alpha|标注的透明度|Number|否|默认1，无透明，范围 0 ~ 1|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序|
 |width|标注图标宽度|Number|否|默认为图片实际宽度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序|
 |height|标注图标高度|Number|否|默认为图片实际高度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序|
-|callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+|
+|callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序|
 |label|为标记点旁边增加标签|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、H5、App、百度小程序|
 |anchor|经纬度在标注图标的锚点，默认底边中点|Object|否|{x, y}，x表示横向(0-1)，y表示竖向(0-1)。{x: .5, y: 1} 表示底边中点|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
 |clusterId|自定义点聚合簇效果时使用|Number|否||App-nvue 3.1.0+、微信小程序|
@@ -86,7 +86,7 @@
 
 |属性|说明|类型|平台差异说明|
 |:-|:-|:-|:-|
-|content|文本|String||
+|content|文本|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
 |color|文本颜色|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
 |fontSize|文字大小|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
 |borderRadius|callout边框圆角|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序|

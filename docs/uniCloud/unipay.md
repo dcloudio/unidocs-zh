@@ -373,16 +373,16 @@ exports.main = async function (event) {
 
 **入参说明**
 
-|    参数名     |  类型  |             必填             | 默认值 |     说明     | 支持平台 |
-| :-----------: | :----: | :--------------------------: | :----: | :----------: | :------: |
-|  outTradeNo   | String |   和 transactionId 二选一    |   -    |  商户订单号  |     -     |
-| transactionId | String |     和 outTradeNo 二选一     |   -    |  平台订单号  |     -     |
-|  outRefundNo  | String | 微信支付必填，支付宝支付选填 |   -    | 商户退款单号 |      -    |
-|   totalFee    | Number |         微信支付必填         |   -    |  订单总金额  | 微信支付 |
-|   refundFee   | Number |             必填             |   -    |  退款总金额  | 微信支付 |
-| refundFeeType | String |             选填             |   -    |   货币种类   |     -     |
-|  refundDesc   | String |             选填             |   -    |   退款原因   |     -     |
-|   notifyUrl   | String |  微信支付选填，支付宝不支持  |   -    | 退款通知 url，支付宝会通知获取支付参数时的通知地址 | 微信支付 |
+|    参数名		|  类型	|             必填				| 默认值|     说明											| 支持平台	|
+| :-----------:	| :----:| :--------------------------:	| :----:| :----------:										| :------:	|
+|  outTradeNo	| String|   和 transactionId 二选一		|   -	|  商户订单号										|     -		|
+| transactionId	| String|     和 outTradeNo 二选一		|   -	|  平台订单号										|     -		|
+|  outRefundNo	| String| 微信支付必填，支付宝支付选填	|   -	| 商户退款单号										|      -	|
+|   totalFee	| Number|         微信支付必填			|   -	|  订单总金额										| -			|
+|   refundFee	| Number|             必填				|   -	|  退款总金额										| 微信支付	|
+| refundFeeType	| String|             选填				|   -	|   货币种类										|     -		|
+|  refundDesc	| String|             选填				|   -	|   退款原因										|     -		|
+|   notifyUrl	| String|  微信支付选填，支付宝不支持	|   -	| 退款通知 url，支付宝会通知获取支付参数时的通知地址| 微信支付	|
 
 **返回值说明**
 

@@ -27,7 +27,7 @@ HBuilderX是通用的前端开发工具，但为`uni-app`做了特别强化。
 uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还有一个重要模板是 uni ui项目模板，日常开发推荐使用该模板，已内置大量常用组件。
 
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/f5d5fa70-4f19-11eb-8ff1-d5dcf8779628.png"/>
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d0cba1a3-c0cc-4095-a105-a4fea51857fe.jpg"/>
 </div>
 
 ## 运行uni-app

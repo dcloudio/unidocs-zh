@@ -1,18 +1,18 @@
-# 扩展能力Redis
+# 扩展库Redis
 
 > 2021年11月18日，已支持腾讯云和阿里云
 
 redis是一个内存中的数据结构存储系统，在项目中通常作为数据库的中间件来使用。相对于直接从数据库中读取数据，速度上会有明显的提升。
 
-## 开通Redis扩展能力@buy
+## 开通Redis扩展库@buy
 
 参考[开通redis](uniCloud/redis-buy.md)
 
-## 为云函数启用redis扩展能力@use-in-function
+## 为云函数启用redis扩展库@use-in-function
 
-目前需要开发者手动在云函数的package.json内添加云函数的扩展能力，后续HBuilderX会提供图形化界面。（如果云函数目录下没有package.json，可以通过在云函数目录下执行`npm init -y`来生成）
+目前需要开发者手动在云函数的package.json内添加云函数的扩展库，后续HBuilderX会提供图形化界面。（如果云函数目录下没有package.json，可以通过在云函数目录下执行`npm init -y`来生成）
 
-下面是一个开启了redis扩展能力的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
+下面是一个开启了redis扩展库的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
 
 ```js
 {
@@ -21,7 +21,7 @@ redis是一个内存中的数据结构存储系统，在项目中通常作为数
 	"description": "",
 	"main": "index.js",
 	"extensions": {
-		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展能力，值为空对象留作后续追加参数，暂无内容
+		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容
 	},
 	"author": ""
 }
@@ -769,7 +769,7 @@ const [operationType, currentValue] = await redis.eval(`local val = redis.call('
 
 - 云函数本地调试
 
-  目前不支持本地运行使用了Redis扩展能力的云函数，请上传到云端测试
+  目前不支持本地运行使用了Redis扩展库的云函数，请上传到云端测试
   
   
 ## 最佳实践

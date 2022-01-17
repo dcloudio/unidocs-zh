@@ -6,7 +6,10 @@
 2. 在jql文件内写上自己的语句
 3. 使用工具栏上的运行按钮运行（快捷键：Ctrl+R 或 F5）即可
 
-![jql-runner](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/030341b0-b86d-43bf-ac59-86d2483f4cda.jpg)
+<div align=center>
+  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/030341b0-b86d-43bf-ac59-86d2483f4cda.jpg"/>
+</div>
+
 
 **注意**
 

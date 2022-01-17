@@ -31,15 +31,33 @@
 * [uni_modules插件规范](uni_modules.md)
 * [从其他项目转uni-app](translate.md)
 * [混合开发](hybrid.md)
+* App打包配置
+  * [图标](app-icons.md)
+  * [启动界面](app-splashscreen.md)
+  * 功能模块
+    * [Geolocation(定位)](app-geolocation.md)
+    * [Payment(支付)](app-payment.md)
+      * [Apple应用内支付](app-payment-aip.md)
+      * [支付宝支付](app-payment-alipay.md)
+      * [微信支付](app-payment-weixin.md)
+      * [Paypal支付](app-payment-paypal.md)
+      * [Stripe支付](app-payment-stripe.md)
+      * [Google支付](app-payment-google.md)
+    * [Statistic(统计)](app-statistic.md)
+      * [友盟统计](app-statistic-umeng.md)
+      * [Google统计](app-statistic-google.md)
+  * 其它配置
+    * [iOS符号表文件](app-ios-dsym.md)
 * App上架指南
   * [国内应用市场上架](android-store.md)
   * [未同意隐私政策模式运行](app-disagreemode.md)
   * [Google Play上架](android-gp.md)
   * [App Store上架](ios-app-store.md)
+* App安全问题
+  * [Android安全漏洞问题解决方案](app-sec-android.md)
 * [uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
 * 运营服务
   * [App升级中心](uniCloud/upgrade-center.md)
-  <!-- * [统一发布页uni-publish](uniCloud/uni-publish.md) -->
   * [uni一键登录](univerify.md)
   * [统一推送uniPush](unipush.md)
   * [uni统计](uni-stat.md)
@@ -93,10 +111,10 @@
 	  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/759713d0-4f2d-11eb-a16f-5b3e54966275.png" width="20" height="20"/>
 	  <div class="contact-smg">
 	     <div>官方QQ交流群</div>
-	  <div>群2：901474938 &nbsp;<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=E-3RyF9wOtGobJB4Aze8H6zlHn4fZuDf&jump_from=webapi">点此加入</a></div>
+	  <div>群33：498071674 &nbsp;<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=KsL-fqAOIV0-c5Eq_VwRVXRfWuZxSaUP&jump_from=webapi">点此加入</a></div>
 		<div>群35：713420817（2000人已满）</div>
 		<div>群34：530305531（2000人已满）</div>
-		<div>群33：498071674（2000人已满）</div>
+		<!-- <div>群33：498071674（2000人已满）</div>-->
 		<div>群32：166188631（2000人已满）</div>
 		<div>群31：567471669（2000人已满）</div>
 		<div>群30：371046920（2000人已满）</div> 
@@ -127,7 +145,7 @@
 		<div>群5：731951419（2000人已满）</div>
 		<div>群4：942702595（2000人已满）</div>
 		<div>群3：773794803（2000人已满） </div>
-		<!-- <div>群2：901474938（2000人已满） </div>-->
+		<div>群2：901474938（2000人已满） </div>
 		<div>群1：531031261（2000人已满）</div>
 	  </div>
 	</div>

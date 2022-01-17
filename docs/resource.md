@@ -16,7 +16,7 @@
 如下是三方专业培训机构的视频教程
 * [《uni-app 商业级应用实战》](https://ke.qq.com/course/379043?from=800006421)，出品人：腾讯课堂NEXT学院。亮点：腾讯课堂官方出品；不懂 vue 的工程师也可快速学习；从入门到实战都包括。
 * [《uni-app 跨平台应用开发教程》](http://www.hcoder.net/course/info_242.html)，出品人：hcoder 刘海君，课时：共25节。亮点：讲师经验丰富，也是graceui框架作者。
-* [《uni-app 实战教程 - “悦读”项目实战》](https://ke.qq.com/course/364262?tuin=4f8da6)，出品人：hcoder 刘海君，点击[领取专享优惠劵](https://ke.qq.com/p/IYf6YNZf?tuin=4f8da6)
+* [《uni-app 实战教程 - “悦读”项目实战》](https://ke.qq.com/course/364262?tuin=4f8da6)，出品人：hcoder 刘海君
 * [《uni-app实战社区交友类app开发》](https://study.163.com/course/introduction.htm?courseId=1209188809&_trace_c_p_k2_=4b765abfb2f946039c8ea6230737f6af)，出品人：帝莎IT学院。适用人群：具备Html+Css+Javascript基础知识。
 * [《uni-app仿小米商城实战》](https://study.163.com/course/courseMain.htm?courseId=1209401825&share=2&shareId=480000001892585)，出品人：帝莎IT学院。首页使用nvue开发，目前支持app端和小程序端。
 * [《uni-app多端调试环境配置》](https://study.163.com/course/courseMain.htm?courseId=1209401924&share=2&shareId=480000001892585)，出品人：帝莎IT学院。
@@ -24,10 +24,10 @@
 * [《uni-app实战视频点播app小程序》](https://study.163.com/course/courseMain.htm?courseId=1209644880&share=2&shareId=480000001892585)，出品人：帝莎IT学院。
 * [《0基础学unicloud开发，跨端serverless技术》](https://study.163.com/course/introduction.htm?courseId=1209978085#/courseDetail?tab=1)，出品人：林举
 * [《uni-app 5小时快速入门》](https://www.imooc.com/learn/1215)，出品人：meHaoTian
-* [《uni-app 快速入门 从零开始实现新闻资讯类跨端应用》](https://coding.imooc.com/class/433.html)，出品人：meHaoTian
 * [《uni-app实战直播app全栈开发》](https://study.163.com/course/courseMain.htm?courseId=1210217810&share=2&shareId=480000001892585)，出品人：帝莎IT学院
 * [《uni-app博客实战开发教程》](https://ke.qq.com/course/3455428?tuin=258d8def)，出品人：卢小兵
 * [《uni-app快速入门到社区论坛项目多端开发实战》](https://www.bilibili.com/video/BV1oy4y1j75s?p=1)，出品人：千锋教育
+* [《uni-app新手入门》](https://www.lanqiao.cn/courses/7763)，出品人：蓝桥云课
 
 
 目前各大视频学习网站都有不少uni-app的学习资源，更多资源请点击搜索链接：

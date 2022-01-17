@@ -1,3 +1,5 @@
+JQL语法相关文档已移至：[JQL语法](uniCloud/jql.md)
+
 ## clientDB简介
 
 > 自`HBuilderX 2.9.5`起支持在客户端直接使用`uniCloud.database()`方式获取数据库引用，即在前端直接操作数据库，这个功能被称为`clientDB`
@@ -14,7 +16,7 @@
 
 在`DB Schema`中，配置数据操作的权限和字段值域校验规则，阻止前端不恰当的数据读写。详见：[DB Schema](https://uniapp.dcloud.net.cn/uniCloud/schema)
 
-如果想在数据库操作之前或之后需要在云端执行额外的动作（比如获取文章详情之后阅读量+1），`clientDB`提供了action云函数机制。在HBuilderX项目的`cloudfunctions/uni-clientDB-actions`目录编写上传js，参考：[action](uniCloud/database?id=action)
+如果想在数据库操作之前或之后需要在云端执行额外的动作（比如获取文章详情之后阅读量+1），`clientDB`提供了action云函数机制。在HBuilderX项目的`cloudfunctions/uni-clientDB-actions`目录编写上传js，参考：[action](uniCloud/jql?id=action)
 
 **注意**
 
@@ -29,12 +31,19 @@
 1. 传统开发你需要先写服务端代码（这里用php+mysql作为演示）用sql语法查询数据库中的数据并输出，然后再开放API。
 
 需写27行代码，如图：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f0798882-cbcc-4b41-affc-7bce5ebaeb0e.png)
+
+<div align=center>
+  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f0798882-cbcc-4b41-affc-7bce5ebaeb0e.png"/>
+</div>
 
 2. 前端用ajax携带必要参数请求API，然后将请求结果赋值给data中的变量。最终把变量在视图中渲染出来。
 
 需写37行代码，如图：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d2194fea-c90e-4f02-b241-d27167ccb015.png)
+
+<div align=center>
+  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d2194fea-c90e-4f02-b241-d27167ccb015.png"/>
+</div>
+
 
 > 传统云端分离的开发方式，共计：64行代码。
 
@@ -43,7 +52,10 @@
 - 云端协同的开发方式，unicloud-db组件渲染列表。
 
 仅：5行代码如图：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6d7fe2a6-1115-4535-8f3f-cdbb7c90e0ef.jpg)
+
+<div align=center>
+  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6d7fe2a6-1115-4535-8f3f-cdbb7c90e0ef.jpg"/>
+</div>
 
 
 **总结：基于uniCloud云端协同的开发方式，不需要写js代码，不需要写服务端的代码。直接在视图模板中写6行代码，即可完成传统开发方式需要64行代码才能完成的效果。且不仅仅是代码量的问题。整个开发过程的体验，提高了完全不止10倍的开发效率。**
@@ -57,7 +69,6 @@
 js API可以执行所有数据库操作。`<unicloud-db>`组件是js API的再封装，进一步简化查询等常用数据库操作的代码量。
 
 - 在HBuilderX 3.0+，`<unicloud-db>`组件已经内置，可以直接使用。文档另见：[`<unicloud-db>`组件](/uniCloud/unicloud-db)
-- 在HBuilderX 3.0以前的版本，使用该组件需要在插件市场单独引用`<uni-clientDB>插件`，另见：[https://ext.dcloud.net.cn/plugin?id=3256](https://ext.dcloud.net.cn/plugin?id=3256)
 
 以下文章重点介绍`clientDB`的js API。至于组件的用法，另见[文档](uniCloud/unicloud-db.md)。
 
@@ -114,6 +125,53 @@ db.collection('list')
 - 更新数据时键值不可使用`{'a.b.c': 1}`的形式，需要写成`{a:{b:{c:1}}}`形式
 
 
-## JQL查询语法@jsquery
+## 客户端事件@event
+
+### 刷新token@refreshtoken
+
+透传uni-id自动刷新的token给客户端
+
+> HBuilderX 3.2.11及以上版本，clientDB会自动将刷新的token及过期时间保存在storage内。
+
+**用法**
+
+```js
+const db = uniCloud.database()
+
+function refreshToken({
+  token,
+  tokenExpired
+}) {
+  uni.setStorageSync('uni_id_token', token)
+  uni.setStorageSync('uni_id_token_expired', tokenExpired)
+}
+// 绑定刷新token事件
+db.on('refreshToken', refreshToken)
+// 解绑刷新token事件
+db.off('refreshToken', refreshToken)
+```
+
+### 错误处理@error
+
+全局clientDB错误事件，HBuilderX 3.0.0起支持。
+
+**用法**
+
+```js
+const db = uniCloud.database()
+
+function onDBError({
+  code, // 错误码详见https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=returnvalue
+  message
+}) {
+  // 处理错误
+}
+// 绑定clientDB错误事件
+db.on('error', onDBError)
+// 解绑clientDB错误事件
+db.off('error', onDBError)
+```
+
+## JQL语法@jql
 
 clientDB使用JQL在客户端编写查询语句，关于JQL语法请参考：[JQL语法](uniCloud/jql.md)

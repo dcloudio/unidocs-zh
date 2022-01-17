@@ -1,13 +1,4 @@
-云函数中支持对云数据库的全部功能的操作。
-
-云函数中不支持`jql`语法，仅支持传统MongoDB的API。
-
-**不同于传统开发，云函数连接数据库有单次操作时长限制，目前单次操作时间限制如下。超出此时间会报超时错误。一般情况下在设置了合适的索引时不会遇到超时错误，如何优化查询速度请参考：[数据库性能优化](uniCloud/db-performance.md)**
-
-|腾讯云	|阿里云	|
-|--			|--			|
-|5秒		|1秒		|
-
+云函数中支持对云数据库的全部功能的操作。本章节主要讲解如何在云函数内通过传统api操作数据库，如需在云函数内使用JQL语法操作数据库，请参考：[云函数内使用JQL语法](uniCloud/jql-cloud.md)
 
 ## 获取集合的引用
 
@@ -86,66 +77,6 @@ doc(docId)方法的参数只能是字符串，即数据库默认的_id字段。
 |      | shift   | 数组类型字段删除头元素，支持数组 |
 |      | unshift | 数组类型字段追加头元素，支持数组 |
 
-
-## 支持的数据类型@data-type
-
-数据库提供以下几种数据类型：
-* String：字符串
-* Number：数字
-* Object：对象
-* Array：数组
-* Bool：布尔值
-* GeoPoint：地理位置点
-* GeoLineStringL: 地理路径
-* GeoPolygon: 地理多边形
-* GeoMultiPoint: 多个地理位置点
-* GeoMultiLineString: 多个地理路径
-* GeoMultiPolygon: 多个地理多边形
-* Date：时间
-* Null
-
-以下对几个特殊的数据类型做个补充说明
-
-### 时间 Date
-
-Date 类型用于表示时间，精确到毫秒，可以用 JavaScript 内置 Date 对象创建。需要特别注意的是，连接本地云函数时，用此方法创建的时间是客户端当前时间，不是服务端当前时间，只有连接云端云函数才是服务端当前时间。
-另外，我们还单独提供了一个 API 来创建服务端当前时间，使用 serverDate 对象来创建一个服务端当前时间的标记，**该对象暂时只支持腾讯云空间**，当使用了 serverDate 对象的请求抵达服务端处理时，该字段会被转换成服务端当前的时间，更棒的是，我们在构造 serverDate 对象时还可通过传入一个有 offset 字段的对象来标记一个与当前服务端时间偏移 offset 毫秒的时间，这样我们就可以达到比如如下效果：指定一个字段为服务端时间往后一个小时。
-
-```js
-// 服务端当前时间
-new db.serverDate()
-// 在云函数内使用new Date()和new db.serverDate()效果一样
-```
-
-```js
-//服务端当前时间加1S
-new db.serverDate({
-  offset: 1000
-})
-// 在云函数内使用new Date(Date.now() + 1000)和上面的用法效果一样
-```
-  
-如果需要对日期进行比较操作，可以使用聚合操作符将日期进行转化，比如以下示例查询所有time字段在`2020-02-02`以后的记录
-  
-```js
-'use strict';
-const db = uniCloud.database()
-exports.main = async (event, context) => {
-	const dbCmd = db.command
-	const $ = dbCmd.aggregate
-	let res = await db.collection('unicloud-test').where(dbCmd.expr(
-		$.gte(['$time',$.dateFromString({
-			dateString: new Date('2020-02-02').toISOString()
-		})])
-	)).get()
-	return res
-};
-```
-
-### 地理位置
-
-参考：[GEO地理位置](#GEO地理位置)
-
 ## 新增文档@add
 
 方法1： collection.add(data)
@@ -220,7 +151,7 @@ let res = await collection.doc('doc-id').set({
 
 **注意**
 
-- 自动生成的_id是自增的，后创建的记录的_id总是大于先生成的_id
+- 阿里云自动生成的_id是递增的，后创建的记录的_id总是大于先生成的_id。腾讯云自动生成的_id并非递增。
 
 ## 查询文档@query
 
@@ -234,7 +165,7 @@ limit，即返回记录的最大数量，默认值为100，也就是不设置lim
 
 如需查询更多数据，需要分页多次查询。
 
-如果使用clientDB传入getTree参数以返回树形数据也受上面的规则限制，不过此时limit方法仅对根节点生效（大量数据建议使用分层加载，不要使用getTree一次返回所有数据）
+如果使用JQL语法传入getTree参数以返回树形数据也受上面的规则限制，不过此时limit方法仅对根节点生效（大量数据建议使用分层加载，不要使用getTree一次返回所有数据）
 
 **get响应参数**
 
@@ -1209,7 +1140,7 @@ let res = await collection.where({name: dbCmd.eq('hey')}).update({
 
 ### 更新并返回更新后的数据@update-and-return
 
-> 新增于HBuilderX 3.2.0-alpha
+> 新增于HBuilderX 3.2.0
 
 此接口仅会操作一条数据，有多条数据匹配的情况下会只更新匹配的第一条并返回
 
@@ -2092,7 +2023,7 @@ exports.main = async function(){
 }
 ```
 
-### 聚合表达式
+### 聚合表达式@aggregate-expression
 
 表达式可以是字段路径、常量、或聚合操作符。表达式可以嵌套表达式。
 

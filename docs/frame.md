@@ -644,7 +644,7 @@ ES6 API 的支持，详见如下表格部分（`x` 表示不支持，无特殊�
 |getOwnPropertyNames|||||
 |getOwnPropertySymbols||||&nbsp;|
 
-|Other|iOS8|iOS9|iOS10|Android|
+|Other|iOS8|iOS9|iOS10|Android<5|
 |:-|:-|:-|:-|:-|
 |Symbol|||||
 |Set|||||

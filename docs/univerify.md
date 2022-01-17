@@ -172,6 +172,9 @@ univerifyStyle 数据结构：
     "icon": {  
         "path": "static/xxx.png" // 自定义显示在授权框中的logo，仅支持本地图片 默认显示App logo   
     },  
+    "closeIcon": {  
+        "path": "static/xxx.png" // 自定义关闭按钮，仅支持本地图片。 HBuilderX3.3.7+版本支持
+    },  
     "phoneNum": {  
         "color": "#202020"  // 手机号文字颜色 默认值：#202020  
     },  
@@ -389,7 +392,7 @@ uniCloud.callFunction({
 exports.main = async (event, context) => {
   // event里包含着客户端提交的参数
   const res = await uniCloud.getPhoneNumber({
-  	appid: '_UNI_ABCDEFG', // 替换成自己开通一键登录的应用的DCloud appid，使用callFunction方式调用时可以不传（会自动取当前客户端的appid），如果使用云函数URL化的方式访问必须传此参数
+  	appid: '_UNI_ABCDEFG', // 替换成自己开通一键登录的应用的DCloud appid
   	provider: 'univerify',
   	apiKey: 'xxx', // 在开发者中心开通服务并获取apiKey
   	apiSecret: 'xxx', // 在开发者中心开通服务并获取apiSecret

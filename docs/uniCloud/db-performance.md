@@ -2,7 +2,7 @@
 
 开发者应经常查阅自己的慢查询，修复问题，保证业务系统的健康稳定。
 
-在数据库语句执行超过一定时间（**腾讯云为5秒，阿里云为1秒**）仍不能返回结果后，阿里云甚至会报错`operation exceeded time limit`。
+在数据库语句执行超过一定时间（**腾讯云为5秒，阿里云为1秒**）仍不能返回结果后，阿里云甚至会报错`operation exceeded time limit`。**如果对数据库超时时间有更高的需求，建议使用腾讯云。**
 
 这里介绍如何进行查询优化以避免此类问题。
 
@@ -53,11 +53,11 @@ module.exports = async function(event,context) {
 
 ### 抽样方法sample
 
-sample操作在高频触发时会响应缓慢，使用前请务必确定自己的业务场景适合使用sample方法
+sample操作在大数据量高频触发时会响应缓慢，使用前请务必确定自己的业务场景适合使用sample方法
 
 ## clientDB联表查询超时@client-db-lookup
 
-请参考此文档调整优化，[使用getTemp进行联表查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup-with-temp)
+请参考此文档调整优化，[使用getTemp进行联表查询](https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup-with-temp)
 
 ## 慢查询日志@slow
 

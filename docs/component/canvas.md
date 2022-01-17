@@ -82,7 +82,7 @@ canvas的常用用途有图表和图片处理，在uni-app插件市场有大量�
 
 **nvue页面如何使用canvas**
 
-HBuilderX 2.2.5（alpha）开始 nvue 页面支持 Canvas，支持 W3C WebGL API [WebGL 1.0](https://www.khronos.org/registry/webgl/specs/latest/1.0/)
+HBuilderX 2.2.5 开始 nvue 页面支持 Canvas，支持 W3C WebGL API [WebGL 1.0](https://www.khronos.org/registry/webgl/specs/latest/1.0/)
 
 示例工程地址：[NvueCanvasDemo](https://github.com/dcloudio/NvueCanvasDemo)
 

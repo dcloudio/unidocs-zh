@@ -173,8 +173,8 @@ uni-app为开发者提供了一系列基础组件，类似HTML里的基础标签
 |[match-media](component/match-media.md)|屏幕动态适配组件，比如窄屏上不显示某些内容|
 |[movable-area](component/movable-view.md?id=movable-area)|可拖动区域|
 |[movable-view](component/movable-view.md?id=movable-view)|可移动的视图容器，在页面中可以拖拽滑动或双指缩放。movable-view必须在movable-area组件中|
-|[cover-view](/component/cover-view?id=cover-view)|可覆盖在原生组件的上的文本组件|
-|[cover-image](/component/cover-view?id=cover-image)|可覆盖在原生组件的上的图片组件|
+|[cover-view](/component/cover-view?id=cover-view)|可覆盖在原生组件上的文本组件|
+|[cover-image](/component/cover-view?id=cover-image)|可覆盖在原生组件上的图片组件|
 
 **基础内容（Basic Content）：**
 

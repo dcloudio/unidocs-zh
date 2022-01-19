@@ -105,9 +105,9 @@ export default {
 |:-:|:-:|:-:|:-:|
 |animation|Boolean|true|是否开启动画|
 |type|String|'center'|弹出方式|
-|mask-click**[即将废弃]**|Boolean|true|蒙版点击是否关闭弹窗|
-|is-mask-click|Boolean|true|蒙版点击是否关闭弹窗|
-|mask-background-color|rgba|rgba(0,0,0,0.4)|蒙版颜色，建议使用 rgba 颜色值|
+|mask-click **[即将废弃]**|Boolean|true|蒙版点击是否关闭弹窗|
+|is-mask-click **[1.7.4新增]**|Boolean|true|蒙版点击是否关闭弹窗|
+|mask-background-color **[1.7.4新增]**|rgba|rgba(0,0,0,0.4)|蒙版颜色，建议使用 rgba 颜色值|
 |background-color|String|'none'|主窗口背景色|
 |safe-area|Boolean|true|是否适配底部安全区|
 
@@ -231,8 +231,8 @@ export default {
 |mode|String|base| 对话框模式，可选值：base（提示对话框）/input（可输入对话框）|
 |title|String|-|对话框标题|
 |content|String|-|对话框内容，base模式下生效|
-|confirmText|String|-|定义确定按钮文本|
-|cancelText|String|-|定义取消按钮文本|
+|confirmText **[1.7.4新增]**|String|-|定义确定按钮文本|
+|cancelText **[1.7.4新增]**|String|-|定义取消按钮文本|
 |value| String\Number|-|输入框默认值，input模式下生效|
 |placeholder|String|-|输入框提示文字，input模式下生效|
 |before-close|Boolean|false	| 是否拦截按钮事件，如为true，则不会关闭对话框，关闭需要手动执行 uni-popup 的 close 方法|

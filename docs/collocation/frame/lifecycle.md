@@ -1,4 +1,4 @@
-### 应用生命周期
+### 应用生命周期@app
 
 ``uni-app`` 支持如下应用生命周期函数：
 
@@ -37,7 +37,7 @@
 </script>
 ```
 
-### 页面生命周期
+### 页面生命周期@page
 
 ``uni-app`` 支持如下页面生命周期函数：
 
@@ -147,7 +147,7 @@ export default {
 - nvue 页面weex编译模式支持的生命周期同weex，具体参考：[weex生命周期介绍](https://uniapp.dcloud.io/nvue-outline?id=%e7%bc%96%e8%af%91%e6%a8%a1%e5%bc%8f)。
 - 支付宝小程序真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
 
-### 组件生命周期
+### 组件生命周期@component
 
 ``uni-app`` 组件支持的生命周期，与vue标准组件的生命周期相同。这里没有页面级的onLoad等生命周期：
 

@@ -5609,7 +5609,7 @@ let res = await db.collection('sales').aggregate()
 ```js
 { _id: 1, sales: 5 }
 { _id: 2, sales: 1 }
-{ _id: 3, sales: -6 }
+{ _id: 3, sales: -4 }
 ```
 
 #### ln

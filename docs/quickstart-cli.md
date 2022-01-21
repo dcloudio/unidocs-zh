@@ -123,7 +123,7 @@ HBuilderX 2.7.10+ 版支持
 * dev 和 build 模式的区别：
     1. dev 模式有 SourceMap 可以方便的进行断点调试；
     2. build 模式会将代码进行压缩，体积更小更适合发布为正式版应用；
-    3. 进行 [环境判断](/frame?id=运行环境判断) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
+    3. 进行 [环境判断](/worktile/running-env?id=判断平台) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
 
 ## 使用cli创建项目和使用HBuilderX可视化界面创建项目有什么区别
 
@@ -143,4 +143,4 @@ HBuilderX 2.7.10+ 版支持
 * 对 `cli` 使用有疑问，欢迎扫码加入 uni-app 微信交流群讨论：
     <br/><img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/wx-barcode.png" width="250"/>
 
-注意：HBuilderX创建的项目，一样可以使用npm，参考：[https://uniapp.dcloud.io/frame?id=npm%e6%94%af%e6%8c%81](https://uniapp.dcloud.io/frame?id=npm%e6%94%af%e6%8c%81)
+注意：HBuilderX创建的项目，一样可以使用npm，参考：[NPM 支持](/tutorial/page-script?id=npm支持)

@@ -67,9 +67,9 @@
 |style|String|组件的内联样式|可以动态设置的内联样式|
 |hidden|Boolean|组件是否隐藏|所有组件默认是显示的|
 |data-*|Any|自定义属性|组件上触发的事件时，会发送给事件处理函数|
-|@\*|EventHandler|组件的事件|详见各组件详细文档，事件绑定参考 [事件处理器](/vue-basics?id=事件处理器)|
+|@\*|EventHandler|组件的事件|详见各组件详细文档，事件绑定参考 [事件处理器](/tutorial/vue-basics?id=事件处理器)|
 
-除了上述公共属性，还有一类特殊属性以`v-`开头，称之为vue指令，如v-if、v-else、v-for、v-model。详见[vue指令](/vue-api?id=%e6%a8%a1%e6%9d%bf%e6%8c%87%e4%bb%a4)
+除了上述公共属性，还有一类特殊属性以`v-`开头，称之为vue指令，如v-if、v-else、v-for、v-model。详见[vue指令](/tutorial/vue-api?id=%e6%a8%a1%e6%9d%bf%e6%8c%87%e4%bb%a4)
 
 #### 在组件中使用js变量
 
@@ -167,12 +167,12 @@ uni-app为开发者提供了一系列基础组件，类似HTML里的基础标签
 
 |组件名|说明|
 |:-|:-|
-|[view](component/view.md)|视图容器，类似于HTML中的div|
-|[scroll-view](component/scroll-view.md)|可滚动视图容器|
-|[swiper](component/swiper.md)|滑块视图容器，比如用于轮播banner|
-|[match-media](component/match-media.md)|屏幕动态适配组件，比如窄屏上不显示某些内容|
-|[movable-area](component/movable-view.md?id=movable-area)|可拖动区域|
-|[movable-view](component/movable-view.md?id=movable-view)|可移动的视图容器，在页面中可以拖拽滑动或双指缩放。movable-view必须在movable-area组件中|
+|[view](/component/view.md)|视图容器，类似于HTML中的div|
+|[scroll-view](/component/scroll-view.md)|可滚动视图容器|
+|[swiper](/component/swiper.md)|滑块视图容器，比如用于轮播banner|
+|[match-media](/component/match-media.md)|屏幕动态适配组件，比如窄屏上不显示某些内容|
+|[movable-area](/component/movable-view.md?id=movable-area)|可拖动区域|
+|[movable-view](/component/movable-view.md?id=movable-view)|可移动的视图容器，在页面中可以拖拽滑动或双指缩放。movable-view必须在movable-area组件中|
 |[cover-view](/component/cover-view?id=cover-view)|可覆盖在原生组件的上的文本组件|
 |[cover-image](/component/cover-view?id=cover-image)|可覆盖在原生组件的上的图片组件|
 
@@ -180,83 +180,83 @@ uni-app为开发者提供了一系列基础组件，类似HTML里的基础标签
 
 |组件名|说明|
 |:-|:-|
-|[icon](component/icon.md)|图标|
-|[text](component/text.md)|文字|
-|[rich-text](component/rich-text.md)|富文本显示组件|
-|[progress](component/progress.md)|进度条|
+|[icon](/component/icon.md)|图标|
+|[text](/component/text.md)|文字|
+|[rich-text](/component/rich-text.md)|富文本显示组件|
+|[progress](/component/progress.md)|进度条|
 
 **表单组件（Form）：**
 
 |标签名|说明|
 |:-|:-|
-|[button](component/button.md)|按钮|
-|[checkbox](component/checkbox.md)|多项选择器|
-|[editor](component/editor.md)|富文本输入框|
-|[form](component/form.md)|表单|
-|[input](component/input.md)|输入框|
-|[label](component/label.md)|标签|
-|[picker](component/picker.md)|弹出式列表选择器|
-|[picker-view](component/picker-view.md)|窗体内嵌式列表选择器|
-|[radio](component/radio.md)|单项选择器|
-|[slider](component/slider.md)|滑动选择器|
-|[switch](component/switch.md)|开关选择器|
-|[textarea](component/textarea.md)|多行文本输入框|
+|[button](/component/button.md)|按钮|
+|[checkbox](/component/checkbox.md)|多项选择器|
+|[editor](/component/editor.md)|富文本输入框|
+|[form](/component/form.md)|表单|
+|[input](/component/input.md)|输入框|
+|[label](/component/label.md)|标签|
+|[picker](/component/picker.md)|弹出式列表选择器|
+|[picker-view](/component/picker-view.md)|窗体内嵌式列表选择器|
+|[radio](/component/radio.md)|单项选择器|
+|[slider](/component/slider.md)|滑动选择器|
+|[switch](/component/switch.md)|开关选择器|
+|[textarea](/component/textarea.md)|多行文本输入框|
 
 **路由与页面跳转（Navigation）：**
 
 |组件名|说明|
 |:-|:-|
-|[navigator](component/navigator.md)|页面链接。类似于HTML中的a标签|
+|[navigator](/component/navigator.md)|页面链接。类似于HTML中的a标签|
 
 **媒体组件（Media）：**
 
 |组件名|说明|
 |:-|:-|
-|[audio](component/audio.md)|音频|
-|[camera](component/camera.md)|相机|
-|[image](component/image.md)|图片|
-|[video](component/video.md)|视频|
-|[live-player](component/live-player.md)|直播播放|
-|[live-pusher](component/live-pusher.md)|实时音视频录制，也称直播推流|
+|[audio](/component/audio.md)|音频|
+|[camera](/component/camera.md)|相机|
+|[image](/component/image.md)|图片|
+|[video](/component/video.md)|视频|
+|[live-player](/component/live-player.md)|直播播放|
+|[live-pusher](/component/live-pusher.md)|实时音视频录制，也称直播推流|
 
 **地图（Map）：**
 
 |组件名|说明|
 |:-|:-|
-|[map](component/map.md)|地图|
+|[map](/component/map.md)|地图|
 
 **画布（Canvas）：**
 
 |组件名|说明|
 |:-|:-|
-|[canvas](component/canvas.md)|画布|
+|[canvas](/component/canvas.md)|画布|
 
 **webview（Web-view）：**
 
 |组件名|说明|
 |:-|:-|
-|[web-view](component/web-view.md)|web浏览器组件|
+|[web-view](/component/web-view.md)|web浏览器组件|
 
 **广告**
 
 |组件名|说明|
 |:-|:-|
-|[ad](component/ad.md)|广告组件|
-|[ad-draw](component/ad-draw.md)|沉浸视频流广告组件|
+|[ad](/component/ad.md)|广告组件|
+|[ad-draw](/component/ad-draw.md)|沉浸视频流广告组件|
 
 **页面属性配置**
 
 |组件名|说明|
 |:-|:-|
-|[custom-tab-bar](component/custom-tab-bar.md)|底部tabbar自定义组件|
-|[navigation-bar](component/navigation-bar.md)|页面顶部导航|
-|[page-meta](component/page-meta.md)|页面属性配置节点|
+|[custom-tab-bar](/component/custom-tab-bar.md)|底部tabbar自定义组件|
+|[navigation-bar](/component/navigation-bar.md)|页面顶部导航|
+|[page-meta](/component/page-meta.md)|页面属性配置节点|
 
 **uniCloud**
 
 |组件名|说明|
 |:-|:-|
-|[unicloud-db组件](uniCloud/unicloud-db)|uniCloud数据库访问和操作组件|
+|[unicloud-db组件](/uniCloud/unicloud-db)|uniCloud数据库访问和操作组件|
 
 **各平台专有组件**
 
@@ -291,8 +291,8 @@ uni-app为开发者提供了一系列基础组件，类似HTML里的基础标签
 uni-app支持的组件分为vue组件和小程序自定义组件。
 
 如果你还不了解这两种组件，可以参阅各自的文档
-- vue组件：[文档](https://uniapp.dcloud.net.cn/vue-components?id=%e6%a6%82%e5%bf%b5)
-- 小程序自定义组件：其规范不是vue规范，而是小程序规范，[文档](https://uniapp.dcloud.net.cn/frame?id=%e5%b0%8f%e7%a8%8b%e5%ba%8f%e8%87%aa%e5%ae%9a%e4%b9%89%e7%bb%84%e4%bb%b6%e6%94%af%e6%8c%81)
+- vue组件：[文档](https://uniapp.dcloud.net.cn/tutorial/vue-components?id=%e6%a6%82%e5%bf%b5)
+- 小程序自定义组件：其规范不是vue规范，而是小程序规范，[文档](https://uniapp.dcloud.net.cn/tutorial/miniprogram-subject.html#小程序自定义组件支持)
 
 日常开发来讲，推荐使用vue组件。uni-app支持小程序组件主要是为了兼容更多生态资源。
 
@@ -374,7 +374,7 @@ uni_module其实不止服务于组件，它可以服务于组件、js库、页�
 
 uni_module还支持云端一体的插件。
 
-uni_module有详细的专项文档，请另行查阅[uni_module规范](/uni_modules)。
+uni_module有详细的专项文档，请另行查阅[uni_module规范](/plugin/uni_modules.html)。
 
 ### uniCloud组件
 
@@ -384,7 +384,7 @@ uni-app的基础组件中，有一个特殊基础组件是：`<unicloud-db>`组�
 
 它可以在前端直接获取和操作uniCloud的云端数据库。
 
-相关文档详见：[unicloud-db组件](uniCloud/unicloud-db)
+相关文档详见：[unicloud-db组件](/uniCloud/unicloud-db)
 
 除了内置的数据库组件，在uni-ui扩展库里还有uniCloud的文件选择和上传组件，参考：[uni-file-picker](https://ext.dcloud.net.cn/plugin?id=4079)
 
@@ -427,7 +427,7 @@ datacom组件是一种数据驱动的、可云端一体的组件。
 
 ### 扩展组件（uni-ui）@uniui
 
-详见: [uni-ui介绍](component/uniui/uni-ui.md)
+详见: [uni-ui介绍](/component/uniui/uni-ui.md)
 
 **更多组件**
 

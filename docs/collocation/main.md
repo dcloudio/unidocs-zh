@@ -1,7 +1,7 @@
 `main.js`是uni-app的入口文件，主要作用是初始化`vue`实例、定义全局组件、使用需要的插件如vuex。
 
 首先引入了`Vue`库和`App.vue`，创建了一个`vue`实例，并且挂载`vue`实例。
-```
+```js
 import Vue from 'vue'
 import App from './App'
 import pageHead from './components/page-head.vue' //全局引用page-head组件

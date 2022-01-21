@@ -23,7 +23,7 @@ DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供�
 
 应用开发中，90%的常规开发，比如界面组件、联网等api，```uni-app```封装为可跨多端的API。
 
-而各个端的特色功能，```uni-app```引入[条件编译](http://uniapp.dcloud.io/platform)。可以优雅的在一个项目里调用不同平台的特色能力。比如push，微信小程序里不支持，但可以在App里使用，还有很多原生sdk，在App时难免涉及，这些都可以正常的在```uni-app```框架下使用。
+而各个端的特色功能，```uni-app```引入[条件编译](http://uniapp.dcloud.io/tutorial/platform)。可以优雅的在一个项目里调用不同平台的特色能力。比如push，微信小程序里不支持，但可以在App里使用，还有很多原生sdk，在App时难免涉及，这些都可以正常的在```uni-app```框架下使用。
 
 下图是```uni-app```产品功能框架图，```uni-app```在保持uni规范跨平台的前提下，还可实现每个平台特有的平台能力(如微信小程序平台，可继续调用微信卡劵等微信特有业务API)。
 
@@ -108,8 +108,8 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 ```uni-app``` 积极拥抱社区现有的现代开发流程，包括但不限于：
 
 - 内置了webpack
-- NPM 包管理系统，详见[参考](http://uniapp.dcloud.io/frame?id=npm%E6%94%AF%E6%8C%81)
-- es6+ 语法（发布时会自动编译为es5），详见[参考](http://uniapp.dcloud.io/frame?id=es6-%E6%94%AF%E6%8C%81)
+- NPM 包管理系统，详见[参考](http://uniapp.dcloud.io/tutorial/page-script#npm支持)
+- es6+ 语法（发布时会自动编译为es5），详见[参考](http://uniapp.dcloud.io/tutorial/syntax-js#es6-支持)
 - 各种预处理器（less、scss、stylus、typescript）
 - uni-app的官方ide：HBuilderX，在vue、json、markdown、代码提示、操作效率上，有非常明显的优势，可帮助开发者大幅提高工作效率
 - uni-app同时也提供了cli方式，可使用其他开发工具如vscode开发，当然开发效率不如HBuilderX。对比详见[https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
@@ -121,9 +121,9 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 
 - 丰富的插件市场为开发者提供数千款现成的轮子，[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
 - 兼容微信小程序 JS SDK，丰富的小程序生态内容可直接引入uni-app，并且在App侧通用，[参考](http://ask.dcloud.net.cn/article/35070)
-- 兼容微信小程序自定义组件，并且App、H5侧通用，[参考](http://uniapp.dcloud.io/frame?id=小程序组件支持)
-- App和H5提供了renderjs，使得浏览器专用的库也可以在App和H5里使用，[参考](https://uniapp.dcloud.io/frame?id=renderjs)
-- 支持 NPM 包管理系统，[参考](http://uniapp.dcloud.io/frame?id=npm%E6%94%AF%E6%8C%81)
+- 兼容微信小程序自定义组件，并且App、H5侧通用，[参考](http://uniapp.dcloud.io/tutorial/miniprogram-subject#小程序自定义组件支持)
+- App和H5提供了renderjs，使得浏览器专用的库也可以在App和H5里使用，[参考](https://uniapp.dcloud.io/tutorial/renderjs)
+- 支持 NPM 包管理系统，[参考](http://uniapp.dcloud.io/tutorial/page-script#npm支持)
 - 支持 mpvue 项目及组件，[参考](http://ask.dcloud.net.cn/article/34945)
 - 支持原生插件，见插件市场：[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
 - 支持App原生工程里嵌入uni小程序sdk。

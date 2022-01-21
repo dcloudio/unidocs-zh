@@ -122,10 +122,10 @@
 
 使用流程如下：
 
-[MapContext.initMarkerCluster](api/location/map?id=createmapcontext) 对聚合点进行初始化配置（可选）；
-[MapContext.addMarkers](api/location/map?id=createmapcontext) 指定参与聚合的 marker；
-MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.addMarkers](api/location/map?id=createmapcontext) 更新聚合簇的样式 （可选）；
-[MapContext.removeMarkers](api/location/map?id=createmapcontext) 移除参与聚合的 marker；
+[MapContext.initMarkerCluster](/api/location/map?id=createmapcontext) 对聚合点进行初始化配置（可选）；
+[MapContext.addMarkers](/api/location/map?id=createmapcontext) 指定参与聚合的 marker；
+MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.addMarkers](/api/location/map?id=createmapcontext) 更新聚合簇的样式 （可选）；
+[MapContext.removeMarkers](/api/location/map?id=createmapcontext) 移除参与聚合的 marker；
 
 
 **polyline**
@@ -237,7 +237,7 @@ export default {
 }
 ```
 
-map 组件相关操作的 JS API：[uni.createMapContext](api/location/map?id=createmapcontext)
+map 组件相关操作的 JS API：[uni.createMapContext](/api/location/map?id=createmapcontext)
 nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/37901](https://ask.dcloud.net.cn/article/37901)
 
 **注意事项**

@@ -45,7 +45,7 @@
 |disabled|Boolean|false|是否禁用（快手小程序不支持）|
 
 **bug & tips**
-- 由于 JavaScript 的限制 vue 不能观测如下方式设置 value：``this.value[0] = 0`` （[vue 注意事项](https://cn.vuejs.org/v2/guide/list.html#注意事项)），解决方式参考：[hello-uniapp 示例](https://github.com/dcloudio/hello-uniapp/commit/59264474172a591c865431d02a2a1e3583978827)
+- 由于 JavaScript 的限制 vue 不能观测如下方式设置 value：``this.value[0] = 0`` （[vue 注意事项](/tutorial/vue-basics.html#listrendering)），解决方式参考：[hello-uniapp 示例](https://github.com/dcloudio/hello-uniapp/commit/59264474172a591c865431d02a2a1e3583978827)
 - 微信开发工具的pc模拟器有可能出现拖动数据错乱，使用真机正常
 
 #### 时间选择器

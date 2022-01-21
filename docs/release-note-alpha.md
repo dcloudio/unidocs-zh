@@ -111,7 +111,7 @@
   + 小程序平台 修复 百度小程序 login 组件 @getphonenumber 无参数的问题 [详情](https://ask.dcloud.net.cn/question/130022)
 * 【uniCloud】
   + 新增 批量短信 发送功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/send-sms)
-  + 新增 uniCloud DB Schema 支持国际化 [详情](https://uniapp.dcloud.net.cn/collocation/i18n?id=schema)
+  + 新增 uniCloud DB Schema 支持国际化 [详情](https://uniapp.dcloud.net.cn/worktile/i18n?id=schema)
   + 新增 腾讯云redis
 * 【App插件(含5+App和uni-app的App端)】
   + 新增 拍照和本地相册选择 crop 裁剪编辑图片支持 saveToAlbum 属性设置是否保存编辑后的图片到相册 [文档](https://www.html5plus.org/doc/zh_cn/camera.html#plus.camera.CameraCropStyles)
@@ -304,7 +304,7 @@
 #### 3.2.5.20210827-alpha
 * 【uni-app】
   + 【重要】新增 uni-app Vue3 版本 支持运行和发行到 App
-  + 新增 uni-app Vue3 版本 发行到H5 支持以SSR方式发行 [详情](https://uniapp.dcloud.io/collocation/ssr)
+  + 新增 uni-app Vue3 版本 发行到H5 支持以SSR方式发行 [详情](https://uniapp.dcloud.io/tutorial/ssr)
   + App平台、H5平台 新增 uni.getLocale、uni.setLocale 接口，用于获取和设置应用语言 [详情](https://uniapp.dcloud.io/api/ui/locale)
   + App平台、H5平台 修复 scroll-view 组件滚动过快时 scroll 事件回调返回信息不正确的Bug [详情](https://ask.dcloud.net.cn/question/128573)
   + App平台、H5平台 修复 canvas 组件 createPattern 方法无效的Bug [详情](https://ask.dcloud.net.cn/question/128793)
@@ -793,13 +793,13 @@
 
 #### 3.1.5.20210316-alpha
 * 【uni-app】
-  + App平台、H5平台 优化 uni.showModal、uni.showActionSheet 等 API 内置国际化支持 [详情](https://uniapp.dcloud.io/collocation/i18n)
-  + App平台 优化 应用退出提示内置国际化支持 [详情](https://uniapp.dcloud.io/collocation/i18n)
-  + App平台 优化 uni.scanCode、uni.previewImage 等 API 内置国际化支持 [详情](https://uniapp.dcloud.io/collocation/i18n)
+  + App平台、H5平台 优化 uni.showModal、uni.showActionSheet 等 API 内置国际化支持 [详情](https://uniapp.dcloud.io/worktile/i18n)
+  + App平台 优化 应用退出提示内置国际化支持 [详情](https://uniapp.dcloud.io/worktile/i18n)
+  + App平台 优化 uni.scanCode、uni.previewImage 等 API 内置国际化支持 [详情](https://uniapp.dcloud.io/worktile/i18n)
   + App平台 修复 SelectorQuery.exec 在安卓 4.x 系统报错的 Bug
   + App-iOS平台 修复 nvue ad-draw 组件播放优量汇视频广告可能无声音的Bug
   + App-iOS平台 修复 subNVue input 组件获取焦点后隐藏页面时软键盘不会关闭的Bug [详情](https://ask.dcloud.net.cn/question/117872)
-  + H5平台 优化 picker、video 组件内置国际化支持 [详情](https://uniapp.dcloud.io/collocation/i18n)
+  + H5平台 优化 picker、video 组件内置国际化支持 [详情](https://uniapp.dcloud.io/worktile/i18n)
 * 【uniCloud】
   + unicloud-db组件 add、update、remove方法新增可选参数needConfirm、needLoading、loadingTitle [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db?id=add)
   + unicloud-db组件 新增 load 事件支持 pagination [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db?id=loadevent)
@@ -861,7 +861,7 @@
 
 #### 3.1.1.20210204-alpha
 * 【uni-app】
-  + 【重要】App平台 新增 nvue 组件支持 render-whole 属性。可以按组件整体渲染，而不是从上到下逐行渲染 [详情](https://uniapp.dcloud.io/nvue-outline?id=render-whole)
+  + 【重要】App平台 新增 nvue 组件支持 render-whole 属性。可以按组件整体渲染，而不是从上到下逐行渲染 [详情](https://uniapp.dcloud.io/tutorial/nvue-outline?id=render-whole)
   + App平台 新增 manifest.json 支持 nvue css 编译新旧版本配置 app-plus -> nvueStyleCompiler。可切换老版的nvue css 编译器 [详情](https://ask.dcloud.net.cn/article/38751)
   + App平台 修复 纯 nvue 编译模式下 pages.json 缺少 style 节点编译报错的Bug
   + App平台 修复 3.1.0 版本引出的 nvue 页面中样式与 app.vue 样式冲突的Bug [详情](https://ask.dcloud.net.cn/question/116787)
@@ -1687,7 +1687,7 @@
 
 #### 2.7.11.20200602-alpha
 * 【uni-app】
-  + 【重要】支持运行和发布到 华为快应用 [详情](https://uniapp.dcloud.io/matter?id=quickapp-webview-huawei)
+  + 【重要】支持运行和发布到 华为快应用 [详情](https://uniapp.dcloud.io/tutorial/matter?id=quickapp-webview-huawei)
   + App平台 修复 使用小程序组件时局部组件不显示的Bug
   + App平台 修复 canvasContext.fillText 部分设备多次调用失败的Bug [详情](https://ask.dcloud.net.cn/question/97609)
   + App平台 修复 canvasContext.drawImage 无法绘制 base64 格式图像的Bug [详情](https://ask.dcloud.net.cn/question/95050)
@@ -1735,7 +1735,7 @@
 
 #### 2.7.6.20200521-alpha
 * 【uni-app】
-  + 【重要】支持运行和发布到 360小程序 [详情](https://uniapp.dcloud.io/matter?id=mp-360)
+  + 【重要】支持运行和发布到 360小程序 [详情](https://uniapp.dcloud.io/tutorial/matter?id=mp-360)
   + App平台 修复  class 名称中含有 rpx、upx 时不生效的Bug [详情](https://ask.dcloud.net.cn/question/96981)
   + App-Android平台 修复 HBuilderX2.7.0 引出的 uni.hideTabBar 隐藏 tabbar 后页面高度可能不正确的Bug [详情](https://ask.dcloud.net.cn/question/96244)
   + App-Android平台 修复 nvue textarea 组件获取焦点后在部分手机可能会被软键盘遮挡的Bug [详情](https://ask.dcloud.net.cn/question/96914)
@@ -2048,7 +2048,7 @@
 
 #### 2.6.6.20200320-alpha
 * 【uni-app】
-  + 优化 静态资源引入方式 [详情](https://uniapp.dcloud.io/frame?id=resource)
+  + 优化 静态资源引入方式 [详情](https://uniapp.dcloud.io/tutorial/page-static-assets)
   + 修复 内联 wxs 里包含“!”符号时报错的Bug [详情](https://ask.dcloud.net.cn/question/90581)
   + 修复 TypeScript 项目部分情况(存在 easycom 组件)，内置组件报未注册的Bug [#1400](https://github.com/dcloudio/uni-app/issues/1400)
   + 修复 uni.scss 内条件编译失效的Bug [详情](https://ask.dcloud.net.cn/question/90454)

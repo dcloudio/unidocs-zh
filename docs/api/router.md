@@ -43,7 +43,7 @@ export default {
 }
 ```
 
-```
+```js
 // 在起始页面跳转到test.vue页面，并监听test.vue发送过来的事件数据
 uni.navigateTo({
   url: 'pages/test?id=1',

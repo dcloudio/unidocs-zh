@@ -8,7 +8,7 @@
 
 1. 如要使用这些常用变量，需要在 HBuilderX 里面安装 scss 插件；
 2. 使用时需要在 style 节点上加上 ``lang="scss"``。
-```
+```html
 <style lang="scss">
 </style>
 ```
@@ -16,7 +16,7 @@
 
 **以下是 uni.scss 的相关变量：**
 
-```
+```css
 /* 颜色变量 */
 
 /* 行为相关颜色 */

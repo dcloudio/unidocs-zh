@@ -89,9 +89,15 @@ uni-ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别�
 
 ```
 
+### 通过  `uni_modules` 导入全部组件
+如果想一次把所有uni-ui组件导入到项目中，只需要导入一个 `uni-ui` 组件即可 [点击去导入](https://ext.dcloud.net.cn/plugin?id=55)。
 
-### npm安装 (不推荐)
-在 `vue-cli` 项目中可以使用 `npm` 安装 `uni-ui` 库 ，或者直接在 `HBuilderX` 项目中使用 `npm` 。（不推荐后一种方式）
+如果没有自动导入其他组件，可以在 uni-ui 组件目录上右键选择 `安装三方插件依赖` 即可。
+
+
+
+### npm安装 
+在 `vue-cli` 项目中可以使用 `npm` 安装 `uni-ui` 库 ，或者直接在 `HBuilderX` 项目中使用 `npm` 。
 
 > **注意**
 > cli 项目默认是不编译 `node_modules` 下的组件的，导致条件编译等功能失效 ，导致组件异常

@@ -162,7 +162,7 @@ export default {
       {
         let sideTop = this.navbarHeight - scrollTop
         sideTop <= this.subNavBarHeight && (sideTop = this.subNavBarHeight)
-        this.sideBar && (this.sideBar.style.top = `${sideTop}px`)
+        this.sideBar && (this.sideBar.style.top = `${sideTop + 1}px`)
       }
 
       if (scrollTop >= this.mainNavBarHeight) {
@@ -195,7 +195,7 @@ export default {
         if(!os.pc) return
         this.navbarHeight = this.navbar.clientHeight
         this.subNavBarHeight = this.subNavBar.clientHeight
-        this.sideBar.style.top = `${this.navbarHeight}px`
+        this.sideBar.style.top = `${this.navbarHeight + 1}px`
       })
     }
   }

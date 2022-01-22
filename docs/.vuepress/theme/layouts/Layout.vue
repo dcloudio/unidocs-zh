@@ -38,6 +38,7 @@
       </template>
       <template #bottom>
         <slot name="page-bottom" />
+        <Footer />
       </template>
     </Page>
   </div>
@@ -48,6 +49,7 @@ import Home from '@theme/components/Home.vue'
 import Navbar from '@theme/components/Navbar.vue'
 import Page from '@theme/components/Page.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
+import Footer from '@theme/components/Footer.vue';
 import { resolveSidebarItems, forbidScroll } from '../util'
 import navProvider from '../mixin/navProvider';
 
@@ -58,7 +60,8 @@ export default {
     Home,
     Page,
     Sidebar,
-    Navbar
+    Navbar,
+    Footer
   },
   data () {
     return {

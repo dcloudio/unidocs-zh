@@ -1,0 +1,211 @@
+$w3cColor = #007aff
+$html5Color = #fb6f18
+
+.footNav
+	width 90%
+	display flex
+	justify-content center
+
+/* 通用底部导航栏---公共 */
+#footNavBox
+	width 100%
+	margin-top 30px
+	padding-bottom 30px
+	display flex
+	flex-direction column
+	flex-wrap wrap
+	justify-content center
+	align-items center
+	background #fbfbfb
+	box-shadow #00000021 0px -20px 15px -15px
+
+	.w3c
+		text-decoration none
+		color $w3cColor !important
+		font-weight 800 !important
+
+	.html5
+		text-decoration none
+		color $html5Color !important
+		font-weight 800 !important
+
+	.hbLogo
+		display inline-block
+		width 160px
+		height 25px
+		margin-top 30px
+		background url('https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/d141de00-607f-11eb-8a36-ebb87efcf8c0.svg') no-repeat center
+
+	.beianBox
+		display flex
+		align-items center
+
+		.domainImgBox
+			display flex
+			flex-direction row
+			align-items center
+
+			.domainImg
+				width 20px
+				height 20px
+				margin-left 20px
+				margin-right 5px
+
+		.beian
+			font-size 14px
+			text-decoration none
+			color $w3cColor !important
+			cursor pointer
+
+			&:hover
+				color #333333 !important
+				transition all 0.3s
+
+	.footNavItem
+		display flex
+		flex-direction column
+		align-items flex-start
+		margin 20px 50px 0 0
+
+	.navLine
+		width 100%
+		height 1px
+		background #e1e1e1
+		margin-bottom 15px
+
+	.navItemTitle
+		display flex
+		width 100px
+		height 35px
+		line-height 35px
+		font-size 16px
+		font-weight bold
+		font-family SourceHanSansCN-Regular serif
+		color #414141
+
+	.navItemDetail
+		display inline-block
+		cursor pointer
+		text-decoration none
+		color #3c3c3c !important
+		text-align left
+		margin-bottom 12px
+		font-size 14px
+		/* font-family CambayDevanagari arial,sans-serif */
+		font-family SourceHanSansCN-Regular serif
+		font-weight 400
+		line-height 22px
+
+	.navItemDetail:hover
+		color $accentColor !important
+		transition all 0.2s
+
+	.companyBox
+		display flex
+		justify-content center
+		margin 20px 0 20px 0
+
+	.companyInfo, .anbaoInfo
+		font-size 14px
+		color #565656 !important
+		font-family SourceHanSansCN-Regular serif
+
+	.navItemDetailBox
+		width 100%
+		display flex
+		flex-direction column
+		flex-wrap wrap
+
+#aboutusBox
+	display flex
+	flex-direction column
+	flex-wrap wrap
+
+@media screen and (max-width $MQMobile)
+	#footNavBox
+		#footNavClassify
+			width 20%
+
+		#aboutusBox
+			width 70%
+
+			.footNavItem
+				margin-right 20px
+
+@media screen and (max-width 880px)
+	#footNavBox
+		.companyBox
+			height 50px
+			flex-direction column
+			justify-content space-around
+
+		.footNav
+			#aboutusBox
+				height 655px !important
+
+@media screen and (max-width 1150px)
+	#footNavBox
+		.beianBox
+			height 80px
+			flex-direction column
+			justify-content space-around
+
+/* 通用底部导航栏---移动端 */
+@media screen and (max-width 1050px)
+	#footNavBox
+		.footNav
+			justify-content flex-start
+
+			#footNavClassify
+				width 30%
+
+			#aboutusBox
+				height 555px
+
+				.footNavItem
+					max-width 100px
+
+				margin-right 10px
+
+@media screen and (max-width 1400px)
+	#footNavBox
+		#footNavClassify
+			width 20%
+
+			.footNavItem
+				min-width 150px
+
+			.navItemDetailBox
+				height 550px
+
+			.navItemDetail
+				margin-right 0px
+
+		#aboutusBox
+			height 420px
+
+		.footNavItem
+			margin-right 20px
+
+@media screen and (min-width $MQMobile)
+	#footNavClassify
+		width 30%
+
+		.footNavItem
+			min-width 290px
+
+		.navItemDetailBox
+			height 300px
+			display flex
+			justify-content center
+			flex-direction column
+
+			.navItemDetail
+				margin-right 70px
+
+	#aboutusBox
+		width 70%
+		height 400px
+
+		.footNavItem:last-child
+			margin-right 0

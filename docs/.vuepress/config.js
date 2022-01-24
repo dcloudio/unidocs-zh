@@ -25,7 +25,7 @@ const config = {
     prevLinks: false,
     // TODO use theme
     repo: 'dcloudio/uni-app',
-    docsRepo: 'dcloudio/unidocs-zh',
+    docsRepo: 'https://gitee.com/dcloud/unidocs-zh',
     docsBranch: 'vuepress',
     docsDir: 'docs',
     editLinks: true,

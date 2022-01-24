@@ -29,6 +29,29 @@
 </template>
 ```
 
+```html
+<script>
+export default {
+  data() {
+    return {
+        ...
+        items: ['选项1', '选项2', '选项3'],
+        current: 0
+    };
+  },
+  
+  methods: {
+    ...
+    onClickItem(e) {
+      if (this.current != e.currentIndex) {
+        this.current = e.currentIndex;
+      }
+    }
+  }
+};
+</script>
+```
+
 ## API
 
 ### SegmentedControl Props

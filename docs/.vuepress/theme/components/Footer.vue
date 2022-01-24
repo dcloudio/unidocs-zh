@@ -59,20 +59,22 @@
 				},
 				render: (h, { props }) => {
 					return props.list.map((footNavListItem, _index) =>
-						h('div', { class: 'footNavItem', key: footNavListItem.title || _index }, [
-							h('div', { class: 'navItemTitle' }, footNavListItem.title),
-							h('div', { class: 'navLine' }),
+						h('div', { staticClass: 'footNavItem', key: footNavListItem.title || _index }, [
+							h('div', { staticClass: 'navItemTitle' }, footNavListItem.title),
+							h('div', { staticClass: 'navLine' }),
 							h(
 								'div',
-								{ class: 'navItemDetailBox' },
+								{ staticClass: 'navItemDetailBox' },
 								footNavListItem.content.map((item, index) =>
 									h(
 										'a',
 										{
-											class: 'navItemDetail',
-											target: '_blank',
+											staticClass: 'navItemDetail',
 											key: item.url || index,
-											href: item.url,
+											attrs: {
+												target: '_blank',
+												href: item.url,
+											},
 										},
 										item.subTitle
 									)

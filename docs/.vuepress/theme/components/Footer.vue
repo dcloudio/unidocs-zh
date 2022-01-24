@@ -296,7 +296,6 @@
 						this.$refs.container.getBoundingClientRect().bottom;
 					if (bottom > 0) {
 						const preBottom = parseFloat(this.$refs.container.style.bottom);
-						console.log('🚀 ~ file: Footer.vue ~ line 296 ~ this.$nextTick ~ preBottom', preBottom);
 						this.$refs.container.style.position = 'relative';
 						this.$refs.container.style.bottom = `-${bottom}px`;
 					} else {

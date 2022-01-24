@@ -6,7 +6,6 @@ const createSidebar = require('./markdown/createSidebar')
 const tabs = ['/uniCloud/', '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/']
 
 const config = {
-  // base: '/docs/',
   // TODO use theme
   title: 'uni-app官网',
   head: [
@@ -73,11 +72,3 @@ const config = {
 }
 
 module.exports = config
-
-/**
- * 1. 路由映射：由于文档文件变动，将之前的链接重定向到新的链接
- * 2. 修复文档渲染错误的 Bug
- * 3. 搜索 配置更新
- * 4. 更新 slugify 配置规则
- * 5. 合并文档
- */

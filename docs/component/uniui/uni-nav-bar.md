@@ -110,6 +110,13 @@ Tips:
 |border|Boolean|true|导航栏下是否有边框|
 |height|Number/String|44|导航栏高度|
 |dark|Boolean|false|导航栏开启暗黑模式|
+|leftWidth|Number/String|120rpx|导航栏左侧插槽宽度|
+|rightWidth|Number/String|120rpx|导航栏右侧插槽宽度|
+
+**Tips**
+- `leftWidth` 和 `rightWidth` 如无必要不需要设置
+- `leftWidth` 和 `rightWidth` 如需设置 ，只有两个值相同，才能保证 `title` 居中 ，如设置值过大，需要注意到 `title` 被覆盖的可能
+
 
 ### NavBar Slots
 

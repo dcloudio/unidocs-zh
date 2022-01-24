@@ -3393,6 +3393,7 @@ let res = await db.collection('orders').aggregate()
 如需orders关联books，book再关联authors查询，可以在pipeline内再使用lookup
 
 ```js
+const dbCmd = db.command;
 const db = cloud.database()
 const $ = db.command.aggregate
 let res = await db.collection('orders').aggregate()
@@ -3403,7 +3404,7 @@ let res = await db.collection('orders').aggregate()
     },
     pipeline: $.pipeline()
       .match(
-        $.expr($.eq(['$_id', '$$book_id']))
+        dbCmd .expr($.eq(['$_id', '$$book_id']))
       )
       .lookup({
         from: 'authors',
@@ -3412,7 +3413,7 @@ let res = await db.collection('orders').aggregate()
         },
         pipeline: $.pipeline()
           .match(
-            $.expr($.eq(['$_id', '$$author_id']))
+            dbCmd .expr($.eq(['$_id', '$$author_id']))
           )
           .done(),
         as: 'authorList'

@@ -1,3 +1,11 @@
+#### 3.3.10.20220124
+* 【uni-app】
+  + 支付宝小程序平台 修复 触发自定义事件报错的Bug [详情](https://ask.dcloud.net.cn/question/138706)
+* 【uniCloud】
+  + 修复 3.3.9版本引发的 multiSend 报错的Bug [详情](https://ask.dcloud.net.cn/question/138783)
+* 【uni小程序SDK】
+  + iOS平台 修复 动态切换横竖屏导致页面布局异常的Bug
+
 #### 3.3.9.20220121
 * 【uni-app】
   + 优化 vue3 项目 vite.config.js 支持自定义 isCustomElement，isNativeTag  [详情](https://github.com/dcloudio/uni-app/issues/3133)

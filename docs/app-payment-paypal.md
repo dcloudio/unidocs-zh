@@ -11,13 +11,12 @@
 ### 配置  
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/paypal_setup_manifest_info.png)
-配置说明:returnURL必须为paypal开发者中心配置的returnURL，否则无法调起支付
 
 **参数说明**  
 - returnURL_android  
-Android平台使用的return URL，必须与paypal开发者中心配置的值一致
+Android平台使用的return URL，必须与paypal开发者中心配置的值一致，否则无法调起支付
 - returnURL_ios  
-iOS平台使用的return URL，必须与paypal开发者中心配置的值一致
+iOS平台使用的return URL，必须与paypal开发者中心配置的值一致，否则无法调起支付
 
 > 提示：returnURL_android 和 returnURL_ios 可以相同，不相同时需要paypal开发者中心添加多个return URL
 

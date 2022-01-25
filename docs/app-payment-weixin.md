@@ -108,13 +108,13 @@ plus.payment.getChannels(function(channels){
     }
     //发起支付
     plus.payment.request(wxpaySev, orderInfo, function(result) {
-         var rawdata = JSON.parse(result.rawdata);
-         console.log("支付成功");
+        var rawdata = JSON.parse(result.rawdata);
+        console.log("支付成功");
     }, function(e) {
-         console.log("支付失败：" + e.message);
+        console.log("支付失败：" + JSON.stringify(e));
     });
   }, function(e){
-      console.log("获取支付渠道失败：" + e.message);
+      console.log("获取支付渠道失败：" + JSON.stringify(e));
 });
 ```
 

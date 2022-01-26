@@ -32,7 +32,7 @@ iOS平台使用的return URL，必须与paypal开发者中心配置的值一致�
 - 5+ App项目  
 调用 [plus.payment.request(channel, orderInfo, successCB, errorCB)](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.request) 发起支付, channel参数为paypal支付对象，orderInfo参数为订单对象
 
-##### 订单对象参数说明  
+#### 订单对象参数说明  
 Object对象类型
 
 | 属性 | 类型 | 必填 | 说明 |

@@ -21,11 +21,11 @@ iOS平台使用的return URL，必须与paypal开发者中心配置的值一致�
 > 提示：returnURL_android 和 returnURL_ios 可以相同，不相同时需要paypal开发者中心添加多个return URL
 
 
-#### 服务器生成订单
+### 服务器生成订单
 在 App 端调用支付前，需在业务服务器生成支付订单并获取`orderId`，详情可参考paypal官方文档：[Create Order](https://developer.paypal.com/api/orders/v2/#orders_create)
 
 
-#### 应用内发起支付
+### 应用内发起支付
 
 - uni-app项目  
 调用 [uni.requestPayment(OBJECT)](https://uniapp.dcloud.io/api/plugins/payment?id=requestpayment) 发起支付，OBJECT参数中provider属性值固定为`paypal`、orderInfo属性值为订单对象

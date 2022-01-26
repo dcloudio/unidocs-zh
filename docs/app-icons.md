@@ -118,5 +118,5 @@ iOS系统会缓存应用图标，需要重启手机新图标才能生效
 ERROR ITMS-90717: "Invalid App Store Icon. The App Store Icon in the asset catalog in 'HBuilder.app' can't be transparent nor contain an alpha channel."
 ```
 **解决方案**  
-生成png图标文件时去掉alpha通道，重新提价云端打包
+生成png图标文件时去掉alpha通道，重新提交云端打包
 

@@ -105,7 +105,7 @@ Tips：钉钉小程序编译目录依然是`mp-alipay`，需通过支付宝开�
     "scripts": {
         "h5-weixin": { 
             "title":"微信服务号",
-            "browser":"Chrome",  
+            "browser":"chrome",  
             "env": {
                 "UNI_PLATFORM": "h5"  
              },

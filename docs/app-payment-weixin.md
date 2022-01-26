@@ -11,13 +11,15 @@
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“微信支付”项
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/wxpay_setup_manifest_info.png)
 
-**参数说明**  
+#### 参数说明  
 - appid  
 微信开放平台申请的应用ID（AppID）
 - iOS平台通用链接（Universal Link）  
 在iOS平台微信支付使用的通用链接，必须与微信开放平台 “管理中心” > “应用详情” > “开发信息” 中的“Universal Links”项中配置一致，更多详情参考 [一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links)
 
-> 需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)；本地离线打包参考[Android平台微信支付模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/pay?id=%e5%be%ae%e4%bf%a1%e6%94%af%e4%bb%98)、[iOS平台微信支付模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/pay?id=%e5%be%ae%e4%bf%a1%e6%94%af%e4%bb%98)
+**注意**  
+- 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
+- 本地离线打包参考[Android平台微信支付模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/pay?id=%e5%be%ae%e4%bf%a1%e6%94%af%e4%bb%98)、[iOS平台微信支付模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/pay?id=%e5%be%ae%e4%bf%a1%e6%94%af%e4%bb%98)
 
 
 ### 服务器生成订单
@@ -35,7 +37,7 @@
 调用 [plus.payment.request(channel, orderInfo, successCB, errorCB)](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.request) 发起支付, channel参数为微信支付对象，orderInfo参数为订单对象
 
 
-##### 订单对象参数说明  
+#### 订单对象参数说明  
 Object对象类型
 
 | 属性 | 类型 | 必填 | 说明 |

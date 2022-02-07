@@ -1,4 +1,4 @@
-打开项目的manifest.json文件，在“App图标配置”中可以设置App的桌面图标，推荐使用“自动生成图标”功能：
+HBuilderX中打开项目的manifest.json文件，在“App图标配置”中可以设置App的桌面图标，推荐使用“自动生成图标”功能：
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/icons/auto.png)
 
 如果不使用自动生成图标方式，可按下面文档分别配置Android和iOS平台的图标。
@@ -68,21 +68,21 @@
 |:-|:-|:-|
 |iphone|对象，参考[iPhone图标源码参数](#iphone)|iPhone设备程序图标
 |ipad|对象，参考[iPad图标源码参数](#ipad)|iPad设备程序图标|
-|appstore|String|720P高分屏设备程序图标路径，分辨率要求1024x1024|
+|appstore|String|App Store图标路径，分辨率要求1024x1024|
 
 <a id="iphone"/>
 iPhone图标源码参数
 
 |属性名称|类型|说明|
 |:-|:-|:-|
-|app@2x|String|iPhone4S/5/6/7/8设备程序主图标，分辨率要求120x120|
-|app@3x|String|iPhone6plus/7plus/8plus/X设备程序主图标，分辨率要求180x180|
-|spotlight@2x|String|iPhone5/6/7/8设备Spotlight搜索图标，分辨率要求80x80|
-|spotlight@3x|String|iPhone6plus/7plus/8plus/X设备Spotlight搜索图标，分辨率要求120x120|
-|settings@2x|String|iPhone5/6/7/8设备Settings设置图标，分辨率要求58x58|
-|settings@3x|String|iPhone6plus/7plus/8plus/X设备Settings设置图标，分辨率要求87x87|
-|notification@2x|String|iPhone5/6/7/8设备通知栏图标，分辨率要求40x40|
-|notification@3x|String|iPhone6plus/7plus/8plus/X设备通知栏图标，分辨率要求60x60|
+|app@2x|String|iOS7+设备程序主图标，分辨率要求120x120|
+|app@3x|String|iOS7+设备程序主图标，分辨率要求180x180|
+|spotlight@2x|String|iOS7+设备Spotlight搜索图标，分辨率要求80x80|
+|spotlight@3x|String|iOS7+设备Spotlight搜索图标，分辨率要求120x120|
+|settings@2x|String|iOS7+设备Settings设置图标，分辨率要求58x58|
+|settings@3x|String|iOS7+设备Settings设置图标，分辨率要求87x87|
+|notification@2x|String|iOS7+设备通知栏图标，分辨率要求40x40|
+|notification@3x|String|iOS7+设备通知栏图标，分辨率要求60x60|
                     
 <a id="ipad"/>
 iPad图标源码参数
@@ -91,7 +91,7 @@ iPad图标源码参数
 |:-|:-|:-|
 |app|String|iOS7+设备程序主图标，分辨率要求76x76|
 |app@2x|String|iOS7+高分屏设备程序主图标，分辨率要求152x152|
-|proapp@2x|String|iPad Pro设备程序主图标，分辨率要求167x167|
+|proapp@2x|String|iOS9+ iPad Pro(12.9英寸)设备程序主图标，分辨率要求167x167|
 |spotlight|String|iOS7+设备Spotlight搜索图标，分辨率要求40x40|
 |spotlight@2x|String|iOS7+高分屏设备Spotlight搜索图标，分辨率要求80x80|
 |settings|String|iOS5+设备Settings设置图标，分辨率要求29x29|

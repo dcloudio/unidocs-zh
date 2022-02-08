@@ -308,7 +308,7 @@ db.collection('user').where({
 }
 ```
 
-使用jql查询语法时，可以直接使用`student=='wang'`作为查询条件来查询students内包含wang的记录。
+使用jql查询语法时，可以直接使用`students=='wang'`作为查询条件来查询students内包含wang的记录。
 
 ### 使用正则查询@regexp
 

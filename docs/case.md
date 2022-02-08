@@ -273,7 +273,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目，
 
 **极米：** [极米官方app](https://sj.qq.com/myapp/detail.htm?apkName=com.xgimi.zhushou&info=FB45015C23ACF368D22855D6C4964312)、[官网H5版](https://m.xgimi.com/)、微信小程序搜索“极米官方商城”、微信小程序搜索“极米care+”售后服务宣传
 
-**货拉拉：** App部分栏目使用uni小程序sdk。
+**货拉拉：** App部分栏目使用[uni小程序SDK](https://nativesupport.dcloud.net.cn)。
 
 **叮咚买菜：** 微信小程序搜索 “叮咚买菜”、[公众号H5](http://wx.m.ddxq.mobi/#/)
 
@@ -289,6 +289,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目，
 
 **快递100：** 微信、百度、头条、QQ小程序搜索“快递100”
 
+**海康威视：** 海康互联App使用[uni小程序SDK](https://nativesupport.dcloud.net.cn)。[App下载](https://www.me-app.net/Sentinels)
 
 <!-- **达内在线：** 达内教育的在线培训App。[App官网下载](http://www.tmooc.cn/app/index.shtml) -->
 

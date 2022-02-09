@@ -13,12 +13,13 @@ uni-app 通过在`package.json`文件中增加`uni-app`扩展节点，可实现�
 注意只能扩展web和小程序平台，不能扩展app打包。并且扩展小程序平台时只能基于指定的基准平台扩展子平台，不能扩展基准平台。基准平台详见下文。
 
 
-package.json扩展配置用法（拷贝代码记得去掉注释！）：
+package.json扩展配置用法：
 
 ```json
 {
     /**
-     package.json其它原有配置 
+     * package.json其它原有配置 
+     * 拷贝代码后请去掉注释！
      */
     "uni-app": {// 扩展配置
         "scripts": {

@@ -1,21 +1,88 @@
 
 ## 简介@intro
 
-云函数是运行在云端的 `JavaScript` 代码，和普通的`Node.js`开发一样，熟悉`Node.js`的开发者可以直接上手。
+云函数是运行在云端的 `JavaScript` 代码，是基于 `Node.js` 的扩展。
 
-如下是将传入的两个参数求和并返回客户端的云函数代码示例：
+在常规的 `Node API` 基础上，uniCloud的云函数环境内置了`uniCloud`对象，这个对象内置了网络、数据库等各种API。开发者未学习过 `Node.js` 也没有关系，只需要看uniCloud的文档，掌握这个`uniCloud`对象的API即可。
 
+每个云函数是一个js包，在云函数被调用时，由serverless调度系统分配硬件资源启动一个node环境来运行这个云函数。
+
+在HBuilderX中可以新建云函数。
+![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/a18b3bb0-53d8-11eb-8ff1-d5dcf8779628.jpg)
+
+新建的云函数是一个目录，其中有`index.js`入口文件。
+
+一个最简单的云函数只需要这个`index.js`文件，在里面编写代码即可。
+
+云函数的配置文件和npm规范相同，在云函数目录下可新建一个package.json来存放配置。uniCloud云函数扩展了package.json，增加了一些特有的配置项。[详见](/uniCloud/cf-functions?id=packagejson)
+
+
+**注意事项**
+- 不同项目使用同一个服务空间时，不可使用同名云函数，可以在uniCloud的web控制台手动删除重名云函数释放函数名。
+- 在HBuilderX创建云函数时，如果新云函数与服务器上已存在同名云函数，会用新函数覆盖。
+- 单个云函数大小限制为10M（包含node_modules）
+- 云函数内使用commonjs规范，不可使用import、export，参考：[commonjs模块](http://nodejs.cn/api/modules.html#modules_modules_commonjs_modules)
+- 服务商为阿里云时，暂不可使用相对路径读取文件（比如`fs.readFileSync('./info.txt')`），可以使用绝对路径`fs.readFileSync(path.resolve(__dirname,'./info.txt'))`
+
+
+## 云函数的分类
+
+云函数有若干子概念，包括 普通云函数、公共模块、clientDB的action云函数、uniCloud扩展库。
+
+HBuilderX中uniCloud项目的云函数均为项目的uniCloud/cloudfunctions目录下，目录结构如下：
+
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+|——— cloudfunctions               云函数目录
+|   │───common                    云函数公用模块目录 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/cf-common">详情</a>
+|   |   └──hello-common           云函数公用模块
+|   |      │──index.js            公用模块代码
+|   |      └──package.json        公用模块package.json
+|   │───uni-clientDB-actions
+|   │      └──new_action.js       clientDB action代码 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=action">详情</a>
+|   └───function-name             云函数目录
+|         │──index.js             云函数代码
+|         └──package.json         包含云函数的配置信息，如url化、定时设置、内存等内容 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=packagejson">详情</a>
+	</code>
+</pre>
+
+- 公共模块用于不同的云函数抽取和共享相同代码，详见[公共模块文档](/uniCloud/cf-functions?id=公共模块)
+- action云函数是为了弥补客户端直接操作数据库的局限而设计的，详见[clientDB action文档](/uniCloud/clientdb?id=action)
+- uniCloud扩展库是为了裁剪和控制云函数体积而设计的，详见[uniCloud扩展库](/uniCloud/cf-functions?id=扩展库)
+
+## 云函数的入参和返回值
+
+### 入参
+
+客户端请求云函数时，云函数通过入参接受客户端数据，通过头信息上下文获取客户端信息，经过业务逻辑处理后给客户端返回结果。
+
+假使客户端代码调用云函数，并传递了{a:1,b:2}的数据，
 ```js
+// 客户端调用云函数并传递参数
+uniCloud.callFunction({
+    name: 'test',
+    data: {a:1,b:2}
+  })
+  .then(res => {});
+```
+
+那么云函数侧的代码如下，将传入的两个参数求和并返回客户端：
+```js
+// 云函数index.js入口文件代码
 'use strict';
 exports.main = async (event, context) => {
 	//event为客户端上传的参数
 	return {
-    sum:event.a + event.b
-  }
+		sum:event.a + event.b
+	} // 通过return返回结果给客户端
 }
 ```
 
-云函数的传入参数有两个，一个是`event`对象，一个是`context`对象。`event`指的是触发云函数的事件，当客户端调用云函数时，`event`就是客户端调用云函数时传入的参数。`context` 对象包含了此处调用的调用信息和运行状态，可以用它来了解服务运行的情况。`uniCloud`会自动将客户端的操作系统（`os`）、运行平台（`platform`）、应用信息（`appid`）等注入`context`中，开发者可通过`context`获取每次调用的上下文，如下是一个示例：
+云函数的传入参数有两个，一个是`event`对象，一个是`context`对象。
+- `event`指的是触发云函数的事件，当客户端调用云函数时，`event`就是客户端调用云函数时传入的参数。
+- `context` 对象包含了此处调用的调用信息和运行状态，可以用它来了解服务运行的情况。`uniCloud`会自动将客户端的操作系统（`os`）、运行平台（`platform`）、应用信息（`appid`）等注入`context`中，开发者可通过`context`获取每次调用的上下文。
+
+如下是一个示例：
 
 ```js
 'use strict';
@@ -35,46 +102,10 @@ exports.main = async (event, context) => {
 }
 ```
 
-云函数url化的场景下无法获取`context.OS`、`context.PLATFORM`、`context.APPID`、`context.CLIENTUUID`
-
->在云函数URL化的场景无法获取客户端平台信息，可以在调用依赖客户端平台的接口接口之前（推荐在云函数入口）通过修改context.PLATFORM手动传入客户端平台信息供其他插件（如：uni-id）使用
-
-例：
-
-```js
-exports.main = async (event, context) => {
-	context.PLATFORM = 'app-plus'
-}
-```
-
-云函数中如果要使用其他服务（比如mysql数据库、redis等），可以按照nodejs的写法即可。但注意这些非uniCloud数据库和云函数运行环境不在一起，访问速度受影响。
-
-**注意事项**
-
-- 服务商为阿里云时，暂不可使用相对路径读取文件（比如`fs.readFileSync('./info.txt')`），可以使用绝对路径`fs.readFileSync(path.resolve(__dirname,'./info.txt'))`
-- event大小不可超过100kb
-
-## API列表
-
-云函数支持nodejs和js的标准API，但除了标准API外，uniCloud扩展了一批新API，实际开发中更常用的是uniCloud的扩展API。见下：
-
-|API						|描述																					|
-|--							|--																						|
-|uniCloud.callFunction()	|客户端调用云函数 [见下](uniCloud/cf-functions?id=clientcallfunction)；云函数中调用另一个云函数 [见下](uniCloud/cf-functions?id=callbyfunction)				|
-|uniCloud.database()		|云数据库对象 [详情](uniCloud/cf-database.md)											|
-|uniCloud.uploadFile()		|云函数上传文件到云存储 [详情](uniCloud/storage?id=clouduploadfile)							|
-|uniCloud.downloadFile()	|云函数下载云存储的文件到云函数运行环境 [详情](uniCloud/storage?id=clouddownloadfile)	|
-|uniCloud.deleteFile()		|云函数删除云存储的文件 [详情](uniCloud/storage?id=clouddeletefile)							|
-|uniCloud.getTempFileURL()	|获取云存储文件的临时路径 [详情](uniCloud/storage?id=cloudgettempfileurl)					|
-|uniCloud.httpclient		|云函数中通过http连接其他系统 [见下](uniCloud/cf-functions?id=httpclient)				|
-|uniCloud.logger			|云函数中打印日志到uniCloud日志记录系统（非HBuilderX控制台）[详情](uniCloud/cf-logger)	|
-|uniCloud.sendSms()			|发送短信 [详见](uniCloud/send-sms.md)													|
-
-## 特殊属性
 
 **注意：下面所有的“客户端”均是相对于云函数而言，如果你使用自己的服务器调用云函数此时客户端是指你的服务器**
 
-### 获取客户端IP@clientip
+#### 获取客户端IP@clientip
 
 ```js
 'use strict';
@@ -83,7 +114,7 @@ exports.main = async (event, context) => {
 }
 ```
 
-### 获取客户端user-agent@client-user-agent
+#### 获取客户端user-agent@client-user-agent
 
 ```js
 'use strict';
@@ -92,7 +123,7 @@ exports.main = async (event, context) => {
 }
 ```
 
-### 获取服务空间信息@context-space-info
+#### 获取服务空间信息@context-space-info
 
 ```js
 'use strict';
@@ -101,7 +132,7 @@ exports.main = async (event, context) => {
 }
 ```
 
-### 获取云函数调用来源@context-source
+#### 获取云函数调用来源@context-source
 
 ```js
 'use strict';
@@ -115,9 +146,8 @@ exports.main = async (event, context) => {
 }
 ```
 
-### 其他客户端信息@client-info
+#### 其他客户端信息@client-info
 
-**注意：**
 - 以下四个属性只有使用uni-app以callFunction方式调用才能获取，由客户端传递到云函数
 - 实际业务中务必验证一下前端传来的数据的合法性
 
@@ -131,13 +161,114 @@ exports.main = async (event, context) => {
 }
 ```
 
+
+**注意事项**
+- event大小不可超过100kb
+- 云函数url化的场景下无法获取`context.OS`、`context.PLATFORM`、`context.APPID`、`context.CLIENTUUID`
+
+>在云函数URL化的场景无法获取客户端平台信息，可以在调用依赖客户端平台的接口接口之前（推荐在云函数入口）通过修改context.PLATFORM手动传入客户端平台信息供其他插件（如：uni-id）使用
+
+例：
+
+```js
+exports.main = async (event, context) => {
+	context.PLATFORM = 'app-plus'
+}
+```
+
+### 返回格式-uniCloud响应体规范@resformat
+
+云函数对返回结果没有强制约定，一般返回格式为json格式。
+
+但为了方便拦截器统一处理返回值，捕获异常或弹框提示，uniCloud定义了`uniCloud响应体规范`，推荐开发者使用。
+
+`uniCloud响应体规范`（uniCloud response format），是DCloud制定的、服务器给客户端返回json数据的一种建议格式。后续uni-id、uni-pay、clientDB等均会调整为此结构
+
+**由来**
+
+uniCloud服务器给客户端返回的数据格式是json，但json的格式具体是什么没有约定。比如返回错误码，是叫code还是叫errCode？错误内容是message还是errMsg？内容的国际化如何处理？
+
+如果没有一套统一的格式，在客户端将无法编写有效的网络拦截器，无法统一处理错误。
+
+同时如果不同的插件，云端返回的数据格式千差万别，那使用者整合这些插件也会非常麻烦。国际化更无法落地。
+
+为此DCloud推出了`uniCloud响应体规范`。
+
+为尽可能的与uni-app前端的API错误回调风格接近，uniCloud响应体规范定义的云端返回信息内应包含`errCode`和`errMsg`，示例如下
+
+```js
+// 失败返回值
+{
+  errCode: 'uni-id-account-banned',
+  errMsg: '账号被禁用'
+}
+
+// 成功返回值
+{
+  errCode: 0,
+  errMsg: '登录成功',
+  uid: 'xxx' // 其他信息
+}
+```
+
+- errCode
+
+errCode在成功时应返回数字`0`,失败时应返回一个以插件id开头的“字符串”，每个单词以连字符（`-`）分割。做出这样的规定是为了防止不同插件之间出现重复错误码
+
+以`'uni-id-account-banned'`错误码为例，`uni-id`为插件id，`account-banned`为错误缩写。
+
+如果业务开发的代码并不发布插件市场，那么为了避免下载了一个市场的插件产生冲突，推荐使用不包含“-”的字符串来做errCode（插件市场的所有插件ID必须包含“-”）。
+
+后续uniCloud会提供自动根据errCode对errMsg进行国际化处理的功能，开发者仅需保证云函数返回值满足`uniCloud响应体规范`即可。
+
+- errMsg
+
+errMsg用于存放具体错误信息，包括展示给开发者、终端用户的错误信息
+
+<!-- 占位变量格式说明：
+支持情况
+1. 从xx版本开始，clientDB遵循该格式
+2. 推荐开发者的云函数在返回json数据给客户端时也遵循这种格式。
+3. uniCloud客户端sdk后续会提供callFunction及数据库操作的拦截器，开发者可以在拦截器内对特定的错误码进行处理。例如：在收到token过期的错误码时进行提示并跳转到登录页面
+4. uniCloud admin和uni-starter等插件内置的网络拦截器也均将支持该格式。
+
+历史兼容说明： -->
+
+云函数中如果要使用其他服务（比如mysql数据库、redis等），可以按照nodejs的写法即可。但注意这些非uniCloud数据库和云函数运行环境不在一起，访问速度受影响。
+
+
+
+云函数启动后环境会保留一段时间（如15分钟），超过保留期后若该云函数一直没有被再调用，那这个环境会被释放。
+
+所以云函数有冷启动的概念，由于js环境的启动要比php和java更快，所以js适合serverless方式。
+
+
+
+
+## uniCloud API列表
+
+云函数支持js和nodejs的标准API，但除了标准API外，uniCloud扩展了一批新API，实际开发中更常用的是uniCloud的扩展API。见下：
+
+|API						|描述																					|
+|--							|--																						|
+|uniCloud.callFunction()	|客户端调用云函数 [见下](uniCloud/cf-functions?id=clientcallfunction)；云函数中调用另一个云函数 [见下](uniCloud/cf-functions?id=callbyfunction)				|
+|uniCloud.database()		|云数据库对象 [详情](uniCloud/cf-database.md)											|
+|uniCloud.uploadFile()		|云函数上传文件到云存储 [详情](uniCloud/storage?id=clouduploadfile)							|
+|uniCloud.downloadFile()	|云函数下载云存储的文件到云函数运行环境 [详情](uniCloud/storage?id=clouddownloadfile)	|
+|uniCloud.deleteFile()		|云函数删除云存储的文件 [详情](uniCloud/storage?id=clouddeletefile)							|
+|uniCloud.getTempFileURL()	|获取云存储文件的临时路径 [详情](uniCloud/storage?id=cloudgettempfileurl)					|
+|uniCloud.httpclient		|云函数中通过http连接其他系统 [见下](uniCloud/cf-functions?id=httpclient)				|
+|uniCloud.logger			|云函数中打印日志到uniCloud日志记录系统（非HBuilderX控制台）[详情](uniCloud/cf-logger)	|
+|uniCloud.sendSms()			|发送短信 [详见](uniCloud/send-sms.md)													|
+
+
 ## 访问数据库
 
-云函数中支持访问本服务空间下的数据库，调用方式详见[规范](uniCloud/cf-database.md)
+云函数中支持访问本服务空间下的、或经授权的其他服务空间下的，数据库，调用方式详见[规范](uniCloud/cf-database.md)
 
-## 访问HTTP服务@httpclient
+## 访问其他HTTP服务@httpclient
 
-`uniCloud`提供了`uniCloud.httpclient`供开发者使用。无需额外依赖，就可以请求任何 HTTP 和 HTTPS 协议的 Web 服务。`uniCloud.httpclient`返回的是一个[urllib实例](https://github.com/node-modules/urllib)。
+云函数中如需要请求其他http服务，则使用`uniCloud.httpclient`。无需额外依赖，就可以请求任何 HTTP 和 HTTPS 协议的 Web 服务。`uniCloud.httpclient`返回的是一个[urllib实例](https://github.com/node-modules/urllib)。
 
 **uniCloud.httpclient.request(URL,requestOptions)**
 
@@ -262,12 +393,15 @@ Tips:
 
 ## 扩展库
 
-uniCloud内置了一些扩展库，但是为了减小云函数体积，并不会对所有云函数默认开启。如需使用需要在云函数的package.json内的extensions字段下配置。
+uniCloud的api中，有些api对应的实现，其源码体积较大，且这些功能并不是每一个云函数都会使用。为了方面开发者控制云函数的体积，设计了`uniCloud扩展库`的概念。
+
+开发者可以在云函数目录下的package.json内的extensions字段下配置这个云函数引用哪些扩展库。未引用扩展库的，使用uniCloud相应api时会报错。
+
 
 **目前支持的扩展库有以下几个**
 
-<!-- - 用于在云函数内使用JQL语法操作数据库的JQL扩展库[uni-cloud-jql]，参考：[JQL扩展库](uniCloud/jql-cloud.md) -->
-- 用于在云函数内使用redis的redis扩展库[uni-cloud-redis]，参考：[redis扩展库](uniCloud/redis.md)
+- JQL扩展库[uni-cloud-jql]：用于在云函数内使用JQL语法操作数据库，详见：[JQL扩展库](uniCloud/jql-cloud.md)
+- redis扩展库[uni-cloud-redis]：用于在云函数内使用redis，详见：[redis扩展库](uniCloud/redis.md)
 
 以下是一个开启了Redis扩展库的云函数package.json示例，注意此文件不支持注释，下方示例中的注释仅为演示
 
@@ -285,7 +419,7 @@ uniCloud内置了一些扩展库，但是为了减小云函数体积，并不会
 
 ## 客户端调用云函数@clientcallfunction
 
-如需通过url访问云函数请参考：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
+如需通过url访问云函数请参考：[云函数URL化](/uniCloud/http)
 
 前端代码（H5前端、App、小程序），不再执行uni.request联网，而是通过`uniCloud.callFunction`调用云函数，`callFunction`定义如下：
 

@@ -4,7 +4,7 @@
 
 每个服务空间都有一个全局唯一的space ID。
 
-- 在 HBuilderX 中管理服务空间，包括新建服务空间和关联服务空间
+- 通过 HBuilderX 中管理服务空间，包括新建服务空间和关联服务空间
 
 在 `uniCloud` 目录右键菜单中创建服务空间
 
@@ -14,7 +14,7 @@
 
 创建服务空间后，在同样的 `uniCloud` 目录右键菜单中关联该服务空间。只有项目关联好服务空间后，才能上传云函数、操作服务空间下的数据库、存储等资源。
 
-- 在uniCloud的web控制台[https://unicloud.dcloud.net.cn](https://unicloud.dcloud.net.cn) 管理服务空间。
+- 通过uniCloud的web控制台[https://unicloud.dcloud.net.cn](https://unicloud.dcloud.net.cn) 管理服务空间。
 
 web控制台可以新建、删除服务空间，管理线上的服务空间资源。
 

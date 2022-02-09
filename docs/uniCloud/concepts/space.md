@@ -68,7 +68,7 @@ web控制台可以新建、删除服务空间，管理线上的服务空间资�
 
 若应用仅连接一个服务空间，在HBuilderX中做好服务空间关联即可。开发者无需手动做初始化工作（可理解为类调用）。
 
-```
+```javascript
 //项目仅连接了一个服务空间，则无需初始化
 //可通过uniCloud直接调用云开发的API
 uniCloud.callFunction()
@@ -82,7 +82,7 @@ uniCloud.uploadFile()
 
 `uniCloud.init`方法定义如下：
 
-```
+```javascript
 function init(options):uniCloud
 ```
 

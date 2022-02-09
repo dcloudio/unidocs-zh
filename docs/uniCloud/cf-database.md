@@ -1996,7 +1996,10 @@ exports.main = async (event) => {
 db.collection('scores').aggregate()
 ```
 
-**注意：聚合操作实例仅用于查询，不可执行增删改操作。在聚合操作实例上只能使用聚合操作方法，不能使用where/orderBy等基础方法，where需改为match，orderBy应使用sort实现，细节请阅读下方聚合操作文档。**
+**注意：**
+
+- 聚合操作实例仅用于查询，不可执行增删改操作。在聚合操作实例上只能使用聚合操作方法，不能使用where/orderBy等基础方法，where需改为match，orderBy应使用sort实现，细节请阅读下方聚合操作文档。
+- 聚合操作在大数据量下性能不如简单查询，请根据自身业务选择合适的用法
 
 云函数中使用时切勿复用aggregate实例，容易引发Bug。
 

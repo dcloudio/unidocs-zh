@@ -285,7 +285,7 @@ db.collection('user').where({
 |DUPLICATE_KEY									|索引冲突																|
 |SYSTEM_ERROR										|系统错误																|
 
-如需自定义返回的err对象，可以在clientDB中挂一个[action云函数](uniCloud/database?id=action)，在action云函数的`after`内用js修改返回结果，传入`after`内的result不带code和message。
+如需自定义返回的err对象，可以在clientDB中挂一个[action云函数](#action)，在action云函数的`after`内用js修改返回结果，传入`after`内的result不带code和message。
 
 ## 查询数据@query
 

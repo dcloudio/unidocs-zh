@@ -104,25 +104,39 @@ exports.main = async (event, context) => {
 };
 ```
 
-**获取其他服务空间的数据库实例**
+## 获取其他服务空间数据库实例@init-db
 
-> 仅腾讯云在云函数内可用
-
-接口形式：`uniCloud.database(Object DBOptions)`
-
-**DBOptions参数说明**
-
-|字段	|类型	|必填	|描述						|平台差异说明	|
-|:-:	|:-:	|:-:	|:-:						|:-:			|
-|spaceId|String	|否		|同一账号下的服务空间ID	|仅腾讯云支持	|
+如果当前应用仅使用一个服务空间，在HBuilderX中做好服务空间关联即可。获取当前空间的数据库实例时无需传递配置，直接调用database方法即可
 
 ```js
-// 如果ID为tcb-space-demo的服务空间也在你的账号下，可以通过这种方式访问tcb-space-demo的数据库。调用此接口的服务空间和tcb-space-demo对应的服务空间均为腾讯云才可以正常使用
-const db = uniCloud.database({
-  spaceId: 'tcb-space-demo'
-});
+const db = uniCloud.database()
 ```
 
+如果应用有连接其他服务空间数据库的需求，可以在获取database实例时传递对应服务空间的配置
+
+> HBuilderX 3.2.11及更高版本支持客户端初始化其他服务空间database实例，此前仅腾讯云云函数环境支持。阿里云云函数环境不支持此用法。
+
+调用`uniCloud.database()`时可以传入对应的服务空间信息（参数同uniCloud.init，参考:[uniCloud.init](uniCloud/init.md?id=init-unicloud)）来获取指定服务空间的database实例。
+
+**示例**
+
+```js
+const db = uniCloud.database({
+  provider: 'tencent',
+  spaceId: 'xxx'
+})
+
+db.collection('uni-id-users').get()
+```
+
+**参数说明**
+
+|参数名			|类型	|必填	|默认值						|说明																					|
+|:-:			|:-:	|:-:	|:-:						|:-:																					|
+|provider		|String	|是		|-							|aliyun、tencent																		|
+|spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
+|clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
+|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云侧支持															|
  
 ## 创建一个集合/数据表@createCollection
 

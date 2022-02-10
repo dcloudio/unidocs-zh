@@ -7,15 +7,15 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 
 客户端API列表
 
-|API														|描述																																																		|
-|--															|--																																																			|
-|uniCloud.callFunction()				|客户端调用云函数 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=clientcallfunction)			|
-|uniCloud.database()						|客户端访问云数据库，获取云数据库对象引用 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb)				|
-|uniCloud.uploadFile()					|客户端直接上传文件到云存储 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=uploadfile)					|
-|uniCloud.getTempFileURL()			|客户端获取云存储文件的临时路径 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=gettempfileurl)	|
-|uniCloud.chooseAndUploadFile()	|客户端选择文件并上传 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=chooseanduploadfile)			|
-|uniCloud.getCurrentUserInfo()	|获取当前用户信息 [详情](https://uniapp.dcloud.io/uniCloud/client-sdk?id=client-getcurrentuserinfo)			|
-|uniCloud.init()								|同时使用多个服务空间时初始化额外服务空间 [详情](https://uniapp.dcloud.net.cn/uniCloud/init)						|
+|API							|描述																									|
+|--								|--																										|
+|uniCloud.callFunction()		|客户端调用云函数 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=clientcallfunction)		|
+|uniCloud.database()			|客户端访问云数据库，获取云数据库对象引用 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb)		|
+|uniCloud.uploadFile()			|客户端直接上传文件到云存储 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=uploadfile)			|
+|uniCloud.getTempFileURL()		|客户端获取云存储文件的临时路径 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=gettempfileurl)	|
+|uniCloud.chooseAndUploadFile()	|客户端选择文件并上传 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=chooseanduploadfile)		|
+|uniCloud.getCurrentUserInfo()	|获取当前用户信息 [详情](#client-getcurrentuserinfo)													|
+|uniCloud.init()				|同时使用多个服务空间时初始化额外服务空间 [详情](https://uniapp.dcloud.net.cn/uniCloud/init)			|
 
 ### 获取当前用户信息getCurrentUserInfo@client-getcurrentuserinfo
 

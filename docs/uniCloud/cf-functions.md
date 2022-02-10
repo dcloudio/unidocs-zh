@@ -164,7 +164,7 @@ exports.main = async (event, context) => {
 
 **注意事项**
 - event大小不可超过100kb
-- 云函数url化的场景下无法获取`context.OS`、`context.PLATFORM`、`context.APPID`、`context.CLIENTUUID`
+- 云函数url化的场景下无法获取`context.OS`、`context.PLATFORM`、`context.APPID`、`context.DEVICEID`
 
 >在云函数URL化的场景无法获取客户端平台信息，可以在调用依赖客户端平台的接口接口之前（推荐在云函数入口）通过修改context.PLATFORM手动传入客户端平台信息供其他插件（如：uni-id）使用
 
@@ -225,25 +225,11 @@ errCode在成功时应返回数字`0`,失败时应返回一个以插件id开头�
 
 errMsg用于存放具体错误信息，包括展示给开发者、终端用户的错误信息
 
-<!-- 占位变量格式说明：
-支持情况
-1. 从xx版本开始，clientDB遵循该格式
-2. 推荐开发者的云函数在返回json数据给客户端时也遵循这种格式。
-3. uniCloud客户端sdk后续会提供callFunction及数据库操作的拦截器，开发者可以在拦截器内对特定的错误码进行处理。例如：在收到token过期的错误码时进行提示并跳转到登录页面
-4. uniCloud admin和uni-starter等插件内置的网络拦截器也均将支持该格式。
-
-历史兼容说明： -->
-
 云函数中如果要使用其他服务（比如mysql数据库、redis等），可以按照nodejs的写法即可。但注意这些非uniCloud数据库和云函数运行环境不在一起，访问速度受影响。
-
-
 
 云函数启动后环境会保留一段时间（如15分钟），超过保留期后若该云函数一直没有被再调用，那这个环境会被释放。
 
 所以云函数有冷启动的概念，由于js环境的启动要比php和java更快，所以js适合serverless方式。
-
-
-
 
 ## uniCloud API列表
 

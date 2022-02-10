@@ -219,7 +219,7 @@ uniCloud的每个云函数是一个独立进程，不存在云函数级别的多
 2. 将上述域名CNAME到`api.bspapp.com`
 3. [自行初始化uniCloud](uniCloud/init.md)传入endpoint参数，其值为开通全球加速的自有域名
 
-### 腾讯云提示当前实名主体已经有三个账号怎么办
+### 腾讯云提示当前实名主体已经有三个账号怎么办@tencent-exceed-account-limit
 
 开通腾讯云服务空间时实名认证提示实名主体已有三个账号，这往往是开发者在微信小程序开发工具里不小心开通了多个免费的小程序云，此时可以参考以下流程注销不用的账号：
 
@@ -287,7 +287,7 @@ exports.main = async function(event){
 
 ### 授权其他用户访问服务空间@collaborator
 
-详见文档：[服务空间的多人协作](/uniCloud/concepts/space?id=%e5%a4%9a%e4%ba%ba%e5%8d%8f%e4%bd%9c)
+详见文档：[服务空间的多人协作](/uniCloud/concepts/space?id=collaboration)
 
 ### 如何使用promise/async/await@promise
 
@@ -354,7 +354,7 @@ uniCloud客户端callFunction及数据库相关接口会返回Promise类型结�
 - bspapp.com，属于阿里云。如果该域名访问报错，说明阿里云serverless出故障了。
 - tencentcloudapi.com，属于腾讯云。如果该域名访问报错，说明腾讯云serverless出故障了。
 
-当然还有一种情况报错，其实是客户端的问题，包括浏览器的跨域问题，或者小程序的域名白名单问题，导致客户端无法连接uniCloud。这需要通过配置来解决，参考文档：[小程序和浏览器的域名访问配置](https://uniapp.dcloud.io/uniCloud/quickstart?id=%e5%b0%8f%e7%a8%8b%e5%ba%8f%e4%b8%ad%e4%bd%bf%e7%94%a8unicloud%e7%9a%84%e7%99%bd%e5%90%8d%e5%8d%95%e9%85%8d%e7%bd%ae)
+当然还有一种情况报错，其实是客户端的问题，包括浏览器的跨域问题，或者小程序的域名白名单问题，导致客户端无法连接uniCloud。这需要通过配置来解决，参考文档：[小程序和浏览器的域名访问配置](https://uniapp.dcloud.io/uniCloud/quickstart?id=useinmp)
 
 2. 通过测试系统判断故障点
 - [hello uniCloud 阿里云版](https://hellounicloud.dcloud.net.cn/#/)

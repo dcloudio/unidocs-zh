@@ -100,3 +100,8 @@ npm run build:%PLATFORM%
 |quickapp-webview-huawei|快应用华为|
 
 可以自定义更多条件编译平台，比如钉钉小程序，参考[package.json文档](https://uniapp.dcloud.io/collocation/package)。
+
+## HBuilderX cli
+
+开发者可以通过cli命令行指示HBuilderX进行启动、打包、登录等操作，详情参考：[https://hx.dcloud.net.cn/cli/README](https://hx.dcloud.net.cn/cli/README)
+

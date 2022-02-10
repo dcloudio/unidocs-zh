@@ -102,8 +102,18 @@ exports.main = async (event, context) => {
 }
 ```
 
-
 **注意：下面所有的“客户端”均是相对于云函数而言，如果你使用自己的服务器调用云函数此时客户端是指你的服务器**
+
+#### 获取用户token@client-token
+
+如果客户端在storage内存储了uni_id_token，在使用callFunction请求云函数时会自动将此token传递到云端，云端可以通过以下方式获取：
+
+```js
+'use strict';
+exports.main = async (event, context) => {
+  let token = event.uniIdToken // 客户端uni-id token
+}
+```
 
 #### 获取客户端IP@clientip
 

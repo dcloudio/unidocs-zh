@@ -88,6 +88,11 @@ function init(options):uniCloud
 
 `uniCloud.init`方法接受一个`options`参数，返回`uniCloud`实例，`uniCloud`实例可调用云函数、云存储相关API。
 
+**注意**
+
+- 云函数环境（仅腾讯云支持）仅能通过init返回同账号下其他的腾讯云服务空间实例。
+- 客户端环境（腾讯云阿里云均支持）可以通过init返回本账号下任意云厂商服务空间实例
+
 **options 参数说明**
 
 |参数名			|类型	|必填	|默认值						|说明																					|

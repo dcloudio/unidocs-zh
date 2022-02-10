@@ -118,6 +118,11 @@ const db = uniCloud.database()
 
 调用`uniCloud.database()`时可以传入对应的服务空间信息（参数同uniCloud.init，参考:[uniCloud.init](uniCloud/init.md?id=init-unicloud)）来获取指定服务空间的database实例。
 
+**注意**
+
+- 云函数环境（仅腾讯云支持）仅能通过init返回同账号下其他的腾讯云服务空间的数据库实例。
+- 客户端环境（腾讯云阿里云均支持）可以通过init返回本账号下任意云厂商服务空间的数据库实例
+
 **示例**
 
 ```js

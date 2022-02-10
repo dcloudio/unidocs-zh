@@ -29,7 +29,6 @@
   * [条件编译处理多端差异](/tutorial/platform.md)
   * [环境变量](/tutorial/env.md)
   * [编译器配置](/tutorial/compiler-config.md)
-  * [编译器注意事项](/tutorial/compiler-cautions.md)
 * web 专题
   * [跨域](/tutorial/CORS.md)
   * [宽屏适配](/tutorial/adapt.md)

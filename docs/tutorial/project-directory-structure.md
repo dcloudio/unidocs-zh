@@ -4,7 +4,7 @@
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─uniCloud              云空间目录，阿里云为uniCloud-aliyun,腾讯云为uniCloud-tcb（详见<a href="https://uniapp.dcloud.io/uniCloud/quickstart#structure">uniCloud</a>）
+┌─uniCloud              云空间目录，阿里云为uniCloud-aliyun,腾讯云为uniCloud-tcb（详见<a href="https://uniapp.dcloud.io/uniCloud/quickstart?structure&id=structure">uniCloud</a>）
 │─components            符合vue组件规范的uni-app组件目录
 │  └─comp-a.vue         可复用的a组件
 ├─hybrid                App端存放本地html文件的目录，<a href="/component/web-view">详见</a>

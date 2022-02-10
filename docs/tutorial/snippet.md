@@ -86,5 +86,5 @@ uni.showToast({
 
 预置代码块不满足需求的话，可以自定义代码块，教程参考[https://ask.dcloud.net.cn/article/35924](https://ask.dcloud.net.cn/article/35924)
 
-## 更多技巧
+### 更多技巧
 - [如何调试](/tutorial/run-and-debug.html#h5-debug-hx)

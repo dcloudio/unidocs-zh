@@ -24,6 +24,7 @@
       </template>
       <template #bottom>
         <slot name="sidebar-bottom" />
+        <SiderBarBottom />
       </template>
     </Sidebar>
 
@@ -50,6 +51,7 @@ import Navbar from '@theme/components/Navbar.vue'
 import Page from '@theme/components/Page.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
 import Footer from '@theme/components/Footer.vue';
+import SiderBarBottom from '../components/SiderBarBottom.vue';
 import { resolveSidebarItems, forbidScroll } from '../util'
 import navProvider from '../mixin/navProvider';
 
@@ -61,7 +63,8 @@ export default {
     Page,
     Sidebar,
     Navbar,
-    Footer
+    Footer,
+    SiderBarBottom
   },
   data () {
     return {

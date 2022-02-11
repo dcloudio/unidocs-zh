@@ -9,7 +9,8 @@ export default {
     return {
       navConfig: this.navConfig,
       customNavBar: this.customNavBar,
-      changeUserNav: this.changeUserNav
+      changeUserNav: this.changeUserNav,
+      customNavBarKeys: this.customNavBarKeys
     }
   },
 

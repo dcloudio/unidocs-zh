@@ -2,17 +2,31 @@
 sidebarDepth: 2
 ---
 
-`uni-app`提供有完整的`cli` 脚手架，可以通过 `vue-cli` 创建、运行、发行 `uni-app` 项目。
+`uni-app`项目支持 `uni cli`和 `HBuilderX cli`两种脚手架工具：
 
-## CLI 工具安装
+- `uni cli`：面向非HBuilderX的用户（如习惯使用vscode/webstorm的开发者），提供创建项目、编译发行等能力；在App平台，仅支持生成离线打包的wgt资源包，不支持云端打包生成apk/ipa；若需云端打包，依然需要安装HBuilderX，使用`HBuilderX cli`；
+- `HBuilderX cli`：面向HBuilderX用户，提供`uni-app`项目的持续集成能力；支持通过`HBuilderX cli`进行云端打包；但HBuilderX暂不支持linux平台，若你的服务器是linux系统，则还需使用`uni-cli`。
 
-首先，你需要使用 npm 或者 yarn 全局安装 `@vue/cli`
+
+提供有完整的`cli` 脚手架，可以通过 `vue-cli` 创建、运行、发行 `uni-app` 项目。
+
+## uni cli
+
+### 安装
+
+若你使用vue2版本，需要使用 npm 或者 yarn 全局安装 `@vue/cli`。
 
 ```shell
 npm install -g @vue/cli
 ```
 
-## 创建 uni-app 工程
+若使用vue3版本，则无需安装。
+
+### 创建工程
+
+vue2/vue3创建工程的方式不同。
+
+**使用 vue2 创建工程**
 
 - 使用 `正式版`（对应 HBuilderX 最新正式版）
 
@@ -26,27 +40,28 @@ npm install -g @vue/cli
   vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
   ```
 
-- 使用 `Vue3/Vite版`
-  - 创建以 javascript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite.zip) 下载模板）
-    ```shell
-    npx degit dcloudio/uni-preset-vue#vite my-vue3-project
-    ```
-  - 创建以 typescript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite-ts.zip) 下载模板）
-    ```shell
-    npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
-    ```
-
-此时，会提示选择项目模板（使用 `Vue3/Vite版` 不会提示，目前只支持创建默认模板），初次体验建议选择 `hello uni-app` 项目模板，如下所示：
+此时，会提示选择项目模板，初次体验建议选择 `hello uni-app` 项目模板，如下所示：
 
 <div>
 <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/h5-cli-01.png" width="300">
 </div>
 
-- **自定义模板**
-
-  选择自定义模板时，需要填写 uni-app 模板地址，这个地址其实就是托管在云端的仓库地址。以 GitHub 为例，地址格式为 `userName/repositoryName`，如 `dcloudio/uni-template-picture` 就是下载图片模板。
+  上图中，如果选择自定义模板，需要填写 uni-app 模板地址，这个地址其实就是托管在云端的仓库地址。以 GitHub 为例，地址格式为 `userName/repositoryName`，如 `dcloudio/uni-template-picture` 就是下载图片模板。
 
   更多支持的下载方式，请参考这个插件的说明：[download-git-repo](https://www.npmjs.com/package/download-git-repo)
+
+**使用 vue3 创建工程**
+
+- 创建以 javascript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite.zip) 下载模板）
+```shell
+npx degit dcloudio/uni-preset-vue#vite my-vue3-project
+```
+- 创建以 typescript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite-ts.zip) 下载模板）
+```shell
+npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
+```
+
+Vue3版本暂不支持选择模板，仅支持创建默认模板。
 
 - **国内特殊情况**
 
@@ -77,13 +92,9 @@ npm install -g @vue/cli
     npx @dcloudio/uvm 3.2.14.20211112-alpha
     ```
 
-## 运行、发布 uni-app
+### 编译运行
 
-### App 平台
-
-> app 平台生成打包资源（支持 `npm run build:app-plus`，可用于持续集成。不支持直接运行到真机。运行调试仍需在 HBuilderX 中操作）
-
-**编译命令**
+#### App 平台
 
 ```shell
 # npm
@@ -106,9 +117,11 @@ yarn build:app-plus --watch
 yarn build:app -w
 ```
 
-### H5
+Tips：
+- vue2发布到App平台时，平台参数为`app-plus`；vue3发布到App平台时，平台参数为`app`；
+- `uni cli`在App平台，仅支持生成离线打包的wgt资源包，不支持云端打包生成apk/ipa；若需云端打包，依然需要安装HBuilderX，使用`HBuilderX cli`。
 
-**编译命令**
+#### H5
 
 ```shell
 # npm
@@ -125,9 +138,8 @@ yarn build:h5 --watch
 yarn build:h5 -w
 ```
 
-### 微信小程序
+#### 微信小程序
 
-**编译命令**
 
 ```shell
 # npm
@@ -144,9 +156,7 @@ yarn build:mp-weixin -watch
 yarn build:mp-weixin -w
 ```
 
-### 支付宝小程序
-
-**编译命令**
+#### 支付宝小程序
 
 ```shell
 # npm
@@ -163,9 +173,8 @@ yarn build:mp-alipay -watch
 yarn build:mp-alipay -w
 ```
 
-### 百度小程序
+#### 百度小程序
 
-**编译命令**
 
 ```shell
 # npm
@@ -182,9 +191,8 @@ yarn build:mp-baidu -watch
 yarn build:mp-baidu -w
 ```
 
-### 字节跳动小程序
+#### 字节跳动小程序
 
-**编译命令**
 
 ```shell
 # npm
@@ -201,9 +209,8 @@ yarn build:mp-toutiao -watch
 yarn build:mp-toutiao -w
 ```
 
-### 飞书小程序
+#### 飞书小程序
 
-**编译命令**
 
 ```shell
 # npm
@@ -220,9 +227,7 @@ yarn build:mp-lark -watch
 yarn build:mp-lark -w
 ```
 
-### QQ 小程序
-
-**编译命令**
+#### QQ 小程序
 
 ```shell
 # npm
@@ -239,9 +244,8 @@ yarn build:mp-qq -watch
 yarn build:mp-qq -w
 ```
 
-### 快手小程序
+#### 快手小程序
 
-**编译命令**
 
 ```shell
 # npm
@@ -258,9 +262,8 @@ yarn build:mp-kuaishou -watch
 yarn build:mp-kuaishou -w
 ```
 
-### 快应用(webview)
+#### 快应用(webview)
 
-**编译命令**
 
 ```shell
 # npm
@@ -277,9 +280,7 @@ yarn build:quickapp-webview -watch
 yarn build:quickapp-webview -w
 ```
 
-### 快应用联盟
-
-**编译命令**
+#### 快应用联盟
 
 ```shell
 # npm
@@ -296,9 +297,7 @@ yarn build:quickapp-webview-union -watch
 yarn build:quickapp-webview-union -w
 ```
 
-### 快应用华为
-
-**编译命令**
+#### 快应用华为
 
 ```shell
 # npm
@@ -315,9 +314,7 @@ yarn build:quickapp-webview-huawei -watch
 yarn build:quickapp-webview-huawei -w
 ```
 
-### 360 小程序
-
-**编译命令**
+#### 360 小程序
 
 ```shell
 # npm

@@ -1,5 +1,5 @@
 * [Git/SVN](/worktile/git-svn.md)
-* [CLI 工具](/worktile/CLI.md)
+* [cli 脚手架](/worktile/CLI.md)
 * [运行环境管理](/worktile/running-env.md)
 * [国际化](/worktile/i18n.md)
 * [自动化测试](/worktile/auto/quick-start.md)

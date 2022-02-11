@@ -1,4 +1,9 @@
-### 目录结构
+
+## 工程简介
+
+一个 uni-app 工程，就是一个 Vue 项目，你可以通过 HBuilderX 或 cli 方式快速创建 uni-app 工程，详见：[快速上手](/quickstart-hx.html)。
+
+## 目录结构
 
 一个uni-app工程，默认包含如下目录及文件：
 

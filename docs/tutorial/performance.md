@@ -15,7 +15,9 @@
 - node.js引擎，则是v8基础上补充一些电脑专用API，比如本地io；
 - 那么uni-app的App端和小程序端的js引擎，其实是在jscore上补充了一批手机端常用的JS API，比如扫码。
 
-![](https://img.cdn.aliyun.dcloud.net.cn/uni-app/jscore.jpg)
+<div>
+	<img src="https://img.cdn.aliyun.dcloud.net.cn/uni-app/jscore.jpg" style="max-width:500px"></img>
+</div>
 
 ###### 视图层详解
 

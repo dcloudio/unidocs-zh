@@ -581,7 +581,7 @@
 	<!-- 我是子组件date-picker -->
 	<template>
 		<view class="date-picker">
-		  <input type="datetime" />
+		  <input type="datetime-local" />
 		</view>
 	</template>
 ```
@@ -595,7 +595,7 @@
 
 	<!-- 渲染 date-picker 组件 -->
 	<div class="date-picker" data-status="activated">
-		<input type="datetime" />
+		<input type="datetime-local" />
 	</div>
 ```
 
@@ -667,7 +667,7 @@
 ```html
 	<template>
 		<view class="date-picker">
-		  <input type="datetime" v-bind="$attrs" />
+		  <input type="datetime-local" v-bind="$attrs" />
 		</view>
 	</template>
 	<script>
@@ -685,7 +685,7 @@
 
 	<!-- 渲染 date-picker 组件 -->
 	<view class="date-picker">
-		<input type="datetime" data-status="activated" />
+		<input type="datetime-local" data-status="activated" />
 	</view>
 ```
 

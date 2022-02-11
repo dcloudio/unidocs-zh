@@ -1,10 +1,8 @@
 * [概念简介](/tutorial/)
-* 工程结构
-  * [工程的概念](/tutorial/project-concept.md)
-  * [工程目录结构](/tutorial/project-directory-structure.md)
+* [工程](/tutorial/project.md)
 * [页面](/tutorial/page.md)
 * 互相引用
-  * [页面引用组件](/tutorial/page-component.md)
+  * [引用组件](/tutorial/page-component.md)
   * [引用 js](/tutorial/page-script.md)
   * [引用 css](/tutorial/page-style.md)
   * [引用静态资源](/tutorial/page-static-assets.md)

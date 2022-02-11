@@ -112,12 +112,12 @@ export const navbar = [
           },
         ]
       },
-      {
+      /* {
         link: "https://github.com/dcloudio/uni-app",
         target: "_blank",
         text: "GitHub",
         type: "link"
-      }
+      } */
     ]
   },
   {

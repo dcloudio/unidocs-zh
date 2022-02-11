@@ -56,6 +56,7 @@
           'max-width': linksWrapMaxWidth + 'px'
         } : {}"
       >
+        <a class="switch-version" href="javascript:void(0)" @click="switchVersion">回到旧版</a>
         <AlgoliaSearchBox
           v-if="isAlgoliaSearch"
           :options="algolia"
@@ -77,7 +78,7 @@
 
 <script>
 import AlgoliaSearchBox from '@AlgoliaSearchBox'
-import SearchBox from '@SearchBox'
+import SearchBox from './SearchBox'
 import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
 import MainNavbarLink from './MainNavbarLink.vue';
@@ -186,6 +187,10 @@ export default {
     toggleMobilePanel () {
       this.showMobilePanel = !this.showMobilePanel
       forbidScroll(this.showMobilePanel)
+    },
+    switchVersion () {
+      document.cookie = '__new_version=;expires=-1'
+      location.reload()
     }
   },
 

@@ -326,7 +326,7 @@ yarn build:mp-360
 yarn dev:mp-360
 
 # 监听文件变化且启用压缩
-yarn cross-env NODE_ENV=production UNI_PLATFORM=mp-360 vue-cli-service uni-build --watch
+yarn build:mp-360 --watch
 ```
 
 可以自定义更多条件编译平台，比如钉钉小程序，参考[package.json 文档](https://uniapp.dcloud.io/collocation/package)。

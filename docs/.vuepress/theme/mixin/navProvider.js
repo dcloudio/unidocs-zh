@@ -49,7 +49,7 @@ export default {
   watch: {
     $route(after) {
       let navbarIndex = this.customNavBarKeys.indexOf((after.fullPath.match(/\/(\w+)+\/*/) || [])[1])
-      navbarIndex === -1 && after.fullPath === '/' && (navbarIndex = 0)
+      navbarIndex === -1 && (navbarIndex = 0)
       this.navConfig.userNavIndex !== navbarIndex && navbarIndex !== -1 && (this.navConfig.userNavIndex = navbarIndex)
     }
   }

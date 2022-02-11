@@ -1,4 +1,34 @@
-## 页面生命周期 @lifecycle
+## 页面简介
+
+uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件或`.nvue`文件。
+
+`.vue`页面和`.nvue`页面，均全平台支持，差异在于当uni-app发行到App平台时，`.vue`文件会使用webview进行渲染，`.nvue`会使用原生进行渲染，详见：[nvue原生渲染](/tutorial/nvue-outline)。
+
+## 新建页面
+
+`uni-app`中的页面，通常会保存在工程根目录下的`pages`目录下。
+
+每次新建页面，均需在`pages.json`中配置`pages`列表；未在`pages.json -> pages` 中配置的页面，`uni-app`会在编译阶段进行忽略。pages.json的完整配置参考：[全局文件](/collocation/pages)。
+
+通过HBuilderX开发 `uni-app` 项目时，在 `uni-app` 项目上右键“新建页面”，HBuilderX会自动在`pages.json`中完成页面注册，开发更方便。
+
+同时，HBuilderX 还内置了常用的页面模板（如图文列表、商品列表等），选择这些模板，可以大幅提升你的开发效率。
+
+<div>
+<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/068c32c9-874d-48f4-b49a-b6a6c634beda.png" style="max-width:450px"></img>
+</div>
+
+## 删除页面
+
+删除页面时，需做两件工作：
+- 删除`.vue`文件或`.nvue`文件
+- 删除`pages.json -> pages`列表项中的配置
+
+## 应用首页
+
+`uni-app`会将`pages.json -> pages`配置项中的第一个页面，作为当前工程的首页（启动页）。
+
+## 生命周期 @lifecycle
 
 ``uni-app`` 支持如下页面生命周期函数：
 
@@ -406,7 +436,7 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 20. 目前不支持在 nvue 页面使用 `typescript/ts`。
 21. nvue 页面关闭原生导航栏时，想要模拟状态栏，可以[参考文章](https://ask.dcloud.net.cn/article/35111)。但是，仍然强烈建议在 nvue 页面使用原生导航栏。nvue 的渲染速度再快，也没有原生导航栏快。原生排版引擎解析`json`绘制原生导航栏耗时很少，而解析 nvue 的 js 绘制整个页面的耗时要大的多，尤其在新页面进入动画期间，对于复杂页面，没有原生导航栏会在动画期间产生整个屏幕的白屏或闪屏。
 
-## 组件生命周期
+<!-- ## 组件生命周期
 
 ``uni-app`` 组件支持的生命周期，与vue标准组件的生命周期相同。这里没有页面级的onLoad等生命周期：
 
@@ -419,4 +449,4 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 |beforeUpdate|数据更新时调用，发生在虚拟 DOM 打补丁之前。[详见](https://cn.vuejs.org/v2/api/#beforeUpdate)|仅H5平台支持||
 |updated|由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。[详见](https://cn.vuejs.org/v2/api/#updated)|仅H5平台支持||
 |beforeDestroy|实例销毁之前调用。在这一步，实例仍然完全可用。[详见](https://cn.vuejs.org/v2/api/#beforeDestroy)|||
-|destroyed|Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。[详见](https://cn.vuejs.org/v2/api/#destroyed)|||
+|destroyed|Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。[详见](https://cn.vuejs.org/v2/api/#destroyed)||| -->

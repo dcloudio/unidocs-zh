@@ -190,7 +190,7 @@ export default {
     },
     switchVersion () {
       document.cookie = '__new_version=;expires=-1'
-      location.reload()
+      location.replace(location.origin)
     }
   },
 

@@ -15,18 +15,20 @@
       @click="toggleSidebar(false)"
     />
 
-    <Sidebar
-      :items="sidebarItems"
-      @toggle-sidebar="toggleSidebar"
-    >
-      <template #top>
-        <slot name="sidebar-top" />
-      </template>
-      <template #bottom>
-        <slot name="sidebar-bottom" />
-        <SiderBarBottom />
-      </template>
-    </Sidebar>
+    <ClientOnly>
+      <Sidebar
+        :items="sidebarItems"
+        @toggle-sidebar="toggleSidebar"
+      >
+        <template #top>
+          <slot name="sidebar-top" />
+        </template>
+        <template #bottom>
+          <slot name="sidebar-bottom" />
+          <SiderBarBottom />
+        </template>
+      </Sidebar>
+    </ClientOnly>
 
     <Home v-if="$page.frontmatter.home" />
 

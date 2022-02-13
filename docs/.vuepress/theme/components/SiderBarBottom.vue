@@ -83,7 +83,7 @@
 
 		computed: {
 			currentConfig() {
-				return this.siderbarConfig[this.customNavBarKeys[this.navConfig.userNavIndex]];
+				return this.siderbarConfig[this.customNavBarKeys[this.navConfig.userNavIndex]] || {};
 			},
 			currentQQGroup() {
 				return [...(this.currentConfig.qq_group || [])].reverse();

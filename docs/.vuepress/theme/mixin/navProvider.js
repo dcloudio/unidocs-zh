@@ -1,4 +1,4 @@
-import { navbar } from '../../markdown/navbar.config';
+import { navbar } from '../config/navbar';
 
 export default {
   data() {

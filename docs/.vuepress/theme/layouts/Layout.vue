@@ -54,7 +54,7 @@ import Page from '@theme/components/Page.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
 import Footer from '@theme/components/Footer.vue';
 import SiderBarBottom from '../components/SiderBarBottom.vue';
-import { resolveSidebarItems, forbidScroll } from '../util'
+import { resolveSidebarItems, forbidScroll, BaiduStat } from '../util'
 import navProvider from '../mixin/navProvider';
 
 export default {
@@ -119,6 +119,7 @@ export default {
     }
   },
   mounted () {
+    BaiduStat()
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
     })

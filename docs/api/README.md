@@ -186,24 +186,24 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.request](api/request/request?id=request)|发起网络请求|
+|[uni.request](request/request?id=request)|发起网络请求|
 ##### 上传、下载
 
 |API|说明|
 |:-|:-|
-|[uni.uploadFile](api/request/network-file?id=uploadfile)|上传文件|
-|[uni.downloadFile](api/request/network-file?id=downloadfile)|下载文件|
+|[uni.uploadFile](request/network-file?id=uploadfile)|上传文件|
+|[uni.downloadFile](request/network-file?id=downloadfile)|下载文件|
 ##### WebSocket
 
 |API|说明|
 |:-|:-|
-|[uni.connectSocket](api/request/websocket?id=connectsocket)|创建 WebSocket 连接|
-|[uni.onSocketOpen](api/request/websocket?id=onsocketopen)|监听 WebSocket 打开|
-|[uni.onSocketError](api/request/websocket?id=onsocketerror)|监听 WebSocket 错误|
-|[uni.sendSocketMessage](api/request/websocket?id=sendsocketmessage)|发送 WebSocket 消息|
-|[uni.onSocketMessage](api/request/websocket?id=onsocketmessage)|接受 WebSocket 消息|
-|[uni.closeSocket](api/request/websocket?id=closesocket)|关闭 WebSocket 连接|
-|[uni.onSocketClose](api/request/websocket?id=onsocketclose)|监听 WebSocket 关闭|
+|[uni.connectSocket](request/websocket?id=connectsocket)|创建 WebSocket 连接|
+|[uni.onSocketOpen](request/websocket?id=onsocketopen)|监听 WebSocket 打开|
+|[uni.onSocketError](request/websocket?id=onsocketerror)|监听 WebSocket 错误|
+|[uni.sendSocketMessage](request/websocket?id=sendsocketmessage)|发送 WebSocket 消息|
+|[uni.onSocketMessage](request/websocket?id=onsocketmessage)|接受 WebSocket 消息|
+|[uni.closeSocket](request/websocket?id=closesocket)|关闭 WebSocket 连接|
+|[uni.onSocketClose](request/websocket?id=onsocketclose)|监听 WebSocket 关闭|
 ##### SocketTask
 
 |API|说明|
@@ -220,77 +220,77 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.chooseImage](api/media/image?id=chooseimage)|从相册选择图片，或者拍照|
-|[uni.previewImage](api/media/image?id=unipreviewimageobject)|预览图片|
-|[uni.closePreviewImage](api/media/image?id=closepreviewimage)|关闭预览图片|
-|[uni.getImageInfo](api/media/image?id=getimageinfo)|获取图片信息|
-|[uni.saveImageToPhotosAlbum](api/media/image?id=saveimagetophotosalbum)|保存图片到系统相册|
+|[uni.chooseImage](media/image?id=chooseimage)|从相册选择图片，或者拍照|
+|[uni.previewImage](media/image?id=unipreviewimageobject)|预览图片|
+|[uni.closePreviewImage](media/image?id=closepreviewimage)|关闭预览图片|
+|[uni.getImageInfo](media/image?id=getimageinfo)|获取图片信息|
+|[uni.saveImageToPhotosAlbum](media/image?id=saveimagetophotosalbum)|保存图片到系统相册|
 ##### 文件
 
 |API|说明|
 |:-|:-|
-|[uni.chooseFile](api/media/file?id=chooseFile)|从本地选择文件|
+|[uni.chooseFile](media/file?id=chooseFile)|从本地选择文件|
 ##### 录音管理
 
 |API|说明|
 |:-|:-|
-|[uni.getRecorderManager](api/media/record-manager)|录音管理|
+|[uni.getRecorderManager](media/record-manager)|录音管理|
 ##### 背景音频播放管理
 
 |API|说明|
 |:-|:-|
-|[uni.getBackgroundAudioManager](api/media/background-audio-manager)|背景音频播放管理|
+|[uni.getBackgroundAudioManager](media/background-audio-manager)|背景音频播放管理|
 ##### 音频组件管理
 
 |API|说明|
 |:-|:-|
-|[uni.createInnerAudioContext](api/media/audio-context)|音频组件管理|
+|[uni.createInnerAudioContext](media/audio-context)|音频组件管理|
 ##### 视频
 
 |API|说明|
 |:-|:-|
-|[uni.chooseVideo](api/media/video?id=choosevideo)|从相册选择视频，或者拍摄|
-|[uni.chooseMedia](api/media/video?id=choosemedia)|拍摄或从手机相册中选择图片或视频。|
-|[uni.saveVideoToPhotosAlbum](api/media/video?id=savevideotophotosalbum)|保存视频到系统相册|
+|[uni.chooseVideo](media/video?id=choosevideo)|从相册选择视频，或者拍摄|
+|[uni.chooseMedia](media/video?id=choosemedia)|拍摄或从手机相册中选择图片或视频。|
+|[uni.saveVideoToPhotosAlbum](media/video?id=savevideotophotosalbum)|保存视频到系统相册|
 |[uni.createVideoContext](/api/media/video-context?id=createvideocontext)|视频组件管理|
 
 ##### 相机组件管理
 
 |API|说明|
 |:-|:-|
-|[uni.createCameraContext](api/media/camera-context.md)|相机组件管理|
+|[uni.createCameraContext](media/camera-context.md)|相机组件管理|
 ##### 直播组件管理
 
 |API|说明|
 |:-|:-|
-|[uni.createLivePlayerContext](api/media/live-player-context.md)|直播组件管理|
+|[uni.createLivePlayerContext](media/live-player-context.md)|直播组件管理|
 
 #### 文件
 
 |API|说明|
 |:-|:-|
-|[uni.saveFile](api/file/file?id=savefile)|保存文件|
-|[uni.getSavedFileList](api/file/file?id=getsavedfilelist)|获取已保存的文件列表|
-|[uni.getSavedFileInfo](api/file/file?id=getsavedfileinfo)|获取已保存的文件信息|
-|[uni.removeSavedFile](api/file/file?id=removesavedfile)|删除已保存的文件信息|
+|[uni.saveFile](file/file?id=savefile)|保存文件|
+|[uni.getSavedFileList](file/file?id=getsavedfilelist)|获取已保存的文件列表|
+|[uni.getSavedFileInfo](file/file?id=getsavedfileinfo)|获取已保存的文件信息|
+|[uni.removeSavedFile](file/file?id=removesavedfile)|删除已保存的文件信息|
 |[uni.getFileInfo](/api/file/file?id=getfileinfo)|获取文件信息|
-|[uni.openDocument](api/file/file?id=opendocument)|打开文件|
+|[uni.openDocument](file/file?id=opendocument)|打开文件|
 
 
 #### 数据缓存
 
 |API|说明|
 |:-|:-|
-|[uni.getStorage](api/storage/storage?id=setstorage)|获取本地数据缓存|
-|[uni.getStorageSync](api/storage/storage?id=setstoragesync)|获取本地数据缓存|
-|[uni.setStorage](api/storage/storage?id=getstorage)|设置本地数据缓存|
-|[uni.setStorageSync](api/storage/storage?id=getstoragesync)|设置本地数据缓存|
-|[uni.getStorageInfo](api/storage/storage?id=getstorageinfo)|获取本地缓存的相关信息|
-|[uni.getStorageInfoSync](api/storage/storage?id=getstorageinfosync)|获取本地缓存的相关信息|
-|[uni.removeStorage](api/storage/storage?id=removestorage)|删除本地缓存内容|
-|[uni.removeStorageSync](api/storage/storage?id=removestoragesync)|删除本地缓存内容|
-|[uni.clearStorage](api/storage/storage?id=clearstorage)|清理本地数据缓存|
-|[uni.clearStorageSync](api/storage/storage?id=clearstoragesync)|清理本地数据缓存|
+|[uni.getStorage](storage/storage?id=setstorage)|获取本地数据缓存|
+|[uni.getStorageSync](storage/storage?id=setstoragesync)|获取本地数据缓存|
+|[uni.setStorage](storage/storage?id=getstorage)|设置本地数据缓存|
+|[uni.setStorageSync](storage/storage?id=getstoragesync)|设置本地数据缓存|
+|[uni.getStorageInfo](storage/storage?id=getstorageinfo)|获取本地缓存的相关信息|
+|[uni.getStorageInfoSync](storage/storage?id=getstorageinfosync)|获取本地缓存的相关信息|
+|[uni.removeStorage](storage/storage?id=removestorage)|删除本地缓存内容|
+|[uni.removeStorageSync](storage/storage?id=removestoragesync)|删除本地缓存内容|
+|[uni.clearStorage](storage/storage?id=clearstorage)|清理本地数据缓存|
+|[uni.clearStorageSync](storage/storage?id=clearstoragesync)|清理本地数据缓存|
 
 
 #### 位置
@@ -298,18 +298,18 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.getLocation](api/location/location?id=getlocation)|获取当前位置|
-|[uni.chooseLocation](api/location/location?id=chooselocation)|打开地图选择位置|
+|[uni.getLocation](location/location?id=getlocation)|获取当前位置|
+|[uni.chooseLocation](location/location?id=chooselocation)|打开地图选择位置|
 ##### 查看位置
 
 |API|说明|
 |:-|:-|
-|[uni.openLocation](api/location/open-location?id=openlocation)|打开内置地图|
+|[uni.openLocation](location/open-location?id=openlocation)|打开内置地图|
 ##### 地图组件控制
 
 |API|说明|
 |:-|:-|
-|[uni.createMapContext](api/location/map?id=createmapcontext)|地图组件控制|
+|[uni.createMapContext](location/map?id=createmapcontext)|地图组件控制|
 
 
 #### 设备
@@ -317,8 +317,8 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.getSystemInfo](api/system/info?id=getsysteminfo)|获取系统信息|
-|[uni.getSystemInfoSync](api/system/info?id=getsysteminfosync)|获取系统信息|
+|[uni.getSystemInfo](system/info?id=getsysteminfo)|获取系统信息|
+|[uni.getSystemInfoSync](system/info?id=getsysteminfosync)|获取系统信息|
 |[uni.canIUse](/api/system/info?id=caniuse)|判断应用的 API，回调，参数，组件等是否在当前版本可用|
 ##### 内存
 
@@ -329,25 +329,25 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.getNetworkType](api/system/network?id=getnetworktype)|获取网络类型|
-|[uni.onNetworkStatusChange](api/system/network?id=onnetworkstatuschange)|监听网络状态变化|
-|[uni.offNetworkStatusChange](api/system/network?id=offnetworkstatuschange)|取消监听网络状态变化|
+|[uni.getNetworkType](system/network?id=getnetworktype)|获取网络类型|
+|[uni.onNetworkStatusChange](system/network?id=onnetworkstatuschange)|监听网络状态变化|
+|[uni.offNetworkStatusChange](system/network?id=offnetworkstatuschange)|取消监听网络状态变化|
 ##### 加速度计
 
 |API|说明|
 |:-|:-|
-|[uni.onAccelerometerChange](api/system/accelerometer?id=onaccelerometerchange)|监听加速度数据|
-|[uni.offAccelerometerChange](api/system/accelerometer?id=offaccelerometerchange)|取消监听加速度数据|
-|[uni.startAccelerometer](api/system/accelerometer?id=startaccelerometer)|开始监听加速度数据|
-|[uni.stopAccelerometer](api/system/accelerometer?id=stopaccelerometer)|停止监听加速度数据|
+|[uni.onAccelerometerChange](system/accelerometer?id=onaccelerometerchange)|监听加速度数据|
+|[uni.offAccelerometerChange](system/accelerometer?id=offaccelerometerchange)|取消监听加速度数据|
+|[uni.startAccelerometer](system/accelerometer?id=startaccelerometer)|开始监听加速度数据|
+|[uni.stopAccelerometer](system/accelerometer?id=stopaccelerometer)|停止监听加速度数据|
 ##### 罗盘
 
 |API|说明|
 |:-|:-|
-|[uni.onCompassChange](api/system/compass?id=oncompasschange)|监听罗盘数据|
-|[uni.offCompassChange](api/system/compass?id=offcompasschange)|取消监听罗盘数据|
-|[uni.startCompass](api/system/compass?id=startcompass)|开始监听罗盘数据|
-|[uni.stopCompass](api/system/compass?id=stopcompass)|停止监听罗盘数据|
+|[uni.onCompassChange](system/compass?id=oncompasschange)|监听罗盘数据|
+|[uni.offCompassChange](system/compass?id=offcompasschange)|取消监听罗盘数据|
+|[uni.startCompass](system/compass?id=startcompass)|开始监听罗盘数据|
+|[uni.stopCompass](system/compass?id=stopcompass)|停止监听罗盘数据|
 ##### 陀螺仪
 
 |API|说明|
@@ -359,25 +359,25 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.makePhoneCall](api/system/phone?id=makephonecall)|拨打电话|
+|[uni.makePhoneCall](system/phone?id=makephonecall)|拨打电话|
 ##### 扫码
 
 |API|说明|
 |:-|:-|
-|[uni.scanCode](api/system/barcode?id=scancode)|扫码|
+|[uni.scanCode](system/barcode?id=scancode)|扫码|
 ##### 剪切板
 
 |API|说明|
 |:-|:-|
-|[uni.setClipboardData](api/system/clipboard?id=setclipboarddata)|设置剪贴板内容|
-|[uni.getClipboardData](api/system/clipboard?id=getclipboarddata)|获取剪贴板内容|
+|[uni.setClipboardData](system/clipboard?id=setclipboarddata)|设置剪贴板内容|
+|[uni.getClipboardData](system/clipboard?id=getclipboarddata)|获取剪贴板内容|
 ##### 屏幕亮度
 
 |API|说明|
 |:-|:-|
-|[uni.setScreenBrightness](api/system/brightness?id=setscreenbrightness)|设置屏幕亮度|
-|[uni.getScreenBrightness](api/system/brightness?id=getscreenbrightness)|获取屏幕亮度|
-|[uni.setKeepScreenOn](api/system/brightness?id=setkeepscreenon)|设置是否保持常亮状态|
+|[uni.setScreenBrightness](system/brightness?id=setscreenbrightness)|设置屏幕亮度|
+|[uni.getScreenBrightness](system/brightness?id=getscreenbrightness)|获取屏幕亮度|
+|[uni.setKeepScreenOn](system/brightness?id=setkeepscreenon)|设置是否保持常亮状态|
 ##### 用户截屏事件
 
 |API|说明|
@@ -387,14 +387,14 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.vibrate](api/system/vibrate?id=vibrate)|使手机发生振动|
-|[uni.vibrateLong](api/system/vibrate?id=vibratelong)|使手机发生较长时间的振动|
-|[uni.vibrateShort](api/system/vibrate?id=vibrateshort)|使手机发生较短时间的振动|
+|[uni.vibrate](system/vibrate?id=vibrate)|使手机发生振动|
+|[uni.vibrateLong](system/vibrate?id=vibratelong)|使手机发生较长时间的振动|
+|[uni.vibrateShort](system/vibrate?id=vibrateshort)|使手机发生较短时间的振动|
 ##### 手机联系人
 
 |API|说明|
 |:-|:-|
-|[uni.addPhoneContact](api/system/contact?id=addphonecontact)|添加手机通讯录|
+|[uni.addPhoneContact](system/contact?id=addphonecontact)|添加手机通讯录|
 ##### 蓝牙
 
 |API|说明|
@@ -444,20 +444,20 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.showToast](api/ui/prompt?id=showtoast)|显示提示框|
-|[uni.showLoading](api/ui/prompt?id=showloading)|显示加载提示框|
-|[uni.hideToast](api/ui/prompt?id=hidetoast)|隐藏提示框|
-|[uni.hideLoading](api/ui/prompt?id=hideloading)|隐藏加载提示框|
-|[uni.showModal](api/ui/prompt?id=showmodal)|显示模态弹窗|
-|[uni.showActionSheet](api/ui/prompt?id=showactionsheet)|显示菜单列表|
+|[uni.showToast](ui/prompt?id=showtoast)|显示提示框|
+|[uni.showLoading](ui/prompt?id=showloading)|显示加载提示框|
+|[uni.hideToast](ui/prompt?id=hidetoast)|隐藏提示框|
+|[uni.hideLoading](ui/prompt?id=hideloading)|隐藏加载提示框|
+|[uni.showModal](ui/prompt?id=showmodal)|显示模态弹窗|
+|[uni.showActionSheet](ui/prompt?id=showactionsheet)|显示菜单列表|
 ##### 设置导航条
 
 |API|说明|
 |:-|:-|
-|[uni.setNavigationBarTitle](api/ui/navigationbar?id=setnavigationbartitle)|设置当前页面标题|
+|[uni.setNavigationBarTitle](ui/navigationbar?id=setnavigationbartitle)|设置当前页面标题|
 |[uni.setNavigationBarColor](/api/ui/navigationbar?id=setnavigationbarcolor)|设置页面导航条颜色|
-|[uni.showNavigationBarLoading](api/ui/navigationbar?id=shownavigationbarloading)|显示导航条加载动画|
-|[uni.hideNavigationBarLoading](api/ui/navigationbar?id=hidenavigationbarloading)|隐藏导航条加载动画|
+|[uni.showNavigationBarLoading](ui/navigationbar?id=shownavigationbarloading)|显示导航条加载动画|
+|[uni.hideNavigationBarLoading](ui/navigationbar?id=hidenavigationbarloading)|隐藏导航条加载动画|
 ##### 设置TabBar
 
 |API|说明|
@@ -508,7 +508,7 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.createSelectorQuery](api/ui/nodes-info?id=createselectorquery)|创建查询请求|
+|[uni.createSelectorQuery](ui/nodes-info?id=createselectorquery)|创建查询请求|
 |[selectorQuery.select](/api/ui/nodes-info?id=selectorquery-对象的方法列表)|根据选择器选择单个节点|
 |[selectorQuery.selectAll](/api/ui/nodes-info?id=selectorquery-对象的方法列表)|根据选择器选择全部节点|
 |[selectorQuery.selectViewport](/api/ui/nodes-info?id=selectorquery-对象的方法列表)|选择显示区域|
@@ -520,7 +520,7 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.createIntersectionObserver](api/ui/intersection-observer?id=createintersectionobserver)|创建 IntersectionObserver 对象|
+|[uni.createIntersectionObserver](ui/intersection-observer?id=createintersectionobserver)|创建 IntersectionObserver 对象|
 |[intersectionObserver.relativeTo](/api/ui/intersection-observer?id=intersectionobserver-对象的方法列表)|指定参照节点|
 |[intersectionObserver.relativeToViewport](/api/ui/intersection-observer?id=intersectionobserver-对象的方法列表)|指定页面显示区域作为参照区域|
 |[intersectionObserver.observe](/api/ui/intersection-observer?id=intersectionobserver-对象的方法列表)|指定目标节点并开始监听|
@@ -543,22 +543,22 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.getProvider](api/plugins/provider?id=getprovider)|获取服务供应商|
-|[uni.login](api/plugins/login?id=login)|登录|
-|[uni.getUserInfo](api/plugins/login?id=getuserinfo)|获取用户信息|
-|[uni.getuserprofile](api/plugins/login?id=getuserprofile)|获取用户信息。每次请求都会弹出授权窗口，用户同意后返回 userInfo|
-|[uni.checkSession](api/plugins/login?id=checkSession)|检查登录状态是否过期|
-|[uni.preLogin](api/plugins/login?id=prelogin)|预登录|
-|[uni.closeAuthView](api/plugins/login?id=closeauthview)|关闭一键登录页面|
-|[uni.getCheckBoxState](api/plugins/login?id=getcheckboxstate)|获取一键登录条款勾选框状态|
-|[uni.getUniverifyManager](api/plugins/login?id=getUniverifyManager)|获取全局唯一的一键登录管理器 univerifyManager|
-|[uni.share](api/plugins/share?id=share)|分享|
-|[uni.shareWithSystem](api/plugins/share?id=sharewithsystem)|使用系统分享|
-|[uni.requestPayment](api/plugins/payment?id=requestpayment)|支付|
-|[uni.subscribePush](api/plugins/push?id=subscribepush)|开启推送|
-|[uni.unsubscribePush](api/plugins/push?id=unsubscribepush)|关闭推送|
-|[uni.onPush](api/plugins/push?id=onpush)|监听透传数据|
-|[uni.offPush](api/plugins/push?id=offpush)|移除监听透传数据|
+|[uni.getProvider](plugins/provider?id=getprovider)|获取服务供应商|
+|[uni.login](plugins/login?id=login)|登录|
+|[uni.getUserInfo](plugins/login?id=getuserinfo)|获取用户信息|
+|[uni.getuserprofile](plugins/login?id=getuserprofile)|获取用户信息。每次请求都会弹出授权窗口，用户同意后返回 userInfo|
+|[uni.checkSession](plugins/login?id=checkSession)|检查登录状态是否过期|
+|[uni.preLogin](plugins/login?id=prelogin)|预登录|
+|[uni.closeAuthView](plugins/login?id=closeauthview)|关闭一键登录页面|
+|[uni.getCheckBoxState](plugins/login?id=getcheckboxstate)|获取一键登录条款勾选框状态|
+|[uni.getUniverifyManager](plugins/login?id=getUniverifyManager)|获取全局唯一的一键登录管理器 univerifyManager|
+|[uni.share](plugins/share?id=share)|分享|
+|[uni.shareWithSystem](plugins/share?id=sharewithsystem)|使用系统分享|
+|[uni.requestPayment](plugins/payment?id=requestpayment)|支付|
+|[uni.subscribePush](plugins/push?id=subscribepush)|开启推送|
+|[uni.unsubscribePush](plugins/push?id=unsubscribepush)|关闭推送|
+|[uni.onPush](plugins/push?id=onpush)|监听透传数据|
+|[uni.offPush](plugins/push?id=offpush)|移除监听透传数据|
 
 #### 平台扩展
 

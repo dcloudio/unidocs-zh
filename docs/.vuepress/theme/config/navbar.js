@@ -5,6 +5,7 @@
  * items
  * type   // link、links。
  * rel
+ * needOutbound // 是否显示外链图标
  */
 export const navbar = [
   {
@@ -127,7 +128,7 @@ export const navbar = [
   },
   {
     text: 'HBuilder',
-    link: 'https://www.dcloud.io/hbuilderx.html',
+    link: 'https://hx.dcloud.net.cn/',
     type: "link",
     target: '_blank',
     needOutbound: false

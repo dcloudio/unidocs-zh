@@ -11,7 +11,7 @@
 			spellcheck="false"
 			@input="query = $event.target.value"
 			@focus="focused = true"
-			@blur="focused = true"
+			@blur="focused = false"
 			@keyup.enter="go(focusIndex)"
 			@keyup.up="onUp"
 			@keyup.down="onDown"
@@ -23,20 +23,27 @@
 			style="z-index: 1"
 			@mouseleave="unfocus"
 		>
-			<li
-				v-for="(s, i) in suggestions"
-				:key="i"
-				class="suggestion"
-				:class="{ focused: i === focusIndex }"
-				@mousedown="go(i)"
-				@mouseenter="focus(i)"
-			>
-				<a :href="s.path" @click.prevent>
-					<div class="suggestion-item">
-						<span class="page-title">{{ s.title || 'Document' }}</span>
-						<span v-if="s.header" class="header">{{ s.header.title }}</span>
-					</div>
-				</a>
+			<template v-if="this.suggestions && this.suggestions.length">
+				<li
+					v-for="(s, i) in suggestions"
+					:key="i"
+					class="suggestion"
+					:class="{ focused: i === focusIndex }"
+					@mousedown="go(i)"
+					@mouseenter="focus(i)"
+				>
+					<a :href="s.path" @click.prevent>
+						<div class="suggestion-item">
+							<span class="page-title">{{ s.title || 'Document' }}</span>
+							<span v-if="s.header" class="header">{{ s.header.title }}</span>
+						</div>
+					</a>
+				</li>
+			</template>
+			<li v-else class="suggestion">
+				<div class="suggestion-item">
+					<span class="page-title">暂无结果</span>
+				</div>
 			</li>
 		</ul>
 	</div>
@@ -62,7 +69,7 @@
 
 		computed: {
 			showSuggestions() {
-				return this.focused && this.suggestions && this.suggestions.length;
+				return this.focused && this.query && this.query.length; // && this.suggestions && this.suggestions.length;
 			},
 
 			suggestions() {

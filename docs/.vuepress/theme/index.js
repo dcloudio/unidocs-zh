@@ -4,7 +4,8 @@ module.exports = {
 		['container', {
 			type: 'preview',
 			validate: (params) =>{
-				return params.trim().match(/^preview\s+(.*)$/);
+				// return params.trim().match(/^preview\s+(.*)$/);
+				return params.trim().match(/^preview/);
 			},
 
 			render: (tokens, idx,otps,event)=> {

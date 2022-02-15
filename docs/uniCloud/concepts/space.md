@@ -129,8 +129,9 @@ function init(options):uniCloud
 
 **注意**
 
+- 云函数会自动识别自己所属的服务空间，调用本服务空间下的资源时无需初始化。
 - 云函数环境（仅腾讯云支持）仅能通过init返回同账号下其他的腾讯云服务空间实例。
-- 客户端环境（腾讯云阿里云均支持）可以通过init返回本账号下任意云厂商服务空间实例
+- 客户端环境（腾讯云、阿里云均支持）可以通过init返回本账号下任意云厂商服务空间实例
 
 **options 参数说明**
 
@@ -155,10 +156,5 @@ myCloud.callFunction()
 myCloud.uploadFile()
 
 ```
-
-**Tips：**
-
-- 云函数会自动识别自己所属的服务空间，无需初始化。
-- 腾讯云支持在云函数内初始化本账号下的其他服务空间
 
 uniCloud还支持跨服务空间的数据库访问，另见[文档](https://uniapp.dcloud.net.cn/uniCloud/hellodb?id=init-db)

@@ -55,7 +55,7 @@ config.security = {
 
 这个内置浏览器经过官方处理，不存在跨域问题，简单易用，推荐使用。（需HBuilderX 2.6以上）
 在打开页面后，点HBuilderX右上角的预览，即可打开内部浏览器。或者在运行菜单里选择运行到内置浏览器也可以。
-[attach]38169[/attach]
+![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20190721/601e3f94838c1623afe0c42a2355136c.png)
 
 ### 方案2 配置webpack-dev-server代理
 下面是一篇比uni官网文档更详细的配置指南，这里就直接贴地址了：[https://juejin.im/post/5e43b2645188254902765766](https://juejin.im/post/5e43b2645188254902765766)
@@ -78,29 +78,22 @@ config.security = {
 
 #### 安装方式：
 - 在线安装
-使用谷歌浏览器直接打开插件地址[https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi)安装即可
+>使用谷歌浏览器直接打开插件地址[https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi)安装即可
 - 离线安装
-国内用户如果无法在线安装，可在本页面底部下载附件，离线安装
-1. 下载得到:Allow-Control-Allow-Origin.crx
-2. 点击浏览器右上角的菜单按钮打开谷歌浏览器的扩展管理页面
+  >国内用户如果无法在线安装，可在本页面底部下载附件，离线安装
+  1. 下载得到:Allow-Control-Allow-Origin.crx
+  2. 点击浏览器右上角的菜单按钮打开谷歌浏览器的扩展管理页面
+  3. 将下载的扩展插件拖入扩展管理页面
 
-[attach]27247[/attach]
+  ![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20181120/29a90981041d78630895a124b123254d.png)
 
-[attach]27248[/attach]
-
-3. 将下载的扩展插件拖入扩展管理页面
-
-[attach]27257[/attach]
-
-[attach]27258[/attach]
+  ![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20181120/c706b1b4247f8e14862c86040348d832.png)
 
 
 #### 使用方式
 1. 打开待调试的页面
 2. 在扩展栏目找到安装的插件，点击打开插件配置
 3. 输入想要进行跨域调试的接口的地址，点击添加即可
-
-[attach]27250[/attach]
 
 #### 注意事项
 * 此插件适合本地调试使用，线上部署如果和接口不同域还需要服务端配合。

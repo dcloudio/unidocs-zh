@@ -61,7 +61,7 @@ export default ({
   siteData
 }) => {
   let mounted = false
-  const ScrollBehavior = 'smooth'
+  const ScrollBehavior = 'instant'
 
   router.beforeHooks.unshift((to, from, next) => {
     next(handlePath(router, to))

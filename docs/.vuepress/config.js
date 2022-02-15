@@ -31,11 +31,11 @@ const config = {
     editLinks: true,
     editLinkText: '帮助我们改善此页面！',
     // smoothScroll: true,
-    /* algolia: {
-      apiKey: 'ca67b01d14df58783e2f7dc45c79736e',
-      indexName: 'en-uniapp-dcloud',
-      appId: 'TZ0EGQ9J1Y'
-    } */
+    algolia: {
+      apiKey: '2fdcc4e76c8e260671ad70065e60b2e7',
+      indexName: 'zh-uniapp',
+      appId: 'PQIR5NL8CZ'
+    }
   },
   markdown: {
     slugify(str) {

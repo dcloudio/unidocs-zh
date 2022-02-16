@@ -33,6 +33,11 @@ export default {
     },
     {
       "number": "599819864",
+      "state": 1,
+      attendance: 1000
+    },
+    {
+      "number": "641753405",
       "state": 0
     },
   ]

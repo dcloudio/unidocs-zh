@@ -284,3 +284,18 @@
       },
     });
     ```
+  
+  - uni-app 特有的生命周期钩子（如 onLaunch, onShow 等）支持 Composition API，引入方式如下：
+    ```js
+    import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
+    onLaunch(() => {
+      console.log("App Launch");
+    });
+    onShow(() => {
+      console.log("App Show");
+    });
+    onHide(() => {
+      console.log("App Hide");
+    });
+    ```
+    

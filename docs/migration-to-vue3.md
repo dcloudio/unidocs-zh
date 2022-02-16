@@ -290,18 +290,11 @@
       - 只能在 `<script setup>` 单文件语法糖或 `setup()` 方法中使用生命周期钩子，以 A 页面跳转 B 页面传递参数为例：
 
         ```js
-        // 从 A 页面跳转 B 页面时传递参数 ?id=1&name=uniapp
-        <script setup>
-          import { onMounted } from 'vue'
-          onMounted(() => {
-            uni.navigateTo({
-              url: 'xxx?id=1&name=uniapp' // xxx 为跳转的页面路径
-            })
-          })
-        </script>
-        ```
-
-        ```js
+        // 从 A 页面跳转 B 页面时传递参数 ?id=1&name=uniapp，xxx 为跳转的页面路径
+        //uni.navigateTo({
+        //  url: 'xxx?id=1&name=uniapp'
+        //})
+            
         // 方式一：在 B 页面 <script setup> 中
         <script setup>
           import {

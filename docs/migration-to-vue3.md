@@ -304,43 +304,42 @@
         ```js
         // 方式一：在 B 页面 <script setup> 中
         <script setup>
-        import {
-          onLoad,
-          onShow
-        } from "@dcloudio/uni-app";
-        
-        // onLoad 接受 A 页面传递的参数
-        onLoad((option) => {
-          console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
-        });
-        
-        onShow(() => {
-          console.log("B 页面 onShow");
-        });
+          import {
+            onLoad,
+            onShow
+          } from "@dcloudio/uni-app";
+          
+          // onLoad 接受 A 页面传递的参数
+          onLoad((option) => {
+            console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
+          });
+          
+          onShow(() => {
+            console.log("B 页面 onShow");
+          });
         </script>
         ```
 
         ```js
         // 方式二：在 B 页面 setup() 中
-        
         <script>
-        import {
-          onLoad,
-          onShow,
-        } from "@dcloudio/uni-app";
-      
-        export default {
-          setup() {
-            // onLoad 接受 A 页面传递的参数
-            onLoad((option) => {
-              console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
-            });
-            
-            onShow(() => {
-              console.log("B 页面 onShow");
-            });
+          import {
+            onLoad,
+            onShow,
+          } from "@dcloudio/uni-app";
+        
+          export default {
+            setup() {
+              // onLoad 接受 A 页面传递的参数
+              onLoad((option) => {
+                console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
+              });
+              
+              onShow(() => {
+                console.log("B 页面 onShow");
+              });
+            }
           }
-        }
         </script>
         ```
 

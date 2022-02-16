@@ -289,40 +289,42 @@
       - 在 Vue3 组合式 API 中，也需要遵循 uni-app 生命周期钩子规范, 如 onLaunch 等应用生命周期仅可在 App.vue 中监听，使用中请注意生命周期钩子的适用范围。[查看全部生命周期钩子](https://uniapp.dcloud.net.cn/collocation/frame/lifecycle)
       - 只能在 `setup()` 方法或 `<script setup>` 语法糖中使用生命周期钩子
         
-        	```js
-        	// 在 setup() 中使用
-        	<script>
-        	import {
-        		onLaunch,
-        		onShow,
-        	} from "@dcloudio/uni-app";
+        ```js
+        // 在 setup() 中使用
+        <script>
+        import {
+          onLaunch,
+          onShow,
+        } from "@dcloudio/uni-app";
+      
+        export default {
+          setup() {
+          onLaunch(() => {
+            console.log("App Launch");
+          });
+          onShow(() => {
+            console.log("App Show");
+          });
+          }
+        }
+        </script>
+        ```
+
+        ```js
+        // 在 <script setup> 中使用
+        <script setup>
+        import {
+          onLaunch,
+          onShow
+        } from "@dcloudio/uni-app";
+      
+        onLaunch(() => {
+        console.log("App Launch");
+        });
+        onShow(() => {
+        console.log("App Show");
+        });
+        </script>
+        ```
         
-        	export default {
-        		setup() {
-        		onLaunch(() => {
-        			console.log("App Launch");
-        		});
-        		onShow(() => {
-        			console.log("App Show");
-        		});
-        		}
-        	}
-        	</script>
-        	```
         
-        	```js
-        	// 在 <script setup> 中使用
-        	<script setup>
-        	import {
-        		onLaunch,
-        		onShow
-        	} from "@dcloudio/uni-app";
-        
-        	onLaunch(() => {
-        	console.log("App Launch");
-        	});
-        	onShow(() => {
-        	console.log("App Show");
-        	});
-        	</script>
-        	```

@@ -32,9 +32,19 @@
 |serviceId|string||是|蓝牙特征值对应服务的 uuid|
 |characteristicId|string||是|蓝牙特征值的 uuid|
 |value|ArrayBuffer||是|蓝牙设备特征值对应的二进制值|
+|writeType|string||是|蓝牙特征值的写模式设置，有两种模式，iOS 优先 write，安卓优先 writeNoResponse 。微信小程序支持|
 |success|function||否|接口调用成功的回调函数|
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+
+**writeType**
+
+|属性|说明|
+|:-|:-|
+|write|强制回复写，不支持时报错|
+|writeNoResponse|强制无回复写，不支持时报错|
+
 
 #### 错误
 

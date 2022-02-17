@@ -114,9 +114,9 @@
 	  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/759713d0-4f2d-11eb-a16f-5b3e54966275.png" width="20" height="20"/>
 	  <div class="contact-smg">
 	     <div>官方QQ交流群</div>
-	  <div>群26：147867597 &nbsp;<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=r70TY1MkPklo86bS7CbXRG7PF97RiY6R&jump_from=webapi">点此加入</a></div>
+	  <div>群34：530305531 &nbsp;<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=LCajEdf_gn0cvM7B7YOgb_UzV2v-vadr&jump_from=webapi">点此加入</a></div>
 		<div>群35：713420817（2000人已满）</div>
-		<div>群34：530305531（2000人已满）</div>
+		<!-- <div>群34：530305531（2000人已满）</div>-->
 		<div>群33：498071674（2000人已满）</div>
 		<div>群32：166188631（2000人已满）</div>
 		<div>群31：567471669（2000人已满）</div>
@@ -124,7 +124,7 @@
 		<div>群29：202965481（2000人已满）</div>
 		<div>群28：166188776（2000人已满）</div>
 		<div>群27：811363410（2000人已满）</div>
-		<!-- <div>群26：147867597（2000人已满）</div>-->
+		<div>群26：147867597（2000人已满）</div>
 		<div>群25：165297000（2000人已满）</div>
 		<div>群24：672494800（2000人已满）</div>
 		<div>群23：599958679（2000人已满）</div>

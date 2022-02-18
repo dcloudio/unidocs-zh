@@ -104,7 +104,7 @@ HBuilderX3.0.0+版本新增[plus.navigator.getSignature](https://www.html5plus.o
 
 ```
 
-> 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[JS/NVUE文件原生混淆加密](https://ask.dcloud.net.cn/article/36437)，或者使用apk加固处理
+> 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
 
 
 #### APK可被反编译后取得源代码风险  

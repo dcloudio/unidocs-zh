@@ -12,10 +12,10 @@ App的安装包都可以解压。前端资源，一般都是明文存放在安�
 
 具体使用方式如下：
 
-## 第一步、在manifest.json文件中配置要混淆的文件列表
+### 在manifest.json中配置要混淆的js/nvue文件
 打开manifest.json文件，切换到“源码视图”，按不同项目类型进行配置。
 
-### uni-app项目
+#### uni-app项目
 uni-app的js运行在独立的jscore中，而不是webview中，所以不受iOS平台WKWebview不支持原生混淆的限制。
 uni-app的vue页面中的js，是整体编译到一个大js文件中的，它经过编译，已经不再是vue源码了，但还不是乱码。对这个统一的大文件进行混淆会有影响性能。
 所以uni-app只支持独立混淆nvue/js文件。
@@ -49,7 +49,8 @@ uni-app的vue页面中的js，是整体编译到一个大js文件中的，它经
 ```
 resource下的键名为nvue文件路径（相对于应用根目录），值为空JSON对象（大括号）。
 
-<a id="vuejs"></a>
+<a id="vuejs"/>
+
 **HBuilderX2.6.3+版本开始，uni-app项目使用[v3编译器](https://ask.dcloud.net.cn/article/36599)支持对vue页面中引用的js文件进行原生混淆**
 
 在manifest.json文件中添加要混淆的js文件列表：
@@ -72,7 +73,7 @@ import test from '../common/test.js';
 
 **注意：uni-app中vue页面的webview组件支持加载使用加密混淆hybrid、static目录中的js文件，nvue页面的webview组件不支持。**
 
-### 5+ App/Wap2App项目
+#### 5+ App/Wap2App项目
 应用运行期间在页面打开时需要消耗更多时间进行混淆文件还原，为减少对运行速度的影响，5+App/wap2app仅支持对js文件进行原生混淆。
 在"plus" -> "confusion" -> "resources"节点下添加要混淆的js文件列表：
 ```javascript
@@ -124,7 +125,7 @@ WKWebview使用了更加严格的安全机制，使用原生混淆的js文件在
 **注意：iOS平台WKWebview需iOS11+系统才支持原生混淆。5+App/wap2app项目，如果要兼容iOS11以下设备只能强制使用UIWebview内核，但苹果将要废弃UIWebview（[详情](https://ask.dcloud.net.cn/article/36348)）。如对原生混淆很重视，从长远考虑，建议改造升级uni-app**
 
 
-## 第二步、提交云端打包
+### 提交云端打包  
 配置好原生混淆的文件列表后，需要提交云端打包，**注意在App云端打包对话框中需要勾选“对配置的js文件进行原生混淆”**
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/sec/confusion.png)
 

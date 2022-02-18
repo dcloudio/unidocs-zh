@@ -121,7 +121,6 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 	- 静态资源如图片，固定放到static目录下。这是webpack、mpvue的规则
 5. 数据绑定方式的注意
 	- ```uni-app``` 基于```Vue 2.0```实现，开发者需注意Vue 1.0 -> 2.0 的使用差异，详见[从 Vue 1.x 迁移](https://cn.vuejs.org/v2/guide/migration.html)
-	- 
 6. 每个页面支持使用原生title，首页支持使用原生底部tab，这些是要在pages.json里配置，这些并不是vue页面的一部分。当然vue里的js api也可以动态修改原生title
 6. 虽然使用vue，但在app和小程序里，不是spa而是mpa
 7. 位置坐标系统一为国测局坐标系gcj02，这种坐标系可以被多端支持。老版5+的百度定位和百度地图使用的是百度私有坐标系bd09ll，这种坐标系需要转换。新版uni-app里的百度地图已经默认改为gcj02。高德地图不受影响，一直是gcj02

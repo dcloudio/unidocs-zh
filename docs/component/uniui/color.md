@@ -61,7 +61,7 @@ $uni-primary-light: #d4e4ff;
 	<div class="color-main margin">
 		<div class="color-main-top" style="background-color:#e43d33;">
 			<p class="color-main-text">Error Color</p>
-			<p class="color-main-text">#e43d33;</p>
+			<p class="color-main-text">#e43d33</p>
 		</div>
 		<div class="color-main-box">
 			<div class="color-main-top" style="background-color:#f29e99;">

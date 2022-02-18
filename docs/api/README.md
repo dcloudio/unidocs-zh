@@ -129,7 +129,7 @@ uni.request({
 		console.error(err)
 	})
 
-// 使用 Await/Await 方式调用
+// 使用 Async/Await 方式调用
 async function request () {
 	try{
 		var res = await uni.request({

@@ -229,7 +229,7 @@ data数据是可遍历嵌套的数据集合。数组中每条数据如下基本k
 	<template>
 	  <!-- 传入符合 datacom 规范的数据，即可渲染出一个选择器  -->
 	  <!-- 使用 v-model 双向绑定 picker 的选中值 -->
-	  <uni-data-picker v-model="value" :localdata="items"></uni-data-checkbox>
+	  <uni-data-picker v-model="value" :localdata="items"></uni-data-picker>
 	</template>
 	<script>
 	  export default {

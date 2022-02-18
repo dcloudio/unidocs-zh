@@ -26,5 +26,8 @@
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7",
     "vuepress": "^1.8.2"
+  },
+  "dependencies": {
+    "@docsearch/js": "^3.0.0-alpha.50"
   }
 }

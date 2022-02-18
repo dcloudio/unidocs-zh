@@ -57,6 +57,7 @@
   * [Google Play上架](android-gp.md)
   * [App Store上架](ios-app-store.md)
 * App安全问题
+  * [js/nvue文件原生混淆加密](app-sec-confusion.md)
   * [Android安全漏洞问题解决方案](app-sec-android.md)
 * [uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
 * 运营服务

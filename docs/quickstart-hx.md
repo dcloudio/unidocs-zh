@@ -185,7 +185,7 @@ iOS App打包需要向Apple申请证书。
 
 **发布为字节跳动小程序：**
 1. 入驻字节跳动小程序，参考：[字节跳动小程序教程](https://developer.toutiao.com/dev/cn/mini-app/introduction/plug-in/registration)。
-2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-字节跳动"，即可在 ``/unpackage/dist/build/mp-alipay`` 生成字节跳动小程序项目代码。
+2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-字节跳动"，即可在 ``/unpackage/dist/build/mp-toutiao`` 生成字节跳动小程序项目代码。
 <div align=center>
   <img style="max-width:300px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a6ba4ed0-4f39-11eb-b997-9918a5dda011.jpg"/>
 </div>

@@ -10,7 +10,7 @@
 
 + 如果你的APP不是由HbuilderX`3.2.15+`云打包生产的请抓紧时间升级到HbuilderX`3.2.15+`版本。重新打包！
 + 如果你的APP是离线打包请升级SDK到`3.2.15+`版本重新编辑打包！[下载地址](https://nativesupport.dcloud.net.cn/AppDocs/download/android)
-+ 如何你的APP没有配置隐私与政策提示框。请认真阅读[Android平台隐私与政策提示框配置方法](https://ask.dcloud.net.cn/article/36937)配置你APP的隐私弹窗。
++ 如果你的APP没有配置隐私与政策提示框。请认真阅读[Android平台隐私与政策提示框配置方法](https://ask.dcloud.net.cn/article/36937)配置你APP的隐私弹窗。
 + 配置隐私弹窗时一定要配置使用`template`模式。否则无法上架应用市场。应用内部自己实现的隐私弹窗也不行。一定要使用uni提供的隐私弹窗并使用`template`模式切记！
   ```
   //androidPrivacy.json

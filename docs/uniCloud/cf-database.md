@@ -3397,6 +3397,7 @@ let res = await db.collection('orders').aggregate()
 
 ```js
 const db = cloud.database()
+const dbCmd = db.command
 const $ = db.command.aggregate
 let res = await db.collection('orders').aggregate()
   .lookup({
@@ -3406,7 +3407,7 @@ let res = await db.collection('orders').aggregate()
     },
     pipeline: $.pipeline()
       .match(
-        $.expr($.eq(['$_id', '$$book_id']))
+        dbCmd.expr($.eq(['$_id', '$$book_id']))
       )
       .lookup({
         from: 'authors',
@@ -3415,7 +3416,7 @@ let res = await db.collection('orders').aggregate()
         },
         pipeline: $.pipeline()
           .match(
-            $.expr($.eq(['$_id', '$$author_id']))
+            dbCmd.expr($.eq(['$_id', '$$author_id']))
           )
           .done(),
         as: 'authorList'

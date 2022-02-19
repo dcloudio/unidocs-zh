@@ -6078,7 +6078,7 @@ db.command.aggregate.arrayToObject([
 { "_id": 2, "sales": [ ["max", 70], ["min", 60] ] }
 { "_id": 3, "sales": [ { "k": "max", "v": 50 }, { "k": "min", "v": 30 } ] }
 ```
-求各个第一次考试的分数和和最后一次的分数：  
+将数组转换为对象：  
 
  
 ```js

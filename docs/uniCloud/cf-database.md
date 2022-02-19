@@ -43,6 +43,8 @@ doc(docId)方法的参数只能是字符串，即数据库默认的_id字段。
 
 如需要匹配多个`_id`的记录，应使用where方法。可以在where方法里用in指令匹配一个包含`_id`的数组。
 
+新增文档时数据库会自动生成_id字段，也可以自行将_id设置为其他值
+
 ### 查询筛选指令 Query Command@query-command
 
 以下指令挂载在 `db.command` 下

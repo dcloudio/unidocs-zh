@@ -201,6 +201,7 @@ export default {
 |showBadge|Boolean|false|是否显示数字角标	|
 |badgeText|String|-|数字角标内容|
 |badgeType|String|-|数字角标类型，参考[uni-icons](https://ext.dcloud.net.cn/plugin?id=21)	|
+|badgeStyle  |Object   |-      | 数字角标样式，使用uni-badge的custom-style参数|
 |rightText|String|-|右侧文字内容|
 |disabled|Boolean|false|是否禁用	|
 |showArrow|Boolean|true|是否显示箭头图标	|		

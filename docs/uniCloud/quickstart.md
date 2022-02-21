@@ -267,7 +267,7 @@ exports.main = async (event, context) => {
 
 **断点调试**
 
-> HBuilderX 3.2.10-alpha起支持
+> HBuilderX 3.2.10 起支持
 
 开启断点调试方式如下图所示，在HBuilderX内的uniCloud控制台点击虫子图标即可开启断点调试。
 
@@ -328,7 +328,7 @@ exports.main = async (event, context) => {
 
 **断点调试**
 
-> HBuilderX 3.2.10-alpha起支持
+> HBuilderX 3.2.10 起支持
 
 开启断点调试方式如下图所示，在运行菜单选择`调试运行-本地云函数`即可。
 

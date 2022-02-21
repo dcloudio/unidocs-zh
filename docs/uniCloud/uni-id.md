@@ -151,7 +151,8 @@ exports.main = async (event, context) => {
   "autoSetInviteCode": false, // 是否在用户注册时自动设置邀请码，默认不自动设置
   "forceInviteCode": false, // 是否强制用户注册时必填邀请码，默认为false（需要注意的是目前只有短信验证码注册才可以填写邀请码）,设置为true时需要在loginBySms时指定type为register来使用注册，登录时也要传入type为login
   "removePermissionAndRoleFromToken": false, // 新增于uni-id 3.0.0版本，如果配置为false则自动缓存用户的角色、权限到token中，默认值为false。详细说明见https://uniapp.dcloud.io/uniCloud/uni-id?id=cache-permission-in-token
-  "app-plus": {
+  "preferedAppPlatform": "app", // 新增于uni-id 3.3.12，指定app端对应的PLATFORM名称，用于处理app-plus和app的兼容问题，详细说明见：https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=prefered-app-platform
+  "app": { // 此处需和preferedAppPlatform保持一致
     "tokenExpiresIn": 2592000,
     "oauth": {
       // App微信登录所用到的appid、appsecret需要在微信开放平台获取，注意：不是公众平台而是开放平台
@@ -241,6 +242,44 @@ uniCloud.getCurrentUserInfo接口大致逻辑如下，需要注意的是某些�
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MWE1OTNiYTkxYTc1MDAwMDE2NmY3OGQiLCJyb2xlIjpbImFkbWluIl0sInBlcm1pc3Npb24iOltdLCJpYXQiOjE2MzgyNDMzNjUsImV4cCI6MTYzODI1MDU2NX0.MRHEvNYhj9yXjPK04rhZOdnitaxRdF2Ek9BbZjPJyDE'
 const userSegment = token.split('.')[1]
 const userInfo = atob(userSegment) // '{"uid":"61a593ba91a750000166f78d","role":["admin"],"permission":[],"iat":1638243365,"exp":1638250565}'
+```
+
+## preferedAppPlatform@prefered-app-platform
+
+> 新增于uni-id 3.3.12
+
+**前提介绍：** 
+
+uni-app vue2版本app端对应的platform为`app-plus`，uni-app vue3版本app端对应的platform为`app`。此改动引发了一些问题，比如在uni-id内使微信登录会无法匹配对应的平台导致登录报错。
+
+由于uni-id将客户端平台存储在了数据库内（例如：app端微信登录的openid被存储为`wx_openid['app-plus']`），此问题无法平滑升级，因此对于新老项目建议分别处理。
+
+### 旧项目的处理
+
+旧项目建议将所有platform为app的场景统一为app-plus，即建议使用如下配置
+
+```js
+// 以下仅列出相关配置
+{
+	"preferedAppPlatform": "app-plus", // uni-id内部会将收到的app平台全部转化为app-plus平台
+	"app-plus": { // 配置内的平台名称和preferedAppPlatform保持一致
+		"oauth": {}
+	}
+}
+```
+
+### 新项目的处理
+
+新项目建议将platform统一为app，即建议使用如下配置
+
+```js
+// 以下仅列出相关配置
+{
+	"preferedAppPlatform": "app", // uni-id内部会将收到的app-plus平台全部转化为app平台
+	"app": { // 配置内的平台名称和preferedAppPlatform保持一致
+		"oauth": {}
+	}
+}
 ```
 
 # 用户角色权限@rbac

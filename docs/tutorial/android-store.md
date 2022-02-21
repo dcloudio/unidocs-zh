@@ -23,7 +23,8 @@
   ```
 + 填写隐私协一定要结合实际使用的模块功能。填写相关隐私条款！不能含糊不清。模块收集了什么信息都要填写完整。否则影响上架！请参考当前文档中的`隐私政策注意事项`
 + 查看是否集成uni原生插件。有些权限或是违规获取可能是uni原生插件引发的。建议使用排除法删除插件重新打包检测
-+ 你的APP上面排查点都符合要求。上架依然失败请向检测平台要求提供代码调用堆栈。请拿着堆栈信息去找管理人员反馈
++ 检查是否集成了fcm推送(包含unipush中的fcm)、google统计、google推送、google登录模块。由于这些模块都集成google的gms服务会提前获取android id导致无法在国内正常上架。打包时请在manifest.json配置中排除这些功能模块。
++ 你的APP上面排查点都符合要求。上架依然失败请向检测平台要求提供代码调用堆栈。请拿着堆栈信息去[ASK论坛](https://ask.dcloud.net.cn/explore/)发帖说明问题并@管理人员反馈
 
 ### 隐私政策注意事项
 
@@ -116,8 +117,15 @@
 #### 14、您的应用在后台状态下获取了用户的MAC信息，且未在应用内的隐私政策
 
 + 查看是否集成了UniPush
-+ 如果集成UniPush请更新个推隐私协议条款！补充MAC信息[参考](https://ask.dcloud.net.cn/article/39484)
-+ 没有集成UniPush请向检测平台获取java调用堆栈。拿着java调用堆栈找客服确认问题
++ 如果集成UniPush请更新个推隐私协议条款！重点是补充MAC信息描述[参考](https://ask.dcloud.net.cn/article/39484)
++ 没有集成UniPush请向检测平台获取java调用堆栈。拿到java调用堆栈在[ask论坛](https://ask.dcloud.net.cn/explore/)发帖咨询
+
+#### 15、未经许可读取个人信息 获取ANDROID ID
+
++ 检查是否集成了fcm推送(包含unipush中的fcm)、google统计、google推送、google登录模块。
++ 如果集成了则不能国内上架！原因是集成这些模块会将google的GMS服务导入安装包中。启动会获取android id导致无法上架。
++ 检查uni-app项目在manifest.json将上诉模块去除重新打包上架
++ 没有集成这些模块可以向检测平台获取调用堆栈。拿到java调用堆栈在[ask论坛](https://ask.dcloud.net.cn/explore/)发帖咨询
 
 #### 看不懂文档不知道如何修改？
 

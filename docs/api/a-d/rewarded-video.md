@@ -71,6 +71,7 @@ options 为 object 类型，属性如下：
 |offLoad|Function|解除绑定 load 事件的监听器|QQ0.1.26+，字节跳动1.57.0+|
 |load|Function|当广告素材加载出现错误时，可以通过 load 方法手动加载|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，字节跳动1.57.0+|
 |onError|Function|绑定 error 事件的监听器	|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，字节跳动1.57.0+|
+|onAdClicked|Function|绑定广告可点击屏幕区域事件的监听器  |App 2.5.11+|
 |offError|Function|解除绑定 error 事件的监听器|QQ0.1.26+，字节跳动1.57.0+|
 |onClose|Function|绑定 close 事件的监听器|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，字节跳动1.57.0+|
 |offClose|Function|解除绑定 close 事件的监听器|QQ0.1.26+，字节跳动1.57.0+|

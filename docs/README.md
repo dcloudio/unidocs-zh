@@ -9,8 +9,8 @@ pageClass: custom-page-class
 `uni-app`在手，做啥都不愁。即使不跨端，```uni-app```也是更好的小程序开发框架（[详见](https://ask.dcloud.net.cn/article/35947)）、更好的App跨平台框架、更方便的H5开发框架。不管领导安排什么样的项目，你都可以快速交付，不需要转换开发思维、不需要更改开发习惯。
 
 <div class="quick">
-    <h3 id="快速体验"><a href="/#%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3>
-    <p>一套代码编到13个平台，这不是梦想。眼见为实，扫描13个二维码，亲自体验最全面的跨平台效果！</p>
+    <h3 id="快速体验"><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3>
+    <p>一套代码编到14个平台，这不是梦想。眼见为实，扫描14个二维码，亲自体验最全面的跨平台效果！</p>
     <div class="flex-img-group-view">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
@@ -86,9 +86,11 @@ pageClass: custom-page-class
         </div>
         <b>钉钉小程序版</b>
       </a>
-      <a href="javascript:void(0)" οnclick="js_method()" class="clear-style barcode-view">
-        <div class="barcode-img-box" style="width: 160px;"></div>
-        <b></b>
+      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box">
+          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/96e072fe-f338-46bd-b2d7-7b3aac7df501.png" width="160" />
+        </div>
+        <b>京东小程序版</b>
       </a>
       <a href="javascript:void(0)" οnclick="js_method()"  class="clear-style barcode-view">
         <div class="barcode-img-box" style="width: 160px;"></div>

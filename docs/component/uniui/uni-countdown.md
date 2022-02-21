@@ -35,13 +35,24 @@
 |second				|Number	|0		|秒					|
 |showDay			|Boolean|true	|是否显示天数		|
 |showColon			|Boolean|true	|是否以冒号为分隔符	|
-|start			|Boolean|true	|是否初始化组件后就开始倒计时|
+|start				|Boolean|true	|是否初始化组件后就开始倒计时|
 
 ### Countdown Events
 
 |事件称名	|说明							|返回值	|
 |:-:		|:-:							|:-:		|
 |@timeup|倒计时时间到触发事件	|-			|
+
+
+
+### Countdown Methods
+
+|事件称名	|说明							|返回值	|
+|:-:		|:-:							|:-:		|
+|update		|动态更新时间后，刷新组件显示		|-			|
+
+
+
 
 
 ## 组件示例

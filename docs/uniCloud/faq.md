@@ -219,7 +219,7 @@ uniCloud的每个云函数是一个独立进程，不存在云函数级别的多
 2. 将上述域名CNAME到`api.bspapp.com`
 3. [自行初始化uniCloud](uniCloud/init.md)传入endpoint参数，其值为开通全球加速的自有域名
 
-### 腾讯云提示当前实名主体已经有三个账号怎么办
+### 腾讯云提示当前实名主体已经有三个账号怎么办@tencent-exceed-account-limit
 
 开通腾讯云服务空间时实名认证提示实名主体已有三个账号，这往往是开发者在微信小程序开发工具里不小心开通了多个免费的小程序云，此时可以参考以下流程注销不用的账号：
 
@@ -287,24 +287,7 @@ exports.main = async function(event){
 
 ### 授权其他用户访问服务空间@collaborator
 
-开发期间经常需要多人共用同一个服务空间，此时可以在[DCloud开发者中心](https://dev.dcloud.net.cn/)将特定应用及其关联的服务空间共享给协作者，详细步骤如下
-
-1. 在开发者中心`我创建的应用`列表页面选择特定的应用，如果应用过多可以使用AppId进行查找
-
-  ![我创建的应用](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/865a0df3-3169-48df-8b4c-8acacf1a621f.jpg)
-  
-2. 在第一步选择的应用详情页面左侧菜单点击`项目成员管理`
-3. 输入协作者邮箱并点击`添加协作者按钮`，下方会出现协作者权限配置界面
-
-  ![项目成员管理](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2e59ce9b-f202-4432-954c-d6182187ef94.jpg)
-  
-4. 勾选uniCloud并点击`设置授权服务空间`，在弹出界面勾选希望此协作者访问的服务空间
-  
-  ![设置授权服务空间](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b3c234a7-e514-4b14-b33d-e7322130bd7d.jpg)
-
-5. 点击第4步弹出界面的`保存按钮`以及第3步的`保存权限设置`按钮
-
-6. 协作者如需在uni-app项目关联此服务空间，需要在项目的`manifest.json`内配置上共享的应用的AppId（需要在源码视图编辑manifest.json）
+详见文档：[服务空间的多人协作](/uniCloud/concepts/space?id=collaboration)
 
 ### 如何使用promise/async/await@promise
 
@@ -371,7 +354,7 @@ uniCloud客户端callFunction及数据库相关接口会返回Promise类型结�
 - bspapp.com，属于阿里云。如果该域名访问报错，说明阿里云serverless出故障了。
 - tencentcloudapi.com，属于腾讯云。如果该域名访问报错，说明腾讯云serverless出故障了。
 
-当然还有一种情况报错，其实是客户端的问题，包括浏览器的跨域问题，或者小程序的域名白名单问题，导致客户端无法连接uniCloud。这需要通过配置来解决，参考文档：[小程序和浏览器的域名访问配置](https://uniapp.dcloud.io/uniCloud/quickstart?id=%e5%b0%8f%e7%a8%8b%e5%ba%8f%e4%b8%ad%e4%bd%bf%e7%94%a8unicloud%e7%9a%84%e7%99%bd%e5%90%8d%e5%8d%95%e9%85%8d%e7%bd%ae)
+当然还有一种情况报错，其实是客户端的问题，包括浏览器的跨域问题，或者小程序的域名白名单问题，导致客户端无法连接uniCloud。这需要通过配置来解决，参考文档：[小程序和浏览器的域名访问配置](https://uniapp.dcloud.io/uniCloud/quickstart?id=useinmp)
 
 2. 通过测试系统判断故障点
 - [hello uniCloud 阿里云版](https://hellounicloud.dcloud.net.cn/#/)
@@ -387,7 +370,7 @@ uniCloud客户端callFunction及数据库相关接口会返回Promise类型结�
 
 **`operation exceeded time limit`、`云数据库执行时间超限`错误**
 
-此错误一般由数据库操作超时引发，具体如何优化请参考：[性能优化](db-performance.md)
+此错误一般由数据库操作超时引发，具体如何优化请参考：[性能优化](https://uniapp.dcloud.io/uniCloud/db-performance)
 
 **使用事务时出现`WriteConflict`错误**
 

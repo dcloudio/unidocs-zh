@@ -50,6 +50,7 @@ app端nvue专用组件。
 - left-gap: [可选]左边cell和列表的间隙. 如果未指定 ，则对应 `0`
 - right-gap: [可选]右边cell和列表的间隙. 如果未指定，则对应 `0`
   <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/e78b5450-4f2e-11eb-b680-7980c8a877b8.png" />
+- always-scrollable-vertical : `[可选]` 可选值为 true/ false，默认值为 false，iOS 平台，内容不满一屏无法触发下拉刷新时需要设置为true，因为默认子视图高度不超过父视图高度的时候 waterfall 不能滑动
 
 其他支持的属性参见 `<list>` 组件属性部分
 

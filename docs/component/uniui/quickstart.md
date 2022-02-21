@@ -89,9 +89,15 @@ uni-ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别�
 
 ```
 
+### 通过  `uni_modules` 导入全部组件
+如果想一次把所有uni-ui组件导入到项目中，只需要导入一个 `uni-ui` 组件即可 [点击去导入](https://ext.dcloud.net.cn/plugin?id=55)。
 
-### npm安装 (不推荐)
-在 `vue-cli` 项目中可以使用 `npm` 安装 `uni-ui` 库 ，或者直接在 `HBuilderX` 项目中使用 `npm` 。（不推荐后一种方式）
+如果没有自动导入其他组件，可以在 uni-ui 组件目录上右键选择 `安装三方插件依赖` 即可。
+
+
+
+### npm安装 
+在 `vue-cli` 项目中可以使用 `npm` 安装 `uni-ui` 库 ，或者直接在 `HBuilderX` 项目中使用 `npm` 。
 
 > **注意**
 > cli 项目默认是不编译 `node_modules` 下的组件的，导致条件编译等功能失效 ，导致组件异常
@@ -119,8 +125,8 @@ uni-ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别�
 npm i sass-loader@10.1.1 -D   或   yarn add sass-loader@10.1.1 -D
 ```
 
-> sass-loader 请使用低于 @11.0.0 的版本，[sass-loader@11.0.0 不支持 vue@2.6.12 ](https://stackoverflow.com/questions/66082397/typeerror-this-getoptions-is-not-a-function)
-
+> 如果 `node` 版本小于 16 ，sass-loader 请使用低于 @11.0.0 的版本，[sass-loader@11.0.0 不支持 vue@2.6.12 ](https://stackoverflow.com/questions/66082397/typeerror-this-getoptions-is-not-a-function)
+> 如果 `node` 版本大于 16 ， `sass-loader` 建议使用 `v8.x` 版本
 
 **安装 uni-ui**
 
@@ -129,25 +135,6 @@ npm i @dcloudio/uni-ui   或   yarn add @dcloudio/uni-ui
 ```
 
 
-
-在 ``script`` 中引用组件：
-
-```javascript
-import {uniBadge} from '@dcloudio/uni-ui'
-//import uniBadge from '@dcloudio/uni-ui/lib/uni-badge/uni-badge.vue' //也可使用此方式引入组件
-export default {
-    components: {uniBadge}
-}
-```
-
-
-在 ``template`` 中使用组件： 
-
-```html
-<uni-badge text="1"></uni-badge>
-<uni-badge text="2" type="success" @click="bindClick"></uni-badge>
-<uni-badge text="3" type="primary" :inverted="true"></uni-badge>
-```
 
 **配置easycom**
 
@@ -174,20 +161,22 @@ export default {
 
 ```
 
+在 ``template`` 中使用组件： 
+
+```html
+<uni-badge text="1"></uni-badge>
+<uni-badge text="2" type="success" @click="bindClick"></uni-badge>
+<uni-badge text="3" type="primary" :inverted="true"></uni-badge>
+```
+
  **注意**
- - `CLI` 引用方式， `H5` 端不支持在 `main.js` 中全局注册组件，如有需求请使用（[easyCom](https://uniapp.dcloud.io/collocation/pages?id=easycom)） 的方式引用组件
+ - uni-ui 现在只推荐使用 `easycom` ，如自己引用组件，可能会出现组件找不到的问题
  - 使用 npm 安装的组件，默认情况下 babel-loader 会忽略所有 node_modules 中的文件 ，导致条件编译失效，需要通过配置 `vue.config.js` 解决：
- ```javascript
- // 在根目录创建 vue.config.js 文件，并配置如下
- module.exports = {
- 	transpileDependencies: ['@dcloudio/uni-ui']
- }
- ```
-
-
-
-
- **注意**
-
-- uni-ui 是uni-app内置组件的扩展。注意与web开发不同，uni-ui不包括基础组件，它是基础组件的补充。web开发中有的开发者习惯用一个ui库完成所有开发，但在uni-app体系中，推荐开发者首先使用性能更高的基础组件，然后按需引入必要的扩展组件。
-- `uni-ui` 不支持使用 `Vue.use()` 的方式安装
+	 ```javascript
+	 // 在根目录创建 vue.config.js 文件，并配置如下
+	 module.exports = {
+		transpileDependencies: ['@dcloudio/uni-ui']
+	 }
+	 ```
+ - uni-ui 是uni-app内置组件的扩展。注意与web开发不同，uni-ui不包括基础组件，它是基础组件的补充。web开发中有的开发者习惯用一个ui库完成所有开发，但在uni-app体系中，推荐开发者首先使用性能更高的基础组件，然后按需引入必要的扩展组件。
+ - `uni-ui` 不支持使用 `Vue.use()` 的方式安装

@@ -252,7 +252,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * 页面中引入自定义组件时，渲染的结果中外层会有一个 `template` 标签，这会导致部分选择器对应的样式匹配不上。
 
 #### 360小程序开发注意 @mp-360
-* HBuilderX 2.7.6+ alpha 版支持
+* HBuilderX 2.7.6+ 版支持
 * 默认为H5平台组件，如果需要360平台组件请使用 <se-...></se-...>，例如 `<se-video></se-video>`
 * `<se-...></se-...>` 为360平台专有组件，不能跨平台，需要条件编译 `mp-360`
 pages 配置
@@ -268,7 +268,7 @@ pages 配置
 
 
 #### 快应用开发注意@quickapp
-* HBuilderX 2.7.12+ alpha 版支持
+* HBuilderX 2.7.12+ 版支持
 
 ##### quickapp-webview
 - 目前仅vivo oppo支持

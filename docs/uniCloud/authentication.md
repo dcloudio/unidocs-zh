@@ -14,12 +14,76 @@
 
 ## 名词解释
 
-- Ticket（票据）：由云函数调用`createTicket`返回的票据，用于客户端使用票据进行登录操作
+- Ticket（票据）：由云函数调用`auth.createTicket`返回的票据，用于客户端使用票据进行登录操作
 - 匿名登录：用户未进行登录操作的状态
 - 短期访问令牌：用户身份的凭证（access token），调用`signInWithTicket`或者`linkAndRetrieveDataWithTicket`之后会自动进行存储
 
 
-## uniCloud.customAuth()
+## 云函数接口
+
+### uniCloud.customAuth@cloud-custom-auth
+
+**重要：自HBuilderX 2.9.12起，此接口由uniCloud.auth调整为uniCloud.customAuth，短时间内仍会兼容uniCloud.auth**
+
+获取登录对象
+
+**示例代码**
+
+```js
+const auth = uniCloud.customAuth()
+```
+
+### auth.createTicket@cloud-create-ticket
+
+云端根据用户id创建票据用于客户端登录到对应的云厂商
+
+**接口形式**
+
+```js
+auth.createTicket(String uid, Object options)
+```
+
+**参数说明**
+
+|字段			|类型	|是否必填	|说明								|
+|:-:			|:-:	|:-:		|:-:								|
+|uid			|string	|是			|应用内的用户唯一id					|
+|options.refresh|number	|否			|access_token的刷新时间，默认一小时	|
+|options.expire	|number	|否			|access_token的过期时间				|
+
+**示例代码**
+
+```js
+let uid = '123456';
+
+const ticket = uniCloud.customAuth().createTicket(uid, {
+  refresh: 10 * 60 * 1000 // 每十分钟刷新一次登录态， 默认为一小时
+});
+```
+
+### auth.getUserInfo@cloud-get-user-info
+
+任何方式登录成功后，可以调用 `getUserInfo` 获得用户的身份信息。
+
+**响应参数**
+
+|字段			|类型	|是否必备	|说明							|
+|:-:			|:-:	|:-:		|:-:							|
+|uid			|string	|是			|用户在云厂商的唯一ID			|
+|customUserId	|string	|否			|用户使用自定义登录传入的用户Id	|
+
+**示例代码**
+
+```js
+const {
+	uid,
+	customUserId
+} = await auth.getUserInfo()
+```
+
+## 客户端接口
+
+### uniCloud.customAuth@custom-auth
 
 **重要：自HBuilderX 2.9.12起，此接口由uniCloud.auth调整为uniCloud.customAuth，短时间内仍会兼容uniCloud.auth**
 
@@ -42,9 +106,9 @@ const auth = uniCloud.customAuth()
 auth.signInAnonymously()
 ``` -->
 
-## auth.signInWithTicket()@signinwithticket
+### auth.signInWithTicket@signinwithticket
 
-使用，详细描述参考[登录流程](#cloudtoken)
+使用云函数接口createTicket返回的票据进行登录，详细描述参考[登录流程](#cloudtoken)
 
 **示例代码**
 
@@ -58,7 +122,7 @@ auth.signInWithTicket('YourTicket').then(() => {
   })
 ```
 
-## auth.getLoginState()
+### auth.getLoginState@get-login-state
 
 开发者可以通过 `getLoginState()` 来获取当前的登录状态，调用 `getLoginState()` 后，SDK 会识别本地是否有登录状态，如果有，则会尝试刷新登录状态，若刷新登录状态成功，则会返回新的登录状态，否则返回 `undefined`。
 
@@ -74,16 +138,16 @@ auth.getLoginState().then(loginState => {
 })
 ```
 
-## auth.getUserInfo()
+### auth.getUserInfo@get-user-info
 
 任何方式登录成功后，可以调用 `getUserInfo` 获得用户的身份信息。
 
 **响应参数**
 
-|字段					|类型		|是否必备	|说明														|
-|:-:					|:-:		|:-:			|:-:														|
-|uid					|string	|是				|用户在云开发的唯一ID						|
-|customUserId	|string	|否				|用户使用自定义登录传入的用户Id	|
+|字段			|类型	|是否必备	|说明							|
+|:-:			|:-:	|:-:		|:-:							|
+|uid			|string	|是			|用户在云厂商的唯一ID			|
+|customUserId	|string	|否			|用户使用自定义登录传入的用户Id	|
 
 **示例代码**
 

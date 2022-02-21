@@ -5,14 +5,16 @@
 
 需要拦截的`api`名称，如：`uni.addInterceptor('request', OBJECT)` ，将拦截 `uni.request()`
 
+注意：仅支持异步接口，如：`uni.setStorage(OBJECT)`，暂不支持同步接口如：`uni.setStorageSync(KEY,DATA)`
+
 **OBJECT 参数说明**
 
-|参数名		|类型			|必填	|默认值	|说明					|平台差异说明	|
-|:-				|:-				|:-		|:-			|:-						|:-						|
-|invoke		|Function	|否		|				|拦截前触发		|							|
-|success	|Function	|否		|				|成功回调拦截	|							|
-|fail			|Function	|否		|				|失败回调拦截	|							|
-|complete	|Function	|否		|				|完成回调拦截	|							|
+|参数名		|类型		|必填	|默认值	|说明		|平台差异说明	|
+|:-			|:-			|:-		|:-		|:-			|:-			|
+|invoke		|Function	|否		|		|拦截前触发	|			|
+|success	|Function	|否		|		|成功回调拦截	|			|
+|fail		|Function	|否		|		|失败回调拦截	|			|
+|complete	|Function	|否		|		|完成回调拦截	|			|
 
 
 **示例**

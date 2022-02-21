@@ -242,7 +242,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 [uni-app 项目支持 vue 3.0介绍，及升级指南](https://ask.dcloud.net.cn/article/37834)
 
 
-`HBuilderX 3.2.5-alpha`新增在App平台支持 vue 3.0，至此 `uni-app` 项目对 vue 3.0 的支持情况如下：
+`HBuilderX 3.2.5`新增在App平台支持 vue 3.0，至此 `uni-app` 项目对 vue 3.0 的支持情况如下：
 
 - H5/PC Web平台支持，编译器升级为`vite`。
 - 小程序平台：支持vue 3.0开发，编译器依然是 `webpack`，正在升级`vite`中。

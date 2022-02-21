@@ -2,8 +2,8 @@ App端支付模块封装了市场上主流的三方支付平台SDK，提供JS AP
 
 |项目类型|API|
 |:-|:-|
-|uni-app|[uni.requestPayment](/api/plugins/payment?id=requestpayment)|
-|5+ App|[plus.payment.*](https://www.html5plus.org/doc/zh_cn/payment.html)
+|uni-app|[uni.requestPayment(OBJECT)](api/plugins/payment?id=requestpayment)|
+|5+ App/Wap2App|[plus.payment.*](https://www.html5plus.org/doc/zh_cn/payment.html)
 
 如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，官方提供了[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)云端统一支付服务，极大提升支付业务的开发效率，强烈推荐给开发者使用，参考示例：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)
 
@@ -18,14 +18,14 @@ App端支付模块封装了市场上主流的三方支付平台SDK，提供JS AP
 - 在客户端调用API进行支付
 
 支持的三方支付平台：
-- [Apple应用内支付](https://uniapp.dcloud.io/tutorial/app-payment-aip)  
+- [Apple应用内支付](https://uniapp.dcloud.io/app-payment-aip)  
 HBuilderX1.0.0+版本支持
-- [支付宝支付](https://uniapp.dcloud.io/tutorial/app-payment-alipay)  
-- [微信支付](https://uniapp.dcloud.io/tutorial/app-payment-weixin)  
-- [Paypal支付](https://uniapp.dcloud.io/tutorial/app-payment-paypal)  
+- [支付宝支付](https://uniapp.dcloud.io/app-payment-alipay)  
+- [微信支付](https://uniapp.dcloud.io/app-payment-weixin)  
+- [Paypal支付](https://uniapp.dcloud.io/app-payment-paypal)  
 HBuilderX3.3.7+版本支持
-- [Stripe支付](https://uniapp.dcloud.io/tutorial/app-payment-stripe)  
+- [Stripe支付](https://uniapp.dcloud.io/app-payment-stripe)  
 HBuilderX3.3.7+版本支持
-- [Google支付](https://uniapp.dcloud.io/tutorial/app-payment-google)  
+- [Google支付](https://uniapp.dcloud.io/app-payment-google)  
 HBuilderX3.3.7+版本支持
 

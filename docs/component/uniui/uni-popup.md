@@ -19,6 +19,7 @@
 > - 使用 `npm` 方式引入组件，如果确认引用正确，但是提示未注册组件或显示不正常，请尝试重新编译项目
 > - `uni-popup` 中尽量不要使用 `scroll-view` 嵌套过多的内容，可能会影响组件的性能，导致组件无法打开或者打开卡顿
 > - `uni-popup` 不会覆盖原生 tabbar 和原生导航栏
+> - app-vue 中组件无法遮盖 video ，ad 等原生组件 ，建议使用 nvue 
 > - 组件支持 nvue ，需要在 `manifest.json > app-plus` 节点下配置 `"nvueStyleCompiler" : "uni-app"` 
 
 ### 基本用法 
@@ -104,7 +105,9 @@ export default {
 |:-:|:-:|:-:|:-:|
 |animation|Boolean|true|是否开启动画|
 |type|String|'center'|弹出方式|
-|mask-click|Boolean|true|蒙版点击是否关闭弹窗|
+|mask-click **[即将废弃]**|Boolean|true|蒙版点击是否关闭弹窗|
+|is-mask-click **[1.7.4新增]**|Boolean|true|蒙版点击是否关闭弹窗|
+|mask-background-color **[1.7.4新增]**|rgba|rgba(0,0,0,0.4)|蒙版颜色，建议使用 rgba 颜色值|
 |background-color|String|'none'|主窗口背景色|
 |safe-area|Boolean|true|是否适配底部安全区|
 
@@ -228,6 +231,8 @@ export default {
 |mode|String|base| 对话框模式，可选值：base（提示对话框）/input（可输入对话框）|
 |title|String|-|对话框标题|
 |content|String|-|对话框内容，base模式下生效|
+|confirmText **[1.7.4新增]**|String|-|定义确定按钮文本|
+|cancelText **[1.7.4新增]**|String|-|定义取消按钮文本|
 |value| String\Number|-|输入框默认值，input模式下生效|
 |placeholder|String|-|输入框提示文字，input模式下生效|
 |before-close|Boolean|false	| 是否拦截按钮事件，如为true，则不会关闭对话框，关闭需要手动执行 uni-popup 的 close 方法|
@@ -274,6 +279,57 @@ export default {
 
 **Tips**
 - share 分享组件，只是作为一个扩展示例，如果需要修改数据源，请到组件内修改
+
+
+
+## 禁止滚动穿透
+
+使用组件时，会发现内容部分滚动到底时，继续划动会导致底层页面的滚动，这就是滚动穿透。
+
+但由于平台自身原因，除了h5平台外 ，其他平台都不能在在组件内禁止滚动穿透，所以在微信小程序、App 平台，页面内需要用户特殊处理一下
+
+### 微信小程序/App
+在 `微信小程序/App` 平台可使用 `page-meta` 组件动态修改页面样式 ，
+
+需要在 data 中定义一个变量，用来表示 `uni-popup` 的开启关闭状态，并通过这个变量修改 `page-meta` 的 `overflow` 属性。
+
+在 `uni-popup` 的 `@change` 事件中可以接受到 `uni-popup` 的开启关闭状态 ，并赋值给上面的变量
+
+**下面是关键代码片段：**
+
+```html
+<template>
+	<page-meta :page-style="'overflow:'+(show?'hidden':'visible')"></page-meta>
+	<view class="container">
+		<!-- 普通弹窗 -->
+		<uni-popup ref="popup" background-color="#fff" @change="change">
+		<!-- ... -->
+		</uni-popup>
+	</view>
+</template>
+<script>
+	export default {
+		data() {
+			return {
+				show:false
+			}
+		},
+		methods: {
+			change(e) {
+				this.show = e.show
+			}
+		}
+	}
+</script>
+
+
+```
+
+**Tips**
+- h5 滚动穿透不需要处理 
+- wx、app 需要 使用 page-meta 组件配合阻止滚动穿透
+- 注意 page-meta 组件，一个页面只能存在一个
+- 其他平台无法阻止滚动穿透，建议使用 scroll-view 滚动 ，手动设置 overflow:hidden,同 page-meta 方法一致
 
 ## 组件示例
 

@@ -47,7 +47,7 @@ App端定位模块封装系统自带的`系统定位`，及市场上主流的三
 
 ### 高德定位
 
-> 需要向高德申请商业授权，参考:[商业授权相关说明](id=business)，使用前需登录 [高德开放平台](https://lbs.amap.com/) 创建应用申请Key
+> 需要向高德申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [高德开放平台](https://lbs.amap.com/) 创建应用申请Key
 
 使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“高德定位”：
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/geolocation/amap.png)
@@ -66,7 +66,7 @@ App端定位模块封装系统自带的`系统定位`，及市场上主流的三
 
 ### 百度定位
 
-> 需要向百度申请商业授权，参考:[商业授权相关说明](id=business)，使用前需登录 [百度地图开放平台](https://lbsyun.baidu.com/) 创建应用申请访问应用密钥（AK）
+> 需要向百度申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [百度地图开放平台](https://lbsyun.baidu.com/) 创建应用申请访问应用密钥（AK）
 
 使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“百度定位”：
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/geolocation/baidu.png)

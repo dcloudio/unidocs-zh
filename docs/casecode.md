@@ -108,6 +108,8 @@
 
 - [发布心情](https://ext.dcloud.net.cn/plugin?id=489)
 
+- [租房小程序](https://gitee.com/cookieBoy/house)
+
 
 mpvue的所有开源资源都可以用于uni-app。下文汇总收集了网友开源的各种mpvue项目，涵盖了各种业务场景。
 - mpvue 开源项目汇总：[https://ask.dcloud.net.cn/article/34945](https://ask.dcloud.net.cn/article/34945)

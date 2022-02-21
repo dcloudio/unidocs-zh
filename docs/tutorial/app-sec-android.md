@@ -88,7 +88,7 @@ UniPush模块用到个推SDK，内部功能涉及到CustomGTService、PushReceiv
 **修复方案**  
 HBuilderX3.0.0+版本新增[plus.navigator.getSignature](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature)方法获取Android平台签名证书的SHA-1指纹信息，在应用启动或运行时进行校验判断。
 
-可以在应用运行期间定时校验，以下是uni-app项目在App.vue的应用生命周期[onLaunch](https://uniapp.dcloud.io/collocation/App.html#应用生命周期)中进行校验，示例如下：
+可以在应用运行期间定时校验，以下是uni-app项目在App.vue的应用生命周期[onLaunch](https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f)中进行校验，示例如下：
 ``` js
   onLaunch: function(inf) {
       console.log('App Launch');
@@ -104,7 +104,7 @@ HBuilderX3.0.0+版本新增[plus.navigator.getSignature](https://www.html5plus.o
 
 ```
 
-> 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[JS/NVUE文件原生混淆加密](https://ask.dcloud.net.cn/article/36437)，或者使用apk加固处理
+> 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
 
 
 #### APK可被反编译后取得源代码风险  
@@ -135,3 +135,9 @@ HBuilderX发布到App的Android平台最低支持Android4.4，即minSdkVersion�
 **修复方案**  
 HBuilderX3.1.14+版本已修复此问题，在内部逻辑中使用的密钥全部做了混淆加密处理。
 
+#### SO文件破解风险漏洞
+**风险描述** 
+SO文件为APK中包含的动态链接库文件，Android利用NDK技术将C/C++语言实现的核心代码编译为SO库文件供Java层调用。SO文件被破解可能导致应用的核心功能代码和算法泄露。攻击者利用核心功能与算法可轻易抓取到客户端的敏感数据，并对其解密，导致用户的隐私泄露或直接财产损失
+
+**修复方案** 
+建议使用专业安全加固平台对APK中的SO文件进行加固保护

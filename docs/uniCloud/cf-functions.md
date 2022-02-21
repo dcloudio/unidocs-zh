@@ -197,7 +197,7 @@ exports.main = async (event, context) => {
 
 但为了方便拦截器统一处理返回值，捕获异常或弹框提示，uniCloud定义了`uniCloud响应体规范`，推荐开发者使用。
 
-`uniCloud响应体规范`（uniCloud response format），是DCloud制定的、服务器给客户端返回json数据的一种建议格式。后续uni-id、uni-pay、clientDB等均会调整为此结构
+`uniCloud响应体规范`（uniCloud response format），是DCloud制定的、服务器给客户端返回json数据的一种建议格式。uni-id公共模块已支持此规范，后续uni-pay、clientDB等均会调整为此结构
 
 **由来**
 
@@ -387,11 +387,11 @@ exports.main = async (event, context) => {
 Tips:
 - 目前每个云函数上传包大小限制为10M。如果npm包很大，阿里云的整体上传机制会无法满足需求。此时只能选择腾讯云，交给腾讯云自动安装依赖。
 
-## 公共模块
+## 公共模块@common
 
 云函数支持公共模块。多个云函数的共享部分，可以抽离为公共模块，然后被多个云函数引用。[详见](uniCloud/cf-common)
 
-## 扩展库
+## 扩展库@extension
 
 uniCloud的api中，有些api对应的实现，其源码体积较大，且这些功能并不是每一个云函数都会使用。为了方面开发者控制云函数的体积，设计了`uniCloud扩展库`的概念。
 
@@ -485,6 +485,27 @@ let callFunctionResult = await uniCloud.callFunction({
     data: { a: 1 }
 })
 ```
+
+### 云函数内调用其他服务空间的云函数@call-by-function-cross-space
+
+> 仅腾讯云支持
+
+在腾讯云服务空间的云函数内支持获取同账号下其他服务空间的uniCloud实例，参考：[一个应用访问多个服务空间](uniCloud/concepts/space.md?id=multi-space)，并使用此实例调用对应服务空间的云函数。
+
+```javascript
+//开发者创建了多个服务空间，则需手动初始化。注意这是前端代码，不是云函数代码
+const myCloud = uniCloud.init({
+  provider: 'tencent',
+  spaceId: 'xxxx-yyy'
+});
+//通过uniCloud实例调用云开发的API
+myCloud.callFunction()
+myCloud.uploadFile()
+```
+
+**注意**
+
+- 连接本地云函数调试时，如果存在跨服务空间调用，则callFunction会使用云端云函数
 
 ## 开发模式
 

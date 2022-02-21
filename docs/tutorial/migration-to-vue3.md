@@ -284,3 +284,57 @@
       },
     });
     ```
+  
+  - uni-app 生命周期钩子在 Vue3 组合式 API 中的使用方式如下：
+      - 在 Vue3 组合式 API 中，也需要遵循 uni-app 生命周期钩子规范, 如 onLaunch 等应用生命周期仅可在 App.vue 中监听，使用中请注意生命周期钩子的适用范围。[查看全部生命周期钩子](https://uniapp.dcloud.net.cn/collocation/frame/lifecycle)
+      - 只能在 `<script setup>` 单文件语法糖或 `setup()` 方法中使用生命周期钩子，以 A 页面跳转 B 页面传递参数为例：
+
+        ```js
+        // 从 A 页面跳转 B 页面时传递参数 ?id=1&name=uniapp，xxx 为跳转的页面路径
+        //uni.navigateTo({
+        //  url: 'xxx?id=1&name=uniapp'
+        //})
+            
+        // 方式一：在 B 页面 <script setup> 中
+        <script setup>
+          import {
+            onLoad,
+            onShow
+          } from "@dcloudio/uni-app";
+          
+          // onLoad 接受 A 页面传递的参数
+          onLoad((option) => {
+            console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
+          });
+          
+          onShow(() => {
+            console.log("B 页面 onShow");
+          });
+        </script>
+        ```
+
+        ```js
+        // 方式二：在 B 页面 setup() 中
+        <script>
+          import {
+            onLoad,
+            onShow,
+          } from "@dcloudio/uni-app";
+        
+          export default {
+            setup() {
+              // onLoad 接受 A 页面传递的参数
+              onLoad((option) => {
+                console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
+              });
+              
+              onShow(() => {
+                console.log("B 页面 onShow");
+              });
+            }
+          }
+        </script>
+        ```
+
+        
+        

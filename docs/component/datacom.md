@@ -229,7 +229,7 @@ data数据是可遍历嵌套的数据集合。数组中每条数据如下基本k
 	<template>
 	  <!-- 传入符合 datacom 规范的数据，即可渲染出一个选择器  -->
 	  <!-- 使用 v-model 双向绑定 picker 的选中值 -->
-	  <uni-data-picker v-model="value" :localdata="items"></uni-data-checkbox>
+	  <uni-data-picker v-model="value" :localdata="items"></uni-data-picker>
 	</template>
 	<script>
 	  export default {
@@ -441,7 +441,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 		<view v-else-if="mixinDatacomErrorMessage">
 			请求错误：{{mixinDatacomErrorMessage}}
 		</view>
-		<view else="mixinDatacomResData">
+		<view v-else="mixinDatacomResData">
 			<!-- 需要自行处理数据及相关UI展现 -->
 			{{mixinDatacomResData}}
 		</view>
@@ -491,7 +491,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 		<view v-else-if="mixinDatacomErrorMessage">
 			请求错误：{{mixinDatacomErrorMessage}}
 		</view>
-		<view else="mixinDatacomResData">
+		<view v-else="mixinDatacomResData">
 			<!-- 需要自行处理数据及相关UI展现 -->
 			{{mixinDatacomResData}}
 		</view>

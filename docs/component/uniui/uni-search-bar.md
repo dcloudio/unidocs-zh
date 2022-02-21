@@ -14,7 +14,7 @@
 <uni-search-bar @confirm="search" @input="input" ></uni-search-bar>
 
 <!-- v-model 用法 -->
-<uni-search-bar @confirm="search" :focus="true" v-model="searchValue" @blur="blur" @focus="focus" @input="input" @cancel="cancel" @change="change" @clear="clear">
+<uni-search-bar @confirm="search" :focus="true" v-model="searchValue" @blur="blur" @focus="focus" @input="input" @cancel="cancel" @change="change" @clear="clear"></uni-search-bar>
 
 <!-- 自定义Placeholder -->
 <uni-search-bar placeholder="自定placeholder" @confirm="search"></uni-search-bar>

@@ -6,6 +6,7 @@
   + 可添加多个return URL分别给Android和iOS平台使用
 
 更多信息详见 [申请开通Paypal操作指南](https://uniapp.dcloud.io/app-payment-paypal-open)
+
 仅供iOS11.0及以上版本使用
 
 ### 配置  

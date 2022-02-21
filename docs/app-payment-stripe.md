@@ -5,6 +5,8 @@
 
 更多信息详见[申请开通Stripe操作指南](https://uniapp.dcloud.io/app-payment-stripe-open)
 
+环境:iOS13.0+
+
 
 ### 配置  
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数
@@ -13,7 +15,9 @@
 **参数说明**  
 - returnURL  
 Android平台使用，格式为"your-app://stripe"(示例 io.dcloud.test://stripe)，'your-app'为应用的bundle id或其它自定义scheme，参考:[配置一个自定义页面内跳转协议 (URL Scheme)](https://ask.dcloud.net.cn/article/64)
-### 服务器生成订单
+
+
+### 服务器生成订单
 在 App 端调用支付前，需在业务服务器生成[PaymentIntent](https://stripe.com/docs/api/payment_intents)，详情可参考Stripe官方文档：[Add an endpoint](https://stripe.com/docs/payments/accept-a-payment?platform=android&ui=payment-sheet#add-server-endpoint)
 
 激活账户前可通过POST请求Stripe官方沙盒服务器[https://stripe.com/docs/payments/accept-a-payment](https://stripe.com/docs/payments/accept-a-payment)，生成测试PaymentIntent，示例如下：

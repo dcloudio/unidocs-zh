@@ -17,6 +17,45 @@
 		return docsearch.default;
 	};
 
+	const translations = {
+		button: {
+			buttonText: '搜索',
+			buttonAriaLabel: '搜索',
+		},
+		modal: {
+			searchBox: {
+				resetButtonTitle: '清空',
+				resetButtonAriaLabel: '清空',
+				cancelButtonText: '取消',
+				cancelButtonAriaLabel: '取消',
+			},
+			startScreen: {
+				recentSearchesTitle: '搜索记录',
+				noRecentSearchesText: '搜索记录为空',
+				saveRecentSearchButtonTitle: '收藏',
+				removeRecentSearchButtonTitle: '从搜索记录中移除',
+				favoriteSearchesTitle: '收藏',
+				removeFavoriteSearchButtonTitle: '从收藏中移除',
+			},
+			errorScreen: {
+				titleText: '无法获取结果',
+				helpText: '请检查一下网络连接',
+			},
+			footer: {
+				selectText: '跳转',
+				navigateText: '选择',
+				closeText: '关闭',
+				searchByText: '',
+			},
+			noResultsScreen: {
+				noResultsText: '没有结果',
+				suggestedQueryText: '搜索建议',
+				reportMissingResultsText: '确信当前搜索需要返回一个结果？',
+				reportMissingResultsLinkText: '告诉我们',
+			},
+		},
+	};
+
 	export default {
 		name: 'AlgoliaSearchBox',
 
@@ -42,6 +81,8 @@
 					const { algoliaOptions = {} } = userOptions;
 					docsearch(
 						Object.assign({}, userOptions, {
+							placeholder: '搜索',
+							translations,
 							container: '#docsearch',
 							// #697 Make docsearch work well at i18n mode.
 							searchParameters: {
@@ -54,6 +95,8 @@
 									this.$router.push(itemUrl);
 								},
 							},
+							/* getMissingResultsUrl: ({ query }) =>
+								`https://github.com/dcloudio/uni-app/issues/new?title=${query}`, */
 							// transform full url to route path
 							transformItems: items =>
 								items.map(item => {

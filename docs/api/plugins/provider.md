@@ -55,6 +55,9 @@
 ||wxpay|微信支付||
 ||baidu|百度收银台||
 ||appleiap|苹果应用内支付|iOS 应用打包后可获取|
+||google-pay|Google Pay支付|App 3.3.7+，Android 应用打包后可获取，Android 设备装有 18.0.0 或更高版本的 Google Play 服务|
+||paypal|PayPal支付|App 3.3.7+，iOS11.0+支持，Android 5.0+ (API21+)|
+||stripe|Stripe支付|App 3.3.7+，iOS13.0+支持|
 |push|unipush|[UniPush](https://ask.dcloud.net.cn/article/35622)|推送服务是三选一，只会获取到一个供应商。|
 ||igexin|个推|填写配置并打包后可以获取，仅为向下兼容而保留，不再推荐使用|
 ||mipush|小米推送|填写配置并打包后可以获取，仅为向下兼容而保留，不再推荐使用|

@@ -171,7 +171,7 @@
 		},
 	};
 </script>
-<style>
+<style scoped>
 	/* banner */
 	.banner {
 		width: 100%;
@@ -238,63 +238,5 @@
 		width: 30px;
 		border-radius: 10px;
 		background: rgb(225, 114, 0);
-	}
-
-	/* 修改左侧导航 */
-	.sidebar .sidebar-nav {
-		padding: 0 0 11px 0;
-	}
-
-	.sidebar ul {
-		padding-left: 15px;
-	}
-
-	.sidebar ul li a:hover {
-		text-decoration: none;
-		background-color: #eff1f3;
-	}
-
-	.sidebar ul li.active > a:hover {
-		background-color: #ffffff;
-	}
-
-	.sidebar::-webkit-scrollbar {
-		width: 6px;
-	}
-
-	/* 处理左侧导航的折叠问题TODO */
-	.sidebar-nav-li.close ul {
-		display: none;
-	}
-
-	.sidebar-nav-li .chapter {
-		display: block;
-		height: 30px;
-		line-height: 30px;
-		position: relative;
-		cursor: pointer;
-	}
-
-	.sidebar-nav-li .chapter:hover {
-		background-color: #eff1f3;
-	}
-
-	.sidebar-nav-li .chapter:before {
-		position: absolute;
-		top: 10px;
-		left: -16px;
-		content: '\e581';
-		font-family: 'uniicons';
-		font-style: normal;
-		font-weight: 600;
-		line-height: 1;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: greyscale;
-		color: #8d8d8d;
-		font-size: 10px;
-	}
-
-	.sidebar-nav-li.close .chapter:before {
-		content: '\e583';
 	}
 </style>

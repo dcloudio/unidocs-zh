@@ -3,8 +3,8 @@
     <div class="main-navbar">
       <!-- <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" /> -->
 
-      <RouterLink
-        :to="$localePath"
+      <a
+        href="https://www.dcloud.io"
         class="home-link"
       >
         <img
@@ -25,7 +25,7 @@
           class="site-name"
           :class="{ 'can-hide': $site.themeConfig.logo }"
         >{{ $siteTitle }}</span>
-      </RouterLink>
+      </a>
 
       <div class="main-navbar-links can-hide">
         <template v-for="(item, index) in customNavBar">
@@ -189,7 +189,8 @@ export default {
       forbidScroll(this.showMobilePanel)
     },
     switchVersion () {
-      document.cookie = encodeURIComponent('__new_version') + "=__new_version; path=/"
+      // document.cookie = encodeURIComponent('__new_version') + "=__new_version; path=/"
+      document.cookie = encodeURIComponent('__new_version') + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"
       location.replace(location.origin + '?v=' + Date.now())
     }
   },

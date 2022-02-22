@@ -19,19 +19,19 @@
 
 	const translations = {
 		button: {
-			buttonText: '搜索',
-			buttonAriaLabel: '搜索',
+			buttonText: '搜索文档',
+			buttonAriaLabel: '搜索文档',
 		},
 		modal: {
 			searchBox: {
-				resetButtonTitle: '清空',
-				resetButtonAriaLabel: '清空',
+				resetButtonTitle: '清除查询条件',
+				resetButtonAriaLabel: '清除查询条件',
 				cancelButtonText: '取消',
 				cancelButtonAriaLabel: '取消',
 			},
 			startScreen: {
-				recentSearchesTitle: '搜索记录',
-				noRecentSearchesText: '搜索记录为空',
+				recentSearchesTitle: '搜索历史',
+				noRecentSearchesText: '搜索历史为空',
 				saveRecentSearchButtonTitle: '收藏',
 				removeRecentSearchButtonTitle: '从搜索记录中移除',
 				favoriteSearchesTitle: '收藏',
@@ -42,16 +42,16 @@
 				helpText: '请检查一下网络连接',
 			},
 			footer: {
-				selectText: '跳转',
-				navigateText: '选择',
+				selectText: '选择',
+				navigateText: '切换',
 				closeText: '关闭',
 				searchByText: '',
 			},
 			noResultsScreen: {
-				noResultsText: '没有结果',
-				suggestedQueryText: '搜索建议',
-				reportMissingResultsText: '确信当前搜索需要返回一个结果？',
-				reportMissingResultsLinkText: '告诉我们',
+				noResultsText: '无法找到相关结果',
+				suggestedQueryText: '你可以尝试查询',
+				reportMissingResultsText: '你认为查询该有结果？',
+				reportMissingResultsLinkText: '点击反馈',
 			},
 		},
 	};

@@ -2,7 +2,7 @@ App端支付模块封装了市场上主流的三方支付平台SDK，提供JS AP
 
 |项目类型|API|
 |:-|:-|
-|uni-app|[uni.requestPayment(OBJECT)](api/plugins/payment?id=requestpayment)|
+|uni-app|[uni.requestPayment(OBJECT)](/api/plugins/payment?id=requestpayment)|
 |5+ App/Wap2App|[plus.payment.*](https://www.html5plus.org/doc/zh_cn/payment.html)
 
 如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，官方提供了[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)云端统一支付服务，极大提升支付业务的开发效率，强烈推荐给开发者使用，参考示例：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)

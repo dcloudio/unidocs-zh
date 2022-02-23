@@ -55,7 +55,14 @@ export default {
   }
 }
 
+let beforeActiveLinkText = ''
 function renderLink (h, to, text, active, level, headers) {
+  let VNode
+  let firstRender
+  if(headers && active){
+    firstRender = beforeActiveLinkText !== text
+    beforeActiveLinkText = text
+  }
   const component = {
     props: {
       to,
@@ -66,6 +73,16 @@ function renderLink (h, to, text, active, level, headers) {
       active,
       'sidebar-link': true,
       'data-no-emphasize': headers && headers.some(item => item.level < 3)
+    },
+    nativeOn: {
+      click: (e) => {
+        if (firstRender) { firstRender = false; return; }
+        if (e.target.className.indexOf('data-no-emphasize') === -1) return;
+        const child = VNode.componentOptions.children[0].elm.parentElement.nextElementSibling
+        if(!child) return
+        const originDisplay = child.style.display
+        child.style.display = originDisplay === 'none' ? 'block' : 'none'
+      }
     }
   }
 
@@ -74,8 +91,8 @@ function renderLink (h, to, text, active, level, headers) {
       'padding-left': level + 'rem'
     }
   }
-
-  return h('RouterLink', component, text)
+  VNode = h('RouterLink', component, text)
+  return VNode
 }
 
 function renderChildren (h, children, path, route, maxDepth, depth = 1) {

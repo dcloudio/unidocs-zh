@@ -337,4 +337,16 @@
         ```
 
         
-        
+  - 在 Vue3 中，this 对象下的 `$mp` 调整为 `$scope`
+
+  - 在 Vue3 中，如果 nvue 使用了 Vuex 的相关 API，需要在 main.js 的 createApp 的返回值中 return 一下 Vuex 示例：
+    ```js
+    export function createApp() {
+        const app = createSSRApp(App)
+        app.use(store)
+        return {
+            app,
+            Vuex // 如果 nvue 使用 vuex 的各种map工具方法时，必须 return Vuex
+        }
+    }
+    ```

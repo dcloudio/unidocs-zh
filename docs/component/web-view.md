@@ -342,7 +342,7 @@ export default {
 ```js
 onReady() {
 		// #ifdef APP-PLUS
-		var currentWebview = this.$mp.page.$getAppWebview() //获取当前页面的webview对象
+		var currentWebview = this.$scope.page.$getAppWebview() //获取当前页面的webview对象
 		setTimeout(function() {
 			wv = currentWebview.children()[0]
 			wv.setStyle({scalable:true})

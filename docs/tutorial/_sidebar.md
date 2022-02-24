@@ -67,7 +67,9 @@
     * [未同意隐私政策模式运行](/tutorial/app-disagreemode.md)
     * [Google Play上架](/tutorial/android-gp.md)
     * [App Store上架](/tutorial/ios-app-store.md)
-  * [Android安全漏洞问题解决方案](/tutorial/app-sec-android.md)
+  * App安全问题
+    * [js/nvue文件原生混淆加密](/tutorial/app-sec-confusion.md)
+    * [Android安全漏洞问题解决方案](/tutorial/app-sec-android.md)
   * [前端安全专题](/tutorial/web-security.md)
 * 小程序专题
   * [组件与WXS](/tutorial/miniprogram-subject.md)

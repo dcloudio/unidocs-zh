@@ -136,8 +136,42 @@ HBuilderX发布到App的Android平台最低支持Android4.4，即minSdkVersion�
 HBuilderX3.1.14+版本已修复此问题，在内部逻辑中使用的密钥全部做了混淆加密处理。
 
 #### SO文件破解风险漏洞
-**风险描述** 
+**风险描述**  
 SO文件为APK中包含的动态链接库文件，Android利用NDK技术将C/C++语言实现的核心代码编译为SO库文件供Java层调用。SO文件被破解可能导致应用的核心功能代码和算法泄露。攻击者利用核心功能与算法可轻易抓取到客户端的敏感数据，并对其解密，导致用户的隐私泄露或直接财产损失
 
-**修复方案** 
+**修复方案**  
 建议使用专业安全加固平台对APK中的SO文件进行加固保护
+
+#### Strandhogg漏洞
+**风险描述**  
+StrandHogg之所以独特，是因为它无需进行植根即可启用复杂的攻击，它利用Android的多任务系统中的一个弱点来实施强大的攻击，使恶意应用程序可以伪装成该设备上的任何其他应用程序。此漏洞利用基于一个称为“ taskAffinity”的Android控件设置，该控件允许任何应用程序（包括恶意应用程序）自由地采用其所需的多任务处理系统中的任何身份。
+
+**修复方案**  
+该漏洞已于2020.4.1的安全补丁中修复(涵盖Android 8.0 / 8.1 / 9.0+)。由于已经通过系统补丁封堵。理论上该漏洞不会对高版本系统的手机设备构成威胁。  
+而app客户端开发并没有彻底规避该漏洞的方案。各检测平台推荐配置`android:taskAffinity=“”`，但仅是临时方案。但该方案会导致应用运行到android11+系统设备时任务堆栈窗口变成两个的问题。  
+由于`android:taskAffinity=“”`配置存在bug！所以我们并不会默认这样配置。但为开发者提供的云打包配置选项。由开发者决定是否配置临时封堵该漏洞。具体如下：
++ 请使用HX3.3.10+版本。根据app类型在项目的manifest.json中配置`hasTaskAffinity`。true表示配置`android:taskAffinity=“”`，false不配置。默认为false
++ **uni-app** 请按如下配置填写到项目的manifest.json中。
+```
+ "app-plus" : {
+	 "distribute" : {
+		 "android" : {
+			 ...
+			 ...
+			 "hasTaskAffinity": true
+		 }
+	 }
+ }
+```
++ **5+/web2app** 请按如下配置填写到项目的manifest.json中。
+```
+"plus" : {
+	"distribute" : {
+		"google" : {
+			...
+			...
+			"hasTaskAffinity": true
+		}
+	}
+}
+```

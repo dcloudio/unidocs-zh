@@ -8,9 +8,10 @@
 
 请认真的阅读以下步骤来检测自己的APP！有效的解决上架问题
 
-+ 如果你的APP不是由HbuilderX`3.2.15+`云打包生产的请抓紧时间升级到HbuilderX`3.2.15+`版本。重新打包！
-+ 如果你的APP是离线打包请升级SDK到`3.2.15+`版本重新编辑打包！[下载地址](https://nativesupport.dcloud.net.cn/AppDocs/download/android)
-+ 如果你的APP没有配置隐私与政策提示框。请认真阅读[Android平台隐私与政策提示框配置方法](https://ask.dcloud.net.cn/article/36937)配置你APP的隐私弹窗。
++ APP不是由HbuilderX`3.2.15+`云打包生产的请抓紧时间升级到HbuilderX`3.2.15+`版本。重新打包！
++ APP是离线打包请升级SDK到`3.2.15+`版本重新编辑打包！[下载地址](https://nativesupport.dcloud.net.cn/AppDocs/download/android)
++ 不要将自定义基座提交平台审核。调试模式下不会处理合规问题。需要注意！
++ APP没有配置隐私与政策提示框。请认真阅读[Android平台隐私与政策提示框配置方法](https://ask.dcloud.net.cn/article/36937)配置你APP的隐私弹窗。
 + 配置隐私弹窗时一定要配置使用`template`模式。否则无法上架应用市场。应用内部自己实现的隐私弹窗也不行。一定要使用uni提供的隐私弹窗并使用`template`模式切记！
   ```
   //androidPrivacy.json
@@ -24,7 +25,7 @@
 + 填写隐私协一定要结合实际使用的模块功能。填写相关隐私条款！不能含糊不清。模块收集了什么信息都要填写完整。否则影响上架！请参考当前文档中的`隐私政策注意事项`
 + 查看是否集成uni原生插件。有些权限或是违规获取可能是uni原生插件引发的。建议使用排除法删除插件重新打包检测
 + 检查是否集成了fcm推送(包含unipush中的fcm)、google统计、google推送、google登录模块。由于这些模块都集成google的gms服务会提前获取android id导致无法在国内正常上架。打包时请在manifest.json配置中排除这些功能模块。
-+ 你的APP上面排查点都符合要求。上架依然失败请向检测平台要求提供代码调用堆栈。请拿着堆栈信息去[ASK论坛](https://ask.dcloud.net.cn/explore/)发帖说明问题并@管理人员反馈
++ APP都符合以上条件要求。上架依然失败！请向检测平台要求提供代码调用堆栈。请拿着堆栈信息去[ASK论坛](https://ask.dcloud.net.cn/explore/)发帖说明问题并@管理人员反馈
 
 ### 隐私政策注意事项
 
@@ -126,6 +127,24 @@
 + 如果集成了则不能国内上架！原因是集成这些模块会将google的GMS服务导入安装包中。启动会获取android id导致无法上架。
 + 检查uni-app项目在manifest.json将上诉模块去除重新打包上架
 + 没有集成这些模块可以向检测平台获取调用堆栈。拿到java调用堆栈在[ask论坛](https://ask.dcloud.net.cn/explore/)发帖咨询
+
+#### 16、离线打包自定义DCloudApplication，初始化其他三方SDK如何处理合规问题
+
++ 我们推荐将三方SDK集成方式改为原生插件集成到离线打包中。通过UniAppHookProxy生命周期回调初始化SDK即可无需关心合规问题。
++ 如果开发者同学一定要在Application中初始化三方SDK。可以在Application的onCreate回调中添加初始化逻辑。但前台是需要在super.onCreate()之后调用。并使用SDK.isAgreePrivacy(Context)获取当前隐私协议状态特殊处理。
+```
+public class MyApplication extends DCloudApplication {
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		if(SDK.isAgreePrivacy(getBaseContext())) {
+			//正常初始化三方SDK
+		} else {
+			//初始化三方SDK提供规避隐私合规初始化函数 如果没有则不要初始化
+		}
+	}
+}
+```
 
 #### 看不懂文档不知道如何修改？
 

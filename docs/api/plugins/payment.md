@@ -304,3 +304,8 @@ uni.requestPayment({
     }
 </script>
 ```
+
+
+- [Paypal支付示例](https://uniapp.dcloud.io/app-payment-paypal)
+- [Stripe支付示例](https://uniapp.dcloud.io/app-payment-stripe)
+- [Google Pay支付示例](https://uniapp.dcloud.io/app-payment-google)

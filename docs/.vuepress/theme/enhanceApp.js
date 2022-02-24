@@ -1,3 +1,5 @@
+import getRedirectRouter from './config/redirectRouter';
+
 function handleRedirectForCleanUrls(router, to) {
   if (isRouteExists(router, to.path)) {
     return to.path
@@ -31,25 +33,32 @@ function isRouteExists(router, path) {
 }
 
 function handlePath(router, to) {
-  const id = to.query.id
-  const redirectPath = handleRedirectForCleanUrls(router, to)
+  // 重定向路由表
+  const redirectRouter = getRedirectRouter(to)
+  if (redirectRouter) return redirectRouter
 
+  const id = to.query.id
+  const hash = decodeURIComponent(id || to.hash).toLowerCase()
+  const redirectPath = handleRedirectForCleanUrls(router, to)
   if (id) {
     return {
       path: redirectPath,
-      hash: '#' + decodeURIComponent(id.toLowerCase())
+      replace: true,
+      hash
     }
   }
   if (redirectPath !== to.path) {
     return {
       path: redirectPath,
-      hash: decodeURIComponent(to.hash).toLowerCase()
+      replace: true,
+      hash
     }
   }
   if (/\bREADME\b/.test(to.path)) {
     return {
       path: to.path.replace(/\bREADME\b/, ''),
-      hash: decodeURIComponent(to.hash).toLowerCase()
+      replace: true,
+      hash
     }
   }
 }

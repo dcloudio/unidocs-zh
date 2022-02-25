@@ -444,8 +444,8 @@ uni.addInterceptor({
 |[uni.onBeaconServiceChange](/api/system/ibeacon?id=onbeaconservicechange)|监听 iBeacon 服务状态变化事件|
 |[uni.onBeaconUpdate](/api/system/ibeacon?id=onbeaconupdate)|监听 iBeacon 设备更新事件|
 |[uni.getBeacons](/api/system/ibeacon?id=getbeacons)|获取所有已搜索到的 iBeacon 设备|
-|[uni.startBeaconDiscovery](/api/system/ibeacon?id=startbeacondiscovery)|停止搜索附近的 iBeacon 设备|
-|[uni.stopBeaconDiscovery](/api/system/ibeacon?id=stopbeacondiscovery)|开始搜索附近的 iBeacon 设备|
+|[uni.startBeaconDiscovery](/api/system/ibeacon?id=startbeacondiscovery)|开始搜索附近的 iBeacon 设备|
+|[uni.stopBeaconDiscovery](/api/system/ibeacon?id=stopbeacondiscovery)|停止搜索附近的 iBeacon 设备|
 
 ##### 生物认证
 

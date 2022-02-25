@@ -2,11 +2,65 @@
 
 > 新增于 HBuilderX 3.4.0
 
-云对象本质上是对云函数的封装，和传统方式通过callFunction调用云函数相比，云对象写法更简单，调用更清晰。另外云对象默认支持[uniCloud响应体规范](uniCloud/cf-functions.md?id=resformat)，对于满足规范的错误响应会在客户端自动抛出错误，开发者可以少写很多繁琐的判断。
+## 背景和优势
 
-以下面的云函数为例，对比一下云对象和传统云函数
+20年前，restful接口开发开始流行，服务器编写接口，客户端调用接口，传输json。
 
-**传统callFunction方式代码如下：**
+现在，替代restful的新模式来了。
+
+云对象，服务器编写API，客户端调用API，不再开发传输json的接口。思路更清晰、代码更精简。
+
+比如服务端编写一个云对象todo，该对象有add、get、remove、update等方法。客户端的js则可以直接import这个todo云对象，直接调用add等方法。
+
+服务器示例代码如下：
+
+HBuilderX中在uniCloud/cloudfunctions目录新建云函数，选择类型为云对象，起名为todo。打开云对象入口index.obj.js，添加一个add方法。
+
+```js
+// 云对象名：todo
+module.exports = {
+	add(title, content) {
+		title = title.trim()
+		content = content.trim()
+		if(!title || !content) {
+			return {
+				errCode: 'INVALID_TODO',
+				errMsg: 'TODO标题或内容不可为空'
+			}
+		}
+		// ...其他逻辑
+		return {
+			errCode: 0,
+			errMsg: '创建成功'
+		}
+	}
+}
+```
+
+然后在客户端的js中，import这个todo对象，调用它的add方法
+
+```js
+const todo = uniCloud.importObject('todo') //第一步导入云对象
+async function addTodo () {
+	try {
+		const res = await todo.add('title demo', 'content demo') //导入云对象后就可以直接调用该对象的方法了，注意使用异步await
+		uni.showToast({
+			title: '创建成功'
+		})
+	} catch (e) {
+		// 符合uniCloud响应体规范 https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=resformat，自动抛出此错误 
+		uni.showModal({
+			title: '创建失败',
+			content: e.errMsg,
+			showCancel: false
+		})
+	}
+}
+```
+
+可以看到云对象的代码非常清晰，代码行数也只有33行。
+
+而同样的逻辑，使用传统的接口方式则需要更多代码，见下：
 
 ```js
 // 传统方式调用云函数-云函数代码
@@ -83,60 +137,22 @@ async function addToDo () {
 }
 ```
 
-**使用云对象的写法如下：**
+以上传统开发需要68行代码，对比云对象的33行代码，不但工作量大，而且逻辑也不如云对象清晰。
 
-```js
-// 使用云对象的写法-云对象代码
-// 云对象名：todo
-// 云对象入口index.obj.js内容如下
-module.exports = {
-	add(title, content) {
-		title = title.trim()
-		content = content.trim()
-		if(!title || !content) {
-			return {
-				errCode: 'INVALID_TODO',
-				errMsg: 'TODO标题或内容不可为空'
-			}
-		}
-		// ...其他逻辑
-		return {
-			errCode: 0,
-			errMsg: '创建成功'
-		}
-	}
-}
+_注：以上例子仅用于方便初学者理解。实质上对于简单的数据库操作，使用clientDB在前端直接操作数据库是更简单、代码更少的方案，[另见](/uniCloud/clientdb)_
 
-// 使用云对象的写法-客户端代码
-const todo = uniCloud.importObject('todo')
-async function addTodo () {
-	try {
-		const res = await todo.add('title demo', 'content demo')
-		uni.showToast({
-			title: '创建成功'
-		})
-	} catch (e) {
-		// 此形式响应符合uniCloud响应体规范中的错误响应，自动抛出此错误
-		// {
-		// 	errCode: 'INVALID_TODO',
-		// 	errMsg: 'TODO标题或内容不可为空'
-		// }
-		uni.showModal({
-			title: '创建失败',
-			content: e.errMsg,
-			showCancel: false
-		})
-	}
-}
-```
-
-可以看到大量的业务无关代码被简化掉，开发效率UP。此外通过`ObjectName.MethodName`的方式调用云函数和云端写法完全一致，心智负担大幅减小。请阅读以下内容深入了解云对象
+总结下云对象带来的好处：
+1. 更清晰的逻辑
+2. 更精简的代码
+3. 更少的协作成本（以及矛盾~）
+4. 客户端调用时在ide里有完善的代码提示，方法参数均可提示。（传输json可没法在ide里提示）
+5. 自动支持[uniCloud响应体规范](uniCloud/cf-functions.md?id=resformat)，方便错误拦截和统一处理
 
 ## 快速上手
 
 ### 创建云对象
 
-和创建云函数一样，在`cloudfunctions`目录右键即可输入云对象名称创建云对象，此处以云对象todo为例，创建的云对象包含一个`index.obj.js`。内容如下
+云对象，其实是对云函数的封装。和创建云函数一样，在`uniCloud/cloudfunctions`目录右键新建云函数，选择云对象类型，输入云对象名称创建云对象，此处以云对象todo为例，创建的云对象包含一个`index.obj.js`。内容如下
 
 ```js
 // cloudfunctions/todo/index.obj.js
@@ -159,7 +175,7 @@ module.exports = {
 				errMsg: 'TODO标题或内容不可为空'
 			}
 		}
-		// ...其他逻辑
+		// ...其他逻辑，如操作todo数据表添加数据
 		return {
 			errCode: 0,
 			errMsg: '创建成功'
@@ -305,9 +321,9 @@ module.exports = {
 
 ### 预处理 _before@before
 
-云对象内可以创建一个特殊的方法_after用来在调用方法之前进行一些额外的操作
+云对象内可以创建一个特殊的方法_before，用来在调用常规方法之前进行预处理，一般用于拦截器、身份验证、参数校验等。
 
-请看以下示例：
+以下示例的逻辑是，当客户端调用todo云对象的add方法时，会先执行_before方法中的逻辑，判断为add方法时校验了客户端token，校验失败则直接报错返回客户端，校验通过继续执行add方法。
 
 ```js
 // todo/index.obj.js
@@ -329,7 +345,7 @@ module.exports = {
 
 ### 后处理 _after@after
 
-云对象内可以创建一个特殊的方法_after用来处理本次调用方法的返回结果或者抛出的错误
+与预处理`_before`对应的是后处理`_after`。云对象内可以创建一个特殊的方法_after用来再加工处理本次调用方法的返回结果或者抛出的错误
 
 请看以下示例：
 
@@ -463,3 +479,13 @@ const res = await todo.add('title demo', 'content demo')
 ## 本地运行@run-local
 
 云对象无法直接本地运行，可以通过其他云函数调用本地云对象（在调用云对象的云函数右键本地运行），或者客户端调用本地云对象的方式来实现云对象的本地运行。
+
+## 推荐最佳实践
+
+uniCloud的服务器和客户端交互，有云函数、云对象、clientDB三种方式。
+
+从云对象发布后，不再推荐使用传统云函数了。
+
+如果是以数据库操作为主，则推荐使用clientDB，开发效率是最高的。
+
+如果服务器端除了操作数据库外，还有复杂的、不宜公开在前端的逻辑，此时推荐使用云对象。

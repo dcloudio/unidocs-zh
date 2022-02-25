@@ -9,11 +9,32 @@ univerify 是DCloud 推出的一键登录产品，通过与运营商深度合作
 
 univerify是替代短信验证登录的下一代登录验证方式，能消除现有短信验证模式等待时间长、操作繁琐和容易泄露的痛点。
 
+## 重要调整
+
+### 云函数使用一键登录扩展库@extension
+
+自`HBuilderX 3.4.0`起，一键登录相关功能移至扩展库`uni-cloud-verify`内。在一段时间内无论开发者是否使用扩展库云函数都可以正常使用`uniCloud.getPhoneNumber`。预计于2022年3月初发布的HBuilderX内强制使用扩展库，即使用在此时间点后发布的HBuilderX上传云函数时如果没有指定使用`uni-cloud-verify`扩展库的云函数将无法调用uniCloud.getPhoneNumber接口。
+
+关于扩展库的说明见：[云函数扩展库](uniCloud/cf-functions.md?id=extension)
+
+在云函数的package.json内添加`uni-cloud-verify`的引用即可为云函数启用此扩展，无需做其他调整，完整的package.json示例如下：
+
+```js
+{
+	"name": "univerify",
+	"extensions": {
+		"uni-cloud-verify": {} // 启用uni-cloud-jql扩展，值为空对象即可
+	}
+}
+```
+
 ## 客户端@client
 
 客户端如何使用一键登录请参考此文档：[univerify 使用指南](/univerify)
 
 ## 云函数@cloud
+
+> 自`HBuilderX 3.4.0`起云函数需启用uni-cloud-verify之后才可以调用getPhoneNumber接口，详细说明见：[云函数使用一键登录扩展库](#extension)
 
 客户端调用一键登录接口会获取如下结果
 

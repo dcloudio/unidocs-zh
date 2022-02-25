@@ -248,7 +248,7 @@ export default {
 
 |名称|说明|					
 |:-:|:-:|						
-|default|自定义内容，回覆盖原有的内容显示|
+|default|自定义内容，会覆盖原有的内容显示|
 
 ### uni-popup-share 分享示例
 

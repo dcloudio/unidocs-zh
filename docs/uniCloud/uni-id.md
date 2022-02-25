@@ -467,15 +467,15 @@ function hasPermission(token, permission) {
 
 用法：`uniID.createInstance(Object CreateInstanceParams);`
 
-CreateInstanceParams内可以传入云函数context
+CreateInstanceParams内可以传入云函数context，自`uni-id 3.3.13`起，也可以传入clientInfo参数，作用和context类似。方便在云对象内获取clientInfo后直接传入，[什么是云对象？](uniCloud/cloud-obj.md)。
 
 ```js
-// 云函数代码
+// 云函数代码，传入context
 const uniID = require('uni-id')
 exports.main = async function(event,context) {
-	context.APPID = '__UNI__xxxxxxx' // 替换为当前客户端的APPID，通过客户端callFunction请求的场景可以使用context.APPID获取
-	context.PLATFORM = 'h5' // 替换为当前客户端的平台类型，通过客户端callFunction请求的场景可以使用context.PLATFORM获取
-	context.LOCALE = 'zh-Hans' // 替换为当前客户端的语言代码，通过客户端callFunction请求的场景可以使用context.LOCALE获取
+  context.APPID = '__UNI__xxxxxxx' // 替换为当前客户端的APPID，通过客户端callFunction请求的场景可以使用context.APPID获取
+  context.PLATFORM = 'h5' // 替换为当前客户端的平台类型，通过客户端callFunction请求的场景可以使用context.PLATFORM获取
+  context.LOCALE = 'zh-Hans' // 替换为当前客户端的语言代码，通过客户端callFunction请求的场景可以使用context.LOCALE获取
   const uniIDIns = uniID.createInstance({ // 创建uni-id实例，其上方法同uniID
     context: context,
     // config: {} // 完整uni-id配置信息，使用config.json进行配置时无需传此参数
@@ -484,11 +484,26 @@ exports.main = async function(event,context) {
   if (payload.code) {
   	return payload
   }
-	const res = await uniIDIns.updateUser({
+  const res = await uniIDIns.updateUser({
     uid: payload.uid,
     nickname: 'user nickname'
   })
-	return res
+  return res
+}
+
+// 云对象代码传入clientInfo
+const uniID = require('uni-id')
+module.exports = {
+	_before() {
+		const clientInfo = this.getClientInfo()
+		this.uniID = uniID.createInstance({ // 创建uni-id实例，其上方法同uniID
+			clientInfo
+		})
+	},
+	login() {
+		// ...
+		// this.uniID.login()
+	}
 }
 ```
 

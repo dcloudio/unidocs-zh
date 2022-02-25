@@ -237,7 +237,48 @@ export default {
 }
 ```
 
-map 组件相关操作的 JS API：[uni.createMapContext](/api/location/map?id=createmapcontext)
+
+## 地图服务商差异
+
+### Map 地图组件
+
+|属性								|说明																		|高德是否支持	|google地图是否支持		|
+|:----							|:----																	|:----				|:----								|
+|subkey							|个性化地图使用的key											|不支持				|不支持								|
+|show-scale					|显示比例尺															|已支持				|不支持								|
+|enable-poi					|是否展示 POI 点													|已支持				|不支持								|
+|labeltap						|点击label时触发													|已支持				|Android支持iOS不支持	|
+|poitap							|点击地图poi点时触发											|已支持				|Android不支持 iOS支持	|
+
+### marker
+
+|属性					|说明																	|高德是否支持	|google地图是否支持		|
+|:----				|:----																|:----				|:----								|
+|label				|为标记点旁边增加标签										|已支持				|Android支持 iOS不支持	|
+
+### marker 上的气泡 callout
+
+|属性					|说明																			|高德是否支持	|google地图是否支持							|
+|:----				|:----																		|:----				|:----													|
+|display			|'BYCLICK':点击显示; 'ALWAYS':常显					|已支持				|Android支持iOS只支持 'BYCLICK'	|
+
+### marker 上的自定义气泡 customCallout
+
+|属性		|说明															|高德是否支持	|google地图是否支持							|
+|:----	|:----														|:----				|:----													|
+|display|'BYCLICK':点击显示; 'ALWAYS':常显	|已支持				|Android支持iOS只支持 'BYCLICK'	|
+
+### polyline
+
+|属性					|说明					|高德是否支持	|google地图是否支持			|
+|:----				|:----				|:----				|:----									|
+|colorList		|彩虹线				|已支持				|Android不支持 iOS支持		|
+|dottedLine		|是否虚线			|已支持				|Android已支持 iOS不支持	|
+|arrowLine		|带箭头的线		|已支持				|Android不支持 iOS支持		|
+|arrowIconPath|更换箭头图标	|已支持				|Android不支持 iOS支持		|
+
+
+map 组件相关操作的 JS API：[uni.createMapContext](api/location/map?id=createmapcontext)
 nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/37901](https://ask.dcloud.net.cn/article/37901)
 
 **注意事项**

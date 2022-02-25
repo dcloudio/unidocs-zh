@@ -44,7 +44,7 @@ package.json扩展配置用法：
 Tips：
 
 - `UNI_PLATFORM`仅支持填写`uni-app`默认支持的基准平台，目前仅限如下枚举值：`h5`、`mp-weixin`、`mp-alipay`、`mp-baidu`、`mp-toutiao`、`mp-qq`
-- `browser` 仅在`UNI_PLATFORM`为`h5`时有效,目前仅限如下枚举值：`chrome`、`firefox`、`id`、`edge`、`safari`、`hbuilderx`
+- `browser` 仅在`UNI_PLATFORM`为`h5`时有效,目前仅限如下枚举值：`chrome`、`firefox`、`ie`、`edge`、`safari`、`hbuilderx`
 - `package.json`文件中不允许出现注释，否则扩展配置无效
 - `vue-cli`需更新到最新版，HBuilderX需升级到 2.1.6+ 版本
 

@@ -695,6 +695,9 @@ limit
 foreignKey // foreignKey自 HBuilderX 3.3.7版本支持
 where
 field // 关于field的使用限制见下方说明
+groupBy // HBuilderX 3.4.0起支持
+groupField // HBuilderX 3.4.0起支持
+distinct // HBuilderX 3.4.0起支持
 orderBy
 skip
 limit

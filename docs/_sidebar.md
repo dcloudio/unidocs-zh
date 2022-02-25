@@ -37,6 +37,7 @@
   * [启动界面](app-splashscreen.md)
   * 功能模块
     * [Geolocation(定位)](app-geolocation.md)
+    * [Maps(地图)](app-maps.md)
     * [Payment(支付)](app-payment.md)
       * [Apple应用内支付](app-payment-aip.md)
       * [支付宝支付](app-payment-alipay.md)

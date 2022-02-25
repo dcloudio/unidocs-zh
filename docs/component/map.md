@@ -238,7 +238,7 @@ export default {
 ```
 
 
-## 地图服务商差异
+## App平台地图服务商差异
 
 ### Map 地图组件
 
@@ -303,7 +303,9 @@ Q：应用中使用了 `<map>` 组件，打包为App时，提示缺少权限模�
 A：App端原生地图，依赖第三方的 SDK，因此打包移动应用时，需要在manifest中勾选相关的权限并填写 key 信息。详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)
 
 Q：国外应用想使用谷歌地图/google地图怎么办？
-A：1. 可以在web-view下调用谷歌的web地图；2. 可以写一个原生插件封装谷歌原生地图，具体参考uni-app插件市场的原生插件开发教程。插件市场已有三方写好的[地图插件](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E5%9C%B0%E5%9B%BE)。
+A: App 3.3.4+ 已支持 Google 地图， App 3.3.4 以下版本使用下面的方案
+ 1. 可以在web-view下调用谷歌的web地图
+ 2. 可以写一个原生插件封装谷歌原生地图，具体参考uni-app插件市场的原生插件开发教程。插件市场已有三方写好的[地图插件](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E5%9C%B0%E5%9B%BE)。
 
 ### 三方定位和地图服务收费说明
 

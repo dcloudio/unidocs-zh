@@ -4,6 +4,7 @@
 
 <script>
 	import '@docsearch/css';
+	import { createElement } from 'preact';
 
 	const resolveRoutePathFromUrl = (url, base = '/') =>
 		url
@@ -15,6 +16,10 @@
 	const loadDocsearch = async () => {
 		const docsearch = await import('@docsearch/js');
 		return docsearch.default;
+	};
+
+	const isSpecialClick = event => {
+		return event.button === 1 || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
 	};
 
 	const translations = {
@@ -78,7 +83,7 @@
 		methods: {
 			initialize(userOptions, lang) {
 				loadDocsearch().then(docsearch => {
-					const { algoliaOptions = {} } = userOptions;
+					const { searchParameters = {} } = userOptions;
 					docsearch(
 						Object.assign({}, userOptions, {
 							placeholder: '搜索',
@@ -86,8 +91,8 @@
 							container: '#docsearch',
 							// #697 Make docsearch work well at i18n mode.
 							searchParameters: {
-								...algoliaOptions,
-								facetFilters: [`lang:${lang}`].concat(algoliaOptions.facetFilters || []),
+								...searchParameters,
+								facetFilters: [`lang:${lang}`].concat(searchParameters.facetFilters || []),
 							},
 							navigator: {
 								// when pressing Enter without metaKey
@@ -108,8 +113,8 @@
 									};
 								}),
 							// handle `onClick` by `this.$routerpush`
-							/* hitComponent: ({ hit, children }) => {
-								const vnode = createElement(
+							hitComponent: ({ hit, children }) =>
+								createElement(
 									'a',
 									{
 										href: hit.url,
@@ -122,11 +127,7 @@
 										},
 									},
 									children
-								);
-								console.log('vnode :>> ', vnode);
-								console.log('children :>> ', children);
-								return vnode;
-							}, */
+								),
 						})
 					);
 				});

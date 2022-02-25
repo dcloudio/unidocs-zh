@@ -459,7 +459,9 @@ uniCloud.callFunction({
 
 ## 云函数中调用云函数@callbyfunction
 
-用法同客户端调用云函数，不支持callback形式。**云函数本地运行时使用callFunction会调用云端的云函数而不是本地云函数，连接本地云函数调试时云函数内的callFunction会调用本地云函数**
+用法同客户端调用云函数，不支持callback形式。
+
+`HBuilderX 3.4.0`版本之前**云函数右键本地运行时使用callFunction会调用云端的云函数而不是本地云函数，连接本地云函数调试时云函数内的callFunction会调用本地云函数**，`HBuilderX 3.4.0`及之后的版本**连接本地云函数或运行本地云函数时，如果在云函数内调用同一服务空间下的云函数会直接调用本地云函数。**
 
 #### 请求参数
 

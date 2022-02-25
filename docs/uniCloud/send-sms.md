@@ -7,6 +7,8 @@ keyword: 短信,sms
 
 > 自`HBuilderX 3.3.0`起，本接口支持传入phoneList参数批量发送短信，其他参数均于发送单条短信相同
 
+> 自`HBuilderX 3.4.0`起云函数需启用uni-cloud-sms之后才可以调用sendSms接口，详细说明见：[云函数使用短信扩展库](#extension)
+
 自HBuilderX 2.8.1起，uniCloud内置了短信发送API。给开发者提供更方便、更便宜的短信发送能力。
 
 该服务类似小程序的模板消息，在一个固定模板格式的文字里自定义某些字段，而不是所有文字都可以随便写。
@@ -35,6 +37,23 @@ keyword: 短信,sms
 **注意**
 
 - 如果使用uni-id发送短信，请参考[uni-id发送短信验证码](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=sendsmscode)
+
+#### 云函数使用短信扩展库@extension
+
+自HBuilderX 3.4.0起，短信相关功能移至扩展库`uni-cloud-sms`内。在一段时间内无论开发者是否使用扩展库云函数都可以正常使用`uniCloud.sendSms`。预计于2022年3月初发布的HBuilderX内强制使用扩展库，即使用在此时间点后发布的HBuilderX上传云函数时如果没有指定使用`uni-cloud-sms`扩展库的云函数将无法调用uniCloud.sendSms接口。
+
+关于扩展库的说明见：[云函数扩展库](uniCloud/cf-functions.md?id=extension)
+
+在云函数的package.json内添加`uni-cloud-sms`的引用即可为云函数启用此扩展，无需做其他调整，完整的package.json示例如下：
+
+```js
+{
+	"name": "uni-sms",
+	"extensions": {
+		"uni-cloud-sms": {} // 启用uni-cloud-jql扩展，值为空对象即可
+	}
+}
+```
 
 #### 参数templateId说明@smstemplate
 

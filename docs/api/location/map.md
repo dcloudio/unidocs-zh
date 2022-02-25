@@ -49,6 +49,7 @@ mapContext
 - nvue没有`$getAppMap()`，请使用`createMapContext`
 - `uni-app`中使用原生地图无需提供占位div，得到`$getAppMap()`后直接js使用即可。
 
+
 **getCenterLocation 的 OBJECT 参数列表**
 
 |参数|类型|必填|说明|
@@ -183,6 +184,20 @@ mapContext
 |success		|function	|				|否		|接口调用成功的回调函数															|
 |fail				|function	|				|否		|接口调用失败的回调函数															|
 |complete		|function	|				|否		|接口调用结束的回调函数（调用成功、失败都会执行）			|
+
+
+**mapContext （地图服务商差异）**
+
+|属性								|说明																																	|高德是否支持									|google地图是否支持	|
+|:----							|:----																																|:----												|:----							|
+|setLocMarkerIcon		|设置定位点图标，支持网络路径、本地路径、代码包路径												|已支持												|不支持							|
+|moveAlong					|沿指定路径移动 marker，用于轨迹回放等场景																|已支持(不支持autoRotate属性)		|已支持							|
+|addCustomLayer			|添加个性化图层																												|不支持												|不支持							|
+|removeVisualLayer	|移除可视化图层																												|不支持												|不支持							|
+|fromScreenLocation	|获取屏幕上的点对应的经纬度，坐标原点为地图左上角													|不支持												|不支持							|
+|removeCustomLayer	|移除个性化图层																												|不支持												|不支持							|
+|setCenterOffset		|设置地图中心点偏移，向后向下为增长，屏幕比例范围(0.25~0.75)								|不支持												|不支持							|
+|toScreenLocation		|获取经纬度对应的屏幕坐标，坐标原点为地图左上角。													|不支持												|不支持							|
 
 
 **MapContext.on()** (app-nvue、微信小程序支持)

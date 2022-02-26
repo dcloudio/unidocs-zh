@@ -199,6 +199,12 @@ const todo = uniCloud.importObject('todo')
 const res = await todo.add('title demo', 'content demo')
 ```
 
+通过代码块`cco`可以快捷的输入以下代码：
+
+```js
+const todo = uniCloud.importObject('todo')
+```
+
 ## 云对象的API@api
 
 云对象的方法内可以通过this上的一些接口获取一些信息

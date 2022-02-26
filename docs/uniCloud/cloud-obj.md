@@ -152,7 +152,11 @@ _注：以上例子仅用于方便初学者理解。实质上对于简单的数�
 
 ### 创建云对象
 
-云对象，其实是对云函数的封装。和创建云函数一样，在`uniCloud/cloudfunctions`目录右键新建云函数，选择云对象类型，输入云对象名称创建云对象，此处以云对象todo为例，创建的云对象包含一个`index.obj.js`。内容如下
+云对象，其实是对云函数的封装。和创建云函数一样，在`uniCloud/cloudfunctions`目录右键新建云函数，选择云对象类型，输入云对象名称创建云对象，此处以云对象todo为例，创建的云对象包含一个`index.obj.js`。
+
+![创建云对象](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1c2bff0e-3c93-4417-bc21-90a842c779af.jpg)
+
+一个空的云对象内容如下
 
 ```js
 // cloudfunctions/todo/index.obj.js

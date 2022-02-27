@@ -210,13 +210,13 @@ rules: {
 			// 校验 name 不能为空
 			{
 				required: true,
-				message: '请填写姓名',
+				errorMessage: '请填写姓名',
 			},
 			// 对name字段进行长度验证
 			{
 				minLength: 3,
 				maxLength: 5,
-				message: '{label}长度在 {minLength} 到 {maxLength} 个字符',
+				errorMessage: '{label}长度在 {minLength} 到 {maxLength} 个字符',
 			}
 		],
 		// 当前表单域的字段中文名，可不填写
@@ -241,7 +241,7 @@ rules: {
 |minimum|Number|-|-| 校验最小值(小于)		|
 |maxLength|Number|-|-| 校验数据最大长度		|
 |errorMessage|String|-|-|校验失败提示信息语，可添加属性占位符，当前表格内属性都可用作占位符|
-|trigger|String|bind| bind/submit|校验触发时机|
+|validateTrigger|String|bind| bind/submit|校验触发时机|
 |validateFunction|Function|-|-|自定义校验规则	|
 
 
@@ -602,7 +602,7 @@ export default {
 |value [即将废弃]|Object|-|-| 表单数据|
 |modelValue|Object|-|-| 表单数据|
 |rules|Object|-|-|表单校验规则|
-|validate-trigger|String|submit|bind/submit| 表单校验时机|
+|validateTrigger|String|submit|bind/submit| 表单校验时机|
 |label-position|String|left|top/left|label 位置|
 |label-width|String/Number|75|-|label 宽度，单位 px|
 |label-align|String|left| left/center/right|label 居中方式|
@@ -801,7 +801,7 @@ this.$refs.form.clearValidate(['name', 'email'])
 |:-:|:-:|:-:|:-:|:-:|
 |name|String|-|-|表单域的属性名，在使用校验规则时必填|
 |required|Boolean|false|-|label 右边显示红色"*"号，样式显示不会对校验规则产生效果|
-|validate-trigger|String|submit|bind/submit|表单校验时机|
+|validateTrigger|String|submit|bind/submit|表单校验时机|
 |left-icon|String|-|-| label左边的图标，限uni-ui的图标名称|
 |icon-color|String|#606266|-| 左边通过icon配置的图标的颜色|
 |label|String|-|-| 输入框左边的文字提示|

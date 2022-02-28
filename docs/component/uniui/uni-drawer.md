@@ -51,8 +51,8 @@
 |:-:			|:-:	|:-:	|:-:															|
 |mask			|Boolean|true	|是否显示遮罩													|
 |maskClick		|Boolean|true	|点击遮罩是否可以关闭抽屉										|
-|mode			|String	|left	|Drawe滑出位置，可选值：left（从左侧滑出）， right（从右侧滑出）|
-|width			|Number	|220	|Drawe 宽度，仅vue页面设置生效									|
+|mode			|String	|left	|Drawer滑出位置，可选值：left（从左侧滑出）， right（从右侧滑出）|
+|width			|Number	|220	|Drawer 宽度，仅vue页面设置生效									|
 
 
 

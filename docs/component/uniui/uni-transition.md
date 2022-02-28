@@ -12,7 +12,7 @@
 > - rotate 旋转动画不需要填写 deg 单位，在小程序上填写单位动画不会执行
 > - NVUE 下修改宽高动画，不能定位到中心点
 > - 百度小程序下修改宽高 ，可能会影响其他动画，需注意
-> - nvue 不支持 costom-class , 请使用 styles
+> - nvue 不支持 custom-class , 请使用 styles
 
 ### 基本用法
 

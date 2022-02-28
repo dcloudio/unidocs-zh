@@ -186,7 +186,7 @@ mapContext
 |complete		|function	|				|否		|接口调用结束的回调函数（调用成功、失败都会执行）			|
 
 
-**mapContext （地图服务商差异）**
+**mapContext （App平台地图服务商差异）**
 
 |属性								|说明																																	|高德是否支持									|google地图是否支持	|
 |:----							|:----																																|:----												|:----							|
@@ -343,7 +343,7 @@ mapContext
 ```
 
 
-## mapSearch 模块(仅app-nvue支持)
+## mapSearch 模块(仅app-nvue支持，Goolge地图不支持)
 
 #### reverseGeocode(Object,callback);@reverseGeocode
 > 反向地理编码

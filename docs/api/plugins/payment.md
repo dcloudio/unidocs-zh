@@ -101,7 +101,14 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
     - orderInfo 的 productid 是自己填写的产品 ID
     - 调用 ``uni.requestPayment`` 前必须先使用 5+Plus 的方法调用 requestOrder 获取订单信息，否则会导致无法支付
     - 更多可参考：[https://ask.dcloud.net.cn/article/497](https://ask.dcloud.net.cn/article/497)
-    
+
+4. PayPal支付 [参考] (https://uniapp.dcloud.io/app-payment-paypal)
+
+5. Stripe支付 [参考] (https://uniapp.dcloud.io/app-payment-stripe)
+
+6. Google Pay支付 [参考] (https://uniapp.dcloud.io/app-payment-google)
+
+
 #### manifest.json里配置相关参数
 
 1. 在`manifest.json - App模块权限选择` 中勾选 payment(支付)

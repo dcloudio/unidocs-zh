@@ -1,4 +1,11 @@
 import getRedirectRouter from './config/redirectRouter';
+import VueRouter from 'vue-router'
+
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location, resolve, reject) {
+  if (resolve || reject) return originalPush.call(this, location, resolve, reject)
+  return originalPush.call(this, location).catch(err => err)
+}
 
 function handleRedirectForCleanUrls(router, to) {
   if (isRouteExists(router, to.path)) {

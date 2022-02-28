@@ -50,7 +50,7 @@
 				selectText: '选择',
 				navigateText: '切换',
 				closeText: '关闭',
-				searchByText: '',
+				searchByText: '搜索提供者',
 			},
 			noResultsScreen: {
 				noResultsText: '无法找到相关结果',

@@ -750,6 +750,15 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目，
 <md-banner />
 
 <style>
+	.barcode-view {
+		display: flex;
+		align-items: center;
+		flex-direction: column
+	}
+
+	.barcode-view .barcode-img-box {
+		max-width: 100%
+	}
 	/* hover 显示图片或者二维码 */
 	.scan-code {
 		display: block;

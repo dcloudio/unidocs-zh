@@ -9,12 +9,6 @@
 						<img :src="item" />
 					</div>
 				</template>
-				<!-- <div class="slider-item">
-                <img src="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/case/case5.png">
-            </div> -->
-				<!-- <div class="slider-item">
-                <img src="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/case/case7.png">
-            </div> -->
 			</div>
 		</div>
 	</div>
@@ -171,7 +165,7 @@
 		},
 	};
 </script>
-<style scoped>
+<style>
 	/* banner */
 	.banner {
 		width: 100%;
@@ -179,13 +173,13 @@
 		overflow: hidden;
 	}
 
-	.slider {
+	.banner .slider {
 		position: relative;
 		width: 100%;
 		overflow: hidden;
 	}
 
-	.slider-btn {
+	.banner .slider-btn {
 		position: absolute;
 		cursor: pointer;
 		width: 41px;
@@ -198,21 +192,21 @@
 		background-image: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d2c41062-9e93-478f-9c06-06778b0f2c84.png);
 	}
 
-	.slider-btn.slider-btn-left {
+	.banner .slider-btn.slider-btn-left {
 		left: 0;
 	}
 
-	.slider-btn.slider-btn-right {
+	.banner .slider-btn.slider-btn-right {
 		right: 0;
 		background-position-x: 41px;
 	}
 
-	.slider-item {
+	.banner .slider-item {
 		float: left;
 		width: 100%;
 	}
 
-	.slider .slider-dots {
+	.banner .slider .slider-dots {
 		display: none;
 		position: absolute;
 		line-height: 0;
@@ -224,7 +218,7 @@
 		font-size: 0;
 	}
 
-	.slider .dot {
+	.banner .slider .dot {
 		display: inline-block;
 		margin: 0 5px;
 		width: 10px;
@@ -234,7 +228,7 @@
 		cursor: pointer;
 	}
 
-	.slider .dot.active {
+	.banner .slider .dot.active {
 		width: 30px;
 		border-radius: 10px;
 		background: rgb(225, 114, 0);

@@ -61,7 +61,7 @@ App端地图模块封装了市场上主流的三方地图SDK，提供JS API统�
 - 本地离线打包参考[Android平台百度地图模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/map?id=%e7%99%be%e5%ba%a6%e5%9c%b0%e5%9b%be)、[iOS平台百度地图模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/map?id=%e7%99%be%e5%ba%a6%e5%9c%b0%e5%9b%be)
 
 
-### Google地图  
+### Google地图（谷歌地图/google map）
 
 > HBuilderX3.4.0+版本新增支持
 

@@ -8,7 +8,7 @@
 |参数名|类型|必填|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
 |url|String|是||开发者服务器接口地址||
-|data|Object/String/ArrayBuffer|否||请求的参数|App不支持ArrayBuffer类型|
+|data|Object/String/ArrayBuffer|否||请求的参数|App 3.3.7 以下不支持 ArrayBuffer 类型|
 |header|Object|否||设置请求的 header，header 中不能设置 Referer。|App、H5端会自动带上cookie，且H5端不可手动修改|
 |method|String|否|GET|有效值详见下方说明||
 |timeout|Number|否|60000|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)、微信小程序（2.10.0）、支付宝小程序|

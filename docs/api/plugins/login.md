@@ -351,7 +351,7 @@ univerifyManager.login({
                 "iconPath": "/static/apple.png"
             }, 
             {
-                "provider": "weixin",****
+                "provider": "weixin",
                 "iconPath": "/static/wechat.png"
             }
         ]

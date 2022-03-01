@@ -47,3 +47,4 @@
 |mp-toutiao|字节小程序|
 |mp-lark|飞书小程序|
 |mp-kuaishou|快手小程序|
+|mp-jd|京东小程序|

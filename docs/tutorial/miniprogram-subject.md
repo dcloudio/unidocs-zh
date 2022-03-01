@@ -16,6 +16,7 @@
 |字节跳动小程序、飞书小程序|支持字节跳动小程序、飞书小程序组件|ttcomponents|
 |QQ小程序|支持QQ小程序组件|wxcomponents|
 |快手小程序|支持快手小程序组件|kscomponents|
+|京东小程序|支持京东小程序组件|jdcomponents|
 
 此文档要求开发者对各端小程序的**自定义组件**有一定了解，没接触过小程序**自定义组件**的可以参考：
 
@@ -26,6 +27,7 @@
 - [飞书小程序自定义组件](https://open.feishu.cn/document/uYjL24iN/ugTOugTOugTO)
 - [QQ小程序自定义组件](https://q.qq.com/wiki/develop/miniprogram/frame/diy_components/)
 - [快手小程序自定义组件](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
+- [京东小程序自定义组件](https://mp-docs.jd.com/framework/customcomponent/)
 
 **目录结构**
 

@@ -1,8 +1,8 @@
 **低功耗蓝牙 API 平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|x|x|√|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|x|x|√|x|x|√|
 
 ### uni.setBLEMTU(OBJECT)
 
@@ -61,6 +61,10 @@
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 #### 注意
 
@@ -121,6 +125,10 @@ uni.writeBLECharacteristicValue({
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 #### 注意
 
@@ -231,6 +239,10 @@ uni.onBLECharacteristicValueChange(function (res) {
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 #### 注意
 
@@ -295,6 +307,10 @@ uni.notifyBLECharacteristicValueChange({
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 #### 示例代码
 
@@ -402,7 +418,7 @@ uni.getBLEDeviceCharacteristics({
 |属性|类型|默认值|必填|说明|
 |---|---|---|---|---|
 |deviceId|string||是|用于区分设备的 id|
-|timeout|number||否|超时时间，单位ms，不填表示不会超时|
+|timeout|number||否|超时时间，单位ms，不填表示不会超时，京东小程序不支持|
 |success|function||否|接口调用成功的回调函数|
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
@@ -422,6 +438,10 @@ uni.getBLEDeviceCharacteristics({
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 #### 注意
 
@@ -469,6 +489,10 @@ uni.createBLEConnection({
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 #### 示例代码
 

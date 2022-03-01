@@ -1,5 +1,5 @@
 
-> `uni-app`支持通过 可视化界面、[`vue-cli`命令行](https://uniapp.dcloud.io/tutorial/quickstart-cli) 两种方式快速创建项目。
+> `uni-app`支持通过 可视化界面、[`vue-cli`命令行](https://uniapp.dcloud.io/quickstart-cli) 两种方式快速创建项目。
 
 
 可视化的方式比较简单，HBuilderX内置相关环境，开箱即用，无需配置nodejs。

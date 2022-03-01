@@ -27,10 +27,10 @@
 |acceleration|Boolean|false|当开启时，会根据滑动速度，连续滑动多屏|支付宝小程序|
 |disable-programmatic-animation|Boolean|false|是否禁用代码变动触发 swiper 切换时使用动画。|支付宝小程序|
 |display-multiple-items|Number|1|同时显示的滑块数量|app-nvue、支付宝小程序不支持|
-|skip-hidden-item-layout|Boolean|false|是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息|App、微信小程序|
+|skip-hidden-item-layout|Boolean|false|是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息|App、微信小程序、京东小程序|
 |disable-touch|Boolean|false|是否禁止用户 touch 操作|App 2.5.5+、H5 2.5.5+、支付宝小程序、字节跳动小程序与飞书小程序（只在初始化时有效，不能动态变更）|
 |touchable|Boolean|true|是否监听用户的触摸事件，只在初始化时有效，不能动态变更|字节跳动小程序与飞书小程序（uni-app 2.5.5+ 推荐统一使用 disable-touch）|
-|easing-function|String|default|指定 swiper 切换缓动动画类型，有效值：default、linear、easeInCubic、easeOutCubic、easeInOutCubic|微信小程序、快手小程序|
+|easing-function|String|default|指定 swiper 切换缓动动画类型，有效值：default、linear、easeInCubic、easeOutCubic、easeInOutCubic|微信小程序、快手小程序、京东小程序|
 |@change|EventHandle||current 改变时会触发 change 事件，event.detail = {current: current, source: source}||
 |@transition|EventHandle||swiper-item 的位置发生改变时会触发 transition 事件，event.detail = {dx: dx, dy: dy}，支付宝小程序暂不支持dx, dy|App、H5、微信小程序、支付宝小程序、字节跳动小程序、飞书小程序、QQ小程序、快手小程序|
 |@animationfinish|EventHandle||动画结束时会触发 animationfinish 事件，event.detail = {current: current, source: source}|字节跳动小程序与飞书小程序不支持|
@@ -57,11 +57,25 @@ change 事件返回 detail 中包含一个 source 字段，表示导致变更的
 - swiper在App的vue中、百度支付宝头条QQ小程序中，不支持内嵌video、map等原生组件。在微信基础库2.4.4起和App nvue2.1.5起支持内嵌原生组件。竖向的swiper内嵌视频可实现抖音、映客等视频垂直拖动切换效果。
 - 同时监听 change transition，开始滑动时触发transition, 放开手后，在ios平台触发顺序为 transition... change，Android/微信小程序/支付宝为 transition... change transition...
  
+ 
+#### easing-function 
+
+|值	|	说明|
+|--	|--	|
+|default	|默认缓动函数	|
+|linear	|线性动画	|
+|easeInCubic	|缓入动画	|
+|easeOutCubic	|缓出动画	|
+|easeInOutCubic	|	缓入缓出动画	|
+
+ 
+ 
+ 
 #### swiper-item
 仅可放置在 ``<swiper>`` 组件中，宽高自动设置为100%。注意：宽高100%是相对于其父组件，不是相对于子组件，不能被子组件自动撑开。
 
 |属性名|类型|默认值|说明|
-|:-|:-|:-|:-|:-|
+|:-|:-|:-|:-|
 |item-id|String||该 swiper-item 的标识符|
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/swiper/swiper)

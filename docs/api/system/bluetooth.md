@@ -1,8 +1,8 @@
 **蓝牙 API 平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|x|x|√|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|x|x|√|x|x|√|
 
 ### uni.openBluetoothAdapter(OBJECT)
 
@@ -31,6 +31,10 @@
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 **注意**
 
@@ -59,9 +63,12 @@ uni.openBluetoothAdapter({
 |services|Array&lt;String&gt;||否|要搜索但蓝牙设备主 service 的 uuid 列表。某些蓝牙设备会广播自己的主 service 的 uuid。如果设置此参数，则只搜索广播包有对应 uuid 的主服务的蓝牙设备。建议主要通过该参数过滤掉周边不需要处理的其他蓝牙设备。|
 |allowDuplicatesKey|boolean|false|否|是否允许重复上报同一设备。如果允许重复上报，则 `uni.onBlueToothDeviceFound` 方法会多次上报同一设备，但是 RSSI 值会有不同。|
 |interval|number|0|否|上报设备的间隔。0 表示找到新设备立即上报，其他数值根据传入的间隔上报。|
+|powerLevel|string|medium|否|扫描模式，越高扫描越快，也越耗电，仅安卓支持。low：低，medium：中，high：高。仅京东小程序支持|
 |success|function||否|接口调用成功的回调函数|
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+
 
 #### 错误
 
@@ -78,6 +85,10 @@ uni.openBluetoothAdapter({
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 **注意：** 
 
@@ -116,7 +127,7 @@ uni.startBluetoothDevicesDiscovery({
 |advertisData|ArrayBuffer|当前蓝牙设备的广播数据段中的 ManufacturerData 数据段。|
 |advertisServiceUUIDs|Array&lt;String&gt;|当前蓝牙设备的广播数据段中的 ServiceUUIDs 数据段|
 |localName|string|当前蓝牙设备的广播数据段中的 LocalName 数据段|
-|serviceData|Object|当前蓝牙设备的广播数据段中的 ServiceData 数据段|
+|serviceData|Object|当前蓝牙设备的广播数据段中的 ServiceData 数据段，京东小程序不支持|
 
 **注意**
 
@@ -169,6 +180,11 @@ uni.onBluetoothDeviceFound(function (devices) {
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+
 
 **示例代码**
 
@@ -240,6 +256,10 @@ uni.onBluetoothAdapterStateChange(function (res) {
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 **示例代码** 
 
@@ -281,6 +301,7 @@ uni.getConnectedBluetoothDevices({
 |localName|string|当前蓝牙设备的广播数据段中的 LocalName 数据段|
 |serviceData|Object|当前蓝牙设备的广播数据段中的 ServiceData 数据段|
 
+
 #### 错误
 
 |错误码|错误信息|说明|
@@ -296,6 +317,8 @@ uni.getConnectedBluetoothDevices({
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 **示例代码**
 
@@ -359,6 +382,10 @@ uni.getBluetoothDevices({
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 **示例代码**
 
@@ -397,6 +424,10 @@ uni.getBluetoothAdapterState({
 |10007|property not support|当前特征值不支持此操作|
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
+|10010|already connect|已连接|
+|10011|need pin|配对设备需要配对码|
+|10012|operate time out|连接超时|
+|10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
 **示例代码**
 

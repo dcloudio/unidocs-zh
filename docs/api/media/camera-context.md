@@ -3,21 +3,21 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|√|x|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|√|√|√|x|√|√|√|
 
 本API为 camera 组件配套的js API，与 camera 组件的平台兼容性相同，可实现非全屏摄像头。App端可通过[plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html)实现全屏摄像头。
 
 **cameraContext 对象的方法列表**
 
-|方法|参数|说明|
-|:-|:-|:-|
-|takePhoto|Object|拍照，可指定质量，成功则返回图片路径。|
-|setZoom|Object|设置缩放级别 **微信小程序 2.10.0+ 支持**|
-|startRecord|Object|开始录像|
-|stopRecord|Object|结束录像，成功则返回封面与视频。|
-|onCameraFrame|Function|获取 Camera 实时帧数据。仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/CameraContext.onCameraFrame.html)|
+|方法|参数|说明|平台差异说明|
+|:-|:-|:-|:-|
+|takePhoto|Object|拍照，可指定质量，成功则返回图片路径。||
+|setZoom|Object|设置缩放级别 **微信小程序 2.10.0+ 支持**|京东小程序不支持|
+|startRecord|Object|开始录像|京东小程序不支持|
+|stopRecord|Object|结束录像，成功则返回封面与视频。|京东小程序不支持|
+|onCameraFrame|Function|获取 Camera 实时帧数据。|仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/CameraContext.onCameraFrame.html)|
 
 ### cameraContext.takePhoto
 **takePhoto 的 Object 参数列表：**

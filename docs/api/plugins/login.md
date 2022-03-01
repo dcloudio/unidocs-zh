@@ -175,8 +175,8 @@ uni.login({
 #### App端集成其他登录SDK如支付宝、淘宝、facebook登录的说明 @app-oauth
 1. [支付宝登录](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98%E5%AE%9D%E7%99%BB%E9%99%86)、[淘宝登录](https://ext.dcloud.net.cn/search?q=%E7%99%BE%E5%B7%9D)、[抖音登录](https://ext.dcloud.net.cn/search?q=%E6%8A%96%E9%9F%B3%E7%99%BB%E5%BD%95)等在插件市场均已有插件，还有[sharesdk](https://ext.dcloud.net.cn/search?q=sharesdk)等专业集成多家登录分享的插件。
 2. 现已支持登录：
-  - [facebook 登录](/app-oauth-facebook)
-  - [Google 登录](/app-oauth-google)
+  - [facebook 登录](/tutorial/app-oauth-facebook)
+  - [Google 登录](/tutorial/app-oauth-google)
 3. 也可以内嵌web-view组件，使用web登录模式集成这些三方登录
 
 

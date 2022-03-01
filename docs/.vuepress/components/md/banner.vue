@@ -14,6 +14,8 @@
 	</div>
 </template>
 <script>
+	var sliderTime;
+
 	export default {
 		data() {
 			return {
@@ -28,6 +30,9 @@
 		},
 		mounted() {
 			this.StartBanner();
+		},
+		beforeDestroy() {
+			clearInterval(sliderTime);
 		},
 		methods: {
 			StartBanner() {
@@ -73,14 +78,14 @@
 				}
 				setSlider();
 				window.onresize = setSlider;
-				var sliderTime = setInterval(sliderStart, 5000);
+				sliderTime = setInterval(sliderStart, 5000);
 
 				function sliderStart() {
 					//开始轮播)
 					/* if(!~location.pathname.indexOf($docsify.banner)){
-            clearInterval(sliderTime);
-            return;
-        } */
+							clearInterval(sliderTime);
+							return;
+					} */
 					index += 1;
 					if (index < 0 || index > sliderLength + 1) {
 						index = index < 0 ? 0 : sliderLength + 1;

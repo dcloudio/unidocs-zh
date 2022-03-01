@@ -197,6 +197,19 @@ uni.addInterceptor({
 ```
 
 ## API 列表
+#### 基础
+##### 日志打印
+
+|API|说明|
+|:-|:-|
+|[日志打印](log)|向控制台打印日志信息|
+|[定时器](timer)|在定时到期以后执行注册的回调函数|
+|[uni.base64ToArrayBuffer](base64ToArrayBuffer)|将 Base64 字符串转成 ArrayBuffer 对象|
+|[uni.arrayBufferToBase64](arrayBufferToBase64)|将 ArrayBuffer 对象转成 Base64 字符串|
+|[应用级事件](/api/application)|监听应用事件|
+|[拦截器](interceptor)|拦截 Api 等调用并执行回调|
+|[全局API](global)|可全局调用 Api|
+
 #### 网络
 ##### 发起请求
 
@@ -575,6 +588,15 @@ uni.addInterceptor({
 |[uni.unsubscribePush](plugins/push?id=unsubscribepush)|关闭推送|
 |[uni.onPush](plugins/push?id=onpush)|监听透传数据|
 |[uni.offPush](plugins/push?id=offpush)|移除监听透传数据|
+
+#### 广告
+|API|说明|
+|:-|:-|
+|[激励视频广告](/api/a-d/rewarded-video.html)|激励视频广告，是cpm收益最高的广告形式|
+|[全屏视频广告](/api/a-d/full-screen-video.html)|全屏视频广告|
+|[内容联盟广告](/api/a-d/content-page.html)|内容联盟广告|
+|[插屏广告](/api/a-d/interstitial.html)|插屏广告|
+|[互动游戏](/api/a-d/interactive.html)|互动游戏是DCloud联合三方服务商为开发者提供新的广告场景增值服务|
 
 #### 平台扩展
 

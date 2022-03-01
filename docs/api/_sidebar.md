@@ -2,8 +2,8 @@
 * 基础
   * [日志打印](api/log.md)
   * [定时器](api/timer.md)
-  * [uni.base64ToArrayBuffer](api/base64ToArrayBuffer?id=base64toarraybuffer)
-  * [uni.arrayBufferToBase64](api/arrayBufferToBase64?id=arraybuffertobase64)
+  * [uni.base64ToArrayBuffer](api/base64ToArrayBuffer.md)
+  * [uni.arrayBufferToBase64](api/arrayBufferToBase64.md)
   * [生命周期](api/lifecycle.md)
   * [应用级事件](api/application.md)
   * [拦截器](api/interceptor.md)
@@ -15,7 +15,7 @@
   * [SocketTask](api/request/socket-task.md)
   * [mDNS](api/request/mDNS.md)
   * [UDP 通信](api/request/UDP.md)
-* 路由与页面跳转
+* [路由与页面跳转](/api/router)
   * [uni.navigateTo](/api/router?id=navigateto)
   * [uni.redirectTo](/api/router?id=redirectto)
   * [uni.reLaunch](/api/router?id=relaunch)
@@ -23,7 +23,7 @@
   * [uni.navigateBack](/api/router?id=navigateback)
   * [uni.preloadPage](/api/preload-page)
   * [窗口动画](/api/router?id=animation)
-* 数据缓存
+* [数据缓存](/api/storage/storage)
   * [uni.setStorage](/api/storage/storage?id=setstorage)
   * [uni.setStorageSync](/api/storage/storage?id=setStorageSync)
   * [uni.getStorage](/api/storage/storage?id=getStorage)
@@ -74,7 +74,7 @@
   * [设备方向](api/system/deviceMotion.md)
   * [生物认证](api/system/authentication.md)
 * [Worker](api/worker.md)
-* 键盘
+* [键盘](/api/key)
   * [uni.hideKeyboard](/api/key?id=hidekeyboard)
   * [uni.onKeyboardHeightChange](/api/key?id=onkeyboardheightchange)
   * [uni.offKeyboardHeightChange](/api/key?id=offkeyboardheightchange)
@@ -83,7 +83,7 @@
   * [设置导航条](api/ui/navigationbar.md)
   * [设置TabBar](api/ui/tabbar.md)
   * [背景](api/ui/bgcolor.md)
-  * [动画](api/ui/animation?id=unicreateanimationobject)
+  * [动画](api/ui/animation)
   * [滚动](api/ui/scroll)
   * [窗口](api/ui/window.md)
   * [宽屏适配](api/ui/adapt.md)
@@ -99,7 +99,7 @@
   * [页面](api/window/window.md)
   * [页面通讯](api/window/communication.md) 
   * [subNVue原生子窗体](api/window/subNVues.md)
-* 文件
+* [文件](/api/file/file)
   * [uni.saveFile](/api/file/file?id=savefile)
   * [uni.getSavedFileList](/api/file/file?id=getSavedFileList)
   * [uni.getSavedFileInfo](/api/file/file?id=getSavedFileInfo)

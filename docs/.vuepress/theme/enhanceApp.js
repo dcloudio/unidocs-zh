@@ -94,7 +94,7 @@ export default ({
       if (Vue.$vuepress.$get('disableScrollBehavior')) {
         return false;
       }
-      const selector = decodeURIComponent(to.hash)
+      const selector = decodeURIComponent(to.hash.toLowerCase())
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           if (!mounted) mounted = true

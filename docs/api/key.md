@@ -11,7 +11,7 @@
 |√|√|√|√|x|√|√|√|√|
 
 
-#### uni.onKeyboardHeightChange(CALLBACK)
+#### uni.onKeyboardHeightChange(CALLBACK) @onkeyboardheightchange
 
 监听键盘高度变化
 
@@ -35,7 +35,7 @@ uni.onKeyboardHeightChange(res => {
 })
 ```
 
-#### uni.offKeyboardHeightChange(CALLBACK)
+#### uni.offKeyboardHeightChange(CALLBACK) @offkeyboardheightchange
 
 取消监听键盘高度变化事件
 

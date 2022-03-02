@@ -2927,7 +2927,7 @@ unicloud-db组件也支持使用getTemp方法，结合multiSend可以与其他�
 
 ## MongoDB聚合操作@aggregate
 
-JQL API支持使用聚合操作读取数据，关于聚合操作请参考[聚合操作](uniCloud/cf-database.md?id=aggregate)
+JQL API支持使用聚合操作读取数据，关于聚合操作请参考[聚合操作](uniCloud/cf-database-aggregate.md)
 
 例：取status等于1的随机20条数据
 
@@ -3458,7 +3458,7 @@ const res = await db.collection('article')
 .get()
 ```
 
-上述代码使用add方法将publish_date时间戳转为日期类型，再用dateToString将上一步的日期按照时区'+0800'（北京时间），格式化为`4位年-2位月-2位日`格式，完整格式化参数请参考[dateToString](uniCloud/cf-database.md?id=datetostring)。
+上述代码使用add方法将publish_date时间戳转为日期类型，再用dateToString将上一步的日期按照时区'+0800'（北京时间），格式化为`4位年-2位月-2位日`格式，完整格式化参数请参考[dateToString](uniCloud/cf-database-aggregate-operator.md?id=datetostring)。
 
 上述代码执行结果为
 

@@ -34,7 +34,8 @@ const config = {
     algolia: {
       apiKey: '2fdcc4e76c8e260671ad70065e60b2e7',
       indexName: 'zh-uniapp',
-      appId: 'PQIR5NL8CZ'
+      appId: 'PQIR5NL8CZ',
+      searchParameters: { hitsPerPage: 80 }
     }
   },
   markdown: {

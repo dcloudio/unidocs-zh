@@ -189,8 +189,8 @@ export default {
       forbidScroll(this.showMobilePanel)
     },
     switchVersion () {
-      // document.cookie = encodeURIComponent('__new_version') + "=__new_version; path=/"
-      document.cookie = encodeURIComponent('__new_version') + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"
+      document.cookie = encodeURIComponent('__old_version') + "=__old_version; path=/"
+      // document.cookie = encodeURIComponent('__new_version') + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"
       location.replace(location.origin + '?v=' + Date.now())
     }
   },

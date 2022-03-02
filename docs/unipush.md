@@ -66,14 +66,14 @@ iOS平台需要使用到苹果的APNS，务必在后台正确配置苹果推送�
 使用厂商推送下发推送消息必须设置intent，该数据格式是Android原生Intent对象序列化由来。具体可参考[详情](https://blog.csdn.net/u011068702/article/details/51406572)。并且intent须符合以下格式，此格式时在个推定义额基础上二次封装，所以必须以此格式为准。不按此格式设置intent可能出现用户点击推送消息无法启动APP的问题。
 intent数据格式如下：
 ```
-intent:#Intent;action=android.intent.action.oppopush;launchFlags=0x14000000;component=io.dcloud.HBuilder/io.dcloud.PandoraEntry;S.UP-OL-SU=true;S.title=测试标题;S.content=测试内容;S.payload=test;end
+intent://io.dcloud.unipush/?#Intent;scheme=unipush;launchFlags=0x4000000;component=io.dcloud.HBuilder/io.dcloud.PandoraEntry;S.UP-OL-SU=true;S.title=测试标题;S.content=测试内容;S.payload=test;end
 ```
 
 **component=io.dcloud.HBuilder/io.dcloud.PandoraEntry  其中io.dcloud.HBuilder为APP包名，需要替换为自己APP的包名；**  
 S.title=的值为推送消息标题，对应5+ API中[PushMessage](https://www.html5plus.org/doc/zh_cn/push.html#plus.push.PushMessage)对象的title属性值；  
 S.content=的值为推送消息内容，对应5+ API中[PushMessage](https://www.html5plus.org/doc/zh_cn/push.html#plus.push.PushMessage)对象的content属性值；  
 S.payload=的值为推送消息的数据，对应5+ API中[PushMessage](https://www.html5plus.org/doc/zh_cn/push.html#plus.push.PushMessage)对象的payload属性值；  
-**launchFlags=0x14000000字段，解决接收多条通知后点击可能无法触发click事件的问题**
+**launchFlags=0x4000000字段，解决接收多条通知后点击可能无法触发click事件的问题**
 
 注意事项：
 - intent格式与个推的多厂商pdf文档中描述的不一样，以此格式为准
@@ -128,7 +128,7 @@ S.payload=的值为推送消息的数据，对应5+ API中[PushMessage](https://
                     "title":"安卓离线展示的标题",
                     "body":"安卓离线展示的标题",
                     "click_type":"intent",
-                    "intent":"intent:#Intent;launchFlags=0x04000000;action=android.intent.action.oppopush;component=io.dcloud.HBuilder/io.dcloud.PandoraEntry;S.UP-OL-SU=true;S.title=测试标题;S.content=测试内容;S.payload=test;end"
+                    "intent":"intent://io.dcloud.unipush/?#Intent;scheme=unipush;launchFlags=0x4000000;component=io.dcloud.HBuilder/io.dcloud.PandoraEntry;S.UP-OL-SU=true;S.title=测试标题;S.content=测试内容;S.payload=test;end"
                 }
             }
         }，
@@ -200,7 +200,7 @@ public class push2 {
         notification1.setTitle("安卓离线展示的标题");
         notification1.setBody("安卓离线展示的内容");
         notification1.setClickType("intent");
-     notification1.setIntent("intent:#Intent;launchFlags=0x04000000;action=android.intent.action.oppopush;component=io.dcloud.HBuilder/io.dcloud.PandoraEntry;S.UP-OL-SU=true;S.title=测试标题;S.content=测试内容;S.payload=test;end");
+     notification1.setIntent("intent://io.dcloud.unipush/?#Intent;scheme=unipush;launchFlags=0x4000000;component=io.dcloud.HBuilder/io.dcloud.PandoraEntry;S.UP-OL-SU=true;S.title=测试标题;S.content=测试内容;S.payload=test;end");
         	//各厂商自有功能单项设置
 //ups.addOption("HW", "/message/android/notification/badge/class", "io.dcloud.PandoraEntry ");
         //ups.addOption("HW", "/message/android/notification/badge/add_num", 1);

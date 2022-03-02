@@ -350,3 +350,21 @@
         }
     }
     ```
+  - App，小程序端源码调试，需要在 vite.config.js 中主动开启 sourcemap
+
+    ```js
+    import { defineConfig } from "vite";
+    import uni from "@dcloudio/vite-plugin-uni";
+
+    /**
+     * @type {import('vite').UserConfig}
+     */
+
+    export default defineConfig({
+      build: {
+        sourcemap: true,
+      },
+
+      plugins: [uni()],
+    });
+    ```

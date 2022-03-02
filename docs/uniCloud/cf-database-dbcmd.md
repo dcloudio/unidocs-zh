@@ -693,7 +693,7 @@ let res = await db.collection('restaurants').where({
       
 #### 使用说明
  
-1. `expr` 可用于在聚合 [`match`](../aggregate/Aggregate.match.html) 流水线阶段中引入聚合表达式 3. 如果聚合 [`match`](../aggregate/Aggregate.match.html) 阶段是在 [`lookup`](../aggregate/Aggregate.lookup.html) 阶段内，此时的 `expr` 表达式内可使用 `lookup` 中使用 `let` 参数定义的变量，具体示例可见 [`lookup`](../aggregate/Aggregate.lookup.html) 的 `指定多个连接条件` 例子 5. `expr` 可用在普通查询语句（`where`）中引入聚合表达式
+1. `expr` 可用于在聚合 [`match`](cf-database-aggregate#aggregate-match) 流水线阶段中引入聚合表达式 3. 如果聚合 [`match`](cf-database-aggregate#aggregate-match) 阶段是在 [`lookup`](cf-database-aggregate#aggregate-lookup) 阶段内，此时的 `expr` 表达式内可使用 `lookup` 中使用 `let` 参数定义的变量，具体示例可见 [`lookup`](cf-database-aggregate#aggregate-lookup) 的 `指定多个连接条件` 例子 5. `expr` 可用在普通查询语句（`where`）中引入聚合表达式
  
 #### 示例代码 1：比较同一个记录中的两个字段
  假设 `items` 集合的数据结构如下：  

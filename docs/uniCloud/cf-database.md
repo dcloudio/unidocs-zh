@@ -1,6 +1,6 @@
 云函数中支持对云数据库的全部功能的操作。本章节主要讲解如何在云函数内通过传统api操作数据库，如需在云函数内使用JQL语法操作数据库，请参考：[云函数内使用JQL语法](uniCloud/jql-cloud.md)
 
-## 获取集合的引用
+## 获取集合的引用@get-collection
 
 ```js
 const db = uniCloud.database();

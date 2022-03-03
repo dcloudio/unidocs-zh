@@ -146,42 +146,42 @@
 
 ### DatetimePicker Props
 
-|属性名 |类型 |默认值 |值域 |说明 |
-|:-: |:-: |:-: | |:-: |
-|type |String |datetime |date/daterange/datetime/datetimerange|选择器类型 |
-|value |String、Number、Array(范围选择)、Date|- |- |输入框当前值 |
-|start |String、Number |- |- |最小值，可以使用日期的字符串（String）、时间戳（Number） |
-|end |String、Number |- |- |最大值，可以使用日期的字符串（String）、时间戳（Number） |
-|return-type |String |string |timestamp 、string、date |返回值格式 |
-|border |Boolean |true | |是否有边框 |
-|rangeSeparator |String |'-' |- |选择范围时的分隔符 |
-|placeholder |String |- |- |非范围选择时的占位内容 |
-|start-placeholder|String |- |- |范围选择时开始日期的占位内容 |
-|end-placeholder |String |- |- |范围选择时结束日期的占位内容 |
-|disabled |Boolean |false | |是否不可选择 |
-|clear-icon |Boolean |true | |是否显示清除按钮 |
-|hide-second |Boolean |false | |是否显示秒，只显示时分 |
+|属性名|类型|默认值|值域|说明|
+|:-: |:-:|:-:|:-:|:-:|
+|type|String|datetime|date/daterange/datetime/datetimerange|选择器类型|
+|value|String、Number、Array(范围选择)、Date|-|-|输入框当前值|
+|start|String、Number|-|-|最小值，可以使用日期的字符串(String)、时间戳(Number)|
+|end|String、Number|-|-|最大值，可以使用日期的字符串(String)、时间戳(Number)|
+|return-type|String|string|timestamp 、string、date |返回值格式|
+|border|Boolean|true|-|是否有边框|
+|rangeSeparator|String|'-'|-|选择范围时的分隔符|
+|placeholder|String|-|-|非范围选择时的占位内容 |
+|start-placeholder|String|-|-|范围选择时开始日期的占位内容|
+|end-placeholder|String|-|-|范围选择时结束日期的占位内容|
+|disabled|Boolean|false|-|是否不可选择|
+|clear-icon|Boolean|true||是否显示清除按钮|
+|hide-second|Boolean|false|-|是否显示秒，只显示时分|
 
 ### DatetimePicker Events
 
-| 事件名称  |                        说明                        |                                            返回值                                            |
-| :-: | :: | :: |
-|  change   | 确定日期时间时触发的事件，参数为当前选择的日期对象 | 单选返回日期字符串，如：'2010-02-3'；范围选返回日期字符串数组，如：['2020-10-1', '2021-4-1'] |
-| maskClick |                   点击遮罩层触发                   |                                              -                                               |
+|事件名称|说明|返回值|
+|:-:|:-:|:-:|
+|change|确定日期时间时触发的事件，参数为当前选择的日期对象|单选返回日期字符串，如：'2010-02-3'；范围选返回日期字符串数组，如：['2020-10-1', '2021-4-1']|
+|maskClick|点击遮罩层触发|-|
 
 ### DatetimePicker Methods
 
-| 方法称名 |          说明          | 参数 |
-| :: | :--: | :--: |
-|   show   |       打开弹出层       |  -   |
-|  close   |       关闭弹出层       |  -   |
-|  clear   | 清除上次选中的状态和值 |  -   |
+|方法称名|说明|参数|
+|:-:|:-:|:-:|
+|show|打开弹出层|-|
+|close|关闭弹出层|-|
+|clear|清除上次选中的状态和值|-|
 
 ### DatetimePicker Slots
 
-|  名称   |     说明     |
-| :-: |
-| default | 会覆盖输入框 |
+|名称|说明|
+|:-:|:-:|
+|default|会覆盖输入框|
 
 
 ## 组件示例

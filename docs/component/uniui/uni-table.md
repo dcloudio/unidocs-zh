@@ -65,7 +65,7 @@
 |属性名| 类型|默认值| 可选值| 说明|
 |:-:| :-:|:-:| :-:| :-:	|
 |border| Boolean| false| -| 是否带有纵向边框	|
-|stripe| Boolean| false| -| 是否显示斑马线样式	|
+|stripe| Boolean| true| -| 是否显示斑马线样式	|
 |type| String| ''| -| 值为type="selection" 时开启多选|
 |emptyText	| String| 没有更多数据| -| 空数据时显示的文本内容|
 |loading| Boolean| false| -| 显示加载中|	

@@ -47,7 +47,7 @@ const routerMap = {
   '/vue-api': '/tutorial/vue-api.html',
   '/vue-vuex': '/tutorial/vue-vuex.html',
   '/vue3-api': '/tutorial/vue3-api.html',
-  '/vue3-basics': '/tutorial/vue3-basihybridcs.html',
+  '/vue3-basics': '/tutorial/vue3-basics.html',
   '/vue3-vuex': '/tutorial/vue3-vuex.html',
   '/migration-to-vue3': '/tutorial/migration-to-vue3.html',
 

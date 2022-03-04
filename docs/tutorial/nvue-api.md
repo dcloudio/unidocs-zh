@@ -706,7 +706,7 @@ BindingX类似一种强化版的css，运行性能高，但没有js那样足够�
 
 
 - js中操作```globalData```的方式如下： ```getApp().globalData.text = 'test'```
-- 如果需要把```globalData```的数据绑定到页面上，可在页面的onShow声明周期里进行变量重赋值。
+- 如果需要把```globalData```的数据绑定到页面上，可在页面的onShow生命周期里进行变量重赋值。
 
 
 

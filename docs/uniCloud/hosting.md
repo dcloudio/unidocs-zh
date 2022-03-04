@@ -96,7 +96,7 @@ DCloud为开发者提供了`uni发布平台`，包括网站发布、App发布和
 前端网页托管配置自己域名的步骤如下：
 
 1、登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)。
-2、进入前端网页托管页面，选择【基础设置】，单击【添加域名】，进行域名添加，如下图所示：
+2、进入前端网页托管页面，选择【基础设置】，单击【添加域名】，进行域名添加，（注意：域名是需要自行购买的）如下图所示：
 
  ![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/uniCloud/uniCloud-hosting-domain-add.jpg)
 

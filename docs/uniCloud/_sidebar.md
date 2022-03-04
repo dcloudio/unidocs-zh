@@ -49,7 +49,7 @@
 * [客户端sdk](uniCloud/client-sdk.md)
 * 增强开源库
   * [uni-config-center 配置中心](uniCloud/uni-config-center.md)
-  * [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)
+  * [uni-starter](uniCloud/uni-starter.md)
   * [uni-admin](uniCloud/admin.md)
   * [uni-upgrade-center App升级中心](uniCloud/upgrade-center.md)
   * [unipay 统一支付](uniCloud/unipay.md)

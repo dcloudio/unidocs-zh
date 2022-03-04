@@ -13,6 +13,9 @@ const routerMap = {
   '/collocation/env': '/tutorial/env.html',
   '/collocation/ssr': '/tutorial/ssr.html',
   '/collocation/frame/window': '/tutorial/page.html#getapp',
+  '/collocation/frame/window#getcurrentpages': '/tutorial/page.html#getcurrentpages',
+  '/collocation/auto/api': '/worktile/auto/api.html',
+  '/collocation/frame/log': '/api/log.html',
 
   '/component/mp-weixin-plugin': '/tutorial/mp-weixin-plugin.html',
   '/component/uniui': '/component/uniui/uni-ui.html',
@@ -37,6 +40,7 @@ const routerMap = {
   '/frame#注意事项-1': '/tutorial/renderjs.html#注意事项',
 
   '/platform': '/tutorial/platform.html',
+  '/nvue-event': '/tutorial/nvue-event.html',
 
   '/api/extend/native-plugin': '/plugin/native-plugin.html',
   '/use-html5plus': '/tutorial/use-html5plus.html',

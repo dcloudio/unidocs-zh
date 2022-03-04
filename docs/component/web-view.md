@@ -388,7 +388,7 @@ A：使用 uni.webView.navigateTo...
 
 
 uni.webView.navigateTo 示例，注意uni sdk放到body下面
-```
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -416,7 +416,7 @@ uni.webView.navigateTo 示例，注意uni sdk放到body下面
 ```
 
 nvue webview通信示例
-```
+```html
 <template>
 	<view>
 		<web-view ref="webview" class="webview" @onPostMessage="handlePostMessage"></web-view>

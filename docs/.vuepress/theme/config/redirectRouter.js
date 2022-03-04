@@ -12,7 +12,7 @@ const routerMap = {
   '/collocation/i18n': '/worktile/i18n.html',
   '/collocation/env': '/tutorial/env.html',
   '/collocation/ssr': '/tutorial/ssr.html',
-  '/collocation/frame/window#getapp': '/tutorial/page.html#getapp',
+  '/collocation/frame/window': '/tutorial/page.html#getapp',
 
   '/component/mp-weixin-plugin': '/tutorial/mp-weixin-plugin.html',
   '/component/uniui': '/component/uniui/uni-ui.html',

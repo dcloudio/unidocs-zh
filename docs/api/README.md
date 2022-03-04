@@ -572,22 +572,22 @@ uni.addInterceptor({
 
 |API|说明|
 |:-|:-|
-|[uni.getProvider](plugins/provider?id=getprovider)|获取服务供应商|
-|[uni.login](plugins/login?id=login)|登录|
-|[uni.getUserInfo](plugins/login?id=getuserinfo)|获取用户信息|
-|[uni.getuserprofile](plugins/login?id=getuserprofile)|获取用户信息。每次请求都会弹出授权窗口，用户同意后返回 userInfo|
-|[uni.checkSession](plugins/login?id=checkSession)|检查登录状态是否过期|
-|[uni.preLogin](plugins/login?id=prelogin)|预登录|
-|[uni.closeAuthView](plugins/login?id=closeauthview)|关闭一键登录页面|
-|[uni.getCheckBoxState](plugins/login?id=getcheckboxstate)|获取一键登录条款勾选框状态|
-|[uni.getUniverifyManager](plugins/login?id=getUniverifyManager)|获取全局唯一的一键登录管理器 univerifyManager|
-|[uni.share](plugins/share?id=share)|分享|
-|[uni.shareWithSystem](plugins/share?id=sharewithsystem)|使用系统分享|
-|[uni.requestPayment](plugins/payment?id=requestpayment)|支付|
-|[uni.subscribePush](plugins/push?id=subscribepush)|开启推送|
-|[uni.unsubscribePush](plugins/push?id=unsubscribepush)|关闭推送|
-|[uni.onPush](plugins/push?id=onpush)|监听透传数据|
-|[uni.offPush](plugins/push?id=offpush)|移除监听透传数据|
+|[uni.getProvider](/api/plugins/provider?id=getprovider)|获取服务供应商|
+|[uni.login](/api/plugins/login?id=login)|登录|
+|[uni.getUserInfo](/api/plugins/login?id=getuserinfo)|获取用户信息|
+|[uni.getuserprofile](/api/plugins/login?id=getuserprofile)|获取用户信息。每次请求都会弹出授权窗口，用户同意后返回 userInfo|
+|[uni.checkSession](/api/plugins/login?id=checkSession)|检查登录状态是否过期|
+|[uni.preLogin](/api/plugins/login?id=prelogin)|预登录|
+|[uni.closeAuthView](/api/plugins/login?id=closeauthview)|关闭一键登录页面|
+|[uni.getCheckBoxState](/api/plugins/login?id=getcheckboxstate)|获取一键登录条款勾选框状态|
+|[uni.getUniverifyManager](/api/plugins/login?id=getUniverifyManager)|获取全局唯一的一键登录管理器 univerifyManager|
+|[uni.share](/api/plugins/share?id=share)|分享|
+|[uni.shareWithSystem](/api/plugins/share?id=sharewithsystem)|使用系统分享|
+|[uni.requestPayment](/api/plugins/payment?id=requestpayment)|支付|
+|[uni.subscribePush](/api/plugins/push?id=subscribepush)|开启推送|
+|[uni.unsubscribePush](/api/plugins/push?id=unsubscribepush)|关闭推送|
+|[uni.onPush](/api/plugins/push?id=onpush)|监听透传数据|
+|[uni.offPush](/api/plugins/push?id=offpush)|移除监听透传数据|
 
 #### 广告
 |API|说明|

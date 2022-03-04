@@ -22,8 +22,8 @@
 uni.login({
 	provider: 'univerify',
 	univerifyStyle: { 
-            fullScreen: true
-        }
+    fullScreen: true
+  }
 })
 ```
 
@@ -102,10 +102,10 @@ DCloud还提供了更易用的封装。在[uni-id](/uniCloud/uni-id)里已经预
 
 ```js
 uni.getProvider({
-    service: 'oauth',
-    success: function (res) {
-        console.log(res.provider)// ['qq', 'univerify']
-    }
+  service: 'oauth',
+  success: function (res) {
+    console.log(res.provider)// ['qq', 'univerify']
+  }
 });
 ```
 

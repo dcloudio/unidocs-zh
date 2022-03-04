@@ -34,7 +34,7 @@
   * [定时触发](uniCloud/trigger.md)
   * [云函数URL化](uniCloud/http.md)
 * 云存储
-  * [云存储](uniCloud/storage.md)
+  * [API](uniCloud/storage.md)
   * [腾讯云自定义登录](uniCloud/authentication.md)
   * [腾讯云权限管理](uniCloud/policy-tcb.md)
 * [uni-id用户体系](uniCloud/uni-id.md)

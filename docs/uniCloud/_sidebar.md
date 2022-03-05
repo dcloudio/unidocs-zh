@@ -5,6 +5,13 @@
   * [服务空间](uniCloud/concepts/space.md)
   * [数据库](uniCloud/concepts/database.md)
   * [云函数](uniCloud/concepts/cloudfunction.md)
+* 云函数
+  * [开发云函数](uniCloud/cf-functions.md)
+  * [云对象](uniCloud/cloud-obj.md)
+  * [云函数公共模块](uniCloud/cf-common.md)
+  * [日志输出](uniCloud/cf-logger.md)
+  * [定时触发](uniCloud/trigger.md)
+  * [云函数URL化](uniCloud/http.md)
 * 云数据库
   * [云数据库入门](uniCloud/hellodb.md)
   * [云函数内传统方式操作数据库](uniCloud/cf-database.md)
@@ -27,12 +34,6 @@
   * [JQL语法](uniCloud/jql.md)
   * [openDB](https://gitee.com/dcloud/opendb)
   * [性能优化](uniCloud/db-performance.md)
-* 云函数
-  * [开发云函数](uniCloud/cf-functions.md)
-  * [云函数公共模块](uniCloud/cf-common.md)
-  * [日志输出](uniCloud/cf-logger.md)
-  * [定时触发](uniCloud/trigger.md)
-  * [云函数URL化](uniCloud/http.md)
 * 云存储
   * [API](uniCloud/storage.md)
   * [腾讯云自定义登录](uniCloud/authentication.md)

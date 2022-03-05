@@ -185,11 +185,11 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 
 #### 各家小程序实现机制不同，可能存在的平台兼容问题
 
-1.浏览器内核差异
+1. 浏览器内核差异
 
 各家小程序的浏览器内核不同，可能会造成css兼容性问题，更多细节参考：[https://ask.dcloud.net.cn/article/1318](https://ask.dcloud.net.cn/article/1318)
 
-2.自定义组件渲染差异
+2. 自定义组件渲染差异
 
 微信（可以使用[virtualHost](https://uniapp.dcloud.io/tutorial/vue-api.html#其他配置)配置）/QQ/百度/字节跳动这四家小程序，自定义组件在渲染时会比App/H5端多一级节点，在写样式时需要注意：
 

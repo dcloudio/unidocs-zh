@@ -388,6 +388,9 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |checkAddress				|Function																																																		|-				|-			|校验请求地址																																																																															|
 |trace							|Boolean																																																		|-				|false	|是否启用捕获堆栈																																																																													|
 
+**注意**
+
+默认情况下request接口不会处理返回的数据，即不传`dataType`参数时会返回buffer类型的数据，如需自动解析json格式的返回结果，需要将`dataType`设置为`"json"`
 
 **示例代码**
 

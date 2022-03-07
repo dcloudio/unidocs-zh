@@ -50,7 +50,7 @@ keyword: 短信,sms
 {
 	"name": "uni-sms",
 	"extensions": {
-		"uni-cloud-sms": {} // 启用uni-cloud-jql扩展，值为空对象即可
+		"uni-cloud-sms": {} // 启用uni-cloud-sms扩展，值为空对象即可
 	}
 }
 ```

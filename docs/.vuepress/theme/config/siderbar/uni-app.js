@@ -58,10 +58,6 @@ export default {
       "prefix": "群5"
     },
     {
-      "number": "697264024",
-      "state": 1
-    },
-    {
       "number": "942061423",
       "state": 1,
       "prefix": "群7"

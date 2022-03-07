@@ -18,7 +18,7 @@ function normalizeLink(url) {
 module.exports = function (md) {
   md.normalizeLink = (function (oldNormalizeLink) {
     return function (url) {
-      url = isExternal(url) ? url : normalizeLink(url)
+      url = isExternal(url) ? url : normalizeLink(url).replace('.md', '')
       return oldNormalizeLink.bind(this)(url)
     }
   })(md.normalizeLink)

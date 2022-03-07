@@ -68,9 +68,9 @@ const config = {
         .end()
         .plugin('convert-header')
         .use(headerPlugin)
-    },
-    extendMarkdown: md => {
-      md.use(require('./markdown/normallizeLink'))
+        .end()
+        .plugin('normallize-link')
+        .use(require('./markdown/normallizeLink'))
     }
   }
 }

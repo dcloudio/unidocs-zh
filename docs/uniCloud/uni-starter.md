@@ -461,7 +461,7 @@ module.exports = {
 ```
 
 ## 目录结构@catalogue
-<pre>
+<pre style="color:#FFF;">
 uni-starter
 ├─uniCloud-aliyun	
 │	├─cloudfunctions 云函数目录

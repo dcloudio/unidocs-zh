@@ -19,7 +19,7 @@ function handleRedirectForCleanUrls(router, to) {
       } else if (isRouteExists(router, endingSlashUrl)) {
         return endingSlashUrl
       } else {
-        return to.path
+        return to.path.replace(/\.md$/, '')
       }
     } else if (/\/$/.test(to.path)) {
       const endingHtmlUrl = to.path.replace(/\/$/, '') + '.html'

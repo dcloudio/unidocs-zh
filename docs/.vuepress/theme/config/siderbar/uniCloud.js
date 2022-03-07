@@ -24,21 +24,25 @@ export default {
   qq_group: [
     {
       "number": "1012245137",
-      "state": 1
+      "state": 1,
+      "prefix": "群1"
     },
     {
       "number": "749911289",
       "state": 1,
-      attendance: 1000
+      attendance: 1000,
+      "prefix": "群2"
     },
     {
       "number": "599819864",
       "state": 1,
-      attendance: 1000
+      attendance: 1000,
+      "prefix": "群3"
     },
     {
       "number": "641753405",
-      "state": 0
+      "state": 0,
+      "prefix": "群4"
     },
   ]
 }

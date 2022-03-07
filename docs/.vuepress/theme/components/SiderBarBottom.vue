@@ -34,9 +34,9 @@
 			/>
 			<div class="contact-smg">
 				<div>官方QQ交流群</div>
-				<template v-for="(item, index) in currentQQGroup">
+				<template v-for="item in currentQQGroup">
 					<div v-if="!item.state" :key="item.number">
-						群{{ currentQQGroup.length - index }}：{{ item.number }} &nbsp;
+						{{ item.prefix }}：{{ item.number }} &nbsp;
 						<a
 							target="_blank"
 							style="text-decoration: underline"
@@ -46,9 +46,7 @@
 						</a>
 					</div>
 					<div v-else :key="item.number">
-						群{{ currentQQGroup.length - index }}：{{ item.number }}（{{
-							item.attendance || 2000
-						}}人已满）
+						{{ item.prefix }}：{{ item.number }}（{{ item.attendance || 2000 }}人已满）
 					</div>
 				</template>
 			</div>

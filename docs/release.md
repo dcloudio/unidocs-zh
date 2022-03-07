@@ -1,5 +1,3 @@
-# 更新日志（正式版）
----
 #### 3.3.11.20220210
 * 【uni-app】
   + H5平台 修复 3.3.9 引出的 uni.previewImage 预览图像无法拖动的Bug [详情](https://ask.dcloud.net.cn/question/138972)

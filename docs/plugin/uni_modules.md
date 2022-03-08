@@ -276,7 +276,7 @@ uni_modules插件目录是独立存在的，如果您不再需要该插件，可
  - 插件目录不支持pages.json、App.vue、main.js、manifest.json、uni.scss文件，如果需要插件使用者修改这些文件内容，请在插件文档(readme.md)中详细说明。
 3. 当迁移后的所有插件功能均正常时，您就可以向插件市场发布新的支持uni_modules的插件版本（插件市场会同时保留您最后一个非uni_modules插件版本）
  - 在插件根目录创建package.json，您可以先简单的仅填写一个插件ID即可，其他信息可以通过发布窗口填写（会自动同步回package.json）
-```
+```json
 {
   "id":"您的插件ID"
 }

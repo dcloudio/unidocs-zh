@@ -2718,3 +2718,5 @@
   + Android平台 修复 创建视频播放控件（VideoPlayer）时，没有开始播放视频也会停止后台背景音频的Bug [详情](https://ask.dcloud.net.cn/question/82034)
   + Android平台 优化 视频播放的操作条的拖动误触和图标美化问题
   + iOS平台 修复 平台绝对路径转换成本地URL路径（plus.io.convertAbsoluteFileSystem）可能返回null的Bug [详情](https://ask.dcloud.net.cn/question/51954)
+
+<md-virtual key="release-note-alpha"/>

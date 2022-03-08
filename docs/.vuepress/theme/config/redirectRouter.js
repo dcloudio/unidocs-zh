@@ -3,7 +3,7 @@ const routerMap = {
   '/collocation/frame/lifecycle#应用生命周期': '/collocation/App.html#applifecycle',
   '/collocation/frame/lifecycle': '/collocation/App.html#applifecycle',
   '/collocation/frame/communication': '/tutorial/page.html#页面通讯',
-  '/collocation/frame/lifecycle#page': '/collocation/App.html#applifecycle',
+  '/collocation/frame/lifecycle#page': '/tutorial/page.html#lifecycle',
   '/collocation/frame/lifecycle#component': '/tutorial/page.html#componentlifecycle',
   '/collocation/frame/timer': '/api/timer.html',
   '/collocation/auto/hbuilderx-extension/index': '/worktile/auto/hbuilderx-extension/',
@@ -72,7 +72,7 @@ const routerMap = {
 
 export default ({ fullPath, path, hash }) => {
   fullPath = decodeURIComponent(fullPath)
-  const matchFullPath = routerMap[fullPath];
+  const matchFullPath = routerMap[fullPath.replace('?id=', '#')];
   if (matchFullPath) {
     return {
       path: matchFullPath,

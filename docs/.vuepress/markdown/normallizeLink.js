@@ -9,7 +9,7 @@ function isExternal(path) {
 }
 
 function normalizeLink(url) {
-  if (!url.startsWith('/') && folderNames.some(item => url.startsWith(item))) {
+  if (!url.startsWith('/') && folderNames.some(item => url.split('/')[0] === item)) {
     return '/' + url
   }
   return url

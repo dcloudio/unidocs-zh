@@ -12,6 +12,8 @@ const routerMap = {
   '/collocation/i18n': '/worktile/i18n.html',
   '/collocation/env': '/tutorial/env.html',
   '/collocation/ssr': '/tutorial/ssr.html',
+  '/ssr': '/tutorial/ssr.html',
+  '/ssr/': '/tutorial/ssr.html',
   '/collocation/frame/window': '/tutorial/page.html#getapp',
   '/collocation/frame/window#getcurrentpages': '/tutorial/page.html#getcurrentpages',
   '/collocation/auto/api': '/worktile/auto/api.html',

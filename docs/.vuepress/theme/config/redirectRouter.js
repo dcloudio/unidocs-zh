@@ -61,6 +61,7 @@ const routerMap = {
   '/nvue-css': '/tutorial/nvue-css.html',
 
   '/uniCloud/database': '/uniCloud/clientdb.html',
+  '/uniCloud/uni-clientDB': '/uniCloud/clientdb.html',
 
   '/plugin/hybrid': '/hybrid.html',
   '/adapt': '/tutorial/adapt.html',

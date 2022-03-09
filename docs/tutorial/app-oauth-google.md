@@ -1,33 +1,75 @@
-#### 准备条件  
-- 可访问Google服务器  
-注意：中国境内无法访问Google服务器
-- 注册Google账号  
+### 开通  
+- 注册[Google](https://accounts.google.com/)账号  
+- 登录[Google Cloud Platform](https://console.cloud.google.com/)，打开“选择项目”界面选择已经创建的项目，如果没有创建项目，点击“新建项目”根据页面提示创建项目  
+- 在左侧导航栏中选择 “API和服务” -> “凭证” 打开管理页面
+- 点击 “创建凭证” -> “OAuth客户端ID”，根据提示选择“应用类型”，按需分别输入Android/iOS平台配置信息
+- 创建凭证后iOS平台可以获取客户端ID（Android平台不需要客户端ID）
+
+更多信息详见 [申请开通Google登录操作指南](https://uniapp.dcloud.io/app-oauth-facebook-open)  
 
 
-#### Android开通步骤 
+### 配置  
+打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“Google登录”：
+![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/oauth/google-manifest.png)
 
-* 打开Google 登录引导页
-网址： https://developers.google.com/identity/sign-in/android/sign-in?hl=zh-cn
+- iOS平台客户端ID  
+Google云平台创建的OAuth2.0凭证的iOS平台客户端ID  
 
-* 选择项目配置
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/636a9bd3-77d7-4539-b46c-0c798eb49350.png)
-点击后出现项目与应用选择界面，如果你有已创建过的Firebase项目，可以直接选择。如果没有，可以选择新建一个Google Api 项目。
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f206ec8a-c82d-41f4-9e6d-d838e21a4857.png)
+**注意**
+- HBuilderX中标准真机运行基座使用的是DCloud申请HBuilder应用的AppID等信息，仅用于体验Google登录功能
+- 配置参数需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
-* 选择项目后，在该项目下新建一个应用
-选择应用平台  android
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/09c5a8aa-c698-4133-9a11-d73d59e37da5.png)
-需要填写应用的包名和sha1指纹,指纹的获取方法在界面上有提示。按照提示操作即可。
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d14feca3-94b5-467e-b197-d98b866072bc.png)
-点击创建，即可完成开通步骤。
 
-#### iOS开通步骤
+### 使用Google登录  
 
-* 打开[Google登录iOS引导页](http://developers.google.com/identity/sign-in/ios/start-integrating?hl=zh-cn)
+- uni-app项目  
+调用 [uni.login(OBJECT)](api/plugins/login?id=login) 发起授权登录，调用 [uni.getUserInfo(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=getuserinfo) 获取用户信息，OBJECT参数中provider属性值固定为`google`
+- 5+ App项目  
+调用 [plus.oauth.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.getServices) 获取登录服务对象 [plus.oauth.AuthService](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService), 再调用其 [login](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService.login) 方法进行登录认证、[getUserInfo](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService.getUserInfo)方法获取用户信息  
 
-* 点击创建OAuth客户端ID，填写项目名称
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1978e9aa-5e11-4586-9caf-1c1b7c3e71bd.png)
 
-* 选择iOS平台、填写BundleID后，点击CREATE，即可获取Client ID
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/26045e0b-b6f0-4c22-aa61-0d63120e1a4b.png)
+#### 示例代码  
+- uni-app项目  
+``` js  
+uni.login({
+    provider: 'google',
+    success: function (loginRes) {
+        // 登录成功
+        uni.getUserInfo({
+            provider: 'google',
+            success: function(info) {
+                // 获取用户信息成功, info.authResult保存用户信息
+            }
+        })
+    },
+    fail: function (err) {
+        // 登录授权失败  
+        // err.code是错误码
+    }
+});
+```  
 
+- 5+ App项目  
+``` js  
+var googleOauth = null;
+plus.oauth.getServices(function(services) {
+	for (var i in services) {
+		var service = services[i];
+		// 获取微信登录对象 
+		if (service.id == 'google') {
+			googleOauth = service;
+			break;
+		}
+	}
+	googleOauth.login( function(oauth){
+		// 授权成功，googleOauth.authResult 中保存授权信息  
+	}, function(err) {
+    // 登录授权失败  
+    // err.code是错误码
+	})
+}, function(err) {
+	// 获取 services 失败
+})
+```
+
+0-4c22-aa61-0d63120e1a4b.png)

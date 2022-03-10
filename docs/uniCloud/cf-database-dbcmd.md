@@ -725,7 +725,7 @@ let res = await db.collection('items').where(dbCmd.expr($.gt(['$ordered', '$inSt
   "price": number
 }
 ```
-假设加个小于等于 10 的打 8 折，大于 10 的打 5 折，让数据库查询返回打折后价格小于等于 8 的记录：  
+假设价格小于等于 10 的打 8 折，大于 10 的打 5 折，让数据库查询返回打折后价格小于等于 8 的记录：  
 
  
 ```js

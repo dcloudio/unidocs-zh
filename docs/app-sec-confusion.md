@@ -127,7 +127,7 @@ WKWebview使用了更加严格的安全机制，使用原生混淆的js文件在
 
 ### 提交云端打包  
 配置好原生混淆的文件列表后，需要提交云端打包，**注意在App云端打包对话框中需要勾选“对配置的js文件进行原生混淆”**
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/security/confusion.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/security/confusion.png)
 
 
 **再次强调：为了保证加密数据的安全性，加密算法和key不对外公开，因此离线打包无法支持原生混淆。** 

@@ -11,7 +11,7 @@
 
 ### 配置  
 打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“新浪微博登录”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/oauth/sina-manifest.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/oauth/sina-manifest.png)
 
 - appkey  
 新浪微博开放平台申请应用的AppKey值  

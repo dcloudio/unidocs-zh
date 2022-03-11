@@ -10,7 +10,7 @@
 
 ### 配置  
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/stripe_setup_manifest_info.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/payment/stripe_setup_manifest_info.png)
 
 **参数说明**  
 - returnURL  

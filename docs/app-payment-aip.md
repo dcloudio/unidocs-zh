@@ -13,7 +13,7 @@
 
 ### 配置  
 打开项目的manifest.json文件，在“App模块配置”项的“Payment(支付)”下勾选“Apple应用内支付”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/iap_setup_manifest_info.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/payment/iap_setup_manifest_info.png)
 
 > 提示：需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)；本地离线打包参考[Apple应用内支付模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/pay?id=%e8%8b%b9%e6%9e%9c%e5%ba%94%e7%94%a8%e5%86%85%e8%b4%ad%e6%94%af%e4%bb%98)
 

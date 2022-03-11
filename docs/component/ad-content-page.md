@@ -10,10 +10,10 @@
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(3.1.17)|x|x|x|x|x|x|x|x|x|x|
+|√Android(3.1.17)、iOS(3.4.2)|x|x|x|x|x|x|x|x|x|x|
 
 
-**仅Android nvue支持**
+**仅nvue支持**
 
 
 **开通配置广告**
@@ -31,7 +31,7 @@
 
 |属性名|类型|默认值|说明|平台差异|
 |:-|:-|:-|:-|:-|
-|adpid|String||uni-AD App广告位id，在[uni-AD官网](https://uniad.dcloud.net.cn/)申请广告位|仅Android nvue支持|
+|adpid|String||uni-AD App广告位id，在[uni-AD官网](https://uniad.dcloud.net.cn/)申请广告位|仅nvue支持|
 |@load|EventHandle||广告加载成功的回调||
 |@error|EventHandle||广告加载失败的回调||
 

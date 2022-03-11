@@ -6,7 +6,7 @@ App端地图模块封装了市场上主流的三方地图SDK，提供JS API统�
 |5+App/Wap2App|[plus.maps.*](https://www.html5plus.org/doc/zh_cn/maps.html)
 
 使用地图功能需在项目manifest.json的“App模块配置”中勾选“Maps(地图)”，并根据项目实际情况勾选使用的三方地图SDK：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/maps/modules.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/maps/modules.png)
 
 > 提示：App模块配置需提交云端打包后才能生效，真机运行调试时请使用[自定义基座](http://ask.dcloud.net.cn/article/35115)
 
@@ -26,7 +26,7 @@ App端地图模块封装了市场上主流的三方地图SDK，提供JS API统�
 
 #### 配置使用高德地图  
 打开项目的manifest.json文件，在“App模块配置”项的“Maps(地图)”下，勾选“高德地图”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/maps/amap.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap.png)
 
 #### 参数说明  
 - appkey_android  
@@ -48,7 +48,7 @@ App端地图模块封装了市场上主流的三方地图SDK，提供JS API统�
 
 #### 配置使用百度地图  
 打开项目的manifest.json文件，在“App模块配置”项的“Maps(地图)”下，勾选“百度地图”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/maps/bmap.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/maps/bmap.png)
 
 #### 参数说明  
 - appkey_android  
@@ -77,7 +77,7 @@ App端地图模块封装了市场上主流的三方地图SDK，提供JS API统�
 
 #### 配置使用Google地图  
 打开项目的manifest.json文件，在“App模块配置”项的“Maps(地图)”下，勾选“Google地图”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/maps/gmap.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/maps/gmap.png)
 
 #### 参数说明  
 - APIKey_android  

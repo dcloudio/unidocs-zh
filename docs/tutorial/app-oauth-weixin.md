@@ -9,7 +9,7 @@
 
 ### 配置  
 打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“微信登录”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/oauth/weixin-manifest.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/oauth/weixin-manifest.png)
 
 - appid  
 微信开放平台申请应用的AppID值  

@@ -10,7 +10,7 @@ App端统计模块封装了市场上主流的三方移动App统计SDK，提供JS
 **uni-app自带uni统计，无需使用三方统计。三方统计增加包体积且无法做到自带的免埋点采集行为数据。详见：[https://tongji.dcloud.io/](https://tongji.dcloud.io/)**
 
 使用统计功能需在项目manifest.json的“App模块配置”中勾选“Statistic(统计)”，并根据项目实际情况勾选使用的三方统计平台：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/statistic/moudules.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/statistic/moudules.png)
 
 > 提示：统计模块参数配置需提交云端打包后才能生效，真机运行调试时请使用[自定义基座](http://ask.dcloud.net.cn/article/35115)
 

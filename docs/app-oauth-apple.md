@@ -7,9 +7,9 @@
 使用苹果登录首先需要在苹果开发者后台开启 App 的 `Sign In with Apple` 服务：
 - 登录到[苹果开发者后台](https://developer.apple.com/)
 - 在[Identifiers](https://developer.apple.com/account/resources/identifiers/list)页面选择应用的 App ID（Bundle ID）进入编辑 `Capabilities` 界面，勾选 `Sign In with Apple` 服务并保存
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/oauth/apple-appid.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-appid.png)
 - 修改 `Sign In with Apple` 配置后需要到 [Profiles](https://developer.apple.com/account/resources/profiles/list) 更新 profile 描述文件（不需要新建），点击 Edit 重新编辑对应的 profile 文件，然后下载保存使用新的 profile 文件即可
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/oauth/apple-profile.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-profile.png)
 
 > 注：只有发布Appstore的应用才能使用苹果登录。企业版开发者账号不支持 `Sign In with Apple` （企业版开发者账号指的是用于企业内部分发App，不能用于发布 App Store 的账号，也就是价格为 299$ 的账号）
 
@@ -17,7 +17,7 @@
 
 ### 配置  
 打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“苹果登录（Sign in with Apple）”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/oauth/apple-manifest.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-manifest.png)
 
 **注意**
 - HBuilderX中标准真机运行基座使用的是企业证书签名，不支持`Sign In with Apple`
@@ -40,7 +40,7 @@
 - 具体规则请参考苹果 [官方文档](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/)
 
 下面是原生端默认的几种按钮样式供大家参考（width:130pt, height:30pt, corner radius: 6pt）
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/oauth/apple-style-zh.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-style-zh.png)
 
 
 #### 示例代码  

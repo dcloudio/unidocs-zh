@@ -42,11 +42,11 @@
   * [Native.js](/tutorial/native-js.md)
   * [renderjs](/tutorial/renderjs.md)
   * [原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)
-  * [App 打包](/tutorial/app-base.md)
+  * App 打包
     * [基础配置](/tutorial/app-base.md)
     * [图标配置](/tutorial/app-icons.md)
     * [启动界面](/tutorial/app-splashscreen.md)
-    * [功能模块](/tutorial/app-modules.md)
+    * 功能模块
       * [Geolocation(定位)](/tutorial/app-geolocation.md)
       * [Maps(地图)](/tutorial/app-maps.md)
       * [OAuth(登录鉴权)](/tutorial/app-oauth.md)
@@ -68,7 +68,7 @@
       * [Statistic(统计)](/tutorial/app-statistic.md)
         * [友盟统计](/tutorial/app-statistic-umeng.md)
         * [Google统计](/tutorial/app-statistic-google.md)
-    * [其它配置](/tutorial/app-ios-dsym.md)
+    * 其它配置
       * [iOS应用访问白名单](/tutorial/app-ios-schemewhitelist.md)
       * [iOS符号表文件](/tutorial/app-ios-dsym.md)
   * [App 上架注意](/tutorial/store.md)

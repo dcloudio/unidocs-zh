@@ -12,9 +12,9 @@
 对于低风险问题，理论上不会影响应用的安全质量，因此通常情况下不会解决低风险安全漏洞问题。
 
 首先我们需要判断风险漏洞是哪些代码引起的，可以通过安全检测报告中漏洞详情中的`漏洞代码`类名进行判断，如果是以"io.dcloud"开头则表示是DCloud的代码，如下：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/security/android/dcloud.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/security/android/dcloud.png)
 如果是以其它字符开头，则表示是三方SDK或uni原生插件的代码，如下：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/security/android/third.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/security/android/third.png)
 
 - DCloud代码的问题  
 这类问题我们会尽快处理解决，或提供相关配置

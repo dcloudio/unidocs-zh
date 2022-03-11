@@ -332,7 +332,7 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.customAuth()		|使用云厂商自定义登录，仅腾讯云支持[详情](uniCloud/authentication.md?id=cloud-custom-auth)														|
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
-|uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/uniCloud/concepts/space.md?id=multi-space)														|
+|uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 
 
 ## 访问数据库

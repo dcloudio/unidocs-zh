@@ -1,6 +1,7 @@
 const routerMap = {
   '/collocation/frame/lifecycle#页面生命周期': '/tutorial/page.html#lifecycle',
   '/collocation/frame/lifecycle#应用生命周期': '/collocation/App.html#applifecycle',
+  '/collocation/frame/lifetime': '/collocation/App.html#applifecycle',
   '/collocation/frame/lifecycle': '/collocation/App.html#applifecycle',
   '/collocation/frame/communication': '/tutorial/page.html#页面通讯',
   '/collocation/frame/lifecycle#page': '/tutorial/page.html#lifecycle',
@@ -64,6 +65,7 @@ const routerMap = {
 
   '/uniCloud/database': '/uniCloud/clientdb.html',
   '/uniCloud/uni-clientDB': '/uniCloud/clientdb.html',
+  '/uniCloud/uni-data-picker': '/component/uniui/uni-data-picker.html',
 
   '/plugin/hybrid': '/hybrid.html',
   '/adapt': '/tutorial/adapt.html',

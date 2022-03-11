@@ -22,7 +22,7 @@ uni-app内置了`weex`，`weex`的原生插件或ui库均可使用。注意`weex
 
 `uni-app`的App端虽然和小程序是相同的架构，逻辑层也运行在独立`jscore`而不是浏览器里，但App端和小程序还是有区别的：
 一方面可通过web-view组件加载HTML，引入web相关库；
-另一方面可通过[renderjs](frame?id=renderjs)实现在渲染层执行js，此时完整`echart`、`threejs`等web库均可使用。
+另一方面可通过[renderjs](/tutorial/renderjs.html)实现在渲染层执行js，此时完整`echart`、`threejs`等web库均可使用。
 （但为了全端使用，仍然建议减少对dom库的依赖，在`uni-app`的插件市场可寻找全端兼容的库来替代）
 
 - App端支持各种调用原生能力的方式

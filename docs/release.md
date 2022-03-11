@@ -1734,7 +1734,7 @@
 
 #### 2.6.11.20200409
 * 【uni-app】
-  + App平台 新增 激励视频广告支持服务器回调 [详情](https://uniapp.dcloud.io/api/ad/rewarded-video-ad)
+  + App平台 新增 激励视频广告支持服务器回调 [详情](https://uniapp.dcloud.io/api/a-d/rewarded-video-ad)
   + App平台 优化 控制台日志支持打印数组类型
   + App平台 修复 v3版本 判断浏览器专用 API（如：navigator）报错的Bug
   + App平台 修复 v3版本 navigation-bar 组件 非首页某些属性无效的Bug

@@ -11,7 +11,7 @@
 
 ### 配置  
 打开项目的manifest.json文件，在“App模块配置”项的“Payment(支付)”下，勾选“支付宝支付”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/payment/alipay_setup_manifest_info.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/payment/alipay_setup_manifest_info.png)
 
 **注意**
 - 支付宝支付没有绑定应用包名、签名信息，可以使用标准基座开发测试，正式发布前请提交云端打包并使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)

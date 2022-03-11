@@ -1,5 +1,5 @@
 HBuilderX中打开项目的manifest.json文件，在“基础配置”中可以设置App的应用名称、版本号等信息：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/base.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/base.png)
 
 <a id="appid"/>
 

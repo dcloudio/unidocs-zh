@@ -12,7 +12,7 @@ iOS15及以上系统限制每个应用最多只能配置50个白名单列表，�
 
 #### 可视化界面配置
 打开项目的manifest.json文件，切换到“App常用其它设置”项，在“iOS设置”下的“应用访问白名单”编辑框中配置：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/ios/chemewhitelist.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/ios/chemewhitelist.png)
 
 **注意：多个白名单列表使用“,”分割**
 

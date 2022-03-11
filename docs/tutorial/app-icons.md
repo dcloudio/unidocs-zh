@@ -1,5 +1,5 @@
 HBuilderX中打开项目的manifest.json文件，在“App图标配置”中可以设置App的桌面图标，推荐使用“自动生成图标”功能：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/icons/auto.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/icons/auto.png)
 
 如果不使用自动生成图标方式，可按下面文档分别配置Android和iOS平台的图标。
 
@@ -14,7 +14,7 @@ HBuilderX中打开项目的manifest.json文件，在“App图标配置”中可�
 #### 云端打包  
 **可视化界面配置**  
 推荐在可视化界面操作配置，在“Android图标配置”下根据分辨率选择对应的图标：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/icons/android.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/icons/android.png)
 
 **源码视图配置**  
 切换到源码视图界面，在 "app-plus"->"distribute"->"icons"->"android" 节点根据以下属性配置对应分辨率图标路径：
@@ -32,7 +32,7 @@ HBuilderX中打开项目的manifest.json文件，在“App图标配置”中可�
 
 **默认图标**  
 云端打包没有配置图标时将使用以下默认图标：  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/icons/def-android.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/icons/def-android.png)
 
 
 #### 离线打包
@@ -52,7 +52,7 @@ HBuilderX中打开项目的manifest.json文件，在“App图标配置”中可�
 #### 云端打包  
 **可视化界面配置**  
 推荐在可视化界面操作配置，分别在“app store”、“iPhone图标配置”、“iPad图标配置”下根据分辨率选择对应的图标：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/icons/ios.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/icons/ios.png)
 
 - app store  
 应用需要提交到AppStore上架审核是必须配置

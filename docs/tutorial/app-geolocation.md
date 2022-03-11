@@ -6,7 +6,7 @@ App端定位模块封装系统自带的`系统定位`，及市场上主流的三
 |5+ App/Wap2App|[plus.geolocation.*](https://www.html5plus.org/doc/zh_cn/geolocation.html)
 
 使用定位功能需在项目manifest.json的“App模块配置”中勾选“Geolocation(定位)”，并根据项目实际需求勾选使用的三方定位SDK：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/geolocation/modules.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/modules.png)
 
 
 
@@ -15,7 +15,7 @@ App端定位模块封装系统自带的`系统定位`，及市场上主流的三
 > HBuilderX3.2.16开始独立出“系统定位”模块
 
 使用`系统定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“系统定位”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/geolocation/system.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/system.png)
 
 `系统定位`调用设备的操作系统提供的定位服务，只支持wgs84坐标系，不同设备对定位功能支持的情况有所差异。
 
@@ -50,7 +50,7 @@ App端定位模块封装系统自带的`系统定位`，及市场上主流的三
 > 需要向高德申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [高德开放平台](https://lbs.amap.com/) 创建应用申请Key
 
 使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“高德定位”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/geolocation/amap.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/amap.png)
 
 #### 参数说明  
 - appkey_android  
@@ -69,7 +69,7 @@ App端定位模块封装系统自带的`系统定位`，及市场上主流的三
 > 需要向百度申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [百度地图开放平台](https://lbsyun.baidu.com/) 创建应用申请访问应用密钥（AK）
 
 使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“百度定位”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/geolocation/baidu.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/baidu.png)
 
 #### 参数说明  
 - appkey_android  

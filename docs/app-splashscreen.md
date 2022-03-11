@@ -28,19 +28,19 @@ HBuilderX中提供了以下`启动界面`方式：
 #### Android平台通用启动界面
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下勾选“通用启动界面”：  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/splashscreen/setting-android.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-android.png)
 
 通用启动界面上部显示应用图标（圆形裁剪，外围显示进度），图标下面为应用名称，效果如下：  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/splashscreen/common-android.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/common-android.png)
 
 
 #### iOS平台通用启动界面
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动界面设置”项下勾选“通用启动界面”：  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/splashscreen/setting-ios.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-ios.png)
 
 通用启动界面使用storyboard实现，在界面上部显示应用图标（无裁剪），图标下面为应用名称，效果如下：  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/splashscreen/common-ios.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/common-ios.png)
 
 如果应用开启适配暗黑模式/夜间模式/深色模式，则启动界面背景色会自动使用深色，文字颜色自动使用白色。
 
@@ -52,14 +52,14 @@ HBuilderX中提供了以下`启动界面`方式：
 #### Android平台自定义启动图
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下勾选“自定义启动图”：  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/splashscreen/setting-android-default.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-android-default.png)
 
 #### iOS平台自定义启动图
 
 > 提示：2020年6月30日起，苹果AppStore审核要求应用在启动时，不能使用启动图片，必须改为使用Storyboard来制作启动界面，如果需要提交AppStore请使用[通用启动界面](#common)或[自定义storyboard启动界面](#storyboard)。
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动界面设置”项下勾选“自定义启动图”：  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/splashscreen/setting-ios-default.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-ios-default.png)
 
 
 
@@ -100,5 +100,5 @@ HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求�
 #### 使用storyboard文件
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动界面设置”项下勾选“自定义storyboard启动界面”，并选择自己制作的storyboard文件：  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/splashscreen/setting-storyboard.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-storyboard.png)
 

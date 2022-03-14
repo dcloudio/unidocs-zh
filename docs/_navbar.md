@@ -13,6 +13,7 @@
   - [钉钉小程序](https://developers.dingtalk.com/document/app/introduction-to-dingtalk-mini-programs)
   - [QQ小程序](https://q.qq.com/wiki/develop/miniprogram/frame/)
   - [快手小程序](https://mp.kuaishou.com/docs/develop/frame/config/conf_appjson.html)
+  - [京东小程序](https://mp-docs.jd.com/framework/)
   - [华为快应用](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-component-view)
   - [360小程序](https://mp.360.cn/doc/miniprogram/dev/#/view)
   - [Weex](http://doc.weex.io/zh/guide/introduction.html)

@@ -2,6 +2,7 @@ const { slugify } = require('@vuepress/shared-utils')
 const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')
 const createSidebar = require('./markdown/createSidebar')
+const { simplifySlugText } = require('./utils')
 
 const tabs = ['/uniCloud/', '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/']
 
@@ -40,24 +41,15 @@ const config = {
   },
   markdown: {
     slugify(str) {
-      let slug = str
+      if (typeof str !== 'string') return ''
 
+      let slug = str
       if (slug.includes('@')) {
         let array = slug.split('@')
         slug = array.length > 1 ? array[array.length - 1] : str
       } else {
-        const UNI = 'uni.'
-        if (slug.startsWith(UNI)) {
-          slug = slug.split(UNI)[1]
-        }
-        if (slug.indexOf('OBJECT') !== -1) {
-          ['(', '（'].forEach(item => {
-            if (slug.indexOf(item) !== -1)
-              slug = slug.split(item)[0].toLocaleLowerCase();
-          })
-        }
+        slug = simplifySlugText(slug.toLowerCase()).trim()
       }
-
       return slugify(slug)
     },
     extractHeaders: ['h1', 'h2', 'h3', 'h4'],

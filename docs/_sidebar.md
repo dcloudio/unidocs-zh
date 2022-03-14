@@ -63,6 +63,7 @@
     * [Android设置UrlSchemes](app-android-schemes.md)
     * [Android设置minSdkVersion](app-android-minsdkversion.md)
     * [Android设置targetSdkVersion](app-android-targetsdkversion.md)
+    * [Android设置CPU类型](app-android-abifilters.md)
     * [iOS设置UrlSchemes](app-ios-schemes.md)
     * [iOS应用访问白名单](app-ios-schemewhitelist.md)
     * [iOS符号表文件](app-ios-dsym.md)

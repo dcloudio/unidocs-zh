@@ -48,7 +48,7 @@ Android中的url scheme是一种页面跳转协议，通过定义自己的scheme
   //...
 ```
 
-> 注：为了向下兼容，HBuilder源码视图配置时`schemes`属性值支持字符串数组，上面示例中的值也可以这么配置["hbuilder",""myuniapp"]
+> 注：为了向下兼容，HBuilderX源码视图配置时`schemes`属性值支持字符串数组，上面示例中的值也可以这么配置["hbuilder","myuniapp"]
 
 **保存后提交App云端打包生效**
 

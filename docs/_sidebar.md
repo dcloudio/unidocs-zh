@@ -60,6 +60,8 @@
       * [Google统计](app-statistic-google.md)
   * 其它配置
     * [自定义404错误页面](app-webview-error.md)
+    * [Android设置minSdkVersion](app-android-minsdkversion.md)
+    * [Android设置targetSdkVersion](app-android-targetsdkversion.md)
     * [iOS应用访问白名单](app-ios-schemewhitelist.md)
     * [iOS符号表文件](app-ios-dsym.md)
 * App上架指南

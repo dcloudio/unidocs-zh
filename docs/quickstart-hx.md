@@ -96,7 +96,7 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
       <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bc558950-4f37-11eb-bdc1-8bd33eb6adaa.png"/>
     </div>
 
-10. 在QQ、快手、飞书等小程序开发工具里运行：内容同上，不再重复。
+10. 在QQ、快手、飞书、京东等小程序开发工具里运行：内容同上，不再重复。
 
 **Tips**
 
@@ -221,7 +221,7 @@ iOS App打包需要向Apple申请证书。
   6. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在[华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp)上传。
 
 
-#### 发布为QQ、快手、飞书小程序：
+#### 发布为QQ、快手、飞书、京东小程序：
 内容同上，不再重复。
 
 发布的快捷键是`Ctrl+u`。同样可拉下快速发布菜单并按数字键选择。

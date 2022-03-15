@@ -28,7 +28,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 |timeStamp|String|微信小程序必填|时间戳从1970年1月1日至今的秒数，即当前的时间。|微信小程序|
 |nonceStr|String|微信小程序必填|随机字符串，长度为32个字符以下。|微信小程序|
 |package|String|微信小程序必填|统一下单接口返回的 prepay_id 参数值，提交格式如：prepay_id=xx。|微信小程序|
-|signType|String|微信小程序必填|签名算法，暂支持 MD5。|微信小程序|
+|signType|String|微信小程序必填|签名算法，应与后台下单时的值一致|微信小程序|
 |paySign|String|微信小程序必填|签名，具体签名方案参见 [微信小程序支付文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=3)|微信小程序|
 |bannedChannels|Array&lt;String&gt;|否|需要隐藏的支付方式，详见 [百度小程序支付文档](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)|百度小程序|
 |service|Number|字节跳动小程序必填|固定值：1（拉起小程序收银台）开发者如果不希望使用字节跳动小程序收银台，service设置为3/4时，可以直接拉起微信/支付宝进行支付：service=3： 微信API支付，不拉起小程序收银台；service=4： 支付宝API支付，不拉起小程序收银台。其中service=3、4，仅在1.35.0.1+基础库(头条743+)支持|字节跳动小程序|
@@ -37,6 +37,14 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 |success|Function|否|接口调用成功的回调||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+微信小程序 `signType` 说明
+
+|合法值			|说明									|
+|:-|:-|
+|MD5				|仅在 v2 版本接口适用	|
+|HMAC-SHA256|仅在 v2 版本接口适用	|
+|RSA				|仅在 v3 版本接口适用	|
 
 
 #### 注意事项
@@ -192,7 +200,7 @@ uni.requestPayment({
         "partnerid": "148*****52",      // 微信支付商户号
         "prepayid": "wx202254********************fbe90000", // 统一下单订单号 
         "timestamp": 1597935292,        // 时间戳（单位：秒）
-        "sign": "A842B45937F6EFF60DEC7A2EAA52D5A0" // 签名，这里用的 MD5 签名
+        "sign": "A842B45937F6EFF60DEC7A2EAA52D5A0" // 签名，这里用的 MD5/RSA 签名
     },
     success(res) {},
     fail(e) {}

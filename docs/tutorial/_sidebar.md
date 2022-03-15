@@ -77,6 +77,7 @@
       * [iOS设置UrlSchemes](/tutorial/app-ios-schemes.md)
       * [iOS应用访问白名单](/tutorial/app-ios-schemewhitelist.md)
       * [iOS后台运行能力](/tutorial/app-ios-uibackgroundmodes.md)
+      * [iOS使用广告标识IDFA](/tutorial/app-ios-idfa.md)
       * [iOS符号表文件](/tutorial/app-ios-dsym.md)
   * [App 上架注意](/tutorial/store.md)
     * [国内应用市场上架](/tutorial/android-store.md)

@@ -66,7 +66,7 @@
     * [Android设置CPU类型](app-android-abifilters.md)
     * [iOS设置UrlSchemes](app-ios-schemes.md)
     * [iOS应用访问白名单](app-ios-schemewhitelist.md)
-    * [iOS后台运行能力](ios-uibackgroundmodes.md)
+    * [iOS后台运行能力](app-ios-uibackgroundmodes.md)
     * [iOS符号表文件](app-ios-dsym.md)
 * App上架指南
   * [国内应用市场上架](android-store.md)

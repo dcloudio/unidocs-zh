@@ -37,12 +37,12 @@ Resources
 
 
 ### 设置开启广告标识（IDFA）
-打开项目的manifest.json文件，在 “App常用其它设置” -> “iOS设置” 中勾选“使用广告标识（IDFA）”：
+打开项目的manifest.json文件，在 “App常用其它设置” -> “iOS设置” 中勾选“使用广告标识（IDFA）”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-manifest.png)
 
 #### 设置 NSUserTrackingUsageDescription 隐私描述  
 开启广告标识（IDFA）后，云端打包默认隐私描述为“请放心，开启权限不会获取您在其他站点的隐私信息，该权限仅用于标识设备并保障服务安全与提示浏览体验”。
-如需自定义隐私描述，打开项目的 manifest.json 文件，在 “App权限配置” -> “iOS隐私信息访问的许可描述” 下配置“跟踪用户的活动(NSUserTrackingUsageDescription)”：
+如需自定义隐私描述，打开项目的 manifest.json 文件，在 “App权限配置” -> “iOS隐私信息访问的许可描述” 下配置“跟踪用户的活动(NSUserTrackingUsageDescription)”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-privacy.png)
 
 隐私描述是为了告诉用户，应用为什么要跟踪用户及访问设备的IDFA，配置的描述内容会展示在授权框上，参考以下建议描述说明：
@@ -51,32 +51,32 @@ Resources
 - 不包含uni-AD功能时  
 “请放心，开启权限不会获取您在其他站点的隐私信息，该权限仅用于标识设备并保障服务安全与提示浏览体验”
 
-配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)，运行时弹出授权提示框显示效果如下：
+配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)，运行时弹出授权提示框显示效果如下：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-tips.png)
 
 离线打包配置参考文档：[iOS配置IDFA](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e9%85%8d%e7%bd%aeidfa)
 
 ### 配置 App 隐私  
-开启广告标识（IDFA）后，提交App Store审核之前，需登录[App Store Connect](https://appstoreconnect.apple.com/)，进入App详情页面，打开 “App 隐私” -> “数据类型”，点击“编辑”，勾选 “是，我们会从此App收集数据”：
+开启广告标识（IDFA）后，提交App Store审核之前，需登录[App Store Connect](https://appstoreconnect.apple.com/)，进入App详情页面，打开 “App 隐私” -> “数据类型”，点击“编辑”，勾选 “是，我们会从此App收集数据”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-appstoreconnect-1.png)
 
-点击“下一步”，在标识符项中勾选“设备ID”，在诊断数据向中勾选“崩溃数据”，如果使用了`uni-AD`则需在使用数据项中勾选“广告数据”：
+点击“下一步”，在标识符项中勾选“设备ID”，在诊断数据向中勾选“崩溃数据”，如果使用了`uni-AD`则需在使用数据项中勾选“广告数据”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-appstoreconnect-2.png)
 
 保存后，分别编辑收集的数据用途：
 
 #### 设备 ID  
-点击“设备 ID”旁的“编辑”，勾选“其它用途”：
+点击“设备 ID”旁的“编辑”，勾选“其它用途”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-appstoreconnect-id.png)
 
 > 如果使用了`uni-AD`，需同时勾选“第三方广告”  
 
 #### 广告数据  
-点击“广告数据”旁的“编辑”，勾选“第三方广告”：
+点击“广告数据”旁的“编辑”，勾选“第三方广告”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-appstoreconnect-ad.png)
 
 #### 崩溃数据  
-点击“崩溃数据”旁的“编辑”，勾选“App 功能”：
+点击“崩溃数据”旁的“编辑”，勾选“App 功能”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-appstoreconnect-app.png)
 
 > 如果使用了`uni-AD`，需同时勾选“第三方广告”  

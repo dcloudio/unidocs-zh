@@ -8,7 +8,7 @@ App端OAuth(登录鉴权)模块封装了市场上主流的三方登录SDK，提�
 如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，官方提供了[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)云端统一登录服务，把微信登录、短信验证码登录及角色权限管理等服务端登录开发，进行了统一的封装。前端统一的`uni.login`和云端统一的`uni-id`搭配，可以极大提升登录业务的开发效率，强烈推荐给开发者使用。uni-id的文档另见：[https://uniapp.dcloud.net.cn/uniCloud/uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
 
 使用登录鉴权功能需在项目manifest.json的“App模块配置”中勾选“OAuth(登录鉴权)”，并根据项目实际情况勾选使用的三方登录平台：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/oauth/modules.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/oauth/modules.png)
 
 > 提示：三方登录模块参数配置需提交云端打包后才能生效，真机运行调试时请使用[自定义基座](http://ask.dcloud.net.cn/article/35115)
 

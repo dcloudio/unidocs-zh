@@ -72,14 +72,14 @@
 ### Grid Events
 |事件名	|说明			|返回值											|
 |:-:	|:-:			|:-:											|
-|@change|点击 grid 触发	|e={detail:{index:0}}，index 为当前点击 gird 下标|
+|@change|点击 grid 触发	|e={detail:{index:0}}，index 为当前点击 grid下标|
 
 
 ### GridItem Props
 
 |属性名|类型		|默认值	|说明										|
 |:-:	|:-:		|:-:	|:-:										|
-|index|Number	|-		|子组件的唯一标识 ，点击gird会返回当前的标识|
+|index|Number	|-		|子组件的唯一标识 ，点击grid会返回当前的标识|
 
 
 ## 组件示例

@@ -13,6 +13,7 @@
 |:-|:-|:-|:-|:-:|
 |onlyFromCamera|Boolean|否|是否只能从相机扫码，不允许从相册选择图片|字节跳动小程序不支持此参数|
 |scanType|Array|否|扫码类型，参考下方`scanType的合法值`|字节跳动小程序不支持此参数|
+|autoDecodeCharset|Boolean|否|是否启用自动识别字符编码功能，默认为否|App|
 |success|Function|否|接口调用成功的回调，返回内容详见返回参数说明。||
 |fail|Function|否|接口调用失败的回调函数（识别失败、用户取消等情况下触发）||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|

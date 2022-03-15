@@ -78,7 +78,6 @@ S.payload=的值为推送消息的数据，对应5+ API中[PushMessage](https://
 注意事项：  
 - intent格式与个推的多厂商pdf文档中描述的不一样，以此格式为准
 - intent是为了兼容Android平台的数据，但为了保持兼容性，建议iOS平台也配置此数据
-- action=android.intent.action.oppopush为固定的数据，是兼容oppo设备的离线推送功能，不需要修改
 - component=io.dcloud.HBuilder/io.dcloud.PandoraEntry中的io.dcloud.HBuilder为应用的包名，与App云端打包界面设置的Android包名一致  
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/packagename.png)
 

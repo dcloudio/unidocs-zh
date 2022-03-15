@@ -11,7 +11,7 @@ iOS平台为了减少系统资源消耗，应用默认不支持后台运行，�
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/backgroundmodes-manifest.png)
 
 >注意：  
->"audio"表示后台播放音乐能力，"location"表示后台定位能力，更多后台能力配置参考苹果官网[UIBackgroundModes文档](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW22)；
+>"audio"表示后台播放音乐能力，"location"表示后台定位能力，更多后台能力配置参考苹果官网[UIBackgroundModes文档](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW22)；  
 >多个后台能力使用 "," 分割；  
 >如果可视化界面无法编辑，请切换到“源码视图”删除`UIBackgroundModes`节点数据重新操作。  
 

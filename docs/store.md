@@ -9,7 +9,7 @@
 
 首先App提交云端打包时请务必勾选“GooglePlay”渠道：
 
-![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/doc/channel-google.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/channel-google.png)
 
 Google Play上架审核要求比较严格，需要注意以下问题：
 - 应用中不能存在下载/安装apk的行为，不要勾选android.permission.INSTALL_PACKAGES、android.permission.REQUEST_INSTALL_PACKAGES权限‘

@@ -40,7 +40,7 @@ uni.preloadPage({url: "/pages/test/test"});
 7. 在预载页面使用 `uni.redirectTo` 时，预加载页面会被销毁，触发生命周期 `onUnload`
 
 示例
-```
+```js
 uni.preloadPage({url: "/pages/test/test"}); // 预加载 /pages/test/test 页面（仅触发onLoad，onReady)
 uni.navigateTo({url: "/pages/test/test"}); // url匹配，跳转预加载页面（仅触发onShow)
 uni.navigateTo({url: "/pages/test/test?a=b"}); // url不匹配，正常打开新页面

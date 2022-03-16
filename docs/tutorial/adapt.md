@@ -32,7 +32,7 @@ __H5 宽屏下 tabBar(选项卡) 的显示与隐藏__
 
 如果是想在有 leftwindow 等窗体的时候，隐藏 tabar 页面的 tabbar，可以用 css 实现（好处是可以和leftwindow等窗体联动）：
 
-```html
+```css
   .uni-app--showleftwindow + .uni-tabbar-bottom {
   	display: none;
   }

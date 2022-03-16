@@ -42,6 +42,10 @@ const routerMap = {
   '/frame#全局样式与局部样式': '/tutorial/syntax-css.html#全局样式与局部样式',
   '/frame#注意事项-1': '/tutorial/renderjs.html#注意事项',
 
+  '/api/ui/language': '/api/ui/locale.html',
+  '/api/ad/rewarded-video-ad': '/api/a-d/rewarded-video.html',
+  '/api/ui/navigate': '/api/router.html',
+
   '/platform': '/tutorial/platform.html',
   '/nvue-event': '/tutorial/nvue-event.html',
 
@@ -74,6 +78,7 @@ const routerMap = {
   '/use-weex': '/tutorial/nvue-outline.html',
   '/uni_modules': '/plugin/uni_modules.html',
   '/snippet': '/tutorial/snippet.html',
+  '/store': '/tutorial/store.html',
 }
 
 export default ({ fullPath, path, hash }) => {

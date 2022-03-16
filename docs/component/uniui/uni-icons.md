@@ -13,6 +13,12 @@
 ```html
 <uni-icons type="contact" size="30"></uni-icons>
 ```
+## 图标示例
+
+点击复制图标类型
+
+<icons-layouts></icons-layouts>
+
 
 ## API
 

@@ -98,7 +98,7 @@ DCloud为开发者提供了`uni发布平台`，包括网站发布、App发布和
 1、登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)。
 2、进入前端网页托管页面，选择【基础设置】，单击【添加域名】，进行域名添加，（注意：域名是需要自行购买的）如下图所示：
 
- ![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/uni-app/uniCloud/uniCloud-hosting-domain-add.jpg)
+ ![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/uniCloud/uniCloud-hosting-domain-add.jpg)
 
 3、添加后，系统会自动分配一个 CNAME 域名，CNAME 域名不能直接访问，您需要在域名服务提供商处完成 CNAME 配置（将添加的域名CNAME到此域名），配置生效后，新域名即可使用。
 

@@ -89,6 +89,7 @@ export default {
 	display: flex;
 	height: 667px;
 	border: 1px #eee solid;
+	margin-top: 16px;
 }
 .page-snippet {
 	width: 100%;

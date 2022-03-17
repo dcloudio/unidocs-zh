@@ -10,11 +10,11 @@
 iOS平台中，dSYM文件是指具有调试信息的目标文件，存储着源码文件名、函数名、行号等信息，与可执行文件中的函数内存地址一一对应。
 XCode中发布生成xcarchive文件默认包含dysm文件，通常为：xxxx.app.dSYM，其中xxxx为应用程序的包名，如下所示：
 
-![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/client/doc/ios/dsym-xcarchive.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/ios/dsym-xcarchive.png)
 
 dSYM文件内容为：
 
-![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/client/doc/ios/dsym-content.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/ios/dsym-content.png)
 
 
 #### dsym文件的用途
@@ -30,13 +30,13 @@ dSYM文件内容为：
 
 在HBuilderX中云端打包打开项目的manifest.json文件，在“App常用其它设置”界面中的勾选“生成iOS符号表（dsym）文件”：
 
-![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/client/doc/ios/dsym-hx.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/ios/dsym-hx.png)
 
 保存后提交云端。
 
 云端打包成功后会在HBuilderX控制台输出 dsym 文件下载地址：
 
-![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/client/doc/ios/dsym-download.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/ios/dsym-download.png)
 
 #### 注意事项
 - 下载文件格式为zip，解压后可获得 dsym 文件

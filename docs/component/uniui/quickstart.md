@@ -3,6 +3,7 @@ uni-ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别�
 
 ### 在HBuilderX 新建uni-app项目的模板中，选择uni-ui模板
 ![HBuilderX内创建uni-ui项目](https://img.cdn.aliyun.dcloud.net.cn/uni-app/doc/create-uni-ui-project.jpg)
+
 由于uni-app独特的[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)技术，可以免引用、注册，直接使用各种符合规则的vue组件。
 
 在代码区键入`u`，拉出各种内置或uni-ui的组件列表，选择其中一个，即可使用该组件。

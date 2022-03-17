@@ -11,7 +11,7 @@
 + 支持系统平台: Android，iOS
 + 支持运营商: 中国移动，中国联通，中国电信
 
-![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/client/doc/univerify/demo.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/univerify/demo.png)
 
 <a id="fullscreen"/>
 
@@ -29,7 +29,7 @@ uni.login({
 
 全屏效果如下:
 
-![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/client/doc/univerify/full.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/univerify/full.png)
 
 ### 产品优势
 
@@ -54,7 +54,7 @@ uni.login({
 2. 用户同意授权后，SDK底层访问运营商网关鉴权，获得当前设备`access_token`等信息。
 3. 在服务器侧通过 uniCloud 将`access_token`等信息 置换为当前设备的真实手机号码。然后服务器直接入库，避免手机号传递到前端发生的不可信情况。
 
-![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/client/doc/univerify/process.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/univerify/process.png)
 
 前置条件：
 + 手机安装有sim卡
@@ -599,7 +599,7 @@ exports.main = async(event) => {
 
 - 云端打包
 在项目manifest.json页面“App模块配置”项的“OAuth(登录鉴权)”下勾选“一键登录(uni-verify)”。
-![](https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/client/doc/univerify/hx.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/univerify/hx.png)
 
 - 离线打包
   + Android平台：[一键登录Android离线打包配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/oauth?id=%e4%b8%80%e9%94%ae%e7%99%bb%e5%bd%95)

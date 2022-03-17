@@ -1,6 +1,6 @@
 * [组件概述](component/)
-* 基础组件清单
-  * [uni-app 基础组件清单](component/view.md)
+* 内置组件
+  * [uni-app 组件](component/view.md)
     * [视图容器](component/view.md)
       * [view](component/view.md)
       * [scroll-view](component/scroll-view.md)
@@ -53,15 +53,15 @@
       * [navigation-bar](component/navigation-bar.md)
       * [custom-tab-bar](component/custom-tab-bar.md)
     * [基础组件中原生组件说明](component/native-component.md)
-  * [vue组件](component/vue-component.md)
-  * [NVUE 内置组件](component/barcode.md)
+  * [Vue 组件](component/vue-component.md)
+  * [NVUE 组件](component/barcode.md)
     * [barcode](component/barcode.md)
     * [list](component/list.md)
     * [cell](component/cell.md)
     * [recycle-list](component/recycle-list.md)
     * [waterfall](component/waterfall.md)
     * [refresh](component/refresh.md)
-  * [小程序内置组件](component/official-account.md)
+  * [小程序组件](component/official-account.md)
     * [official-account](component/official-account.md)
     * [open-data](component/open-data.md)
 * 扩展组件（uni-ui）

@@ -1,51 +1,52 @@
 <template>
-	<div id="search-container">
+	<div v-if="openSearch" id="search-container" ref="pageContainer">
 		<div class="search-navbar">
-			<div class="search-navbar-wrap">
-				<div class="search-navbar-header navbar">
-					<div class="main-navbar">
-						<NavbarLogo />
-						<div class="main-navbar-links can-hide">
-							<div class="main-navbar-item active"></div>
-						</div>
+			<div class="search-navbar-header navbar">
+				<div class="main-navbar">
+					<NavbarLogo />
+					<div class="main-navbar-links can-hide">
+						<div class="main-navbar-item active"></div>
 					</div>
-					<div class="sub-navbar">
-						<div class="search-wrap">
-							<div class="input-wrap">
-								<input
-									class="search-input"
-									:placeholder="placeholder"
-									type="text"
-									v-model="searchValue"
-								/>
-								<span class="search-input-btn">
-									<button @click="search">
-										<svg
-											width="16"
-											height="16"
-											viewBox="0 0 16 16"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M11.33 10.007l4.273 4.273a.502.502 0 0 1 .005.709l-.585.584a.499.499 0 0 1-.709-.004L10.046 11.3a6.278 6.278 0 1 1 1.284-1.294zm.012-3.729a5.063 5.063 0 1 0-10.127 0 5.063 5.063 0 0 0 10.127 0z"
-											></path>
-										</svg>
-									</button>
-								</span>
-							</div>
+				</div>
+				<div class="sub-navbar">
+					<div class="search-wrap">
+						<div class="input-wrap">
+							<input
+								ref="searchInput"
+								class="search-input"
+								:placeholder="placeholder"
+								type="text"
+								@keydown.enter="search"
+								v-model="searchValue"
+							/>
+							<span class="search-input-btn">
+								<button @click="search">
+									<svg
+										width="16"
+										height="16"
+										viewBox="0 0 16 16"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M11.33 10.007l4.273 4.273a.502.502 0 0 1 .005.709l-.585.584a.499.499 0 0 1-.709-.004L10.046 11.3a6.278 6.278 0 1 1 1.284-1.294zm.012-3.729a5.063 5.063 0 1 0-10.127 0 5.063 5.063 0 0 0 10.127 0z"
+										></path>
+									</svg>
+								</button>
+							</span>
+							<a href="javascript:;" class="search-back__btn" @click="onSearchClose">取消</a>
+						</div>
 
-							<div class="search-category">
-								<div class="navbar">
-									<div class="main-navbar">
-										<div class="main-navbar-links">
-											<template v-for="(item, index) in category">
-												<div :class="mainNavLinkClass(index)" :key="item.text">
-													<a href="javascript:;" @click="categoryIndex = index">
-														{{ item.text }}
-													</a>
-												</div>
-											</template>
-										</div>
+						<div class="search-category">
+							<div class="navbar">
+								<div class="main-navbar">
+									<div class="main-navbar-links">
+										<template v-for="(item, index) in category">
+											<div :class="mainNavLinkClass(index)" :key="item.text">
+												<a href="javascript:;" @click="categoryIndex = index">
+													{{ item.text }}
+												</a>
+											</div>
+										</template>
 									</div>
 								</div>
 							</div>
@@ -55,14 +56,38 @@
 			</div>
 		</div>
 
-		<div class="search-result"></div>
+		<div class="result-number">
+			<span>共{{ curHits }}个相关结果</span>
+		</div>
+
+		<div class="search-result">
+			<div class="result-wrap">
+				<template v-if="resultList.length">
+					<template v-for="item in resultList">
+						<Results :key="item.id" :title="item.title" :results="item.items" />
+					</template>
+				</template>
+			</div>
+
+			<div class="search-pagination">
+				<pagination
+					v-show="showPagination"
+					@research="research"
+					:totalPage="totalPage"
+					:curPage="curPage"
+					:pageSize="pageSize"
+				/>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
 	import NavbarLogo from '../NavbarLogo.vue';
+	import Results from './components/Results.vue';
+	import pagination from './components/pagination.vue';
 	import { search as searchClient } from './searchClient';
-	import { forbidScroll } from '../../util';
+	import { forbidScroll, removeHighlightTags, debounce, isEditingContent } from '../../util';
 
 	const resolveRoutePathFromUrl = (url, base = '/') =>
 		url
@@ -76,44 +101,114 @@
 
 		props: ['options'],
 
-		components: { NavbarLogo },
+		components: { NavbarLogo, Results, pagination },
 
-		data() {
+		provide() {
 			return {
-				placeholder: '搜索内容',
-				snippetLength: 10,
-				searchValue: '',
-				category: Object.freeze([
-					{
-						text: 'uni-app',
-					},
-					{
-						text: 'uniCloud',
-					},
-					{
-						text: '问答社区',
-					},
-					{
-						text: '插件市场',
-					},
-				]),
-				categoryIndex: 0,
+				onSearchClose: this.onSearchClose,
 			};
 		},
 
+		data() {
+			return {
+				openSearch: false,
+				placeholder: '搜索内容',
+				snippetLength: 30,
+				searchValue: '',
+				category: Object.freeze([
+					{
+						text: 'uni',
+						type: 'algolia',
+					},
+					{
+						text: '问答社区',
+						type: 'server',
+					},
+					{
+						text: '插件市场',
+						type: 'server',
+					},
+				]),
+				categoryIndex: 0,
+				resultList: [],
+
+				searchPage: 0, // 跳转页数
+				curHits: 0, // 当前搜索条数
+				totalPage: 0, // 搜索结果总共条数
+				curPage: 1, // 当前页
+				pageSize: 0, // 每页条数
+			};
+		},
+
+		computed: {
+			showPagination() {
+				return !!(this.resultList.length && this.totalPage > 1);
+			},
+		},
+
 		mounted() {
-			this.$nextTick(forbidScroll);
+			window.addEventListener('keydown', this.onKeyDown);
+			window.addEventListener('resize', this.initSnippetLength);
+		},
 
-			const isMobileMediaQuery = window.matchMedia('(max-width: 750px)');
+		watch: {
+			resultList() {
+				this.$refs.pageContainer.scrollTop = 0;
+			},
 
-			if (isMobileMediaQuery.matches) {
-				this.snippetLength = 5;
-			}
+			openSearch(val) {
+				this.$nextTick(() => {
+					if (val) {
+						this.$nextTick(forbidScroll);
+						document.body.appendChild(this.$el);
+						this.$nextTick(() => this.$refs.searchInput.focus());
+					} else {
+						this.cancel();
+						forbidScroll(false);
+						document.body.removeChild(this.$el);
+						// window.removeEventListener('keydown', this.onKeyDown);
+					}
+				});
+			},
+
+			searchValue: debounce(function () {
+				this.searchPage = 0;
+				this.search();
+			}, 300),
 		},
 
 		methods: {
+			research(curPage) {
+				this.searchPage = curPage - 1;
+				this.search();
+			},
+
 			search() {
-				this.searchByAlgolia(this.searchValue);
+				if (!this.searchValue) return;
+				const { text, type } = this.category[this.categoryIndex];
+				switch (type) {
+					case 'algolia':
+						this.searchByAlgolia(this.searchValue, this.searchPage).then(
+							({ hitsPerPage, nbHits, nbPages, page, hits }) => {
+								this.resultList = hits.map(item => {
+									const items = item.getItems();
+									return {
+										id: item.sourceId,
+										title: removeHighlightTags(items[0]),
+										items,
+									};
+								});
+								this.curHits = nbHits;
+								this.pageSize = hitsPerPage;
+								this.totalPage = nbPages;
+								this.curPage = page + 1;
+							}
+						);
+						break;
+					case 'server':
+						console.log('从服务端搜索');
+						break;
+				}
 			},
 
 			searchByAlgolia(query = '', page = 0) {
@@ -143,100 +238,54 @@
 			mainNavLinkClass(index) {
 				return ['main-navbar-item', this.categoryIndex === index ? 'active' : ''];
 			},
+
+			initSnippetLength() {
+				if (window.matchMedia('(max-width: 980px)').matches) {
+					this.snippetLength = 20;
+				}
+
+				if (window.matchMedia('(max-width: 600px)').matches) {
+					this.snippetLength = 15;
+				}
+			},
+
+			cancel() {
+				this.resultList.length = 0;
+				this.searchValue = '';
+				this.curHits = 0;
+				this.totalPage = 0;
+			},
+
+			onSearchOpen() {
+				this.openSearch = true;
+			},
+
+			onSearchClose() {
+				this.openSearch = false;
+			},
+
+			onKeyDown(event) {
+				if (
+					(event.keyCode === 27 && this.openSearch) ||
+					// The `Cmd+K` shortcut both opens and closes the modal.
+					(event.key === 'k' && (event.metaKey || event.ctrlKey)) ||
+					// The `/` shortcut opens but doesn't close the modal because it's
+					// a character.
+					(!isEditingContent(event) && event.key === '/' && !this.openSearch)
+				) {
+					event.preventDefault();
+
+					if (this.openSearch) {
+						this.onSearchClose();
+					} else {
+						this.onSearchOpen();
+					}
+				}
+			},
 		},
 	};
 </script>
 
 <style lang="stylus">
-	$svg-color = #b1b2b3;
-	$svg-hover-color = #9b9b9b;
-
-	#search-container{
-		position fixed
-		width 100vw
-		height 100vh
-		left 0
-		top 0
-		z-index 200
-		background-color #fff
-
-		.sub-navbar {
-			width: 80%;
-			max-width: 960px;
-	   	min-width: 720px;
-			margin: 0 auto;
-
-			.search-wrap {
-				width: 100%;
-				display: inline-block;
-				vertical-align: middle;
-				position: relative;
-			}
-
-			.input-wrap {
-				margin-top: 24px;
-				position: relative;
-				display: flex;
-				align-items: center;
-
-				.search-input-btn {
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					padding: 0;
-	   			font-size: 0;
-					background-color: #fff;
-
-					button {
-						width: 40px;
-						font-family: inherit;
-						font-size: 100%;
-						margin: 0;
-						outline: 0;
-						background-color: transparent;
-						padding: 0;
-						border-width: 0;
-						vertical-align: middle;
-						cursor: pointer;
-
-						svg {
-							fill: $svg-color;
-
-							&:hover {
-								fill: $svg-hover-color;
-							}
-						}
-					}
-				}
-
-				.search-input {
-					width: 100%;
-					height: 56px;
-					font-size: 16px;
-					border: none;
-					box-sizing: border-box;
-					outline: none;
-					padding: 1px 10px;
-					border-radius: 4px;
-				}
-
-				.search-input-btn {
-					height: 56px;
-				}
-			}
-
-			.search-category {
-
-				.main-navbar-links {
-					width: 100%;
-					padding: 0;
-
-					.main-navbar-item {
-						padding: 0 6%;
-					}
-				}
-			}
-
-		}
-	}
+	@import './index'
 </style>

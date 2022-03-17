@@ -35,6 +35,7 @@
         } : {}"
       >
         <a class="switch-version" href="javascript:void(0)" @click="switchVersion">回到旧版</a>
+        <DcloudSearchPage ref="dcloudSearchPage" v-if="isAlgoliaSearch" :options="algolia"/>
         <AlgoliaSearchBox
           v-if="isAlgoliaSearch"
           :options="algolia"
@@ -61,6 +62,7 @@ import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
 import MainNavbarLink from './MainNavbarLink.vue';
 import NavbarLogo from './NavbarLogo.vue';
+import DcloudSearchPage from './DcloudSearchPage';
 import navInject from '../mixin/navInject';
 import { forbidScroll, os } from '../util';
 
@@ -75,7 +77,8 @@ export default {
     MainNavbarLink,
     SearchBox,
     AlgoliaSearchBox,
-    NavbarLogo
+    NavbarLogo,
+    DcloudSearchPage
   },
 
   data () {

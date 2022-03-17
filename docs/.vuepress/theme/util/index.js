@@ -290,3 +290,16 @@ export const BaiduStat = () => {
   const s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
 }
+
+export function debounce (fn, delay) {
+  let timeout
+  const newFn = function () {
+    clearTimeout(timeout)
+    const timerFn = () => fn.apply(this, arguments)
+    timeout = setTimeout(timerFn, delay)
+  }
+  newFn.cancel = function () {
+    clearTimeout(timeout)
+  }
+  return newFn
+}

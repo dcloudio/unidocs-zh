@@ -42,8 +42,8 @@ export function search({ query, indexName, appId, apiKey, searchParameters = {},
           highlightPreTag: '<mark>',
           highlightPostTag: '</mark>',
           hitsPerPage: 20,
-          ...args,
           ...searchParameters,
+          ...args,
         },
       },
     ])
@@ -51,46 +51,48 @@ export function search({ query, indexName, appId, apiKey, searchParameters = {},
       throw error;
     })
     .then(({ results }) => {
-      const { hits, nbHits } = results[0];
+      const { hits, hitsPerPage, nbHits, nbPages, page } = results[0];
       const sources = groupBy(hits, (hit) => removeHighlightTags(hit));
+      return {
+        hitsPerPage, nbHits, nbPages, page,
+        hits: Object.values(sources).map(
+          (items, index) => {
+            return {
+              sourceId: `hits${index}`,
+              onSelect({ item, event }) {
+                // saveRecentSearch(item);
 
-      return Object.values(sources).map(
-        (items, index) => {
-          return {
-            sourceId: `hits${index}`,
-            onSelect({ item, event }) {
-              // saveRecentSearch(item);
-
-              // if (!event.shiftKey && !event.ctrlKey && !event.metaKey) {
-              //   onClose();
-              // }
-            },
-            getItemUrl({ item }) {
-              return item.url;
-            },
-            getItems() {
-              return Object.values(
-                groupBy(items, (item) => item.hierarchy.lvl1)
-              )
-                .map(transformItems)
-                .map((groupedHits) =>
-                  groupedHits.map((item) => {
-                    return {
-                      ...item,
-                      __docsearch_parent:
-                        item.type !== 'lvl1' &&
-                        groupedHits.find(
-                          (siblingItem) =>
-                            siblingItem.type === 'lvl1' &&
-                            siblingItem.hierarchy.lvl1 ===
-                            item.hierarchy.lvl1
-                        ),
-                    };
-                  })
-                ).flat();
-            },
-          };
-        }
-      );
+                // if (!event.shiftKey && !event.ctrlKey && !event.metaKey) {
+                //   onClose();
+                // }
+              },
+              getItemUrl({ item }) {
+                return item.url;
+              },
+              getItems() {
+                return Object.values(
+                  groupBy(items, (item) => item.hierarchy.lvl1)
+                )
+                  .map(transformItems)
+                  .map((groupedHits) =>
+                    groupedHits.map((item) => {
+                      return {
+                        ...item,
+                        __docsearch_parent:
+                          item.type !== 'lvl1' &&
+                          groupedHits.find(
+                            (siblingItem) =>
+                              siblingItem.type === 'lvl1' &&
+                              siblingItem.hierarchy.lvl1 ===
+                              item.hierarchy.lvl1
+                          ),
+                      };
+                    })
+                  ).flat();
+              },
+            };
+          }
+        )
+      }
     });
 }

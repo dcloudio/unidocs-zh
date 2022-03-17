@@ -1,142 +1,51 @@
 <template>
-	<div id="docsearch"></div>
+	<div id="docsearch">
+		<button type="button" class="DocSearch DocSearch-Button" aria-label="搜索文档" @click="openSearch">
+			<span class="DocSearch-Button-Container">
+				<svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20">
+					<path
+						d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
+						stroke="currentColor"
+						fill="none"
+						fill-rule="evenodd"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					></path>
+				</svg>
+				<span class="DocSearch-Button-Placeholder">搜索文档</span>
+			</span>
+			<span class="DocSearch-Button-Keys">
+				<span class="DocSearch-Button-Key">
+					<svg width="15" height="15" class="DocSearch-Control-Key-Icon">
+						<path
+							d="M4.505 4.496h2M5.505 5.496v5M8.216 4.496l.055 5.993M10 7.5c.333.333.5.667.5 1v2M12.326 4.5v5.996M8.384 4.496c1.674 0 2.116 0 2.116 1.5s-.442 1.5-2.116 1.5M3.205 9.303c-.09.448-.277 1.21-1.241 1.203C1 10.5.5 9.513.5 8V7c0-1.57.5-2.5 1.464-2.494.964.006 1.134.598 1.24 1.342M12.553 10.5h1.953"
+							stroke-width="1.2"
+							stroke="currentColor"
+							fill="none"
+							stroke-linecap="square"
+						></path>
+					</svg>
+				</span>
+				<span class="DocSearch-Button-Key">K</span>
+			</span>
+		</button>
+	</div>
 </template>
 
 <script>
 	import '@docsearch/css';
-	import { createElement } from 'preact';
-
-	const resolveRoutePathFromUrl = (url, base = '/') =>
-		url
-			// remove url origin
-			.replace(/^(https?:)?\/\/[^/]*/, '')
-			// remove site base
-			.replace(new RegExp(`^${base}`), '/');
-
-	const loadDocsearch = async () => {
-		const docsearch = await import('@docsearch/js');
-		return docsearch.default;
-	};
-
-	const isSpecialClick = event => {
-		return event.button === 1 || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
-	};
-
-	const translations = {
-		button: {
-			buttonText: '搜索文档',
-			buttonAriaLabel: '搜索文档',
-		},
-		modal: {
-			searchBox: {
-				resetButtonTitle: '清除查询条件',
-				resetButtonAriaLabel: '清除查询条件',
-				cancelButtonText: '取消',
-				cancelButtonAriaLabel: '取消',
-			},
-			startScreen: {
-				recentSearchesTitle: '搜索历史',
-				noRecentSearchesText: '搜索历史为空',
-				saveRecentSearchButtonTitle: '收藏',
-				removeRecentSearchButtonTitle: '从搜索记录中移除',
-				favoriteSearchesTitle: '收藏',
-				removeFavoriteSearchButtonTitle: '从收藏中移除',
-			},
-			errorScreen: {
-				titleText: '无法获取结果',
-				helpText: '请检查一下网络连接',
-			},
-			footer: {
-				selectText: '选择',
-				navigateText: '切换',
-				closeText: '关闭',
-				searchByText: '搜索提供者',
-			},
-			noResultsScreen: {
-				noResultsText: '无法找到相关结果',
-				suggestedQueryText: '你可以尝试查询',
-				reportMissingResultsText: '你认为查询该有结果？',
-				reportMissingResultsLinkText: '点击反馈',
-			},
-		},
-	};
 
 	export default {
 		name: 'AlgoliaSearchBox',
 
-		props: ['options'],
+		watch: {},
 
-		watch: {
-			$lang(newValue) {
-				this.update(this.options, newValue);
-			},
-
-			options(newValue) {
-				this.update(newValue, this.$lang);
-			},
-		},
-
-		mounted() {
-			this.initialize(this.options, this.$lang);
-		},
+		mounted() {},
 
 		methods: {
-			initialize(userOptions, lang) {
-				loadDocsearch().then(docsearch => {
-					const { searchParameters = {} } = userOptions;
-					docsearch(
-						Object.assign({}, userOptions, {
-							placeholder: '搜索',
-							translations,
-							container: '#docsearch',
-							// #697 Make docsearch work well at i18n mode.
-							searchParameters: {
-								...searchParameters,
-								facetFilters: [`lang:${lang}`].concat(searchParameters.facetFilters || []),
-							},
-							navigator: {
-								// when pressing Enter without metaKey
-								navigate: ({ itemUrl }) => {
-									this.$router.push(itemUrl);
-								},
-							},
-							/* getMissingResultsUrl: ({ query }) =>
-								`https://github.com/dcloudio/uni-app/issues/new?title=${query}`, */
-							// transform full url to route path
-							transformItems: items =>
-								items.map(item => {
-									// the `item.url` is full url with protocol and hostname
-									// so we have to transform it to vue-router path
-									return {
-										...item,
-										url: resolveRoutePathFromUrl(item.url, this.$site.base),
-									};
-								}),
-							// handle `onClick` by `this.$routerpush`
-							hitComponent: ({ hit, children }) =>
-								createElement(
-									'a',
-									{
-										href: hit.url,
-										onClick: event => {
-											if (isSpecialClick(event)) {
-												return;
-											}
-											event.preventDefault();
-											this.$router.push(hit.url);
-										},
-									},
-									children
-								),
-						})
-					);
-				});
-			},
-
-			update(options, lang) {
-				this.$el.innerHTML = '<div id="docsearch"></div>';
-				this.initialize(options, lang);
-			},
+			openSearch(){
+				this.$parent.$refs.dcloudSearchPage.onSearchOpen()
+			}
 		},
 	};
 </script>

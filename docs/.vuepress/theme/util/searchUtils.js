@@ -37,3 +37,15 @@ export function removeHighlightTags(hit) {
     ? value.replace(regexHighlightTags, '')
     : value;
 }
+
+export function isEditingContent(event) {
+  const element = event.target;
+  const tagName = element.tagName;
+
+  return (
+    element.isContentEditable ||
+    tagName === 'INPUT' ||
+    tagName === 'SELECT' ||
+    tagName === 'TEXTAREA'
+  );
+}

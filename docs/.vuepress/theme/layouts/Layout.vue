@@ -4,6 +4,7 @@
     :class="pageClasses"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
+    @keydown.ctrl="openSearch = true"
   >
     <Navbar
       v-if="shouldShowNavbar"
@@ -42,8 +43,6 @@
         <Footer />
       </template>
     </Page>
-
-    <DcloudSearchPage :options="algolia"/>
   </div>
 </template>
 
@@ -54,7 +53,6 @@ import Page from '@theme/components/Page.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
 import Footer from '@theme/components/Footer.vue';
 import SiderBarBottom from '../components/SiderBarBottom.vue';
-import DcloudSearchPage from '../components/DcloudSearchPage';
 import { resolveSidebarItems, forbidScroll, BaiduStat } from '../util'
 import navProvider from '../mixin/navProvider';
 
@@ -67,8 +65,7 @@ export default {
     Sidebar,
     Navbar,
     Footer,
-    SiderBarBottom,
-    DcloudSearchPage
+    SiderBarBottom
   },
   data () {
     return {
@@ -118,9 +115,6 @@ export default {
         },
         userPageClass
       ]
-    },
-    algolia () {
-      return this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
     }
   },
   mounted () {

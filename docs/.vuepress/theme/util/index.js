@@ -1,5 +1,7 @@
 import Vue from 'vue';
 
+export * from './searchUtils';
+
 export const isServer = Vue.prototype.$isServer
 export const hashRE = /#.*$/
 export const extRE = /\.(md|html)$/

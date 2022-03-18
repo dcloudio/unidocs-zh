@@ -1,16 +1,15 @@
 
 
-> **组件名：uni-easyinput**
+::: tip 组件名：uni-easyinput
 > 代码块： `uEasyinput`
-> 
->  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-easyinput)
+
+[点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-easyinput)
+:::
+
 
 easyinput 组件是对原生input组件的增强 ，是专门为配合表单组件[uni-forms](https://ext.dcloud.net.cn/plugin?id=2773)而设计的，easyinput 内置了边框，图标等，同时包含 input 所有功能
 
-
-> **注意事项**
-> 为了避免错误使用，给大家带来不好的开发体验，请在使用组件前仔细阅读下面的注意事项，可以帮你避免一些错误。
-> - 组件需要依赖 `sass` 插件 ，请自行手动安装
+## 介绍
 
 ### 基本用法
 
@@ -130,8 +129,8 @@ easyinput 组件是对原生input组件的增强 ，是专门为配合表单组�
 |属性名| 说明|
 |:-:| :-:|
 |text|文本输入键盘|
-|textarea	|多行文本输入键盘|
-|password	|密码输入键盘|
+|textarea|多行文本输入键盘|
+|password|密码输入键盘|
 |number|数字输入键盘，注意iOS上app-vue弹出的数字键盘并非9宫格方式	|
 |idcard|身份证输入键盘，仅支持微信、支付宝、百度、QQ小程序|
 |digit|带小数点的数字键盘，仅支持微信、支付宝、百度、头条、QQ小程序	|
@@ -140,22 +139,22 @@ easyinput 组件是对原生input组件的增强 ，是专门为配合表单组�
 
 平台差异与 [input](https://uniapp.dcloud.io/component/input) 相同
 
-|属性名	| 说明|
+|属性名| 说明|
 |:-:| :-:|
-|send|右下角按钮为“发送”	|
-|search	|右下角按钮为“搜索”	|
+|send|右下角按钮为“发送”|
+|search	|右下角按钮为“搜索”|
 |next|右下角按钮为“下一个”|
 |go|右下角按钮为“前往”	|											
-|done|右下角按钮为“完成”	|
+|done|右下角按钮为“完成”|
 	
 
 #### Styles Options 
 	
 |属性名| 默认值 	|说明|
 |:-:| :-:| :-:|
-|color| #333|	输入文字颜色|
-|disableColor	|#eee|	输入框禁用背景色|
-|borderColor	|#e5e5e5	|	边框颜色|
+|color| #333|输入文字颜色|
+|disableColor|#eee|	输入框禁用背景色|
+|borderColor|#e5e5e5	|	边框颜色|
 
 #### Trim Options
 
@@ -181,6 +180,97 @@ easyinput 组件是对原生input组件的增强 ，是专门为配合表单组�
 |@iconClick	|点击图标时触发| prefix/suffix	|
 
 
-## 组件示例
+## 示例
+::: danger 注意
+示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
 
-点击查看：[https://hellouniapp.dcloud.net.cn/pages/extUI/easyinput/easyinput](https://hellouniapp.dcloud.net.cn/pages/extUI/easyinput/easyinput)
+请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-easyinput) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+:::
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/easyinput/easyinput
+> Template
+``` html
+<template>
+	<view>
+		<uni-card :is-shadow="false" is-full>
+			<text class="uni-h6">easyinput 组件是对原生input组件的增强 ，是专门为配合表单组件 uni-forms 而设计的，easyinput 内置了边框，图标等，同时包含 input所有功能</text>
+		</uni-card>
+		<uni-section title="默认" subTitle="使用 focus 属性自动获取输入框焦点" type="line" padding>
+			<uni-easyinput errorMessage v-model="value" focus placeholder="请输入内容" @input="input"></uni-easyinput>
+		</uni-section>
+
+		<uni-section title="去除空格" subTitle="使用 trim 属性 ,可以控制返回内容的空格 " type="line" padding>
+			<text class="uni-subtitle">输入内容：{{ '"'+value+'"' }}</text>
+			<uni-easyinput class="uni-mt-5" trim="all" v-model="value" placeholder="请输入内容" @input="input"></uni-easyinput>
+		</uni-section>
+
+		<uni-section title="自定义样式" subTitle="使用 styles 属性 ,可以自定义输入框样式" type="line" padding>
+			<uni-easyinput v-model="value" :styles="styles" :placeholderStyle="placeholderStyle" placeholder="请输入内容"@input="input"></uni-easyinput>
+		</uni-section>
+		<uni-section title="图标" subTitle="使用 prefixIcon / suffixIcon 属性 ,可以自定义输入框左右侧图标" type="line" padding>
+			<uni-easyinput prefixIcon="search" v-model="value" placeholder="左侧图标" @iconClick="iconClick">
+			</uni-easyinput>
+			<uni-easyinput class="uni-mt-5" suffixIcon="search" v-model="value" placeholder="右侧图标" @iconClick="iconClick"></uni-easyinput>
+		</uni-section>
+		<uni-section title="禁用" subTitle="使用 disabled 属性禁用输入框" type="line" padding>
+			<uni-easyinput disabled value="已禁用" placeholder="请输入内容"></uni-easyinput>
+		</uni-section>
+
+		<uni-section title="密码框" subTitle="指定属性 type=password 使用密码框,右侧会显示眼睛图标" type="line" padding>
+			<uni-easyinput type="password" v-model="password" placeholder="请输入密码"></uni-easyinput>
+		</uni-section>
+
+		<uni-section title="多行文本" subTitle="指定属性 type=textarea 使用多行文本框" type="line" padding>
+			<uni-easyinput type="textarea" v-model="value" placeholder="请输入内容"></uni-easyinput>
+		</uni-section>
+
+		<uni-section title="多行文本自动高度" subTitle="使用属性 autoHeight 使多行文本框自动增高" type="line" padding>
+			<uni-easyinput type="textarea" autoHeight v-model="value" placeholder="请输入内容"></uni-easyinput>
+		</uni-section>
+	</view>
+</template>
+``` 
+> Script
+``` html
+<script>
+	export default {
+		data() {
+			return {
+				value: '',
+				password: '',
+				placeholderStyle: "color:#2979FF;font-size:14px",
+				styles: {
+					color: '#2979FF',
+					borderColor: '#2979FF'
+				}
+			}
+
+		},
+		onLoad() {},
+		onReady() {},
+		methods: {
+			input(e) {
+				console.log('输入内容：', e);
+			},
+			iconClick(type) {
+				uni.showToast({
+					title: `点击了${type==='prefix'?'左侧':'右侧'}的图标`,
+					icon: 'none'
+				})
+			}
+		}
+	}
+</script>
+``` 
+> Ｓtyle
+``` html
+<style lang="scss">
+.uni-mt-5 {
+	margin-top: 5px;
+}
+</style>
+
+```
+:::
+
+[完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/easyinput/easyinput)

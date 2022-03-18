@@ -1,21 +1,22 @@
 
-> **组件名：uni-icons**
+::: tip 组件名：uni-icons
 > 代码块： `uIcons`
-> 
->  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-icons)
 
-用于展示 icons 图标 。
+[点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-icons)
+:::
 
+用于展示 icon 图标 。
+
+
+## 介绍
 ### 基本用法
-
-在 ``template`` 中使用组件
 
 ```html
 <uni-icons type="contact" size="30"></uni-icons>
 ```
 ## 图标示例
 
-点击复制图标类型
+**点击复制图标类型**
 
 <icons-layouts></icons-layouts>
 
@@ -40,7 +41,9 @@
 |@click|点击 Icon 触发事件|-    |
 
 ## 自定义图标 
-> nvue 页面暂时不支持自定义图标，如需在 nvue 中使用 ，请自行引入字体文件
+::: danger 注意
+nvue 页面暂时不支持自定义图标，如需在 nvue 中使用 ，请自行引入字体文件
+:::
 
 `uni-icons` 已经收录了日常开发中常用的图标 ，但是因为体积问题 ，不可能一直无限添加新图标 ，所以`uni-icons` 也提供了扩展的方法。 
 
@@ -109,7 +112,3 @@
 ```html
 <uni-icons custom-prefix="iconfont" type="icon-search" size="30"></uni-icons>
 ```
-
-## 组件示例
-
-点击查看：[https://hellouniapp.dcloud.net.cn/pages/extUI/icons/icons](https://hellouniapp.dcloud.net.cn/pages/extUI/icons/icons)

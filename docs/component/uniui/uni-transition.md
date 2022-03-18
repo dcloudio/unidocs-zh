@@ -1,22 +1,24 @@
 
-> **组件名：uni-transition**
+::: tip 组件名：uni-transition
 > 代码块： `uTransition`
-> 
->  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-transition)
+
+[点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-transition)
+:::
 
 元素过渡动画
 
-> **注意事项**
+
+## 介绍
+::: warning 注意事项
 > 为了避免错误使用，给大家带来不好的开发体验，请在使用组件前仔细阅读下面的注意事项，可以帮你避免一些错误。
-> - 组件需要依赖 `sass` 插件 ，请自行手动安装
-> - rotate 旋转动画不需要填写 deg 单位，在小程序上填写单位动画不会执行
-> - NVUE 下修改宽高动画，不能定位到中心点
-> - 百度小程序下修改宽高 ，可能会影响其他动画，需注意
-> - nvue 不支持 custom-class , 请使用 styles
+- 组件需要依赖 `sass` 插件 ，请自行手动安装
+- rotate 旋转动画不需要填写 deg 单位，在小程序上填写单位动画不会执行
+- NVUE 下修改宽高动画，不能定位到中心点
+- 百度小程序下修改宽高 ，可能会影响其他动画，需注意
+- nvue 不支持 custom-class , 请使用 styles
+:::
 
 ### 基本用法
-
-在 ``template`` 中使用组件
 
 ```html
 <template>
@@ -382,7 +384,183 @@ this.$refs.ani.step({
 ```
 
 
+## 示例
+::: danger 注意
+示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
 
-## 组件示例
+请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-transition) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+:::
 
-点击查看：[https://hellouniapp.dcloud.net.cn/pages/extUI/transition/transition](https://hellouniapp.dcloud.net.cn/pages/extUI/transition/transition)
+::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/transition/transition
+> Template
+``` html
+<template>
+	<view>
+		<uni-card is-full :is-shadow="false">
+			<text class="uni-h6">过渡动画，通常用于元素的过渡效果，例如淡隐淡出效果，遮罩层的效果、放大缩小的效果等</text>
+		</uni-card>
+		<uni-section title="示例" type="line">
+			<view class="example">
+				<uni-transition ref="ani" custom-class="transition" :mode-class="modeClass" :styles="styles"
+					:show="show"><text class="text">示例元素</text></uni-transition>
+			</view>
+		</uni-section>
+
+		<uni-section title="操作" subTitle="点击按钮 ,切换动画效果" type="line">
+			<view class="example-body">
+				<button class="transition-button" type="primary" @click="handle('fade')">淡隐淡出</button>
+				<button class="transition-button" type="primary" @click="handle(['fade', 'slide-top'])">由上至下</button>
+				<button class="transition-button" type="primary" @click="handle(['fade', 'slide-right'])">由右至左过</button>
+				<button class="transition-button" type="primary" @click="handle(['fade', 'zoom-in'])">由小到大过</button>
+				<button class="transition-button" type="primary" @click="custom">自定义动画</button>
+			</view>
+		</uni-section>
+
+	</view>
+</template>
+```
+> Script
+```html
+<script>
+	export default {
+		components: {},
+		data() {
+			return {
+				show: true,
+				modeClass: 'fade',
+				styles: {}
+			}
+		},
+		onLoad() {
+			// #ifdef APP-NVUE
+			this.styles = {
+				justifyContent: 'center',
+				alignItems: 'center',
+				width: '100px',
+				height: '100px',
+				borderRadius: '5px',
+				textAlign: 'center',
+				backgroundColor: '#4cd964',
+				boxShadow: '0 0 5px 1px rgba(0,0,0,0.2)'
+			}
+			// #endif
+		},
+		methods: {
+			handle(type) {
+				this.show = !this.show
+				this.modeClass = type
+			},
+			custom() {
+				// TODO 下面修改宽高在百度下还有些问题待修复
+				// this.$refs.ani.step({
+				// 	width: '200px'
+				// })
+				// this.$refs.ani.step({
+				// 	height: '150px'
+				// },{
+				// 	delay:100,
+				// 	duration:200
+				// })
+				this.$refs.ani.step({
+					width: '100px',
+					height: '100px',
+					rotate: '180'
+				}, {
+					delay: 200,
+					duration: 300
+				})
+				this.$refs.ani.step({
+					width: '100px',
+					height: '100px',
+					rotate: '0'
+				}, {
+					transformOrigin: '50% 50%'
+				})
+
+				this.$refs.ani.step({
+					translateX: '-100px'
+				}, {
+					timingFunction: 'ease-in',
+					duration: 100
+				})
+
+				this.$refs.ani.step({
+					translateX: '100px'
+				}, {
+					timingFunction: 'ease',
+					duration: 300
+				})
+
+				this.$refs.ani.step({
+					translateX: '50px',
+					scale: 1.5
+				}, {
+					timingFunction: 'linear',
+					duration: 100
+				})
+				this.$refs.ani.step({
+					translateX: '0px',
+					scale: 1
+				}, {
+					timingFunction: 'linear',
+					duration: 150
+				})
+
+				this.$refs.ani.run()
+			}
+		}
+	}
+</script>
+
+```
+> Style
+```html
+<style lang="scss">
+	.example {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		justify-content: center;
+		align-items: center;
+		height: 150px;
+		background-color: #fff;
+	}
+
+	.example-body {
+		padding: 10px 20px;
+		padding-bottom: 0px;
+	}
+
+	.transition-button {
+		/* #ifndef APP-NVUE */
+		width: 100%;
+		/* #endif */
+		flex: 1;
+		margin-bottom: 10px;
+	}
+
+	/* #ifndef APP-NVUE */
+	.example ::v-deep .transition {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100px;
+		height: 100px;
+		border-radius: 5px;
+		text-align: center;
+		background-color: #4cd964;
+		box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+	}
+
+	/* #endif */
+
+	.text {
+		font-size: 14px;
+		color: #fff;
+	}
+</style>
+
+```
+:::
+
+[完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/transition/transition)

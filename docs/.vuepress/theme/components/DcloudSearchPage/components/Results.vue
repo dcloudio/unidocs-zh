@@ -29,14 +29,19 @@
 		methods: {},
 	};
 </script>
-<style lang="stylus" scoped>
-	 .DocSearch-Hits mark {
-	     background: none;
-	     color: $accentColor;
-	 }
+<style lang="stylus">
+	#docsearch-list{
+		border-radius: 10px;
+		padding: 0;
+	}
+
+	.DocSearch-Hits mark {
+	  background: none;
+	  color: $accentColor;
+	}
 
 	.DocSearch-Hit-source {
-	   background-color $search-container-color;
-	    color: $accentColor;
+	  background-color $search-container-color;
+	  color: $accentColor;
 	}
 </style>

@@ -75,17 +75,21 @@
 		},
 	};
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus">
 .DocSearch-Hit
-  border-radius 4px
+  border-radius 0px
   display flex
-  padding-bottom 4px
+  padding-bottom 0px
   position relative
+
+  &:not(:first-child)
+    border-top 1px solid #f5f6f7
 
   a
     background var(--docsearch-hit-background)
-    border-radius 4px
-    box-shadow var(--docsearch-hit-shadow)
+    border-radius 0px
+    // box-shadow var(--docsearch-hit-shadow)
+    box-shadow none
     display block
     padding-left var(--docsearch-spacing)
     width 100%
@@ -117,6 +121,6 @@
       font-size 0.9em
 
     .DocSearch-Hit-path
-      color $accentColor
+      // color $accentColor
       font-size 0.75em
 </style>

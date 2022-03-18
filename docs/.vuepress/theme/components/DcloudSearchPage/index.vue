@@ -133,8 +133,8 @@
 				resultList: [],
 
 				searchPage: 0, // 跳转页数
-				curHits: 0, // 当前搜索条数
-				totalPage: 0, // 搜索结果总共条数
+				curHits: 0, // 当前搜索结果总条数
+				totalPage: 0, // 搜索结果总共页数
 				curPage: 1, // 当前页
 				pageSize: 0, // 每页条数
 			};
@@ -143,6 +143,9 @@
 		computed: {
 			showPagination() {
 				return !!(this.resultList.length && this.totalPage > 1);
+			},
+			currentCategory() {
+				return this.category[this.categoryIndex];
 			},
 		},
 
@@ -159,14 +162,13 @@
 			openSearch(val) {
 				this.$nextTick(() => {
 					if (val) {
-						this.$nextTick(forbidScroll);
+						forbidScroll();
 						document.body.appendChild(this.$el);
 						this.$nextTick(() => this.$refs.searchInput.focus());
 					} else {
 						this.cancel();
 						forbidScroll(false);
 						document.body.removeChild(this.$el);
-						// window.removeEventListener('keydown', this.onKeyDown);
 					}
 				});
 			},
@@ -181,6 +183,7 @@
 			resetSearchPage() {
 				this.searchPage = 0;
 			},
+
 			research(curPage) {
 				this.searchPage = curPage - 1;
 				this.search();
@@ -188,7 +191,7 @@
 
 			search() {
 				if (!this.searchValue) return;
-				const { text, type } = this.category[this.categoryIndex];
+				const { text, type } = this.currentCategory;
 				switch (type) {
 					case 'algolia':
 						this.searchByAlgolia(this.searchValue, this.searchPage).then(

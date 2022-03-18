@@ -42,7 +42,15 @@
 									<div class="main-navbar-links">
 										<template v-for="(item, index) in category">
 											<div :class="mainNavLinkClass(index)" :key="item.text">
-												<a href="javascript:;" @click="categoryIndex = index">
+												<MainNavbarLink
+													:key="item.text"
+													v-if="item.link"
+													:item="{
+														...item,
+														link: searchLink(item.link),
+													}"
+												/>
+												<a v-else href="javascript:;" @click="switchCategory(index)">
 													{{ item.text }}
 												</a>
 											</div>
@@ -62,10 +70,18 @@
 
 		<div class="search-result">
 			<div class="result-wrap">
-				<template v-if="resultList.length">
+				<template v-if="isAlgolia && resultList.length">
 					<template v-for="item in resultList">
 						<Results :key="item.id" :title="item.title" :results="item.items" />
 					</template>
+				</template>
+
+				<template v-else>
+					<div
+						class="markdown-section search-result-list"
+						v-if="serverHtml"
+						v-html="serverHtml"
+					></div>
 				</template>
 			</div>
 
@@ -105,8 +121,16 @@
 	import NavbarLogo from '../NavbarLogo.vue';
 	import Results from './components/Results.vue';
 	import pagination from './components/pagination.vue';
+	import MainNavbarLink from '../MainNavbarLink.vue';
 	import { search as searchClient } from './searchClient';
-	import { forbidScroll, removeHighlightTags, debounce, isEditingContent } from '../../util';
+	import { postExt, postAsk } from './postDcloudServer';
+	import {
+		forbidScroll,
+		removeHighlightTags,
+		debounce,
+		isEditingContent,
+		Base64Encode,
+	} from '../../util';
 
 	const resolveRoutePathFromUrl = (url, base = '/') =>
 		url
@@ -120,7 +144,7 @@
 
 		props: ['options'],
 
-		components: { NavbarLogo, Results, pagination },
+		components: { NavbarLogo, Results, pagination, MainNavbarLink },
 
 		provide() {
 			return {
@@ -141,11 +165,28 @@
 					},
 					{
 						text: '问答社区',
+						tag: 'ask',
 						type: 'server',
 					},
 					{
 						text: '插件市场',
+						tag: 'ext',
 						type: 'server',
+					},
+					{
+						text: 'DCloud 社区',
+						type: 'link',
+						link: 'https://ask.dcloud.net.cn/search/q-',
+					},
+					{
+						text: '原生开发文档',
+						type: 'link',
+						link: 'https://nativesupport.dcloud.net.cn/?s=',
+					},
+					{
+						text: 'HBuilderX 文档',
+						type: 'link',
+						link: 'https://hx.dcloud.net.cn/?s=',
 					},
 				]),
 				categoryIndex: 0,
@@ -156,6 +197,8 @@
 				totalPage: 0, // 搜索结果总共页数
 				curPage: 1, // 当前页
 				pageSize: 0, // 每页条数
+
+				serverHtml: '',
 			};
 		},
 
@@ -202,6 +245,10 @@
 		},
 
 		methods: {
+			searchLink(link) {
+				return link + (link.includes('ask') ? Base64Encode(this.searchValue) : this.searchValue);
+			},
+
 			resetSearchPage() {
 				this.searchPage = 0;
 			},
@@ -234,7 +281,7 @@
 						);
 						break;
 					case 'server':
-						console.log('从服务端搜索');
+						this.searchByServer(this.searchValue);
 						break;
 				}
 			},
@@ -263,7 +310,29 @@
 				);
 			},
 
-			searchByServer(query = '') {},
+			searchByServer(query = '') {
+				const { tag } = this.currentCategory;
+
+				switch (tag) {
+					case 'ext':
+						postExt(query).then(({ html, hits }) => {
+							this.serverHtml = '';
+							this.serverHtml += html;
+							this.curHits = hits;
+						});
+						break;
+					case 'ask':
+						postAsk(query).then(({ html, hits }) => {
+							this.serverHtml = '';
+							this.serverHtml += html;
+							this.curHits = hits;
+						});
+						break;
+
+					default:
+						break;
+				}
+			},
 
 			mainNavLinkClass(index) {
 				return ['main-navbar-item', this.categoryIndex === index ? 'active' : ''];
@@ -277,6 +346,11 @@
 				if (window.matchMedia('(max-width: 600px)').matches) {
 					this.snippetLength = 15;
 				}
+			},
+
+			switchCategory(index) {
+				this.categoryIndex = index;
+				this.research(1);
 			},
 
 			cancel() {
@@ -316,6 +390,6 @@
 	};
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 	@import './index'
 </style>

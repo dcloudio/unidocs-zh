@@ -1,6 +1,7 @@
 import Vue from 'vue';
 
 export * from './searchUtils';
+export * from './base64Encode';
 
 export const isServer = Vue.prototype.$isServer
 export const hashRE = /#.*$/
@@ -291,7 +292,7 @@ export const BaiduStat = () => {
   s.parentNode.insertBefore(hm, s);
 }
 
-export function debounce (fn, delay) {
+export function debounce(fn, delay) {
   let timeout
   const newFn = function () {
     clearTimeout(timeout)

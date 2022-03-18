@@ -1,4 +1,3 @@
-const xhr = new XMLHttpRequest();
 const isProduction = process.env.NODE_ENV === "production"
 const isMock = false
 import mock from './mock'
@@ -6,6 +5,7 @@ import mock from './mock'
 function ajax(url = '', method = 'get',) {
   return new Promise((resolve, reject) => {
     if (!url) reject('url 不可为空')
+    const xhr = new XMLHttpRequest();
     xhr.open(method, url);
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {

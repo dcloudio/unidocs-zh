@@ -3,29 +3,7 @@
     <div class="main-navbar">
       <!-- <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" /> -->
 
-      <a
-        href="https://www.dcloud.io"
-        class="home-link"
-      >
-        <img
-          v-if="$site.themeConfig.logo"
-          class="logo"
-          :src="$withBase($site.themeConfig.logo)"
-          :alt="$siteTitle"
-        >
-        <img
-          v-if="$site.themeConfig.titleLogo"
-          class="title-logo can-hide"
-          :src="$withBase($site.themeConfig.titleLogo)"
-          :alt="$siteTitle"
-        >
-        <span
-          v-else-if="$siteTitle"
-          ref="siteName"
-          class="site-name"
-          :class="{ 'can-hide': $site.themeConfig.logo }"
-        >{{ $siteTitle }}</span>
-      </a>
+      <NavbarLogo />
 
       <div class="main-navbar-links can-hide">
         <template v-for="(item, index) in customNavBar">
@@ -57,6 +35,7 @@
         } : {}"
       >
         <a class="switch-version" href="javascript:void(0)" @click="switchVersion">回到旧版</a>
+        <DcloudSearchPage ref="dcloudSearchPage" v-if="isAlgoliaSearch" :options="algolia"/>
         <AlgoliaSearchBox
           v-if="isAlgoliaSearch"
           :options="algolia"
@@ -82,6 +61,8 @@ import SearchBox from './SearchBox'
 import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
 import MainNavbarLink from './MainNavbarLink.vue';
+import NavbarLogo from './NavbarLogo.vue';
+import DcloudSearchPage from './DcloudSearchPage';
 import navInject from '../mixin/navInject';
 import { forbidScroll, os } from '../util';
 
@@ -95,7 +76,9 @@ export default {
     NavLinks,
     MainNavbarLink,
     SearchBox,
-    AlgoliaSearchBox
+    AlgoliaSearchBox,
+    NavbarLogo,
+    DcloudSearchPage
   },
 
   data () {

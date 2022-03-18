@@ -36,7 +36,7 @@ const config = {
       apiKey: '2fdcc4e76c8e260671ad70065e60b2e7',
       indexName: 'zh-uniapp',
       appId: 'PQIR5NL8CZ',
-      searchParameters: { hitsPerPage: 80 }
+      searchParameters: { hitsPerPage: 50 }
     }
   },
   markdown: {
@@ -64,6 +64,29 @@ const config = {
         .plugin('normallize-link')
         .use(require('./markdown/normallizeLink'))
     }
+  },
+  chainWebpack: (config, isServer) => {
+    console.log('config :>> ', config);
+    config.devServer.proxy({
+      '/ext': {
+        target: 'http://localhost:3000',  // 后台api
+        changeOrigin: true,  //是否跨域
+        secure: false,
+        // secure: true,
+        pathRewrite: {
+          '^/ext': ''   //需要rewrite的,
+        }
+      },
+      '/ask': {
+        target: 'https://ask.dcloud.net.cn',  // 后台api
+        changeOrigin: true,  //是否跨域
+        secure: false,
+        // secure: true,
+        pathRewrite: {
+          '^/ask': ''   //需要rewrite的,
+        }
+      }
+    })
   }
 }
 

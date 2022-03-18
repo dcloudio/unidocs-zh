@@ -42,14 +42,7 @@
 									<div class="main-navbar-links">
 										<template v-for="(item, index) in category">
 											<div :class="mainNavLinkClass(index)" :key="item.text">
-												<MainNavbarLink
-													:key="item.text"
-													v-if="item.link"
-													:item="{
-														...item,
-														link: searchLink(item.link),
-													}"
-												/>
+												<MainNavbarLink v-if="item.link" :key="item.text" :item="item" />
 												<a v-else href="javascript:;" @click="switchCategory(index)">
 													{{ item.text }}
 												</a>
@@ -85,7 +78,7 @@
 				</template>
 			</div>
 
-			<div v-if="isAlgolia" style="display: flex; justify-content: center; margin: 10px 0 20px">
+			<div v-if="isAlgolia" class="algolia-logo">
 				<div class="DocSearch-Logo">
 					<a
 						href="https://www.algolia.com/ref/docsearch/?utm_source=uniapp.dcloud.io&amp;utm_medium=referral&amp;utm_content=powered_by&amp;utm_campaign=docsearch"
@@ -124,13 +117,7 @@
 	import MainNavbarLink from '../MainNavbarLink.vue';
 	import { search as searchClient } from './searchClient';
 	import { postExt, postAsk } from './postDcloudServer';
-	import {
-		forbidScroll,
-		removeHighlightTags,
-		debounce,
-		isEditingContent,
-		Base64Encode,
-	} from '../../util';
+	import { forbidScroll, removeHighlightTags, debounce, isEditingContent } from '../../util';
 
 	const resolveRoutePathFromUrl = (url, base = '/') =>
 		url
@@ -172,11 +159,6 @@
 						text: '插件市场',
 						tag: 'ext',
 						type: 'server',
-					},
-					{
-						text: 'DCloud 社区',
-						type: 'link',
-						link: 'https://ask.dcloud.net.cn/search/q-',
 					},
 					{
 						text: '原生开发文档',
@@ -229,7 +211,10 @@
 					if (val) {
 						forbidScroll();
 						document.body.appendChild(this.$el);
-						this.$nextTick(() => this.$refs.searchInput.focus());
+						this.$nextTick(() => {
+							this.$refs.searchInput.focus();
+							this.initResultWrapHeight();
+						});
 					} else {
 						this.cancel();
 						forbidScroll(false);
@@ -245,8 +230,14 @@
 		},
 
 		methods: {
-			searchLink(link) {
-				return link + (link.includes('ask') ? Base64Encode(this.searchValue) : this.searchValue);
+			initResultWrapHeight() {
+				const pageHeight = this.$el.clientHeight;
+				const searchNavbarHeight = document.querySelector('.search-navbar').clientHeight;
+				const resultNumberHeight = document.querySelector('.result-number').clientHeight;
+				const algoliaLogoHeight = document.querySelector('.algolia-logo').clientHeight;
+
+				document.querySelector('.result-wrap').style.minHeight =
+					pageHeight - searchNavbarHeight - resultNumberHeight - algoliaLogoHeight - 20 + 'px';
 			},
 
 			resetSearchPage() {
@@ -349,7 +340,6 @@
 			},
 
 			switchCategory(index) {
-				this.curHits = 0;
 				this.categoryIndex = index;
 				this.research(1);
 			},
@@ -359,6 +349,7 @@
 				this.searchValue = '';
 				this.curHits = 0;
 				this.totalPage = 0;
+				this.serverHtml = '';
 			},
 
 			onSearchOpen() {

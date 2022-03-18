@@ -1,7 +1,6 @@
 import Vue from 'vue';
 
 export * from './searchUtils';
-export * from './base64Encode';
 
 export const isServer = Vue.prototype.$isServer
 export const hashRE = /#.*$/

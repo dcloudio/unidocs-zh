@@ -2944,7 +2944,7 @@ exports.main = async function(event,context) {
 
 用户授权或者取消授权用户登录某客户端。
 
-需要注意的是客户端APPID信息是由端上传上来的，并非完全可信，尽量在入口处进行校验。例：
+需要注意的是客户端APPID信息是由客户端上传上来的，并非完全可信，尽量在入口处进行校验。例：
 
 ```js
 exports.main = async function(event, context){

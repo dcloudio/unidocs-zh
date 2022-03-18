@@ -349,6 +349,7 @@
 			},
 
 			switchCategory(index) {
+				this.curHits = 0;
 				this.categoryIndex = index;
 				this.research(1);
 			},

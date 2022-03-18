@@ -9,7 +9,7 @@ function ajax(url = '', method = 'get',) {
     xhr.open(method, url);
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        console.log('this :>> ', this);
+        resolve(this.response)
       }
     }
     xhr.send()

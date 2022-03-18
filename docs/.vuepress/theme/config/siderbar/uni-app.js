@@ -57,11 +57,11 @@ export default {
       "state": 1,
       "prefix": "群5"
     },
-    {
-      "number": "942061423",
-      "state": 1,
-      "prefix": "群7"
-    },
+	 {
+	   "number": "697264024",
+	   "state": 1,
+	   "prefix": "群6"
+	 },
     {
       "number": "695442854",
       "state": 1,
@@ -203,9 +203,9 @@ export default {
       "prefix": "群26"
     },
     {
-      "number": "697264024",
+      "number": "942061423",
       "state": 0,
-      "prefix": "群6"
+      "prefix": "群7"
     }
   ]
 }

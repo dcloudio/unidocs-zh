@@ -6,6 +6,10 @@
 
   - 创建应用实例
 
+    ::: preview
+
+    > Vue2
+
     ```JS
     // 之前 - Vue 2
     import Vue from 'vue'
@@ -16,41 +20,46 @@
     ...App
     })
     app.$mount()
+    ```
 
-    // 之后 - Vue 3
+    > Vue3
+
+    ```JS
     import App from './App'
     import { createSSRApp } from 'vue'
     export function createApp() {
-       const app = createSSRApp(App)
-       return {
+      const app = createSSRApp(App)
+      return {
           app
-       }
+      }
     }
     ```
 
+    :::
+
   - 全局属性，例如：全局网络请求
 
-  ```js
-  // 之前 - Vue 2
-  Vue.prototype.$http = () => {};
+    ```js
+    // 之前 - Vue 2
+    Vue.prototype.$http = () => {};
 
-  // 之后 - Vue 3
-  const app = createApp({});
-  app.config.globalProperties.$http = () => {};
-  ```
+    // 之后 - Vue 3
+    const app = createApp({});
+    app.config.globalProperties.$http = () => {};
+    ```
 
   - 插件使用，例如：使用 vuex 的 store
 
-  ```js
-  // 之前 - Vue 2
-  import store from "./store";
-  Vue.prototype.$store = store;
+    ```js
+    // 之前 - Vue 2
+    import store from "./store";
+    Vue.prototype.$store = store;
 
-  // 之后 - Vue 3
-  import store from "./store";
-  const app = createApp(App);
-  app.use(store);
-  ```
+    // 之后 - Vue 3
+    import store from "./store";
+    const app = createApp(App);
+    app.use(store);
+    ```
 
 - 项目根目录必需创建 index.html 文件，粘贴复制如下内容：
 
@@ -92,14 +101,17 @@
     // 之前 - Vue 2, 依赖如使用 commonJS 方式导出
     module.exports.X = X;
 
-    // 之后 - Vue 3， 可手动改为 ES6 导出
+    // 之后 - Vue 3， 只支持 ES6 模块
     export default { X };
     ```
 
 - vuex 用法
 
+  ::: preview
+
+  > Vue2
+
   ```js
-  // 之前 - Vue 2
     import Vue from 'vue'
     import Vuex from 'vuex'
     Vue.use(Vuex)
@@ -107,14 +119,19 @@
         state: {}
     })
     export default store
+  ```
 
-  // 之后 - Vue 3
+  > Vue3
+
+  ```js
     import { createStore } from 'vuex'
     const store = createStore({
         state: {}
     })
     export default store
   ```
+
+  :::
 
 - 避免在同一元素上同时使用 v-if 与 v-for
 
@@ -199,6 +216,10 @@
 
   Vue3 将不支持 `slot="xxx"` 的用法 ，请使用 `v-slot:xxx` 用法。[更多](https://v3.cn.vuejs.org/guide/component-slots.html#%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD)
 
+  ::: preview
+
+  > Vue2
+
   ```html
   <!--  Vue2 支持的用法 -->
   <uni-nav-bar>
@@ -207,6 +228,8 @@
     </view>
   </uni-nav-bar>
   ```
+  
+  > Vue3
 
   ```html
   <!--  Vue3 支持的用法 -->
@@ -219,16 +242,21 @@
   </uni-nav-bar>
   ```
 
+  :::
+
 - 从 Vue 3.0 开始，过滤器已删除，不再支持，建议用方法调用或计算属性替换它们。[更多](https://v3.cn.vuejs.org/guide/migration/filters.html#%E6%A6%82%E8%A7%88)
 
 - 在 Vue3 中，处理 API `Promise 化` 调用结果的方式不同于 Vue2。[更多](https://uniapp.dcloud.io/api/#api-promise-化)
 
   - Vue3 中，调用成功会进入 then 方法，调用失败会进入 catch 方法
   - Vue2 中，调用无论成功还是失败，都会进入 then 方法，返回数据的第一个参数是错误对象，第二个参数是返回数据
-  - Vue 2 写法转 Vue 3 写法
+
+    ::: preview
+
+    > Vue2
 
     ```js
-    // 在 main.js 中写入以下代码即可
+    // Vue 2 转 Vue 3, 在 main.js 中写入以下代码即可
     function isPromise(obj) {
       return (
         !!obj &&
@@ -255,10 +283,10 @@
     });
     ```
 
-  - Vue 3 写法转 Vue 2 写法
+    > Vue3
 
     ```js
-    // 在 main.js 中写入以下代码即可
+    // Vue 3 转 Vue 2, 在 main.js 中写入以下代码即可
     function isPromise(obj) {
       return (
         !!obj &&
@@ -284,72 +312,83 @@
       },
     });
     ```
-  
+
+    :::
+
   - uni-app 生命周期钩子在 Vue3 组合式 API 中的使用方式如下：
-      - 在 Vue3 组合式 API 中，也需要遵循 uni-app 生命周期钩子规范, 如 onLaunch 等应用生命周期仅可在 App.vue 中监听，使用中请注意生命周期钩子的适用范围。[查看全部生命周期钩子](https://uniapp.dcloud.net.cn/collocation/frame/lifecycle)
-      - 只能在 `<script setup>` 单文件语法糖或 `setup()` 方法中使用生命周期钩子，以 A 页面跳转 B 页面传递参数为例：
 
-        ```js
-        // 从 A 页面跳转 B 页面时传递参数 ?id=1&name=uniapp，xxx 为跳转的页面路径
-        //uni.navigateTo({
-        //  url: 'xxx?id=1&name=uniapp'
-        //})
-            
-        // 方式一：在 B 页面 <script setup> 中
-        <script setup>
-          import {
-            onLoad,
-            onShow
-          } from "@dcloudio/uni-app";
-          
-          // onLoad 接受 A 页面传递的参数
-          onLoad((option) => {
-            console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
-          });
-          
-          onShow(() => {
-            console.log("B 页面 onShow");
-          });
-        </script>
-        ```
+    - 在 Vue3 组合式 API 中，也需要遵循 uni-app 生命周期钩子规范, 如 onLaunch 等应用生命周期仅可在 App.vue 中监听，使用中请注意生命周期钩子的适用范围。[查看全部生命周期钩子](https://uniapp.dcloud.net.cn/collocation/frame/lifecycle)
+    - 只能在 `<script setup>` 单文件语法糖或 `setup()` 方法中使用生命周期钩子，以 A 页面跳转 B 页面传递参数为例：
+      ::: preview
 
-        ```js
-        // 方式二：在 B 页面 setup() 中
-        <script>
-          import {
-            onLoad,
-            onShow,
-          } from "@dcloudio/uni-app";
-        
-          export default {
-            setup() {
-              // onLoad 接受 A 页面传递的参数
-              onLoad((option) => {
-                console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
-              });
-              
-              onShow(() => {
-                console.log("B 页面 onShow");
-              });
-            }
+      > 方法一
+
+      ```js
+      // 从 A 页面跳转 B 页面时传递参数 ?id=1&name=uniapp，xxx 为跳转的页面路径
+      //uni.navigateTo({
+      //  url: 'xxx?id=1&name=uniapp'
+      //})
+
+      // 方法一：在 B 页面 <script setup> 中
+      <script setup>
+        import {
+          onLoad,
+          onShow
+        } from "@dcloudio/uni-app";
+
+        // onLoad 接受 A 页面传递的参数
+        onLoad((option) => {
+          console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
+        });
+
+        onShow(() => {
+          console.log("B 页面 onShow");
+        });
+      </script>
+      ```
+
+      > 方法二
+
+      ```js
+      // 方法二：在 B 页面 setup() 中
+      <script>
+        import {
+          onLoad,
+          onShow,
+        } from "@dcloudio/uni-app";
+
+        export default {
+          setup() {
+            // onLoad 接受 A 页面传递的参数
+            onLoad((option) => {
+              console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
+            });
+
+            onShow(() => {
+              console.log("B 页面 onShow");
+            });
           }
-        </script>
-        ```
+        }
+      </script>
+      ```
 
-        
+      :::
+
   - 在 Vue3 中，this 对象下的 `$mp` 调整为 `$scope`
 
   - 在 Vue3 中，如果 nvue 使用了 Vuex 的相关 API，需要在 main.js 的 createApp 的返回值中 return 一下 Vuex 示例：
+
     ```js
     export function createApp() {
-        const app = createSSRApp(App)
-        app.use(store)
-        return {
-            app,
-            Vuex // 如果 nvue 使用 vuex 的各种map工具方法时，必须 return Vuex
-        }
+      const app = createSSRApp(App);
+      app.use(store);
+      return {
+        app,
+        Vuex, // 如果 nvue 使用 vuex 的各种map工具方法时，必须 return Vuex
+      };
     }
     ```
+
   - App，小程序端源码调试，需要在 vite.config.js 中主动开启 sourcemap
 
     ```js
@@ -369,7 +408,7 @@
     });
     ```
 
-  - 在vue3 的小程序平台中，监听原生的点击事件可以先使用tap。（在vue3中，移除了.native修饰符，所以编译器无法预知click是要触发原生事件，还是组件的自定义事件，故并未转换成小程序的tap事件）
+  - 在 vue3 的小程序平台中，监听原生的点击事件可以先使用 tap。（在 vue3 中，移除了.native 修饰符，所以编译器无法预知 click 是要触发原生事件，还是组件的自定义事件，故并未转换成小程序的 tap 事件）
 
   - vue3 支持的手机版本最低到多少？
     > vue3 支持的范围是：Android > 4.4, ios >= 10

@@ -75,7 +75,7 @@
 		},
 	};
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 .DocSearch-Hit
   border-radius 4px
   display flex

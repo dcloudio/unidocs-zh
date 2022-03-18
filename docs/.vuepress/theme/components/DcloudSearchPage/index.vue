@@ -16,11 +16,11 @@
 								class="search-input"
 								:placeholder="placeholder"
 								type="text"
-								@keydown.enter="search"
+								@keydown.enter="resetSearchPage, search"
 								v-model="searchValue"
 							/>
 							<span class="search-input-btn">
-								<button @click="search">
+								<button @click="resetSearchPage, search">
 									<svg
 										width="16"
 										height="16"
@@ -172,12 +172,15 @@
 			},
 
 			searchValue: debounce(function () {
-				this.searchPage = 0;
+				this.resetSearchPage();
 				this.search();
 			}, 300),
 		},
 
 		methods: {
+			resetSearchPage() {
+				this.searchPage = 0;
+			},
 			research(curPage) {
 				this.searchPage = curPage - 1;
 				this.search();
@@ -286,6 +289,6 @@
 	};
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 	@import './index'
 </style>

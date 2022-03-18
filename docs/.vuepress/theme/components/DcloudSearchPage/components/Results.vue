@@ -29,7 +29,7 @@
 		methods: {},
 	};
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 	 .DocSearch-Hits mark {
 	     background: none;
 	     color: $accentColor;

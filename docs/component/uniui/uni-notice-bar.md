@@ -39,7 +39,7 @@
  <uni-notice-bar @getmore="getMore" showGetMore moreText="查看更多" single text="[单行] 这是 NoticeBar 通告栏，这是 NoticeBar 通告栏，这是 NoticeBar 通告栏"></uni-notice-bar>
 ```
 
-::: danger 注意
+::: warning 注意
 如果需要异步获取内容后展示需要使用`v-if`进行控制，`<uni-notice-bar v-if="text" :text="text"></uni-notice-bar>`
 :::
 
@@ -72,7 +72,7 @@
 
 
 ## 示例
-::: danger 注意
+::: warning 注意
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-notice-bar) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。

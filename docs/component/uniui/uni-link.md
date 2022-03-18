@@ -38,7 +38,7 @@ uni-link是一个外部网页超链接组件，在小程序内复制url，在app
 
 
 ## 示例
-::: danger 注意
+::: warning 注意
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-link) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。

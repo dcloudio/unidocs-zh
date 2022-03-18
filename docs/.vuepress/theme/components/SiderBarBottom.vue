@@ -40,7 +40,7 @@
 						<a
 							target="_blank"
 							style="text-decoration: underline"
-							href="https://qm.qq.com/cgi-bin/qm/qr?k=r70TY1MkPklo86bS7CbXRG7PF97RiY6R&jump_from=webapi"
+							href="https://qm.qq.com/cgi-bin/qm/qr?k=wZSDHv6ymX7l-_0NcrYEmbpcIk-_WhSW&jump_from=webapi"
 						>
 							点此加入
 						</a>

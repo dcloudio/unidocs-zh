@@ -42,7 +42,14 @@
 									<div class="main-navbar-links">
 										<template v-for="(item, index) in category">
 											<div :class="mainNavLinkClass(index)" :key="item.text">
-												<MainNavbarLink v-if="item.link" :key="item.text" :item="item" />
+												<MainNavbarLink
+													v-if="item.link"
+													:key="item.text"
+													:item="{
+														...item,
+														link: item.link + searchValue,
+													}"
+												/>
 												<a v-else href="javascript:;" @click="switchCategory(index)">
 													{{ item.text }}
 												</a>

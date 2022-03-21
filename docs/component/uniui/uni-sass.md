@@ -7,7 +7,7 @@
  
 ```css
 /* 需要放到文件最上面 */
-@import '@/uni_modules/uni-ui-scss/variables.scss';
+@import '@/uni_modules/uni-scss/variables.scss';
 
 /*
  以下变量是默认值，如不需要修改可以不用给下面的变量重新赋值
@@ -77,7 +77,7 @@ uni-ui.scss 还提供了一批辅助样式 ，目的是供用户完成快速布�
 使用需在 App.vue `<style lang='scss'>` 中引入
 
 ```css
-@import '@/uni_modules/uni-ui-scss';
+@import '@/uni_modules/uni-scss';
 ```
 ### 颜色
 前景色可以直接使用变量名同名的类，对元素快速应用`color`样式

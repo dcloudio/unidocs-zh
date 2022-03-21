@@ -341,6 +341,11 @@
 				if (window.matchMedia('(max-width: 600px)').matches) {
 					this.snippetLength = 15;
 				}
+
+				if (this.$refs.pageContainer) {
+					this.$refs.pageContainer.style.maxHeight = document.documentElement.clientHeight;
+					this.$refs.pageContainer.style.maxWidth = document.documentElement.clientWidth;
+				}
 			},
 
 			switchCategory(index) {

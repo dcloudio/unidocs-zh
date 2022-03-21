@@ -1,5 +1,5 @@
 const isProduction = process.env.NODE_ENV === "production"
-const isMock = true
+const isMock = false
 import mock from './mock'
 
 function ajax(url = '', method = 'get',) {

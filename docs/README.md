@@ -93,11 +93,15 @@ pageClass: custom-page-class
         <b>京东小程序版</b>
       </a>
       <a href="javascript:void(0)" οnclick="js_method()"  class="clear-style barcode-view">
-        <div class="barcode-img-box" style="width: 160px;"></div>
+        <div class="barcode-img-box">
+          <img style="opacity: 0;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/96e072fe-f338-46bd-b2d7-7b3aac7df501.png" width="160" />
+        </div>
         <b></b>
       </a>
       <a href="javascript:void(0)" οnclick="js_method()" class="clear-style barcode-view">
-        <div class="barcode-img-box" style="width: 160px;"></div>
+        <div class="barcode-img-box">
+          <img style="opacity: 0;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/96e072fe-f338-46bd-b2d7-7b3aac7df501.png" width="160" />
+        </div>
         <b></b>
       </a>
     </div>

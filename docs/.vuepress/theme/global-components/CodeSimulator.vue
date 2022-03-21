@@ -12,8 +12,20 @@ export default {
 			activeIndex: 0
 		}
 	},
-	created(){},
+	mounted(){
+		this.onWindowResize()
+		window.addEventListener('resize', this.onWindowResize)
+	},
+	beforeDestroy(){
+		window.removeEventListener('resize', this.onWindowResize)
+	},
 	methods:{
+		onWindowResize(){
+			const contentWidth = getComputedStyle(document.querySelector('.theme-default-content')).width
+			if (window.matchMedia('(max-width: 410px)').matches) {
+				this.$refs.codeIframe.style.maxWidth = contentWidth
+			}
+		},
 		onClick(index){
 			this.activeIndex = index
 		},
@@ -37,7 +49,7 @@ export default {
 						h('iframe',{class:'code-iframe',attrs:{
 							src:this.src,
 							frameborder:'0'
-						}})
+						},ref:'codeIframe'})
 					]),
 				
 				]
@@ -84,7 +96,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
 .page-runtime {
 	display: flex;
 	height: 667px;
@@ -155,4 +167,9 @@ export default {
 	width: 375px;
 	height: 667px;
 }
+
+@media (max-width: $MQMobileNarrow)
+	{$contentClass}
+    div[class*="language-"]
+			margin 0 !important
 </style>

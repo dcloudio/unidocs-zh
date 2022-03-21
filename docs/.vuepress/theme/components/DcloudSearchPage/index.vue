@@ -240,7 +240,8 @@
 				const pageHeight = this.$el.clientHeight;
 				const searchNavbarHeight = document.querySelector('.search-navbar').clientHeight;
 				const resultNumberHeight = document.querySelector('.result-number').clientHeight;
-				const algoliaLogoHeight = document.querySelector('.algolia-logo').clientHeight;
+				const algoliaLogoHeight = (document.querySelector('.algolia-logo') || { clientHeight: 49 })
+					.clientHeight;
 				const searchPagination = 36;
 
 				document.querySelector('.result-wrap').style.minHeight =

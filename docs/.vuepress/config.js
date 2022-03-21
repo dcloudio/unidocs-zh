@@ -40,9 +40,6 @@ const config = {
     }
   },
   markdown: {
-	toc: {
-		includeLevel: [2, 3]
-	},
     slugify(str) {
       if (typeof str !== 'string') return ''
 

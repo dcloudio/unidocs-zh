@@ -173,14 +173,13 @@
 				]),
 				categoryIndex: 0,
 				resultList: [],
+				serverHtml: '',
 
 				searchPage: 0, // 跳转页数
 				curHits: 0, // 当前搜索结果总条数
 				totalPage: 0, // 搜索结果总共页数
 				curPage: 1, // 当前页
 				pageSize: 0, // 每页条数
-
-				serverHtml: '',
 			};
 		},
 
@@ -235,9 +234,16 @@
 				const searchNavbarHeight = document.querySelector('.search-navbar').clientHeight;
 				const resultNumberHeight = document.querySelector('.result-number').clientHeight;
 				const algoliaLogoHeight = document.querySelector('.algolia-logo').clientHeight;
+				const searchPagination = 36;
 
 				document.querySelector('.result-wrap').style.minHeight =
-					pageHeight - searchNavbarHeight - resultNumberHeight - algoliaLogoHeight - 20 + 'px';
+					pageHeight -
+					searchNavbarHeight -
+					resultNumberHeight -
+					algoliaLogoHeight -
+					searchPagination -
+					20 +
+					'px';
 			},
 
 			resetSearchPage() {
@@ -250,8 +256,8 @@
 			},
 
 			search() {
-				if (!this.searchValue) return;
-				const { text, type } = this.currentCategory;
+				if (!this.searchValue || !this.searchValue.trim().length) return;
+				const { type } = this.currentCategory;
 				switch (type) {
 					case 'algolia':
 						this.searchByAlgolia(this.searchValue, this.searchPage).then(
@@ -307,15 +313,13 @@
 				switch (tag) {
 					case 'ext':
 						postExt(query).then(({ html, hits }) => {
-							this.serverHtml = '';
-							this.serverHtml += html;
+							this.serverHtml = html;
 							this.curHits = hits;
 						});
 						break;
 					case 'ask':
 						postAsk(query).then(({ html, hits }) => {
-							this.serverHtml = '';
-							this.serverHtml += html;
+							this.serverHtml = html;
 							this.curHits = hits;
 						});
 						break;

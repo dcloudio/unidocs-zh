@@ -1,5 +1,5 @@
 const isProduction = process.env.NODE_ENV === "production"
-const isMock = false
+const isMock = true
 import mock from './mock'
 
 function ajax(url = '', method = 'get',) {
@@ -71,10 +71,12 @@ function _renderExt(ext, keyword) {
   return `<div class="matching-post">
     <a href="${ext.url}" target="_blank">
       <div class="post-wrapper">
-        <p class="aw-text">
-          <span class="post-tag">插件</span>
-        </p>
-        <h2>${_handleHTMLString(ext.name, keyword)}</h2>
+        <h2>
+          <p class="aw-text">
+            <span class="post-tag">插件</span>
+          </p>
+          ${_handleHTMLString(ext.name, keyword)}
+        </h2>
       </div>
       <p>${ext.total_download}次下载</p>
       <p>${_handleHTMLString(ext.description, keyword)}</p>
@@ -103,17 +105,23 @@ function _renderPost(post, value) {
   }
 
   html += `<div class="matching-post">
-  <a href="${post.url}" target="_blank"><div class="post-wrapper">
-  <p class="aw-text"><span class="post-tag">${tagName}</span></p>
-  <h2>${post.title}</h2></div>`
-  /*  html += '<div class="matching-post">\n';
-   html += `<a href="${post.url}" target="_blank"><div class="post-wrapper">`;
-   html += `<p class="aw-text"><span class="post-tag">${tagName}</span></p>`
-   html += `\n<h2>${post.title}</h2></div>`; */
+    <a href="${post.url}" target="_blank">
+    <div class="post-wrapper">
+      <h2>
+        <p class="aw-text">
+          <span class="post-tag">${tagName}</span>
+        </p>
+        ${post.title}
+      </h2>
+  </div>`
 
   if (!!value) {
     commentText = post.type === 'questions' ? '回复' : '评论';
-    html += `<p>${post.comment_count}个${commentText}<span class="aw-text-space">-</span>${post.view_count}次浏览</p>`;
+    html += `<p>
+      ${post.comment_count}个${commentText}
+      <span class="aw-text-space">-</span>
+      ${post.view_count}次浏览
+    </p>`;
   }
 
   html += `\n<p>${post.content}</p>\n</a>\n</div>`;

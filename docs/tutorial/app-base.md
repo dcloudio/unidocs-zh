@@ -53,7 +53,7 @@ DCloud应用appid（简称appid）是由DCloud创建App项目时生成的唯一�
 - iOS平台  
 应用Info.plist文件中的`CFBundleVersion`字段值。每次提交AppStore审核时都必须更新为比上一次高的版本号，审核失败后重新打包也需要更新版本号。
 
-> 在 App 中可通过 [plus.runtime.versionCode](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.versionCode) 获取应用版本名称。
+> 在 App 中可通过 [plus.runtime.versionCode](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.versionCode) 获取应用版本号。
 
 #### 本地离线打包  
 离线打包时需在原生工程中设置，Android平台参考 [Android Studio工程配置应用版本名称](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android?id=versionname)，iOS平台参考 [XCode工程配置应用版本号](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e9%85%8d%e7%bd%ae%e5%ba%94%e7%94%a8%e7%89%88%e6%9c%ac%e5%8f%b7)

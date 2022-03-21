@@ -124,7 +124,7 @@
 **Tips**
 
 - 传递的消息信息，必须写在 data 对象中。
-- `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。
+- `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）
 
 ##### uni.getEnv(CALLBACK)
 

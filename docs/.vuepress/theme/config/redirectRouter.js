@@ -1,5 +1,6 @@
 const routerMap = {
   '/collocation/frame/lifecycle#页面生命周期': '/tutorial/page.html#lifecycle',
+  '/api/lifetime': '/collocation/App.html#applifecycle',
   '/collocation/frame/lifecycle#应用生命周期': '/collocation/App.html#applifecycle',
   '/collocation/frame/lifetime': '/collocation/App.html#applifecycle',
   '/collocation/frame/lifecycle': '/collocation/App.html#applifecycle',
@@ -44,6 +45,8 @@ const routerMap = {
 
   '/api/ui/language': '/api/ui/locale.html',
   '/api/ad/rewarded-video-ad': '/api/a-d/rewarded-video.html',
+  '/api/a-d/rewarded-video-ad': '/api/a-d/rewarded-video.html',
+  '/api/ad/interstitial-ad': '/api/a-d/interstitial.html',
   '/api/ui/navigate': '/api/router.html',
 
   '/platform': '/tutorial/platform.html',

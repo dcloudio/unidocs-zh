@@ -56,8 +56,8 @@ export async function postAsk(query) {
     return;
   }
 
-  var data = ret.data;
-  var askHtml = '';
+  let data = ret.data;
+  let askHtml = '';
   data.forEach(function (item) {
     askHtml += _renderPost(item, query);
   });
@@ -85,9 +85,9 @@ function _renderExt(ext, keyword) {
 }
 
 function _renderPost(post, value) {
-  var html = '';
-  var commentText = '';
-  var tagName = '规范';
+  let html = '';
+  let commentText = '';
+  let tagName = '规范';
 
   // 1，问题；2，文章；默认是规范。
   switch (post.type) {
@@ -130,15 +130,15 @@ function _renderPost(post, value) {
 }
 
 function _handleHTMLString(dataString, keyword) {
-  var keywordReg = new RegExp(
+  let keywordReg = new RegExp(
     keyword.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&'),
     'gi'
   );
-  var tagStartReg = new RegExp(
+  let tagStartReg = new RegExp(
     '&lt;span style=\'font-weight:bold;color:red\'&gt;',
     'g'
   );
-  var tagEndReg = new RegExp(
+  let tagEndReg = new RegExp(
     '&lt;/span&gt;',
     'g'
   );

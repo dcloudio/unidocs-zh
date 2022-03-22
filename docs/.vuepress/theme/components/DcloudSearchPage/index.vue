@@ -65,12 +65,12 @@
 		</div>
 
 		<div class="result-number">
-			<span>共{{ curHits }}个相关结果</span>
+			<span>{{ resultText }}</span>
 		</div>
 
 		<div class="search-result">
 			<div class="result-wrap">
-				<template v-if="isAlgolia && resultList.length">
+				<template v-if="isAlgolia">
 					<template v-for="item in resultList">
 						<Results :key="item.id" :title="item.title" :results="item.items" />
 					</template>
@@ -180,6 +180,7 @@
 				]),
 				categoryIndex: 0,
 				resultList: [],
+				noResult: false,
 				serverHtml: '',
 
 				searchPage: 0, // 跳转页数
@@ -199,6 +200,11 @@
 			},
 			showPagination() {
 				return !!(this.resultList.length && this.totalPage > 1 && this.isAlgolia);
+			},
+			resultText() {
+				return this.noResult
+					? `没有找到${this.currentCategory.text}相关内容`
+					: `${this.curHits}个相关结果`;
 			},
 		},
 
@@ -278,6 +284,7 @@
 										items,
 									};
 								});
+								this.noResult = !this.resultList.length;
 								this.curHits = nbHits;
 								this.pageSize = hitsPerPage;
 								this.totalPage = nbPages;
@@ -315,26 +322,24 @@
 				);
 			},
 
-			searchByServer(query = '') {
+			async searchByServer(query = '') {
 				const { tag } = this.currentCategory;
+				let postResult = Promise.resolve({ html: '', hits: 0 });
 
 				switch (tag) {
 					case 'ext':
-						postExt(query).then(({ html, hits }) => {
-							this.serverHtml = html;
-							this.curHits = hits;
-						});
+						postResult = postExt(query);
 						break;
 					case 'ask':
-						postAsk(query).then(({ html, hits }) => {
-							this.serverHtml = html;
-							this.curHits = hits;
-						});
-						break;
-
-					default:
+						postResult = postAsk(query);
 						break;
 				}
+
+				const { html, hits } = await postResult;
+
+				this.serverHtml = html;
+				this.curHits = hits;
+				this.noResult = !hits;
 			},
 
 			mainNavLinkClass(index) {
@@ -367,6 +372,7 @@
 				this.curHits = 0;
 				this.totalPage = 0;
 				this.serverHtml = '';
+				this.noResult = false;
 			},
 
 			onSearchOpen() {

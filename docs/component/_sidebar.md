@@ -76,7 +76,7 @@
   * [uni-combox 组合框](component/uniui/uni-combox.md)
   * [uni-countdown 倒计时](component/uniui/uni-countdown.md)
   * [uni-data-checkbox 数据选择器](component/uniui/uni-data-checkbox.md)
-  * [uni-data-picker 数据驱动的picker选择器](component/uniui/uni-data-picker.md)
+  * [uni-data-picker 级联选择器](component/uniui/uni-data-picker.md)
   * [uni-dateformat 日期格式化](component/uniui/uni-dateformat.md)
   * [uni-datetime-picker 日期选择器](component/uniui/uni-datetime-picker.md)
   * [uni-drawer 抽屉](component/uniui/uni-drawer.md)

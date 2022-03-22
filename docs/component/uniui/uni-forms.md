@@ -1,9 +1,10 @@
 
-> **组件名：uni-forms**
+::: tip 组件名：uni-forms
 > 代码块： `uForms`、`uni-forms-item`
 > 关联组件：`uni-forms-item`、`uni-easyinput`、`uni-data-checkbox`、`uni-group`。
-> 
->  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-forms)
+
+[点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-forms)
+:::
 
 uni-app的内置组件已经有了 `<form>`组件，用于提交表单内容。
 
@@ -17,14 +18,15 @@ uni-app的内置组件已经有了 `<form>`组件，用于提交表单内容。
 
 另外，`<uni-forms>`组件下面的各个表单项，可以通过`<uni-group>`包裹为不同的分组。同一`<uni-group>`下的不同表单项目将聚拢在一起，同其他group保持垂直间距。`<uni-group>`仅影响视觉效果。
 
-> **注意事项**
+## 介绍
+::: warning 注意事项
 > 为了避免错误使用，给大家带来不好的开发体验，请在使用组件前仔细阅读下面的注意事项，可以帮你避免一些错误。
-> - 组件需要依赖 `sass` 插件 ，请自行手动安装
-> - `resetFields` 方法不会重置原生组件和三方组件的值
-> - 如果配置 `validateTrigger` 属性为 `bind` 且表单域组件使用 `input` 事件触发会耗损部分性能，请谨慎使用
-> - 组件支持 nvue ，需要在 `manifest.json > app-plus` 节点下配置 `"nvueStyleCompiler" : "uni-app"` 
-> - uni-forms 中不包含其他表单组件，如需使用 uni-easyinput、uni-data-checkbox 等组件，需要自行引入
-
+- 组件需要依赖 `sass` 插件 ，请自行手动安装
+- `resetFields` 方法不会重置原生组件和三方组件的值
+- 如果配置 `validateTrigger` 属性为 `bind` 且表单域组件使用 `input` 事件触发会耗损部分性能，请谨慎使用
+- 组件支持 nvue ，需要在 `manifest.json > app-plus` 节点下配置 `"nvueStyleCompiler" : "uni-app"` 
+- uni-forms 中不包含其他表单组件，如需使用 uni-easyinput、uni-data-checkbox 等组件，需要自行引入
+:::
 ### 基本用法 
 
 `uni-forms` 组件通常用来做表单校验和提交。每一个 `uni-forms-item` 是它的一个表单域组件，用来承载表单具体内容，`uni-forms-item` 中可以嵌套 `uni-easyinput`、`uni-data-checkbox` 和 uni-app内置的表单组件 ，不过 uni-app 的内置表单组件需要通过 `binddata` 或者 `uni-forms` 提供的 `setValue` 方法，将内容与 `uni-forms` 关联，才可完成表单的校验与提交（详见后文`表单校验` 部分）
@@ -109,6 +111,8 @@ uni-app的内置组件已经有了 `<form>`组件，用于提交表单内容。
 
 **完整示例**
 
+::: preview 
+> Template
 ```html
 <template>
 	<view>
@@ -125,7 +129,7 @@ uni-app的内置组件已经有了 `<form>`组件，用于提交表单内容。
 </template>
 			 
 ```
-
+> Script
 ```javascript
 export default {
 	data() {
@@ -180,11 +184,12 @@ export default {
 	}
 }
 ```
+:::
 
-> **注意**
-> `modelValue` 对象目前有比较严格的格式要求：
-> - 尽量不要使用嵌套的数据结构，因为表单域指定的`name`值与 modeValue 的 key 是一一对应的，只有一种情况例外，那就是动态校验表单，见下方`动态校验表单`章节
-
+::: danger 注意
+`modelValue` 对象目前有比较严格的格式要求：
+- 尽量不要使用嵌套的数据结构，因为表单域指定的`name`值与 modeValue 的 key 是一一对应的，只有一种情况例外，那就是动态校验表单，见下方`动态校验表单`章节
+:::
 
 ### 校验规则说明
 
@@ -258,11 +263,11 @@ rules: {
 |email|必须是 email 类型|
 
 
-> **pattern属性说明**
-> 在小程序中，json 中不能使用正则对象，如：`/^\S+?@\S+?\.\S+?$/`，使用正则对象会被微信序列化，导致正则失效。
-> 所以建议统一使用字符串的方式来使用正则 ，如`'^\\S+?@\\S+?\\.\\S+?$'` ，需要注意 `\` 需要使用 `\\` 来转译。
-> 如验证邮箱：/^\S+?@\S+?\.\S+?$/ （注意不带引号）,或使用 "^\\S+?@\\S+?\\.\\S+?$"（注意带引号需要使用 `\` 转义）		
-
+::: warning pattern属性说明
+- 在小程序中，json 中不能使用正则对象，如：`/^\S+?@\S+?\.\S+?$/`，使用正则对象会被微信序列化，导致正则失效。
+- 所以建议统一使用字符串的方式来使用正则 ，如`'^\\S+?@\\S+?\\.\\S+?$'` ，需要注意 `\` 需要使用 `\\` 来转译。
+- 如验证邮箱：/^\S+?@\S+?\.\S+?$/ （注意不带引号）,或使用 "^\\S+?@\\S+?\\.\\S+?$"（注意带引号需要使用 `\` 转义）		
+:::
 
 
 ### validateFunction 自定义校验规则使用说明
@@ -295,10 +300,7 @@ rules: {
 		<button class="button" @click="submit">校验表单</button>
 	</view>
 </template>
-
-```
-
-```javascript
+<script>
 export default {
 	data() {
 		return {
@@ -336,7 +338,7 @@ export default {
 		}
 	}
 }
-
+</script>
 ```
 
 
@@ -356,9 +358,7 @@ export default {
 	</view>
 </template>
 
-```
-
-```javascript
+<script>
 export default {
 	data() {
 		return {
@@ -411,7 +411,7 @@ export default {
 		}
 	}
 }
-
+</script>
 ```
 
 
@@ -467,8 +467,9 @@ dynamicFormData: {
 
 **完整示例**
 
+::: preview 
+> Template
 ```html
-
 <uni-forms ref="dynamicForm" :rules="dynamicRules" :modelValue="dynamicFormData">
 	<uni-forms-item label="邮箱" required name="email">
 		<uni-easyinput v-model="dynamicFormData.email" placeholder="请输入姓名" />
@@ -491,7 +492,7 @@ dynamicFormData: {
 </view>
 
 ```
-
+> Script
 ```javascript
 export default {
 	data() {
@@ -549,10 +550,13 @@ export default {
 	}
 }
 ```
+:::
 
-**tips**
 
-- 如果需要给对象赋值，需要使用 this.$set() ，将当前对象加入到可观测对象中，否则组件内无法获取正确的值
+::: tip 小提示
+如果需要给对象赋值，需要使用 this.$set() ，将当前对象加入到可观测对象中，否则组件内无法获取正确的值
+:::
+
 
 ### 表单校验时机说明
 
@@ -651,10 +655,7 @@ export default {
 		</uni-forms>
 	</view>
 </template>
-
-```
-
-```javascript
+<script>
 export default {
 	data() {
 		return {
@@ -681,6 +682,7 @@ export default {
 		}
 	}
 }
+</script>
 
 ```
 
@@ -742,9 +744,7 @@ this.$refs.form.validate().then((res)=>{
 	</view>
 </template>
 
-```
-
-```javascript
+<script>
 export default {
 	data() {
 		return {
@@ -771,6 +771,7 @@ export default {
 		}
 	}
 }
+</script>
 
 ```
 
@@ -818,6 +819,345 @@ this.$refs.form.clearValidate(['name', 'email'])
 |left(已经失效，请使用label代替)|label插槽，自定义label显示内容|
 |label|label插槽，自定义label显示内容|
 
-## 组件示例
 
-点击查看：[https://hellouniapp.dcloud.net.cn/pages/extUI/forms/forms](https://hellouniapp.dcloud.net.cn/pages/extUI/forms/forms)
+
+
+
+
+## 示例
+::: warning 注意
+示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
+
+请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-forms) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+:::
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/forms/forms
+> Template
+``` html
+<template>
+	<view class="container">
+		<uni-card :is-shadow="false" is-full>
+			<text class="uni-h6">uni-forms 组件一般由输入框、选择器、单选框、多选框等控件组成，用以收集、校验、提交数据。</text>
+		</uni-card>
+		<uni-section title="基本用法" type="line">
+			<view class="example">
+				<!-- 基础用法，不包含校验规则 -->
+				<uni-forms ref="baseForm" :modelValue="baseFormData">
+					<uni-forms-item label="姓名" required>
+						<uni-easyinput v-model="baseFormData.name" placeholder="请输入姓名" />
+					</uni-forms-item>
+					<uni-forms-item label="年龄" required>
+						<uni-easyinput v-model="baseFormData.age" placeholder="请输入年龄" />
+					</uni-forms-item>
+					<uni-forms-item label="性别" required>
+						<uni-data-checkbox v-model="baseFormData.sex" :localdata="sexs" />
+					</uni-forms-item>
+					<uni-forms-item label="兴趣爱好" required>
+						<uni-data-checkbox v-model="baseFormData.hobby" multiple :localdata="hobbys" />
+					</uni-forms-item>
+					<uni-forms-item label="自我介绍">
+						<uni-easyinput type="textarea" v-model="baseFormData.introduction" placeholder="请输入自我介绍" />
+					</uni-forms-item>
+					<uni-forms-item label="日期时间">
+						<uni-datetime-picker type="datetime" return-type="timestamp" v-model="baseFormData.datetimesingle"/>
+					</uni-forms-item>
+				</uni-forms>
+			</view>
+		</uni-section>
+
+		<uni-section title="对齐方式" type="line">
+			<view class="example">
+				<view class="segmented-control">
+					<uni-segmented-control :current="current" :values="items" @clickItem="onClickItem" styleType="button">
+					</uni-segmented-control>
+				</view>
+				<!-- 展示不同的排列方式 -->
+				<uni-forms ref="baseForm" :modelValue="alignmentFormData" :label-position="alignment">
+					<uni-forms-item label="姓名" required>
+						<uni-easyinput v-model="baseFormData.name" placeholder="请输入姓名" />
+					</uni-forms-item>
+					<uni-forms-item label="年龄" required>
+						<uni-easyinput v-model="baseFormData.age" placeholder="请输入年龄" />
+					</uni-forms-item>
+				</uni-forms>
+			</view>
+		</uni-section>
+
+		<uni-section title="表单校验" type="line">
+			<view class="example">
+				<!-- 基础表单校验 -->
+				<uni-forms ref="valiForm" :rules="rules" :modelValue="valiFormData">
+					<uni-forms-item label="姓名" required name="name">
+						<uni-easyinput v-model="valiFormData.name" placeholder="请输入姓名" />
+					</uni-forms-item>
+					<uni-forms-item label="年龄" required name="age">
+						<uni-easyinput v-model="valiFormData.age" placeholder="请输入年龄" />
+					</uni-forms-item>
+					<uni-forms-item label="自我介绍" name="introduction">
+						<uni-easyinput type="textarea" v-model="valiFormData.introduction" placeholder="请输入自我介绍" />
+					</uni-forms-item>
+				</uni-forms>
+				<button type="primary" @click="submit('valiForm')">提交</button>
+			</view>
+		</uni-section>
+
+		<uni-section title="自定义校验规则" type="line">
+			<view class="example">
+				<!-- 自定义表单校验 -->
+				<uni-forms ref="customForm" :rules="customRules" :modelValue="customFormData">
+					<uni-forms-item label="姓名" required name="name">
+						<uni-easyinput v-model="customFormData.name" placeholder="请输入姓名" />
+					</uni-forms-item>
+					<uni-forms-item label="年龄" required name="age">
+						<uni-easyinput v-model="customFormData.age" placeholder="请输入年龄" />
+					</uni-forms-item>
+					<uni-forms-item label="兴趣爱好" required name="hobby">
+						<uni-data-checkbox v-model="customFormData.hobby" multiple :localdata="hobbys" />
+					</uni-forms-item>
+				</uni-forms>
+				<button type="primary" @click="submit('customForm')">提交</button>
+			</view>
+		</uni-section>
+
+
+		<uni-section title="动态表单" type="line">
+			<view class="example">
+				<!-- 动态表单校验 -->
+				<uni-forms ref="dynamicForm" :rules="dynamicRules" :modelValue="dynamicFormData">
+					<uni-forms-item label="邮箱" required name="email">
+						<uni-easyinput v-model="dynamicFormData.email" placeholder="请输入姓名" />
+					</uni-forms-item>
+					<uni-forms-item v-for="(item,index) in dynamicLists" :key="item.id" :label="item.label+' '+index"
+						required :rules="item.rules" :name="'domains[' + item.id + ']'">
+						<view class="form-item">
+							<uni-easyinput v-model="dynamicFormData.domains[item.id]" placeholder="请输入域名" />
+							<button class="button" size="mini" type="default" @click="del(item.id)">删除</button>
+						</view>
+					</uni-forms-item>
+				</uni-forms>
+				<view class="button-group">
+					<button type="primary" size="mini" @click="add">新增域名</button>
+					<button type="primary" size="mini" @click="submit('dynamicForm')">提交</button>
+				</view>
+			</view>
+		</uni-section>
+	</view>
+</template>
+``` 
+
+> Script
+``` html
+<script>
+	export default {
+		data() {
+			return {
+				// 基础表单数据
+				baseFormData: {
+					name: '',
+					age: '',
+					introduction: '',
+					sex: 2,
+					hobby: [5],
+					datetimesingle: 1627529992399
+				},
+				// 表单数据
+				alignmentFormData: {
+					name: '',
+					age: '',
+				},
+				// 单选数据源
+				sexs: [{
+					text: '男',
+					value: 0
+				}, {
+					text: '女',
+					value: 1
+				}, {
+					text: '保密',
+					value: 2
+				}],
+				// 多选数据源
+				hobbys: [{
+					text: '跑步',
+					value: 0
+				}, {
+					text: '游泳',
+					value: 1
+				}, {
+					text: '绘画',
+					value: 2
+				}, {
+					text: '足球',
+					value: 3
+				}, {
+					text: '篮球',
+					value: 4
+				}, {
+					text: '其他',
+					value: 5
+				}],
+				// 分段器数据
+				current: 0,
+				items: ['左对齐', '顶部对齐'],
+				// 校验表单数据
+				valiFormData: {
+					name: '',
+					age: '',
+					introduction: '',
+				},
+				// 校验规则
+				rules: {
+					name: {
+						rules: [{
+							required: true,
+							errorMessage: '姓名不能为空'
+						}]
+					},
+					age: {
+						rules: [{
+							required: true,
+							errorMessage: '年龄不能为空'
+						}, {
+							format: 'number',
+							errorMessage: '年龄只能输入数字'
+						}]
+					}
+				},
+				// 自定义表单数据
+				customFormData: {
+					name: '',
+					age: '',
+					hobby: []
+				},
+				// 自定义表单校验规则
+				customRules: {
+					name: {
+						rules: [{
+							required: true,
+							errorMessage: '姓名不能为空'
+						}]
+					},
+					age: {
+						rules: [{
+							required: true,
+							errorMessage: '年龄不能为空'
+						}]
+					},
+					hobby: {
+						rules: [{
+								format: 'array'
+							},
+							{
+								validateFunction: function(rule, value, data, callback) {
+									if (value.length < 2) {
+										callback('请至少勾选两个兴趣爱好')
+									}
+									return true
+								}
+							}
+						]
+					}
+
+				},
+				dynamicFormData: {
+					email: '',
+					domains: {}
+				},
+				dynamicLists: [],
+				dynamicRules: {
+					email: {
+						rules: [{
+							required: true,
+							errorMessage: '域名不能为空'
+						}, {
+							format: 'email',
+							errorMessage: '域名格式错误'
+						}]
+					}
+				}
+			}
+		},
+		computed: {
+			// 处理表单排列切换
+			alignment() {
+				if (this.current === 0) return 'left'
+				if (this.current === 1) return 'top'
+				return 'left'
+			}
+		},
+		onLoad() {},
+		onReady() {
+			// 设置自定义表单校验规则，必须在节点渲染完毕后执行
+			this.$refs.customForm.setRules(this.customRules)
+		},
+		methods: {
+			onClickItem(e) {
+				console.log(e);
+				this.current = e.currentIndex
+			},
+			add() {
+				this.dynamicLists.push({
+					label: '域名',
+					rules: [{
+						'required': true,
+						errorMessage: '域名项必填'
+					}],
+					id: Date.now()
+				})
+			},
+			del(id) {
+				let index = this.dynamicLists.findIndex(v => v.id === id)
+				this.dynamicLists.splice(index, 1)
+			},
+			submit(ref) {
+				this.$refs[ref].validate().then(res => {
+					console.log('success', res);
+					uni.showToast({
+						title: `校验通过`
+					})
+				}).catch(err => {
+					console.log('err', err);
+				})
+			},
+		}
+	}
+</script>
+``` 
+> Style
+``` html
+<style lang="scss">
+
+	.example {
+		padding: 15px;
+		background-color: #fff;
+	}
+
+	.segmented-control {
+		margin-bottom: 15px;
+	}
+
+	.button-group {
+		margin-top: 15px;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.form-item {
+		display: flex;
+		align-items: center;
+	}
+
+	.button {
+		display: flex;
+		align-items: center;
+		height: 35px;
+		margin-left: 10px;
+	}
+</style>
+
+```
+:::
+
+[完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/forms/forms)
+
+

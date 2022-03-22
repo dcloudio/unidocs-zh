@@ -1,12 +1,13 @@
 
-
-> **组件名：uni-badge**
+::: tip 组件名：uni-badge
 > 代码块： `uBadge`
-> 
->  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-badge)
 
+[点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-badge)
+:::
 
-数字角标一般和其它控件（列表、9宫格等）配合使用，用于进行数量提示，默认为实心灰色背景，
+数字角标一般和其它控件（列表、9宫格等）配合使用，用于进行数量提示，默认为实心灰色背景。
+
+## 介绍
 
 ### 基本用法
 
@@ -16,14 +17,16 @@
 <uni-badge size="small" :text="100" absolute="rightBottom" type="primary">
 	<button type="default">右下</button>
 </uni-badge>
+
 <uni-badge text="1"></uni-badge>
+
 <uni-badge text="2" type="purple" @click="bindClick"></uni-badge>
+
 <uni-badge text="3" type="primary" :inverted="true"></uni-badge>
 
 ```
 
-
-## API
+## 属性/方法
 
 ### Badge Props
 
@@ -45,6 +48,130 @@
 |:-:|:-:|:-:|
 |@click	|点击 Badge 触发事件| -|
 
-## 组件示例
 
-点击查看：[https://hellouniapp.dcloud.net.cn/pages/extUI/badge/badge](https://hellouniapp.dcloud.net.cn/pages/extUI/badge/badge)
+
+## 示例
+::: warning 注意
+直接拷贝示例代码，无法运行 ，示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件。
+
+请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-badge) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+:::
+:::preview https://hellouniapp.dcloud.net.cn/pages/extUI/badge/badge
+
+```html
+<template>
+	<view class="container">
+		<uni-card is-full :is-shadow="false">
+			<text class="uni-h6">数字角标通用来标记重点信息使用，如接受到新消息、有未读消息等</text>
+		</uni-card>
+		<uni-section title="基础用法" type="line" padding>
+			<view class="example-body">
+				<uni-badge class="uni-badge-left-margin" text="1" />
+				<uni-badge class="uni-badge-left-margin" text="2" type="primary" />
+				<uni-badge class="uni-badge-left-margin" text="34" type="success" />
+				<uni-badge class="uni-badge-left-margin" text="45" type="warning" />
+				<uni-badge class="uni-badge-left-margin" text="123" type="info" />
+			</view>
+		</uni-section>
+		<uni-section title="无底色" type="line" padding>
+			<view class="example-body">
+				<uni-badge class="uni-badge-left-margin" :inverted="true" text="1" />
+				<uni-badge class="uni-badge-left-margin" :inverted="true" text="2" type="primary" />
+				<uni-badge class="uni-badge-left-margin" :inverted="true" text="34" type="success" />
+				<uni-badge class="uni-badge-left-margin" :inverted="true" text="45" type="warning" />
+				<uni-badge class="uni-badge-left-margin" :inverted="true" text="123" type="info" />
+			</view>
+		</uni-section>
+
+		<uni-section title="自定义样式" type="line" padding>
+			<view class="example-body">
+				<uni-badge class="uni-badge-left-margin" text="2" type="primary"
+					:customStyle="{background: '#4335d6'}" />
+				<uni-badge class="uni-badge-left-margin" text="2" type="primary" :customStyle="customStyle" />
+			</view>
+		</uni-section>
+
+		<uni-section title="定位: aboslute 属性" subTitle="注：在安卓端不支持 nvue" type="line" padding>
+				<uni-badge class="uni-badge-left-margin" :text="value" absolute="rightTop" size="small">
+					<view class="box"><text class="box-text">右上</text></view>
+				</uni-badge>
+		</uni-section>
+
+		<uni-section title="偏移: offset 属性(存在 aboslute)" type="line" padding>
+			<uni-badge class="uni-badge-left-margin" :text="8" absolute="rightTop" :offset="[-3, -3]" size="small">
+				<view class="box"><text class="box-text">右上</text></view>
+			</uni-badge>
+		</uni-section>
+		<uni-section title="仅显示点: is-dot 属性" type="line" padding>
+			<uni-badge class="uni-badge-left-margin" :is-dot="true" :text="value" absolute="rightTop" size="small">
+				<view class="box"><text class="box-text">圆点</text></view>
+			</uni-badge>
+		</uni-section>
+	</view>
+</template>
+
+<script>
+	export default {
+		components: {},
+		data() {
+			return {
+				value: 0,
+				customStyle: {
+					backgroundColor: '#62ed0d',
+					color: '#fff'
+				}
+			};
+		},
+		mounted() {
+			const timer = setInterval(() => {
+				if (this.value >= 199) {
+					clearInterval(timer)
+					return
+				}
+				this.value++
+			}, 100)
+		}
+	};
+</script>
+
+<style lang="scss">
+	/* #ifdef MP-ALIPAY */
+	.uni-badge {
+		margin-left: 20rpx;
+	}
+
+	/* #endif */
+	.example-body {
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	.uni-badge-left-margin {
+		margin-left: 10px;
+	}
+
+	.uni-badge-absolute {
+		margin-left: 40px;
+	}
+
+	.box {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		background-color: #DCDFE6;
+		color: #fff;
+		font-size: 12px;
+	}
+
+	.box-text {
+		text-align: center;
+		color: #fff;
+		font-size: 12px;
+	}
+</style>
+
+:::
+

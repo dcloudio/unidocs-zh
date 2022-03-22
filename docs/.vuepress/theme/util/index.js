@@ -1,5 +1,7 @@
 import Vue from 'vue';
 
+export * from './searchUtils';
+
 export const isServer = Vue.prototype.$isServer
 export const hashRE = /#.*$/
 export const extRE = /\.(md|html)$/
@@ -287,4 +289,17 @@ export const BaiduStat = () => {
   hm.src = "https://hm.baidu.com/hm.js?fe3b7a223fc08c795f0f4b6350703e6f";
   const s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
+}
+
+export function debounce(fn, delay) {
+  let timeout
+  const newFn = function () {
+    clearTimeout(timeout)
+    const timerFn = () => fn.apply(this, arguments)
+    timeout = setTimeout(timerFn, delay)
+  }
+  newFn.cancel = function () {
+    clearTimeout(timeout)
+  }
+  return newFn
 }

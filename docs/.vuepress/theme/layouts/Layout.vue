@@ -4,6 +4,7 @@
     :class="pageClasses"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
+    @keydown.ctrl="openSearch = true"
   >
     <Navbar
       v-if="shouldShowNavbar"

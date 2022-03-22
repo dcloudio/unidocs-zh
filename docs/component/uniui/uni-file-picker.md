@@ -1,17 +1,20 @@
 
-> **组件名：uni-file-picker**
+::: tip 组件名：uni-file-picker
 >  代码块： `uFilePicker`
-> 
->  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-file-picker)
+
+[点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-file-picker)
+::: 
 
 文件选择上传组件，可以选择图片、视频等任意文件并上传到当前绑定的服务空间
 
-> **注意事项**
+## 介绍 
+::: warning 注意事项
 > 为了避免错误使用，给大家带来不好的开发体验，请在使用组件前仔细阅读下面的注意事项，可以帮你避免一些错误。
-> - 组件需要依赖 `sass` 插件 ，请自行手动安装
-> - 如不绑定服务空间，`autoUpload`默认为`false`且不可更改
-> - 选择文件目前只支持 `H5` 和 `微信小程序平台` ，且 `微信小程序平台` 使用 `wx.chooseMessageFile()`
-> - v-model 值需要自动上传成功后才会绑定值，一般只用来回显数据
+- 组件需要依赖 `sass` 插件 ，请自行手动安装
+- 如不绑定服务空间，`autoUpload`默认为`false`且不可更改
+- 选择文件目前只支持 `H5` 和 `微信小程序平台` ，且 `微信小程序平台` 使用 `wx.chooseMessageFile()`
+- v-model 值需要自动上传成功后才会绑定值，一般只用来回显数据
+:::
 
 ### 基础用法
 
@@ -25,10 +28,8 @@
 	@success="success" 
 	@fail="fail" 
 />
-```
-
-```javascript
-export default {
+<script>
+	export default {
 		data() {
 			return {
 				imageValue:[]
@@ -54,8 +55,8 @@ export default {
 				console.log('上传失败：',e)
 			}
 		}
-}
-
+	}
+</script>
 ```
 
 ### 选择指定后缀图片，且限制选择个数
@@ -88,21 +89,22 @@ export default {
 配置 `auto-upload` 属性为 `false` ，可以停止自动上传，通过`ref`调用`upload`方法自行选择上传时机
 
 ```html
-<view>
-	<uni-file-picker  ref="files" :auto-upload="false"/>
-	<button @click="upload">上传文件</button>
-</view>
-```
-
-```javascript
-export default {
+<template>
+	<view>
+		<uni-file-picker  ref="files" :auto-upload="false"/>
+		<button @click="upload">上传文件</button>
+	</view>
+</template>
+<script>
+	export default {
 		data() {},
 		methods:{
 			upload(){
 				this.$refs.files.upload()
 			}
 		}
-}
+	}
+</script>
 
 ```
 
@@ -131,14 +133,14 @@ export default {
 配置 `list-styles` 属性，可以自定义`mode:video|| mode:all`时的回显样式
 
 ```html
-<view>
-	<uni-file-picker fileMediatype="image" :image-styles="imageStyles"/>
-	<uni-file-picker fileMediatype="all" :list-styles="listStyles"/>
-</view>
-```
-
-```javascript
-export default {
+<template>
+	<view>
+		<uni-file-picker fileMediatype="image" :image-styles="imageStyles"/>
+		<uni-file-picker fileMediatype="all" :list-styles="listStyles"/>
+	</view>
+</template>
+<script>
+	export default {
 		data() {
 			imageStyles:{
 				width:64,
@@ -163,7 +165,8 @@ export default {
 				}
 			}
 		}
-}
+	}
+</script>
 
 ```
 
@@ -293,9 +296,132 @@ export default {
 |default|默认插槽|
 
 
+## 示例
+::: warning 注意
+示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
+
+请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-file-picker) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+:::
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/file-picker/file-picker
+> Template
+``` html
+<template>
+	<view class="container">
+		<uni-card :is-shadow="false" is-full>
+			<text class="uni-h6">文件选择上传组件，可以选择图片、视频等任意文件并上传到当前绑定的服务空间。</text>
+		</uni-card>
+		<uni-section title="只选择图片" type="line">
+			<view class="example-body">
+				<uni-file-picker limit="9" title="最多选择9张图片"></uni-file-picker>
+			</view>
+		</uni-section>
+		<uni-section title="只选择视频" type="line">
+			<view class="example-body">
+				<uni-file-picker limit="9" file-mediatype="video" title="最多选择9个视频"></uni-file-picker>
+			</view>
+		</uni-section>
 
 
+		<!-- #ifdef H5 || MP-WEIXIN -->
+		<uni-section title="选择任意文件" type="line">
+			<view class="example-body">
+				<uni-file-picker limit="5" file-mediatype="all" title="最多选择5个文件"></uni-file-picker>
+			</view>
+		</uni-section>
+		<!-- #endif -->
 
-## 组件示例
+		<uni-section title="自定义图片大小" type="line">
+			<view class="example-body custom-image-box">
+				<text class="text">选择头像</text>
+				<uni-file-picker limit="1" :del-icon="false" disable-preview :imageStyles="imageStyles"
+					file-mediatype="image">选择</uni-file-picker>
+			</view>
+		</uni-section>
 
-点击查看：[https://hellouniapp.dcloud.net.cn/pages/extUI/file-picker/file-picker](https://hellouniapp.dcloud.net.cn/pages/extUI/file-picker/file-picker)
+		<uni-section title="自定义图片大小" type="line">
+			<view class="example-body ">
+				<uni-file-picker readonly :value="fileLists" :imageStyles="imageStyles" file-mediatype="image">
+				</uni-file-picker>
+				<uni-file-picker readonly :value="fileLists" :listStyles="listStyles" file-mediatype="all">
+				</uni-file-picker>
+			</view>
+		</uni-section>
+
+	</view>
+</template>
+``` 
+> Script
+``` html
+<script>
+	export default {
+		data() {
+			return {
+				imageStyles: {
+					width: 64,
+					height: 64,
+					border: {
+						radius: '50%'
+					}
+				},
+				listStyles: {
+					// 是否显示边框
+					border: true,
+					// 是否显示分隔线
+					dividline: true,
+					// 线条样式
+					borderStyle: {
+						width: 1,
+						color: 'blue',
+						style: 'dashed',
+						radius: 2
+					}
+				},
+				fileLists: [{
+					url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/b7c7f970-517d-11eb-97b7-0dc4655d6e68.jpg',
+					extname: 'png',
+					name: 'shuijiao.png'
+				}, {
+					url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/b7c7f970-517d-11eb-97b7-0dc4655d6e68.jpg',
+					extname: 'png',
+					name: 'uniapp-logo.png'
+				}, {
+					url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/b7c7f970-517d-11eb-97b7-0dc4655d6e68.jpg',
+					extname: 'png',
+					name: 'shuijiao.png'
+				}]
+			}
+		},
+		methods: {
+
+		}
+	}
+</script>
+``` 
+> Style
+``` html
+<style lang="scss">
+	.example-body {
+		padding: 10px;
+		padding-top: 0;
+	}
+
+	.custom-image-box {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.text {
+		font-size: 14px;
+		color: #333;
+	}
+</style>
+
+```
+:::
+
+[完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/file-picker/file-picker)

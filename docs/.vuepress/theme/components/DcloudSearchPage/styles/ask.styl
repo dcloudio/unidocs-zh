@@ -1,0 +1,52 @@
+#search-container
+  .aw-item
+    $padding-n = 25px
+    padding $padding-n $padding-n ($padding-n - 10px) $padding-n
+
+    @media (max-width $MQMobile)
+      &
+        padding: $padding-n - 10px $padding-n - 10px 5px $padding-n - 10px
+
+    &:not(:last-child)
+      border-bottom 1px solid #eee
+
+    &:first-child
+      margin-top 0 !important
+
+    a
+      text-decoration none
+      color inherit
+      font-weight 400
+
+    p
+      margin 0 0 10px
+
+  .tip-recommend
+    background-color #22ac38
+    color #ffffff
+    padding 2px 5px
+    border-radius 3px
+    margin-right 10px
+    font-size 12px
+
+  .aw-title a
+    text-decoration underline
+    font-size 16px
+
+  .aw-hide-text
+    font-size 12px
+    color #828288
+
+    .aw-search-result-tags
+      background-color #ffffff
+      color #ef5656
+      margin-right 10px
+
+  .aw-search-body
+    font-size 14px
+    color #666
+
+  em
+    font-weight bold
+    font-style normal
+    color $accentColor

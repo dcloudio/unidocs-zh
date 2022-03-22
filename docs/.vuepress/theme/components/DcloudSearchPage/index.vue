@@ -16,11 +16,23 @@
 								class="search-input"
 								:placeholder="placeholder"
 								type="text"
-								@keydown.enter="resetSearchPage, search"
+								@keydown.enter="
+									() => {
+										resetSearchPage();
+										search();
+									}
+								"
 								v-model="searchValue"
 							/>
 							<span class="search-input-btn">
-								<button @click="resetSearchPage, search">
+								<button
+									@click="
+										() => {
+											resetSearchPage();
+											search();
+										}
+									"
+								>
 									<svg
 										width="16"
 										height="16"
@@ -65,7 +77,8 @@
 		</div>
 
 		<div class="result-number">
-			<span>{{ resultText }}</span>
+			<span v-if="showLoading" class="uni-loading"></span>
+			<span v-else>{{ resultText }}</span>
 		</div>
 
 		<div class="search-result">
@@ -112,6 +125,10 @@
 					:curPage="curPage"
 					:pageSize="pageSize"
 				/>
+				<a v-if="showMoreAsk" class="search-more" @click="moreAskResult">
+					<span v-if="showAskLoading" class="uni-loading"></span>
+					<span v-else>更多...</span>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -154,7 +171,11 @@
 				searchValue: '',
 				category: Object.freeze([
 					{
-						text: '文档规范',
+						text: 'uni-app',
+						type: 'algolia',
+					},
+					{
+						text: 'uniCloud',
 						type: 'algolia',
 					},
 					{
@@ -182,6 +203,8 @@
 				resultList: [],
 				noResult: false,
 				serverHtml: '',
+				showLoading: false,
+				showAskLoading: false,
 
 				searchPage: 0, // 跳转页数
 				curHits: 0, // 当前搜索结果总条数
@@ -198,13 +221,21 @@
 			isAlgolia() {
 				return this.currentCategory.type === 'algolia';
 			},
+			isAsk() {
+				return this.currentCategory.tag === 'ask';
+			},
 			showPagination() {
 				return !!(this.resultList.length && this.totalPage > 1 && this.isAlgolia);
+			},
+			showMoreAsk() {
+				return this.isAsk && this.serverHtml;
 			},
 			resultText() {
 				return this.noResult
 					? `没有找到${this.currentCategory.text}相关内容`
-					: `${this.curHits}个相关结果`;
+					: !this.isAsk
+					? `${this.curHits}个相关结果`
+					: `以下为${this.currentCategory.text}相关内容`;
 			},
 		},
 
@@ -245,7 +276,9 @@
 			initResultWrapHeight() {
 				const pageHeight = this.$el.clientHeight;
 				const searchNavbarHeight = document.querySelector('.search-navbar').clientHeight;
-				const resultNumberHeight = document.querySelector('.result-number').clientHeight;
+				const resultNumberHeight = (
+					document.querySelector('.result-number') || { clientHeight: 47 }
+				).clientHeight;
 				const algoliaLogoHeight = (document.querySelector('.algolia-logo') || { clientHeight: 49 })
 					.clientHeight;
 				const searchPagination = 36;
@@ -274,8 +307,9 @@
 				const { type } = this.currentCategory;
 				switch (type) {
 					case 'algolia':
-						this.searchByAlgolia(this.searchValue, this.searchPage).then(
-							({ hitsPerPage, nbHits, nbPages, page, hits }) => {
+						this.showLoading = true;
+						this.searchByAlgolia()
+							.then(({ hitsPerPage, nbHits, nbPages, page, hits }) => {
 								this.resultList = hits.map(item => {
 									const items = item.getItems();
 									return {
@@ -289,25 +323,28 @@
 								this.pageSize = hitsPerPage;
 								this.totalPage = nbPages;
 								this.curPage = page + 1;
-							}
-						);
+							})
+							.finally(() => (this.showLoading = false));
 						break;
 					case 'server':
-						this.searchByServer(this.searchValue);
+						this.showLoading = true;
+						this.searchByServer().finally(() => (this.showLoading = false));
 						break;
 				}
 			},
 
-			searchByAlgolia(query = '', page = 0) {
+			searchByAlgolia() {
 				const { searchParameters = {} } = this.options;
 				return searchClient(
 					Object.assign({}, this.options, {
-						query,
-						page,
+						query: this.searchValue || '',
+						page: this.searchPage,
 						snippetLength: this.snippetLength,
 						searchParameters: {
 							...searchParameters,
-							facetFilters: [`lang:${this.$lang}`].concat(searchParameters.facetFilters || []),
+							facetFilters: [`lang:${this.$lang}`].concat(searchParameters.facetFilters || [], [
+								`category:${this.currentCategory.text}`,
+							]),
 						},
 						transformItems: items =>
 							items.map(item => {
@@ -322,24 +359,38 @@
 				);
 			},
 
-			async searchByServer(query = '') {
+			searchByServer(append = false) {
 				const { tag } = this.currentCategory;
-				let postResult = Promise.resolve({ html: '', hits: 0 });
+				const query = this.searchValue || '';
 
 				switch (tag) {
 					case 'ext':
-						postResult = postExt(query);
-						break;
+						return postExt(query).then(({ html, hits }) => {
+							this.serverHtml = html;
+							this.curHits = hits;
+							this.noResult = !hits;
+						});
 					case 'ask':
-						postResult = postAsk(query);
-						break;
+						append && (this.showAskLoading = true);
+						this.searchPage === 0 && (this.searchPage = 1);
+						return postAsk(query, this.searchPage)
+							.then(res => {
+								if (res) {
+									const { html, hits } = res;
+									!append ? (this.serverHtml = html) : (this.serverHtml += html);
+									this.noResult = !this.serverHtml.length;
+								} else {
+									this.serverHtml = ''
+									this.noResult = true;
+								}
+							})
+							.finally(() => (this.showAskLoading = false));
 				}
+			},
 
-				const { html, hits } = await postResult;
-
-				this.serverHtml = html;
-				this.curHits = hits;
-				this.noResult = !hits;
+			moreAskResult() {
+				this.searchPage === 0 ? (this.searchPage = 2) : this.searchPage++;
+				this.searchByServer(true);
 			},
 
 			mainNavLinkClass(index) {

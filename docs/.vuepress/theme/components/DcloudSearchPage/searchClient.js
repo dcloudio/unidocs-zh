@@ -28,6 +28,9 @@ export function search({ query, indexName, appId, apiKey, searchParameters = {},
             'content',
             'type',
             'url',
+            'url_without_anchor',
+            'category',
+            'tag'
           ],
           attributesToSnippet: [
             `hierarchy.lvl1:${snippetLength}`,

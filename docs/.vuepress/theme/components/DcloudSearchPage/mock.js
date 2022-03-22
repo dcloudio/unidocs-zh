@@ -288,5 +288,53 @@ export default {
       }
     ],
     "searchKeyword": "5Y2H57qn"
-  }
+  },
+  askHtml:`<div
+	class="aw-item active" >
+		<p class="aw-title">
+						<span class="tip-recommend">官方</span>
+				<a href="//ask.dcloud.net.cn/article/676" target="_blank"> 手机端监听<em>短信</em>验证码并自动提交表单		</a>
+			</p>
+		<p class="aw-search-body">
+		鉴定<em>短信</em>验证码仅能在App端实现，其他端无法使用。但在App端，更为合理的方式其实是使用一键登录。即无需<em>短信</em>验证码，一键登录获取真实的手机号。一键登陆的体验比<em>短信</em>验证码好很多，不需等待验证码、输入验证码，并且一键登陆的费用比<em>短信</em>便宜不少。所以*强烈推荐改用一键登陆*，uni一键登陆的文档另见：...	</p>
+	
+	<p class="aw-hide-text aw-text-color-666">
+		分类：
+				<a class="aw-search-result-tags"> 文章		</a>
+		77 个回复		•
+		32933 次查看			</p>
+			</div>
+
+<div
+	class="aw-item active" >
+		<p class="aw-title">
+						<span class="tip-recommend">官方</span>
+				<a href="//ask.dcloud.net.cn/article/37534" target="_blank"> 发送<em>短信</em>教程（验证码、<em>短信</em>通知）		</a>
+			</p>
+		<p class="aw-search-body">
+		添加模板完成后，如模板审核通过，则根据[https://uniapp.dcloud.io/uniCloud/send-<em>sms</em>](https://uniapp.dcloud.io/uniCloud/send-<em>sms</em>)进行<em>短信</em>接入。[attach]61670[/attach] 充值 <em>短信</em>验证码为预付费业务，使用<em>短信</em>验证码服务之前，需要先进行充值。点击页面上的“充值”按钮，可以选择预设金额进行充值，也可以选择自定义...	</p>
+	
+	<p class="aw-hide-text aw-text-color-666">
+		分类：
+				<a class="aw-search-result-tags"> 文章		</a>
+		60 个回复		•
+		16940 次查看			</p>
+			</div>
+
+<div
+	class="aw-item active" >
+		<p class="aw-title">
+						<span class="tip-recommend">官方</span>
+				<a href="//ask.dcloud.net.cn/article/37746" target="_blank"> 公告：<em>短信</em>模板报备通知		</a>
+			</p>
+		<p class="aw-search-body">
+		由于近期有个别开发者利用<em>短信</em>服务发送违法信息，导致【uniID】、【uni验证】等<em>短信</em>服务模板被运营商停用。为了保证其他开发者可以正常使用，即日起，开发者使用<em>短信</em>服务需要进行<em>短信</em>模板...参考文档[https://uniapp.dcloud.net.cn/uniCloud/send-<em>sms</em>](https://uniapp.dcloud.net.cn/uniCloud/send-<em>sms</em>)更新发送<em>短信</em>相关代码。	</p>
+	
+	<p class="aw-hide-text aw-text-color-666">
+		分类：
+				<a class="aw-search-result-tags"> 文章		</a>
+		43 个回复		•
+		3276 次查看			</p>
+			</div>
+`
 }

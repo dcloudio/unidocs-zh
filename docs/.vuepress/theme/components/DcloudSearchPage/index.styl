@@ -1,6 +1,9 @@
 $svg-color = #b1b2b3
 $svg-hover-color = #9b9b9b
 
+@import './styles/ext.styl'
+@import './styles/ask.styl'
+
 #search-container
   position relative
   overflow auto
@@ -109,6 +112,10 @@ $svg-hover-color = #9b9b9b
     align-items center
     padding-top 20px
     font-size 20px
+    
+    .uni-loading
+      width 27px
+      height 27px
 
     .DocSearch-Logo
       font-size 16px
@@ -128,6 +135,16 @@ $svg-hover-color = #9b9b9b
     display flex
     justify-content center
     padding 10px 0 20px
+
+  .search-more
+    display block
+    text-align center
+    padding 10px 0
+    color inherit
+    cursor pointer
+
+    &:hover
+      color $accentColor
 
 @media (max-width $MQMobile)
   #search-container
@@ -154,81 +171,3 @@ $svg-hover-color = #9b9b9b
 
     .search-result-aside
       display none
-
-#search-container
-  .search-result-aside
-    height 100px
-    position absolute
-    top 80px
-    right 100px
-
-    .search-result-aside-link
-      display flex
-      flex-direction column
-      justify-content center
-      align-items flex-start
-
-  .markdown-section
-    margin-top 20px
-    background-color #fff
-    padding 10px
-
-    .matching-post
-      $padding-n = 25px
-      padding $padding-n $padding-n 10px $padding-n
-
-      &:not(:last-child)
-        border-bottom 1px solid #eee
-
-      &:first-child
-        margin-top 0 !important
-
-      a
-        text-decoration none
-        color inherit
-        font-weight 400
-
-        &:hover
-          color $accentColor
-
-      .post-wrapper
-        display flex
-
-        p.aw-text
-          font-weight normal
-          margin 0
-          display inline-flex
-
-      p
-        font-size 14px
-        overflow hidden
-        text-overflow ellipsis
-        display -webkit-box
-        -webkit-line-clamp 2
-        -webkit-box-orient vertical
-
-      .post-tag
-        background-color #f0f0f0
-        font-size 13px
-        padding 2px 4px
-        color #999
-        border-radius 3px
-        margin-right 5px
-
-      .matching-post h2
-        margin-top 0
-        padding-top 0
-
-      h2
-        color #2c3e50
-        font-size 17px
-        margin 0
-        padding 0
-        display inline-block
-        font-weight 600
-        border none
-
-      .search-keyword
-        font-style normal
-        font-weight 700
-        color $accentColor

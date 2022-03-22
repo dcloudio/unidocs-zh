@@ -39,31 +39,22 @@ export async function postExt(query) {
   }
 }
 
-export async function postAsk(query) {
+export async function postAsk(query, page = 1) {
   const base = isProduction ? '//ask.dcloud.net.cn' : '/ask'
-  let ret
+  let askHtml = '';
+
   if (!isMock) {
-    const res = await ajax(base + '/search/ajax/search_result/search_type-doc__q-' + query + '__page-1')
-    if (!res) {
+    askHtml = await ajax(base + `/search/ajax/search_result/search_type-all__q-${query}__page-${page}`)
+    if (!askHtml) {
       return;
     }
-    ret = JSON.parse(res);
   } else {
-    ret = mock.ask
-  }
-  if (ret.code !== 0) {
-    checkEmpty()
-    return;
+    askHtml = mock.askHtml
   }
 
-  let data = ret.data;
-  let askHtml = '';
-  data.forEach(function (item) {
-    askHtml += _renderPost(item, query);
-  });
   return {
     html: askHtml,
-    hits: data.length
+    hits: 0
   }
 }
 

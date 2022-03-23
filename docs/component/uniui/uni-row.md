@@ -1,5 +1,5 @@
 
-::: tip组件名 uni-row、uni-col
+::: tip 组件名 uni-row、uni-col
 > 代码块： `uRow`、`uCol`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-row)

@@ -131,7 +131,7 @@
 #### 16、离线打包自定义DCloudApplication，初始化其他三方SDK如何处理合规问题
 
 + 我们推荐将三方SDK集成方式改为原生插件集成到离线打包中。通过UniAppHookProxy生命周期回调初始化SDK即可无需关心合规问题。
-+ 如果开发者同学一定要在Application中初始化三方SDK。可以在Application的onCreate回调中添加初始化逻辑。但前台是需要在super.onCreate()之后调用。并使用SDK.isAgreePrivacy(Context)获取当前隐私协议状态特殊处理。
++ 如果开发者同学一定要在Application中初始化三方SDK。可以在Application的onCreate回调中添加初始化逻辑。但前提是需要在super.onCreate()之后调用。并使用SDK.isAgreePrivacy(Context)获取当前隐私协议状态特殊处理。
 ```
 public class MyApplication extends DCloudApplication {
 	@Override

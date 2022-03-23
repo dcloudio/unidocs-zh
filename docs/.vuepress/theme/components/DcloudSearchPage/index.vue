@@ -126,8 +126,8 @@
 					:pageSize="pageSize"
 				/>
 				<a v-if="showMoreAsk" class="search-more" @click="moreAskResult">
-					<span v-if="showAskLoading" class="uni-loading"></span>
-					<span v-else>更多...</span>
+					<span v-if="showServerLoading" class="uni-loading"></span>
+					<span v-else>{{ hasNoMoreServerResult ? '没有更多了' : '更多...' }}</span>
 				</a>
 			</div>
 		</div>
@@ -204,7 +204,8 @@
 				noResult: false,
 				serverHtml: '',
 				showLoading: false,
-				showAskLoading: false,
+				showServerLoading: false,
+				hasNoMoreServerResult: false,
 
 				searchPage: 0, // 跳转页数
 				curHits: 0, // 当前搜索结果总条数
@@ -371,24 +372,34 @@
 							this.noResult = !hits;
 						});
 					case 'ask':
-						append && (this.showAskLoading = true);
+						append && (this.showServerLoading = true);
 						this.searchPage === 0 && (this.searchPage = 1);
 						return postAsk(query, this.searchPage)
 							.then(res => {
 								if (res) {
-									const { html, hits } = res;
-									!append ? (this.serverHtml = html) : (this.serverHtml += html);
+									const { html = '', hits } = res;
+									if (append) {
+										this.serverHtml += html;
+									} else {
+										this.hasNoMoreServerResult = false;
+										this.serverHtml = html;
+									}
 									this.noResult = !this.serverHtml.length;
 								} else {
-									this.serverHtml = ''
-									this.noResult = true;
+									if (append) {
+										this.hasNoMoreServerResult = true;
+									} else {
+										this.serverHtml = '';
+										this.noResult = true;
+									}
 								}
 							})
-							.finally(() => (this.showAskLoading = false));
+							.finally(() => (this.showServerLoading = false));
 				}
 			},
 
 			moreAskResult() {
+				if (this.hasNoMoreServerResult) return;
 				this.searchPage === 0 ? (this.searchPage = 2) : this.searchPage++;
 				this.searchByServer(true);
 			},

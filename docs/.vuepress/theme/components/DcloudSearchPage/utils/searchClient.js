@@ -1,5 +1,5 @@
 import algoliasearch from 'algoliasearch/dist/algoliasearch-lite.esm.browser';
-import { removeHighlightTags, groupBy } from '../../util'
+import { removeHighlightTags, groupBy } from './searchUtils'
 
 let searchClient
 function createSearchClient(appId, apiKey) {
@@ -10,7 +10,7 @@ function createSearchClient(appId, apiKey) {
   return searchClient
 }
 
-export function search({ query, indexName, appId, apiKey, searchParameters = {}, snippetLength = 0, transformItems = () => { }, ...args }) {
+export function search({ query, indexName, appId, apiKey, searchParameters = {}, snippetLength = 0, transformItems = () => { }, onClose = () => { }, ...args }) {
   return createSearchClient(appId, apiKey)
     .search([
       {
@@ -65,9 +65,9 @@ export function search({ query, indexName, appId, apiKey, searchParameters = {},
               onSelect({ item, event }) {
                 // saveRecentSearch(item);
 
-                // if (!event.shiftKey && !event.ctrlKey && !event.metaKey) {
-                //   onClose();
-                // }
+                if (!event.shiftKey && !event.ctrlKey && !event.metaKey) {
+                  onClose()
+                }
               },
               getItemUrl({ item }) {
                 return item.url;

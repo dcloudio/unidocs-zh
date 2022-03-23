@@ -1,6 +1,6 @@
 <template>
 	<li :class="li_class">
-		<a :href="item.url" @click="onSearchClose">
+		<a :href="item.url">
 			<div class="DocSearch-Hit-Container">
 				<div
 					class="DocSearch-Hit-content-wrapper"
@@ -44,7 +44,6 @@
 		data() {
 			return {};
 		},
-		inject: ['onSearchClose'],
 		props: {
 			item: {
 				type: Object,
@@ -76,51 +75,51 @@
 	};
 </script>
 <style lang="stylus">
-.DocSearch-Hit
-  border-radius 0px
-  display flex
-  padding-bottom 0px
-  position relative
+	.DocSearch-Hit
+	  border-radius 0px
+	  display flex
+	  padding-bottom 0px
+	  position relative
 
-  &:not(:first-child)
-    border-top 1px solid #f5f6f7
+	  &:not(:first-child)
+	    border-top 1px solid #f5f6f7
 
-  a
-    background var(--docsearch-hit-background)
-    border-radius 0px
-    // box-shadow var(--docsearch-hit-shadow)
-    box-shadow none
-    display block
-    padding-left var(--docsearch-spacing)
-    width 100%
+	  a
+	    background var(--docsearch-hit-background)
+	    border-radius 0px
+	    // box-shadow var(--docsearch-hit-shadow)
+	    box-shadow none
+	    display block
+	    padding-left var(--docsearch-spacing)
+	    width 100%
 
-  .DocSearch-Hit-Container
-    align-items center
-    color #444950
-    display flex
-    flex-direction row
-    height 56px
-    padding 0 12px 0 0
+	  .DocSearch-Hit-Container
+	    align-items center
+	    color #444950
+	    display flex
+	    flex-direction row
+	    height 56px
+	    padding 0 12px 0 0
 
-  .DocSearch-Hit-content-wrapper
-    overflow hidden
-    display flex
-    flex 1 1 auto
-    flex-direction column
-    font-weight 500
-    justify-content center
-    line-height 1.2em
-    margin 0 8px
-    overflow-x hidden
-    position relative
-    text-overflow ellipsis
-    white-space nowrap
-    width 80%
+	  .DocSearch-Hit-content-wrapper
+	    overflow hidden
+	    display flex
+	    flex 1 1 auto
+	    flex-direction column
+	    font-weight 500
+	    justify-content center
+	    line-height 1.2em
+	    margin 0 8px
+	    overflow-x hidden
+	    position relative
+	    text-overflow ellipsis
+	    white-space nowrap
+	    width 80%
 
-    .DocSearch-Hit-title
-      font-size 0.9em
+	    .DocSearch-Hit-title
+	      font-size 0.9em
 
-    .DocSearch-Hit-path
-      // color $accentColor
-      font-size 0.75em
+	    .DocSearch-Hit-path
+	      // color $accentColor
+	      font-size 0.75em
 </style>

@@ -9,7 +9,12 @@
 
 		<ul id="docsearch-list">
 			<template v-for="(item, index) in results">
-				<Result :key="[title, item.objectID].join(':')" :item="item" :index="index" />
+				<Result
+					:key="[title, item.objectID].join(':')"
+					:item="item"
+					:index="index"
+					@click.native="event => onSelect({ item, event })"
+				/>
 			</template>
 		</ul>
 	</section>
@@ -29,6 +34,10 @@
 			results: {
 				type: Array,
 				default: [],
+			},
+			onSelect: {
+				type: Function,
+				default: () => {},
 			},
 		},
 		computed: {

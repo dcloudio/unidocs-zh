@@ -85,7 +85,12 @@
 			<div class="result-wrap">
 				<template v-if="isAlgolia">
 					<template v-for="item in resultList">
-						<Results :key="item.id" :title="item.title" :results="item.items" />
+						<Results
+							:key="item.sourceId"
+							:title="item.title"
+							:results="item.items"
+							:onSelect="item.onSelect"
+						/>
 					</template>
 				</template>
 
@@ -139,9 +144,10 @@
 	import Results from './components/Results.vue';
 	import pagination from './components/pagination.vue';
 	import MainNavbarLink from '../MainNavbarLink.vue';
-	import { search as searchClient } from './searchClient';
-	import { postExt, postAsk } from './postDcloudServer';
-	import { forbidScroll, removeHighlightTags, debounce, isEditingContent } from '../../util';
+	import { search as searchClient } from './utils/searchClient';
+	import { postExt, postAsk } from './utils/postDcloudServer';
+	import { forbidScroll, debounce } from '../../util';
+	import { removeHighlightTags, isEditingContent } from './utils/searchUtils';
 
 	const resolveRoutePathFromUrl = (url, base = '/') =>
 		url
@@ -156,12 +162,6 @@
 		props: ['options'],
 
 		components: { NavbarLogo, Results, pagination, MainNavbarLink },
-
-		provide() {
-			return {
-				onSearchClose: this.onSearchClose,
-			};
-		},
 
 		data() {
 			return {
@@ -314,7 +314,7 @@
 								this.resultList = hits.map(item => {
 									const items = item.getItems();
 									return {
-										id: item.sourceId,
+										...item,
 										title: removeHighlightTags(items[0]),
 										items,
 									};
@@ -356,6 +356,7 @@
 									url: resolveRoutePathFromUrl(item.url, this.$site.base),
 								};
 							}),
+						onClose: this.onSearchClose,
 					})
 				);
 			},

@@ -289,7 +289,7 @@ export default {
     ],
     "searchKeyword": "5Y2H57qn"
   },
-  askHtml:`<div
+  askHtml: `<div
 	class="aw-item active" >
 		<p class="aw-title">
 						<span class="tip-recommend">官方</span>
@@ -336,5 +336,99 @@ export default {
 		43 个回复		•
 		3276 次查看			</p>
 			</div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 plugin-li" data="4542">
+	<div class="row extend-list card has-preview-img">
+		<div class="col-sm-3 col-md-3 col-lg-3 preview-img should-pop" style="width: 20%;" data-toggle="popover" data-src="//img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/3c30aa60-8d63-11eb-9913-cd96a30ab764_0.jpg?image_process=quality,q_70&amp;v=1641979438" data-original-title="" title="">
+			<a href="https://ext.dcloud.net.cn/plugin?id=4542" target="_blank">
+				<img src="//img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/3c30aa60-8d63-11eb-9913-cd96a30ab764_0.jpg?image_process=quality,q_70&amp;v=1641979438">
+			</a>
+		</div>
+		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 plugin-info">
+			<div class="row extend-list-header">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+					<h2 class="extend-title elip">
+						<a href="https://ext.dcloud.net.cn/plugin?id=4542" target="_blank"> <em>升级中心</em> uni-upgrade-center-App </a>
+					</h2>
+				</div>
+				<div class="collection col-xs-6 col-sm-6 col-md-2 col-lg-2 pull-right ext-slg">
+					<a href="https://ext.dcloud.net.cn/plugin?id=4542" target="_blank" style="color: #ef5656;">
+						<img src="//img-cdn-aliyun.dcloud.net.cn/dev/img/ext/collection-small.png">&nbsp;收藏&nbsp;<span class="collection-list-total-4542">385</span>
+					</a>
+				</div>
+				<div class="support col-xs-6 col-sm-6 col-md-2 col-lg-2 pull-right ext-slg">
+					<a href="https://ext.dcloud.net.cn/plugin?id=4542" target="_blank" style="color: #ef5656;">
+						<img src="//img-cdn-aliyun.dcloud.net.cn/dev/img/ext/heart.png">&nbsp;赞赏&nbsp;3					</a>
+				</div>
+				<div class="download col-xs-6 col-sm-6 col-md-2 col-lg-2 pull-right ext-slg">
+					<a href="https://ext.dcloud.net.cn/plugin?id=4542" target="_blank" style="color: #4e92df;">
+						<img src="//img-cdn-aliyun.dcloud.net.cn/dev/img/ext/download.png">&nbsp;下载&nbsp;11539					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<a href="https://ext.dcloud.net.cn/plugin?id=4542" target="_blank">
+						<span class="extend-list-desc">
+							uni<em>升级中心</em>-客户端检查更新						</span>
+					</a>
+				</div>
+			</div>
+			<div class="row rating" title="评分: 4.8 （129人评分）">
+				<div class="col-xs-12">
+					<div class="star-rating">
+						<div class="star-rating-top" style="width:95%">
+							<span class="glyphicon"></span>
+							<span class="glyphicon"></span>
+							<span class="glyphicon"></span>
+							<span class="glyphicon"></span>
+							<span class="glyphicon"></span>
+						</div>
+						<div class="star-rating-bottom">
+							<span class="glyphicon"></span>
+							<span class="glyphicon"></span>
+							<span class="glyphicon"></span>
+							<span class="glyphicon"></span>
+							<span class="glyphicon"></span>
+						</div>
+					</div>
+					<span class="star-rating-text">（129）</span>
+				</div>
+			</div>
+			<div class="row extend-list-tag">
+				<div class="col-xs-12">
+
+										<a class="badge bg-orange" href="javascript:;">uni_modules</a>
+					
+					
+										<a class="badge bg-green" href="javascript:;">uniCloud</a>
+										<a class="badge bg-green" href="javascript:;">update</a>
+										<a class="badge bg-green" href="javascript:;">升级</a>
+										<a class="badge bg-green" href="javascript:;">wgt</a>
+					
+				</div>
+			</div>
+
+			<div class="row extend-list-more">
+				<div class="categorys col-xs-12 col-sm-6 col-md-4 col-lg-4" style="width:60%">
+					分类：<a href="javascript:;">uniCloud</a> /
+					<a href="javascript:;">云端一体页面模板</a>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="width:30%">
+					更新日期：2022-01-12</div>
+
+
+				<div class="extend-list-user col-md-4 col-lg-4" style="width: 10%">
+					<a href="https://ext.dcloud.net.cn/publisher?id=586192">
+						<img class="avatar pull-right" src="https://img-cdn-tc.dcloud.net.cn/uploads/avatar/001/67/43/81_avatar_max.jpg" alt="DCloud前端团队">
+						<span class="pull-right"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="plugin-action" style="display: none;">
+			<div class="plugin-like-btn " onclick="collection(this, 4542)">收藏</div>
+		</div>
+	</div>
+</div>
 `
 }

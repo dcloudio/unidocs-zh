@@ -109,6 +109,7 @@ export default {
 |:-|:-|
 |image|只能拍摄图片或从相册选择图片|
 |video|只能拍摄视频或从相册选择视频	|
+|mix|	可同时选择图片和视频	|
 
 **OBJECT.sourceType 合法值**
 
@@ -129,7 +130,7 @@ export default {
 |参数名|类型|说明|
 |:-|:-|:-|
 |tempFiles|Array.&lt;string&gt;|本地临时文件列表|
-|type|String|文件类型，有效值有 image 、video|
+|type|String|文件类型，有效值有 image 、video、mix|
 
 **res.tempFiles 的结构**
 
@@ -141,6 +142,14 @@ export default {
 |height						|Number	|视频的高度									|
 |width						|Number	|视频的宽度									|
 |thumbTempFilePath|String	|视频缩略图临时文件路径			|
+|fileType|String	|文件类型			|
+
+**fileType 合法值**
+
+|值|说明|
+|:-|:-|
+|image|图片|
+|video|视频|
 
 
 **示例**

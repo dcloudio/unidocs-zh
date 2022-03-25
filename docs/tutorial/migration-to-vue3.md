@@ -413,4 +413,4 @@
   - vue3 支持的手机版本最低到多少？
     > vue3 支持的范围是：Android > 4.4, ios >= 10
   
-  - vue3 nvue 暂不支持 recycle-list
+  - vue3 nvue 暂不支持 recycle-list 组件

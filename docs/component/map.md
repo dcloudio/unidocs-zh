@@ -46,7 +46,7 @@
 |enable-poi|Boolean|false|是否展示 POI 点|App-nvue 3.1.0+|
 |enable-building|Boolean|false|是否展示建筑物|App-nvue 3.1.0+ 支持 (**废除原enable-3D属性 高德地图默认开启建筑物就是3D无法设置**)|
 |show-location|Boolean||显示带有方向的当前定位点|微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
-|polygons|Array.`<polygon>`||多边形|App-vue 3.4.3+、App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
+|polygons|Array.`<polygon>`||多边形|App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序、支付宝小程序|
 |enable-indoorMap|Boolean|false|是否展示室内地图|App-nvue 3.1.0+|
 |@markertap|EventHandle||点击标记点时触发，e.detail = {markerId}|App-nvue 2.3.3+, App平台需要指定 marker 对象属性 id|
 |@labeltap|EventHandle||点击label时触发，e.detail = {markerId} |微信小程序2.9.0|
@@ -170,7 +170,7 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |strokeWidth|描边的宽度|Number|否||
 |strokeColor|描边的颜色|String|否|十六进制|
 |fillColor|填充颜色|String|否|十六进制|
-|zIndex|设置多边形 Z 轴数值|Number|否|App-vue 暂不支持|
+|zIndex|设置多边形 Z 轴数值|Number|否||
 |level|压盖关系，默认为 abovelabels|String|false|微信小程序|
 
 **circles**

@@ -146,6 +146,13 @@ public class MyApplication extends DCloudApplication {
 }
 ```
 
+#### 17、请提供64位版本软件包后再提交审核
+
++ HBuilder项目打包需要配置勾选`arm64-v8a`,默认只会集成`armeabi-v7a`
+![](https://native-res.dcloud.net.cn/uni-app/doc/app/android/stroe/qa17-1.png)
+
++ 如果有使用uni原生插件。需要查看插件是否支持`arm64-v8a`！是否支持请到插件详情页里查询。如果插件详情页里没有请咨询插件开发者提供信息或更换其他插件。
+
 #### 看不懂文档不知道如何修改？
 
 可开通付费技术服务 参考：[https://ask.dcloud.net.cn/article/13015](https://ask.dcloud.net.cn/article/13015)

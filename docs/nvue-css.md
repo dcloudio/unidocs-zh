@@ -638,7 +638,7 @@ flex {number}：值为 number 类型。
 
 ## 阴影@boxshadow
 
-### IOS平台：阴影```box-shadow```@ios-box-shadow
+### 阴影```box-shadow```@ios-box-shadow
 
 	
 	{box-shadow:inset offset-x offset-y blur-radius color}
@@ -661,16 +661,44 @@ flex {number}：值为 number 类型。
 ```
 
 **注意**
-- 目前仅 iOS 支持 ```box-shadow``` 属性，Android 暂不支持，可以使用```elevation```或者图片代替。
 - 每个元素只支持设置一个阴影效果，不支持多个阴影同时作用于一个元素。
+- Android平台 设置```box-shadow```的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
 
 
+### Android平台：阴影@android-box-shadow
 
+#### 阴影```box-shadow```
 
+从HBuilderX3.4.3起，重新支持阴影样式(box-shadow)。修复老版本组件设置```box-shadow```后在不同系统版本出现的显示异常及闪烁问题! 但需要注意设置阴影样式(box-shadow) 的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。	
 
-### Android平台：阴影```elevation```@android-box-shadow
+	
+示例
+```JavaScript
+<template>
+	<view class="wrapper">
+		<view>
+			<view class="box">
+				<text class="title" style="text-align: center">Hello World</text>
+			</view>
+		</view>
+	</view>
+</template>
+<style>
+	.box {
+		width: 300px;
+		height: 100px;
+		background-color: #FFE4C4;
+		border-radius: 10px;
+		box-shadow: 3px 5px 2px rgb(255, 69, 0);
+		margin: 10px;//让出阴影位置
+	}
+</style>
 
-Android平台weex对阴影样式(box-shadow)支持不完善，如设置圆角边框时阴影样式显示不正常、设置动画时在Android7上显示不正常、在Android10上出现闪烁现象等。
+```
+
+#### 阴影```elevation```
+
+目前Android平台对阴影样式(box-shadow)支持的还不太完善，有设置圆角边框时阴影样式显示不正常、占用组件视图渲染区域等问题。
 
 为解决这些问题，从HBuilderX 2.4.7起，新增elevation属性（**组件的属性，不是css样式**）设置组件的层级，Number类型，层级值越大阴影越明显，阴影效果也与组件位置有关，越靠近页面底部阴影效果越明显
 
@@ -688,6 +716,7 @@ Android平台weex对阴影样式(box-shadow)支持不完善，如设置圆角边
 - 为了避免```elevation```属性的阴影效果与阴影样式(```box-shadow```)冲突，设置```elevation```属性后```box-shadow```样式失效
 - 使用```elevation```需要阴影元素的父元素大于阴影范围，否则会对阴影进行裁剪
 - IOS不支持```elevation```属性，请使用```box-shadow```设置阴影
+- 设置```box-shadow```需要当前组件让出阴影位置。否则无法正常看到阴影
 
 
 

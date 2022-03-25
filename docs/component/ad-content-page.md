@@ -34,6 +34,19 @@
 |adpid|String||uni-AD App广告位id，在[uni-AD官网](https://uniad.dcloud.net.cn/)申请广告位|仅nvue支持|
 |@load|EventHandle||广告加载成功的回调||
 |@error|EventHandle||广告加载失败的回调||
+|@start|EventHandle|开始播放时触发|3.4.3+|
+|@pause|EventHandle|暂停时触发|3.4.3+|
+|@resume|EventHandle|恢复播放时触发|3.4.3+|
+|@complete|EventHandle|播放完成时触发|3.4.3+|
+
+
+**@start @pause @resume @complete回调参数说明**
+
+|字段名|说明|
+|:-|:-|
+|id|唯一标识|
+|type|0未知类型  1 普通信息流  2 sdk内部广告 3第三方广告 4 直播 duration ：视频总时长|
+|duration|时长|
 
 
 HBuilder 基座的测试广告位 `adpid` 为 `1111111112`

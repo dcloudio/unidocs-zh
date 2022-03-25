@@ -202,14 +202,16 @@ view.boundingClientRect(data => {
         }
       }
     },
-    onReady () {
-      const result = dom.getComponentRect(this.$refs.box, option => {
-        console.log('getComponentRect:', option)
-        this.size = option.size
-      })
-      console.log('return value:', result)
-      console.log('viewport:', dom.getComponentRect('viewport'))
-    }
+    onReady() {
+    	 setTimeout(()=> {
+	        const result = dom.getComponentRect(this.$refs.box, option => {
+		    console.log('getComponentRect:', option)
+		    this.size = option.size
+		})
+		console.log('return value:', result)
+		console.log('viewport:', dom.getComponentRect('viewport'))
+	 }, 100);
+     }
   }
 </script>
 ```

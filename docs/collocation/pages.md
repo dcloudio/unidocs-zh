@@ -185,14 +185,14 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 - 目前 style 节点仅支持配置 width，height 等 css 样式相关属性
 - 如果需求当存在 topwindow 时，自动隐藏页面的 navigationBar，根据需求不同在`App.vue`中配置如下 css：
   - 只需要隐藏某个的页面 navigationBar
-	```html
+	```css
 	<!-- 隐藏路径为 pages/component/view/view 页面的 navigationBar -->
 	.uni-app--showtopwindow [data-page="pages/component/view/view"] uni-page-head {
 		display: none;
 	}
 	```
   - 需要隐藏大部分页面的 navigationBar，显示某个页面的 navigationBar 
-	```html
+	```css
 	<!-- 隐藏所有页面的 navigationBar -->
 	.uni-app--showtopwindow uni-page-head {
 		display: none;

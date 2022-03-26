@@ -460,7 +460,7 @@ HBuilderX 3.1.0之前版本如使用阿里云，请在客户端通过`uniCloud.u
 
 | 字段				| 类型	| 必填| 说明																															|
 | ---					| ---		| ---	| ---																																|
-| cloudPath		| string| 是	| 文件的绝对路径，包含文件名。例如 foo/bar.jpg、foo/bar/baz.jpg 等。|
+| cloudPath		| string| 是	| 文件的名字（包含文件名）|
 | fileContent	| -			| 是	| 文件内容，请看下方说明																						|
 
 **说明**

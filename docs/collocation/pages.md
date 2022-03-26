@@ -906,7 +906,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 
 如果需要匹配node_modules内的vue文件，需要使用`packageName/path/to/vue-file-$1.vue`形式的匹配规则，其中`packageName`为安装的包名，`/path/to/vue-file-$1.vue`为vue文件在包内的路径。
 
-```
+```json
 "easycom": {
   "autoscan": true,
   "custom": {

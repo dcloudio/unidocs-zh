@@ -42,7 +42,7 @@ function judgePlatform(){
 在NJS中调用Native API或从Native API返回数据到NJS时会自动转换数据类型。
 #### 类型转换表
 | 类型      |    Objective-C | Java  | JavaScript  |
-| :-------- | --------:| :--: |
+| :-------- | --------:| :--: | :--: |
 | 基本数据  | byte/short/int/long/float/double/... |  byte/short/int/long/float/double/...   |  Number  |
 | 字符      |    char            |  char      |  String  |
 | 字符串    |    NSString/@""    | String/""  |  String  |

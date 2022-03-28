@@ -40,9 +40,9 @@ uni-app的App引擎已经封装了微信、QQ、微博的分享SDK，开发者�
 |imageUrl|String|type 为 0、2、5 时必选|图片地址。type为0时，推荐使用小于20Kb的图片|
 |mediaUrl|String|type 为 3、4 时必选|音视频地址|
 |miniProgram|Object|type 为 5 时必选|分享小程序必要参数|
-|openCustomerServiceChat|Boolean|否|是否启用拉起客服功能（目前仅支持微信。HBuilder X 3.4.2+）|
-|corpid|String|`openCustomerServiceChat = true` 时必填|客服ID（目前仅支持微信。HBuilder X 3.4.2+）|
-|customerUrl|String|`openCustomerServiceChat = true` 时必填|客服的页面路径（目前仅支持微信。HBuilder X 3.4.2+）|
+|openCustomerServiceChat|Boolean|否|是否启用拉起客服功能（目前仅支持微信。HBuilder X 3.4.3+）|
+|corpid|String|`openCustomerServiceChat = true` 时必填|客服ID（目前仅支持微信。HBuilder X 3.4.3+）|
+|customerUrl|String|`openCustomerServiceChat = true` 时必填|客服的页面路径（目前仅支持微信。HBuilder X 3.4.3+）|
 |success|Function|否|接口调用成功的回调|
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|

@@ -198,14 +198,14 @@ export default {
     },
     methods: {
         bindPickerChange: function(e) {
-            console.log('picker发送选择改变，携带值为', e.target.value)
-            this.index = e.target.value
+            console.log('picker发送选择改变，携带值为', e.detail.value)
+            this.index = e.detail.value
         },
         bindDateChange: function(e) {
-            this.date = e.target.value
+            this.date = e.detail.value
         },
         bindTimeChange: function(e) {
-            this.time = e.target.value
+            this.time = e.detail.value
         },
         getDate(type) {
             const date = new Date();

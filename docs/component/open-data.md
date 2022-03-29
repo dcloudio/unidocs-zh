@@ -26,14 +26,21 @@
 
 |值|说明|平台差异说明|
 |:-:|:-:|:-:|
-|userNickName|用户昵称||
-|userAvatarUrl|用户头像||
-|userGender|用户性别||
+|userNickName|用户昵称|微信小程序基础库 `1.9.90+` 返回 `"微信用户"`|
+|userAvatarUrl|用户头像|微信小程序基础库 `1.9.90+` 不再返回，展示 [灰色头像](https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0)|
+|userGender|用户性别|微信小程序基础库 `1.9.90+` 不再返回|
 |groupName|拉取群名称|微信小程序、QQ小程序|
-|userCity|用户所在城市|微信小程序、QQ小程序|
-|userProvince|用户所在省份|微信小程序、QQ小程序|
-|userCountry|用户所在国家|微信小程序、QQ小程序|
-|userLanguage|用户的语言|微信小程序、QQ小程序|
+|userCity|用户所在城市|微信小程序基础库 `1.9.90+` 不再返回、QQ小程序|
+|userProvince|用户所在省份|微信小程序基础库 `1.9.90+` 不再返回、QQ小程序|
+|userCountry|用户所在国家|微信小程序基础库 `1.9.90+` 不再返回、QQ小程序|
+|userLanguage|用户的语言|微信小程序基础库 `1.9.90+` 不再返回、QQ小程序|
+
+**注意**
+  - 微信小程序平台从 `2022年2月21日24时起` 回收通过 `<open-data>` 展示个人信息的能力，[详情](https://developers.weixin.qq.com/community/develop/doc/000e881c7046a8fa1f4d464105b001?blockType=1)。若小程序需收集用户昵称头像等信息，可以通过 [头像昵称填写功能](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/userProfile.html) 进行收集。具体回收方式为：
+     - 头像展示 [灰色头像](https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0)
+     - 用户昵称展示 `微信用户`
+     - 用户性别、地区、语言展示为为空 `“”`
+  - 小程序通过 `<open-data>` 展示群名称能力保留，平台会针对小程序生命周期内首次调用该组件展示群名称向用户提示：“群名称仅你可见，小程序无法获取。”
 
 **示例**
 

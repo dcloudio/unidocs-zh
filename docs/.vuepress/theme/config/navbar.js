@@ -96,6 +96,11 @@ export const navbar = [
             type: 'link',
             link: 'https://mp.kuaishou.com/docs/develop/frame/config/conf_appjson.html'
           },
+			 {
+			   text: '京东小程序',
+			   type: 'link',
+			   link: 'https://mp-docs.jd.com/framework/'
+			 },
           {
             text: '华为快应用',
             type: 'link',

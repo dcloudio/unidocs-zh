@@ -10,7 +10,7 @@
 ### 基本用法
 
 ```html
-<uni-load-more :status="more"></uni-load-more>
+<uni-load-more status="more"></uni-load-more>
 ```
 
 ## API

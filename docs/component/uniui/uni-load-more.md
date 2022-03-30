@@ -11,7 +11,7 @@
 在 ``template`` 中使用组件
 
 ```html
-<uni-load-more :status="more"></uni-load-more>
+<uni-load-more status="more"></uni-load-more>
 ```
 
 ## API

@@ -256,17 +256,21 @@ switchTab|同 uni.switchTab()
 ```html
 <uni-list>
 	<uni-list-item title="自定义右侧插槽" note="列表描述信息" link>
-		<template slot="header">
+		<template v-slot:header>
 			<image class="slot-image" src="/static/logo.png" mode="widthFix"></image>
 		</template>
 	</uni-list-item>
 	<uni-list-item>
 		<!-- 自定义 header -->
-		<view slot="header" class="slot-box"><image class="slot-image" src="/static/logo.png" mode="widthFix"></image></view>
+		<template v-slot:header>
+			<view class="slot-box"><image class="slot-image" src="/static/logo.png" mode="widthFix"></image></view>
+		</template>
 		<!-- 自定义 body -->
-		<text slot="body" class="slot-box slot-text">自定义插槽</text>
+		<template v-slot:body>
+			<text class="slot-box slot-text">自定义插槽</text>
+		</template>
 		<!-- 自定义 footer-->
-		<template slot="footer">
+		<template v-slot:footer>
 			<image class="slot-image" src="/static/logo.png" mode="widthFix"></image>
 		</template>
 	</uni-list-item>

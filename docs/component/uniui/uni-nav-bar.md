@@ -119,8 +119,8 @@ Tips:
 
 
 ### NavBar Slots
-
 支持向 NavBar 里插入不同内容，以达到自定义的目的。
+
 |slot名	|说明|
 |:-:|:-:|
 |default|向导航栏中间插入	|
@@ -130,8 +130,8 @@ Tips:
 ```html
 <uni-nav-bar>
     <view>标题栏</view>
-    <view slot="left">left</view>
-    <view slot="right">right</view>
+    <view v-slot:left>left</view>
+    <view v-slot:right>right</view>
 </uni-nav-bar>
 ```
 

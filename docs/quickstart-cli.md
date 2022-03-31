@@ -7,7 +7,7 @@
 全局安装vue-cli
 
 ```shell
-npm install -g @vue/cli
+npm install -g @vue/cli@4
 ```
 
 ## 创建uni-app

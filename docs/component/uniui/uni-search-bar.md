@@ -60,12 +60,17 @@
 ```html
 <!-- 替换组件的搜索图标 -->
 <uni-search-bar placeholder="自定义searchIcon" @confirm="search" @cancel="cancel" cancel-text="cancel">
-	<uni-icons slot="searchIcon" color="#999999" size="18" type="home" />
+	<template v-slot:searchIcon>
+		<uni-icons  color="#999999" size="18" type="home" />
+	</template>
 </uni-search-bar>
 
 <!-- 替换组件的清除图标 -->
 <uni-search-bar placeholder="自定义clearIcon" @confirm="search" @cancel="cancel" cancel-text="cancel">
-	<view slot="clearIcon" style="color: #999999" >X</view>
+	
+	<template v-slot:clearIcon>
+		<view style="color: #999999" >X</view>
+	</template>
 </uni-search-bar>
 
 ```

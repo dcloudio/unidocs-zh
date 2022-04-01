@@ -9,6 +9,7 @@ const routerMap = {
   '/collocation/frame/lifecycle#component': '/tutorial/page.html#componentlifecycle',
   '/collocation/frame/timer': '/api/timer.html',
   '/collocation/auto/hbuilderx-extension/index': '/worktile/auto/hbuilderx-extension/',
+  '/collocation/auto/hbuilderx-extension/': '/worktile/auto/hbuilderx-extension/',
   '/collocation/auto/quick-start': '/worktile/auto/quick-start.html',
   '/collocation/auto/uniapp-cli-project': '/worktile/auto/uniapp-cli-project.html',
   '/collocation/i18n': '/worktile/i18n.html',

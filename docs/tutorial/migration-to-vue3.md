@@ -379,6 +379,7 @@
   - 在 Vue3 中，如果 nvue 使用了 Vuex 的相关 API，需要在 main.js 的 createApp 的返回值中 return 一下 Vuex 示例：
 
     ```js
+    import Vuex from 'vuex'
     export function createApp() {
       const app = createSSRApp(App);
       app.use(store);

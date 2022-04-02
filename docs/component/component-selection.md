@@ -40,7 +40,7 @@ vant的web版操作了dom，所以只能用于web端；而vant weapp是微信小
 - 首先除了微信小程序，其他几个平台的小程序几乎是没有三方组件和模板生态的。开发其他端小程序，得靠uni-app的生态
 - 再说微信小程序生态，之前在微信小程序平台上一些有名的库（比如wxParse、wx-Echart），实际上在性能、功能、技术支持上，大多做的不如uni-app生态下的新库好。而vant、iview的weapp版，其性能也均不如uni ui。
 3. 其他指标
-- vue doc：HBuilderX支持[vue doc](https://ask.dcloud.net.cn/article/35814)，组件作者在vue组件源码里编写vue doc，可以让组件使用者写代码时得到良好的代码提示。
+- vue doc：HBuilderX支持[vue doc](https://hx.dcloud.net.cn/Tutorial/Language/vuedoc)，组件作者在vue组件源码里编写vue doc，可以让组件使用者写代码时得到良好的代码提示。
 - easycom：uni-app支持[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)，可以大幅简化组件的使用
 - nvue支持：如果开发App，可能会涉及到nvue原生渲染页面，这种渲染方式支持的css有限，此时就要甄别组件是否兼容nvue。
 

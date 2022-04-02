@@ -68,11 +68,19 @@
 		"fontSize": "10px",
 		"iconWidth": "24px",
 		"spacing": "3px",
+    "iconfontSrc":"static/iconfont.ttf", // app tabbar 字体.ttf文件路径 app 3.4.4+
 		"list": [{
 			"pagePath": "pages/component/index",
 			"iconPath": "static/image/icon_component.png",
 			"selectedIconPath": "static/image/icon_component_HL.png",
-			"text": "组件"
+			"text": "组件",
+      "iconfont": { // 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc
+        "text": "\ue102",
+        "selectedText": "\ue103",
+        "fontSize": "17px",
+        "color": "#000000",
+        "selectedColor": "#0000ff"
+      }
 		}, {
 			"pagePath": "pages/API/index",
 			"iconPath": "static/image/icon_API.png",
@@ -964,6 +972,8 @@ h5 平台下拉刷新动画，只有 circle 类型。
 |iconPath|String|否|图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 position 为 top 时，此参数无效，不支持网络图片，不支持字体图标||
 |selectedIconPath|String|否|选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效||
 |visible|Boolean|否|该项是否显示，默认显示|App (3.2.10+)、H5 (3.2.10)+|
+|iconfont|Object|否|字体图标，优先级高于 iconPath|App（3.4.4+）|
+
 
 **midButton 属性说明**
 
@@ -975,8 +985,20 @@ h5 平台下拉刷新动画，只有 circle 类型。
 |iconPath|String|否||中间按钮的图片路径|
 |iconWidth|String|否|24px|图片宽度（高度等比例缩放）|
 |backgroundImage|String|否||中间按钮的背景图片路径|
+|iconfont|Object|否||字体图标，优先级高于 iconPath|App（3.4.4+）|
 
 midButton没有pagePath，需监听点击事件，自行处理点击后的行为逻辑。监听点击事件为调用API：uni.onTabBarMidButtonTap，详见[https://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap](https://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap)
+
+**iconfont参数说明：**
+
+|属性|类型|说明|
+|:-|:-|:-|
+|text|String|字库 Unicode 码|
+|selectedText|String|选中后字库 Unicode 码|
+|fontSize|String|字体图标字号(px)|
+|color|String|字体图标颜色|
+|selectedColor|String|字体图标选中颜色|
+
 
 #### **tabbar常见问题** @tips-tabbar
 - tabbar 的 js api 见[接口-界面-tabbar](https://uniapp.dcloud.io/api/ui/tabbar)，可实现动态显示隐藏（如弹出层无法覆盖tabbar）、内容修改（如国际化）、item加角标等功能。hello uni-app中也有示例。

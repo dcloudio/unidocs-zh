@@ -56,7 +56,7 @@ export default {
 
 ## API
 
-### SwiperDod Props
+### SwiperDot Props 
 
 |属性名|类型|默认值|说明|
 |:-:|:-:|:-:|:-:|

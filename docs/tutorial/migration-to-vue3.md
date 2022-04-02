@@ -414,3 +414,15 @@
     > vue3 支持的范围是：Android > 4.4, ios >= 10
   
   - vue3 nvue 暂不支持 recycle-list 组件
+
+  - vue3 在 h5 平台发行时，为了优化包体积大小，会默认启动摇树，仅打包明确使用的api。如果要关闭摇树，可以在manifest.json中配置：
+        
+    ```json
+    "h5": {
+        "optimization": {
+            "treeShaking": {
+                "enable": false
+            }
+        }
+    }
+    ```

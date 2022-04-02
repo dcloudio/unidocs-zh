@@ -18,9 +18,21 @@
 |selectedIconPath|String||否|选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效||
 |pagePath|String||否|页面绝对路径，必须在 [pages](/collocation/pages?id=pages) 中先定义，被替换掉的 pagePath 不会变成普通页面（仍然需要使用 uni.swichTab 跳转）|App（2.8.4+）、H5（2.8.4+）|
 |visible|Boolean|true|否|该项是否显示|App（3.2.10+）、H5（3.2.10+）|
+|iconfont|Object||否|字体图标，优先级高于 iconPath|App（3.4.4+）|
 |success|Funtion||否|接口调用成功的回调函数||
 |fail|Funtion||否|接口调用失败的回调函数||
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）||
+
+**iconfont参数说明：**
+
+|属性|类型|说明|
+|:-|:-|:-|
+|text|String|字库 Unicode 码|
+|selectedText|String|选中后字库 Unicode 码|
+|fontSize|String|字体图标字号(px)|
+|color|String|字体图标颜色|
+|selectedColor|String|字体图标选中颜色|
+
 
 **示例代码**
 
@@ -31,6 +43,30 @@ uni.setTabBarItem({
   iconPath: '/path/to/iconPath',
   selectedIconPath: '/path/to/selectedIconPath'
 })
+```
+
+注意: 设置 `iconfont` 属性时，pages.json `iconfontSrc` 需要指定字体文件，参考下面的配置
+
+```json
+// pages.json
+{
+  "tabBar": {
+    "iconfontSrc":"static/iconfont.ttf",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Tab1",
+        "iconfont": {
+          "text": "\ue102",
+          "selectedText": "\ue103",
+          "fontSize": "17px",
+          "color": "#000000",
+          "selectedColor": "#0000ff"
+        }
+      }
+    ]
+  }
+}
 ```
 
 ### uni.setTabBarStyle(OBJECT)

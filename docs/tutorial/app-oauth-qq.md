@@ -58,7 +58,7 @@ var qqOauth = null;
 plus.oauth.getServices(function(services) {
 	for (var i in services) {
 		var service = services[i];
-		// 获取微信登录对象 
+		// 获取QQ登录对象 
 		if (service.id == 'qq') {
 			qqOauth = service;
 			break;

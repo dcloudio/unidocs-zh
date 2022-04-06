@@ -61,7 +61,7 @@ uni.openBluetoothAdapter({
 
 |属性|类型|默认值|必填|说明|
 |---|---|---|---|---|
-|services|Array&lt;String&gt;||否|要搜索但蓝牙设备主 service 的 uuid 列表。某些蓝牙设备会广播自己的主 service 的 uuid。如果设置此参数，则只搜索广播包有对应 uuid 的主服务的蓝牙设备。建议主要通过该参数过滤掉周边不需要处理的其他蓝牙设备。|
+|services|Array&lt;String&gt;||否|要搜索的蓝牙设备主 service 的 uuid 列表。某些蓝牙设备会广播自己的主 service 的 uuid。如果设置此参数，则只搜索广播包有对应 uuid 的主服务的蓝牙设备。建议主要通过该参数过滤掉周边不需要处理的其他蓝牙设备。|
 |allowDuplicatesKey|boolean|false|否|是否允许重复上报同一设备。如果允许重复上报，则 `uni.onBlueToothDeviceFound` 方法会多次上报同一设备，但是 RSSI 值会有不同。|
 |interval|number|0|否|上报设备的间隔。0 表示找到新设备立即上报，其他数值根据传入的间隔上报。|
 |powerLevel|string|medium|否|扫描模式，越高扫描越快，也越耗电，仅安卓支持。low：低，medium：中，high：高。仅京东小程序支持|

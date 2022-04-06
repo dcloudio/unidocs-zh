@@ -1484,7 +1484,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 
 ### 计算属性computed
 
-每一个计算属性都包含一个 `getter` 函数和一个 `setter`函数 ，默认是利用 `getter` 函数来读取。所有 `getter` 和 `setter` 函的 `this` 上下文自动地绑定为 Vue 实例。
+每一个计算属性都包含一个 `getter` 函数和一个 `setter`函数 ，默认是利用 `getter` 函数来读取。所有 `getter` 和 `setter` 函数的 `this` 上下文自动地绑定为 Vue 实例。
 
 
 #### 计算属性的 getter 

@@ -194,6 +194,7 @@ uni.login({
 |x|x|√（基础库2.10.4）|x|x|x|x|x|x|
 
 **注意：** 该API仅支持微信小程序端，微信小程序调整了相关接口（详见[《小程序登录、用户信息相关接口调整说明》](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)）。每次触发 uni.getUserProfile 均会弹出授权窗口，用户授权后可成功获取用户信息。该API暂不支持在事件中使用异步操作，否则会触发错误：{errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}
+抖音从基础库 2.30.0 开始支持本方法，低版本需做兼容处理(详见：https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-profile/).
 
 **OBJECT 参数说明**
 

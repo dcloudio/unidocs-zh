@@ -10,7 +10,7 @@
 
 当然也可以不拖动，而使用代码来触发`movable-view`在`movable-area`里的移动缩放。
 
-`movable-view`的规范另见[下文](/component/movable-view?id=movable-view)。
+`movable-view`的规范另见[下文](#movable-view)。
 
 **平台差异说明**
 
@@ -75,7 +75,7 @@
 
 **Tips**
 - movable-view必须在`<movable-area/>`组件中，并且必须是直接子节点，否则不能移动。
-- 如果遇到x、y、scale属性设置不生效的问题参考：[组件属性设置不生效解决办法](/vue-api?id=componentsolutions)
+- 如果遇到x、y、scale属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.html#componentsolutions)
 - 除了H5端和app-nvue端，其他平台不支持内嵌video、map等原生组件。更新：微信基础库2.4.4起支持了原生组件在 scroll-view、swiper、movable-view 中的使用
 
 **示例**[查看演示](https://hellouniapp.dcloud.net.cn/pages/component/movable-view/movable-view)

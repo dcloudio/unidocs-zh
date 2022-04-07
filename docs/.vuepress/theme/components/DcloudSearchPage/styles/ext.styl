@@ -1,0 +1,68 @@
+#search-container
+  .markdown-section
+    margin-top 20px
+    background-color #fff
+
+    .matching-post
+      $padding-n = 25px
+      padding $padding-n $padding-n ($padding-n - 15px)$padding-n
+
+      @media (max-width $MQMobile)
+        &
+          padding: $padding-n - 10px $padding-n - 10px 0px $padding-n - 10px
+
+      &:not(:last-child)
+        border-bottom 1px solid #eee
+
+      &:first-child
+        margin-top 0 !important
+
+      a
+        text-decoration none
+        color inherit
+        font-weight 400
+
+        &:hover
+          color $accentColor
+
+      .post-wrapper
+        display flex
+
+        p.aw-text
+          font-weight normal
+          margin 0
+          display inline-flex
+
+      p
+        font-size 14px
+        overflow hidden
+        text-overflow ellipsis
+        display -webkit-box
+        -webkit-line-clamp 2
+        -webkit-box-orient vertical
+
+      .post-tag
+        background-color #f0f0f0
+        font-size 12px
+        padding 2px 4px
+        color #999
+        border-radius 3px
+        margin-right 5px
+
+      .matching-post h2
+        margin-top 0
+        padding-top 0
+
+      h2
+        color #2c3e50
+        font-size 16px
+        margin 0
+        padding 0
+        display inline-block
+        font-weight 600
+        border none
+
+      .search-keyword
+        font-style normal
+        font-weight 700
+        color $accentColor

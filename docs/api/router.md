@@ -43,7 +43,7 @@ export default {
 }
 ```
 
-```
+```js
 // 在起始页面跳转到test.vue页面，并监听test.vue发送过来的事件数据
 uni.navigateTo({
   url: 'pages/test?id=1',
@@ -59,7 +59,7 @@ uni.navigateTo({
   },
   success: function(res) {
     // 通过eventChannel向被打开页面传送数据
-    res.eventChannel.emit('acceptDataFromOpenedPage', { data: 'data from starter page' })
+    res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'data from starter page' })
   }
 })
 

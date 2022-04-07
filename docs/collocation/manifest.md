@@ -187,13 +187,13 @@ splash（启动封面）是App必然存在的、不可取消的。
 |属性|类型|说明|
 |:-|:-|:-|
 |title|String|页面标题，默认使用 manifest.json 的 name|
-|template|String|index.html模板路径，相对于应用根目录，可定制生成的 html 代码。参考：[自定义模板](collocation/manifest?id=h5-template)|
-|router|Object|参考：[router](collocation/manifest?id=h5-router)|
-|async|Object|参考：[async](collocation/manifest?id=h5-async)|
-|devServer|Object|开发环境 server 配置，参考：[devServer](collocation/manifest?id=devserver)|
-|publicPath|String|引用资源的地址前缀，仅发布时生效。参考：[publicPath](collocation/manifest?id=publicPath)|
-|sdkConfigs|String|SDK配置，例如地图...  参考：[sdkConfigs](collocation/manifest?id=h5sdkconfig)|
-|optimization|Object|打包优化配置（HBuilderX 2.1.5 以上支持），参考[optimization](collocation/manifest?id=optimization)|
+|template|String|index.html模板路径，相对于应用根目录，可定制生成的 html 代码。参考：[自定义模板](/collocation/manifest?id=h5-template)|
+|router|Object|参考：[router](/collocation/manifest?id=h5-router)|
+|async|Object|参考：[async](/collocation/manifest?id=h5-async)|
+|devServer|Object|开发环境 server 配置，参考：[devServer](/collocation/manifest?id=devserver)|
+|publicPath|String|引用资源的地址前缀，仅发布时生效。参考：[publicPath](/collocation/manifest?id=publicPath)|
+|sdkConfigs|String|SDK配置，例如地图...  参考：[sdkConfigs](/collocation/manifest?id=h5sdkconfig)|
+|optimization|Object|打包优化配置（HBuilderX 2.1.5 以上支持），参考[optimization](/collocation/manifest?id=optimization)|
 |uniStatistics|Object|[H5 是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)||
 
 #### 自定义模板@h5-template
@@ -332,7 +332,7 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` �
 |:-|:-|:-|:-|
 |prefetch|Boolean|false|资源预取|
 |preload|Boolean|false|资源预加载|
-|treeShaking|Object||摇树优化，根据项目需求，动态打包框架所需的组件及API，保持框架代码最精简化，参考[treeShaking](collocation/manifest?id=treeshaking)|
+|treeShaking|Object||摇树优化，根据项目需求，动态打包框架所需的组件及API，保持框架代码最精简化，参考[treeShaking](/collocation/manifest?id=treeshaking)|
 
 ##### treeShaking
 
@@ -530,7 +530,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 
 **分包内静态文件示例**
 
-```
+```json
 "subPackages": [{
 	"root": "pages/sub",
 	"pages": [{
@@ -553,7 +553,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 
 
 **manifest.json配置**
-```
+```json
 "quickapp-webview": {// 快应用通用配置
   "icon": "/static/logo.png",
   "package": "com.example.demo",

@@ -5,9 +5,26 @@
   * [服务空间](uniCloud/concepts/space.md)
   * [数据库](uniCloud/concepts/database.md)
   * [云函数](uniCloud/concepts/cloudfunction.md)
+* 云函数
+  * [开发云函数](uniCloud/cf-functions.md)
+  * [云对象](uniCloud/cloud-obj.md)
+  * [云函数公共模块](uniCloud/cf-common.md)
+  * [日志输出](uniCloud/cf-logger.md)
+  * [定时触发](uniCloud/trigger.md)
+  * [云函数URL化](uniCloud/http.md)
 * 云数据库
   * [云数据库入门](uniCloud/hellodb.md)
   * [云函数内传统方式操作数据库](uniCloud/cf-database.md)
+    * [获取集合的引用](uniCloud/cf-database.md?id=get-collection)
+    * [新增文档](uniCloud/cf-database.md?id=add)
+    * [查询文档](uniCloud/cf-database.md?id=query)
+    * [删除文档](uniCloud/cf-database.md?id=remove)
+    * [更新文档](uniCloud/cf-database.md?id=update)
+    * [GEO地理位置](uniCloud/cf-database.md?id=geo)
+    * [事务](uniCloud/cf-database.md?id=transaction)
+    * [聚合操作](uniCloud/cf-database-aggregate.md)
+    * [数据库操作符](uniCloud/cf-database-dbcmd.md)
+    * [数据库运算方法](uniCloud/cf-database-aggregate-operator.md)
   * [前端操作数据库的API](uniCloud/clientdb.md)
   * [云函数内使用JQL语法](uniCloud/jql-cloud.md)
   * [数据库索引](uniCloud/db-index.md)
@@ -17,12 +34,6 @@
   * [JQL语法](uniCloud/jql.md)
   * [openDB](https://gitee.com/dcloud/opendb)
   * [性能优化](uniCloud/db-performance.md)
-* 云函数
-  * [开发云函数](uniCloud/cf-functions.md)
-  * [云函数公共模块](uniCloud/cf-common.md)
-  * [日志输出](uniCloud/cf-logger.md)
-  * [定时触发](uniCloud/trigger.md)
-  * [云函数URL化](uniCloud/http.md)
 * 云存储
   * [API](uniCloud/storage.md)
   * [腾讯云自定义登录](uniCloud/authentication.md)
@@ -56,55 +67,3 @@
 * [微信云开发转uniCloud](uniCloud/wx2unicloud.md)
 * [uniCloud产品服务协议](uniCloud/agreement.md)
 * [更新日志](uniCloud/release.md)
-<li></li>
-<div class="contact-box">
-  <a href="//unicloud.dcloud.net.cn" target="_blank" class="contact-item">
-  	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7962e8e0-4f2d-11eb-a16f-5b3e54966275.jpg" width="20" height="20"/>
-  	<div class="contact-smg">
-  		<div>uniCloud Web控制台</div>
-  	</div>
-  </a>
-  <a href="//ask.dcloud.net.cn/explore/" target="_blank" class="contact-item">
-  	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/73fc4f90-4f2d-11eb-a16f-5b3e54966275.png" width="20" height="20"/>
-  	<div class="contact-smg">
-  		<div>论坛</div>
-  	</div>
-  </a>
-  <a href="https://uniad.dcloud.net.cn" target="_blank" class="contact-item">
-    <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/765d9820-4f2d-11eb-bd01-97bc1429a9ff.png" width="20" height="20"/>
-    <div class="contact-smg">
-      <div>uniAD</div>
-    </div>
-  </a>
-  <a href="https://tongji.dcloud.net.cn/" target="_blank" class="contact-item">
-    <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/77159d80-4f2d-11eb-a16f-5b3e54966275.png" width="20" height="20"/>
-    <div class="contact-smg">
-      <div>uni统计</div>
-    </div>
-  </a>
-	<div class="contact-item">
-		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/74cda950-4f2d-11eb-a16f-5b3e54966275.png" width="20" height="20"/>
-		<div class="contact-smg">
-			<div>
-	      代码仓库：<a href="https://gitee.com/dcloud/uni-app" target="_blank">码云</a>、<a href="http://github.com/dcloudio/uni-app" target="_blank">GitHub</a>
-	    </div>
-		</div>
-	</div>
-	<div class="contact-item">
-	  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/759713d0-4f2d-11eb-a16f-5b3e54966275.png" width="20" height="20"/>
-	  <div class="contact-smg">
-	  <div>uniCloud QQ交流群</div>
-	  <div>群1：1012245137 (2000人已满)</div>
-    <div>群2：749911289 (1000人已满)</div>
-<div>群3：599819864 (1000人已满)</div>
-    <div>群4：641753405 &nbsp;<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=n8Qk7gMN-ppFly_vE9_S34hLNXz25PVI&jump_from=webapi">点此加入</a></div>
-	  </div>
-	</div>
-  <div class="contact-item">
-  	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/77df7d30-4f2d-11eb-bd01-97bc1429a9ff.png" width="20" height="20"/>
-  	<div class="contact-smg">
-  		<div>关注微信公众号</div>
-  		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/78a8e7b0-4f2d-11eb-8ff1-d5dcf8779628.jpg" width="90" height="90"/>
-  	</div>
-  </div>
-</div>

@@ -1781,7 +1781,7 @@
 
 #### 2.6.11.20200409
 * 【uni-app】
-  + App平台 新增 激励视频广告支持服务器回调 [详情](https://uniapp.dcloud.io/api/ad/rewarded-video-ad)
+  + App平台 新增 激励视频广告支持服务器回调 [详情](https://uniapp.dcloud.io/api/a-d/rewarded-video-ad)
   + App平台 优化 控制台日志支持打印数组类型
   + App平台 修复 v3版本 判断浏览器专用 API（如：navigator）报错的Bug
   + App平台 修复 v3版本 navigation-bar 组件 非首页某些属性无效的Bug
@@ -3447,3 +3447,5 @@
 * 【重要】新增uni-app，使用vue技术，开发一次，iOS、Android、微信小程序三端同时生成。[详见](https://uniapp.dcloud.io/)
 * 【重要】调整uniapp策略，之前的原生渲染uniapp改为nml项目[详见](https://ask.dcloud.net.cn/article/13507)
 *  uni-app：新增条件编译，采用类似 //#ifdef APP-PLUS 的写法做平台条件编译，代码块名为ifdef，还可双击ifdef选中整体代码段落。[详见](https://uniapp.dcloud.io/platform)
+
+<md-virtual key="release"/>

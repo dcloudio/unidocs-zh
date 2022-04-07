@@ -74,7 +74,7 @@ headerHeight|吸顶距离|Number|是|子list吸顶距离最外层滚动容器顶
 
 `scrollToElement(ref, options)`
 
-滚动到指定位置，详情 [https://uniapp.dcloud.net.cn/nvue-api?id=scrolltoelement](https://uniapp.dcloud.net.cn/nvue-api?id=scrolltoelement)
+滚动到指定位置，详情 [scrollToElement](https://uniapp.dcloud.net.cn/tutorial/nvue-api.html#dom)
 
 #### 事件
 

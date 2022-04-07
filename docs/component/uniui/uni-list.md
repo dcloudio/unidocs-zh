@@ -1,8 +1,9 @@
-> **组件名：uni-list**
+::: tip 组件名：uni-list
 > 代码块： `uList`、`uListItem`
 > 关联组件：`uni-list-item`、`uni-badge`、`uni-icons`、`uni-list-chat`
-> 
->  [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-list)
+
+[点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-list)
+::: 
 
 List 列表组件，包含基本列表样式、可扩展插槽机制、长列表性能优化、多端兼容。
 
@@ -21,24 +22,19 @@ uni-list-item有很多风格，uni-list-item组件通过内置的属性，满足
 uni-list不包含下拉刷新和上拉翻页。上拉翻页另见组件：[uni-load-more](https://ext.dcloud.net.cn/plugin?id=29)
 
 
-### 安装方式
-
-本组件符合[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)规范，`HBuilderX 2.5.5`起，只需将本组件导入项目，在页面`template`中即可直接使用，无需在页面中`import`和注册`components`。
-
-如需通过`npm`方式使用`uni-ui`组件，另见文档：[https://ext.dcloud.net.cn/plugin?id=55](https://ext.dcloud.net.cn/plugin?id=55)
-
-> **注意事项**
+## 介绍
+::: warning 注意事项
 > 为了避免错误使用，给大家带来不好的开发体验，请在使用组件前仔细阅读下面的注意事项，可以帮你避免一些错误。
-> - 组件需要依赖 `sass` 插件 ，请自行手动安装
-> - 组件内部依赖 `'uni-icons'` 、`uni-badge` 组件
-> - `uni-list` 和 `uni-list-item` 需要配套使用，暂不支持单独使用 `uni-list-item`
-> - 只有开启点击反馈后，会有点击选中效果
-> - 使用插槽时，可以完全自定义内容
-> - note 、rightText 属性暂时没做限制，不支持文字溢出隐藏，使用时应该控制长度显示或通过默认插槽自行扩展
-> - 支付宝小程序平台需要在支付宝小程序开发者工具里开启 component2 编译模式，开启方式： 详情 --> 项目配置 --> 启用 component2 编译
-> - 如果需要修改 `switch`、`badge` 样式，请使用插槽自定义
-> - 在 `HBuilderX` 低版本中，可能会出现组件显示 `undefined` 的问题，请升级最新的 `HBuilderX` 或者 `cli`
- 
+- 组件需要依赖 `sass` 插件 ，请自行手动安装
+- 组件内部依赖 `'uni-icons'` 、`uni-badge` 组件
+- `uni-list` 和 `uni-list-item` 需要配套使用，暂不支持单独使用 `uni-list-item`
+- 只有开启点击反馈后，会有点击选中效果
+- 使用插槽时，可以完全自定义内容
+- note 、rightText 属性暂时没做限制，不支持文字溢出隐藏，使用时应该控制长度显示或通过默认插槽自行扩展
+- 支付宝小程序平台需要在支付宝小程序开发者工具里开启 component2 编译模式，开启方式： 详情 --> 项目配置 --> 启用 component2 编译
+- 如果需要修改 `switch`、`badge` 样式，请使用插槽自定义
+- 在 `HBuilderX` 低版本中，可能会出现组件显示 `undefined` 的问题，请升级最新的 `HBuilderX` 或者 `cli`
+:::
 
 ### 基本用法 
 
@@ -115,6 +111,9 @@ uni-list不包含下拉刷新和上拉翻页。上拉翻页另见组件：[uni-l
 - `avatar` 和 `avatarList` 属性同时只会有一个生效，同时设置的话，`avatarList` 属性的长度大于1 ，`avatar` 属性将失效
 - 可以通过默认插槽自定义列表右侧内容
 
+::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/list/chat
+ 
+> Template
 ```html
 
 <uni-list>
@@ -141,7 +140,7 @@ uni-list不包含下拉刷新和上拉翻页。上拉翻页另见组件：[uni-l
 </uni-list>
 
 ```
-
+> Script
 ```javascript
 
 export default {
@@ -161,7 +160,7 @@ export default {
 
 ```
 
-
+> Style
 ```css
 
 .chat-custom-right {
@@ -181,6 +180,7 @@ export default {
 
 ```
 
+:::
 ## API
 
 ### List Props
@@ -320,6 +320,190 @@ switchTab|同 uni.switchTab()
 
 
 
+## 示例
+::: warning 注意
+示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
+
+请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-link) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+:::
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/list/list
+> Template
+``` html
+<template>
+	<view class="container">
+		<uni-card :is-shadow="false" is-full>
+			<text class="uni-h6">列表组件可以在其中使用图标、略缩图或放置任何你想放的元素，使用场景如：导航菜单、列表、设置中心排版等</text>
+		</uni-card>
+		<uni-section title="基础用法" type="line">
+			<uni-list>
+				<uni-list-item title="列表文字" />
+				<uni-list-item title="列表文字" rightText="右侧文字" />
+				<uni-list-item title="列表文字" note="列表描述信息" rightText="右侧文字" />
+			</uni-list>
+		</uni-section>
+		<uni-section title="禁用列表" type="line">
+			<uni-list>
+				<uni-list-item :disabled="true" title="列表禁用状态" rightText="右侧文字" />
+				<uni-list-item :disabled="true" title="列表禁用状态" rightText="右侧文字" />
+			</uni-list>
+		</uni-section>
+		<uni-section title="显示右侧箭头" type="line">
+			<uni-list>
+				<uni-list-item showArrow title="列表文字" />
+				<uni-list-item showArrow title="列表文字" rightText="右侧文字" />
+			</uni-list>
+		</uni-section>
+		<uni-section title="开启点击反馈" type="line">
+			<uni-list>
+				<uni-list-item title="弹窗提示" clickable @click="onClick" />
+				<uni-list-item title="页面跳转" :to="`./chat`" @click="onClick" />
+				<uni-list-item title="关闭当前页面打开新页面" showArrow link="redirectTo" to="./chat" @click="onClick" />
+				<uni-list-item title="打开错误页面(查看控制台)" showArrow link="redirectTo" to="./chats" @click="onClick" />
+			</uni-list>
+		</uni-section>
+
+		<uni-section title="不显示分隔线" type="line">
+			<uni-list :border="false">
+				<uni-list-item title="列表文字" />
+				<uni-list-item :border="false" title="列表文字" note="列表描述信息" rightText="右侧文字" />
+				<uni-list-item :border="false" title="列表文字" note="列表描述信息" rightText="右侧文字" />
+			</uni-list>
+		</uni-section>
+
+		<uni-section title="分隔线通栏" type="line">
+			<uni-list border-full>
+				<uni-list-item title="列表文字" />
+				<uni-list-item title="列表文字" note="列表描述信息" rightText="右侧文字" />
+				<uni-list-item title="列表文字" note="列表描述信息" rightText="右侧文字" />
+			</uni-list>
+		</uni-section>
+
+		<uni-section title="文字溢出隐藏" type="line">
+			<uni-list>
+				<uni-list-item ellipsis="1" title="超长文字显示一行,以下是测试文字以下是测试文字以下是测试文字以下是测试文字以下是测试文字以下是测试文字" />
+				<uni-list-item ellipsis="2" title="超长文字显示二行,以下是测试文字以下是测试文字以下是测试文字以下是测试文字以下是测试文字以下是测试文字"
+					rightText="二行显示" />
+				<uni-list-item ellipsis="1" title="全部显示,以下是测试文字以下是测试文字以下是测试文字以下是测试文字以下是测试文字以下是测试文字"
+					note="列表描述信息,下是测试文字,下是测试文字,下是测试文字,下是测试文字,下是测试文字,下是测试文字,下是测试文字" showArrow rightText="一行显示" />
+				<uni-list-item title="全部显示,以下是测试文字以下是测试文字以下是测试文字以下是测试文字以下是测试文字以下是测试文字" showArrow rightText="全部" />
+			</uni-list>
+		</uni-section>
+
+		<uni-section title="显示图标或图片" type="line">
+			<uni-list>
+				<uni-list-item :show-extra-icon="true" showArrow :extra-icon="extraIcon" title="列表左侧带扩展图标" />
+				<uni-list-item title="列表左侧带略缩图" note="列表描述信息" showArrow
+					thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
+					thumb-size="sm" rightText="小图" />
+
+				<uni-list-item title="列表左侧带略缩图" note="列表描述信息" showArrow
+					thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
+					thumb-size="base" rightText="默认" />
+				<uni-list-item title="列表左侧带略缩图" note="列表描述信息" showArrow
+					thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
+					thumb-size="lg" rightText="大图" />
+			</uni-list>
+		</uni-section>
+
+		<uni-section title="使用插槽" type="line">
+			<uni-list>
+				<uni-list-item>
+					<template v-slot:body>
+						<view class="slot-box">
+							<text class="slot-text">使用 body 插槽</text>
+						</view>
+					</template>
+				</uni-list-item>
+				<uni-list-item title="自定义右侧插槽" note="列表描述信息" link>
+					<template v-slot:footer>
+						<image class="slot-image" src="/static/logo.png" mode="widthFix"></image>
+					</template>
+				</uni-list-item>
+				<uni-list-item>
+					<template v-slot:header>
+						<view class="slot-box">
+							<image class="slot-image" src="/static/logo.png" mode="widthFix"></image>
+						</view>
+					</template>
+					<template v-slot:body>
+						<text class="slot-box slot-text">自定义两侧插槽</text>
+					</template>
+					<template v-slot:footer>
+						<image class="slot-image" src="/static/logo.png" mode="widthFix"></image>
+					</template>
+				</uni-list-item>
+			</uni-list>
+		</uni-section>
+	</view>
+</template>
+``` 
+
+> Script
+``` html
+<script>
+	export default {
+		components: {},
+		data() {
+			return {
+				cover: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
+				avatar: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png',
+				extraIcon: {
+					color: '#4cd964',
+					size: '22',
+					type: 'gear-filled'
+				}
+			};
+		},
+		methods: {
+			onClick(e) {
+				console.log('执行click事件', e.data)
+				uni.showToast({
+					title: '点击反馈'
+				});
+			},
+			switchChange(e) {
+				uni.showToast({
+					title: 'change:' + e.value,
+					icon: 'none'
+				});
+			}
+		}
+	};
+</script>
+``` 
+> Style
+``` html
+<style lang="scss">
+	.slot-box {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.slot-image {
+		/* #ifndef APP-NVUE */
+		display: block;
+		/* #endif */
+		margin-right: 10px;
+		width: 30px;
+		height: 30px;
+	}
+
+	.slot-text {
+		flex: 1;
+		font-size: 14px;
+		color: #4cd964;
+		margin-right: 10px;
+	}
+</style>
+
+```
+:::
+
+[完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/list/list)
 
 
 
@@ -343,6 +527,3 @@ switchTab|同 uni.switchTab()
 2. 云端一体列表（宫格模式）：[https://ext.dcloud.net.cn/plugin?id=2671](https://ext.dcloud.net.cn/plugin?id=2671)
 3. 云端一体列表（列表模式）：[https://ext.dcloud.net.cn/plugin?id=2672](https://ext.dcloud.net.cn/plugin?id=2672)
 
-## 组件示例
-
-点击查看：[https://hellouniapp.dcloud.net.cn/pages/extUI/list/list](https://hellouniapp.dcloud.net.cn/pages/extUI/list/list)

@@ -87,13 +87,13 @@ Grid 广告在创建后会自动拉取广告。开发者可以通过 ad 组件�
 
 广告组件提供黑、白两种主题样式，开发者可以在创建广告时传入ad-theme参数实现主题样式选择，ad-theme参数为字符串类型，参数值可选white, black
 
-```
+```html
 <view class="adContainer">
   <ad unit-id="xxxx" ad-type="grid" ad-theme="white"></ad>
 </view>
 ```
 
-```
+```html
 <view class="adContainer">
   <ad unit-id="xxxx" ad-type="grid" ad-theme="black"></ad>
 </view>
@@ -104,13 +104,13 @@ Grid 广告在创建后会自动拉取广告。开发者可以通过 ad 组件�
 
 广告组件提供黑、白两种主题样式，开发者可以在创建广告时传入grid-count参数实现主题样式选择，grid-count参数为数字类型，参数值可选5, 8
 
-```
+```html
 <view class="adContainer">
   <ad unit-id="xxxx" ad-type="grid" grid-count="5"></ad>
 </view>
 ```
 
-```
+```html
 <view class="adContainer">
   <ad unit-id="xxxx" ad-type="grid" grid-count="8"></ad>
 </view>

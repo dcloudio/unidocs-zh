@@ -9,7 +9,7 @@
 
 内容联盟广告是一个原生全屏组件，大小不可控制
 
-如果需要嵌入到页面控制大小请使用 [短视频内容联盟组件<ad-content-page>](https://uniapp.dcloud.net.cn/component/ad-content-page)
+如果需要嵌入到页面控制大小请使用 [短视频内容联盟组件<ad-content-page />](https://uniapp.dcloud.net.cn/component/ad-content-page)
 
 **平台差异说明**
 

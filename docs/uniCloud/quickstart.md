@@ -452,7 +452,7 @@ const hour = getOffsetDate(8).getHours()
 
 ## 手机端调用云函数
 
-在uni-app的前端代码中，通过`uniCloud.callFunction`方法调用云函数。详见[callFunction文档](https://uniapp.dcloud.io/uniCloud/functions?id=callfunction)
+在uni-app的前端代码中，通过`uniCloud.callFunction`方法调用云函数。详见[callFunction文档](https://uniapp.dcloud.io/uniCloud/cf-functions#clientcallfunction)
 
 如下代码中，调用了名为`test`的云函数，并发送了`data`的json数据作为上行参数。
 ```javascript

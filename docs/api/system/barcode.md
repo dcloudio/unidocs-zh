@@ -77,3 +77,5 @@ uni.scanCode({
 - 微信内嵌浏览器运行H5版时，可通过js sdk实现扫码，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
 - 在扫码界面点击返回也会进入 `fail` 回调中
 - 支付宝小程序不支持 `success` 回调中的 `scanType`，`charSet`，`path`
+- HX 3.4.4之后版本 android 新增 检测到 QR 码时自动放大功能，提升扫码识别率。
+

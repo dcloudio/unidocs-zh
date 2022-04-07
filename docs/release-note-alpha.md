@@ -2197,7 +2197,7 @@
   + 【重要】 App平台 调整 v3版本 template 节点中引用静态资源文件时（如：图片），调整查找策略为【基于当前文件的路径搜索】，与其他平台保持一致
   + App平台、H5平台 优化 v3版本 uni.moveToLocation 支持 latitude、longitude 参数
   + App平台、H5平台 修复 多列 picker 组件部分情况修改 value 不生效的Bug
-  + App平台 新增 激励视频广告支持服务器回调 [详情](https://uniapp.dcloud.io/api/ad/rewarded-video-ad)
+  + App平台 新增 激励视频广告支持服务器回调 [详情](https://uniapp.dcloud.io/api/a-d/rewarded-video-ad)
   + App平台 优化 控制台日志支持打印数组类型
   + App平台 修复 自定义组件编译模式使用 easycom 后在低版本设备白屏的Bug [详情](https://ask.dcloud.net.cn/question/92473)
   + App平台 修复 v3版本 判断浏览器专用 API（如：navigator）报错的Bug
@@ -2783,3 +2783,5 @@
   + Android平台 修复 创建视频播放控件（VideoPlayer）时，没有开始播放视频也会停止后台背景音频的Bug [详情](https://ask.dcloud.net.cn/question/82034)
   + Android平台 优化 视频播放的操作条的拖动误触和图标美化问题
   + iOS平台 修复 平台绝对路径转换成本地URL路径（plus.io.convertAbsoluteFileSystem）可能返回null的Bug [详情](https://ask.dcloud.net.cn/question/51954)
+
+<md-virtual key="release-note-alpha"/>

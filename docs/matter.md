@@ -39,12 +39,12 @@ H5没有原生组件概念问题，非H5端有原生组件并引发了原生组�
 
 如果你的代码没有直接使用这些，那很可能是引入的三方库使用了这些。如果是后者，去[插件市场](https://ext.dcloud.net.cn/)搜索替代方案。要知道非H5端的js是运行在一个独立的js core或v8下，并不是运行在浏览器里。
 
-从HBuilderX 2.6起，App端新增了renderjs，这是一种运行在视图层的js，vue页面通过renderjs可以操作浏览器对象，进而可以让基于浏览器的库直接在uni-app的App端运行，诸如echart、threejs，详见：[https://uniapp.dcloud.io/frame?id=renderjs](https://uniapp.dcloud.io/frame?id=renderjs)
+从HBuilderX 2.6起，App端新增了renderjs，这是一种运行在视图层的js，vue页面通过renderjs可以操作浏览器对象，进而可以让基于浏览器的库直接在uni-app的App端运行，诸如echart、threejs，详见：[renderjs](https://uniapp.dcloud.io/tutorial/renderjs)
 
-3. 使用了非H5端不支持的vue语法，受小程序自定义组件限制的写法，[详见](/vue-components)
-4. 不要在引用组件的地方在组件属性上直接写 style="xx"，要在组件内部写样式
-5. `url(//alicdn.net)`等路径，改为`url(https://alicdn.net)`，因为在App端//是file协议
-6. 很多人在H5端联网时使用本地测试服务地址(localhost或127.0.0.1)，这样的联网地址手机App端是无法访问的，请使用手机可访问的IP进行联网
+1. 使用了非H5端不支持的vue语法，受小程序自定义组件限制的写法，[详见](/tutorial/vue-components)
+2. 不要在引用组件的地方在组件属性上直接写 style="xx"，要在组件内部写样式
+3. `url(//alicdn.net)`等路径，改为`url(https://alicdn.net)`，因为在App端//是file协议
+4. 很多人在H5端联网时使用本地测试服务地址(localhost或127.0.0.1)，这样的联网地址手机App端是无法访问的，请使用手机可访问的IP进行联网
 
 ### H5正常但小程序异常的可能性
 1. 同上
@@ -64,7 +64,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 ### 小程序或App正常，但H5异常的可能性
 1. 在 uni-app 2.4.7 以前，H5端不支持微信小程序自定义组件，即wxcomponets下的组件，此时可能产生兼容问题。从 2.4.7 起，H5也支持微信自定义组件，不再存在这这方面兼容问题。
 2. App端使用了App特有的API和功能，比如plus、Native.js、subNVue、原生插件等
-3. 使用了小程序专用的功能，比如微信卡卷、小程序插件、微信小程序云开发。对于云开发，建议使用可跨端的uniCloud。
+3. 使用了小程序专用的功能，比如微信卡券、小程序插件、微信小程序云开发。对于云开发，建议使用可跨端的uniCloud。
 
 
 ### App正常，小程序、H5异常的可能性
@@ -114,17 +114,16 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 	- 出于降低h5应用向uni-app迁移成本的考虑，写成div、span也可以运行在app和小程序上，因为uni-app编译器会把这些HTML标签编译为小程序标签。但仍然建议养成新习惯。
 3. Css注意
 	- 虽然大部分css样式在微信小程序和app中都可以支持，但推荐使用flex布局模型，这种布局更灵活高效且支持更多平台(比如nvue、快应用只支持flex布局)
-	- 单位方面，uni-app默认为rpx。这是一种可跨端的通用单位 [详见](/frame?id=%E5%B0%BA%E5%AF%B8%E5%8D%95%E4%BD%8D)
+	- 单位方面，uni-app默认为rpx。这是一种可跨端的通用单位 [详见](/tutorial/syntax-css#尺寸单位)
 4. 工程目录注意
 	- 每个要显示的页面，都要放到pages目录下，新建一个页面所在的目录，然后放同名目录的vue文件，比如project/pages/lista/lista.vue，并且在pages.json里配置。这与小程序的策略相同。
 	- 自定义组件，放到component目录
 	- 静态资源如图片，固定放到static目录下。这是webpack、mpvue的规则
 5. 数据绑定方式的注意
 	- ```uni-app``` 基于```Vue 2.0```实现，开发者需注意Vue 1.0 -> 2.0 的使用差异，详见[从 Vue 1.x 迁移](https://cn.vuejs.org/v2/guide/migration.html)
-	- 
 6. 每个页面支持使用原生title，首页支持使用原生底部tab，这些是要在pages.json里配置，这些并不是vue页面的一部分。当然vue里的js api也可以动态修改原生title
-6. 虽然使用vue，但在app和小程序里，不是spa而是mpa
-7. 位置坐标系统一为国测局坐标系gcj02，这种坐标系可以被多端支持。老版5+的百度定位和百度地图使用的是百度私有坐标系bd09ll，这种坐标系需要转换。新版uni-app里的百度地图已经默认改为gcj02。高德地图不受影响，一直是gcj02
+7. 虽然使用vue，但在app和小程序里，不是spa而是mpa
+8. 位置坐标系统一为国测局坐标系gcj02，这种坐标系可以被多端支持。老版5+的百度定位和百度地图使用的是百度私有坐标系bd09ll，这种坐标系需要转换。新版uni-app里的百度地图已经默认改为gcj02。高德地图不受影响，一直是gcj02
 
 ### H5 开发注意
 
@@ -186,13 +185,13 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 
 #### 各家小程序实现机制不同，可能存在的平台兼容问题
 
-1.浏览器内核差异
+1. 浏览器内核差异
 
 各家小程序的浏览器内核不同，可能会造成css兼容性问题，更多细节参考：[https://ask.dcloud.net.cn/article/1318](https://ask.dcloud.net.cn/article/1318)
 
-2.自定义组件渲染差异
+2. 自定义组件渲染差异
 
-微信（可以使用[virtualHost](https://uniapp.dcloud.io/vue-api?id=%e5%85%b6%e4%bb%96%e9%85%8d%e7%bd%ae)配置）/QQ/百度/字节跳动这四家小程序，自定义组件在渲染时会比App/H5端多一级节点，在写样式时需要注意：
+微信（可以使用[virtualHost](https://uniapp.dcloud.io/tutorial/vue-api.html#其他配置)配置）/QQ/百度/字节跳动这四家小程序，自定义组件在渲染时会比App/H5端多一级节点，在写样式时需要注意：
 
 * 使用`flex`布局时，直接给自定义组件的父元素设置为`display:flex`不能影响到自定义组件内部的根节点，需要设置当前自定义组件为`display:flex`才可以。
 * 在自定义组件内部设置根元素高度为100%，不能撑满自定义组件父元素。需要同时设置当前自定义组件高度为100%才可以。

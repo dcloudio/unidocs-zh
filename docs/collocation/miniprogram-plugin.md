@@ -1,4 +1,4 @@
-> 本文档意在介绍如何把uni-app项目编译为小程序插件，如果想了解如何在uni-app中引用和使用小程序插件，另见文档：[使用小程序插件](/component/mp-weixin-plugin)
+> 本文档意在介绍如何把uni-app项目编译为小程序插件，如果想了解如何在uni-app中引用和使用小程序插件，另见文档：[使用小程序插件](/tutorial/mp-weixin-plugin)
 
 小程序插件规范由小程序厂商定义，插件是对一组 js 接口、自定义组件或页面的封装，用于嵌入到小程序中使用。
 
@@ -88,7 +88,7 @@ plugin
 
 1. `mp-weixin` 中的 `pages` 项与 `mp-alipay` 中的 `publicPages` 项作用一致
 2. `mp-alipay` 中供外部使用的页面，需要在 `pages` 中声明，数组类型
-3. 由于两端的格式不一致，可以在 `plugin.json` 中使用[条件编译](https://uniapp.dcloud.io/platform?id=preprocessor)处理
+3. 由于两端的格式不一致，可以在 `plugin.json` 中使用[条件编译](https://uniapp.dcloud.io/tutorial/platform.html#preprocessor)处理
 
 #### 编译步骤
 

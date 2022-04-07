@@ -1,0 +1,241 @@
+$navbar-main-navbar-height = $navbarHeight - $navbar-sub-navbar-height
+$navbar-logo-height = $navbar-main-navbar-height - 2rem
+
+.navbar
+  height auto
+  background-color $navbar-background-color
+  text-align center
+  &:not(.navbar-fixed)
+    position static
+  .main-navbar-links + .links, .mobile-main-navbar + .links
+    background-color $navbar-background-color
+  .home-link
+    position: absolute
+    left: $navbar-horizontal-padding
+    line-height $navbar-logo-height
+  .title-logo
+    padding-left 20px
+    border-left 1px solid #ccc
+    @media (max-width: 1080px)
+      &
+        display none
+  .sub-navbar
+    line-height $navbar-sub-navbar-height
+    border-top-width 1px
+  .mobile-main-navbar
+    display none
+  .mobile-sub-navbar
+    display none
+  .main-navbar
+    color #222
+    box-shadow 0 1px 0 0 rgba(0,0,0,.06)
+    position relative
+    display flex
+    justify-content center
+    align-items center
+    .main-navbar-links
+      width 50%
+      white-space: nowrap;
+      display inline-block
+      @media (min-width: 1080px) and (max-width: 1680px)
+        &
+          flex 1
+          padding 0 300px
+      show-after()
+        opacity 1
+        transform scaleX(1)
+      .main-navbar-item
+        display inline-block
+        padding 0 3%
+        position relative
+        &.active a
+          color $accentColor
+          &::after
+            show-after()
+            color $accentColor
+        &>a
+        &>div>a
+          color inherit
+          &:hover
+            color $accentColor
+          &::after
+            content ''
+            transition: all .2s cubic-bezier(.18,.89,.17,.88),opacity .15s ease
+            width 46px
+            height 2px
+            background-color $accentColor
+            position absolute
+            left 50%
+            margin-left -23px
+            bottom 0
+            opacity 0
+            transform scaleX(0)
+  .switch-version
+    padding-right 10px
+    text-decoration underline
+    color inherit
+    &:hover
+      color $accentColor
+
+@media (max-width: $MQMobile)
+  $navbar-a-color = #222;
+
+  .sidebar
+    width 100%
+
+  .navbar
+    top 0px !important
+    height $navbar-main-navbar-height
+    &
+      position fixed !important
+    .main-navbar
+      justify-content flex-end
+    .mobile-main-navbar
+      display inline-block
+      // padding-right 75px
+      padding-right 170px
+      a
+        color $navbar-a-color
+      .mobile-links__btn:after
+        content ""
+        width 6px
+        height 4px
+        background-image url("data:image/svg+xml;charset=UTF-8,%3csvg width='6' height='4' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.23575684.6H.76852779L3.0003575 3.09954227 5.23575684.6z' fill='%23000' stroke='%23000' stroke-width='1.2' fill-rule='evenodd'/%3e%3c/svg%3e")
+        background-repeat no-repeat
+        background-size contain
+        display inline-block
+        vertical-align middle
+        margin-left 4px
+        margin-top -2px
+        position static
+        border none
+        transform none
+        background-color transparent
+        border-radius 0
+      .mobile-links__panel
+        text-align left
+        display flex
+        flex-direction column
+        position fixed
+        left 0
+        right 0
+        top $navbar-main-navbar-height
+        bottom 0
+        background-color #f7f7f7
+        overflow auto
+        z-index 99
+        opacity 0
+        visibility hidden
+        transition opacity .2s,top .2s
+        &.open
+          opacity 1
+          visibility visible
+        .main-navbar-item
+          &.active a
+            color $accentColor
+          button.mobile-dropdown-title
+          a
+            display block
+            padding 20px 40px
+            font-size 17px
+            position relative
+            height auto
+            line-height 1.4
+          button.mobile-dropdown-title
+            width 100%
+            text-align left
+          a
+            &::before
+              content ""
+              display block
+              width 12px
+              height 12px
+              background-image url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.99427682 1.3995186L3.88640626.5l4.86067483 4.90093365c.3281374.33085521.331048.86434278 0 1.1981327L3.88640626 11.5l-.89212944-.89951856L7.55696751 6 2.99427682 1.3995186z' fill='%23000' fill-rule='evenodd' fill-opacity='.3'/%3e%3c/svg%3e")
+              background-size contain
+              background-repeat no-repeat
+              position absolute
+              right 40px
+              top 50%
+              margin-top -6px
+            &::after
+              content ""
+              display block
+              position absolute
+              bottom 0
+              left 40px
+              right 40px
+              height 1px
+              background-color rgba(0,0,0,.08)
+              transform scaleY(.5)
+              width auto
+              opacity 1
+              margin 0
+    .sub-navbar
+      .mobile-sub-navbar
+        display block
+        background-color white
+        position relative
+        &::after
+          content ""
+          position absolute
+          display block
+          bottom 0
+          left 0
+          right 0
+          height 1px
+          background-color #e4e8eb
+          transform scaleY(.5)
+        .subnavbar__item 
+          a
+            display block
+            padding 0 16px
+            min-width 0
+            margin 0
+            background-color transparent
+            border-radius 0
+            text-align left
+            font-size 17px
+            color $navbar-a-color
+            height 56px
+            line-height 56px
+            font-weight 500
+          &::after
+            content ""
+            display block
+            width 12px
+            height 12px
+            position absolute
+            right 16px
+            top 50%
+            margin-top -6px
+            background-size contain
+            background-repeat no-repeat
+            background-image url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.99427682 1.3995186L3.88640626.5l4.86067483 4.90093365c.3281374.33085521.331048.86434278 0 1.1981327L3.88640626 11.5l-.89212944-.89951856L7.55696751 6 2.99427682 1.3995186z' fill='%23000' fill-rule='evenodd' fill-opacity='.3'/%3e%3c/svg%3e")
+            transform rotate(90deg)
+
+emphasize()
+  position relative
+  &::before
+    @media (max-width: $MQMobile)
+      &
+        top: 8px;
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #07c160;
+    position: absolute;
+    top: 13px;
+    left: 18px;
+
+.sidebar>ul.sidebar-links>li>.active + ul>li .sidebar-link.active
+  &::before
+    left: 10px;
+
+.sidebar-links ul.sidebar-sub-headers .sidebar-link.active
+  emphasize()
+
+.sidebar-group.depth-1
+  .sidebar-links>li>.sidebar-link.active:not(.data-no-emphasize)
+    emphasize()

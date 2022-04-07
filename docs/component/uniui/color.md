@@ -268,14 +268,14 @@ $uni-shadow-lg:0px 1px 10px 2px rgba($color: #a5a4a4, $alpha: 0.5);
 	padding:10px 0;
 	text-align:center;
 }
-.markdown-section p.color-main-text {
+p.color-main-text {
 	margin:0;
 	color:#fff;
-	font-size:12px;
+	font-size:14px;
 	line-height:1.5;
 }
 
-.markdown-section p.color-main-text.black {
+p.color-main-text.black {
 	color:#333;
 }
 .color-main-box {

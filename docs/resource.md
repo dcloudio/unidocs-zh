@@ -1,9 +1,9 @@
 建议第一步，看完[uni-app官网](https://uniapp.dcloud.io)的首页介绍。
 
-建议第二步，通过[快速上手](https://uniapp.dcloud.io/quickstart)，亲身体验下uni-app。
+建议第二步，通过[快速上手](https://uniapp.dcloud.io/quickstart-hx)，亲身体验下uni-app。
 
 建议第三步，看完[《uni-app官方教程》](https://ke.qq.com/course/3169971)，出品人：DCloud，课时：共3节。
-
+[a]({{ $themeConfig.domainName }})
 #### 如果你熟悉h5，但不熟悉vue和小程序 
 1. 看完这篇[白话uni-app](http://ask.dcloud.net.cn/article/35657)
 2. DCloud与vue合作，在[vue.js官网](https://cn.vuejs.org/v2/guide/)提供了免费视频教程，也可以直达教程地址：[https://learning.dcloud.io](https://learning.dcloud.io)

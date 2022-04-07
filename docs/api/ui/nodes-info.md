@@ -130,7 +130,7 @@ query.select('#id').boundingClientRect(data => {
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|x|x|√|√|√|
+|x|x|√|x|x|x|x|√|√|
 
 **callback 返回参数**
 
@@ -202,14 +202,16 @@ view.boundingClientRect(data => {
         }
       }
     },
-    onReady () {
-      const result = dom.getComponentRect(this.$refs.box, option => {
-        console.log('getComponentRect:', option)
-        this.size = option.size
-      })
-      console.log('return value:', result)
-      console.log('viewport:', dom.getComponentRect('viewport'))
-    }
+    onReady() {
+    	 setTimeout(()=> {
+	        const result = dom.getComponentRect(this.$refs.box, option => {
+		    console.log('getComponentRect:', option)
+		    this.size = option.size
+		})
+		console.log('return value:', result)
+		console.log('viewport:', dom.getComponentRect('viewport'))
+	 }, 100);
+     }
   }
 </script>
 ```

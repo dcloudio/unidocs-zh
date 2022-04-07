@@ -207,7 +207,11 @@ const todo = uniCloud.importObject('todo')
 
 ## 云对象的API@api
 
-云对象的方法内可以通过this上的一些接口获取一些信息
+云对象作为云函数的一种，可以调用所有node的API和uniCloud的API。
+
+uniCloud有众多API，另见：[uniCloud的API清单](uniCloud/cf-functions.html#unicloud-api%E5%88%97%E8%A1%A8)
+
+与云函数入参时的`context`不同，云对象没有`context`。除上述API之外，云对象的this对象还有一批专用方法来获取当前请求的上下文信息。
 
 ### 获取客户端信息@get-client-info
 
@@ -297,6 +301,8 @@ module.exports = {
 
 ### 获取当前调用的方法名@get-method-name
 
+本方法主要用于在`_before`等拦截器方法里，判断客户端上传的信息进行处理，比如发现客户端调用的是a方法时，执行一段特殊逻辑。详见下文的[预处理](uniCloud/cloud-obj?id=before-and-after)。
+
 **接口形式**
 
 `this.getMethodName()`
@@ -312,6 +318,8 @@ module.exports = {
 ```
 
 ### 获取当前参数列表@get-params
+
+在云对象的普通方法里，参数可以直接获取。本方法主要用于在_`_before`等拦截器方法里，判断客户端上传的信息进行处理。详见下文的[预处理](uniCloud/cloud-obj?id=before-and-after)。
 
 **接口形式**
 
@@ -331,7 +339,7 @@ module.exports = {
 
 ### 预处理 _before@before
 
-云对象内可以创建一个特殊的方法_before，用来在调用常规方法之前进行预处理，一般用于拦截器、身份验证、参数校验等。
+云对象内可以创建一个特殊的方法_before，用来在调用常规方法之前进行预处理，一般用于拦截器、统一的身份验证、参数校验等。
 
 以下示例的逻辑是，当客户端调用todo云对象的add方法时，会先执行_before方法中的逻辑，判断为add方法时校验了客户端token，校验失败则直接报错返回客户端，校验通过继续执行add方法。
 
@@ -355,7 +363,7 @@ module.exports = {
 
 ### 后处理 _after@after
 
-与预处理`_before`对应的是后处理`_after`。云对象内可以创建一个特殊的方法_after用来再加工处理本次调用方法的返回结果或者抛出的错误
+与预处理`_before`对应的是后处理`_after`。云对象内可以创建一个特殊的方法`_after`用来再加工处理本次调用方法的返回结果或者抛出的错误
 
 请看以下示例：
 
@@ -488,7 +496,7 @@ const res = await todo.add('title demo', 'content demo')
 
 ## 本地运行@run-local
 
-云对象无法直接本地运行，可以通过其他云函数调用本地云对象（在调用云对象的云函数右键本地运行），或者客户端调用本地云对象的方式来实现云对象的本地运行。
+云对象目前无法直接本地运行，可以通过其他云函数调用本地云对象（在调用云对象的云函数右键本地运行），或者客户端调用本地云对象的方式来实现云对象的本地运行。
 
 ## 推荐最佳实践
 

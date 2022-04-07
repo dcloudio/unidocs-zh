@@ -1,6 +1,8 @@
+uni-config-center插件的下载地址：[https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
+
 # 为什么使用uni-config-center
 
-实际开发中很多插件/云函数/公共模块需要配置文件才可以正常运行，如果每个都单独进行配置的话就会产生下面这样的目录结构
+实际开发中很多插件/云函数/公共模块需要配置文件才可以正常运行，如果每个都单独进行配置的话就会产生下面这样的目录结构。
 
 ```text
 cloudfunctions

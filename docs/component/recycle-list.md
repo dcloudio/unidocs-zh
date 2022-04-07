@@ -36,7 +36,7 @@ key|可选属性，用于指定列表数据中可以作为唯一标识的键值�
 在 `<recycle-list>` 添加 switch 属性可以用来指定数据中用于区分子模板类型的字段名，语义和编程语言里的 switch 一致，配合 `<cell-slot>` 中的 case 和 default 属性一起使用。
 如果省略了 switch 属性，则只会将第一个 `<cell-slot>` 视为模板，多余的模板将会被忽略。
 
-```
+```html
 <recycle-list for="(item, i) in longList" switch="type">
   <cell-slot case="A">
     <text>- A {{i}} -</text>
@@ -55,7 +55,7 @@ key|可选属性，用于指定列表数据中可以作为唯一标识的键值�
 
 在 `<recycle-list>` 中使用的子组件也将被视为模板，在开发组件时给 `<template>` 标签添加 recyclable 属性，才可以用在 `<recycle-list>` 中。
 
-```
+```html
 <template recyclable>
   <div>
     <text>...</text>
@@ -74,7 +74,7 @@ key|可选属性，用于指定列表数据中可以作为唯一标识的键值�
 
 例如，下列写法不可用：
 
-```
+```html
 <div :prop="capitalize(card.title)">
   <text>{{ card.title | capitalize }}</text>
 </div>
@@ -111,7 +111,7 @@ key|可选属性，用于指定列表数据中可以作为唯一标识的键值�
 
 组件的属性 目前子组件的属性不支持函数。（正在讨论实现方案）
 
-```
+```html
 <sub-component :prop="item.xxx" />
 ```
 
@@ -129,7 +129,7 @@ key|可选属性，用于指定列表数据中可以作为唯一标识的键值�
 计划支持。`vm.$on`, `vm.$once`, `vm.$emit`, `vm.$off` 等功能还未完全调通，接口可用，但是行为可能有些差异（参数丢失），暂时不要使用。
 
 #### 示例
-```
+```html
 <recycle-list for="(item, i) in longList" switch="type">
   <cell-slot case="A">
     <text>- A {{i}} -</text>
@@ -141,7 +141,7 @@ key|可选属性，用于指定列表数据中可以作为唯一标识的键值�
 ```
 如果有如下数据：
 
-```
+```js
 const longList = [
   { type: 'A' },
   { type: 'B' },
@@ -153,7 +153,7 @@ const longList = [
 
 则会生成如下等价节点：
 
-```
+```html
 <text>- A 0 -</text>
 <text>- B 1 -</text>
 <text>- B 2 -</text>
@@ -163,7 +163,7 @@ const longList = [
 
 如果将模板合并成一个，也可以省略 `switch` 和 `case`，将例子进一步简化：
 
-```
+```html
 <recycle-list for="(item, i) in longList">
   <cell-slot>
     <text>- {{item.type}} {{i}} -</text>

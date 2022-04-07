@@ -32,7 +32,7 @@ const config = {
     // TODO use theme
     repo: 'dcloudio/uni-app',
     docsRepo: 'https://gitee.com/dcloud/unidocs-zh',
-    docsBranch: 'vuepress',
+    docsBranch: 'master',
     docsDir: 'docs',
     editLinks: true,
     editLinkText: '帮助我们改善此页面！',

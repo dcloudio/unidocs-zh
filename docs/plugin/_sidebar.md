@@ -4,5 +4,6 @@
 * [原生插件](/plugin/native-plugin.md)
 * 插件作者专区
   * [发布插件](/plugin/publish.md)
+  * [支持多语言](/plugin/language.md)
   * [销售变现](/plugin/sell.md)
   * [oath开放平台](/plugin/oath.md)

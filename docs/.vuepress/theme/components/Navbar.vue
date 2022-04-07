@@ -34,7 +34,7 @@
           'max-width': linksWrapMaxWidth + 'px'
         } : {}"
       >
-        <a class="switch-version" href="javascript:void(0)" @click="switchVersion">回到旧版</a>
+        <!-- <a class="switch-version" href="javascript:void(0)" @click="switchVersion">回到旧版</a> -->
         <DcloudSearchPage v-if="isAlgoliaSearch" ref="dcloudSearchPage" :options="algolia"/>
         <AlgoliaSearchBox v-if="isAlgoliaSearch" />
         <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />

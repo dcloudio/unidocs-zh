@@ -28,11 +28,11 @@ MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如
 
 |属性名|类型|默认值|必填|说明|
 |:-|:-|:-|:-|:-|
-|min-width|number||否|页面最小宽度（ px 为单位）|
-|max-width|number||否|页面最大宽度（ px 为单位）|
+|minWidth|number||否|页面最小宽度（ px 为单位）|
+|maxWidth|number||否|页面最大宽度（ px 为单位）|
 |width|number||否|页面宽度（ px 为单位）|
-|min-height|number||否|页面最小高度（ px 为单位）|
-|max-height|number||否|页面最大高度（ px 为单位）|
+|minHeight|number||否|页面最小高度（ px 为单位）|
+|maxHeight|number||否|页面最大高度（ px 为单位）|
 |height|number||否|页面高度（ px 为单位）|
 |orientation|string||否|屏幕方向（ landscape 或 portrait ）|
 

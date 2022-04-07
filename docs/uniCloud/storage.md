@@ -44,7 +44,7 @@
 |参数名						|类型			|必填	|默认值	|说明																														|平台差异说明							|
 |:-:							|:-:			|:-:	|:-:		|:-:																														|:-:											|
 |filePath					|String		|是		|-			|要上传的文件对象																								|-												|
-|cloudPath				|String		|是		|-			|文件的绝对路径，包含文件名																			|-	|
+|cloudPath				|String		|是		|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名																			|-	|
 |fileType					|String		|-		|-			|文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio|-												|
 |onUploadProgress	|Function	|否		|-			|上传进度回调																										|-												|
 
@@ -460,7 +460,7 @@ HBuilderX 3.1.0之前版本如使用阿里云，请在客户端通过`uniCloud.u
 
 | 字段				| 类型	| 必填| 说明																															|
 | ---					| ---		| ---	| ---																																|
-| cloudPath		| string| 是	| 文件的名字（包含文件名）|
+| cloudPath		| string| 是	| 使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名			|
 | fileContent	| -			| 是	| 文件内容，请看下方说明																						|
 
 **说明**

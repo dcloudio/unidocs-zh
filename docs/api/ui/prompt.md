@@ -158,8 +158,7 @@ uni.showModal({
 
 |参数|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
-|title|String|否|菜单标题|App、H5、支付宝小程序、钉钉小程序|
-|alertText|String|否|警示文案|微信小程序（注意：真机调试才有效）|
+|title|String|否|操作菜单的标题||
 |itemList|Array&lt;String&gt;|是|按钮的文字数组|微信、百度、字节跳动小程序数组长度最大为6个|
 |itemColor|HexColor|否|按钮的文字颜色，字符串格式，默认为"#000000"|App-iOS、字节跳动小程序、飞书小程序不支持|
 |popover|Object|否|大屏设备弹出原生选择按钮框的指示区域，默认居中显示|App-iPad（2.6.6+）、H5（2.9.2）|

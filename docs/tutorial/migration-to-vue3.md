@@ -37,7 +37,9 @@ export function createApp() {
 
 :::
 
-## 全局属性，例如：全局网络请求
+## 全局属性
+
+例如：全局网络请求
 
 ```js
 // 之前 - Vue 2
@@ -48,7 +50,9 @@ const app = createApp({});
 app.config.globalProperties.$http = () => {};
 ```
 
-## 插件使用，例如：使用 vuex 的 store
+## 插件使用
+
+例如：使用 vuex 的 store
 
 ```js
 // 之前 - Vue 2
@@ -61,7 +65,9 @@ const app = createApp(App);
 app.use(store);
 ```
 
-## 项目根目录必需创建 index.html 文件，粘贴复制如下内容：
+## 项目根目录必需创建 index.html 文件
+
+粘贴复制如下内容：
 
 ```html
 <!DOCTYPE html>
@@ -83,9 +89,11 @@ app.use(store);
 </html>
 ```
 
-## 只支持使用 ES6 模块规范，commonJS 需改为 ES6 模块规范
+## 只支持使用 ES6 模块规范
 
-### 导入模块, 例如：
+commonJS 需改为 ES6 模块规范
+
+### 模块导入
 
 ```js
 // 之前 - Vue 2, 使用 commonJS
@@ -95,7 +103,7 @@ var utils = require("../../../common/util.js");
 import utils from "../../../common/util.js";
 ```
 
-### 模块导出，例如：
+### 模块导出
 
 ```js
 // 之前 - Vue 2, 依赖如使用 commonJS 方式导出
@@ -135,7 +143,7 @@ export default store;
 
 ## 避免在同一元素上同时使用 v-if 与 v-for
 
-> 而 Vue3 中，v-if 总是优先于 v-for 生效。以上写法将会在 Vue3 中与预期不符合，由于语法上存在歧义，建议避免在同一元素上同时使用两者（[更多](https://v3.cn.vuejs.org/guide/migration/v-if-v-for.html#%E6%A6%82%E8%A7%88)）。
+而 Vue3 中，v-if 总是优先于 v-for 生效。以上写法将会在 Vue3 中与预期不符合，由于语法上存在歧义，建议避免在同一元素上同时使用两者（[更多](https://v3.cn.vuejs.org/guide/migration/v-if-v-for.html#%E6%A6%82%E8%A7%88)）。
 
 ## 生命周期的适配
 
@@ -249,7 +257,9 @@ Vue3 将不支持 `slot="xxx"` 的用法 ，请使用 `v-slot:xxx` 用法。[更
 
 从 Vue 3.0 开始，过滤器已删除，不再支持，建议用方法调用或计算属性替换它们。[更多](https://v3.cn.vuejs.org/guide/migration/filters.html#%E6%A6%82%E8%A7%88)
 
-## 在 Vue3 中，处理 API `Promise 化` 调用结果的方式不同于 Vue2。[更多](https://uniapp.dcloud.io/api/#api-promise-化)
+## API `Promise 化` 调用结果的方式
+
+在 Vue3 中，处理 API `Promise 化` 调用结果的方式不同于 Vue2。[更多](https://uniapp.dcloud.io/api/#api-promise-化)
 
 - Vue3 中，调用成功会进入 then 方法，调用失败会进入 catch 方法
 - Vue2 中，调用无论成功还是失败，都会进入 then 方法，返回数据的第一个参数是错误对象，第二个参数是返回数据
@@ -320,11 +330,11 @@ uni.addInterceptor({
 
 :::
 
-## uni-app 生命周期钩子在 Vue3 组合式 API 中的使用方式
+## 生命周期钩子的组合式 API 使用方式
 
 在 Vue3 组合式 API 中，也需要遵循 uni-app 生命周期钩子规范, 如 onLaunch 等应用生命周期仅可在 App.vue 中监听，使用中请注意生命周期钩子的适用范围。[查看全部生命周期钩子](https://uniapp.dcloud.net.cn/collocation/frame/lifecycle)
 
-### 只能在 `<script setup>` 单文件语法糖或 `setup()` 方法中使用生命周期钩子，以 A 页面跳转 B 页面传递参数为例：
+只能在 `<script setup>` 单文件语法糖或 `setup()` 方法中使用生命周期钩子，以 A 页面跳转 B 页面传递参数为例：
 
 ::: preview
 
@@ -384,7 +394,10 @@ uni.addInterceptor({
 ## `$mp` 调整为 `$scope`
 
 在 Vue3 中，this 对象下的 `$mp` 调整为 `$scope`
-## 在 Vue3 中，如果 nvue 使用了 Vuex 的相关 API，需要在 main.js 的 createApp 的返回值中 return 一下 Vuex 示例：
+
+## 在 nvue 使用 Vuex
+
+在 Vue3 中，如果 nvue 使用了 Vuex 的相关 API，需要在 main.js 的 createApp 的返回值中 return 一下 Vuex 示例：
 
   ```js
   import Vuex from "vuex";
@@ -398,7 +411,9 @@ uni.addInterceptor({
   }
   ```
 
-## App，小程序端源码调试，需要在 vite.config.js 中主动开启 sourcemap
+## 需主动开启 sourcemap
+
+App，小程序端源码调试，需要在 vite.config.js 中主动开启 sourcemap
 
   ```js
   import { defineConfig } from "vite";
@@ -417,9 +432,10 @@ uni.addInterceptor({
   });
   ```
 
-## 在 vue3 的小程序平台中，监听原生的点击事件可以先使用 tap
+## 小程序平台中监听原生的点击事件
 
-在 vue3 中，移除了.native 修饰符，所以编译器无法预知 click 是要触发原生事件，还是组件的自定义事件，故并未转换成小程序的 tap 事件
+在 vue3 的小程序平台中，监听原生的点击事件可以先使用 tap。
+在 vue3 中，移除了.native 修饰符，所以编译器无法预知 click 是要触发原生事件，还是组件的自定义事件，故并未转换成小程序的 tap 事件。
 
 ## vue3 支持的手机版本最低到多少？
 
@@ -429,9 +445,11 @@ uni.addInterceptor({
 
 vue3 nvue 暂不支持 recycle-list 组件
 
-## vue3 在 h5 平台发行时，为了优化包体积大小，会默认启动摇树，仅打包明确使用的 api
+## h5 平台发行时，会默认启动摇树
 
+vue3 在 h5 平台发行时，为了优化包体积大小，会默认启动摇树，仅打包明确使用的 api，
 如果要关闭摇树，可以在 manifest.json 中配置：
+
 ```json
 "h5": {
     "optimization": {

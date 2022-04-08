@@ -87,23 +87,23 @@ app.use(store);
 
 ### 导入模块, 例如：
 
-  ```js
-  // 之前 - Vue 2, 使用 commonJS
-  var utils = require("../../../common/util.js");
+```js
+// 之前 - Vue 2, 使用 commonJS
+var utils = require("../../../common/util.js");
 
-  // 之后 - Vue 3， 只支持 ES6 模块
-  import utils from "../../../common/util.js";
-  ```
+// 之后 - Vue 3， 只支持 ES6 模块
+import utils from "../../../common/util.js";
+```
 
 ### 模块导出，例如：
 
-  ```js
-  // 之前 - Vue 2, 依赖如使用 commonJS 方式导出
-  module.exports.X = X;
+```js
+// 之前 - Vue 2, 依赖如使用 commonJS 方式导出
+module.exports.X = X;
 
-  // 之后 - Vue 3， 只支持 ES6 模块
-  export default { X };
-  ```
+// 之后 - Vue 3， 只支持 ES6 模块
+export default { X };
+```
 
 ## vuex 用法
 
@@ -174,17 +174,17 @@ Vue3 的 v-model 相对 Vue2 来说 ，有了较大的改变。可以使用多 `
 
 ### 修改 modelValue
 
-  用于自定义组件时，Vue3 v-model prop 和事件默认名称已更改 `props.value` 修改为 `props.modelValue` ,`event.value` 修改为 `update:modelValue`
+用于自定义组件时，Vue3 v-model prop 和事件默认名称已更改 `props.value` 修改为 `props.modelValue` ,`event.value` 修改为 `update:modelValue`
 
-  ```javascript
-  export default {
-    props: {
-      // value:String,
-      // 替换 value 为 modelValue
-      modelValue: String,
-    },
-  };
-  ```
+```javascript
+export default {
+  props: {
+    // value:String,
+    // 替换 value 为 modelValue
+    modelValue: String,
+  },
+};
+```
 
 ## 事件返回
 
@@ -254,146 +254,151 @@ Vue3 将不支持 `slot="xxx"` 的用法 ，请使用 `v-slot:xxx` 用法。[更
 - Vue3 中，调用成功会进入 then 方法，调用失败会进入 catch 方法
 - Vue2 中，调用无论成功还是失败，都会进入 then 方法，返回数据的第一个参数是错误对象，第二个参数是返回数据
 
-  ::: preview
+### 转换方法
 
-  > Vue2
+::: preview
 
-  ```js
-  // Vue 2 转 Vue 3, 在 main.js 中写入以下代码即可
-  function isPromise(obj) {
-    return (
-      !!obj &&
-      (typeof obj === "object" || typeof obj === "function") &&
-      typeof obj.then === "function"
-    );
-  }
+> Vue2
 
-  uni.addInterceptor({
-    returnValue(res) {
-      if (!isPromise(res)) {
-        return res;
-      }
-      return new Promise((resolve, reject) => {
-        res.then((res) => {
-          if (res[0]) {
-            reject(res[0]);
-          } else {
-            resolve(res[1]);
-          }
-        });
-      });
-    },
-  });
-  ```
+```js
+// Vue 2 转 Vue 3, 在 main.js 中写入以下代码即可
+function isPromise(obj) {
+  return (
+    !!obj &&
+    (typeof obj === "object" || typeof obj === "function") &&
+    typeof obj.then === "function"
+  );
+}
 
-  > Vue3
-
-  ```js
-  // Vue 3 转 Vue 2, 在 main.js 中写入以下代码即可
-  function isPromise(obj) {
-    return (
-      !!obj &&
-      (typeof obj === "object" || typeof obj === "function") &&
-      typeof obj.then === "function"
-    );
-  }
-
-  uni.addInterceptor({
-    returnValue(res) {
-      if (!isPromise(res)) {
-        return res;
-      }
-      const returnValue = [undefined, undefined];
-      return res
-        .then((res) => {
-          returnValue[1] = res;
-        })
-        .catch((err) => {
-          returnValue[0] = err;
-        })
-        .then(() => returnValue);
-    },
-  });
-  ```
-
-  :::
-
-## uni-app 生命周期钩子在 Vue3 组合式 API 中的使用方式如下：
-
-    - 在 Vue3 组合式 API 中，也需要遵循 uni-app 生命周期钩子规范, 如 onLaunch 等应用生命周期仅可在 App.vue 中监听，使用中请注意生命周期钩子的适用范围。[查看全部生命周期钩子](https://uniapp.dcloud.net.cn/collocation/frame/lifecycle)
-    - 只能在 `<script setup>` 单文件语法糖或 `setup()` 方法中使用生命周期钩子，以 A 页面跳转 B 页面传递参数为例：
-      ::: preview
-
-      > 方法一
-
-      ```js
-      // 从 A 页面跳转 B 页面时传递参数 ?id=1&name=uniapp，xxx 为跳转的页面路径
-      //uni.navigateTo({
-      //  url: 'xxx?id=1&name=uniapp'
-      //})
-
-      // 方法一：在 B 页面 <script setup> 中
-      <script setup>
-        import {
-          onLoad,
-          onShow
-        } from "@dcloudio/uni-app";
-
-        // onLoad 接受 A 页面传递的参数
-        onLoad((option) => {
-          console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
-        });
-
-        onShow(() => {
-          console.log("B 页面 onShow");
-        });
-      </script>
-      ```
-
-      > 方法二
-
-      ```js
-      // 方法二：在 B 页面 setup() 中
-      <script>
-        import {
-          onLoad,
-          onShow,
-        } from "@dcloudio/uni-app";
-
-        export default {
-          setup() {
-            // onLoad 接受 A 页面传递的参数
-            onLoad((option) => {
-              console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
-            });
-
-            onShow(() => {
-              console.log("B 页面 onShow");
-            });
-          }
+uni.addInterceptor({
+  returnValue(res) {
+    if (!isPromise(res)) {
+      return res;
+    }
+    return new Promise((resolve, reject) => {
+      res.then((res) => {
+        if (res[0]) {
+          reject(res[0]);
+        } else {
+          resolve(res[1]);
         }
-      </script>
-      ```
+      });
+    });
+  },
+});
+```
 
-      :::
+> Vue3
 
-## 在 Vue3 中，this 对象下的 `$mp` 调整为 `$scope`
+```js
+// Vue 3 转 Vue 2, 在 main.js 中写入以下代码即可
+function isPromise(obj) {
+  return (
+    !!obj &&
+    (typeof obj === "object" || typeof obj === "function") &&
+    typeof obj.then === "function"
+  );
+}
 
+uni.addInterceptor({
+  returnValue(res) {
+    if (!isPromise(res)) {
+      return res;
+    }
+    const returnValue = [undefined, undefined];
+    return res
+      .then((res) => {
+        returnValue[1] = res;
+      })
+      .catch((err) => {
+        returnValue[0] = err;
+      })
+      .then(() => returnValue);
+  },
+});
+```
+
+:::
+
+## uni-app 生命周期钩子在 Vue3 组合式 API 中的使用方式
+
+在 Vue3 组合式 API 中，也需要遵循 uni-app 生命周期钩子规范, 如 onLaunch 等应用生命周期仅可在 App.vue 中监听，使用中请注意生命周期钩子的适用范围。[查看全部生命周期钩子](https://uniapp.dcloud.net.cn/collocation/frame/lifecycle)
+
+### 只能在 `<script setup>` 单文件语法糖或 `setup()` 方法中使用生命周期钩子，以 A 页面跳转 B 页面传递参数为例：
+
+::: preview
+
+> 方法一
+
+```js
+// 从 A 页面跳转 B 页面时传递参数 ?id=1&name=uniapp，xxx 为跳转的页面路径
+//uni.navigateTo({
+//  url: 'xxx?id=1&name=uniapp'
+//})
+
+// 方法一：在 B 页面 <script setup> 中
+<script setup>
+  import {
+    onLoad,
+    onShow
+  } from "@dcloudio/uni-app";
+
+  // onLoad 接受 A 页面传递的参数
+  onLoad((option) => {
+    console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
+  });
+
+  onShow(() => {
+    console.log("B 页面 onShow");
+  });
+</script>
+```
+
+> 方法二
+
+```js
+// 方法二：在 B 页面 setup() 中
+<script>
+  import {
+    onLoad,
+    onShow,
+  } from "@dcloudio/uni-app";
+
+  export default {
+    setup() {
+      // onLoad 接受 A 页面传递的参数
+      onLoad((option) => {
+        console.log("B 页面 onLoad:", option); //B 页面 onLoad: {id: '1', name: 'uniapp'}
+      });
+
+      onShow(() => {
+        console.log("B 页面 onShow");
+      });
+    }
+  }
+</script>
+```
+
+:::
+
+## `$mp` 调整为 `$scope`
+
+在 Vue3 中，this 对象下的 `$mp` 调整为 `$scope`
 ## 在 Vue3 中，如果 nvue 使用了 Vuex 的相关 API，需要在 main.js 的 createApp 的返回值中 return 一下 Vuex 示例：
 
-    ```js
-    import Vuex from "vuex";
-    export function createApp() {
-      const app = createSSRApp(App);
-      app.use(store);
-      return {
-        app,
-        Vuex, // 如果 nvue 使用 vuex 的各种map工具方法时，必须 return Vuex
-      };
-    }
-    ```
+  ```js
+  import Vuex from "vuex";
+  export function createApp() {
+    const app = createSSRApp(App);
+    app.use(store);
+    return {
+      app,
+      Vuex, // 如果 nvue 使用 vuex 的各种map工具方法时，必须 return Vuex
+    };
+  }
+  ```
 
-- App，小程序端源码调试，需要在 vite.config.js 中主动开启 sourcemap
+## App，小程序端源码调试，需要在 vite.config.js 中主动开启 sourcemap
 
   ```js
   import { defineConfig } from "vite";
@@ -412,28 +417,34 @@ Vue3 将不支持 `slot="xxx"` 的用法 ，请使用 `v-slot:xxx` 用法。[更
   });
   ```
 
-- 在 vue3 的小程序平台中，监听原生的点击事件可以先使用 tap。（在 vue3 中，移除了.native 修饰符，所以编译器无法预知 click 是要触发原生事件，还是组件的自定义事件，故并未转换成小程序的 tap 事件）
+## 在 vue3 的小程序平台中，监听原生的点击事件可以先使用 tap
 
-- vue3 支持的手机版本最低到多少？
+在 vue3 中，移除了.native 修饰符，所以编译器无法预知 click 是要触发原生事件，还是组件的自定义事件，故并未转换成小程序的 tap 事件
+
+## vue3 支持的手机版本最低到多少？
 
   > vue3 支持的范围是：Android > 4.4, ios >= 10
 
-- vue3 nvue 暂不支持 recycle-list 组件
+## vue3 nvue 暂不支持 recycle-list 组件
 
-- vue3 在 h5 平台发行时，为了优化包体积大小，会默认启动摇树，仅打包明确使用的 api。如果要关闭摇树，可以在 manifest.json 中配置：
-  ```json
-  "h5": {
-      "optimization": {
-          "treeShaking": {
-              "enable": false
-          }
-      }
-  }
-  ```
+vue3 nvue 暂不支持 recycle-list 组件
+
+## vue3 在 h5 平台发行时，为了优化包体积大小，会默认启动摇树，仅打包明确使用的 api
+
+如果要关闭摇树，可以在 manifest.json 中配置：
+```json
+"h5": {
+    "optimization": {
+        "treeShaking": {
+            "enable": false
+        }
+    }
+}
+```
 
 ## url-search-params
 
-通过定义 props 来直接接收 url 传入的参数
+vue3 全平台新增：通过 props 来获取页面参数的使用方式
 
 <!--方式1-->
 

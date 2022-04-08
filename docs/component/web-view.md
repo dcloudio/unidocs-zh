@@ -68,7 +68,7 @@
 - 小程序仅支持加载网络网页，不支持本地html
 - 补充说明：app-vue下web-view组件不支持自定义样式，而v-show的本质是改变组件的样式。即组件支持v-if而不是支持v-show。
 - 小程序端 web-view 组件一定有原生导航栏，下面一定是全屏的 web-view 组件，navigationStyle: custom 对 web-view 组件无效。
-- App 端使用 uni.web-view.js 的最低版为 [uni.webview.1.5.2.js](https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js)
+- App 端使用 uni.web-view.js 的最低版为 [uni.webview.1.5.3.js](https://gitee.com/dcloud/uni-app/raw/dev/dist/uni.webview.1.5.3.js)
 - App 平台同时支持网络网页和本地网页，但本地网页及相关资源（js、css等文件）必须放在 `uni-app 项目根目录->hybrid->html` 文件夹下或者 `static` 目录下，如下为一个加载本地网页的`uni-app`项目文件目录示例：
 - nvue `web-view` 必须指定样式宽高
 - App 网页向应用 `postMessage` 为实时消息
@@ -133,6 +133,7 @@
 |属性|类型|说明|
 |:-|:-|:-|
 |plus|Boolean|App|
+|nvue|Boolean|App-nvue, uni.webview.1.5.3.js+ 支持|
 |miniprogram|Boolean|微信小程序|
 |smartprogram|Boolean|百度小程序|
 |miniprogram|Boolean|支付宝小程序|
@@ -224,8 +225,8 @@
       }
     </script>
     <!-- uni 的 SDK -->
-    <!-- 需要把 uni.webview.1.5.2.js 下载到自己的服务器 -->
-    <script type="text/javascript" src="https://gitee.com/dcloud/uni-app/raw/master/dist/uni.webview.1.5.2.js"></script>
+    <!-- 需要把 uni.webview.1.5.3.js 下载到自己的服务器 -->
+    <script type="text/javascript" src="https://gitee.com/dcloud/uni-app/raw/dev/dist/uni.webview.1.5.3.js"></script>
     <script type="text/javascript">
       // 待触发 `UniAppJSBridgeReady` 事件后，即可调用 uni 的 API。
       document.addEventListener('UniAppJSBridgeReady', function() {
@@ -371,7 +372,7 @@ web-view组件在App和小程序中层级较高，如需要在vue页面中写代
 - `<web-view>` 组件默认铺满全屏并且层级高于前端组件。App端想调节大小或在其上覆盖内容需使用plus规范。
 - `<web-view>` 组件所在窗口的标题，跟随页面的 `<title>` 值的变化而变化（不含H5端）。
 - App-vue的`web-view`加载的html页面可以运行plus的api，但注意如果该页面调用了plus.key的API监听了back按键（或使用mui的封装），会造成back监听冲突。需要该html页面移除对back的监听。或按照上面的示例代码禁止网页使用plus对象。app-nvue页面的`web-view`组件不能运行plus API。
-- `uni.webview.js` 最新版地址：[https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js](https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js)
+- `uni.webview.js` 最新版地址：[https://gitee.com/dcloud/uni-app/raw/dev/dist/uni.webview.1.5.3.js](https://gitee.com/dcloud/uni-app/raw/dev/dist/uni.webview.1.5.3.js)
 - 小程序平台，个人类型与海外类型的小程序使用 `web-view` 组件，提交审核时注意微信等平台是否允许使用
 - 小程序平台， `src` 指向的链接需登录小程序管理后台配置域名白名单。`App`和`H5` 无此限制。
 
@@ -403,7 +404,7 @@ uni.webView.navigateTo 示例，注意uni sdk放到body下面
   </body>
   <!-- uni 的 SDK -->
   <!-- 需要把 uni.webview.1.5.2.js 下载到自己的服务器 -->
-  <script type="text/javascript" src="https://gitee.com/dcloud/uni-app/raw/master/dist/uni.webview.1.5.2.js"></script>
+  <script type="text/javascript" src="https://gitee.com/dcloud/uni-app/raw/dev/dist/uni.webview.1.5.3.js"></script>
   <script>
     document.addEventListener('UniAppJSBridgeReady', function() {
       uni.webView.getEnv(function(res) {

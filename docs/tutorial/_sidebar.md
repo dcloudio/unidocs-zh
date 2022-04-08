@@ -20,6 +20,7 @@
     * [组件](/tutorial/vue3-components.md)
     * [API](/tutorial/vue3-api.md)
     * [vuex](/tutorial/vue3-vuex.md)
+    * [pinia](/tutorial/vue3-pinia.md)
   * [vue2 升 3 指南](/tutorial/migration-to-vue3.md)
 * [ts/typescript 专题](/tutorial/typescript-subject.md)
 * 编译器（条件编译）

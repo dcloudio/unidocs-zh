@@ -427,4 +427,4 @@
         }
     }
     ```
-  - <a herf="#通过定义 props 来直接接收 url 传入的参数">通过定义 props 来直接接收 url 传入的参数</a>
+  - <a herf="#props">通过定义 props 来直接接收 url 传入的参数</a>

@@ -1,8 +1,8 @@
-#### vue2 项目迁移 vue3，必须适配的部分
+<!-- #### vue2 项目迁移 vue3，必须适配的部分 -->
 
 以下列举迁移到 vue3，必须适配的几个点，vue2 项目才能正常运行在 vue3 上。更多查看完整的[非兼容特性列表](https://github.com/vuejs/vue-next/tree/master/packages/vue-compat#incompatible)
 
-- main.js
+## main.js
 
   - 创建应用实例
 
@@ -427,4 +427,5 @@
         }
     }
     ```
-  ## 通过定义 props 来直接接收 url 传入的参数
+
+## [通过定义props来直接接收url传入的参数](#url-search-params)

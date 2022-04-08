@@ -460,7 +460,7 @@ vue3 在 h5 平台发行时，为了优化包体积大小，会默认启动摇�
 }
 ```
 
-## url-search-params
+## 通过 props 来获取页面参数@url-search-params
 
 vue3 全平台新增：通过 props 来获取页面参数的使用方式
 

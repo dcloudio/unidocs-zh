@@ -12,7 +12,7 @@ Vue 3.x增加了`script setup`特性，将三步优化为两步，无需注册�
 	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/4db27622-95cb-4cb2-b772-6e28c29f8e2d.png" style="max-width:500px"></img>
 </div>
 
-`uni-app`的`easycom`机制，将组件引用进一步优化，开发者只管引用，无需考虑导入和注册，更为高效：
+`uni-app`的`easycom`机制，将组件引用进一步优化，开发者只管使用，无需考虑导入和注册，更为高效：
 
 
 <div>

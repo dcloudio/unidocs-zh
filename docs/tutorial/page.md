@@ -442,7 +442,7 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 
 |函数名|说明|平台差异说明|最低版本|
 |:-|:-|:-|:-|
-|beforeCreate|在实例初始化之后被调用。[详见](https://cn.vuejs.org/v2/api/#beforeCreate)|||
+|beforeCreate|在实例初始化之前被调用。[详见](https://cn.vuejs.org/v2/api/#beforeCreate)|||
 |created|在实例创建完成后被立即调用。[详见](https://cn.vuejs.org/v2/api/#created)|||
 |beforeMount|在挂载开始之前被调用。[详见](https://cn.vuejs.org/v2/api/#beforeMount)|||
 |mounted|挂载到实例上去之后调用。[详见](https://cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用```$nextTick```[Vue官方文档](https://cn.vuejs.org/v2/api/#Vue-nextTick)|||

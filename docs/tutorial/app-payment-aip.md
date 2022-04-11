@@ -67,6 +67,7 @@ Object对象类型
 | productid | String | 是 | App Store Connect 配置的内购买项目产品ID（productId） |
 | username | String | 否 | 用户标识 |
 | optimize | Boolean | 否 | 是否优化解决丢掉问题 |
+| password | String | 否 | App专用共享密钥(内购商品为自动续期订阅类时必传) |
 
 ##### 示例代码
 - uni-app项目

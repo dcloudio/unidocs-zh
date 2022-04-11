@@ -70,7 +70,7 @@ uni ui有如下优势：
 其中成套的全端兼容ui库包括：
 - [uViewUI](https://www.uviewui.com)：整合了非常多组件，功能丰富、文档清晰，但不支持nvue(2.x已支持nvue)
 - [colorUI css库](http://ext.dcloud.net.cn/plugin?id=239)：颜值很高，css库而非组件
-- [unify UI](https://ext.dcloud.net.cn/plugin?id=2251)：全端支持的组件库，侧重nvue
+- [unify UI](https://ext.dcloud.net.cn/plugin?id=2251)：全端支持的组件库，侧重nvue（商城以下架）
 - [mypUI](https://ext.dcloud.net.cn/plugin?id=2190)：全端支持的组件库，侧重nvue
 - [ThorUI组件库](https://ext.dcloud.net.cn/plugin?id=556)
 - [graceUI商业库](http://grace.hcoder.net/)

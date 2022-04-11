@@ -226,7 +226,7 @@
     </script>
     <!-- uni 的 SDK -->
     <!-- 需要把 uni.webview.1.5.3.js 下载到自己的服务器 -->
-    <script type="text/javascript" src="https://gitee.com/dcloud/uni-app/raw/dev/dist/uni.webview.1.5.3.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@dcloudio/uni-webview-js@0.0.2/index.js"></script>
     <script type="text/javascript">
       // 待触发 `UniAppJSBridgeReady` 事件后，即可调用 uni 的 API。
       document.addEventListener('UniAppJSBridgeReady', function() {
@@ -403,8 +403,8 @@ uni.webView.navigateTo 示例，注意uni sdk放到body下面
     <!-- built files will be auto injected -->
   </body>
   <!-- uni 的 SDK -->
-  <!-- 需要把 uni.webview.1.5.2.js 下载到自己的服务器 -->
-  <script type="text/javascript" src="https://gitee.com/dcloud/uni-app/raw/dev/dist/uni.webview.1.5.3.js"></script>
+  <!-- 需要把 uni.webview.1.5.3.js 下载到自己的服务器 -->
+  <script type="text/javascript" src="https://unpkg.com/@dcloudio/uni-webview-js@0.0.2/index.js"></script>
   <script>
     document.addEventListener('UniAppJSBridgeReady', function() {
       uni.webView.getEnv(function(res) {

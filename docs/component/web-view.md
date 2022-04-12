@@ -306,8 +306,8 @@ export default {
 			wv.setStyle({top:150,height:300})
 		}, 1000); //如果是页面初始化调用时，需要延时一下
 		// #endif
-		}
-	};
+	}
+};
 </script>
 ```
 
@@ -341,7 +341,8 @@ export default {
 
 如果想设置web-view组件可双指缩放，可参考如下代码：
 ```js
-onReady() {
+export default {
+	onReady() {
 		// #ifdef APP-PLUS
 		var currentWebview = this.$scope.page.$getAppWebview() //获取当前页面的webview对象
 		setTimeout(function() {
@@ -349,8 +350,8 @@ onReady() {
 			wv.setStyle({scalable:true})
 		}, 1000); //如果是页面初始化调用时，需要延时一下
 		// #endif
-		}
-	};
+	}
+};
 ```
 
 ##### `web-view`组件的层级问题解决

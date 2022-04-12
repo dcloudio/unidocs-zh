@@ -32,7 +32,7 @@ $uni-primary-light: #d4e4ff;
 <div class="color-content">
 	<div class="color-main">
 		<div class="color-main-top" style="background-color:#18bc37">
-			<p class="color-main-text">Primary Color</p>
+			<p class="color-main-text">Success Color</p>
 			<p class="color-main-text">#18bc37</p>
 		</div>
 		<div class="color-main-box">

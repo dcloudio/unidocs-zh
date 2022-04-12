@@ -152,7 +152,7 @@ iOS App打包需要向Apple申请证书。
 
 **注意**
 - `history` 模式发行需要后台配置支持，详见：[history 模式的后端配置](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
-- 打包后，推荐使用[前端网页托管服务](/uniCloud/host)，一键上传，自带CDN加速，无需购买虚拟机，无需安装nginx等；
+- 打包后，推荐使用[前端网页托管服务](/uniCloud/hosting)，一键上传，自带CDN加速，无需购买虚拟机，无需安装nginx等；
 - 若使用传统服务器部署，建议在服务器端开启 `gzip` 压缩。参考网上的分享：https://juejin.im/post/5af003286fb9a07aac24611b
 
 ### 发布为小程序

@@ -45,15 +45,13 @@ function createMarkdownArray(contents = [], childrenName = 'children') {
     }
   }
 
-  function removeParent(childs = []) {
+  // 移除最后一项 parent 节点，防止循环引用报错
+  (function removeParent(childs = []) {
     childs.forEach(child => {
       if (child.parent) delete child.parent
       if (child[childrenName]) removeParent(child[childrenName])
     })
-  }
-
-  // 移除最后一项 parent 节点，防止循环引用报错
-  removeParent(markdownArray[markdownArray.length - 1][childrenName])
+  })(markdownArray[markdownArray.length - 1][childrenName])
 
   return markdownArray
 }

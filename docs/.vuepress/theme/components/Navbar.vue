@@ -121,6 +121,7 @@ export default {
       this.mainNavBar = document.querySelector('.main-navbar')
       this.subNavBar = document.querySelector('.sub-navbar')
       this.pageContainer = document.querySelector('.page')
+      this.vuepressToc = document.querySelector('.vuepress-toc')
       this.navbarHeight = this.navbar.clientHeight
       this.subNavBarHeight = this.subNavBar.clientHeight
       this.mainNavBarHeight = this.mainNavBar.clientHeight
@@ -134,6 +135,7 @@ export default {
       window.removeEventListener('scroll', this.onWindowScroll)
       this.fixedNavbar = false
       this.sideBar && this.sideBar.removeAttribute('style')
+      this.vuepressToc && this.vuepressToc.removeAttribute('style')
       this.navbar && this.navbar.removeAttribute('style')
       this.pageContainer && this.pageContainer.removeAttribute('style')
     },
@@ -144,6 +146,7 @@ export default {
         let sideTop = this.navbarHeight - scrollTop
         sideTop <= this.subNavBarHeight && (sideTop = this.subNavBarHeight)
         this.sideBar && (this.sideBar.style.top = `${sideTop + 1}px`)
+        this.vuepressToc && (this.vuepressToc.style.top = `${sideTop + 1}px`)
       }
 
       if (scrollTop >= this.mainNavBarHeight) {
@@ -182,6 +185,7 @@ export default {
         this.navbarHeight = this.navbar.clientHeight
         this.subNavBarHeight = this.subNavBar.clientHeight
         this.sideBar.style.top = `${this.navbarHeight + 1}px`
+        this.vuepressToc.style.top = `${this.navbarHeight + 1}px`
       })
     }
   }

@@ -43,6 +43,8 @@
         <Footer />
       </template>
     </Page>
+
+    <Toc />
   </div>
 </template>
 
@@ -53,6 +55,7 @@ import Page from '@theme/components/Page.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
 import Footer from '@theme/components/Footer.vue';
 import SiderBarBottom from '../components/SiderBarBottom.vue';
+import Toc from '../components/Toc';
 import { resolveSidebarItems, forbidScroll, BaiduStat } from '../util'
 import navProvider from '../mixin/navProvider';
 
@@ -65,7 +68,8 @@ export default {
     Sidebar,
     Navbar,
     Footer,
-    SiderBarBottom
+    SiderBarBottom,
+    Toc
   },
   data () {
     return {

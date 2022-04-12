@@ -81,6 +81,11 @@ body.forbid_scroll
 
 main.page
 	padding-bottom 0px
+	padding-right 0px
+	
+	@media (min-width: 1300px)
+		&
+			padding-right $vuepress-toc-width
 
 {$contentClass}:not(.custom) 
 	> *:first-child

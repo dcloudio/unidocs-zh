@@ -36,6 +36,7 @@ const config = {
     docsDir: 'docs',
     editLinks: true,
     editLinkText: '帮助我们改善此页面！',
+    lastUpdated: '上次更新',
     // smoothScroll: true,
     algolia: {
       apiKey: '2fdcc4e76c8e260671ad70065e60b2e7',

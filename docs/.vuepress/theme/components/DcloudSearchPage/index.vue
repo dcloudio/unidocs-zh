@@ -336,6 +336,12 @@
 
 			searchByAlgolia() {
 				const { searchParameters = {} } = this.options;
+				let categoryArr = [];
+				if (this.currentCategory.text === 'uni-app') {
+					categoryArr = [[`category:uni-app`, `category:uniCloud`]];
+				} else {
+					categoryArr = [`category:${this.currentCategory.text}`];
+				}
 				return searchClient(
 					Object.assign({}, this.options, {
 						query: this.searchValue || '',
@@ -343,9 +349,10 @@
 						snippetLength: this.snippetLength,
 						searchParameters: {
 							...searchParameters,
-							facetFilters: [`lang:${this.$lang}`].concat(searchParameters.facetFilters || [], [
-								`category:${this.currentCategory.text}`,
-							]),
+							facetFilters: [`lang:${this.$lang}`].concat(
+								searchParameters.facetFilters || [],
+								categoryArr
+							),
 						},
 						transformItems: items =>
 							items.map(item => {

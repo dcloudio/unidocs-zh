@@ -24,6 +24,7 @@
 ​	谷歌支付分为两种:`CARD`、`PAYPAL`付款方式，且不同付款方式配置并不相同，具体字段请参照[谷歌支付官方字段说明](https://developers.google.com/pay/api/android/reference/request-objects?authuser=1#PaymentMethod)
 
 1. `CARD` 支付  
+
 | 参数名称    | 参数说明 | 必须 |
 |-------------|-------|-----|
 |environment|环境（1：生产 3：测试）|是|
@@ -57,6 +58,7 @@
 
 
 2. `PAYPAL` 支付
+
 | 参数名称    | 参数说明 | 必须 | 
 |-------------|-------|-----|
 |environment|环境（1：生产 3：测试）|是|

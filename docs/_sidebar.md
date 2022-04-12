@@ -16,6 +16,7 @@
   * [uni统计](uni-stat.md)
   * [广告变现](uni-ad.md)
   * [统一发行页面](m3w.md)
+  * [前端网页托管](uniCloud/hosting.md)
 * [案例](case.md)
 * 更新日志
   * [正式版](release.md)

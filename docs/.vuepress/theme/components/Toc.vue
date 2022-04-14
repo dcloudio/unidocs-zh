@@ -151,6 +151,9 @@
 	    &:hover
 	      a
 	        color $accentColor
+			.vuepress-toc-h1 a
+			.vuepress-toc-h2 a
+				font-weight bold
 	  for i in range(3, 6)
 	    .vuepress-toc-h{i} a
 	      padding-left 1rem * (i - 2)

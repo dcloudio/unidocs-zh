@@ -153,6 +153,11 @@ public class MyApplication extends DCloudApplication {
 
 + 如果有使用uni原生插件。需要查看插件是否支持`arm64-v8a`！是否支持请到插件详情页里查询。如果插件详情页里没有请咨询插件开发者提供信息或更换其他插件。
 
+#### 18、应用启动会主动申请`手机存储权限`、`访问设备信息权限`影响应用上架
+
++ 请阅读文档[Android平台应用启动时读写手机存储、访问设备信息(如IMEI)等权限策略](https://ask.dcloud.net.cn/article/36549)。配置`存储权限`及`访问设备信息权限`申请模式。可以配置`none`不申请。具体参考文档。
++ 配置`none`后在某些功能需要`手机存储权限`、`访问设备信息权限`也可以通过调用[requestPermissions](https://www.html5plus.org/doc/zh_cn/android.html#plus.android.requestPermissions)主动申请权限来支持后续业务逻辑。
+
 #### 看不懂文档不知道如何修改？
 
 可开通付费技术服务 参考：[https://ask.dcloud.net.cn/article/13015](https://ask.dcloud.net.cn/article/13015)

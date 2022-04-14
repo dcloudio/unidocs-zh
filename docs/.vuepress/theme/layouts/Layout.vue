@@ -34,6 +34,7 @@
     <Page
       v-else
       :sidebar-items="sidebarItems"
+      :style="pageStyle"
     >
       <template #top>
         <slot name="page-top" />
@@ -58,10 +59,11 @@ import SiderBarBottom from '../components/SiderBarBottom.vue';
 import Toc from '../components/Toc';
 import { resolveSidebarItems, forbidScroll, BaiduStat } from '../util'
 import navProvider from '../mixin/navProvider';
+import toc from '../mixin/toc';
 
 export default {
   name: 'Layout',
-  mixins: [ navProvider ],
+  mixins: [ navProvider, toc ],
   components: {
     Home,
     Page,
@@ -119,6 +121,13 @@ export default {
         },
         userPageClass
       ]
+    },
+    pageStyle () {
+      const style = {};
+
+      !this.visible && (style.paddingRight = '0px');
+
+      return style;
     }
   },
   mounted () {

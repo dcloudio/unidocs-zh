@@ -1,4 +1,4 @@
-#### uni.setStorage(OBJECT) @setstorage
+### uni.setStorage(OBJECT) @setstorage
 将数据存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个异步接口。
 
 **OBJECT 参数说明**
@@ -23,7 +23,7 @@ uni.setStorage({
 });
 ```
 
-#### uni.setStorageSync(KEY,DATA) @setStorageSync
+### uni.setStorageSync(KEY,DATA) @setstoragesync
 将 data 存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个同步接口。
 
 **参数说明**
@@ -41,7 +41,7 @@ try {
 }
 ```
 
-#### uni.getStorage(OBJECT) @getStorage
+### uni.getStorage(OBJECT) @getstorage
 从本地缓存中异步获取指定 key 对应的内容。
 
 **OBJECT 参数说明**
@@ -70,7 +70,7 @@ uni.getStorage({
 });
 ```
 
-#### uni.getStorageSync(KEY) @getStorageSync
+### uni.getStorageSync(KEY) @getstoragesync
 从本地缓存中同步获取指定 key 对应的内容。
 
 **参数说明**
@@ -92,7 +92,7 @@ try {
 }
 ```
 
-#### uni.getStorageInfo(OBJECT) @getStorageInfo
+### uni.getStorageInfo(OBJECT) @getstorageinfo
 异步获取当前 storage 的相关信息。
 
 **平台差异说明**
@@ -129,7 +129,7 @@ uni.getStorageInfo({
 });
 ```
 
-#### uni.getStorageInfoSync() @getStorageInfoSync
+### uni.getStorageInfoSync() @getstorageinfosync
 同步获取当前 storage 的相关信息。
 
 **平台差异说明**
@@ -151,7 +151,7 @@ try {
 }
 ```
 
-#### uni.removeStorage(OBJECT)
+### uni.removeStorage(OBJECT) @removestorage
 从本地缓存中异步移除指定 key。
 
 **OBJECT 参数说明**
@@ -174,7 +174,7 @@ uni.removeStorage({
 });
 ```
 
-#### uni.removeStorageSync(KEY) @removeStorageSync
+### uni.removeStorageSync(KEY) @removestoragesync
 从本地缓存中同步移除指定 key。
 
 **参数说明**
@@ -193,7 +193,7 @@ try {
 }
 ```
 
-#### uni.clearStorage()
+### uni.clearStorage()
 清理本地数据缓存。
 
 **示例**
@@ -202,7 +202,7 @@ try {
 uni.clearStorage();
 ```
 
-#### uni.clearStorageSync()
+### uni.clearStorageSync()
 同步清理本地数据缓存。
 
 **示例**

@@ -1,4 +1,4 @@
-#### uni.navigateTo(OBJECT)
+### uni.navigateTo(OBJECT)
 
 保留当前页面，跳转到应用内的某个页面，使用```uni.navigateBack```可以返回到原页面。
 
@@ -98,7 +98,7 @@ onLoad: function (option) {
 * 路由API的目标页面必须是在pages.json里注册的vue页面。如果想打开web url，在App平台可以使用 [plus.runtime.openURL](http://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.openURL)或web-view组件；H5平台使用 window.open；小程序平台使用web-view组件（url需在小程序的联网白名单中）。在hello uni-app中有个组件ulink.vue已对多端进行封装，可参考。
 * APP-NVUE平台暂不支持以`this.getOpenerEventChannel()`方式获取`eventChannel`，请换用`this.$scope.eventChannel`来获取，具体方式请参考上述示例。
 
-#### uni.redirectTo(OBJECT)
+### uni.redirectTo(OBJECT)
 
 关闭当前页面，跳转到应用内的某个页面。
 
@@ -123,7 +123,7 @@ uni.redirectTo({
 
 * 跳转到 tabBar 页面只能使用 switchTab 跳转
 
-#### uni.reLaunch(OBJECT)
+### uni.reLaunch(OBJECT)
 
 关闭所有页面，打开到应用内的某个页面。
 
@@ -158,7 +158,7 @@ Tips：
 
 * H5端调用`uni.reLaunch`之后之前页面栈会销毁，但是无法清空浏览器之前的历史记录，此时`navigateBack`不能返回，如果存在历史记录的话点击浏览器的返回按钮或者调用`history.back()`仍然可以导航到浏览器的其他历史记录。
 
-#### uni.switchTab(OBJECT)
+### uni.switchTab(OBJECT)
 
 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面。
 
@@ -197,7 +197,7 @@ uni.switchTab({
 });
 ```
 
-#### uni.navigateBack(OBJECT)
+### uni.navigateBack(OBJECT)
 
 关闭当前页面，返回上一页面或多级页面。可通过 ```getCurrentPages()``` 获取当前的页面栈，决定需要返回几层。
 
@@ -234,7 +234,7 @@ uni.navigateBack({
 ```
 
 
-#### EventChannel@event-channel
+### EventChannel@event-channel
 2.8.9+ 支持
 页面间事件通信通道
 
@@ -308,12 +308,12 @@ Tips：
 - 页面路由拦截和管理，插件市场有很多封装好的工具类，搜索[路由](https://ext.dcloud.net.cn/search?q=%E8%B7%AF%E7%94%B1)
 
 
-#### 窗口动画@animation
+### 窗口动画@animation
 > 本API仅App支持。小程序自身不支持自定义动画。H5的窗体动画可使用常规单页动画处理方案，见[H5下单页动画示例](https://ext.dcloud.net.cn/plugin?id=659&tdsourcetag=s_pctim_aiomsg)
 
 窗口的显示/关闭动画效果，支持在 API、组件、pages.json 中配置，优先级为：`API = 组件 > pages.json`。
 
-##### API
+#### API
 有效的路由 API
 
 - navigateTo
@@ -331,7 +331,7 @@ uni.navigateBack({
 	animationDuration: 200
 });
 ```
-##### 组件
+#### 组件
 open-type 有效值
 
 - navigateTo
@@ -341,7 +341,7 @@ open-type 有效值
 <navigator animation-type="pop-in" animation-duration="300" url="../test/test">navigator</navigator>
 <navigator animation-type="pop-out" animation-duration="300" open-type="navigateBack" >navigator</navigator>
 ```
-##### pages.json
+#### pages.json
 pages.json 中配置的是窗口显示的动画
 ```javascript
 "style": {

@@ -88,7 +88,7 @@ uni.chooseFile({
 })
 ```
 
-# wx.chooseMessageFile(OBJECT)
+### wx.chooseMessageFile(OBJECT)
 
 从微信聊天会话中选择文件。
 

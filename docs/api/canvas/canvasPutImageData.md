@@ -1,4 +1,4 @@
-#### uni.canvasPutImageData(OBJECT,this)
+### uni.canvasPutImageData(OBJECT,this)
 
 将像素数据绘制到画布的方法，在自定义组件下，第二个参数传入自定义组件实例 this，以操作组件内 `<canvas>` 组件
 

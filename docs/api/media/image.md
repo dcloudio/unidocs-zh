@@ -271,7 +271,7 @@ uni.chooseImage({
 });
 ```
 
-# uni.compressImage(OBJECT)
+### uni.compressImage(OBJECT)
 
 压缩图片接口，可选压缩质量
 

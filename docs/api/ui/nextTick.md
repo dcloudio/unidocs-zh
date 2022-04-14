@@ -1,4 +1,4 @@
-####  nextTick(function callback)
+###  nextTick(function callback)
 在小程序自定义组件，如wxcomponents中使用。延迟一部分操作到下一个时间片再执行。（类似于 setTimeout） 。其他平台无此概念。
 
 - 微信小程序：[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/wx.nextTick.html)

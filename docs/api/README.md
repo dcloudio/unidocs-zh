@@ -621,6 +621,15 @@ uni.addInterceptor({
 | [uni.switchTab](/api/router?id=switchtab)       | 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面                             |
 | [uni.navigateBack](/api/router?id=navigateback) | 关闭当前页面，返回上一页面或多级页面                                         |
 
+#### 键盘
+
+| API                                             | 说明                                                                         |
+| :---------------------------------------------- | :--------------------------------------------------------------------------- |
+| [uni.hideKeyboard](/api/key.html#hidekeyboard)     | 隐藏已经显示的软键盘，如果软键盘没有显示则不做任何操作。 |
+| [uni.onKeyboardHeightChange](/api/key.html#onkeyboardheightchange)     | 监听键盘高度变化                                         |
+| [uni.offKeyboardHeightChange](/api/key.html#offkeyboardheightchange)         | 取消监听键盘高度变化事件                                         |
+| [uni.getSelectedTextRange](/api/key?id=getselectedtextrange)       | 在input、textarea等focus之后，获取输入框的光标位置                             |
+
 #### 第三方服务
 
 | API                                                                  | 说明                                                            |

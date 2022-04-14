@@ -137,12 +137,12 @@ export default {
       this.sideBar && this.sideBar.removeAttribute('style')
       this.vuepressToc && this.vuepressToc.removeAttribute('style')
       this.navbar && this.navbar.removeAttribute('style')
-      this.pageContainer && this.pageContainer.removeAttribute('style')
+      this.pageContainer && (this.pageContainer.style.marginTop = 'auto')
     },
     onWindowScroll () {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-      {
+      if (!this.fixedNavbar) {
         let sideTop = this.navbarHeight - scrollTop
         sideTop <= this.subNavBarHeight && (sideTop = this.subNavBarHeight)
         this.sideBar && (this.sideBar.style.top = `${sideTop + 1}px`)
@@ -160,9 +160,17 @@ export default {
       } else if (scrollTop < this.mainNavBarHeight) {
         if (this.fixedNavbar) {
           this.fixedNavbar = false
-          this.pageContainer && this.pageContainer.removeAttribute('style')
+          this.pageContainer && (this.pageContainer.style.marginTop = 'auto')
         }
       }
+    },
+    fixedSideBarHeight () {
+      if(!os.pc) return
+      this.navbarHeight = this.navbar.clientHeight
+      this.subNavBarHeight = this.subNavBar.clientHeight
+      const setHeight = this.fixedNavbar ? this.subNavBarHeight : this.navbarHeight
+      this.sideBar.style.top = `${setHeight + 1}px`
+      this.vuepressToc.style.top = `${setHeight + 1}px`
     },
     mainNavLinkClass (index) {
       return ['main-navbar-item', this.navConfig.userNavIndex === index ? 'active' : '']
@@ -179,13 +187,12 @@ export default {
   },
 
   watch: {
+    fixedNavbar () {
+      this.fixedSideBarHeight()
+    },
     'navConfig.userNavIndex' () {
       this.$nextTick(()=>{
-        if(!os.pc) return
-        this.navbarHeight = this.navbar.clientHeight
-        this.subNavBarHeight = this.subNavBar.clientHeight
-        this.sideBar.style.top = `${this.navbarHeight + 1}px`
-        this.vuepressToc.style.top = `${this.navbarHeight + 1}px`
+        this.fixedSideBarHeight()
       })
     }
   }

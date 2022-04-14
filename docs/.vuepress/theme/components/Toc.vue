@@ -1,5 +1,5 @@
 <template>
-	<Sticker v-if="visible" class="vuepress-toc" v-bind="$attrs" :style="{ top: initVisibleTop }">
+	<Sticker v-show="visible" class="vuepress-toc" v-bind="$attrs" :style="{ top: initVisibleTop }">
 		<h5>ON THIS PAGE</h5>
 		<div
 			v-for="(item, index) in $page.headers"
@@ -15,6 +15,7 @@
 
 <script>
 	import Sticker from './Sticker.vue';
+	import toc from '../mixin/toc';
 	let initTop;
 	// get offset top
 	function getAbsoluteTop(dom) {
@@ -25,6 +26,7 @@
 			: 0;
 	}
 	export default {
+		mixins: [ toc ],
 		components: {
 			Sticker,
 		},
@@ -33,15 +35,6 @@
 				activeIndex: 0,
 				initVisibleTop: '0px',
 			};
-		},
-		computed: {
-			visible() {
-				return (
-					this.$frontmatter &&
-					this.$frontmatter.toc !== false 
-          // && !!(this.$page && this.$page.headers && this.$page.headers.length)
-				);
-			},
 		},
 		watch: {
 			activeIndex() {
@@ -78,6 +71,8 @@
 			};
 			window.addEventListener('scroll', this._onScroll);
 			// window.addEventListener('hashchange', this._onHashChange);
+			const sideBar = document.querySelector('.sidebar');
+			this.initVisibleTop = sideBar && sideBar.style && sideBar.style.top;
 		},
 		beforeDestroy() {
 			window.removeEventListener('scroll', this._onScroll);

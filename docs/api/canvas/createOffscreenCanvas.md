@@ -1,5 +1,5 @@
 
-#### uni.createOffscreenCanvas()
+### uni.createOffscreenCanvas()
 
 创建离屏 canvas 实例
 

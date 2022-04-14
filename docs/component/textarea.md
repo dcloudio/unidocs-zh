@@ -94,6 +94,8 @@ export default {
 - js中给textarea组件赋值为字符串，在字符串中加\n可实现换行。
 - nvue 样式 `word-wrap` 在 Android 平台暂不支持
 - 旧版本chrome或同内核浏览器会将输入多个标点符号放在一行，此时可通过将textarea样式设置为`word-break: break-word;`实现自动换行。
+- placeholder-style指定样式类font-size单位为rpx时，字节跳动小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。
+
 
 ```html
 <template>

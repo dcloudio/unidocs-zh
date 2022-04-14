@@ -50,3 +50,24 @@ uni.loadFontFace({
 **Tips**
 
 插件市场有加载字体的例子：[https://ext.dcloud.net.cn/plugin?id=954](https://ext.dcloud.net.cn/plugin?id=954)
+
+
+
+### uni.upx2px()
+
+将rpx单位值转换成px
+
+```js
+<script>
+	export default {
+		data() {
+			return {
+				boxWidth:""
+			}
+		},
+		onLoad() {
+			this.boxWidth = uni.upx2px(600) + 'px';
+		}
+	}
+</script>
+```

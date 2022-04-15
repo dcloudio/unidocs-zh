@@ -98,9 +98,9 @@
 |is-shadow|Boolean|false	|卡片内容是否开启阴影|
 |shadow|String|0px 0px 3px 1px rgba(0, 0, 0, 0.08)	|卡片阴影,需符合 css 值|
 |border|Boolean|true	|卡片边框|
-|margin|String|true	|卡片外边距|
-|spacing|String|true|卡片内边距|
-|padding|String|true|卡片内容内边距|
+|margin|String|10px|卡片外边距|
+|spacing|String|10px|卡片内边距|
+|padding|String|10px|卡片内容内边距|
 |border|Boolean|true|卡片边框|
 |mode[弃用]|String|basic	|卡片模式 ，可选值， basic：基础卡片 ；style ：图文卡片 ； title ：标题卡片|
 |note[弃用]|String|-|底部信息|

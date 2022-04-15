@@ -17,6 +17,8 @@ uni-app提供的屏幕适配方案，包括3部分：
 - hello uni-app：[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
 - 分栏式的新闻模板：[https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/)，这个示例对应的源码在：[https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
 
+新闻示例项目，预览地址https://static-7d133019-9a7e-474a-b7c2-c01751f00ca5.bspapp.com/#/显示The requested file was not found on this server.
+
 
 以上示例建议使用最新版的chrome、Safari、或firefox访问。可以在PC模式和手机模式分别体验。以上示例源码的运行需使用HBuilderX 2.9+
 

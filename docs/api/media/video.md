@@ -254,25 +254,27 @@ export default {
 
 **OBJECT 参数说明**
 
-|属性			|类型			|默认值	|必填	|说明																									|
-|:-:			|:-:			|:-:		|:-:	|:-:																									|
-|src			|string		|-			|是		|视频文件路径，可以是临时文件路径也可以是永久文件路径（不支持网络地址）	|
-|success	|function	|-			|否		|接口调用成功的回调函数																|
-|fail			|function	|-			|否		|接口调用失败的回调函数																|
-|complete	|function	|-			|否		|接口调用结束的回调函数（调用成功、失败都会执行）			|
+
+|属性	|类型	|默认值	|必填	|说明	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|
+|src	|string		|-	|是	|视频文件路径，可以是临时文件路径也可以是永久文件路径（不支持网络地址）|
+|success	|function	|-	|否		|接口调用成功的回调函数	|
+|fail		|function	|-	|否		|接口调用失败的回调函数	|
+|complete	|function	|-	|否		|接口调用结束的回调函数（调用成功、失败都会执行）	|
+
 
 **success 返回参数说明**
 
-|参数名			|类型		|说明								|平台差异说明|
-|:-					|:-			|:-									||
-|orientation|string	|画面方向						|微信小程序、App（3.1.14+）|
-|type				|string	|视频格式						|微信小程序、App（3.1.14+）|
-|duration		|number	|视频长度						|微信小程序、App（3.1.10+）、H5|
-|size				|number	|视频大小，单位 kB	|微信小程序、App（3.1.10+）、H5|
-|height			|number	|视频的长，单位 px	|微信小程序、App（3.1.10+）、H5|
-|width			|number	|视频的宽，单位 px	|微信小程序、App（3.1.10+）、H5|
-|fps				|number	|视频帧率						|微信小程序、App（3.1.14+）|
-|bitrate		|number	|视频码率，单位 kbps|微信小程序、App（3.1.14+）|
+|参数名	|类型	|说明	|平台差异说明|
+|:-:	|:-:	|:-:	|:-:	|
+|orientation|string	|画面方向	|微信小程序、App（3.1.14+）|
+|type	|string	|视频格式		|微信小程序、App（3.1.14+）|
+|duration	|number	|视频长度	|微信小程序、App（3.1.10+）、H5|
+|size		|number	|视频大小，单位 kB	|微信小程序、App（3.1.10+）、H5|
+|height		|number	|视频的长，单位 px	|微信小程序、App（3.1.10+）、H5|
+|width		|number	|视频的宽，单位 px	|微信小程序、App（3.1.10+）、H5|
+|fps		|number	|视频帧率		|微信小程序、App（3.1.14+）|
+|bitrate	|number	|视频码率，单位 kbps|微信小程序、App（3.1.14+）|
 
 **res.orientation参数说明**
 

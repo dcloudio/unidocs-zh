@@ -205,6 +205,46 @@ const res = await todo.add('title demo', 'content demo')
 const todo = uniCloud.importObject('todo')
 ```
 
+### 自动显示交互界面@auto-ui
+
+> 新增于 HBuilderX 3.4.6，本次调整属于非兼容更新。
+
+HBuilderX 3.4.6及更高版本，调用云对象的方法时，默认会自动显示交互/提示界面。
+
+1. 在请求开始时显示loading，
+2. 结束后隐藏loading
+3. 如果请求报错，显示弹窗（可配置为显示Toast）
+
+如需关闭此行为，请传入`customUI: true`
+
+例：
+
+```js
+uniCloud.importObject('todo', {
+	customUI: true // 取消自动展示的交互提示界面
+})
+```
+
+关于交互/提示界面的完整配置如下：
+
+**注意**
+
+- 配置仅对当前`importObject`返回的云对象实例生效
+
+```js
+uniCloud.importObject('todo', {
+	customUI: false, // 是否取消自动展示的交互界面。默认为false，配置为true时取消自动展示的交互提示界面，以下配置均不再生效
+	loadingOptions: { // loading相关配置
+		text: '加载中...', // 显示的loading内的提示文字。默认值为：加载中...
+		mask: true // 是否使用透明遮罩，配置为true时不可点击页面其他内容。默认值为：true
+	},
+	errorOptions: { // 错误界面相关配置
+		type: 'modal', // 错误信息展示方式，可取值：modal（弹框，默认）、toast（toast消息框）。默认值为：modal
+		retry: false // 是否展示重试按钮，仅在type为modal时生效。用户点击重试按钮时将重新请求调用的方法，默认为false
+	}
+})
+```
+
 ## 云对象的API@api
 
 云对象作为云函数的一种，可以调用所有node的API和uniCloud的API。

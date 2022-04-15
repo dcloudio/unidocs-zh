@@ -38,6 +38,10 @@
 |charSet|所扫码的字符集|App、微信小程序、百度小程序(所扫码的字符集，仅支持 Android 系统)、QQ小程序、京东小程序|
 |path|当所扫的码为当前应用的合法二维码时，会返回此字段，内容为二维码携带的 path。|微信小程序、QQ小程序、京东小程序|
 |rawData|原始数据，base64 编码|微信小程序、QQ小程序、京东小程序、支付宝小程序|
+|code|扫码所得数据|支付宝小程序|
+|qrCode|扫描二维码时返回二维码数据|支付宝小程序|
+|barCode|扫描条形码时返回条形码数据|支付宝小程序|
+|imageChannel|来源|支付宝小程序|
 
 
 **示例**
@@ -78,6 +82,6 @@ uni.scanCode({
 - 微信小程序自定义扫码界面，可使用camera组件。[详见](https://uniapp.dcloud.io/component/camera)
 - 微信内嵌浏览器运行H5版时，可通过js sdk实现扫码，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
 - 在扫码界面点击返回也会进入 `fail` 回调中
-- 支付宝小程序不支持 `success` 回调中的 `scanType`，`charSet`，`path`
+- 支付宝小程序不支持 `success` 回调中的`charSet`，`path`
 - HX 3.4.4之后版本 android 新增 检测到 QR 码时自动放大功能，提升扫码识别率。
 

@@ -1,4 +1,4 @@
-# uni-app cli项目@uniapp-cli
+## uni-app cli项目@uniapp-cli
 
 > 本文档仅适用于CLI工程。
 
@@ -30,7 +30,7 @@ npm install @dcloudio/uni-automator --save-dev
 "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i"
 ```
 
-#### H5平台测试流程
+### H5平台测试流程
 
 1. 进入工程目录，安装依赖
 ```
@@ -61,7 +61,7 @@ Time:        14.995s, estimated 16s
 更多配置参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
 
 
-#### App-Android测试流程
+### App-Android测试流程
 
 1. 配置全局 `adb` 环境变量
 
@@ -81,7 +81,7 @@ npm run test:android
 ```
 
 
-#### App-iOS测试流程
+### App-iOS测试流程
 
 目前仅支持 iOS 模拟器（需要mac电脑安装xcode）
 
@@ -103,7 +103,7 @@ npm run test:ios
 
 
 
-#### 微信小程序测试流程
+### 微信小程序测试流程
 
 1. 创建cli项目，同H5平台 (必须配置微信小程序 appid, manifest.json -> mp-weixin -> appid)
 
@@ -123,7 +123,7 @@ Time:        14.995s, estimated 16s
 
 
 
-#### 测试示例
+### 测试示例
 
 使用 hello uni-app 工程测试 H5 平台
 
@@ -218,7 +218,7 @@ Time:        14.995s, estimated 16s
 
 
 
-##### 屏幕截图示例
+#### 屏幕截图示例
 ```
 describe('pages/API/set-navigation-bar-title/set-navigation-bar-title.vue', () => {
     let page

@@ -1,4 +1,4 @@
-### 插件市场介绍
+## 插件市场介绍
 
 DCloud有活跃的插件市场，[https://ext.dcloud.net.cn/](https://ext.dcloud.net.cn/)，并提供了变现、评价等机制。
 

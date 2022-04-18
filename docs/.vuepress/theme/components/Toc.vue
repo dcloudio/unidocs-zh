@@ -60,7 +60,7 @@
 			syncVisible();
 			this.$watch('visible', syncVisible);
 			// binding event
-			setTimeout(() => this.triggerEvt(), 1000);
+			setTimeout(() => this._onScroll(), 1000);
 			this._onScroll = () => this.onScroll();
 			this._onHashChange = () => {
 				const hash = decodeURIComponent(location.hash.substring(1));

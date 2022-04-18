@@ -13,6 +13,8 @@ Weex在```view```组件中增加了```eventPenetrationEnabled```属性，当值�
 
 ### View交互性
 
+> 仅iOS支持
+
 Weex在```view```组件中增加了```userInteractionEnabled```属性，当值为false（默认为true）时，View及其子View均不响应事件，事件向下层View传递。
 
 **longpress**

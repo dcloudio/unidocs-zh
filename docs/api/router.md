@@ -362,8 +362,8 @@ pages.json 中配置的是窗口显示的动画
 |slide-in-bottom|slide-out-bottom|新窗体从底部进入|
 |pop-in|pop-out|新窗体从左侧进入，且老窗体被挤压而出|
 |fade-in|fade-out|新窗体从透明到不透明逐渐显示|
-|zoom-out|zoom-in|新窗体从小到大缩放显示|
-|zoom-fade-out|zoom-fade-in|新窗体从小到大逐渐放大并且从透明到不透明逐渐显示|
+|zoom-in|zoom-out|新窗体从小到大缩放显示|
+|zoom-fade-in|zoom-fade-out|新窗体从小到大逐渐放大并且从透明到不透明逐渐显示|
 |none|none|无动画|
 
 详细的窗口动画说明，请参考：

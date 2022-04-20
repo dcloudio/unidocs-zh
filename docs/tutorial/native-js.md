@@ -183,7 +183,7 @@ Android设备上运行效果图：
 #### iOS
 以下代码在iOS平台展示调用Native API显示系统提示对话框。
 iOS原生Objective-C代码，用于比对参考：
-``` object-c
+``` objc
 #import <UIKit/UIKit.h>
 //...
 // 创建UIAlertView类的实例对象
@@ -304,7 +304,7 @@ public static void main( String args[] ) {
 }
 ```
 NJS代码：
-``` javascript
+``` js
 // 导入测试类NjsHello
 var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 创建NjsHello的实例对象
@@ -710,7 +710,7 @@ wv.loadUrl("http://www.dcloud.io/");
 ### API on iOS
 为了能更好的理解NJS调用Objective-C Native API，我们在iOS平台用Objective-C实现以下测试类，将会在后面API说明中的示例来调用。
 头文件njshello.h代码如下：
-``` objective-c
+``` objc
 // 定义协议
 @protocol NjsHelloEvent <NSObject>
 @required
@@ -732,7 +732,7 @@ wv.loadUrl("http://www.dcloud.io/");
 ```
 
 实现文件njshello.m源代码如下：
-``` objective-c
+``` objc
 #import "njshello.h"
 // 实现类NjsHello
 @implementation NjsHello
@@ -769,7 +769,7 @@ ClassObject plus.ios.importClass( String classname );
 示例：
 1. 导入类并创建实例对象
 Objective-C代码：
-``` objective-c
+``` objc
 #import "njshello.h"
 int main( int argc, char *argv[] )
 {
@@ -796,7 +796,7 @@ var hello = new NjsHello();
 示例：
 1. 导入类后调用类的静态方法
 Objective-C代码：
-``` objective-c
+``` objc
 #import "njshello.h"
 // ...
 int main( int argc, char *argv[] )
@@ -822,7 +822,7 @@ NJS中实例对象与Objective-C中的对象对应，调用plus.ios.importClass(
 示例：
 1. 导入类创建实例对象，调用对象的方法
 Objective-C代码：
-``` objective-c
+``` objc
 #import "njshello.h"
 int main( int argc, char *argv[] )
 {
@@ -854,7 +854,7 @@ Object instancebject.plusGetAttribute( String name );
 示例：
 1. 导入类创建实例对象，获取对象的属性值
 Objective-C代码：
-``` objective-c
+``` objc
 #import "njshello.h"
 int main( int argc, char *argv[] )
 {
@@ -931,7 +931,7 @@ Object plus.ios.implements( String name, Object obj );
 示例：
 1. 实现一个代理，并调用test方法触发调用代理的方法
 Objective-C代码：
-``` objective-c
+``` objc
 #import "njshello.h"
 // 定义代理类NjsDelegate
 @interface NjsDelegate: NSObject<NjsHelloEvent> {
@@ -994,7 +994,7 @@ NJS中所有的实例对象（InstanceObject）都可以通过此方法释放，
 示例：
 1. 创建实例对象使用完成后，显式操作销毁对象
 Objective-C代码：
-``` objective-c
+``` objc
 #import "njshello.h"
 int main( int argc, char *argv[] )
 {
@@ -1030,7 +1030,7 @@ UIWebview对象的API请参考Apple开发文档[UIWebview](https://developer.app
 示例：
 1. 创建实例对象使用完成后，显式操作销毁对象
 Objective-C代码：
-``` objective-c
+``` objc
 // 获取当前Webview对象的实例
 UIWebview* wv=self;
 // 创建请求对象
@@ -1141,14 +1141,15 @@ function createShortcut(){
 }
 ```
 如下图所示：
+
 ![manifest.json中Android权限 permissions](http://www.dcloud.io/docs/a/njs/android_permissions.png)
 
-###iOS
+### iOS
 在iOS手机上登录game center，一个游戏中心服务，这是原本只有原生程序才能实现的功能。即使使用Hybrid方案，也需要原生工程师来配合写插件。
 下面我们演示如何直接使用js在iOS手机上登录game center，在HelloH5+应用中Native.JS页面中的“Game Center (iOS)”可以查看运行效果。
 注意手机未开通game center则无法登陆，请先点击iOS自带的game center进行配置。
 这段代码是使用原生Objective-C实现的登录game center的代码，用于参考比对。原生Objective-C代码的头文件Test.h中代码如下：
-``` object-c
+``` objc
 @interface Test: NSObject
 // 游戏玩家登录状态监听函数
 - (void)authenticationChanged:(NSNotification*)notification;
@@ -1368,8 +1369,8 @@ var ns = plus.ios.newObject( "NSDictionary" );
 var intent = plus.android.newObject( "android.content.Intent" );
 ```
 
-###API on Android
-####plus.android.newObject
+### API on Android
+#### plus.android.newObject
 不导入类对象直接创建类的实例对象，方法原型如下：
 ``` javascript
 InstanceObject plus.android.newObject( String classname, Object...args );
@@ -1403,7 +1404,7 @@ var hello = plus.android.newObject( "io.dcloud.NjsHello" );
 // ...
 ```
 
-####plus.android.getAttribute
+#### plus.android.getAttribute
 不导入类对象，则无法通过类对象并访问类的静态属性，需调用以下方法获取类的静态属性值，方法原型如下：
 ``` javascript
 Object plus.android.getAttribute( String|Object obj, String name );
@@ -1469,7 +1470,7 @@ console.log( "NjsHello Object's name: "+name );  // 输出“NjsHello Object's n
 // ...
 ```
 
-####plus.android.setAttribute
+#### plus.android.setAttribute
 若没有导入类对象，则无法通过类对象设置类的静态属性值，需调用以下方法设置类的静态属性值，方法原型如下：
 ``` javascript
 void plus.android.setAttribute( String|Object obj, String name, Object value );
@@ -1533,7 +1534,7 @@ console.log( "NjsHello Object's name: "+hello.plusGetAttribute("name") ); // 输
 // ...
 ```
 
-####plus.android.invoke
+#### plus.android.invoke
 若没有导入类对象，则无法通过实例对象的“.”操作符调用其成员方法，需通过以下方法调用实例对象的成员方法，方法原型如下：
 ``` javascript
 Object plus.android.invoke( String|Object obj, String name, Object... args );
@@ -1597,8 +1598,8 @@ console.log( "NjsHello Object's name: "+hello.getAttribute("name") ); // 输出�
 ```
 **完整API文档参考：[HTML5+ API - Native.js for Android](http://www.html5plus.org/doc/zh_cn/android.html)**
 
-###API on iOS
-####plus.ios.newObject
+### API on iOS
+#### plus.ios.newObject
 不导入类对象直接创建类的实例对象，方法原型如下：
 ``` java
 InstanceObject plus.ios.newObject( String classname, Object..args );
@@ -1612,7 +1613,7 @@ InstanceObject plus.ios.newObject( String classname, Object..args );
 示例：
 1. 不导入类创建实例对象
 Objective-C代码：
-``` objective-c
+``` objc
 #import "njshello.h"
 int main( int argc, char *argv[] )
 {
@@ -1629,7 +1630,7 @@ var hello = plus.ios.newObject( "NjsHello" );
 // ...
 ```
 
-####plus.ios.invoke
+#### plus.ios.invoke
 若没有导入类对象，则无法通过实例对象的“.”操作符调用其成员方法，需通过以下方法调用实例对象的成员方法，方法原型如下：
 ``` javascript
 Object plus.ios.invoke( String|Object obj, String name, Object... args );
@@ -1644,7 +1645,7 @@ Object plus.ios.invoke( String|Object obj, String name, Object... args );
 示例：
 1. 不导入类创建实例对象，并调用updateName方法
 Objective-C代码：
-``` objective-c
+``` objc
 #import "njshello.h"
 int main( int argc, char *argv[] )
 {
@@ -1669,8 +1670,8 @@ console.log( "NjsHello Object's name: "+hello.getAttribute("name") ); // 输出�
 **完整API文档参考：[HTML5+ API - Native.js for iOS](http://www.html5plus.org/doc/zh_cn/ios.html)**
 
 
-##性能优化
-###调整代码结构优化
+## 性能优化
+### 调整代码结构优化
 前面章节中我们介绍如何通过NJS调用Native API来显示系统提示框，在真机运行时会发现第一次调用时会有0.5s左右的延时，再次调用则不会延时。这是因为NJS中导入类对象操作会花费较长的时间，再次调用时由于类对象已经导入过，会能很快执行完毕。因此可以调整代码结构进行优化，在页面打开后触发的“plusready”事件中进行类对象的导入操作，从而避免第一次调用的延时。
 
 Android平台调整NJS代码结构如下：
@@ -1742,7 +1743,7 @@ function njsAlertForiOS(){
 //...
 ```
 
-###使用高级API优化
+### 使用高级API优化
 前面章节中我们提到导入类对象会消耗较多的系统资源，导入过多的类对象会影响性能。在高级API中提供一组接口可以在不导入类对象的情况下调用Native API，从而提升代码运行性能。
 
 Android平台使用高级API优化代码如下：

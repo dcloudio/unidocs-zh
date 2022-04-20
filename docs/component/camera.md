@@ -46,7 +46,7 @@
 </template>
 ```
 
-```javasacript
+```javascript
 export default {
     data() {
         return {

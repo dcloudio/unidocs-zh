@@ -29,6 +29,8 @@
 | 属性 | 类型 | 说明 |
 | --- | --- | --- |
 | appId | string | 小程序 appId |
+| envVersion| string | 小程序 当前环境版本：`develop`、`trial`、`release` |
+| version| string | 版本号 |
 
 
 **plugin 的结构**

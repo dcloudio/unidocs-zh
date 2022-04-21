@@ -1,7 +1,7 @@
 `uni-app`项目支持 `uni cli`和 `HBuilderX cli`两种脚手架工具：
 
 - `uni cli`：面向非HBuilderX的用户（如习惯使用vscode/webstorm的开发者），提供创建项目、编译发行等能力；在App平台，仅支持生成离线打包的wgt资源包，不支持云端打包生成apk/ipa；若需云端打包，依然需要安装HBuilderX，使用`HBuilderX cli`；
-- `HBuilderX cli`：面向HBuilderX用户，提供`uni-app`项目的持续集成能力；支持通过`HBuilderX cli`进行云端打包；但HBuilderX暂不支持linux平台，若你的服务器是linux系统，则还需使用`uni-cli`。
+- `HBuilderX cli`：面向HBuilderX用户的自动化工具，提供`uni-app`项目的持续集成能力；支持通过`HBuilderX cli`进行web打包、小程序打包、App云端打包、部署uniCloud等；但注意HBuilderX暂不支持linux平台。另外注意`HBuilderX cli`不基于npm，它是HBuilderX安装目录下的`cli.exe`。
 
 
 提供有完整的`cli` 脚手架，可以通过 `vue-cli` 创建、运行、发行 `uni-app` 项目。

@@ -14,7 +14,8 @@ banner或信息流广告展现场景非常灵活，常见的展现场景为：�
 
 - app端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道以及部分DCloud直投广告组成，在DCloud的uni-AD后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
 - H5端的广告由DCloud直接提供
-- 小程序端的广告由DCloud或小程序平台提供，开发者可自主选择
+- 微信小程序端的广告由DCloud
+- 其他小程序端由小程序平台提供
 
 **平台差异说明**
 
@@ -103,26 +104,9 @@ App和微信小程序的ad组件没有type属性，可以用于banner，也可�
     <!-- App平台 -->
     <!-- adpid="1111111111" 此广告位标识仅在HBuilderX标准基座中有效，仅用于测试 -->
     <!-- 广告后台申请的广告位(adpid)需要自定义基座/云打包/本地打包后生效 -->
-    <!-- 需要时可自定义属性，监听到 error 回调后(e.target可以取到)，开发者可以针对性的处理，比如隐藏广告组件的父容器，以保证用户体验 -->
     <view class="ad-view">
-      <ad adpid="1111111111" :data-xx="adItem.id" @load="onload" @close="onclose" @error="onerror"></ad>
+      <ad adpid="1111111111" @load="onload" @close="onclose" @error="onerror"></ad>
     </view>
-
-    <!-- 微信小程序 -->
-    <view class="ad-view">
-      <ad unit-id="" ad-intervals="100"></ad>
-    </view>
-
-    <!-- 百度小程序 -->
-    <view class="ad-view">
-      <ad appid="" apid="" type="feed"></ad>
-    </view>
-
-    <!-- 多平台兼容 -->
-    <view class="ad-view">
-      <ad adpid="1111111111" unit-id="" appid="" apid="" type="feed"></ad>
-    </view>
-
   </view>
 </template>
 

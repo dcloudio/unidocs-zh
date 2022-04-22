@@ -8,7 +8,7 @@
 
 `openDB`是[uniCloud](https://uniapp.dcloud.io/uniCloud/)的重要软基建，支撑uniCloud数字生态的发展。
 
-# 需求背景
+## 需求背景
 - 很多js工程师不善于数据库设计，希望有成熟的数据库模板，避免走弯路
 - 有利于产业分工。业务开发、统计分析、智能推荐、数据转换等都是不同的专业角色，大多数开发者仅善于业务开发，需要专业的数据服务商为其提供服务，如果数据库标准统一，各个角色就可以在插件市场各自提供插件。
   * 比如有专业数据服务商，基于openDB中电商规范，提供“猜你喜欢”插件，就可以被轻松的引入到开发者的应用中；
@@ -22,7 +22,7 @@
 [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id)的账户统一，是`openDB`的成功实践。基于uni-id规范，有电商插件、有IM插件、有PC管理插件，开发者可以方便的把这些插件整合到自己的同一应用中。
 
 
-# openDB中的已有规范：
+## openDB中的已有规范：
 
 目前`openDB`已经支持几十张表。可以在[https://gitee.com/dcloud/opendb/tree/master/collection](https://gitee.com/dcloud/opendb/tree/master/collection)查看。
 
@@ -34,7 +34,7 @@
 4. [新闻系统（opendb-news）](opendb-news.md)
 5. [日志管理（opendb-log）](opendb-log.md)
 
-# 如何引入到自己的服务空间
+## 如何引入到自己的服务空间
 
 在[uniCloud web控制台](https://unicloud.dcloud.net.cn)，新建表时，可直接选择所有`openDB`的表。
 
@@ -44,7 +44,7 @@
 
 `openDB`的表，不应修改表名，修改后就无法与其他插件连同了。
 
-# 欢迎参与
+## 欢迎参与
 
 `openDB`是一个持续发展的、由开发者共建的规范。DCloud欢迎各个业务领域的专业开发者提供规范。
 

@@ -166,9 +166,10 @@ export default {
     },
     fixedSideBarHeight () {
       if(!os.pc) return
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       this.navbarHeight = this.navbar.clientHeight
       this.subNavBarHeight = this.subNavBar.clientHeight
-      const setHeight = this.fixedNavbar ? this.subNavBarHeight : this.navbarHeight
+      const setHeight = !!scrollTop || this.fixedNavbar ? this.subNavBarHeight : this.navbarHeight
       this.sideBar.style.top = `${setHeight + 1}px`
       this.vuepressToc.style.top = `${setHeight + 1}px`
     },

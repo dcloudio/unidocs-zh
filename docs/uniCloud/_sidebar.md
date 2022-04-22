@@ -32,7 +32,7 @@
   * [unicloud-db前端组件](uniCloud/unicloud-db.md)
   * [JQL数据库管理](uniCloud/jql-runner.md)
   * [JQL语法](uniCloud/jql.md)
-  * [openDB](https://gitee.com/dcloud/opendb)
+  * [openDB](uniCloud/opendb)
   * [性能优化](uniCloud/db-performance.md)
 * 云存储
   * [API](uniCloud/storage.md)

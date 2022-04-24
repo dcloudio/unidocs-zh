@@ -158,6 +158,183 @@ uni统计2.0是基于uniCloud开发的开源、免费统计平台。
 3. 发行项目到对应平台 ，此时数据已经成功采集到 `uni-admin` 中
 
 
+### uni统计公共模块配置项说明
+uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `uni-stat/config.json`文件中，用户可根据自身系统需要自定义各配置项的值。
+
+- 注意：修改uni统计配置项后需要重新上传公共模块`uni-config-center`后才会生效。
+
+#### 基础参数
+
+|配置项				|默认值		|说明																																																|
+| :--------:		|:---------:|:-------------------:																																												|
+|  debug			|  false	|开启调试模式 true: 开启，false:关闭，开启后会产生大量日志，生产环境请关闭。																														|
+|  redis			|  false	|开启redis缓存，开启后可以降低数据库查询压力，提升uni统计性能，可按需决定是否开启。[开启方法](#开启redis缓存)																					|
+|  cachetime		|  604800	|redis缓存有效期，单位秒。																																											|
+|  sessionExpireTime|  1800		|会话过期时间，该配置用来判断当前会话是否已过期，一般情况下无需修改此项。																															|
+|  realtimeStat		|  true		|开启实时统计，true: 开启，false:关闭，开启后会每小时统计一次，数据库读写次数会增多，可按需决定是否开启。																							|
+|  cronMin			|  false	|开启分钟级定时任务，true: 开启，false:关闭。开启后定时任务将细分到分钟级执行，分摊数据计算压力，适合应用日活较大或有特殊需求的用户群体。开启方法见下方 [开启分钟级定时任务](#开启分钟级定时任务)。	|
+|  cron				|  -		|用于配置定时任务触发时间，详情见下方[定时任务配置说明](#定时任务配置说明)。																														|
+|  batchInsertNum	|  5000		|当有批量写入操作时，限制单次写入数据库的最大条数。为防止写入超时，最大值为5000条。																													|
+|  errorCheck		|  -		|错误检测，此项用于在规定时间内限制相同的错误日志写入数据库，防止有高频错误产生时造成大量的数据库写入操作。[详情](#错误检测配置说明)																|
+|  cleanLog			|  -		|日志清理，此项用于配置定时清理过期的日志，减少数据库数据的存储量，提升uni统计性能。[详情](#日志清理配置说明)																						|
+
+#### 开启redis缓存
+
+- 注意：开启redis缓存前，需要先确认是否已在布署uni统计的服务空间内购买redis服务，如果没有购买则需要先购买redis服务。
+
+开启步骤：
+1. 修改uni统计配置项将`redis`参数的值改为`true`。
+2. 分别在数据`上报数据接收器（uni-stat-receiver）`和`定时任务云函数（uni-stat-cron）`下的`package.json`文件中添加redis拓展库。
+3. 重新上传部署数据`上报数据接收器（uni-stat-receiver）`、`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
+
+``` javascript
+//配置uni-stat-receiver的redis拓展库
+{
+	"name": "uni-stat-receiver",
+	"dependencies": {
+		"uni-id": "file:../../../../uni-id/uniCloud/cloudfunctions/common/uni-id",
+		"uni-stat": "file:../common/uni-stat"
+	},
+	"extensions": {
+		"uni-cloud-jql": {},
+		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容。如拷贝此配置项到package.json文件，切记去除注释。
+	}
+}
+
+
+//配置uni-stat-cron的redis拓展库
+{
+	"name": "uni-stat-cron",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"uni-stat": "file:../common/uni-stat"
+	},
+	"extensions": {
+		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容。如拷贝此配置项到package.json文件，切记去除注释。
+	},
+	"cloudfunction-config": {
+		"concurrency": 1,
+		"memorySize": 512,
+		"timeout": 600,
+		"triggers": [
+			{
+				"name": "uni-stat-cron",
+				"type": "timer",
+				"config": "0 0 * * * * *"
+			}
+		]
+	}
+}
+
+```
+
+
+
+#### 定时任务配置说明
+
+`cron` 参数用于配置定时任务触发时间，一般无需修改此项。
+
+|参数		|说明																																|
+| :--------:|:-------------------:																												|
+|  type		|定时任务类型：如 `stat`：基础数据统计																								|
+|  time		|触发时间表达式：`* * * *` 共四位，由左到右分别代表：星期（1-7代表周一到周日）/日/时/分。例：每天晚上0点0分触发，应写作 `* * 0 0`	|
+
+目前定时任务类型有：
+- `stat`：基础数据统计
+- `retention-device`：设备留存数据统计
+- `retention-user`：用户留存数据统计
+- `active-device`：活跃设备数据归档
+- `active-user`：活跃用户数据归档
+- `page`：页面数据统计
+- `event`：事件数据统计
+- `error`：错误数据统计
+
+
+
+#### 开启分钟级定时任务
+
+- 阿里云服务空间开启步骤：
+
+1. 因阿里云服务空间默认不支持分钟级定时器，必须先向DCloud申请分钟级定时器后再开启。[申请方式](https://uniapp.dcloud.io/uniCloud/price.html#aliyun)
+2. 修改uni统计配置项将`cronMin`参数的值改为`true`。
+3. 修改`定时任务云函数（uni-stat-cron）`下的`package.json`文件中的触发器配置。
+4. 重新上传部署`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
+
+``` javascript
+//config选项为阿里云定时器的cron表达式 将原小时级表达式 "config": "0 0 * * * * *" 更改为分钟级表达式 "config": "0 * * * * * *" 后重新上传部署云函数即可.
+"cloudfunction-config": {
+		"concurrency": 1,
+		"memorySize": 256,
+		"timeout": 600,
+		"triggers": [
+			{
+				"name": "uni-stat-cron",
+				"type": "timer",
+				"config": "0 * * * * * *"
+			}
+		]
+}
+```
+
+- 腾讯云服务空间开启步骤：
+
+1. 修改uni统计配置项将`cronMin`参数的值改为`true`。
+2. 修改`定时任务云函数（uni-stat-cron）`下的`package.json`文件中的触发器配置。
+3. 重新上传部署`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
+
+``` javascript
+//config选项为阿里云定时器的cron表达式 将原小时级表达式 "config": "0 0 * * * * *" 更改为分钟级表达式 "config": "0 * * * * * *" 后重新上传部署云函数即可.
+"cloudfunction-config": {
+		"concurrency": 1,
+		"memorySize": 256,
+		"timeout": 600,
+		"triggers": [
+			{
+				"name": "uni-stat-cron",
+				"type": "timer",
+				"config": "0 * * * * * *"
+			}
+		]
+}
+```
+
+
+#### 错误检测配置说明
+
+`errorCheck`参数用于在规定时间内限制相同的错误日志写入数据库，防止有高频错误产生时造成大量的数据库写入操作，可按需开启或关闭。
+
+|参数		|说明								|
+| :--------:|:-------------------:				|
+|  needCheck|是否需要检测：true：是；false:否	|
+|  checkTime|错误检测间隔时间，单位`分钟`。		|
+
+
+#### 日志清理配置说明
+
+`cleanLog`参数用于配置定时清理过期的日志，减少数据库数据的存储量，提升uni统计性能。注意：因为留存统计的需要，基础会话日志和用户会话日志要至少保存31天的日志，否则会对留存统计造成影响。
+
+|参数			|说明																																																																																			|
+| :--------:	|:-------------------:																																																																															|
+|  open			|是否开启日志清理：true：是；false:否																																																																											|
+|  reserveDays	|各项日志的保留天数配置，参数格式：`日志类型:保留天数`，例如： `sessionLog:31`代表保留31天的会话日志，保留天数设置为0时表示永久保留(此举会累积大量无用数据，不推荐)	|
+
+目前可配置的日志类型有：
+
+- `基础会话日志：sessionLog`
+- `用户会话日志：userSessionLog`
+- `页面日志：pageLog`
+- `事件日志：eventLog`
+- `分享日志：shareLog`
+- `错误日志：errorLog`
+
+
 ### 注意事项
 - 客户端和统计后台两个项目务必关联同一个服务空间，且uni-admin中所有云函数、公共模板等都已经上传部署到该服务空间
 - 使用 uni 统计必须配置 APPID 才能正常使用。[DCloud的Appid有什么用，如需转让应用怎么做](https://ask.dcloud.net.cn/article/35907)
@@ -165,4 +342,25 @@ uni统计2.0是基于uniCloud开发的开源、免费统计平台。
 - 不支持 CLI 项目
 
 ### 开源代码解读
+
+#### 前端SDK说明
+#### uni-admin说明
+
+#### 服务端说明
+
+##### 1. 服务端构成
+- `uni-config-center/uni-stat 配置模块`：给`uni-stat 公共模块`提供运行必要的配置参数。
+- `uni-stat 公共模块`：数据处理模块，包括收集上报数据的处理入库及定时任务的数据处理。
+- `uni-stat-receiver 上报数据接收器`：接收客户端上报数据并转发给公共模块处理。注意：该云对象依赖于`uni-id`公共模块。
+- `uni-stat-cron 定时任务云函数`：触发定时任务并转发给公共模块处理
+ 
+##### 2. 公共模块结构说明
+- `shared目录` 公共模块，提供公共函数库等支持。
+- `stat/mod目录` 数据模型，提供具体业务实现。
+- `stat/lib目录` 工具类类库，提供日期计算、数据加密等额外功能支持。
+- `stat/report.js文件` 数据上报功能的分发入口文件。
+- `stat/stat.js文件` 数据统计及日志清理功能的分发入口文件。
+- `index.js文件` 代理入口文件。
+
+
 ### 扩展和自定义方式

@@ -805,3 +805,5 @@ line-height {length}: 正整数，每行文字高度。```line-height```是 top 
 |anywhere	|以字符为最小元素做截断换行	|
 
 
+> 在 Android 平台暂不支持
+

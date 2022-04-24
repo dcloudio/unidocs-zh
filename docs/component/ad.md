@@ -12,9 +12,9 @@ banner或信息流广告展现场景非常灵活，常见的展现场景为：�
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b613df50-4420-11eb-bc56-c9cea619f663.png)
 
 
-- app端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道以及部分DCloud直投广告组成，在DCloud的uni-AD后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
+- App端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道以及部分DCloud直投广告组成，在DCloud的uni-AD后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
 - H5端的广告由DCloud直接提供
-- 微信小程序端的广告由DCloud
+- 微信小程序端的广告由DCloud直接提供
 - 其他小程序端由小程序平台提供
 
 **平台差异说明**
@@ -29,12 +29,12 @@ banner或信息流广告展现场景非常灵活，常见的展现场景为：�
 开通广告步骤：
 1. 开通广告
 需在广告平台后台操作：
-    * App平台：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
-    * 小程序平台：在各自的小程序管理后台操作。
-2. 申请广告位id
-在各位后台申请广告位id
-3. 在页面合适位置编写代码，放置ad组件，配上广告位id（app是adpid，微信、头条、qq小程序是unit-id，百度小程序是apid）
-4. App端打包后生效，打包时必须选择要集成的广告SDK（穿山甲、广点通、360联盟、快手）。
+* App平台、H5平台及微信小程序平台：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
+* 其他小程序平台：在各自的小程序管理后台操作
+2. 在页面合适位置编写代码，放置ad组件，配上广告位id。
+3. App端打包后生效，打包时必须选择要集成的广告SDK（穿山甲、广点通、360联盟、快手等渠道）。
+4. H5端和微信小程序端，在uniAD后台申请广告成功后，按照开发文档直接开发部署即可展示广告。
+
 
 **属性说明**
 
@@ -145,7 +145,7 @@ export default {
 ```
 
 
-api的方式(仅app平台支持)，不推荐使用这种调用方式，调用比较复杂，且不跨平台，开发者还需要手动处理缓存逻辑
+api的方式(仅App平台支持)，不推荐使用这种调用方式，调用比较复杂，且不跨平台，开发者还需要手动处理缓存逻辑
 
 ``` html
 <template>

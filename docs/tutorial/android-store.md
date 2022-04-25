@@ -125,7 +125,7 @@
 
 + 检查是否集成了fcm推送(包含unipush中的fcm)、google统计、google推送、google登录模块。
 + 如果集成了则不能国内上架！原因是集成这些模块会将google的GMS服务导入安装包中。启动会获取android id导致无法上架。
-+ 检查uni-app项目在manifest.json将上诉模块去除重新打包上架
++ 检查uni-app项目在manifest.json将上述模块去除重新打包上架
 + 没有集成这些模块可以向检测平台获取调用堆栈。拿到java调用堆栈在[ask论坛](https://ask.dcloud.net.cn/explore/)发帖咨询
 
 #### 16、离线打包自定义DCloudApplication，初始化其他三方SDK如何处理合规问题

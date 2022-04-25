@@ -11,7 +11,7 @@
 - sql是一种字符串表达式，写法形如：
 
 ```
-select * from table1 where field1="123"
+select * from table1 where field1="value1"
 ```
 
 - nosql是js方法+json方式的参数，写法形如：
@@ -19,7 +19,7 @@ select * from table1 where field1="123"
 ```js
 const db = uniCloud.database()
 let res = await db.collection('table').where({
-  field1: '123'
+  field1: 'value1'
 }).get()
 ```
 
@@ -42,7 +42,7 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
   如果要表达`或`关系，需要用`or`方法，写法更复杂
 
   ```js
-  field1:dbCmd.gt(4000).or(dbCmd.gt(6000).and(dbCmd.lt(8000)))
+  field1:dbCmd.gt(0).or(dbCmd.lt(-5))
   ```
 
 2. nosql的联表查询写法，比sql还复杂

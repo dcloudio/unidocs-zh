@@ -1,26 +1,24 @@
-# 升级中心 uni-upgrade-center
+# App升级中心 uni-upgrade-center
 
 ### 概述
 
-统一管理 App 及 App 在`Android`、`iOS`平台上`App安装包`和`wgt资源包`的发布升级
+App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包括
+- Android、iOS的完整App安装包升级和wgt资源包增量更新
+- 后台管理系统，用于发布新版、设置升级策略
 
-基于 uniCloud 的 App 升级中心，本插件具有如下特征：
+> 如果需要初次发布，而不是升级，另见产品[uni-portal 统一发布页](https://ext.dcloud.net.cn/plugin?id=7100)
 
-- 云端基于 uniCloud 云函数实现
+本产品具有如下特征：
 
-- 数据库遵循 opendb 规范
+- 开源、免费。由于uniCloud阿里云版目前免费，包括服务器和cdn均免费。
 
-- 遵循 uniCloud Admin 框架规范，可直接导入 Admin 项目中
+- 云端基于 [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/) 实现。后台管理是 [uni-admin](https://uniapp.dcloud.net.cn/uniCloud/admin.html) 框架的插件。
 
-- 支持 App 整包升级及 wgt 资源包升级
+- 数据库遵循 [opendb](https://uniapp.dcloud.net.cn/uniCloud/opendb.html) 规范
 
 ### 为什么需要升级中心？
 
-我们一直致力于为用户提供通用功能统一解决方案，比如 unipay、uni-id 等。
-
-为了解决开发者维护多个 App 升级繁琐，重复逻辑过多，管理不便的问题，升级中心应运而生。
-
-提供了简单、易用、统一的 App 管理、App 版本管理、安装包发布管理，升级检测更新管理。
+每个App开发者都要开发升级功能，这是巨大的社会资料浪费。DCloud推出 uni-upgrade-center，让应用开发更轻松、高效，让开发者专注于自己的业务。
 
 ### 使用
 

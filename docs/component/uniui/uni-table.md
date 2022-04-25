@@ -49,8 +49,6 @@
 	</uni-tr>
 
 </uni-table>
-</script>
-			 
 ```
 
 

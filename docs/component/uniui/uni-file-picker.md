@@ -195,7 +195,7 @@
 |return-type|String| array	| array/object| 限制 `value` 格式，当为 `object`	 时	，组件只能单选，且会覆盖|
 |disable-preview| Boolean| false	| -| 禁用图片预览，仅	`mode:grid`生效	|
 |del-icon|Boolean| true	| -| 是否显示删除按钮	|
-|auto-upload| Boolean| true	| -| 是否自动上传，值为`true`则只触发@select,可自行上传|
+|auto-upload| Boolean| true	| -| 是否自动上传，值为`false`则只触发@select,可自行上传|
 |limit| Number\String| 9	| -| 最大选择个数 ，h5 会自动忽略多选的部分|
 | title| String	| -| -| 组件标题，右侧显示上传计数|
 |mode| String	| list	| list/grid| 选择文件后的文件列表样式|

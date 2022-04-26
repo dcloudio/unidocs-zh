@@ -94,6 +94,7 @@ npm run build:%PLATFORM%
 |mp-360|360 小程序|
 |mp-kuaishou|快手小程序|
 |mp-jd|京东小程序|
+|mp-xhs|小红书小程序|
 |quickapp-webview|快应用(webview)|
 |quickapp-webview-union|快应用联盟|
 |quickapp-webview-huawei|快应用华为|

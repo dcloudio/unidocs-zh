@@ -56,7 +56,7 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 |字段|类型|默认值|可选值|说明|
 |:-:|:-:|:-:|:-:|:-:|
 |enable|Boolean|false|true ， false|全局开启或关闭统计 ，分平台配置会覆盖当前配置|
-|version|String|'1'|"1" ， "2"|统计版本 ，如不填写，默认使用版本1.0，推荐使用2.0版本|
+|version|String|"1"|"1" ， "2"|统计版本 ，如不填写，默认使用版本1.0，推荐使用2.0版本|
 |debug|Boolean|false|true ， false|开启统计调试模式 ，会产生大量日志，且会在开发阶段上报数据，应用发布请关闭此项|
 
 ### 分平台设置
@@ -98,7 +98,7 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 
 ## 统计管理后台配置
 
-新版统计与之前不同的是需要用户自行管理部署统计后台，使用了 [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)
+2.0版本统计与之前不同的是需要用户自行管理部署统计后台，使用了 [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)
 来管理 `uni统计`数据。
 
 ### 创建 uni-admin
@@ -115,8 +115,21 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 
 ### 目录结构
 
-注意：创建完成后确保 `uniCloud -cloudfunctions` 目录下包含了 `uni-stat-report` 云函数
-![目录结构](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c20bd7bf-d52e-4038-80d6-a2e76c80a091.png)
+注意：创建完成后确保 `uniCloud - cloudfunctions` 目录下包含了 `uni-stat-receiver` 云对象
+
+```bash {3}
+├── uniCloud                          
+│   │── cloudfunctions 
+│ 	│	│── uni-sata-receiver       # 上报数据接收器
+│ 	│	└── ...
+│   └── ...      			
+├── pages                             
+├── static
+├── store
+├── admin.config.js
+├── App.vue
+└── ...
+```
 
 ### 配置 uni-id
 
@@ -411,53 +424,53 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 │       │   │── comparison             # 平台对比
 │       │   │   │── comparison.vue      
 │       │   │   └── fieldsMap.js    
-│       │   │── overview                  # 今日概览
+│       │   │── overview               # 今日概览
 │       │   │   │── overview.vue      
 │       │   │   └── fieldsMap.js    
-│       │   │── retention                 # 留存
+│       │   │── retention              # 留存
 │       │   │   │── retention.vue      
 │       │   │   └── fieldsMap.js    
-│       │   │── stickiness                # 粘性
+│       │   │── stickiness             # 粘性
 │       │   │   │── stickiness.vue      
 │       │   │   └── fieldsMap.js    
-│       │   └── trend                     # 趋势分析
+│       │   └── trend                  # 趋势分析
 │       │       │── trend.vue           
 │       │       └── fieldsMap.js        
-│       │── error                         # 错误分析
+│       │── error                      # 错误分析
 │       │   │── error.vue             
 │       │   └── fieldsMap.js            
-│       │── event                         # 事件分析
+│       │── event                       # 事件分析
 │       │   │── event.vue             
 │       │   └── fieldsMap.js            
-│       │── index                         # 统计首页
+│       │── index                       # 统计首页
 │       │   │── index.vue             
 │       │   └── fieldsMap.js            
-│       │── page-ent                      # 入口页
+│       │── page-ent                    # 入口页
 │       │   │── page-ent.vue             
 │       │   └── fieldsMap.js            
-│       │── page-res                      # 受访页
+│       │── page-res                    # 受访页
 │       │   │── page-res.vue             
 │       │   └── fieldsMap.js            
-│       │── scene                         # 场景值（小程序）
+│       │── scene                       # 场景值（小程序）
 │       │   │── scene.vue             
 │       │   └── fieldsMap.js            
 │       └── user                        # 用户统计
-│           │── activity                  # 渠道/场景分析
+│           │── activity                # 渠道/场景分析
 │           │   │── activity.vue      
 │           │   └── fieldsMap.js    
-│           │── comparison                # 平台对比
+│           │── comparison              # 平台对比
 │           │   │── comparison.vue      
 │           │   └── fieldsMap.js    
-│           │── overview                  # 今日概览
+│           │── overview                # 今日概览
 │           │   │── overview.vue      
 │           │   └── fieldsMap.js    
-│           │── retention                 # 留存
+│           │── retention               # 留存
 │           │   │── retention.vue      
 │           │   └── fieldsMap.js    
-│           │── stickiness                # 粘性
+│           │── stickiness              # 粘性
 │           │   │── stickiness.vue      
 │           │   └── fieldsMap.js    
-│           └── trend                     # 趋势分析
+│           └── trend                   # 趋势分析
 │               │── trend.vue           
 │               └── fieldsMap.js        
 ├── static
@@ -488,7 +501,7 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 注意：uni统计公共模块依赖于 uniCloud配置中心（uni-config-center）
 :::
 
-```bash
+``` bash
 ├── shared                              # 公共模块，提供公共函数库等支持。
 │   │── create-api.js                   # 用来创建对外访问的实例
 │   │── error.js                   		# 错误处理模块
@@ -500,30 +513,30 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 │   │   │── index.js                    # 入口文件，提供对外访问模块
 │   │   └── uni-crypto.js               # 数据加密类文件，提供AES/MD5加密
 │   │── mod                             # 数据模型，提供具体业务实现。
-│   │   │── activeDevices.js            # 活跃设备模型
-│   │   │── activeUsers.js              # 活跃用户模型
-│   │   │── appCrashLogs.js             # 原生应用崩溃日志模型
+│   │   │── activeDevices.js            # 活跃设备模型，给周月维度的设备基础统计和留存统计提供数据，每日跑批合并，仅添加本周/本月首次访问的设备。
+│   │   │── activeUsers.js              # 活跃用户模型，给周月维度的用户基础统计和留存统计提供数据，每日跑批合并，仅添加本周/本月首次访问的用户。
+│   │   │── appCrashLogs.js             # 原生应用崩溃日志模型，记录原生应用的崩溃日志
 │   │   │── base.js                     # 基类模型，提供基础服务支持
-│   │   │── channel.js                  # 渠道模型
-│   │   │── errorLog.js                 # 错误日志模型
-│   │   │── errorResult.js              # 错误结果统计模型
-│   │   │── event.js                    # 事件统计模型
-│   │   │── eventLog.js                 # 事件日志模型
-│   │   │── eventResult.js              # 事件结果统计
+│   │   │── channel.js                  # 渠道模型，提供渠道和场景值数据
+│   │   │── errorLog.js                 # 错误日志模型，记录上报的应用运行错误日志
+│   │   │── errorResult.js              # 错误结果统计模型，统计汇总错误日志中的数据
+│   │   │── event.js                    # 事件统计模型，提供应用的事件字典
+│   │   │── eventLog.js                 # 事件日志模型，记录上报的事件日志
+│   │   │── eventResult.js              # 事件结果统计，统计汇总事件日志中的数据
 │   │   │── index.js                    # 入口文件，提供对外访问模块
-│   │   │── loyalty.js                  # 设备/用户忠诚度（粘性）统计模型
-│   │   │── page.js                     # 页面模型
-│   │   │── pageLog.js                  # 页面日志模型
-│   │   │── pageResult.js               # 页面结果统计模型
-│   │   │── platform.js                 # 应用平台模型
-│   │   │── runErrors.js                # 运行错误日志
-│   │   │── scenes.js                   # 场景值模型
-│   │   │── sessionLog.js               # 基础会话日志模型
-│   │   │── shareLog.js                 # 分享日志模型
-│   │   │── statResult.js               # 基础数据结果统计模型
-│   │   │── uniIDUsers.js               # uni-id 用户模型
-│   │   │── userSessionLog.js           # 用户会话日志模型
-│   │   └── version.js                  # 应用版本模型
+│   │   │── loyalty.js                  # 设备/用户忠诚度（粘性）统计模型，统计设备/用户的粘性，粘性判断依据为：访问时长和访问页面数量
+│   │   │── page.js                     # 页面模型，提供应用的页面字典
+│   │   │── pageLog.js                  # 页面日志模型，记录上报的页面访问日志
+│   │   │── pageResult.js               # 页面结果统计模型，统计汇总页面访问日志中的数据
+│   │   │── platform.js                 # 应用平台模型，提供应用的平台字典
+│   │   │── runErrors.js                # 运行错误日志，记录数据统计时运行出错的日志
+│   │   │── scenes.js                   # 场景值模型，提供应用渠道和小程序场景值的数据字典
+│   │   │── sessionLog.js               # 基础会话日志模型，记录设备访问时产生的会话日志
+│   │   │── shareLog.js                 # 分享日志模型，记录触发分享事件的日志
+│   │   │── statResult.js               # 基础数据结果统计模型，统计汇总会话数据包括不限于设备/用户的数量、访问量、活跃度（日活、周活、月活）、留存率（日留存、周留存、月留存）、跳出率、访问时长等数据
+│   │   │── uniIDUsers.js               # uni-id 用户模型，提供uni-id用户数据查询
+│   │   │── userSessionLog.js           # 用户会话日志模型，记录登录用户的会话日志
+│   │   └── version.js                  # 应用版本模型，提供应用的版本号字典
 │   │── receiver.js                     # 上报数据接收器，数据上报功能的分发入口文件
 │   └── stat.js                         # 数据统计调度处理模块，数据统计及日志清理功能的分发入口文件
 └── index.js                            # 代理入口文件，提供对外访问的uni-stat对象
@@ -655,7 +668,9 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 
 #### 开启分钟级定时任务
 
-因云函数运行时长为最大10分钟，所以开启分钟级定时任务后，如果想重新设置定时任务触发时间的话，需要确保各定时任务之间的触发间隔时间要大于等于10分钟。
+::: warning 注意
+注意：因云函数运行时长为最大10分钟，所以开启分钟级定时任务后，如果想重新设置定时任务触发时间的话，需要确保各定时任务之间的触发间隔时间要大于等于10分钟，防止出现运行超时的问题。
+:::
 
 - 阿里云服务空间开启步骤：
 
@@ -738,6 +753,8 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 - 不支持 CLI 项目
 :::
 
+<!-- ## 扩展和自定义方式
+uni统计提供了基础的数据报表，如不能达到预期的数据采集，可以在客户端通过 `uni.report(eventKey,param)`  自由上报数据 ，并通过 uni-admin 增加页面 ，自行统计数据。
 
 ### uni.report 基础用法 
 

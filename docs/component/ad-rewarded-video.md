@@ -31,15 +31,13 @@
 
 
 - app端的广告源由腾讯优量汇、头条穿山甲、快手等广告联盟提供，DCloud负责聚合
-- 小程序端的广告由小程序平台提供
 
 **开通配置广告**
 
 开通广告步骤：
 1. 开通广告
 需在广告平台后台操作：
-    * App平台：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
-    * 小程序平台：在各自的小程序管理后台操作。
+    * App平台及微信小程序平台：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
 2. 申请广告位id
 在各位后台申请广告位id
 3. App端打包后生效，打包时必须选择要集成的广告SDK（优量汇、穿山甲、快手）。

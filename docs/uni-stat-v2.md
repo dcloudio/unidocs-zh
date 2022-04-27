@@ -168,7 +168,7 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 
 `uni统计2.0`默认跑批间隔为1小时，即：每隔1小时，针对采集到的数据进行统计，计算新增、活跃、留存等。
 
-你可以根据需要修改跑批周期，修改方式为：//TODO  
+你可以根据需要修改跑批周期，修改方式为：//TODO 以30分钟举例  
 
 注意：现阶段阿里云仅支持小时级的定时任务，预计很快支持分钟级定时任务。
 
@@ -220,6 +220,68 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 	]
 }
 ```
+
+
+#### 开启redis缓存
+
+::: warning 注意
+开启redis缓存前，需要先确认是否已在布署uni统计的服务空间内购买redis服务，如果没有购买则需要先购买redis服务。
+:::
+
+**开启步骤：**
+1. 修改uni统计配置项将`redis`参数的值改为`true`。
+2. 分别在数据`上报数据接收器（uni-stat-receiver）`和`定时任务云函数（uni-stat-cron）`下的`package.json`文件中添加redis拓展库。
+3. 重新上传部署数据`上报数据接收器（uni-stat-receiver）`、`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
+
+``` javascript
+//配置uni-stat-receiver的redis拓展库
+{
+	"name": "uni-stat-receiver",
+	"dependencies": {
+		"uni-id": "file:../../../../uni-id/uniCloud/cloudfunctions/common/uni-id",
+		"uni-stat": "file:../common/uni-stat"
+	},
+	"extensions": {
+		"uni-cloud-jql": {},
+		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容。如拷贝此配置项到package.json文件，切记去除注释。
+	}
+}
+```
+
+
+``` javascript
+//配置uni-stat-cron的redis拓展库
+{
+	"name": "uni-stat-cron",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"uni-stat": "file:../common/uni-stat"
+	},
+	"extensions": {
+		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容。如拷贝此配置项到package.json文件，切记去除注释。
+	},
+	"cloudfunction-config": {
+		"concurrency": 1,
+		"memorySize": 512,
+		"timeout": 600,
+		"triggers": [
+			{
+				"name": "uni-stat-cron",
+				"type": "timer",
+				"config": "0 0 * * * * *"
+			}
+		]
+	}
+}
+```
+
 
 
 ### 共享服务空间
@@ -576,66 +638,6 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 |  batchInsertNum	|  5000		|当有批量写入操作时，限制单次写入数据库的最大条数。为防止写入超时，最大值为5000条。																													|
 |  errorCheck		|  -		|错误检测，此项用于在规定时间内限制相同的错误日志写入数据库，防止有高频错误产生时造成大量的数据库写入操作。[详情](#错误检测配置说明)																|
 |  cleanLog			|  -		|日志清理，此项用于配置定时清理过期的日志，减少数据库数据的存储量，提升uni统计性能。[详情](#日志清理配置说明)																						|
-
-#### 开启redis缓存
-
-::: warning 注意
-开启redis缓存前，需要先确认是否已在布署uni统计的服务空间内购买redis服务，如果没有购买则需要先购买redis服务。
-:::
-
-**开启步骤：**
-1. 修改uni统计配置项将`redis`参数的值改为`true`。
-2. 分别在数据`上报数据接收器（uni-stat-receiver）`和`定时任务云函数（uni-stat-cron）`下的`package.json`文件中添加redis拓展库。
-3. 重新上传部署数据`上报数据接收器（uni-stat-receiver）`、`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
-
-``` javascript
-//配置uni-stat-receiver的redis拓展库
-{
-	"name": "uni-stat-receiver",
-	"dependencies": {
-		"uni-id": "file:../../../../uni-id/uniCloud/cloudfunctions/common/uni-id",
-		"uni-stat": "file:../common/uni-stat"
-	},
-	"extensions": {
-		"uni-cloud-jql": {},
-		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容。如拷贝此配置项到package.json文件，切记去除注释。
-	}
-}
-```
-
-
-``` javascript
-//配置uni-stat-cron的redis拓展库
-{
-	"name": "uni-stat-cron",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"uni-stat": "file:../common/uni-stat"
-	},
-	"extensions": {
-		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容。如拷贝此配置项到package.json文件，切记去除注释。
-	},
-	"cloudfunction-config": {
-		"concurrency": 1,
-		"memorySize": 512,
-		"timeout": 600,
-		"triggers": [
-			{
-				"name": "uni-stat-cron",
-				"type": "timer",
-				"config": "0 0 * * * * *"
-			}
-		]
-	}
-}
-```
 
 
 #### 定时任务配置说明

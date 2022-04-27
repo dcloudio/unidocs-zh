@@ -27,7 +27,7 @@
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√（3.4.8+）|x|x|x|x|x|x|x|x|x|x|
+|√（3.4.8+）|x|√（3.4.8+）|x|x|x|x|x|x|x|x|
 
 
 - app端的广告源由腾讯优量汇、头条穿山甲、快手等广告联盟提供，DCloud负责聚合
@@ -48,7 +48,7 @@
 
 ### 语法
 
-`<ad-rewarded-video adpid=""></ad-rewarded-video>`
+`<ad-rewarded-video></ad-rewarded-video>`
 
 
 **属性说明**
@@ -134,7 +134,7 @@ export default {
 ```html
 <template>
   <view class="content">
-    <ad-rewarded-video :adpid="adpids" :loadnext="false" v-slot:default="{loading, error}">
+    <ad-rewarded-video :adpid="adpids" :loadnext="true" v-slot:default="{loading, error}">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-rewarded-video>

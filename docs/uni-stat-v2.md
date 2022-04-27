@@ -30,13 +30,19 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 |部署方式 |中央部署|私有部署|
 |定制方式 |不可定制|方便定制|
 
-## 前端配置
+## 使用教程
+
+`uni统计2.0`包括两个模块：
+- 前端采集模块：通常为用户端App，内置在`uni-app`项目中，可通过`manifest.json`进行配置；
+- 云端统计模块：通常为管理后台，内置在`uni-admin`项目，和用户端App项目复用同样的服务空间；
+
+### 前端采集配置
 
 在项目中打开 `manifest.json` , 选择 `uni统计配置` 项，根据需求，选择开通 `uni统计` ，勾选 `version2` 开启新版统计。
 
 ![开启统计](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/03c7afa3-2512-462b-a53f-cbaeca4dec58.png)
 
-### 全局设置
+#### 全局设置
 
 将 `manifest.json -> uniStatistics` 下的 `enable` 字段设置为 `true|false` ,来开启关闭 `uni统计`
 
@@ -59,7 +65,7 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 |version|String|"1"|"1" ， "2"|统计版本 ，如不填写，默认使用版本1.0，推荐使用2.0版本|
 |debug|Boolean|false|true ， false|开启统计调试模式 ，会产生大量日志，且会在开发阶段上报数据，应用发布请关闭此项|
 
-### 分平台设置
+#### 分平台设置
 
 `uniStatistics` 支持分平台设置，比如若需仅开启微信平台的 `uni统计`，则在`mp-weixin`节点下设置 `uniStatistics ->enable` 即可，如下：
 
@@ -85,7 +91,7 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 - 仅在开启调试模式或发行代码后才会正常上报数据
 :::
 
-### 域名白名单
+#### 域名白名单
 
 由于各家小程序对可访问的域名要配置白名单，否则无法联网。
 
@@ -96,102 +102,8 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 |   阿里云   |       api.bspapp.com        |
 |   腾讯云   | tcb-api.tencentcloudapi.com |
 
-## 统计管理后台配置
 
-2.0版本统计与之前不同的是需要用户自行管理部署统计后台，使用了 [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)
-来管理 `uni统计`数据。
-
-### 创建 uni-admin
-
-使用 `HBuilderX 3.4.x`版本新建 `uni-app` 项目，选择 `uni-admin` 项目模板，如下图:
-![download-admin](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/80406bf5-f96a-4a66-9430-a339a4054c96.png)
-创建完成后，可以跟随`云服务空间初始化向导`初始化项目，创建并绑定云服务空间
-
-![download-admin](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7fd34451-2313-4d01-8caf-39f277780642.png)
-
-### 运行 uni-admin
-
-接下来所有操作都是基于新创建的 `uni-admin` 项目来操作
-
-### 目录结构
-
-注意：创建完成后确保 `uniCloud - cloudfunctions` 目录下包含了 `uni-stat-receiver` 云对象
-
-```bash {3}
-├── uniCloud                          
-│   │── cloudfunctions 
-│ 	│	│── uni-sata-receiver       # 上报数据接收器
-│ 	│	└── ...
-│   └── ...      			
-├── pages                             
-├── static
-├── store
-├── admin.config.js
-├── App.vue
-└── ...
-```
-
-### 配置 uni-id
-
-打开`uni-config-center` 配置 `uni-id` 的 `passwordSecret` 和`tokenSecret`字段 （测试期间跳过本条也可以）
-
-- `passwordSecret` 字段 ，用于加密密码入库的密钥
-- `tokenSecret` 字段 ，为生成 token 需要的密钥
-
-```js
-//  `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`
-{
-  "passwordSecret": "passwordSecret-demo",
-  "tokenSecret": "tokenSecret-demo",
-  // ...
-}
-```
-
-### 配置服务空间
-
-右键 `uniCloud` 目录 `运行云服务空间初始化向导`，初始化数据库和上传部署云函数（**如已创建并绑定云服务空间，则跳过此步**）
-
-![配置服务空间](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7fd34451-2313-4d01-8caf-39f277780642.png)
-
-**运行项目**
-
-点击`HBuilderX`工具栏的运行(快捷键【Ctrl+r】) -> 运行到浏览器。如果是连接本地云函数调试环境，上一步可以不上传云函数，但数据库仍需初始化。
-
-**登录 admin 后台**
-
-从启动后的登录页面的底部，进入创建管理员页面（仅允许注册一次管理员账号）
-
-![登录 admin 后台](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6582a93f-e707-4d12-9749-48d7e0f58f4b.png)
-
-![登录 admin 后台](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/28e09692-5931-437d-a633-7437ff87bdca.png)
-
-::: warning 注意
-- 在 HBuilderX 中运行需在插件市场在安装 [sass 插件](https://ext.dcloud.net.cn/plugin?id=2046)
-- 浏览器联网失败，报 `request：fail`，需要去云服务空间的`跨域配置`配置跨域域名，需带端口。[详见](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
-- 如从未接触过`uniCloud`，可能无法直接上手uni-admin的，建议先通读下uniCloud文档的概念介绍和快速上手章节。[详见](https://uniapp.dcloud.net.cn/uniCloud/README)
-:::
-
-## 关联服务空间
-
-
-客户端和管理后端都已经准备好了，但是现在还不能从客户端直接上报数据到管理后端，所以需要关联客户端和管理后端的服务空间
-
-1. 在客户端项目右键并选择 `创建uniCloud云开发环境 -> 阿里云|腾讯云`
-
-![关联前后台数据](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b2ad84ed-a69a-43dc-b8d1-6efaafd96a14.png)
-
-2. 在`uniCloud`目录右键并选择`关联云服务空间或项目`，在打开的窗口中选择上一节`uni-admin`关联的服务空间（两个项目务必关联同一个服务空间，且 uni-admin 中所有云函数、公共模板等都已经上传部署到该服务空间）
-
-![关联前后台数据](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/14744bf3-c88e-4408-b2fa-0ecf0dcf4fe1.png)
-
-3. 发行项目到对应平台 ，此时数据已经成功采集到 `uni-admin` 中
-
-
-
-
-## 开源代码解读
-### 前端SDK说明
-#### 开启调试模式
+#### 调试模式
 
 将 `manifest.json -> uniStatistics` 下的 `debug` 字段设置为 `true|false` ,来开启关闭 `uni统计`调试模式
 
@@ -232,7 +144,106 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 
 ```
 
-#### 采集类型说明
+
+### 后台报表配置
+
+#### 关联admin相关
+
+`uni统计2.0`的后台统计报表是`uni-admin`的内置插件，故使用`uni统计2.0`，需依赖[uni-admin](/uniCloud/admin)项目。
+
+请参考[uni-admin](/uniCloud/admin)文档，完成如下操作：
+
+1. 创建新的`uni-admin`项目
+2. 绑定服务空间
+3. 部署云端资源（上传部署云函数、公共模块、初始化数据库表等）
+4. 完成其它初始化配置，如：打开`uni-config-center` 配置 `uni-id` 相关秘钥
+
+**注意：**若你想复用老的`uni-admin`项目，请手动对比新老项目差异，将uni统计新增云函数及统计页面复制到老的uni统计项目中，主要包括：
+- 云函数：uniCloud/cloudfunctions/uni-stat-cron、uniCloud/cloudfunctions/uni-stat-receiver
+- 通用模块：uniCloud/cloudfunctions/uni-stat
+- 数据表：uniCloud/database目录下相关schema文件
+- 统计页面：pages/uni-stat 文件夹
+
+#### 定时跑批周期
+
+`uni统计2.0`默认跑批间隔为1小时，即：每隔1小时，针对采集到的数据进行统计，计算新增、活跃、留存等。
+
+你可以根据需要修改跑批周期，修改方式为：//TODO  
+
+注意：现阶段阿里云仅支持小时级的定时任务，预计很快支持分钟级定时任务。
+
+::: warning 注意
+注意：因云函数运行时长为最大10分钟，所以开启分钟级定时任务后，如果想重新设置定时任务触发时间的话，需要确保各定时任务之间的触发间隔时间要大于等于10分钟，防止出现运行超时的问题。
+:::
+
+- 阿里云服务空间开启步骤：
+
+1. 因阿里云服务空间默认不支持分钟级定时器，必须先向DCloud申请分钟级定时器后再开启。[申请方式](https://uniapp.dcloud.io/uniCloud/price.html#aliyun)
+2. 修改uni统计配置项将`cronMin`参数的值改为`true`。
+3. 修改`定时任务云函数（uni-stat-cron）`下的`package.json`文件中的触发器配置。
+4. 重新上传部署`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
+
+``` javascript
+//config选项为阿里云定时器的cron表达式 将原小时级表达式 "config": "0 0 * * * * *" 更改为分钟级表达式 "config": "0 * * * * * *" 后重新上传部署云函数即可.
+"cloudfunction-config": {
+	"concurrency": 1,
+	"memorySize": 256,
+	"timeout": 600,
+	"triggers": [
+		{
+			"name": "uni-stat-cron",
+			"type": "timer",
+			"config": "0 * * * * * *"
+		}
+	]
+}
+```
+
+- 腾讯云服务空间开启步骤：
+
+1. 修改uni统计配置项将`cronMin`参数的值改为`true`。
+2. 修改`定时任务云函数（uni-stat-cron）`下的`package.json`文件中的触发器配置。
+3. 重新上传部署`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
+
+``` javascript
+//config选项为阿里云定时器的cron表达式 将原小时级表达式 "config": "0 0 * * * * *" 更改为分钟级表达式 "config": "0 * * * * * *" 后重新上传部署云函数即可.
+"cloudfunction-config": {
+	"concurrency": 1,
+	"memorySize": 256,
+	"timeout": 600,
+	"triggers": [
+		{
+			"name": "uni-stat-cron",
+			"type": "timer",
+			"config": "0 * * * * * *"
+		}
+	]
+}
+```
+
+
+### 共享服务空间
+
+为了让用户端App采集到的数据，可以被`uni-admin`中的云函数正确接收并统计，需保证用户端项目和admin项目，共享同样的服务空间。
+
+客户端和管理后端都已经准备好了，但是现在还不能从客户端直接上报数据到管理后端，所以需要关联客户端和管理后端的服务空间
+
+1. 选择用户端项目（需采集用户数据的项目）
+2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 阿里云|腾讯云`；否则，进入第3步；
+
+![关联前后台数据](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b2ad84ed-a69a-43dc-b8d1-6efaafd96a14.png)
+
+3. 在`uniCloud`目录右键并选择`关联云服务空间或项目`，在打开的窗口中选择对应`uni-admin`项目关联的服务空间
+
+![关联前后台数据](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/14744bf3-c88e-4408-b2fa-0ecf0dcf4fe1.png)
+
+
+
+## 开源代码解读
+
+### 前端采集SDK
+
+#### 采集类型
 
 **应用启动**
 
@@ -394,12 +405,14 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 |cable|有线|
 
 #### 数据上报逻辑
+
 数据上报间隔最小是 10s 上报一次 ，在上报间隔内，会将每次上报节点的数据加入统计数据队列，10s后会在下一个上报节点，统一对数据队列进行一定的处理进行上报。
 
 这么做的目的是防止频繁上报引起的并发问题。所以上报请求不是时实发生的。
 
-### uni-admin说明
-**前端页面结构**
+### 云端统计
+
+#### 统计报表展示页
 
 为了突出目标，仅注释出 uni 统计相关的文件夹及文件，其余与普通 uni-app 项目相同。新增页面可参考 uni-stat 中相似页面。
 
@@ -486,7 +499,7 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 
 
 
-### 服务端说明
+#### 云函数、通用模块说明
 
 **一、 uni统计服务端构成**
 
@@ -565,6 +578,7 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 |  cleanLog			|  -		|日志清理，此项用于配置定时清理过期的日志，减少数据库数据的存储量，提升uni统计性能。[详情](#日志清理配置说明)																						|
 
 #### 开启redis缓存
+
 ::: warning 注意
 开启redis缓存前，需要先确认是否已在布署uni统计的服务空间内购买redis服务，如果没有购买则需要先购买redis服务。
 :::
@@ -625,6 +639,7 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 
 
 #### 定时任务配置说明
+
 `cron` 参数用于配置定时任务触发时间，一般无需修改此项。
 
 |参数		|说明																																|
@@ -665,57 +680,6 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 - `error`：错误数据统计，统计维度包括：
   - 日统计，默认`每天上午5点（20分）`触发，统计前一天的错误数据
 
-
-#### 开启分钟级定时任务
-
-::: warning 注意
-注意：因云函数运行时长为最大10分钟，所以开启分钟级定时任务后，如果想重新设置定时任务触发时间的话，需要确保各定时任务之间的触发间隔时间要大于等于10分钟，防止出现运行超时的问题。
-:::
-
-- 阿里云服务空间开启步骤：
-
-1. 因阿里云服务空间默认不支持分钟级定时器，必须先向DCloud申请分钟级定时器后再开启。[申请方式](https://uniapp.dcloud.io/uniCloud/price.html#aliyun)
-2. 修改uni统计配置项将`cronMin`参数的值改为`true`。
-3. 修改`定时任务云函数（uni-stat-cron）`下的`package.json`文件中的触发器配置。
-4. 重新上传部署`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
-
-``` javascript
-//config选项为阿里云定时器的cron表达式 将原小时级表达式 "config": "0 0 * * * * *" 更改为分钟级表达式 "config": "0 * * * * * *" 后重新上传部署云函数即可.
-"cloudfunction-config": {
-	"concurrency": 1,
-	"memorySize": 256,
-	"timeout": 600,
-	"triggers": [
-		{
-			"name": "uni-stat-cron",
-			"type": "timer",
-			"config": "0 * * * * * *"
-		}
-	]
-}
-```
-
-- 腾讯云服务空间开启步骤：
-
-1. 修改uni统计配置项将`cronMin`参数的值改为`true`。
-2. 修改`定时任务云函数（uni-stat-cron）`下的`package.json`文件中的触发器配置。
-3. 重新上传部署`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
-
-``` javascript
-//config选项为阿里云定时器的cron表达式 将原小时级表达式 "config": "0 0 * * * * *" 更改为分钟级表达式 "config": "0 * * * * * *" 后重新上传部署云函数即可.
-"cloudfunction-config": {
-	"concurrency": 1,
-	"memorySize": 256,
-	"timeout": 600,
-	"triggers": [
-		{
-			"name": "uni-stat-cron",
-			"type": "timer",
-			"config": "0 * * * * * *"
-		}
-	]
-}
-```
 
 
 #### 错误检测配置说明

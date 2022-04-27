@@ -536,7 +536,27 @@ const res = await todo.add('title demo', 'content demo')
 
 ## 本地运行@run-local
 
-云对象目前无法直接本地运行，可以通过其他云函数调用本地云对象（在调用云对象的云函数右键本地运行），或者客户端调用本地云对象的方式来实现云对象的本地运行。
+`HBuilderX 2.4.8`之前，云对象目前无法直接本地运行，可以通过其他云函数调用本地云对象（在调用云对象的云函数右键本地运行），或者客户端调用本地云对象的方式来实现云对象的本地运行。
+
+`HBuilderX 2.4.8`及之后版本，云对象可以直接运行。打开云对象下的js文件，按ctrl+r或点击运行菜单运行云对象。运行云对象之前需要先选择执行云对象的哪个方法，以及传递什么参数。
+
+以下述云对象为例：
+
+```js
+module.exports = {
+	login(username, password) {
+		// ...
+		return {
+			errCode: 0
+		}
+	}
+}
+
+```
+
+调用login方法，传递username及password参数，的运行参数配置如下：
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/db974aec-7975-45b7-bb64-24afd8a59213.jpg)
 
 ## 推荐最佳实践
 

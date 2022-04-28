@@ -23,6 +23,7 @@ code|message|
 - App端聚合的Sigmob(iOS)：[错误码详情](http://docs.sigmob.cn/#/sdk/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/ios/)
 - App端聚合的Sigmob(Android)：[错误码详情](http://docs.sigmob.cn/#/sdk/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/android/)
 - App端聚合的快手错误码
+
 |code|message|
 |:-:|:-:|
 |40001|没有网络|

@@ -287,4 +287,4 @@ export default {
 
 **错误码**
 
-[错误码相关问题排查](https://uniad.dcloud.net.cn/component/ad-error-code)
+[错误码相关问题排查](https://uniapp.dcloud.net.cn/component/ad-error-code.html)

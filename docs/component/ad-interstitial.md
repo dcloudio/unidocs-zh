@@ -72,7 +72,7 @@ HBuilder 基座的测试广告位 `adpid` 为 `1111111113`
 ```html
 <template>
   <view class="content">
-    <ad-interstitial adpid="1111111113" :loadnext="true" v-slot:default="{loading, error}" @load="onload" @close="onclose" @close="onerror">
+    <ad-interstitial adpid="1111111113" :loadnext="true" v-slot:default="{loading, error}" @load="onadload" @close="onadclose" @error="onaderror">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-interstitial>
@@ -86,14 +86,15 @@ export default {
     }
   },
   methods: {
-    onload(e) {
+    onadload(e) {
       console.log('广告数据加载成功');
     },
-    onclose(e) {
+    onadclose(e) {
+		 console.log("onadclose",e);
     },
-    onerror(e) {
+    onaderror(e) {
       // 广告加载失败
-      console.log("onerror: ", e.detail);
+      console.log("onaderror: ", e.detail);
     }
   }
 }
@@ -102,4 +103,4 @@ export default {
 
 **错误码**
 
-[错误码相关问题排查](https://uniad.dcloud.net.cn/component/ad-error-code)
+[错误码相关问题排查](https://uniapp.dcloud.net.cn/component/ad-error-code.html)

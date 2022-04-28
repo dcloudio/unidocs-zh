@@ -136,7 +136,7 @@
         )
       },
       onload(e) {
-        console.log("onload");
+        console.log("onload",e);
       },
       onerror(e) {
         console.log("onerror: " + e.detail.errCode + " message:: " + e.detail.errMsg);

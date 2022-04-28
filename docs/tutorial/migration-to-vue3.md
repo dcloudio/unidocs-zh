@@ -503,8 +503,9 @@ vue3 全平台新增：通过 props 来获取页面参数的使用方式
 示例：
 
 ```js
-export default {  
-    hello: ({ list }) => `${list(0)} world`,  
-    test: '你好'  
-}  
+const messages = {
+  en: {
+    greeting: ({ named }) => `hello, ${named('name')}!`
+  }
+}
 ```

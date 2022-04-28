@@ -92,7 +92,7 @@
 ```html
 <template>
   <view class="content">
-    <ad-rewarded-video adpid="1507000611" :loadnext="true" v-slot:default="{loading, error}" @load="onload" @close="onclose" @close="onerror">
+    <ad-rewarded-video adpid="1507000611" :loadnext="true" v-slot:default="{loading, error}" @load="onAdLoad" @close="onAdClose" @error="onAdError">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-rewarded-video>
@@ -106,23 +106,23 @@ export default {
     }
   },
   methods: {
-    onload(e) {
+    onAdLoad(e) {
       console.log('广告数据加载成功');
     },
-    onclose(e) {
+    onAdClose(e) {
       const detail = e.detail
       // 用户点击了【关闭广告】按钮
       if (detail && detail.isEnded) {
         // 正常播放结束
-        console.log("onClose " + detail.isEnded);
+        console.log("onAdClose " + detail.isEnded);
       } else {
         // 播放中途退出
         console.log("onClose " + detail.isEnded);
       }
     },
-    onerror(e) {
+    onAdError(e) {
       // 广告加载失败
-      console.log("onerror: ", e.detail);
+      console.log("onAdError: ", e.detail);
     }
   }
 }
@@ -134,7 +134,7 @@ export default {
 ```html
 <template>
   <view class="content">
-    <ad-rewarded-video :adpid="adpids" :loadnext="true" v-slot:default="{loading, error}" @load="onload" @close="onclose" @close="onerror">
+    <ad-rewarded-video :adpid="adpids" :loadnext="true" v-slot:default="{loading, error}" @load="onAdLoad" @close="onAdClose" @close="onAdError">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-rewarded-video>
@@ -149,23 +149,23 @@ export default {
     }
   },
   methods: {
-    onload(e) {
+    onAdLoad(e) {
       console.log('广告数据加载成功');
     },
-    onclose(e) {
+    onAdClose(e) {
       const detail = e.detail
       // 用户点击了【关闭广告】按钮
       if (detail && detail.isEnded) {
         // 正常播放结束
-        console.log("onClose " + detail.isEnded);
+        console.log("onAdClose " + detail.isEnded);
       } else {
         // 播放中途退出
-        console.log("onClose " + detail.isEnded);
+        console.log("onAdClose " + detail.isEnded);
       }
     },
-    onerror(e) {
+    onAdError(e) {
       // 广告加载失败
-      console.log("onerror: ", e.detail);
+      console.log("onAdError: ", e.detail);
     }
   }
 }
@@ -256,7 +256,7 @@ export default {
 ```html
 <template>
   <view class="content">
-    <ad-rewarded-video adpid="1507000611" :loadnext="true" v-slot:default="{loading, error}" @close="onclose">
+    <ad-rewarded-video adpid="1507000611" :loadnext="true" v-slot:default="{loading, error}" @close="onAdClose">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-rewarded-video>
@@ -266,16 +266,16 @@ export default {
 <script>
 export default {
   methods: {
-    onclose(e) {
+    onAdClose(e) {
       const detail = e.detail
       // 用户点击了【关闭广告】按钮
       if (detail && detail.isEnded) {
         // 正常播放结束
         // 这里应该联网给予用户激励。且这段代码应该做安全保护，详见下文中的“安全注意”
-        console.log("onClose " + detail.isEnded);
+        console.log("onAdClose " + detail.isEnded);
       } else {
         // 播放中途退出
-        console.log("onClose " + detail.isEnded);
+        console.log("onAdClose " + detail.isEnded);
       }
     }
   }
@@ -581,4 +581,4 @@ exports.main = async (event, context) => {
 
 **错误码**
 
-[错误码相关问题排查](https://uniad.dcloud.net.cn/component/ad-error-code)
+[错误码相关问题排查](https://uniapp.dcloud.net.cn/component/ad-error-code.html)

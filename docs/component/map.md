@@ -181,8 +181,8 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |:-|:-|:-|:-|:-|
 |latitude|纬度|Number|是|浮点数，范围 -90 ~ 90|
 |longitude|经度|Number|是|浮点数，范围 -180 ~ 180|
-|color|描边的颜色|String|否|8位十六进制表示，后两位表示alpha值，如：#0000AA|
-|fillColor|填充颜色|String|否|8位十六进制表示，后两位表示alpha值，如：#0000AA|
+|color|描边的颜色|String|否|8位十六进制表示，后两位表示alpha值，如：#000000AA；#00000为十六进制|
+|fillColor|填充颜色|String|否|8位十六进制表示，后两位表示alpha值，如：#000000AA；#00000为十六进制|
 |radius|半径|Number|是||
 |strokeWidth|描边的宽度|Number|否|&nbsp;|
 |level|压盖关系，默认为 abovelabels|String|false|微信小程序|

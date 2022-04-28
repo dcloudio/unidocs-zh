@@ -333,18 +333,17 @@ mapContext
         const markers = []
 
         positions.forEach((p, i) => {
-          const newMarker = Object.assign(marker, p)
+          const newMarker = Object.assign({},marker, p)
           newMarker.id = i + 1
           newMarker.label.content = `label ${i + 1}`
           markers.push(newMarker)
-
-          this._mapContext.addMarkers({
+        })
+        this._mapContext.addMarkers({
             markers,
             clear: false,
             complete(res) {
               console.log('addMarkers', res)
             }
-          })
         })
       }
     }

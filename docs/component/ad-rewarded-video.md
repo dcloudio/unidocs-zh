@@ -134,7 +134,7 @@ export default {
 ```html
 <template>
   <view class="content">
-    <ad-rewarded-video :adpid="adpids" :loadnext="true" v-slot:default="{loading, error}">
+    <ad-rewarded-video :adpid="adpids" :loadnext="true" v-slot:default="{loading, error}" @load="onload" @close="onclose" @close="onerror">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-rewarded-video>

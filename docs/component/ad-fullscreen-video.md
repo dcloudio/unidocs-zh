@@ -98,3 +98,7 @@ export default {
 }
 </script>
 ```
+
+**错误码**
+
+[错误码相关问题排查](https://uniad.dcloud.net.cn/component/ad-error-code)

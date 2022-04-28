@@ -172,6 +172,55 @@ export default {
 </script>
 ```
 
+#### 获取广告商名称
+
+#### 语法
+
+`getProvider()`
+
+#### 说明
+
+返回值 为 string 类型
+
+|值|描述|
+|:-:|:-:|
+|csj|穿山甲|
+|gdt|腾讯优量汇（前称广点通）|
+|ks|快手|
+|sigmob|Sigmob|
+
+示例代码
+
+
+```html
+<template>
+  <view class="content">
+    <ad-rewarded-video ref="adRewardedVideo" adpid="1507000611" :loadnext="true" v-slot:default="{loading, error}" @load="onload">
+      <button :disabled="loading" :loading="loading">显示广告</button>
+      <view v-if="error">{{error}}</view>
+    </ad-rewarded-video>
+  </view>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+    }
+  },
+  methods: {
+    onload(e) {
+      console.log('广告数据加载成功');
+
+      let providerName = this.$refs.adRewardedVideo.getProvider();
+      console.log('广告商名称::', providerName);
+    }
+  }
+}
+</script>
+```
+
+
 ### 显示/隐藏
 
 激励视频广告组件默认是隐藏的，在用户主动触发广告后进行显示。
@@ -469,52 +518,6 @@ exports.main = async (event, context) => {
 4. 避免使用短信验证码来识别身份，推荐使用可信度更高的 [手机号一键登录](/univerify) 或 [微信登录](/api/plugins/login?id=login)
 5. 必要时可使用[生物认证（指纹和faceid）](/api/system/authentication)、[活体检测的sdk](https://ext.dcloud.net.cn/search?q=%E6%B4%BB%E4%BD%93%E6%A3%80%E6%B5%8B&orderBy=Relevance&cat1=5&cat2=51)
 
-#### 获取广告商名称
-
-> HBuilderX 2.6.8+
-
-#### 语法
-
-`getProvider()`
-
-#### 说明
-
-返回值 为 string 类型
-
-|值|描述|
-|:-:|:-:|
-|csj|穿山甲|
-|gdt|腾讯优量汇（前称广点通）|
-|ks|快手|
-|sigmob|Sigmob|
-
-
-```js
-```
-
-
-### app平台错误码
-
-code|message|
-:-|:-|
--5001|广告位标识adpid为空，请传入有效的adpid
--5002|无效的广告位标识adpid，请使用正确的adpid
--5003|未开通广告，请在广告平台申请并确保已审核通过
--5004|无广告模块，打包时请配置要使用的广告模块
--5005|广告加载失败，请过段时间重新加载，否则可能触发系统策略导致流量收益下降
--5006|广告未加载完成无法播放，请加载完成后再调show播放
--5007|无法获取广告配置数据，请尝试重试
--5008|广告已过期，请重新加载数据
--5100|其他错误，聚合广告商内部错误
-
-
-**@error 详细错误码**
-
-- App端聚合的穿山甲(iOS)：[错误码](https://ad.oceanengine.com/union/media/union/download/detail?id=16&docId=5de8d574b1afac00129330d5&osType=ios)
-- App端聚合的穿山甲(Android)：[错误码](https://ad.oceanengine.com/union/media/union/download/detail?id=4&docId=5de8d9b925b16b00113af0ed&osType=android)
-- App端聚合的广点通(iOS)：[错误码](https://developers.adnet.qq.com/doc/ios/union/union_debug#%E9%94%99%E8%AF%AF%E7%A0%81)
-- App端聚合的广点通(Android)：[错误码](https://developers.adnet.qq.com/doc/android/union/union_debug#sdk%20%E9%94%99%E8%AF%AF%E7%A0%81)
-
 
 ### manifest 配置@manifest
 
@@ -570,3 +573,7 @@ code|message|
 ### 案例参考
 - 项目源码《养猫合成游戏》，拿走就能用，[https://ext.dcloud.net.cn/plugin?id=4095](https://ext.dcloud.net.cn/plugin?id=4095)
 - 项目源码《有奖猜歌》，拿走就能用，[https://ext.dcloud.net.cn/plugin?id=4826](https://ext.dcloud.net.cn/plugin?id=4826)
+
+**错误码**
+
+[错误码相关问题排查](https://uniad.dcloud.net.cn/component/ad-error-code)

@@ -139,7 +139,7 @@ async function addToDo () {
 
 以上传统开发需要68行代码，对比云对象的33行代码，不但工作量大，而且逻辑也不如云对象清晰。
 
-_注：以上例子仅用于方便初学者理解。实质上对于简单的数据库操作，使用clientDB在前端直接操作数据库是更简单、代码更少的方案，[另见](/uniCloud/clientdb)_
+_注：以上例子仅用于方便初学者理解。实际开发中对于简单的数据库操作，使用[clientDB](/uniCloud/clientdb)在前端直接操作数据库是更简单、代码更少的方案，都不需要写云端代码。
 
 总结下云对象带来的好处：
 1. 更清晰的逻辑
@@ -205,45 +205,6 @@ const res = await todo.add('title demo', 'content demo')
 const todo = uniCloud.importObject('todo')
 ```
 
-### 自动显示交互界面@auto-ui
-
-> 新增于 HBuilderX 3.4.6，本次调整属于非兼容更新。
-
-HBuilderX 3.4.6及更高版本，调用云对象的方法时，默认会自动显示交互/提示界面。
-
-1. 在请求开始时显示loading，
-2. 结束后隐藏loading
-3. 如果请求报错，显示弹窗（可配置为显示Toast）
-
-如需关闭此行为，请传入`customUI: true`
-
-例：
-
-```js
-uniCloud.importObject('todo', {
-	customUI: true // 取消自动展示的交互提示界面
-})
-```
-
-关于交互/提示界面的完整配置如下：
-
-**注意**
-
-- 配置仅对当前`importObject`返回的云对象实例生效
-
-```js
-uniCloud.importObject('todo', {
-	customUI: false, // 是否取消自动展示的交互界面。默认为false，配置为true时取消自动展示的交互提示界面，以下配置均不再生效
-	loadingOptions: { // loading相关配置
-		text: '加载中...', // 显示的loading内的提示文字。默认值为：加载中...
-		mask: true // 是否使用透明遮罩，配置为true时不可点击页面其他内容。默认值为：true
-	},
-	errorOptions: { // 错误界面相关配置
-		type: 'modal', // 错误信息展示方式，可取值：modal（弹框，默认）、toast（toast消息框）。默认值为：modal
-		retry: false // 是否展示重试按钮，仅在type为modal时生效。用户点击重试按钮时将重新请求调用的方法，默认为false
-	}
-})
-```
 
 ## 云对象的API@api
 
@@ -527,18 +488,56 @@ const todo = mycloud.importObject('todo')
 const res = await todo.add('title demo', 'content demo')
 ```
 
+## 自动显示交互界面@auto-ui
 
-## 注意事项
+> 新增于 HBuilderX 3.4.6，本次调整属于非兼容更新。
 
-- 云对象和云函数都在cloudfunctions目录下，但是不同于云函数，云对象的入口为`index.obj.js`，而云函数则是`index.js`。**为正确区分两者uniCloud做出了限制，云函数内不可存在index.obj.js，云对象内也不可存在index.js。**
-- 所有`_`开头的方法都是私有方法，客户端不可访问
-- 云对象也可以引用公共模块或者npm上的包，引用方式和云函数完全一致。
+每次写客户端联网的代码时，开发者都免不了重复写一堆代码：先调用loading等待框，联网结束后再关闭loading，如果服务器异常则弹出提示。
+
+从HBuilderX 3.4.6起，调用云对象的方法时，默认会自动显示交互/提示界面。
+
+1. 在请求联网开始时显示loading等待框，
+2. 结束后隐藏loading
+3. 如果请求报错，显示弹窗（也可配置为显示Toast）
+
+如果默认显示的UI不符合你的需求，你可以通过配置自定义一些交互内容，也可以直接关闭自动显示的交互界面。
+
+- 如需关闭自动显示的UI，请在客户端导入云对象时传入参数`customUI: true`
+
+例：
+
+```js
+uniCloud.importObject('todo', {
+	customUI: true // 取消自动展示的交互提示界面
+})
+```
+
+- 如需自定义默认显示的UI，配置如下：
+
+```js
+uniCloud.importObject('todo', {
+	customUI: false, // 是否取消自动展示的交互界面。默认为false，配置为true时取消自动展示的交互提示界面，以下配置均不再生效
+	loadingOptions: { // loading相关配置
+		text: '加载中...', // 显示的loading内的提示文字。默认值为：加载中...
+		mask: true // 是否使用透明遮罩，配置为true时不可点击页面其他内容。默认值为：true
+	},
+	errorOptions: { // 错误界面相关配置
+		type: 'modal', // 错误信息展示方式，可取值：modal（弹框，默认）、toast（toast消息框）。默认值为：modal
+		retry: false // 是否展示重试按钮，仅在type为modal时生效。用户点击重试按钮时将重新请求调用的方法，默认为false
+	}
+})
+```
+
+注意：配置仅对当前`importObject`返回的云对象实例生效
+
 
 ## 本地运行@run-local
 
-`HBuilderX 3.4.8`之前，云对象目前无法直接本地运行，可以通过其他云函数调用本地云对象（在调用云对象的云函数右键本地运行），或者客户端调用本地云对象的方式来实现云对象的本地运行。
+`HBuilderX 3.4.8`之前，云对象无法直接本地运行。可以通过其他云函数调用本地云对象（在调用云对象的云函数右键本地运行），或者客户端调用本地云对象的方式来实现云对象的本地运行。
 
-`HBuilderX 3.4.8`及之后版本，云对象可以直接运行。打开云对象下的js文件，按ctrl+r或点击运行菜单运行云对象。运行云对象之前需要先选择执行云对象的哪个方法，以及传递什么参数。
+`HBuilderX 3.4.8`起，云对象可以本地运行。打开云对象下的js文件，按Ctrl+r或点击运行菜单运行云对象。
+
+运行云对象之前需要先选择执行云对象的哪个方法，以及传递什么参数。
 
 以下述云对象为例：
 
@@ -557,6 +556,12 @@ module.exports = {
 调用login方法，传递username及password参数，的运行参数配置如下：
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/db974aec-7975-45b7-bb64-24afd8a59213.jpg)
+
+## 注意事项
+
+- 云对象和云函数都在cloudfunctions目录下，但是不同于云函数，云对象的入口为`index.obj.js`，而云函数则是`index.js`。**为正确区分两者uniCloud做出了限制，云函数内不可存在index.obj.js，云对象内也不可存在index.js。**
+- 所有`_`开头的方法都是私有方法，客户端不可访问
+- 云对象也可以引用公共模块或者npm上的包，引用方式和云函数完全一致。
 
 ## 推荐最佳实践
 

@@ -492,7 +492,7 @@ const res = await todo.add('title demo', 'content demo')
 
 > 新增于 HBuilderX 3.4.6，本次调整属于非兼容更新。
 
-每次写客户端联网的代码时，开发者都免不了重复写一堆代码：先调用loading等待框，联网结束后再关闭loading，如果服务器异常则弹出提示。
+背景：每次写客户端联网的代码时，开发者都免不了重复写一堆代码：先调用loading等待框，联网结束后再关闭loading，如果服务器异常则弹出提示。
 
 从HBuilderX 3.4.6起，调用云对象的方法时，默认会自动显示交互/提示界面。
 
@@ -528,7 +528,9 @@ uniCloud.importObject('todo', {
 })
 ```
 
-注意：配置仅对当前`importObject`返回的云对象实例生效
+**注意**
+1. 配置仅对当前`importObject`返回的云对象实例生效
+2. 本功能仅对客户端调用云对象生效。在云函数或云对象中调用云对象不生效
 
 
 ## 本地运行@run-local

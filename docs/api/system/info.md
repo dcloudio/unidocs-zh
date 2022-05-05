@@ -29,7 +29,6 @@
 |version|引擎版本号|H5不支持|
 |storage|设备磁盘容量|支付宝小程序|
 |currentBattery|当前电量百分比|支付宝小程序|
-|appName|宿主APP名称|字节跳动小程序、飞书小程序|
 |AppPlatform|App平台|QQ小程序|
 |host|宿主平台|百度小程序|
 |app|当前运行的客户端|支付宝小程序|
@@ -55,6 +54,28 @@
 |safeArea|在竖屏正方向下的安全区域|App、H5、微信小程序|
 |safeAreaInsets|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、H5、微信小程序|
 |deviceId|设备 id|非 App 端由 uni-app 框架生成并存储，清空 Storage 会导致改变|
+|deviceBrand|设备品牌。如：`apple`、`huawei`|`HBuilderX (3.4.9+)`|
+|deviceModel|设备型号 |`HBuilderX (3.4.9+)`|
+|deviceType|设备类型。`phone`、`pad`、`pc` |`HBuilderX (3.4.9+)`|
+|uniPlatform|uni-app 运行平台。如：`app`、`mp-weixin`、`web` |`HBuilderX (3.4.9+)`|
+|uniCompileVersion| uni 编译器版本号 |`HBuilderX (3.4.9+)`|
+|uniRuntimeVersion| uni 运行时版本 |`HBuilderX (3.4.9+)`|
+|appId  |`manifest.json` 中应用appid。 |`HBuilderX (3.4.9+)`|
+|appName|`manifest.json` 中应用名称。和`字节跳动小程序、飞书小程序`字段冲突，原字端与`hostName`一致|`HBuilderX (3.4.9+)`|
+|appVersion  |`manifest.json` 中应用版本名称。 |`HBuilderX (3.4.9+)`|
+|appVersionCode  |`manifest.json` 中应用版本名号。 |`HBuilderX (3.4.9+)`|
+|ua| 用户标识。小程序端为空 |`HBuilderX (3.4.9+)`|
+|browserName  | 浏览器名称。`App` 端是系统 webview 的名字，比如 wkwebview、chrome。小程序端为空 |`HBuilderX (3.4.9+)`|
+|browseVersion  | 浏览器版本、webview 版本。小程序端为空 |`HBuilderX (3.4.9+)`|
+|osName  |ios、android、windows、mac、linux |`HBuilderX (3.4.9+)`|
+|osVersion  |操作系统版本。如 ios 版本，andriod 版本 |`HBuilderX (3.4.9+)`|
+|osLanguage  |操作系统语言，小程序端与 `version` 相同，H5 与浏览器语言一致 |`HBuilderX (3.4.9+)`|
+|osTheme  |操作系统主题 light、dark。小程序端为小程序主题，H5 端为空 |`HBuilderX (3.4.9+)`|
+|hostName  |App、小程序宿主名称，如：`WeChat`、`FeiShu`。H5 端为浏览器名称|`HBuilderX (3.4.9+)`|
+|hostVersion  |App、小程序宿主版本。如：微信版本号。H5 端为浏览器版本 |`HBuilderX (3.4.9+)`|
+|hostLanguage  |浏览器语言、小程序宿主语言、app 语言 |`HBuilderX (3.4.9+)`|
+|hostTheme  |App 主题 `light`、`dark`。H5 端为空，小程序端为系统当前主题 |`HBuilderX (3.4.9+)`|
+|hostPackageName  |小程序宿主包名。仅 App 支持，其他平台为空 |`HBuilderX (3.4.9+)`|
 
 **Tips**
 - 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
@@ -62,6 +83,9 @@
 - H5端，windowTop等于NavigationBar高度，windowBottom等于TabBar高度
 - App端，windowTop等于透明状态NavigationBar高度，windowBottom等于透明状态TabBar高度
 - 高度相关信息，要放在 onReady 里获取
+- `device 概念`：运行应用的设备 
+- `os 概念`：运行应用的操作系统，如 iOS 系统、Andriod 系统
+- `host 概念`：运行应用的主程序，如 微信应用、浏览器、使用 uni 小程序 SDK 的 uni-app 应用
 
 **safeArea 的结构**
 
@@ -147,6 +171,28 @@ uni.getSystemInfo({
 |safeArea|在竖屏正方向下的安全区域|App、H5、微信小程序|
 |safeAreaInsets|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、H5、微信小程序|
 |deviceId|设备 id|非 App 端由 uni-app 框架生成并存储，清空 Storage 会导致改变|
+|deviceBrand|设备品牌。如：`apple`、`huawei`|`HBuilderX (3.4.9+)`|
+|deviceModel|设备型号 |`HBuilderX (3.4.9+)`|
+|deviceType|设备类型。`phone`、`pad`、`pc` |`HBuilderX (3.4.9+)`|
+|uniPlatform|uni-app 运行平台。如：`app`、`mp-weixin`、`web` |`HBuilderX (3.4.9+)`|
+|uniCompileVersion| uni 编译器版本号 |`HBuilderX (3.4.9+)`|
+|uniRuntimeVersion| uni 运行时版本 |`HBuilderX (3.4.9+)`|
+|appId  |`manifest.json` 中应用appid。 |`HBuilderX (3.4.9+)`|
+|appName|`manifest.json` 中应用名称。和`字节跳动小程序、飞书小程序`字段冲突，原字端与`hostName`一致|`HBuilderX (3.4.9+)`|
+|appVersion  |`manifest.json` 中应用版本名称。 |`HBuilderX (3.4.9+)`|
+|appVersionCode  |`manifest.json` 中应用版本名号。 |`HBuilderX (3.4.9+)`|
+|ua| 用户标识。小程序端为空 |`HBuilderX (3.4.9+)`|
+|browserName  | 浏览器名称。`App` 端是系统 webview 的名字，比如 wkwebview、chrome。小程序端为空 |`HBuilderX (3.4.9+)`|
+|browseVersion  | 浏览器版本、webview 版本。小程序端为空 |`HBuilderX (3.4.9+)`|
+|osName  |ios、android、windows、mac、linux |`HBuilderX (3.4.9+)`|
+|osVersion  |操作系统版本。如 ios 版本，andriod 版本 |`HBuilderX (3.4.9+)`|
+|osLanguage  |操作系统语言，小程序端与 `version` 相同，H5 与浏览器语言一致 |`HBuilderX (3.4.9+)`|
+|osTheme  |操作系统主题 light、dark。小程序端为小程序主题，H5 端为空 |`HBuilderX (3.4.9+)`|
+|hostName  |App、小程序宿主名称，如：`WeChat`、`FeiShu`。H5 端为浏览器名称|`HBuilderX (3.4.9+)`|
+|hostVersion  |App、小程序宿主版本。如：微信版本号。H5 端为浏览器版本 |`HBuilderX (3.4.9+)`|
+|hostLanguage  |浏览器语言、小程序宿主语言、app 语言 |`HBuilderX (3.4.9+)`|
+|hostTheme  |App 主题 `light`、`dark`。H5 端为空，小程序端为系统当前主题 |`HBuilderX (3.4.9+)`|
+|hostPackageName  |小程序宿主包名。仅 App 支持，其他平台为空 |`HBuilderX (3.4.9+)`|
 
 **Tips**
 - 使用注意同上getSystemInfo

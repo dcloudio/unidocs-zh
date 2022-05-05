@@ -125,9 +125,19 @@ export default {
       this.navbarHeight = this.navbar.clientHeight
       this.subNavBarHeight = this.subNavBar.clientHeight
       this.mainNavBarHeight = this.mainNavBar.clientHeight
+      this.scrollBehavior()
+    },
+    scrollBehavior () {
       this.removeWindowScroll()
+      this.onWindowScroll()
+      if(this.showSubNavBar) {
+        this.addWindowScroll()
+      } else {
+        this.fixedNavbar = true
+      }
+    },
+    addWindowScroll () {
       if (os.pc) {
-        this.onWindowScroll()
         window.addEventListener('scroll', this.onWindowScroll, false)
       }
     },
@@ -137,10 +147,12 @@ export default {
       this.sideBar && this.sideBar.removeAttribute('style')
       this.vuepressToc && this.vuepressToc.removeAttribute('style')
       this.navbar && this.navbar.removeAttribute('style')
-      this.pageContainer && (this.pageContainer.style.marginTop = 'auto')
+      if (this.pageContainer) {
+        this.pageContainer.style.marginTop = this.showSubNavBar ? 'auto' : `${this.navbarHeight}px`
+      }
     },
     onWindowScroll () {
-      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollTop = !this.showSubNavBar ? 0 : document.documentElement.scrollTop || document.body.scrollTop;
 
       if (!this.fixedNavbar) {
         let sideTop = this.navbarHeight - scrollTop
@@ -190,10 +202,12 @@ export default {
   watch: {
     fixedNavbar () {
       this.fixedSideBarHeight()
+      this.scrollBehavior()
     },
     'navConfig.userNavIndex' () {
       this.$nextTick(()=>{
         this.fixedSideBarHeight()
+        this.scrollBehavior()
       })
     }
   }

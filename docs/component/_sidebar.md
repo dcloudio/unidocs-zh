@@ -51,6 +51,7 @@
       * [ad-draw](component/ad-draw.md)
       * [ad-content-page](component/ad-content-page.md)
       * [Grid 广告](component/ad-grid.md)
+      * [广告错误码](component/ad-error-code.md)
     * [页面属性配置节点](component/page-meta.md)
       * [page-meta](component/page-meta.md)
       * [navigation-bar](component/navigation-bar.md)

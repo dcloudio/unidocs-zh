@@ -495,3 +495,17 @@ vue3 全平台新增：通过 props 来获取页面参数的使用方式
   };
 </script>
 ```
+
+## 小程序和App端不支持插值方式定义国际化@vue-i18n
+
+因运行平台限制，目前在小程序和 App 端不支持插值方式定义国际化,需要使用 Messages Functions 定义国际化信息，[参考文档](https://vue-i18n.intlify.dev/guide/advanced/function.html)
+
+示例：
+
+```js
+const messages = {
+  en: {
+    greeting: ({ named }) => `hello, ${named('name')}!`
+  }
+}
+```

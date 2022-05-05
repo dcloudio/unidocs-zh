@@ -80,10 +80,10 @@ export default {
   },
   methods: {
     onadload(e) {
-      console.log("onload");
+      console.log("onadload",e);
     },
     onaderror(e) {
-      console.log("onerror");
+      console.log("onaderror",e);
     }
   }
 }

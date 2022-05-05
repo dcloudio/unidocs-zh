@@ -125,14 +125,14 @@ export default {
 			"prefix": "群19"
 		},
 		{
-			"number": "165796402",
-			"state": 1,
-			"prefix": "群20"
-		},
-		{
 			"number": "717019120",
 			"state": 1,
 			"prefix": "群21"
+		},
+		{
+			"number": "687186952",
+			"state": 1,
+			"prefix": "群22"
 		},
 		{
 			"number": "599958679",
@@ -200,9 +200,9 @@ export default {
 			"prefix": "群35"
 		},
 		{
-			"number": "687186952",
+			"number": "165796402",
 			"state": 0,
-			"prefix": "群22"
+			"prefix": "群20"
 		}
 	]
 }

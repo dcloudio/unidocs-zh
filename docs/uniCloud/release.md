@@ -1,5 +1,9 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2022-04-28
+  + 修复 云对象 自动展示错误提示界面时 toast 图标错误的Bug [详情](https://ask.dcloud.net.cn/question/142246)
+  + 新增 uniCloud 支持云对象本地运行和调试 [详情](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#run-local)
+
 #### 2022-04-24
   + 【重要】阿里云 调整 nodejs8 版本云函数使用的 nodejs 版本由 8.9.0 调整为 8.17.0
 

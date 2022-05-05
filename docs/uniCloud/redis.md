@@ -16,7 +16,9 @@ Redis常见使用场景：
 
 ## 为云函数启用redis扩展库@use-in-function
 
-目前需要开发者手动在云函数的package.json内添加云函数的扩展库，后续HBuilderX会提供图形化界面。（如果云函数目录下没有package.json，可以通过在云函数目录下执行`npm init -y`来生成）
+- HBuilderX 3.4起提供了可视化界面，新建云函数/云对象时可选择Redis扩展库，或者在已有的云函数目录点右键选择“管理公共模块或扩展库依赖”
+
+- HBuilderX 3.4以前，没有可视化界面，需要开发者手动在云函数/云对象的package.json内添加云函数的扩展库（如果云函数目录下没有package.json，可以通过在云函数目录下执行`npm init -y`来生成）
 
 下面是一个开启了redis扩展库的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
 
@@ -34,7 +36,7 @@ Redis常见使用场景：
 ```
 
 ```js
-// 简单的使用示例
+// 云函数中调用Redis示例
 'use strict';
 const redis = uniCloud.redis()
 exports.main = async (event, context) => {
@@ -47,6 +49,11 @@ exports.main = async (event, context) => {
 };
 
 ```
+
+注意：
+因为Redis在云函数的内网中，所以
+1. 目前Redis仅支持在云函数中访问，客户端不能直接访问。
+2. 目前Redis不支持本地运行，需要把云函数上传到服务空间后才能使用。
 
 ## 数据类型@data-type
 
@@ -773,14 +780,10 @@ const [operationType, currentValue] = await redis.eval(`local val = redis.call('
 
   和传统开发不同，云函数实例之间是不互通的，也就是说每个使用redis的函数实例都会和redis建立一个连接，在云函数实例复用时此连接也会复用。
 
-- 云函数本地调试
-
-  目前不支持本地运行使用了Redis扩展库的云函数，请上传到云端测试
-  
   
 ## 最佳实践
 
-### 高并发下抢购/秒杀逻辑@snap-over-sell
+### 高并发下抢购/秒杀/防超卖示例@snap-over-sell
 
 可以利用redis的原子操作保证在高并发下不会超卖，以下为一个简单示例
 

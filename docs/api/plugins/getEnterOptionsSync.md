@@ -14,7 +14,7 @@
 |scene|Number|启动时的场景值，具体值含义请查看各平台文档说明|其他平台均支持，`字节小程序(1.12.0)`|
 |query|Object|启动时的 query 参数|其他平台均支持，`字节小程序(1.12.0)`|
 |referrerInfo|Object|来源信息。如果没有则返回 `{}`|其他平台均支持，`字节小程序(1.15.0)`|
-|forwardMaterials|Array.<Object>|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`微信小程序`|
+|forwardMaterials|Array.\<Object\>|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`微信小程序`|
 |chatType|number|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`仅微信小程序`|
 |apiCategory|string|API 类别|`仅微信小程序(2.20.0)`|
 |showFrom|number|唤起小程序的方式，目前取值固定为 10，表示通过 schema 唤起|`仅字节小程序(1.90.0)`|

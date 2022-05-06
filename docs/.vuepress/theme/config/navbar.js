@@ -10,6 +10,7 @@
 export const navbar = [
   {
     text: 'uni-app',
+    link: '/',
     items: [
       {
         text: '介绍',

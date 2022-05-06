@@ -61,11 +61,11 @@
 	   flex-direction column
 	   justify-content center
 	 #docsearch span
-	   @media (min-width: $MQMobile)
+	   @media (min-width: 1200px)
 	    &
 	     display flex
 
-	 @media (max-width: $MQMobile)
+	 @media (max-width: 1200px)
 	   :root
 	     --docsearch-spacing 10px
 	     --docsearch-footer-height 40px

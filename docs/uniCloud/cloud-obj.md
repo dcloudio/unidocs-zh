@@ -518,7 +518,7 @@ uniCloud.importObject('todo', {
 uniCloud.importObject('todo', {
 	customUI: false, // 是否取消自动展示的交互界面。默认为false，配置为true时取消自动展示的交互提示界面，以下配置均不再生效
 	loadingOptions: { // loading相关配置
-		text: '加载中...', // 显示的loading内的提示文字。默认值为：加载中...
+		title: '加载中...', // 显示的loading内的提示文字。默认值为：加载中...
 		mask: true // 是否使用透明遮罩，配置为true时不可点击页面其他内容。默认值为：true
 	},
 	errorOptions: { // 错误界面相关配置

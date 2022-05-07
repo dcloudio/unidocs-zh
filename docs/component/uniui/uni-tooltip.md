@@ -20,9 +20,7 @@
 在 `template` 中使用组件
 
 ```html
-<uni-tooltip :text="tooltip显示的内容" />
-
-<uni-tooltip :text="tooltip显示的内容">
+<uni-tooltip :content="tooltip显示的内容">
   <button>被包裹的组件</button>
 </uni-tooltip>
 ```
@@ -33,8 +31,7 @@
 
 |  属性名   |  类型  | 默认值 |                说明                 |
 | :-------: | :----: | :----: | :---------------------------------: |
-|   text    | String |        |             显示的内容              |
-|   width   | Number |        |            Tooltip 宽度             |
+|   content    | String |        |             弹出层显示的内容              |
 | placement | String |  left  | Tooltip 的出现位置, 目前只支持 left |
 
 ### Tooltip Slots
@@ -42,6 +39,7 @@
 |  名称   |         说明          |
 | :-----: | :-------------------: |
 | default | 被 Tooltip 包裹的组件 |
+| content | 弹出层插槽 |
 
 ## 组件示例
 
@@ -57,18 +55,16 @@
 <template>
   <view class="container">
     <uni-card is-full :is-shadow="false">
-      <text class="uni-h6"
-        >常用于展示鼠标 hover 时的提示信息，注意：无法覆盖原生组件</text
-      >
+      <text class="uni-h6">常用于展示鼠标 hover 时的提示信息，注意：无法覆盖原生组件</text>
     </uni-card>
     <uni-section title="基础用法" type="line" padding>
-      <uni-tooltip text="提示文字" />
+      <uni-tooltip content="提示文字" />
     </uni-section>
     <uni-section title="插槽用法" type="line" padding>
-      <uni-tooltip text="提示文字">一段文字</uni-tooltip>
+      <uni-tooltip content="提示文字">一段文字</uni-tooltip>
     </uni-section>
     <uni-section title="自定义弹层宽度" type="line" padding>
-      <uni-tooltip text="提示文字" :width="300">一段文字</uni-tooltip>
+      <uni-tooltip content="提示文字">一段文字</uni-tooltip>
     </uni-section>
   </view>
 </template>

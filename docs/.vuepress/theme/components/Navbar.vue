@@ -155,6 +155,7 @@ export default {
         this.addWindowScroll()
       } else {
         this.fixedNavbar = true
+        this.SearchBoxTop = 0
       }
     },
     addWindowScroll () {

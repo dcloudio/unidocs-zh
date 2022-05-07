@@ -55,7 +55,7 @@ DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供�
 6. 微信原生开发对webpack、预编译语言、工程流程管理很多功能都不支持，大公司很少用微信原生开发，都是在用框架来提升开发效率
 7. uni-app支持双向数据绑定、vuex状态管理，比小程序原生开发方便的多
 8. 迟早会有多端需求，使用`uni-app`再无后续顾虑
-9. uni-app并非仅用于做跨端的，只用uni-app做小程序、只做H5、只做App的，案例是一样多的，详见：[https://uniapp.dcloud.io/case](https://uniapp.dcloud.io/case)
+9. uni-app并非仅用于做跨端的，只用uni-app做小程序、只做web、只做App的，案例是一样多的，详见：[https://uniapp.dcloud.io/case](https://uniapp.dcloud.io/case)
 关于uni-app和微信开发的详细比较评测，参考：[https://ask.dcloud.net.cn/article/36484](https://ask.dcloud.net.cn/article/36484)
 
 - 评测1、uni-app和原生wxml开发、wepy、mpvue、taro的对比，[https://ask.dcloud.net.cn/article/35867](https://ask.dcloud.net.cn/article/35867)
@@ -107,12 +107,13 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 
 ```uni-app``` 积极拥抱社区现有的现代开发流程，包括但不限于：
 
-- 内置了webpack
+- 内置了webpack/vite
 - NPM 包管理系统，详见[参考](http://uniapp.dcloud.io/tutorial/page-script#npm支持)
 - es6+ 语法（发布时会自动编译为es5），详见[参考](http://uniapp.dcloud.io/tutorial/syntax-js#es6-支持)
 - 各种预处理器（less、scss、stylus、typescript）
 - uni-app的官方ide：HBuilderX，在vue、json、markdown、代码提示、操作效率上，有非常明显的优势，可帮助开发者大幅提高工作效率
 - uni-app同时也提供了cli方式，可使用其他开发工具如vscode开发，当然开发效率不如HBuilderX。对比详见[https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
+- HBuilder也提供了cli，[参考](https://hx.dcloud.net.cn/cli/README)
 
 
 **uni-app 生态开放性如何？能否直接利用现有前端社区资源？**
@@ -121,8 +122,8 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 
 - 丰富的插件市场为开发者提供数千款现成的轮子，[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
 - 兼容微信小程序 JS SDK，丰富的小程序生态内容可直接引入uni-app，并且在App侧通用，[参考](http://ask.dcloud.net.cn/article/35070)
-- 兼容微信小程序自定义组件，并且App、H5侧通用，[参考](http://uniapp.dcloud.io/tutorial/miniprogram-subject#小程序自定义组件支持)
-- App和H5提供了renderjs，使得浏览器专用的库也可以在App和H5里使用，[参考](https://uniapp.dcloud.io/tutorial/renderjs)
+- 兼容微信小程序自定义组件，并且App、web侧通用，[参考](http://uniapp.dcloud.io/tutorial/miniprogram-subject#小程序自定义组件支持)
+- App和web提供了renderjs，使得浏览器专用的库也可以在App和web里使用，[参考](https://uniapp.dcloud.io/tutorial/renderjs)
 - 支持 NPM 包管理系统，[参考](http://uniapp.dcloud.io/tutorial/page-script#npm支持)
 - 支持 mpvue 项目及组件，[参考](http://ask.dcloud.net.cn/article/34945)
 - 支持原生插件，见插件市场：[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
@@ -130,9 +131,11 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 
 
 **uni-app 支持的手机版本最低到多少？**
-
-- Vue2: Android4.4、iOS9是官方会保障兼容的。要知道Android4.4已经是2013年发布的手机了，正常用户不会还在用这么久远的手机。
-- Vue3: 支持的范围是：Android > 4.4, ios >= 10
+1. Web端：uni-app没有限制，同vue2和vue3自身能支持的浏览器版本
+2. 小程序端：uni-app没有限制，同该小程序自身能支持的最低平台
+3. App端：
+	- Vue2: Android4.4+、iOS9+。Android4.4已经是2013年发布的手机了。
+	- Vue3: 支持的范围是：Android >=5 （使用nvue和vue有区别。某些老国产Android5的rom无法动态升级Android system webview，此时如果使用vue页面需搭配x5内核） , iOS >= 10 
 
 **uni-app成熟度高吗？**
 
@@ -150,9 +153,9 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 
 **DCloud是家什么公司，是否可信赖**
 
-```DCloud```从2013年开始做HBuilder，目前800万前端开发者在使用```DCloud```的开发工具，HBuilder百度指数超过sublime、webstorm等全球知名工具。是中国唯一一家成功的开发工具厂商。
+```DCloud```从2013年开始做HBuilder，目前900万前端开发者在使用```DCloud```的开发工具，HBuilder百度指数超过sublime、webstorm等全球知名工具。是中国唯一一家成功的开发工具厂商。
 
-```DCloud```是明星创业公司，融资已经过了B2轮，且均为知名VC或战略投资人。
+```DCloud```是明星创业公司，融资已经过了C轮，且均为知名VC或战略投资人。
 
 ```DCloud```是HTML5中国产业联盟的发起单位和秘书单位。该联盟隶属于工信部信通院标准所。
 
@@ -164,7 +167,7 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 
 **App打包必须上传DCloud云端吗？代码会泄露吗？**
 
-代码可以云打包，也可以离线打包。
+代码可以云打包，也可以本地打包。
 
 使用云打包时有两种模式：
 1. 安心打包
@@ -172,7 +175,7 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 2. 传统云打包
 传统云打包仅适合没有mac电脑但需要打iOS包的开发者。在这种情况下，代码和证书会上传到DCloud的mac打包服务器，但打包后立即删除，DCloud不会持久化保存。
 
-DCloud是一家遵纪守法的公司，不会做损害自己名誉的事情。之所以提供云打包，是方便不熟悉原生的前端工程师直接生成App安装包。包括让没有mac电脑的工程师也可以打出iOS的包。
+DCloud是一家正规公司，已通过等保三级认证（证书编号：11010813802-20001），珍惜自己的名誉。之所以提供云打包，是方便不熟悉原生的前端工程师直接生成App安装包。包括让没有mac电脑的工程师也可以打出iOS的包。
 
 **DCloud提供哪些技术支持？碰到框架bug影响业务怎么办？**
 

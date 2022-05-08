@@ -112,3 +112,5 @@ nvue 页面暂时不支持自定义图标，如需在 nvue 中使用 ，请自�
 ```html
 <uni-icons custom-prefix="iconfont" type="icon-search" size="30"></uni-icons>
 ```
+
+注意：因为本质上还是使用的字体，所以多色图标还是不支持的。

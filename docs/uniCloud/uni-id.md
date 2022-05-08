@@ -250,7 +250,7 @@ const userInfo = atob(userSegment) // '{"uid":"61a593ba91a750000166f78d","role":
 
 **前提介绍：** 
 
-uni-app vue2版本app端对应的platform为`app-plus`，uni-app vue3版本app端对应的platform为`app`。此改动引发了一些问题，比如在uni-id内使微信登录会无法匹配对应的平台导致登录报错。
+uni-app vue2版本app端对应的platform为`app-plus`（HBuilderX 3.4.9起 vue2版本app端对应的platform值也调整为`app`），uni-app vue3版本app端对应的platform为`app`。此改动引发了一些问题，比如在uni-id内使微信登录会无法匹配对应的平台导致登录报错。
 
 由于uni-id将客户端平台存储在了数据库内（例如：app端微信登录的openid被存储为`wx_openid['app-plus']`），此问题无法平滑升级，因此对于新老项目建议分别处理。
 
@@ -787,6 +787,32 @@ uniCloud.callFunction({
 
 ```
 
+### 主动刷新token@refresh-token
+
+> 新增于uni-id 3.3.14
+
+用法：`uniID.refreshToken(Object RefreshTokenParams);`
+
+**参数说明**
+
+| 字段| 类型	| 必填| 说明	|
+| ---	| ---		| ---	| ---		|
+| token	| String| 是	|用户token|
+
+**示例**
+
+```js
+const {
+  token,
+  tokenExpired
+} = await uniID.refreshToken({
+  token: 'xxx'
+})
+```
+
+**注意**
+
+- 刷新token后会在再次触发查库校验token时使token失效
 
 ### 登出@logout
 
@@ -937,15 +963,37 @@ exports.main = async function(event,context) {
 }
 ```
 
+### 使用短信验证码重置密码@reset-pwd-by-sms
+
+> 新增于 uni-id 3.3.14
+
+用法：`uniID.resetPwdBySms(Object ResetPwdBySmsParams)`
+
+**参数说明**
+
+| 字段		| 类型	| 必填	| 说明			|
+| ---		| ---	| ---	| ---			|
+| mobile	| String| 是	|手机号码		|
+| code		| String| 是	|验证码			|
+| password	| String| 是	|重置后的密码	|
+
+**响应参数**
+
+无
+
+**注意**
+
+- 对应发送短信验证码接口`type`为`reset-pwd`
+
 ### 加密密码 @encrypt-password
 
 用法：`uniID.encryptPwd(String password)`
 
 **参数说明**
 
-| 字段								| 类型	| 必填| 说明													|
-| ---									| ---		| ---	| ---														|
-| password					| String| 是	|要加密的字符串													|
+| 字段		| 类型	| 必填	| 说明			|
+| ---		| ---	| ---	| ---			|
+| password	| String| 是	|要加密的字符串	|
 
 **响应参数**
 
@@ -1132,6 +1180,36 @@ exports.main = async function(event,context) {
 
 - 此接口仅校验token是否合法，从token中获取用户信息。不查库校验token，也不会查库获取用户信息。适用于不想使用checkToken获取用户信息的场景（checkToken内包含其他逻辑，比如自动刷新token等）
 
+### 添加用户（非注册）@add-user
+
+> 新增于 uni-id 3.3.14
+
+用法：`uniID.addUser(Object AddUserParams);`
+
+**BanAccountParams参数说明**
+
+| 字段			| 类型	| 必填								| 说明								|
+| ---			| ---	| ---								| ---								|
+| username		| String| username、email、mobile至少有一个	|用户名								|
+| mobile		| String| username、email、mobile至少有一个	|手机号								|
+| email			| String| username、email、mobile至少有一个	|邮箱								|
+| password		| String| 否								|密码								|
+| role			| Array	| 否								|角色列表							|
+| authorizedApp	| Array	| 否								|此用户能登录的app对应的appId列表	|
+
+
+**响应参数**
+
+| 字段	| 类型	| 必备	| 说明					|
+| ---	| ---	| ---	| ---					|
+| uid	| String| 是	|添加用户返回的用户id	|
+
+**注意**
+
+- authorizedApp不传时创建的用户无法登录任一端，后续可以调用授权登录接口再次授权登录
+- 传入email、mobile时，自动会将对用的email_confirmed、mobile_confirmed设置为1
+
+
 ### 封禁账户@ban-account
 
 - 由于客户端存在token缓存，执行封禁操作并不会实时生效。用户下次获取token（包括刷新token）时才会出现错误信息
@@ -1148,9 +1226,9 @@ exports.main = async function(event,context) {
 
 **响应参数**
 
-| 字段| 类型	| 必填| 说明						|
-| ---	| ---		| ---	| ---							|
-| code| Number| 是	|错误码，0表示成功|
+| 字段		| 类型					| 必填	| 说明				|
+| ---		| ---					| ---	| ---				|
+| errCode	| Number &#124; String	| 是	|错误码，0表示成功	|
 
 ### 解禁账户@unban-account
 
@@ -1285,12 +1363,12 @@ uni.removeStorageSync('uni_id_token_expired')
 
 **参数说明**
 
-| 字段			| 类型	| 必填| 说明																																																					|
-| ---				| ---		| ---	| ---																																																						|
-| mobile		| String| 是	|用户手机号																																																			|
-| templateId| String| 是	|`uni-id 1.1.8+`用户自定义模板Id，不传则使用uniID_code（请注意目前此模板已经不再开放使用，请传入自定义模板Id，已经报备使用的用户不受影响），请使用类似下面模板示例的参数申请模板												|
-| code			| String| 否	|验证码字符串																																																		|
-| type			| String| 是	|类型，用于防止不同功能的验证码混用，目前支持的类型`login`登录、`register`注册、`bind`绑定手机、`unbind`解绑手机|
+| 字段		| 类型	| 必填	| 说明																											|
+| ---		| ---	| ---	| ---																											|
+| mobile	| String| 是	|用户手机号																										|
+| templateId| String| 是	|`uni-id 1.1.8+`用户自定义模板Id，请使用类似下面模板示例的参数申请模板											|
+| code		| String| 否	|验证码字符串																									|
+| type		| String| 是	|类型，用于防止不同功能的验证码混用，目前支持的类型`login`登录、`register`注册、`bind`绑定手机、`unbind`解绑手机|
 
 ```
 // 短信模板示例，请在https://dev.dcloud.net.cn/uniSms申请签名（短信开头中括号内部分）及模板
@@ -2020,6 +2098,27 @@ exports.main = async function(event,context) {
 	return uniID.wxBizDataCrypt(event)
 }
 ```
+
+### 获取App平台微信登录用户信息@get-weixin-user-info
+
+> 新增于 uni-id 3.3.14
+
+用法：`uniID.getWeixinUserInfo(Object GetWeixinUserInfoParams);`
+
+**参数说明**
+
+| 字段			| 类型	| 必填	| 说明						|
+| ---			| ---	| ---	| ---						|
+| accessToken	| String| 是	|用户登录时返回的accessToken|
+| openid		| String| 是	|用户登录时返回的openid		|
+
+**响应参数**
+
+| 字段		| 类型	| 说明		|
+| ---		| ---	| ---		|
+| nickname	| String|用户昵称	|
+| avatar	| String|用户头像	|
+
 
 ## QQ@qq
 
@@ -3035,36 +3134,41 @@ const res = await uniID.forbidAppLogin({
 
 在unicloud [web控制台](https://unicloud.dcloud.net.cn/) 新建数据表时，可以从`uni-id`的模板分类里找到下面的表，并一键创建这些表。
 
-## 用户表
+## 用户表@user-table
 
 表名：`uni-id-users`
 
-| 字段						| 类型			| 必填| 描述																											|
-| ----------------| ---------	| ----| -------------------------------------------								|
-| \_id						| Object ID	| 是	| 存储文档 ID（用户 ID），系统自动生成											|
-| username				| String		| 否	| 用户名，不允许重复																				|
-| password				| String		| 否	| 密码。加密存储																						|
-| nickname				| String		| 否	| 用户昵称																									|
-| gender					| Integer		| 否	| 用户性别：0 未知 1 男性 2 女性														|
-| status					| Integer		| 是	| 用户状态：0 正常，1 禁用，2 审核中，3 审核拒绝，4 已注销		|
-| mobile					| String		| 否	| 手机号码																									|
-| mobile_confirmed| Integer		| 否	| 手机号验证状态：0 未验证 1 已验证，未验证用户不可登录			|
-| email						| String		| 否	| 邮箱地址																									|
-| email_confirmed	| Integer		| 否	| 邮箱验证状态：0 未验证 1 已验证，未验证用户不可登录				|
-| avatar					| String		| 否	| 头像地址																									|
-| wx_unionid			| String		| 否	| 微信unionid																								|
-| wx_openid				| Object		| 否	| 微信各个平台openid																				|
-| ali_openid			| String		| 否	| 支付宝平台openid																					|
-| comment					| String		| 否	| 备注																											|
-| realname_auth		| Object		| 否	| 实名认证信息																							|
-| register_date		| Timestamp	| 否	| 注册时间																									|
-| register_ip			| String		| 否	| 注册时 IP 地址																						|
-| last_login_date	| Timestamp	| 否	| 最后登录时间（注意并非只有登录操作会修改此值，token刷新时也会修改最后登录时间。应用启动时若token有效则不会触发登录行为，也不会更新本值。最后登录IP同理）|
-| last_login_ip		| String		| 否	| 最后登录时 IP 地址																				|
-| login_ip_limit	| Array			| 否	| 登录 IP 限制																							|
-| inviter_uid			| Array			| 否	| 邀请人uid，按层级从下往上排列的uid数组，即第一个是直接上级|
-| my_invite_code	| String		| 否	| 用户自己的邀请码																					|
-| role						| Array			| 否	| 用户角色列表，由role_id组成的数组													|
+| 字段				| 类型		| 必填	| 描述														|
+| ----------------	| ---------	| ----	| -------------------------------------------				|
+| \_id				| Object ID	| 是	| 存储文档 ID（用户 ID），系统自动生成						|
+| username			| String	| 否	| 用户名，不允许重复										|
+| password			| String	| 否	| 密码。加密存储											|
+| nickname			| String	| 否	| 用户昵称													|
+| gender			| Integer	| 否	| 用户性别：0 未知 1 男性 2 女性							|
+| status			| Integer	| 是	| 用户状态：0 正常，1 禁用，2 审核中，3 审核拒绝，4 已注销	|
+| mobile			| String	| 否	| 手机号码													|
+| mobile_confirmed	| Integer	| 否	| 手机号验证状态：0 未验证 1 已验证，未验证用户不可登录		|
+| email				| String	| 否	| 邮箱地址													|
+| email_confirmed	| Integer	| 否	| 邮箱验证状态：0 未验证 1 已验证，未验证用户不可登录		|
+| avatar			| String	| 否	| 头像地址													|
+| wx_unionid		| String	| 否	| 微信unionid												|
+| wx_openid			| Object	| 否	| 微信各个平台openid										|
+| ali_openid		| String	| 否	| 支付宝平台openid											|
+| comment			| String	| 否	| 备注														|
+| realname_auth		| Object	| 否	| 实名认证信息												|
+| register_date		| Timestamp	| 否	| 注册时间													|
+| register_ip		| String	| 否	| 注册时 IP 地址，`uni-id 3.3.14`起移至register_env内		|
+| last_login_date	| Timestamp	| 否	| 最后登录时间												|
+| last_login_ip		| String	| 否	| 最后登录时 IP 地址										|
+| login_ip_limit	| Array		| 否	| 登录 IP 限制												|
+| inviter_uid		| Array		| 否	| 邀请人uid，按层级从下往上排列的uid数组，即第一个是直接上级|
+| my_invite_code	| String	| 否	| 用户自己的邀请码											|
+| role				| Array		| 否	| 用户角色列表，由role_id组成的数组							|
+| register_env		| Object	| 否	| 用户注册时的环境信息，新增于`uni-id 3.3.14`				|
+
+**注意**
+
+- 最后登录时间、IP，并非只有登录操作会修改，token刷新时也会修改最后登录时间、ip。应用启动时若token有效则不会触发登录行为，也不会更新本值。
 
 **wx_openid字段定义**
 
@@ -3099,6 +3203,21 @@ const res = await uniID.forbidAppLogin({
 | ------- | ------ | ---- | -------- |
 | company | String | 否   | 公司名称 |
 | title   | String | 否   | 职位     |
+
+**register_env字段定义**
+
+**注意：调用addUser添加的用户无此字段**
+
+| 字段			| 类型	| 必填	| 描述												|
+|--				|--		|--		|--													|
+|appid			| String|否		|注册时的客户端appId								|
+|uni_platform	|String	|否		|注册时的客户端平台，如h5、app、mp-weixin等			|
+|app_name		|String	|否		|注册时的客户端名称									|
+|app_version		|String	|否		|注册时的客户版本									|
+|app_version_code	|String	|否		|注册时的客户版本号									|
+|channel		|String	|否		|注册时的客户端启动场景（小程序）或应用渠道（app）	|
+|client_ip		|String	|否		|注册时的客户端IP									|
+
 
 用户集合示例：
 

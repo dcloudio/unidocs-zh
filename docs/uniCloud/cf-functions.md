@@ -49,9 +49,9 @@ HBuilderX中uniCloud项目的云函数均为项目的uniCloud/cloudfunctions目�
 |   |      └──package.json        公用模块package.json
 |   │───uni-clientDB-actions
 |   │      └──new_action.js       clientDB action代码 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=action">详情</a>
-|   └───function-name             云函数目录
-|         │──index.js             云函数代码
-|         └──package.json         包含云函数的配置信息，如url化、定时设置、可用内存等内容 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=packagejson">详情</a>
+|   │───function-name             云函数目录
+|   │     │──index.js             云函数代码
+|   │     └──package.json         包含云函数的配置信息，如url化、定时设置、可用内存等内容 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=packagejson">详情</a>
 |   └───object-name               云对象目录
 |         │──index.obj.js         云对象代码
 |         └──package.json         包含云对象的配置信息，可用内存等内容 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=packagejson">详情</a>
@@ -227,7 +227,9 @@ exports.main = async (event, context) => {
 
 ##### 其他客户端信息@client-info
 
-- 以下四个属性只有使用uni-app以callFunction方式调用才能获取，由客户端传递到云函数
+> HBuilderX 3.4.9起，可以获取所有客户端`getSystemInfo`返回的客户端信息，详细字段列表参考：[getSystemInfo](https://uniapp.dcloud.net.cn/api/system/info.html#getsysteminfo)
+
+- 客户端信息只有使用uni-app客户端以callFunction方式调用才能获取，由客户端传递到云函数
 - 实际业务中务必验证一下前端传来的数据的合法性
 
 ```js
@@ -242,8 +244,8 @@ exports.main = async (event, context) => {
 
 
 **注意事项**
-- event大小不可超过100kb
-- 云函数url化的场景下无法获取`context.OS`、`context.PLATFORM`、`context.APPID`、`context.DEVICEID`
+- 阿里云event大小不可超过1MB，腾讯云event大小不可超过6MB
+- 云函数url化的场景下无法获取客户端信息，`context.OS`、`context.PLATFORM`、`context.APPID`、`context.DEVICEID`等
 
 >在云函数URL化的场景无法获取客户端平台信息，可以在调用依赖客户端平台的接口接口之前（推荐在云函数入口）通过修改context.PLATFORM手动传入客户端平台信息供其他插件（如：uni-id）使用
 

@@ -216,6 +216,8 @@ uniCloud有众多API，另见：[uniCloud的API清单](uniCloud/cf-functions.htm
 
 ### 获取客户端信息@get-client-info
 
+> HBuilderX 3.4.9起此接口可获取所有客户端`getSystemInfo`返回的客户端信息，完整字段列表参考：[getSystemInfo](https://uniapp.dcloud.net.cn/api/system/info.html#getsysteminfo)
+
 **接口形式**
 
 `this.getClientInfo()`
@@ -252,6 +254,8 @@ module.exports = {
 |platform	|string	|是		|客户端平台，app，mp-weixin等					|
 |deviceId	|string	|是		|客户端deviceId，目前同getSystemInfo内的deviceId|
 |uniIdToken	|string	|是		|客户端用户token								|
+
+
 
 **注意**
 

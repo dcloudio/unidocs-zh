@@ -30,9 +30,7 @@
 
       <div
         class="links"
-        :style="linksWrapMaxWidth ? {
-          'max-width': linksWrapMaxWidth + 'px'
-        } : {}"
+        :style="SearchBoxStyle"
       >
         <!-- <a class="switch-version" href="javascript:void(0)">回到旧版</a> -->
         <DcloudSearchPage v-if="isAlgoliaSearch" ref="dcloudSearchPage" :options="algolia"/>
@@ -42,6 +40,14 @@
     </div>
 
     <div class="sub-navbar">
+      <DropdownLink
+        class="custom-main-navbar can-hide"
+        v-if="showSubNavBar && fixedNavbar"
+        :item="{
+          text: customNavBarKeys[navConfig.userNavIndex],
+          items: customNavBar
+        }"
+      />
       <NavLinks class="can-hide" />
       <div class="mobile-sub-navbar">
         <div class="subnavbar__item" @click="$emit('toggle-sidebar')">
@@ -61,6 +67,7 @@ import MainNavbarLink from './MainNavbarLink.vue';
 import NavbarLogo from './NavbarLogo.vue';
 import DcloudSearchPage from './DcloudSearchPage';
 import navInject from '../mixin/navInject';
+import DropdownLink from '@theme/components/DropdownLink.vue'
 import { forbidScroll, os } from '../util';
 
 export default {
@@ -75,14 +82,16 @@ export default {
     SearchBox,
     AlgoliaSearchBox,
     NavbarLogo,
-    DcloudSearchPage
+    DcloudSearchPage,
+    DropdownLink
   },
 
   data () {
     return {
       linksWrapMaxWidth: null,
       showMobilePanel: false,
-      fixedNavbar: false
+      fixedNavbar: false,
+      SearchBoxTop: 0
     }
   },
 
@@ -93,6 +102,18 @@ export default {
 
     isAlgoliaSearch () {
       return this.algolia && this.algolia.apiKey && this.algolia.indexName
+    },
+
+    SearchBoxStyle () {
+      const initStyle = {
+        top: `${this.SearchBoxTop}px`,
+        zIndex: 100
+      };
+      return this.linksWrapMaxWidth
+        ? Object.assign({}, initStyle, {
+            'max-width': this.linksWrapMaxWidth + 'px',
+          })
+        : initStyle;
     }
   },
 
@@ -134,6 +155,7 @@ export default {
         this.addWindowScroll()
       } else {
         this.fixedNavbar = true
+        this.SearchBoxTop = 0
       }
     },
     addWindowScroll () {
@@ -148,7 +170,7 @@ export default {
       this.vuepressToc && this.vuepressToc.removeAttribute('style')
       this.navbar && this.navbar.removeAttribute('style')
       if (this.pageContainer) {
-        this.pageContainer.style.marginTop = this.showSubNavBar ? 'auto' : `${this.navbarHeight}px`
+        this.pageContainer.style.marginTop = this.showSubNavBar || !os.pc ? 'auto' : `${this.navbarHeight}px`
       }
     },
     onWindowScroll () {
@@ -165,6 +187,7 @@ export default {
         if (!this.fixedNavbar) {
           this.fixedNavbar = true
           this.navbar.style.top = `-${this.mainNavBarHeight}px`
+          this.SearchBoxTop = this.mainNavBarHeight + (this.subNavBarHeight - this.mainNavBarHeight) / 2
           this.$nextTick(() => {
             this.pageContainer && (this.pageContainer.style.marginTop = `${this.navbarHeight}px`)
           })
@@ -173,6 +196,7 @@ export default {
         if (this.fixedNavbar) {
           this.fixedNavbar = false
           this.pageContainer && (this.pageContainer.style.marginTop = 'auto')
+          this.SearchBoxTop = 0
         }
       }
     },
@@ -264,6 +288,7 @@ $navbar-horizontal-padding = 1.5rem
       display none !important
     .links
       padding-left 0rem // 1.5rem
+      top 0 !important
     .site-name
       width calc(100vw - 9.4rem)
       overflow hidden

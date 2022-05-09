@@ -20,6 +20,7 @@ $navbar-logo-height = $navbar-main-navbar-height - 2rem
       &
         display none
   .sub-navbar
+    position relative
     line-height $navbar-sub-navbar-height
     border-top-width 1px
   .mobile-main-navbar
@@ -76,6 +77,20 @@ $navbar-logo-height = $navbar-main-navbar-height - 2rem
     color inherit
     &:hover
       color $accentColor
+  
+  .custom-main-navbar
+    position absolute
+    height 30px
+    top calc(50% - 15px)
+    left 2rem
+    @media (max-width: 1200px)
+      display none
+    a
+      color inherit
+    .nav-dropdown 
+      right auto
+      left 0
+      z-index 12
 
 @media (max-width: $MQMobile)
   $navbar-a-color = #222;

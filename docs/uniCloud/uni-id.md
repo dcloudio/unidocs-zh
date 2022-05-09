@@ -3212,6 +3212,7 @@ const res = await uniID.forbidAppLogin({
 |--				|--		|--		|--													|
 |appid			| String|否		|注册时的客户端appId								|
 |uni_platform	|String	|否		|注册时的客户端平台，如h5、app、mp-weixin等			|
+|os_name		|String	|否		|注册时的客户端系统名，ios、android、windows、mac、linux	|
 |app_name		|String	|否		|注册时的客户端名称									|
 |app_version		|String	|否		|注册时的客户版本									|
 |app_version_code	|String	|否		|注册时的客户版本号									|

@@ -19,7 +19,7 @@ App启动时，系统加载应用渲染首页需要一定的时间，为了避�
 |:-|:-|:-|:-|:-|
 |alwaysShowBeforeRender|Boolean|true|是否等待首页渲染完毕后再关闭启动界面|1.6.0|
 |autoclose|Boolean|true|是否自动关闭启动界面，仅当alwaysShowBeforeRender设置为false时生效，如果需要[手动关闭](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.closeSplashscreen)启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
-|waiting|Boolean|true|是否在程序启动界面显示等待圈或雪花||
+|waiting|Boolean|true|是否在启动界面显示等待雪花||
 
 alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关闭启动界面（splash）策略：
 - 首页渲染完毕后自动关闭启动界面  

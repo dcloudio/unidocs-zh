@@ -114,7 +114,7 @@
   * [uni-table 表格](component/uniui/uni-table.md)
   * [uni-tag 标签](component/uniui/uni-tag.md)
   * [uni-title 章节标题](component/uniui/uni-title.md)
-  * [uni-tooltip 章节标题](component/uniui/uni-tooltip.md)
+  * [uni-tooltip 文字提示](component/uniui/uni-tooltip.md)
   * [uni-transition 过渡动画](component/uniui/uni-transition.md)
   * [更新日志](https://ext.dcloud.net.cn/plugin?id=55&update_log)
   * [更多插件市场的组件](https://ext.dcloud.net.cn/?cat1=2)

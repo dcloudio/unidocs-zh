@@ -14,6 +14,42 @@ App启动时，系统加载应用渲染首页需要一定的时间，为了避�
 - 勾选“等待首页渲染完毕后再关闭Splash图”，表示需要等待首页渲染完成后再关闭启动界面  
 - 不勾选“等待首页渲染完毕后再关闭Splash图”，则表示首页加载完成后就会关闭启动界面，此时首页可能没有完成渲染，在部分设备可能会闪一下白屏，不推荐使用。
 
+源码视图支持以下配置:
+|属性|类型|默认值|描述|最低版本|
+|:-|:-|:-|:-|:-|
+|alwaysShowBeforeRender|Boolean|true|是否等待首页渲染完毕后再关闭启动界面|1.6.0|
+|autoclose|Boolean|true|是否自动关闭启动界面，仅当alwaysShowBeforeRender设置为false时生效，如果需要[手动关闭](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.closeSplashscreen)启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
+|waiting|Boolean|true|是否在程序启动界面显示等待圈或雪花||
+
+alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关闭启动界面（splash）策略：
+- 首页渲染完毕后自动关闭启动界面  
+  App启动后自动检测首页渲染状态，检测到首页渲染完成则自动关闭启动界面
+```
+"app-plus" : {
+    "splashscreen" : {
+        "alwaysShowBeforeRender" : true
+    }
+}
+```
+- 首页加载完成后自动关闭启动界面  
+  App启动后不检测首页渲染状态，当首页加载完成后自动关闭启动界面
+```
+"app-plus" : {
+    "splashscreen" : {
+        "alwaysShowBeforeRender" : false
+    }
+}
+```
+- 代码控制关闭启动界面  
+  App启动后不会自动关闭启动界面，需要在代码中调用[plus.navigator.closeSplashscreen](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.closeSplashscreen)关闭启动界面。
+```
+"app-plus" : {
+    "splashscreen" : {
+        "alwaysShowBeforeRender" : false,
+        "autoclose" : false,
+    }
+}
+```
 
 
 ### 启动界面设置

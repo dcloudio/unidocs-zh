@@ -8,8 +8,8 @@ targetSdkVersion用于指定应用的目标Android版本（API等级），默认
 
 **️注意: App升级时 targetSdkVersion 只能增加不能降低，也就是说 targetSdkVersion 高的App无法被 targetSdkVersion 低的App覆盖安装，开发者需要注意！**
 
-### 设置minSdkVersion  
-minSdkVersion值为Number类型，且必须为正整数，取值范围参考`Android版本列表`中的`API等级`。
+### 设置targetSdkVersion  
+targetSdkVersion值为Number类型，且必须为正整数，取值范围参考`Android版本列表`中的`API等级`。
 
 **可视化界面配置**  
 打开项目的manifest.json文件，在 “App常用其它设置” -> “Android设置” -> “targetSdkVersion” 项中进行设置：
@@ -49,19 +49,19 @@ minSdkVersion值为Number类型，且必须为正整数，取值范围参考`And
 ### Android版本列表
 API等级与Android版本对应列表如下：
 
-| API等级 | Android版本号 | Android版本名称 |
-| --:-- | --:-- | --:-- |
-| 19 | Android4.4 | Kitkat |
-| 20 | Android4.4W | Kitkat Watch |
-| 21 | Android5.0 | Lollipop |
-| 22 | Android5.1 | Lollipop |
-| 23 | Android6.0 | Marshmallow |
-| 24 | Android7.0 | Nougat |
-| 25 | Android7.1 | Nougat |
-| 26 | Android8.0 | Oreo |
-| 27 | Android8.1 | Oreo |
-| 28 | Android9.0 | Pie |
-| 29 | Android10.0 | Android Q |
-| 30 | Android11.0 | Android R |
-| 31 | Android12.0 | Android S |
+| API等级 | Android版本号 | Android版本名称 |  
+| :-- | :-- | :-- |  
+| 19 | Android4.4 | Kitkat |  
+| 20 | Android4.4W | Kitkat Watch |  
+| 21 | Android5.0 | Lollipop |  
+| 22 | Android5.1 | Lollipop |  
+| 23 | Android6.0 | Marshmallow |  
+| 24 | Android7.0 | Nougat |  
+| 25 | Android7.1 | Nougat |  
+| 26 | Android8.0 | Oreo |  
+| 27 | Android8.1 | Oreo |  
+| 28 | Android9.0 | Pie |  
+| 29 | Android10.0 | Android Q |  
+| 30 | Android11.0 | Android R |  
+| 31 | Android12.0 | Android S |  
 

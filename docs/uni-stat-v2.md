@@ -148,7 +148,7 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 
 ### 后台报表配置
 
-#### 关联admin相关
+#### 关联 admin 项目
 
 `uni统计2.0`的后台统计报表是`uni-admin`的内置插件，故使用`uni统计2.0`，需依赖[uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)项目。
 

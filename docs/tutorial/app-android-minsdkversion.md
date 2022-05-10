@@ -49,7 +49,7 @@ minSdkVersion值为Number类型，且必须为正整数，取值范围参考`And
 API等级与Android版本对应列表如下：  
 
 | API等级 | Android版本号 | Android版本名称 |  
-| --:-- | --:-- | --:-- |  
+| :-- | :-- | :-- |  
 | 19 | Android4.4 | Kitkat |  
 | 20 | Android4.4W | Kitkat Watch |  
 | 21 | Android5.0 | Lollipop |  

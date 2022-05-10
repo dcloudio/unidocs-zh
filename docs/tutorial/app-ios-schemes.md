@@ -10,8 +10,8 @@ iOS系统中，由于沙盒的限制，导致程序之间相互隔离，需要ur
 
 >注意：  
 >字符串建议使用小写字母（不要使用特殊字符、中文等），如设置为"test"，那么其他App呼起你的app的scheme协议就是"test://"；
->多个scheme使用 "," 分割，每个字符串为一个scheme；  
->如果可视化界面无法编辑，请切换到“源码视图”删除`schemes`节点数据重新操作。  
+>多个scheme使用 "," 分割，每个字符串为一个urltypes；  
+>如果可视化界面无法编辑，请切换到“源码视图”删除`urltypes`节点数据重新操作。  
 
 **源码视图配置**  
 打开项目的manifest.json文件，切换到“源码视图”，根据项目类型进行配置
@@ -22,7 +22,7 @@ iOS系统中，由于沙盒的限制，导致程序之间相互隔离，需要ur
   "app-plus": {
     "distribute": {
       "ios": {
-        "schemes": "hbuilder,myuniapp"
+        "urltypes": "hbuilder,myuniapp"
         //...
       },
       //...
@@ -33,12 +33,12 @@ iOS系统中，由于沙盒的限制，导致程序之间相互隔离，需要ur
 ```
 
 - 5+App/Wap2App项目  
-在 "plus"->"distribute"->"apple" 节点的 schemes 属性配置UrlSchemes，示例如下：
+在 "plus"->"distribute"->"apple" 节点的 urltypes 属性配置UrlSchemes，示例如下：
 ``` js  
   "plus": {
     "distribute": {
       "apple": {
-        "schemes": "hbuilder,myuniapp"
+        "urltypes": "hbuilder,myuniapp"
         //...
       },
       //...

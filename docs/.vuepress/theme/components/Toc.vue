@@ -1,5 +1,9 @@
 <template>
-	<Sticker v-show="visible" class="vuepress-toc" v-bind="$attrs" :style="{ top: initVisibleTop }">
+	<Sticker
+		:class="['vuepress-toc', visible ? '' : 'table-of-contents']"
+		v-bind="$attrs"
+		:style="{ top: initVisibleTop }"
+	>
 		<h5>ON THIS PAGE</h5>
 		<div
 			v-for="(item, index) in $page.headers"
@@ -26,7 +30,7 @@
 			: 0;
 	}
 	export default {
-		mixins: [ toc ],
+		mixins: [toc],
 		components: {
 			Sticker,
 		},

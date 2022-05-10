@@ -95,7 +95,7 @@ ARM64位（arm64-v8a）CPU可以兼容ARM32的指令，也就是说只选择arme
 
 
 ### 查看apk支持的CPU类型
-使用解压工具打开apk，在lib目录下可以查看到支持的CPU类型，如下图所示：
+使用解压工具打开apk，在lib目录下可以查看到支持的CPU类型，如下图所示：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-apk.png)
 
 
@@ -113,7 +113,7 @@ Performing Streamed Install
 adb: failed to install android_debug.apk: Failure [INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]
 ```
 
-使用Android Studio自带的x86模拟器，将不包含x86 cpu类型的apk拖到模拟器安装时会弹出如下提示框：
+使用Android Studio自带的x86模拟器，将不包含x86 cpu类型的apk拖到模拟器安装时会弹出如下提示框：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-error.png)
 
 <a id="nox86"/>

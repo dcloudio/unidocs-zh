@@ -45,8 +45,8 @@ minSdkVersion值为Number类型，且必须为正整数，取值范围参考`And
 **注意：云端打包时如果其他模块或插件设置了minSdkVersion，最终最大的minSdkVersion值生效**
 
 
-### Android版本列表
-API等级与Android版本对应列表如下：
+### Android版本列表  
+API等级与Android版本对应列表如下：  
 
 | API等级 | Android版本号 | Android版本名称 |
 | --:-- | --:-- | --:-- |

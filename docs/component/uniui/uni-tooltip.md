@@ -9,6 +9,8 @@
 
 > 遮挡不住原生组件
 
+## 介绍
+
 ### 安装方式
 
 本组件符合[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)规范，`HBuilderX 2.5.5`起，只需将本组件导入项目，在页面`template`中即可直接使用，无需在页面中`import`和注册`components`。
@@ -41,7 +43,7 @@
 | default | 被 Tooltip 包裹的组件 |
 | content | 弹出层插槽 |
 
-## 组件示例
+## 示例
 
 ::: warning 注意
 直接拷贝示例代码，无法运行 ，示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件。
@@ -80,3 +82,5 @@
 
 <style lang="scss"></style>
 ```
+
+[完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/tooltip/tooltip)

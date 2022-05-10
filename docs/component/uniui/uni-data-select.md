@@ -7,6 +7,8 @@
 
 当选项过多时，使用下拉菜单展示并选择内容
 
+## 介绍
+
 本组件要解决问题包括：
 
 1. 数据绑定型组件：给本组件绑定一个 data，会自动渲染一组候选内容。再以往，开发者需要编写不少代码实现类似功能
@@ -115,7 +117,7 @@ export default {
 | :-----: | :--------------------: | :------: |
 | @change | 选中状态改变时触发事件 |    -     |
 
-## 组件示例
+## 示例
 
 ::: warning 注意
 直接拷贝示例代码，无法运行 ，示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件。
@@ -208,3 +210,5 @@ export default {
   }
 </style>
 ```
+
+[完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/data-select/data-select)

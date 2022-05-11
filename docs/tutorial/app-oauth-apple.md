@@ -39,7 +39,7 @@
 - 按钮圆角范围及按钮最小尺寸也有要求；
 - 具体规则请参考苹果 [官方文档](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/)
 
-下面是原生端默认的几种按钮样式供大家参考（width:130pt, height:30pt, corner radius: 6pt）
+下面是原生端默认的几种按钮样式供大家参考（width:130pt, height:30pt, corner radius: 6pt）  
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-style-zh.png)
 
 

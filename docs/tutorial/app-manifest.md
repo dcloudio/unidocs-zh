@@ -1,3 +1,5 @@
+
+### 完整 manifest.json
 ```json
 {
     "id": "__UNI__XXXXXXX",         //必填，字符串类型，DCloud平台分配的应用标识
@@ -13,6 +15,12 @@
         "nvueLaunchMode": "normal",     //可选，字符串类型，nvue首页启动模式，compilerVersion值为3时生效，可取值normal、fast，参考：https://ask.dcloud.net.cn/article/36749
         "nvue": {                       //可选，JSON对象，nvue页面相关配置
             "flex-direction": "row"             //可选，字符串类型，nvue页面的flex-direction默认值，可取值row、row-reverse、column、column-reverse
+        },
+        "optimization": {               //可选，JSON对象，分包配置
+            "subPackages": true                 //可选，Boolean类型，是否开启分包优化，参考：https://uniapp.dcloud.io/collocation/pages.html#subpackages
+        },
+        "uniStatistics": {              //可选，JSON对象，uni统计配置
+            "enable": true,                     //可选，Boolean类型，是否开启uni统计
         },
         "screenOrientation": [          //可选，字符串数组类型，应用支持的横竖屏
             "portrait-primary",                 //可选，字符串类型，支持竖屏

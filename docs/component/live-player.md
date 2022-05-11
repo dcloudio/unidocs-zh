@@ -26,6 +26,7 @@
 |orientation|String|vertical|画面方向，可选值有 vertical，horizontal||
 |object-fit|String|contain|填充模式，可选值:contain、fillCrop||
 |background-mute|Boolean|false|进入后台时是否静音||
+|sound-mode|string|speaker|声音输出方式;可选值speaker、ear||
 |min-cache|Number|1|最小缓冲区，单位s||
 |max-cache|Number|3|最大缓冲区，单位s||
 |picture-in-picture-mode|string/Array|3|设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]）|微信小程序（2.10.3）|

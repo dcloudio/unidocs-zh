@@ -72,7 +72,7 @@ const createConfig = require('uni-config-center')
 const userUtilsConfig = createConfig({ // 获取配置实例
     pluginId: 'user-utils' // common/uni-config-center下的配置目录名
 })
-const userUtilsConfig = userUtilsConfig.config() // 获取common/uni-config-center/user-utils/config.json的内容
+const Config = userUtilsConfig.config() // 获取common/uni-config-center/user-utils/config.json的内容
 exports.main = async function(event, context) {
 	
 }

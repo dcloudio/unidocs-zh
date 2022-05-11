@@ -83,4 +83,6 @@
 <style lang="scss"></style>
 ```
 
+:::
+
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/tooltip/tooltip)

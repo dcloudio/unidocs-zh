@@ -7,7 +7,9 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|x|√|
 
-**注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用。**
+**注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用**
+
+> _微信小程序已停止维护[wx.saveFile(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.saveFile.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
 
 **OBJECT 参数说明：**
 
@@ -48,6 +50,8 @@ uni.chooseImage({
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|x|√|
+
+> _微信小程序已停止维护[wx.getSavedFileList(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getSavedFileList.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
 
 **OBJECT 参数说明：**
 
@@ -91,6 +95,9 @@ uni.getSavedFileList({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|x|√|x|√|
 
+> _微信小程序已停止维护[wx.getSavedFileInfo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getSavedFileInfo.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
+
+
 **OBJECT 参数说明：**
 
 |参数名|类型|必填|说明|
@@ -129,6 +136,8 @@ uni.getSavedFileInfo({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|x|√|
 
+> _微信小程序已停止维护[wx.removeSavedFile(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.removeSavedFile.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
+
 **OBJECT 参数说明：**
 
 |参数名|类型|必填|说明|
@@ -163,6 +172,8 @@ uni.getSavedFileList({
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|x|√|
+
+> _微信小程序已停止维护[wx.getFileInfo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getFileInfo.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
 
 **OBJECT 参数说明：**
 

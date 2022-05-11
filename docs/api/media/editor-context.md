@@ -159,7 +159,7 @@ editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery
 
 ## editorContext.setContents(OBJECT)
 
-初始化编辑器内容，hmlt和delta同时存在时仅delta生效
+初始化编辑器内容，html和delta同时存在时仅delta生效
 
 **OBJECT 参数说明**
 

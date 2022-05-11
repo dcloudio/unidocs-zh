@@ -55,12 +55,12 @@ export default {
         return {
             items: [{
                     value: 'USA',
-                    name: '美国'
+                    name: '美国',
+                    checked: 'true'
                 },
                 {
                     value: 'CHN',
-                    name: '中国',
-                    checked: 'true'
+                    name: '中国'
                 },
                 {
                     value: 'BRA',

@@ -65,6 +65,7 @@ uni 统计配置项
 |compilerVersion|Number|编译器版本，可选值：2、3 默认 2 [详见](https://ask.dcloud.net.cn/article/36599)|HBuilderX 2.5.0+|
 |nvueLaunchMode|String|Nvue 首页启动模式，在 compilerVersion 值为 3 时生效，可选值：normal、fast 默认 normal（HBuilderX 2.4.4-2.4.9 固定为 fast） [详见](https://ask.dcloud.net.cn/article/36749)|2.5.0+|
 |nvue|Object|nvue 页面布局初始配置，[详见](/collocation/manifest?id=nvue)|2.0.3+|
+|optimization|Object|分包配置，可以减轻启动时加载的js数量，提升启动速度|2.7.12+|
 |uniStatistics|Object|[App 是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|2.2.3+|
 
 PS：这里只列出了核心部分，更多内容请参考 [完整的 manifest.json](/tutorial/app-manifest)。
@@ -174,7 +175,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 
 #### optimization@app-vue-optimization
 
-小程序的分包，除了联网分段下载外，还可以减轻启动时加载的js数量，可以提升启动速度。
+可以减轻启动时加载的js数量，提升启动速度。
 
 从uni-app 2.7.12+ 开始，App-vue平台也兼容了小程序的分包配置，但默认并不开启。
 

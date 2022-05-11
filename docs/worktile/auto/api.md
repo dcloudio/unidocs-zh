@@ -817,7 +817,7 @@ element.slideTo
 |touchstart				|√				|√			|√	|√					|x					|手指开始触摸元素																		|
 |touchmove				|√				|√			|√	|√					|x					|手指触摸元素后移动																	|
 |touchend					|√				|√			|√	|√					|x					|手指结束触摸元素																		|
-|longpress				|√				|√			|√	|√					|x					|获取元素文本																				|
+|longpress				|√				|√			|√	|√					|x					|长按																				|
 |trigger					|√				|√			|√	|√					|x					|触发元素事件																				|
 |input						|√				|√			|√	|√					|x					|输入文本，仅 input、textarea 组件可以使用					|
 |callContextMethod|x				|x			|x	|√					|x					|调用上下文 Context 对象方法，仅 video 组件可以使用	|

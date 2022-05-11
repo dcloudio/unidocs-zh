@@ -210,5 +210,6 @@ export default {
   }
 </style>
 ```
+:::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/data-select/data-select)

@@ -181,7 +181,7 @@ Statistic模块集成的三方SDK说明
 		android.permission.READ_PHONE_STATE
 	</td>
 	<td>设备信息（IMEI、ANDROID_ID、DEVICE_ID、IMSI）、应用已安装列表、网络信息</td>
-	<td><a href="http://docs.getui.com/privacy" target="_blank">http://docs.getui.com/privacy</a></td>
+	<td><a href="https://docs.getui.com/privacy/" target="_blank">https://docs.getui.com/privacy/</a></td>
   </tr>
 </table>
 

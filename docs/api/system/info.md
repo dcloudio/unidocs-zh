@@ -54,6 +54,28 @@
 |safeArea|在竖屏正方向下的安全区域|App、H5、微信小程序|
 |safeAreaInsets|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、H5、微信小程序|
 |deviceId|设备 id|非 App 端由 uni-app 框架生成并存储，清空 Storage 会导致改变|
+|deviceBrand|设备品牌。如：`apple`、`huawei`|`HBuilderX (3.4.10+)`|
+|deviceModel|设备型号 |`HBuilderX (3.4.10+)`|
+|deviceType|设备类型。`phone`、`pad`、`pc` |`HBuilderX (3.4.10+)`|
+|uniPlatform|uni-app 运行平台。取值见下。 |`HBuilderX (3.4.10+)`|
+|uniCompileVersion| uni 编译器版本号 |`HBuilderX (3.4.10+)`|
+|uniRuntimeVersion| uni 运行时版本 |`HBuilderX (3.4.10+)`|
+|appId  |`manifest.json` 中应用appid。 |`HBuilderX (3.4.10+)`|
+|appName|`manifest.json` 中应用名称。和`字节跳动小程序、飞书小程序`字段冲突，原字端与`hostName`一致|`HBuilderX (3.4.10+)`|
+|appVersion  |`manifest.json` 中应用版本名称。 |`HBuilderX (3.4.10+)`|
+|appVersionCode  |`manifest.json` 中应用版本名号。 |`HBuilderX (3.4.10+)`|
+|ua| 用户标识。小程序端为空 |`HBuilderX (3.4.10+)`|
+|browserName  | 浏览器名称。`App` 端是系统 webview 的名字，比如 wkwebview、chrome。小程序端为空 |`HBuilderX (3.4.10+)`|
+|browseVersion  | 浏览器版本、webview 版本。小程序端为空 |`HBuilderX (3.4.10+)`|
+|osName  |ios、android、windows、mac、linux |`HBuilderX (3.4.10+)`|
+|osVersion  |操作系统版本。如 ios 版本，andriod 版本 |`HBuilderX (3.4.10+)`|
+|osLanguage  |操作系统语言，小程序端与 `version` 相同，H5 与浏览器语言一致 |`HBuilderX (3.4.10+)`|
+|osTheme  |操作系统主题 light、dark。小程序端为小程序主题，H5 端为空 |`HBuilderX (3.4.10+)`|
+|hostName  |App、小程序宿主名称，如：`WeChat`、`FeiShu`。H5 端为浏览器名称|`HBuilderX (3.4.10+)`|
+|hostVersion  |App、小程序宿主版本。如：微信版本号。H5 端为浏览器版本 |`HBuilderX (3.4.10+)`|
+|hostLanguage  |浏览器语言、小程序宿主语言、app 语言 |`HBuilderX (3.4.10+)`|
+|hostTheme  |App 主题 `light`、`dark`。H5 端为空，小程序端为系统当前主题 |`HBuilderX (3.4.10+)`|
+|hostPackageName  |小程序宿主包名。仅 App 支持，其他平台为空 |`HBuilderX (3.4.10+)`|
 
 **Tips**
 - 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
@@ -85,6 +107,24 @@
 |top	|Number	|安全区顶部插入位置			|
 |bottom	|Number	|安全区域底部插入位置			|
 
+<b style="color:#268BD2"> uniPlatform</b> **可取值如下：**
+
+|值|生效条件|
+|:-|:-|
+|app|App|
+|web|H5|
+|mp-weixin|微信小程序|
+|mp-alipay|支付宝小程序|
+|mp-baidu|百度小程序|
+|mp-toutiao|字节跳动小程序|
+|mp-lark|飞书小程序|
+|mp-qq|QQ小程序|
+|mp-kuaishou|快手小程序|
+|mp-jd|京东小程序|
+|MP-360|360小程序|
+|quickapp-webview|快应用通用(包含联盟、华为)|
+|quickapp-webview-union|快应用联盟|
+|quickapp-webview-huawei|快应用华为|
 
 **示例**
 
@@ -106,72 +146,16 @@ uni.getSystemInfo({
 获取系统信息同步接口。
 
 **同步返回参数说明**
-
-|参数|说明|平台差异说明|
-|:-|:-|:-|
-|brand|设备品牌|App、微信小程序、百度小程序、字节跳动小程序、飞书小程序、QQ小程序|
-|model|设备型号|全平台支持。H5 端部分设备无法获取具体型号|
-|pixelRatio|设备像素比||
-|screenWidth|屏幕宽度||
-|screenHeight|屏幕高度||
-|windowWidth|可使用窗口宽度||
-|windowHeight|可使用窗口高度||
-|windowTop|可使用窗口的顶部位置|App、H5|
-|windowBottom|可使用窗口的底部位置|App、H5|
-|statusBarHeight|状态栏的高度|字节跳动小程序不支持|
-|navigationBarHeight|导航栏的高度|百度小程序|
-|titleBarHeight|标题栏高度|支付宝小程序|
-|language|应用设置的语言|字节跳动小程序不支持|
-|version|引擎版本号|H5不支持|
-|storage|设备磁盘容量|支付宝小程序|
-|currentBattery|当前电量百分比|支付宝小程序|
-|appName|宿主APP名称|字节跳动小程序|
-|AppPlatform|App平台|QQ小程序|
-|host|宿主平台|百度小程序|
-|app|当前运行的客户端|支付宝小程序|
-|cacheLocation|上一次缓存的位置信息|百度小程序|
-|system|操作系统版本||
-|platform|客户端平台，值域为：`ios`、`android`、`mac（3.1.10+）`、`windows（3.1.10+）`、`linux（3.1.10+）`||
-|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序|
-|SDKVersion|客户端基础库版本|支付宝小程序和H5不支持|
-|swanNativeVersion|宿主平台版本号|百度小程序|
-|albumAuthorized	|	允许微信使用相册的开关（仅 iOS 有效）	|微信小程序|
-|cameraAuthorized	|	允许微信使用摄像头的开关	|微信小程序|
-|locationAuthorized	|	允许微信使用定位的开关	|微信小程序|
-|microphoneAuthorized	|	允许微信使用麦克风的开关	|微信小程序|
-|notificationAuthorized	|	允许微信通知的开关	|微信小程序|
-|notificationAlertAuthorized	|	允许微信通知带有提醒的开关（仅 iOS 有效）	|微信小程序|
-|notificationBadgeAuthorized	|	允许微信通知带有标记的开关（仅 iOS 有效）	|微信小程序|
-|notificationSoundAuthorized	|	允许微信通知带有声音的开关（仅 iOS 有效）	|微信小程序|
-|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序|
-|locationEnabled	|	地理位置的系统开关	|微信小程序|
-|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序|
-|safeArea|在竖屏正方向下的安全区域|App、H5、微信小程序|
-|safeAreaInsets|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、H5、微信小程序|
-|deviceId|设备 id|非 App 端由 uni-app 框架生成并存储，清空 Storage 会导致改变|
+- 同上getSystemInfo
 
 **Tips**
 - 使用注意同上getSystemInfo
 
 **safeArea 的结构**
-
-|参数	|类型	|说明							|
-|:-		|:-								|:-								|
-|left	|Number	|安全区域左上角横坐标			|
-|right	|Number	|安全区域右下角横坐标			|
-|top	|Number	|安全区域左上角纵坐标			|
-|bottom	|Number	|安全区域右下角纵坐标			|
-|width	|Number	|安全区域的宽度，单位逻辑像素	|
-|height	|Number	|安全区域的高度，单位逻辑像素	|
+- 同上getSystemInfo
 
 **safeAreaInsets 的结构**
-
-|参数	|类型	|说明							|
-|:-		|:-								|:-								|
-|left	|Number	|安全区域左侧插入位置			|
-|right	|Number	|安全区域右侧插入位置			|
-|top	|Number	|安全区顶部插入位置			|
-|bottom	|Number	|安全区域底部插入位置			|
+- 同上getSystemInfo
 
 **示例**
 

@@ -180,7 +180,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 	</a>
 </div>
 
-<a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style"><b>登登多邻国：</b></a> 外语学习者题库。其服务端整体基于[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)，前端包括PC和H5网站、微信小程序，均连接uniCloud。日请求量百万级。
+<!-- <a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style"><b>登登多邻国：</b></a> 外语学习者题库。其服务端整体基于[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)，前端包括PC和H5网站、微信小程序，均连接uniCloud。日请求量百万级。
 <div style="display:flex;justify-content: space-around;">
 	<a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style barcode-view">
 		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-alicdn/bda036a0-c55f-11ea-b997-9918a5dda011.png" width="200"/>
@@ -190,7 +190,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/677e3dbb-112a-4d8b-a325-1d1049a8db75.png" width="200"/>
 		<span style="margin-top:15px;">微信小程序码</span>
 	</a>
-</div>
+</div> -->
 
 <a href="http://ext.dcloud.net.cn/plugin?id=239" target="_blank" class="clear-style"><b>ColorUI：</b></a>ColorUI官方组件库for uni-app，高颜值示例。本项目插件市场地址：[https://ext.dcloud.net.cn/plugin?id=239](https://ext.dcloud.net.cn/plugin?id=239)
 <div style="display:flex;justify-content: space-around;">
@@ -260,19 +260,23 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 #### 互联网公司
 
-**华为：** 荣耀商城。微信小程序搜索“荣耀亲选商城”、[H5](https://m.qinxuan.honor.cn/)、[App部分栏目使用DCloud SDK](https://appgallery1.huawei.com/#/app/C100382765)
+**我的医保凭证：** 微信小程序搜索“我的医保凭证”。国家医疗保障局监制、腾讯开发。
 
-**华为：** [华为大学H5版](https://developer.huaweiuniversity.com/m/)
+**腾讯健康码：** 微信小程序搜索同名
 
-**字节跳动：** 抖音小游戏中心。
+**腾讯QQ：** 微信小程序搜索同名
 
-**美团：** 微信小程序搜索“美团团购”、“美团充电宝”，App内充电宝栏目
+**NBA官方App：** 使用uni小程序sdk，腾讯开发，[App](https://a.app.qq.com/o/simple.jsp?pkgname=com.tencent.nbagametime&channel=0002160650432d595942&fromcase=60001)
 
-**快手：** 微信小程序、QQ小程序搜索“快手短视频”、App中搜索“快手每日一答”
+**腾讯自选股：** 微信小程序搜索同名
 
-**腾讯：** 微信小程序搜索“我的医保凭证”。国家医疗保障局监制。
+**腾讯电子签：** 微信小程序搜索同名
 
-**腾讯医生：** 微信小程序搜索“腾讯医生”、[H5](https://doctor.baike.qq.com/) 
+**腾讯医典：** 微信小程序搜索同名
+
+**腾讯微回收手机回收：** 微信小程序搜索同名
+
+**腾讯医生：** 微信小程序搜索同名、[H5](https://doctor.baike.qq.com/) 
 
 **腾讯企业邮箱：** [H5](https://exmail.qq.com/qy_mina_logic/uniapp/h5)
 
@@ -280,7 +284,27 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **腾讯地图：** App内穿梭线路栏目
 
-**腾讯财付通：** 微信小程序搜索“腾讯全民模拟炒股大赛”、[H5（需使用微信浏览器打开）](https://zqact.tenpay.com/chaogu/)
+**腾讯理财通：** App内网页
+
+**华为：** 微信小程序搜索“华为商城+”
+
+**华为：** 荣耀商城。微信小程序搜索“荣耀亲选商城”、[H5](https://m.qinxuan.honor.cn/)、[App部分栏目使用DCloud SDK](https://appgallery1.huawei.com/#/app/C100382765)
+
+**华为：** [华为大学H5版](https://developer.huaweiuniversity.com/m/)
+
+**字节跳动：** 抖音小游戏中心。
+
+**字节跳动：** 飞书部分页面feishu.cn
+
+**美团：** 微信小程序搜索“美团充电宝”，App内充电宝栏目
+
+**小米Lite：** 微信小程序搜同名
+
+**小米有品：** 微信小程序搜同名
+
+**小米：** 米家App内米家智能厨房页面，[App内H5](https://g.home.mi.com/partner/nfc/prod/index.html?m=chunmi.ihcooker.slim#/)；lbs门店微信群：[微信H5](http://s1.mi.com/m/wx/lbs/#/)
+
+**快手：** 微信小程序、QQ小程序搜索“快手短视频”
 
 **京东：** 京东开发的新冠抗疫服务平台：[H5](http://yingji-h5.chanye.jdcloud.com/)、京东金融羊羊大作战：[H5](https://u.jr.jd.com/uc-fe-wxgrowing/sheep-fight/)
 
@@ -297,15 +321,16 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
  </div>
 </div>
 
-**小米：** 米家App内米家智能厨房页面，[App内H5](https://g.home.mi.com/partner/nfc/prod/index.html?m=chunmi.ihcooker.slim#/)；lbs门店微信群：[微信H5](http://s1.mi.com/m/wx/lbs/#/)
 
 **携程微商城：** [微信H5](https://m.ctrip.com/webapp/hotelofficial/?#/)
-
-**搜狐狐友圈：** 微信、支付宝、百度、头条小程序均支持。
 
 **58转转：** 微信小程序搜索“转转二手交易网”
 
 **中华英才网：** 百度小程序搜索“中华英才网”
+
+**货拉拉：** App部分栏目使用[uni小程序SDK](https://nativesupport.dcloud.net.cn)、微信小程序搜同名
+
+**搜狐狐友圈：** 微信、支付宝、百度、头条小程序均支持。
 
 **CSDN App：** Appstore新闻类榜单前十。[uni小程序SDK](https://nativesupport.dcloud.net.cn)案例。App内部众多栏目做成小程序形式。[App下载](https://www.csdn.net/apps/download)
 
@@ -315,15 +340,13 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **联想集团官方小程序：** 微信小程序搜索 “联想集团”
 
-**当当网：** [H5](https://dh5.dangdang.com/)
+**当当网：** 微信小程序搜索“当当购物”、[H5](https://dh5.dangdang.com/)
 
 **太平洋汽车网：** H5，VR看车。需特定入口。
   
 **西祠胡同：** [App官网扫码下载](https://www.xici.net/)、[H5](https://3g.xici.net/)
 
 **极米：** [极米官方app](https://sj.qq.com/myapp/detail.htm?apkName=com.xgimi.zhushou&info=FB45015C23ACF368D22855D6C4964312)、[官网H5版](https://m.xgimi.com/)、微信小程序搜索“极米官方商城”、微信小程序搜索“极米care+”售后服务宣传
-
-**货拉拉：** App部分栏目使用[uni小程序SDK](https://nativesupport.dcloud.net.cn)。
 
 **叮咚买菜：** 微信小程序搜索 “叮咚买菜”、[公众号H5](http://wx.m.ddxq.mobi/#/)
 
@@ -333,13 +356,31 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **爱奇艺：** i联盟，[H5](https://vip.iqiyi.com/html5VIP/activity/person-union/#/)
 
+**猎聘：** 微信小程序搜同名
+
 **智联招聘：** WeTalk智能问答系统，[H5](https://special.zhaopin.com/h5/2020/sh/dhzc061717/)
+
+**金山：** 微信小程序搜索“WPS文件助手”
 
 **金山：** WPS智能PPT，[H5](https://aippt.wps.cn/m/)
 
+**海康威视：** 海康互联App使用[uni小程序SDK](https://nativesupport.dcloud.net.cn)。[App下载](https://www.me-app.net/Sentinels)
+
 **快递100：** 微信、百度、头条、QQ小程序搜索“快递100”
 
-**海康威视：** 海康互联App使用[uni小程序SDK](https://nativesupport.dcloud.net.cn)。[App下载](https://www.me-app.net/Sentinels)
+**微店：** 微信小程序搜同名
+
+**作业帮：** 微信小程序搜同名
+
+**泡泡玛特：** 微信小程序搜同名
+
+**水滴保：** 微信小程序搜同名
+
+**土巴兔家居装修：** 微信小程序搜同名
+
+**爱空间装修：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.ikongjian.decoration)
+
+**啄木鸟维修：**[App](https://a.app.qq.com/o/simple.jsp?pkgname=zmn.user.jtwxs)
 
 <!-- **达内在线：** 达内教育的在线培训App。[App官网下载](http://www.tmooc.cn/app/index.shtml) -->
 
@@ -357,9 +398,11 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **大商创：** 全渠道多用户商城解决方案。[官网](https://www.dscmall.cn)
 
-#### 国企
+#### 通信运营商
 
 **中国移动：** 微信小程序搜索“中国移动10086+”
+
+**中国移动咪咕视频：** 微信小程序搜索“咪咕视频”
 
 **中国移动咪咕商城：** [H5](https://mgmall.migudm.cn/)
 
@@ -379,48 +422,52 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **贵州联通沃扫码：** [H5，需扫码访问](http://www.gz10010.shop/wsm-h5/#/)
 
-**上铁12306：** 上海铁路局App，[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.shentie.app)、[iOS](https://apps.apple.com/cn/app/shang-tie12306/id1080296082)
-
-<div class="scan-code">
- <strong>昆铁+：</strong> 中国铁路昆明局为乘客提供的应用。[App下载页](https://media.kunming-railway.cn/)、微信小程序搜索“昆铁+”
- <div class="scan-code-hover">
-    <div class="scan-code-hover-box">
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/47774ea0-4f3e-11eb-bdc1-8bd33eb6adaa.jpg" alt="二维码获取失败" />
-    </div>
- </div>
-</div>
-
-**ADR之声：** 航空工业信息中心出品，是航空产业从业人员以及爱好者的工具书。[Android](https://appstore.huawei.com/app/C100599457)、[iOS](https://apps.apple.com/cn/app/id1450103696)
-
-**机场行：** 中国航信以机场为核心为旅客提供智能全行程服务应用。微信小程序搜索“机场行”，[微信H5](http://airporttravel.travelsky.com/weixin/)
-
 #### 金融
 
 **中国银联云闪付：** App部分页面使用uni-app制作
 
 **招商银行：** App部分页面使用uni-app制作
 
-**建设银行：** App部分页面使用uni-app制作
+**建设银行：** App龙支付慧点单 longpay.ccb.com
 
 **湖北银行（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.yusys.app.HuBeiBank)、[iOS](https://apps.apple.com/cn/app/%E6%B9%96%E5%8C%97%E9%93%B6%E8%A1%8C%E4%B8%AA%E4%BA%BA%E6%89%8B%E6%9C%BA%E9%93%B6%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF/id718080432)
+
+**湖北农信社：** 农商e支付 微信小程序
+
+**河南农信社：** 豫惠优选 微信小程序
+
+**山西农信社：：** 晋享生活（5+App），[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.ydnsh.buy.mobileBank)、[iOS](https://apps.apple.com/cn/app/id1147645808)
+
+**云南红塔银行：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.csii.yuxi.mobilebank)
 
 **中原银行信用卡：** [微信H5](https://cch.zybank.com.cn:10080/credit/#/pages/home/home)
 
 **蒙商银行（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.bsb.mbank)、[iOS](https://itunes.apple.com/cn/app/bao-shang-yin-xing/id875246323?mt=8)
 
-**晋享生活（5+App）：** 山西农信App，[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.ydnsh.buy.mobileBank)、[iOS](https://apps.apple.com/cn/app/id1147645808)
-
 **苍南农商银行** 丰收联盟。[H5](https://wxmapp.zjcnbank.com/)
 
-**平安集团：** 智慧医疗慢病管理，[H5](https://hm.city.pingan.com/h5/)；金管家多个页面，[H5](https://laip-gbr-pai.pingan.com/static/goodStart/#/)；口袋合伙人，[H5](https://b.pingan.com.cn/mkt/youhui/2012/kdhhrzhjh/#/package-act21/pages/act-zhlx/index)；易骑行，[H5](https://ebs.yun.city.pingan.com/pc/mini/#/)
+**新网银行：** 微信小程序搜同名
 
-**拉卡拉收款宝：** App部分页面使用uni-app制作
+**平安集团：** 智慧医疗慢病管理，[H5](https://hm.city.pingan.com/h5/)；金管家多个页面，[H5](https://laip-gbr-pai.pingan.com/static/goodStart/#/)；口袋合伙人，[H5](https://b.pingan.com.cn/mkt/youhui/2012/kdhhrzhjh/#/package-act21/pages/act-zhlx/index)；易骑行，[H5](https://ebs.yun.city.pingan.com/pc/mini/#/)
 
 **长城人寿：** 微信小程序搜索 “长城银保e站”、“长城人寿线上培训平台”等
 
 **华夏保险：** app部分页面使用uni-app制作
 
+**泰康医生：** 微信小程序搜同名
+
+**水滴保：** 微信小程序搜同名
+
+**国信证券：** 股票开户行情，微信小程序搜“国信小店”
+
 **国泰君安：** app部分页面使用uni-app制作
+
+**同花顺股票：** 微信小程序搜同名
+
+**拉卡拉收款宝：** App部分页面使用uni-app制作
+
+**易宝支付：** cash.yeepay.com
+
 
 #### 政府
 
@@ -428,11 +475,19 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **中国教育发布：** 中国人民共和国教育部官方App。使用uniCloud云开发。[详见](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
 
+**国家医保服务平台：** 使用uni小程序sdk [App](https://a.app.qq.com/o/simple.jsp?pkgname=cn.hsa.app&channel=0002160650432d595942&fromcase=60001)
+
 **登记注册身份验证（5+App）：** 国家工商总局，企业登记注册身份验证。[Android](https://android.myapp.com/myapp/detail.htm?apkName=gov.zwfw.samr.djzc)、[iOS](https://apps.apple.com/cn/app/%E7%99%BB%E8%AE%B0%E6%B3%A8%E5%86%8C%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/id1466043859)
+
+**人力资源和社会保障部：** 微信小程序搜“电子社保卡”
 
 **农交安（5+App）：** 公安部交通管理局，农村道路交通安全信息系统App。[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.tmri.nda)、[iOS](https://itunes.apple.com/cn/app/id1445388528)
 
-**安易递（5+App）：** 国家邮政局，实名快递收寄系统。[Android](http://sj.qq.com/myapp/detail.htm?apkName=cn.aiqy.demo_postman)、[iOS](https://apps.apple.com/cn/app/%E5%AE%89%E6%98%93%E9%80%92%E6%94%B6%E5%AF%84%E7%89%88/id1148473259)
+**国家邮政局：** 实名快递收寄系统。[Android](http://sj.qq.com/myapp/detail.htm?apkName=cn.aiqy.demo_postman)、[iOS](https://apps.apple.com/cn/app/%E5%AE%89%E6%98%93%E9%80%92%E6%94%B6%E5%AF%84%E7%89%88/id1148473259)、微信小程序搜“安易递收寄版”
+
+**国家体育总局：** 微信小程序搜“中国体育彩票”
+
+**中国交通通信信息中心：** 微信小程序搜“道路运政一网通办”
 
 **共青团全国青少年弘扬中华优秀传统文化交流展示活动专题网站：** [同时适配PC和手机版的H5](https://chuancheng.xwhdw.com/)
 
@@ -441,6 +496,8 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **NSTL国家科技图书文献中心：** [App下载页](https://www.nstl.gov.cn/download_app.html)、[H5](https://www.nstl.gov.cn/index_app.html#/)
 
 <!-- **惠动体育：** 北京体育局指定体育场馆预定合作平台，[App下载页](https://hsport.cn/)、[H5](https://web.hsport.cn/#/)、微信小程序搜索“惠动平台” -->
+
+**北京共青团：** [H5网站](https://m.bjyouth.net)
 
 **北京财政局会计专业考试系统：** [H5](http://fwxt.czj.beijing.gov.cn/kjbmh5/)
 
@@ -520,17 +577,27 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **内蒙古乌兰察布市市场监督管理局：** [H5](http://amr.wulanchabu.gov.cn/h5/#/)
 
 <!-- **数字福建政协云综合信息服务平台：** App部分页面 -->
-**山东海洋预报：** 为您提供山东范围内的海洋预报信息，及早作出防范，避免损失。[App码](//m3w.cn/h5bf0c9e7)
-
-**山东青岛海洋预报：** 为您提供青岛市周边海域的海洋预警报信息。[Android和iOS通用链接](http://m3w.cn/__uni__3b4e57a)
+<!-- **山东海洋预报：** 为您提供山东范围内的海洋预报信息，及早作出防范，避免损失。[App码](//m3w.cn/h5bf0c9e7) -->
+<!-- **山东青岛海洋预报：** 为您提供青岛市周边海域的海洋预警报信息。[Android和iOS通用链接](http://m3w.cn/__uni__3b4e57a) -->
 
 **山东威海医疗保障局：** [微信H5](http://ylbzjgzh.weihai.gov.cn/wx/#/)
 
 **陕西宝鸡市住房和城乡建设局：** 大修基金，[H5](http://wy.zjj.baoji.gov.cn/)
 
+**安徽医保公共服务：** 微信小程序搜同名
+
 **安徽法律服务网：** [H5](http://ah.12348.gov.cn/h5/#/)
 
 **赣服通：** 江西政务办理[H5](http://ganfutong.jiangxi.gov.cn/jmopen/webapp/html5/unZip/0c39647d0c004736a23f7355c56a91b8/nkyy/#/)
+
+**江西党建云：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.app.jianguyu.jiangxidangjian&channel=0002160650432d595942&fromcase=60001)
+
+**江西体彩微彩助手：** 微信小程序搜同名
+
+**新疆税务社保缴费：** 微信小程序搜同名
+
+**天津公安：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=jnhyjt.tjgamsfwpt.tjga)
+
 
 <!-- 
 
@@ -558,21 +625,45 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **必胜客App：** 部分页面使用uni-app制作
 
-**中通快递：** 微信、百度小程序搜索“中通快递”
-
-**同济医院官方App：** [App官网下载页](https://tjhapp.com.cn/app/appdown.html)
-
-**张亮麻辣烫：** 百度小程序搜索 “张亮麻辣烫” 
+**哈根达斯会员中心：** 微信小程序搜同名
 
 **蜜雪冰城：** 微信小程序搜索 “蜜雪冰城”
 
-**碧桂园：** 凤凰云[h5](https://fhyhub.bgy.com.cn/h5/activity/#/)
+**达美乐比萨点餐：** 微信小程序搜同名
+
+**德克士自助点餐：** 微信小程序搜同名
+
+**华莱士官方点餐：** 微信小程序搜同名
+
+**张亮麻辣烫：** 百度小程序搜索 “张亮麻辣烫” 
 
 **西贝骑手：** 西贝莜面村外卖骑手App
+
+**书亦烧仙草：** 微信小程序搜同名
+
+**海尔智家：** 微信小程序搜同名
+
+**欧莱雅会员俱乐部：** 微信小程序搜同名
+
+**御泥坊：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.yjh.ynf&channel=0002160650432d595942&fromcase=60001)
+
+**锦江酒店预订：** 微信小程序搜同名
+
+**海马体照相馆：** 微信小程序搜同名
+
+**蒙牛营养生活家：** 微信小程序搜同名
+
+**同济医院官方App：** [App官网下载页](https://tjhapp.com.cn/app/appdown.html)
+
+**碧桂园：** 凤凰云[h5](https://fhyhub.bgy.com.cn/h5/activity/#/)
+
+**广汽丰田：** 微信小程序搜同名
 
 **一汽丰田官方App（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=com.toyota.ftmsApp&amp;ADTAG=mobile)、[iOS](https://apps.apple.com/cn/app/%E4%B8%80%E6%B1%BD%E4%B8%B0%E7%94%B0/id687516806)
 
 **新航道雅思（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=xhd.com.ys&amp;ADTAG=mobile)、[iOS](https://apps.apple.com/cn/app/%E6%96%B0%E8%88%AA%E9%81%93%E9%9B%85%E6%80%9D-%E9%9B%85%E6%80%9D%E5%90%AC%E5%8A%9B%E5%8F%A3%E8%AF%AD%E6%8F%90%E5%88%86%E7%A5%9E%E5%99%A8/id1209333327)
+
+**海南免税城：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.hltmsp.htdf) 小程序搜 “cdf会员购海南”
 
 **日上会员（5+App）：** 日上免税店官方App。[Android](http://sj.qq.com/myapp/detail.htm?apkName=com.sunrisedutyfree.apps.sunrisemembers)、[iOS](https://itunes.apple.com/cn/app/%E6%97%A5%E4%B8%8A%E4%BC%9A%E5%91%98/id1135820611?mt=8)
 
@@ -588,7 +679,47 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **五粮液：** 内部管理系统
 
-**全家超市** App部分页面使用uni-app制作
+**物美超市多点小程序：** 微信小程序搜索“多点”
+
+**全家超市：** App部分页面使用uni-app制作
+
+**中国青年报：** 使用uni小程序sdk [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.hzpd.zqzx&channel=0002160650432d595942&fromcase=60001)
+
+#### 交通物流
+
+**上铁12306：** 上海铁路局App，[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.shentie.app)、[iOS](https://apps.apple.com/cn/app/shang-tie12306/id1080296082)
+
+<div class="scan-code">
+ <strong>昆铁+：</strong> 中国铁路昆明局为乘客提供的应用。[App下载页](https://media.kunming-railway.cn/)、微信小程序搜索“昆铁+”
+ <div class="scan-code-hover">
+    <div class="scan-code-hover-box">
+      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/47774ea0-4f3e-11eb-bdc1-8bd33eb6adaa.jpg" alt="二维码获取失败" />
+    </div>
+ </div>
+</div>
+
+**ADR之声：** 航空工业信息中心出品，是航空产业从业人员以及爱好者的工具书。[Android](https://appstore.huawei.com/app/C100599457)、[iOS](https://apps.apple.com/cn/app/id1450103696)
+
+**机场行：** 中国航信以机场为核心为旅客提供智能全行程服务应用。微信小程序搜索“机场行”，[微信H5](http://airporttravel.travelsky.com/weixin/)
+
+**春秋航空：**  微信小程序搜同名
+
+**顺丰App：** App内嵌uni小程序sdk。[Android](https://a.app.qq.com/o/simple.jsp?pkgname=com.sf.activity)、[iOS](https://apps.apple.com/cn/app/id899529698)
+
+**快递100：** 微信、百度、头条、QQ小程序搜索“快递100”
+
+**中通快递：** 微信、百度小程序小程序搜同名
+
+**圆通速递+：** 微信小程序搜同名
+
+**韵达快递：** 微信小程序搜同名
+
+**货拉拉：** App部分栏目使用[uni小程序SDK](https://nativesupport.dcloud.net.cn)、微信小程序搜同名
+
+**T3出行：**  微信小程序搜同名
+
+**人民出行：**  微信小程序搜同名
+
 
 #### 游戏
 

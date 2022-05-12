@@ -64,18 +64,18 @@
 |appName|`manifest.json` 中应用名称。和`字节跳动小程序、飞书小程序`字段冲突，原字端与`hostName`一致|`HBuilderX (3.4.10+)`|
 |appVersion  |`manifest.json` 中应用版本名称。 |`HBuilderX (3.4.10+)`|
 |appVersionCode  |`manifest.json` 中应用版本名号。 |`HBuilderX (3.4.10+)`|
-|ua| 用户标识。小程序端为空 |`HBuilderX (3.4.10+)`|
-|browserName  | 浏览器名称。`App` 端是系统 webview 的名字，比如 wkwebview、chrome。小程序端为空 |`HBuilderX (3.4.10+)`|
-|browseVersion  | 浏览器版本、webview 版本。小程序端为空 |`HBuilderX (3.4.10+)`|
+|ua| 用户标识 |`HBuilderX (3.4.10+)`、`小程序不支持`|
+|browserName  | 浏览器名称。`App` 端是系统 webview 的名字，比如 wkwebview、chrome |`HBuilderX (3.4.10+)`、`小程序不支持`|
+|browseVersion  | 浏览器版本、webview 版本 |`HBuilderX (3.4.10+)`、`小程序不支持`|
 |osName  |ios、android、windows、mac、linux |`HBuilderX (3.4.10+)`|
 |osVersion  |操作系统版本。如 ios 版本，andriod 版本 |`HBuilderX (3.4.10+)`|
 |osLanguage  |操作系统语言，小程序端与 `version` 相同，H5 与浏览器语言一致 |`HBuilderX (3.4.10+)`|
-|osTheme  |操作系统主题 light、dark。小程序端为小程序主题，H5 端为空 |`HBuilderX (3.4.10+)`|
+|osTheme  |操作系统主题 light、dark。小程序端为小程序主题 |`HBuilderX (3.4.10+)`、`H5 不支持`|
 |hostName  |App、小程序宿主名称，如：`WeChat`、`FeiShu`。H5 端为浏览器名称|`HBuilderX (3.4.10+)`|
 |hostVersion  |App、小程序宿主版本。如：微信版本号。H5 端为浏览器版本 |`HBuilderX (3.4.10+)`|
 |hostLanguage  |浏览器语言、小程序宿主语言、app 语言 |`HBuilderX (3.4.10+)`|
-|hostTheme  |App 主题 `light`、`dark`。H5 端为空，小程序端为系统当前主题 |`HBuilderX (3.4.10+)`|
-|hostPackageName  |小程序宿主包名。仅 App 支持，其他平台为空 |`HBuilderX (3.4.10+)`|
+|hostTheme  |App 主题 `light`、`dark`。小程序端为系统当前主题 |`HBuilderX (3.4.10+)`、`H5 不支持`|
+|hostPackageName  |小程序宿主包名。仅 App 支持 |`App (3.4.10+)`|
 
 **Tips**
 - 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
@@ -143,19 +143,7 @@ uni.getSystemInfo({
 ```
 
 ### uni.getSystemInfoSync()
-获取系统信息同步接口。
-
-**同步返回参数说明**
-- 同上getSystemInfo
-
-**Tips**
-- 使用注意同上getSystemInfo
-
-**safeArea 的结构**
-- 同上getSystemInfo
-
-**safeAreaInsets 的结构**
-- 同上getSystemInfo
+获取系统信息同步接口。`同上getSystemInfo`。
 
 **示例**
 

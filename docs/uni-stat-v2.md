@@ -164,12 +164,17 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 5. 运行 uni-admin 项目，在「应用管理」中新增「被统计应用」的记录（appid 等）
 
 ::: warning 注意
+我们建议用户端项目和`uni-admin`项目关联（复用）相同的服务空间，此时如果用户端项目和`uni-admin`项目下，均存在`uni-config-center`的话，务必注意互相覆盖的问题，此时建议单点维护，比如所有配置均在`uni-admin`项目下的`uni-config-center`中完成。
+:::
+
+
+**老项目升级**
+
 若你想复用老的`uni-admin`项目，请手动对比新老项目差异，将uni统计新增云函数及统计页面复制到老的uni统计项目中，主要包括：
 - 云函数：`uniCloud/cloudfunctions/uni-stat-cron`、`uniCloud/cloudfunctions/uni-stat-receiver`
 - 通用模块：`uniCloud/cloudfunctions/uni-stat`
 - 数据表：`uniCloud/database`目录下相关`schema`文件
 - 统计页面：`pages/uni-stat` 文件夹
-:::
 
 #### 设置定时任务云函数的触发周期
 

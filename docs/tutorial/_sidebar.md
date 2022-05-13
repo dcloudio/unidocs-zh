@@ -34,6 +34,7 @@
   * [SSR 服务端渲染](/tutorial/ssr.md)
   * [前端网页托管](/uniCloud/hosting.md)
 * App 专题
+  * [App使用高斯模糊效果](/tutorial/app-blureffect.md)
   * [nvue 原生渲染](/tutorial/nvue-outline.md)
     * [综述](/tutorial/nvue-outline.md)
     * [样式](/tutorial/nvue-css.md)

@@ -50,10 +50,11 @@ exports.main = async (event, context) => {
 
 ```
 
-注意：
-因为Redis在云函数的内网中，所以
-1. 目前Redis仅支持在云函数中访问，客户端不能直接访问。
-2. 目前Redis不支持本地运行，需要把云函数上传到服务空间后才能使用。
+## redis本地运行@local-function
+
+> 新增于 HBuilderX 3.4.10
+
+因为Redis在云函数的内网中，所以只能在云端云函数中访问，而不能在本地云函数中访问。每次调试redis相关功能需要不断的上传云函数，严重影响开发效率。自HBuilderX 3.4.10起，本地云函数可以通过clientDB代理访问云端Redis，无需任何配置自HBuilderX 3.4.10起自动生效。如果你在本地调用云端Redis的话会在clientDB的日志内看到`HBuilderX运行调试Redis的代理请求`字样。
 
 ## 数据类型@data-type
 

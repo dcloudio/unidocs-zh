@@ -62,6 +62,10 @@ cloudfunctions
   └─user-config-test // 引用user-utils的云函数
 ```
 
+**注意**
+
+- 如需在不同项目使用同一服务空间，请务必注意两个项目的uni-config-center在上传时会互相覆盖。建议将云端代码放在同一个项目内，其他项目关联存放云端代码的项目的服务空间。
+
 ## 简单示例
 
 以上述目录结构为例，在云函数`user-config-test`内获取user-utils配置目录下的配置内容，示例代码如下

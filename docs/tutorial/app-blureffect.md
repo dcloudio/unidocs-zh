@@ -1,4 +1,4 @@
-### TabBar 使用高斯模糊效果
+### tabBar 使用高斯模糊效果
 <a id="tabbar"/>
 
 HBuilderX 从 2.4.4 版本开始，uni-app iOS 端 TabBar 支持高斯模糊效果（毛玻璃效果）。
@@ -190,9 +190,9 @@ height: var(--window-bottom);
 ```
 
 
-<a id="title"/>
+<a id="navigationbar"/>
 
-### navigationBar 使用高斯模糊效果  
+### navigation-bar 使用高斯模糊效果  
 HBuilderX 从 2.4.4 版本开始，uni-app iOS 端 navigationBar 支持高斯模糊效果（毛玻璃效果）。
 HBuilderX 从 3.4.10 版本开始，uni-app Android 端 navigationBar 支持高斯模糊效果（毛玻璃效果）。
 

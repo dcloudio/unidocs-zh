@@ -1,8 +1,9 @@
-### tabBar 使用高斯模糊效果
 <a id="tabbar"/>
 
-HBuilderX 从 2.4.4 版本开始，uni-app iOS 端 TabBar 支持高斯模糊效果（毛玻璃效果）。
-HBuilderX 从 3.4.10 版本开始，uni-app Android 端 TabBar 支持高斯模糊效果（毛玻璃效果）。
+### tabBar 使用高斯模糊效果  
+
+> HBuilderX 从 2.4.4 版本开始，uni-app iOS 端 TabBar 支持高斯模糊效果（毛玻璃效果）  
+> HBuilderX 从 3.4.10 版本开始，uni-app Android 端 TabBar 支持高斯模糊效果（毛玻璃效果）  
 
 下面介绍一下如何使用高斯模糊效果，和一些注意事项。
 
@@ -193,8 +194,8 @@ height: var(--window-bottom);
 <a id="navigationbar"/>
 
 ### navigation-bar 使用高斯模糊效果  
-HBuilderX 从 2.4.4 版本开始，uni-app iOS 端 navigationBar 支持高斯模糊效果（毛玻璃效果）。
-HBuilderX 从 3.4.10 版本开始，uni-app Android 端 navigationBar 支持高斯模糊效果（毛玻璃效果）。
+> HBuilderX 从 2.4.4 版本开始，uni-app iOS 端 navigationBar 支持高斯模糊效果（毛玻璃效果）  
+> HBuilderX 从 3.4.10 版本开始，uni-app Android 端 navigationBar 支持高斯模糊效果（毛玻璃效果）  
 
 #### 使用方法  
 页面 style --> app-plus --> titleNView中添加 `blurEffect` 属性启用高斯模糊效果
@@ -232,7 +233,8 @@ HBuilderX 从 3.4.10 版本开始，uni-app Android 端 navigationBar 支持高�
 <a id="view"/>
 
 ### nvue view组件使用高斯模糊效果  
-HBuilderX 从 2.4.8+ 版本开始，IOS 端 nvue view组件支持高斯模糊效果（毛玻璃效果）。
+> HBuilderX 从 2.4.8+ 版本开始，iOS 端 nvue view组件支持高斯模糊效果（毛玻璃效果）  
+> Android平台暂不支持  
 
 **效果**  
 ![](https://native-res.dcloud.net.cn/images/uniapp/blureffect/nvue.png)

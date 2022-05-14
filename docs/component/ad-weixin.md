@@ -17,9 +17,9 @@ uniAD 支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uniAD提供
 2. 组件设置了 `adpid` 属性，被编译为 `uniad`，见下文的介绍
 3. 组件设置了 `adpid` 和 `unit-id` 属性，被编译为 `uniad`，见下文的介绍
 
-## uniad组件
+## uniad组件介绍
 
-`uniad`是`uni-app`框架的内置的组件，`uniad`组件同时支持`uniAD`广告和微信原生广告，先请求uniAD，如果已开通直接使用否者切换为微信的广告，这个过程会有3秒的延时
+`uniad`是`uni-app`框架的内置的组件，`uniad`组件同时支持`uniAD`广告和微信原生广告，`adpid`优先级高于`unit-id`，如果没有开通`uniad`或网络失败则切换为微信的广告，这个过程会有3秒的延时
 
 `uniad`组件依赖uniAD提供的微信小程序插件和腾讯提供的珊瑚广告插件
 

@@ -2,12 +2,17 @@
 
 > 2021年11月18日，腾讯云和阿里云均支持
 
-redis是一个内存中的数据结构存储系统，在项目中通常作为数据库的中间件来搭配使用。它的核心优势是快，相对于直接从MongoDB等数据库的磁盘存储中读写数据，操作Redis内存数据库在速度上会有质的提升。但它只能存储key/value格式的数据，也不方便做复杂的查询。所以Redis一般需要与MongoDB搭配使用。
+Redis是一个基于key/value的内存数据库。在项目中通常作为MongoDB等磁盘数据库的补充来搭配使用。
+相对于磁盘数据库，Redis的核心优势是快。因为操作内存要比磁盘快的多，并且Redis只支持key/value数据，读写都很快。但Redis没有磁盘数据库丰富的查询等功能。
+
+Redis一般需要与MongoDB搭配使用，MongoDB做主存储，Redis缓存部分数据应对高性能需求场景。
+
+在uniCloud中，Redis还有一个特点，是它按容量和使用时长计费，访问它不耗费云数据库的读写次数。
 
 Redis常见使用场景：
-- 缓存高频数据，比如首页列表
-- 秒杀抢购
-- ip黑名单屏蔽
+- 缓存高频数据，比如首页列表、banner列表、热门排行。MongoDB数据更新后同步给Redis，这些频繁的请求就不再查询MongoDB数据库
+- 秒杀、抢购。短时间大量并发可能发生超卖，此时必须使用Redis解决
+- ip黑名单屏蔽。希望较快封杀某些ip请求，缓解MongoDB数据库压力。
 - 其他数据库操作速度不满足需求的场景
 
 ## 开通Redis扩展库@buy
@@ -15,6 +20,8 @@ Redis常见使用场景：
 参考[开通redis](uniCloud/redis-buy.md)
 
 ## 为云函数启用redis扩展库@use-in-function
+
+Redis的sdk体积不小，没有内置在云函数中。在需要Redis的云函数里，开发者需手动配置Redis扩展库。（Redis没有免费试用，需购买才可以使用）
 
 - HBuilderX 3.4起提供了可视化界面，新建云函数/云对象时可选择Redis扩展库，或者在已有的云函数目录点右键选择“管理公共模块或扩展库依赖”
 
@@ -35,6 +42,8 @@ Redis常见使用场景：
 }
 ```
 
+## 云函数中调用Redis
+
 ```js
 // 云函数中调用Redis示例
 'use strict';
@@ -50,19 +59,19 @@ exports.main = async (event, context) => {
 
 ```
 
-## redis本地运行@local-function
+## Redis本地运行@local-function
 
-> 新增于 HBuilderX 3.4.10
+> HBuilderX 3.4.10 起支持
 
-因为Redis在云函数的内网中，所以只能在云端云函数中访问，而不能在本地云函数中访问。每次调试redis相关功能需要不断的上传云函数，严重影响开发效率。自HBuilderX 3.4.10起，本地云函数可以通过clientDB代理访问云端Redis，无需任何配置自HBuilderX 3.4.10起自动生效。如果你在本地调用云端Redis的话会在clientDB的日志内看到`HBuilderX运行调试Redis的代理请求`字样。
+因为Redis在云函数的内网中，所以只能在云端云函数中访问，而不能在本地云函数中访问。每次调试Redis相关功能需要不断的上传云函数，严重影响开发效率。自HBuilderX 3.4.10起，本地云函数可以通过云端内置代理访问云端Redis。如果在本地调用云端Redis的话会在云函数日志内看到`HBuilderX运行调试Redis的代理请求`字样。
 
 ## 数据类型@data-type
 
-redis中数据被存储为key-value形式，key均为字符串，value有以下几种类型
+Redis中数据被存储为key-value形式，key均为字符串，value有以下几种类型
 
 ### 字符串String
 
-字符串类型，这是最简单Redis类型。需要注意的是redis并没有number类型，如果存入number类型的数据最终也会转为string类型。
+字符串类型，这是最简单Redis类型。需要注意的是Redis并没有number类型，如果存入number类型的数据最终也会转为string类型。
 
 ```js
 await redis.set('string-key', 1) // 设置string-key的值为字符串"1"
@@ -153,13 +162,13 @@ await redis.set(key: string, value: string, mode: string, duration: number, flag
 
 **入参说明**
 
-|参数			|说明											|必填	|说明																	|
-|--				|--												|--		|--																		|
-|key			|键												|是		|																			|
-|value		|值												|是		|																			|
-|flag			|区分状态进行SET					|否		|NX：不存在时才设置，EX：存在时才设置	|
-|mode			|标识duration的单位				|否（duration不为空时必填）		|EX：单位秒，PX：单位毫秒							|
-|duration	|过期时间，到期后自动删除	|否		|																			|
+|参数		|说明						|必填						|说明									|
+|--			|--							|--							|--										|
+|key		|键							|是							|										|
+|value		|值							|是							|										|
+|duration	|过期时间，到期后自动删除	|否							|										|
+|mode		|标识duration的单位			|否（duration不为空时必填）	|EX：单位秒，PX：单位毫秒				|
+|flag		|区分状态进行SET			|否							|NX：不存在时才设置，XX：存在时才设置	|
 
 **返回值**
 
@@ -226,7 +235,7 @@ await redis.setnx(key: string, value: string)
 **示例**
 
 ```js
-await redis.setnx('string-key', 'value')  // 值设置为value，过期时间10秒
+await redis.setnx('string-key', 'value')  // 键string-key不存在时将值设置为'value'
 ```
 
 ### mget

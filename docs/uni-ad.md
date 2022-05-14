@@ -23,5 +23,14 @@
 3. App端打包后生效，打包时必须选择要集成的广告SDK（穿山甲、广点通、360联盟、快手等渠道）。
 4. H5端和微信小程序端，在uniAD后台申请广告成功后，按照开发文档直接开发部署即可展示广告。
 
+### 广告相关组件
+
+- [信息流(Banner)](https://uniapp.dcloud.net.cn/component/ad.html)
+- [激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)
+- [全屏视频广告](https://uniapp.dcloud.net.cn/component/ad-fullscreen-video.html)
+- [插屏广告](https://uniapp.dcloud.net.cn/component/ad-interstitial.html)
+- [沉浸视频流广告](https://uniapp.dcloud.net.cn/component/ad-draw.html)
+- [短视频内容联盟组件](https://uniapp.dcloud.net.cn/component/ad-content-page.html)
+- [互动游戏](https://uniapp.dcloud.net.cn/api/a-d/interactive.html)
 
 更多信息参考 [uni-AD 广告联盟](https://uniad.dcloud.net.cn)

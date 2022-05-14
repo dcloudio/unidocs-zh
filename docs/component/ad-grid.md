@@ -113,3 +113,5 @@ Grid 广告在创建后会自动拉取广告。开发者可以通过 ad 组件�
   <ad unit-id="xxxx" ad-type="grid" grid-count="8"></ad>
 </view>
 ```
+
+注意：微信已下线 Grid 广告，请使用自定义模板广告替代

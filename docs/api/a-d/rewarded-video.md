@@ -1,26 +1,7 @@
 **激励视频广告**
 
-### 简介
 
-激励视频广告，是cpm收益最高的广告形式。
-
-手机用户观看几十秒视频广告，在广告播放完毕后可获得应用开发商提供的奖励，而应用开发商则可以从广告平台获取不菲的广告收入。
-
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/23fcff30-441f-11eb-b680-7980c8a877b8.png)
-
-与开屏、信息流等广告变现方式不同，激励视频收益高、但场景设计和编程工作量也较高。
-
-激励视频广告的场景灵活多样：
-- 游戏内看广告复活、看广告拿高级道具
-- 合成类游戏，看广告获得道具，比如各种养龙、养凤凰、养牛、养蟹......
-- 走路赚钱、看短视频赚钱、猜歌赚钱等应用也非常多
-- 网赚应用中，做各种任务赚钱，或者想要接赚钱的任务，前提是观看激励视频
-- 增值内容消费，比如小说、电影看一半，剩下的需要看广告后才能继续
-- 区块链应用融合激励视频，比如看广告提高收益或提高挖矿成功率
-
-激励视频还经常和邀请裂变结合在一起，应用开发者为用户设计邀请好友的奖励，让用户有动力邀请更多用户使用这个应用。
-
-激励视频是造富神器。行业经常出现几个人的团队，月收入百万的奇迹。均是因为良好的设计了激励场景和裂变模型。
+[激励视频广告介绍](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)
 
 
 **平台差异说明**
@@ -29,19 +10,10 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（2.5.11+）|x|√|x|x|√（1.57.0+）|x|√（0.1.26+）|√|x|
 
-- app端的广告源由腾讯优量汇、头条穿山甲、快手等广告联盟提供，DCloud负责聚合
-- 小程序端的广告由小程序平台提供
 
 **开通配置广告**
 
-开通广告步骤：
-1. 开通广告
-需在广告平台后台操作：
-    * App平台：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
-    * 小程序平台：在各自的小程序管理后台操作。
-2. 申请广告位id
-在各位后台申请广告位id
-3. App端打包后生效，打包时必须选择要集成的广告SDK（优量汇、穿山甲、快手）。
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 
 
 激励视频广告组件是原生组件，层级最高，会覆盖在普通前端组件上。
@@ -760,6 +732,7 @@ exports.main = async (event, context) => {
 ```
 
 
+
 #### 安全注意
 
 由于激励视频对应着用户奖励，可能会遇到恶意刷激励奖励但实际上并不看广告的情况。此时广告平台不给结算，但开发者却可能把激励送出去。
@@ -799,29 +772,6 @@ exports.main = async (event, context) => {
 var rewardedVideoAd = uni.createRewardedVideoAd(Options);
 var provider = rewardedVideoAd.getProvider();
 ```
-
-
-### app平台错误码
-
-code|message|
-:-|:-|
--5001|广告位标识adpid为空，请传入有效的adpid
--5002|无效的广告位标识adpid，请使用正确的adpid
--5003|未开通广告，请在广告平台申请并确保已审核通过
--5004|无广告模块，打包时请配置要使用的广告模块
--5005|广告加载失败，请过段时间重新加载，否则可能触发系统策略导致流量收益下降
--5006|广告未加载完成无法播放，请加载完成后再调show播放
--5007|无法获取广告配置数据，请尝试重试
--5008|广告已过期，请重新加载数据
--5100|其他错误，聚合广告商内部错误
-
-
-**@error 详细错误码**
-
-- App端聚合的穿山甲(iOS)：[错误码](https://ad.oceanengine.com/union/media/union/download/detail?id=16&docId=5de8d574b1afac00129330d5&osType=ios)
-- App端聚合的穿山甲(Android)：[错误码](https://ad.oceanengine.com/union/media/union/download/detail?id=4&docId=5de8d9b925b16b00113af0ed&osType=android)
-- App端聚合的广点通(iOS)：[错误码](https://developers.adnet.qq.com/doc/ios/union/union_debug#%E9%94%99%E8%AF%AF%E7%A0%81)
-- App端聚合的广点通(Android)：[错误码](https://developers.adnet.qq.com/doc/android/union/union_debug#sdk%20%E9%94%99%E8%AF%AF%E7%A0%81)
 
 
 ### manifest 配置@manifest
@@ -867,14 +817,3 @@ code|message|
 	}
 }
 ```
-
-### 注意事项
-- iOS平台配置应用使用广告标识（IDFA）详见：[https://ask.dcloud.net.cn/article/36107](https://ask.dcloud.net.cn/article/36107)
-- 测试期间请使用测试 `adpid`，参考测试代码，如果无法显示换个时间再试
-- 多次调用 `RewardedVideoAd.onLoad()`、`RewardedVideoAd.onError()`、`RewardedVideoAd.onClose()` 等方法监听广告事件会产生多次事件回调，建议在创建广告后监听一次即可。
-- 为避免滥用广告资源，目前每个用户每天可观看激励式视频广告的次数有限，建议展示广告按钮前先判断广告是否拉取成功。
-- App平台，建议每个广告商每个设备每天调用次数不超过`15`，中间要有间隔时间，否则可能触发系统的反作弊策略导致流量收益下降。
-
-### 案例参考
-- 项目源码《养猫合成游戏》，拿走就能用，[https://ext.dcloud.net.cn/plugin?id=4095](https://ext.dcloud.net.cn/plugin?id=4095)
-- 项目源码《有奖猜歌》，拿走就能用，[https://ext.dcloud.net.cn/plugin?id=4826](https://ext.dcloud.net.cn/plugin?id=4826)

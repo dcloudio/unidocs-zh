@@ -1,8 +1,6 @@
 ### 插屏广告
 
-插屏广告组件是由客户端原生的图片、文本、视频控件组成的；插屏广告与信息流或横幅广告相比展现尺寸更大，同样能够满足您对大量曝光和用户转化的需求。
-
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/5dc1ce6b-b786-4175-aec5-dd2ab4a5e34c.png)
+[插屏广告介绍](https://uniapp.dcloud.net.cn/component/ad-interstitial.html)
 
 **平台差异说明**
 
@@ -10,19 +8,10 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |App 3.1.10+|x|√|x|x|x|√|x|x|
 
-- app端的广告源由腾讯优量汇、头条穿山甲、快手等广告联盟提供，DCloud负责聚合
-- 小程序端的广告由小程序平台提供
-
 **开通配置广告**
 
-开通广告步骤：
-1. 开通广告
-需在广告平台后台操作：
-    * App平台：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
-    * 小程序平台：在各自的小程序管理后台操作。
-2. 申请广告位id
-在各位后台申请广告位id
-3. App端打包后生效，打包时必须选择要集成的广告SDK（优量汇、穿山甲、快手）。
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+
 
 ### 语法
 

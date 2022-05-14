@@ -18,14 +18,9 @@
 
 **开通配置广告**
 
-开通广告步骤：
-1. 开通广告
-需在广告平台后台操作：
-    * App平台：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
-2. 申请广告位id
-在各位后台申请广告位id
-3. 在页面合适位置编写代码，放置`ad-content-page`组件，配上广告位adpid
-4. App端打包后生效，打包时必须选择快手内容联盟。
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+
+注意：打包时必须选择快手内容联盟。
 
 **属性说明**
 

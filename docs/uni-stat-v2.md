@@ -725,7 +725,7 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 :::
 
 
-### 常见问题
+## 常见问题
 
 **1. 启动uni统计，何时可以查看报表数据？**
 
@@ -767,4 +767,6 @@ uni.report('购买',{
 
  -->
 
+**4. 如何创建或授权`uni统计`运营管理员账号**
 
+答：参考[uni-admin 给系统创建多个登录账户并设置不同的权限](https://uniapp.dcloud.net.cn/uniCloud/admin.html#mutiladmin)

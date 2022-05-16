@@ -7,7 +7,7 @@
 ### uni应用：
 + app-plus节点 --> distribute节点 --> plugins节点 --> push节点 --> igexin节点（或者unipush节点） --> icons节点 --> small节点下配置
 
-** UniPush 则把igexin节点修改为 unipush 即可 **
+**UniPush 则把igexin节点修改为 unipush 即可**
 
 ### 具体配置信息说明如下：
 ```

@@ -8,7 +8,7 @@
 * 云函数
   * [开发云函数](uniCloud/cf-functions.md)
   * [云对象](uniCloud/cloud-obj.md)
-  * [云函数公共模块](uniCloud/cf-common.md)
+  * [云公共模块](uniCloud/cf-common.md)
   * [日志输出](uniCloud/cf-logger.md)
   * [定时触发](uniCloud/trigger.md)
   * [云函数URL化](uniCloud/http.md)
@@ -47,8 +47,8 @@
   * [费用说明](uniCloud/redis-buy.md)
   * [开发文档](uniCloud/redis.md)
 * [日志输出](uniCloud/cf-logger.md)
-* [客户端sdk](uniCloud/client-sdk.md)
-* 增强开源库
+* [客户端API](uniCloud/client-sdk.md)
+* 重要开源库
   * [uni-config-center 配置中心](uniCloud/uni-config-center.md)
   * [uni-starter](uniCloud/uni-starter.md)
   * [uni-admin](uniCloud/admin.md)

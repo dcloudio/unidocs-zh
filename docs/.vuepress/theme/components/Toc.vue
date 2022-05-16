@@ -161,8 +161,4 @@
 	  for i in range(3, 6)
 	    .vuepress-toc-h{i} a
 	      padding-left 1rem * (i - 2)
-	// for vuepress-toc
-	@media (min-width: 1300px)
-	  .vuepress-toc
-	    display block
 </style>

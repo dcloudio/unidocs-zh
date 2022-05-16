@@ -83,9 +83,13 @@ main.page
 	padding-bottom 0px
 	padding-right 0px
 	
-	@media (min-width: 1300px)
+	@media (min-width: $vuepress-display-min-width)
 		&
 			padding-right $vuepress-toc-width
+
+@media (min-width: $vuepress-display-min-width)
+	.vuepress-toc
+		display block !important
 
 {$contentClass}:not(.custom) 
 	> *:first-child

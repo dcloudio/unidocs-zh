@@ -47,7 +47,7 @@ exports.main = async (event, context) => {
 ```js
 'use strict';
 exports.main = async (event, context) => {
-	const dbJQL = uniCloud.databaseForJQL({ // 获取JQL database引用，此处需要传入云函数的event和context，必传
+	const dbJQL = uniCloud.databaseForJQL({ // 获取JQL database引用，此处需要传入云函数的event和context
 		event,
 		context
 	})
@@ -63,7 +63,25 @@ exports.main = async (event, context) => {
 };
 ```
 
-**注意**
+## 云对象中使用@use-in-object
+
+> 新增于 HBuilderX 3.4.10
+
+云对象中无法获取`event`和`context`，为方便在云对象中使用jql扩展，自HBuilderX 3.4.10起，`uniCloud.databaseForJQL`方法接收云对象`clientInfo`作为参数
+
+**示例**
+
+```js
+module.exports = {
+	addTodo (title, content) {
+		const dbJQL = uniCloud.databaseForJQL({ // 获取JQL database引用，此处需要传入云对象的clientInfo
+			clientInfo: this.getClientInfo()
+		})
+	}
+}
+```
+
+## 注意事项
 
 - JQL扩展依赖`uni-id`公共模块
 - 启用了JQL扩展的云函数在本地调试时会自动使用本地schema、action、validateFunction以及uni-id公共模块

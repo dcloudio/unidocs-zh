@@ -411,7 +411,7 @@ exports.main = async (event, context) => {
 
 ## 扩展库@extension
 
-uniCloud的api中，有些api对应的实现，其代码体积较大，且这些功能并不是每一个云函数都会使用。为了方面开发者控制云函数的体积，设计了`uniCloud扩展库`的概念。
+uniCloud的api中，有些api对应的实现，其代码体积较大，且这些功能并不是每一个云函数都会使用。为了方便开发者控制云函数的体积，设计了`uniCloud扩展库`的概念。
 
 开发者可以对云函数目录点右键，管理公共模块和扩展库依赖，在其中选择要加载的扩展库。这个可视化界面对应的数据在云函数目录下的 package.json 内的`extensions`字段下。
 

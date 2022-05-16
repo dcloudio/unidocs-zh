@@ -1,31 +1,62 @@
-## uniAD支持微信小程序广告
+## uni-ad支持微信小程序广告
 
 3.4.10+ 支持
 
+在微信小程序上，有2种广告类型：
+1. DCloud的uni-ad广告（简称uni-ad广告）
+2. 微信小程序自带的流量主广告（简称wx广告）
 
-## 信息流广告(Banner)
+这两者的区别是：
+1. 申请门槛
+uni-ad的申请门槛较低，对初创者更友好；微信申请流量主需要小程序日活过千
+2. 全端支持
+uni-ad可以一套代码全端变现，包括app、web、微信小程序；wx广告仅支持微信小程序
+3. 广告类型
+两者均支持banner/信息流、激励视频、插屏。wx广告多支持一个开屏广告
+4. 收益比较
+不同小程序cpm都不同，需要开发者自己测试比较
+5. 安全防护
+uni-ad内置了安全防护策略，减少广告被刷风险
+6. 开通方式
+uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)申请，开发者与DCloud开票结算；而wx广告在微信小程序后台申请，开发者与微信开票结算
+7. 代码写法
+两者在开发时，都使用相同的组件，比如`<ad>`组件、`<ad-rewarded-video>`组件，但uni-ad的组件属性是adpid（广告位id的缩写），微信小程序的组件属性是unit-id。
 
-微信小程序平台支持信息流(Banner)广告组件 `<ad unit-id=""></ad>`，由微信提供
+## uni-ad的开发者使用流程
 
-uniAD 支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uniAD提供
+1. 在[uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)申请开通广告
+2. 在[uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)获取广告位id（adpid）
+3. 在小程序插件配置中引入uni-ad微信小程序插件和腾讯珊瑚广告插件 <!-- 注 这里需要详细说明怎么做-->
+4. 在前端页面的合适位置写上广告组件`<ad adpid=""></ad>`
+<!-- 注 是否是发布生效，还是运行也生效，微信模拟器是否生效还是真机生效，这些都要清楚 -->
+## 不同广告类型的开发文档
+- banner/信息流广告
 
-3.4.10 之前的版本`ad`组件运行到微信小程序使用微信提供的广告组件
+详细开发文档地址：[https://uniapp.dcloud.io/component/ad](https://uniapp.dcloud.io/component/ad)
 
-3.4.10+ 以后的版本调整如下
+- 激励视频广告
 
-1. 组件仅设置 `unit-id`，使用微信提供的ad组件，逻辑不变
-2. 组件设置了 `adpid` 属性，被编译为 `uniad`，见下文的介绍
-3. 组件设置了 `adpid` 和 `unit-id` 属性，被编译为 `uniad`，见下文的介绍
+详细开发文档地址：[https://uniapp.dcloud.io/component/ad-rewarded-video](https://uniapp.dcloud.io/component/ad-rewarded-video)
 
-## uniad组件介绍
+- 插屏广告
 
-`uniad`是`uni-app`框架的内置的组件，`uniad`组件同时支持`uniAD`广告和微信原生广告，`adpid`优先级高于`unit-id`，如果没有开通`uniad`或网络失败则切换为微信的广告，这个过程会有3秒的延时
+详细开发文档地址：[https://uniapp.dcloud.io/component/ad-interstitial](https://uniapp.dcloud.io/component/ad-interstitial)
 
-`uniad`组件依赖uniAD提供的微信小程序插件和腾讯提供的珊瑚广告插件
+## adpid和unit-id详解
 
-如果想在微信上仅使用微信的广告，App 或 Web 使用 uniAD 可使用条件编译
+`<ad>`（banner/信息流）、`<ad-rewarded-video>`（激励视频）、`<ad-interstitial>`（插屏）是`uni-app`框架的内置的3个广告组件。
 
-条件编译示例
+其中`<ad>`组件同时支持`uni-ad`广告和wx广告，而其他2个广告组件仅支持uni-ad广告。开发wx广告的激励视频和插屏需要通过js api而不是组件方式。
+
+在`<ad>`组件上可以同时写adpid和unit-id，区别如下：
+
+- `<ad adpid=""></ad>`，uni-ad广告（uni-app 3.4.10+版）
+- `<ad unit-id=""></ad>`，wx广告，unit-id需在微信小程序后台申请
+
+`adpid`和`unit-id`可以同时设置。`adpid`优先级高于`unit-id`，如果没有开通`uni-ad`或网络失败则切换为wx广告，这个过程会有3秒的间隔
+
+**例子：**
+如果想在微信上仅使用微信的广告，App 或 Web 使用 uni-ad 可使用条件编译，如下
 
 ```html
 <!-- #ifdef MP-WEIXIN -->
@@ -36,14 +67,3 @@ uniAD 支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uniAD提供
 <!-- #endif -->
 ```
 
-
-
-新增支持激励视频广告和插屏广告
-
-## 微信小程序激励视频广告
-
-文档地址：[https://uniapp.dcloud.io/component/ad-rewarded-video](https://uniapp.dcloud.io/component/ad-rewarded-video)
-
-## 微信小程序插屏广告
-
-文档地址：[https://uniapp.dcloud.io/component/ad-interstitial](https://uniapp.dcloud.io/component/ad-interstitial)

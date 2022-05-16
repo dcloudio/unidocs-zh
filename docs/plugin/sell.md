@@ -44,11 +44,15 @@ uniCloud源码授权版需在用户及插件作者双方签署合同后方可购
 
 ## 账单结算
 
-DCloud插件市场每月自动给插件作者进行结算，无需插件作者手动申请。插件作者可登录插件市场后台，查看[月度账单](https://ext.dcloud.net.cn/manage/payment)：
+DCloud插件市场在每月1日出上月的月度账单，待提现的账单累计金额达到100元以上时可提现，如有多笔待提现账单可针对多笔账单进行合并提现。插件作者可登录插件市场后台，查看[月度账单](https://ext.dcloud.net.cn/manage/payment)：
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/3ad69162-8921-4d21-822d-1e0680bfd8c4.png)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/c01c6588-17e8-4ea2-ad76-7ca80dfce79b.png)
 
 DCloud会收取账单金额的15%做为服务费，然后将剩余款项支付给插件作者，具体参见[插件作者协议](https://ext.dcloud.net.cn/manage/profile)。
+
+申请提现后，如果账号认证为企业认证，提供发票的途径在原有的线下邮寄和发送邮件基础上，新增了电子发票上传功能，插件作者可在[提现记录](https://ext.dcloud.net.cn/manage/payment-detail)中自行上传，电子发票只支持`pdf格式`：
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/95d80128-2345-4f6e-87df-05fc8113af00.png)
 
 由于DCloud要向插件作者支付款项，故需插件作者提供对应金额的发票给DCloud公司，开票信息及付款规则如下：
 

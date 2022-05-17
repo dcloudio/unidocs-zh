@@ -75,6 +75,7 @@ for优先级高于内部控件，内部有多个控件的时候默认触发第�
 ```
 > Script
 ```vue
+<script>
 export default {
     data() {
         return {
@@ -127,6 +128,7 @@ export default {
         }
     }
 }
+</script>
 ```
 :::
  

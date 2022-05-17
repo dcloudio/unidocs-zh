@@ -179,6 +179,7 @@
 ```
 > Script
 ```vue
+<script>
 export default {
     data() {
         const currentDate = this.getDate({
@@ -228,6 +229,7 @@ export default {
         }
     }
 }
+</script>
 ```
 :::
 

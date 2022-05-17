@@ -32,7 +32,7 @@
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/slider/slider
 > Template
-```vue
+```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
     <view>
@@ -59,9 +59,7 @@
         </view>
     </view>
 </template>
-```
-> Script
-```vue
+<script>
 export default {
     data() {
         return {}
@@ -72,7 +70,7 @@ export default {
         }
     }
 }
-
+</script>
 ```
 :::
 

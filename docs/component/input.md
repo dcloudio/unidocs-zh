@@ -209,6 +209,7 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 ```
 > Script
 ```vue
+<script>
 export default {
     data() {
         return {
@@ -235,6 +236,7 @@ export default {
         }
     }
 }
+</script>
 ```
 :::
 

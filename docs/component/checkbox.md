@@ -19,7 +19,7 @@
 |checked|Boolean|false|当前是否选中，可用来设置默认选中|
 |color|Color||checkbox的颜色，同css的color|
 
-**示例**
+**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/checkbox/checkbox)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 

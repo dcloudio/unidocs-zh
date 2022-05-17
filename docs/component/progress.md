@@ -20,26 +20,77 @@
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/progress/progress)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
-```html
+
+:::preview https://hellouniapp.dcloud.net.cn/pages/component/progress/progress
+
+> Template
+```vue
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
 	<view>
 		<view class="uni-padding-wrap uni-common-mt">
 			<view class="progress-box">
-				<progress percent="20" show-info stroke-width="3" />
+				<progress :percent="pgList[0]" show-info stroke-width="3" />
 			</view>
 			<view class="progress-box">
-				<progress percent="40" active stroke-width="3" />
+				<progress :percent="pgList[1]" stroke-width="3" />
+				<uni-icons type="close" class="progress-cancel" color="#dd524d"></uni-icons>
 			</view>
 			<view class="progress-box">
-				<progress percent="60" active stroke-width="3" backgroundColor="#999"/>
+				<progress :percent="pgList[2]" stroke-width="3" />
 			</view>
 			<view class="progress-box">
-				<progress percent="80" activeColor="red" active stroke-width="8" />
+				<progress :percent="pgList[3]" activeColor="#10AEFF" stroke-width="3" />
+			</view>
+			<view class="progress-control">
+				<button type="primary" @click="setProgress">设置进度</button>
+				<button type="warn" @click="clearProgress">清除进度</button>
 			</view>
 		</view>
 	</view>
 </template>
 ```
+> Script
+```vue
+<script>
+export default {
+		data() {
+			return {
+				pgList: [0, 0, 0, 0]
+			}
+		},
+		methods: {
+			setProgress() {
+				this.pgList = [20, 40, 60, 80]
+			},
+			clearProgress() {
+				this.pgList = [0, 0, 0, 0]
+			}
+		}
+	}
+</script>
+```
+> Style
+```vue
+<style>
+	.progress-box {
+		display: flex;
+		height: 50rpx;
+		margin-bottom: 60rpx;
+	}
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/43f66da0-4f30-11eb-b997-9918a5dda011.png)
+	.uni-icon {
+		line-height: 1.5;
+	}
+
+	.progress-cancel {
+		margin-left: 40rpx;
+	}
+
+	.progress-control button {
+		margin-top: 20rpx;
+	}
+</style>
+```
+:::
+

@@ -47,7 +47,9 @@ mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。
 
 **示例：** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/image/image)
  
-```html
+::: preview
+> Template
+```vue
 <template>
     <view class="page">
         <view class="image-list">
@@ -62,7 +64,9 @@ mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。
     </view>
 </template>
 ```
-```javascript
+> Script
+```vue
+<script>
 export default {
     data() {
         return {
@@ -112,7 +116,10 @@ export default {
         }
     }
 }
+</script>
 ```
+:::
+
 
 原图
 

@@ -88,7 +88,10 @@ nodes 值为 HTML String 时，在组件内部将自动解析为节点列表，�
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/rich-text/rich-text)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
-```html
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/rich-text/rich-text
+> Template
+```vue
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
 	<view class="content">
@@ -112,7 +115,9 @@ nodes 值为 HTML String 时，在组件内部将自动解析为节点列表，�
 	</view>
 </template>
 ```
-```javascript
+> Script
+```vue
+<script>
 export default {
     data() {
         return {
@@ -132,8 +137,8 @@ export default {
     }
 }
 ```
+:::
 
-![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/ef5ba530-4f2f-11eb-bdc1-8bd33eb6adaa.png)
 
 **Tips**
 

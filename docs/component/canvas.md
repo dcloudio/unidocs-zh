@@ -29,7 +29,9 @@
 
 **示例：** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/canvas/canvas)
  
-```html
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/canvas/canvas
+> Template
+```vue
 <template>
 	<view>
 		<canvas style="width: 300px; height: 200px;" canvas-id="firstCanvas" id="firstCanvas"></canvas>
@@ -38,12 +40,11 @@
 	</view>
 </template>
 ```
- 
-```javascript
+> Script
+```vue
 export default {
 	onReady: function (e) {
 		var context = uni.createCanvasContext('firstCanvas')
-
 		context.setStrokeStyle("#00ff00")
 		context.setLineWidth(5)
 		context.rect(0, 0, 200, 200)
@@ -68,6 +69,7 @@ export default {
 	}
 }
 ```
+:::
  
 相关 api：[uni.createCanvasContext](/api/canvas/createCanvasContext)
 

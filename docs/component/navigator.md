@@ -43,6 +43,8 @@
 
 **示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/navigator/navigator)
  
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/navigator/navigator
+
 ```html
 <template>
 	<view>
@@ -61,9 +63,7 @@
 		</view>
 	</view>
 </template>
-```
-
-```javascript
+<script>
 // navigate.vue页面接受参数
 export default {
 	onLoad: function (option) { //option为object类型，会序列化上个页面传递的参数
@@ -71,7 +71,9 @@ export default {
 		console.log(option.name); //打印出上个页面传递的参数。
 	}
 }
+</script>
 ```
+:::
 
 url有长度限制，太长的字符串会传递失败，可使用[窗体通信](https://uniapp.dcloud.io/tutorial/page.html#emit)、[全局变量](https://ask.dcloud.net.cn/article/35021)，或`encodeURIComponent`等多种方式解决，如下为`encodeURIComponent`示例。
 ```html

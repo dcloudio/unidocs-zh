@@ -62,7 +62,10 @@ app-vue上可覆盖的原生组件：`<video>`、`<map>`
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/cover-view/cover-view)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
-```html
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/cover-view/cover-view
+> Template
+```vue
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
 	<view class="page">
@@ -73,6 +76,9 @@ app-vue上可覆盖的原生组件：`<video>`、`<map>`
 		</video>
 	</view>
 </template>
+```
+> Script
+```vue
 <script>
 	export default {
 		data() {
@@ -99,6 +105,9 @@ app-vue上可覆盖的原生组件：`<video>`、`<map>`
 		}
 	}
 </script>
+```
+> Style
+```vue
 <style>
 	.page {
 		display: flex;
@@ -137,3 +146,4 @@ app-vue上可覆盖的原生组件：`<video>`、`<map>`
 	}
 </style>
 ```
+:::

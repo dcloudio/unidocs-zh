@@ -20,6 +20,9 @@
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/view/view)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可快速体验完整示例。
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/view/view
+
 ```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
@@ -47,9 +50,8 @@
     </view>
 </template>
 ```
- 
-![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/113204c0-4f2f-11eb-97b7-0dc4655d6e68.png)
- 
+:::
+
 **Tips**
 
 - 小程序平台如果使用 `<div>` ，编译时会被转换为 `<view>`。

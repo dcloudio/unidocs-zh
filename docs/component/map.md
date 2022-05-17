@@ -211,7 +211,9 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 
 **示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/map/map)
 
-```html
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/map/map
+> Template
+```vue
 <template>
 	<view>
 		<view class="page-body">
@@ -223,8 +225,9 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 	</view>
 </template>
 ```
-
-```javascript
+> Script
+```vue
+<script>
 export default {
 	data() {
 		return {
@@ -247,8 +250,9 @@ export default {
 
 	}
 }
+</script>
 ```
-
+:::
 
 ## App平台地图服务商差异
 

@@ -87,7 +87,9 @@
 
 **示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/video/video)
  
-```html
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/video/video
+> Template
+```vue
 <template>
     <view>
         <view class="uni-padding-wrap uni-common-mt">
@@ -114,8 +116,9 @@
     </view>
 </template>
 ```
- 
-```javascript
+> Script
+```vue
+<script>
 export default {
     data() {
         return {
@@ -164,9 +167,10 @@ export default {
         }
     }
 }
+</script>
 ```
+:::
 
-![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/989ac870-4f2f-11eb-8a36-ebb87efcf8c0.png)
 
 相关api：[uni.createVideoContext](/api/media/video-context?id=createvideocontext)
 

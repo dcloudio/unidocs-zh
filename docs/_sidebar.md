@@ -14,6 +14,8 @@
   * [uni一键登录](univerify.md)
   * [统一推送uniPush](unipush.md)
   * [uni统计](uni-stat.md)
+    * [uni统计1.0](uni-stat-v1.md)
+    * [uni统计2.0](uni-stat-v2.md)
   * [广告变现](uni-ad.md)
   * [统一发行页面](m3w.md)
   * [前端网页托管](uniCloud/hosting.md)

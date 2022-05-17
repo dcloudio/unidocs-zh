@@ -1,3 +1,8 @@
+
+下载地址：[https://ext.dcloud.net.cn/plugin?id=4048](https://ext.dcloud.net.cn/plugin?id=4048)
+
+GitCode 仓库：[https://gitee.com/dcloud/uni-captcha](https://gitee.com/dcloud/uni-captcha)
+
 ## 用途说明
 主要起到人机校验或其他限制调用的作用，如：
 - 防止机器冒充人类做暴力破解

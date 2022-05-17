@@ -148,7 +148,11 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 **input示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/input/input)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
-```html
+
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/input/input
+> Template
+```vue
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
 	<view>
@@ -203,8 +207,8 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 	</view>
 </template>
 ```
- 
-```javascript
+> Script
+```vue
 export default {
     data() {
         return {
@@ -232,8 +236,7 @@ export default {
     }
 }
 ```
- 
-![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/f713b320-4f30-11eb-b680-7980c8a877b8.png)
+:::
 
 
 

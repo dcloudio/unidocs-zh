@@ -14,7 +14,9 @@
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/switch/switch)
  
-```html
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/switch/switch
+> Template
+```vue
 <template>
 	<view>
 		<view class="uni-padding-wrap uni-common-mt">
@@ -38,8 +40,8 @@
 	</view>
 </template>
 ```
- 
-```javascript
+> Script
+```vue
 export default {
     data() {
         return {}
@@ -54,8 +56,8 @@ export default {
     }
 }
 ```
+:::
 
-![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/51f6fb50-4f2f-11eb-b680-7980c8a877b8.png)
 
 示例代码说明：以上示例代码从hello uni-app示例中复制，涉及的css样式在hello uni-app的app.vue和uni.css中
 

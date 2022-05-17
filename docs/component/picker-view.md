@@ -29,8 +29,9 @@
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
-
-```html
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/picker-view/picker-view
+> Template
+```vue
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
     <view>
@@ -50,6 +51,9 @@
         </picker-view>
     </view>
 </template>
+```
+> Script
+```vue
 <script>
     export default {
         data: function () {
@@ -92,6 +96,9 @@
         }
     }
 </script>
+```
+> Style
+```vue
 <style>
 	.picker-view {
 		width: 750rpx;
@@ -105,10 +112,9 @@
 		text-align: center;
 	}
 </style>
-
 ```
+:::
 
-![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/433a97b0-4f30-11eb-b680-7980c8a877b8.png)
 
 **Tips**
 - 微信小程序端，滚动时在iOS自带振动反馈，可在系统设置 -> 声音与触感 -> 系统触感反馈中关闭

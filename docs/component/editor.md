@@ -68,14 +68,18 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 
 **示例代码** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/editor/editor)
 
-```html
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/editor/editor
+> Template
+``` vue
 <template>
 	<view class="container">
 		<editor id="editor" class="ql-container" :placeholder="placeholder" @ready="onEditorReady"></editor>
 		<button type="warn" @tap="undo">撤销</button>
 	</view>
 </template>
-
+``` 
+> Script
+``` vue
 <script>
 	export default {
 		data() {
@@ -101,7 +105,9 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 		}
 	}
 </script>
-
+``` 
+> Style
+``` vue
 <style>
 	.container {
 		padding: 10px;
@@ -118,3 +124,4 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 	}
 </style>
 ```
+:::

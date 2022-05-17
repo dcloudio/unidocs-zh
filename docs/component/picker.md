@@ -126,7 +126,10 @@
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/picker/picker)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
-```html
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/picker/picker
+> Template
+```vue
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
 	<view>
@@ -174,7 +177,8 @@
 	</view>
 </template>
 ```
-```javascript
+> Script
+```vue
 export default {
     data() {
         const currentDate = this.getDate({
@@ -225,8 +229,7 @@ export default {
     }
 }
 ```
-
-![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/42826b40-4f30-11eb-b680-7980c8a877b8.png)
+:::
 
 示例代码说明：以上示例代码从hello uni-app示例中复制，涉及的css样式在hello uni-app的app.vue和uni.css中
 

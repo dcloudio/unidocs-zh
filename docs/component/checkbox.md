@@ -19,10 +19,14 @@
 |checked|Boolean|false|当前是否选中，可用来设置默认选中|
 |color|Color||checkbox的颜色，同css的color|
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/checkbox/checkbox)
+**示例**
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
-```html
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/checkbox/checkbox
+
+> Template
+```vue
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
 	<view>
@@ -69,6 +73,9 @@
 		</view>
 	</view>
 </template>
+```
+> Script
+```vue
 <script>
 	export default {
 		data() {
@@ -118,17 +125,17 @@
 		}
 	}
 </script>
-
+``` 
+> Style
+``` vue
 <style>
 .uni-list-cell {
 	justify-content: flex-start
 }
 </style>
 ```
+:::
  
-
-![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/f4db8b80-4f32-11eb-bdc1-8bd33eb6adaa.png)
-
 
 **注意**
 - checkbox的默认颜色，在不同平台不一样。微信小程序、360小程序是绿色的，字节跳动小程序为红色，其他平台是蓝色的。更改颜色使用color属性。

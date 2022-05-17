@@ -26,9 +26,11 @@ uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.
 
 1. 在[uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)申请开通广告
 2. 在[uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)获取广告位id（adpid）
-3. 在小程序插件配置中引入uni-ad微信小程序插件和腾讯珊瑚广告插件 <!-- 注 这里需要详细说明怎么做-->
+3. 在小程序插件配置中引入uni-ad微信小程序插件和腾讯珊瑚广告插件，参考下面的申请方案
 4. 在前端页面的合适位置写上广告组件`<ad adpid=""></ad>`
-<!-- 注 是否是发布生效，还是运行也生效，微信模拟器是否生效还是真机生效，这些都要清楚 -->
+
+注意：微信小程序平台暂不提供测试广告位，开发期间也可以预览广告效果，以真机效果运行为准
+
 ## 不同广告类型的开发文档
 - banner/信息流广告
 
@@ -67,3 +69,15 @@ uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.
 <!-- #endif -->
 ```
 
+## 微信小程序插件申请
+
+通过以下两种方案申请插件
+
+### 方案一
+
+在 HBuilderX 运行到微信开发者工具，在微信的开发者工具调试控制台会输出申请插件的链接，点击后弹出申请确认框，然后点击 `确定` 按钮
+
+### 方案二
+
+登陆微信公众平台 [https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)，点击左侧栏 `设置`，然后找到顶部页签 `第三方设置`，向下滚动屏幕到 `插件管理`,
+点击 `添加插件` 按钮，搜索 `uniAD` 和 `珊瑚运营平台` 并添加

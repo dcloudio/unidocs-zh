@@ -109,6 +109,9 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/button/button)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
+
+:::preview https://hellouniapp.dcloud.net.cn/pages/component/button/button
+
 ```html
 <!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
 <template>
@@ -134,6 +137,7 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 	</view>
 </template>
 ```
+:::
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/f3edf730-4f32-11eb-8a36-ebb87efcf8c0.png)
 

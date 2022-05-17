@@ -51,7 +51,7 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 
 在项目中打开 `manifest.json` , 选择 `uni统计配置` 项，根据需求，选择开通 `uni统计` ，勾选 `version2` 开启新版统计。
 
-![开启统计](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fa9e12a5-1f11-4b78-9439-93feef9f86e0.png)
+![开启统计](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/14b2b045-3d8e-4535-acad-2e745441c816.png)
 
 #### 全局设置（通过源码视图配置统计）
 

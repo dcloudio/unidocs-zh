@@ -17,7 +17,7 @@ uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源
 
 版本支持：HBuilderX 3.0+
 
-演示地址：[http://hellouniadmin.dcloud.net.cn/#/](http://hellouniadmin.dcloud.net.cn/#/)
+演示地址：[http://hellouniadmin.dcloud.net.cn/admin/](http://hellouniadmin.dcloud.net.cn/admin/)
 
 下载地址：[https://ext.dcloud.net.cn/plugin?id=3268](https://ext.dcloud.net.cn/plugin?id=3268)
 

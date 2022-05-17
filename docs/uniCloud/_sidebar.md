@@ -55,7 +55,7 @@
   * [uni-upgrade-center App升级中心](uniCloud/upgrade-center.md)
   * [unipay 统一支付](uniCloud/unipay.md)
   * [uSearch 云端一体搜索](https://ext.dcloud.net.cn/plugin?id=3851)
-  * [uni-captcha 图形验证码](https://ext.dcloud.net.cn/plugin?id=4048)
+  * [uni-captcha 图形验证码](uniCloud/uni-captcha.md)
   * [uni-sec-check 内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
   * [统一发行页面](https://uniapp.dcloud.io/m3w)
   * [uni-cloud-router](uniCloud/uni-cloud-router.md)

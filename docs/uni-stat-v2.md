@@ -175,8 +175,11 @@ uni统计2.0 是基于 uniCloud 开发的开源、免费统计平台。
 4. 完成其它初始化配置，如：打开`uni-config-center` 配置 `uni-id` 相关秘钥
 5. 运行 uni-admin 项目，在「应用管理」中新增「被统计应用」的记录（appid 等）
 
+
+
 ::: warning 注意
-我们建议用户端项目和`uni-admin`项目关联（复用）相同的服务空间，此时如果用户端项目和`uni-admin`项目下，均存在`uni-config-center`的话，务必注意互相覆盖的问题，此时建议单点维护，比如所有配置均在`uni-admin`项目下的`uni-config-center`中完成。
+- 「连接本地云函数」运行需要在 uni-admin 的 database 文件夹上右键，点击「下载所有DB schema及扩展校验函数」
+- 我们建议用户端项目和`uni-admin`项目关联（复用）相同的服务空间，此时如果用户端项目和`uni-admin`项目下，均存在`uni-config-center`的话，务必注意互相覆盖的问题，此时建议单点维护，比如所有配置均在`uni-admin`项目下的`uni-config-center`中完成。
 :::
 
 

@@ -1,15 +1,14 @@
-> `HBuilderX 3.4.10 +`起支持 `uni统计2.0`
+uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台。
 
-uni统计2.0 是开源、全端、云端一体的统计平台。
+> `HBuilderX 3.4.10 +`起支持
 
 ## 产品特色
 
-
-无需开发，在manifest的uni统计中打勾并发行，在uniCloud服务空间部署[uni-admin](/uniCloud/admin)，即可查看报表，点击体验[uni-admin 在线示例](http://hellouniadmin.dcloud.net.cn/admin/)(该示例的统计对象是示例自身)。
+无需开发，在manifest的 uni统计 中打勾并发行，在[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)服务空间部署[uni-admin](/uniCloud/admin)，即可查看报表。
 
 同时开发者也可以自定义打点数据、自定义展现报表。
 
-相比`uni统计1.0`，`uni统计2.0` 提供更多价值：
+点击体验[在线示例](http://hellouniadmin.dcloud.net.cn/admin/)(该示例的统计对象是示例应用自身)。
 
 **1. 全端**
 
@@ -19,31 +18,53 @@ uni统计2.0 是开源、全端、云端一体的统计平台。
 
 **2. 开源、免费、自由定制**
 
-前端采集数据的 SDK、云端接收数据的云函数、云端跑批统计的云函数、展示统计结果的管理报表，所有这些代码全部开源。
+无论前端采集数据的SDK、云端接收数据的云函数、云端跑批统计的云函数、展示统计结果的报表，所有这些代码全部开源。
 
 前端自定义打点，后端自定义统计维度，自由定制报表，一切都可以灵活定制。
 
 **3. 私有部署、数据自控**
 
-使用传统`saas`类统计产品，所有数据都上报给统计服务厂商。
+使用传统saas类统计产品，所有数据都上报给统计服务厂商。
+
 `uni统计2.0`基于`uniCloud`实现，云函数、统计数据全部托管在开发者自己的服务空间（阿里云或腾讯云自选）中，开发者对自己的统计数据拥有完整的控制权。
 
 **4. 默认功能丰富**
 
-uni统计在底层识别uni-app规范和uniCloud规范，无需开发既有众多丰富功能。
 - 设备统计
 - 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id.html)）
 - 页面统计
 - 新增、活跃、留存、跳出率分析
 - 渠道分析：辅助渠道推广
 - 错误统计和上报：辅助产品质量提升
+- 自定义打点、开源可扩展的报表
 
-**5. 有效的错误统计分析**
+**5. 有效的错误分析**
 
-错误信息更全面，帮助用户精准掌握程序上报的各种错误，包括 App 的崩溃和错误数据，协助开发者快速定位问题，及时解决问题。
+传统统计平台，都没有js错误统计。开发者无法了解到自己的js代码在哪些设备上会报错。
+
+uni统计的错误信息更全面，包括 js前端错误和 App 原生层的崩溃。辅助开发者把应用做的更好。
+
+**6. 更适合uni-app和uniCloud**
+
+uni统计深入uni-app和uniCloud框架底层，提供了众多其他统计平台无法提供的功能：
+- uni-app全端识别，无需对接不同sdk、无需在不同报表中切换和自己累加数据
+- 自动识别uni-app路由，自动采集页面标题（基于navigationBar或uni-title组件）
+- 自动捕获js错误，上报app端原生崩溃日志
+- 兼容uni-app渠道包打包体系，自动识别渠道包
+- 基于uni-id账户体系，自动出具注册用户（不是设备）的新增、活跃、留存报表
+- 兼容uniCloud opendb规范，从服务器端统计各项数据
+
+**7. 开放生态**
+
+uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
+
+**DCloud非常重视数据驱动开发者业务的增长，近期联合专业的大数据服务商<a href="https://www.sensorsdata.cn/" target="_blank">神策</a>和<a href="https://tj.aldwx.com/" target="_blank">阿拉丁</a>共同完善Uni统计2.0的产品模块和生态建设。
+如果你对数据分析有任何需求，欢迎您填写<a href="https://sdmarketing.wjx.cn/vj/h2UFHnx.aspx" target="_blank">需求调研问卷</a>，我们会根据您的宝贵建议，在原有Uni统计产品的基础上，完成迭代更新。**
 
 
-**uni 统计新老版本对比**
+## uni 统计老版升级建议
+
+对于使用uni统计1.0的开发者，推荐尽快升级到uni统计2.0。uni统计1.0将不再更新维护。
 
 |功能|uni统计1.0|uni统计2.0|
 | :-: | :-: | :-: |
@@ -53,8 +74,6 @@ uni统计在底层识别uni-app规范和uniCloud规范，无需开发既有众�
 |uni-id用户统计 |不含|默认包含|
 |错误分析有效性|较低|较高|
 
-**DCloud非常重视数据驱动开发者业务的增长，近期联合专业的大数据服务商<a href="https://www.sensorsdata.cn/" target="_blank">神策</a>和<a href="https://tj.aldwx.com/" target="_blank">阿拉丁</a>共同完善Uni统计2.0的产品模块和生态建设。
-如果你对数据分析有任何需求，欢迎您填写<a href="https://sdmarketing.wjx.cn/vj/h2UFHnx.aspx" target="_blank">需求调研问卷</a>，我们会根据您的宝贵建议，在原有Uni统计产品的基础上，完成迭代更新。**
 
 ## 环境要求
 - uni统计2.0 在客户端仅支持uni-app，非uni-app无法使用。
@@ -73,7 +92,7 @@ uni统计在底层识别uni-app规范和uniCloud规范，无需开发既有众�
 
 ![开启统计](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/14b2b045-3d8e-4535-acad-2e745441c816.png)
 
-#### 全局设置（通过源码视图配置统计）
+#### 源码视图json解读
 
 将 `manifest.json -> uniStatistics` 下的 `enable` 字段设置为 `true|false` ,来开启关闭 `uni统计`
 
@@ -96,9 +115,7 @@ uni统计在底层识别uni-app规范和uniCloud规范，无需开发既有众�
 |version|String|"1"|"1" ， "2"|统计版本 ，如不填写，默认使用版本1.0，推荐使用2.0版本|
 |debug|Boolean|false|true ， false|开启统计调试模式 ，会产生大量日志，且会在开发阶段上报数据，应用发布请关闭此项|
 
-#### 分平台设置（通过源码视图配置统计）
-
-`uniStatistics` 支持分平台设置，比如若需仅开启微信平台的 `uni统计`，则在`mp-weixin`节点下设置 `uniStatistics ->enable` 即可，如下：
+`uniStatistics` 支持分平台设置，比如仅开启微信小程序平台的 `uni统计`，则在`mp-weixin`节点下设置 `uniStatistics ->enable` 即可，如下：
 
 ```js
 //...
@@ -125,11 +142,11 @@ uni统计在底层识别uni-app规范和uniCloud规范，无需开发既有众�
 
 #### 小程序域名白名单
 
-由于各家小程序对可访问的域名要配置白名单，否则无法联网。
+由于各家小程序对可访问的域名要配置白名单，否则无法联网。所以需要发布小程序时需要在各厂商的小程序管理后台配置域名白名单。
 
-注意选择对应的服务商域名（文章后面章节会有服务空间相关配置）
+部署uni统计时可以选择使用uniCloud的阿里云版或腾讯云版，不同云厂商对应的域名不同（文章后面章节会有服务空间相关配置）
 
-| 服务提供商 |      request 合法域名       |
+| uniCloud服务提供商 |      request 合法域名       |
 | :--------: | :-------------------------: |
 |   阿里云   |       api.bspapp.com        |
 |   腾讯云   | tcb-api.tencentcloudapi.com |

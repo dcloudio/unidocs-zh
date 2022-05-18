@@ -134,6 +134,7 @@ GitCode 仓库：[https://gitee.com/dcloud/uni-captcha](https://gitee.com/dcloud
 | scene        | String  | 是   | -       | 使用场景值，用于防止不同功能的验证码混用，如：`login`、`pay` |
 | deviceId     | String  | -    | -       | 设备 id，如果不传，将自动从 uniCloud 上下文获取              |
 | width        | Number  | -    | 150     | 图片宽度                                                     |
+| uniPlatform  | String	 | -	| -       | uni-app 运行平台 	                                        |
 | height       | Number  | -    | 40      | 图片高度                                                     |
 | background   | String  | -    | #FFFAE8 | 验证码背景色，设置空字符`''`不使用背景颜色                   |
 | size         | Number  | -    | 4       | 验证码长度，最多 6 个字符                                    |

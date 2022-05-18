@@ -5,7 +5,7 @@ uni统计2.0 是开源、全端、云端一体的统计平台。
 ## 产品特色
 
 
-无需开发，在manifest的uni统计中打勾并发行，在uniCloud服务空间部署[uni-admin](/uniCloud/admin)，即可查看报表。
+无需开发，在manifest的uni统计中打勾并发行，在uniCloud服务空间部署[uni-admin](/uniCloud/admin)，即可查看报表，点击体验[uni-admin 在线示例](http://hellouniadmin.dcloud.net.cn/admin/)(该示例的统计对象是示例自身)。
 
 同时开发者也可以自定义打点数据、自定义展现报表。
 

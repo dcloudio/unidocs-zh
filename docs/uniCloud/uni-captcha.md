@@ -23,7 +23,8 @@ GitCode 仓库：[https://gitee.com/dcloud/uni-captcha](https://gitee.com/dcloud
 4. 云端一体组件：`uni-captcha`和`uni-popup-captcha`，集成创建、刷新、显示验证码
 
 ## 目录结构@catalogue
-<pre style="color:#FFF">
+<pre v-pre="" data-lang="">
+    <code class="lang-" style="padding:0">
 ├─uni_modules                              			存放[uni_module](/uni_modules)规范的插件。
 │	└─uni-captcha
 │		├─uniCloud
@@ -39,6 +40,7 @@ GitCode 仓库：[https://gitee.com/dcloud/uni-captcha](https://gitee.com/dcloud
 │			│	└─uni-captcha.vue					普通验证码组件
 │			└─uni-popup-captcha				  		
 │				└─uni-popup-captcha.vue				弹出式验证码组件
+    </code>
 </pre>
 
 ## 原理时序

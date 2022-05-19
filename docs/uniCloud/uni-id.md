@@ -3323,8 +3323,8 @@ errCode和errMsg对照表如下：
 |uni-id-user-account-conflict							|用户账号冲突							|用户账号冲突（例如同时授权拥有同一个手机号的司机与乘客登录管理端）	|
 |uni-id-password-error										|密码错误									|密码错误																														|
 |uni-id-password-error-exceed-limit				|密码错误次数过多					|密码错误次数过多																										|
-|uni-id-account-already-registed					|此{type}已注册						|此账号已注册、包括手机号、微信等																		|
-|uni-id-account-not-registed							|此{type}尚未注册					|此账号尚未注册、包括手机号、微信等																	|
+|uni-id-account-exists					|此{type}已注册						|此账号已注册、包括手机号、微信等																		|
+|uni-id-account-not-exists							|此{type}尚未注册					|此账号尚未注册、包括手机号、微信等																	|
 |uni-id-invalid-invite-code								|邀请码无效								|邀请码无效																													|
 |uni-id-get-third-party-account-failed		|获取{account}失败				|获取三方平台账号失败																								|
 |uni-id-param-required										|{param}不可为空					|字段不可为空																												|
@@ -3336,7 +3336,7 @@ errCode和errMsg对照表如下：
 |uni-id-param-error												|{param}参数错误，{reason}|参数错误																														|
 |uni-id-invalid-verify-code								|验证码错误或已失效				|验证码错误或已失效																									|
 |uni-id-send-sms-code-failed							|验证码发送失败						|验证码发送失败																											|
-|uni-id-account-already-bound							|此{type}已绑定						|此账号已绑定，包括手机号、微信等																		|
+|uni-id-account-bound							|此{type}已绑定						|此账号已绑定，包括手机号、微信等																		|
 |uni-id-unbind-failed											|解绑失败									|解绑失败																														|
 |uni-id-set-invite-code-failed						|邀请码设置失败						|邀请码设置失败																											|
 |uni-id-modify-invite-code-is-not-allowed	|邀请码不可修改						|邀请码不可修改																											|

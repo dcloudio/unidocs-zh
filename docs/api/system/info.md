@@ -13,8 +13,26 @@
 
 |参数|说明|平台差异说明|
 |:-|:-|:-|
-|brand|设备品牌|App、微信小程序、百度小程序、字节跳动小程序、飞书小程序、QQ小程序|
-|model|设备型号|全平台支持。H5 端部分设备无法获取具体型号|
+|appId  |`manifest.json` 中应用appid。 |`HBuilderX (3.4.10+)`|
+|appName|`manifest.json` 中应用名称。和`字节跳动小程序、飞书小程序`字段冲突，原字端与`hostName`一致|`HBuilderX (3.4.10+)`|
+|appVersion  |`manifest.json` 中应用版本名称。 |`HBuilderX (3.4.10+)`|
+|appVersionCode  |`manifest.json` 中应用版本名号。 |`HBuilderX (3.4.10+)`|
+|deviceId|设备 id|非 App 端由 uni-app 框架生成并存储，清空 Storage 会导致改变|
+|deviceBrand|设备品牌。如：`apple`、`huawei`|`HBuilderX (3.4.10+)`。H5 端部分设备无法获取具体品牌|
+|deviceModel|设备型号 |`HBuilderX (3.4.10+)`。H5 端部分设备无法获取具体品牌|
+|deviceType|设备类型。`phone`、`pad`、`pc` |`HBuilderX (3.4.10+)`|
+|osName  |ios、android、windows、mac、linux |`HBuilderX (3.4.10+)`|
+|osVersion  |操作系统版本。如 ios 版本，andriod 版本 |`HBuilderX (3.4.10+)`|
+|osLanguage  |操作系统语言，小程序端与 `version` 相同，H5 与浏览器语言一致 |`HBuilderX (3.4.10+)`|
+|osTheme  |操作系统主题 light、dark。小程序端为小程序主题 |`HBuilderX (3.4.10+)`、`H5 不支持`|
+|hostName  |App、小程序宿主名称，如：`WeChat`、`FeiShu`。H5 端为浏览器名称|`HBuilderX (3.4.10+)`、`App 端 UniMPSDK 支持`|
+|hostVersion  |App、小程序宿主版本。如：微信版本号。H5 端为浏览器版本 |`HBuilderX (3.4.10+)`、`App 端 UniMPSDK 支持`|
+|hostLanguage  |浏览器语言、小程序宿主语言、app 语言 |`HBuilderX (3.4.10+)`、`App 端 UniMPSDK 支持`|
+|hostTheme  |App 主题 `light`、`dark`。小程序端为系统当前主题 |`HBuilderX (3.4.10+)`、`App 端 UniMPSDK 支持`、`H5 不支持`|
+|hostPackageName  |小程序宿主包名。仅 App 支持 |`HBuilderX (3.4.10+)`、`仅 App 端 UniMPSDK 支持`|
+|uniPlatform|uni-app 运行平台。取值见下。 |`HBuilderX (3.4.10+)`|
+|uniCompileVersion| uni 编译器版本号 |`HBuilderX (3.4.10+)`|
+|uniRuntimeVersion| uni 运行时版本 |`HBuilderX (3.4.10+)`|
 |pixelRatio|设备像素比||
 |screenWidth|屏幕宽度||
 |screenHeight|屏幕高度||
@@ -22,23 +40,30 @@
 |windowHeight|可使用窗口高度||
 |windowTop|可使用窗口的顶部位置|App、H5|
 |windowBottom|可使用窗口的底部位置|App、H5|
-|statusBarHeight|状态栏的高度|字节跳动小程序不支持|
-|navigationBarHeight|导航栏的高度|百度小程序|
-|titleBarHeight|标题栏高度|支付宝小程序|
-|language|应用设置的语言|字节跳动小程序不支持|
+|statusBarHeight|状态栏的高度||
+|system|操作系统名称及版本，如Android 10||
+|language|应用设置的语言||
 |version|引擎版本号|H5不支持|
+|platform|客户端平台，值域为：`ios`、`android`、`mac（3.1.10+）`、`windows（3.1.10+）`、`linux（3.1.10+）`||
+|safeArea|在竖屏正方向下的安全区域|App、H5、微信小程序|
+|safeAreaInsets|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、H5、微信小程序|
+|ua| 用户标识 |`HBuilderX (3.4.10+)`、`小程序不支持`|
+|browserName  | 浏览器名称。`App` 端是系统 webview 的名字，比如 wkwebview、chrome |`HBuilderX (3.4.10+)`、`小程序不支持`|
+|browseVersion  | 浏览器版本、webview 版本 |`HBuilderX (3.4.10+)`、`小程序不支持`|
+|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)|
+|brand|设备品牌（不推荐使用）|App、微信小程序、百度小程序、字节跳动小程序、飞书小程序、QQ小程序|
+|model|设备型号（不推荐使用）|全平台支持。H5 端部分设备无法获取具体型号|
+|SDKVersion|客户端基础库版本|支付宝小程序和H5不支持|
+|cacheLocation|上一次缓存的位置信息|百度小程序|
+|host|宿主平台|百度小程序|
+|navigationBarHeight|导航栏的高度|百度小程序|
+|swanNativeVersion|宿主平台版本号|百度小程序|
+|titleBarHeight|标题栏高度|支付宝小程序|
 |storage|设备磁盘容量|支付宝小程序|
 |currentBattery|当前电量百分比|支付宝小程序|
-|AppPlatform|App平台|QQ小程序|
-|host|宿主平台|百度小程序|
 |app|当前运行的客户端|支付宝小程序|
-|cacheLocation|上一次缓存的位置信息|百度小程序|
-|system|操作系统名称及版本，如Android 10||
-|platform|客户端平台，值域为：`ios`、`android`、`mac（3.1.10+）`、`windows（3.1.10+）`、`linux（3.1.10+）`||
-|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序|
-|SDKVersion|客户端基础库版本|支付宝小程序和H5不支持|
-|swanNativeVersion|宿主平台版本号|百度小程序|
-|benchmarkLevel|设备性能等级。取值为：-2 或 0（该设备无法运行小游戏），-1（性能未知），>=1（设备性能值，该值越高，设备性能越好，目前最高不到50）|微信小程序Android版|
+|AppPlatform|App平台|QQ小程序|
+|benchmarkLevel|设备性能等级。取值为：-2 或 0（该设备无法运行小游戏），-1（性能未知），>=1（设备性能值，该值越高，设备性能越好，目前最高不到50）|微信小程序Android版、QQ小程序Android版|
 |batteryLevel	|	剩余电量百分比（仅 iOS 有效）	|微信小程序|
 |albumAuthorized	|	允许微信使用相册的开关（仅 iOS 有效）	|微信小程序|
 |cameraAuthorized	|	允许微信使用摄像头的开关	|微信小程序|
@@ -51,31 +76,6 @@
 |bluetoothEnabled	|	蓝牙的系统开关	|微信小程序|
 |locationEnabled	|	地理位置的系统开关	|微信小程序|
 |wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序|
-|safeArea|在竖屏正方向下的安全区域|App、H5、微信小程序|
-|safeAreaInsets|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、H5、微信小程序|
-|deviceId|设备 id|非 App 端由 uni-app 框架生成并存储，清空 Storage 会导致改变|
-|deviceBrand|设备品牌。如：`apple`、`huawei`|`HBuilderX (3.4.10+)`|
-|deviceModel|设备型号 |`HBuilderX (3.4.10+)`|
-|deviceType|设备类型。`phone`、`pad`、`pc` |`HBuilderX (3.4.10+)`|
-|uniPlatform|uni-app 运行平台。取值见下。 |`HBuilderX (3.4.10+)`|
-|uniCompileVersion| uni 编译器版本号 |`HBuilderX (3.4.10+)`|
-|uniRuntimeVersion| uni 运行时版本 |`HBuilderX (3.4.10+)`|
-|appId  |`manifest.json` 中应用appid。 |`HBuilderX (3.4.10+)`|
-|appName|`manifest.json` 中应用名称。和`字节跳动小程序、飞书小程序`字段冲突，原字端与`hostName`一致|`HBuilderX (3.4.10+)`|
-|appVersion  |`manifest.json` 中应用版本名称。 |`HBuilderX (3.4.10+)`|
-|appVersionCode  |`manifest.json` 中应用版本名号。 |`HBuilderX (3.4.10+)`|
-|ua| 用户标识 |`HBuilderX (3.4.10+)`、`小程序不支持`|
-|browserName  | 浏览器名称。`App` 端是系统 webview 的名字，比如 wkwebview、chrome |`HBuilderX (3.4.10+)`、`小程序不支持`|
-|browseVersion  | 浏览器版本、webview 版本 |`HBuilderX (3.4.10+)`、`小程序不支持`|
-|osName  |ios、android、windows、mac、linux |`HBuilderX (3.4.10+)`|
-|osVersion  |操作系统版本。如 ios 版本，andriod 版本 |`HBuilderX (3.4.10+)`|
-|osLanguage  |操作系统语言，小程序端与 `version` 相同，H5 与浏览器语言一致 |`HBuilderX (3.4.10+)`|
-|osTheme  |操作系统主题 light、dark。小程序端为小程序主题 |`HBuilderX (3.4.10+)`、`H5 不支持`|
-|hostName  |App、小程序宿主名称，如：`WeChat`、`FeiShu`。H5 端为浏览器名称|`HBuilderX (3.4.10+)`|
-|hostVersion  |App、小程序宿主版本。如：微信版本号。H5 端为浏览器版本 |`HBuilderX (3.4.10+)`|
-|hostLanguage  |浏览器语言、小程序宿主语言、app 语言 |`HBuilderX (3.4.10+)`|
-|hostTheme  |App 主题 `light`、`dark`。小程序端为系统当前主题 |`HBuilderX (3.4.10+)`、`H5 不支持`|
-|hostPackageName  |小程序宿主包名。仅 App 支持 |`App (3.4.10+)`|
 
 **Tips**
 - 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
@@ -125,6 +125,13 @@
 |quickapp-webview|快应用通用(包含联盟、华为)|
 |quickapp-webview-union|快应用联盟|
 |quickapp-webview-huawei|快应用华为|
+
+**设备概念全景图**
+||App|Web|小程序|UniMPSDK|
+|:-:|:-:|:-:|:-:|:-:|
+|device 设备|huawei、iphone、vivo、oppo等|-|huawei、iphone、vivo、oppo等|huawei、iphone、vivo、oppo等|
+|OS 操作系统|windows、mac、linux、android、ios|pc、windows、mac、linux、android、ios|windows、mac、linux、android、ios|android、ios|
+|host 宿主应用|-|chrome、firfox、edge、safari|weChat、baidu、alipay、feishu等|uni-app 应用、5 Plus 应用|
 
 **示例**
 

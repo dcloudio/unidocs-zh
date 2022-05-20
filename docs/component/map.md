@@ -231,7 +231,7 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 export default {
 	data() {
 		return {
-      id:0, // 使用 marker点击事件 需要填写id
+			id:0, // 使用 marker点击事件 需要填写id
 			title: 'map',
 			latitude: 39.909,
 			longitude: 116.39742,

@@ -42,6 +42,7 @@
 ```
 > Script
 ```vue
+<script>
 export default {
 	onReady: function (e) {
 		var context = uni.createCanvasContext('firstCanvas')
@@ -68,6 +69,7 @@ export default {
 		}
 	}
 }
+</script>
 ```
 :::
  

@@ -38,6 +38,9 @@
 |:-|:-|:-|:-|
 |color|String|#00FF00|进度条颜色|
 
+
+::: preview https://hellouniapp.dcloud.net.cn/pages/component/web-view/web-view
+
 ```html
 <template>
 	<view>
@@ -63,6 +66,7 @@
 
 </style>
 ```
+:::
 
 注意：
 - 小程序仅支持加载网络网页，不支持本地html

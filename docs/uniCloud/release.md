@@ -1,5 +1,13 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2022-05-20
+  + uni-admin 优化 uni 统计的「统计首页」菜单移动到应用「首页」，添加了设备概览、注册用户概览
+  + uni-admin 优化 「首页」显示逻辑，无 appid 时提示添加统计应用，可跳转"应用管理"的新增页
+  + uni-admin 优化 精简登录逻辑，提升登录速度
+  + uni-admin 优化 uni 统计的「帮助」菜单移动到「文档与插件」
+  + uni-admin 修复 从「首页」跳转「概况」时，url 的 query 丢失的 bug
+  + uni-admin 修复 路由改变后面包屑未响应的 bug
+
 #### 2022-05-17
   + 新增 本地云函数调用云端redis，方便开发调试 [详情](https://uniapp.dcloud.net.cn/uniCloud/redis.html#lcoal-function)
   + 新增 uni-cloud-jql 扩展库 databaseForJQL 方法支持传递 clientInfo，以便于在云对象中使用 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-cloud.html#use-in-object)

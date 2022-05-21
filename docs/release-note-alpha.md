@@ -1,3 +1,24 @@
+#### 3.4.11.20220520-alpha
+* 【uni-app】
+  + App平台 修复 nvue 页面 switch 组件切换状态无限闪动的Bug [详情](https://ask.dcloud.net.cn/question/145272)
+  + App平台 修复 纯 nvue 编译模式 uni_modules 内静态资源未拷贝的Bug
+  + App-iOS平台 修复 vue3 项目 nvue 页面 swiper 组件面板指示点无法隐藏的Bug [详情](https://ask.dcloud.net.cn/question/145097)
+  + H5平台 新增 vue3 项目 unicloud-db 组件属性 ssr-key [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db.html#ssrkey)
+  + H5平台 修复 vue3 项目 unicloud-db 组件 使用 ssr 时 页面存在2个以上组件时数据显示错乱的Bug [详情](https://ask.dcloud.net.cn/question/139537)
+  + H5平台 修复 3.4.10 版本引出的 vue2 项目启用摇树优化缺失 view 组件的Bug [详情](https://ask.dcloud.net.cn/question/145286)
+  + 小程序平台 修复 vue3 项目 在模板中使用 wxs、sjs 插值表达式不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3527)
+  + 支付宝小程序平台 修复 vue3 项目 全局组件不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3525)
+  + 支付宝小程序平台 修复 vue3 项目 sjs 不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3527)
+* 【uniCloud】
+  + uni-admin 优化 uni 统计的「统计首页」菜单移动到应用「首页」，添加了设备概览、注册用户概览
+  + uni-admin 优化 「首页」显示逻辑，无 appid 时提示添加统计应用，可跳转"应用管理"的新增页
+  + uni-admin 优化 精简登录逻辑，提升登录速度
+  + uni-admin 优化 uni 统计的「帮助」菜单移动到「文档与插件」
+  + uni-admin 修复 从「首页」跳转「概况」时，url 的 query 丢失的 bug
+  + uni-admin 修复 路由改变后面包屑未响应的 bug
+* 【App插件(含5+App和uni-app的App端)】
+  + 更新 uni-AD 今日头条穿山甲SDK Android为 4.5.1.1 版；腾讯优量汇SDK iOS为 4.13.65 版；快手广告SDK Android为 3.3.24 版，iOS为 3.3.24 版；百度百青藤广告SDK Android为 9.212 版，iOS为 4.87 版；Sigmob广告联盟SDK Android为 3.5.9 版
+
 #### 3.4.10.20220517-alpha
 * 【uni-app】
   + 【重要】新增 uni统计2.0版本发布，开源、私有部署、易定制 [详情](https://uniapp.dcloud.net.cn/uni-stat-v2.html)

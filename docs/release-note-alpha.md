@@ -10,11 +10,9 @@
   + 支付宝小程序平台 修复 vue3 项目 全局组件不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3525)
   + 支付宝小程序平台 修复 vue3 项目 sjs 不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3527)
 * 【uniCloud】
-  + uni-admin 优化 uni 统计的「统计首页」菜单移动到应用「首页」，添加了设备概览、注册用户概览
-  + uni-admin 优化 「首页」显示逻辑，无 appid 时提示添加统计应用，可跳转"应用管理"的新增页
-  + uni-admin 优化 精简登录逻辑，提升登录速度
-  + uni-admin 优化 uni 统计的「帮助」菜单移动到「文档与插件」
-  + uni-admin 修复 从「首页」跳转「概况」时，url 的 query 丢失的 bug
+  + uni-admin 优化 首页增加uni统计的设备概览、注册用户概览
+  + uni-admin 优化 登录速度
+  + uni-admin 修复 从「首页」跳转「概况」时，url 的 query 丢失的 bug  
   + uni-admin 修复 路由改变后面包屑未响应的 bug
 * 【App插件(含5+App和uni-app的App端)】
   + 更新 uni-AD 今日头条穿山甲SDK Android为 4.5.1.1 版；腾讯优量汇SDK iOS为 4.13.65 版；快手广告SDK Android为 3.3.24 版，iOS为 3.3.24 版；百度百青藤广告SDK Android为 9.212 版，iOS为 4.87 版；Sigmob广告联盟SDK Android为 3.5.9 版

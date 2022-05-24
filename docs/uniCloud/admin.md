@@ -15,7 +15,7 @@ uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源
 - 它基于 uniCloud，是 serverless 的云开发。了解[uniCloud](https://uniapp.dcloud.io/uniCloud/README)
 - 它基于 uni-id，使用 uni-id 的用户账户、角色、权限系统。了解[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id)
 
-版本支持：HBuilderX 3.0+
+版本支持：[HBuilderX 3.4.0+](https://dcloud.io/hbuilderx.html)
 
 演示地址：[http://hellouniadmin.dcloud.net.cn/admin/](http://hellouniadmin.dcloud.net.cn/admin/)
 

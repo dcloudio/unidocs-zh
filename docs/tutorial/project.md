@@ -20,8 +20,10 @@
 │  └─list
 │     └─list.vue        list页面
 ├─static                存放应用引用的本地静态资源（如图片、视频等）的目录，<b>注意：</b>静态资源只能存放于此
-├─uni_modules           存放[uni_module](/uni_modules)规范的插件。
+├─uni_modules           存放[uni_module](/uni_modules)。
 ├─wxcomponents          存放小程序组件的目录，<a href="/tutorial/miniprogram-subject?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81">详见</a>
+├─nativeplugins         App原生插件 <a href="https://nativesupport.dcloud.net.cn/NativePlugin/README">详见</a>
+├─unpackage             非工程代码，一般存放运行或发行的编译结果
 ├─main.js               Vue初始化入口文件
 ├─App.vue               应用配置，用来配置App全局样式以及监听 <a href="/collocation/App#应用生命周期">应用生命周期</a>
 ├─manifest.json         配置应用名称、appid、logo、版本等打包信息，<a href="/collocation/manifest">详见</a>

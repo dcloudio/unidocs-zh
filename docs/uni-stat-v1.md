@@ -1,5 +1,5 @@
 ::: warning 注意 
- 您正在浏览的是老版uni统计1.0的文档。推荐升级到[uni统计2.0](https://uniapp.dcloud.io/uni-stat-v2.html)
+ 您正在浏览的是老版uni统计1.0的文档。推荐升级到[uni统计2.0](uni-stat-v2.html)
  
 :::
 

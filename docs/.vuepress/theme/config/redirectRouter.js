@@ -12,7 +12,7 @@ const routerMap = {
   '/collocation/auto/hbuilderx-extension/': '/worktile/auto/hbuilderx-extension/',
   '/collocation/auto/quick-start': '/worktile/auto/quick-start.html',
   '/collocation/auto/uniapp-cli-project': '/worktile/auto/uniapp-cli-project.html',
-  '/collocation/i18n': '/worktile/i18n.html',
+  '/collocation/i18n': '/tutorial/i18n.html',
   '/collocation/env': '/tutorial/env.html',
   '/collocation/ssr': '/tutorial/ssr.html',
   '/ssr': '/tutorial/ssr.html',

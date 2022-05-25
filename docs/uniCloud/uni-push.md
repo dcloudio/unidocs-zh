@@ -21,10 +21,13 @@ uniPush即降低了开发成本、又提高了push送达率，并且免费，是
 # 应用场景
 - 系统消息通知 </br>
 当 APP 用户相关状态或者系统功能状态变化时（如用户订单通知、交易提醒、物流通知、升级提醒等），可对用户进行及时告知，或者促使用户完成特定操作。
+
 - 内容订阅推送 </br>
 帮助内容资讯类、视频类等APP主动推送用户关注的内容或热点资讯，提升用户活跃，提高APP使用率。
+
 - 社交互动提醒 </br>
 当点赞、评论、分享等社交行为产生时，即使用户未打开 APP ，也可以对其进行消息提醒，提高用户互动频次，提升用户活跃度。
+
 - 活动营销 </br>
 在日常营销推广、促销活动等场景下（如双11、618大促、会员促销、游戏活动、产品推送活动等），APP可对目标用户进行定向通知栏消息+应用内消息推送，吸引用户参与活动，提升转化。
 
@@ -53,7 +56,7 @@ uniPush即降低了开发成本、又提高了push送达率，并且免费，是
 1. 通过 HBuilderX 进入
 
 	打开 HBuilderX，双击项目中的 “manifest.json” 文件，选择“App 模块配置”，向下找到“Push(消息推送)”，勾选后，点击 “uniPush” 下面的配置链接，即可进入 uniPush 配置页面。如下图所示：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3c2ccc6c-2ada-4087-8a62-3f6ddd1c5b66.jpg)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/27015d7e-33e6-4596-a6bd-36ffa616a321.jpg)
 2. 通过开发者中心进入
 	
 	使用 HBuilder 账号登录 [开发者中心](https://dev.dcloud.net.cn) ，登录后
@@ -115,8 +118,12 @@ uniPush即降低了开发成本、又提高了push送达率，并且免费，是
 
 ### 操作步骤
 1. 启用客户端uniPush，打开`manifest.json`-`App模块配置`-中勾选`uniPush 2.0`
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/aadde559-d7f8-4bea-bf1c-8845854940c8.jpg)
-	**真机运行注意:**如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f897176a-6216-48bd-98c8-439b2bd2cb42.jpg)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1280af61-06a3-46d3-bfc3-0e1c1aee2580.jpg)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/87accaa0-e6a4-4916-9a74-87719142abaa.jpg)
+其他小程序启用方式参考微信小程序，这里不一一列举
+**APP端真机运行注意:** 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。
+
 2. 启动监听推送消息事件代码示例：
 ```js 
 uni.onPushMessage((res)=>{

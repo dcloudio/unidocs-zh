@@ -2,9 +2,7 @@ const { slugify } = require('@vuepress/shared-utils')
 const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')
 const createSidebar = require('./markdown/createSidebar')
-const { simplifySlugText } = require('./utils')
-
-const tabs = ['/uniCloud/', '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/']
+const { simplifySlugText, tabs } = require('./utils')
 
 const config = {
   // TODO use theme

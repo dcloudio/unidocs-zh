@@ -14,7 +14,10 @@ function simplifySlugText(text) {
   return text;
 }
 
+const tabs = ['/uniCloud/', '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/']
+
 module.exports = {
   isExternal,
-  simplifySlugText
+  simplifySlugText,
+  tabs
 }

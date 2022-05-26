@@ -14,6 +14,7 @@ const routerMap = {
   '/collocation/auto/uniapp-cli-project': '/worktile/auto/uniapp-cli-project.html',
   '/collocation/i18n': '/tutorial/i18n.html',
   '/worktile/i18n': '/tutorial/i18n.html',
+  '/worktile/i18n.html': '/tutorial/i18n.html',
   '/collocation/env': '/tutorial/env.html',
   '/collocation/ssr': '/tutorial/ssr.html',
   '/ssr': '/tutorial/ssr.html',

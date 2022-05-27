@@ -84,6 +84,7 @@
     * [manifest.json源码视图](/tutorial/app-manifest.md)
   * [App 上架注意](/tutorial/store.md)
     * [国内应用市场上架](/tutorial/android-store.md)
+    * [Android平台隐私与政策提示框](/tutorial/app-privacy-android.md)
     * [未同意隐私政策模式运行](/tutorial/app-disagreemode.md)
     * [Google Play上架](/tutorial/android-gp.md)
     * [App Store上架](/tutorial/ios-app-store.md)

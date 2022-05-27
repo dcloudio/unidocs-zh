@@ -57,6 +57,8 @@ GitCode 仓库：[https://gitee.com/dcloud/uni-captcha](https://gitee.com/dcloud
 ## 云端一体组件介绍
 内置调用`uni-captcha-co`云对象集成创建/刷新验证码，组件支持双向数据绑定。
 
+### 验证码配置（可选）：
+
 参数说明：
 
 | 字段			| 类型		| 默认值	| 说明															|
@@ -68,23 +70,52 @@ GitCode 仓库：[https://gitee.com/dcloud/uni-captcha](https://gitee.com/dcloud
 | noise			| Number	| 4			| 验证码干扰线条数												|
 | color			| Boolean	| false		| 字体是否使用随机颜色，当设置`background`后恒为`true`			|
 | fontSize		| Number	| 40		| 字体大小														|
-| ignoreChars	| String	| ''		| 忽略哪些字符													|
+| ignoreChars	| String	| 			| 忽略哪些字符													|
 | mathExpr		| Boolean	| false		| 是否使用数学表达式											|
 | mathMin		| Number	| 1			| 表达式所使用的最小数字										|
 | mathMax		| Number	| 9			| 表达式所使用的最大数字										|
-| mathOperator	| String	| ''		| 表达式所使用的运算符，支持 `+`、`-`。不传则随机使用				|
-| expiresDate	| Number	| 180		| 验证码过期时间(s)												|
+| mathOperator	| String	| 			| 表达式所使用的运算符，支持 `+`、`-`。不传则随机使用				|
+| expiresDate	| Number	| 180		| 验证码过期时间(s)							|
+| scene			| Object	| 			| 根据场景值配置（版本号：0.6.0+ 支持）							|
 
-配置方式（可选）：
-1. 全局配置路径：[unicloud配置中心](https://ext.dcloud.net.cn/plugin?id=4425)，`uni-config-center`->`uni-captcha`->`config.json`
-2. 在云对象`uni-captcha-co`中配置，路径：`/uni_modules/uni-captcha/uniCloud/cloudfunctions/uni-captcha-co/config.js`->`image-captcha`
+配置路径：[unicloud配置中心](https://ext.dcloud.net.cn/plugin?id=4425)，`uni-config-center`->`uni-captcha`->`config.json`
+示例：
+```
+	{
+		"width":150,
+		"height":40,
+		"background":"#FFFAE8",
+		"size":"4",
+		"noise":"4",
+		"color":false,
+		"fontSize":40,
+		"ignoreChars":"",
+		"mathExpr":false,
+		"mathMin":1,
+		"mathMax":9,
+		"mathOperator":"",
+		"expiresDate":180,
+		"scene":{
+			"login":{
+				"mathExpr":true	 	//该配置会覆盖根节点的值，表示scene的值为login时，验证码使用数学表达式
+			},
+			"register":{
+				"expiresDate":60,	 //该配置会覆盖根节点的值，表示scene的值为login时，验证码过期时间为60秒
+			}
+		}
+	}
+```
 
-tip：云对象`uni-captcha-co`中的配置，优先级大于在`unicloud配置中心`的配置
+注意：`uni-config-center`不支持注释，如果直接复制配置示例代码，要将注释删除
 
 **替换字体：**
 路径：`/uni_modules/uni-captcha/uniCloud/cloudfunctions/common/uni-captcha/fonts/font.ttf`。
 请保证字体格式为 `.ttf` 且包含 `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-` 字符
 
+
+**已过期的配置**（版本号：0.6.0+ 已不再支持此方式 ）：
+
+在云对象`uni-captcha-co`中配置，路径：`/uni_modules/uni-captcha/uniCloud/cloudfunctions/uni-captcha-co/config.js`->`image-captcha` 云对象`uni-captcha-co`中的配置，优先级大于在`unicloud配置中心`的配置
 
 ### 普通验证码组件
 **组件名：uni-captcha**

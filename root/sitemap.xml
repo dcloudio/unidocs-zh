@@ -1033,6 +1033,15 @@
     <loc>https://zh.uniapp.dcloud.io/api/system/info</loc>
   </url>
   <url>
+    <loc>https://zh.uniapp.dcloud.io/api/system/getDeviceInfo</loc>
+  </url>
+  <url>
+    <loc>https://zh.uniapp.dcloud.io/api/system/getWindowInfo</loc>
+  </url>
+  <url>
+    <loc>https://zh.uniapp.dcloud.io/api/system/getAppBaseInfo</loc>
+  </url>
+  <url>
     <loc>https://zh.uniapp.dcloud.io/api/system/memory</loc>
   </url>
   <url>
@@ -1327,6 +1336,15 @@
     <loc>https://zh.uniapp.dcloud.io/hybrid</loc>
   </url>
   <url>
+    <loc>https://zh.uniapp.dcloud.io/uni-ad</loc>
+  </url>
+  <url>
+    <loc>https://zh.uniapp.dcloud.io/m3w</loc>
+  </url>
+  <url>
+    <loc>https://zh.uniapp.dcloud.io/uniCloud/hosting</loc>
+  </url>
+  <url>
     <loc>https://zh.uniapp.dcloud.io/uniCloud/upgrade-center</loc>
   </url>
   <url>
@@ -1345,15 +1363,6 @@
     <loc>https://zh.uniapp.dcloud.io/uni-stat-v2</loc>
   </url>
   <url>
-    <loc>https://zh.uniapp.dcloud.io/uni-ad</loc>
-  </url>
-  <url>
-    <loc>https://zh.uniapp.dcloud.io/m3w</loc>
-  </url>
-  <url>
-    <loc>https://zh.uniapp.dcloud.io/uniCloud/hosting</loc>
-  </url>
-  <url>
     <loc>https://zh.uniapp.dcloud.io/case</loc>
   </url>
   <url>
@@ -1362,4 +1371,4 @@
   <url>
     <loc>https://zh.uniapp.dcloud.io/release-note-alpha</loc>
   </url>
-</urlset> 
+</urlset>

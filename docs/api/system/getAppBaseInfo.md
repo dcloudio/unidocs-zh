@@ -4,7 +4,7 @@
 
 |App|H5|微信小程序|支付宝小程序|字节跳动小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
-|√ `(3.4.13+)`|√ `(3.4.13+)`|√|x|x|x|x|x|x|x|x|
+|√ `(3.4.13+)`|√ `(3.4.13+)`|√ `(2.20.1+)`|x|x|x|x|x|x|x|x|
 
 **返回参数说明**
 
@@ -14,8 +14,8 @@
 |appName|string|`manifest.json` 中应用名称	||
 |appVersion|string|`manifest.json` 中应用版本名称。||
 |appVersionCode|string|`manifest.json` 中应用版本名号。||
-|language|string|宿主、浏览器设置的语言、微信设置的语言|`App 仅 UNIMPSDK 支持`|
 |appLanguage|string|应用设置的语言`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`App`、`H5`|
+|language|string|宿主、浏览器设置的语言、微信设置的语言|`App 仅 UNIMPSDK 支持`|
 |hostLanguage|string|浏览器语言、小程序宿主语言|`App 仅 UNIMPSDK 支持`|
 |hostVersion|string|App、小程序宿主版本。如：微信版本号。Web 端为浏览器版本|`App 仅 UNIMPSDK 支持`|
 |hostName|string|浏览器名称、小程序宿主名称|`App 仅 UNIMPSDK 支持`、`H5`|

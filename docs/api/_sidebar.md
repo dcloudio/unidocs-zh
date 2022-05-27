@@ -54,7 +54,11 @@
   * [富文本](api/media/editor-context.md)
   * [音视频合成](api/media/media-container.md)
 * 设备
-  * [系统信息](api/system/info.md)
+  * 系统
+    * [系统信息](api/system/info.md)
+    * [uni.getDeviceInfo](api/system/getDeviceInfo.md)
+    * [uni.getWindowInfo](api/system/getWindowInfo.md)
+    * [uni.getAppBaseInfo](api/system/getAppBaseInfo.md)
   * [内存](api/system/memory.md)
   * [网络状态](api/system/network.md)
   * [系统主题](api/system/theme.md)

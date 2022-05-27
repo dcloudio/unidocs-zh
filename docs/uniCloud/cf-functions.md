@@ -275,7 +275,9 @@ uniCloud服务器给客户端返回的数据格式是json，但json的格式具�
 
 为此DCloud推出了`uniCloud响应体规范`。
 
-为尽可能的与uni-app前端的API错误回调风格接近，uniCloud响应体规范定义的云端返回信息内应包含`errCode`和`errMsg`，示例如下
+为尽可能的与uni-app前端的API错误回调风格接近，uniCloud响应体规范定义的云端返回信息内应包含`errCode`和`errMsg`，除此之外响应体规范还包含`newToken`字段，用于下发新token给客户端（云对象接收含有newToken的响应后会自动更新storage内存储的uni_id_token及uni_id_token_expired，此行为新增于`HBuilderX 3.4.13`）。
+
+示例如下：
 
 ```js
 // 失败返回值
@@ -288,7 +290,11 @@ uniCloud服务器给客户端返回的数据格式是json，但json的格式具�
 {
   errCode: 0,
   errMsg: '登录成功',
-  uid: 'xxx' // 其他信息
+  uid: 'xxx', // 其他信息
+  newToken: { // 用于下发新token给客户端
+	  token: 'xxx',
+	  tokenExpired: 'xxx'
+  }
 }
 ```
 

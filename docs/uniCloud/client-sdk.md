@@ -16,6 +16,10 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 |uniCloud.chooseAndUploadFile()	|客户端选择文件并上传 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=chooseanduploadfile)		|
 |uniCloud.getCurrentUserInfo()	|获取当前用户信息 [详情](#client-getcurrentuserinfo)													|
 |uniCloud.init()				|同时使用多个服务空间时初始化额外服务空间 [详情](https://uniapp.dcloud.net.cn/uniCloud/init)			|
+|uniCloud.addInterceptor()		|新增拦截器 [详情](#add-interceptor)	|
+|uniCloud.removeInterceptor()	|增加拦截器 [详情](#remove-interceptor)	|
+|uniCloud.onResponse()			|监听服务端（云函数、云对象、clientDB）响应 [详情](#on-response)	|
+|uniCloud.offResponse()			|监听服务端（云函数、云对象、clientDB）响应 [详情](#off-response)	|
 
 ### 获取当前用户信息getCurrentUserInfo@client-getcurrentuserinfo
 
@@ -154,6 +158,97 @@ uniCloud.addInterceptor('callFunction', {
 uniCloud.removeInterceptor('callFunction', {
   invoke: invokeInterceptor
 })
+```
+
+### 监听云端响应@on-response
+
+> 新增于HBuilderX 3.4.13
+
+用于监听云函数、云对象、clientDB的请求响应
+
+代码示例：
+
+```js
+uniCloud.onResponse(function(event) {
+	// event格式见下方说明
+})
+```
+
+**响应格式**
+
+```js
+interface OnResponseEvent {
+	type: 'cloudobject' | 'cloudfunctions' | 'clientdb',
+	content: {} // content同云对象方法、云函数、clientDB请求的返回结果或错误对象
+}
+```
+
+**以调用云对象方法为例**
+
+```js
+uniCloud.onResponse(function(e){
+	console.log(e)
+})
+const todo = uniCloud.importObject('todo')
+const res = await to.add('todo title', 'todo content')
+```
+
+上述代码中打印的e格式如下
+
+```js
+// 成功响应
+e = {
+	type: 'cloudobject',
+	content: { // content内容和上方代码块中的res一致
+		errCode: 0
+	}
+}
+
+// 失败响应
+e = {
+	type: 'cloudobject',
+	content: {
+		errCode: 'invalid-todo-title',
+		errMsg: 'xxx'
+	}
+}
+```
+
+可以通过判断content内是否有真值的errCode判断是失败还是成功的响应
+
+```js
+uniCloud.onResponse(function(e){
+	if(e.content.errCode) {
+		console.log('请求出错')
+	}
+})
+```
+
+### 移除云端响应的监听@off-response
+
+> 新增于HBuilderX 3.4.13
+
+用于移除onResponse添加的监听器
+
+**注意**
+
+- 要移除的监听内方法需和添加的方法一致才可以移除，详情见下方示例
+
+```js
+// 错误用法，无法移除监听
+uniCloud.onResponse(function(e) {
+	console.log(e)
+})
+uniCloud.offResponse(function(e) {
+	console.log(e)
+})
+
+// 正确用法
+function logResponse(e) {
+	console.log(e)
+}
+uniCloud.onResponse(logResponse)
+uniCloud.offResponse(logResponse)
 ```
 
 ## 属性

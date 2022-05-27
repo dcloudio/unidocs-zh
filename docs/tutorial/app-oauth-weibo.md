@@ -26,7 +26,7 @@ iOS平台通用链接，必须与新浪微博开放平台配置的一致，推�
 - 配置参数需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
 
-### 使用QQ登录  
+### 使用新浪微博登录  
 
 - uni-app项目  
 调用 [uni.login(OBJECT)](api/plugins/login?id=login) 发起授权登录，调用 [uni.getUserInfo(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=getuserinfo) 获取用户信息，OBJECT参数中provider属性值固定为`sinaweibo`
@@ -61,7 +61,7 @@ var weiboOauth = null;
 plus.oauth.getServices(function(services) {
 	for (var i in services) {
 		var service = services[i];
-		// 获取微信登录对象 
+		// 获取新浪微博登录对象 
 		if (service.id == 'sinaweibo') {
 			weiboOauth = service;
 			break;

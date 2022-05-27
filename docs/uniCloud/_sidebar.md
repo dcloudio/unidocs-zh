@@ -35,7 +35,7 @@
   * [openDB](uniCloud/opendb)
   * [性能优化](uniCloud/db-performance.md)
 * 云存储
-  * [API](uniCloud/storage.md)
+  * [云存储API](uniCloud/storage.md)
   * [腾讯云自定义登录](uniCloud/authentication.md)
   * [腾讯云权限管理](uniCloud/policy-tcb.md)
 * [uni-id用户体系](uniCloud/uni-id.md)

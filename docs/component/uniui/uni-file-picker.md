@@ -285,7 +285,7 @@
 | 方法称名| 说明|参数|				
 | :-:| :-:|:-:|				
 | upload()| 手动上传 	，如`autoUpload`为`false`  ，必须调用此方法| - |
-| clearFiles(index:Number)	| 清除选择结果| 传如 Number　为删除指定下标的文件 ，不传为删除所有|
+| clearFiles(index:Number)	| 清除选择结果| 传入 Number　为删除指定下标的文件 ，不传为删除所有|
 
 ### FilePicker Slots
 

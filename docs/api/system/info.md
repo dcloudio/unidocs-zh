@@ -39,14 +39,14 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |			|osTheme			|操作系统主题。													|light、dark|不支持			|不支持	|				|`uni-app (3.4.10+)`
 |browser	|browserName		|浏览器名称或App平台系统webview名称|系统 webview 名称，wkwebview、chrome	|chrome、edge、safari、firefox	|不支持||`uni-app (3.4.10+)`|
 |			|browseVersion		|浏览器版本、webview 版本|				|				|不支持			|				|`uni-app (3.4.10+)`|
-|host		|hostName			|App、小程序宿主名称，如：`WeChat`、`FeiShu`。Web 端为浏览器名称				|仅UniMPSDK 支持	|浏览器名称|宿主应用名称|微信小程序真机运行才有真值|`uni-app (3.4.10+)`				|
+|host		|hostName			|App、小程序宿主名称，如：`WeChat`、`FeiShu`。Web 端为浏览器名称				|仅UniMPSDK 支持	|浏览器名称|[取值如下](#hostname)|微信小程序真机运行才有真值|`uni-app (3.4.10+)`				|
 |			|hostVersion		|App、小程序宿主版本。如：微信版本号。Web 端为浏览器版本|仅UniMPSDK 支持	|浏览器版本|小程序宿主版本|				|`uni-app (3.4.10+)`				|
 |			|hostLanguage		|浏览器语言、小程序宿主语言、app 语言|仅UniMPSDK 支持	|与浏览器语言一致|小程序宿主语言|				|`uni-app (3.4.10+)`				|
 |			|hostTheme			|App 主题 `light`、`dark`。小程序端为系统当前主题|仅UniMPSDK 支持	|不支持|`light`、`dark`|仅微信小程序全局配置"darkmode":true时才能获取|`uni-app (3.4.10+)`	|
 |			|hostPackageName	|小程序宿主包名。仅 App 支持|仅UniMPSDK 支持	|不支持|不支持|				|`uni-app (3.4.10+)`|
 |			|hostSDKVersion	|客户端基础库版本|仅UniMPSDK 支持	|不支持||				|`uni-app (3.4.13+)`|
 |			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持||微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)|`uni-app (3.4.13+)`|
-|uni-app框架	|uniPlatform		|uni-app 运行平台。取值见下。|-|-|-|				|`uni-app (3.4.10+)`|
+|uni-app框架	|uniPlatform		|uni-app 运行平台。[取值见下](#uniplatform) |-|-|-|				|`uni-app (3.4.10+)`|
 |			|uniCompileVersion	|uni 编译器版本号|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|				|`uni-app (3.4.10+)`|
 |			|uniRuntimeVersion	|uni 运行时版本|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|				|`uni-app (3.4.10+)`|
 |app		|appId				|`manifest.json` 中应用appid，即DCloud appid。								|				|				|				|				|`uni-app (3.4.10+)`|
@@ -54,8 +54,8 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |			|appVersion			|`manifest.json` 中应用版本名称。												|				|				|				|				|`uni-app (3.4.10+)`|
 |			|appVersionCode		|`manifest.json` 中应用版本名号。												|				|				|				|				|`uni-app (3.4.10+)`|
 |			|appLanguage		|应用设置的语言|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|不支持||`uni-app (3.4.13+)`|
-|rom		|romName			|rom 名称|Android 部分机型获取不到值。iOS 恒为 `ios`|不支持|不支持|				|`uni-app (3.4.13+)`										|
-|			|romVersion			|rom 版本|Android 部分机型获取不到值。iOS 恒为 `ios 版本号`|不支持|不支持|				|`uni-app (3.4.13+)`										|
+|rom		|romName			|rom 名称|Android 部分机型获取不到值，[取值如下](#romname)。iOS 恒为 `ios`|不支持|不支持|				|`uni-app (3.4.13+)`										|
+|			|romVersion			|rom 版本|Android 部分机型获取不到值，[取值如下](#romname)。iOS 恒为 `ios 版本号`|不支持|不支持|				|`uni-app (3.4.13+)`										|
 |其他		|ua					| userAgent标识																|				|				|不支持		|				|`uni-app (3.4.10+)`		|
 |			|screenWidth		|屏幕宽度|				|				|				|				|							|
 |			|screenHeight		|屏幕高度																	|				|				|				|				|							|
@@ -135,6 +135,7 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |top	|Number	|安全区顶部插入位置			|
 |bottom	|Number	|安全区域底部插入位置			|
 
+<a id="uniplatform" style="padding-top:6rem;"></a>
 <b style="color:#268BD2"> uniPlatform</b> **可取值如下：**
 
 |值|生效条件|
@@ -154,6 +155,37 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |quickapp-webview-union|快应用联盟|
 |quickapp-webview-huawei|快应用华为|
 
+<a id="hostname" style="padding-top:6rem;"></a>
+<b style="color:#268BD2"> hostName</b> **可取值如下：**
+
+|值|生效条件|
+|:-|:-|
+|qq|QQ|
+|WeChat|微信|
+|wxwork|微信企业版|
+|[百度宿主平台枚举值列表](https://smartprogram.baidu.com/docs/develop/api/device_sys/hostlist/)|百度|
+|alipay|支付宝|
+|amap|高德|
+|DINGTALK|钉钉|
+|UC|UC浏览器|
+|QUARK|夸克浏览器|
+|AK|阿里健康|
+|YK|优酷|
+|[字节宿主平台枚举值列表](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|字节跳动系列|
+|KUAISHOU|快手|
+
+<a id="romname" style="padding-top:6rem;"></a>
+<b style="color:#268BD2"> romName</b> **可取值如下：**
+
+|值|生效条件|
+|:-|:-|
+|MIUI|小米|
+|EMUI、HarmonyOS|华为|
+|Magic OS|荣耀|
+|FLymeOS|魅族|
+|SmartisanOS|锤子|
+|ColorOS|oppo|
+|Funtouch OS|vivo|
 
 **示例**
 

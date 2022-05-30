@@ -137,7 +137,6 @@ export default {
 export default {
   data() {
     return {
-      // CPM由高到底，对应从左到右，例如: ["CPM90", "CPM80", "CPM70" ...]
       adpids: ["1507000611", "1507000611", "1507000611", "1507000611"]
     }
   },

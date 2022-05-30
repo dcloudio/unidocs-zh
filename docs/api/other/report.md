@@ -1,3 +1,6 @@
+::: warning 注意 
+推荐使用 [uni统计2.0](uni-stat-v2.html)
+:::
 ## 统计
 
 从uni-app 2.2.3起，支持uni统计。一张报表，掌握全端数据。业务介绍详见[https://tongji.dcloud.net.cn](https://tongji.dcloud.net.cn)
@@ -8,10 +11,10 @@
 
 **参数说明**
 
-|参数			|类型							|描述																|
-|---			|---							|---																|
-|eventKey|String						|事件名称，最大长度不超过 255 个字符     |
-|param	|String 、 Object	|事件参数														  |
+|参数|类型|描述|
+|---|---|---|
+|eventKey|String|事件名称，最大长度不超过 255 个字符|
+|param|String 、 Object	|事件参数|
 
 ::: tip 提示
 - eventKey 为 String 类型，并且字符长度必须小于255 
@@ -22,7 +25,6 @@
 - 用户在使用 `uni.login()` 会执行登录事件，不携带参数。如果如需上报携带具体参数的数据，需要手动调用 `uni.report('login',{...})`
 - 用户在使用 `uni.share()` 或触发 `onShareAppMessage` 会执行分享事件，不携带参数。如果如需上报携带具体参数的数据，需要手动调用 `uni.report('share',{...})`
 - 用户在使用 `uni.requestPayment()` 会执行支付事件，不携带参数。如果如需上报携带具体参数的数据，需要手动调用 `uni.report('pay_success',{...})` 和 `uni.report('pay_fail',{...})`
-
 
 :::
 
@@ -81,7 +83,7 @@ uni.report('search',{
 
 ::: tip 提示
 - 小程序平台，需将`tongji.dcloud.net.cn`配入域名白名单，[详见](https://ask.dcloud.net.cn/article/36298)
-- uni统计使用教程：[https://ask.dcloud.net.cn/article/36303](https://ask.dcloud.net.cn/article/36303)
+- uni统计使用教程：[uni统计2.0](https://uniapp.dcloud.io/uni-stat-v2.html)、[uni统计1.0](https://uniapp.dcloud.io/uni-stat-v1.html)
 :::
 
 ### 非官方自定义统计

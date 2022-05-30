@@ -794,10 +794,10 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 
 答：总设备数计算公式为：总设备数 = 原设备数 + 新设备数，而判断一个设备是否为新设备的依据是在客户端SDK中是否已储存该设备上次访问某一应用的时间，未存储则认为是该应用的新设备(即lvts=0时为新设备，lvts>0为老设备)。 因此如果之前某一设备已经访问过某一应用，就算此时清除数据库中的数据，由于已经在客户端SDK中储存该设备上次访问应用的时（即此时lvts > 0），所以该设备也不会再被认为是该应用的新设备从而不会再被计算进该应用的总设备数中而只会计算进活跃设备数中，此时可能就会出现总设备数小于活跃设备数的情况。
 
-<!-- ## 扩展和自定义方式
+## 扩展和自定义方式
 uni统计提供了基础的数据报表，如不能达到预期的数据采集，可以在客户端通过 `uni.report(eventKey,param)`  自由上报数据 ，并通过 uni-admin 增加页面 ，自行统计数据。
 
-### uni.report 基础用法 
+### 前端 uni.report 基础用法 
 
 这里列出 `uni.report(eventKey,param)` 的基本用法，完整`API`查看：[详情](https://uniapp.dcloud.io/api/other/report.html)
 
@@ -819,4 +819,12 @@ uni.report('购买',{
 })
 ```
 
- -->
+### uni-admin 中使用自定义事件上报的数据
+在 uni-admin 中新增页面，使用 [uniCloud API](https://uniapp.dcloud.io/uniCloud/clientdb#clientdb%E7%AE%80%E4%BB%8B) 获取所有 `uni-report` 上报的原始数据，数据存放于 [uni-stat-event-logs](https://gitee.com/dcloud/opendb/tree/master/collection/uni-stat-event-logs) 表中。
+
+- 获取数据后，可以自行扩展所需业务逻辑
+
+```js
+const db = uniCloud.database()
+db.collection('uni-stat-event-logs')
+```

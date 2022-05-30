@@ -28,6 +28,7 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 - 如未特殊约定，其他 API 接口都接受一个 OBJECT 作为参数。
 - OBJECT 中可以指定 success，fail，complete 来接收接口调用结果。
 - **平台差异说明**若无特殊说明，则表示所有平台均支持。
+- 异步 API 会返回 `errMsg` 字段，同步 API 则不会。比如：`getSystemInfoSync` 在返回结果中不会有 `errMsg`。
 
 ## API `Promise 化`
 

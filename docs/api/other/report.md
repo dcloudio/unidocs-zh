@@ -86,6 +86,14 @@ uni.report('search',{
 - uni统计使用教程：[uni统计2.0](https://uniapp.dcloud.io/uni-stat-v2.html)、[uni统计1.0](https://uniapp.dcloud.io/uni-stat-v1.html)
 :::
 
+### 支持 uni.report 的 uni-ui 组件
+`uni-ui` 中内置了一些数据采集相关的组件,用户使用这些组件，并设置属性 `stat:true`，即可在使用相关组件时，自动上报相关自定义数据 
+
+- [uni-nav-bar](https://ext.dcloud.net.cn/plugin?name=uni-nav-bar)
+- [uni-title](https://ext.dcloud.net.cn/plugin?name=uni-title)
+- [uni-group](https://ext.dcloud.net.cn/plugin?name=uni-group)
+- [uni-goods-nav](https://ext.dcloud.net.cn/plugin?name=uni-goods-nav)
+
 ### 非官方自定义统计
 除了官方的uni统计，如果开发者还需要调用小程序平台的自定义统计，给小程序的后台上报数据，那么需使用条件编译，在各端调用此自己的API。
 

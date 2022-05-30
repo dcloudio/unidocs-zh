@@ -121,7 +121,7 @@ export default {
 </script>
 ```
 
-底价瀑布流逻辑广告位
+瀑布流逻辑广告位
 
 ```html
 <template>
@@ -137,6 +137,7 @@ export default {
 export default {
   data() {
     return {
+      // CPM由高到底，对应从左到右，例如: ["CPM90", "CPM80", "CPM70" ...]
       adpids: ["1507000611", "1507000611", "1507000611", "1507000611"]
     }
   },

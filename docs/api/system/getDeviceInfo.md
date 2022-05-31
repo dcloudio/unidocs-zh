@@ -10,7 +10,7 @@
 
 |参数名|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
-|deviceBrand|string|设备品牌。如：`apple`、`huawei`||
+|deviceBrand|string|设备品牌。如：`apple`、`huawei`|`H5 不支持`|
 |deviceId|string|设备 id	。由 uni-app 框架生成并存储，清空 Storage 会导致改变||
 |deviceModel|string|设备型号||
 |deviceType|string|设备类型`phone`、`pad`、`pc`||
@@ -30,5 +30,8 @@
 
 |参数名|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
-|brand|string|设备品牌||
+|brand|string|设备品牌|`H5 不支持`|
 |model|string|设备型号。新机型刚推出一段时间会显示unknown，微信会尽快进行适配。||
+
+**Tips**
+- `deviceId`：`android 平台` 根据优先使用imei、mac，如果没有获取到就使用随机生成的标识。`ios 平台` 是直接使用随机生成的标识

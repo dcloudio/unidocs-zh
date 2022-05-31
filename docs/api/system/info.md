@@ -245,6 +245,40 @@ Android10以上，部分国产手机支持OAID，详见[匿名设备标识符（
 
 `plus.device.getInfo`的API是从HBuilderX 2.0.3+开始提供的，老版需使用plus.devide.uuid或plus.device.imei。
 
+### getSysteInfo 新增字段取值示例
+
+|字段名称|App-Android|App-iOS|h5|Android uniMPsdk|iOS uniMPsdk|mp-weixin|mp-alipay|mp-baidu|mp-toutiao|
+|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
+|appId|__UNI__8BB4001|__UNI__8BB4001|__UNI__8BB4001|__UNI__8BB4001|__UNI__8BB4001|__UNI__8BB4001|__UNI__8BB4001|__UNI__8BB4001|__UNI__8BB4001|
+|appLanguage|zh-Hans|zh-Hans|zh-Hans|zh-Hans|zh-Hans|zh-Hans|zh-Hans|zh-Hans|zh-Hans|
+|appName|test|test|test|test|test|test|test|test|test|
+|appVersion|1.0.0|1.0.0|1.0.0|1.0.0|1.0.0|1.0.0|1.0.0|1.0.0|1.0.0|
+|appVersionCode|100|100|100|100|100|100|100|100|100|
+|browserName|chrome|wkwebview|safari|chrome|wkwebview|-|-|-|-|
+|browserVersion|96.0.4664.104|13.4.13|13.0.3|88.0.4324.93|15.4|-|-|-|-|
+|deviceBrand|xiaomi|apple|-|huawei|apple|iphone|iphone|iphone|apple|
+|deviceId|d3db0944da20f333|F791564F-853B-47B6-8CB8-27FF59315059|16518284854447835016|c7eafa7ed8774c0d|F791564F-853B-47B6-8CB8-27FF59315059|1652178285720384773|16536215804846585135|1653359639811213582|16538995501084056633|
+|deviceModel|Mi10Pro|iPhone13ProMax|iPhone|MXW-AN00|iPhoneSimulator|iPhone6/7/8Plus|iPhone14,3|iPhone6/7/8|iPhone6|
+|deviceOrientation|portrait|portrait|portrait|portrait|portrait|portrait|-|portrait|-|
+|devicePixelRatio|2.5687501430511475|3|2|3|3|3|3|2|2|
+|deviceType|phone|phone|phone|phone|phone|phone|phone|phone|phone|
+|hostLanguage|-|-|-|zh-CN|zh-Hans-CN|zh-Hans|zh-CN|zh-CN|
+|hostName|-|-|-|MPLauncherV3|uniMPDemo|WeChat、wxwork|alipay、amap、DINGTALK、UC、QUARK、AK、YK|baiduboxapp 等[百度宿主平台枚举值列表](https://smartprogram.baidu.com/docs/develop/api/device_sys/hostlist/)|Douyin、Toutiao、news_article_lite、live_stream、XiGua、PPX|
+|hostPackageName|-|-|-|com.example.mplauncherv3|io.dcloud.hellounimp|-|-|-|-|
+|hostSDKVersion|-|-|-|3.4.13|3.4.13|2.24.2|2.7.6|3.450.16|2.49.0|
+|hostTheme|-|-|-|light|light|-|-|-|-|
+|hostVersion|-|-|-|1.0|1.0.0|8.0.5|10.2.23|2.45.0|6.6.3|
+|osAndroidAPILevel|31|-|-|29|-|-|-|-|-|-|
+|osLanguage|zh-CN|zh-Hans-CN|-|zh-CN|zh-Hans-CN|-|-|-|-|
+|osName|android|ios|ios|android|ios|ios|ios|ios|ios|
+|osTheme|light|light|-|light|light|-|-|-|-|
+|osVersion|12|15.5|13.2.3|10|15.4|10.0.1|15.5|15.5|10.0.1|
+|romName|MIUI|-|-|HarmonyOS|-|-|-|-|-|
+|romVersion|V130|-|-|2.0.0|-|-|-|-|-|
+|uniPlatform|app|app|web|app|app|mp-weixin|mp-alipay|mp-baidu|mp-toutiao|
+|uniCompileVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|
+|uniRuntimeVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|
+
 ### uni.canIUse(String)
 判断应用的 API，回调，参数，组件等是否在当前版本可用。
 

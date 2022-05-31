@@ -17,9 +17,9 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 |uniCloud.getCurrentUserInfo()	|获取当前用户信息 [详情](#client-getcurrentuserinfo)													|
 |uniCloud.init()				|同时使用多个服务空间时初始化额外服务空间 [详情](https://uniapp.dcloud.net.cn/uniCloud/init)			|
 |uniCloud.addInterceptor()		|新增拦截器 [详情](#add-interceptor)	|
-|uniCloud.removeInterceptor()	|增加拦截器 [详情](#remove-interceptor)	|
+|uniCloud.removeInterceptor()	|移除拦截器 [详情](#remove-interceptor)	|
 |uniCloud.onResponse()			|监听服务端（云函数、云对象、clientDB）响应 [详情](#on-response)	|
-|uniCloud.offResponse()			|监听服务端（云函数、云对象、clientDB）响应 [详情](#off-response)	|
+|uniCloud.offResponse()			|移除服务端监听（云函数、云对象、clientDB）响应 [详情](#off-response)	|
 
 ### 获取当前用户信息getCurrentUserInfo@client-getcurrentuserinfo
 

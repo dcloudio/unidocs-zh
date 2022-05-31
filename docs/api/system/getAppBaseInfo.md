@@ -36,5 +36,5 @@
 
 |参数名|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
-|language|string|宿主、浏览器设置的语言、微信设置的语言|`App 仅 UNIMPSDK 支持`|
+|language|string|应用设置的语言|`H5 不支持`|
 |version|string|引擎版本号、微信版本号||

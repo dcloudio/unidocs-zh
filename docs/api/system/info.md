@@ -37,7 +37,7 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |			|osName|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos||`uni-app (3.4.10+)`|
 |			|osVersion			|操作系统版本。如 ios 版本，andriod 版本|||||`uni-app (3.4.10+)`|
 |			|osLanguage			|操作系统语言|`zh-CN 中文简体`、`zh-TW 中文繁体`、`en-US English`、`bo-CN 藏文`、`ug-CN 维吾尔语`等 |与浏览器语言一致	|不支持	|	|`uni-app (3.4.10+)`|
-|			|osTheme			|操作系统主题。			|light、dark|不支持			|不支持	||`uni-app (3.4.10+)`
+|			|osTheme			|操作系统主题。			|light、dark（iOS平台只有将应用主题设置为跟随系统时才能获取到系统的主题）|不支持			|不支持	||`uni-app (3.4.10+)`
 |browser	|browserName		|浏览器名称或App平台系统webview名称|系统 webview 名称，x5webview、wkwebview、chrome	|chrome、edge、safari、firefox	|不支持||`uni-app (3.4.10+)`|
 |			|browserVersion		|浏览器版本、webview 版本|||不支持			||`uni-app (3.4.10+)`|
 |host		|hostName			|App、小程序宿主名称，如：`WeChat`、`FeiShu`|仅 UniMPSDK 支持	|不支持|[取值如下](#hostname)|微信小程序真机运行才有真值|`uni-app (3.4.10+)`|

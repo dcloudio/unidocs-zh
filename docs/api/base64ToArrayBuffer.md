@@ -1,4 +1,4 @@
-## uni.base64ToArrayBuffer(base64)
+### uni.base64ToArrayBuffer(base64)
 
 将 Base64 字符串转成 ArrayBuffer 对象
 

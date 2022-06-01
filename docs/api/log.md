@@ -1,4 +1,4 @@
-## console
+### console
 向控制台打印日志信息。
 ### debug
 向控制台打印 debug 日志

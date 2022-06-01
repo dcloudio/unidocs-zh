@@ -10,6 +10,7 @@
   * [应用级事件](api/application.md)
   * [拦截器](api/interceptor.md)
   * [全局API](api/global.md)
+  * [uni.canIUse](api/caniuse.md)
 * 网络
   * [发起请求](api/request/request.md)
   * [上传、下载](api/request/network-file.md)
@@ -55,7 +56,7 @@
   * [音视频合成](api/media/media-container.md)
 * 设备
   * 系统
-    * [系统信息](api/system/info.md)
+    * [uni.getSystemInfo](api/system/info.md)
     * [uni.getDeviceInfo](api/system/getDeviceInfo.md)
     * [uni.getWindowInfo](api/system/getWindowInfo.md)
     * [uni.getAppBaseInfo](api/system/getAppBaseInfo.md)

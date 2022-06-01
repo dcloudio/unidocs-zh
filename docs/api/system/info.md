@@ -133,7 +133,7 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 - `appLanguage`、`osLanguage`、`hostLanguage` 说明：
   - web 端 和 小程序端的 `appLanguage`、支付宝小程序的 `hostLanguage` 、 iOS 端的 `osLanguage`、`hostLanguage` 都是符合 `BCP 47 规范`。中文简体为：`zh-Hans` 或 `zh-Hans-CN`
   - 部分小程序（微信小程序）的 `hostLanguage`、浏览器语言、Android 端（为做低版本安卓兼容）的 `osLanguage`、`hostLanguage` 不符合 `BCP 47 规范`。中文简体为：`zh-CN`
-  - 如果要根据语言获得主语言、次语言、地域，可以使用转换库做转换
+  <!-- - 如果要根据语言获得主语言、次语言、地域，可以使用转换库做转换 -->
 
 **safeArea 的结构**
 

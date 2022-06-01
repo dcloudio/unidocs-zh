@@ -28,7 +28,7 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |参数分类	|参数				|说明																		|App平台值域		|Web平台值域		|小程序平台值域	|平台差异说明	|uni框架版本要求	|
 |:-			|:-					|:-																			|:-				|:-				|:-				|:-				|:-				|
 |device		|deviceId			|设备 id	。由 uni-app 框架生成并存储，清空 Storage 会导致改变					|				|				|				|				|				|
-|			|deviceType			|设备类型												|`phone`、`pad`、`pc`|`phone`、`pad`、`pc`|`phone`、`pad`、`pc`|				|`uni-app (3.4.10+)`	|
+|			|deviceType			|设备类型												|`phone`、`pad`、`tv`、`car`|`phone`、`pad`、`pc`|`phone`、`pad`、`pc`|				|`uni-app (3.4.10+)`	|
 |			|deviceBrand		|设备品牌。如：`apple`、`huawei`												|				|不支持	|				|				|`uni-app (3.4.10+)`	|
 |			|deviceModel		|设备型号																	|				|部分设备无法获取	|				|				|`uni-app (3.4.10+)`	|
 |			|devicePixelRatio		|设备像素比																	|				|	|				|				|`uni-app (3.4.13+)`	|
@@ -246,6 +246,8 @@ Android10以上，部分国产手机支持OAID，详见[匿名设备标识符（
 `plus.device.getInfo`的API是从HBuilderX 2.0.3+开始提供的，老版需使用plus.devide.uuid或plus.device.imei。
 
 ### getSysteInfo 新增字段取值示例
+
+> 标明 `-` 的都为 undefined，其他值都与所列出项相同
 
 |字段名称|App-Android|App-iOS|h5|Android uniMPsdk|iOS uniMPsdk|mp-weixin|mp-alipay|mp-baidu|mp-toutiao|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|

@@ -1,5 +1,20 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+
+#### 2022-06-01
+  + 新增 uniCloud.onResponse/offResponse 接口用于监听云函数、云对象及clientDB的响应结果 [详情](https://uniapp.dcloud.net.cn/uniCloud/client-sdk.html#on-response)
+  + 新增 uniCloud响应体规范 添加 newToken 字段，用于token续期。云对象会自动将token持久化存储 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#resformat)
+  + 修复 uniCloud虚拟目录、以及uni_modules下的云对象目录，右键菜单，没有运行-本地云对象、调试运行-本地云对象的菜单的Bug
+  + uniCloud控制台 新增 腾讯云云存储支持上传文件夹
+  + uni-admin 新增 uni统计 可通过选择「应用版本」查询数据
+  + uni-admin 新增 uni统计 原生 app 崩溃页部分功能
+  + uni-admin 修复 uni统计 渠道页 table 表格最后一列空白的 bug
+  + uni-admin 修复 uni统计 场景分析页趋势图有数据却显示为 0 的 bug
+  + uni-admin 修复 系统设置中权限只能加载 20 条的 bug
+
+#### 2022-05-23
+  + 修复 HBuilderX 3.4.10 引起的关联服务空间运行云函数错误的Bug [详情](https://ask.dcloud.net.cn/question/145551)
+
 #### 2022-05-20
   + uni-admin 优化 uni 统计的「统计首页」菜单移动到应用「首页」，添加了设备概览、注册用户概览
   + uni-admin 优化 「首页」显示逻辑，无 appid 时提示添加统计应用，可跳转"应用管理"的新增页

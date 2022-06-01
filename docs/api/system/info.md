@@ -33,7 +33,7 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |			|deviceModel		|设备型号																	|				|部分设备无法获取	|				|				|`uni-app (3.4.10+)`	|
 |			|devicePixelRatio		|设备像素比																	|				|	|				|				|`uni-app (3.4.13+)`	|
 |			|deviceOrientation		|设备方向																	|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|小程序端仅`微信小程序`、`百度小程序`支持|`uni-app (3.4.13+)`	|
-|os			|osAndroidAPILevel |当前程序的宿主设备搭载的 Android 系统版本代码。[详情](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element?hl=en#ApiLevels)|`仅 Android 支持`|不支持|不支持||`uni-app (3.4.10+)`|
+|os			|osAndroidAPILevel |当前程序的宿主设备搭载的 Android 系统版本代码。详情参考[Android 官方文档](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element?hl=en#ApiLevels)|`仅 Android 支持`|不支持|不支持||`uni-app (3.4.10+)`|
 |			|osName				|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos|				|`uni-app (3.4.10+)`|
 |			|osVersion			|操作系统版本。如 ios 版本，andriod 版本|				|				|				|				|`uni-app (3.4.10+)`										|
 |			|osLanguage			|操作系统语言														|`zh-CN 中文简体`、`zh-TW 中文繁体`、`en-US English`、`bo-CN 藏文`、`ug-CN 维吾尔语`等 |与浏览器语言一致	|不支持	|	|`uni-app (3.4.10+)`										|

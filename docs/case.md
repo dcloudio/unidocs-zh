@@ -729,7 +729,9 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **萌猫合成：** 网赚类合成游戏 [App](https://ext.dcloud.net.cn/plugin?id=4095)
 
-**有奖猜歌：** 猜歌有奖，激励视频变现 [App](https://ext.dcloud.net.cn/plugin?id=4826)
+**有奖猜歌：** 猜歌有奖，激励视频变现，支持App和微信小程序双平台。 [App](https://ext.dcloud.net.cn/plugin?id=4826)
+
+**猜字谜：** 基于有奖猜歌改版，支持App和微信小程序双平台变现。 [App](https://ext.dcloud.net.cn/plugin?id=7996)
 
 #### 创业公司
 

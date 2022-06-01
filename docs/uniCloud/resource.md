@@ -41,10 +41,17 @@
 </a>
 
 - [猜歌类网赚游戏](https://ext.dcloud.net.cn/plugin?id=4826) 该游戏基于uni-app、uniCloud、uni-AD开发的小游戏，通过猜歌曲、观看广告赚取现金奖励。代码开源、文档公开。
-游戏主要功能：玩家可以通过猜歌、做任务等方式直接获取现金奖励。玩家可以通过猜歌、拆红包、做任务等方式获取金币奖励，当金币累积到一定数量可以兑换现金。玩家可以通过做带有抽奖字样的任务获取现金抽奖次数
+游戏主要功能：玩家可以通过猜歌、做任务等方式直接获取现金奖励。玩家可以通过猜歌、拆红包、做任务等方式获取金币奖励，当金币累积到一定数量可以兑换现金。玩家可以通过做带有抽奖字样的任务获取现金抽奖次数。支持App和微信小程序双平台变现。
 
 <a href="https://ext.dcloud.net.cn/plugin?id=4826">
   <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-c26ec39a-f602-435d-b8bb-0453aa221eb0/b4812d7a-6438-4c33-89de-e2dc9752b028.png">
+</a>
+
+
+- [猜字谜](https://ext.dcloud.net.cn/plugin?id=7996) 该游戏基于猜歌类网赚游戏改版，代码开源、文档公开，支持App和微信小程序双平台变现。
+
+<a href="https://ext.dcloud.net.cn/plugin?id=7996">
+  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e4482b33-43b1-4279-8a2a-d29e24b55a89.png">
 </a>
 
 

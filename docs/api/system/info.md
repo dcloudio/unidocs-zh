@@ -28,12 +28,13 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |参数分类	|参数				|说明																		|App平台值域		|Web平台值域		|小程序平台值域	|平台差异说明	|uni框架版本要求	|
 |:-			|:-					|:-																			|:-				|:-				|:-				|:-				|:-				|
 |device		|deviceId			|设备 id	。由 uni-app 框架生成并存储，清空 Storage 会导致改变					|				|				|				|				|				|
-|			|deviceType			|设备类型												|`phone`、`pad`、`tv`、`car`|`phone`、`pad`、`pc`|`phone`、`pad`、`pc`|				|`uni-app (3.4.10+)`	|
+|			|deviceType			|设备类型												|`phone`、`pad`、`tv`、`car`、`unknow`|`phone`、`pad`、`pc`、`unknow`|`phone`、`pad`、`pc`|				|`uni-app (3.4.10+)`	|
 |			|deviceBrand		|设备品牌。如：`apple`、`huawei`												|				|不支持	|				|				|`uni-app (3.4.10+)`	|
 |			|deviceModel		|设备型号																	|				|部分设备无法获取	|				|				|`uni-app (3.4.10+)`	|
 |			|devicePixelRatio		|设备像素比																	|				|	|				|				|`uni-app (3.4.13+)`	|
 |			|deviceOrientation		|设备方向																	|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|小程序端仅`微信小程序`、`百度小程序`支持|`uni-app (3.4.13+)`	|
-|os			|osName				|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos|				|`uni-app (3.4.10+)`|
+|os			|osAndroidAPILevel |当前程序的宿主设备搭载的 Android 系统版本代码。[详情](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element?hl=en#ApiLevels)|`仅 Android 支持`|不支持|不支持||`uni-app (3.4.10+)`|
+|			|osName				|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos|				|`uni-app (3.4.10+)`|
 |			|osVersion			|操作系统版本。如 ios 版本，andriod 版本|				|				|				|				|`uni-app (3.4.10+)`										|
 |			|osLanguage			|操作系统语言														|`zh-CN 中文简体`、`zh-TW 中文繁体`、`en-US English`、`bo-CN 藏文`、`ug-CN 维吾尔语`等 |与浏览器语言一致	|不支持	|	|`uni-app (3.4.10+)`										|
 |			|osTheme			|操作系统主题。													|light、dark|不支持			|不支持	|				|`uni-app (3.4.10+)`
@@ -245,7 +246,7 @@ Android10以上，部分国产手机支持OAID，详见[匿名设备标识符（
 
 `plus.device.getInfo`的API是从HBuilderX 2.0.3+开始提供的，老版需使用plus.devide.uuid或plus.device.imei。
 
-### getSysteInfo 新增字段取值示例
+### getSysteInfo 新增字段取值示例 @getsysteminfo-new-fields
 
 > 标明 `-` 的都为 undefined，其他值都与所列出项相同
 

@@ -1675,7 +1675,7 @@ db.command.aggregate.or([<expression1>, <expression2>, ...])
 const $ = db.command.aggregate
 let res = await db.collection('price').aggregate()
   .project({
-    fullfilled: $.or([$.lt(['$min', 30]), $.gt(['$max', 60])])
+    fullfilled: $.or([$.lt(['$min', 40]), $.gt(['$max', 60])])
   })
   .end()
 ```

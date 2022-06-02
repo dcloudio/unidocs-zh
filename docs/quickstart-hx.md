@@ -138,7 +138,7 @@ HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行�
 
 虽然安心打包已经满足需求，但如仍然希望自己使用 xcode 或 Android studio 进行离线打包，则在 HBuilderX 发行菜单里找到本地打包菜单，生成离线打包资源，然后参考离线打包文档操作：[https://nativesupport.dcloud.net.cn/AppDocs/README](https://nativesupport.dcloud.net.cn/AppDocs/README)。
 
-App打包时，注意如何涉及三方sdk，需进行申请并在manifest.json里配置，否则相关功能无法使用。
+App打包时，注意如果涉及三方sdk，需进行申请并在manifest.json里配置，否则相关功能无法使用。
 
 iOS App打包需要向Apple申请证书。
 

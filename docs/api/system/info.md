@@ -308,7 +308,7 @@ Android10以上，部分国产手机支持OAID，详见[匿名设备标识符（
 
 `plus.device.getInfo`的API是从HBuilderX 2.0.3+开始提供的，老版需使用plus.devide.uuid或plus.device.imei。
 
-### getSysteInfo 新增字段取值示例 @getsysteminfo-new-fields
+### getSystemInfo 新增字段取值示例 @getsysteminfo-new-fields
 
 > 标明 `-` 的都为 undefined，其他值都与所列出项相同
 

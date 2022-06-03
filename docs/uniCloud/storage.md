@@ -151,7 +151,7 @@ uni.chooseImage({
 
 |字段		|类型						|必填	|默认值	|说明								|平台差异说明	|
 |:-:		|:-:						|:-:	|:-:	|:-:								|:-:			|
-|fileList	|&lt;Array&gt;.String,Object|是		|-		|要获取下载链接的文件 ID 组成的数组	|仅腾讯云支持	|
+|fileList	|&lt;Array&gt;.String,Object|是		|-		|要获取下载链接的文件 ID 组成的数组	|-	|
 
 **请求参数中的fileList**
 

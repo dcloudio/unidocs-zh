@@ -1665,17 +1665,17 @@ db.command.aggregate.or([<expression1>, <expression2>, ...])
  
 ```js
 { "_id": 1, "min": 10, "max": 100 }
-{ "_id": 2, "min": 60, "max": 80 }
+{ "_id": 2, "min": 50, "max": 60 }
 { "_id": 3, "min": 30, "max": 50 }
 ```
-求 `min` 小于 40 且 `max` 大于 60 的记录。  
+求 `min` 小于 40 或 `max` 大于 60 的记录。  
 
  
 ```js
 const $ = db.command.aggregate
 let res = await db.collection('price').aggregate()
   .project({
-    fullfilled: $.or([$.lt(['$min', 30]), $.gt(['$max', 60])])
+    fullfilled: $.or([$.lt(['$min', 40]), $.gt(['$max', 60])])
   })
   .end()
 ```

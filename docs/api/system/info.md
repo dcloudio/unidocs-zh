@@ -4,13 +4,13 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 
 系统信息返回的内容非常多，各操作系统、各家小程序、各浏览器对它们的定义也不相同。uni-app里重新梳理了这些概念，同时为了向下兼容也保留了这些平台原来的概念，但不推荐使用。
 
-按照运行环境层级排序，从底层向上，共有6个概念：
+按照运行环境层级排序，从底层向上，uni-app有6个概念：
 - `device`：运行应用的设备，如iphone、huawei
-- `os`：运行应用的操作系统，如 ios、andriod、windows、mac、linux
-- `rom`：Android系统特有概念，如miui、鸿蒙
-- `host`：运行应用的宿主程序，即OS和应用之间的运行环境，如浏览器、微信、集成uniMPSDK的App
-- `uni`：uni-app框架相关的信息，如uni-app框架版本
-- `app`：开发者的应用相关的信息，如app版本
+- `os`：设备的操作系统，如 ios、andriod、windows、mac、linux
+- `rom`：基于操作系统的定制，Android系统特有概念，如miui、鸿蒙
+- `host`：运行应用的宿主程序，即OS和应用之间的运行环境，如浏览器、微信等小程序宿主、集成uniMPSDK的App。uni-app直接开发的app没有host概念
+- `uni`：uni-app框架相关的信息，如uni-app框架的编译器版本、运行时版本
+- `app`：开发者的应用相关的信息，如应用名称、版本
 
 ### uni.getSystemInfo(OBJECT)
 异步获取系统信息
@@ -23,41 +23,41 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-**success 返回参数说明：**
+#### success 返回参数说明
 
-|参数分类	|参数|说明			|App平台值域		|Web平台值域		|小程序平台值域	|平台差异说明	|uni框架版本要求	|
+|参数分类	|参数|说明			|App平台值域		|Web平台值域		|小程序平台值域	|备注	|uni框架最低版本要求	|
 |:-			|:-|:-|:-|:-|:-|:-|:-|
 |device |deviceId			|设备 id	。由 uni-app 框架生成并存储，清空 Storage 会导致改变||||||
-|			|deviceType			|设备类型		|[查看详情](#tips)|`phone`、`pad`、`pc`、`unknow`|`phone`、`pad`、`pc`||`uni-app (3.4.10+)`	|
-|			|deviceBrand		|设备品牌。如：`apple`、`huawei`		||不支持	|||`uni-app (3.4.10+)`	|
-|			|deviceModel		|设备型号		||部分设备无法获取	|||`uni-app (3.4.10+)`	|
-|			|deviceOrientation		|设备方向		|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|小程序端仅`微信小程序`、`百度小程序`支持|`uni-app (3.4.13+)`	|
-|			|devicePixelRatio		|设备像素比		||	|||`uni-app (3.4.13+)`	|
-|os		|osName|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos||`uni-app (3.4.10+)`|
-|			|osVersion			|操作系统版本。如 ios 版本，andriod 版本|||||`uni-app (3.4.10+)`|
-|			|osLanguage			|操作系统语言|`zh-CN 中文简体`、`zh-TW 中文繁体`、`en-US English`、`bo-CN 藏文`、`ug-CN 维吾尔语`等 |与浏览器语言一致	|不支持	|	|`uni-app (3.4.10+)`|
-|			|osTheme			|操作系统主题。			|light、dark|不支持			|不支持	|iOS平台只有将应用主题设置为跟随系统时才能获取到系统的主题|`uni-app (3.4.10+)`|
-|			|osAndroidAPILevel |当前程序的宿主设备搭载的 Android 系统版本代码。详情参考[Android 官方文档](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element?hl=en#ApiLevels)|`仅 Android 支持`|不支持|不支持||`uni-app (3.4.10+)`|
-|rom	|romName			|rom 名称|Android 部分机型获取不到值，[取值如下](#romname)。iOS 不支持|不支持|不支持||`uni-app (3.4.13+)`|
-|			|romVersion			|rom 版本|Android 部分机型获取不到值，[取值如下](#romname)。iOS 不支持|不支持|不支持||`uni-app (3.4.13+)`|
-|browser	|browserName		|浏览器名称或App平台系统webview名称|系统 webview 名称，x5webview、wkwebview、chrome	|chrome、edge、safari、firefox	|不支持||`uni-app (3.4.10+)`|
-|			|browserVersion		|浏览器版本、webview 版本|||不支持			||`uni-app (3.4.10+)`|
-|host	|hostName			|App、小程序宿主名称，如：`WeChat`、`FeiShu`|仅 UniMPSDK 支持	|不支持|[取值如下](#hostname)|微信小程序真机运行才有真值|`uni-app (3.4.10+)`|
-|			|hostVersion		|App、小程序宿主版本。如：微信版本号|仅 UniMPSDK 支持	|不支持|小程序宿主版本||`uni-app (3.4.10+)`|
-|			|hostLanguage		|App、小程序宿主语言|仅 UniMPSDK 支持	|不支持|小程序宿主语言||`uni-app (3.4.10+)`|
-|			|hostTheme			|App 主题、小程序端为系统当前主题|`light`、`dark`。仅 UniMPSDK 支持	|不支持|`light`、`dark`|仅微信小程序全局配置"darkmode":true时才能获取|`uni-app (3.4.10+)`	|
-|			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持||微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)|`uni-app (3.4.13+)`|
-|			|hostPackageName	|小程序宿主包名。仅 App 支持|仅 UniMPSDK 支持	|不支持|不支持||`uni-app (3.4.10+)`|
-|			|hostSDKVersion	|uni小程序SDK版本、小程序客户端基础库版本|仅 UniMPSDK 支持	|不支持|||`uni-app (3.4.13+)`|
-|uni-app框架	|uniPlatform		|uni-app 运行平台。[取值如下](#uniplatform) |-|-|-||`uni-app (3.4.10+)`|
-|			|uniCompileVersion	|uni 编译器版本号|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||`uni-app (3.4.10+)`|
-|			|uniRuntimeVersion	|uni 运行时版本|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||`uni-app (3.4.10+)`|
-|app	|appId|`manifest.json` 中应用appid，即DCloud appid。			|||||`uni-app (3.4.10+)`|
-|			|appName			|`manifest.json` 中应用名称	||||和`字节跳动小程序`字段冲突，`字节跳动小程序`原字段与`hostName`一致|`uni-app (3.4.10+)`|
-|			|appVersion			|`manifest.json` 中应用版本名称。		|||||`uni-app (3.4.10+)`|
-|			|appVersionCode		|`manifest.json` 中应用版本名号。		|||||`uni-app (3.4.10+)`|
-|			|appLanguage		|应用设置的语言|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`||`uni-app (3.4.13+)`|
-|其他	 |ua| userAgent标识	|||不支持		||`uni-app (3.4.10+)`		|
+|			|deviceType			|设备类型。如`phone`、`pad`、`pc`、`unknow`		|[详见](#tips)|`phone`、`pad`、`pc`、`unknow`|`phone`、`pad`、`pc`||uni-app 3.4.10+|
+|			|deviceBrand		|设备品牌。如：`apple`、`huawei`		||不支持	|||uni-app 3.4.10+|
+|			|deviceModel		|设备型号		||部分设备无法获取	|||uni-app 3.4.10+|
+|			|deviceOrientation		|设备方向		|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`。仅微信百度小程序支持||uni-app 3.4.13+|
+|			|devicePixelRatio		|设备像素比		||	|||uni-app 3.4.13+|
+|os		|osName|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos||uni-app 3.4.10+|
+|			|osVersion			|操作系统版本。如 ios 版本，andriod 版本|||||uni-app 3.4.10+|
+|			|osLanguage			|操作系统语言[详见](#tips)|Android仅支持主语言+地区：`zh-CN 中文简体`、iOS支持主语言+次语言+地区`zh-Hans-CN 中文简体` |与浏览器语言一致	|不支持	|	|uni-app 3.4.10+|
+|			|osTheme			|操作系统主题			|light、dark。iOS平台只有将应用主题设置为跟随系统时才能获取到系统的主题|不支持	|不支持	||uni-app 3.4.10+|
+|			|osAndroidAPILevel | Android 系统API库的版本。详情参考[Android 官方文档](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element?hl=en#ApiLevels)|`仅 Android 支持`|不支持|不支持||uni-app 3.4.10+|
+|rom	|romName			|rom 名称|Android 部分机型获取不到值，[详见](#romname)。iOS 不支持|不支持|不支持||uni-app 3.4.13+|
+|			|romVersion			|rom 版本|Android 部分机型获取不到值，[详见](#romname)。iOS 不支持|不支持|不支持||uni-app 3.4.13+|
+|browser	|browserName		|浏览器名称或App的webview名称|chrome(android)、wkwebview(ios)、x5webview(app打包x5引擎)|chrome、edge、safari、firefox	|不支持||uni-app 3.4.10+|
+|			|browserVersion		|浏览器版本、webview 版本|||不支持			||uni-app 3.4.10+|
+|host	|hostName			|小程序宿主或uniMPSDK的集成宿主名称，如：`WeChat`、`FeiShu`|仅 UniMPSDK 支持	|不支持|[详见](#hostname)|微信小程序真机运行才有真值|uni-app 3.4.10+|
+|			|hostVersion		|宿主版本。如：微信版本号|仅 UniMPSDK 支持	|不支持|小程序宿主版本||uni-app 3.4.10+|
+|			|hostLanguage		|宿主语言|仅 UniMPSDK 支持	|不支持|小程序宿主语言||uni-app 3.4.10+|
+|			|hostTheme			|宿主主题|`light`、`dark`。仅 UniMPSDK 支持	|不支持|`light`、`dark`。前提是微信小程序全局配置"darkmode":true时才能获取||uni-app 3.4.10+|
+|			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持|微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)||uni-app 3.4.13+|
+|			|hostPackageName	|小程序宿主包名。仅 App 支持|仅 UniMPSDK 支持	|不支持|不支持||uni-app 3.4.10+|
+|			|hostSDKVersion	|uni小程序SDK版本、小程序客户端基础库版本|仅 UniMPSDK 支持	|不支持|||uni-app 3.4.13+|
+|uni-app框架	|uniPlatform		|uni-app 运行平台，与条件编译平台相同。[详见](#uniplatform) |app|`web`或`h5`|各家小程序，如`mp-weixin`||uni-app 3.4.10+|
+|			|uniCompileVersion	|uni 编译器版本号。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
+|			|uniRuntimeVersion	|uni 运行时版本。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
+|app	|appId|`manifest` 中应用appid，即DCloud appid。			|||||uni-app 3.4.10+|
+|			|appName			|`manifest` 中应用名称	||||和`字节跳动小程序`字段冲突，`字节跳动小程序`原字段与`hostName`一致|uni-app 3.4.10+|
+|			|appVersion			|`manifest` 中应用版本名称。		|||||uni-app 3.4.10+|
+|			|appVersionCode		|`manifest` 中应用版本名号。		|||||uni-app 3.4.10+|
+|			|appLanguage		|应用设置的语言|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`||uni-app 3.4.13+|
+|其他	 |ua| userAgent标识	|||不支持		||uni-app 3.4.10+|
 |			|screenWidth		|屏幕宽度|||||		|
 |			|screenHeight		|屏幕高度		|||||		|
 |			|windowWidth		|可使用窗口宽度	|||||		|
@@ -65,15 +65,18 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |			|windowTop			|可使用窗口的顶部位置	|||||		|
 |			|windowBottom		|可使用窗口的底部位置	|||||		|
 |			|statusBarHeight	|手机状态栏的高度||||||		
-|			|safeArea			|在竖屏正方向下的安全区域|App、Web、微信小程序|||||	
-|			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置（2.5.3+）|App、Web、微信小程序|||||
+|			|safeArea			|在竖屏正方向下的安全区域。[详见](#safearea)|||微信、百度、字节跳动、快手小程序|||	
+|			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。[详见](#safearea)|||微信||uni-app 2.5.3+|
 
-某些小程序特殊的返回参数
+#### 某些小程序特殊的返回参数
 
 |参数|说明|平台差异说明|
 |:-|:-|:-|
 |benchmarkLevel|设备性能等级。取值为：-2 或 0（该设备无法运行小游戏），-1（性能未知），>=1（设备性能值，该值越高，设备性能越好，目前最高不到50）|微信小程序Android版、QQ小程序Android版|
 |batteryLevel	|	剩余电量百分比（仅 iOS 有效）	|微信小程序|
+|currentBattery|当前电量百分比|支付宝小程序|
+|navigationBarHeight|导航栏的高度|百度小程序|
+|titleBarHeight|标题栏高度|支付宝小程序|
 |albumAuthorized	|	允许微信使用相册的开关（仅 iOS 有效）	|微信小程序|
 |cameraAuthorized	|	允许微信使用摄像头的开关	|微信小程序|
 |locationAuthorized	|	允许微信使用定位的开关	|微信小程序|
@@ -85,13 +88,10 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |bluetoothEnabled	|	蓝牙的系统开关	|微信小程序|
 |locationEnabled	|	地理位置的系统开关	|微信小程序|
 |wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序|
-|cacheLocation|上一次缓存的位置信息|百度小程序|
-|navigationBarHeight|导航栏的高度|百度小程序|
-|titleBarHeight|标题栏高度|支付宝小程序|
+|cacheLocation|上一次缓存的位置信息|百度小程序(安卓端最低基础库版本 3.40.4 ；iOS 最低支持版本 3.70.2)|
 |storage|设备磁盘容量|支付宝小程序|
-|currentBattery|当前电量百分比|支付宝小程序|
 
-不推荐使用的返回参数，仅为向下兼容保留
+#### 不推荐使用的返回参数，仅为向下兼容保留
 
 |参数|说明|平台差异说明|
 |:-|:-|:-|
@@ -109,51 +109,6 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |AppPlatform|App平台|QQ小程序|
 |fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)|
 
-<a id="tips" style="padding-top:6rem;"></a>
-
-**Tips**
-- 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
-- windowHeight不包含NavigationBar和TabBar的高度
-- Web端，windowTop等于NavigationBar高度，windowBottom等于TabBar高度
-- App端，windowTop等于透明状态NavigationBar高度，windowBottom等于透明状态TabBar高度
-- 高度相关信息，要放在 onReady 里获取
-- `deviceId`：`Android 平台` 根据优先使用imei、mac，如果没有获取到就使用随机生成的标识。`iOS 平台` 是直接使用随机生成的标识
-- `deviceType`：
-  - `iOS 平台` uni-app 应用工程模板是基于 iOS 平台创建的，只支持 `phone`、`pad`。
-  - `Android 平台` 支持 `phone`、`pad`、`tv`、`car`、`watch`、`vr`、`appliance`，关于各个类型的更详细解释参考[Android官方文档](https://developer.android.com/guide/)。
-  - 关于 `Android 平台` `pad` 类型的判断使用以下代码。由于 Android 标准已经废弃了 tablet 概念，因此 `pad` 的判断条件在非 Google 官方系统上并不准确,如果有需要开发者可自行根据型号或屏幕大小判断
-
-	```java
-	public static boolean isTablet(Context context) {
-		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
-	}
-	```
-- `osTheme`：`Android 平台` 可以获取到系统的主题色。`iOS 平台` 只有将应用主题设置为跟随系统时才能获取到系统的主题
-- `romVersion`：该字段全部采用系统返回值，可能会有所不同，如：`MIUI 13` 返回的为 `V130`格式，`HarmonyOS 2.0` 返回的为 `2.0.0` 格式
-- `appLanguage`、`osLanguage`、`hostLanguage` 说明：
-  - web 端 和 小程序端的 `appLanguage`、支付宝小程序的 `hostLanguage` 、 iOS 端的 `osLanguage`、`hostLanguage` 都是符合 `BCP 47 规范`。中文简体为：`zh-Hans` 或 `zh-Hans-CN`
-  - 部分小程序（微信小程序）的 `hostLanguage`、浏览器语言、Android 端（为做低版本安卓兼容）的 `osLanguage`、`hostLanguage` 不符合 `BCP 47 规范`。中文简体为：`zh-CN`
-  <!-- - 如果要根据语言获得主语言、次语言、地域，可以使用转换库做转换 -->
-
-**safeArea 的结构**
-
-|参数	|类型	|说明		|
-|:-		|:-			|:-			|
-|left	|Number	|安全区域左上角横坐标			|
-|right	|Number	|安全区域右下角横坐标			|
-|top	|Number	|安全区域左上角纵坐标			|
-|bottom	|Number	|安全区域右下角纵坐标			|
-|width	|Number	|安全区域的宽度，单位逻辑像素	|
-|height	|Number	|安全区域的高度，单位逻辑像素	|
-
-**safeAreaInsets 的结构**
-
-|参数	|类型	|说明		|
-|:-		|:-			|:-			|
-|left	|Number	|安全区域左侧插入位置			|
-|right	|Number	|安全区域右侧插入位置			|
-|top	|Number	|安全区顶部插入位置			|
-|bottom	|Number	|安全区域底部插入位置			|
 
 #### uniPlatform 取值 @uniplatform
 
@@ -176,9 +131,8 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 
 #### hostName 取值 @hostname
 
-|值|生效条件|
+|值|解释|
 |:-|:-|
-|qq|QQ|
 |WeChat|微信|
 |wxwork|微信企业版|
 |[百度宿主平台枚举值列表](https://smartprogram.baidu.com/docs/develop/api/device_sys/hostlist/)|百度|
@@ -190,125 +144,115 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |AK|阿里健康|
 |YK|优酷|
 |[字节宿主平台枚举值列表](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|字节跳动系列|
+|qq|QQ|
 |KUAISHOU|快手|
 
 #### romName 取值 @romname
 
-|值|生效条件|
+|值|解释|
 |:-|:-|
 |MIUI|小米|
-|EMUI、HarmonyOS|华为|
+|EMUI|华为|
+|HarmonyOS|华为鸿蒙|
 |Magic OS|荣耀|
-|FLymeOS|魅族|
-|SmartisanOS|锤子|
 |ColorOS|oppo|
 |Funtouch OS|vivo|
+|FLymeOS|魅族|
+|SmartisanOS|锤子|
 
-**示例**
+注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
 
+#### safeArea 的结构 @safearea
+
+|参数	|类型	|说明		|
+|:-		|:-			|:-			|
+|left	|Number	|安全区域左上角横坐标			|
+|right	|Number	|安全区域右下角横坐标			|
+|top	|Number	|安全区域左上角纵坐标			|
+|bottom	|Number	|安全区域右下角纵坐标			|
+|width	|Number	|安全区域的宽度，单位逻辑像素	|
+|height	|Number	|安全区域的高度，单位逻辑像素	|
+
+**safeAreaInsets 的结构**
+
+|参数	|类型	|说明		|
+|:-		|:-			|:-			|
+|left	|Number	|安全区域左侧插入位置			|
+|right	|Number	|安全区域右侧插入位置			|
+|top	|Number	|安全区顶部插入位置			|
+|bottom	|Number	|安全区域底部插入位置			|
+
+
+#### language说明
+
+language的国际规范是`BCP47规范`，分为三段，主语言-次语言-地区。例如`zh-Hans-CN`，表示 中文-简体-中国大陆
+
+但除了主语言外，后两者均可省略。在不同平台，它们的省略规则也不相同。
+
+- app-ios，不省略，返回`zh-Hans-CN`
+- app-android、web、微信小程序，省略次语言，返回`zh-CN`
+- uni-app框架和应用的多语言，以及支付宝小程序，则用`zh-Hans`来表示简体中文
+
+所以获取语言后，不能直接字符串比较，需要拆段比较，npm上也有专门做`BCP47语言规范`比较的库。
+
+#### deviceId说明
+
+Web、小程序、iOS，属于对用户隐私保护比较严格的平台，在这些平台很难获取有效的设备唯一标记。
+
+Android也已经改进用户隐私保护。在极老的手机上可以无限制获取imei，在次老的手机上，获取imei等隐私信息时需要弹框让用户授权。新的Android手机（Android10以上）已经彻底无法获取imei了。
+
+所以标记设备，大多只能依靠本地存储一个随机数来标记。
+
+deviceId，在`app-android`平台，会根据优先使用imei、mac（仅在用户已授权的情况下，如果发现需要授权或未授权，则跳过此步骤），如果没有获取到就使用随机生成的标识。其他平台是直接使用随机生成的标识。
+
+当使用本地存贮的随机数时，发生以下情况将导致deviceId失效：
+- 卸载App
+- Android上重置App数据
+- 浏览器清空缓存或开启隐私模式，
+
+app下需要广告追踪的场景，在iOS上可以使用[idfa](https://ask.dcloud.net.cn/article/36107)、部分国产Android手机可以使用[OAID](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)
+
+#### Tips @tips
+- `deviceType`：
+  - `app-ios` 只支持 `phone`、`pad`。
+  - `app-android` 支持 `phone`、`pad`、`tv`、`car`、`watch`、`vr`、`appliance`、`undefined`、`unknown`，关于各个类型的更详细解释参考[Android官方文档](https://developer.android.com/guide/)。
+  - 其中，`app-android` 平台下 `pad` 类型的判断，在国产pad等非google官方设备上并不一定准确。如果有需要开发者可自行根据型号或屏幕大小判断。uni-app框架源码中判断`pad`的java代码如下，供参考：
+
+	```java
+	public static boolean isTablet(Context context) {
+		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+	}
+	```
+- `osTheme`：`app-ios` 只有将应用主题设置为跟随系统时才能获取到系统的主题。小程序也有类似限制。
+- 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
+- windowHeight不包含NavigationBar和TabBar的高度
+- Web端，windowTop等于NavigationBar高度，windowBottom等于TabBar高度
+- App端，windowTop等于透明状态NavigationBar高度，windowBottom等于透明状态TabBar高度
+- 高度相关信息，要放在 onReady 里获取。太早取不到。
+
+
+本API在其他小程序的文档链接：
+- [微信小程序](https://developers.weixin.qq.com/miniprogram/dev/api/base/system/wx.getSystemInfoAsync.html)
+- [支付宝小程序](https://opendocs.alipay.com/mini/api/system-info)
+- [百度小程序](https://smartprogram.baidu.com/docs/develop/api/device_sys/swan-getSystemInfoSync/)
+- [字节小程序](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info-sync/)
+- [飞书小程序](https://open.feishu.cn/document/uYjL24iN/uQjNx4CN2EjL0YTM)
+- [QQ小程序](https://q.qq.com/wiki/develop/game/API/basic/system.html#qq-getsysteminfo)
+- [快手小程序](https://mp.kuaishou.com/docs/develop/api-next/basic/system/ks.getSystemInfoSync.html#systeminfo)
+- [京东小程序](https://mp-docs.jd.com/api/equipment/system.html)
+
+#### 示例 @getsysteminfo-new-fields
+
+调用代码示例
 ```javascript
 uni.getSystemInfo({
 	success: function (res) {
-		console.log(res.appId);
-		console.log(res.appName);
-		console.log(res.appVersion);
-		console.log(res.appLanguage);
-		console.log(res.appVersionCode);
-		console.log(res.browserName);
-		console.log(res.browserVersion);
-		console.log(res.deviceId);
-		console.log(res.deviceBrand);
-		console.log(res.deviceModel);
-		console.log(res.deviceType);
-		console.log(res.deviceOrientation);
-		console.log(res.devicePixelRatio);
-		console.log(res.hostName);
-		console.log(res.hostVersion);
-		console.log(res.hostLanguage);
-		console.log(res.hostTheme);
-		console.log(res.hostPackageName);
-		console.log(res.hostSDKVersion);
-		console.log(res.osName);
-		console.log(res.osVersion);
-		console.log(res.osLanguage);
-		console.log(res.osTheme);
-		console.log(res.osAndroidAPILevel);
-		console.log(res.romName);
-		console.log(res.romVersion);
-		console.log(res.uniPlatform);
-		console.log(res.uniCompileVersion);
-		console.log(res.uniRuntimeVersion);
+		console.log(res.appName)
 	}
 });
 ```
 
-### uni.getSystemInfoSync()
-获取系统信息的同步接口。`返回值同上getSystemInfo`。
-
-**示例**
-
-```javascript
-try {
-	const res = uni.getSystemInfoSync();
-		console.log(res.appId);
-		console.log(res.appName);
-		console.log(res.appVersion);
-		console.log(res.appLanguage);
-		console.log(res.appVersionCode);
-		console.log(res.browserName);
-		console.log(res.browserVersion);
-		console.log(res.deviceId);
-		console.log(res.deviceBrand);
-		console.log(res.deviceModel);
-		console.log(res.deviceType);
-		console.log(res.deviceOrientation);
-		console.log(res.devicePixelRatio);
-		console.log(res.hostName);
-		console.log(res.hostVersion);
-		console.log(res.hostLanguage);
-		console.log(res.hostTheme);
-		console.log(res.hostPackageName);
-		console.log(res.hostSDKVersion);
-		console.log(res.osName);
-		console.log(res.osVersion);
-		console.log(res.osLanguage);
-		console.log(res.osTheme);
-		console.log(res.osAndroidAPILevel);
-		console.log(res.romName);
-		console.log(res.romVersion);
-		console.log(res.uniPlatform);
-		console.log(res.uniCompileVersion);
-		console.log(res.uniRuntimeVersion);
-} catch (e) {
-	// error
-}
-```
-
-
-**获取设备标记**
-
-Web、小程序、iOS，属于对用户隐私保护比较严格的平台，在这些平台很难获取有效的设备唯一标记。
-
-Android已经改进用户隐私保护，在很多新手机上，获取imei等信息时需要弹框让用户授权。而Android10已经无法获取imei了。
-
-- Web平台：
-常用的方式是uv，即在uni.storage里存一个随机数，本质是存在浏览器的localstorage里。将随机数发给服务器，进行用户身份识别和统计。当然如果用户浏览器清空了localstorage、更换了浏览器、或使用隐私模式，那么就统计数据就会有误差。
-- 小程序平台：
-小程序也可以采用与Web类似的方式，在uni.storage里存一个随机数。如果想获取用户的微信唯一ID，也可以弹框请求用户授权。
-- App iOS平台：
-iOS并不提供imei的获取API，可通过[plus.device.getInfo](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo) 可以获得设备的唯一标识（uuid），这个id其实也是一种随机数概念，类似于h5的uv计算，卸载app重装会发生变化；
-
-iOS还有一个叫`idfa`的广告识别符，可通过Native.js获取，详见：[idfa介绍](https://ask.dcloud.net.cn/article/36107)。
-- App Android平台：
-Android也可以使用UUID，同iOS。
-
-Android10以下可以得到imei，在[plus.device.getInfo](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo) 可以获得设备的国际移动设备身份码（imei）。注意很多新手机在获取imei时会弹框要求用户授权。
-
-Android10以上，部分国产手机支持OAID，详见[匿名设备标识符（OAID）](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)
-
-`plus.device.getInfo`的API是从HBuilderX 2.0.3+开始提供的，老版需使用plus.devide.uuid或plus.device.imei。
-
-### getSystemInfo 新增字段取值示例 @getsysteminfo-new-fields
+在不同平台 getSystemInfo 的返回值
 
 > 标明 `-` 的都为 undefined，其他值都与所列出项相同
 
@@ -329,7 +273,7 @@ Android10以上，部分国产手机支持OAID，详见[匿名设备标识符（
 |devicePixelRatio|2.5687501430511475|3|2|3|3|3|3|2|2|
 |hostName|-|-|-|MPLauncherV3|uniMPDemo|WeChat、wxwork|alipay、amap、DINGTALK、UC、QUARK、AK、YK|baiduboxapp 等[百度宿主平台枚举值列表](https://smartprogram.baidu.com/docs/develop/api/device_sys/hostlist/)|Douyin、Toutiao、news_article_lite、live_stream、XiGua、PPX|
 |hostVersion|-|-|-|1.0|1.0.0|8.0.5|10.2.23|2.45.0|6.6.3|
-|hostLanguage|-|-|-|zh-CN|zh-Hans-CN|zh-Hans|zh-CN|zh-CN|
+|hostLanguage|-|-|-|zh-CN|zh-Hans-CN|zh-CN|zh-CN|zh-CN|
 |hostTheme|-|-|-|light|light|-|-|-|-|
 |hostPackageName|-|-|-|com.example.mplauncherv3|io.dcloud.hellounimp|-|-|-|-|
 |hostSDKVersion|-|-|-|3.4.13|3.4.13|2.24.2|2.7.6|3.450.16|2.49.0|
@@ -343,3 +287,8 @@ Android10以上，部分国产手机支持OAID，详见[匿名设备标识符（
 |uniPlatform|app|app|web|app|app|mp-weixin|mp-alipay|mp-baidu|mp-toutiao|
 |uniCompileVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|
 |uniRuntimeVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|
+
+
+### uni.getSystemInfoSync()
+
+获取系统信息的同步接口。`调用方式和返回值同上getSystemInfo`。

@@ -47,7 +47,7 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |			|hostLanguage		|宿主语言|仅 UniMPSDK 支持	|不支持|小程序宿主语言||uni-app 3.4.10+|
 |			|hostTheme			|宿主主题|`light`、`dark`。仅 UniMPSDK 支持	|不支持|`light`、`dark`。前提是微信小程序全局配置"darkmode":true时才能获取||uni-app 3.4.10+|
 |			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持|微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)||uni-app 3.4.13+|
-|			|hostPackageName	|小程序宿主包名。仅 App 支持|仅 UniMPSDK 支持	|不支持|不支持||uni-app 3.4.10+|
+|			|hostPackageName	|小程序宿主包名|仅 UniMPSDK 支持	|不支持|不支持||uni-app 3.4.10+|
 |			|hostSDKVersion	|uni小程序SDK版本、小程序客户端基础库版本|仅 UniMPSDK 支持	|不支持|||uni-app 3.4.13+|
 |uni-app框架	|uniPlatform		|uni-app 运行平台，与条件编译平台相同。[详见](#uniplatform) |app|`web`或`h5`|各家小程序，如`mp-weixin`||uni-app 3.4.10+|
 |			|uniCompileVersion	|uni 编译器版本号。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
@@ -110,7 +110,7 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)|
 
 
-#### uniPlatform 取值 @uniplatform
+#### uniPlatform 返回值说明 @uniplatform
 
 |值|生效条件|
 |:-|:-|
@@ -129,7 +129,31 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |quickapp-webview-union|快应用联盟|
 |quickapp-webview-huawei|快应用华为|
 
-#### hostName 取值 @hostname
+`uniCompileVersion`编译器版本 和 `uniRuntimeVersion`运行时版本，正常情况应该是一样的值，即uni-app的版本。
+
+如果使用HBuilder自带的uni-app开发，该值即等同于HBuilder的版本；如果使用单独的uni-app cli开发，则等同于cli版本。
+
+但在App平台，`uniCompileVersion` 和 `uniRuntimeVersion` 在某些情况的值会不一样：
+- App云打包选择了不匹配的打包机版本，比如HBuilder版本较老，云端已经没有对应打包机，此时打包后`uniCompileVersion`会小于`uniRuntimeVersion`
+- App离线打包，使用了不匹配的离线SDK
+- App wgt升级，即手机上安装的App是老版的`uniRuntimeVersion`，wgt的新版使用了不同版本的HBuilder或uni-app cli版本，并且实施了应用资源升级
+
+#### romName 返回值说明 @romname
+
+|值|解释|
+|:-|:-|
+|MIUI|小米|
+|EMUI|华为|
+|HarmonyOS|华为鸿蒙|
+|Magic OS|荣耀|
+|ColorOS|oppo|
+|Funtouch OS|vivo|
+|FLymeOS|魅族|
+|SmartisanOS|锤子|
+
+注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
+
+#### hostName 返回值说明 @hostname
 
 |值|解释|
 |:-|:-|
@@ -147,22 +171,7 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |qq|QQ|
 |KUAISHOU|快手|
 
-#### romName 取值 @romname
-
-|值|解释|
-|:-|:-|
-|MIUI|小米|
-|EMUI|华为|
-|HarmonyOS|华为鸿蒙|
-|Magic OS|荣耀|
-|ColorOS|oppo|
-|Funtouch OS|vivo|
-|FLymeOS|魅族|
-|SmartisanOS|锤子|
-
-注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
-
-#### safeArea 的结构 @safearea
+#### safeArea 返回值说明 @safearea
 
 |参数	|类型	|说明		|
 |:-		|:-			|:-			|
@@ -182,8 +191,7 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |top	|Number	|安全区顶部插入位置			|
 |bottom	|Number	|安全区域底部插入位置			|
 
-
-#### language说明
+#### language 返回值说明
 
 language的国际规范是`BCP47规范`，分为三段，主语言-次语言-地区。例如`zh-Hans-CN`，表示 中文-简体-中国大陆
 
@@ -195,7 +203,7 @@ language的国际规范是`BCP47规范`，分为三段，主语言-次语言-地
 
 所以获取语言后，不能直接字符串比较，需要拆段比较，npm上也有专门做`BCP47语言规范`比较的库。
 
-#### deviceId说明
+#### deviceId 返回值说明
 
 Web、小程序、iOS，属于对用户隐私保护比较严格的平台，在这些平台很难获取有效的设备唯一标记。
 
@@ -212,7 +220,7 @@ deviceId，在`app-android`平台，会根据优先使用imei、mac（仅在用�
 
 app下需要广告追踪的场景，在iOS上可以使用[idfa](https://ask.dcloud.net.cn/article/36107)、部分国产Android手机可以使用[OAID](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)
 
-#### Tips @tips
+#### 其他注意 @tips
 - `deviceType`：
   - `app-ios` 只支持 `phone`、`pad`。
   - `app-android` 支持 `phone`、`pad`、`tv`、`car`、`watch`、`vr`、`appliance`、`undefined`、`unknown`，关于各个类型的更详细解释参考[Android官方文档](https://developer.android.com/guide/)。
@@ -252,7 +260,7 @@ uni.getSystemInfo({
 });
 ```
 
-在不同平台 getSystemInfo 的返回值
+在不同平台 getSystemInfo 的返回值（表格较长，可缩放页面后拖动横向滚动条）
 
 > 标明 `-` 的都为 undefined，其他值都与所列出项相同
 
@@ -291,4 +299,7 @@ uni.getSystemInfo({
 
 ### uni.getSystemInfoSync()
 
-获取系统信息的同步接口。`调用方式和返回值同上getSystemInfo`。
+获取系统信息的同步接口。`调用参数和返回值同上getSystemInfo`。
+
+
+> 设备信息内容多且复杂，欢迎开发者测试更多环境设备并编辑本文档参与贡献。

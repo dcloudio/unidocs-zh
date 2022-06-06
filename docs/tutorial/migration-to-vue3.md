@@ -439,7 +439,7 @@ App，小程序端源码调试，需要在 vite.config.js 中主动开启 source
 
 ## vue3 支持的手机版本最低到多少？
 
-  > vue3 支持的范围是：Android > 4.4, ios >= 10
+  > vue3 支持的范围是：Android > 4.4（具体因系统 webview 版本而异，原生安卓系统升级过系统 webview 一般 5.0 即可，国产安卓系统未使用 x5 内核时一般需 7.0 以上）, ios >= 10
 
 ## vue3 nvue 暂不支持 recycle-list 组件
 

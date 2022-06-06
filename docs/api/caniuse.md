@@ -31,3 +31,6 @@ uni.canIUse('live-player');
 uni.canIUse('text.selectable');
 uni.canIUse('button.open-type.contact');
 ```
+
+**Tips**
+- App、web 端暂不支持 ``${API}.${method}.${param}.${options}`` 方式调用，只支持 ``${API}``

@@ -41,8 +41,14 @@ export default {
     },
     {
       "number": "641753405",
-      "state": 0,
+      "state": 1,
+		attendance: 1000,
       "prefix": "群4"
     },
+	 {
+	   "number": "806429316",
+	   "state": 0,
+	   "prefix": "群5"
+	 }
   ]
 }

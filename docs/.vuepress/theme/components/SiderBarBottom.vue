@@ -37,7 +37,14 @@
 				<template v-for="item in currentQQGroup">
 					<div v-if="!item.state" :key="item.number">
 						{{ item.prefix }}：{{ item.number }} &nbsp;
-						<a
+						<a v-if="QQOfUnicloud"
+							target="_blank"
+							style="text-decoration: underline"
+							href="https://qm.qq.com/cgi-bin/qm/qr?k=ez84UYIZgPKpTvrXD8GINUr62u8CF96x&jump_from=webapi"
+						>
+							点此加入
+						</a>
+						<a v-else
 							target="_blank"
 							style="text-decoration: underline"
 							href="https://qm.qq.com/cgi-bin/qm/qr?k=Gb87Oy7TJlDj29YVLZmc3FPGXWv4GMdZ&jump_from=webapi"
@@ -86,6 +93,9 @@
 			currentQQGroup() {
 				return [...(this.currentConfig.qq_group || [])].reverse();
 			},
+			QQOfUnicloud(){
+				return this.mainNavBarText == 'uniCloud'? true : false
+			}
 		},
 	};
 </script>

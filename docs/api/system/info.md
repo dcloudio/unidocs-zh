@@ -65,8 +65,8 @@ uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的
 |			|windowTop			|可使用窗口的顶部位置	|||||		|
 |			|windowBottom		|可使用窗口的底部位置	|||||		|
 |			|statusBarHeight	|手机状态栏的高度||||||		
-|			|safeArea			|在竖屏正方向下的安全区域。[详见](#safearea)|||微信、百度、字节跳动、快手小程序|||	
-|			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。[详见](#safearea)|||微信||uni-app 2.5.3+|
+|			|safeArea			|在竖屏正方向下的安全区域。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、字节跳动、飞书、快手小程序、华为快应用|||	
+|			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、字节跳动、飞书、快手小程序、华为快应用||uni-app 2.5.3+|
 
 #### 某些小程序特殊的返回参数
 
@@ -248,6 +248,7 @@ app下需要广告追踪的场景，在iOS上可以使用[idfa](https://ask.dclo
 - [QQ小程序](https://q.qq.com/wiki/develop/game/API/basic/system.html#qq-getsysteminfo)
 - [快手小程序](https://mp.kuaishou.com/docs/develop/api-next/basic/system/ks.getSystemInfoSync.html#systeminfo)
 - [京东小程序](https://mp-docs.jd.com/api/equipment/system.html)
+- [华为快应用](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-systeminfo-0000001126227753)
 
 #### 示例 @getsysteminfo-new-fields
 

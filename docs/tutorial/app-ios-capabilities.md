@@ -37,6 +37,8 @@ Universal Link是苹果在WWDC 2015上提出的iOS 9的新特性之一。此特�
 
 **开启Associated Domains服务后需要重新生成profile文件，提交云端打包时使用**
 
+<a id="associatedDomains"/>
+
 #### 第二步：配置Associated Domains（域名）
 
 **使用HBuilderX可视化界面配置**  

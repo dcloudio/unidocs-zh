@@ -3,7 +3,7 @@
 
 ### 默认使用的权限
 提交云端打包后会自动添加以下权限：
-```
+```js
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -50,13 +50,13 @@
 
 #### 可视化界面配置
 打开项目的manifest.json文件，在“App权限配置”项中去掉“Android自动添加第三方SDK需要的权限”
-[attach]76744[/attach]
+![](https://native-res.dcloud.net.cn/images/uniapp/permission/android-sdk.png)
 
 #### 代码视图配置
 打开项目的manifest.json文件，切换到“代码视图”。
 - uni-app项目
 在 "app-plus" -> "distribute" -> "android" 下添加 autoSdkPermissions 如下：
-```
+```json
   "app-plus": {
     "distribute": {
       "android": {
@@ -69,7 +69,7 @@
 ```
 - 5+ APP（WAP2APP）项目
 在 "plus" -> "distribute" -> "google" 下添加 autoSdkPermissions 如下：
-```
+```json
   "plus": {
     "distribute": {
       "google": {
@@ -83,13 +83,13 @@
 
 ### Android权限配置
 打开项目的manifest.json文件，在“（App）模块权限配置”页的“Android权限配置”项下根据需求勾选需要的权限：
-[attach]76748[/attach]
+![](https://native-res.dcloud.net.cn/images/uniapp/permission/android.png)
 
 **如果没有列出需要的权限，可按以下方法手动添加**
 在manifest.json页面，切换到“代码视图”
 - uni-app项目
 在 "app-plus" -> "distribute" -> "android" -> "permissions" 下添加需要的权限如下：
-```
+```json
   "app-plus": {
     "distribute": {
       "android": {
@@ -104,7 +104,7 @@
 ```
 - 5+ APP（WAP2APP）项目
 在 "plus" -> "distribute" -> "google" -> "permissions" 下添加需要的权限如下：
-```
+```json
   "app-plus": {
     "distribute": {
       "google": {

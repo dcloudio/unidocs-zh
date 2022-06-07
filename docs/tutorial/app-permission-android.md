@@ -17,45 +17,45 @@
 ```
 
 权限说明：
-- android.permission.INTERNET
-  使用网络权限，应用基础权限
-- android.permission.READ_EXTERNAL_STORAGE 和 android.permission.WRITE_EXTERNAL_STORAGE
-  读写SD卡权限，系统授权提示未“访问设备上的照片、媒体内容和文件”，可以参考这里配置应用启动时[申请读写手机存储策略](https://ask.dcloud.net.cn/article/36549#externalstorage)
-- android.permission.READ_PHONE_STATE、ACCESS_NETWORK_STATE、ACCESS_WIFI_STATE
-  读取设备标识使用，用于[uni统计服务](https://tongji.dcloud.net.cn/)，可以参考这里配置应用启动时[申请访问设备信息权限策略](https://ask.dcloud.net.cn/article/36549#phonestate)
-- android.permission.INSTALL_PACKAGES、android.permission.REQUEST_INSTALL_PACKAGES
-安装apk需要的权限，应用中使用[plus.runtime.install](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.install)升级应用则需要此权限
-**注意：HBuilder2.6.3+开始Goog Play渠道默认不再添加此权限，因为GooglePlay审核规则禁止应用下载apk更新，必须通过上传GooglePlay审核更新**
+- android.permission.INTERNET  
+  使用网络权限，应用基础权限  
+- android.permission.READ_EXTERNAL_STORAGE 和 android.permission.WRITE_EXTERNAL_STORAGE  
+  读写SD卡权限，系统授权提示未“访问设备上的照片、媒体内容和文件”，可以参考这里配置应用启动时[申请读写手机存储策略](https://ask.dcloud.net.cn/article/36549#externalstorage)  
+- android.permission.READ_PHONE_STATE、ACCESS_NETWORK_STATE、ACCESS_WIFI_STATE  
+  读取设备标识使用，用于[uni统计服务](https://tongji.dcloud.net.cn/)，可以参考这里配置应用启动时[申请访问设备信息权限策略](https://ask.dcloud.net.cn/article/36549#phonestate)  
+- android.permission.INSTALL_PACKAGES、android.permission.REQUEST_INSTALL_PACKAGES  
+  安装apk需要的权限，应用中使用[plus.runtime.install](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.install)升级应用则需要此权限  
+  **注意：HBuilder2.6.3+开始Goog Play渠道默认不再添加此权限，因为GooglePlay审核规则禁止应用下载apk更新，必须通过上传GooglePlay审核更新**  
 
 特定权限说明：
-- com.asus.msa.SupplementaryDID.ACCESS
-  获取设备标识信息oaid在华硕设备上需要用到的权限
-- com.huawei.android.launcher.permission.CHANGE_BADGE
-  设置应用角标功能在华为设备上需要用到的权限
-- com.android.launcher.permission.INSTALL_SHORTCUT
-创建桌面快捷方式权限，应用中使用[plus.navigator.createShortcut](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.createShortcut)创建桌面快捷方式则需要此权限。
-- com.android.launcher.permission.UNINSTALL_SHORTCUT
-删除桌面快捷方式权限，应用中使用[native.js](https://www.html5plus.org/doc/zh_cn/android.html)删除桌面快捷方式则需要此权限
+- com.asus.msa.SupplementaryDID.ACCESS  
+  获取设备标识信息oaid在华硕设备上需要用到的权限  
+- com.huawei.android.launcher.permission.CHANGE_BADGE  
+  设置应用角标功能在华为设备上需要用到的权限  
+- com.android.launcher.permission.INSTALL_SHORTCUT  
+  创建桌面快捷方式权限，应用中使用[plus.navigator.createShortcut](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.createShortcut)创建桌面快捷方式则需要此权限  
+- com.android.launcher.permission.UNINSTALL_SHORTCUT  
+  删除桌面快捷方式权限，应用中使用[native.js](https://www.html5plus.org/doc/zh_cn/android.html)删除桌面快捷方式则需要此权限  
 
 
 <a id='sdkpermission' />
 
-### Android自动添加三方SDK（或模块）需要的权限
-提交云端打包时，勾选使用三方SDK相关的功能模块时，默认会自动添加三方SDK需要的所有权限。
-为了保证三方SDK（或模块）的功能完整，默认会添加可能需要的所有权限，如果应用只用到三方SDK提供的部分功能，不希望自动添加三方SDK需要的所有权限，可以去掉勾选“Android自动添加第三方SDK需要的权限”。
+### Android自动添加三方SDK（或模块）需要的权限  
+提交云端打包时，勾选使用三方SDK相关的功能模块时，默认会自动添加三方SDK需要的所有权限。  
+为了保证三方SDK（或模块）的功能完整，默认会添加可能需要的所有权限，如果应用只用到三方SDK提供的部分功能，不希望自动添加三方SDK需要的所有权限，可以去掉勾选“Android自动添加第三方SDK需要的权限”。  
 **为了向下兼容，云端打包默认会添加“Geolocation(定位)” -> “系统定位”模块，因此会默认添加定位权限，如果不需要定位权限，请在App权限配置界面去掉勾选“Android自定添加第三方SDK需要的权限”**  
 
-**注意：去掉自动添加第三方SDK需要的权限后，请务必根据需要在“Android权限配置”中勾选三方SDK必需的权限，三方SDK需要的权限详情参考后面《三方SDK（或模块）需要的权限列表》章节**
+**注意：去掉自动添加第三方SDK需要的权限后，请务必根据需要在“Android权限配置”中勾选三方SDK必需的权限，三方SDK需要的权限详情参考后面《三方SDK（或模块）需要的权限列表》章节**  
 保存后提交云端打包生效。
 
-#### 可视化界面配置
-打开项目的manifest.json文件，在“App权限配置”项中去掉“Android自动添加第三方SDK需要的权限”
+#### 可视化界面配置  
+打开项目的manifest.json文件，在“App权限配置”项中去掉“Android自动添加第三方SDK需要的权限”  
 ![](https://native-res.dcloud.net.cn/images/uniapp/permission/android-sdk.png)
 
-#### 代码视图配置
-打开项目的manifest.json文件，切换到“代码视图”。
-- uni-app项目
-在 "app-plus" -> "distribute" -> "android" 下添加 autoSdkPermissions 如下：
+#### 代码视图配置  
+打开项目的manifest.json文件，切换到“代码视图”。  
+- uni-app项目  
+在 "app-plus" -> "distribute" -> "android" 下添加 autoSdkPermissions 如下：  
 ```json
   "app-plus": {
     "distribute": {
@@ -67,7 +67,7 @@
   },
   //...
 ```
-- 5+ APP（WAP2APP）项目
+- 5+ APP（WAP2APP）项目  
 在 "plus" -> "distribute" -> "google" 下添加 autoSdkPermissions 如下：
 ```json
   "plus": {
@@ -81,14 +81,14 @@
   //...
 ```
 
-### Android权限配置
-打开项目的manifest.json文件，在“（App）模块权限配置”页的“Android权限配置”项下根据需求勾选需要的权限：
+### Android权限配置  
+打开项目的manifest.json文件，在“（App）模块权限配置”页的“Android权限配置”项下根据需求勾选需要的权限：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/permission/android.png)
 
-**如果没有列出需要的权限，可按以下方法手动添加**
-在manifest.json页面，切换到“代码视图”
-- uni-app项目
-在 "app-plus" -> "distribute" -> "android" -> "permissions" 下添加需要的权限如下：
+**如果没有列出需要的权限，可按以下方法手动添加**  
+在manifest.json页面，切换到“代码视图”  
+- uni-app项目  
+在 "app-plus" -> "distribute" -> "android" -> "permissions" 下添加需要的权限如下：  
 ```json
   "app-plus": {
     "distribute": {
@@ -102,8 +102,8 @@
   },
   //...
 ```
-- 5+ APP（WAP2APP）项目
-在 "plus" -> "distribute" -> "google" -> "permissions" 下添加需要的权限如下：
+- 5+ APP（WAP2APP）项目  
+在 "plus" -> "distribute" -> "google" -> "permissions" 下添加需要的权限如下：  
 ```json
   "app-plus": {
     "distribute": {
@@ -186,26 +186,26 @@
 ```
 
 #### OAuth(登录鉴权)  
-- 微信登录
+- 微信登录  
 ```
 	"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>"
 ```
-- QQ登录
+- QQ登录  
 ```
 	"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>"
 ```
-- 新浪微博登录
-无
-- 小米登录
-无
+- 新浪微博登录  
+无  
+- 小米登录  
+无  
 
 #### Payment(支付)  
-- 支付宝支付
+- 支付宝支付  
 ```
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 ```
-- 微信支付
+- 微信支付  
 ```
 	"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>"
 ```
@@ -315,5 +315,5 @@
 ```
 
 ### 相关参考  
-- Android官方权限说明，参考：[https://developer.android.google.cn/guide/topics/permissions/overview](https://developer.android.google.cn/guide/topics/permissions/overview?hl=zh_cn)
-- Android官方权限常量文档，参考：[https://developer.android.google.cn/reference/android/Manifest.permission](https://developer.android.google.cn/reference/android/Manifest.permission?hl=zh_cn)
+- Android官方权限说明，参考：[https://developer.android.google.cn/guide/topics/permissions/overview](https://developer.android.google.cn/guide/topics/permissions/overview?hl=zh_cn)  
+- Android官方权限常量文档，参考：[https://developer.android.google.cn/reference/android/Manifest.permission](https://developer.android.google.cn/reference/android/Manifest.permission?hl=zh_cn)  

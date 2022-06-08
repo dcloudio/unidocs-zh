@@ -85,6 +85,11 @@ export default {
 			"prefix": "群11"
 		},
 		{
+			"number": "884860657",
+			"state": 1,
+			"prefix": "群12"
+		},
+		{
 			"number": "699478442",
 			"state": 1,
 			"prefix": "群13"
@@ -175,11 +180,6 @@ export default {
 			"prefix": "群30"
 		},
 		{
-			"number": "567471669",
-			"state": 1,
-			"prefix": "群31"
-		},
-		{
 			"number": "166188631",
 			"state": 1,
 			"prefix": "群32"
@@ -200,9 +200,9 @@ export default {
 			"prefix": "群35"
 		},
 		{
-			"number": "884860657",
+			"number": "567471669",
 			"state": 0,
-			"prefix": "群12"
+			"prefix": "群31"
 		}
 	]
 }

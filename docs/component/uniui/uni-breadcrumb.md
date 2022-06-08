@@ -21,9 +21,9 @@
 
 ```html
 <uni-breadcrumb separator="/">
-  <uni-breadcrumb-item v-for="route in routes" :to="route.to"
-    >{{route.name}}</uni-breadcrumb-item
-  >
+  <uni-breadcrumb-item v-for="(route,index) in routes" :key="index" :to="route.to">
+    {{route.name}}
+  </uni-breadcrumb-item>
 </uni-breadcrumb>
 ```
 
@@ -64,7 +64,7 @@ export default {
 
 | 属性名  |     类型      | 默认值 |                                      说明                                       |
 | :-----: | :-----------: | :----: | :-----------------------------------------------------------------------------: |
-|   to    | String/Object |        |                              路由跳转页面路径/对象                              |
+|   to    | String |        |                              路由跳转页面路径                              |
 | replace |    Boolean    |        | 在使用 to 进行路由跳转时，启用 replace 将不会向 history 添加新记录(仅 h5 支持） |
 
 ## 示例
@@ -87,16 +87,16 @@ export default {
     </uni-card>
     <uni-section title="基础用法" type="line" padding>
       <uni-breadcrumb separator="/">
-        <uni-breadcrumb-item v-for="route in routes" :to="route.to"
-          >{{route.name}}</uni-breadcrumb-item
-        >
+        <uni-breadcrumb-item v-for="(route,index) in routes" :key="index" :to="route.to">
+          {{route.name}}
+        </uni-breadcrumb-item>
       </uni-breadcrumb>
     </uni-section>
     <uni-section title="自定义分隔符" type="line" padding>
       <uni-breadcrumb separator=">">
-        <uni-breadcrumb-item v-for="route in routes" :to="route.to"
-          >{{route.name}}</uni-breadcrumb-item
-        >
+        <uni-breadcrumb-item v-for="(route,index) in routes" :key="index" :to="route.to">
+          {{route.name}}
+        </uni-breadcrumb-item>
       </uni-breadcrumb>
     </uni-section>
   </view>
@@ -109,7 +109,7 @@ export default {
       return {
         routes: [
           {
-            to: "/",
+            to: "/pages/index/index",
             name: "首页",
           },
           {

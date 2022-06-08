@@ -151,6 +151,8 @@ height: var(--window-bottom);
 - 滚动视图添加 adjustBottom="true"：只有添加了 adjustBottom="true" 框架才会自动调整滚动视图的 contentInset bottom 值，**这里有一点需要注意**，如果你的页面整体是滚动的，那么需要你的页面**根节点为滚动视图**然后添加 adjustBottom="true"，如果页面部分是可以滚动的，那就在页面最下面的滚动视图添加 adjustBottom="true" 属性；（技巧就是会被 tabBar 遮挡住的滚动视图添加属性）
 - 绝对定位注意事项：跟vue页面一样，绝对定位的视图需要考虑 tabBar 的遮挡问题，例如想要一个 view 固定在页面最底部，需要设置 bottom 值为 tabBar 的高度即可；
 
+**注意** android暂时不支持 adjustBottom
+
 示例
 
 ``` vue

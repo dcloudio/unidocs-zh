@@ -45,6 +45,7 @@ module.exports = {
 **注入全局依赖**
 
 ```js
+// 示例从插件市场下载 mp-storage
 const webpack = require('webpack')
 
 module.exports = {

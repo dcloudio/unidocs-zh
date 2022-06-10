@@ -2,6 +2,7 @@
 * [manifest.json 应用配置](collocation/manifest.md)
 * [package.json](collocation/package.md)
 * [vue.config.js](collocation/vue-config.md)
+* [vite.config.js](collocation/vite-config.md)
 * [uni.scss](collocation/uni-scss.md)
 * [App.vue](collocation/App.md)
 * [main.js](collocation/main.md)

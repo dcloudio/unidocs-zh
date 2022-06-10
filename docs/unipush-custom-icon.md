@@ -1,6 +1,15 @@
 ## UniPush推送图标配置
 
+
+
+### UniPush自定义推送图标，可自定义push图标和小图标，位置如下图所示：
+
+![](https://native-res.dcloud.net.cn/images/uniapp/push/custom_push_icon/custom_push_icon_small_instructions.png)
+
+
+
 ### 注意：需要手动在manifest.json配置 ，目前仅支持个推 & UniPush配置。
+
 ### 5+应用：
 + plus节点 --> distribute节点 --> plugins节点 --> push节点 --> igexin节点（或者unipush节点） --> icons节点 --> small节点下配置
 

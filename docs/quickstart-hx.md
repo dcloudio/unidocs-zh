@@ -10,9 +10,7 @@
 
 HBuilderX是通用的前端开发工具，但为`uni-app`做了特别强化。
 
-下载App开发版，可开箱即用；如下载标准版，在运行或发行`uni-app`时，会提示安装`uni-app`插件，插件下载完成后方可使用。
-
-如使用`cli`方式创建项目，可直接下载标准版，因为uni-app编译插件被安装到项目下了。
+下载后默认不包含`uni-app`插件，在运行或发行`uni-app`时，会提示安装`uni-app`插件，插件下载完成后方可使用。
 
 
 ## 创建uni-app
@@ -29,6 +27,13 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
 <div align=center>
   <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d0cba1a3-c0cc-4095-a105-a4fea51857fe.jpg"/>
 </div>
+
+
+开发者也可以使用`cli`方式创建项目，另见[文档](https://uniapp.dcloud.io/quickstart-cli.html)。
+
+差别是：HBuilderX创建的项目根目录就是源码，可直接编辑。dist在unpackage目录下。uni-app的编译器在HBuilderX的插件目录下，跟随HBuilderX升级而一起升级。
+
+而cli创建的项目，源码在src下。uni-app的编译器也安装在项目下，不会跟随HBuilderX版本升级而升级，需要自己手动npm update。
 
 ## 运行uni-app
 

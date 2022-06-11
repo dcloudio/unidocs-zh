@@ -1,3 +1,12 @@
+#### 3.4.15.20220610
+* 【uni-app】
+  + App平台 修复 3.4.14 版本引出的 scopeId 污染 slot 导致样式异常的Bug [详情](https://ask.dcloud.net.cn/question/145366)
+  + App平台 修复 调试时调用 uni.getSystemInfo 报错的Bug [详情](https://ask.dcloud.net.cn/question/146611)
+  + App平台 修复 vue3 项目 在 Windows 系统上，运行至手机或模拟器时，可能多次同步文件的Bug
+  + 微信小程序平台 修复 3.4.14 版本引出的 manifest.json 文件缺少 mp-weixin 节点编译报错的Bug [详情](https://ask.dcloud.net.cn/question/146580)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 uni-AD 开屏广告在部分小米手机可能会卡在启动界面的Bug
+
 #### 3.4.14.20220607
 * 【uni-app】
   + 【重要】uniAD 支持微信小程序平台，更低的流量主门槛 [详情](https://uniapp.dcloud.net.cn/component/ad-weixin.html)

@@ -282,6 +282,42 @@ uni-app vue2版本app端对应的platform为`app-plus`（HBuilderX 3.4.9起 vue2
 }
 ```
 
+## preferedWebPlatform@prefered-web-platform
+
+> 新增于uni-id 3.3.22
+
+**前提介绍：** 
+
+HBuilderX 3.4.9起，uni-app web端对应的platform由`h5`调整为`web`。此改动引发了一些问题，比如在uni-id内将无法获取web平台配置，以及有些基于uni-id扩充功能的项目可能存在不兼容的情况
+
+### 旧项目的处理
+
+旧项目建议将所有platform为web的场景统一为h5，即建议使用如下配置
+
+```js
+// 以下仅列出相关配置
+{
+	"preferedWebPlatform": "h5", // uni-id内部会将收到的web平台全部转化为h5平台
+	"h5": { // 配置内的平台名称和preferedWebPlatform保持一致
+		"oauth": {}
+	}
+}
+```
+
+### 新项目的处理
+
+新项目建议将platform统一为web，即建议使用如下配置
+
+```js
+// 以下仅列出相关配置
+{
+	"preferedWebPlatform": "web", // uni-id内部会将收到的h5平台全部转化为web平台
+	"web": { // 配置内的平台名称和preferedWebPlatform保持一致
+		"oauth": {}
+	}
+}
+```
+
 # 用户角色权限@rbac
 
 为什么需要角色权限管理？

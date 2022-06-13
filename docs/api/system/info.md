@@ -1,6 +1,6 @@
 ### 系统信息的概念
 
-uni-app提供了同步(`uni.getSystemInfo`)和异步(`uni.getSystemInfoSync`)的2个API获取系统信息。
+uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的2个API获取系统信息。
 
 系统信息返回的内容非常多，各操作系统、各家小程序、各浏览器对它们的定义也不相同。uni-app里重新梳理了这些概念，同时为了向下兼容也保留了这些平台原来的概念，但不推荐使用。
 

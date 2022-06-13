@@ -280,9 +280,9 @@ uni.getSystemInfo({
 |deviceType|phone|phone|phone|phone|phone|phone|phone|phone|phone|
 |deviceOrientation|portrait|portrait|portrait|portrait|portrait|portrait|-|portrait|-|
 |devicePixelRatio|2.5687501430511475|3|2|3|3|3|3|2|2|
-|hostName|-|-|-|MPLauncherV3|uniMPDemo|WeChat、wxwork|alipay、amap、DINGTALK、UC、QUARK、AK、YK|baiduboxapp 等[百度宿主平台枚举值列表](https://smartprogram.baidu.com/docs/develop/api/device_sys/hostlist/)|Douyin、Toutiao、news_article_lite、live_stream、XiGua、PPX|
-|hostVersion|-|-|-|1.0|1.0.0|8.0.5|10.2.23|2.45.0|6.6.3|
-|hostLanguage|-|-|-|zh-CN|zh-Hans-CN|zh-CN|zh-CN|zh-CN|
+|hostName|-|-|safari|MPLauncherV3|uniMPDemo|WeChat、wxwork|alipay、amap、DINGTALK、UC、QUARK、AK、YK|baiduboxapp 等[百度宿主平台枚举值列表](https://smartprogram.baidu.com/docs/develop/api/device_sys/hostlist/)|Douyin、Toutiao、news_article_lite、live_stream、XiGua、PPX|
+|hostVersion|-|-|13.0.3|1.0|1.0.0|8.0.5|10.2.23|2.45.0|6.6.3|
+|hostLanguage|-|-|zh-CN|zh-CN|zh-Hans-CN|zh-CN|zh-CN|zh-CN|
 |hostTheme|-|-|-|light|light|-|-|-|-|
 |hostPackageName|-|-|-|com.example.mplauncherv3|io.dcloud.hellounimp|-|-|-|-|
 |hostSDKVersion|-|-|-|3.4.13|3.4.13|2.24.2|2.7.6|3.450.16|2.49.0|

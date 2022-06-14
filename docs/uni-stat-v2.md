@@ -53,7 +53,7 @@ uni统计的错误信息更全面，包括 js前端错误和 App 原生层的崩
 
 uni统计深入uni-app和uniCloud框架底层，提供了众多其他统计平台无法提供的功能：
 - uni-app全端识别，无需对接不同sdk、无需在不同报表中切换和自己累加数据
-- 自动识别uni-app路由，自动采集页面标题（基于navigationBar或uni-title组件）
+- 自动识别uni-app路由，自动采集页面标题（基于pages.json的navigationBar或uni-nav-bar组件）
 - 自动捕获js错误，上报app端原生崩溃日志
 - 兼容uni-app渠道包打包体系，自动识别渠道包
 - 基于uni-id账户体系，自动出具注册用户（不是设备）的新增、活跃、留存报表
@@ -88,18 +88,18 @@ uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了�
 ## 使用教程
 
 `uni统计2.0`包括两个模块：
-- 前端采集模块：通常为用户端App，内置在`uni-app`项目中，可通过`manifest.json`进行配置；
-- 云端统计模块：通常为管理后台，内置在`uni-admin`项目，和用户端App项目复用同样的服务空间；
+- 前端采集模块：内置在`uni-app`框架中，在业务App的`manifest.json`进行配置；
+- 云端统计模块：内置在`uni-admin`项目模板中，和业务App复用同样的uniCloud服务空间；
 
 ### 前端采集配置
 
-在项目中打开 `manifest.json` , 选择 `uni统计配置` 项，根据需求，选择开通 `uni统计` ，勾选 `version2` 开启新版统计。
+在业务App项目的 `manifest.json` 里，选择 `uni统计配置` 项，根据需求，选择开通 `uni统计` ，勾选 `2.0` 开启新版统计。
 
 ![开启统计](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/14b2b045-3d8e-4535-acad-2e745441c816.png)
 
-#### 源码视图json解读
+上述可视化操作，其实对应manifest源码视图的 `uniStatistics` 节点。如下文档对manifest规范进行详述。**如不关心规范细节，可以不阅读本小节，继续看下一节《小程序域名白名单》**。
 
-将 `manifest.json -> uniStatistics` 下的 `enable` 字段设置为 `true|false` ,来开启关闭 `uni统计`
+`uniStatistics` 下的 `enable` 字段设置为 `true|false`，来开启关闭 `uni统计`
 
 设置 `version` 属性为 `"2"` 来开启新版统计
 
@@ -156,10 +156,11 @@ uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了�
 |   阿里云   |       api.bspapp.com        |
 |   腾讯云   | tcb-api.tencentcloudapi.com |
 
+根据选择的uniCloud云厂商，配置相应的域名到小程序的域名白名单配置里即可。
 
 #### 调试模式
 
-将 `manifest.json -> uniStatistics` 下的 `debug` 字段设置为 `true|false` ,来开启关闭 `uni统计`调试模式
+将 `manifest.json -> uniStatistics` 下的 `debug` 字段设置为 `true|false` ，来开启关闭 `uni统计`调试模式
 
 在调试模式下，会将上报数据的关键信息打印到控制台，方便观察采集信息是否正确 ，多用在自定义扩展的时候
 
@@ -204,30 +205,44 @@ uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了�
 
 #### 创建 admin 项目
 
-`uni统计2.0`的后台统计报表是`uni-admin`的内置插件，故使用`uni统计2.0`，需依赖[uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)项目。
+`uni统计2.0`的后台统计报表是[uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html)的内置插件。
+
+[uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html)是一个开源管理后台。也就是使用`uni统计2.0`，需要安装这个后台系统，在里面找到uni统计的菜单并使用。
 
 请参考[uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)文档，完成如下操作：
 
-1. 创建新的`uni-admin`项目
-2. 绑定服务空间
-3. 部署云端资源（上传部署云函数、公共模块、初始化数据库表等）
-4. 完成其它初始化配置，如：打开`uni-config-center` 配置 `uni-id` 相关秘钥
-5. 运行 uni-admin 项目，在「应用管理」中新增「被统计应用」的记录（appid 等）
+1. 创建新的`uni-admin`项目（HBuilderX新建项目界面选择uni-admin模板）
+2. 在弹出的云服务空间初始化向导中，关联服务空间（如果您的业务App已使用了uniCloud，那么选择相同的服务空间；否则，新建一个服务空间，并在业务App里关联相同服务空间）
+3. 部署云端资源：上传部署云函数、公共模块、通过`db_init.json`初始化数据库表。如之前的表已经有冲突数据，需要自己手动合并下
+4. 在云端配置中心完成其它初始化配置，如：在 `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` 文件中填写自己的 passwordSecret 字段 (用于加密密码入库的密钥) 和 tokenSecret 字段 (为生成 token 需要的密钥，测试期间跳过本条也可以)，然后对uni-config-center公共模块点右键上传更新。
+5. 运行 uni-admin 项目，一般是运行到浏览器
+6. 设置管理员账户
+7. 在左侧「应用管理」中新增「被统计应用」的记录（appid 等）
+8. 配置结束后，启动业务App，将会在运行后的`uni-admin`页面左侧的uni统计菜单里看到业务App的数据（如看不到数据，见下方常见问题章节）
+9. 测试通过后，在HBuilder发行菜单里发行`uni-admin`项目，选择部署到uniCloud服务空间的前端网页托管里。可以在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)自定义域名。
 
 
 ::: warning 注意
-- 「连接本地云函数」运行需要在 uni-admin 的 database 文件夹上右键，点击「下载所有DB schema及扩展校验函数」
-- 我们建议用户端项目和`uni-admin`项目关联（复用）相同的服务空间，此时如果用户端项目和`uni-admin`项目下，均存在`uni-config-center`的话，务必注意互相覆盖的问题，此时建议单点维护，比如所有配置均在`uni-admin`项目下的`uni-config-center`中完成。
+- 「连接本地云函数」运行需要在 uni-admin 的 database 文件夹上右键，点击「下载所有DB schema及扩展校验函数」。如果之前服务空间初始化向导里漏操作了`db_init`初始化数据，则对`uniCloud/database/db_init.json`点右键初始化
+- 建议用户端项目和`uni-admin`项目关联（复用）相同的服务空间，此时如果用户端项目和`uni-admin`项目下，均存在`uni-config-center`的话，务必注意互相覆盖的问题，此时建议单点维护，比如所有配置均在`uni-admin`项目下的`uni-config-center`中完成。
 :::
 
 
-**老项目升级**
+**uni-admin老项目升级**
 
-若你想复用老的`uni-admin`项目，请手动对比新老项目差异，将uni统计新增云函数及统计页面复制到老的uni统计项目中，主要包括：
-- 云函数：`uniCloud/cloudfunctions/uni-stat-cron`、`uniCloud/cloudfunctions/uni-stat-receiver`
-- 通用模块：`uniCloud/cloudfunctions/uni-stat`
-- 数据表：`uniCloud/database`目录下相关`schema`文件
-- 统计页面：`pages/uni-stat` 文件夹
+如您需要统计的业务之前已经使用了`uni-admin`，可以升级`uni-admin`。对项目下的`package.json`点右键，选择「从插件市场更新」。
+
+uni统计新增的文件主要包括：
+- 云函数：`uniCloud/cloudfunctions/uni-stat-cron`（定时跑批云函数）、`uniCloud/cloudfunctions/uni-stat-receiver`（接收前端打点的云对象）
+- 云函数公共模块：`uniCloud/cloudfunctions/common/uni-stat`
+- 数据表：`uniCloud/database`目录下`uni-stat`开头的若干`schema`文件
+- 统计页面：`pages/uni-stat` 文件夹下面的若干页面
+
+更新时注意合并pages.json，确保新页面都注册成功。否则运行起来后，点击左侧菜单会报找不到xxx文件。
+
+`db_init.json`初始化数据库时，老项目的菜单表`opendb-admin-menus`，已经有数据了，此时key冲突的数据无法插入，需要手工合并。
+1. 如果老项目没有改动过menus和权限，那么可以删掉老表，重新初始化
+2. 如果老项目的menus菜单改动过，需要把uni统计的若干页面再合并到菜单数据表里
 
 #### 设置定时任务云函数的触发周期
 
@@ -807,6 +822,11 @@ const db = uniCloud.database()
 db.collection('uni-stat-event-logs')
 ```
 
+不管是新上报的数据，还是[opendb](https://uniapp.dcloud.net.cn/uniCloud/opendb.html)的数据、或者开发者自己的业务数据库里的数据，都可以自己编写报表进行统计分析。
+
+与普通uni-app页面一样，新建页面，编写代码。
+
+在`uni-admin`中注册左侧菜单时，需要参考文档：[uni-admin 左侧窗口-菜单栏](https://uniapp.dcloud.io/uniCloud/admin.html#%E5%B7%A6%E4%BE%A7%E7%AA%97%E5%8F%A3-%E8%8F%9C%E5%8D%95%E6%A0%8F)
 
 ## 常见问题
 
@@ -814,13 +834,20 @@ db.collection('uni-stat-event-logs')
 
 答：与定时任务配置配置有关，默认`统计首页`、`今日概况`等数据为1小时后可见，其余数据为次日可见。要想详细了解各类型数据统计时间请参考[定时任务配置说明](#定时任务配置说明)。
 
-**2. 如何判断是否需要配置分钟级定时任务？**
+**2. 已经开启统计，定时任务配置也正常，但是后台还是看不到数据**
+
+答：
+	- 确保分清楚，业务App 和 admin 是2个工程。业务App是采集端，admin是报表端
+	- 确保使用HBuilderX 3.4.14+
+	- 确保在需要统计的业务App工程的manifest里勾选了开启 uni统计2.0，并关联和正确的uniCloud服务空间
+	- 确保重新发行过业务App（在HBuilder里发行即可，不需要上架应用商店或小程序商店），数据上报只发生在项目发行后或者运行项目开启了调试模式，其他情况不会上报数据。[详情](#report-time)
+	- 确保uni-admin项目的uniCloud目录下的云函数都上传到了与App相同的uniCloud服务空间
+	- 在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的云函数日志中，可以看到`uni-stat-receiver`云函数有正确的请求日志
+	- 如需看uni-admin这个管理端的统计数据，才需要在uni-admin工程的manifest里配置uni统计2.0并再次发行。再次强调不要搞混业务App和admin
+
+**3. 如何判断是否需要配置分钟级定时任务？**
 
 答：一般情况下是不需要自行配置的，但如果`定时任务云函数（uni-stat-cron）`出现运行超时的情况时，就要考虑去开启分钟级定时任务了。
-
-**3. 已经开启统计，定时任务配置也正常，但是后台还是看不到数据**
-
-答：数据上报只发生在项目发行后或者运行项目开启了调试模式，其他情况不会上报数据，所以后台看不到数据。[详情](#report-time)
 
 **4. 如何创建或授权`uni统计`运营管理员账号**
 
@@ -829,3 +856,10 @@ db.collection('uni-stat-event-logs')
 **5. 为什么总设备数比活跃设备数少？**
 
 答：总设备数计算公式为：总设备数 = 原设备数 + 新设备数，而判断一个设备是否为新设备的依据是在客户端SDK中是否已储存该设备上次访问某一应用的时间，未存储则认为是该应用的新设备(即lvts=0时为新设备，lvts>0为老设备)。 因此如果之前某一设备已经访问过某一应用，就算此时清除数据库中的数据，由于已经在客户端SDK中储存该设备上次访问应用的时（即此时lvts > 0），所以该设备也不会再被认为是该应用的新设备从而不会再被计算进该应用的总设备数中而只会计算进活跃设备数中，此时可能就会出现总设备数小于活跃设备数的情况。
+
+**参考资料：**
+
+不掌握如下文档，很难对 uni统计2.0 吃透和做二次开发
+- uni-admin文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/admin.html)
+- uni-id文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html)
+- opendb文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/opendb.html)

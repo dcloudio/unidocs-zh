@@ -88,7 +88,7 @@ PC 端如下图：
 #### 运行
 
 1. 进入 admin 项目
-2. 在uniCloud/cloudfunctions/common/uni-id/config.json 文件中填写自己的 `passwordSecret` 字段 (用于加密密码入库的密钥) 和 `tokenSecret` 字段 (为生成 token 需要的密钥，测试期间跳过本条也可以)
+2. 在 `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` 文件中填写自己的 `passwordSecret` 字段 (用于加密密码入库的密钥) 和 `tokenSecret` 字段 (为生成 token 需要的密钥，测试期间跳过本条也可以)
 3. 右键 uniCloud目录 运行云服务空间初始化向导，初始化数据库和上传部署云函数（如已创建并绑定云服务空间，则跳过此步）
 4. 点击HBuilderX工具栏的运行【Ctrl+r / cmd+r】 -> 运行到浏览器。如果是连接本地云函数调试环境，上一步可以不上传云函数，但数据库仍需初始化。
 5. 从启动后的登录页面的底部，进入创建管理员页面（仅允许注册一次管理员账号）

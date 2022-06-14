@@ -8,6 +8,8 @@ uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台
 
 注：uni统计内置在[uni-admin](/uniCloud/admin)中，体验系统的数据会定期重置。
 
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/28ddae77-dda6-448f-86aa-7e59bb7c4f8d.png)
+
 ## 产品特色
 
 无需开发，在manifest的 uni统计 中打勾并发行，在[uniCloud](/uniCloud/)服务空间部署[uni-admin](/uniCloud/admin)，即可查看报表。

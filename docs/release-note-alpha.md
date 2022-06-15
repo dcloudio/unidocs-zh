@@ -1,5 +1,5 @@
 #### 3.4.17.20220614-alpha
-* 【uni-app插件】
+* 【uni-app】
   + 修复 vue3 项目 onError 生命周期不生效的Bug
   + App、Web平台 修复 vue3 项目 uni.setTabBarItem 设置 pagePath 不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3592)
   + App平台 优化 video 组件支持 show-mute-btn 配置
@@ -15,13 +15,12 @@
   + Web平台 修复 vue3 项目 pc端 createSelectorQuery 获取 top 错误Bug
   + 小程序平台 修复 vue3 项目 v-for 嵌套使用 slot 时，渲染不正确的Bug [详情](https://github.com/dcloudio/uni-app/issues/3587)
   + 微信小程序平台 修复 3.4.13 版本引出的 manifest.json 文件缺少 mp-weixin 节点编译报错的Bug [详情](https://ask.dcloud.net.cn/question/146580)
-* 【uniCloud插件】
+* 【uniCloud】
   + 修复 本地调试插件 3.4.0版本引出的客户端连接本地云函数时获取客户端 userAgent 为`HBuilderX`的Bug
   + 修复 本地调试插件 云函数内使用`console.timeEnd`输出日志错乱的Bug
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 修复 uni-AD 开屏广告在部分小米手机可能会卡在启动界面的Bug
   + iOS平台 更新 uni-AD 快手广告SDK为 3.3.25 版，快手内容联盟SDK为 3.3.29 版，解决调用系统相册可能引起崩溃的问题
-
 
 #### 3.4.13.20220601-alpha
 * 【uni-app】

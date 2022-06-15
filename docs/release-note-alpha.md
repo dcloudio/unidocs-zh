@@ -1,3 +1,28 @@
+#### 3.4.17.20220614-alpha
+* 【uni-app插件】
+  + 修复 vue3 项目 onError 生命周期不生效的Bug
+  + App、Web平台 修复 vue3 项目 uni.setTabBarItem 设置 pagePath 不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3592)
+  + App平台 优化 video 组件支持 show-mute-btn 配置
+  + App平台 优化 vue3 项目 rich-text 组件支持服务端渲染
+  + App平台 修复 3.4.10 版本引出的 scopeId 污染 slot 导致样式异常的Bug [详情](https://ask.dcloud.net.cn/question/145366)
+  + App平台 修复 调试时调用 uni.getSystemInfo 报错的Bug [详情](https://ask.dcloud.net.cn/question/146611)
+  + App平台 修复 vue3 项目 Windows 系统上，运行至手机或模拟器时，可能多次同步文件的Bug
+  + App平台 修复 vue3 项目 nvue 页面 onPageScroll，onReachBottom 不触发的Bug [详情](https://ask.dcloud.net.cn/question/145873)
+  + App平台 修复 vue3 项目 uni.getVideoInfo 成功回调不执行Bug
+  + App-Android平台 修复 nvue web-view 组件 user-agent 不正确导致加载H5页面显示异常的Bug [详情](https://ask.dcloud.net.cn/question/146877)
+  + App-Android平台 修复 nvue 组件同时设置 box-shadow、elevation 样式在部分特殊场景可能会出现渲染异常的Bug [详情](https://ask.dcloud.net.cn/question/147041)
+  + iOS平台 修复 nvue ad-content-page 组件暂停后展示其它视频类广告，关闭广告可能引起组件后台自动播放的Bug
+  + Web平台 修复 vue3 项目 pc端 createSelectorQuery 获取 top 错误Bug
+  + 小程序平台 修复 vue3 项目 v-for 嵌套使用 slot 时，渲染不正确的Bug [详情](https://github.com/dcloudio/uni-app/issues/3587)
+  + 微信小程序平台 修复 3.4.13 版本引出的 manifest.json 文件缺少 mp-weixin 节点编译报错的Bug [详情](https://ask.dcloud.net.cn/question/146580)
+* 【uniCloud插件】
+  + 修复 本地调试插件 3.4.0版本引出的客户端连接本地云函数时获取客户端 userAgent 为`HBuilderX`的Bug
+  + 修复 本地调试插件 云函数内使用`console.timeEnd`输出日志错乱的Bug
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 uni-AD 开屏广告在部分小米手机可能会卡在启动界面的Bug
+  + iOS平台 更新 uni-AD 快手广告SDK为 3.3.25 版，快手内容联盟SDK为 3.3.29 版，解决调用系统相册可能引起崩溃的问题
+
+
 #### 3.4.13.20220601-alpha
 * 【uni-app】
   + App、H5平台 新增 uni.getDeviceInfo [详情](https://uniapp.dcloud.io/api/system/getDeviceInfo.html)

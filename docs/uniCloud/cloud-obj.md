@@ -236,7 +236,8 @@ module.exports = {
 		// 	userAgent,
 		// 	platform,
 		// 	deviceId,
-		// 	uniIdToken
+		// 	uniIdToken,
+		// 	//... 其他getSystemInfoSync返回值
 		// }
 	}
 }

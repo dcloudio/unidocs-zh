@@ -645,3 +645,25 @@ let result = await uniCloud.downloadFile({
 联系电话
 申请日期
 ```
+
+|功能			|操作参数	|参考文档																													|
+|:-:			|:-:		|:-:																														|
+|图片缩放		|thumbnail		|[点击查看](https://cloud.tencent.com/document/product/436/44880)	|
+|图片裁剪		|cut,crop,iradius,rradius,scrop|[点击查看](https://cloud.tencent.com/document/product/436/44881)	|
+|图片旋转		|rotate		|[点击查看](https://cloud.tencent.com/document/product/436/44882)	|
+|格式转换		|format,cgif,interlace|[点击查看](https://cloud.tencent.com/document/product/436/44883)	|
+|质量变换|quality,rquality,lquality|[点击查看](https://cloud.tencent.com/document/product/436/44884)	|
+|高斯模糊|radius,sigma|[点击查看](https://cloud.tencent.com/document/product/436/44885)	|
+|亮度|bright|[点击查看](https://cloud.tencent.com/document/product/436/58206)	|
+|对比度|contrast|[点击查看](https://cloud.tencent.com/document/product/436/58207)	|
+|锐化|sharpen|[点击查看](https://cloud.tencent.com/document/product/436/44886)	|
+|灰度图|grayscale|[点击查看](https://cloud.tencent.com/document/product/436/66518)	|
+|图片水印|watermark|[点击查看](https://cloud.tencent.com/document/product/436/44887)	|
+|文字水印|watermark|[点击查看](https://cloud.tencent.com/document/product/436/44888)	|
+|获取图片基本信息|	imageInfo	|[点击查看](https://cloud.tencent.com/document/product/436/44889)	|
+|获取图片 EXIF|exif|[点击查看](https://cloud.tencent.com/document/product/436/44890)	|
+|获取图片主色调|imageAve|[点击查看](https://cloud.tencent.com/document/product/436/44891)	|
+|去除元信息|strip|[点击查看](https://cloud.tencent.com/document/product/436/44892)	|
+|快速缩略模板|w,h,format,q,rq,lq		|[点击查看](https://cloud.tencent.com/document/product/436/44893)	|
+|限制图片大小|size-limit|[点击查看](https://cloud.tencent.com/document/product/436/56734)	|
+|管道操作符|	&#124;	|[点击查看](https://cloud.tencent.com/document/product/436/44894)	|

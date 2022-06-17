@@ -31,7 +31,7 @@ H5平台登录注意事项：
 
 #### onlyAuthorize说明
 
-微信登录在未配置`onlyAuthorize`的情况下，调用`uni.login`接口用户登录凭证(`code`)不返回，用以换取登录信息(`authResult`);需要在项目manifest.json中配置的`appsecret`,此参数云端打包后会保存在apk/ipa中，存在参数泄露的风险；HBuilderX3.4.18+ 不再提供此参数的可视化配置。对于安全性要求较低的开发者，可以通过manifest.json -> 源码视图 -> app-plus -> distribute -> sdkConfigs -> oauth -> weixin -> 添加appsecret 配置。
+微信登录在未配置`onlyAuthorize`的情况下，调用`uni.login`接口用户登录凭证(`code`)不返回，用以换取登录信息(`authResult`)；需要在项目manifest.json中配置的`appsecret`，此参数云端打包后会保存在apk/ipa中，存在参数泄露的风险；HBuilderX3.4.18+ 不再提供此参数的可视化配置。对于安全性要求较低的开发者，可以通过manifest.json -> 源码视图 -> app-plus -> distribute -> sdkConfigs -> oauth -> weixin -> 添加appsecret 配置。
 
 
 **success 返回参数说明**

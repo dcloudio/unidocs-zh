@@ -1,4 +1,4 @@
-> 此文档为App端登陆说明，H5和小程序端[详情](https://uniapp.dcloud.io/api/plugins/share.html#%E5%88%86%E4%BA%AB)
+> 此文档为App端登陆说明，H5和小程序端[详情](https://uniapp.dcloud.io/api/plugins/login.html#login)
 
 ### 开通  
 - 登录[微信开放平台](https://open.weixin.qq.com/)，添加移动应用并提交审核，审核通过后可获取应用ID（AppID），AppSecret等信息

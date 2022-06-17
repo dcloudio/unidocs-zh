@@ -2,7 +2,7 @@
 除了HBuilderX可视化界面，也可以使用 `cli` 脚手架，可以通过 `vue-cli` 创建 `uni-app` 项目。
 
 
-## 环境安装
+## 环境安装 @install-vue-cli
 
 全局安装vue-cli
 

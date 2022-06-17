@@ -6,17 +6,13 @@
 					class="DocSearch-Hit-content-wrapper"
 					v-if="item.hierarchy[item.type] && item.type === 'lvl1'"
 				>
-					<span class="DocSearch-Hit-title" v-html="snippetResultContent('hierarchy.lvl1')" />
-					<span
-						v-if="item.content"
-						class="DocSearch-Hit-path"
-						v-html="snippetResultContent('content')"
-					/>
+					<span class="DocSearch-Hit-title" v-html="hierarchyLvl1Html" />
+					<span v-if="item.content" class="DocSearch-Hit-path" v-html="contentHtml" />
 				</div>
 
 				<div v-else-if="isContent" class="DocSearch-Hit-content-wrapper">
-					<span class="DocSearch-Hit-title" v-html="snippetResultContent('content')" />
-					<span class="DocSearch-Hit-path" v-html="snippetResultContent('hierarchy.lvl1')" />
+					<span class="DocSearch-Hit-title" v-html="contentHtml" />
+					<span class="DocSearch-Hit-path" v-html="hierarchyLvl1Html || hierarchyLvl2Html" />
 				</div>
 
 				<div v-else class="DocSearch-Hit-content-wrapper">
@@ -24,7 +20,7 @@
 						class="DocSearch-Hit-title"
 						v-html="snippetResultContent(`hierarchy.${item.type}`)"
 					/>
-					<span class="DocSearch-Hit-path" v-html="snippetResultContent('hierarchy.lvl1')" />
+					<span class="DocSearch-Hit-path" v-html="hierarchyLvl1Html" />
 				</div>
 			</div>
 		</a>
@@ -62,6 +58,16 @@
 			},
 			isContent() {
 				return this.item.type === 'content';
+			},
+			contentHtml() {
+				return this.snippetResultContent('content');
+			},
+			hierarchyLvl1Html() {
+				return this.snippetResultContent('hierarchy.lvl1');
+			},
+			hierarchyLvl2Html() {
+				const lvl2 = this.snippetResultContent('hierarchy.lvl2');
+				return this.isContent ? this.contentHtml === lvl2 ? '' : lvl2 : '';
 			},
 		},
 		methods: {

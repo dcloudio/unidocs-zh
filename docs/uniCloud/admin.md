@@ -495,9 +495,9 @@ _使用步骤:_
 
 对于 admin 插件来说，可以项目中开发完成功能，再将这项功能剥离成一个插件。其他开发者使用插件的过程，就是将插件还原成项目中的一项功能。
 
-admin 插件包含云函数、前端页面、pages.json，它必须基于 uni-id 的账户和权限体系，它不限制云函数的开发方式，可以自己写普通云函数、可以用任何单路由云函数框架、也可以用 clientDB。
+admin 插件包含云函数、前端页面，它必须基于 uni-id 的账户和权限体系，它不限制云函数的开发方式，可以自己写普通云函数、可以用任何单路由云函数框架、也可以用 clientDB。
 
-admin插件不能是整体工程，不能包含manifest。它更类似于页面模板，这里的pages.json也仅仅包括与插件有关的页面。插件里的pages.json内容，导入项目后，会与项目下的pages.json合并。
+admin插件不能是整体工程，不能包含manifest。它更类似于页面模板。
 
 _admin 插件的目录结构：_
 
@@ -510,13 +510,8 @@ _admin 插件的目录结构：_
 ├── js_sdk                      # js sdk
 ├── pages                       # 页面
 │   └── your-page               # 你的页面
-├── pages.json                  # 插件包含的页面的路由配置
 └── %pluginId%-menu.json        # 向uni-admin左侧菜单注册新菜单的声明文件。pluginId 为你上传插件市场时填的插件id。uni_module下不需要pluginId，直接就是menu.json
 ```
-
-**page.json 配置:**
-
-插件里的 pages.json 内容，导入项目后，会与项目下的 pages.json 合并，不会整体文件替换。
 
 **%pluginId%-menu.json 配置**
 

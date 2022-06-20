@@ -441,6 +441,9 @@ App，小程序端源码调试，需要在 vite.config.js 中主动开启 source
 
   > vue3 支持的范围是：Android > 4.4（具体因系统 webview 版本而异，原生安卓系统升级过系统 webview 一般 5.0 即可，国产安卓系统未使用 x5 内核时一般需 7.0 以上）, ios >= 10
 
+  > Android < 4.4，配置 X5 内核支持，首次需要联网下载，可以配置下载 X5 内核成功后启动应用，[详情](https://uniapp.dcloud.net.cn/collocation/manifest.html#appwebview)
+
+
 ## vue3 nvue 暂不支持 recycle-list 组件
 
 vue3 nvue 暂不支持 recycle-list 组件

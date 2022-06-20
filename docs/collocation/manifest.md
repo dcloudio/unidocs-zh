@@ -68,6 +68,41 @@ uni 统计配置项
 |nvue|Object|nvue 页面布局初始配置，[详见](/collocation/manifest?id=nvue)|2.0.3+|
 |optimization|Object|分包配置，可以减轻启动时加载的js数量，提升启动速度|2.7.12+|
 |uniStatistics|Object|[App 是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|2.2.3+|
+|webView|Object|当系统webview低于指定版本时，会弹出提示。或者下载x5内核后继续启动，仅Android支持，[详情](/collocation/manifest?id=appwebview)|3.5.0+|
+
+### webview@appwebview
+
+|属性|类型|说明|
+|:-|:-|:-|
+|minUserAgentVersion|String|最小webview版本，例如：95.0.4638.75|
+|x5|Object|参见下面的说明|
+
+x5 属性说明
+
+|属性|类型|默认值|说明|
+|:-|:-|:-|:-|
+|timeOut|Number|3000|超时时间|
+|showTipsWithoutWifi|Boolean|true|是否在非WiFi网络环境时，显示用户确认下载x5内核的弹窗。|
+|allowDownloadWithoutWiFi|Boolean|false|是否允许用户在非WiFi网络时进行x5内核的下载。（如果为true，就不会显示用户确认的弹窗。）|
+
+
+webview示例
+
+```json
+{
+  "app-plus" : {
+    "webView": {
+      "minUserAgentVersion": "95.0.4638.75",
+      "x5": {
+        "timeOut": 3000,
+        "showTipsWithoutWifi": true,
+        "allowDownloadWithoutWiFi": false
+      }
+    }
+  }
+}
+```
+
 
 PS：这里只列出了核心部分，更多内容请参考 [完整的 manifest.json](/tutorial/app-manifest)。
 

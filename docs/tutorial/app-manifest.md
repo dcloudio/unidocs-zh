@@ -102,7 +102,7 @@
         },
         "webView": { // 3.5.0 + 当系统webview低于指定版本时，会弹出提示。或者下载x5内核后继续启动，仅Android支持
           "minUserAgentVersion": "95.0.4638.75", // 最小webview版本
-          "x5": {
+          "x5": { // 此属性需要勾选 Android X5 Webview 模块，详细参见下面的说明
             "timeOut": 3000, // 超时时间
             "showTipsWithoutWifi": true, // 是否在非WiFi网络环境时，显示用户确认下载x5内核的弹窗。
             "allowDownloadWithoutWiFi": false // 是否允许用户在非WiFi网络时进行x5内核的下载。（如果为true，就不会显示用户确认的弹窗。）

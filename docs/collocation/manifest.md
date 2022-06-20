@@ -75,7 +75,7 @@ uni 统计配置项
 |属性|类型|说明|
 |:-|:-|:-|
 |minUserAgentVersion|String|最小webview版本，例如：95.0.4638.75|
-|x5|Object|参见下面的说明|
+|x5|Object|此属性需要勾选 Android X5 Webview 模块，详细参见下面的说明|
 
 x5 属性说明
 

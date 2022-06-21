@@ -61,7 +61,7 @@ HBuilderX中提供了以下`启动界面`方式：
 | 启动界面 | 平台支持 | 特点 |
 |-- |-- |-- |
 | 通用启动界面 | Android、iOS均支持。其中在iOS上通过storyboard实现 |简单，自定义性弱、可适配不同屏幕 |
-| 自定义启动图 | Android支持，同时支持使用[.9.png图片](https://ask.dcloud.net.cn/article/35527)；iOS可以打包，但从2020年6月30日起，无法提交Appstore|为了适配不同屏幕尺寸，需要做大量图片	|
+| 自定义启动图 | Android支持，同时支持使用[.9.png图片](#id=9png)；iOS可以打包，但从2020年6月30日起，无法提交Appstore|为了适配不同屏幕尺寸，需要做大量图片	|
 |[自定义storyboard启动界面](#storyboard)|仅iOS支持，HBuilderX2.8+版本 | 可适配不同屏幕 |
 
 > 提示：启动界面设置需提交云端打包后才能生效
@@ -75,7 +75,7 @@ HBuilderX中提供了以下`启动界面`方式：
 
 `通用启动界面`有着最低的门槛，仅需要开发者为app在manifest里配好logo和name即可。并且符合任何应用商店的上线规范。它在iOS上就是通过storyboard实现的。
 
-> 提示`通用启动界面`是为了方便开发者而设计的，它不具有很强的灵活性，如果开发者有较强的自定义需求，Android平台请使用[.9.png格式自定义启动图](https://ask.dcloud.net.cn/article/35527)、iOS平台请使用[自定义storyboard启动界面](#storyboard)
+> 提示`通用启动界面`是为了方便开发者而设计的，它不具有很强的灵活性，如果开发者有较强的自定义需求，Android平台请使用[.9.png格式自定义启动图](#id=9png)、iOS平台请使用[自定义storyboard启动界面](#storyboard)
 
 ##### Android平台通用启动界面
 

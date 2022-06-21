@@ -162,8 +162,8 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 
 |属性|类型|描述|
 |:-|:-|:-|
-|android|Object|Android 应用配置，详见: [完整 manifest.json](/collocation/manifest?id=full-manifest)|
-|ios|Object|iOS 应用配置，详见: [完整 manifest.json](/collocation/manifest?id=full-manifest)|
+|android|Object|Android 应用配置，详见: [完整 manifest.json](/collocation/manifest?id=android)|
+|ios|Object|iOS 应用配置，详见: [完整 manifest.json](/collocation/manifest?id=ios)|
 |sdkConfigs|Object|SDK配置，仅打包生效 [详见](/collocation/manifest?id=sdkConfigs)|
 |orientation|Array|同 screenOrientation 配置，仅打包生效，已废弃，推荐使用 screenOrientation|
 

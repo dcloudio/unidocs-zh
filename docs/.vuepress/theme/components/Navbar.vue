@@ -276,6 +276,7 @@ $navbar-horizontal-padding = 1.5rem
     position absolute
     right $navbar-horizontal-padding
     top 0 //$navbar-vertical-padding
+    transition: top 0.1s ease 0s
     display flex
     .search-box
       flex: 0 0 auto

@@ -1,8 +1,8 @@
 <template>
 	<Sticker
+		ref="sticker"
 		:class="['vuepress-toc', visible ? '' : 'table-of-contents']"
 		v-bind="$attrs"
-		:style="{ top: initVisibleTop }"
 	>
 		<h5>ON THIS PAGE</h5>
 		<div
@@ -36,8 +36,7 @@
 		},
 		data() {
 			return {
-				activeIndex: 0,
-				initVisibleTop: '0px',
+				activeIndex: 0
 			};
 		},
 		watch: {
@@ -76,7 +75,7 @@
 			window.addEventListener('scroll', this._onScroll);
 			// window.addEventListener('hashchange', this._onHashChange);
 			const sideBar = document.querySelector('.sidebar');
-			this.initVisibleTop = sideBar && sideBar.style && sideBar.style.top;
+			this.$refs.sticker.$el.style.top = sideBar && sideBar.style && sideBar.style.top;
 		},
 		beforeDestroy() {
 			window.removeEventListener('scroll', this._onScroll);
@@ -124,7 +123,7 @@
 	  width $vuepress-toc-width
 	  overflow-y auto
 	  // margin-top $navbarHeight
-	  top 0
+	  top $navbarHeight
 	  right 0
 	  box-sizing border-box
 	  background-color #fff

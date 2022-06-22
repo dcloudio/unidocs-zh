@@ -863,7 +863,7 @@ db.collection('uni-stat-event-logs')
 
 业务App 和 admin 是2个工程。业务App是采集端，admin是报表端；这两个项目均包含`uni-config-center`；如果这两个项目关联（复用）相同的服务空间时，很容易出现`uni-config-center`的互相覆盖问题；此时建议单点维护，方案有2种：
 - 以业务App为主：将`uni-admin`项目中`uni-config-center` 下面的`uni-stat`文件夹，复制到业务App项目下的`uni-config-center`目录下，然后重新上传业务App项目下的`uni-config-center`公共模块即可。
-- 以`uni-admin`为主：将业务App项目下的`uni-config-center`，手动合并配置项到`uni-admin`项目下的`uni-config-center`中，然后重新上传`uni-admin`项目下的`uni-config-center`公共模块即可。
+- 以`uni-admin`为主：将业务App项目下的`uni-config-center`，手动合并配置项到`uni-admin`项目下的`uni-config-center`中（注意：是手动合并配置项，不要整体覆盖文件），然后重新上传`uni-admin`项目下的`uni-config-center`公共模块即可。
 
 **参考资料：**
 

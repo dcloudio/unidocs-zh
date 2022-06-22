@@ -22,12 +22,17 @@ function parseBar(file, options) {
         token.children.forEach(child => {
           switch (child.type) {
             case 'text':
-              text = child.content
+              text = text || child.content
               break;
             case 'link_open':
-              child.attrs.forEach(attr => {
-                if (attr[0] === 'href') link = attr[1]
-              })
+              const len = child.attrs.length
+              for (let index = 0; index < len; index++) {
+                const attr = child.attrs[index];
+                if (attr[0] === 'href') {
+                  link = link || attr[1]
+                  break;
+                }
+              }
               break;
             case 'code_inline':
               try {

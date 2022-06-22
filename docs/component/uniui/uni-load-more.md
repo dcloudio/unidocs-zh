@@ -22,7 +22,7 @@
 |iconSize|Number|-|24|指定图标大小|
 |status|String	|more/loading/noMore|more|loading 的状态|
 |showIcon|Boolean|-|true|是否显示 loading 图标|
-|showText **[1.3.3新增]**|Boolean|-|true|是否显示文本|
+|showText|Boolean|-|true| **[1.3.3新增]**是否显示文本|
 |iconType|String|snow/circle/auto|auto|指定图标样式|
 |color|String|-|#777777	|图标和文字颜色|
 |contentText|Object|-|{contentdown: "上拉显示更多",contentrefresh: "正在加载...",contentnomore: "没有更多数据了"}|各状态文字说明	|

@@ -1988,5 +1988,3 @@ exports.main = async (event, context) => {
 
 ```
 
-如何从老版uni-id公共模块和uni-id-cf的系统升级到uni-id-pages。
-然后老版uni-id文档开头要声明不再更新，推荐升级，指向uni-id-pages的升级章节

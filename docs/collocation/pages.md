@@ -17,7 +17,7 @@
 |[leftWindow](/collocation/pages?id=leftwindow)|Object|否|大屏左侧窗口|H5|
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
-|[uniIDRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0||
+|[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0||
 
 以下是一个包含了所有配置选项的 `pages.json` ：
 

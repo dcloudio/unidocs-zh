@@ -261,7 +261,7 @@ uniCloud.offResponse(logResponse)
 
 > 新增于HBuilderX 3.5.0
 
-用于监听客户端需要登录事件，此接口需要搭配uniIDRouter使用，参考：[uniIDRouter](uniCloud/uni-id.md?id=uni-id-router)
+用于监听客户端需要登录事件，此接口需要搭配uniIdRouter使用，参考：[uniIdRouter](uniCloud/uni-id.md?id=uni-id-router)
 
 代码示例：
 
@@ -283,7 +283,7 @@ interface OnNeedLoginEvent {
 
 **注意**
 
-- 开发者自定监听onNeedLogin事件后，uniIDRouter的自动跳转登录页面功能会禁用，由开发者在`onNeedLogin`内自行处理跳转
+- 开发者自定监听onNeedLogin事件后，uniIdRouter的自动跳转登录页面功能会禁用，由开发者在`onNeedLogin`内自行处理跳转
 
 ### 移除需要登录事件的监听@off-need-login
 
@@ -336,7 +336,7 @@ interface OnRefreshTokenEvent {
 
 **注意**
 
-- 开发者自定监听onNeedLogin事件后，uniIDRouter的自动跳转登录页面功能会禁用，由开发者在`onNeedLogin`内自行处理跳转
+- 开发者自定监听onNeedLogin事件后，uniIdRouter的自动跳转登录页面功能会禁用，由开发者在`onNeedLogin`内自行处理跳转
 
 ### 移除需要登录事件的监听@off-need-login
 

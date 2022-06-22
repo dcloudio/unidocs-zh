@@ -40,8 +40,8 @@
   * [腾讯云权限管理](uniCloud/policy-tcb.md)
 * uni-id用户体系
   * [综述](uniCloud/uni-id-summary.md)
-  * [uni-id-common](uniCloud/uni-id-common.md)
   * [uni-id-pages](uniCloud/uni-id-pages.md)
+  * [uni-id-common](uniCloud/uni-id-common.md)
   * [旧版本uni-id文档](uniCloud/uni-id.md)
 * [uni一键登录](uniCloud/univerify.md)
 * [发送短信](uniCloud/send-sms.md)

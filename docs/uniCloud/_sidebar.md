@@ -39,12 +39,12 @@
   * [腾讯云自定义登录](uniCloud/authentication.md)
   * [腾讯云权限管理](uniCloud/policy-tcb.md)
 * uni-id用户体系
+  * [uni-id文档](uniCloud/uni-id.md)
 <!--  * [综述](uniCloud/uni-id-summary.md)
   * [uni-id-pages](uniCloud/uni-id-pages.md)
   * [uni-id-common](uniCloud/uni-id-common.md)
   * [旧版本uni-id文档](uniCloud/uni-id.md)
 -->
-  * [uni-id文档](uniCloud/uni-id.md)
 * [uni一键登录](uniCloud/univerify.md)
 * [发送短信](uniCloud/send-sms.md)
 * [前端网页托管](uniCloud/hosting.md)

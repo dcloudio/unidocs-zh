@@ -29,11 +29,15 @@ uni-id-common公共模块包含了账户体系服务端的核心权限、token�
 
 uniCloud众多功能（如DB Schema的权限、uni-id-co）都依赖uni-id-common。如果开发者想要在自己的云函数里校验前端用户token，也需要引用uni-id-common公共模块。
 
-uni-id-common这个uni_modules包括了4张opendb表，用户表uni-id-users、权限表uni-id-permissions、角色表uni-id-roles、用户日志表uni-id-log。
+uni-id-common这个uni_modules包括了4张opendb表，分别为：
+- 用户表 uni-id-users
+- 权限表 uni-id-permissions
+- 角色表 uni-id-roles
+- 用户日志表 uni-id-log
 
 3. 云端一体页面模板 [uni-id-pages](uniCloud/uni-id-pages)
 
-基于uni-id-common，DCloud还提供了一组完整的前端页面和后端[云对象](https://uniapp.dcloud.io/uniCloud/cloud-obj.html) `uni-id-co`，合称uni-id-pages。
+基于uni-id-common，DCloud还提供了一组完整的前端页面和后端[云对象](https://uniapp.dcloud.io/uniCloud/cloud-obj.html) ，合称`uni-id-pages`。
 
 uni-id-pages的功能包括：用户注册（含用户协议、隐私协议）、退出、修改密码、忘记密码等各种功能，同时适配PC宽屏和各种手机平台（App、H5、小程序）。
 

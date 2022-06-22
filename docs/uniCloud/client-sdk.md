@@ -7,19 +7,24 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 
 客户端API列表
 
-|API							|描述																									|
-|--								|--																										|
-|uniCloud.callFunction()		|客户端调用云函数 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=clientcallfunction)		|
-|uniCloud.database()			|客户端访问云数据库，获取云数据库对象引用 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb)		|
-|uniCloud.uploadFile()			|客户端直接上传文件到云存储 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=uploadfile)			|
-|uniCloud.getTempFileURL()		|客户端获取云存储文件的临时路径 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=gettempfileurl)	|
-|uniCloud.chooseAndUploadFile()	|客户端选择文件并上传 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=chooseanduploadfile)		|
-|uniCloud.getCurrentUserInfo()	|获取当前用户信息 [详情](#client-getcurrentuserinfo)													|
-|uniCloud.init()				|同时使用多个服务空间时初始化额外服务空间 [详情](https://uniapp.dcloud.net.cn/uniCloud/init)			|
-|uniCloud.addInterceptor()		|新增拦截器 [详情](#add-interceptor)	|
-|uniCloud.removeInterceptor()	|移除拦截器 [详情](#remove-interceptor)	|
-|uniCloud.onResponse()			|监听服务端（云函数、云对象、clientDB）响应 [详情](#on-response)	|
-|uniCloud.offResponse()			|移除监听服务端（云函数、云对象、clientDB）响应 [详情](#off-response)	|
+|API							|描述																			|
+|--								|--																				|
+|uniCloud.importObject()		|获取云对象引用以调用云对象接口 [详情](uniCloud/cloud-obj.md)					|
+|uniCloud.callFunction()		|客户端调用云函数 [详情](uniCloud/cf-functions.md?id=clientcallfunction)		|
+|uniCloud.database()			|客户端访问云数据库，获取云数据库对象引用 [详情](uniCloud/clientdb.md)			|
+|uniCloud.uploadFile()			|客户端直接上传文件到云存储 [详情](uniCloud/storage.md?id=uploadfile)			|
+|uniCloud.getTempFileURL()		|客户端获取云存储文件的临时路径 [详情](uniCloud/storage.md?id=gettempfileurl)	|
+|uniCloud.chooseAndUploadFile()	|客户端选择文件并上传 [详情](uniCloud/storage.md?id=chooseanduploadfile)		|
+|uniCloud.getCurrentUserInfo()	|获取当前用户信息 [详情](#client-getcurrentuserinfo)							|
+|uniCloud.init()				|同时使用多个服务空间时初始化额外服务空间 [详情](uniCloud/init.md)				|
+|uniCloud.addInterceptor()		|新增拦截器 [详情](#add-interceptor)											|
+|uniCloud.removeInterceptor()	|移除拦截器 [详情](#remove-interceptor)											|
+|uniCloud.onResponse()			|监听服务端（云函数、云对象、clientDB）响应 [详情](#on-response)				|
+|uniCloud.offResponse()			|移除监听服务端（云函数、云对象、clientDB）响应 [详情](#off-response)			|
+|uniCloud.onNeedLogin()			|监听需要登录事件 [详情](#on-need-login)										|
+|uniCloud.offNeedLogin()		|移除监听需要登录事件 [详情](#off-need-login)									|
+|uniCloud.onRefreshToken()		|监听token更新事件 [详情](#on-refresh-token)									|
+|uniCloud.offRefreshToken()		|移除监听token更新事件 [详情](#off-refresh-token)								|
 
 ### 获取当前用户信息getCurrentUserInfo@client-getcurrentuserinfo
 
@@ -249,6 +254,113 @@ function logResponse(e) {
 }
 uniCloud.onResponse(logResponse)
 uniCloud.offResponse(logResponse)
+```
+
+
+### 监听需要登录事件@on-need-login
+
+> 新增于HBuilderX 3.5.0
+
+用于监听客户端需要登录事件，此接口需要搭配uniIDRouter使用，参考：[uniIDRouter](uniCloud/uni-id.md?id=uni-id-router)
+
+代码示例：
+
+```js
+uniCloud.onNeedLogin(function(event) {
+	// event格式见下方说明
+})
+```
+
+**响应格式**
+
+```js
+interface OnNeedLoginEvent {
+	errCode: number | string,
+	errMsg: string,
+	uniIdRedirectUrl: string // 触发onNeedLogin页面前的页面地址（包含路径和参数的完整页面地址）
+}
+```
+
+**注意**
+
+- 开发者自定监听onNeedLogin事件后，uniIDRouter的自动跳转登录页面功能会禁用，由开发者在`onNeedLogin`内自行处理跳转
+
+### 移除需要登录事件的监听@off-need-login
+
+> 新增于HBuilderX 3.5.0
+
+**注意**
+
+- 要移除的监听内方法需和添加的方法一致才可以移除，详情见下方示例
+
+```js
+// 错误用法，无法移除监听
+uniCloud.onNeedLogin(function(e) {
+	console.log(e)
+})
+uniCloud.offNeedLogin(function(e) {
+	console.log(e)
+})
+
+// 正确用法
+function log(e) {
+	console.log(e)
+}
+uniCloud.onNeedLogin(log)
+uniCloud.offNeedLogin(log)
+```
+
+
+### 监听token刷新事件@on-refresh-token
+
+> 新增于HBuilderX 3.5.0
+
+用于监听客户端token刷新事件，包括云对象返回newToken时自动更新token及clientDB自动更新token，注意uni-id-co登录返回的token也会触发此事件
+
+代码示例：
+
+```js
+uniCloud.onRefreshToken(function(event) {
+	// event格式见下方说明
+})
+```
+
+**响应格式**
+
+```js
+interface OnRefreshTokenEvent {
+	token: string,
+	tokenExpired: number
+}
+```
+
+**注意**
+
+- 开发者自定监听onNeedLogin事件后，uniIDRouter的自动跳转登录页面功能会禁用，由开发者在`onNeedLogin`内自行处理跳转
+
+### 移除需要登录事件的监听@off-need-login
+
+> 新增于HBuilderX 3.5.0
+
+**注意**
+
+- 要移除的监听内方法需和添加的方法一致才可以移除，详情见下方示例
+
+```js
+// 错误用法，无法移除监听
+uniCloud.onNeedLogin(function(e) {
+	console.log(e)
+})
+uniCloud.offNeedLogin(function(e) {
+	console.log(e)
+})
+
+// 正确用法
+function log(e) {
+	console.log(e)
+}
+uniCloud.onNeedLogin(log)
+uniCloud.offNeedLogin(log)
 ```
 
 ## 属性

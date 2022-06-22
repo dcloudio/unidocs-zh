@@ -1,3 +1,5 @@
+本文档为uni-id旧版本文档，已不再维护。新文档请查看：[uni-id文档](uniCloud/uni-id-summary.md)，如何从旧版本升级到uni-id-pages请查看：[升级到uni-id-pages](uniCloud/uni-id-pages.md?id=m-to-co)
+
 # 需求背景
 
 99%的应用，都要开发用户注册、登录、发送短信验证码、密码加密保存、修改密码、token管理等功能，从前端到后端都需要。

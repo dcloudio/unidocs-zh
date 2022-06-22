@@ -12,98 +12,94 @@
 
 - 注册账号：
 	+ 用户名和密码
-- 免密登陆（首次登陆自动注册）：
+- 免密登录（首次登录自动注册）：
 	+ [app一键登录](https://uniapp.dcloud.io/univerify.html)
 	+ 短信验证码登录
 	+ 微信登录（自动获取头像和昵称）
 	+ 苹果登录
-	+ 支付宝小程序登录
-- 密码登陆
-	+ 用户名/手机号和密码登陆
+	+ 支付宝小程序登录（暂未实现）
+- 密码登录
+	+ 用户名/手机号和密码登录
 - 账户管理
 	+ 个人中心
 	+ 头像更换
 	+ 修改昵称
-	+ 非手机号登录时的绑定手机号码
+	+ 绑定手机号码
 		* App端支持：[一键绑定](https://uniapp.dcloud.io/univerify.html)
 		* 微信小程序端支持：[获取微信绑定的手机号](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getPhoneNumber.html)
 		* 全端支持：短信验证码校验
 	+ 找回密码（仅账号有绑定手机号码可用）
-	+ 退出登陆
+	+ 退出登录
 	+ 注销账号（上架国内App应用市场必备）
-- 隐私政策
+- 用户服务协议和隐私政策条款授权
 
 
 # 目录结构  
 <pre v-pre="" data-lang="">
 <code class="lang-" style="padding:0">
-├─uni_modules									存放[uni_module](/uni_modules)规范的插件。
-│	├─其他module
-│	└─uni-id-pages
-│		├─uniCloud
-│		│	├─cloudfunctions 					云函数目录
-│		│	│	└─uni-id-co		 				集成调用uni-id方法的云对象
-│		│	│		├─common 					公用逻辑
-│		│	│		├─config 					配置
-│		│	│		│  └─permission.js 			调用接口所需的权限配置
-│		│	│		├─lang 						国际化目录
-│		│	│		├─lib 						基础功能，不建议修改此目录下文件
-│		│	│		│  ├─third-party			三方平台接口
-│		│	│		│  └─utils					基础功能
-│		│	│		├─middleware				中间件
-│		│	│		└─module					分模块存放的云对象方法
-│		│	└─database
-│		│		├─uni-id-log.schema.json		登录日志表，表结构文件
-│		│		├─uni-id-roles.schema.json		用户角色，表结构文件
-│		│		└─uni-id-users.schema.json		用户表，表结构文件
-│		├─common
-│		│	├─login-page.scss					登录页面公共样式
-│		│	├─login-page.mixin.js				登录页面公共mixin文件
-│		│	└─loginSuccess.js					登录成功后执行的文件
-│		├─components
-│		│	├─cloud-image				        	uniCloud云存储图片解析组件
-│		│	│	└─cloud-image.vue
-│		│	├─uni-id-pages-agreements				同意用户服务协议&隐私政策条款组件
-│		│	│	└─uni-id-pages-agreements.vue
-│		│	├─uni-id-pages-avatar					用户头像组件
-│		│	│	└─uni-id-pages-avatar.vue
-│		│	├─uni-id-pages-bind-mobile				通过微信获取手机号码绑定个人资料
-│		│	│	└─uni-id-pages-bind-mobile.vue
-│		│	├─uni-id-pages-fab-login				悬浮的切换登录方式组件
-│		│	│	└─uni-id-pages-fab-login.vue
-│		│	├─uni-id-pages-sms-form					获取短信验证码组件
-│		│	│	└─uni-id-pages-sms-form.vue
-│		│	└─uni-id-pages-user-profile				获取用户信息组件
-│		│		└─uni-id-pages-user-profile.vue
-│		├─pages
-│		│	├─common
-│		│	│	└─webview				用于实现应用内浏览或打开《用户协议和隐私协议》URL链接页面
-│		│	│		└─webview.vue
-│		│	├─login						
-│		│	│	├─login-smscode.vue		短信验证码登录
-│		│	│	├─login-withoutpwd.vue	免密码登录
-│		│	│	└─login-withpwd.vue		密码登录
-│		│	├─register					
-│		│	│	├─register.vue			注册账号页
-│		│	│	└─validator.js			注册账号页的表单验证规则文件
-│		│	├─retrieve					重置密码
-│		│	│	└─retrieve.vue
-│		│	└─userinfo
-│		│		├─bind-mobile.vue		绑定手机号码
-│		│		├─cropImage.vue			裁剪图片
-│		│		├─deactivate.vue		注销账号
-│		│		└─userinfo.js			注册账号页的表单验证规则文件
-│		├─static					 	静态资源目录
-│		├─changelog.md					更新日志
-│		├─config.js						uni-id-pages的配置文件
-│		├─init.js						初始化文件
-│		├─package.json					包管理文件
-│		└─readme.md						插件自述文件
+├─uni_modules                                         存放[uni_module](/uni_modules)规范的插件。
+│    ├─其他module
+│    └─uni-id-pages
+│        ├─uniCloud
+│        │    └─cloudfunctions                        云函数目录
+│        │        └─uni-id-co                         集成调用uni-id方法的云对象
+│        │            ├─common                        公用逻辑
+│        │            ├─config                        配置
+│        │            │  └─permission.js              调用接口所需的权限配置
+│        │            ├─lang                          国际化目录
+│        │            ├─lib                           基础功能，不建议修改此目录下文件
+│        │            │  ├─third-party                三方平台接口
+│        │            │  └─utils                      基础功能
+│        │            ├─middleware                    中间件
+│        │            └─module                        分模块存放的云对象方法
+│        ├─common
+│        │    ├─login-page.scss                       登录页面公共样式
+│        │    ├─login-page.mixin.js                   登录页面公共mixin文件
+│        │    └─loginSuccess.js                       登录成功后执行的文件
+│        ├─components
+│        │    ├─cloud-image                           uniCloud云存储图片解析组件
+│        │    │    └─cloud-image.vue
+│        │    ├─uni-id-pages-agreements               同意用户服务协议&隐私政策条款组件
+│        │    │    └─uni-id-pages-agreements.vue
+│        │    ├─uni-id-pages-avatar                   用户头像组件
+│        │    │    └─uni-id-pages-avatar.vue
+│        │    ├─uni-id-pages-bind-mobile              通过微信获取手机号码绑定个人资料
+│        │    │    └─uni-id-pages-bind-mobile.vue
+│        │    ├─uni-id-pages-fab-login                悬浮的切换登录方式组件
+│        │    │    └─uni-id-pages-fab-login.vue
+│        │    ├─uni-id-pages-sms-form                 获取短信验证码组件
+│        │    │    └─uni-id-pages-sms-form.vue
+│        │    └─uni-id-pages-user-profile             获取用户信息组件
+│        │        └─uni-id-pages-user-profile.vue
+│        ├─pages
+│        │    ├─common
+│        │    │    └─webview                          用于实现应用内浏览或打开《用户协议和隐私协议》URL链接页面
+│        │    │        └─webview.vue
+│        │    ├─login                        
+│        │    │    ├─login-smscode.vue                短信验证码登录
+│        │    │    ├─login-withoutpwd.vue             免密码登录
+│        │    │    └─login-withpwd.vue                密码登录
+│        │    ├─register                    
+│        │    │    ├─register.vue                     注册账号页
+│        │    │    └─validator.js                     注册账号页的表单验证规则文件
+│        │    ├─retrieve                              重置密码
+│        │    │    └─retrieve.vue
+│        │    └─userinfo
+│        │        ├─bind-mobile.vue                   绑定手机号码
+│        │        ├─cropImage.vue                     裁剪图片
+│        │        ├─deactivate.vue                    注销账号
+│        │        └─userinfo.js                       注册账号页的表单验证规则文件
+│        ├─static                                     静态资源目录
+│        ├─changelog.md                               更新日志
+│        ├─config.js                                  uni-id-pages的配置文件
+│        ├─init.js                                    初始化文件
+│        ├─package.json                               包管理文件
+│        └─readme.md                                  插件自述文件
 </code>
 </pre>
-完整的uni-app目录结构[详情](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84)
+完整的uni-app目录结构[详情查看](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84)
 
-# 客户端
+# 前端页面
 ## 初始化
 你需要在App.vue中初始化`uni-id-pages`的`init.js`文件  
 示例代码如下：
@@ -124,8 +120,15 @@
   }
 </script>
 ```
+
 ## 配置@config
 路径：`/uni_modules/uni-id-pages/config.js`
+
+|字段	|类型	|描述		|
+|--			|--		|--			|
+|debug		|Boolean|调试模式	|
+|loginTypes	|Array	|登录方式	|
+|agreements	|Array	|隐私政策	|
 
 完整示例：
 ```js
@@ -147,21 +150,16 @@ export default {
 	"agreements": {
 		"serviceUrl": "https://xxx", //用户服务协议链接
 		"privacyUrl": "https://xxx", //隐私政策条款链接
-		// 哪些场景下显示，1.注册（包括登录并注册，如：微信登录、苹果登录、短信验证码登录）、2.登录（如：用户名密码登录）
+		// 哪些场景下显示，1.注册（包括注册并登录，如：微信登录、苹果登录、短信验证码登录）、2.登录（如：用户名密码登录）
 		"scope": ['register', 'login']
 	}	
 }
 ```
 
-### 字段介绍
-|字段		|类型	|描述		|
-|--			|--		|--			|
-|debug		|Boolean|调试模式	|
-|loginTypes	|Array	|登录方式	|
-|agreements	|Array	|隐私政策	|
 
 #### 调试模式@debug
-开启debug将在应用启动时，自动发起一次网络请求（调用`uni-id-co`的`getSupportedLoginType`）检查：本地uni-id-pages中配置的登录方式，服务器端是否已经配置正确，否则将抛出异常。
+debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-co`的`getSupportedLoginType`），
+检查：uni-id-pages客户端配置的登录方式，是否未在uniCloud服务端配置正确，否则抛出异常。
 
 #### 登录方式@loginTypes
 |字段		|描述|平台差异|
@@ -205,37 +203,39 @@ export default {
 **注意：** iOS的App Store应用规则：应用若支持三方社交登录服务（如:一键登录、微信登录等），则必须同时向用户提供“以苹果账号登录”的选项。即：如果你的应用不支持三方登录，那么可以不带上苹果登录，如果你的应用支持三方登录，那必须同时把苹果登录也带上。
 
 以上配置仅开启前端登录入口，实现功能还需：
-1. 开通对应登录方式服务，获得服务密钥，并在服务端`uni-id`模块的配置文件中完成配置。详情：[登陆服务开通与配置](#登陆服务开通与配置)
+1. 开通对应登录方式服务，获得服务密钥，并在服务端`uni-id`模块的配置文件中完成配置。详情查看：[登录服务开通与配置](#登录服务开通与配置)
 2. 如果是APP端，`一键登录`、`微信登录`、`苹果登录`，需要在`manifest.json`中勾选对应模块（微信登录必须配置：微信开发平台申请应用appID的值），并完成打包后才可用（自定义调试基座包和正式包均可）。
 
 #### 隐私政策@agreements
-|字段	|类型	|描述			|
-|--		|--		|--				|
-|serviceUrl	|String	| 用户服务协议网络链接		|
+|字段		|类型	|描述					|
+|--			|--		|--						|
+|serviceUrl	|String	| 用户服务协议网络链接	|
 |privacyUrl	|String	| 隐私政策网络链接		|
-|scope	|Object	| 作用于哪些场景	|
+|scope		|Object	| 作用于哪些场景		|
 
-##### 作用于哪些场景@scope
+**scope 说明：**
+
 |字段		|类型	|描述													|
 |--			|--		|--														|
-|register	|String	|注册（包括登录并注册，如：微信登录、苹果登录、短信验证码登录）	|
+|register	|String	|注册（包括注册并登录，如：微信登录、苹果登录、短信验证码登录）	|
 |login		|String	|登录（如：用户名密码登录）									|
 
-一款规范的小程序或要上架到国内应用商店app必须提供《用户协议和隐私协议》，参考模版：[隐私权政策模板.zip](https://ask.dcloud.net.cn/file/download/file_name-6ZqQ56eB5p2D5pS/562W5qih5p2/LnppcA==__url-Ly9pbWctY2RuLXRjLmRjbG91ZC5uZXQuY24vdXBsb2Fkcy9hcnRpY2xlLzIwMjAwMjE0LzUyMDRmMWU2Y2Q3NjcwZWE0YTJjMjBmZGRhMTBhMDdh)
+一款规范的小程序或要上架到国内应用商店app必须提供《隐私政策和用户使用协议》，参考模版：[隐私权政策模板.zip](https://ask.dcloud.net.cn/file/download/file_name-6ZqQ56eB5p2D5pS/562W5qih5p2/LnppcA==__url-Ly9pbWctY2RuLXRjLmRjbG91ZC5uZXQuY24vdXBsb2Fkcy9hcnRpY2xlLzIwMjAwMjE0LzUyMDRmMWU2Y2Q3NjcwZWE0YTJjMjBmZGRhMTBhMDdh)
 
-更多因合规问题[详情](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
+更多合规问题[详情参考](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
 
-你还可以用markdown编辑《用户协议和隐私协议》[一键分享](https://ask.dcloud.net.cn/article/37573)上传到[前端网页托管](https://uniapp.dcloud.io/uniCloud/hosting.html#%E7%AE%80%E4%BB%8B)获得链接
+推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://ask.dcloud.net.cn/article/37573)上传到[前端网页托管](https://uniapp.dcloud.io/uniCloud/hosting.html#%E7%AE%80%E4%BB%8B)获得链接
 
-## 登录页面
-`uni-id-pages`提供了5种登录方式（账号密码登录，一键登录，短信验证码登录，微信登录，苹果登录），2个页面：密码登录和免密登录。  
-- 密码登录页面路径: `/uni_modules/uni-id-pages/pages/login/login-withpwd`
-- 免密登录页面路径: `/uni_modules/uni-id-pages/pages/login/login-withoutpwd`
+## 页面介绍
+`uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[详情查看](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
+项目中常有打开登录页面的需求，这里对登录页面展开介绍；包括两类登录方式：
+- 免密登录（账号密码登录），页面路径: `/uni_modules/uni-id-pages/pages/login/login-withpwd`
+- 免密登录（一键登录，短信验证码登录，微信登录，苹果登录），页面路径: `/uni_modules/uni-id-pages/pages/login/login-withoutpwd`
 
 执行`uni.navigateTo`打开登录页面，会默认使用配置中`loginTypes`值的第一项为登录方式。
 例如`loginTypes`：`["weixin","apple","univerify"]`会以`weixin`，即`微信登录`为默认登录方式
 
-如果你希望：指定登录方式`uni-id-page`支持通过传递参数`type`，指定登录方式。例如：指定苹果登录，使用如下代码即可
+`uni-id-pages`支持通过传递参数`type`，指定登录方式。例如：指定苹果登录，使用如下代码即可
 ```js
 uni.navigateTo({
   "url":"/uni_modules/uni-id-pages/pages/login/login-withoutpwd?type=apple"
@@ -244,36 +244,7 @@ uni.navigateTo({
 
 可以配套使用[uniIdRouter](uniCloud/uni-id.md?id=uni-id-router)；当用户未登录，但访问了需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时均需要打开登录页面。你需要把以上两个路径路径定义为`loginPage`。
 
-# 登陆服务开通与配置
-服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`
-以下简称：`uni-id配置文件`，完整的配置信息[详情](https://uniapp.dcloud.io/uniCloud/uni-id.html#config)
-
-## 一键登录
-一键登录是运营商提供的、比短信验证码更方便、更安全、更便宜的方案。[详见](https://uniapp.dcloud.net.cn/univerify)。
-- 使用本功能需要在[DCloud开发者中心 -> ](https://dev.dcloud.net.cn/uniLogin)开通并充值
-- 模块配置：`manifest.json`-->`App模块配置` -->`OAuth（登录鉴权）`-->` 一键登录`，点击后面的`开通配置`，在随后打开的web界面中，同意协议，并点击充值按钮充值。如只是测试，可以只充值1元钱。如果你已经确定包名，则可以在web界面点击“添加应用”，提交审核。这个是正式打包必须的。真机运行可以跳过此环节。记住页面上展示的`apiKey`和`apiSecret`，下一步需要用到。
-- uni-id配置：`uni-id配置文件` --> `service` --> `univerify`，填写`appid`、`apiKey`和 `apiSecret`。`appid`就是`manifest`里的`appid`。`apiKey`和`apiSecret`则是从上一步的web界面得来的。
-
-## 微信登录
-- APP端申请微信登录需要在**微信开放平台**申请移动应用，获得的appid和appsecret，用于微信登录。[微信开放平台](https://open.weixin.qq.com/)
-- 微信 appid 申请步骤：[https://ask.dcloud.net.cn/article/208](https://ask.dcloud.net.cn/article/208)。
-- iOS平台微信SDK配置通用链接：[https://uniapp.dcloud.io/api/plugins/universal-links.html](https://uniapp.dcloud.io/api/plugins/universal-links.html)。
-- 模块配置：`manifest.json` --> `App模块配置` --> `OAuth（登录鉴权）` --> `勾选微信登录` --> 填写`appid`、`appsecret`、`ios平台通用链接`。
-- uni-id配置：`uni-id配置文件` --> `app-plus` --> `oauth` --> `weixin`，填写`appid`、`appsecret`
-	
-## 苹果登录集成指南
-- 模块配置：`manifest.json` --> `App模块配置` --> OAuth（登录鉴权）勾选`苹果登录`，[IOS苹果授权登录参考文档](https://ask.dcloud.net.cn/article/36651)。如不发布到Appstore，不需要配置此项
-- uni-id配置：`uni-id配置文件` --> `app-plus` --> `oauth` --> `apple` 填写`bundleId`。
-- 关联域配置：`manifest.json` --> `App常用其他设置` --> `iOS设置` --> `关联域(Associated Domains)` 填写配置  [参考教程](https://ask.dcloud.net.cn/article/36393)。如不发布到Appstore，不需要配置此项
-
-## 短信验证码
-为了方便开发调试，`uni-id-pages`未配置短信登陆时，自动启动测试模式；直接使用：123456作为短信验证码即可。
-- 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/uniSms)开通并充值
-- 教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
-- 密钥配置：`uni-id配置文件` --> `service` --> `sms` 填写相关密钥信息。
-
-
-# uni-id-co
+# 云对象（uni-id-co）
 ## uni-id-co的API列表@co-api
 
 前端调用云对象`uni-id-co`内的方法前应先获取云对象的引用，代码如下
@@ -1509,7 +1480,7 @@ const {
 |错误码									|错误信息								|说明													|
 |----									|----									|----													|
 |0（数字）								|成功									|-														|
-|uni-id-token-expired					|登陆状态失效，token已过期				|-														|
+|uni-id-token-expired					|登录状态失效，token已过期				|-														|
 |uni-id-check-token-failed				|token校验未通过						|-														|
 |uni-id-account-exists					|账户已存在								|-														|
 |uni-id-account-not-exists				|账户不存在								|-														|
@@ -1545,7 +1516,7 @@ const {
 
 比如一个打车软件，有乘客端、司机端、管理端，都要注册账户。它们也都有自己的DCloud appID（manifest.json里第一个配置）
 
-uni-id-user表中有一个数组型字段`dcloud_appid`，可以存贮这个用户有权登陆哪个应用。
+uni-id-user表中有一个数组型字段`dcloud_appid`，可以存贮这个用户有权登录哪个应用。
 
 比如乘客端的appid是`__uni_111111`，司机端appid是`__uni_222222`，那么2个appid都存入`dcloud_appid`，即表示这个用户有权登录这2个应用。
 
@@ -1929,6 +1900,35 @@ exports.main = async function() {
 }
 ```
 
+# 登录服务开通与配置
+服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`
+以下简称：`uni-id配置文件`，完整的配置信息[详情查看](https://uniapp.dcloud.io/uniCloud/uni-id.html#config)
+
+## 一键登录
+一键登录是运营商提供的、比短信验证码更方便、更安全、更便宜的方案。[详见](https://uniapp.dcloud.net.cn/univerify)。
+- 使用本功能需要在[DCloud开发者中心 -> ](https://dev.dcloud.net.cn/uniLogin)开通并充值
+- 模块配置：`manifest.json`-->`App模块配置` -->`OAuth（登录鉴权）`-->` 一键登录`，点击后面的`开通配置`，在随后打开的web界面中，同意协议，并点击充值按钮充值。如只是测试，可以只充值1元钱。如果你已经确定包名，则可以在web界面点击“添加应用”，提交审核。这个是正式打包必须的。真机运行可以跳过此环节。记住页面上展示的`apiKey`和`apiSecret`，下一步需要用到。
+- uni-id配置：`uni-id配置文件` --> `service` --> `univerify`，填写`appid`、`apiKey`和 `apiSecret`。`appid`就是`manifest`里的`appid`。`apiKey`和`apiSecret`则是从上一步的web界面得来的。
+
+## 微信登录
+- APP端申请微信登录需要在**微信开放平台**申请移动应用，获得的appid和appsecret，用于微信登录。[微信开放平台](https://open.weixin.qq.com/)
+- 微信 appid 申请步骤：[https://ask.dcloud.net.cn/article/208](https://ask.dcloud.net.cn/article/208)。
+- iOS平台微信SDK配置通用链接：[https://uniapp.dcloud.io/api/plugins/universal-links.html](https://uniapp.dcloud.io/api/plugins/universal-links.html)。
+- 模块配置：`manifest.json` --> `App模块配置` --> `OAuth（登录鉴权）` --> `勾选微信登录` --> 填写`appid`、`appsecret`、`ios平台通用链接`。
+- uni-id配置：`uni-id配置文件` --> `app-plus` --> `oauth` --> `weixin`，填写`appid`、`appsecret`
+	
+## 苹果登录集成指南
+- 模块配置：`manifest.json` --> `App模块配置` --> OAuth（登录鉴权）勾选`苹果登录`，[IOS苹果授权登录参考文档](https://ask.dcloud.net.cn/article/36651)。如不发布到Appstore，不需要配置此项
+- uni-id配置：`uni-id配置文件` --> `app-plus` --> `oauth` --> `apple` 填写`bundleId`。
+- 关联域配置：`manifest.json` --> `App常用其他设置` --> `iOS设置` --> `关联域(Associated Domains)` 填写配置  [参考教程](https://ask.dcloud.net.cn/article/36393)。如不发布到Appstore，不需要配置此项
+
+## 短信验证码
+为了方便开发调试，`uni-id-pages`未配置短信登录时，自动启动测试模式；直接使用：123456作为短信验证码即可。
+- 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/uniSms)开通并充值
+- 教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
+- 密钥配置：`uni-id配置文件` --> `service` --> `sms` 填写相关密钥信息。
+
+
 # 从老版uni-id公共模块升级到uni-id-pages
 
 在HBuilderX 3.5之前，DCloud提供了一个公共模块[uni-id](https://ext.dcloud.net.cn/plugin?id=2116)（注意别和uni-id-common混淆）和一个示例性云函数uni-id-cf（集成在uni-starter和uni-admin中）。
@@ -1987,4 +1987,3 @@ exports.main = async (event, context) => {
 };
 
 ```
-

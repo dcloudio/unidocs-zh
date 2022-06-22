@@ -48,7 +48,7 @@
   * [开发文档](uniCloud/redis.md)
 * [日志输出](uniCloud/cf-logger.md)
 * [客户端API](uniCloud/client-sdk.md)
-* 重要开源库
+* 重要开源库```{"collapsable": false}```
   * [uni-config-center 配置中心](uniCloud/uni-config-center.md)
   * [uni-starter](uniCloud/uni-starter.md)
   * [uni-admin](uniCloud/admin.md)

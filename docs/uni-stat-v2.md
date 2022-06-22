@@ -216,7 +216,7 @@ uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了�
 1. 创建新的`uni-admin`项目（HBuilderX新建项目界面选择uni-admin模板）
 2. 在弹出的云服务空间初始化向导中，关联服务空间（如果您的业务App已使用了uniCloud，那么选择相同的服务空间；否则，新建一个服务空间，并在业务App里关联相同服务空间）
 3. 部署云端资源：上传部署云函数、公共模块、通过`db_init.json`初始化数据库表。如之前的表已经有冲突数据，需要自己手动合并下
-4. 在云端配置中心完成其它初始化配置，如：在 `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` 文件中填写自己的 passwordSecret 字段 (用于加密密码入库的密钥) 和 tokenSecret 字段 (为生成 token 需要的密钥，测试期间跳过本条也可以)，然后对uni-config-center公共模块点右键上传更新。
+4. 在云端配置中心完成其它初始化配置，如：在 `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` 文件中填写自己的 passwordSecret 字段 (用于加密密码入库的密钥) 和 tokenSecret 字段 (为生成 token 需要的密钥，测试期间跳过本条也可以)，然后对`uni-config-center`公共模块点右键上传更新。注意：`业务端App项目`和`报表端uni-admin项目`关联相同服务空间时，可能会出现`uni-config-center`的相互覆盖问题，此时建议单点维护，[详见](https://uniapp.dcloud.net.cn/uni-stat-v2.html#常见问题)。
 5. 运行 uni-admin 项目，一般是运行到浏览器
 6. 设置管理员账户
 7. 在左侧「应用管理」中新增「被统计应用」的记录（appid 等）
@@ -226,7 +226,6 @@ uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了�
 
 ::: warning 注意
 - 「连接本地云函数」运行需要在 uni-admin 的 database 文件夹上右键，点击「下载所有DB schema及扩展校验函数」。如果之前服务空间初始化向导里漏操作了`db_init`初始化数据，则对`uniCloud/database/db_init.json`点右键初始化
-- 建议用户端项目和`uni-admin`项目关联（复用）相同的服务空间，此时如果用户端项目和`uni-admin`项目下，均存在`uni-config-center`的话，务必注意互相覆盖的问题，此时建议单点维护，比如所有配置均在`uni-admin`项目下的`uni-config-center`中完成。
 :::
 
 
@@ -843,9 +842,10 @@ db.collection('uni-stat-event-logs')
 - 确保使用HBuilderX 3.4.14+。如果是cli创建的项目，需要升级cli到uni-app 3.4.14+
 - 确保在需要统计的业务App工程的manifest里勾选了开启 uni统计2.0，并关联和正确的uniCloud服务空间
 - 确保重新发行过业务App（在HBuilder里发行即可，不需要上架应用商店或小程序商店），数据上报只发生在项目发行后或者运行项目开启了调试模式，其他情况不会上报数据。[详情](#report-time)
-- 确保uni-admin项目的uniCloud目录下的云函数都上传到了与App相同的uniCloud服务空间
+- 确保`uni-admin`项目的`uniCloud`目录下的云函数都上传到了与App相同的uniCloud服务空间
 - 在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的云函数日志中，可以看到`uni-stat-receiver`云函数有正确的请求日志
-- 如需看uni-admin这个管理端的统计数据，才需要在uni-admin工程的manifest里配置uni统计2.0并再次发行。再次强调不要搞混业务App和admin
+- 在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的云函数日志中，可以看到`uni-stat-cron`云函数有定时执行日志，且日志显示执行成功；如日志中显示`Not Found the cofnig file`，则查看下方第6个问题；
+- 如需看`uni-admin`这个管理端的统计数据，才需要在`uni-admin`工程的`manifest`里配置`uni统计2.0`并再次发行。再次强调不要搞混业务App和admin
 
 **3. 如何判断是否需要配置分钟级定时任务？**
 
@@ -858,6 +858,12 @@ db.collection('uni-stat-event-logs')
 **5. 为什么总设备数比活跃设备数少？**
 
 答：总设备数计算公式为：总设备数 = 原设备数 + 新设备数，而判断一个设备是否为新设备的依据是在客户端SDK中是否已储存该设备上次访问某一应用的时间，未存储则认为是该应用的新设备(即lvts=0时为新设备，lvts>0为老设备)。 因此如果之前某一设备已经访问过某一应用，就算此时清除数据库中的数据，由于已经在客户端SDK中储存该设备上次访问应用的时（即此时lvts > 0），所以该设备也不会再被认为是该应用的新设备从而不会再被计算进该应用的总设备数中而只会计算进活跃设备数中，此时可能就会出现总设备数小于活跃设备数的情况。
+
+**6. uni-stat-cron运行日志显示 Not Found the cofnig file** 
+
+业务App 和 admin 是2个工程。业务App是采集端，admin是报表端；这两个项目均包含`uni-config-center`；如果这两个项目关联（复用）相同的服务空间时，很容易出现`uni-config-center`的互相覆盖问题；此时建议单点维护，方案有2种：
+- 以业务App为主：将`uni-admin`项目中`uni-config-center` 下面的`uni-stat`文件夹，复制到业务App项目下的`uni-config-center`目录下，然后重新上传业务App项目下的`uni-config-center`公共模块即可。
+- 以`uni-admin`为主：将业务App项目下的`uni-config-center`，手动合并配置项到`uni-admin`项目下的`uni-config-center`中，然后重新上传`uni-admin`项目下的`uni-config-center`公共模块即可。
 
 **参考资料：**
 

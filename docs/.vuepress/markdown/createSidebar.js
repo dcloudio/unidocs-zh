@@ -25,14 +25,7 @@ function parseBar(file, options) {
               text = text || child.content
               break;
             case 'link_open':
-              const len = child.attrs.length
-              for (let index = 0; index < len; index++) {
-                const attr = child.attrs[index];
-                if (attr[0] === 'href') {
-                  link = link || attr[1]
-                  break;
-                }
-              }
+              link = link || new Map(child.attrs).get('href')
               break;
             case 'code_inline':
               try {

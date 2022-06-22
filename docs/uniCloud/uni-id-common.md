@@ -67,7 +67,7 @@ module.exports = {
 这里就涉及到安全问题，有一句话叫做：“前端传递的参数都是不可信任的”。比如：你去银行取款，柜台会要求出示你的身份证来证明你是谁，而不是你直接告诉银行柜台你是谁就管用。否则这是一个极大的安全漏洞。
 综上所述：所有服务端操作涉及账户信息相关内容，都需要使用token来获得，而不是使用前端传递的参数。
 
-用法：`uniID.checkToken(String token, Object checkTokenOptions)`
+用法：`uniIDIns.checkToken(String token, Object checkTokenOptions)`
 
 **参数说明**
 
@@ -108,7 +108,7 @@ uni-id使用jwt生成token，jwt所生成的token包含三部分，其中存储�
 
 > 新增于uni-id 3.3.14
 
-用法：`uniID.refreshToken(Object RefreshTokenParams);`
+用法：`uniIDIns.refreshToken(Object RefreshTokenParams);`
 
 **参数说明**
 
@@ -122,7 +122,7 @@ uni-id使用jwt生成token，jwt所生成的token包含三部分，其中存储�
 const {
   token,
   tokenExpired
-} = await uniID.refreshToken({
+} = await uniIDIns.refreshToken({
   token: 'xxx'
 })
 ```
@@ -133,7 +133,7 @@ const {
 
 ### 生成token@createtoken
 
-用法：`uniID.createToken(Object CreateTokenParams)`
+用法：`uniIDIns.createToken(Object CreateTokenParams)`
 
 **参数说明**
 

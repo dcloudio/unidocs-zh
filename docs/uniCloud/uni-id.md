@@ -1,4 +1,4 @@
-本文档为uni-id旧版本文档，已不再维护。新文档请查看：[uni-id文档](uniCloud/uni-id-summary.md)，如何从旧版本升级到uni-id-pages请查看：[升级到uni-id-pages](uniCloud/uni-id-pages.md?id=m-to-co)
+<!-- 本文档为uni-id旧版本文档，已不再维护。新文档请查看：[uni-id文档](uniCloud/uni-id-summary.md)，如何从旧版本升级到uni-id-pages请查看：[升级到uni-id-pages](uniCloud/uni-id-pages.md?id=m-to-co) -->
 
 # 需求背景
 

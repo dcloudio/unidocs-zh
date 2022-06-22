@@ -839,13 +839,13 @@ db.collection('uni-stat-event-logs')
 **2. 已经开启统计，定时任务配置也正常，但是后台还是看不到数据**
 
 答：
-	- 确保分清楚，业务App 和 admin 是2个工程。业务App是采集端，admin是报表端
-	- 确保使用HBuilderX 3.4.14+。如果是cli创建的项目，需要升级cli到uni-app 3.4.14+
-	- 确保在需要统计的业务App工程的manifest里勾选了开启 uni统计2.0，并关联和正确的uniCloud服务空间
-	- 确保重新发行过业务App（在HBuilder里发行即可，不需要上架应用商店或小程序商店），数据上报只发生在项目发行后或者运行项目开启了调试模式，其他情况不会上报数据。[详情](#report-time)
-	- 确保uni-admin项目的uniCloud目录下的云函数都上传到了与App相同的uniCloud服务空间
-	- 在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的云函数日志中，可以看到`uni-stat-receiver`云函数有正确的请求日志
-	- 如需看uni-admin这个管理端的统计数据，才需要在uni-admin工程的manifest里配置uni统计2.0并再次发行。再次强调不要搞混业务App和admin
+- 确保分清楚，业务App 和 admin 是2个工程。业务App是采集端，admin是报表端
+- 确保使用HBuilderX 3.4.14+。如果是cli创建的项目，需要升级cli到uni-app 3.4.14+
+- 确保在需要统计的业务App工程的manifest里勾选了开启 uni统计2.0，并关联和正确的uniCloud服务空间
+- 确保重新发行过业务App（在HBuilder里发行即可，不需要上架应用商店或小程序商店），数据上报只发生在项目发行后或者运行项目开启了调试模式，其他情况不会上报数据。[详情](#report-time)
+- 确保uni-admin项目的uniCloud目录下的云函数都上传到了与App相同的uniCloud服务空间
+- 在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的云函数日志中，可以看到`uni-stat-receiver`云函数有正确的请求日志
+- 如需看uni-admin这个管理端的统计数据，才需要在uni-admin工程的manifest里配置uni统计2.0并再次发行。再次强调不要搞混业务App和admin
 
 **3. 如何判断是否需要配置分钟级定时任务？**
 

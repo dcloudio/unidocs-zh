@@ -8,6 +8,8 @@ uni-id-common是uni-id的公共逻辑部分。不同于旧版本uni-id，uni-id-
 
 ### 创建uni-id实例@create-instance
 
+**注意：不同于旧版本uni-id公共模块，uni-id-common必须调用此接口创建实例后才可以调用checkToken等接口**
+
 用法：`uniID.createInstance(Object CreateInstanceParams);`
 
 CreateInstanceParams内可以传入云函数context，也可以传入clientInfo参数，作用和context类似。方便在云对象内获取clientInfo后直接传入，[什么是云对象？](uniCloud/cloud-obj.md)。
@@ -17,7 +19,7 @@ CreateInstanceParams内可以传入云函数context，也可以传入clientInfo�
 const uniID = require('uni-id-common')
 exports.main = async function(event,context) {
   context.APPID = '__UNI__xxxxxxx' // 替换为当前客户端的APPID，通过客户端callFunction请求的场景可以使用context.APPID获取
-  context.PLATFORM = 'h5' // 替换为当前客户端的平台类型，通过客户端callFunction请求的场景可以使用context.PLATFORM获取
+  context.PLATFORM = 'web' // 替换为当前客户端的平台类型，通过客户端callFunction请求的场景可以使用context.PLATFORM获取
   context.LOCALE = 'zh-Hans' // 替换为当前客户端的语言代码，通过客户端callFunction请求的场景可以使用context.LOCALE获取
   const uniIDIns = uniID.createInstance({ // 创建uni-id实例
     context: context,
@@ -27,11 +29,6 @@ exports.main = async function(event,context) {
   if (payload.code) {
   	return payload
   }
-  const res = await uniIDIns.updateUser({
-    uid: payload.uid,
-    nickname: 'user nickname'
-  })
-  return res
 }
 
 // 云对象代码传入clientInfo
@@ -43,9 +40,9 @@ module.exports = {
 			clientInfo
 		})
 	},
-	login() {
+	refreshToken() {
 		// ...
-		// this.uniID.login()
+    // this.uniID.refreshToken()
 	}
 }
 ```

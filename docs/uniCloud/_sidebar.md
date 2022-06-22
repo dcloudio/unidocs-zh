@@ -42,6 +42,7 @@
   * [综述](uniCloud/uni-id-summary.md)
   * [uni-id-common](uniCloud/uni-id-common.md)
   * [uni-id-pages](uniCloud/uni-id-pages.md)
+  * [旧版本uni-id文档](uniCloud/uni-id.md)
 * [uni一键登录](uniCloud/univerify.md)
 * [发送短信](uniCloud/send-sms.md)
 * [前端网页托管](uniCloud/hosting.md)

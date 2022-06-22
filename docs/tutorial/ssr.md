@@ -229,7 +229,7 @@ export default {
 5. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
 
 
-注意事项:
+#### 注意事项
 
 - 浏览器控制台提示如下警告，说明服务器和客户端渲染的结果不一致，检查模板绑定的属性是否使用了 `ssrRef`
 

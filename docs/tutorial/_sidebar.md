@@ -34,7 +34,6 @@
   * [SSR 服务端渲染](/tutorial/ssr.md)
   * [前端网页托管](/uniCloud/hosting.md)
 * App 专题
-  * [App使用高斯模糊效果](/tutorial/app-blureffect.md)
   * [nvue 原生渲染](/tutorial/nvue-outline.md)
     * [综述](/tutorial/nvue-outline.md)
     * [样式](/tutorial/nvue-css.md)
@@ -44,6 +43,7 @@
   * [Native.js](/tutorial/native-js.md)
   * [renderjs](/tutorial/renderjs.md)
   * [原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)
+  * [App使用高斯模糊](/tutorial/app-blureffect.md)
   * App 打包
     * [基础配置](/tutorial/app-base.md)
     * [图标配置](/tutorial/app-icons.md)
@@ -95,6 +95,7 @@
     * [未同意隐私政策模式运行](/tutorial/app-disagreemode.md)
     * [Google Play上架](/tutorial/android-gp.md)
     * [App Store上架](/tutorial/ios-app-store.md)
+  * [App升级](/uniCloud/upgrade-center.md)
   * App安全问题
     * [js/nvue文件原生混淆加密](/tutorial/app-sec-confusion.md)
     * [运行时安全检测API](/tutorial/app-sec-api.md)

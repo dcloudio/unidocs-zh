@@ -787,6 +787,7 @@ function hasPermission(token, permission) {
 **注意**
 
 - pages.json内有`uniIdRouter`节点上述逻辑才会生效，自HBuilderX 3.5.0起创建空项目模板会自动配置空的`uniIdRouter`节点
+- uniIdRouter底层使用navigateTo、redirectTo、reLaunch、switchTab的拦截器进行页面跳转拦截，不会拦截进入首页和点击原生tabbar
 
 ## 错误码@errcode
 

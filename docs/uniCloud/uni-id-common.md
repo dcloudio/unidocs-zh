@@ -1,8 +1,18 @@
-uni-id-common是uni-id的公共逻辑部分。不同于旧版本uni-id，uni-id-common仅包含token校验、生成及刷新功能，而仅在用户中心有用的接口对应的实现都挪到了uni-id-co内。这样不仅减小了公共模块的体积，也简化了学习成本。
+> HBuilderX 3.5.0+
 
-一般开发者无需了解uni-id-common公共模块的API，直接使用[uni-id-pages](uniCloud/uni-id-pages.md)
+`uni-id-common`是uni-id的公共逻辑部分。
 
-如果想了解uni-id-common公共模块内部实现，可以阅读本章节。
+[旧版本uni-id公共模块](uniCloud/uni-id.md)是一个大而全的公共模块，不适用被众多云函数引用。
+
+新版的`uni-id-common`仅包含token校验、生成及刷新功能。而用户注册、登录、忘记密码等实现都挪到了`uni-id-co`云对象中（该云对象内置于[uni-id-pages](uniCloud/uni-id-pages.md)）。
+
+这样不仅减小了公共模块的体积，也简化了学习成本。
+
+从HBuilderX 3.5起，新建uniCloud项目时，会自动加载 `uni-id-common` 依赖。也就是 `uni-id-common` 默认内置在每个项目中。
+
+一般开发者无需了解`uni-id-common`公共模块的API，直接使用[uni-id-pages](uniCloud/uni-id-pages.md)云端一体页面模板即可。
+
+如果想了解`uni-id-common`公共模块内部实现，可以阅读本章节。
 
 ## uni-id-common公共模块的API列表@api
 
@@ -49,7 +59,7 @@ module.exports = {
 
 **为什么需要自行创建uni-id实例**
 
-默认情况下uni-id-common某些接口会自动从全局context内获取客户端的PLATFORM（平台，如：app、h5、mp-weixin）等信息。
+默认情况下`uni-id-common`某些接口会自动从全局context内获取客户端的PLATFORM（平台，如：app、h5、mp-weixin）等信息。
 
 在单实例多并发的场景下可能无法正确获取（全局对象会被后面的请求覆盖，可能会导致前面一次请求使用了后面一次请求的PLATFORM信息）。因此推荐在开启云函数单实例多并发后，自行为uni-id传入context。
 

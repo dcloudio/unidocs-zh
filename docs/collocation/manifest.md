@@ -45,7 +45,7 @@
 自`HBuilderX 2.5.10`起，上述默认超时时间由6秒改为60秒，对齐微信小程序平台。
 
 
-### uniStatistics
+#### uniStatistics
 uni 统计配置项
 
 |属性|类型|必填|默认值|说明|
@@ -70,41 +70,8 @@ uni 统计配置项
 |uniStatistics|Object|[App 是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|2.2.3+|
 |webView|Object|当系统webview低于指定版本时，会弹出提示。或者下载x5内核后继续启动，仅Android支持，[详情](/collocation/manifest?id=appwebview)|3.5.0+|
 
-#### webview@appwebview
 
-|属性|类型|说明|
-|:-|:-|:-|
-|minUserAgentVersion|String|最小webview版本，例如：95.0.4638.75。（当低于最小版本要求时，显示 `WebView版本过低`  弹框，点击确定退出应用。）|
-|x5|Object|此属性需要勾选 Android X5 Webview 模块，详细参见下面的说明|
-
-x5 属性说明
-
-|属性|类型|默认值|说明|
-|:-|:-|:-|:-|
-|timeOut|Number|3000|超时时间|
-|showTipsWithoutWifi|Boolean|false|是否在非WiFi网络环境时，显示用户确认下载x5内核的弹窗。（如果为true时，在非WiFi网络下载x5模块，会显示用户确认弹框，内容为 `当前处于非WiFi网络，是否允许下载x5模块？` ，false时不显示弹框 。）|
-|allowDownloadWithoutWiFi|Boolean|false|是否允许用户在非WiFi网络时进行x5内核的下载。（如果为true，就不会显示用户确认的弹窗。false时，如果showTipsWithoutWifi为true，就会显示用户确认弹框；showTipsWithoutWifi为false时，不下载x5模块。）|
-
-
-webview示例
-
-```json
-{
-  "app-plus" : {
-    "webView": {
-      "minUserAgentVersion": "95.0.4638.75",
-      "x5": {
-        "timeOut": 3000,
-        "showTipsWithoutWifi": true,
-        "allowDownloadWithoutWiFi": false
-      }
-    }
-  }
-}
-```
-
-
-PS：这里只列出了核心部分，更多内容请参考 [完整的 manifest.json](/tutorial/app-manifest)。
+PS：上表只列出了核心部分，App平台的配置其实非常多，完整内容请参考 [完整的 manifest.json](/collocation/manifest?id=full-manifest)。
 
 **Tips**
 
@@ -112,7 +79,7 @@ PS：这里只列出了核心部分，更多内容请参考 [完整的 manifest.
 - 部分配置在打包时的操作界面补全，例如：证书等信息。
 - Native.js 权限部分会根据配置的模块权限，在打包后自动填充。
 - 部分 modules 是默认的，不需要进行配置。
-- 微信小程序的 `appid` 等信息，需要配置在 `mp-weixin` 节点下。`sdkConfigs` 下出现的 `weixin` 节点，配置的是 5+ App 的第三方 SDK 信息。
+- 微信小程序的 `appid` 等信息，需要配置在 `mp-weixin` 节点下。不要配置在 `app-plus`下。`sdkConfigs` 下出现的 `weixin` 节点，配置的是 App 的第三方 SDK 信息。
 
 
 #### App Splashscreen@splashscreen
@@ -162,8 +129,8 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 
 |属性|类型|描述|
 |:-|:-|:-|
-|android|Object|Android 应用配置，详见: [完整 manifest.json](/collocation/manifest?id=android)|
-|ios|Object|iOS 应用配置，详见: [完整 manifest.json](/collocation/manifest?id=ios)|
+|android|Object|Android 应用配置，详见: [Android配置明细](/collocation/manifest?id=android)|
+|ios|Object|iOS 应用配置，详见: [iOS配置明细](/collocation/manifest?id=ios)|
 |sdkConfigs|Object|SDK配置，仅打包生效 [详见](/collocation/manifest?id=sdkConfigs)|
 |orientation|Array|同 screenOrientation 配置，仅打包生效，已废弃，推荐使用 screenOrientation|
 
@@ -274,6 +241,48 @@ iOS平台云端打包相关配置
 |属性|类型|描述|
 |:-|:-|:-|
 |flex-direction|String| flex 成员项的排列方向，支持项，row：从左到右； row-reverse：从右到左；column：从上到下；column-reverse：与 column 相反，默认值 column。|
+
+
+#### webview@appwebview
+
+> uni-app 3.5.0+
+
+当App代码使用了低版本webview不支持的语法时（比如使用了vue3），可以在manifest配置本属性，来指定最低运行的webview版本。
+
+当系统webview版本不符合需求时，uni-app引擎会自动弹框。同时开发者可以指定使用 x5引擎webview 来替代系统webview，以保障浏览器兼容性。详见[x5文档](/tutorial/app-android-x5.html)
+
+当你的应用强依赖x5时，比如需要vue页面的字体和tabbar等原生界面保持一致时，也可以在manifest配置本属性。
+
+|属性|类型|说明|
+|:-|:-|:-|
+|minUserAgentVersion|String|最小webview版本，例如：95.0.4638.75。（当低于最小版本要求时，显示 `WebView版本过低`  弹框，点击确定退出应用。）|
+|x5|Object|此属性需要在manifest模块配置中勾选 Android X5 Webview 模块，详细参见下面的说明|
+
+x5 属性说明
+
+|属性|类型|默认值|说明|
+|:-|:-|:-|:-|
+|timeOut|Number|3000|超时时间|
+|showTipsWithoutWifi|Boolean|false|是否在非WiFi网络环境时，显示用户确认下载x5内核的弹窗。（如果为true时，在非WiFi网络下载x5模块，会显示用户确认弹框，内容为 `当前处于非WiFi网络，是否允许下载x5模块？` ，false时不显示弹框 。）|
+|allowDownloadWithoutWiFi|Boolean|false|是否允许用户在非WiFi网络时进行x5内核的下载。（如果为true，就不会显示用户确认的弹窗。false时，如果showTipsWithoutWifi为true，就会显示用户确认弹框；showTipsWithoutWifi为false时，不下载x5模块。）|
+
+
+webview示例
+
+```json
+{
+  "app-plus" : {
+    "webView": {
+      "minUserAgentVersion": "95.0.4638.75",
+      "x5": {
+        "timeOut": 3000,
+        "showTipsWithoutWifi": true,
+        "allowDownloadWithoutWiFi": false
+      }
+    }
+  }
+}
+```
 
 
 ### h5

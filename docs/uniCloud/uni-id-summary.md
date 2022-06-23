@@ -1,8 +1,8 @@
-本文档适用于`uni-id 4.0.0`及以上版本，旧版本文档请访问：[uni-id 3.x.x 文档](uniCloud/uni-id-3.md)
+本文档适用于`uni-id 4.0.0`及以上版本，需 HBuilderX 3.5.0 及以上版本。旧版本文档请访问：[uni-id 3.x.x 文档](uniCloud/uni-id-3.md)
 
 ## 概述
 
-99%的应用，都要开发用户注册、登录、发送短信验证码、修改密码、密码加密保存、密码防探测、token管理、注册用户统计等众多功能，从前端到后端都需要。
+99%的应用，都要开发用户注册、登录、发送短信验证码、修改密码、密码加密保存、密码防探测、token管理、页面访问权限、注册用户统计等众多功能，从前端到后端都需要。
 
 为什么不能有一个开源的通用项目，避免大家的重复开发呢？
 
@@ -87,7 +87,7 @@ uni-id-co则是一个更加比uni-id-cf更完善和规范的用户管理的云�
 
 `uni-id`已完成的功能：
 
-- 注册、登录、发送短信验证码、密码加密保存、修改密码、重置密码、头像管理、token管理、rbac权限角色体系、用户邀请裂变、用户签到、日志记录、账户防刷
+- 注册、登录、发送短信验证码、密码加密保存、修改密码、重置密码、头像管理、token管理、rbac权限角色体系、页面访问权限路由控制、用户邀请裂变、用户签到、日志记录、账户防刷
 
 关于登录方式，目前已实现
 
@@ -446,7 +446,7 @@ RBAC：Role-Based Access Control，基于角色的访问控制。
 
 ### 其他说明
 
-uni-id将用户的角色权限缓存在token内。详情参考：[缓存角色权限](uniCloud/uni-id?id=cache-permission-in-token)。
+uni-id将用户的角色权限缓存在token内。详情参考：[缓存角色权限](uniCloud/uni-id-summary?id=cache-permission-in-token)。
 
 如下是通过token判断权限的简单示例：
 
@@ -464,13 +464,15 @@ function hasPermission(token, permission) {
 
 注意：**在uniCloud admin中，封装了可视化的用户、权限、角色的管理，新增删除修改均支持。**无需自己维护。[详见](https://uniapp.dcloud.net.cn/uniCloud/admin?id=mutiladmin)
 
-## 数据库结构@db-schema
+## uni-id数据表@db-schema
 
 `uni-id`的所有数据表，都在[opendb](https://gitee.com/dcloud/opendb/)规范中。
 
-在unicloud [web控制台](https://unicloud.dcloud.net.cn/) 新建数据表时，可以从`uni-id`的模板分类里找到下面的表，并一键创建这些表。
+在unicloud [web控制台](https://unicloud.dcloud.net.cn/) 新建数据表时，可以从`uni-id`的模板分类里找到下面的表，并一键创建这些表。HBuilderX 3.4.11起新建 DB Schema 也有模板可选择。
 
 ### 用户表@user-table
+
+存放用户基本信息。
 
 表名：`uni-id-users`
 
@@ -483,18 +485,18 @@ function hasPermission(token, permission) {
 | gender			| Integer	| 否	| 用户性别：0 未知 1 男性 2 女性							|
 | role				| Array		| 否	| 用户角色列表，由role_id组成的数组							|
 | status			| Integer	| 是	| 用户状态：0 正常，1 禁用，2 审核中，3 审核拒绝，4 已注销	|
-| dcloud_appid		| Array		| 否	| 允许登录的客户端的appid列表，不同应用同时复用一个user表时适用，比如	司机端和乘客端是2个appid，在登陆时可以隔离，[详见](uniCloud/uni-id?id=isolate-user)|
+| dcloud_appid		| Array		| 否	| 允许登录的客户端的appid列表，不同应用同时复用一个user表时适用，比如	司机端和乘客端是2个appid，在登陆时可以隔离，[详见](uniCloud/uni-id-summary?id=isolate-user)|
 | mobile			| String	| 否	| 手机号码													|
 | mobile_confirmed	| Integer	| 否	| 手机号验证状态：0 未验证 1 已验证，未验证用户不可登录		|
 | email				| String	| 否	| 邮箱地址													|
 | email_confirmed	| Integer	| 否	| 邮箱验证状态：0 未验证 1 已验证，未验证用户不可登录		|
 | avatar			| String	| 否	| 头像地址													|
 | wx_unionid		| String	| 否	| 微信unionid												|
-| wx_openid			| Object	| 否	| 微信各个平台openid										|
+| wx_openid			| Object	| 否	| 微信各个平台openid。子结构详见下文							|
 | ali_openid		| String	| 否	| 支付宝平台openid											|
 | apple_openid		| String	| 否	| 苹果登录openid
 | comment			| String	| 否	| 备注														|
-| realname_auth		| Object	| 否	| 实名认证信息												|
+| realname_auth		| Object	| 否	| 实名认证信息。子结构详见下文									|
 | register_date		| Timestamp	| 否	| 注册时间													|
 | register_ip		| String	| 否	| 注册时 IP 地址，`uni-id 3.3.14`起移至register_env内		|
 | last_login_date	| Timestamp	| 否	| 最后登录时间												|
@@ -502,7 +504,7 @@ function hasPermission(token, permission) {
 | login_ip_limit	| Array		| 否	| 登录 IP 限制												|
 | inviter_uid		| Array		| 否	| 邀请人uid，按层级从下往上排列的uid数组，即第一个是直接上级|
 | my_invite_code	| String	| 否	| 用户自己的邀请码											|
-| register_env		| Object	| 否	| 用户注册时的环境信息，新增于`uni-id 3.3.14`				|
+| register_env		| Object	| 否	| 用户注册时的环境信息，新增于`uni-id 3.3.14`。子结构详见下文	|
 
 **注意**
 
@@ -546,7 +548,7 @@ function hasPermission(token, permission) {
 
 **register_env字段定义**
 
-**注意：调用addUser添加的用户无此字段**
+**注意：该字段是在前端注册用户时记录的前端环境信息。如果是管理员在云端调用uni-id的addUser添加的用户则无此字段**
 
 | 字段			| 类型	| 必填	| 描述												|
 |--				|--		|--		|--													|
@@ -573,27 +575,23 @@ function hasPermission(token, permission) {
   "email":"amdin@domain.com",
   "email_confirmed":0, //邮箱是否验证，0为未验证，1为已验证
   "avatar":"https://cdn.domain.com/avatar.png"
-  "register_ip": "123.120.11.128", //注册IP
   "last_login_ip": "123.120.11.128", //最后登录IP
 
 }
 ```
 
-**如果需要管理多系统的用户，建议使用type在uni-id-users表内进行区分，不要分多个表**
 
 #### 用户表索引使用注意@uni-id-users-indexes
 
-目前opendb内提供的uni-id-users表包含完整的索引，数据库在索引量多且频繁更新的情况下可能会出现写入缓慢的情况，因此推荐开发者在使用uni-id-users表时可以删除没有用到的索引。
+目前 opendb 内提供的 uni-id-users表 包含完整的索引，数据库在索引量多且频繁更新的情况下可能会出现写入缓慢的情况，因此推荐开发者在使用 uni-id-users表 时可以删除没有用到的索引。
 
-例：项目内只使用了微信登录，不使用其他登录方式，可以只保留`wx_unionid、wx_openid.mp-weixin、wx_openid.app-plus`这些账号相关的索引，删除其他登录方式的索引（比如username、mobile）
+例：项目内只使用了微信登录，不使用其他登录方式，可以只保留`wx_unionid、wx_openid.mp`这些账号相关的索引，删除其他登录方式的索引（比如username、mobile）
 
 不了解索引请参考：[索引](/uniCloud/db-index.html)
 
 ### 验证码表
 
 表名：`opendb-verify-codes` 
-
-**uni-id 2.0.0版本以前，使用的表名为uni-verify，2.0.0+起改为新表名**
 
 该表的前缀不是uni-id，意味着该表的设计用途是通用的，不管是uni-id的手机号验证码，或者支付等关键业务需要验证码，都使用此表。
 
@@ -640,12 +638,12 @@ function hasPermission(token, permission) {
 
 还有更多uni-id的配套数据表，可以在uniCloud [web控制台](https://unicloud.dcloud.net.cn/)新建表时选择相应模板。此处不再详述，仅罗列清单：
 
+- 日志表：uni-id-log
 - 积分表：uni-id-scores
 - 地址信息表：uni-id-address
 - 订单表：uni-id-base-order
 - 设备表：uni-id-device
 - 关注粉丝表：uni-id-followers
-- 日志表：uni-id-log
 - 任务表：uni-id-task
 - 任务日志表：uni-id-task-log
 
@@ -705,7 +703,11 @@ function hasPermission(token, permission) {
 
 > 新增于 HBuilderX 3.5.0
 
-开发者可以在项目的`pages.json`内配置需要登录的页面，登录页面路径等信息，uniCloud会自动在需要登录且客户端登录状态过期或未登录时跳转到登录页面。
+uniIdRouter 是一个运行在前端的、对前端页面访问权限路由进行控制的方案。
+
+大多数应用，都会指定某些页面需要登录才能访问。以往开发者需要写不少代码。
+
+现在，只需在项目的`pages.json`内配置登录页路径、需要登录才能访问的页面等信息，uni-app框架的路由跳转，会自动在需要登录且客户端登录状态过期或未登录时跳转到登录页面。
 
 结合以下代码及注释了解如何使用`uniIdRouter`
 
@@ -723,7 +725,7 @@ function hasPermission(token, permission) {
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			},
-			"needLogin": false
+			"needLogin": true
 		}, {
 			"path": "pages/detail/detail",
 			"style": {
@@ -747,6 +749,8 @@ function hasPermission(token, permission) {
 }
 
 ```
+
+以上代码，指定了登录页为首页`index`，然后将`list`页面和`detail`目录下的所有页面，设为需要登录才能访问。那么访问`list`页面和`detail`目录下的页面时，如果客户端未登录或登录状态过期（也就是uni-id-token失效），那么会自动跳转到`index`页面来登录。
 
 与此功能对应的有两个uniCloud客户端api，`uniCloud.onNeedLogin()`和`uniCloud.offNeedLogin()`，开发者在监听onNeedLogin事件后，框架就不再自动跳转到登录页面，而是由开发者在onNeedLogin事件内自行处理。详情参考：[uniCloud.onNeedLogin](uniCloud/client-sdk.md?id=on-need-login)
 
@@ -774,7 +778,7 @@ function hasPermission(token, permission) {
 		},
 		methods: {
 			async login() {
-				// ...执行登录操作
+				// ...执行登录操作，在成功回调里跳转页面
 				if (this.uniIdRedirectUrl) {
 					uni.redirectTo({
 						url: this.uniIdRedirectUrl
@@ -784,8 +788,7 @@ function hasPermission(token, permission) {
 		}
 	}
 </script>
-<style>
-</style>
+
 ```
 
 **注意**
@@ -842,7 +845,7 @@ uni-id-user表中有一个数组型字段`dcloud_appid`，可以存贮这个用�
 
 uni-id 3.3.0版本起用户注册时会自动在用户表的记录内标记为注册应用对应的用户，如果没有单独授权登录其他应用的话则只能登录这个应用。即在乘客端应用注册的，默认只能在乘客端应用登录。
 
-如何授权登录其他应用请参考：[授权、禁止用户在特定客户端应用登录](uniCloud/uni-id?id=authorize-app)
+如何授权登录其他应用请参考：[授权、禁止用户在特定客户端应用登录](uniCloud/uni-id-summary?id=authorize-app)
 
 需要注意的是客户端APPID信息是由端上传上来的，并非完全可信，尽量在入口处进行校验。例：
 
@@ -867,7 +870,8 @@ exports.main = async function(event, context){
 
 ### 隔离不同应用的配置@isolate-config
 
-uni-id的config.json支持配置为数组，每项都是一个完整的配置，对不同的配置使用`dcloudAppid`字段进行区分（**此字段与项目内的manifest.json里面的DCloud AppId一致**），uni-id会自动根据客户端的appid来判断该使用哪套配置。如果使用云函数url化请参考：[云函数Url化时使用](uniCloud/uni-id?id=url)
+uni-id的config.json支持配置为数组，每项都是一个完整的配置，对不同的配置使用`dcloudAppid`字段进行区分（**此字段与项目内的manifest.json里面的DCloud AppId一致**），
+uni-id会自动根据客户端的appid来判断该使用哪套配置。
 
 需要注意的是客户端APPID信息是由端上传上来的，并非完全可信，尽量在入口处进行校验。例：
 
@@ -976,11 +980,13 @@ uni-id-users表内存储的password字段为使用hmac-sha1生成的hash值，�
 
 使用`uni-id-common`时，token内会缓存用户的角色权限。
 
-为什么要缓存角色权限？要知道云数据库是按照读写次数来收取费用的，并且读写数据库会拖慢接口响应速度。
+为什么要在token缓存角色权限？token校验是高频操作，云数据库是按照读写次数来收取费用的，并且读写数据库会拖慢接口响应速度。
+
+比较经济的做法就是在token里缓存角色权限。更好的方案是在redis里缓存角色权限，只是redis需要付费开通。
 
 **注意**
 
-- 由于角色权限缓存在token内，可能会存在权限已经更新但是用户token未过期之前依然是旧版角色权限的情况。可以调短一些token过期时间来减少这种情况的影响。
+- 由于角色权限缓存在token内，可能会存在权限已经更新但是用户token未过期之前依然是旧版角色权限的情况。可以调短一些token过期时间来减少这种情况的影响。或者使用redis来缓存用户权限
 - admin角色token内不包含permission，如需自行判断用户是否有某个权限，要注意admin角色需要额外判断一下，写法如下
   ```js
   const {

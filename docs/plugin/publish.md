@@ -152,20 +152,27 @@ HBuilderX 3.5.0+ 当uni_modules插件根目录下存在`page_init.json`文件，
 
 示例代码如下：
 ```json
-[
-    {
-        "path": "uni_modules/demo/pages1",
-        "style": { //style配置项[详情查看](https://uniapp.dcloud.io/collocation/pages#style)
-            "navigationBarTitleText": "页面1"
+{
+    "pages": [{
+            "path": "uni_modules/uni-feedback-admin/pages/uni-feedback-admin/add",
+            "style": {
+                "navigationBarTitleText": "新增"
+            }
+        },
+        {
+            "path": "uni_modules/uni-feedback-admin/pages/uni-feedback-admin/edit",
+            "style": {
+                "navigationBarTitleText": "编辑"
+            }
+        },
+        {
+            "path": "uni_modules/uni-feedback-admin/pages/uni-feedback-admin/list",
+            "style": {
+                "navigationBarTitleText": "列表"
+            }
         }
-    },
-    {
-        "path": "uni_modules/demo/pages2",
-        "style": {
-            "navigationBarTitleText": "页面2"
-        }
-    }
-]
+    ]
+}
 ```
 
 HBuilderX中合并路由界面效果图：

@@ -1,55 +1,57 @@
-uni-config-center插件的下载地址：[https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
+`uni-config-center`插件的下载地址：[https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
 
-# 为什么使用uni-config-center
+# 需求背景
 
-实际开发中很多插件/云函数/公共模块需要配置文件才可以正常运行，如果每个都单独进行配置的话就会产生下面这样的目录结构。
+实际开发中很多插件/云函数/公共模块需要配置文件才可以正常运行，比如各种appkey、secret。存放在数据库里的话，拖累云函数性能，并且增加数据库请求。如果每个都单独进行配置的话就会产生下面这样的目录结构。
 
 ```text
 cloudfunctions
-  ├─common
-  │  └─user-utils // user-utils公共模块
-  │      ├─custom-token.js // user-utils依赖的其他文件
-  │      └─config.json // user-utils使用的配置文件
-  ├─payment-config-test // payment-config-test云函数
-  │  └─config.json // payment-config-test使用的配置文件
-  └─user-config-test // 引用user-utils的云函数
+  ├─cf1 // cf1云函数
+  │  │─index.js
+  │  └─config.json // cf1使用的配置文件
+  └─cf2 // cf2云函数
+     │─index.js
+     └─config.json // cf2使用的配置文件
 ```
 
-可以看到配置文件分散在各个地方，毫无章法，维护起来也是一个大麻烦。
+可以看到这样有很多问题：
 
-uni-config-center就是用了统一管理这些配置文件的，使用uni-config-center后的目录结构如下
+1. 配置文件分散在各个地方，无法统一维护
+2. 配置和代码没有分离。更新云函数会覆盖配置。如果使用插件，插件作者更新云函数后，那么用户侧的配置会被覆盖
+3. 多个云函数之间无法共享配置
+
+`uni-config-center`解决了上述问题。通过独立了公共模块，统一管理配置文件，做到配置和代码分离，更新代码不会覆盖配置，并且可以在多个云函数之间共享配置。
+
+使用`uni-config-center`后的目录结构如下
 
 ```text
 cloudfunctions
   ├─common
   │  ├─uni-config-center
-  │  │  ├─payment // 插件配置目录
+  │  │  ├─cf1 // 插件配置目录
   │  │  │   └─config.json // 插件配置文件
-  │  │  └─user-utils // 插件配置目录
-  │  │      ├─custom-token.js // 插件依赖的其他文件
+  │  │  └─cf2 // 插件配置目录
   │  │      └─config.json // 插件配置文件
-  │  └─user-utils // user-utils公共模块，此公共模块内使用user-utils插件的配置
-  ├─payment-config-test // payment-config-test云函数，此云函数内使用payment插件的配置
-  └─user-config-test // 引用user-utils的云函数
+  ├─cf1 // cf1云函数
+  └─cf2 // cf2云函数
 ```
 
-使用uni-config-center后的优势
-
-- 配置文件统一管理，分离插件主体和配置信息，更新插件更方便
-- 支持对config.json设置schema，插件使用者在HBuilderX内编写config.json文件时会有更好的提示（后续HBuilderX会提供支持）
 
 # 用法
 
-在要使用uni-config-center的公共模块或云函数内引入uni-config-center依赖，请参考：[使用公共模块](https://uniapp.dcloud.net.cn/uniCloud/cf-common)
+## 导入和创建配置
 
-以下以在云函数`user-config-test`内使用`uni-config-center`为例，分步骤讲解如何使用
+例如，在云函数`cf2`内使用`uni-config-center`，步骤如下：
 
-1. 从插件市场导入本插件到项目内
-2. 在云函数`user-config-test`上右键选择`管理公共模块依赖`
-3. 弹窗中勾选`uni-config-center`公共模块后点击`更新依赖`
-4. 在`cloudfunctions/common/uni-config-center`目录创建存放配置的目录，在本示例中我们使用`user-utils`作为配置目录名
-5. 在上一步创建的`user-utils`目录下创建配置文件`config.json`
-6. 如何在代码中获取配置请参考下面的章节
+1. 导入`uni-config-center`公共模块到项目内
+> 存放路径是 uniCloud/cloudfunctions/common/uni-config-center。
+> 一般uniCloud项目创建时会自动导入这个基础插件，如项目没有该插件，请在插件市场下载[https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
+2. 给云函数添加公共模块依赖
+> 在云函数`cf2`上右键选择`管理公共模块依赖`，弹窗中勾选`uni-config-center`公共模块
+3. 新建插件配置目录
+> 在`cloudfunctions/common/uni-config-center`目录新建插件配置目录，在本示例中我们使用`share-config`作为插件配置目录名（uni-config-center下不同的配置，被称为**插件配置**。这个插件的概念容易和插件市场的插件混淆，请注意区分）
+4. 新建插件配置文件
+> 在上一步创建的`share-config`目录下创建配置文件`config.json`（这个文件的名称不能自定义），在`config.json`里编写基于json的配置内容。
 
 至此多云函数/公共模块共享的配置就创建完成了，目录结构如下
 
@@ -57,30 +59,36 @@ cloudfunctions
 cloudfunctions
   ├─common
   │  └─uni-config-center
-  │     └─user-utils // 配置目录
+  │     └─share-config // 插件配置目录
   │         └─config.json // 配置文件
-  └─user-config-test // 引用user-utils的云函数
+  └─cf2 // 引用share-config的云函数
 ```
 
 **注意**
 
-- 如需在不同项目使用同一服务空间，请务必注意两个项目的uni-config-center在上传时会互相覆盖。建议将云端代码放在同一个项目内，其他项目关联存放云端代码的项目的服务空间。
+- 推荐插件配置名称（也就是上述示例中的`share-config`）尽量无歧义。如果只为一个云函数提供配置，那么这个配置的名称建议和云函数的名称一致。尤其是插件作者，更要注意插件配置名称包含插件前缀，防止和用户代码冲突。
+- 如需在不同项目使用同一服务空间，请务必注意两个项目的`uni-config-center`在上传时会互相覆盖。建议将云端代码放在同一个项目内，其他项目关联存放云端代码的项目的服务空间。
 
-## 简单示例
+## 云函数中读取配置
 
-以上述目录结构为例，在云函数`user-config-test`内获取user-utils配置目录下的配置内容，示例代码如下
+以上述目录结构为例，在云函数`cf2`内获取`share-config`配置目录下的配置内容，示例代码如下
 
 ```js
-// user-config-test/index.js
+// cf2/index.js
 const createConfig = require('uni-config-center')
-const userUtilsConfig = createConfig({ // 获取配置实例
-    pluginId: 'user-utils' // common/uni-config-center下的配置目录名
+const shareConfig = createConfig({ // 获取配置实例
+    pluginId: 'share-config' // common/uni-config-center下的插件配置目录名
 })
-const Config = userUtilsConfig.config() // 获取common/uni-config-center/user-utils/config.json的内容
+const Config = shareConfig.config() // 获取common/uni-config-center/share-config/config.json的内容
 exports.main = async function(event, context) {
-	
+	console.log(Config) //打印配置
 }
 ```
+
+**注意**
+
+- `uni-config-center`下的配置不隔离。一个云函数或公共模块，引入了`uni-config-center`后，下面的所有插件配置都可以访问到
+- `uni-config-center`的配置是只读的。除非重新上传更新uniCloud服务空间，否则不会变化。如需在代码运行期间修改配置，那么需要改用[redis](https://uniapp.dcloud.net.cn/uniCloud/redis-introduction.html)
 
 详细接口说明请阅读下方文档。
 
@@ -112,15 +120,15 @@ createConfig({
 ```js
 const createConfig = require('uni-config-center')
 
-const userUtilsConfig = createConfig({
-    pluginId: 'user-utils', // 同common/uni-config-center下的配置目录名
+const shareConfig = createConfig({
+    pluginId: 'share-config', // 同common/uni-config-center下的配置目录名
     defaultConfig: { // 默认配置
         tokenExpiresIn: 7200,
         tokenExpiresThreshold: 600,
     },
     customMerge: function(defaultConfig, userConfig) { // 自定义默认配置和用户配置的合并规则，不设置的情况下会对默认配置和用户配置进行深度合并
         // defaudltConfig 默认配置
-        // userConfig 用户配置
+        // userConfig config-center内的配置文件内容
         return Object.assign(defaultConfig, userConfig)
     }
 })
@@ -133,26 +141,26 @@ const userUtilsConfig = createConfig({
 
 ```js
 // 获取配置
-userUtilsConfig.config() // 获取全部配置，没有获取到配置时返回空对象
-userUtilsConfig.config('tokenExpiresIn') // 传入参数名获取指定配置
-userUtilsConfig.config('service.sms.codeExpiresIn') // 传入参数路径获取指定配置
-userUtilsConfig.config('tokenExpiresThreshold', 600) // 获取指定配置，如果不存在则取传入的默认值
+shareConfig.config() // 获取全部配置，没有获取到配置时返回空对象
+shareConfig.config('tokenExpiresIn') // 传入参数名获取指定配置
+shareConfig.config('service.sms.codeExpiresIn') // 传入参数路径获取指定配置
+shareConfig.config('tokenExpiresThreshold', 600) // 获取指定配置，如果不存在则取传入的默认值
 ```
 
 ## 获取配置目录下的文件的绝对路径
 
 ```js
-userUtilsConfig.resolve('custom-token.js') // 获取uni-config-center/user-utils/custom-token.js文件的路径
+shareConfig.resolve('custom-token.js') // 获取uni-config-center/share-config/custom-token.js文件的路径
 ```
 
 ## 引用配置目录下的js、json文件
 
 ```js
-userUtilsConfig.requireFile('custom-token.js') // 使用require方式引用uni-config-center/user-utils/custom-token.js文件。文件不存在时返回undefined，文件内有其他错误导致require失败时会抛出错误。
+shareConfig.requireFile('custom-token.js') // 使用require方式引用uni-config-center/share-config/custom-token.js文件。文件不存在时返回undefined，文件内有其他错误导致require失败时会抛出错误。
 ```
 
 ## 判断配置目录下是否存在指定文件
 
 ```js
-userUtilsConfig.hasFile('custom-token.js') // 配置目录是否包含某文件，true: 文件存在，false: 文件不存在
+shareConfig.hasFile('custom-token.js') // 配置目录是否包含某文件，true: 文件存在，false: 文件不存在
 ```

@@ -166,6 +166,8 @@ exports.main = async (event, context) => {
 + `passwordSecret`为用于加密密码入库的密钥
 + `tokenSecret`为生成token需要的密钥
 + `tokenExpiresIn`token有效期，以秒为单位
++ `passwordErrorLimit`密码错误重试次数，分ip记录密码错误次数，达到重试次数之后等待`passwordErrorRetryTime`时间之后才可以重试
++ `passwordErrorRetryTime`单位为秒
 + 如果使用`sendSmsCode`接口发送短信需要前往[https://dev.dcloud.net.cn/uniSms](https://dev.dcloud.net.cn/uniSms)充值短信额度，配置`config.json`的`service`字段，字段说明见下方示例
 + 另外可以按照客户端平台进行不同的配置，参考下面示例
 
@@ -179,7 +181,9 @@ exports.main = async (event, context) => {
   "passwordSecret": "passwordSecret-demo", // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的密钥，注意修改为自己的密钥，使用一个较长的字符串即可
   "tokenSecret": "tokenSecret-demo", // 生成token所用的密钥，注意修改为自己的，使用一个较长的字符串即可
   "tokenExpiresIn": 7200, // 全平台token过期时间，未指定过期时间的平台会使用此值
-  "tokenExpiresThreshold": 600, // 新增于uni-id 1.1.7版本，checkToken时如果token有效期小于此值且在有效期内则自动获取新token，请注意将新token返回给前端保存，如果不配置此参数则不开启自动获取新token功能
+  "tokenExpiresThreshold": 600, // 新增于uni-id 1.1.7版本，checkToken时如果token有效期小于此值且在有效期内则自动获取新token，请注意将新token返回给前端保存（云对象会自动保存符合uniCloud响应体规范的响应内的新token），如果不配置此参数则不开启自动获取新token功能
+  "passwordErrorLimit": 6, // 密码错误最大重试次数
+  "passwordErrorRetryTime": 3600, // 密码错误重试次数超限之后的冻结时间
   "autoSetInviteCode": false, // 是否在用户注册时自动设置邀请码，默认不自动设置
   "forceInviteCode": false, // 是否强制用户注册时必填邀请码，默认为false
   "app": { // 如果你使用旧版本uni-id公共模块而不是uni-id-common这里可能配置的是app-plus，务必注意调整为app

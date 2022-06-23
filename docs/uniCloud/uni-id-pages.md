@@ -1982,10 +1982,8 @@ uni-id-co则是一个更加比uni-id-cf更完善和规范的用户管理的云�
 
 ## 自uni-id公共模块升级到uni-id-common + uni-id-co@m-to-co
 
-
 此次升级做了大幅改动，多数接口自公共模块中移除，改为由uni-id-co实现。仅创建token、刷新token、校验token接口保留在uni-id公共模块内。除接口调整外，uni-id体系（包含uni-id公共模块、uni-id-co）还有以下调整：
 
-- 配置文件内passwordErrorLimit、passwordErrorRetryTime不再生效，功能和自动检验是否需要验证码冲突
 - 彻底移除bindTokenToDevice逻辑及配置
 - 彻底移除removePermissionAndRoleFromToken逻辑及其配置，token内一定会缓存用户角色权限
 - 不再将token存储在用户表内

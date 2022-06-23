@@ -13,7 +13,7 @@ function parseBar(file, options) {
   const contents = []
 
   new MarkdownIt()
-    .parse(fs.readFileSync(file, { encoding: 'utf-8' }))
+    .parse(fs.readFileSync(file, { encoding: 'utf-8' }).replace(/<!--([\s\S]*?)-->/g, ""))
     .forEach(token => {
       if (token.type === 'inline') {
         let text
@@ -37,23 +37,24 @@ function parseBar(file, options) {
               break;
           }
         })
+        if (!hasComment) {
+          if (link && !isExternal(link)) {
+            link = path.join('/', link.replace(/\.md\b/, '')
+              .replace(/\bREADME\b/, '')
+              .replace(/\/index/, '/')
+              .replace(/\?id=/, '#'))
+              .replace(/\\/g, '/')
 
-        if (link && !isExternal(link)) {
-          link = path.join('/', link.replace(/\.md\b/, '')
-            .replace(/\bREADME\b/, '')
-            .replace(/\/index/, '/')
-            .replace(/\?id=/, '#'))
-            .replace(/\\/g, '/')
+            links.push(link)
+          }
 
-          links.push(link)
+          contents.push({
+            level: token.level,
+            [textName]: text,
+            [linkName]: link,
+            ...config
+          })
         }
-
-        contents.push({
-          level: token.level,
-          [textName]: text,
-          [linkName]: link,
-          ...config
-        })
       }
     })
 

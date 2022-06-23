@@ -46,6 +46,8 @@ Tips：
 若页面模板依赖其它组件，则需将依赖组件一起打包；假设"xiaoming-setting"依赖小红开发的list组件（xiaohong-list），则发布"xiaoming-setting"页面模板时，目录结构要求如下：
 ![](http://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/ext-dev-04.png)
 
+HBuilderX 3.5.0+ 支持插件导入工程时，会自动合并预先配置的页面路由到项目的 pages.json[详情查看](https://uniapp.dcloud.io/plugin/publish.html#pages-init)
+
 Tips：
 - vue 页面模板和 nvue 页面模板目录结构要求相同。
 - 页面模板打包时需要包含 manifest.json、pages.json 等文件。
@@ -148,7 +150,7 @@ encrypt数组中可灵活配置uniCloud/cloudfunctions下云函数及公共模�
 主要用于提交数据表schema及校验函数，所以必须包含uniCloud-aliyun/database 或 uniCloud-tcb/database目录
 
 ## pages_init
-HBuilderX 3.5.0+ 当uni_modules插件根目录下存在`pages_init.json`文件，在插件导入工程时，会自动合并配置的页面路由到项目的 pages.json。注意：pages_init.json文件最终不会导入到工程中。
+HBuilderX 3.5.0+ 当uni_modules插件根目录下存在`pages_init.json`文件，在插件导入工程时，会自动合并预先配置的页面路由到项目的 pages.json。注意：pages_init.json文件最终不会导入到工程中。
 
 示例插件：[问题反馈页面管理员端模板](https://ext.dcloud.net.cn/plugin?id=4992)
 

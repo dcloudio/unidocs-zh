@@ -255,7 +255,7 @@ uni-id-co是uni-id-pages的核心云对象，包含了诸多用户相关的接�
 前端调用云对象`uni-id-co`内的方法前应先获取云对象的引用，代码如下
 
 ```js
-const uniIDCo = uniCloud.importObject('uni-id-co')
+const uniIdCo = uniCloud.importObject('uni-id-co')
 ```
 
 ### 目录说明
@@ -301,7 +301,7 @@ const uniIDCo = uniCloud.importObject('uni-id-co')
 **接口形式**
 
 ```js
-await uniIDCo.registerAdmin({
+await uniIdCo.registerAdmin({
   username,
   password,
   nickname
@@ -335,7 +335,7 @@ await uniIDCo.registerAdmin({
 **接口形式**
 
 ```js
-await uniIDCo.registerUser({
+await uniIdCo.registerUser({
   username,
   password,
   captcha,
@@ -369,7 +369,7 @@ await uniIDCo.registerUser({
 **接口形式**
 
 ```js
-await uniIDCo.login({
+await uniIdCo.login({
   username,
   password,
   captcha
@@ -403,7 +403,7 @@ await uniIDCo.login({
 **接口形式**
 
 ```js
-await uniIDCo.loginBySms({
+await uniIdCo.loginBySms({
   mobile,
   code,
   captcha,
@@ -437,7 +437,7 @@ await uniIDCo.loginBySms({
 **接口形式**
 
 ```js
-await uniIDCo.loginByUniverify({
+await uniIdCo.loginByUniverify({
   access_token,
   openid,
   inviteCode
@@ -469,7 +469,7 @@ await uniIDCo.loginByUniverify({
 **接口形式**
 
 ```js
-await uniIDCo.loginByWeixin({
+await uniIdCo.loginByWeixin({
   code,
   inviteCode
 })
@@ -499,7 +499,7 @@ QQ账号已存在时登录，否则注册
 **接口形式**
 
 ```js
-await uniIDCo.loginByQQ({
+await uniIdCo.loginByQQ({
   code,
   accessToken,
   inviteCode
@@ -532,7 +532,7 @@ await uniIDCo.loginByQQ({
 **接口形式**
 
 ```js
-await uniIDCo.loginByAlipay({
+await uniIdCo.loginByAlipay({
   code,
   inviteCode
 })
@@ -562,7 +562,7 @@ await uniIDCo.loginByAlipay({
 **接口形式**
 
 ```js
-await uniIDCo.loginByApple({
+await uniIdCo.loginByApple({
   identityToken,
   nickname,
   inviteCode
@@ -592,7 +592,28 @@ await uniIDCo.loginByApple({
 **接口形式**
 
 ```js
-await uniIDCo.logout()
+await uniIdCo.logout()
+```
+
+**参数说明**
+
+无
+
+**返回值**
+
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+
+#### 注销@close-account
+
+调用此接口后用户status将会设置为注销状态，需要注意的是目前token不会自动失效，后续会引入redis解决此问题。如果不需要此功能建议手动修改代码。
+
+**接口形式**
+
+```js
+await uniIdCo.closeAccount()
 ```
 
 **参数说明**
@@ -612,7 +633,7 @@ await uniIDCo.logout()
 **接口形式**
 
 ```js
-await uniIDCo.getSupportedLoginType({
+await uniIdCo.getSupportedLoginType({
   appId,
   platform
 })
@@ -655,7 +676,7 @@ await uniIDCo.getSupportedLoginType({
 **接口形式**
 
 ```js
-await uniIDCo.bindMobileBySms({
+await uniIdCo.bindMobileBySms({
   mobile,
   code,
   captcha
@@ -689,7 +710,7 @@ await uniIDCo.bindMobileBySms({
 **接口形式**
 
 ```js
-await uniIDCo.bindMobileByUniverify({
+await uniIdCo.bindMobileByUniverify({
   openid,
   access_token
 })
@@ -723,7 +744,7 @@ await uniIDCo.bindMobileByUniverify({
 **接口形式**
 
 ```js
-await uniIDCo.bindMobileByMpWeixin({
+await uniIdCo.bindMobileByMpWeixin({
   encryptedData,
   iv
 })
@@ -755,7 +776,7 @@ await uniIDCo.bindMobileByMpWeixin({
 **接口形式**
 
 ```js
-await uniIDCo.bindWeixin({
+await uniIdCo.bindWeixin({
   code
 })
 ```
@@ -785,7 +806,7 @@ await uniIDCo.bindWeixin({
 **接口形式**
 
 ```js
-await uniIDCo.bindQQ({
+await uniIdCo.bindQQ({
   code,
   accessToken
 })
@@ -817,7 +838,7 @@ await uniIDCo.bindQQ({
 **接口形式**
 
 ```js
-await uniIDCo.bindAlipay({
+await uniIdCo.bindAlipay({
   code
 })
 ```
@@ -847,7 +868,7 @@ await uniIDCo.bindAlipay({
 **接口形式**
 
 ```js
-await uniIDCo.bindApple({
+await uniIdCo.bindApple({
   identityToken
 })
 ```
@@ -879,7 +900,7 @@ await uniIDCo.bindApple({
 **接口形式**
 
 ```js
-await uniIDCo.updatePwd({
+await uniIdCo.updatePwd({
   oldPassword,
   newPassword
 })
@@ -911,7 +932,7 @@ await uniIDCo.updatePwd({
 **接口形式**
 
 ```js
-await uniIDCo.resetPwdBySms({
+await uniIdCo.resetPwdBySms({
   mobile,
   code,
   password,
@@ -941,7 +962,7 @@ await uniIDCo.resetPwdBySms({
 **接口形式**
 
 ```js
-await uniIDCo.getAccountInfo()
+await uniIdCo.getAccountInfo()
 ```
 
 **参数说明**
@@ -970,7 +991,7 @@ await uniIDCo.getAccountInfo()
 **接口形式**
 
 ```js
-await uniIDCo.acceptInvite({
+await uniIdCo.acceptInvite({
   inviteCode
 })
 ```
@@ -1000,7 +1021,7 @@ await uniIDCo.acceptInvite({
 **接口形式**
 
 ```js
-await uniIDCo.getInvitedUser({
+await uniIdCo.getInvitedUser({
   level,
   limit,
   offset,
@@ -1039,7 +1060,7 @@ await uniIDCo.getInvitedUser({
 **接口形式**
 
 ```js
-await uniIDCo.createCaptcha({
+await uniIdCo.createCaptcha({
   scene
 })
 ```
@@ -1062,7 +1083,7 @@ await uniIDCo.createCaptcha({
 **接口形式**
 
 ```js
-await uniIDCo.refreshCaptcha({
+await uniIdCo.refreshCaptcha({
   scene
 })
 ```
@@ -1085,7 +1106,7 @@ await uniIDCo.refreshCaptcha({
 **接口形式**
 
 ```js
-await uniIDCo.sendSmsCode({
+await uniIdCo.sendSmsCode({
   mobile,
   captcha,
   scene
@@ -1114,7 +1135,7 @@ await uniIDCo.sendSmsCode({
 **接口形式**
 
 ```js
-await uniIDCo.refreshToken()
+await uniIdCo.refreshToken()
 ```
 
 **参数说明**
@@ -1139,7 +1160,7 @@ await uniIDCo.refreshToken()
 **接口形式**
 
 ```js
-await uniIDCo.setPushCid({
+await uniIdCo.setPushCid({
 	pushClientId
 })
 ```
@@ -1167,7 +1188,7 @@ await uniIDCo.setPushCid({
 **接口形式**
 
 ```js
-await uniIDCo.addUser({
+await uniIdCo.addUser({
   username,
   password,
   authorizedApp,
@@ -1199,7 +1220,7 @@ await uniIDCo.addUser({
 **接口形式**
 
 ```js
-await uniIDCo.authorizeAppLogin({
+await uniIdCo.authorizeAppLogin({
   uid,
   appId
 })
@@ -1232,7 +1253,7 @@ await uniIDCo.authorizeAppLogin({
 **接口形式**
 
 ```js
-await uniIDCo.removeAuthorizedApp({
+await uniIdCo.removeAuthorizedApp({
   uid,
   appId
 })
@@ -1265,7 +1286,7 @@ await uniIDCo.removeAuthorizedApp({
 **接口形式**
 
 ```js
-await uniIDCo.setAuthorizedApp({
+await uniIdCo.setAuthorizedApp({
   uid,
   appIdList
 })

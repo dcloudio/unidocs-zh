@@ -257,6 +257,8 @@ uni-app vue2版本app端对应的platform为`app-plus`（HBuilderX 3.4.9起 vue2
 
 由于uni-id将客户端平台存储在了数据库内（例如：app端微信登录的openid被存储为`wx_openid['app-plus']`），此问题无法平滑升级，因此对于新老项目建议分别处理。
 
+**如果配置文件中使用的客户端平台和客户端不一致会出现`Client platform is app, but app-plus was found in config.`这种提示，按照下面文档配置`preferedAppPlatform`后即可正常使用。**
+
 ### 旧项目的处理
 
 旧项目建议将所有platform为app的场景统一为app-plus，即建议使用如下配置
@@ -292,6 +294,8 @@ uni-app vue2版本app端对应的platform为`app-plus`（HBuilderX 3.4.9起 vue2
 **前提介绍：** 
 
 HBuilderX 3.4.9起，uni-app web端对应的platform由`h5`调整为`web`。此改动引发了一些问题，比如在uni-id内将无法获取web平台配置，以及有些基于uni-id扩充功能的项目可能存在不兼容的情况
+
+**如果配置文件中使用的客户端平台和客户端不一致会出现`Client platform is web, but h5 was found in config.`这种提示，按照下面文档配置`preferedWebPlatform`后即可正常使用。**
 
 ### 旧项目的处理
 

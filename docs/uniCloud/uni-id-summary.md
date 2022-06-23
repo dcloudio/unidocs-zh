@@ -1019,7 +1019,7 @@ uni-id会自动加载custom-token.js进行处理，在所有生成token的操作
 
 完整词句列表参考：
 
-- [uni-id-co中文语言包](https://gitcode.net/dcloud/uni-id-pages/-/blob/master/uni_modules/uni-id-pages/uniCloud/cloudfunctions/uni-id-co/lang/zh-hans.js)
+- [uni-id-co中文语言包](https://gitcode.net/dcloud/hello_uni-id-pages/-/blob/master/uni_modules/uni-id-pages/uniCloud/cloudfunctions/uni-id-co/lang/zh-hans.js)
 - [uni-id-common中文语言包](https://gitcode.net/dcloud/uni-id-common/-/blob/master/src/lang/zh-Hans.js)
 
 **用法**

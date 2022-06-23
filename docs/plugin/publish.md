@@ -175,6 +175,8 @@ HBuilderX 3.5.0+ 当uni_modules插件根目录下存在`page_init.json`文件，
 }
 ```
 
+完整的pages参数[详情查看](https://uniapp.dcloud.io/collocation/pages.html#pages)
+
 HBuilderX中合并路由界面效果图：
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/23fc53b6-3000-4d2b-a033-22e561c236a5.png)
 

@@ -46,7 +46,7 @@ Tips：
 若页面模板依赖其它组件，则需将依赖组件一起打包；假设"xiaoming-setting"依赖小红开发的list组件（xiaohong-list），则发布"xiaoming-setting"页面模板时，目录结构要求如下：
 ![](http://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/ext-dev-04.png)
 
-HBuilderX 3.5.0+ 支持插件导入工程时，会自动合并预先配置好的的页面路由到项目的 pages.json[详情查看](https://uniapp.dcloud.io/plugin/publish.html#pages-init)
+HBuilderX 3.5.0+ 支持插件导入工程时，会自动合并预先配置好的页面路由到项目的 pages.json[详情查看](https://uniapp.dcloud.io/plugin/publish.html#pages-init)
 
 Tips：
 - vue 页面模板和 nvue 页面模板目录结构要求相同。

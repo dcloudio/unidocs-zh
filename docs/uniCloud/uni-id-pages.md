@@ -30,8 +30,8 @@
 		* App端支持：[一键绑定](https://uniapp.dcloud.io/univerify.html)
 		* 微信小程序端支持：[获取微信绑定的手机号](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getPhoneNumber.html)
 		* 全端支持：短信验证码校验
-        + 修改密码（仅账号有设置密码时显示）
-	+ 找回密码（仅账号有绑定手机号码显示）
+	+ 修改密码（仅账号有设置密码时可见）
+	+ 找回密码（仅账号有绑定手机号码可见）
 	+ 退出登录
 	+ 注销账号（上架国内App应用市场必备）
 - 用户服务协议和隐私政策条款授权

@@ -37,24 +37,23 @@ function parseBar(file, options) {
               break;
           }
         })
-        if (!hasComment) {
-          if (link && !isExternal(link)) {
-            link = path.join('/', link.replace(/\.md\b/, '')
-              .replace(/\bREADME\b/, '')
-              .replace(/\/index/, '/')
-              .replace(/\?id=/, '#'))
-              .replace(/\\/g, '/')
 
-            links.push(link)
-          }
+        if (link && !isExternal(link)) {
+          link = path.join('/', link.replace(/\.md\b/, '')
+            .replace(/\bREADME\b/, '')
+            .replace(/\/index/, '/')
+            .replace(/\?id=/, '#'))
+            .replace(/\\/g, '/')
 
-          contents.push({
-            level: token.level,
-            [textName]: text,
-            [linkName]: link,
-            ...config
-          })
+          links.push(link)
         }
+
+        contents.push({
+          level: token.level,
+          [textName]: text,
+          [linkName]: link,
+          ...config
+        })
       }
     })
 

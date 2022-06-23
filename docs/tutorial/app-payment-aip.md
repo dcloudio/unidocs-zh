@@ -78,7 +78,7 @@ uni.requestPayment({
     orderInfo: {
         productid: productId,    
         username: "appusername", // 用户标识
-        optimize: true  // 设置 optimize: true 解决丢单问题  
+        optimize: true  // 设置 optimize: true 解决丢单问题
     },
     success: (e) => {
         // 支付成功清除标记 restoreFlag = false  
@@ -102,7 +102,8 @@ var restoreFlag = true; // 调用支付接口时标记 restoreFlag = true , 实�
 plus.payment.request(iap, {
     productid: "商品id",
     username: "appusername", // 用户标识  
-    optimize: true  // 设置 optimize: true 解决丢单问题  
+    optimize: true,  // 设置 optimize: true 解决丢单问题
+    iapVersion: 2 // 3.5.0+ 支持，设置此参数后需要开发者主动关闭订单，参见下面的关闭订单方法 finishTransaction()
   }, function(result){
     restoreFlag = false; // 支付成功清除标记 restoreFlag = false  
     // 支付成功，result 为 IAP商品交易信息对象 IAPTransaction 需将返回的支付凭证传给后端进行二次认证  
@@ -126,6 +127,25 @@ function restoreComplateRequest() {
 - 丢单的商品（所有类型）  
 注意事项：**丢单的消耗类型商品**在支付完成后，**首次**调用该接口可返回支付凭证
 
+
+#### 关闭订单
+
+3.5.0+ 开始支持
+
+```js
+function finishTransaction() {
+  // IAP商品交易信息对象 IAPTransaction
+    iap.finishTransaction(transaction, (success) => {
+      console.log('关闭订单成功');
+    }, (fail) => {
+      console.log('关闭订单失败');
+    });
+}
+```
+
+注意事项：
+
+
 #### 丢单检测
 - uni-app项目  
 在[页面生命周期](https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e9%a1%b5%e9%9d%a2%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f)函数 `onShow` 中调用 `restoreComplateRequest`  
@@ -148,6 +168,42 @@ document.addEventListener('resume',function(){
 
 #### 丢单问题说明  
 通过和用户联调我们发现在调用支付接口后，如果用户未绑定支付方式此时会触发支付失败回调方法，实际上用户可以跳转 AppStrore 绑卡然后继续支付，之前的逻辑在回调失败方法中框架会关闭订单，用户付完钱在回到App中也不会触发成功回调，这样就造成了丢单，解决方法就是在调用支付接口时添加optimize: true参数，并标记 restoreFlag = true;，支付成功回调中清除标记 restoreFlag = false; 然后在支付失败回调中框架就不会关闭订单了，并在页面显示的时候通过标记判断是否需要调用 restoreComplateRequest 方法，如果用户跳转App Store绑定支付方式付款成功后回到 App 就可以通过 restoreComplateRequest 方法恢复之前支付的订单信息，解决丢单的问题；
+
+
+#### 丢单解决方案
+
+3.5.0+ 支持
+
+- 调用支付和恢复购买时传递参数 `iapVersion`, 设置后订单不会关闭，需要开发者在合适的时机调用 `finishTransaction` 关闭订单
+
+```js
+// 支付
+plus.payment.request(iapChannel, {
+  iapVersion: 2
+})
+
+// 恢复
+iapChannel.restoreComplateRequest({
+  iapVersion: 2
+})
+```
+
+- 调用 `plus.payment.request` 后，可能存在以下原因触发失败回调
+
+1. 网络原因
+2. 用户首次绑卡
+
+过段时间调用恢复购买 `restoreComplateRequest` 可以获取到上次异常或未完成的订单
+
+- 正确关闭订单的方法
+
+1. 客户端获取到支付成功的票据传递到服务器
+2. 在服务器请求苹果服务器二次确认有效后通知客户端
+3. 二次确认后可安全调用 `finishTransaction` 关闭订单
+
+注意：
+- 在订单未关闭时，即使卸载应用调用恢复购买 `restoreComplateRequest` 仍然可以获取到
+- A账号下载的应用，切换B账号, 调用 `restoreComplateRequest` 系统弹窗提示恢复购买失败
 
 
 ### 常见问题  

@@ -247,6 +247,9 @@ uni.navigateTo({
 可以配套使用[uniIdRouter](uniCloud/uni-id.md?id=uni-id-router)；当用户未登录，但访问了需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时均需要打开登录页面。你需要把以上两个路径路径定义为`loginPage`。
 
 # 云对象（uni-id-co）
+
+uni-id-co是uni-id-pages的核心云对象，包含了诸多用户相关的接口。作为uni-id体系的一部分，uni-id-co也使用uni-id的配置文件（`cloudfunctions/common/uni-config-center/uni-id/config.json`）。详细API列表请参考下方说明
+
 ## uni-id-co的API列表@co-api
 
 前端调用云对象`uni-id-co`内的方法前应先获取云对象的引用，代码如下
@@ -603,6 +606,48 @@ await uniIDCo.logout()
 |errCode						|string&#124;number	|错误码			|
 |errMsg							|string				|错误信息		|
 
+
+#### 获取支持的登录方式@get-supported-login-type
+
+**接口形式**
+
+```js
+await uniIDCo.getSupportedLoginType({
+  appId,
+  platform
+})
+```
+
+**参数说明**
+
+|参数名		|类型	|必填	|说明												|
+|--			|--		|--		|--													|
+|appId		|string	|否		|要查询登录方式的应用DCloud AppId，不传时为当前应用	|
+|platform	|string	|否		|要查询登录方式的应用平台，不传时为当前平台			|
+
+**返回值**
+
+|参数名				|类型				|说明							|
+|--					|--					|--								|
+|errCode			|string&#124;number	|错误码							|
+|errMsg				|string				|错误信息						|
+|supportedLoginType	|array				|支持的登录方式列表，见下方说明	|
+
+**supportedLoginType**
+
+|登录方式			|说明				|
+|---				|---				|
+|username-password	|用户名密码登录		|
+|mobile-password	|手机号密码登录		|
+|email-password		|邮箱密码登录		|
+|mobile-code		|手机号验证码登录		|
+|univerify			|App一键登录			|
+|weixin				|微信登录			|
+|qq					|QQ登录				|
+|apple				|苹果登录			|
+|alipay				|支付宝登录			|
+
+
 ### 绑定账号@bind
 
 #### 使用短信验证码绑定手机号@bind-mobile-by-sms
@@ -889,6 +934,35 @@ await uniIDCo.resetPwdBySms({
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
 |errMsg							|string				|错误信息		|
+
+#### 获取账户简略信息@get-account-info
+
+
+**接口形式**
+
+```js
+await uniIDCo.getAccountInfo()
+```
+
+**参数说明**
+
+无
+
+**返回值**
+
+|参数名			|类型				|说明				|
+|--				|--					|--					|
+|errCode		|string&#124;number	|错误码				|
+|errMsg			|string				|错误信息			|
+|isUsernameSet	|boolean			|是否已有用户名		|
+|isNicknameSet	|boolean			|是否已有昵称		|
+|isPasswordSet	|boolean			|是否已设置密码		|
+|isMobileBound	|boolean			|手机号是否已绑定	|
+|isEmailBound	|boolean			|邮箱是否已绑定		|
+|isWeixinBound	|boolean			|微信是否已绑定		|
+|isQQBound		|boolean			|QQ是否已绑定		|
+|isAlipayBound	|boolean			|支付宝是否已绑定	|
+|isAppleBound	|boolean			|苹果账号是否已绑定	|
 
 
 #### 接受邀请@accept-invite
@@ -1218,48 +1292,6 @@ await uniIDCo.setAuthorizedApp({
 
 - 此接口为管理端接口
 - 仅在用户token即将过期时返回新newToken
-
-### 开发接口@dev
-
-#### 获取支持的登录方式@get-supported-login-type
-
-**接口形式**
-
-```js
-await uniIDCo.getSupportedLoginType({
-  appId,
-  platform
-})
-```
-
-**参数说明**
-
-|参数名		|类型	|必填	|说明												|
-|--			|--		|--		|--													|
-|appId		|string	|否		|要查询登录方式的应用DCloud AppId，不传时为当前应用	|
-|platform	|string	|否		|要查询登录方式的应用平台，不传时为当前平台			|
-
-**返回值**
-
-|参数名				|类型				|说明							|
-|--					|--					|--								|
-|errCode			|string&#124;number	|错误码							|
-|errMsg				|string				|错误信息						|
-|supportedLoginType	|array				|支持的登录方式列表，见下方说明	|
-
-**supportedLoginType**
-
-|登录方式			|说明				|
-|---				|---				|
-|username-password	|用户名密码登录		|
-|mobile-password	|手机号密码登录		|
-|email-password		|邮箱密码登录		|
-|mobile-code		|手机号验证码登录		|
-|univerify			|App一键登录			|
-|weixin				|微信登录			|
-|qq					|QQ登录				|
-|apple				|苹果登录			|
-|alipay				|支付宝登录			|
 
 ## uni-id-common公共模块的API列表@api
 

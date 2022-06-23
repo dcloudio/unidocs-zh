@@ -147,6 +147,31 @@ encrypt数组中可灵活配置uniCloud/cloudfunctions下云函数及公共模�
 ### DB Schema及验证函数
 主要用于提交数据表schema及校验函数，所以必须包含uniCloud-aliyun/database 或 uniCloud-tcb/database目录
 
+### page_init
+HBuilderX 3.5.0+ 当uni_modules插件根目录下存在`page_init.json`文件，在插件导入工程时，会自动合并配置的页面路由到项目的 pages.json。注意：page_init.json文件最终不会导入到工程中。
+
+示例代码如下：
+```json
+[
+    {
+        "path": "uni_modules/demo/pages1",
+        "style": { //style配置项[详情查看](https://uniapp.dcloud.io/collocation/pages#style)
+            "navigationBarTitleText": "页面1"
+        }
+    },
+    {
+        "path": "uni_modules/demo/pages2",
+        "style": {
+            "navigationBarTitleText": "页面2"
+        }
+    }
+]
+```
+
+HBuilderX中合并路由界面效果图：
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/23fc53b6-3000-4d2b-a033-22e561c236a5.png)
+
+
 ## 注意
 - uni-app原生SDK及web项目两个分类下插件发布后需要审核才会生效。
 - 插件不能自行下架，如需下架请发邮件到service@dcloud.io。

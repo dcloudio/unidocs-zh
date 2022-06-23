@@ -25,6 +25,11 @@
 				<switch checked @change="switch1Change" />
 				<switch @change="switch2Change" />
 			</view>
+			<view class="uni-title">不同颜色和尺寸的switch</view>
+			<view>
+				<switch checked color="#FFCC33" style="transform:scale(0.7)"/>
+				<switch color="#FFCC33" style="transform:scale(0.7)"/>
+			</view>
 			<view class="uni-title">推荐展示样式</view>
 		</view>
 		<view class="uni-list">

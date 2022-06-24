@@ -104,7 +104,15 @@
 * 小程序专题
   * [组件与WXS](/tutorial/miniprogram-subject.md)
   * [小程序插件](/tutorial/mp-weixin-plugin.md)
-* [运行和调试](/tutorial/run-and-debug.md)
+* 运行和调试
+  * [基础](/tutorial/run-and-debug.md)
+  * [真机运行常见问题](tutorial/run/PhoneDebugging.md)
+  * [HBuilderX安装模拟器](tutorial/run/installSimulator.md)
+  * [uni-app web版调试](tutorial/debug/h5-debug.md)
+  * [uni-app 发行到微信小程序](tutorial/build/uni-app-publish-mp-weixin.md)
+  * [安心打包指南](tutorial/build/SafePack.md)
+  * [ios 安心打包证书安装](tutorial/build/iosSafePack.md)
+  * [Android 自定义渠道包](tutorial/build/AndroidChannel.md)
 * [高效开发技巧](/tutorial/snippet.md)
 * [性能优化专题](/tutorial/performance.md)
 * [国际化专题](/tutorial/i18n.md)

@@ -216,7 +216,7 @@ await uniPush.sendMessage(OBJECT)
 |custom_tag|String|否|无|基于个推custom_tag，指定消息接收者;</br>注：该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情 。| |
 |tag|Json Array|否|无|对指定应用的符合筛选条件的用户群发推送消息。支持定时、定速功能。，详细解释见下方tag说明| |
 |alias|String、Array|否|无|基于用户别名，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["alias-1","alias-2"]，数组长度不大于1000| |
-|cid|String、Array|否|无|基于uni.getPushCid获取的客户端推送标识，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["cid-1","cid-2"]，数组长度不大于1000| |
+|cid|String、Array|否|无|基于uni.getPushClientId获取的客户端推送标识，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["cid-1","cid-2"]，数组长度不大于1000| |
 |title|String|是|无|通知栏标题，长度小于20|APP-PLUS|
 |content|String|是|无|通知栏内容，长度小于50|APP-PLUS|
 |payload|String、Objcet|是|无|透传内容,长度小于800| |
@@ -1674,12 +1674,18 @@ await push.getTodayOnlineClientReport()
 
 ## 客户端API文档
 
-### getPushCid()
+### getPushClientId
 获取客户端唯一的推送标识，注意这是一个异步的方法
 示例代码：
 ```js 
-	let cid = await uni.getPushCid();
-	console.log(cid);
+	uni.getPushClientId({
+		success: (res) => {
+			console.log(res);
+		},
+		fail(err) {
+			console.log(err)
+		}
+	})
 ```
 
 ### onPushMessage([callback,eventName])
@@ -1724,7 +1730,7 @@ uni.offPushMessage(eventName);
 4. 新增uni-push客户端API，不再使用plus API
 	* uni.onPushMessage 绑定方法监听消息
 	* uni.offPushMessage 解绑方法监听消息
-	* uni.getPushCid 获取用户设备推送标识
+	* uni.getPushClientId 获取用户设备推送标识
 5. 支持uni-id，可直接通过uni-id来指定用户发送消息
 6. uni-admin端新增push管理面板
 

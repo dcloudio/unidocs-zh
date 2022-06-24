@@ -144,22 +144,11 @@ uni-id云端同时依赖了公共模块[uni-captcha](https://ext.dcloud.net.cn/p
 
 ## 云端配置config.json的说明@config
 
-uni-id的云端配置文件在uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json中。
+uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`中。
 
 注意：
 
 - **config.json是一个标准json文件，不支持注释**
-- 如果不希望使用config.json初始化而是想自行传入参数（一般不推荐这么做），可以使用`createInstance`方法[uniID.createInstance](uniCloud/uni-id.md?id=create-instance)
-
-> 在云函数URL化的场景无法获取客户端平台信息，可以在调用uni-id相关接口之前（推荐在云函数入口）通过修改context.PLATFORM手动传入客户端平台信息
-
-例：
-
-```js
-exports.main = async (event, context) => {
-	context.PLATFORM = 'app-plus'
-}
-```
 
 配置项：
 
@@ -293,7 +282,7 @@ uni-id云端会在login方法成功后自动返回token，uni-app前端框架会
 ## 用户角色权限@rbac
 
 为什么需要角色权限管理？
-- 企业管理系统，比如[uniCloud admin](/uniCloud/admin)，除了超级管理员，不同账号通常需根据职位、责任设定不同的系统权限。比如部门管理员、Hr。
+- 企业管理系统，比如[uni-admin](/uniCloud/admin)，除了超级管理员，不同账号通常需根据职位、责任设定不同的系统权限。比如部门管理员、Hr。
 - [clientDB](/uniCloud/database)允许前端直接操作数据库，但部分字段应该是系统计算或管理员设置的，比如文章的阅读数、收藏数及是否加精置顶，这些字段不允许普通用户在前端通过clientDB直接修改，此时也需要通过权限控制来保证系统的安全稳定。 
 
 `uni-id`基于经典的RBAC模型实现了角色权限系统。

@@ -233,7 +233,7 @@ export default {
 ## 页面介绍
 `uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[详情查看](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
 项目中常有打开登录页面的需求，这里对登录页面展开介绍；包括两类登录方式：
-- 免密登录（账号密码登录），页面路径: `/uni_modules/uni-id-pages/pages/login/login-withpwd`
+- 密码登录（账号密码登录），页面路径: `/uni_modules/uni-id-pages/pages/login/login-withpwd`
 - 免密登录（一键登录，短信验证码登录，微信登录，苹果登录），页面路径: `/uni_modules/uni-id-pages/pages/login/login-withoutpwd`
 
 执行`uni.navigateTo`打开登录页面，会默认使用配置中`loginTypes`值的第一项为登录方式。

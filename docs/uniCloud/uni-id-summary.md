@@ -482,6 +482,8 @@ function hasPermission(token, permission) {
 | avatar			| String	| 否	| 头像地址													|
 | wx_unionid		| String	| 否	| 微信unionid												|
 | wx_openid			| Object	| 否	| 微信各个平台openid。子结构详见下文							|
+| qq_unionid		| String	| 否	| QQ unionid												|
+| qq_openid			| Object	| 否	| QQ各个平台openid。子结构详见下文							|
 | ali_openid		| String	| 否	| 支付宝平台openid											|
 | apple_openid		| String	| 否	| 苹果登录openid
 | comment			| String	| 否	| 备注														|
@@ -501,7 +503,7 @@ function hasPermission(token, permission) {
 
 **wx_openid字段定义**
 
-> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](uniCloud/uni-id-summary.md?id=m-to-co)
+> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](uniCloud/uni-id-pages.md?id=m-to-co)
 
 | 字段		| 类型	| 必填	| 描述					|
 | -------	| ------| ----	| --------				|
@@ -509,6 +511,15 @@ function hasPermission(token, permission) {
 | mp		| String| 否	| 微信小程序平台openid	|
 | h5		| String| 否	| 微信网页应用openid	|
 | web		| String| 否	| 微信公众号应用openid	|
+
+**qq_openid字段定义**
+
+> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](uniCloud/uni-id-pages.md?id=m-to-co)
+
+| 字段		| 类型	| 必填	| 描述					|
+| -------	| ------| ----	| --------				|
+| app		| String| 否	| app平台QQ openid		|
+| mp		| String| 否	| QQ小程序平台openid	|
 
 **realNameAuth 扩展字段定义**
 该字段存储实名认证信息，子节点说明如下。
@@ -527,13 +538,6 @@ function hasPermission(token, permission) {
 | contact_person  | String    | 否   | 联系人姓名                                          |
 | contact_mobile  | String    | 否   | 联系人手机号码                                      |
 | contact_email   | String    | 否   | 联系人邮箱                                          |
-
-**job 扩展字段定义**
-
-| 字段    | 类型   | 必填 | 描述     |
-| ------- | ------ | ---- | -------- |
-| company | String | 否   | 公司名称 |
-| title   | String | 否   | 职位     |
 
 **register_env字段定义**
 
@@ -778,6 +782,60 @@ uniIdRouter 是一个运行在前端的、对前端页面访问权限路由进�
 	}
 </script>
 
+```
+
+### 云对象响应触发needLogin
+
+云对象抛出uni-id token过期或token无效错误码时，会触发客户端自动跳转配置的登录页面，以下代码为一个简单示例
+
+```js
+// todo云对象
+const uniIdCommon = require('uni-id-common')
+module.exports = {
+	_before(){
+		this.uniIdCommon = uniIdCommon.createInstance({
+			clientInfo: this.getClientInfo()
+		})
+	},
+	addTodo(title) {
+		const {
+			errCode,
+			errMsg,
+			uid
+		} = await this.uniIdCommon.checkToken(this.getUniIdToken())
+		if(errCode) { // uni-id-common的checkToken接口可能返回`uni-id-token-expired`、`uni-id-check-token-failed`错误码，二者均会触发客户端跳转登陆页面
+			return {
+				errCode,
+				errMsg
+			}
+		}
+		// ...
+	}
+}
+```
+
+```html
+// 客户端add-todo.vue
+<template>
+	<!-- 略 -->
+</template>
+<script>
+	export default {
+		data() {
+			return {
+			}
+		},
+		onLoad() {},
+		methods: {
+			async addTodo(title){
+				const todo = uniCloud.importObject('todo')
+				await todo.addTodo(title) // 调用addTodo时云端checkToken如果返回了token错误、token失效的错误码就会自动跳转到配置的登录页面
+			}
+		}
+	}
+</script>
+<style>
+</style>
 ```
 
 **注意**

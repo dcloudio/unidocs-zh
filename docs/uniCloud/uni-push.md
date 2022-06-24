@@ -1680,7 +1680,7 @@ await push.getTodayOnlineClientReport()
 ```js 
 	uni.getPushClientId({
 		success: (res) => {
-			console.log(res);
+			console.log(res.cid);
 		},
 		fail(err) {
 			console.log(err)

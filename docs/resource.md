@@ -28,6 +28,8 @@
 * [《uni-app博客实战开发教程》](https://ke.qq.com/course/3455428?tuin=258d8def)，出品人：卢小兵
 * [《uni-app快速入门到社区论坛项目多端开发实战》](https://www.bilibili.com/video/BV1oy4y1j75s?p=1)，出品人：千锋教育
 * [《uni-app新手入门》](https://www.lanqiao.cn/courses/7763)，出品人：蓝桥云课
+* [uniapp 原生插件开发-android](https://www.bilibili.com/video/BV13V411H7W2?spm_id_from=333.999.0.0&vd_source=b123f8c166833c59567e6923b9aa2013)，出品人：朱哲
+* [uniapp 原生插件开发-iOS](https://www.bilibili.com/video/BV1Db4y1D7Yr?spm_id_from=333.999.0.0)，出品人：朱哲
 
 
 目前各大视频学习网站都有不少uni-app的学习资源，更多资源请点击搜索链接：

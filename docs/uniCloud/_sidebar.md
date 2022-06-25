@@ -5,7 +5,7 @@
   * [服务空间](uniCloud/concepts/space.md)
   * [数据库](uniCloud/concepts/database.md)
   * [云函数](uniCloud/concepts/cloudfunction.md)
-* 云函数
+* 云函数/云对象
   * [开发云函数](uniCloud/cf-functions.md)
   * [云对象](uniCloud/cloud-obj.md)
   * [云公共模块](uniCloud/cf-common.md)
@@ -52,6 +52,7 @@
   * [开发文档](uniCloud/redis.md)
 * [日志输出](uniCloud/cf-logger.md)
 * [客户端API](uniCloud/client-sdk.md)
+* [web控制台](https://unicloud.dcloud.net.cn)
 * 重要开源库```{"collapsable": false}```
   * [uni-config-center 配置中心](uniCloud/uni-config-center.md)
   * [uni-starter](uniCloud/uni-starter.md)

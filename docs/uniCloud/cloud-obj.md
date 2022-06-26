@@ -212,7 +212,9 @@ const todo = uniCloud.importObject('todo')
 
 uniCloud有众多API，另见：[uniCloud的API清单](uniCloud/cf-functions.html#unicloud-api%E5%88%97%E8%A1%A8)
 
-与云函数入参时的`context`不同，云对象没有`context`。除上述API之外，云对象的this对象还有一批专用方法来获取当前请求的上下文信息。
+除上述API之外，云对象的this对象还有一批专用方法来获取当前请求的上下文信息。
+
+与云函数入参时的`context`不同，云对象没有`context`。它通过this对象挂载的几个内置方法来获取上下文信息。请注意开发者避免在this上挂载同名方法。
 
 ### 获取客户端信息@get-client-info
 
@@ -229,14 +231,10 @@ module.exports = {
 	add: function() {
 		const clientInfo = this.getClientInfo()
 		// clientInfo = {
-		// 	os,
-		// 	appId,
-		// 	locale,
 		// 	clientIP,
-		// 	userAgent,
-		// 	platform,
+		// 	appId,
 		// 	deviceId,
-		// 	uniIdToken,
+		// 	ua,
 		// 	//... 其他getSystemInfoSync返回值
 		// }
 	}
@@ -245,18 +243,9 @@ module.exports = {
 
 **返回值**
 
-|参数名		|类型	|必备	|说明											|
-|--			|--		|--		|--												|
-|os			|string	|是		|客户端系统										|
-|appId		|string	|是		|客户端DCloud AppId								|
-|locale		|string	|是		|客户端语言										|
-|clientIP	|string	|是		|客户端ip										|
-|userAgent	|string	|是		|客户端ua										|
-|platform	|string	|是		|客户端平台，app，mp-weixin等					|
-|deviceId	|string	|是		|客户端deviceId，目前同getSystemInfo内的deviceId|
-|uniIdToken	|string	|是		|客户端用户token								|
+getClientInfo返回的信息，是在客户端的[uni.getSystemInfo](https://uniapp.dcloud.net.cn/api/system/info.html#getsysteminfo)的基础之上，增加了`clientIP`，即客户端IP。
 
-
+除了`clientIP`，返回的其他字段请参考[uni.getSystemInfo](https://uniapp.dcloud.net.cn/api/system/info.html#getsysteminfo)。
 
 **注意**
 
@@ -286,10 +275,12 @@ module.exports = {
 
 |参数名		|类型	|必备	|说明			|
 |--			|--		|--		|--				|
-|provider	|string	|是		|服务空间供应商	|
+|provider	|string	|是		|服务空间供应商，阿里云为aliyun，腾讯云为tcb|
 |spaceId	|string	|是		|服务空间Id		|
 
 ### 获取客户端token@get-uni-id-token
+
+云对象自动管理`uni-id`的token。开发者无需手动管理。如果不了解`uni-id`，请[参考](/uniCloud/uni-id-summary)
 
 **接口形式**
 
@@ -301,9 +292,13 @@ module.exports = {
 module.exports = {
 	add: function(){
 		const token = this.getUniIdToken()
+		if(!token) {
+			// 登录状态无效
+		}
 	}
 }
 ```
+
 
 ### 获取当前调用的方法名@get-method-name
 
@@ -345,9 +340,9 @@ module.exports = {
 
 ### 预处理 _before@before
 
-云对象内可以创建一个特殊的方法_before，用来在调用常规方法之前进行预处理，一般用于拦截器、统一的身份验证、参数校验等。
+云对象内可以创建一个特殊的方法`_before`，用来在调用常规方法之前进行预处理，一般用于拦截器、统一的身份验证、参数校验等。
 
-以下示例的逻辑是，当客户端调用todo云对象的add方法时，会先执行_before方法中的逻辑，判断为add方法时校验了客户端token，校验失败则直接报错返回客户端，校验通过继续执行add方法。
+以下示例的逻辑是，当客户端调用todo云对象的add方法时，会先执行`_before`方法中的逻辑，判断为add方法时校验了客户端token，校验失败则直接报错返回客户端，校验通过继续执行add方法。
 
 ```js
 // todo/index.obj.js
@@ -398,27 +393,42 @@ module.exports = {
 }
 ```
 
+注意：所有`_`开头的方法都是私有方法，客户端不可访问。也就是客户端调用云对象时不能调用_开头的方法。
+
 ## 云对象的返回值@return-value
 
-客户端拿到云对象的响应结果后，会自动进行结果的处理。
+云对象返回给客户端的数据，包括正常数据和错误对象。
 
-- 如果是正常的结果（errCode为假值[0, false, null, undefined, ...]或者结果内不含errCode）则将结果直接返回
-- 如果是报错的结果（errCode为真值）将结果内的errCode和errMsg组合为错误对象抛出
-- 如果是其他云函数未捕获的错误，直接将错误码和错误信息组合成错误对象抛出
+理论上，开发者可以使用任意方式返回正确状态下的数据格式，返回字符串、json对象都可以。
 
-前端抛出的错误对象上有以下属性
+但在错误处理时，推荐使用[uniCloud响应体规范](uniCloud/cf-functions.md?id=resformat)，以方便客户端统一拦截错误。
+
+在云对象内部报错时，比如方法名错误等非开发者代码返回的错误，会自动使用[uniCloud响应体规范](uniCloud/cf-functions.md?id=resformat)抛出错误对象。
+
+开发者代码在主动报错时，比如参数校验错误，由于不能直接写入错误对象（e），则需要按照[uniCloud响应体规范](uniCloud/cf-functions.md?id=resformat)在返回的json对象中加入`errCode`和`errMsg`。
+
+uni-app客户端拿到云对象的响应结果后，会识别其中是否包含`errCode`和`errMsg`，然后自动创建报错对象（e），策略如下：
+
+- 如果是正常的结果（errCode为假值[0, false, null, undefined, ...]或者结果内不含errCode），不抛出错误对象（e）
+- 如果是报错的结果（errCode为真值）将结果内的errCode和errMsg组合为错误对象（e）抛出
+- 如果是其他云函数未捕获的错误，直接将错误码和错误信息组合成错误对象（e）抛出
+
+也就是说，开发者的前端代码调用云对象时，需要try catch。不报错时，在`try`里直接返回结果，报错时在`catch (e) {}`里拿到错误对象e。
+
+客户端抛出的错误对象（e）有以下属性
 
 |属性名		|类型				|是否必备	|说明													|
 |--			|--					|--			|--														|
 |errCode	|string&#124;number	|否			|错误码													|
 |errMsg		|string				|否			|错误信息												|
-|requestId	|string				|否			|当前请求的requestId									|
-|detail		|Object				|否			|完成的错误响应（仅在响应符合uniCloud响应体规范时才有）	|
+|requestId	|string				|否			|当前请求的requestId。本地调试无此值，需在服务空间运行		|
+|detail		|Object				|否			|完整的错误响应（仅在响应符合uniCloud响应体规范时才有）	|
+
 
 详见以下示例：
 
 ```js
-// todo/index.obj.js
+// 云对象代码 todo/index.obj.js
 module.exports = {
 	add: async function(title = '', content = '') { 
 		title = title.trim()
@@ -436,11 +446,14 @@ module.exports = {
 		}
 	}
 }
+```
 
+```js
 // 客户端代码
 const todo = uniCloud.importObject('todo')
+
+// 不传title、content，云函数返回错误的响应
 try {
-	// 不传title、content，云函数返回错误的响应
 	await todo.add()
 } catch (e) {
 	// e.errCode === 'INVALID_TODO'
@@ -449,6 +462,7 @@ try {
 	// e.requestId === 'xxxx'
 }
 
+// 传入正确的title、content，云函数返回原始响应
 try {
 	const res = await todo.add('title demo', 'content demo')
 	// res = {errCode: 0,errMsg: '创建成功'}
@@ -568,7 +582,11 @@ module.exports = {
 
 - 云对象和云函数都在cloudfunctions目录下，但是不同于云函数，云对象的入口为`index.obj.js`，而云函数则是`index.js`。**为正确区分两者uniCloud做出了限制，云函数内不可存在index.obj.js，云对象内也不可存在index.js。**
 - 所有`_`开头的方法都是私有方法，客户端不可访问
-- 云对象也可以引用公共模块或者npm上的包，引用方式和云函数完全一致。
+- 云对象也可以引用公共模块或者npm上的包，引用方式和云函数一致。
+
+## 复杂示例
+
+DCloud官方开发了 `uni-id-co`，这是一个较为复杂的云对象，用于搭配 [uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577) 实现云端一体的用户注册登录等功能。该代码开源，可以参考。
 
 ## 推荐最佳实践
 
@@ -578,4 +596,6 @@ uniCloud的服务器和客户端交互，有云函数、云对象、clientDB三�
 
 如果是以数据库操作为主，则推荐使用clientDB，开发效率是最高的。
 
-如果服务器端除了操作数据库外，还有复杂的、不宜公开在前端的逻辑，此时推荐使用云对象。
+如果服务器端不操作数据库外，或者还有复杂的、不宜公开在前端的逻辑，此时推荐使用云对象。
+
+但云对象仅适用于与uni-app前端交互使用。如果不与uni-app前端交互，比如使用云函数URL化与其他系统通信、或者使用定时云函数，此时不适用云对象，还是需要使用云函数。

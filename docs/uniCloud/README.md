@@ -12,8 +12,9 @@
     3. 如果你已拥有掌握php和js的全栈，那么改用新的技术栈，一样可以大幅提升开发效率、降低成本；
     4. 你只需专注于你的业务，其他什么服务器运维、弹性扩容、大并发承载、防DDoS攻击，全都不需要操心；
     5. 除了开发成本，云资源租用成本也将大幅下降
-    6. 如果不发布H5版，你将不需要购买备案域名。小程序和App可以免域名使用服务器；
+    6. 如果不发布Web版，你将不需要购买备案域名。小程序和App可以免域名使用服务器；
 
+目前uniCloud阿里云版免费，助力开发者低门槛实现自己的想法。
 
 ### 看视频，只需25分钟，快速入门uniCloud
 
@@ -29,7 +30,7 @@ uniCloud是DCloud在阿里云和腾讯云的serverless服务上封装而成的�
 
 开发者可以自主选择uniCloud的硬件和网络资源的供应商，在阿里云版和腾讯云版之间切换。
 
-开户和付费虽然通过DCloud渠道，但实际上开发者自动在云厂商处建立了账户和充值了余额。DCloud只获取云服务厂商的返佣。
+开户和付费虽然通过DCloud渠道，但实际上开发者自动在云厂商处建立了账户和充值了余额。价格是云厂商的标准定价，DCloud只获取云服务厂商的返佣。
 
 开发时虽使用DCloud的工具，但应用上线时，手机端是直连阿里云或腾讯云的serverless，不经由DCloud的服务器。
 
@@ -62,7 +63,7 @@ serverless的云，真正的把计算、存储的能力进行了云化，开发�
 云端庞大的serverless资源池，有无数个node进程待命。当手机用户发起请求时，serverless系统会调配闲置的资源来运行开发者相应的云函数。
 
 - serverless，让一个不懂服务器运维的开发者，可以只处理自己的业务，再不用关心热备、负载、增容、DDOS等事情。
-- serverless，让一个大学生，也可以享受世界最顶级的IT基础设置。
+- serverless，让一个学生，也可以享受世界最顶级的IT基础设置。
 
 serverless在国外兴起，但国内的发展速度已经超过了国外。微信、支付宝、百度、字节跳动、快应用联盟都上线了自己的serverless云开发。
 
@@ -108,7 +109,7 @@ serverless不是传统云，它不需要开发者选择CPU和内存配置，也�
 
 基于以上3点原因，uniCloud大幅降低了开发者云资源的租用成本。
 
-除了云资源的成本，uniCloud还可以减少开发商的人工成本、招聘成本、沟通管理成本，这些成本往往远大于云资源成本。
+除了云资源的成本，uniCloud还可以减少开发商的人工成本、招聘成本、沟通管理成本，这些成本更远大于云资源成本。
 
 ### uniCloud降低前端掌握后端的门槛
 
@@ -126,7 +127,9 @@ serverless不是传统云，它不需要开发者选择CPU和内存配置，也�
 3. uniCloud推出了[opendb](https://gitee.com/dcloud/opendb)，包含了大量的开源数据库模板，常见数据表无需自己设计。通过opendb模板，开发者可以快速掌握数据库设计。
 4. SQL在过去也需要单独学习，尤其是复杂的联表查询、Tree查询，掌握很不容易。uniCloud推出了JQL（Javascript Query Language），会js即可掌握数据库查询，更对联表查询、Tree查询提供了非常简便的操作封装。
 5. uniCloud提供了[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)，无需自己开发账户体系，登录、注册、修改密码、角色权限体系、token管理一应俱全。
-6. uniCloud在[DB Schema](https://uniapp.dcloud.net.cn/uniCloud/schema)中提供了与[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)的角色权限体系配套的数据权限控制方案。这套方案让小白也不会在权限控制中犯错。在一目了然的权限配置清单中可以轻松发现漏做的事情，比以往在大坨php代码中分析是否存在权限漏洞要简单的多。这套方案还能让多人协作、或项目二次开发变的更容易，因为规范的存在，新人可以轻易读懂老代码的权限体系逻辑。
+6. uniCloud在[DB Schema](https://uniapp.dcloud.net.cn/uniCloud/schema)中提供了与[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)的角色权限体系配套的数据权限控制方案。这套方案让初学者也不会在权限控制中犯错。
+在一目了然的权限配置清单中可以轻松发现漏做的事情，比以往在大坨php代码中分析是否存在权限漏洞要简单的多。
+这套方案还能让多人协作、或项目二次开发变的更容易，因为规范的存在，新人可以轻易读懂老代码的权限体系逻辑。
 
 所以说，uniCloud是前端变全栈的最佳机会，只需花点时间熟读uniCloud的文档，你就可以成为全栈！
 
@@ -164,10 +167,11 @@ uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，�
 1. 提供众多现成轮子，不用自己写代码
 2. 如果没有现成轮子，那么用[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)代码生成工具，生成数据库的增删改查页面（是直接生成页面，不是生成接口）
 3. 如果schema2code搞不定，需要手写代码，那么使用[clientDB](https://uniapp.dcloud.net.cn/uniCloud/clientdb)，将节省80%的服务端开发工作
-4. HBuilderX在云端协同中提供工具助力
-5. 端和云的语言统一，提高了沟通效率、招聘效率
-6. 代码量的减少到原来的十分之一，让code review效率和测试的效率也提升了十倍
-7. serverless让开发者专注于业务，无需分心运维
+4. 如果仍然需要写云端代码，那么云对象让你的开发更简单
+5. HBuilderX在云端协同中提供工具助力
+6. 端和云的语言统一，提高了沟通效率、招聘效率
+7. 代码量的减少到原来的十分之一，让code review效率和测试的效率也提升了十倍
+8. serverless让开发者专注于业务，无需分心运维
 
 我们来依次展开介绍每一层。
 
@@ -184,13 +188,15 @@ uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，�
 
 **1. 官方维护的插件**
 
-- uni-id：不用再开发用户系统。用户注册、登录（含社交登录、短信验证码登录、App一键登录）、修改或重置密码、token管理、图形验证码、RBAC权限角色系统...所有与用户相关的，不管前端还是云端，代码都是现成的。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
-- uniPay：不管微信还是支付宝，不管App、微信小程序、还是支付宝小程序，不管前端还是服务端，一切都现成的，拿来即用。[详见](https://uniapp.dcloud.net.cn/uniCloud/unipay)
-- uSearch：云端一体搜索。搜索页面、输入联想、搜索历史记录、热搜词分析提取...一应俱全。[详见](https://ext.dcloud.net.cn/plugin?id=3851)
+- uni-id：不用再开发用户系统。用户注册、登录（含社交登录、短信验证码登录、App一键登录）、修改或重置密码、token管理、图形验证码、RBAC权限角色系统...所有与用户相关的，不管前端还是云端，代码都是现成的。[详见](/uniCloud/uni-id-summary)
+- uni-pay：不管微信还是支付宝，不管App、微信小程序、还是支付宝小程序，不管前端还是服务端，一切都现成的，拿来即用。[详见](/uniCloud/unipay)
 - uni-starter：云端一体应用快速开发基本项目模版，实现快速搭建一款应用。它集成了很多通用的功能，比如登录注册、头像、设置、拦截器、banner...[详见](https://ext.dcloud.net.cn/plugin?id=5057)
-- uniCloud Admin：全端可用的admin后台。自带用户管理、权限管理、角色管理、菜单管理。更有众多admin插件，比如cms插件、banner管理插件、App升级管理插件...[详见](https://uniapp.dcloud.net.cn/uniCloud/admin)
+- uni-admin：全端可用的admin后台。自带用户管理、权限管理、角色管理、菜单管理、业务图表统计。更有众多admin插件，比如cms插件、banner管理插件、App升级管理插件...[详见](/uniCloud/admin)
+- uni-search：云端一体搜索。搜索页面、输入联想、搜索历史记录、热搜词分析提取...一应俱全。[详见](https://ext.dcloud.net.cn/plugin?id=3851)
 - uni-file-picker：前端直传uniCloud存储组件。[详见](https://ext.dcloud.net.cn/plugin?id=4079)
 - uni-captcha：云端一体图形验证码组件。[详见](https://ext.dcloud.net.cn/plugin?id=4048)
+- uni-sec-check：免费的内容安全审查，防止用户提交违法的文字或图片。[详见](https://ext.dcloud.net.cn/plugin?id=5460)
+- uni-upgrade-center：App升级中心。支持整包升级、wgt热更新；支持直接下载安装包或跳转应用商店。[详见](uniCloud/upgrade-center.md)
 
 **2. 社区的优秀插件**
 
@@ -292,7 +298,50 @@ clientDB技术，有前端的[JS API](https://uniapp.dcloud.net.cn/uniCloud/clie
 
 可以看出，在uni云端一体生态中，开发者不但提高了效率、减少了成本，还得到了更强大的赋能工具。
 
-#### 第四层提效：HBuilderX工具助力
+#### 第四层提效：云对象，改变前后端协同
+
+如果clientDB仍然不能满足需求，必须编写云端代码，那么[云对象](uniCloud/cloud-obj.md)的出现，彻底改变了后端开发json接口和前端联调的低效局面。
+
+[云对象](uniCloud/cloud-obj.md)把云端的代码变成对象方式，让前端js直接import这个对象，然后使用这个对象的方法，就像使用前端的js对象一样顺畅。
+
+云端新加一个`todo`云对象，写一个add方法，代码如下：
+```js
+// 云对象名：todo
+module.exports = {
+	add(title, content) {
+		title = title.trim()
+		content = content.trim()
+		if(!title || !content) {
+			return {
+				errCode: 'INVALID_TODO',
+				errMsg: 'TODO标题或内容不可为空'
+			}
+		}
+		// ...其他逻辑
+		return {
+			errCode: 0,
+			errMsg: '创建成功'
+		}
+	}
+}
+```
+
+然后在客户端的js中，import这个`todo`对象，调用它的add方法
+
+```js
+const todo = uniCloud.importObject('todo') //第一步导入云对象
+async function addTodo () {
+	try {
+		const res = await todo.add('title demo', 'content demo') //导入云对象后就可以直接调用该对象的方法了，注意使用异步await
+		console.log("add成功")
+	} catch (e) {
+		// 符合uniCloud响应体规范 https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=resformat，自动抛出此错误 
+		console.log(e.errMsg)
+	}
+}
+```
+
+#### 第五层提效：HBuilderX工具助力
 
 HBuilderX、uni-app、uniCloud是三位一体、高效协同的。
 
@@ -305,8 +354,9 @@ HBuilderX提升了uni-app的开发效率，自然也将提升uniCloud的开发�
 由于三位一体协同，HBuilderX可以解析本地schema文件，直接提示item后面的数据结构。避免开发者写错代码、减少服务器联调工作。
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/88f093d0-1abd-487d-bf24-e0627c471977.jpg)
 
+云对象的方法，HBuilderX同样可以完美解析，让编写客户端代码时直接提示云对象的方法、参数。
 
-#### 第五层提效：语言统一的价值
+#### 第六层提效：语言统一的价值
 
 前端和云端都使用js编程语言，提高了沟通效率。
 
@@ -316,7 +366,7 @@ js和其他服务器语言，比如php或java，在过去需要Mock来翻译，�
 
 由于统一了技术栈，招聘效率、管理效率也会相应提升。。
 
-#### 第六层提效：测试效率的提升
+#### 第七层提效：测试效率的提升
 
 代码量的减少到原来的十分之一，这自然可以让code review效率和白盒测试的效率也提升了十倍。
 
@@ -324,7 +374,7 @@ js和其他服务器语言，比如php或java，在过去需要Mock来翻译，�
 
 现在，开发、测试都将变的更加轻松。
 
-#### 第七层提效：serverless让开发者专注于业务，无需分心运维
+#### 第八层提效：serverless让开发者专注于业务，无需分心运维
 
 因为serverless的免运维特点，开发商再也不用操心扩容、高并发、ddos攻击、安全漏洞补丁等一系列麻烦事。只需专注于自己的业务。
 

@@ -4,11 +4,14 @@
 * 基本概念
   * [服务空间](uniCloud/concepts/space.md)
   * [数据库](uniCloud/concepts/database.md)
-  * [云函数](uniCloud/concepts/cloudfunction.md)
+  * [云函数/云对象](uniCloud/concepts/cloudfunction.md)
 * 云函数/云对象
-  * [开发云函数](uniCloud/cf-functions.md)
+  * [概述](uniCloud/cf-functions.md)
   * [云对象](uniCloud/cloud-obj.md)
+  * [普通云函数(callFunction)](uniCloud/cf-callfunction.md)
   * [云公共模块](uniCloud/cf-common.md)
+  <!-- * [运行调试](uniCloud/cf-rundebug.md) -->
+  <!-- * [发布](uniCloud/) -->
   * [日志输出](uniCloud/cf-logger.md)
   * [定时触发](uniCloud/trigger.md)
   * [云函数URL化](uniCloud/http.md)

@@ -178,6 +178,20 @@ exports.main = async (event, context) => {
 
 由于篇幅较长，需另见文档[云函数callfunction方式](/uniCloud/cf-callfunction)
 
+因文档地址迁移，为防止老链接失效，备份如下：
+#### 获取用户token@client-token
+文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=client-token)
+#### 获取客户端IP@clientip
+文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=clientip)
+#### 获取客户端user-agent@client-user-agent
+文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=client-user-agent)
+#### 获取服务空间信息@context-space-info
+文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=context-space-info)
+#### 获取云函数调用来源@context-source
+文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=context-source)
+#### 其他客户端信息@client-info
+文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=client-info)
+
 ### 云函数URL化方式
 
 云函数url化是创建了普通云函数后，进行的一种url化配置，它本质上属于普通云函数的一种调用方式。由于篇幅较长，需另见文档[云函数URL化](/uniCloud/http)。

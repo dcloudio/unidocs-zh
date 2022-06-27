@@ -10,6 +10,14 @@
 
 cli创建项目时若选择`hello uni-app`模板，可看到其中已经自带部分测试例。
 
+注意：相关依赖不能高于以下版本
+
+```
+jest@27.0.4
+jest-environment-node@27.5.1
+
+```
+
 已有 `cli` 工程
 1. 更新依赖包 `@dcloudio/*` >= `2.0.0-alpha-27920200613002`
 2. 安装依赖包 `@dcloudio/uni-automator`

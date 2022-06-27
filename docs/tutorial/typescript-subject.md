@@ -1,12 +1,29 @@
 ### TypeScript 支持
 
-在 uni-app 中使用 ts 开发，请参考 [Vue.js TypeScript 支持](https://cn.vuejs.org/v2/guide/typescript.html) 说明。
+uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn.vuejs.org/v2/guide/typescript.html) 说明。
 
 类型定义文件由 @dcloudio/types 模块提供，安装后请注意配置 tsconfig.json 文件中的 compilerOptions > types 部分，如需其他小程序平台类型定义也可以安装，如：miniprogram-api-typings、mini-types。对于缺少或者错误的类型定义，可以自行在本地新增或修改并同时报告给官方请求更新。
 
-### 修改 Typescript 配置
-在根目录创建 `tsconfig.json` 文件，并进行个性化配置，推荐配置如下：
+### 开发方式@vue-ts
+
+- HBuilderX创建的项目
+
+在 vue 或 nvue 页面的 script 节点，添加属性 `lang="ts"`
+
+```html
+<script lang="ts">
+// 这里编写ts代码
+</script>
 ```
+
+- cli创建的项目
+
+需要在创建项目时就指定ts，具体请另行参考[文档](https://uniapp.dcloud.io/quickstart-cli.html#install-vue-cli)
+
+### 修改 Typescript 配置
+
+在根目录创建 `tsconfig.json` 文件，并进行个性化配置，推荐配置如下：
+```json
 // tsconfig.json
 {
   "compilerOptions": {
@@ -21,18 +38,16 @@
   }
 }
 ```
-### cli 命令行创建 ts 项目
-参考[文档](https://uniapp.dcloud.io/quickstart-cli.html#install-vue-cli)
-### TypeScript 支持版本
-uni-app 的 vue2 模式，nvue 文件中不支持编写 ts。vue 文件中可以使用 ts，但 ts 版本根据项目类型有区别。HBuilderX 创建的项目使用 ts 3.7.5，cli 创建的项目使用 ts 3.0.0。\
-uni-app 的 vue3 模式，vue 文件及 nvue 文件均支持最新版 ts。
+
+个性化配置是可选的，没有`tsconfig.json`时会自动使用默认配置运行。
+
+### TypeScript 支持兼容性说明
+- uni-app 的 vue2 模式：nvue 文件中不支持编写 ts。vue 文件中可以使用 ts，但 ts 版本根据项目类型有区别。HBuilderX 创建的项目使用 ts 3.7.5，cli 创建的项目使用 ts 3.0.0。
+- uni-app 的 vue3 模式：vue 文件及 nvue 文件均支持最新版 ts。
+
 ### 注意事项
 
-在 uni-app 中使用 ts 需要注意以下事项。
-
-#### 在 vue 文件的 script 节点声明 lang="ts"@vue-ts
-
-声明 `lang="ts"` 后，该 vue 文件 import 进来的所有 vue 组件，均需要使用 ts 编写。
+声明 `lang="ts"` 后，该 vue/nvue 文件 import 进来的所有 vue 组件，均需要使用 ts 编写。
 
 **示例代码**
 

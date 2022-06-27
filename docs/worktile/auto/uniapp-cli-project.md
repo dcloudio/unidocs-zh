@@ -2,13 +2,8 @@
 
 > 本文档仅适用于CLI工程。
 
-创建 `cli` 工程
-```
-# 全局安装vue-cli
-$ npm install -g @vue/cli
-$ cd ... // 切换到工程保存目录
-$ vue create -p dcloudio/uni-preset-vue#alpha my-project
-```
+创建 `cli` 工程，详见[https://uniapp.dcloud.io/quickstart-cli.html](https://uniapp.dcloud.io/quickstart-cli.html)
+
 
 如果之前是HBuilderX工程，则把HBuilderX工程内的文件（除 unpackage、node_modules 目录）拷贝至 vue-cli 工程的 src 目录。
 在 vue-cli 工程内重新安装 npm 依赖（如果之前使用了 npm 依赖的话）

@@ -34,7 +34,7 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 
 **注意**
 
-- 此接口不会发送网络请求，**此接口仅仅是客户端接口，不校验token的合法性**
+- 此接口不会发送网络请求，**此接口仅仅是客户端接口，不校验token的合法性以及是否过期**
 - 需要搭配uni-id使用并要求客户端必须将token存储在storage内的`uni_id_token`内
 - 如需获取role、permission需要将角色权限缓存在token内，此功能自uni-id 3.0.0其默认开启，参考：[缓存角色权限](uniCloud/uni-id.md?id=cache-permission-in-token)
 
@@ -44,11 +44,12 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 
 **响应参数**
 
-| 字段			| 类型	| 说明																|
-| ---				| ---		| ---																	|
-| uid				| Number|当前用户uid													|
+| 字段			| 类型	| 说明									|
+| ---			| ---	| ---									|
+| uid			| Number|当前用户uid							|
 | role			| Array	|用户角色列表。admin用户返回["admin"]	|
-| permission| Array	|用户权限列表。注意admin角色此数组为空|
+| permission	| Array	|用户权限列表。注意admin角色此数组为空	|
+| tokenExpired	| Number|token过期时间							|
 
 未能获取用户信息时返回以下结果
 
@@ -56,7 +57,8 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 {
   uid: null,
   role: [],
-  permission: []
+  permission: [],
+  tokenExpired: 0
 }
 ```
 

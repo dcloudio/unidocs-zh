@@ -4,6 +4,32 @@
 
 类型定义文件由 @dcloudio/types 模块提供，安装后请注意配置 tsconfig.json 文件中的 compilerOptions > types 部分，如需其他小程序平台类型定义也可以安装，如：miniprogram-api-typings、mini-types。对于缺少或者错误的类型定义，可以自行在本地新增或修改并同时报告给官方请求更新。
 
+### 修改 Typescript 配置
+在根目录创建 `tsconfig.json` 文件，并进行个性化配置，推荐配置如下：
+```
+// tsconfig.json
+{
+  "compilerOptions": {
+    // 与 Vue 的浏览器支持保持一致
+    "target": "es5",
+    // 这可以对 `this` 上的数据 property 进行更严格的推断
+    "strict": true,
+    // 如果使用 webpack 2+ 或 rollup，可以利用 tree-shake:
+    "module": "es2015",
+    "moduleResolution": "node",
+    "types": ["@dcloudio/types"]
+  }
+}
+```
+### cli 命令行创建 ts 项目
+参考[文档](https://uniapp.dcloud.io/quickstart-cli.html#install-vue-cli)
+### TypeScript 支持版本
+#### vue2
+
+`.nvue文件` 不支持 TypeScript，`.vue文件` HBuilderX 创建项目支持 `TypeScript 3.7.5`，cli 命令行创建项目支持 `TypeScript 3.0.0`。
+
+#### vue3
+`.vue文件` 及 `.nvue文件` 均支持最新版 TypeScript 语法。
 ### 注意事项
 
 在 uni-app 中使用 ts 需要注意以下事项。

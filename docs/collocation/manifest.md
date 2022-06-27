@@ -71,7 +71,7 @@ uni 统计配置项
 |webView|Object|当系统webview低于指定版本时，会弹出提示。或者下载x5内核后继续启动，仅Android支持，[详情](/collocation/manifest?id=appwebview)|3.5.0+|
 
 
-PS：上表只列出了核心部分，App平台的配置其实非常多，完整内容请参考 [完整的 manifest.json](/collocation/manifest?id=full-manifest)。
+PS：上表只列出了核心部分，App平台的配置其实非常多，完整内容请参考 [完整的 manifest.json](/collocation/manifest-app?id=full-manifest)。
 
 **Tips**
 
@@ -129,66 +129,10 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 
 |属性|类型|描述|
 |:-|:-|:-|
-|android|Object|Android 应用配置，详见: [Android配置明细](/collocation/manifest?id=android)|
-|ios|Object|iOS 应用配置，详见: [iOS配置明细](/collocation/manifest?id=ios)|
+|android|Object|Android 应用配置，详见: [Android配置明细](/collocation/manifest-app?id=android)|
+|ios|Object|iOS 应用配置，详见: [iOS配置明细](/collocation/manifest-app?id=ios)|
 |sdkConfigs|Object|SDK配置，仅打包生效 [详见](/collocation/manifest?id=sdkConfigs)|
 |orientation|Array|同 screenOrientation 配置，仅打包生效，已废弃，推荐使用 screenOrientation|
-
-#### App Android@android  
-App-Android平台云端打包相关配置
-
-|属性|类型|描述|  
-|:-|:-|:-|
-|packagename|String|Android平台云端打包的包名|
-|keystore|String|Android平台云端打包使用的签名证书文件路径|
-|password|String|Android平台云端打包使用的签名证书的密码，要求证书存储密码和证书密码相同|
-|aliasname|String|Android平台遇到你打包使用的证书别名|
-|schemes|String|Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[Android平台设置UrlSchemes](https://uniapp.dcloud.io/tutorial/app-android-schemes)|
-|abiFilters|Array|Android平台App支持的cpu类型，详情参考：[Android平台设置CPU类型](https://uniapp.dcloud.io/tutorial/app-android-abifilters)|
-|permissions|Array|Android平台App使用的权限|
-|custompermissions|Boolean|是否自定义Android权限配置|
-|permissionExternalStorage|Object|Android平台应用启动时申请读写手机存储权限策略配置，详情参考：[Android平台应用启动时读写手机存储权限策略](https://ask.dcloud.net.cn/article/36549)，支持request、prompt属性|
-|permissionPhoneState|Object|Android平台应用启动时申请读取设备信息权限配置，详情参考：[Android平台应用启动时访问设备信息(如IMEI)权限策略](https://ask.dcloud.net.cn/article/36549)，支持request、prompt属性|
-|minSdkVersion|String|Android平台最低支持版本，详情参考：[Android平台设置minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)|
-|targetSdkVersion|String|Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)|
-|packagingOptions|Array|Android平台云端打包时build.gradle的packagingOptions配置项，示例："packagingOptions": ["doNotStrip '*/armeabi-v7a/*.so'","merge '**/LICENSE.txt'"]|
-|jsEngine|String|uni-app使用的JS引擎，可取值v8、jsc，**将废弃，后续不再支持jsc引擎**|
-|debuggable|Boolean|是否开启Android调试开关|
-|locale|String|应用的默认语言|
-|forceDarkAllowed|Boolean|是否强制允许暗黑模式|
-|resizeableActivity|Boolean|是否支持分屏调整窗口大小|
-|hasTaskAffinity|Boolean|是否设置android：taskAffinity|
-|buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
-
-##### buildFeatures@buildFeatures  
-Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
-```json  
-"buildFeatures": {
-    "dataBinding": true,  //开启dataBinding
-    "viewBinding": true   //开启viewBinding
-}
-```
-
-#### App iOS@ios
-iOS平台云端打包相关配置
-
-|属性|类型|描述|  
-|:-|:-|:-|
-|appid|String|iOS平台云端打包使用的Bundle ID|
-|mobileprovision|String|iOS平台云端打包使用的profile文件路径|
-|p12|String|iOS平台云端打包使用的证书文件路径|
-|password|String|iOS打包使用的证书密码|
-|devices|String|iOS支持的设备类型，可取值iphone（仅支持iPhone设备）、ipad（仅支持iPad设备）、universal（同时支持iPhone和iPad设备）|
-|urlschemewhitelist|String|应用访问白名单列表，多个白名单使用“,”分割，详情参考：[iOS设置应用访问白名单](https://uniapp.dcloud.io/tutorial/app-ios-schemewhitelist)|
-|urltypes|String|Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[iOS设置应用UrlSchemes](https://uniapp.dcloud.io/tutorial/app-ios-schemes)|
-|UIBackgroundModes|Array|应用后台运行模式，详情参考：[iOS设置应用后台运行能力](https://uniapp.dcloud.io/tutorial/app-ios-uibackgroundmodes)|
-|frameworks|Array|依赖的系统库，**已废弃，推荐使用uni原生插件扩展使用系统依赖库**|
-|deploymentTarget|String|iOS支持的最低版本|
-|privacyDescription|Object|iOS隐私信息访问的许可描述|
-|idfa|Boolean|是否使用广告标识|
-|capabilities|Object|应用的能力配置（Capabilities）|
-|CFBundleName|String|应用的CFBundleName名称，默认值为HBuilder|
-|validArchitectures|Array|编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64|
 
 #### App SdkConfigs@sdkConfigs
 

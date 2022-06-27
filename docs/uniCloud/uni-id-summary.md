@@ -841,7 +841,7 @@ module.exports = {
 **注意**
 
 - pages.json内有`uniIdRouter`节点上述逻辑才会生效，自HBuilderX 3.5.0起创建空项目模板会自动配置空的`uniIdRouter`节点
-- uniIdRouter底层使用navigateTo、redirectTo、reLaunch、switchTab的拦截器进行页面跳转拦截，不会拦截进入首页和点击原生tabbar
+- uniIdRouter底层使用navigateTo、redirectTo、reLaunch、switchTab的拦截器进行页面跳转拦截，不会拦截进入首页和点击原生tabbar。一般tabbar页面都不做自动跳转，而是在页面内再提供登录按钮。比如tabbar上有购物车或个人中心，点击购物车后在购物车页面内部会放一个提示语和按钮，告知用户需要登录。在页面内判断用户是否登录，使用API[uniCloud.getCurrentUserInfo()](https://uniapp.dcloud.io/uniCloud/client-sdk.html#client-getcurrentuserinfo)
 
 ## 错误码@errcode
 

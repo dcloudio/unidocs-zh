@@ -744,7 +744,7 @@ manifest.json文件的 "app-plus" -> "distribute" -> "android" 节点用于设�
 
 <a id="buildFeatures" />
 
-- buildFeatures（HBuilderX4.5.0+版本支持）  
+- buildFeatures（HBuilderX 3.5.0+版本支持）  
   JSON对象，Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
 ```json  
 "buildFeatures": {

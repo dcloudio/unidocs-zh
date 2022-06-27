@@ -24,12 +24,8 @@
 ### cli 命令行创建 ts 项目
 参考[文档](https://uniapp.dcloud.io/quickstart-cli.html#install-vue-cli)
 ### TypeScript 支持版本
-#### vue2
-
-`.nvue文件` 不支持 TypeScript，`.vue文件` HBuilderX 创建项目支持 `TypeScript 3.7.5`，cli 命令行创建项目支持 `TypeScript 3.0.0`。
-
-#### vue3
-`.vue文件` 及 `.nvue文件` 均支持最新版 TypeScript 语法。
+uni-app 的 vue2 模式，nvue 文件中不支持编写 ts。vue 文件中可以使用 ts，但 ts 版本根据项目类型有区别。HBuilderX 创建的项目使用 ts 3.7.5，cli 创建的项目使用 ts 3.0.0。\
+uni-app 的 vue3 模式，vue 文件及 nvue 文件均支持最新版 ts。
 ### 注意事项
 
 在 uni-app 中使用 ts 需要注意以下事项。

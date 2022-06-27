@@ -4,7 +4,7 @@
 
 ## 简介@introduction
 
-- 支持运行到`chrome`、`内置浏览器`进行调试，目前其他浏览器无法调试。
+- 运行uni-app到web后，支持chrome调试。
 - 调试需要本机安装chrome浏览器
 - 调试支持的文件类型：`vue`文件、`nvue`文件、`ts`文件、`js`文件，断点只能打在js或ts代码中，请勿在vue文件template、style节点添加断点。
 

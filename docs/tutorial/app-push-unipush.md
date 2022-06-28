@@ -25,7 +25,7 @@
 - 本地离线打包参考[Android平台UniPush模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/push)、[iOS平台UniPush模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/push)
 
 
-## UniPush推送图标配置@unipush-icons
+### UniPush推送图标配置@unipush-icons
 
 
 ### UniPush自定义推送图标，可自定义push图标和小图标，位置如下图所示：

@@ -2,7 +2,7 @@
 
 > 2021年11月18日，腾讯云和阿里云均支持
 
-> 暂时不可在腾讯云nodejs12的云函数内使用，具体原因腾讯云正在排查
+> `腾讯云开发者使用redis务必将云函数运行环境设为node8。暂时不可在腾讯云nodejs12的云函数内使用redis，具体原因腾讯云正在排查。`
 
 Redis是一个基于key/value的内存数据库。在项目中通常作为MongoDB等磁盘数据库的补充来搭配使用。
 相对于磁盘数据库，Redis的核心优势是快。因为操作内存要比磁盘快的多，并且Redis只支持key/value数据，读写都很快。但Redis没有磁盘数据库丰富的查询等功能。
@@ -60,6 +60,11 @@ exports.main = async (event, context) => {
 };
 
 ```
+
+**注意**
+- redis中，以冒号分割key，在redis的uniCloud web控制台的可视化界面中，将以tree的方式显示。折叠所有使用同一前缀的key。
+比如2个key，`uni:aa`和`uni:bb`，将显示为根节点为uni的tree，展开后有aa和bb。
+- 以`uni:`、`dcloud:`、`unicloud`为前缀的redis的key，为uniCloud官方前缀。开发者自己的业务所需的key应避免使用这些前缀。
 
 ## Redis本地运行@local-function
 

@@ -20,7 +20,7 @@
 |chatType|number|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`仅微信小程序`|
 |apiCategory|string|API 类别|`仅微信小程序(2.20.0)`|
 |showFrom|number|唤起小程序的方式，目前取值固定为 10，表示通过 schema 唤起|`仅字节小程序(1.90.0)`|
-|mode|'default' | 'halfPage'|启动小程序的模式|`仅快手小程序`|
+|mode|'default' \| 'halfPage'|启动小程序的模式|`仅快手小程序`|
 
 **Object referrerInfo**
 

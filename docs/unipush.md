@@ -536,7 +536,7 @@ HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要�
 - 检查应用是否被授予推送权限：[https://ext.dcloud.net.cn/plugin?id=594](https://ext.dcloud.net.cn/plugin?id=594)
 - 开启关闭推送服务：[https://ext.dcloud.net.cn/plugin?id=727](https://ext.dcloud.net.cn/plugin?id=727)
 - 自定义推送铃声：[https://ext.dcloud.net.cn/plugin?id=7482](https://ext.dcloud.net.cn/plugin?id=7482)
-- 如何自定义推送通知的图标：[https://uniapp.dcloud.net.cn/unipush-custom-icon.html](https://uniapp.dcloud.net.cn/unipush-custom-icon.html)
+- 如何自定义推送通知的图标：[https://uniapp.dcloud.net.cn/unipush-custom-icon.html](https://uniapp.dcloud.net.cn/tutorial/app-push-unipush.html#unipush-icons)
 
 ## FAQ
 - Q：5+app和wap2app需要uniPush怎么办？  

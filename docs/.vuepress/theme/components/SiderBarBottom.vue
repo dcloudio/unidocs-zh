@@ -47,7 +47,7 @@
 						<a v-else
 							target="_blank"
 							style="text-decoration: underline"
-							href="https://qm.qq.com/cgi-bin/qm/qr?k=gj6sszH_Vt6jqhfd-bzPLKH-hHv5lfyG&jump_from=webapi"
+							href="https://qm.qq.com/cgi-bin/qm/qr?k=6t6SpBI2961dTlf9BNf20AkaUgxuNaOO&jump_from=webapi"
 						>
 							点此加入
 						</a>

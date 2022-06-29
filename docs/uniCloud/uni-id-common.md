@@ -2,7 +2,9 @@
 
 > HBuilderX 3.5.0+ 支持
 
-`uni-id-common`是uni-id的公共逻辑部分。
+`云函数公共模块`是不同云函数共享代码的一种方式。如果你不了解什么是`云函数公共模块`，请另读文档[公共模块](cf-common.md)
+
+`uni-id-common`是`uni-id`体系中用于token管理的公共模块。
 
 [旧版本uni-id公共模块](uniCloud/uni-id.md)是一个大而全的公共模块，不适用被众多云函数引用。
 
@@ -63,7 +65,7 @@ module.exports = {
 
 默认情况下`uni-id-common`某些接口会自动从全局context内获取客户端的PLATFORM（平台，如：app、h5、mp-weixin）等信息。
 
-在单实例多并发的场景下可能无法正确获取（全局对象会被后面的请求覆盖，可能会导致前面一次请求使用了后面一次请求的PLATFORM信息）。因此推荐在开启云函数单实例多并发后，自行为uni-id传入context。
+在云函数[单实例多并发](cf-functions.md?id=concurrency)的场景下可能无法正确获取（全局对象会被后面的请求覆盖，可能会导致前面一次请求使用了后面一次请求的PLATFORM信息）。因此推荐在开启云函数单实例多并发后，自行为uni-id传入context。
 
 此外云函数url化时无法获取客户端信息，也需要使用这种方式将客户端信息传入uni-id。
 

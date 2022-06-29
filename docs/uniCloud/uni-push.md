@@ -122,7 +122,7 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 而UniPush2.0，开发者无需关心证书、签名、服务器端文档，使用简单，极简的代码，云函数通过 `uni-cloud-push`（uniCloud 扩展库）的API即可直接执行uniPush所有操作，详情[文档](#uni-cloud-push)。
 （uniCloud扩展库，uniCloud自带API中不常用且包体积较大的部分，被独立为扩展库，可以由开发者自行选择是否使用改扩展库）
 
-## 第四步：客户端监听推送消息
+## 第四步：客户端监听推送消息@listener
 ### 名词解释
 #### 离线推送@offline
 <img width="30%" style="margin-left:20px;margin-top:0;float:right;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3bb2b4c4-1b73-426d-b713-f076aff80868.jpg"/>

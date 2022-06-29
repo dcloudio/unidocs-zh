@@ -49,12 +49,12 @@ H5平台登录注意事项：
 * [支付宝小程序用户授权](https://docs.alipay.com/mini/introduce/authcode)
 * [百度小程序登录](https://smartprogram.baidu.com/docs/develop/api/open_log/#%E6%8E%88%E6%9D%83%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/)
 * [字节跳动小程序登录](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/log-in/login)
-* [Apple登录、苹果登录、Sign in with Apple](https://ask.dcloud.net.cn/article/36651)
+* [Apple登录、苹果登录、Sign in with Apple](/tutorial/app-oauth-apple)
 * [一键登录](/univerify)
 
-如果服务端使用`uniCloud`，那么官方提供了[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)云端统一登录服务，把微信登录、短信验证码登录及角色权限管理等服务端登录开发，进行了统一的封装。
+如果服务端使用`uniCloud`，那么官方提供了[uni-id](/uniCloud/uni-id)云端统一登录服务，把微信登录、短信验证码登录及角色权限管理等服务端登录开发，进行了统一的封装。
 
-前端统一的`uni.login`和云端统一的`uni-id`搭配，可以极大提升登录业务的开发效率，强烈推荐给开发者使用。uni-id的文档另见：https://uniapp.dcloud.net.cn/uniCloud/uni-id
+前端统一的`uni.login`和云端统一的`uni-id`搭配，可以极大提升登录业务的开发效率，强烈推荐给开发者使用。uni-id的文档另见：[https://uniapp.dcloud.net.cn/uniCloud/uni-id](/uniCloud/uni-id-summary.md)
 
 
 **示例**

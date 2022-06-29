@@ -25,21 +25,10 @@ jest-environment-node@27.5.1
 npm install @dcloudio/uni-automator --save-dev
 ```
 3. package.json script节点新增命令
-
-vue2项目新增如下：
 ```
 "test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
 "test:android": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=android jest -i",
 "test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
-"test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
-"test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i"
-```
-
-vue3项目新增如下：
-```
-"test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
-"test:android": "cross-env UNI_PLATFORM=app UNI_OS_NAME=android jest -i",
-"test:ios": "cross-env UNI_PLATFORM=app UNI_OS_NAME=ios jest -i",
 "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
 "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i"
 ```
@@ -79,7 +68,7 @@ Time:        14.995s, estimated 16s
 
 1. 配置全局 `adb` 环境变量
 
-2. 配置 `Hbuilder` 调试基座/自定义基座 `android_base.apk` 目录，参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+2. 配置 `Hbuilder` 调试基座/自定义基座 `android_base.apk` 目录，参考 `jest.config.js`
 
 3. 创建 `cli` 工程/现有 `cli` 工程
 切换到工程目录，安装依赖包 `adbkit`
@@ -104,9 +93,9 @@ npm run test:android
 npm install node-simctl --save-dev
 ```
 
-2. 配置模拟器id，参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+2. 配置模拟器id，参考 `jest.config.js`
 
-3. 配置 `Hbuilder` 调试基座/自定义基座 `Pandora_simulator.app` 目录，参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+3. 配置 `Hbuilder` 调试基座/自定义基座 `Pandora_simulator.app` 目录，参考 `jest.config.js`
 
 4. 编写测试代码，参考测试用例
 

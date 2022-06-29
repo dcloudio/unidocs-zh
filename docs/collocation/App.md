@@ -1,9 +1,8 @@
-`App.vue`是uni-app的主组件，所有页面都是在`App.vue`下进行切换的，是页面入口文件。但`App.vue`本身不是页面，这里不能编写视图元素，也就是没有`<template>`。
+`App.vue`是uni-app的主组件，所有页面都是在`App.vue`下进行切换的，是页面入口文件。但`App.vue`本身不是页面，这里不能编写视图元素。
 
 这个文件的作用包括：调用应用生命周期函数、配置全局样式、配置全局的存储globalData
 
 应用生命周期仅可在`App.vue`中监听，在页面监听无效。
-
 ## 应用生命周期@applifecycle
 
 ``uni-app`` 支持如下应用生命周期函数：
@@ -39,7 +38,6 @@
 
 **注意**
 - **应用生命周期仅可在`App.vue`中监听，在其它页面监听无效**。
-- 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](https://uniapp.dcloud.net.cn/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)
 - onlaunch里进行页面跳转，如遇白屏报错，请参考[https://ask.dcloud.net.cn/article/35942](https://ask.dcloud.net.cn/article/35942)
 - `App.vue` 不能写模板
 - onPageNotFound 页面实际上已经打开了（比如通过分享卡片、小程序码）且发现页面不存在，才会触发，api 跳转不存在的页面不会触发（如 uni.navigateTo）

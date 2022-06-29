@@ -6,13 +6,13 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
 ## 标准 js 和浏览器 js 的区别
 
-`uni-app`的 js 代码，web端运行于浏览器中。非web端（包含小程序和 App），Android 平台运行在 v8 引擎中，iOS 平台运行在 iOS 自带的 jscore 引擎中，都没有运行在浏览器或 webview 里。
+`uni-app`的 js 代码，h5 端运行于浏览器中。非 h5 端（包含小程序和 App），Android 平台运行在 v8 引擎中，iOS 平台运行在 iOS 自带的 jscore 引擎中，都没有运行在浏览器或 webview 里。
 
-非web端，虽然不支持 window、document、navigator 等浏览器的 js API，但也支持标准 ECMAScript。
+非 H5 端，虽然不支持 window、document、navigator 等浏览器的 js API，但也支持标准 ECMAScript。
 
-请注意不要把浏览器里的 js 等价于标准 js。
+请注意不要把浏览器里的 js 扩展对象等价于标准 js。
 
-所以 uni-app 的web端，一样支持标准 js，支持 if、for 等语法，支持字符串、数字、时间、布尔值、数组、自定义对象等变量类型及各种处理方法。仅仅是不支持 window、document、navigator 等浏览器专用对象。
+所以 uni-app 的非 H5 端，一样支持标准 js，支持 if、for 等语法，支持字符串、数字、时间、布尔值、数组、自定义对象等变量类型及各种处理方法。仅仅是不支持 window、document、navigator 等浏览器专用对象。
 
 ## 各端特色 API 调用
 

@@ -3,70 +3,46 @@
 ## 概述
 `uni-push`是DCloud联合个推公司推出的、全端的、云端一体的统一推送服务。
 
-1. 客户端方面，`uni-push`支持App、web、小程序。App端还内建了苹果、华为、小米、OPPO、VIVO、魅族、谷歌FCM等手机厂商的系统推送和个推第三方推送。（uni-push 1.0不支持小程序端、web端以及App端仅启用轻量级的在线推送）
+1. 客户端方面，`uni-push`支持App、web、小程序。App端还内建了苹果、华为、小米、OPPO、VIVO、魅族、谷歌FCM等手机厂商的系统推送和个推第三方推送。（uni-push 1.0不支持小程序端、web端以及App端的在线推送）
 2. 服务端方面，uni-push2.0起支持uniCloud云端一体，无需再编写复杂代码轻松完成push。而uni-push1.0支持使用传统服务器开发语言如php，未和客户端有效协同，流程比uni-push2.0繁琐。
 3. uni-push还自带一个web控制台。不写代码也可以在web页面发推送。uni-push1.0的web控制台在[dev.dcloud.net.cn](https://dev.dcloud.net.cn)。uni-push2.0的web控制台是开源的，属于uni-admin插件。
 
 ## 什么是push？
-push，指服务器主动向客户端发送消息。无需客户端持续轮询服务器。
+push，指服务器主动向客户端发送消息。无需客户端持续轮询服务器，那样即需要客户端持续在线、耗电，又加重服务器负载。
 
-轮询有很多弊端：1) 客户端应用不在线就无法push；2) 手机端耗电严重；3) 服务器负载高
+手机的通知栏、小程序的订阅消息、web浏览器的webnotification都是一种push。
 
-手机的通知栏、小程序的订阅消息都是一种push，由手机操作系统或微信在底层提供了push通道，屏蔽了轮询的各种弊端。你的应用可以被关闭，但只要手机有网，操作系统提供的push通道是会在线的。
+当客户端在线时，push通过socket协议实现。当客户端离线时，服务器找不到客户端，开发者无法自己实现推送，只能依托手机操作系统、浏览器以及小程序底层提供的离线消息推送，调用指定的API或SDK来发送消息。
 
-web浏览器的webnotification其实是一个本地通知栏功能，浏览器厂商没有提供push通道。
+所以一个push系统由3部分组成：业务服务器 + 专业push服务器 + 客户端。
 
-当客户端在线时，push通过socket协议实现。当客户端离线时，服务器找不到客户端，开发者无法自己实现推送，只能依托手机操作系统、小程序底层提供的离线消息推送，调用指定的手机厂商或小程序厂商的服务器接口来发送消息。
+业务服务器向专业push服务器发送指令，告知需要向哪些客户端发送什么样的消息；然后专业push服务器检测客户端是否在线，在线则走socket通道下发消息，客户端代码可以直接响应处理，离线则通过平台专用服务发送通知栏消息，用户在平台提供的通知栏中看到push消息，点击后呼起客户端应用，客户端代码才能接收响应。
 
-所以一个push系统需要3部分协作：开发者的业务服务器 + 专业push服务器 + 开发者的客户端应用。
+在App平台，push很常见，但问题也最多。手机厂商众多，他们各自都有不同的推送服务，包括Apple、google（仅能在海外使用）、华为、小米、oppo、vivo、魅族，以及还有一些没有专业推送服务的中小手机品牌。他们对App后台耗电都有查杀机制，除了微信等大应用，普通应用很难常驻后台。
 
-1. 开发者的业务服务器向专业push服务器发送指令，告知需要向哪些客户端发送什么样的消息
-2. 专业push服务器再向客户端发送消息
-3. 手机用户在操作系统的通知栏中看到push消息，点击后呼起客户端应用，客户端代码才能接收响应；如果是小程序的话，则是在微信消息里看到订阅消息，点击后呼起小程序。
+如果开发者把上述每个平台的客户端和服务器的SDK都对接一遍，还自己处理没有push服务的中小品牌手机，那过于困难了。所以业内有专业的推送服务厂商，如个推（属于上市公司每日互动），而DCloud与个推深度合作，为uni-app的开发者提供了比传统方案便利甚多的统一推送方案`uni-push`。
 
-由于手机厂商众多，他们各自都有不同的推送服务，包括Apple、google（仅能在海外使用）、华为、小米、oppo、vivo、魅族，以及还有一些没有专业推送服务的中小手机品牌。他们对App后台耗电都有查杀机制，除了微信等大应用，普通应用很难常驻后台。
-
-如果开发者把上述每个平台的客户端和服务器的SDK都对接一遍，还自己处理没有push服务的中小品牌手机，那过于困难了。所以业内有专业的推送服务厂商把各种手机厂商的通道封装成一套统一的API，如个推（属于上市公司每日互动）；同时这些三方专业推送厂商还提供了专业socket通道。当应用在线时，也可以直接通过socket下发消息。否则开发者需要写很多判断代码、搭建socket服务器、处理在线时和离线时各种差异。
-
-DCloud与个推深度合作，为uni-app的开发者提供了比传统方案便利甚多的统一推送方案`uni-push`，利用云端一体一起配合改造的优势，同时提供基于uniCloud的push服务器和基于uni-app的push客户端，两者高效协同，极大的简化了push的使用。
-
-> 注：`uni-push`的服务器稳定性是由阿里云serverless、腾讯云serverless、个推来保障的，都是日活过亿的上市公司，无需担心稳定性。
-
-如下图所示：
-首先开发者的uniCloud应用服务器向uniPush服务器发送push消息，然后
-- 如果客户端应用在线，客户端通过socket直接收到push在线消息；
-- 客户端应用不联网时，`uni-push`服务器根据客户端类型，把push消息发给某个手机厂商的push服务器或小程序的订阅消息服务器；然后厂商push通道会把这条消息发到手机的通知栏或微信的订阅消息里；手机用户点击通知栏消息或小程序订阅消息后，启动App或小程序，客户端才能收到离线消息。
+如下图所示：应用启动并联网时，客户端直接收到push在线消息；应用不联网时push消息将以通知栏消息的方式展示，用户点击通知栏消息后，客户端才能收到离线消息。
 	<img width="100%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1b3b17d1-d6fb-4d26-96d4-c0dbc4300aad.png"/></br>
 
-
-总结下`uni-push`提供的功能：
-1. 一个在线的socket下行服务，无论app、小程序、web，只要在线，都可以从服务器推送消息。尤其对于uniCloud用户，这个免费socket下行服务用途很多。
-2. app平台，提供app离线时的推送，聚合了所有已知手机厂商的push通道；对于未提供push通道的小手机厂商，提供后台常驻进程接收push消息（受手机rom节电设置约束）
-3. 小程序平台，提供了小程序离线时的订阅消息推送能力的封装（暂未实现）
-4. web平台，提供了webnotification的封装。当标签卡在后台时（注意不是关闭时），仍然可以在屏幕上弹出通知栏（暂未实现）
-5. 快应用平台，提供了push的封装（暂未实现）
-6. 客户端创造本地消息的api统一封装，`uni.createNotification`，可以在app、web浏览器（暂未实现）、快应用（暂未实现），在本地js中直接创建本地消息。
-7. 一个[uni-admin](/uniCloud/admin)插件，开源的web控制台，无需编程，可视化界面发送push消息 [详见](需补充插件链接)
-
-在[uni-starter](/uniCloud/uni-starter)里，还提供了app push权限判断、申请、开关设置、消息中心（暂未实现），搭配使用可以大量降低开发工作量。
-
-注意：app申请创建通知栏消息、web申请弹出通知，均会由操作系统或浏览器自动弹窗询问用户是否同意。小程序下需要手机用户主动发起订阅行为，才能送达消息。
+除了提供App推送，`uni-push`还面向web和小程序提供了在线push，它其实是一个免费的socket服务器。尤其对于uniCloud用户来说，补齐了众多重要场景。
 
 `uni-push`即降低了开发成本，又提高了push送达率，还支持全平台，并且免费，是当前推送的最佳解决方案。
 
 # 应用场景
-- 用户消息通知
-当 APP 用户相关状态或者系统功能状态变化时（如用户订单通知、交易提醒、物流通知、升级提醒、社交互动提醒等），可对用户进行及时告知，或者促使用户完成特定操作。
+- 系统消息通知 </br>
+当 APP 用户相关状态或者系统功能状态变化时（如用户订单通知、交易提醒、物流通知、升级提醒等），可对用户进行及时告知，或者促使用户完成特定操作。
 
-- 离线语音播报
-它也是一种用户消息推送，实现原理其实是自定义通知提醒铃声
+- 内容订阅推送 </br>
+帮助内容资讯类、视频类等APP主动推送用户关注的内容或热点资讯，提升用户活跃，提高APP使用率。
 
-- 营销促活通知
-在日常营销推广、促销活动等场景下（如双11大促、产品上新、重要资讯等），APP可对目标用户进行定向通知栏消息+应用内消息推送，吸引用户参与活动，提升日活。
+- 社交互动提醒 </br>
+当点赞、评论、分享等社交行为产生时，即使用户未打开 APP ，也可以对其进行消息提醒，提高用户互动频次，提升用户活跃度。
 
-- 基于uniCloud的IM、聊天、客服、棋牌游戏交互等
-DCloud基于`uni-push2`在开发`uni-im`，后续会开源，敬请关注。
-另外棋牌游戏等，需要客户端被动接收消息的需求都可以用`uni-push`实现。
+- 活动营销 </br>
+在日常营销推广、促销活动等场景下（如双11、618大促、会员促销、游戏活动、产品推送活动等），APP可对目标用户进行定向通知栏消息+应用内消息推送，吸引用户参与活动，提升转化。
+
+还有聊天功能、棋牌游戏等，需要客户端被动接收消息的需求的功能都可以用uni-push实现。
 
 
 # 常见问题
@@ -86,7 +62,7 @@ DCloud基于`uni-push2`在开发`uni-im`，后续会开源，敬请关注。
 
 - uni-push可以完整替代socket吗？
 
-	答：能部分替代。uni-push客户端接收消息的通讯协议属于websocket；但业务服务端向uniPush服务发送消息用的是http通讯协议，会有1-2秒的延时。需要超低延迟的应用场景，如多人交互远程画板不合适。但对于普通的im消息、聊天、通知都没有问题。
+	答：能部分替代。uni-push客户端接收消息的通讯协议属于websocket；但服务端调用消息下发用的是http通讯协议，会有1-2秒的延时。需要超低延迟的应用场景，如多人交互远程画板不合适。但对于普通的im消息、聊天、通知都没有问题。
 
 # 开通和配置指南  
 ## 产品入口
@@ -120,8 +96,8 @@ DCloud基于`uni-push2`在开发`uni-im`，后续会开源，敬请关注。
 关联服务空间说明：
 uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使用uniCloud，但专业推送服务器在uniCloud上。
 
-- 如果您的后台业务使用uniCloud开发，那理解比较简单。
-- 如果您的后台业务没有使用uniCloud，那么也需要在uni-app项目中创建uniCloud环境，在HBuilderX中和dev的uni-push配置中均绑定相同服务空间，之前的业务仍然由客户端连接原有传统服务器，push相关功能则通过uniCloud服务空间实现。如果您之前使用过三方推送服务的话，可以理解为您的服务器不再调用个推服务器，而是改为调用uniCloud服务空间。
+如果您的后台业务使用uniCloud开发，那理解比较简单。
+如果您的后台业务没有使用uniCloud，那么也需要在uni-app项目中创建uniCloud环境，在HBuilderX中和dev的uni-push配置中均绑定相同服务空间，之前的业务仍然由客户端连接原有传统服务器，push相关功能则通过uniCloud服务空间实现。如果您之前使用过三方推送服务的话，可以理解为您的服务器不再调用个推服务器，而是改为调用uniCloud服务空间。
 
 在uniCloud的云函数中，加载扩展库 `uni-cloud-push`，直接调用相关API，无需额外的服务端配置。而传统服务器开发者需要把这个云函数URL后变成http接口，再由原来的php或java代码调用这个http接口。
 
@@ -142,26 +118,22 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 
 ## 第三步：服务端推送消息
 消息推送属于敏感操作，只能直接或间接由服务端触发。
-
 传统的三方push服务，需要开发者在服务端配置密钥或证书，根据服务器端文档签名获取token，再向相关URL接口发起网络请求......
-
 而UniPush2.0，开发者无需关心证书、签名、服务器端文档，使用简单，极简的代码，云函数通过 `uni-cloud-push`（uniCloud 扩展库）的API即可直接执行uniPush所有操作，详情[文档](#uni-cloud-push)。
-（uniCloud扩展库，uniCloud自带API中不常用且包体积较大的部分，被独立为扩展库，可以由开发者自行选择是否使用该扩展库）
+（uniCloud扩展库，uniCloud自带API中不常用且包体积较大的部分，被独立为扩展库，可以由开发者自行选择是否使用改扩展库）
 
-## 第四步：客户端监听推送消息@listener
+## 第四步：客户端监听推送消息
 ### 名词解释
 #### 离线推送@offline
 <img width="30%" style="margin-left:20px;margin-top:0;float:right;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3bb2b4c4-1b73-426d-b713-f076aff80868.jpg"/>
 仅APP端支持，当应用被用户关闭，或者运行到后台时，手机厂商为了省电或释放内存，会终止App后台联网。
-
 消息将通过不会离线的手机厂商通道，下发到手机系统推送服务模块；
-
 此时客户端会自动创建通知栏消息，展示在系统消息中心（如图所示）但客户端监听不到消息内容；当用户点击通知栏消息后，会将APP唤醒此时APP才能监听到消息内容。
 
 #### 在线推送@online
 当应用在线时，不会创建“通知栏消息”，此时客户端会立即监听到消息内容。
-
-如果业务逻辑上需要创建“通知栏消息”来提醒用户；可以在监听到消息内容后，使用创建本地消息API `uni.createNotification`手动创建通知栏消息。
+如果业务逻辑上需要创建“通知栏消息”来提醒用户；可以在监听到消息内容后，
+使用创建本地消息API [plus.push.createMessage](https://www.html5plus.org/doc/zh_cn/push.html#plus.push.createMessage)手动创建通知栏消息。
 
 ### 操作步骤
 1. 启用客户端uniPush，打开`manifest.json`-`App模块配置`-中勾选`uniPush 2.0`
@@ -183,14 +155,14 @@ uni.onPushMessage((res)=>{
 
 `uni-push`有服务器API和客户端API。
 
-## 服务端开发 - uni-cloud-push扩展库@uni-cloud-push
-为云函数启用`uni-cloud-push`扩展库，在云函数右键-管理公共模块或扩展库依赖。如图所示：勾选`uni-cloud-push` 统一推送服务，点击确定即可。
+## 服务端开发 - uniPush扩展库@uni-cloud-push
+为云函数启用uniPush扩展库，在云函数右键-管理公共模块或扩展库依赖。如图所示：勾选uni-cloud-push 统一推送服务，点击确定即可。
 </br>
 <img style="width:80%;max-width:600px;margin:0 10%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/cb2bc39d-0dbd-4321-ba6f-cc4c782c820c.jpg"/>
 </br>
 <img style="width:80%;max-width:600px;margin:0 10%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/66f41377-5492-4345-b85c-e6978dd5ef63.jpg"/>
 </br>
-下面是一个开启了`uni-cloud-push`扩展库的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
+下面是一个开启了uniPush扩展库的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
 
 ```js
 {
@@ -199,7 +171,7 @@ uni.onPushMessage((res)=>{
 	"description": "",
 	"main": "index.js",
 	"extensions": {
-		"uni-cloud-push": {} // 配置为此云函数开启uni-cloud-push扩展库，值为空对象留作后续追加参数，暂无内容
+		"uni-cloud-push": {} // 配置为此云函数开启uniPush扩展库，值为空对象留作后续追加参数，暂无内容
 	},
 	"author": ""
 }
@@ -228,52 +200,38 @@ exports.main = async (event, context) => {
 };
 ```
 
-### 推送目标选择
-发送push可以基于如下维度选择目标设备：
-- 不指定，所有启动过应用的设备
-- user_id，指定的用户id，基于uni-id账户体系
-- user_tag，指定标签的用户，基于uni-id账户体系
-- device_id，指定的设备id，基于opendb表的device设备（暂未实现）
-- device_tag，指定的设备标签，基于opendb表的device设备（暂未实现）
-- push_clientid，个推客户端id。其实也会存在opendb表中。
-- getui_custom_tag，个推自定义客户端标签。由用户自定义
-- getui_big_data_tag，个推大数据标签。使用此功能，需开通个推·用户画像产品，请联系个推商务咨询
-- getui_alias，个推自定义客户端别名。使用此功能，需开通个推·用户画像产品，请联系个推商务咨询
-
-
-**注意**：`user_id`、`user_tag`、`push_clientid`、`push_client_tag`、`alias`不可多选。全为空表示向所有启动过应用的设备推送。
-
-<!-- alias是什么鬼？ -->
+### 消息推送
+向设定的（单个、群组、全体）用户，即时或定时推送消息。支持设置：通知栏消息内容、控制响铃，震动，浮动，闪灯；手机桌面应用右上角的角标等。
 
 #### 接口形式
-可以向设定的（单个、群组、全体）用户，即时或定时推送消息。支持设置：通知栏消息内容、控制响铃，震动，浮动，闪灯；手机桌面应用右上角的角标等。
 ```js 
 await uniPush.sendMessage(OBJECT)
 ```
-#### sendMessage参数说明    
+#### 入参说明    
 |名称|类型|必填|默认值|描述|平台特性|
 |--|--|--|--|--|--|
-|platform|String、Array|否|"ALL"|指定接收消息的平台，"ALL"表示所有平台。支持用数组枚举支持的平台，如：["app"、"h5"、"mp_weixin"]</br>使用`push_clientid`和`push_client_tag`时无效|
 |user_id|String、Array|否|无|基于uni-id的_id，指定消息接收者。支持多个以数组的形式列举，长度不超过100。| |
-|user_tag|Json Array|否|无|对指定应用的符合筛选条件的用户群发推送消息。支持定时、定速功能。详见下方tag说明| |
 |check_token|Boolean|否|true|校验客户端登陆状态是否有效（含token过期）</br>仅用user_id指定消息接收者时有效| |
-|push_client_tag|String|否|无|基于个推`push_client_tag`，指定消息接收者;</br>注：该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情 。| |
-|push_clientid|String、Array|否|无|基于uni.getPushCid获取的客户端推送标识，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["cid-1","cid-2"]，数组长度不大于1000| |
+|platform|String、Array|否|"ALL"|指定接收消息的平台，"ALL"表示所有平台。支持用数组枚举支持的平台，如：["app"、"h5"、"mp_weixin"]</br>仅用user_id指定消息接收者时有效|
+|custom_tag|String|否|无|基于个推custom_tag，指定消息接收者;</br>注：该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情 。| |
+|tag|Json Array|否|无|对指定应用的符合筛选条件的用户群发推送消息。支持定时、定速功能。，详细解释见下方tag说明| |
 |alias|String、Array|否|无|基于用户别名，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["alias-1","alias-2"]，数组长度不大于1000| |
-|title|String|是|无|通知栏标题，长度小于20|APP|
-|content|String|是|无|通知栏内容，长度小于50|APP|
-|payloaddata|String、Objcet|是|无|推送透传数据，app程序接受的数据，长度小于800| |
+|cid|String、Array|否|无|基于uni.getPushClientId获取的客户端推送标识，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["cid-1","cid-2"]，数组长度不大于1000| |
+|title|String|是|无|通知栏标题，长度小于20|APP-PLUS|
+|content|String|是|无|通知栏内容，长度小于50|APP-PLUS|
+|payload|String、Objcet|是|无|透传内容,长度小于800| |
 |badge|Number、String|否|无|设置应用右上角数字，用于提醒用户未阅读消息数量，支持在原有数字上的+、-操作;</br>例如：badge=+1，表示当前角标+1；</br>badge=-1，(仅iOS支持)表示当前角标-1(角标>=0)；</br>badge=1，(仅iOS和华为EMUI版本10.0.0+支持)表示当前角标置成1。| ios、android-华为|
 |channel|Json|否|无|消息渠道设置，避免被限量推送，需要在各家发邮件申请，详情下方[channel说明](#channel 说明)| android|
-|request_id|String|是|无|请求唯一标识号，10-32位之间；如果`request_id`重复，会导致消息丢失||
+|request_id|String|是|无|请求唯一标识号，10-32位之间；如果request_id重复，会导致消息丢失||
 |group_name|String|否|无|任务组名。多个消息任务可以用同一个任务组名，后续可根据任务组名查询推送情况（长度限制100字符，且不能含有特殊符号）；</br>仅基于user_id、cid、tag指定消息接收者，或对应用的所有用户群发推送消息时有效。||
-|sound|String|否|无|消息提醒铃声设置，详见下方[sound说明](#sound 说明)|
-|content_available|Number|否|0|当应用切到后台时收到push消息，默认以通知栏消息提醒用户。你可以通过开启静默消息来关闭该行为。</br>0表示普通通知消息(默认为0)；</br>1表示静默推送(无通知栏消息)，静默推送时不需要填写其他参数。</br>苹果官方建议1小时最多推送3条静默消息。|ios |
+|sound|String|否|无|消息提醒铃声设置。android需要设置channel生效，详见下方[铃声设置注意](#铃声设置注意)</br>如果铃声文件未找到，响铃为系统默认铃声。</br>铃声文件需要使用uni原生插件[点此打开](https://ext.dcloud.net.cn/plugin?id=690)打包后生效。</br>建议iOS和Android铃声使用一致的文件名称。直接填写文件名，不含扩展名；如：pushsound.caf或pushsound.mp3，直接填写pushsound即可。|
+|content_available|Number|否|0|0表示普通通知消息(默认为0)；</br>1表示静默推送(无通知栏消息)，静默推送时不需要填写其他参数。</br>苹果官方建议1小时最多推送3条静默消息|ios |
 |open_url|string|否|无|填写该值将:强制push类型为“通知栏消息”，点击后系统浏览器将打开此链接。以http(s)://开头的有效可访问链接,华为通道必须使用https。长度小于300|android|
 |settings|Json|否|无|推送条件设置，详细解释见下方settings说明||
-|options|Json|否|无|其他配置，[更多关于options的说明](/unpackage/个推push文档/多厂商参数.md)||
+|option|Json|否|无|其他配置，[更多关于option的说明](/unpackage/个推push文档/多厂商参数.md)||
 
 
+**注意**：指定消息接收者：user_id、cid、alias、custom_tag、tag不可多选，全为空表示群推（向所有用户推送消息）。
 
 **频次限制说明：**
 - 多客户端接收消息推送API，频次限制200万次/天，申请修改请点击右侧“技术咨询”了解详情。
@@ -283,7 +241,7 @@ await uniPush.sendMessage(OBJECT)
 ##### tag 说明
 |名称|类型|是否必需|默认值|描述|
 |--|--|--|--|--|
-|key|String|是|无|查询条件(phone_type 手机类型; region 省市; custom_tag 客户端标签; portrait，个推用户画像使用编码，[点击下载文件portrait.data](https://docs.getui.com/files/portrait.data)。|
+|key|String|是|无|查询条件(phone_type 手机类型; region 省市; custom_tag 用户标签; portrait，个推用户画像使用编码，[点击下载文件portrait.data](https://docs.getui.com/files/portrait.data)。|
 |values|String Array| 是| 无|查询条件值列表，其中<br>**手机型号**使用如下参数`android`和`ios`；<br>**省市**使用编号，[点击下载文件region_code.data](https://docs.getui.com/files/region_code.data)；|
 | opt_type|String|是|无|or(或),and(与),not(非)，`values`间的交并补操作|
 
@@ -306,7 +264,7 @@ await uniPush.sendMessage(OBJECT)
 |st|Number|否|无|通道策略1-4，表示含义同上，需要开通st厂商使用该通道推送消息|
 |...|Number|否|无|通道策略1-4，表示含义同上|
 
-##### channel 说明@channel
+##### channel 说明
 |名称|类型|必填|默认值|描述|
 |--|--|--|--|--|
 |HW|string|否|无|需要先向华为侧发邮件申请权限参见[华为消息分类申请](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835)。|
@@ -314,14 +272,10 @@ await uniPush.sendMessage(OBJECT)
 |OP|string|否|无|需要联系客服开通;OPush平台上所有通道分为“公信”(默认)、“私信”两类，默认下发公信消息。公信消息单日可推送数量有限制，私信消息不限(仅限单个用户)。私信消息申请请参见（OPPO官方文档）[通道升级公测邀请](https://open.oppomobile.com/wiki/doc#id=11096)。|
 |VO|string|否|无| 0代表运营消息，1代表系统消息;vivo消息分类功能将推送消息类型分为运营消息和系统消息，默认下发运营消息。运营消息单用户单应用单日接收条数上限为5条，系统消息不限。系统消息功能不用申请，可以直接使用，如特殊情况需额外提升系统消息量级，请参见（vivo官方文档）[推送消息分类功能说明](https://dev.vivo.com.cn/documentCenter/doc/359)。|
 
-##### sound 说明@sound
-1. 铃声文件需要使用uni原生插件[点此打开](https://ext.dcloud.net.cn/plugin?id=690)打包后生效。
-2. android需要设置channel生效
-	- 华为通道[申请自分类权益](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835#section3699155822013)
-	- 小米通道需：申请重要级别消息Channel —— 申请其他个性化重要级别消息Channel，并设置自定义铃声前端路径格式：`android.resource://你的APP应用包名/raw/铃声文件名`，例如：`android.resource://io.dcloud.UniPush2/raw/pushsound`（路径不需要带音频后缀名）如图
+##### 铃声设置注意
+1. 华为通道须 [申请自分类权益](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835#section3699155822013)
+2. 小米通道需：申请重要级别消息Channel —— 申请其他个性化重要级别消息Channel，并设置自定义铃声前端路径格式：`android.resource://你的APP应用包名/raw/铃声文件名`，例如：`android.resource://io.dcloud.UniPush2/raw/pushsound`（路径不需要带音频后缀名）如图
 ![](https://docs.getui.com/img/img_getui_server_rest_v2_third_party_1.png)
-3. 如果铃声文件未找到，响铃为系统默认铃声。
-4. iOS和Android铃声需使用一致的文件名称，直接填写文件名，不含扩展名；如：pushsound.caf或pushsound.mp3，直接填写pushsound即可。
 
 #### 响应体说明
 多个别名推送返回值示例：
@@ -693,7 +647,7 @@ await push.unboundAllAlias(alias)
 > 返回结构说明请参考[公共返回结构](#公共返回结构)
 
 
-### 客户端标签
+### 用户标签
 开发者可对用户设定别名与标签，推送时可直接根据别名、标签进行推送，方便对用户的管理。
 标签是用户的一种属性，每个用户（通过CID来标识 ）可以打上100个标签。
 例子：“喜爱足球”，“喜爱动漫”
@@ -750,7 +704,7 @@ await push.cidsBindCustomTag(OBJECT)
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
 | cid | String Array | 是      | 无    | 要修改标签属性的cid列表，数组长度不大于1000 |
-| custom_tag | String | 是 | 无 | 客户端标签，标签中不能包含空格，单个标签最大长度为32字符，如果含有中文字符需要编码(UrlEncode) |
+| custom_tag | String | 是 | 无 | 用户标签，标签中不能包含空格，单个标签最大长度为32字符，如果含有中文字符需要编码(UrlEncode) |
 
 * 参数示例
 
@@ -786,7 +740,7 @@ await push.cidsUnboundCustomTag(OBJECT)
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
 | cid | String Array | 是      | 无    | 要修改标签属性的cid列表，数组长度不大于1000 |
-| custom_tag | String | 是 | 无 | 客户端标签，标签中不能包含空格，单个标签最大长度为32字符，如果含有中文字符需要编码(UrlEncode) |
+| custom_tag | String | 是 | 无 | 用户标签，标签中不能包含空格，单个标签最大长度为32字符，如果含有中文字符需要编码(UrlEncode) |
 
 * 参数示例
 ```js
@@ -811,8 +765,8 @@ await push.cidsUnboundCustomTag(OBJECT)
 
 > 返回结构说明请参考[公共返回结构](#公共返回结构)
 
-#### 查询客户端标签
-根据cid查询客户端标签列表
+#### 查询用户标签
+根据cid查询用户标签列表
 >此接口有频次控制(每分钟最多100次，每天最多10000次)，申请修改请点击右侧“技术咨询”了解详情
 ##### 接口形式
 ```js 
@@ -848,19 +802,17 @@ await push.searchCustomTagByCid(cid)
 
 
 ### 黑名单用户
-黑名单用户无法收到推送消息。当使用群发全推时，有时需要调节某些设备不发，此时需要按push_clientid进行黑名单控制。
-
+黑名单用户无法收到推送消息
 #### 添加黑名单用户
 将单个或多个用户加入黑名单，对于黑名单用户在推送过程中会被过滤掉。
-
 ##### 接口形式
 ```js 
-await push.addCidToBlacklist(push_clientid)
+await push.addCidToBlacklist(cid)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| push_clientid | String | 是 | 无 | 用户标识，多个以英文逗号隔开，一次最多传200个 |
+| cid | String | 是 | 无 | 用户标识，多个以英文逗号隔开，一次最多传200个 |
 
 ##### 响应体说明
 * 返回值示例
@@ -876,15 +828,15 @@ await push.addCidToBlacklist(push_clientid)
 
 
 #### 移除黑名单用户
-将单个push_clientid或多个push_clientid用户移出黑名单，对于黑名单用户在推送过程中会被过滤掉的，不会给黑名单用户推送消息
+将单个cid或多个cid用户移出黑名单，对于黑名单用户在推送过程中会被过滤掉的，不会给黑名单用户推送消息
 ##### 接口形式
 ```js 
-await push.removeCidInBlacklist(push_clientid)
+await push.removeCidInBlacklist(cid)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| getui_ | String | 是 | 无 | 用户标识，多个以英文逗号隔开，一次最多传200个 |
+| cid | String | 是 | 无 | 用户标识，多个以英文逗号隔开，一次最多传200个 |
 
 ##### 响应体说明
 * 返回值示例
@@ -901,18 +853,18 @@ await push.removeCidInBlacklist(push_clientid)
 
 ### 设备信息
 #### 设备在线状态
-查询你的应用在线状态
+查询你的应用应用在线状态
 
-注意：该状态为：`offline`离线时，消息可通过：同设备下其他集成个推SDK的在线应用通道完成推送（iOS不支持，Android受限于手机rom的节点设置策略）
+注意：该状态为：`offline`离线时，消息可通过:同设备下其他集成个推SDK的在线应用通道完成推送
 
 ##### 接口形式
 ```js 
-await push.getClientStatusByCid(push_clientid)
+await push.getClientStatusByCid(cid)
 ```
 ##### 入参说明
 | 名称 | 类型    | 是否必须 | 默认值 | 说明                                    |
 |:----|:-------|:--------|:------|:---------------------------------------|
-| push_clientid | String | 是      | 无    | 用户标识，多个以英文逗号隔开，一次最多传1000个 |
+| cid | String | 是      | 无    | 用户标识，多个以英文逗号隔开，一次最多传1000个 |
 
 ##### 响应体说明
 * 返回值示例
@@ -1091,7 +1043,7 @@ await push.getClientCount(OBJECT)
 
 | 名称       | 类型           | 是否必须   | 默认值  | 描述  |
 |---- |----|---| ----|
-| key | String 			| 是 | 无      |查询条件(phone_type 手机类型,region 省市,custom_tag 客户端标签，设置标签请见[接口](#客户端标签))|
+| key | String 			| 是 | 无      |查询条件(phone_type 手机类型,region 省市,custom_tag 用户标签，设置标签请见[接口](#用户标签))|
 | values | String Array | 是 | 无      |查询条件值列表，其中<br>**手机型号**使用如下参数`android`和`ios`；<br>**省市**使用编号，[点击下载文件region_code.data](https://docs.getui.com/files/region_code.data)； |
 | opt_type|String|是|无|or(或),and(与),not(非)，`values`间的交并补操作|
 
@@ -1716,13 +1668,13 @@ await push.getTodayOnlineClientReport()
 | 30018 | 查询单推实时报表 频率超过每分钟频率限制 |  403 |
 | 30019 | 系统繁忙，请稍后重试 |  403 |
 
-查询客户端标签
-根据cid查询客户端标签列表
+查询用户标签
+根据cid查询用户标签列表
 
 
 ## 客户端API文档
 
-### getPushClientId()
+### getPushClientId
 获取客户端唯一的推送标识，注意这是一个异步的方法
 示例代码：
 ```js 
@@ -1769,7 +1721,7 @@ uni.offPushMessage(eventName);
 ## uni-push2.0相比1.0的优势
 1. App、微信小程序、H5全端支持消息推送。
 2. 统一行为：默认应用离线消息走“通知栏消息”，应用在线走“透传消息”。
-	* 如果需要应用在线时，消息展示在通知栏用`uni.createNotification`，创建本地消息实现
+	* 如果需要应用在线时，消息展示在通知栏用`plus.push.createMessage`，创建本地消息实现
 3. 新增uni-push服务端API（uniCloud扩展库）
 	消息推送属于敏感操作，只能直接或间接由服务端触发。
 	传统的三方push服务，需要开发者在服务端配置密钥或证书，根据服务器端文档签名获取token，再向相关URL接口发起网络请求...... 

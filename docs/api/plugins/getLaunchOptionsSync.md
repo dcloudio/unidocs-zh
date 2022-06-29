@@ -14,6 +14,8 @@
 |scene|Number|启动时的场景值，具体值含义请查看各平台文档说明。钉钉小程序在 IDE 恒为0000，真机不支持。|其他平台均支持，`字节小程序(1.12.0)`|
 |query|Object|启动时的 query 参数|其他平台均支持，`字节小程序(1.12.0)`|
 |referrerInfo|Object|来源信息。如果没有则返回 `{}`|其他平台均支持，`字节小程序(1.15.0)`，`飞书小程序不支持`，`钉钉小程序不支持`|
+|channel|String|如果应用没有设置渠道标识，则返回空字符串。 以下是流应用环境中使用的特殊渠道标识："qihoo:browser" - 表示360浏览器流应用、"qihoo:appstore " - 表示360手机助手流应用、"dcloud:streamapps" - 表示DCloud流应用基座|`仅 App 支持`|
+|launcher|String|应用启动来源。详见[plus.runtime.launcher](https://www.html5plus.org/doc/zh_cn/runtime.html)|`仅 App 支持`|
 |forwardMaterials|Array.\<Object\>|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`微信小程序`、`QQ小程序`|
 |entryDataHash|string|群入口信息，通过群应用商店打开、群分享卡片打开的小程序可获得|`仅QQ小程序`|
 |chatType|number|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`仅微信小程序`|

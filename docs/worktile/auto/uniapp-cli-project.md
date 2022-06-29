@@ -25,10 +25,21 @@ jest-environment-node@27.5.1
 npm install @dcloudio/uni-automator --save-dev
 ```
 3. package.json script节点新增命令
+
+vue2项目新增如下：
 ```
 "test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
 "test:android": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=android jest -i",
 "test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
+"test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
+"test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i"
+```
+
+vue3项目新增如下：
+```
+"test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
+"test:android": "cross-env UNI_PLATFORM=app UNI_OS_NAME=android jest -i",
+"test:ios": "cross-env UNI_PLATFORM=app UNI_OS_NAME=ios jest -i",
 "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
 "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i"
 ```

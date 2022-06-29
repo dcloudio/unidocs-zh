@@ -267,11 +267,11 @@ await uniPush.sendMessage(OBJECT)
 |channel|Json|否|无|消息渠道设置，避免被限量推送，需要在各家发邮件申请，详情下方[channel说明](#channel 说明)| android|
 |request_id|String|是|无|请求唯一标识号，10-32位之间；如果`request_id`重复，会导致消息丢失||
 |group_name|String|否|无|任务组名。多个消息任务可以用同一个任务组名，后续可根据任务组名查询推送情况（长度限制100字符，且不能含有特殊符号）；</br>仅基于user_id、cid、tag指定消息接收者，或对应用的所有用户群发推送消息时有效。||
-|sound|String|否|无|消息提醒铃声设置。android需要设置channel生效，详见下方[铃声设置注意](#铃声设置注意)</br>如果铃声文件未找到，响铃为系统默认铃声。</br>铃声文件需要使用uni原生插件[点此打开](https://ext.dcloud.net.cn/plugin?id=690)打包后生效。</br>建议iOS和Android铃声使用一致的文件名称。直接填写文件名，不含扩展名；如：pushsound.caf或pushsound.mp3，直接填写pushsound即可。|
-|content_available|Number|否|0|0表示普通通知消息(默认为0)；</br>1表示静默推送(无通知栏消息)，静默推送时不需要填写其他参数。</br>苹果官方建议1小时最多推送3条静默消息|ios |
+|sound|String|否|无|消息提醒铃声设置，详见下方[sound说明](#sound 说明)|
+|content_available|Number|否|0|当应用切到后台时收到push消息，默认以通知栏消息提醒用户。你可以通过开启静默消息来关闭该行为。</br>0表示普通通知消息(默认为0)；</br>1表示静默推送(无通知栏消息)，静默推送时不需要填写其他参数。</br>苹果官方建议1小时最多推送3条静默消息。|ios |
 |open_url|string|否|无|填写该值将:强制push类型为“通知栏消息”，点击后系统浏览器将打开此链接。以http(s)://开头的有效可访问链接,华为通道必须使用https。长度小于300|android|
 |settings|Json|否|无|推送条件设置，详细解释见下方settings说明||
-|option|Json|否|无|其他配置，[更多关于option的说明](/unpackage/个推push文档/多厂商参数.md)||
+|options|Json|否|无|其他配置，[更多关于options的说明](/unpackage/个推push文档/多厂商参数.md)||
 
 
 
@@ -314,10 +314,14 @@ await uniPush.sendMessage(OBJECT)
 |OP|string|否|无|需要联系客服开通;OPush平台上所有通道分为“公信”(默认)、“私信”两类，默认下发公信消息。公信消息单日可推送数量有限制，私信消息不限(仅限单个用户)。私信消息申请请参见（OPPO官方文档）[通道升级公测邀请](https://open.oppomobile.com/wiki/doc#id=11096)。|
 |VO|string|否|无| 0代表运营消息，1代表系统消息;vivo消息分类功能将推送消息类型分为运营消息和系统消息，默认下发运营消息。运营消息单用户单应用单日接收条数上限为5条，系统消息不限。系统消息功能不用申请，可以直接使用，如特殊情况需额外提升系统消息量级，请参见（vivo官方文档）[推送消息分类功能说明](https://dev.vivo.com.cn/documentCenter/doc/359)。|
 
-##### 铃声设置注意
-1. 华为通道须 [申请自分类权益](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835#section3699155822013)
-2. 小米通道需：申请重要级别消息Channel —— 申请其他个性化重要级别消息Channel，并设置自定义铃声前端路径格式：`android.resource://你的APP应用包名/raw/铃声文件名`，例如：`android.resource://io.dcloud.UniPush2/raw/pushsound`（路径不需要带音频后缀名）如图
+##### sound 说明@sound
+1. 铃声文件需要使用uni原生插件[点此打开](https://ext.dcloud.net.cn/plugin?id=690)打包后生效。
+2. android需要设置channel生效
+	- 华为通道[申请自分类权益](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835#section3699155822013)
+	- 小米通道需：申请重要级别消息Channel —— 申请其他个性化重要级别消息Channel，并设置自定义铃声前端路径格式：`android.resource://你的APP应用包名/raw/铃声文件名`，例如：`android.resource://io.dcloud.UniPush2/raw/pushsound`（路径不需要带音频后缀名）如图
 ![](https://docs.getui.com/img/img_getui_server_rest_v2_third_party_1.png)
+3. 如果铃声文件未找到，响铃为系统默认铃声。
+4. iOS和Android铃声需使用一致的文件名称，直接填写文件名，不含扩展名；如：pushsound.caf或pushsound.mp3，直接填写pushsound即可。
 
 #### 响应体说明
 多个别名推送返回值示例：

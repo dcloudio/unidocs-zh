@@ -1,5 +1,5 @@
 ::: warning 注意 
-推荐使用 [uni统计2.0](uni-stat-v2.html)
+推荐使用 [uni统计2.0](https://uniapp.dcloud.io/uni-stat-v2.html)
 :::
 ## 统计
 
@@ -79,7 +79,9 @@ uni.report('search',{
 
 ```
 
-自定义事件上报后，在统计后台的`事件和转换`栏目中，可以看到上报的事件情况。
+自定义事件上报后：
+- 统计1.0在统计后台的`事件和转换`栏目中，可以看到上报的事件情况。
+- 统计2.0在uni-admin后台的`uni 统计 --> 自定义事件`栏目中，可以看到上报的事件情况。
 
 ::: tip 提示
 - 小程序平台，需将`tongji.dcloud.net.cn`配入域名白名单，[详见](https://ask.dcloud.net.cn/article/36298)

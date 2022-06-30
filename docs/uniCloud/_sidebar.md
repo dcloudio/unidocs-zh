@@ -10,9 +10,6 @@
   * [云对象](uniCloud/cloud-obj.md)
   * [普通云函数(callFunction)](uniCloud/cf-callfunction.md)
   * [云公共模块](uniCloud/cf-common.md)
-  <!-- * [运行调试](uniCloud/cf-rundebug.md) -->
-  <!-- * [发布](uniCloud/) -->
-  * [日志输出](uniCloud/cf-logger.md)
   * [定时触发](uniCloud/trigger.md)
   * [云函数URL化](uniCloud/http.md)
 * 云数据库
@@ -53,7 +50,9 @@
   * [简介](uniCloud/redis-introduction.md)
   * [费用说明](uniCloud/redis-buy.md)
   * [开发文档](uniCloud/redis.md)
-* [日志输出](uniCloud/cf-logger.md)
+* [运行与调试](uniCloud/rundebug.md)
+ <!-- * [日志输出](uniCloud/cf-logger.md) -->
+* [发行](uniCloud/publish.md)
 * [客户端API](uniCloud/client-sdk.md)
 * [web控制台](https://unicloud.dcloud.net.cn)
 * 重要开源库```{"collapsable": false}```

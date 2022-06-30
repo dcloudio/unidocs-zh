@@ -146,7 +146,9 @@ _注：以上例子仅用于方便初学者理解。实际开发中对于简单�
 2. 更精简的代码
 3. 更少的协作成本（以及矛盾~）
 4. 客户端调用时在ide里有完善的代码提示，方法参数均可提示。（传输json可没法在ide里提示）
-5. 自动支持[uniCloud响应体规范](uniCloud/cf-functions.md?id=resformat)，方便错误拦截和统一处理
+5. 默认支持[uniCloud响应体规范](uniCloud/cf-functions.md?id=resformat)，方便错误拦截和统一处理
+
+注：目前云对象还不支持URL和定时触发，未来会补充
 
 ## 快速上手
 

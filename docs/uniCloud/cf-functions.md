@@ -110,7 +110,7 @@ db.collection('list').get()
 
 - 云对象不适用的情况：
 
-不是和uni-app客户端通信，比如需要云函数URL化后与非uni-app客户端通信（其他应用或服务器），比如云端定时运行的云函数。
+不是和uni-app客户端通信，比如需要云函数URL化后与非uni-app客户端通信（其他应用或服务器），比如云端定时运行的云函数。（但云对象未来有计划支持URL化和定时任务）
 
 **直观体验代码示例**
 
@@ -267,7 +267,9 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 
 ## uniCloud API列表
 
-云函数支持js和nodejs的标准API，但除了标准API外，uniCloud扩展了一批新API，实际开发中更常用的是uniCloud的扩展API。见下：
+云函数支持 js 和 nodejs 的标准API，如`console.log()`、`setTimeout()`，另见[nodejs官网](https://nodejs.org/en/docs/)。nodejs版本，详见[云函数运行环境](?id=runtime)
+
+除了标准API外，云函数环境中内置了`uniCloud`对象，扩展了一批新API，实际开发中更常用的是uniCloud的扩展API。见下：
 
 |API						|描述																																			|
 |--							|--																																				|
@@ -280,16 +282,19 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.getTempFileURL()	|获取云存储文件的临时路径 [详情](uniCloud/storage?id=cloudgettempfileurl)																		|
 |uniCloud.customAuth()		|使用云厂商自定义登录，仅腾讯云支持[详情](uniCloud/authentication.md?id=cloud-custom-auth)														|
 |uniCloud.callFunction()	|客户端调用云函数 [见下](uniCloud/cf-functions?id=clientcallfunction)；云函数中调用另一个云函数 [见下](uniCloud/cf-functions?id=callbyfunction)	|
-|uniCloud.httpclient		|云函数中通过http连接其他系统 [见下](uniCloud/cf-functions?id=httpclient)																		|
+|uniCloud.httpclient		|云函数中通过http访问其他系统 [见下](uniCloud/cf-functions?id=httpclient)																		|
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
-|uniCloud.logger			|云函数中打印日志到uniCloud日志记录系统（非HBuilderX控制台）[详情](uniCloud/cf-logger)															|
+|uniCloud.logger			|云函数中打印日志到uniCloud日志记录系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
 
 
 ## 访问数据库
 
-云函数中支持访问本服务空间下的、或经授权的其他服务空间下的，数据库。因内容较长，另见[文档](uniCloud/cf-database.md)
+云函数中支持访问本服务空间下的、或经授权的其他服务空间下的，数据库。
+
+- 使用 MongoDB 语法操作数据库，另见[文档](uniCloud/cf-database.md)
+- 使用 JQL 语法操作数据库，另见[文档](uniCloud/jql-cloud.md)
 
 ## 访问其他HTTP服务@httpclient
 
@@ -512,13 +517,112 @@ myCloud.uploadFile()
 
 **注意**
 - 本地开发一旦使用了 node12 的专用 api，上传云函数时必须在package.json里手动配置选择 node12 的运行环境。
-	之所以没有在云端默认统一使用 node12，是因为腾讯云 node12 的 return 策略有一些特殊情况，见下。
+	之所以没有在云端默认统一使用 node12，是因为腾讯云 node12 的 return 策略有一些特殊情况，[见下](?id=return)。
 - 运行环境在云端云函数创建时设定，不可通过更新云函数来修改。
 	也就是第一次上传云函数的时候，package.json里配了什么，就是什么。如果需要修改，需先删除云端云函数，重新上传。
 
 node版本可以在云函数的package.json文件的`cloudfunction-config->runtime`字段进行配置，详情参考：[云函数package.json](uniCloud/cf-functions.md?id=packagejson)
 
-### return的策略
+### 云函数冷启动、热启动@launchtype
+
+基于云函数按需执行的特点, 函数在不被触发的时候, 计算资源是不被激活的。
+
+当一个云函数初次被触发时，其完整过程如下：
+
+1. severless实例化计算实例
+2. 加载函数代码
+3. 启动 node
+4. 执行代码
+
+函数被调用时，执行这些完整步骤的过程一般称作`冷启动`, 冷启动的耗时长于热启动，一般在一秒出头。 
+
+而如果函数实例和执行进程都被复用的情况下一般被定义为`热启动`, 热启动没有性能问题。
+
+如果一个云函数实例长时间没有被再次调用，则该计算实例会被**回收**；后续再次调用该云函数时，就会再次触发云函数的**冷启动**。
+
+不同云厂商的函数实例回收时间不同：
+- 阿里云：15分钟内没有第二次访问的云函数，就会被回收
+- 腾讯云：30分钟
+
+直观的体验表现为：隔了很久不用的云函数，第一次用就会比较慢，然后立即访问第二次，则很快，毫秒级响应。
+
+注：冷启动虽慢但也不会超过1.5秒，如超过1.5秒应该是云函数写的有问题或网络有问题。
+
+两家云厂商仍然在优化冷启动问题。目前给开发者的建议是：
+1. 使用clientDB可以减少遇到冷启动问题的概率
+2. 非高频访问的云函数，合并到高频云函数中。也有的开发者使用单路由方式编写云函数，即在一个云函数中通过路由处理实现了整个应用的所有后台逻辑。参考[插件](https://ext.dcloud.net.cn/search?q=%E8%B7%AF%E7%94%B1&cat1=7&orderBy=UpdatedDate)。
+  但使用这种方式需注意平衡，如果业务代码太多，每次云函数请求产生的内存消耗也会不少。
+3. 非高频访问的云函数，可以通过定时任务持续运行它（注意腾讯云可以使用这个方式完全避开冷启动，而阿里云的定时任务最短周期大于资源回收周期）
+4. 阿里云支持配置云函数的单实例多并发，请参考：[单实例多并发](cf-functions.md?id=concurrency)
+5. 腾讯云付费进行实例预留
+
+### 云函数的无状态
+
+因为存在冷热启动的差异，云函数中的全局变量就可能出现每次不一样的情况。也就是**云函数是无状态的**。
+
+以如下代码为例，`count`作为全局变量，当多次调用该云函数时，可能会出现变量累加的情况（实例未复用时，每次返回0，若实例被复用，则可能返回1、2、3等各种意外情况）。所以不要这么使用。
+
+
+```javascript
+let count = 0;
+module.exports = async (event) => {
+  return count++
+  //此示例为错误示例
+  //云函数实例未复用时，每次返回0
+  //若实例被复用，则可能返回1、2、3等各种意外情况
+}
+```
+
+**require由于存在缓存，也存在同样的问题。尽量不要直接修改require返回的内容**
+
+### 临时存储空间
+
+云函数是运行在云端的代码，运行环境由云服务器弹性调配，这是和传统`Node.js`应用很大的区别。
+
+换言之，云函数每次执行的宿主环境（可简单理解为虚拟机或服务器硬件）可能相同，也可能不同，因此传统`Node.js`开发中将部分信息存储本地硬盘或内存的方案就不再适合，建议通过云数据库或云存储的方案替代。
+
+### 云函数中的异步行为
+
+书写云函数时应注意`async`、`await`的使用，`nodejs`有内置模块`util`可以将符合`error-first`形式`callback`的函数转换为`promise`形式，[详情参考](https://nodejs.org/api/util.html#util_util_promisify_original)，比如以下示例：
+
+```js
+const {
+	promisify
+} = require('util')
+
+let testCallback = {
+	value: 'testCallbackValue',
+	echo: function(num, callback) {
+		setTimeout(() => {
+      // 第一个参数为error，第二个为返回值
+			callback(null, `${this.value}:${num}`)
+		}, 2000)
+	}
+}
+
+exports.main = async function() {
+  // num=2，不传入callback参数，callback会自动作为回调函数处理
+	let val = await promisify(testCallback.echo).call(testCallback, 2)
+	console.log(val)
+	return val
+}
+
+```
+
+如果想在云函数内使用回调形式可以让云函数返回一个promise，如以下示例：
+
+```js
+exports.main = async function() {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve('some return value')
+		}, 1000)
+	})
+}
+```
+
+
+### return的策略@return
 
 - 阿里云 return 之后云函数立即终止，逻辑不会继续执行，包括 settimeout 或其他异步操作都会立即终止。
 - 腾讯云 node8 return 之后也不会继续执行，但 node12 可以配置是否继续执行
@@ -528,13 +632,17 @@ node版本可以在云函数的package.json文件的`cloudfunction-config->runti
 
 **腾讯云因为按 GBS 对云函数计费，在 node12 时，尤其要注意，如果未有效终止云函数，会一直计费**
 
+### 时区
+
+- 云端的云函数中使用的时区是 `UTC+0`，而不是 `UTC+8`，在云函数中使用时间时需特别注意。云函数在HBuilderX本地运行时，时区则是电脑的时区，很可能是 `UTC+8`。建议使用时间戳，可以规避时区问题。
+
 ## 云函数配置
 
-云函数除了代码，还有配置。在uniCloud web控制台可以配置；在HBuilderX项目中，云函数根目录的package.json也是存放配置的地方。
+云函数除了代码，还有配置。在uniCloud web控制台可以配置；在HBuilderX项目中，云函数根目录的`package.json`也是存放配置的地方。
 
 ### 超时时间@timeout
 
-阿里云非定时触发请求云函数最大只支持10秒的超时时间。定时触发最大支持600秒的超时时间
+阿里云非定时触发请求云函数最大只支持10秒的超时时间。定时任务触发最大支持600秒的超时时间，一般用于跑批。
 
 腾讯云最大支持900秒超时时间
 
@@ -704,8 +812,24 @@ package.json内统一了腾讯阿里的配置，两个平台都需要配置为�
 - runtime参数（nodejs版本）仅可在创建云函数时生效，不可修改
 
 
+### 云函数的数量、体积、冷启动的平衡
 
-## 使用cloudfunctions_init@init
+鉴于：
+- 每个服务空间的云函数数量是有限的，阿里云是48个，腾讯云是9~149个，[详见](price.md)
+- 每个云函数的体积限制是10M（含node_modules）
+- 云函数有冷启动问题
+
+基于以上情况，对开发模式有如下建议：
+
+1. 一般不建议使用体积较大、依赖较深的node_modules。多使用DCloud官方或插件市场提供的库。
+2. 优先使用clientDB，不占用云函数数量，也不用编写服务器代码。
+3. 对云对象或云函数做适当的合并和拆解。
+	- 低频且对用户体验影响较大的操作不建议独立使用云函数，合并到高频云函数中。
+	- 控制好单个云函数体积，有的开发者喜欢使用[单路由云函数](https://ext.dcloud.net.cn/search?q=%E8%B7%AF%E7%94%B1&orderBy=WeekDownload&cat1=7)，整个服务空间就一个云函数。这也得根据实际情况，如果云函数体积超过6M也还是建议分拆。
+	- 用户体系方面，官方已经提供uni-id-co云对象，再搭配clientDB，常规业务就够了。有特殊需求可以再适度补若干云对象。不太会发生云函数数量不足的情况。
+4. 必要时可以使用多个服务空间，跨服务空间使用
+
+## cloudfunctions_init（已废弃）
 
 `HBuilderX 2.9`版本，`uniCloud`提供了`cloudfunctions_init.json`来方便开发者快速进行云函数的初始化操作。
 
@@ -787,99 +911,3 @@ cloudfunction-config说明如下
 }
 
 ```
-
-## 注意事项
-
-### 云函数的启动模式（冷启动、热启动）@launchtype
-
-基于云函数按需执行的特点, 函数在不被触发的时候, 计算资源是不被激活的。
-
-当一个云函数初次被触发时，其完整过程如下：
-
-1. 实例化计算实例
-2. 加载函数代码
-3. 启动 node
-4. 执行代码
-
-函数被调用时，执行这些完整步骤的过程一般称作冷启动, 冷启动的耗时长于热启动，一般在一秒出头。 
-
-而如果函数实例和执行进程都被复用的情况下一般被定义为热启动, 热启动没有性能问题。
-
-如果一个云函数实例长时间没有被再次调用，则该计算实例会被回收；后续再次调用该云函数时，就会再次触发云函数的冷启动。
-
-不同云厂商的函数实例回收时间，以及优化冷启动的建议，[参考](https://uniapp.dcloud.io/uniCloud/faq?id=%e4%ba%91%e5%87%bd%e6%95%b0%e8%ae%bf%e9%97%ae%e6%97%b6%e5%bf%ab%e6%97%b6%e6%85%a2%e6%80%8e%e4%b9%88%e5%9b%9e%e4%ba%8b%ef%bc%9f)
-
-因为存在冷热启动的差异，云函数中的全局变量就可能出现每次不一样的情况。也就是云函数是无状态的。
-
-以如下代码为例，`count`作为全局变量，当多次调用该云函数时，可能会出现变量累加的情况（实例未复用时，每次返回0，若实例被复用，则可能返回1、2、3等各种意外情况）。所以不要这么使用。
-
-
-```javascript
-let count = 0;
-module.exports = async (event) => {
-  return count++
-  //此示例为错误示例
-  //云函数实例未复用时，每次返回0
-  //若实例被复用，则可能返回1、2、3等各种意外情况
-}
-```
-
-**require由于存在缓存，也存在同样的问题。尽量不要直接修改require返回的内容**
-
-### 临时存储空间
-
-云函数是运行在云端的代码，运行环境由云服务器弹性调配，这是和传统`Node.js`应用很大的区别。
-
-换言之，云函数每次执行的宿主环境（可简单理解为虚拟机或服务器硬件）可能相同，也可能不同，因此传统`Node.js`开发中将部分信息存储本地硬盘或内存的方案就不再适合，建议通过云数据库或云存储的方案替代。
-
-### 云函数中的异步行为
-
-书写云函数时应注意`async`、`await`的使用，`nodejs`有内置模块`util`可以将符合`error-first`形式`callback`的函数转换为`promise`形式，[详情参考](https://nodejs.org/api/util.html#util_util_promisify_original)，比如以下示例：
-
-```js
-const {
-	promisify
-} = require('util')
-
-let testCallback = {
-	value: 'testCallbackValue',
-	echo: function(num, callback) {
-		setTimeout(() => {
-      // 第一个参数为error，第二个为返回值
-			callback(null, `${this.value}:${num}`)
-		}, 2000)
-	}
-}
-
-exports.main = async function() {
-  // num=2，不传入callback参数，callback会自动作为回调函数处理
-	let val = await promisify(testCallback.echo).call(testCallback, 2)
-	console.log(val)
-	return val
-}
-
-```
-
-如果想在云函数内使用回调形式可以让云函数返回一个promise，如以下示例：
-
-```js
-exports.main = async function() {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve('some return value')
-		}, 1000)
-	})
-}
-```
-
-### 普通云函数的单路由开发模式
-
-虽然官方推荐clientDB和云对象，但仍有部分开发者习惯单路由方式开发。
-
-也就是不使用多个云函数，而是使用路由框架，在一个云函数内通过控制器、路由的方式编写服务器接口。插件市场有很多这类插件，[详见](https://ext.dcloud.net.cn/search?q=%E8%B7%AF%E7%94%B1&orderBy=WeekDownload&cat1=7)
-
-
-###  其它
-
-- 云端的云函数中使用的时区是 `UTC+0`，而不是 `UTC+8`，在云函数中使用时间时需特别注意。云函数在HBuilderX本地运行时，时区则是电脑的时区，很可能是 `UTC+8`。建议使用时间戳，可以规避时区问题。
-

@@ -1,6 +1,6 @@
 本文档适用于`uni-id 4.0.0`及以上版本，需 HBuilderX 3.5.0 及以上版本。旧版本文档请访问：[uni-id 3.x.x 文档](uniCloud/uni-id-3.md)
 
-## 概述
+## 需求背景
 
 99%的应用，都要开发用户注册、登录、发送短信验证码、修改密码、密码加密保存、密码防探测、token管理、页面访问权限、注册用户统计等众多功能，从前端到后端都需要。
 
@@ -12,38 +12,109 @@
 
 [clientDB](uniCloud/clientDB)、[DB Schema](uniCloud/schema)、[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)、[uni-admin](uniCloud/admin)，这些产品都基于`uni-id`的账户体系。可以说`uni-id`是uniCloud不可或缺的基础能力。
 
-## 组成部分
+## uni-id 的价值
+
+1. 节省了大量重复劳动
+2. 降低门槛，前端开发者无需研究数据库如何设计、账户安全如何保障
+3. 多系统打通用户和上下游协同
+
+关于第三点，着重强调下。
+
+一个应用，往往需要集成多个功能模块。比如一个电商应用，需要一个基本电商模板，还需要客服聊天模板、统计看板模板。
+
+在插件市场，每类模板插件都能找到，但他们如果不是基于同一套用户体系设计，就很难整合。
+
+所有uniCloud的标准应用，都基于`uni-id`来做。`uni-id-common`公共模块自动内置在每个服务空间里的。
+
+有了统一的账户规范，并且围绕这套账户规范，有各种各样插件，那么开发者可以随意整合这些插件，让数据连同。
+
+规范，还可以让上下游充分协同。插件市场会出现各种数据迁移插件，比如把从discuz里把用户迁移到`uni-id`中的插件，相信围绕这套规范的产业链会非常活跃。
+
+目前插件市场上各种优秀的uniCloud轮子，几乎都是基于`uni-id`的。
+
+## 功能清单
+
+`uni-id`已完成的功能：
+
+- 注册、登录、发送短信验证码、密码加密保存、修改密码、忘记密码、头像管理、token管理、rbac权限角色体系、页面访问权限路由控制、用户邀请裂变、用户签到、日志记录、账户防刷
+
+关于登录方式，目前已实现
+
+- 账户密码登录
+- 手机号+短信验证码登录 （内置uniCloud短信能力）
+- App手机号一键认证，免验证码（内置uni-app App一键登录能力）
+- 三方登录：App中的微信登录、Apple ID、QQ登录；微信小程序中的微信登录；支付宝小程序中的支付宝账户登录；QQ小程序中的QQ登录
+
+由于三方登录很多，DCloud没有精力全部实现，在uni-id-co中留下了空实现，欢迎开发者自行补充、提交pr或发布扩展插件，共同完善`uni-id`。。
+
+后续计划：DCloud未来将内置 微信扫码登录和公众号登录、邮箱验证集成、facebook等海外主流社交账户登录、活体检测。
+
+其他方面，各种常见开源项目如discuz、wordPress、ecshop的用户导入插件，不属于`uni-id`主工程，欢迎开发者单独提交插件到插件市场。
+
+## 组成结构
+
+`uni-id`贯穿了uni-app前端到uniCloud后端的各个环节。
+
+|模块						|说明															|
+|--							|--																|
+|前端uni-app框架的相关API		|uniIdRouter页面路由、token管理客户端API						|
+|前端页面uni-id-pages		|登录、注册、修改密码、忘记密码、个人中心、修改头像等前端页面	|
+|网络传输自动管理用户token	|自动保存、续期token、网络自动传输token							|
+|云端云对象uni-id-co			|与uni-id-pages搭配的云对象，相关业务的云端部分					|
+|云端配置uni-config-center	|在uni-config-center下提供各种配置								|
+|云端公共模块uni-id-common	|用于云函数或云对象集成该模块验证token身份						|
+|云数据库的用户相关数据表		|uni-id-users等各种opendb数据表									|
+|uni-admin					|Admin管理后台，包括用户角色权限管理、注册用户统计					|
 
 
-1. 云数据库
+1. 云数据库的uni-id相关表
 
-十几张用户相关的[opendb数据表](uniCloud/opendb)，如[uni-id-users](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-users/collection.json)、[uni-id-roles](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-roles/collection.json)、[uni-id-permissions](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-permissions/collection.json)。
+数据库是一个系统的核心，uni-id首先规范化了十几张用户相关的[opendb数据表](uniCloud/opendb)，
 
-主表为 `uni-id-users` 表，保存用户的基本信息。扩展字段有很多，如实名认证数据、工作履历数据。由于MongoDB的特性，开发者可以自由扩展字段。
+其中最为重要的4张opendb表，如下：
+- 用户表 [uni-id-users](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-users/collection.json)
+- 权限表 [uni-id-permissions](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-permissions/collection.json)
+- 角色表 [uni-id-roles](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-roles/collection.json)
+- 用户日志表 [uni-id-log](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-log/collection.json)
 
-所有`uni-id`的数据表，不管在HBuilderX中新建DB Schema还是在uniCloud web控制台新建表的界面上，都可以选择模板直接建好。
+主表为`uni-id-users`表，保存用户的基本信息。扩展字段有很多，如实名认证数据、工作履历数据。由于MongoDB的特性，开发者可以自由扩展字段。
 
-2. 云端核心[公共模块](https://uniapp.dcloud.io/uniCloud/cf-common.html) [uni-id-common](uniCloud/uni-id-common.md)
+所有`uni-id`的数据表，不管在HBuilderX中新建 `DB Schema` 还是在 uniCloud web控制台新建表的界面上，都可以选择模板直接建好。
+
+2. 云端公共模块uni-id-common
 
 uni-id-common公共模块包含了账户体系服务端的核心权限、token管理，内置在每个uniCloud服务空间里。
 
-uniCloud众多功能（如DB Schema的权限、uni-id-co）都依赖uni-id-common。如果开发者想要在自己的云函数里校验前端用户token，也需要引用uni-id-common公共模块。
+如开发者需要在自己的云函数/云对象里校验前端用户token，则需要引用uni-id-common公共模块。
 
-uni-id-common这个uni_modules包括了4张opendb表，分别为：
-- 用户表 uni-id-users
-- 权限表 uni-id-permissions
-- 角色表 uni-id-roles
-- 用户日志表 uni-id-log
+uniCloud众多功能（如`DB Schema`的权限、uni-id-co）也都依赖 uni-id-common。
 
-3. 云端一体页面模板 [uni-id-pages](uniCloud/uni-id-pages)
+[详见](uniCloud/uni-id-common.md)
 
-基于uni-id-common，DCloud还提供了一组完整的前端页面和后端[云对象](https://uniapp.dcloud.io/uniCloud/cloud-obj.html) ，合称`uni-id-pages`。
+3. 云端[uni-config-center](/uniCloud/uni-config-center.md)下的uni-id配置
+
+`uni-id`在云端有很多配置，比如密码加密秘钥、短信和微信登录的appsecret等等。在`uni-config-center`下的`uni-id`目录下的config.json里存放着这些配置。
+
+[详见](uniCloud/uni-id-summary.md?id=config)
+
+4. 客户端API
+uni-app框架内置了uni-id的token管理。
+
+uni-app与uniCloud搭配且使用uni-id，登录后自动下发token、网络传输层自动传输token（uni-app 2.7.13+版本）、token临近过期会自动续期（uni-app 3.4.13 +版本），也就是说开发者无需自己管理token了。
+
+uni-app客户端还有一批uni-id相关的内置API：
+- uniIDHasRole：判断当前用户是否拥有某角色。[详情](/api/global.html#uniidhasrole)
+- uniIDHasPermission：判断当前用户是否拥有某权限。[详情](/api/global.html#uniidhaspermission)
+- uniCloud.getCurrentUserInfo()：客户端获取当前用户信息。[详情](/uniCloud/client-sdk.html#client-getcurrentuserinfo)
+
+5. 云端一体页面模板 [uni-id-pages](uniCloud/uni-id-pages)（含uni-id-co）
+
+基于uni-id-common，DCloud还提供了一组完整的前端页面和后端[云对象](/uniCloud/cloud-obj.html) ，合称`uni-id-pages`。
 
 uni-id-pages的功能包括：用户注册（含用户协议、隐私协议）、退出、修改密码、忘记密码等各种功能，同时适配PC宽屏和各种手机平台（App、H5、小程序）。
 
 此外，DCloud的其他产品也为uni-id提供了众多支持：
-- [uni-admin后台管理框架](https://uniapp.dcloud.io/uniCloud/admin.html)，为uni-id提供了现成的用户、角色、权限的后台管理功能，以及注册用户统计报表。
-- uni-app框架内置的uniCloud客户端SDK，自动处理了uni-id的token的网络传输（uni-app 2.7.13+版本）、续期（uni-app 3.4.13 +版本），也就是说开发者无需自己管理token了。
+- [uni-admin后台管理框架](/uniCloud/admin.html)，为uni-id提供了现成的用户、角色、权限的后台管理功能，以及注册用户统计报表。
 
 以上全部是开源的。
 
@@ -63,52 +134,7 @@ uni-id-co则是一个更加比uni-id-cf更完善和规范的用户管理的云�
 
 老版升级指南，[详见](uniCloud/uni-id-pages?id=m-to-co)
 
-## uni-id 对开发者的价值
 
-1. 节省了大量重复劳动
-2. 降低门槛，前端开发者无需研究数据库如何设计、账户安全如何保障
-3. 多系统打通用户和上下游协同
-
-关于第三点，着重强调下。
-
-一个应用，往往需要集成多个功能模块。比如一个电商应用，需要一个基本电商模板，还需要客服聊天模板、统计看板模板。
-
-在插件市场，每类模板插件都能找到，但他们如果不是基于同一套用户体系设计，就很难整合。
-
-所有uniCloud的标准应用，都基于`uni-id`来做。`uni-id`公共模块自动内置在每个服务空间里的。
-
-有了统一的账户规范，并且围绕这套账户规范，有各种各样插件，那么开发者可以随意整合这些插件，让数据连同。
-
-规范，还可以让上下游充分协同。插件市场会出现各种数据迁移插件，比如把从discuz里把用户迁移到`uni-id`中的插件，相信围绕这套规范的产业链会非常活跃。
-
-事实上，[clientDB](uniCloud/clientDB)、[DB Schema](uniCloud/schema)、[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)、[uniCloud admin](uniCloud/admin)等重要uniCloud产品，以及插件市场上各种优秀的轮子，都是基于`uni-id`的。
-
-## 现状和未来
-
-`uni-id`已完成的功能：
-
-- 注册、登录、发送短信验证码、密码加密保存、修改密码、重置密码、头像管理、token管理、rbac权限角色体系、页面访问权限路由控制、用户邀请裂变、用户签到、日志记录、账户防刷
-
-关于登录方式，目前已实现
-
-- 账户密码登录
-- 手机号+短信验证码登录
-- App手机号一键认证，免验证码
-- 三方登录：App中的微信登录和Apple ID和QQ登录、微信小程序中的微信登录、支付宝小程序中的支付宝账户登录 、QQ小程序中的QQ登录
-
-关于还缺少的部分，哪些DCloud在完善，哪些希望开发者给共同完善开源项目，计划与边界公布如下：
-
-1. 无计划做的
-
-百度、快手、快应用等小程序的登录，以及微博等App端的登录。
-
-2. 有计划做但不是近期计划
-
-web的微信扫码登录、字节小程序登录、facebook等海外主流社交账户登录、邮箱验证集成、活体检测。
-
-上述功能均欢迎其他开发者在开源项目上提交pr，或在插件市场发布插件，共同完善`uni-id`。
-
-其他方面，各种常见开源项目如discuz、wordPress、ecshop的用户导入插件，不属于`uni-id`主工程，欢迎开发者单独提交插件到插件市场。
 
 ## 快速上手@start
 
@@ -841,11 +867,13 @@ module.exports = {
 **注意**
 
 - pages.json内有`uniIdRouter`节点上述逻辑才会生效，自HBuilderX 3.5.0起创建空项目模板会自动配置空的`uniIdRouter`节点
-- uniIdRouter底层使用navigateTo、redirectTo、reLaunch、switchTab的拦截器进行页面跳转拦截，不会拦截进入首页和点击原生tabbar。一般tabbar页面都不做自动跳转，而是在页面内再提供登录按钮。比如tabbar上有购物车或个人中心，点击购物车后在购物车页面内部会放一个提示语和按钮，告知用户需要登录。在页面内判断用户是否登录，使用API[uniCloud.getCurrentUserInfo()](https://uniapp.dcloud.io/uniCloud/client-sdk.html#client-getcurrentuserinfo)
+- uniIdRouter底层使用navigateTo、redirectTo、reLaunch、switchTab的拦截器进行页面跳转拦截，不会拦截进入首页和点击原生tabbar。
+一般tabbar页面都不做自动跳转，而是在页面内再提供登录按钮。比如tabbar上有购物车或个人中心，点击购物车后在购物车页面内部会放一个提示语和按钮，告知用户需要登录。
+在页面内判断用户是否登录，使用API[uniCloud.getCurrentUserInfo()](https://uniapp.dcloud.io/uniCloud/client-sdk.html#client-getcurrentuserinfo)
 
-## 错误码@errcode
+## 云端错误码@errcode
 
-|错误码									|错误信息								|说明													|
+|错误码errCode							|错误信息errMsg							|说明													|
 |----									|----									|----													|
 |0（数字）								|成功									|-														|
 |uni-id-token-expired					|登陆状态失效，token已过期				|-														|
@@ -1034,16 +1062,7 @@ uni-id-users表内存储的password字段为使用hmac-sha1生成的hash值，�
 **注意**
 
 - 由于角色权限缓存在token内，可能会存在权限已经更新但是用户token未过期之前依然是旧版角色权限的情况。可以调短一些token过期时间来减少这种情况的影响。或者使用redis来缓存用户权限
-- admin角色token内不包含permission，如需自行判断用户是否有某个权限，要注意admin角色需要额外判断一下，写法如下
-  ```js
-  const {
-    role,
-    permission
-  } = await uniID.checkToken(event.uniIdToken)
-  if(role.includes('admin') || permission.includes('your permission id')) {
-    // 当前角色拥有'your permission id'对应的权限
-  }
-  ```
+- admin角色token内不包含permission，如需自行判断用户是否有某个权限，要注意admin角色需要额外判断一下，只要角色为admin或permission包含期待值，都视为拥有权限
 
 ### 自定义token内容@custom-token
 

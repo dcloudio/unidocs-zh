@@ -177,7 +177,7 @@ exports.main = async (event, context) => {
 ```
 
 由于篇幅较长，需另见文档[云函数callfunction方式](/uniCloud/cf-callfunction)
-
+<!-- 
 因文档地址迁移，为防止老链接失效，备份如下：
 #### 获取用户token@client-token
 文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=client-token)
@@ -191,27 +191,27 @@ exports.main = async (event, context) => {
 文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=context-source)
 #### 其他客户端信息@client-info
 文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=client-info)
-
+ -->
 ### 云函数URL化方式
 
-云函数url化是创建了普通云函数后，进行的一种url化配置，它本质上属于普通云函数的一种调用方式。由于篇幅较长，需另见文档[云函数URL化](/uniCloud/http)。
+云函数URL化，可以让云函数生成一个HTTP URL。在创建了普通云函数后，可以在Web控制台进行URL化配置。它本质上属于普通云函数的一种调用方式。
+
+由于篇幅较长，需另见文档[云函数URL化](/uniCloud/http)。
 
 
 ### uniCloud响应体规范@resformat
 
-普通云函数对返回结果没有强制约定，一般返回格式为json格式。
+`uniCloud响应体规范`（uniCloud response format），是DCloud制定的、服务器给客户端返回json数据的一种建议格式。
 
-但为了方便拦截器统一处理返回值，捕获异常或弹框提示，uniCloud定义了`uniCloud响应体规范`。在云对象中默认支持`uniCloud响应体规范`，普通云函数中虽未强制，但推荐开发者使用。
-
-`uniCloud响应体规范`（uniCloud response format），是DCloud制定的、服务器给客户端返回json数据的一种建议格式。云对象、uni-id公共模块已支持此规范，后续uni-pay、clientDB等均会调整为此结构
+云对象、clientDB、uni-id公共模块均支持此规范。
 
 **由来**
 
-uniCloud服务器给客户端返回的数据格式一般是json，但json的格式具体是什么没有约定。比如返回错误码，是叫code还是叫errCode？错误内容是message还是errMsg？内容的国际化如何处理？
+uniCloud服务器给客户端返回的数据格式一般是json，但json的格式具体是什么没有约定。比如返回错误码，是叫`code`还是叫`errCode`？错误内容是`message`还是`errMsg`？内容的国际化如何处理？
 
 如果没有一套统一的格式，在客户端将无法编写有效的网络拦截器，无法统一处理错误。
 
-同时如果不同的插件，云端返回的数据格式千差万别，那使用者整合这些插件也会非常麻烦。国际化更无法落地。
+另外，如果不同的插件，云端返回的数据格式千差万别，那使用者整合这些插件也会非常麻烦。国际化更无法落地。
 
 为此DCloud推出了`uniCloud响应体规范`。
 
@@ -502,6 +502,32 @@ myCloud.uploadFile()
 
 - 连接本地云函数调试时，如果存在跨服务空间调用，则callFunction会使用云端云函数
 
+## 云函数运行环境说明@runtime
+
+云函数运行在 node 环境中。可以使用 node api 获取 node 版本。
+
+- uniCloud 阿里云默认是 node8.17.0，也可以选择 node12
+- uniCloud 腾讯云默认是 node8.9.4，也可以选择 node12
+- HBuilderX 本地运行环境使用的是 HBuilderX 自带的 node 版本，目前为 node12
+
+**注意**
+- 本地开发一旦使用了 node12 的专用 api，上传云函数时必须在package.json里手动配置选择 node12 的运行环境。
+	之所以没有在云端默认统一使用 node12，是因为腾讯云 node12 的 return 策略有一些特殊情况，见下。
+- 运行环境在云端云函数创建时设定，不可通过更新云函数来修改。
+	也就是第一次上传云函数的时候，package.json里配了什么，就是什么。如果需要修改，需先删除云端云函数，重新上传。
+
+node版本可以在云函数的package.json文件的`cloudfunction-config->runtime`字段进行配置，详情参考：[云函数package.json](uniCloud/cf-functions.md?id=packagejson)
+
+### return的策略
+
+- 阿里云 return 之后云函数立即终止，逻辑不会继续执行，包括 settimeout 或其他异步操作都会立即终止。
+- 腾讯云 node8 return 之后也不会继续执行，但 node12 可以配置是否继续执行
+- HBuilderX 本地运行
+	* 不通过客户端发起，直接本地运行云函数/云对象，return 之后还可以执行300ms
+	* 通过客户端连接本地云函数/云对象，return 之后可以继续执行
+
+**腾讯云因为按GBS对云函数计费，在 node12 时，尤其要注意，如果未有效终止云函数，会一直计费**
+
 ## 云函数配置
 
 云函数除了代码，还有配置。在uniCloud web控制台可以配置；在HBuilderX项目中，云函数根目录的package.json也是存放配置的地方。
@@ -591,11 +617,6 @@ exports.main = async function(event, context) {
 
 例：[ip-filter](https://ext.dcloud.net.cn/plugin?id=4619)中就利用云函数全局缓存一些ip访问信息来限制单ip访问频率，可以下载示例项目体验一下
 
-### 云函数node版本@runtime
-
-目前腾讯云和阿里云均支持选择nodejs版本，有nodejs8、nodejs12两个选项，需要在云函数创建时设定，不可修改。
-
-可以在云函数的package.json文件的`cloudfunction-config->runtime`字段进行配置，详情参考：[云函数package.json](uniCloud/cf-functions.md?id=packagejson)
 
 ## 云函数package.json@packagejson
 

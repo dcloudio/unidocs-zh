@@ -281,12 +281,13 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.deleteFile()		|云函数删除云存储的文件 [详情](uniCloud/storage?id=clouddeletefile)																				|
 |uniCloud.getTempFileURL()	|获取云存储文件的临时路径 [详情](uniCloud/storage?id=cloudgettempfileurl)																		|
 |uniCloud.customAuth()		|使用云厂商自定义登录，仅腾讯云支持[详情](uniCloud/authentication.md?id=cloud-custom-auth)														|
-|uniCloud.callFunction()	|客户端调用云函数 [见下](uniCloud/cf-functions?id=clientcallfunction)；云函数中调用另一个云函数 [见下](uniCloud/cf-functions?id=callbyfunction)	|
+|uniCloud.callFunction()	|云函数/云对象中调用另一个云函数 [见下](?id=callbyfunction)	|
+|uniCloud.importObject()	|云函数/云对象中调用另一个云对象，用法同客户端调用云对象 [详情](cloud-obj.md)	|
 |uniCloud.httpclient		|云函数中通过http访问其他系统 [见下](uniCloud/cf-functions?id=httpclient)																		|
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
-|uniCloud.logger			|云函数中打印日志到uniCloud日志记录系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
+|uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
 
 
 ## 访问数据库

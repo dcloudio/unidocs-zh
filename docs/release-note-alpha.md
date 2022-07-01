@@ -903,7 +903,7 @@
   + uniCloud本地调试插件 修复 部分情况下项目启动时报 npm 安装失败的Bug
   + uni-id 新增 多系统（如管理端、用户端）的配置隔离 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=isolate-config)
   + uni-id 新增 多系统用户管理，如某账户只能登录管理端，不能登录用户端 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=isolate-user)
-    * 此版本升级需要开发者处理历史用户数据，请参考 [补齐用户dcloud_appid字段](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=makeup-dcloud-appid)
+    - 此版本升级需要开发者处理历史用户数据，请参考 [补齐用户dcloud_appid字段](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=makeup-dcloud-appid)
   + uni-id 新增 QQ登录、注册相关功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=qq)
   + uni-id 调整 不再支持绑定手机、邮箱时不填验证码直接绑定
 * 【App插件(含5+App和uni-app的App端)】
@@ -1078,40 +1078,40 @@
   + App-iOS平台 修复 nvue video 组件播放 mov 格式视频时显示尺寸会变小的Bug [详情](https://ask.dcloud.net.cn/question/121175)
   + H5平台 修复 3.1.0 版本引出的样式中包含媒体查询时部分 rpx 单位失效的Bug [#2600](https://github.com/dcloudio/uni-app/issues/2600)
   + uni-ui 发布新版本 1.3.1
-    * uni-badge 新增 uni-badge 的 absolute 属性，支持定位
-    * uni-badge 新增 uni-badge 的 offset 属性，支持定位偏移
-    * uni-badge 新增 uni-badge 的 is-dot 属性，支持仅显示有一个小点
-    * uni-badge 新增 uni-badge 的 max-num 属性，支持自定义封顶的数字值，超过 99 显示99+
-    * uni-badge 优化 uni-badge 属性 custom-style， 支持以对象形式自定义样式
-    * uni-badge 修复 uni-badge 在 App 端，数字小于10时不是圆形的bug
-    * uni-badge 修复 uni-badge 在父元素不是 flex 布局时，宽度缩小的bug
-    * uni-badge 新增 uni-badge 属性 custom-style， 支持自定义样式
-    * uni-datetime-picker 修复 ios 下不识别 '-' 日期格式的 bug
-    * uni-datetime-picker 优化 pc 下弹出层添加边框和阴影
-    * uni-datetime-picker 修复 在 admin 中获取弹出层定位错误的bug
-    * uni-datetime-picker 修复 type 属性向下兼容，默认值从 date 变更为 datetime
-    * uni-datetime-picker 支持日历形式的日期+时间的范围选择
-    * uni-steps 修复 uni-steps 横向布局时，多行文字高度不合理的 bug
-    * uni-countdown 修复 uni-countdown 不能控制倒计时的 bug
-    * uni-tag 修复 royal 类型无效的bug
-    * uni-tag 修复 uni-tag 宽度不自适应的bug
-    * uni-tag 新增 uni-tag 支持属性 custom-style 自定义样式
-    * uni-link 新增 href 属性支持 tel:|mailto:
-    * uni-popup 修复 组件内放置 input 、textarea 组件，无法聚焦的问题
-    * uni-popup 新增 type 属性的 left\right 值，支持左右弹出
-    * uni-popup 新增 open(String:type) 方法参数 ，可以省略 type 属性 ，直接传入类型打开指定弹窗
-    * uni-popup 新增 backgroundColor 属性，可定义主窗口背景色,默认不显示背景色
-    * uni-popup 新增 safeArea 属性，是否适配底部安全区
-    * uni-popup 修复 App\h5\微信小程序底部安全区占位不对的Bug
-    * uni-popup 修复 App 端弹出等待的Bug
-    * uni-popup 优化 提升低配设备性能，优化动画卡顿问题
-    * uni-popup 优化 更简单的组件自定义方式
-    * uni-table 修复 示例项目缺少组件的Bug
-    * uni-forms 修复 自定义检验器失效的问题
-    * uni-title 修复 示例项目缺少组件的Bug
-    * uni-transition 修复 示例项目缺少组件的Bug
-    * uni-swiper-dot 修复 示例项目缺少组件的Bug
-    * uni-ui 新增 组件示例地址
+    - uni-badge 新增 uni-badge 的 absolute 属性，支持定位
+    - uni-badge 新增 uni-badge 的 offset 属性，支持定位偏移
+    - uni-badge 新增 uni-badge 的 is-dot 属性，支持仅显示有一个小点
+    - uni-badge 新增 uni-badge 的 max-num 属性，支持自定义封顶的数字值，超过 99 显示99+
+    - uni-badge 优化 uni-badge 属性 custom-style， 支持以对象形式自定义样式
+    - uni-badge 修复 uni-badge 在 App 端，数字小于10时不是圆形的bug
+    - uni-badge 修复 uni-badge 在父元素不是 flex 布局时，宽度缩小的bug
+    - uni-badge 新增 uni-badge 属性 custom-style， 支持自定义样式
+    - uni-datetime-picker 修复 ios 下不识别 '-' 日期格式的 bug
+    - uni-datetime-picker 优化 pc 下弹出层添加边框和阴影
+    - uni-datetime-picker 修复 在 admin 中获取弹出层定位错误的bug
+    - uni-datetime-picker 修复 type 属性向下兼容，默认值从 date 变更为 datetime
+    - uni-datetime-picker 支持日历形式的日期+时间的范围选择
+    - uni-steps 修复 uni-steps 横向布局时，多行文字高度不合理的 bug
+    - uni-countdown 修复 uni-countdown 不能控制倒计时的 bug
+    - uni-tag 修复 royal 类型无效的bug
+    - uni-tag 修复 uni-tag 宽度不自适应的bug
+    - uni-tag 新增 uni-tag 支持属性 custom-style 自定义样式
+    - uni-link 新增 href 属性支持 tel:|mailto:
+    - uni-popup 修复 组件内放置 input 、textarea 组件，无法聚焦的问题
+    - uni-popup 新增 type 属性的 left\right 值，支持左右弹出
+    - uni-popup 新增 open(String:type) 方法参数 ，可以省略 type 属性 ，直接传入类型打开指定弹窗
+    - uni-popup 新增 backgroundColor 属性，可定义主窗口背景色,默认不显示背景色
+    - uni-popup 新增 safeArea 属性，是否适配底部安全区
+    - uni-popup 修复 App\h5\微信小程序底部安全区占位不对的Bug
+    - uni-popup 修复 App 端弹出等待的Bug
+    - uni-popup 优化 提升低配设备性能，优化动画卡顿问题
+    - uni-popup 优化 更简单的组件自定义方式
+    - uni-table 修复 示例项目缺少组件的Bug
+    - uni-forms 修复 自定义检验器失效的问题
+    - uni-title 修复 示例项目缺少组件的Bug
+    - uni-transition 修复 示例项目缺少组件的Bug
+    - uni-swiper-dot 修复 示例项目缺少组件的Bug
+    - uni-ui 新增 组件示例地址
 * 【uniCloud】
   + 【重要】新增 uni-starter 集成商用项目开发常见功能的云端一体项目模板 [详情](https://ext.dcloud.net.cn/plugin?id=5057)
   + clientDB 修复 删除记录、统计记录数时受字段权限影响的bug [详情](https://ask.dcloud.net.cn/question/122846)

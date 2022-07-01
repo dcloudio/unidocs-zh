@@ -6,7 +6,7 @@
   * [数据库](uniCloud/concepts/database.md)
   * [云函数/云对象](uniCloud/concepts/cloudfunction.md)
 * 云函数/云对象
-  * [概述](uniCloud/cf-functions.md)
+  * [综述](uniCloud/cf-functions.md)
   * [云对象](uniCloud/cloud-obj.md)
   * [普通云函数(callFunction)](uniCloud/cf-callfunction.md)
   * [云公共模块](uniCloud/cf-common.md)

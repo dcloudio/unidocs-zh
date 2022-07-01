@@ -456,11 +456,12 @@ Tips:
 - 目前每个云函数上传包大小限制为10M。如果npm包很大，阿里云的整体上传机制会无法满足需求。此时只能选择腾讯云，交给腾讯云自动安装依赖。
 
 
-## 云函数中调用云函数@callbyfunction
+## 云函数/云对象中调用云函数@callbyfunction
 
 用法同客户端调用云函数，仍然是callfunction，但不支持callback形式。
 
-`HBuilderX 3.4.0`版本之前**云函数右键本地运行时使用callFunction会调用云端的云函数而不是本地云函数，连接本地云函数调试时云函数内的callFunction会调用本地云函数**，`HBuilderX 3.4.0`及之后的版本**连接本地云函数或运行本地云函数时，如果在云函数内调用同一服务空间下的云函数会直接调用本地云函数。**
+- `HBuilderX 3.4.0`版本之前**云函数右键本地运行时使用callFunction会调用云端的云函数而不是本地云函数，连接本地云函数调试时云函数内的callFunction会调用本地云函数**，
+- `HBuilderX 3.4.0`及之后的版本**连接本地云函数或运行本地云函数时，如果在云函数内调用同一服务空间下的云函数会直接调用本地云函数。**
 
 #### 请求参数
 
@@ -487,11 +488,17 @@ let callFunctionResult = await uniCloud.callFunction({
 })
 ```
 
-### 云函数内调用其他服务空间的云函数@call-by-function-cross-space
+**注意**
+
+由于调用方不是uni-app客户端，云函数的context、云对象的this.getClientInfo等API无法获取客户端信息，包括 uni-id-token。
+
+可以在云函数互调时手动传递 token ，或者校验调用来源（source）为云函数（function）时不验证用户 token。
+
+### 云函数内访问其他服务空间@call-by-function-cross-space
 
 > 仅腾讯云支持
 
-在腾讯云服务空间的云函数内支持获取同账号下其他服务空间的uniCloud实例，参考：[一个应用访问多个服务空间](uniCloud/concepts/space.md?id=multi-space)，并使用此实例调用对应服务空间的云函数。
+在腾讯云服务空间的云函数内支持获取**同账号**下其他服务空间的uniCloud实例，参考：[一个应用访问多个服务空间](uniCloud/concepts/space.md?id=multi-space)，并使用此实例调用对应服务空间的云函数。
 
 ```javascript
 //开发者创建了多个服务空间，则需手动初始化。注意这是前端代码，不是云函数代码

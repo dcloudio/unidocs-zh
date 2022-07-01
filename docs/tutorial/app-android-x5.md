@@ -31,6 +31,16 @@
 3. x5内核自带的video实现强于html的video，支持视频格式更多。（这个只能用于5+app和wap2app的html里的自带video，以及uni-app的web-view组件里的video。uni-app默认的video组件本身就是原生的，和x5无关）  
 4. 远程web页面防劫持是x5内核的一大亮点  
 
+### 验证是否使用x5以及x5版本号的方法
+- 3.4.14+以上的HBuilderX，使用 [uni.getSystemInfo](https://uniapp.dcloud.io/api/system/info.html) ，看返回的 browserName 和 browserVersion
+- 低版本HBuilderX 使用 `plus.navigator.getUserAgent()`
+
+x5内核的UserAgent如下：
+```
+Mozilla/5.0 (Linux; Android 11; PEXM00 Build/RKQ1.201217.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045738
+```
+
+注意需打包后测试，至少需要自定义基座。
 
 ### X5内核的注意事项
 
@@ -52,8 +62,5 @@ x5内核存在自更新机制。所以可能存在历史版本升级了x5内核�
 
 
 ### 适配问题  
-目前已知 TBS45738版本更新后会导致 uniapp vue页面的input组件adjust-position=false失效！使用x5内核的同学请知晓尽快适配，可以改为nvue或不适用x5内核。版本信息可通过plus.navigator.getUserAgent()获取。
-x5内核的UserAgent如下：
-```
-Mozilla/5.0 (Linux; Android 11; PEXM00 Build/RKQ1.201217.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045738
-```
+目前已知 TBS45738版本更新后会导致 uniapp vue页面的input组件adjust-position=false失效！使用x5内核的同学请知晓尽快适配，可以改为nvue或不适用x5内核。
+

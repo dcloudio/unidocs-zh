@@ -282,7 +282,7 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.getTempFileURL()	|获取云存储文件的临时路径 [详情](uniCloud/storage?id=cloudgettempfileurl)																		|
 |uniCloud.customAuth()		|使用云厂商自定义登录，仅腾讯云支持[详情](uniCloud/authentication.md?id=cloud-custom-auth)														|
 |uniCloud.callFunction()	|云函数/云对象中调用另一个云函数 [见下](?id=callbyfunction)	|
-|uniCloud.importObject()	|云函数/云对象中调用另一个云对象，用法同客户端调用云对象 [详情](cloud-obj.md)	|
+|uniCloud.importObject()	|云函数/云对象中调用另一个云对象 [详情](cloud-obj.md?id=call-by-cloud)	|
 |uniCloud.httpclient		|云函数中通过http访问其他系统 [见下](uniCloud/cf-functions?id=httpclient)																		|
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|

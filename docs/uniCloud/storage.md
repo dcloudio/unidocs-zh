@@ -36,7 +36,7 @@
 
 **支付宝小程序开发工具上传文件到腾讯云时可能会返回失败，请以真机为准**
 
-**各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。[参考](https://uniapp.dcloud.io/uniCloud/quickstart?id=%e5%b0%8f%e7%a8%8b%e5%ba%8f%e4%b8%ad%e4%bd%bf%e7%94%a8unicloud%e7%9a%84%e7%99%bd%e5%90%8d%e5%8d%95%e9%85%8d%e7%bd%ae)**
+**各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。[参考](https://uniapp.dcloud.io/uniCloud/publish.html#useinmp)**
 
 #### 请求参数
 **Object object**

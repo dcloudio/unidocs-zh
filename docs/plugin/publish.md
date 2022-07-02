@@ -46,7 +46,7 @@ Tips：
 若页面模板依赖其它组件，则需将依赖组件一起打包；假设"xiaoming-setting"依赖小红开发的list组件（xiaohong-list），则发布"xiaoming-setting"页面模板时，目录结构要求如下：
 ![](http://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/ext-dev-04.png)
 
-HBuilderX 3.5.0+ 支持插件导入工程时，会自动合并预先配置好的页面路由到项目的 pages.json[详情查看](https://uniapp.dcloud.io/plugin/publish.html#pages-init)
+HBuilderX 3.5.0+ 支持插件导入工程时，支持合并页面路由到项目的 pages.json。[详见](uni_modules.md?id=pages-init)
 
 Tips：
 - vue 页面模板和 nvue 页面模板目录结构要求相同。
@@ -130,11 +130,14 @@ encrypt数组中可灵活配置uniCloud/cloudfunctions下云函数及公共模�
 > 如果你的插件配置包含涉密信息，希望保护这些配置不被上传参考：[uni_modules插件上传辅助脚本示例](https://ext.dcloud.net.cn/plugin?id=5256)
 
 ### 云端一体页面模板
-云端一体页面模板为单页面模板，为了防止导入时与项目现有代码冲突，需注意以下几点命名规范：
+云端一体页面模板，如果非`uni_modules`，则为单页面模板，只能放一个页面。如果是`uni_modules`，可以放任意数量页面。
+
+为了防止导入时与项目现有代码冲突，需注意以下几点命名规范：
 - 必须包含云函数相关目录（uniCloud/cloudfunctions），可以包含js_sdk、pages、components、static等目录
-- 云函数、公共模块命名需要包含“-”
+- 云函数、公共模块命名需要包含“-”，即有插件ID前缀。
 - js_sdk、components、static等目录下的子目录及文件命名需要包含“-”
 - 不能包含根目录的 manifest.json、App.vue、main.js 等文件
+- 如需注册页面到项目的pages.json中，参考[uni_modules文档](uni_modules.md?id=pages-init)
  
 ### 前后一体项目模板
 与uni-app前端项目模板目录结构基本一致，但是必须包含uniCloud相关目录（uniCloud-aliyun、uniCloud-tcb）
@@ -150,40 +153,7 @@ encrypt数组中可灵活配置uniCloud/cloudfunctions下云函数及公共模�
 主要用于提交数据表schema及校验函数，所以必须包含uniCloud-aliyun/database 或 uniCloud-tcb/database目录
 
 ## pages_init
-HBuilderX 3.5.0+ 当uni_modules插件根目录下存在`pages_init.json`文件，在插件导入工程时，会自动合并预先配置好的页面路由到项目的 pages.json。注意：pages_init.json文件最终不会导入到工程中。
-
-示例插件：[问题反馈页面管理员端模板](https://ext.dcloud.net.cn/plugin?id=4992)
-
-示例代码如下：
-```json
-{
-    "pages": [{
-            "path": "uni_modules/uni-feedback-admin/pages/uni-feedback-admin/add",
-            "style": {
-                "navigationBarTitleText": "新增"
-            }
-        },
-        {
-            "path": "uni_modules/uni-feedback-admin/pages/uni-feedback-admin/edit",
-            "style": {
-                "navigationBarTitleText": "编辑"
-            }
-        },
-        {
-            "path": "uni_modules/uni-feedback-admin/pages/uni-feedback-admin/list",
-            "style": {
-                "navigationBarTitleText": "列表"
-            }
-        }
-    ]
-}
-```
-
-完整的pages参数[详情查看](https://uniapp.dcloud.io/collocation/pages.html#pages)
-
-HBuilderX中合并路由界面效果图：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/23fc53b6-3000-4d2b-a033-22e561c236a5.png)
-
+文档已迁移至[uni_modules文档](uni_modules.md?id=pages-init)
 
 ## 注意
 - uni-app原生SDK及web项目两个分类下插件发布后需要审核才会生效。

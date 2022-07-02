@@ -24,7 +24,16 @@
 3. 插件文件位置统一，不会造成下载一个插件，不知道给工程下多少个目录写入了多少个文件。删除插件时也可以一点删除
 
 ### 目录结构
+
+#### 项目插件的uni_modules
+
 `uni_modules`插件如果是项目类型的插件，只需要在项目的根目录下放一个符合`uni_modules`规范的package.json。
+
+右键点击这个package.json，即可对这个项目插件进行更新、或发布到插件市场。
+
+比如[uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)、[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)，都可以通过这种方式更新。
+
+#### 非项目插件的uni_modules
 
 如果是非项目类型的插件，比如组件、js sdk、页面模板、云函数，则需要放置在项目的`uni_modules`目录下。
 
@@ -47,10 +56,57 @@ uni_modules                                项目根目录下
     ├── menu.json                          如果是uniCloud admin插件，可以通过menu.json注册动态菜单，<a href="/uniCloud/admin?id=admin-%e6%8f%92%e4%bb%b6%e5%bc%80%e5%8f%91">详见 menu.json 配置</a>
 	</code>
 </pre>
+
+也就是`uni_modules`目录下相当于复制一遍uni-app的项目结构。
+
 **Tips**
 - 插件目录不支持pages.json、App.vue、main.js、manifest.json、uni.scss文件，如果需要插件使用者修改这些文件内容，请在插件文档(readme.md)中详细说明。
+- 插件目录支持`pages_init.json`，可以方便注册页面到项目的pages.json中，[见下](?id=pages-init)
 - 在插件内部引用资源、跳转页面时，请尽量使用相对路径。
 - 插件内components目录同样支持easycom规范，插件使用者可以直接在项目中使用插件内符合easycom规范的组件，当项目或插件内存在easycom组件冲突，编译时会给予提示，您可以通过修改组件目录及组件文件名称来解决冲突问题。
+
+
+在HBuilderX中，`uni_modules`下如果包含了uniCloud目录的内容，会被以引用的方式，显示到主项目根目录下的uniCloud中。此时文件前的图标左下角会显示一个快捷方式箭头。
+
+如下图，项目中有一个`uni_modules`名为`uni-config-center`，它下面包含了名为`uni-config-center`的公共模块。所以在项目根目录的公共模块目录common下，也会多出一个`uni-config-center`。
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/576ee0d7-a473-4ee9-bd9e-f1afcbcbff6d.jpg)
+
+HBuilderX 中打开配有引用图标指示的文件，会打开原始地址。
+
+### 使用 uni_modules 插件
+#### 下载uni_modules插件
+1. 在[插件市场](https://ext.dcloud.net.cn/)查找uni_modules插件
+2. 在插件详情页,右侧会标明该插件是否支持uni_modules，点击`使用 HBuilderX 导入插件`
+![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/3f6e2c00-622c-11eb-bdc1-8bd33eb6adaa.png)
+3. 选择要导入的uni-app项目
+![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/eb6722a0-622c-11eb-a16f-5b3e54966275.png)
+
+**Tips**
+- uni_modules支持组件easycom，使用者可以直接使用插件内符合easycom规范的组件
+- 其他资源，如图片，js等，在项目中可以直接按目录结构引入即可使用，如：
+```js
+import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
+```
+
+- 如果要使用uni_modules中的页面，[见下](?id=pages-init)
+
+
+#### 安装uni_modules插件依赖
+1. 导入插件时，HBuilderX会自动安装当前插件的所有三方依赖。
+2. 您还可以在插件目录右键手动执行`安装插件三方依赖`
+![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/eef13280-62d6-11eb-918d-3d24828c498c.png)
+#### 更新uni_modules插件
+1. 可以通过插件目录右键`从插件市场更新`，来检查更新当前所使用的插件
+![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/ccb42320-622d-11eb-8ff1-d5dcf8779628.png)
+2. 对比插件，确认更新内容
+![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/9069d370-62d6-11eb-a16f-5b3e54966275.png)
+#### 卸载uni_modules插件
+uni_modules插件目录是独立存在的，如果您不再需要该插件，可以直接删除该插件目录。
+
+**Tips**
+- 导入uni_modules规范插件需要使用 3.1.0 以上版本的 HBuilderX
+
 
 ### 配置
 #### package.json
@@ -177,6 +233,59 @@ package-lock.json
 
 - 项目根目录下的`.npmignore`对发布项目、插件模板生效。`uni_modules/插件Id/.npmignore`对发布插件生效
 
+#### pages_init页面注册@pages-init
+> 新增于HBuilderX 3.5.0+
+
+过去，插件作者提供页面类插件时，需要在文档中手动告知使用者在pages.json中注册哪些页面。如：
+
+```json
+{
+  "pages":[{
+    "path":"uni_modules/xx-yy/pages/demo/demo" // 按插件所在目录引入对应的页面
+  }]
+}
+```
+
+`pages_init.json`解决了这个烦恼。
+
+当uni_modules插件根目录下存在`pages_init.json`文件，在插件导入工程时，会弹出一个合并页面路由的pages.json修改界面。插件使用者点击确认按钮即可完成插件页面向项目pages.json的注册。
+
+示例插件：[问题反馈页面管理员端模板](https://ext.dcloud.net.cn/plugin?id=4992)
+
+示例代码如下：
+```json
+{
+    "pages": [{
+            "path": "uni_modules/uni-feedback-admin/pages/uni-feedback-admin/add",
+            "style": {
+                "navigationBarTitleText": "新增"
+            }
+        },
+        {
+            "path": "uni_modules/uni-feedback-admin/pages/uni-feedback-admin/edit",
+            "style": {
+                "navigationBarTitleText": "编辑"
+            }
+        },
+        {
+            "path": "uni_modules/uni-feedback-admin/pages/uni-feedback-admin/list",
+            "style": {
+                "navigationBarTitleText": "列表"
+            }
+        }
+    ]
+}
+```
+
+完整的pages参数[详情查看](https://uniapp.dcloud.io/collocation/pages.html#pages)
+
+HBuilderX中合并路由界面效果图：
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/23fc53b6-3000-4d2b-a033-22e561c236a5.png)
+
+**注意**
+- `pages_init.json`文件最终不会导入到工程中。
+- 如果HBuilderX版本低于3.5，或插件作者并没有提供`pages_init.json`，那么仍然需要手动编辑pages.json注册页面。
+
 ### 开发 uni_modules 插件
 #### 新建uni_modules目录
 在uni-app项目根目录下，创建uni_modules目录，在HBuilderX中可以项目右键菜单中点击`新建uni_modules目录`
@@ -229,43 +338,6 @@ package-lock.json
 **Tips**
 - 在发布窗口中填写的更新日志，会自动与根目录的changelog.md保持同步
 
-### 使用 uni_modules 插件
-#### 添加uni_modules插件
-1. 在[插件市场](https://ext.dcloud.net.cn/)查找符合自己需求的uni_modules插件
-2. 在插件详情页,右侧会标明该插件是否支持uni_modules，点击`使用 HBuilderX 导入插件`
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/3f6e2c00-622c-11eb-bdc1-8bd33eb6adaa.png)
-3. 选择要导入的uni-app项目
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/eb6722a0-622c-11eb-a16f-5b3e54966275.png)
-
-**Tips**
-- uni_modules支持组件easycom，使用者可以直接使用插件内符合easycom规范的组件
-- 其他资源，如图片，js等，在项目中可以直接按目录结构引入即可使用，如：
-```js
-import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
-```
-- 如果要使用uni_modules中的页面，您需要在自己项目根目录的pages.json中添加对应的页面配置
-```json
-{
-  "pages":[{
-    "path":"uni_modules/xx-yy/pages/demo/demo" // 按插件所在目录引入对应的页面
-  }]
-}
-```
-
-#### 安装uni_modules插件依赖
-1. 导入插件时，HBuilderX会自动安装当前插件的所有三方依赖。
-2. 您还可以在插件目录右键手动执行`安装插件三方依赖`
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/eef13280-62d6-11eb-918d-3d24828c498c.png)
-#### 更新uni_modules插件
-1. 可以通过插件目录右键`从插件市场更新`，来检查更新当前所使用的插件
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/ccb42320-622d-11eb-8ff1-d5dcf8779628.png)
-2. 对比插件，确认更新内容
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/9069d370-62d6-11eb-a16f-5b3e54966275.png)
-#### 卸载uni_modules插件
-uni_modules插件目录是独立存在的，如果您不再需要该插件，可以直接删除该插件目录。
-
-**Tips**
-- 导入uni_modules规范插件需要使用 3.1.0 以上版本的 HBuilderX
 
 ### 已有插件迁移为 uni_modules 插件指南
 
@@ -283,5 +355,5 @@ uni_modules插件目录是独立存在的，如果您不再需要该插件，可
 ```
  - 插件文档，迁移至插件根目录的readme.md中
  - 右键package.json，点击`发布到插件市场`，选择分类，填写插件信息（尽可能与插件市场已有信息保持一致）
- - 发布成功后，您可以在插件市场的插件详情页右侧，查看到您的插件已同时提供了uni_modules版本和非uni_modules版本（仅保留最后一个非uni_modules版本）
+ - 发布成功后，您可以在插件市场的插件详情页右侧，查看到您的插件已同时提供了`uni_modules`版本和非`uni_modules`版本（仅保留最后一个非`uni_modules`版本）
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/47c2a2f0-62db-11eb-a16f-5b3e54966275.png)

@@ -32,7 +32,7 @@
 
 - **注1：``button-hover`` 默认为 ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}``**
 - ```open-type="launchApp"```时需要调起的APP接入微信OpenSDK[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)
- 
+
 **size 有效值**
 
 |值|说明|
@@ -60,16 +60,32 @@
 |值|说明|平台差异说明|
 |:-|:-|:-|
 |feedback|打开“意见反馈”页面，用户可提交反馈内容并上传日志|App、微信小程序、QQ小程序|
-|share|触发用户转发|微信小程序、百度小程序、支付宝小程序、字节跳动小程序、飞书小程序、QQ小程序、快手小程序	|
-|getUserInfo|获取用户信息，可以从@getuserinfo回调中获取到用户信息|微信小程序、百度小程序、QQ小程序、快手小程序	|
-|contact | 打开客服会话，如果用户在会话中点击消息卡片后返回应用，可以从 @contact 回调中获得具体信息 |微信小程序、百度小程序|
-|getPhoneNumber | 获取用户手机号，可以从@getphonenumber回调中获取到用户信息|微信小程序、百度小程序、字节跳动小程序、支付宝小程序、快手小程序。App平台另见[一键登陆](https://uniapp.dcloud.net.cn/univerify) |
-|launchApp | 小程序中打开APP，可以通过app-parameter属性设定向APP传的参数|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)、[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_app.html)|
-|openSetting | 打开授权设置页 |微信小程序、百度小程序|
+|share|触发用户转发|微信小程序、百度小程序、支付宝小程序、字节跳动小程序、飞书小程序、QQ小程序、快手小程序、京东小程序、360小程序	|
+|getUserInfo|获取用户信息，可以从@getuserinfo回调中获取到用户信息|微信小程序、百度小程序、QQ小程序、快手小程序、京东小程序、360小程序	|
+|contact | 打开客服会话，如果用户在会话中点击消息卡片后返回应用，可以从 @contact 回调中获得具体信息 |微信小程序、百度小程序、快手小程序 |
+|getPhoneNumber | 获取用户手机号，可以从@getphonenumber回调中获取到用户信息|微信小程序、百度小程序、字节跳动小程序、支付宝小程序、快手小程序、京东小程序。App平台另见[一键登陆](https://uniapp.dcloud.net.cn/univerify) |
+|launchApp | 小程序中打开APP，可以通过app-parameter属性设定向APP传的参数|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)、[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_app.html)、快手小程序、京东小程序 |
+|openSetting | 打开授权设置页 |微信小程序、QQ小程序、百度小程序、快手小程序、京东小程序、360小程序 |
+|chooseAvatar|获取用户头像，可以从@chooseavatar回调中获取到头像信息|微信小程序2.21.2版本+ |
 |getAuthorize | 支持小程序授权 | 支付宝小程序 |
 |contactShare | 分享到通讯录好友 | 支付宝小程序 |
 |lifestyle | 关注生活号 | 支付宝小程序 |
-|openGroupProfile|呼起QQ群资料卡页面，可以通过group-id属性设定需要打开的群资料卡的群号，同时manifest中必须配置groupIdList|QQ小程序基础库1.4.7版本+|
+|contactShare|分享到通讯录好友|支付宝小程序基础库1.11.0版本+ |
+|openGroupProfile|呼起QQ群资料卡页面，可以通过group-id属性设定需要打开的群资料卡的群号，同时manifest.json中必须配置groupIdList|QQ小程序基础库1.4.7版本+ |
+|openGuildProfile|呼起频道页面，可以通过guild-id属性设定需要打开的频道ID|QQ小程序基础库1.46.8版本+ |
+|openPublicProfile|打开公众号资料卡，可以通过public-id属性设定需要打开的公众号资料卡的号码，同时manifest.json中必须配置publicIdList|QQ小程序基础库1.12.0版本+ |
+|shareMessageToFriend|在自定义开放数据域组件中,向指定好友发起分享据|QQ小程序基础库1.17.0版本+ |
+|addFriend|添加好友， 对方需要通过该小程序进行授权，允许被加好友后才能调用成功用户授权|QQ小程序 |
+|addColorSign|添加彩签，点击后添加状态有用户提示，无回调|QQ小程序基础库1.10.0版本+ |
+|addGroupApp|添加群应用（只有管理员或群主有权操作），添加后给button绑定@addgroupapp事件接收回调数据|QQ小程序基础库1.16.0版本+ |
+|addToFavorites|收藏当前页面，点击按钮后会触发Page.onAddToFavorites方法|QQ小程序基础库1.19.0版本+ |
+|chooseAddress|选择用户收货地址，可以从@chooseaddress回调中获取到用户选择的地址信息|百度小程序 |
+|chooseInvoiceTitle|选择用户发票抬头，可以从@chooseinvoicetitle回调中获取到用户选择发票抬头信息|百度小程序 |
+|login|登录，可以从@login回调中确认是否登录成功|百度小程序 |
+|subscribe|订阅类模板消息，需要用户授权才可发送|百度小程序 |
+|favorite|触发用户收藏|快手小程序 |
+|watchLater|触发用户稍后再看|快手小程序 |
+|openProfile|触发打开用户主页|快手小程序 |
 
 **button点击**
 
@@ -99,7 +115,7 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 ```
 
 
-**注意** 
+**注意**
 - 在小程序中，开发者可以登录 [微信小程序管理后台](https://mp.weixin.qq.com/) 、[QQ小程序后台](https://q.qq.com/#/)后，进入菜单“客服反馈”页面获取反馈内容。
 - 在 App 中，开发者登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) 后点击应用名称，进入左侧菜单“用户反馈”页面获取反馈内容。
 - 点击 share 分享按钮时会触发 [onShareAppMessage](/api/plugins/share)

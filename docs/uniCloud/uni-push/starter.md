@@ -54,7 +54,7 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 
 
 ## 第三步：客户端操作
-## 启用客户端uniPush
+
 ### 名词解释
 #### 离线推送@offline
 <img width="30%" style="margin-left:20px;margin-top:0;float:right;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3bb2b4c4-1b73-426d-b713-f076aff80868.jpg"/>
@@ -69,6 +69,8 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 
 如果业务逻辑上需要创建“通知栏消息”来提醒用户；可以在监听到消息内容后，使用创建本地消息API [plus.push.createMessage](https://www.html5plus.org/doc/zh_cn/push.html#plus.push.createMessage)手动创建通知栏消息。
 
+### 启用客户端uniPush
+
 操作步骤打开`manifest.json`-`App模块配置`-中勾选`uniPush 2.0`
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f897176a-6216-48bd-98c8-439b2bd2cb42.jpg)
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1280af61-06a3-46d3-bfc3-0e1c1aee2580.jpg)
@@ -76,8 +78,8 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 其他小程序启用方式参考微信小程序，这里不一一列举
 
 ### 获取客户端推送标识
+
 代码示例：
-```js 
 ```js 
 	uni.getPushClientId({
 		success: (res) => {

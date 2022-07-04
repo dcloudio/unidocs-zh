@@ -68,7 +68,6 @@
 |openSetting | 打开授权设置页 |微信小程序、QQ小程序、百度小程序、快手小程序、京东小程序、360小程序 |
 |chooseAvatar|获取用户头像，可以从@chooseavatar回调中获取到头像信息|微信小程序2.21.2版本+ |
 |getAuthorize | 支持小程序授权 | 支付宝小程序 |
-|contactShare | 分享到通讯录好友 | 支付宝小程序 |
 |lifestyle | 关注生活号 | 支付宝小程序 |
 |contactShare|分享到通讯录好友|支付宝小程序基础库1.11.0版本+ |
 |openGroupProfile|呼起QQ群资料卡页面，可以通过group-id属性设定需要打开的群资料卡的群号，同时manifest.json中必须配置groupIdList|QQ小程序基础库1.4.7版本+ |

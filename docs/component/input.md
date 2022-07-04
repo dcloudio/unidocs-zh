@@ -23,9 +23,21 @@
 |selection-start|Number|-1|光标起始位置，自动聚集时有效，需与selection-end搭配使用||
 |selection-end|Number|-1|光标结束位置，自动聚集时有效，需与selection-start搭配使用||
 |adjust-position|Boolean|true|键盘弹起时，是否自动上推页面|App-Android（vue 页面 softinputMode 为 adjustResize 时无效，使用 x5 内核时无效）、微信小程序、百度小程序、QQ小程序、京东小程序|
-|hold-keyboard|boolean|false|focus时，点击页面的时候不收起键盘|微信小程序2.8.2|
-|auto-blur|boolean|false|键盘收起时，是否自动失去焦点|App-Vue 3.0.0+|
-|ignoreCompositionEvent|boolean|true|是否忽略组件内对文本合成系统事件的处理。为 `false` 时将触发 `compositionstart、compositionend、compositionupdate` 事件，且在文本合成期间会触发 `input` 事件|App-vue (3.4.4+)、H5 (3.4.4+)、App-nvue不支持|
+|hold-keyboard|Boolean|false|focus时，点击页面的时候不收起键盘|微信小程序2.8.2|
+|auto-blur|Boolean|false|键盘收起时，是否自动失去焦点|App-Vue 3.0.0+|
+|ignoreCompositionEvent|Boolean|true|是否忽略组件内对文本合成系统事件的处理。为 `false` 时将触发 `compositionstart、compositionend、compositionupdate` 事件，且在文本合成期间会触发 `input` 事件|App-vue (3.4.4+)、H5 (3.4.4+)、App-nvue不支持|
+|always-embed|Boolean|false|强制 input 处于同层状态，默认 focus 时 input 会切到非同层状态 (仅在 iOS 下生效)|微信小程序 2.10.4+|
+|hold-keyboard|Boolean|false|focus时，点击页面的时候不收起键盘|微信小程序 2.8.2+|
+|safe-password-cert-path|String||安全键盘加密公钥的路径，只支持包内路径|微信小程序 2.18.0+|
+|safe-password-length|Number||安全键盘输入密码长度|微信小程序 2.18.0+|
+|safe-password-time-stamp|Number||安全键盘加密时间戳|微信小程序 2.18.0+|
+|safe-password-nonce|String||安全键盘加密盐值|微信小程序 2.18.0+|
+|safe-password-salt|String||安全键盘计算 hash 盐值，若指定custom-hash 则无效|微信小程序 2.18.0+|
+|safe-password-custom-hash|String||安全键盘计算 hash 的算法表达式，如 md5(sha1('foo' + sha256(sm3(password + 'bar'))))|微信小程序 2.18.0+|
+|random-number|Boolean|false|当 type 为 number, digit, idcard 数字键盘是否随机排列|支付宝小程序 1.9.0+|
+|controlled|Boolean|false|是否为受控组件。为 true 时，value 内容会完全受 setData 控制|支付宝小程序 1.9.0+|
+|always-system|Boolean|false|是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效|支付宝小程序 2.7.3+|
+
 |@input|EventHandle||当键盘输入时，触发input事件，event.detail = {value}|差异见下方 Tips|
 |@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（2.2.3+） 、QQ小程序支持 height|
 |@blur|EventHandle||输入框失去焦点时触发，event.detail = {value: value}|快手小程序不支持|
@@ -42,7 +54,7 @@
 ```html
         <!-- 错误写法 -->
 	<input :type="isText?'text':'number'" placeholder="请输入内容" />
-	
+
         <!-- 正确写法 -->
 	<input v-if="isText" type="text" placeholder="请输入文本" />
 	<input v-else  type="number"  placeholder="请输入数字" />
@@ -59,6 +71,8 @@
 |idcard|身份证输入键盘|微信、支付宝、百度、QQ小程序、快手小程序、京东小程序|
 |digit|带小数点的数字键盘|均支持，App平台、H5平台 vue 页面在 iOS 平台显示的键盘包含负数。|
 |tel|电话输入键盘|仅App的nvue页面支持|
+|safe-password|密码安全输入键盘|微信小程序|
+|nickname|昵称输入键盘|微信小程序|
 
 **注意事项**
 
@@ -146,7 +160,7 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 - 原生输入框一样受配置的`adjustPan|adjustResize`模式影响
 
 **input示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/input/input)
- 
+
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
 

@@ -1529,3 +1529,74 @@ uni-cloud-push 扩展库的errCode码以uni-cloud-push-error-开头，如：uni-
 
 ## 注意：
 `push_clientid`如果3个月未登陆会失效，所以uni-id的token过期时间不能超过3个月，否则push模块会有意想不到的故障。
+
+<div class="weixin-support">
+    <div class="weixin-support-focus">
+        <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/628c90e2-c04f-4f92-8564-85d54b467e4f.png" alt="" class="weixin-support-icon">
+        技术
+        <br>
+        咨询
+    </div>
+    <div class="weixin-support-content">
+		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f91f57ca-ea30-47ee-a740-954153977e88.jpg" alt="" class="weixin-support-icon">
+       微信扫一扫
+		<br>
+        随时联系技术支持
+    </div>
+</div>
+
+<style>
+.weixin-support {
+  position: fixed;
+  z-index: 10;
+  bottom: calc(10% + 265px);
+  right: 10px;
+}
+.weixin-support img{
+	background: #0591F0;
+}
+.weixin-support-focus {
+  padding: 10px 8px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  background: #0591F0;
+  box-shadow: 0px 4px 8px rgba(0, 105, 202, 0.24);
+  border-radius: 2px;
+}
+.weixin-support-focus .iconfont{
+  display: block;
+  font-size: 16px;
+  text-align: center;
+}
+.weixin-support-icon{
+  width: 30px;
+  display: block;
+  margin-bottom: 2px;
+  margin-top: -4px;
+}
+.weixin-support-content {
+  z-index: 10;
+  display: none;
+  position: absolute;
+  right: 50px;
+  top: -100px;
+  background-color: #fff;
+  padding: 20px;
+  margin-right: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 230px;
+  height: 270px;
+  font-size: 14px;
+}
+.weixin-support:hover .weixin-support-content{
+  display: block;
+}
+.weixin-support-content img{
+  display: block;
+  height: 200px;
+  width: 200px;
+}
+</style>

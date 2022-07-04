@@ -55,6 +55,7 @@
 |gatewayMerchantId|支付网关的商户id|当`tokenizationSpecificationType`为`PAYMENT_GATEWAY`时必填|
 |protocolVersion|加密协议版本|当`tokenizationSpecificationType`为`DIRECT`时必填|
 |publicKey|公钥|当`tokenizationSpecificationType`为`DIRECT`时必填|
+|buildTokenizationSpecification|自定义构造tokenizationSpecification参数，设置此字段时，会覆盖掉`tokenizationSpecificationType`、`gateway`、`gatewayMerchantId`、`protocolVersion`、`publicKey`字段。(HBuilderX 3.5.1+支持)|否|
 
 
 2. `PAYPAL` 支付
@@ -121,6 +122,13 @@ plus.payment.getChannels((providers) => {
 						gatewayMerchantId: "exampleGatewayMerchantId", //PAYMENT_GATEWAY时必填
 						protocolVersion: "", //DIRECT时必填
 						publicKey: "", //DIRECT时必填
+            buildTokenizationSpecification:{//可选，此字段是为了方便开发者自定义构造tokenizationSpecification参数,设置此字段时，会覆盖掉`tokenizationSpecificationType`、`gateway`、`gatewayMerchantId`、`protocolVersion`、`publicKey`字段。(HBuilderX 3.5.1+支持)
+							"type":"PAYMENT_GATEWAY",
+							"parameters":{
+								"gateway":"custom-gateway",
+								"gatewayMerchantId":"mock-gatewayMerchantId"
+							}
+						}
 					};
 					
 
@@ -168,5 +176,4 @@ plus.payment.getChannels((providers) => {
 
 
 ```
-
 

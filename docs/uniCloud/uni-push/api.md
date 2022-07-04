@@ -98,7 +98,9 @@ await uniPush.sendMessage(OBJECT)
 - 通过getui_big_data_tag（根据条件筛选用户推送）指定消息接收者推送API，频次限制100次/天，每分钟不能超过5次(推送限制和接口执行群推共享限制)，定时推送功能需要申请开通才可以使用，申请修改请点击右侧“技术咨询”了解详情。
 - 对指定应用的所有用户群发推送消息API，频次限制100次/天，每分钟不能超过5次(推送限制和接口根据条件筛选用户推送共享限制)
 
-注意：调用一次sendMessage，最大推送设备数是500，超过将直接忽略。有超过500台以上设备接收消息的应用场景，应当调用内置在[uni-push-admin插件](https://ext.dcloud.net.cn/plugin?name=uni-push-admin) 中的云对象uni-push-co，调用参数与本api一致
+**注意：**
+- 调用一次sendMessage，最大推送设备数是500，超过将直接忽略。有超过500台以上设备接收消息的应用场景，应当调用内置在[uni-push-admin插件](https://ext.dcloud.net.cn/plugin?name=uni-push-admin) 中的云对象uni-push-co，调用参数与本api一致
+- `push_clientid`如果3个月未登陆会失效，所以uni-id的token过期时间不能超过3个月，否则push模块会有意想不到的故障。
 
 ##### getui_big_data_tag 说明
 |名称|类型|是否必需|默认值|描述|
@@ -1522,13 +1524,6 @@ uni-cloud-push 扩展库的errCode码以uni-cloud-push-error-开头，如：uni-
 | 30017 | 没有查询单推实时报表的权限  | 403 |
 | 30018 | 查询单推实时报表 频率超过每分钟频率限制 |  403 |
 | 30019 | 系统繁忙，请稍后重试 |  403 |
-
-查询客户端标签
-根据cid查询客户端标签列表
-
-
-## 注意：
-`push_clientid`如果3个月未登陆会失效，所以uni-id的token过期时间不能超过3个月，否则push模块会有意想不到的故障。
 
 <div class="weixin-support">
     <div class="weixin-support-focus">

@@ -75,7 +75,7 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/87accaa0-e6a4-4916-9a74-87719142abaa.jpg)
 其他小程序启用方式参考微信小程序，这里不一一列举
 
-## 获取客户端推送标识
+### 获取客户端推送标识
 代码示例：
 ```js 
 ```js 
@@ -90,7 +90,7 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 	})
 ```
 
-## 监听推送消息
+### 监听推送消息
 
 在项目根目录的App.vue的onLaunch生命周期中添加代码示例：
 

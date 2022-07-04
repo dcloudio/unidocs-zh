@@ -78,9 +78,9 @@
 |addColorSign|添加彩签，点击后添加状态有用户提示，无回调|QQ小程序基础库1.10.0版本+ |
 |addGroupApp|添加群应用（只有管理员或群主有权操作），添加后给button绑定@addgroupapp事件接收回调数据|QQ小程序基础库1.16.0版本+ |
 |addToFavorites|收藏当前页面，点击按钮后会触发Page.onAddToFavorites方法|QQ小程序基础库1.19.0版本+ |
-|chooseAddress|选择用户收货地址，可以从@chooseaddress回调中获取到用户选择的地址信息|百度小程序 |
-|chooseInvoiceTitle|选择用户发票抬头，可以从@chooseinvoicetitle回调中获取到用户选择发票抬头信息|百度小程序 |
-|login|登录，可以从@login回调中确认是否登录成功|百度小程序 |
+|chooseAddress|选择用户收货地址，可以从@chooseaddress回调中获取到用户选择的地址信息|百度小程序3.160.3版本+ |
+|chooseInvoiceTitle|选择用户发票抬头，可以从@chooseinvoicetitle回调中获取到用户选择发票抬头信息|百度小程序3.160.3版本+ |
+|login|登录，可以从@login回调中确认是否登录成功|百度小程序3.230.1版本+ |
 |subscribe|订阅类模板消息，需要用户授权才可发送|百度小程序 |
 |favorite|触发用户收藏|快手小程序 |
 |watchLater|触发用户稍后再看|快手小程序 |

@@ -245,17 +245,14 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 `HBuilderX 3.2.5`新增在App平台支持 vue 3.0，至此 `uni-app` 项目对 vue 3.0 的支持情况如下：
 
 - H5/PC Web平台支持，编译器升级为`vite`。
-- 小程序平台：支持vue 3.0开发，编译器依然是 `webpack`，正在升级`vite`中。
-- App 平台：支持，编译器升级为`vite`，`nvue`暂不支持。
-
+- 小程序平台：`HBuilderX 3.3.3+` 支持 `vite`。
+- App 平台：支持，编译器升级为`vite`，`HBuilderX 3.3.13` 起 `nvue`编译器升级为`vite`。
 
 
 **注意事项**
 
 - vue3 响应式基于 `Proxy` 实现，不支持`iOS9`和`ie11`。
 - 暂不支持新增的 `Teleport`,`Suspense` 组件。
-- 暂不支持 `template` 下存在多个根节点。
-- 小程序端暂不支持使用 `Vite` 编译。
 - 目前 `HBuilderX 3.2` 起已预置，之前的版本只能使用cli方式。
 
 

@@ -286,7 +286,7 @@ module.exports = {
 
 |参数名			|类型	|必备	|说明																								|
 |--				|--		|--		|--																									|
-|provider		|string	|是		|服务空间供应商，阿里云为aliyun，腾讯云为tcb														|
+|provider		|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`														|
 |spaceId		|string	|是		|服务空间Id																							|
 |version		|string	|是		|服务端sdk版本，本地调试插件随HBuilderX更新，云端保持与最新HBuilderX一致，新增于`HBuilderX 3.5.1`	|
 |functionName	|string	|是		|云对象名称，新增于`HBuilderX 3.5.1`																|

@@ -216,7 +216,7 @@ key 说明
 
 因此需要在小米平台上新建channel通道，设置自定义铃声前端路径如：android.resource://your packagename/raw/test（路径不需要带音频后缀名）如图
 
-![](./img/custom_sound.png)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/42e8152b-f458-462e-9353-43dede93c294.png)
 
 
 **Rest-v2 示例：**

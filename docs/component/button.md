@@ -24,11 +24,20 @@
 |send-message-path|string|当前分享路径|会话内消息卡片点击跳转小程序路径，open-type="contact"时有效||微信小程序|
 |send-message-img|string|截图|会话内消息卡片图片，open-type="contact"时有效||微信小程序|
 |show-message-card|boolean|false|是否显示会话内消息卡片，设置此参数为 true，用户进入客服会话会在右下角显示"可能要发送的小程序"提示，用户点击后可以快速发送小程序消息，open-type="contact"时有效||微信小程序|
-|@getphonenumber|Handler||获取用户手机号回调|open-type="getPhoneNumber"|微信小程序|
-|@getuserinfo|Handler||用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同uni.getUserInfo|open-type="getUserInfo"|微信小程序|
-|@error|Handler||当使用开放能力时，发生错误的回调|open-type="launchApp"|微信小程序|
-|@opensetting|Handler||在打开授权设置页并关闭后回调|open-type="openSetting"|微信小程序|
-|@launchapp|Handler||从小程序打开 App 成功的回调|open-type="launchApp"|微信小程序|
+|group-id|String||打开群资料卡时，传递的群号|open-type="openGroupProfile"|QQ小程序|
+|guild-id|String||打开频道页面时，传递的频道号|open-type="openGuildProfile"|QQ小程序|
+|public-id|String||打开公众号资料卡时，传递的号码|open-type="openPublicProfile"|QQ小程序|
+|@getphonenumber|Handler||获取用户手机号回调|open-type="getPhoneNumber"|微信、支付宝、百度、字节、快手、京东小程序|
+|@getuserinfo|Handler||用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同uni.getUserInfo|open-type="getUserInfo"|微信、QQ、百度、快手、京东小程序|
+|@error|Handler||当使用开放能力时，发生错误的回调|open-type="launchApp"|微信、QQ、快手、京东小程序|
+|@opensetting|Handler||在打开授权设置页并关闭后回调|open-type="openSetting"|微信、QQ、百度、快手、京东小程序|
+|@launchapp|Handler||从小程序打开 App 成功的回调|open-type="launchApp"|微信、QQ、快手、京东小程序|
+|@chooseavatar|Handler||获取用户头像回调|open-type="chooseAvatar"|微信小程序|
+|@addgroupapp|Handler||添加群应用的回调|open-type="addGroupApp"|QQ小程序|
+|@chooseaddress|Handler||调起用户编辑并选择收货地址的回调|open-type="chooseAddress"|百度小程序|
+|@chooseinvoicetitle|Handler||用户选择发票抬头的回调|open-type="chooseInvoiceTitle"|百度小程序|
+|@subscribe|Handler||订阅消息授权回调|open-type="subscribe"|百度小程序|
+|@login|Handler||登录回调|open-type="login"|百度小程序|
 
 - **注1：``button-hover`` 默认为 ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}``**
 - ```open-type="launchApp"```时需要调起的APP接入微信OpenSDK[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)

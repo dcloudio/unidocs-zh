@@ -35,7 +35,7 @@ uni.onPushMessage((res)=>{
 ### offPushMessage([eventName])
 关闭推送消息监听事件
 示例代码：
-```
+```js
 let eventName = (res)=>{
 	console.log(res)
 }
@@ -1550,7 +1550,12 @@ uni-cloud-push 扩展库的errCode码以uni-cloud-push-error-开头，如：uni-
   position: fixed;
   z-index: 10;
   bottom: calc(10% + 265px);
-  right: 10px;
+  right: 230px;
+}
+@media screen and (max-width: 1350px) {
+	.weixin-support {
+	  right: 10px;
+	}
 }
 .weixin-support img{
 	background: #0591F0;
@@ -1588,8 +1593,8 @@ uni-cloud-push 扩展库的errCode码以uni-cloud-push-error-开头，如：uni-
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   width: 230px;
-  height: 270px;
   font-size: 14px;
+  box-shadow: 0 0 10px #ccc;
 }
 .weixin-support:hover .weixin-support-content{
   display: block;

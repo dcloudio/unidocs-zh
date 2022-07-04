@@ -26,8 +26,8 @@ push，指服务器主动向客户端发送消息的技术。无需客户端持�
 2. 专业push服务器再向客户端发送消息
 3. 手机用户在操作系统的通知栏中看到push消息，点击后呼起客户端应用，客户端代码才能接收响应；如果是小程序的话，则是在微信消息里看到订阅消息，点击后呼起小程序。
 <div style="float:clear;">
-	<img width="40%" style="margin-left:10%;max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3bb2b4c4-1b73-426d-b713-f076aff80868.jpg"/>
-	<img width="40%" style="margin-left:10%;max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/368bb2ca-1213-4895-9ad7-f39e28ee8b5a.jpg"/>
+	<img width="30%" style="margin-left:5%;max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3bb2b4c4-1b73-426d-b713-f076aff80868.jpg"/>
+	<img width="30%" style="margin-left:5%;max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/368bb2ca-1213-4895-9ad7-f39e28ee8b5a.jpg"/>
 </div>
 
 由于手机厂商众多，他们各自都有不同的推送服务，包括Apple、google（仅能在海外使用）、华为、小米、oppo、vivo、魅族，以及还有一些没有专业推送服务的中小手机品牌。他们对App后台耗电都有查杀机制，除了微信等大应用，普通应用很难常驻后台。

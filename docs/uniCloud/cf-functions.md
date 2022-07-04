@@ -772,7 +772,7 @@ package.json是一个标准json文件，不可带注释。下面是一个package
 }
 ```
 
-其中cloudfunction-config字段是云函数配置，支持的配置如下
+### cloudfunction-config@cloudfunction-config
 
 ```js
 {
@@ -790,11 +790,12 @@ package.json是一个标准json文件，不可带注释。下面是一个package
   }],
   // 云函数Url化path部分，阿里云需要以/http/开头
   "path": "",
-  "runtime": "" // nodejs版本，可选Nodejs8、Nodejs12，默认：Nodejs8
+  "runtime": "", // nodejs版本，可选Nodejs8、Nodejs12，默认：Nodejs8
+  "keepRunningAfterReturn": true // 是否在云函数return之后继续执行，仅腾讯云nodejs12生效，详情见下方说明
 }
 ```
 
-**关于triggers**
+#### triggers@triggers
 
 阿里云定时触发的cron表达式不支持代表年的第七位，但是在package.json内配置时仍需将第七位设置为*。
 
@@ -810,7 +811,36 @@ package.json内统一了腾讯阿里的配置，两个平台都需要配置为�
 }
 ```
 
-**注意**
+#### keepRunningAfterReturn@keep-running
+
+> 新增于HBuilderX 3.5.1
+
+阿里云、腾讯云nodejs8在云函数return之后其余逻辑会被冻结不再执行。腾讯云nodejs12表现恰好相反，云函数return之后还会等待其余逻辑执行后才会将此云函数实例空闲出来。
+
+以下面的代码为例
+
+```js
+exports.main = async function(event, context) {
+	setTimeout(()=>{
+	  console.log('delay 5 second')
+	}, 5000)
+	return {}
+}
+```
+
+如果此云函数运行在阿里云或腾讯云nodejs8，setTimeout里面的console.log不会在本次云函数调用执行，但是可能在云函数实例再次被复用时继续执行。
+
+如果此云函数运行在腾讯云nodejs12，setTimeout里面的console.log会在本次云函数调用内，同样的本次云函数计费时间也会按照最终执行完成的时间计算（5000ms+return耗时）。但是前端无需等待5秒即可收到响应。**注意：如果有未断开的长连接（例如：redis连接）会导致云函数一直运行到配置的超时时间**
+
+当在云函数package.json内的cloudfunction-config内配置了`keepRunningAfterReturn: false`时，可以改变腾讯云nodejs12的表现，云函数return之后将不再继续执行，未断开的长连接也不会增加云函数实际运行时间，简单来说其表现和腾讯云nodejs8一致。
+
+**腾讯云nodejs12使用redis**
+
+由于redis需要和服务器建立连接，此连接会阻止云函数结束执行。如果没有云函数return之后还需要继续执行的需求，可以简单的在`cloudfunction-config`内配置`keepRunningAfterReturn: false`。
+
+如果需要return之后继续执行，那么需要在使用完毕后断开redis连接，调用`redis.quit()`方法即可断开连接。需要注意的是断开连接后之前建立的连接将不再可用，下个请求到来时需要使用`uniCloud.redis()`方法重新建立连接。
+
+### 注意事项
 
 - 插件作者在发布插件时，如果云函数有特殊设置，应该放入package.json中，然后发布到插件市场。这样就不用再通过说明文档一步一步引导用户去配置云函数定时触发器、内存、url化路径等
 - 在web控制台修改云函数配置后，通过HBuilderX的下载云函数菜单会在package.json内添加修改后的云函数配置

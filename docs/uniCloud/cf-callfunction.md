@@ -111,20 +111,24 @@ exports.main = async (event, context) => {
 - 阿里云event大小不可超过1MB
 - 腾讯云event大小不可超过6MB
 
-### context对象
+### context对象@context
 
 - `context` 对象包含了本次请求的上下文，包括客户端的ip、ua、appId等信息，以及云函数的环境情况、调用来源source等信息。
 
 context对象的属性清单如下：
 
-|属性名称				|类型	|说明										|
-|--						|--		|--											|
-|SPACEINFO				|object	|服务空间信息								|
-|&nbsp;&#124;- spaceId	|string	|服务空间id									|
-|&nbsp;&#124;- provider	|string	|服务空间供应商：aliyun&#124;tencent		|
-|SOURCE					|string	|云函数调用来源 [详见](?id=context-source)	|
-|FUNCTION_NAME			|string	|获取云函数名称								|
-|CLIENTIP				|string	|客户端IP。如果调用来源是其他服务器，会返回调用方的ip|
+|属性名称					|类型	|说明																									|
+|--							|--		|--																										|
+|SPACEINFO					|object	|服务空间信息																							|
+|&nbsp;&#124;- spaceId		|string	|服务空间id																								|
+|&nbsp;&#124;- provider		|string	|服务空间供应商：aliyun&#124;tencent																	|
+|SOURCE						|string	|云函数调用来源 [详见](?id=context-source)																|
+|FUNCTION_NAME				|string	|获取云函数名称																							|
+|FUNCTION_TYPE				|string	|获取云函数类型，对于云函数来说，这里一定会返回`cloudfunction`，新增于HBuilderX 3.5.1。					|
+|FUNCTION_RUNTIME_VERSION	|string	|云函数sdk版本，本地调试时随HBuilderX版本变动，云端一直保持和最新HBuilderX一致。新增于HBuilderX 3.5.1	|
+|CLIENTIP					|string	|客户端IP。如果调用来源是其他服务器，会返回调用方的ip													|
+|CLIENTUA					|string	|客户端userAgent。																						|
+|uniIdToken					|string	|客户端uni-id token字符串，新增于HBuilderX 3.5.1。														|
 
 除了上述属性，如果是uni-app客户端通过callfunction访问云函数，那么context还会追加一批客户端信息。
 - HBuilderX 3.4.9前，context 添加了一批大写属性，如APPID、OS。

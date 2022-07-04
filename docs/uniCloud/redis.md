@@ -791,6 +791,24 @@ const [operationType, currentValue] = await redis.eval(`local val = redis.call('
     `, 0)
 ```
 
+### quit@quit
+
+断开redis连接，会等待redis请求执行完成后才断开连接
+
+**接口形式**
+
+```js
+await redis.quit()
+```
+
+**入参说明**
+
+无
+
+**返回值**
+
+调用成功后返回`OK`字符串
+
 ## FAQ@faq
 
 - 云函数与redis的连接

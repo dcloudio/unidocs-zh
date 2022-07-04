@@ -71,6 +71,7 @@
 * [DCloud行业认证服务商](https://ask.dcloud.net.cn/article/39388)
 * [学习资料](uniCloud/learning.md)
 * [常见问题](uniCloud/faq.md)
+* [已知问题](uniCloud/known-issue.md)
 * [微信云开发转uniCloud](uniCloud/wx2unicloud.md)
 * [uniCloud产品服务协议](uniCloud/agreement.md)
 * [更新日志](uniCloud/release.md)

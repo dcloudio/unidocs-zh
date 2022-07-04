@@ -236,7 +236,7 @@ module.exports = {
 		// 	clientIP,
 		// 	appId,
 		// 	deviceId,
-		// 	ua,
+		// 	userAgent,
 		// 	//... 其他getSystemInfoSync返回值
 		// }
 	}
@@ -245,9 +245,15 @@ module.exports = {
 
 **返回值**
 
-getClientInfo返回的信息，是在客户端的[uni.getSystemInfo](https://uniapp.dcloud.net.cn/api/system/info.html#getsysteminfo)的基础之上，增加了`clientIP`，即客户端IP。
+getClientInfo返回的信息，是在客户端的[uni.getSystemInfo](https://uniapp.dcloud.net.cn/api/system/info.html#getsysteminfo)的基础之上，增加了一些额外的信息。
 
-除了`clientIP`，返回的其他字段请参考[uni.getSystemInfo](https://uniapp.dcloud.net.cn/api/system/info.html#getsysteminfo)。
+除了`getSystemInfo`返回字段外，还包含以下信息
+
+|属性名		|类型	|说明																											|
+|--			|--		|--																												|
+|clientIP	|string	|客户端ip																										|
+|source		|string	|调用来源，同：[云函数context.SOURCE](uniCloud/cf-function.md?id=context-source)，新增于`HBuilderX 3.5.1`								|
+|scene		|string	|客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)返回的scene参数，新增于`HBuilderX 3.5.1`	|
 
 **注意**
 
@@ -267,7 +273,10 @@ module.exports = {
 		const cloudInfo = this.getCloudInfo()
 		// cloudInfo = {
 		//     provider,
-		//     spaceId
+		//     spaceId,
+		//     version,
+		//     functionName,
+		//     functionType,
 		// }
 	}
 }
@@ -275,10 +284,13 @@ module.exports = {
 
 **返回值**
 
-|参数名		|类型	|必备	|说明			|
-|--			|--		|--		|--				|
-|provider	|string	|是		|服务空间供应商，阿里云为aliyun，腾讯云为tcb|
-|spaceId	|string	|是		|服务空间Id		|
+|参数名			|类型	|必备	|说明																								|
+|--				|--		|--		|--																									|
+|provider		|string	|是		|服务空间供应商，阿里云为aliyun，腾讯云为tcb														|
+|spaceId		|string	|是		|服务空间Id																							|
+|version		|string	|是		|服务端sdk版本，本地调试插件随HBuilderX更新，云端保持与最新HBuilderX一致，新增于`HBuilderX 3.5.1`	|
+|functionName	|string	|是		|云对象名称，新增于`HBuilderX 3.5.1`																|
+|functionType	|string	|是		|云对象此值固定为`cloudobject`，新增于`HBuilderX 3.5.1`																|
 
 ### 获取客户端token@get-uni-id-token
 

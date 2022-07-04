@@ -73,7 +73,7 @@ await uniPush.sendMessage(OBJECT)
 |--|--|--|--|--|--|
 |user_id|String、Array|否|无|基于uni-id的_id，指定消息接收者。支持多个以数组的形式列举，长度不超过100。| |
 |user_tag|String、Array|否|无|指定标签的用户，基于uni-id账户体系| |
-|device_id|String、Array|否|无|指定的设备id，基于opendb表的device设备（未开通uni统计的应用，必须登录后才可使用）| |
+|device_id|String、Array|否|无|指定的设备id，基于opendb表的device设备（未开通uni统计的应用，必须基于uni-id-co登录后才可使用）| |
 |push_clientid|String、Array|否|无|基于uni.getPushCid获取的客户端推送标识，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["cid-1","cid-2"]，数组长度不大于1000| |
 |getui_custom_tag|String|否|无|基于个推`getui_custom_tag`，指定消息接收者;</br>注：该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情 。| |
 |getui_big_data_tag|Object Array|否|无|对指定应用的符合筛选条件的用户群发推送消息。支持定时、定速功能。详见下方getui_big_data_tag说明| |
@@ -85,7 +85,7 @@ await uniPush.sendMessage(OBJECT)
 |payload|String、Objcet|是|无|推送透传数据，app程序接受的数据，长度小于800| |
 |badge|Number、String|否|无|设置应用右上角数字，用于提醒用户未阅读消息数量，支持在原有数字上的+、-操作;</br>例如：badge=+1，表示当前角标+1；</br>badge=-1，(仅iOS支持)表示当前角标-1(角标>=0)；</br>badge=1，(仅iOS和华为EMUI版本10.0.0+支持)表示当前角标置成1。| ios、android-华为|
 |channel|Object|否|无|消息渠道设置，避免被限量推送，需要在各家发邮件申请，详情下方[channel说明](#channel 说明)| android|
-|request_id|String|是|无|请求唯一标识号，10-32位之间；如果`request_id`重复，会导致消息丢失||
+|request_id|String|否|无|请求唯一标识号，10-32位之间；如果`request_id`重复，会导致消息丢失||
 |group_name|String|否|无|任务组名。多个消息任务可以用同一个任务组名，后续可根据任务组名查询推送情况（长度限制100字符，且不能含有特殊符号）；</br>仅基于user_id、cid、tag指定消息接收者，或对应用的所有用户群发推送消息时有效。||
 |sound|String|否|无|消息提醒铃声设置。android需要设置channel生效，详见下方[铃声设置注意](#铃声设置注意)</br>如果铃声文件未找到，响铃为系统默认铃声。</br>铃声文件需要使用uni原生插件[点此打开](https://ext.dcloud.net.cn/plugin?id=690)打包后生效。</br>建议iOS和Android铃声使用一致的文件名称。直接填写文件名，不含扩展名；如：pushsound.caf或pushsound.mp3，直接填写pushsound即可。|
 |content_available|Number|否|0|0表示普通通知消息(默认为0)；</br>1表示静默推送(无通知栏消息)，静默推送时不需要填写其他参数。</br>苹果官方建议1小时最多推送3条静默消息|ios |

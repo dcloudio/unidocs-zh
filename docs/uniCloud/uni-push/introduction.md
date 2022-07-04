@@ -1,4 +1,11 @@
 >本文为uni-push2.0的介绍，如果旧项目需要使用老版本的uniPush1.0详情：[https://ask.dcloud.net.cn/article/35622](https://ask.dcloud.net.cn/article/35622)
+
+<div style="display: flex;align-items: center;">
+	<img width="20px" height="21px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/759713d0-4f2d-11eb-a16f-5b3e54966275.png">
+	&nbsp;
+	<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=EErVqoKDps4QSo5M0mm_OfzdA7JqtQU4&jump_from=webapi">官方QQ交流群：757742921</a>
+</div>
+
 # 简介
 ## 概述
 `uni-push`是DCloud联合个推公司推出的、全端的、云端一体的统一推送服务。

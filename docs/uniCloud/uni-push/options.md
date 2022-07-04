@@ -788,7 +788,7 @@ apn静默推送 可参考<a target="_blank" href="https://developer.apple.com/li
   bottom: calc(10% + 265px);
   right: 230px;
 }
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1499px) {
 	.weixin-support {
 	  right: 10px;
 	}

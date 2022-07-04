@@ -1552,7 +1552,7 @@ uni-cloud-push 扩展库的errCode码以uni-cloud-push-error-开头，如：uni-
   bottom: calc(10% + 265px);
   right: 230px;
 }
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1499px) {
 	.weixin-support {
 	  right: 10px;
 	}

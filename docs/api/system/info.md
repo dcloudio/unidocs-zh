@@ -221,6 +221,11 @@ deviceId，在`app-android`平台，会根据优先使用imei、mac（仅在用�
 
 app下需要广告追踪的场景，在iOS上可以使用[idfa](https://ask.dcloud.net.cn/article/36107)、部分国产Android手机可以使用[OAID](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)
 
+#### deviceModel 返回值说明
+uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhone11ProMax` 新版本返回值为 `iPhone 11 Pro Max`，各设备型号[参考规范](https://www.theiphonewiki.com/wiki/Models) 中 Generation 对应的值
+
+注意：新机型刚推出一段时间会显示 Unknown，官方会尽快进行适配。
+
 #### 其他注意 @tips
 - `deviceType`：
   - `app-ios` 只支持 `phone`、`pad`。

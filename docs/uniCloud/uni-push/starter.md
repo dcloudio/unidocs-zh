@@ -99,9 +99,9 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 export default {
 	onLaunch: function() {
 		console.log('App Launch')
-		uni.onPushMessage((res)=>{
-	            console.log(res)//监听推送消息
-                })
+		uni.onPushMessage((res) => {
+			console.log(res) //监听推送消息
+		})
 	},
 	onShow: function() {
 		console.log('App Show')

@@ -829,7 +829,7 @@ apn静默推送 可参考<a target="_blank" href="https://developer.apple.com/li
   margin-right: 10px;
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  width: 230px;
+  width: 200px;
   font-size: 14px;
   box-shadow: 0 0 10px #ccc;
 }

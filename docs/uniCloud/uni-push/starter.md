@@ -1,6 +1,6 @@
 # 快速上手
 
-本文通过4个步骤，带领你开通与配置uni-push2.0并简单体验使用流程。
+通过4个步骤，带领你开通与配置uni-push2.0并简单体验使用流程。
 
 ## 第一步：开通 uniPush
 uni-push产品有2个入口：
@@ -29,8 +29,7 @@ uni-push产品有2个入口：
 应用开通 uni-push 功能时，需要提交应用相关信息，如下图所示：
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/381bd60a-a38b-412a-8bfb-6cafb9788a6a.jpg)
 
-关联服务空间说明：
-uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使用uniCloud，但专业推送服务器在uniCloud上。
+关联服务空间说明：uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使用uniCloud，但专业推送服务器在uniCloud上。
 
 - 如果您的后台业务使用uniCloud开发，那理解比较简单。
 - 如果您的后台业务没有使用uniCloud，那么也需要在uni-app项目中创建uniCloud环境，在HBuilderX中和dev的uni-push配置中均绑定相同服务空间，之前的业务仍然由客户端连接原有传统服务器，push相关功能则通过uniCloud服务空间实现。如果您之前使用过三方推送服务的话，可以理解为您的服务器不再调用个推服务器，而是改为调用uniCloud服务空间。
@@ -69,7 +68,7 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 
 如果业务逻辑上需要创建“通知栏消息”来提醒用户；可以在监听到消息内容后，使用创建本地消息API [plus.push.createMessage](https://www.html5plus.org/doc/zh_cn/push.html#plus.push.createMessage)手动创建通知栏消息。
 
-### 启用客户端uniPush
+### 启用客户端uniPush2.0
 
 操作步骤打开`manifest.json`-`App模块配置`-中勾选`uniPush 2.0`
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f897176a-6216-48bd-98c8-439b2bd2cb42.jpg)
@@ -77,19 +76,19 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2c5af727-2a43-4a4a-95e0-07403aafb019.jpg)
 其他小程序启用方式参考微信小程序，这里不一一列举
 
-### 获取客户端推送标识
-
+### 获取客户端推送标识  
+注意这是一个异步的方法[详情参考](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#getpushclientid)  
 代码示例：
 ```js 
-	uni.getPushClientId({
-		success: (res) => {
-			let push_clientid = res.cid
-			console.log(push_clientid)
-		},
-		fail(err) {
-			console.log(err)
-		}
-	})
+uni.getPushClientId({
+	success: (res) => {
+		let push_clientid = res.cid
+		console.log(push_clientid)
+	},
+	fail(err) {
+		console.log(err)
+	}
+})
 ```
 
 ### 监听推送消息@listener  
@@ -112,7 +111,12 @@ export default {
 }
 ```
 
-**APP端真机运行注意:** 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。
+详细的api介绍[详情参考](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#getpushclientid)  
+
+**APP端真机运行注意:** 
+- 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。
+- 离线推送时，部分手机厂商[需设置消息渠道](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#channel)，否则离线推送有频次限制、消息类型为：静默推送(静音且需下拉系统通知栏才可见通知内容)
+
 
 ## 第四步：服务端推送消息  
 消息推送属于敏感操作，只能直接或间接由服务端触发。传统的三方push服务，需要开发者在服务端配置密钥或证书，根据服务器端文档签名获取token，再向相关URL接口发起网络请求......
@@ -128,7 +132,7 @@ uni-push的服务端sdk的体积不小，没有内置在云函数中。在需要
 
 <img style="width:80%;max-width:600px;margin:0 10%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/cb2bc39d-0dbd-4321-ba6f-cc4c782c820c.jpg"/>
 </br>
-<img style="width:80%;max-width:600px;margin:0 10%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/66f41377-5492-4345-b85c-e6978dd5ef63.jpg"/>
+<img style="width:80%;max-width:450px;margin:0 10%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/66f41377-5492-4345-b85c-e6978dd5ef63.jpg"/>
 </br>
 下面是一个开启了`uni-cloud-push`扩展库的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
 
@@ -164,3 +168,14 @@ exports.main = async (event, context) => {
 在云函数文件目录右键（或按快捷键ctrl + r）- 上传并运行云函数，此时你的客户端将监听推送消息
 
 >以上仅演示简单的uni-cloud-push扩展库的API，更多详情[文档](/uniCloud/uni-push/api)
+
+
+# 最佳实践
+
+快速上手篇章，演示了基于“客户端推送标识”的消息推送，仅为方便理解和体验。
+在业务开发中，通常是指定消息的接收人，而不是某个设备。
+如果项目使用[uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577)，即可直接指定基于uni-id的user_id、user_tag推送消息。否则你需要自己写代码实现：uni-id-pages内置的，当用户登录账号、退出账号、切换账号、注销账号等时机，在uni-id-device表做user_id与push_clientid的映射关系。
+
+此外uni-push2.0，还提供了如图web控制台，属于uni-admin插件[详见](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)。
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/507dd9ff-0171-4c89-ba9e-30f39babfe98.jpg)

@@ -4,8 +4,32 @@
 
 ## 客户端API
 
-### getPushClientId()
+### getPushClientId(OBJECT)
 获取客户端唯一的推送标识，注意这是一个异步的方法
+
+**OBJECT 参数说明**
+
+|参数名|类型|必填|说明|
+|:-|:-|:-|:-|
+|success|Function|是|接口调用的回调函数，详见返回参数说明|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+**success 返回参数说明**
+
+|参数|类型|说明|
+|:-|:-|:-|
+|cid|String| 个推客户端推送id，对应uni-id-device表的push_clientid|
+|errMsg|String| 错误描述|
+
+**fail 返回参数说明**
+
+|参数|类型|说明|
+|:-|:-|:-|
+|errMsg|String| 错误描述|
+
+常见报错：`getPushClientId:fail register fail: {\"errorCode\":1,\"errorMsg\":\"\"}`，这种情况请检查：当前应用是否已开通uni-push2.0
+
 示例代码：
 ```js 
 	uni.getPushClientId({
@@ -17,6 +41,7 @@
 		}
 	})
 ```
+
 
 ### onPushMessage([callback,eventName])
 启动监听推送消息事件
@@ -84,7 +109,7 @@ await uniPush.sendMessage(OBJECT)
 |content|String|是|无|通知栏内容，长度小于50|APP|
 |payload|String、Objcet|是|无|推送透传数据，app程序接受的数据，长度小于800| |
 |badge|Number、String|否|无|设置应用右上角数字，用于提醒用户未阅读消息数量，支持在原有数字上的+、-操作;</br>例如：badge=+1，表示当前角标+1；</br>badge=-1，(仅iOS支持)表示当前角标-1(角标>=0)；</br>badge=1，(仅iOS和华为EMUI版本10.0.0+支持)表示当前角标置成1。| ios、android-华为|
-|channel|Object|否|无|消息渠道设置，避免被限量推送，需要在各家发邮件申请，详情下方[channel说明](#channel)| android|
+|channel|Object|否|无|消息渠道设置，避免被限量推送、静默推送（静音且需下拉系统通知栏才可见通知内容），需要在各家发邮件申请，详情下方[channel说明](#channel)| android|
 |request_id|String|否|无|请求唯一标识号，10-32位之间；如果`request_id`重复，会导致消息丢失||
 |group_name|String|否|无|任务组名。多个消息任务可以用同一个任务组名，后续可根据任务组名查询推送情况（长度限制100字符，且不能含有特殊符号）；</br>仅基于user_id、cid、tag指定消息接收者，或对应用的所有用户群发推送消息时有效。||
 |sound|String|否|无|消息提醒铃声设置。android需要设置channel生效，详见下方[铃声设置注意](#sound)</br>如果铃声文件未找到，响铃为系统默认铃声。</br>铃声文件需要使用uni原生插件[点此打开](https://ext.dcloud.net.cn/plugin?id=690)打包后生效。</br>建议iOS和Android铃声使用一致的文件名称。直接填写文件名，不含扩展名；如：pushsound.caf或pushsound.mp3，直接填写pushsound即可。|
@@ -1587,7 +1612,7 @@ uni-cloud-push 扩展库的errCode码以uni-cloud-push-error-开头，如：uni-
   margin-right: 10px;
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  width: 230px;
+  width: 200px;
   font-size: 14px;
   box-shadow: 0 0 10px #ccc;
 }

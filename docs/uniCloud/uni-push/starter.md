@@ -92,14 +92,24 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 	})
 ```
 
-### 监听推送消息
-
-在项目根目录的App.vue的onLaunch生命周期中添加代码示例：
-
+### 监听推送消息@listener  
+监听推送消息的代码，应当写在应用生命周期（即：项目根目录的App.vue文件）中
+示例代码：
 ```js 
-uni.onPushMessage((res)=>{
-	console.log(res)//监听推送消息
-})
+export default {
+	onLaunch: function() {
+		console.log('App Launch')
+		uni.onPushMessage((res)=>{
+	            console.log(res)//监听推送消息
+                })
+	},
+	onShow: function() {
+		console.log('App Show')
+	},
+	onHide: function() {
+		console.log('App Hide')
+	}
+}
 ```
 
 **APP端真机运行注意:** 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。

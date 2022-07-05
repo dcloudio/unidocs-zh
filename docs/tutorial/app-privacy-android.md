@@ -56,8 +56,7 @@
   "message": "　　请你务必审慎阅读、充分理解“服务协议”和“隐私政策”各条款，包括但不限于：为了更好的向你提供服务，我们需要收集你的设备标识、操作日志等信息用于分析、优化应用性能。<br/>　　你可阅读<a href=\"\">《服务协议》</a>和<a href=\"\">《隐私政策》</a>了解详细信息。如果你同意，请点击下面按钮开始接受我们的服务。",
   "buttonAccept": "同意并接受",
   "buttonRefuse": "暂不同意",
-   // HX 3.4.13之后版本新增，system 使用系统webview 打开隐私协议链接，默认使用uni-app内置web组件
-  "hrefLoader"："system|default",
+  "hrefLoader": "system|default",
   "second": {
     "title": "确认提示",
     "message": "　　进入应用前，你需先同意<a href=\"\">《服务协议》</a>和<a href=\"\">《隐私政策》</a>，否则将退出应用。",
@@ -92,7 +91,7 @@
   模板提示框上接受按钮的文本，默认值为“同意”  
 - buttonRefuse  
   模板提示框上拒绝按钮的文本，默认不显示此按钮  
-- hrefLoader  
+- hrefLoader  HX 3.4.13之后版本新增，system 使用系统webview 打开隐私协议链接，默认使用uni-app内置web组件
   隐私政策提示框中的链接地址加载方式，可取值：system-表示使用系统浏览器打开；default-表示使用应用内置webview页面打开。默认值为default。  
   **注意：可能有些检测机构认为webview会读取隐私信息，这时可以配置为system来解决此问题**  
 - second  

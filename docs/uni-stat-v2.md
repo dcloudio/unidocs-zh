@@ -12,7 +12,7 @@ uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台
 
 ## 产品特色
 
-无需开发，在manifest的 uni统计 中打勾并发行，在[uniCloud](/uniCloud/)服务空间部署[uni-admin](/uniCloud/admin)，即可查看报表。
+无需开发，在`manifest`的 `uni统计` 中打勾并发行，在[uniCloud](/uniCloud/)服务空间部署[uni-admin](/uniCloud/admin)，即可查看报表。
 
 同时开发者也可以自定义打点数据、自定义展现报表。
 
@@ -830,6 +830,58 @@ db.collection('uni-stat-event-logs')
 
 在`uni-admin`中注册左侧菜单时，需要参考文档：[uni-admin 左侧窗口-菜单栏](https://uniapp.dcloud.io/uniCloud/admin.html#%E5%B7%A6%E4%BE%A7%E7%AA%97%E5%8F%A3-%E8%8F%9C%E5%8D%95%E6%A0%8F)
 
+## 版本升级 @upgrade
+
+`uni-admin1.9.0`版本开始（对应`HBuilderX 3.5.1`），`uni统计`和`uni升级中心`复用相同的应用版本表（即`opendb-app-versions`表） ，废弃原来的`uni-stat-app-versions`表。
+
+如果你已启用`uni统计2.0`，但使用的是老版本的`uni-admin`，则需注意版本表的迁移升级，否则基于版本的统计数据可能不准确。
+
+升级步骤：
+
+1. 从插件市场更新`uni-admin`项目
+2. 上传覆盖`uni-stat`公共模块
+3. 重新上传覆盖所有的`DB Schema`
+4. 将原`uni-stat-app-versions`表中的数据导入到`opendb-app-versions`表中；如下提供了一个代码片段，你可以创建一个云函数，将示例代码拷贝到云函数中，右键执行 “运行-本地云函数”，即可自动完成数据内容的迁移；
+
+```
+'use strict';
+const db = uniCloud.database()
+exports.main = async (event, context) => {
+	const oldVersionDataRes = await db.collection('uni-stat-app-versions')
+		.aggregate()
+		.lookup({
+			from: 'uni-stat-app-platforms',
+			localField: 'platform_id',
+			foreignField: '_id',
+			as: 'platform'
+		})
+		.limit(500)
+		.end()
+
+	if (oldVersionDataRes.data.length) {
+		for (let oldKey in oldVersionDataRes.data) {
+			//老版本表的数据
+			const oldVersionData = oldVersionDataRes.data[oldKey]
+			
+			//组装数据
+			const newVersionData = {
+				_id: oldVersionData._id,//_id 两个表数据要保持一致
+				appid: oldVersionData.appid,//appid
+				platform: [],//默认为空数组即可
+				uni_platform: oldVersionData.platform[0].code,//平台代码
+				type: 'native_app',//类型 默认为native_app即可
+				version: oldVersionData.version,
+				create_env: 'uni-stat',//创建来源，设置为uni-stat
+				create_date: oldVersionData.create_time//创建时间
+			}
+			await db.collection('opendb-app-versions').add(newVersionData)
+		}
+	}
+	
+	return true
+};
+```
+
 ## 常见问题
 
 **1. 启动uni统计后，何时可以查看报表数据？**
@@ -866,9 +918,9 @@ db.collection('uni-stat-event-logs')
 - 以业务App为主：将`uni-admin`项目中`uni-config-center` 下面的`uni-stat`文件夹，复制到业务App项目下的`uni-config-center`目录下，然后重新上传业务App项目下的`uni-config-center`公共模块即可。
 - 以`uni-admin`为主：将业务App项目下的`uni-config-center`，手动合并配置项到`uni-admin`项目下的`uni-config-center`中（注意：是手动合并配置项，不要整体覆盖文件），然后重新上传`uni-admin`项目下的`uni-config-center`公共模块即可。
 
-**参考资料：**
+## 参考资料
 
-不掌握如下文档，很难对 uni统计2.0 吃透和做二次开发
+不掌握如下文档，很难对 `uni统计2.0` 吃透和做二次开发
 - uni-admin文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/admin.html)
 - uni-id文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html)
 - opendb文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/opendb.html)

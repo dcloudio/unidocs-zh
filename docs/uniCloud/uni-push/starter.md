@@ -74,7 +74,7 @@ uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使�
 操作步骤打开`manifest.json`-`App模块配置`-中勾选`uniPush 2.0`
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f897176a-6216-48bd-98c8-439b2bd2cb42.jpg)
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1280af61-06a3-46d3-bfc3-0e1c1aee2580.jpg)
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/87accaa0-e6a4-4916-9a74-87719142abaa.jpg)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2c5af727-2a43-4a4a-95e0-07403aafb019.jpg)
 其他小程序启用方式参考微信小程序，这里不一一列举
 
 ### 获取客户端推送标识

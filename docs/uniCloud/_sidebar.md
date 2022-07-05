@@ -50,11 +50,11 @@
   * [简介](uniCloud/redis-introduction.md)
   * [费用说明](uniCloud/redis-buy.md)
   * [开发文档](uniCloud/redis.md)
-* uni-push V2
+ <!-- * uni-push V2
   * [产品简介](uniCloud/uni-push/introduction.md)
   * [快速入门](uniCloud/uni-push/starter.md)
   * [api接口](uniCloud/uni-push/api.md)
-  * [扩展参数](uniCloud/uni-push/options.md)
+  * [扩展参数](uniCloud/uni-push/options.md) -->
 * [运行与调试](uniCloud/rundebug.md)
  <!-- * [日志输出](uniCloud/cf-logger.md) -->
 * [发行](uniCloud/publish.md)

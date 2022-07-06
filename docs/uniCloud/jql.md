@@ -2943,6 +2943,32 @@ const res = await db.collection('test').aggregate()
 .end()
 ```
 
+## 更新操作符@update-command
+
+> 新增于 HBuilderX 3.5.1，JQL数据库管理支持使用更新操作符
+
+更新操作符可以在执行更新时使用。比如对字段重命名（rename）、删除字段（remove）等
+
+重命名字段示例：
+
+```js
+db.collection('test').update({
+	field_to_rename: db.command.rename('final_field_name') // 将field_to_rename重命名为final_field_name
+})
+```
+
+删除字段示例：
+
+```js
+db.collection('test').update({
+	field_to_remove: db.command.remove() // 删除field_to_remove字段
+})
+```
+
+**注意**
+
+- 仅JQL数据库管理支持
+- 使用更新操作符后，将完全跳过所有数据校验操作
 
 ## DBSchema@schema
 

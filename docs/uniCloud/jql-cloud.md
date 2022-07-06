@@ -51,7 +51,7 @@ exports.main = async (event, context) => {
 		event,
 		context
 	})
-	dbJQL.setUser({ // 指定后续执行操作的用户信息
+	dbJQL.setUser({ // 指定后续执行操作的用户信息，此虚拟用户将同时拥有传入的uid、role、permission
 		uid: 'user-id', // 建议此处使用真实uid
 		role: ['admin'], // 指定当前执行用户的角色为admin
 		permission: []

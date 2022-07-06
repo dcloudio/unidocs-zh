@@ -462,7 +462,7 @@ dynamicFormData: {
 <uni-forms-item 
 	required
 	:label="item.label+' '+index" 
-	:name="'domains[' + item.id + ']'"
+	:name="['domains',index,'value']"
 	:rules="[{'required': true,errorMessage: '域名项必填'}]" 
 	:key="item.id"
 	>

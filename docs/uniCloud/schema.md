@@ -315,6 +315,7 @@ arrayType为file时，与单独的bsonType为file相同，`<uni-file-picker>`组
 |start|从字符串的开头移除空白字符|
 |end|从一个字符串的末端移除空白字符|
 
+trim的优先级，高于字符串的其他验证规则，比如format、pattern、minLength、validateFunction、fileRules。配置trim后，JQL引擎会首先将字符串trim后再交给其他验证系统验证。
 
 #### enum属性@enum
 

@@ -4,9 +4,9 @@
   * [定时器](api/timer.md)
   * [uni.base64ToArrayBuffer](api/base64ToArrayBuffer.md)
   * [uni.arrayBufferToBase64](api/arrayBufferToBase64.md)
-  * 生命周期
-    * [uni.getLaunchOptionsSync](api/plugins/getLaunchOptionsSync.md)
-    * [uni.getEnterOptionsSync](api/plugins/getEnterOptionsSync.md)
+  * 启动
+    * [uni.getLaunchOptionsSync](api/getLaunchOptionsSync.md)
+    * [uni.getEnterOptionsSync](api/getEnterOptionsSync.md)
   * [应用级事件](api/application.md)
   * [拦截器](api/interceptor.md)
   * [全局API](api/global.md)

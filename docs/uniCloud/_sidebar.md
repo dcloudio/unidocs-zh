@@ -50,7 +50,7 @@
   * [简介](uniCloud/redis-introduction.md)
   * [费用说明](uniCloud/redis-buy.md)
   * [开发文档](uniCloud/redis.md)
-  * uni-push V2
+* uni-push V2
   * [产品简介](uniCloud/uni-push/introduction.md)
   * [快速入门](uniCloud/uni-push/starter.md)
   * [api接口](uniCloud/uni-push/api.md)

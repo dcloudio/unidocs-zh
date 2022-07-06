@@ -148,7 +148,7 @@ _注：以上例子仅用于方便初学者理解。实际开发中对于简单�
 4. 客户端调用时在ide里有完善的代码提示，方法参数均可提示。（传输json可没法在ide里提示）
 5. 默认支持[uniCloud响应体规范](uniCloud/cf-functions.md?id=resformat)，方便错误拦截和统一处理
 
-注：目前云对象还不支持URL和定时触发，未来会补充
+注：目前云对象还不支持URL化和定时触发，未来会补充
 
 ## 快速上手
 
@@ -207,6 +207,31 @@ const res = await todo.add('title demo', 'content demo')
 const todo = uniCloud.importObject('todo')
 ```
 
+实际业务中需要考虑错误捕获，调用方式有两种：
+
+1. try catch
+```js
+const todo = uniCloud.importObject('todo')
+try {
+	const res = await todo.add('title demo', 'content demo') //导入云对象后就可以直接调用该对象的方法了，注意使用异步await
+	console.log(res)
+} catch (e) {
+	console.log(e.errCode)
+	console.log(e.errMsg)
+}
+```
+
+2. then catch(promise写法)
+```js
+const todo = uniCloud.importObject('todo')
+todo.add('title demo', 'content demo').then(res => {
+	console.log(res)
+}).catch(e => {
+	console.log(e.errCode)
+	console.log(e.errMsg)
+})
+```
+
 
 ## 云对象的API@api
 
@@ -236,7 +261,7 @@ module.exports = {
 		// 	clientIP,
 		// 	appId,
 		// 	deviceId,
-		// 	userAgent,
+		// 	source,
 		// 	//... 其他getSystemInfoSync返回值
 		// }
 	}
@@ -252,12 +277,22 @@ getClientInfo返回的信息，是在客户端的[uni.getSystemInfo](https://uni
 |属性名		|类型	|说明																											|
 |--			|--		|--																												|
 |clientIP	|string	|客户端ip																										|
-|source		|string	|调用来源，同：[云函数context.SOURCE](uniCloud/cf-function.md?id=context-source)，新增于`HBuilderX 3.5.1`								|
-|scene		|string	|客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)返回的scene参数，新增于`HBuilderX 3.5.1`	|
+|source		|string	|调用来源，返回值见下。新增于`HBuilderX 3.5.1`								|
+|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)返回的scene参数，新增于`HBuilderX 3.5.1`	|
 
-**注意**
+getClientInfo().source，返回云函数调用来源，它的值域为：
 
-- 与云函数内获取客户端platform稍有不同，云函数未拉齐vue2、vue3版本app平台的platform值，vue2为`app-plus`，vue3为`app`。云对象无论客户端是vue2还是vue3，在app平台获取的platform均为`app`。这一点在使用uni-id时需要特别注意，详情见：[uni-id文档 preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
+|取值		|说明								|
+|--			|--									|
+|client		|uni-app客户端导入云对象调用			|
+|function	|由其他云函数或云对象调用		|
+
+未来云对象支持URL化后，source 会增加 http、timing。
+
+**注意事项**
+- 客户端上报的信息在理论上存在被篡改可能，实际业务中应验证前端传来的数据的合法性
+- 除了clientIP外，其他客户端信息只有使用uni-app客户端以云对象的方式调用才能获取
+- 云对象与云函数内获取客户端platform稍有不同，云函数未拉齐vue2、vue3版本app平台的platform值，vue2为`app-plus`，vue3为`app`。云对象无论客户端是vue2还是vue3，在app平台获取的platform均为`app`。这一点在使用uni-id时需要特别注意，详情见：[uni-id文档 preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
 
 ### 获取云端信息@get-cloud-info
 
@@ -421,13 +456,13 @@ module.exports = {
 
 开发者代码在主动报错时，比如参数校验错误，由于不能直接写入错误对象（e），则需要按照[uniCloud响应体规范](uniCloud/cf-functions.md?id=resformat)在返回的json对象中加入`errCode`和`errMsg`。
 
-uni-app客户端拿到云对象的响应结果后，会识别其中是否包含`errCode`和`errMsg`，然后自动创建报错对象（e），策略如下：
+uni-app框架在拿到云对象的响应结果后，会识别其中是否包含`errCode`和`errMsg`，然后自动创建报错对象（e），策略如下：
 
 - 如果是正常的结果（errCode为假值[0, false, null, undefined, ...]或者结果内不含errCode），不抛出错误对象（e）
 - 如果是报错的结果（errCode为真值）将结果内的errCode和errMsg组合为错误对象（e）抛出
 - 如果是其他云函数未捕获的错误，直接将错误码和错误信息组合成错误对象（e）抛出
 
-也就是说，开发者的前端代码调用云对象时，需要try catch。不报错时，在`try`里直接返回结果，报错时在`catch (e) {}`里拿到错误对象e。
+也就是说，开发者的前端代码调用云对象时，需要try catch或者then catch。不报错时，在`try`里或`then()`的`res`里直接返回结果，报错时在`catch (e) {}`里拿到错误对象e。
 
 不管是系统错误（如网络问题、云函数超时问题），还是开发者业务上的反馈错误，都如此，都是在 `catch` 中捕获错误。
 
@@ -439,6 +474,7 @@ uni-app客户端拿到云对象的响应结果后，会识别其中是否包含`
 |errMsg		|string				|否			|错误信息												|
 |requestId	|string				|否			|当前请求的requestId。本地调试无此值，需在服务空间运行		|
 |detail		|Object				|否			|完整的错误响应（仅在响应符合uniCloud响应体规范时才有）	|
+
 
 
 详见以下示例：
@@ -485,8 +521,11 @@ try {
 } catch (e) {}
 ```
 
+**注意**
+- js错误对象不是json，直接console.log(e)，只能得到被toString()后的errMsg。而不是一个展开的json结构。
 
-## 调用云对象
+
+## 云对象的多种调用方式
 
 ### 客户端调用@call-by-client
 
@@ -523,6 +562,8 @@ const todo = mycloud.importObject('todo')
 const res = await todo.add('title demo', 'content demo')
 ```
 
+**注意**
+- 上述示例代码，在实际开发中均应该使用 try catch 或 then catch 处理错误捕获
 
 ### 云对象的接收参数的体积上限
 - 阿里云接收参数大小不可超过1MB
@@ -601,6 +642,35 @@ module.exports = {
 调用login方法，传递username及password参数，的运行参数配置如下：
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/db974aec-7975-45b7-bb64-24afd8a59213.jpg)
+
+## jsdoc+语法提示
+
+HBuilderX中所有js方法都支持jsdoc+的语法提示系统。
+
+在方法的开头通过`/**`输入特定格式的注释，在调用这个云对象的方法时就可以看到参数提示。
+
+```js
+/**
+ * method1方法描述
+ * @param {string} param1 参数1描述
+ * @returns {object} 返回值描述
+ */
+method1(param1) {
+	if (!param1) {
+		return {
+			errCode: 'PARAM_IS_NULL',
+			errMsg: '参数不能为空'
+		}
+	}
+	return {
+		param1 //请根据实际需要返回值
+	}
+}
+```
+
+调用该方法时可以看到代码提示：
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a94aa7c2-daa6-4bcb-a74c-d0e5c5c58b12.jpg)
+
 
 ## 注意事项
 

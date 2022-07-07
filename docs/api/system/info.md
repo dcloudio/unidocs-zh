@@ -97,7 +97,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |参数|说明|平台差异说明|
 |:-|:-|:-|
 |pixelRatio			|设备像素比		||
-|brand|设备品牌|App、微信小程序、百度小程序、字节跳动小程序、飞书小程序、QQ小程序|
+|brand|设备品牌。uni-app 3.4.10+ 后该字段为全小写，可能要做兼容处理|App、微信小程序、百度小程序、字节跳动小程序、飞书小程序、QQ小程序|
 |model|设备型号|全平台支持。Web 端部分设备无法获取具体型号|
 |system|操作系统名称及版本，如Android 10||
 |language|应用设置的语言||

@@ -25,14 +25,11 @@
 |:-:|:-:|:-:|:-:|
 |prevText|String|上一页|左侧按钮文字|
 |nextText|String|下一页|右侧按钮文字|
-|piecePerPageText|String|条/页|条/页文字|
 |value/v-model|Number|1|当前页|
 |current|Number	|1|当前页, 优先级高于 value|
 |total|Number|0|数据总量|
 |pageSize|Number|10|每页数据量|
 |showIcon|Boolean|false	|是否以 icon 形式展示按钮	|
-|showPageSize|Boolean|false	|是否展示每页条数	|
-|pageSizeRange|Array|[20, 50, 100, 500]	|每页条数选框	|
 
 
 ### Pagination Events
@@ -40,7 +37,6 @@
 |事件称名|说明|返回值|
 |:-:|:-:|:-:|
 |@change|点击页码按钮时触发	|e={type,current} current为当前页，type值为：next/prev，表示点击的是上一页还是下一个|
-|@pageSizeChange|当前每页条数改变时触发	|e={pageSize} pageSize 为当前所选的每页条数|
 
 
 ## 示例

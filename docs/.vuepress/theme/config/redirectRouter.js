@@ -1,4 +1,5 @@
 const routerMap = {
+  '/uniCloud/uni-push/introduction.html': '/unipush-v2.html',
   '/collocation/frame/lifecycle#页面生命周期': '/tutorial/page.html#lifecycle',
   '/api/lifetime': '/collocation/App.html#applifecycle',
   '/collocation/frame/lifecycle#应用生命周期': '/collocation/App.html#applifecycle',

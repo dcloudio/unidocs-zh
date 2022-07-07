@@ -48,6 +48,16 @@
 - 若该opendb表已存在，则仅更新 `DB Schema`；
 - 若该opendb表不存在，则先创建该表，然后校验该opendb表定义中是否包含`data.json`，若包含`data.json`，则自动导入`data.json`
 
+## 数据表升级
+
+`openDB`数据表在后续的更新迭代中，可能会涉及到`schema`及`预置数据`的变更。自`HBuilderX 3.5.1`之后，opendb表支持检查更新。
+
+以[opendb-city-china](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-city-china)为例，当我们要修改或补充城市时，为了兼容已部署的数据表，应提供差量数据，这时我们需要做的是：
+- 更新 `opendb-city-china/package.json`中的`version`字段为升级后的版本号；
+- 新增 `opendb-city-china/collection.update-原始版本号-升级版本号.jql` JQL数据库管理器文件，内容为差量数据的JQL语句；
+
+比如行政区域的撤销或设立需要数据升级，并且定义升级后的版本号为0.0.2，这时需要将差量数据以JQL语句的形式写入文件`opendb-city-china/collection.update-0.0.1-0.0.2.jql`中，并更新`opendb-city-china/package.json`的`version`字段。
+
 
 ## 如何引入到自己的服务空间
 

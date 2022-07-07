@@ -425,7 +425,7 @@ uniCloud的api中，有些api对应的实现，其代码体积较大，且这些
 - redis扩展库[uni-cloud-redis]：云函数内使用redis，详见：[redis扩展库](uniCloud/redis.md)
 - 发送短信扩展[uni-cloud-sms]：云函数中发送短信，详见：[sms扩展](uniCloud/send-sms?id=extension)
 - 一键登录API扩展[uni-cloud-verify]：手机App调用运营商一键登陆服务时，云函数中获取到真实手机号， 详见：[一键登陆扩展库](uniCloud/univerify?id=extension)
-- push扩展库[uni-cloud-push]：云函数内使用uni-push，详见：[uniCloud/uni-cloud-push/api]
+- 统一推送服务扩展库[uni-cloud-push]：云函数内使用uni-push，详见：[uniCloud/uni-cloud-push/api]
 
 以下是一个开启了redis扩展库的云函数package.json示例，注意此文件不支持注释，下方示例中的注释仅为演示
 

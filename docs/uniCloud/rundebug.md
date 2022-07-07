@@ -255,7 +255,7 @@ const hour = getOffsetDate(8).getHours()
     "APPID": "", // 应用DCloud AppId
     "LOCALE: "", // 客户端语言
     // HBuilderX 3.5.1及更高版本无需传入大写参数，以上参数对应写法如下
-    "osName": "ios" // 系统类型 ios、android
+    "osName": "ios", // 系统类型 ios、android
     "uniPlatform": "web", // 客户端类型 app-plus、h5、mp-weixin、mp-alipay等
     "deviceId": "", // 设备id
     "appId": "", // 应用DCloud AppId

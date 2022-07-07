@@ -1,3 +1,7 @@
+::: warning 注意  
+ 您正在浏览的是老版uni-push1.0的文档。推荐升级到[uni-push2.0](uni-push-v2.html)
+:::
+
 > 从HBuilderX 2.0.3 起，uni-app、5+App、wap2app均支持UniPush  
 >从HBuilderX2.7.10开始，支持谷歌FCM，参考：[https://ask.dcloud.net.cn/article/37356](https://ask.dcloud.net.cn/article/37356)  
 

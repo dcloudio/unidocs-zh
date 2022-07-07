@@ -323,7 +323,7 @@ module.exports = {
 |--				|--		|--		|--																									|
 |provider		|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`														|
 |spaceId		|string	|是		|服务空间Id																							|
-|functionRuntimeVersion		|string	|是		|服务端sdk版本，本地调试插件随HBuilderX更新，云端保持与最新HBuilderX一致，新增于`HBuilderX 3.5.1`	|
+|functionRuntimeVersion		|string	|是		|服务端sdk版本，本地调试插件随HBuilderX更新，云端保持与最新HBuilderX一致（无论本地版本多少，云端只有一个最新版本的云函数sdk），新增于`HBuilderX 3.5.1`	|
 |functionName	|string	|是		|云对象名称，新增于`HBuilderX 3.5.1`																|
 |functionType	|string	|是		|云对象此值固定为`cloudobject`，新增于`HBuilderX 3.5.1`																|
 

@@ -72,4 +72,3 @@ plus.oauth.getServices(function(services) {
 })
 ```
 
-0-4c22-aa61-0d63120e1a4b.png)

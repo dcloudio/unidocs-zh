@@ -102,8 +102,8 @@ var restoreFlag = true; // 调用支付接口时标记 restoreFlag = true , 实�
 plus.payment.request(iap, {
     productid: "商品id",
     username: "appusername", // 用户标识  
-    optimize: true,  // 设置 optimize: true 解决丢单问题
-    iapVersion: 2 // 3.5.0+ 支持，设置此参数后需要开发者主动关闭订单，参见下面的关闭订单方法 finishTransaction()
+    optimize: true,  // 设置 optimize: true 解决丢单问题，已废弃，推荐使用 manualFinishTransaction
+    manualFinishTransaction: true // 3.5.1+ 支持，设置此参数后需要开发者主动关闭订单，参见下面的关闭订单方法 finishTransaction()
   }, function(result){
     restoreFlag = false; // 支付成功清除标记 restoreFlag = false  
     // 支付成功，result 为 IAP商品交易信息对象 IAPTransaction 需将返回的支付凭证传给后端进行二次认证  
@@ -167,24 +167,28 @@ document.addEventListener('resume',function(){
 ```
 
 #### 丢单问题说明  
+
 通过和用户联调我们发现在调用支付接口后，如果用户未绑定支付方式此时会触发支付失败回调方法，实际上用户可以跳转 AppStrore 绑卡然后继续支付，之前的逻辑在回调失败方法中框架会关闭订单，用户付完钱在回到App中也不会触发成功回调，这样就造成了丢单，解决方法就是在调用支付接口时添加optimize: true参数，并标记 restoreFlag = true;，支付成功回调中清除标记 restoreFlag = false; 然后在支付失败回调中框架就不会关闭订单了，并在页面显示的时候通过标记判断是否需要调用 restoreComplateRequest 方法，如果用户跳转App Store绑定支付方式付款成功后回到 App 就可以通过 restoreComplateRequest 方法恢复之前支付的订单信息，解决丢单的问题；
 
+3.5.1 之前因自动关闭订单导致某些情况下丢单的问题
 
-#### 丢单解决方案
+3.5.1 +
 
-3.5.0+ 支持
+- 新增手动关闭订单参数 `manualFinishTransaction`, 在合适的时机调用 `iapChannel.finishTransaction` 关闭订单
 
-- 调用支付和恢复购买时传递参数 `iapVersion`, 设置后订单不会关闭，需要开发者在合适的时机调用 `finishTransaction` 关闭订单
+- 新增关闭订单方法 `iapChannel.finishTransaction(Transaction, <Function> success, <Function> fail)`
+
+- 新增 iapChannel 方法 `requestProduct` `restoreCompletedTransactions` 替代 `requestOrder` `restoreComplateRequest`
 
 ```js
 // 支付
 plus.payment.request(iapChannel, {
-  iapVersion: 2
+  manualFinishTransaction: true
 })
 
 // 恢复
-iapChannel.restoreComplateRequest({
-  iapVersion: 2
+iapChannel.restoreCompletedTransactions({
+  manualFinishTransaction: true
 })
 ```
 
@@ -193,7 +197,7 @@ iapChannel.restoreComplateRequest({
 1. 网络原因
 2. 用户首次绑卡
 
-过段时间调用恢复购买 `restoreComplateRequest` 可以获取到上次异常或未完成的订单
+过段时间调用恢复购买 `restoreCompletedTransactions` 可以获取到上次异常或未完成的订单
 
 - 正确关闭订单的方法
 
@@ -202,8 +206,8 @@ iapChannel.restoreComplateRequest({
 3. 二次确认后可安全调用 `finishTransaction` 关闭订单
 
 注意：
-- 在订单未关闭时，即使卸载应用调用恢复购买 `restoreComplateRequest` 仍然可以获取到
-- A账号下载的应用，切换B账号, 调用 `restoreComplateRequest` 系统弹窗提示恢复购买失败
+- 在订单未关闭时，即使卸载应用调用恢复购买 `restoreCompletedTransactions` 仍然可以获取到
+- A账号下载的应用，切换B账号, 调用 `restoreCompletedTransactions` 系统弹窗提示恢复购买失败
 
 
 ### 常见问题  

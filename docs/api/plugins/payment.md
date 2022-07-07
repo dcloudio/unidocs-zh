@@ -207,7 +207,142 @@ uni.requestPayment({
 })
 ```
 
-苹果应用内支付
+#### 苹果应用内支付@iap
+
+支付流程
+
+1. 获取支付通道 (uni.getProvider)
+
+2. 通过支付通道获取产品列表 (iapChannel.requestProduct 可选)
+
+3. 检查是否存在未关闭的订单 (iapChannel.restoreCompletedTransactions)
+
+4. 请求支付，传递产品信息 (uni.requestPayment)
+
+5. 客户端接收苹果返回的支付票据发送到服务器，在服务器请求苹果服务器验证支付是否有效
+
+6. 服务器验证票据有效后在客户端关闭订单 (iapChannel.finishTransaction)
+
+
+3.5.1 之前因自动关闭订单导致某些情况下丢单的问题
+
+3.5.1 + 增加了手动关闭订单参数 `manualFinishTransaction`, 在合适的时机调用 `iapChannel.finishTransaction` 关闭订单
+
+3.5.1+ 开始支持通过 `uni.getProvider` 获取IAP支付通道的方法
+
+获取IAP支付通道
+
+```js
+uni.getProvider({
+  service: 'payment',
+  success: (res) => {
+    const iapChannel = res.providers.find((channel) => {
+      return (channel.id === 'appleiap')
+    })
+
+    // 如果 iapChannel 为 null，说明当前包没有包含iap支付模块。注意：HBuilder基座不包含 iap 通道
+  }
+});
+```
+
+**IAP支付通道相关方法**
+
+向苹果服务器获取产品列表
+
+`iapChannel.requestProduct(<Function> success, <Function> fail)`
+
+`success` 回调值类型 `Array<Product>`
+
+获取苹果服务器已支付且未关闭的交易列表
+
+`iapChannel.restoreCompletedTransactions(<Function> success, <Function> fail)`
+
+`success` 回调值类型 `Array<Transaction>`
+
+关闭苹果服务器订单
+
+`iapChannel.finishTransaction(Transaction, <Function> success, <Function> fail)`
+
+
+所有 `fail` 回调格式为 `{ errCode: xxx, errMsg: '' }`
+
+
+`uni.requestPayment()` 说明
+
+```js
+uni.requestPayment({
+    provider: 'appleiap',
+    orderInfo: {},
+    success: (e) => {
+      //  e 类型为 Transaction, 详见下面的描述
+    }
+})
+```
+
+
+**orderInfo**
+
+|属性|类型|默认值|说明|
+|:-|:-|:-|:-|
+|productid|String||产品id，在苹果开发者中心配置|
+|username|String||透传参数，一般用于标记订单和用户的关系，向苹果服务器二次验证票据时返回此字段|
+|quantity|Number|1|购买数量，至少大于等于 `1`|
+|manualFinishTransaction|Boolean|false|3.5.1+ 支持，手动关闭订单，值为 `false` 时支付完成后自动关闭订单，`true`时不关闭订单，需要在合适的时机调用 `finishTransaction` 关闭订单。建议设置为 `true`, 默认值为 `false` 是为了向下兼容|
+
+
+**Product**
+
+|属性|类型|说明|
+|:-|:-|:-|
+|title|String|产品标题|
+|description|String|产品描述|
+|productid|String|产品id，在苹果开发者中心配置|
+|price|Number|价格|
+|pricelocal|String|币种，例如: `zh_CN@currency=CNY`|
+
+
+**Transaction**
+
+|属性|类型|说明|
+|:-|:-|:-|
+|payment|Object|支付信息，详见下面的说明|
+|transactionDate|String|交易日期，示例 `2022-01-01 08:00:00`|
+|transactionIdentifier|String|交易唯一标识|
+|transactionReceipt|String|支付票据，用于在开发者的服务器向苹果的服务器二次验证交易是否有效|
+|transactionState|String|交易状态码|
+
+
+**Payment**
+
+|属性|类型|说明|
+|:-|:-|:-|
+|productid|String|产品id|
+|quantity|String|购买数量|
+|username|String|透传参数|
+
+
+**transactionState**
+
+值类型：String
+
+|值|说明|
+|:-|:-|
+|1|交易成功|
+
+
+注意事项
+
+- 相同订单，重复调用 `restoreCompletedTransactions` 后 `transactionReceipt` 会发生变化，并非唯一值
+
+
+#### 订单丢失场景
+
+- 用户没有绑定 `AppStore` 支付方式，调用 `uni.requestPayment()` 准备支付，触发失败 `fail` 回调，errCode=2，用户未绑定支付方式，app内支付流程结束。
+系统弹出框引导用户绑定支付方式，此过程将跳转到系统应用 `AppStore` 进行绑定支付方式，绑定成功同步支付成功，用户成功付款
+
+
+
+下面为未处理丢单的示例代码，后续提供完整代码
 
 ```html
 <template>
@@ -228,7 +363,7 @@ uni.requestPayment({
 </template>
 ```
 
-```javascript
+```js
 <script>
     let iapChannel = null,
         productId = 'HelloUniappPayment1',

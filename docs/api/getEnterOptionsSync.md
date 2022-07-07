@@ -1,12 +1,15 @@
 ### uni.getEnterOptionsSync()
 
-#### App、web 端
-获取启动时的参数。返回值与App.onLaunch的回调参数一致
+获取启动时的参数。
 
-#### 小程序端
-获取本次启动时的参数。如果当前小程序是冷启动，则返回值与 App.onLaunch 的回调参数一致；如果当前是热启动，则返回值与 App.onShow 一致。
+注意：各平台在启动时，参数获取存在差异，详细如下：
+- App平台：返回值与App.onLaunch的回调参数一致；
+- Web平台：返回值与App.onLaunch的回调参数一致，不同Vue版本支持情况有差异：
+	* `vue3`项目：uni-app 3.2.13+ 支持；
+	* `vue2`项目：uni-app 3.5.1+ 支持。
+- 小程序平台：如果当前小程序是冷启动，则返回值与 App.onLaunch 的回调参数一致；如果当前是热启动，则返回值与 App.onShow 一致。关于微信小程序冷启动热启动的概念，[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/operating-mechanism.html)
 
-关于微信小程序冷启动热启动的概念，[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/operating-mechanism.html)
+**平台兼容性说明**
 
 |App|web|微信小程序|支付宝小程序|字节跳动小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|

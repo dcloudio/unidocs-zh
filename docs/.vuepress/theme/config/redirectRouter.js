@@ -51,6 +51,10 @@ const routerMap = {
   '/api/a-d/rewarded-video-ad': '/api/a-d/rewarded-video.html',
   '/api/ad/interstitial-ad': '/api/a-d/interstitial.html',
   '/api/ui/navigate': '/api/router.html',
+  '/api/plugins/getLaunchOptionsSync': '/api/getLaunchOptionsSync.html',
+  '/api/plugins/getEnterOptionsSync': '/api/getEnterOptionsSync.html',
+  '/api/plugins/getLaunchOptionsSync.html': '/api/getLaunchOptionsSync.html',
+  '/api/plugins/getEnterOptionsSync.html': '/api/getEnterOptionsSync.html',
 
   '/platform': '/tutorial/platform.html',
   '/nvue-event': '/tutorial/nvue-event.html',

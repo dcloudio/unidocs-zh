@@ -1,5 +1,9 @@
 ### uni.getEnterOptionsSync()
 
+#### App、web 端
+获取启动时的参数。返回值与App.onLaunch的回调参数一致
+
+#### 小程序端
 获取本次启动时的参数。如果当前小程序是冷启动，则返回值与 App.onLaunch 的回调参数一致；如果当前是热启动，则返回值与 App.onShow 一致。
 
 关于微信小程序冷启动热启动的概念，[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/operating-mechanism.html)

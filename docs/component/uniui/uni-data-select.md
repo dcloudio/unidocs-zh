@@ -90,8 +90,8 @@ export default {
 
 |    属性名     |     类型      | 可选值 |  默认值  |                                说明                                 |
 | :-----------: | :-----------: | :----: | :------: | :-----------------------------------------------------------------: |
-| value/v-model | String/Number |   -    |    -     | 默认值，multiple=true 时为 Array 类型，否则为 String 或 Number 类型 |
-|   localdata   |     Array     |   -    |    -     |                           本地渲染数据，                            |
+| value/v-model | String/Number |   -    |    -     |                         已选择数据的 value 值                    |
+|   localdata   |     Array     |   -    |    -     |                           本地渲染数据                            |
 |     clear     |    Boolean    |   -    |    -     |                         是否可以清空已选项                          |
 |     label     |    String     |        |          |                              左侧标题                               |
 |  placeholder  |    String     |   -    |  请选择  |                          输入框的提示文字                           |

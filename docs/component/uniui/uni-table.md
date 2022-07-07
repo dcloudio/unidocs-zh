@@ -8,7 +8,7 @@
 用于展示多条结构类似的数据
 
 ## 介绍
-### 基本用法 
+### 基本用法
 表格是由4个组件： `uni-table`表格组件、`uni-tr`表格行 、`uni-th` 表格头、`uni-td` 单元格组成
 
 需要注意的是：
@@ -64,12 +64,12 @@
 |stripe| Boolean| true| -| 是否显示斑马线样式	|
 |type| String| ''| -| 值为type="selection" 时开启多选|
 |emptyText	| String| 没有更多数据| -| 空数据时显示的文本内容|
-|loading| Boolean| false| -| 显示加载中|	
+|loading| Boolean| false| -| 显示加载中|
 
 ### Table Events
 
-|事件称名|说明| 返回参数	|		
-|:-:|:-:| :-:	|			
+|事件称名|说明| 返回参数	|
+|:-:|:-:| :-:	|
 |selection-change| 开启多选时，当选择项发生变化时会触发该事件	| Function(Object)|
 
 ### Table Methods
@@ -107,8 +107,8 @@
 
 |事件称名				|说明									| 返回参数			|
 |:-:					|:-:									| :-:				|
-||sort-change	| 点击排序时会触发该事件	| Function(Object)|
-||filter-change	| 筛选数据时会触发该事件	| Function(Object)|
+|sort-change	| 点击排序时会触发该事件	| Function(Object)|
+|filter-change	| 筛选数据时会触发该事件	| Function(Object)|
 
 filter-change(e) 说明
 ```json

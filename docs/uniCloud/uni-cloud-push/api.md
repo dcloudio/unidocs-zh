@@ -5,7 +5,9 @@
 ## 客户端API
 
 ### getPushClientId(OBJECT)
-获取客户端唯一的推送标识，注意这是一个异步的方法
+获取客户端唯一的推送标识
+
+注意：这是一个异步的方法，且仅支持uni-push2.0 
 
 **OBJECT 参数说明**
 
@@ -79,48 +81,48 @@ uni.offPushMessage(eventName);
 发送push可以基于如下维度选择目标设备：
 - 不指定，所有启动过应用的设备
 - user_id，指定的用户id，基于uni-id账户体系
-- user_tag，指定标签的用户，基于uni-id账户体系
-- device_id，指定的设备id，基于opendb表的device设备（未开通uni统计的应用，必须登录后才可使用）
-- push_clientid，个推客户端id。其实也会存在opendb表中。
-- getui_custom_tag，个推自定义客户端标签。由用户自定义
-- getui_big_data_tag，个推大数据标签。使用此功能，需开通个推·用户画像产品，请联系个推商务咨询
-- getui_alias，个推自定义客户端别名。使用此功能，需开通个推·用户画像产品，请联系个推商务咨询
+- user_tag，指定用户标签，基于uni-id账户体系
+- device_id，指定的设备id，基于opendb表的device设备（未开通uni统计的应用，必须基于uni-id-co登录后才可使用）
+- push_clientid，个推客户端id（也会存在opendb表中）。
+- getui_custom_tag，由用户自定义的个推客户端标签。该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情
+- getui_big_data_tag，个推大数据标签。该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情
+- getui_alias，个推自定义客户端别名。该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情
 
 **注意**：`user_id`、`user_tag`、`device_id`、`push_clientid`、`getui_custom_tag`、`getui_big_data_tag`、`getui_alias`不可多选。全为空表示向所有启动过应用的设备推送。
 
 #### 接口形式
-可以向设定的（单个、群组、全体）用户，即时或定时推送消息。支持设置：通知栏消息内容、控制响铃，震动，浮动，闪灯；手机桌面应用右上角的角标等。
+可以向设定的（单个、群组、全体）设备，即时或定时推送消息。支持设置：通知栏消息内容、控制响铃，震动，浮动，闪灯；手机桌面应用右上角的角标等。
 ```js 
 await uniPush.sendMessage(OBJECT)
 ```
 #### sendMessage参数说明    
 |名称|类型|必填|默认值|描述|平台特性|
 |--|--|--|--|--|--|
-|user_id|String、Array|否|无|基于uni-id的_id，指定消息接收者。支持多个以数组的形式列举，长度不超过100。| |
-|user_tag|String、Array|否|无|指定标签的用户，基于uni-id账户体系| |
-|device_id|String、Array|否|无|指定的设备id，基于opendb表的device设备（未开通uni统计的应用，必须基于uni-id-co登录后才可使用）| |
-|push_clientid|String、Array|否|无|基于uni.getPushCid获取的客户端推送标识，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["cid-1","cid-2"]，数组长度不大于1000| |
-|getui_custom_tag|String|否|无|基于个推`getui_custom_tag`，指定消息接收者;</br>注：该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情 。| |
-|getui_big_data_tag|Object Array|否|无|对指定应用的符合筛选条件的用户群发推送消息。支持定时、定速功能。详见下方getui_big_data_tag说明| |
-|getui_alias|String、Array|否|无|基于用户别名，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["getui_alias-1","getui_alias-2"]，数组长度不大于1000| |
-|platform|String、Array|否|"ALL"|指定接收消息的平台，"ALL"表示所有平台。支持用数组枚举支持的平台，如：["app-ios","app-android","web","mp_weixin"]</br>使用`push_clientid`和`getui_custom_tag`时无效|
-|check_token|Boolean|否|true|校验客户端登陆状态是否有效（含token过期）</br>仅用user_id指定消息接收者时有效| |
+|user_id|String、Array|否|无|基于uni-id的_id，指定接收消息的用户id。</br>支持多个以数组的形式指定多个用户id，如["user_id-1","user_id-2"]，数组长度不大于500| |
+|user_tag|String、Array|否|无|指定接收消息的用户标签，基于uni-id账户体系。</br>支持多个以数组的形式指定多个标签，如["user_tag-1","user_tag-2"]，数组长度不大于500| |
+|device_id|String、Array|否|无|指定接收消息的设备id，基于opendb表的device设备（未开通uni统计的应用，必须基于uni-id-co登录后才可使用）| |
+|push_clientid|String、Array|否|无|基于[uni.getPushClientId](#getPushClientId)获取的客户端推送标识，指定接收消息的设备。</br>支持多个以数组的形式指定多个设备，如["cid-1","cid-2"]，数组长度不大于1000| |
+|getui_custom_tag|String|否|无|基于个推`getui_custom_tag`，指定接收消息接设备;</br>注：该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情 。| |
+|getui_big_data_tag|Object Array|否|无|对指定应用的符合筛选条件的设备群发推送消息。支持定时、定速功能。详见下方[getui-big-data-tag 说明](#getui_big_data_tag 说明)| |
+|getui_alias|String、Array|否|无|个推自定义客户端别名，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["getui_alias-1","getui_alias-2"]，数组长度不大于1000| |
+|platform|String、Array|否|"ALL"|指定接收消息的平台，"ALL"表示所有平台。</br>支持用数组枚举支持的平台，如：["web","app-ios","app-android","mp-weixin"],详情见下方[platform 说明](#platform 说明)</br>仅通过`user_id`、`user_tag`指定消息接收者时有效|
+|check_token|Boolean|否|true|校验客户端登陆状态是否有效（含token过期）</br>仅通过`user_id`、`user_tag`指定消息接收者时有效| |
 |title|String|是|无|通知栏标题，长度小于20|APP|
 |content|String|是|无|通知栏内容，长度小于50|APP|
 |payload|String、Objcet|是|无|推送透传数据，app程序接受的数据，长度小于800| |
 |badge|Number、String|否|无|设置应用右上角数字，用于提醒用户未阅读消息数量，支持在原有数字上的+、-操作;</br>例如：badge=+1，表示当前角标+1；</br>badge=-1，(仅iOS支持)表示当前角标-1(角标>=0)；</br>badge=1，(仅iOS和华为EMUI版本10.0.0+支持)表示当前角标置成1。| ios、android-华为|
 |channel|Object|否|无|消息渠道设置，避免被限量推送、静默推送（静音且需下拉系统通知栏才可见通知内容），需要在各家发邮件申请，详情下方[channel说明](#channel)| android|
 |request_id|String|否|无|请求唯一标识号，10-32位之间；如果`request_id`重复，会导致消息丢失||
-|group_name|String|否|无|任务组名。多个消息任务可以用同一个任务组名，后续可根据任务组名查询推送情况（长度限制100字符，且不能含有特殊符号）；</br>仅基于user_id、cid、tag指定消息接收者，或对应用的所有用户群发推送消息时有效。||
+|group_name|String|否|无|任务组名。多个消息任务可以用同一个任务组名，后续可根据任务组名查询推送情况（长度限制100字符，且不能含有特殊符号）；</br>仅基于user_id、push_clientid、getui_custom_tag指定消息接收者，或对应用的所有用户群发推送消息时有效。||
 |sound|String|否|无|消息提醒铃声设置。android需要设置channel生效，详见下方[铃声设置注意](#sound)</br>如果铃声文件未找到，响铃为系统默认铃声。</br>铃声文件需要使用uni原生插件[点此打开](https://ext.dcloud.net.cn/plugin?id=690)打包后生效。</br>建议iOS和Android铃声使用一致的文件名称。直接填写文件名，不含扩展名；如：pushsound.caf或pushsound.mp3，直接填写pushsound即可。|
 |content_available|Number|否|0|0表示普通通知消息(默认为0)；</br>1表示静默推送(无通知栏消息)，静默推送时不需要填写其他参数。</br>苹果官方建议1小时最多推送3条静默消息|ios |
-|open_url|string|否|无|填写该值将:强制push类型为“通知栏消息”，点击后系统浏览器将打开此链接。以http(s):\/\/开头的有效可访问链接,华为通道必须使用https。长度小于300|android|
+|open_url|string|否|无|填写该值将:强制push类型为“通知栏消息”，点击后系统浏览器将打开此链接。以`http(s)://`开头的有效可访问链接,华为通道必须使用https。长度小于300|android|
 |settings|Object|否|无|推送条件设置，详细解释见下方settings说明||
 |option|Object|否|无|其他配置，[更多关于option的说明](/uniCloud/uni-push/options)||
 
 **频次限制说明：**
 - 多客户端接收消息推送API，频次限制200万次/天，申请修改请点击右侧“技术咨询”了解详情。
-- 通过getui_big_data_tag（根据条件筛选用户推送）指定消息接收者推送API，频次限制100次/天，每分钟不能超过5次(推送限制和接口执行群推共享限制)，定时推送功能需要申请开通才可以使用，申请修改请点击右侧“技术咨询”了解详情。
+- 通过getui_big_data_tag（根据条件筛选设备推送）指定消息接收者推送API，频次限制100次/天，每分钟不能超过5次(推送限制和接口执行群推共享限制)，定时推送功能需要申请开通才可以使用，申请修改请点击右侧“技术咨询”了解详情。
 - 对指定应用的所有用户群发推送消息API，频次限制100次/天，每分钟不能超过5次(推送限制和接口根据条件筛选用户推送共享限制)
 
 **注意：**
@@ -135,7 +137,27 @@ await uniPush.sendMessage(OBJECT)
 | opt_type|String|是|无|or(或),and(与),not(非)，`values`间的交并补操作|
 
 - 不同key之间是交集，同一个key之间是根据`opt_type`操作
-- eg. 需要发送给城市在A,B,C里面，没有设置tagtest标签，手机型号为android的用户，用条件交并补功能可以实现，city(A|B|C) && !tag(tagtest) && phonetype(android)
+- eg. 需要发送给城市在A,B,C里面，没有设置tagtest标签，手机型号为android的设备，用条件交并补功能可以实现，city(A|B|C) && !tag(tagtest) && phonetype(android)
+
+##### platform 说明  
+|值|解释|
+|:-|:-|
+|app-ios|iOS App|
+|app-android|Android App|
+|web|网页|
+|mp-weixin|微信小程序|
+|mp-alipay|支付宝小程序|
+|mp-baidu|百度小程序|
+|mp-toutiao|字节跳动小程序|
+|mp-lark|飞书小程序|
+|mp-qq|QQ小程序|
+|mp-kuaishou|快手小程序|
+|mp-jd|京东小程序|
+|mp-360|360小程序|
+|quickapp-webview|快应用通用(包含联盟、华为)|
+|quickapp-webview-union|快应用联盟|
+|quickapp-webview-huawei|快应用华为|
+
 
 ##### settings 说明
 |名称|类型|必填|默认值|描述|
@@ -148,7 +170,7 @@ await uniPush.sendMessage(OBJECT)
 ##### strategy 厂商下发策略选择
 |名称|类型|必填|默认值|描述|
 |--|--|--|--|--|
-|default|Number|否|1|默认所有通道的策略选择1-4 <br/>1: 表示该消息在用户在线时推送个推通道，用户离线时推送厂商通道;<br/>2: 表示该消息只通过厂商通道策略下发，不考虑用户是否在线;<br/>3: 表示该消息只通过个推通道下发，不考虑用户是否在线；<br/>4: 表示该消息优先从厂商通道下发，若消息内容在厂商通道代发失败后会从个推通道下发。 其中名称可填写: ios、st、hw、xm、vv、mz、op，如有疑问请点击右侧“技术咨询”了解详情。|
+|default|Number|否|1|默认所有通道的策略选择1-4 <br/>1: 表示该消息在设备在线时推送个推通道，设备离线时推送厂商通道;<br/>2: 表示该消息只通过厂商通道策略下发，不考虑设备是否在线;<br/>3: 表示该消息只通过个推通道下发，不考虑设备是否在线；<br/>4: 表示该消息优先从厂商通道下发，若消息内容在厂商通道代发失败后会从个推通道下发。 其中名称可填写: ios、st、hw、xm、vv、mz、op，如有疑问请点击右侧“技术咨询”了解详情。|
 |ios|Number|否|无|ios通道策略1-4，表示含义同上，要推送ios通道，需要在个推开发者中心上传ios证书，建议填写2或4，否则可能会有消息不展示的问题|
 |st|Number|否|无|通道策略1-4，表示含义同上，需要开通st厂商使用该通道推送消息|
 |...|Number|否|无|通道策略1-4，表示含义同上|
@@ -193,8 +215,8 @@ await uniPush.sendMessage(OBJECT)
 | ------ | ---- | -------- |
 | $taskid | Object | 任务编号 |
 | $alias | String |设备别名|
-| $cid | String |App的用户唯一标识|
-| $status | Object |推送结果 <br>successed_offline: 离线下发(包含厂商通道下发)，<br>successed_online: 在线下发，<br>successed_ignore: 最近90天内不活跃用户不下发|
+| $cid | String |个推客户端id|
+| $status | Object |推送结果 <br>successed_offline: 离线下发(包含厂商通道下发)，<br>successed_online: 在线下发，<br>successed_ignore: 最近90天内不活跃设备不下发|
 
 群发返回值示例：
 ```js
@@ -227,8 +249,8 @@ await uniPush.sendMessage(OBJECT)
 | 名称 | 类型 | 描述 |
 | ------ | ---- | -------- |
 | $taskid | Object | 任务编号 |
-| $cid | String |App的用户唯一标识|
-| $status | Object |推送结果 <br>successed_offline: 离线下发(包含厂商通道下发)，<br>successed_online: 在线下发，<br>successed_ignore: 最近90天内不活跃用户不下发|
+| $cid | String |个推客户端id|
+| $status | Object |推送结果 <br>successed_offline: 离线下发(包含厂商通道下发)，<br>successed_online: 在线下发，<br>successed_ignore: 最近90天内不活跃设备不下发|
 
 ### 消息任务
 #### 停止任务
@@ -358,11 +380,11 @@ await push.getTaskDetail(OBJECT)
 |event|String|事件|
 
 
-### 用户别名
-开发者可对用户设定别名与标签，推送时可直接根据别名、标签进行推送，方便对用户的管理。
-别名是开发者根据自身需求为每个用户设定的标识，建议对不同用户设定不同别名，保证可通过别名来唯一确认某特定用户。
+### 设备别名
+开发者可对设备设定别名与标签，推送时可直接根据别名、标签进行推送，方便对设备的管理。
+别名是开发者根据自身需求为每个设备设定的标识，建议对不同设备设定不同别名，保证可通过别名来唯一确认某特定设备。
 
-例子：可将用户的邮箱、昵称、手机号等设为别名，即可通过邮箱、昵称、手机号指定目标用户下发推送。
+例子：可将用户的邮箱、昵称、手机号等设为别名，即可通过邮箱、昵称、手机号指定目标设备下发推送。
 >一个cid只能绑定一个别名，若已绑定过别名的cid再次绑定新别名，则前一个别名会自动解绑，并绑定新别名。
 #### 绑定别名
 一个cid只能绑定一个别名，若已绑定过别名的cid再次绑定新别名，则前一个别名会自动解绑，并绑定新别名。
@@ -391,7 +413,7 @@ await push.cidBindAlias(OBJECT)
 
 | 名称        | 类型          | 是否必须   | 默认值  | 描述  |
 | ---------  | ------------- | ---- | ---- | -------- |
-| cid |String|是|无| cid，用户标识|
+| cid |String|是|无| cid，设备标识|
 | alias |String|是|无|别名，有效的别名组成：<br>字母（区分大小写）、数字、下划线、汉字;<br>长度<40;<br>一个别名最多允许绑定10个cid。|
 
 ##### 响应体说明
@@ -415,7 +437,7 @@ await push.getAliasByCid(cid)
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| cid | String | 是 | 无 | 用户唯一标识 |
+| cid | String | 是 | 无 | 设备唯一标识 |
 
 ##### 响应体说明
 * 返回值示例
@@ -521,7 +543,7 @@ await push.unboundAllAlias(alias)
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| alias | String | 是 | 无 | 用户别名 |
+| alias | String | 是 | 无 | 设备别名 |
 
 ##### 响应体说明
 * 返回值示例
@@ -537,11 +559,11 @@ await push.unboundAllAlias(alias)
 
 
 ### 客户端标签
-开发者可对用户设定别名与标签，推送时可直接根据别名、标签进行推送，方便对用户的管理。
-标签是用户的一种属性，每个用户（通过CID来标识 ）可以打上100个标签。
+开发者可对设备设定别名与标签，推送时可直接根据别名、标签进行推送，方便对设备的管理。
+标签是设备的一种属性，每个设备（通过CID来标识 ）可以打上100个标签。
 例子：“喜爱足球”，“喜爱动漫”
-#### 一个用户绑定一批标签
-一个用户绑定一批标签，此操作为覆盖操作，会删除历史绑定的标签；
+#### 一个设备绑定一批标签
+一个设备绑定一批标签，此操作为覆盖操作，会删除历史绑定的标签；
 > 此接口对单个cid有频控限制，每天只能修改一次，最多设置100个标签；单个标签长度最大为32字符，标签总长度最大为512个字符，申请修改请点击右侧“技术咨询”了解详情 。
 ##### 接口形式
 ```js 
@@ -564,7 +586,7 @@ await push.cidBindCustomTags(OBJECT)
 
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| cid | String | 是 | 无 | 用户标识 |
+| cid | String | 是 | 无 | 设备标识 |
 | custom_tag |String Array|是|无|标签列表，标签中不能包含空格|
 
 ##### 响应体说明
@@ -581,8 +603,8 @@ await push.cidBindCustomTags(OBJECT)
 
 
 
-#### 一批用户绑定一个标签
-一批用户绑定一个标签，此接口为增量
+#### 一批设备绑定一个标签
+一批设备绑定一个标签，此接口为增量
 > 此接口有频次控制(每分钟最多100次，每天最多10000次)，申请修改请点击右侧“技术咨询”了解详情
 ##### 接口形式
 ```js 
@@ -618,8 +640,8 @@ await push.cidsBindCustomTag(OBJECT)
 
 > 返回结构说明请参考[公共返回结构](#公共返回结构)
 
-#### 一批用户解绑一个标签
-解绑用户的某个标签属性，不影响其它标签
+#### 一批设备解绑一个标签
+解绑设备的某个标签属性，不影响其它标签
 >此接口有频次控制(每分钟最多100次，每天最多10000次)，申请修改请点击右侧“技术咨询”了解详情
 ##### 接口形式
 ```js 
@@ -664,7 +686,7 @@ await push.searchCustomTagByCid(cid)
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| cid | Array | 是 | 无 | 用户标识 |
+| cid | Array | 是 | 无 | 设备标识 |
 
 ##### 响应体说明
 * 返回值示例
@@ -690,11 +712,11 @@ await push.searchCustomTagByCid(cid)
 |$cid|Object|key: cid，value: 标签列表，列表中只会有一个元素，多个以空格隔开|
 
 
-### 黑名单用户
-黑名单用户无法收到推送消息。当使用群发全推时，有时需要调节某些设备不发，此时需要按push_clientid进行黑名单控制。
+### 黑名单设备
+黑名单设备无法收到推送消息。当使用群发全推时，有时需要调节某些设备不发，此时需要按push_clientid进行黑名单控制。
 
-#### 添加黑名单用户
-将单个或多个用户加入黑名单，对于黑名单用户在推送过程中会被过滤掉。
+#### 添加黑名单设备
+将单个或多个设备加入黑名单，对于黑名单设备在推送过程中会被过滤掉。
 
 ##### 接口形式
 ```js 
@@ -703,7 +725,7 @@ await push.addCidToBlacklist(push_clientid)
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| push_clientid | String | 是 | 无 | 用户标识，多个以英文逗号隔开，一次最多传200个 |
+| push_clientid | String | 是 | 无 | 设备标识，多个以英文逗号隔开，一次最多传200个 |
 
 ##### 响应体说明
 * 返回值示例
@@ -718,8 +740,8 @@ await push.addCidToBlacklist(push_clientid)
 > 返回结构说明请参考[公共返回结构](#公共返回结构)
 
 
-#### 移除黑名单用户
-将单个push_clientid或多个push_clientid用户移出黑名单，对于黑名单用户在推送过程中会被过滤掉的，不会给黑名单用户推送消息
+#### 移除黑名单设备
+将单个push_clientid或多个push_clientid设备移出黑名单，对于黑名单设备在推送过程中会被过滤掉的，不会给黑名单设备推送消息
 ##### 接口形式
 ```js 
 await push.removeCidInBlacklist(push_clientid)
@@ -727,7 +749,7 @@ await push.removeCidInBlacklist(push_clientid)
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| getui_ | String | 是 | 无 | 用户标识，多个以英文逗号隔开，一次最多传200个 |
+| getui_ | String | 是 | 无 | 设备标识，多个以英文逗号隔开，一次最多传200个 |
 
 ##### 响应体说明
 * 返回值示例
@@ -755,7 +777,7 @@ await push.getClientStatusByCid(push_clientid)
 ##### 入参说明
 | 名称 | 类型    | 是否必须 | 默认值 | 说明                                    |
 |:----|:-------|:--------|:------|:---------------------------------------|
-| push_clientid | String | 是      | 无    | 用户标识，多个以英文逗号隔开，一次最多传1000个 |
+| push_clientid | String | 是      | 无    | 设备标识，多个以英文逗号隔开，一次最多传1000个 |
 
 ##### 响应体说明
 * 返回值示例
@@ -778,7 +800,7 @@ await push.getClientStatusByCid(push_clientid)
 
 | 名称 | 类型 | 描述 |
 | ------ | ---- | -------- |
-| $cid | Object | key: cid，value: 用户状态信息 |
+| $cid | Object | key: cid，value: 设备状态信息 |
 | last_login_time | String | 毫秒时间戳 |
 | status | String | 状态，online在线 offline离线 |
 
@@ -796,7 +818,7 @@ await push.getDeviceStatusByCid(cid)
 ##### 入参说明
 | 名称 | 类型    | 是否必须 | 默认值 | 说明                                    |
 |:----|:-------|:--------|:------|:---------------------------------------|
-| cid | String | 是      | 无    | 用户标识，多个以英文逗号隔开，一次最多传100个  |
+| cid | String | 是      | 无    | 设备标识，多个以英文逗号隔开，一次最多传100个  |
 
 ##### 响应体说明
 * 返回值示例
@@ -824,13 +846,13 @@ await push.getDeviceStatusByCid(cid)
 
 | 名称 | 类型 | 描述 |
 | ------ | ---- | -------- |
-| $cid | Object | key: cid，value: 用户状态信息 |
+| $cid | Object | key: cid，value: 设备状态信息 |
 | cid_status | String | cid在线状态，online在线 offline离线 |
 | device_status | String | 设备在线状态，online在线 offline离线 |
 
 
 #### 设备详细信息
-查询用户的信息
+查询设备的信息
 ##### 接口形式
 ```js 
 await push.getClientDetailByCid(String|Array)
@@ -838,7 +860,7 @@ await push.getClientDetailByCid(String|Array)
 ##### 入参说明
 | 名称 | 类型    | 是否必须 | 默认值 | 说明                                    |
 |:----|:-------|:--------|:------|:---------------------------------------|
-| cid | String | 是      | 无    | 用户标识，多个以英文逗号隔开，一次最多传1000个 |
+| cid | String | 是      | 无    | 设备标识，多个以英文逗号隔开，一次最多传1000个 |
 
 ##### 响应体说明
 * 返回值示例
@@ -875,7 +897,7 @@ await push.getClientDetailByCid(String|Array)
 
 | 名称 | 类型 | 描述 |
 | ------ | ---- | -------- |
-| validCids | Object Array | 用户信息列表 |
+| validCids | Object Array | 设备信息列表 |
 | invalidCids | String Array | 无效cid列表 |
 
 **validCids中的${cid}**
@@ -893,7 +915,7 @@ await push.getClientDetailByCid(String|Array)
 
 
 #### 查询设备总量
-通过指定查询条件来查询满足条件的用户数量
+通过指定查询条件来查询满足条件的设备数量
 ##### 接口形式
 ```js 
 await push.getClientCount(OBJECT)
@@ -932,14 +954,14 @@ await push.getClientCount(OBJECT)
 
 * 请求参数说明
 
-| 名称       | 类型           | 是否必须   | 默认值  | 描述  |
-|---- |----|---| ----|
-| key | String 			| 是 | 无      |查询条件(phone_type 手机类型,region 省市,custom_tag 客户端标签，设置标签请见[接口](#客户端标签))|
-| values | String Array | 是 | 无      |查询条件值列表，其中<br>**手机型号**使用如下参数`android`和`ios`；<br>**省市**使用编号，[点击下载文件region_code.data](https://docs.getui.com/files/region_code.data)； |
-| opt_type|String|是|无|or(或),and(与),not(非)，`values`间的交并补操作|
+| 名称		| 类型			| 是否必须| 默认值| 描述|
+|----		|----			|---	| ----	|---|
+| key		| String		| 是		| 无		|查询条件(phone_type 手机类型,region 省市,custom_tag 客户端标签，设置标签请见[接口](#客户端标签))|
+| values	| String Array	| 是		| 无		|查询条件值列表，其中<br>**手机型号**使用如下参数`android`和`ios`；<br>**省市**使用编号，[点击下载文件region_code.data](https://docs.getui.com/files/region_code.data)；|
+| opt_type	| String		| 是		|无		|or(或),and(与),not(非)，`values`间的交并补操作|
 
 - 不同key之间是交集，同一个key之间是根据`opt_type`操作
-- 需要发送给城市在A,B,C里面，没有设置tagtest标签，手机型号为android的用户，用条件交并补功能可以实现，city(A|B|C) && !tag(tagtest) && phonetype(android)
+- 需要发送给城市在A,B,C里面，没有设置tagtest标签，手机型号为android的设备，用条件交并补功能可以实现，city(A|B|C) && !tag(tagtest) && phonetype(android)
 
 ##### 响应体说明
  返回值示例
@@ -960,7 +982,7 @@ await push.getClientCount(OBJECT)
 
 | 名称 | 类型 | 描述 |
 | ------ | ---- | -------- |
-| user_count | Number | 符合条件的用户数量 |
+| user_count | Number | 符合条件的设备数量 |
 
 
 #### 设置应用角标(仅支持IOS)
@@ -972,8 +994,8 @@ await push.setBadgeByCid(OBJECT)
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| cid | String | 是 | 无 | 用户标识，多个以英文逗号隔开，一次最多传200个 |
-| badge |String|是|无|用户应用icon上显示的数字<br>`+N`: 在原有badge上+N<br>`-N`: 在原有badge上-N<br>`N`: 直接设置badge(数字，会覆盖原有的badge值) |
+| cid | String | 是 | 无 | 设备标识，多个以英文逗号隔开，一次最多传200个 |
+| badge |String|是|无|设备应用icon上显示的数字<br>`+N`: 在原有badge上+N<br>`-N`: 在原有badge上-N<br>`N`: 直接设置badge(数字，会覆盖原有的badge值) |
 * 参数示例
 
 ```js
@@ -1219,7 +1241,7 @@ await push.getReportDetailByTaskid(taskid)
 |10|关闭通知|
 |11|其他厂商原因|
 |12|消息有效期内离线|
-|13|无效用户|
+|13|无效设备|
 |14|其它|
 |7001|title通知标题过长|
 |7002|content通知内容过长|
@@ -1380,7 +1402,7 @@ await push.getTodayReport()
 |**gt**     |         Object   |  个推通道 |
 |gt/app     |Object   | 个推群推接口推送限制|     
 |gt/list    |Object   | 个推创建消息接口限制  |   
-|gt/app\_with\_tag   | Object     |个推 根据条件筛选用户推送接口推送限制 |  
+|gt/app\_with\_tag   | Object     |个推 根据条件筛选设备推送接口推送限制 |  
 |**xm**    |Object   | xm通道    |  
 |xm/general    |Object   | xm通道 普通消息限制，channel是普通级别消息时推送量限制    |    
 |**op**    |Object   | op通道    |  
@@ -1395,8 +1417,8 @@ await push.getTodayReport()
 | limit     |boolean|  是否被限量,当日可推送总量使用完时，该字段更新true|  
 
 
-#### 获取单日用户数据接口
-调用此接口可以获取某个应用单日的用户数据(用户数据包括：新增用户数，累计注册用户总数，在线峰值，日联网用户数)(目前只支持查询非当天的数据)
+#### 获取单日设备数据接口
+调用此接口可以获取某个应用单日的设备数据(设备数据包括：新增设备数，累计注册设备总数，在线峰值，日联网设备数)(目前只支持查询非当天的数据)
 ##### 接口形式
 ```js 
 await push.getClientReportByDate(date)
@@ -1432,13 +1454,13 @@ await push.getClientReportByDate(date)
 | 名称 | 类型 | 描述 |
 | ------ | ---- | -------- |
 |$date|Object|key: 日期，格式: yyyy-MM-dd，value: 统计数据|
-|accumulative_num|Number|累计注册用户数|
-|register_num|Number|注册用户数|
-|active_num|Number|活跃用户数|
-|online_num|Number|在线用户数|
+|accumulative_num|Number|累计注册设备数|
+|register_num|Number|注册设备数|
+|active_num|Number|活跃设备数|
+|online_num|Number|在线设备数|
 
-#### 获取24个小时在线用户数
-查询当前时间一天内的在线用户数(10分钟一个点，1个小时六个点)
+#### 获取24个小时在线设备数
+查询当前时间一天内的在线设备数(10分钟一个点，1个小时六个点)
 ##### 接口形式
 ```js
 await push.getTodayOnlineClientReport()
@@ -1472,8 +1494,8 @@ await push.getTodayOnlineClientReport()
 
 | 名称 | 类型 | 描述 |
 | ------ | ---- | -------- |
-|online_statics|Object|在线用户统计数据|
-|$date|Number|key: 毫秒时间戳，value: 在线用户数|
+|online_statics|Object|在线设备统计数据|
+|$date|Number|key: 毫秒时间戳，value: 在线设备数|
 
 
 ### 公共返回结构

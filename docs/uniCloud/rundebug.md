@@ -261,13 +261,17 @@ const hour = getOffsetDate(8).getHours()
     "appId": "", // 应用DCloud AppId
     "locale": "", // 客户端语言
     // HBuilderX 3.5.1及更高版本还允许模拟调用来源（context.SOURCE）、客户端ip（context.CLIENTIP）、客户端ua（context.CLIENTUA）
-    "source": "client",
-    "clientIP": "127.0.0.1",
-    "ua": "xx MicroMessenger/xxx" // 注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云函数，但是云函数会从http请求头里面获取ua而不是clientInfo里面的ua
+    "source": "client", // 调用来源，不传时默认为 client
+    "clientIP": "127.0.0.1", // 客户端ip，不传时默认为 127.0.0.1
+    "ua": "xx MicroMessenger/xxx" // 客户端ua，不传时默认为 HBuilderX
     // ...其他客户端信息
   }
 }
 ```
+
+**注意**
+
+- 非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云函数，但是云函数会从http请求头里面获取ua而不是clientInfo里面的ua
 
 ### 传入uniIdToken@mock-uni-id-token
 

@@ -289,6 +289,18 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
 
+## 错误对象@uni-cloud-error
+
+云函数调用uniCloud接口时（包括请求云函数、云对象、云存储等）可能存在抛出错误的场景，此时会抛出uniCloud标准的错误对象（以下记为uniCloudError），uniCloudError包含以下属性
+
+|属性		|类型	|必备	|说明													|
+|--			|--		|--		|--														|
+|errCode	|string	|是		|错误码													|
+|errMsg		|string	|是		|错误信息												|
+|requestId	|string	|否		|请求Id，用于排查错误									|
+|detail		|object	|否		|仅云对象用户主动返回错误对应的响应体规范时会有此属性	|
+
+另外uniCloudError对象上还有code属性和message属性，两者均不推荐使用。
 
 ## 访问数据库
 

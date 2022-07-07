@@ -47,7 +47,7 @@ push，指服务器主动向客户端发送消息的技术。无需客户端持�
 
 1. 开发者的业务服务器向专业push服务器发送指令，告知需要向哪些客户端发送什么样的消息
 2. 专业push服务器再向客户端发送消息
-3. 手机用户在操作系统的通知栏中看到push消息，点击后呼起客户端应用，客户端代码才能接收响应；如果是小程序的话，则是在微信消息里看到订阅消息，点击后呼起小程序。
+3. 若手机应用在线，直接收到push；若不在线，手机用户在操作系统的通知栏中看到push消息，点击后呼起客户端应用，客户端代码可以接收响应获得消息；如果是小程序的话，则是在微信消息里看到订阅消息，点击后呼起小程序并拿到启动参数。
 <div style="float:clear;">
 	<img width="30%" style="margin-left:5%;max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3bb2b4c4-1b73-426d-b713-f076aff80868.jpg"/>
 	<img width="30%" style="margin-left:5%;max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/368bb2ca-1213-4895-9ad7-f39e28ee8b5a.jpg"/>
@@ -55,11 +55,11 @@ push，指服务器主动向客户端发送消息的技术。无需客户端持�
 
 由于手机厂商众多，他们各自都有不同的推送服务，包括Apple、google（仅能在海外使用）、华为、小米、oppo、vivo、魅族，以及还有一些没有专业推送服务的中小手机品牌。他们对App后台耗电都有查杀机制，除了微信等大应用，普通应用很难常驻后台。
 
-如果开发者把上述每个平台的客户端和服务器的SDK都对接一遍，还自己处理没有push服务的中小品牌手机，那过于困难了。所以业内有专业的推送服务厂商把各种手机厂商的通道封装成一套统一的API，如个推（属于上市公司每日互动）；同时这些三方专业推送厂商还提供了专业socket通道。当应用在线时，也可以直接通过socket下发消息。否则开发者需要写很多判断代码、搭建socket服务器、处理在线时和离线时各种差异。
+如果开发者把上述每个平台的客户端和服务器的SDK都对接一遍，还自己处理没有push服务的中小品牌手机，那过于困难了。所以业内有专业的推送服务厂商把各种手机厂商的通道封装成一套统一的API，如个推（属于上市公司每日互动）；同时这些三方专业推送厂商还提供了高速socket通道。当应用在线时，也可以直接通过socket下发消息。否则开发者需要写很多判断代码、搭建socket服务器、处理在线时和离线时各种差异。
 
-DCloud与个推深度合作，为uni-app的开发者提供了比传统方案便利甚多的统一推送方案`uni-push`，利用云端一体一起配合改造的优势，同时提供基于uniCloud的push服务器和基于uni-app的push客户端，两者高效协同，极大的简化了push的使用。
+DCloud与个推深度合作，为uni-app的开发者提供了比传统方案便利甚多的统一推送方案`uni-push2`，利用云端一体的优势，同时提供基于uniCloud的push服务器和基于uni-app的push客户端，两者高效协同，极大的简化了push的使用。
 
-> 注：`uni-push`的服务器稳定性是由阿里云serverless、腾讯云serverless、个推来保障的，都是日活过亿的上市公司，无需担心稳定性。
+> 注：`uni-push`的服务器稳定性是由阿里云serverless、腾讯云serverless、个推来保障的，都是日活过亿的上市公司，无需顾虑稳定性。
 
 如下图所示：
 首先开发者的uniCloud应用服务器向uniPush服务器发送push消息，然后
@@ -71,9 +71,9 @@ DCloud与个推深度合作，为uni-app的开发者提供了比传统方案便�
 总结下`uni-push`提供的功能：
 1. 一个在线的socket下行服务，无论app、小程序、web，只要在线，都可以从服务器推送消息。尤其对于uniCloud用户，这个免费socket下行服务用途很多。
 2. app平台，提供app离线时的推送，聚合了所有已知手机厂商的push通道；对于未提供push通道的小手机厂商，提供后台常驻进程接收push消息（受手机rom节电设置约束）
-3. 小程序平台，提供了小程序离线时的订阅消息推送能力的封装（暂未实现）
-4. web平台，提供了webnotification的封装。当标签卡在后台时（注意不是关闭时），仍然可以在屏幕上弹出通知栏（暂未实现）
-5. 快应用平台，提供了push的封装（暂未实现）
+3. 小程序平台，目前提供了下行socket通道，后续会整合小程序离线时的订阅消息
+4. web平台，目前提供了下行socket通道，后续会提供webnotification的封装。当标签卡在后台时（注意不是关闭时），仍然可以在屏幕上弹出通知栏。
+5. 快应用平台，目前提供了下行socket通道，后续会提供离线push的封装
 6. 一个[uni-admin](/uniCloud/admin)插件，开源的web控制台，无需编程，可视化界面发送push消息 [详见](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)
 
 在[uni-starter](/uniCloud/uni-starter)里，还提供了app push权限判断、申请、开关设置、消息中心（暂未实现），搭配使用可以大量降低开发工作量。
@@ -122,7 +122,7 @@ uni-push产品有2个入口：
 
 按照国家法律要求，所有提供云服务的公司在用户使用云服务时都需要验证手机号。
 
-用户初次开通 uni-push 时，需要向个推同步手机号信息。
+用户初次开通 uni-push 时，需要向个推同步手机号信息（DCloud开发者无需再注册个推账户）。
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a0e85961-e5e7-4e38-a6d0-aea6ab27766e.jpg)
 
 ### 填写应用信息
@@ -142,14 +142,16 @@ uni-push产品有2个入口：
 
 开通完成后，后续仍可以在这里修改以上信息。
 
+开通App的完整流程较多，但开通web和小程序的流程比较简单，即开即用。可以快速将uni-app项目运行到浏览器或小程序体验。
+
 ## 第二步：配置  
 - iOS 平台还需要上传专用的推送证书
 	+ 证书申请：如何获取推送证书请参考个推官方文档教程 [iOS证书配置指南](https://docs.getui.com/getui/mobile/ios/apns/)
 	+ 证书上传入口：消息推送-“配置管理”-“应用配置”
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a75716f3-3541-48e0-a1cb-43de8308d2b5.jpg)
-- APP厂商推送参数设置（可选，应用进程离线时推送通道）
+- APP手机厂商推送参数设置（可选，应用进程离线时推送通道）
 	![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/26656924-e58e-42dc-a5b2-6d72546aa5d2.jpg)
-	uniPush集成并统一了各个手机厂商的系统级推送，目前支持魅族、OPPO、华为、小米、VIVO。如果需要使用厂商推送，需要先在各厂商开发者平台申请。详情[厂商推送应用创建配置流程](https://www.dcloud.io/docs/a/unipush/manufacturer.pdf)
+	uniPush集成并统一了各个手机厂商的系统级推送，目前支持魅族、OPPO、华为、小米、VIVO。如果需要使用厂商推送，需要先在各厂商开发者平台申请。详见[厂商推送应用创建配置流程](https://www.dcloud.io/docs/a/unipush/manufacturer.pdf)
 
 
 ## 第三步：客户端操作
@@ -186,7 +188,7 @@ export default {
 	onLaunch: function() {
 		console.log('App Launch')
 		uni.onPushMessage((res) => {
-			console.log(res) //监听推送消息
+			console.log("收到推送消息：",res) //监听推送消息
 		})
 	},
 	onShow: function() {
@@ -201,7 +203,7 @@ export default {
 > 先跟着示例代码简单体验，详细的uni.onPushMessage api介绍[详情参考](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#onpushmessage)  
 
 **APP端真机运行注意:** 
-- 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。
+- 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。标准HBuilder运行基座无法使用。
 - 离线推送时，部分手机厂商[需设置消息渠道](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#channel)，否则离线推送会被限制频次和静默推送(静音且需下拉系统通知栏才可见)
 
 ### 获取客户端推送标识  
@@ -211,6 +213,7 @@ export default {
 > 先跟着示例代码简单体验，详细的uni.getPushClientId api介绍[详情参考](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#getpushclientid)  
 代码示例：
 ```js 
+// uni-app客户端获取push客户端标记
 uni.getPushClientId({
 	success: (res) => {
 		let push_clientid = res.cid
@@ -224,12 +227,12 @@ uni.getPushClientId({
 ## 第四步：服务端推送消息  
 消息推送属于敏感操作，只能直接或间接由服务端触发。传统的三方push服务，需要开发者在服务端配置密钥或证书，根据服务器端文档签名获取token，再向相关URL接口发起网络请求......
 
-而UniPush2.0，开发者无需关心证书、签名、服务器端文档，使用简单，极简的代码，云函数通过 uni-push服务端sdk，即`uni-cloud-push`的API即可直接执行uniPush所有操作。
+而UniPush2.0，开发者无需关心证书、签名、服务器端文档，使用简单。云函数通过 uni-push服务端sdk，即`uni-cloud-push`的API即可直接执行uniPush所有操作。
 
 uni-push的服务端sdk的体积不小，没有内置在云函数中。在需要操作uni-push的云函数里，开发者需手动配置`uni-cloud-push`扩展库。
 （uniCloud扩展库，是uniCloud自带API中不常用且包体积较大的部分，被独立为扩展库，可以由开发者自行选择是否使用该扩展库）
 
-- HBuilderX 3.4起提供了可视化界面，新建云函数/云对象时可选择uni-cloud-push扩展库，或者如下图所示在已有的云函数目录点右键选择“管理公共模块或扩展库依赖”
+- HBuilderX 中新建云函数时可选择uni-cloud-push扩展库，或者如下图所示在已有的云函数目录点右键选择“管理公共模块或扩展库依赖”
 
 <img style="width:80%;max-width:600px;margin:0 10%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/cb2bc39d-0dbd-4321-ba6f-cc4c782c820c.jpg"/>
 </br>
@@ -258,7 +261,7 @@ uni-push的服务端sdk的体积不小，没有内置在云函数中。在需要
 const uniPush = uniCloud.getPushManager({appId:"__UNI__XXXXXX"}) //注意这里需要传入你的应用appId
 exports.main = async (event, context) => {
 	return await uniPush.sendMessage({
-		"push_clientid": "xxx", 	//填写上一步获取到的客户端推送标识
+		"push_clientid": "xxx", 	//填写上一步在uni-app客户端获取到的客户端推送标识push_clientid
 		"title": "通知栏显示的标题",	
 		"content": "通知栏显示的内容",
 		"payload": "体验一下uni-push2.0"
@@ -266,16 +269,18 @@ exports.main = async (event, context) => {
 };
 ```
 
-在云函数文件目录右键（或按快捷键ctrl + r）- 上传并运行云函数，此时你的客户端将收到推送消息（应用关闭时为通知栏消息，在线时代码监听到推送消息）
+在云函数文件目录右键（或按快捷键ctrl + r）-> `上传并运行云函数`，此时你的客户端将收到推送消息（应用关闭时为通知栏消息，在线时代码监听到推送消息）
 
->先跟着示例代码简单体验一下，详细的uniPush.sendMessage api介绍[详情参考](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#uni-cloud-push)
+> 先跟着示例代码简单体验一下，详细的uniPush.sendMessage api介绍[详情参考](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#uni-cloud-push)
 
+如果按步骤操作完毕，此时你运行起来的uni-app客户端就会打印出“收到推送消息：xxxx”。如遇异常，可以重新运行一遍。
 
 # 最佳实践
-快速上手篇章，演示了基于“客户端推送标识”的消息推送，仅为方便理解和体验；在业务开发中，通常是指定消息的接收人，而不是某个设备。
+上一章，演示了基于“客户端推送标识”的消息推送，仅为方便理解和体验；在业务开发中，通常是指定消息的接收人，而不是某个设备。
 
 如果项目使用[uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577)，即可直接指定基于uni-id的user_id、user_tag，并可筛选设备的平台、登录信息是否有效等，执行推送消息。
-否则你需要自己写代码实现，uni-id-pages已经内置好的：在登录账号、退出账号、切换账号、token续期、注销账号5个时机，管理uni-id-device表、opendb-device表与user_id、push_clientid、platform、os_name等字段的映射关系。
+
+uni-id-pages已经内置：在登录账号、退出账号、切换账号、token续期、注销账号5个时机，管理uni-id-device表、opendb-device表与user_id、push_clientid、platform、os_name等字段的映射关系。
 
 此外uni-push2.0 还提供了uni-admin中的web控制台[uni-push-admin](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)。如图，包含消息推送、推送统计等功能的，
 

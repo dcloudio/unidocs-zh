@@ -6,6 +6,7 @@ Redis（Remote Dictionary Server)，是一种充分利用内存的数据库。
 
 redis是key-value存储系统，支持存储的value类型较多，包括：string(字符串)、list(链表)、set(集合)、sorted set 和hash（哈希类型）[详情](uniCloud/redis?id=data-type)
 
+> 使用腾讯云node12和redis，务必仔细阅读此文档：[keepRunningAfterReturn](uniCloud/cf-functions.md?id=keep-running)
 
 ### Redis和MongoDB的比较
 - 读写速度：MongoDB数据存储在磁盘里，读写语法复杂，速度较慢。redis在内存中读写，只根据key访问数据，速度快很多。

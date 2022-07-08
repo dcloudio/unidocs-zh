@@ -846,7 +846,7 @@ package.json内统一了腾讯阿里的配置，两个平台都需要配置为�
 ```js
 exports.main = async function(event, context) {
 	setTimeout(()=>{
-	  console.log('delay 5 second')
+	  console.log('delay 5 seconds')
 	}, 5000)
 	return {}
 }

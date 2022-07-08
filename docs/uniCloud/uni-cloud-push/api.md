@@ -1,3 +1,5 @@
+> 需要HBuilderX 3.5.1 及其以上版本支持
+
 # 开发文档
 
 `uni-push`有服务器API和客户端API。

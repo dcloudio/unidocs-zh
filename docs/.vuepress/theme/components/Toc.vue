@@ -1,14 +1,14 @@
 <template>
 	<Sticker
 		ref="sticker"
-		:class="['vuepress-toc', visible ? '' : 'table-of-contents']"
+		:class="['vuepress-toc', visible ? '' : 'table-of-contents-sticker']"
 		v-bind="$attrs"
 	>
-		<h5>ON THIS PAGE</h5>
+		<h5>文档结构</h5>
 		<div
 			v-for="(item, index) in $page.headers"
 			ref="chairTocItem"
-			:key="index"
+			:key="item.slug"
 			class="vuepress-toc-item"
 			:class="[`vuepress-toc-h${item.level}`, { active: activeIndex === index }]"
 		>
@@ -114,7 +114,7 @@
 </script>
 
 <style lang="stylus">
-	.table-of-contents
+	.table-of-contents-sticker
 	  display none !important
 	.vuepress-toc
 	  position fixed
@@ -157,7 +157,7 @@
 			.vuepress-toc-h1 a
 			.vuepress-toc-h2 a
 				font-weight bold
-	  for i in range(3, 6)
+	  for i in range(2, 6)
 	    .vuepress-toc-h{i} a
-	      padding-left 1rem * (i - 2)
+	      padding-left 1rem * (i - 1)
 </style>

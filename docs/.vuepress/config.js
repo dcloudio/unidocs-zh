@@ -24,7 +24,7 @@ const config = {
     logo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5a7f902b-21a7-4822-884f-925219eacc4b.png',
     // TODO use plugin/theme
     sidebar: createSidebar(tabs),
-    // sidebarDepth: 2,
+    sidebarDepth: 0,
     nextLinks: false,
     prevLinks: false,
     // TODO use theme
@@ -44,6 +44,7 @@ const config = {
     }
   },
   markdown: {
+    // toc: { includeLevel: [1, 2, 3, 4] },
     slugify(str) {
       if (typeof str !== 'string') return ''
 

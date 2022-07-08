@@ -1,79 +1,74 @@
-.custom-page-class{
-	position: relative;
+.custom-page-class
+	position relative
+
 	/* 首页几个logo的排版 */
-	.flex-img-group-view {
-		display flex 
-		flex-direction row 
+	.flex-img-group-view
+		display flex
+		flex-direction row
 		margin 10px 0
-		.barcode-view {
+
+		.barcode-view
 			display flex
 			align-items center
 			flex-direction column
 			margin 0 5px
 			margin-bottom 20px
-			b {
-				text-align center
-			}
-		}
-	}
 
-	.uniapp-home-content {
+			b
+				text-align center
+
+	.uniapp-home-content
 		display flex
 		flex-wrap wrap
 		width 100%
 		justify-content center
-		.uniapp-home-content-item {
+
+		.uniapp-home-content-item
 			margin-bottom 20px
-			.uniapp-home-content-item-image {
+
+			.uniapp-home-content-item-image
 				width 55px
 				height 55px
 				flex-shrink 0
-				img {
+
+				img
 					height 100%
-				}
-			}
-			p.uniapp-home-content-item-text {
-			  margin-bottom 0px 
-			  letter-spacing 0px 
-			  color #333 
-			}
-			.uniapp-home-content-item-title{
+
+			p.uniapp-home-content-item-text
+				margin-bottom 0px
+				letter-spacing 0px
+				color #333
+
+			.uniapp-home-content-item-title
 				font-size 16px
-			}
-		}
-	}
-	@media screen and (min-width: 768px) {
-		.flex-img-group-view {
+
+	@media screen and (min-width 768px)
+		.flex-img-group-view
 			justify-content space-around
-		}
-		.uniapp-home-content-item{
-			width 32% 
-		}
-	}
-	@media screen and (max-width: 600px) {
-		.uniapp-home-content-item{
-			width 100% 
+
+		.uniapp-home-content-item
+			width 32%
+
+	@media screen and (max-width 600px)
+		.uniapp-home-content-item
+			width 100%
 			display flex
 			flex-direction row
-		}
-		.uniapp-home-content-item-header {
-		  display flex 
-		  flex-direction column 
-		  padding-left 15px 
-		}
-		.uniapp-home-content-item-title{
-			line-height 10px
-		}
-	}
-}
 
-img {
-  image-rendering: -moz-crisp-edges; /* Firefox*/
-	image-rendering: -o-crisp-edges; /* Opera */
-	image-rendering: -webkit-optimize-contrast; /*Webkit (non-standard naming) */
-	image-rendering: crisp-edges;
-	-ms-interpolation-mode: nearest-neighbor; /* I (non-standard property) */
-}
+		.uniapp-home-content-item-header
+			display flex
+			flex-direction column
+			padding-left 15px
+
+		.uniapp-home-content-item-title
+			line-height 10px
+
+img
+	image-rendering -moz-crisp-edges /* Firefox */
+	image-rendering -o-crisp-edges /* Opera */
+	image-rendering -webkit-optimize-contrast /* Webkit (non-standard naming) */
+	image-rendering crisp-edges
+	-ms-interpolation-mode nearest-neighbor /* I (non-standard property) */
 
 body.forbid_scroll
 	height 100%
@@ -82,23 +77,37 @@ body.forbid_scroll
 main.page
 	padding-bottom 0px
 	padding-right 0px
-	
-	@media (min-width: $vuepress-display-min-width)
-		&
-			padding-right $vuepress-toc-width
 
-@media (min-width: $vuepress-display-min-width)
+@media (min-width $vuepress-display-min-width)
+	main.page
+		padding-right $vuepress-toc-width
 	.vuepress-toc
 		display block !important
+	.table-of-contents
+		display none !important
 
-{$contentClass}:not(.custom) 
+@media (max-width $vuepress-display-min-width)
+	.table-of-contents
+		display block !important
+
+@media (min-width 2000px)
+	$vuepress-toc-width = 20rem
+	.vuepress-toc
+		width: $vuepress-toc-width !important
+	main.page
+		padding-right $vuepress-toc-width
+
+{$contentClass}:not(.custom)
 	> *:first-child
 		margin-top 0
-		@media (max-width: $MQMobile)
+
+		@media (max-width $MQMobile)
 			&
 				margin-top $navbarHeight
+
 	img
 		max-width 100% !important
+
 	table
 		position relative
 
@@ -106,18 +115,19 @@ main.page
 		word-break break-all
 
 h1, h2, h3, h4, h5, h6
-
 	{$contentClass}:not(.custom) > &
-		margin-top (5rem - $navbarHeight)
-		padding-top ($navbarHeight - 3rem)
+		margin-top 5rem - $navbarHeight
+		padding-top: ($navbarHeight - 3rem)
 
 		&:first-child
-			margin-top (3rem - $navbarHeight)
-			padding-top ($navbarHeight - 3rem)
-			@media (max-width: $MQMobile)
-				&	
+			margin-top 3rem - $navbarHeight
+			padding-top: ($navbarHeight - 3rem)
+
+			@media (max-width $MQMobile)
+				&
 					margin-top 3rem
-@media (min-width: $MQMobile)
+
+@media (min-width $MQMobile)
 	.nav-dropdown
 		z-index 1
 

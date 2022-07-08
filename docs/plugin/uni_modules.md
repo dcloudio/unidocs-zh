@@ -284,6 +284,7 @@ HBuilderX中合并路由界面效果图：
 
 **注意**
 - `pages_init.json`文件最终不会导入到工程中。
+- `pages_init.json` 暂不支持带注释(包括：条件编译)。
 - 如果HBuilderX版本低于3.5，或插件作者并没有提供`pages_init.json`，那么仍然需要手动编辑pages.json注册页面。
 
 ### 开发 uni_modules 插件

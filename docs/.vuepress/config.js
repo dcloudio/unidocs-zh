@@ -5,7 +5,7 @@ const createSidebar = require('./markdown/createSidebar')
 const { simplifySlugText, tabs } = require('./utils')
 
 const config = {
-  // TODO use theme
+  theme: 'vuepress-theme-uni-app-test',
   title: 'uni-app官网',
   head: [
     ['link', {

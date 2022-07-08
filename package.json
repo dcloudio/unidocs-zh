@@ -30,6 +30,7 @@
     "vuepress": "^1.8.2"
   },
   "dependencies": {
-    "@docsearch/js": "^3.0.0-alpha.50"
+    "@docsearch/js": "^3.1.0",
+    "vuepress-theme-uni-app-test": "^1.0.5"
   }
 }

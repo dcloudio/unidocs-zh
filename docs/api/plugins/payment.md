@@ -1,4 +1,4 @@
-### uni.requestPayment(OBJECT)
+# uni.requestPayment(OBJECT)
 支付
 
 uni.requestPayment是一个统一各平台的客户端支付API，不管是在某家小程序还是在App中，客户端均使用本API调用支付。
@@ -47,11 +47,11 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 |RSA				|仅在 v3 版本接口适用	|
 
 
-#### 注意事项
+### 注意事项
 - APP端，如果你的应用在用户完成支付后；立即给支付的用户push消息通知。会与前端支付回调相互冲突，请延迟执行推送。
 - 字节跳动小程序支付接口调整使用时请注意[发起头条支付](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/payment/pay)
 
-#### orderInfo 注意事项@orderInfo
+### orderInfo 注意事项@orderInfo
 1. 百度小程序的 orderInfo 为 Object 类型，详细的数据结构，参考：[百度收银台支付](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)。
 2. 支付宝小程序的 orderInfo(支付宝的规范为 tradeNO) 为 String 类型，表示支付宝交易号。
 3. 字节跳动小程序的 orderInfo 为 Object 类型，详见：[发起头条支付](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/payment/pay)
@@ -60,7 +60,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 6. App端，微信支付 orderInfo 为 Object 类型。
 6. App端，苹果应用内支付 orderInfo 为Object 类型，{productid: 'productid'}。
 
-#### H5 平台@h5-payment
+## H5 平台@h5-payment
 - 普通浏览器平台的支付，仍然是常规web做法。uni-app未封装。
 - 在普通浏览器里也可以调起微信进行支付，这个在微信叫做H5支付，此功能未开放给普通开发者，需向微信单独申请，[详见](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1)
 - 微信内嵌浏览器运行H5版时，可通过js sdk实现微信支付，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
@@ -73,51 +73,11 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 - 百度小程序为百度支付，其二次封装了度小满、支付宝、微信支付。
 - Hello uniapp 里演示了各种支付。
 
-### App平台支付流程
+## App平台支付流程
 
 流程：支付平台功能申请 -> ``manifest.json`` 里配置支付参数 -> ``uni-app`` 里调用 API 进行支付
 
-#### App支付功能申请
-
-1. 支付宝App支付功能申请
-
-    登录支付宝账号，创建应用接入支付宝App支付能力，包括以下步骤：
-
-    - 创建应用（获取appid） 
-    - 开通App支付功能 
-    - 配置密钥（获取公钥、私钥） 
-    
-  具体可参考支付宝官方文档： [App支付快速接入](https://docs.open.alipay.com/204/105297/)
-
-2. 微信App支付功能申请
-
-    - 到 [微信开放平台](https://open.weixin.qq.com/) 申请移动应用并开通支付功能，申请应用后可以获取 AppID 和 AppSecret 值
-    - 应用接入 [微信商户平台](https://pay.weixin.qq.com)，选择 App 支付
-    - 开通支付功能后可获取支付业务服务器配置数据：PARTNER（财付通商户号）、PARTNER_KEY（财付通密钥）、PAYSIGNKEY（支付签名密钥）
-	- 需要将从微信开放平台申请的appid，填回到 manifest-App SDK配置-支付-微信支付 中。打包后生效。
-    
-  具体可参考微信官方文档： [移动应用开发](https://open.weixin.qq.com/cgi-bin/frame?t=home/app_tmpl&lang=zh_CN)
-  
-  注意微信的App支付、小程序支付、H5支付是不同的体系。微信小程序支付在 [微信商户平台](https://pay.weixin.qq.com) 申请支付时，选择公众号支付；普通浏览器里也可以调起微信进行支付，这个在微信叫做H5支付，此功能未开放给普通开发者，需向微信单独申请，[详见](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1)
-
-3. 苹果iap应用内支付申请
-
-    使用苹果开发者账号登录 [App Store Connect](https://appstoreconnect.apple.com)，在应用的功能选项卡页面，添加 App 内购项目。注意：
-    - 内购项目的各信息需要填写完整，然后保存，此时内购项目的状态应该是准备提交，当提交应用通过审核后，状态则变为已批准
-    - 测试时，建议使用测试证书打一个自定义的 iOS 基座进行测试
-    - 在应用 TestFight 的选项卡添加 App Store Connect 用户，测试支付时可以使用此用户帐号进行测试
-    - orderInfo 的 productid 是自己填写的产品 ID
-    - 调用 ``uni.requestPayment`` 前必须先使用 5+Plus 的方法调用 requestOrder 获取订单信息，否则会导致无法支付
-    - 更多可参考：[https://ask.dcloud.net.cn/article/497](https://ask.dcloud.net.cn/article/497)
-
-4. PayPal支付 [参考] (https://uniapp.dcloud.io/app-payment-paypal)
-
-5. Stripe支付 [参考] (https://uniapp.dcloud.io/app-payment-stripe)
-
-6. Google Pay支付 [参考] (https://uniapp.dcloud.io/app-payment-google)
-
-
-#### manifest.json里配置相关参数
+### manifest.json里配置相关参数
 
 1. 在`manifest.json - App模块权限选择` 中勾选 payment(支付)
 2. 在 `manifest.json - App SDK配置` 中，勾选需要的支付平台，目前有微信支付、支付宝支付、苹果应用内支付(IAP)，其中微信支付需要填写从微信开放平台获取的AppID
@@ -129,31 +89,9 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 
 如果手机端未安装支付宝，调用时会启动支付宝的wap页面登录，如果已安装相应客户端，会启动其客户端登录。
 
-#### uni-app里开发
+## App支付
 
-##### uniCloud开发
-- 前端：使用`unicloud.callfunction`调用指定的云函数。
-- 服务端：使用[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)，该服务对应的演示工程在插件市场：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)，此示例为完整的前后端支付演示，使用`uniPay`可极快的完成支付业务开发。
-
-##### php开发
-- 前端：使用 ``uni.request`` 请求服务端接口，得到订单数据，使用 ``uni.requestPayment`` 向支付平台发起支付请求，拉起支付平台的客户端进行支付。在hello uni-app里详细代码。
-- 服务端：PHP可参考 [https://github.com/dcloudio/H5P.Server/tree/master/payment](https://github.com/dcloudio/H5P.Server/tree/master/payment)。
-
-#### FAQ
-
-- Q：如何使用ping++等聚合支付
-  A：uni-app的js API 已经完成跨端统一，客户端无需使用三方聚合支付。如果服务器选择`uniCloud`，也无需三方聚合支付。如果服务端使用php、java等传统服务器开发，可以在服务端使用三方聚合支付。
-
-- Q：App端如何使用其他支付，比如银联、PayPal。
-  A：App 3.4+ 已支持 PayPal，App 3.4 以前的版本使用下面的方案
-	1、可以在web-view组件里使用它们的wap版支付；2、可以集成原生sdk，插件市场均有，[详见](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98)。也可以自行开发原生插件，开发文档见[https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428)。
-
-- Q：Appstore审核报PGPay SDK不允许上架的问题
-  A：数字类产品（比如购买会员等不需要配送实物的商品），Apple规定必须使用苹果IAP应用内支付，给Apple分成30%。打包的时候不要勾选微信或支付宝等其他支付方式。如果你提交的包里包含了微信支付宝等支付的sdk，即使没使用，Appstore也会认为你有隐藏方式，以后会绕过IAP，不给Apple分成，因此拒绝你的App上线。云打包时，manifest里选上支付模块，但sdk配置里去掉微信支付和支付宝支付。很多开发者的Android版是包含微信和支付宝支付的，此时注意分开判断。详见[https://ask.dcloud.net.cn/article/36447](https://ask.dcloud.net.cn/article/36447)
-
-**示例**
-
-App 支付
+### 示例
 
 ```javascript
 uni.requestPayment({
@@ -168,27 +106,34 @@ uni.requestPayment({
 });
 ```
 
-微信小程序支付
 
-```javascript
-// 仅作为示例，非真实参数信息。
-uni.requestPayment({
-    provider: 'wxpay',
-	timeStamp: String(Date.now()),
-	nonceStr: 'A1B2C3D4E5',
-	package: 'prepay_id=wx20180101abcdefg',
-	signType: 'MD5',
-	paySign: '',
-	success: function (res) {
-		console.log('success:' + JSON.stringify(res));
-	},
-	fail: function (err) {
-		console.log('fail:' + JSON.stringify(err));
-	}
-});
-```
+## 支付宝App支付
 
-微信 App 支付
+### 申请流程
+
+    登录支付宝账号，创建应用接入支付宝App支付能力，包括以下步骤：
+
+    - 创建应用（获取appid） 
+    - 开通App支付功能 
+    - 配置密钥（获取公钥、私钥） 
+    
+  具体可参考支付宝官方文档： [App支付快速接入](https://docs.open.alipay.com/204/105297/)
+
+
+## 微信App支付
+
+### 申请流程
+
+    - 到 [微信开放平台](https://open.weixin.qq.com/) 申请移动应用并开通支付功能，申请应用后可以获取 AppID 和 AppSecret 值
+    - 应用接入 [微信商户平台](https://pay.weixin.qq.com)，选择 App 支付
+    - 开通支付功能后可获取支付业务服务器配置数据：PARTNER（财付通商户号）、PARTNER_KEY（财付通密钥）、PAYSIGNKEY（支付签名密钥）
+	- 需要将从微信开放平台申请的appid，填回到 manifest-App SDK配置-支付-微信支付 中。打包后生效。
+    
+  具体可参考微信官方文档： [移动应用开发](https://open.weixin.qq.com/cgi-bin/frame?t=home/app_tmpl&lang=zh_CN)
+  
+  注意微信的App支付、小程序支付、H5支付是不同的体系。微信小程序支付在 [微信商户平台](https://pay.weixin.qq.com) 申请支付时，选择公众号支付；普通浏览器里也可以调起微信进行支付，这个在微信叫做H5支付，此功能未开放给普通开发者，需向微信单独申请，[详见](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1)
+
+### 示例代码
 
 ```javascript
 uni.requestPayment({
@@ -207,9 +152,19 @@ uni.requestPayment({
 })
 ```
 
-#### 苹果应用内支付@iap
+## 苹果应用内支付@iap
 
-支付流程
+### 申请流程
+
+    使用苹果开发者账号登录 [App Store Connect](https://appstoreconnect.apple.com)，在应用的功能选项卡页面，添加 App 内购项目。注意：
+    - 内购项目的各信息需要填写完整，然后保存，此时内购项目的状态应该是准备提交，当提交应用通过审核后，状态则变为已批准
+    - 测试时，建议使用测试证书打一个自定义的 iOS 基座进行测试
+    - 在应用 TestFight 的选项卡添加 App Store Connect 用户，测试支付时可以使用此用户帐号进行测试
+    - orderInfo 的 productid 是自己填写的产品 ID
+    - 调用 ``uni.requestPayment`` 前必须先使用 5+Plus 的方法调用 requestOrder 获取订单信息，否则会导致无法支付
+    - 更多可参考：[https://ask.dcloud.net.cn/article/497](https://ask.dcloud.net.cn/article/497)
+
+### 支付流程
 
 1. 获取支付通道 (uni.getProvider)
 
@@ -230,7 +185,7 @@ uni.requestPayment({
 
 3.5.1+ 开始支持通过 `uni.getProvider` 获取IAP支付通道的方法
 
-获取IAP支付通道
+### 获取IAP支付通道
 
 ```js
 uni.getProvider({
@@ -245,21 +200,21 @@ uni.getProvider({
 });
 ```
 
-**IAP支付通道相关方法**
+#### **IAP支付通道相关方法**
 
-向苹果服务器获取产品列表
+#### 向苹果服务器获取产品列表
 
 `iapChannel.requestProduct(<Function> success, <Function> fail)`
 
 `success` 回调值类型 `Array<Product>`
 
-获取苹果服务器已支付且未关闭的交易列表
+#### 获取苹果服务器已支付且未关闭的交易列表
 
 `iapChannel.restoreCompletedTransactions(<Function> success, <Function> fail)`
 
 `success` 回调值类型 `Array<Transaction>`
 
-关闭苹果服务器订单
+#### 关闭苹果服务器订单
 
 `iapChannel.finishTransaction(Transaction, <Function> success, <Function> fail)`
 
@@ -267,7 +222,7 @@ uni.getProvider({
 所有 `fail` 回调格式为 `{ errCode: xxx, errMsg: '' }`
 
 
-`uni.requestPayment()` 说明
+### 请求支付 `uni.requestPayment()` 
 
 ```js
 uni.requestPayment({
@@ -279,8 +234,9 @@ uni.requestPayment({
 })
 ```
 
+### 参数说明
 
-**orderInfo**
+#### orderInfo
 
 |属性|类型|默认值|说明|
 |:-|:-|:-|:-|
@@ -290,7 +246,7 @@ uni.requestPayment({
 |manualFinishTransaction|Boolean|false|3.5.1+ 支持，手动关闭订单，值为 `false` 时支付完成后自动关闭订单，`true`时不关闭订单，需要在合适的时机调用 `finishTransaction` 关闭订单。建议设置为 `true`, 默认值为 `false` 是为了向下兼容|
 
 
-**Product**
+#### Product
 
 |属性|类型|说明|
 |:-|:-|:-|
@@ -301,7 +257,7 @@ uni.requestPayment({
 |pricelocal|String|币种，例如: `zh_CN@currency=CNY`|
 
 
-**Transaction**
+#### Transaction
 
 |属性|类型|说明|
 |:-|:-|:-|
@@ -312,7 +268,7 @@ uni.requestPayment({
 |transactionState|String|交易状态码|
 
 
-**Payment**
+#### Payment
 
 |属性|类型|说明|
 |:-|:-|:-|
@@ -321,7 +277,7 @@ uni.requestPayment({
 |username|String|透传参数|
 
 
-**transactionState**
+#### transactionState
 
 值类型：String
 
@@ -335,128 +291,399 @@ uni.requestPayment({
 - 相同订单，重复调用 `restoreCompletedTransactions` 后 `transactionReceipt` 会发生变化，并非唯一值
 
 
-#### 订单丢失场景
+### 订单丢失场景
 
 - 用户没有绑定 `AppStore` 支付方式，调用 `uni.requestPayment()` 准备支付，触发失败 `fail` 回调，errCode=2，用户未绑定支付方式，app内支付流程结束。
 系统弹出框引导用户绑定支付方式，此过程将跳转到系统应用 `AppStore` 进行绑定支付方式，绑定成功同步支付成功，用户成功付款
 
 
-
-下面为未处理丢单的示例代码，后续提供完整代码
+### 示例代码
 
 ```html
 <template>
-    <view>
-        <view class="uni-list">
-            <radio-group @change="applePriceChange">
-                <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in priceList" :key="index">
-                    {{item.text}}
-                    <radio :value="item.value" :checked="item.checked" />
-                </label>
-            </radio-group>
-        </view>
-        <view class="uni-padding-wrap">
-            <button class="ipaPayBtn" @click="requestPayment" :loading="loading" :disabled="disabled">确认支付</button>
-        </view>
+  <view class="content">
+    <view class="uni-list">
+      <radio-group @change="applePriceChange">
+        <label class="uni-list-cell" v-for="(item, index) in productList" :key="index">
+          <radio :value="item.productid" :checked="item.checked" />
+          <view class="price">{{item.title}} {{item.price}}</view>
+        </label>
+      </radio-group>
     </view>
+    <view class="uni-padding-wrap">
+      <button class="btn-pay" @click="payment" :loading="loading" :disabled="disabled">确认支付</button>
     </view>
+  </view>
 </template>
+
+<script>
+  import {
+    Iap,
+    IapTransactionState
+  } from "./iap.js"
+
+  export default {
+    data() {
+      return {
+        title: "iap",
+        loading: false,
+        disabled: true,
+        productId: "",
+        productList: []
+      }
+    },
+    onLoad: function() {
+      // 创建示例
+      this._iap = new Iap({
+        products: [] // 苹果开发者中心创建
+      })
+
+      this.init();
+    },
+    onShow() {
+      if (this._iap.ready) {
+        this.restore();
+      }
+    },
+    onUnload() {},
+    methods: {
+      async init() {
+        uni.showLoading({
+          title: '检测支付环境...'
+        });
+
+        try {
+          // 初始化，获取iap支付通道
+          await this._iap.init();
+
+          // 从苹果服务器获取产品列表
+          this.productList = await this._iap.getProduct();
+          this.productList[0].checked = true;
+          this.productId = this.productList[0].productid;
+
+          // 填充产品列表，启用界面
+          this.disabled = false;
+        } catch (e) {
+          uni.showModal({
+            title: "init",
+            content: e.message,
+            showCancel: false
+          });
+        } finally {
+          uni.hideLoading();
+        }
+
+        if (this._iap.ready) {
+          this.restore();
+        }
+      },
+      async restore() {
+        // 检查上次用户已支付且未关闭的订单，可能出现原因：首次绑卡，网络中断等异常
+
+        // 在此处检查用户是否登陆
+
+        uni.showLoading({
+          title: '正在检测已支付且未关闭的订单...'
+        });
+
+        try {
+          // 从苹果服务器检查未关闭的订单，可选根据 username 过滤，和调用支付时透传的值一致
+          const transactions = await this._iap.restoreCompletedTransactions({
+            username: ""
+          });
+
+          if (!transactions.length) {
+            return;
+          }
+
+          // 开发者业务逻辑，从服务器获取当前用户未完成的订单列表，和本地的比较
+          // 此处省略
+
+          switch (transaction.transactionState) {
+            case IapTransactionState.purchased:
+              // 用户已付款，在此处请求开发者服务器，在服务器端请求苹果服务器验证票据
+              //let result = await this.validatePaymentResult();
+
+              // 验证通过，交易结束，关闭订单
+              // if (result) {
+              //   await this._iap.finishTransaction(transaction);
+              // }
+              break;
+            case IapTransactionState.failed:
+              // 关闭未支付的订单
+              await this._iap.finishTransaction(transaction);
+              break;
+            default:
+              break;
+          }
+        } catch (e) {
+          uni.showModal({
+            content: e.message,
+            showCancel: false
+          });
+        } finally {
+          uni.hideLoading();
+        }
+      },
+      async payment() {
+        if (this.loading == true) {
+          return;
+        }
+        this.loading = true;
+
+        uni.showLoading({
+          title: '支付处理中...'
+        });
+
+        try {
+          // 从开发者服务器创建订单
+          // const orderId = await this.createOrder({
+          //   productId: this.productId
+          // });
+
+          // 请求苹果支付
+          const transaction = await this._iap.requestPayment({
+            productId: this.productId,
+            // username: username + orderId //根据业务需求透传参数，关联用户和订单关系
+          });
+
+          // 在此处请求开发者服务器，在服务器端请求苹果服务器验证票据
+          // await this.validatePaymentResult({
+          //   orderId: orderId,
+          //   username: username,
+          //   transactionReceipt: transaction.transactionReceipt,
+          //   transactionIdentifier: transaction.transactionIdentifier // 不可作为订单唯一标识
+          // });
+
+          // 验证成功后关闭订单
+          //await this._iap.finishTransaction(transaction);
+
+          // 支付成功
+        } catch (e) {
+          uni.showModal({
+            content: e.message,
+            showCancel: false
+          });
+        } finally {
+          this.loading = false;
+          uni.hideLoading();
+        }
+      },
+      createOrder({
+        productId
+      }) {
+        return new Promise((resolve, reject) => {})
+      },
+      validatePaymentResult(data) {
+        return new Promise((resolve, reject) => {});
+      },
+      applePriceChange(e) {
+        this.productId = e.detail.value;
+      }
+    }
+  }
+</script>
+
+<style>
+  .content {
+    padding: 15px;
+  }
+
+  button {
+    background-color: #007aff;
+    color: #ffffff;
+  }
+
+  .uni-list-cell {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .price {
+    margin-left: 10px;
+  }
+
+  .btn-pay {
+    margin-top: 30px;
+  }
+</style>
 ```
 
 ```js
-<script>
-    let iapChannel = null,
-        productId = 'HelloUniappPayment1',
-        productIds = ['HelloUniappPayment1', 'HelloUniappPayment6'];
-    export default {
-        data() {
-            return {
-                title: 'request-payment',
-                loading: false,
-                disabled: true,
-                priceList: [{
-                    value: 'HelloUniappPayment1',
-                    text: '支付1元',
-                    checked: true
-                }, {
-                    value: 'HelloUniappPayment6',
-                    text: '支付6元',
-                    checked: false
-                }]
-            }
+// uni iap
+
+const ProviderType = {
+  IAP: 'iap'
+}
+
+const IapTransactionState = {
+  purchasing: "0", // A transaction that is being processed by the App Store.
+  purchased: "1", // A successfully processed transaction.
+  failed: "2", // A failed transaction.
+  restored: "3", // A transaction that restores content previously purchased by the user.
+  deferred: "4" // A transaction that is in the queue, but its final status is pending external action such as Ask to Buy.
+};
+
+class Iap {
+
+  _channel = null;
+  _channelError = null;
+  _productIds = [];
+
+  _ready = false;
+
+  constructor({
+    products
+  }) {
+    this._productIds = products;
+  }
+
+  init() {
+    return new Promise((resolve, reject) => {
+      this.getChannels((channel) => {
+        this._ready = true;
+        resolve(channel);
+      }, (err) => {
+        reject(err);
+      })
+    })
+  }
+
+  getProduct(productIds) {
+    return new Promise((resolve, reject) => {
+      this._channel.requestProduct(productIds || this._productIds, (res) => {
+        resolve(res);
+      }, (err) => {
+        reject(err);
+      })
+    });
+  }
+
+  requestPayment(orderinfo) {
+    return new Promise((resolve, reject) => {
+      uni.requestPayment({
+        orderinfo: orderinfo,
+        success: (res) => {
+          resolve(res);
         },
-        onLoad: function() {
-            plus.payment.getChannels((channels) => {
-                console.log("获取到channel" + JSON.stringify(channels))
-                for (var i in channels) {
-                    var channel = channels[i];
-                    if (channel.id === 'appleiap') {
-                        iapChannel = channel;
-                        this.requestOrder();
-                    }
-                }
-                if(!iapChannel){
-                    this.errorMsg()
-                }
-            }, (error) => {
-                this.errorMsg()
-            });
-        },
-        methods: {
-            requestOrder() {
-                uni.showLoading({
-                	title:'检测支付环境...'
-                })
-                iapChannel.requestOrder(productIds, (orderList) => { //必须调用此方法才能进行 iap 支付
-                    this.disabled = false;
-                    console.log('requestOrder success666: ' + JSON.stringify(orderList));
-                    uni.hideLoading();
-                }, (e) => {
-                    console.log('requestOrder failed: ' + JSON.stringify(e));
-                    uni.hideLoading();
-                    this.errorMsg()
-                });
-            },
-            requestPayment(e) {
-                this.loading = true;
-                uni.requestPayment({
-                    provider: 'appleiap',
-                    orderInfo: {
-                        productid: productId
-                    },
-                    success: (e) => {
-                        uni.showModal({
-                            content: "感谢您的赞助",
-                            showCancel: false
-                        })
-                    },
-                    fail: (e) => {
-                        uni.showModal({
-                            content: "支付失败,原因为: " + e.errMsg,
-                            showCancel: false
-                        })
-                    },
-                    complete: () => {
-                        console.log("payment结束")
-                        this.loading = false;
-                    }
-                })
-            },
-            applePriceChange(e) {
-                productId = e.detail.value;
-            },
-            errorMsg(){
-                uni.showModal({
-                    content: "暂不支持苹果 iap 支付",
-                    showCancel: false
-                })
-            }
+        fail: (err) => {
+          reject(err);
         }
+      });
+    });
+  }
+
+  restoreCompletedTransactions(username) {
+    return new Promise((resolve, reject) => {
+      this._channel.restoreCompletedTransactions({
+        username
+      }, (res) => {
+        resolve(res);
+      }, (err) => {
+        reject(err);
+      })
+    });
+  }
+
+  finishTransaction(transaction) {
+    return new Promise((resolve, reject) => {
+      this._channel.finishTransaction(transaction, (res) => {
+        resolve(res);
+      }, (err) => {
+        reject(err);
+      });
+    });
+  }
+
+  getChannels(success, fail) {
+    if (this._channel !== null) {
+      success(this._channel)
+      return
     }
-</script>
+
+    if (this._channelError !== null) {
+      fail(this._channelError)
+      return
+    }
+
+    uni.getProvider({
+      service: 'payment',
+      success: (res) => {
+        this._channel = res.providers.find((channel) => {
+          return (channel.id === 'appleiap')
+        })
+
+        if (this._channel) {
+          success(this._channel)
+        } else {
+          this._channelError = {
+            errMsg: 'paymentContext:fail iap service not found'
+          }
+          fail(this._channelError)
+        }
+      }
+    });
+  }
+
+  get channel() {
+    return this._channel;
+  }
+}
+
+export {
+  Iap,
+  IapTransactionState
+}
 ```
 
+## PayPal支付 [参考](https://uniapp.dcloud.io/app-payment-paypal)
 
-- [Paypal支付示例](https://uniapp.dcloud.io/app-payment-paypal)
-- [Stripe支付示例](https://uniapp.dcloud.io/app-payment-stripe)
-- [Google Pay支付示例](https://uniapp.dcloud.io/app-payment-google)
+## Stripe支付 [参考](https://uniapp.dcloud.io/app-payment-stripe)
+
+## Google Pay支付 [参考](https://uniapp.dcloud.io/app-payment-google)
+
+## 微信小程序支付
+
+```javascript
+// 仅作为示例，非真实参数信息。
+uni.requestPayment({
+    provider: 'wxpay',
+	timeStamp: String(Date.now()),
+	nonceStr: 'A1B2C3D4E5',
+	package: 'prepay_id=wx20180101abcdefg',
+	signType: 'MD5',
+	paySign: '',
+	success: function (res) {
+		console.log('success:' + JSON.stringify(res));
+	},
+	fail: function (err) {
+		console.log('fail:' + JSON.stringify(err));
+	}
+});
+```
+
+## 服务器相关
+
+### uniCloud开发
+- 前端：使用`unicloud.callfunction`调用指定的云函数。
+- 服务端：使用[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)，该服务对应的演示工程在插件市场：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)，此示例为完整的前后端支付演示，使用`uniPay`可极快的完成支付业务开发。
+
+### php开发
+- 前端：使用 ``uni.request`` 请求服务端接口，得到订单数据，使用 ``uni.requestPayment`` 向支付平台发起支付请求，拉起支付平台的客户端进行支付。在hello uni-app里详细代码。
+- 服务端：PHP可参考 [https://github.com/dcloudio/H5P.Server/tree/master/payment](https://github.com/dcloudio/H5P.Server/tree/master/payment)。
+
+
+## FAQ
+
+- Q：如何使用ping++等聚合支付
+  A：uni-app的js API 已经完成跨端统一，客户端无需使用三方聚合支付。如果服务器选择`uniCloud`，也无需三方聚合支付。如果服务端使用php、java等传统服务器开发，可以在服务端使用三方聚合支付。
+
+- Q：App端如何使用其他支付，比如银联、PayPal。
+  A：App 3.4+ 已支持 PayPal，App 3.4 以前的版本使用下面的方案
+	1、可以在web-view组件里使用它们的wap版支付；2、可以集成原生sdk，插件市场均有，[详见](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98)。也可以自行开发原生插件，开发文档见[https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428)。
+
+- Q：Appstore审核报PGPay SDK不允许上架的问题
+  A：数字类产品（比如购买会员等不需要配送实物的商品），Apple规定必须使用苹果IAP应用内支付，给Apple分成30%。打包的时候不要勾选微信或支付宝等其他支付方式。如果你提交的包里包含了微信支付宝等支付的sdk，即使没使用，Appstore也会认为你有隐藏方式，以后会绕过IAP，不给Apple分成，因此拒绝你的App上线。云打包时，manifest里选上支付模块，但sdk配置里去掉微信支付和支付宝支付。很多开发者的Android版是包含微信和支付宝支付的，此时注意分开判断。详见[https://ask.dcloud.net.cn/article/36447](https://ask.dcloud.net.cn/article/36447)

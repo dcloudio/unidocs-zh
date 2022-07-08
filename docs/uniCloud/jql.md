@@ -3310,11 +3310,11 @@ module.exports = {
 
 **如需在before和after内传参，建议直接在state上挂载。但是切勿覆盖上述属性**
 
-### action内可以使用的公共模块@common-for-action
+### action内使用公共模块和扩展库@common-for-action
 
-目前JQL依赖了`uni-id`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action内使用的。云端运行时如果所在服务空间开通了redis，action内还可以使用redis扩展，后续会支持本地运行时在action内使用redis扩展
+目前JQL依赖了`uni-id`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action内直接使用的。
 
-自`HBuilderX 3.2.7`起，action内可使用任意公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和JQL关联。
+自`HBuilderX 3.2.7`起，action内可配置要使用的公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和JQL关联。
 
 一个在JQL内使用的公共模块的package.json示例如下。
 
@@ -3339,6 +3339,13 @@ module.exports = {
 
 - [uni-id 文档](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
 - [uni-config-center 文档](https://ext.dcloud.net.cn/plugin?id=4425)
+
+
+扩展库：
+
+目前action只能使用redis扩展库，后续会支持其他扩展库配置。
+
+如果所在服务空间开通了redis，action内可直接使用redis扩展。目前只能云端运行，后续会支持本地运行时在action内使用redis扩展
 
 ## 数据库运算方法列表@aggregate-operator
 

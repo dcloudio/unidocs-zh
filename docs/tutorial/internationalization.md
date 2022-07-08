@@ -10,8 +10,8 @@ DCloud为支持海外开发者，特推出“国际区”注册服务，注册�
 
 请按照如下步骤完成账号注册：
 1. 点击 HBuilderX 左下角的“未登录”文字，打开登录窗口
-2. 选择“国际区”，点击下方的“还没账号？注册用户”连接
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/0408dc83-145f-4690-8436-f205f6b4f599.png)
+2. 选择“Global”，点击下方的“No account?Sign up”连接
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ef5d8808-6268-48a4-b363-3edda1503d85.png)
 3. 在打开的浏览器中，输入用户名、邮箱、密码等信息
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6610ae74-2c8c-4e5a-99d8-38b49f77b01e.png)
 4. 注册成功的话，会提示已发送激活邮箱
@@ -27,8 +27,8 @@ DCloud为支持海外开发者，特推出“国际区”注册服务，注册�
 1. “国际区”账号尚不支持[问答社区](https://ask.dcloud.net.cn)发帖，但你可以到Github提交[issue](https://github.com/dcloudio/uni-app/issues)
 2. “国际区”账号不能使用插件市场、uniCloud、uniAD 服务；
 3. “国际区”账号仅支持”uniapp“项目打包，不支持 "5+APp"、"wap2app"打包；
-4. “国际区”账号不支持使用云端证书和使用DCloud老版证书
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/01613603-52df-4c68-a07f-65d61dca0d13.png)
+4. “国际区”账号不支持使用公共测试证书和DCloud老版证书
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/54096e3f-d68c-4c01-9e9d-c83d3f5a6b5b.png)
 
 ## 隐私政策
 

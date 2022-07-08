@@ -3312,7 +3312,7 @@ module.exports = {
 
 ### action内可以使用的公共模块@common-for-action
 
-目前JQL依赖了`uni-id`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action内使用的。
+目前JQL依赖了`uni-id`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action内使用的。云端运行时如果所在服务空间开通了redis，action内还可以使用redis扩展，后续会支持本地运行时在action内使用redis扩展
 
 自`HBuilderX 3.2.7`起，action内可使用任意公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和JQL关联。
 

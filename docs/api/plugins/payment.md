@@ -166,9 +166,9 @@ uni.requestPayment({
 
 1. 获取支付通道 (uni.getProvider)
 
-2. 通过支付通道获取产品列表 (iapChannel.requestProduct 可选)
+2. 通过支付通道获取产品列表 (iapChannel.requestProduct)
 
-3. 检查是否存在未关闭的订单 (iapChannel.restoreCompletedTransactions)
+3. 检查是否存在未关闭的订单 (iapChannel.restoreCompletedTransactions, 可选在合适的时机检查)
 
 4. 请求支付，传递产品信息 (uni.requestPayment)
 

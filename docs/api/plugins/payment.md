@@ -87,8 +87,6 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 3. 这些配置需要打包生效，真机运行仍然是HBuilder基座的设置，可使用自定义基座调试。离线打包请参考离线打包文档在原生工程中配置。
 4. 配置并打包后，通过`uni.getProvider`可以得到配置的结果列表，注意这里返回的是manifest配置的，与手机端是否安装微信、支付宝无关。
 
-如果手机端未安装支付宝，调用时会启动支付宝的wap页面登录，如果已安装相应客户端，会启动其客户端登录。
-
 ## App支付
 
 ### 示例
@@ -120,14 +118,16 @@ uni.requestPayment({
   具体可参考支付宝官方文档： [App支付快速接入](https://docs.open.alipay.com/204/105297/)
 
 
+如果手机端未安装支付宝，调用时会启动支付宝的wap页面登录，如果已安装相应客户端，会启动其客户端登录。
+
 ## 微信App支付
 
 ### 申请流程
 
-    - 到 [微信开放平台](https://open.weixin.qq.com/) 申请移动应用并开通支付功能，申请应用后可以获取 AppID 和 AppSecret 值
-    - 应用接入 [微信商户平台](https://pay.weixin.qq.com)，选择 App 支付
-    - 开通支付功能后可获取支付业务服务器配置数据：PARTNER（财付通商户号）、PARTNER_KEY（财付通密钥）、PAYSIGNKEY（支付签名密钥）
-	- 需要将从微信开放平台申请的appid，填回到 manifest-App SDK配置-支付-微信支付 中。打包后生效。
+  - 到 [微信开放平台](https://open.weixin.qq.com/) 申请移动应用并开通支付功能，申请应用后可以获取 AppID 和 AppSecret 值
+  - 应用接入 [微信商户平台](https://pay.weixin.qq.com)，选择 App 支付
+  - 开通支付功能后可获取支付业务服务器配置数据：PARTNER（财付通商户号）、PARTNER_KEY（财付通密钥）、PAYSIGNKEY（支付签名密钥）
+  - 需要将从微信开放平台申请的appid，填回到 manifest-App SDK配置-支付-微信支付 中。打包后生效。
     
   具体可参考微信官方文档： [移动应用开发](https://open.weixin.qq.com/cgi-bin/frame?t=home/app_tmpl&lang=zh_CN)
   
@@ -160,9 +160,7 @@ uni.requestPayment({
     - 内购项目的各信息需要填写完整，然后保存，此时内购项目的状态应该是准备提交，当提交应用通过审核后，状态则变为已批准
     - 测试时，建议使用测试证书打一个自定义的 iOS 基座进行测试
     - 在应用 TestFight 的选项卡添加 App Store Connect 用户，测试支付时可以使用此用户帐号进行测试
-    - orderInfo 的 productid 是自己填写的产品 ID
-    - 调用 ``uni.requestPayment`` 前必须先使用 5+Plus 的方法调用 requestOrder 获取订单信息，否则会导致无法支付
-    - 更多可参考：[https://ask.dcloud.net.cn/article/497](https://ask.dcloud.net.cn/article/497)
+
 
 ### 支付流程
 

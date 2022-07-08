@@ -2,7 +2,7 @@
 
 > 2021年11月18日，腾讯云和阿里云均支持
 
-> `腾讯云开发者使用redis务必将云函数运行环境设为node8。暂时不可在腾讯云nodejs12的云函数内使用redis，具体原因腾讯云正在排查。`
+> `腾讯云开发者使用redis务必仔细阅读此文档：[keepRunningAfterReturn](uniCloud/cf-function.md?id=keep-running)`
 
 Redis是一个基于key/value的内存数据库。在项目中通常作为MongoDB等磁盘数据库的补充来搭配使用。
 相对于磁盘数据库，Redis的核心优势是快。因为操作内存要比磁盘快的多，并且Redis只支持key/value数据，读写都很快。但Redis没有磁盘数据库丰富的查询等功能。
@@ -65,6 +65,9 @@ exports.main = async (event, context) => {
 - redis中，以冒号分割key，在redis的uniCloud web控制台的可视化界面中，将以tree的方式显示。折叠所有使用同一前缀的key。
 比如2个key，`uni:aa`和`uni:bb`，将显示为根节点为uni的tree，展开后有aa和bb。
 - 以`uni:`、`dcloud:`、`unicloud`为前缀的redis的key，为uniCloud官方前缀。开发者自己的业务所需的key应避免使用这些前缀。
+- 调用`uniCloud.redis()`时返回的redis实例对应着一个连接，多次调用时如果存在未断开连接的redis实例则返回此实例。如果不存在redis实例或之前的redis实例已断开连接则返回新的redis实例。
+- redis实例创建时并未建立与redis的连接，而是在第一次调用redis方法时才会与redis建立连接。在实际业务中的表现就是一个云函数实例第一次调用redis方法会慢上几毫秒
+- 为云函数开启redis扩展会影响云函数固定ip功能，详情参考：[云函数固定出口IP](uniCloud/cf-functions.md?id=eip)
 
 ## Redis本地运行@local-function
 
@@ -808,6 +811,10 @@ await redis.quit()
 **返回值**
 
 调用成功后返回`OK`字符串
+
+**注意**
+
+- 断开连接后使用uniCloud.redis()返回的redis实例的连接将不再可用，再下次用到redis方法时需要重新调用`uniCloud.redis()`方法建立连接
 
 ## FAQ@faq
 

@@ -167,7 +167,7 @@ uni-push产品有2个入口：
 #### 在线推送@online
 当应用在线时，不会创建“通知栏消息”，此时客户端会立即监听到消息内容。
 
-如果业务逻辑上需要创建“通知栏消息”来提醒用户；可以在监听到消息内容后，使用创建本地消息API [plus.push.createMessage](https://www.html5plus.org/doc/zh_cn/push.html#plus.push.createMessage)手动创建通知栏消息。
+如果业务逻辑上需要创建“通知栏消息”来提醒用户；可以在监听到消息内容后，使用创建本地消息API [plus.push.createMessage](https://www.html5plus.org/doc/zh_cn/push.html#plus.push.createMessage)手动创建通知栏消息。注意：在ios设备，创建通知栏需要权限；推荐使用[navite.js权限管理插件](https://ext.dcloud.net.cn/plugin?id=594)，判断或取得权限后再调用plus.push.createMessage。后续官方会封装api内置此逻辑。
 
 ### 客户端启用uniPush2.0
 

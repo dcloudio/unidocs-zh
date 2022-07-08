@@ -596,6 +596,10 @@ module.exports = async (event) => {
 
 **require由于存在缓存，也存在同样的问题。尽量不要直接修改require返回的内容**
 
+虽然云函数无状态，但我们也可以通过其他方式来替代全局变量：
+- uni-config-center：静态全局变量可以使用uni提供的配置中心。[详见](uni-config-center.md)
+- redis：动态变量使用redis。[详见](https://uniapp.dcloud.io/uniCloud/redis-introduction.html)
+
 ### 临时存储空间
 
 云函数是运行在云端的代码，运行环境由云服务器弹性调配，这是和传统`Node.js`应用很大的区别。

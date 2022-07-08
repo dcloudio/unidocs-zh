@@ -45,18 +45,18 @@
   * [老版uni-id 3.x文档](uniCloud/uni-id.md)
 * [uni一键登录](uniCloud/univerify.md)
 * [发送短信](uniCloud/send-sms.md)
-* [前端网页托管](uniCloud/hosting.md)
 * Redis扩展库
   * [简介](uniCloud/redis-introduction.md)
   * [费用说明](uniCloud/redis-buy.md)
   * [开发文档](uniCloud/redis.md)
-* Push扩展库
+* Push扩展库(socket)
   * [业务文档](unipush-v2.md)
   * [开发文档](uniCloud/uni-cloud-push/api.md)
   * [扩展参数](uniCloud/uni-cloud-push/options.md)
 * [运行与调试](uniCloud/rundebug.md)
  <!-- * [日志输出](uniCloud/cf-logger.md) -->
 * [发行](uniCloud/publish.md)
+* [前端网页托管](uniCloud/hosting.md)
 * [客户端API](uniCloud/client-sdk.md)
 * [web控制台](https://unicloud.dcloud.net.cn)
 * 重要开源库```{"collapsable": false}```

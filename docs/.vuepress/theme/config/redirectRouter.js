@@ -1,7 +1,5 @@
 const routerMap = {
-  '/uniCloud/uni-push/introduction.html': '/unipush-v2.html',
   '/collocation/frame/lifecycle#页面生命周期': '/tutorial/page.html#lifecycle',
-  '/api/lifetime': '/collocation/App.html#applifecycle',
   '/collocation/frame/lifecycle#应用生命周期': '/collocation/App.html#applifecycle',
   '/collocation/frame/lifetime': '/collocation/App.html#applifecycle',
   '/collocation/frame/lifecycle': '/collocation/App.html#applifecycle',
@@ -56,12 +54,8 @@ const routerMap = {
   '/api/plugins/getEnterOptionsSync': '/api/getEnterOptionsSync.html',
   '/api/plugins/getLaunchOptionsSync.html': '/api/getLaunchOptionsSync.html',
   '/api/plugins/getEnterOptionsSync.html': '/api/getEnterOptionsSync.html',
-
-  '/platform': '/tutorial/platform.html',
-  '/nvue-event': '/tutorial/nvue-event.html',
-
+  '/api/lifetime': '/collocation/App.html#applifecycle',
   '/api/extend/native-plugin': '/plugin/native-plugin.html',
-  '/use-html5plus': '/tutorial/use-html5plus.html',
 
   '/vue-components': '/tutorial/vue-components.html',
   '/vue-components.html': '/tutorial/vue-components.html',
@@ -81,6 +75,7 @@ const routerMap = {
   '/uniCloud/database': '/uniCloud/clientdb.html',
   '/uniCloud/uni-clientDB': '/uniCloud/clientdb.html',
   '/uniCloud/uni-data-picker': '/component/uniui/uni-data-picker.html',
+  '/uniCloud/uni-push/introduction.html': '/unipush-v2.html',
 
   '/plugin/hybrid': '/hybrid.html',
   '/adapt': '/tutorial/adapt.html',
@@ -90,6 +85,9 @@ const routerMap = {
   '/uni_modules': '/plugin/uni_modules.html',
   '/snippet': '/tutorial/snippet.html',
   '/store': '/tutorial/store.html',
+  '/platform': '/tutorial/platform.html',
+  '/nvue-event': '/tutorial/nvue-event.html',
+  '/use-html5plus': '/tutorial/use-html5plus.html',
 }
 
 export default ({ fullPath, path, hash }) => {

@@ -1,3 +1,8 @@
+
+### uni-app项目 苹果应用内支付支付用法
+* uni-app项目 用法请转至[苹果应用内支付](https://uniapp.dcloud.io/api/plugins/payment.html#iap)
+
+
 ### 开通  
 - 登录[App Store Connect](https://appstoreconnect.apple.com/)签署《付费应用程序协议》
 - 在App Store Connect中为 App 配置 App 内购买项目产品，参考[创建App内购买项目](https://help.apple.com/app-store-connect/#/devae49fb316)，设置产品ID（productId）
@@ -18,12 +23,10 @@
 > 提示：需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)；本地离线打包参考[Apple应用内支付模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/pay?id=%e8%8b%b9%e6%9e%9c%e5%ba%94%e7%94%a8%e5%86%85%e8%b4%ad%e6%94%af%e4%bb%98)
 
 
-### uni-app项目 苹果应用内支付支付用法
-* uni-app项目 用法请转至[苹果应用内支付](https://uniapp.dcloud.io/api/plugins/payment.html#iap)
 
 ### 5+应用 苹果应用内支付 
 #### 应用内发起支付
-苹果应用内支付不需要从服务器生成订单，需在发起支付前调用[requestOrder](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.PaymentChannel.requestOrder)获取订单信息。
+
 
 #### 获取应用内支付对象
 应用内支付通道标识为`appleiap`，调用[plus.payment.getChannels](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.getChannels)获取应用内支付对象：
@@ -71,7 +74,6 @@ Object对象类型
 | password | String | 否 | App专用共享密钥(内购商品为自动续期订阅类时必传) |
 
 ##### 示例代码
--  5+ App项目  
 ```  js
 // restoreFlag 标记，用于判断在页面显示的时候是否需要调用 restoreComplateRequest 方法  
 var restoreFlag = true; // 调用支付接口时标记 restoreFlag = true , 实际应用请将标记存储在 storage 中  
@@ -83,8 +85,7 @@ plus.payment.request(iap, {
     restoreFlag = false; // 支付成功清除标记 restoreFlag = false  
     // 支付成功，result 为 IAP商品交易信息对象 IAPTransaction 需将返回的支付凭证传给后端进行二次认证  
   }, function(e){
-    // 支付失败的时候需要调用一下 restoreComplateRequest 方法  
-    restoreComplateRequest();
+	// 支付失败 返回错误信息
 });
 ```
 
@@ -107,7 +108,7 @@ function restoreComplateRequest() {
 
 #### 关闭订单
 
-3.5.0+ 开始支持
+3.5.1+ 开始支持
 
 ```js
 function finishTransaction() {
@@ -121,35 +122,28 @@ function finishTransaction() {
 ```
 
 注意事项：
+ 1. 之前调用 `restoreComplateRequest` 和 `plus.payment.request` manualFinishTransaction 参数为false时该方法会失效
+
 
 
 #### 丢单检测
-- uni-app项目  
-在[页面生命周期](https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e9%a1%b5%e9%9d%a2%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f)函数 `onShow` 中调用 `restoreComplateRequest`  
-```  js
-onShow() {
-    if(restoreFlag) {
-        restoreComplateRequest(
-			
-		);
-    }
-}
-```
-- 5+ App项目  
+
 在监听页面 `resume` 事件回调中调用 `restoreComplateRequest`  
 ```  js
 document.addEventListener('resume',function(){  
-    if(restoreFlag) {  
-        restoreComplateRequest();
+    if(需要restore的触发条件) {  
+        restoreComplateRequest({
+			 manualFinishTransaction: true // 3.5.1+ 支持
+		});
     }  
 },false); 
 ```
 
 #### 丢单问题说明  
 
-通过和用户联调我们发现在调用支付接口后，如果用户未绑定支付方式此时会触发支付失败回调方法，实际上用户可以跳转 AppStrore 绑卡然后继续支付，之前的逻辑在回调失败方法中框架会关闭订单，用户付完钱在回到App中也不会触发成功回调，这样就造成了丢单，解决方法就是在调用支付接口时添加optimize: true参数，并标记 restoreFlag = true;，支付成功回调中清除标记 restoreFlag = false; 然后在支付失败回调中框架就不会关闭订单了，并在页面显示的时候通过标记判断是否需要调用 restoreComplateRequest 方法，如果用户跳转App Store绑定支付方式付款成功后回到 App 就可以通过 restoreComplateRequest 方法恢复之前支付的订单信息，解决丢单的问题；
+用户没有绑定 AppStore 支付方式，调用 `plus.payment.request` 准备支付，触发失败 fail 回调，errCode=2，用户未绑定支付方式，app内支付流程结束。 系统弹出框引导用户绑定支付方式，此过程将跳转到系统应用 AppStore 进行绑定支付方式，绑定成功同步支付成功，用户成功付款
 
-3.5.1 之前因自动关闭订单导致某些情况下丢单的问题
+
 
 3.5.1 +
 
@@ -157,7 +151,6 @@ document.addEventListener('resume',function(){
 
 - 新增关闭订单方法 `iapChannel.finishTransaction(Transaction, <Function> success, <Function> fail)`
 
-- 新增 iapChannel 方法 `requestProduct` `restoreCompletedTransactions` 替代 `requestOrder` `restoreComplateRequest`
 
 ```js
 // 支付
@@ -166,7 +159,7 @@ plus.payment.request(iapChannel, {
 })
 
 // 恢复
-iapChannel.restoreCompletedTransactions({
+iapChannel.restoreComplateRequest({
   manualFinishTransaction: true
 })
 ```
@@ -176,7 +169,7 @@ iapChannel.restoreCompletedTransactions({
 1. 网络原因
 2. 用户首次绑卡
 
-过段时间调用恢复购买 `restoreCompletedTransactions` 可以获取到上次异常或未完成的订单
+过段时间调用恢复购买 `restoreComplateRequest` 可以获取到上次异常或未完成的订单
 
 - 正确关闭订单的方法
 
@@ -185,12 +178,12 @@ iapChannel.restoreCompletedTransactions({
 3. 二次确认后可安全调用 `finishTransaction` 关闭订单
 
 注意：
-- 在订单未关闭时，即使卸载应用调用恢复购买 `restoreCompletedTransactions` 仍然可以获取到
-- A账号下载的应用，切换B账号, 调用 `restoreCompletedTransactions` 系统弹窗提示恢复购买失败
+- 在订单未关闭时，即使卸载应用调用恢复购买 `restoreComplateRequest ` 仍然可以获取到
+- A账号下载的应用，切换B账号, 调用 `restoreComplateRequest` 系统弹窗提示恢复购买失败
 
 
-### 常见问题  
-- 使用沙盒环境测试时每次调用支付接口需要换一个新的测试账号或商品，同一个账号多次购买同一个商品可能会没有回调 
+### 常见问题
+- 越狱机器可能存在应用内支付的风险,可能会出现功能异常
 - 服务端防刷单参考[IAP支付防止刷单](https://www.jianshu.com/p/5cf686e92924)
 - 提前绑定支付方式可以有效避免丢单情况，示例:
 `plus.runtime.openURL("https://apps.apple.com/account/billing"); //跳转AppStore绑定支付方式`

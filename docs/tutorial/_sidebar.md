@@ -88,7 +88,7 @@
       * [iOS后台运行能力](/tutorial/app-ios-uibackgroundmodes.md)
       * [iOS使用广告标识IDFA](/tutorial/app-ios-idfa.md)
       * [iOS符号表文件](/tutorial/app-ios-dsym.md)
-    * [manifest.json源码视图](/tutorial/app-manifest.md)
+    * [manifest.json源码视图](/collocation/manifest-app.md)
     * [安心打包指南](tutorial/build/SafePack.md)
     * [iOS 安心打包证书安装](tutorial/build/iosSafePack.md)
     * [Android 自定义渠道包](tutorial/build/AndroidChannel.md)

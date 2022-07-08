@@ -17,8 +17,12 @@
 
 > 提示：需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)；本地离线打包参考[Apple应用内支付模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/pay?id=%e8%8b%b9%e6%9e%9c%e5%ba%94%e7%94%a8%e5%86%85%e8%b4%ad%e6%94%af%e4%bb%98)
 
-### 应用内发起支付
 
+### uni-app项目 苹果应用内支付支付用法
+* uni-app项目 用法请转至[苹果应用内支付](https://uniapp.dcloud.io/api/plugins/payment.html#iap)
+
+### 5+应用 苹果应用内支付 
+#### 应用内发起支付
 苹果应用内支付不需要从服务器生成订单，需在发起支付前调用[requestOrder](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.PaymentChannel.requestOrder)获取订单信息。
 
 #### 获取应用内支付对象
@@ -54,9 +58,6 @@ iap.requestOrder(ids, function(e) {
 ```
 
 #### 发起支付
-- uni-app项目  
-调用 [uni.requestPayment(OBJECT)](https://uniapp.dcloud.io/api/plugins/payment?id=requestpayment) 发起支付，OBJECT参数中provider属性值固定为`appleiap`、orderInfo属性值为订单对象
-- 5+ App项目  
 调用 [plus.payment.request(channel, orderInfo, successCB, errorCB)](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.request) 发起支付, channel参数为应用内支付对象，orderInfo参数为订单对象
 
 ##### 订单对象参数说明  
@@ -66,35 +67,10 @@ Object对象类型
 | :--- | :--- | :--- | :--- |
 | productid | String | 是 | App Store Connect 配置的内购买项目产品ID（productId） |
 | username | String | 否 | 用户标识 |
-| optimize | Boolean | 否 | 是否优化解决丢掉问题 |
+| manualFinishTransaction | Boolean | 否 |  3.5.1+ 支持，手动关闭订单，值为 false 时支付完成后自动关闭订单，true时不关闭订单，需要在合适的时机调用 finishTransaction 关闭订单。建议设置为 true, 默认值为 false 是为了向下兼容 |
 | password | String | 否 | App专用共享密钥(内购商品为自动续期订阅类时必传) |
 
 ##### 示例代码
-- uni-app项目
-```  js
-var restoreFlag = true;
-uni.requestPayment({
-    provider: 'appleiap',
-    orderInfo: {
-        productid: productId,    
-        username: "appusername", // 用户标识
-        optimize: true  // 设置 optimize: true 解决丢单问题
-    },
-    success: (e) => {
-        // 支付成功清除标记 restoreFlag = false  
-        // 支付成功，result 为 IAP商品交易信息对象 IAPTransaction 需将返回的支付凭证传给后端进行二次认证 
-       restoreFlag = false;
-    },
-    fail: (e) => {
-        // 支付失败的时候需要调用一下 restoreComplateRequest 方法  
-        restoreComplateRequest();
-    },
-    complete: () => {
-        console.log("payment结束");
-    }
-});
-```
-
 -  5+ App项目  
 ```  js
 // restoreFlag 标记，用于判断在页面显示的时候是否需要调用 restoreComplateRequest 方法  
@@ -102,7 +78,6 @@ var restoreFlag = true; // 调用支付接口时标记 restoreFlag = true , 实�
 plus.payment.request(iap, {
     productid: "商品id",
     username: "appusername", // 用户标识  
-    optimize: true,  // 设置 optimize: true 解决丢单问题，已废弃，推荐使用 manualFinishTransaction
     manualFinishTransaction: true // 3.5.1+ 支持，设置此参数后需要开发者主动关闭订单，参见下面的关闭订单方法 finishTransaction()
   }, function(result){
     restoreFlag = false; // 支付成功清除标记 restoreFlag = false  
@@ -116,7 +91,9 @@ plus.payment.request(iap, {
 #### 恢复购买
 ```  js
 function restoreComplateRequest() {
-    iap.restoreComplateRequest({}, function(results){
+    iap.restoreComplateRequest({
+		manualFinishTransaction: true // 3.5.1+ 支持，设置此参数后需要开发者主动关闭订单，参见下面的关闭订单方法 finishTransaction()
+	}, function(results){
         // results 格式为数组存放恢复的IAP商品交易信息对象 IAPTransaction，需要将返回的支付凭证传给后端进行二次认证  
     });
 }
@@ -152,7 +129,9 @@ function finishTransaction() {
 ```  js
 onShow() {
     if(restoreFlag) {
-        restoreComplateRequest();
+        restoreComplateRequest(
+			
+		);
     }
 }
 ```

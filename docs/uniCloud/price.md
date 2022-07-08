@@ -53,6 +53,8 @@ uniCloud提供包月、按量计费两种计费方式（仅腾讯云），具体
 
 ## 腾讯云@tencent
 
+**使用腾讯云Nodejs12版本时，务必仔细阅读此文档：[keepRunningAfterReturn](uniCloud/cf-function.md?id=keep-running)**
+
 ### 腾讯云系统限制@tcb-system-limit
 
 |类别	|系统参数										|限制说明																	|

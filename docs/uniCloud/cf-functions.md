@@ -530,11 +530,11 @@ myCloud.uploadFile()
 
 ## 云函数运行环境说明@runtime
 
-云函数运行在 node 环境中。可以使用 node api 获取 node 版本。
+云函数运行在 node 环境中。可以使用 node api `process.version` 获取 node 版本。
 
-- uniCloud 阿里云默认是 node8.17.0，也可以选择 node12
-- uniCloud 腾讯云默认是 node8.9.4，也可以选择 node12
-- HBuilderX 本地运行环境使用的是 HBuilderX 自带的 node 版本，目前为 node12
+- uniCloud 阿里云默认是 node8.17.0，也可以在 package.json 中选择 node12
+- uniCloud 腾讯云默认是 node8.9.4，也可以在 package.json 中选择 node12
+- HBuilderX 本地运行环境使用的是 HBuilderX 自带的 node 版本，目前为 node12。在 package.json 选择 node版本 只云端生效，且只在第一次上传云函数时生效。
 
 **注意**
 - 本地开发一旦使用了 node12 的专用 api，上传云函数时必须在package.json里手动配置选择 node12 的运行环境。
@@ -797,6 +797,8 @@ package.json是一个标准json文件，不可带注释。下面是一个package
 ```
 
 ### cloudfunction-config@cloudfunction-config
+
+其中cloudfunction-config字段是云函数配置，支持的配置如下
 
 ```js
 {

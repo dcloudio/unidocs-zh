@@ -134,7 +134,7 @@ uni-push产品有2个入口：
 - 如果您的后台业务使用uniCloud开发，那理解比较简单。
 - 如果您的后台业务没有使用uniCloud，那么也需要在uni-app项目中创建uniCloud环境，在HBuilderX中和dev的uni-push配置中均绑定相同服务空间，之前的业务仍然由客户端连接原有传统服务器，push相关功能则通过uniCloud服务空间实现。如果您之前使用过三方推送服务的话，可以理解为您的服务器不再调用个推服务器，而是改为调用uniCloud服务空间。
 
-在uniCloud的云函数中，加载扩展库 `uni-cloud-push`，直接调用相关API，无需额外的服务端配置。而传统服务器开发者需要把这个云函数URL后变成http接口，再由原来的php或java代码调用这个http接口。
+在uniCloud的云函数中，加载扩展库 `uni-cloud-push`，直接调用相关API，无需额外的服务端配置。而传统服务器开发者需要把这个[云函数URL化](https://uniapp.dcloud.io/uniCloud/http.html)后变成http接口，再由原来的php或java代码调用这个http接口。
 
 注意：`Android包名、签名（SHA1指纹）`或`iOS Bundle ID`，必须确保与客户端manifest.json配置的证书相关信息一致，否则可能会导致无法正常打包或收到推送消息。
 

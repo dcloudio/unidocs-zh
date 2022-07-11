@@ -6,7 +6,7 @@ App-Android平台云端打包相关配置
 |packagename|String|Android平台云端打包的包名|
 |keystore|String|Android平台云端打包使用的签名证书文件路径|
 |password|String|Android平台云端打包使用的签名证书的密码，要求证书存储密码和证书密码相同|
-|aliasname|String|Android平台遇到你打包使用的证书别名|
+|aliasname|String|Android平台云端打包使用的证书别名|
 |schemes|String|Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[Android平台设置UrlSchemes](https://uniapp.dcloud.io/tutorial/app-android-schemes)|
 |abiFilters|Array|Android平台App支持的cpu类型，详情参考：[Android平台设置CPU类型](https://uniapp.dcloud.io/tutorial/app-android-abifilters)|
 |permissions|Array|Android平台App使用的权限|

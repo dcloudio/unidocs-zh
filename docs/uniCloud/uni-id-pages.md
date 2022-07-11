@@ -1405,7 +1405,7 @@ uni-id-co则是一个更加比uni-id-cf更完善和规范的用户管理的云�
 
 - 彻底移除bindTokenToDevice逻辑及配置
 - 彻底移除removePermissionAndRoleFromToken逻辑及其配置，token内一定会缓存用户角色权限
-- 不再将token存储在用户表内
+- uni-id-common 1.0.9及更低版本未将token存储在用户表内，自uni-id-common 1.0.10起仍将token存储在用户表内（与旧版本uni-id保持一致）
 - 为用户添加valid_token_date字段，**修改密码、重置密码、封禁用户场景下更新此值，刷新token时进行验证，如果token创建时间小于此时间戳，将等同于token已过期**
 - 为用户添加third_party字段，用于缓存用户在三方平台的token、sessionKey等信息
 - 用户名、邮箱入库时会转化为全小写

@@ -171,11 +171,6 @@ export default {
 			"prefix": "群29"
 		},
 		{
-			"number": "371046920",
-			"state": 1,
-			"prefix": "群30"
-		},
-		{
 			"number": "567471669",
 			"state": 1,
 			"prefix": "群31"
@@ -202,9 +197,14 @@ export default {
 		},
 		{
 			"number": "516984120",
-			"state": 0,
+			"state": 1,
 			"prefix": "群15"
-		}
+		},
+		{
+			"number": "371046920",
+			"state": 0,
+			"prefix": "群30"
+		},
 	],
-	joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=nsW1gqNT9LqZLfcyntjd1paIKUzWewHN&jump_from=webapi'
+	joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=oanvEJU5ZcGHf71o3j7-nb8Xmi1b9zg3&jump_from=webapi'
 }

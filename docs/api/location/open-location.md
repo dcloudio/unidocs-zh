@@ -50,22 +50,22 @@ uni.getLocation({
 - 不同平台打开的地图不一样，App端是高德地图（不支持百度地图）、H5端是腾讯地图或谷歌地图、微信小程序端是腾讯地图、百度小程序是百度地图、阿里小程序是高德地图、字节跳动小程序是高德地图。
 
 ```json
-{  
-    "app-plus": {  
-        "distribute": {  
-            "ios": {  
-                "urlschemewhitelist": [  
-                    "baidumap",  
-                    "iosamap",  
-                    "qqmap"  
-                ]  
-            }  
-        }  
-    }  
-}  
+{
+    "app-plus": {
+        "distribute": {
+            "ios": {
+                "urlschemewhitelist": [
+                    "baidumap",
+                    "iosamap",
+                    "qqmap"
+                ]
+            }
+        }
+    }
+}
 ```
 
-- 点击返回也会进入 `fail` 回调中
+<!-- - 点击返回也会进入 `fail` 回调中 -->
 
 ### 三方定位和地图服务收费说明
 

@@ -1184,6 +1184,7 @@ await db.collection('test').where({
 
 - 使用updateAndReturn时，不可使用field方法
 - 可以在事务中使用，可以使用`transaction.where().updateAndReturn()`以及`transaction.doc().updateAndReturn()`
+- 不同于update接口，此接口返回的updated不表示数据真的进行了更新
 
 ### 更新数组内指定下标的元素@update-arr-with-index
 

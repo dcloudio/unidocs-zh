@@ -1,35 +1,36 @@
 export default {
 	contactItems: [{
-			name: 'uniCloud Web控制台',
-			url: 'https://unicloud.dcloud.net.cn',
-			imageUrl: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7962e8e0-4f2d-11eb-a16f-5b3e54966275.jpg'
-		},
-		{
-			name: '论坛',
-			url: 'https://ask.dcloud.net.cn/explore/',
-			imageUrl: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/73fc4f90-4f2d-11eb-a16f-5b3e54966275.png'
-		},
-		{
-			name: 'uniAD',
-			url: 'https://uniad.dcloud.net.cn',
-			imageUrl: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/765d9820-4f2d-11eb-bd01-97bc1429a9ff.png'
-		},
-		{
-			name: 'uni统计',
-			url: 'https://tongji.dcloud.net.cn/',
-			imageUrl: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/77159d80-4f2d-11eb-a16f-5b3e54966275.png'
-		}
+		name: 'uniCloud Web控制台',
+		url: 'https://unicloud.dcloud.net.cn',
+		imageUrl: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7962e8e0-4f2d-11eb-a16f-5b3e54966275.jpg'
+	},
+	{
+		name: '论坛',
+		url: 'https://ask.dcloud.net.cn/explore/',
+		imageUrl: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/73fc4f90-4f2d-11eb-a16f-5b3e54966275.png'
+	},
+	{
+		name: 'uniAD',
+		url: 'https://uniad.dcloud.net.cn',
+		imageUrl: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/765d9820-4f2d-11eb-bd01-97bc1429a9ff.png'
+	},
+	{
+		name: 'uni统计',
+		url: 'https://tongji.dcloud.net.cn/',
+		imageUrl: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/77159d80-4f2d-11eb-a16f-5b3e54966275.png'
+	}
 	],
 	codeHosting: [{
-			name: '码云',
-			url: 'https://gitee.com/dcloud/uni-app'
-		},
-		{
-			name: 'GitHub',
-			url: 'http://github.com/dcloudio/uni-app'
-		}
+		name: '码云',
+		url: 'https://gitee.com/dcloud/uni-app'
+	},
+	{
+		name: 'GitHub',
+		url: 'http://github.com/dcloudio/uni-app'
+	}
 	],
-	qq_group: [{
+	qq_group: [
+		{
 			"number": "531031261",
 			"state": 1,
 			"prefix": "群1"
@@ -204,5 +205,6 @@ export default {
 			"state": 0,
 			"prefix": "群15"
 		}
-	]
+	],
+	joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=nsW1gqNT9LqZLfcyntjd1paIKUzWewHN&jump_from=webapi'
 }

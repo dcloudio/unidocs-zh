@@ -36,7 +36,7 @@
 `getPushClientId:fail register fail: {\"errorCode\":1,\"errorMsg\":\"\"}`  
 请检查：  
 1. 当前应用是否已开通uni-push2.0 [详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
-2. 客户端对应平台是否已启用uniPush2.0[详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%90%AF%E7%94%A8unipush2-0)
+2. 客户端对应平台是否已启用uni-push2.0[详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%90%AF%E7%94%A8unipush2-0)
 
 示例代码：
 ```js 
@@ -82,6 +82,9 @@ uni.offPushMessage(eventName);
 - 如果只提供了事件名（eventName），则移除该事件名对应的所有监听器；
 
 ## 服务端Api @uni-cloud-push
+
+以下为uni-cloud-push扩展库的api文档；关于uni-cloud-push扩展库的详细介绍，以及如何在需要操作uni-push的云函数里，手动配置uni-cloud-push扩展库[详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%8E%A8%E9%80%81%E6%B6%88%E6%81%AF)
+
 ### 推送目标选择
 发送push可以基于如下维度选择目标设备：
 - 不指定，所有启动过应用的设备

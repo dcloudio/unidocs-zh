@@ -114,7 +114,7 @@
 * 运行和调试
   * [概述](run-and-debug.md)
   * [web平台：内置浏览器运行调试](debug/debug-web-via-hx.md)
-  * [web平台：debug](/tutorial/debug/h5-debug.md)
+  * [web平台：debug](/debug/debug-web-via-chrome.md)
   * [App平台：真机运行常见问题](run/PhoneDebugging.md)
   * [App平台：模拟器安装指南](run/installSimulator.md)
   * [App平台：debug](debug/debug-app.md)

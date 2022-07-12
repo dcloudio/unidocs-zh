@@ -1,5 +1,11 @@
 > 需要HBuilderX 3.5.1 及其以上版本支持
 
+<div style="display: flex;align-items: center;">
+	<img width="20px" height="21px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/759713d0-4f2d-11eb-a16f-5b3e54966275.png">
+	&nbsp;
+	<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=EErVqoKDps4QSo5M0mm_OfzdA7JqtQU4&jump_from=webapi">官方QQ交流群：757742921</a>
+</div>
+
 # 开发文档
 
 `uni-push`有服务器API和客户端API。

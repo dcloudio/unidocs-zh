@@ -52,6 +52,7 @@
 * Push扩展库(socket)
   * [业务文档](unipush-v2.md)
   * [开发文档](uniCloud/uni-cloud-push/api.md)
+  * [uni-push2.0、uni-id、uni统计的组合](uniCloud/uni-cloud-push/mate.md)
   * [扩展参数](uniCloud/uni-cloud-push/options.md)
 * [运行与调试](uniCloud/rundebug.md)
  <!-- * [日志输出](uniCloud/cf-logger.md) -->

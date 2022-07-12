@@ -77,7 +77,7 @@
 ```html
 <template>
   <view>
-    <ad-rewarded-video adpid="1507000611" :loadnext="true" v-slot:default="{loading, error}">
+    <ad-rewarded-video adpid="1507000689" :loadnext="true" v-slot:default="{loading, error}">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-rewarded-video>
@@ -91,7 +91,7 @@
 ```html
 <template>
   <view class="content">
-    <ad-rewarded-video adpid="1507000611" :loadnext="true" v-slot:default="{loading, error}" @load="onadload" @close="onadclose" @error="onaderror">
+    <ad-rewarded-video adpid="1507000689" :loadnext="true" v-slot:default="{loading, error}" @load="onadload" @close="onadclose" @error="onaderror">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-rewarded-video>
@@ -126,6 +126,71 @@ export default {
   }
 }
 </script>
+```
+
+API调用示例
+
+```html
+<template>
+  <view>
+    <ad-rewarded-video ref="adRewardedVideo" adpid="1507000689" :preload="false" :loadnext="false" :disabled="true"
+      v-slot:default="{loading, error}" @load="onadload" @close="onadclose" @error="onaderror">
+      <view class="ad-error" v-if="error">{{error}}</view>
+    </ad-rewarded-video>
+    <button type="primary" :disabled="isLoading" :loading="isLoading" @click="showAd">显示广告</button>
+  </view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        isLoading: false
+      }
+    },
+    onReady() {
+      this.isLoading = true;
+      this.$refs.adRewardedVideo.load();
+    },
+    methods: {
+      showAd() {
+        if (this.isLoading) {
+          return
+        }
+        this.$refs.adRewardedVideo.show();
+      },
+      onadload(e) {
+        this.isLoading = false;
+        console.log('广告数据加载成功');
+      },
+      onadclose(e) {
+        const detail = e.detail
+        // 用户点击了【关闭广告】按钮
+        if (detail && detail.isEnded) {
+          // 正常播放结束
+          console.log("onClose " + detail.isEnded);
+        } else {
+          // 播放中途退出
+          console.log("onClose " + detail.isEnded);
+        }
+        //this.isLoading = true;
+        //this.$refs.adRewardedVideo.load();
+      },
+      onaderror(e) {
+        // 广告加载失败
+        console.log(e.detail);
+        this.isLoading = false;
+      }
+    }
+  }
+</script>
+
+<style>
+  .ad-error {
+    color: orangered;
+    margin-top: 5px;
+  }
+</style>
 ```
 
 瀑布流逻辑广告位
@@ -197,7 +262,7 @@ export default {
 ```html
 <template>
   <view class="content">
-    <ad-rewarded-video ref="adRewardedVideo" adpid="1507000611" :loadnext="true" v-slot:default="{loading, error}" @load="onload">
+    <ad-rewarded-video ref="adRewardedVideo" adpid="1507000689" :loadnext="true" v-slot:default="{loading, error}" @load="onload">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-rewarded-video>
@@ -258,7 +323,7 @@ export default {
 ```html
 <template>
   <view class="content">
-    <ad-rewarded-video adpid="1507000611" :loadnext="true" v-slot:default="{loading, error}" @close="onadclose">
+    <ad-rewarded-video adpid="1507000689" :loadnext="true" v-slot:default="{loading, error}" @close="onadclose">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-rewarded-video>
@@ -310,7 +375,7 @@ urlCallback示例
 ```html
 <template>
   <view class="content">
-    <ad-rewarded-video adpid="1507000611" :url-callback="urlCallback" :loadnext="true" v-slot:default="{loading, error}">
+    <ad-rewarded-video adpid="1507000689" :url-callback="urlCallback" :loadnext="true" v-slot:default="{loading, error}">
       <button :disabled="loading" :loading="loading">显示广告</button>
       <view v-if="error">{{error}}</view>
     </ad-rewarded-video>

@@ -44,7 +44,7 @@
   * [renderjs](/tutorial/renderjs.md)
   * [原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)
   * [App使用高斯模糊](/tutorial/app-blureffect.md)
-  * App 打包
+  * App 打包配置
     * [基础配置](/tutorial/app-base.md)
     * [图标配置](/tutorial/app-icons.md)
     * [启动界面](/tutorial/app-splashscreen.md)
@@ -92,7 +92,7 @@
     * [安心打包指南](tutorial/build/SafePack.md)
       * [iOS 安心打包证书安装](tutorial/build/iosSafePack.md)
     * [Android 自定义渠道包](tutorial/build/AndroidChannel.md)
-  * [App本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/README)
+  * App 本地打包
     * [Android本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android)
     * [iOS本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios)
   * [App 上架注意](/tutorial/store.md)

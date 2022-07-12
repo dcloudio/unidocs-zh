@@ -2,11 +2,12 @@
 
 ### 包含的opendb表
 
-|数据表名称		|操作（添加/更新）时机		|内容/作用										|
-|--				|						|--												|
-|opendb-tempdata|旧token过期时			|向个推服务器发起请求的token						|
-|open-device	|设备启动、登录			|push_clientid与详细的[设备信息](#deviceInfo)|
-|uni-id-device	|登录					|主要用于存储user_id 与 device_id的映射关系，完整字段：user_id、device_id、token_expired、push_clientid、appid|
+|数据表名称|操作（添加/更新）时机	|内容/作用	|
+|--	|--	|--	|
+|opendb-tempdata|旧token过期时	|向个推服务器发起请求的token	|
+|open-device	|设备启动、登录	|push_clientid与详细的[设备信息](#deviceInfo)	|
+|uni-id-device	|登录	|主要用于存储user_id 与 device_id的映射关系，完整字段：user_id、device_id、token_expired、push_clientid、appid	|
+
 
 **详情：**
 1. uni统计模块，在设备启动时立即调用[getPushClientId](https://uniapp.dcloud.io/uniCloud/uni-cloud-push/api.html#getpushclientid)获取`push_clientid`，如果获取成功后（应用未在manifest中启用uni-push2.0则会获取失败）则调用`uni-stat-receiver`云对象的`report`方法（参数：`push_clientid`），服务器会向`opendb-device`表写入或更新（存在时）：[设备信息](#deviceInfo)和`push_clientid`。

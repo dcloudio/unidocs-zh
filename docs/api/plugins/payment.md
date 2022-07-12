@@ -560,10 +560,10 @@ class Iap {
     });
   }
 
-  requestPayment(orderinfo) {
+  requestPayment(orderInfo) {
     return new Promise((resolve, reject) => {
       uni.requestPayment({
-        orderinfo: orderinfo,
+        orderInfo: orderInfo,
         success: (res) => {
           resolve(res);
         },

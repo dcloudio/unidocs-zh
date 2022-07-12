@@ -287,7 +287,7 @@ uni.requestPayment({
 注意事项
 
 - 相同订单，重复调用 `restoreCompletedTransactions` 后 `transactionReceipt` 会发生变化，并非唯一值
-
+- 调用 `finishTransaction` 关闭订单可能不会立即生效，取决于苹果的服务器
 
 ### 订单丢失场景
 
@@ -449,8 +449,8 @@ uni.requestPayment({
           // await this.validatePaymentResult({
           //   orderId: orderId,
           //   username: username,
-          //   transactionReceipt: transaction.transactionReceipt,
-          //   transactionIdentifier: transaction.transactionIdentifier // 不可作为订单唯一标识
+          //   transactionReceipt: transaction.transactionReceipt, // 不可作为订单唯一标识
+          //   transactionIdentifier: transaction.transactionIdentifier
           // });
 
           // 验证成功后关闭订单

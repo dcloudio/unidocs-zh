@@ -32,7 +32,11 @@
 |:-|:-|:-|
 |errMsg|String| 错误描述|
 
-常见报错：`getPushClientId:fail register fail: {\"errorCode\":1,\"errorMsg\":\"\"}`，这种情况请检查：当前应用是否已开通uni-push2.0
+常见报错：   
+`getPushClientId:fail register fail: {\"errorCode\":1,\"errorMsg\":\"\"}`  
+请检查：  
+1. 当前应用是否已开通uni-push2.0 [详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
+2. 客户端对应平台是否已启用uniPush2.0[详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%90%AF%E7%94%A8unipush2-0)
 
 示例代码：
 ```js 
@@ -78,7 +82,6 @@ uni.offPushMessage(eventName);
 - 如果只提供了事件名（eventName），则移除该事件名对应的所有监听器；
 
 ## 服务端Api @uni-cloud-push
-
 ### 推送目标选择
 发送push可以基于如下维度选择目标设备：
 - 不指定，所有启动过应用的设备
@@ -97,7 +100,7 @@ uni.offPushMessage(eventName);
 同理基于`user_id`向用户推送消息，需要`user_id`与`push_clientid`的映射关系，可以直接使用[uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577)插件内置的功能实现。如果你不使用`uni-di-pages`需要在`App.vue`调用[uniCloud.onRefreshToken](https://uniapp.dcloud.io/uniCloud/client-sdk.html#on-refresh-token) 监听token发生变化（即：用户登录和token续期时），调用服务端云对象的某个方法（参数：`push_clientid`）操作`uni-id-device`表，记录`device_id` 与 `user_id`（防客户端伪造，需校验`token`）的映射关系；完整字段包含`user_id`、`device_id`、`token_expired`、`push_clientid`、`appid`。同时再向`opendb-device`表写入或更新（存在时）：[设备信息](https://uniapp.dcloud.io/uniCloud/cloud-obj.html#get-client-info)和`push_clientid`。
 
 
-**注意：**客户端上报的信息在理论上存在被篡改可能，基于`device_id`向用户推送消息有被窃听的风险（营销类消息不用太关心这个）。
+**注意：** 客户端上报的信息在理论上存在被篡改可能，基于`device_id`向用户推送消息有被窃听的风险（营销类消息不用太关心这个）。
 例如：张三使用李四的`device_id`+张三的`push_clientid`。上报数据；服务器会认为李四的`push_clientid`更新了，从而将李四的`device_id`与`push_clientid`的映射关系，指向张三的`push_clientid`;张三从而窃听到，其他人发给李四的消息。
 而基于`user_id`或者`user_tag`推送消息，是基于`uni-id-device`表，在新增/更新操作时：会校验当前用户的`user_id`，不会被其他用户篡改，即没有被他人窃听消息的风险。
 

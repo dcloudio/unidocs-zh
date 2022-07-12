@@ -40,26 +40,23 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
 
 1. 浏览器运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到浏览器 -> 选择浏览器，即可在浏览器里面体验uni-app 的 H5 版。
   <div align=center>
-  	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/1ad34710-4f1a-11eb-8ff1-d5dcf8779628.png"/>
+  	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7bf15128-6629-4037-a6c5-988ab03671f1.png"/>
   </div>
 
 2. 运行App到手机或模拟器：连接手机，开启USB调试，进入hello-uniapp项目，点击工具栏的运行 -> 真机运行 -> 选择运行的设备，即可在该设备里面体验uni-app。
 	<div align=center>
-		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/3a1faaf0-4f1a-11eb-b680-7980c8a877b8.png"/>
+		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c4d3c057-40dc-4dea-9277-be1c33a252ed.png"/>
 	</div>
 	
 	如手机无法识别，请点击菜单运行-运行到手机或模拟器-真机运行常见故障排查指南。
-	注意目前开发App也需要安装微信开发者工具。
 	
 3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。
     <br/>
     <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/d89fd6f0-4f1a-11eb-97b7-0dc4655d6e68.png"/>
+    	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5e058d1a-a6c6-4501-ae65-4333e7f82ad6.png"/>
     </div>
     
-    **注意**：如果是第一次使用，需要先配置小程序ide的相关路径，才能运行成功。如下图，需在输入框输入微信开发者工具的安装路径。 若HBuilderX不能正常启动微信开发者工具，需要开发者手动启动，然后将uni-app生成小程序工程的路径拷贝到微信开发者工具里面，在HBuilderX里面开发，在微信开发者工具里面就可看到实时的效果。
-    
-    uni-app默认把项目编译到根目录的unpackage目录。
+    **注意**：如果是第一次使用，需要先配置小程序ide的相关路径，才能运行成功。如下图，需在输入框输入微信开发者工具的安装路径。
     <br/>
     <div align=center>
       <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a142b6a0-4f1a-11eb-8a36-ebb87efcf8c0.png"/>
@@ -71,41 +68,12 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
     	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/fee90480-4f1a-11eb-bd01-97bc1429a9ff.png"/>
     </div>
 
-5. 在百度开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 百度开发者工具，即可在百度开发者工具里面体验uni-app。
-    <br/>
-    <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/1be92e70-4f1b-11eb-8a36-ebb87efcf8c0.png"/>
-    </div>
- 
-6. 在字节跳动开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 字节跳动开发者工具，即可在字节跳动开发者工具里面体验uni-app。
-    <br/>
-    <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/42de5370-4f1b-11eb-8ff1-d5dcf8779628.png"/>
-    </div>
-
-7. 在360开发工具中导入：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 360开发工具，即可在360开发工具里面体验uni-app。注意360工具只有windows版
-    <br/>
-    <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b9edff30-4f37-11eb-97b7-0dc4655d6e68.png"/>
-    </div>
-
-8. 在快应用联盟工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 快应用联盟工具，即可在快应用联盟工具里面体验uni-app。
-    <br/>
-    <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bba35050-4f37-11eb-8ff1-d5dcf8779628.png"/>
-    </div>
-
-9. 在华为开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 华为开发者工具，即可在华为开发者工具里面体验uni-app。
-    <br/>
-    <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bc558950-4f37-11eb-bdc1-8bd33eb6adaa.png"/>
-    </div>
-
-10. 在QQ、快手、飞书、京东等小程序开发工具里运行：内容同上，不再重复。
+5. 在百度、字节跳动、QQ、快应用（分联盟和华为）、快手、飞书、360、京东等小程序开发工具里运行：内容同上，不再重复。
 
 **Tips**
 
 * 如果是第一次使用，需要配置开发工具的相关路径。点击工具栏的运行 -> 运行到小程序模拟器 -> 运行设置，配置相应小程序开发者工具的路径。
+* 微信小程序工具需要配置允许权限，不然HBuilder无法调用微信小程序开发工具的命令行
 * 支付宝/百度/字节跳动/360小程序工具，不支持直接指定项目启动并运行。因此开发工具启动后，请将 HBuilderX 控制台中提示的项目路径，在相应小程序开发者工具中打开。
 * 如果自动启动小程序开发工具失败，请手动启动小程序开发工具并将 HBuilderX 控制台提示的项目路径，打开项目。
 
@@ -116,7 +84,7 @@ HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行�
 	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/aef21b70-4f37-11eb-a16f-5b3e54966275.png"/>
 </div>
 
-如需调试，可参考：[uni-app调试](/tutorial/snippet?id=使用-chrome-调试)
+如需调试，可参考：[uni-app调试](tutorial/run-and-debug.md)
 
 ## 发布uni-app
 
@@ -143,7 +111,7 @@ App打包时，注意如果涉及三方sdk，需进行申请并在manifest.json�
 iOS App打包需要向Apple申请证书。
 
 
-### 发布为H5
+### 发布为Web网站
 
 1. 在 ``manifest.json`` 的可视化界面，进行如下配置（发行在网站根目录可不配置应用基本路径），此时发行网站路径是 www.xxx.com/h5，如：[https://hellouniapp.dcloud.net.cn](https://hellouniapp.dcloud.net.cn)。
   <div align=center>
@@ -155,6 +123,10 @@ iOS App打包需要向Apple申请证书。
 	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b7391860-4f37-11eb-8a36-ebb87efcf8c0.png" style="max-width:600px;height:auto;"/>
 </div>
 
+<div align=center>
+	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e7c3669a-5d46-4a5b-be23-fac43052180f.png"/>
+</div>
+
 **注意**
 - `history` 模式发行需要后台配置支持，详见：[history 模式的后端配置](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
 - 打包后，推荐使用[前端网页托管服务](/uniCloud/hosting)，一键上传，自带CDN加速，无需购买虚拟机，无需安装nginx等；
@@ -164,12 +136,14 @@ iOS App打包需要向Apple申请证书。
 
 #### 发布为微信小程序：
 1. 申请微信小程序AppID，参考：[微信教程](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html#%E7%94%B3%E8%AF%B7%E5%B8%90%E5%8F%B7)。
-2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-微信"，输入小程序名称和appid点击发行即可在 ``unpackage/dist/build/mp-weixin`` 生成微信小程序项目代码。
+2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-微信"，输入小程序名称和appid点击发行即可
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b36294f0-4f37-11eb-8a36-ebb87efcf8c0.png"/>
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/44a058ef-7934-46d0-bbb1-2a473e24988a.png"/>
 </div>
-3. 在微信小程序开发者工具中，导入生成的微信小程序项目，测试项目代码运行正常后，点击“上传”按钮，之后按照 “提交审核” => “发布” 小程序标准流程，逐步操作即可，详细查看：[微信官方教程](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/release.html#%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF)。
 
+如果手动发行，则点击发行按钮后，会在项目的目录 ``unpackage/dist/build/mp-weixin`` 生成微信小程序项目代码。在微信小程序开发者工具中，导入生成的微信小程序项目，测试项目代码运行正常后，点击“上传”按钮，之后按照 “提交审核” => “发布” 小程序标准流程，逐步操作即可，详细查看：[微信官方教程](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/release.html#%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF)。
+
+如果在发行界面勾选了`自动上传微信平台`，则无需再打开微信工具手动操作，将直接上传到微信服务器提交审核。
 
 #### 发布为百度小程序：
 4. 入驻小程序并申请百度小程序AppID，参考：[百度小程序教程](https://smartprogram.baidu.com/docs/introduction/enter_application/)。

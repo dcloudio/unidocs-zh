@@ -1,17 +1,25 @@
-## 使用 HBuilderX 内置浏览器调试 H5@h5-debug-hx
+## HBuilderX 内置浏览器运行 web
 
-打开 `uni-app` 项目的页面，点 HBuilderX 右上角的预览按钮，可以在内置浏览器里打开 H5 运行结果，也可以点右键打开控制台调试。
+打开 `uni-app` 项目的页面，点 HBuilderX 右上角的`预览`按钮，可以在内置浏览器里打开 Web 运行结果，也可以点右键打开控制台调试。
 
 修改保存工程源码时，右边的浏览器内容可以自动刷新。
 
 在 HBuilderX 控制台里，可以直接看到内置浏览器打印的日志。
 
-打开内置浏览器的控制台的 `Sources` 栏，可以给 js 打断点调试。
+点击日志，可以直接跳转到对应的代码处。
 
-在 `Page` 下找到 `webpack` 里的工程目录，可直接找到对应的`vue`页面进行断点调试；或按 `Ctrl+P`搜文件名，进入页面调试；也可点击控制台的 `log` 信息，进入对应的页面进行调试。
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/997dd3b4-6b39-45b7-abdf-559c6759e6f0.jpg)
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/56abde90-4f34-11eb-8a36-ebb87efcf8c0.png)
+注意浏览器控制台打印的日志无法转到代码，只有HBuilder控制台打印的才能转到代码。而运行到外部浏览器是没有这个功能的。只有HBuilder内置浏览器才可以。
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/5762ab70-4f34-11eb-bdc1-8bd33eb6adaa.png)
+## 同步断点@h5-debug-hx
 
-`点击工具栏的运行 -> 运行到浏览器 -> 选择 Chrome`，也可将 `uni-app`运行到 浏览器，可参考 [运行 uni-app](/quickstart?id=运行uni-app)。
+HBuilder中有2种断点调试方案，一种是使用浏览器自带的调试控制台；一种是使用HBuilderX的调试控制台。
+
+在HBuilderX内置浏览器中，可以使用HBuilderX内置浏览器的控制台。此时无需点击运行控制台的红色虫子按钮。
+
+对源码点右键，可以同步断点到内置浏览器的调试工具，调试方法同chrome通行的用法。
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/0e756d1e-f220-4d71-b916-c8a2210f0883.jpg)
+
+关于另一种使用HBuilderX的调试控制台的方案，[另见](h5-debug.md)

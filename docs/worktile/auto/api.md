@@ -1,26 +1,406 @@
 # API
 
-### Page
+## program
+
+program 是uni-automator自动注入的全局对象
+
+
+### 方法
+
+#### program.pageStack
+
+获取页面堆栈。
+
+`program.pageStack(): Promise<Page[]> `
+
+
+#### program.navigateTo
+
+保留当前页面，跳转到应用内的某个页面，同 `uni.navigateTo`。
+
+`program.navigateTo(url: string): Promise<Page>`
+
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|url|string|是|-|需要跳转的应用内非 tabBar 的页面的路径|
+
+示例代码：
+
+```
+  const page = await program.navigateTo('/pages/index/index')
+  console.log(page.path)// -> 'page/index/index'
+```
+
+
+
+#### program.redirectTo
+
+关闭当前页面，跳转到应用内的某个页面，同 `uni.redirectTo`。
+
+`program.redirectTo(url: string): Promise<Page>`
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|url|string|是|-|需要跳转的应用内非 tabBar 的页面的路径|
+
+
+#### program.navigateBack
+
+关闭当前页面，返回上一页面或多级页面，同 `uni.navigateBack`。
+
+
+`program.navigateBack(): Promise<Page>`
+
+
+
+#### program.reLaunch
+
+关闭所有页面，打开到应用内的某个页面，同 `uni.reLaunch`。
+
+`program.reLaunch(url: string): Promise<Page>`
+
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|url|string|是|-|需要跳转的应用内页面路径|
+
+
+#### program.switchTab
+
+跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，同 `uni.switchTab`。
+
+
+`program.switchTab(url: string): Promise<Page>`
+
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|url|string|是|-|需要跳转的 tabBar 页面的路径|
+
+
+#### program.currentPage
+
+获取当前页面。
+
+`program.currentPage(): Promise<Page>`
+
+
+#### program.systemInfo
+
+获取系统信息，同 `uni.getSystemInfo`。
+
+
+`program.systemInfo(): Promise<Object>`
+
+
+示例代码：
+
+```
+	const systemInfo = await program.systemInfo()
+	if (systemInfo.uniPlatform === 'devtools') {
+		// Do something
+	}
+```
+
+
+
+#### program.pageScrollTo
+
+将页面滚动到目标位置，同 `uni.pageScrollTo`。
+
+
+`program.pageScrollTo(scrollTop: number): Promise<void>`
+
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|scrollTop|number|是|-|滚动到页面的目标位置，单位 px|
+
+示例代码：
+
+```
+   const page = await program.currentPage()
+   await program.pageScrollTo(20)
+   console.log(await page.scrollTop())
+```
+
+
+
+
+#### program.callUniMethod
+
+调用 uni 对象上的指定方法。
+
+
+`program.callUniMethod(method: string, ...args: any[]): Promise<any>`
+
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|method|string|是|-|需要调用的方法名|
+|...args|`array<any>`|否|-|方法参数|
+
+调用异步方法时无需传入 success 及 fail 回调函数。
+
+示例代码：
+
+```
+	await program.callUniMethod('setStorage', {
+	  key: 'test',
+	  data: '123456'
+	})
+	const data = await program.callUniMethod('getStorageSync', 'test')
+	console.log(data) // -> '123456'
+```
+
+
+
+#### program.screenshot
+
+对当前页面截图，目前只有开发者工具模拟器支持，客户端无法使用。
+
+`program.screenshot(options?: Object): Promise<string | void>`
+
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|options|Object|否|-|截图选项|
+
+如果不传 options，该方法返回图片数据的 base64 编码。
+
+options 字段定义如下：
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|path|string|是|-|图片保存路径|
+
+
+```
+	it('screenshot', async () => {
+		await program.screenshot({
+			path: "static/screenshot.png" // 默认项目根目录
+		})
+	});
+```
+
+
+
+#### program.mockUniMethod
+
+覆盖 uni 对象上指定方法的调用结果。
+
+利用该接口，你可以很方便地直接指定 `uni.chooseLocation` 等调用系统组件的返回结果。
+
+
+`program.mockUniMethod(method: string, result: any): Promise<void> `
+
+
+参数说明
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|method|string|是|-|需要覆盖的方法名|
+|result|any|是|-|指定调用结果|
+
+
+`program.mockUniMethod(method: string, fn: Function | string, ...args: any[]): Promise<void>`
+
+参数说明
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|method|string|是|-|需要覆盖的方法名|
+|fn|Function string|是|-|处理返回函数|
+|...args|`array<any>`|否|-|传入参数|
+
+
+> fn 同 program.evaluate 的 appFunction 参数一样，无法使用闭包来引用外部变量。此外，你还可以在方法内使用 this.origin 来调用原始方法。
+
+
+示例代码：
+
+```
+	await program.mockUniMethod('showModal', {
+		confirm: true,
+		cancel: false
+	})
+
+	await program.mockUniMethod(
+		'getStorageSync',
+		function(key, defVal) {
+			if (key === 'name') return 'redhoodsu'
+			if (key === 'sex') return 'male'
+			return defVal
+		},
+		'unknown',
+  )
+  // 调用 uni.getStorageSync('name') 返回 'redhoodsu'
+
+  // 更改 getSystemInfo 中的 platform 字段
+	await program.mockUniMethod(
+		'getSystemInfo',
+		function(obj, platform) {
+			return new Promise(resolve => {
+				// origin 指向原始方法
+				this.origin({
+					success(res) {
+						res.platform = platform
+						resolve(res)
+					},
+				})
+			})
+		},
+		'test',
+	)
+```
+
+
+#### program.restoreUniMethod
+
+重置 uni 指定方法，消除 mockUniMethod 调用的影响。
+
+`program.restoreUniMethod(method: string): Promise<void>`
+
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|method|string|是|-|需要覆盖的方法名|
+
+
+示例代码:
+
+```
+	console.log(await program.callUniMethod('getStorageSync', 'test')) // -> ''
+	await program.mockUniMethod('getStorageSync', 'mockValue')
+	console.log(await program.callUniMethod('getStorageSync', 'test')) // -> 'mockValue'
+	await program.restoreUniMethod('getStorageSync')
+	console.log(await program.callUniMethod('getStorageSync', 'test')) // -> ''
+```
+
+
+
+#### program.evaluate
+
+注入代码片段并返回执行结果。（仅微信小程序支持）
+
+`program.evaluate(appFunction: Function | string, ...args: any[]): Promise<any>`
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|appFunction|Function string|是|-|代码片段|
+|...args|`array<any>`|否|-|执行时传入参数|
+
+> appFunction 最终会被序列化传递到开发者工具，因此你无法在函数中利用闭包来引用外部变量。也就是说，传递 function () {} 函数事实上等同于传递其字符串。
+
+示例代码：
+
+```
+	let systemInfo = await program.evaluate(() => {
+		return new Promise(resolve => {
+			uni.getSystemInfo({
+				success(result) {
+					resolve(result)
+				}
+			})
+		})
+	})
+	systemInfo = await program.evaluate(() => {
+		return uni.getSystemInfoSync()
+	})
+	console.log(systemInfo)
+	await program.evaluate(key => {
+		uni.setStorageSync(key, 'test')
+	}, 'test')
+	const hasLogin = await program.evaluate(() => getApp().globalData.hasLogin)
+	console.log(hasLogin)
+```
+
+
+
+#### program.testAccounts
+
+获取多账号调试中已添加的用户列表。（仅微信小程序支持）
+
+
+`program.testAccounts(): Promise<Account[]>`
+
+Account 字段定义如下：
+
+
+|字段|类型|说明|
+|:-:|:-:|:-:|
+|nickName|string|用户昵称|
+|openid|string|账号 openid|
+
+示例代码：
+
+```
+	const testAccounts = await program.testAccounts()
+	for (let i = 0, len = testAccounts.length; i < len; i++) {
+		const miniProgram = await automator.launch({
+			projectPath: 'path/to/project',
+			account: testAccounts[i].openid
+		})
+		// 控制多个用户登录的不同小程序
+	}
+```
+
+
+#### program.exposeFunction
+
+在全局暴露方法，供小程序侧调用测试脚本中的方法（仅微信小程序支持）
+
+
+`program.exposeFunction(name: string, bindingFunction: Function): Promise<void>`
+
+
+|字段|类型|必填|默认值|说明|
+|:-:|:-:|:-:|:-:|:-:|
+|name|string|是|-|全局方法名|
+|bindingFunction|Function|是|-|脚本方法|
+
+> 你可以利用该方法来监听事件，不支持在小程序侧获取调用结果。
+
+
+示例代码：
+
+```
+	await program.exposeFunction('onAppShow', options => {
+		// Do something... 
+	})
+	await program.evaluate(function() {
+		uni.onAppShow(function(options) {
+			onAppShow(options)
+		})
+	})
+```
+
+
+
+
+
+## Page
 
 Page 模块提供了控制页面的方法。
 
-#### 属性
+### 属性
 
-page.path
+#### page.path
 
 页面路径。
 
 `page.path: string`
 
-page.query
+#### page.query
 
 页面参数。
 `page.query: Object`
 
 
-#### 方法
+### 方法
 
-page.$
+#### page.$
 
 获取页面元素。
 
@@ -40,7 +420,7 @@ page.$
 ```
 
 
-page.$$
+#### page.$$
 
 获取页面元素数组。
 
@@ -62,7 +442,7 @@ page.$$
   console.log(elements.length)
 ```
 
-page.waitFor
+#### page.waitFor
 
 等待直到指定条件成立。
 
@@ -93,7 +473,7 @@ page.waitFor
   }) // 等待页面中 picker 元素数量大于 5
 ```
 
-page.data
+#### page.data
 
 获取页面渲染数据。
 
@@ -113,7 +493,7 @@ page.data
 ```
 
 
-page.setData
+#### page.setData
 
 设置页面渲染数据。
 
@@ -135,7 +515,7 @@ page.setData
 ```
 
 
-page.size
+#### page.size
 
 获取页面大小。
 
@@ -158,7 +538,7 @@ page.size
 ```
 
 
-page.scrollTop
+#### page.scrollTop
 
 获取页面滚动位置。
 
@@ -173,7 +553,7 @@ page.scrollTop
 ```
 
 
-page.callMethod
+#### page.callMethod
 
 调用页面指定方法。
 
@@ -196,21 +576,21 @@ page.callMethod
 
 
 
-### Element
+## Element
 Element 模块提供了控制页面元素的方法。
 
-#### 属性
+### 属性
 
-element.tagName
+#### element.tagName
 
 标签名，小写。
 
 `element.tagName: string`
 
 
-#### 方法
+### 方法
 
-element.$
+#### element.$
 
 在元素范围内获取元素。
 
@@ -232,7 +612,7 @@ element.$
 ```
 
 
-element.$$
+#### element.$$
 
 在元素范围内获取元素数组。
 
@@ -254,7 +634,7 @@ element.$$
 ```
 
 
-element.size
+#### element.size
 
 获取元素大小。
 
@@ -277,7 +657,7 @@ element.size
 ```
 
 
-element.offset
+#### element.offset
 
 获取元素绝对位置。
 
@@ -303,7 +683,7 @@ element.offset
 ```
 
 
-element.text
+#### element.text
 
 获取元素文本。
 
@@ -318,7 +698,7 @@ element.text
 ```
 
 
-element.attribute
+#### element.attribute
 
 获取元素特性。
 
@@ -339,7 +719,7 @@ element.attribute
 ```
 
 
-element.property
+#### element.property
 
 获取元素属性。
 
@@ -369,14 +749,14 @@ element.property
 ```
 
 
-element.html
+#### element.html
 
 获取元素 HTML。
 
 `element.html(): Promise<string>`
 
 
-element.outerHtml
+#### element.outerHtml
 
 同 html，只是会获取到元素本身。
 
@@ -392,7 +772,7 @@ element.outerHtml
 ```
 
 
-element.value
+#### element.value
 
 获取元素值。
 
@@ -407,7 +787,7 @@ element.value
 ```
 
 
-element.style
+#### element.style
 
 获取元素样式值。
 
@@ -428,7 +808,7 @@ element.style
 ```
 
 
-element.tap
+#### element.tap
 
 点击元素。
 
@@ -443,14 +823,14 @@ element.tap
 ```
 
 
-element.longpress
+#### element.longpress
 
 长按元素。
 
 `element.longpress(): Promise<void>`
 
 
-element.touchstart
+#### element.touchstart
 
 手指开始触摸元素。
 
@@ -465,7 +845,7 @@ options 字段定义如下：
 |changedTouches|array|是|-|触摸事件，当前变化的触摸点信息的数组|
 
 
-element.touchmove
+#### element.touchmove
 
 手指触摸元素后移动。
 
@@ -474,7 +854,7 @@ element.touchmove
 options 字段同 touchstart。
 
 
-element.touchend
+#### element.touchend
 
 手指结束触摸元素。
 
@@ -515,7 +895,7 @@ options 字段同 touchstart。
 ```
 
 
-element.trigger
+#### element.trigger
 
 触发元素事件。
 
@@ -538,7 +918,7 @@ element.trigger
 该方法无法改变组件状态，仅触发响应方法，也无法触发用户操作事件，即 `tap`，`longpress` 等事件，请使用对应的其它方法调用。
 
 
-element.input
+#### element.input
 
 输入文本，仅 input、textarea 组件可以使用。
 
@@ -559,7 +939,7 @@ element.input
 ```
 
 
-element.callMethod
+#### element.callMethod
 
 调用组件实例指定方法，仅自定义组件可以使用。
 
@@ -581,7 +961,7 @@ element.callMethod
 ```
 
 
-element.data
+#### element.data
 
 获取组件实例渲染数据，仅自定义组件可以使用。
 
@@ -602,7 +982,7 @@ element.data
 ```
 
 
-element.setData
+#### element.setData
 
 设置组件实例渲染数据，仅自定义组件可以使用。
 
@@ -625,7 +1005,7 @@ element.setData
 ```
 
 
-element.callContextMethod
+#### element.callContextMethod
 
 调用上下文 Context 对象方法，仅 video 组件可以使用。
 
@@ -648,21 +1028,21 @@ video 组件必须设置了 id 才能使用。
 ```
 
 
-element.scrollWidth
+#### element.scrollWidth
 
 获取滚动宽度，仅 scroll-view 组件可以使用。
 
 `element.scrollWidth(): Promise<number>`
 
 
-element.scrollHeight
+#### element.scrollHeight
 
 获取滚动高度，仅 scroll-view 组件可以使用。
 
 `element.scrollHeight(): Promise<number>`
 
 
-element.scrollTo
+#### element.scrollTo
 
 滚动到指定位置，仅 scroll-view 组件可以使用。
 
@@ -685,7 +1065,7 @@ element.scrollTo
 ```
 
 
-element.swipeTo
+#### element.swipeTo
 
 滑动到指定滑块，仅 swiper 组件可以使用。
 
@@ -706,7 +1086,7 @@ element.swipeTo
 ```
 
 
-element.moveTo
+#### element.moveTo
 
 移动视图容器，仅 movable-view 组件可以使用。
 
@@ -728,7 +1108,7 @@ element.moveTo
 ```
 
 
-element.slideTo
+#### element.slideTo
 
 滑动到指定数值，仅 slider 组件可以使用。
 
@@ -750,10 +1130,9 @@ element.slideTo
 ```
 
 
+## 平台差异
 
-**平台差异**
-
-#### program(全局对象)
+### program(全局对象)
 
 |方法							|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明																																|
 |--								|--				|--			|--	|--					|--					|--																																	|
@@ -774,7 +1153,7 @@ element.slideTo
 |evaluate					|x				|x			|x	|√					|x					|注入代码片段并返回执行结果																					|
 |exposeFunction		|x				|x			|x	|√					|x					|在全局暴露方法，供小程序侧调用测试脚本中的方法											|
 
-#### Page
+### Page
 
 |属性	|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明			|
 |--		|--				|--			|--	|--					|--					|--				|
@@ -792,7 +1171,7 @@ element.slideTo
 |scrollTop	|√				|√			|√	|√					|√					|获取页面滚动位置						|
 |callMethod	|√				|√			|√	|√					|√					|调用页面指定方法						|
 
-#### Element
+### Element
 |属性		|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明					|
 |--			|--				|--			|--	|--					|--					|--						|
 |tagName|√				|√			|√	|√					|√					|标签名，小写	|
@@ -829,7 +1208,7 @@ element.slideTo
 |slideTo					|√				|√			|√	|√					|x					|滑动到指定数值，仅 slider 组件可以使用							|
 
 
-#### 测试平台判断
+### 测试平台判断
 ```
 if (process.env.UNI_PLATFORM === "h5") {}
 if (process.env.UNI_PLATFORM === "app-plus") {}

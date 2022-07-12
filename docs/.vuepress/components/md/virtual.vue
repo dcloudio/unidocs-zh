@@ -20,10 +20,12 @@
 				[...contentChildren].forEach((child, index) => {
 					if (child.nodeName === 'UL') {
 						const ulHeight = child.clientHeight;
-						const isVisible = visibleHeight + window.scrollY > child.offsetTop - 500;
+						const ulOffsetTop = child.offsetTop;
+						const isVisible = visibleHeight + window.scrollY > ulOffsetTop - 500;
+						const isOver = window.scrollY > ulOffsetTop + ulHeight
 						child.style.height = `${ulHeight}px`;
 
-						if (!isVisible) {
+						if (!isVisible || isOver) {
 							const _ul = document.createDocumentFragment();
 							[...child.children].forEach(item => _ul.appendChild(item));
 							(!this.contentFrame[index] || !this.contentFrame[index].children.length) &&

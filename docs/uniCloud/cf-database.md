@@ -1185,6 +1185,7 @@ await db.collection('test').where({
 - 使用updateAndReturn时，不可使用field方法
 - 可以在事务中使用，可以使用`transaction.where().updateAndReturn()`以及`transaction.doc().updateAndReturn()`
 - 不同于update接口，此接口返回的updated不表示数据真的进行了更新
+- 腾讯云暂不支持`doc().updateAndReturn()`的写法可以使用`where().updateAndReturn()`替代
 
 ### 更新数组内指定下标的元素@update-arr-with-index
 
@@ -1876,7 +1877,7 @@ db.startTransaction()
 
 事务操作时为保障效率和并发性，只允许进行单记录操作，不允许进行批量操作，但可以在一个事务进行多次数据库操作。
 
-- 对于修改和删除仅支持使用doc方法，不支持使用where方法。
+- 对于修改和删除仅支持使用doc方法，不支持使用where方法，updateAndReturn除外。
 - 新增时使用add方法一次只可以新增单条，不可新增多条，即不支持在add方法内传入数组
 - 腾讯云没有限制where的使用，但是使用where修改或删除多条会导致无法回滚
 

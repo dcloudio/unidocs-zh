@@ -27,7 +27,7 @@ program 是uni-automator自动注入的全局对象
 
 示例代码：
 
-```
+```js
   const page = await program.navigateTo('/pages/index/index')
   console.log(page.path)// -> 'page/index/index'
 ```
@@ -96,7 +96,7 @@ program 是uni-automator自动注入的全局对象
 
 示例代码：
 
-```
+```js
 	const systemInfo = await program.systemInfo()
 	if (systemInfo.uniPlatform === 'devtools') {
 		// Do something
@@ -119,7 +119,7 @@ program 是uni-automator自动注入的全局对象
 
 示例代码：
 
-```
+```js
    const page = await program.currentPage()
    await program.pageScrollTo(20)
    console.log(await page.scrollTop())
@@ -145,7 +145,7 @@ program 是uni-automator自动注入的全局对象
 
 示例代码：
 
-```
+```js
 	await program.callUniMethod('setStorage', {
 	  key: 'test',
 	  data: '123456'
@@ -176,7 +176,7 @@ options 字段定义如下：
 |path|string|是|-|图片保存路径|
 
 
-```
+```js
 	it('screenshot', async () => {
 		await program.screenshot({
 			path: "static/screenshot.png" // 默认项目根目录
@@ -220,7 +220,7 @@ options 字段定义如下：
 
 示例代码：
 
-```
+```js
 	await program.mockUniMethod('showModal', {
 		confirm: true,
 		cancel: false
@@ -270,7 +270,7 @@ options 字段定义如下：
 
 示例代码:
 
-```
+```js
 	console.log(await program.callUniMethod('getStorageSync', 'test')) // -> ''
 	await program.mockUniMethod('getStorageSync', 'mockValue')
 	console.log(await program.callUniMethod('getStorageSync', 'test')) // -> 'mockValue'
@@ -295,7 +295,7 @@ options 字段定义如下：
 
 示例代码：
 
-```
+```js
 	let systemInfo = await program.evaluate(() => {
 		return new Promise(resolve => {
 			uni.getSystemInfo({
@@ -335,7 +335,7 @@ Account 字段定义如下：
 
 示例代码：
 
-```
+```js
 	const testAccounts = await program.testAccounts()
 	for (let i = 0, len = testAccounts.length; i < len; i++) {
 		const miniProgram = await automator.launch({
@@ -365,7 +365,7 @@ Account 字段定义如下：
 
 示例代码：
 
-```
+```js
 	await program.exposeFunction('onAppShow', options => {
 		// Do something... 
 	})
@@ -413,7 +413,7 @@ Page 模块提供了控制页面的方法。
 |selector|string|是|-|选择器|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.index-desc')
   console.log(element.tagName) // 'view'
@@ -436,7 +436,7 @@ Page 模块提供了控制页面的方法。
 该方法跟 $ 一样均无法选择自定义组件内的元素，请使用 element.$。
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const elements = await page.$$('.list-text')
   console.log(elements.length)
@@ -464,7 +464,7 @@ Page 模块提供了控制页面的方法。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   await page.waitFor(5000) // 等待 5 秒
   await page.waitFor('picker') // 等待页面中出现 picker 元素
@@ -487,7 +487,7 @@ Page 模块提供了控制页面的方法。
 |path|string|否|-|数据路径|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   console.log(await page.data('list'))
 ```
@@ -507,7 +507,7 @@ Page 模块提供了控制页面的方法。
 |data|Object|是|-|要改变的数据|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   await page.setData({
     text: 'changed data'
@@ -531,7 +531,7 @@ Page 模块提供了控制页面的方法。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const { width, height } = await page.size()
   console.log(width, height)
@@ -546,7 +546,7 @@ Page 模块提供了控制页面的方法。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   await program.pageScrollTo(20)
   console.log(await page.scrollTop())
@@ -569,7 +569,7 @@ Page 模块提供了控制页面的方法。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   await page.callMethod('onShareAppMessage')
 ```
@@ -604,7 +604,7 @@ Element 模块提供了控制页面元素的方法。
 |selector|string|是|-|选择器|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   let element = await page.$('.index-hd')
   element = await element.$('.index-desc')
@@ -626,7 +626,7 @@ Element 模块提供了控制页面元素的方法。
 |selector|string|是|-|选择器|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.index-bd')
   const elements = await element.$$('.list-text')
@@ -649,7 +649,7 @@ Element 模块提供了控制页面元素的方法。
 |height|number|元素高度|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.index-bd')
   const { width, height } = await element.size()
@@ -675,7 +675,7 @@ Element 模块提供了控制页面元素的方法。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.index-bd')
   const { left top } = await element.offset()
@@ -691,7 +691,7 @@ Element 模块提供了控制页面元素的方法。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.index-desc')
   console.log(await element.text())
@@ -712,7 +712,7 @@ Element 模块提供了控制页面元素的方法。
 |name|string|是|-|特性名|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.logo')
   console.log(await element.attribute('src')) // -> 'static/logo.png'
@@ -742,7 +742,7 @@ Element 模块提供了控制页面元素的方法。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('input')
   console.log(await element.property('value'))
@@ -764,7 +764,7 @@ Element 模块提供了控制页面元素的方法。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.index-desc')
   console.log(await element.html())
@@ -780,7 +780,7 @@ Element 模块提供了控制页面元素的方法。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.input')
   console.log(await element.value())
@@ -801,7 +801,7 @@ Element 模块提供了控制页面元素的方法。
 |name|string|是|-|样式名|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.index-desc')
   console.log(await element.style('color')) // -> 'rgb(128, 128, 128)'
@@ -816,7 +816,7 @@ Element 模块提供了控制页面元素的方法。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.list-item-hd')
   await element.tap()
@@ -863,7 +863,7 @@ options 字段同 touchstart。
 options 字段同 touchstart。
 
 
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('.touch')
   await element.touchstart({
@@ -910,7 +910,7 @@ options 字段同 touchstart。
 |detail|Object|否|-|触发事件时传递的 detail 值|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('picker')
   await element.trigger('change', { value: 1 })
@@ -932,7 +932,7 @@ options 字段同 touchstart。
 |value|string|是|-|需要输入的文本|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('input')
   await element.input('test')
@@ -954,7 +954,7 @@ options 字段同 touchstart。
 |...args|array|否|-|方法参数|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('set-tab-bar')
   await element.callMethod('navigateBack')
@@ -975,7 +975,7 @@ options 字段同 touchstart。
 |path|string|否|-|数据路径|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('set-tab-bar')
   console.log(await element.data('hasSetTabBarBadge'))
@@ -996,7 +996,7 @@ options 字段同 touchstart。
 |data|Object|是|-|要改变的数据|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('set-tab-bar')
   await page.setData({
@@ -1021,7 +1021,7 @@ options 字段同 touchstart。
 
 video 组件必须设置了 id 才能使用。
 
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('video')
   await element.callContextMethod('play')
@@ -1057,7 +1057,7 @@ video 组件必须设置了 id 才能使用。
 |y|number|是|-|纵向滚动位置|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('scroll-view')
   const y = (await element.scrollHeight()) - 50
@@ -1079,7 +1079,7 @@ video 组件必须设置了 id 才能使用。
 |index|number|是|-|目标滑块的 index|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('swiper')
   await element.swipeTo(2)
@@ -1101,7 +1101,7 @@ video 组件必须设置了 id 才能使用。
 |y|number|是|-|y 轴方向的偏移|
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('movable-view')
   await element.moveTo(40, 40)
@@ -1123,7 +1123,7 @@ video 组件必须设置了 id 才能使用。
 
 
 示例代码：
-```
+```js
   const page = await program.currentPage()
   const element = await page.$('slider')
   await element.slideTo(10)
@@ -1209,7 +1209,7 @@ video 组件必须设置了 id 才能使用。
 
 
 ### 测试平台判断
-```
+```js
 if (process.env.UNI_PLATFORM === "h5") {}
 if (process.env.UNI_PLATFORM === "app-plus") {}
 if (process.env.UNI_PLATFORM === "mp-weixin") {}

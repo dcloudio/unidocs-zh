@@ -563,6 +563,7 @@ class Iap {
   requestPayment(orderInfo) {
     return new Promise((resolve, reject) => {
       uni.requestPayment({
+        provider: 'appleiap',
         orderInfo: orderInfo,
         success: (res) => {
           resolve(res);

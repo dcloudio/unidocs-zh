@@ -110,7 +110,7 @@
 * 小程序专题
   * [组件与WXS](/tutorial/miniprogram-subject.md)
   * [小程序插件](/tutorial/mp-weixin-plugin.md)
-  * [一键上传微信平台](build/publish-mp-weixin-cli.md)
+  * [一键上传微信平台](/tutorial/build/publish-mp-weixin-cli.md)
 * 运行和调试
   * [基础](/tutorial/run-and-debug.md)
   * [真机运行常见问题](tutorial/run/PhoneDebugging.md)

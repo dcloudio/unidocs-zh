@@ -104,7 +104,7 @@ DCloud与个推深度合作，为uni-app的开发者提供了比传统方案便�
 # 快速上手
 ## 第一步：开通  
 uni-push产品有2个入口：
-1. 通过 HBuilderX 进入
+1. 通过 HBuilderX(3.5.1及其以上版本)进入
 
 	打开 HBuilderX，双击项目中的 “manifest.json” 文件，选择“App 模块配置”，向下找到“Push(消息推送)”，勾选后，点击 “uniPush” 下面的配置链接。如下图所示：
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/27015d7e-33e6-4596-a6bd-36ffa616a321.jpg)

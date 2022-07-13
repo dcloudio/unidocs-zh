@@ -124,7 +124,7 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
 
 ```js
 exports.main = async (event, context) => {
-	context.PLATFORM = 'app-plus'
+	context.PLATFORM = 'app'
 }
 ```
 
@@ -555,7 +555,7 @@ module.exports = {
 
 **为什么需要自行创建uni-id实例**
 
-默认情况下uni-id某些接口会自动从全局context内获取客户端的PLATFORM（平台，如：app-plus、h5、mp-weixin）信息。
+默认情况下uni-id某些接口会自动从全局context内获取客户端的PLATFORM（平台，如：app、web、mp-weixin）信息。
 
 在单实例多并发的场景下可能无法正确获取（全局对象会被后面的请求覆盖，可能会导致前面一次请求使用了后面一次请求的PLATFORM信息）。因此推荐在开启云函数单实例多并发后，自行为uni-id传入context。
 
@@ -1887,7 +1887,7 @@ exports.main = async function(event,context) {
 
 1. 在manifest.json内配置微信登录用appid
 2. **打包**并**使用**自定义基座（注意一定要在manifest.json填写微信appid后再制作自定义基座），[自定义基座使用说明](https://ask.dcloud.net.cn/article/35115)
-3. 在uni-id的config.json内app-plus对应的微信登录信息内配置appid和appsecret
+3. 在uni-id的config.json内app对应的微信登录信息内配置appid和appsecret
 
 **LoginByWexinParams参数说明**
 
@@ -2186,7 +2186,7 @@ exports.main = async function(event,context) {
 
 1. 在manifest.json内配置QQ登录用appid
 2. **打包**并**使用**自定义基座（注意一定要在manifest.json填写QQ appid后再制作自定义基座），[自定义基座使用说明](https://ask.dcloud.net.cn/article/35115)
-3. 在uni-id的config.json内app-plus对应的QQ登录信息内配置appid和appsecret
+3. 在uni-id的config.json内app对应的QQ登录信息内配置appid和appsecret
 
 **参数说明**
 
@@ -2502,7 +2502,7 @@ exports.main = async function(event,context) {
 
 **注意**
 
-- 需要在config.json内的 app-plus > oauth > apple 下配置 bundleId
+- 需要在config.json内的 app > oauth > apple 下配置 bundleId
 - 登录成功之后会返回token、tokenExpired，在获取token之后应进行持久化存储，详情参考：[保存token及其有效期](uniCloud/uni-id.md?id=save-token)
 
 **LoginByAppleParams参数说明**
@@ -3691,10 +3691,10 @@ exports.main = async function(event, context){
   "dcloudAppid": "__UNI__xxxx1", // 务必替换为对应项目manifest.json内的DCloud Appid
   "isDefaultConfig": true, // 默认配置标记，未匹配到dcloudAppid的情况下使用默认配置
   "passwordSecret": "passwordSecret-demo",
-	"tokenSecret": "tokenSecret-demo",
-	"tokenExpiresIn": 7200,
-	"tokenExpiresThreshold": 600,
-  "app-plus": {
+  "tokenSecret": "tokenSecret-demo",
+  "tokenExpiresIn": 7200,
+  "tokenExpiresThreshold": 600,
+  "app": {
   	"tokenExpiresIn": 2592000,
   	"oauth": {
   		"weixin": {
@@ -3706,9 +3706,9 @@ exports.main = async function(event, context){
 }, {
   "dcloudAppid": "__UNI__xxxx2", // 务必替换为对应项目manifest.json内的DCloud Appid
   "passwordSecret": "passwordSecret-demo",
-	"tokenSecret": "tokenSecret-demo",
-	"tokenExpiresIn": 7200,
-	"tokenExpiresThreshold": 600,
+  "tokenSecret": "tokenSecret-demo",
+  "tokenExpiresIn": 7200,
+  "tokenExpiresThreshold": 600,
   "app-plus": {
   	"tokenExpiresIn": 2592000,
   	"oauth": {

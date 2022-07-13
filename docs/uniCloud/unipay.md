@@ -215,13 +215,13 @@ uniCloud.callFunction({
 	name: 'getOrderInfo',
 	success(res) {
 		uni.requestPayment({
-			// #ifdef APP-PLUS
+			// #ifdef APP
 			provider: selectedProvider, // App端此参数必填，可以通过uni.getProvider获取
 			// #endif
 			// #ifdef MP-WEIXIN
 			...res.result.orderInfo,
 			// #endif
-			// #ifdef APP-PLUS || MP-ALIPAY
+			// #ifdef APP || MP-ALIPAY
 			orderInfo: res.result.orderInfo,
 			// #endif
 			...res.result.orderInfo

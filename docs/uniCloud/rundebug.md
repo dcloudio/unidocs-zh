@@ -250,13 +250,13 @@ const hour = getOffsetDate(8).getHours()
   "clientInfo":{
     // HBuilderX 3.5.1之前的版本需要传全大写的参数才可以在context内使用context.OS、context.LOCALE等
     "OS": "ios" // 系统类型 ios、android
-    "PLATFORM": "web", // 客户端类型 app-plus、h5、mp-weixin、mp-alipay等
+    "PLATFORM": "web", // 客户端类型 app、web、mp-weixin、mp-alipay等
     "DEVICEID": "", // 设备id
     "APPID": "", // 应用DCloud AppId
     "LOCALE: "", // 客户端语言
     // HBuilderX 3.5.1及更高版本无需传入大写参数，以上参数对应写法如下
     "osName": "ios", // 系统类型 ios、android
-    "uniPlatform": "web", // 客户端类型 app-plus、h5、mp-weixin、mp-alipay等
+    "uniPlatform": "web", // 客户端类型 app、web、mp-weixin、mp-alipay等
     "deviceId": "", // 设备id
     "appId": "", // 应用DCloud AppId
     "locale": "", // 客户端语言

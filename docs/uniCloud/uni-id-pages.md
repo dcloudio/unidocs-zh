@@ -1368,11 +1368,11 @@ await uniIdCo.setAuthorizedApp({
 - 微信 appid 申请步骤：[https://ask.dcloud.net.cn/article/208](https://ask.dcloud.net.cn/article/208)。
 - iOS平台微信SDK配置通用链接：[https://uniapp.dcloud.io/api/plugins/universal-links.html](https://uniapp.dcloud.io/api/plugins/universal-links.html)。
 - 模块配置：`manifest.json` --> `App模块配置` --> `OAuth（登录鉴权）` --> `勾选微信登录` --> 填写`appid`、`appsecret`、`ios平台通用链接`。
-- uni-id配置：`uni-id配置文件` --> `app-plus` --> `oauth` --> `weixin`，填写`appid`、`appsecret`
+- uni-id配置：`uni-id配置文件` --> `app` --> `oauth` --> `weixin`，填写`appid`、`appsecret`
 	
 ## 苹果登录集成指南
 - 模块配置：`manifest.json` --> `App模块配置` --> OAuth（登录鉴权）勾选`苹果登录`，[IOS苹果授权登录参考文档](https://ask.dcloud.net.cn/article/36651)。如不发布到Appstore，不需要配置此项
-- uni-id配置：`uni-id配置文件` --> `app-plus` --> `oauth` --> `apple` 填写`bundleId`。
+- uni-id配置：`uni-id配置文件` --> `app` --> `oauth` --> `apple` 填写`bundleId`。
 - 关联域配置：`manifest.json` --> `App常用其他设置` --> `iOS设置` --> `关联域(Associated Domains)` 填写配置  [参考教程](https://ask.dcloud.net.cn/article/36393)。如不发布到Appstore，不需要配置此项
 
 ## 短信验证码

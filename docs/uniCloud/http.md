@@ -163,7 +163,7 @@ uni.request({
 
 ```js
 exports.main = async (event, context) => {
-	context.PLATFORM = 'app-plus'
+	context.PLATFORM = 'app'
 }
 ```
 
@@ -242,11 +242,13 @@ content-length: 13
 }
 ```
 
+**headers内可以返回传统服务器的所有响应头，包括Set-Cookie、Content-Type等**
+
 ##### 使用集成响应返回 HTML
 
 将`content-type`设置为`text/html`，即可在`body`中返回 HTML，会被浏览器自动解析：
 
-**阿里云默认域名无法返回html并在浏览器中展示，只可以触发下载。绑定自定义域名无此限制**
+**阿里云默认域名无法返回html并在浏览器中展示，只可以触发下载（无法修改Content-Disposition）。绑定自定义域名无此限制**
 
 ```js
 exports.main = function() {

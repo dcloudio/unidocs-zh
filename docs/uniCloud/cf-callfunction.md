@@ -195,7 +195,7 @@ exports.main = async (event, context) => {
 
 ```js
 exports.main = async (event, context) => {
-	context.PLATFORM = 'app-plus'
+	context.PLATFORM = 'app'
 }
 ```
 

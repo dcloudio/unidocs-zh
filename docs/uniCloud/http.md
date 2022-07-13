@@ -182,6 +182,10 @@ exports.main = function(event) {
 }
 ```
 
+**关于path的说明**
+
+url化场景下，event.path表示以配置的url化路径为根路径的访问路径。以配置`/test`为云函数url化路径，访问`/test/a/b/c`时event.path为`/a/b/c`
+
 
 ### 云函数的返回值@output
 

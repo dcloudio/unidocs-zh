@@ -112,7 +112,7 @@
   * [小程序插件](/tutorial/mp-weixin-plugin.md)
   * [一键上传微信平台](/tutorial/build/publish-mp-weixin-cli.md)
 * 运行和调试
-  * [概述](run-and-debug.md)
+  * [概述](tutorial/run-and-debug.md)
   * [web平台：内置浏览器运行调试](tutorial/debug/debug-web-via-hx.md)
   * [web平台：debug](tutorial/debug/debug-web-via-chrome.md)
   * [App平台：真机运行常见问题](tutorial/run/PhoneDebugging.md)

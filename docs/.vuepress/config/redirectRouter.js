@@ -76,7 +76,10 @@ const routerMap = {
   '/uniCloud/uni-clientDB': '/uniCloud/clientdb.html',
   '/uniCloud/uni-data-picker': '/component/uniui/uni-data-picker.html',
   '/uniCloud/uni-push/introduction.html': '/unipush-v2.html',
-  '/plugin/publish.html#pages-init':'https://uniapp.dcloud.io/plugin/uni_modules.html#pages-init',
+  '/plugin/publish.html#pages-init': 'https://uniapp.dcloud.io/plugin/uni_modules.html#pages-init',
+
+  '/tutorial/build/uni-app-publish-mp-weixin': '/tutorial/build/publish-mp-weixin-cli.html',
+  '/tutorial/build/uni-app-publish-mp-weixin.html': '/tutorial/build/publish-mp-weixin-cli.html',
 
   '/plugin/hybrid': '/hybrid.html',
   '/adapt': '/tutorial/adapt.html',

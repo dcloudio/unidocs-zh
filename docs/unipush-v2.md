@@ -179,6 +179,18 @@ uni-push产品有2个入口：
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2c5af727-2a43-4a4a-95e0-07403aafb019.jpg)
 其他小程序启用方式参考微信小程序，这里不一一列举
 
+#### 小程序中使用uni-push2.0的白名单配置@useinmp
+
+uni-push在web和小程序端就是个websocket；各家小程序平台，均要求在小程序管理后台配置小程序应用的联网服务器域名，否则无法联网。
+
+根据下表，在小程序管理后台设置socket合法域名。下表的域名均为个推自有域名，并非DCloud所属域名。
+
+|域名|端口|
+|--	|--	|
+|wshz.getui.net|5223|
+|wshz.gepush.com|5223|
+
+
 
 ### 客户端监听推送消息@listener  
 监听推送消息的代码，需要在收到推送消息之前被执行。所以应当写在应用一启动就会触发的[应用生命周期](https://uniapp.dcloud.io/collocation/App.html#applifecycle)`onLaunch`中。

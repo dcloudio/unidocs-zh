@@ -7,7 +7,7 @@ const createSiteMap = require('./createSiteMap');
 
 const links = []
 
-function parseBar(file, options) {
+function parseBar(tab, file, options) {
   const textName = options.text || 'text'
   const linkName = options.link || 'link'
   const contents = []
@@ -39,6 +39,13 @@ function parseBar(file, options) {
         })
 
         if (link && !isExternal(link)) {
+          if (!link.startsWith('/')) {
+            const linkFirstItem = link.split('/')[0]
+            if (tab.indexOf(linkFirstItem) === -1) {
+              link = `${tab}${link}`
+            }
+          }
+
           link = path.join('/', link.replace(/\.md\b/, '')
             .replace(/\bREADME\b/, '')
             .replace(/\/index/, '/')
@@ -64,7 +71,7 @@ module.exports = function (tabs = []) {
   const sidebar = {}
 
   tabs.forEach(tab => {
-    sidebar[tab] = parseBar(path.join(__dirname, '../../', tab, '_sidebar.md'), {
+    sidebar[tab] = parseBar(tab, path.join(__dirname, '../../', tab, '_sidebar.md'), {
       text: 'title',
       link: 'path'
     })

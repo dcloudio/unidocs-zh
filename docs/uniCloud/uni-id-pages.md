@@ -1352,6 +1352,63 @@ await uniIdCo.setAuthorizedApp({
 - 此接口为管理端接口
 - 仅在用户token即将过期时返回新newToken
 
+## 其他功能@extra-function
+
+### 覆盖或新增校验规则@custom-validator
+
+uni-id-co将validator实例挂载在云对象的this上，在uni-id-co/index.obj.js获取validator实例后可以使用validator实例的mixin方法覆盖或者新增校验规则。
+
+接口形式：`validator.mixin(String type, Function handler)`。其中type为规则类型（字符串），handler为校验函数
+
+```js
+// uni-id-co/index.obj.js
+const {
+  Validator
+} = require('./common/validator.js')
+module.exports = {
+  _before () {
+    this.validator = new Validator()
+    /**
+     * 示例：覆盖密码验证规则
+     */
+    this.validator.mixin('password', function (password) {
+      if (typeof password !== 'string' || password.length < 10) {
+        // 调整为密码长度不能小于10
+        return {
+          errCode: ERROR.INVALID_PASSWORD
+        }
+      }
+    })
+    /**
+     * 示例：新增验证规则
+     */
+    this.validator.mixin('timestamp', function (timestamp) {
+      if (typeof timestamp !== 'number' || timestamp > Date.now()) {
+        return {
+          errCode: ERROR.INVALID_PARAM
+        }
+      }
+    })
+    // // 新增规则同样可以在数组验证规则中使用
+    this.validator.valdate({
+      timestamp: 123456789
+    }, {
+      timestamp: 'timestamp'
+    })
+    this.validator.valdate({
+      timestampList: [123456789, 123123123123]
+    }, {
+      timestampList: 'array<timestamp>'
+    })
+    // // 甚至更复杂的写法
+    this.validator.valdate({
+      timestamp: [123456789, 123123123123]
+    }, {
+      timestamp: 'timestamp|array<timestamp>'
+    })
+  }
+}
+```
 
 # 登录服务开通与配置
 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`

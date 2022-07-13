@@ -109,7 +109,7 @@ exports.main = async (event, context) => {
 云函数上行的参数内容不能传太大。
 
 - 阿里云event大小不可超过1MB
-- 腾讯云event大小不可超过6MB
+- 腾讯云event大小不可超过5MB
 
 ### context对象@context
 

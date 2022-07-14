@@ -774,6 +774,21 @@ res = ['OK','OK', error, 'OK'] // error为 Error对象的实例
 
 ### 执行lua脚本@eval
 
+**接口形式**
+
+```js
+await redis.eval(String script, Number argsCount, String key1, String key2 , ... , String arg1, String arg2, ...)
+```
+
+**参数说明**
+
+|参数			|类型	|必填	|说明																																										|
+|--				|--		|--		|--																																											|
+|script			|String	|是		|lua脚本内容																																								|
+|argsCount		|Number	|是		|参数个数，没有参数则传0																																					|
+|key1、key2...	|String	|否		|从eval的第三个参数开始算起，表示在脚本中所用到的那些 Redis 键(key)，这些键名参数可以在 Lua 中通过全局变量 KEYS 数组，用 1 为基址的形式访问( KEYS[1] ， KEYS[2] ，以此类推)	|
+|arg1、agr2...	|Number	|是		|附加参数，在 Lua 中通过全局变量 ARGV 数组访问，访问的形式和 KEYS 变量类似( ARGV[1] 、 ARGV[2] ，诸如此类)																	|
+
 某些情况下需要使用复杂的原子操作以避免高并发下数据修改混乱的问题，这种需求一般可通过执行lua脚本实现。如以下示例，判断redis中不存在key-test时，将其值设置为1；存在且小于10时进行加一操作；大于等于10时不进行操作直接返回。
 
 `{0, 1}`是lua内的table类型，返回到云函数时会转为数组对应的值为`[0, 1]`

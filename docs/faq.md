@@ -1,4 +1,4 @@
-### FAQ
+## FAQ
 
 **uni-app 中可使用的 UI 框架：**[https://ask.dcloud.net.cn/article/35489](https://ask.dcloud.net.cn/article/35489)
 
@@ -16,7 +16,7 @@
 
 **本地存储详解：**[https://ask.dcloud.net.cn/article/166](https://ask.dcloud.net.cn/article/166)
 
-## App常见问题
+## App平台常见问题
 
 **uni-app 各环节（HBuilderX、cli、自定义基座、本地sdk、云打包引擎）版本兼容性说明：**[https://ask.dcloud.net.cn/article/35845](https://ask.dcloud.net.cn/article/35845)
 
@@ -50,7 +50,7 @@
 
 **原生App和uni-app混合开发：** [详见](hybrid)
 
-## H5常见问题
+## web/H5平台常见问题
 
 **uni-app 的 H5 版使用注意事项：**[https://ask.dcloud.net.cn/article/35232](https://ask.dcloud.net.cn/article/35232)
 

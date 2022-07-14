@@ -98,4 +98,4 @@ export default {
 **注意**
 
 - 需要在页面隐藏时调用组件的 `hide` 方法以停止广告内容的声音
-- 3.4.17+ iOS平台 因广告商限制，调用 `hide` 方法需要申请通过后有效，详情咨询 `uniad@dcloud.io`
+- 3.4.17+ iOS平台 因广告商限制，调用 `show` 或 `hide` 方法需要申请通过后有效，详情咨询 `uniad@dcloud.io`

@@ -40,6 +40,7 @@ UniPush和个推推送模块支持设置自定义推送图标，包括push图标
 打开项目的manifest.json文件，切换到“源码视图”，手动设置推送图标。
 在 "app-plus" -> "distribute" -> "sdkConfigs" -> "push" -> "unipush" -> "icons"节点下配置推送图标
 ```json  
+{
     "unipush": {                    //可选，JSON对象，使用UniPush SDK配置，无需手动配置参数，云端打包自动获取配置参数
         "icons": {                          //可选，JSON对象，推送图标配置
             "push": {                               //可选，JSON对象，Push图标配置
@@ -83,6 +84,7 @@ UniPush和个推推送模块支持设置自定义推送图标，包括push图标
             }
         }
     }
+}
 ```
 
 **注意事项**  

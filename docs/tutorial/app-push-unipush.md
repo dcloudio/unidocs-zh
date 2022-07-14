@@ -32,7 +32,8 @@ UniPush和个推推送模块支持设置自定义推送图标，包括push图标
 - 推送小图标(small)  
 默认使用个推提供的小图标
 
-显示效果如下图所示：
+显示效果如下图所示：  
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/custom_push_icon/custom_push_icon_small_instructions.png)  
 
 ##### 源码视图配置  
@@ -92,7 +93,8 @@ UniPush和个推推送模块支持设置自定义推送图标，包括push图标
 ### 推送小图标(small)要求
 设计规范需要注意：
 1. 必须是带 Alpha 透明通道的 PNG 图片。 
-2. 背景必须是透明的。 （如果非透明就会显示为白色方块）
+2. 背景必须是透明的。 （如果非透明就会显示为白色方块）  
+
 ![](http://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/unipsuh_small_icon_style.png.png) 
 
 

@@ -8,8 +8,11 @@ pageClass: custom-page-class
 
 `uni-app`在手，做啥都不愁。即使不跨端，```uni-app```也是更好的小程序开发框架（[详见](https://ask.dcloud.net.cn/article/35947)）、更好的App跨平台框架、更方便的H5开发框架。不管领导安排什么样的项目，你都可以快速交付，不需要转换开发思维、不需要更改开发习惯。
 
+
+## 快速体验
+
 <div class="quick">
-    <h3 id="快速体验"><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3>
+    <!-- <h3 id="快速体验"><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3> -->
     <p>一套代码编到14个平台，这不是梦想。眼见为实，扫描14个二维码，亲自体验最全面的跨平台效果！</p>
     <div class="flex-img-group-view">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
@@ -112,15 +115,15 @@ pageClass: custom-page-class
     </p>
 </div>
 
-### uni-app视频介绍
+## 看视频，快速了解uni-app
 
-我们精心准备了一个简单的十分钟介绍视频，方便你快速了解```uni-app```的主要特征：
+我们精心准备了一个简单的十分钟介绍视频，方便你快速了解`uni-app`的主要特征：
 
 <!-- <video id="video" onplay="videoPlay()" preload="none" controls="controls" width="100%" poster="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/poster.png" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/78e4ebc0-54be-11eb-a16f-5b3e54966275.mp4"></video> -->
 
 <video id="video" onplay="videoPlay()" preload="none" controls="controls" width="100%" poster="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/9d299680-555d-11eb-8a36-ebb87efcf8c0.jpg" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a876efc0-4f35-11eb-97b7-0dc4655d6e68.mp4"></video>
 
-### 为什么要选择uni-app？
+## 为什么要选择uni-app？
 
 ```uni-app```在开发者数量、案例、跨端抹平度、扩展灵活性、性能体验、周边生态、学习成本、开发成本等8大关键指标上拥有更强的优势。
 <!-- ![](https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/uni20190418.png) -->
@@ -203,15 +206,15 @@ pageClass: custom-page-class
 - 对于技术人员而言：不用学那么多的平台开发技术、研究那么多前端框架，学会基于vue的```uni-app```就够了。
 - 对于公司而言：更低成本，覆盖更多用户，```uni-app```是高效利器。 -->
 
-### 功能框架
+## 功能框架图
 
-从下面```uni-app```功能框架图可看出，```uni-app```在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
+从下面`uni-app`功能框架图可看出，`uni-app`在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29448a55-2785-4296-9248-913dbda9de7f.png)
 
-### 一套代码，运行到多个平台
+## 一套代码，运行到多个平台
 
-```uni-app```实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、H5、微信开发者工具、支付宝小程序Studio、百度开发者工具、字节跳动开发者工具、QQ开发者工具（底部8个终端选项卡代表8个终端模拟器）：
+`uni-app`实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、web、微信开发者工具、支付宝小程序Studio、百度开发者工具、字节跳动开发者工具、QQ开发者工具（底部每个终端选项卡，代表1个终端模拟器）：
 
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/efd8e280-60a9-11eb-a16f-5b3e54966275.jpg)
 

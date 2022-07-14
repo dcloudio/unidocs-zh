@@ -66,7 +66,7 @@ UniPush和个推推送模块支持设置自定义推送图标，包括push图标
 
 **注意事项**  
 - 5+ App项目在manifest.json文件的 "plus" -> "distribute" -> "plugins" -> "push" -> "unipush" -> "icons"节点下配置推送图标  
-- “个推推送”模块已不再维护，推荐使用UniPush模块，如需继续使用“个推推送”模块，可将“unipush”节点名称修改为“igexin”进行配置  
+- “个推推送”模块已不再维护，推荐使用UniPush模块，如需继续使用“个推推送”模块，可将“unipush”节点名称修改为“igexin”进行配置，完整配置信息可参考[App完整manifest.json](/collocation/manifest-app)  
 
 
 ### 推送小图标(small)要求

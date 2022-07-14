@@ -56,6 +56,7 @@ iOS平台云端打包相关配置
 |capabilities|Object|应用的能力配置（Capabilities）|
 |CFBundleName|String|应用的CFBundleName名称，默认值为HBuilder|
 |validArchitectures|Array|编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64|
+|pushRegisterMode|String|使用“Push(消息推送)”模块时申请系统推送权限模式，设置为manual表示调用push相关API时申请，设置为其它值表示应用启动时自动申请|
 
 
 

@@ -28,7 +28,7 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件�
 
 `uni-app`会将`pages.json -> pages`配置项中的第一个页面，作为当前工程的首页（启动页）。
 
-## 生命周期 @lifecycle
+## 应用生命周期 @lifecycle
 
 ``uni-app`` 支持如下页面生命周期函数：
 
@@ -54,18 +54,18 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件�
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序|2.8.1+|
 
-``onInit``使用注意
+`onInit`使用注意
 - 仅百度小程序基础库 3.260 以上支持 onInit 生命周期
 - 其他版本或平台可以同时使用 onLoad 生命周期进行兼容，注意避免重复执行相同逻辑
 - 不依赖页面传参的逻辑可以直接使用 created 生命周期替代
 
-``onReachBottom``使用注意
+`onReachBottom`使用注意
 可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pages#globalstyle)，比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
 
 如使用scroll-view导致页面没有滚动，则触底事件不会被触发。scroll-view滚动到底部的事件请参考scroll-view的文档
 
 
-``onPageScroll`` （监听滚动、滚动监听、滚动事件）参数说明：
+`onPageScroll` （监听滚动、滚动监听、滚动事件）参数说明：
 
 |属性|类型|说明|
 |---|---|---|
@@ -84,7 +84,7 @@ onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代�
 },
 ```
 
-``onTabItemTap`` 返回的json对象说明：
+`onTabItemTap` 返回的json对象说明：
 
 |属性|类型|说明|
 |---|---|---|
@@ -104,7 +104,7 @@ onTabItemTap : function(e) {
 },
 ```
 
-``onNavigationBarButtonTap`` 参数说明：
+`onNavigationBarButtonTap` 参数说明：
 
 |属性|类型|说明|
 |---|---|---|
@@ -137,6 +137,21 @@ export default {
 
 - nvue 页面weex编译模式支持的生命周期同weex，具体参考：[weex生命周期介绍](https://uniapp.dcloud.io/tutorial/nvue-outline?id=%e7%bc%96%e8%af%91%e6%a8%a1%e5%bc%8f)。
 - 支付宝小程序真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
+
+## 组件生命周期@componentlifecycle
+
+`uni-app` 组件支持的生命周期，与vue标准组件的生命周期相同。这里没有页面级的onLoad等生命周期：
+
+|函数名|说明|平台差异说明|最低版本|
+|:-|:-|:-|:-|
+|beforeCreate|在实例初始化之前被调用。[详见](https://cn.vuejs.org/v2/api/#beforeCreate)|||
+|created|在实例创建完成后被立即调用。[详见](https://cn.vuejs.org/v2/api/#created)|||
+|beforeMount|在挂载开始之前被调用。[详见](https://cn.vuejs.org/v2/api/#beforeMount)|||
+|mounted|挂载到实例上去之后调用。[详见](https://cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用```$nextTick```[Vue官方文档](https://cn.vuejs.org/v2/api/#Vue-nextTick)|||
+|beforeUpdate|数据更新时调用，发生在虚拟 DOM 打补丁之前。[详见](https://cn.vuejs.org/v2/api/#beforeUpdate)|仅H5平台支持||
+|updated|由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。[详见](https://cn.vuejs.org/v2/api/#updated)|仅H5平台支持||
+|beforeDestroy|实例销毁之前调用。在这一步，实例仍然完全可用。[详见](https://cn.vuejs.org/v2/api/#beforeDestroy)|||
+|destroyed|Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。[详见](https://cn.vuejs.org/v2/api/#destroyed)|||
 
 ## 页面调用接口
 
@@ -436,17 +451,3 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 20. 目前不支持在 nvue 页面使用 `typescript/ts`。
 21. nvue 页面关闭原生导航栏时，想要模拟状态栏，可以[参考文章](https://ask.dcloud.net.cn/article/35111)。但是，仍然强烈建议在 nvue 页面使用原生导航栏。nvue 的渲染速度再快，也没有原生导航栏快。原生排版引擎解析`json`绘制原生导航栏耗时很少，而解析 nvue 的 js 绘制整个页面的耗时要大的多，尤其在新页面进入动画期间，对于复杂页面，没有原生导航栏会在动画期间产生整个屏幕的白屏或闪屏。
 
-## 组件生命周期@componentlifecycle
-
-``uni-app`` 组件支持的生命周期，与vue标准组件的生命周期相同。这里没有页面级的onLoad等生命周期：
-
-|函数名|说明|平台差异说明|最低版本|
-|:-|:-|:-|:-|
-|beforeCreate|在实例初始化之前被调用。[详见](https://cn.vuejs.org/v2/api/#beforeCreate)|||
-|created|在实例创建完成后被立即调用。[详见](https://cn.vuejs.org/v2/api/#created)|||
-|beforeMount|在挂载开始之前被调用。[详见](https://cn.vuejs.org/v2/api/#beforeMount)|||
-|mounted|挂载到实例上去之后调用。[详见](https://cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用```$nextTick```[Vue官方文档](https://cn.vuejs.org/v2/api/#Vue-nextTick)|||
-|beforeUpdate|数据更新时调用，发生在虚拟 DOM 打补丁之前。[详见](https://cn.vuejs.org/v2/api/#beforeUpdate)|仅H5平台支持||
-|updated|由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。[详见](https://cn.vuejs.org/v2/api/#updated)|仅H5平台支持||
-|beforeDestroy|实例销毁之前调用。在这一步，实例仍然完全可用。[详见](https://cn.vuejs.org/v2/api/#beforeDestroy)|||
-|destroyed|Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。[详见](https://cn.vuejs.org/v2/api/#destroyed)|||

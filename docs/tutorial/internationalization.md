@@ -27,8 +27,9 @@ DCloud为支持海外开发者，特推出“国际区”注册服务，注册�
 1. “国际区”账号尚不支持[问答社区](https://ask.dcloud.net.cn)发帖，但你可以到Github提交[issue](https://github.com/dcloudio/uni-app/issues)
 2. “国际区”账号不能使用插件市场、uniCloud、uniAD 服务；
 3. “国际区”账号仅支持”uniapp“项目打包，不支持 "5+APp"、"wap2app"打包；
-4. “国际区”账号不支持使用公共测试证书和DCloud老版证书
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/54096e3f-d68c-4c01-9e9d-c83d3f5a6b5b.png)
+4. “国际区”账号不支持使用公共测试证书（test keystore）和DCloud老版证书（DCloud keystore）
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2884f5b8-1141-4d8a-8dee-a1e4cd9c30d0.png)
 
 ## 隐私政策
 

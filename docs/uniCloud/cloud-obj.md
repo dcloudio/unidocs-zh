@@ -714,7 +714,7 @@ module.exports = {
 		}
 	},
 	async addTodo(title, content) {
-		return addTodo(title, content)
+		return pureAddTodo(title, content)
 	}
 }
 ```

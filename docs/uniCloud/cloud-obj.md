@@ -693,4 +693,28 @@ uniCloud的服务器和客户端交互，有云函数、云对象、clientDB三�
 
 但云对象仅适用于与uni-app前端交互使用。如果不与uni-app前端交互，比如使用云函数URL化与其他系统通信、或者使用定时云函数，此时不适用云对象，还是需要使用云函数。
 
-云对象内的方法不能互相调用，如果有公共逻辑需要在多个方法内使用请将公共逻辑提取出来供多个方法调用即可。
+### 云对象方法互相调用@call-internal-method
+
+云对象导出的方法之间不能互相调用，如果开发中遇到需要方法间互相调用的场景，请考虑将多个方法共享的逻辑放到云对象导出的对象外部来供云对象的方法调用。例：
+
+```js
+// todo.obj.js
+async function pureAddTodo(title, content) {
+	// ...add todo 逻辑
+}
+
+module.exports = {
+	async tryAddTodo() {
+		try {
+			return addTodo(title, content)
+		} catch (e) {
+			return {
+				errCode: 'add-todo-failed'
+			}
+		}
+	},
+	async addTodo(title, content) {
+		return addTodo(title, content)
+	}
+}
+```

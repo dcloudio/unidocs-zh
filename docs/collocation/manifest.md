@@ -5,7 +5,7 @@
 |属性|类型|默认值|描述|最低版本|
 |:-|:-|:-|:-|:-|
 |name|String||应用名称||
-|appid|String|新建 uni-app 项目时，DCloud 云端分配。用途[详见](https://ask.dcloud.net.cn/article/35907)|应用标识|| 
+|appid|String|新建 uni-app 项目时，DCloud 云端分配。用途[详见](https://ask.dcloud.net.cn/article/35907)|应用标识||
 |description|String||应用描述||
 |locale|String|auto|设置当前默认语言，具体参考 [locale](/api/ui/locale)||
 |versionName|String||版本名称，例如：1.0.0。详见下方Tips说明||
@@ -173,7 +173,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 
 也就是一旦在pages.json里配置分包，小程序一定生效，而app是否生效，取决于manifest里是否开启。
 
-注意: 
+注意:
 * App开启分包后，每个分包单独编译成一个js文件(都包含在app内，不会联网下载)，当App首页是vue时，可减小启动加载文件大小，提升启动速度。
 * 首页是nvue时，分包不会提升启动速度，nvue本身启动速度就快于vue，也快于开启分包后的首页为vue的应用。如果追求极致启动速度，还是应该使用nvue做首页并在manifest开启fast模式。
 * App页面较少时，分包对启动速度的优化不明显。
@@ -418,7 +418,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.0+ 开始支持（目前仅 Vue2 支持）|
 |embeddedAppIdList|Array|要半屏跳转的小程序appid。[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
-|requirePrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/community/develop/doc/000a02f2c5026891650e7f40351c01)|
+|requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/community/develop/doc/000a02f2c5026891650e7f40351c01)|
 
 
 #### setting
@@ -620,6 +620,6 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 ```
 
 
-### FAQ  
-Q：iOS 应用调用相机等权限时，弹出的提示语如何修改？  
-A：在 manifest.json 可视化界面-App模块权限配置-iOS隐私信息访问的许可描述  
+### FAQ
+Q：iOS 应用调用相机等权限时，弹出的提示语如何修改？
+A：在 manifest.json 可视化界面-App模块权限配置-iOS隐私信息访问的许可描述

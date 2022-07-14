@@ -259,7 +259,8 @@ iOS平台云端打包相关配置
                 "CFBundleName": "HBuilder",     //可选，字符串类型，CFBundleName名称
                 "validArchitectures": [         //可选，字符串数组类型，编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64
                     "arm64"
-                ]
+                ],
+                "pushRegisterMode": "manual"    //可选，使用“Push(消息推送)”模块时申请系统推送权限模式，manual表示调用push相关API时申请，其它值表示应用启动时自动申请
             },
             "sdkConfigs": {         //可选，JSON对象，三方SDK相关配置
                 "geolocation": {        //可选，JSON对象，Geolocation(定位)模块三方SDK配置

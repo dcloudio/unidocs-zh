@@ -9,7 +9,7 @@ uni-starter是一个集成了大量商用项目常见功能的，云端一体应
 
 APP有很多通用的功能，比如登录注册、头像、设置、banner、... uni-starter将这些功能都已经集成好。
 
-直接在`hbuilderx`新建项目选择`uni-starter`模板，即可在此基础上快速开发自己的特色业务。
+直接在`HBuilderx`新建项目选择`uni-starter`模板，即可在此基础上快速开发自己的特色业务。
 
 有了`uni-starter`，再加上`schema2code`生成前端页面，一个简单应用就可以快速完成。
 
@@ -364,6 +364,9 @@ uni-starter/common/appInit.js 的第228-280行
 ### 13.多语言国际化
 	uni-starter支持多语言国际化。默认开启，可以在`uni-starter.config.js`->`i18n`->`enable`中配置
 	如果你启用了多语言国际化需要先阅读：[uni-app多语言国际化](https://uniapp.dcloud.io/collocation/i18n?id=%e6%a1%86%e6%9e%b6%e5%86%85%e7%bd%ae%e7%bb%84%e4%bb%b6%e5%92%8capi%e5%9b%bd%e9%99%85%e5%8c%96)
+
+### 14.微信登录自动获取头像
+        当用户首次登录，且登录方式为微信登录时，会将微信的头像，设置为当前用户头像。注意：各家小程序平台，均要求在小程序管理后台配置小程序应用的联网服务器域名，否则无法联网。保存头像的过程是：先下载头像，再上传到云存储。请确认已正确配置download、uploadFile合法域名[详情](https://uniapp.dcloud.io/uniCloud/publish.html#useinmp)
 	
 ## 应用启动时序介绍
 文件路径： App.vue

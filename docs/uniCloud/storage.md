@@ -1,6 +1,5 @@
+## 概述
 开发者使用`uniCloud`的云存储，无需再像传统模式那样单独去购买存储空间、CDN映射、流量采购等；
-
-如果您还未开通过uniCloud，请在web界面开通：[https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)
 
 云存储的上传方式有3种：
 1. web界面：即在[https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/) web控制台，点击云存储，通过web界面进行文件上传。该管理界面同时提供了资源浏览、删除等操作界面。
@@ -10,13 +9,16 @@
 **注意：**
 - 前端和云函数端，均有一个相同名称的api：`uniCloud.uploadFile`。请不要混淆。
 - 前端还有一个`uni.uploadFile`的API，那个API用于连接非uniCloud的上传使用。请不要混淆。
-- 腾讯云在权限为`非公有读`时，获取的带签名的链接（包括getTempFileURL接口返回的链接、web控制台文件详情页面看到的链接）有两个小时的有效期
+- 在使用腾讯云时如果访问云存储文件提示`The requested URL '/1123.jpg' was not found on this server`这种错误，一般是cdn流量用尽导致的。可以升级配置或转为按量计费（目前仅企业类型认证的账号可以使用按量计费的服务空间）。
+- 在允许用户上传图片的应用里，违规检测是必不可少的，为此uniCloud提供了内容安全检测模块，可以很方便的实现图片鉴黄等功能。详情参考：[内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
 
-文件上传成功后，系统会自动生成一个https链接或临时文件id，开发者应保存该文件地址供后续业务下载使用。
+### 文件权限
 
-在使用腾讯云时如果访问云存储文件提示`The requested URL '/1123.jpg' was not found on this server`这种错误，一般是cdn流量用尽导致的。可以升级配置或转为按量计费（目前仅企业类型认证的账号可以使用按量计费的服务空间）。
+uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望被其他人访问时，需配置权限。比如身份证照片。
 
-在允许用户上传图片的应用里，违规检测是必不可少的，为此uniCloud提供了内容安全检测模块，可以很方便的实现图片鉴黄等功能。详情参考：[内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
+首先在uniCloud web控制台，腾讯云的服务空间中，可以配置云存储的权限。如果是隐私文件，应该配置为仅管理员可访问。
+
+在云函数中，通过`uniCloud.getTempFileURL`（[见下](#cloudgettempfileurl)），获取该文件的临时URL。然后将临时URL发给客户端，客户端根据临时URL请求云存储的文件。
 
 ## 客户端API
 

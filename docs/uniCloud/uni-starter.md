@@ -1,10 +1,10 @@
-#### 视频介绍
+## 视频介绍
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=11">
     <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/71d310a5-ef69-4ca5-88c8-9a3abf8fb8e3.png" alt="腾讯课堂uniCloud视频教程" style="width: 70%;margin-bottom:26px;">
 </a>
 
 注：视频会有滞后问题，入门为主。最新的完整功能请看以下文档
-#### 简介
+## 简介
 uni-starter是一个集成了大量商用项目常见功能的，云端一体应用快速开发基本项目模版。
 
 APP有很多通用的功能，比如登录注册、头像、设置、banner、... uni-starter将这些功能都已经集成好。
@@ -26,7 +26,7 @@ APP有很多通用的功能，比如登录注册、头像、设置、banner、..
 GitCode 仓库：[https://gitcode.net/dcloud/uni-starter](https://gitcode.net/dcloud/uni-starter)
 
 
-### uni-starter集成包括：
+## uni-starter集成包括：
 1. 用户管理：
 	- 登录注册（用户名密码登录、手机号验证码登录、APP一键登录、微信登录、Apple登录、微信小程序登录）
 	- 修改密码、忘记密码、头像更换（集成图片裁剪）、昵称修改、积分查看、退出登录

@@ -37,7 +37,6 @@
 |random-number|Boolean|false|当 type 为 number, digit, idcard 数字键盘是否随机排列|支付宝小程序 1.9.0+|
 |controlled|Boolean|false|是否为受控组件。为 true 时，value 内容会完全受 setData 控制|支付宝小程序 1.9.0+|
 |always-system|Boolean|false|是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效|支付宝小程序 2.7.3+|
-
 |@input|EventHandle||当键盘输入时，触发input事件，event.detail = {value}|差异见下方 Tips|
 |@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（2.2.3+） 、QQ小程序支持 height|
 |@blur|EventHandle||输入框失去焦点时触发，event.detail = {value: value}|快手小程序不支持|

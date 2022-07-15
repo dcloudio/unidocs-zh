@@ -351,3 +351,30 @@ exports.main = function() {
     }
 }
 ```
+
+### 云对象使用url化@cloudobject
+
+配置方式和云函数一致，请参阅上方章节
+
+> 在云函数url化场景下，event.path表示以配置的url化路径为根路径的访问路径。以配置`/test`为云函数url化路径，访问`/test/a/b/c`时event.path为`/a/b/c`
+
+调用url化的云对象时，event.path对应的部分必须是云对象导出的方法名。例如：云对象配置的触发路径是`/todo`，调用`/todo/addTodo`即会触发云对象的addTodo方法。方法区分大小写且不可含`/`。
+
+url内query部分会被转换成云对象方法的入参。以下面的todo云对象为例
+
+```js
+module.exports = {
+	addTodo: function(params) { 
+		console.log(params)
+	}
+}
+```
+
+如果通过`https://xxx.com/todo/addTodo?title=todo-title&content=todo-content`调用云对象，怎todo方法内的console.log会输出以下内容`{title: 'todo-title', content: 'todo-content'}`
+
+需要注意的是自url内解析出的参数均为字符串类型。
+
+**注意**
+
+- url化方式调用云对象时，`_before`和`_after`均正常执行
+- 如果需要获取其他方式传入云对象的参数（如：post一个json内容到云对象），请使用[this.getHttpInfo](uniCloud/cloud-obj.md?id=get-http-info)获取

@@ -570,54 +570,13 @@ const res = await todo.add('title demo', 'content demo')
 
 > 新增于HBuilderX 3.5.2
 
-配置方式和云函数一致，相关文档：[定时触发器](uniCloud/trigger.md)
-
-配置完成后会触发云对象导出的`_timing`方法
-
-云对象代码示例：
-
-```js
-module.exports = {
-	_timing: function () { 
-		console.log('triggered by timing')
-	}
-}
-```
-
-**注意**
-
-- 定时触发云对象时，`_before`和`_after`均不执行
+详细用法参考：[云对象使用定时触发](uniCloud/trigger.md?id=cloudobject)
 
 ### url化@http-trigger
 
 > 新增于HBuilderX 3.5.2
 
-配置方式和云函数一致，相关文档：[url化](uniCloud/http.md)
-
-在url化的文档里面有关于云函数url化时，event.path的说明
-
->url化场景下，event.path表示以配置的url化路径为根路径的访问路径。以配置`/test`为云函数url化路径，访问`/test/a/b/c`时event.path为`/a/b/c`
-
-调用url化的云对象时，event.path对应的部分必须是云对象导出的方法名。例如：云对象配置的触发路径是`/todo`，调用`/todo/addTodo`即会触发云对象的addTodo方法。方法区分大小写且不可含`/`。
-
-url内query部分会被转换成云对象方法的入参。以下面的todo云对象为例
-
-```js
-module.exports = {
-	addTodo: function(params) { 
-		console.log(params)
-	}
-}
-```
-
-如果通过`https://xxx.com/todo/addTodo?title=todo-title&content=todo-content`调用云对象，怎todo方法内的console.log会输出以下内容`{title: 'todo title', content: 'todo content'}`
-
-需要注意的是自url内解析出的参数均为字符串类型。
-
-**注意**
-
-- url化方式调用云对象时，`_before`和`_after`均正常执行
-- 如果需要获取其他方式传入云对象的参数（如：post一个json内容到云对象），请使用[this.getHttpInfo](#get-http-info)获取
+详细用法参考：[云对象使用url化](uniCloud/http.md?id=cloudobject)
 
 ### 跨服务空间调用云对象@call-by-cloud-cross-space
 

@@ -102,3 +102,26 @@ Cron 表达式有七个**必需**字段，按空格分隔。其中，每个字�
   "timestamp": 1585670400006 //触发云函数时的时间戳，可能略晚于cron表达式时间
 }
 ```
+
+### 云对象使用定时触发@cloudobject
+
+> 新增于HBuilderX 3.5.2
+
+配置方式和云函数一致，请参阅上方章节
+
+配置完成后会触发云对象导出的`_timing`方法
+
+云对象代码示例：
+
+```js
+module.exports = {
+	_timing: function () { 
+		console.log('triggered by timing')
+	}
+}
+```
+
+**注意**
+
+- 定时触发云对象时，`_before`和`_after`均不执行
+- 定时触发云对象时`_timing`方法不会收到任何参数

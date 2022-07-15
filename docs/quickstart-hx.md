@@ -61,6 +61,8 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
     <div align=center>
       <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a142b6a0-4f1a-11eb-8a36-ebb87efcf8c0.png"/>
     </div>
+
+    **注意**：微信开发者工具需要开启服务端口 在微信工具的设置->安全中。
 		
 4. 在支付宝小程序开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 支付宝小程序开发者工具，即可在支付宝小程序开发者工具里面体验uni-app。
     <br/>

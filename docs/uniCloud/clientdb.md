@@ -20,9 +20,11 @@ JQL语法相关文档已移至：[JQL语法](uniCloud/jql.md)
 
 **注意**
 
-- `clientDB`依赖uni-id（`1.1.10+版本`）提供用户身份和权限校验，如果你不了解uni-id，请参考[uni-id文档](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
-- `clientDB`依赖的uni-id需要在uni-id的config.json内添加uni-id相关配置，通过uni-id的init方法传递的参数不会对clientDB生效，参考：[uni-id 配置](uniCloud/uni-id.md?id=config)
-- 通常在管理控制台使用`clientDB`，需要获取不同角色用户拥有的权限（在权限规则内使用auth.permission），请先查阅[uni-id 角色权限](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=rbac)
+- `clientDB`依赖uni-id（`1.1.10+版本`）提供用户身份和权限校验，存在uni-id-common时clientDB会优先依赖uni-id-common，如果你不了解uni-id，请参考：[uni-id文档](uniCloud/uni-id.md)，[uni-id-common文档](uniCloud/uni-id-common.md)
+- `clientDB`依赖的uni-id需要在uni-id的config.json内添加uni-id相关配置，通过uni-id的init方法传递的参数不会对clientDB生效，参考：[uni-id 配置](uniCloud/uni-id.md?id=config)，[uni-id新版配置(uni-id-co + uni-id-common)](uniCloud/uni-id-summary.md?id=config)
+- 通常在管理控制台使用`clientDB`，需要获取不同角色用户拥有的权限（在权限规则内使用auth.permission），请先查阅：[uni-id 角色权限](uniCloud/uni-id.md?id=rbac)，[uni-id新版角色权限(uni-id-co + uni-id-common)](uniCloud/uni-id-summary.md?id=rbac)
+
+
 
 ## 对比：传统与clientDB云端协同的开发效率
 > 演示：在线通讯录项目，渲染云端数据到视图

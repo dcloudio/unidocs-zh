@@ -115,7 +115,7 @@ pageClass: custom-page-class
     </p>
 </div>
 
-## 看视频，快速了解uni-app
+## 看视频，10分钟了解uni-app
 
 我们精心准备了一个简单的十分钟介绍视频，方便你快速了解`uni-app`的主要特征：
 

@@ -384,6 +384,28 @@ module.exports = {
 }
 ```
 
+### 获取url化时的http信息@get-http-info
+
+> 新增于HBuilderX 3.5.2
+
+仅可在云对象url化时使用，如何使用云对象的url化请参考：[云对象url化](#http-trigger)
+
+**接口形式**
+
+`this.getHttpInfo()`
+
+**示例**
+
+```js
+module.exports = {
+	_before: function() { // _before的用法请看后续章节
+		const params = this.getHttpInfo() // 返回值和云函数url化时的event一致
+	}
+}
+```
+
+相关文档：[云函数url化的入参](uniCloud/cf-function.md?id=input)
+
 ## 预处理与后处理@before-and-after
 
 ### 预处理 _before@before
@@ -544,6 +566,59 @@ const todo = uniCloud.importObject('todo')
 const res = await todo.add('title demo', 'content demo')
 ```
 
+### 定时触发@timing-trigger
+
+> 新增于HBuilderX 3.5.2
+
+配置方式和云函数一致，相关文档：[定时触发器](uniCloud/trigger.md)
+
+配置完成后会触发云对象导出的`_timing`方法
+
+云对象代码示例：
+
+```js
+module.exports = {
+	_timing: function () { 
+		console.log('triggered by timing')
+	}
+}
+```
+
+**注意**
+
+- 定时触发云对象时，`_before`和`_after`均不执行
+
+### url化@http-trigger
+
+> 新增于HBuilderX 3.5.2
+
+配置方式和云函数一致，相关文档：[url化](uniCloud/http.md)
+
+在url化的文档里面有关于云函数url化时，event.path的说明
+
+>url化场景下，event.path表示以配置的url化路径为根路径的访问路径。以配置`/test`为云函数url化路径，访问`/test/a/b/c`时event.path为`/a/b/c`
+
+调用url化的云对象时，event.path对应的部分必须是云对象导出的方法名。例如：云对象配置的触发路径是`/todo`，调用`/todo/addTodo`即会触发云对象的addTodo方法。方法区分大小写且不可含`/`。
+
+url内query部分会被转换成云对象方法的入参。以下面的todo云对象为例
+
+```js
+module.exports = {
+	addTodo: function(params) { 
+		console.log(params)
+	}
+}
+```
+
+如果通过`https://xxx.com/todo/addTodo?title=todo-title&content=todo-content`调用云对象，怎todo方法内的console.log会输出以下内容`{title: 'todo title', content: 'todo content'}`
+
+需要注意的是自url内解析出的参数均为字符串类型。
+
+**注意**
+
+- url化方式调用云对象时，`_before`和`_after`均正常执行
+- 如果需要获取其他方式传入云对象的参数（如：post一个json内容到云对象），请使用[this.getHttpInfo](#get-http-info)获取
+
 ### 跨服务空间调用云对象@call-by-cloud-cross-space
 
 云端或者客户端均有uniCloud.init方法可以获取其他服务空间的uniCloud实例，使用此实例的importObject可以调用其他服务空间的云对象，参考：[](uniCloud/concepts/space.md?id=multi-space)
@@ -676,6 +751,7 @@ method1(param1) {
 - 云对象和云函数都在cloudfunctions目录下，但是不同于云函数，云对象的入口为`index.obj.js`，而云函数则是`index.js`。**为正确区分两者uniCloud做出了限制，云函数内不可存在index.obj.js，云对象内也不可存在index.js。**
 - 所有`_`开头的方法都是私有方法，客户端不可访问
 - 云对象也可以引用公共模块或者npm上的包，引用方式和云函数一致。
+- 云对象的导出的方法不可以是箭头函数，导出箭头函数会导致`this`指向不正确
 
 ## 复杂示例
 

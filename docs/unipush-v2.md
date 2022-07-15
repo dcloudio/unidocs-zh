@@ -214,17 +214,17 @@ export default {
 }
 ```
 
-> 先跟着示例代码简单体验，详细的uni.onPushMessage api介绍[详情参考](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#onpushmessage)  
+> 先跟着示例代码简单体验，详细的uni.onPushMessage api介绍[详情参考](/uniCloud/uni-cloud-push/api.html#onpushmessage)
 
 **APP端真机运行注意:** 
 - 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。标准HBuilder运行基座无法使用。
-- 离线推送时，部分手机厂商[需设置消息渠道](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#channel)，否则离线推送会被限制频次和静默推送(静音且需下拉系统通知栏才可见)
+- 离线推送时，部分手机厂商[需设置消息渠道](/uniCloud/uni-cloud-push/api.html#channel)，否则离线推送会被限制频次和静默推送(静音且需下拉系统通知栏才可见)
 
 ### 获取客户端推送标识  
 假如我要给“张三”打电话，那就需要知道对方的电话标识，即电话号码是多少。
 同理，要给某个客户端推送消息，也需要知道该设备的客户端推送标识。
 
-> 先跟着示例代码简单体验，详细的uni.getPushClientId api介绍[详情参考](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#getpushclientid)  
+> 先跟着示例代码简单体验，详细的uni.getPushClientId api介绍[详情参考](/uniCloud/uni-cloud-push/api.html#getpushclientid)  
 代码示例：
 ```js 
 // uni-app客户端获取push客户端标记
@@ -285,7 +285,7 @@ exports.main = async (event, context) => {
 
 在云函数文件目录右键（或按快捷键ctrl + r）-> `上传并运行云函数`，此时你的客户端将收到推送消息（应用关闭时为通知栏消息，在线时代码监听到推送消息）
 
-> 先跟着示例代码简单体验一下，详细的uniPush.sendMessage api介绍[详情参考](https://uniapp.dcloud.io/uniCloud/uni-push/api.html#uni-cloud-push)
+> 先跟着示例代码简单体验一下，详细的uniPush.sendMessage api介绍[详情参考](/uniCloud/uni-cloud-push/api.html#uni-cloud-push)
 
 如果按步骤操作完毕，此时你运行起来的uni-app客户端就会打印出“收到推送消息：xxxx”。如遇异常，可以重新运行一遍。
 

@@ -48,7 +48,7 @@
 |show-location|Boolean||显示带有方向的当前定位点|微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
 |polygons|Array.`<polygon>`||多边形|App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序、支付宝小程序|
 |enable-indoorMap|Boolean|false|是否展示室内地图|App-nvue 3.1.0+|
-|@markertap|EventHandle||点击标记点时触发，e.detail = {markerId}|App-nvue 2.3.3+、H5、微信小程序 （App和H5平台需要指定 marker 对象属性 id）|
+|@markertap|EventHandle||点击标记点时触发，e.detail = {markerId}|App-nvue 2.3.3+、H5、微信小程序、支付宝小程序 （App和H5平台需要指定 marker 对象属性 id）|
 |@labeltap|EventHandle||点击label时触发，e.detail = {markerId} |微信小程序2.9.0|
 |@callouttap|EventHandle||点击标记点对应的气泡时触发，e.detail = {markerId}||
 |@controltap|EventHandle||点击控件时触发，e.detail = {controlId}||
@@ -86,10 +86,10 @@
 |width|标注图标宽度|Number|否|默认为图片实际宽度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序、京东小程序|
 |height|标注图标高度|Number|否|默认为图片实际高度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序、京东小程序|
 |callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序、京东小程序|
-|label|为标记点旁边增加标签|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、H5、App、百度小程序|
+|label|为标记点旁边增加标签|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、H5、App、百度小程序、支付宝小程序|
 |anchor|经纬度在标注图标的锚点，默认底边中点|Object|否|{x, y}，x表示横向(0-1)，y表示竖向(0-1)。{x: .5, y: 1} 表示底边中点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
 |clusterId|自定义点聚合簇效果时使用|Number|否||App-nvue 3.1.0+、微信小程序|
-|customCallout|自定义气泡窗口|Object|否||app暂时不支持、微信小程序|
+|customCallout|自定义气泡窗口|Object|否||app暂时不支持、微信小程序、支付宝小程序|
 |aria-label|无障碍访问，（属性）元素的额外描述|String|否||App-nvue 3.1.0+、微信小程序|
 
 **marker 上的气泡 callout**
@@ -112,17 +112,17 @@
 |属性|说明|类型|平台差异说明|
 |:-|:-|:-|:-|
 |content|文本|String||
-|color|文本颜色|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
-|fontSize|文字大小|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序|
+|color|文本颜色|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序|
+|fontSize|文字大小|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序|
 |x|label的坐标，原点是 marker 对应的经纬度|Number|H5、百度小程序|
 |y|label的坐标，原点是 marker 对应的经纬度|Number|H5、百度小程序|
 |anchorX|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
 |anchorY|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
 |borderWidth|边框宽度|Number|微信小程序、百度小程序|
 |borderColor|边框颜色|String|微信小程序、百度小程序|
-|borderRadius|边框圆角|Number|App-nvue 2.1.5+、微信小程序、百度小程序|
-|bgColor|背景色|String|App-nvue 2.1.5+、微信小程序、百度小程序|
-|padding|文本边缘留白|Number|App-nvue 2.1.5+、微信小程序、百度小程序|
+|borderRadius|边框圆角|Number|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
+|bgColor|背景色|String|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
+|padding|文本边缘留白|Number|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
 |textAlign|文本对齐方式。有效值: left, right, center|String|App-nvue 2.1.5+、微信小程序、百度小程序|
 |customCallout|自定义气泡窗口|Object|App暂时不支持、微信小程序|
 |aria-label|无障碍访问，（属性）元素的额外描述|String|App-nvue 3.1.0+、微信小程序|

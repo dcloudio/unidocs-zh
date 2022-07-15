@@ -3347,6 +3347,37 @@ module.exports = {
 
 如果所在服务空间开通了redis，action内可直接使用redis扩展。目前只能云端运行，后续会支持本地运行时在action内使用redis扩展
 
+**注意**
+
+- action上传后可能需要一段时间才会在云端生效，通常是3分钟左右
+
+## 缓存JQL结果到Redis内@redis-cache
+
+> 新增于HBuilderX 3.5.2
+
+用于缓存业务中不常改动或不需要及时更新的数据，如新闻热点等。详细用法如下
+
+1. 在插件市场导入`uni-config-center`插件，插件地址：[uni-config-center](https://ext.dcloud.net.cn/plugin?id=4425)
+2. 在`uniCloud/cloudfunction/common/uni-config-center`下创建`uni-jql-cache-redis.json`文件（注意此文件是标准json格式，不支持注释）
+
+整个`uni-jql-cache-redis.json`文件是一个数组，其中每一项是一个缓存配置。示例内容如下
+
+```js
+[{
+	"id": "test-get", // 缓存id
+	"jql": "db.collection('test').limit(10).get()", // 要缓存的数据库指令
+	"expiresIn": 3600 // 缓存有效期
+}]
+```
+
+**注意**
+
+- 注意id为缓存唯一id，不可与其他项重复
+- jql会将缓存配置对应的查询结果缓存到key为`unicloud:jql-cache:${id}:string`redis缓存内
+- 目前不可缓存使用了`db.getCloudEnv()`或`$cloudEnv_`开头的云端环境变量的查询
+- 不可缓存使用了action的查询
+- 不配置expiresIn时数据将会持久保存在redis内
+
 ## 数据库运算方法列表@aggregate-operator
 
 uniCloud的云数据库，提供了一批强大的运算方法。这些方法是数据库执行的，而不是云函数执行的。

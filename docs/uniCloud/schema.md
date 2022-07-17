@@ -1,4 +1,4 @@
-# DB Schema
+## DB Schema概述
 
 `DB Schema`是基于 JSON 格式定义的数据结构的规范。
 
@@ -14,13 +14,15 @@
 
 > MongoDB支持通过 [$jsonSchema 操作符](https://docs.mongodb.com/manual/reference/operator/query/jsonSchema/index.html)在插入和更新文档时进行结构验证（非空、类型校验等）， $jsonSchema 支持 JSON Schema的草案4，包括[core specification](https://tools.ietf.org/html/draft-zyp-json-schema-04)和[validation specification](https://tools.ietf.org/html/draft-fge-json-schema-validation-00)。uniCloud在MongoDB基础上进行了JSON Schema扩展。
 
-编写`DB Schema`是uniCloud的数据库开发的重要环节。但如果在云函数里操作数据库，`DB Schema`只能发挥描述作用，无法提供实际功能。通过`clientDB`在前端操作数据库才能发挥`DB Schema`的各种功能。
+编写`DB Schema`是uniCloud的数据库开发的重要环节。但如果在云函数里通过传统MongoDB API操作数据库，`DB Schema`只能发挥描述作用，无法提供实际功能。
+
+通过JQL操作数据库才能发挥`DB Schema`的价值。
 
 一般建议开发者在前端操作数据库，在云数据库里配好`DB Schema`，然后就不再编写服务器代码了。也就是传统开发中在服务器端写的各种代码，包括对数据格式的校验、权限的管控，全都通过`DB Schema`设置，而不是写服务器代码。这种做法可以大幅提升开发效率、降低开发成本。
 
 同时这要求开发者有一定的思路转换，需要一个角色站在数据库设计角度统筹所有规则。将原有的业务规则，都转换为数据库规则。
 
-#### 如何编写DB Schema
+### 如何编写DB Schema
 
 - **方式1，在web控制台编写schema**
 
@@ -28,17 +30,17 @@
 2. 点击表右侧页签 “表结构”，点击 “编辑” 按钮，在编辑区域编写 Schema，编写完毕后点保存按钮即可生效。
   ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/037fc310-549f-11eb-b997-9918a5dda011.png)
 
-**web控制台上编辑`DB Schema`保存后是实时生效的，请注意对现网商用项目的影响。**
+**web控制台上编辑`DB Schema`保存后是实时在现网生效的，请注意对现网商用项目的影响。**
 
 - **方式2，在HBuilderX中编写schema**
-> 需HBuilderX 3.0+版本
+> 新增于HBuilderX 3.0+
 
-在HBuilderX中编写schema，有良好的语法提示和语法校验，还可以在前端连本地云函数功能中免上传联调测试，是更为推荐的schema编写方案。
+在HBuilderX中编写schema，有良好的语法提示和语法校验，还可以本地调试，是更为推荐的schema编写方案。
 
 **创建schema**
 
-1. 在`uniCloud`项目右键，选择`创建database目录`
-2. 在第一步创建的database目录右键选择`新建数据集合schema`
+1. 在`uniCloud`项目右键，选择`创建database目录`（如已有目录则忽略）
+2. 在 database 目录右键选择`新建数据集合schema`
 
 <div align=center>
   <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a9ab149e-6293-49c0-af8e-2db893a956d4.jpg"/>
@@ -55,9 +57,9 @@
 
 - database目录右键可以下载所有schema及扩展校验函数
 
-HBuilderX中运行前端项目，在控制台选择连接本地云函数，此时本地编写的schema可直接生效，无需上传。方便编写调试。
+HBuilderX中运行前端项目，在控制台选择连接本地云函数，或者本地云函数/云对象直接运行，此时本地编写的schema可直接生效，无需上传。方便编写调试。
 
-### Schema的一级节点@schema-root
+## Schema的一级节点@schema-root
 ```json
 {
 	"bsonType": "object", // 固定节点
@@ -86,113 +88,195 @@ HBuilderX中运行前端项目，在控制台选择连接本地云函数，此�
 
 - 对数据进行数量统计时（包括count方法、及groupField内的count操作）均会同时触发表级的count权限及read权限
 
-### 字段的属性清单@segment
+## 字段的属性@segment
+
+### 属性列表
 
 properties里的字段列表，每个字段都有很多可以设置的属性，如下：
 
-|属性|类型|描述|
-|:-|:-|:-|
-|bsonType|any|字段类型，如json object、字符串、数字、bool值、日期、时间戳，具体见下表bsonType可用类型|
-|title|string|标题，开发者维护时自用。如果不填label属性，将在生成前端表单代码时，默认用于表单项前面的label|
-|description|string|描述，开发者维护时自用。在生成前端表单代码时，如果字段未设置componentForEdit，且字段被渲染为input，那么input的placehold将默认为本描述|
-|required|array|是否必填。支持填写必填的下级字段名称。required可以在表级的描述出现，约定该表有哪些字段必填。也可以在某个字段中出现，如果该字段是一个json，可以对这个json中的哪些字段必填进行描述。详见下方示例|
-|enum|Array|字段值枚举范围，数组中至少要有一个元素，且数组内的每一个元素都是唯一的。**enum最多只可以枚举500条**|
-|enumType|String|字段值枚举类型，可选值tree。设为tree时，代表enum里的数据为树形结构。此时schema2code可生成多级级联选择组件|
-|arrayType|String|数组项类型，bsonType="array" 时有效，HBuilderX 3.1.0+ 支持，具体见下表arrayType可用类型|
-|fileMediaType|String|文件类型，可选值 all&#124;image&#124;video 默认值为all,表示所有文件，image表示图片类型文件，video表示视频类型文件  HBuilderX 3.1.0+|
-|fileExtName|String|文件扩展名过滤，多个用 "," 分割，例如: jpg,png，HBuilderX 3.1.0+ 支持|
-|maximum|number|如果bsonType为数字时，可接受的最大值|
-|exclusiveMaximum|boolean|是否排除 maximum|
-|minimum|number|如果bsonType为数字时，可接受的最小值|
-|exclusiveMinimum|boolean|是否排除 minimum|
-|minLength|number|限制字符串或数组的最小长度|
-|maxLength|number|限制字符串或数组的最大长度|
-|trim|String|去除空白字符，支持 none&#124;both&#124;start&#124;end，默认none，仅bsonType="string"时有效|
-|format|'url'&#124;'email'|数据格式，不符合格式的数据无法入库。目前只支持'url'和'email'，未来会扩展其他格式|
-|pattern|String|正则表达式，如设置为手机号的正则表达式后，不符合该正则表达式则校验失败，无法入库|
-|validateFunction|string|扩展校验函数名|
-|errorMessage|string&#124;Object |当数据写入或更新时，校验数据合法性失败后，返回的错误提示|
-|defaultValue|string&#124;Object|默认值|
-|forceDefaultValue|string&#124;Object|强制默认值，不可通过clientDB的代码修改，常用于存放用户id、时间、客户端ip等固定值。具体参考下表的defaultValue|
-|foreignKey|String|关联字段。表示该字段的原始定义指向另一个表的某个字段，值的格式为`表名.字段名`，比如订单表的下单用户uid字段指向uni-id-users表的_id字段，那么值为`uni-id-users._id`。关联字段定义后可用于[联表查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup)，通过关联字段合成虚拟联表，极大的简化了联表查询的复杂度|
-|parentKey|String|同一个数据表内父级的字段。详情参考：[树状数据查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=gettree)|
-|permission|Object|数据库权限，控制什么角色可以对什么数据进行读/写，可控制表和字段，可设置where条件。见下文[详述](uniCloud/schema?id=permission)|
-|label|string|字段标题。schema2code生成前端代码时，渲染表单项前面的label标题|
-|group|string|分组id。schema2code生成前端代码时，多个字段对应的表单项可以合并显示在一个uni-group组件中|
-|order|int|表单项排序序号。schema2code生成前端代码时，默认是以schema中的字段顺序从上到下排布表单项的，但如果指定了order，则按order规定的顺序进行排序。如果表单项被包含在uni-group中，则同组内按order排序|
-|component|Object&#124;Array|schema2code生成前端代码时，使用什么组件渲染这个表单项。已废弃。请使用下面的componentForEdit和componentForShow|
-|componentForEdit|Object&#124;Array|HBuilderX 3.1.0+, 生成前端编辑页面文件时(add.vue、edit.vue)，使用什么组件渲染这个表单项。比如使用input输入框。|
-|componentForShow|Object&#124;Array|HBuilderX 3.1.0+, 生成前端展示页面时(list.vue、detail.vue)，使用什么组件渲染。比如使用uni-dateformat格式化日期。|
+|属性分类|属性|类型|描述|
+|:-|:-|:-|:-|
+|基本|bsonType|any|字段类型，如json object、字符串、数字、bool值、日期、时间戳，具体见下表bsonType可用类型|
+|基本|arrayType|String|数组项类型，bsonType="array" 时有效，HBuilderX 3.1.0+ 支持，具体见下表arrayType可用类型|
+|基本|title|string|标题，开发者维护时自用。在schema2code生成前端表单代码时，默认用于表单项前面的label|
+|基本|description|string|描述，开发者维护时自用。在生成前端表单代码时，如果字段未设置componentForEdit，且字段被渲染为input，那么input的placehold将默认为本描述|
+|基本|defaultValue|string&#124;Object|默认值|
+|基本|forceDefaultValue|string&#124;Object|强制默认值，不可通过clientDB的代码修改，常用于存放用户id、时间、客户端ip等固定值。具体参考下表的defaultValue|
+|值域校验|required|array|是否必填。支持填写必填的下级字段名称。required可以在表级的描述出现，约定该表有哪些字段必填。也可以在某个字段中出现，如果该字段是一个json对象，可以对这个json中的哪些字段必填进行描述。详见下方示例|
+|值域校验|enum|Array|字段值枚举范围，数组中至少要有一个元素，且数组内的每一个元素都是唯一的。**enum最多只可以枚举500条**|
+|值域校验|enumType|String|字段值枚举类型，可选值tree。设为tree时，代表enum里的数据为树形结构。此时schema2code可生成多级级联选择组件|
+|值域校验|fileMediaType|String|文件类型，bsonType="file" 时有效，可选值 all&#124;image&#124;video 默认值为all,表示所有文件，image表示图片类型文件，video表示视频类型文件  HBuilderX 3.1.0+|
+|值域校验|fileExtName|String|文件扩展名过滤，bsonType="file" 时有效，多个文件扩展名用 "," 分割，例如: jpg,png，HBuilderX 3.1.0+ 支持|
+|值域校验|maximum|number|如果bsonType为数字时，可接受的最大值|
+|值域校验|exclusiveMaximum|boolean|是否排除 maximum|
+|值域校验|minimum|number|如果bsonType为数字时，可接受的最小值|
+|值域校验|exclusiveMinimum|boolean|是否排除 minimum|
+|值域校验|minLength|number|限制字符串或数组的最小长度|
+|值域校验|maxLength|number|限制字符串或数组的最大长度|
+|值域校验|trim|String|去除空白字符，支持 none&#124;both&#124;start&#124;end，默认none，仅bsonType="string"时有效|
+|值域校验|format|'url'&#124;'email'|数据格式，不符合格式的数据无法入库。目前只支持'url'和'email'，未来会扩展其他格式|
+|值域校验|pattern|String|正则表达式，如设置为手机号的正则表达式后，不符合该正则表达式则校验失败，无法入库|
+|值域校验|validateFunction|string|扩展校验函数名|
+|权限校验|permission|Object|数据库权限，控制什么角色可以对什么数据进行读/写，可控制表和字段，可设置where条件。见下文[详述](uniCloud/schema?id=permission)|
+|错误返回|errorMessage|string&#124;Object |当数据写入或更新时，校验数据合法性失败后，返回的错误提示|
+|关联关系|foreignKey|String|关联字段。表示该字段的原始定义指向另一个表的某个字段，值的格式为`表名.字段名`，比如订单表的下单用户uid字段指向uni-id-users表的_id字段，那么值为`uni-id-users._id`。关联字段定义后可用于[联表查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup)，通过关联字段合成虚拟联表，极大的简化了联表查询的复杂度|
+|关联关系|parentKey|String|同一个数据表内父级的字段。详情参考：[树状数据查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=gettree)|
+|schema2code|label|string|字段标题。schema2code生成前端代码时，渲染表单项前面的label标题。如果不填，会使用title属性。适用于title不便显示在表单项前面的情况|
+|schema2code|group|string|分组id。schema2code生成前端代码时，多个字段对应的表单项可以合并显示在一个uni-group组件中|
+|schema2code|order|int|表单项排序序号。schema2code生成前端代码时，默认是以schema中的字段顺序从上到下排布表单项的，但如果指定了order，则按order规定的顺序进行排序。如果表单项被包含在uni-group中，则同组内按order排序|
+|schema2code|component|Object&#124;Array|schema2code生成前端代码时，使用什么组件渲染这个表单项。已废弃。请使用下面的componentForEdit和componentForShow|
+|schema2code|componentForEdit|Object&#124;Array|HBuilderX 3.1.0+, 生成前端编辑页面文件时(add.vue、edit.vue)，使用什么组件渲染这个表单项。比如使用input输入框。|
+|schema2code|componentForShow|Object&#124;Array|HBuilderX 3.1.0+, 生成前端展示页面时(list.vue、detail.vue)，使用什么组件渲染。比如使用uni-dateformat格式化日期。|
 
 **注意：**
-1. `DB Schema`的各种功能均只支持`clientDB`。如果使用云函数操作数据库，schema的作用仅仅是描述字段信息。同时强烈推荐使用HBuilderX 3.0以上版本使用`clientDB`。
-2. schema2code，是根据scheme自动生成数据的增删改查页面的功能。入口1在uniCloud web控制台的数据库schema界面，入口2在HBuilderX中点击schema右键菜单。[详见](https://ext.dcloud.net.cn/plugin?id=4684)
-3. 暂不支持子属性校验
+1. schema2code，是根据scheme自动生成数据的增删改查页面的功能。入口1在uniCloud web控制台的数据库schema界面；入口2在HBuilderX中点击schema右键菜单。[详见](https://ext.dcloud.net.cn/plugin?id=4684)
+2. 暂不支持子属性校验
 
-**一个带有字段的schema基本示例**
+**示例**
 
-假使一个表有5个字段："name", "year", "major", "address", "gpa"。其中前4个字段是必填字段，然后"address"字段类型为json object，它下面又有若干子字段，其中"city"字段必填。
+如果你阅读过[数据库入门文档](hellodb.md)，那么你的服务空间此时应该有表`resume`，且里面有一条数据。
 
-则schema按如下编写。
+我们仍以 `resume` 表为例，除了`_id`外，该表有6个业务字段：`name`, `birth_year`, `tel`, `email`, `address`, `intro`。
+
+业务规则如下：
+- `name`字段是字符串，长度大于等于2小于等于17，必填，需要去除头尾空白字符
+- `birth_year`字段是大于等于1950小于2020的数字，必填
+- `tel`字段是字符串，但格式是手机号，必填
+- `email`字符是字符串，但格式是email，必填
+- `address`字段类型为json object，它下面又有2个子字段，`city`和`street`，其中"city"字段必填
+- `intro`字段类型为string，非必填，需要去除头尾空白字符
+
+则`resume.schema.json`按如下编写。
 
 ```json
 {
-  "required": ["name", "year", "major", "address"],
-  "properties": {
-    "name": {
-      "bsonType": "string",
-      "description": "must be a string and is required"
-    },
-    "year": {
-      "bsonType": "int",
-      "minimum": 2017,
-      "maximum": 3017,
-      "description": "must be an integer in [ 2017, 3017 ] and is required"
-    },
-    "major": {
-      "enum": ["Math", "English", "Computer Science", "History", null],
-      "description": "can only be one of the enum values and is required"
-    },
-    "gpa": {
-      "bsonType": "double",
-      "description": "must be a double if the field exists"
-    },
-    "address": {
-      "bsonType": "object",
-      "required": ["city"],
-      "properties": {
-        "street": {
-          "bsonType": "string",
-          "description": "must be a string if the field exists"
-        },
-        "city": {
-          "bsonType": "string",
-          "description": "must be a string and is required"
-        }
-      }
-    }
-  }
+	"bsonType": "object",
+	"required": ["name", "birth_year", "tel", "email"],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"title": "姓名",
+			"trim": "both",
+			"minLength": 2,
+			"maxLength": 17
+		},
+		"birth_year": {
+			"bsonType": "int",
+			"title": "出生年份",
+			"minimum": 1950,
+			"maximum": 2020
+		},
+		"tel": {
+			"bsonType": "string",
+			"title": "手机号码",
+			"pattern": "^\\+?[0-9-]{3,20}$",
+			"trim": "both"
+		},
+		"email": {
+			"bsonType": "string",
+			"title": "email",
+			"format": "email",
+			"trim": "both"
+		},
+		"address": {
+			"bsonType": "object",
+			"title": "地址",
+			"required": ["city"],
+			"properties": {
+				"city": {
+					"bsonType": "string",
+					"title": "城市"
+				},
+				"street": {
+					"bsonType": "string",
+					"title": "街道",
+					"trim": "both"
+				}
+			}
+		},
+		"intro":{
+			"bsonType": "string",
+			"title": "简介",
+			"trim": "both"
+		}
+	}
 }
+
 ```
 
+注意：
+- 把permission改成所有人可操作是为了测试方便，真实业务时需按照业务需求调整，需学习uni-id后方可掌握
+- 真实业务不推荐address下设city和street，拉平层级更好。另外city应该通过enum关联另一个城市表，在候选城市列表中选择，后续在enum文档中举例
 
-uniCloud推出了`openDB`开源数据库规范，包括用户表、文章表、商品表等很多模板表，这些模板表均已经内置`DB Schema`，可学习参考。[详见](https://gitee.com/dcloud/opendb)
+schema保存后，可以通过代码测试。注意在uniCloud web控制台修改数据不受schema限制，只有通过JQL操作数据时schema才生效。
 
-schema 国际化方案 [详见](/collocation/i18n?id=schema)
+我们在前端测试工程里新加一个按钮“添加数据”
+
+```html
+<template>
+	<view class="content">
+		<button @click="addresume()">添加数据</button>
+	</view>
+</template>
+
+<script>
+	const db = uniCloud.database();
+	export default {
+		data() {
+			return {}
+		},
+		methods: {
+			addresume() {
+				db.collection("resume").add({
+					"name": "1",
+					"birth_year": 1949,
+					"tel": "1",
+					"email": "1"
+				}).then((res) => {
+					// res 为数据库查询结果
+					console.log(res)
+				}).catch((err) => {
+					console.log(err.message)
+				});
+			}
+	}
+</script>
+```
+
+可以看到，不符合规则的数据无法通过JQL操作入库。可以依次把各个字段的测试值修正为合法格式测试，直到可以正常入库。
+
+成功后，res会返回新增记录的id，也可以在web控制台看到新增的数据。
+
+失败的提示语也可以通过errorMessage自定义。
+
+成功后，再次点击“添加数据”按钮，会发现重复数据插入。避免这种情况需要设置索引，比如将tel字段设为唯一索引。[详见](db-index.md)
+
+官方推出了`openDB`开源数据库规范，包括用户表、文章表、商品表等很多模板表，这些模板表均已经内置`DB Schema`，可学习参考。[详见](opendb.md)
+
+schema 国际化方案 [详见](/tutorial/i18n?id=schema)
 
 
-#### 字段类型bsonType@bsontype
+### 字段类型bsonType@bsontype
 
-- bool （布尔值，true|false）
-- string （字符串）
-- int （整数）
-- double （精度数。由于浮点精度问题，慎用）
-- object （对象。地理位置也属于object）
-- array （数组）
-- timestamp （时间戳）
-- date （日期）
-- file 云存储文件的信息体。不直接存储文件，而是一个json object，包括云存储文件的名称、路径、文件体积等信息。（HBuilderX 3.1.0+ ）
-- password （一种特殊的string。这类字段不会通过clientDB传递给前端，所有用户都不能通过clientDB读写，即使是admin管理员）
+- bool：布尔值，true|false
+- string：字符串
+- password：一种特殊的string。这类字段不会通过clientDB传递给前端，所有用户都不能通过clientDB读写，即使是admin管理员。[uni-id-user](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-users/collection.json)表有示例
+- int：整数
+- double：精度数。由于浮点精度问题，慎用
+- object：json对象。地理位置也属于object
+- file：一种特殊的object，固定格式存放云存储文件的信息。不直接存储文件，而是一个json object，包括云存储文件的名称、路径、文件体积等信息。（HBuilderX 3.1.0+ ）
+- array：数组
+- timestamp：时间戳
+- date：日期
 
 复杂格式说明：
 - timestamp是一串数字的时间戳，一般通过如下js获取`var timestamp = new Date().getTime()；`。它的好处是屏蔽了时区差异。阿里云和腾讯云的云端时区是0，但在HBuilderX本地运行云函数时，如果是中国的电脑，时区则会变成8，导致显示错乱。所以推荐使用时间戳。但时间戳是一串记录毫秒的数字，不合适直接渲染到前端界面上。推荐的做法是在前端渲染时使用[`<uni-dateformat>`组件](https://ext.dcloud.net.cn/plugin?id=3279)。
@@ -221,21 +305,22 @@ schema 国际化方案 [详见](/collocation/i18n?id=schema)
 
 `image`键是图片的扩展键，除了基本的宽高像素外，开发者可以自己扩展其他键，比如色位。同理`video`也可以自行扩展。
 
-举例：表的schema中定义了2个字段：_id和image，image为file类型，定义格式如下：
+**示例**
+
+以`resume`表为例，新加一个照片字段`photo`，设为file类型，定义格式如下（省略了其他老字段）：
 
 ```json
 {
   "schema": {
     "bsonType": "object",
-    "required": [],
+    "required": ["name", "birth_year", "tel", "email"],
     "properties": {
       "_id": {
         "description": "ID，系统自动生成"
       },
-      "image": {
+      "photo": {
         "bsonType": "file",
-        "title": "图片",
-        "description": "图片",
+        "title": "照片",
         "fileMediaType": "image", // 可选值 all|image|video 默认值为all,表示所有文件，image表示图片类型文件，video表示视频类型文件
         "fileExtName": "jpg,png", // 扩展名过滤，多个用 , 分割
       }
@@ -244,21 +329,25 @@ schema 国际化方案 [详见](/collocation/i18n?id=schema)
 }
 ```
 
-前端配套组件：
+**file的前端配套组件：**
 
-uni-ui组件库中包含组件：`<uni-file-picker>` 。该组件和file字段的数据库完美搭配。组件首先选择文件，并上传到uniCloud云存储，在表单提交后将上传文件的地址写入file字段中。详见：[https://ext.dcloud.net.cn/plugin?id=4079](https://ext.dcloud.net.cn/plugin?id=4079)
+uni-ui组件库中包含组件：`<uni-file-picker>` 。该组件和file字段的数据库完美搭配。
 
-schema2code：
+组件首先选择文件，并上传到uniCloud云存储，在表单提交后将上传文件的地址写入file字段中。详见：[https://ext.dcloud.net.cn/plugin?id=4079](https://ext.dcloud.net.cn/plugin?id=4079)
 
-DB Schema定义好字段类型为file后，可以通过schema2code工具，直接生成上传表单页面，前端页面包含`<uni-file-picker>`组件，选择、上传、写库一气呵成。详见：[schema2code](/uniCloud/schema?id=autocode)
+**file和schema2code：**
 
-#### 数组字段类型的子类型arrayType@arraytype
+DB Schema定义字段类型为file后，可以通过schema2code工具，直接生成上传表单页面，前端页面包含`<uni-file-picker>`组件，选择、上传、写库一气呵成。详见：[schema2code](schema2code.md)
+
+### 数组字段类型的子类型arrayType@arraytype
 
 一个字段如果bsonType是array，那么它可以进一步通过arrayType指定这个数组里每个数组项目的bsonType，值域仍然是所有的字段类型。
 
 比如一个字段存储了多张图片，那么可以设置bsonType为array，然后进一步设置arrayType为file。
 
-比如某表的schema定义了2个字段：_id和images，images存储用户批量上传的多张图，如下：
+**示例**
+
+以`resume`表为例，新加一个照片字段`photos`，设为file类型，定义格式如下（省略了其他老字段）：
 
 ```json
 {
@@ -271,10 +360,9 @@ DB Schema定义好字段类型为file后，可以通过schema2code工具，直�
       },
       "images": {
         "bsonType": "array",
-        "title": "图片",
-        "description": "多张图片",
         "arrayType": "file",
-				"multiple": true, // 允许选择多张图片
+        "title": "照片",
+		"multiple": true, // 允许选择多张图片，schema2code生效
         "fileMediaType": "image", // 可选值 all|image|video 默认值为all,表示所有文件，image表示图片类型文件，video表示视频类型文件
         "fileExtName": "jpg,png", // 扩展名过滤，多个用 , 分割
         "maxLength": 3 // 限制最大数量
@@ -284,11 +372,415 @@ DB Schema定义好字段类型为file后，可以通过schema2code工具，直�
 }
 ```
 
-arrayType为file时，与单独的bsonType为file相同，`<uni-file-picker>`组件和schema2code均可使用。
+- arrayType为file时，与单独的bsonType为file相同，`<uni-file-picker>`组件和schema2code均可使用。
+- multiple、fileMediaType、fileExtName、maxLength都可对schema2code生成的客户端页面生效
 
-#### url格式@url
+### 默认值defaultValue/forceDefaultValue@defaultvalue
+
+defaultValue和forceDefaultValue都是默认值，即新增一行数据记录时，如果字段内容未提供，则按默认值填充该字段内容。但2者也有区别，如下：
+
+- defaultValue没有强制力，是普通的默认值，如果客户端上传一个其他值，则按客户端传的值为准。
+- forceDefaultValue则是schema强制约定的值，不管客户端传什么都无法修改。只要数据库新增一条记录，字段的值就会是forceDefaultValue。
+
+在实际开发中，forceDefaultValue常用于设置为当前服务器时间、当前登录用户id、客户端ip等。
+这些数据都不能通过前端上传，不安全。过去只能在云端写云函数操作。在schema配置后则可以不用写云函数。使用JQL新增数据记录时会自动补齐这些数据。
+
+`defaultValue/forceDefaultValue`内可以使用固定值，还可以使用预置变量`$env`，形式如下：
+
+```json
+"forceDefaultValue": {
+  "$env": "now"
+}
+```
+
+预置变量`$env`可取值如下：
+
+|变量			|说明																								|
+|:-:			|:-:																								|
+|now			|当前服务器时间戳																					|
+|clientIP	|当前客户端IP																				|
+|uid			|当前用户Id，基于`uni-id`。如果当前用户未登录或登录状态无效会报错	|
+
+示例：
+
+```json
+// 指定默认值为true
+"defaultValue": true
+
+// 指定强制默认值为当前服务器时间戳
+"forceDefaultValue": {
+  "$env": "now"
+}
+
+// 指定强制默认值为当前客户端IP
+"forceDefaultValue": {
+  "$env": "clientIP"
+}
+
+// 指定强制默认值为当前客户id
+"forceDefaultValue": {
+  "$env": "uid"
+}
+```
+
+
+以`resume`表为例，新增一个字段`create_time`，表示记录的创建时间。
+
+该字段的`defaultValue`指定为服务器时间。新增记录时，若前端不传该字段，则默认为当前服务器时间。若前端传一个指定的值，则以传的值为准。
+
+```json
+{
+  "bsonType": "object",
+  "required": [],
+  "properties": {
+    "create_time": {
+      "bsonType": "timestamp",
+      "title": "创建时间",
+      "defaultValue": {
+        "$env": "now"
+      }
+    }
+  }
+}
+```
+
+
+强制默认值`forceDefaultValue`，指定为当前服务器时间戳。此时前端传任何值均无效，新增记录时一定会变成当前云端时间。
+
+```json
+{
+  "bsonType": "object",
+  "required": [],
+  "properties": {
+    "create_time": {
+      "bsonType": "timestamp",
+      "title": "创建时间",
+      "forceDefaultValue": {
+        "$env": "now"
+      }
+    }
+  }
+}
+```
+
+在实际业务中，记录的创建时间不能由客户端篡改，比如强制为云端时间。所以这个场景下必须使用`forceDefaultValue`。
+
+### foreignKey字段外键
+
+一个复杂的业务系统，有很多张数据表。表与表之间，存在的数据关联。foreignKey用于描述数据关联关系。
+
+比如一个文章系统，至少需要用户表、文章分类表、文章表、评论表。opendb已经包含了这4张表，可以点击链接看这些表的结构：
+- 用户表：[uni-id-users](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-users/collection.json)
+- 文章分类表：[opendb-news-categories](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-news-categories/collection.json)
+- 文章表：[opendb-news-articles](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-news-articles/collection.json)
+- 评论表：[opendb-news-comments](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-news-comments/collection.json)
+
+#### 分表
+我们先不展开描述上面这几张表，首先讲解为什么分表、怎么分表。
+
+- 熟悉关系型数据库的开发者对分表设计并不陌生
+	只不过在uniCloud的数据库中，新增了一个传统数据库并没有的schema，其中还有一个foreignKey来表达各个表之间关联关系。
+	比如上面几个表中的文章表：[opendb-news-articles](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-news-articles/collection.json)，其中的作者字段`user_id`配置了`"foreignKey": "uni-id-users._id"`
+- 而对于初学者，首先需要搞明白的是，为什么需要分表。
+
+因为MongoDB的灵活性，理论上可以在用户表[uni-id-users]中新增一个字段articles，在articles下面通过数组来存放该作者的每一遍文章，然后在该文章中再来一个字段comments，存放该文章的每一条评论。
+
+如下，uni-id-users表的数据内容，假使里面有2个用户，zhangsan和lisi，然后lisi写了1篇文章，这篇文章又被zhangsan评论了1条。
+```json
+[{
+	"_id": "60b92a42e22fbe00018c359d",
+    "username": "zhangsan",
+    "password": "03caebb36670995fc261a275d212cad65e4bbebd",
+    "register_date": 1622747714731,
+    "register_ip": "192.168.0.1",
+},
+{
+	"_id": "60b9315801033700011ba9ed",
+    "username": "lisi",
+    "password": "03caebb36670995fc261a275d212cad65e4bbebd",
+    "register_date": 1622747714731,
+    "register_ip": "192.168.0.2",
+	"articles":[
+		{
+			"title": "文章标题",
+			"content": "文章内容",
+			"publish_date": 1617850851000,
+			"publish_ip": "192.168.0.2",
+			"comments":[
+				{
+					"user_id":"60b92a42e22fbe00018c359d",
+					"comment_content":"评论内容",
+					"comment_date":1617850851022,
+					"comment_ip": "192.168.0.1"
+				}
+			]
+		}
+	]
+}]
+```
+
+可以看出，这个uni-id-users表形成了用户、文章、评论的三层嵌套。
+
+虽然MongoDB可以这么嵌套，但**实际业务中不该这样设计**。会导致查询性能低下甚至某些查询条件无法实现。
+
+数据库是数字系统的底层，它应该清晰有条理，人、文章、评论以及这3者的关系，都应该清晰且不冗余。
+
+MongoDB的嵌套，更多的适用于**不会被单独拎出来查询的、记录条数较少的场景**。
+
+比如简历表中的工作经历，就可以嵌套。因为工作经历数量较少、且不会出现单独查工作经历而不查人的情况。
+
+但文章表，是一定需要独立的，因为文章数量会非常多，它会单独搜索；
+
+评论表其实不太有单独搜索的需求，它总是伴随指定文章出现。但因为数量会很多，评论也需要分页查询，嵌套在文章表下不利于分页查询。
+
+所以正确的数据库设计，还是分开这几张表。另外很多文章系统都会有文章分类，比如 社会、教育、娱乐、体育、科技...，所以还需要一个文章分类表。
+
+opendb的这4张表，才是正确的分表设计。
+- 用户表：[uni-id-users](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-users/collection.json)
+- 文章分类表：[opendb-news-categories](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-news-categories/collection.json)
+- 文章表：[opendb-news-articles](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-news-articles/collection.json)
+- 评论表：[opendb-news-comments](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-news-comments/collection.json)
+
+可以看到注册用户都在uni-id-users表中，而文章内容在opendb-news-articles表中。一个用户可能写了很多文章，这些文章不会存入uni-id-users表。
+
+#### 表之间的关系
+
+既然有了分表的概念，就存在表与表之间关系的概念了。
+
+比如在文章表中，如何存放文章的作者信息？如何表示这篇文章是哪个用户写的？是存放作者的用户名吗？
+
+实际上，文章表中的作者字段，也就是`user_id`字段，存放的是用户表中的这个作者的`_id`字段的值。`_id`是uniCloud数据库每张表的每个记录都有的唯一字段。
+
+可以看下用户表uni-id-users和文章表opendb-news-articles具体数据，直观感受下：
+
+uni-id-users用户表，还是假使里面有2个作者，zhangsan和lisi
+```json
+[{
+	"_id": "60b92a42e22fbe00018c359d",
+    "username": "zhangsan",
+    "password": "03caebb36670995fc261a275d212cad65e4bbebd",
+    "register_date": 1622747714731,
+    "register_ip": "127.0.0.1",
+},
+{
+	"_id": "60b9315801033700011ba9ed",
+    "username": "lisi",
+    "password": "03caebb36670995fc261a275d212cad65e4bbebd",
+    "register_date": 1622747714731,
+    "register_ip": "127.0.0.1",
+}]
+```
+
+opendb-news-articles文章表，里面只有1篇文章，这篇文章是 lisi 写的，所以在字段`user_id`中存的就是`60b9315801033700011ba9ed`，这就是uni-id-users表中 lisi 对应的 `_id`
+```json
+{
+	"_id": "606e721280b8450001e773c6",
+    "category_id": "606e6feb653b8400017214a3",
+    "title": "这里是标题",
+    "content": "这里是正文",
+    "user_id": "60b9315801033700011ba9ed",
+    "publish_date": 1617850851000,
+    "publish_ip": "119.131.174.251"
+}
+```
+
+只要`user_id`这个关联关系映射起来，数据就清晰且完整了。
+
+并不需要在文章表opendb-news-articles存放作者的用户名、昵称、头像、注册时间甚至密码，只需要存它的`user_id`，就精准、最小冗余的表达数据关系。
+
+当然也有的系统设计为了减少联表查询而在文章表里冗余存放作者昵称和头像，是否使用冗余可以视需求而定，但一定需要用`user_id`来做数据表的关联。
+
+#### foreignKey的用法
+
+上面显示的是2个表的数据内容，但回到 DB Schema 中，如何在schema中表达这种关联关系？那就是foreignKey，外键。
+
+文章表opendb-news-articles的 DB Schema 中的`user_id`字段的描述如下：
+```json
+"properties": {
+  "_id": {
+	"description": "存储文档 ID（用户 ID），系统自动生成"
+  },
+  "user_id": {
+	"bsonType": "string",
+	"description": "文章作者ID， 参考`uni-id-users` 表",
+	"foreignKey": "uni-id-users._id",
+	"defaultValue": {
+	  "$env": "uid"
+	}
+  },
+  "title":{},
+  "content":{}
+}
+```
+
+上面的重点，就在这个foreignKey，**它的前半部分是另一张表的表名，中间用`.`分割，后半部分是另一张表的字段名**。
+
+它代表文章表这个`user_id`字段，在关系上实质指向uni-id-users表的`_id`字段。也就是文章表的`user_id`字段里存的值，其实是源自uni-id-users表的`_id`字段里的值。
+
+注意不要搞反，并不是在uni-id-users表的schema的`_id`字段里配foreignKey。uni-id-users表的`_id`字段是原值，不引用自任何地方。而是在其他引用uid的字段来配。
+
+同样，评论表[opendb-news-comments](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-news-comments/collection.json)的schema里，
+- 评论用户id字段`user_id`的foreignKey需指向`"uni-id-users._id"`
+- 文章id字段`article_id`的foreignKey需指向`"opendb-news-articles._id"`
+
+配置foreignKey，除了清晰描述数据关系，它最大的作用是**联表查询**。
+
+JQL没有像SQL那样提供了join、leftjoin、innerjoin这些语法，只需要配置好数据关系，配好foreignKey，查询时就可以自动联表查询。
+
+联表查询内容较多，[详见](jql.md#lookup)
+
+<!-- 
+以简历和招聘系统为例，一个完整系统至少需要如下表：
+- 应聘者注册信息表（uni-id-users），包括`_id`、用户名、密码、注册时间
+- 应聘者简历表（resume），包括`_id`、应聘者uid和简历中各种信息
+- 招聘方注册信息表（uni-id-users），一般还是使用uni-id-users表，但通过不同的appid区分。详见uni-id的多系统登录
+- 招聘方岗位表（job），包括`_id`、招聘方uid、职务名称、职务内容要求、薪资范围、职务发布时间
+- 简历投递记录表（send-resume），包括`_id`、应聘者uid、岗位jobid、投递时间、简历是否被查阅
+ -->
+
+### parentKey树形表
+
+在传统关系型数据库中，tree是很难表达的，只有oracle这种商业数据库提供了tree查询。其他关系型数据库需要开发者通过复杂的代码实现tree查询。
+
+在MongoDB中，虽然自身天然支持tree，但实际业务中并不会使用MongoDB的json嵌套方式来描述tree。
+
+比如部门tree，部门可以动态的新增、删除、改名、挪动层级。实际上每个部门，在部门表里的数据仍然是一条独立的行数据记录，并不是一条记录里无限嵌套下去。
+
+如部门表，里面有2条数据，一条数据记录是“总部”，另一条数据记录“一级部门A”
+- 错误的做法：
+```json
+{
+    "_id": "5fe77207974b6900018c6c9c",
+    "name": "总部",
+	"child": [
+		{
+		    "_id": "5fe77232974b6900018c6cb1",
+		    "name": "一级部门A",
+		    "child": [],
+		    "status": 0
+		}
+	],
+    "status": 0
+}
+```
+
+除非你的部门就这2个，永远不变。否则就不该使用上面的做法。
+1. 如果部门很多嵌套很深，查询写法会很困难
+2. 如果需要提供可视化的界面给运维人员，动态增删改部门，很难实现。往往需要改代码而不是直接改数据。
+
+- 正确的做法：
+每个部门是一条记录，用`parent_id`来描述层级关系。
+```json
+[{
+    "_id": "5fe77207974b6900018c6c9c",
+    "name": "总部",
+    "parent_id": "",
+    "status": 0
+},
+{
+    "_id": "5fe77232974b6900018c6cb1",
+    "name": "一级部门A",
+    "parent_id": "5fe77207974b6900018c6c9c",
+    "status": 0
+}]
+```
+
+在"一级部门A"的`parent_id`中，值为`5fe77207974b6900018c6c9c`，它其实就是"总部"的`_id`。
+
+那么在 DB Schema 中如何表达这种关系呢？就要使用parentKey。
+
+部门表[opendb-department](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-department/collection.json)的schema中，将字段`parent_id`的"parentKey"设为`"_id"`，即指定了数据之间的父子关系，如下：
+
+```json
+{
+  "bsonType": "object",
+  "required": ["name"],
+  "properties": {
+    "_id": {
+      "description": "ID，系统自动生成"
+    },
+      "name": {
+      "bsonType": "string",
+      "description": "名称"
+    },
+    "parent_id": {
+      "bsonType": "string",
+      "description": "父id",
+      "parentKey": "_id", // 指定父子关系为：如果数据库记录A的_id和数据库记录B的parent_id相等，则A是B的父级。
+    },
+    "status": {
+      "bsonType": "int",
+      "description": "部门状态，0-正常、1-禁用"
+    }
+  }
+}
+```
+
+parentKey将数据表不同记录的父子关系描述了出来。一个字段A的属性设置了parentKey并指向另一个字段B，那么这个A的值，就一定等于B的值。
+
+使用parentKey描述了字段父子关系后，就可以通过JQL的getTree方便的做tree查询了。因内容较多，[详见](jql.md#gettree)
+
+## 字段值域规则validator@validator
+
+`DB Schema`提供了一套完善的字段值域描述规则，并且自动进行数据入库校验，不符合规则的数据无法写入数据库。
+
+注意只有要对数据库写入内容时（新增记录或修改记录）才涉及字段值域的校验问题。读与删不涉及。
+
+`DB Schema`里的字段值域校验系统由4部分组成：
+1. 字段的属性配置：是否必填（required）、数字范围（maximum、minimum）、字符串长度范围（minLength、maxLength）、format、pattern正则表达式、enum、trim等所有属性表格中被分类在值域校验里的属性
+2. 字段间的关系约束：fieldRules。在schema一级节点，和properties平级。它比字段的属性配置更强大，可以描述字段之间的关系，比如字段结束时间需大于字段开始时间；可以简单编程
+3. 字段的扩展校验函数：validateFunction。当属性配置和fieldRules都不能满足需求，还可以写完整的js编程进行校验。
+4. 错误提示：errorMessage。常见错误有默认的错误提示语。开发者也可以自定义错误提示语
+
+### 1. 字段属性配置
+
+#### required必填字段
+
+在schema一级节点的`required`中，可以以数组的方式填入多个字段名称。比如以下示例将name字段设为必填
+
+```json
+{
+  "bsonType": "object",
+  "required": ["name"],
+  "properties": {
+    "name": {
+      "bsonType": "string",
+      "title": "姓名",
+      "errorMessage": "{title}不能为空"
+    }
+  }
+}
+```
+
+一个字段的`required`，和字段的其他规则的关系如下：
+- 字段被`required`时，必须传入该字段
+- 字段没有被`required`时，如果传入的数据包含该字段则进行其他规则校验，否则忽略该字段的其他校验规则。
+
+以下面的代码为例，如果不传name的值可以通过校验；如果传了name则要求name最小长度为2，否则校验失败
+
+```json
+{
+  "bsonType": "object",
+  "required": [],
+  "properties": {
+    "name": {
+      "bsonType": "string",
+      "title": "姓名",
+      "minLength": 2,
+      "errorMessage": {
+        "required": "{title}不能为空",
+        "minLength": "{title}不能小于 {minLength} 个字符"
+      }
+    }
+  }
+}
+```
+
+#### format@url
 
 仅对string类型字段生效。
+
+其中format的url格式补充说明如下：
 
 `http://` | `https://` | `ftp://` 开头, `//` 后必须包含一个 `.`(localhost除外)
 
@@ -304,124 +796,184 @@ arrayType为file时，与单独的bsonType为file相同，`<uni-file-picker>`组
 - file:\\
 - file:\\\
 
-#### trim@trim
+**示例**
 
-仅对string类型字段生效。
-
-|值|描述|
-|:-|:-|
-|none|不处理|
-|both|从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR等）|
-|start|从字符串的开头移除空白字符|
-|end|从一个字符串的末端移除空白字符|
-
-trim的优先级，高于字符串的其他验证规则，比如format、pattern、minLength、validateFunction、fileRules。配置trim后，JQL引擎会首先将字符串trim后再交给其他验证系统验证。
-
-#### enum属性@enum
-
-enum，即枚举。一个字段设定了enum后，该字段的合法内容，只能在enum设定的数据项中取值，**enum最多只可以枚举500条**。
-
-enum支持3种数据格式：
-1. 简单数组
-2. 支持描述的复杂数组
-3. 数据表查询
-
-
-- 简单数组
-
-如下示例的意思是，role字段的合法值域只能是“1”、“2”、“3”中的一个。
+可以在`resume`表中增加一个email字段，使用format来约束其格式。
 
 ```json
 {
   "bsonType": "object",
-  "required": [],
+  "required": ["email"],
   "properties": {
-    "_id": {
-      "description": "存储文档 ID（用户 ID），系统自动生成"
-    },
-    "role": {
-      "bsonType": "array",
-      "description": "角色，不允许重复",
-      "label": "角色",
-      "enum": [1, 2, 3]
-    }
-  }
-}
-```
-
-通过schema2code生成前端表单页面时，带有enum的字段会生成[uni-data-checkbox组件](https://ext.dcloud.net.cn/plugin?id=3456)，该组件在界面上渲染时会生成1、2、3这3个候选的复选框。所以一般不推荐使用简单数组，而是推荐下面的 支持描述的数组
-
-- 支持描述的数组
-
-如下示例的意思是，role字段的合法值域只能是“1”、“2”中的一个。但通过schema2code生成前端表单页面时，该字段会生成uni-data-checkbox组件，该组件在界面上渲染时会生成“角色1”、“角色2”这2个候选的复选框。
-
-```json
-{
-  "bsonType": "object",
-  "required": [],
-  "properties": {
-    "_id": {
-      "description": "存储文档 ID（用户 ID），系统自动生成"
-    },
-    "role": {
-      "bsonType": "array",
-      "description": "角色，不允许重复",
-      "label": "角色",
-      "enum": [
-        {
-          "value": 1,
-          "text": "角色1"
-        },
-        {
-          "value": 2,
-          "text": "角色2"
-        }
-      ]
-    }
-  }
-}
-```
-
-
-- 数据表查询
-
-**这种使用方式需要搭配foreignKey来使用，请看下面示例**
-
-一个字段的合法值域，可以是从另一个数据查询而来。也即，在enum中可以配置jql查询语句。
-
-例如有一个角色表uni-id-roles，里面已经存在若干个角色。那么在用户表uni-id-users的role字段里，就可以在enum里写jql查询，约定用户的角色字段的值，比如是在角色表中已经存在的值。
-
-通过schema2code生成前端表单页面时，该字段会生成uni-data-checkbox组件，该组件在界面上渲染时会自动从角色表中查询数据并显示所有候选的复选框。
-
-```json
-{
-  "bsonType": "object",
-  "required": [],
-  "properties": {
-    "_id": {
-      "description": "存储文档 ID（用户 ID），系统自动生成"
-    },
-    // role 云端数据, enum属性的值为JQL语法。
-    // 通过clientdb提交数据时多一次查库请求以校验数据是否有效
-    "role": {
-      "bsonType": "array",
-      "description": "角色",
-      "label": "角色",
-      "foreignKey": "uni-id-roles.role_id",
-      "enum": {
-        "collection": "uni-id-roles", // 表名，这里使用 uni-id-roles表举例，在uniCloud控制台使用 opendb 创建此表
-        "field": "role_name as text, role_id as value", //字段筛选，需要 as 成前端组件支持的字段名 text、value。text、value是datacom组件规范的标准
-        "where": "", // 查询条件
-        "orderby": "" // 排序字段及正序倒叙设置
+    "email": {
+      "bsonType": "string",
+      "title": "邮箱",
+      "format": "email",
+      "errorMessage": {
+        "required": "{title}不能为空",
+        "format": "{title}格式无效"
       }
     }
   }
 }
 ```
 
-除了普通的二维数据表，enum还支持tree型数据。
+#### pattern正则表达式
 
-设置`enumType`为"tree"，代表enum里的数据为树形结构，比如下面的例子，代表opendb-city-china表以getTree方式查询。在schema2code时，可自动生成多级级联选择组件，[详见](/uniCloud/schema?id=schema2picker)
+例如: 验证手机号 `"pattern": "^\\+?[0-9-]{3,20}$"`
+
+
+```json
+{
+  "bsonType": "object",
+  "required": ["name"],
+  "properties": {
+    "name": {
+      "bsonType": "string",
+      "title": "姓名",
+      "pattern": "",
+      "errorMessage": {
+        "required": "{title}不能为空",
+        "pattern": "{title}格式无效"
+      }
+    }
+  }
+}
+```
+
+#### enum枚举控制值域@enum
+
+enum，即枚举。一个字段设定了enum后，该字段的合法内容，只能在enum设定的候选数据项中取值。**enum最多只可以枚举500条**。
+
+enum支持3种数据格式来描述候选：
+1. 简单数组
+2. 支持描述的复杂数组
+3. 数据表查询
+
+##### enum格式之简单数组
+
+比如给`resume`表增加一个性别字段，合法值域只能是“0”、“1”、“2”中的一个。
+
+```json
+{
+  "bsonType": "object",
+  "required": [],
+  "properties": {
+    "_id": {
+      "description": "存储文档 ID（用户 ID），系统自动生成"
+    },
+    "gender": {
+      "bsonType": "array",
+      "title": "性别",
+      "description": "用户性别：0 未知 1 男性 2 女性",
+      "enum": [0,1,2]
+    }
+  }
+}
+```
+
+字段gender设成这样后，插入或修改的数据如果不是 0 或 1 或 2，就会报错，无法插入或更新数据。
+
+通过schema2code生成前端表单页面时，带有enum的字段会生成 picker 组件。该组件在界面上渲染时会生成“1、2、3”这3个候选的复选框。所以一般不推荐使用简单数组，而是推荐下面的 支持描述的数组。
+
+##### enum格式之支持描述的复杂数组
+
+仍然使用性别字段举例，合法值域只能是“0”、“1”、“2”中的一个。但通过schema2code生成前端表单页面时，该字段会生成uni-data-checkbox组件，该组件在界面上渲染时会生成“未知”、“男”、“女”这3个候选的复选框。
+
+```json
+{
+  "bsonType": "object",
+  "required": [],
+  "properties": {
+    "_id": {
+      "description": "存储文档 ID（用户 ID），系统自动生成"
+    },
+    "gender": {
+		"bsonType": "int",
+		"title": "性别",
+		"defaultValue": 0,
+		"enum": [
+			{
+				"text": "未知",
+				"value": 0
+			},
+			{
+				"text": "男",
+				"value": 1
+			},
+			{
+				"text": "女",
+				"value": 2
+			}
+		]
+	  }
+  }
+}
+```
+
+这种带描述的方式，让schema可读性提高，同时也让schema2code生成的前端界面可用性更高。
+
+对于候选比较少的情况，schema2code使用需要弹出一次的picker未必合适。如果想在界面中平铺候选，比如 男、女、未知 直接显示在表单中，此时可以在schema的componentForEdit属性中改用[uni-data-checkbox组件](https://ext.dcloud.net.cn/plugin?id=3456)来表达性别选择。
+
+##### enum格式之数据表查询
+
+一个字段的合法值域，可以是从另一个数据查询而来。也即，在enum中可以配置JQL查询语句。
+
+**这种方式需要搭配foreignKey来使用，也就是需要关联另一个表**
+
+在opendb中有一个民族表[opendb-nation-china](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-nation-china)，里面存放了中国的56个民族。
+
+我们要在`resume`表中加一个民族字段，就应该从这个`opendb-nation-china`表取值。
+
+1. 首先新建这个民族表
+
+在项目根目录uniCloud/database点右键，新建schema，选择`opendb-nation-china`
+
+这种opendb表的预置数据，需要上传schema到云端，才会添加到数据库中。所以需要对这个`opendb-nation-china.schema.json`点右键，上传 DB Schema
+
+就可以uniCloud web控制台创建，此时会自动入库数据，但需要对项目根目录uniCloud/database点右键->下载 DB Schema，才可以在本地调试时使用。
+
+2. 建立关联表关系、配置enum的jql查询
+
+设置`nation`字段的外键`"foreignKey": "opendb-nation-china.name"`。民族比较简单，这里我们直接取了民族表的汉字名称为关联key，没有取数据库ID。
+
+然后设置`nation`字段的enum如下：
+
+```json
+{
+  "bsonType": "object",
+  "required": [],
+  "properties": {
+    "_id": {
+      "description": "存储文档 ID（用户 ID），系统自动生成"
+    },
+    "nation": {
+      "bsonType": "string",
+      "title": "民族",
+      "foreignKey": "opendb-nation-china.name",
+      "enum": {
+        "collection": "opendb-nation-china",
+        "orderby": "first_letter asc",
+        "field": "name as value, name as text"
+      }
+    }
+  }
+}
+```
+
+这样客户端如果传上来一个不在`opendb-nation-china`表里的民族名称，是无法入库的。
+
+通过schema2code生成前端表单页面时，该字段会生成 picker 组件，该组件被点击后，会弹出候选项，这些候选项都是从民族表中查询数据并显示的。
+
+- enum格式之数据表查询之tree型数据
+
+除了普通的二维数据表，enum还支持**tree型数据**。即enumType为tree。
+
+在opendb中有一个城市表[opendb-city-china](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-city-china)，里面存放了中国的各个城市。城市是按 省、市、区 分三级的树形数据。
+
+在`resume`表中，有一个city字段，其合理的字段规则应该是从`opendb-city-china`表取值，
+
+设置`enumType`为"tree"，代表enum里的数据为树形结构，比如下面的例子，代表opendb-city-china表以getTree方式查询。在schema2code时，可自动生成多级级联选择组件，[详见](/uniCloud/schema2code?id=schema2picker)
 ```json
 {
   "schema": {
@@ -449,215 +1001,113 @@ enum支持3种数据格式：
 
 ```
 
-
 **注意**
 
-- enum内对普通的二维数据表枚举时，此表数据不可超过500条
+- enum内对普通的二维数据表枚举时，此表数据不可超过500条。否则违反enum最大500个值域范围的限制。
 
-#### 默认值defaultValue/forceDefaultValue@defaultvalue
+#### trim去除首尾空白字符@trim
 
-- defaultValue指定新增时当前字段默认值，客户端可以修改此值。
-- forceDefaultValue也是指定新增时当前字段的默认值，与defaultValue不一样，forceDefaultValue不可被客户端修改。
+是否将字符串两边空格trim掉。仅对string类型字段生效。
 
-在实际开发中，forceDefaultValue常用于设置为当前服务器时间、当前登录用户id、客户端ip时。
+|值|描述|
+|:-|:-|
+|none|不处理。默认为none|
+|both|从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR 等）|
+|start|从字符串的开头移除空白字符|
+|end|从一个字符串的末端移除空白字符|
 
-这些数据都不能通过前端上传，不安全。过去只能在云端写云函数操作。在schema配置后则可以不用写云函数。在前端通过clientDB方式新增数据记录时会自动补齐这些数据（云端操作数据库不识别schema）。
+trim的优先级，高于字符串的其他验证规则，比如format、pattern、minLength、validateFunction、fileRules。配置trim后，JQL引擎会首先将字符串trim后再交给其他验证系统验证。
 
-其中uid是和`uni-id`绑定的。如果用户没有登录，则无法获取uid，此时写入数据会报错。
+配置trim后，schema2code生成的前端页面中的输入框也将自动trim用户的输入内容，然后再提交云端。
 
+**示例**
 
-`defaultValue/forceDefaultValue`内可以使用一些预置变量，形式如下：
-
-```json
-"forceDefaultValue": {
-  "$env": "now"
-}
-```
-
-`$env`可取值如下：
-
-|变量			|说明																								|
-|:-:			|:-:																								|
-|now			|当前时间戳																					|
-|clientIP	|当前客户端IP																				|
-|uid			|当前用户Id，基于`uni-id`。如果当前用户未登录或登录状态无效会报错	|
-
-示例：
-
-```json
-// 指定默认值为true
-"defaultValue": true
-
-// 指定强制默认值为当前服务器时间戳
-"forceDefaultValue": {
-  "$env": "now"
-}
-
-// 指定强制默认值为当前客户端IP
-"forceDefaultValue": {
-  "$env": "clientIP"
-}
-
-// 指定强制默认值为当前客户id
-"forceDefaultValue": {
-  "$env": "uid"
-}
-```
-
-
-默认值 `"defaultValue": ...`，指定默认值为当前时间戳。新增记录时，若前端不传该字段，则默认为当前时间。若前端传一个指定的值，则以传的值为准。
+以`resume`表为例，name字段有minLength为2的限制，假使插入name的值为“a ”，由于`a`后面的空格会先被trim掉，长度变成1，导致这个数据无法被写入数据库。
 
 ```json
 {
   "bsonType": "object",
-  "required": [],
+  "required": ["name"],
   "properties": {
-    "create_time": {
-      "bsonType": "timestamp",
-      "label": "创建时间",
-      "defaultValue": {
-        "$env": "now"
-      }
+    "name": {
+      "bsonType": "string",
+      "title": "姓名",
+      "minLength": "2",
+      "trim" : "both"
     }
   }
 }
 ```
 
 
-强制默认值，覆盖默认值 `"forceDefaultValue": ...`，指定默认值为当前时间戳。此时前端传任何值均无效，新增记录时一定会变成当前时间。
+### 2. fieldRules字段间校验@field-rules
+
+自`HBuilderX 3.1.0`起，支持schema内配置一级节点fieldRules对字段之间的关系进行约束和校验。当然只校验一个字段也可以。
+
+fieldRules的写法等同JQL的where写法（也可以使用各种数据库运算方法），参考：[JQL where](jql.md#where)
+
+fieldRules内配置如下，数组内可以配置多个rule，每个rule都有rule表达式、错误提示语、运行兼容环境这3部分。
+
+```js
+{
+  "fieldRules": [{
+    "rule": "end_date == null || end_date != null && create_date < end_date", // 校验规则
+    "errorMessage": "创建时间和结束时间不匹配", // 错误提示信息（仅在新增时生效，更新数据时不会提示此信息）
+    "client": false // schema2code时，当前规则是否带到前端也进行校验。目前此属性暂不生效，fieldRules不会在客户端校验数据，仅会在云端进行校验
+  }],
+}
+```
+
+rule表达式，是一组js，返回值必须为true或false。返回false则触发提示错误，错误提示显示的是errorMessage的内容。
+
+rule表达式里支持：
+
+1. 字段名称
+2. 数据库运算方法
+3. js语法
+4. 另外还支持`new Date()`来获取时间。需要注意的是不同于数据库运算方法，`new Date()`内不可传入数据库字段作为参数
+
+上述配置中，`create_date`、`end_date`为字段名称。schema内也支持写字段操作方法，如add方法。
+
+例：在todo表内可以使用fieldRules限制`end_date`大于`create_date`
 
 ```json
 {
   "bsonType": "object",
-  "required": [],
+  "required": ["title","create_date"],
+  "fieldRules": [{
+    "rule": "end_date == null || end_date != null && create_date < end_date",
+    "errorMessage": "结束时间需大于创建时间"
+  }],
   "properties": {
-    "create_time": {
+    "title": {
+      "bsonType": "string",
+      "title": "标题"
+    },
+    "create_date": {
       "bsonType": "timestamp",
-      "label": "创建时间",
+      "title": "创建时间",
       "forceDefaultValue": {
         "$env": "now"
       }
+    },
+    "end_date": {
+      "bsonType": "timestamp",
+      "title": "结束时间"
     }
   }
 }
 ```
+  
+上述示例中，`create_date`为必填项，只需限制`end_date`存在时大于`create_date`即可
 
+**注意**
 
-### 字段值域校验系统validator@validator
+- 新增/更新数据时会校验所有新增/更新字段相关联的fieldRules。如上述规则中，如果更新`end_date`字段或者`create_date`字段均会触发校验
+- 新增数据时不需要查库进行校验，更新数据时需要进行一次查库校验（有多条fieldRules时也是一次）
+- fieldRules内不支持使用正则
 
-与字段值域校验相关的配置，不符合配置的数据无法入库。
-
-注意只有要对数据库写入内容时（新增记录或修改记录）才涉及字段值域的校验问题。
-
-`DB Schema`里的字段值域校验系统由4部分组成：
-1. 字段的属性配置：是否必填（required）、数据类型（bsonType）、数字范围（maximum、minimum）、字符串长度范围（minLength、maxLength）、format、pattern正则表达式
-2. 字段的扩展校验函数：validateFunction。当属性配置不满足需求，需要写js编程进行校验时，使用本功能。
-3. 字段间的关系约束：fieldRules。在schema一级节点，和properties平级，通过filedRules描述字段之间的关系，比如结束时间需大于开始时间。
-4. 错误提示：errorMessage。常见错误有默认的错误提示语。开发者也可以自定义错误提示语
-
-#### 1. 字段属性配置
-
-- 必填字段，`"required": ["name"]`
-
-```json
-{
-  "bsonType": "object",
-  "required": ["name"],
-  "properties": {
-    "name": {
-      "bsonType": "string",
-      "label": "姓名",
-      "errorMessage": "{label}不能为空"
-    }
-  }
-}
-```
-
-
-`required`包含`name`时，要求必须传入`name`。`required`不包含`name`时，如果传入的数据包含`name`会对name进行校验，否则忽略name的校验规则。以下面的代码为例，如果不传name能通过校验，如果传了name则要求name最小长度为2.
-
-```json
-{
-  "bsonType": "object",
-  "required": [],
-  "properties": {
-    "name": {
-      "bsonType": "string",
-      "label": "姓名",
-      "minLength": 2,
-      "errorMessage": {
-        "required": "{label}不能为空",
-        "minLength": "{label}不能小于 {minLength} 个字符"
-      }
-    }
-  }
-}
-```
-
-
-- 类型 `"bsonType": "string"`
-
-```json
-{
-  "bsonType": "object",
-  "required": ["name"],
-  "properties": {
-    "name": {
-      "bsonType": "string",
-      "label": "姓名",
-      "errorMessage": "{label}类型无效"
-    }
-  }
-}
-```
-
-
-- 格式 `"format": "email"`
-
-```json
-{
-  "bsonType": "object",
-  "required": ["email"],
-  "properties": {
-    "email": {
-      "bsonType": "string",
-      "label": "邮箱",
-      "format": "email",
-      "errorMessage": {
-        "required": "{label}不能为空",
-        "format": "{label}格式无效"
-      }
-    }
-  }
-}
-```
-
-
-- 正则 `"pattern": ""`
-
-例如: 验证手机号 `"pattern": "^\\+?[0-9-]{3,20}$"`
-
-
-```json
-{
-  "bsonType": "object",
-  "required": ["name"],
-  "properties": {
-    "name": {
-      "bsonType": "string",
-      "label": "姓名",
-      "pattern": "",
-      "errorMessage": {
-        "required": "{label}不能为空",
-        "pattern": "{label}格式无效"
-      }
-    }
-  }
-}
-```
-
-
-#### 2. validateFunction扩展校验函数@validatefunction
+### 3. validateFunction扩展校验函数@validatefunction
 
 扩展校验函数
 
@@ -745,10 +1195,10 @@ enum支持3种数据格式：
     "properties": {
       "name": {
         "bsonType": "string",
-        "label": "姓名",
+        "title": "姓名",
         "validateFunction": "checkabc",
         "errorMessage": {
-          "required": "{label}不能为空"
+          "required": "{title}不能为空"
         }
       }
     }
@@ -767,13 +1217,13 @@ enum支持3种数据格式：
     "properties": {
       "name": {
         "bsonType": "string",
-        "label": "姓名",
+        "title": "姓名",
         "validateFunction": {
             "name": "checkabc", // 扩展校验函数名
             "client": false //如果不配置默认是 true
         },
         "errorMessage": {
-          "required": "{label}不能为空"
+          "required": "{title}不能为空"
         }
       }
     }
@@ -814,74 +1264,8 @@ if (uni) {
 ```
 
 
-#### 3. fieldRules字段间校验@field-rules
 
-自`HBuilderX 3.1.0`起，支持schema内配置一级节点fieldRules对字段之间的关系进行约束和校验。当然只校验一个字段也可以。
-
-fieldRules的写法等同JQL的where写法（也可以使用各种数据库运算方法），参考：[clientDB where](uniCloud/clientdb.md?id=where)
-
-fieldRules内配置如下，数组内可以配置多个rule，每个rule都有rule表达式、错误提示语、运行兼容环境这3部分。
-
-```js
-{
-  "fieldRules": [{
-    "rule": "end_date == null || end_date != null && create_date < end_date", // 校验规则
-    "errorMessage": "创建时间和结束时间不匹配", // 错误提示信息（仅在新增时生效，更新数据时不会提示此信息）
-    "client": false // schema2code时，当前规则是否带到前端也进行校验。目前此属性暂不生效，fieldRules不会在客户端校验数据，仅会在云端进行校验
-  }],
-}
-```
-
-rule表达式，是一组js，返回值必须为true或false。返回false则触发提示错误，错误提示显示的是errorMessage的内容。
-
-rule表达式里支持：
-
-1. 字段名称
-2. 数据库运算方法
-3. js语法
-4. 另外还支持`new Date()`来获取时间。需要注意的是不同于数据库运算方法，`new Date()`内不可传入数据库字段作为参数
-
-上述配置中，`create_date`、`end_date`为字段名称。schema内也支持写字段操作方法，如add方法。
-
-例：在todo表内可以使用fieldRules限制`end_date`大于`create_date`
-
-```json
-{
-  "bsonType": "object",
-  "required": ["title","create_date"],
-  "fieldRules": [{
-    "rule": "end_date == null || end_date != null && create_date < end_date",
-    "errorMessage": "结束时间需大于创建时间"
-  }],
-  "properties": {
-    "title": {
-      "bsonType": "string",
-      "title": "标题"
-    },
-    "create_date": {
-      "bsonType": "timestamp",
-      "title": "创建时间",
-      "forceDefaultValue": {
-        "$env": "now"
-      }
-    },
-    "end_date": {
-      "bsonType": "timestamp",
-      "title": "结束时间"
-    }
-  }
-}
-```
-  
-上述示例中，`create_date`为必填项，只需限制`end_date`存在时大于`create_date`即可
-
-**注意**
-
-- 新增/更新数据时会校验所有新增/更新字段相关联的fieldRules。如上述规则中，如果更新`end_date`字段或者`create_date`字段均会触发校验
-- 新增数据时不需要查库进行校验，更新数据时需要进行一次查库校验（有多条fieldRules时也是一次）
-- fieldRules内不支持使用正则
-
-#### 4. errorMessage自定义错误提示@errormessage
+### 4. errorMessage自定义错误提示@errormessage
 
 数据不符合schema配置的规范时，无法入库，此时会报错。
 
@@ -889,7 +1273,7 @@ uniCloud有一些基本错误提示语的格式化，如需自定义错误提示
 
 errorMessage支持字符串，也支持json object。类型为object时，可定义多个校验提示。
 
-{} 为占位符，可在其中引用已有属性。
+{} 为占位符，可在其中引用已有属性，如title、label等。
 
 |属性		|类型	|描述	|
 |:-			|:-		|:-		|
@@ -905,22 +1289,22 @@ errorMessage支持字符串，也支持json object。类型为object时，可定
   "properties": {
     "name": {
       "bsonType": "string",
-      "label": "姓名",
+      "title": "姓名",
       "minLength": 2,
       "maxLength": 8,
       "errorMessage": {
-        "required": "{label}必填",
-        "minLength": "{label}不能小于{minLength}个字符",
-        "maxLength": "{label}不能大于{maxLength}个字符"
+        "required": "{title}必填",
+        "minLength": "{title}不能小于{minLength}个字符",
+        "maxLength": "{title}不能大于{maxLength}个字符"
       },
       ...
     },
     "age": {
       "bsonType": "int",
-      "label": "年龄",
+      "title": "年龄",
       "minimum": 1,
       "maximum": 150,
-      "errorMessage": "{label}应该大于 {minimum} 岁，小于 {maximum} 岁"
+      "errorMessage": "{title}应该大于 {minimum} 岁，小于 {maximum} 岁"
     }
   }
 }
@@ -937,42 +1321,42 @@ errorMessage支持字符串，也支持json object。类型为object时，可定
 
 可以在web控制台配置索引，db_init.json也可以创建索引。注意如果数据库中多条记录中该字段已经有重复内容，那么设该字段为唯一索引时会报错，需先把重复数据去掉。
 
-### 数据权限系统permission@permission
+## 数据权限系统permission@permission
 
-#### 概述
+### 概述
 
-`DB Schema`的数据权限系统，是为`clientDB`设计的。
+`DB Schema`的数据权限系统，是为`JQL`设计的，尤其`clientDB`强依赖这套权限系统。因为客户端是无法信任的，没有缜密的权限系统，会导致客户端任意改动云数据库内容。
 
-因为在云函数中操作数据库，是管理员权限。云函数代码可以完整控制数据库的增删改查操作。而前端是不能任意操作数据库的。
+在过去，开发者需要在后端写代码来处理权限控制，但实际上有了`DB Schema`和`uni-id`后，这种权限控制的后台代码就不用再写了。
 
-在过去，开发者需要在后端写代码来处理权限控制，但实际上有了`DB Schema`，这种权限控制的后台代码就不用再写了。
-
-只要配好`DB Schema`，放开让前端写业务即可。配置里声明不能读写的数据，前端就无法读写。
+只要配好`DB Schema`的权限，放开让前端写业务即可。配置里声明不能读写的数据，前端就无法读写。
 
 `DB Schema`的permission规则，分为两部分，一边是对操作数据的指定，一边是对角色的指定，规则中对两者进行关联，匹配则校验通过。
 
 1. 对数据的指定
-- 可以对整个表进行`增删改查`控制
+- 可以对整个表进行`增删改查或计数`控制
 - 可以针对字段进行`读写`控制
 - 可以配置具体的where规则，对指定的数据记录进行`删改查`控制
 - 默认自带一个特殊数据的描述，就是当前请求计划操作的数据（doc），后面会详解用法
 2. 对角色的指定
-- 不限定角色，即使游客都可以操作数据
-- 符合`uni-id`定义的角色
-	* 开发者可以在`uni-id`中自定义各种角色，比如部门管理员，然后在`DB Schema`的permission中配置其可操作的数据。详见[uni-id的角色权限](/uniCloud/uni-id?id=rbac)
-	* 默认自带一个特殊角色是自己（auth.uid），该角色仍然基于`uni-id`，但无需额外在`uni-id`的角色表中配置。只要登录的身份是自己即可。后面会详解用法
+- 未登录，即游客都可以操作数据
+- 当前已登录用户（auth.uid）
+- `uni-id`定义的其他角色
+	* 开发者可以在`uni-id`中自定义各种角色，比如部门管理员，然后在`DB Schema`的permission中配置其可操作的数据。详见[uni-id的角色权限](uni-id-summary.md#rbac)
 
 **注意**：如果登录用户是`uni-id`的admin角色，即超级管理员，则不受`DB Schema`的配置限制的，admin角色拥有对所有数据的读写权限。
 
 例如在`uniCloud admin`等管理端系统，只要使用admin用户登录就可以在前端操作数据库。
 
-在保存`DB Schema`时，如果发现服务空间下没有`uni-id`公共模块，会自动安装`uni-id`。如果服务空间已经存在`uni-id`，则不会再自动安装。此时需要注意及时升级`uni-id`，避免太老的`uni-id`有兼容问题。
+在更新云端`DB Schema`时，如果发现服务空间下没有`uni-id`公共模块，会自动安装`uni-id`。如果服务空间已经存在`uni-id`，则不会再自动安装。此时需要注意及时升级`uni-id`，避免太老的`uni-id`有兼容问题。(从HBuilderX 3.5起，改为`uni-id-common`公共模块)
 
-#### 表级权限控制@col-permission
+### 表级权限控制@col-permission
 
 表级控制，包括增删改查四种权限，分别称为：create、delete、update、read。（注意这里使用的是行业通用的crud命名，与操作数据库的方法add()、remove()、update()、get()在命名上有差异，但表意是相同的）
 
-所有的操作的默认值均为false。也就是不配置permission代表前端不能操作数据库（角色为admin用户例外）。
+HBuilderX 3.1.0起还新增了count权限，即是否有权对该表进行统计计数。
+
+所有的操作的默认值均为false。也就是不配置permission代表不能操作数据库（角色为admin用户例外）。
 
 例如一个user表，里面有_id、name、pwd等字段，该表的`DB Schema`如下，代表前端用户可读（包括游客），但前端非admin用户不可新增、删除、更新数据记录。
 
@@ -1003,7 +1387,7 @@ errorMessage支持字符串，也支持json object。类型为object时，可定
 - 如果schema内没有count权限，则只会使用read权限进行校验
 - 所有会统计数量的操作均会触发count权限校验
 
-#### 字段级权限控制
+### 字段级权限控制
 
 permission的字段级控制，包括读写两种权限，分别称为：read、write。
 
@@ -1043,7 +1427,7 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 
 子级会继承父级的权限，即需要同时满足父级权限以及本节点权限，方可操作此节点。例如上述schema中如果配置表级read权限为false，在为name设置read权限为true的情况下，name字段仍不可读
 
-如果字段的bsonType配置为password，则clientDB完全不可操作此字段（即使是admin用户也不可以）。
+如果字段的bsonType配置为password，则clientDB完全不可操作此字段（即使是admin用户也不可以在客户端读写）。
 
 ```js
 // user表的schema
@@ -1069,13 +1453,13 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 }
 ```
 
-#### 指定数据集权限控制
+### 指定数据集权限控制
 
 `DB Schema`提供了一个内置变量doc，表示要意图操作的数据记录。并支持用各种表达式来描述指定的记录。
 
 仍然以user表举例，假使该表有个字段叫`status`表示用户是否被禁用。`status`是bool值，true代表用户状态正常，false代表被禁用。
 
-然后有个需求，前端只能查用户状态正常的用户信息。那么schema配置如下，表级控制的read节点的值不再是简单的true/false，而是变成一个表达式：`"doc.status==true"`
+然后有个需求，JQL只能查用户状态正常的用户信息，禁用用户信息无法查。那么schema配置如下，表级控制的read节点的值不再是简单的true/false，而是变成一个表达式：`"doc.status==true"`
 
 ```json
 // user表的schema
@@ -1110,9 +1494,9 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 }
 ```
 
-根据这个配置，如前端查询user表的所有数据，则会报权限校验失败；如前端的查询里在where条件里声明了只查询status字段为true的数据，则查询会放行。
+根据这个配置，如JQL查询user表的所有数据，则会报权限校验失败；如JQL查询里在where条件里声明了只查询status字段为true的数据，则查询会放行。
 
-#### 权限规则的变量和运算符
+### 权限规则的变量和运算符
 
 除了上述例子提到的doc变量，事实上`DB Schema`的权限规则支持很多变量和运算符，可以满足各种配置需求。
 
@@ -1121,19 +1505,19 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 |变量名			|说明																																						|
 |:-:			|:-:																																						|
 |auth.uid		|用户id																																						|
-|auth.role		|用户角色数组，参考[uni-id 角色权限](/uniCloud/uni-id?id=rbac)，注意`admin`为内置的角色，如果用户角色列表里包含`admin`则认为此用户有完全数据访问权限|
-|auth.permission|用户权限数组，参考[uni-id 角色权限](/uniCloud/uni-id?id=rbac)																								|
+|auth.role		|用户角色数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)，注意`admin`为内置的角色，如果用户角色列表里包含`admin`则认为此用户有完全数据访问权限|
+|auth.permission|用户权限数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)																								|
 |doc			|数据库中的目标数据记录，用于匹配记录内容/查询条件（需要注意的是，规则内的doc对象并不是直接去校验存在于数据库的数据，而是校验客户端的查询条件）							|
 |now			|当前服务器时间戳（单位：毫秒），时间戳可以进行额外运算，如doc.publish\_date > now - 60000表示publish\_date在最近一分钟											|
 |action			|数据操作请求同时指定的uni-clientDB-action。用于指定前端的数据操作必须同时附带执行一个action云函数，如未触发该action则权限验证失败					|
 
 **注意**
 - `auth`表示正在执行操作的用户对象
-- `auth.xxx`均由uni-id提供，依赖于[uni-id公共模块](uniCloud/uni-id.md)
+- `auth.xxx`均由uni-id提供，依赖于[uni-id公共模块](uni-id-summary.md)
 - `doc.xxx`表示将要查询/修改/删除的每条数据（注意并不包括新增数据，新增数据应通过值域校验进行验证），如果将要访问的数据不满足permission规则将会拒绝执行
-- `uni-id`的角色和权限，也即auth.role和auth.permission是不一样的概念。注意阅读[uni-id 角色权限](/uniCloud/uni-id?id=rbac)
+- `uni-id`的角色和权限，也即auth.role和auth.permission是不一样的概念。注意阅读[uni-id 角色权限](uni-id-summary.md#rbac)
 - 如果想支持使用多个`action`的用法，可以通过`"'actionRequired' in action"`的形式配置权限，限制客户端使用的action内必须包含名为`actionRequired`的action
-- doc是由客户端条件里面提取的变量，可以理解为将要访问的数据，因此create权限内不可使用doc变量，建议使用forceDefaultValue或自定义校验函数实现插入数据的校验。
+- doc是由客户端条件里面提取的变量，可以理解为将要访问的数据，因此create权限内不可使用doc变量。create时建议使用forceDefaultValue或自定义校验函数实现插入数据的值域校验。
 
 **权限规则内可以使用的运算符**
 
@@ -1202,7 +1586,7 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 
 如果想获取和判断目标数据记录doc之外的其他数据，则需要使用get方法，见下一章节。
 
-forceDefaultValue属于数据校验的范畴，在数据插入时生效，但是如果配置forceDefaultValue为`{"$env": "uid"}`也会进行用户身份的校验，未登录用户不可插入数据。
+forceDefaultValue属于数据校验的范畴，在数据写入时生效，但是如果配置forceDefaultValue为`{"$env": "uid"}`也会进行用户身份的校验，未登录用户不可插入数据。
 
 例如在news表新增一条记录，权限需求是“未登录用户不能创建新闻”，其实不需要在news表的create权限里写`auth.uid != null`。只需把news表的uid字段的forceDefaultValue设为`"$env": "uid"`，create权限配置为true即可，未登录用户自然无法创建。当然实际使用时你可能需要更复杂的权限，直接使用true作为权限规则时务必注意
 
@@ -1216,11 +1600,12 @@ admin中创建权限、角色和用户授权，另见[文档](/uniCloud/admin?id
 
 **变量action的说明**
 
-action是`clientDB`的一个配套功能。它的作用是在前端发起数据操作请求时，附带一个action的name，则会同时执行一个`uni-clientDB-action`的云函数。[详见](/uniCloud/database?id=action)
+action是`clientDB`的一个配套功能。它的作用是在前端发起数据操作请求时，附带一个action的name，则会同时执行一个`uni-clientDB-action`的云函数。[详见](jql.md#action)
 
 有些复杂业务，要求必须同时执行一个action云函数，才能允许前端对特定数据的修改。
 
-以user表为例，假使用户在修改自己的name时，必须要触发一个名为changenamelog的action云函数，在该云函数里会记录一条留痕日志，如果没有记录日志则不允许修改name。那么在`DB Schema`里要配置`action == 'changenamelog'`
+以user表为例，假使用户在修改自己的name时，必须要触发一个名为changenamelog的action云函数，在该云函数里会记录一条留痕日志，如果没有记录日志则不允许修改name。
+那么在`DB Schema`里要配置`action == 'changenamelog'`
 
 ```json
 // user表的schema
@@ -1278,7 +1663,7 @@ action云函数中记录日志的代码，此处省略。
 但注意导出`db_init.json`时不会包含`action`，`action`属于云函数。导出`db_init.json`只会包含schema和validateFunction。
 
 
-#### 权限规则内的数据库查询get方法
+### 权限规则内的数据库查询get方法
 
 权限规则内置了doc变量，但只能用于要操作的数据表的判断，如果要获取其他表的数据做判断就需要get方法了。
 
@@ -1307,414 +1692,8 @@ db.collection('street').where("shop_id=='123123'").get()
 db.collection('street').where("shop_id=='123123 || shop_id=='456456'").get()
 ```
 
-### schema2code代码生成系统@autocode
+## schema2code代码生成系统@autocode
 
 `DB Schema`里有大量的信息，其实有了这些信息，前端将无需自己开发表单维护界面，uniCloud可以自动生成新增、修改、列表、详情的前端页面，以及admin端的列表、新增、修改、删除全套功能。
 
-为强化表单的自定义性，`DB Schema`还扩展了label、componentForEdit、componentForShow、group、order等属性，以控制表单项在界面上的渲染控件。
-
-`schema2code`不是简单的一键crud生成接口，它直接生成了可运行的页面。
-
-`schema2code`代码生成系统功能包括：
-- 自动生成前端页面，新增、修改、列表、详情页面文件，分别是add.vue、edit.vue、list.vue和detail.vue。
-- 自动生成uniCloud admin页面，新增、修改、列表页面文件，分别是add.vue、edit.vue和list.vue。
-- 自动生成前端表单校验规则
-
-表单校验工作，在前端和后端都需要做。在过去，这造成重复投入。
-
-现在，前后端的表单验证都被统一了。
-
-开发者修改`DB Schema`并保存后，云端的校验规则直接生效。
-
-然后开发者需要把这套校验规则导入到前端项目中。即利用本功能。
-
-DCloud提供了`uni-forms`前端组件，该组件的表单校验规范完全符合`DB Schema`中的校验规则，实现云端统一。`uni-forms`组件地址：[https://ext.dcloud.net.cn/plugin?id=2773](https://ext.dcloud.net.cn/plugin?id=2773)
-
-
-#### 快速上手schema2code生成“通讯录”
-> 成品演示地址:[http://contacts-demo.dcloud.net.cn/](http://contacts-demo.dcloud.net.cn/)
-
-##### 首先创建“带schema的通讯录”数据表
-1. 登录 [uniCloud控制台](https://unicloud.dcloud.net.cn)，选中“云数据库”
-2. 点击新建数据表
-  ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1ef863ed-d919-46f3-bd01-6092f2ed1e21.jpg)
-3. 使用[OpenDB](https://gitee.com/dcloud/opendb)表模板创建： `opendb-contacts` 通讯录表
-  ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/0e2ee195-05ae-4445-af41-45c41b2da70a.jpg)
-
-##### schema2code有两种方式
-- 方式1：在HBuilderX中操作
-1.1 下载刚刚创建的通讯录表的schema
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c2ea33f4-8619-41a6-bd14-5f9ce044985d.jpg)
-1.2 项目根目录的 `uniCloud/database/opendb-contacts.schema.json`  文件上点击右键，或者在已打开的 Schema 编辑器点击右键.如果没有该菜单，请在插件市场安装插件：[https://ext.dcloud.net.cn/plugin?id=4684](https://ext.dcloud.net.cn/plugin?id=4684) 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/82f69a99-c652-4cbc-a96b-1cfbe3d40529.jpg)
-1.3 弹出一个对话框 `schema2code`，选择要导出的项目类型（uni-app用户端项目还是admin管理端项目），以及表字段名（去掉不需要在前端展现或编辑的字段）
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fb49118b-364e-412b-9900-f275803cce37.jpg)
-1.4 点击对话框右下角的确定按钮，将执行导入动作，如果导入的文件和工程中的文件有差异将弹出文件对比框，继续操作并确认导入
-- 方式2：在uniCloud web控制台操作
-2.1 选中刚创建好的数据表`opendb-contacts`，点击进入表结构schema界面，点击按钮 “schema2code”
-  ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3f93a350-2d13-4b8e-afb6-7dc367437b49.jpg)
-2.2 点击“导入HBuilderX”或“下载zip”按钮，将生成的代码合并到自己的项目中
-  ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/ba87a6b0-1519-11eb-81ea-f115fe74321c.png)
-
-上图每个区域的解释如下：
-
-- 区域A. 字段列表
-
-这里需要选择在前端表单页面出现的字段，无需用户在表单页面提交的字段（如create_date）不应勾选。
-
-选择字段后，右侧会变化，自动生成代码。
-
-- 区域B. 导出文件清单
-
-这里显示了完整的工程结构。点击右下角的“下载zip”可以把这个工程下载到本地。点击这里的每个文件，在右侧会出现文件相应的代码。
-
-只有自动生成的文件会在右侧显示代码，components目录下的三方库不会在右侧显示代码。
-
-- 区域C. 组件列表
-
-根据`DB Schema`生成的表单页面，是基于`uni-forms`组件的，该组件地址：[https://ext.dcloud.net.cn/plugin?id=2773](https://ext.dcloud.net.cn/plugin?id=2773)
-
-- 区域D. 扩展校验函数，每个函数是一个文件
-
-- 区域E. 表单校验规则，和表名一致，每个表一个文件
-
-在修改schema中的校验规则后，云端是直接生效的。前端部分则需要下载这个js文件到本地工程。
-
-如果直接已经下载过，需要二次更新，也可以在右侧复制源码，增量添加到前端工程的校验规则中。
-
-- 区域F. 新建和编辑页面
-
-自动生成的表单页面，包括新建页面和编辑页面。这些页面均基于clientDB，可直接使用。
-
-- 区域G. 文件预览 (仅支持预览 自动生成的页面和校验规则)
-
-> 注意：需HBuilderX 3.0.5+ 支持
-
-> HBuilderX 3.1.15 schema2code 生成文件结构调整, 生成的 `pages.json` 改为 `page_init.json`，确认导入工程时自动合并到项目的 `pages.json`，`page_init.json`不会导入到工程中，仅在预览界面显示
-
-> HBuilderX 3.1.15 之前的版本 `pages.json` 导入时会覆盖用户工程中已有的 `pages.json`，导入确认时选择不导入该文件手动拷贝内容到 `pages.json`
-
-**全程演示视频**：
-</br>
-<video style="width:50vw;height:28vw;" id="video" preload="none" controls="controls"
-	poster="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a04e1d03-6d9f-43bf-a74b-80e9a5c31d7f.mp4?x-oss-process=video/snapshot,t_1000,f_jpg" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a04e1d03-6d9f-43bf-a74b-80e9a5c31d7f.mp4"></video>
-
-
-
-
-
-
-如果生成uniCloud admin页面，生成的列表页（list），需自行配置【排序字段】和【模糊搜索字段】。了解更多参考[clientDB](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=jssdk)。
-
-以uniCloud admin内置页面【用户列表页】为例，要实现列表按注册时间排倒叙，要在列表上方的搜索框搜索，需在生成的list.vue页面的script区域修改如下配置：
-
-```javascript
-const dbOrderBy = 'register_date desc' // 排序字段，asc(升序)、desc(降序)
-const dbSearchFields = ['username', 'role_name', 'mobile', 'email'] // 模糊搜索字段，支持模糊搜索的字段列表
-```
-
-`schema2code`是一个代码辅助生成工具。
-
-#### 生成页面控件的默认策略
-
-`DB Schema`配置的字段，在生成页面时使用什么组件渲染？决定关系如下：
-
-- 如果配置了字段的component属性，则严格按component的配置执行。
-- 如果没有配置component属性，那么默认有如下策略：
-  * 字段类型为bool时，默认使用switch组件
-  * 字段类型为Array时，默认使用uni-data-checkbox组件(显示为多选框)
-  * 字段类型为int且使用enum时，默认使用uni-data-checkbox组件(显示为单选框)
-  * 字段类型为int时，满足以下2个条件时，使用slider组件
-   - 必填字段
-   - 配置 `minimum` 或 `maximum`
-  * 其他情况，将生成uni-easyinput组件。如果是数字类型，会同时把input的键盘类型设为数字。
-- 如果没有配label，则以title作为label，渲染在表单项前面
-- description在渲染为input时会被设为placehold
-
-<!-- 
-如果是时间戳，则需要新做一个时间选择组件
-如果有枚举，默认为picker
-如果是number且有大小范围，默认用步进器
- -->
-
-#### label属性
-
-在[uni-forms组件](https://ext.dcloud.net.cn/plugin?id=2773)中，每个表单项都被包裹在`uni-forms-item`中，该子组件可设置label，即，在表单项如输入框前面或上面放置一个说明性名词。
-
-在`DB Schema`的label属性中设置值后，生成前端表单页面时即可自动给`uni-forms-item`的label属性赋值。
-
-如果未设置label属性，但配置了title属性，生成前端表单页面时会取title作为前端的label。
-
-#### component属性@component
-
-定义该字段在表单中使用什么样的组件进行渲染，可设置前端的组件名和初始属性。
-
-这里的表单，指的是数据维护表单，比如新建记录或修改记录的表单。
-
-生成的所有表单项，都在[uni-forms组件](https://ext.dcloud.net.cn/plugin?id=2773)下。
-
-|属性|类型|描述|
-|:-|:-|:-|
-|name|string|组件名称|
-|props|Object|组件属性|
-|children|String|子组件|
-|childrenData|Array|子组件数据|
-
-
-注意事项
-- `children` 属性, `{item}` 表示 `childrenData` 数组中的项
-
-
-示例
-
-```json
-{
-  "bsonType": "object",
-  "required": ["name", "nickname"],
-  "permission": {
-    "read": false,
-    "create": false,
-    "update": false,
-    "delete": false
-  },
-  "properties": {
-    "_id": {
-      "description": "存储文档 ID（用户 ID），系统自动生成"
-    },
-    "name": {
-      "bsonType": "string",
-      "label": "姓名",
-      "minLength": 2,
-      "maxLength": 10,
-      "errorMessage": {
-        "required": "{label}必填",
-        "minLength": "{label}不能小于{minLength}个字符"
-      },
-      "permission": {
-        "read": false,
-        "write": false
-      },
-      "component": {
-        "name": "input",
-        "props": {
-          "placeholder": "请输入姓名"
-        }
-      }
-    },
-    "nickname": {
-      "bsonType": "string",
-      "description": "用户昵称",
-      "label": "昵称",
-      "errorMessage": "{label}无效",
-      "component": {
-        "name": "input",
-        "props": {
-          "placeholder": "请输入昵称"
-        }
-      }
-    },
-    "hobby": {
-      "bsonType": "array",
-      "description": "爱好",
-      "label": "爱好",
-      "enum": [
-        {
-          "text": "游泳",
-          "value": 1
-        },
-        {
-          "text": "骑行",
-          "value": 2
-        },
-        {
-          "text": "音乐",
-          "value": 3
-        },
-        {
-          "text": "美术",
-          "value": 4
-        }
-      ]
-    },
-    "gender": {
-      "bsonType": "int",
-      "description": "用户性别：0 未知 1 男性 2 女性",
-      "label": "性别",
-      "enum": [{
-        "text": "未知",
-        "value": 0
-      }, {
-        "text": "男",
-        "value": 1
-      }, {
-        "text": "女",
-        "value": 2
-      }],
-      "errorMessage": "{label}无效"
-    },
-    "email": {
-      "bsonType": "string",
-      "description": "邮箱地址",
-      "format": "email",
-      "label": "邮箱",
-      "errorMessage": "{label}无效"
-    },
-    "language": {
-      "bsonType": "string",
-      "label": "自定义children",
-      "component": {
-        "name": "select",
-        "children": "<option value=\"{value}\">{label}</option>",
-        "childrenData": [{"label": "中文简体", "value": "zh-cn"}]
-      }
-    }
-  }
-}
-```
-
-
-#### group属性
-
-将多个表单项合并在一个分组里显示。前端渲染时，group相同的表单项会自动合并在一个uni-group组件中，不同分组的表单项之间有间隔。该组件详见：[https://ext.dcloud.net.cn/plugin?id=3281](https://ext.dcloud.net.cn/plugin?id=3281)
-
-示例
-
-```json
-{
-  "bsonType": "object",
-  "required": ["name"],
-  "properties": {
-    "name": {
-      "bsonType": "string",
-      "label": "姓名",
-      "group": "1",
-      "minLength": 2,
-      "maxLength": 8,
-      "errorMessage": {
-        "required": "{label}必填",
-        "minLength": "{label}不能小于{{minLength}}个字符",
-        "maxLength": "{label}不能大于{{maxLength}}个字符"
-      },
-      "component": {
-        "name": "uni-field",
-        "props": {
-          "placeholder": "请输入姓名",
-          "class": "input",
-          "hidden": false,
-          "readonly": false,
-          "disabled": false,
-          "value": null
-        }
-      }
-    },
-    "age": {
-      "bsonType": "int",
-      "label": "年龄",
-      "group": "1",
-      "minimum": 0,
-      "maximum": 150,
-      "errorMessage": "{label}应该大于 {minimum} 岁，小于 {maximum} 岁",
-      "component": {
-        "name": "uni-field",
-        "props": {
-          "placeholder": "请输入年龄",
-          "value": null
-        }
-      }
-    }
-  }
-}
-```
-
-
-生成带有group组件的表单代码
-
-```
-<uni-forms>
-  <uni-group>
-    <uni-forms-item label="姓名"><input placeholder="请输入姓名" class="input" :hidden="false" :readonly="false" :disabled="false" /></uni-forms-item>
-    <uni-forms-item label="年龄"><input  placeholder="请输入年龄" /></uni-forms-item>
-  </uni-group>
-```
-
-
-#### 生成级联选择@schema2picker
-
-以城市选择举例。
-
-<div align=center>
-  <img style="max-width:550px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/e56e7cc0-50b8-11eb-97b7-0dc4655d6e68.png"/>
-</div>
-
-在这个业务里涉及2个表，一个是用户的地址信息表[uni-id-address](https://gitee.com/dcloud/opendb/tree/master/collection/uni-id-address)，一个是候选的省市区数据表[opendb-city-china](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-city-china)。
-
-在用户地址信息表的schema配置enumType和enum。如下：
-
-用户地址表（完整的opendb表为[uni-id-address](https://gitee.com/dcloud/opendb/tree/master/collection/uni-id-address)，以下略做简化）
-```json
-{
-  "bsonType": "object",
-  "required": ["city_id"],
-  "properties": {
-    "_id": {
-      "description": "ID，系统自动生成"
-    },
-    "city_id": {
-      "bsonType": "string",
-      "title": "地址",
-      "description": "城市编码",
-      "foreignKey": "opendb-city-china.code",
-      "enumType": "tree",
-      "enum": {
-        "collection": "opendb-city-china",
-        "orderby": "value asc",
-        "field": "code as value, name as text, eq(type, 2) as isleaf"
-      }
-    }
-  }
-}
-```
-
-省市区数据表 [opendb-city-china](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-city-china) 的schema如下。树形数据查询另有详细文档，[详见](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=gettree)
-
-```json
-{
-  "bsonType": "object",
-  "required": ["code", "name"],
-  "permission": {
-    "read": true,
-    "create": false,
-    "update": false,
-    "delete": false
-  },
-  "properties": {
-    "_id": {
-      "description": "ID，系统自动生成"
-    },
-    "code": {
-      "bsonType": "string",
-      "description": "编码"
-    },
-    "parent_code": {
-      "bsonType": "string",
-      "description": "父级编码",
-      "parentKey": "code"
-    },
-    "name": {
-      "bsonType": "string",
-      "description": "城市名称",
-      "title": "城市"
-    },
-    "type": {
-      "bsonType": "int",
-      "description": "城市类型；0省，1市，2区"
-    }
-  }
-}
-```
-
-这2个表都是[opendb](https://gitee.com/dcloud/opendb)表，在uniCloud web控制台新建表时可以选择。opendb-city-china表自带全国省市区数据。
-
-在web控制台的 用户地址表，选择表结构schema，点schema2code生成页面，在生成的代码中会使用多级联选择组件 `<uni-data-picker>`，效果是懒加载的，选择省后，会根据省的选择去拉取市的数据。
-
-`<uni-data-picker>` 组件的文档另见：[https://ext.dcloud.net.cn/plugin?id=3796](https://ext.dcloud.net.cn/plugin?id=3796)
+因内容较长，请另见文档[schema2code](schema2code.md)

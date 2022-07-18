@@ -114,7 +114,7 @@ db.collection('book').where('author=="caoxueqin"').get()
 - 不可缓存使用了action的查询
 - 启用JQL扩展库的云函数/云对象同时也要启用Redis扩展库才可以正常使用缓存功能，否则依然从数据库查询
 - 配置后或设置缓存失效后，开发者可自己请求一次JQL查询，让cache生效。避免用户第一次访问时仍然访问MongoDB
-- 在查询语句内如果有字符串使用引号，请务必保证引号和配置的缓存一致，例如：缓存配置为：`.where('name=="caoxueqin"')`，使用`.where('name==\'caoxueqin\'')`查询时不会走缓存。此问题后续优化
+- 在查询语句内如果有字符串使用引号，请务必保证**单双引号和配置的缓存一致**，例如：缓存配置为双引号写法：`.where('name=="caoxueqin"')`，调用时使用了转义单引号写法，`.where('name==\'caoxueqin\'')`，那么这个调用查询就不会走redis缓存。此问题后续优化
 
 ## multiSend使用缓存@multi-send
 

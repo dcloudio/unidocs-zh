@@ -21,7 +21,7 @@
 |notificationAlertAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知带有提醒的开关|App 端仅 iOS（10.0+）支持|
 |notificationBadgeAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知带有标记的开关|App 端仅 iOS（10.0+）支持|
 |notificationSoundAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知带有声音的开关|App 端仅 iOS（10.0+）支持|
-|phoneCalendarAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许读写日历的开关|App 端不支持|
+|phoneCalendarAuthorized|'authorized'/'denied'/'not determined'|允许读写日历的开关|App 端不支持|
 
 #### 不推荐使用的返回参数，仅为兼容保留
 |locationReducedAccuracy|boolean|模糊定位。true 表示模糊定位，false 表示精确定位 |App 端仅 iOS 支持|
@@ -32,11 +32,21 @@
 - `'denied'`：表示请求授权被拒绝，无法再次请求授权；（此情况需要引导用户打开系统设置，在设置页中打开权限）
 - `'non determined'`：表示尚未请求授权，会在App下一次调用系统相应权限时请求；（仅 iOS 会出现。此种情况下引导用户打开系统设置，不展示开关）
 - `'config error'`：
-  - bluetoothAuthorized：iOS平台没有在 `manifest.json -> App模块配置` 中配置 `BlueTooth(低功耗蓝牙)` 模块则会返回该值
-  - cameraAuthorized：Android平台没有授予 `android.permission.CAMERA` 权限则会返回该值
-  - locationAuthorized：Android平台没有授予 `android.permission.ACCESS_COARSE_LOCATION` 权限则会返回该值。iOS平台没有在 `manifest.json -> App模块配置` 中配置 `Geolocation(定位)` 模块则会返回该值
-  - microphoneAuthorized：Android平台没有授予 `android.permission.RECORD_AUDIO` 权限则会返回该值
-  - notificationAuthorized、notificationAlertAuthorized、notificationBadgeAuthorized、notificationSoundAuthorized：iOS平台没有在 `manifest.json -> App模块配置` 中配置 `Push(推送)` 模块则会返回该值
+  - bluetoothAuthorized：
+    - Android平台不会返回 `config error`
+    - iOS平台：表示没有在 `manifest.json -> App模块配置` 中配置 `BlueTooth(低功耗蓝牙)` 模块则会返回该值
+  - cameraAuthorized：
+    - Android平台：表示没有授予 `android.permission.CAMERA` 权限则会返回该值
+    - iOS平台不会返回 `config error`
+  - locationAuthorized：
+    - Android平台：表示没有授予 `android.permission.ACCESS_COARSE_LOCATION` 权限则会返回该值
+    - iOS平台：表示没有在 `manifest.json -> App模块配置` 中配置 `Geolocation(定位)` 模块则会返回该值
+  - microphoneAuthorized：
+    - Android平台：表示没有授予 `android.permission.RECORD_AUDIO` 权限则会返回该值
+    - iOS平台不会返回 `config error`
+  - notificationAuthorized、notificationAlertAuthorized、notificationBadgeAuthorized、notificationSoundAuthorized：
+    - Android平台不支持
+    - iOS平台：表示没有在 `manifest.json -> App模块配置` 中配置 `Push(推送)` 模块则会返回该值
 
 **示例**
 

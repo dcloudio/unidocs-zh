@@ -12,10 +12,10 @@
 
 |属性|类型|说明|
 |:-|:-|:-|
-|bluetoothEnabled|boolean|蓝牙的系统开关。当值为 `false` 时，App端有可能是配置不正确导致，此时会返回 `bluetoothError` 属性描述错误|
-|bluetoothError|String/undefined|App平台模块错误时返回，配置正确时不返回此属性。详情见下|
-|locationEnabled|boolean|地理位置的系统开关。当值为 `false` 时，App端：Android平台是准确的；iOS平台有可能是配置不正确导致，此时会返回 `locationError` 属性描述错误|
-|locationError|String/undefined|App平台模块错误时返回，配置正确时不返回此属性。详情见下|
+|bluetoothEnabled|boolean|蓝牙的系统开关。当值为 `false` 时，App端：有可能是配置不正确导致，此时会返回 `bluetoothError` 属性描述错误|
+|bluetoothError|String/undefined|App端没有权限或者模块配置错误时返回，否则不返回此属性。详情见下|
+|locationEnabled|boolean|地理位置的系统开关。当值为 `false` 时，App端：Android平台是准确的；iOS平台有可能是配置不正确导致，此时会返回 `locationError` 属性描述错误.|
+|locationError|String/undefined|App端模块配置错误时返回，否则不返回此属性。详情见下|
 |wifiEnabled|boolean|Wi-Fi 的系统开关|
 |deviceOrientation|string|设备方向。`竖屏：portrait`，`横屏：landscape`|
 

@@ -141,7 +141,7 @@ await uniPush.sendMessage(OBJECT)
 |content_available|Number|否|0|0表示普通通知消息(默认为0)；</br>1表示静默推送(无通知栏消息)，静默推送时不需要填写其他参数。</br>苹果官方建议1小时最多推送3条静默消息|ios |
 |open_url|string|否|无|填写该值将:强制push类型为“通知栏消息”，点击后系统浏览器将打开此链接。以`http(s)://`开头的有效可访问链接,华为通道必须使用https。长度小于300|android|
 |settings|Object|否|无|推送条件设置，详细解释见下方settings说明||
-|option|Object|否|无|其他配置，[更多关于option的说明](/uniCloud/uni-push/options)||
+|option|Object|否|无|其他配置，[更多关于option的说明](/uniCloud/uni-cloud-push/options)||
 
 **频次限制说明：**
 - 多客户端接收消息推送API，频次限制200万次/天，申请修改请点击右侧“技术咨询”了解详情。

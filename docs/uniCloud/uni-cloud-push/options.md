@@ -1,6 +1,6 @@
 > 需要HBuilderX 3.5.1 及其以上版本支持
 
-# options 更多参数配置
+options 更多参数配置
 
 ## 简述
 

@@ -6,8 +6,6 @@
 	<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=EErVqoKDps4QSo5M0mm_OfzdA7JqtQU4&jump_from=webapi">uni-push2.0 官方QQ交流群：757742921</a>
 </div>
 
-# 开发文档
-
 `uni-push`有服务器API和客户端API。
 
 ## 客户端API [详情参考](/api/plugins/push)

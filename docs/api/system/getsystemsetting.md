@@ -12,7 +12,7 @@
 
 |属性|类型|说明|
 |:-|:-|:-|
-|bluetoothEnabled|boolean|蓝牙的系统开关。当值为 `false` 时，App端：有可能是配置不正确导致，此时会返回 `bluetoothError` 属性描述错误|
+|bluetoothEnabled|boolean|蓝牙的系统开关。当值为 `false` 时，App端：有可能是配置不正确导致，此时会返回 `bluetoothError` 属性描述错误。|
 |bluetoothError|String/undefined|App端没有权限或者模块配置错误时返回，否则不返回此属性。详情见下|
 |locationEnabled|boolean|地理位置的系统开关。当值为 `false` 时，App端：Android平台是准确的；iOS平台有可能是配置不正确导致，此时会返回 `locationError` 属性描述错误.|
 |locationError|String/undefined|App端模块配置错误时返回，否则不返回此属性。详情见下|
@@ -20,8 +20,12 @@
 |deviceOrientation|string|设备方向。`竖屏：portrait`，`横屏：landscape`|
 
 **Tips**
-- `bluetoothError`：Android平台值为 `"Missing permissions required by BluetoothAdapter.isEnabled: android.permission.BLUETOOTH"` 表示没有 `android.permission.BLUETOOTH` 权限；iOS平台值为 `"Missing bluetooth module in manifest.json"` ，表示没有在 `manifest.json -> App模块配置` 中配置 `BlueTooth(低功耗蓝牙)` 模块
-- `locationError`：Android平台不会返回此值；iOS平台值为 `"Missing geolocation module in manifest.json"` 表示没有在 `manifest.json -> App模块配置` 中配置 `Geolocation(定位)` 模块
+- `bluetoothError`：
+  - Android平台值为 `"Missing permissions required by BluetoothAdapter.isEnabled: android.permission.BLUETOOTH"` 表示没有 `android.permission.BLUETOOTH` 权限
+  - iOS平台值为 `"Missing bluetooth module in manifest.json"` ，表示没有在 `manifest.json -> App模块配置` 中配置 `BlueTooth(低功耗蓝牙)` 模块
+- `locationError`：
+  - Android平台不会返回此值；
+  - iOS平台值为 `"Missing geolocation module in manifest.json"` 表示没有在 `manifest.json -> App模块配置` 中配置 `Geolocation(定位)` 模块
 
 **示例**
 

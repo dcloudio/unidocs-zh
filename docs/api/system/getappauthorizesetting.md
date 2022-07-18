@@ -34,19 +34,19 @@
 - `'config error'`：
   - bluetoothAuthorized：
     - Android平台不会返回 `config error`
-    - iOS平台：表示没有在 `manifest.json -> App模块配置` 中配置 `BlueTooth(低功耗蓝牙)` 模块则会返回该值
+    - iOS平台：表示没有在 `manifest.json -> App模块配置` 中配置 `BlueTooth(低功耗蓝牙)` 模块
   - cameraAuthorized：
-    - Android平台：表示没有授予 `android.permission.CAMERA` 权限则会返回该值
+    - Android平台：表示没有授予 `android.permission.CAMERA` 权限
     - iOS平台不会返回 `config error`
   - locationAuthorized：
-    - Android平台：表示没有授予 `android.permission.ACCESS_COARSE_LOCATION` 权限则会返回该值
-    - iOS平台：表示没有在 `manifest.json -> App模块配置` 中配置 `Geolocation(定位)` 模块则会返回该值
+    - Android平台：表示没有授予 `android.permission.ACCESS_COARSE_LOCATION` 权限
+    - iOS平台：表示没有在 `manifest.json -> App模块配置` 中配置 `Geolocation(定位)` 模块
   - microphoneAuthorized：
-    - Android平台：表示没有授予 `android.permission.RECORD_AUDIO` 权限则会返回该值
+    - Android平台：表示没有授予 `android.permission.RECORD_AUDIO` 权限
     - iOS平台不会返回 `config error`
   - notificationAuthorized、notificationAlertAuthorized、notificationBadgeAuthorized、notificationSoundAuthorized：
     - Android平台不支持
-    - iOS平台：表示没有在 `manifest.json -> App模块配置` 中配置 `Push(推送)` 模块则会返回该值
+    - iOS平台：表示没有在 `manifest.json -> App模块配置` 中配置 `Push(推送)` 模块
 
 **示例**
 

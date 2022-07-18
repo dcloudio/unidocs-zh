@@ -12,10 +12,16 @@
 
 |属性|类型|说明|
 |:-|:-|:-|
-|bluetoothEnabled|boolean|蓝牙的系统开关|
+|bluetoothEnabled|boolean|蓝牙的系统开关。在没有 `bluetoothError` 时该值准确|
+|bluetoothError|String/undefined|App平台模块错误时返回，配置正确时不返回此属性。详情见下|
 |locationEnabled|boolean|地理位置的系统开关|
+|locationError|String/undefined|App平台模块错误时返回，配置正确时不返回此属性。详情见下|
 |wifiEnabled|boolean|Wi-Fi 的系统开关|
 |deviceOrientation|string|设备方向。`竖屏：portrait`，`横屏：landscape`|
+
+**Tips**
+- `bluetoothError`：`Android平台` 没有蓝牙权限是返回值为 `"Missing permissions required by BluetoothAdapter.isEnabled: android.permission.BLUETOOTH"`，`iOS平台` 没有配置蓝牙模块返回值为 `"Missing bluetooth module in manifest.json"`
+- `locationError`：`iOS平台` 没有定位权限 `"Missing geolocation module in manifest.json"`
 
 **示例**
 

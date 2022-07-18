@@ -31,7 +31,7 @@
 - `'authorized'`：表示已经获得授权，无需再次请求授权；
 - `'denied'`：表示请求授权被拒绝，无法再次请求授权；（此情况需要引导用户打开系统设置，在设置页中打开权限）
 - `'non determined'`：表示尚未请求授权，会在App下一次调用系统相应权限时请求；（仅 iOS 会出现。此种情况下引导用户打开系统设置，不展示开关）
-- `'config error'`：
+- `'config error'`：只有在 App 端时返回
   - bluetoothAuthorized：
     - Android平台不会返回 `config error`
     - iOS平台：表示没有在 `manifest.json -> App模块配置` 中配置 `BlueTooth(低功耗蓝牙)` 模块

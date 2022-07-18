@@ -14,7 +14,9 @@
 
 以下为uni-cloud-push扩展库的api文档；关于uni-cloud-push扩展库的详细介绍，以及如何在需要操作uni-push的云函数里，手动配置uni-cloud-push扩展库[详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%8E%A8%E9%80%81%E6%B6%88%E6%81%AF)
 
-### 推送目标选择
+### 推送消息
+
+#### 推送目标选择
 发送push可以基于如下维度选择目标设备：
 - 不指定，所有启动过应用的设备
 - user_id，指定的用户id，基于uni-id账户体系
@@ -41,7 +43,7 @@
 ```js 
 await uniPush.sendMessage(OBJECT)
 ```
-#### sendMessage参数说明    
+#### 入参说明  
 |名称|类型|必填|默认值|描述|平台特性|
 |--|--|--|--|--|--|
 |user_id|String、Array|否|无|基于uni-id的_id，指定接收消息的用户id。</br>支持多个以数组的形式指定多个用户id，如["user_id-1","user_id-2"]，数组长度不大于500| |
@@ -204,7 +206,7 @@ await uniPush.sendMessage(OBJECT)
 对正处于推送状态，或者未接收的消息停止下发（只支持批量推和群推任务）
 ##### 接口形式
 ```js 
-await push.stopTaskByTaskid(taskId)
+await uniPush.stopTaskByTaskid(taskId)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -225,7 +227,7 @@ await push.stopTaskByTaskid(taskId)
 该接口支持在推送完定时任务之后，查看定时任务状态，定时任务是否发送成功。
 ##### 接口形式
 ```js 
-await push.getTaskScheduleByTaskid(taskId)
+await uniPush.getTaskScheduleByTaskid(taskId)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -264,7 +266,7 @@ await push.getTaskScheduleByTaskid(taskId)
 用来删除还未下发的任务，删除后定时任务不再触发(距离下发还有一分钟的任务，将无法删除，后续可以调用停止任务接口。)
 ##### 接口形式
 ```js 
-await push.deleteTaskScheduleByTaskid(taskId)
+await uniPush.deleteTaskScheduleByTaskid(taskId)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -288,7 +290,7 @@ await push.deleteTaskScheduleByTaskid(taskId)
 >使用该接口需要申请权限，若有需要，请点击右侧“技术咨询”了解详情
 ##### 接口形式
 ```js 
-await push.getTaskDetail(OBJECT)
+await uniPush.getTaskDetail(OBJECT)
 ```
 ##### 入参说明
 | 名称         |  类型   |是否必须      |    默认值|说明      |  
@@ -337,7 +339,7 @@ await push.getTaskDetail(OBJECT)
 一个cid只能绑定一个别名，若已绑定过别名的cid再次绑定新别名，则前一个别名会自动解绑，并绑定新别名。
 ##### 接口形式
 ```js 
-await push.cidBindAlias(OBJECT)
+await uniPush.cidBindAlias(OBJECT)
 ```
 ##### 入参说明
 * 参数示例
@@ -379,7 +381,7 @@ await push.cidBindAlias(OBJECT)
 通过传入的cid查询对应的别名信息
 ##### 接口形式
 ```js 
-await push.getAliasByCid(cid)
+await uniPush.getAliasByCid(cid)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -412,7 +414,7 @@ await push.getAliasByCid(cid)
 通过传入的别名查询对应的cid信息
 ##### 接口形式
 ```js 
-await push.getCidByAlias(alias)
+await uniPush.getCidByAlias(alias)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -443,7 +445,7 @@ await push.getCidByAlias(alias)
 批量解除别名与cid的关系
 ##### 接口形式
 ```js 
-await push.unboundAlias(Array)
+await uniPush.unboundAlias(Array)
 ```
 ##### 入参说明
 * 参数示例
@@ -485,7 +487,7 @@ await push.unboundAlias(Array)
 解绑所有与该别名绑定的cid
 ##### 接口形式
 ```js 
-await push.unboundAllAlias(alias)
+await uniPush.unboundAllAlias(alias)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -514,7 +516,7 @@ await push.unboundAllAlias(alias)
 > 此接口对单个cid有频控限制，每天只能修改一次，最多设置100个标签；单个标签长度最大为32字符，标签总长度最大为512个字符，申请修改请点击右侧“技术咨询”了解详情 。
 ##### 接口形式
 ```js 
-await push.cidBindCustomTags(OBJECT)
+await uniPush.cidBindCustomTags(OBJECT)
 ```
 ##### 入参说明
 * 参数示例
@@ -555,7 +557,7 @@ await push.cidBindCustomTags(OBJECT)
 > 此接口有频次控制(每分钟最多100次，每天最多10000次)，申请修改请点击右侧“技术咨询”了解详情
 ##### 接口形式
 ```js 
-await push.cidsBindCustomTag(OBJECT)
+await uniPush.cidsBindCustomTag(OBJECT)
 ```
 
 ##### 入参说明
@@ -592,7 +594,7 @@ await push.cidsBindCustomTag(OBJECT)
 >此接口有频次控制(每分钟最多100次，每天最多10000次)，申请修改请点击右侧“技术咨询”了解详情
 ##### 接口形式
 ```js 
-await push.cidsUnboundCustomTag(OBJECT)
+await uniPush.cidsUnboundCustomTag(OBJECT)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -628,7 +630,7 @@ await push.cidsUnboundCustomTag(OBJECT)
 >此接口有频次控制(每分钟最多100次，每天最多10000次)，申请修改请点击右侧“技术咨询”了解详情
 ##### 接口形式
 ```js 
-await push.searchCustomTagByCid(cid)
+await uniPush.searchCustomTagByCid(cid)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -667,7 +669,7 @@ await push.searchCustomTagByCid(cid)
 
 ##### 接口形式
 ```js 
-await push.addCidToBlacklist(push_clientid)
+await uniPush.addCidToBlacklist(push_clientid)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -691,7 +693,7 @@ await push.addCidToBlacklist(push_clientid)
 将单个push_clientid或多个push_clientid设备移出黑名单，对于黑名单设备在推送过程中会被过滤掉的，不会给黑名单设备推送消息
 ##### 接口形式
 ```js 
-await push.removeCidInBlacklist(push_clientid)
+await uniPush.removeCidInBlacklist(push_clientid)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -719,7 +721,7 @@ await push.removeCidInBlacklist(push_clientid)
 
 ##### 接口形式
 ```js 
-await push.getClientStatusByCid(push_clientid)
+await uniPush.getClientStatusByCid(push_clientid)
 ```
 ##### 入参说明
 | 名称 | 类型    | 是否必须 | 默认值 | 说明                                    |
@@ -760,7 +762,7 @@ await push.getClientStatusByCid(push_clientid)
 3. 该接口需要开通权限，如需开通，请联系右侧技术咨询
 ##### 接口形式
 ```js 
-await push.getDeviceStatusByCid(cid)
+await uniPush.getDeviceStatusByCid(cid)
 ```
 ##### 入参说明
 | 名称 | 类型    | 是否必须 | 默认值 | 说明                                    |
@@ -802,7 +804,7 @@ await push.getDeviceStatusByCid(cid)
 查询设备的信息
 ##### 接口形式
 ```js 
-await push.getClientDetailByCid(String|Array)
+await uniPush.getClientDetailByCid(String|Array)
 ```
 ##### 入参说明
 | 名称 | 类型    | 是否必须 | 默认值 | 说明                                    |
@@ -865,7 +867,7 @@ await push.getClientDetailByCid(String|Array)
 通过指定查询条件来查询满足条件的设备数量
 ##### 接口形式
 ```js 
-await push.getClientCount(OBJECT)
+await uniPush.getClientCount(OBJECT)
 ```
 ##### 入参说明
 * 参数示例
@@ -936,7 +938,7 @@ await push.getClientCount(OBJECT)
 通过cid通知个推服务器当前iOS设备的角标情况。
 ##### 接口形式
 ```js 
-await push.setBadgeByCid(OBJECT)
+await uniPush.setBadgeByCid(OBJECT)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -960,7 +962,7 @@ await push.setBadgeByCid(OBJECT)
 >此接口调用，仅可以查询toList或toApp的推送结果数据；不能查询toSingle的推送结果数据。
 ##### 接口形式
 ```js 
-await push.getReport(OBJECT)
+await uniPush.getReport(OBJECT)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -1023,7 +1025,7 @@ await push.getReport(OBJECT)
 >此接口调用，仅可以查询toList或toApp的推送结果数据；不能查询toSingle的推送结果数据。
 ##### 接口形式
 ```js 
-await push.getReportByGroupName(group_name)
+await uniPush.getReportByGroupName(group_name)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -1084,7 +1086,7 @@ await push.getReportByGroupName(group_name)
 >注意：该接口需要开通权限，如需开通，请联系对应的商务同学开通
 ##### 接口形式
 ```js 
-await push.getReportDetailByTaskid(taskid)
+await uniPush.getReportDetailByTaskid(taskid)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -1210,7 +1212,7 @@ await push.getReportDetailByTaskid(taskid)
 调用此接口可以获取某个应用单日的推送数据(推送数据包括：下发数，接收数、展示数、点击数)(目前只支持查询非当天的数据)
 ##### 接口形式
 ```js 
-await push.getReportByDate(date)
+await uniPush.getReportByDate(date)
 ```
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
@@ -1273,7 +1275,7 @@ await push.getReportByDate(date)
 3.该接口做了频控限制，请不要频繁调用
 ##### 接口形式
 ```js 
-await push.getTodayReport()
+await uniPush.getTodayReport()
 ```
 ##### 入参说明
 无
@@ -1368,7 +1370,7 @@ await push.getTodayReport()
 调用此接口可以获取某个应用单日的设备数据(设备数据包括：新增设备数，累计注册设备总数，在线峰值，日联网设备数)(目前只支持查询非当天的数据)
 ##### 接口形式
 ```js 
-await push.getClientReportByDate(date)
+await uniPush.getClientReportByDate(date)
 ```
 ##### 入参说明
 
@@ -1410,7 +1412,7 @@ await push.getClientReportByDate(date)
 查询当前时间一天内的在线设备数(10分钟一个点，1个小时六个点)
 ##### 接口形式
 ```js
-await push.getTodayOnlineClientReport()
+await uniPush.getTodayOnlineClientReport()
 ```
 ##### 入参说明
 无

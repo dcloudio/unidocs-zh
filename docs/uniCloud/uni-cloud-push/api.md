@@ -126,7 +126,7 @@ await uniPush.sendMessage(OBJECT)
 |device_id|String、Array|否|无|指定接收消息的设备id，基于opendb表的device设备（未开通uni统计或基于uni-id-pages开发的应用，必须基于uni-id-co登录后才可使用）| |
 |push_clientid|String、Array|否|无|基于[uni.getPushClientId](#getPushClientId)获取的客户端推送标识，指定接收消息的设备。</br>支持多个以数组的形式指定多个设备，如["cid-1","cid-2"]，数组长度不大于1000| |
 |getui_custom_tag|String|否|无|基于个推`getui_custom_tag`，指定接收消息接设备;</br>注：该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情 。| |
-|getui_big_data_tag|Object Array|否|无|对指定应用的符合筛选条件的设备群发推送消息。支持定时、定速功能。详见下方[getui-big-data-tag 说明](#getui_big_data_tag 说明)| |
+|getui_big_data_tag|Object Array|否|无|对指定应用的符合筛选条件的设备群发推送消息。支持定时、定速功能。详见下方[getui-big-data-tag 说明](#getui-big-data-tag-说明)| |
 |getui_alias|String、Array|否|无|个推自定义客户端别名，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["getui_alias-1","getui_alias-2"]，数组长度不大于1000| |
 |platform|String、Array|否|"ALL"|指定接收消息的平台，"ALL"表示所有平台。</br>支持用数组枚举支持的平台，如：["web","app-ios","app-android","mp-weixin"],详情见下方[platform 说明](#platform 说明)</br>仅通过`user_id`、`user_tag`指定消息接收者时有效|
 |check_token|Boolean|否|true|校验客户端登陆状态是否有效（含token过期）</br>仅通过`user_id`、`user_tag`指定消息接收者时有效| |

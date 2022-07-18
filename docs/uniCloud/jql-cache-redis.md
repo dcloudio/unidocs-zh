@@ -42,10 +42,9 @@ uniCloud 提供了 MongoDB 和 Redis 2种数据库。并且提供了联动机制
 }]
 ```
 
-`expiresIn`如果不填，就意味着不会根据时间失效。
+`expiresIn`是缓存有效期，单位秒，有效期的开始时间为第一次cache到redis的时间（其实就是redis自带的有效期）。如果不填，就意味着不会根据时间失效。
 
 配置成功后，客户端或云端JQL查询`db.collection('test').limit(10).get()`时，就会优先去redis中找，如果没找到，会从MongoDB中找然后自动cache到redis中。
-
 
 未命中缓存时，clientDB或使用了jql扩展的云函数/云对象会输出以下日志
 

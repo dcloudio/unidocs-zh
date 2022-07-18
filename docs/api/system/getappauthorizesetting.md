@@ -18,13 +18,13 @@
 |locationAccuracy|String|定位准确度。`"reduced"` 表示模糊定位；`"full"` 表示精准定位；`"unsupported"` 表示不支持|App 端仅 iOS 支持|
 |microphoneAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许使用麦克风的开关|
 |notificationAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知的开关||
-|notificationAlertAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知带有提醒的开关|App 端仅 iOS（10.0+）|
-|notificationBadgeAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知带有标记的开关|App 端仅 iOS（10.0+）|
-|notificationSoundAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知带有声音的开关|App 端仅 iOS（10.0+）|
+|notificationAlertAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知带有提醒的开关|App 端仅 iOS（10.0+）支持|
+|notificationBadgeAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知带有标记的开关|App 端仅 iOS（10.0+）支持|
+|notificationSoundAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知带有声音的开关|App 端仅 iOS（10.0+）支持|
 |phoneCalendarAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许读写日历的开关|App 端不支持|
 
 #### 不推荐使用的返回参数，仅为兼容保留
-|locationReducedAccuracy|boolean|定位准确度。true 表示模糊定位，false 表示精确定位 |App 端仅 iOS 支持|
+|locationReducedAccuracy|boolean|模糊定位。true 表示模糊定位，false 表示精确定位 |App 端仅 iOS 支持|
 
 **Tips：**
 

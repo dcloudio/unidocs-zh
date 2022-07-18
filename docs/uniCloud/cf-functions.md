@@ -860,6 +860,20 @@ exports.main = async function(event, context) {
 
 当在云函数package.json内的cloudfunction-config内配置了`keepRunningAfterReturn: false`时，可以改变腾讯云nodejs12的表现，云函数return之后将不再继续执行，未断开的长连接也不会增加云函数实际运行时间，云函数return后长连接也不会被中断，简单来说其表现和腾讯云nodejs8一致。
 
+**在云函数中发送网络请求**
+
+将上述示例中的setTimeout换成网络请求、调用其他云函数或数据库请求同理，如果在阿里云或腾讯云nodejs8直接return会导致网络请求可能无法发送（即使成功发送也是在下一次云函数实例被复用的时候），这是与传统开发不太一样的地方。
+
+```js
+exports.main = async function(event, context) {
+	uniCloud.callFunction({ 
+    name: 'test',
+    data: {}
+  })
+	return {} // callFunction后不等待直接return时无法调用到test云函数
+}
+```
+
 **腾讯云nodejs12使用redis**
 
 由于redis需要和服务器建立连接，此连接会阻止云函数结束执行。如果没有云函数return之后还需要继续执行的需求，可以简单的在`cloudfunction-config`内配置`keepRunningAfterReturn: false`。这样redis的连接并不会中断，下次请求来时依然可以使用之前建立的连接。

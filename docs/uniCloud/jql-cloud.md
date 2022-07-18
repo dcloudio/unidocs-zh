@@ -84,5 +84,6 @@ module.exports = {
 ## 注意事项
 
 - JQL扩展依赖`uni-id`公共模块
+- JQL扩展库依赖redis扩展库进行数据缓存，未开通redis的服务空间无法使用缓存功能
 - 启用了JQL扩展的云函数在本地调试时会自动使用本地schema、action、validateFunction以及uni-id公共模块
 - 由于此扩展会将`schema`、`action`、`validateFunction`带到模块内，如果你的上述文件较多会大幅增大云函数体积，因此启用此扩展的云函数**冷启动**时间会稍长，建议不要为太多云函数启用此扩展

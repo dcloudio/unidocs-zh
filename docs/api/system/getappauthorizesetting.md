@@ -11,7 +11,7 @@
 
 |属性|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
-|albumAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许使用相册的开关|App 端仅 iOS 支持|
+|albumAuthorized|'authorized'/'denied'/'not determined'|允许使用相册的开关|App 端仅 iOS 支持|
 |bluetoothAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许使用蓝牙的开关|App 端仅 iOS 支持|
 |cameraAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许使用摄像头的开关||
 |locationAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许使用定位的开关||
@@ -31,7 +31,12 @@
 - `'authorized'`：表示已经获得授权，无需再次请求授权；
 - `'denied'`：表示请求授权被拒绝，无法再次请求授权；（此情况需要引导用户打开系统设置，在设置页中打开权限）
 - `'non determined'`：表示尚未请求授权，会在App下一次调用系统相应权限时请求；（仅 iOS 会出现。此种情况下引导用户打开系统设置，不展示开关）
-- `'config error'`：在 `Android平台` 表示没有对应的权限。在 `iOS平台` 表示没有在 `manifest.json -> App模块配置` 勾选对应的配置
+- `'config error'`：
+  - bluetoothAuthorized：iOS平台没有在 `manifest.json -> App模块配置` 中配置 `BlueTooth(低功耗蓝牙)` 模块则会返回该值
+  - cameraAuthorized：Android平台没有授予 `android.permission.CAMERA` 权限则会返回该值
+  - locationAuthorized：Android平台没有授予 `android.permission.ACCESS_COARSE_LOCATION` 权限则会返回该值。iOS平台没有在 `manifest.json -> App模块配置` 中配置 `Geolocation(定位)` 模块则会返回该值
+  - microphoneAuthorized：Android平台没有授予 `android.permission.RECORD_AUDIO` 权限则会返回该值
+  - notificationAuthorized、notificationAlertAuthorized、notificationBadgeAuthorized、notificationSoundAuthorized：iOS平台没有在 `manifest.json -> App模块配置` 中配置 `Push(推送)` 模块则会返回该值
 
 **示例**
 

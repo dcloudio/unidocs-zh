@@ -19,7 +19,7 @@
 	* [uni-push1.0](unipush-v1.md)
 	* [uni-push2.0](unipush-v2.md)
 		* [业务文档](unipush-v2.md)
-		* [开发文档](api/plugins/push.md)
+		* 开发文档
 			* [客户端api](api/plugins/push.md)
 			* [服务端api](uniCloud/uni-cloud-push/api.md)
 		* [uni-push2.0、uni-id、uni统计的组合](uniCloud/uni-cloud-push/mate.md)

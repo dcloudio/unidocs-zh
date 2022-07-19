@@ -236,8 +236,6 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 
 ## 页面通讯
 
-> 自 HBuilderX 2.0.0 起支持，[使用指南](https://ask.dcloud.net.cn/article/36010)
-
 ### uni.$emit(eventName,OBJECT) @emit
 
 触发全局的自定义事件。附加参数都会传给监听器回调。
@@ -370,6 +368,9 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 - uni.$emit、 uni.$on 、 uni.$once 、uni.$off 触发的事件都是 App 全局级别的，跨任意组件，页面，nvue，vue 等
 - 使用时，注意及时销毁事件监听，比如，页面 onLoad 里边 uni.$on 注册监听，onUnload 里边 uni.$off 移除，或者一次性的事件，直接使用 uni.$once 监听
 
+扩展阅读：
+
+- [如何使用uni.$emit()和uni.$on() 进行页面间通讯](https://ask.dcloud.net.cn/article/36010)
 
 ## 路由
 

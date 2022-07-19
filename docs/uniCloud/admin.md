@@ -582,10 +582,8 @@ _使用步骤:_
 
 > 在应用管理新增一个应用之后，即可在 `App升级中心` 发布该应用的版本
 
-**Tips**
-- 删除应用会把该应用的所有版本记录同时删除
+**版本管理**
 
-#### 版本管理
 1. 在版本管理list的右上角点击`发布新版`，可以发布`原生App安装包`和`wgt资源包`。在左上角点击`下拉列表`，可以切换展示应用。
 
 <div align="center">
@@ -646,11 +644,9 @@ _使用步骤:_
 	</div>
 
 **Tips**
-
-1. `/uni_modules/uni-upgrade-center/pages/system/upgradecenter/version/add.vue`中有版本对比函数（compare）。
+- `/uni_modules/uni-upgrade-center/pages/system/upgradecenter/version/add.vue`中有版本对比函数（compare）。
 	- 使用多段式版本格式（如："3.0.0.0.0.1.0.1", "3.0.0.0.0.1"）。如果不满足对比规则，请自行修改。
-
-**Tips**
+- 删除应用会把该应用的所有版本记录同时删除
 - 升级中心设计之初就支持iOS的wgt更新
 - iOS的wgt更新肯定是违反apple政策的，注意事项：
 	- 审核期间请不要弹窗升级

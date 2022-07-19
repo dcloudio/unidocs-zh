@@ -592,7 +592,7 @@ _使用步骤:_
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/442e84e7-e7f3-4d27-9c98-45568e5db835.png" width="800"></img>
 </div>
 
-- #### 发布原生App安装包
+- 发布原生App安装包
 	1. 在上传安装包界面填写此次发版信息
 
 	<div align="center" >
@@ -620,7 +620,7 @@ _使用步骤:_
 		- 修改当前包为上线发行，自动替换当前线上发行版
 
 	**注：版本号请填写以`.`分隔字符串，例如：`0.0.1`**
-- #### 发布wgt资源包
+- 发布wgt资源包
 	1. 大部分配置与发布 `原生App安装包` 一致
 
 	<div align="center">
@@ -639,7 +639,7 @@ _使用步骤:_
 
 	**注：版本号请填写以`.`分隔字符串，例如：`0.0.1`**
 
-- #### 发布完成页面
+- 发布完成页面
 
 	<div align="center">
 	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/c5470d8c-cc37-4b41-8d56-6d50f8daac62.png" width="800"></img>

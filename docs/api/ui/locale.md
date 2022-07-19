@@ -47,6 +47,7 @@
 ### 注意事项
 
 * 组件和接口显示会根据设置的语言环境自动切换，未支持的系统语言环境会显示为英文。
+* App-Android、App-iOS 平台修改系统语言后会重启应用。
 * App-Android 平台设置新的语言后会自动重启应用。
 * 框架内置如下语言，如需自定义内容或增加其他语言参考：[自定义国际化内容](https://uniapp.dcloud.io/collocation/i18n?id=uni-framework)。
   * 英语 en

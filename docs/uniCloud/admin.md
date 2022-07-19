@@ -378,7 +378,7 @@ $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
 
 `uni-admin`管理员通过“应用管理”模块中填写的应用信息（如apk下载地址、小程序二维码）后，可快捷生成应用发布页。
 
-更多uni-portal的介绍，详见：[https://uniapp.dcloud.io/m3w.html](https://uniapp.dcloud.io/m3w.html)
+更多uni-portal的介绍，详见：[uni-portal](uni-portal.md)
 
 ### uni-upgrade-center：App升级中心<Badge text="uni-admin 1.9.3+" />@uni-upgrade-center
 

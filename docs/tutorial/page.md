@@ -28,7 +28,7 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件�
 
 `uni-app`会将`pages.json -> pages`配置项中的第一个页面，作为当前工程的首页（启动页）。
 
-## 应用生命周期 @lifecycle
+## 页面生命周期 @lifecycle
 
 ``uni-app`` 支持如下页面生命周期函数：
 

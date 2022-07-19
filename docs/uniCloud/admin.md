@@ -1,12 +1,6 @@
 ## uni-admin 框架（原名 uniCloud admin）
 
-**看视频，15分钟掌握uni-admin**
-
-<a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=13">
-    <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/4332911b-6624-4587-8c77-78b68f1f8c78.jpg" alt="uni-admin视频教程" style="width: 60%;">
-</a>
-
-### 什么是 uni-admin
+### uni-admin 概述
 
 uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源框架。
 
@@ -28,7 +22,15 @@ github 仓库：[https://github.com/dcloudio/uni-admin](https://github.com/dclou
 
 欢迎 issues、pr、star ！
 
-### uni-admin 功能介绍
+### 看视频，15分钟掌握uni-admin
+
+<a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=13">
+    <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/4332911b-6624-4587-8c77-78b68f1f8c78.jpg" alt="uni-admin视频教程" style="width: 60%;">
+</a>
+
+
+### uni-admin 功能
+
 uni-admin有预置功能、插件生态和数据表管理的代码生成工具。
 
 有这套组合，管理端系统的开发变的前所未有的简单、高效、低成本。
@@ -36,7 +38,7 @@ uni-admin有预置功能、插件生态和数据表管理的代码生成工具�
 1. 预置功能
 
 - 管理员账户初始化、登录、修改密码
-- 基于uni-id的用户管理（注册、修改信息、停用启用、删除）、角色管理、权限管理
+- 基于[uni-id](uni-id-summary.md)的用户管理（注册、修改信息、停用启用、删除）、角色管理、权限管理
 - 顶部 topWindow 的设置：比如 logo 更换、右上角部分链接更换。详见项目根目录的`admin.config.js`文件
 - 左侧 leftWindow 的菜单设置：菜单包括两类，一类是动态菜单，具备业务和权限功能；另一类是静态菜单，不会根据登录用户角色变化
 - 动态菜单的数据存储在数据库表opendb-admin-menus中，基于uni-id角色权限，在菜单管理中可以对菜单进行增删改查
@@ -48,17 +50,7 @@ uni-admin有预置功能、插件生态和数据表管理的代码生成工具�
 - 无需开发，在manifest的 uni统计 中打勾并发行，在uniCloud服务空间部署uni-admin，即可查看报表，见下文介绍
 - 开发者也可以自定义打点数据、自定义展现报表
 
-3. 扩展插件
-
-- uni-admin支持插件生态，包括cms插件、banner管理插件、日志管理插件、图表示例等，详见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&orderBy=UpdatedDate)
-
-4. 数据表管理的代码生成工具
-
-- 对于数据表的管理，如列表浏览、分页搜索、详情修改、新增删除，这些代码都无需自己开发。建好数据表的schema表结构，利用schema2code工具，即可自动生成该表的管理页面的代码。详见[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)
-
-uni-admin是完整开源的一个uni-app项目，任何熟悉uni-app的工程师都可以自行开发扩展功能。
-
-### 支持响应式布局
+3. 支持响应式布局
 
 uni-admin 同时支持 PC 端 和移动端。基础模块是全端可用的，但注意有的插件不是全端的。
 
@@ -70,7 +62,16 @@ PC 端如下图：
 
 <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/2766a010-11d7-11eb-8bd0-2998ac5bbf7e.png" width="375"/>
 
-- 在线演示地址：[https://unicloudadmindemo.dcloud.net.cn](https://unicloudadmindemo.dcloud.net.cn)
+
+4. 扩展插件
+
+- uni-admin支持插件生态，包括cms插件、banner管理插件、日志管理插件、图表示例等，详见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&orderBy=UpdatedDate)
+
+5. 数据表管理的代码生成工具
+
+- 对于数据表的管理，如列表浏览、分页搜索、详情修改、新增删除，这些代码都无需自己开发。建好数据表的schema表结构，利用schema2code工具，即可自动生成该表的管理页面的代码。详见[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)
+
+uni-admin是完整开源的一个uni-app项目，任何熟悉uni-app的工程师都可以自行开发扩展功能。
 
 ### 使用
 

@@ -10,7 +10,7 @@ uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源
 - 它基于 uniCloud，是 serverless 的云开发。了解[uniCloud](https://uniapp.dcloud.io/uniCloud/README)
 - 它基于 uni-id，使用 uni-id 的用户账户、角色、权限系统。了解[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id)
 
-官方搭建了[uni-admin演示站点](http://hellouniadmin.dcloud.net.cn/admin/)，你也可以登录并快速体验uni-admin。
+官方搭建了[uni-admin演示站点](http://hellouniadmin.dcloud.net.cn/admin/)，你登录后即可快速体验uni-admin。
 
 uni-admin 是开源的，遵循 MIT 协议，你可以从[Github](https://github.com/dcloudio/uni-admin)或[码云](https://gitee.com/dcloud/uni-admin)获取源码，也可以从[DCloud插件市场](https://ext.dcloud.net.cn/plugin?id=3268)快捷下载。
 
@@ -323,60 +323,6 @@ $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
 
 如果想将自己开发的页面调到登录后首页，可在 page.json 调整。
 
-### uni统计2.0 介绍
-
-uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台，下图为概览图和简介，详见[统计文档](https://uniapp.dcloud.net.cn/uni-stat-v2.html)
-
-![统计-概况页](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/28ddae77-dda6-448f-86aa-7e59bb7c4f8d.png)
-
-**1. 全端**
-
-全端流量统计，一张报表可查看所有端（iOS、Android、Web 及各家小程序）的运营数据。
-
-无需在各端接不同的sdk、无需在不同报表看数据。目前市面已知唯一一个一张报表看遍业务全景的方案。
-
-**2. 开源、免费、自由定制**
-
-无论前端采集数据的SDK、云端接收数据的云函数、云端跑批统计的云函数、展示统计结果的报表，所有这些代码全部开源。
-
-前端自定义打点，后端自定义统计维度，自由定制报表，一切都可以灵活定制。
-
-**3. 私有部署、数据自控**
-
-使用传统saas类统计产品，所有数据都上报给统计服务厂商。
-
-`uni统计2.0`基于`uniCloud`实现，云函数、统计数据全部托管在开发者自己的服务空间（阿里云或腾讯云自选）中，开发者对自己的统计数据拥有完整的控制权。
-
-**4. 默认功能丰富**
-
-- 设备统计
-- 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id.html)）
-- 页面统计
-- 新增、活跃、留存、跳出率分析
-- 渠道分析：辅助渠道推广
-- 错误统计和上报：辅助产品质量提升
-- 自定义打点、开源可扩展的报表
-
-**5. 有效的错误分析**
-
-传统统计平台，都没有js错误统计。开发者无法了解到自己的js代码在哪些设备上会报错。
-
-uni统计的错误信息更全面，包括 js前端错误和 App 原生层的崩溃。辅助开发者把应用做的更好。
-
-**6. 更适合uni-app和uniCloud**
-
-uni统计深入uni-app和uniCloud框架底层，提供了众多其他统计平台无法提供的功能：
-- uni-app全端识别，无需对接不同sdk、无需在不同报表中切换和自己累加数据
-- 自动识别uni-app路由，自动采集页面标题（基于navigationBar或uni-title组件）
-- 自动捕获js错误，上报app端原生崩溃日志
-- 兼容uni-app渠道包打包体系，自动识别渠道包
-- 基于uni-id账户体系，自动出具注册用户（不是设备）的新增、活跃、留存报表
-- 兼容uniCloud [opendb规范](/uniCloud/opendb)，从服务器端统计各项数据
-
-**7. 开放生态**
-
-uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
-
 
 ### 应用管理 <Badge text="uni-admin 1.9.3+" />@app-manager
 
@@ -426,38 +372,43 @@ uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插�
    }
    ```
 
-### 统一发布页<Badge text="uni-admin 1.9.3+" />@uni-portal
+### uni-portal：统一发布页<Badge text="uni-admin 1.9.3+" />@uni-portal
 
-> 点击应用管理列表中的 `发布页管理` 可一键生成统一发布页
+> App/小程序/网站做好后，如何告知你的用户？
 
-**1. 整体界面布局**
+你需要为自己的业务制作一个名片，名片上统一展现：App 的下载地址、小程序二维码、H5访问链接等，也就是“统一发布页”。
 
-  ![发布页管理](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6cd27bf8-1763-461d-946c-418dc8566c57.png)
+而你自己从头开发这么一个“统一发布页”，工作量是巨大的，因为你需要兼容pc/mobile，你需要自动识别浏览器环境等。
 
-- 点击 `生成并下载发布页` 即可一键生成发布页
-- 需要注意的是。在新增应用或者修改应用信息时，需要确保 `App、小程序、快应用、H5` 至少填写一项，否则生成发布页时会有以下提示：
+`uni-portal`是`uni-app`提供的一套开箱即用的“统一发布页”，它可以帮你实现：
+- 响应式布局，兼容PC/Mobile各种尺寸
+- 微信/微博浏览器判断不同逻辑，在不同平台给出正确的App下载引导，比如：右上角提示通过浏览器打开。
+- PC上显示二维码，方便用户直接扫码下载
+- 支持多个平台，包括：微信、支付宝、百度、QQ、快应用等
 
-  ![发布页管理错误](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ad51b1c6-2b51-4586-9ccc-528bdb010f40.jpg)
+眼见为实，`uni-app`官方示例的发布页就是基于`uni-portal`制作的，快速体验[hello uni-app发布页](https://hellouniapp.dcloud.net.cn/portal)。
 
-**2. 页面展示效果**
+`uni-portal`作为`uni-admin`的内置插件，内置在`uni-admin`项目中。
 
-> `uni-portal` 统一发布页面是响应式的，兼容PC宽屏和手机窄屏。
+管理员在`uni-admin`的“应用管理”模块，创建应用并完善相关应用信息（如apk下载地址、小程序二维码）后，点击“发布页管理”，即可生成该应用的发布页。
+
+`uni-portal` 统一发布页面是响应式的，兼容PC宽屏和手机窄屏。
 
 - **PC宽屏**
 
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/14b02d74-57ab-48eb-9933-8d40037f5397.png" height="800"></img>
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/14b02d74-57ab-48eb-9933-8d40037f5397.png" style="max-width:800px !important"></img>
 
 - **手机窄屏**
 
 手机浏览器上，默认展示效果如下：
 
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/e3b2171c-baf7-4be0-a2f3-fedd4f421e4c.png" height="600"></img>
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/e3b2171c-baf7-4be0-a2f3-fedd4f421e4c.png" style="max-width:400px !important"></img>
 
 `uni-portal`统一发布页同时会识别当前浏览器环境，在微信等特殊浏览器上，自动提示“点击右上角菜单，在浏览器中打开”，效果如下：
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/f4b41d5f-861b-4bef-b670-9a2597643e3c.jpg" height="600"></img>
+<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/f4b41d5f-861b-4bef-b670-9a2597643e3c.jpg" style="max-width:400px !important"></img>
 
-### App升级中心<Badge text="uni-admin 1.9.3+" />@uni-upgrade-center
+### uni-upgrade-center：App升级中心<Badge text="uni-admin 1.9.3+" />@uni-upgrade-center
 
 > 在应用管理新增一个应用之后，即可在 `App升级中心` 发布该应用的版本
 
@@ -535,6 +486,62 @@ uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插�
 	> \uni_modules\uni-upgrade-center\pages\mixin\version_add_detail_mixin.js
 	> 
 	> 将 `data` 中的 `enableiOSWgt: false` 中 改为 `enableiOSWgt: true`
+
+
+### uni统计2.0
+
+uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台，下图为概览图和简介，详见[统计文档](https://uniapp.dcloud.net.cn/uni-stat-v2.html)
+
+![统计-概况页](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/28ddae77-dda6-448f-86aa-7e59bb7c4f8d.png)
+
+**1. 全端**
+
+全端流量统计，一张报表可查看所有端（iOS、Android、Web 及各家小程序）的运营数据。
+
+无需在各端接不同的sdk、无需在不同报表看数据。目前市面已知唯一一个一张报表看遍业务全景的方案。
+
+**2. 开源、免费、自由定制**
+
+无论前端采集数据的SDK、云端接收数据的云函数、云端跑批统计的云函数、展示统计结果的报表，所有这些代码全部开源。
+
+前端自定义打点，后端自定义统计维度，自由定制报表，一切都可以灵活定制。
+
+**3. 私有部署、数据自控**
+
+使用传统saas类统计产品，所有数据都上报给统计服务厂商。
+
+`uni统计2.0`基于`uniCloud`实现，云函数、统计数据全部托管在开发者自己的服务空间（阿里云或腾讯云自选）中，开发者对自己的统计数据拥有完整的控制权。
+
+**4. 默认功能丰富**
+
+- 设备统计
+- 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id.html)）
+- 页面统计
+- 新增、活跃、留存、跳出率分析
+- 渠道分析：辅助渠道推广
+- 错误统计和上报：辅助产品质量提升
+- 自定义打点、开源可扩展的报表
+
+**5. 有效的错误分析**
+
+传统统计平台，都没有js错误统计。开发者无法了解到自己的js代码在哪些设备上会报错。
+
+uni统计的错误信息更全面，包括 js前端错误和 App 原生层的崩溃。辅助开发者把应用做的更好。
+
+**6. 更适合uni-app和uniCloud**
+
+uni统计深入uni-app和uniCloud框架底层，提供了众多其他统计平台无法提供的功能：
+- uni-app全端识别，无需对接不同sdk、无需在不同报表中切换和自己累加数据
+- 自动识别uni-app路由，自动采集页面标题（基于navigationBar或uni-title组件）
+- 自动捕获js错误，上报app端原生崩溃日志
+- 兼容uni-app渠道包打包体系，自动识别渠道包
+- 基于uni-id账户体系，自动出具注册用户（不是设备）的新增、活跃、留存报表
+- 兼容uniCloud [opendb规范](/uniCloud/opendb)，从服务器端统计各项数据
+
+**7. 开放生态**
+
+uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
+
 
 
 ### 用户-角色-权限

@@ -32,6 +32,7 @@
 |@error|Handler||当使用开放能力时，发生错误的回调|open-type="launchApp"|微信、QQ、快手、京东小程序|
 |@opensetting|Handler||在打开授权设置页并关闭后回调|open-type="openSetting"|微信、QQ、百度、快手、京东小程序|
 |@launchapp|Handler||从小程序打开 App 成功的回调|open-type="launchApp"|微信、QQ、快手、京东小程序|
+|@contact|Handler||客服消息回调|open-type="contact"|微信、QQ、百度、快手小程序|
 |@chooseavatar|Handler||获取用户头像回调|open-type="chooseAvatar"|微信小程序|
 |@addgroupapp|Handler||添加群应用的回调|open-type="addGroupApp"|QQ小程序|
 |@chooseaddress|Handler||调起用户编辑并选择收货地址的回调|open-type="chooseAddress"|百度小程序|

@@ -139,15 +139,13 @@ async function sum () { //注意方法或生命周期需使用async异步方式
 }
 ```
 
-由于篇幅较长，学习云对象需另见文档[云对象](/uniCloud/cloud-obj)
+由于篇幅较长，学习云对象需另见文档[云对象](cloud-obj.md)
 
 ### 普通云函数callFunction方式
 
 - 普通云函数适用的情况：
 
-云函数是uniCloud的基础，它什么问题都可以解决，但在clientDB和云对象适用的场景中，使用普通云函数反而低效。
-
-clientDB和云对象不能解决的包括：需要云函数URL化与非uni-app系统通信、云端定时运行云函数。
+在HBuilderX 3.5.2之前，需要URL化和定时运行时，只能使用普通云函数；在HBuilderX 3.5.2+，云对象也支持了URL化和定时运行，此时推荐使用云对象替代云函数。
 
 **直观体验代码示例**
 
@@ -194,9 +192,9 @@ exports.main = async (event, context) => {
  -->
 ### 云函数URL化方式
 
-云函数URL化，可以让云函数生成一个HTTP URL。在创建了普通云函数后，可以在Web控制台进行URL化配置。它本质上属于普通云函数的一种调用方式。
+可以让云函数/云对象生成一个HTTP URL。可以在Web控制台进行URL化配置。它本质上属于云函数的一种调用方式。
 
-由于篇幅较长，需另见文档[云函数URL化](/uniCloud/http)。
+由于篇幅较长，需另见文档[云函数URL化](http.md)。
 
 
 ### uniCloud响应体规范@resformat

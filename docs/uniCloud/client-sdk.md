@@ -9,14 +9,14 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 
 |API							|描述																			|
 |--								|--																				|
-|uniCloud.importObject()		|获取云对象引用以调用云对象接口 [详情](uniCloud/cloud-obj.md)					|
-|uniCloud.callFunction()		|客户端调用云函数 [详情](uniCloud/cf-functions.md?id=clientcallfunction)		|
-|uniCloud.database()			|客户端访问云数据库，获取云数据库对象引用 [详情](uniCloud/clientdb.md)			|
-|uniCloud.uploadFile()			|客户端直接上传文件到云存储 [详情](uniCloud/storage.md?id=uploadfile)			|
-|uniCloud.getTempFileURL()		|客户端获取云存储文件的临时路径 [详情](uniCloud/storage.md?id=gettempfileurl)	|
-|uniCloud.chooseAndUploadFile()	|客户端选择文件并上传 [详情](uniCloud/storage.md?id=chooseanduploadfile)		|
+|uniCloud.importObject()		|获取云对象引用以调用云对象接口 [详情](cloud-obj.md)					|
+|uniCloud.callFunction()		|客户端调用云函数 [详情](cf-functions.md#clientcallfunction)		|
+|uniCloud.database()			|客户端访问云数据库，获取云数据库对象引用 [详情](clientdb.md)			|
+|uniCloud.uploadFile()			|客户端直接上传文件到云存储 [详情](storage.md#uploadfile)			|
+|uniCloud.getTempFileURL()		|客户端获取云存储文件的临时路径 [详情](storage.md#gettempfileurl)	|
+|uniCloud.chooseAndUploadFile()	|客户端选择文件并上传 [详情](storage.md#chooseanduploadfile)		|
 |uniCloud.getCurrentUserInfo()	|获取当前用户信息 [详情](#client-getcurrentuserinfo)							|
-|uniCloud.init()				|同时使用多个服务空间时初始化额外服务空间 [详情](uniCloud/init.md)				|
+|uniCloud.init()				|同时使用多个服务空间时初始化额外服务空间 [详情](init.md)				|
 |uniCloud.addInterceptor()		|新增拦截器 [详情](#add-interceptor)											|
 |uniCloud.removeInterceptor()	|移除拦截器 [详情](#remove-interceptor)											|
 |uniCloud.onResponse()			|监听服务端（云函数、云对象、clientDB）响应 [详情](#on-response)				|
@@ -36,7 +36,7 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 
 - 此接口不会发送网络请求，**此接口仅仅是客户端接口，不校验token的合法性以及是否过期**
 - 需要搭配uni-id使用并要求客户端必须将token存储在storage内的`uni_id_token`内
-- 如需获取role、permission需要将角色权限缓存在token内，此功能自uni-id 3.0.0其默认开启，参考：[缓存角色权限](uniCloud/uni-id.md?id=cache-permission-in-token)
+- 如需获取role、permission需要将角色权限缓存在token内，此功能自uni-id 3.0.0 或 uni-id-common中默认开启
 
 用法：`uniCloud.getCurrentUserInfo()`
 
@@ -263,7 +263,7 @@ uniCloud.offResponse(logResponse)
 
 > 新增于HBuilderX 3.5.0
 
-用于监听客户端需要登录事件，此接口需要搭配uniIdRouter使用，参考：[uniIdRouter](uniCloud/uni-id.md?id=uni-id-router)
+用于监听客户端需要登录事件，此接口需要搭配uniIdRouter使用，参考：[uniIdRouter](uni-id-summary.md#uni-id-router)
 
 代码示例：
 

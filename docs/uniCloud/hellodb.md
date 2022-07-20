@@ -2,19 +2,22 @@
 
 `uniCloud`提供了一个 JSON 格式的文档型数据库。顾名思义，数据库中的每条记录都是一个 JSON 格式的文档。
 
-它是nosql非关系型数据库，如果您之前熟悉sql关系型数据库，那么两者概念对应关系如下表：
+它是 nosql 非关系型数据库，如果您之前熟悉 sql 关系型数据库，那么两者概念对应关系如下表：
 
 |关系型			|JSON 文档型												|
 |:-				|:-															|
 |数据库 database|数据库 database											|
 |表 table		|集合 collection。但行业里也经常称之为“表”。无需特意区分	|
 |行 row			|记录 record / doc											|
-|字段 column	|字段 field													|
-|使用sql语法操作|使用MongoDB语法或jql操作									|
+|字段 column / field	|字段 field													|
+|使用sql语法操作|使用MongoDB语法或jql语法操作									|
 
-一个`uniCloud`服务空间，有且只有一个数据库。一个数据库支持多个集合（表）。一个集合可以有多个记录。每个记录可以有多个字段。
+- 一个`uniCloud`服务空间，有且只有一个数据库；
+- 一个数据库可以有多个表；
+- 一个表可以有多个记录；
+- 一个个记录可以有多个字段。
 
-例如，数据库中有一个集合，名为user，存放用户信息。集合user的数据内容如下：
+例如，数据库中有一个表，名为user，存放用户信息。表user的数据内容如下：
 
 ```json
 {"name":"张三","tel":"13900000000"}
@@ -23,11 +26,11 @@
 
 上述数据中，每行数据表示一个用户的信息，被称之为“记录(record/doc)”。name和tel称之为“字段(field)”。而“13900000000”则是第一条记录的字段tel的值。
 
-每行记录，都是一个完整的json文档，获取到记录后可以使用常规json方式操作。但集合并非json文档，集合是多个json文档的汇总，获取集合需要使用专门的API。
+每行记录，都是一个完整的json文档，获取到记录后可以使用常规json方式操作。但表并非json文档，表是多个json文档的汇总，获取表需要使用专门的API。
 
 与关系型数据库的二维表格式不同，json文档数据库支持不同记录拥有不同的字段、支持多层嵌套数据。
 
-仍然以user集合举例，要在数据库中存储每个人的每次登录时间和登录ip，则变成如下：
+仍然以user表举例，要在数据库中存储每个人的每次登录时间和登录ip，则变成如下：
 
 ```json
 {
@@ -44,9 +47,9 @@
 
 可以看出json文档数据库相对于关系型数据库的灵活，李四可以没有login_log字段，也可以有这个字段但登录次数记录与张三不同。
 
-_此处仅为举例，实际业务中，登录日志单独存放在另一个集合更好_
+_此处仅为举例，实际业务中，登录日志单独存放在另一个表更合适_
 
-对于初学者，如果不了解数据库设计，可以参考[opendb](https://gitee.com/dcloud/opendb)，已经预置了大量常见的数据库设计。
+对于初学者，如果不了解数据库设计，可以参考[opendb](opendb.md)，已经预置了大量常见的数据库设计。
 
 对于不熟悉传统数据库，但掌握json的js工程师而言，uniCloud的云数据库更亲切，没有传统数据库高昂的学习成本。
 
@@ -54,32 +57,160 @@ _此处仅为举例，实际业务中，登录日志单独存放在另一个集�
 
 uniCloud同时支持阿里云和腾讯云，它们的数据库大体相同，有细微差异。阿里云的数据库是mongoDB4.0，腾讯云则使用自研的文档型数据库（兼容mongoDB 4.0版本）。uniCloud基本抹平了不同云厂商的差异，有差异的部分会在文档中单独标注。
 
-如果想在云函数连接其他数据库，如mysql，用法和nodejs连接这些数据库是一样的。插件市场已经有人提供了插件，见下。但注意这些用法推荐用于数据导入，主业务开发不建议这么使用。因为其他服务器上的数据库和云函数环境物理上不在一起，连接会比较慢。
+## 创建第一个表
 
-- [云函数连接Mysql数据库示例](https://ext.dcloud.net.cn/plugin?id=1925)
+1. 打开 uniCloud web控制台 [https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)
 
-如需使用redis，请参考文档：[Redis扩展库](uniCloud/redis.md)
+2. 创建或进入一个已存在的服务空间，选择 云数据库->云数据库，创建一个新表
 
-## 操作数据库的方式@db-operation-type
+比如我们创建一个简历表，名为 `resume`。点击上方右侧的 创建 按钮即可。
 
-云数据库支持通过云函数访问，也支持在客户端访问云数据库。
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e8ca747e-d39f-4da2-8a82-733f9d486cb0.jpg)
 
-- 传统方式云函数操作数据库，使用nodejs写云函数、使用传统的MongoDB的API操作云数据库。
-- 客户端访问云数据库，称为[clientDB](uniCloud/clientdb.md)。这种开发方式可大幅提升开发效率，避免开发者开发服务器代码，并且支持更易用的`jql`语法操作数据库，是更为推荐的开发方式。[clientDB](uniCloud/clientdb.md)有单独一套权限和字段值控制系统，无需担心数据库安全。需要`HBuilderX 2.9.5`及以上版本
-- 云函数内使用jql语法操作数据库，需要使用[jql扩展库](uniCloud/jql-cloud.md)。与clientDB写法一致，仅在访问password类型的数据时有区别。clientDB完全不可访问password类型字段（即使为此字段设置permission也不生效）。云函数内password类型字段默认权限为false（可以被admin用户访问），开发者配置的字段权限会覆盖此默认权限。需要`HBuilderX 3.3.1`及以上版本
+新建表时，支持选择现成的 [opendb](opendb.md) 表模板，选择一个或多个模板表，可以点击右下方按钮创建。
+
+创建表一共有3种方式：
+1. 在web控制台创建
+2. 在HBuilderX中，项目根目录/uniCloud/database点右键新建schema，上传时创建
+3. 在代码中也可以创建表，但不推荐使用，[见下](?id=createCollection)
+
+## 数据表的3个组成部分
+
+每个数据表，包含3个部分：
+- data：数据内容
+- index：索引
+- schema：数据表格式定义
+
+在uniCloud的web控制台可以看到一个数据表的3部分内容。
+
+### 数据内容@dbdata
+
+data，就是存放的数据记录(record)。里面是一条一条的json文档。
+
+record可以增删改查、排序统计。后续有API介绍。
+
+可以先在 web控制台 为之前的 `resume` 表创建一条记录。
+
+输入一个json
+```json
+{
+    "name": "张三",
+    "birth_year": 2000,
+    "tel": "13900000000",
+    "email": "zhangsan@zhangsan.com",
+    "intro": "擅于学习，做事严谨"
+}
+```
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/cf0ffb14-c81d-486f-a687-55f84bc99969.jpg)
+
+创建一条新记录，是不管在web控制台创建，还是通过API创建，每条记录都会自带一个`_id`字段用以作为该记录的唯一标志。
+
+`_id`字段是每个数据表默认自带且不可删除的字段。同时，它也是数据表的索引。
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7ed5185c-cfcd-461b-a178-5516e9937798.jpg)
+
+阿里云使用的是标准的mongoDB，`_id`是自增的，后创建的记录的`_id`总是大于先生成的`_id`。传统数据库的自然数自增字段在多物理机的大型数据库下很难保持同步，大型数据库均使用`_id`这种长度较长、不会重复且仍然保持自增规律的方式。
+
+**腾讯云使用的是兼容mongoDB的自研数据库，`_id`并非自增**
+
+插入/导入数据时也可以自行指定`_id`而不使用自动生成的`_id`，这样可以很方便的将其他数据库的数据迁移到uniCloud云数据库。
+
+### 数据库索引@dbindex
+
+所谓索引，是指在数据表的众多字段中挑选一个或多个字段，让数据库引擎优先处理这些字段。
+
+设置为索引的字段，在通过该字段查询(where)或排序(orderBy)时可以获得更快的查询速度。
+
+但设置过多索引也不合适，会造成数据新增和删除变慢。
+
+新建的表，默认只有一个索引`_id`。
+
+一个数据表可以有多个字段被设为索引。
+
+索引分唯一型和非唯一型。
+
+唯一型索引要求整个数据表多个记录的该字段的值不能重复。比如`_id`就是唯一型索引。
+
+假使有2个人都叫“张三”，那么他们在user数据表里的区分就是依靠不同的`_id`来区分。
+
+如果我们要根据name字段来查询，为了提升查询速度，此时可以把name字段设为非唯一索引。
+
+索引内容较多，还有“组合索引”、“稀疏索引”、“地理位置索引”、“TTL索引”等概念。有单独的文档详细讲述索引，另见：[数据库索引](uniCloud/db-index.md)
+
+
+**在web控制台添加上述索引**
+
+![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/fca53140-1d91-11eb-880a-0db19f4f74bb.jpg)
+
+**注意**
+- 如果记录中已经存在多个记录某字段相同的情况，那么将该字段设为唯一型索引会失败。
+- 如果已经设置某字段为唯一索引，在新增和修改记录时如果该字段的值之前在其他记录已存在，会失败。
+- 假如记录中不存在某个字段，则对索引字段来说其值默认为 null，如果该索引字段设为唯一型索引，则不允许存在两个或以上的该字段为null或不存在该字段的记录。此时需要设置稀疏索引来解决多个null重复的问题
+
+
+### 数据表格式定义@dbschema
+
+`DB Schema`是表结构描述。描述数据表有哪些字段、值域类型是什么、是否必填、数据操作权限等很多内容。
+
+因为 MongoDB 的灵活性，理论上`DB Schema`不是必须的，使用传统 MongoDB API 操作数据库不需要`DB Schema`。
+
+但如果使用 JQL，那`DB Schema`就是必须的。
+
+`DB Schema`涉及内容较多，另见文档：[https://uniapp.dcloud.io/uniCloud/schema](uniCloud/schema)
+
+
+## API操作数据库的方式@db-operation-type
+
+uniCloud 的云数据库有多种操作方式。
+- 支持在云函数操作，也支持在客户端操作。
+- 支持使用传统MongoDB语法操作，也支持JQL语法操作。
+
+uniCloud 默认推荐使用 JQL 语法操作数据库，它是一种更简单易用、对js开发者更友好的、开发效率更高的数据库操作语法。[详见](jql.md)
+
+不管在云函数中还是在uni-app客户端中，均支持JQL。
+
+同时 uniCloud 保留了在云函数中使用传统 MongoDB 的 nodejs API 操作云数据库。
+
+|					|运行在云端	|运行在客户端	|支持 DB Schema	|
+|--					|--			|--				|--				|
+|JQL云函数			|√			|√				|√				|
+|传统MongoDB客户端	|√			|X				|X				|
+
+关于几种操作数据库方式的选择：
+1. 优先使用客户端操作数据库（称为[clientDB](uniCloud/clientdb.md)）
+	
+	传统开发中，其实大多数服务器接口开发，就是检验下前端数据和身份的合法性，然后写个SQL操作下数据库，返回JSON给前端。其实很无聊。
+	
+	clientDB最大的好处就是不用写服务端代码，客户端直接操作数据库。因为uniCloud提供了[DB Schema](schema.md)和[uni-id](uni-id-summary.md)，可以直接控制数据库的内容和权限校验。
+	
+	clientDB同时支持`action云函数`作为补充，当发起一个客户端操作云数据库的请求时，可以同时触发一个`action云函数`，在云端对数据库操作进行前置或后置处理。
+	
+	如下场景不适用clientDB：
+	- 相关数据库操作逻辑不适合暴露在前端，比如抽奖
+	- 注册、修改密码等操作password类型数据（password类型不会传给前端）的情况。一般情况下开发者不涉及相关问题。因为注册、修改密码等账户管理相关，官方已提供了[uni-id-pages](uni-id-pages.md)，里面有uni-id-co云对象。所以开发者无需自己编写相关逻辑，直接用这个插件就好了。
+	- 三方服务器回调。在登录、支付等涉及隐私的地方较常见。比如从微信服务器获取用户手机号，只支持云端获取，获取后要入库保存
+	
+2. 其次使用云函数的JQL扩展库来操作数据库
+	
+	对于clientDB不适应的场景，推荐在云函数或云对象中使用JQL。
+	
+	目前云函数中JQL不适用的场景：使用 set 操作符动态修改字段名称（不是字段值）。这个场景常规业务不涉及，未来JQL可能会完善并支持这个场景。
+	
+3. 除非开发者原本就对 nodejs 操作 MongoDB 非常熟悉，且需要使用 set 操作符动态修改字段名等，否则不推荐使用传统MongoDB写法。
+
+	MongoDB API操作数据库，不能在客户端操作、不支持 DB Schema，不支持HBuilderX的jql查询器，不能在客户端的代码提示中提示数据库的表名、字段。
 
 不管使用哪种方法，都有很多公共的概念或功能。本文档将讲述这些公共的内容。
 
 同时左侧导航有三种方法的专项链接，描述它们各自特有的功能。
-- [云函数使用传统MongoDB语法操作数据库](uniCloud/cf-database.md)
-- [前端操作数据库clientDB](uniCloud/clientdb.md)
-- [云函数内使用JQL语法操作数据库](uniCloud/jql-cloud.md)
+- [客户端操作数据库clientDB](clientdb.md)
+- [云函数内使用JQL语法操作数据库](jql-cloud.md)
+- [云函数使用传统MongoDB语法操作数据库](cf-database.md)
 
-## 获取数据库对象@database
+## 获取数据库对象的API@database
 
 想要通过代码操作数据库，第一步要获取服务空间里的数据库对象。
-
-**云函数使用传统MongoDB语法操作数据库以及客户端使用clientDB获取数据库实例：**
 
 ```js
 const db = uniCloud.database(); //代码块为cdb
@@ -87,30 +218,25 @@ const db = uniCloud.database(); //代码块为cdb
 
 js中敲下代码块`cdb`，即可快速输入上述代码。
 
-**云函数内使用JQL扩展库时获取数据库实例写法为：**
+其中，云函数内使用JQL扩展库时，还需要做一个工作，就是指定操作用户身份。[详见](jql-cloud.md?id=use-in-object)
 
 ```js
-// 简单的使用示例
+// 云函数中JQL使用示例
 'use strict';
 exports.main = async (event, context) => {
 	const dbJQL = uniCloud.databaseForJQL({ // 获取JQL database引用，此处需要传入云函数的event和context，必传
 		event,
 		context 
 	})
-	const bookQueryRes = dbJQL.collection('book').where("name=='三国演义'").get() // 直接执行数据库操作
 	return {
-		bookQueryRes
+		dbJQL.collection('book').get() // 直接执行数据库操作
 	}
 };
 ```
 
-## 获取其他服务空间数据库实例@init-db
+### 获取其他服务空间数据库实例@init-db
 
-如果当前应用仅使用一个服务空间，在HBuilderX中做好服务空间关联即可。获取当前空间的数据库实例时无需传递配置，直接调用database方法即可
-
-```js
-const db = uniCloud.database()
-```
+如果当前应用仅使用一个服务空间，在HBuilderX中做好服务空间关联即可。获取当前空间的数据库实例时无需传递配置，直接调用database方法默认就是操作关联服务空间的数据库。
 
 如果应用有连接其他服务空间数据库的需求，可以在获取database实例时传递对应服务空间的配置
 
@@ -141,15 +267,9 @@ db.collection('uni-id-users').get()
 |provider		|String	|是		|-							|aliyun、tencent																		|
 |spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
 |clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
-|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云侧支持															|
+|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云支持															|
  
-## 创建一个集合/数据表@createCollection
-
-新建的服务空间，没有数据表。需要首先创建集合/数据表。
-
-可以在uniCloud的web控制台([https://unicloud.dcloud.net.cn](https://unicloud.dcloud.net.cn))在web页面创建数据表，也可以通过代码创建数据表。
-
-通过代码创建数据表的方式，阿里云和腾讯云有差别：
+## 创建集合/表的API@createCollection
 
 - 阿里云
 
@@ -174,7 +294,7 @@ db.createCollection("table1")
 - 如果数据表已存在，腾讯云调用createCollection方法会报错
 - 腾讯云调用collection的add方法不会自动创建数据表，不存在的数据表会报错
 - 阿里云没有createCollection方法
-- 使用代码方式创建的表没有索引，请谨慎使用此方式
+- **使用代码方式创建的表没有索引、schema，性能和功能都受影响，不建议使用这种方式**
 
 ## 获取集合/数据表对象@collection
 
@@ -183,7 +303,7 @@ db.createCollection("table1")
 ```js
 const db = uniCloud.database();
 // 获取名为 `table1` 数据表的引用
-const collection = db.collection('table1');
+const resume = db.collection('resume');
 ```
 
 **集合/数据表 Collection 的方法**
@@ -204,29 +324,68 @@ const collection = db.collection('table1');
 
 collection对象的方法可以增和查数据，删和改不能直接操作，需要collection对象通过doc或get得到指定的记录后再调用remove或update方法进行删改。
 
-具体前端clientDB和云函数各自增删改查的方法，请单独参考文档：
-- [云函数使用传统MongoDB语法操作数据库](uniCloud/cf-database)
-- [前端操作数据库，clientDB和jql](uniCloud/clientdb)
+数据操作的API较多，请单独参考文档：
+- [JQL语法操作数据库](jql.md)
+- [MongoDB语法操作数据库](cf-database.md)
+
+**示例**
+
+这里我们使用clientDB，实现一个简单的在前端获取刚才输入 resume 表的记录的功能。
+1. 创建一个uni-app项目，开通uniCloud环境，并在uniCloud初始化向导中关联 resume表所在的服务空间；或者使用老项目对uniCloud目录点右键关联服务空间。
+2. 对项目下的 uniCloud/database 点右键，下载所有DB Schema。
+3. 打开新下载的 resume.schema.json ，将其中的 "permission" 节点下的 "read" 从 false 改为 true。即设置该表允许任意用户读 （后续可以深入学习 DB Schema）
+4. 在客户端 pages/index/index.vue 编写代码
+```html
+<template>
+	<view class="content">
+		<button @click="testclientdb()">请求数据库</button>
+	</view>
+</template>
+<script>
+	export default {
+		data() {
+			return {}
+		},
+		methods: {
+			testclientdb() {
+				const db = uniCloud.database();
+				db.collection("resume").get().then((res) => {
+					// res 为数据库查询结果
+					console.log(res)
+				}).catch((e) => {
+					console.log(e)
+				});
+			}
+		}
+	}
+</script>
+```
+5. 运行项目，点击按钮，即打印出查询到的数据库内容
+	`res.result.data`下即为数据表 resume 中的数据。
 
 ## 数据类型@data-type
 
-数据库内数据基础类型有以下几种：
+数据库内数据类型有以下几种：
 
-* String：字符串
-* Number：数字
-* Object：对象
-* Array：数组
-* Bool：布尔值
+* string：字符串
+	+ password：[DB Schema]中扩展的特殊string。用于保存密码。这类字段不会通过clientDB传递给前端，所有用户都不能通过clientDB读写，即使是admin管理员
+* number：数字
+	+ 在[DB Schema]中细化为int和double
+* bool：布尔值
+* date：时间
+* timestamp 时间戳
+* object：对象
+	+ file：[DB Schema]中扩展的特殊 object，用于云存储文件的信息体。不直接存储文件，而是一个json object，包括云存储文件的名称、路径、文件体积等信息。（HBuilderX 3.1.0+ ）
+* array：数组
+* null：相当于一个占位符，表示一个字段存在但是值为空。
 * GeoPoint：地理位置点
 * GeoLineStringLine: 地理路径
 * GeoPolygon: 地理多边形
 * GeoMultiPoint: 多个地理位置点
 * GeoMultiLineString: 多个地理路径
 * GeoMultiPolygon: 多个地理多边形
-* Date：时间
-* Null：相当于一个占位符，表示一个字段存在但是值为空。
 
-DB Schema中还扩展了其他字段类型，但其实都是基本类型的扩展，比如file类型其实是一种特殊的object，而password类型是一种特殊的string类型。
+DB Schema的数据类型有专门文档，[详见](schema.md?id=bsontype)
 
 ### Date类型
 
@@ -343,73 +502,14 @@ new db.Geo.MultiPolygon([
 ])
 ```
 
-## 集合/数据表的3个组成部分
-
-每个数据表，其实包含3个部分：
-- data：数据内容
-- index：索引
-- schema：数据表格式定义
-
-在uniCloud的web控制台可以看到一个数据表的3部分内容。
-
-### 数据内容@dbdata
-
-data很简单，就是存放的数据记录(record)。
-
-实际上，创建一条新记录，是不管在web控制台创建，还是通过API创建，每条记录都会自带一个`_id`字段用以作为该记录的唯一标志。
-
-`_id`字段是每个数据表默认自带且不可删除的字段。同时，它也是数据表的索引。
-
-阿里云使用的是标准的mongoDB，`_id`是自增的，后创建的记录的`_id`总是大于先生成的`_id`。传统数据库的自然数自增字段在多物理机的大型数据库下很难保持同步，大型数据库均使用`_id`这种长度较长、不会重复且仍然保持自增规律的方式。
-
-**腾讯云使用的是兼容mongoDB的自研数据库，`_id`并非自增**
-
-插入/导入数据时也可以自行指定`_id`而不使用自动生成的`_id`，这样可以很方便的将其他数据库的数据迁移到uniCloud云数据库
-
-### 数据库索引@dbindex
-
-所谓索引，是指在数据表的众多字段中挑选一个或多个字段，让数据库引擎优先处理这些字段。设置为索引的字段，在通过该字段查询记录时可以获得更快的查询速度。但设置过多索引也不合适，会造成数据新增和删除变慢。
-
-一个数据表可以有多个字段被设为索引。
-
-索引分唯一型和非唯一型。
-
-唯一型索引要求整个数据表多个记录的该字段的值不能重复。比如`_id`就是唯一型索引。
-
-假使有2个人都叫“张三”，那么他们在user数据表里的区分就是依靠不同的`_id`来区分。
-
-如果我们要根据name字段来查询，为了提升查询速度，此时可以把name字段设为非唯一索引。
-
-索引内容较多，还有“组合索引”、“稀疏索引”、“地理位置索引”、“TTL索引”等概念。有单独的文档详细讲述索引，另见：[数据库索引](uniCloud/db-index.md)
-
-
-**在web控制台添加上述索引**
-
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/fca53140-1d91-11eb-880a-0db19f4f74bb.jpg)
-
-**注意**
-- 如果记录中已经存在多个记录某字段相同的情况，那么将该字段设为唯一型索引会失败。
-- 如果已经设置某字段为唯一索引，在新增和修改记录时如果该字段的值之前在其他记录已存在，会失败。
-- 假如记录中不存在某个字段，则对索引字段来说其值默认为 null，如果该索引字段设为唯一型索引，则不允许存在两个或以上的该字段为null或不存在该字段的记录。此时需要设置稀疏索引来解决多个null重复的问题
-
-
-### 数据表格式定义@dbschema
-
-`DB Schema`是集合的表结构描述。描述数据表有哪些字段、值域类型是什么、是否必填、数据操作权限等很多内容。
-
-因为json文档数据库的灵活性，data数据的字段可以不在schema的描述范围内。
-
-`DB Schema`更多是为搭配jql语法使用的，如果使用jql语法（clientDB或者使用了jql扩展库的云函数内）则需要详细阅读`DB Schema`的文档。
-
-`DB Schema`涉及内容较多，另见文档：[https://uniapp.dcloud.io/uniCloud/schema](uniCloud/schema)
 
 ## 与传统开发区别@difference
 
-不同于传统开发，云函数连接数据库有单次操作时长限制，目前单次操作时间限制如下。超出此时间会报超时错误。一般情况下在设置了合适的索引时不会遇到超时错误，如何优化查询速度请参考：[数据库性能优化](uniCloud/db-performance.md)
+不同于传统开发，连接数据库有单次操作时长限制，目前单次操作时间限制如下。超出此时间会报超时错误。一般情况下在设置了合适的索引时不会遇到超时错误，如何优化查询速度请参考：[数据库性能优化](uniCloud/db-performance.md)
 
 |腾讯云	|阿里云	|
 |--		|--		|
-|5秒	|1秒	|
+|5秒	|3秒	|
 
 ## 数据导入导出和备份@dbmigration
 
@@ -495,7 +595,7 @@ uniCloud数据库提供了多种数据导入导出和备份方案。
 
 在HBuilderX中对上述`db_init.json`点右键，可初始化数据库到云服务空间，创建`collection_test`表，并按上述json配置设置该表的index索引和schema，以及插入data下的数据。
 
-[opendb](https://gitee.com/dcloud/opendb)的表，在`db_init.json`中初始化时，不建议自定义index和schema。系统会自动从opendb规范中读取最新的index和schema。
+[opendb](opendb.md)的表，在`db_init.json`中初始化时，不建议自定义index和schema。系统会自动从opendb规范中读取最新的index和schema。
 
 **使用`db_init.json`导入数据库**
 
@@ -533,19 +633,19 @@ uniCloud会在每天凌晨自动备份一次数据库，最多保留7天。这�
 1. 登录[uniCloud后台](https://unicloud-dev.dcloud.net.cn/)
 2. 点击左侧菜单`云数据库 --> 数据库回档`，点击`新建回档`
 3. 选择可回档时间
-4. 选择需要回档的集合（注意：回档后集合不能与现有集合重名，如需对集合重命名可以在集合列表处操作）
+4. 选择需要回档的表（注意：回档后表不能与现有表重名，如需对表重命名可以在表列表处操作）
 
 ![数据库回档](https://img.cdn.aliyun.dcloud.net.cn/uni-app/uniCloud/unicloud-db-backup.jpg)
 
 
 ### 数据导出为文件@export
 
-此功能主要用于导出整个集合的数据
+此功能主要用于导出整个表的数据
 
 **用法**
 
 1. 进入[uniCloud web控制台](https://unicloud.dcloud.net.cn/home)，选择服务空间，或者直接在HBuilderX云函数目录`cloudfunctions`上右键打开uniCloud web控制台
-2. 进入云数据库选择希望导入数据的集合
+2. 进入云数据库选择希望导入数据的表
 3. 点击导出按钮
 4. 选择导出格式，如果选择csv格式还需要选择导出字段
 5. 点击确定按钮等待下载开始即可
@@ -564,7 +664,7 @@ uniCloud提供的`db_init.json`主要是为了对数据库进行初始化，并�
 **用法**
 
 1. 进入[uniCloud web控制台](https://unicloud.dcloud.net.cn/home)，选择服务空间，或者直接在HBuilderX云函数目录`cloudfunctions`上右键打开uniCloud web控制台
-2. 进入云数据库选择希望导入数据的集合
+2. 进入云数据库选择希望导入数据的表
 3. 点击导入，选择json文件或csv文件
 4. 选择处理冲突模式（关于处理冲突模式请看下方注意事项）
 5. 点击确定按钮等待导入完成即可
@@ -581,7 +681,7 @@ uniCloud提供的`db_init.json`主要是为了对数据库进行初始化，并�
   {"a":2}
   ```
 
-> 如果是自己拼接的json格式数据请注意：如果存在集合A关联集合B的字段的场景需要保证关联字段在A、B内是一致的（特别需要注意的是各种与_id关联的字段）
+> 如果是自己拼接的json格式数据请注意：如果存在表A关联表B的字段的场景需要保证关联字段在A、B内是一致的（特别需要注意的是各种与_id关联的字段）
 
 例：
 
@@ -589,13 +689,13 @@ uniCloud提供的`db_init.json`主要是为了对数据库进行初始化，并�
 
 ```js
 // 这里为了方便看数据进行了格式化，实际导入所需的json文件是每行一条记录
-// article集合
+// article表
 {
   "user_id": {
     $oid: "601cf1dbf194b200018ed8ec"
   }
 }
-// user集合
+// user表
 {
   "_id": {
     $oid: "601cf1dbf194b200018ed8ec"
@@ -607,11 +707,11 @@ uniCloud提供的`db_init.json`主要是为了对数据库进行初始化，并�
 
 ```js
 // 这里为了方便看数据进行了格式化，实际导入所需的json文件是每行一条记录
-// article集合
+// article表
 {
   "user_id": "601cf1dbf194b200018ed8ec"
 }
-// user集合
+// user表
 {
   "_id": {
     $oid: "601cf1dbf194b200018ed8ec"

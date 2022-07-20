@@ -41,40 +41,6 @@ Hello uniCloud 的源码地址：[https://ext.dcloud.net.cn/plugin?id=4082](http
 3. 运行 hello uniCloud项目
 	- 在运行菜单运行项目，浏览器、app、小程序均可。uniCloud项目是云端一体的，运行前端后控制台会同时出现前端和云端的控制台。
 
-## 目录结构@structure
-
-uniCloud云开发环境创建成功后，项目根目录下会有一个带有云图标的特殊目录，名为“uniCloud”。（即便是cli创建的项目，云函数目录也在项目的根目录下，而不是src下）
-
-<pre v-pre="" data-lang="">
-	<code class="lang-" style="padding:0">
-┌──uniCloud-aliyun                    云空间目录，阿里云为uniCloud-aliyun，腾讯云为uniCloud-tcb。但HBuilderX项目管理器会隐藏显示后缀，只显示uniCloud
-|   |——— cloudfunctions               云函数目录
-|   |   │───common                    云函数公用模块目录 <a target="_blank" href="https://uniapp.dcloud.io/uniCloud/cf-common">详情</a>
-|   |   |   └──hello-common           云函数公用模块
-|   |   |      │──index.js            公用模块代码
-|   |   |      └──package.json        公用模块package.json
-|   |   │───uni-clientDB-actions
-|   |   │      └──new_action.js       clientDB action代码 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=action">详情</a>
-|   |   └───function-name             普通云函数目录
-|   |         │──index.js             云函数入口代码
-|   |         └──package.json         包含云函数的配置信息，如url化、定时设置、内存等内容 <a target="_blank" href="https://uniapp.dcloud.io/uniCloud/cf-functions?id=packagejson">详情</a>
-|   |   └───object-name               云对象目录
-|   |         │──index.obj.js         云对象入口代码
-|   |         └──package.json         包含云对象的配置信息<a target="_blank" href="https://uniapp.dcloud.io/uniCloud/cf-functions?id=packagejson">详情</a>
-│   └──database                       云数据目录
-│         │──validateFunction         数据库扩展校验函数目录
-│         │   └──new_validation.js    扩展校验函数代码 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/schema?id=validatefunction">详情</a>
-│         │──db_init.json             db_init.json初始化数据库文件，其中不再包含schema <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/hellodb?id=db-init">详情</a>
-│         └──xxx.schema.json          数据表xxx的 DB Schema <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/schema">详情</a>
-根目录
-	</code>
-</pre>
-
-**注意**
-- uniCloud目录是存放服务端文件的目录，它和前端代码在同一个项目下是为了方便管理。在发行前端部分，比如打包app、小程序、h5的代码包里并不会包含uniCloud目录。
-- HBuilderX 3.0之前目录结构较老，没有uniCloud目录，根目录直接是cloudfunctions。不支持database和云对象，不推荐再使用老版。
-
-
 ## 开发自己的第一个uniCloud项目
 
 1. 创建uniCloud项目
@@ -87,9 +53,7 @@ uniCloud云开发环境创建成功后，项目根目录下会有一个带有云
 
 一个开发者可以拥有多个服务空间，每个服务空间都是一个独立的serverless云环境，不同服务空间之间的云函数、数据库、存储都是隔离的。
 
-服务空间和手机端项目是多对多绑定关系。同账号下，一个项目可以关联到多个服务空间。一个服务空间也可以被多个项目访问。
-
-对目录`uniCloud`点右键选择`关联云服务空间`，绑定之前创建的服务空间，或者新建一个服务空间。
+对项目根目录`uniCloud`点右键选择`关联云服务空间`，绑定之前创建的服务空间，或者新建一个服务空间。
 
   
 3. 创建云函数/云对象
@@ -102,8 +66,8 @@ uniCloud云开发环境创建成功后，项目根目录下会有一个带有云
   <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/a18b3bb0-53d8-11eb-8ff1-d5dcf8779628.jpg"/>
 </div>
 
-创建云函数后，生成一个目录，该目录下自动生成index.js，是该云函数的入口文件，不可改名。
-创建云对象后，生成一个目录，该目录下自动生成index.obj.js，是该云对象的入口文件，不可改名。
+- 创建云函数后，生成一个目录，该目录下自动生成index.js，是该云函数的入口文件，不可改名。
+- 创建云对象后，生成一个目录，该目录下自动生成index.obj.js，是该云对象的入口文件，不可改名。
 
 如果该云函数/云对象还需要引入其他js，可在index.js入口文件中引用。
 
@@ -128,7 +92,7 @@ module.exports = {
 
 在项目首页，pages/index/index.vue 里，添加一个按钮，点击后执行异步方法sum。
 
-js中import这个 helloco 对象，调用它的 sum 方法
+js 中 import 这个 helloco 对象，调用它的 sum 方法
 
 ```html
 <template>
@@ -166,6 +130,8 @@ HBuilderX自带一个云函数本地运行环境，运行项目时也默认选�
 
 可以对helloco云对象点右键上传到uniCloud服务空间，然后在前端控制台右上角切换为 连接云端云函数，那么此时客户端连接的就是真正的现网uniCloud服务器了。
 
+关于运行调试，有单独文档，[详见](rundebug.md)
+
 7. 小结
 
 到此为止，你已经开发了第一个 first uniCloud 项目，完成了客户端和服务器的第一次交互。
@@ -182,18 +148,17 @@ HBuilderX自带一个云函数本地运行环境，运行项目时也默认选�
 如果要在cli项目中使用uniCloud，可以参考以下步骤
 
 1. 将cli项目导入`HBuilderX`
-2. 在项目根目录（src同级）创建`cloudfunctions-aliyun`或者`cloudfunctions-tcb`目录（HBuilderX 3.0以上版本请创建`uniCloud-aliyun`、`uniCloud-tcb`目录）
-3. 打开`src/manifest.json`，在`基础配置-->uni-app应用标示`处点击`重新获取`
-4. 在步骤2创建的目录右键关联服务空间
+2. 如果没有appid的话，需要打开`src/manifest.json`，在`基础配置-->uni-app应用标识`处点击`重新获取`
+3. 在项目根目录（src同级）点右键创建uniCloud云开发环境
+4. 对uniCloud目录点右键关联服务空间
 5. 完成
 
 **注意**
 
 - 运行与发行云函数只能使用HBuilderX的菜单，不可使用`package.json`内的命令
 - 如果HBuilderX菜单运行不能满足需求可以考虑自行初始化服务空间[服务空间初始化](uniCloud/init.md)
-
-**Tips**
-- 虽然uni-app支持vscode等其他ide开发，但因为uniCloud对安全性要求极高，仅支持使用HBuilderX开发。
+- 虽然uni-app支持vscode等其他ide开发，但因为uniCloud对安全性要求极高，仅支持使用HBuilderX开发
+- HBuilderX 也支持 cli。[详见](https://hx.dcloud.net.cn/cli/README)
 
 ## web控制台@webcp
 

@@ -22,10 +22,10 @@ uniCloud去掉了微信云开发的一些功能，添加了更多功能。以及
 |数据库查询语法	|MongoDB语法。学习门槛高、写法复杂，尤其联表查询很难用							|除了MongoDB语法外，支持JQL语法，大幅降低学习门槛，减少数据库操作的代码量，快速完成复杂查询																												|
 |开发工具		|微信小程序工具，编码体验欠佳												|通用编程工具HBuilderX，高效操作完善，插件体系开放																																						|
 |前端数据库watch	|支持。权限按微信账户体系执行												|暂未集成。有需求可到需求墙投票：[http://dev.dcloud.net.cn/wish/](http://dev.dcloud.net.cn/wish/)。同时有插件可用于解决聊天场景，[详见](https://ext.dcloud.net.cn/search?q=im&cat1=7)																										|
-|opendb			|无																			|开放的数据库规范，众多价值，[详情](https://gitee.com/dcloud/opendb)																																	|
-|账户服务		|仅微信登录																	|[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id)支持应用自己的账户体系，手机号或email，内置短信验证码和app端一键登录，支持微信、支付宝等三方登录，支持权限、角色、社交裂变等众多功能					|
+|opendb			|无																			|开放的数据库规范，众多价值，[详情](opendb.md)																																	|
+|账户服务		|仅微信登录，但鉴权更简单														|[uni-id](uni-id-summary.md)支持应用自己的账户体系，手机号或email，内置短信验证码和app端一键登录，支持微信、支付宝等三方登录，支持权限、角色、社交裂变等众多功能					|
 |admin系统		|不自带																		|自带开源[uniCloud admin](https://uniapp.dcloud.io/uniCloud/admin)系统，大小屏自适配，自带用户、角色、权限功能，还有更多[插件](https://ext.dcloud.net.cn/?cat1=7&cat2=74&orderBy=UpdatedDate)拿来即用	|
-|支付			|仅微信支付																	|[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)，跨端统一支付																																		|
+|支付			|仅微信支付，但鉴权更简单														|[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)，跨端统一支付																																		|
 |cms			|支持。但前端部分跨端不足													|支持。前端跨端、[管理端](https://ext.dcloud.net.cn/plugin?id=3543)开源																																	|
 |插件生态		|腾讯云开发了部分插件															|丰富的插件生态，包含腾讯云为uniCloud开发的插件，众多现成项目模块，[详情](https://ext.dcloud.net.cn/?cat1=7&orderBy=UpdatedDate)																		|
 
@@ -41,7 +41,7 @@ uniCloud去掉了微信云开发的一些功能，添加了更多功能。以及
 
 #### 对接微信登录
 
-uniCloud可以使用uni-id更简单的接入微信小程序登录。参考[uni-id微信登录](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=%e5%be%ae%e4%bf%a1%e7%99%bb%e5%bd%95)
+uniCloud可以使用uni-id更简单的接入微信小程序登录。参考[uni-id](uni-id-summary.md)
 
 不同于微信云开发中的直接获取openid，uni-id提供的登录接口会在数据库的uni-id-users表内添加用户记录。
 
@@ -256,4 +256,4 @@ uniCloud内也支持客户端操作数据库（下面成为clientDB），但是�
 
 - 数据校验能力，参考：[DB schema](https://uniapp.dcloud.net.cn/uniCloud/schema)
 - 在数据库操作前/后执行额外操作，参考：[action](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=action)
-- 更加简单的查询方式，参考：[JQL](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=jsquery)
+- 更加简单的查询方式，参考：[JQL](jql.md)

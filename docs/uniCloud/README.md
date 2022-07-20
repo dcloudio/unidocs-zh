@@ -124,10 +124,10 @@ serverless不是传统云，它不需要开发者选择CPU和内存配置，也�
 而有了uniCloud，这些门槛全都降了下去：
 1. uniCloud采用js编写后端服务代码，无需单独学习php或java，甚至也无需提前掌握nodejs。看下uniCloud的api文档即可。
 2. uniCloud基于serverless，开发者无需了解linux、nginx，无需熟悉负载均衡、大并发处理，不用关心系统补丁和DDoS攻击，只需要用js写好云端业务代码，上传到uniCloud即可。
-3. uniCloud推出了[opendb](https://gitee.com/dcloud/opendb)，包含了大量的开源数据库模板，常见数据表无需自己设计。通过opendb模板，开发者可以快速掌握数据库设计。
+3. uniCloud推出了[opendb](opendb.md)，包含了大量的开源数据库模板，常见数据表无需自己设计。通过opendb模板，开发者可以快速掌握数据库设计。
 4. SQL在过去也需要单独学习，尤其是复杂的联表查询、Tree查询，掌握很不容易。uniCloud推出了JQL（Javascript Query Language），会js即可掌握数据库查询，更对联表查询、Tree查询提供了非常简便的操作封装。
-5. uniCloud提供了[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)，无需自己开发账户体系，登录、注册、修改密码、角色权限体系、token管理一应俱全。
-6. uniCloud在[DB Schema](https://uniapp.dcloud.net.cn/uniCloud/schema)中提供了与[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)的角色权限体系配套的数据权限控制方案。这套方案让初学者也不会在权限控制中犯错。
+5. uniCloud提供了[uni-id](uni-id-summary.md)，无需自己开发账户体系，登录、注册、修改密码、角色权限体系、token管理一应俱全。
+6. uniCloud在[DB Schema](schema.md)中提供了与[uni-id](uni-id-summary.md)的角色权限体系配套的数据权限控制方案。这套方案让初学者也不会在权限控制中犯错。
 在一目了然的权限配置清单中可以轻松发现漏做的事情，比以往在大坨php代码中分析是否存在权限漏洞要简单的多。
 这套方案还能让多人协作、或项目二次开发变的更容易，因为规范的存在，新人可以轻易读懂老代码的权限体系逻辑。
 
@@ -165,8 +165,8 @@ uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，�
 
 开发效率提升，分7个层次：
 1. 提供众多现成轮子，不用自己写代码
-2. 如果没有现成轮子，那么用[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)代码生成工具，生成数据库的增删改查页面（是直接生成页面，不是生成接口）
-3. 如果schema2code搞不定，需要手写代码，那么使用[clientDB](https://uniapp.dcloud.net.cn/uniCloud/clientdb)，将节省80%的服务端开发工作
+2. 如果没有现成轮子，那么用[schema2code](schema2code.md)代码生成工具，生成数据库的增删改查页面（是直接生成页面，不是生成接口）
+3. 如果schema2code搞不定，需要手写代码，那么使用[clientDB](clientdb.md)，将节省80%的服务端开发工作
 4. 如果仍然需要写云端代码，那么云对象让你的开发更简单
 5. HBuilderX在云端协同中提供工具助力
 6. 端和云的语言统一，提高了沟通效率、招聘效率
@@ -189,14 +189,14 @@ uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，�
 **1. 官方维护的插件**
 
 - uni-id：不用再开发用户系统。用户注册、登录（含社交登录、短信验证码登录、App一键登录）、修改或重置密码、token管理、图形验证码、RBAC权限角色系统...所有与用户相关的，不管前端还是云端，代码都是现成的。[详见](/uniCloud/uni-id-summary)
-- uni-pay：不管微信还是支付宝，不管App、微信小程序、还是支付宝小程序，不管前端还是服务端，一切都现成的，拿来即用。[详见](/uniCloud/unipay)
+- uni-pay：不管微信还是支付宝，不管App、微信小程序、还是支付宝小程序，不管前端还是服务端，一切都现成的，拿来即用。[详见](unipay.md)
 - uni-starter：云端一体应用快速开发基本项目模版，实现快速搭建一款应用。它集成了很多通用的功能，比如登录注册、头像、设置、拦截器、banner...[详见](https://ext.dcloud.net.cn/plugin?id=5057)
-- uni-admin：全端可用的admin后台。自带用户管理、权限管理、角色管理、菜单管理、业务图表统计。更有众多admin插件，比如cms插件、banner管理插件、App升级管理插件...[详见](/uniCloud/admin)
+- uni-admin：全端可用的admin后台。自带用户管理、权限管理、角色管理、菜单管理、业务图表统计。更有众多admin插件，比如cms插件、push、banner管理插件、App升级管理插件...[详见](admin.md)
 - uni-search：云端一体搜索。搜索页面、输入联想、搜索历史记录、热搜词分析提取...一应俱全。[详见](https://ext.dcloud.net.cn/plugin?id=3851)
 - uni-file-picker：前端直传uniCloud存储组件。[详见](https://ext.dcloud.net.cn/plugin?id=4079)
 - uni-captcha：云端一体图形验证码组件。[详见](https://ext.dcloud.net.cn/plugin?id=4048)
 - uni-sec-check：免费的内容安全审查，防止用户提交违法的文字或图片。[详见](https://ext.dcloud.net.cn/plugin?id=5460)
-- uni-upgrade-center：App升级中心。支持整包升级、wgt热更新；支持直接下载安装包或跳转应用商店。[详见](uniCloud/upgrade-center.md)
+- uni-upgrade-center：App升级中心。支持整包升级、wgt热更新；支持直接下载安装包或跳转应用商店。[详见](upgrade-center.md)
 
 **2. 社区的优秀插件**
 
@@ -207,8 +207,6 @@ uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，�
 - IM
 - 日志管理
 - 敏感词过滤
-- push
-- 图表统计
 
 **3. 项目模板**
 
@@ -226,43 +224,43 @@ uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，�
 
 
 在这里，我们还必须提到2个新概念：`uni_module`和`datacom`。
-- uni_module：云端一体组件最佳的承载方式。传统的npm无法处理云端一体的需求，把前端和云端的代码，一起打包到一个uni_module中，整体传播与发布，对云端一体组件的生态有重大的帮助。[详见](https://uniapp.dcloud.net.cn/uni_modules)
+- uni_module：云端一体组件最佳的承载方式。传统的npm无法处理云端一体的需求，把前端和云端的代码，一起打包到一个`uni_module`中，整体传播与发布，对云端一体组件的生态有重大的帮助。[详见](https://uniapp.dcloud.net.cn/uni_modules)
 - datacom：datacom是一种在前端绑定后端数据源的组件。[详见](https://uniapp.dcloud.net.cn/component/datacom)
 
 优良的模块化方案让生态越发繁荣。
 
 #### 第二层提效：schema2code自动生成代码
 
-如果在第一层提效中，找不到现成的轮子，需要自己写代码时。那么首先要做的，是使用[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)这个神器，自动生成代码。
+如果在第一层提效中，找不到现成的轮子，需要自己写代码时。那么首先要做的，是使用[schema2code](schema2code.md)这个神器，自动生成代码。
 
 uniCloud云数据的schema，是一项重要的创新。
-为数据表编写schema，可以实现非常多功能：数据结构定义、权限管理、数据值域管理，以及非常神奇的功能 -- 《[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)》
+为数据表编写schema，可以实现非常多功能：数据结构定义、权限管理、数据值域管理，以及非常神奇的功能 -- 《[schema2code](schema2code.md)》
 
 在传统开发中，有了数据库，可以生成crud后台接口。然后前端再写代码调用接口。
 
 但在uni云端一体生态中，有了数据库的schema，可以直接生成云端一体的页面。而不仅仅是只生成接口。
 
-[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)，可以生成手机端的列表、详情或增删改页面，也可以生成admin管理端的所有数据管理功能的页面。
+[schema2code](schema2code.md)，可以生成手机端的列表、详情或增删改页面，也可以生成admin管理端的所有数据管理功能的页面。
 
-如下是[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)的操作演示视频：
+如下是[schema2code](schema2code.md)的操作演示视频：
 
 <video style="width:50vw;height:28vw;" id="video" preload="none" controls="controls"
 	poster="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b537e2ca-0f4e-4ff0-a097-48fdeafb9873/bfcc37f1-389f-40e9-a538-bf6d53ab0990.mp4?x-oss-process=video/snapshot,t_1000,f_jpg" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b537e2ca-0f4e-4ff0-a097-48fdeafb9873/bfcc37f1-389f-40e9-a538-bf6d53ab0990.mp4"></video>
 
 
-可以实战体验这个[云端一体通讯录](https://ext.dcloud.net.cn/plugin?id=2574)的项目，几乎没有单独写代码。设计好通讯录的表schema，用[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)即可生成这个项目。
+可以实战体验这个[云端一体通讯录](https://ext.dcloud.net.cn/plugin?id=2574)的项目，几乎没有单独写代码。设计好通讯录的表schema，用[schema2code](schema2code.md)即可生成这个项目。
 
-前述提到的返乡人员管理项目，之所以只花费了半小时就可以做好，也是[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)的功劳。
+前述提到的返乡人员管理项目，之所以只花费了半小时就可以做好，也是[schema2code](schema2code.md)的功劳。
 
 数据的权限管理也很简单，在schema中可以快速定义指定的数据记录或字段，只能由什么样角色或权限的人来操作。
 
 数据入库的值域校验就更简单了。传统开发中，一个手机号的校验，需要在前端页面写一遍，服务器入库前再检查一遍，很多余。既然云端协同了，自然会优化掉这个问题。
 
-现在只需在DB Schema中定义好手机号这个字段的可选值域，比如一个正则，那么[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)将自动生成前端表单，且遵循schema的定义，只接受相同正则。
+现在只需在DB Schema中定义好手机号这个字段的可选值域，比如一个正则，那么[schema2code](schema2code.md)将自动生成前端表单，且遵循schema的定义，只接受相同正则。
 
 这样不但提高了开发效率，还可以避免传统开发中各种漏洞，保持严谨和一致性。
 
-[schema2code](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)生成的代码清晰易读，易于二次开发。这比低代码平台更有效率、且完全开放开源，随意扩展。
+[schema2code](schema2code.md)生成的代码清晰易读，易于二次开发。这比低代码平台更有效率、且完全开放开源，随意扩展。
 
 
 #### 第三层提效：clientDB，让服务器代码减少80%
@@ -289,10 +287,10 @@ uni-app提供了`<unicloud-db>`组件（代码块触发键是udb），在前端�
 
 是的，仅需5行代码，就可以完成过去前后端合计得写几十行代码才能完成的事情，代码量大幅减少到原来的十分之一。
 
-无需担心前端直接访问数据库会造成安全隐患，上一节提过了DB Schema，在云端的schema中可以定义什么角色可以操作数据库。[详见](https://uniapp.dcloud.net.cn/uniCloud/schema?id=permission)
+无需担心前端直接访问数据库会造成安全隐患，上一节提过了DB Schema，在云端的schema中可以定义什么角色可以操作数据库。[详见](schema.md#permission)
 
-clientDB技术，有前端的[JS API](https://uniapp.dcloud.net.cn/uniCloud/clientdb)和[前端组件](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db)，为了进一步提高开发效率，clientDB还提供了几大利器：
-[JQL](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=jsquery)是一种基于js的数据库操作语言，它改进了SQL语言的诸多不便之处。
+clientDB技术，有前端的[JS API](clientdb.md)和[前端组件](unicloud-db.md)，为了进一步提高开发效率，clientDB还提供了几大利器：
+[JQL](jql.md)是一种基于js的数据库操作语言，它改进了SQL语言的诸多不便之处。
 - 在传统mysql或MongoDB中，联表查询的写法非常麻烦，tree查询mysql根本没有，需要oracle等专业数据库。但在uniCloud中，只需在数据库的schema中定义两个表的字段之间的关系，比如是引用关系（foreignKey）、还是父子关系(parentKey)，前端就可以直接查询，轻松完成[联表查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup)和[tree查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=gettree)
 - SQL语言的运算方法非常少，而JQL则提供了大量的运算方法，比如日期运算dayOfMonth()、字符串操作方法substr()、数字运算方法add()...可以对数据库字段的值直接进行运算和筛选。比如对数据库2个字段进行加权求和然后排序，这传统的SQL语句可搞不定了
 
@@ -300,9 +298,9 @@ clientDB技术，有前端的[JS API](https://uniapp.dcloud.net.cn/uniCloud/clie
 
 #### 第四层提效：云对象，改变前后端协同
 
-如果clientDB仍然不能满足需求，必须编写云端代码，那么[云对象](uniCloud/cloud-obj.md)的出现，彻底改变了后端开发json接口和前端联调的低效局面。
+如果clientDB仍然不能满足需求，必须编写云端代码，那么[云对象](cloud-obj.md)的出现，彻底改变了后端开发json接口和前端联调的低效局面。
 
-[云对象](uniCloud/cloud-obj.md)把云端的代码变成对象方式，让前端js直接import这个对象，然后使用这个对象的方法，就像使用前端的js对象一样顺畅。
+[云对象](cloud-obj.md)把云端的代码变成对象方式，让前端js直接import这个对象，然后使用这个对象的方法，就像使用前端的js对象一样顺畅。
 
 云端新加一个`todo`云对象，写一个add方法，代码如下：
 ```js
@@ -380,6 +378,5 @@ js和其他服务器语言，比如php或java，在过去需要Mock来翻译，�
 
 
 uniCloud是开发界的革命。在HBuilderX、uni-app、uniCloud三位一体的协同下、创新的功能设计下、丰富的生态和轮子支持下，开发者的开发效率，超过传统开发10倍以上。
-
 
 > 目前uniCloud已发展2年多，活跃服务空间数万，云函数日请求数量过亿。请放心使用。

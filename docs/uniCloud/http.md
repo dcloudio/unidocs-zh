@@ -1,14 +1,16 @@
-## 操作场景
+## 使用场景
 
-云函数URL化 是 uniCloud 为开发者提供的 HTTP 访问服务，让开发者可以通过 HTTP URL 方式访问到云函数。
+云函数/云对象URL化 是 uniCloud 为开发者提供的 HTTP 访问服务，让开发者可以通过 HTTP URL 方式访问到云函数或云对象。
 
 - 场景1：比如App端微信支付，需要配服务器回调地址，此时需要一个HTTP URL。
-- 场景2：非uni-app开发的系统，想要连接uniCloud，读取数据，也需要通过HTTP URL方式访问。
+- 场景2：非uni-app开发的系统，想要连接uniCloud，读写数据，也需要通过HTTP URL方式访问。
 
 url化后需要注意以下几点
 
 - 安全：为了保障业务安全性，开发者需在代码中做好权限控制和安全防护，避免未授权访问触发敏感操作。
 - 计费：云函数开启了URL化后，如果遇到大量恶意访问，消耗云函数资源，开发者可以将云函数访问地址设置为空即可停止 HTTP 访问支持。
+
+> 云函数自上线就支持URL化。云对象的URL化需HBuilderX 3.5.2+。下文除非特别提到云对象，否则云函数通指普通云函数和云对象。
 
 本文档主要指导您如何在uniCloud web控制台管理和使用云函数URL化。
 
@@ -20,7 +22,7 @@ url化后需要注意以下几点
 
 ### 设置云函数 HTTP 访问地址@set-path
 
-1. 登录[uniCloud后台](https://unicloud.dcloud.net.cn/)，选择需要管理的服务空间。
+1. 登录[uniCloud后台](https://unicloud.dcloud.net.cn/)，选择服务空间。
 2. 单击左侧菜单栏【云函数】，进入云函数页面。
 3. 点击需要配置的云函数的【详情】按钮，配置访问路径。
 
@@ -370,11 +372,11 @@ module.exports = {
 }
 ```
 
-如果通过`https://xxx.com/todo/addTodo?title=todo-title&content=todo-content`调用云对象，怎todo方法内的console.log会输出以下内容`{title: 'todo-title', content: 'todo-content'}`
+如果通过`https://xxx.com/todo/addTodo?title=todo-title&content=todo-content`调用云对象，todo方法内的console.log会输出以下内容`{title: 'todo-title', content: 'todo-content'}`
 
 需要注意的是自url内解析出的参数均为字符串类型。
 
 **注意**
 
 - url化方式调用云对象时，`_before`和`_after`均正常执行
-- 如果需要获取其他方式传入云对象的参数（如：post一个json内容到云对象），请使用[this.getHttpInfo](uniCloud/cloud-obj.md?id=get-http-info)获取
+- 如果需要获取其他方式传入云对象的参数（如：post一个json内容到云对象），请使用[this.getHttpInfo](cloud-obj.md#get-http-info)获取

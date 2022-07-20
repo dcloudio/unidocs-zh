@@ -246,7 +246,7 @@ uni.navigateTo({
 })
 ```
 
-可以配套使用[uniIdRouter](uniCloud/uni-id.md?id=uni-id-router)；当用户未登录，但访问了需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时均需要打开登录页面。你需要把以上两个路径路径定义为`loginPage`。
+可以配套使用[uniIdRouter](uni-id-summary.md#uni-id-router)；当用户未登录，但访问了需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时均需要打开登录页面。你需要把以上两个路径路径定义为`loginPage`。
 
 # 云对象（uni-id-co）
 

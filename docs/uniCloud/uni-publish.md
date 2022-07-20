@@ -24,7 +24,7 @@ App/小程序/网站做好后，如何告知你的用户？
 `uni-publish 统一发布页`具有如下特征：
 
 - 基于 `uni-app` & `uniCloud` 实现
-- 数据库设计遵循 [opendb 规范](https://gitee.com/dcloud/opendb)
+- 数据库设计遵循 [opendb 规范](opendb.md)
 - 管理端遵循 [uni-admin 插件规范](/uniCloud/admin)，可直接导入 `Admin` 项目中
 
 ### 使用

@@ -148,7 +148,7 @@ const unipayIns = unipay.initAppleIapPayment({
 
 |   参数名			|  类型	|                必填													| 默认值|                                    说明																																						|         支持平台				|
 | :--------:		| :----:| :--------------------------------:					| :----:| :------------------------------------------------------------------------:																				| :----------------------:|
-|   openid			| String|支付宝小程序、微信小程序必填，App端支付不需要|   -		|通过对应 [uni-id](uniCloud/uni-id.md) 接口进行获取，服务商模式应使用子商户获取的openid															| 支付宝小程序、微信小程序|
+|   openid			| String|支付宝小程序、微信小程序必填，App端支付不需要|   -		|通过对应 [uni-id](uni-id-summary.md) 接口进行获取，服务商模式应使用子商户获取的openid															| 支付宝小程序、微信小程序|
 |  subject			| String|支付宝支付必填，微信支付时忽略此项						|   -		|订单标题																																																						|        支付宝支付				|
 |    body				| String|微信支付必填																	|   -		|商品描述																																																						|         微信支付				|
 | outTradeNo		| String|必填																					|   -		|商户订单号,有长度限制（微信支付为32字符以内，支付宝为64字符以内）、只能包含字母、数字、下划线；需保证在商户端不重复|													|
@@ -215,13 +215,13 @@ uniCloud.callFunction({
 	name: 'getOrderInfo',
 	success(res) {
 		uni.requestPayment({
-			// #ifdef APP
+			// #ifdef APP-PLUS
 			provider: selectedProvider, // App端此参数必填，可以通过uni.getProvider获取
 			// #endif
 			// #ifdef MP-WEIXIN
 			...res.result.orderInfo,
 			// #endif
-			// #ifdef APP || MP-ALIPAY
+			// #ifdef APP-PLUS || MP-ALIPAY
 			orderInfo: res.result.orderInfo,
 			// #endif
 			...res.result.orderInfo

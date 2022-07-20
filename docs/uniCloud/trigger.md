@@ -25,7 +25,7 @@
 ["cron:0 0 * * * *"]
 ```
 
-**在package.json内配置定时触发时统一了腾讯阿里的写法，请参考：[云函数package.json](uniCloud/cf-functions.md?id=packagejson)**
+**在package.json内配置定时触发时统一了腾讯阿里的写法，请参考：[云函数package.json](cf-functions.md#packagejson)**
 
 **注意**
 
@@ -109,7 +109,7 @@ Cron 表达式有七个**必需**字段，按空格分隔。其中，每个字�
 
 配置方式和云函数一致，请参阅上方章节
 
-配置完成后会触发云对象导出的`_timing`方法
+配置完成后会定时触发云对象内置特殊方法`_timing`
 
 云对象代码示例：
 

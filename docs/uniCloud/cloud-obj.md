@@ -148,7 +148,6 @@ _注：以上例子仅用于方便初学者理解。实际开发中对于简单�
 4. 客户端调用时在ide里有完善的代码提示，方法参数均可提示。（传输json可没法在ide里提示）
 5. 默认支持[uniCloud响应体规范](uniCloud/cf-functions.md?id=resformat)，方便错误拦截和统一处理
 
-注：目前云对象还不支持URL化和定时触发，未来会补充
 
 ## 快速上手
 
@@ -404,9 +403,13 @@ module.exports = {
 }
 ```
 
-相关文档：[云函数url化的入参](uniCloud/cf-function.md?id=input)
+相关文档：[云函数url化的入参](cf-functions.md#input)
 
-## 预处理与后处理@before-and-after
+## 内置特殊方法@before-and-after
+
+注意：所有`_`开头的方法都是私有方法，客户端不可访问。也就是客户端调用云对象时不能调用_开头的方法。
+
+目前有3个内置特殊方法：`_before`、`_after`、`_timing`
 
 ### 预处理 _before@before
 
@@ -463,7 +466,13 @@ module.exports = {
 }
 ```
 
-注意：所有`_`开头的方法都是私有方法，客户端不可访问。也就是客户端调用云对象时不能调用_开头的方法。
+### 定时运行 _timing
+
+> 新增于HBuilderX 3.5.2
+
+在 uniCloud web控制台可以配置定时任务。给一个云对象配置后，将定时执行该云对象的内置方法 `_after`
+
+详细用法参考：[云对象使用定时触发](trigger.md#cloudobject)
 
 ## 云对象的返回值@return-value
 
@@ -570,13 +579,13 @@ const res = await todo.add('title demo', 'content demo')
 
 > 新增于HBuilderX 3.5.2
 
-详细用法参考：[云对象使用定时触发](uniCloud/trigger.md?id=cloudobject)
+详细用法参考：[云对象使用定时触发](trigger.md#cloudobject)
 
 ### url化@http-trigger
 
 > 新增于HBuilderX 3.5.2
 
-详细用法参考：[云对象使用url化](uniCloud/http.md?id=cloudobject)
+当需要外部系统访问云对象时，可以把云对象封装成一个HTTP的URL。详细用法参考：[云对象使用url化](http.md#cloudobject)
 
 ### 跨服务空间调用云对象@call-by-cloud-cross-space
 
@@ -597,6 +606,34 @@ const res = await todo.add('title demo', 'content demo')
 
 **注意**
 - 上述示例代码，在实际开发中均应该使用 try catch 或 then catch 处理错误捕获
+
+### 云对象方法不能互相调用@call-internal-method
+
+一个云对象导出的不同方法之间不能互相调用。比如下面示例中 tryAddTodo 方法内部无法调用 addTodo 方法。
+
+只能将多个方法共享的逻辑放到云对象导出的对象外部来供云对象的方法调用。例如下面抽离公共函数 pureAddTodo ：
+
+```js
+// todo.obj.js
+async function pureAddTodo(title, content) {
+	// ...add todo 逻辑
+}
+
+module.exports = {
+	async tryAddTodo() {
+		try {
+			return addTodo(title, content)
+		} catch (e) {
+			return {
+				errCode: 'add-todo-failed'
+			}
+		}
+	},
+	async addTodo(title, content) {
+		return pureAddTodo(title, content)
+	}
+}
+```
 
 ### 云对象的接收参数的体积上限
 - 阿里云接收参数大小不可超过1MB
@@ -726,30 +763,3 @@ uniCloud的服务器和客户端交互，有云函数、云对象、clientDB三�
 
 如果服务器端不操作数据库外，或者还有复杂的、不宜公开在前端的逻辑，此时推荐使用云对象。
 
-但云对象仅适用于与uni-app前端交互使用。如果不与uni-app前端交互，比如使用云函数URL化与其他系统通信、或者使用定时云函数，此时不适用云对象，还是需要使用云函数。
-
-### 云对象方法互相调用@call-internal-method
-
-云对象导出的方法之间不能互相调用，如果开发中遇到需要方法间互相调用的场景，请考虑将多个方法共享的逻辑放到云对象导出的对象外部来供云对象的方法调用。例：
-
-```js
-// todo.obj.js
-async function pureAddTodo(title, content) {
-	// ...add todo 逻辑
-}
-
-module.exports = {
-	async tryAddTodo() {
-		try {
-			return addTodo(title, content)
-		} catch (e) {
-			return {
-				errCode: 'add-todo-failed'
-			}
-		}
-	},
-	async addTodo(title, content) {
-		return pureAddTodo(title, content)
-	}
-}
-```

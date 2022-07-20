@@ -1,8 +1,10 @@
 ## JQL数据库操作
 
-`jql`，全称javascript query language，是一种js方式操作数据库的语法规范。
+`JQL`，全称 javascript query language，是一种js方式操作数据库的规范。
 
-`jql`大幅降低了js工程师操作数据库的难度、大幅缩短开发代码量。并利用json数据库的嵌套特点，极大的简化了联表查询和树查询的复杂度。
+- `JQL`大幅降低了js工程师操作数据库的难度，比SQL和传统MongoDB API更清晰、易掌握。
+- `JQL`支持强大的[DB Schema](schema.md)，内置数据规则和权限。DB Schema 支持[uni-id](uni-id-summary.md)，可直接使用其角色和权限。无需再开发各种数据合法性校验和鉴权代码。
+- `JQL`利用json数据库的嵌套特点，极大的简化了联表查询和树查询的复杂度，并支持更加灵活的虚拟表。
 
 #### jql的诞生背景
 
@@ -163,7 +165,7 @@ db.collection('user').where({
 
 **注意**
 
-- 这些变量使用时并非直接获取对应的值，而是生成一个标记，在执行数据库操作时再将这个标记替换为实际的值
+- 这些变量使用时并非直接获取对应的值，而是生成一个标记，在云端执行数据库操作时再将这个标记替换为实际的值
 
 ## jql条件语句的运算符@operator
 
@@ -2943,13 +2945,13 @@ const res = await db.collection('test').aggregate()
 .end()
 ```
 
-## 更新操作符@update-command
+## 更新操作符(重命名或删除字段)@update-command
 
 > 新增于 HBuilderX 3.5.1，JQL数据库管理支持使用更新操作符
 
-更新操作符可以在执行更新时使用。比如对字段重命名（rename）、删除字段（remove）等
+更新操作符可以在执行更新时使用。比如对字段重命名（rename）、删除字段（remove）等。适用于表结构变更后，使用 HBuilderX 的 JQL管理器进行数据变更。
 
-重命名字段示例：
+`db.command.rename`重命名字段：
 
 ```js
 db.collection('test').update({
@@ -2957,7 +2959,7 @@ db.collection('test').update({
 })
 ```
 
-删除字段示例：
+`db.command.remove`删除字段：
 
 ```js
 db.collection('test').update({
@@ -2967,8 +2969,9 @@ db.collection('test').update({
 
 **注意**
 
-- 仅JQL数据库管理支持
-- 使用更新操作符后，将完全跳过所有数据校验操作
+- 仅 HBuilderX 3.5.1+ 中的 JQL数据库管理器中可用
+- 支持批量传入重命名或删除指令
+- 使用更新操作符后，将完全跳过所有数据校验操作，即无论schema中如何配置数据的值域规则，都将无法生效。所以更新操作符不宜与普通的数据增删改混在一起执行。
 
 ## DBSchema@schema
 
@@ -3337,9 +3340,8 @@ module.exports = {
 
 **参考：**
 
-- [uni-id 文档](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
-- [uni-config-center 文档](https://ext.dcloud.net.cn/plugin?id=4425)
-
+- [uni-id 文档](uni-id-summary.md)
+- [uni-config-center 文档](uni-config-center.md)
 
 扩展库：
 
@@ -3350,7 +3352,6 @@ module.exports = {
 **注意**
 
 - action上传后可能需要一段时间才会在云端生效，通常是3分钟左右
-
 ## 数据库运算方法列表@aggregate-operator
 
 uniCloud的云数据库，提供了一批强大的运算方法。这些方法是数据库执行的，而不是云函数执行的。
@@ -3562,16 +3563,16 @@ const res = await db.collection('stats')
 
 groupField内可使用且仅能使用如下运算方法。
 
-|操作符				|用途																																																				|用法									|说明																|
-|---					|---																																																				|---									|---																|
-|addToSet			|向数组中添加值，如果数组中已存在该值，不执行任何操作																												|addToSet(表达式)			|-																	|
-|avg					|返回指定表达式对应数据的平均值																																							|avg(表达式)					|-																	|
-|first				|返回指定字段在一组集合的第一条记录对应的值。仅当这组集合是按照某种定义排序（ sort ）后，此操作才有意义			|first(表达式)				|-																	|
-|last					|返回指定字段在一组集合的最后一条记录对应的值。仅当这组集合是按照某种定义排序（ sort ）后，此操作才有意义。	|last(表达式)					|-																	|
-|max					|返回一组数值的最大值																																												|max(表达式)					|-																	|
-|min					|返回一组数值的最小值																																												|min(表达式)					|-																	|
-|push					|返回一组中表达式指定列与对应的值，一起组成的数组																														|push(表达式)					|-																	|
-|stdDevPop		|返回一组字段对应值的标准差																																									|stdDevPop(表达式)		|-																	|
-|stdDevSamp		|计算输入值的样本标准偏差																																										|stdDevSamp(表达式)		|-																	|
-|sum					|返回一组字段所有数值的总和																																									|sum(表达式)					|-																	|
-|mergeObjects	|将一组对象合并为一个对象																																										|mergeObjects(表达式)	|在groupField内使用时仅接收一个参数	|
+|操作符			|用途																										|用法					|说明								|
+|---			|---																										|---					|---								|
+|addToSet		|向数组中添加值，如果数组中已存在该值，不执行任何操作														|addToSet(表达式)		|-									|
+|avg			|返回指定表达式对应数据的平均值																				|avg(表达式)			|-									|
+|first			|返回指定字段在一组集合的第一条记录对应的值。仅当这组集合是按照某种定义排序（ sort ）后，此操作才有意义		|first(表达式)			|-									|
+|last			|返回指定字段在一组集合的最后一条记录对应的值。仅当这组集合是按照某种定义排序（ sort ）后，此操作才有意义。	|last(表达式)			|-									|
+|max			|返回一组数值的最大值																						|max(表达式)			|-									|
+|min			|返回一组数值的最小值																						|min(表达式)			|-									|
+|push			|返回一组中表达式指定列与对应的值，一起组成的数组															|push(表达式)			|-									|
+|stdDevPop		|返回一组字段对应值的标准差																					|stdDevPop(表达式)		|-									|
+|stdDevSamp		|计算输入值的样本标准偏差																					|stdDevSamp(表达式)		|-									|
+|sum			|返回一组字段所有数值的总和																					|sum(表达式)			|-									|
+|mergeObjects	|将一组对象合并为一个对象																					|mergeObjects(表达式)	|在groupField内使用时仅接收一个参数	|

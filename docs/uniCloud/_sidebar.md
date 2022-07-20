@@ -22,6 +22,7 @@
   * [unicloud-db前端组件](uniCloud/unicloud-db.md)
   * [云函数通过JQL操作数据库](uniCloud/jql-cloud.md)
   * [JQL调试器](uniCloud/jql-runner.md)
+  * [schema2code自动生成代码](schema2code.md)
   * [性能优化](uniCloud/db-performance.md)
   * [缓存JQL查询到redis](uniCloud/jql-cache-redis.md)  
   * [云函数通过传统方式操作数据库](uniCloud/cf-database.md)

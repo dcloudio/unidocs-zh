@@ -6,7 +6,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 - Android、iOS的完整App安装包升级和wgt资源包增量更新
 - 后台管理系统，用于发布新版、设置升级策略
 
-> 如果需要初次发布，而不是升级，另见产品[uni-portal 统一发布页](uni-portal.md)
+> 如果需要初次发布，而不是升级，另见产品 [uni-portal 统一发布页](uni-portal.md)
 
 本产品具有如下特征：
 
@@ -22,19 +22,13 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 ### 使用
 
-升级中心分为两个部分：`uni-upgrade-center Admin管理后台`和`uni-upgrade-center-app前台检测更新`。
+升级中心分为两个部分：`uni-upgrade-center Admin管理后台` 和 `uni-upgrade-center-app前台检测更新`。
 
 #### uni-upgrade-center Admin 管理后台
 
-> uni-admin 1.9.3+。在应用管理新增一个应用之后，即可在 `App升级中心` 发布该应用的版本
+> 在 uni-admin 1.9.3+ 中已作为内置插件。在应用管理新增应用后，即可在 `App升级中心` 发布该应用的版本
 
-负责发布新版和管理历史版本的上下线。
-
-<div align="left">
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/c80f143d-a05b-493b-9db0-e87398a180b8.png" alt="发布完成页面" width="800"></img>
-</div>
-
-提供了如下功能：
+负责发布新版和管理历史版本的上下线。提供了如下功能：
 
 - 云储存安装包CDN加速，使安装包下载的更快、更稳定
 
@@ -123,7 +117,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 - 可以通过以下修改支持iOS的wgt更新：
 	> \uni_modules\uni-upgrade-center\pages\mixin\version_add_detail_mixin.js
 	> 
-	> 将 `data` 中的 `enableiOSWgt: false` 中 改为 `enableiOSWgt: true`
+	> 将 `data` 中的 `enableiOSWgt` 属性设置为 `true` 即可
 
 
 在插件市场安装（uni-admin 1.9.3+ 升级中心已作为内置插件，内置在uni-admin项目中），根据 readme 部署即可。[插件地址](https://ext.dcloud.net.cn/plugin?id=4470)
@@ -134,6 +128,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 <div align="left" style="display:flex;align-items:center;">
 	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b47b89ad-1b81-45db-8115-d246fb5ca906.jpg" alt="官方升级弹框样式" width="250"></img>
+	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7b6af9ff-2fe3-4f5a-a704-0274e49292ac.png" alt="升级支持多商店" width="250"></img>
 	<img style="margin-left:20px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9e2d38af-90e5-47fb-8a18-d2a76e7ae2b4.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
 </div>
 
@@ -146,6 +141,8 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 - 一键式升级。弹框、下载、安装、是否强制重启等逻辑已集成
 
 - 下载完成如果取消升级自动缓存安装包，下次进入判断是否符合安装条件，判断不通过则自动清除
+
+- 美观，实用，可自定义扩展
 
 - 美观，实用，可自定义扩展
 

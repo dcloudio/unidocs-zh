@@ -181,7 +181,7 @@ uni-push产品有2个入口：
 
 在`manifest.json`中配置完之后，需要重新编译项目，即：点击如图`重新运行`按钮
 
-<img width="50%" style="margin-left:20%;max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1cc74094-043b-4150-bdcc-8c0dbf90195b.jpeg"/>
+<img width="50%" style="max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1cc74094-043b-4150-bdcc-8c0dbf90195b.jpeg"/>
 
 
 #### 小程序中使用uni-push2.0的白名单配置@useinmp

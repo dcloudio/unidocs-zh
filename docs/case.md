@@ -2,7 +2,7 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 欢迎知名开发商[提交案例](https://github.com/dcloudio/uni-app/issues/6)或接入[uni统计](https://tongji.dcloud.net.cn/)。
 
-### 官方示例
+## 官方示例
 
 <a href="//m3w.cn/uniapp" target="_blank" class="clear-style"><b>Hello uni-app：</b></a>演示uni-app框架的组件、接口、模板。本项目源码可在HBuilderX中新建项目获得，也可从[github](https://github.com/dcloudio/hello-uniapp)上获取。
 <div style="display:flex;justify-content: space-around;">
@@ -35,9 +35,9 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 -->
 
 
-### 第三方开发者案例
+## 第三方开发者案例
 
-#### 新冠抗疫专区案例
+### 新冠抗疫专区案例
 
 uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
@@ -91,7 +91,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 2020年新冠疫情爆发初期的抗疫项目专题另见：[xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
 
-#### 典型案例
+### 典型案例
 
 <a href="https://m.qinxuan.hihonor.com/" target="_blank" class="clear-style"><b>华为荣耀亲选商城：</b></a> 华为公司旗下荣耀品牌精品电商平台。
 <div style="display:flex;justify-content: space-around;">
@@ -258,7 +258,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **极志愿：** 专业高考志愿填报。**<span style="color:#42b983">多端获客典型案例，1个月获得400万用户</span>**，[详见报道](https://mp.weixin.qq.com/s?__biz=MzU3NTU5NDc0NA==&mid=2247491214&idx=1&sn=7e334d079146d9e31cea407f45bd8624)。体验方式：[App、微信小程序、百度小程序、H5 官网地址](https://www.jizhy.com/home/)
 
 
-#### 互联网公司
+### 互联网公司
 
 **我的医保凭证：** 微信小程序搜索“我的医保凭证”。国家医疗保障局监制、腾讯开发。
 
@@ -384,7 +384,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 <!-- **达内在线：** 达内教育的在线培训App。[App官网下载](http://www.tmooc.cn/app/index.shtml) -->
 
-#### SaaS服务商
+### SaaS服务商
 
 **腾讯discuz! Q：** 经典论坛，站长利器。[https://discuz.chat/docs/](https://discuz.chat/docs/)
 
@@ -398,7 +398,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **大商创：** 全渠道多用户商城解决方案。[官网](https://www.dscmall.cn)
 
-#### 通信运营商
+### 通信运营商
 
 **中国移动：** 微信小程序搜索“中国移动10086+”
 
@@ -422,7 +422,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **贵州联通沃扫码：** [H5，需扫码访问](http://www.gz10010.shop/wsm-h5/#/)
 
-#### 金融
+### 金融
 
 **中国银联云闪付：** App部分页面使用uni-app制作
 
@@ -469,7 +469,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **易宝支付：** cash.yeepay.com
 
 
-#### 政府
+### 政府
 
 **大量新冠抗疫项目，详见专题：** [xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
 
@@ -617,7 +617,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
  -->
 
-#### 传统品牌
+### 传统品牌
 
 **星巴克：** 微信小程序搜索 “星巴克” 、App部分页面使用uni-app制作
 
@@ -685,7 +685,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **中国青年报：** 使用uni小程序sdk [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.hzpd.zqzx&channel=0002160650432d595942&fromcase=60001)
 
-#### 交通物流
+### 交通物流
 
 **上铁12306：** 上海铁路局App，[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.shentie.app)、[iOS](https://apps.apple.com/cn/app/shang-tie12306/id1080296082)
 
@@ -721,7 +721,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **人民出行：**  微信小程序搜同名
 
 
-#### 游戏
+### 游戏
 
 **信任的进化：** 曾Taptap首页推荐的益智小游戏。[Android](http://sj.qq.com/myapp/detail.htm?apkName=com.xuangames.xrdjh)、[iOS](https://itunes.apple.com/cn/app/%E4%BF%A1%E4%BB%BB%E7%9A%84%E8%BF%9B%E5%8C%96-%E5%90%88%E4%BD%9C%E8%87%AA%E7%A7%81%E7%9A%84%E5%9F%BA%E5%9B%A0/id1290206167?mt=8)
 
@@ -733,7 +733,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **猜字谜：** 基于有奖猜歌改版，支持App和微信小程序双平台变现。 [App](https://ext.dcloud.net.cn/plugin?id=7996)
 
-#### 创业公司
+### 创业公司
 
 **Crimaster犯罪大师：** 火爆的全球推理侦探专属社区。[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.ultron.crimaster)、[iOS](https://apps.apple.com/cn/app/crimaster%E7%8A%AF%E7%BD%AA%E5%A4%A7%E5%B8%88/id1501701702)
 
@@ -888,7 +888,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **迷上我** 恋爱学习App，[Android及iOS](https://a.app.qq.com/o/simple.jsp?pkgname=com.mishangwo)
 
-#### 更多小程序案例（可在微信小程序中搜索）@wx-more
+### 更多小程序案例（可在微信小程序中搜索）@wx-more
 
 <div>
 <link rel="stylesheet" type="text/css" href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/f348df58-9b34-4682-9330-1c52464d08df.css"/>
@@ -928,7 +928,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 </div>
 
 
-#### 更多App案例@more
+### 更多App案例@more
 
 <md-banner />
 

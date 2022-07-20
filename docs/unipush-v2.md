@@ -173,11 +173,16 @@ uni-push产品有2个入口：
 
 ### 客户端启用uniPush2.0
 
-操作步骤打开`manifest.json`-`App模块配置`-中勾选`uniPush 2.0`
+操作步骤打开`manifest.json` - `App模块配置` - 中勾选`uniPush 2.0` - `重新编译项目`
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f897176a-6216-48bd-98c8-439b2bd2cb42.jpg)
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1280af61-06a3-46d3-bfc3-0e1c1aee2580.jpg)
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2c5af727-2a43-4a4a-95e0-07403aafb019.jpg)
 其他小程序启用方式参考微信小程序，这里不一一列举
+
+在`manifest.json`中配置完之后，需要重新编译项目，即：点击如图`重新运行`按钮
+
+<img width="50%" style="margin-left:20%;max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1cc74094-043b-4150-bdcc-8c0dbf90195b.jpeg"/>
+
 
 #### 小程序中使用uni-push2.0的白名单配置@useinmp
 

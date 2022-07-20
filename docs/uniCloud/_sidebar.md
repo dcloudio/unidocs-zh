@@ -26,7 +26,6 @@
     * [数据库操作符](uniCloud/cf-database-dbcmd.md)
     * [数据库运算方法](uniCloud/cf-database-aggregate-operator.md)
   * [JQL语法](uniCloud/jql.md)  
-  * [缓存JQL查询结果](uniCloud/jql-cache-redis.md)  
   * [客户端通过JQL操作数据库](uniCloud/clientdb.md)
   * [云函数通过JQL操作数据库](uniCloud/jql-cloud.md)
   * [unicloud-db前端组件](uniCloud/unicloud-db.md)
@@ -35,6 +34,7 @@
   * [DB Schema表结构](uniCloud/schema.md)
   * [openDB](uniCloud/opendb)
   * [性能优化](uniCloud/db-performance.md)
+  * [缓存JQL查询到redis](uniCloud/jql-cache-redis.md)  
 * 云存储
   * [云存储API](uniCloud/storage.md)
   * [腾讯云自定义登录](uniCloud/authentication.md)

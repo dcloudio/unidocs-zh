@@ -418,6 +418,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
 |embeddedAppIdList|Array|要半屏跳转的小程序appid。[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
 |requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/community/develop/doc/000a02f2c5026891650e7f40351c01)|
+|lazyCodeLoading|String| 目前仅支持值 requiredComponents，代表开启小程序[按需注入](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|
 
 
 #### setting
@@ -471,17 +472,19 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 
 ### mp-alipay
 
-|属性									|类型		|说明																																																										|
-|:-										|:-			|:-																																																											|
-|plugins							|Object	|使用到的插件，[详见](https://opendocs.alipay.com/mini/plugin/plugin-usage)																							|
+|属性								|类型		|说明			|
+|:-								|:-			|:-			|
+|plugins							|Object	|使用到的插件，[详见](https://opendocs.alipay.com/mini/plugin/plugin-usage)	|
 |component2						|Boolean| 是否启用 `component2` 编译，默认为true，[查看详情](https://docs.alipay.com/mini/framework/custom-component-overview)	|
 |enableAppxNg         |Boolean| 是否启用 `enableAppxNg` 小程序基础库 2.x 构建，默认为true，[查看详情](https://opendocs.alipay.com/mini/framework/project)，HBuilderX 3.2.10+ |
-|axmlStrictCheck			|Boolean| 是否启用 `axml` 严格语法检查，默认为false																																							|
-|enableParallelLoader	|Boolean| 是否启用多进程编译，默认为false																																												|
-|enableDistFileMinify	|Boolean| 是否压缩编译产物（仅在真机预览/真机调试时生效），默认为false																													|
-|uniStatistics				|Object	|[支付宝小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)														|
+|axmlStrictCheck			|Boolean| 是否启用 `axml` 严格语法检查，默认为false	|
+|enableParallelLoader	|Boolean| 是否启用多进程编译，默认为false	|
+|enableDistFileMinify	|Boolean| 是否压缩编译产物（仅在真机预览/真机调试时生效），默认为false	|
+|uniStatistics				|Object	|[支付宝小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |mergeVirtualHostAttributes|Boolean|合并组件节点外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
+|lazyCodeLoading|String|是否开启代码按需执行。|
+
 
 ### mp-baidu
 

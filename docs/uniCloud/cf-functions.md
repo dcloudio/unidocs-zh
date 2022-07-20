@@ -507,6 +507,8 @@ let callFunctionResult = await uniCloud.callFunction({
 
 可以在云函数互调时手动传递 token ，或者校验调用来源（source）为云函数（function）时不验证用户 token。
 
+云函数/云对象互相调用时调用方会通过公网访问被调用方，访问速度不如直接将逻辑放在调用方执行。使用前请确保你确实需要此功能
+
 ### 云函数内访问其他服务空间@call-by-function-cross-space
 
 > 仅腾讯云支持

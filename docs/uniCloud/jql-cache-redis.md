@@ -46,14 +46,14 @@ uniCloud 提供了 MongoDB 和 Redis 2种数据库。并且提供了联动机制
 
 配置成功后，客户端或云端JQL查询`db.collection('test').limit(10).get()`时，就会优先去redis中找，如果没找到，会从MongoDB中找然后自动cache到redis中。
 
-未命中缓存时，clientDB或使用了jql扩展的云函数/云对象会输出以下日志
+命中缓存时，clientDB或使用了jql扩展的云函数/云对象会输出以下日志
 
 ```js
 "当前请求需使用Redis缓存" 
 "返回Redis内缓存的结果" 
 ```
 
-命中缓存时，clientDB或使用了jql扩展的云函数/云对象会输出以下日志
+未命中缓存时，clientDB或使用了jql扩展的云函数/云对象会输出以下日志
 
 ```js
 "当前请求需使用Redis缓存" 

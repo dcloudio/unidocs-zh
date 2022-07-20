@@ -5,7 +5,7 @@
 |数据表名称|操作（添加/更新）时机	|内容/作用	|
 |--	|--	|--	|
 |opendb-tempdata|旧token过期时	|向个推服务器发起请求的token	|
-|open-device	|设备启动、登录	|push_clientid与详细的[设备信息](#deviceInfo)	|
+|opendb-device	|设备启动、登录	|push_clientid与详细的[设备信息](#deviceInfo)	|
 |uni-id-device	|登录	|主要用于存储user_id 与 device_id的映射关系，完整字段：user_id、device_id、token_expired、push_clientid、appid	|
 
 

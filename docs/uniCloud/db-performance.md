@@ -8,7 +8,11 @@
 
 ## 设置合适的索引
 
-请参阅：[数据库索引](uniCloud/db-index.md)。
+请参阅：[数据库索引](db-index.md)。
+
+## 将JQL查询结果缓存到redis中
+
+请参阅：[jql-cache-redis](jql-cache-redis.md)
 
 ## 大量数据查询优化
 

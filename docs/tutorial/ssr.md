@@ -175,7 +175,7 @@ export default {
 > **务必完成前置步骤之后再进行后续操作**
 
 1. 开通[uniCloud](https://unicloud.dcloud.net.cn)以及[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
-2. 云函数绑定自定义url化域名，参考文档：[云函数Url化](https://uniapp.dcloud.net.cn/uniCloud/http)
+2. 云函数绑定自定义url化域名，参考文档：[云函数Url化](https://uniapp.dcloud.net.cn/uniCloud/http)，阿里云未绑定自定义域名会直接下载云函数返回的html页面无法在浏览器中展示
 3. 前端网页托管绑定自定义域名，参考文档：[前端网页托管配置域名](https://uniapp.dcloud.net.cn/uniCloud/hosting?id=domain)
 4. 将前两步部署的域名都配置在跨域配置内，即允许云函数跨域访问前端网页托管内的资源，也允许前端网页托管跨域访问云函数。参考文档：[H5中使用uniCloud的跨域处理](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
 5. 从插件市场导入[uni-ssr](https://ext.dcloud.net.cn/plugin?id=5338)到项目内

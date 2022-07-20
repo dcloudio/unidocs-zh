@@ -72,7 +72,7 @@
   * [uSearch 云端一体搜索](https://ext.dcloud.net.cn/plugin?id=3851)
   * [uni-captcha 图形验证码](uniCloud/uni-captcha.md)
   * [uni-sec-check 内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
-  * [统一发行页面](https://uniapp.dcloud.io/m3w)
+  * [统一发行页面](uni-portal.md)
   * [uni-cloud-router](uniCloud/uni-cloud-router.md)
 * [案例](uniCloud/resource.md)
 * [开发者使用反馈](uniCloud/feedback.md)

@@ -13,7 +13,6 @@ const routerMap = {
   '/collocation/auto/uniapp-cli-project': '/worktile/auto/uniapp-cli-project.html',
   '/collocation/i18n': '/tutorial/i18n.html',
   '/worktile/i18n': '/tutorial/i18n.html',
-  '/worktile/i18n.html': '/tutorial/i18n.html',
   '/collocation/env': '/tutorial/env.html',
   '/collocation/ssr': '/tutorial/ssr.html',
   '/ssr': '/tutorial/ssr.html',
@@ -58,7 +57,6 @@ const routerMap = {
   '/api/extend/native-plugin': '/plugin/native-plugin.html',
 
   '/vue-components': '/tutorial/vue-components.html',
-  '/vue-components.html': '/tutorial/vue-components.html',
   '/vue-basics': '/tutorial/vue-basics.html',
   '/vue-api': '/tutorial/vue-api.html',
   '/vue-vuex': '/tutorial/vue-vuex.html',
@@ -76,7 +74,7 @@ const routerMap = {
   '/uniCloud/uni-clientDB': '/uniCloud/clientdb.html',
   '/uniCloud/uni-data-picker': '/component/uniui/uni-data-picker.html',
   '/uniCloud/uni-push/introduction.html': '/unipush-v2.html',
-  '/plugin/publish.html#pages-init': '/plugin/uni_modules.html#pages-init',
+  '/plugin/publish#pages-init': '/plugin/uni_modules.html#pages-init',
 
   '/tutorial/build/uni-app-publish-mp-weixin': '/tutorial/build/publish-mp-weixin-cli.html',
   '/tutorial/build/uni-app-publish-mp-weixin.html': '/tutorial/build/publish-mp-weixin-cli.html',
@@ -92,11 +90,12 @@ const routerMap = {
   '/platform': '/tutorial/platform.html',
   '/nvue-event': '/tutorial/nvue-event.html',
   '/use-html5plus': '/tutorial/use-html5plus.html',
+  '/m3w': '/uniCloud/uni-portal.html',
 }
 
 export default ({ fullPath, path, hash }) => {
   fullPath = decodeURIComponent(fullPath)
-  const matchFullPath = routerMap[fullPath.replace('?id=', '#')];
+  const matchFullPath = routerMap[fullPath.replace('?id=', '#').replace('.html', '')];
   if (matchFullPath) {
     return {
       path: matchFullPath,

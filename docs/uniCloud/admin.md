@@ -355,9 +355,8 @@ $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
 
 - 小程序/快应用信息
 
-	1. 勾选代表需要发布此类信息，不勾选会默认折叠
-	2. `折叠`：小程序种类繁多，此按钮可以将所有的小程序信息折叠起来
-	3. `快应用`：只有上传了`快应用码`，才会在统一发布页展示
+	1. 勾选代表需要发布该类信息，不勾选会默认折叠
+	2. `快应用`：只有上传了`快应用码`，才会在统一发布页展示
 
 - H5
 
@@ -372,7 +371,7 @@ $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
    }
    ```
 
-### uni-portal：统一发布页<Badge text="uni-admin 1.9.3+" />@uni-portal
+### uni-portal：统一发布页 <Badge text="uni-admin 1.9.3+" />@uni-portal
 
 自`uni-admin 1.9.3+`版本开始，`uni-portal`作为`uni-admin`的内置插件，内置在`uni-admin`项目中。
 
@@ -380,85 +379,13 @@ $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
 
 更多uni-portal的介绍，详见：[uni-portal](uni-portal.md)
 
-### uni-upgrade-center：App升级中心<Badge text="uni-admin 1.9.3+" />@uni-upgrade-center
+### uni-upgrade-center：App升级中心 <Badge text="uni-admin 1.9.3+" />@uni-upgrade-center
 
-> 在应用管理新增一个应用之后，即可在 `App升级中心` 发布该应用的版本
+自`uni-admin 1.9.3+`版本开始，`uni-upgrade-center`作为`uni-admin`的内置插件，内置在`uni-admin`项目中。
 
-**版本管理**
+`uni-admin`管理员通过“应用管理”模块中填写的应用信息（如apk下载地址、小程序二维码）后，可通过列操作进入升级中心进行版本管理。
 
-1. 在版本管理list的右上角点击`发布新版`，可以发布`原生App安装包`和`wgt资源包`。在左上角点击`下拉列表`，可以切换展示应用。
-
-<div align="center">
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/442e84e7-e7f3-4d27-9c98-45568e5db835.png" width="800"></img>
-</div>
-
-- 发布原生App安装包
-	1. 在上传安装包界面填写此次发版信息
-
-	<div align="center" >
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6368e998-8d98-4a0c-9de9-da35433a5e35.jpg" width="600"></img>
-	</div>
-
-  1. `Android应用市场`
-		- 此处会与 `新增应用` 时填写的 `Android应用市场` 信息保持同步。当在应用管理修改应用信息时，这里也会修改
-		- 启用商店：当勾选某一商店启用时，在 `upgrade-center-app` 端会检测手机上是否有该应用市场
-    		- 如果有，则会跳转至该应用商店进行 App 升级
-    		- 如果都跳转失败，最后会使用填写的 `下载链接` 下载 apk 安装包升级
-		- 优先级：检查更新时，按照优先级从大到小依次尝试跳转商店
-
-	1. `下载链接/AppStore`
-		- 可以选择手动上传一个文件到 `云存储`，会自动将地址填入该项
-		- 也可以手动填写一个地址，就可以不用再上传文件
-		- 如果是发布`苹果`版本，包地址则为 应用在`AppStore的链接`
-		
-	2. `强制更新`
-		- 如果使用强制更新，App端接收到该字段后，App升级弹出框不可取消
-		
-	4. `上线发行`
-		- 可设置当前包是否上线发行，只有已上线才会进行更新检测
-		- 同时只可有一个线上发行版，线上发行不可更设为下线。未上线可以设为上线发行并自动替换当前线上发行版
-		- 修改当前包为上线发行，自动替换当前线上发行版
-
-	**注：版本号请填写以`.`分隔字符串，例如：`0.0.1`**
-- 发布wgt资源包
-	1. 大部分配置与发布 `原生App安装包` 一致
-
-	<div align="center">
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ec916cde-0d0e-4bf3-a735-643ea2a45b74.png" width="400"></img>
-	</div>
-
-	2. `原生App最低版本`
-		- 上次使用新Api或打包新模块的App版本
-		- 如果此次打包wgt使用了`新的api`或者打包了`新的模块`，则在发布 `wgt资源包` 的时候，将此版本更新为本次版本
-		
-		- 如果已有正式版`wgt资源包`，则本次新增会自动带出
-
-	3. `静默更新`
-		- App升级时会在后台下载wgt包并自行安装。新功能在下次启动App时生效
-		- **静默更新后不重启应用，可能会导致正在访问的应用的页面数据错乱，请谨慎使用！**
-
-	**注：版本号请填写以`.`分隔字符串，例如：`0.0.1`**
-
-- 发布完成页面
-
-	<div align="center">
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/c5470d8c-cc37-4b41-8d56-6d50f8daac62.png" width="800"></img>
-	</div>
-
-**Tips**
-- `/uni_modules/uni-upgrade-center/pages/system/upgradecenter/version/add.vue`中有版本对比函数（compare）。
-	- 使用多段式版本格式（如："3.0.0.0.0.1.0.1", "3.0.0.0.0.1"）。如果不满足对比规则，请自行修改。
-- 删除应用会把该应用的所有版本记录同时删除
-- 升级中心设计之初就支持iOS的wgt更新
-- iOS的wgt更新肯定是违反apple政策的，注意事项：
-	- 审核期间请不要弹窗升级
-	- 升级完后尽量不要自行重启
-	- 尽量使用静默更新
-- 可以通过以下修改支持iOS的wgt更新：
-	> \uni_modules\uni-upgrade-center\pages\mixin\version_add_detail_mixin.js
-	> 
-	> 将 `data` 中的 `enableiOSWgt: false` 中 改为 `enableiOSWgt: true`
-
+更多uni-portal的介绍，详见：[uni-upgrade-center](upgrade-center.md)
 
 ### uni统计2.0
 

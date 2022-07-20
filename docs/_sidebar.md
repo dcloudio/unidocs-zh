@@ -11,7 +11,7 @@
 * [老项目引入uni-app](hybrid.md)
 * 运营服务
   * [uni-ad广告变现](uni-ad.md)
-  * [统一发行页面](m3w.md)
+  * [统一发行页面](/uniCloud/uni-portal.md)
   * [前端网页托管](uniCloud/hosting.md)
   * [App升级中心](uniCloud/upgrade-center.md)
   * [uni一键登录](univerify.md)

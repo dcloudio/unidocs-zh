@@ -7,7 +7,7 @@
 ### uni.getPushClientId(OBJECT)
 获取客户端唯一的推送标识
 
-注意：这是一个异步的方法，且仅支持uni-push2.0 
+注意：这是一个异步的方法，且仅支持uni-push2.0；
 
 **OBJECT 参数说明**
 
@@ -35,6 +35,7 @@
 请检查：  
 1. 当前应用是否已开通uni-push2.0 [详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
 2. 客户端对应平台是否已启用uni-push2.0[详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%90%AF%E7%94%A8unipush2-0)
+3. HBuilderX3.5.1 App平台vue3项目首次启动调用uni.getPushClientId 存在可能获取不到cid的问题，HBuilderX3.5.2修复了此问题，请升级。
 
 示例代码：
 ```js 

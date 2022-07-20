@@ -128,7 +128,7 @@ uniCloud控制台日志如下图：
 
 ```
 
-## HBuilderX 本地uniCloud运行环境介绍@local-tips
+## HBuilderX本地uniCloud运行环境介绍@local-tips
 
 HBuilderX 2.8.1+ 支持uniCloud本地运行插件。
 
@@ -155,7 +155,7 @@ HBuilderX 2.8.1+ 支持uniCloud本地运行插件。
 
 5. 公用模块使用注意
 
-- 需要在云函数内执行`npm install ../common/xxx`安装公共模块，详细请参考[云函数公用模块](uniCloud/cf-common.md)
+- `HBuilderX 3.0.0`之前需要在云函数内执行`npm install ../common/xxx`安装公共模块，详细请参考[云函数公用模块](uniCloud/cf-common.md)
 - 如果使用`HBuilderX 3.0.0`及以上版本，可以直接在云函数目录右键选择“管理公共模块依赖”进行公共模块的引入
 - 如果使用到加密的公共模块则此云函数不可本地运行
 - `HBuilderX 3.0.0`版本运行uniCloud项目时，uniCloud本地调试插件会自动进行云函数依赖安装（包括公共模块和package.json里面的其他依赖）
@@ -200,7 +200,11 @@ const hour = getOffsetDate(8).getHours()
 
 发送clientDB请求时，如果使用了加密的action（在插件市场销售），当前请求会使用云端已部署资源而不是本地资源（包括schema、validateFunction、action），请留意控制台输出。
 
-10. 其他注意事项
+10. 文件系统
+
+云函数在云端运行于一个只读文件系统内（仅`/tmp`目录可以写入文件），本地运行时没有这些限制。如需在云端运行时写入文件请在/tmp目录下操作
+
+11. 其他注意事项
 - 虽然云函数、数据库schema、validatefunction在本地，但云存储、数据库的数据和索引，仍然在云端。也就是开发机不能完全脱线开发。只是代码可以在本地写，免上传就能联调。
 - 连接线上环境时请记得上传本地的schema、validatefunction、action
 - 切换云端、本地，无需重新运行客户端

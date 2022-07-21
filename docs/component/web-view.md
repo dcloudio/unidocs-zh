@@ -80,8 +80,8 @@
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─components           
-├─hybrid              
+┌─components
+├─hybrid
 │  └─html
 │     ├─css
 │     │  └─test.css
@@ -90,14 +90,14 @@
 │     ├─js
 │     │  └─test.js
 │     └─local.html
-├─pages              
+├─pages
 │  └─index
-│     └─index.vue  
-├─static              
-├─main.js             
-├─App.vue              
-├─manifest.json      
-└─pages.json         
+│     └─index.vue
+├─static
+├─main.js
+├─App.vue
+├─manifest.json
+└─pages.json
 	</code>
 </pre>
 
@@ -348,7 +348,7 @@ export default {
 export default {
 	onReady() {
 		// #ifdef APP-PLUS
-		var currentWebview = this.$scope.page.$getAppWebview() //获取当前页面的webview对象
+		var currentWebview = this.$scope.$getAppWebview() //获取当前页面的webview对象
 		setTimeout(function() {
 			wv = currentWebview.children()[0]
 			wv.setStyle({scalable:true})

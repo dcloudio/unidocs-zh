@@ -14,8 +14,12 @@ module.exports = (links, callback = () => { }) => {
   </url>`
   }).join('\n')
 
+  const rootPath = path.resolve(__dirname, '../../../root')
+  const staticExists = fs.existsSync(rootPath)
+  if (!staticExists) fs.mkdirSync(rootPath)
+
   fs.writeFile(
-    path.resolve(__dirname, '../../../root/sitemap.xml'),
+    path.resolve(rootPath, 'sitemap.xml'),
     xmlBefore + xmlItems + xmlAfter,
     { encoding: 'utf-8' },
     callback

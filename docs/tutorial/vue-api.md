@@ -1,7 +1,7 @@
 
 ## 全局配置
 
-|Vue 全局配置		|描述						|H5		|App端|微信小程序  |说明	|
+|Vue 全局配置		|描述						|H5		|App端|小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
 |Vue.config.silent	| 取消 Vue 所有的日志与警告 [详情](https://cn.vuejs.org/v2/api/#silent)	|√	|√	| √		|		|
 |Vue.config.optionMergeStrategies	| 自定义合并策略的选项 [详情](https://cn.vuejs.org/v2/api/#optionMergeStrategies)	|√	| √	| √		|		|
@@ -18,7 +18,7 @@
 
 ## 全局 API
 
-|Vue 全局 API	|描述	|H5	|App端|微信小程序	|说明				|
+|Vue 全局 API	|描述	|H5	|App端|小程序	|说明				|
 | --			| --	| --|--		|--			| --				|
 |Vue.extend		| 使用基础 Vue 构造器，创建一个“子类” [详情](https://cn.vuejs.org/v2/api/#Vue-extend)	|√	|√		| x			|不可作为组件使用	|
 |Vue.nextTick	| 在下次 DOM 更新循环结束之后执行延迟回调 [详情](https://cn.vuejs.org/v2/api/#Vue-nextTick)	|√	| x		| x			|	|
@@ -36,7 +36,7 @@
 
 ## 选项
 
-|Vue 选项		|描述						|H5		|App端|微信小程序  |说明	|
+|Vue 选项		|描述						|H5		|App端|小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
 |data	| Vue 实例的数据对象 [详情](https://cn.vuejs.org/v2/api/#data) 	|√	|√	| √		|		|
 |props	| props 可以是数组或对象，用于接收来自父组件的数据 [详情](https://cn.vuejs.org/v2/api/#props) 	|√	|√	| √		| |
@@ -69,7 +69,7 @@
 ## 生命周期
 
 
-|生命周期钩子	|描述	|H5	|App端|微信小程序	|说明				|
+|生命周期钩子	|描述	|H5	|App端|小程序	|说明				|
 | --			| --	| --|--		|--			| --				|
 |beforeCreate		| 在实例初始化之后被调用 [详情](https://cn.vuejs.org/v2/api/#beforeCreate)	|√	|√		| √			|	|
 |created	| 在实例创建完成后被立即调用 [详情](https://cn.vuejs.org/v2/api/#created)	|√	| √		| √			|	|
@@ -90,7 +90,7 @@
 
 
 
-|Vue 实例属性		|描述						|H5		|App端|微信小程序  |说明	|
+|Vue 实例属性		|描述						|H5		|App端|小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
 |vm.$data	| Vue 实例观察的数据对象 [详情](https://cn.vuejs.org/v2/api/#vm-data) 	|√	| √	| √		|		|
 |vm.$props	| 当前组件接收到的 props 对象 [详情](https://cn.vuejs.org/v2/api/#vm-props) 	|√	| √	| √		|		|
@@ -114,7 +114,7 @@
 
 
 
-|实例方法		|描述						|H5		|App端|微信小程序  |说明	|
+|实例方法		|描述						|H5		|App端|小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
 |vm.$watch()	| 观察 Vue 实例上的一个表达式或者一个函数计算结果的变化 [详情](https://cn.vuejs.org/v2/api/#vm-watch) 	|√	|√	| √		|		|
 |vm.$set()	| 这是全局 Vue.set 的别名 [详情](https://cn.vuejs.org/v2/api/#vm-set) 	|√	| √	| √		|		|
@@ -136,10 +136,10 @@
 
 
 
-|Vue 指令		|描述						|H5		|App端|微信小程序  |说明	|
+|Vue 指令		|描述						|H5		|App端|小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
 |v-text	| 更新元素的 textContent [详情](https://cn.vuejs.org/v2/api/#v-text) 	|√	|√	| √		|		|
-|v-html	| 更新元素的 innerHTML [详情](https://cn.vuejs.org/v2/api/#v-html) 	|√	| √	| x		|微信小程序会被转成 `rich-text`		|	
+|v-html	| 更新元素的 innerHTML [详情](https://cn.vuejs.org/v2/api/#v-html) 	|√	| √	| x		|微信小程序会被转成 `rich-text`		|
 |v-show	| 根据表达式之真假值，切换元素的 display CSS属性 [详情](https://cn.vuejs.org/v2/api/#v-show) 	|√	| √	| √		|		|
 |v-if	| 根据表达式的值的 truthiness 来有条件地渲染元素 [详情](https://cn.vuejs.org/v2/api/#v-if) 	|√	| √	| √		|		|
 |v-else	| 为 v-if 或者 v-else-if 添加“else 块” [详情](https://cn.vuejs.org/v2/api/#v-else) 	|√	| √	| √		|		|
@@ -158,7 +158,7 @@
 ## 特殊属性
 
 
-|特殊属性		|描述						|H5		|App端|微信小程序  |说明	|
+|特殊属性		|描述						|H5		|App端|小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
 |key	| 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 对比时辨识 VNodes [详情](https://cn.vuejs.org/v2/api/#key) 	|√	| √	| √		| |
 |ref	| ref 被用来给元素或子组件注册引用信息 [详情](https://cn.vuejs.org/v2/api/#ref) 	|√	| √	| √		|非 H5 平台只能获取 vue 组件实例不能获取到内置组件实例|
@@ -172,12 +172,12 @@
 ## 内置组件
 
 
-|内置组件		|描述						|H5		|App端|微信小程序  |说明	|
+|内置组件		|描述						|H5		|App端|小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
 |component	| 渲染一个“元组件”为动态组件。依 is 的值，来决定哪个组件被渲染 [详情](https://cn.vuejs.org/v2/api/#component) 	|√	| √	| x		|		|
 |transition	| 作为单个元素/组件的过渡效果 [详情](https://cn.vuejs.org/v2/api/#transition) 	|√	| x	| x		|		|
 |transition-group	| 作为多个元素/组件的过渡效果 [详情](https://cn.vuejs.org/v2/api/#transition-group) 	|√	| x	| x		|		|
-|keep-alive	| 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们 [详情](https://cn.vuejs.org/v2/api/#keep-alive) 	|√	|x	| x		|		|	
+|keep-alive	| 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们 [详情](https://cn.vuejs.org/v2/api/#keep-alive) 	|√	|x	| x		|		|
 |slot	| 作为组件模板之中的内容分发插槽 [详情](https://cn.vuejs.org/v2/api/#slot) 	|√	| √	| √		|	-	|
 |template	| 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性 [详情](https://uniapp.dcloud.io/component/vue-component?id=template) 	|√	| √	| √		|	-	|
 
@@ -336,5 +336,3 @@ export default {
 
 
 第二种解决方式在某些组件可能造成抖动，**推荐第一种解决方式**。
-
-

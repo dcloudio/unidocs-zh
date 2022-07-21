@@ -142,7 +142,8 @@ export default {
     user-select:none;
 }
 .pages-tabs--active {
-	background:#282c34;
+	// background:#282c34;
+	background-color: #292d3e;
 	color: #fff;
 	font-weight: bold;
 }
@@ -151,7 +152,7 @@ export default {
 	width: 100%;
 	height: 100%;
 	border-radius: 0;
-	overflow: hidden;
+	overflow: auto;
 
 }
 .page-snippet pre[class*="language-"]{
@@ -159,7 +160,7 @@ export default {
 	padding: 20px 20px;
 	width: 100%;
 	height: 100%;
-	overflow: auto;
+	// overflow: auto;
 	box-sizing: border-box;
 }
 .code-iframe {

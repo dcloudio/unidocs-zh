@@ -12,7 +12,7 @@ cli创建项目时若选择`hello uni-app`模板，可看到其中已经自带�
 
 注意：相关依赖不能高于以下版本
 
-```
+```js
 jest@27.0.4
 jest-environment-node@27.5.1
 
@@ -21,13 +21,13 @@ jest-environment-node@27.5.1
 已有 `cli` 工程
 1. 更新依赖包 `@dcloudio/*` >= `2.0.0-alpha-27920200613002`
 2. 安装依赖包 `@dcloudio/uni-automator`
-```
+```shell
 npm install @dcloudio/uni-automator --save-dev
 ```
 3. package.json script节点新增命令
 
 vue2项目新增如下：
-```
+```js
 "test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
 "test:android": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=android jest -i",
 "test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
@@ -36,7 +36,7 @@ vue2项目新增如下：
 ```
 
 vue3项目新增如下：
-```
+```js
 "test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
 "test:android": "cross-env UNI_PLATFORM=app UNI_OS_NAME=android jest -i",
 "test:ios": "cross-env UNI_PLATFORM=app UNI_OS_NAME=ios jest -i",
@@ -47,7 +47,7 @@ vue3项目新增如下：
 ### H5平台测试流程
 
 1. 进入工程目录，安装依赖
-```
+```shell
 npm install puppeteer --save-dev
 ```
 注意： 从v3.0.0开始，`Puppeteer` 开始依赖于Node 10.18.1+
@@ -58,12 +58,12 @@ API文档见：[https://uniapp.dcloud.io/collocation/auto/api](https://uniapp.dc
 测试文件目录配置见 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
 
 3. 运行测试
-```
+```shell
 npm run test:h5
 ```
 
 4. 测试结果
-```
+```js
 >> cross-env UNI_PLATFORM=h5 jest -i
 ...
 Test Suites: 1 passed, 1 total
@@ -83,14 +83,14 @@ Time:        14.995s, estimated 16s
 
 3. 创建 `cli` 工程/现有 `cli` 工程
 切换到工程目录，安装依赖包 `adbkit`
-```
+```shell
 npm install adbkit --save-dev
 ```
 
 4. 编写测试代码，参考测试用例
 
 5. 运行测试
-```
+```shell
 npm run test:android
 ```
 
@@ -100,7 +100,7 @@ npm run test:android
 目前仅支持 iOS 模拟器（需要mac电脑安装xcode）
 
 1. 安装依赖 `node-simctl`
-```
+```shell
 npm install node-simctl --save-dev
 ```
 
@@ -111,7 +111,7 @@ npm install node-simctl --save-dev
 4. 编写测试代码，参考测试用例
 
 5. 运行测试
-```
+```shell
 npm run test:ios
 ```
 
@@ -122,12 +122,12 @@ npm run test:ios
 1. 创建cli项目，同H5平台 (必须配置微信小程序 appid, manifest.json -> mp-weixin -> appid)
 
 2. 运行测试(如果微信开发者工具无法成功打开项目，请手动打开)
-```
+```shell
 npm run test:mp-weixin
 ```
 
 3. 测试结果
-```
+```js
 > cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch "--auto-port" "9520"
 Test Suites: 1 passed, 1 total
 Tests:       4 passed, 4 total
@@ -142,19 +142,19 @@ Time:        14.995s, estimated 16s
 使用 hello uni-app 工程测试 H5 平台
 
 1. 创建 `cli` 项目，选择 `hello uni-app`
-```
+```shell
 $ vue create -p dcloudio/uni-preset-vue#alpha my-hello-uni-app
 # 进入项目目录
 $ cd my-hello-uni-app
 ```
 
 2. 安装 `puppeteer`
-```
+```shell
 npm install puppeteer
 ```
 
 3. 创建测试文件 `src/pages/tabBar/component/component.test.js`，复制下面代码
-```
+```js
 describe('pages/tabBar/component/component.nvue', () => {
     let page
     beforeAll(async () => {
@@ -211,12 +211,12 @@ describe('pages/tabBar/component/component.nvue', () => {
 ```
 
 4. 运行测试
-```
+```shell
 npm run test:h5
 ```
 
 5. 测试结果
-```
+```js
 > cross-env UNI_PLATFORM=h5 jest -i
  PASS  src/pages/tabBar/component/component.test.js (14.789s)
   pages/tabBar/component/component.nvue
@@ -233,7 +233,7 @@ Time:        14.995s, estimated 16s
 
 
 #### 屏幕截图示例
-```
+```js
 describe('pages/API/set-navigation-bar-title/set-navigation-bar-title.vue', () => {
     let page
     beforeAll(async () => {

@@ -45,7 +45,7 @@ Grid 广告在创建后会自动拉取广告。开发者可以通过 ad 组件�
     },
     methods: {
       adLoad() {
-        console.log("adLoad",e);
+        console.log("adLoad");
       },
       adError(e) {
         console.log("adError",e);

@@ -36,6 +36,9 @@
 * [《uni-app新手入门》](https://www.lanqiao.cn/courses/7763)，出品人：蓝桥云课
 * [《uniapp 原生插件开发-android》](https://www.bilibili.com/video/BV13V411H7W2?spm_id_from=333.999.0.0&vd_source=b123f8c166833c59567e6923b9aa2013)，出品人：朱哲
 * [《uniapp 原生插件开发-iOS》](https://www.bilibili.com/video/BV1Db4y1D7Yr?spm_id_from=333.999.0.0)，出品人：朱哲
+* [《雪狐uni-app+阿里直播实战项目开发第一季》](https://www.studyfox.cn/487.html)，出品人：雪狐网
+
+
 
 
 <!-- * [《跟枫桥一起开发App》](https://www.lusita.cn)，出品人：唐枫桥，来源：源码商城（注：源码商城App、小程序本身就是基于```uni-app```开发的） -->

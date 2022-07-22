@@ -109,6 +109,7 @@
   * [uni-rate 评分](component/uniui/uni-rate.md)
   * [uni-row 布局-行](component/uniui/uni-row.md)
   * [uni-search-bar 搜索栏](component/uniui/uni-search-bar.md)
+  * [uni-section 标题栏](component/uniui/uni-section.md)
   * [uni-segmented-control 分段器](component/uniui/uni-segmented-control.md)
   * [uni-steps 步骤条](component/uniui/uni-steps.md)
   * [uni-swipe-action 滑动操作](component/uniui/uni-swipe-action.md)

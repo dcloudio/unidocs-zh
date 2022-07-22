@@ -151,7 +151,6 @@ HBuilderX支持项目类型较多，只有`uni-app`、`5+app`、`wap2app`可以�
 1. itunes安装完成后，请确认itunes可以`正常`连接手机。如果itunes都无法连接手机，请先解决itunes连接手机问题。
 2. 如果以上方案都无法解决，有可能是因为本地库与iTunes带的库冲突了，一般是iTunes库目录（32位系统目录为：C:\Program Files\Common Files\Apple\Apple Application Support，64位系统目录为：C:\Program Files (x86)\Common Files\Apple\Apple Application Support）下的dll文件和系统库目录（32位系统目录为：C:\WINDOWS\system32，64位系统目录为：C:\Windows\SysWOW64）下的dll重名，可将iTunes库目录下的同名dll文件拷贝到系统库目录下，或者将系统目录下的同名dll文件重命名或删除，然后再重启HBuilder或者重试真机运行
 3. 有可能是iTunes安装时依赖库丢失，尝试重装iTunes解决问题
-4. iTools提供了一个修复驱动的工具和教程，可以参考[http://bbs.itools.cn/thread-129390-1-1.html](http://bbs.itools.cn/thread-129390-1-1.html)
 
 #### 4.2.3 itunes无法检测到手机
 

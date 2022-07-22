@@ -14,15 +14,15 @@ uni-app可以用cli项目的npm命令运行，但更重要的是，DCloud提供�
 
 |					|web						|app		|小程序				|uniCloud|
 |--					|--							|--			|--					|--		|
-|uni-app+其他ide		|运行在普通浏览器				|无法运行	|三方小程序开发工具	|不支持	|
-|uni-app+HBuilder	|HBuilder额外内置了浏览器		|内置		|三方小程序开发工具	|内置	|
+|uni-app+其他ide		|运行在普通浏览器				|不支持		|三方小程序开发工具	|不支持	|
+|uni-app+HBuilder	|HBuilder额外内置了浏览器		|支持		|三方小程序开发工具	|支持	|
 
 - debug方面
 
 |					|web		|app	|小程序					|uniCloud|
 |--					|--			|--		|--						|--		|
-|uni-app+其他ide		|视ide功能	|无		|依靠三方小程序开发工具	|不支持	|
-|uni-app+HBuilder	|支持		|内置	|依靠三方小程序开发工具	|内置	|
+|uni-app+其他ide		|视ide功能	|不支持	|依靠三方小程序开发工具	|不支持	|
+|uni-app+HBuilder	|支持		|支持	|依靠三方小程序开发工具	|支持	|
 
 ## 运行调试入口
 
@@ -30,11 +30,15 @@ uni-app可以用cli项目的npm命令运行，但更重要的是，DCloud提供�
 在HBuilder中，有顶部菜单、toolbar运行按钮、快捷键三种运行入口。
 
 1. 顶部运行菜单
+
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7bf15128-6629-4037-a6c5-988ab03671f1.png)
+
 2. toolbar工具栏上的运行按钮
+
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/05f69c39-5aee-460a-95d6-7c98141c5cb0.png)
-toolbar的运行按钮点击后会展开一个菜单。
-这个菜单可配置，通过`自定义菜单`将不常用的运行项目折叠起来。
+
+	toolbar的运行按钮点击后会展开一个菜单。这个菜单可配置，通过`自定义菜单`将不常用的运行项目折叠起来。
+
 3. 快捷键
 	
 	运行快捷键是【Ctrl+r】

@@ -3,6 +3,7 @@ const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')
 const createSidebar = require('./markdown/createSidebar')
 const { simplifySlugText, tabs } = require('./utils')
+const copyOptions = require('./config/copy');
 
 const config = {
   theme: 'vuepress-theme-uni-app-test',
@@ -69,7 +70,10 @@ const config = {
         .plugin('normallize-link')
         .use(require('./markdown/normallizeLink'))
     }
-  }
+  },
+  plugins: [
+    ["vuepress-plugin-juejin-style-copy", copyOptions]
+  ]
 }
 
 module.exports = config

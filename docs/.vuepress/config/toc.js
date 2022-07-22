@@ -1,5 +1,5 @@
 export default {
-  onThisPage: '文档结构',
-  collapseText: '展开全部',
+  onThisPage: '本文内容',
+  collapseText: '展示全部',
   expandText: '收起目录'
 }

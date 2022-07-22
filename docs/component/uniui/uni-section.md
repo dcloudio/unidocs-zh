@@ -35,7 +35,7 @@
 
 ## 属性/方法
 
-### Badge Props
+### Section Props
 
 |属性名|类型|默认值|说明|
 |:-:|:-:|:-:|:-:|
@@ -48,7 +48,7 @@
 |subTitleColor|String| #999 |副标题字体颜色|
 |padding|Boolean/String| false |默认插槽容器的 padding 值，传入类型为 Boolean 时，设置为 10px 或 0|
 
-### Badge Events
+### Section Events
 
 |事件名|事件说明|返回参数|
 |:-:|:-:|:-:|

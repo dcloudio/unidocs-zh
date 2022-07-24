@@ -1,4 +1,4 @@
-#### button
+## button
 
 按钮。
 
@@ -43,14 +43,14 @@
 - **注1：``button-hover`` 默认为 ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}``**
 - ```open-type="launchApp"```时需要调起的APP接入微信OpenSDK[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)
 
-**size 有效值**
+### size 有效值
 
 |值|说明|
 |:-|:-|
 |default|默认大小|
 |mini|小尺寸|
 
-**type 有效值**
+### type 有效值
 
 |值|说明|
 |:-|:-|
@@ -58,14 +58,14 @@
 |default|白色|
 |warn|红色|
 
-**form-type 有效值**
+### form-type 有效值
 
 |值|说明|
 |:-|:-|
 |submit|提交表单|
 |reset|重置表单|
 
-**open-type 有效值**
+### open-type 有效值
 
 |值|说明|平台差异说明|
 |:-|:-|:-|
@@ -96,7 +96,16 @@
 |watchLater|触发用户稍后再看|快手小程序 |
 |openProfile|触发打开用户主页|快手小程序 |
 
-**button点击**
+#### feedback
+
+open-type 为 feedback时：
+
+- 小程序中，开发者可以登录 [微信小程序管理后台](https://mp.weixin.qq.com/) 、[QQ小程序后台](https://q.qq.com/#/)后，进入菜单“客服反馈”页面获取反馈内容。
+- 在 App 中，开发者登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) 后点击应用名称，进入左侧菜单“用户反馈”页面获取反馈内容。
+- 但推荐使用全端的、开源的、云端一体的意见反馈功能，[前端部分](https://ext.dcloud.net.cn/plugin?id=50)、[管理端部分](https://ext.dcloud.net.cn/plugin?id=4992)
+
+
+### button点击
 
 button 组件的点击遵循 vue 标准的 @click事件。
 
@@ -125,13 +134,13 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 
 
 **注意**
-- 在小程序中，开发者可以登录 [微信小程序管理后台](https://mp.weixin.qq.com/) 、[QQ小程序后台](https://q.qq.com/#/)后，进入菜单“客服反馈”页面获取反馈内容。
-- 在 App 中，开发者登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) 后点击应用名称，进入左侧菜单“用户反馈”页面获取反馈内容。
 - 点击 share 分享按钮时会触发 [onShareAppMessage](/api/plugins/share)
 - 支付宝小程序平台，获取用户手机号时，建议先通过条件编译的方式，调用支付宝原生API，[参考](https://docs.alipay.com/mini/api/getphonenumber)
 
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/button/button)
+### 示例
+
+[查看演示](https://hellouniapp.dcloud.net.cn/pages/component/button/button)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 

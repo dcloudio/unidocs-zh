@@ -158,6 +158,11 @@ public class MyApplication extends DCloudApplication {
 + 请阅读文档[Android平台应用启动时读写手机存储、访问设备信息(如IMEI)等权限策略](https://ask.dcloud.net.cn/article/36549)。配置`存储权限`及`访问设备信息权限`申请模式。可以配置`none`不申请。具体参考文档。
 + 配置`none`后在某些功能需要`手机存储权限`、`访问设备信息权限`也可以通过调用[requestPermissions](https://www.html5plus.org/doc/zh_cn/android.html#plus.android.requestPermissions)主动申请权限来支持后续业务逻辑。
 
+
+#### 19、未同意隐私协议 chromium SDK提前通过GetConnectionInfo获取Wifi信息，MAC地址
+
++ 可以改androidPrivacy.json的hrefLoader配置 system 提供系统浏览器显示隐私条款修复问题 具体[参考文档](/app-privacy-android.md)
+
 #### 看不懂文档不知道如何修改？
 
 可开通付费技术服务 参考：[https://ask.dcloud.net.cn/article/13015](https://ask.dcloud.net.cn/article/13015)

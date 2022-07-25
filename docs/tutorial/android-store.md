@@ -161,7 +161,7 @@ public class MyApplication extends DCloudApplication {
 
 #### 19、未同意隐私协议 chromium SDK提前通过GetConnectionInfo获取Wifi信息，MAC地址
 
-+ 可以改androidPrivacy.json的hrefLoader配置 system 提供系统浏览器显示隐私条款修复问题 具体[参考文档](/app-privacy-android.md)
++ 可以改androidPrivacy.json的hrefLoader配置 system 提供系统浏览器显示隐私条款修复问题 具体[参考文档](https://uniapp.dcloud.io/tutorial/app-privacy-android.html)
 
 #### 看不懂文档不知道如何修改？
 

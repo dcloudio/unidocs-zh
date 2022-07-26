@@ -53,7 +53,7 @@ await uniPush.sendMessage(OBJECT)
 |getui_custom_tag|String|否|无|基于个推`getui_custom_tag`，指定接收消息接设备;</br>注：该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情 。| |
 |getui_big_data_tag|Object Array|否|无|对指定应用的符合筛选条件的设备群发推送消息。支持定时、定速功能。详见下方[getui-big-data-tag 说明](#getui-big-data-tag-说明)| |
 |getui_alias|String、Array|否|无|个推自定义客户端别名，指定消息接收者。</br>支持多个以数组的形式指定多个设备，如["getui_alias-1","getui_alias-2"]，数组长度不大于1000| |
-|platform|String、Array|否|"ALL"|指定接收消息的平台，"ALL"表示所有平台。</br>支持用数组枚举支持的平台，如：["web","app-ios","app-android","mp-weixin"],详情见下方[platform 说明](#platform 说明)</br>仅通过`user_id`、`user_tag`指定消息接收者时有效|
+|platform|String、Array|否|"ALL"|指定接收消息的平台，"ALL"表示所有平台。</br>支持用数组枚举支持的平台，如：["web","app-ios","app-android","mp-weixin"],详情见下方[platform 说明](#platform-说明)</br>仅通过`user_id`、`user_tag`指定消息接收者时有效|
 |check_token|Boolean|否|true|校验客户端登陆状态是否有效（含token过期）</br>仅通过`user_id`、`user_tag`指定消息接收者时有效| |
 |title|String|是|无|通知栏标题，长度小于20|APP|
 |content|String|是|无|通知栏内容，长度小于50|APP|
@@ -129,7 +129,7 @@ await uniPush.sendMessage(OBJECT)
 |--|--|--|--|--|
 |HW|string|否|无|需要先向华为侧发邮件申请权限参见[华为消息分类申请](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835)。|
 |XM|string|否|无|小米推送的消息通道分为“普通消息”（默认）和“重要消息”两类，默认下发普通消息。普通消息单日可推送数量有限制，重要消息不限。重要消息申请具体请参考： [小米推送消息分类新规](https://dev.mi.com/console/doc/detail?pId=2422)|
-|OP|string|否|无|需要联系客服开通;OPush平台上所有通道分为“公信”(默认)、“私信”两类，默认下发公信消息。公信消息单日可推送数量有限制，私信消息不限(仅限单个用户)。私信消息申请请参见（OPPO官方文档）[通道升级公测邀请](https://open.oppomobile.com/wiki/doc#id=11096)。|
+|OP|string|否|无|需要联系客服开通;OPush平台上所有通道分为“公信”(默认)、“私信”两类，默认下发公信消息。公信消息单日可推送数量有限制，私信消息不限(仅限单个用户)。私信消息申请请参见（OPPO官方文档）[推送私信通道申请](https://open.oppomobile.com/new/developmentDoc/info?id=11227)。|
 |VO|string|否|无| 0代表运营消息，1代表系统消息;vivo消息分类功能将推送消息类型分为运营消息和系统消息，默认下发运营消息。运营消息单用户单应用单日接收条数上限为5条，系统消息不限。系统消息功能不用申请，可以直接使用，如特殊情况需额外提升系统消息量级，请参见（vivo官方文档）[推送消息分类功能说明](https://dev.vivo.com.cn/documentCenter/doc/359)。|
 
 ##### 铃声设置注意@sound

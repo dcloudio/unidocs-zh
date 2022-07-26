@@ -536,8 +536,8 @@ function hasPermission(token, permission) {
 | -------	| ------| ----	| --------				|
 | app		| String| 否	| app平台微信openid		|
 | mp		| String| 否	| 微信小程序平台openid	|
-| h5		| String| 否	| 微信网页应用openid	|
-| web		| String| 否	| 微信公众号应用openid	|
+| web		| String| 否	| 微信网页应用openid	|
+| h5		| String| 否	| 微信公众号应用openid	|
 
 **qq_openid字段定义**
 

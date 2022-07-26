@@ -123,3 +123,5 @@
 * [高效开发技巧](/tutorial/snippet.md)
 * [性能优化专题](/tutorial/performance.md)
 * [国际化专题](/tutorial/i18n.md)
+	* [国际化开发指南](/tutorial/i18n.md)
+	* [海外开发者使用指南](/tutorial/internationalization.md)

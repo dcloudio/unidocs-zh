@@ -24,8 +24,8 @@ console.log('应用的 appid 为：' + appid);
 
 ```javascript
 // #ifdef APP-PLUS
-// 监听设备网络状态变化事件
-plus.globalEvent.addEventListener('netchange', function(){});
+// 监听新意图事件
+plus.globalEvent.addEventListener('newintent', function(){});
 // #endif
 ```
 

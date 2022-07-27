@@ -671,18 +671,12 @@ await uniIdCo.closeAccount()
 **接口形式**
 
 ```js
-await uniIdCo.getSupportedLoginType({
-  appId,
-  platform
-})
+await uniIdCo.getSupportedLoginType()
 ```
 
 **参数说明**
 
-|参数名		|类型	|必填	|说明												|
-|--			|--		|--		|--													|
-|appId		|string	|否		|要查询登录方式的应用DCloud AppId，不传时为当前应用	|
-|platform	|string	|否		|要查询登录方式的应用平台，不传时为当前平台			|
+无
 
 **返回值**
 

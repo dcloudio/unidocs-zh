@@ -355,6 +355,104 @@ uni统计新增的文件主要包括：
 
 ![关联前后台数据](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/14744bf3-c88e-4408-b2fa-0ecf0dcf4fe1.png)
 
+### 错误解析 <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error 
+
+> 此功能只支持 web平台、App平台、微信小程序平台
+
+为方便开发者使用 sourceMap 文件定位代码问题，增加在统计中使用 sourceMap 错误解析功能。
+
+#### 使用环境
+
+1. 使用腾讯云服务空间，不支持阿里云服务空间
+2. HBuiderX 3.5.3+
+3. uni-admin 1.9.4+
+4. 不支持 IE
+
+#### 生成 sourceMap@create-sourcemap
+
+- 在 HBuiderX 中生成 sourceMap 文件
+	- web 平台在`发行-> 网站`时，勾选 `生成 sourceMap` 选项。
+
+		![web 平台生成 sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c9872cf7-39b1-4c00-9fe6-afc5939b3b31.jpg)
+	- App 平台在`发行 -> 原生App-云打包`时，勾选 `生成 sourceMap` 选项。
+
+		![app 平台生成 sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5366655c-0ba3-4f5a-b5fc-e80289ed1a17.jpg)
+	- 微信小程序平台在`发行 -> 小程序-微信`时，勾选 `生成 sourceMap` 选项。
+
+		![微信小程序平台生成 sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/85c3eed9-e1b3-41c6-888f-bc1e2cb21a46.jpg)
+
+- cli 项目生成 sourceMap 文件
+   - vue 2
+		```sh
+		yarn build:h5 --sourcemap
+
+		yarn build:app-plus --sourcemap
+		
+		yarn build:mp-weixin --sourcemap
+		```
+   - vue 3
+		```sh
+		yarn build:h5 --sourcemap
+
+		yarn build:app --sourcemap
+		
+		yarn build:mp-weixin --sourcemap
+		```
+
+1. 项目编译完成后，可在 `/unpackage/dist/build/.sourcemap` 中查看到生成的各平台的 sourceMap 文件。
+
+	![生成的 sourceMap 路径](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/52e1a71d-a6f2-4458-9213-186dd78684de.jpg)
+
+3. 由于微信小程序平台上传发布后，会再压缩打包一次，所以需要额外一个步骤：
+   1. 在[微信公众平台](https://mp.weixin.qq.com/)的`开发管理/运维中心/错误日志`中下载线上版本 sourceMap 文件
+   2. 将下载好的文件解压到所生成的 .sourcemap 文件夹中： `/unpackage/dist/build/.sourcemap/mp-weixin/__WEIXIN__/`（__WEIXIN__为新建的目录，解析错误时会根据这个名字查找）
+
+   ![微信 download sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/2e4d0e4f-5be6-4a72-adf0-697a576dd3fa.png)
+
+	**注意事项**
+
+   1. 如果下载的 sourceMap 文件中，只有 `__FULL__` 文件夹，请重命名为 `__APP__`
+   2. 只支持 `发行模式` sourceMap 文件错误解析
+
+#### 上传 sourceMap@upload-sourcemap
+
+1. 在 `uni-admin 项目/pages/uni-stat/error/js/js.vue` 页面中做以下修改：
+   1. 搜索 `cloudSpaceId` 补充腾讯云服务空间 SpaceID
+   2. 搜索 `sourcemapBaseUrl` 补充腾讯云云存储访问地址（如：https://xx-xx-xx.tcb.qcloud.la/\_\_UNI\_\_/uni-stat/sourcemap）
+
+	![cloudSpaceId](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ffafa11c-ce74-425f-a4ef-f0900f44714c.jpg)
+
+2. 将 uni-admin 项目运行到浏览器中，在 `uni 统计 / 错误统计 / js报错` 页面，错误信息列表表格的右上角有 `上传 sourceMap` 按钮。点击后展示如下：
+
+	![上传 sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/50878ced-c415-4d8d-923d-f3127e4a1add.png)
+
+1. 上传请前请填写完整信息：`应用`、`平台`、`版本`
+2. 点击 `选择文件并上传` 按钮，弹出 `选择文件夹` 框后，请选中编译的对应该平台版本的 sourceMap。如：**项目根目录/unpackage/dist/build/.sourcemap/h5**，选中 `h5` 目录后点击上传。如果中途上传失败，在不刷新页面的情况下，重新选择文件夹上传可以跳过已上传文件。
+3. 文件夹内容会上传至 `云存储/__UNI__/uni-stat/sourcemap/应用 appId/平台（如：web、mp-weixin、ios）/版本/` 目录下
+
+**注意事项**
+1. 云存储需要配置权限：`所有用户可读`
+2. 如果出现跨域需要在 `跨域配置` 中绑定安全域名
+3. 上传失败可能会有如下原因：
+   1. 如果文件名称、文件夹名称带 `ad` 或者广告类的字段，请关闭浏览器广告拦截扩展再上传
+   2. 如果云存储中该目录已有同名文件，也可能会上传失败。所以在再次上传相同平台，相同版本的 sourceMap 文件前请将云存储中对应目录 （如：`云存储/__UNI__/uni-stat/sourcemap/应用 appId/平台（如：web、mp-weixin、ios）/版本/`） 删除
+
+#### 解析错误@parse-error
+
+在 `uni 统计 / 错误统计 / js报错` 页面，错误信息列表表格中，点击表格行中右侧 `详情按钮` 即可在弹窗中查看解析后错误信息。
+
+**示例**
+
+原始错误信息：
+
+![原始错误：](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1a8f0fcc-9bbf-4563-9c33-ebe4c7e14800.jpg)
+
+解析后的错误信息：
+
+![原始错误：](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/300b16e0-bfea-4dd5-ba95-e06dc1b75b51.jpg)
+
+- 解析错误是逐行解析，某一行解析失败会返回原错误信息
+- `runtime error` 分隔线下方为平台框架运行时错误栈信息，可以不用关心
 
 ## 开源代码解读
 

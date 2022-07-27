@@ -62,7 +62,6 @@ const {
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
-
   const key = {
     dcloudAppid: '',
     platform: ''
@@ -141,7 +140,6 @@ const {
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
-
   const key = {
     dcloudAppid: '',
     platform: '',
@@ -228,7 +226,6 @@ const {
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
-
   const key = {
     dcloudAppid: '',
     platform: '',
@@ -310,7 +307,6 @@ const {
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
-
   const key = {
     dcloudAppid: '',
     platform: ''

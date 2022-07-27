@@ -125,6 +125,12 @@ exports.main = async (event, context) => {
 |openid			|String		|是		|																																	|
 |fallback		|Function	|否		|[详情](#fallback)																								|
 
+### value 属性
+
+|参数				|类型		|描述								|
+|:-:				|:-:		|:-:								|
+|session_key|String	|微信小程序会话密钥	|
+
 ### expiresIn
 
 有效时间(秒)

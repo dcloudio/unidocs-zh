@@ -75,7 +75,7 @@ exports.main = async (event, context) => {
   // 写入 (redis / 数据库)
   await setAccessToken(key, value, expiresIn)
 
-  // 读取 (redis / 数据库 / http url)
+  // 读取 (redis / 数据库)
   let result1 = await getAccessToken(key)
 
   // 删除
@@ -93,7 +93,11 @@ exports.main = async (event, context) => {
 
 ## user_key
 
-session_key 是微信小程序会话密钥。[详情](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html)
+平台对应的值
+
+|平台				|值					|描述																																																								|
+|:-:				|:-:				|:-:																																																								|
+|微信小程序	|session_key|微信小程序会话密钥。[详情](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html)	|
 
 
 ### getUserKey(key: Object)
@@ -151,7 +155,7 @@ exports.main = async (event, context) => {
   // 写入 (redis / 数据库)
   await setUserKey(key, value, expiresIn)
 
-  // 读取 (redis / 数据库 / http url)
+  // 读取 (redis / 数据库)
   let result1 = await getUserKey(key)
 
   // 删除
@@ -240,7 +244,7 @@ exports.main = async (event, context) => {
   // 写入 (redis / 数据库)
   await setEncryptKey(key, value, expiresIn)
 
-  // 读取 (redis / 数据库 / http url)
+  // 读取 (redis / 数据库)
   let result1 = await getEncryptKey(key)
 
   // 删除
@@ -319,7 +323,7 @@ exports.main = async (event, context) => {
   // 写入 (redis / 数据库)
   await setTicket(key, value, expiresIn)
 
-  // 读取 (redis / 数据库 / http url)
+  // 读取 (redis / 数据库)
   let result1 = await getTicket(key)
 
   // 删除

@@ -62,6 +62,7 @@
     * [uni.getAppBaseInfo](api/system/getAppBaseInfo.md)
     * [uni.getAppAuthorizeSetting](api/system/getappauthorizesetting.md)
     * [uni.getSystemSetting](api/system/getsystemsetting.md)
+    * [uni.openAppAuthorizeSetting](api/system/openappauthorizesetting.md)
   * [内存](api/system/memory.md)
   * [网络状态](api/system/network.md)
   * [系统主题](api/system/theme.md)

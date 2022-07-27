@@ -1,4 +1,4 @@
-### uni.getAppAuthorizeSetting()
+### uni.openAppAuthorizeSetting()
 跳转系统授权管理页
 
 **平台差异说明**

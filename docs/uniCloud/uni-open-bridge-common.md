@@ -359,7 +359,7 @@ exports.main = async (event, context) => {
 
 ## fallback@fallback
 
-可选 `async function`，当 `reids -> database` 都找不到对应 `key` 时，调用此方法，需要返回数据格式如下
+可选 `async function fallback()`，当 `reids -> database` 都找不到对应 `key` 时，调用此方法，需要返回数据格式如下
 
 ```json
 {
@@ -373,4 +373,4 @@ exports.main = async (event, context) => {
 注意事项
 
 - 所有方法类型为 `async`，需要使用 `await`
-- 所有方法都校验传入的参数是否有效，无效则 `throw new Error()`
+- 所有方法校验 `key` 属性是否有效，无效则 `throw new Error()`，对 `value` 仅校验是否为 `undefined`

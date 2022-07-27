@@ -10,6 +10,8 @@
 
 如果用户没有开通 `redis` 或者操作失败，透传到 `database`，`database` 失败后，如果用户配置了 `fallback`，继续调用 `fallback` 方法，否则抛出 `Error`
 
+`database` 对应的表为: `opendb-open-data`
+
 
 ## access_token
 

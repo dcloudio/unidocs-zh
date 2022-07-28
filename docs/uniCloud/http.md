@@ -356,11 +356,9 @@ exports.main = function() {
 
 ### 云对象使用url化@cloudobject
 
-配置方式和云函数一致，请参阅上方章节
+云对象使用url化配置方式和云函数一致，需要先在[uniCloud web控制台](https://unicloud.dcloud.net.cn/home)的云对象详情里面设置URL的PATH部分。生产环境建议绑定自定义域名，参考：[云函数绑定自定义域名](#custom-domain)
 
-> 在云函数url化场景下，event.path表示以配置的url化路径为根路径的访问路径。以配置`/test`为云函数url化路径，访问`/test/a/b/c`时event.path为`/a/b/c`
-
-调用url化的云对象时，event.path对应的部分必须是云对象导出的方法名。例如：云对象配置的触发路径是`/todo`，调用`/todo/addTodo`即会触发云对象的addTodo方法。方法区分大小写且不可含`/`。
+调用url化的云对象时，以`url化路径/云对象方法名`形式的链接访问云对象的方法。例如：云对象配置的触发路径是`/todo`，调用`/todo/addTodo`即会触发云对象的addTodo方法。方法区分大小写且不可含`/`。
 
 url内query部分会被转换成云对象方法的入参。以下面的todo云对象为例
 

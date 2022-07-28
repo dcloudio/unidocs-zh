@@ -470,7 +470,7 @@ module.exports = {
 
 > 新增于HBuilderX 3.5.2
 
-在 uniCloud web控制台可以配置定时任务。给一个云对象配置后，将定时执行该云对象的内置方法 `_after`
+在 uniCloud web控制台可以配置定时任务。给一个云对象配置后，将定时执行该云对象的内置方法 `_timing`
 
 详细用法参考：[云对象使用定时触发](trigger.md#cloudobject)
 

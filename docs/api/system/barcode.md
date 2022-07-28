@@ -14,6 +14,7 @@
 |onlyFromCamera|Boolean|否|是否只能从相机扫码，不允许从相册选择图片|字节跳动小程序、百度小程序、支付宝小程序不支持此参数|
 |scanType|Array|否|扫码类型，参考下方`scanType的合法值`|字节跳动小程序不支持此参数|
 |autoDecodeCharset|Boolean|否|是否启用自动识别字符编码功能，默认为否|App|
+|autoZoom|Boolean|否|是否启用自动放大，默认启用|仅 App-Android (3.5.4+) 支持|
 |barCodeInput|Boolean|否|是否支持手动输入条形码|仅飞书小程序（V3.14.0）支持|
 |hideAlbum|Boolean|否|是否隐藏相册（不允许从相册选择图片），只能从相机扫码。默认值为 false。|仅支付宝小程序支持|
 |success|Function|否|接口调用成功的回调，返回内容详见返回参数说明。||

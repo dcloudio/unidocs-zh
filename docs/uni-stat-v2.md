@@ -382,22 +382,29 @@ uni统计新增的文件主要包括：
 		![微信小程序平台生成 sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/85c3eed9-e1b3-41c6-888f-bc1e2cb21a46.jpg)
 
 - cli 项目生成 sourceMap 文件
-   - vue 2
-		```sh
-		yarn build:h5 --sourcemap
 
-		yarn build:app-plus --sourcemap
-		
-		yarn build:mp-weixin --sourcemap
-		```
-   - vue 3
-		```sh
-		yarn build:h5 --sourcemap
+	::: preview
 
-		yarn build:app --sourcemap
-		
-		yarn build:mp-weixin --sourcemap
+	> Vue2
+	```sh
+	yarn build:h5 --sourcemap
+
+	yarn build:app-plus --sourcemap
+
+	yarn build:mp-weixin --sourcemap
+	```
+
+	> Vue3
+
+	```sh
+	yarn build:h5 --sourcemap
+
+	yarn build:app --sourcemap
+
+	yarn build:mp-weixin --sourcemap
 		```
+
+	:::
 
 1. 项目编译完成后，可在 `/unpackage/dist/build/.sourcemap` 中查看到生成的各平台的 sourceMap 文件。
 

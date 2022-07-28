@@ -4,14 +4,14 @@ IP防刷功能旨在防范短时间内大量相同ip请求导致云函数或数�
 
 ## 启用IP防刷功能
 
-- 服务空间内开通了redis
-- 在uniCloud web控制台开启相关功能：[uniCloud web控制台](https://unicloud.dcloud.net.cn/)
+1. 服务空间内开通了redis
+2. 在uniCloud web控制台开启相关功能：[uniCloud web控制台](https://unicloud.dcloud.net.cn/)
 
 **注意**
 
 - 此功能对clientDB生效
 - 仅启用了redis扩展、jql扩展（jql扩展依赖了redis扩展）的云函数才会有防刷功能。
-- 仅在客户端调用云函数时才会启用IP防刷功能。url化、定时触发、云函数调用云函数均不触发此功能
+- 仅在客户端callFunction调用云函数时才会启用IP防刷功能。url化、定时触发、云函数调用云函数均不触发此功能
 
 ## IP黑名单@ip-black-list
 
@@ -22,13 +22,23 @@ IP黑名单是用来完全阻止设定的IP或IP网段（cidr规范）访问云�
 被封禁IP访问云函数及clientDB时会收到错误响应，错误码为：`ACCESS_DENIED`，错误信息为：`Access denied`
 
 ```js
+// 云函数
+const res = await uniCloud.callFunction({
+  name: 'test',
+  data: {}
+})
+// res.result = {
+//   errCode: 'ACCESS_DENIED',
+//   errMsg: 'Access denied'
+// }
+
+// 对于云对象而言，上述返回结果符合响应体规范因为会转化为错误抛出
+const obj = uniCloud.importObject('obj')
 try {
-	await uniCloud.callFunction({
-		name: 'test',
-		data: {}
-	})
+  const res = await obj.test()
 } catch (e) {
-	// e.errCode === 'ACCESS_DENIED'
+  // e.errCode = 'ACCESS_DENIED'
+  // e.errMsg = 'Access denied'
 }
 ```
 
@@ -61,13 +71,23 @@ IP访问频率控制用于限制单个IP访问云函数的频率。如图所示�
 访问频率过高的用户及由于访问频率过高被临时封禁的用户访问云函数及clientDB时会收到错误响应，错误码为：`OPERATION_TOO_FREQUENT`，错误信息为：`Operation is too frequent, please try again later`
 
 ```js
+// 云函数
+const res = await uniCloud.callFunction({
+  name: 'test',
+  data: {}
+})
+// res.result = {
+//   errCode: 'OPERATION_TOO_FREQUENT',
+//   errMsg: 'Operation is too frequent, please try again later'
+// }
+
+// 对于云对象而言，上述返回结果符合响应体规范因为会转化为错误抛出
+const obj = uniCloud.importObject('obj')
 try {
-	await uniCloud.callFunction({
-		name: 'test',
-		data: {}
-	})
+  const res = await obj.test()
 } catch (e) {
-	// e.errCode === 'OPERATION_TOO_FREQUENT'
+  // e.errCode = 'OPERATION_TOO_FREQUENT'
+  // e.errMsg = 'Operation is too frequent, please try again later'
 }
 ```
 

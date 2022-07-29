@@ -11,12 +11,14 @@ export default {
     {
       text: '问答社区',
       tag: 'ask',
-      type: 'server',
+      type: 'link',
+      link: 'https://ask.dcloud.net.cn/search/q-'
     },
     {
       text: '插件市场',
       tag: 'ext',
-      type: 'server',
+      type: 'link',
+      link: 'https://ext.dcloud.net.cn/search?q='
     },
     {
       text: '原生开发文档',

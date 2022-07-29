@@ -13,9 +13,10 @@
 **示例**
 
 ```javascript
-uni.onCompassChange(function (res) {
+const callback = function (res) {
 	console.log(res.direction);
-});
+}
+uni.onCompassChange(callback);
 ```
 
 ### uni.offCompassChange(CALLBACK)
@@ -26,6 +27,16 @@ uni.onCompassChange(function (res) {
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|x|
+
+**示例**
+```javascript
+const callback = function (res) {
+	console.log(res.direction);
+}
+uni.onCompassChange(callback);
+// 和 onCompassChange 传入同一个函数即可
+uni.offCompassChange(callback);
+```
 
 **Tips**
 - `CALLBACK`为调用`uni.onCompassChange`时传入的`CALLBACK`

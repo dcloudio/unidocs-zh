@@ -18,10 +18,11 @@
 **代码示例**
 
 ```javascript
-uni.onWindowResize((res) => {
-    console.log('变化后的窗口宽度=' + res.size.windowWidth)
-    console.log('变化后的窗口高度=' + res.size.windowHeight)
-})
+const windowResizeCallback = (res) => {
+  console.log('变化后的窗口宽度=' + res.size.windowWidth)
+  console.log('变化后的窗口高度=' + res.size.windowHeight)
+}
+uni.onWindowResize(windowResizeCallback)
 ```
 
 **TIPS**
@@ -39,10 +40,11 @@ uni.onWindowResize((res) => {
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|x|x|x|√|
 
+**Tips**
+- `CALLBACK`为调用`uni.onWindowResize`时传入的`CALLBACK`
+
 **代码示例**
 
 ```javascript
-uni.offWindowResize(() => {
-    console.log('取消监听窗口尺寸变化事件')
-})
+uni.offWindowResize(windowResizeCallback)
 ```

@@ -402,7 +402,7 @@ uni统计新增的文件主要包括：
 	yarn build:app --sourcemap
 
 	yarn build:mp-weixin --sourcemap
-		```
+	```
 
 	:::
 

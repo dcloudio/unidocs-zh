@@ -517,8 +517,7 @@ HBuilderX 2.6.3+ 支持
 |fontSize|String||返回图标文字大小，可取值：字体高度像素值，数字加"px"格式字符串，如"22px"。 窗口标题栏为透明样式（type="transparent"）时，默认值为"22px"； 窗口标题栏为默认样式（type="default"）时，默认值为"27px"。|
 |redDot|Boolean|false|是否显示红点，设置为true则显示红点，false则不显示红点。默认值为false。 注意：当设置了角标文本时红点不显示。|
 |title|String||返回按钮上的标题，显示在返回图标（字体图标）后，默认为空字符串。|
-|ftitleWeight|String|"normal"|返回按钮上标题的粗细，可取值： "normal" - 标准字体； "bold" - 加粗字体。|
-|fontSize|String|"16px"|标题的字体大小，可取值：字体高度像素值，数字加"px"格式字符串，如"22px"。|
+|titleWeight|String|"normal"|返回按钮上标题的粗细，可取值： "normal" - 标准字体； "bold" - 加粗字体。|
 
 
 ##### 按钮样式@app-titleNView-buttons-type

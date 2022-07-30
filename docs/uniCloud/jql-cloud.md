@@ -48,7 +48,7 @@ exports.main = async (event, context) => {
 		event,
 		context 
 	})
-	const bookQueryRes = dbJQL.collection('book').where("name=='三国演义'").get() // 直接执行数据库操作
+	const bookQueryRes = await dbJQL.collection('book').where("name=='三国演义'").get() // 直接执行数据库操作
 	return {
 		bookQueryRes
 	}
@@ -96,7 +96,7 @@ exports.main = async (event, context) => {
 		role: ['admin'], // 指定当前执行用户的角色为admin。如果只希望指定为admin身份，可以删除uid和permission节点
 		permission: []
 	})
-	const bookQueryRes = dbJQL.collection('book').where("name=='三国演义'").get() // 直接执行数据库操作
+	const bookQueryRes = await dbJQL.collection('book').where("name=='三国演义'").get() // 直接执行数据库操作
 	return {
 		bookQueryRes
 	}

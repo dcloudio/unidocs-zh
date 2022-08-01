@@ -511,7 +511,7 @@ new db.Geo.MultiPolygon([
 |--	|--	|
 |5秒	|3秒	|
 
-如果是大数据批处理，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#recurrence)
+如果是大数据批处理，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](uniCloud/cf-functions.md?id=recurrence)
 
 
 ## 数据导入导出和备份@dbmigration

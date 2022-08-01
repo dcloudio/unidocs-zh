@@ -8477,10 +8477,10 @@ vuepress-theme-uni-app-test@^1.1.2:
     vuepress-plugin-juejin-style-copy "^1.0.4"
     vuepress-theme-uni-app-test "^1.1.2"
 
-vuepress-theme-uni-app-test@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-uni-app-test/-/vuepress-theme-uni-app-test-1.1.6.tgz#3421ac614064becff36172fb598b7088139233b2"
-  integrity sha512-nRj3gW7T1eUjIRqyOFIHn6UcUcPS+SfuapBYDE+dBg2nrA3KIUfUBHTbPOOjSeul2wgkGT0C6PDzh69y1Nk4rA==
+vuepress-theme-uni-app-test@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-uni-app-test/-/vuepress-theme-uni-app-test-1.1.7.tgz#5ef5c9d280680a5a050676d9bafbdd79d1f388ad"
+  integrity sha512-obJQQSId29QpQ2CkAYN0uNQ7xxDpPxCw7k2mOeaDyBRrW94oAzzWE8jYFePl3T+z58JZ0vJhd4fmUbQEruH93w==
   dependencies:
     "@vuepress/plugin-back-to-top" "^1.9.5"
     "@vuepress/theme-default" "^1.8.2"

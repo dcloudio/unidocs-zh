@@ -759,6 +759,8 @@ exports.main = async (event, context) => {
 
 腾讯云最大支持900秒超时时间
 
+如果超时时间仍然不够用，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#recurrence)
+
 ### 固定出口IP@eip
 
 serverless默认是没有固定的服务器IP的，因为有很多服务器资源在后台供随时调用，每次调用到哪个服务器、哪个ip都不固定。

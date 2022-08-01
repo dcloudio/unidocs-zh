@@ -508,8 +508,11 @@ new db.Geo.MultiPolygon([
 不同于传统开发，连接数据库有单次操作时长限制，目前单次操作时间限制如下。超出此时间会报超时错误。一般情况下在设置了合适的索引时不会遇到超时错误，如何优化查询速度请参考：[数据库性能优化](uniCloud/db-performance.md)
 
 |腾讯云	|阿里云	|
-|--		|--		|
+|--	|--	|
 |5秒	|3秒	|
+
+如果是大数据批处理，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#recurrence)
+
 
 ## 数据导入导出和备份@dbmigration
 

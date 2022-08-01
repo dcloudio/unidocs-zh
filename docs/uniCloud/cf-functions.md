@@ -690,7 +690,7 @@ exports.main = async (event, context) => {
 			console.log(e.result);
 		})
 		
-		// 等待500毫秒给下一个请求发出去的时间
+		// 等待500毫秒，给一个请求发出去的时间
 		return await new Promise((resolve, reject) => {
 			setTimeout(() => {
 				resolve(res)

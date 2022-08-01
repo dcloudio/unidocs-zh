@@ -469,19 +469,18 @@ Tips:
 
 ## 云函数/云对象中调用云函数@callbyfunction
 
-用法同客户端调用云函数，仍然是callfunction，但不支持callback形式。
+### 调用三方云函数或云对象
 
-- `HBuilderX 3.4.0`版本之前**云函数右键本地运行时使用callFunction会调用云端的云函数而不是本地云函数，连接本地云函数调试时云函数内的callFunction会调用本地云函数**，
-- `HBuilderX 3.4.0`及之后的版本**连接本地云函数或运行本地云函数时，如果在云函数内调用同一服务空间下的云函数会直接调用本地云函数。**
+用法同客户端调用云函数，仍然是`uniCloud.callfunction`，但不支持callback形式。
 
-#### 请求参数
+**请求参数**
 
 |字段			|类型			|必填	|说明					|
 |---			|---			|---	|---					|
 |name			|String		|是		|云函数名称。	|
 |data			|Object		|否		|云函数参数。	|
 
-#### 响应参数
+**响应参数**
 
 |字段			|类型		|必备	|说明												|
 |---			|---		|---	|---												|
@@ -505,7 +504,97 @@ let callFunctionResult = await uniCloud.callFunction({
 
 可以在云函数互调时手动传递 token ，或者校验调用来源（source）为云函数（function）时不验证用户 token。
 
-云函数/云对象互相调用时调用方会通过公网访问被调用方，访问速度不如直接将逻辑放在调用方执行。使用前请确保你确实需要此功能
+云函数/云对象互相调用时调用方会通过公网访问被调用方，访问速度不如直接将逻辑放在调用方执行。使用前请确保你确实需要此功能。
+
+`HBuilderX 3.4.0`版本之前**云函数右键本地运行时**，里面的代码再次callFunction会调用云端的云函数而不是本地云函数，此bug后续版本已修复。
+
+### 云函数递归调用自身@recurrence
+
+除了调用三方云函数，事实上云函数还可以递归调用自己。
+
+当一个云函数实例的资源不能满足需求，或超时时间不够用时。比如要给10万个用户发送短信，而短信发送接口一次调用最多支持50个手机号码，这样最少需要调用2000次接口才能完成；而一个云函数实例完成不了2000次接口的调用。这种场景就可以使用云函数递归调用，分解任务实现。
+
+示例代码如下：
+
+```js
+// 当前云函数名称 send-sms-cf
+'use strict';
+const db = uniCloud.database();
+const dbCmd = db.command
+const userTable = db.collection('uni-id-users')
+exports.main = async (event, context) => {
+	//执行业务逻辑
+	let res = await sendSms(event.before_id)
+	if (res.errCode) {
+		return res
+	}else{
+		// 如果没有报错，就让当前云函数 调用当前云函数（云对象同理）。注意：这里是异步的
+		uniCloud.callFunction({
+			name: 'send-sms-cf',
+			data: {
+				before_id: res.before_id
+			}
+		}).catch(e=>{
+			console.log(e.message);
+		}).then(e=>{
+			console.log(e.result);
+		})
+		
+		// 等待500毫秒，给一个请求发出去的时间
+		return await new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve(res)
+			}, 500)
+		})
+	}
+
+	async function sendSms(before_id) {
+		console.log('before_id',before_id);
+		let where = {
+			phone: dbCmd.exists(true),
+			//..这里可以写你自己的其他条件，如超过多久没登录的用户 last_login_date < Date.now() - 3600*24*...
+		}
+		if(before_id){
+			//高性能分页查询，以上一次查询的最后一条数据的id被起始id
+			where._id = dbCmd.gt(before_id)
+		}
+		
+		let res = await userTable.where(where)
+			.limit(50)
+			.orderBy("_id", "asc")
+			.get()
+
+		if (!res.data.length) {
+			return {
+				errCode: 'sendSms-invalid',
+				errMsg: '结束，没有符合条件的接收者'
+			}
+		}
+		let phoneList = res.data.map(item => item.phone)
+		res = await uniCloud.sendSms({
+			phoneList,
+			appid: '__UNI__xxxxxxx',
+			smsKey: '****************',
+			smsSecret: '****************',
+			templateId: '100**', // 请替换为自己申请的模板id
+			data: {
+				text1: 'xxx',
+				text2: 'xxx'
+			}
+		})
+		if (res.errCode) {
+			return res
+		}
+		return {
+			errCode: 0,
+			before_id: res.data[res.data.length - 1]._id
+		}
+	}
+};
+```
+
+注意：如果不小心把递归云函数写成死循环，就把云函数的内容全部删除，重新上传覆盖即可
+
 
 ### 云函数内访问其他服务空间@call-by-function-cross-space
 
@@ -660,94 +749,6 @@ exports.main = async function() {
 ### 时区
 
 - 云端的云函数中使用的时区是 `UTC+0`，而不是 `UTC+8`，在云函数中使用时间时需特别注意。云函数在HBuilderX本地运行时，时区则是电脑的时区，很可能是 `UTC+8`。建议使用时间戳，可以规避时区问题。
-
-### 云函数递归调用@recurrence  
-当一个云函数实例的资源不能满足需求，或超时时间不够用时。比如你要给10万个用户发送短信，而短信发送接口一次调用最多支持50个手机号码，这样最少需要调用2000次接口才能完成；而一个云函数实例完成不了2000次接口的调用。这种场景就可以使用云函数递归调用，分解任务实现。
-
-示例代码如下：
-
-```js
-// 当前云函数名称 send-sms-cf
-'use strict';
-const db = uniCloud.database();
-const dbCmd = db.command
-const userTable = db.collection('uni-id-users')
-exports.main = async (event, context) => {
-	//执行业务逻辑
-	let res = await sendSms(event.before_id)
-	if (res.errCode) {
-		return res
-	}else{
-		// 如果没有报错，就让当前云函数 调用当前云函数（云对象同理）。注意：这里是异步的
-		uniCloud.callFunction({
-			name: 'send-sms-cf',
-			data: {
-				before_id: res.before_id
-			}
-		}).catch(e=>{
-			console.log(e.message);
-		}).then(e=>{
-			console.log(e.result);
-		})
-		
-		// 等待500毫秒，给一个请求发出去的时间
-		return await new Promise((resolve, reject) => {
-			setTimeout(() => {
-				resolve(res)
-			}, 500)
-		})
-	}
-
-	async function sendSms(before_id) {
-		console.log('before_id',before_id);
-		let where = {
-			phone: dbCmd.exists(true),
-			//..这里可以写你自己的其他条件，如超过多久没登录的用户 last_login_date < Date.now() - 3600*24*...
-		}
-		if(before_id){
-			//高性能分页查询，以上一次查询的最后一条数据的id被起始id
-			where._id = dbCmd.gt(before_id)
-		}
-		
-		let res = await userTable.where(where)
-			.limit(50)
-			.orderBy("_id", "asc")
-			.get()
-
-		if (!res.data.length) {
-			return {
-				errCode: 'sendSms-invalid',
-				errMsg: '结束，没有符合条件的接收者'
-			}
-		}
-		let phoneList = res.data.map(item => item.phone)
-		res = await uniCloud.sendSms({
-			phoneList,
-			appid: '__UNI__xxxxxxx',
-			smsKey: '****************',
-			smsSecret: '****************',
-			templateId: '100**', // 请替换为自己申请的模板id
-			data: {
-				text1: 'xxx',
-				text2: 'xxx'
-			}
-		})
-		if (res.errCode) {
-			return res
-		}
-		return {
-			errCode: 0,
-			before_id: res.data[res.data.length - 1]._id
-		}
-	}
-};
-```
-
-注意：如果不小心把递归云函数写成死循环，就把云函数的内容全部删除，重新上传覆盖即可
-
-
-
-
 
 ## 云函数配置
 

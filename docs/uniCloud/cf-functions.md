@@ -759,7 +759,7 @@ exports.main = async (event, context) => {
 
 腾讯云最大支持900秒超时时间
 
-如果超时时间仍然不够用，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#recurrence)
+如果超时时间仍然不够用，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](uniCloud/cf-functions.md?id=recurrence)
 
 ### 固定出口IP@eip
 

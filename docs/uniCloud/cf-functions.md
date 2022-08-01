@@ -666,7 +666,7 @@ exports.main = async function() {
 
 示例代码如下：
 
-```
+```js
 // 当前云函数名称 send-sms-cf
 'use strict';
 const db = uniCloud.database();

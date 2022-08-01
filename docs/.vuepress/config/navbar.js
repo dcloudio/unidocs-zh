@@ -161,3 +161,17 @@ export const navbar = [
     needOutbound: false
   } */
 ]
+
+export const navbarLanguage = {
+  default: 0,
+  items: [
+    {
+      text: '简体中文',
+      link: 'https://uniapp.dcloud.net.cn/'
+    },
+    {
+      text: 'English',
+      link: 'https://en.uniapp.dcloud.io/'
+    }
+  ]
+}

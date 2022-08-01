@@ -59,7 +59,7 @@ await uniPush.sendMessage(OBJECT)
 |content|String|是|无|通知栏内容，长度小于50|APP|
 |payload|String、Object|是|无|推送透传数据，app程序接受的数据，长度小于800| |
 |force_notification|Boolean|否|false|无论是离线推送还是在线推送，都自创建通知栏消息。HBuilderX 3.5.2 及其以上版本的客户端支持| App|
-|badge|Number、String|否|无|设置应用右上角数字，用于提醒用户未阅读消息数量，支持在原有数字上的+、-操作;</br>例如：badge=+1，表示当前角标+1；</br>badge=-1，(仅iOS支持)表示当前角标-1(角标>=0)；</br>badge=1，(仅iOS和华为EMUI版本10.0.0+支持)表示当前角标置成1。| ios、android-华为|
+|badge|Number、String|否|1|设置应用右上角数字，用于提醒用户未阅读消息数量，支持在原有数字上的+、-操作;</br>例如：badge=+1，表示当前角标+1；</br>badge=-1，(仅iOS支持)表示当前角标-1(角标>=0)；</br>badge=1，(仅iOS和华为EMUI版本10.0.0+支持)表示当前角标置成1。| ios、android-华为|
 |channel|Object|否|无|消息渠道设置，避免被限量推送、静默推送（静音且需下拉系统通知栏才可见通知内容），需要在各家发邮件申请，详情下方[channel说明](#channel)| android|
 |request_id|String|否|无|请求唯一标识号，10-32位之间；如果`request_id`重复，会导致消息丢失||
 |group_name|String|否|无|任务组名。多个消息任务可以用同一个任务组名，后续可根据任务组名查询推送情况（长度限制100字符，且不能含有特殊符号）；</br>仅基于user_id、push_clientid、getui_custom_tag指定消息接收者，或对应用的所有用户群发推送消息时有效。||

@@ -260,7 +260,7 @@ uni-push的服务端sdk的体积不小，没有内置在云函数中。在需要
 <img style="width:80%;max-width:450px;margin:0 10%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/66f41377-5492-4345-b85c-e6978dd5ef63.jpg"/>
 </br>
 下面是一个开启了`uni-cloud-push`扩展库的云函数的package.json示例
-** 注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释 **
+**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
 
 ```js
 {

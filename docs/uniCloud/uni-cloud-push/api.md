@@ -14,7 +14,7 @@
 
 以下为uni-cloud-push扩展库的api文档；关于uni-cloud-push扩展库的详细介绍，以及如何在需要操作uni-push的云函数里，手动配置uni-cloud-push扩展库[详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%8E%A8%E9%80%81%E6%B6%88%E6%81%AF)
 
-### 推送消息
+### 推送消息@sendMessage
 
 #### 推送目标选择
 发送push可以基于如下维度选择目标设备：

@@ -682,24 +682,54 @@ H5平台，开发模式下浏览器控制台输入 `unidev.clientDB.data`，可�
 
 ## 联表查询
 
+联表查询有以下两种写法，对于数据量稍大的表推荐使用多个临时表组成的数组作为collection，可以在主表的getTemp内先进行过滤减小联表时的性能消耗。
+
+更多关于联表查询的内容请参考：[JQL联表查询](https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup)
+
+**多个collection字符串拼接**
+
+用于联表查询，注意主表副表之间需要在schema内以foreignKey关联（副表支持多个）。如下示例以book作为主表，关联author表进行查询，在book表的schema内设置author_id字段指向author表
+
 ```html
-// 注意 `collection` 属性需要传入所有用到的表名，用逗号分隔，主表需要放在第一位
-// where 属性 查询order表内书名为“三国演义”的订单
-// field 属性 查询book表返回book表内的title、book表内的author、order表内的quantity
-<template>
-  <view>
-    <unicloud-db v-slot:default="{data, loading, error, options}" collection="order,book" where="book_id.title == '三国演义'" field="book_id{title,author},quantity">
-      <view>
-		  <view v-for="(item, index) in data" :key="index" class="list-item">
-		    {{ item.name}}
-		  </view>
-      </view>
-    </unicloud-db>
-  </view>
-</template>
+<unicloud-db v-slot:default="{data, loading, error, options}" collection="book,author">
+	<view v-if="error">{{error.message}}</view>
+	<view v-else-if="loading">正在加载...</view>
+	<view v-else>
+		{{data}}
+	</view>
+</unicloud-db>
 ```
 
-联表查询详情参考 [https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup](https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup)
+**多个临时表组成的数组**
+
+同样用于联表查询，但是与直接拼接多个字符串的方式不同，可以先对主表进行处理再关联。和直接使用多个表名字符串拼接相比，在主表数据量大的情况下性能有明显提升
+
+```html
+<template>
+  <unicloud-db v-slot:default="{data, loading, error, options}" :collection="colList">
+    <view v-if="error">{{error.message}}</view>
+    <view v-else-if="loading">正在加载...</view>
+    <view v-else>
+      {{data}}
+    </view>
+  </unicloud-db>
+</template>
+<script>
+  const db = uniCloud.database()
+  export default {
+    data() {
+      return {
+        colList: [
+          db.collection('book').where('name == "水浒传"').getTemp(),
+          db.collection('author').getTemp()
+        ]
+      }
+    },
+    onReady() {},
+    methods: {}
+  }
+</script>
+```
 
 ## 列表分页@page
 

@@ -277,7 +277,7 @@ getClientInfo返回的信息，是在客户端的[uni.getSystemInfo](https://uni
 |--			|--		|--																												|
 |clientIP	|string	|客户端ip																										|
 |userAgent|string|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua	|
-|source		|string	|调用来源，返回值见下。新增于`HBuilderX 3.5.1`								|
+|source		|string	|调用来源，返回值见下。`HBuilderX 3.5.1+`								|
 |scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)返回的scene参数，新增于`HBuilderX 3.5.1`	|
 
 getClientInfo().source，返回云函数调用来源，它的值域为：
@@ -286,8 +286,9 @@ getClientInfo().source，返回云函数调用来源，它的值域为：
 |--			|--									|
 |client		|uni-app客户端导入云对象调用			|
 |function	|由其他云函数或云对象调用		|
+|http	|云对象URL化后通过http访问调用 `HBuilderX 3.5.2+`		|
+|timing	|定时任务调用云对象 `HBuilderX 3.5.2+`		|
 
-未来云对象支持URL化后，source 会增加 http、timing。
 
 **注意事项**
 - 客户端上报的信息在理论上存在被篡改可能，实际业务中应验证前端传来的数据的合法性
@@ -346,6 +347,7 @@ module.exports = {
 }
 ```
 
+获取的token是一个加密的字符串，如需解开token，拿到用户的uid、role、permission，则需要导入 uni-id-common 公共模块调用 checkToken 方法。[详见](uni-id-common.md#checktoken)
 
 ### 获取当前调用的方法名@get-method-name
 
@@ -552,7 +554,7 @@ try {
 ```
 
 **注意**
-- js错误对象不是json，直接console.log(e)，只能得到被toString()后的errMsg。而不是一个展开的json结构。
+- js错误对象不是json，直接console.log(e)，只能得到被toString()后的errMsg。而不是一个展开的json结构。所以需要分别打印e对象的子属性。
 
 
 ## 云对象的多种调用方式
@@ -589,7 +591,7 @@ const res = await todo.add('title demo', 'content demo')
 
 ### 跨服务空间调用云对象@call-by-cloud-cross-space
 
-云端或者客户端均有uniCloud.init方法可以获取其他服务空间的uniCloud实例，使用此实例的importObject可以调用其他服务空间的云对象，参考：[](uniCloud/concepts/space.md?id=multi-space)
+云端或者客户端均有uniCloud.init方法可以获取其他服务空间的uniCloud实例，使用此实例的importObject可以调用其他服务空间的云对象，[参考](uniCloud/concepts/space.md?id=multi-space)
 
 客户端无论腾讯阿里均支持。云端`uniCloud.init`方法仅腾讯云支持，且仅能获取同账号下的腾讯云服务空间的uniCloud实例。
 
@@ -607,7 +609,7 @@ const res = await todo.add('title demo', 'content demo')
 **注意**
 - 上述示例代码，在实际开发中均应该使用 try catch 或 then catch 处理错误捕获
 
-### 云对象方法不能互相调用@call-internal-method
+### 云对象多个方法共享逻辑@call-internal-method
 
 一个云对象导出的不同方法之间不能互相调用。比如下面示例中 tryAddTodo 方法内部无法调用 addTodo 方法。
 
@@ -615,6 +617,8 @@ const res = await todo.add('title demo', 'content demo')
 
 ```js
 // todo.obj.js
+// 方法前的async是根据自己的业务来的，不是必须async
+
 async function pureAddTodo(title, content) {
 	// ...add todo 逻辑
 }
@@ -622,7 +626,7 @@ async function pureAddTodo(title, content) {
 module.exports = {
 	async tryAddTodo() {
 		try {
-			return addTodo(title, content)
+			return addTodo(title, content) // 一定会失败。只能调用 pureAddTodo 这样的非导出方法。
 		} catch (e) {
 			return {
 				errCode: 'add-todo-failed'

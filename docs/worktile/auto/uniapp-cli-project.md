@@ -48,9 +48,9 @@ vue3项目新增如下：
 
 1. 进入工程目录，安装依赖
 ```shell
-npm install puppeteer --save-dev
+npm install puppeteer@14.0.0 --save-dev
 ```
-注意： 从v3.0.0开始，`Puppeteer` 开始依赖于Node 10.18.1+
+注意： 从v3.0.0开始，`Puppeteer` 开始依赖于Node 10.18.1+ ，`Puppeteer`仅支持14.0.0及以下版本
 
 
 2. 根据API编写测试的js代码，参考测试用例

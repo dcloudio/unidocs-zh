@@ -1502,14 +1502,14 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 
 **权限规则内可用的全局变量**
 
-|变量名			|说明																																						|
-|:-:			|:-:																																						|
-|auth.uid		|用户id																																						|
-|auth.role		|用户角色数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)，注意`admin`为内置的角色，如果用户角色列表里包含`admin`则认为此用户有完全数据访问权限|
-|auth.permission|用户权限数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)																								|
-|doc			|数据库中的目标数据记录，用于匹配记录内容/查询条件（需要注意的是，规则内的doc对象并不是直接去校验存在于数据库的数据，而是校验客户端的查询条件）							|
-|now			|当前服务器时间戳（单位：毫秒），时间戳可以进行额外运算，如doc.publish\_date > now - 60000表示publish\_date在最近一分钟											|
-|action			|数据操作请求同时指定的uni-clientDB-action。用于指定前端的数据操作必须同时附带执行一个action云函数，如未触发该action则权限验证失败					|
+|变量名					|说明																																																																							|
+|:-:						|:-:																																																																							|
+|auth.uid				|用户id																																																																						|
+|auth.role			|用户角色数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)，注意`admin`为内置的角色，如果用户角色列表里包含`admin`则认为此用户有完全数据访问权限|
+|auth.permission|用户权限数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)																																											|
+|doc						|数据库中的目标数据记录，用于匹配记录内容/查询条件																																																|
+|now						|当前服务器时间戳（单位：毫秒），时间戳可以进行额外运算，如doc.publish\_date > now - 60000表示publish\_date在最近一分钟														|
+|action					|数据操作请求同时指定的uni-clientDB-action。用于指定前端的数据操作必须同时附带执行一个action云函数，如未触发该action则权限验证失败								|
 
 **注意**
 - `auth`表示正在执行操作的用户对象
@@ -1517,7 +1517,7 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 - `doc.xxx`表示将要查询/修改/删除的每条数据（注意并不包括新增数据，新增数据应通过值域校验进行验证），如果将要访问的数据不满足permission规则将会拒绝执行
 - `uni-id`的角色和权限，也即auth.role和auth.permission是不一样的概念。注意阅读[uni-id 角色权限](uni-id-summary.md#rbac)
 - 如果想支持使用多个`action`的用法，可以通过`"'actionRequired' in action"`的形式配置权限，限制客户端使用的action内必须包含名为`actionRequired`的action
-- doc是由客户端条件里面提取的变量，可以理解为将要访问的数据，因此create权限内不可使用doc变量。create时建议使用forceDefaultValue或自定义校验函数实现插入数据的值域校验。
+- doc可以理解为将要访问的数据，因此create权限内不可使用doc变量。create时建议使用forceDefaultValue或自定义校验函数实现插入数据的值域校验。
 
 **权限规则内可以使用的运算符**
 
@@ -1525,14 +1525,14 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 |:-:			|:-:			|:-:									|:-:																	|
 |==				|等于			|auth.uid == 'abc'						|用户id为abc															|
 |!=				|不等于			|auth.uid != null						|用户要处于登录状态											|
-|>				|大于			|doc.age>10								|查询条件的 age 属性大于 10												|
-|>=				|大于等于		|doc.age>=10							|查询条件的 age 属性大于等于 10											|
-|<				|小于			|doc.age<10								|查询条件的 age 属性小于 10												|
-|<=				|小于等于		|doc.age<=10							|查询条件的 age 属性小于等于 10											|
-|in				|存在在数组中	|doc.status in ['a','b']				|查询条件的 status 是['a','b']中的一个，数组中所有元素类型需一致		|
-|!				|非				|!(doc.status in ['a','b'])				|查询条件的 status 不是['a','b']中的任何一个，数组中所有元素类型需一致	|
-|&&				|与				|auth.uid == 'abc' && doc.age>10		|用户id 为 abc 并且查询条件的 age 属性大于 10							|
-|&#124;&#124;	|或				|auth.uid == 'abc'&#124;&#124;doc.age>10|用户Id为abc或者查询条件的 age 属性大于 10								|
+|>				|大于			|doc.age>10								|目标数据的 age 属性大于 10												|
+|>=				|大于等于		|doc.age>=10							|目标数据的 age 属性大于等于 10											|
+|<				|小于			|doc.age<10								|目标数据的 age 属性小于 10												|
+|<=				|小于等于		|doc.age<=10							|目标数据的 age 属性小于等于 10											|
+|in				|存在在数组中	|doc.status in ['a','b']				|目标数据的 status 是['a','b']中的一个，数组中所有元素类型需一致		|
+|!				|非				|!(doc.status in ['a','b'])				|目标数据的 status 不是['a','b']中的任何一个，数组中所有元素类型需一致	|
+|&&				|与				|auth.uid == 'abc' && doc.age>10		|用户id 为 abc 并且目标数据的 age 属性大于 10							|
+|&#124;&#124;	|或				|auth.uid == 'abc'&#124;&#124;doc.age>10|用户Id为abc或者目标数据的 age 属性大于 10								|
 
 
 我们继续使用user表举例，目前需求如下，前端用户如果登录，那么该用户可以修改自己的name字段。此时需要在schema中配置name字段的permission为`"write":"(doc._id == auth.uid)"`

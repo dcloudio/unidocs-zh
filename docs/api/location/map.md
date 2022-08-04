@@ -22,8 +22,8 @@ mapContext
 |:-|:-|:-|:-|:-|
 |getCenterLocation|OBJECT|获取当前地图中心的经纬度，返回的是 gcj02 坐标系，可以用于 [uni.openLocation](api/location/location?id=getlocation)|||
 |moveToLocation|OBJECT|将地图中心移动到当前定位点，需要配合map组件的show-location使用|||
-|translateMarker|OBJECT|平移marker，带动画|app-nvue 2.1.5+、微信小程序带动画、京东小程序||
-|includePoints|OBJECT|缩放视野展示所有经纬度|app-nvue 2.1.5+、微信小程序、京东小程序||
+|translateMarker|OBJECT|平移marker，带动画||app-nvue 2.1.5+、微信小程序带动画、京东小程序|
+|includePoints|OBJECT|缩放视野展示所有经纬度||app-nvue 2.1.5+、微信小程序、京东小程序|
 |getRegion|OBJECT|获取当前地图的视野范围|||
 |getScale|OBJECT|获取当前地图的缩放级别|||
 |addCustomLayer|OBJECT|添加个性化图层||微信小程序|

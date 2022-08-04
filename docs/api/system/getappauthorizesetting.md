@@ -23,6 +23,8 @@
 |notificationSoundAuthorized|'authorized'/'denied'/'not determined'/'config error'|允许通知带有声音的开关|App 端仅 iOS（10.0+）支持|
 |phoneCalendarAuthorized|'authorized'/'denied'/'not determined'|允许读写日历的开关|App 端不支持|
 
+> App 端需要获取更多权限状态可参考插件: [App权限判断和提示](https://ext.dcloud.net.cn/plugin?id=594)
+
 #### 不推荐使用的返回参数，仅为兼容保留
 |locationReducedAccuracy|boolean|模糊定位。true 表示模糊定位，false 表示精确定位 |App 端仅 iOS 支持|
 

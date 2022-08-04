@@ -14,7 +14,7 @@ const config = {
       type: 'image/x-icon',
       href: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d23e842c-58fc-4574-998d-17fdc7811cc3.png?v=1556263038788'
     }],
-    ['script', { src: '/js/redirect.js' }],
+    ['script', { src: `/js/redirect.js?v=${Date.now()}` }],
     ['script', { src: 'https://hm.baidu.com/hm.js?fe3b7a223fc08c795f0f4b6350703e6f' }]
   ],
   locales: {

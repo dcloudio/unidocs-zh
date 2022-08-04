@@ -10,14 +10,14 @@ IP防刷功能旨在防范短时间内大量相同ip请求导致云函数或数�
 **注意**
 
 - 此功能对clientDB生效
-- 仅启用了redis扩展、jql扩展（jql扩展依赖了redis扩展）的云函数才会有防刷功能。
+- 启用了redis扩展、jql扩展（jql扩展依赖了redis扩展）的云函数或云对象才会有防刷功能。
 - 仅在客户端callFunction调用云函数时才会启用IP防刷功能。url化、定时触发、云函数调用云函数均不触发此功能
 
 ## IP黑名单@ip-black-list
 
 IP黑名单是用来完全阻止设定的IP或IP网段（cidr规范）访问云函数或clientDB的功能。
 
-【图片待补充】
+![black list](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7bf5e358-e627-4b3a-bafb-2b18d43c4d4b.jpg)
 
 被封禁IP访问云函数及clientDB时会收到错误响应，错误码为：`ACCESS_DENIED`，错误信息为：`Access denied`
 
@@ -66,7 +66,7 @@ IP访问频率控制用于限制单个IP访问云函数的频率。如图所示�
 - blockTime配置为0时超出限制也不会进行封禁，只是拒绝请求。
 - duration或limit配置为0时将不再限制访问频率，但是已被临时封禁的用户依然需要等到解封后才可以访问
 
-【图片待补充】
+![frequency limit](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/76130f29-7c64-4406-af69-a3759e264726.jpg)
 
 访问频率过高的用户及由于访问频率过高被临时封禁的用户访问云函数及clientDB时会收到错误响应，错误码为：`OPERATION_TOO_FREQUENT`，错误信息为：`Operation is too frequent, please try again later`
 
@@ -130,3 +130,4 @@ IP频率控制信息的以hash类型存储在redis内，key为：`unicloud:ip-in
 
 - 切换开关状态会更新所有依赖或间接依赖redis扩展的云函数及clientDB
 - 一个区域内的多个用户可能拥有同一IP
+- 本地调试期间如果开启或关闭了IP防刷功能，应停止所有客户端等待5秒重新运行才可生效

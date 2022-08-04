@@ -12,6 +12,7 @@
   * [云公共模块](uniCloud/cf-common.md)
   * [定时触发](uniCloud/trigger.md)
   * [云函数URL化](uniCloud/http.md)
+  * [IP防刷](ip-filter.md)
 * 云数据库
   * [云数据库入门](uniCloud/hellodb.md)
   * [DB Schema表结构](uniCloud/schema.md)

@@ -171,7 +171,10 @@ export const navbarLanguage = {
     },
     {
       text: 'English',
-      link: 'https://en.uniapp.dcloud.io/'
+      link: 'https://en.uniapp.dcloud.io/',
+      click() {
+        localStorage.setItem(window.__UNI_DOCS_ZH_KEY__ || 'unidocs-zh-language', 'en')
+      }
     }
   ]
 }

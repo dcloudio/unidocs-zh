@@ -16,7 +16,7 @@
 1. 定时从三方平台服务器获取数据，通过公共模块 `uni-open-bridge-commmon` 保存到 `Redis` 或 `database`
 2. 通过 http 方式操作开放平台数据的读取、写入、删除
 
-uniCloud 用户应使用公共模块 `uni-open-bridge-commmon` 操作开发平台数据，非 uniCloud 用户通过 http 的方式
+uniCloud 用户应通过引入公共模块 `uni-open-bridge-commmon` 操作数据，非 uniCloud 用户通过 http 的方式
 
 ### uni-open-bridge 配置
 

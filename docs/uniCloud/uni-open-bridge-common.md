@@ -4,6 +4,10 @@
 
 > `云函数公共模块`是不同云函数共享代码的一种方式。如果你不了解什么是`云函数公共模块`，请另读文档[公共模块](https://uniapp.dcloud.io/uniCloud/cf-common)
 
+调用微信绝大多数后台接口时都需使用 `access_token`、`session_key`、`ticket`，开发者需要进行妥善保存。为了解决这个问题，使用公共模块 `uni-open-bridge-common` 统一调用
+
+`uni-open-bridge-common` 有配套的云对象 `uni-open-bridge`, 可免维护 `access_token`、`ticket` 调用，[详情](/uni-open-bridge)
+
 `uni-open-bridge-common` 提供了 `access_token`、`session_key`、`encrypt_key`、`ticket` 的读取、写入、删除操作。
 
 `uni-open-bridge-common` 支持多层 读取 / 写入 机制，`redis -> database -> fallback`，优先级如下:
@@ -18,7 +22,7 @@
 `access_token` 是微信小程序全局唯一后台接口调用凭据，调用绝大多数后台接口时都需使用。开发者可以通过 getAccessToken 接口获取并进行妥善保存。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/server-ability/backend-api.html#access_token)
 
 
-### getAccessToken(key: Object)
+### getAccessToken(key: Object, fallback: Function)
 
 读取 access_token
 
@@ -39,7 +43,6 @@
 |:-:				|:-:			|:-:	|:-:																															|
 |dcloudAppid|String		|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
 |platform		|String		|是		|[详情](#platform)																								|
-|fallback		|Function	|否		|[详情](#fallback)																								|
 
 ### value 属性
 
@@ -101,7 +104,7 @@ exports.main = async (event, context) => {
 |微信小程序	|session_key|微信小程序会话密钥。[详情](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html)	|
 
 
-### getUserKey(key: Object)
+### getUserKey(key: Object, fallback: Function)
 
 读取 user_key
 
@@ -184,7 +187,7 @@ exports.main = async (event, context) => {
 开发者可以分别通过小程序前端和微信后台提供的接口，获取用户的加密 key。
 
 
-### getEncryptKey(key: Object)
+### getEncryptKey(key: Object, fallback: Function)
 
 读取 encrypt_key
 
@@ -266,10 +269,10 @@ exports.main = async (event, context) => {
 
 ## ticket
 
-`ticket` 是公众号用于调用微信 JS 接口的临时票据。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#72)
+`ticket` 是公众号用于调用微信 JS 接口的临时票据。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62)
 
 
-### getTicket(key: Object)
+### getTicket(key: Object, fallback: Function)
 
 读取 ticket
 
@@ -368,9 +371,9 @@ exports.main = async (event, context) => {
 }
 ```
 
+为了简化调用 `getAccessToken()`、`getTicket()` 已内置 `fallback` 到微信的服务器，需要在 `config-center` 中配置 `appid` `appsecret`
 
 
 注意事项
-
 - 所有方法类型为 `async`，需要使用 `await`
 - 所有方法校验 `key` 属性是否有效，无效则 `throw new Error()`，对 `value` 仅校验是否为 `undefined`

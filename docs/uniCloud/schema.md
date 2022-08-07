@@ -14,13 +14,19 @@
 
 > MongoDB支持通过 [$jsonSchema 操作符](https://docs.mongodb.com/manual/reference/operator/query/jsonSchema/index.html)在插入和更新文档时进行结构验证（非空、类型校验等）， $jsonSchema 支持 JSON Schema的草案4，包括[core specification](https://tools.ietf.org/html/draft-zyp-json-schema-04)和[validation specification](https://tools.ietf.org/html/draft-fge-json-schema-validation-00)。uniCloud在MongoDB基础上进行了JSON Schema扩展。
 
-编写`DB Schema`是uniCloud的数据库开发的重要环节。但如果在云函数里通过传统MongoDB API操作数据库，`DB Schema`只能发挥描述作用，无法提供实际功能。
+编写`DB Schema`是uniCloud的数据库开发的重要环节。但必须通过JQL操作数据库才能发挥`DB Schema`的价值。
 
-通过JQL操作数据库才能发挥`DB Schema`的价值。
+**所以注意，在云函数中使用传统MongoDB API操作数据库时`DB Schema`不生效。不管在客户端还是云端，都必须使用JQL操作数据库。**
 
-一般建议开发者在前端操作数据库，在云数据库里配好`DB Schema`，然后就不再编写服务器代码了。也就是传统开发中在服务器端写的各种代码，包括对数据格式的校验、权限的管控，全都通过`DB Schema`设置，而不是写服务器代码。这种做法可以大幅提升开发效率、降低开发成本。
+- 如果你的应用可以通过clientDB完成，那么这样将无需编写服务器代码，整体开发效率会极大提升。客户端操作数据库时必须完全编写`DB Schema`，尤其权限部分。
 
-同时这要求开发者有一定的思路转换，需要一个角色站在数据库设计角度统筹所有规则。将原有的业务规则，都转换为数据库规则。
+- 如果应用的权限系统比较复杂，使用clientDB不如使用云对象方便，也应该编写好除了权限部分以外的其他的schema。这样联表查询、tree查询、默认值、值域校验等其他功能仍然可以方便使用。
+
+	具体来说，如自己在云函数中编写权限控制代码，则需要把`DB Schema`的权限都设为false，在云函数中将操作角色设为admin（通过setuser API），以跳过schema的权限验证。
+	
+	当然，云函数中代码控制的权限和`DB Schema`中的权限也可以混合使用，简单权限交由`DB Schema`处理，负责权限再编写代码处理。
+
+所以建议开发者编写好schema，无论云端还是前端操作数据库。最多是云函数处理权限时忽略schema中的权限部分。
 
 ### 如何编写DB Schema
 
@@ -32,8 +38,7 @@
 
 **web控制台上编辑`DB Schema`保存后是实时在现网生效的，请注意对现网商用项目的影响。**
 
-- **方式2，在HBuilderX中编写schema**
-> 新增于HBuilderX 3.0+
+- **方式2，在HBuilderX中编写schema（推荐）**
 
 在HBuilderX中编写schema，有良好的语法提示和语法校验，还可以本地调试，是更为推荐的schema编写方案。
 

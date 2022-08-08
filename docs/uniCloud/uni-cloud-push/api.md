@@ -1,10 +1,29 @@
 > 需要HBuilderX 3.5.1 及其以上版本支持
 
-<div style="display: flex;align-items: center;">
-	<img width="20px" height="21px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/759713d0-4f2d-11eb-a16f-5b3e54966275.png">
-	&nbsp;
-	<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=EErVqoKDps4QSo5M0mm_OfzdA7JqtQU4&jump_from=webapi">uni-push2.0 官方QQ交流群：757742921</a>
-</div>
+为了更好的服务欢迎：
+<a class="join-group-chat" target="_blank" href="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
+	加入uni-push2.0 交流群
+	<img src="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
+</a>
+
+<style>
+	.join-group-chat{
+		position: relative;
+	}
+	.join-group-chat img{
+		display: none;
+	}
+	.join-group-chat:hover img{
+		position: absolute;
+		top: 25px;
+		right: 0;
+		display: block;
+		width: 150px;
+		height: 150px;
+		box-shadow:#999 0px 0px 20px;
+		padding: 3px;
+	}
+</style>
 
 `uni-push`有服务器API和客户端API。
 

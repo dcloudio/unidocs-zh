@@ -424,11 +424,11 @@ uni统计新增的文件主要包括：
 
 #### 上传 sourceMap@upload-sourcemap
 
-1. 在 `uni-admin 项目/pages/uni-stat/error/js/js.vue` 页面中做以下修改：
-   1. 搜索 `cloudSpaceId` 补充腾讯云服务空间 SpaceID
-   2. 搜索 `sourcemapBaseUrl` 补充腾讯云云存储访问地址（如：https://xx-xx-xx.tcb.qcloud.la/\_\_UNI\_\_/uni-stat/sourcemap）
+1. 在 `uni-admin 项目/admin.config.js` 中配置 `uni-stat` 相关信息：
+   1. 搜索 `uploadSourceMapCloudSpaceId` 补充腾讯云服务空间 SpaceID
+   2. 搜索 `cloudSourceMapUrl` 补充腾讯云云存储访问地址（如：https://xx-xx-xx.tcb.qcloud.la/\_\_UNI\_\_/uni-stat/sourcemap）
 
-	![cloudSpaceId](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ffafa11c-ce74-425f-a4ef-f0900f44714c.jpg)
+	![cloudSpaceId](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f1dee8fc-dfb5-49b1-b905-22f8fa733eca.jpg)
 
 2. 将 uni-admin 项目运行到浏览器中，在 `uni 统计 / 错误统计 / js报错` 页面，错误信息列表表格的右上角有 `上传 sourceMap` 按钮。点击后展示如下：
 

@@ -1,29 +1,29 @@
 >本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0详情：[https://ask.dcloud.net.cn/article/35622](https://ask.dcloud.net.cn/article/35622)
 
 为了更好的服务欢迎：
-<a class="join-group-chat" target="_blank" href="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">加入uni-push2.0 交流群</a>
-	
-<script type="text/javascript">
-	window.onload = function(){
-		// const gccDom = document.getElementById("group-chat-code")
-		const gccDom = document.createElement('img')
-		gccDom.setAttribute('id','group-chat-code')
-		gccDom.setAttribute('src','https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG')
-		gccDom.style = 'position: fixed;width: 150px;height: 150px;z-index:999;box-shadow:#999 0px 0px 20px;'
-		document.body.appendChild(gccDom)
-		document.querySelectorAll('.join-group-chat').forEach(item=>{
-			item.onmouseover = e=>{
-				gccDom.style.display = 'block'
-				gccDom.style.left = e.clientX + 10 +'px'
-				gccDom.style.top = e.clientY + 15 +'px'
-				console.log(gccDom,gccDom.style)
-			}
-			item.onmouseout = e=>{
-				gccDom.style.display = 'none'
-			}
-		})
+<a class="join-group-chat" target="_blank" href="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
+	加入uni-push2.0 交流群
+	<img src="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
+</a>
+
+<style>
+	.join-group-chat{
+		position: relative;
 	}
-</script>
+	.join-group-chat img{
+		display: none;
+	}
+	.join-group-chat:hover img{
+		position: absolute;
+		top: 25px;
+		right: 0;
+		display: block;
+		width: 150px;
+		height: 150px;
+		box-shadow:#999 0px 0px 20px;
+		padding: 3px;
+	}
+</style>
 
 # 应用场景
 以下功能可以用uni-push 实现  

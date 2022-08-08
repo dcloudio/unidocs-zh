@@ -308,8 +308,8 @@ exports.main = async (event, context) => {
 		"title": "通知栏显示的标题",	
 		"content": "通知栏显示的内容",
 		"payload": {
-                    "text":"体验一下uni-push2.0"
-                }
+			"text":"体验一下uni-push2.0"
+		}
 	})
 };
 ```

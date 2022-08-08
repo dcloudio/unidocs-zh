@@ -32,6 +32,8 @@
 |属性|类型|说明|
 |:-|:-|:-|
 |progress|Object/Boolean|进度条样式。仅加载网络 HTML 时生效，设置为 `false` 时禁用进度条。|
+|width|String|web-view 组件的宽度。|
+|height|String|web-view 组件的高度。|
 
 **progress**
 

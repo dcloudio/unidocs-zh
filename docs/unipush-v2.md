@@ -307,7 +307,9 @@ exports.main = async (event, context) => {
 		"push_clientid": "xxx", 	//填写上一步在uni-app客户端获取到的客户端推送标识push_clientid
 		"title": "通知栏显示的标题",	
 		"content": "通知栏显示的内容",
-		"payload": "体验一下uni-push2.0"
+		"payload": {
+                    "text":"体验一下uni-push2.0"
+                }
 	})
 };
 ```

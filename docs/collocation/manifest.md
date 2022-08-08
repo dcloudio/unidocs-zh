@@ -310,6 +310,7 @@ H5平台是SPA单页应用，普通的SEO信息即加meta字段只能在，自�
 |属性|类型|默认值|说明|
 |:-|:-|:-|:-|
 |https|Boolean|false|启用 https 协议|
+|port|Number|Vue2 8080；Vue3 3000|前端开发服务端口|
 |disableHostCheck|Boolean|false|禁用 Host 检查|
 
 Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` 的 [devServer](https://webpack.js.org/configuration/dev-server/)，鉴于 manifest 为 json 文件，故 `webpack.config.js->devServer` 配置项下的简单类型属性均可在`manifest.json->h5->devServer`节点下配置，funciton 等复杂类型暂不支持。

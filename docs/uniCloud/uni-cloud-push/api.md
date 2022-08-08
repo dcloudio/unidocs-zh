@@ -15,6 +15,7 @@
 	}
 	.join-group-chat:hover img{
 		position: absolute;
+                background: #FFF;
 		top: 25px;
 		right: 0;
 		display: block;

@@ -1,10 +1,31 @@
 >本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0详情：[https://ask.dcloud.net.cn/article/35622](https://ask.dcloud.net.cn/article/35622)
 
-<div style="display: flex;align-items: center;">
-	<img width="20px" height="21px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/759713d0-4f2d-11eb-a16f-5b3e54966275.png">
-	&nbsp;
-	<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=EErVqoKDps4QSo5M0mm_OfzdA7JqtQU4&jump_from=webapi">uni-push2.0 官方QQ交流群：757742921</a>
-</div>
+为了更好的服务欢迎：
+	<a class="join-group-chat" target="_blank" href="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
+		加入uni-push2.0 交流群
+	</a>
+	
+<script type="text/javascript">
+	window.onload = function(){
+		// const gccDom = document.getElementById("group-chat-code")
+		const gccDom = document.createElement('img')
+		gccDom.setAttribute('id','group-chat-code')
+		gccDom.setAttribute('src','https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG')
+		gccDom.style = 'position: fixed;width: 150px;height: 150px;z-index:999;box-shadow:#999 0px 0px 20px;'
+		document.body.appendChild(gccDom)
+		document.querySelectorAll('.join-group-chat').forEach(item=>{
+			item.onmouseover = e=>{
+				gccDom.style.display = 'block'
+				gccDom.style.left = e.clientX + 10 +'px'
+				gccDom.style.top = e.clientY + 15 +'px'
+				console.log(gccDom,gccDom.style)
+			}
+			item.onmouseout = e=>{
+				gccDom.style.display = 'none'
+			}
+		})
+	}
+</script>
 
 # 应用场景
 以下功能可以用uni-push 实现  

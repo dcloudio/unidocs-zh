@@ -919,6 +919,8 @@ package.json是一个标准json文件，不可带注释。下面是一个package
 }
 ```
 
+**使用腾讯云Nodejs12版本时，务必仔细阅读此文档：[keepRunningAfterReturn](#keep-running)**
+
 #### triggers@triggers
 
 阿里云定时触发的cron表达式不支持代表年的第七位，但是在package.json内配置时仍需将第七位设置为*。

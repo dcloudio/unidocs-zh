@@ -14,4 +14,16 @@ if (host === 'uniapp.dcloud.io') {
       ? website_ZH
       : website_EN;
   window.location.href = website_finally + pathname + search;
+} else {
+  // overwrite referrer
+  if (
+    search.indexOf('hmsr=vueen') !== -1 &&
+    document.referrer === 'https://uniapp.dcloud.io/'
+  ) {
+    Object.defineProperty(
+      document,
+      'referrer',
+      { value: 'https://vuejs.org/', configurable: true }
+    );
+  }
 }

@@ -2,8 +2,8 @@
 - 登录[DCloud开发者中心](https://dev.dcloud.net.cn/)，通过实名认证后，可通过以下入口进入UniPush的Web控制台进行配置
   + HBuilderX中打开项目的manifest.json文件，在“App模块配置”项的“Push(消息推送)”->“UniPush”下点击`配置`
   ![](https://native-res.dcloud.net.cn/images/uniapp/push/unipush-hx-config.png)
-  + 登录[DCloud开发者中心](https://dev.dcloud.net.cn/)，在“我创建的应用”列表中选择进入应用管理页面，点击左侧导航栏中的“Uni Push”
-  ![](https://native-res.dcloud.net.cn/images/uniapp/push/unipush-web-config.png)
+  + 登录[DCloud开发者中心](https://dev.dcloud.net.cn/)，在“我的应用”列表中选择进入应用管理页面，点击上方选项卡中的“uniPush”，然后点击“应用信息”
+  ![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/unipush-web-config.png)
 - 在UniPush开通界面配置“Android包名”、“Android应用签名”、“iOS Bundle Id”等信息，点击“开通”
 - 开通后可进行其它消息推送参数配置
   + Android平台  

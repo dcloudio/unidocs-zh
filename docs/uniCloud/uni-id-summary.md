@@ -183,7 +183,7 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
 + `tokenExpiresIn`token有效期，以秒为单位
 + `passwordErrorLimit`密码错误重试次数，分ip记录密码错误次数，达到重试次数之后等待`passwordErrorRetryTime`时间之后才可以重试
 + `passwordErrorRetryTime`单位为秒
-+ 如果使用`sendSmsCode`接口发送短信需要前往[https://dev.dcloud.net.cn/uniSms](https://dev.dcloud.net.cn/uniSms)充值短信额度，配置`config.json`的`service`字段，字段说明见下方示例
++ 如果使用`sendSmsCode`接口发送短信需要前往[https://dev.dcloud.net.cn/#/pages/sms/base](https://dev.dcloud.net.cn/#/pages/sms/base)充值短信额度，配置`config.json`的`service`字段，字段说明见下方示例
 + 另外可以按照客户端平台进行不同的配置，参考下面示例
 
 **下面的配置文件中所有时间的单位都是秒**
@@ -268,7 +268,7 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
     },
     "univerify": {
       "appid": "your appid", // 当前应用的appid，使用云函数URL化，此项必须配置
-      "apiKey": "your apiKey", // apiKey 和 apiSecret 在开发者中心获取，开发者中心：https://dev.dcloud.net.cn/uniLogin/index?type=0，文档：https://ask.dcloud.net.cn/article/37965
+      "apiKey": "your apiKey", // apiKey 和 apiSecret 在开发者中心获取，开发者中心：https://dev.dcloud.net.cn/#/pages/uniLogin/index，文档：https://ask.dcloud.net.cn/article/37965
       "apiSecret": "your apiSecret"
     }
   }

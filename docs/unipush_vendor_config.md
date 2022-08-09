@@ -101,7 +101,7 @@
 
 * 在开发者中心中填写华为AppID、华为AppSecret、应用包名、上传刚刚保存下的json文件。如下
 
-![as_configuration3.png](https://native-res.dcloud.net.cn/images/uniapp/push/adnroid_vendor/dcloud_hw.png)
+![as_configuration3.png](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/dcloud_hw.png)
 
 
 ## 二、 魅族应用创建配置流程
@@ -132,7 +132,7 @@
 
 * 在开发者中心中填写魅族AppID、魅族AppKey、魅族AppSecret：
 
-![as_configuration2.png](https://native-res.dcloud.net.cn/images/uniapp/push/adnroid_vendor/dcloud_mz.png)
+![as_configuration2.png](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/dcloud_mz.png)
 
 
 ## 三、 小米应用创建配置流程
@@ -166,7 +166,7 @@
 
 * 在开发者中心中填写小米AppID、小米AppSecret：
 
-![as_configuration3.png](https://native-res.dcloud.net.cn/images/uniapp/push/adnroid_vendor/dcloud_xm.png)
+![as_configuration3.png](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/dcloud_xm.png)
 
 
 ## 四、 OPPO应用创建配置流程
@@ -191,7 +191,7 @@
 ### 2. 推送配置
 * 在开发者中心中填写OPPO参数。
 
-​	![](https://native-res.dcloud.net.cn/images/uniapp/push/adnroid_vendor/dcloud_op.png)
+​	![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/dcloud_op.png)
 
 ## 四、 VIVO应用创建配置流程
 ### 1. 创建应用
@@ -215,5 +215,5 @@
 ### 2. 推送配置
 * 在开发者中心中填写VIVO参数。
 
-  ![](https://native-res.dcloud.net.cn/images/uniapp/push/adnroid_vendor/dcloud_vv.png)
+  ![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/dcloud_vv.png)
 

@@ -120,14 +120,14 @@ GitCode 仓库：[https://gitcode.net/dcloud/uni-starter](https://gitcode.net/dc
 #### 在uni-app框架中配置：
 在应用模块：`manifest.json` App模块配置 --> OAuth（登录鉴权）--> 勾选并配置你所需要的模块
 + 一键登录：
-	[开通配置](https://dev.dcloud.net.cn/uniLogin)
+	[开通配置](https://dev.dcloud.net.cn/#/pages/uniLogin/index)
 	[使用指南](https://uniapp.dcloud.io/univerify)
 + [苹果登录集成指南](https://ask.dcloud.net.cn/article/36651) 
 + 短信登录：
 >`uni-id-cf`文件路径：`/uniCloud-aliyun/cloudfunctions/uni-id-cf/index.js`
 
 	测试期间，为节约资源。统一虚拟短信验证码为：123456。正式使用注视掉`uni-id-cf`第339-344行即可
-	使用本功能需要在[DCloud开发者中心](https://dev.dcloud.net.cn/uniSms)开通并充值
+	使用本功能需要在[DCloud开发者中心](https://dev.dcloud.net.cn/#/pages/sms/base)开通并充值
 	教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
 	修改短信注册/登录发生验证码的模板id，在`uni-id-cf`搜索 `const templateId = '11753'` 替换为自己申请的模板id
 

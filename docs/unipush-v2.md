@@ -131,23 +131,23 @@ uni-push产品有2个入口：
 2. 通过开发者中心进入
 	
 	使用 HBuilder 账号登录 [开发者中心](https://dev.dcloud.net.cn) ，登录后
-	会进入“我创建的应用”列表，如下图所示：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/51d70683-fef6-4990-a9a7-4d5d7cc10316.jpg)
-	点击要操作的应用的应用名称可进入应用管理页面，点击左侧导航中的“uniPush 2.0（支持全端推送）”-“应用信息”
+	会进入“我的应用”列表，如下图所示：
+![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/applist.png)
+	点击要操作的应用的应用名称可进入应用管理页面，点击上方选项卡中的“uniPush”-“Uni Push 2.0（支持全端推送）”-“应用信息”
 	
 以上两种方式均可进入uniPush 应用开通界面。如下图所示：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/637abb41-4702-4b05-928b-8aac6de7149f.jpg)
+![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/sfdh.png)
 
 ### 手机号验证
 
 按照国家法律要求，所有提供云服务的公司在用户使用云服务时都需要验证手机号。
 
 用户初次开通 uni-push 时，需要向个推同步手机号信息（DCloud开发者无需再注册个推账户）。
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a0e85961-e5e7-4e38-a6d0-aea6ab27766e.jpg)
+![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/sm.png)
 
 ### 填写应用信息
 应用开通 uni-push 功能时，需要提交应用相关信息，如下图所示：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/381bd60a-a38b-412a-8bfb-6cafb9788a6a.jpg)
+![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/unipush.png)
 
 关联服务空间说明：uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使用uniCloud，但专业推送服务器在uniCloud上。
 
@@ -168,9 +168,9 @@ uni-push产品有2个入口：
 - iOS 平台还需要上传专用的推送证书
 	+ 证书申请：如何获取推送证书请参考个推官方文档教程 [iOS证书配置指南](https://docs.getui.com/getui/mobile/ios/apns/)
 	+ 证书上传入口：消息推送-“配置管理”-“应用配置”
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a75716f3-3541-48e0-a1cb-43de8308d2b5.jpg)
+![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/ios.png)
 - APP手机厂商推送参数设置（可选，应用进程离线时推送通道）
-	![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/26656924-e58e-42dc-a5b2-6d72546aa5d2.jpg)
+	![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/20220728173149.png)
 	uniPush集成并统一了各个手机厂商的系统级推送，目前支持魅族、OPPO、华为、小米、VIVO。如果需要使用厂商推送，需要先在各厂商开发者平台申请。详见[厂商推送应用创建配置流程](https://www.dcloud.io/docs/a/unipush/manufacturer.pdf)
 
 

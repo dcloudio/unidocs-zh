@@ -60,4 +60,4 @@ DCloud会收取账单金额的15%做为服务费，然后将剩余款项支付�
 
 为了更好的服务插件作者，帮助插件作者节税，插件市场引入了`云账户`，参考[云账户介绍](https://ask.dcloud.net.cn/article/37525)。
 
-`Tips：`为了不影响收益打款，请插件作者在月初尽快提供发票，并完善[财务信息](https://dev.dcloud.net.cn/finance/detail)
+`Tips：`为了不影响收益打款，请插件作者在月初尽快提供发票，并完善[财务信息](https://dev.dcloud.net.cn/#/pages/user/finance)

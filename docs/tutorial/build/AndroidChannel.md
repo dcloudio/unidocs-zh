@@ -29,7 +29,7 @@ HBuilderX默认提供 `7`  个渠道（`Google`、`360`、`小米`、`华为`、
 
 注意是根节点
 
-```
+```json
 {
 	"channel_list":[
 		{
@@ -42,7 +42,7 @@ HBuilderX默认提供 `7`  个渠道（`Google`、`360`、`小米`、`华为`、
 
 比如：
 
-```
+```json
 {
 	"channel_list":[
 		{
@@ -61,7 +61,7 @@ HBuilderX默认提供 `7`  个渠道（`Google`、`360`、`小米`、`华为`、
 ## 离线打包的配置方法
 
 下载最新的sdk，在Android项目的Androidmanifest.xml中的application节点下添加如下内容
-```
+```html
 <meta-data android:name="DCLOUD_STREAMAPP_CHANNEL"  android:value="{applicationId}|{appid}|{adid}|{channel}"/>
 ```
 
@@ -72,7 +72,7 @@ android:value值由四个字段组成，使用‘|’符号分割，各字段说
 - channel 渠道标识，**注意：提交谷歌应用市场（Google Play）时一定要将渠道标识设置为google**
 
 例如：
-```
+```html
 <meta-data
             android:name="DCLOUD_STREAMAPP_CHANNEL"
             android:value="io.dcloud.HBuilder|HBuilder|0123456789|google" />
@@ -85,7 +85,7 @@ android:value值由四个字段组成，使用‘|’符号分割，各字段说
 
 [推广渠道标识](http://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.channel)
 
-```
+```js
 plus.runtime.channel 
 ```
 
@@ -107,14 +107,14 @@ plus.runtime.channel
 
 如果你的App不是uni-app，而是5+或wap2app。那么无法使用uni统计。此时可登录[DCloud开发者中心](http://dev.dcloud.net.cn)查看应用的基本统计数据。
 
-首页会展示所有已创建的应用列表，点击应用名称可以查看该应用的『日活趋势』。
+首页会展示所有已创建的应用列表，点击应用名称进入应用详情，点击可以『5+APP运营』查看该应用的『日活趋势』。
 
-![](https://hx.dcloud.net.cn/static/snapshots/tutorial/android_channel_3.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/applist.png)
 
 
 包含渠道信息的应用，左上角选择渠道，即可查看对应渠道的运营统计数据。
 
-![](https://hx.dcloud.net.cn/static/snapshots/tutorial/android_channel_4.png)
+![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/qudao.png)
 
 **Tips：**
 

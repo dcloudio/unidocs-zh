@@ -105,7 +105,7 @@ plus.push.getClientInfoAsync((info) => {
 
 在【Uni Push】-【配置管理】-【故障排查】-【 状态查询】中输入CID 查询，看是否会返回 devicetoken 。
 
-![img](https://native-res.dcloud.net.cn/images/uniapp/push/devicetoken1.png)
+![img](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/devicetoken1.png)
 
 **若返回 devicetoken ：**
 
@@ -119,7 +119,7 @@ plus.push.getClientInfoAsync((info) => {
 
 - 检查后台是否有配置厂商参数（配置完参数需要云打包后生效）
 
-![img](https://native-res.dcloud.net.cn/images/uniapp/push/devicetoken2.png)
+![img](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/devicetoken2.png)
 
 华为（包含荣耀）机型需要额外检查：
 
@@ -148,13 +148,13 @@ plus.push.getClientInfoAsync((info) => {
 
 **测试在线通知消息推荐您使用：**
 
-![img](https://native-res.dcloud.net.cn/images/uniapp/push/send_notification.png)
+![img](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/send_notification.png)
 
 
 
 **测试离线通知消息推荐您使用：**
 
-![img](https://native-res.dcloud.net.cn/images/uniapp/push/passthrough.png)
+![img](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/passthrough.png)
 
 
 
@@ -178,7 +178,7 @@ plus.push.getClientInfoAsync((info) => {
 
 服务端集成时首先需要获取 AppId、AppKey、MasterSecret 参数，登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) ，在“Uni Push”下的“应用配置”页面中获取，如下图所示：
 
-![img](https://native-res.dcloud.net.cn/images/uniapp/push/app_config_info.png)
+![img](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/app_config_info.png)
 
 **Http 请求：**参数详情可查看：[服务端 RestAPI V2](https://docs.getui.com/getui/server/rest_v2/push/)
 

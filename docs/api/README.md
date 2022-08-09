@@ -732,3 +732,5 @@ uni.addInterceptor({
 | :------------------------------------------------------------------- | :------------------------------- |
 | [uni.getExtConfig](/api/other/get-extconfig?id=getextconfig)         | 获取第三方平台自定义的数据字段。 |
 | [uni.getExtConfigSync](/api/other/get-extconfig?id=getextconfigsync) | uni.getExtConfig 的同步版本。    |
+
+因文档同步原因，本页面列出的API可能不全。如在本文未找到相关API，可以在左侧树中寻找或使用文档右上角的搜索功能。

@@ -272,7 +272,7 @@ const uniIdCo = uniCloud.importObject('uni-id-co')
 
 ## 公共响应参数@co-public-response
 
-`uni-id-co`所有api返回值均满足[uniCloud响应体规范](uniCloud/cf-functions?id=resformat)
+`uni-id-co`所有api返回值均满足[uniCloud响应体规范](cf-functions.md#resformat)
 
 返回值示例
 

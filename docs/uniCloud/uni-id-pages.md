@@ -226,7 +226,7 @@ export default {
 
 更多合规问题[详情参考](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
 
-推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://ask.dcloud.net.cn/article/37573)上传到[前端网页托管](https://uniapp.dcloud.io/uniCloud/hosting.html#%E7%AE%80%E4%BB%8B)获得链接
+推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://ask.dcloud.net.cn/article/37573)上传到[前端网页托管](hosting.md#%E7%AE%80%E4%BB%8B)获得链接
 
 ## 页面介绍
 `uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[详情查看](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
@@ -1404,7 +1404,7 @@ module.exports = {
 
 # 登录服务开通与配置
 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`
-以下简称：`uni-id配置文件`，完整的配置信息[详情查看](uniCloud/uni-id-summary.html#config)
+以下简称：`uni-id配置文件`，完整的配置信息[详情查看](uni-id-summary.md#config)
 
 ## 一键登录
 一键登录是运营商提供的、比短信验证码更方便、更安全、更便宜的方案。[详见](https://uniapp.dcloud.net.cn/univerify)。

@@ -1,5 +1,9 @@
 ## 窗口样式相关的 API
 
+在web上，宽屏界面会出现topWindow、LeftWindow、RightWindow，相关概念详见[宽屏适配指南](../../tutorial/adapt.md)
+
+本文档列出这些window相关API。
+
 获取对应窗口的样式，返回一个 css 属性值对象;
 设置对应窗口的样式，传入一个 css 属性值对象
 

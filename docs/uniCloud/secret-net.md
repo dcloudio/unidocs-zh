@@ -89,7 +89,9 @@ uniCloud.callFunction({
   export default {
     onLaunch: function() {
       console.log('App Launch')
+      // #ifdef MP-WEIXIN
       checkUserSession();
+      // #endif
     }
   }
 </script>

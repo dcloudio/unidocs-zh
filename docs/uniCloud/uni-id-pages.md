@@ -1406,7 +1406,7 @@ module.exports = {
 
 # 登录服务开通与配置
 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`
-以下简称：`uni-id配置文件`，完整的配置信息[详情查看](https://uniapp.dcloud.io/uniCloud/uni-id.html#config)
+以下简称：`uni-id配置文件`，完整的配置信息[详情查看](uniCloud/uni-id-summary.html#config)
 
 ## 一键登录
 一键登录是运营商提供的、比短信验证码更方便、更安全、更便宜的方案。[详见](https://uniapp.dcloud.net.cn/univerify)。

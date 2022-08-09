@@ -101,7 +101,7 @@ await uniPush.sendMessage(OBJECT)
 ##### getui_big_data_tag 说明
 |名称|类型|是否必需|默认值|描述|
 |--|--|--|--|--|
-|key|String|是|无|查询条件(phone_type 手机类型; region 省市; getui_custom_tag 客户端标签; portrait，个推用户画像使用编码，[点击下载文件portrait.data](https://docs.getui.com/files/portrait.data)。|
+|key|String|是|无|查询条件(phone_type 手机类型; region 省市; custom_tag 客户端标签; portrait，个推用户画像使用编码，[点击下载文件portrait.data](https://docs.getui.com/files/portrait.data)。|
 |values|String Array| 是| 无|查询条件值列表，其中<br>**手机型号**使用如下参数`android`和`ios`；<br>**省市**使用编号，[点击下载文件region_code.data](https://docs.getui.com/files/region_code.data)；|
 | opt_type|String|是|无|or(或),and(与),not(非)，`values`间的交并补操作|
 

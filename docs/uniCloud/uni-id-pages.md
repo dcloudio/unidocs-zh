@@ -190,9 +190,7 @@ export default {
 ```
 则表示启用：微信登录、验证码登录、账号密码登录。
 
-###### 平台差异性配置
-如果你希望在不同的平台有不同的登录方式，直接使用[条件编译](https://uniapp.dcloud.io/platform?id=%e6%9d%a1%e4%bb%b6%e7%bc%96%e8%af%91)即可。
-如下配置，即表示仅在APP端启用`短信验证码登录`
+平台差异性配置:如果你希望在不同的平台有不同的登录方式，直接使用[条件编译](https://uniapp.dcloud.io/platform?id=%e6%9d%a1%e4%bb%b6%e7%bc%96%e8%af%91)即可。如下配置，即表示仅在APP端启用`短信验证码登录`
 ```js
 export default {
 	"loginTypes": [

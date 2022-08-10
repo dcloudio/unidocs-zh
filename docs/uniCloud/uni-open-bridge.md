@@ -4,6 +4,8 @@
 
 `uni-open-bridge` 由云对象 `uni-open-bridge` 和公共模块 `uni-open-bridge-common` 两部分组成
 
+<img src="/svg/uni-open-bridge.svg"></img>
+
 ## 简介
 
 调用微信绝大多数后台接口时都需使用 `access_token`、`session_key`、`ticket` 开发者需要进行统一保存，部分参数需要定时刷新。为了解决这个问题，使用公共模块 `uni-open-bridge-common` 统一调用，详情见下文说明
@@ -17,8 +19,6 @@
 2. 通过 http 方式操作开放平台数据的读取、写入、删除
 
 uniCloud 用户应通过引入公共模块 `uni-open-bridge-commmon` 操作数据，非 uniCloud 用户通过 http 的方式
-
-<img src="/uniCloud/svg/uni-open-bridge.svg"></img>
 
 ### uni-open-bridge 配置
 
@@ -236,9 +236,9 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 `uni-open-bridge-common` 支持多层 读取 / 写入 机制，`redis -> database -> fallback`，优先级如下:
 
-如果用户没有开通 `redis` 或者操作失败，透传到 `database`，`database` 失败后，如果用户配置了 `fallback`，继续调用 `fallback` 方法，否则抛出 `Error`
+如果用户没有开通 `redis` 或者操作失败，透传到 `database`，`database` 失败后，如果用户配置了 `fallback`，继续调用 `fallback` 方法，否则抛出 `Error`，`database` 对应的表为: `opendb-open-data`
 
-`database` 对应的表为: `opendb-open-data`
+在微信的多个业务中都需要用到 `access_token`、`session_key`、`encrypt_key`、`ticket`，在客户端任意地方调用 `wx.login()` 后 `session_key` 将失效，需要开发者统一管理，详情见下文说明。
 
 
 ### access_token
@@ -625,4 +625,4 @@ exports.main = async (event, context) => {
 ### 注意事项
 
 - 所有方法类型为 `async`，需要使用 `await`
-- 所有方法校验 `key` 属性是否有效，无效则 `throw new Error()`，对 `value` 仅校验是否为 `undefined`
+- 所有方法校验 `key` 属性是否有效，无效则 `throw new Error()`，对 `value` 仅校验是否为 `Object`

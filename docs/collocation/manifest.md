@@ -497,6 +497,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |optimization|Object| 对百度小程序的优化配置 |
 |uniStatistics|Object|[百度小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
+|dynamicLib|Object|引入动态库，详情请参考[使用动态库](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)|
 
 #### optimization
 

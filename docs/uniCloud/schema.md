@@ -124,8 +124,8 @@ properties里的字段列表，每个字段都有很多可以设置的属性，�
 |值域校验|validateFunction|string|扩展校验函数名|
 |权限校验|permission|Object|数据库权限，控制什么角色可以对什么数据进行读/写，可控制表和字段，可设置where条件。见下文[详述](uniCloud/schema?id=permission)|
 |错误返回|errorMessage|string&#124;Object |当数据写入或更新时，校验数据合法性失败后，返回的错误提示|
-|关联关系|foreignKey|String|关联字段。表示该字段的原始定义指向另一个表的某个字段，值的格式为`表名.字段名`，比如订单表的下单用户uid字段指向uni-id-users表的_id字段，那么值为`uni-id-users._id`。关联字段定义后可用于[联表查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup)，通过关联字段合成虚拟联表，极大的简化了联表查询的复杂度|
-|关联关系|parentKey|String|同一个数据表内父级的字段。详情参考：[树状数据查询](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=gettree)|
+|关联关系|foreignKey|String|关联字段。表示该字段的原始定义指向另一个表的某个字段，值的格式为`表名.字段名`，比如订单表的下单用户uid字段指向uni-id-users表的_id字段，那么值为`uni-id-users._id`。关联字段定义后可用于[联表查询](https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup)，通过关联字段合成虚拟联表，极大的简化了联表查询的复杂度|
+|关联关系|parentKey|String|同一个数据表内父级的字段。详情参考：[树状数据查询](https://uniapp.dcloud.net.cn/uniCloud/jql?id=gettree)|
 |schema2code|label|string|字段标题。schema2code生成前端代码时，渲染表单项前面的label标题。如果不填，会使用title属性。适用于title不便显示在表单项前面的情况|
 |schema2code|group|string|分组id。schema2code生成前端代码时，多个字段对应的表单项可以合并显示在一个uni-group组件中|
 |schema2code|order|int|表单项排序序号。schema2code生成前端代码时，默认是以schema中的字段顺序从上到下排布表单项的，但如果指定了order，则按order规定的顺序进行排序。如果表单项被包含在uni-group中，则同组内按order排序|

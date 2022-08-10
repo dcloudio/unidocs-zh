@@ -583,14 +583,14 @@ await uniPush.cidsBindCustomTag(OBJECT)
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| cid | String Array | 是      | 无    | 要修改标签属性的cid列表，数组长度不大于1000 |
+| cids | String Array | 是      | 无    | 要修改标签属性的cid列表，数组长度不大于1000 |
 | custom_tag | String | 是 | 无 | 客户端标签，标签中不能包含空格，单个标签最大长度为32字符，如果含有中文字符需要编码(UrlEncode) |
 
 * 参数示例
 
 ```js
 {
-	"cid": [
+	"cids": [
 	    "xxx"
 	],
     "custom_tag": "xxx"
@@ -619,13 +619,13 @@ await uniPush.cidsUnboundCustomTag(OBJECT)
 ##### 入参说明
 | 名称 | 类型 | 是否必须 | 默认值| 说明 |
 | ------ | ------ | ------ | ------ | ------ |
-| cid | String Array | 是      | 无    | 要修改标签属性的cid列表，数组长度不大于1000 |
+| cids | String Array | 是      | 无    | 要修改标签属性的cid列表，数组长度不大于1000 |
 | custom_tag | String | 是 | 无 | 客户端标签，标签中不能包含空格，单个标签最大长度为32字符，如果含有中文字符需要编码(UrlEncode) |
 
 * 参数示例
 ```js
 {
-    "cid": [
+    "cids": [
         "xxx"
     ],
 	"custom_tag":"xxx"

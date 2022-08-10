@@ -41,19 +41,19 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 
 不满足的标签会被忽略，`<div>`会被转行为`<p>`储存。
 
-| 类型 | 节点 |
-| --- | --- |
-| 行内元素 | `<span> <strong> <b> <ins> <em> <i> <u> <a> <del> <s> <sub> <sup> <img>` |
-| 块级元素 | `<p> <h1> <h2> <h3> <h4> <h5> <h6> <hr> <ol> <ul> <li>` |
+| 类型 | 节点 |平台差异说明 |
+| --- | --- |--- |
+| 行内元素 | `<span> <strong> <b> <ins> <em> <i> <u> <a> <del> <s> <sub> <sup> <img>` |其中`<ins>  <del> `百度小程序不支持 |
+| 块级元素 | `<br> <p> <h1> <h2> <h3> <h4> <h5> <h6> <hr> <ol> <ul> <li>` |其中`<br>`仅百度小程序支持、`<p>`百度小程序不支持|
 
 #### 支持的内联样式
 
 内联样式仅能设置在行内元素或块级元素上，不能同时设置。例如 font-size` 归类为行内元素属性，在 p 标签上设置是无效的。
 
-| 类型 | 样式 |
-| --- | --- |
-| 块级样式 | `text-align` `direction` `margin` `margin-top` `margin-left` `margin-right` `margin-bottom` `padding` `padding-top` `padding-left` `padding-right` `padding-bottom` `line-height` `text-indent` |
-| 行内样式 | `font` `font-size` `font-style` `font-variant` `font-weight` `font-family` `letter-spacing` `text-decoration` `color` `background-color` |
+| 类型 | 样式 |平台差异说明 |
+| --- | --- |--- |
+| 块级样式 | `text-align` `direction` `margin` `margin-top` `margin-left` `margin-right` `margin-bottom` `padding` `padding-top` `padding-left` `padding-right` `padding-bottom` `line-height` `text-indent` |百度小程序仅支持`text-align、direction`|
+| 行内样式 | `font` `font-size` `font-style` `font-variant` `font-weight` `font-family` `letter-spacing` `text-decoration` `color` `background-color` |百度小程序仅支持`color、background-color`|
 
 **注意事项**
 
@@ -90,7 +90,7 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 		methods: {
 			onEditorReady() {
 			    // #ifdef MP-BAIDU
-			    this.editorCtx = requireDynamicLib('editorLib').createEditorContext('editorId');
+			    this.editorCtx = requireDynamicLib('editorLib').createEditorContext('editor');
 			    // #endif
 			    
 			    // #ifdef APP-PLUS || H5 ||MP-WEIXIN

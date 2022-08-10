@@ -18,6 +18,8 @@
 
 uniCloud 用户应通过引入公共模块 `uni-open-bridge-commmon` 操作数据，非 uniCloud 用户通过 http 的方式
 
+<img src="/uniCloud/svg/uni-open-bridge.svg"></img>
+
 ### uni-open-bridge 配置
 
 配置文件需要依赖 `uni-config-center`，在 `uni-config-center` 根目录添加文件夹 `uni-open-bridge`, 新增 `config.json`, 内容如下

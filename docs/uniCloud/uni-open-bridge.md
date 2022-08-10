@@ -18,7 +18,7 @@
 
 uniCloud 用户应通过引入公共模块 `uni-open-bridge-commmon` 操作数据，非 uniCloud 用户通过 http 的方式
 
-<img src="/uniCloud/svg/uni-open-bridge.svg"></img>
+<img src="/svg/uni-open-bridge.svg"></img>
 
 ### uni-open-bridge 配置
 

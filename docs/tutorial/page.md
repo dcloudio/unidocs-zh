@@ -449,25 +449,33 @@ Remove the global custom event listener.
 - [如何使用uni.$emit()和uni.$on() 进行页面间通讯](https://ask.dcloud.net.cn/article/36010)
 
 ## 路由
+## Routing
 
 `uni-app`页面路由为框架统一管理，开发者需要在[pages.json](/collocation/pages?id=pages)里配置每个路由页面的路径及页面样式。类似小程序在 app.json 中配置页面路由一样。所以 `uni-app` 的路由用法与 `Vue Router` 不同，如仍希望采用 `Vue Router` 方式管理路由，可在插件市场搜索 [Vue-Router](https://ext.dcloud.net.cn/search?q=vue-router)。
 
 ### 路由跳转
+### Routing jump
 
 `uni-app` 有两种页面路由跳转方式：使用[navigator](/component/navigator)组件跳转、调用[API](/api/router)跳转。
 
 ## 页面栈
 
 框架以栈的形式管理当前所有页面， 当发生路由切换的时候，页面栈的表现如下：
+The framework manages all current pages in the form of stack. When a route switch occurs, the page stack behaves as follows:
 
 |路由方式|页面栈表现|触发时机|
 |---|---|---|
 |初始化|新页面入栈|uni-app 打开的第一个页面|
 |打开新页面	|新页面入栈							|调用 API &nbsp; [uni.navigateTo](/api/router?id=navigateto) &nbsp;、使用组件 &nbsp;<a href="/component/navigator?id=navigator">&lt;navigator open-type="navigate"/&gt;</a>							|
+| Open a new page| New page onto the stack| Call API [uni.navigateTo](/api/router?id=navigateto), use component <a href="/component/navigator?id=navigator">\<navigator open-type="navigate"/></a>|
 |页面重定向	|当前页面出栈，新页面入栈			|调用 API  &nbsp; [uni.redirectTo](/api/router?id=redirectto) &nbsp;、使用组件&nbsp; <a href="/component/navigator?id=navigator">&lt;navigator open-type="redirectTo"/&gt;</a>							|
+| Page redirection| The current page is out of the stack, and the new page is in the stack| Call API [uni.redirectTo](/api/router?id=redirectto), use component <a href="/component/navigator?id=navigator">\<navigator open-type="redirectTo"/></a>|
 |页面返回	|页面不断出栈，直到目标返回页		|调用 API &nbsp;[uni.navigateBack](/api/router?id=navigateback) &nbsp; 、使用组件&nbsp;<a href="/component/navigator?id=navigator">&lt;navigator open-type="navigateBack"/&gt;</a>&nbsp;、用户按左上角返回按钮、安卓用户点击物理back按键	|
+| Page return| The page is constantly popped until the target returns to the page| Call API [uni.navigateBack](/api/router?id=navigateback) , use component <a href="/component/navigator?id=navigator">\<navigator open-type="navigateBack"/></a>, user presses back button in the upper left corner, Android user presses back button|
 |Tab 切换	|页面全部出栈，只留下新的 Tab 页面	|调用 API &nbsp;[uni.switchTab](/api/router?id=switchtab)&nbsp;  、使用组件&nbsp; <a href="/component/navigator?id=navigator">&lt;navigator open-type="switchTab"/&gt;</a>&nbsp; 、用户切换 Tab				|
+| Tab switching| All the pages are out of the stack, leaving only the new Tab page| Call API [uni.switchTab](/api/router?id=switchtab), use component <a href="/component/navigator?id=navigator">\<navigator open-type="switchTab"/></a>, user switches Tab|
 |重加载		|页面全部出栈，只留下新的页面		|调用 API &nbsp;[uni.reLaunch](/api/router?id=relaunch)&nbsp;  、使用组件 &nbsp;<a href="/component/navigator?id=navigator">&lt;navigator open-type="reLaunch"/&gt;</a>						|
+| Reload| All the pages are out of the stack, leaving only the new page| Call API [uni.reLaunch](/api/router?id=relaunch), Use component <a href="/component/navigator?id=navigator">\<navigator open-type="reLaunch"/></a>|
 
 ## 页面代码规范介绍 @template-block
 

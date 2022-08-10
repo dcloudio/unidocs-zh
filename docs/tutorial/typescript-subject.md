@@ -46,16 +46,19 @@ uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn
 - uni-app 的 vue3 模式：vue 文件及 nvue 文件均支持最新版 ts。
 
 ### 注意事项
+### Precautions
 
 声明 `lang="ts"` 后，该 vue/nvue 文件 import 进来的所有 vue 组件，均需要使用 ts 编写。
 
 **示例代码**
+**Sample code**
 
 改造 uni-badge.vue
 
 ```javascript
 <script lang="ts">
     // 仅展示需要修改的核心代码，完整代码请参考原来的组件。
+    //Only the core code that needs to be modified is displayed. For the complete code, please refer to the original components.
 	import Vue from 'vue';
 	export default Vue.extend({
 		props: {
@@ -95,6 +98,7 @@ uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn
 ```
 
 在 index.vue 中引用 uni-badge 组件
+Reference the uni-badge component in index.vue
 
 ```javascript
 <script lang="ts">

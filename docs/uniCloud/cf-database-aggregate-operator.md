@@ -1055,8 +1055,8 @@ let res = await db.collection('stats').aggregate()
 
  
 ```js
-{ "_id": 1, "index": 160 }
-{ "_id": 2, "index": 100 }
+{ "_id": 1, "sum": 160 }
+{ "_id": 2, "sum": 100 }
 ```
 
 ### map

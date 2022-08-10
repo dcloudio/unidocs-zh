@@ -6,7 +6,7 @@
 
 ### abs
 
-<!--
+<!--类似 JavaScript Array 上的 map 方法
 /// meta
 keyword: abs,绝对值
 -->
@@ -1118,8 +1118,8 @@ let res = await db.collection('stats').aggregate()
 
  
 ```js
-{ "_id": 1, "index": 16 }
-{ "_id": 2, "index": 19 }
+{ "_id": 1, "total": 16 }
+{ "_id": 2, "total": 19 }
 ```
 
 ### objectToArray

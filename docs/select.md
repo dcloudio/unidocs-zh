@@ -8,16 +8,20 @@
 
 
 **uni-app 有哪些已上线的成功案例？**
+**What are the success stories of uni-app that have gone live?**
 
 uni-app是当今主流的开发框架，DCloud有900万开发者，uni统计手机端月活10亿，华为、阿里、腾讯、字节跳动、美团、京东、快手、vivo都在用，案例参考[uni-app 应用案例](http://uniapp.dcloud.io/case)
 
 **uni-app收费吗？**
+**Does uni-app charge?**
 
 ```uni-app``` 是免费并且属于Apache2.0开源协议的产品。DCloud官方承诺无论HBuilderX、uni-app，面向全球程序员永久免费。大家可以放心使用。
 
 DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供有价值的云服务（uniCloud）上，而不在开发工具收费上。
+DCloud is profitable by helping developers to monetize traffic (uni-AD) and provide valuable cloud services (uniCloud), instead of charging for development tools.
 
 **跨端会造成功能受限制吗？**
+**Will cross-side cause function limitation?**
 
 ```uni-app```在跨平台的过程中，不牺牲平台特色，不限制平台的能力使用。
 
@@ -32,8 +36,10 @@ DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供�
 在做小程序时，小程序所有的api都可以使用；而输出到App时，原生渲染引擎、原生sdk集成和混写都支持，使得原生的所有api都可以使用。
 
 同时注意，条件编译不同于代码里if逻辑判断。条件编译块里的代码或指定的文件，只有在特定平台才会被编译进去，不会把不能用的其他平台代码混在一个包里。如果大量使用if判断，会增大体积和影响性能，而条件编译则没有这些问题，减少包体积，减少互相的干扰。
+Also note that conditional compilation is different from if logic judgment in code. The code or specified file in the conditional compilation block will only be compiled in a specific platform, and the unusable code of other platforms will not be mixed in a package. If if judgment is used extensively, it will increase the volume and affect the performance. In contrast, conditional compilation does not have these problems, which can reduce packet size and reduce mutual interference.
 
 **uni-app的手机端用户体验如何？**
+**How is the user experience on the mobile side of uni-app?**
 
 使用```uni-app```开发的微信小程序，因为智能的处理的数据的diff，比大多人手写的原生小程序的性能还好。详细数据评测参考：[https://juejin.im/post/5ca1736af265da30ae314248](https://juejin.im/post/5ca1736af265da30ae314248)
 
@@ -62,6 +68,7 @@ DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供�
 - 评测2、uni-app和微信原生开发的详细比较评测，参考：[https://ask.dcloud.net.cn/article/36484](https://ask.dcloud.net.cn/article/36484)
 
 **只开发App，需要uni-app吗？**
+**Is uni-app needed for App-only development?**
 
 ```uni-app```是更好的跨平台开发框架，开发一次iOS、Android都有了。体验好、开发效率高。
 
@@ -72,8 +79,10 @@ DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供�
 ![](https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/frame_app.png)
 
 过去weex有个很大的问题是api太少，开发时必须iOS、Android原生和前端3拨团队协作开发，实际上react native也如此，因为他们的核心只是高性能渲染器。
+A big problem of weex in the past was that there were too few APIs and the development had to be done collaboratively by 3 teams: iOS, Android native and front-end. In fact, the same is true of react native, because their core is just a high-performance renderer.
 
 uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟多样的插件生态，大多数App的开发不再需要原生介入了，从而把跨平台开发省成本这个核心目的落地了。
+uni-app solves this problem by providing a large number of extended APIs, and has developed a mature and diverse plug-in ecology. Most developments of App no longer requires native intervention, thus realizing the core purpose of cross-platform development to save costs.
 
 ```uni-app```在App侧可以使用丰富的小程序sdk，如网易云信、环信、七牛等众多sdk厂商均原厂维护其小程序sdk版本，而这些sdk均可直接用于uni-app并发布为iOS、Android的App。
 
@@ -84,14 +93,18 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 如果你已经有了原生App，那么可以局部使用```uni-app```，内嵌uni小程序SDK，把部分栏目小程序化，或者直接打造自己的小程序平台。
 
 **uni-app是多端写在一个项目统一升级维护，还是每个端不同的项目，只复用部分代码**
+**Is uni-app written on multiple ends in one project for unified upgrade and maintenance, or is it a different project on each end and only part of the code is reused?**
 
 ```uni-app```是多端写在一个基础项目下，差异使用条件编译来管理。
 
 这有个巨大的好处是一套工程代码，升级时可多端同时更新。
+It has a huge advantage that a set of engineering codes can be updated at the same time when upgrading.
 
 如果把不同端的项目分开，那么维护升级时非常麻烦，无法方便同步升级。
+If the projects on different sides are separated, it is very troublesome for maintenance and upgradation, and it is not easy to upgrade synchronously.
 
 **uni-app 学习成本高吗？基于什么技术栈？**
+**Is uni-app costly to learn? What technology stack is it based on?**
 
 ```uni-app```简单来说是 vue的语法 + 小程序的api。
 
@@ -100,10 +113,12 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 有一定 Vue.js 和微信小程序开发经验的开发者可快速上手 ```uni-app``` 。
 
 没学过vue的同学，也不用掌握vue的全部，只需了解vue基础语法、虚拟dom、数据绑定、组件、vuex，其他如路由、loader 不用学，cli、node.js、webpack也不需要学。
+Novices who have never learned vue do not need to master all of vue, they only need to learn about are the basic syntax of vue, virtual dom, data binding, components and vuex. Others such as routing, loader, cli, node.js, webpack are not within the scope of learning.
 
 官方有入门培训视频，且还有众多培训渠道加入```uni-app```生态，可参考[培训教程资源汇总](http://uniapp.dcloud.io/resource)。
 
 **uni-app 开发体验如何？支持现代前端开发流程吗？**
+**How is the development experience of uni-app? Does it support modern front-end development process?**
 
 ```uni-app``` 积极拥抱社区现有的现代开发流程，包括但不限于：
 
@@ -111,26 +126,33 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 - NPM 包管理系统，详见[参考](http://uniapp.dcloud.io/tutorial/page-script#npm支持)
 - es6+ 语法（发布时会自动编译为es5），详见[参考](http://uniapp.dcloud.io/tutorial/syntax-js#es6-支持)
 - 各种预处理器（less、scss、stylus、typescript）
+- Various preprocessors (less, scss, stylus, typescript)
 - uni-app的官方ide：HBuilderX，在vue、json、markdown、代码提示、操作效率上，有非常明显的优势，可帮助开发者大幅提高工作效率
+- Official ide of uni-app: HBuilderX, has obvious advantages in vue, json, markdown, code prompt and operation efficiency, which can greatly improve the productivity of developers
 - uni-app同时也提供了cli方式，可使用其他开发工具如vscode开发，当然开发效率不如HBuilderX。对比详见[https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
+- uni-app also provides the cli mode, which can be developed by using other development tools such as vscode. Certainly, the development efficiency is not as good as that of HBuilderX. For comparison, see [https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
 - HBuilder也提供了cli，[参考](https://hx.dcloud.net.cn/cli/README)
 
 
 **uni-app 生态开放性如何？能否直接利用现有前端社区资源？**
+**How open is the uni-app ecosystem? Can the existing front-end community resources be directly utilized?**
 
 ```uni-app``` 提供了开放性的生态：
 
 - 丰富的插件市场为开发者提供数千款现成的轮子，[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
+- Rich plug-in market provides developers with thousands of ready-made wheels, [https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
 - 兼容微信小程序 JS SDK，丰富的小程序生态内容可直接引入uni-app，并且在App侧通用，[参考](http://ask.dcloud.net.cn/article/35070)
 - 兼容微信小程序自定义组件，并且App、web侧通用，[参考](http://uniapp.dcloud.io/tutorial/miniprogram-subject#小程序自定义组件支持)
 - App和web提供了renderjs，使得浏览器专用的库也可以在App和web里使用，[参考](https://uniapp.dcloud.io/tutorial/renderjs)
 - 支持 NPM 包管理系统，[参考](http://uniapp.dcloud.io/tutorial/page-script#npm支持)
 - 支持 mpvue 项目及组件，[参考](http://ask.dcloud.net.cn/article/34945)
 - 支持原生插件，见插件市场：[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
+- Support native plug-ins, see plug-in market: [https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)
 - 支持App原生工程里嵌入uni小程序sdk。
 
 
 **uni-app 支持的手机版本最低到多少？**
+**What is the minimum mobile phone version supported by uni-app?**
 1. Web端：uni-app没有限制，同vue2和vue3自身能支持的浏览器版本
 2. 小程序端：uni-app没有限制，同该小程序自身能支持的最低平台
 3. App端：
@@ -138,11 +160,13 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 	- Vue3: 支持的范围是：Android >=5 （使用nvue和vue有区别。某些老国产Android5的rom无法动态升级Android system webview，此时如果使用vue页面需搭配x5内核） , iOS >= 10 
 
 **uni-app成熟度高吗？**
+**Is uni-app mature?**
 
 ```uni-app```在2018年夏天推出，目前版本成熟，生态资源丰富，是当今主流的开发框架，案例众多，手机端引擎月活已经突破10亿！
 
 
 **uni-app的社区活跃吗？**
+**Is the community of uni-app active?**
 
 加入```uni-app```的群就知道，几十个QQ/微信群每天数万条聊天记录，非常活跃。论坛里每天数百个帖子。
 
@@ -166,18 +190,25 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 阿里小程序IDE官方内嵌`uni-app`、腾讯课堂官方录制`uni-app`培训视频、华为腾讯阿里字节跳动京东等众多一线公司使用uni-app，uni-app没有让他们失望，也不会让你失望。
 
 **App打包必须上传DCloud云端吗？代码会泄露吗？**
+**Does App packaging have to be uploaded to DCloud Cloud Service? Will the code be leaked out?**
 
 代码可以云打包，也可以本地打包。
 
 使用云打包时有两种模式：
+There are two modes when using cloud packaging:
 1. 安心打包
+1. Pack with ease
 安心打包不会上传开发者的证书、代码，[详见](https://ask.dcloud.net.cn/article/37979)。
+Pack with ease does not upload the developer's certificate and code, [See details](https://ask.dcloud.net.cn/article/37979).
 2. 传统云打包
+2. Traditional cloud packaging
 传统云打包仅适合没有mac电脑但需要打iOS包的开发者。在这种情况下，代码和证书会上传到DCloud的mac打包服务器，但打包后立即删除，DCloud不会持久化保存。
+Traditional cloud packaging is only suitable for developers who don't have mac computers but need iOS packaging. In this case, codes and certificates will be uploaded to the mac packaging server of DCloud, but will be deleted immediately after packaging. DCloud will not persistently save them.
 
 DCloud是一家正规公司，已通过等保三级认证（证书编号：11010813802-20001），珍惜自己的名誉。之所以提供云打包，是方便不熟悉原生的前端工程师直接生成App安装包。包括让没有mac电脑的工程师也可以打出iOS的包。
 
 **DCloud提供哪些技术支持？碰到框架bug影响业务怎么办？**
+**What technical support does DCloud provide? What if encountering framework bugs that affects the business?**
 
 ```uni-app``` 是DCloud全力打造的重点产品，不是非专业公司的KPI项目。不会因为某些负责人的流动导致框架烂尾。
 ```uni-app``` 的github上的dev分支是频繁更新的，可随时修复bug。并且作为开源产品，开发者也可以修改源码。

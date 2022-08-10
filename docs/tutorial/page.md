@@ -29,27 +29,41 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件�
 `uni-app`会将`pages.json -> pages`配置项中的第一个页面，作为当前工程的首页（启动页）。
 
 ## 页面生命周期 @lifecycle
+## Page life cycle @lifecycle
 
 ``uni-app`` 支持如下页面生命周期函数：
+`uni-app` supports the following page life cycle functions:
 
 |函数名|说明|平台差异说明|最低版本|
+| Function name| Instruction| Platform difference description| Minimum version|
 |:-|:-|:-|:-|
 |onInit|监听页面初始化，其参数同 onLoad 参数，为上个页面传递的数据，参数类型为 Object（用于页面传参），触发时机早于 onLoad|百度小程序|3.1.0+|
 |onLoad|监听页面加载，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参），参考[示例](/api/router?id=navigateto)|||
+| onLoad| listen to the page loading, whose parameter is the data transferred from the previous page, and the parameter type is Object (used for page parameter transmission)), refer to[Example](/api/router?id=navigateto)| | |
 |onShow|监听页面显示。页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面|||
+| onShow| listen to page display. Triggered every time a page appears on the screen, including clicking back from the lower level page to return to the current page| | |
 |onReady|监听页面初次渲染完成。注意如果渲染速度快，会在页面进入动画完成前触发|||
+| onReady| The first rendering of the listening page is completed. Note that if the rendering speed is fast, it will be triggered before the page enters the animation.| | |
 |onHide|监听页面隐藏|||
+| onHide| listen to page hiding| | |
 |onUnload|监听页面卸载|||
+| onUnload| listen to page uninstall| | |
 |onResize|监听窗口尺寸变化|App、微信小程序、快手小程序||
 |onPullDownRefresh|监听用户下拉动作，一般用于下拉刷新，参考[示例](api/ui/pulldown)|||
+| onPullDownRefresh| listen to the user's pull-down action, which is generally used for pull-down refresh, refer to[Example](api/ui/pulldown)| | |
 |onReachBottom|页面滚动到底部的事件（不是scroll-view滚到底），常用于下拉下一页数据。具体见下方注意事项|||
+| onReachBottom| The event that a page scrolls to the bottom (not scroll-view to the bottom) is often used to pull down the data on the next page. See the precautions below for details| | |
 |onTabItemTap|点击 tab 时触发，参数为Object，具体见下方注意事项|微信小程序、QQ小程序、支付宝小程序、百度小程序、H5、App、快手小程序、京东小程序||
 |onShareAppMessage|用户点击右上角分享|微信小程序、QQ小程序、支付宝小程序、字节小程序、飞书小程序、快手小程序、京东小程序||
 |onPageScroll|监听页面滚动，参数为Object|nvue暂不支持||
+| onPageScroll| Listen to page scrolling with the parameter of Object| not supported by nvue temporarily| |
 |onNavigationBarButtonTap|监听原生标题栏按钮点击事件，参数为Object|App、H5||
+| onNavigationBarButtonTap| Listen to the click event of native title bar button with the parameter of Object| App, H5| |
 |onBackPress|监听页面返回，返回 event = {from:backbutton、 navigateBack} ，backbutton 表示来源是左上角返回按钮或 android 返回键；navigateBack表示来源是 uni.navigateBack ；详细说明及使用：[onBackPress 详解](http://ask.dcloud.net.cn/article/35120)。支付宝小程序只有真机能触发，只能监听非navigateBack引起的返回，不可阻止默认行为。|app、H5、支付宝小程序||
 |onNavigationBarSearchInputChanged|监听原生标题栏搜索输入框输入内容变化事件|App、H5|1.6.0|
+| onNavigationBarSearchInputChanged| Listen to the input content change event of search input box of the native title bar| App, H5| 1.6.0|
 |onNavigationBarSearchInputConfirmed|监听原生标题栏搜索输入框搜索事件，用户点击软键盘上的“搜索”按钮时触发。|App、H5|1.6.0|
+| onNavigationBarSearchInputConfirmed| Listen to the search event of search input box of the native title bar, which is triggered when the user clicks the "Search" button on the soft keyboard.| App, H5| 1.6.0|
 |onNavigationBarSearchInputClicked|监听原生标题栏搜索输入框点击事件（pages.json 中的 searchInput 配置 disabled 为 true 时才会触发）|App、H5|1.6.0|
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序|2.8.1+|
@@ -63,20 +77,28 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件�
 可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pages#globalstyle)，比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
 
 如使用scroll-view导致页面没有滚动，则触底事件不会被触发。scroll-view滚动到底部的事件请参考scroll-view的文档
+If using scroll-view causes no scrolling in the page, the scrolling to the bottom event will not be triggered. Please refer to the documentation of scroll-view for the scrolling to the bottom event of scroll-view
 
 
 `onPageScroll` （监听滚动、滚动监听、滚动事件）参数说明：
 
 |属性|类型|说明|
+| Attribute| Type| Instruction|
 |---|---|---|
 |scrollTop|Number|页面在垂直方向已滚动的距离（单位px）|
+| scrollTop| Number| The distance (in px) that the page has scrolled over vertically|
 
 **注意**
+**Notice**
 - `onPageScroll`里不要写交互复杂的js，比如频繁修改页面。因为这个生命周期是在渲染层触发的，在非h5端，js是在逻辑层执行的，两层之间通信是有损耗的。如果在滚动过程中，频发触发两层之间的数据交换，可能会造成卡顿。
+- Don not write js with complicated interactions in `onPageScroll`, such as frequently modifying pages. Since this life cycle is triggered in the rendering layer and on the non-h5 side, js is executed in the logical layer, and the communication between the two layers is lossy. If the data exchange between the two layers is frequently triggered during the rolling process, it may cause a lag.
 - 如果想实现滚动时标题栏透明渐变，在App和H5下，可在pages.json中配置titleNView下的type为transparent，[参考](https://uniapp.dcloud.io/collocation/pages?id=app-titlenview)。
+- If you want to realize the transparent gradient of title bar when scrolling, you can configure the type under titleNView as transparent in pages.json on App and H5 sides.[Refer to](https://uniapp.dcloud.io/collocation/pages?id=app-titlenview).
 - 如果需要滚动吸顶固定某些元素，推荐使用css的粘性布局，参考[插件市场](https://ext.dcloud.net.cn/plugin?id=715)。插件市场也有其他js实现的吸顶插件，但性能不佳，需要时可自行搜索。
+- If scrolling sticky is required to secure certain elements, it is recommended to use the sticky layout of css, refer to the [Plug-in market](https://ext.dcloud.net.cn/plugin?id=715). There are also other top-docking plug-ins based on js in the plug-in market but poor in performance. You can search by yourselves if necessary.
 - 在App、微信小程序、H5中，也可以使用wxs监听滚动，[参考](https://uniapp.dcloud.io/tutorial/miniprogram-subject#wxs)；在app-nvue中，可以使用bindingx监听滚动，[参考](https://uniapp.dcloud.io/tutorial/nvue-api#nvue-里使用-bindingx)。
 - `onBackPress`上不可使用`async`，会导致无法阻止默认返回
+- `async` is not available on `onBackPress`, which will prevent the default return
 
 ```js
 onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代替
@@ -87,13 +109,19 @@ onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代�
 `onTabItemTap` 返回的json对象说明：
 
 |属性|类型|说明|
+| Attribute| Type| Instruction|
 |---|---|---|
 |index|String|被点击tabItem的序号，从0开始|
+| index| String| The serial number of the clicked tabItem, starting from 0|
 |pagePath|String|被点击tabItem的页面路径|
+| pagePath| String| The page path of the clicked tabItem|
 |text|String|被点击tabItem的按钮文字|
+| text| String| The buttom text of the clicked tabItem|
 
 **注意**
+**Notice**
 - onTabItemTap常用于点击当前tabitem，滚动或刷新当前页面。如果是点击不同的tabitem，一定会触发页面切换。
+- onTabItemTap is often used to click the current tabitem and scroll or refresh the current page. If you click another tabitem, it will definitely trigger page switching.
 - 如果想在App端实现点击某个tabitem不跳转页面，不能使用onTabItemTap，可以使用[plus.nativeObj.view](http://www.html5plus.org/doc/zh_cn/nativeobj.html)放一个区块盖住原先的tabitem，并拦截点击事件。
 - 支付宝小程序平台onTabItemTap表现为点击非当前tabitem后触发，因此不能用于实现点击返回顶部这种操作
 
@@ -101,25 +129,31 @@ onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代�
 onTabItemTap : function(e) {
 	console.log(e);
 	// e的返回格式为json对象： {"index":0,"text":"首页","pagePath":"pages/index/index"}
+	// Return format of e is json object: {"index":0,"text":"Home page","pagePath":"pages/index/index"}
 },
 ```
 
 `onNavigationBarButtonTap` 参数说明：
 
 |属性|类型|说明|
+| Attribute| Type| Instruction|
 |---|---|---|
 |index|Number|原生标题栏按钮数组的下标|
+| index| Number| Subscript of native title bar button array|
 
 ```js
 onNavigationBarButtonTap : function (e) {
 	console.log(e);
 	// e的返回格式为json对象：{"text":"测试","index":0}
+	// The return format of e is a json object: {"text":"test","index":0}
 }
 ```
 
 `onBackPress` 回调参数对象说明：
+Description of `onBackPress` callback parameter object:
 
 |属性|类型|说明|
+| Attribute| Type| Instruction|
 |---|---|---|
 |from|String|触发返回行为的来源：'backbutton'——左上角导航栏按钮及安卓返回键；'navigateBack'——uni.navigateBack() 方法。**支付宝小程序端不支持返回此字段**|
 ```javascript
@@ -134,24 +168,34 @@ export default {
 ```
 
 **注意**
+**Notice**
 
 - nvue 页面weex编译模式支持的生命周期同weex，具体参考：[weex生命周期介绍](https://uniapp.dcloud.io/tutorial/nvue-outline?id=%e7%bc%96%e8%af%91%e6%a8%a1%e5%bc%8f)。
 - 支付宝小程序真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
 
 ## 组件生命周期@componentlifecycle
+## Component life cycle@componentlifecycle
 
 `uni-app` 组件支持的生命周期，与vue标准组件的生命周期相同。这里没有页面级的onLoad等生命周期：
 
 |函数名|说明|平台差异说明|最低版本|
+| Function name| Instruction| Platform difference description| Minimum version|
 |:-|:-|:-|:-|
 |beforeCreate|在实例初始化之前被调用。[详见](https://cn.vuejs.org/v2/api/#beforeCreate)|||
 |created|在实例创建完成后被立即调用。[详见](https://cn.vuejs.org/v2/api/#created)|||
+| created| Called immediately after the instance is created. [See details](https://cn.vuejs.org/v2/api/#created)| | |
 |beforeMount|在挂载开始之前被调用。[详见](https://cn.vuejs.org/v2/api/#beforeMount)|||
+| beforeMount| Called before mounting. [See details](https://cn.vuejs.org/v2/api/#beforeMount)| | |
 |mounted|挂载到实例上去之后调用。[详见](https://cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用```$nextTick```[Vue官方文档](https://cn.vuejs.org/v2/api/#Vue-nextTick)|||
+| mounted| Called after being mounted to the instance. [See details](https://cn.vuejs.org/v2/api/#mounted) Note: It is not certain that all the sub-components are mounted here. If you need to perform operations after sub-components are fully mounted, you can use `$nextTick`[Vue official documents](https://cn.vuejs.org/v2/api/#Vue-nextTick)| | |
 |beforeUpdate|数据更新时调用，发生在虚拟 DOM 打补丁之前。[详见](https://cn.vuejs.org/v2/api/#beforeUpdate)|仅H5平台支持||
+| beforeUpdate| Called when the data is updated, which occurs before the virtual DOM is patched. [See details](https://cn.vuejs.org/v2/api/#beforeUpdate)| Only supported by H5 platform| |
 |updated|由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。[详见](https://cn.vuejs.org/v2/api/#updated)|仅H5平台支持||
+| updated| The virtual DOM is re-rendered and patched due to data changes, after which the hook will be called. [See details](https://cn.vuejs.org/v2/api/#updated)| Only supported by H5 platform| |
 |beforeDestroy|实例销毁之前调用。在这一步，实例仍然完全可用。[详见](https://cn.vuejs.org/v2/api/#beforeDestroy)|||
+| beforeDestroy| Called before the instance is destroyed. At this step, the instance is still fully available. [See details](https://cn.vuejs.org/v2/api/#beforeDestroy)| | |
 |destroyed|Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。[详见](https://cn.vuejs.org/v2/api/#destroyed)|||
+| destroyed| Call after the Vue instance is destroyed. After calling, everything indicated by Vue instance will be unbound. All event listeners will be removed, and all sub-instances will be destroyed. [See details](https://cn.vuejs.org/v2/api/#destroyed)| | |
 
 ## 页面调用接口
 
@@ -160,6 +204,7 @@ export default {
 ```getApp()``` 函数用于获取当前应用实例，一般用于获取globalData 。
 
 **实例**
+**Instance**
 
 ```javascript
 const app = getApp()
@@ -167,9 +212,13 @@ console.log(app.globalData)
 ```
 
 **注意：**
+**Notice:**
 - 不要在定义于 `App()` 内的函数中，或调用 `App` 前调用 `getApp()` ，可以通过 `this.$scope` 获取对应的app实例
+- Do not call `getApp()` in a function defined in `App()` or before calling `App`, you can get the corresponding app instance through `this.$scope`
 - 通过 `getApp()` 获取实例之后，不要私自调用生命周期函数。
+- After obtaining the instance through `getApp()`, do not call the life cycle function privately.
 - 当在首页`nvue`中使用`getApp()`不一定可以获取真正的`App`对象。对此提供了`const app = getApp({allowDefault: true})`用来获取原始的`App`对象，可以用来在首页对`globalData`等初始化
+- When you use `getApp()` in the home page `nvue`, you may not necessarily get the real `App` object. For this reason, `const app = getApp({allowDefault: true})` is provided to obtain the original `App` object, which can be used to initialize `globalData` etc. on the homepage
 
 ### getCurrentPages()
 
@@ -241,11 +290,15 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 触发全局的自定义事件。附加参数都会传给监听器回调。
 
 |属性		|类型	|描述				|
+| Attribute| Type| Describe|
 |---		|---	|---				|
 |eventName	|String	|事件名				|
+| eventName| String| Event name|
 |OBJECT		|Object	|触发事件携带的附加参数	|
+| OBJECT| Object| Additional parameters carried by triggering events|
 
 **代码示例**
+**Code example**
 ```javascript
 	uni.$emit('update',{msg:'页面更新'})
 ```
@@ -254,14 +307,19 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 ### uni.$on(eventName,callback) @on
 
 监听全局的自定义事件。事件可以由 uni.$emit 触发，回调函数会接收所有传入事件触发函数的额外参数。
+Listen to global custom events. Events can be triggered by uni.$emit, and the callback function receives all the additional parameters of the incoming event trigger function.
 
 |属性		|类型		|描述			|
+| Attribute| Type| Describe|
 |---		|---		|---			|
 |eventName	|String		|事件名			|
+| eventName| String| Event name|
 |callback	|Function	|事件的回调函数	|
+| callback| Function| Event callback function|
 
 
 **代码示例**
+**Code example**
 ```javascript
 	uni.$on('update',function(data){
 		console.log('监听到事件来自 update ，携带参数 msg 为：' + data.msg);
@@ -272,14 +330,19 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 ### uni.$once(eventName,callback) @once
 
 监听全局的自定义事件。事件可以由 uni.$emit 触发，但是只触发一次，在第一次触发之后移除监听器。
+Listen to global custom events. Events can be triggered by uni.$emit, but only once. Remove the listener after the first trigger.
 
 |属性		|类型		|描述			|
+| Attribute| Type| Describe|
 |---		|---		|---			|
 |eventName	|String		|事件名			|
+| eventName| String| Event name|
 |callback	|Function	|事件的回调函数	|
+| callback| Function| Event callback function|
 
 
 **代码示例**
+**Code example**
 ```javascript
 	uni.$once('update',function(data){
 		console.log('监听到事件来自 update ，携带参数 msg 为：' + data.msg);
@@ -289,21 +352,31 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 ### uni.$off([eventName, callback]) @off
 
 移除全局自定义事件监听器。
+Remove the global custom event listener.
 
 |属性		|类型			|描述			|
+| Attribute| Type| Describe|
 |---		|---			|---			|
 |eventName	|Array＜String＞ |事件名			|
+| eventName| Array＜String＞| Event name|
 |callback	|Function		|事件的回调函数	|
+| callback| Function| Event callback function|
 
 **Tips**
 - 如果没有提供参数，则移除所有的事件监听器；
+- If no parameters are provided, remove all event listeners;
 - 如果只提供了事件，则移除该事件所有的监听器；
+- If only the event is provided, remove all listeners of the event;
 - 如果同时提供了事件与回调，则只移除这个回调的监听器；
+- If both event and callback are provided, only the listener of this callback will be removed;
 - 提供的回调必须跟$on的回调为同一个才能移除这个回调的监听器；
+- The provided callback must be the same one as the callback of $on to remove the listener of this callback;
 
 **代码示例**
+**Code example**
 
 `$emit`、`$on`、`$off`常用于跨页面、跨组件通讯，这里为了方便演示放在同一个页面
+`$emit`, `$on` and `$off` are commonly used for cross-page and cross-component communication, and are placed on the same page for easy demonstration
 
 ```html
 	<template>
@@ -365,8 +438,11 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 
 
 **注意事项**
+**Precautions**
 - uni.$emit、 uni.$on 、 uni.$once 、uni.$off 触发的事件都是 App 全局级别的，跨任意组件，页面，nvue，vue 等
+- The events triggered by uni.$emit, uni.$on, uni.$once and uni.$off are all at the App global level, spanning arbitrary component, page, nvue, vue, etc.
 - 使用时，注意及时销毁事件监听，比如，页面 onLoad 里边 uni.$on 注册监听，onUnload 里边 uni.$off 移除，或者一次性的事件，直接使用 uni.$once 监听
+- When using, remember to destroy event listening to in time, for example, uni.$on registered listening to in the page onLoad, uni.$off removed in the page onUnload, or one-off events that use uni.$once to listen to directly
 
 扩展阅读：
 
@@ -402,6 +478,7 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 `<block/>` 在不同的平台表现存在一定差异，推荐统一使用 `<template/>`。
 
 **代码示例**
+**Code example**
 
 ```html
 <template>

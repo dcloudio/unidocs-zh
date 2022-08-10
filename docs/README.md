@@ -20,18 +20,21 @@ pageClass: custom-page-class
           <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7c946930-bcf2-11ea-b997-9918a5dda011.png" width="160" />
         </div>
         <b>Android版</b>
+        <b>Android version</b>
       </a>
       <a href="https://itunes.apple.com/cn/app/hello-uni-app/id1417078253?mt=8" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7c910dd0-bcf2-11ea-b680-7980c8a877b8.png" width="160" />
         </div>
         <b>iOS版</b>
+        <b>iOS version</b>
       </a>
       <a href="https://hellouniapp.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/uni-h5-hosting-qr.png" width="160" />
         </div>
         <b>Web版</b>
+        <b>Web version</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/gh_33446d7f7a26_430.jpg" width="160" /></div>
@@ -134,8 +137,10 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">开发者/案例数量更多</h5>
+        <h5 class="uniapp-home-content-item-title">More developers/cases</h5>
         <p class="uniapp-home-content-item-text">数百万应用、uni统计月活12亿、70+微信/qq群、更高的百度指数</p>
         <p class="uniapp-home-content-item-text">跨端完善度更高，真正落地的提高生产力</p>
+        <p class="uniapp-home-content-item-text">Higher cross-terminal completeness, truly improved productivity</p>
       </div>
     </div>
     <div class="uniapp-home-content-item">
@@ -144,7 +149,9 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">平台能力不受限</h5>
+        <h5 class="uniapp-home-content-item-title">Platform capability is not limited</h5>
          <p class="uniapp-home-content-item-text">在跨端的同时，通过条件编译+平台特有API调用，可以优雅的为某平台写个性化代码，调用专有能力而不影响其他平台。</p>
+         <p class="uniapp-home-content-item-text">While crossing sides, you can elegantly write personalized code for a certain platform through conditional compilation + platform-specific API calls, and call proprietary capabilities without affecting other platforms.</p>
         <p class="uniapp-home-content-item-text">支持原生代码混写和原生sdk集成。</p>
       </div>
     </div>
@@ -154,8 +161,11 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">性能体验优秀</h5>
+        <h5 class="uniapp-home-content-item-title">Excellent performance experience</h5>
         <p class="uniapp-home-content-item-text">加载新页面速度更快、自动diff更新数据。</p>
+        <p class="uniapp-home-content-item-text">Load new pages faster, and automatically diff the updated data.</p>
         <p class="uniapp-home-content-item-text">App端支持原生渲染，可支撑更流畅的用户体验。</p>
+        <p class="uniapp-home-content-item-text">App side supports native rendering, which can support a smoother user experience.</p>
         <p class="uniapp-home-content-item-text">小程序端的性能优于市场其他框架。<a href="https://ask.dcloud.net.cn/article/35947" target="_blank">评测</a></p>
       </div>
     </div>
@@ -165,7 +175,9 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">周边生态丰富</h5>
+        <h5 class="uniapp-home-content-item-title">Rich surrounding ecology</h5>
         <p class="uniapp-home-content-item-text"><a href="https://ext.dcloud.net.cn/?orderBy=WeekDownload" target="_blank">插件市场</a>数千款插件。</p>
+        <p class="uniapp-home-content-item-text">There are thousands of plugins available on the <a href="https://ext.dcloud.net.cn/?orderBy=WeekDownload" target="_blank">Plug-in market</a>.</p>
         <p class="uniapp-home-content-item-text">支持NPM、支持小程序组件和SDK。</p>
         <p class="uniapp-home-content-item-text">微信生态的各种sdk可直接用于跨平台App。</p>
       </div>
@@ -176,6 +188,7 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">学习成本低</h5>
+        <h5 class="uniapp-home-content-item-title">Low learning cost</h5>
         <p class="uniapp-home-content-item-text">基于通用的前端技术栈，采用vue语法+微信小程序api，无额外学习成本。</p>
       </div>
     </div>
@@ -185,8 +198,11 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">开发成本低</h5>
+        <h5 class="uniapp-home-content-item-title">Low development cost</h5>
         <p class="uniapp-home-content-item-text">不止开发成本，招聘、管理、测试各方面成本都大幅下降。</p>
+        <p class="uniapp-home-content-item-text">Not only the development cost, but also the costs of recruitment, management and testing have declined to a great extent.</p>
         <p class="uniapp-home-content-item-text">HBuilderX是高效开发神器，熟练掌握后研发效率至少翻倍（即便只开发一个平台）。</p>
+        <p class="uniapp-home-content-item-text">HBuilderX is an efficient development tool, which can at least double the efficiency of R&amp;D after mastering it (even if only one platform is developed).</p>
       </div>
     </div>
 </div>
@@ -219,5 +235,6 @@ pageClass: custom-page-class
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/efd8e280-60a9-11eb-a16f-5b3e54966275.jpg)
 
 实际运行效果如下（点击图片可放大）：
+The actual running effect is as follows (click on the image to enlarge):
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ec6e95dd-77ad-4d14-aafa-ca503f5b9e53.jpg)

@@ -1,8 +1,10 @@
 #### live-pusher
 
 实时音视频录制，也称直播推流。
+Live audio and video recording, also known as live-pusher.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -12,15 +14,21 @@ app平台的 3.4.1+ vue页面已支持 live-pusher，3.4.1以前的版本
 需编写条件编译代码，使用 `plus.video.LivePusher`，[业务指南](https://ask.dcloud.net.cn/article/13416)、[规范文档](http://www.html5plus.org/doc/zh_cn/video.html#plus.video.LivePusher)。还是推荐直接使用nvue里的`live-pusher`组件。
 
 app开发，推荐使用nvue做直播，比使用vue的优势有：
+For app development, it is recommended to use nvue for live streaming. Compared with vue, it has the following advantages:
 1. nvue也可一套代码编译多端。
+1. nvue can also compile multiple sides with a set of codes.
 2. nvue的cover-view比vue的cover-view更强大，在视频上绘制元素更容易。如果只考虑App端的话，不用cover-view，任意组件都可以覆盖live-pusher组件，因为nvue没有层级问题。
+2. cover-view of nvue is more powerful than that of vue, making it easier to draw elements on video. If only the App side is considered, any component can override the live-pusher component without using cover-view, for there is no hierarchy problem.
 3. 若需要视频内嵌在swiper里上下滑动（类抖音、映客首页模式），App端只有nvue才能实现
+3. If you need the video embedded in the swiper to slide up and down (such as the home page modes like Tik Tok and Inke), only nvue can achieve on the app side
 当然nvue相比vue的坏处是css写法受限，如果只开发微信小程序，不考虑App，那么使用vue页面也是一样的。
 
 
 **参数说明**
+**Parameter Description**
 
 设置live-pusher组件的推流地址，推流视频模式等。
+Set the live-pusher address and live-pusher video mode of the live-pusher component.
 
 属性|类型 |默认值|必填|说明|平台差异说明|
 :--|:--|:--|:--|:--|:--|
@@ -57,16 +65,21 @@ audio-volume-type|string|voicecall|否|音量类型|微信小程序2.10.0
 
 
 #### orientation 的合法值
+#### Legal value of orientation
 
 |值|说明|
+| Value| Instruction|
 |:-|:-|
 |vertical|竖直|
+| vertical| Vertical|
 |horizontal|水平|
+| horizontal| Horizontal|
 
 
 #### local-mirror 的合法值
 
 |值|说明|
+| Value| Instruction|
 |:-|:-|
 |auto|前置摄像头镜像，后置摄像头不镜像|
 |enable|前后置摄像头均镜像|
@@ -76,6 +89,7 @@ audio-volume-type|string|voicecall|否|音量类型|微信小程序2.10.0
 #### audio-reverb-type 的合法值
 
 |值|说明|
+| Value| Instruction|
 |:-|:-|
 |0|关闭|
 |1|KTV|
@@ -90,11 +104,13 @@ audio-volume-type|string|voicecall|否|音量类型|微信小程序2.10.0
 #### audio-volume-type 的合法值
 
 |值|说明|
+| Value| Instruction|
 |:-|:-|
 |media|媒体音量|
 |voicecall|通话音量|
 
 #### 网络状态数据（info）安卓
+#### Network status data (info) Android
 
 键名|说明
 :--|:--|
@@ -108,6 +124,7 @@ videoWidth | 视频画面的宽度
 videoHeight | 视频画面的高度
 
 #### 网络状态数据（info）iOS
+#### Network status data (info) iOS
 
 参数|类型 |说明
 :--|:--|:--|
@@ -115,11 +132,14 @@ code|Number|  code码
 message|string| 具体的网络状态信息
 
 #### 事件
+#### Event
 
 #### statechange
 > 状态变化事件
+> State change event
 
 #####  返回参数（detail）的详细说明
+##### Detailed description of return parameter (detail)
 参数|类型|说明
 :--|:--|:--|
 code|Number|
@@ -128,8 +148,10 @@ message|string|
 
 #### netstatus
 > 网络状态通知事件
+> Network status notification event
 
 #####  安卓 返回参数（detail）的详细说明
+##### For Android, the detailed description of return parameter (detail)
 键名|说明
 :--|:--|
 videoBitrate | 当前视频编/码器输出的比特率，单位 kbps
@@ -142,6 +164,7 @@ videoWidth | 视频画面的宽度
 videoHeight | 视频画面的高度
 
 ##### iOS 返回参数（detail）的详细说明
+##### For iOS, the detailed description of return parameter (detail)
 参数|类型 |说明
 :--|:--|:--|
 code|Number| code码
@@ -150,8 +173,10 @@ message|string| 具体的网络状态信息
 
 #### error
 > 渲染错误事件
+> Render error event
 
 #####  返回参数（detail）的详细说明
+##### Detailed description of return parameter (detail)
 参数|类型 |说明
 :--|:--|:--|
 errCode|Number|
@@ -186,6 +211,7 @@ errMsg|string|
         },
         onReady() {
             // 注意：需要在onReady中 或 onLoad 延时
+            // Note: Need to delay in onReady or onLoad
             this.context = uni.createLivePusherContext("livePusher", this);
         },
         methods: {
@@ -267,10 +293,13 @@ errMsg|string|
 ```
 
 相关api：[uni.createLivePusherContext](/api/media/live-pusher-context?id=createLivePusherContext)
+Related api: [uni.createLivePusherContext](/api/media/live-pusher-context?id=createLivePusherContext)
 
 
 
 **注意**
+**Notice**
 
 * live-pusher 是原生组件，在小程序端层级高于前端组件，需使用cover-view覆盖。在低版本微信中，live-pusher无法内嵌于 scroll-view、swiper、picker-view、movable-view 中。在App端的nvue文件中，live-pusher没有这类限制。
 * App平台：使用 `<live-pusher/>` 组件，打包 App 时必须勾选 manifest.json->App 模块权限配置->LivePusher(直播推流) 模块。
+* App platform: When using the `<live-pusher/>` component, you must check manifest.json->App module permission configuration->LivePusher module when packaging the App.

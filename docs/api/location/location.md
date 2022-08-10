@@ -1,9 +1,12 @@
 ### uni.getLocation(OBJECT)
 获取当前的地理位置、速度。
+Get the current geographical position and speed.
 
 **OBJECT 参数说明**
+**OBJECT parameter description**
 
 |参数名|类型|必填|说明|平台差异说明|
+| Parameter name| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-:|
 |type|String|否|默认为 wgs84 返回 gps 坐标，gcj02 返回国测局坐标，可用于 ``uni.openLocation`` 和 map 组件坐标，App 和 H5 需配置定位 SDK 信息才可支持 gcj02。||
 |altitude|Boolean|否|传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度|字节跳动小程序、飞书小程序、支付宝小程序不支持|
@@ -14,37 +17,62 @@
 |accuracy|String|否|默认为 high，指定期望精度，支持 high，best。当指定 high 时，期望精度值为100m，当指定 best 时期望精度值为20m。当定位得到的精度不符合条件时，在timeout之前会继续定位，尝试拿到符合要求的定位结果|仅飞书小程序支持|
 |isHighAccuracy|Boolean|否|开启高精度定位|App (3.4.0+)、H5 (3.4.0+)、微信小程序 (基础库 2.9.0+)|
 |success|Function|是|接口调用成功的回调函数，返回内容详见返回参数说明。||
+| success| Function| Yes| Callback function for successful interface calling. See the notices on returning parameter description for returning contents.| |
 |fail|Function|否|接口调用失败的回调函数||
+| fail| Function| No| Callback function for failed interface calling| |
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+| complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|  |
 
 **success 返回参数说明**
+**success return parameter description**
 
 |参数|说明|
+| Parameter| Instruction|
 |:-|:-|
 |latitude|纬度，浮点数，范围为-90~90，负数表示南纬|
+| latitude| Latitude, floating number, from -90 to 90. Negative number indicates south latitude|
 |longitude|经度，浮点数，范围为-180~180，负数表示西经|
+| longitude| Longitude, floating number, from -180 to 180. Negative number indicates west longitude|
 |speed|速度，浮点数，单位m/s|
+| speed| Speed, floating number, in m/s|
 |accuracy|位置的精确度|
+| accuracy| Position accuracy|
 |altitude|高度，单位 m|
+| altitude| Height, in m|
 |verticalAccuracy|垂直精度，单位 m（Android 无法获取，返回 0）|
+| verticalAccuracy| Vertical accuracy, in m (If Android can't get it, return 0)|
 |horizontalAccuracy|水平精度，单位 m|
+| horizontalAccuracy| Horizontal accuracy, in m|
 |[address](/api/location/location?id=address)|地址信息（仅App端支持，需配置geocode为true）|
+| [address](/api/location/location?id=address)| Address information (only supported by App side, geocode needs to be configured to true)|
 
 **address 地址信息说明**
+**address information description**
 
 |属性|类型|描述|说明|
+| Attribute| Type| Describe| Instruction|
 |:-|:-|:-|:-|
 |country|String|国家|如“中国”，如果无法获取此信息则返回undefined|
+| country| String| Nation| e.g. "China". undefined is returned if no information is obtained.|
 |province|String|省份名称|如“北京市”，如果无法获取此信息则返回undefined|
+| province| String| Province| e.g. "Beijing City". undefined is returned if no information is obtained.|
 |city|String|城市名称|如“北京市”，如果无法获取此信息则返回undefined|
+| city| String| City| e.g. "Beijing City". undefined is returned if no information is obtained.|
 |district|String|区（县）名称|如“朝阳区”，如果无法获取此信息则返回undefined|
+| district| String| District (county) name| e.g. "Chaoyang District". undefined is returned if no information is obtained.|
 |street|String|街道信息|如“酒仙桥路”，如果无法获取此信息则返回undefined|
+| street| String| Street| e.g. "Jiuxianqiao Road". undefined is returned if no information is obtained.|
 |streetNum|String|获取街道门牌号信息|如“3号”，如果无法获取此信息则返回undefined|
+| streetNum| String| Get street number information| e.g. "No. 3". undefined is returned if no information is obtained.|
 |poiName|String|POI信息|如“电子城．国际电子总部”，如果无法获取此信息则返回undefined|
+| poiName| String| POI information| Such as "Electronic City. International Electronics Headquarters". undefined is returned if no information is obtained.|
 |postalCode|String|邮政编码|如“100016”，如果无法获取此信息则返回undefined|
+| postalCode| String| Postal code| e.g. "100016". undefined is returned if no information is obtained.|
 |cityCode|String|城市代码|如“010”，如果无法获取此信息则返回undefined|
+| cityCode| String| City code| e.g. "010". undefined is returned if no information is obtained.|
 
 **示例**
+**Example**
 
 ```javascript
 uni.getLocation({
@@ -57,6 +85,7 @@ uni.getLocation({
 ```
 
 #### 注意
+#### Notice
 
 - `H5 平台`
   - 在较新的浏览器上，H5 端获取定位信息，要求部署在 **https** 服务上，本地预览（localhost）仍然可以使用 http 协议。
@@ -80,8 +109,10 @@ uni.getLocation({
 
 ### uni.chooseLocation(OBJECT)
 打开地图选择位置。
+Open the map to select a location.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -89,32 +120,44 @@ uni.getLocation({
 
 
 **OBJECT 参数说明**
+**OBJECT parameter description**
 
 |参数名|类型|必填|说明|平台差异说明|
+| Parameter name| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |latitude|Number|否|目标地纬度|微信小程序（2.9.0+）、H5-Vue3（3.2.10+）|
 |longitude|Number|否|目标地经度|微信小程序（2.9.0+）、H5-Vue3（3.2.10+）|
 |keyword|String|否|搜索关键字，仅App平台支持||
 |success|Function|是|接口调用成功的回调函数，返回内容详见返回参数说明。||
+| success| Function| Yes| Callback function for successful interface calling. See the notices on returning parameter description for returning contents.| |
 |fail|Function|否|接口调用失败的回调函数（获取定位失败、用户取消等情况下触发）||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 
 **注意**
+**Notice**
 - 因平台差异，如果SDK配置百度地图，需要设置keyword，才能显示相关地点
+- In light of platform differences, for SDK configured with Baidu map, keyword setting is necessary for relevant places being displayed
 - `nvue` 下支持高德地图和Google地图(3.4+)，不支持百度地图
 - `HBuilderX 2.4.0+` 非 weex 编译模式仅支持高德地图
 
 
 **success 返回参数说明**
+**success return parameter description**
 
 |参数|说明|
+| Parameter| Instruction|
 |:-|:-|
 |name|位置名称|
+| name| Location name|
 |address|详细地址|
+| address| Address|
 |latitude|纬度，浮点数，范围为-90~90，负数表示南纬，使用 gcj02 国测局坐标系。|
+| latitude| Latitude, floating number, from -90 to 90. Negative number indicates south latitude, using gcj02 coordinate of State Bureau of Surveying and Mapping of China.|
 |longitude|经度，浮点数，范围为-180~180，负数表示西经，使用 gcj02 国测局坐标系。|
+| longitude| Longitude, floating number, from -180 to 180. Negative number indicates west longitude, using gcj02 coordinate of State Bureau of Surveying and Mapping of China.|
 
 **示例**
+**Example**
 
 ```javascript
 uni.chooseLocation({
@@ -128,6 +171,7 @@ uni.chooseLocation({
 ```
 
 **注意**
+**Notice**
 - 不同端，使用地图选择时基于的底层地图引擎不一样，详见地图[map](/component/map)组件的地图服务商支持。
   - `app` 中也可以使用百度定位，在 manifest 中配置，打包后生效。
   - `app-nvue` 里只能用高德定位和Google地图(3.4+)，不能用百度地图。另外选择地图、查看地图位置的API也仅支持高德地图和Google地图(3.4+)。所以App端如无特殊必要，建议使用高德地图。

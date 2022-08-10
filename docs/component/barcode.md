@@ -1,13 +1,19 @@
 #### Barcode
 
 app端nvue专用的扫码组件。
+Scanning component specific to the app-side nvue.
 
 - 此组件用于app端nvue页面实现内嵌到界面上的扫码。其他场景、其他平台，请使用全屏扫码API：[uni.scanCode](https://uniapp.dcloud.io/api/system/barcode) 
+- This component is used for the nvue page on the app side to realize the scanning embedded in the interface. For other scenes and other platforms, please use the full-screen scanning API: [uni.scanCode](https://uniapp.dcloud.io/api/system/barcode)
 - App下纯nvue项目（manifest中renderer为native），暂不支持uni.scanCode API，此时只能使用barcode组件来替代。
+- For the pure nvue project of App (rendered as native in manifest), the uni.scanCode API is temporarily not supported, and only the barcode component can be used instead.
 - 此组件自HBuilderX 2.1.5+起支持。
+- This component has been supported since HBuilderX 2.1.5+.
 
 **属性说明**
+**Attribute description**
 设置Barcode扫码控件的属性，如扫码框、扫码条的颜色等。
+Set the attributes of Barcode scanning control, such as the color of the scanning box and the barcode scanning bar.
 
 属性|类型 |默认值|必填|说明
 :--|:--|:--|:--|:--|
@@ -18,25 +24,43 @@ scanbarColor|string||否|扫码条颜色,颜色值支持(参考CSS颜色规范)�
 filters|Array[Number] |[0,1,2]|否|条码类型过滤器，条码类型常量数组，默认情况支持QR、EAN13、EAN8类型。 通过此参数可设置扫码识别支持的条码类型（注意：设置支持的条码类型越多，扫描识别速度可能将会降低）。
 
 **码类型常量**
+**Code type constant**
 - QR: QR二维码，数值为0
+- QR: QR code, with a value of 0
 - EAN13: EAN条形码标准版，数值为1
+- EAN13: EAN barcode standard version, with a value of 1
 - EAN8: ENA条形码简版，数值为2
+- EAN8: EAN barcode short version, with a value of 2
 - AZTEC: Aztec二维码，数值为3
+- AZTEC: Aztec QR code, with a value of 3
 - DATAMATRIX: Data Matrix二维码，数值为4
+- DATAMATRIX: Data Matrix QR code, with a value of 4
 - UPCA: UPC条形码标准版，数值为5
+- UPCA: UPC barcode standard version, with a value of 5
 - UPCE: UPC条形码缩短版，数值为6
+- UPCE: UPC barcode short version, with a value of 6
 - CODABAR: Codabar条形码，数值为7
+- CODABAR: Codabar barcode, with a value of 7
 - CODE39: Code39条形码，数值为8
+- CODE39: Code39 barcode, with a value of 8
 - CODE93: Code93条形码，数值为9
+- CODE93: Code93 barcode, with a value of 9
 - CODE128: Code128条形码，数值为10
+- CODE128: Code128 barcode, with a value of 10
 - ITF: ITF条形码，数值为11
+- ITF: ITF barcode, with a value of 11
 - MAXICODE: MaxiCode二维码，数值为12
+- MAXICODE: MaxiCode QR code, with a value of 12
 - PDF417: PDF 417二维条码，数值为13
+- PDF417: PDF 417 QR barcode, with a value of 13
 - RSS14: RSS 14条形组合码，数值为14
+- RSS14: RSS 14 combined barcode, with a value of 14
 - RSSEXPANDED: 扩展式RSS条形组合码，数值为15
+- RSSEXPANDED: Expanded RSS combined barcode, with a value of 15
 
 ##### start(object)
 > 开始扫码识别
+> Start scan code recognition
 
 ###### Object object
 属性|说明|类型|必填|备注
@@ -49,6 +73,7 @@ sound|扫码成功时播放的提示音|String|否|可取值： "none" - 不播�
 
 ##### cancel()
 > 取消扫码识别
+> Cancel scan code recognition
 
 参数|类型 |必填|说明
 :--|:--|:--|:--|
@@ -56,6 +81,7 @@ sound|扫码成功时播放的提示音|String|否|可取值： "none" - 不播�
 
 ##### setFlash(boolean)
 > 操作闪光灯
+> Operating the flash
 
 ###### Boolean boolean
 类型 |必填|说明|备注
@@ -64,11 +90,14 @@ Boolean| 是| 是否开启闪光灯|可取值true或false，true表示打开闪�
 
 
 ##### 事件
+##### Event
 
 ##### marked
 > 条码识别成功事件 {event.detail}
+> Barcode identification successful event {event.detail}
 
 ######  返回参数说明
+###### Return parameter description
 参数|类型 |说明
 :--|:--|:--|
 type|string|"success" 表示成功
@@ -79,8 +108,10 @@ file|string|扫码成功的截图文件路径，扫码识别到的截图，png�
 
 ##### error
 > 条码识别错误事件
+> Barcode recognition error event
 
 ######  返回参数说明
+###### Return parameter description
 参数|类型 |说明
 :--|:--|:--|
 type|string|"fail" 表示失败
@@ -88,6 +119,7 @@ code|number| 相应 code 码
 message|string|失败描述
 
 **示例：**
+**Example:**
 ```html
 <template>
 	<view>

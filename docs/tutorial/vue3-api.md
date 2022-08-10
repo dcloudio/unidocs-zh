@@ -1,6 +1,8 @@
 ## 应用配置
+## Application Config
 
 `config` 是一个包含了 `Vue` 应用全局配置的对象。你可以在应用挂载前修改其以下 `property`：
+Every Vue application exposes a config object that contains the configuration settings for that application:
 
 ```js
 const app = Vue.createApp({})
@@ -22,8 +24,10 @@ app.config = {...}
 
 
 ## 应用 API
+## Application API
 
 在 Vue 3 中，改变全局 `Vue` 行为的 `API` 现在被移动到了由新的 `createApp` 方法所创建的应用实例上。此外，现在它们的影响仅限于该特定应用实例：
+In Vue 3, APIs that globally mutate Vue's behavior are now moved to application instances created by the new `createApp` method. In addition, their effects are now scoped to that specific application's instance:
 
 ```js
 import { createApp } from 'vue'
@@ -33,8 +37,10 @@ const app = createApp({})
 
 
 调用 `createApp` 返回一个应用实例。该实例提供了一个应用上下文。应用实例挂载的整个组件树共享相同的上下文，该上下文提供了之前在 `Vue 2.x` 中“全局”的配置。
+Calling `createApp` returns an application instance. This instance provides an application context. The entire component tree mounted by the application instance share the same context, which provides the configurations that were previously "global" in `Vue 2.x`.
 
 另外，由于 `createApp` 方法返回应用实例本身，因此可以在其后链式调用其它方法，这些方法可以在以下部分中找到。
+In addition, since the `createApp` method returns the application instance itself, you can chain other methods after it which can be found in the following sections.
 
 
 |应用 API|描述	|H5		|App端|微信小程序  |
@@ -49,6 +55,7 @@ const app = createApp({})
 
 
 ## 全局 API
+## Global API
 
 |全局 API|描述	|H5		|App端|微信小程序  |
 |--	|--	|--	|--	|--	|
@@ -67,6 +74,7 @@ const app = createApp({})
 
 
 ## 选项/Data
+## Options/Data
 
 
 |Data|描述	|H5		|App端|微信小程序  |
@@ -80,6 +88,7 @@ const app = createApp({})
 
 
 ## 选项/DOM
+## Options/DOM
 
 
 |DOM|描述	|H5		|App端|微信小程序  |说明	|
@@ -90,6 +99,7 @@ const app = createApp({})
 
 
 ## 选项/生命周期钩子
+## Options/Lifecycle hooks
 
 
 |生命周期钩子|描述	|H5		|App端|微信小程序  |
@@ -110,6 +120,7 @@ const app = createApp({})
 
 
 ## 选项/资源
+## Options/Assets
 
 
 |资源|描述	|H5		|App端|微信小程序  |
@@ -119,6 +130,7 @@ const app = createApp({})
 
 
 ## 选项/组合
+## Options/Composition
 
 
 |组合|描述	|H5		|App端|微信小程序  |
@@ -131,6 +143,7 @@ const app = createApp({})
 
 
 ## 选项/杂项
+## Options/Misc
 
 
 |杂项|描述	|H5		|App端|微信小程序  |
@@ -142,6 +155,7 @@ const app = createApp({})
 
 
 ## 实例 property
+## Instance Properties
 
 
 |实例 property|描述	|H5		|App端|微信小程序  |说明	|
@@ -158,6 +172,7 @@ const app = createApp({})
 
 
 ## 实例方法
+## Instance Methods
 
 |实例方法|描述	|H5		|App端|微信小程序  |
 |--	|--	|--	|--	|--	|
@@ -170,6 +185,7 @@ const app = createApp({})
 
 
 ## 指令
+## Directives
 
 |Vue 指令		|描述						|H5		|App端|微信小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
@@ -192,6 +208,7 @@ const app = createApp({})
 
 
 ## 特殊属性
+## Special Attributes
 
 |特殊属性		|描述						|H5		|App端|微信小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
@@ -202,6 +219,7 @@ const app = createApp({})
 
 
 ## 内置组件
+## Built-In Components
 
 |内置组件		|描述						|H5		|App端|微信小程序  |
 | --				| --						| --	|--		|--			| 
@@ -218,8 +236,10 @@ const app = createApp({})
 
 
 ## 响应性 API
+## Reactivity API
 
 ### 响应性基础 API
+### Basic Reactivity APIs
 
 |响应性基础 API|描述	|H5		|App端|微信小程序  |
 |--	|--	|--	|--	|--	|
@@ -252,6 +272,7 @@ const app = createApp({})
 
 
 ### Computed 与 watch
+### Computed and watch
 
 |Computed 与 watch|描述	|H5		|App端|微信小程序  |
 |--	|--	|--	|--	|--	|
@@ -263,6 +284,7 @@ const app = createApp({})
 
 
 ## 组合式 API
+## Composition API
 
 |组合式 API|描述	|H5		|App端|微信小程序  |
 |--	|--	|--	|--	|--	|
@@ -275,8 +297,10 @@ const app = createApp({})
 
 
 ## 全局变量
+## Global variable
 
 实现全局变量的方式需要遵循 `Vue` 单文件模式的开发规范。详细参考：[uni-app全局变量的几种实现方式](https://ask.dcloud.net.cn/article/35021)。
+The way to implement global variables needs to follow the development specifications of Vue single file mode.
 
 
 ## 其他配置
@@ -300,13 +324,17 @@ export default {
 
 
 ## 常见问题
+## Common problem
 
 ### 1. 如何获取上个页面传递的数据
+### 1. How to get the data passed on the previous page
 
 在 `onLoad` 里得到，`onLoad` 的参数是其他页面打开当前页面所传递的数据。
+Obtained in onLoad, the parameter of onLoad is the data passed by other pages to open the current page.
 
 
 ### 2. 如何设置全局的数据和全局的方法
+### 2. How to set global data and global methods
 
 `uni-app` 内置了 [Vuex](https://uniapp.dcloud.io/tutorial/vue-vuex) ，在`app`里的使用，可参考 `hello-uniapp` ` store/index.js`。
 
@@ -334,23 +362,28 @@ export default {
 	}
 
 	//test.vue 使用时：
+	//test.vue When using:
 	import {mapState,mapMutations} from 'vuex'
 ```
 
 
 
 ### 3. 如何捕获 app 的 onError
+### 3. How to catch onError of app
 
 由于 `onError` 并不是完整意义的生命周期，所以只提供一个捕获错误的方法，在 `app` 的根组件上添加名为 `onError` 的回调函数即可。如下：
+Since `onError` is not a complete life cycle, only a method of catching errors is provided, and a callback function named onError can be added to the root component of the app. as follows:
 
 ```javaScript
 	export default {
 	   // 只有 app 才会有 onLaunch 的生命周期
+		// Only apps have an onLaunch lifecycle
 		onLaunch () {
 		   // ...
 		},
 
 		// 捕获 app error
+		// capture app error
 		onError (err) {
 		   console.log(err)
 		}
@@ -359,12 +392,16 @@ export default {
 
 
 ### 4. 组件属性设置不生效解决办法
+### 4. Component property settings do not take effect
 
 当重复设置某些属性为相同的值时，不会同步到`view`层。 例如：每次将`scroll-view`组件的`scroll-top`属性值设置为0，只有第一次能顺利返回顶部。 这和`props`的单向数据流特性有关，组件内部`scroll-top`的实际值改动后，其绑定的属性并不会一同变化。
+When some properties are repeatedly set to the same value, they are not synchronized to the View layer. For example, every time you set the scroll-top property of a `scroll-view` component to 0, it only gets back to the top the first time. This is due to the props unidirectional data flow feature. When the actual value of scroll top inside the component changes, the binding properties do not change with it.
 
 解决办法有两种（以`scroll-view`组件为例）：
+There are two solutions (take the `scroll-view` component as an example):
 
 1. 监听`scroll`事件，记录组件内部变化的值，在设置新值之前先设置为记录的当前值
+1. Monitor the scroll event, record the value of the internal change of the component, and set the current value of the record before setting the new value
 
 
 
@@ -399,6 +436,7 @@ export default {
 ```
 
 2. 监听scroll事件，获取组件内部变化的值，实时更新其绑定值
+2. Monitor the scroll event, get the value of the internal change of the component, and update its binding value in real time
 
 ```html
 	<scroll-view scroll-y="true" :scroll-top="scrollTop" @scroll="scroll"></scroll-view>
@@ -415,6 +453,7 @@ export default {
 		methods: {
 			scroll: function(e) {
 				// 如果使用此方法，请自行增加防抖处理
+				// If you use this method, please add debounce by yourself
 				this.scrollTop = e.detail.scrollTop
 			},
 			goTop: function(e) {
@@ -426,5 +465,6 @@ export default {
 
 
 第二种解决方式在某些组件可能造成抖动，**推荐第一种解决方式**。
+The second solution may cause jitter in some components, and the **first solution is recommended** .
 
 

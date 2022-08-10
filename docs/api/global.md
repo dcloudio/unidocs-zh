@@ -5,8 +5,10 @@
 需要应用关联[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)服务空间并使用[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)。
 
 > 需要在token内缓存角色权限才可使用，请参考：[缓存角色权限](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=cachepermissionintoken)
+> You need to cache the role permissions in the token before using. Please refer to: [Cache role permissions](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=cachepermissionintoken)
 
 **在模板内使用**
+**Use in templates**
 
 ```html
 <template>
@@ -15,6 +17,7 @@
 ```
 
 **在页面/组件js代码中使用**
+**For use in page/component js codes**
 
 ```html
 <template>
@@ -36,8 +39,10 @@
 需要应用关联[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)服务空间并使用[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)。
 
 > 需要在token内缓存角色权限才可使用，请参考：[缓存角色权限](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=cachepermissionintoken)
+> You need to cache the role permissions in the token before using. Please refer to: [Cache role permissions](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=cachepermissionintoken)
 
 **在模板内使用**
+**Use in templates**
 
 ```html
 <template>
@@ -46,6 +51,7 @@
 ```
 
 **在页面/组件js代码中使用**
+**For use in page/component js codes**
 
 ```html
 <template>

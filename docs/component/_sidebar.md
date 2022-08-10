@@ -1,4 +1,5 @@
 * [组件概述](component/)
+* [Component overview](component/)
 * 内置组件
   * [uni-app 组件](component/view.md)
     * [视图容器](component/view.md)
@@ -121,6 +122,7 @@
   * [uni-transition 过渡动画](component/uniui/uni-transition.md)
   * [更新日志](https://ext.dcloud.net.cn/plugin?id=55&update_log)
   * [更多插件市场的组件](https://ext.dcloud.net.cn/?cat1=2)
+  * [More components in the plug-in market](https://ext.dcloud.net.cn/?cat1=2)
 * [ui 设计资源](component/uniui/resource.md)
 * [datacom 组件规范](component/datacom.md)
 * [组件库选型指南](component/component-selection.md)

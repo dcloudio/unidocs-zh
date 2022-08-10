@@ -23,19 +23,28 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 各平台的 API 新增，不需要 uni-app 升级，开发者就可以直接使用。
 
 ## 说明
+## Instruction
 
 - uni.on 开头的 API 是监听某个事件发生的 API 接口，接受一个 CALLBACK 函数作为参数。当该事件触发时，会调用 CALLBACK 函数。
+- The APIs beginning with uni.on are used as API interfaces to listen to certain events and accept a CALLBACK function as a parameter. When that event is triggered, the CALLBACK function is called.
 - 如未特殊约定，其他 API 接口都接受一个 OBJECT 作为参数。
+- Unless otherwise specified, other API interfaces accept an OBJECT as a parameter.
 - OBJECT 中可以指定 success，fail，complete 来接收接口调用结果。
+- In the OBJECT, success, fail and complete can be specified in the reception of the interface call result.
 - **平台差异说明**若无特殊说明，则表示所有平台均支持。
+- **Platform difference description**Unless otherwise specified, it means that all platforms support it.
 - 异步 API 会返回 `errMsg` 字段，同步 API 则不会。比如：`getSystemInfoSync` 在返回结果中不会有 `errMsg`。
 
 ## API `Promise 化`
+## API `Promisify`
 
 1. 具体 API `Promise 化` 的策略：
+1. Specific strategy of API `Promisify`:
 
    - 异步的方法，如果不传入 success、fail、complete 等 callback 参数，将以 Promise 返回数据。例如：`uni.getImageInfo()`
+   - For the asynchronous method, if no callback parameter such as success, fail or complete is passed in, the data will be returned as Promise. E.g.: `uni.getImageInfo()`
    - 异步的方法，且有返回对象，如果希望获取返回对象，必须至少传入一项 success、fail、complete 等 callback 参数。例如：
+   - For asynchronous method with return object, at least one callback parameter of success, fail or complete should be passed in to obtain the return object. E.g.:
 
      ```js
       // 正常使用
@@ -54,9 +63,13 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
      ```
 
 2. 不进行 `Promise 化` 的 API：
+2. API that does not proceed `Promisify`:
    - 同步的方法（即以 sync 结束）。例如：`uni.getSystemInfoSync()`
+   - Synchronization method (ended with sync). E.g.: `uni.getSystemInfoSync()`
    - 以 create 开头的方法。例如：`uni.createMapContext()`
+   - Method beginning with create. E.g.: `uni.createMapContext()`
    - 以 manager 结束的方法。例如：`uni.getBackgroundAudioManager()`
+   - Method ending with manager. E.g.: `uni.getBackgroundAudioManager()`
 
 #### Vue 2 和 Vue 3 的 API `Promise 化`
 
@@ -234,14 +247,17 @@ uni.addInterceptor({
 | [全局 API](global)                             | 可全局调用 Api                        |
 
 #### 网络
+#### Network
 
 ##### 发起请求
+##### Initiating request
 
 | API                                       | 说明         |
 | :---------------------------------------- | :----------- |
 | [uni.request](request/request?id=request) | 发起网络请求 |
 
 ##### 上传、下载
+##### Upload and download
 
 | API                                                      | 说明     |
 | :------------------------------------------------------- | :------- |
@@ -272,8 +288,10 @@ uni.addInterceptor({
 | [SocketTask.onMessage](/api/request/socket-task?id=sockettaskonmessage) | 监听 WebSocket 接受到服务器的消息事件 |
 
 #### 媒体
+#### Media
 
 ##### 图片
+##### Image
 
 | API                                                                 | 说明                     |
 | :------------------------------------------------------------------ | :----------------------- |
@@ -284,30 +302,35 @@ uni.addInterceptor({
 | [uni.saveImageToPhotosAlbum](media/image?id=saveimagetophotosalbum) | 保存图片到系统相册       |
 
 ##### 文件
+##### Document
 
 | API                                        | 说明           |
 | :----------------------------------------- | :------------- |
 | [uni.chooseFile](media/file?id=chooseFile) | 从本地选择文件 |
 
 ##### 录音管理
+##### Recording Management
 
 | API                                            | 说明     |
 | :--------------------------------------------- | :------- |
 | [uni.getRecorderManager](media/record-manager) | 录音管理 |
 
 ##### 背景音频播放管理
+##### Background audio playback management
 
 | API                                                             | 说明             |
 | :-------------------------------------------------------------- | :--------------- |
 | [uni.getBackgroundAudioManager](media/background-audio-manager) | 背景音频播放管理 |
 
 ##### 音频组件管理
+##### Audio component management
 
 | API                                                | 说明         |
 | :------------------------------------------------- | :----------- |
 | [uni.createInnerAudioContext](media/audio-context) | 音频组件管理 |
 
 ##### 视频
+##### Video
 
 | API                                                                      | 说明                               |
 | :----------------------------------------------------------------------- | :--------------------------------- |
@@ -317,18 +340,21 @@ uni.addInterceptor({
 | [uni.createVideoContext](/api/media/video-context?id=createvideocontext) | 视频组件管理                       |
 
 ##### 相机组件管理
+##### Camera component management
 
 | API                                                | 说明         |
 | :------------------------------------------------- | :----------- |
 | [uni.createCameraContext](media/camera-context.md) | 相机组件管理 |
 
 ##### 直播组件管理
+##### Live stream component management
 
 | API                                                         | 说明         |
 | :---------------------------------------------------------- | :----------- |
 | [uni.createLivePlayerContext](media/live-player-context.md) | 直播组件管理 |
 
 #### 文件
+#### Document
 
 | API                                                   | 说明                 |
 | :---------------------------------------------------- | :------------------- |
@@ -340,6 +366,7 @@ uni.addInterceptor({
 | [uni.openDocument](file/file?id=opendocument)         | 打开文件             |
 
 #### 数据缓存
+#### Data cache
 
 | API                                                             | 说明                   |
 | :-------------------------------------------------------------- | :--------------------- |
@@ -355,6 +382,7 @@ uni.addInterceptor({
 | [uni.clearStorageSync](storage/storage?id=clearstoragesync)     | 清理本地数据缓存       |
 
 #### 位置
+#### Location
 
 ##### 获取位置
 
@@ -364,20 +392,24 @@ uni.addInterceptor({
 | [uni.chooseLocation](location/location?id=chooselocation) | 打开地图选择位置 |
 
 ##### 查看位置
+##### View location
 
 | API                                                        | 说明         |
 | :--------------------------------------------------------- | :----------- |
 | [uni.openLocation](location/open-location?id=openlocation) | 打开内置地图 |
 
 ##### 地图组件控制
+##### Map component control
 
 | API                                                      | 说明         |
 | :------------------------------------------------------- | :----------- |
 | [uni.createMapContext](location/map?id=createmapcontext) | 地图组件控制 |
 
 #### 设备
+#### Device
 
 ##### 系统信息
+##### System message
 
 | API                                                       | 说明                                                 |
 | :-------------------------------------------------------- | :--------------------------------------------------- |
@@ -392,6 +424,7 @@ uni.addInterceptor({
 | [uni.onMemoryWarning](/api/system/memory?id=wxonmemorywarning) | 监听内存不足告警事件 |
 
 ##### 网络状态
+##### Network status
 
 | API                                                                    | 说明                 |
 | :--------------------------------------------------------------------- | :------------------- |
@@ -400,6 +433,7 @@ uni.addInterceptor({
 | [uni.offNetworkStatusChange](system/network?id=offnetworkstatuschange) | 取消监听网络状态变化 |
 
 ##### 加速度计
+##### Accelerometer
 
 | API                                                                          | 说明               |
 | :--------------------------------------------------------------------------- | :----------------- |
@@ -409,6 +443,7 @@ uni.addInterceptor({
 | [uni.stopAccelerometer](system/accelerometer?id=stopaccelerometer)           | 停止监听加速度数据 |
 
 ##### 罗盘
+##### Compass
 
 | API                                                        | 说明             |
 | :--------------------------------------------------------- | :--------------- |
@@ -426,18 +461,21 @@ uni.addInterceptor({
 | [uni.stopGyroscope](/api/system/gyroscope?id=stopgyroscope)         | 停止监听陀螺仪数据 |
 
 ##### 拨打电话
+##### Dial number
 
 | API                                                | 说明     |
 | :------------------------------------------------- | :------- |
 | [uni.makePhoneCall](system/phone?id=makephonecall) | 拨打电话 |
 
 ##### 扫码
+##### Scan code
 
 | API                                        | 说明 |
 | :----------------------------------------- | :--- |
 | [uni.scanCode](system/barcode?id=scancode) | 扫码 |
 
 ##### 剪切板
+##### Clipboard
 
 | API                                                          | 说明           |
 | :----------------------------------------------------------- | :------------- |
@@ -445,6 +483,7 @@ uni.addInterceptor({
 | [uni.getClipboardData](system/clipboard?id=getclipboarddata) | 获取剪贴板内容 |
 
 ##### 屏幕亮度
+##### Screen brightness
 
 | API                                                                 | 说明                 |
 | :------------------------------------------------------------------ | :------------------- |
@@ -459,6 +498,7 @@ uni.addInterceptor({
 | [uni.onUserCaptureScreen](/api/system/capture-screen) | 监听用户截屏事件 |
 
 ##### 振动
+##### Vibration
 
 | API                                                | 说明                     |
 | :------------------------------------------------- | :----------------------- |
@@ -467,12 +507,14 @@ uni.addInterceptor({
 | [uni.vibrateShort](system/vibrate?id=vibrateshort) | 使手机发生较短时间的振动 |
 
 ##### 手机联系人
+##### Mobile phone contact
 
 | API                                                      | 说明           |
 | :------------------------------------------------------- | :------------- |
 | [uni.addPhoneContact](system/contact?id=addphonecontact) | 添加手机通讯录 |
 
 ##### 蓝牙
+##### Bluetooth
 
 | API                                                                                           | 说明                               |
 | :-------------------------------------------------------------------------------------------- | :--------------------------------- |
@@ -487,6 +529,7 @@ uni.addInterceptor({
 | [uni.closeBluetoothAdapter](/api/system/bluetooth?id=closebluetoothadapter)                   | 关闭蓝牙模块                       |
 
 ##### 低耗蓝牙
+##### Bluetooth Low Energy
 
 | API                                                                                             | 说明                                                   |
 | :---------------------------------------------------------------------------------------------- | :----------------------------------------------------- |
@@ -511,6 +554,7 @@ uni.addInterceptor({
 | [uni.stopBeaconDiscovery](/api/system/ibeacon?id=stopbeacondiscovery)     | 开始搜索附近的 iBeacon 设备     |
 
 ##### 生物认证
+##### Biometric authentication
 
 | API                                                                                                      | 说明                                     |
 | :------------------------------------------------------------------------------------------------------- | :--------------------------------------- |
@@ -519,8 +563,10 @@ uni.addInterceptor({
 | [uni.checkIsSoterEnrolledInDevice](/api/system/authentication?id=checkissoterenrolledindevice)           | 获取设备内是否录入如指纹等生物信息的接口 |
 
 #### 界面
+#### Interface
 
 ##### 交互反馈
+##### Interactive feedback
 
 | API                                                 | 说明           |
 | :-------------------------------------------------- | :------------- |
@@ -532,6 +578,7 @@ uni.addInterceptor({
 | [uni.showActionSheet](ui/prompt?id=showactionsheet) | 显示菜单列表   |
 
 ##### 设置导航条
+##### Set navigation bar
 
 | API                                                                          | 说明               |
 | :--------------------------------------------------------------------------- | :----------------- |
@@ -561,18 +608,21 @@ uni.addInterceptor({
 | [uni.setBackgroundTextStyle](/api/ui/bgcolor?id=setbackgroundtextstyle) | 动态设置下拉背景字体、loading 图的样式。 |
 
 ##### 动画
+##### Animation
 
 | API                                                         | 说明                                                                                                                          |
 | :---------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
 | [uni.createAnimation](/api/ui/animation?id=createanimation) | 创建一个动画实例 animation。调用实例的方法来描述动画。最后通过动画实例的 export 方法导出动画数据传递给组件的 animation 属性。 |
 
 ##### 滚动
+##### Scroll
 
 | API                                                | 说明                   |
 | :------------------------------------------------- | :--------------------- |
 | [uni.pageScrollTo](/api/ui/scroll?id=pagescrollto) | 将页面滚动到目标位置。 |
 
 ##### 绘画
+##### Painting
 
 | API                                                          | 说明                 |
 | :----------------------------------------------------------- | :------------------- |
@@ -582,6 +632,7 @@ uni.addInterceptor({
 | [uni.canvasPutImageData](/api/canvas/canvasPutImageData)     | 设置画布图像数据     |
 
 ##### 下拉刷新
+##### Pull down to refresh
 
 | API                                                                  | 说明                       |
 | :------------------------------------------------------------------- | :------------------------- |
@@ -590,6 +641,7 @@ uni.addInterceptor({
 | [uni.stopPullDownRefresh](/api/ui/pulldown?id=stoppulldownrefresh)   | 停止当前页面下拉刷新       |
 
 ##### 节点信息
+##### Node information
 
 | API                                                                                | 说明                   |
 | :--------------------------------------------------------------------------------- | :--------------------- |
@@ -603,6 +655,7 @@ uni.addInterceptor({
 | [nodesRef.fields](/api/ui/nodes-info?id=nodesref-对象的方法列表)                   | 获取任意字段           |
 
 ##### 节点布局相交状态
+##### Node layout intersection state
 
 | API                                                                                                             | 说明                           |
 | :-------------------------------------------------------------------------------------------------------------- | :----------------------------- |
@@ -613,6 +666,7 @@ uni.addInterceptor({
 | [intersectionObserver.disconnect](/api/ui/intersection-observer?id=intersectionobserver-对象的方法列表)         | 停止监听                       |
 
 #### 路由
+#### Routing
 
 | API                                             | 说明                                                                         |
 | :---------------------------------------------- | :--------------------------------------------------------------------------- |
@@ -663,6 +717,7 @@ uni.addInterceptor({
 | [互动游戏](/api/a-d/interactive.html)           | 互动游戏是 DCloud 联合三方服务商为开发者提供新的广告场景增值服务 |
 
 #### 平台扩展
+#### Platform extension
 
 | API                                                                         | 说明              |
 | :-------------------------------------------------------------------------- | :---------------- |

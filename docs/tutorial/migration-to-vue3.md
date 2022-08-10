@@ -1,6 +1,7 @@
 <!-- #### vue2 项目迁移 vue3，必须适配的部分 -->
 
 以下列举迁移到 vue3，必须适配的几个点，vue2 项目才能正常运行在 vue3 上。更多查看完整的[非兼容特性列表](https://github.com/vuejs/vue-next/tree/master/packages/vue-compat#incompatible)
+The following are the points that must be adapted for migration to vue3, so that the vue2 project can run normally on vue3. For more inlistation, see the complete [List of non-compatible features](https://github.com/vuejs/vue-next/tree/master/packages/vue-compat#incompatible)
 
 ## main.js
 

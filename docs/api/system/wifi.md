@@ -9,9 +9,13 @@
 字节跳动小程序的wifi API参考：[规范详情](https://developer.toutiao.com/dev/cn/mini-app/develop/api/device/wi-fi/getconnectedwifi)
 
 App 平台实现参考
+App platform implementation reference
 
 **安卓：**
+**Android:**
 - [获取WIFI列表](https://ask.dcloud.net.cn/question/12113)
+- [Get WIFI list](https://ask.dcloud.net.cn/question/12113)
 
 **ios：**
 - [打开ios的WIFI设置页面](https://ask.dcloud.net.cn/question/7797)
+- [Open the WIFI settings page of ios](https://ask.dcloud.net.cn/question/7797)

@@ -16,12 +16,17 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 异步获取系统信息
 
 **OBJECT 参数说明：**
+**OBJECT parameter description:**
 
 |参数名|类型|必填|说明|
+| Parameter name| Type| Required| Instruction|
 |:-|:-|:-|:-|
 |success|Function|是|接口调用成功的回调|
+| success| Function| Yes| Callback for successful interface calling|
 |fail|Function|否|接口调用失败的回调函数|
+| fail| Function| No| Callback function for failed interface calling|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+| complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|
 
 #### success 返回参数说明
 
@@ -72,6 +77,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 #### 某些小程序特殊的返回参数
 
 |参数|说明|平台差异说明|
+| Parameter| Instruction| Platform difference description|
 |:-|:-|:-|
 |benchmarkLevel|设备性能等级。取值为：-2 或 0（该设备无法运行小游戏），-1（性能未知），>=1（设备性能值，该值越高，设备性能越好，目前最高不到50）|微信小程序Android版、QQ小程序Android版|
 |batteryLevel	|	剩余电量百分比（仅 iOS 有效）	|微信小程序|
@@ -95,14 +101,18 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 #### 不推荐使用的返回参数，仅为向下兼容保留
 
 |参数|说明|平台差异说明|
+| Parameter| Instruction| Platform difference description|
 |:-|:-|:-|
 |pixelRatio			|设备像素比		||
 |brand|设备品牌。uni-app 3.4.10+ 后该字段为全小写，可能要做兼容处理|App、微信小程序、百度小程序、字节跳动小程序、飞书小程序、QQ小程序|
 |model|设备型号|全平台支持。Web 端部分设备无法获取具体型号|
 |system|操作系统名称及版本，如Android 10||
+| system| Name and version of operating system, such as Android 10| |
 |language|应用设置的语言||
+| language| App settings language| |
 |version|引擎版本号|Web不支持|
 |platform|客户端平台，值域为：`ios`、`android`、`mac（3.1.10+）`、`windows（3.1.10+）`、`linux（3.1.10+）`||
+| platform| Client platform, the value range is: `ios`, `android`, `mac（3.1.10+）`, `windows（3.1.10+）`, `linux（3.1.10+）`| |
 |host|宿主平台|百度小程序|
 |SDKVersion|客户端基础库版本|支付宝小程序和Web不支持|
 |swanNativeVersion|宿主平台版本号|百度小程序|
@@ -177,20 +187,31 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |参数	|类型	|说明		|
 |:-		|:-			|:-			|
 |left	|Number	|安全区域左上角横坐标			|
+| left| Number| Abscissa of upper left corner in safety area|
 |right	|Number	|安全区域右下角横坐标			|
+| right| Number| Abscissa of lower right corner in safety area|
 |top	|Number	|安全区域左上角纵坐标			|
+| top| Number| Ordinate of upper left corner in safety area|
 |bottom	|Number	|安全区域右下角纵坐标			|
+| bottom| Number| Ordinate of lower right corner in safety area|
 |width	|Number	|安全区域的宽度，单位逻辑像素	|
+| width| Number| Width of safe area, in logical pixel|
 |height	|Number	|安全区域的高度，单位逻辑像素	|
+| height| Number| Height of safe area, in logical pixel|
 
 **safeAreaInsets 的结构**
+**Sstructure of safeAreaInsets**
 
 |参数	|类型	|说明		|
 |:-		|:-			|:-			|
 |left	|Number	|安全区域左侧插入位置			|
+| left| Number| Insert position of left side in safety area|
 |right	|Number	|安全区域右侧插入位置			|
+| right| Number| Insert position of right side in safety area|
 |top	|Number	|安全区顶部插入位置			|
+| top| Number| Insert location at the top of the safety zone|
 |bottom	|Number	|安全区域底部插入位置			|
+| bottom| Number| Insert position of bottom side in safety area|
 
 #### language 返回值说明
 
@@ -239,9 +260,12 @@ uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhon
 	```
 - `osTheme`：`app-ios` 只有将应用主题设置为跟随系统时才能获取到系统的主题。小程序也有类似限制。
 - 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
+- Screen height = native NavigationBar height (including status bar height) + available window height + native TabBar height
 - windowHeight不包含NavigationBar和TabBar的高度
+- windowHeight does not include the heights of NavigationBar and TabBar
 - Web端，windowTop等于NavigationBar高度，windowBottom等于TabBar高度
 - App端，windowTop等于透明状态NavigationBar高度，windowBottom等于透明状态TabBar高度
+- For App, windowTop is equal to the height of  NavigationBar in transparent state and windowBottom is equal to the height of TabBar in transparent state
 - 高度相关信息，要放在 onReady 里获取。太早取不到。
 
 

@@ -3,19 +3,27 @@
 uni-app提供了一批[API](/collocation/auto/api)，这些API可以操控uni-app应用，包括运行、跳转页面、触发点击等，并可以获取页面元素状态、进行截图，从而实现对uni-app项目进行自动化测试的目的。
 
 本功能使用到了业内常见的测试库如jest（MIT协议）。
+This function uses the common test libraries in the industry such as jest (MIT protocol).
 
 推荐使用方式：研发提交源码到版本库后，持续集成系统自动拉取源码，自动运行自动化测试。
+Recommended usage: after R&D submits the source code to the version library, the continuous integration system automatically pulls the source code and automatically runs the automated test.
 
 ### 特性@features
 开发者可以利用[API](/collocation/auto/api)做以下事情：
 
 * 控制跳转到指定页面
+* Control the jump to a specified page
 * 获取页面数据
+* Get page data
 * 获取页面元素状态
+* Get page element status
 * 触发元素绑定事件
+* Trigger element binding event
 * 调用 uni 对象上任意接口
+* Call any interface on uni object
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快应用|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -98,8 +106,10 @@ module.exports = {
 
 
 **注意事项**
+**Precautions**
 
 1. 如果页面涉及到分包加载问题，`reLaunch` 获取的页面路径可能会出现问题 ，解决方案如下 ：
+1. If the page involves sub-contracting loading, there may be a problem with the page path obtained by `reLaunch`. The solution is as follows:
 ```javascript
 // 重新 reLaunch至首页，并获取 page 对象（其中 program 是 uni-automator 自动注入的全局对象）
 page = await program.reLaunch('/pages/extUI/calendar/calendar')

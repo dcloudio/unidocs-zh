@@ -1,4 +1,5 @@
 建议第一步，看完[uni-app官网](https://uniapp.dcloud.io)的首页介绍。
+It is recommended that the first step is to finish reading the home page introduction of [uni-app official website](https://uniapp.dcloud.io).
 
 建议第二步，通过[快速上手](https://uniapp.dcloud.io/quickstart-hx)，亲身体验下uni-app。
 
@@ -6,6 +7,7 @@
 [a]({{ $themeConfig.domainName }})
 #### 如果你熟悉h5，但不熟悉vue和小程序 
 1. 看完这篇[白话uni-app](http://ask.dcloud.net.cn/article/35657)
+1. After reading this article [Vernacular uni-app](http://ask.dcloud.net.cn/article/35657)
 2. DCloud与vue合作，在[vue.js官网](https://cn.vuejs.org/v2/guide/)提供了免费视频教程，也可以直达教程地址：[https://learning.dcloud.io](https://learning.dcloud.io)
 3. 不需要专门去学习小程序的语法，uni-app使用的是vue的语法，不是小程序自定义的语法。
 
@@ -13,6 +15,7 @@
 参考三方总结[https://segmentfault.com/a/1190000015684864](https://segmentfault.com/a/1190000015684864)
 
 #### 三方培训机构视频
+#### Third-party training institution video
 
 目前各大视频学习网站都有不少uni-app的学习资源：
 - [bilibili的uni-app相关视频](https://search.bilibili.com/all?keyword=uni-app&from_source=nav_search_new)
@@ -53,25 +56,36 @@
 - [更多京东售卖的uni-app书籍](https://search.jd.com/Search?keyword=uni-app&enc=utf-8&wq=uni-app&pvid=b49f37d39eb4427a8a860663fc6c4cee)
 
 如果你是线下培训机构，想开课合作，联系bd@dcloud.io
+If you are an offline training institution and want to offer courses and seek for cooperation, please contact bd@dcloud.io
 
 欢迎更多人分享学习经验，可转载到[社区](http://ask.dcloud.net.cn/explore/)，优秀的文章我们会收录在本文中。
+More people are welcome to share their learning experience, which can be reposted to [Community](http://ask.dcloud.net.cn/explore/). Excellent articles will be included in this article.
 
 #### uniCloud的学习资料
+#### Learning materials of uniCloud
 掌握uniCloud，进阶全栈，详见：[https://uniapp.dcloud.io/uniCloud/learning](https://uniapp.dcloud.io/uniCloud/learning)
 
 #### 关于各端的管理规则需要耐心学习
+#### Patience should be maintained to learn the rules of management at all sides
 
 uni-app并不难学，但我们注意到很多新人在适应各个平台的规则限制时比较急躁。
+uni-app is not difficult to learn, but many novices are impatient when adapting to the rules of each platform.
 
 每个端，有每个端的管理规则，这不是uni-app在技术层面上可以抹平的：
+Each side has its own management rules, which cannot be compensated by uni-app on a technical level:
 
 - 比如H5端的浏览器有跨域限制；
+- For example, the browser at the H5 side is subject to cross-domain restrictions;
 - 比如微信小程序会强制要求https链接，并且所有要联网的服务器域名都要配到微信的白名单中；
 - 比如App端，iOS对隐私控制和虚拟支付控制非常严格；
+- For example, on the App side, iOS is very strict with privacy control and virtual payment control;
 - 比如App端，Android、国产rom各种兼容性差异，尤其是因为谷歌服务被墙，导致的push、定位等开发混乱的坑；
 
 遇事耐心，不急不躁，虽然这不是成功的唯一要素，但它是你技术路上长远走下去的基础。
+Be patient and calm when encountering difficulties. Although this is not the only element of success, it is the basis for your long-term technical journey.
 
 #### uni-app的底层框架实现原理及优化策略（高级）
+#### Implementation principle and optimization strategy of the underlying framework of uni-app (Advanced)
 通过[评测对比](https://juejin.im/post/5e8e8d5a6fb9a03c6d3d9f42)，我们知道uni-app的性能比其他小程序开发框架好，但底层原理是什么？
 这篇视频就是讲解uni-app框架底层的实现思路和优化策略：[《uni-app框架如何实现高性能》](https://v.qq.com/x/page/r0886mn8v6l.html)
+This video is to explain the implementation ideas and optimization strategies of the underlying uni-app framework: ["How to Achieve High Performance in uni-app Framework"](https://v.qq.com/x/page/r0886mn8v6l.html)

@@ -1,4 +1,5 @@
 ## 介绍
+## Introduction
 
 `uni-app` App 端内置了一个基于 weex 改进的原生渲染引擎，提供了原生渲染能力。
 
@@ -13,10 +14,13 @@
 - Android 端良好支持边框阴影，[详情](/tutorial/nvue-css?id=android-box-shadow)
 - iOS 端支持高斯模糊，<a href="https://ask.dcloud.net.cn/article/36617#view" target="_blank">详情</a>
 - 可实现区域滚动长列表+左右拖动列表+吸顶的复杂排版效果
+- It can realize the complex typesetting effect of area scrolling long list+left and right dragging list+ceiling
 - 优化圆角边框绘制性能
+- Optimize the rendering performance of border-radius
 - 扩展了更多的 css
 
 ## 适用场景
+## Applicable scene
 
 nvue 的组件和 API 写法与 vue 页面一致，其内置组件还比 vue 页面内置组件增加了更多，[详见](https://uniapp.dcloud.io/component/list)。
 
@@ -41,6 +45,7 @@ nvue 的组件和 API 写法与 vue 页面一致，其内置组件还比 vue 页
 2. 动态横竖屏。nvue 页面的 css 不支持媒体查询，所以横竖屏动态切换、动态适配屏幕是很困难的。
 
 ## 纯原生渲染模式
+## Pure native rendering mode
 
 uni-app 在 App 端，支持 vue 页面和 nvue 页面混搭、互相跳转。也支持纯 nvue 原生渲染。
 
@@ -49,6 +54,7 @@ uni-app 在 App 端，支持 vue 页面和 nvue 页面混搭、互相跳转。�
 在 manifest.json 源码视图的`"app-plus"`下配置`"renderer":"native"`，即代表 App 端启用纯原生渲染模式。此时 pages.json 注册的 vue 页面将被忽略，vue 组件也将被原生渲染引擎来渲染。
 
 如果不指定该值，默认是不启动纯原生渲染的。
+If this value is not specified, pure native rendering will not be started by default.
 
 ```javascript
 	// manifest.json
@@ -62,6 +68,7 @@ uni-app 在 App 端，支持 vue 页面和 nvue 页面混搭、互相跳转。�
 ```
 
 ## 编译模式
+## Compilation mode
 
 **weex 编译模式和 uni-app 编译模式**
 
@@ -108,16 +115,20 @@ weex 编译模式不支持 `onNavigationBarButtonTap` 生命周期函数的写�
 weex 编译模式不支持 onShow 生命周期，但熟悉 5+的话，可利用监听 webview 的`addEventListener` show 事件实现 onShow 效果。
 
 weex 编译模式不支持`vuex`。
+weex compilation mode does not support `vuex`.
 
 nvue 的页面跳转，与 weex 不同，仍然遵循 uni-app 的路由模型。vue 页面和 nvue 页面之间不管怎么跳转，都遵循这个模型。包括 nvue 页面跳向 nvue 页面。每个页面都需要在 pages.json 中注册，调用 uni-app 的 [路由 API](https://uniapp.dcloud.net.cn/api/router) 进行跳转。
+Unlike weex, the page jump of nvue still follows the routing model of uni-app. The model is followed no matter how you jump between vue page and nvue page. Including nvue page jumping to nvue page. Each page needs to be registered in pages.json and call uni-app's [route API](https://uniapp.dcloud.net.cn/api/router) to jump.
 
 原生开发没有页面滚动的概念，页面内容高过屏幕高度时，内容并不会自动滚动；只有将页面内容放在`list`、`waterfall`、`scroll-view/scroller`这几个组件下内容才可滚动。这不符合前端开发的习惯，所以在 nvue 编译为 `uni-app`模式时，`uni-app`框架会给 nvue 页面外层自动嵌套一个 `scroller`，从而实现页面内容的自动滚动。
 
 注意：
+Notice:
 
 - `uni-app`框架仅对 nvue 页面嵌套`scroller`容器，不会给组件自动套`scroller`容器；
 - 若 nvue 页面有`recycle-list`组件时，`uni-app`框架也不会自动给页面嵌套`scroller`容器
 - 若你不希望自动嵌套`scroller`容器，可在`pages.json`中通过如下配置进行关闭：
+- If you don't want to automatically nest the `scroller` container, you can turn it off in `pages.json` with the following configuration:
 
 ```javascript
 {
@@ -131,9 +142,12 @@ nvue 的页面跳转，与 weex 不同，仍然遵循 uni-app 的路由模型。
 weex 编译模式下支持使用 weex ui ，例子[详见](https://ext.dcloud.net.cn/plugin?id=442)。但相比 uni-app 插件市场及官方[uni ui](https://ext.dcloud.net.cn/plugin?id=55)而言，weex 语法的组件生态还是比较欠缺的。
 
 **HBuilderX 3.1.0+ 开始支持新的样式编译模式**
+**From HBuilderX 3.1.0+, new style compilation mode is supported**
 
 - weex 编译模式：老模式，样式支持与普通 weex 相同
+- weex compilation mode: the old mode, with the same style support as ordinary weex
 - uni-app 编译模式：新模式，在 weex 原有样式基础上支持组合选择器（相邻兄弟选择器、普通兄弟选择器、子选择器、后代选择器）[详见](https://ask.dcloud.net.cn/article/38751)
+- uni-app compilation mode: a new mode, which supports combination selectors (adjacent brother selector, common brother selector, child selector and descendant selector) based on the original weex style. [See details](https://ask.dcloud.net.cn/article/38751)
 
 ```js
   // manifest.json
@@ -147,6 +161,7 @@ weex 编译模式下支持使用 weex ui ，例子[详见](https://ext.dcloud.ne
 ```
 
 ## 快速上手
+## Quick Start
 
 ### 1.新建 nvue 页面
 
@@ -173,6 +188,7 @@ weex 编译模式下支持使用 weex ui ，例子[详见](https://ext.dcloud.ne
   - plus API：仅支持 App 端。[http://www.html5plus.org/doc/h5p.html](http://www.html5plus.org/doc/h5p.html)
 
 ### 3.调试 nvue 页面
+### 3. Debugging nvue page
 
 HBuilderX 内置了 weex 调试工具的强化版，包括审查界面元素、看 log、debug 打断点，[详见](https://uniapp.dcloud.io/tutorial/snippet#app-debug)
 
@@ -184,6 +200,7 @@ HBuilderX 内置了 weex 调试工具的强化版，包括审查界面元素、�
 - 设置 render-whole="false"时，视图层将以子节点一个接着一个和原生层通讯再重绘。总体的渲染时间可能更久。
 
 默认启用`render-whole`为`true`的组件列表
+Enable `render-whole` as a component list of `true` by default
 
 - `text`
 - `cell`
@@ -192,50 +209,72 @@ HBuilderX 内置了 weex 调试工具的强化版，包括审查界面元素、�
 - `recycle-list`
 
 **使用**
+**Usage**
 
 ```html
 <swiper :render-whole="true"></swiper>
 ```
 
 **演示**
+**Demo**
 
 > 此演示在 Android 5.1 版本手机上的效果，高版本手机效果没有这么明显
 
 <img style="width:300px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/29c0c580-55ab-11eb-a16f-5b3e54966275.gif"></img>
 
 示例工程[点击下载](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/d5adb160-55af-11eb-bd01-97bc1429a9ff.zip)
+For the sample project, [Click to download](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/d5adb160-55af-11eb-bd01-97bc1429a9ff.zip)
 
 ## nvue开发与vue开发的常见区别
+## Common differences between nvue development and vue development
 
 基于原生引擎的渲染，虽然还是前端技术栈，但和web开发肯定是有区别的。
+Rendering based on native engine is still a front-end technology stack, but it is definitely different from web development.
 
 1. nvue 页面控制显隐只可以使用```v-if```不可以使用```v-show```
+1. nvue page control display and hide can only use `v-if` but not `v-show`
 2. nvue 页面只能使用``` flex ```布局，不支持其他布局方式。页面开发前，首先想清楚这个页面的纵向内容有什么，哪些是要滚动的，然后每个纵向内容的横轴排布有什么，按 flex 布局设计好界面。
+2. The nvue page only supports the `flex` layout and does not support any other layout methods. Before developing the page, you should first figure out what the vertical content of this page is and which contents are to be scrolled, then what is the horizontal axis arrangement of each vertical content, and design the interface according to flex layout.
 3. nvue 页面的布局排列方向默认为竖排（```column```），如需改变布局方向，可以在 ```manifest.json``` -> ```app-plus``` -> ```nvue``` -> ```flex-direction``` 节点下修改，仅在 uni-app 模式下生效。[详情](https://uniapp.dcloud.io/collocation/manifest?id=nvue)。
+3. The default layout direction of the nvue page is vertical (`column`). If you need to change the layout direction, you can modify it under the node `manifest.json` -> `app-plus` -> `nvue` -> `flex-direction`, which only takes effect in uni-app mode. [Details.](https://uniapp.dcloud.io/collocation/manifest?id=nvue)
 4. nvue页面编译为H5、小程序时，会做一件css默认值对齐的工作。因为weex渲染引擎只支持flex，并且默认flex方向是垂直。而H5和小程序端，使用web渲染，默认不是flex，并且设置```display:flex```后，它的flex方向默认是水平而不是垂直的。所以nvue编译为H5、小程序时，会自动把页面默认布局设为flex、方向为垂直。当然开发者手动设置后会覆盖默认设置。
 5. 文字内容，必须、只能在```<text>```组件下。不能在```<div>```、```<view>```的```text```区域里直接写文字。否则即使渲染了，也无法绑定js里的变量。
+5. The text content must and can only be under the `<text>` component. You cannot write text directly in the `text` area of `<div>` and `<view>`. Otherwise, even if rendered, the variables in js cannot be bound.
 6. 只有```text```标签可以设置字体大小，字体颜色。
+6. Only the `text` tag can set the font size and font color.
 7. 布局不能使用百分比、没有媒体查询。
+7. Layout cannot use percentage and there is no media query.
 8. nvue 切换横竖屏时可能导致样式出现问题，建议有 nvue 的页面锁定手机方向。
+8. When nvue switches the landscape and portrait screens, it may cause style problems, it is recommended to lock the direction of the mobile phone of the page when there is nvue.
 9. 支持的css有限，不过并不影响布局出你需要的界面，```flex```还是非常强大的。[详见](/nvue-css?id=flex)
 10. 不支持背景图。但可以使用```image```组件和层级来实现类似web中的背景效果。因为原生开发本身也没有web这种背景图概念
+10. Background images are not supported. But you can use `image` components and levels to achieve background effects similar to those in the web. Because in native development, there is no such concept of background map like web.
 11. css选择器支持的比较少，只能使用 class 选择器。[详见](/nvue-css)
+11. Fewer styles are supported by the css selector, and only the class selector can be used. [See details](/nvue-css)
 12. nvue 的各组件在安卓端默认是透明的，如果不设置```background-color```，可能会导致出现重影的问题。
+12. Each component of nvue is transparent by default on the Android side. If `background-color` is not set, ghosting problems may occur.
 13. ```class``` 进行绑定时只支持数组语法。
+13. `class` only supports array syntax when binding.
 14. Android端在一个页面内使用大量圆角边框会造成性能问题，尤其是多个角的样式还不一样的话更耗费性能。应避免这类使用。
+14. Using a large number of border-radius in a page of the Android side will cause performance problems, especially if the styles of multiple borders are not the same, which will consume more performance. Such use should be avoided.
 15. nvue页面没有```bounce```回弹效果，只有几个列表组件有```bounce```效果，包括 ```list```、```recycle-list```、```waterfall```。
+15. The nvue page does not have the `bounce` rebound effect, only a few list components have the `bounce` effect, including `list`, `recycle-list`, and `waterfall`.
 16. 原生开发没有页面滚动的概念，页面内容高过屏幕高度并不会自动滚动，只有部分组件可滚动（```list```、```waterfall```、```scroll-view/scroller```），要滚的内容需要套在可滚动组件下。这不符合前端开发的习惯，所以在 nvue 编译为 uni-app模式时，给页面外层自动套了一个 ```scroller```，页面内容过高会自动滚动。（组件不会套，页面有```recycle-list```时也不会套）。后续会提供配置，可以设置不自动套。
 17. 在 App.vue 中定义的全局js变量不会在 nvue 页面生效。```globalData```和```vuex```是生效的。
+17. The global js variables defined in App.vue will not take effect on the nvue page. `globalData` and `vuex` are effective.
 18. App.vue 中定义的全局css，对nvue和vue页面同时生效。如果全局css中有些css在nvue下不支持，编译时控制台会报警，建议把这些不支持的css包裹在[条件编译](https://uniapp.dcloud.io/platform)里，```APP-PLUS-NVUE```
 19. 不能在 ```style``` 中引入字体文件，nvue 中字体图标的使用参考：[加载自定义字体](/nvue-api?id=addrule)。如果是本地字体，可以用```plus.io```的API转换路径。
 20. 目前不支持在 nvue 页面使用 ```typescript/ts```。
+20. `typescript/ts` is currently not supported on the nvue page.
 21. nvue 页面关闭原生导航栏时，想要模拟状态栏，可以[参考文章](https://ask.dcloud.net.cn/article/35111)。但是，仍然强烈建议在nvue页面使用原生导航栏。nvue的渲染速度再快，也没有原生导航栏快。原生排版引擎解析```json```绘制原生导航栏耗时很少，而解析nvue的js绘制整个页面的耗时要大的多，尤其在新页面进入动画期间，对于复杂页面，没有原生导航栏会在动画期间产生整个屏幕的白屏或闪屏。
+21. When the native navigation bar is closed on the nvue page, if you want to simulate the status bar, you can [refer to the article](https://ask.dcloud.net.cn/article/35111). However, it is still strongly recommended to use native navigation bar on nvue pages. However fast nvue rendering is, it will not be as fast as the native navigation bar. Native typesetting engine analysis`json`. It takes little time to draw the native navigation bar, but it takes much longer to draw the whole page by analyzing the js of nvue, especially when the new page enters the animation period. For complex pages, there is no native navigation bar that will generate the white screen or splash screen of the whole screen during the animation period.
 
 ## iOS 平台下拉组件 refresh 组件注意问题
 
 iOS 平台默认情况下滚动容器组件（如`list`、`waterfall`组件）内容不足时，由于没有撑满容器的可视区域会导致无法上下滚动，此时无法操作下拉刷新功能，无法触发`refresh`组件的`@refresh`、`@pullingdown`事件。 此时可在容器组件中配置`alwaysScrollableVertical`属性值为`true`来设置支持上下滚动，支持下拉刷新操作。
 
 ##### 用法
+##### Usage
 
 ```html
 <list class="scroll-v list" enableBackToTop="true" scroll-y alwaysScrollableVertical="true">

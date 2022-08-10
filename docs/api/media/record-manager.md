@@ -1,29 +1,44 @@
 ### uni.getRecorderManager()
 获取**全局唯一**的录音管理器 ``recorderManager``。
+Get the **globally unique** recording manager `recorderManager`.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|x|√|√|√|x|√|
 
 **recorderManager 对象的方法列表**
+**Method list of recorderManager object**
 
 |方法|参数|说明|平台差异说明|
+| Method| Parameter| Instruction| Platform difference description|
 |:-|:-|:-|:-|
 |start|options|开始录音||
+| start| options| Start recording| |
 |pause||暂停录音|App 暂不支持|
+| pause| | Pause recording| Not supported on App temporarily|
 |resume||继续录音|App 暂不支持|
+| resume| | Resume recording| Not supported on App temporarily|
 |stop||停止录音||
+| stop| | Stop recording| |
 |onStart|callback|录音开始事件||
+| onStart| callback| Recording start event| |
 |onPause|callback|录音暂停事件||
+| onPause| callback| Recording pause event| |
 |onStop|callback|录音停止事件，会回调文件地址||
+| onStop| callback| In terms of recording stop event, file address will be called back| |
 |onFrameRecorded|callback|已录制完指定帧大小的文件，会回调录音分片结果数据。如果设置了 frameSize ，则会回调此事件|App 暂不支持|
+| onFrameRecorded| callback| After recording the file with the specified frame size, the recording fragmentation result data will be called back. If frameSize is set, this event will be called back| Not supported on App temporarily|
 |onError|callback|录音错误事件, 会回调错误信息|&nbsp;|
+| onError| callback| In terms of recording error event, error messages will be called back|  |
 
 **start(options) 说明**
+**start(options) description**
 
 |属性|类型|必填|说明|平台差异说明|
+| Attribute| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |duration|Number|否|指定录音的时长，单位 ms ，如果传入了合法的 duration ，在到达指定的 duration 后会自动停止录音，最大值 600000（10 分钟）,默认值 60000（1 分钟）|App、小程序支持|
 |sampleRate|Number|否|采样率，有效值 8000/16000/44100|App、小程序支持|
@@ -47,30 +62,43 @@
 |48000|64000 ~ 320000|
 
 **onStop(callback) 回调结果说明**
+**onStop(callback) callback result description**
 
 |属性|类型|说明|
+| Attribute| Type| Instruction|
 |:-|:-|:-|
 |tempFilePath|String|录音文件的临时路径|
+| tempFilePath| String| Temporary path of the recording file|
 
 
 **onFrameRecorded(callback) 回调结果说明**
+**onFrameRecorded(callback) callback result description**
 
 |属性|类型|说明|
+| Attribute| Type| Instruction|
 |:-|:-|:-|
 |frameBuffer|ArrayBuffer|录音分片结果数据|
+| frameBuffer| ArrayBuffer| Recording fragmentation result data|
 |isLastFrame|Boolean|当前帧是否正常录音结束前的最后一帧|
+| isLastFrame| Boolean| Whether the current frame is the last frame before normal record ending|
 
 **onError(callback) 回调结果说明**
+**onError(callback) callback result description**
 
 |属性|类型|说明|
+| Attribute| Type| Instruction|
 |:-|:-|:-|
 |errMsg|String|错误信息|
+| errMsg| String| Error message|
 
 **注意**
+**Notice**
 
 - 可以通过用户授权API来判断用户是否给应用授予麦克风的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
+- The user authorization API can be used to determine whether the user authorizes the application the to access to the microphone [https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 
 **示例**
+**Example**
 
 ```html
 <template>

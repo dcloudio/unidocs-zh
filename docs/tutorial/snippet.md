@@ -30,6 +30,7 @@ uni.showToast({
 - uButton
 - uCheckbox
 - uGrid：宫格，需引用uni ui
+- uGrid: grid, need to refer to uni ui
 - uList：列表，需引用uni ui
 - uListMedia
 - uRadio
@@ -41,9 +42,12 @@ uni.showToast({
 你也可以在HBuilderX菜单-工具-代码块设置-vue代码块的左侧列表查阅所有已支持的代码块。
 
 除组件外，其他常用代码块包括：
+In addition to components, other common code blocks include:
 
 - viewfor：生成一段带有v-for循环结构的视图代码块
+- viewfor: generate a view code block with v-for loop structure
 - vbase：生成一段基本的vue代码结构
+- vbase: generate a basic vue code structure
 
 ### JS代码块
 
@@ -71,22 +75,34 @@ uni.showToast({
 - vImport：导入文件
 - ed：export default
 - vData：输出 data(){return{}}
+- vData: output data(){return{}}
 - vMethod：输出 methods:{}
+- vMethod: Output methods:{}
 - vComponents：输出 components: {}
+- vComponents: output components: {}
 
 #### 其他常用js代码块
 - iff：简单if
+- iff: simple if
 - forr：for循环结构体
+- forr: for loop structure
 - fori：for循环结构体并包含i
+- fori: for loop structure and contains i
 - funn：函数
+- funn: function
 - funa：匿名函数
 - rt：return true
 - clog：输出："console.log()"
+- clog: output: "console.log ()"
 - clogvar：增强的日志输出，可同时把变量的名字打印出来
+- clogvar: enhanced log output, which can print out the names of variables at the same time
 - varcw：输出："var currentWebview = this.$scope.page.$getAppWebview()"
 - ifios：iOS的平台判断
+- ifios: platform judgment of iOS
 - ifAndroid：Android的平台判断
+- ifAndroid: platform judgment of Android
 
 预置代码块不满足需求的话，可以自定义代码块，教程参考[https://ask.dcloud.net.cn/article/35924](https://ask.dcloud.net.cn/article/35924)
+If the preset code block does not meet the requirements, you can customize the code block. Refer to the tutorial [https://ask.dcloud.net.cn/article/35924](https://ask.dcloud.net.cn/article/35924)
 
 

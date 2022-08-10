@@ -458,9 +458,9 @@ let res = await db.collection('shopping').aggregate()
 
  
 ```js
-{ _id: 1, log: 2 }
-{ _id: 2, log: 0 }
-{ _id: 3, log: 1 }
+{ _id: 1, overflow: 2 }
+{ _id: 2, overflow: 0 }
+{ _id: 3, overflow: 1 }
 ```
 
 ### multiply

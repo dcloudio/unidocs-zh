@@ -6,7 +6,7 @@
 
 ### abs
 
-<!--类似 JavaScript Array 上的 map 方法
+<!--
 /// meta
 keyword: abs,绝对值
 -->

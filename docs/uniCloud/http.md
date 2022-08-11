@@ -355,8 +355,9 @@ content-length: 9897
 
 在云函数中使用cookie需要依赖cookie库[npm页面地址](http://https://www.npmjs.com/package/cookie)，可以通过`npm inistall cookie` 安装
 
+**普通云函数示例**
+
 ```js
-// 普通云函数
 'use strict';
 //引入cookie
 const cookie = require('cookie')
@@ -378,8 +379,11 @@ exports.main = async (event, context) => {
 		body: '返回数据'
 	}
 };
+```
 
-// 云对象
+**云对象示例**
+
+```js
 'use strict';
 //引入cookie
 const cookie = require('cookie')

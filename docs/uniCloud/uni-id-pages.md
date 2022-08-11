@@ -180,7 +180,7 @@ debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-c
 |--			|--	|--	|
 |univerify	|[一键登录](https://uniapp.dcloud.io/univerify.html)	|App 3.0.0+|
 |smsCode	|短信验证码登录			||
-|weixin		|微信登录	|App，微信小程序，H5（uni-id-pages 版本号1.0.8起支持，含微信公众号内的h5网页授权登录和手机微信扫码登录） |
+|weixin		|微信登录	|App，微信小程序，H5（uni-id-pages 版本号1.0.8起支持，含微信公众号内的网页授权登录 和 普通浏览器内网页生成二维码，实现手机微信扫码登录） |
 |apple		|苹果登录[Apple登录](https://ask.dcloud.net.cn/article/36651)	| iOS13+支持，App 2.4.7+|
 |username	|用户名密码登录				||
 

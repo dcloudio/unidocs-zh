@@ -296,44 +296,5 @@ exports.main = async (event, context) => {
 
 ## 在云函数中使用cookie
 
-在某些场景下，cookie依然占有重要地位，例如在云函数URL化的情况下，获取客户端的状态
-
-在云函数中使用cookie需要依赖cookie库[npm页面地址](http://https://www.npmjs.com/package/cookie)，可以通过`npm inistall cookie` 安装
-
-```js
-'use strict';
-
-//引入cookie
-const cookie = require('cookie')
-exports.main = async (event, context) => {
-	//event为客户端上传的参数
-	//如果客户端有cookie，则cookie回随请求携带至服务端，放置在event.headers.cookie中,假设 cookie为“[jwt=自加密base64; app=uniCloud]”
-	console.log('event : ', event)
-    
-        //解析cookie
-        const cookieData = cookie.parse( event.headers.cookie||'' )
-        console.log(cookieData)//输出结果为：{jwt:"自加密base64", app:"uniCloud" }
-
-        //设置cookie到客户端
-
-        const cookieOptions = {
-            //具体参数请查阅 https://www.npmjs.com/package/cookie
-            maxAge: 60 * 60 * 24 * 7,//一周
-            path:"/"
-        }
-        const setCookieData = cookie.serialize('app', 'appName', cookieOptions)
-        return {
-            statusCode: 200,
-            headers: {
-                'content-type': '返回数据类型',
-                'set-cookie': setCookieData
-            },
-            body: '返回数据'
-        }
-	
-};
-
-```
-
-
+详见：[url化场景下使用cookie](http.md#cookie)
 

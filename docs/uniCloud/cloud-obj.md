@@ -745,6 +745,9 @@ method1(param1) {
 调用该方法时可以看到代码提示：
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a94aa7c2-daa6-4bcb-a74c-d0e5c5c58b12.jpg)
 
+## 在云对象中使用cookie
+
+详见：[url化场景下使用cookie](http.md#cookie)
 
 ## 注意事项
 

@@ -1,12 +1,12 @@
 # uni-open-bridge
 
-`uni-open-bridge` 是统一接管微信等三方平台认证凭据（包括但不限于`access_token`、`session_key`、`ticket`）的开源库。
+`uni-open-bridge` 是统一接管微信等三方平台认证凭据（包括但不限于`access_token`、`session_key`、`encrypt_key`、`ticket`）的开源库。
 
 ## 背景
 
 调用微信等三方开放平台时，涉及众多凭据。有的是固定凭据，没有有效期。有的是临时凭据，会在一定时间或一定操作后失效。
 
-尤其是临时凭据，比如微信的`access_token`、`session_key`、`ticket`（乱啊，下面的api是4个。多了`user_key`、`encrypt_key`，少了`session_key`，**xxx**）， 开发者需要动态从微信服务器获取，统一保存。
+尤其是临时凭据，比如微信的`access_token`、`session_key`、`encrypt_key`、`ticket`， 开发者需要动态从微信服务器获取，统一保存。
 
 但实际上这里面的坑很多：
 
@@ -27,13 +27,13 @@
 `uni-open-bridge` 包括：
 1. 一个云对象 `uni-open-bridge` 
 2. 一个公共模块 `uni-open-bridge-common` 
-3. 配套的数据库，表名为 **xxx**。在redis中的key为 **xxx**
+3. 配套的数据库，表名为 `opendb-open-data`。在redis中的key格式为 `uni-id:[dcloudAppid]:[platform]:[openid]:[access-token|user-key|encrypt-key-version|ticket]`
 
 `uni-open-bridge`系统中，有一个同名云对象`uni-open-bridge`，它默认就是定时运行的，在package.json中配置了每小时定时运行一次（部署线上系统生效）。
 
-该云对象根据在 `uni-config-center` 中**xxx**位置配置的**xxx**，从而有权定时向微信服务器发请求，将获取到的**xxx**保存到数据库 **xxx** 中。
+该云对象根据在 `uni-config-center` 中 `mp-weixin` 或 `web` 节点位置配置的 `appid` 和 `secret`，从而有权定时向微信服务器发请求，将获取到的 `access_token`或`ticket` 保存到数据库 `opendb-open-data` 表中。
 
-当所在服务空间开通redis时，还会缓存在redis的key **xxx** 中。这会让系统性能更好。
+当所在服务空间开通redis时，还会缓存在redis的key。这会让系统性能更好。
 
 上述获取到微信的各种临时凭据后，当各个业务代码需要这些凭据时，通过如下方式获取。
 
@@ -45,22 +45,71 @@
 <img src="/svg/uni-open-bridge.svg"></img>
 
 ## 使用
-1. **下载插件[]()**到项目中。
+1. **下载插件[uni-open-bridge](https://ext.dcloud.net.cn/plugin?id=9002)到项目中。
 
-2. 在`uni-config-center`的**xxx**地方配置固定凭据**xxx**
+2. 在`uni-config-center`的 `uni-id` 下配置固定凭据 `appid` 和 `secret`
 
-首先向微信的哪里申请xx固定凭据
-然后在项目的**xxx**目录下配置xxx
+首先向微信的[公众平台](https://mp.weixin.qq.com/)申请 `appid` 和 `secret` 固定凭据
+然后在项目的 uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json 文件中配置
+
 **示例代码**
 
-3. 在`uni-config-center`目录下新建子目录`uni-open-bridge`, 新增 `config.json`，配置**xxx**
+```json
+// uni-config-center/uni-id/config.json
+{
+  "dcloudAppid": "__UNI__xxxxxx", // 在项目的 manifest.json 中
+  "mp-weixin": {
+    "tokenExpiresIn": 259200,
+    "oauth": {
+      "weixin": {
+        "appid": "", // 微信公众平台申请的小程序 appid
+        "appsecret": "" // 微信公众平台申请的小程序 secret
+      }
+    }
+  },
+  "web": {
+    "oauth": {
+      "h5-weixin": {
+        "appid": "", // 微信公众平台申请的公众号 appid
+        "appsecret": "" // 微信公众平台申请的公众号 secret
+      }
+    }
+  }
+}
+```
 
-示例代码
+注意：拷贝此文件内容时需要移除 `注释`
+
+3. 在`uni-config-center`目录下新建子目录`uni-open-bridge`, 新增 `config.json`，配置 dcloudAppid ，详情见下面的示例代码
+
+**示例代码**
+
+```json
+// uni-config-center/uni-open-bridge/config.json
+{
+  "schedule": {
+    "__UNI__xxxxxx": { // dcloudAppid, 需要和 `uni-config-center` uni-id中的配置一致
+      "enable": true, // 任务全局开关，优先级最高
+      "mp-weixin": { // 平台，目前仅支持 微信小程序、微信 H5，详情参见 https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge#platform
+        "enable": true, // 当前平台任务开关
+        "tasks": ["accessToken"] // 要执行的任务，微信小程序支持 accessToken
+      },
+      "h5-weixin": {
+        "enable": false,
+        "tasks": ["ticket"] // 支持微信 H5 ticket，因 ticker 依赖微信 H5 accessToken，内部自动先获取 accessToken。此处的 accessToken 和微信小程序的 accessToken 不是一个值
+      }
+    }
+  },
+  "ipWhiteList": ["0.0.0.0"] // 用于 http 调用的服务器IP白名单
+}
+```
+
+注意：拷贝此文件内容时需要移除 `注释`
 
 4. 将插件上传到服务空间。最好开通redis，会有更好的性能
-然后在数据库和redis的**xxx**中会看到数据。
+然后在数据库和redis的`uni-id`分组中会看到数据。
 
-如果异常，请在**xxx**检查运行日志。很可能是第一步或第二步的配置出错了。
+如果异常，请在 [uniCloud Web控制台](https://unicloud.dcloud.net.cn/)，找到云函数/云对象 `uni-open-bridge` 检查运行日志。很可能是第一步或第二步的配置出错了。
 
 ## 业务系统获取相关凭据的方法
 
@@ -107,8 +156,7 @@
 
 const {
   getAccessToken,
-  setAccessToken,
-  removeAccessToken
+  setAccessToken
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
@@ -126,14 +174,6 @@ exports.main = async (event, context) => {
 
   // 读取 (redis / 数据库)
   let result1 = await getAccessToken(key)
-
-  // 删除
-  await removeAccessToken(key)
-
-
-  // 删除后读取, 返回 null
-  let result2 = await getAccessToken(key)
-  console.log(result2) // null
 
   return null
 };
@@ -170,8 +210,7 @@ exports.main = async (event, context) => {
 
 const {
   getUserKey,
-  setUserKey,
-  removeUserKey,
+  setUserKey
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
@@ -190,14 +229,6 @@ exports.main = async (event, context) => {
 
   // 读取 (redis / 数据库)
   let result1 = await getUserKey(key)
-
-  // 删除
-  await removeUserKey(key)
-
-
-  // 删除后读取, 返回 null
-  let result2 = await getUserKey(key)
-  console.log(result2) // null
 
   return null
 };
@@ -237,8 +268,7 @@ exports.main = async (event, context) => {
 
 const {
   getEncryptKey,
-  setEncryptKey,
-  removeEncryptKey
+  setEncryptKey
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
@@ -259,13 +289,6 @@ exports.main = async (event, context) => {
 
   // 读取 (redis / 数据库)
   let result1 = await getEncryptKey(key)
-
-  // 删除
-  await removeEncryptKey(key)
-
-  // 删除后读取, 返回 null
-  let result2 = await getEncryptKey(key)
-  console.log(result2) // null
 
   return null
 };
@@ -301,8 +324,7 @@ exports.main = async (event, context) => {
 
 const {
   getTicket,
-  setTicket,
-  removeTicket
+  setTicket
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
@@ -320,14 +342,6 @@ exports.main = async (event, context) => {
 
   // 读取 (redis / 数据库)
   let result1 = await getTicket(key)
-
-  // 删除
-  await removeTicket(key)
-
-
-  // 删除后读取, 返回 null
-  let result2 = await getTicket(key)
-  console.log(result2) // null
 
   return null
 };
@@ -413,6 +427,25 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getUserK
 }
 ```
 
+#### getEncryptKey
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getEncryptKey
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "mp-weixin",
+  "openid": "",
+  "version": 1 // 此版本号应根据客户端传递的版本号
+}
+```
+
 
 #### getTicket
 
@@ -466,7 +499,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getTicke
 
 开发者如果遇到因为 `session_key` 不正确而校验签名失败或解密失败，请关注下面几个与 `session_key` 有关的注意事项。
 
-`uni.login` 调用时，用户的 `session_key` 可能会被更新而致使旧 `session_key` 失效（刷新机制存在最短周期，如果同一个用户短时间内多次调用 uni.login，并非每次调用都导致 `session_key` 刷新）。
+`uni.login` 调用时，用户的 `session_key` 可能会被更新而致使旧 `session_key` 失效（刷新机制存在最短周期，如果同一个用户短时间内多次调用 `uni.login`，并非每次调用都导致 `session_key` 刷新）。
 
 开发者应该在明确需要重新登录时才调用 `uni.login`，及时通过 `code2Session` 接口更新服务器存储的 `session_key`。
 

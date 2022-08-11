@@ -400,12 +400,72 @@ module.exports = {
 ```js
 module.exports = {
 	_before: function() { // _before的用法请看后续章节
-		const params = this.getHttpInfo() // 返回值和云函数url化时的event一致
+		const httpInfo = this.getHttpInfo()
 	}
 }
 ```
 
-相关文档：[云函数url化的入参](cf-functions.md#input)
+httpInfo为集成请求格式的对象，结构如下
+
+```js
+{
+    path: 'HTTP请求路径，如 /hello',
+    httpMethod: 'HTTP请求方法，如 GET',
+    headers: {HTTP请求头},
+    queryStringParameters: {HTTP请求的Query，键值对形式},
+    body: 'HTTP请求体',
+    isBase64Encoded: 'true or false，表示body是否为Base64编码'
+}
+```
+
+**注意**
+
+- httpInfo.path表示以配置的url化路径为根路径的访问路径。以配置`/test`为云对象url化路径，访问`/test/a/b/c`时path为`/a/b/c`
+
+**示例**
+
+使用GET请求`https://${云对象Url化域名}/${触发路径}/${云对象方法名}?a=1&b=2`，云对象接收到的`event`为
+
+```js
+{
+    path: '/${云对象方法名}',
+    httpMethod: 'GET',
+    headers: {HTTP请求头},
+    queryStringParameters: {a: "1", b: "2"},
+    isBase64Encoded: false
+}
+```
+
+
+使用POST请求`https://${云对象Url化域名}/${触发路径}/${云对象方法名}`，云对象接收到的`event.body`为请求发送的数据，**uni.request默认content-type为application/json**
+
+```js
+// 以uni.request为例
+uni.request({
+  method: 'POST',
+  url: 'https://${云对象Url化域名}/${触发路径}/${云对象方法名}',
+  data: {
+    a: 1,
+    b: 2
+  },
+  success(res) {
+    console.log(res);
+  }
+})
+
+// 云对象的httpInfo
+{
+    path: '/${云对象方法名}',
+    httpMethod: 'POST',
+    headers: {
+    	...
+    	"content-type": 'application/json'
+    },
+    isBase64Encoded: false,
+    body: '{"a":1,"b":2}', // 注意此处可能是base64，需要根据isBase64Encoded判断
+}
+```
+
 
 ## 内置特殊方法@before-and-after
 
@@ -745,6 +805,9 @@ method1(param1) {
 调用该方法时可以看到代码提示：
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a94aa7c2-daa6-4bcb-a74c-d0e5c5c58b12.jpg)
 
+## 在云对象中使用cookie
+
+详见：[url化场景下使用cookie](http.md#cookie)
 
 ## 注意事项
 

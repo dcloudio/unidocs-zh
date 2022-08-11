@@ -458,9 +458,9 @@ let res = await db.collection('shopping').aggregate()
 
  
 ```js
-{ _id: 1, log: 2 }
-{ _id: 2, log: 0 }
-{ _id: 3, log: 1 }
+{ _id: 1, overflow: 2 }
+{ _id: 2, overflow: 0 }
+{ _id: 3, overflow: 1 }
 ```
 
 ### multiply
@@ -1055,8 +1055,8 @@ let res = await db.collection('stats').aggregate()
 
  
 ```js
-{ "_id": 1, "index": 160 }
-{ "_id": 2, "index": 100 }
+{ "_id": 1, "sum": 160 }
+{ "_id": 2, "sum": 100 }
 ```
 
 ### map
@@ -1118,8 +1118,8 @@ let res = await db.collection('stats').aggregate()
 
  
 ```js
-{ "_id": 1, "index": 16 }
-{ "_id": 2, "index": 19 }
+{ "_id": 1, "total": 16 }
+{ "_id": 2, "total": 19 }
 ```
 
 ### objectToArray

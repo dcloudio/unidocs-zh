@@ -1,9 +1,21 @@
-# uniCloud 加密网络通道
+云端一体安全网络
 
-简介
+## 简介
 
-为了避免 `uniCloud` 客户端与服务器通信时数据被截取和篡改，
+网络安全的问题很多：
 
+1. 客户端受信。因为过去采用无状态网络通过接口交换数据，客户端的真实性很难保证。
+2. 网络抓包，即便是https的请求也会被抓包。
+
+当攻击者了解了你的服务器接收什么样的数据时，就可以冒名客户端，提交假数据来攻击你的服务器。
+
+尤其当你的业务中涉及促销、返佣、激励视频等场景，非常容易被刷。褥羊毛已经是一个非常成熟的灰产。
+
+当DCloud同时提供了`uni-app` 和 `uniCloud`时，事实上具备了提供云端一体的安全网络的能力。
+
+在HBuilderX 3.5.5+ ，当开发者同时使用 `uni-app` 和 `uniCloud` 时，可以在网络请求时选择是否通过安全网络运行，它通过高安全的保护机制，防止客户端伪造和通信内容抓包。
+
+注意：安全网络不支持web平台，只支持微信小程序和App。并且App的安全级别更高。
 
 **平台差异说明**
 
@@ -11,72 +23,35 @@
 |:-:|:-:|
 |后续支持|3.5.5+|
 
+## 开通流程
 
-语法
-
-```js
-uniCloud.callFunction({
-  name: 'collection',
-  data: {
-    name: 'user'
-  },
-  secret: true
-  // ...
-})
-```
-
-`secret: true` 表示使用加密网络通道，默认为 `false`
-
-
-## App平台
+### App平台
 
 后续支持
 
+### 微信小程序
 
-## 微信小程序
+1. 下载uni-id插件
 
-### 简介
+- `uni-id-co` [详情]()
 
-微信侧维护了一个用户维度的可靠key，用于小程序和后台通信时进行加密和签名。
+2. 下载uni-open-bridge插件
 
-开发者可以分别通过小程序前端和微信后台提供的接口，获取用户的加密 key。
+在微信小程序上依赖 `access_token`、`session_key`, `encrypt_key`。这些凭据需要`uni-open-bridge`统一接管。
 
-### 微信的流程如下
+- `uni-open-bridge` [详情]()
 
-客户端
+3. 在应用的生命周期 `onLaunch` 中检查微信登陆状态，如果过期需要登陆
 
-1. 在开发者客户端使用 `UserCryptoManager.getLatestUserKey` 获取用户最新的加密密钥信息。
-2. 通过 `AES` 和加密密钥加密数据，然后发送到服务器
-
-服务器
-
-在开发者服务端，请求微信服务器后台接口 `getUserEncryptKey` 获取用户最近三次的key。在获取 key 的同时，接口会携带 version 信息，开发者可以比较 version 版本来选择使用对应的 key 对数据进行加解密。
-
-获取 `getUserEncryptKey` 时需要参数 `openid`、`access_token`、`session_key`
-
-1. `access_token` 需要服务器定时刷新并全局缓存
-
-2. `session_key`
-在微信客户端通过调用 `wx.login()` 获取 `code` 传递到服务器，在服务器请求微信的服务器换取 `session_key`，且在客户端任意地方调用 `wx.login()` 后 `session_key` 将失效，
-在微信的多个业务中都需要用到 `session_key`，需要开发者来维护这些值
-
-这些复杂的流程可以通过 `uni-open-bridge`、`uni-open-bridge-common` 解决，也无需人工维护，[详情](/uniCloud/uni-open-bridge)
-
-### uniCloud流程如下
-
-1. 使用 `uni-open-bridge`、`uni-open-bridge-common` 接管三方开放平台数据，[详情](/uniCloud/uni-open-bridge)
-
-2. 在应用的生命周期 `onLaunch` 中检查微信登陆状态，如果过期需要登陆
-
-注意 `wx.checkSession` 有调用次数限制警告，一个 `pv` 可调用 `2` 次
+注意 `uni.checkSession` 有调用次数限制警告，一个 `pv` 可调用 `2` 次
 
 ```js
 // App.vue
 <script>
   function checkUserSession() {
-    wx.checkSession({
+    uni.checkSession({
       fail: (err) => {
-        wx.login({
+        uni.login({
           success: async ({ code }) => {
             const uniIdCo = uniCloud.importObject('uni-id-co') // uniCloud云对象 uni-id-co
             await uniIdCo.loginByWeixin({ code })
@@ -97,28 +72,53 @@ uniCloud.callFunction({
 </script>
 ```
 
-3. 调用 `uniCloud.callFunction()`, 且传递参数 `secret: true`
 
+## 调用方式
+
+开通配置后，在uni-app客户端调用uniCloud服务器时，可以通过加入secret参数来声明这次请求走安全网络，对传输数据加密。
+
+- callFunction
+
+客户端通过callFunction调用云函数时，加入secret参数。
 ```js
 uniCloud.callFunction({
   name: 'collection',
   data: {
     name: 'user'
   },
-  secret: true,
-  success: (res) => {
-    console.log(res.result);
-  },
-  fail: (err) => {
-    console.log(err);
-  }
+  secret: 'both'
 })
 ```
 
-客户端 `uniCloud.callFunction({ secret: true })` 内部逻辑如下:
 
-1. 调用 `uniCloud.getCurrentUserInfo()` 检查本地用户登陆状态，登陆无效则调用 `wx.login()`，继续使用 `uni-id-co` 调用 `loginByWeixin({ code })`，此过程将同步更新 `uni-open-bridge-common` 保存的数据 `session_key`
-2. 调用 `wx.getUserCryptoManager()` 获取加密密钥并通过 `AES` 加密数据，然后发送 `uniCloud` 服务器
-3. 等待服务器响应加密数据到达客户端后解密，回调给开发者
+- 云对象
 
-注意：传递参数 `secret: true` 的 `callFunction` 拦截器不会生效，因为需要在内部解密服务器端下发的加密数据
+客户端通过importObject调用云对象时，加入secret和secretMethods参数。
+
+```js
+uniCloud.importObject('object-name', {
+  customUI: false,
+  secret: 'both',
+  secretMethods: ['login']
+})
+```
+
+
+**secret 属性说明**
+
+|值				|描述																						|
+|:-:			|:-:																						|
+|none			|不加密，默认值																	|
+|request	|只加密客户端请求时的上行数据，服务器下发数据不加密	|
+|response	|客户端请求时不加密数据，只加密服务器下发的数据			|
+|both			|客户端和服务器上行下行数据都加密数据							|
+
+**secretMethods 属性说明**
+
+`secretMethods` 是云对象中指定需要加密的方法名。因为云对象导入后，调用方法时没有额外指定的方式，所以集中在这里配置。如果不配置，则云对象的所有方法请求时都会加密。
+
+
+## 小贴士
+
+1. 安全是相对的，没有绝对的安全。
+2. 安全是有代价的，加密的数据越庞大，加密和解密的耗时越长。

@@ -4,26 +4,24 @@ editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery
 The editorContext instance corresponding to the editor component can be accessed through [uni.createSelectorQuery](/api/ui/nodes-info?id=createselectorquery).
 
 ```js
- onEditorReady() {
-    uni.createSelectorQuery().select('#editor').context((res) => {
-        this.editorCtx = res.context
-    }).exec()
-}
+	onEditorReady() {
+		uni.createSelectorQuery().select('#editor').context((res) => {
+			this.editorCtx = res.context
+		}).exec()
+	}
 ```
 
-百度小程序 ```Editor``` 富文本编辑器动态库提供了 ```createEditorContext``` 的方法来获取。
+百度小程序 `Editor` 富文本编辑器动态库提供了 `createEditorContext` 的方法来获取。
 
 ```js
- onEditorReady() {
-    this.editorCtx = requireDynamicLib('editorLib').createEditorContext('editorId');
-  }
+	onEditorReady() {
+		this.editorCtx = requireDynamicLib('editorLib').createEditorContext('editor');
+	}
 ```
 
 
 `editorContext` 通过 `id` 跟一个 [`<editor>`](/component/editor) 组件绑定，操作对应的 [`<editor>`](/component/editor) 组件。
 `editorContext` is bound to a [`<editor>`](/component/editor) component through `id`, and operates the corresponding [`<editor>`](/component/editor) component.
-
-
 
 
 
@@ -39,24 +37,23 @@ The editorContext instance corresponding to the editor component can be accessed
 **百度小程序引入动态库**
 
 
-1. 在项目中引用动态库，在 ```manifest.json``` 中增添一项 ```dynamicLib``` 
+1. 在项目中引用动态库，在 `manifest.json` 中增添一项 `dynamicLib` 
  
 ```js
-  "mp-baidu" : {
-    "appid" : "",
-    "setting" : {
-      "urlCheck" : true
-    },
-    "dynamicLib": {//引入百度小程序动态库
-      "editorLib": {
-        "provider": "swan-editor"
-      }
-    }
-  },
-
+	"mp-baidu" : {
+		"appid" : "",
+		"setting" : {
+			"urlCheck" : true
+		},
+		"dynamicLib": {//引入百度小程序动态库
+			"editorLib": {
+				"provider": "swan-editor"
+			}
+		}
+	}
 ```
 
-2. 在每个使用到富文本编辑器组件的页面，配置 ```pages.json``` 文件如下：
+2. 在每个使用到富文本编辑器组件的页面，配置 `pages.json` 文件如下：
 
 ``` js 
 {
@@ -65,7 +62,7 @@ The editorContext instance corresponding to the editor component can be accessed
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "uni-app",
-				"usingSwanComponents": {
+				"usingComponents": {
 					"editor": "dynamicLib://editorLib/editor"
 				}
 			}
@@ -94,28 +91,32 @@ Modify style
 **支持设置的样式列表**
 **List of supported styles**
 
-| name | value |
-| --- | --- |
-| bold |  |
-| italic |  |
-| underline |  |
-| strike |  |
-| ins |  |
-| script | sub / super |
-| header | H1 / H2 / h3 / H4 / h5 / H6 |
-| align | left / center / right / justify |
-| direction | rtl |
-| indent | -1 / +1 |
-| list | ordered / bullet / check |
-| color | hex color |
-| backgroundColor | hex color |
-| margin/marginTop/marginBottom/marginLeft/marginRight | css style |
-| padding/paddingTop/paddingBottom/paddingLeft/paddingRight | css style |
-| font/fontSize/fontStyle/fontVariant/fontWeight/fontFamily | css style |
-| lineHeight | css style |
-| letterSpacing | css style |
-| textDecoration | css style |
-| textIndent | css style |
+| name | value |平台差异说明|
+| --- | --- |--- |
+| bold |  ||
+| italic |  ||
+| underline |  ||
+| strike |  ||
+| ins |  ||
+| script | sub / super ||
+| header | H1 / H2 / h3 / H4 / h5 / H6 ||
+| align | left / center / right / justify |left百度小程序不支持|
+| direction | rtl ||
+| indent | -1 / +1 ||
+| list | ordered / bullet / check ||
+| color | hex color ||
+| backgroundColor | hex color ||
+| margin/marginTop/marginBottom/marginLeft/marginRight | css style |百度小程序不支持|
+| padding/paddingTop/paddingBottom/paddingLeft/paddingRight | css style |百度小程序不支持|
+| font/fontSize/fontStyle/fontVariant/fontWeight/fontFamily | css style |百度小程序不支持|
+| lineHeight | css style |百度小程序不支持|
+| letterSpacing | css style |百度小程序不支持|
+| textDecoration | css style |百度小程序不支持|
+| textIndent | css style |百度小程序不支持|
+| wordWrap | css style |百度小程序不支持|
+| wordBreak | css style |百度小程序不支持|
+| whiteSpace | css style |百度小程序不支持|
+
 
 对已经应用样式的选区设置会取消样式。css style 表示 css 中规定的允许值。
 If applying to the selected area with style, the current style will be canceled. css style represents the allowable values specified in css.
@@ -152,13 +153,13 @@ Insert image.
 | 属性 | 类型 | 默认值 | 必填 | 说明 |
 | Attribute| Type| Defaults| Required| Instruction|
 | --- | --- | --- | --- | --- |
-| src | String |  | 是 | 图片地址 |
+| src | String |  | 是 | 图片地址，仅支持 http(s)、base64、本地图片 |
 | src| String| | Yes| Image address|
 | alt | String |  | 否 | 图像无法显示时的替代文本 |
 | alt| String| | No| Alternative text when the image cannot be displayed.|
-| width | String |  | 否 | 图片宽度（pixels/百分比），2.6.5+ 支持 |
+| width | String |  | 否 | 图片宽度（pixels/百分比），2.6.5+ 支持，百度小程序不支持 |
 | width| String| | No| Width of image (pixels/percentage). Supported in 2.6.5+.|
-| height | String |  | 否 | 图片高度 (pixels/百分比），2.6.5+ 支持|
+| height | String |  | 否 | 图片高度 (pixels/百分比），2.6.5+ 支持，百度小程序不支持|
 | height| String| | No| Height of image (pixels/percentage). Supported in 2.6.5+.|
 | extClass | String |  | 否 | 添加到图片 img 标签上的类名，2.6.5+ 支持 |
 | extClass| String| | No| Class name that added to img tags. Supported in 2.6.5+.|
@@ -229,6 +230,16 @@ Get editor content
 | fail| Function| | No| Callback function for failed interface calling|
 | complete | Function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | complete| Function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
+
+
+**object.success 回调函数**
+
+| 属性 | 类型 | 说明 |
+| --- | --- | --- |
+| html | string |带标签的 HTML 内容 |
+| text | string |纯文本内容 |
+| delta | Object |表示内容的 delta 对象 |
+
 
 ## editorContext.clear(OBJECT)
 
@@ -312,7 +323,7 @@ The editor is out of focus and the keyboard is retracted at the same time.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|x|x|x|x|x|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|√|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -337,7 +348,7 @@ Make the editor cursor scroll to the visible area of the window.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|x|x|x|x|x|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|√|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -362,7 +373,7 @@ Get the plain text content within the selected area of the editor. When the edit
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.10.2`|x|x|x|x|x|x|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.10.2`|x|√|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -383,7 +394,7 @@ Get the plain text content within the selected area of the editor. When the edit
 |参数|类型|说明|
 | Parameter| Type| Instruction|
 |:-|:-|:-|
-|errMsg|String|接口调用结果|
+|errMsg|String|接口调用结果（百度小程序不支持）|
 | errMsg| String| Interface call result|
 |text|String|纯文本内容|
 | text| String| Plain text content|

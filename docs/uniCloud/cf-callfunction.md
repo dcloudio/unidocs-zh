@@ -293,3 +293,8 @@ exports.main = async (event, context) => {
 	return {sum:c,errCode : 1,errMsg : "0"}
 };
 ```
+
+## 在云函数中使用cookie
+
+详见：[url化场景下使用cookie](http.md#cookie)
+

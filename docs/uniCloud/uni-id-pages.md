@@ -130,9 +130,10 @@
 
 |字段	|类型	|描述		|
 |--			|--		|--			|
-|debug		|Boolean|调试模式	|
-|loginTypes	|Array	|登录方式	|
-|agreements	|Array	|隐私政策	|
+|debug		|Boolean|调试模式[详情](#debug)|
+|loginTypes	|Array	|登录方式[详情](#loginTypes)	|
+|agreements	|Array	|隐私政策	[详情](#agreements)|
+|appid		|Object	|接入各类服务（如微信登录服务）的应用id[详情](#appid)|
 
 完整示例：
 ```js
@@ -156,7 +157,16 @@ export default {
 		"privacyUrl": "https://xxx", //隐私政策条款链接
 		// 哪些场景下显示，1.注册（包括注册并登录，如：微信登录、苹果登录、短信验证码登录）、2.登录（如：用户名密码登录）
 		"scope": ['register', 'login']
-	}	
+	},
+	// 提供各类服务接入（如微信登录服务）的应用id
+	"appid":{
+		"weixin":{
+			// 微信公众号的appid，来源:登录微信公众号（https://mp.weixin.qq.com）-> 设置与开发 -> 基本配置 -> 公众号开发信息 -> AppID
+			"h5":"wx32b2580e30ef8555",
+			// 微信开放平台的appid，来源:登录微信开放平台（https://open.weixin.qq.com） -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> AppID
+			"web":"wx4dcf96ab6af4c5e8"
+		}
+	}
 }
 ```
 
@@ -170,7 +180,7 @@ debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-c
 |--			|--	|--	|
 |univerify	|[一键登录](https://uniapp.dcloud.io/univerify.html)	|App 3.0.0+|
 |smsCode	|短信验证码登录			||
-|weixin		|微信登录	|App，微信小程序 |
+|weixin		|微信登录	|App，微信小程序，H5（uni-id-pages 版本号1.0.8起支持，含微信公众号内的h5网页授权登录和手机微信扫码登录） |
 |apple		|苹果登录[Apple登录](https://ask.dcloud.net.cn/article/36651)	| iOS13+支持，App 2.4.7+|
 |username	|用户名密码登录				||
 
@@ -227,6 +237,14 @@ export default {
 更多合规问题[详情参考](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
 
 推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://ask.dcloud.net.cn/article/37573)上传到[前端网页托管](hosting.md#%E7%AE%80%E4%BB%8B)获得链接
+
+#### 接入各类服务（如微信登录服务）的应用id@appid
+
+|字段	|类型	|描述|
+|--		|--		|--	|
+|weixin	|Object	|微信|
+|&nbsp;&#124;-&nbsp;h5	|String	|微信公众号的appid</br>来源：[微信公众号](https://mp.weixin.qq.com)-> 设置与开发 -> 基本配置 -> 公众号开发信息 -> AppID|
+|&nbsp;&#124;-&nbsp;web	|String	|微信开放平台的appid</br>来源：[微信开放平台](https://open.weixin.qq.com) -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> AppID|
 
 ## 页面介绍
 `uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[详情查看](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
@@ -1412,12 +1430,71 @@ module.exports = {
 - 模块配置：`manifest.json`-->`App模块配置` -->`OAuth（登录鉴权）`-->` 一键登录`，点击后面的`开通配置`，在随后打开的web界面中，同意协议，并点击充值按钮充值。如只是测试，可以只充值1元钱。如果你已经确定包名，则可以在web界面点击“添加应用”，提交审核。这个是正式打包必须的。真机运行可以跳过此环节。记住页面上展示的`apiKey`和`apiSecret`，下一步需要用到。
 - uni-id配置：`uni-id配置文件` --> `service` --> `univerify`，填写`appid`、`apiKey`和 `apiSecret`。`appid`就是`manifest`里的`appid`。`apiKey`和`apiSecret`则是从上一步的web界面得来的。
 
-## 微信登录
-- APP端申请微信登录需要在**微信开放平台**申请移动应用，获得的appid和appsecret，用于微信登录。[微信开放平台](https://open.weixin.qq.com/)
-- 微信 appid 申请步骤：[https://ask.dcloud.net.cn/article/208](https://ask.dcloud.net.cn/article/208)。
-- iOS平台微信SDK配置通用链接：[https://uniapp.dcloud.io/api/plugins/universal-links.html](https://uniapp.dcloud.io/api/plugins/universal-links.html)。
-- 模块配置：`manifest.json` --> `App模块配置` --> `OAuth（登录鉴权）` --> `勾选微信登录` --> 填写`appid`、`appsecret`、`ios平台通用链接`。
-- uni-id配置：`uni-id配置文件` --> `app` --> `oauth` --> `weixin`，填写`appid`、`appsecret`
+## 微信登录@weixinLogin
+
+uni-id-pages已全面支持：app、小程序、web（uni-id-pages 版本号1.0.8起），三端的微信登录。
+
+微信将应用分为4类：`移动应用`、`网站应用`、`公众帐号`、`小程序`；
+
+这里的`网站应用`和`公众帐号`都是给web应用，接入微信登录功能。但有如下区别：
+
+|宿主环境		|所属类型	|登录方式			|
+|--			|--		|--				|
+|微信APP		|公众帐号	|网页授权登录		|
+|普通浏览器	|网站应用	|手机微信扫码登录	|
+
+
+### 是否申请[微信开放平台账号](https://open.weixin.qq.com/)？
+
+如果你的应用只有微信小程序端，或者只运行在微信app内才支持登录的web端。那就无需开通`微信开放平台账号`，开通`小程序`或者`公众帐号`即可。
+
+而以下两种情况必须开通`微信开放平台账号`
+1. `APP端，微信授权登录`和`web端，手机微信扫码登录`，必须开通[微信开放平台账号](https://open.weixin.qq.com/)，创建`移动应用`和`网站应用`才能接入微信登录。
+2. 如果你的应用有多端，实现同一个用户在公众号、小程序、APP、官方网站等不同场景里的身份统一识别、信息同步和行为跟踪（详情参考：[“UnionID关联”功能介绍及运营建议](https://developers.weixin.qq.com/community/business/doc/00024a52cec260f09b69c704e5b00d)）就需要将`小程序`、`公众帐号`绑定到同一个`微信开放平台账号`下。
+  * 绑定方式：登录[微信开放平台](https://open.weixin.qq.com/) -> `管理中心` -> 选择`公众号/小程序` -> 点击`绑定公众号/小程序`
+
+### 客户端配置  
+- APP端，
+	* 打开`manifest.json` ->`App模块配置` -> `OAuth（登录鉴权）` -> `勾选微信登录` -> 填写`appid`、`ios平台通用链接`。
+	* iOS平台微信登录SDK需要配置通用链接，详情参考：[https://uniapp.dcloud.io/api/plugins/universal-links.html](https://uniapp.dcloud.io/api/plugins/universal-links.html)。
+- 小程序端，打开`manifest.json` -> `微信小程序配置` -> 填写微信小程序AppID
+- web端，打开`/uni_modules/uni-id-pages/config.js` -> `appid` -> `weixin` 在`h5`节点配置微信公众号的appid，`web`节点配置微信开放平台创建的网站应用appid
+
+### 服务端配置  
+* 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，完整的配置信息[详情查看](uni-id-summary.md#config)
+
+
+### web端微信登录专题
+登录的流程为：  
+1. 应用页面，打开微信登录授权页链接（以get参数的方式传递appid和redirect_uri）
+2. 进入授权页面，用户同意授权得到code；以get参数的形式携带code，重定向至步骤1填写的redirect_uri
+3. 回到应用页面，拿到code值调用`uni-id-co`云对象的`loginByWeiXin`方法，得到`token`完成登录
+
+`appid`说明：微信app内打开的网页，为公众号的appid。其他场景则为在`微信开放平台`创建的`网站应用`的appid。  
+`redirect_uri`说明：进入授权页面后返回的网站链接，此链接的域名需要先在服务后台配置，详情查看:[回调域名的配置](#redirect_uri)
+
+#### 回调域名的配置@redirect_uri
+
+- 手机微信扫码登录  
+微信开放平台 -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> 开发信息，点击修改 -> 填写授权回调域
+
+- 基于微信公众号auth登录  
+登录微信公众号 -> 设置与开发 -> 公众号设置 -> 设置网页授权域名
+
+#### 本地调试  
+回调域名，必须接入外网已经备案的URL地址，不然本地没法进行调试，你可以做内网穿透，映射生成一个外网URL地址来进行回调测试。但是那样比较麻烦，这里我们介绍一种基于HBuilderX本地启动一个Web Server进行调试的方法。
+
+1. 启动一个80端口的Web Server服务
+- 打开`manifest.json` -> `H5配置` -> `端口` -> 输入`80`
+> 注意：mac系统中，非root用户是无法使用小于1024的常用端口的。解决方案打开`终端`，cd 到 HBuilderX安装目录(默认是Applications目录，执行`cd /Applications`)，然后执行 `sudo ./HBuilderX.app/Contents/MacOS/HBuilderX` 输入开机密码，再按回车，此时会以root用户权限重新打开HBuilderX；
+- 通过HBuilderX运行项目到浏览器，即可启用一个80端口的Web Server了
+> 如果没有启动80端口而是81等，说明你的端口被占用了。你有两个办法1.关闭可疑程序，或直接重启电脑 2.命令行关闭占用的端口[详情查看](https://www.baidu.com/s?&wd=%E5%91%BD%E4%BB%A4%E8%A1%8C%20%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8)
+
+2. 实现访问域名直接指向你的本地web Server
+	通过内网穿透实现，但比较麻烦且可能会影响线上用户。这里推荐直接修改hosts，hosts是一个没有扩展名的系统文件，其基本作用就是将一些常用的网址域名与其对应的 IP 地址建立一个关联“ 数据库 ”。当用户在浏览器中输入一个需要登录的网址时，系统会首先自动从hosts文件中寻找对应的 IP 地址，一旦找到，系统就会立即打开对应网页，如果没有找到，系统才会将网址提交 DNS 域名解析服务器进行 IP 地址的解析。  
+host文件路径： Windows系统一般为：`C:\Windows\System32\drivers\etc`。mac系统：`/etc/`  
+用HBuilderX打开hosts文件，在末尾添加一行 `127.0.0.1	你的域名`保存即可。
+此时访问域名，如果就能看到和你的项目运行到浏览器一样的效果，说明已经成功了。
 	
 ## 苹果登录集成指南
 - 模块配置：`manifest.json` --> `App模块配置` --> OAuth（登录鉴权）勾选`苹果登录`，[IOS苹果授权登录参考文档](https://ask.dcloud.net.cn/article/36651)。如不发布到Appstore，不需要配置此项

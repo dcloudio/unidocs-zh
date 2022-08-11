@@ -50,6 +50,7 @@ The application life cycle can only be listened to in `App.vue`, and listening t
 **注意**
 **Notice**
 - **应用生命周期仅可在`App.vue`中监听，在其它页面监听无效**。
+- **Application life cycle can only be listened in `App.vue`, and listening on other pages is invalid**.
 - 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](https://uniapp.dcloud.net.cn/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)
 - onlaunch里进行页面跳转，如遇白屏报错，请参考[https://ask.dcloud.net.cn/article/35942](https://ask.dcloud.net.cn/article/35942)
 - Page jump can be performed in onlaunch. In case of a white screen error, please refer to [https://ask.dcloud.net.cn/article/35942](https://ask.dcloud.net.cn/article/35942)

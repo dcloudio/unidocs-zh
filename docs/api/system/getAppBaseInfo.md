@@ -15,6 +15,7 @@
 |appVersion|string|`manifest.json` 中应用版本名称。||
 |appVersionCode|string|`manifest.json` 中应用版本名号。||
 |appLanguage|string|应用设置的语言`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`App`、`H5`|
+|appWgtVersion|string|应用资源（wgt）的版本名称。	|App 3.5.5+|
 |hostLanguage|string|小程序宿主语言|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostVersion|string|App、小程序宿主版本。如：微信版本号|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostName|string|小程序宿主名称|`App 仅 UNIMPSDK 支持`、`H5 不支持`|

@@ -29,9 +29,16 @@ pageClass: custom-page-class
         <b>iOS版</b>
         <b>iOS version</b>
       </a>
-      <a href="https://hellouniapp.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
+      <a v-if="!$themeConfig.isEn" href="https://hellouniapp.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/uni-h5-hosting-qr.png" width="160" />
+        </div>
+        <b>Web版</b>
+        <b>Web version</b>
+      </a>
+      <a v-else href="https://hellouniapp.dcloud.net.cn/en/" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box">
+          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a65a9719-9547-476b-b077-291058f6955d.png" width="160" />
         </div>
         <b>Web版</b>
         <b>Web version</b>

@@ -14,10 +14,12 @@ function simplifySlugText(text) {
   return text;
 }
 
-const tabs = ['/uniCloud/', '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/']
+const tabs_zh = ['/uniCloud/', '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/']
+const tabs_en = ['/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/']
 
 module.exports = {
   isExternal,
   simplifySlugText,
-  tabs
+  tabs_zh,
+  tabs_en
 }

@@ -98,8 +98,7 @@ uniCloud.callFunction({
 ```js
 uniCloud.importObject('object-name', {
   customUI: false,
-  secret: 'both',
-  secretMethods: ['login']
+  secretMethods: {'login':'both'}
 })
 ```
 

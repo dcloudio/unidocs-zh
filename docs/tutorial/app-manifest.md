@@ -234,7 +234,7 @@
                     },
                     "weixin": {                     //可选，JSON对象，使用微信登录SDK配置
                         "appid": "",                            //必填，字符串类型，微信开放平台申请的appid
-                        "appsecret": "",                        //必填，字符串类型，微信开放平台申请的appsecret
+                        "appsecret": "",                        //可选，安全性要求高的项目不推荐填写，云端打包后会保存在apk/ipa中，存在参数泄露的风险。更多查看：https://uniapp.dcloud.net.cn/tutorial/app-oauth-weixin.html#%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98
                         "UniversalLinks": ""                    //可选，字符串类型，微信开放平台配置的iOS平台通用链接
                     },
                     "qq": {                         //可选，JSON对象，使用QQ登录SDK配置

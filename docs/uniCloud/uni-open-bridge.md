@@ -173,7 +173,7 @@ const {
 
 exports.main = async (event, context) => {
   const key = {
-    dcloudAppid: '',
+    dcloudAppid: '__UNI__xxx',
     platform: 'mp-weixin'
   }
   const value = {
@@ -239,12 +239,13 @@ exports.main = async (event, context) => {
 
 const {
   getUserAccessToken,
-  setUserAccessToken
+  setUserAccessToken,
+  removeUserAccessToken
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
   const key = {
-    dcloudAppid: '',
+    dcloudAppid: '__UNI__xxx',
     platform: 'h5-weixin',
     openid: ''
   }
@@ -258,6 +259,14 @@ exports.main = async (event, context) => {
 
   // 读取 (redis / 数据库)
   let result1 = await getUserAccessToken(key)
+
+  // 删除
+  await removeUserAccessToken(key)
+
+
+  // 删除后读取, 返回 null
+  let result2 = await getUserAccessToken(key)
+  console.log(result2) // null
 
   return null
 };
@@ -309,7 +318,7 @@ const {
 
 exports.main = async (event, context) => {
   const key = {
-    dcloudAppid: '',
+    dcloudAppid: '__UNI__xxx',
     platform: 'mp-weixin',
     openid: ''
   }
@@ -385,7 +394,7 @@ const {
 
 exports.main = async (event, context) => {
   const key = {
-    dcloudAppid: '',
+    dcloudAppid: '__UNI__xxx',
     platform: 'mp-weixin',
     openid: '',
     version: 1
@@ -418,11 +427,11 @@ exports.main = async (event, context) => {
 
 读取 ticket
 
-### setTicket(key: Object, value: Object, expiresIn: Number)
+#### setTicket(key: Object, value: Object, expiresIn: Number)
 
 写入 ticket
 
-### removeTicket(key: Object)
+#### removeTicket(key: Object)
 
 删除 ticket
 
@@ -458,7 +467,7 @@ const {
 
 exports.main = async (event, context) => {
   const key = {
-    dcloudAppid: '',
+    dcloudAppid: '__UNI__xxx',
     platform: 'h5-weixin'
   }
   const value = {

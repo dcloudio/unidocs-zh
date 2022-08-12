@@ -851,6 +851,12 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 ### user_access_token@user_access_token
 
+平台对应的值
+
+|平台				|值						|描述																																																													|
+|:-:				|:-:					|:-:																																																													|
+|微信网页H5	|access_token	|微信网页用户会话密钥。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)	|
+
 对应微信公众平台网页用户授权 `access_token`
 
 微信公众平台网页授权有两个相同名字 `access_token`，分别用于
@@ -858,8 +864,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 1、公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。
 2、网页授权接口调用凭证，用户授权的作用域 `access_token`。
 
-由于微信H5平台无法区分两个 `access_token`，所以以 `user_access_token` 对应用户授权 `access_token`
-
+在微信H5平台无法区分两个相同名称值不同的 `access_token`，所以以更直观的名称 `user_access_token` 对应用户授权 `access_token`
 
 ### session_key
 

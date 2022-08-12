@@ -31,7 +31,7 @@
 
 `uni-open-bridge`系统中，有一个同名云对象`uni-open-bridge`，它默认就是定时运行的，在package.json中配置了每小时定时运行一次（部署线上系统生效）。
 
-该云对象根据在 `uni-config-center` 中 `mp-weixin` 或 `web` 节点位置配置的 `appid` 和 `secret`，从而有权定时向微信服务器发请求，将获取到的 `access_token`或`ticket` 保存到数据库 `opendb-open-data` 表中。
+该云对象根据在 `uni-config-center` 中[配置](#uni-id-config)固定凭据，从而有权定时向微信服务器发请求，将获取到的 `access_token`或`ticket` 保存到数据库 `opendb-open-data` 表中。
 
 当所在服务空间开通redis时，还会缓存在redis的key。这会让系统性能更好。
 
@@ -42,17 +42,19 @@
 
 流程图如下：
 
-<img src="/svg/uni-open-bridge.svg"></img>
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
 ## 使用
 1. **下载插件[uni-open-bridge](https://ext.dcloud.net.cn/plugin?id=9002)到项目中。
 
-2. 在`uni-config-center`的 `uni-id` 下配置固定凭据 `appid` 和 `secret`
+2. 在`uni-config-center`的 `uni-id` 下配置固定凭据，详情见下面的示例代码
 
 首先向微信的[公众平台](https://mp.weixin.qq.com/)申请 `appid` 和 `secret` 固定凭据
 然后在项目的 uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json 文件中配置
 
 **示例代码**
+
+uni-id-config@uni-id-config
 
 ```json
 // uni-config-center/uni-id/config.json
@@ -121,7 +123,7 @@
 
 > `云函数公共模块`是不同云函数共享代码的一种方式。如果你不了解什么是`云函数公共模块`，请另读文档[公共模块](https://uniapp.dcloud.io/uniCloud/cf-common)
 
-`uni-open-bridge-common` 提供了 `access_token`、`session_key`、`encrypt_key`、`ticket` 的读取、写入、删除操作。**xxx**不应该写入删除
+`uni-open-bridge-common` 提供了 `access_token`、`session_key`、`encrypt_key`、`ticket` 的读取、写入、删除操作。
 
 `uni-open-bridge-common` 支持多层 读取 / 写入 机制，`redis -> database -> fallback`，优先级如下:
 
@@ -130,6 +132,15 @@
 #### getAccessToken(key: Object, fallback: Function)
 
 读取 access_token
+
+#### setAccessToken(key: Object, value: Object, expiresIn: Number)
+
+写入 access_token
+
+#### removeAccessToken(key: Object)
+
+删除 access_token
+
 
 **key 属性**
 
@@ -156,13 +167,14 @@
 
 const {
   getAccessToken,
-  setAccessToken
+  setAccessToken,
+  removeAccessToken
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '',
-    platform: ''
+    platform: 'mp-weixin'
   }
   const value = {
     access_token: ''
@@ -175,14 +187,95 @@ exports.main = async (event, context) => {
   // 读取 (redis / 数据库)
   let result1 = await getAccessToken(key)
 
+  // 删除
+  await removeAccessToken(key)
+
+  // 删除后读取, 返回 null
+  let result2 = await getAccessToken(key)
+  console.log(result2) // null
+
+  return null
+};
+```
+
+#### getUserAccessToken(key: Object, fallback: Function)
+
+读取 user_access_token
+
+#### setUserAccessToken(key: Object, value: Object, expiresIn: Number)
+
+写入 user_access_token
+
+#### removeUserAccessToken(key: Object)
+
+删除 user_access_token
+
+
+对应微信公众平台网页用户授权 `access_token`，详情见下文说明
+
+
+**key 属性**
+
+|参数				|类型			|必填	|描述																															|
+|:-:				|:-:			|:-:	|:-:																															|
+|dcloudAppid|String		|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
+|platform		|String		|是		|[详情](#platform)																								|
+|openid			|String		|是		|																																	|
+
+**value 属性**
+
+|参数					|类型		|描述											|
+|:-:					|:-:		|:-:											|
+|access_token	|String	|微信公众平台用户会话密钥	|
+
+**expiresIn**
+
+有效时间(秒)
+
+**示例代码**
+
+```js
+'use strict';
+
+const {
+  getUserAccessToken,
+  setUserAccessToken
+} = require('uni-open-bridge-common')
+
+exports.main = async (event, context) => {
+  const key = {
+    dcloudAppid: '',
+    platform: 'h5-weixin',
+    openid: ''
+  }
+  const value = {
+    'access_token': ''
+  }
+  const expiresIn = 7200
+
+  // 写入 (redis / 数据库)
+  await setUserAccessToken(key, value, expiresIn)
+
+  // 读取 (redis / 数据库)
+  let result1 = await getUserAccessToken(key)
+
   return null
 };
 ```
 
 
-#### getUserKey(key: Object, fallback: Function)
+#### getSessionKey(key: Object, fallback: Function)
 
-读取 user_key
+读取 session_key
+
+#### setSessionKey(key: Object, value: Object, expiresIn: Number)
+
+写入 session_key
+
+#### removeSessionKey(key: Object)
+
+删除 session_key
+
 
 **key 属性**
 
@@ -209,14 +302,15 @@ exports.main = async (event, context) => {
 'use strict';
 
 const {
-  getUserKey,
-  setUserKey
+  getSessionKey,
+  setSessionKey,
+  removeSessionKey
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '',
-    platform: '',
+    platform: 'mp-weixin',
     openid: ''
   }
   const value = {
@@ -225,10 +319,18 @@ exports.main = async (event, context) => {
   const expiresIn = 7200
 
   // 写入 (redis / 数据库)
-  await setUserKey(key, value, expiresIn)
+  await setSessionKey(key, value, expiresIn)
 
   // 读取 (redis / 数据库)
-  let result1 = await getUserKey(key)
+  let result1 = await getSessionKey(key)
+
+  // 删除
+  await removeSessionKey(key)
+
+
+  // 删除后读取, 返回 null
+  let result2 = await getSessionKey(key)
+  console.log(result2) // null
 
   return null
 };
@@ -238,6 +340,15 @@ exports.main = async (event, context) => {
 #### getEncryptKey(key: Object, fallback: Function)
 
 读取 encrypt_key
+
+#### setEncryptKey(key: Object, value: Object, expiresIn: Number)
+
+写入 encrypt_key
+
+#### removeEncryptKey(key: Object)
+
+删除 encrypt_key
+
 
 **key 属性**
 
@@ -268,13 +379,14 @@ exports.main = async (event, context) => {
 
 const {
   getEncryptKey,
-  setEncryptKey
+  setEncryptKey,
+  removeEncryptKey
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '',
-    platform: '',
+    platform: 'mp-weixin',
     openid: '',
     version: 1
   }
@@ -290,6 +402,13 @@ exports.main = async (event, context) => {
   // 读取 (redis / 数据库)
   let result1 = await getEncryptKey(key)
 
+  // 删除
+  await removeEncryptKey(key)
+
+  // 删除后读取, 返回 null
+  let result2 = await getEncryptKey(key)
+  console.log(result2) // null
+
   return null
 };
 ```
@@ -298,6 +417,15 @@ exports.main = async (event, context) => {
 #### getTicket(key: Object, fallback: Function)
 
 读取 ticket
+
+### setTicket(key: Object, value: Object, expiresIn: Number)
+
+写入 ticket
+
+### removeTicket(key: Object)
+
+删除 ticket
+
 
 **key 属性**
 
@@ -324,13 +452,14 @@ exports.main = async (event, context) => {
 
 const {
   getTicket,
-  setTicket
+  setTicket,
+  removeTicket
 } = require('uni-open-bridge-common')
 
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '',
-    platform: ''
+    platform: 'h5-weixin'
   }
   const value = {
     ticket: ''
@@ -342,6 +471,14 @@ exports.main = async (event, context) => {
 
   // 读取 (redis / 数据库)
   let result1 = await getTicket(key)
+
+  // 删除
+  await removeTicket(key)
+
+
+  // 删除后读取, 返回 null
+  let result2 = await getTicket(key)
+  console.log(result2) // null
 
   return null
 };
@@ -361,6 +498,7 @@ exports.main = async (event, context) => {
 |mp-qq			|QQ 小程序		|
 |app-qq			|QQ App			|
 
+提示：目前仅支持 `mp-weixin`、`h5-weixin` 后续补充其他平台
 
 #### fallback
 
@@ -407,14 +545,148 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getAcces
 }
 ```
 
-其中参数platform值域[详见](#platform)
-
-#### getUserKey
+#### setAccessToken
 
 Url
 
 ```
-https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getUserKey
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setAccessToken
+```
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "mp-weixin",
+  "value": {
+    "access_token": ""
+  },
+  "expiresIn": 7200
+}
+```
+
+#### removeAccessToken
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeAccessToken
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "mp-weixin"
+}
+```
+
+其中参数platform值域[详见](#platform)
+
+#### getUserAccessToken
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getUserAccessToken
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "h5-weixin",
+  "openid": ""
+}
+```
+
+#### setUserAccessToken
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setUserAccessToken
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "h5-weixin",
+  "openid": "",
+  "value": {
+    "access_token": ""
+  },
+  "expiresIn": 7200
+}
+```
+
+#### removeUserAccessToken
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeUserAccessToken
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "h5-weixin",
+  "openid": ""
+}
+```
+
+#### getSessionKey
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getSessionKey
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "mp-weixin",
+  "openid": ""
+}
+```
+
+#### setSessionKey
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setSessionKey
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "mp-weixin",
+  "openid": "",
+  "value": {
+    "session_key": ""
+  },
+  "expiresIn": 7200
+}
+```
+
+#### removeSessionKey
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeSessionKey
 ```
 
 参数
@@ -446,6 +718,48 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getEncry
 }
 ```
 
+#### setEncryptKey
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setEncryptKey
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "mp-weixin",
+  "openid": "",
+  "version": 1,
+  "value": {
+    "encrypt_key": "",
+    "iv": ""
+  }
+}
+```
+
+#### removeEncryptKey
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeEncryptKey
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "mp-weixin",
+  "openid": "",
+  "version": 1
+}
+```
+
 
 #### getTicket
 
@@ -460,7 +774,44 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getTicke
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin"
+  "platform": "h5-weixin"
+}
+```
+
+#### setTicket
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setTicket
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "h5-weixin",
+  "value": {
+    "ticket": ""
+  }
+}
+```
+
+#### removeTicket
+
+Url
+
+```
+https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTicket
+```
+
+参数
+
+```json
+{
+  "dcloudAppid": "__UNI__xxx",
+  "platform": "h5-weixin"
 }
 ```
 
@@ -487,7 +838,19 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getTicke
 
 如公众号管理员第一次拒绝该 IP 调用，用户在1个小时内将无法使用该 IP 再次发起调用，如公众号管理员多次拒绝该 IP 调用，该 IP 将可能长期无法发起调用。平台建议开发者在发起调用前主动与管理员沟通确认调用需求，或请求管理员开启 IP 白名单功能并将该 IP 加入 IP 白名单列表。
 
-### user_key
+### user_access_token@user_access_token
+
+对应微信公众平台网页用户授权 `access_token`
+
+微信公众平台网页授权有两个相同名字 `access_token`，分别用于
+
+1、公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。
+2、网页授权接口调用凭证，用户授权的作用域 `access_token`。
+
+由于微信H5平台无法区分两个 `access_token`，所以以 `user_access_token` 对应用户授权 `access_token`
+
+
+### session_key
 
 平台对应的值
 

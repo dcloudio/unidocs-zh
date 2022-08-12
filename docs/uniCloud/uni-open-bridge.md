@@ -31,7 +31,7 @@
 
 `uni-open-bridge`系统中，有一个同名云对象`uni-open-bridge`，它默认就是定时运行的，在package.json中配置了每小时定时运行一次（部署线上系统生效）。
 
-该云对象根据在 `uni-config-center` 中[配置](#uni-id-config)固定凭据，从而有权定时向微信服务器发请求，将获取到的 `access_token`或`ticket` 保存到数据库 `opendb-open-data` 表中。
+该云对象根据在 `uni-config-center` 中[配置](#uniidconfig)固定凭据，从而有权定时向微信服务器发请求，将获取到的 `access_token`或`ticket` 保存到数据库 `opendb-open-data` 表中。
 
 当所在服务空间开通redis时，还会缓存在redis的key。这会让系统性能更好。
 
@@ -54,10 +54,10 @@
 
 **示例代码**
 
-uni-id-config@uni-id-config
+### uni-id-config@uniidconfig
 
 ```json
-// uni-config-center/uni-id/config.json
+// uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json
 {
   "dcloudAppid": "__UNI__xxxxxx", // 在项目的 manifest.json 中
   "mp-weixin": {
@@ -72,8 +72,8 @@ uni-id-config@uni-id-config
   "web": {
     "oauth": {
       "h5-weixin": {
-        "appid": "", // 微信公众平台申请的公众号 appid
-        "appsecret": "" // 微信公众平台申请的公众号 secret
+        "appid": "", // 微信公众平台申请的网页授权 appid
+        "appsecret": "" // 微信公众平台申请的网页授权 secret
       }
     }
   }
@@ -84,10 +84,12 @@ uni-id-config@uni-id-config
 
 3. 在`uni-config-center`目录下新建子目录`uni-open-bridge`, 新增 `config.json`，配置 dcloudAppid ，详情见下面的示例代码
 
+### uni-open-bridge-config@uniopenbridgeconfig
+
 **示例代码**
 
 ```json
-// uni-config-center/uni-open-bridge/config.json
+// uniCloud/cloudfunctions/common/uni-config-center/uni-open-bridge/config.json
 {
   "schedule": {
     "__UNI__xxxxxx": { // dcloudAppid, 需要和 `uni-config-center` uni-id中的配置一致

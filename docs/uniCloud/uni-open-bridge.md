@@ -31,7 +31,7 @@
 
 `uni-open-bridge`系统中，有一个同名云对象`uni-open-bridge`，它默认就是定时运行的，在package.json中配置了每小时定时运行一次（部署线上系统生效）。
 
-该云对象根据在 `uni-config-center` 中[配置](#uniidconfig)固定凭据，从而有权定时向微信服务器发请求，将获取到的 `access_token`或`ticket` 保存到数据库 `opendb-open-data` 表中。
+该云对象根据在 `uni-config-center` 中[配置](#uni-id-config)固定凭据，从而有权定时向微信服务器发请求，将获取到的 `access_token`或`ticket` 保存到数据库 `opendb-open-data` 表中。
 
 当所在服务空间开通redis时，还会缓存在redis的key。这会让系统性能更好。
 
@@ -54,7 +54,7 @@
 
 **示例代码**
 
-### uni-id-config@uniidconfig
+### uni-id-config
 
 ```json
 // uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json
@@ -117,7 +117,10 @@
 
 ## 业务系统获取相关凭据的方法
 
-在`uni-open-bridge`云对象获取到相关凭据后，当业务系统需要使用这些凭据时，通过以下方式获取。
+当业务不在uniCloud上时，在`uni-open-bridge`云对象获取到相关凭据后，当业务系统需要使用这些凭据时，通过下面的云对象URL化方式获取。
+
+
+注意：为了安全鉴权需要在 `uni-open-bridge-config` 中的 ipWhiteList 节点下配置服务器IP
 
 ### 云函数公共模块方式@uni-open-bridge-common
 
@@ -829,7 +832,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 ## 微信凭据介绍
 
-### access_token
+### access_token(应用级)@access_token
 
 - 微信小程序 `access_token` 是微信小程序全局唯一后台接口调用凭据，调用绝大多数后台接口时都需使用。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/server-ability/backend-api.html#access_token)
 
@@ -849,13 +852,13 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 如公众号管理员第一次拒绝该 IP 调用，用户在1个小时内将无法使用该 IP 再次发起调用，如公众号管理员多次拒绝该 IP 调用，该 IP 将可能长期无法发起调用。平台建议开发者在发起调用前主动与管理员沟通确认调用需求，或请求管理员开启 IP 白名单功能并将该 IP 加入 IP 白名单列表。
 
-### user_access_token@user_access_token
+### user_access_token(用户级)@user_access_token
 
 平台对应的值
 
-|平台				|值						|描述																																																													|
-|:-:				|:-:					|:-:																																																													|
-|微信网页H5	|access_token	|微信网页用户会话密钥。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)	|
+|平台							|值						|描述																																																													|
+|:-:							|:-:					|:-:																																																													|
+|微信内置浏览器H5	|access_token	|微信内置浏览器H5用户会话密钥。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)	|
 
 对应微信公众平台网页用户授权 `access_token`
 
@@ -864,7 +867,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 1、公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。
 2、网页授权接口调用凭证，用户授权的作用域 `access_token`。
 
-在微信H5平台无法区分两个相同名称值不同的 `access_token`，所以以更直观的名称 `user_access_token` 对应用户授权 `access_token`
+在微信内置浏览器H5无法区分两个相同名称值不同的 `access_token`，所以以更直观的名称 `user_access_token` 对应用户授权 `access_token`
 
 ### session_key
 

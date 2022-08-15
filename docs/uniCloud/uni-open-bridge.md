@@ -117,7 +117,10 @@
 
 ## 业务系统获取相关凭据的方法
 
-在`uni-open-bridge`云对象获取到相关凭据后，当业务系统需要使用这些凭据时，通过以下方式获取。
+当业务不在uniCloud上时，在`uni-open-bridge`云对象获取到相关凭据后，当业务系统需要使用这些凭据时，通过下面的云对象URL化方式获取。
+
+
+注意：为了安全鉴权需要在 `uni-open-bridge-config` 中的 ipWhiteList 节点下配置服务器IP
 
 ### 云函数公共模块方式@uni-open-bridge-common
 

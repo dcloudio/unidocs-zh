@@ -117,10 +117,7 @@
 
 ## 业务系统获取相关凭据的方法
 
-当业务不在uniCloud上时，在`uni-open-bridge`云对象获取到相关凭据后，当业务系统需要使用这些凭据时，通过下面的云对象URL化方式获取。
-
-
-注意：为了安全鉴权需要在 `uni-open-bridge-config` 中的 ipWhiteList 节点下配置服务器IP
+在`uni-open-bridge`云对象获取到相关凭据后，当业务系统需要使用这些凭据时，通过以下方式获取。
 
 ### 云函数公共模块方式@uni-open-bridge-common
 
@@ -567,6 +564,10 @@ Url
 https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setAccessToken
 ```
 
+参数
+
+[如何获取需要传递的参数](#getdatawithwxserver)
+
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
@@ -577,6 +578,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setAcces
   "expiresIn": 7200
 }
 ```
+
 
 #### removeAccessToken
 
@@ -624,6 +626,8 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setUserA
 ```
 
 参数
+
+[如何获取需要传递的参数](#getdatawithwxserver)
 
 ```json
 {
@@ -683,6 +687,8 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setSessi
 
 参数
 
+[如何获取需要传递的参数](#getdatawithwxserver)
+
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
@@ -741,6 +747,8 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setEncry
 ```
 
 参数
+
+[如何获取需要传递的参数](#getdatawithwxserver)
 
 ```json
 {
@@ -802,6 +810,8 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setTicke
 
 参数
 
+[如何获取需要传递的参数](#getdatawithwxserver)
+
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
@@ -829,6 +839,34 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 }
 ```
 
+
+
+## 业务系统不在uniCloud时操作相关凭据的方法
+
+当业务不在uniCloud上时，需要从业务服务器主动将数据同步到 `uni-open-bridge`
+
+例如：`uni-ad`微信小程序激励视频广告服务器回调
+
+因`uni-ad`微信小程序激励视频广告服务器回调依赖 `uni-open-bridge` 接管三方平台数据，但现有业务也需要三方平台数据，又不想改动现有逻辑，通过以下方式处理
+
+### 关闭定时刷新
+
+为了避免多处同时请求微信的服务器获取相关凭据后导致上次的值失效
+
+所以需要关闭 `uni-open-bridge` 定时刷新功能，[详情](uniopenbridgeconfig)，然后由开发者的业务服务器统一获取后主动同步到 `uni-open-bridge`
+
+### 获取数据@getdatawithwxserver
+
+1. 从微信服务器统一获取相关凭据
+2. 同步一份数据到 `uni-open-bridge`，以让依赖数据的模块可正常工作
+
+### 同步数据
+
+将从微信服务器获取的凭据同步到 `uni-open-bridge`
+
+`uni-open-bridge` 提供了 http 的读取，写入、删除操作
+
+提示：由于业务维护这些数据还是比较麻烦，推荐统一由 `uni-open-bridge` 接管，业务服务器通过 http 的方式获取
 
 ## 微信凭据介绍
 

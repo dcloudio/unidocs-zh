@@ -148,31 +148,95 @@ HBuilderX 2.7.10+ 版支持
     2. build mode will compress the code to be smaller and more suitable for releasing as official application;
     3. 进行 [环境判断](/worktile/running-env?id=判断平台) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
 
-## 使用cli创建项目和使用HBuilderX可视化界面创建项目有什么区别
-## What is the difference between creating a project using the cli and creating a project using the HBuilderX visual interface?
+## cli创建项目和HBuilderX可视化界面创建项目的区别@clidiff
 
-#### 编译器的区别
-#### Differences among compilers
+- cli创建的项目，是传统的node项目结构。工程代码在src目录下，编译器在项目下，编译结果在dist目录下。
+- HBuilderX可视化创建的项目，是一种免node开发概念。工程代码在项目目录下，编译器在HBuilderX目录下而不是项目下，编译结果在项目的unpackage目录下。
+
+有些习惯了cli的开发者，使用HBuilderX可视化模式时不适应。讲解下它们的差别以及为什么HBuilderX提供了多种方式。
+
+### cli创建的项目，也可以拖入HBuilderX编辑
+
+首先HBuilderX作为通用编辑器，兼容传统的cli方式开发。不止uni-app的cli，其他框架的cli也可以拖入HBuilderX。
+
+也就是HBuilderX里可以使用可视化界面创建项目，也可以使用cli命令行创建项目，都可以达到和uni-app更好协作的目的。比如pages.json跳转和提示、manifest可视化界面、条件编译、rpx等css单位...众多 for uni-app 的优化都可以使用。
+
+这些是HBuilderX的特点，和项目结构无关。
+
+### 如想用其他ide开发uni-app，只能使用cli模式
+
+很好理解。因为其他ide没有内置uni-app的编译器，所以其他ide开发uni-app，只能把编译器安装在项目下，也就是cli创建的项目格式。
+
+cli项目可以使用多种ide开发，但ide之间有区别：
+- HBuilderX为uni-app做了大量优化，其他ide搭配uni-app使用也可以用，但没有为uni-app优化过
+- 其他ide没有uni-app的app和uniCloud的运行、调试工具。这些工具在HBuilderX里。如开发app和uniCloud，必须使用HBuilderX。
+
+### 可视化方式的区别
+
+HBuilderX可视化创建、运行、发布项目，底层调用的也是npm的run、build等命令。只是编译器不在项目下，而是在HBuilderX的目录下。
+
+### 为什么要提供HBuilderX可视化模式
+
+1. 为了提升易用性，较低门槛
+
+很多开发者对node不熟悉、对命令行有心理抵触。不要想当然认为所有开发者都会node，HBuilder有几百万开发者，其中掌握node的开发者连一半都占不到。
+
+2. npm、github网络经常出问题
+
+使用cli创建项目时，cli需要从npm安装，预置的项目模板选择从github下载，这些经常因为网络问题卡壳。可视化创建项目不存在这个问题。
+
+3. 每个uni-app项目下都有一套编译器太麻烦
+
+一个HBuilderX的开发者有非常多个uni-app项目，如果每个项目下放一套编译器，会有很多不合理：
+	- 创建项目会非常慢
+	- 非常占用磁盘空间（uni-app的编译器有数万个文件）
+	- 升级麻烦，兼容性问题多。cli项目下的编译器不会跟随HBuilderX升级而升级，只能开发者手敲npm命令升级。当HBuilderX升级后，有的uni-app项目的编译器未升级，有的升级了，报错时开发者很容易懵圈，给DCloud报bug时DCloud也懵圈。让ide版本、编译器版本、uni-app运行时这3者的版本保持一致，会减少非常多的问题。
+
+把编译器内置到HBuilderX中，开发者创建项目时只需关心自己的业务代码，工程结构干净清爽。
+
+各家小程序也都是这么做的，编译器在小程序开发工具里，创建项目时不会在项目下带一套编译器（小程序也是要把wxml等编译为js的）。
+
+4. less、scss、ts等编译器的自动安装
+
+- 如果使用cli项目，那么less、scss、ts等编译器需要自己手动敲npm命令安装。由于DCloud官方不会和每种预编译器的每个版本都做兼容性测试，如果你使用了较低的预编译器版本，可能会无法正常运行，这需要你自己排查
+- 如果使用HBuilderX可视化创建项目，这些编译器会按需自动安装，并且是DCloud官方测试过版本兼容性的。开发者只需在你的代码中使用这些预编译技术，剩下的HBuilderX会自动搞定。
+
+5. 可视化更高效
+
+HBuilderX提供的免node开发，除了易用，还更高效。
+
+- 新建项目：`Ctrl+N`
+- 运行项目：`Ctrl+R`
+- 发行项目：`Ctrl+U`
+
+这比启动终端，移动焦点到终端窗口，敲命令快多了。
+
+在uni-app中，终端命令比传统web开发要多、要长，还要敲运行平台参数的，选择你要运行到web还是app或某家小程序。
+
+综上，
+
+如果你习惯node，也能接受和管理好每个项目下一套编译器的方式，清楚上述利弊，那你可以选择cli创建项目。
+
+至于ide，肯定还是HBuilderX搭配uni-app开发更高效。
+
+如果你习惯其他ide，开发uni-app低效也无所谓，那也可以用其他ide。但注意至少运行调试app和uniCloud时，还得把HBuilderX开着，就像开着微信小程序工具调试那样。
+
+在DCloud内部，uni-app和HBuilderX是不同的团队。
+
+- 对于uni-app来说，它面对所有ide一视同仁。它兼容node生态，支持d.ts语法提示
+- 对于HBuilderX来说，uni-app是一等公民。HBuilderX为uni-app做了很多优化
+
+### 其他注意事项
 
 * ``cli`` 创建的项目，编译器安装在项目下。并且不会跟随HBuilderX升级。如需升级编译器，可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，如 ```npx @dcloudio/uvm```。
-* HBuilderX可视化界面创建的项目，编译器在HBuilderX的安装目录下的plugin目录，随着HBuilderX的升级会自动升级编译器。
-* The project created by the visual interface of HBuilderX and the plugin directory of the compiler in the installation directory of HBuilderX will automatically upgrade the compiler with the upgrade of HBuilderX.
 * 已经使用``cli``创建的项目，如果想继续在HBuilderX里使用，可以把工程拖到HBuilderX中。注意如果是把整个项目拖入HBuilderX，则编译时走的是项目下的编译器。如果是把src目录拖入到HBuilderX中，则走的是HBuilderX安装目录下plugin目录下的编译器。
-* If you want to continue using the project created with `cli` in HBuilderX, you can drag the project to HBuilderX. Note that if the whole project is dragged into HBuilderX, the compiler under the project will be used when compiling. If the src directory is dragged into HBuilderX, the compiler in plugin directory under HBuilderX installation directory will be used.
-* ``cli``版如果想安装less、scss、ts等编译器，需自己手动npm安装。在HBuilderX的插件管理界面安装无效，那个只作用于HBuilderX创建的项目。
-* If you want to install less, scss, ts and other compilers in the `cli` version, you need to manually install them with npm. Installation of plug-in management interface in HBuilderX is invalid, and that only works on projects created by HBuilderX.
- 
-#### 开发工具的区别
-#### Differences among development tools
 * ``cli``创建的项目，内置了d.ts，同其他常规npm库一样，可在[vscode](https://ask.dcloud.net.cn/article/36286)、[webstorm](https://ask.dcloud.net.cn/article/36307)等支持d.ts的开发工具里正常开发并有语法提示。
 * The project created by `cli` has built-in d.ts. Like other regular npm libraries, it can be normally developed in [vscode](https://ask.dcloud.net.cn/article/36286), [webstorm](https://ask.dcloud.net.cn/article/36307) development tools that support d.ts and there are grammar hints.
 * 使用HBuilderX创建的项目不带d.ts，HBuilderX内置了uni-app语法提示库。如需把HBuilderX创建的项目在其他编辑器打开并且补充d.ts，可以在项目下先执行 ``npm init``，然后``npm i @types/uni-app -D``，来补充d.ts。
-* Projects created with HBuilderX are not suffixed with d.ts. HBuilderX has a built-in uni-app syntax prompt library. If you need to open the project created by HBuilderX in other editors and add d.ts, you can first execute `npm init` and then `npm i @types/uni-app -D` under the project to add d.ts.
-* 但vscode等其他开发工具，在vue或uni-app领域，开发效率比不过HBuilderX。详见：[https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
-* However, other development tools, such as vscode, are less efficient than HBuilderX in vue or uni-app fields. For details, please see: [https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
+* HBuilderX创建的项目，一样可以使用npm，参考：[NPM 支持](/tutorial/page-script?id=npm支持)
+* vscode等其他开发工具，在vue或uni-app领域，开发效率比不过HBuilderX。详见：[https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
 * 发布App时，仍然需要使用HBuilderX。其他开发工具无法发布App，但可以发布H5、各种小程序。如需开发App，可以先在HBuilderX里运行起来，然后在其他编辑器里修改保存代码，代码修改后会自动同步到手机基座。
-* 如果使用``cli``创建项目，那下载HBuilderX时只需下载23.31M的标准版即可。因为编译器已经安装到项目下了。
+* 如果使用``cli``创建项目，HBuilderX插件列表中的uni-app编译器可以不安装
 * 对 `cli` 使用有疑问，欢迎扫码加入 uni-app 微信交流群讨论：
     <br/><img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/wx-barcode.png" width="250"/>
 
-注意：HBuilderX创建的项目，一样可以使用npm，参考：[NPM 支持](/tutorial/page-script?id=npm支持)

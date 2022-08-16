@@ -14,14 +14,11 @@ Before starting, developers need to download and install the following tools:
 HBuilderX是通用的前端开发工具，但为`uni-app`做了特别强化。
 HBuilderX is a general front-end development tool, but it is specially enhanced for `uni-app`.
 
-下载后默认不包含`uni-app`插件，在运行或发行`uni-app`时，会提示安装`uni-app`插件，插件下载完成后方可使用。
-
 
 ## 创建uni-app
 ## Create uni-app
 
-在点击工具栏里的文件 -> 新建 -> 项目：
-Click File -> New -> Project in the toolbar:
+在点击工具栏里的文件 -> 新建 -> 项目（快捷键`Ctrl+N`）：
 <div align=center>
   <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b925a1c0-4f19-11eb-97b7-0dc4655d6e68.png"/>
 </div>
@@ -29,8 +26,7 @@ Click File -> New -> Project in the toolbar:
 选择`uni-app`类型，输入工程名，选择模板，点击创建，即可成功创建。
 Select the type of `uni-app`, enter the project name, select the template, and click Create to successfully create it.
 
-uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还有一个重要模板是 uni ui项目模板，日常开发推荐使用该模板，已内置大量常用组件。
-uni-app comes with a template called Hello uni-app, which is an official component and API example. Another important template is the uni ui project template, which is recommended for daily development and has quantities of built-in commonly used components.
+uni-app自带的模板有 默认的空项目模板、Hello uni-app 官方组件和API示例，还有一个重要模板是 uni ui项目模板，日常开发推荐使用该模板，已内置大量常用组件。
 
 <div align=center>
   <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d0cba1a3-c0cc-4095-a105-a4fea51857fe.jpg"/>
@@ -39,9 +35,9 @@ uni-app comes with a template called Hello uni-app, which is an official compone
 
 开发者也可以使用`cli`方式创建项目，另见[文档](https://uniapp.dcloud.io/quickstart-cli.html)。
 
-差别是：HBuilderX创建的项目根目录就是源码，可直接编辑。dist在unpackage目录下。uni-app的编译器在HBuilderX的插件目录下，跟随HBuilderX升级而一起升级。
+差别是：HBuilderX创建的项目根目录就是源码，可直接编辑。uni-app的编译器在HBuilderX的插件目录下，跟随HBuilderX升级而一起升级。
 
-而cli创建的项目，源码在src下。uni-app的编译器也安装在项目下，不会跟随HBuilderX版本升级而升级，需要自己手动npm update。
+如果开发者习惯于node模式的项目，对HBuilderX可视化方式感到困惑，可另行参考文档：[## cli创建项目和HBuilderX可视化界面创建项目的区别](quickstart-cli.md#clidiff)
 
 ## 运行uni-app
 ## Run uni-app
@@ -90,8 +86,7 @@ uni-app comes with a template called Hello uni-app, which is an official compone
 * 支付宝/百度/字节跳动/360小程序工具，不支持直接指定项目启动并运行。因此开发工具启动后，请将 HBuilderX 控制台中提示的项目路径，在相应小程序开发者工具中打开。
 * 如果自动启动小程序开发工具失败，请手动启动小程序开发工具并将 HBuilderX 控制台提示的项目路径，打开项目。
 
-运行的快捷键是`Ctrl+r`。
-The shortcut key for running is `Ctrl+r`.
+运行的快捷键是`Ctrl+R`。
 
 HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行的设备：
 HBuilderX also provides a shortcut run menu, which allows quick selection for the equipment to run by pressing number keys:

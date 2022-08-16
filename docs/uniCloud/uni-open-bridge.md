@@ -530,7 +530,7 @@ exports.main = async (event, context) => {
 - 所有方法校验 `key` 属性是否有效，无效则 `throw new Error()`，对 `value` 仅校验是否为 `Object`
 
 
-### 云对象URL化方式
+### 云对象URL化方式@cloudurl
 
 云对象 `uni-open-bridge` URL化后，让非uniCloud系统可通过 http 方式访问凭据。
 
@@ -566,7 +566,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setAcces
 
 参数
 
-[如何获取需要传递的参数](#getdatawithwxserver)
+[如何获取需要传递的参数](#nouseuniopenbridge)
 
 ```json
 {
@@ -627,7 +627,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setUserA
 
 参数
 
-[如何获取需要传递的参数](#getdatawithwxserver)
+[如何获取需要传递的参数](#nouseuniopenbridge)
 
 ```json
 {
@@ -687,7 +687,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setSessi
 
 参数
 
-[如何获取需要传递的参数](#getdatawithwxserver)
+[如何获取需要传递的参数](#nouseuniopenbridge)
 
 ```json
 {
@@ -748,7 +748,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setEncry
 
 参数
 
-[如何获取需要传递的参数](#getdatawithwxserver)
+[如何获取需要传递的参数](#nouseuniopenbridge)
 
 ```json
 {
@@ -810,7 +810,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setTicke
 
 参数
 
-[如何获取需要传递的参数](#getdatawithwxserver)
+[如何获取需要传递的参数](#nouseuniopenbridge)
 
 ```json
 {
@@ -839,34 +839,6 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 }
 ```
 
-
-
-## 业务系统不在uniCloud时操作相关凭据的方法
-
-当业务不在uniCloud上时，需要从业务服务器主动将数据同步到 `uni-open-bridge`
-
-例如：`uni-ad`微信小程序激励视频广告服务器回调
-
-因`uni-ad`微信小程序激励视频广告服务器回调依赖 `uni-open-bridge` 接管三方平台数据，但现有业务也需要三方平台数据，又不想改动现有逻辑，通过以下方式处理
-
-### 关闭定时刷新
-
-为了避免多处同时请求微信的服务器获取相关凭据后导致上次的值失效
-
-所以需要关闭 `uni-open-bridge` 定时刷新功能，[详情](uniopenbridgeconfig)，然后由开发者的业务服务器统一获取后主动同步到 `uni-open-bridge`
-
-### 获取数据@getdatawithwxserver
-
-1. 从微信服务器统一获取相关凭据
-2. 同步一份数据到 `uni-open-bridge`，以让依赖数据的模块可正常工作
-
-### 同步数据
-
-将从微信服务器获取的凭据同步到 `uni-open-bridge`
-
-`uni-open-bridge` 提供了 http 的读取，写入、删除操作
-
-提示：由于业务维护这些数据还是比较麻烦，推荐统一由 `uni-open-bridge` 接管，业务服务器通过 http 的方式获取
 
 ## 微信凭据介绍
 
@@ -940,3 +912,18 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 `ticket` 是公众号用于调用微信 JS 接口的临时票据。正常情况下，`ticket` 的有效期为7200秒，通过 `access_token` 来获取。
 
 由于获取 `ticket` 的 api 调用次数非常有限，频繁刷新 `ticket` 会导致 api 调用受限，影响自身业务，开发者必须在自己的服务全局缓存 `ticket `。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62)
+
+
+## 不使用 `uni-open-bridge` 托管的情况@nouseuniopenbridge
+
+某些场景下需要使用 `uni-open-bridge` 托管三方平台数据
+
+例如：`uni-ad`微信小程序激励视频广告服务器回调
+
+因`uni-ad`微信小程序激励视频广告服务器回调依赖 `uni-open-bridge` 托管三方平台数据，但现有业务也需要三方平台数据，又不想改动现有逻辑，也需要广告服务器回调功能
+
+通过以下方式处理：
+
+1. 关闭 `uni-open-bridge` 定时刷新，[详情](#uniopenbridgeconfig)
+
+2. 由原业务系统将数据同步到 `uni-open-bridge`，[详情](#cloudurl)

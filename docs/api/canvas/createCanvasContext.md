@@ -1,3 +1,5 @@
+<md-translatedByGoogle />
+
 ### uni.createCanvasContext(canvasId, this)
 
 #### 定义
@@ -16,6 +18,7 @@ Create `canvas` Graphics Context (specify canvasId). Under custom components, th
 | Parameter| Type| Instruction|
 |----|----|-----|
 |canvasId|String	|画布表示，传入定义在 `<canvas/>` 的 canvas-id或id（支付宝小程序是id、其他平台是canvas-id）	|
+|canvasId|String | Canvas representation, the incoming definition is in `<canvas/>` canvas-id or id (Alipay applet is id, other platforms are canvas-id) |
 |componentInstance|Object	|自定义组件实例 this ，表示在这个自定义组件下查找拥有 canvas-id 的 `<canvas/>` ，如果省略，则不在任何自定义组件内查找	|
 | componentInstance| Object| Custom component instance this means to find the `<canvas/>` with canvas-id under this custom component. If omitted, it will not find in any custom component|
 

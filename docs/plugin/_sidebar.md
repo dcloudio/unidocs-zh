@@ -1,9 +1,16 @@
 * [插件全景描述](/plugin/README.md)
+* [Plugin panorama description](/plugin/README.md)
 * [插件市场介绍](/plugin/plugin-ext-introduction.md)
 * [uni_modules](/plugin/uni_modules.md)
 * [原生插件](/plugin/native-plugin.md)
+* [Native Plugin](/plugin/native-plugin.md)
 * 插件作者专区
+* Plugin author area
   * [发布插件](/plugin/publish.md)
+  * [publish plugin](/plugin/publish.md)
   * [支持多语言](/plugin/language.md)
+  * [Multilingual support](/plugin/language.md)
   * [销售变现](/plugin/sell.md)
+  * [Sales Realization](/plugin/sell.md)
   * [oath开放平台](/plugin/oath.md)
+  * [oath open platform](/plugin/oath.md)

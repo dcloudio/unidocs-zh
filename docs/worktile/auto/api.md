@@ -1,15 +1,20 @@
+<md-translatedByGoogle />
+
 # API
 
 ## program
 
 program 是uni-automator自动注入的全局对象
+program is the global object automatically injected by uni-automator
 
 
 ### 方法
+### method
 
 #### program.pageStack
 
 获取页面堆栈。
+Get the page stack.
 
 `program.pageStack(): Promise<Page[]> `
 
@@ -17,6 +22,7 @@ program 是uni-automator自动注入的全局对象
 #### program.navigateTo
 
 保留当前页面，跳转到应用内的某个页面，同 `uni.navigateTo`。
+Keep the current page and jump to a page in the app, same as `uni.navigateTo`.
 
 `program.navigateTo(url: string): Promise<Page>`
 
@@ -25,6 +31,7 @@ program 是uni-automator自动注入的全局对象
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |url|string|是|-|需要跳转的应用内非 tabBar 的页面的路径|
+|url|string| is |-|The path of the non-tabBar page in the application to be jumped|
 
 示例代码：
 Sample code:
@@ -39,6 +46,7 @@ Sample code:
 #### program.redirectTo
 
 关闭当前页面，跳转到应用内的某个页面，同 `uni.redirectTo`。
+Close the current page and jump to a page in the application, same as `uni.redirectTo`.
 
 `program.redirectTo(url: string): Promise<Page>`
 
@@ -46,11 +54,13 @@ Sample code:
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |url|string|是|-|需要跳转的应用内非 tabBar 的页面的路径|
+|url|string| is |-|The path of the non-tabBar page in the application to be jumped|
 
 
 #### program.navigateBack
 
 关闭当前页面，返回上一页面或多级页面，同 `uni.navigateBack`。
+Close the current page and return to the previous page or multi-level pages, same as `uni.navigateBack`.
 
 
 `program.navigateBack(): Promise<Page>`
@@ -60,6 +70,7 @@ Sample code:
 #### program.reLaunch
 
 关闭所有页面，打开到应用内的某个页面，同 `uni.reLaunch`。
+Close all pages, open to a page within the app, same as `uni.reLaunch`.
 
 `program.reLaunch(url: string): Promise<Page>`
 
@@ -68,11 +79,13 @@ Sample code:
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |url|string|是|-|需要跳转的应用内页面路径|
+|url|string|is |-|the in-app page path to jump to|
 
 
 #### program.switchTab
 
 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，同 `uni.switchTab`。
+Jump to the tabBar page and close all other non-tabBar pages, same as `uni.switchTab`.
 
 
 `program.switchTab(url: string): Promise<Page>`
@@ -82,11 +95,13 @@ Sample code:
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |url|string|是|-|需要跳转的 tabBar 页面的路径|
+|url|string|is |-|path of the tabBar page to jump to|
 
 
 #### program.currentPage
 
 获取当前页面。
+Get the current page.
 
 `program.currentPage(): Promise<Page>`
 
@@ -94,6 +109,7 @@ Sample code:
 #### program.systemInfo
 
 获取系统信息，同 `uni.getSystemInfo`。
+Get system information, same as `uni.getSystemInfo`.
 
 
 `program.systemInfo(): Promise<Object>`
@@ -114,6 +130,7 @@ Sample code:
 #### program.pageScrollTo
 
 将页面滚动到目标位置，同 `uni.pageScrollTo`。
+Scroll the page to the target position, same as `uni.pageScrollTo`.
 
 
 `program.pageScrollTo(scrollTop: number): Promise<void>`
@@ -123,6 +140,7 @@ Sample code:
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |scrollTop|number|是|-|滚动到页面的目标位置，单位 px|
+|scrollTop|number| is |-| scroll to the target position of the page, in px|
 
 示例代码：
 Sample code:
@@ -139,6 +157,7 @@ Sample code:
 #### program.callUniMethod
 
 调用 uni 对象上的指定方法。
+Call the specified method on the uni object.
 
 
 `program.callUniMethod(method: string, ...args: any[]): Promise<any>`
@@ -150,8 +169,10 @@ Sample code:
 |method|string|是|-|需要调用的方法名|
 | method| string| Yes| \-| Name of the method to be called|
 |...args|`array<any>`|否|-|方法参数|
+|...args|`array<any>`|no|-|method arguments|
 
 调用异步方法时无需传入 success 及 fail 回调函数。
+There is no need to pass in the success and fail callback functions when calling an asynchronous method.
 
 示例代码：
 Sample code:
@@ -170,6 +191,7 @@ Sample code:
 #### program.screenshot
 
 对当前页面截图，目前只有开发者工具模拟器支持，客户端无法使用。
+The screenshot of the current page is currently only supported by the developer tool simulator, and the client cannot use it.
 
 `program.screenshot(options?: Object): Promise<string | void>`
 
@@ -178,8 +200,10 @@ Sample code:
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |options|Object|否|-|截图选项|
+|options|Object|No|-|Screenshot Options|
 
 如果不传 options，该方法返回图片数据的 base64 编码。
+If options are not passed, this method returns the base64 encoding of the image data.
 
 options 字段定义如下：
 The field of options is defined as follows:
@@ -188,6 +212,7 @@ The field of options is defined as follows:
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |path|string|是|-|图片保存路径|
+|path|string|Yes|-|image save path|
 
 
 ```js
@@ -203,8 +228,10 @@ The field of options is defined as follows:
 #### program.mockUniMethod
 
 覆盖 uni 对象上指定方法的调用结果。
+Overrides the result of the invocation of the specified method on the uni object.
 
 利用该接口，你可以很方便地直接指定 `uni.chooseLocation` 等调用系统组件的返回结果。
+Using this interface, you can easily and directly specify the return result of calling system components such as `uni.chooseLocation`.
 
 
 `program.mockUniMethod(method: string, result: any): Promise<void> `
@@ -217,7 +244,9 @@ Parameter Description
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |method|string|是|-|需要覆盖的方法名|
+|method|string| Yes |-|name of method to override|
 |result|any|是|-|指定调用结果|
+|result|any|Yes |-|specifies the result of the call|
 
 
 `program.mockUniMethod(method: string, fn: Function | string, ...args: any[]): Promise<void>`
@@ -229,11 +258,15 @@ Parameter Description
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |method|string|是|-|需要覆盖的方法名|
+|method|string| Yes |-|name of method to override|
 |fn|Function string|是|-|处理返回函数|
+|fn|Function string| Yes |-|processing return function|
 |...args|`array<any>`|否|-|传入参数|
+|...args|`array<any>`|No|-|Incoming Arguments|
 
 
 > fn 同 program.evaluate 的 appFunction 参数一样，无法使用闭包来引用外部变量。此外，你还可以在方法内使用 this.origin 来调用原始方法。
+> fn Like the appFunction parameter of program.evaluate, closures cannot be used to refer to external variables. Also, you can use this.origin inside a method to call the original method.
 
 
 示例代码：
@@ -255,13 +288,16 @@ Sample code:
 		'unknown',
   )
   // 调用 uni.getStorageSync('name') 返回 'redhoodsu'
+  // calling uni.getStorageSync('name') returns 'redhoodsu'
 
   // 更改 getSystemInfo 中的 platform 字段
+  // Change the platform field in getSystemInfo
 	await program.mockUniMethod(
 		'getSystemInfo',
 		function(obj, platform) {
 			return new Promise(resolve => {
 				// origin 指向原始方法
+				// origin points to the original method
 				this.origin({
 					success(res) {
 						res.platform = platform
@@ -278,6 +314,7 @@ Sample code:
 #### program.restoreUniMethod
 
 重置 uni 指定方法，消除 mockUniMethod 调用的影响。
+Resets the uni-specified method, removing the effects of the mockUniMethod call.
 
 `program.restoreUniMethod(method: string): Promise<void>`
 
@@ -286,9 +323,11 @@ Sample code:
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |method|string|是|-|需要覆盖的方法名|
+|method|string| Yes |-|name of method to override|
 
 
 示例代码:
+Sample code:
 
 ```js
 	console.log(await program.callUniMethod('getStorageSync', 'test')) // -> ''
@@ -303,6 +342,7 @@ Sample code:
 #### program.evaluate
 
 注入代码片段并返回执行结果。（仅微信小程序支持）
+Inject code snippets and return execution results. (Only supported by WeChat applet)
 
 `program.evaluate(appFunction: Function | string, ...args: any[]): Promise<any>`
 
@@ -310,9 +350,12 @@ Sample code:
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |appFunction|Function string|是|-|代码片段|
+|appFunction|Function string|Yes|-|code snippet|
 |...args|`array<any>`|否|-|执行时传入参数|
+|...args|`array<any>`|No|-|Parameters passed during execution|
 
 > appFunction 最终会被序列化传递到开发者工具，因此你无法在函数中利用闭包来引用外部变量。也就是说，传递 function () {} 函数事实上等同于传递其字符串。
+> appFunction will eventually be serialized to the developer tools, so you can't use closures in functions to reference external variables. That is, passing a function () {} function is effectively equivalent to passing its string.
 
 示例代码：
 Sample code:
@@ -343,18 +386,22 @@ Sample code:
 #### program.testAccounts
 
 获取多账号调试中已添加的用户列表。（仅微信小程序支持）
+Get the list of users added in multi-account debugging. (Only supported by WeChat applet)
 
 
 `program.testAccounts(): Promise<Account[]>`
 
 Account 字段定义如下：
+The Account field is defined as follows:
 
 
 |字段|类型|说明|
 | Field| Type| Instruction|
 |:-:|:-:|:-:|
 |nickName|string|用户昵称|
+|nickName|string|User Nickname|
 |openid|string|账号 openid|
+|openid|string|account openid|
 
 示例代码：
 Sample code:
@@ -367,6 +414,7 @@ Sample code:
 			account: testAccounts[i].openid
 		})
 		// 控制多个用户登录的不同小程序
+		// Different applets that control multiple user logins
 	}
 ```
 
@@ -374,6 +422,7 @@ Sample code:
 #### program.exposeFunction
 
 在全局暴露方法，供小程序侧调用测试脚本中的方法（仅微信小程序支持）
+Expose the method globally for the applet side to call the method in the test script (only supported by WeChat applet)
 
 
 `program.exposeFunction(name: string, bindingFunction: Function): Promise<void>`
@@ -383,9 +432,12 @@ Sample code:
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
 |name|string|是|-|全局方法名|
+|name|string| Yes |-|global method name|
 |bindingFunction|Function|是|-|脚本方法|
+|bindingFunction|Function|Yes|-|script method|
 
 > 你可以利用该方法来监听事件，不支持在小程序侧获取调用结果。
+> You can use this method to monitor events, but it is not supported to obtain the call result on the applet side.
 
 
 示例代码：
@@ -412,6 +464,7 @@ Page 模块提供了控制页面的方法。
 Page module provides methods to control pages.
 
 ### 属性
+### Attributes
 
 #### page.path
 
@@ -427,6 +480,7 @@ Page path.
 
 
 ### 方法
+### method
 
 #### page.$
 
@@ -652,6 +706,7 @@ Element 模块提供了控制页面元素的方法。
 The Element module provides methods to control page elements.
 
 ### 属性
+### Attributes
 
 #### element.tagName
 
@@ -662,6 +717,7 @@ Tag name, lowercase.
 
 
 ### 方法
+### method
 
 #### element.$
 
@@ -1323,84 +1379,147 @@ Sample code:
 
 
 ## 平台差异
+## Platform differences
 
 ### program(全局对象)
+### program (global object)
 
 |方法							|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明																																|
+|Method |APP-NVUE |APP-VUE|H5 |WeChat Mini Program |Baidu Mini Program |Instructions |
 |--								|--				|--			|--	|--					|--					|--																																	|
 |pageStack				|√				|√			|√	|√					|√					|获取小程序页面堆栈																									|
+|pageStack |√ |√ |√ |√ |√ |Get the applet page stack |
 |navigateTo				|√				|√			|√	|√					|√					|保留当前页面，跳转到应用内的某个页面，同`uni.navigateTo`						|
+|navigateTo |√ |√ |√ |√ |√ |Keep the current page and jump to a page in the app, same as `uni.navigateTo` |
 |redirectTo				|√				|√			|√	|√					|√					|关闭当前页面，跳转到应用内的某个页面，同`uni.redirectTo`						|
+|redirectTo |√ |√ |√ |√ |√ |Close the current page and jump to a page in the app, same as `uni.redirectTo` |
 |navigateBack			|√				|√			|√	|√					|√					|关闭当前页面，返回上一页面，同`uni.navigateBack`										|
+|navigateBack |√ |√ |√ |√ |√ |Close the current page and return to the previous page, same as `uni.navigateBack` |
 |reLaunch					|√				|√			|√	|√					|√					|关闭所有页面，打开到应用内的某个页面，同`uni.reLaunch`							|
+|reLaunch |√ |√ |√ |√ |√ |Close all pages, open to a page in the app, same as `uni.reLaunch` |
 |switchTab				|√				|√			|√	|√					|√					|跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，同`uni.switchTab`|
+|switchTab |√ |√ |√ |√ |√ |Jumps to the tabBar page and closes all other non-tabBar pages, same as `uni.switchTab`|
 |currentPage			|√				|√			|√	|√					|√					|获取当前页面																												|
+|currentPage |√ |√ |√ |√ |√ |Get current page |
 |systemInfo				|√				|√			|√	|√					|√					|获取系统信息，同`uni.getSystemInfo`																|
+|systemInfo |√ |√ |√ |√ |√ |Get system info, same as `uni.getSystemInfo` |
 |pageScrollTo			|x				|√			|√	|√					|√					|将页面滚动到目标位置，同`uni.pageScrollTo`													|
+|pageScrollTo |x |√ |√ |√ |√ |Scrolls the page to the target position, same as `uni.pageScrollTo` |
 |callUniMethod		|√				|√			|√	|√					|√					|调用 uni 对象上的指定方法																					|
+|callUniMethod |√ |√ |√ |√ |√ |Call the specified method on the uni object |
 |screenshot				|√				|√			|√	|√					|x					|对当前页面截图，目前只有开发者工具模拟器支持，客户端无法使用				|
+|screenshot |√ |√ |√ |√ |x |The screenshot of the current page is only supported by the developer tool simulator, and the client cannot use it |
 |mockUniMethod		|√				|√			|√	|√					|√					|覆盖 uni 对象上指定方法的调用结果																	|
+|mockUniMethod |√ |√ |√ |√ |√ |Override the result of calling the specified method on the uni object |
 |restoreUniMethod	|√				|√			|√	|√					|√					|重置 uni 指定方法，消除 mockUniMethod 调用的影响										|
+|restoreUniMethod |√ |√ |√ |√ |√ |Reset the uni-specified method, eliminating the effects of mockUniMethod calls |
 |testAccounts			|x				|x			|x	|√					|x					|获取多账号调试中已添加的用户列表																		|
+|testAccounts |x |x |x |√ |x |Get the list of users added in multi-account debugging |
 |evaluate					|x				|x			|x	|√					|x					|注入代码片段并返回执行结果																					|
+|evaluate |x |x |x |√ |x |Inject code snippets and return execution results |
 |exposeFunction		|x				|x			|x	|√					|x					|在全局暴露方法，供小程序侧调用测试脚本中的方法											|
+|exposeFunction |x |x |x |√ |x | Expose the method globally for the applet side to call the method in the test script |
 
 ### Page
 
 |属性	|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明			|
+|Properties |APP-NVUE |APP-VUE|H5 |WeChat Mini Program |Baidu Mini Program |Description |
 |--		|--				|--			|--	|--					|--					|--				|
 |path	|√				|√			|√	|√					|√					|页面路径	|
+|path |√ |√ |√ |√ |√ |Page Path |
 |query|√				|√			|√	|√					|√					|页面参数	|
+|query|√ |√ |√ |√ |√ |Page Parameters |
 
 |方法				|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明												|
+|Method |APP-NVUE |APP-VUE|H5 |WeChat Mini Program |Baidu Mini Program |Instructions |
 |--					|--				|--			|--	|--					|--					|--													|
 |$					|√				|√			|√	|√					|√					|获取页面元素								|
+|$ |√ |√ |√ |√ |√ |Get page element |
 |$$					|√				|√			|√	|√					|√					|获取页面元素数组						|
+|$$ |√ |√ |√ |√ |√ |Get page element array |
 |waitFor		|√				|√			|√	|√					|√					|等待直到指定条件成立				|
+|waitFor |√ |√ |√ |√ |√ |Wait until the specified condition is satisfied |
 |data				|√				|√			|√	|√					|√					|获取页面渲染数据						|
+|data |√ |√ |√ |√ |√ |Get page rendering data |
 |setData		|√				|√			|√	|√					|√					|设置页面渲染数据						|
+|setData |√ |√ |√ |√ |√ |Set page rendering data |
 |size				|√				|√			|√	|√					|√					|获取页面大小(width,height)	|
+|size |√ |√ |√ |√ |√ |Get page size (width,height) |
 |scrollTop	|√				|√			|√	|√					|√					|获取页面滚动位置						|
+|scrollTop |√ |√ |√ |√ |√ |Get page scroll position |
 |callMethod	|√				|√			|√	|√					|√					|调用页面指定方法						|
+|callMethod |√ |√ |√ |√ |√ |Call page specified method |
 
 ### Element
 |属性		|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明					|
+|Properties |APP-NVUE |APP-VUE|H5 |WeChat Mini Program |Baidu Mini Program |Description |
 |--			|--				|--			|--	|--					|--					|--						|
 |tagName|√				|√			|√	|√					|√					|标签名，小写	|
+|tagName|√ |√ |√ |√ |√ |tag name, lowercase |
 
 |方法							|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明																								|
+|Method |APP-NVUE |APP-VUE|H5 |WeChat Mini Program |Baidu Mini Program |Instructions |
 |--								|--				|--			|--	|--					|--					|--																									|
 |$								|√				|√			|√	|√					|√					|在元素范围内获取元素																|
+|$ |√ |√ |√ |√ |√ |Get element in element range |
 |$$								|√				|√			|√	|√					|√					|在元素范围内获取元素数组														|
+|$$ |√ |√ |√ |√ |√ |Get element array in element range |
 |size							|√				|√			|√	|√					|√					|获取元素大小(width,height)													|
+|size |√ |√ |√ |√ |√ |Get element size (width,height) |
 |offset						|√				|√			|√	|√					|√					|获取元素绝对位置(left,top)													|
+|offset |√ |√ |√ |√ |√ |Get the absolute position of the element (left,top) |
 |text							|√				|√			|√	|√					|√					|获取元素文本																				|
+|text |√ |√ |√ |√ |√ |Get element text |
 |attribute				|√				|√			|√	|√					|√					|获取元素特性																				|
+|attribute |√ |√ |√ |√ |√ |Get element attribute |
 |style						|√				|√			|√	|√					|√					|获取元素样式值																			|
+|style |√ |√ |√ |√ |√ |Get element style value |
 |tap							|√				|√			|√	|√					|√					|点击元素																						|
+|tap |√ |√ |√ |√ |√ |Tap element |
 |value						|√				|√			|√	|√					|√					|获取元素值																					|
+|value |√ |√ |√ |√ |√ |Get element value |
 |callMethod				|√				|√			|√	|√					|√					|调用组件实例指定方法，仅自定义组件可以使用					|
+|callMethod |√ |√ |√ |√ |√ |Call the specified method of the component instance, only custom components can use |
 |html							|√				|√			|√	|√					|√					|获取元素 HTML																			|
+|html |√ |√ |√ |√ |√ |Get element HTML |
 |outerHtml				|√				|√			|√	|√					|√					|同 html，只是会获取到元素本身											|
+|outerHtml |√ |√ |√ |√ |√ |Same as html, but will get the element itself |
 |data							|√				|√			|√	|√					|√					|获取组件实例渲染数据，仅自定义组件可以使用					|
+|data |√ |√ |√ |√ |√ |Get component instance rendering data, only custom components can use |
 |setData					|√				|√			|√	|√					|√					|设置组件实例渲染数据，仅自定义组件可以使用					|
+|setData |√ |√ |√ |√ |√ |Set component instance rendering data, only custom components can use |
 |property					|√				|√			|√	|√					|x					|获取元素属性																				|
+|property |√ |√ |√ |√ |x |Get element property |
 |touchstart				|√				|√			|√	|√					|x					|手指开始触摸元素																		|
+|touchstart |√ |√ |√ |√ |x |Finger starts touching element |
 |touchmove				|√				|√			|√	|√					|x					|手指触摸元素后移动																	|
+|touchmove |√ |√ |√ |√ |x |Move after the finger touches the element |
 |touchend					|√				|√			|√	|√					|x					|手指结束触摸元素																		|
+|touchend |√ |√ |√ |√ |x |finger ends touching element |
 |longpress				|√				|√			|√	|√					|x					|长按																				|
+|longpress |√ |√ |√ |√ |x |long press |
 |trigger					|√				|√			|√	|√					|x					|触发元素事件																				|
+|trigger |√ |√ |√ |√ |x |Trigger element event |
 |input						|√				|√			|√	|√					|x					|输入文本，仅 input、textarea 组件可以使用					|
+|input |√ |√ |√ |√ |x |Enter text, only input and textarea components can be used |
 |callContextMethod|x				|x			|x	|√					|x					|调用上下文 Context 对象方法，仅 video 组件可以使用	|
+|callContextMethod|x |x |x |√ |x |Call context object method, only video component can use |
 |scrollWidth			|x				|√			|√	|√					|x					|获取滚动宽度，仅 scroll-view 组件可以使用					|
+|scrollWidth |x |√ |√ |√ |x |Get the scroll width, only the scroll-view component can use |
 |scrollHeight			|x				|√			|√	|√					|x					|获取滚动高度，仅 scroll-view 组件可以使用					|
+|scrollHeight |x |√ |√ |√ |x |Get the scroll height, only the scroll-view component can use |
 |scrollTo					|x				|√			|√	|√					|x					|滚动到指定位置，仅 scroll-view 组件可以使用				|
+|scrollTo |x |√ |√ |√ |x |scroll to the specified position, only the scroll-view component can use |
 |swipeTo					|√				|√			|√	|√					|x					|滑动到指定滑块，仅 swiper 组件可以使用							|
+|swipeTo |√ |√ |√ |√ |x |Slide to the specified slider, only the swiper component can be used |
 |moveTo						|√				|√			|√	|√					|x					|移动视图容器，仅 movable-view 组件可以使用					|
+|moveTo |√ |√ |√ |√ |x |Move view container, only movable-view component can be used |
 |slideTo					|√				|√			|√	|√					|x					|滑动到指定数值，仅 slider 组件可以使用							|
+|slideTo |√ |√ |√ |√ |x |Slide to the specified value, only the slider component can be used |
 
 
 ### 测试平台判断
+### Test platform judgment
 ```js
 if (process.env.UNI_PLATFORM === "h5") {}
 if (process.env.UNI_PLATFORM === "app-plus") {}

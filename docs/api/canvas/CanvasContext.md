@@ -1,3 +1,5 @@
+<md-translatedByGoogle />
+
 **属性**
 **Attribute**
 
@@ -5,6 +7,7 @@
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -86,6 +89,7 @@ Currently supported operations are
 * App和H5端：source-over、destination-over、source-in、destination-in、source-out、destination-out、source-atop、destination-atop、lighter、darker、xor、copy
 * App and H5 sides: source-over, destination-over, source-in, destination-in, source-out, destination-out, source-atop, destination-atop, lighter, darker, xor, copy.
 * 微信小程序安卓端：xor, source-over, source-atop, destination-out, lighter, overlay, darken, lighten, hard-light
+* WeChat applet for Android: xor, source-over, source-atop, destination-out, lighter, overlay, darken, lighten, hard-light
 * 微信小程序iOS端：xor, source-over, source-atop, destination-over, destination-out, lighter, multiply, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, saturation, luminosity
 
 **方法**
@@ -95,6 +99,7 @@ Currently supported operations are
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|
 
@@ -629,6 +634,7 @@ Draw images to canvas.
 |sy	|Number	|源图像的矩形选择框的左上角 Y 坐标			|
 | sy| Number| The Y coordinate of the upper left corner of the rectangle selection box of the source image|
 |sWidth|Number	|源图像的矩形选择框的宽度		|
+|sWidth|Number |The width of the rectangular selection box of the source image |
 |sHeight		|Number	|源图像的矩形选择框的高度		|
 | sHeight| Number| Height of rectangular selection box of source image|
 

@@ -1,3 +1,5 @@
+<md-translatedByGoogle />
+
 ### uni.canvasGetImageData(OBJECT,this)
 
 返回一个数组，用来描述 canvas 区域隐含的像素数据，在自定义组件下，第二个参数传入自定义组件实例 this，以操作组件内 `<canvas>` 组件。
@@ -10,6 +12,7 @@ Return an array to describe the pixel data hidden in the canvas area. Under cust
 | Parameter| Type| Required| Instruction|
 |---|---|---|---|
 |canvasId|String|是|画布标识，传入 ```<canvas />``` 的 canvas-id（支付宝小程序是id、其他平台是canvas-id）|
+|canvasId|String|Yes|Canvas ID, pass in ```<canvas /> ````&#39;s canvas-id (Alipay applet is id, other platforms are canvas-id)|
 |x|Number|是|将要被提取的图像数据矩形区域的左上角 x 坐标|
 | x| Number| Yes| x coordinate of the upper left corner of the rectangular area of the image data to be extracted|
 |y|Number|是|将要被提取的图像数据矩形区域的左上角 y 坐标|

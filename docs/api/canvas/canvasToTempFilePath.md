@@ -1,3 +1,5 @@
+<md-translatedByGoogle />
+
 ### uni.canvasToTempFilePath(object, component)
 
 把当前画布指定区域的内容导出生成指定大小的图片，并返回文件路径。在自定义组件下，第二个参数传入自定义组件实例，以操作组件内 `<canvas>` 组件。
@@ -7,6 +9,7 @@ Export the contents of the specified area in the current canvas to generate a im
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -29,6 +32,7 @@ Export the contents of the specified area in the current canvas to generate a im
 |destHeight	|Number		|否			|输出图片高度（默认为 height * 屏幕像素密度）|					
 | destHeight| Number| No| Output image height (default is height * screen pixel density)|
 |canvasId	|String		|是			|画布标识，传入 ``<canvas/>`` 的 canvas-id（支付宝小程序是id、其他平台是canvas-id）|						
+|canvasId |String |Yes |Canvas ID, pass in ``<canvas/>``s canvas-id (Alipay applet is id, other platforms are canvas-id)|
 |fileType	|String		|否			|目标文件的类型，只支持 'jpg' 或 'png'。默认为 'png'|		
 | fileType| String| No| Supported target file types are 'jpg' and 'png' only. The default is 'png'|
 |quality	|Number		|否			|图片的质量，取值范围为 (0, 1]，不在范围内时当作1.0处理|		

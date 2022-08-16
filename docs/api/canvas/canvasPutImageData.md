@@ -1,3 +1,5 @@
+<md-translatedByGoogle />
+
 ### uni.canvasPutImageData(OBJECT,this)
 
 将像素数据绘制到画布的方法，在自定义组件下，第二个参数传入自定义组件实例 this，以操作组件内 `<canvas>` 组件
@@ -10,6 +12,7 @@ Method of drawing pixel data to the canvas. Under custom components, the second 
 | Parameter| Type| Required| Instruction| Minimum version|
 |---|---|---|---|--|
 |canvasId|String|是|画布标识，传入 ```<canvas />``` 的 canvas-id（支付宝小程序是id、其他平台是canvas-id）||
+|canvasId|String|Yes|Canvas ID, pass in ```<canvas />``` canvas-id (Alipay applet is id, other platforms are canvas-id)||
 |data|Uint8ClampedArray|是|图像像素点数据，一维数组，每四项表示一个像素点的rgba||
 | data| Uint8ClampedArray| Yes| Image pixel data is a one-dimensional array and every four terms represent the rgba of a pixel.| |
 |x|Number|是|源图像数据在目标画布中的位置偏移量（x 轴方向的偏移量）||

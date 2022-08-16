@@ -1,3 +1,5 @@
+<md-translatedByGoogle />
+
 ### uni.arrayBufferToBase64(arrayBuffer)
 
 将 ArrayBuffer 对象转成 Base64 字符串
@@ -7,6 +9,7 @@ Convert ArrayBuffer object to Base64 string
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|Kuishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|x|x|x|√|√|
 

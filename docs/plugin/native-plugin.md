@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.requireNativePlugin(PluginName)
 
 引入 App 原生插件。
@@ -7,6 +8,7 @@ Introduction of the App native plug-ins.
 Platform difference description: App
 
 自 HBuilderX 1.4 版本起，uni-app 支持引入原生插件，使用方式如下：
+Since HBuilderX version 1.4, uni-app supports the introduction of native plugins, which are used as follows:
 
 ```js 
 	const PluginName = uni.requireNativePlugin(PluginName); // PluginName 为原生插件名称
@@ -80,6 +82,7 @@ Non-built-in native plug-ins are divided into [Local plug-ins](/api/extend/nativ
 - Method 1: Download the free uni-app native plug-ins for the plug-in market
 
 可以登录[uni原生插件市场](https://ext.dcloud.net.cn/?cat1=5&cat2=51)，在免费的插件详情页中点击“下载for离线打包”下载原生插件（zip格式），解压到HBuilderX的uni-app项目下的“nativeplugins”目录（如不存在则创建），以下是“DCloud-RichAlert”插件举例，它的下载地址是：[https://ext.dcloud.net.cn/plugin?id=36](https://ext.dcloud.net.cn/plugin?id=36)
+You can log in to the [uni native plugin market] (https://ext.dcloud.net.cn/?cat1=5&cat2=51), and click "Download for offline packaging" on the free plugin details page to download the native plugin (zip format) , extract it to the "nativeplugins" directory under the uni-app project of HBuilderX (create it if it does not exist), the following is an example of the "DCloud-RichAlert" plugin, its download address is: [https://ext.dcloud.net. cn/plugin?id=36](https://ext.dcloud.net.cn/plugin?id=36)
 
 下载解压后目录结构如下：
 The directory structure after downloading and decompressing is as follows:
@@ -159,11 +162,13 @@ Introduce this native plug-in in vue page or nvue page.
 Use the API of uni.requireNativePlugin, with the parameter set as the id of the plug-in.
 
 1.在页面引入原生插件，uni.requireNativePlugin 使用后返回一个对象：
+1. Introduce a native plug-in to the page, and uni.requireNativePlugin returns an object after use:
 
 ```js
 const dcRichAlert = uni.requireNativePlugin('DCloud-RichAlert')
 ```
 2.使用原生插件
+2. Use native plugins
 
 ```js
 	dcRichAlert.show({
@@ -204,4 +209,6 @@ You should resubmit to the cloud side for packaging (the "Custom Base" should be
 #### 注意事项
 #### Precautions
 1.可以在 插件市场 查看更多插件，如需开发uni原生插件请参考 [uni原生插件开发文档](https://nativesupport.dcloud.net.cn/NativePlugin/README)。
+1. You can view more plugins in the plugin market. If you need to develop uni native plugins, please refer to [uni native plugin development documentation](https://nativesupport.dcloud.net.cn/NativePlugin/README).
 2.如果插件需要传递文件路径，则需要传手机文件的绝对路径，可使用 5+ [IO模块](http://www.html5plus.org/doc/zh_cn/io.html) 的相关 API 得到文件的绝对路径。
+2. If the plugin needs to pass the file path, it needs to pass the absolute path of the mobile phone file. You can use the relevant API of 5+ [IO module](http://www.html5plus.org/doc/zh_cn/io.html) to get the file absolute path.

@@ -1,3 +1,5 @@
+<md-translatedByGoogle />
+
 ### CanvasGradient.addColorStop(stop,color)
 
 创建一个颜色的渐变点。

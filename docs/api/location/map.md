@@ -48,6 +48,7 @@ mapContext
 - 在组件中，必须在 `mounted` 中调用。
 - nvue没有`$getAppMap()`，请使用`createMapContext`
 - `uni-app`中使用原生地图无需提供占位div，得到`$getAppMap()`后直接js使用即可。
+- `openMapApp` iOS 暂不支持，后续补充
 
 
 **getCenterLocation 的 OBJECT 参数列表**

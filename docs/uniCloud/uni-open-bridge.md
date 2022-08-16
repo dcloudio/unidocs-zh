@@ -125,11 +125,44 @@
 
 > `云函数公共模块`是不同云函数共享代码的一种方式。如果你不了解什么是`云函数公共模块`，请另读文档[公共模块](https://uniapp.dcloud.io/uniCloud/cf-common)
 
-`uni-open-bridge-common` 提供了 `access_token`、`session_key`、`encrypt_key`、`ticket` 的读取、写入、删除操作。
+`uni-open-bridge-common` 提供了 `access_token`、`user_access_token`、`session_key`、`encrypt_key`、`ticket` 的读取、写入、删除操作。
 
 `uni-open-bridge-common` 支持多层 读取 / 写入 机制，`redis -> database -> fallback`，优先级如下:
 
 如果用户没有开通 `redis` 或者操作失败，透传到 `database`，`database` 失败后，如果用户配置了 `fallback`，继续调用 `fallback` 方法，否则抛出 `Error`，`database` 对应的表为: `opendb-open-data`
+
+在常见的情况下，在你的云函数/云对象中调用`uni-open-bridge-common`的几个get方法即可。
+//TODO **评审这段代码**@handongxu
+```js
+
+const key = {
+  dcloudAppid: '__UNI__xxx', // DCloud Appid
+  platform: 'mp-weixin' // 平台，解释见下
+} 
+let uobc = require('uni-open-bridge-common')
+
+uobc.getAccessToken(key)
+uobc.getUserAccessToken(key)
+uobc.getSessionKey(key)
+uobc.getEncryptKey(key)
+uobc.getTicket(key)
+
+```
+
+#### Platform@platform
+
+平台对应的值
+
+|值					|描述				|
+|:-:				|:-:				|
+|mp-weixin	|微信小程序	|
+|app-weixin	|微信 App	  |
+|h5-weixin	|微信公众号	|
+|web-weixin	|微信pc网页	|
+|mp-qq			|QQ 小程序		|
+|app-qq			|QQ App			|
+
+提示：目前仅支持 `mp-weixin`、`h5-weixin` 后续补充其他平台
 
 #### getAccessToken(key: Object, fallback: Function)
 
@@ -137,11 +170,11 @@
 
 #### setAccessToken(key: Object, value: Object, expiresIn: Number)
 
-写入 access_token
+写入 access_token。开发者一般只需使用get类方法，用不到set、remove类方法。下同
 
 #### removeAccessToken(key: Object)
 
-删除 access_token
+删除 access_token。开发者一般只需使用get类方法，用不到set、remove类方法。下同
 
 
 **key 属性**
@@ -202,15 +235,15 @@ exports.main = async (event, context) => {
 
 #### getUserAccessToken(key: Object, fallback: Function)
 
-读取 user_access_token
+读取 `user_access_token`
 
 #### setUserAccessToken(key: Object, value: Object, expiresIn: Number)
 
-写入 user_access_token
+写入 `user_access_token`
 
 #### removeUserAccessToken(key: Object)
 
-删除 user_access_token
+删除 `user_access_token`
 
 
 对应微信公众平台网页用户授权 `access_token`，详情见下文说明
@@ -496,20 +529,6 @@ exports.main = async (event, context) => {
 ```
 
 
-#### Platform@platform
-
-平台对应的值
-
-|值					|描述				|
-|:-:				|:-:				|
-|mp-weixin	|微信小程序	|
-|app-weixin	|微信 App	  |
-|h5-weixin	|微信公众号	|
-|web-weixin	|微信pc网页	|
-|mp-qq			|QQ 小程序		|
-|app-qq			|QQ App			|
-
-提示：目前仅支持 `mp-weixin`、`h5-weixin` 后续补充其他平台
 
 #### fallback
 
@@ -538,6 +557,7 @@ exports.main = async (event, context) => {
 
 请求类型 `POST`, 可以配置IP白名单字段 `ipWhiteList`，参见 `config.json`
 
+配置URL化后，其他系统可以通过下面的http接口，读写删各种开放平台凭据。
 
 #### getAccessToken
 
@@ -556,7 +576,11 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getAcces
 }
 ```
 
+其中参数platform值域[详见](#platform)。下同，不再复述。
+
 #### setAccessToken
+
+如果各种开放平台凭据由`uni-open-bridge`托管，那么只需要调用各种get方法，是用不到set等方法的。但在某些情况下，相关凭据没有由`uni-open-bridge`从微信服务器获取，就需要这些set方法了。[详见](#nouseuniopenbridge)
 
 Url
 
@@ -566,7 +590,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setAcces
 
 参数
 
-[如何获取需要传递的参数](#nouseuniopenbridge)
+由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
 
 ```json
 {
@@ -597,7 +621,6 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeAc
 }
 ```
 
-其中参数platform值域[详见](#platform)
 
 #### getUserAccessToken
 
@@ -627,7 +650,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setUserA
 
 参数
 
-[如何获取需要传递的参数](#nouseuniopenbridge)
+由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
 
 ```json
 {
@@ -687,7 +710,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setSessi
 
 参数
 
-[如何获取需要传递的参数](#nouseuniopenbridge)
+由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
 
 ```json
 {
@@ -748,7 +771,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setEncry
 
 参数
 
-[如何获取需要传递的参数](#nouseuniopenbridge)
+由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
 
 ```json
 {
@@ -810,7 +833,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setTicke
 
 参数
 
-[如何获取需要传递的参数](#nouseuniopenbridge)
+由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
 
 ```json
 {
@@ -916,14 +939,27 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 ## 不使用 `uni-open-bridge` 托管的情况@nouseuniopenbridge
 
-某些场景下需要使用 `uni-open-bridge` 托管三方平台数据
+如开发者的老业务里已经获取了微信的access_token等凭据，难以迁移到由`uni-open-bridge`来托管微信相关凭据。
 
-例如：`uni-ad`微信小程序激励视频广告服务器回调
+那么`uni-open-bridge`也暴露了允许三方系统给`uni-open-bridge`写入微信相关凭据的接口。
 
-因`uni-ad`微信小程序激励视频广告服务器回调依赖 `uni-open-bridge` 托管三方平台数据，但现有业务也需要三方平台数据，又不想改动现有逻辑，也需要广告服务器回调功能
+因为其他插件会依赖`uni-open-bridge`，比如：
+1. `uni-ad`微信小程序激励视频广告服务器回调
+2. uni云端一体安全网络
 
-通过以下方式处理：
+如果`uni-open-bridge`里没有相关凭据，上述插件或功能就无法使用。
 
-1. 关闭 `uni-open-bridge` 定时刷新，[详情](#uniopenbridgeconfig)
+因此，开发者即不想改成由`uni-open-bridge`托管微信凭据，又需要使用上述依赖`uni-open-bridge`的功能或插件，就只能将老系统获取到的相关凭据写入到`uni-open-bridge`中。
 
-2. 由原业务系统将数据同步到 `uni-open-bridge`，[详情](#cloudurl)
+此时，开发者需通过以下方式处理：
+
+1. 取消`uni-open-bridge`云对象的定时任务，不再定时向微信服务器请求凭据
+
+在`uni-open-bridge`云对象的package.json中找到定时器节点`triggers`，删除该节点。本地修改package.json后需重新上传到服务空间方生效。
+
+参考[定时任务配置](cf-functions.md#packagejson))。
+
+2. 老系统从微信服务器获取到相关凭据后调用`uni-open-bridge`的set方法写入凭据
+
+先将云对象`uni-open-bridge`进行URL化，暴露出http接口。然后老系统调用setAccessToken、setUserAccessToken、setSessionKey、setEncryptKey、setTicket等接口。[参考](#cloudurl)
+

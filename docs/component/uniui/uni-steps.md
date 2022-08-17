@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ::: tip 组件名：uni-steps
 ::: tip component name: uni-steps

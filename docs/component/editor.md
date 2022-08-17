@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### editor
 
 富文本编辑器，可以对图片、文字格式进行编辑和混排。

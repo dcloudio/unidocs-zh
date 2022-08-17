@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ::: tip 组件名：uni-load-more
 ::: tip component name: uni-load-more

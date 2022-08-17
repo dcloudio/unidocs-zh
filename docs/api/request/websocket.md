@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.connectSocket(OBJECT)
 创建一个 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) 连接。
 Create a [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) connection.

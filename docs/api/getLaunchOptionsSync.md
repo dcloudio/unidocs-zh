@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getLaunchOptionsSync()
 
 获取启动时的参数。返回值与App.onLaunch的回调参数一致

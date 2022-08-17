@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### video
 视频播放组件。
 Video player components.

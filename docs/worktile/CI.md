@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ## 持续集成
 ## Continuous Integration

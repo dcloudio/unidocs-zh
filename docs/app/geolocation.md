@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 > HBuilderX3.3.0开始独立出“系统定位”模块
 > HBuilderX3.3.0 began to separate out the "system positioning" module

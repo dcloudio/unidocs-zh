@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 `uni.scss`文件的用途是为了方便整体控制应用的风格。比如按钮颜色、边框风格，`uni.scss`文件里预置了一批scss变量预置。
 The purpose of the `uni.scss` file is to facilitate the overall control of the style of the application. For example, for button color and border style, a batch of scss variable presets are preset in the `uni.scss` file.
 

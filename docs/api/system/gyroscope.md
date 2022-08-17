@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.onGyroscopeChange(CALLBACK)
 
 监听陀螺仪数据变化事件。

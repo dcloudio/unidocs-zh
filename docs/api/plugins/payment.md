@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 # uni.requestPayment(OBJECT)
 支付
 pay

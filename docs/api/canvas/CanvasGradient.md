@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ### CanvasGradient.addColorStop(stop,color)
 

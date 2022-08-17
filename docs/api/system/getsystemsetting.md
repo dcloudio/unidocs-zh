@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getSystemSetting()
 获取设备设置
 Get device settings

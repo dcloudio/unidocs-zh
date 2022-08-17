@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.login(OBJECT)
 登录
 Log in

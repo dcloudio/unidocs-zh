@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.makePhoneCall(OBJECT)
 拨打电话。
 Dial number.

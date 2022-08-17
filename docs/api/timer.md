@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## setTimeout(callback, delay, rest)
 
 设定一个定时器。在定时到期以后执行注册的回调函数

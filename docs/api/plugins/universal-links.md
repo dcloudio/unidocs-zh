@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 **一键生成iOS通用链接**
 **One-click to generate iOS Universal Links**
 

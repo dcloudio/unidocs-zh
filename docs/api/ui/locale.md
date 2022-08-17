@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getLocale()
 
 获取当前设置的语言

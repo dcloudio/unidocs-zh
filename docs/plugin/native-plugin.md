@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.requireNativePlugin(PluginName)
 
 引入 App 原生插件。

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 DCloud有活跃的插件市场，[https://ext.dcloud.net.cn/](https://ext.dcloud.net.cn/)，并提供了变现、评价等机制。
 DCloud has an active plugin market, [https://ext.dcloud.net.cn/](https://ext.dcloud.net.cn/), and provides mechanisms such as monetization and evaluation.
 欢迎开发者为插件市场提供插件。

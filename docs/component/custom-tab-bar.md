@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### custom-tab-bar
 
 自定义tabBar组件。

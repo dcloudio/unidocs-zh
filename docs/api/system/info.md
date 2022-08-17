@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### 系统信息的概念
 ### The concept of system information
 

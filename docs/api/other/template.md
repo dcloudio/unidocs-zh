@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### addTemplate
 
 组合模板并添加至帐号下的个人模板库。

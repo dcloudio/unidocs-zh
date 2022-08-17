@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ::: tip 组件名：uni-tooltip
 ::: tip Component name: uni-tooltip
 

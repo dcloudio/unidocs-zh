@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni-app默认集成功能模块
 ### uni-app default integrated function module
 

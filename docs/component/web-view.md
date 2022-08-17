@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### web-view
 
 `web-view` 是一个 web 浏览器组件，可以用来承载网页的容器，会自动铺满整个页面（nvue 使用需要手动指定宽高）。

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## 广告错误码
 ## Ad error code
 

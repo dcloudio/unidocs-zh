@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 uni-ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别组件等多种使用方式
 uni-ui supports HBuilderX to directly create a new project template, npm installation and separate import of individual components, etc.
 

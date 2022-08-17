@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 #### 卡券
 #### Coupon

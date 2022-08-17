@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getLocation(OBJECT)
 获取当前的地理位置、速度。
 Get the current geographical position and speed.

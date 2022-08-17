@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.pageScrollTo(OBJECT)
 
 将页面滚动到目标位置。

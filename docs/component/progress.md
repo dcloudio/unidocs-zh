@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### progress
 进度条。
 Progress bar.

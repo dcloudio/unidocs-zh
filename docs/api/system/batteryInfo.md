@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### 电量
 #### Battery
 

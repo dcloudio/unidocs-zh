@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.addPhoneContact(OBJECT)
 调用后，用户可以选择将该表单以“新增联系人”或“添加到已有联系人”的方式（APP端目前没有选择步骤，将直接写入），写入手机系统通讯录，完成手机通讯录联系人和联系方式的增加。
 After calling, the user can choose to write the form into the address book of the mobile phone system in the way of "Add Contact" or “Add to Existing Contact" (there is no selection step on the APP side at present, and it will be written directly) so as to complete the addition of contacts and contact information in the mobile phone address book.

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getUpdateManager()
 
 本API返回**全局唯一**的版本更新管理器对象： updateManager，用于管理小程序更新。

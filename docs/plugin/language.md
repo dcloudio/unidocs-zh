@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 插件支持多语言是基于[uni-app国际化](https://uniapp.dcloud.net.cn/tutorial/i18n.html)及[HBuilderX插件国际化](https://hx.dcloud.net.cn/ExtensionTutorial/localized)规范延伸而来的，所以不同类型的插件多语言规范略有不同。
 Plugin support for multiple languages is based on [uni-app internationalization](https://uniapp.dcloud.net.cn/tutorial/i18n.html) and [HBuilderX plugin internationalization](https://hx.dcloud.net. cn/ExtensionTutorial/localized) specification, so the multi-language specification of different types of plugins is slightly different.
 

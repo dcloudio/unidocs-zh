@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### open-data
 
 用于展示平台开放的数据。

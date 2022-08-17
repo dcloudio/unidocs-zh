@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ::: tip 组件名：uni-title
 ::: tip component name: uni-title

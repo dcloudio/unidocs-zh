@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### navigator
 
 页面跳转。

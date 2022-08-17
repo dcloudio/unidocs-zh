@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ::: tip 组件名：uni-search-bar
 ::: tip component name: uni-search-bar
 > 代码块： `uSearchBar`

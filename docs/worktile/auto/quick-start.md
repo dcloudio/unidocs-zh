@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 # uni-app自动化测试@about
 # uni-app automated testing @about

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 # 互动游戏
 # interactive game

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 **属性**
 **Attribute**

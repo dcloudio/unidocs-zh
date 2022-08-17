@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### component
 
 渲染一个“元组件”为动态组件。依 `is` 的值，来决定哪个组件被渲染。[详见](https://cn.vuejs.org/v2/api/#component)

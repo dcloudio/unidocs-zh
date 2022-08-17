@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 每个端有每个端的特点，有的能被抹平，有的不可能被抹平。
 Each side has its own characteristics, some can be compensated but some cannot.
 

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### live-pusher
 
 实时音视频录制，也称直播推流。

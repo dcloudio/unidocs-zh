@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 如下是使用 ``uni-app`` 的开源案例，我们相信还有更多优秀案例，没有被我们采集到，欢迎大家到 [项目案例征集](http://github.com/dcloudio/uni-app/issues/6) 提交。
 The following are open source cases using ``uni-app``. We believe that there are more excellent cases that have not been collected by us. Welcome to [Project Case Collection](http://github.com/dcloudio/uni- app/issues/6) submitted.
 

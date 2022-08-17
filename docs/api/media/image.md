@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.chooseImage(OBJECT)
 从本地相册选择图片或使用相机拍照。
 Select images from local album or take photos with the camera.

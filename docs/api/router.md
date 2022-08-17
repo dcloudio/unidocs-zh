@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.navigateTo(OBJECT)
 
 保留当前页面，跳转到应用内的某个页面，使用```uni.navigateBack```可以返回到原页面。

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.setScreenBrightness(OBJECT)
 设置屏幕亮度。
 Set screen brightness.

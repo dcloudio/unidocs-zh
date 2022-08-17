@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ::: warning 注意 
 ::: warning attention
 推荐使用 [uni统计2.0](https://uniapp.dcloud.io/uni-stat-v2.html)

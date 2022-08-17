@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getDeviceInfo()
 
 获取设备基础信息

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 DCloud用户开放平台，[https://open.dcloud.net.cn](https://open.dcloud.net.cn/)，是DCloud为三方开发者服务商提供的开放平台。
 DCloud User Open Platform, [https://open.dcloud.net.cn](https://open.dcloud.net.cn/), is an open platform provided by DCloud for third-party developer service providers.
 

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ### uni.saveFile(OBJECT) @savefile
 保存文件到本地。

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### scroll-view
 
 可滚动视图区域。用于区域滚动。

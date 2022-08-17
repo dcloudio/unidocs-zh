@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.createMapContext(mapId,this)
 创建并返回 map 上下文 ``mapContext`` 对象。在自定义组件下，第二个参数传入组件实例this，以操作组件内 ``<map>`` 组件。
 Create and return to the map context `mapContext` object. Under custom components, the second parameter is passed into the custom component instance this to operate the `<map>` component.

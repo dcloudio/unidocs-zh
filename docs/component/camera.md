@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### camera
 页面内嵌的区域相机组件。注意这不是点击后全屏打开的相机。
 The area camera component embedded in the page. Note that this is not the camera that opens in full screen after clicking.

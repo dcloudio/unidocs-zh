@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ::: tip 组件名：uni-number-box
 ::: tip component name: uni-number-box

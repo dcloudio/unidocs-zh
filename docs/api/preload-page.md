@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### uni.preloadPage(OBJECT)
 
 预加载页面，是一种性能优化技术。被预载的页面，在打开时速度更快。

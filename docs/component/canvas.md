@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### canvas
 
 画布。

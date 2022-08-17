@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## FAQ
 
 **uni-app 中可使用的 UI 框架：**[https://ask.dcloud.net.cn/article/35489](https://ask.dcloud.net.cn/article/35489)

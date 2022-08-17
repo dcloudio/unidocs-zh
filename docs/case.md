@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机端月活**12亿+**。是开发者数量和案例最丰富的多端开发框架。
 DCloud has **9 million** developers, [uni statistics](https://tongji.dcloud.net.cn/) mobile phone monthly active **1.2 billion+**. It is the multi-terminal development framework with the most abundant developers and cases.
 

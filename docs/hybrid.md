@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 **uni-app和原生App混合开发问题：** 
 **Mixed development issues of uni-app and native App:**
 

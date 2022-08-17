@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.uploadFile(OBJECT)
 将本地资源上传到开发者服务器，客户端发起一个 ``POST`` 请求，其中 ``content-type`` 为 ``multipart/form-data``。  
 Upload the local resources to the developer server, and the client side initiates one `POST` request, in which `content-type` is `multipart/form-data`.   

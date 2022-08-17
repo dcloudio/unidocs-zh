@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getAppBaseInfo()
 
 获取微信 APP 基础信息

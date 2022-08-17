@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## 短视频内容联盟组件
 ## Short video content alliance components
 

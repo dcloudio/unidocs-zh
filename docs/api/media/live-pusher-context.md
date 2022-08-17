@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.createLivePusherContext(livePusherId, this)
 创建 live-pusher 上下文 livePusherContext 对象。
 Create the livePusherContext object of the live-pusher context.

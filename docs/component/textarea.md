@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### textarea
 
 多行输入框。

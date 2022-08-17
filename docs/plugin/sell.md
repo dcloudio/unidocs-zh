@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## 发布付费插件
 ## Publish paid plugins
 

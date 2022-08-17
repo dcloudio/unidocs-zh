@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ::: tip 组件名：uni-link
 ::: tip component name: uni-link
 > 代码块： `uLink`

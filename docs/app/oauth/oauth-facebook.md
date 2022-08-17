@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### 开通条件
 ### Activation conditions
 1.海外网络环境

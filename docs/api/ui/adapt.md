@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## 窗口样式相关的 API
 ## Window style related APIs
 

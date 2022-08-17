@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 # uni_modules
 
 ### 什么是 uni_modules

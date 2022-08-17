@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 `uni-app`积极拥抱社区，创建了开放、兼容的插件系统。
 `uni-app` actively embraces the community, creating an open, compatible plugin system.
 

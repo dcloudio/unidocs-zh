@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如界面的宽高是不是在某个指定的范围内。
 MediaQueryObserver object, which is used to listen to the change of the status of the page media query, such as whether the width and height of the interface are within a specified range.
 

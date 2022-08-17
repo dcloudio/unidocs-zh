@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### 原生组件说明
 #### Native component description
 

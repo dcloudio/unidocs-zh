@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 # 自动化测试插件@extension
 # Automated test plugin @extension
 

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 **低功耗蓝牙 API 平台差异说明**
 **Platform difference description for low power Bluetooth APIs**
 

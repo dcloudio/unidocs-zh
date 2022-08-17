@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.setEnableDebug(OBJECT)
 
 设置是否打开调试开关。此开关对正式版也能生效。

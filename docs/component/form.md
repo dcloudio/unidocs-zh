@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### form
 表单，将组件内的用户输入的``<switch>`` ``<input>`` ``<checkbox>`` ``<slider>`` ``<radio>`` ``<picker>`` 提交。
 Form, submit the `<switch>` `<input>` `<checkbox>` `<slider>` `<radio>` `<picker>` input by the user in the component.

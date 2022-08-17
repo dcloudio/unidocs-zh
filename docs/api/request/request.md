@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.request(OBJECT)
 发起网络请求。
 Initiate a network request.

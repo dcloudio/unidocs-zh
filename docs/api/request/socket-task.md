@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 **SocketTask** 由 [uni.connectSocket()](/api/request/websocket?id=connectsocket) 接口创建。
 **SocketTask** is created by the [uni.connectSocket()](/api/request/websocket?id=connectsocket) interface.
 

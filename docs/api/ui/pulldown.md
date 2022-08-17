@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### onPullDownRefresh
 在 js 中定义 onPullDownRefresh 处理函数（和onLoad等生命周期函数同级），监听该页面用户下拉刷新事件。
 Define the onPullDownRefresh processing function (at the same level as the lifecycle functions such as onLoad) in js to listen to the user's pull-down refresh event of this page.

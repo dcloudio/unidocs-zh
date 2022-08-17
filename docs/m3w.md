@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 App/小程序/网站做好后，如何告知你的用户？
 After the app/mini program/website is ready, how do you inform your users?
 

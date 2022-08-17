@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### 广告
 #### advertise
 

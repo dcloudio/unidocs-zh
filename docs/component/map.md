@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### map
 
 地图组件。

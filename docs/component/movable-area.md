@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### movable-area
 
 可拖动区域

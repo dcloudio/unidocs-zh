@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getEnterOptionsSync()
 
 获取启动时的参数。

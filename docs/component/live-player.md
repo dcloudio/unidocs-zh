@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### live-player
 
 实时音视频播放，也称直播拉流。

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 `manifest.json` 文件是应用的配置文件，用于指定应用的名称、图标、权限等。HBuilderX 创建的工程此文件在根目录，CLI 创建的工程此文件在 src 目录。
 The `manifest.json` file is the configuration file of the application, which is used to specify the name, icon, permission and so on of the application. The project file created by HBuilderX is in the root directory, and the project file created by CLI is in the src directory.
 

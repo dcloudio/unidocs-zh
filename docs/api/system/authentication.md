@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### 生物认证说明
 ### Biometric authentication instructions
 

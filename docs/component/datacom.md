@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### 什么是datacom
 ### What is datacom
 

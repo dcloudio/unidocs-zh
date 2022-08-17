@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### picker-view
 
 嵌入页面的滚动选择器。

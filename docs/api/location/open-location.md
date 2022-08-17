@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.openLocation(OBJECT)
 使用应用内置地图查看位置。
 Use the built-in map to view locations.

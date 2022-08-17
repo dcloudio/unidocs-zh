@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### recycle-list
 
 app端nvue专用组件。

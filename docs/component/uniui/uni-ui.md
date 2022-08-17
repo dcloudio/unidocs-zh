@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 uni-ui是DCloud提供的一个跨端ui库，它是基于vue组件的、flex布局的、无dom的跨全端ui框架。
 uni-ui is a cross-end UI library provided by DCloud. It is a cross-end UI framework based on vue components, flex layout, and no dom.
 

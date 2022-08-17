@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ###  nextTick(function callback)
 在小程序自定义组件，如wxcomponents中使用。延迟一部分操作到下一个时间片再执行。（类似于 setTimeout） 。其他平台无此概念。
 Used in applet custom components such as wxcomponents. Delay a part of the operation to the next time slice before executing it. (similar to setTimeout). Other platforms do not have this concept.

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.onWindowResize(CALLBACK)
 监听窗口尺寸变化事件
 listen to window size change events

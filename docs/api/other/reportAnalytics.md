@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 #### uni.reportAnalytics(string eventName, Object data)
 

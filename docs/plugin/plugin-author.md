@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### 插件作者专区
 ### Plugin Author Zone
 

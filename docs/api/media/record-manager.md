@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getRecorderManager()
 获取**全局唯一**的录音管理器 ``recorderManager``。
 Get the **globally unique** recording manager `recorderManager`.

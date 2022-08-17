@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### checkbox-group
 多项选择器，内部由多个 checkbox 组成。
 Multi-item selector, consisting of multiple checkbox inside.

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### 监听设备方向变化
 #### listen to device orientation changes
 

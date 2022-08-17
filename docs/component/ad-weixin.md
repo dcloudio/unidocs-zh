@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## uni-ad支持微信小程序广告
 ## uni-ad supports WeChat applet advertising
 

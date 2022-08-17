@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getAppAuthorizeSetting()
 获取 APP 授权设置
 Get APP authorization settings

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### cover-view
 覆盖在原生组件上的文本视图。
 Text view covered on native component.

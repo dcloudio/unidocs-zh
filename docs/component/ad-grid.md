@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## Grid 广告
 ## Grid Ads
 

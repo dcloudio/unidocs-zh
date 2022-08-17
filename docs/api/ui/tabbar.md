@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.setTabBarItem(OBJECT)
 
 动态设置 tabBar 某一项的内容

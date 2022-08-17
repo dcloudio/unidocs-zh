@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### Worker
 
 目前需分平台编写

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ::: tip 组件名：uni-file-picker
 ::: tip component name: uni-file-picker

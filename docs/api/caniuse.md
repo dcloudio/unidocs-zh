@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ### uni.canIUse(String)
 判断应用的 API，回调，参数，组件等是否在当前版本可用。

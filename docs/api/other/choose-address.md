@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.chooseAddress(OBJECT)
 
 获取用户收货地址。调起用户编辑收货地址原生界面，并在编辑完成后返回用户选择的地址，需要用户授权 scope.address。

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## 激励视频广告
 ## Rewarded Video Ads
 

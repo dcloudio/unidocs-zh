@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ::: tip 组件名：uni-segmented-control
 ::: tip component name: uni-segmented-control

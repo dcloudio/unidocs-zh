@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### slider
 
 滑动选择器。

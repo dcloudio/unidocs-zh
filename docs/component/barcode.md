@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### Barcode
 
 app端nvue专用的扫码组件。

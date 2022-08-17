@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ::: tip 组件名：uni-list
 ::: tip component name: uni-list
 > 代码块： `uList`、`uListItem`

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## 插件市场介绍
 ## Plugin Market Introduction
 

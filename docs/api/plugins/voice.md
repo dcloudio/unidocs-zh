@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### voice
 
 voice 包括语言识别和语音朗读两部分。

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.showToast(OBJECT)
 
 显示消息提示框。

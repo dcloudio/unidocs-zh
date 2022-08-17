@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getWindowInfo()
 
 获取窗口信息

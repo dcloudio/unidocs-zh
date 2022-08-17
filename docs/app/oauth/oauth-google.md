@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ###   前置条件
 ###   precondition
 

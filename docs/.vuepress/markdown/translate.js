@@ -1,14 +1,15 @@
-const parse = require('../../../script/parse')
+const parse = require('../../../../unidocs-auto-deploy/src/translation/parse')
 
 function translate(content) {
-  return parse(content)[process.env.DOCS_LOCAL === 'en' ? 'target' : 'origin'].join('\n')
+  const key = process.env.DOCS_LOCAL === 'en' ? 'target' : 'origin'
+  return parse(content)[key].join('\n')
 }
 
 module.exports = md => {
   md.parse = (function (mdParse) {
     return function (src, ...array) {
       if (src) {
-        src = translate(src)
+        src = (process.env.DOCS_LOCAL === 'en' ? '<md-translatedByGoogle />\n' : '') + translate(src)
       }
       return mdParse.bind(this)(src, ...array)
     }
@@ -16,7 +17,7 @@ module.exports = md => {
   md.render = (function (mdRender) {
     return function (src, ...array) {
       if (src) {
-        src = translate(src)
+        src = (process.env.DOCS_LOCAL === 'en' ? '<md-translatedByGoogle />\n' : '') + translate(src)
       }
       return mdRender.bind(this)(src, ...array)
     }

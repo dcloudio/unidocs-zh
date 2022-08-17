@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### text
 文本组件。
 Text components.

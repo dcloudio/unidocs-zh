@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ### uni.canvasPutImageData(OBJECT,this)
 

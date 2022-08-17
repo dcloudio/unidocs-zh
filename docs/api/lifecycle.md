@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### 应用生命周期
 ### Application life cycle
 

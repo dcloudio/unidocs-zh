@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### console
 向控制台打印日志信息。
 Output the log information to the console.

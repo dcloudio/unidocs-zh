@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.createCameraContext()
 创建并返回 camera 组件的上下文 cameraContext 对象。
 Creates and returns a context cameraContext object for the camera component.

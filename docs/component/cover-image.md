@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### cover-image
 覆盖在原生组件上的图片视图。可覆盖的原生组件同`cover-view`，支持嵌套在`cover-view`里。
 Image view overlaid on native component. Overridable native components are the same as `cover-view`, support nesting in `cover-view`.

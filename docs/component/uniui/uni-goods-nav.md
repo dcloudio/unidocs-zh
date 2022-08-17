@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ::: tip 组件名：uni-goods-nav
 ::: tip component name: uni-goods-nav
 > 代码块： `uGoodsNav`

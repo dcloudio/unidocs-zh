@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.addInterceptor(STRING, OBJECT)
 添加拦截器
 Add interceptor

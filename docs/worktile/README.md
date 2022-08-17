@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ### 工程化
 ### Engineering

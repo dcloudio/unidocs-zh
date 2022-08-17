@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.vibrate(OBJECT)
 使手机发生振动。
 Make the phone vibrate.

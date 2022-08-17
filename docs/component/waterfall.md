@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### waterfall
 
 app端nvue专用组件。

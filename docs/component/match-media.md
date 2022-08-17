@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### match-media
 
 media query 匹配检测节点。

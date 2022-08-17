@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ::: tip 组件名：uni-group
 ::: tip component name: uni-group
 > 代码块： `uGroup`

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## button
 
 按钮。

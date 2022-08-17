@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 `App.vue`是uni-app的主组件，所有页面都是在`App.vue`下进行切换的，是页面入口文件。但`App.vue`本身不是页面，这里不能编写视图元素，也就是没有`<template>`。
 `App.vue` is the main component of uni-app. All pages are switched under `App.vue`, which is the page entry file. But `App.vue` itself is not a page, you can&#39;t write view elements here, that is, there is no `<template> `.
 

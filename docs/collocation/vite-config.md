@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 vite.config.js 是一个可选的配置文件，如果项目的根目录中存在这个文件，那么它会被自动加载，一般用于配置 vite 的编译选项，具体规范参考：[vite.config.js](https://cn.vitejs.dev/)
 vite.config.js is an optional configuration file. If this file exists in the root directory of the project, it will be loaded automatically. It is generally used to configure the compilation options of vite. For specific specifications, please refer to: [vite.config.js] (https://cn.vitejs.dev/)
 

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### 组件的概念
 ### The concept of components
 组件是现代开发的重要里程碑。组件重构了分工模型，让大量的轮子出现，让开发者可以拿来轮子直接用，大幅提升了整个产业的效率。

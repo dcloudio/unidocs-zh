@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ::: danger 重要通知
 ::: danger Important notice

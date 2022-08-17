@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ## uni-app cli项目@uniapp-cli
 ## uni-app cli item @uniapp-cli

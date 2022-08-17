@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### getMenuButtonBoundingClientRect()
 
 在小程序平台，如果原生导航栏被隐藏，仍然在右上角会有一个悬浮按钮，微信下也被称为胶囊按钮。本API用于获取小程序下该菜单按钮的布局位置信息，方便开发者布局顶部内容时避开该按钮。

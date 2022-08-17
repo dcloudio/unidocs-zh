@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getBackgroundAudioManager()
 获取**全局唯一**的背景音频管理器 ``backgroundAudioManager``。
 Get the **globally unique** background audio manager `backgroundAudioManager`.

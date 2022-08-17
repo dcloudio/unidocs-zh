@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ### 插屏广告
 ### Interstitial ads

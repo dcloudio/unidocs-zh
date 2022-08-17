@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 所有的视图组件，包括view、swiper等，本身不显示任何可视化元素。它们的用途都是为了包裹其他真正显示的组件。
 All view components, including view, swiper, etc., do not display any visual elements themselves. Their purpose is to wrap other components that are actually displayed.
 

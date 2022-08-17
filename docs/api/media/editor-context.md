@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## editorContext
 
 editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery](/api/ui/nodes-info?id=createselectorquery) 获取。

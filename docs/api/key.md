@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.hideKeyboard()
 
 隐藏软键盘

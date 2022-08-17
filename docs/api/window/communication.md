@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 > 自 HBuilderX 2.0.0 起支持，[使用指南](https://ask.dcloud.net.cn/article/36010)
 > Supported by HBuilderX 2.0.0+, [User Guide](https://ask.dcloud.net.cn/article/36010)
 

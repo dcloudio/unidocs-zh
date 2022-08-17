@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.createAnimation(OBJECT)
 
 创建一个动画实例 [animation](#animation)。调用实例的方法来描述动画。最后通过动画实例的export方法导出动画数据传递给组件的animation属性。

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### sport 运动
 #### sport
 

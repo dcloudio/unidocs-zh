@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### swiper
 
 滑块视图容器。

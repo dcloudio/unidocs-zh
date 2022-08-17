@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### input
 
 输入框。

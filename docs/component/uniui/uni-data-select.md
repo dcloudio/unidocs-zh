@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ::: tip 组件名：uni-data-select
 ::: tip component name: uni-data-select
 

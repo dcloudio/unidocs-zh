@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.onMemoryWarning(CALLBACK)
 
 监听内存不足告警事件。

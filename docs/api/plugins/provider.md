@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getProvider(OBJECT)
 获取服务供应商。
 Get a service provider.

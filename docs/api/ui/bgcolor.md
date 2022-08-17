@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.setBackgroundColor(OBJECT)
 
 动态设置窗口的背景色。

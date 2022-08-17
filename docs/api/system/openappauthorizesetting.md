@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.openAppAuthorizeSetting()
 跳转系统授权管理页
 Jump to the system authorization management page

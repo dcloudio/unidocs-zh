@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.getNetworkType(OBJECT)
 获取网络类型。
 Get the network type.

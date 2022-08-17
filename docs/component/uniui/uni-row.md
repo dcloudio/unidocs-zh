@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ::: tip 组件名 uni-row、uni-col
 ::: tip component name uni-row, uni-col

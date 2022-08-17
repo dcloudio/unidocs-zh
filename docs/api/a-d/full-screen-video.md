@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ### 全屏视频广告
 ### Full Screen Video Ads

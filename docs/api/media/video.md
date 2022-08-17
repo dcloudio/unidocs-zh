@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.chooseVideo(OBJECT)
 拍摄视频或从手机相册中选视频，返回视频的临时文件路径。
 Shoot a video or select one from the mobile photo album, and call back the temporary file path of the video.

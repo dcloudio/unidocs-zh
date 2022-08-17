@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### UDP 通信
 #### UDP communication
 

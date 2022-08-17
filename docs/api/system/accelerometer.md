@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.onAccelerometerChange(CALLBACK)
 监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 ``uni.offAccelerometer`` 取消监听。
 listen to the acceleration data at a frequency of 5 times/second. The listening to will automatically start after the interface is called. You can use `uni.offAccelerometer` to cancel the listening to.

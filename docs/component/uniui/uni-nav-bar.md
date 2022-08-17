@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ::: tip 组件名：uni-nav-bar
 ::: tip component name: uni-nav-bar

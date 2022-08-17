@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 # 设计资源
 # Design resources
 我们提供uni-ui组件的Sketch设计资源，您可以根据需要进行下载。

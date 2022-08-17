@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### icon
 
 图标。

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ## 信息流广告
 ## In-feed ads

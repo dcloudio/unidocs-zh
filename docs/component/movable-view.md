@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### movable-view
 
 可移动的视图容器，在页面中可以拖拽滑动或双指缩放。

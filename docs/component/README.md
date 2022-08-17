@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### 组件使用的入门教程
 ### Introductory tutorial for component usage
 - 组件是视图层的基本组成单元。

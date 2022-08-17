@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 **剪贴板 API 平台差异说明**
 **Platform difference description for clipboard APIs**
 

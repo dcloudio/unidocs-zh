@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ### uni.base64ToArrayBuffer(base64)
 

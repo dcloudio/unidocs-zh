@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ::: tip 组件名：uni-swiper-dot
 ::: tip component name: uni-swiper-dot

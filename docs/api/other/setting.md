@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.openSetting(OBJECT)
 
 调起客户端小程序设置界面，返回用户设置的操作结果。

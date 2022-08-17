@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### page-meta
 
 页面属性配置节点，用于指定页面的一些属性、监听页面事件。可部分替代pages.json的功能。

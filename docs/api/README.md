@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 `uni-app`的 js API 由标准 ECMAScript 的 js API 和 uni 扩展 API 这两部分组成。
 The js API of `uni-app` consists of two parts: the standard ECMAScript js API and the uni extension API.
 

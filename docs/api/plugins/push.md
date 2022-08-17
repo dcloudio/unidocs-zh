@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 > 以下为uni-push2.0的api文档，业务介绍[详情参考](/unipush-v2)
 > The following is the api document of uni-push2.0, business introduction [for details] (/unipush-v2)
 

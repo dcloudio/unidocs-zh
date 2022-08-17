@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 uni，读 `you ni`，是统一的意思。
 uni, read `you ni`, means unity.
 

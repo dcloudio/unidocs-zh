@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 **iBeacon API 平台差异说明**
 **Platform difference description for iBeacon APIs**
 

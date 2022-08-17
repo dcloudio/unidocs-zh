@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ### 短视频内容联盟广告
 ### Short Video Content Network Advertising

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 #### audio
 音频。
 Audio.

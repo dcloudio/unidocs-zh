@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ### uni.canvasGetImageData(OBJECT,this)
 

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### App Android@android  
 App-Android平台云端打包相关配置  
 App-Android platform cloud packaging related configuration

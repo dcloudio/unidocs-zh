@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 `uni-app`项目支持 `uni cli`和 `HBuilderX cli`两种脚手架工具：
 The `uni-app` project supports two scaffolding tools, `uni cli` and `HBuilderX cli`:

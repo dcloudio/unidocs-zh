@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.chooseInvoiceTitle(OBJECT)
 
 选择用户的发票抬头，需要用户授权 scope.invoiceTitle。

@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 subNvue，是 vue 页面的原生子窗体，把weex渲染的原生界面当做 vue 页面的子窗体覆盖在页面上。它不是全屏页面，它给App平台vue页面中的层级覆盖和原生界面自定义提供了更强大和灵活的解决方案。它也不是组件，就是一个原生子窗体。
 subNvue, the native subwindow of vue page, covers the native interface rendered by weex as a sub-subwindow of vue page on the page. It is not a full-screen page. It provides a more powerful and flexible solution for hierarchical coverage and native interface custom in the vue page of App platform. It is just a native subwindow, not a component.
 

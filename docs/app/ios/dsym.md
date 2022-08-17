@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ## 概述
 ## Overview
 

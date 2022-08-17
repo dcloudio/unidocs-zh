@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.createLivePlayerContext(livePlayerId, this)
 创建 live-player 上下文 livePlayerContext 对象。注意是直播的播放而不是推流。
 Create a livePlayerContext object for live-player context. Note that it is live broadcast other than live-pusher.

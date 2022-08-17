@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.createMediaContainer()
 创建音视频处理容器，最终可将容器中的轨道合成一个视频 ，返回 `MediaContainer` 对象
 Create an audio and video processing container, and finally combine the tracks in the container into a video and return a `MediaContainer` object

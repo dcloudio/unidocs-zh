@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 #### mDNS 服务
 #### mDNS service

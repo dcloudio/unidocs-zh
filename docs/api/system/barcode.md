@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.scanCode(OBJECT)
 调起客户端扫码界面，扫码成功后返回对应的结果。
 Call the client scanning interface, and return the corresponding results after successful scanning.

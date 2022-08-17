@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.chooseFile(OBJECT)
 从本地选择文件。
 Select files from the local directory.

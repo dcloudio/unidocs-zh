@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.navigateToMiniProgram(OBJECT)
 
 打开另一个小程序。

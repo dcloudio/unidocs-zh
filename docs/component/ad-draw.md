@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 
 ## 沉浸视频流广告
 ## Immersive Video Streaming Ads

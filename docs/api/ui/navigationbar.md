@@ -1,4 +1,3 @@
-<md-translatedByGoogle />
 ### uni.setNavigationBarTitle(OBJECT)
 
 动态设置当前页面的标题。

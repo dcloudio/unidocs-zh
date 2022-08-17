@@ -34,7 +34,6 @@ The uni-app compatible with the weex plug-in ecology has built-in `weex`, and th
 - ...
 ```uni-app```的H5端支持所有浏览器API。但众所周知，由于小程序的js不运行在浏览器里，所以小程序里不支持 HTML 和 DOM 的 API。
 The H5 side of ``uni-app`` supports all browser APIs. But as we all know, since the js of the applet does not run in the browser, the HTML and DOM APIs are not supported in the applet.
-The H5 side of ``uni-app`` supports all browser APIs. But as we all know, since the js of the applet does not run in the browser, the HTML and DOM APIs are not supported in the applet.
 
 `uni-app`的App端虽然和小程序是相同的架构，逻辑层也运行在独立jscore而不是浏览器里，但一方面可通过web-view组件加载HTML，引入web相关库；
 Although the App side of `uni-app` has the same structure as the applet, and the logic layer also runs in the independent jscore instead of the browser, on the one hand, HTML can be loaded through the web-view component, and web-related libraries can be introduced;

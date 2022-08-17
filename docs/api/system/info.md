@@ -49,83 +49,116 @@ Get system information asynchronously
 |device |deviceId |device id . Generated and stored by the uni-app framework, clearing the Storage will result in changes ||||||
 |			|deviceType			|设备类型。如`phone`、`pad`、`pc`、`unknow`		|[详见](#tips)|`phone`、`pad`、`pc`、`unknow`|`phone`、`pad`、`pc`||uni-app 3.4.10+|
 | |deviceType |The device type. Such as `phone`, `pad`, `pc`, `unknow` | [see details](#tips)|`phone`, `pad`, `pc`, `unknow`|`phone`, `pad`, `pc`||uni-app 3.4.10+|
+| |deviceType |The device type. Such as `phone`, `pad`, `pc`, `unknow` | [see details](#tips)|`phone`, `pad`, `pc`, `unknow`|`phone`, `pad`, `pc`||uni-app 3.4.10+|
 |			|deviceBrand		|设备品牌。如：`apple`、`huawei`		||不支持	|||uni-app 3.4.10+|
+| |deviceBrand |The device brand. For example: `apple`, `huawei` ||Not supported |||uni-app 3.4.10+|
 | |deviceBrand |The device brand. For example: `apple`, `huawei` ||Not supported |||uni-app 3.4.10+|
 |			|deviceModel		|设备型号		||部分设备无法获取	|||uni-app 3.4.10+|
 | |deviceModel |Device model ||Some devices cannot be obtained |||uni-app 3.4.10+|
+| |deviceModel |Device model ||Some devices cannot be obtained |||uni-app 3.4.10+|
 |			|deviceOrientation		|设备方向		|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`。仅微信百度小程序支持||uni-app 3.4.13+|
 | |deviceOrientation |Device Orientation |`Portrait portrait`, `Landscape landscape`|`Portrait portrait`, `Landscape landscape`|`Portrait portrait`, `Landscape landscape`. Only WeChat and Baidu applet support||uni-app 3.4.13+|
+| |deviceOrientation |Device Orientation |`Portrait portrait`, `Landscape landscape`|`Portrait portrait`, `Landscape landscape`|`Portrait portrait`, `Landscape landscape`. Only WeChat and Baidu applet support||uni-app 3.4.13+|
 |			|devicePixelRatio		|设备像素比		||	|||uni-app 3.4.13+|
+| |devicePixelRatio |Device pixel ratio || |||uni-app 3.4.13+|
 | |devicePixelRatio |Device pixel ratio || |||uni-app 3.4.13+|
 |os		|osName|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos||uni-app 3.4.10+|
 |os |osName|System Name|ios, android|ios, android, windows, macos, linux|ios, android, windows, macos||uni-app 3.4.10+|
 |			|osVersion			|操作系统版本。如 ios 版本，andriod 版本|||||uni-app 3.4.10+|
 | |osVersion | Operating system version. Such as ios version, andriod version|||||uni-app 3.4.10+|
+| |osVersion | Operating system version. Such as ios version, andriod version|||||uni-app 3.4.10+|
 |			|osLanguage			|操作系统语言[详见](#tips)|Android仅支持主语言+地区：`zh-CN 中文简体`、iOS支持主语言+次语言+地区`zh-Hans-CN 中文简体` |与浏览器语言一致	|不支持	|	|uni-app 3.4.10+|
+| |osLanguage |OS language [see details](#tips)|Android only supports primary language + region: `zh-CN Chinese Simplified`, iOS supports primary language + secondary language + region `zh-Hans-CN Chinese Simplified` |Same as browser language |Not supported | |uni-app 3.4.10+|
 | |osLanguage |OS language [see details](#tips)|Android only supports primary language + region: `zh-CN Chinese Simplified`, iOS supports primary language + secondary language + region `zh-Hans-CN Chinese Simplified` |Same as browser language |Not supported | |uni-app 3.4.10+|
 |			|osTheme			|操作系统主题			|light、dark。iOS平台只有将应用主题设置为跟随系统时才能获取到系统的主题|不支持	|不支持	||uni-app 3.4.10+|
 | |osTheme |OS Theme |light, dark. The iOS platform can get the system theme only when the app theme is set to follow the system|Does not support |Does not support ||uni-app 3.4.10+|
+| |osTheme |OS Theme |light, dark. The iOS platform can get the system theme only when the app theme is set to follow the system|Does not support |Does not support ||uni-app 3.4.10+|
 |			|osAndroidAPILevel | Android 系统API库的版本。详情参考[Android 官方文档](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element?hl=en#ApiLevels)|`仅 Android 支持`|不支持|不支持||uni-app 3.4.10+|
+| |osAndroidAPILevel | The version of the Android system API library. For details, please refer to [Android Official Documentation](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element?hl=en#ApiLevels)|`Only supported by Android`|Not supported|Not supported ||uni-app 3.4.10+|
 | |osAndroidAPILevel | The version of the Android system API library. For details, please refer to [Android Official Documentation](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element?hl=en#ApiLevels)|`Only supported by Android`|Not supported|Not supported ||uni-app 3.4.10+|
 |rom	|romName			|rom 名称|Android 部分机型获取不到值，[详见](#romname)。iOS 不支持|不支持|不支持||uni-app 3.4.13+|
 |rom |romName |rom name|Some Android models cannot get the value, [see details](#romname). iOS Not Supported|Not Supported|Not Supported||uni-app 3.4.13+|
 |			|romVersion			|rom 版本|Android 部分机型获取不到值，[详见](#romname)。iOS 不支持|不支持|不支持||uni-app 3.4.13+|
 | |romVersion |rom version|Some Android models cannot get the value, [see details](#romname). iOS Not Supported|Not Supported|Not Supported||uni-app 3.4.13+|
+| |romVersion |rom version|Some Android models cannot get the value, [see details](#romname). iOS Not Supported|Not Supported|Not Supported||uni-app 3.4.13+|
 |browser	|browserName		|浏览器名称或App的webview名称|chrome(android)、wkwebview(ios)、x5webview(app打包x5引擎)|chrome、edge、safari、firefox	|不支持||uni-app 3.4.10+|
 |browser |browserName |Browser name or App webview name|chrome(android), wkwebview(ios), x5webview(app packaging x5 engine)|chrome, edge, safari, firefox |Not supported||uni-app 3.4.10 +|
 |			|browserVersion		|浏览器版本、webview 版本|||不支持			||uni-app 3.4.10+|
+| |browserVersion |Browser version, webview version|||Not supported ||uni-app 3.4.10+|
 | |browserVersion |Browser version, webview version|||Not supported ||uni-app 3.4.10+|
 |host	|hostName			|小程序宿主或uniMPSDK的集成宿主名称，如：`WeChat`、`FeiShu`|仅 UniMPSDK 支持	|不支持|[详见](#hostname)|微信小程序真机运行才有真值|uni-app 3.4.10+|
 |host |hostName |The name of the applet host or the integrated host of uniMPSDK, such as: `WeChat`, `FeiShu`|Only supported by UniMPSDK |Not supported|[For details](#hostname)|WeChat applet can only run on real machine value|uni-app 3.4.10+|
 |			|hostVersion		|宿主版本。如：微信版本号|仅 UniMPSDK 支持	|不支持|小程序宿主版本||uni-app 3.4.10+|
 | |hostVersion |Host version. Such as: WeChat version number|only supported by UniMPSDK|not supported|mini program host version||uni-app 3.4.10+|
+| |hostVersion |Host version. Such as: WeChat version number|only supported by UniMPSDK|not supported|mini program host version||uni-app 3.4.10+|
 |			|hostLanguage		|宿主语言|仅 UniMPSDK 支持	|不支持|小程序宿主语言||uni-app 3.4.10+|
+| |hostLanguage |Host Language|Supported by UniMPSDK only |Not Supported|Mini Program Host Language||uni-app 3.4.10+|
 | |hostLanguage |Host Language|Supported by UniMPSDK only |Not Supported|Mini Program Host Language||uni-app 3.4.10+|
 |			|hostTheme			|宿主主题|`light`、`dark`。仅 UniMPSDK 支持	|不支持|`light`、`dark`。前提是微信小程序全局配置"darkmode":true时才能获取||uni-app 3.4.10+|
 | |hostTheme |HostTheme|`light`, `dark`. Only supported by UniMPSDK |Not supported| `light`, `dark`. The premise is that the WeChat applet is globally configured with "darkmode": true to obtain ||uni-app 3.4.10+|
+| |hostTheme |HostTheme|`light`, `dark`. Only supported by UniMPSDK |Not supported| `light`, `dark`. The premise is that the WeChat applet is globally configured with "darkmode": true to obtain ||uni-app 3.4.10+|
 |			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持|微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)||uni-app 3.4.13+|
+| |hostFontSizeSetting |User font size setting. The setting in "I-Settings-General-Font Size" shall prevail, unit: px|Not supported|Not supported|WeChat applet, Alipay applet, Baidu applet, QQ applet, byte applet (2.53. 0+)||uni-app 3.4.13+|
 | |hostFontSizeSetting |User font size setting. The setting in "I-Settings-General-Font Size" shall prevail, unit: px|Not supported|Not supported|WeChat applet, Alipay applet, Baidu applet, QQ applet, byte applet (2.53. 0+)||uni-app 3.4.13+|
 |			|hostPackageName	|小程序宿主包名|仅 UniMPSDK 支持	|不支持|不支持||uni-app 3.4.10+|
 | |hostPackageName |Applet host package name|Supported only by UniMPSDK |Not supported|Not supported||uni-app 3.4.10+|
+| |hostPackageName |Applet host package name|Supported only by UniMPSDK |Not supported|Not supported||uni-app 3.4.10+|
 |			|hostSDKVersion	|uni小程序SDK版本、小程序客户端基础库版本|仅 UniMPSDK 支持	|不支持|||uni-app 3.4.13+|
+| |hostSDKVersion |uni applet SDK version, applet client base library version|only supported by UniMPSDK |not supported|||uni-app 3.4.13+|
 | |hostSDKVersion |uni applet SDK version, applet client base library version|only supported by UniMPSDK |not supported|||uni-app 3.4.13+|
 |uni-app框架	|uniPlatform		|uni-app 运行平台，与条件编译平台相同。[详见](#uniplatform) |app|`web`或`h5`|各家小程序，如`mp-weixin`||uni-app 3.4.10+|
 |uni-app framework |uniPlatform |uni-app runs on the same platform as the conditional compilation platform. [See details](#uniplatform) |app|`web` or `h5`| various small programs, such as `mp-weixin`||uni-app 3.4.10+|
 |			|uniCompileVersion	|uni 编译器版本号。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
 | |uniCompileVersion |uni compiler version number. [See details](#uniplatform)|`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.||uni -app 3.4.10+|
+| |uniCompileVersion |uni compiler version number. [See details](#uniplatform)|`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.||uni -app 3.4.10+|
 |			|uniRuntimeVersion	|uni 运行时版本。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
+| |uniRuntimeVersion |uni runtime version. [See details](#uniplatform)|`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.||uni -app 3.4.10+|
 | |uniRuntimeVersion |uni runtime version. [See details](#uniplatform)|`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.||uni -app 3.4.10+|
 |app	|appId|`manifest` 中应用appid，即DCloud appid。			|||||uni-app 3.4.10+|
 |app |appId| The application appid in the `manifest` is the DCloud appid. |||||uni-app 3.4.10+|
 |			|appName			|`manifest` 中应用名称	||||和`字节跳动小程序`字段冲突，`字节跳动小程序`原字段与`hostName`一致|uni-app 3.4.10+|
 | |appName | The application name in `manifest` |||| conflicts with the field of `ByteDance applet`, the original field of `ByteDance applet` is consistent with `hostName`|uni-app 3.4.10+|
+| |appName | The application name in `manifest` |||| conflicts with the field of `ByteDance applet`, the original field of `ByteDance applet` is consistent with `hostName`|uni-app 3.4.10+|
 |			|appVersion			|`manifest` 中应用版本名称。		|||||uni-app 3.4.10+|
+| |appVersion | The name of the app version in the `manifest`. |||||uni-app 3.4.10+|
 | |appVersion | The name of the app version in the `manifest`. |||||uni-app 3.4.10+|
 |			|appVersionCode		|`manifest` 中应用版本名号。		|||||uni-app 3.4.10+|
 | |appVersionCode | The app version name in the `manifest`. |||||uni-app 3.4.10+|
+| |appVersionCode | The app version name in the `manifest`. |||||uni-app 3.4.10+|
 |			|appWgtVersion		|应用资源（wgt）的版本名称。		|||||uni-app 3.4.15+|
 | |appWgtVersion | The version name of the app resource (wgt). |||||uni-app 3.4.15+|
+| |appWgtVersion | The version name of the app resource (wgt). |||||uni-app 3.4.15+|
 |			|appLanguage		|应用设置的语言|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`||uni-app 3.4.13+|
+| |appLanguage |Language for app settings|`en`, `zh-Hans`, `zh-Hant`, `fr`, `es`| `en`, `zh-Hans`, `zh-Hant`, ` fr`, `es`|`en`, `zh-Hans`, `zh-Hant`, `fr`, `es`||uni-app 3.4.13+|
 | |appLanguage |Language for app settings|`en`, `zh-Hans`, `zh-Hant`, `fr`, `es`| `en`, `zh-Hans`, `zh-Hant`, ` fr`, `es`|`en`, `zh-Hans`, `zh-Hant`, `fr`, `es`||uni-app 3.4.13+|
 |其他	 |ua| userAgent标识	|||不支持		||uni-app 3.4.10+|
 |Other |ua| userAgent ID |||Not supported ||uni-app 3.4.10+|
 |			|screenWidth		|屏幕宽度|||||		|
 | |screenWidth |Screen width||||| |
+| |screenWidth |Screen width||||| |
 |			|screenHeight		|屏幕高度		|||||		|
+| |screenHeight |Screen Height ||||| |
 | |screenHeight |Screen Height ||||| |
 |			|windowWidth		|可使用窗口宽度	|||||		|
 | |windowWidth |Available window width ||||| |
+| |windowWidth |Available window width ||||| |
 |			|windowHeight		|可使用窗口高度	|||||		|
+| |windowHeight |Available window height ||||| |
 | |windowHeight |Available window height ||||| |
 |			|windowTop			|可使用窗口的顶部位置	|||||		|
 | |windowTop |The top position of the available window ||||| |
+| |windowTop |The top position of the available window ||||| |
 |			|windowBottom		|可使用窗口的底部位置	|||||		|
+| |windowBottom |The bottom position of the window can be used ||||| |
 | |windowBottom |The bottom position of the window can be used ||||| |
 |			|statusBarHeight	|手机状态栏的高度||||||		
 | |statusBarHeight |The height of the mobile phone status bar||||||
+| |statusBarHeight |The height of the mobile phone status bar||||||
 |			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、字节跳动、飞书、快手小程序、华为快应用|||	
 | |safeArea |The safe area in the positive direction of the vertical screen. Since this property is difficult to understand and use, it is more recommended to use the safeAreaInsets property. [See details](#safearea)|||WeChat, Baidu (developer tools are not supported for the time being, but valid for real devices), ByteDance, Feishu, Kuaishou Mini Program, Huawei Quick App|||
+| |safeArea |The safe area in the positive direction of the vertical screen. Since this property is difficult to understand and use, it is more recommended to use the safeAreaInsets property. [See details](#safearea)|||WeChat, Baidu (developer tools are not supported for the time being, but valid for real devices), ByteDance, Feishu, Kuaishou Mini Program, Huawei Quick App|||
 |			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。与小程序定义的 safeArea 用途相同，但是规范参考 iOS 平台的 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) 更利于理解和使用。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、字节跳动、飞书、快手小程序、华为快应用||uni-app 2.5.3+|
+| |safeAreaInsets |Inset positions in the safe area in the positive direction of vertical screen. It has the same purpose as the safeArea defined by the applet, but the specification refers to [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainssets) of the iOS platform for better understanding and use. [See details](#safearea)|||WeChat, Baidu (developer tools are not supported for now, but valid on real devices), ByteDance, Feishu, Kuaishou Mini Program, Huawei Quick App||uni-app 2.5.3+ |
 | |safeAreaInsets |Inset positions in the safe area in the positive direction of vertical screen. It has the same purpose as the safeArea defined by the applet, but the specification refers to [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainssets) of the iOS platform for better understanding and use. [See details](#safearea)|||WeChat, Baidu (developer tools are not supported for now, but the real machine is valid), ByteDance, Feishu, Kuaishou Mini Program, Huawei Quick App||uni-app 2.5.3+ |
 
 #### 某些小程序特殊的返回参数

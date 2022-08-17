@@ -91,10 +91,7 @@ uni-ui.scss also provides a set of auxiliary styles for users to complete quick 
 需要用户决定是否使用 ，如果使用的话css会增大 `27kb` 左右
 The user needs to decide whether to use , if it is used, the css will increase by about `27kb`
 使用需在 App.vue `<style lang='scss'>` 中引入
-Use in App.vue ` <style lang='scss'>` 中引入
-Use in App.vue ` <style lang='scss'>` 中引入
-Use in App.vue ` <style lang='scss'>` 中引入
-Use in App.vue ` <style lang='scss'>` 中引入
+Use in App.vue ` <style lang='scss'>` to import
 
 ```css
 @import '@/uni_modules/uni-scss';
@@ -168,6 +165,7 @@ The border radius can be configured on each corner by using the `tl, tr, br, bl`
 - br lower right
 
 **size** 的值如下
+The values of **size** are as follows
 The values of **size** are as follows
 The values of **size** are as follows
 The values of **size** are as follows

@@ -413,19 +413,13 @@ switchTab|同 uni.switchTab()
 |property name | description|
 |:-:			|	:-:|
 |navigateTo 	| 	同 uni.navigateTo()|
-|navigateTo |同 uni.navigateTo()|
-|navigateTo |同 uni.navigateTo()|
-|navigateTo |同 uni.navigateTo()|
-|navigateTo |同 uni.navigateTo()|
+|navigateTo |Same as uni.navigateTo()|
 |redirectTo 	|	同 uni.reLaunch()|
 |redirectTo | Same as uni.reLaunch()|
 |reLaunch	|	同 uni.reLaunch()|
-|reLaunch | uni.reLaunch()|
+|reLaunch | Same as uni.reLaunch()|
 |switchTab  	|	同 uni.switchTab()|
-|switchTab |同 uni.switchTab()|
-|switchTab |同 uni.switchTab()|
-|switchTab |同 uni.switchTab()|
-|switchTab |同 uni.switchTab()|
+|switchTab  	|	 uni.switchTab()|
 
 ### ListItemChat Slots
 

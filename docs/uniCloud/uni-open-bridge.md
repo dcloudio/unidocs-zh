@@ -132,20 +132,28 @@
 如果用户没有开通 `redis` 或者操作失败，透传到 `database`，`database` 失败后，如果用户配置了 `fallback`，继续调用 `fallback` 方法，否则抛出 `Error`，`database` 对应的表为: `opendb-open-data`
 
 在常见的情况下，在你的云函数/云对象中调用`uni-open-bridge-common`的几个get方法即可。
-//TODO **评审这段代码**@handongxu
-```js
 
+```js
+let uobc = require('uni-open-bridge-common')
+
+// 应用级凭据
 const key = {
   dcloudAppid: '__UNI__xxx', // DCloud Appid
   platform: 'mp-weixin' // 平台，解释见下
-} 
-let uobc = require('uni-open-bridge-common')
-
+}
 uobc.getAccessToken(key)
-uobc.getUserAccessToken(key)
-uobc.getSessionKey(key)
-uobc.getEncryptKey(key)
 uobc.getTicket(key)
+
+
+// 用户级凭据
+const userKey = {
+  dcloudAppid: '__UNI__xxx', // DCloud Appid
+  platform: 'mp-weixin', // 平台，解释见下
+  openid: ''
+}
+uobc.getUserAccessToken(userKey)
+uobc.getSessionKey(userKey)
+uobc.getEncryptKey(userKey)
 
 ```
 

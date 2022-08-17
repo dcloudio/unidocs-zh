@@ -52,6 +52,7 @@ The area camera component embedded in the page. Note that this is not the camera
 * 同一页面只能插入一个 camera 组件。
 * Only one camera component can be inserted on the same page.
 * 相关API：[createCameraContext](/api/media/camera-context)
+* Related API: [createCameraContext](/api/media/camera-context)
 
 
 **代码示例**

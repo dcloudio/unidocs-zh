@@ -164,6 +164,7 @@
   * [uni-popup 弹出层](component/uniui/uni-popup.md)
   * [uni-popup popup layer](component/uniui/uni-popup.md)
   * [uni-rate 评分](component/uniui/uni-rate.md)
+  * [uni-rate score](component/uniui/uni-rate.md)
   * [uni-row 布局-行](component/uniui/uni-row.md)
   * [uni-row layout-row](component/uniui/uni-row.md)
   * [uni-search-bar 搜索栏](component/uniui/uni-search-bar.md)

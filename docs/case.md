@@ -615,6 +615,7 @@ For the topic of anti-epidemic projects in the early stage of the outbreak of th
 **CCB: ** App Longpay Huidian single longpay.ccb.com
 
 **湖北银行（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.yusys.app.HuBeiBank)、[iOS](https://apps.apple.com/cn/app/%E6%B9%96%E5%8C%97%E9%93%B6%E8%A1%8C%E4%B8%AA%E4%BA%BA%E6%89%8B%E6%9C%BA%E9%93%B6%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF/id718080432)
+**Hubei Bank (5+App):** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.yusys.app.HuBeiBank), [iOS](https://apps.apple.com/cn/app/%E6%B9%96%E5%8C%97%E9%93%B6%E8%A1%8C%E4%B8%AA%E4%BA%BA%E6%89%8B%E6%9C%BA%E9%93%B6%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF/id718080432)
 
 **湖北农信社：** 农商e支付 微信小程序
 **Hubei Rural Credit Cooperative:** Rural Business e-Pay WeChat Mini Program
@@ -935,6 +936,7 @@ For the topic of anti-epidemic projects in the early stage of the outbreak of th
 **L'Oréal Member Club:** WeChat applet search for the same name
 
 **御泥坊：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.yjh.ynf&channel=0002160650432d595942&fromcase=60001)
+**Yonifang:** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.yjh.ynf&channel=0002160650432d595942&fromcase=60001)
 
 **锦江酒店预订：** 微信小程序搜同名
 **Jin Jiang Hotel Reservation:** WeChat Mini Program Search for the same name
@@ -955,9 +957,10 @@ For the topic of anti-epidemic projects in the early stage of the outbreak of th
 **GAC Toyota:** WeChat applet search for the same name
 
 **一汽丰田官方App（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=com.toyota.ftmsApp&amp;ADTAG=mobile)、[iOS](https://apps.apple.com/cn/app/%E4%B8%80%E6%B1%BD%E4%B8%B0%E7%94%B0/id687516806)
-**FAW Toyota Official App (5+App): ** [Android](https://android.myapp.com/myapp/detail.htm?apkName=com.toyota.ftmsApp&amp;ADTAG=mobile), [iOS] (https://apps.apple.com/cn/app/%E4%B8%80%E6%B1%BD%E4%B8%B0%E7%94%B0/id687516806)
+**FAW Toyota Official App (5+App):** [Android](https://android.myapp.com/myapp/detail.htm?apkName=com.toyota.ftmsApp&amp;ADTAG=mobile), [iOS] (https://apps.apple.com/cn/app/%E4%B8%80%E6%B1%BD%E4%B8%B0%E7%94%B0/id687516806)
 
 **新航道雅思（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=xhd.com.ys&amp;ADTAG=mobile)、[iOS](https://apps.apple.com/cn/app/%E6%96%B0%E8%88%AA%E9%81%93%E9%9B%85%E6%80%9D-%E9%9B%85%E6%80%9D%E5%90%AC%E5%8A%9B%E5%8F%A3%E8%AF%AD%E6%8F%90%E5%88%86%E7%A5%9E%E5%99%A8/id1209333327)
+**New Channel IELTS (5+App):** [Android](https://android.myapp.com/myapp/detail.htm?apkName=xhd.com.ys&amp;ADTAG=mobile)、[iOS](https://apps.apple.com/cn/app/%E6%96%B0%E8%88%AA%E9%81%93%E9%9B%85%E6%80%9D-%E9%9B%85%E6%80%9D%E5%90%AC%E5%8A%9B%E5%8F%A3%E8%AF%AD%E6%8F%90%E5%88%86%E7%A5%9E%E5%99%A8/id1209333327)
 
 **海南免税城：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.hltmsp.htdf) 小程序搜 “cdf会员购海南”
 **Hainan Duty Free City:** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.hltmsp.htdf) Mini program search “cdf members buy Hainan”
@@ -966,7 +969,7 @@ For the topic of anti-epidemic projects in the early stage of the outbreak of th
 **Sunrise Member (5+App):** Sunrise Duty Free Shop Official App. [Android](http://sj.qq.com/myapp/detail.htm?apkName=com.sunrisedutyfree.apps.sunrisemembers), [iOS](https://itunes.apple.com/cn/app/% E6%97%A5%E4%B8%8A%E4%BC%9A%E5%91%98/id1135820611?mt=8)
 
 **国珍在线（5+App）：** 新时代健康产业集团移动展业应用。[Android](http://sj.qq.com/myapp/detail.htm?apkName=cn.guozhen.guozhenzaixian)、[iOS](https://itunes.apple.com/cn/app/%E5%9B%BD%E7%8F%8D%E5%9C%A8%E7%BA%BF/id1098479063?mt=8)
-**Guozhen Online (5+App): ** New Era Health Industry Group mobile development application. [Android](http://sj.qq.com/myapp/detail.htm?apkName=cn.guozhen.guozhenzaixian), [iOS](https://itunes.apple.com/cn/app/%E5% 9B%BD%E7%8F%8D%E5%9C%A8%E7%BA%BF/id1098479063?mt=8)
+**Guozhen Online (5+App):** New Era Health Industry Group mobile development application. [Android](http://sj.qq.com/myapp/detail.htm?apkName=cn.guozhen.guozhenzaixian), [iOS](https://itunes.apple.com/cn/app/%E5% 9B%BD%E7%8F%8D%E5%9C%A8%E7%BA%BF/id1098479063?mt=8)
 
 **太合音乐 秀动：** 演出门票销售。[h5](https://wap.showstart.com/)
 **Taihe Music Show:** Ticket sales for the show. [h5](https://wap.showstart.com/)
@@ -978,7 +981,7 @@ For the topic of anti-epidemic projects in the early stage of the outbreak of th
 **Beingmate:** [WeChat H5](http://mp.beingmate.com/h5/)
 
 **掌上春城：** 昆明日报官媒。[h5](https://zsccv7.kmzscc.com/htmlv7/#/)
-** Palm Spring City: ** Kunming Daily official media. [h5](https://zsccv7.kmzscc.com/htmlv7/#/)
+**Palm Spring City:** Kunming Daily official media. [h5](https://zsccv7.kmzscc.com/htmlv7/#/)
 
 **五粮液：** 内部管理系统
 **Wuliangye:** Internal Management System

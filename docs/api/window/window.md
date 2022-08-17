@@ -2,10 +2,7 @@
 ### getCurrentPages()
 
 ```getCurrentPages()``` 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
-The ``getCurrentPages()``` function is used to get the current page stack instance, which is given in the order of the stack in the form of an array, the first element is the home page, and the last element is the current page.
-The ``getCurrentPages()``` function is used to get the current page stack instance, which is given in the order of the stack in the form of an array, the first element is the home page, and the last element is the current page.
-The ``getCurrentPages()``` function is used to get the current page stack instance, which is given in the order of the stack in the form of an array, the first element is the home page, and the last element is the current page.
-The ``getCurrentPages()``` function is used to get the current page stack instance, which is given in the order of the stack in the form of an array, the first element is the home page, and the last element is the current page.
+The ```getCurrentPages()``` function is used to get the current page stack instance, which is given in the order of the stack in the form of an array, the first element is the home page, and the last element is the current page.
 
 **注意：** ``getCurrentPages()``仅用于展示页面栈的情况，请勿修改页面栈，以免造成页面状态错误。
 **Notice:** `getCurrentPages()` is only used to display the page stack. Please do not modify the page stack to avoid page status errors.

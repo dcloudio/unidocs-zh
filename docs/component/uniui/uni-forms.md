@@ -724,6 +724,7 @@ If you need a separate validation timing for subforms, you can use the `rules` a
 |validateTrigger|String|submit|bind/submit/blur| 表单校验时机,blur仅在 uni-easyinput 中生效|1.4.0 新增 blur 值|
 |validateTrigger|String|submit|bind/submit/blur| Form validation timing, blur is only valid in uni-easyinput|1.4.0 added blur value|
 |label-position|String|left|top/left|label 位置||
+|label-position|String|left|top/left|label position||
 |label-width|String/Number|75|-|label 宽度，单位 px||
 |label-width|String/Number|75|-|label width in px||
 |label-align|String|left| left/center/right|label 居中方式||

@@ -804,9 +804,6 @@ uni.addInterceptor({
 | [uni.setTabBarStyle](/api/ui/tabbar?id=settabbarstyle) | Dynamically set the overall style of the tabBar |
 | [uni.hideTabBar](/api/ui/tabbar?id=hidetabbar)               | 隐藏 tabBar                      |
 | [uni.hideTabBar](/api/ui/tabbar?id=hidetabbar) | 隐藏 tabBar |
-| [uni.hideTabBar](/api/ui/tabbar?id=hidetabbar) | 隐藏 tabBar |
-| [uni.hideTabBar](/api/ui/tabbar?id=hidetabbar) | 隐藏 tabBar |
-| [uni.hideTabBar](/api/ui/tabbar?id=hidetabbar) | 隐藏 tabBar |
 | [uni.showTabBar](/api/ui/tabbar?id=showtabbar)               | 显示 tabBar                      |
 | [uni.showTabBar](/api/ui/tabbar?id=showtabbar) | Show tabBar |
 | [uni.setTabBarBadge](/api/ui/tabbar?id=settabbarbadge)       | 为 tabBar 某一项的右上角添加文本 |

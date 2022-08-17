@@ -90,6 +90,7 @@ Currently supported operations are
 * 微信小程序安卓端：xor, source-over, source-atop, destination-out, lighter, overlay, darken, lighten, hard-light
 * WeChat applet for Android: xor, source-over, source-atop, destination-out, lighter, overlay, darken, lighten, hard-light
 * 微信小程序iOS端：xor, source-over, source-atop, destination-over, destination-out, lighter, multiply, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, saturation, luminosity
+* WeChat applet for iOS：xor, source-over, source-atop, destination-over, destination-out, lighter, multiply, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, saturation, luminosity
 
 **方法**
 **Method**

@@ -201,25 +201,13 @@ Markers are used to show the location of markers on the map
 |fontSize|文字大小|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序|
 |fontSize|Text Size|Number|App-nvue 2.1.5+, WeChat applet, H5, Baidu applet, Alipay applet|
 |x|label的坐标，原点是 marker 对应的经纬度|Number|H5、百度小程序|
-The coordinates of |x|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu applet|
-The coordinates of |x|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu applet|
-The coordinates of |x|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu applet|
-The coordinates of |x|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu applet|
+|x|The coordinates of label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu applet|
 |y|label的坐标，原点是 marker 对应的经纬度|Number|H5、百度小程序|
-The coordinates of |y|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu applet|
-The coordinates of |y|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu applet|
-The coordinates of |y|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu applet|
-The coordinates of |y|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu applet|
+|y|The coordinates of label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu applet|
 |anchorX|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
-The coordinates of |anchorX|label, the origin is the latitude and longitude corresponding to the marker |Number|App-nvue 2.1.5+, WeChat applet|
-The coordinates of |anchorX|label, the origin is the latitude and longitude corresponding to the marker |Number|App-nvue 2.1.5+, WeChat applet|
-The coordinates of |anchorX|label, the origin is the latitude and longitude corresponding to the marker |Number|App-nvue 2.1.5+, WeChat applet|
-The coordinates of |anchorX|label, the origin is the latitude and longitude corresponding to the marker |Number|App-nvue 2.1.5+, WeChat applet|
+|anchorX|The coordinates of label, the origin is the latitude and longitude corresponding to the marker |Number|App-nvue 2.1.5+, WeChat applet|
 |anchorY|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
-The coordinates of |anchorY|label, the origin is the latitude and longitude corresponding to the marker |Number|App-nvue 2.1.5+, WeChat applet|
-The coordinates of |anchorY|label, the origin is the latitude and longitude corresponding to the marker |Number|App-nvue 2.1.5+, WeChat applet|
-The coordinates of |anchorY|label, the origin is the latitude and longitude corresponding to the marker |Number|App-nvue 2.1.5+, WeChat applet|
-The coordinates of |anchorY|label, the origin is the latitude and longitude corresponding to the marker |Number|App-nvue 2.1.5+, WeChat applet|
+|anchorY|The coordinates of label, the origin is the latitude and longitude corresponding to the marker |Number|App-nvue 2.1.5+, WeChat applet|
 |borderWidth|边框宽度|Number|微信小程序、百度小程序|
 |borderWidth|Border width|Number|WeChat applet, Baidu applet|
 |borderColor|边框颜色|String|微信小程序、百度小程序|

@@ -96,6 +96,7 @@ export default {
 :::
  
 相关 api：[uni.createCanvasContext](/api/canvas/createCanvasContext)
+Related api: [uni.createCanvasContext](/api/canvas/createCanvasContext)
 
 **扩展阅读**
 **Extended reading**

@@ -148,19 +148,13 @@ Example: The default real machine running base that comes with HBuilderX is regi
 #### 常见问题
 #### common problem
 
-1.为什么我打开通用链接提示：`The requested file was not found on this server.`
-1. Why do I open the universal link prompt: `The requested file was not found on this server.`
-1. Why do I open the universal link prompt: `The requested file was not found on this server.`
-1. Why do I open the universal link prompt: `The requested file was not found on this server.`
+1. 为什么我打开通用链接提示：`The requested file was not found on this server.`
 1. Why do I open the universal link prompt: `The requested file was not found on this server.`
 
 这是正常现象。通用链接并不要求是一个有效的路径，换句话说这个链接指向的目录允许为空。原理是访问这个链接时，iphone检测到当前域名为通用链接对应的域名，就读取域名服务器下的apple-app-site-association，然后根据域名后面的路径名称，验证并解析出要打开的app包名并唤醒对应的app。
 this is normal phenomenon. Universal links are not required to be a valid path, in other words the directory pointed to by the link is allowed to be empty. The principle is that when accessing this link, the iphone detects that the current domain name is the domain name corresponding to the universal link, reads the apple-app-site-association under the domain name server, and then verifies and resolves the app to be opened according to the path name behind the domain name. package name and wake up the corresponding app.
 
-2.如何验证通用链接已经生效，有什么表现或者测试方案
-2. How to verify that the universal link has taken effect, what is the performance or test plan
-2. How to verify that the universal link has taken effect, what is the performance or test plan
-2. How to verify that the universal link has taken effect, what is the performance or test plan
+2. 如何验证通用链接已经生效，有什么表现或者测试方案
 2. How to verify that the universal link has taken effect, what is the performance or test plan
 
 你可以将通用链接输入到iphone自带Safari浏览器中，下拉即可看到通用链接对应到应用名称和一个打开按钮，点击按钮即可直接在浏览器打开对应的APP。详情：[点此查看演示视频](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/4e920b86-0f67-45ac-81f6-6b97f87ff0ae.mp4)

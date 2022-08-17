@@ -827,6 +827,7 @@ uni-starter
 ├─manifest.json	 					配置应用名称、appid、logo、版本等打包信息，<a href="/collocation/manifest">详见</a>
 ├─manifest.json Configure the packaging information such as the application name, appid, logo, version, etc. For details, <a href="/collocation/manifest">see</a>
 └─pages.json						配置页面路由、导航条、选项卡等页面类信息，<a href="/collocation/pages">详见</a>
+└─pages.json Configure page class information such as page routing, navigation bar, tabs, <a href="/collocation/pages">see</a>
 <a href="/collocation/pages">└─pages.json</a> Configure page information such as page routing, navigation bar, tab, etc.
 </pre>
 完整的uni-app目录结构[详情](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84)

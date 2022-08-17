@@ -120,6 +120,7 @@ Aggregation stage. Add new fields to the output records. After the `addFields` a
 **`addFields` 的形式如下：**
 ```js
 addFields({
+  // @ignore-translate
   <新字段>: <表达式>
   <new field>: <expression>
 })
@@ -1602,6 +1603,7 @@ let res = await db.collection('articles')
 **project 的形式如下：**
 ```js
 project({
+  // @ignore-translate
   <表达式>
   <expression>
 })
@@ -1929,8 +1931,10 @@ let res = await db.collection('users')
 **形式如下：**
 ```js
 sort({
+    // @ignore-translate
     <字段名1>: <排序规则>,
     <fieldname1>: <collation>,
+    // @ignore-translate
     <字段名2>: <排序规则>,
     <fieldname2>: <collation>,
 })

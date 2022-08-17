@@ -500,7 +500,9 @@ public static void main( String args[] ) {
     // 获取类的静态属性
     // Get the static properties of the class
     int count = NjsHello.count;
-    System.out.printf( "NjsHello Static's value: %d", count );  // 输出“NjsHello Static's value: 0”
+		// 输出“NjsHello Static's value: 0”
+		// print“NjsHello Static's value: 0”
+    System.out.printf( "NjsHello Static's value: %d", count );  
     //...
 }
 //...
@@ -514,7 +516,9 @@ var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 获取类的静态属性
 // Get the static properties of the class
 var count = NjsHello.plusGetAttribute( "count" );
-console.log( "NjsHello Static's value: "+count ); // 输出“NjsHello Static's value: 0”
+// 输出“NjsHello Static's value: 0”
+// print“NjsHello Static's value: 0”
+console.log( "NjsHello Static's value: "+count ); 
 // ...
 ```
 
@@ -541,7 +545,9 @@ public static void main( String args[] ) {
     // 设置类的静态属性值
     // Set the static property value of the class
     NjsHello.count = 2;
-    System.out.printf( "NjsHello Static's value: %d", NjsHello.count );  // 输出“NjsHello Static's value: 2”
+		// 输出“NjsHello Static's value: 2”
+		// print“NjsHello Static's value: 2”
+    System.out.printf( "NjsHello Static's value: %d", NjsHello.count );
     //...
 }
 //...
@@ -555,7 +561,9 @@ var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 设置类的静态属性值
 // Set the static property value of the class
 NjsHello.plusSetAttribute( "count", 2 );
-console.log( "NjsHello Static's value: "+NjsHello.plusGetAttribute( "count" ) ); // 输出“NjsHello Static's value: 2”
+// 输出“NjsHello Static's value: 2”
+// print“NjsHello Static's value: 2”
+console.log( "NjsHello Static's value: "+NjsHello.plusGetAttribute( "count" ) );
 // ...
 ```
 
@@ -607,7 +615,9 @@ public static void main( String args[] ) {
     // 访问对象的常量属性
     // access the constant property of the object
     String birthday = hello.BIRTHDAY;
-    System.out.printf( "NjsHello Object Final's value: %s", birthday );  // 输出“NjsHello Object Final's value: 2013-01-13”
+		// 输出“NjsHello Object Final's value: 2013-01-13”
+		// print“NjsHello Object Final's value: 2013-01-13”
+    System.out.printf( "NjsHello Object Final's value: %s", birthday );
     //...
 }
 //...
@@ -624,7 +634,9 @@ var hello = new NjsHello();
 // 访问对象的常量属性
 // access the constant property of the object
 var birthday = hello.BIRTHDAY;
-console.log( "NjsHello Object Final's value: "+birthday ); // 输出“NjsHello Object Final's value: 2013-01-13”
+// 输出“NjsHello Object Final's value: 2013-01-13”
+// print“NjsHello Object Final's value: 2013-01-13”
+console.log( "NjsHello Object Final's value: "+birthday );
 // ...
 ```
 
@@ -653,7 +665,9 @@ public static void main( String args[] ) {
     // 获取其name属性值
     // Get the value of its name property
     String name = hello.name;
-    System.out.printf( "NjsHello Object's name: %s", name );  // 输出“NjsHello Object's name: Tester”
+		// 输出“NjsHello Object's name: Tester”
+		// print“NjsHello Object's name: Tester”
+    System.out.printf( "NjsHello Object's name: %s", name );
     //...
 }
 //...
@@ -671,7 +685,9 @@ hello.updateName( "Tester" );
 // 获取其name属性值
 // Get the value of its name property
 var name = hello.plusGetAttribute( "name" );
-console.log( "NjsHello Object's name: "+name );  // 输出“NjsHello Object's name: Tester”
+// 输出“NjsHello Object's name: Tester”
+// print“NjsHello Object's name: Tester”
+console.log( "NjsHello Object's name: "+name );
 // ...
 ```
 
@@ -700,7 +716,9 @@ public static void main( String args[] ) {
     // 设置其name属性值
     // Set the value of its name property
     hello.name = "Tester";
-    System.out.printf( "NjsHello Object's name: %s", hello.name );  // 输出“NjsHello Object's name: Tester”
+		// 输出“NjsHello Object's name: Tester”
+		// print“NjsHello Object's name: Tester”
+    System.out.printf( "NjsHello Object's name: %s", hello.name );
     //...
 }
 //...
@@ -717,7 +735,9 @@ var hello = new NjsHello();
 // 设置其name属性值
 // Set the value of its name property
 hello.plusSetAttribute( "name", "Tester" );
-console.log( "NjsHello Object's name: "+hello.plusGetAttribute("name") ); // 输出“NjsHello Object's name: Tester”
+// 输出“NjsHello Object's name: Tester”
+// print“NjsHello Object's name: Tester”
+console.log( "NjsHello Object's name: "+hello.plusGetAttribute("name") );
 // ...
 ```
 
@@ -1033,7 +1053,7 @@ Object instancebject.plusGetAttribute( String name );
 示例：
 1. 导入类创建实例对象，获取对象的属性值
 Objective-C代码：
-``` objc
+```objc
 #import "njshello.h"
 int main( int argc, char *argv[] )
 {
@@ -1044,7 +1064,9 @@ int main( int argc, char *argv[] )
     // 获取其name属性值
     // Get the value of its name property
     NSString* name = hello.name;
-    NSLog(@"NjsHello Object's name: %@",name);  // 输出“NjsHello Object's name: Tester”
+		// 输出“NjsHello Object's name: Tester”
+		// print“NjsHello Object's name: Tester”
+    NSLog(@"NjsHello Object's name: %@",name);
     // ...
 }
 ```
@@ -1060,7 +1082,9 @@ hello.updateName( "Tester" );
 // 获取其name属性值
 // Get the value of its name property
 var name = hello.plusGetAttribute( "name" );
-console.log( "NjsHello Object’s name: "+name );  // 输出“NjsHello Object’s name: Tester”
+// 输出“NjsHello Object’s name: Tester”
+// print“NjsHello Object’s name: Tester”
+console.log( "NjsHello Object’s name: "+name );
 // ...
 ```
 
@@ -1088,7 +1112,9 @@ int main( int argc, char *argv[] )
     // 设置其name属性值
     // Set the value of its name property
     hello.name = @"Tester";
-    NSLog(@"NjsHello Object's name: %@",hello.name);  // 输出“NjsHello Object's name: Tester”
+		// 输出“NjsHello Object's name: Tester”
+		// print“NjsHello Object's name: Tester”
+    NSLog(@"NjsHello Object's name: %@",hello.name); 
     // ...
 }
 //...
@@ -1104,7 +1130,9 @@ var hello = new NjsHello();
 // 设置其name属性值
 // Set the value of its name property
 hello.plusSetAttribute( "name", "Tester" );
-console.log( "NjsHello Object’s name: "+hello.plusGetAttribute("name") ); // 输出“NjsHello Object’s name: Tester”
+// 输出“NjsHello Object's name: Tester”
+// print“NjsHello Object's name: Tester”
+console.log( "NjsHello Object’s name: "+hello.plusGetAttribute("name") );
 // ...
 ```
 
@@ -1714,11 +1742,15 @@ public static void main( String args[] ) {
     // 获取类的静态常量属性
     // Get the static constant property of the class
     int type = NjsHello.CTYPE;
-    System.out.printf( "NjsHello Final's value: %d", type );  // 输出“NjsHello Final's value: 1”
+		// 输出“NjsHello Final's value: 1”
+		// print“NjsHello Final's value: 1”
+    System.out.printf( "NjsHello Final's value: %d", type );
     // 获取类的静态属性
     // Get the static properties of the class
     int count = NjsHello.count;
-    System.out.printf( "NjsHello Static's value: %d", count );  // 输出“NjsHello Static's value: 0”
+		// 输出“NjsHello Final's value: 0”
+		// print“NjsHello Final's value: 0”
+    System.out.printf( "NjsHello Static's value: %d", count );
     //...
 }
 //...
@@ -1731,7 +1763,9 @@ NJS代码：
 // 访问类的静态常量属性
 // access the static constant property of the class
 var type = plus.android.getAttribute( "io.dcloud.NjsHello", "CTYPE" );
-console.log( "NjsHello Final's value: "+type ); // 输出“NjsHello Final's value: 1”
+// 输出“NjsHello Final's value: 1”
+// print“NjsHello Final's value: 1”
+console.log( "NjsHello Final's value: "+type );
 // ...
 ```
 2. 不导入类对象，创建实例对象，并获取其name属性值
@@ -1747,7 +1781,9 @@ public static void main( String args[] ) {
     // 获取其name属性值
     // Get the value of its name property
     String name = hello.name;
-    System.out.printf( "NjsHello Object's name: %s", name );  // 输出“NjsHello Object's name: Tester”
+		// 输出“NjsHello Object's name: Tester”
+		// print“NjsHello Object's name: Tester”
+    System.out.printf( "NjsHello Object's name: %s", name );
     //...
 }
 //...
@@ -1763,7 +1799,9 @@ var hello = plus.android.newObject( "io.dcloud.NjsHello" );
 // 获取其name属性值
 // Get the value of its name property
 var name = plus.android.getAttribute( hello, "name" );
-console.log( "NjsHello Object's name: "+name );  // 输出“NjsHello Object's name: Tester”
+// 输出“NjsHello Object's name: Tester”
+// print“NjsHello Object's name: Tester”
+console.log( "NjsHello Object's name: "+name );
 // ...
 ```
 
@@ -1790,7 +1828,9 @@ public static void main( String args[] ) {
     // 设置类的静态属性值
     // Set the static property value of the class
     NjsHello.count = 2;
-    System.out.printf( "NjsHello Static's value: %d", NjsHello.count );  // 输出“NjsHello Static's value: 2”
+		// 输出“NjsHello Static's value: 2”
+		// print“NjsHello Static's value: 2”
+    System.out.printf( "NjsHello Static's value: %d", NjsHello.count );
     //...
 }
 //...
@@ -1803,7 +1843,9 @@ NJS代码：
 // 设置类的静态属性值
 // Set the static property value of the class
 plus.android.setAttribute( "io.dcloud.NjsHello", "count", 2 );
-console.log( "NjsHello Static's value: "+plus.android.getAttribute("io.dcloud.NjsHello","count") ); // 输出“NjsHello Static's value: 2”
+// 输出“NjsHello Static's value: 2”
+// print“NjsHello Static's value: 2”
+console.log( "NjsHello Static's value: "+plus.android.getAttribute("io.dcloud.NjsHello","count") );
 // ...
 ```
 2. 导入类对象，创建实例对象，并设置其name属性值
@@ -1819,7 +1861,9 @@ public static void main( String args[] ) {
     // 设置其name属性值
     // Set the value of its name property
     hello.name = "Tester";
-    System.out.printf( "NjsHello Object's name: %s", hello.name );  // 输出“NjsHello Object's name: Tester”
+		// 输出“NjsHello Object's name: Tester”
+		// print“NjsHello Object's name: Tester”
+    System.out.printf( "NjsHello Object's name: %s", hello.name );
     //...
 }
 //...
@@ -1835,7 +1879,9 @@ var hello = plus.android.newObject( "io.dcloud.NjsHello" );
 // 设置其name属性值
 // Set the value of its name property
 plus.android.setAttribute( hello, "name", "Tester" );
-console.log( "NjsHello Object's name: "+hello.plusGetAttribute("name") ); // 输出“NjsHello Object's name: Tester”
+// 输出“NjsHello Object's name: Tester”
+// print“NjsHello Object's name: Tester”
+console.log( "NjsHello Object's name: "+hello.plusGetAttribute("name") );
 // ...
 ```
 
@@ -1890,7 +1936,9 @@ public static void main( String args[] ) {
     // 调用updateName方法
     // call the updateName method
     hello.updateName( "Tester" );
-    System.out.printf( "NjsHello Object's name: %s", name );  // 输出“NjsHello Object's name: Tester”
+		// 输出“NjsHello Object's name: Tester”
+		// print“NjsHello Object's name: Tester”
+    System.out.printf( "NjsHello Object's name: %s", name );
     //...
 }
 //...
@@ -1906,7 +1954,9 @@ var hello = plus.android.newObject( "io.dcloud.NjsHello" );
 // 调用updateName方法
 // call the updateName method
 plus.android.invoke( hello, "updateName", "Tester" );
-console.log( "NjsHello Object's name: "+hello.getAttribute("name") ); // 输出“NjsHello Object's name: Tester”
+// 输出“NjsHello Object's name: Tester”
+// print“NjsHello Object's name: Tester”
+console.log( "NjsHello Object's name: "+hello.getAttribute("name") );
 // ...
 ```
 **完整API文档参考：[HTML5+ API - Native.js for Android](http://www.html5plus.org/doc/zh_cn/android.html)**
@@ -1971,7 +2021,9 @@ int main( int argc, char *argv[] )
     // 调用updateName方法
     // call the updateName method
     [hello updateName:@"Tester"];
-    NSLog(@"NjsHello Object's name: %@",hello.name);  // 输出“NjsHello Object's name: Tester”
+		// 输出“NjsHello Object's name: Tester”
+		// print“NjsHello Object's name: Tester”
+    NSLog(@"NjsHello Object's name: %@",hello.name);
     // ...
 }
 ```
@@ -1985,7 +2037,9 @@ var hello = plus.ios.newObject( "NjsHello" );
 // 调用updateName方法
 // call the updateName method
 plus.ios.invoke( hello, "updateName", "Tester" );
-console.log( "NjsHello Object's name: "+hello.getAttribute("name") ); // 输出“NjsHello Object's name: Tester”
+// 输出“NjsHello Object's name: Tester”
+// print“NjsHello Object's name: Tester”
+console.log( "NjsHello Object's name: "+hello.getAttribute("name") );
 // ...
 ```
 **完整API文档参考：[HTML5+ API - Native.js for iOS](http://www.html5plus.org/doc/zh_cn/ios.html)**

@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### picker
 
 从底部弹起的滚动选择器。支持五种选择器，通过mode来区分，分别是普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。
@@ -23,11 +24,14 @@ Scroll selector that pops up from the bottom. Five selectors are supported, whic
 |selector-type|String|auto|大屏时UI类型，支持 picker、select、auto，默认在 iPad 以 picker 样式展示而在 PC 以 select 样式展示|H5 2.9.9+|
 | selector-type| String| auto| UI type for large screen, which supports picker, select and auto. It is displayed in picker style on iPad and select style on PC by default| H5 2.9.9+|
 |disabled|Boolean|false|是否禁用|快手小程序不支持|
+|disabled|Boolean|false|Whether to disable|Do not support Kuaishou applet|
 |@change|EventHandle||value 改变时触发 change 事件，event.detail = {value: value}||
 | @change| EventHandle| | change event will be triggered when value changes, event.detail = {value: value}| |
 |@cancel|EventHandle||取消选择或点遮罩层收起 picker 时触发|快手小程序不支持|
+|@cancel|EventHandle||Triggered when the picker is canceled or clicked to close the mask layer|Not supported by Kuaishou applet|
 
 - picker在各平台的实现是有UI差异的，有的平台如百度、支付宝小程序的Android端是从中间弹出的；有的平台支持循环滚动如百度小程序；有的平台没有取消按钮如App-iOS端。但均不影响功能使用。
+- The implementation of picker on each platform is different in UI. Some platforms such as Baidu and Alipay applet's Android side pop up from the middle; some platforms support circular scrolling such as Baidu applet; some platforms do not have a cancel button such as App -iOS side. But it does not affect the use of functions.
 
 #### 多列选择器
 #### Multiple column selector
@@ -38,10 +42,13 @@ Scroll selector that pops up from the bottom. Five selectors are supported, whic
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |vue支持，nvue自2.4起支持|√|√|x|√|√|√|√|√|
+|vue support, nvue support since 2.4 |√|√|x|√|√|√|√|√|
 
 支付宝小程序 picker 组件不支持多列选择，可以使用 picker-view 组件替代。
+Alipay applet picker component does not support multi-column selection, you can use picker-view component instead.
 
 **属性说明**
 **Attribute description**
@@ -60,11 +67,15 @@ Scroll selector that pops up from the bottom. Five selectors are supported, whic
 |@columnchange|EventHandle||某一列的值改变时触发 columnchange 事件，event.detail = {column: column, value: value}，column 的值表示改变了第几列（下标从0开始），value 的值表示变更值的下标|
 | @columnchange| EventHandle| | columnchange event is triggered when the value from a column changes, event.detail = {column: column, value: value}, wherein the column indicates which column is changed (the subscript starts from 0), and the value indicates the subscript of the changed value|
 |@cancel|EventHandle||取消选择时触发（快手小程序不支持）|
+|@cancel|EventHandle||Triggered when the selection is canceled (not supported by Kuaishou applet)|
 |disabled|Boolean|false|是否禁用（快手小程序不支持）|
+|disabled|Boolean|false|Whether to disable (not supported by Kuaishou applet)|
 
 **bug & tips**
 - 由于 JavaScript 的限制 vue 不能观测如下方式设置 value：``this.value[0] = 0`` （[vue 注意事项](/tutorial/vue-basics.html#listrendering)），解决方式参考：[hello-uniapp 示例](https://github.com/dcloudio/hello-uniapp/commit/59264474172a591c865431d02a2a1e3583978827)
+- Due to the limitation of JavaScript, vue cannot observe and set the value in the following way: ``this.value[0] = 0`` ([vue precautions](/tutorial/vue-basics.html#listrendering)), the solution reference: [ hello-uniapp example](https://github.com/dcloudio/hello-uniapp/commit/59264474172a591c865431d02a2a1e3583978827)
 - 微信开发工具的pc模拟器有可能出现拖动数据错乱，使用真机正常
+- The pc simulator of the WeChat development tool may cause the drag data to be disordered, but it is normal to use the real machine
 
 #### 时间选择器
 #### Time picker
@@ -75,6 +86,7 @@ Scroll selector that pops up from the bottom. Five selectors are supported, whic
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|x|√|
 
@@ -109,6 +121,7 @@ Scroll selector that pops up from the bottom. Five selectors are supported, whic
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|x|√|
 
@@ -128,6 +141,7 @@ Date selection calls the native date selection control of os on the App side and
 |end|String||表示有效日期范围的结束，字符串格式为"YYYY-MM-DD"||
 | end| String| | Indicate the ending of the valid date range with the string format of "YYYY-MM-DD"| |
 |fields|String|day|有效值 year、month、day，表示选择器的粒度，默认为 day，App 端未配置此项时使用系统 UI|H5、App 2.6.3+、微信小程序、百度小程序、字节跳动小程序、飞书小程序|
+|fields|String|day|Valid values are year, month, day, indicating the granularity of the selector. The default is day. If this item is not configured on the App side, use the system UI|H5, App 2.6.3+, WeChat applet, Baidu applet Program, ByteDance applet, Feishu applet|
 |@change|EventHandle||value 改变时触发 change 事件，event.detail = {value: value}||
 | @change| EventHandle| | change event will be triggered when value changes, event.detail = {value: value}| |
 |@cancel|EventHandle||取消选择时触发||
@@ -149,6 +163,7 @@ Date selection calls the native date selection control of os on the App side and
 | day| Selector granularity is days|
 
 #### 省市区选择器
+#### Province city selector
 
 ``mode = region``
 
@@ -156,20 +171,26 @@ Date selection calls the native date selection control of os on the App side and
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|x|√|√|√|x|√|
 
 - 小程序平台在引擎层面内置了省市区数据。但省市区包含大量数据，占用体积，并非所有应用都需要，且很多城市数据有自维护需求，所以在App和H5平台没有在前端内置这些数据。可以基于多列picker或picker-view，自行填充城市数据。插件市场有较多类似插件，[详见](https://ext.dcloud.net.cn/search?q=%E5%9F%8E%E5%B8%82%E9%80%89%E6%8B%A9)。注意基于多列picker方式的地区选择不能运行在支付宝小程序上，只有基于picker-view的可以全端运行。尤其推荐插件[uni-data-picker](https://ext.dcloud.net.cn/plugin?id=3796)，自带省市区的联网数据，自带懒加载。
+- The applet platform has built-in provincial and municipal data at the engine level. However, provinces and urban areas contain a large amount of data, occupying volume, not all applications need it, and many urban data have self-maintenance requirements, so the App and H5 platforms do not have this data built into the front-end. You can populate city data yourself based on multi-column picker or picker-view. There are many similar plugins in the plugin market, [see details](https://ext.dcloud.net.cn/search?q=%E5%9F%8E%E5%B8%82%E9%80%89%E6% 8B%A9). Note that the region selection based on the multi-column picker method cannot run on the Alipay applet, only the picker-view-based one can run on the full end. In particular, the plugin [uni-data-picker](https://ext.dcloud.net.cn/plugin?id=3796) is recommended, which has its own network data of provinces and cities, and has its own lazy loading.
 
 |属性名|类型|默认值|说明|
 | Attribute name| Type| Defaults| Instruction|
 |:-|:-|:-|:-|
 |value|Array|[]|表示选中的省市区，默认选中每一列的第一个值|
+|value|Array|[]| indicates the selected province and city, the first value of each column is selected by default|
 |custom-item|String||可为每一列的顶部添加一个自定义的项|
+|custom-item|String||Add a custom item to the top of each column|
 |@change|EventHandle||value 改变时触发 change 事件，event.detail = {value: value}|
 | @change| EventHandle| | change event will be triggered when value changes, event.detail = {value: value}|
 |@cancel|EventHandle||取消选择时触发（快手小程序不支持）|
+|@cancel|EventHandle||Triggered when the selection is canceled (not supported by Kuaishou applet)|
 |disabled|Boolean|false|是否禁用（快手小程序不支持）|
+|disabled|Boolean|false|Whether to disable (not supported by Kuaishou applet)|
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/picker/picker)
 **Example** [View demo](https://hellouniapp.dcloud.net.cn/pages/component/picker/picker)

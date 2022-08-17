@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### audio
 音频。
 Audio.
@@ -6,10 +7,12 @@ Audio.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|x|√|x|x|x|x|
 
 **注意：** 微信小程序平台自基础库 1.6.0 版本开始，不再维护 audio 组件，推荐使用API方式而不是组件方式来播放音频。API见 [uni.createInnerAudioContext](/api/media/audio-context?id=createinneraudiocontext) 替代。
+**Note:** The WeChat applet platform has not maintained the audio component since the basic library version 1.6.0. It is recommended to use the API method instead of the component method to play audio. API see [uni.createInnerAudioContext](/api/media/audio-context?id=createinneraudiocontext) instead.
 
 app-nvue也不支持此组件。
 app-nvue does not support this component either.

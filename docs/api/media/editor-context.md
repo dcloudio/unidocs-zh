@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ## editorContext
 
 editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery](/api/ui/nodes-info?id=createselectorquery) 获取。
@@ -12,6 +13,7 @@ The editorContext instance corresponding to the editor component can be accessed
 ```
 
 百度小程序 `Editor` 富文本编辑器动态库提供了 `createEditorContext` 的方法来获取。
+The Baidu applet `Editor` rich text editor dynamic library provides the `createEditorContext` method to get it.
 
 ```js
 	onEditorReady() {
@@ -30,14 +32,18 @@ The editorContext instance corresponding to the editor component can be accessed
 **Platform difference description**
 
 |App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
+|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Kuishou applet|Jingdong applet|
 |:-:|:-:		|:-:		|:-:				|:-:			|:-:				|:-:		|:-:		|:-:	|
 |√	|2.4.5+	|√			|x					|需引入动态库	|x				|x			|x			|x		|
+|√ |2.4.5+ |√ |x |A dynamic library needs to be imported |x |x |x |x |
 
 
 **百度小程序引入动态库**
+**Baidu applet introduces dynamic library**
 
 
 1. 在项目中引用动态库，在 `manifest.json` 中增添一项 `dynamicLib` 
+1. To reference the dynamic library in the project, add a `dynamicLib` to `manifest.json`
  
 ```js
 	"mp-baidu" : {
@@ -54,6 +60,7 @@ The editorContext instance corresponding to the editor component can be accessed
 ```
 
 2. 在每个使用到富文本编辑器组件的页面，配置 `pages.json` 文件如下：
+2. On each page that uses the Rich Text Editor component, configure the `pages.json` file as follows:
 
 ``` js 
 {
@@ -92,6 +99,7 @@ Modify style
 **List of supported styles**
 
 | name | value |平台差异说明|
+| name | value | Platform Difference Description |
 | --- | --- |--- |
 | bold |  ||
 | italic |  ||
@@ -107,15 +115,25 @@ Modify style
 | color | hex color ||
 | backgroundColor | hex color ||
 | margin/marginTop/marginBottom/marginLeft/marginRight | css style |百度小程序不支持|
+| margin/marginTop/marginBottom/marginLeft/marginRight | css style |Baidu applet does not support|
 | padding/paddingTop/paddingBottom/paddingLeft/paddingRight | css style |百度小程序不支持|
+| padding/paddingTop/paddingBottom/paddingLeft/paddingRight | css style |Baidu applet does not support|
 | font/fontSize/fontStyle/fontVariant/fontWeight/fontFamily | css style |百度小程序不支持|
+| font/fontSize/fontStyle/fontVariant/fontWeight/fontFamily | css style | Baidu applet does not support |
 | lineHeight | css style |百度小程序不支持|
+| lineHeight | css style | Baidu applet does not support |
 | letterSpacing | css style |百度小程序不支持|
+| letterSpacing | css style | Baidu applet does not support |
 | textDecoration | css style |百度小程序不支持|
+| textDecoration | css style | Baidu applet does not support |
 | textIndent | css style |百度小程序不支持|
+| textIndent | css style | Baidu applet does not support |
 | wordWrap | css style |百度小程序不支持|
+| wordWrap | css style | Baidu applet does not support |
 | wordBreak | css style |百度小程序不支持|
+| wordBreak | css style | Baidu applet does not support |
 | whiteSpace | css style |百度小程序不支持|
+| whiteSpace | css style | Baidu applet does not support |
 
 
 对已经应用样式的选区设置会取消样式。css style 表示 css 中规定的允许值。
@@ -145,7 +163,9 @@ Insert dividing line
 Insert image.
 
 微信小程序平台地址为临时文件时，获取的编辑器html格式内容中 `<img>` 标签增加属性 data-local，delta 格式内容中图片 attributes 属性增加 data-local 字段，该值为传入的临时文件地址。
+When the WeChat applet platform address is a temporary file, the content in the html format of the editor obtained is `<img> ` The attribute data-local is added to the tag, and the data-local field is added to the image attributes attribute in the delta format content, which is the address of the incoming temporary file.
 开发者可选择在提交阶段上传图片到服务器，获取到网络地址后进行替换。替换时对于html内容应替换掉 `<img>` 的 src 值，对于 delta 内容应替换掉 `insert { image: abc }` 值。
+Developers can choose to upload images to the server during the submission stage, and replace them after obtaining the network address. When replacing, the html content should be replaced with `<img> The src value of `, which should be substituted for the `insert { image: abc }` value for delta content.
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -195,6 +215,7 @@ Override the current selected area and set a paragraph.
 ## editorContext.setContents(OBJECT)
 
 初始化编辑器内容，html和delta同时存在时仅delta生效
+Initialize the editor content, only delta takes effect when html and delta exist at the same time
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -233,12 +254,17 @@ Get editor content
 
 
 **object.success 回调函数**
+**object.success callback function**
 
 | 属性 | 类型 | 说明 |
+| property | type | description |
 | --- | --- | --- |
 | html | string |带标签的 HTML 内容 |
+| html | string | Tagged HTML content |
 | text | string |纯文本内容 |
+| text | string | Plain text content |
 | delta | Object |表示内容的 delta 对象 |
+| delta | Object | A delta object representing the content |
 
 
 ## editorContext.clear(OBJECT)
@@ -322,8 +348,10 @@ The editor is out of focus and the keyboard is retracted at the same time.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|√|x|x|x|x|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`Basic library 2.8.3`|x|√|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -347,8 +375,10 @@ Make the editor cursor scroll to the visible area of the window.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|√|x|x|x|x|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`Basic library 2.8.3`|x|√|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -372,8 +402,10 @@ Get the plain text content within the selected area of the editor. When the edit
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.10.2`|x|√|x|x|x|x|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`Basic library 2.10.2`|x|√|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

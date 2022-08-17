@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.onWindowResize(CALLBACK)
 监听窗口尺寸变化事件
 listen to window size change events
@@ -9,8 +10,10 @@ listen to window size change events
 **Platform difference description**
 
 |App|H5|微信小程序	|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|
+|App|H5|WeChat applet |Alipay applet|Baidu applet|ByteDance applet|Feishu applet|QQ applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√(nvue不支持)|√|√|x|x|x|√|√|
+|√(nvue does not support)|√|√|x|x|x|√|√|
 
 **CALLBACK 参数说明**
 **CALLBACK parameter description**
@@ -49,11 +52,13 @@ Cancel listening to window size change events
 Platform difference description
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|Feishu applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|x|x|x|√|
 
 **Tips**
 - `CALLBACK`为调用`uni.onWindowResize`时传入的`CALLBACK`
+- `CALLBACK` is the `CALLBACK` passed in when calling `uni.onWindowResize`
 
 **代码示例**
 **Code example**

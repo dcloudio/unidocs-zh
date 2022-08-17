@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.onAccelerometerChange(CALLBACK)
 监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 ``uni.offAccelerometer`` 取消监听。
 listen to the acceleration data at a frequency of 5 times/second. The listening to will automatically start after the interface is called. You can use `uni.offAccelerometer` to cancel the listening to.
@@ -39,8 +40,10 @@ Remove listening to the acceleration data.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|√|
+|HBuilderX 2.9.6+|HBuilderX 2.9.6+|Basic Library 2.9.3+|x|x|x|x|√|√|
 
 ### uni.startAccelerometer(OBJECT)
 开始监听加速度数据。
@@ -50,6 +53,7 @@ Start listening to the acceleration data.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|x|√|√|√|√|√|
 
@@ -60,6 +64,7 @@ Start listening to the acceleration data.
 | Parameter name| Type| Default| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|:-|
 |interval|String|normal|否|监听加速度数据回调函数的执行频率|微信小程序、百度小程序、QQ小程序、快手小程序、京东小程序|
+|interval|String|normal|No|Monitor the execution frequency of the acceleration data callback function|WeChat applet, Baidu applet, QQ applet, Kuaishou applet, Jingdong applet|
 |success|Function||否|接口调用成功的回调||
 | success| Function| | No| Callback for successful interface calling| |
 |fail|Function||否|接口调用失败的回调函数||

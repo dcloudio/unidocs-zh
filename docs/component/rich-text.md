@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### rich-text
 
 富文本。
@@ -15,14 +16,20 @@ Default events are supported, including click, touchstart, touchmove, touchcance
 |nodes|Array / String|[]|节点列表 / HTML String||
 | nodes| Array / String| \[]| Node list/HTML String| |
 |space|string||显示连续空格|App、H5、微信基础库2.4.1+[详见](https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html)、QQ小程序、字节小程序、快手小程序[详见](https://mp.kuaishou.com/docs/develop/components/basicComponents/richText.html)|
+|space|string||Display consecutive spaces|App, H5, WeChat Basic Library 2.4.1+[See details](https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html) , QQ applet, byte applet, Kuaishou applet [see details](https://mp.kuaishou.com/docs/develop/components/basicComponents/richText.html)|
 |selectable|Boolean|true|富文本是否可以长按选中，可用于复制，粘贴等场景|百度小程序（仅真机支持，基础库 3.150.1 以下版本默认为 false）|
+|selectable|Boolean|true|Whether the rich text can be selected by long-press and can be used for copying, pasting and other scenarios|Baidu applet (only supported by real machines, the default is false for basic library versions below 3.150.1)|
 |image-menu-prevent|Boolean|false|阻止长按图片时弹起默认菜单（将该属性设置为image-menu-prevent或image-menu-prevent="true"），只在初始化时有效，不能动态变更；若不想阻止弹起默认菜单，则不需要设置此属性|百度小程序|
+|image-menu-prevent|Boolean|false| Prevents the default menu from popping up when long-pressing the image (set the property to image-menu-prevent or image-menu-prevent="true"), only valid during initialization, not Dynamic change; if you don't want to prevent the default menu from popping up, you don't need to set this property|Baidu Mini Program|
 |preview|Boolean||富文本中的图片是否可点击预览。在不设置的情况下，若 rich-text 未监听点击事件，则默认开启。未显示设置 preview 时会进行点击默认预览判断，建议显示设置 preview|百度小程序|
+|preview|Boolean|| Whether the image in the rich text can be clicked to preview. If not set, if rich-text does not listen to click events, it will be enabled by default. When the preview setting is not displayed, the default preview judgment will be made. It is recommended to display the setting preview|Baidu applet|
 |@itemclick|EventHandle||拦截点击事件（只支持 `a`、`img`标签），返回当前node信息 `event.detail={node}`|H5 (3.2.13+)、App-Vue (3.2.13+)|
+|@itemclick|EventHandle||Intercept click events (only support `a`, `img` tags), return current node information `event.detail={node}`|H5 (3.2.13+), App-Vue (3.2 .13+)|
 
 ##### nodes
 
 nodes 值为 HTML String 时，在组件内部将自动解析为节点列表，推荐直接使用 Array 类型避免内部转换导致的性能下降。App-nvue 和支付宝小程序不支持 HTML String 方式，仅支持直接使用节点列表即 Array 类型，如要使用 HTML String，则需自己将 HTML String 转化为 nodes 数组，可使用 [html-parser](https://github.com/dcloudio/hello-uniapp/blob/master/common/html-parser.js) 转换。
+When the value of nodes is HTML String, it will be automatically parsed into a node list inside the component. It is recommended to use the Array type directly to avoid performance degradation caused by internal conversion. App-nvue and Alipay applet do not support HTML String method, but only support the direct use of node list, namely Array type. If you want to use HTML String, you need to convert HTML String into nodes array yourself, you can use [html-parser](https: //github.com/dcloudio/hello-uniapp/blob/master/common/html-parser.js) conversion.
 
 节点列表内的节点现支持两种类型，通过 type 来区分，分别是元素节点和文本节点，默认是元素节点，在富文本区域里显示的 HTML 节点。
 The nodes in the list now support two types, and distinguished by types: element nodes and text nodes. Element nodes are the default nodes, and HTML nodes are displayed in the rich text area.
@@ -178,3 +185,4 @@ export default {
 - 如果在自定义组件中使用 rich-text 组件，那么仅自定义组件的 css 样式对 rich-text 中的 class 生效。
 - If rich-text components are used in custom components, only css style of the custom components will take effect on class in rich-text.
 - 使用 `itemclick` 时，如果发生节点嵌套，外层 `a标签` 优先级高。
+- When using `itemclick`, if node nesting occurs, the outer `a tag` has a higher priority.

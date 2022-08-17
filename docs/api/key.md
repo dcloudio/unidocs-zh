@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.hideKeyboard()
 
 隐藏软键盘
@@ -10,6 +11,7 @@ Hide the displayed soft keyboard. If not displayed, no action occurs.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|x|√|√|√|√|
 
@@ -23,8 +25,10 @@ listen to keyboard height changes
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.2.3+|x|基础库2.7+|x|x|x|√|√|√|
+|HBuilderX 2.2.3+|x|Basic Library 2.7+|x|x|x|√|√|√|
 
 **CALLBACK 返回参数**
 **CALLBACK return parameter**
@@ -53,8 +57,10 @@ Cancel listening to the height variation event of the keyboard
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 3.1.0+|x|基础库2.9.2+|x|x|x|x|x|√|
+|HBuilderX 3.1.0+|x|Basic Library 2.9.2+|x|x|x|x|x|√|
 
 **示例代码**
 **Sample code**
@@ -72,8 +78,10 @@ Get the cursor position of the input box after focusing on input or textarea, et
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.8.12+|HBuilderX 2.8.12+|基础库 2.7.0+|x|x|x|x|√|x|
+|HBuilderX 2.8.12+|HBuilderX 2.8.12+|Basic Library 2.7.0+|x|x|x|x|√|x|
 
 **OBJECT 参数说明：**
 **OBJECT parameter description:**

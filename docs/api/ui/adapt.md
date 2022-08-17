@@ -1,9 +1,12 @@
+<md-translatedByGoogle />
 ## 窗口样式相关的 API
 ## Window style related APIs
 
 在web上，宽屏界面会出现topWindow、LeftWindow、RightWindow，相关概念详见[宽屏适配指南](../../tutorial/adapt.md)
+On the web, topWindow, LeftWindow, and RightWindow will appear on the widescreen interface. For related concepts, see [Widescreen Adaptation Guide](../../tutorial/adapt.md)
 
 本文档列出这些window相关API。
+This document lists these window-related APIs.
 
 获取对应窗口的样式，返回一个 css 属性值对象;
 Get the style of the corresponding window and return a css attribute value object;
@@ -22,6 +25,7 @@ Get the style of topWindow
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|x|x|
 
@@ -44,6 +48,7 @@ Get the style of leftWindow
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|x|x|
 
@@ -66,6 +71,7 @@ Get the style of rightWindow
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|x|x|
 
@@ -115,6 +121,7 @@ Set the style of leftWindow
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|x|x|
 
@@ -149,6 +156,7 @@ Set the style of rightWindow
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|x|x|
 
@@ -173,12 +181,15 @@ uni.setRightWindowStyle({
 
 <!-- 
 ## 显示或隐藏窗口的 API
+## API to show or hide the window
 
 显示或隐藏对应的窗口
+Show or hide the corresponding window
 
 ### uni.showTopWindow()
 
 显示 topWindow
+show topWindow
 
 > 3.0.5 新增
 > 3.0.5 New
@@ -187,6 +198,7 @@ uni.setRightWindowStyle({
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|
 
@@ -200,6 +212,7 @@ uni.showTopWindow()
 ### uni.showLeftWindow()
 
 显示 leftWindow
+show leftWindow
 
 > 3.0.5 新增
 > 3.0.5 New
@@ -208,6 +221,7 @@ uni.showTopWindow()
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|
 
@@ -221,6 +235,7 @@ uni.showLeftWindow()
 ### uni.showRightWindow()
 
 显示 rightWindow
+show rightWindow
 
 > 3.0.5 新增
 > 3.0.5 New
@@ -229,6 +244,7 @@ uni.showLeftWindow()
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|
 
@@ -242,6 +258,7 @@ uni.showRightWindow()
 ### uni.hideTopWindow()
 
 隐藏 topWindow
+hide topWindow
 
 > 3.0.5 新增
 > 3.0.5 New
@@ -250,6 +267,7 @@ uni.showRightWindow()
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|
 
@@ -263,6 +281,7 @@ uni.hideTopWindow()
 ### uni.hideLeftWindow()
 
 隐藏 leftWindow
+hide leftWindow
 
 > 3.0.5 新增
 > 3.0.5 New
@@ -271,6 +290,7 @@ uni.hideTopWindow()
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|
 
@@ -284,6 +304,7 @@ uni.hideLeftWindow()
 ### uni.hideRightWindow()
 
 隐藏 rightWindow
+hide rightWindow
 
 > 3.0.5 新增
 > 3.0.5 New
@@ -292,6 +313,7 @@ uni.hideLeftWindow()
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|x|x|x|x|x|
 

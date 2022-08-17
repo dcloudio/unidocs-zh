@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### switch
 
 开关选择器。
@@ -12,6 +13,7 @@ Switch selector.
 |checked|Boolean|false|是否选中||
 | checked| Boolean| false| Selected or not| |
 |disabled|Boolean|false|是否禁用|字节跳动小程序与飞书小程序不支持|
+|disabled|Boolean|false|Whether to disable|ByteDance applet and Feishu applet are not supported|
 |type|String|switch|样式，有效值：switch, checkbox||
 | type| String| switch| Style, valid values: switch, checkbox| |
 |color|Color||switch 的颜色，同 css 的 color|&nbsp;|
@@ -83,5 +85,6 @@ Preview the effect of H5: Visit [https://hellouniapp.dcloud.net.cn/pages/compone
 **注意**
 **Notice**
 - switch的默认颜色，在不同平台不一样。微信小程序是绿色的，字节跳动小程序为红色，其他平台是蓝色的。更改颜色使用color属性。
+- The default color of switch is different on different platforms. WeChat mini-programs are green, ByteDance mini-programs are red, and other platforms are blue. Change the color using the color property.
 - 如需调节switch大小，可通过css的scale方法调节，如缩小到70%`style="transform:scale(0.7)"`
 - If you need to adjust the switch size, you can adjust it by the scale method of css, such as scaling down it to 70% `style="transform:scale(0.7)"`

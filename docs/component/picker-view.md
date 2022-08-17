@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### picker-view
 
 嵌入页面的滚动选择器。
@@ -17,14 +18,19 @@ Scroll selector embedded in the page.
 |indicator-style|String|设置选择器中间选中框的样式||
 | indicator-style| String| Set the style of the check box in the middle of the selector| |
 |indicator-class|String|设置选择器中间选中框的类名，注意页面或组件的style中写了scoped时，需要在类名前写/deep/|app-nvue与字节跳动小程序与飞书小程序不支持|
+|indicator-class|String| Set the class name of the check box in the middle of the selector. Note that when scoped is written in the style of the page or component, you need to write /deep/|app-nvue and ByteDance applet and Feishu before the class name Applets do not support|
 |mask-style|String|设置蒙层的样式||
 | mask-style| String| Set the style of the mask| |
 |mask-class|String|设置蒙层的类名|app-nvue与字节跳动小程序与飞书小程序不支持|
+|mask-class|String|Set the class name of the mask|app-nvue and ByteDance applet and Feishu applet are not supported|
 |immediate-change|Boolean|是否在手指松开时立即触发 change 事件。若不开启则会在滚动动画结束后触发 change 事件。|微信小程序 2.21.1|                                                                 
+|immediate-change|Boolean| Whether to fire the change event immediately when the finger is released. If not enabled, the change event will be fired after the scroll animation ends. |WeChat Mini Program 2.21.1|
 |@change|EventHandle|当滚动选择，value 改变时触发 change 事件，event.detail = {value: value}；value为数组，表示 picker-view 内的 picker-view-column 当前选择的是第几项（下标从 0 开始）|&nbsp;|
 | @change| EventHandle| For scrolling selection, change event will be triggered when value changes, event.detail = {value: value}; value is an array, indicating which item is currently selected by the picker-view-column in the picker-view (subscript starts from 0)|  |
 |@pickstart|eventhandle|当滚动选择开始时候触发事件|微信小程序2.3.1、快手小程序|
+|@pickstart|eventhandle|Trigger event when scroll selection starts|WeChat applet 2.3.1, Kuaishou applet|
 |@pickend|eventhandle|当滚动选择结束时候触发事件|微信小程序2.3.1、快手小程序|
+|@pickend|eventhandle|Trigger event when scroll selection ends|WeChat applet 2.3.1, Kuaishou applet|
 
 **注意：**其中只可放置 `<picker-view-column/>` 组件，其他节点不会显示。
 **Note: Only the `<picker-view-column/>` component can be placed in **, other nodes will not be displayed.
@@ -133,6 +139,7 @@ The following sample code comes from the [hello uni-app project](https://github.
 
 **Tips**
 - 微信小程序端，滚动时在iOS自带振动反馈，可在系统设置 -> 声音与触感 -> 系统触感反馈中关闭
+- Wechat applet, with vibration feedback on iOS when scrolling, which can be turned off in System Settings -> Sound and Touch -> System Touch Feedback
 - 在2.6.3版本以前，如果需要在PC端使用`picker-view`，需配置[H5模版](https://uniapp.dcloud.io/collocation/manifest?id=h5-template)，并引入[touch-emulator.js](https://github.com/dcloudio/touchemulator)
 - Before version 2.6.3, if you need to use `picker-view` on the PC side, you need to configure [H5 template](https://uniapp.dcloud.io/collocation/manifest?id=h5-template) and introduce [touch-emulator.js](https://github.com/dcloudio/touchemulator)
 

@@ -1,16 +1,20 @@
+<md-translatedByGoogle />
 #### live-player
 
 实时音视频播放，也称直播拉流。
 Live audio and video playback, also known as live-puller.
 
 使用live-player 组件需注意：如果发布到小程序，需要先通过各家小程序的审核。指定类目的小程序才能使用（[微信小程序类目](https://developers.weixin.qq.com/miniprogram/dev/component/live-player.html)、[百度小程序类目](https://smartprogram.baidu.com/docs/develop/component/media/#live-player/)），审核通过后在各家小程序管理后台自助开通该组件权限。
+Note when using the live-player component: If you publish to Mini Programs, you need to pass the review of each Mini Program first. Only Mini Programs of the specified category can be used ([WeChat Mini Program Category](https://developers.weixin.qq.com/miniprogram/dev/component/live-player.html), [Baidu Mini Program Category]( https://smartprogram.baidu.com/docs/develop/component/media/#live-player/)), after passing the review, you can automatically activate the component permissions in the management background of each applet.
 
 **平台差异说明**
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快应用|360小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|Feishu applet|QQ applet|Quick app|360 applet|JD applet|
 |:-:		|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x(见下)|x	|√	|x	|√	|√(基础库版本>=1.52.0)|x	|√	|x |x |x |
+|x (see below)|x |√ |x |√ |√(base library version>=1.52.0)|x |√ |x |x |x |
 
 - App的实时音视频播放，不是使用 live-player，而是直接使用 video 组件。
 - Live audio and video playback of App, not using live-player, but the video component directly.
@@ -27,7 +31,9 @@ Live audio and video playback, also known as live-puller.
 |id|String||live-player 属性的唯一标志符||
 | id| String| | Unique identifier of the live-player attribute| |
 |src|String||音视频地址。百度小程序支持 m3u8 格式；微信小程序支持 flv, rtmp 格式||
+|src|String||Audio and video address. Baidu applet supports m3u8 format; WeChat applet supports flv, rtmp format||
 |mode|String|live|live（直播），RTC（实时通话，该模式时延更低）|微信小程序|
+|mode|String|live|live (live broadcast), RTC (real-time call, this mode has lower latency)|WeChat applet|
 |autoplay|Boolean|false|自动播放||
 | autoplay| Boolean| false| Autoplay| |
 |muted|Boolean|false|是否静音||
@@ -39,11 +45,13 @@ Live audio and video playback, also known as live-puller.
 |background-mute|Boolean|false|进入后台时是否静音||
 | background-mute| Boolean| false| Whether to mute when entering the background| |
 |sound-mode|string|speaker|声音输出方式;可选值speaker、ear|微信小程序、QQ小程序1.5.0（仅支持speaker）|
+|sound-mode|string|speaker|Sound output mode; optional values speaker, ear|WeChat applet, QQ applet 1.5.0 (only support speaker)|
 |min-cache|Number|1|最小缓冲区，单位s||
 | min-cache| Number| 1| Minimum buffer, in s| |
 |max-cache|Number|3|最大缓冲区，单位s||
 | max-cache| Number| 3| Maximum buffer, in s| |
 |picture-in-picture-mode|string/Array|3|设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]）|微信小程序（2.10.3）|
+|picture-in-picture-mode|string/Array|3|Set the small window mode: push, pop, empty string or set multiple modes in the form of an array (eg: ["push", "pop"])|WeChat Mini Program (2.10.3) |
 |@statechange|EventHandle||播放状态变化事件，detail = {code}||
 | @statechange| EventHandle| | Play status change event, detail = {code}| |
 |@netstatus|EventHandle||网络状态通知，detail = {info}|| 
@@ -51,18 +59,23 @@ Live audio and video playback, also known as live-puller.
 |@fullscreenchange|EventHandle||全屏变化事件，detail = {direction, fullScreen}。|&nbsp;|
 | @fullscreenchange| EventHandle| | Full screen change event, detail = {direction, fullScreen}.|  |
 |@audiovolumenotify|EventHandle||播放音量大小通知，detail = {}|微信小程序（2.10.0）|
+|@audiovolumenotify|EventHandle||Play volume notification, detail = {}|WeChat applet (2.10.0)|
 |@enterpictureinpicture|EventHandle||播放器进入小窗|微信小程序（2.11.0）|
+|@enterpictureinpicture|EventHandle||Player enters the small window|WeChat applet (2.11.0)|
 |@leavepictureinpicture|EventHandle||播放器退出小窗|2.11.0|
 | @leavepictureinpicture| EventHandle| | Player exits small window| 2.11.0|
 
 
 mode 的合法值
+legal values for mode
 
 |值|说明|
 | Value| Instruction|
 |:-|:-|
 |live|直播|
+|live|Live|
 |RTC|实时通话，该模式时延更低|
+|RTC|Real-time call, this mode has lower latency|
 
 
 orientation 的合法值
@@ -90,26 +103,33 @@ Legal value of object-fit
 
 
 sound-mode 的合法值
+Legal values for sound-mode
 
 |值|说明|
 | Value| Instruction|
 |:-|:-|
 |speaker|扬声器|
+|speaker|Speaker|
 |ear|听筒|
+|ear|earpiece|
 
 
 **Tips**
 
 * 百度小程序 iOS 端不支持设置 orientation 属性；
+* Baidu applet iOS does not support setting the orientation attribute;
 * 微信小程序已废弃 background-mute 属性，默认为进入后台静音；
+* WeChat applet has abandoned the background-mute property, the default is to enter the background mute;
 * live-player 默认宽度 300px、高度 225px；
 * live-player has the default width of 300px and default height of 225px;.
 * live-player 是原生组件，层级高于前端组件，请勿在 scroll-view、swiper、picker-view、movable-view 中使用
 * Live-player is native component with a higher level than the front-end component. Please do not use it in scroll-view, swiper, picker-view or movable-view
 * 小程序下覆盖live-player需要使用cover-view。[详见](/component/native-component)
+* Cover-view is required to cover the live-player under the applet. [See details](/component/native-component)
 * live-player 组件相关 JS API：[createLivePlayerContext](/api/media/live-player-context)
 * JS API related to live-player components: [createLivePlayerContext](/api/media/live-player-context)
 * 小程序平台使用live-player有审核限制，请注意参考各家文档。
+* There are audit restrictions on the use of live-player on the Mini Program platform, please pay attention to refer to each document.
 * App端使用直播，推荐nvue页面下用video组件，可避免复杂的层级问题和全屏覆盖问题。
 * App side uses the live streaming. It is recommended to use video component under nvue page to avoid complicated hierarchy problem and full-screen coverage problem.
 

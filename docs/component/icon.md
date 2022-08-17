@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### icon
 
 图标。
@@ -7,12 +8,14 @@ Icon.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Quick application|360 applet|Kuishou applet|JD applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√(2.2.3+)|√|√|√|√|√|√|√|√|√|
 
 **Tips**
 
 * 由于 icon 组件各端表现存在差异，可以通过使用 [字体图标](/tutorial/syntax-css.html#字体图标) 的方式来弥补各端差异。
+* Due to the differences in the performance of each end of the icon component, you can use [font icon](/tutorial/syntax-css.html#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0% 87) to make up for the differences at each end.
 
 **属性说明**
 **Attribute description**
@@ -34,7 +37,9 @@ Description of valid values of type on different platforms:
 | Platform| type valid value|
 |:-:|:-:|
 |App、H5、微信小程序、QQ小程序|success, success_no_circle, info, warn, waiting, cancel, download, search, clear|
+|App, H5, WeChat applet, QQ applet|success, success_no_circle, info, warn, waiting, cancel, download, search, clear|
 |支付宝小程序|info, warn, waiting, cancel, download, search, clear, success, success_no_circle,loading|
+|Alipay Mini Program|info, warn, waiting, cancel, download, search, clear, success, success_no_circle,loading|
 |百度小程序|success, info, warn, waiting, success_no_circle, clear, search, personal, setting, top, close, cancel, download, checkboxSelected, radioSelected, radioUnselect|
 
 

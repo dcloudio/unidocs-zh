@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.getBackgroundAudioManager()
 获取**全局唯一**的背景音频管理器 ``backgroundAudioManager``。
 Get the **globally unique** background audio manager `backgroundAudioManager`.
@@ -9,6 +10,7 @@ Background audio is not the background music of games, but similar to QQ Music w
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|x|√|√|x|√|x|√|
 
@@ -43,6 +45,7 @@ Background audio is not the background music of games, but similar to QQ Music w
 |protocol|String|音频协议。默认值为 'http'，设置 'hls' 可以支持播放 HLS 协议的直播音频，App平台暂不支持|否|
 | protocol| String| Audio protocal. Default is 'http'. The direct broadcast audio with HLS protocol is supported after setting to 'hls'. However, it is temporarily not supported by the App platform.| No|
 |playbackRate|Number|播放的倍率。可取值：0.5/0.8/1.0/1.25/1.5/2.0，默认值为1.0。(App 3.4.5+、微信基础库 2.11.0+、支付宝小程序、字节小程序 2.33.0+、快手小程序、百度小程序 3.120.2+)|否|
+|playbackRate|Number| The playback rate. Possible values: 0.5/0.8/1.0/1.25/1.5/2.0, the default value is 1.0. (App 3.4.5+, WeChat Basic Library 2.11.0+, Alipay applet, Byte applet 2.33.0+, Kuaishou applet, Baidu applet 3.120.2+)|No|
 
 **backgroundAudioManager 对象的方法列表**
 **Method list of backgroundAudioManager object**
@@ -115,5 +118,6 @@ As background audio playback consumes mobile phone power, so all platforms are c
 - ios App平台，背景播放需在manifest.json -> app-plus -> distribute -> ios 节点添加 ``"UIBackgroundModes":["audio"]`` 才能保证音乐可以后台播放（打包成ipa生效）
 - On the ios App platform, you need to add `"UIBackgroundModes":["audio"]` to the manifest.json -> app-plus -> distribute -> ios node during background playback to ensure that the music can be played in the background (packaged into ipa to take effect)
 - 小程序平台，需在manifest.json 对应的小程序节点下，填写"requiredBackgroundModes": ["audio"]。发布小程序时平台会审核
+- For the Mini Program platform, you need to fill in "requiredBackgroundModes": ["audio"] under the corresponding Mini Program node in manifest.json. The platform will review the Mini Program when it is published
 - Android App端默认不会在通知栏出现音量控制，如需此功能，需要在插件市场单独下载原生插件，[详见](https://ext.dcloud.net.cn/search?q=%E9%80%9A%E7%9F%A5%E6%A0%8F+%E9%9F%B3%E4%B9%90%E6%8E%A7%E5%88%B6)
 - By default, the volume control will not appear in the notification bar on the Android App side. If you need this function, you need to download the native plug-in separately in the plug-in market. [See for details](https://ext.dcloud.net.cn/search?q=%E9%80%9A%E7%9F%A5%E6%A0%8F+%E9%9F%B3%E4%B9%90%E6%8E%A7%E5%88%B6)

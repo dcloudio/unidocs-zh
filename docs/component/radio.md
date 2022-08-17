@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### radio-group
 
 单项选择器，内部由多个 ``<radio>`` 组成。通过把多个`radio`包裹在一个`radio-group`下，实现这些`radio`的单选。
@@ -120,6 +121,7 @@ export default {
 **注意**
 **Notice**
 - radio的默认颜色，在不同平台不一样。微信小程序是绿色的，字节跳动小程序为红色，其他平台是蓝色的。更改颜色使用color属性。
+- The default color of radio varies on different platforms. WeChat mini-programs are green, ByteDance mini-programs are red, and other platforms are blue. Change the color using the color property.
 - 如需调节radio大小，可通过css的scale方法调节，如缩小到70%`style="transform:scale(0.7)"`
 - If you need to adjust the size of the radio, you can adjust it by the scale method of css, such as scaling down it to 70% `style="transform:scale(0.7)"`
 - radio不是checkbox，点击一个已经选中的radio，不会将其取消选中

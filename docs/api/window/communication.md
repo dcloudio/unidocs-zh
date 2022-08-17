@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 > 自 HBuilderX 2.0.0 起支持，[使用指南](https://ask.dcloud.net.cn/article/36010)
 > Supported by HBuilderX 2.0.0+, [User Guide](https://ask.dcloud.net.cn/article/36010)
 
@@ -161,3 +162,4 @@ Remove the global custom event listener.
 - 使用时，注意及时销毁事件监听，比如，页面 onLoad 里边 uni.$on 注册监听，onUnload 里边 uni.$off 移除，或者一次性的事件，直接使用 uni.$once 监听
 - When using, remember to destroy event listening to in time, for example, uni.$on registered listening to in the page onLoad, uni.$off removed in the page onUnload, or one-off events that use uni.$once to listen to directly
 - 注意 uni.$on 定义完成后才能接收到 uni.$emit 传递的数据
+- Note that the data passed by uni.$emit can only be received after uni.$on is defined

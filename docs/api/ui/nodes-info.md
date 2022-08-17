@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ## uni.createSelectorQuery()
 
 返回一个 ``SelectorQuery`` 对象实例。可以在这个实例上使用 ``select`` 等方法选择节点，并使用 ``boundingClientRect`` 等方法选择需要查询的信息。 
@@ -34,6 +35,7 @@ query.select('#id').boundingClientRect(data => {
 **Notice**
 
 - 支付宝小程序不支持in(component)，使用无效果
+- Alipay applet does not support in(component), use it without effect
 
 ### selectorQuery.select(selector)
 
@@ -93,6 +95,7 @@ Obtain information about the nodes. The first parameter is node related informat
 |id|Boolean|false|否|是否返回节点 ``id``||
 | id| Boolean| false| No| Whether to return the node `id`| |
 |dataset|Boolean|false|否|是否返回节点 ``dataset``| App、微信小程序、H5 |
+|dataset|Boolean|false|No|return node ``dataset``| App, WeChat applet, H5 |
 |rect|Boolean|false|否|是否返回节点布局位置（``left`` ``right`` ``top`` ``bottom``）||
 | rect| Boolean| false| No| Whether to return the node layout location (`left` `right` `top` `bottom`)| |
 |size|Boolean|false|否|是否返回节点尺寸（``width`` ``height``）||
@@ -100,8 +103,11 @@ Obtain information about the nodes. The first parameter is node related informat
 |scrollOffset|Boolean|false|否|是否返回节点的 ``scrollLeft`` ``scrollTop``，节点必须是 ``scroll-view`` 或者 ``viewport``||
 | scrollOffset| Boolean| false| No| Whether to return `scrollLeft` `scrollTop` of the node, and the node must be `scroll-view` or `viewport`| |
 | properties | Array＜string＞ | [] | 否 | 指定属性名列表，返回节点对应属性名的当前属性值（只能获得组件文档中标注的常规属性值，id class style 和事件绑定的属性值不可获取） | 仅 App 和微信小程序支持 |
+| properties | Array<string> | [] | No | Specify a list of property names, and return the current property value of the property name corresponding to the node (only the general property values marked in the component document, id class style and event binding property values can be obtained Not available) | App and WeChat applet only support |
 | computedStyle | Array＜string＞ | [] | 否 | 指定样式名列表，返回节点对应样式名的当前值 | 仅 App 和微信小程序支持 |
+| computedStyle | Array<string> | [] | No | Specify a list of style names and return the current value of the style name corresponding to the node | Only supported by App and WeChat applet |
 | context | Boolean | false | 否 | 是否返回节点对应的 Context 对象 | 仅 App 和微信小程序支持 |
+| context | Boolean | false | No | Whether to return the Context object corresponding to the node | Only supported by App and WeChat applet |
 
 ### nodesRef.boundingClientRect(callback)
 
@@ -160,6 +166,7 @@ Add a query request for the Context object of the node. Support the access of [`
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|HBuilderX 2.4.7+|√|x|x|x|√|√|√|
 
@@ -175,11 +182,13 @@ Add a query request for the Context object of the node. Support the access of [`
 ### nodesRef.node(callback)
 
 获取 `Node` 节点实例。目前支持 `Canvas` 的获取。
+Get the `Node` node instance. Currently supports fetching of `Canvas`.
 
 **平台差异说明**
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|x|x|x|x|√|√|
 
@@ -190,12 +199,15 @@ Add a query request for the Context object of the node. Support the access of [`
 | Attribute| Type| Instruction|
 | --- | --- | --- |
 | node | Object | 节点对应的 Node 实例 |
+| node | Object | Node instance corresponding to the node |
 
 **注意**
 **Notice**
 
 - 目前仅能用于`canvas`
+- Currently only works with `canvas`
 - `canvas`需设置`type="webgl"`才能正常使用
+- `canvas` needs to be set with `type="webgl"` for normal use
 
 ### 代码示例
 ### Code example

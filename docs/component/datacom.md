@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### 什么是datacom
 ### What is datacom
 
@@ -504,6 +505,7 @@ It is the same as the standard datacom component, except for localdata, the othe
 |localdata					|Array			|				|本地数据，[详情](https://uniapp.dcloud.net.cn/component/datacom)|
 | localdata| Array| | Local data, [Details](https://uniapp.dcloud.net.cn/component/datacom)|
 |spaceInfo					|Object     |				|服务空间信息，新增于`HBuilderX 3.2.11`。同uniCloud.init参数，参考：[uniCloud.init](uniCloud/init.md?id=init-unicloud)|
+|spaceInfo |Object | |Service space information, added in `HBuilderX 3.2.11`. Same as uniCloud.init parameter, reference: [uniCloud.init](uniCloud/init.md?id=init-unicloud)|
 |collection					|String			|				|表名。支持输入多个表名，用 `,` 分割|
 | collection| String| | Table Name. Support input of multiple table names, separated by `,`|
 |field						|String			|				|查询字段，多个字段用 `,` 分割|
@@ -525,6 +527,7 @@ It is the same as the standard datacom component, except for localdata, the othe
 |page-current				|Number			|	0			|当前页|
 | page-current| Number| 0| Current page|
 |page-size					|Number			|	20			|每页数据数量|
+|page-size |Number | 20 |Number of data per page|
 |getcount					|Boolean		|	false		|是否查询总数据条数，默认 `false`，需要分页模式时指定为 `true`|
 | getcount| Boolean| false| Whether to query the total number of data items, the default is `false`, and when paging mode is required, specify it as `true`|
 |getone						|Boolean		|	false		|指定查询结果是否仅返回数组第一条数据，默认 false。在false情况下返回的是数组，即便只有一条结果，也需要[0]的方式获取。在值为 true 时，直接返回结果数据，少一层数组。一般用于非列表页，比如详情页|

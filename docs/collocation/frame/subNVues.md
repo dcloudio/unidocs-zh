@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 subNvue，是 vue 页面的原生子窗体，把weex渲染的原生界面当做 vue 页面的子窗体覆盖在页面上。它不是全屏页面，它给App平台vue页面中的层级覆盖和原生界面自定义提供了更强大和灵活的解决方案。它也不是组件，就是一个原生子窗体。
 subNvue, the native subwindow of vue page, covers the native interface rendered by weex as a sub-subwindow of vue page on the page. It is not a full-screen page. It provides a more powerful and flexible solution for hierarchical coverage and native interface custom in the vue page of App platform. It is just a native subwindow, not a component.
 
@@ -222,9 +223,12 @@ There will be default corresponding rules for turning on/off the animation. Howe
 | none| none| No animation|
 
 详细的窗口动画说明，请参考：
+For detailed window animation instructions, please refer to:
 
 - 窗口显示的动画：[AnimationTypeShow](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeShow)
+- Window display animation: [AnimationTypeShow](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeShow)
 - 窗口关闭的动画：[AnimationTypeClose](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeClose)
+- Window closing animation: [AnimationTypeClose](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeClose)
 
 **注意事项**
 **Precautions**
@@ -235,5 +239,6 @@ There will be default corresponding rules for turning on/off the animation. Howe
 - 每个 `subNVue` 页面都要在 pages.json 中注册
 - Each `subNVue` page must be registered in pages.json
 - `subNVue` 比cover-view和plus.nativeObj.view更强大，也占用更多内存，为了保证更好的性能体验，一个vue页面不要加载太多 `subNVue` 子窗体，建议控制在三个以内
+- `subNVue` is more powerful than cover-view and plus.nativeObj.view, and it also takes up more memory. In order to ensure a better performance experience, one vue page should not load too many `subNVue` sub-forms, it is recommended to control it in three within
 - `getSubNVueById` 需要在页面生命周期 `onReady` 中调用
 - `getSubNVueById` needs to be called in the page life cycle `onReady`

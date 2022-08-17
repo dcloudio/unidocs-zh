@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### checkbox-group
 多项选择器，内部由多个 checkbox 组成。
 Multi-item selector, consisting of multiple checkbox inside.
@@ -154,6 +155,7 @@ The following sample code comes from the [hello uni-app project](https://github.
 **注意**
 **Notice**
 - checkbox的默认颜色，在不同平台不一样。微信小程序、360小程序是绿色的，字节跳动小程序为红色，其他平台是蓝色的。更改颜色使用color属性。
+- The default color of checkbox is different on different platforms. WeChat applet and 360 applet are green, ByteDance applet is red, and other platforms are blue. Change the color using the color property.
 - 如需调节checkbox大小，可通过css的scale方法调节，如缩小到70%`style="transform:scale(0.7)"`
 - If you need to adjust the checkbox size, you can adjust it by the scale method of css, such as scaling down it to 70% `style="transform:scale(0.7)"`
 

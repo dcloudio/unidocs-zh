@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### recycle-list
 
 app端nvue专用组件。
@@ -27,10 +28,14 @@ This component has been supported since HBuilderX 2.2.6+.
 
 
 属性|说明
+Properties | Description
 :--|:--|
 case|声明了当前模板的类型，只有和数据中的类型与当前类型匹配时才会渲染，语义和编程语言里的 case 一致。所有模板中最多只会匹配到一项，按照模板的顺序从上到下匹配，一旦匹配成功就不在继续匹配下一个。
+case| declares the type of the current template, which will only be rendered if the type in the data matches the current type. The semantics are the same as the case in the programming language. Only one item will be matched at most in all templates, which will be matched from top to bottom in the order of the templates. Once the match is successful, the next one will not be matched.
 default|表示当前模板为默认模板类型，不需要指定值。如果数据项没有匹配到任何 case 类型，则渲染带有 default 模板。如果存在多个 default，则只会使用第一个默认模板。
+default| indicates that the current template is the default template type, and no value needs to be specified. If the data item does not match any case type, render with the default template. If multiple defaults exist, only the first default template will be used.
 key|可选属性，用于指定列表数据中可以作为唯一标识的键值，可以优化渲染性能。
+key|Optional attribute, used to specify a key value in the list data that can be used as a unique identifier, which can optimize rendering performance.
 
 - warning 属性的省略 - 如果没写 `switch`，无论有没有写 `case` 或 `default`，都只使用第一个模板 - 在写了 `switch` 的情况下，`case` 和 `default` 必须写一个，否则该模板将会被忽略
 - Omission of warning attribute - If `switch` is not written, no matter if `case` or `default` is written or not, only the first template is used - If `switch` is written, either `case` or `default` must be written, otherwise the template will be ignored
@@ -63,6 +68,7 @@ If the switch attribute is omitted, only the first `<cell-slot>` will be regarde
 
 
 注意：Android 平台目前仅支持放到 template 根节点，后续修复此问题
+Note: The Android platform currently only supports placing it in the template root node, and this problem will be fixed in the future
 
 
 可复用的组件
@@ -167,7 +173,9 @@ If there are 100 pieces of data, one piece of data will correspond to a componen
 组件的 `beforeCreate` 和 `created` 也只有在组件即将创建和创建完成时才会触发
 The `beforeCreate` and `created` of the component will only be triggered when the component is about to be created and created.
 同理，组件的 `beforeMount` 和 `mounted` 也只有页面真正渲染到了该组件，在即将挂载和已经挂载时才会触发
+Similarly, the `beforeMount` and `mounted` of a component will only be triggered when the page is actually rendered to the component, and will be triggered when it is about to be mounted or has been mounted.
 组件的自定义事件
+Component custom events
 计划支持。`vm.$on`, `vm.$once`, `vm.$emit`, `vm.$off` 等功能还未完全调通，接口可用，但是行为可能有些差异（参数丢失），暂时不要使用。
 Custom event plan support for components. `vm.$on` `vm.$once`, `vm.$emit`, `vm.$off` and other functions have not been fully tuned. The interface is available, but there may be some differences in behavior (missing required parameter), so do not use it temporarily.
 

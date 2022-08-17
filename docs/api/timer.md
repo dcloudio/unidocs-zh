@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ## setTimeout(callback, delay, rest)
 
 设定一个定时器。在定时到期以后执行注册的回调函数
@@ -54,6 +55,7 @@ Set a timer. Executes the registered callback function at the specified period (
 |callback|Function|是|回调函数|
 | callback| Function| Yes| Callback function|
 |delay|Number|否|执行回调函数之间的时间间隔，单位 ms|
+|delay|Number|No|Time interval between executing the callback function, in ms|
 |rest|Any|否|param1, param2, ..., paramN 等附加参数，它们会作为参数传递给回调函数|
 | rest| Any| No| param1, param2, ..., paramN and other additional parameters will be passed to the callback function as parameters|
 
@@ -68,6 +70,7 @@ Set a timer. Executes the registered callback function at the specified period (
 | intervalID| Number| The number of the timer, which can be passed to [clearInterval](/api/timer?id=clearinterval) to cancel the timing|
 
 **代码示例**
+**CODE EXAMPLE**
 ```
 this.timer = setInterval(() => {
     //TODO 

@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.showToast(OBJECT)
 
 显示消息提示框。
@@ -14,7 +15,9 @@ Displays the message prompt box.
 |icon|String|否|图标，有效值详见下方说明。||
 | icon| String| No| Icon. See the description below for valid values.| |
 |image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序|
+|image|String|No|The local path of the custom icon (gif is not supported on the app side)|App, H5, WeChat applet, Baidu applet|
 |mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序|
+|mask|Boolean|No|Whether to display a transparent mask to prevent touch penetration, default: false|App, WeChat applet|
 |duration|Number|否|提示的延迟时间，单位毫秒，默认：1500||
 | duration| Number| No| Prompt delay time, in milliseconds, default: 1500| |
 |position|String|否|纯文本轻提示显示位置，填写有效值后只有 `title` 属性生效， 有效值详见下方说明。|App|
@@ -33,11 +36,17 @@ Displays the message prompt box.
 | Value| Instruction| Platform difference description|
 |:-|:-|:-|
 |success|显示成功图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度。|支付宝小程序无长度无限制|
+|success|The success icon is displayed. At this time, the title text on the `Mini Program` platform can display up to 7 Chinese characters in length. |Alipay applet unlimited length unlimited |
 |error|显示错误图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度。|支付宝小程序、快手小程序、字节小程序、百度小程序、京东小程序、QQ小程序不支持|
+|error|Display the error icon. At this time, the title text can display up to 7 Chinese characters in length on the `Mini Program` platform. |Alipay applet, Kuaishou applet, byte applet, Baidu applet, Jingdong applet, QQ applet are not supported|
 |fail|显示错误图标，此时 title 文本无长度显示。|支付宝小程序、字节小程序|
+|fail|Display an error icon, and the title text has no length. |Alipay applet, byte applet|
 |exception|显示异常图标。此时 title 文本无长度显示。|支付宝小程序|
+|exception|Display the exception icon. The title text is now displayed without length. |Alipay Mini Program|
 |loading|显示加载图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度。|支付宝小程序不支持|
+|loading|Display the loading icon. At this time, the title text can display up to 7 Chinese characters in length on the `Mini Program` platform. |Alipay applet does not support|
 |none|不显示图标，此时 title 文本在`小程序`最多可显示两行，`App`仅支持单行显示。|&nbsp;|
+|none|No icon is displayed. At this time, the title text can be displayed on a maximum of two lines in `Applet`, and `App` only supports single-line display. |&nbsp;|
 
 **示例**
 **Example**
@@ -65,6 +74,7 @@ uni.showToast({
 **Tips**
 
 - App端可通过[plus.nativeUI.toast API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.toast)实现更多功能。
+- The App can achieve more functions through the [plus.nativeUI.toast API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.toast).
 
 ### uni.hideToast()
 
@@ -93,6 +103,7 @@ If the loading prompt box is displayed, you must actively call [uni.hideLoading]
 |title|String|是|提示的文字内容，显示在loading的下方||
 | title| String| Yes| Text content of the prompt, displayed under loading| |
 |mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|H5、App、微信小程序、百度小程序|
+|mask|Boolean|No|Whether to display a transparent mask to prevent touch penetration, default: false|H5, App, WeChat applet, Baidu applet|
 |success|Function|否|接口调用成功的回调函数||
 | success| Function| No| Callback function for successful interface calling| |
 |fail|Function|否|接口调用失败的回调函数||
@@ -145,11 +156,17 @@ Display the modal pop-up window with only one OK button or both OK and Cancel bu
 |showCancel|Boolean|否|是否显示取消按钮，默认为 true||
 | showCancel| Boolean| No| Whether to display the Cancel button, with true as default| |
 |cancelText|String|否|取消按钮的文字，默认为"取消"||
+|cancelText|String|No|Cancel button text, default is "Cancel"||
 |cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序|
+|cancelColor|HexColor|No|The text color of the cancel button, the default is "#000000"|H5, WeChat applet, Baidu applet|
 |confirmText|String|否|确定按钮的文字，默认为"确定"||
+|confirmText|String|No|Confirm button text, the default is "OK"||
 |confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序|
+|confirmColor|HexColor|No|Confirm the text color of the button, the default for H5 platform is "#007aff", the default for WeChat applet platform is "#576B95", the default for Baidu applet platform is "#3c76ff"|H5, WeChat applet, Baidu Mini Program |
 |editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)|
+|editable|Boolean|No|Show input box|H5 (3.2.10+), App (3.2.10+), WeChat applet (2.17.1+)|
 |placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)|
+|placeholderText|String|No|Prompt text when the input box is displayed|H5 (3.2.10+), App (3.2.10+), WeChat applet (2.17.1+)|
 |success|Function|否|接口调用成功的回调函数||
 | success| Function| No| Callback function for successful interface calling| |
 |fail|Function|否|接口调用失败的回调函数||
@@ -189,10 +206,15 @@ uni.showModal({
 **注意**
 **Notice**
 - 弹框同时使用确定取消时，需注意不同平台的确认取消按钮位置不同。在微信、H5中，确认按钮默认在右边。在App中，iOS的确认按钮默认在右边，而Android默认在左边。产生这种差异的原因是uni.showModal在App和小程序上调用的是原生提供的弹出框，原生平台的策略本身就不同。如果需要调整，可以通过自行控制按钮的文字，即“确定”按钮的文字其实可以设置为“取消”；
+- When the pop-up box is used at the same time to confirm and cancel, it should be noted that the positions of the confirm and cancel buttons on different platforms are different. In WeChat and H5, the confirm button is on the right by default. In the App, the iOS confirmation button is on the right by default, and Android is on the left by default. The reason for this difference is that uni.showModal calls the natively provided pop-up box on the App and the applet, and the native platform strategy itself is different. If you need to adjust, you can control the text of the button by yourself, that is, the text of the "OK" button can actually be set to "Cancel";
 - showModal不满足需求时，可以自行开发组件弹框。插件市场有很多自定义弹框的组件，需注意在非H5平台，前端组件无法覆盖原生组件（如地图、video），遮罩也无法盖住tabbar和navigationbar。如需覆盖原生组件或遮罩tabbar等，App端推荐使用[subNvue](https://uniapp.dcloud.net.cn/api/window/subNVues)；
+- When showModal does not meet the requirements, you can develop the component popup by yourself. There are many custom popup components in the plug-in market. It should be noted that on non-H5 platforms, front-end components cannot cover native components (such as maps and videos), and masks cannot cover tabbar and navigationbar. If you need to cover native components or mask tabbar, etc., it is recommended to use [subNvue](https://uniapp.dcloud.net.cn/api/window/subNVues) on the App side;
 - App端还有原生的[prompt API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.prompt)，弹出界面中内置一个输入框。其他平台需自行封装前端组件实现；
+- There is also a native [prompt API] (https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.prompt) on the App side, and an input box is built into the pop-up interface. Other platforms need to encapsulate front-end components for implementation;
 - 小程序平台，`cancelText`和`confirmText`有长度限制，最多允许 4 个字符；
+- On the Mini Program platform, `cancelText` and `confirmText` have a length limit, up to 4 characters;
 - 钉钉小程序真机与模拟器表现有差异，真机title，content均为必填项
+- The performance of the DingTalk applet is different between the real machine and the simulator. The real machine title and content are required fields
 
 
 ### uni.showActionSheet(OBJECT)
@@ -207,9 +229,13 @@ Pop up the operation menu from the bottom up
 | Parameter| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |title|String|否|菜单标题|App、H5、支付宝小程序、钉钉小程序、微信小程序 3.4.5+（仅真机有效）|
+|title|String|No|Menu title|App, H5, Alipay applet, DingTalk applet, WeChat applet 3.4.5+ (only valid for real devices)|
 |alertText|String|否|警示文案（同菜单标题）|微信小程序（仅真机有效）|
+|alertText|String|No|Alert text (same as menu title)|WeChat applet (only valid on real devices)|
 |itemList|Array&lt;String&gt;|是|按钮的文字数组|微信、百度、字节跳动小程序数组长度最大为6个|
+|itemList|Array&lt;String&gt;|Yes|Button text array|WeChat, Baidu, ByteDance applet array length is up to 6|
 |itemColor|HexColor|否|按钮的文字颜色，字符串格式，默认为"#000000"|App-iOS、字节跳动小程序、飞书小程序不支持|
+|itemColor|HexColor|No|Button text color, string format, default is "#000000"|App-iOS, ByteDance applet, Feishu applet are not supported|
 |popover|Object|否|大屏设备弹出原生选择按钮框的指示区域，默认居中显示|App-iPad（2.6.6+）、H5（2.9.2）|
 | popover| Object| No| On large-screen devices, the display area of the native selection button box is popped up and displayed in the center by default| App-iPad(2.6.6+), H5(2.9.2)|
 |success|Function|否|接口调用成功的回调函数，详见返回参数说明||
@@ -261,6 +287,7 @@ uni.showActionSheet({
 **Tips**
 
 - App平台，iPad设备支持设置弹出框的位置，详见 [plus.nativeUI的文档](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.ActionSheetStyles)
+- App platform, iPad devices support setting the position of the popup box, see [plus.nativeUI documentation](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.ActionSheetStyles)
 - App平台，实现原生的、复杂的底部图文菜单，例如分享菜单，可参考[https://ext.dcloud.net.cn/plugin?id=69](https://ext.dcloud.net.cn/plugin?id=69)
 - To realize native and complex bottom menu of graphics and text on the App platform, such as sharing menu, please refer to [https://ext.dcloud.net.cn/plugin?id=69](https://ext.dcloud.net.cn/plugin?id=69)
 

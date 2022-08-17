@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### list
 
 app端nvue专用组件。在app-nvue下，如果是长列表，使用list组件的性能高于使用view或scroll-view的滚动。原因在于list在不可见部分的渲染资源回收有特殊的优化处理。
@@ -41,6 +42,7 @@ The `<list>` component is the core component that provides the vertical list fun
 > - `<list>` 需要显式的设置其宽高，可使用 position: absolute; 定位或 width、height 设置其宽高值。
 > - `<list>` needs to explicitly set its width and height with position: absolute; position or width and height to set its width and height value.
 > - list是区域滚动，不会触发页面滚动，无法触发pages.json配置的下拉刷新、页面触底onReachBottomDistance、titleNView的transparent透明渐变、style的transparentTitle导航栏透明。
+> - The list is an area scrolling, which will not trigger page scrolling, and cannot trigger the pull-down refresh configured in pages.json, the page bottom onReachBottomDistance, the transparent gradient of titleNView, and the transparentTitle navigation bar of style.
 > - Android 平台，因 `<list>` 高效内存回收机制，不在屏幕可见区域的组件不会被创建，导致一些内部需要计算宽高的组件无法正常工作，例如 `<slider>`、`<progress>`、`<swiper>`
 > - On the Android platform, due to the `<list>` efficient memory recycling mechanism, components that are not in the visible area of the screen will not be created, resulting in some internal components that need to calculate the width and height to fail to work, such as `<slider>`, `<progress>`, `<swiper>`
 
@@ -91,9 +93,12 @@ Set the nested list parent container to support the scrolling effect of swiper-l
 
 ###### Object object
 属性|说明|类型|必填|备注
+Attribute|Description|Type|Required|Remarks
 :--|:--|:--|:--|:--|
 id|list父容器滚动组件id|String|是|应为最外层滚动容器，必须是list组件
+id|list parent container scrolling component id|String|Yes|Should be the outermost scrolling container and must be a list component
 headerHeight|吸顶距离|Number|是|子list吸顶距离最外层滚动容器顶部的距离
+headerHeight|Ceiling distance|Number|Yes|The distance between the top of the sub-list and the top of the outermost scrolling container
 
 #### 方法
 #### Method
@@ -101,6 +106,7 @@ headerHeight|吸顶距离|Number|是|子list吸顶距离最外层滚动容器顶
 `scrollToElement(ref, options)`
 
 滚动到指定位置，详情 [scrollToElement](https://uniapp.dcloud.net.cn/tutorial/nvue-api.html#dom)
+Scroll to the specified position, details [scrollToElement](https://uniapp.dcloud.net.cn/tutorial/nvue-api.html#dom)
 
 #### 事件
 #### Event
@@ -177,9 +183,12 @@ args 为要设置的参数为json类型可以包含下列元素
 args is the parameter to be set, being json type. It can contain the following elements
 
 属性|类型 |默认值|必填|说明
+property|type|default value|required|description
 :--|:--|:--|:--|:--|
 id|string|无|是|和list同时滚动的组件id，应为外层的scroller
+id|string|none|yes|The id of the component that scrolls with the list at the same time, should be the outer scroller
 headerHeight|float|0|是|要吸顶的header顶部距离scroller顶部的距离，Android暂不支持
+headerHeight|float|0|Yes|The distance from the top of the header to the top of the scroller to the top of the scroller, Android does not currently support
 
 #### 返回值：无
 #### Return value: None

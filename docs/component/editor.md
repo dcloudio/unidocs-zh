@@ -1,9 +1,11 @@
+<md-translatedByGoogle />
 #### editor
 
 富文本编辑器，可以对图片、文字格式进行编辑和混排。
 Rich text editor, which can edit and mix images and text formats.
 
 在web开发时，可以使用`contenteditable`来实现内容编辑。但这是一个dom API，在非H5平台无法使用。于是微信小程序和uni-app的App-vue提供了`editor`组件来实现这个功能，并且在uni-app的H5平台也提供了兼容。从技术本质来讲，这个组件仍然运行在视图层webview中，利用的也是浏览器的`contenteditable`功能。
+In web development, you can use `contenteditable` to implement content editing. But this is a dom API and cannot be used on non-H5 platforms. So WeChat applet and App-vue of uni-app provide the `editor` component to realize this function, and also provide compatibility on the H5 platform of uni-app. Technically speaking, this component still runs in the view layer webview, using the browser's `contenteditable` feature.
 
 编辑器导出内容支持带标签的 `html`和纯文本的 `text`，编辑器内部采用 `delta` 格式进行存储。
 The export content of the editor supports tagged `html` and plain text `text`, and the editor uses the `delta` format for storage.
@@ -24,10 +26,13 @@ Related api: [editorContext](/api/media/editor-context)
 **Platform difference description**
 
 |App					|H5			|微信小程序		|支付宝小程序|百度小程序		|字节跳动小程序、飞书小程序|QQ小程序		|快应用					|360小程序|快手小程序	|
+|App |H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet | Kuaishou applet |
 |:-:					|:-:		|:-:					|:-:		    |:-:					|:-:					|:-:				|:-:						|:-:			|:-:			|
 |2.0+，app-vue|2.4.5+	|基础库 2.7.0+|x						|需引入动态库[引入方式](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)					|x							|x				|x				|x				|x				|
+|2.0+, app-vue|2.4.5+ |Basic library 2.7.0+|x |Need to import dynamic library [introduction method](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/) |x |x |x |x |x |
 
 editor组件目前只有H5、App的vue页面、微信小程序、百度小程序支持，其他端平台自身未提供editor组件，只能使用web-view加载web页面，也可搜索[插件市场](https://ext.dcloud.net.cn/search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91) 获取简单的markdown富文本编辑器
+The editor component is currently only supported by H5, App's vue page, WeChat applet, and Baidu applet. Other platforms do not provide editor components themselves. You can only use web-view to load web pages, and you can also search the [plug-in market] (https:/ /ext.dcloud.net.cn/search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91) Get simple markdown rich text editor
 
 | 属性 | 类型 | 默认值 | 必填 | 说明 |
 | Attribute| Type| Defaults| Required| Instruction|
@@ -63,9 +68,12 @@ The editor internally supports some HTML tags and inline styles, but does not su
 Unsatisfactory tags will be ignored and `<div>` will be transferred to `<p>` and stored.
 
 | 类型 | 节点 |平台差异说明 |
+| Type | Node | Platform Difference Description |
 | --- | --- |--- |
 | 行内元素 | `<span> <strong> <b> <ins> <em> <i> <u> <a> <del> <s> <sub> <sup> <img>` |其中`<ins>  <del> `百度小程序不支持 |
+| inline element | `<ins><del> <span><strong><b><em><i><u><a><s><sub><sup><img>`|where`</sup></sub></s></a></u></i></em></b></strong></span><ins><del> <span><strong><b>`Baidu applet does not support |</b></strong></span>
 | 块级元素 | `<br> <p> <h1> <h2> <h3> <h4> <h5> <h6> <hr> <ol> <ul> <li>` |其中`<br>`仅百度小程序支持、`<p>`百度小程序不支持|
+| block-level elements | `<br><p><h1><h2><h3><h4><h5><h6><hr><ol><ul><li> `|where`<br> `Only Baidu applet supports,`<p> `Baidu applet does not support |
 
 #### 支持的内联样式
 #### Supported inline styles
@@ -74,9 +82,12 @@ Unsatisfactory tags will be ignored and `<div>` will be transferred to `<p>` and
 Inline styles can only be set on inline elements or block-level elements, but not both. For example, font-size is classified as an inline element attribute, so that setting it on the p tag is invalid.
 
 | 类型 | 样式 |平台差异说明 |
+| Type | Style | Platform Difference Description |
 | --- | --- |--- |
 | 块级样式 | `text-align` `direction` `margin` `margin-top` `margin-left` `margin-right` `margin-bottom` `padding` `padding-top` `padding-left` `padding-right` `padding-bottom` `line-height` `text-indent` |百度小程序仅支持`text-align、direction`|
+| Block-level styles | `text-align` `direction` `margin` `margin-top` `margin-left` `margin-right` `margin-bottom` `padding` `padding-top` `padding-left` ` padding-right` `padding-bottom` `line-height` `text-indent` |Baidu applet only supports `text-align, direction`|
 | 行内样式 | `font` `font-size` `font-style` `font-variant` `font-weight` `font-family` `letter-spacing` `text-decoration` `color` `background-color` |百度小程序仅支持`color、background-color`|
+| Inline styles | `font` `font-size` `font-style` `font-variant` `font-weight` `font-family` `letter-spacing` `text-decoration` `color` `background-color` |Baidu applet only supports `color, background-color`|
 
 **注意事项**
 **Precautions**

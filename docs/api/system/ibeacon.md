@@ -1,7 +1,9 @@
+<md-translatedByGoogle />
 **iBeacon API 平台差异说明**
 **Platform difference description for iBeacon APIs**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|x|x|√|x|x|x|
 

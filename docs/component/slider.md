@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### slider
 
 滑动选择器。
@@ -35,10 +36,13 @@ Slide selector.
 | @changing| EventHandle| | Event triggered during dragging, event.detail = {value: value}|
 
 <!-- |color|Color|#e9e9e9|背景条的颜色（请使用 backgroundColor）|
+<!-- |color|Color|#e9e9e9|The color of the background bar (please use backgroundColor)|
 |selected-color|Color|#1aad19|已选择的颜色（请使用 activeColor）| -->
+|selected-color|Color|#1aad19|Selected color (use activeColor)| -->
 **Tips**
 
 - activeColor默认值在不同平台不一样，微信是绿色(#1aad19)，头条是红色，其他平台是蓝色
+- The default value of activeColor is different on different platforms, WeChat is green (#1aad19), headlines are red, and other platforms are blue
 - 如需要区间滑块，即一根横条上使用2个滑块选择一段范围，可见[插件市场](https://ext.dcloud.net.cn/search?q=%E5%8C%BA%E9%97%B4%E6%BB%91%E5%9D%97)
 - If interval sliders are needed, i.e., two sliders are used on a horizontal bar to select a range, see [Plug-in market](https://ext.dcloud.net.cn/search?q=%E5%8C%BA%E9%97%B4%E6%BB%91%E5%9D%97)
 

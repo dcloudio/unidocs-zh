@@ -1,4 +1,6 @@
+<md-translatedByGoogle />
 所有的视图组件，包括view、swiper等，本身不显示任何可视化元素。它们的用途都是为了包裹其他真正显示的组件。
+All view components, including view, swiper, etc., do not display any visual elements themselves. Their purpose is to wrap other components that are actually displayed.
 
 ### view
 
@@ -9,6 +11,7 @@ View container.
 Similar to div in traditional html, it is used to wrap various element contents.
 
 如果使用[nvue](https://uniapp.dcloud.io/tutorial/nvue-outline)，则需注意，包裹文字应该使用`<text>`组件。
+If using [nvue](https://uniapp.dcloud.io/tutorial/nvue-outline), please note that the wrapped text should use the `<text>` component.
 
 **属性说明**
 **Attribute description**
@@ -19,6 +22,7 @@ Similar to div in traditional html, it is used to wrap various element contents.
 |hover-class|String|none|指定按下去的样式类。当 hover-class="none" 时，没有点击态效果|
 | hover-class| String| none| Specify the style class after pressing. For hover-class="none", there is no effect of click state|
 |hover-stop-propagation|Boolean|false|指定是否阻止本节点的祖先节点出现点击态，App、H5、支付宝小程序、百度小程序不支持（支付宝小程序、百度小程序文档中都有此属性，实测未支持）|
+|hover-stop-propagation|Boolean|false|Specifies whether to prevent the click state of the ancestor node of this node, App, H5, Alipay applet, Baidu applet do not support (Alipay applet, Baidu applet documents have this attribute , the actual measurement is not supported)|
 |hover-start-time|Number|50|按住后多久出现点击态，单位毫秒|
 | hover-start-time| Number| 50| How long does the click state appear after pressing, in milliseconds|
 |hover-stay-time|Number|400|手指松开后点击态保留时间，单位毫秒|
@@ -65,4 +69,6 @@ The following sample code comes from the [hello uni-app project](https://github.
 **Tips**
 
 - 小程序平台如果使用 `<div>` ，编译时会被转换为 `<view>`。
+- If the applet platform uses `<div> ` , will be converted to ` at compile time<view> `.
 - App平台 Vue2 项目在节点非常多时可以尝试使用 `<div>` 替换 `<view>` 以提升渲染性能。
+- App platform Vue2 project can try to use ` when there are many nodes<div> `replace`<view> ` to improve rendering performance.

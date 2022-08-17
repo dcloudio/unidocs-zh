@@ -1,8 +1,10 @@
+<md-translatedByGoogle />
 ### uni.connectSocket(OBJECT)
 创建一个 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) 连接。
 Create a [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) connection.
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
+> When each Mini Program platform is running, network-related APIs need to be configured with a whitelist of domain names before using them.
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -11,9 +13,13 @@ Create a [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket)
 | Parameter name| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |url|String|是|服务器接口地址|小程序中必须是 `wss://` 协议|
+|url|String|yes|server interface address|must be `wss://` protocol in applet|
 |header|Object|否|HTTP Header , header 中不能设置 Referer|小程序、App 2.9.6+|
+|header|Object|No|HTTP Header , Referer cannot be set in the header|Applet, App 2.9.6+|
 |method|String|否|默认是GET，有效值：OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT|仅微信小程序支持|
+|method|String|No|Default is GET, valid values: OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT|Only supported by WeChat applet|
 |protocols|Array&lt;String&gt;|否|子协议数组|App、H5、微信小程序、百度小程序、字节跳动小程序、飞书小程序|
+|protocols|Array&lt;String&gt;|No|Subprotocol Array|App, H5, WeChat applet, Baidu applet, ByteDance applet, Feishu applet|
 |success|Function|否|接口调用成功的回调函数||
 | success| Function| No| Callback function for successful interface calling| |
 |fail|Function|否|接口调用失败的回调函数||
@@ -63,10 +69,15 @@ If the success/fail/complete parameter is not passed in, the encapsulated Promis
 - 网络请求的 ``超时时间`` 可以统一在 ``manifest.json`` 中配置 [networkTimeout](/collocation/manifest?id=networktimeout)。
 - The `Timeout` requested by the network can be uniformly configured in the `manifest.json` as [networkTimeout](/collocation/manifest?id=networktimeout).
 - App平台，2.2.6以下的版本，不支持 ``ArrayBuffer`` 类型的数据收发。老版本不愿升级也可以使用 [plus-websocket插件](https://ext.dcloud.net.cn/plugin?id=647) 插件替代。
+- App platform, versions below 2.2.6, do not support ``ArrayBuffer`` type data sending and receiving. If the old version is unwilling to upgrade, you can also use the [plus-websocket plugin](https://ext.dcloud.net.cn/plugin?id=647) plugin instead.
 - App平台2.2.6以下的版本以及支付宝小程序下，所有 `vue` 页面只能使用一个 `websocket` 连接。App下可以使用 [plus-websocket](https://ext.dcloud.net.cn/plugin?id=647) 插件替代实现多链接。。
+- For versions below 2.2.6 of the App platform and the Alipay applet, all `vue` pages can only use one `websocket` connection. Under the App, you can use the [plus-websocket](https://ext.dcloud.net.cn/plugin?id=647) plug-in instead to achieve multi-link. .
 - 微信小程序平台1.7.0 及以上版本，最多可以同时存在5个WebSocket 连接。老版本只支持一个socket连接
+- WeChat applet platform version 1.7.0 and above can have up to 5 WebSocket connections at the same time. The old version only supports one socket connection
 - 百度小程序平台自基础库版本 1.9.4 及以后支持多个socket连接。老版本只支持一个socket连接
+- The Baidu applet platform supports multiple socket connections since the base library version 1.9.4 and later. The old version only supports one socket connection
 - QQ小程序平台最多支持同时存在5个socket链接
+- The QQ applet platform supports up to 5 socket links at the same time
 
 
 ### uni.onSocketOpen(CALLBACK)
@@ -74,8 +85,10 @@ If the success/fail/complete parameter is not passed in, the encapsulated Promis
 listen to WebSocket connection opening event.
 
 **平台兼容性**
+**Platform Compatibility**
 
 字节小程序不支持
+Byte applet does not support
 
 **CALLBACK 返回参数**
 **CALLBACK return parameter**
@@ -104,8 +117,10 @@ uni.onSocketOpen(function (res) {
 listen to WebSocket error.
 
 **平台兼容性**
+**Platform Compatibility**
 
 字节小程序不支持
+Byte applet does not support
 
 **示例代码**
 **Sample code**
@@ -127,8 +142,10 @@ uni.onSocketError(function (res) {
 Sending data over a WebSocket connection requires [uni.connectSocket](/api/request/websocket?id=connectsocket) and [uni.onSocketOpen](/api/request/websocket?id=onsocketopen) callback before sending.
 
 **平台兼容性**
+**Platform Compatibility**
 
 字节小程序不支持
+Byte applet does not support
 
 **OBJECT 参数说明：**
 **OBJECT parameter description:**
@@ -180,8 +197,10 @@ function sendSocketMessage(msg) {
 listen to the message events that WebSocket receives and send to the server.
 
 **平台兼容性**
+**Platform Compatibility**
 
 字节小程序不支持
+Byte applet does not support
 
 **CALLBACK 返回参数**
 **CALLBACK return parameter**
@@ -210,8 +229,10 @@ uni.onSocketMessage(function (res) {
 Close WebSocket connection.
 
 **平台兼容性**
+**Platform Compatibility**
 
 字节小程序不支持
+Byte applet does not support
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -235,8 +256,10 @@ Close WebSocket connection.
 listen to WebSocket closing.
 
 **平台兼容性**
+**Platform Compatibility**
 
 字节小程序不支持
+Byte applet does not support
 
 ```javascript
 uni.connectSocket({

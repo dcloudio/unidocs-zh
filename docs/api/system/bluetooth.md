@@ -1,7 +1,9 @@
+<md-translatedByGoogle />
 **蓝牙 API 平台差异说明**
 **Platform difference description for Bluetooth APIs**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|x|x|√|x|x|√|
 
@@ -32,6 +34,7 @@ Initialize the Bluetooth module
 |0|ok|正常|
 | 0| ok| Normal|
 |-1|already connect|已连接|
+|-1|already connect|connected|
 |10000|not init|未初始化蓝牙适配器|
 | 10000| not init| Bluetooth is not initialized|
 |10001|not available|当前蓝牙适配器不可用|
@@ -53,9 +56,13 @@ Initialize the Bluetooth module
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 **注意**
 **Notice**
@@ -89,11 +96,13 @@ Start to search for nearby Bluetooth peripherals. **Such an operation consumes s
 | Attribute| Type| Defaults| Required| Instruction|
 |---|---|---|---|---|
 |services|Array&lt;String&gt;||否|要搜索的蓝牙设备主 service 的 uuid 列表。某些蓝牙设备会广播自己的主 service 的 uuid。如果设置此参数，则只搜索广播包有对应 uuid 的主服务的蓝牙设备。建议主要通过该参数过滤掉周边不需要处理的其他蓝牙设备。|
+|services|Array&lt;String&gt;||No|List of uuids of the bluetooth device primary service to search for. Some bluetooth devices broadcast the uuid of their own primary service. If this parameter is set, only the bluetooth devices whose broadcast packets have the corresponding uuid's main service will be searched. It is recommended to mainly filter out other Bluetooth devices that do not need to be processed through this parameter. |
 |allowDuplicatesKey|boolean|false|否|是否允许重复上报同一设备。如果允许重复上报，则 `uni.onBlueToothDeviceFound` 方法会多次上报同一设备，但是 RSSI 值会有不同。|
 | allowDuplicatesKey| boolean| false| No| Whether to allow repeatedly reporting the same device. If repeated reporting is allowed, the `uni.onBlueToothDeviceFound` method will report the same device multiple times but with a different RSSI value each time.|
 |interval|number|0|否|上报设备的间隔。0 表示找到新设备立即上报，其他数值根据传入的间隔上报。|
 | interval| number| 0| No| Interval for reporting devices. 0 means reporting immediately when a new device is found, and other values means reporting according to the transition intervals.|
 |powerLevel|string|medium|否|扫描模式，越高扫描越快，也越耗电，仅安卓支持。low：低，medium：中，high：高。仅京东小程序支持|
+|powerLevel|string|medium|No|Scanning mode, the higher the scanning speed, the more power consumption, only supported by Android. low: low, medium: medium, high: high. Only JD.com applet support|
 |success|function||否|接口调用成功的回调函数|
 | success| function| | No| Callback function for successful interface calling|
 |fail|function||否|接口调用失败的回调函数|
@@ -132,14 +141,19 @@ Start to search for nearby Bluetooth peripherals. **Such an operation consumes s
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 **注意：** 
 **Notice:**
 
 * App 端目前仅支持发现ble蓝牙设备，更多蓝牙设备发现，可以使用 Native.js，参考：[https://ask.dcloud.net.cn/article/114](https://ask.dcloud.net.cn/article/114)。也可以在插件市场获取[原生插件](https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&cat1=5&cat2=51&orderBy=UpdatedDate)
+* The App side currently only supports the discovery of ble Bluetooth devices. For more Bluetooth device discovery, you can use Native.js, refer to: [https://ask.dcloud.net.cn/article/114](https://ask.dcloud .net.cn/article/114). You can also get the [native plugin] in the plugin market (https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&cat1=5&cat2=51&orderBy=UpdatedDate)
 
 
 **示例代码**
@@ -147,6 +161,7 @@ Start to search for nearby Bluetooth peripherals. **Such an operation consumes s
 
 ```javascript
 // 以微信硬件平台的蓝牙智能灯为例，主服务的 UUID 是 FEE7。传入这个参数，只搜索主服务 UUID 为 FEE7 的设备
+// Take the Bluetooth smart light of the WeChat hardware platform as an example, the UUID of the main service is FEE7. Pass in this parameter to only search for devices whose main service UUID is FEE7
 uni.startBluetoothDevicesDiscovery({
   services: ['FEE7'],
   success(res) {
@@ -188,6 +203,7 @@ listen to the event of finding a new device
 |localName|string|当前蓝牙设备的广播数据段中的 LocalName 数据段|
 | localName| string| The LocalName data segment in the broadcast data segment of the current Bluetooth device|
 |serviceData|Object|当前蓝牙设备的广播数据段中的 ServiceData 数据段，京东小程序不支持|
+|serviceData|Object|The ServiceData data segment in the broadcast data segment of the current Bluetooth device, the JD applet does not support|
 
 **注意**
 **Notice**
@@ -264,9 +280,13 @@ Stop searching for nearby Bluetooth peripherals. If the required Bluetooth devic
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 
 **示例代码**
@@ -374,9 +394,13 @@ Obtain the devices with connected status according to uuid.
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 **示例代码** 
 **Sample code**
@@ -467,7 +491,9 @@ Get all discovered Bluetooth devices during the Bluetooth module's effective per
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 **示例代码**
 **Sample code**
@@ -560,9 +586,13 @@ Obtain the local Bluetooth adapter status.
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 **示例代码**
 **Sample code**
@@ -622,9 +652,13 @@ Disable the Bluetooth module. Calling this method will disconnect all establishe
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 **示例代码**
 **Sample code**

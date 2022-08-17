@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### 组件使用的入门教程
 ### Introductory tutorial for component usage
 - 组件是视图层的基本组成单元。
@@ -68,6 +69,7 @@ There are many types of attributes of components:
 | Any| Arbitrary attribute|  |
 
 下面的例子演示了组件的属性设置boolean值和数字的例子。注意`false`作为一个js变量，在组件的属性中使用时，属性前面需增加`:`冒号前缀，属性值仍使用引号包裹，但引号里不是字符串，而是js。
+The following example shows an example of setting boolean values and numbers to properties of a component. Note that `false` is used as a js variable. When using it in the properties of a component, the property needs to be prefixed with a `:` colon. The property value is still wrapped in quotation marks, but the quotation marks are not strings, but js.
 
 ```html
 <template>
@@ -99,8 +101,10 @@ Each component has its own defined attributes, but all components of uni-app hav
 |data-*|Any|自定义属性|组件上触发的事件时，会发送给事件处理函数|
 | data-*| Any| Custom attributes| When event is triggered on component, it will be sent to the event handler.|
 |@\*|EventHandler|组件的事件|详见各组件详细文档，事件绑定参考 [事件处理器](/tutorial/vue-basics?id=事件处理器)|
+|@\*|EventHandler|Events of components|For details, please refer to the detailed documentation of each component. For event binding, refer to [Event Handler](/tutorial/vue-basics?id=%E4%BA%8B%E4%BB%B6% E5%A4%84%E7%90%86%E5%99%A8)|
 
 除了上述公共属性，还有一类特殊属性以`v-`开头，称之为vue指令，如v-if、v-else、v-for、v-model。详见[vue指令](/tutorial/vue-api?id=%e6%a8%a1%e6%9d%bf%e6%8c%87%e4%bb%a4)
+In addition to the above public properties, there is also a special class of properties starting with `v-`, called vue directives, such as v-if, v-else, v-for, v-model. For details, see [vue command](/tutorial/vue-api?id=%e6%a8%a1%e6%9d%bf%e6%8c%87%e4%bb%a4)
 
 #### 在组件中使用js变量
 #### Use js variables in components
@@ -190,6 +194,7 @@ uni-app为开发者提供了一系列基础组件，类似HTML里的基础标签
 uni-app provides developers with a series of basic components, similar to the basic tag elements in HTML.
 
 但uni-app的组件与HTML不同，而是与小程序相同，可更好的满足手机端的使用习惯。
+However, the components of uni-app are different from HTML, but are the same as small programs, which can better meet the usage habits of mobile phones.
 
 虽然不推荐使用HTML标签，但实际上如果开发者写了`div`等标签，在编译到非H5平台时也会被编译器转换为`view`标签，类似的还有`span`转`text`、`a`转`navigator`等，包括css里的元素选择器也会转。但为了管理方便、策略统一，新写代码时仍然建议使用view等组件。
 Although HTML tags are not recommended, in fact, if developers write tags such as `div`, they will be converted to `view` tags by the compiler when they are compiled to a non-H5 platform. Similarly, `span` is converted to `text`, `A` is converted to `navigator`, etc., including the element selector in css. However, for the sake of convenient management and unified policies, it is still recommended to use components such as view when writing new code.
@@ -199,6 +204,7 @@ Developers can combine these basic components for quick development. It can be e
 
 
 `uni-app` 基础组件规范，与小程序规范相近。如果了解小程序开发的话，uni-app的基础组件会感觉很熟悉。但需要注意组件上的事件绑定，需要以 vue 的事件绑定语法来绑定，如 bindchange="eventName" 事件，需要写成 `@change="eventName"`
+`uni-app` The basic component specification, which is similar to the applet specification. If you understand applet development, the basic components of uni-app will feel familiar. But you need to pay attention to the event binding on the component, which needs to be bound with vue's event binding syntax, such as bindchange="eventName" event, which needs to be written as `@change="eventName"`
 
 ```html
 	<picker mode="date" :value="date" start="2015-09-01" end="2020-09-01" @change="bindDateChange">
@@ -223,11 +229,17 @@ Basic components are divided into the following ten categories:
 | Component name| Instruction|
 |:-|:-|
 |[view](/component/view.md)|视图容器，类似于HTML中的div|
+|[view](/component/view.md)|View container, similar to div in HTML|
 |[scroll-view](/component/scroll-view.md)|可滚动视图容器|
+|[scroll-view](/component/scroll-view.md)|scrollable view container|
 |[swiper](/component/swiper.md)|滑块视图容器，比如用于轮播banner|
+|[swiper](/component/swiper.md)|Slider view container, such as for carousel banner|
 |[match-media](/component/match-media.md)|屏幕动态适配组件，比如窄屏上不显示某些内容|
+|[match-media](/component/match-media.md)|Dynamic screen adaptation component, such as some content not displayed on narrow screen|
 |[movable-area](/component/movable-view.md?id=movable-area)|可拖动区域|
+|[movable-area](/component/movable-view.md?id=movable-area)|Dragable area|
 |[movable-view](/component/movable-view.md?id=movable-view)|可移动的视图容器，在页面中可以拖拽滑动或双指缩放。movable-view必须在movable-area组件中|
+|[movable-view](/component/movable-view.md?id=movable-view)|A movable view container that can be dragged, swiped or pinch-zoomed on the page. movable-view must be in movable-area component|
 |[cover-view](/component/cover-view?id=cover-view)|可覆盖在原生组件的上的文本组件|
 | [cover-view](/component/cover-view?id=cover-view)| A text component that can be covered on the native component|
 |[cover-image](/component/cover-view?id=cover-image)|可覆盖在原生组件的上的图片组件|
@@ -240,9 +252,13 @@ Basic components are divided into the following ten categories:
 | Component name| Instruction|
 |:-|:-|
 |[icon](/component/icon.md)|图标|
+|[icon](/component/icon.md)|icon|
 |[text](/component/text.md)|文字|
+|[text](/component/text.md)|characters|
 |[rich-text](/component/rich-text.md)|富文本显示组件|
+|[rich-text](/component/rich-text.md)|Rich Text Display Component|
 |[progress](/component/progress.md)|进度条|
+|[progress](/component/progress.md)|Progress bar|
 
 **表单组件（Form）：**
 **Form:**
@@ -251,17 +267,29 @@ Basic components are divided into the following ten categories:
 | Label name| Instruction|
 |:-|:-|
 |[button](/component/button.md)|按钮|
+|[button](/component/button.md)|Button|
 |[checkbox](/component/checkbox.md)|多项选择器|
+|[checkbox](/component/checkbox.md)|Multiple selectors|
 |[editor](/component/editor.md)|富文本输入框|
+|[editor](/component/editor.md)|Rich text input box|
 |[form](/component/form.md)|表单|
+|[form](/component/form.md)|form|
 |[input](/component/input.md)|输入框|
+|[input](/component/input.md)|Input Box|
 |[label](/component/label.md)|标签|
+|[label](/component/label.md)|label|
 |[picker](/component/picker.md)|弹出式列表选择器|
+|[picker](/component/picker.md)|Popup Picker|
 |[picker-view](/component/picker-view.md)|窗体内嵌式列表选择器|
+|[picker-view](/component/picker-view.md)|Form inline list selector|
 |[radio](/component/radio.md)|单项选择器|
+|[radio](/component/radio.md)|Single selector|
 |[slider](/component/slider.md)|滑动选择器|
+|[slider](/component/slider.md)|Slide selector|
 |[switch](/component/switch.md)|开关选择器|
+|[switch](/component/switch.md)|Switch selector|
 |[textarea](/component/textarea.md)|多行文本输入框|
+|[textarea](/component/textarea.md)|Multi-line text input box|
 
 **路由与页面跳转（Navigation）：**
 **Routing and Page Navigation:**
@@ -270,6 +298,7 @@ Basic components are divided into the following ten categories:
 | Component name| Instruction|
 |:-|:-|
 |[navigator](/component/navigator.md)|页面链接。类似于HTML中的a标签|
+|[navigator](/component/navigator.md)|page link. Similar to the a tag in HTML |
 
 **媒体组件（Media）：**
 **Media:**
@@ -278,11 +307,17 @@ Basic components are divided into the following ten categories:
 | Component name| Instruction|
 |:-|:-|
 |[audio](/component/audio.md)|音频|
+|[audio](/component/audio.md)|Audio|
 |[camera](/component/camera.md)|相机|
+|[camera](/component/camera.md)|Camera|
 |[image](/component/image.md)|图片|
+|[image](/component/image.md)|Image|
 |[video](/component/video.md)|视频|
+|[video](/component/video.md)|Video|
 |[live-player](/component/live-player.md)|直播播放|
+|[live-player](/component/live-player.md)|Live playback|
 |[live-pusher](/component/live-pusher.md)|实时音视频录制，也称直播推流|
+|[live-pusher](/component/live-pusher.md)|Real-time audio and video recording, also known as live streaming|
 
 **地图（Map）：**
 **Map:**
@@ -291,6 +326,7 @@ Basic components are divided into the following ten categories:
 | Component name| Instruction|
 |:-|:-|
 |[map](/component/map.md)|地图|
+|[map](/component/map.md)|map|
 
 **画布（Canvas）：**
 **Canvas:**
@@ -299,6 +335,7 @@ Basic components are divided into the following ten categories:
 | Component name| Instruction|
 |:-|:-|
 |[canvas](/component/canvas.md)|画布|
+|[canvas](/component/canvas.md)|Canvas|
 
 **webview（Web-view）：**
 
@@ -306,6 +343,7 @@ Basic components are divided into the following ten categories:
 | Component name| Instruction|
 |:-|:-|
 |[web-view](/component/web-view.md)|web浏览器组件|
+|[web-view](/component/web-view.md)|web browser component|
 
 **广告**
 **Advertisement**
@@ -314,7 +352,9 @@ Basic components are divided into the following ten categories:
 | Component name| Instruction|
 |:-|:-|
 |[ad](/component/ad.md)|广告组件|
+|[ad](/component/ad.md)|Ad Component|
 |[ad-draw](/component/ad-draw.md)|沉浸视频流广告组件|
+|[ad-draw](/component/ad-draw.md)|Immersive Video Streaming Ad Component|
 
 **页面属性配置**
 **Page attribute configuration**
@@ -323,8 +363,11 @@ Basic components are divided into the following ten categories:
 | Component name| Instruction|
 |:-|:-|
 |[custom-tab-bar](/component/custom-tab-bar.md)|底部tabbar自定义组件|
+|[custom-tab-bar](/component/custom-tab-bar.md)|Bottom tabbar custom component|
 |[navigation-bar](/component/navigation-bar.md)|页面顶部导航|
+|[navigation-bar](/component/navigation-bar.md)|Top Navigation|
 |[page-meta](/component/page-meta.md)|页面属性配置节点|
+|[page-meta](/component/page-meta.md)|Page property configuration node|
 
 **uniCloud**
 
@@ -332,11 +375,13 @@ Basic components are divided into the following ten categories:
 | Component name| Instruction|
 |:-|:-|
 |[unicloud-db组件](/uniCloud/unicloud-db)|uniCloud数据库访问和操作组件|
+|[unicloud-db component](/uniCloud/unicloud-db)|uniCloud database access and manipulation component|
 
 **各平台专有组件**
 **Specific components for each platform**
 
 在小程序平台和nvue平台，还有一些专有组件，比如open-data，详见左侧导航
+On the applet platform and nvue platform, there are also some proprietary components, such as open-data, see the left navigation for details
 
 ### 扩展组件的意义
 ### Meaning of extending components
@@ -376,14 +421,20 @@ Advantages of encapsulated extended components:
 ### Component categories
 
 uni-app支持的组件分为vue组件和小程序自定义组件。
+The components supported by uni-app are divided into vue components and small program custom components.
 
 如果你还不了解这两种组件，可以参阅各自的文档
+If you don't know about these two components, you can refer to their respective documentation
 - vue组件：[文档](https://uniapp.dcloud.net.cn/tutorial/vue-components?id=%e6%a6%82%e5%bf%b5)
+- vue components: [documentation](https://uniapp.dcloud.net.cn/tutorial/vue-components?id=%e6%a6%82%e5%bf%b5)
 - 小程序自定义组件：其规范不是vue规范，而是小程序规范，[文档](https://uniapp.dcloud.net.cn/tutorial/miniprogram-subject.html#小程序自定义组件支持)
+- Miniprogram custom component: its specification is not the vue specification, but the miniprogram specification, [document](https://uniapp.dcloud.net.cn/tutorial/miniprogram-subject.html#%E5%B0%8F% E7%A8%8B%E5%BA%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E6%94%AF%E6% 8C%81)
 
 日常开发来讲，推荐使用vue组件。uni-app支持小程序组件主要是为了兼容更多生态资源。
+For daily development, it is recommended to use vue components. uni-app supports applet components mainly to be compatible with more ecological resources.
 
 如果扩展组件符合uni-app的`easycom`组件规范，则可以免注册，直接使用。比如uni-ui扩展组件就符合`easycom`组件规范。
+If the extension component conforms to the `easycom` component specification of uni-app, it can be used directly without registration. For example, the uni-ui extension component conforms to the `easycom` component specification.
 
 如果组件不符合easycom规范，则需要在代码里手动import和注册组件，然后才能使用。
 For the components not conforming to the easycom specification, you need to manually import and register these components in the code before implementation.
@@ -487,6 +538,7 @@ uni_module还支持云端一体的插件。
 uni_module also supports plug-ins for cloud integration.
 
 uni_module有详细的专项文档，请另行查阅[uni_module规范](/plugin/uni_modules.html)。
+uni_module has detailed special documents, please refer to [uni_module specification](/plugin/uni_modules.html).
 
 ### uniCloud组件
 ### uniCloud component
@@ -501,8 +553,10 @@ Among the basic components of uni-app, there is a special basic component: `<uni
 It can directly acquire and operate the cloud database of uniCloud at the front end.
 
 相关文档详见：[unicloud-db组件](/uniCloud/unicloud-db)
+For related documents, see: [unicloud-db component](/uniCloud/unicloud-db)
 
 除了内置的数据库组件，在uni-ui扩展库里还有uniCloud的文件选择和上传组件，参考：[uni-file-picker](https://ext.dcloud.net.cn/plugin?id=4079)
+In addition to the built-in database components, there are uniCloud file selection and upload components in the uni-ui extension library, refer to: [uni-file-picker](https://ext.dcloud.net.cn/plugin?id=4079 )
 
 ### 原生组件和原生插件
 ### Native components and native plug-ins
@@ -562,6 +616,7 @@ Encapsulating components involves a lot of knowledge, and related documents can 
 ### Expanded component (uni-ui)@uniui
 
 详见: [uni-ui介绍](/component/uniui/uni-ui.md)
+See: [uni-ui introduction](/component/uniui/uni-ui.md)
 
 **更多组件**
 **More components**
@@ -570,3 +625,4 @@ Encapsulating components involves a lot of knowledge, and related documents can 
 In addition to basic components and uni-ui, there are more extension components and templates in the plug-in market, including front-end components and native extension components. For details, see [Plug-in market](https://ext.dcloud.net.cn/).
 
 关于其他vue的web组件库、小程序组件库是否能在uni-app中使用的问题，参考[https://ask.dcloud.net.cn/article/35489](https://ask.dcloud.net.cn/article/35489)
+For questions about whether other vue web component libraries and applet component libraries can be used in uni-app, please refer to [https://ask.dcloud.net.cn/article/35489](https://ask.dcloud. net.cn/article/35489)

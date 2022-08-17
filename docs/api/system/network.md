@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.getNetworkType(OBJECT)
 获取网络类型。
 Get the network type.
@@ -69,6 +70,7 @@ listening to network status change. You can use `uni.offNetworkStatusChange` to 
 | Parameter| Type| Instruction| Platform difference description|
 |:-|:-|:-|:-|
 |isConnected|Boolean|当前是否有网络连接|字节跳动小程序不支持|
+|isConnected|Boolean|Is there a current network connection|Not supported by the ByteDance applet|
 |networkType|String|网络类型|&nbsp;|
 | networkType| String| Network type|  |
 
@@ -90,8 +92,10 @@ Cancel listening to network status change.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 3.0.1+|HBuilderX 3.0.1+|基础库 2.9.3+|x|x|x|x|√|x|
+|HBuilderX 3.0.1+|HBuilderX 3.0.1+|Basic Library 2.9.3+|x|x|x|x|√|x|
 
 **Tips**
 - `CALLBACK`必须为调用`uni.onNetworkStatusChange`时传入的`CALLBACK`

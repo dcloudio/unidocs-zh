@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 **uni-app和原生App混合开发问题：** 
 **Mixed development issues of uni-app and native App:**
 
@@ -16,30 +17,47 @@ First of all, please be sure to confirm the question of who is the master and wh
 如果应用是uni-app开发为主，只是想离线打包，那么不应该使用uni小程序sdk，而是使用App离线打包SDK，[参考](https://nativesupport.dcloud.net.cn/AppDocs/README)。
 If the application is developed mainly by uni-app and you just want to package it offline, then you should not use the uni applet SDK but the App offline packaging SDK, [refer to](https://nativesupport.dcloud.net.cn/AppDocs/README). Also note that offline packaging cannot enjoy paid native plug-ins in the plug-in market. If you have relevant requirements, you need to develop your own native plug-ins.
 另注意离线打包无法享受插件市场的付费原生插件，如有相关需求需自己进行原生插件开发。
+Also note that offline packaging cannot enjoy paid native plugins in the plugin market. If you have relevant needs, you need to develop native plugins yourself.
 
 **uni-app和原生小程序混合开发问题：** 
+**The problem of mixed development of uni-app and native applet:**
 
 - 方式1：把原生小程序转换为uni-app源码。有各种转换工具，[详见](translate.md)
+- Method 1: Convert native applet to uni-app source code. There are various conversion tools, [see details](translate.md)
 - 方式2：新建一个uni-app项目，把原生小程序的代码变成小程序组件，进而整合到uni-app项目下。uni-app支持使用小程序wxml组件，[参考](/tutorial/miniprogram-subject.html#小程序自定义组件支持)
+- Method 2: Create a new uni-app project, turn the code of the native applet into a applet component, and then integrate it into the uni-app project. uni-app supports the use of miniprogram wxml components, [Reference](/tutorial/miniprogram-subject.html#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87%AA%E5% AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81)
 - 方式3：原生开发的小程序仍保留，部分新功能使用uni-app开发。
+- Method 3: The natively developed applet is still retained, and some new functions are developed using uni-app.
   * 使用发行为混合分包的功能
+  * Use the feature that releases as a mixed subpackage
     + 在 HBuilderX 3.1.0+ 中点击发行小程序的菜单，勾选发行混合分包，填写分包目录名称，打包后，将对应目录文件拷贝至已有小程序中，需要自己补充原小程序app.json中的页面或分包配置
+    + In HBuilderX 3.1.0+, click the menu of the distribution applet, check the release mixed subpackage, fill in the subpackage directory name, after packaging, copy the corresponding directory file to the existing applet, you need to supplement the original applet app by yourself Page or subpackage configuration in .json
     
       ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/dc4655a0-62e2-11eb-bdc1-8bd33eb6adaa.png)
       
     + 在 cli 中，执行命令：`npm run build:mp-weixin -- --subpackage=sub1` 或 `yarn build:mp-weixin --subpackage=sub1`
+    + In cli, execute the command: `npm run build:mp-weixin -- --subpackage=sub1` or `yarn build:mp-weixin --subpackage=sub1`
     
     注意：
+    Notice:
   
     * 发行混合分包后，App.vue中的onLaunch会在首次进入分包时触发(HBuilderX 3.1.1+)。
+    * After the mixed sub-package is released, the onLaunch in App.vue will be triggered when the sub-package is entered for the first time (HBuilderX 3.1.1+).
     * 开发时需要将资源(图片，css，js等)、页面的绝对路径调整为相对路径，否则打包到原生小程序中时，可能出现路径查找错误。
+    * During development, it is necessary to adjust the absolute path of resources (images, css, js, etc.) and pages to relative paths, otherwise, when packaged into the native applet, path search errors may occur.
     * 需要自己把页面或分包配置添加到已有小程序的app.json中。
+    * You need to add the page or subpackage configuration to the app.json of the existing applet.
     * 目前支持微信小程序、百度小程序、支付宝小程序、字节跳动小程序、飞书小程序、QQ小程序。
+    * Currently supports WeChat applet, Baidu applet, Alipay applet, ByteDance applet, Feishu applet, and QQ applet.
 
   * 三方开发者插件，[参考](https://ext.dcloud.net.cn/plugin?id=1560)
+  * Third-party developer plugin, [Reference](https://ext.dcloud.net.cn/plugin?id=1560)
 
 如果想充分发挥uni-app的跨端特性，编译到各种其他小程序平台，建议使用方案1。
+If you want to give full play to the cross-end features of uni-app and compile it to various other small program platforms, it is recommended to use scheme 1.
 
 如果不需要其他小程序平台，仅需要h5和app，那方案1和方案2均可。
+If you don't need other small program platforms, only need h5 and app, then plan 1 and plan 2 can be used.
 
 如果只需要开发微信小程序，但想使用vue的方式开发、或者想利用uni-app的插件生态、或者部分页面想跨多端复用，那么使用方案3。
+If you only need to develop WeChat mini-programs, but want to use Vue to develop, or want to use the plug-in ecology of uni-app, or want to reuse some pages across multiple terminals, then use option 3.

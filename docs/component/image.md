@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### image
 
 图片。
@@ -11,11 +12,15 @@ Image.
 |mode|String|'scaleToFill'|图片裁剪、缩放的模式|<div style="width:68px;"></div>|
 | mode| String| 'scaleToFill'| Modes of image cropping and zooming| <div style="width:68px;"></div>|
 |lazy-load|Boolean|false|图片懒加载。只针对page与scroll-view下的image有效|微信小程序、百度小程序、字节跳动小程序、飞书小程序|
+|lazy-load|Boolean|false|The image is loaded lazily. Only valid for images under page and scroll-view|WeChat applet, Baidu applet, ByteDance applet, Feishu applet|
 |fade-show|Boolean|true|图片显示动画效果|仅App-nvue 2.3.4+ Android有效|
 | fade-show| Boolean| true| Animation effect of the image display| Only valid on App-nvue 2.3.4+ Android|
 |webp|boolean|false|在系统不支持webp的情况下是否单独启用webp。默认false，只支持网络资源。webp支持详见下面说明|微信小程序2.9.0|
+|webp|boolean|false|Whether to enable webp alone if the system does not support webp. The default is false, only network resources are supported. For details on webp support, please refer to the following instructions|WeChat applet 2.9.0|
 |show-menu-by-longpress|boolean|false|开启长按图片显示识别小程序码菜单|微信小程序2.7.0|
+|show-menu-by-longpress|boolean|false|Enable long-press on the picture to display the identification applet code menu|WeChat applet 2.7.0|
 |draggable|boolean|true|是否能拖动图片|H5 3.1.1+、App（iOS15+）|
+|draggable|boolean|true|Can drag pictures|H5 3.1.1+, App (iOS15+)|
 |@error|HandleEvent||当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: 'something wrong'}||
 | @error| HandleEvent| | When an error occurs, event name is released to AppService whose event object is event.detail = {errMsg: 'something wrong'}| |
 |@load|HandleEvent||当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:'图片高度px', width:'图片宽度px'}|&nbsp;|
@@ -24,6 +29,7 @@ Image.
 **Tips**
 
 - `<image>` 组件默认宽度 320px、高度 240px；`app-nvue平台，暂时默认为屏幕宽度、高度 240px；`
+- `<image>` component default width 320px, height 240px; `app-nvue platform, temporarily default to screen width, height 240px;`
 - `src` 仅支持相对路径、绝对路径，支持 base64 码；
 - `src` only supports relative path, absolute path, and base64 code;
 - 页面结构复杂，css样式太多的情况，使用 image 可能导致样式生效较慢，出现 “闪一下” 的情况，此时设置 `image{will-change: transform}` ,可优化此问题。
@@ -31,11 +37,16 @@ Image.
 - 自定义组件里面使用 `<image>`时，若 `src` 使用相对路径可能出现路径查找失败的情况，故建议使用绝对路径。
 - When using `<image>` in a custom component, if `src` uses a relative path, the path search may fail. Therefore, it is recommended to use an absolute path.
 - svg 格式的图片在不同的平台支持情况不同。具体为：app-nvue 不支持 svg 格式的图片，小程序上只支持网络地址。
+- Images in svg format are supported differently on different platforms. Specifically: app-nvue does not support images in svg format, and only network addresses are supported on the applet.
 
 - webp图片支持详解
+- Detailed explanation of webp image support
   * Android4以上（含）、iOS14以上（含）系统内置支持webp，此时，不管web、小程序、app，也不管vue还是nvue都可以直接使用webp；
+  * Android4 or above (inclusive), iOS14 or above (inclusive), the system has built-in support for webp. At this time, no matter web, applet, app, or vue or nvue, you can use webp directly;
   * iOS14以下，app-vue下，iOS不支持；app-nvue下，iOS支持；微信小程序2.9.0起，配置属性webp为true时iOS支持；
+  * Below iOS14, under app-vue, iOS is not supported; under app-nvue, iOS is supported; WeChat applet 2.9.0 onwards, iOS supports when the configuration property webp is true;
   * pc浏览器上，webp在不同浏览器的支持详见：[https://caniuse.com/?search=webp](https://caniuse.com/?search=webp)
+  * On PC browsers, please refer to the support of webp in different browsers: [https://caniuse.com/?search=webp](https://caniuse.com/?search=webp)
 
 
 **mode 有效值：**
@@ -56,6 +67,7 @@ There are 14 modes, 5 of which are zooming modes and 9 are cropping modes.
 |缩放|widthFix|宽度不变，高度自动变化，保持原图宽高比不变|
 | Zoom| widthFix| The width is unchanged, the height changes automatically, and the aspect ratio of the original image is preserved|
 |缩放|heightFix|高度不变，宽度自动变化，保持原图宽高比不变 **App 和 H5 平台 HBuilderX 2.9.3+ 支持、微信小程序需要基础库 2.10.3**|
+|Zoom|heightFix|The height does not change, the width changes automatically, and the aspect ratio of the original image remains unchanged **App and H5 platform HBuilderX 2.9.3+ support, WeChat applet requires basic library 2.10.3**|
 |裁剪|top|不缩放图片，只显示图片的顶部区域|
 | Crop| top| Don't zoom the image, but show the top area of the image only|
 |裁剪|bottom|不缩放图片，只显示图片的底部区域|

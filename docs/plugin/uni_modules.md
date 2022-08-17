@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 # uni_modules
 
 ### 什么是 uni_modules
@@ -43,15 +44,19 @@ What are the advantages of `uni_modules` compared with ordinary plugins in the p
 ### Directory structure
 
 #### 项目插件的uni_modules
+#### uni_modules for project plugins
 
 `uni_modules`插件如果是项目类型的插件，只需要在项目的根目录下放一个符合`uni_modules`规范的package.json。
 If the `uni_modules` plugin is a project type plugin, you only need to put a package.json that conforms to the `uni_modules` specification in the root directory of the project.
 
 右键点击这个package.json，即可对这个项目插件进行更新、或发布到插件市场。
+Right-click on the package.json to update the project plugin or publish it to the plugin marketplace.
 
 比如[uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)、[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)，都可以通过这种方式更新。
+For example [uni-admin](https://ext.dcloud.net.cn/plugin?id=3268), [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057) , can be updated in this way.
 
 #### 非项目插件的uni_modules
+#### uni_modules for non-project plugins
 
 如果是非项目类型的插件，比如组件、js sdk、页面模板、云函数，则需要放置在项目的`uni_modules`目录下。
 If it is a plug-in of non-project type, such as component, js sdk, page template and cloud function, it needs to be placed in the `uni_modules` directory of the project.
@@ -78,11 +83,13 @@ uni_modules                                项目根目录下
 </pre>
 
 也就是`uni_modules`目录下相当于复制一遍uni-app的项目结构。
+That is, the `uni_modules` directory is equivalent to duplicating the project structure of uni-app.
 
 **Tips**
 - 插件目录不支持pages.json、App.vue、main.js、manifest.json、uni.scss文件，如果需要插件使用者修改这些文件内容，请在插件文档(readme.md)中详细说明。
 - Files of pages.json, App.vue, main.js, manifest.json and uni.scss are not supported in the plug-in directory. If plug-in users need to modify the contents of these files, please elaborate in detail in the plug-in document (readme.md).
 - 插件目录支持`pages_init.json`，可以方便注册页面到项目的pages.json中，[见下](?id=pages-init)
+- The plugin directory supports `pages_init.json`, which can easily register pages to the project's pages.json, [see below](?id=pages-init)
 - 在插件内部引用资源、跳转页面时，请尽量使用相对路径。
 - When referencing resources or jumping pages inside plug-ins, please use relative paths as much as possible.
 - 插件内components目录同样支持easycom规范，插件使用者可以直接在项目中使用插件内符合easycom规范的组件，当项目或插件内存在easycom组件冲突，编译时会给予提示，您可以通过修改组件目录及组件文件名称来解决冲突问题。
@@ -90,17 +97,22 @@ uni_modules                                项目根目录下
 
 
 在HBuilderX中，`uni_modules`下如果包含了uniCloud目录的内容，会被以引用的方式，显示到主项目根目录下的uniCloud中。此时文件前的图标左下角会显示一个快捷方式箭头。
+In HBuilderX, if `uni_modules` contains the contents of the uniCloud directory, it will be displayed in uniCloud in the root directory of the main project by way of reference. A shortcut arrow will appear in the lower left corner of the icon in front of the file.
 
 如下图，项目中有一个`uni_modules`名为`uni-config-center`，它下面包含了名为`uni-config-center`的公共模块。所以在项目根目录的公共模块目录common下，也会多出一个`uni-config-center`。
+As shown in the figure below, there is a `uni_modules` named `uni-config-center` in the project, which contains a public module named `uni-config-center`. Therefore, under the common module directory common in the project root directory, there will also be an additional `uni-config-center`.
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/576ee0d7-a473-4ee9-bd9e-f1afcbcbff6d.jpg)
 
 HBuilderX 中打开配有引用图标指示的文件，会打开原始地址。
+Opening a file indicated by a reference icon in HBuilderX will open the original address.
 
 ### 使用 uni_modules 插件
 ### Use uni_modules plug-in
 #### 下载uni_modules插件
+#### Download uni_modules plugin
 1. 在[插件市场](https://ext.dcloud.net.cn/)查找uni_modules插件
+1. Find the uni_modules plugin in [Plugin Market](https://ext.dcloud.net.cn/)
 2. 在插件详情页,右侧会标明该插件是否支持uni_modules，点击`使用 HBuilderX 导入插件`
 2. On the plug-in details page, the right side will indicate whether the plug-in supports uni_modules, click`Use HBuilderX to import the plug-ins`
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/3f6e2c00-622c-11eb-bdc1-8bd33eb6adaa.png)
@@ -118,6 +130,7 @@ import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 ```
 
 - 如果要使用uni_modules中的页面，[见下](?id=pages-init)
+- If you want to use pages from uni_modules, [see below](?id=pages-init)
 
 
 #### 安装uni_modules插件依赖
@@ -284,9 +297,12 @@ package-lock.json
 - The `.npmignore` in the project root directory is effective for publishing projects and plug-in templates. `uni_modules/Plug-in Id/.npmignore` Effective for published plug-ins
 
 #### pages_init页面注册@pages-init
+#### pages_init page registration @pages-init
 > 新增于HBuilderX 3.5.0+
+> Added in HBuilderX 3.5.0+
 
 过去，插件作者提供页面类插件时，需要在文档中手动告知使用者在pages.json中注册哪些页面。如：
+In the past, when plugin authors provided page class plugins, they needed to manually inform users in the documentation which pages to register in pages.json. like:
 
 ```json
 {
@@ -297,12 +313,16 @@ package-lock.json
 ```
 
 `pages_init.json`解决了这个烦恼。
+`pages_init.json` solves this annoyance.
 
 当uni_modules插件根目录下存在`pages_init.json`文件，在插件导入工程时，会弹出一个合并页面路由的pages.json修改界面。插件使用者点击确认按钮即可完成插件页面向项目pages.json的注册。
+When the `pages_init.json` file exists in the root directory of the uni_modules plugin, when the plugin imports the project, a pages.json modification interface for merging page routes will pop up. Plug-in users click the Confirm button to complete the registration of the plug-in page to the project pages.json.
 
 示例插件：[问题反馈页面管理员端模板](https://ext.dcloud.net.cn/plugin?id=4992)
+Example plugin: [Problem Feedback Page Admin Template](https://ext.dcloud.net.cn/plugin?id=4992)
 
 示例代码如下：
+The sample code is as follows:
 ```json
 {
     "pages": [{
@@ -328,6 +348,7 @@ package-lock.json
 ```
 
 完整的pages参数[详情查看](https://uniapp.dcloud.io/collocation/pages.html#pages)
+Complete pages parameters [details view](https://uniapp.dcloud.io/collocation/pages.html#pages)
 
 HBuilderX中合并路由界面效果图：
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/23fc53b6-3000-4d2b-a033-22e561c236a5.png)
@@ -335,8 +356,11 @@ HBuilderX中合并路由界面效果图：
 **注意**
 **Notice**
 - `pages_init.json`文件最终不会导入到工程中。
+- The `pages_init.json` file will not eventually be imported into the project.
 - `pages_init.json` 暂不支持带注释(包括：条件编译)。
+- `pages_init.json` does not support annotations (including: conditional compilation).
 - 如果HBuilderX版本低于3.5，或插件作者并没有提供`pages_init.json`，那么仍然需要手动编辑pages.json注册页面。
+- If the HBuilderX version is lower than 3.5, or the plugin author does not provide `pages_init.json`, you still need to manually edit the pages.json registration page.
 
 ### 开发 uni_modules 插件
 ### Develop uni_modules plug-in
@@ -444,4 +468,5 @@ When your plug-in has added new functions or fixed bugs, and a new version needs
  - 右键package.json，点击`发布到插件市场`，选择分类，填写插件信息（尽可能与插件市场已有信息保持一致）
  - Right-click package.json and click `Release to plug-in market`, select the classification, and fill in the plug-in information (consistent with the existing information in the plug-in market as much as possible)
  - 发布成功后，您可以在插件市场的插件详情页右侧，查看到您的插件已同时提供了`uni_modules`版本和非`uni_modules`版本（仅保留最后一个非`uni_modules`版本）
+ - After the release is successful, you can view on the right side of the plugin details page of the plugin market that your plugin has both the `uni_modules` version and the non-`uni_modules` version (only the last non-`uni_modules` version is kept)
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/47c2a2f0-62db-11eb-a16f-5b3e54966275.png)

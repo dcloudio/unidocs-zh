@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.pageScrollTo(OBJECT)
 
 将页面滚动到目标位置。
@@ -9,8 +10,10 @@ Scroll the page to the target location.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|华为快应用|360小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Huawei Quick App|360 applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√(nvue不支持)|√|√|√|√|√|√|√|√|
+|√(nvue does not support)|√|√|√|√|√|√|√|√|
 
 
 
@@ -25,6 +28,7 @@ Scroll the page to the target location.
 |scrollTop|Number		|否		|滚动到页面的目标位置（单位px）										|
 | scrollTop| Number| No| Scroll to the target location on the page (in px)|
 |selector	|String		|否		|选择器，App、H5、微信小程序2.7.3+ 、支付宝小程序1.20.0+支持		|
+|selector |String |No |Selector, App, H5, WeChat applet 2.7.3+, Alipay applet 1.20.0+ support |
 |duration	|Number		|否		|滚动动画的时长，默认300ms，单位 ms								|
 | duration| Number| No| The duration of scrolling animation with the default of 300ms, in ms|
 |success	|function	|否		|接口调用成功的回调函数														|

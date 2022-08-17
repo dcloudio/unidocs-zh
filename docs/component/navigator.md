@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### navigator
 
 页面跳转。
@@ -22,16 +23,19 @@ The function of this component has an API method, see also: [https://uniapp.dclo
 |delta|Number||当 open-type 为 'navigateBack' 时有效，表示回退的层数||
 | delta| Number| | Valid when open-type is 'navigateBack', indicating the number of returned layers| |
 |animation-type|String|pop-in/out|当 open-type 为 navigate、navigateBack 时有效，窗口的显示/关闭动画效果，详见：[窗口动画](/api/router?id=animation)|App|
+|animation-type|String|pop-in/out|It is valid when the open-type is navigate, navigateBack, the window display/close animation effect, see: [window animation](/api/router?id=animation)| App|
 |animation-duration|Number|300|当 open-type 为 navigate、navigateBack 时有效，窗口显示/关闭动画的持续时间。|App|
 | animation-duration| Number| 300| Valid when open-type is navigate and navigateBack, indicating the animation duration of window turning on/off.| App|
 |hover-class|String|navigator-hover|指定点击时的样式类，当hover-class="none"时，没有点击态效果||
 | hover-class| String| navigator-hover| Specify the style class when clicking. For hover-class="none", there is no click state| |
 |hover-stop-propagation|Boolean|false|指定是否阻止本节点的祖先节点出现点击态|微信小程序|
+|hover-stop-propagation|Boolean|false|Specifies whether to prevent the ancestor node of this node from appearing in the click state|WeChat applet|
 |hover-start-time|Number|50|按住后多久出现点击态，单位毫秒||
 | hover-start-time| Number| 50| How long does the click state appear after pressing, in milliseconds| |
 |hover-stay-time|Number|600|手指松开后点击态保留时间，单位毫秒|&nbsp;|
 | hover-stay-time| Number| 600| Retention time of the click state after finger release, in milliseconds|  |
 |target|String|self|在哪个小程序目标上发生跳转，默认当前小程序，值域self/miniProgram|微信2.0.7+、百度2.5.2+、QQ|
+|target|String|self| on which mini-program target the jump occurs, the default is the current mini-program, the value range is self/miniProgram|WeChat 2.0.7+, Baidu 2.5.2+, QQ|
 
 **open-type 有效值**
 **open-type valid value**
@@ -46,9 +50,11 @@ The function of this component has an API method, see also: [https://uniapp.dclo
 |switchTab|对应 uni.switchTab 的功能||
 | switchTab| Function corresponding to uni.switchTab| |
 |reLaunch|对应 uni.reLaunch 的功能|字节跳动小程序与飞书小程序不支持|
+|reLaunch|Corresponding to the function of uni.reLaunch|ByteDance applet and Feishu applet are not supported|
 |navigateBack|对应 uni.navigateBack 的功能||
 | navigateBack| Function corresponding to uni.navigateBack| |
 |exit|退出小程序，target="miniProgram"时生效|微信2.1.0+、百度2.5.2+、QQ1.4.7+|
+|exit|Exit the Mini Program, it will take effect when target="miniProgram"|WeChat 2.1.0+, Baidu 2.5.2+, QQ1.4.7+|
 
 
 **注意**
@@ -62,6 +68,7 @@ The function of this component has an API method, see also: [https://uniapp.dclo
 - app-nvue 平台只有纯nvue项目（render为native）才支持 `<navigator>`。非render为native的情况下，nvue暂不支持navigator组件，请使用API跳转。
 - The app-nvue platform only supports `<navigator>` for pure nvue projects (render is native). If not rendered as native, nvue temporarily does not support navigator component. Please use API to redirect.
 - app下退出应用，Android平台可以使用[plus.runtime.quit](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.quit)。iOS没有退出应用的概念。
+- Exit the app under the app, and the Android platform can use [plus.runtime.quit](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.quit). iOS has no concept of exiting an app.
 - [uLink组件](https://ext.dcloud.net.cn/plugin?id=1182)是navigator组件的增强版，样式上自带下划线，功能上支持打开在线网页、其他App的schema、mailto发邮件、tel打电话。
 - [uLink component](https://ext.dcloud.net.cn/plugin?id=1182) is an enhanced version of the navigator component, with its own underline on the style. Functionally, it supports opening online web pages, schema of other apps, mailto, and tel.
 
@@ -102,6 +109,7 @@ export default {
 :::
 
 url有长度限制，太长的字符串会传递失败，可使用[窗体通信](https://uniapp.dcloud.io/tutorial/page.html#emit)、[全局变量](https://ask.dcloud.net.cn/article/35021)，或`encodeURIComponent`等多种方式解决，如下为`encodeURIComponent`示例。
+The url has a length limit. Too long strings will fail to be delivered. You can use [Form Communication](https://uniapp.dcloud.io/tutorial/page.html#emit), [Global Variables](https:// ask.dcloud.net.cn/article/35021), or `encodeURIComponent` and other solutions, the following is an example of `encodeURIComponent`.
 ```html
 <navigator :url="'/pages/navigate/navigate?item='+ encodeURIComponent(JSON.stringify(item))"></navigator>
 ```

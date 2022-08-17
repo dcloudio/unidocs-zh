@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.createAnimation(OBJECT)
 
 创建一个动画实例 [animation](#animation)。调用实例的方法来描述动画。最后通过动画实例的export方法导出动画数据传递给组件的animation属性。
@@ -7,6 +8,7 @@ Create an animation instance [animation](#animation). Call the method of the ins
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|HBuilderX 2.0.4+|√|√|√|√|√|x|x|
 

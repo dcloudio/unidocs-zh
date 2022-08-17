@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### component
 
 渲染一个“元组件”为动态组件。依 `is` 的值，来决定哪个组件被渲染。[详见](https://cn.vuejs.org/v2/api/#component)
@@ -9,6 +10,7 @@ Render a "meta-component" as a dynamic component. Which component is rendered de
 **Platform difference description**
 
 |App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
+|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |√	|√	|x			|x				|x			|x				|x			|x		|x			|x			|x			|
 
@@ -32,6 +34,7 @@ Render a "meta-component" as a dynamic component. Which component is rendered de
 **Platform difference description**
 
 |App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
+|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |√	|√	|√			|√				|√			|√				|√			|√		|√			|√			|√			|
 
@@ -86,6 +89,7 @@ Render a "meta-component" as a dynamic component. Which component is rendered de
 **Platform difference description**
 
 |App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
+|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |x	|√	|x			|x				|x			|x				|x			|x		|x			|x			|x			|
 
@@ -103,6 +107,7 @@ Render a "meta-component" as a dynamic component. Which component is rendered de
 **Platform difference description**
 
 |App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
+|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |x	|√	|x			|x				|x			|x				|x			|x		|x			|x			|x			|
 
@@ -119,6 +124,7 @@ When `<keep-alive>` wraps dynamic components, inactive component instances are c
 **Platform difference description**
 
 |App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
+|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |x	|√	|x			|x				|x			|x				|x			|x		|x			|x			|x			|
 
@@ -137,6 +143,7 @@ For detailed usage, please refer to the links of the following tutorials. [Distr
 **Platform difference description**
 
 |App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
+|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |√	|√	|√			|√				|√			|√				|√			|√		|√			|√			|√			|
 

@@ -1,7 +1,9 @@
+<md-translatedByGoogle />
 **低功耗蓝牙 API 平台差异说明**
 **Platform difference description for low power Bluetooth APIs**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|Feishu applet|QQ applet|Kuishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|x|x|√|x|x|√|
 
@@ -49,6 +51,7 @@ Write binary data into the characteristic value of the low power Bluetooth devic
 |value|ArrayBuffer||是|蓝牙设备特征值对应的二进制值|
 | value| ArrayBuffer| | Yes| Binary value corresponding to the characteristic value of Bluetooth device|
 |writeType|string||是|蓝牙特征值的写模式设置，有两种模式，iOS 优先 write，安卓优先 writeNoResponse 。微信小程序支持|
+|writeType|string|| is the writing mode setting of |Bluetooth eigenvalues. There are two modes, iOS prioritizes write, and Android prioritizes writeNoResponse . WeChat applet support|
 |success|function||否|接口调用成功的回调函数|
 | success| function| | No| Callback function for successful interface calling|
 |fail|function||否|接口调用失败的回调函数|
@@ -60,9 +63,12 @@ Write binary data into the characteristic value of the low power Bluetooth devic
 **writeType**
 
 |属性|说明|
+|Properties|Description|
 |:-|:-|
 |write|强制回复写，不支持时报错|
+|write|Forcibly reply writing, an error is reported when it is not supported|
 |writeNoResponse|强制无回复写，不支持时报错|
+|writeNoResponse|Force no reply write, report an error if not supported|
 
 
 #### 错误
@@ -94,9 +100,13 @@ Write binary data into the characteristic value of the low power Bluetooth devic
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 #### 注意
 #### Notice
@@ -191,9 +201,13 @@ Read the binary data value of the characteristic value of the low power Bluetoot
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 #### 注意
 #### Notice
@@ -353,9 +367,13 @@ Notice: Only when the characteristic value of the necessary device supports noti
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 #### 注意
 #### Notice
@@ -455,9 +473,13 @@ Obtain all services of the Bluetooth devices.
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 #### 示例代码
 #### Sample code
@@ -617,6 +639,7 @@ If the APP has searched for a Bluetooth device beforehand and successfully conne
 |deviceId|string||是|用于区分设备的 id|
 | deviceId| string| | Yes| Id used to distinguish the devices|
 |timeout|number||否|超时时间，单位ms，不填表示不会超时，京东小程序不支持|
+|timeout|number||No|Timeout time in ms
 |success|function||否|接口调用成功的回调函数|
 | success| function| | No| Callback function for successful interface calling|
 |fail|function||否|接口调用失败的回调函数|
@@ -653,9 +676,13 @@ If the APP has searched for a Bluetooth device beforehand and successfully conne
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 #### 注意
 #### Notice
@@ -730,9 +757,13 @@ Disconnect from low power Bluetooth devices.
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 |10010|already connect|已连接|
+|10010|already connect|Connected|
 |10011|need pin|配对设备需要配对码|
+|10011|need pin|Pairing device requires pairing code|
 |10012|operate time out|连接超时|
+|10012|operate time out|Connection timed out|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
+|10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
 #### 示例代码
 #### Sample code

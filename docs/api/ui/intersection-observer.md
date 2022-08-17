@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 节点布局交叉状态 API 可用于监听两个或多个组件节点在布局位置上的相交状态。这一组API常常可以用于推断某些节点是否可以被用户看见、有多大比例可以被用户看见。
 The node layout intersection status API can be used to listen to the intersection status of two or more component nodes in the layout position. This set of APIs can often be used to deduce whether or to what extent certain nodes are visible to users.
 
@@ -9,6 +10,7 @@ Create and return a `IntersectionObserver` object instance.
 **this description:**
 
 自定义组件实例。**支付宝小程序不支持此参数，传入仅为抹平写法差异**
+Custom component instance. **Alipay applet does not support this parameter, the input is only to smooth out the writing difference**
 
 **options 的可选参数为：**
 **Optional parameters of options are:**

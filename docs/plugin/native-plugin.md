@@ -163,11 +163,13 @@ Use the API of uni.requireNativePlugin, with the parameter set as the id of the 
 
 1.在页面引入原生插件，uni.requireNativePlugin 使用后返回一个对象：
 1. Introduce a native plug-in to the page, and uni.requireNativePlugin returns an object after use:
+1. Introduce a native plug-in to the page, and uni.requireNativePlugin returns an object after use:
 
 ```js
 const dcRichAlert = uni.requireNativePlugin('DCloud-RichAlert')
 ```
 2.使用原生插件
+2. Use native plugins
 2. Use native plugins
 
 ```js
@@ -210,5 +212,7 @@ You should resubmit to the cloud side for packaging (the "Custom Base" should be
 #### Precautions
 1.可以在 插件市场 查看更多插件，如需开发uni原生插件请参考 [uni原生插件开发文档](https://nativesupport.dcloud.net.cn/NativePlugin/README)。
 1. You can view more plugins in the plugin market. If you need to develop uni native plugins, please refer to [uni native plugin development documentation](https://nativesupport.dcloud.net.cn/NativePlugin/README).
+1. You can view more plugins in the plugin market. If you need to develop uni native plugins, please refer to [uni native plugin development documentation](https://nativesupport.dcloud.net.cn/NativePlugin/README).
 2.如果插件需要传递文件路径，则需要传手机文件的绝对路径，可使用 5+ [IO模块](http://www.html5plus.org/doc/zh_cn/io.html) 的相关 API 得到文件的绝对路径。
+2. If the plugin needs to pass the file path, it needs to pass the absolute path of the mobile phone file. You can use the related API of 5+ [IO module](http://www.html5plus.org/doc/zh_cn/io.html) to get the file absolute path.
 2. If the plugin needs to pass the file path, it needs to pass the absolute path of the mobile phone file. You can use the relevant API of 5+ [IO module](http://www.html5plus.org/doc/zh_cn/io.html) to get the file absolute path.

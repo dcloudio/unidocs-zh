@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 vue.config.js 是一个可选的配置文件，如果项目的根目录中存在这个文件，那么它会被自动加载，一般用于配置 webpack 等编译选项，具体规范参考：[vue.config.js](https://cli.vuejs.org/zh/config/#vue-config-js)
 vue.config.js is an optional configuration file. If this file exists in the root directory of the project, it will be automatically loaded. It is generally used to configure compilation options such as webpack. For specific specifications, please refer to [vue.config.js](https://cli.vuejs.org/zh/config/#vue-config-js)
 
@@ -18,6 +19,7 @@ vue.config.js is an optional configuration file. If this file exists in the root
 Part of configuration items will be overwritten by compilation configuration, for example:
 
 * publicPath  不支持，如果需要配置，请在 manifest.json->h5->router->base 中配置，参考文档：[h5-router](/collocation/manifest?id=h5-router)
+* publicPath does not support, if you need to configure, please configure in manifest.json->h5->router->base, refer to the document: [h5-router](/collocation/manifest?id=h5-router)
 * outputDir  不支持
 * outputDir, not supported
 * assetsDir 固定 static
@@ -64,6 +66,7 @@ module.exports = {
 
 ```js
 // 示例从插件市场下载 mp-storage
+// Example download mp-storage from plugin market
 const webpack = require('webpack')
 
 module.exports = {
@@ -168,5 +171,8 @@ module.exports = {
 ```
 
 启用压缩的方法：
+Ways to enable compression:
 - HBuilderX创建的项目勾选运行-->运行到小程序模拟器-->运行时是否压缩代码
+- Check Run for the project created by HBuilderX-->Run to Mini Program Simulator-->Whether to compress the code at runtime
 - cli创建的项目可以在`package.json`中添加参数`--minimize`，示例：`"dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"`
+- Projects created by cli can add parameter `--minimize` in `package.json`, example: `"dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni -build --watch --minimize"`

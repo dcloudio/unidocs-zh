@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### form
 表单，将组件内的用户输入的``<switch>`` ``<input>`` ``<checkbox>`` ``<slider>`` ``<radio>`` ``<picker>`` 提交。
 Form, submit the `<switch>` `<input>` `<checkbox>` `<slider>` `<radio>` `<picker>` input by the user in the component.
@@ -12,7 +13,9 @@ When you click on the `<button>` component with the formType of submit in the `<
 | Attribute name| Type| Instruction| Platform difference description|
 |:-|:-|:-|:-|
 |report-submit|Boolean|是否返回 formId 用于发送[模板消息](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/template-message.html)|微信小程序、支付宝小程序|
+|report-submit|Boolean|Whether formId is returned for sending [template message](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/template-message.html)|WeChat Mini Program , Alipay applet |
 |report-submit-timeout|number|等待一段时间（毫秒数）以确认 formId 是否生效。如果未指定这个参数，formId 有很小的概率是无效的（如遇到网络失败的情况）。指定这个参数将可以检测 formId 是否有效，以这个参数的时间作为这项检测的超时时间。如果失败，将返回 requestFormId:fail 开头的 formId|微信小程序2.6.2|
+|report-submit-timeout|number|Wait a period of time (in milliseconds) for formId to take effect. If this parameter is not specified, there is a small chance that the formId will be invalid (such as in the case of a network failure). Specifying this parameter will check whether the formId is valid, and use the time of this parameter as the timeout for this check. If it fails, it will return the formId starting with requestFormId:fail|WeChat Mini Program 2.6.2|
 |@submit|EventHandle|携带 form 中的数据触发 submit 事件，event.detail = {value : {'name': 'value'} , formId: ''}，report-submit 为 true 时才会返回 formId||
 | @submit| EventHandle| Carrying the data in the form will trigger the submit event, event.detail = {value : {'name': 'value'} , formId: ''}, formId will only be returned when report-submit is true| |
 |@reset|EventHandle|表单重置时会触发 reset 事件|&nbsp;|
@@ -117,6 +120,7 @@ The following sample code comes from the [hello uni-app project](https://github.
 **Use built-in behaviors**
 
 小程序端在`form`内的自定义组件内有`input`表单控件时，或者用普通标签实现表单控件，例如``评分``等，无法在`form`的`submit`事件内获取组件内表单控件值，此时可以使用`behaviors`。
+When the applet has an `input` form control in a custom component in `form`, or implements a form control with ordinary tags, such as `rating`, etc., the component cannot be obtained in the `submit` event of `form` Inner form control values, `behaviors` can be used in this case.
 
 对于 form 组件，目前可以自动识别下列内置 behaviors:
 For form components, the following built-in behaviors can be automatically recognized at present:
@@ -124,6 +128,7 @@ For form components, the following built-in behaviors can be automatically recog
 uni://form-field
 
 > 目前仅支持 微信小程序、QQ小程序、百度小程序、h5。
+> Currently only supports WeChat applet, QQ applet, Baidu applet, h5.
 
 **uni://form-field**
 

@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.navigateTo(OBJECT)
 
 保留当前页面，跳转到应用内的某个页面，使用```uni.navigateBack```可以返回到原页面。
@@ -62,6 +63,7 @@ export default {
 
 ```js
 // 在起始页面跳转到test.vue页面，并监听test.vue发送过来的事件数据
+// Jump to the test.vue page on the start page, and listen to the event data sent by test.vue
 uni.navigateTo({
   url: 'pages/test?id=1',
   events: {
@@ -83,6 +85,7 @@ uni.navigateTo({
 })
 
 // 在test.vue页面，向起始页通过事件传递数据
+// On the test.vue page, pass data to the start page through events
 onLoad: function(option) {
   // #ifdef APP-NVUE
   const eventChannel = this.$scope.eventChannel; // 兼容APP-NVUE
@@ -121,6 +124,7 @@ onLoad: function (option) {
 * 跳转到 tabBar 页面只能使用 switchTab 跳转
 * Jumping to the tabBar page is only possible with switchTab
 * 路由API的目标页面必须是在pages.json里注册的vue页面。如果想打开web url，在App平台可以使用 [plus.runtime.openURL](http://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.openURL)或web-view组件；H5平台使用 window.open；小程序平台使用web-view组件（url需在小程序的联网白名单中）。在hello uni-app中有个组件ulink.vue已对多端进行封装，可参考。
+* The target page of the routing API must be the vue page registered in pages.json. If you want to open the web url, you can use [plus.runtime.openURL](http://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.openURL) or web-view component on the App platform; H5 The platform uses window.open; the applet platform uses the web-view component (the url needs to be in the network whitelist of the applet). In the hello uni-app, there is a component ulink.vue that has encapsulated the multi-terminal, you can refer to it.
 * APP-NVUE平台暂不支持以`this.getOpenerEventChannel()`方式获取`eventChannel`，请换用`this.$scope.eventChannel`来获取，具体方式请参考上述示例。
 * The APP-NVUE platform does not currently support the method of obtaining `eventChannel` by `this.getOpenerEventChannel()`, please obtain it with `this.$scope.eventChannel`. Please refer to the above example for the specific method.
 
@@ -406,7 +410,9 @@ Tips：
 
 
 ### 窗口动画@animation
+### Window animation @animation
 > 本API仅App支持。小程序自身不支持自定义动画。H5的窗体动画可使用常规单页动画处理方案，见[H5下单页动画示例](https://ext.dcloud.net.cn/plugin?id=659&tdsourcetag=s_pctim_aiomsg)
+> This API is only supported by the App. The applet itself does not support custom animations. The form animation of H5 can use the conventional single-page animation processing scheme, see [Single-page animation example under H5](https://ext.dcloud.net.cn/plugin?id=659&tdsourcetag=s_pctim_aiomsg)
 
 窗口的显示/关闭动画效果，支持在 API、组件、pages.json 中配置，优先级为：`API = 组件 > pages.json`。
 The display/close animation effect of a window can be configured in API, component, or pages.Json, and the priority is `API =  component > pages.json`.
@@ -431,6 +437,7 @@ uni.navigateBack({
 });
 ```
 #### 组件
+#### Components
 open-type 有效值
 open-type valid value
 
@@ -479,9 +486,12 @@ There will be default corresponding rules for turning on/off the animation. Howe
 | none| none| No animation|
 
 详细的窗口动画说明，请参考：
+For detailed window animation instructions, please refer to:
 
 - 窗口显示的动画：[AnimationTypeShow](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeShow)
+- Window display animation: [AnimationTypeShow](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeShow)
 - 窗口关闭的动画：[AnimationTypeClose](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeClose)
+- Window closing animation: [AnimationTypeClose](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.AnimationTypeClose)
 
 **注意**
 **Notice**

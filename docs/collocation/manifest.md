@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 `manifest.json` 文件是应用的配置文件，用于指定应用的名称、图标、权限等。HBuilderX 创建的工程此文件在根目录，CLI 创建的工程此文件在 src 目录。
 The `manifest.json` file is the configuration file of the application, which is used to specify the name, icon, permission and so on of the application. The project file created by HBuilderX is in the root directory, and the project file created by CLI is in the src directory.
 
@@ -10,6 +11,7 @@ The `manifest.json` file is the configuration file of the application, which is 
 |name|String||应用名称||
 |name|String||application name||
 |appid|String|新建 uni-app 项目时，DCloud 云端分配。用途[详见](https://ask.dcloud.net.cn/article/35907)|应用标识||
+|appid|String|When creating a new uni-app project, DCloud cloud distribution. Purpose [see details](https://ask.dcloud.net.cn/article/35907)|App ID||
 |description|String||应用描述||
 |description|String||Application description||
 |locale|String|auto|设置当前默认语言，具体参考 [locale](/api/ui/locale)||
@@ -19,6 +21,7 @@ The `manifest.json` file is the configuration file of the application, which is 
 |versionCode|String||版本号，例如：36||
 |versionCode|String||version number, e.g.: 36||
 |transformPx|Boolean|true|是否转换项目的px，为true时将px转换为rpx，为false时，px为传统的实际像素。为兼容历史项目默认值为 true，但不推荐新项目启用此配置（新建项目模板一般配置为 false）||
+|transformPx|Boolean|true|Whether to transform the px of the item, when true, convert px to rpx, when false, px is the traditional actual pixel. The default value is true for compatible historical projects, but it is not recommended to enable this configuration for new projects (the new project template is generally configured to be false)||
 |networkTimeout|Object||网络超时时间，[详见](/collocation/manifest?id=networktimeout)||
 |networkTimeout|Object||Network timeout, [see details](/collocation/manifest?id=networktimeout)||
 |debug|Boolean|false|是否开启 debug 模式，开启后调试信息以 ``info`` 的形式给出，其信息有页面的注册，页面路由，数据更新，事件触发等||
@@ -30,21 +33,30 @@ The `manifest.json` file is the configuration file of the application, which is 
 |h5|Object||[H5 特有配置](/collocation/manifest?id=h5)||
 |h5|Object||[H5 specific configuration](/collocation/manifest?id=h5)||
 |quickapp|Object||快应用特有配置，即将支持||
+|quickapp|Object||Quick app-specific configuration, will be supported soon||
 |mp-weixin|Object||[微信小程序特有配置](/collocation/manifest?id=mp-weixin)||
+|mp-weixin|Object||[WeChat applet-specific configuration](/collocation/manifest?id=mp-weixin)||
 |mp-alipay|Object||[支付宝小程序特有配置](/collocation/manifest?id=mp-alipay)|
+|mp-alipay|Object||[Alipay applet-specific configuration](/collocation/manifest?id=mp-alipay)|
 |mp-baidu|Object||[百度小程序特有配置](/collocation/manifest?id=mp-baidu)||
+|mp-baidu|Object||[Baidu applet-specific configuration](/collocation/manifest?id=mp-baidu)||
 |mp-toutiao|Object||[字节跳动小程序特有配置](/collocation/manifest?id=mp-toutiao)|1.6.0|
+|mp-toutiao|Object||[Byte Beat applet-specific configuration](/collocation/manifest?id=mp-toutiao)|1.6.0|
 |mp-lark|Object||[飞书小程序特有配置](/collocation/manifest?id=mp-lark)|3.2.12|
+|mp-lark|Object||[Feishu applet-specific configuration](/collocation/manifest?id=mp-lark)|3.2.12|
 |mp-qq|Object||[qq 小程序特有配置](/collocation/manifest?id=mp-qq)|2.1.0|
+|mp-qq|Object||[qq applet-specific configuration](/collocation/manifest?id=mp-qq)|2.1.0|
 
 **Tips**
 
 - uni-app 的 `appid` 由 DCloud 云端分配，主要用于 DCloud 相关的云服务，请勿自行修改。[详见](https://ask.dcloud.net.cn/article/35907)
 - uni-app's `appid` is allocated by DCloud Cloud Service and is mainly used for cloud services related to DCloud. Please do not modify it yourself. [See details](https://ask.dcloud.net.cn/article/35907)
 - 注意区分 uni-app 的 `appid` 与微信小程序、iOS 等其它平台分配的 `appid`，以及第三方 SDK 的 `appid`。
+- Pay attention to distinguish the `appid` of uni-app from the `appid` allocated by WeChat applet, iOS and other platforms, and the `appid` of third-party SDK.
 - versionName在云打包App和生成wgt应用资源时会使用。如需升级App版本，先修改此处再云打包。导出wgt资源用于离线打包和热更新时也会以此版本为依据。
 - versionName will be used when packaging App in Cloud and generating wgt application resources. If you need to upgrade the App version, first modify it here and then package it in Cloud. This version will also be referred when exporting wgt resources for offline packaging and hot updating.
 - 在本地打包时和热更新时，App版本和wgt应用资源版本将不再保持一致。此时通过[plus.runtime.version](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.version)可获取App版本，通过[plus.runtime.getProperty](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.getProperty)获取wgt资源版本。
+- During local packaging and hot update, the App version and wgt app resource version will no longer be consistent. At this time, the App version can be obtained through [plus.runtime.version](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.version), and through [plus.runtime.getProperty](https ://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.getProperty) to get the wgt resource version.
 
 #### networkTimeout
 
@@ -64,6 +76,7 @@ Timeout required by all kinds of network, in milliseconds.
 | downloadFile| Number| No| 60000| uni.downloadFile timeout, in milliseconds.|
 
 自`HBuilderX 2.5.10`起，上述默认超时时间由6秒改为60秒，对齐微信小程序平台。
+Since `HBuilderX 2.5.10`, the above default timeout time has been changed from 6 seconds to 60 seconds to align with the WeChat applet platform.
 
 
 #### uniStatistics
@@ -96,15 +109,19 @@ uni statistics configuration item
 |renderer|String|可不加载基于 webview 的运行框架，减少包体积、提升启动速度。可选值 `native`| App-nvue 2.2.0+|
 | renderer| String| Running framework based on webview may not be loaded with reduced package size and improved startup speed. Optional value `native`| App-nvue 2.2.0+|
 |nvueLaunchMode|String|Nvue 首页启动模式，可选值：normal、fast 默认 normal（HBuilderX 2.4.4-2.4.9 固定为 fast） [详见](https://ask.dcloud.net.cn/article/36749)|2.5.0+|
+|nvueLaunchMode|String|Nvue homepage startup mode, optional values: normal, fast Default normal (HBuilderX 2.4.4-2.4.9 is fixed to fast) [See details](https://ask.dcloud.net.cn/article /36749)|2.5.0+|
 |nvue|Object|nvue 页面布局初始配置，[详见](/collocation/manifest?id=nvue)|2.0.3+|
 | nvue| Object| Initial configuration of nvue page layout. [See details](/collocation/manifest?id=nvue)| 2.0.3+|
 |optimization|Object|分包配置，可以减轻启动时加载的js数量，提升启动速度|2.7.12+|
+|optimization|Object|Subpackage configuration can reduce the number of js loaded at startup and improve startup speed|2.7.12+|
 |uniStatistics|Object|[App 是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|2.2.3+|
 | uniStatistics| Object| [Whether or not to enable uni statistics on App is configured in the same way as global configuration](/collocation/manifest?id=uniStatistics)| 2.2.3+|
 |webView|Object|当系统webview低于指定版本时，会弹出提示。或者下载x5内核后继续启动，仅Android支持，[详情](/collocation/manifest?id=appwebview)|3.5.0+|
+|webView|Object| When the system webview is lower than the specified version, a prompt will pop up. Or continue to start after downloading the x5 kernel, only supported by Android, [Details](/collocation/manifest?id=appwebview)|3.5.0+|
 
 
 PS：上表只列出了核心部分，App平台的配置其实非常多，完整内容请参考 [完整的 manifest.json](/collocation/manifest-app?id=full-manifest)。
+PS: The above table only lists the core parts. There are actually many configurations of the App platform. For the complete content, please refer to [complete manifest.json](/collocation/manifest-app?id=full-manifest).
 
 **Tips**
 
@@ -113,9 +130,11 @@ PS：上表只列出了核心部分，App平台的配置其实非常多，完整
 - 部分配置在打包时的操作界面补全，例如：证书等信息。
 - Operation interface completion of part of the configuration during packaging, such as: certificate and other information.
 - Native.js 权限部分会根据配置的模块权限，在打包后自动填充。
+- The Native.js permission section will be automatically populated after packaging according to the configured module permissions.
 - 部分 modules 是默认的，不需要进行配置。
 - Some modules are default and do not need to be configured.
 - 微信小程序的 `appid` 等信息，需要配置在 `mp-weixin` 节点下。不要配置在 `app-plus`下。`sdkConfigs` 下出现的 `weixin` 节点，配置的是 App 的第三方 SDK 信息。
+- The `appid` and other information of the WeChat applet need to be configured under the `mp-weixin` node. Do not configure under `app-plus`. The `weixin` node that appears under `sdkConfigs` configures the third-party SDK information of the app.
 
 
 #### App Splashscreen@splashscreen
@@ -126,11 +145,14 @@ The splash screen in App is inevitable and irrevocable.
 |Attribute|Type|Default|Description|Minimum version|
 |:-|:-|:-|:-|:-|
 |alwaysShowBeforeRender|Boolean|true|是否等待首页渲染完毕后再关闭启动界面|1.6.0|
+|alwaysShowBeforeRender|Boolean|true|Whether to wait for the home page to render before closing the startup interface|1.6.0|
 |autoclose|Boolean|true|是否自动关闭启动界面，仅当alwaysShowBeforeRender设置为false时生效，如果需要[手动关闭](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.closeSplashscreen)启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
+|autoclose|Boolean|true|Whether to automatically close the startup interface, it only takes effect when alwaysShowBeforeRender is set to false, if you need to [manually close](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator .closeSplashscreen) to start the interface, both alwaysShowBeforeRender and autoclose should be set to false. ||
 |waiting|Boolean|true|是否在程序启动界面显示等待圈或雪花||
 | waiting| Boolean| true| Whether to display the waiting circle or snowflake in the program splash screen?| |
 
 alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关闭启动界面（splash）策略，[详见](tutorial/app-splashscreen)
+The combination of alwaysShowBeforeRender and autoclose properties can configure the following three strategies to close the splash screen, [see details](tutorial/app-splashscreen)
 
 **注意**
 **Notice**
@@ -143,6 +165,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 - App启动图中iOS的MAX等大屏设备的splash图若不配，会导致iOS认为此App没有为MAX优化，App将无法全屏，四周会有黑边
 - If the App splash images of large-screen devices such as MAX in iOS doesn't match up, it may cause iOS deeming that this App is not optimized for MAX, and the App full screen will not work, and there will be black edges around it.
 - Android的splash支持.9.png，[详见](tutorial/app-splashscreen?id=9png)
+- Android splash screen supports .9.png, [see details](tutorial/app-splashscreen?id=9png)
 
 
 #### App Modules@modules
@@ -169,6 +192,7 @@ Module selection is to control the package volume of the App, and unnecessary mo
 |Payment|支付|
 | Payment| Pay|
 |Push|消息推送|
+|Push|Message Push|
 |Share|社交分享|
 | Share| Social sharing|
 |Speech|语音识别|
@@ -176,6 +200,7 @@ Module selection is to control the package volume of the App, and unnecessary mo
 |SQLite|SQLite数据库|
 | SQLite| SQLite database|
 |Statistic|统计|
+|Statistic|Statistics|
 |VideoPlayer|视频播放|
 | VideoPlayer| Video playback|
 
@@ -190,7 +215,9 @@ Module selection is to control the package volume of the App, and unnecessary mo
 | Attribute| Type| Describe|
 |:-|:-|:-|
 |android|Object|Android 应用配置，详见: [Android配置明细](/collocation/manifest-app?id=android)|
+|android|Object|Android application configuration, see: [Android configuration details](/collocation/manifest-app?id=android)|
 |ios|Object|iOS 应用配置，详见: [iOS配置明细](/collocation/manifest-app?id=ios)|
+|ios|Object|iOS application configuration, see: [iOS configuration details](/collocation/manifest-app?id=ios)|
 |sdkConfigs|Object|SDK配置，仅打包生效 [详见](/collocation/manifest?id=sdkConfigs)|
 | sdkConfigs| Object| SDK configuration, only takes effect when packaged. [See details](/collocation/manifest?id=sdkConfigs)|
 |orientation|Array|同 screenOrientation 配置，仅打包生效，已废弃，推荐使用 screenOrientation|
@@ -209,17 +236,23 @@ Module selection is to control the package volume of the App, and unnecessary mo
 |share|Object|分享，配置后可调用 [uni.share](/api/plugins/share?id=share) 进行分享，目前支持QQ、微信、新浪微博等分享， 具体配置 [详见](/api/plugins/share?id=app-端各平台分享配置说明)。|
 | share| Object| Sharing. After configuration, you can call [uni.share](/api/plugins/share?id=share) for sharing. Currently, QQ, WeChat, Sina Weibo, etc. are supported for sharing. For specific configuration, [See details](/api/plugins/share?id=app-%E7%AB%AF%E5%90%84%E5%B9%B3%E5%8F%B0%E5%88%86%E4%BA%AB%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E).|
 |push|Object|push配置，使用方式 [详见](/unipush)，目前支持：[uniPush](http://ask.dcloud.net.cn/article/35716)、[个推](http://www.igetui.com/)，注意App仅支持一种 push 方式，配置多个 push 无效，建议使用 uniPush，支持多厂商推送。|
+|push|Object|push configuration, usage [see details](/unipush), currently supports: [uniPush](http://ask.dcloud.net.cn/article/35716), [Push](http: //www.igetui.com/), note that the App only supports one push method, and it is invalid to configure multiple pushes. It is recommended to use uniPush to support multi-vendor push. |
 |payment|Object|三方支付配置，配置后可调用 [uni.payment](/api/plugins/payment?id=payment) 进行支付，目前支持微信支付、支付宝支付、苹果内购， 具体配置 [详见](/api/plugins/payment?id=uni-app-app-平台支付流程)。|
 | payment| Object| Third-party payment configuration. After configuration, you can call [uni.payment](/api/plugins/payment?id=payment) for payment. Currently, WeChat payment, Alipay, and Apple in-app purchases are supported. For specific configuration, [See details](/api/plugins/payment?id=uni-app-app-%E5%B9%B3%E5%8F%B0%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B).|
 |statics|Object|统计配置，目前仅支付友盟统计，[详见](/tutorial/app-statistic)，在uni-app中只用 [plus.statistic](http://www.html5plus.org/doc/zh_cn/statistic.html) 进行调用。|
+|statics|Object|Statistics configuration, currently only pay for Umeng statistics, [see details](/tutorial/app-statistic), in uni-app only use [plus.statistic](http://www.html5plus.org /doc/en_us/statistic.html) to call. |
 |speech|Object|语音识别配置，支持讯飞语音、百度语音，[详见](/tutorial/app-speech)，在uni-app中只用 [plus.speech](http://www.html5plus.org/doc/zh_cn/speech.html) 进行调用。|
+|speech|Object|Speech recognition configuration, support iFLYTEK voice, Baidu voice, [see details](/tutorial/app-speech), in uni-app only use [plus.speech](http://www.html5plus .org/doc/en_us/speech.html) to call. |
 |maps|Object|原生地图配置，目前仅支持 [高德地图](http://lbs.amap.com/)，申请方式可参考：[地图插件配置](/tutorial/app-maps)。|
+|maps|Object| Native map configuration, currently only supports [Amap](http://lbs.amap.com/), please refer to the application method: [Map Plugin Configuration](/tutorial/app-maps). |
 
 #### optimization@app-vue-optimization
 
 可以减轻启动时加载的js数量，提升启动速度。
+It can reduce the number of js loaded at startup and improve the startup speed.
 
 从uni-app 2.7.12+ 开始，App-vue平台也兼容了小程序的分包配置，但默认并不开启。
+Starting from uni-app 2.7.12+, the App-vue platform is also compatible with the sub-package configuration of the applet, but it is not enabled by default.
 
 在manifest配置以下节点，可以在App端启动分包。
 Configure the following nodes in manifest, and start subpackage on the App side.
@@ -240,10 +273,13 @@ Configure the following nodes in manifest, and start subpackage on the App side.
 ```
 
 在manifest中启动分包后，需要在pages.json中配置具体的分包规则，与小程序的配置相同，详见：[https://uniapp.dcloud.io/collocation/pages?id=subpackages](https://uniapp.dcloud.io/collocation/pages?id=subpackages)
+After starting subpackage in manifest, you need to configure specific subpackage rules in pages.json, which is the same as the configuration of applet. For details, see: [https://uniapp.dcloud.io/collocation/pages?id=subpackages] (https://uniapp.dcloud.io/collocation/pages?id=subpackages)
 
 也就是一旦在pages.json里配置分包，小程序一定生效，而app是否生效，取决于manifest里是否开启。
+That is, once the subpackage is configured in pages.json, the applet will take effect, and whether the app will take effect depends on whether it is enabled in the manifest.
 
 注意:
+Notice:
 * App开启分包后，每个分包单独编译成一个js文件(都包含在app内，不会联网下载)，当App首页是vue时，可减小启动加载文件大小，提升启动速度。
 * After the App subpackage is started, each subpackage is independently compiled into a js file (all of which are included in the App and need not to be downloaded online). When the home page of the app is vue, the size of the startup loading file can be reduced and the startup speed can be improved.
 * 首页是nvue时，分包不会提升启动速度，nvue本身启动速度就快于vue，也快于开启分包后的首页为vue的应用。如果追求极致启动速度，还是应该使用nvue做首页并在manifest开启fast模式。
@@ -268,28 +304,38 @@ Configure the following nodes in manifest, and start subpackage on the App side.
 > uni-app 3.5.0+
 
 当App代码使用了低版本webview不支持的语法时（比如使用了vue3），可以在manifest配置本属性，来指定最低运行的webview版本。
+When the App code uses a syntax that is not supported by the lower version of the webview (such as using vue3), you can configure this property in the manifest to specify the minimum running webview version.
 
 当系统webview版本不符合需求时，uni-app引擎会自动弹框。同时开发者可以指定使用 x5引擎webview 来替代系统webview，以保障浏览器兼容性。详见[x5文档](/tutorial/app-android-x5.html)
+When the system webview version does not meet the requirements, the uni-app engine will automatically pop up the box. At the same time, developers can specify to use the x5 engine webview to replace the system webview to ensure browser compatibility. For details, see [x5 documentation](/tutorial/app-android-x5.html)
 
 当你的应用强依赖x5时，比如需要vue页面的字体和tabbar等原生界面保持一致时，也可以在manifest配置本属性。
+When your application strongly depends on x5, for example, when the font of the vue page is required to be consistent with the native interface such as tabbar, you can also configure this property in the manifest.
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
 |:-|:-|:-|
 |minUserAgentVersion|String|最小webview版本，例如：95.0.4638.75。（当低于最小版本要求时，显示 `WebView版本过低`  弹框，点击确定退出应用。）|
+|minUserAgentVersion|String|Minimum webview version, eg: 95.0.4638.75. (When it is lower than the minimum version requirement, the `WebView version is too low` pop-up box is displayed, click OK to exit the application.)|
 |x5|Object|此属性需要在manifest模块配置中勾选 Android X5 Webview 模块，详细参见下面的说明|
+|x5|Object|This property needs to check the Android X5 Webview module in the manifest module configuration, see the description below for details|
 
 x5 属性说明
+x5 attribute description
 
 |属性|类型|默认值|说明|
 | Attribute| Type| Defaults| Instruction|
 |:-|:-|:-|:-|
 |timeOut|Number|3000|超时时间|
+|timeOut|Number|3000|Timeout|
 |showTipsWithoutWifi|Boolean|false|是否在非WiFi网络环境时，显示用户确认下载x5内核的弹窗。（如果为true时，在非WiFi网络下载x5模块，会显示用户确认弹框，内容为 `当前处于非WiFi网络，是否允许下载x5模块？` ，false时不显示弹框 。）|
+|showTipsWithoutWifi|Boolean|false|Whether in a non-WiFi network environment, display a pop-up window for the user to confirm the download of the x5 kernel. (If it is true, when downloading the x5 module on a non-WiFi network, a user confirmation pop-up box will be displayed, with the content `Currently on a non-WiFi network, are you allowed to download the x5 module?` , when false, the pop-up box will not be displayed.)|
 |allowDownloadWithoutWiFi|Boolean|false|是否允许用户在非WiFi网络时进行x5内核的下载。（如果为true，就不会显示用户确认的弹窗。false时，如果showTipsWithoutWifi为true，就会显示用户确认弹框；showTipsWithoutWifi为false时，不下载x5模块。）|
+|allowDownloadWithoutWiFi|Boolean|false|Whether the user is allowed to download the x5 kernel on a non-WiFi network. (If it is true, the user confirmation popup will not be displayed. When false, if showTipsWithoutWifi is true, the user confirmation popup will be displayed; when showTipsWithoutWifi is false, the x5 module will not be downloaded.)|
 
 
 webview示例
+webview example
 
 ```json
 {
@@ -314,12 +360,19 @@ webview示例
 |title|String|页面标题，默认使用 manifest.json 的 name|
 | title| String| For page title, the name of manifest.json is used by default|
 |template|String|index.html模板路径，相对于应用根目录，可定制生成的 html 代码。参考：[自定义模板](/collocation/manifest?id=h5-template)|
+|template|String|index.htmlThe template path, relative to the application root directory, can customize the generated html code. Reference: [custom template](/collocation/manifest?id=h5-template)|
 |router|Object|参考：[router](/collocation/manifest?id=h5-router)|
+|router|Object|Reference: [router](/collocation/manifest?id=h5-router)|
 |async|Object|参考：[async](/collocation/manifest?id=h5-async)|
+|async|Object| Reference: [async](/collocation/manifest?id=h5-async)|
 |devServer|Object|开发环境 server 配置，参考：[devServer](/collocation/manifest?id=devserver)|
+|devServer|Object|Development environment server configuration, reference: [devServer](/collocation/manifest?id=devserver)|
 |publicPath|String|引用资源的地址前缀，仅发布时生效。参考：[publicPath](/collocation/manifest?id=publicPath)|
+|publicPath|String| The address prefix of the referenced resource, which takes effect only when it is published. Reference: [publicPath](/collocation/manifest?id=publicPath)|
 |sdkConfigs|String|SDK配置，例如地图...  参考：[sdkConfigs](/collocation/manifest?id=h5sdkconfig)|
+|sdkConfigs|String|SDK configuration, such as map... Reference: [sdkConfigs](/collocation/manifest?id=h5sdkconfig)|
 |optimization|Object|打包优化配置（HBuilderX 2.1.5 以上支持），参考[optimization](/collocation/manifest?id=optimization)|
+|optimization|Object|Packaging optimization configuration (supported by HBuilderX 2.1.5 and above), refer to [optimization](/collocation/manifest?id=optimization)|
 |uniStatistics|Object|[H5 是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)||
 | uniStatistics| Object| [Whether or not to enable uni statistics on the H5 side is configured in the same way as global configuration](/collocation/manifest?id=uniStatistics)| |
 
@@ -377,6 +430,7 @@ H5平台是SPA单页应用，普通的SEO信息即加meta字段只能在，自�
 H5 platform is a single-page application of SPA. The home page of ordinary SEO information, that is, meta plus field, can only be configured in the custom template html.
 
 但SEO的时代在变，现在更有效的方式，使用uni-app同时发布一版百度小程序，这个搜索权重更高。DCloud的ask社区的H5版也是uni-app做的，同时发布了百度小程序，权重更高，每天来自百度的搜索量非常多。是一个可现身说法的好案例。
+But the era of SEO is changing, and now it is more effective to use uni-app to release a version of Baidu applet at the same time, which has a higher search weight. The H5 version of DCloud's ask community is also made by uni-app. At the same time, Baidu applet has been released, which has a higher weight and a lot of searches from Baidu every day. It's a good case to speak out.
 
 #### router@h5-router
 |属性|类型|默认值|说明|
@@ -415,6 +469,7 @@ H5 platform is a single-page application of SPA. The home page of ordinary SEO i
 |https|Boolean|false|启用 https 协议|
 | https| Boolean| false| Enable https protocol|
 |port|Number|Vue2 8080；Vue3 3000|前端开发服务端口|
+|port|Number|Vue2 8080; Vue3 3000|Front-end development service port|
 |disableHostCheck|Boolean|false|禁用 Host 检查|
 | disableHostCheck| Boolean| false| Disable Host check|
 
@@ -504,6 +559,7 @@ Map service provider SDK configuration, map use and location (IP positioning and
 |preload|Boolean|false|资源预加载|
 | preload| Boolean| false| Resource preload|
 |treeShaking|Object||摇树优化，根据项目需求，动态打包框架所需的组件及API，保持框架代码最精简化，参考[treeShaking](/collocation/manifest?id=treeshaking)|
+|treeShaking|Object||Tree-shaking optimization, dynamically package the components and APIs required by the framework according to the project requirements, and keep the framework code as simple as possible, refer to [treeShaking](/collocation/manifest?id=treeshaking)|
 
 ##### treeShaking
 
@@ -534,39 +590,62 @@ Tips: For the principle and optimization results of treeShaking, please refer to
 | Attribute| Type| Instruction|
 |:-|:-|:-|
 |appid|String|微信小程序的AppID，登录 [https://mp.weixin.qq.com](https://mp.weixin.qq.com) 申请|
+|appid|String|AppID of the WeChat applet, log in to [https://mp.weixin.qq.com](https://mp.weixin.qq.com) to apply|
 |setting|Object|微信小程序项目设置，参考[setting](/collocation/manifest?id=setting)|
+|setting|Object|Wechat applet project settings, refer to [setting](/collocation/manifest?id=setting)|
 |functionalPages|Boolean|微信小程序是否启用插件功能页，默认关闭|
+|functionalPages|Boolean|Whether the WeChat applet enables the plug-in function page, it is disabled by default|
 |requiredBackgroundModes|Array|微信小程序需要在后台使用的能力,[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#requiredbackgroundmodes)|
+|requiredBackgroundModes|Array|WeChat Mini Program needs the ability to use in the background, [see details](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#requiredbackgroundmodes)|
 |plugins|Object|使用到的插件，[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)|
+|plugins|Object|The plugins used, [see details](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)|
 |resizable|Boolean|在iPad上小程序是否支持屏幕旋转，默认关闭|
+|resizable|Boolean|Whether the applet supports screen rotation on iPad, off by default|
 |navigateToMiniProgramAppIdList|Array|需要跳转的小程序列表，[详见](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html)|
+|navigateToMiniProgramAppIdList|Array|List of mini programs to be jumped to, [see details](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html) |
 |permission|Object|微信小程序接口权限相关设置，比如申请位置权限必须填此处[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)|
+|permission|Object|WeChat Mini Program interface permissions related settings, such as applying for location permissions, you must fill in here [see details](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)|
 |workers|String|Worker 代码放置的目录。 [详见](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|
+|workers|String|Directory where Worker code is placed. [See details](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|
 |optimization|Object| 对微信小程序的优化配置 |
+|optimization|Object| Optimized configuration for WeChat Mini Programs |
 |cloudfunctionRoot|String| 配置云开发目录，参考[setting](/collocation/manifest?id=cloudfunctionRoot)|
+|cloudfunctionRoot|String| Configure the cloud development directory, refer to [setting](/collocation/manifest?id=cloudfunctionRoot)|
 |uniStatistics|Object|[微信小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether the WeChat applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
+|scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 |mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
+|mergeVirtualHostAttributes|Boolean|Merge component [virtual node](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE) outer attributes ( Currently only supports style and class attributes), uni-app 3.5.1+ starts to support|
 |embeddedAppIdList|Array|要半屏跳转的小程序appid。[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
+|embeddedAppIdList|Array|The applet appid to be jumped half-screen. [See details](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
 |requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/community/develop/doc/000a02f2c5026891650e7f40351c01)|
+|requiredPrivateInfos|Array|Location related interface. [See details](https://developers.weixin.qq.com/community/develop/doc/000a02f2c5026891650e7f40351c01)|
 |lazyCodeLoading|String| 目前仅支持值 requiredComponents，代表开启小程序[按需注入](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|
+|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the mini program [on-demand injection](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|
 
 
 #### setting
 
 编译到微信小程序平台下的项目设置。
+Compile to the project settings under the WeChat applet platform.
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
 |:-|:-|:-|
 |urlCheck|Boolean|是否检查安全域名和 TLS 版本|
+|urlCheck|Boolean|Whether to check secure domain name and TLS version|
 |es6|Boolean|ES6 转 ES5|
+|es6|Boolean|ES6 to ES5|
 |postcss|Boolean|上传代码时样式是否自动补全|
+|postcss|Boolean|Whether the style is automatically completed when uploading the code|
 |minified|Boolean|上传代码时是否自动压缩|
+|minified|Boolean|Automatic compression when uploading code|
 
 #### optimization
 
 对微信小程序的优化配置
+Optimized configuration of WeChat applet
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
@@ -577,6 +656,7 @@ Tips: For the principle and optimization results of treeShaking, please refer to
 #### cloudfunctionRoot
 
 如果需要使用微信小程序的云开发，需要在 mp-weixin 配置云开发目录
+If you need to use the cloud development of WeChat applet, you need to configure the cloud development directory in mp-weixin
 
 ```javascript
 "mp-weixin":{
@@ -587,6 +667,7 @@ Tips: For the principle and optimization results of treeShaking, please refer to
 ```
 
 配置目录之后，需要在项目根目录新建 `vue.config.js` 配置对应的文件编译规则
+After configuring the directory, you need to create a new `vue.config.js` in the project root directory to configure the corresponding file compilation rules
 
 ```javascript
 
@@ -607,17 +688,28 @@ Tips: For the principle and optimization results of treeShaking, please refer to
 ### mp-alipay
 
 |属性								|类型		|说明			|
+|property |type |description |
 |:-								|:-			|:-			|
 |plugins							|Object	|使用到的插件，[详见](https://opendocs.alipay.com/mini/plugin/plugin-usage)	|
+|plugins |Object |Used plugins, [see details](https://opendocs.alipay.com/mini/plugin/plugin-usage) |
 |component2						|Boolean| 是否启用 `component2` 编译，默认为true，[查看详情](https://docs.alipay.com/mini/framework/custom-component-overview)	|
+|component2 |Boolean| Whether to enable `component2` compilation, the default is true, [View details](https://docs.alipay.com/mini/framework/custom-component-overview) |
 |enableAppxNg         |Boolean| 是否启用 `enableAppxNg` 小程序基础库 2.x 构建，默认为true，[查看详情](https://opendocs.alipay.com/mini/framework/project)，HBuilderX 3.2.10+ |
+|enableAppxNg |Boolean| Whether to enable the `enableAppxNg` applet base library 2.x build, the default is true, [View Details](https://opendocs.alipay.com/mini/framework/project), HBuilderX 3.2.10+ |
 |axmlStrictCheck			|Boolean| 是否启用 `axml` 严格语法检查，默认为false	|
+|axmlStrictCheck |Boolean| Whether to enable `axml` strict syntax checking, default is false |
 |enableParallelLoader	|Boolean| 是否启用多进程编译，默认为false	|
+|enableParallelLoader |Boolean| Whether to enable multi-process compilation, the default is false |
 |enableDistFileMinify	|Boolean| 是否压缩编译产物（仅在真机预览/真机调试时生效），默认为false	|
+|enableDistFileMinify |Boolean| Whether to compress the compiled product (only valid for real machine preview/real machine debugging), the default is false |
 |uniStatistics				|Object	|[支付宝小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
+|uniStatistics |Object |[Whether the Alipay applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
+|scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 |mergeVirtualHostAttributes|Boolean|合并组件节点外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
+|mergeVirtualHostAttributes|Boolean|Merge component node outer attributes (currently only support style, class attributes), uni-app 3.5.1+ began to support|
 |lazyCodeLoading|String|是否开启代码按需执行。|
+|lazyCodeLoading|String| Whether to enable code execution on demand. |
 
 
 ### mp-baidu
@@ -626,16 +718,24 @@ Tips: For the principle and optimization results of treeShaking, please refer to
 | Attribute| Type| Instruction|
 |:-|:-|:-|
 |appid|String|百度小程序的 AppID，登录 [https://smartprogram.baidu.com/docs/introduction/enter_application/](https://smartprogram.baidu.com/docs/introduction/enter_application/) 申请|
+|appid|String|AppID of Baidu Mini Program, log in to [https://smartprogram.baidu.com/docs/introduction/enter_application/](https://smartprogram.baidu.com/docs/introduction/enter_application/) to apply|
 |requiredBackgroundModes|Array|小程序需要在后台使用的能力，目前支持背景音频播放，"requiredBackgroundModes": ["audio"]，[详见](https://smartprogram.baidu.com/docs/develop/tutorial/process/#requiredBackgroundModes)	|
+|requiredBackgroundModes|Array|The applet needs the ability to be used in the background, currently supports background audio playback, "requiredBackgroundModes": ["audio"], [see details](https://smartprogram.baidu.com/docs/develop/tutorial /process/#requiredBackgroundModes) |
 |prefetches|Array|预请求的所有url的列表，[详见](https://smartprogram.baidu.com/docs/develop/tutorial/process/#prefetches)																|
+|prefetches|Array|List of all pre-requested urls, [see details](https://smartprogram.baidu.com/docs/develop/tutorial/process/#prefetches) |
 |optimization|Object| 对百度小程序的优化配置 |
+|optimization|Object| Optimized configuration for Baidu Mini Programs |
 |uniStatistics|Object|[百度小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether Baidu Mini Program enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
+|scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 |dynamicLib|Object|引入动态库，详情请参考[使用动态库](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)|
+|dynamicLib|Object|Introduce dynamic library, please refer to [Use dynamic library](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)|
 
 #### optimization
 
 对百度小程序的优化配置
+Optimized configuration of Baidu applet
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
@@ -649,20 +749,30 @@ Tips: For the principle and optimization results of treeShaking, please refer to
 | Attribute| Type| Instruction|
 |:-|:-|:-|
 |appid|String|字节跳动小程序的 AppID，登录 [https://developer.toutiao.com/](https://developer.toutiao.com/) 申请|
+|appid|String|AppID of the ByteDance applet, log in to [https://developer.toutiao.com/](https://developer.toutiao.com/) to apply|
 |setting|Object|字节跳动小程序项目设置，参考[字节跳动小程序项目设置](/collocation/manifest?id=mp-toutiao-setting)|
+|setting|Object| ByteDance applet project settings, refer to [ByteDance applet project settings](/collocation/manifest?id=mp-toutiao-setting)|
 |navigateToMiniProgramAppIdList	|Array|需要跳转的小程序列表，[详见](https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration)	|
+|navigateToMiniProgramAppIdList |Array|The list of mini programs to be jumped to, [see details](https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration) |
 |uniStatistics|Object|[字节跳动小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether the ByteDance applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
+|scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 
 #### 字节跳动小程序项目设置@mp-toutiao-setting
+#### ByteDance applet project setting @mp-toutiao-setting
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
 |:-|:-|:-|
 |urlCheck|Boolean|是否检查安全域名和 TLS 版本|
+|urlCheck|Boolean|Whether to check secure domain name and TLS version|
 |es6|Boolean|ES6 转 ES5|
+|es6|Boolean|ES6 to ES5|
 |postcss|Boolean|上传代码时样式是否自动补全|
+|postcss|Boolean|Whether the style is automatically completed when uploading the code|
 |minified|Boolean|上传代码时是否自动压缩|
+|minified|Boolean|Automatic compression when uploading code|
 
 ### mp-lark
 
@@ -670,37 +780,57 @@ Tips: For the principle and optimization results of treeShaking, please refer to
 | Attribute| Type| Instruction|
 |:-|:-|:-|
 |appid|String|飞书小程序的 AppID，登录 [https://open.feishu.cn](https://open.feishu.cn) 申请|
+|appid|String|AppID of Feishu applet, log in to [https://open.feishu.cn](https://open.feishu.cn) to apply|
 |setting|Object|飞书小程序项目设置，参考[飞书小程序项目设置](/collocation/manifest?id=mp-lark-setting)|
+|setting|Object|Feishu applet project setting, refer to [Feishu applet project setting](/collocation/manifest?id=mp-lark-setting)|
 |uniStatistics|Object|[飞书小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether the Feishu applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
+|scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 
 #### 飞书小程序项目设置@mp-lark-setting
+#### Feishu applet project setting @mp-lark-setting
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
 |:-|:-|:-|
 |urlCheck|Boolean|是否检查安全域名和 TLS 版本|
+|urlCheck|Boolean|Whether to check secure domain name and TLS version|
 |es6|Boolean|ES6 转 ES5|
+|es6|Boolean|ES6 to ES5|
 |postcss|Boolean|上传代码时样式是否自动补全|
+|postcss|Boolean|Whether the style is automatically completed when uploading the code|
 |minified|Boolean|上传代码时是否自动压缩|
+|minified|Boolean|Automatic compression when uploading code|
 
 ### mp-qq
 
 |属性							|类型			|说明																																												|
+|property |type |description |
 |:-								|:-				|:-																																													|
 |appid							|String			|qq 小程序的 AppID，登录 [https://q.qq.com](https://q.qq.com) 申请																													|
+|appid |String |AppID of the qq applet, log in to [https://q.qq.com](https://q.qq.com) to apply |
 |requiredBackgroundModes		|Array			|小程序需要在后台使用的能力，目前支持背景音频播放，"requiredBackgroundModes": ["audio"]，[详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#requiredbackgroundmodes)	|
+|requiredBackgroundModes |Array | Mini program needs the ability to use in the background, currently supports background audio playback, "requiredBackgroundModes": ["audio"], [see details](https://q.qq.com/wiki/develop/miniprogram /frame/dispose.html#requiredbackgroundmodes) |
 |navigateToMiniProgramAppIdList	|Array			|需要跳转的小程序列表，[详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#navigatetominiprogramappidlist)																|
+|navigateToMiniProgramAppIdList |Array |A list of mini programs that need to be jumped, [see details](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#navigatetominiprogramappidlist) |
 |permission						|Object			|小程序接口权限相关设置，比如申请位置权限必须填此处[详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#permission)														|
+|permission |Object |Mini program interface permissions related settings, such as applying for location permissions, you must fill in here [see details](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#permission) |
 |workers						|String			|Worker 代码放置的目录。 [详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#workers)																					|
+|workers |String |Directory where Worker code is placed. [See details](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#workers) |
 |groupIdList					|String Array	|需要打开群资料卡的群号列表，详见button的open-type																																		|
+|groupIdList |String Array |The group ID list that needs to open the group data card, see button open-type |
 |optimization|Object| 对QQ小程序的优化配置 |
+|optimization|Object| Optimization configuration for QQ applet |
 |uniStatistics|Object|[QQ小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether the QQ applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
+|scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 
 #### optimization
 
 对QQ小程序的优化配置
+Optimized configuration of QQ applet
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
@@ -714,8 +844,11 @@ Tips: For the principle and optimization results of treeShaking, please refer to
 | Attribute| Type| Instruction|
 |:-|:-|:-|
 |appid|String|快手小程序的 AppID，登录 [https://mp.kuaishou.com](https://mp.kuaishou.com) 申请|
+|appid|String|AppID of the Kuaishou applet, log in to [https://mp.kuaishou.com](https://mp.kuaishou.com) to apply|
 |uniStatistics|Object|[快手小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether the Kuaishou applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：augmented|
+|scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: augmented|
 
 ### 关于分包优化的说明
 ### Notes on subcontracting optimization
@@ -723,6 +856,7 @@ Tips: For the principle and optimization results of treeShaking, please refer to
 - 在对应平台的配置下添加`"optimization":{"subPackages":true}`开启分包优化
 - Add `"optimization":{"subPackages":true}` under the configuration of the corresponding platform to enable sub-contracting optimization
 - 目前只支持`mp-weixin`、`mp-qq`、`mp-baidu`、`mp-toutiao`的分包优化
+- Currently only supports sub-package optimization of `mp-weixin`, `mp-qq`, `mp-baidu`, `mp-toutiao`
 - 分包优化具体逻辑：
 - Specific logic of subcontracting optimization:
   + 静态文件：分包下支持 static 等静态资源拷贝，即分包目录内放置的静态资源不会被打包到主包中，也不可在主包中使用
@@ -748,17 +882,25 @@ Tips: For the principle and optimization results of treeShaking, please refer to
 Take the above subpackage as an example, the static files placed in the root corresponding directory of each subpackage will be packaged into this subpackage.
 
 ### 快应用@quickapp-webview
+### Quick App @quickapp-webview
 
 |属性							 |类型			|说明|
+|property |type |description|
 |:-								 |:-			|:-|
 |icon							 |String	|应用图标，华为推荐 192x192|
+|icon |String |App icon, recommended by Huawei 192x192|
 |package					 |String	|应用包名|
+|package |String |Application package name|
 |minPlatformVersion|Number	|最小平台运行支持(华为最低 1070，vivo 1063)|
+|minPlatformVersion|Number |Minimum platform support (minimum 1070 for Huawei, 1063 for vivo)|
 |versionName			 |String	|版本名称|
+|versionName |String |version name|
 |versionCode			 |Number	|版本号|
+|versionCode |Number |version number|
 
 
 **manifest.json配置**
+**manifest.json configuration**
 ```json
 "quickapp-webview": {// 快应用通用配置
   "icon": "/static/logo.png",

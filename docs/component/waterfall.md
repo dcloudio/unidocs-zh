@@ -1,11 +1,14 @@
+<md-translatedByGoogle />
 #### waterfall
 
 app端nvue专用组件。
 app side nvue specific component.
 
 `<waterfall>` 组件是提供瀑布流布局的核心组件。瀑布流，又称瀑布流式布局，是比较流行的一种页面布局，视觉表现为参差不齐的多栏布局。随着页面滚动条向下滚动，这种布局还可以不断加载数据块并附加至当前尾部。
+The `<waterfall>` component is the core component that provides the waterfall layout. Waterfall flow, also known as waterfall flow layout, is a relatively popular page layout, and the visual performance is a jagged multi-column layout. This layout also continuously loads chunks of data and appends to the current tail as the page scroll bar scrolls down.
 
 在nvue中，使用普通view做瀑布流，无法实现复用和不可见渲染资源释放。使用`<waterfall>`组件且指定`cell`后，原生引擎会自动优化性能。
+In nvue, using ordinary view as waterfall flow cannot achieve reuse and release of invisible rendering resources. After using the `<waterfall>` component and specifying `cell`, the native engine will automatically optimize the performance.
 
 ```
 <template>
@@ -69,6 +72,7 @@ Similar to the `<list>` component, the sub-components of the `<waterfall>` compo
 - right-gap: [Optional] Gap between the right cell and the list. If it is not specified, it corresponds to `0`
   <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/e78b5450-4f2e-11eb-b680-7980c8a877b8.png" />
 - always-scrollable-vertical : `[可选]` 可选值为 true/ false，默认值为 false，iOS 平台，内容不满一屏无法触发下拉刷新时需要设置为true，因为默认子视图高度不超过父视图高度的时候 waterfall 不能滑动
+- always-scrollable-vertical : `[Optional]` The optional value is true/false, the default value is false, iOS platform, when the content is less than one screen and cannot trigger the pull-down refresh, it needs to be set to true, because the default subview height does not exceed The waterfall cannot slide when the parent view is high
 
 其他支持的属性参见 `<list>` 组件属性部分
 See the `<list>` component attributes section for other supported attributes

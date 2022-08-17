@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.setNavigationBarTitle(OBJECT)
 
 动态设置当前页面的标题。
@@ -43,6 +44,7 @@ Set the color for the page navigation bar. **If the color needs to be set right 
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|x|√|√|√|√|√|
 
@@ -53,9 +55,11 @@ Set the color for the page navigation bar. **If the color needs to be set right 
 | Parameter| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |frontColor|String|是|前景颜色值，包括按钮、标题、状态栏的颜色，仅支持 #ffffff 和 #000000|App、H5、微信小程序、百度小程序、字节跳动小程序、QQ小程序、快手小程序、京东小程序|
+|frontColor|String|Yes|Foreground color value, including button, title, status bar color, only supports #ffffff and #000000|App, H5, WeChat applet, Baidu applet, ByteDance applet, QQ applet , Kuaishou applet, Jingdong applet|
 |backgroundColor|String|是|背景颜色值，有效值为十六进制颜色||
 | backgroundColor| String| Yes| Background color value, valid value is hexadecimal color| |
 |animation|Object|否|动画效果，{duration,timingFunc}|微信小程序、百度小程序、QQ小程序、快手小程序、京东小程序|
+|animation|Object|No|Animation effect, {duration, timingFunc}|WeChat applet, Baidu applet, QQ applet, Kuaishou applet, Jingdong applet|
 |success|Function|否|接口调用成功的回调函数||
 | success| Function| No| Callback function for successful interface calling| |
 |fail|Function|否|接口调用失败的回调函数||
@@ -71,20 +75,30 @@ Set the color for the page navigation bar. **If the color needs to be set right 
 - If the title needs to be set when the page is entered, it can be done in the `onReady` to avoid being overwritten by changes within the frame. A short delay is required if execution must be performed within `onShow`
 
 **animation 结构**
+**animation structure**
 
 |属性|类型|默认值|必填|说明|
+|property|type|default value|required|description|
 |:-|:-|:-|:-|:-|
 |duration|number|0|否|动画变化时间，单位 ms|
+|duration|number|0|No|Animation change time, unit ms|
 |timingFunc|String|'linear'|否|动画变化方式|
+|timingFunc|String|'linear'|No|Animation Variation|
 
 **animation.timingFunc 有效值**
+**animation.timingFunc valid values**
 
 |值|说明|
+|value|description|
 |:-|:-|
 |linear|动画从头到尾的速度是相同的。|
+|linear| The speed of the animation is the same from start to finish. |
 |easeIn|动画以低速开始|
+|easeIn|Animation starts at slow speed|
 |easeOut|动画以低速结束。|
+|easeOut|The animation ends at a slow speed. |
 |easeInOut|动画以低速开始和结束。|
+|easeInOut|The animation starts and ends at a slow speed. |
 
 **success返回参数说明**
 **Success return parameter description**
@@ -118,6 +132,7 @@ Display navigation bar loading animation on the current page.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|√|√|√|x|√|√|√|
 
@@ -153,6 +168,7 @@ Hide the navigation bar and load animation on the current page.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√|√|√|√|x|√|√|√|
 
@@ -183,11 +199,13 @@ uni.hideNavigationBarLoading()
 ### uni.hideHomeButton(OBJECT)
 
 隐藏返回首页按钮。
+Hide the back to home button.
 
 **平台差异说明**
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|x|x|1.48.0+|1.10.0+|x|√|
 
@@ -213,5 +231,8 @@ uni.hideHomeButton()
 ```
 
 **说明**
+**illustrate**
 - 微信小程序自基础库版本2.8.3开始支持
+- WeChat applet has been supported since the base library version 2.8.3
 - 当用户打开的小程序最底层页面是非首页时，默认展示“返回首页”按钮，开发者可在页面`onShow`中调用`hideHomeButton`进行隐藏。
+- When the bottom page of the applet opened by the user is not the home page, the "Back to Home" button is displayed by default, and the developer can call `hideHomeButton` in the page `onShow` to hide it.

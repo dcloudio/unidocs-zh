@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.getRecorderManager()
 获取**全局唯一**的录音管理器 ``recorderManager``。
 Get the **globally unique** recording manager `recorderManager`.
@@ -6,6 +7,7 @@ Get the **globally unique** recording manager `recorderManager`.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|x|√|√|√|x|√|
 
@@ -41,15 +43,23 @@ Get the **globally unique** recording manager `recorderManager`.
 | Attribute| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |duration|Number|否|指定录音的时长，单位 ms ，如果传入了合法的 duration ，在到达指定的 duration 后会自动停止录音，最大值 600000（10 分钟）,默认值 60000（1 分钟）|App、小程序支持|
+|duration|Number|No|Specify the duration of the recording, the unit is ms. If a valid duration is passed in, the recording will automatically stop when the specified duration is reached. The maximum value is 600000 (10 minutes), and the default value is 60000 (1 minute)| App, applet support|
 |sampleRate|Number|否|采样率，有效值 8000/16000/44100|App、小程序支持|
+|sampleRate|Number|No|Sampling rate, valid value 8000/16000/44100|App, applet support|
 |numberOfChannels|Number|否|录音通道数，有效值 1/2|仅小程序支持|
+|numberOfChannels|Number|No|Number of recording channels, valid value 1/2|Only supported by Mini Programs|
 |encodeBitRate|Number|否|编码码率，有效值见下表格|仅小程序支持|
+|encodeBitRate|Number|No|Encode BitRate, see the table below for valid values|Only supported by Mini Programs|
 |format|String|否|音频格式，有效值 aac/mp3/wav/PCM。App默认值为mp3，小程序默认值aac|App、小程序支持|
+|format|String|No|Audio format, valid values aac/mp3/wav/PCM. The default value of App is mp3, and the default value of applet is aac|App, applet support|
 |frameSize|String|否|指定帧大小，单位 KB。传入 frameSize 后，每录制指定帧大小的内容后，会回调录制的文件内容，不指定则不会回调。暂仅支持 mp3 格式。|App、百度小程序不支持|
+|frameSize|String|No|Specify the frame size in KB. After the frameSize is passed in, each time the content of the specified frame size is recorded, the recorded file content will be called back. If it is not specified, it will not be called back. Currently only mp3 format is supported. |App, Baidu applet does not support|
 
 其中，采样率和码率有一定要求，具体有效值如下：
+Among them, the sampling rate and code rate have certain requirements, and the specific effective values are as follows:
 
 |采样率|编码码率|
+|Sampling Rate|Encoding Rate|
 |:-|:-|
 |8000|16000 ~ 48000|
 |11025|16000 ~ 48000|

@@ -1,6 +1,8 @@
+<md-translatedByGoogle />
 ### uni.loadFontFace(Object object)
 
 动态加载网络字体，文件地址需为下载类型。微信小程序 `'2.10.0'`起支持全局生效，需在 `app.vue` 中调用。
+To dynamically load web fonts, the file address must be the download type. The WeChat applet `'2.10.0'` supports global effect and needs to be called in `app.vue`.
 
 注意: 
 Notice:
@@ -8,16 +10,22 @@ Notice:
 1. 引入中文字体，体积过大时会发生错误，建议抽离出部分中文，减少体积，或者用图片替代
 1. When Chinese fonts are introduced, errors will occur when the size is too large. It is suggested to remove part of Chinese characters to reduce the size, or replace them with images
 2. 微信小程序端只支持网络字体，字体链接必须是https。App支持网络或本地的字体（本地字体需使用[平台绝对路径](http://www.html5plus.org/doc/zh_cn/io.html#plus.io.convertLocalFileSystemURL)）。
+2. The WeChat applet only supports web fonts, and the font link must be https. The App supports network or local fonts (local fonts need to use [platform absolute path](http://www.html5plus.org/doc/zh_cn/io.html#plus.io.convertLocalFileSystemURL)).
 3. 微信小程序端字体链接必须是同源下的，或开启了cors支持，微信小程序的域名是servicewechat.com
+3. The font link of the WeChat applet must be under the same origin, or the cors support has been turned on. The domain name of the WeChat applet is servicewechat.com
 4. 工具里提示 Faild to load font可以忽略
+4. The tool prompts Faild to load font can be ignored
 5. nvue不支持。nvue使用 Weex 提供的 DOM.addRule 加载自定义字体，[详见](https://uniapp.dcloud.io/tutorial/nvue-api.html#dom)。
+5. nvue does not support. nvue uses the DOM.addRule provided by Weex to load custom fonts, [see details](https://uniapp.dcloud.io/tutorial/nvue-api.html#dom).
 
 **平台差异说明**
 **Platform difference description**
 
 |5+App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|
+|5+App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |1.9.0+|2.3.4+|基础库 2.1.0+| 1.11.0+ |x|x|x|
+|1.9.0+|2.3.4+|Base Library 2.1.0+| 1.11.0+ |x|x|x|
 
 **参数说明**
 **Parameter Description**
@@ -76,6 +84,7 @@ There is an example of loading fonts in the plug-in market: [https://ext.dcloud.
 ### uni.upx2px()
 
 将rpx单位值转换成px
+Convert rpx unit value to px
 
 ```js
 <script>

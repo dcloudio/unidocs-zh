@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.uploadFile(OBJECT)
 将本地资源上传到开发者服务器，客户端发起一个 ``POST`` 请求，其中 ``content-type`` 为 ``multipart/form-data``。  
 Upload the local resources to the developer server, and the client side initiates one `POST` request, in which `content-type` is `multipart/form-data`.   
@@ -5,6 +6,7 @@ Upload the local resources to the developer server, and the client side initiate
 If the page obtains the temporary file path of a local resource through an interface such as [uni.chooseImage](api/media/image?id=chooseimage), the local resource can be uploaded to the designated server via this interface. In addition, select and upload non-image and video files, please refer to: [https://ask.dcloud.net.cn/article/35547](https://ask.dcloud.net.cn/article/35547).
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
+> When each Mini Program platform is running, network-related APIs need to be configured with a whitelist of domain names before using them.
 
 **推荐开发者上传到uniCloud，uniCloud提供了免费CDN和更好的易用性，包括安全的cdn直传。**
 **It is recommended for the developers to upload it to uniCloud, which provides free CDN and better ease of use, including secure cdn direct transmission.**
@@ -24,6 +26,7 @@ If the page obtains the temporary file path of a local resource through an inter
 |files|Array|是（files和filePath选其一）|需要上传的文件列表。**使用 files 时，filePath 和 name 不生效。**|App、H5（ 2.6.15+）|
 | files| Array| Yes (choose files or filepath)| List of files to be uploaded. **filePath and name will not take effect if using files.**| App, H5( 2.6.15+)|
 |fileType|String|见平台差异说明|文件类型，image/video/audio|仅支付宝小程序，且必填。|
+|fileType|String|See Platform Difference Description|File Type, image/video/audio|Only Alipay applet, and required. |
 |file|File|否|要上传的文件对象。|仅H5（2.6.15+）支持|
 | file| File| No| File object to be uploaded.| Only supported by H5 (2.6.15+)|
 |filePath|String|是（files和filePath选其一）|要上传文件资源的路径。||
@@ -47,6 +50,7 @@ If the page obtains the temporary file path of a local resource through an inter
 **Notice**:
 
 - App支持多文件上传，微信小程序只支持单文件上传，传多个文件需要反复调用本API。所以跨端的写法就是循环调用本API。
+- The App supports multi-file upload, and the WeChat applet only supports single-file upload. To upload multiple files, you need to call this API repeatedly. Therefore, the cross-end writing method is to call this API in a loop.
 - hello uni-app中的客服反馈，支持多图上传。[uni-app插件市场](https://ext.dcloud.net.cn/)中也有多个封装的组件。
 - Customer service feedback in hello uni-app, supporting multi-image upload. There are also multiple encapsulated components in the [uni-app plug-in market](https://ext.dcloud.net.cn/).
 - App平台选择和上传非图像、视频文件，参考[https://ask.dcloud.net.cn/article/35547](https://ask.dcloud.net.cn/article/35547)
@@ -54,6 +58,7 @@ If the page obtains the temporary file path of a local resource through an inter
 - 网络请求的 ``超时时间`` 可以统一在 ``manifest.json`` 中配置 [networkTimeout](/collocation/manifest?id=networktimeout)。
 - The `Timeout` requested by the network can be uniformly configured in the `manifest.json` as [networkTimeout](/collocation/manifest?id=networktimeout).
 - 支付宝小程序开发工具上传文件返回的http状态码为字符串形式，支付宝小程序真机返回的状态码为数字形式
+- The http status code returned by the Alipay applet development tool for uploading files is in the form of a string, and the status code returned by the real machine of the Alipay applet is in the form of a number
 
 **files参数说明**
 **Files parameter description**
@@ -140,8 +145,11 @@ You can listen to upload progress change events and cancel upload tasks with `up
 |onProgressUpdate|callback|监听上传进度变化|
 | onProgressUpdate| callback| listen to upload progress changes|
 |onHeadersReceived|callback|监听 HTTP Response Header 事件。会比请求完成事件更早,仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/UploadTask.onHeadersReceived.html)|    
+|onHeadersReceived|callback|Listen for HTTP Response Header events. Will be earlier than the request completion event, only supported by `WeChat Mini Program Platform`, [Specification Details](https://developers.weixin.qq.com/miniprogram/dev/api/UploadTask.onHeadersReceived.html)|
 |offProgressUpdate|callback|取消监听上传进度变化事件，仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/UploadTask.offProgressUpdate.html)|
+|offProgressUpdate|callback|Cancel monitoring of upload progress change events, only supported by `WeChat Mini Program Platform`, [Specification Details](https://developers.weixin.qq.com/miniprogram/dev/api/UploadTask.offProgressUpdate.html) |
 |offHeadersReceived|callback|取消监听 HTTP Response Header 事件，仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/UploadTask.offHeadersReceived.html)|
+|offHeadersReceived|callback|Cancel the monitoring of HTTP Response Header events, only supported by `WeChat Mini Program Platform`, [Specification Details](https://developers.weixin.qq.com/miniprogram/dev/api/UploadTask.offHeadersReceived.html) |
 
 **onProgressUpdate 返回参数说明**
 **OnProgressUpdate return parameter description**
@@ -195,6 +203,7 @@ uni.chooseImage({
 Download the file resources locally, and the client directly initiates the HTTP GET request to return the local temporary path of the file.
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。在h5上是跨域的，用户需要处理好跨域问题。
+> When each Mini Program platform is running, network-related APIs need to be configured with a whitelist of domain names before using them. It is cross-domain on h5, and users need to deal with cross-domain issues.
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -215,6 +224,7 @@ Download the file resources locally, and the client directly initiates the HTTP 
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）| |
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)| |
 |filePath|string|否|指定文件下载后存储的路径 (本地路径)|微信小程序（IOS小程序保存到相册需要添加此字段才可以正常保存）|
+|filePath|string|No|Specify the path to save the file after downloading (local path)|WeChat applet (IOS applet needs to add this field to save it to the album before it can be saved normally)|
 
 **注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](/api/file/file?id=savefile)，才能在应用下次启动时访问得到。**
 **Note: The temporary path of the file can be used normally during this startup of the application. To save it for a long time, you need to call [uni.saveFile](/api/file/file?id=savefile) actively, which will not be accessible until the next startup of the application.**
@@ -280,8 +290,11 @@ You can listen to download progress change events and cancel upload download tas
 |onProgressUpdate|callback|监听下载进度变化|*|
 | onProgressUpdate| callback| listen to download progress changes| *|
 |onHeadersReceived|callback|监听 HTTP Response Header 事件，会比请求完成事件更早,仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/DownloadTask.onHeadersReceived.html)| | 
+|onHeadersReceived|callback|Listen to HTTP Response Header event, which will be earlier than request completion event, only supported by `WeChat Mini Program Platform`, [Specification Details](https://developers.weixin.qq.com/miniprogram/dev/api /DownloadTask.onHeadersReceived.html)| |
 |offProgressUpdate|callback|取消监听下载进度变化事件，仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/DownloadTask.offProgressUpdate.html)|
+|offProgressUpdate|callback|Cancel monitoring download progress change events, only supported by `WeChat Mini Program Platform`, [Specification Details](https://developers.weixin.qq.com/miniprogram/dev/api/DownloadTask.offProgressUpdate.html) |
 |offHeadersReceived|callback|取消监听 HTTP Response Header 事件，仅`微信小程序平台`支持，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/DownloadTask.offHeadersReceived.html)| |
+|offHeadersReceived|callback|Cancel the monitoring of HTTP Response Header events, only supported by `WeChat Mini Program Platform`, [Specification Details](https://developers.weixin.qq.com/miniprogram/dev/api/DownloadTask.offHeadersReceived.html) | |
 
 **onProgressUpdate 返回参数说明**
 **OnProgressUpdate return parameter description**
@@ -315,6 +328,7 @@ downloadTask.onProgressUpdate((res) => {
 	console.log('预期需要下载的数据总长度' + res.totalBytesExpectedToWrite);
 
 	// 满足测试条件，取消下载任务。
+	// If the test conditions are met, cancel the download task.
 	if (res.progress > 50) {
 		downloadTask.abort();
 	}

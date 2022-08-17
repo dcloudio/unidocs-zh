@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 #### text
 文本组件。
 Text components.
@@ -12,9 +13,13 @@ Used to wrap text content.
 | Attribute name| Type| Defaults| Instruction| Platform difference description|
 |:-|:-			|:-		|:-		|:-				|:-						|
 |selectable	|Boolean|false	|文本是否可选	|	App、H5、快手小程序	|
+|selectable |Boolean|false |Whether the text is optional | App, H5, Kuaishou applet |
 |user-select	|Boolean|false	|文本是否可选	| 微信小程序 |
+|user-select |Boolean|false |Whether the text is optional | WeChat applet |
 |space		|String	|		|显示连续空格	|App、H5、微信小程序	|
+|space |String | |Display consecutive spaces |App, H5, WeChat applet |
 |decode		|Boolean|false	|是否解码		|App、H5、微信小程序	|
+|decode |Boolean|false |Whether to decode |App, H5, WeChat applet |
 
 **space 值说明**
 **space value description**
@@ -121,5 +126,7 @@ export default {
 
 
 **注意事项**
+**Precautions**
 
 - nvue 样式 `word-wrap` 在 Android 平台暂不支持
+- nvue style `word-wrap` is not supported on Android platform

@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.setTabBarItem(OBJECT)
 
 动态设置 tabBar 某一项的内容
@@ -7,8 +8,10 @@ Dynamically set the content of any item in tabBar
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√（钉钉小程序不支持）|√|√|√|√|√|
+|√|√|√|√ (DingTalk applet does not support) |√|√|√|√|√|
 
 **OBJECT参数说明：**
 **OBJECT parameter description:**
@@ -25,9 +28,11 @@ Dynamically set the content of any item in tabBar
 |selectedIconPath|String||否|选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效||
 | selectedIconPath| String| | No| Path of the selected image, the size of icon is limited to 40kb, and the recommended size is 81px * 81px. For position = top, this parameter is invalid| |
 |pagePath|String||否|页面绝对路径，必须在 [pages](/collocation/pages?id=pages) 中先定义，被替换掉的 pagePath 不会变成普通页面（仍然需要使用 uni.switchTab 跳转）|App（2.8.4+）、H5（2.8.4+）|
+|pagePath|String||No|Absolute page path, must be defined in [pages](/collocation/pages?id=pages), the replaced pagePath will not become a normal page (you still need to use uni.switchTab to jump transfer)|App (2.8.4+), H5 (2.8.4+)|
 |visible|Boolean|true|否|该项是否显示|App（3.2.10+）、H5（3.2.10+）|
 | visible| Boolean| true| No| Whether the item is displayed?| App(3.2.10+), H5(3.2.10+)|
 |iconfont|Object||否|字体图标，优先级高于 iconPath|App（3.4.4+）|
+|iconfont|Object||No|Font icon, higher priority than iconPath|App (3.4.4+)|
 |success|Funtion||否|接口调用成功的回调函数||
 | success| Funtion| | No| Callback function for successful interface calling| |
 |fail|Funtion||否|接口调用失败的回调函数||
@@ -36,14 +41,21 @@ Dynamically set the content of any item in tabBar
 | complete| Funtion| | No| Callback function for closed interface calling (available both for successful and failed calling)| |
 
 **iconfont参数说明：**
+**iconfont parameter description:**
 
 |属性|类型|说明|
+|property|type|description|
 |:-|:-|:-|
 |text|String|字库 Unicode 码|
+|text|String|Font Unicode Code|
 |selectedText|String|选中后字库 Unicode 码|
+|selectedText|String|The Unicode code of the selected font|
 |fontSize|String|字体图标字号(px)|
+|fontSize|String|Font icon font size (px)|
 |color|String|字体图标颜色|
+|color|String|Font icon color|
 |selectedColor|String|字体图标选中颜色|
+|selectedColor|String|Font icon selected color|
 
 
 **示例代码**
@@ -59,6 +71,7 @@ uni.setTabBarItem({
 ```
 
 注意: 设置 `iconfont` 属性时，pages.json `iconfontSrc` 需要指定字体文件，参考下面的配置
+Note: When setting the `iconfont` property, pages.json `iconfontSrc` needs to specify the font file, refer to the following configuration
 
 ```json
 // pages.json
@@ -91,6 +104,7 @@ Dynamically set the overall style of tabBar
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -164,6 +178,7 @@ Hide tabBar
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -174,6 +189,7 @@ Hide tabBar
 | Attribute| Type| Defaults| Required| Instruction|
 |:-|:-|:-|:-|:-|
 |animation|boolean|false|否|是否需要动画效果，仅微信小程序、支付宝小程序、百度小程序、字节跳动小程序、飞书小程序、QQ小程序、快手小程序、京东小程序支持|
+|animation|boolean|false|No|Do you need animation effects? Only supported by WeChat applet, Alipay applet, Baidu applet, ByteDance applet, Feishu applet, QQ applet, Kuaishou applet, and Jingdong applet |
 |success|Funtion||否|接口调用成功的回调函数|
 | success| Funtion| | No| Callback function for successful interface calling|
 |fail|Funtion||否|接口调用失败的回调函数|
@@ -190,6 +206,7 @@ Display tabBar
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -200,6 +217,7 @@ Display tabBar
 | Attribute| Type| Defaults| Required| Instruction|
 |:-|:-|:-|:-|:-|
 |animation|boolean|false|否|是否需要动画效果，仅微信小程序、支付宝小程序、百度小程序、字节跳动小程序、飞书小程序、QQ小程序、快手小程序、京东小程序支持|
+|animation|boolean|false|No|Do you need animation effects? Only supported by WeChat applet, Alipay applet, Baidu applet, ByteDance applet, Feishu applet, QQ applet, Kuaishou applet, and Jingdong applet |
 |success|Funtion||否|接口调用成功的回调函数|
 | success| Funtion| | No| Callback function for successful interface calling|
 |fail|Funtion||否|接口调用失败的回调函数|
@@ -215,6 +233,7 @@ Add text to the upper right corner of any item in tabBar.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -253,6 +272,7 @@ Remove the text in the upper right corner of any item in tabBar.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -279,6 +299,7 @@ Display the red dot in the upper right corner of any item in tabBar.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -305,6 +326,7 @@ Hide the red dot in the upper right corner of any item in tabBar.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -331,6 +353,7 @@ listen to the click event of the middle button
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（HBuilderX 2.3.4+）|x|x|x|x|x|x|x|x|
 

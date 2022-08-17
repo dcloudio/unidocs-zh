@@ -1,8 +1,10 @@
+<md-translatedByGoogle />
 ### uni.request(OBJECT)
 发起网络请求。
 Initiate a network request.
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
+> When each Mini Program platform is running, network-related APIs need to be configured with a whitelist of domain names before using them.
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -13,15 +15,19 @@ Initiate a network request.
 |url|String|是||开发者服务器接口地址||
 | url| String| Yes| | Developer server interface address| |
 |data|Object/String/ArrayBuffer|否||请求的参数|App 3.3.7 以下不支持 ArrayBuffer 类型|
+|data|Object/String/ArrayBuffer|No||Requested parameters|The ArrayBuffer type is not supported under App 3.3.7|
 |header|Object|否||设置请求的 header，header 中不能设置 Referer。|App、H5端会自动带上cookie，且H5端不可手动修改|
 | header| Object| No| | Set the request header, and Referer should not be used in it.| cookies will be automatically carried on the App and H5 sides, and the manual modification is disabled on H5 side|
 |method|String|否|GET|有效值详见下方说明||
 | method| String| No| GET| See the description below for valid values| |
 |timeout|Number|否|60000|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)、微信小程序（2.10.0）、支付宝小程序|
+|timeout|Number|No|60000|Timeout time, unit ms|H5(HBuilderX 2.9.9+), APP(HBuilderX 2.9.9+), WeChat applet (2.10.0), Alipay applet|
 |dataType|String|否|json	|如果设为 json，会尝试对返回的数据做一次 JSON.parse||
 | dataType| String| No| json| If it is set to json, one JSON.parse will be applied to the returned data| |
 |responseType|String|否|text	|设置响应的数据类型。合法值：text、arraybuffer|支付宝小程序不支持|
+|responseType|String|No |text |Sets the data type of the response. Legal values: text, arraybuffer|Alipay applet does not support|
 |sslVerify|Boolean|否|true|验证 ssl 证书|仅App安卓端支持（HBuilderX 2.3.3+），不支持离线打包|
+|sslVerify|Boolean|No|true|Verify ssl certificate|Only supported by App Android (HBuilderX 2.3.3+), offline packaging is not supported|
 |withCredentials|Boolean|否|false|跨域请求时是否携带凭证（cookies）|仅H5支持（HBuilderX 2.6.15+）|
 | withCredentials| Boolean| No| false| Whether to carry credentials (cookies) in cross domain requests| H5 only (HBuilderX 2.6.15+)|
 |firstIpv4|Boolean|否|false|DNS解析时优先使用ipv4|仅 App-Android 支持 (HBuilderX 2.8.0+)|
@@ -37,8 +43,10 @@ Initiate a network request.
 **Valid values for method**
 
 注意：method有效值必须大写，每个平台支持的method有效值不同，详细见下表。
+Note: The valid value of method must be capitalized. The valid value of method supported by each platform is different. For details, see the following table.
 
 |method|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|快手小程序|京东小程序|
+|method|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |GET|√|√|√|√|√|√|√|√|
 |POST|√|√|√|√|√|√|√|√|
@@ -125,7 +133,9 @@ The request task can be interrupted by `requestTask`.
 |abort||中断请求任务|
 | abort| | Interrupt request task|
 |offHeadersReceived||取消监听 HTTP Response Header 事件，仅`微信小程序平台`支持，[文档详情](https://developers.weixin.qq.com/miniprogram/dev/api/RequestTask.offHeadersReceived.html)|
+|offHeadersReceived||Cancel the monitoring of HTTP Response Header events, only supported by `WeChat Mini Program Platform`, [document details](https://developers.weixin.qq.com/miniprogram/dev/api/RequestTask.offHeadersReceived.html)|
 |onHeadersReceived||监听 HTTP Response Header 事件。会比请求完成事件更早，仅`微信小程序平台`支持，[文档详情](https://developers.weixin.qq.com/miniprogram/dev/api/RequestTask.onHeadersReceived.html)|
+|onHeadersReceived||Listen for HTTP Response Header events. Will be earlier than the request completion event, only supported by `WeChat Mini Program Platform`, [document details](https://developers.weixin.qq.com/miniprogram/dev/api/RequestTask.onHeadersReceived.html)|
 
 **示例**
 **Example**
@@ -152,12 +162,15 @@ requestTask.abort();
 - 请求的 ``header`` 中 ``content-type`` 默认为 ``application/json``。
 - In the requested `header`, `content-type` defaults to `application/json`.
 - 避免在 ``header`` 中使用中文，或者使用 encodeURIComponent 进行编码，否则在百度小程序报错。（来自：[快狗打车前端团队](https://juejin.im/user/2612095359650712)）
+- Avoid using Chinese in ``header``, or use encodeURIComponent for encoding, otherwise an error will be reported in the Baidu applet. (From: [Front-end Team of Kuaigou Taxi](https://juejin.im/user/2612095359650712))
 - 网络请求的 ``超时时间`` 可以统一在 ``manifest.json`` 中配置 [networkTimeout](/collocation/manifest?id=networktimeout)。
 - The `Timeout` requested by the network can be uniformly configured in the `manifest.json` as [networkTimeout](/collocation/manifest?id=networktimeout).
 - H5 端本地调试需注意跨域问题，参考：[调试跨域问题解决方案](https://ask.dcloud.net.cn/article/35267)
 - Attention should be paid to cross-domain issues when debugging on the H5 side, and please refer to: [Solutions for debugging cross-domain issues](https://ask.dcloud.net.cn/article/35267)
 - 注意由于百度小程序iOS客户端，请求失败时会进入fail回调，需要针对百度增加相应的处理以解决该问题。
+- Note that due to the Baidu applet iOS client, the fail callback will be entered when the request fails, and corresponding processing needs to be added for Baidu to solve this problem.
 - 注意小程序端不支持自动保持 cookie，服务器应避免验证 cookie。如果服务器无法修改，也可以使用一些模拟手段，比如这样的工具[https://github.com/charleslo1/weapp-cookie](https://github.com/charleslo1/weapp-cookie) 可以请求时带上 cookie 并将响应的 cookie 保存在本地。
+- Note that the applet side does not support automatically keeping cookies, and the server should avoid validating cookies. If the server cannot be modified, you can also use some simulation methods, such as such tools [https://github.com/charleslo1/weapp-cookie](https://github.com/charleslo1/weapp-cookie) can be requested with On the cookie and save the response cookie locally.
 - H5端 cookie 受跨域限制（和平时开发网站时一样），旧版的 uni.request 未支持 withCredentials 配置，可以直接使用 xhr 对象或者其他类库。
 - H5 side cookie are restricted in terms of cross-domain (like ordinary website development). The old version of uni.request does not support withCredentials configuration, and xhr objects or other class libraries can be used directly.
 - 根据 W3C 规范，H5 端无法获取 response header 中 Set-Cookie、Set-Cookie2 这2个字段，对于跨域请求，允许获取的 response header 字段只限于“simple response header”和“Access-Control-Expose-Headers”（[详情](https://www.w3.org/TR/cors/#access-control-allow-credentials-response-header)）
@@ -179,6 +192,7 @@ requestTask.abort();
 - 使用一些比较小众的证书机构（如：CFCA OV OCA）签发的 ssl 证书在安卓设备请求会失败，因为这些机构的根证书不在系统内置根证书库，可以更换其他常见机构签发的证书（如：Let's Encrypt），或者配置 sslVerify 为 false 关闭 ssl 证书验证（不推荐）。
 - The request for ssl certificates issued by some relatively small certificate institutions (such as CFCA OV OCA) will fail on Android devices because the root certificates of these institutions are not in the built-in root certificate library of the system. You can change to other certificates issued by other common institutions (such as Let's Encrypt), or configure sslVerify as false to turn off ssl certificate verification (not recommended).
 - 离线打包不支持 `sslVerify` 配置
+- Offline packaging does not support `sslVerify` configuration
 - 单次网络请求数据量建议控制在50K以下（仅指json数据，不含图片），过多数据应分页获取，以提升应用体验。
 - It is recommended that the amount of data requested by a single network should be controlled below 50K (json data only, excluding images), and excessive data should be obtained in different pages to improve the application experience.
 
@@ -189,6 +203,7 @@ https 请求配置自签名证书
 https requests to configure the self-signed certificates
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√`(3.2.7+)`|x|x|x|x|x|x|x|x|
 
@@ -227,7 +242,9 @@ Certificate configuration item
 **证书格式说明**
 **Certificate format description**
   1. 文件路径形式：可将证书文件放到工程的 ‘static’ 目录中，然后填写文件路径，示例：`'/static/client.p12'`
+  1. File path format: you can put the certificate file in the 'static' directory of the project, and then fill in the file path, for example: `'/static/client.p12'`
   2. `Base64String`：将证书文件的二进制转换为 `Base64String` 字符串，然后在字符串前面添加`'data:cert/pem;base64,'`前缀，示例：`'data:cert/pem;base64,xxx'` xxx 代表真实的证书 base64String 
+  2. `Base64String`: Convert the binary of the certificate file to a `Base64String` string, and then add the `'data:cert/pem;base64,'` prefix in front of the string, for example: `'data:cert/pem;base64 ,xxx'` xxx represents the real certificate base64String
 
 **callbackObject 参数说明**
 **callbackObject parameter description**

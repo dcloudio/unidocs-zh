@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.openLocation(OBJECT)
 使用应用内置地图查看位置。
 Use the built-in map to view locations.
@@ -6,6 +7,7 @@ Use the built-in map to view locations.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|x|x|x|
 
@@ -20,8 +22,11 @@ Use the built-in map to view locations.
 |longitude|Float|是|经度，范围为-180~180，负数表示西经，使用 gcj02 国测局坐标系||
 | longitude| Float| Yes| Longitude, from -180 to 180. Negative number indicates west longitude, using gcj02 coordinate of State Bureau of Surveying and Mapping of China.| |
 |scale|Int|否|缩放比例，范围5~18，默认为18|微信小程序|
+|scale|Int|No|Scale, the range is 5~18, the default is 18|WeChat applet|
 |name|String|否|位置名|支付宝必填|
+|name|String|No|Location Name|Alipay Required|
 |address|String|否|地址的详细说明|支付宝必填|
+|address|String|No|Detailed description of the address|Alipay required|
 |success|Function|否|接口调用成功的回调函数||
 | success| Function| No| Callback function for successful interface calling| |
 |fail|Function|否|接口调用失败的回调函数||
@@ -64,6 +69,7 @@ uni.getLocation({
 - iOS端 如需使用第三方地图进行导航，需要在 manifest.json 文件内增加 ``urlschemewhitelist`` 节点，在线打包即可
 - On the iOS side, if you need to use a third-party map for navigation, you need to add the `urlschemewhitelist` node in the manifest.json file and package it online
 - 不同平台打开的地图不一样，App端是高德地图（不支持百度地图）、H5端是腾讯地图或谷歌地图、微信小程序端是腾讯地图、百度小程序是百度地图、阿里小程序是高德地图、字节跳动小程序是高德地图。
+- The maps opened on different platforms are different. The App side is AutoNavi Map (Baidu Map is not supported), the H5 side is Tencent Map or Google Map, the WeChat applet is Tencent Map, the Baidu applet is Baidu Map, and the Ali applet is Gaode map and ByteDance applet are Gaode maps.
 
 ```json
 {
@@ -82,14 +88,24 @@ uni.getLocation({
 ```
 
 <!-- - 点击返回也会进入 `fail` 回调中 -->
+<!-- - Clicking back will also enter the `fail` callback -->
 
 ### 三方定位和地图服务收费说明
+### Three-party positioning and map service fee description
 
 * 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请授权或缴纳费用。
+* To use third-party positioning or map services, you need to apply for authorization or pay fees to service providers (such as AutoNavi Maps, Baidu Maps, Tencent Maps, Google Maps).
 * 申请三方定位或地图服务秘钥时请详细阅读授权和收费说明，并关注服务条款后期的变更。
+* When applying for a three-party positioning or map service key, please read the authorization and charging instructions in detail, and pay attention to the later changes to the terms of service.
 * 以下是关于部分地图服务商授权和收费的简介，具体以地图服务商官网公布的最新信息为准。
+* The following is a brief introduction to the authorization and charges of some map service providers, and the latest information published on the official website of the map service provider shall prevail.
   * 高德地图：商用授权收费，超出配额收费。
+  * AutoNavi map: commercial license charges, exceeding quota charges.
   * 百度地图：商用授权收费，超出配额收费。
+  * Baidu map: commercial license charges, exceeding quota charges.
   * 腾讯地图：商用授权收费，超出配额收费。
+  * Tencent Maps: Commercial license charges, exceeding quota charges.
   * 谷歌地图：按量收费，每月可获得一些赠送金额。
+  * Google Maps: Pay-as-you-go with some monthly credits.
   * 小程序平台内置地图：无需关心地图服务商，免费使用，无配额限制。
+  * The built-in map of the Mini Program platform: no need to care about the map service provider, free to use, no quota limit.

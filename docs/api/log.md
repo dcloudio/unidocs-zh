@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### console
 向控制台打印日志信息。
 Output the log information to the console.
@@ -21,6 +22,7 @@ Output the warn log to the console
 Output the error log to the console
 
 **注意：**
+**Notice:**
 
 - 不同平台对于 console 方法的支持存在差异，建议在开发过程中只使用文档中提到的方法。
 - There are differences in supporting console methods of different platforms. In the development process, only to use the methods mentioned in this document is recommended.

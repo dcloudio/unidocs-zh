@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.onCompassChange(CALLBACK)
 监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用 ``uni.offCompassChange`` 取消监听。
 listen to the compass data at a frequency of 5 times/second. The listening to will automatically start after calling the interface. You can use `uni.offCompassChange` to cancel the listening to.
@@ -33,8 +34,10 @@ Cancel listening to compass data.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|x|
+|HBuilderX 2.9.6+|HBuilderX 2.9.6+|Basic Library 2.9.3+|x|x|x|x|√|x|
 
 **示例**
 **Example**
@@ -44,6 +47,7 @@ const callback = function (res) {
 }
 uni.onCompassChange(callback);
 // 和 onCompassChange 传入同一个函数即可
+// Pass in the same function as onCompassChange
 uni.offCompassChange(callback);
 ```
 
@@ -59,6 +63,7 @@ Start listening to compass data.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|x|√|√|√|√|x|
 

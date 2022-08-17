@@ -1,9 +1,12 @@
+<md-translatedByGoogle />
 `pages.json` 文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等。
 The `pages.json` file is used to configure uni-app globally, and determine the path of the page file, window style, native navigation bar, native tabbar at the bottom, etc.
 
 它类似微信小程序中`app.json`的**页面管理**部分。注意定位权限申请等原属于`app.json`的内容，在uni-app中是在manifest中配置。
+It is similar to the **page management** part of `app.json` in the WeChat applet. Note that the content of `app.json`, such as positioning permission application, is configured in the manifest in uni-app.
 
 # 配置项列表
+# list of configuration items
 
 |属性|类型|必填|描述|平台兼容|
 | Attribute| Type| Required| Describe| Platform compatibility|
@@ -21,7 +24,9 @@ The `pages.json` file is used to configure uni-app globally, and determine the p
 |[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置||
 | [subPackages](/collocation/pages?id=subPackages)| Object Array| No| Subcontract loading configuration| |
 |[preloadRule](/collocation/pages?id=preloadrule)|Object|否|分包预下载规则|微信小程序|
+|[preloadRule](/collocation/pages?id=preloadrule)|Object|No|Subpackage preload rule|WeChat applet|
 |[workers](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|String|否|```Worker``` 代码放置的目录|微信小程序|
+|[workers](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|String|No|```Worker``` code placement directory|WeChat Mini Program|
 |[leftWindow](/collocation/pages?id=leftwindow)|Object|否|大屏左侧窗口|H5|
 | [leftWindow](/collocation/pages?id=leftwindow)| Object| No| Large screen left window| H5|
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
@@ -29,6 +34,7 @@ The `pages.json` file is used to configure uni-app globally, and determine the p
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
 | [rightWindow](/collocation/pages?id=rightwindow)| Object| No| Large screen right window| H5|
 |[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0||
+|[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|No|Automatic jump related configuration, added in HBuilderX 3.5.0||
 
 以下是一个包含了所有配置选项的 `pages.json` ：
 The following is a `pages.json` that includes all configuration options:
@@ -148,24 +154,35 @@ Used for setting the applied status bar, navigation bar, title, window backgroun
 | Attribute| Type| Defaults| Describe| Platform difference description|
 |:-|:-|:-|:-|:-|
 |navigationBarBackgroundColor|HexColor|#F7F7F7|导航栏背景颜色（同状态栏背景色）|APP与H5为#F7F7F7，小程序平台请参考相应小程序文档|
+|navigationBarBackgroundColor|HexColor|#F7F7F7|The background color of the navigation bar (same as the background color of the status bar)|APP and H5 are #F7F7F7, please refer to the corresponding applet documentation for the applet platform|
 |navigationBarTextStyle|String|white|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
 | navigationBarTextStyle| String| white| The title color of navigation bar and foreground color of status bar can only be black/white| |
 |navigationBarTitleText|String||导航栏标题文字内容||
 | navigationBarTitleText| String| | Navigation bar title text content| |
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
+|navigationStyle|String|default|Navigation bar style, only supports default/custom. custom means to cancel the default native navigation bar, you need to see [use note](/collocation/pages?id=customnav)|WeChat applet 7.0+, Baidu applet, H5, App (2.0.3+)|
 |backgroundColor|HexColor|#ffffff|下拉显示出来的窗口的背景色|微信小程序|
+|backgroundColor|HexColor|#ffffff|The background color of the window displayed by the pull-down|WeChat applet|
 |backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark / light|微信小程序|
+|backgroundTextStyle|String|dark|The style of drop-down loading, only supports dark / light|WeChat applet|
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.html#lifecycle)。||
+|enablePullDownRefresh|Boolean|false|Whether to enable pull-down refresh, see [page life cycle](/tutorial/page.html#lifecycle). ||
 |onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)||
+|onReachBottomDistance|Number|50|The distance from the bottom of the page when the bottom of the page is triggered, the unit only supports px, see [page life cycle](/tutorial/page.html#lifecycle)||
 |backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorTop| HexColor| #ffffff| The background color of the window on the top (bounce area)| IOS platform only|
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorBottom| HexColor| #ffffff| The background color of the window on the bottom (bounce area)| IOS platform only|
 |titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、APP|
+|titleImage|String||Navigation bar image address (replace the current text title), the image link address of https must be used in the Alipay applet|Alipay applet, H5, APP|
 |transparentTitle|String|none|导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP|
+|transparentTitle|String|none|The overall (foreground, background) transparency setting of the navigation bar. Support always transparent / auto sliding adaptive / none opaque|Alipay applet, H5, APP|
 |titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
+|titlePenetrate|String|NO|Click to penetrate the navigation bar|Alipay applet, H5|
 |pageOrientation|String|portrait|横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)|App 2.4.7+、微信小程序|
+|pageOrientation|String|portrait|Landscape configuration, screen rotation setting, only supports auto / portrait / landscape. For details, see [Respond to display area changes](https://developers.weixin.qq.com/miniprogram/dev/framework/view /resizable.html)|App 2.4.7+, WeChat applet|
 |animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)|App|
+|animationType|String|pop-in|The animation effect displayed by the window, see: [Window animation](/api/router?id=animation)|App|
 |animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App|
 | animationDuration| Number| 300| Window animation duration, in ms| App|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
@@ -173,15 +190,25 @@ Used for setting the applied status bar, navigation bar, title, window backgroun
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
 | h5| Object| | Set the specific style compiled to H5 platform. For configuration items, please refer to the following [H5](/collocation/pages?id=h5)| H5|
 |mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
+|mp-alipay|Object||Set the specific style compiled to the mp-alipay platform, the configuration items refer to the following [MP-ALIPAY](/collocation/pages?id=mp-alipay)|Alipay applet|
 |mp-weixin|Object||设置编译到 mp-weixin 平台的特定样式|微信小程序|
+|mp-weixin|Object||Set the specific style compiled to the mp-weixin platform|WeChat applet|
 |mp-baidu|Object||设置编译到 mp-baidu 平台的特定样式|百度小程序|
+|mp-baidu|Object||Set the specific style compiled to the mp-baidu platform|Baidu applet|
 |mp-toutiao|Object||设置编译到 mp-toutiao 平台的特定样式|字节跳动小程序|
+|mp-toutiao|Object||Set the specific style compiled to the mp-toutiao platform|Byte Beat applet|
 |mp-lark|Object||设置编译到 mp-lark 平台的特定样式|飞书小程序|
+|mp-lark|Object||Set the specific style compiled to the mp-lark platform|Feishu applet|
 |mp-qq|Object||设置编译到 mp-qq 平台的特定样式|QQ小程序|
+|mp-qq|Object||Set the specific style compiled to the mp-qq platform|QQ applet|
 |mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
+|mp-kuaishou|Object||Set the specific style compiled to the mp-kuaishou platform|Kaishou Mini Program|
 |mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
+|mp-jd|Object||Set the specific style compiled to the mp-jd platform|JD Mini Program|
 |usingComponents|Object| |引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)||
+|usingComponents|Object| |Refer to [Miniprogram Components](/tutorial/miniprogram-subject.html#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87% AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81)||
 |renderingMode|String| |同层渲染，webrtc(实时音视频) 无法正常时尝试配置 seperated 强制关掉同层|微信小程序|
+|renderingMode|String| |Same layer rendering, when webrtc (real-time audio and video) fails, try to configure seperated to force close the same layer|WeChat applet|
 |leftWindow|Boolean|true|当存在 leftWindow 时，默认是否显示 leftWindow|H5|
 | leftWindow| Boolean| true| Whether or not to display the leftWindow by default when the leftWindow is present| H5|
 |topWindow|Boolean|true|当存在 topWindow 时，默认是否显示 topWindow|H5|
@@ -189,9 +216,13 @@ Used for setting the applied status bar, navigation bar, title, window backgroun
 |rightWindow|Boolean|true|当存在 rightWindow 时，默认是否显示 rightWindow|H5|
 | rightWindow| Boolean| true| Whether or not to display the rightWindow by default when the rightWindow is present| H5|
 |rpxCalcMaxDeviceWidth|Number|960|rpx 计算所支持的最大设备宽度，单位 px|App（vue2 且不含 nvue）、H5（2.8.12+）|
+|rpxCalcMaxDeviceWidth|Number|960|rpx Calculate the maximum device width supported by px|App (vue2 and excluding nvue), H5 (2.8.12+)|
 |rpxCalcBaseDeviceWidth|Number|375|rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px|App（vue2 且不含 nvue）、H5（2.8.12+）|
+|rpxCalcBaseDeviceWidth|Number|375|rpx Calculates the base device width used in the calculation. When the actual width of the device exceeds the maximum device width supported by rpx calculation, it will be calculated according to the base width. The unit is px|App (vue2 and excluding nvue), H5 (2.8. 12+)|
 |rpxCalcIncludeWidth|Number|750|rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpx|App（vue2 且不含 nvue）、H5（2.8.12+）|
+|rpxCalcIncludeWidth|Number|750|rpx Calculates the value for special handling, always based on the actual device width, in rpx|App (vue2 and excluding nvue), H5 (2.8.12+)|
 |dynamicRpx|Boolean|false|动态 rpx，屏幕大小变化会重新渲染 rpx|App-nvue 3.2.13+|
+|dynamicRpx|Boolean|false|Dynamic rpx, re-renders when screen size changes rpx|App-nvue 3.2.13+|
 |maxWidth|Number||单位px，当浏览器可见区域宽度大于maxWidth时，两侧留白，当小于等于maxWidth时，页面铺满；不同页面支持配置不同的maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选)|H5（2.9.9+）|
 | maxWidth| Number| | In px, when the width of the visible area of the browser is greater than maxWidth, both sides are left blank; when less than or equal to maxWidth, the pages are covered; different pages support maxWidth with different configurations; maxWidth = leftWindow(optional)+page(page body)+rightWindow(optional)| H5(2.9.9+)|
 
@@ -199,6 +230,7 @@ Used for setting the applied status bar, navigation bar, title, window backgroun
 **Notice**
 
 - 支付宝小程序使用`titleImage`时必须使用`https`的图片链接地址，需要真机调试才能看到效果，支付宝开发者工具内无效果
+- When using `titleImage` in the Alipay applet, you must use the `https` image link address. You need to debug the real machine to see the effect. There is no effect in the Alipay developer tool.
 - `globalStyle`中设置的`titleImage`也会覆盖掉`pages`->`style`内的设置文字标题
 - `titleImage` set in `globalStyle` will also overwrite the set text title in `pages`->`style`
 - 使用 `maxWidth` 时，页面内fixed元素需要使用--window-left,--window-right来保证布局位置正确
@@ -213,6 +245,7 @@ Uni-app 2.9+ adds leftWindow, topWindow and rightWindow configurations. Used for
 With the existing mobile phone application as mainwindow, new page display windows can be added on the left, top and right sides.
 
 整体的宽屏适配思路，参考单独的[宽屏适配指南](https://uniapp.dcloud.net.cn/tutorial/adapt)
+For the overall widescreen adaptation idea, please refer to the separate [Widescreen Adaptation Guide](https://uniapp.dcloud.net.cn/tutorial/adapt)
 
 |属性|类型|默认值|描述|
 | Attribute| Type| Defaults| Describe|
@@ -239,6 +272,7 @@ With the existing mobile phone application as mainwindow, new page display windo
 	}
 	```
   - 需要隐藏大部分页面的 navigationBar，显示某个页面的 navigationBar
+  - Need to hide the navigationBar of most pages and display the navigationBar of a certain page
 	```css
 	/* 隐藏所有页面的 navigationBar */
 	.uni-app--showtopwindow uni-page-head {
@@ -334,6 +368,7 @@ For window communication, please refer to: [https://uniapp.dcloud.net.cn/api/win
 - pages节点的第一项为应用入口页（即首页）
 - The first item of the pages node is the application entry page (i.e. the home page)
 - **应用中新增/减少页面**，都需要对 pages 数组进行修改
+- **Add/reduce pages in the application**, all need to modify the pages array
 - 文件名**不需要写后缀**，框架会自动寻找路径下的页面资源
 - The file name  **does not need to write the suffix** , the framework will automatically find the page resources under the path
 
@@ -394,33 +429,51 @@ The configuration items on the page will override the same configuration items i
 |navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)||
 | navigationBarShadow| Object| | For the configuration of the shadow of the navigation bar, please refer to the following [Shadow of the navigation bar](/collocation/pages?id=navigationBarShadow)| |
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
+|navigationStyle|String|default|Navigation bar style, only supports default/custom. custom means to cancel the default native navigation bar, you need to see [use note](/collocation/pages?id=customnav)|WeChat applet 7.0+, Baidu applet, H5, App (2.0.3+)|
 |disableScroll|Boolean|false|设置为 true 则页面整体不能上下滚动（bounce效果），只在页面配置中有效，在globalStyle中设置无效|微信小程序（iOS）、百度小程序（iOS）|
+|disableScroll|Boolean|false| If set to true, the page as a whole cannot scroll up and down (bounce effect), only valid in page configuration, invalid in globalStyle|WeChat applet (iOS), Baidu applet (iOS)|
 |backgroundColor|HexColor|#ffffff|窗口的背景色|微信小程序、百度小程序、字节跳动小程序、飞书小程序、京东小程序|
+|backgroundColor|HexColor|#ffffff|The background color of the window|WeChat applet, Baidu applet, ByteDance applet, Feishu applet, Jingdong applet|
 |backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light||
 | backgroundTextStyle| String| dark| The style of pull-down loading, can only be dark/light| |
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.html#lifecycle)。||
+|enablePullDownRefresh|Boolean|false|Whether to enable pull-down refresh, see [page life cycle](/tutorial/page.html#lifecycle). ||
 |onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)||
+|onReachBottomDistance|Number|50|The distance from the bottom of the page when the bottoming event is triggered, the unit only supports px, see [page life cycle](/tutorial/page.html#lifecycle)||
 |backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorTop| HexColor| #ffffff| The background color of the window on the top (bounce area)| IOS platform only|
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorBottom| HexColor| #ffffff| The background color of the window on the bottom (bounce area)| IOS platform only|
 |disableSwipeBack|Boolean|false|是否禁用滑动返回|App-iOS（3.4.0+）|
+|disableSwipeBack|Boolean|false|Whether to disable SwipeBack|App-iOS(3.4.0+)|
 |titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5|
+|titleImage|String||The image address of the navigation bar (replace the current text title), the image link address of https must be used in the Alipay applet|Alipay applet, H5|
 |transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP|
+|transparentTitle|String|none|The navigation bar transparency setting. Support always transparent / auto sliding adaptive / none opaque|Alipay applet, H5, APP|
 |titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
+|titlePenetrate|String|NO|Click to penetrate the navigation bar|Alipay applet, H5|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
 | app-plus| Object| | Set the specific style compiled to the App platform. For configuration items, please refer to the following [app-plus](/collocation/pages?id=app-plus)| App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
 | h5| Object| | Set the specific style compiled to H5 platform. For configuration items, please refer to the following [H5](/collocation/pages?id=h5)| H5|
 |mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
+|mp-alipay|Object||Set the specific style compiled to the mp-alipay platform, the configuration items refer to the following [MP-ALIPAY](/collocation/pages?id=mp-alipay)|Alipay applet|
 |mp-weixin|Object||设置编译到 mp-weixin 平台的特定样式|微信小程序|
+|mp-weixin|Object||Set the specific style compiled to the mp-weixin platform|WeChat applet|
 |mp-baidu|Object||设置编译到 mp-baidu 平台的特定样式|百度小程序|
+|mp-baidu|Object||Set the specific style compiled to the mp-baidu platform|Baidu applet|
 |mp-toutiao|Object||设置编译到 mp-toutiao 平台的特定样式|字节跳动小程序|
+|mp-toutiao|Object||Set the specific style compiled to the mp-toutiao platform|Byte Beat applet|
 |mp-lark|Object||设置编译到 mp-lark 平台的特定样式|飞书小程序|
+|mp-lark|Object||Set the specific style compiled to the mp-lark platform|Feishu applet|
 |mp-qq|Object||设置编译到 mp-qq 平台的特定样式|QQ小程序|
+|mp-qq|Object||Set the specific style compiled to the mp-qq platform|QQ applet|
 |mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
+|mp-kuaishou|Object||Set the specific style compiled to the mp-kuaishou platform|Kaishou Mini Program|
 |mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
+|mp-jd|Object||Set the specific style compiled to the mp-jd platform|JD Mini Program|
 |usingComponents|Object||引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)|App、微信小程序、支付宝小程序、百度小程序、京东小程序|
+|usingComponents|Object||Refer to [Miniprogram Components](/tutorial/miniprogram-subject.html#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87% AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81)|App, WeChat applet, Alipay applet, Baidu Mini Programs, JD Mini Programs |
 |leftWindow|Boolean|true|当存在 leftWindow时，当前页面是否显示 leftWindow|H5|
 | leftWindow| Boolean| true| Whether or not to display the leftWindow on the current page when the leftWindow is present| H5|
 |topWindow|Boolean|true|当存在 topWindow 时，当前页面是否显示 topWindow|H5|
@@ -458,12 +511,14 @@ The configuration items on the page will override the same configuration items i
 **Notice**
 
 - 支付宝小程序使用`titleImage`时必须使用`https`的图片链接地址，需要真机调试才能看到效果，支付宝开发者工具内无效果
+- When using `titleImage` in the Alipay applet, you must use the `https` image link address. You need to debug the real machine to see the effect. There is no effect in the Alipay developer tool.
 
 ### 自定义导航栏使用注意@customnav
 ### Pay attention to @customnav when using the custom navigation bar
 当navigationStyle设为custom或titleNView设为false时，原生导航栏不显示，此时要注意几个问题：
 When navigationStyle is set to custom or titleNView is set to false, the native navigation bar will not be displayed. At this time, several issues should be noted:
 - 非H5端，手机顶部状态栏区域会被页面内容覆盖。这是因为窗体是沉浸式的原因，即全屏可写内容。uni-app提供了状态栏高度的css变量[--status-bar-height](/tutorial/syntax-css.html#css-变量)，如果需要把状态栏的位置从前景部分让出来，可写一个占位div，高度设为css变量。
+- For non-H5 terminals, the status bar area at the top of the mobile phone will be covered by the page content. This is because the form is immersive, i.e. full screen writable content. uni-app provides a css variable for the height of the status bar [--status-bar-height](/tutorial/syntax-css.html#css-%E5%8F%98%E9%87%8F), if you need to put the status The position of the bar is set aside from the foreground part, and a placeholder div can be written, and the height is set as a css variable.
 ```html
 <template>
     <view>
@@ -486,26 +541,33 @@ When navigationStyle is set to custom or titleNView is set to false, the native 
 - 前端导航栏搭配原生下拉刷新时，会有问题，包括
 - Problems may occur when front-end navigation bar is used with the native navigation pull-down refresh, including
 	* 微信小程序下iOS需要拉更长才能看到下拉刷新的三个点，而Android是从屏幕顶部下拉，无法从导航栏下方下拉。如果一定要从前端导航栏下拉，小程序下只能放弃原生下拉刷新，纯前端模拟，参考[mescroll插件](https://ext.dcloud.net.cn/plugin?id=343)，但这样很容易产生性能问题。目前小程序平台自身没有提供更好的方案
+	* Under the WeChat applet, iOS needs to pull longer to see the three points of pull-to-refresh, while Android pulls down from the top of the screen and cannot pull down from the bottom of the navigation bar. If you must pull down from the front-end navigation bar, you can only give up the native pull-down refresh under the applet, pure front-end simulation, refer to [mescroll plugin](https://ext.dcloud.net.cn/plugin?id=343), but this way Performance issues can easily arise. At present, the Mini Program platform itself does not provide a better solution
 	* App和H5下，原生下拉刷新提供了[circle样式](/collocation/pages?id=app-pullToRefresh)，可以指定offset偏移量（pages.json的app-plus下配置），自定义下拉圈出现的位置。在hello uni-app的扩展组件中有示例。
 	* Under App and H5 sides, the native pull-down refresh provides [circle style](/collocation/pages?id=app-pullToRefresh), which can be used to specify the offset (configuration under app-plus in pages.json) and customize the location where the drop-down circle appears. There are examples in the extension component of hello uni-app.
 - 非H5端，前端导航盖不住原生组件。如果页面有video、map、textarea(仅小程序)等[原生组件](/component/native-component)，滚动时会覆盖住导航栏
+- For non-H5 terminals, front-end navigation cannot cover native components. If the page has [native components] (/component/native-component) such as video, map, textarea (applets only), etc., the navigation bar will be covered when scrolling
 	* 如果是小程序下，可以使用cover-view来做导航栏，避免覆盖问题
+	* If it is a small program, you can use cover-view as the navigation bar to avoid coverage problems
 	* 如果是App下，建议使用[titleNView](/collocation/pages?id=app-titleNView)或[subNVue](/collocation/pages?id=app-subNVues)，体验更好
 	* If it is on App side, it is recommended to use [titleNView](/collocation/pages?id=app-titleNView) or [subNVue](/collocation/pages?id=app-subNVues) for better experience
 - 前端组件在渲染速度上不如原生导航栏，原生导航可以在动画期间渲染，保证动画期间不白屏，但使用前端导航栏，在新窗体进入的动画期间可能会整页白屏，越低端的手机越明显。
 - The front-end component is inferior to the native navigation bar in rendering speed, and the native navigation bar can render during the animation to ensure that there is no blank screen during the animation. However, using the front-end navigation bar may lead to the whole page being blank during the animation once the new window enters. The more low end the mobile phone is, the more obvious this phenomenon is.
 - 以上讨论的是前端自定义导航栏，但在App侧，原生导航栏也提供了比小程序导航更丰富的自定义性
+- The above discussion is about the front-end custom navigation bar, but on the App side, the native navigation bar also provides richer customization than the applet navigation
 	* titleNView：给原生导航栏提供更多配置，包括自定义按钮、滚动渐变效果、搜索框等，详见[titleNView](/collocation/pages?id=app-titleNView)
 	* titleNView: Provides more configurations for the native navigation bar, including custom buttons, scrolling gradient effects, search boxes, etc., see [titleNView](/collocation/pages?id=app-titleNView) for details
 	* subNVue：使用nvue原生渲染，所有布局自己开发，具备一切自定义灵活度。详见[subNVue](/collocation/pages?id=app-subNVues)
 	* subNVue: use nvue native rendering, all layouts are developed by ourselves, can be flexibly customized to a very large extent. See [subNVue](/collocation/pages?id=app-subNVues) for details
 - 页面禁用原生导航栏后，想要改变状态栏的前景字体样式，仍可设置页面的 navigationBarTextStyle 属性（只能设置为 black或white）。如果想单独设置状态栏颜色，App端可使用[plus.navigator.setStatusBarStyle](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.setStatusBarStyle)设置。注意部分低端Android手机（4.4）自身不支持设置状态栏前景色。
+- After the native navigation bar is disabled on the page, if you want to change the foreground font style of the status bar, you can still set the navigationBarTextStyle property of the page (it can only be set to black or white). If you want to set the status bar color separately, you can use [plus.navigator.setStatusBarStyle](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.setStatusBarStyle) on the App side. Note that some low-end Android phones (4.4) do not support setting the foreground color of the status bar.
 
 鉴于以上问题，在原生导航能解决业务需求的情况下，尽量使用原生导航。甚至有时需要牺牲一些不是很重要的需求。在App和H5下，uni-app提供了灵活的处理方案：[titleNView](/collocation/pages?id=app-titleNView)、[subNVue](/collocation/pages?id=app-subNVues)、或整页使用nvue。但在小程序下，因为其自身的限制，没有太好的方案。有必要的话，也可以用条件编译分端处理。
+In view of the above problems, when native navigation can solve business needs, try to use native navigation. Sometimes even less important needs need to be sacrificed. Under App and H5, uni-app provides flexible processing solutions: [titleNView](/collocation/pages?id=app-titleNView), [subNVue](/collocation/pages?id=app-subNVues), or whole The page uses nvue. But under the applet, because of its own limitations, there is no good solution. Conditional compilation can also be used to split end processing if necessary.
 
 ### app-plus
 
 配置编译到 App 平台时的特定样式，部分常用配置 H5 平台也支持。以下仅列出常用，更多配置项参考 [WebviewStyles](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyles)。
+Configure a specific style when compiling to the App platform, and some commonly used configurations are also supported by the H5 platform. The following only lists the common ones. For more configuration items, refer to [WebviewStyles](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyles).
 
 |属性|类型|默认值|描述|平台兼容|
 |Attribute|Type|Default|Description|Platform compatibility|
@@ -517,6 +579,7 @@ When navigationStyle is set to custom or titleNView is set to false, the native 
 |subNVues|Object||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+|
 |subNVues|Object||Native subwindow, see details: [Native subwindow](/collocation/pages?id=app-subNVues)|App 1.9.10+|
 |bounce|String||页面回弹效果，设置为 "none" 时关闭效果。|App-vue（nvue Android无页面级bounce效果，仅list、recycle-list、waterfall等滚动组件有bounce效果）|
+|bounce|String||Page bounce effect, set to "none" to disable the effect. |App-vue (nvue Android has no page-level bounce effect, only list, recycle-list, waterfall and other scrolling components have bounce effect)|
 |popGesture|String|close|侧滑返回功能，可选值："close"（启用侧滑返回）、"none"（禁用侧滑返回）|App-iOS|
 |popGesture|String|close|Slide right to return function, options: "close" (enabled slide right to return), "none" (disable slide right to return) |App-iOS|
 |softinputNavBar|String|auto|iOS软键盘上完成工具栏的显示模式，设置为 "none" 时关闭工具栏。|App-iOS|
@@ -528,6 +591,7 @@ When navigationStyle is set to custom or titleNView is set to false, the native 
 |scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App|
 |scrollIndicator|String||Scroll bar display strategy. Hide scroll bar if set to "none". |App|
 |animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App|
+|animationType|String|pop-in|The animation effect displayed by the window, see: [Window animation](/api/router?id=animation). |App|
 |animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App|
 |animationDuration|Number|300|Duration of window display animation, in ms. |App|
 **Tips**
@@ -554,6 +618,7 @@ When navigationStyle is set to custom or titleNView is set to false, the native 
 |type|String|default|导航栏样式。"default"-默认样式；"transparent"-滚动透明渐变；"float"-悬浮导航栏。|App-nvue 2.4.4+ 支持|
 | type| String| default| Navigation bar style. " default"-default style; "transparent"-transparency gradient when scrolling; "float"-floating navigation bar.| Supported by App-nvue 2.4.4+|
 |tags|Array||原生 View 增强，详见：[5+ View 控件](http://www.html5plus.org/doc/zh_cn/nativeobj.html#plus.nativeObj.ViewDrawTagStyles)||
+|tags|Array||Native View enhancement, see: [5+ View Controls](http://www.html5plus.org/doc/zh_cn/nativeobj.html#plus.nativeObj.ViewDrawTagStyles)||
 |searchInput|Object||原生导航栏上的搜索框配置，详见：[searchInput](/collocation/pages?id=app-titlenview-searchinput)|1.6.0|
 | searchInput| Object| | For the configuration of the search box on the native navigation bar, see [searchInput](/collocation/pages?id=app-titlenview-searchinput) for details| 1.6.0|
 |homeButton|Boolean|false|标题栏控件是否显示Home按钮||
@@ -561,6 +626,7 @@ When navigationStyle is set to custom or titleNView is set to false, the native 
 |autoBackButton|Boolean|true|标题栏控件是否显示左侧返回按钮|App 2.6.3+|
 | autoBackButton| Boolean| true| Whether the title bar control displays the return button on the left| App 2.6.3+|
 |backButton|Object||返回按钮的样式，详见：[backButton](/collocation/pages?id=app-titleNView-backButtonStyles)|App 2.6.3|
+|backButton|Object||Return button style, see: [backButton](/collocation/pages?id=app-titleNView-backButtonStyles)|App 2.6.3|
 |backgroundImage|String||支持以下类型： 背景图片路径 - 如"/static/img.png"，仅支持本地文件绝对路径，根据实际标题栏宽高拉伸绘制； 渐变色 - 仅支持线性渐变，两种颜色的渐变，如“linear-gradient(to top, #a80077, #66ff00)”， 其中第一个参数为渐变方向，可取值： "to right"表示从左向右渐变， “to left"表示从右向左渐变， “to bottom"表示从上到下渐变， “to top"表示从下到上渐变， “to bottom right"表示从左上角到右下角， “to top left"表示从右下角到左上角|2.6.3|
 | backgroundImage| String| | The following types are supported: Background image path - such as "/static/img.png", only supports the absolute path of local files, and draws according to the actual title bar width and height; Gradient - only supports linear gradient and gradient of two colors, such as "linear-gradient(to top, #a80077, #66ff00)", in which the first parameter is the gradient direction. Options include: "to right" means the gradient is from left to right, "to left" means the gradient is from right to left, "to bottom" means the gradient is from top to bottom, "to bottom right" means the gradient is from top left to bottom right, and "to top left" means the gradient is from bottom right to top left| 2.6.3|
 |backgroundRepeat|String||仅在backgroundImage设置为图片路径时有效。 可取值： "repeat" - 背景图片在垂直方向和水平方向平铺； "repeat-x" - 背景图片在水平方向平铺，垂直方向拉伸； “repeat-y” - 背景图片在垂直方向平铺，水平方向拉伸； “no-repeat” - 背景图片在垂直方向和水平方向都拉伸。 默认使用 “no-repeat"|2.6.3|
@@ -605,6 +671,7 @@ When navigationStyle is set to custom or titleNView is set to false, the native 
 - `titleNView` 的 `type` 值为 `transparent` 时，App-nvue 2.4.4+ 支持
 - When the `type` value of `titleNView` is `transparent`, App-nvue 2.4.4+ is supported
 - 在 `titleNView` 配置 `buttons` 后，监听按钮的点击事件，vue 页面及 nvue 的weex编译模式参考：[uni.onNavigationBarButtonTap](/tutorial/nvue-outline?id=onnavigationbarbuttontap)
+- After configuring `buttons` in `titleNView`, listen to the click event of the button, the vue page and the weex compilation mode of nvue refer to: [uni.onNavigationBarButtonTap](/tutorial/nvue-outline?id=onnavigationbarbuttontap)
 - 在 `titleNView` 配置 `searchInput` 后，相关的事件监听参考：[onNavigationBarSearchInputChanged 等](/collocation/frame/lifecycle?id=页面生命周期)
 - After configuring `searchInput` in `titleNView`, please refer to [onNavigationBarSearchInputChanged, etc.](/collocation/frame/lifecycle?id=%E9%A1%B5%E9%9D%A2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F) for related event listening to
 - 可通过 `[<navigation-bar>(/component/navigation-bar)]` 配置
@@ -672,6 +739,7 @@ Supported by HBuilderX 2.6.3+
 |title|String||返回按钮上的标题，显示在返回图标（字体图标）后，默认为空字符串。|
 | title| String| | The title of the return button is displayed after the return icon (font icon), and it is an empty string by default.|
 |titleWeight|String|"normal"|返回按钮上标题的粗细，可取值： "normal" - 标准字体； "bold" - 加粗字体。|
+|titleWeight|String|"normal"|Returns the weight of the title on the button, the possible values are: "normal" - standard font; "bold" - bold font. |
 
 
 ##### 按钮样式@app-titleNView-buttons-type
@@ -727,6 +795,7 @@ searchInput can place a search box on the native navigation bar of titleNView. I
 **searchInput Tips**
 
 searchInput的点击输入框onNavigationBarSearchInputClicked、文本变化onNavigationBarSearchInputChanged、点击搜索按钮onNavigationBarSearchInputConfirmed等生命周期，见文档[页面生命周期](/tutorial/page.html#lifecycle)。
+The life cycle of searchInput's click input box onNavigationBarSearchInputClicked, text change onNavigationBarSearchInputChanged, click search button onNavigationBarSearchInputConfirmed, etc., see the document [page life cycle](/tutorial/page.html#lifecycle).
 - 在生命周期里通过参数e.text，可获取输入框内容。具体见hello uni-app中模板-顶部导航栏中的示例
 - Get the contents of the input box with the parameter e.text in the lifecycle. See the example in template-top navigation bar in hello uni-app for details
 - 如需动态修改searchInput，或者获取searchInput的placehold，参考[uni-app动态修改App端导航栏](https://ask.dcloud.net.cn/article/35374)
@@ -804,6 +873,7 @@ Some configurations are listed below. Regarding the comprehensive navigation bar
 - App平台，buttons角标动态修改，见 hello uni-app 中模板-顶部导航标题栏-导航栏带红点和角标
 - App platform, buttons corner logo dynamic modification. See navigation title bar-navigation bar with red dot and corner logo in hello uni-app
 - App平台，设置searchInput的文字动态修改，API见[文档](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.setTitleNViewSearchInputText)。注意disable状态无法设置文字、placehold暂不支持动态设置
+- App platform, set the text dynamic modification of searchInput, API see [document](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.setTitleNViewSearchInputText). Note that the text cannot be set in the disable state, and the placehold does not support dynamic settings for the time being
 - H5平台，如需实现上述动态修改，需在条件编译通过dom操作修改
 - H5 platform, if you want to realize the above dynamic modification, you need to modify it through dom operation in conditional compilation.
 
@@ -815,6 +885,7 @@ Some configurations are listed below. Regarding the comprehensive navigation bar
 `subNVues` is the native subwindow of the vue page. It is used to solve the hierarchical coverage and flexible customization of native interface in vue page in App.
 
 它不是全屏页面，也不是组件，就是一个原生子窗体。它是一个 nvue 页面，使用 weex 引擎渲染，提供了比 cover-view、plus.nativeObj.view 更强大的原生排版能力，方便自定义原生导航或覆盖原生地图、视频等。请详读[subNVues 开发指南](http://ask.dcloud.net.cn/article/35948)
+It's not a full screen page, it's not a component, it's a native child form. It is an nvue page, rendered using the weex engine, which provides more powerful native typesetting capabilities than cover-view and plus.nativeObj.view, which is convenient for customizing native navigation or overlaying native maps, videos, etc. Please read the [subNVues Development Guide](http://ask.dcloud.net.cn/article/35948)
 
 `subNVue` 也可以在 nvue 页面中使用。但目前在纯nvue下（render为native）还不支持。
 `subNVue` can also be used in the nvue page. However, it is currently not supported under pure nvue (rendered as native).
@@ -916,6 +987,7 @@ Some configurations are listed below. Regarding the comprehensive navigation bar
 #### 下拉刷新@app-pullToRefresh
 #### Pull down to refresh @app-pullToRefresh
 在 App 平台下可以自定义部分下拉刷新的配置 `page->style->app-plus->pullToRefresh`。
+Under the App platform, you can customize some of the pull-down refresh configurations `page->style->app-plus->pullToRefresh`.
 
 |属性|类型|默认值|描述|
 | Attribute| Type| Defaults| Describe|
@@ -945,6 +1017,7 @@ Some configurations are listed below. Regarding the comprehensive navigation bar
 - `enablePullDownRefresh` 与 `pullToRefresh->support` 同时设置时，后者优先级较高。
 - When both `enablePullDownRefresh` and `pullToRefresh->support` are set at the same time, the latter has a higher priority.
 - 如果期望在 App 和小程序上均开启下拉刷新的话，请配置页面的 `enablePullDownRefresh` 属性为 true。
+- If you want to enable pull-to-refresh on both the app and the applet, please configure the `enablePullDownRefresh` property of the page to true.
 - 若仅期望在 App 上开启下拉刷新，则不要配置页面的 `enablePullDownRefresh` 属性，而是配置 `pullToRefresh->support` 为 true。
 - If you only want to enable pull-down refresh on the App, do not configure the `enablePullDownRefresh` attribute of the page, but configure `pullToRefresh->support` to true.
 - 开启原生下拉刷新时，页面里不应该使用全屏高的scroll-view，向下拖动内容时，会优先触发下拉刷新而不是scroll-view滚动
@@ -1008,6 +1081,7 @@ The specific style when the configuration compiles to H5 platform
 |backgroundColor|String|#F7F7F7|背景颜色，颜色值格式为"#RRGGBB"。||
 | backgroundColor| String| #F7F7F7| Background color, the color value format is "#RRGGBB".| |
 |buttons|Array||自定义按钮，参考 [buttons](#h5-titlenview-buttons)||
+|buttons|Array||Custom buttons, refer to [buttons](#h5-titlenview-buttons)||
 |titleColor|String|#000000|标题文字颜色||
 | titleColor| String| #000000| Title text color| |
 |titleText|String||标题文字内容||
@@ -1017,6 +1091,7 @@ The specific style when the configuration compiles to H5 platform
 |type|String|default|导航栏样式。"default"-默认样式；"transparent"-透明渐变。||
 | type| String| default| Navigation bar style. " "default" - default style; " Transparent" - transparent gradient.| |
 |searchInput|Object||导航栏上的搜索框样式，详见：[searchInput](#h5-searchinput)|1.6.5|
+|searchInput|Object||Search box style on the navigation bar, see: [searchInput](#h5-searchinput)|1.6.5|
 
 ##### 自定义按钮@h5-titleNView-buttons
 ##### Custom button @h5-titleNView-buttons
@@ -1024,6 +1099,7 @@ The specific style when the configuration compiles to H5 platform
 | Attribute| Type| Defaults| Describe|
 |:-|:-|:-|:-|
 |type|String|none|按钮样式，可取值见：[buttons 样式](#app-titlenview-buttons-type)|
+|type|String|none|Button style, available values: [buttons style](#app-titlenview-buttons-type)|
 |color|String|默认与标题文字颜色一致|按钮上文字颜色|
 | color| String| The color is the same as the title text by default| Text color on the button|
 |background|String|默认值为灰色半透明|按钮的背景颜色，仅在标题栏type=transparent时生效|
@@ -1126,23 +1202,35 @@ Pull-down refresh animation on the h5 platform, and only circle type is availabl
 **注意事项：**
 **Notes:**
 - 微信/百度/头条 需要配置: "disableScroll": true
+- WeChat/Baidu/Toutiao need to configure: "disableScroll": true
 - 支付宝 "mp-alipay": { "allowsBounceVertical": "NO" }
+- Alipay "mp-alipay": { "allowsBounceVertical": "NO" }
 
 ### mp-alipay
 配置编译到 MP-ALIPAY 平台时的特定样式
+Configure specific styles when compiling to MP-ALIPAY platform
 
 |属性|类型|默认值|描述|
 | Attribute| Type| Defaults| Describe|
 |:-|:-|:-|:-|
 |allowsBounceVertical|String|YES|是否允许向下拉拽。支持 YES / NO|
+|allowsBounceVertical|String|YES|Whether to allow drop down. Support YES / NO|
 |titleImage|String||导航栏图片地址（替换当前文字标题），内必须使用https的图片链接地址|
+|titleImage|String||Navigation bar image address (replaces the current text title), must use https image link address|
 |transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|
+|transparentTitle|String|none|The navigation bar transparency setting. Support always transparent / auto sliding adaptive / none opaque|
 |titlePenetrate|String|NO|导航栏点击穿透|
+|titlePenetrate|String|NO|Click to penetrate the navigation bar|
 |showTitleLoading|String|NO|是否进入时显示导航栏的 loading。支持 YES / NO|
+|showTitleLoading|String|NO|Whether to show the loading of the navigation bar when entering. Support YES / NO|
 |backgroundImageUrl|String||下拉露出显示的背景图链接|
+|backgroundImageUrl|String||Drop down the displayed background image link|
 |backgroundImageColor|HexColor||下拉露出显示的背景图底色|
+|backgroundImageColor|HexColor||Pull down to reveal the background color of the displayed background image|
 |gestureBack|String|NO|iOS 用，是否支持手势返回。支持 YES / NO|
+|gestureBack|String|NO|For iOS, whether to support gesture back. Support YES / NO|
 |enableScrollBar|String|YES|Android 用，是否显示 WebView 滚动条。支持 YES / NO|
+|enableScrollBar|String|YES|For Android, whether to display the WebView scroll bar. Support YES / NO|
 
 **注意事项**
 **Precautions**
@@ -1152,6 +1240,7 @@ Pull-down refresh animation on the h5 platform, and only circle type is availabl
 - `backgroundImageUrl`支持网络地址和本地地址，尽量使用绝对地址
 - `backgroundImageUrl` supports network address and local address, try to use absolute address
 - 部分配置可能会只在真机运行的时候生效，支付宝未来应该会改善
+- Some configurations may only take effect when the real machine is running, and Alipay should improve it in the future
 
 ## FAQ
 - Q：如何取消原生导航栏？或自定义导航
@@ -1239,6 +1328,7 @@ If you need to match the vue file in node_modules, you need to use a matching ru
 - 考虑到编译速度，直接在`pages.json`内修改`easycom`不会触发重新编译，需要改动页面内容触发。
 - Considering the compilation speed, directly modifying `easycom` within `pages.json` will not trigger recompilation, but will trigger when the page content is changed.
 - `easycom`只处理vue组件，不处理小程序专用组件（如微信的wxml格式组件）。不处理后缀为.nvue的组件。但vue组件也可以全端运行，包括小程序和app-nvue。可以参考uni ui，使用vue后缀，同时兼容nvue页面。
+- `easycom` only handles vue components, not small program-specific components (such as WeChat's wxml format components). Components suffixed with .nvue are not processed. But vue components can also run on full end, including applets and app-nvue. You can refer to uni ui, use the vue suffix, and be compatible with nvue pages.
 - `nvue`页面里引用`.vue`后缀的组件，会按照nvue方式使用原生渲染，其中不支持的css会被忽略掉。这种情况同样支持`easycom`
 - The components with the suffix `.vue` in the `nvue` page will use native rendering according to the nvue method, and the unsupported css will be ignored. In this case, `easycom` is also supported
 
@@ -1248,6 +1338,7 @@ If you need to match the vue file in node_modules, you need to use a matching ru
 If the application is a multi-tab application, you can specify the first-level navigation bar and the corresponding page displayed when the tab is switched through the tabBar configuration item.
 
 在 pages.json 中提供 tabBar 配置，不仅仅是为了方便快速开发导航，更重要的是在App和小程序端提升性能。在这两个平台，底层原生引擎在启动时无需等待js引擎初始化，即可直接读取 pages.json 中配置的 tabBar 信息，渲染原生tab。
+Providing tabBar configuration in pages.json is not only to facilitate rapid development and navigation, but also to improve performance on the App and applet side. On these two platforms, the underlying native engine can directly read the tabBar information configured in pages.json and render native tabs without waiting for the js engine to initialize at startup.
 
 **Tips**
 
@@ -1260,6 +1351,7 @@ If the application is a multi-tab application, you can specify the first-level n
 - tabbar 的页面展现过一次后就保留在内存中，再次切换 tabbar 页面，只会触发每个页面的onShow，不会再触发onLoad。
 - tabbar pages are displayed once and then kept in memory. Switching tabbar pages again will only trigger onShow of each page, not onLoad.
 - 顶部的 tabbar 目前仅微信小程序上支持。需要用到顶部选项卡的话，建议不使用 tabbar 的顶部设置，而是自己做顶部选项卡，可参考 hello uni-app->模板->顶部选项卡。
+- The tabbar at the top is currently only supported on WeChat Mini Programs. If you need to use the top tab, it is recommended not to use the top setting of the tabbar, but to make the top tab yourself, please refer to hello uni-app->template->top tab.
 
 **属性说明：**
 **Attribute description:**
@@ -1280,6 +1372,7 @@ If the application is a multi-tab application, you can specify the first-level n
 |list|Array|是||tab 的列表，详见 list 属性说明，最少2个、最多5个 tab||
 | list| Array| Yes| | tab list. See the list attribute description for details, with at least 2 tabs and at most 5 tabs| |
 |position|String|否|bottom|可选值 bottom、top|top 值仅微信小程序支持|
+|position|String|No|bottom|Optional value bottom, top|top value is only supported by WeChat applet|
 |fontSize|String|否|10px|文字默认大小|App 2.3.4+、H5 3.0.0+|
 | fontSize| String| No| 10px| Default text size| App 2.3.4+, H5 3.0.0+|
 |iconWidth|String|否|24px|图标默认宽度（高度等比例缩放）|App 2.3.4+、H5 3.0.0+|
@@ -1308,6 +1401,7 @@ The list receives an array, and each item in the array is an object with the fol
 |visible|Boolean|否|该项是否显示，默认显示|App (3.2.10+)、H5 (3.2.10)+|
 | visible| Boolean| No| This item is displayed or not, with displayed as default| App (3.2.10+), H5 (3.2.10)+|
 |iconfont|Object|否|字体图标，优先级高于 iconPath|App（3.4.4+）|
+|iconfont|Object|No|Font icon, which takes precedence over iconPath|App (3.4.4+)|
 
 
 **midButton 属性说明**
@@ -1329,19 +1423,27 @@ The list receives an array, and each item in the array is an object with the fol
 |backgroundImage|String|否||中间按钮的背景图片路径|
 | backgroundImage| String| No| | Background image path of the middle button|
 |iconfont|Object|否||字体图标，优先级高于 iconPath|App（3.4.4+）|
+|iconfont|Object|No||Font icon, which takes precedence over iconPath|App (3.4.4+)|
 
 midButton没有pagePath，需监听点击事件，自行处理点击后的行为逻辑。监听点击事件为调用API：uni.onTabBarMidButtonTap，详见[https://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap](https://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap)
 There is no pagePath on midButton, so you need to listen to click events and handle the behavior logic after clicking by yourself. listen to click events to call API: uni.onTabBarMidButtonTap, see [https://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap](https://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap) for details
 
 **iconfont参数说明：**
+**iconfont parameter description:**
 
 |属性|类型|说明|
+|property|type|description|
 |:-|:-|:-|
 |text|String|字库 Unicode 码|
+|text|String|Font Unicode Code|
 |selectedText|String|选中后字库 Unicode 码|
+|selectedText|String|The Unicode code of the selected font|
 |fontSize|String|字体图标字号(px)|
+|fontSize|String|Font icon font size (px)|
 |color|String|字体图标颜色|
+|color|String|Font icon color|
 |selectedColor|String|字体图标选中颜色|
+|selectedColor|String|Font icon selected color|
 
 
 #### **tabbar常见问题** @tips-tabbar
@@ -1349,16 +1451,21 @@ There is no pagePath on midButton, so you need to listen to click events and han
 - tabbar 的 js api 见[接口-界面-tabbar](https://uniapp.dcloud.io/api/ui/tabbar)，可实现动态显示隐藏（如弹出层无法覆盖tabbar）、内容修改（如国际化）、item加角标等功能。hello uni-app中也有示例。
 - For the js api of the tabbar, see [Interface-Interface-tabbar](https://uniapp.dcloud.io/api/ui/tabbar), which can realize the functions of dynamic display hiding (for example, the pop-up layer cannot the cover tabbar), content modification (for example, internationalization), item adding corner mark and so on. There are also examples in hello uni-app.
 - tabbar 的 item 点击事件见[页面生命周期的onTabItemTap](https://uniapp.dcloud.io/tutorial/page.html#lifecycle)。
+- For the item click event of the tabbar, see [onTabItemTap of the page life cycle](https://uniapp.dcloud.io/tutorial/page.html#lifecycle).
 - 代码跳转到 tabbar 页面，api只能使用[uni.switchTab](https://uniapp.dcloud.io/api/router?id=switchtab)，不能使用uni.navigateTo、uni.redirectTo；使用navigator组件跳转时必须设置[open-type="switchTab"](https://uniapp.dcloud.io/component/navigator)
 - For the code to jump to the tabbar page, you can only use [uni.switchTab](https://uniapp.dcloud.io/api/router?id=switchtab) in the api instead of uni.navigateTo or uni.redirectTo; You must set [open-type="switchTab"](https://uniapp.dcloud.io/component/navigator) when using the navigator component to jump
 - tabbar 的默认高度，在不同平台不一样。App端的默认高度在HBuilderX 2.3.4起从56px调整为50px，与H5端统一。开发者也可以自行设定高度，调回56px。[详见](https://uniapp.dcloud.io/tutorial/syntax-css.html#固定值)
+- The default height of the tabbar is different on different platforms. The default height of the App side has been adjusted from 56px to 50px since HBuilderX 2.3.4, which is unified with the H5 side. Developers can also set the height by themselves, back to 56px. [See details](https://uniapp.dcloud.io/tutorial/syntax-css.html#%E5%9B%BA%E5%AE%9A%E5%80%BC)
 - tabbar 在H5端是div模拟的，属于前端屏幕窗口的一部分，如果要使用bottom居底定位方式，应该使用css变量`--window-bottom`，比如悬浮在tabbar上方10px的按钮，样式如下`bottom: calc(var(--window-bottom) + 10px)`
 - tabbar is simulated by div on the H5 side, which is a part of the front screen window. If you want to use the bottom localization method, you should use the css variable `--window-bottom`, such as a button floating 10px above the tabbar, the style is as follows `bottom: calc(var(--window-bottom) + 10px)`
 - 中间带+号的tabbar模板例子，[参考](https://ext.dcloud.net.cn/plugin?id=98)。可跨端，但+号不凸起。如需中间凸起，配置tabbar的midButton。
 - An example of a tabbar template with a + sign in the middle. [Refer to](https://ext.dcloud.net.cn/plugin?id=98). cross-platform is possible, but the + sign is not convex. If the middle convex is required, configure the midButton of tabbar.
 - 如果是需要先登录、后进入tab页面，不需要把登录页设为首页，首页仍然是tabbar页，可参考[云端一体登录模板](https://ext.dcloud.net.cn/plugin?id=13)
+- If you need to log in first and then enter the tab page, you don't need to set the login page as the home page, the home page is still the tabbar page, you can refer to [Cloud Integration Login Template](https://ext.dcloud.net.cn/plugin? id=13)
 - 前端弹出遮罩层挡不住tabbar的问题，跨端处理方式时动态隐藏tabbar。App端可以使用plus.nativeObj.view或subNVue做弹出和遮罩，可参考这个[底部原生图标分享菜单例子](https://ext.dcloud.net.cn/plugin?id=69)
+- The front-end pop-up mask layer cannot block the tabbar problem, and the tabbar is dynamically hidden when the cross-end processing method is used. On the App side, you can use plus.nativeObj.view or subNVue for pop-up and masking, please refer to this [Example of native icon sharing menu at the bottom](https://ext.dcloud.net.cn/plugin?id=69)
 - 微信小程序模拟器1.02.1904090版有bug，在缩放模拟器页面百分比后，tabbar点击多次后就会卡死。真机无碍，使用时注意。[详见](https://developers.weixin.qq.com/community/develop/doc/0002e6e6bf0d602d8c783e10756400)
+- There is a bug in the WeChat applet simulator version 1.02.1904090. After scaling the simulator page percentage, the tabbar will be stuck after multiple clicks. The real machine is harmless, please pay attention when using it. [See details](https://developers.weixin.qq.com/community/develop/doc/0002e6e6bf0d602d8c783e10756400)
 - PC宽屏上，当页面存在topWindow或leftWindow或rightWindow等多窗体结构时，若想改变 tabbar 显示的位置，请使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 配置，若想隐藏 tabbar，可以使用如下 css（好处是可以和 leftwindow 等窗体联动）：
 - On the PC widescreen, if you want to change the display position of tabbar when there are multi-window structures such as topwindow, leftwindow or rightwindow on the page, please use [custom-tab-bar component](https://uniapp.dcloud.io/component/custom-tab-bar) configuration. If you want to hide tabbar, you can use the following css (the advantage is that it can be linked with windows such as leftwindow):
 
@@ -1399,18 +1506,21 @@ There is no pagePath on midButton, so you need to listen to click events and han
 Native tabBar is a relatively fixed configuration method which may not satisfy all scenarios, but involve the custom tabBar.
 
 但注意除了H5端，自定义tabBar的性能体验会低于原生tabBar。App和小程序端非必要不要自定义。
+But note that in addition to the H5 side, the performance experience of the custom tabBar will be lower than the native tabBar. The App and Mini Programs are not necessary and should not be customized.
 
 - H5端的自定义tabBar组件：H5端不存在原生tabBar性能更高的概念，并且宽屏下常见的tabBar在顶部而不是底部，此时可以使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 来自定义
 - Custom tabBar component on H5 side: There is no concept of higher performance of native tabBar on H5 side, and the common tabBar in widescreen is at the top instead of the bottom. At this time, you can use the [custom-tab-bar component](https://uniapp.dcloud.io/component/custom-tab-bar) to customize the tabBar
 - 普通自定义tabBar：使用view自行绘制tabBar。如果页面是多页方式，切换tabBar将无法保持底部tabBar一直显示。所以这种情况建议使用单页方式。单页方式，如果是复杂页面，应用性能会下降明显，需减少页面复杂度。如果是App端，nvue单页的性能会显著高于vue页面
 - Ordinary custom tabBar: tabBar drawn by developer with view. For multi-page mode, switching tabBar will not keep the bottom tabBar displayed all the time. Therefore, it is recommended to use single page mode in this case. Single-page mode. For complex page, the application performance will drop significantly. Then the page complexity needs to be reduced. If it is in the App side, the performance of nvue single page will be significantly higher than that of vue page
 - 微信小程序自定义tabbar：微信提供一直基于webview自定义tabBar的方案。该功能体验不佳，不太推荐使用。如果要使用，参考[微信文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html)，项目根创建 custom-tab-bar 目录，注意里边的代码是 wxml,wxss，不是 vue，uni-app编译器会直接拷贝该目录到微信小程序中
+- Wechat applet custom tabbar: Wechat provides a solution for customizing tabbar based on webview. This feature has a poor experience and is not recommended for use. If you want to use it, refer to [WeChat documentation](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html), create a custom-tab-bar directory in the project root, pay attention to the inside The code is wxml, wxss, not vue, the uni-app compiler will directly copy this directory to the WeChat applet
 - 原生的tabbar有且只有一个且在首页。二级页如需的tab，需自行编写view来实现。一般二级页面更适合的导航是 [segement组件](https://ext.dcloud.net.cn/plugin?id=54)
 - There is one and only one native tabbar on the home page. If the secondary page needs the tab, draw by developer with view. Generally, the more suitable navigation for child pages is the [segement component](https://ext.dcloud.net.cn/plugin?id=54)
 
 
 ## condition
 启动模式配置，仅开发期间生效，用于模拟直达页面的场景，如：小程序转发后，用户点击所打开的页面。
+The startup mode configuration, which only takes effect during development, is used to simulate a direct page scenario, such as: after the applet is forwarded, the user clicks on the opened page.
 
 **属性说明：**
 **Attribute description:**
@@ -1434,8 +1544,10 @@ Native tabBar is a relatively fixed configuration method which may not satisfy a
 |path|String|是|启动页面路径|
 | path| String| Yes| Start page path|
 |query|String|否|启动参数，可在页面的 [onLoad](/tutorial/page.html#lifecycle) 函数里获得|
+|query|String|No|Startup parameter, available in the [onLoad](/tutorial/page.html#lifecycle) function of the page|
 
 **注意：** 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
+**Note:** You can directly open the configuration page when running on a real machine in the app. You need to manually change the compilation mode in the WeChat developer tool, as shown below:
 
 <div style="text-align:center;">
 	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a4ceac70-4f2e-11eb-b680-7980c8a877b8.png" />
@@ -1463,14 +1575,19 @@ Native tabBar is a relatively fixed configuration method which may not satisfy a
 ## subPackages
 
 分包加载配置，此配置为小程序的分包加载机制。
+Subpackage loading configuration, which is the subpackage loading mechanism of the applet.
 
 因小程序有体积和资源加载限制，各家小程序平台提供了分包方式，优化小程序的下载和启动速度。
+Due to the size and resource loading limitations of Mini Programs, various Mini Program platforms provide subcontracting methods to optimize the download and startup speed of Mini Programs.
 
 所谓的主包，即放置默认启动页面/TabBar 页面，以及一些所有分包都需用到公共资源/JS 脚本；而分包则是根据pages.json的配置进行划分。
+The so-called main package is to place the default startup page/TabBar page, and some public resources/JS scripts are required for all subpackages; while the subpackages are divided according to the configuration of pages.json.
 
 在小程序启动时，默认会下载主包并启动主包内页面，当用户进入分包内某个页面时，会把对应分包自动下载下来，下载完成后再进行展示。此时终端界面会有等待提示。
+When the applet starts, the main package will be downloaded by default and the page in the main package will be launched. When the user enters a page in the subpackage, the corresponding subpackage will be automatically downloaded, and then displayed after the download is complete. At this point, there will be a waiting prompt on the terminal interface.
 
 App默认为整包。从uni-app 2.7.12+ 开始，也兼容了小程序的分包配置。其目的不用于下载提速，而用于首页是vue时的启动提速。App下开启分包，除在pages.json中配置分包规则外，还需要在manifest中设置在app端开启分包设置，详见：[https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
+App defaults to the whole package. Starting from uni-app 2.7.12+, it is also compatible with the sub-package configuration of the applet. Its purpose is not to speed up downloads, but to speed up startup when the home page is vue. To enable subcontracting under the app, in addition to configuring subcontracting rules in pages.json, you also need to set the subcontracting settings on the app side in the manifest. For details, see: [https://uniapp.dcloud.io/collocation/manifest? id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
 
 subPackages 节点接收一个数组，数组每一项都是应用的子包，其属性值如下：
 The subPackages node receives an array, each item of which is a subpackage of the application, with the following attribute values:
@@ -1481,23 +1598,33 @@ The subPackages node receives an array, each item of which is a subpackage of th
 |root|String|是|子包的根目录|
 | root| String| Yes| Root directory of the sub-package|
 |pages|Array|是|子包由哪些页面组成，参数同 [pages](#pages)|
+|pages|Array|Yes|What pages are the subpackages composed of, the parameters are the same as [pages](#pages)|
 
 **注意：**
+**Notice:**
 
 - ```subPackages``` 里的pages的路径是 ``root`` 下的相对路径，不是全路径。
 - The path of pages in `subPackages` is the relative path under `root`, not the full path.
 - 微信小程序每个分包的大小是2M，总体积一共不能超过20M。
+- The size of each sub-package of WeChat Mini Program is 2M, and the total volume cannot exceed 20M.
 - 百度小程序每个分包的大小是2M，总体积一共不能超过8M。
+- The size of each sub-package of Baidu Mini Program is 2M, and the total volume cannot exceed 8M.
 - 支付宝小程序每个分包的大小是2M，总体积一共不能超过8M。
+- The size of each sub-package of Alipay applet is 2M, and the total volume cannot exceed 8M.
 - QQ小程序每个分包的大小是2M，总体积一共不能超过24M。
+- The size of each sub-package of the QQ applet is 2M, and the total volume cannot exceed 24M.
 - 字节小程序每个分包的大小是2M，总体积一共不能超过16M（字节小程序基础库 1.88.0 及以上版本开始支持，字节小程序开发者工具请使用大于等于 2.0.6 且小于 3.0.0 的版本）。
+- The size of each sub-package of the Byte applet is 2M, and the total volume cannot exceed 16M (the Byte applet basic library version 1.88.0 and above is supported, please use the Byte applet developer tool greater than or equal to 2.0.6 and a version less than 3.0.0).
 - 分包下支持独立的 ```static``` 目录，用来对静态资源进行分包。
 - Under subcontracting, an independent `static` directory is supported for subcontracting static resources.
 - `uni-app`内支持对`微信小程序`、`QQ小程序`、`百度小程序`、`支付宝小程序`、`字节小程序(HBuilderX 3.0.3+)`分包优化，即将静态资源或者js文件放入分包内不占用主包大小。详情请参考：[关于分包优化的说明](/collocation/manifest?id=关于分包优化的说明)
+- `uni-app` supports sub-package optimization of `WeChat applet`, `QQ applet`, `Baidu applet`, `Alipay applet`, `Byte applet (HBuilderX 3.0.3+)`, Putting static resources or js files into subpackages does not occupy the size of the main package. For details, please refer to: [Description on subcontracting optimization](/collocation/manifest?id=%E5%85%B3%E4%BA%8E%E5%88%86%E5%8C%85%E4%BC%98 %E5%8C%96%E7%9A%84%E8%AF%B4%E6%98%8E)
 - 针对`vendor.js`过大的情况可以使用运行时压缩代码
 - Run-time compression code can be used for cases where `vendor.js` is too large
   + `HBuilderX`创建的项目勾选`运行-->运行到小程序模拟器-->运行时是否压缩代码`
+  + For projects created by `HBuilderX`, check `Run-->Run to Mini Program Simulator-->Whether to compress code at runtime`
   + `cli`创建的项目可以在`package.json`中添加参数`--minimize`，示例：`"dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"`
+  + The project created by `cli` can add parameter `--minimize` in `package.json`, example: `"dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli- service uni-build --watch --minimize"`
 
 **使用方法：**
 **Usage method:**
@@ -1568,18 +1695,27 @@ Then you need to fill it in pages.json
 ## preloadRule
 
 分包预载配置。
+Subpackage preload configuration.
 
 配置preloadRule后，在进入小程序某个页面时，由框架自动预下载可能需要的分包，提升进入后续分包页面时的启动速度
+After configuring the preloadRule, when entering a certain page of the applet, the framework will automatically pre-download the sub-packages that may be required, which improves the startup speed when entering subsequent sub-package pages.
 
 `preloadRule` 中，`key` 是页面路径，`value` 是进入此页面的预下载配置，每个配置有以下几项：
+In `preloadRule`, `key` is the page path, `value` is the preload configuration to enter this page, each configuration has the following items:
 
 |字段|类型|必填|默认值|说明|
+|Field|Type|Required|Default|Description|
 |---|---|---|---|---|
 |packages|StringArray	|是|无|进入页面后预下载分包的 `root` 或 `name`。`__APP__` 表示主包。|
+|packages|StringArray|Yes|None|The `root` or `name` of the pre-downloaded subpackage after entering the page. `__APP__` represents the main package. |
 |network|String|否	|wifi|在指定网络下预下载，可选值为：all（不限网络）、wifi（仅wifi下预下载）|
+|network|String|No |wifi|Pre-download under the specified network, the optional values are: all (unlimited network), wifi (pre-download only under wifi)|
 
 app的分包，同样支持preloadRule，但网络规则无效。
+The subcontracting of the app also supports preloadRule, but the network rules are invalid.
 
 ## FAQ
 - Q：为什么在pages.json里配置小程序定位权限描述，无法编译到小程序端，运行后一直提示getLocation需要在app.json中声明
+- Q: Why is the description of the location permission of the applet configured in pages.json, it cannot be compiled to the applet side, and it keeps prompting that getLocation needs to be declared in app.json after running
 - A：微信小程序的权限描述配置在manifest中，不在pages.json中，具体参考文档：[https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin](https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin)
+- A: The permission description of the WeChat applet is configured in the manifest, not in pages.json. For details, please refer to the document: [https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin](https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin](https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin] uniapp.dcloud.io/collocation/manifest?id=mp-weixin)

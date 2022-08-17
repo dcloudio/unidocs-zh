@@ -1,8 +1,10 @@
+<md-translatedByGoogle />
 ### uni.chooseImage(OBJECT)
 从本地相册选择图片或使用相机拍照。
 Select images from local album or take photos with the camera.
 
 App端如需要更丰富的相机拍照API（如直接调用前置摄像头），参考[plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html)
+If the App needs a richer camera API (such as calling the front camera directly), please refer to [plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html)
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -13,6 +15,7 @@ App端如需要更丰富的相机拍照API（如直接调用前置摄像头）�
 |count|Number|否|最多可以选择的图片张数，默认9|见下方说明|
 | count| Number| No| The default of the maximum number of selected images is 9.| See the instructions below|
 |sizeType|Array&lt;String&gt;|否|original 原图，compressed 压缩图，默认二者都有|App、微信小程序、支付宝小程序、百度小程序|
+|sizeType|Array&lt;String&gt;|No|original original image, compressed compressed image, both are available by default|App, WeChat applet, Alipay applet, Baidu applet|
 |extension|Array&lt;String&gt;|否|根据文件拓展名过滤，每一项都不能是空字符串。默认不过滤。|H5(HBuilder X2.9.9+)|
 | extension| Array\<String>| No| Filter by file extension. No empty string is allowed in any item. No filtering by default.| H5(HBuilder X2.9.9+)|
 |sourceType|Array&lt;String&gt;|否|album 从相册选图，camera 使用相机，默认二者都有。如需直接开相机或直接选相册，请只使用一个选项||
@@ -22,6 +25,7 @@ App端如需要更丰富的相机拍照API（如直接调用前置摄像头）�
 |success|Function|是|成功则返回图片的本地文件路径列表 tempFilePaths||
 | success| Function| Yes| If success, it returns the list of local file paths tempFilePaths.| |
 |fail|Function|否|接口调用失败的回调函数|小程序、App|
+|fail|Function|No|Callback function for interface call failure|Mini Program, App|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|  |
 
@@ -32,18 +36,24 @@ App端如需要更丰富的相机拍照API（如直接调用前置摄像头）�
 | Parameter name| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |quality|Number|否|取值范围为1-100，数值越小，质量越低（仅对jpg格式有效）。默认值为80。||
+|quality|Number|No| The value range is 1-100, the smaller the value, the lower the quality (only valid for jpg format). The default value is 80. ||
 |width|Number|是|裁剪的宽度，单位为px，用于计算裁剪宽高比。||
+|width|Number| is the width of the |crop, in px, used to calculate the crop aspect ratio. ||
 |height|Number|是|裁剪的高度，单位为px，用于计算裁剪宽高比。||
+|height|Number| Yes |the height of the crop, in px, used to calculate the crop aspect ratio. ||
 |resize|Boolean|否|是否将width和height作为裁剪保存图片真实的像素值。默认值为true。注：设置为false时在裁剪编辑界面显示图片的像素值，设置为true时不显示||
+|resize|Boolean|No|Whether to use width and height as crop to save the real pixel value of the image. The default value is true. Note: When set to false, the pixel value of the picture is displayed in the crop editing interface. When set to true, it is not displayed||
 
 **Tips**
 
 - count 值在 H5 平台的表现，基于浏览器本身的规范。目前测试的结果来看，只能限制单选/多选，并不能限制数量。并且，在实际的手机浏览器很少有能够支持多选的。
 - The performance of the count value on H5 platform is based on the specification of the browser. As seen from the resent testing result, only single/multiple selection can be specified, and the amount limitation is unavailable. Moreover, there are few real mobile browsers that support multiple choices.
 - sourceType 值在 H5 平台根据浏览器的不同而表现不同，一般不可限制仅使用相册，部分浏览器也无法限制是否使用相机。
+- The value of sourceType varies according to different browsers on the H5 platform. Generally, it is not restricted to use only the photo album, and some browsers cannot restrict whether to use the camera.
 - 可以通过用户授权API来判断用户是否给应用授予相册或摄像头的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 - The user authorization API can be used to determine whether the user authorizes the application the access to the photo album or camera [https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 - App端如需选择非媒体文件，可在插件市场搜索[文件选择](https://ext.dcloud.net.cn/search?q=文件选择)，其中Android端可以使用Native.js，无需原生插件，而iOS端需要原生插件。
+- If you need to select non-media files on the App side, you can search for [File Selection] in the plugin market (https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9 %80%89%E6%8B%A9), in which Native.js can be used on the Android side without native plugins, while the iOS side requires native plugins.
 - 选择照片大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
 - Most of the photos are selected for uploading. uni ui encapsulates a more complete [uni-file-picker component](https://ext.dcloud.net.cn/plugin?id=4079). Files are selected and uploaded to uniCloud's free storage and cdn for one-stop integration. Highly recommended.
 
@@ -133,6 +143,7 @@ Note! When urls have duplicate image links :
 - 传链接，预览结果始终显示该链接在 urls 中第一次出现的位置。
 - Upload the link. The preview results always show where the link firstly appears in urls.
 - 传索引值，在微信/百度/字节跳动小程序平台，会过滤掉传入的 urls 中该索引值之前与其对应图片链接重复的值。其它平台会保留原始的 urls 不会做去重处理。
+- Pass the index value. On the WeChat/Baidu/ByteDance applet platform, it will filter out the duplicated value of the index value and the corresponding image link in the incoming urls. Other platforms will keep the original urls without deduplication.
 
 举例说明：
 For example:
@@ -143,6 +154,7 @@ A group of pictures `[A, B1, C, B2, D]`, where B1 and B2 have the same picture l
 - 传 B2 的链接，预览的结果是 B1，前一张是 A，下一张是 C。
 - If upload B2 link, the preview result is B1, the previous one is A, and the next one is C.
 - 传 B2 的索引值 3，预览的结果是 B2，前一张是 C，下一张是 D。此时在微信/百度/字节跳动小程序平台，最终传入的 urls 是 `[A, C, B2, D]`，过滤掉了与 B2 重复的 B1。
+- Pass the index value of B2 as 3, the preview result is B2, the previous one is C, the next one is D. At this time, on the WeChat/Baidu/ByteDance applet platform, the final incoming urls is `[A, C, B2, D]`, filtering out the B1 that duplicates B2.
 
 **longPressActions 参数说明**
 **LongPressActions parameter description**
@@ -210,8 +222,10 @@ uni.chooseImage({
 ### uni.closePreviewImage(OBJECT)
 
 关闭预览图片。
+Close the preview image.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√ `(3.2.15+)`|√ `(3.2.15+)`|x|x|x|x|x|x|x|x|
 
@@ -234,11 +248,13 @@ uni.chooseImage({
 Get image information.
 
 小程序下获取网络图片信息需先配置download域名白名单才能生效。
+To obtain network image information under the applet, you need to configure the whitelist of the download domain name before it can take effect.
 
 **平台差异说明**
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -270,7 +286,9 @@ Get image information.
 |path|String|返回图片的本地路径||
 | path| String| Return the local path of the image| |
 |orientation|String|返回图片的方向，有效值见下表|App、小程序、京东小程序|
+|orientation|String|Returns the orientation of the image, the valid values are shown in the following table|App, Mini Program, JD Mini Program|
 |type|String|返回图片的格式|App、小程序、京东小程序|
+|type|String|The format of the returned image|App, Mini Program, JD Mini Program|
 
 **orientation 参数说明**
 **Orientation parameter description**
@@ -322,6 +340,7 @@ Save the image to the system album.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
 
@@ -386,8 +405,10 @@ Image compressing interface, to choose compression quality.
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√(基础库版本>=3.110.3)|√|√|√|√|
+|√|x|√|√|√(Base library version>=3.110.3)|√|√|√|√|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -400,9 +421,11 @@ Image compressing interface, to choose compression quality.
 | quality | Number | 80 | 否 | 压缩质量，范围0～100，数值越小，质量越低，压缩率越高（仅对jpg有效） ||
 | quality| Number| 80| No| Compression quality ranges from 0 to 100, and the smaller the value, the lower the quality, the higher the compression rate (only for JPG).| |
 | width | String | auto | 否 | 缩放图片的宽度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据width与源图宽的缩放比例计算，若未设置width则使用源图宽度）|App 3.0.0+|
+| width | String | auto | No | Scale the width of the image, support pixel value (such as "100px"), percentage (such as "50%"), automatic calculation (such as "auto", that is, the zoom according to the width and the width of the source image Scale calculation, if width is not set, the width of the source image is used)|App 3.0.0+|
 | height | String | auto | 否 | 缩放图片的高度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据height与源图高的缩放比例计算，若未设置height则使用源图高度）|App 3.0.0+|
 | height| String| auto| No| Height of the image to be scaled, in pixel (e.g., "100px"), percentage (e.g., "50%") or automatic calculation (e.g., "auto", based on the scaling ratio of height to the height of the source image. If height is not set, use the height of the source image).| App 3.0.0+|
 | rotate | Number | 0 | 否 | 旋转度数，范围0～360 |App 3.0.0+|
+| rotate | Number | 0 | No | Rotation degree, range 0～360 |App 3.0.0+|
 | success | Function |  | 否 | 接口调用成功的回调函数 ||
 | success| Function| | No| Callback function for successful interface calling| |
 | fail | Function |  | 否 | 接口调用失败的回调函数 ||

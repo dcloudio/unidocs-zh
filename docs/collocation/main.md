@@ -1,4 +1,6 @@
+<md-translatedByGoogle />
 `main.js`是 uni-app 的入口文件，主要作用是初始化`vue`实例、定义全局组件、使用需要的插件如 vuex。
+`main.js` is the entry file of uni-app. Its main function is to initialize the `vue` instance, define global components, and use required plugins such as vuex.
 
 首先引入了`Vue`库和`App.vue`，创建了一个`vue`实例，并且挂载`vue`实例。
 First, the `Vue` library and `App.vue` are introduced, a `vue` instance is created, and the `vue` instance is mounted.

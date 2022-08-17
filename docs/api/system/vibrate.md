@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.vibrate(OBJECT)
 使手机发生振动。
 Make the phone vibrate.
@@ -89,3 +90,4 @@ uni.vibrateShort({
 - iOS上需要手机设置“打开响铃时震动”或“静音时震动”，否则无法震动
 - On iOS, you need to turn on "Vibrate on Ring" or "Vibrate on Mute" on your mobile phone, or otherwise it will not vibrate
 - vibrate只适用于钉钉小程序、支付宝小程序
+- vibrate is only applicable to Dingding applet and Alipay applet

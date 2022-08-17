@@ -1,3 +1,4 @@
+<md-translatedByGoogle />
 ### uni.addInterceptor(STRING, OBJECT)
 添加拦截器
 Add interceptor
@@ -9,16 +10,22 @@ Add interceptor
 Name of the `api` that needs to be intercepted, such as `uni.addInterceptor('request', OBJECT)`, which will intercept `uni.request()`
 
 注意：仅支持异步接口，如：`uni.setStorage(OBJECT)`，暂不支持同步接口如：`uni.setStorageSync(KEY,DATA)`
+Note: Only asynchronous interfaces are supported, such as: `uni.setStorage(OBJECT)`, synchronous interfaces such as: `uni.setStorageSync(KEY, DATA)` are not currently supported
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
 |参数名		|类型		|必填	|默认值	|说明		|平台差异说明	|
+|Parameter Name |Type |Required |Default Value |Description |Platform Difference Description |
 |:-			|:-			|:-		|:-		|:-			|:-			|
 |invoke		|Function	|否		|		|拦截前触发	|			|
+|invoke |Function |No | |Invoke before interception | |
 |success	|Function	|否		|		|成功回调拦截	|			|
+|success |Function |No | |Success callback interception | |
 |fail		|Function	|否		|		|失败回调拦截	|			|
+|fail |Function |No | |Fail callback interception | |
 |complete	|Function	|否		|		|完成回调拦截	|			|
+|complete |Function |No | |Complete callback interception | |
 
 
 **示例**
@@ -76,6 +83,7 @@ uni.removeInterceptor('request')
 ```
 
 注意：拦截[uni.switchTab](https://uniapp.dcloud.io/api/router?id=switchtab)本身没有问题。但是在微信小程序端点击`tabbar`的底层逻辑并不是触发`uni.switchTab`。所以误认为拦截无效，此类场景的解决方案是在`tabbar`页面的页面生命周期`onShow`中处理。
+Note: Intercepting [uni.switchTab](https://uniapp.dcloud.io/api/router?id=switchtab) itself has no problem. But the underlying logic of clicking `tabbar` on the WeChat applet is not to trigger `uni.switchTab`. So it is misunderstood that the interception is invalid, and the solution for such scenarios is to handle it in the page life cycle `onShow` of the `tabbar` page.
 
 ##### 拦截器的适用场景非常多，比如路由拦截，权限引导等。
 ##### Interceptors can be used in many scenarios including route interception, authority booting and so on.

@@ -166,9 +166,7 @@ Use the API of uni.requireNativePlugin, with the parameter set as the id of the 
 ```js
 const dcRichAlert = uni.requireNativePlugin('DCloud-RichAlert')
 ```
-2.使用原生插件
-2. Use native plugins
-2. Use native plugins
+2. 使用原生插件
 2. Use native plugins
 
 ```js

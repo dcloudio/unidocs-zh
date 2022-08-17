@@ -166,10 +166,6 @@ The border radius can be configured on each corner by using the `tl, tr, br, bl`
 
 **size** 的值如下
 The values of **size** are as follows
-The values of **size** are as follows
-The values of **size** are as follows
-The values of **size** are as follows
-The value of **size** is as follows
 
 基于 `$border-radius-root` 变量的四舍五入尺寸，该变量的默认值为0.25rpx。
 Based on the rounded dimensions of the `$border-radius-root` variable, which defaults to 0.25rpx.

@@ -43,10 +43,7 @@ Many ui components are always moving, such as carousels and marquees. Even if th
 The uni-ui component will automatically determine its own display state, and will not consume hardware resources when the component is no longer visible.
 
 2、全端
-2. Full end
-2. Full end
-2. Full end
-2. Full end
+2、 Full end
 
 uni-ui的组件都是多端自适应的，底层会抹平很多小程序平台的差异或bug。
 The components of uni-ui are multi-terminal adaptive, and the bottom layer will smooth out the differences or bugs of many small program platforms.
@@ -63,10 +60,7 @@ uni-ui还支持pc等宽屏设备，可以通过PC浏览器访问[https://helloun
 uni-ui also supports widescreen devices such as pc, which can be accessed through a PC browser [https://hellouniapp.dcloud.net.cn/pages/extUI/badge/badge](https://hellouniapp.dcloud.net.cn/ pages/extUI/badge/badge) experience
 
 3、风格扩展
-3. Style extension
-3. Style extension
-3. Style extension
-3. Style extension
+3、Style extension
 
 uni-ui的默认风格是中型的，与uni-app基础组件风格一致。但它支持[uni.scss](https://uniapp.dcloud.io/collocation/uni-scss)，可以方便的扩展和切换应用的风格。
 The default style of uni-ui is medium, which is consistent with the style of the uni-app base components. But it supports [uni.scss](https://uniapp.dcloud.io/collocation/uni-scss), which can easily extend and switch the style of the application.
@@ -78,19 +72,13 @@ ui is a product with very divergent demands, and DCloud officials have no intent
 We welcome more excellent ui components to appear, and welcome more people to contribute uni-ui theme styles to meet the needs of more users.
 
 4、与uniCloud协作
-4. Collaborate with uniCloud
-4. Collaborate with uniCloud
-4. Collaborate with uniCloud
-4. Collaborate with uniCloud
+4、Collaborate with uniCloud
 
 uni-ui里很多组件与uniCloud打通，可大幅提升开发效率
 Many components in uni-ui are connected with uniCloud, which can greatly improve development efficiency
 
 5、与uni统计自动集成实现免打点
-5. Automatic integration with uni statistics to achieve free management
-5. Automatic integration with uni statistics to achieve free management
-5. Automatic integration with uni statistics to achieve free management
-5. Automatic integration with uni statistics to achieve free management
+5、Automatic integration with uni statistics to achieve free management
 
 uni统计是优秀的多端统计平台，见[tongji.dcloud.net.cn](https://tongji.dcloud.net.cn)。
 Uni Statistics is an excellent multi-terminal statistical platform, see [tongji.dcloud.net.cn](https://tongji.dcloud.net.cn).
@@ -103,10 +91,7 @@ For example, using uni-ui's navbar title bar, collection, shopping cart and othe
 Of course you can also turn off uni statistics, this is not mandatory.
 
 6、uni-ui符合全套DCloud组件规范
-6. uni-ui complies with the full set of DCloud component specifications
-6. uni-ui complies with the full set of DCloud component specifications
-6. uni-ui complies with the full set of DCloud component specifications
-6. uni-ui complies with the full set of DCloud component specifications
+6、uni-ui complies with the full set of DCloud component specifications
 
 包括easycom、uni_module、datacom，全部遵循。
 Including easycom, uni_module, datacom, all follow.

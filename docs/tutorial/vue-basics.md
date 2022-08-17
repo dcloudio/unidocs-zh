@@ -160,8 +160,10 @@ Of course, there are some advanced usages
 
 ```js
 	// 直接使用js模块的属性。在hello uni-app有示例 
+	// Directly use the properties of the js module. There are examples in hello uni-app
 	var dateUtils = require('../../../common/util.js').dateUtils; 
 	// 将js导入并重命名为echarts，然后使用echarts.来继续执行方法。在hello uni-app有示例 
+	// Import js and rename it to echarts, then use echarts. to continue executing the method. There are examples in hello uni-app
 	import * as echarts from '/components/echarts/echarts.simple.min.js'; 
 ```
 
@@ -187,6 +189,7 @@ Of course, there are some advanced usages
 ### Component/label changes
 
 以前是html标签，比如 `<div>` ，现在是小程序组件，比如 `<view>` 。
+It used to be html tags like `<div> ` , now applet components like `<view> ` .
 
 那么标签和组件有什么区别，不都是用尖括号包围起来一段英文吗？
 So what is the difference between a label and a component, isn't it all surrounded by angle brackets in English?
@@ -196,6 +199,7 @@ So what is the difference between a label and a component, isn't it all surround
 - But the components can be freely expanded. Similarly, you can encapsulate a piece of js into a function or module, and you can also encapsulate a ui control into a component.
 
 `uni-app` 参考小程序规范，提供了一批[内置组件](https://uniapp.dcloud.io/component/README)。
+`uni-app` refers to the applet specification and provides a batch of [built-in components](https://uniapp.dcloud.io/component/README).
 
 
 ### js的变化
@@ -266,6 +270,7 @@ So what is the difference between a label and a component, isn't it all surround
 ## Use differences in uni-app
 
 `uni-app` 在发布到H5时支持所有vue的语法；发布到App和小程序时，由于平台限制，无法实现全部vue语法，但 `uni-app` 仍是对vue语法支持度最高的跨端框架。
+`uni-app` supports all vue syntaxes when it is published to H5; when publishing to apps and applets, due to platform limitations, all vue syntaxes cannot be implemented, but `uni-app` is still the cross-platform with the highest support for vue syntax. end frame.
 
 相比Web平台， Vue.js 在 `uni-app` 中使用差异主要集中在两个方面：
 Compared with the Web platform, the differences in the use of Vue.js in `uni-app` are mainly concentrated in two aspects:
@@ -273,6 +278,7 @@ Compared with the Web platform, the differences in the use of Vue.js in `uni-app
 - 新增：`uni-app` 除了支持Vue实例的生命周期，还支持[应用生命周期](/collocation/frame/lifecycle?id=应用生命周期)以及[页面生命周期](/collocation/frame/lifecycle?id=页面生命周期)。
 - Added: `uni-app` In addition to supporting the life cycle of Vue instances, it also supports [Application life cycle](/collocation/frame/lifecycle?id=%E5%BA%94%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F) and [Page life cycle](/collocation/frame/lifecycle?id=%E9%A1%B5%E9%9D%A2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F).
 - 受限：相比web平台，在小程序和App端部分功能受限，[具体见](/vue-api)。
+- Restricted: Compared with the web platform, some functions on the applet and App are limited, [see details](/vue-api).
 - uni-app 完整支持 Vue 模板语法。
 - Uni-app fully supports Vue template syntax
 - App端可以使用更多的vue特性，[详见](https://ask.dcloud.net.cn/article/36599)。
@@ -513,6 +519,7 @@ Only render elements and components once. Subsequent re-rendering, the element/c
 Unlike front-end framework in understanding the client in order to achieve a logical multiplexing state flag template node will be added to the `v-once`guarantee rendering node only once, but not necessarily be able to optimize the rendering performance, but might slow down the client Comparison efficiency when multiplexing nodes.
 
 >  h5、微信小程序均不支持
+> h5, WeChat applet are not supported
 
 ```html
 	<view v-once>This will never change: {{msg}}</view>
@@ -535,6 +542,7 @@ Update elements `innerHTML`.
 - 如果试图使用 v-html 组合模板，可以重新考虑是否通过使用组件来替代。
 - If you try to use the v-html composite template, you can reconsider whether to replace it by using components.
 - App端和H5端支持 `v-html` ，微信小程序会被转为 `rich-text`，其他端不支持 `v-html` 。
+- App side and H5 side support `v-html` , WeChat applet will be converted to `rich-text`, other side does not support `v-html` .
 
 
 跨端的富文本处理方案详见：[https://ask.dcloud.net.cn/article/35772](https://ask.dcloud.net.cn/article/35772)
@@ -754,8 +762,10 @@ Further it may also be used `computed`to generate a method `class`or a `style`st
 
 
 > 小程序端不支持 `classObject` 和 `styleObject` 语法。
+> The applet does not support the `classObject` and `styleObject` syntax.
 
 小程序端不支持示例：
+The applet does not support examples:
 
 ```html
 	<template>
@@ -1110,6 +1120,7 @@ Example:
 - 在非H5平台 循环对象时不支持第三个参数，如 `v-for="(value, name, index) in object"` 中，index 参数是不支持的。
 - The third parameter is not supported in the non-cyclic object H5 platform, such as `v-for="(value, name, index) in object"`in, index parameter is not supported.
 - 小程序端数据为差量更新方式，由于小程序不支持删除对象属性，使用的设置值为 null 的方式替代，导致遍历时可能出现不符合预期的情况，需要自行过滤一下值为 null 的数据（[相关反馈](https://ask.dcloud.net.cn/question/103269)）。
+- The data on the applet side is updated in a differential way. Since the applet does not support deleting object properties, the method of setting the value of null is used instead, which may cause unexpected situations during traversal. You need to filter the data with the value of null yourself. ([Related Feedback](https://ask.dcloud.net.cn/question/103269)).
 
 
 ### 在组件上使用 v-for
@@ -1301,6 +1312,7 @@ v-on provides event modifiers:
 **note**
 
 - 为兼容各端，事件需使用 **@** 的方式绑定，请勿使用小程序端的 `bind` 和 `catch` 进行事件绑定；也不能在 JS 中使用`event.preventDefault()`和`event.stopPropagation()`方法；
+- To be compatible with all terminals, events need to be bound by **@**, please do not use `bind` and `catch` on the applet side for event binding; also cannot use `event.preventDefault()` in JS and `event.stopPropagation()` method;
 - 若需要禁止蒙版下的页面滚动，可使用 `@touchmove.stop.prevent="moveHandle"`，`moveHandle` 可以用来处理 `touchmove` 的事件，也可以是一个空函数。
 - If you need to scroll down the page prohibiting mask, use `@touchmove.stop.prevent="moveHandle"`, `moveHandle`processing can be used to `touchmove`events, but also can be an empty function.
 

@@ -246,6 +246,7 @@ Vuex provides a mechanism to "inject" the store into all child components from t
 
 ```js
 // 页面路径：store/index.js 
+// Page path: store/index.js
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -746,6 +747,7 @@ Vuex mutations are very similar to events: each mutation has a string type and a
 
 ```js
 // 页面路径：store/index.js 
+// Page path: store/index.js
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -1009,6 +1011,7 @@ Use the `mapMutations` auxiliary function to map the `methods` in the component 
 
 ```js
 // 页面路径：store/index.js 
+// Page path: store/index.js
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -1514,6 +1517,7 @@ To help with that, Vuex allows us to divide our store into modules. Each module 
 
 ```js
 	// 页面路径：main.js 
+	// Page path: main.js
 	import Vue from 'vue'
 	import App from './App'
 	import store from './store'
@@ -1535,6 +1539,7 @@ To help with that, Vuex allows us to divide our store into modules. Each module 
 
 ```js
 	//  页面路径：store/index.js
+	// Page path: store/index.js
 	import Vue from 'vue'
 	import Vuex from 'vuex'
 
@@ -1554,6 +1559,7 @@ To help with that, Vuex allows us to divide our store into modules. Each module 
 
 ```js
 // 子模块moduleA路径：store/modules/moduleA.js 
+// Submodule moduleA path: store/modules/moduleA.js
 export default {
 	state: {
 		text:"我是moduleA模块下state.text的值"

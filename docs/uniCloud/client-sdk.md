@@ -1,57 +1,92 @@
 # uniCloud客户端sdk
+# uniCloud client sdk
 
 uniCloud分为客户端和云端两部分，有些接口名称相同，参数也相近，在此列举客户端sdk内可以使用的接口/属性，避免混淆
+uniCloud is divided into two parts: the client and the cloud. Some interfaces have the same name and similar parameters. Here are the interfaces/properties that can be used in the client sdk to avoid confusion.
 
 
 ## API
 
 客户端API列表
+List of Client APIs
 
 |API							|描述																			|
+|API |Description |
 |--								|--																				|
 |uniCloud.importObject()		|获取云对象引用以调用云对象接口 [详情](cloud-obj.md)					|
+|uniCloud.importObject() |Get the cloud object reference to call the cloud object interface [Details](cloud-obj.md) |
 |uniCloud.callFunction()		|客户端调用云函数 [详情](cf-functions.md#clientcallfunction)		|
+|uniCloud.callFunction() |The client calls cloud functions [Details](cf-functions.md#clientcallfunction) |
 |uniCloud.database()			|客户端访问云数据库，获取云数据库对象引用 [详情](clientdb.md)			|
+|uniCloud.database() |The client accesses the cloud database and obtains the object reference of the cloud database [Details](clientdb.md) |
 |uniCloud.uploadFile()			|客户端直接上传文件到云存储 [详情](storage.md#uploadfile)			|
+|uniCloud.uploadFile() | Client uploads files directly to cloud storage [Details](storage.md#uploadfile) |
 |uniCloud.getTempFileURL()		|客户端获取云存储文件的临时路径 [详情](storage.md#gettempfileurl)	|
+|uniCloud.getTempFileURL() |The client gets the temporary path of the cloud storage file [Details](storage.md#gettempfileurl) |
 |uniCloud.chooseAndUploadFile()	|客户端选择文件并上传 [详情](storage.md#chooseanduploadfile)		|
+|uniCloud.chooseAndUploadFile() |The client selects a file and uploads it [Details](storage.md#chooseanduploadfile) |
 |uniCloud.getCurrentUserInfo()	|获取当前用户信息 [详情](#client-getcurrentuserinfo)							|
+|uniCloud.getCurrentUserInfo() |Get current user information [Details](#client-getcurrentuserinfo) |
 |uniCloud.init()				|同时使用多个服务空间时初始化额外服务空间 [详情](init.md)				|
+|uniCloud.init() |Initialize additional service space when using multiple service spaces at the same time [Details](init.md) |
 |uniCloud.addInterceptor()		|新增拦截器 [详情](#add-interceptor)											|
+|uniCloud.addInterceptor() |Add Interceptor [Details](#add-interceptor) |
 |uniCloud.removeInterceptor()	|移除拦截器 [详情](#remove-interceptor)											|
+|uniCloud.removeInterceptor() |Remove the interceptor [Details](#remove-interceptor) |
 |uniCloud.onResponse()			|监听服务端（云函数、云对象、clientDB）响应 [详情](#on-response)				|
+|uniCloud.onResponse() |Listen to the server (cloud function, cloud object, clientDB) response [Details](#on-response) |
 |uniCloud.offResponse()			|移除监听服务端（云函数、云对象、clientDB）响应 [详情](#off-response)			|
+|uniCloud.offResponse() |Remove the response from the monitoring server (cloud function, cloud object, clientDB) [Details](#off-response) |
 |uniCloud.onNeedLogin()			|监听需要登录事件 [详情](#on-need-login)										|
+|uniCloud.onNeedLogin() |Listen for login required events [Details](#on-need-login) |
 |uniCloud.offNeedLogin()		|移除监听需要登录事件 [详情](#off-need-login)									|
+|uniCloud.offNeedLogin() |Remove the need to log in event [Details](#off-need-login) |
 |uniCloud.onRefreshToken()		|监听token更新事件 [详情](#on-refresh-token)									|
+|uniCloud.onRefreshToken() |Listen to the token update event [Details](#on-refresh-token) |
 |uniCloud.offRefreshToken()		|移除监听token更新事件 [详情](#off-refresh-token)								|
+|uniCloud.offRefreshToken() |Remove listening for token update events [Details](#off-refresh-token) |
 
 ### 获取当前用户信息getCurrentUserInfo@client-getcurrentuserinfo
+### Get current user information getCurrentUserInfo@client-getcurrentuserinfo
 
 > HBuilderX 3.1.0+
 
 解析客户端token获取用户信息。常用于在前端判断当前登录的用户状态和用户权限，比如根据不同的权限显示隐藏某些按钮。
+Parse the client token to obtain user information. It is often used to judge the current logged-in user status and user permissions on the front end, such as displaying and hiding certain buttons according to different permissions.
 
 **注意**
+**Notice**
 
 - 此接口不会发送网络请求，**此接口仅仅是客户端接口，不校验token的合法性以及是否过期**
+- This interface will not send network requests, **This interface is only a client interface, does not verify the validity of the token and whether it has expired**
 - 需要搭配uni-id使用并要求客户端必须将token存储在storage内的`uni_id_token`内
+- It needs to be used with uni-id and requires the client to store the token in `uni_id_token` in storage
 - 如需获取role、permission需要将角色权限缓存在token内，此功能自uni-id 3.0.0 或 uni-id-common中默认开启
+- To obtain role and permission, you need to cache role permissions in the token. This function is enabled by default in uni-id 3.0.0 or uni-id-common
 
 用法：`uniCloud.getCurrentUserInfo()`
+Usage: `uniCloud.getCurrentUserInfo()`
 
 该方法为同步方法。
+This method is a synchronous method.
 
 **响应参数**
+**Response parameters**
 
 | 字段			| 类型	| 说明									|
+| Field | Type | Description |
 | ---			| ---	| ---									|
 | uid			| Number|当前用户uid							|
+| uid | Number | current user uid |
 | role			| Array	|用户角色列表。admin用户返回["admin"]	|
+| role | Array | List of user roles. admin user returns ["admin"] |
 | permission	| Array	|用户权限列表。注意admin角色此数组为空	|
+|permission|Array|A list of user permissions. Note that the admin role this array is empty |
 | tokenExpired	| Number|token过期时间							|
+| tokenExpired | Number| token expiration time |
 
 未能获取用户信息时返回以下结果
+The following results are returned when the user information cannot be obtained
 
 ```js
 {
@@ -65,6 +100,7 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 **示例**
 ```js
 console.log(uniCloud.getCurrentUserInfo().role.indexOf('admin')>-1); // 如果是admin用户的话，打印结果为true
+console.log(uniCloud.getCurrentUserInfo().role.indexOf('admin')>-1); // If it is an admin user, the print result is true
 ```
 
 ### 新增拦截器@add-interceptor
@@ -102,16 +138,21 @@ console.log(uniCloud.getCurrentUserInfo().role.indexOf('admin')>-1); // 如果�
 uniCloud.addInterceptor('callFunction', {
   invoke(param) {
     // param为拦截Api的参数 例 {name: 'functionName', data: {'functionParam1': 1, 'functionParam2': 2}}
+    // param is the parameter for intercepting Api Example {name: 'functionName', data: {'functionParam1': 1, 'functionParam2': 2}}
     // 此处返回错误可终止api执行
+    // Return an error here to terminate the api execution
   },
   success(res) {
     // res为callFunction的返回值，此处可以对返回值进行修改
+    // res is the return value of callFunction, the return value can be modified here
   },
   fail(err) {
     // err为callFunction抛出的错误
+    // err is the error thrown by callFunction
   },
   complete(res){
     // complete内res为上面的res或err
+    // The res in complete is the res or err above
   }
 })
 ```
@@ -144,6 +185,7 @@ uniCloud.addInterceptor('callFunction', {
 
 ```js
 // 错误用法，无法移除invoke拦截器
+// Wrong usage, cannot remove invoke interceptor
 uniCloud.addInterceptor('callFunction', {
   invoke(param) {
     console.log('callFunction invoked, with param:',param)
@@ -156,6 +198,7 @@ uniCloud.removeInterceptor('callFunction', {
 })
 
 // 正确用法
+// correct usage
 function invokeInterceptor(param) {
   console.log('callFunction invoked, with param:',param)
 }
@@ -178,6 +221,7 @@ uniCloud.removeInterceptor('callFunction', {
 ```js
 uniCloud.onResponse(function(event) {
 	// event格式见下方说明
+	// event format see below
 })
 ```
 
@@ -187,6 +231,7 @@ uniCloud.onResponse(function(event) {
 interface OnResponseEvent {
 	type: 'cloudobject' | 'cloudfunctions' | 'clientdb',
 	content: {} // content同云对象方法、云函数、clientDB请求的返回结果或错误对象
+	content: {} // content is the same as cloud object method, cloud function, return result of clientDB request or error object
 }
 ```
 
@@ -204,14 +249,17 @@ const res = await to.add('todo title', 'todo content')
 
 ```js
 // 成功响应
+// successful response
 e = {
 	type: 'cloudobject',
 	content: { // content内容和上方代码块中的res一致
+	content: { // content content is the same as res in the above code block
 		errCode: 0
 	}
 }
 
 // 失败响应
+// fail response
 e = {
 	type: 'cloudobject',
 	content: {
@@ -227,6 +275,7 @@ e = {
 uniCloud.onResponse(function(e){
 	if(e.content.errCode) {
 		console.log('请求出错')
+		console.log('Request error')
 	}
 })
 ```
@@ -243,6 +292,7 @@ uniCloud.onResponse(function(e){
 
 ```js
 // 错误用法，无法移除监听
+// Wrong usage, can't remove listener
 uniCloud.onResponse(function(e) {
 	console.log(e)
 })
@@ -251,6 +301,7 @@ uniCloud.offResponse(function(e) {
 })
 
 // 正确用法
+// correct usage
 function logResponse(e) {
 	console.log(e)
 }
@@ -270,6 +321,7 @@ uniCloud.offResponse(logResponse)
 ```js
 uniCloud.onNeedLogin(function(event) {
 	// event格式见下方说明
+	// event format see below
 })
 ```
 
@@ -280,6 +332,7 @@ interface OnNeedLoginEvent {
 	errCode: number | string,
 	errMsg: string,
 	uniIdRedirectUrl: string // 触发onNeedLogin页面前的页面地址（包含路径和参数的完整页面地址）
+	uniIdRedirectUrl: string // The page address before the onNeedLogin page is triggered (the full page address including the path and parameters)
 }
 ```
 
@@ -297,6 +350,7 @@ interface OnNeedLoginEvent {
 
 ```js
 // 错误用法，无法移除监听
+// Wrong usage, can't remove listener
 uniCloud.onNeedLogin(function(e) {
 	console.log(e)
 })
@@ -305,6 +359,7 @@ uniCloud.offNeedLogin(function(e) {
 })
 
 // 正确用法
+// correct usage
 function log(e) {
 	console.log(e)
 }
@@ -324,6 +379,7 @@ uniCloud.offNeedLogin(log)
 ```js
 uniCloud.onRefreshToken(function(event) {
 	// event格式见下方说明
+	// event format see below
 })
 ```
 
@@ -350,6 +406,7 @@ interface OnRefreshTokenEvent {
 
 ```js
 // 错误用法，无法移除监听
+// Wrong usage, can't remove listener
 uniCloud.onNeedLogin(function(e) {
 	console.log(e)
 })
@@ -358,6 +415,7 @@ uniCloud.offNeedLogin(function(e) {
 })
 
 // 正确用法
+// correct usage
 function log(e) {
 	console.log(e)
 }

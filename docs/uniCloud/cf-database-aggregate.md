@@ -1,21 +1,29 @@
 # 云数据库聚合操作@aggregate
+# Cloud database aggregation operation @aggregate
 
 有时候我们需要对数据进行分析操作，比如一些统计操作、联表查询等，这个时候简单的查询操作就搞不定这些需求，因此就需要使用聚合操作来完成。
+Sometimes we need to perform analysis operations on data, such as some statistical operations, join table queries, etc. At this time, simple query operations cannot handle these requirements, so we need to use aggregation operations to complete them.
 
 获取数据库集合的聚合操作实例
+Get the aggregate operation instance of the database collection
 
 ```js
 db.collection('scores').aggregate()
 ```
 
 **注意：**
+**Notice:**
 
 - 聚合操作实例仅用于查询，不可执行增删改操作。在聚合操作实例上只能使用聚合操作方法，不能使用where/orderBy等基础方法，where需改为match，orderBy应使用sort实现，细节请阅读下方聚合操作文档。
+- Aggregate operation instances are only used for querying, and cannot perform addition, deletion, and modification operations. Only the aggregation operation method can be used on the aggregation operation instance, and basic methods such as where/orderBy cannot be used. Where should be changed to match, and orderBy should be implemented using sort. For details, please read the aggregation operation document below.
 - 聚合操作在大数据量下性能不如简单查询，请根据自身业务选择合适的用法
+- The performance of aggregation operations is not as good as simple queries under large data volumes. Please choose the appropriate usage according to your own business.
 
 云函数中使用时切勿复用aggregate实例，容易引发Bug。
+Do not reuse aggregate instances when used in cloud functions, which may cause bugs.
 
 以下两种写法均为错误示例：
+Both of the following are examples of errors:
 
 ```js
 const db = uniCloud.database()
@@ -39,14 +47,19 @@ exports.main = async function(){
 ```
 
 ## 聚合表达式@aggregate-expression
+## Aggregate expression @aggregate-expression
 
 表达式可以是字段路径、常量、或聚合操作符。表达式可以嵌套表达式。
+Expressions can be field paths, constants, or aggregate operators. Expressions can nest expressions.
 
 **字段路径**
+**Field Path**
 
 表达式用字段路径表示法来指定记录中的字段。字段路径的表示由一个 `$` 符号加上字段名或嵌套字段名。嵌套字段名用点将嵌套的各级字段连接起来。如 `$profile` 就表示 `profile` 的字段路径，`$profile.name` 就表示 `profile.name` 的字段路径（`profile` 字段中嵌套的 `name` 字段）。
+Expressions use field path notation to specify fields in the record. Field paths are represented by a `$` sign followed by the field name or nested field name. Nested field names use dots to connect fields at all levels of nesting. For example, `$profile` represents the field path of `profile`, and `$profile.name` represents the field path of `profile.name` (the `name` field nested in the `profile` field).
 
 例如：现有以下数据
+For example: the following data is available
 
 ```json
 [{
@@ -59,6 +72,7 @@ exports.main = async function(){
 
 ```js
 // 执行以下操作
+// do the following
 let res = await db.collection('scores').aggregate()
   .addFields({
     name: '$profile.name'
@@ -66,6 +80,7 @@ let res = await db.collection('scores').aggregate()
   .end()
 
 // 返回值为
+// return value
 {
   "data": [{
     "profile": {
@@ -79,26 +94,34 @@ let res = await db.collection('scores').aggregate()
 
 
 **常量**
+**constant**
 
 常量可以是任意类型。默认情况下 $ 开头的字符串都会被当做字段路径处理，如果想要避免这种行为，使用 `db.command.aggregate.literal` 声明为常量。
+Constants can be of any type. By default, strings starting with $ are treated as field paths. To avoid this behavior, use `db.command.aggregate.literal` to declare it as a constant.
 
 **聚合操作符**
+**aggregation operator**
 
 参考[聚合操作符](#aggregate-operator)
+See [aggregate operator](#aggregate-operator)
 
 ## addFields@aggregate-add-fields
 
 聚合阶段。添加新字段到输出的记录。经过 `addFields` 聚合阶段，输出的所有记录中除了输入时带有的字段外，还将带有 `addFields` 指定的字段。
+Aggregation stage. Add new fields to the output records. After the `addFields` aggregation stage, all output records will have the fields specified by `addFields` in addition to the fields they were input.
 
 
 **API 说明**
+**API description**
 
 `addFields` 等同于同时指定了所有已有字段和新增字段的 `project` 阶段。
+`addFields` is equivalent to the `project` phase specifying all existing fields and new fields at the same time.
 
 **`addFields` 的形式如下：**
 ```js
 addFields({
   <新字段>: <表达式>
+  <new field>: <expression>
 })
 ```
 `addFields` 可指定多个新字段，每个新字段的值由使用的表达式决定。
@@ -608,7 +631,9 @@ let res = await db.collection('attractions').aggregate()
       docType: 'geoNear',
     },
     key: 'location', // 若只有 location 一个地理位置索引的字段，则不需填
+    key: 'location', // If there is only one field of location index, it is not required to fill in
     includeLocs: 'location', // 若只有 location 一个是地理位置，则不需填
+    includeLocs: 'location', // If only location is a geographic location, you don't need to fill in
   })
   .end()
 ```
@@ -901,9 +926,13 @@ let res = await db.collection('items').aggregate()
 ```js
 lookup({
   from: <要连接的集合名>,
+  from: <collection name to connect to>,
   localField: <输入记录的要进行相等匹配的字段>,
+  localField: <field of the input record to be matched for equality>,
   foreignField: <被连接集合的要进行相等匹配的字段>,
+  foreignField: <the field of the connected collection to be matched for equality>,
   as: <输出的数组字段名>
+  as: <output array field name>
 })
 ```
 
@@ -938,9 +967,13 @@ WHERE <output array field> IN (SELECT *
 ```js
 lookup({
   from: <要连接的集合名>,
+  from: <collection name to connect to>,
   let: { <变量1>: <表达式1>, ..., <变量n>: <表达式n> },
+  let: { <variable1>: <expression1>, ..., <variablen>: <expressionn> },
   pipeline: [ <在要连接的集合上进行的流水线操作> ],
+  pipeline: [ <pipeline operation on the collection to join> ],
   as: <输出的数组字段名>
+  as: <output array field name>
 })
 ```
 
@@ -1486,17 +1519,20 @@ let res = await db.collection('orders').aggregate()
 **match 的形式如下：**
 ```js
 match(<查询条件>)
+match(<query condition>)
 ```
 
 查询条件与普通查询一致，可以用普通查询操作符，注意 match 阶段和其他聚合阶段不同，不可使用聚合操作符，只能使用查询操作符。
 ```js
 // 直接使用字符串
+// use string directly
 match({
   name: 'Tony Stark'
 })
 ```
 ```js
 // 使用操作符
+// use operator
 const dbCmd = db.command
 match({
   age: dbCmd.gt(18)
@@ -1567,6 +1603,7 @@ let res = await db.collection('articles')
 ```js
 project({
   <表达式>
+  <expression>
 })
 ```
 
@@ -1596,10 +1633,12 @@ _id 字段是默认包含在输出中的，除此之外其他任何字段，如�
 有时有些字段处于多层嵌套的底层，我们可以使用点记法：
 ```js
 "contact.phone.number": <1 or 0 or 表达式>
+"contact.phone.number": <1 or 0 or expression>
 ```
 也可以直接使用嵌套的格式：
 ```js
 contact: { phone: { number: <1 or 0 or 表达式> } }
+contact: { phone: { number: <1 or 0 or expression> } }
 ```
 
 **示例**
@@ -1658,6 +1697,7 @@ let res = await db.collection('articles')
   .aggregate()
   .project({
     isbn: 0,  // 指定去除 isbn 字段
+    isbn: 0, // Specifies to remove the isbn field
   })
   .end()
 ```
@@ -1704,6 +1744,7 @@ let res = await db.collection('students')
 输出为：
 ```js
 { "name": "小明", "totalScore": 240 }
+{ "name": "Xiao Ming", "totalScore": 240 }
 ```
 
 **加入新的数组字段**
@@ -1741,6 +1782,7 @@ let res = await db.collection('points')
 ```js
 replaceRoot({
     newRoot: <表达式>
+    newRoot: <expression>
 })
 ```
 表达式格式如下：
@@ -1790,8 +1832,11 @@ let res = await db.collection('schools')
 假设我们有一个 roles 集合，内容如下：
 ```js
 { "_id": 1, "first_name": "四郎", "last_name": "黄" }
+{ "_id": 1, "first_name": "Shiro", "last_name": "Yellow" }
 { "_id": 2, "first_name": "邦德", "last_name": "马" }
+{ "_id": 2, "first_name": "Bond", "last_name": "Horse" }
 { "_id": 3, "first_name": "牧之", "last_name": "张" }
+{ "_id": 3, "first_name": "Muzhi", "last_name": "Zhang" }
 ```
 下面的代码使用 replaceRoot，把 first_name 和 last_name 拼在一起：
 ```js
@@ -1808,8 +1853,11 @@ let res = await db.collection('roles')
 输出如下：
 ```js
 { "full_name": "黄四郎" }
+{ "full_name": "Huang Shilang" }
 { "full_name": "马邦德" }
+{ "full_name": "Mabonde" }
 { "full_name": "张牧之" }
+{ "full_name": "Zhang Muzhi" }
 ```
 
 ## sample@aggregate-sample
@@ -1827,6 +1875,7 @@ let res = await db.collection('roles')
 ```js
 sample({
     size: <正整数>
+    size: <positive integer>
 })
 ```
 请注意：size 是正整数，否则会出错。
@@ -1881,7 +1930,9 @@ let res = await db.collection('users')
 ```js
 sort({
     <字段名1>: <排序规则>,
+    <fieldname1>: <collation>,
     <字段名2>: <排序规则>,
+    <fieldname2>: <collation>,
 })
 ```
 
@@ -1931,6 +1982,7 @@ let res = await db.collection('articles')
 **sortByCount 的调用方式如下：**
 ```js
 sortByCount(<表达式>)
+sortByCount(<expression>)
 ```
 
 表达式的形式是：$ + 指定字段。请注意：不要漏写 $ 符号。
@@ -1997,6 +2049,7 @@ let res = await db.collection('passages')
 **参数是一个字段名**
 ```js
 unwind(<字段名>)
+unwind(<field name>)
 ```
 **参数是一个对象**
 ```js
@@ -2115,8 +2168,10 @@ const $ = db.command.aggregate
 let res = await db.collection('books').aggregate()
   .group({
     // 按 category 字段分组
+    // group by category field
     _id: '$category',
     // 让输出的每组记录有一个 avgSales 字段，其值是组内所有记录的 sales 字段的平均值
+    // Let each group of records output have an avgSales field whose value is the average of the sales fields of all records in the group
     avgSales: $.avg('$sales')
   })
   .end()

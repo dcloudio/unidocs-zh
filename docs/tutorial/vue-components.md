@@ -322,6 +322,7 @@ Component is a very important part of the technology in `vue`.Components allow U
 
 
 - 传入一个对象的所有 `property`  (微信小程序暂不支持该用法，即: <blog-post v-bind="post"(错误)></blog-post>)
+- Pass all `property` of an object (WeChat applet does not support this usage, ie: <blog-post v-bind="post"(error)></blog-post>)
 
 如果你想要将一个对象的所有 `property` 都作为 `prop` 传入，你可以使用不带参数的 `v-bind` (取代 v-bind:prop-name)。例如，对于一个给定的对象 `post` ：
 If you want to pass in all `property`of an object as a prop, you can use without parameters `v-bind`(replace v-bind: prop-name) . For example, for a given object `post`:
@@ -456,9 +457,11 @@ If used on a plain DOM element, the reference will be that element; if used on a
 ```html
 
 <!-- 非H5端不支持通过this.$refs.content来获取view实例 -->
+<!-- Non-H5 client does not support getting view instance through this.$refs.content -->
 <view ref="content">hello</view>
 
 <!-- 支持通过this.$refs.child来获取child-component实例 -->
+<!-- Support to get child-component instance through this.$refs.child -->
 <child-component ref="child"></child-component>
 
 ```
@@ -499,6 +502,7 @@ Now in the component where you’ve defined this ref, you can use:`this.$refs.us
 
 ```html
 <!-- base-input子组件页面 -->
+<!-- base-input subcomponent page -->
 <template>
 	<view>
 		<input :focus="isFocus" type="text" placeholder="请输入内容" />
@@ -528,6 +532,7 @@ Thus allowing the parent component to focus the input inside `<base-input>` with
 
 ```html
 <!-- index 父组件页面 -->
+<!-- index parent component page -->
 <template>
 	<view>
 		<base-input ref="usernameInput"></base-input>
@@ -574,6 +579,7 @@ here may be times when you want to listen directly to a native event on the root
 In these cases, you can use the `.native` modifier for `v-on`:
 
 - 注意：在app、小程序端和h5端表现不一致，h5端获取到的是浏览器原生事件。
+- Note: Inconsistent performance on the app, applet and h5 side, the h5 side gets the browser's native events.
 
 ```html
 	<template>
@@ -1105,15 +1111,20 @@ You can even define a backup for the case where `prop` in the slot is `undefined
 
 
 ## 小程序不支持列表
+## applet does not support list
 
 
 - 作用域插槽（HBuilderX 3.1.19 以下仅支持解构插槽且不可使用作用域外数据以及使用复杂的表达式）
+- Scoped slots (HBuilderX 3.1.19 and below only supports destructuring slots and cannot use out-of-scope data and complex expressions)
 - 动态组件
+- Dynamic components
 - 异步组件
 - `inline-template`
 - `X-Templates`
 - `keep-alive`（App端也未支持）
+- `keep-alive` (not supported on App side)
 - `transition` （可使用 `animation` 或 CSS 动画替代）
+- `transition` (can be replaced with `animation` or CSS animation)
 
 
 
@@ -1176,6 +1187,7 @@ Tips
 - 除以上列表中的名称外，标准的 HTML 及 SVG 标签名也不能作为组件名。
 - In addition to the names in the above list, standard HTML and SVG tag names cannot be used as component names.
 - 在百度小程序中使用时，不要在 data 内使用 hidden ，可能会导致渲染错误。
+- When using in Baidu applet, do not use hidden in data, it may cause rendering errors.
 - methods中不可使用与生命周期同名的方法名。
 - Methods cannot use a method name with the same name as a lifecycle.
 

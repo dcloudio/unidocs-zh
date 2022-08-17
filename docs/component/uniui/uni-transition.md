@@ -331,6 +331,7 @@ Animation configuration, `init()` is the same as the second parameter configurat
 |needLayout|Boolean|否|false	|动画执行是否影响布局|仅 nvue 支持|
 |needLayout|Boolean|No|false |Does the animation affect the layout |Only supported by nvue|
 |transformOrigin|String	|否|"center center"|设置	[transform-origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin)|-|
+|transformOrigin|String |No|"center center"|Set [transform-origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin)|-|
 
 
 ### timingFunction 属性说明
@@ -440,6 +441,7 @@ The value of the rotation attribute does not need to fill in the unit
 |rotateZ|deg|deg的范围-180~180，在Z轴旋转一个deg角度				|nvue不支持|
 |rotateZ|deg|deg range -180~180, rotate a deg angle on the Z axYes |nvue does not support|
 |rotate3d|x,y,z,deg| 同	[transform-function rotate3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d())		|nvue不支持|
+|rotate3d|x,y,z,deg| Same as [transform-function rotate3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d()) |nvue does not Support|
 
 ```javascript
 this.$refs.ani.step({

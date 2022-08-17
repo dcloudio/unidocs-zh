@@ -20,17 +20,20 @@ For those native functions that do not depend on UI interaction, nvue encapsulat
  - 支持项目nativeplugins目录下和插件市场原生云打包的第三方原生插件。你可以将已有原生模块移植到nvue平台也很方便。
  - Third-party native plug-ins that support native cloud packaging in the project nativeplugins directory and plug-in market. It is also very convenient for you to transplant the existing native modules to nvue platform.
   使用方式：在manifest.json->App原生插件配置->选择本地插件或者云端插件->打自定义基座才能使用。[详见](/plugin/native-plugin)
+  How to use: in manifest.json->App native plug-in configuration->select local plug-in or cloud plug-in->make a custom base to use. [See details](/plugin/native-plugin)
   
  - nvue还支持uni-app的js API接口，若无特殊说明，则表示vue文件和nvue文件均支持。[详见](/api/README)。
  - nvue also supports js API interface of uni-app. Unless otherwise specified, it means that both vue file and nvue file support it. [See details.](/api/README)
   
  - nvue 里不支持的 uni-app API，[详见](#nvue-里不支持的-uni-app-api)
+ - uni-app API not supported in nvue, [see details](#nvue-%E9%87%8C%E4%B8%8D%E6%94%AF%E6%8C%81%E7%9A%84- uni-app-api)
 
 
 
 ### addRule
 
  Weex 提供 DOM.addRule 以**加载自定义字体**。开发者可以通过指定 font-family加载 iconfont 和 custom font。开发者可以使用下面的代码加载自定义字体：
+ Weex provides DOM.addRule to **load custom fonts**. Developers can load iconfont and custom font by specifying font-family. Developers can use the following code to load custom fonts:
 ``` html
 	<template>
 		<view>
@@ -234,6 +237,7 @@ An example callback result should be like:
 ## animation
 
 ```animation```模块可以用来在组件上执行动画。JS-Animation可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。
+The ``animation``` module can be used to perform animations on components. JS-Animation can perform a series of simple transformations on components (position, size, rotation, background color and opacity).
 
 举个例子，如果有一个```image```组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。
 For example, if you have a `image` component, you can move, rotate, grow, or shrink it by animation.
@@ -381,6 +385,7 @@ The supported styles are listed below:
 
 
 > 如果需要使用CSS动画，参考[transition](/tutorial/nvue-css?id=transition)和[transform](/tutorial/nvue-css?id=transform)。
+> If you need to use CSS animation, refer to [transition](/tutorial/nvue-css?id=transition) and [transform](/tutorial/nvue-css?id=transform).
 
 
 
@@ -605,6 +610,7 @@ BindingX is similar to an enhanced version of css, with high running performance
 In uni-app, nvue and vue pages can be mixed and used.
 
 推荐使用 ```uni.$on``` , ```uni.$emit``` 的方式进行页面通讯，旧的通讯方式（uni.postMessage及plus.webview.postMessageToUniNView）不再推荐使用。
+It is recommended to use ``uni.$on`` and ``uni.$emit``` for page communication, and the old communication methods (uni.postMessage and plus.webview.postMessageToUniNView) are no longer recommended.
 
 ##### 通讯实现方式
 ##### Communication implementation method
@@ -626,6 +632,7 @@ In uni-app, nvue and vue pages can be mixed and used.
 ```
 
 **使用此页面通讯时注意事项：要在页面卸载前，使用 uni.$off 移除事件监听器。**[参考](https://uniapp.dcloud.io/tutorial/page.html#off)
+**Note when communicating with this page: To remove the event listener using uni.$off before the page is unloaded. **[Reference](https://uniapp.dcloud.io/tutorial/page.html#off)
 
 ### nvue 向 vue 通讯（已过期，推荐使用上面的uni.$on、uni.$emit）
 ### nvue communicate to vue (expired, it is recommended to use the above uni.$on and uni.$emit)
@@ -675,12 +682,15 @@ In uni-app, nvue and vue pages can be mixed and used.
 
 
 ### vue 向 nvue 通讯（已过期，推荐使用上面的uni.$on、uni.$emit）
+### vue communicates with nvue (expired, it is recommended to use the above uni.$on, uni.$emit)
 
 ##### 步骤：
 ##### Step:
 
 1. 在 ```vue``` 里使用 ```plus.webview.postMessageToUniNView(data,nvueId)``` 发送消息，```data``` 为 ```JSON``` 格式（键值对的值仅支持String），```nvueId``` 为 ```nvue``` 所在 webview 的 id，webview的 id 获取方式参考：[$getAppWebview()](/tutorial/page.html#getappwebview)。
+1. Use ```plus.webview.postMessageToUniNView(data,nvueId)``` in ```vue``` to send a message, ```data``` is in ```JSON``` format (key value The value of the pair only supports String), ```nvueId``` is the id of the webview where ```nvue``` is located. For the method of obtaining the id of the webview, please refer to: [$getAppWebview()](/tutorial/page.html#getappwebview ).
 2. 在 ```nvue``` 里引用 ```globalEvent``` 模块监听 ```plusMessage``` 事件，如下： 
+2. In ```nvue```, refer to the ```globalEvent``` module to listen to the ```plusMessage``` event, as follows:
 
 
 ```javascript
@@ -768,7 +778,9 @@ In addition communication events, variables and storage can also be shared betwe
 	- vue和nvue页面可以使用相同的```uni.storage```存储。这个存储是持久化的。 比如登录状态可以保存在这里。
 	-vue and nvue pages can use the same `uni.storage` for storage. This storage is persistent. For example, the login status can be saved here.
 	- App端还支持```plus.sqlite```，也是共享通用的。
+	- The App side also supports ```plus.sqlite```, which is also shared and common.
 3. **globalData:** 小程序有```globalData```机制，这套机制在```uni-app```里也可以使用，全端通用。 在App.vue文件里定义```globalData```，如下：
+3. The **globalData:** applet has a ````globalData``` mechanism, which can also be used in ```uni-app```, and is universal to all terminals. Define ````globalData```` in the App.vue file, as follows:
 
 ```javascript
 	<script>  
@@ -793,6 +805,7 @@ In addition communication events, variables and storage can also be shared betwe
 - js中操作```globalData```的方式如下： ```getApp().globalData.text = 'test'```
 - The way to operate `globalData` in js is as follows: `getApp().globalData.text = 'test'`
 - 如果需要把```globalData```的数据绑定到页面上，可在页面的onShow生命周期里进行变量重赋值。
+- If you need to bind the data of ``globalData```` to the page, you can reassign the variable in the onShow life cycle of the page.
 
 
 
@@ -800,7 +813,9 @@ In addition communication events, variables and storage can also be shared betwe
 
 
 ## nvue 里使用 HTML5Plus API
+## Using HTML5Plus API in nvue
 nvue页面可直接使用plus的API，并且不需要等待plus ready。
+The nvue page can directly use the plus API, and does not need to wait for the plus ready.
 
 
 ## nvue 里不支持的 uni-app API
@@ -815,6 +830,7 @@ nvue supports most uni-app APIs. The following only lists the **APIs** that are 
 | API| Describe| Solution|
 |--			|--			|--			|
 |uni.createAnimation()	|创建一个动画实例	|[animation](/tutorial/nvue-api?id=animation)|
+|uni.createAnimation() |Create an animation instance |[animation](/tutorial/nvue-api?id=animation)|
 
 
 ##### 滚动
@@ -824,6 +840,7 @@ nvue supports most uni-app APIs. The following only lists the **APIs** that are 
 | API| Describe| Solution|
 |--			|--			|--			|
 |uni.pageScrollTo()	|将页面滚动到目标位置	|[scrollToElement](#scrolltoelement)|
+|uni.pageScrollTo() |Scroll the page to the target position |[scrollToElement](#scrolltoelement)|
 
 
 ##### 节点布局交互

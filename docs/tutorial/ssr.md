@@ -225,6 +225,7 @@ Releasing ssr will get two parts: the cloud part and the static resource part. T
 1. 开通[uniCloud](https://unicloud.dcloud.net.cn)以及[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
 1. Open [uniCloud](https://unicloud.dcloud.net.cn) and [Front-end web hosting](https://uniapp.dcloud.net.cn/uniCloud/hosting)
 2. 云函数绑定自定义url化域名，参考文档：[云函数Url化](https://uniapp.dcloud.net.cn/uniCloud/http)，阿里云未绑定自定义域名会直接下载云函数返回的html页面无法在浏览器中展示
+2. Cloud function binding custom urlized domain name, refer to the document: [Cloud Function Urlization](https://uniapp.dcloud.net.cn/uniCloud/http), Alibaba Cloud will download directly if the custom domain name is not bound The html page returned by the cloud function cannot be displayed in the browser
 3. 前端网页托管绑定自定义域名，参考文档：[前端网页托管配置域名](https://uniapp.dcloud.net.cn/uniCloud/hosting?id=domain)
 3. For front-end web hosting binding custom domain name, please refer to the document [Front-end web hosting configuration domain name](https://uniapp.dcloud.net.cn/uniCloud/hosting?id=domain)
 4. 将前两步部署的域名都配置在跨域配置内，即允许云函数跨域访问前端网页托管内的资源，也允许前端网页托管跨域访问云函数。参考文档：[H5中使用uniCloud的跨域处理](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
@@ -299,8 +300,10 @@ HBuilderX version `3.2.7` and above are required, currently only supports the de
 
 
 #### 注意事项
+#### Precautions
 
 - 浏览器控制台提示如下警告，说明服务器和客户端渲染的结果不一致，检查模板绑定的属性是否使用了 `ssrRef`
+- The browser console prompts the following warning, indicating that the results of server and client rendering are inconsistent. Check whether the template-bound properties use `ssrRef`
 
 ```
 [Vue warn]: Hydration node mismatch:

@@ -19,6 +19,7 @@
 - 不支持在css里写背景图`background-image`，但可以使用image组件和层级来实现类似web中的背景效果。因为原生开发本身也没有web这种背景图概念
 - Writing background pictures `background-image` in css is not supported, but image components and layers can be used to achieve background effects similar to those in the web. Because in native development, there is no such concept of background map like web.
 - 使用`image`标签，支持使用base64，不支持svg格式图片
+- Use the `image` tag, support the use of base64, but not svg format images
 - nvue 的各组件在安卓端默认是透明的，如果不设置`background-color`，可能会导致出现重影的问题
 - Each component of nvue is transparent by default on Android. If `background-color` is not set, it may cause ghosting problems
 - 文字内容，必须只能在`text`组件下，`text`组件不能换行写内容，否则会出现无法去除的周边空白
@@ -49,6 +50,7 @@
 
 
 - nvue的```uni-app```编译模式下，App.vue 中的样式，会编译到每个 nvue文件。对于共享样式，如果有不合法属性控制台会给出警告，可以通过[条件编译](https://uniapp.dcloud.io/tutorial/platform#preprocessor)```APP-PLUS-NVUE```屏蔽 App 中的警告。
+- In the ``uni-app`` compilation mode of nvue, the styles in App.vue will be compiled into each nvue file. For shared styles, if there are illegal attributes, the console will give a warning, you can use [conditional compilation](https://uniapp.dcloud.io/tutorial/platform#preprocessor)```APP-PLUS-NVUE``` Suppress warnings in apps.
 
 
 ## 盒模型
@@ -119,6 +121,7 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 ##### 边框
 ##### border
 ```border-style``` 设定边框样式，如果四个方向的边框样式不同，可分别设置：
+```border-style``` Set the border style. If the border styles in the four directions are different, you can set them separately:
 
 |可选值	|描述					|
 | Property| Describe|
@@ -147,6 +150,7 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 
 ##### border-width
 ```border-width```：设定边框宽度，非负值, 默认值 0，如果四个方向的边框宽度不同，可分别设置：
+```border-width```: Set the border width, non-negative value, the default value is 0, if the border widths in the four directions are different, you can set them separately:
 
 |可选值							|描述				|
 | Property| Describe|
@@ -164,6 +168,7 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 
 ##### border-color
 ```border-color```：设定边框颜色，默认值 ```#000000```，如果四个方向的边框颜色不同，可分别设置：
+````border-color```: Set the border color, the default value is ```#000000```, if the border colors in the four directions are different, you can set them separately:
 
 
 |可选值						|描述					|
@@ -182,6 +187,7 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 
 ##### border-radius
 ```border-radius```：设置边框的圆角，默认值 0，如果四个方向的圆角弧度不同，可分别设置：
+``border-radius``: Set the rounded corners of the border, the default value is 0. If the rounded corners in the four directions are different, you can set them separately:
 
 |可选值								|描述				|
 | Property| Describe|
@@ -198,6 +204,7 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 | border-top-right-radius {length}| non-negative, default value 0|
 
 > ```border-radius```和```border-width```定义了圆心角为90度的椭圆弧的长轴和半长轴的大小。如果邻接两边```border-radius```(或```border-width```不一致，nvue绘制的边框曲线可能不够平滑。
+> ```border-radius``` and ````border-width``` define the size of the major and semi-major axes of an elliptical arc with a central angle of 90 degrees. If the adjacent two sides ```border-radius``` (or ```border-width``` are inconsistent, the border curve drawn by nvue may not be smooth enough.
 
 
 ##### 外边距
@@ -365,6 +372,7 @@ relative to the rest of the flex items inside the same container.
 
 ``` html
 	<!-- Gird布局 -->
+	<!-- Grid layout -->
 	<template>
 		<view>
 			<view v-for="(v, i) in list" class="row">
@@ -410,6 +418,7 @@ relative to the rest of the flex items inside the same container.
 
 ``` html
 	<!-- 等高模块 -->
+	<!-- Contour module -->
 	<template>
 	  <view>
 	    <view style="width:300px; height:100px;">
@@ -448,6 +457,7 @@ Set the positioning type. The default value is `relative`.
 
 ``` html
 	<!-- 水平垂直居中 -->
+	<!-- Center horizontally and vertically -->
 	<template>
 		<view class="wrapper">
 			<view class="box"></view>
@@ -812,7 +822,9 @@ Weex currently supports two color gradients. The direction of the gradient is as
 **Notes**
 
 > ```background-image``` 优先级高于 ```background-color```，这意味着同时设置 ```background-image``` 和 ```background-color```，```background-color``` 被覆盖。
+> ```background-image``` takes precedence over ```background-color```, which means setting both ```background-image``` and ```background-color```, ` ``background-color``` is overridden.
 > ```background``` 不支持简写。
+> ```background```` does not support shorthand.
 > 
 > **目前暂不支持 radial-gradient（径向渐变）。**
 > **`radial-gradient` is not currently supported, do not use it.**
@@ -825,6 +837,7 @@ Weex currently supports two color gradients. The direction of the gradient is as
 ## Box-shadow@boxshadow
 
 ### 阴影```box-shadow```@ios-box-shadow
+### Shadow ````box-shadow````@ios-box-shadow
 
 	
 	{box-shadow:inset offset-x offset-y blur-radius color}
@@ -859,13 +872,17 @@ Example
 - 每个元素只支持设置一个阴影效果，不支持多个阴影同时作用于一个元素。
 - Each element only supports setting one shadow effect, and does not support multiple shadows acting on one element at the same time.
 - Android平台 设置```box-shadow```的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
+- On the Android platform, the component that sets the ``box-shadow``` needs to give up the shadow rendering position, otherwise there will be a problem of incomplete shadow display.
 
 
 ### Android平台：阴影@android-box-shadow
+### Android: Shadow @android-box-shadow
 
 #### 阴影```box-shadow```
+#### shadow ```box-shadow````
 
 从HBuilderX3.4.3起，重新支持阴影样式(box-shadow)。修复老版本组件设置```box-shadow```后在不同系统版本出现的显示异常及闪烁问题! 但需要注意设置阴影样式(box-shadow) 的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。	
+From HBuilderX3.4.3, the shadow style (box-shadow) is re-supported. Fix the display abnormality and flickering problem in different system versions after the old version of the component is set to ```box-shadow```! However, it should be noted that the component that sets the shadow style (box-shadow) needs to give up the shadow rendering position, otherwise it will appear The problem of incomplete shadow display.
 
 	
 示例
@@ -894,8 +911,10 @@ Example
 ```
 
 #### 阴影```elevation```
+#### shadow ```elevation```
 
 目前Android平台对阴影样式(box-shadow)支持的还不太完善，有设置圆角边框时阴影样式显示不正常、占用组件视图渲染区域等问题。
+At present, the Android platform's support for the shadow style (box-shadow) is not perfect, and there are problems such as abnormal display of the shadow style when setting a rounded border, and occupying the rendering area of the component view.
 
 为解决这些问题，从HBuilderX 2.4.7起，新增elevation属性（**组件的属性，不是css样式**）设置组件的层级，Number类型，层级值越大阴影越明显，阴影效果也与组件位置有关，越靠近页面底部阴影效果越明显
 To solve these problems, from HBuilderX 2.4.7+, the elevation attribute ( **attribute of the component, not css style**) is added to set the level of the component and the Number type. The larger the level value, the more obvious the shadow. The shadow effect is also related to the position of the component, the closer to the bottom of the page, the more obvious the shadow effect
@@ -922,6 +941,7 @@ Usage
 - IOS不支持```elevation```属性，请使用```box-shadow```设置阴影
 - IOS does not support the `elevation` attribute, please use `box-shadow` to set the shadow
 - 设置```box-shadow```需要当前组件让出阴影位置。否则无法正常看到阴影
+- Setting ````box-shadow```` requires the current component to yield the shadow position. Otherwise, the shadow cannot be seen normally
 
 
 
@@ -958,6 +978,7 @@ This property indicate the weight of the text.
 - 可选值: ```normal```, ```bold```, 100, 200, 300, 400, 500, 600, 700, 800, 900
 - values: `normal`, `bold`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`
 - ```normal``` 等同于 400, ```bold``` 等同于 700；
+- ```normal``` is equivalent to 400, ```bold``` is equivalent to 700;
 - iOS 支持 9 种 ```font-weight```值；Android 仅支持 400 和 700, 其他值会设为 400 或 700
 - ios support showing 9 kind of font-weight.android support showing 2 kind of font-weight:400,700, other value will map to 400 or 700.
 - 类似 ```lighter```, ```bolder``` 这样的值暂时不支持
@@ -965,6 +986,7 @@ This property indicate the weight of the text.
 
 ### text-decoration
 ```text-decoration {string}```：字体装饰。默认值为 ```none```。
+```text-decoration {string}```: Font decoration. The default value is ``none``.
 
 |可选值			|描述						|
 | Property| Describe|
@@ -978,6 +1000,7 @@ This property indicate the weight of the text.
 
 
 > 只支持 ```text``` 和 ```richtext```
+> Only ```text``` and ```richtext``` are supported
 > 
 > 不支持 ```text-decoration:overline```
 > `text-decoration:overline` not supported
@@ -985,6 +1008,7 @@ This property indicate the weight of the text.
 
 ### text-align
 ```text-align {string}```：对齐方式。默认值为 ```left```。
+```text-align {string}```: The alignment. The default value is ```left```.
 
 |可选值	|描述				|
 | Property| Describe|
@@ -1002,12 +1026,15 @@ This property indicate the weight of the text.
 
 ### font-family
 ```font-family {string}```：设置字体。这个设置不保证在不同平台，设备间的一致性。
+```font-family {string}````: Set the font. This setting does not guarantee consistency between devices on different platforms.
 如所选设置在平台上不可用，将会降级到平台默认字体。
 If the specified font cannot be found at the device, a typeface fallback will occur and the default typeface will be load. The fallback mechanism may vary in different devices.
 如果需要加载自定义字体，请参考相关[DOM.addRule](/tutorial/nvue-api?id=addrule)
+If you need to load custom fonts, please refer to the relevant [DOM.addRule](/tutorial/nvue-api?id=addrule)
 
 ### text-overflow
 ```text-overflow {string}```：设置内容超长时的省略样式。
+```text-overflow {string}````: Set the omission style when the content is too long.
 
 |可选值		|描述							|
 | Property| Describe|
@@ -1017,18 +1044,23 @@ If the specified font cannot be found at the device, a typeface fallback will oc
 |ellipsis	|显示省略符号来代表被修剪的文本	|
 | ellipsis| Display ellipsis to represent the trimmed text|
 > 只支持 ```text``` 和 ```richtext```
+> Only ```text``` and ```richtext``` are supported
 
 ### lines
 ```lines {number}```: 正整数，指定最大文本行数，默认```lines```值为0，表示不限制最大行数```lines```。如果文本不够长，实际展示行数会小于指定行数。
+```lines {number}```: A positive integer, specifying the maximum number of text lines, the default ```lines``` value is 0, which means that the maximum number of lines is not limited ```lines```. If the text is not long enough, the actual number of displayed lines will be less than the specified number of lines.
 
 ### line-height
 line-height {length}: 正整数，每行文字高度。```line-height```是 top 至 bottom的距离。
 `line-height`: \<length> The line height of every line in the text. `line-height` is the space between top and bottom.
 ```line-height```与```font-size```没有关系，因为```line-height```被 top 和 bottom 所限制，
+````line-height``` has nothing to do with ````font-size```, because ```line-height``` is limited by top and bottom,
 ```font-size``` 被 glyph 所解析。```line-height```和```font-size```相等一般会导致文字被截断。
+```font-size``` is parsed by glyph. Equal ``line-height``` and ```font-size``` will generally cause text to be truncated.
 
 ### word-wrap
 ```word-wrap:<string>```  对nvue来说 ```anywhere``` 表示在以字符为最小元素做截断换行，其它值或不指定该属性，都以英文单词为单位进行换行。
+```word-wrap:<string>``` For nvue, ```anywhere``` means that the character is the smallest element to truncate and wrap the line. Other values or not specifying this attribute are performed in English words. newline.
 
 |可选值		|描述								|
 | Property| Describe|
@@ -1042,4 +1074,5 @@ line-height {length}: 正整数，每行文字高度。```line-height```是 top 
 
 
 > 在 Android 平台暂不支持
+> Not currently supported on Android platform
 

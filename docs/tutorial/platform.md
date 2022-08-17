@@ -33,9 +33,11 @@ Conditional compilation is marked with special comments which are the basic of c
 * <b style="color:#268BD2">%PLATFORM%</b>: platform name
 
 <table><thead><tr><th>条件编译写法</th><th>说明</th></tr></thead><tbody><tr><td><div class="code"><span class="token comment"><span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> APP-PLUS</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>仅出现在 App 平台下的代码</td></tr><tr><td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifndef</span><b style="color:#268BD2"> H5</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>除了 H5 平台，其它平台均存在的代码</td></tr><tr><td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> H5</b></span><span style="color:#859900;"> || </span><b style="color:#268BD2">MP-WEIXIN</b><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>在 H5 平台或微信小程序平台存在的代码（这里只有||，不可能出现&&，因为没有交集）</td></tr></tbody></table>
+<table><thead><tr><th>conditional compilation</th><th> illustrate</th></tr></thead><tbody><tr><td><div class="code"> <span class="token comment"><span style="color:#859900;">#ifdef</span> <b style="color:#268BD2">APP-PLUS</b></span><br> Conditionally compiled code<br> <span class="token comment"><span style="color:#859900;">#endif</span></span></div></td><td> Code that only appears under the App platform</td></tr><tr><td><div class="code"> <span class="token comment"><span style="color:#859900;">#ifndef</span> <b style="color:#268BD2">H5</b></span><br> Conditionally compiled code<br> <span class="token comment"><span style="color:#859900;">#endif</span></span></div></td><td> Except for the H5 platform, the code that exists on other platforms</td></tr><tr><td><div class="code"> <span class="token comment"><span style="color:#859900;">#ifdef</span> <b style="color:#268BD2">H5</b></span> <span style="color:#859900;">||</span> <b style="color:#268BD2">MP-WEIXIN</b><br> Conditionally compiled code<br> <span class="token comment"><span style="color:#859900;">#endif</span></span></div></td><td> The code that exists on the H5 platform or the WeChat applet platform (there is only || here, and &amp;&amp; cannot appear because there is no intersection)</td></tr></tbody></table>
 
 
 <b style="color:#268BD2"> %PLATFORM%</b> **可取值如下：**
+<b style="color:#268BD2">%PLATFORM%</b> **The possible values are as follows:**
 
 |值|生效条件|
 | Value| Effective conditions|
@@ -45,18 +47,31 @@ Conditional compilation is marked with special comments which are the basic of c
 |APP-PLUS-NVUE或APP-NVUE|App nvue|
 |H5|H5|
 |MP-WEIXIN|微信小程序|
+|MP-WEIXIN|WeChat Mini Program|
 |MP-ALIPAY|支付宝小程序|
+|MP-ALIPAY|Alipay Mini Program|
 |MP-BAIDU|百度小程序|
+|MP-BAIDU|Baidu Mini Program|
 |MP-TOUTIAO|字节跳动小程序|
+|MP-TOUTIAO|Byte Beat Mini Program|
 |MP-LARK|飞书小程序|
+|MP-LARK|Feishu Mini Program|
 |MP-QQ|QQ小程序|
+|MP-QQ|QQ Mini Program|
 |MP-KUAISHOU|快手小程序|
+|MP-KUAISHOU|Kaishou Mini Program|
 |MP-JD|京东小程序|
+|MP-JD|JD Mini Program|
 |MP-360|360小程序|
+|MP-360|360 Mini Program|
 |MP|微信小程序/支付宝小程序/百度小程序/字节跳动小程序/飞书小程序/QQ小程序/360小程序|
+|MP|WeChat applet/Alipay applet/Baidu applet/ByteDance applet/Feishu applet/QQ applet/360 applet|
 |QUICKAPP-WEBVIEW|快应用通用(包含联盟、华为)|
+|QUICKAPP-WEBVIEW|Quick application universal (including alliance, Huawei)|
 |QUICKAPP-WEBVIEW-UNION|快应用联盟|
+|QUICKAPP-WEBVIEW-UNION|Quick Application Union|
 |QUICKAPP-WEBVIEW-HUAWEI|快应用华为|
+|QUICKAPP-WEBVIEW-HUAWEI|Quick app HUAWEI|
 
 **支持的文件**
 **Supported files**
@@ -74,6 +89,7 @@ Conditional compilation is marked with special comments which are the basic of c
 * 条件编译是利用注释实现的，在不同语法里注释写法不一样，js使用 ``// 注释``、css 使用 ``/* 注释 */``、vue/nvue 模板里使用 ``<!-- 注释 -->``；
 * Conditional compilation is realized by annotations. In different grammars, annotations are written differently. js uses `// Comments`, css uses `/* Comments */`, and vue/nvue template uses `<!-- Comments -->`;
 * 条件编译APP-PLUS包含APP-NVUE和APP-VUE，APP-PLUS-NVUE和APP-NVUE没什么区别，为了简写后面出了APP-NVUE ；
+* Conditional compilation APP-PLUS includes APP-NVUE and APP-VUE, APP-PLUS-NVUE and APP-NVUE are no different, in order to abbreviate APP-NVUE later;
 * 使用条件编译请保证`编译前`和`编译后`文件的正确性，比如json文件中不能有多余的逗号；
 * When using conditional compilation, please ensure the correctness of the `Pre-compilation` and `Post-compilation` files, for example, there should be no extra commas in the json file;
 * `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`
@@ -114,6 +130,7 @@ For example, the following codes will appear on App and H5 platforms:
 <span class="token comment">&lt;!-- <span style="color:#859900;"> #endif</span> --&gt;</span></code></pre>
 
 示例，如下公众号关注组件仅会在微信小程序中出现：
+For example, the following public account follow components will only appear in WeChat Mini Programs:
 
 ````html
 <view>
@@ -155,6 +172,7 @@ The following pages will only be compiled when running to App.
 ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/04ecec40-4f3c-11eb-97b7-0dc4655d6e68.png)
 
 不同平台下的特有功能，以及小程序平台的分包，都可以通过 pages.json 的条件编译来更好地实现。这样，就不会在其它平台产生多余的资源，进而减小包体积。
+The unique functions under different platforms, as well as the subcontracting of the applet platform, can be better realized through the conditional compilation of pages.json. In this way, redundant resources will not be generated on other platforms, thereby reducing the package size.
 
 json的条件编译，如不同平台的key名称相同，cli项目下开发者自己安装的校验器会报错，需自行关闭这些校验器对json相同key的校验规则。如果使用HBuilderX的校验器，无需在意此问题，HBuilderX的语法校验器为此优化过。
 For conditional compilation of json, if the key names of different platforms are the same, the verifiers installed by developers under cli project will report errors, and the verification rules of these verifiers for the same key of json need to be closed by themselves. If the verifier of HBuilderX is used, there is no need to care about this problem, because the syntax verifier of HBuilderX has been optimized for this purpose.
@@ -166,6 +184,7 @@ For conditional compilation of json, if the key names of different platforms are
 In different platforms, there may be differences in the referenced static resources. This problem can be solved by conditional compilation of static. Create a dedicated directory for different platforms under the static directory (the directory name is the same as the `%PLATFORM%` value range, but the letters are all lowercase)), the static resources in the dedicated directory will only be compiled on a specific platform.
 
 如以下目录结构，``a.png`` 只有在微信小程序平台才会编译进去，``b.png`` 在所有平台都会被编译。
+As shown in the following directory structure, ``a.png`` will only be compiled in the WeChat applet platform, and ``b.png`` will be compiled in all platforms.
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
@@ -184,6 +203,7 @@ In different platforms, there may be differences in the referenced static resour
 ### Conditional compilation of whole directories
 
 如果想把各平台的页面文件更彻底的分开，也可以在uni-app项目根目录创建`platforms`目录，然后在下面进一步创建`app-plus`、`mp-weixin`等子目录，存放不同平台的文件。
+If you want to separate the page files of each platform more thoroughly, you can also create a `platforms` directory in the root directory of the uni-app project, and then further create `app-plus`, `mp-weixin` and other subdirectories below to store different Platform documentation.
 
 **注意**
 **Notice**
@@ -234,5 +254,6 @@ Click **ifdef** or **endif** to quickly select the conditional compilation part;
 * Android 和 iOS 平台不支持通过条件编译来区分，如果需要区分 Android、iOS 平台，请通过调用 uni.getSystemInfo 来获取平台信息。支持`ifios`、`ifAndroid`代码块，可方便编写判断。
 * It is not supported to distinguish Android and iOS platforms through conditional compilation. If you need to distinguish them, please call uni.getSystemInfo to get the platform information. Supports `ifios`, `ifAndroid` code blocks, which is convenient for writing and judging.
 * 有些跨端工具可以提供js的条件编译或多态，但这对于实际开发远远不够。uni-app不止是处理js，任何代码都可以多端条件编译，才能真正解决实际项目的跨端问题。另外所谓多态在实际开发中会造成大量冗余代码，很不利于复用和维护。举例，微信小程序主题色是绿色，而百度支付宝小程序是蓝色，你的应用想分平台适配颜色，只有条件编译是代码量最低、最容易维护的。
+* Some cross-end tools can provide conditional compilation or polymorphism of js, but this is far from enough for actual development. uni-app not only deals with js, but any code can be compiled conditionally on multiple terminals, so as to truly solve the cross-terminal problem of the actual project. In addition, the so-called polymorphism will cause a lot of redundant code in actual development, which is not conducive to reuse and maintenance. For example, the theme color of WeChat applet is green, and the Baidu Alipay applet is blue. If your application wants to adapt to the color of the platform, only conditional compilation is the least code amount and the easiest to maintain.
 * 有些公司的产品运营总是给不同平台提不同需求，但这不是拒绝uni-app的理由。关键在于项目里，复用的代码多还是个性的代码多，正常都是复用的代码多，所以仍然应该多端。而个性的代码放到不同平台的目录下，差异化维护。
 * Some companies operate their products with different requirements for different platforms, but that is no reason to reject uni-App. The key lies in whether there is more reusable code or more personalized code in the project. Normally, there shall be more reusable codes, so it should still be multi-side. Personalized codes are placed in directories of different platforms for differentiated maintenance.

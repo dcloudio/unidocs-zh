@@ -3,8 +3,10 @@
 
 
 > 已经了解 Vue2，只想了解 Vue3 新功能可以参阅[vue3新功能](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8%A7%88)！
+> Already know Vue2, just want to know the new features of Vue3, you can refer to [vue3 new features](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8%A7% 88)!
 >  
 > 已经有 Vue2 项目，需要适配 Vue3 的可参阅[vue2 项目迁移 vue3](https://uniapp.dcloud.io/tutorial/migration-to-vue3)！
+> If you already have a Vue2 project and need to adapt to Vue3, please refer to [vue2 project migration vue3](https://uniapp.dcloud.io/tutorial/migration-to-vue3)!
 
 
 
@@ -23,6 +25,7 @@ The core of `Vue.js` is a system that allows the use of concise template syntax 
  **Thanks**
 
 本文大部分内容来源于[vue3中文文档官网](https://v3.cn.vuejs.org/guide/introduction.html#vue-js-%E6%98%AF%E4%BB%80%E4%B9%88)，但结合 `uni-app` 做了部分调整，以更有利于开发者快速上手。感谢Vue团队！
+Most of the content of this article comes from [vue3 Chinese document official website](https://v3.cn.vuejs.org/guide/introduction.html#vue-js-%E6%98%AF%E4%BB%80%E4% B9%88), but some adjustments have been made in combination with `uni-app` to make it easier for developers to get started quickly. Thanks to the Vue team!
 
 
 **vue3的优势：**
@@ -33,6 +36,7 @@ The core of `Vue.js` is a system that allows the use of concise template syntax 
 - 虚拟DOM重写
 - Virtual DOM rewriting
 - 更快，性能比Vue2快1.2~2倍(diff方法优化、静态提升、时间侦听器缓存、[ssr渲染](https://uniapp.dcloud.io/tutorial/ssr))
+- Faster, performance 1.2~2 times faster than Vue2 (diff method optimization, static boost, time listener cache, [ssr rendering](https://uniapp.dcloud.io/tutorial/ssr))
 - 更小，按需编译，体积比Vue2更小
 - Smaller, compiled on demand, smaller than Vue2
 - 组合API，加强API设计一致性，实现逻辑模块化和重用
@@ -174,6 +178,7 @@ Of course, there are some advanced usages
 
 ```js
 	// 直接使用js模块的属性。在hello uni-app有示例 
+	// Directly use the properties of the js module. There are examples in hello uni-app
 	var dateUtils = require('../../../common/util.js').dateUtils; 
 	// 将js导入并重命名为echarts，然后使用echarts.来继续执行方法。在hello uni-app有示例
 	// Import and rename js to echarts, and then use echarts to continue executing the method. There are examples in hello uni-app
@@ -202,6 +207,7 @@ Of course, there are some advanced usages
 ### Component/label changes
 
 以前是html标签，比如 `<div>` ，现在是小程序组件，比如 `<view>` 。
+It used to be html tags like `<div> ` , now applet components like `<view> ` .
 
 那么标签和组件有什么区别，不都是用尖括号包围起来一段英文吗？
 So what is the difference between a label and a component, isn't it all surrounded by angle brackets in English?
@@ -211,6 +217,7 @@ So what is the difference between a label and a component, isn't it all surround
 - But the components can be freely expanded. Similarly, you can encapsulate a piece of js into a function or module, and you can also encapsulate a ui control into a component.
 
 `uni-app` 参考小程序规范，提供了一批[内置组件](https://uniapp.dcloud.io/component/README)。
+`uni-app` refers to the applet specification and provides a batch of [built-in components](https://uniapp.dcloud.io/component/README).
 
 
 ### js的变化
@@ -282,12 +289,15 @@ So what is the difference between a label and a component, isn't it all surround
 ## Use differences in uni-app
 
 `uni-app` 在发布到H5时支持所有vue的语法；发布到App和小程序时，由于平台限制，无法实现全部vue语法，但 `uni-app` 仍是对vue语法支持度最高的跨端框架。
+`uni-app` supports all vue syntaxes when it is published to H5; when it is published to apps and applets, due to platform limitations, all vue syntaxes cannot be implemented, but `uni-app` is still the cross-platform with the highest support for vue syntax. end frame.
 
 相比Web平台， Vue.js 在 `uni-app` 中使用差异主要集中在两个方面：
 Compared with the Web platform, the differences in the use of Vue.js in `uni-app` are mainly concentrated in two aspects:
 
 - 新增：`uni-app` 除了支持Vue实例的生命周期，还支持[应用生命周期](https://uniapp.dcloud.io/collocation/App#应用生命周期)以及[页面生命周期](https://uniapp.dcloud.io/tutorial/page#lifecycle)。
+- Added: `uni-app` In addition to supporting the life cycle of Vue instances, it also supports [application life cycle](https://uniapp.dcloud.io/collocation/App#%E5%BA%94%E7%94% A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F) and [Page Lifecycle](https://uniapp.dcloud.io/tutorial/page#lifecycle).
 - 受限：相比web平台，在小程序和App端部分功能受限。
+- Restricted: Compared with the web platform, some functions on the applet and App are limited.
 - uni-app 完整支持 Vue 模板语法。
 - Uni-app fully supports Vue template syntax
 
@@ -297,11 +307,14 @@ Compared with the Web platform, the differences in the use of Vue.js in `uni-app
 
 
 `HBuilderX 3.2.5`新增在App平台支持 vue 3.0，至此 `uni-app` 项目对 vue 3.0 的支持情况如下：
+`HBuilderX 3.2.5` adds support for vue 3.0 on the App platform. So far, the `uni-app` project supports vue 3.0 as follows:
 
 - H5/PC Web平台支持，编译器升级为`vite`。
 - Supported by H5/PC Web platform, compiler upgraded to `vite`.
 - 小程序平台：`HBuilderX 3.3.3+` 支持 `vite`。
+- Mini Program Platform: `HBuilderX 3.3.3+` supports `vite`.
 - App 平台：支持，编译器升级为`vite`，`HBuilderX 3.3.13` 起 `nvue`编译器升级为`vite`。
+- App platform: support, the compiler is upgraded to `vite`, and since `HBuilderX 3.3.13`, the `nvue` compiler is upgraded to `vite`.
 
 
 **注意事项**
@@ -504,6 +517,7 @@ Directives are special attributes with the v- prefix.
 #### v-bind
 
 动态地绑定一个或多个属性，`v-bind`缩写为‘ : ’，可以用于响应式地更新 `HTML attribute`：
+To dynamically bind one or more attributes, `v-bind` is abbreviated to ` : ', and can be used to update `HTML attributes` responsively:
 
 ```html
 	<!-- 完整语法 -->
@@ -547,6 +561,7 @@ Render the element and component once only. On subsequent re-renders, the elemen
 Unlike front-end framework in understanding the client in order to achieve a logical multiplexing state flag template node will be added to the `v-once`guarantee rendering node only once, but not necessarily be able to optimize the rendering performance, but might slow down the client Comparison efficiency when multiplexing nodes.
 
 >  h5、微信小程序均不支持
+> h5, WeChat applet are not supported
 
 ```html
 	<!-- 单个元素 -->
@@ -571,6 +586,7 @@ Updates the element's [`innerHTML`](https://developer.mozilla.org/en-US/docs/Web
 - 如果试图使用 v-html 组合模板，可以重新考虑是否通过使用组件来替代。
 - If you find yourself trying to compose templates using v-html, try to rethink the solution by using components instead.
 - App端和H5端支持 `v-html` ，微信小程序会被转为 `rich-text`，其他端不支持 `v-html` 。
+- App side and H5 side support `v-html` , WeChat applet will be converted to `rich-text`, other side does not support `v-html` .
 
 
 跨端的富文本处理方案详见：[https://ask.dcloud.net.cn/article/35772](https://ask.dcloud.net.cn/article/35772)
@@ -826,7 +842,8 @@ Further it may also be used `computed`to generate a method `class`or a `style`st
 **对象语法**
 **Object Syntax**
 
-:style 的对象语法十分直观——看着非常像 CSS，但其实是一个 `JavaScript` 对象。CSS property 名可以用驼峰式 (`camelCase`) 或短横线分隔 (`kebab-case`，记得用引号括起来) 来命名：
+`:style` 的对象语法十分直观——看着非常像 CSS，但其实是一个 `JavaScript` 对象。CSS property 名可以用驼峰式 (`camelCase`) 或短横线分隔 (`kebab-case`，记得用引号括起来) 来命名：
+The object syntax for `:style` is intuitive - it looks very CSS-like, but is actually a `JavaScript` object. CSS property names can be named using camelCase (`camelCase`) or dash-separated (`kebab-case`, remember to enclose them in quotes):
 
 ```html
 	<template>
@@ -1255,6 +1272,7 @@ Example:
 - 在非H5平台 循环对象时不支持第三个参数，如 `v-for="(value, name, index) in object"` 中，index 参数是不支持的。
 - The third parameter is not supported in the non-cyclic object H5 platform, such as `v-for="(value, name, index) in object"`in, index parameter is not supported.
 - 小程序端数据为差量更新方式，由于小程序不支持删除对象属性，使用的设置值为 null 的方式替代，导致遍历时可能出现不符合预期的情况，需要自行过滤一下值为 null 的数据（[相关反馈](https://ask.dcloud.net.cn/question/103269)）。
+- The data on the applet side is updated in a differential way. Since the applet does not support deleting object properties, the method of setting the value of null is used instead, which may cause unexpected situations during traversal. You need to filter the data with the value of null yourself. ([Related Feedback](https://ask.dcloud.net.cn/question/103269)).
 
 
 
@@ -1535,6 +1553,7 @@ v-on provides event modifiers:
 **Note**
 
 - 为兼容各端，事件需使用 **@** 的方式绑定，请勿使用小程序端的 `bind` 和 `catch` 进行事件绑定；也不能在 JS 中使用`event.preventDefault()`和`event.stopPropagation()`方法；
+- To be compatible with all terminals, events need to be bound by **@**, please do not use `bind` and `catch` on the applet side for event binding; also cannot use `event.preventDefault()` in JS and `event.stopPropagation()` method;
 - 若需要禁止蒙版下的页面滚动，可使用 `@touchmove.stop.prevent="moveHandle"`，`moveHandle` 可以用来处理 `touchmove` 的事件，也可以是一个空函数。
 - If you need to scroll down the page prohibiting mask, use `@touchmove.stop.prevent="moveHandle"`, `moveHandle`processing can be used to `touchmove`events, but also can be an empty function.
 
@@ -1729,6 +1748,7 @@ It is recommended to use `uni-app`: [Form component](https://uniapp.dcloud.io/co
 ### Computed Properties
 
 每一个计算属性都包含一个 `getter` 函数和一个 `setter`函数 ，默认是利用 `getter` 函数来读取。所有 `getter` 和 `setter` 函数的 `this` 上下文自动地绑定为 Vue 实例。
+Each computed property contains a `getter` function and a `setter` function, which is read by default using the `getter` function. The `this` context of all `getter` and `setter` functions is automatically bound to the Vue instance.
 
 
 #### 计算属性的 getter 
@@ -1984,6 +2004,7 @@ Example:
 			},
 			watch: {
 				//使用watch来响应数据的变化，第一个参数为newVal新值，第二个参数oldVal为旧值
+				//Use watch to respond to data changes, the first parameter is the new value of newVal, and the second parameter oldVal is the old value
 				a: function(newVal, oldVal) {
 					console.log("a--newVal: ", newVal, "a--oldVal: ",oldVal);
 				},

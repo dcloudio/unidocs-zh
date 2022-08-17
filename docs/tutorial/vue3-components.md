@@ -1,5 +1,6 @@
 
 > 已经了解 Vue 2，只想了解 Vue 3 的新功能可以参阅[vue3新功能](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8%A7%88)！
+> Already know Vue 2, just want to know the new features of Vue 3, you can refer to [vue3 new features](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8 %A7%88)!
 >  
 > 已经有 Vue 2项目，需要适配 Vue 3 的可参阅[vue2 项目迁移 vue3](https://uniapp.dcloud.io/migration-to-vue3)！
 > There are already Vue 2 projects, and those that need to adapt to Vue 3 can be referred to [Vue2 project migration vue3](https://uniapp.dcloud.io/migration-to-vue3)!
@@ -15,6 +16,7 @@
 - 一个组件包括开始标签和结束标签，标签上可以写属性，并对属性赋值。内容则写在两个标签之内。
 - A component includes a start tag and an end tag. Attributes can be written on the label and assigned values to the attributes. The content is written in two labels.
 	- 根节点为 `<template>`，这个 `<template>` 下在App、H5可以有多个根 `<view>` 组件，在小程序只能有一个根 `<view>` 组件。
+	- the root node is `<template> `, this`<template> ` Under App, H5 can have multiple roots`<view> `Component, there can only be one root in the applet`<view> ` component.
 	- 一个组件的 data 选项必须是一个函数。
 	- The data option of a component must be a function.
 
@@ -414,6 +416,7 @@ In the two examples above, we happen to pass string values, but any type of valu
 
 
 - 传入一个对象的所有 `property`（微信小程序暂不支持该用法）
+- Pass in all `property` of an object (WeChat applet does not currently support this usage)
 
 
 如果你想要将一个对象的所有 `property` 都作为 `prop` 传入，你可以使用不带参数的 v-bind (取代 v-bind:prop-name)。例如，对于一个给定的对象 post：
@@ -838,6 +841,7 @@ With this new configuration, our data-status attribute will be applied to our in
 ### Attribute Inheritance on Multiple Root Nodes
 
 与单个根节点组件不同，具有多个根节点的组件不具有自动 `attribute` 回退行为（小程序不支持）。如果未显式绑定 `$attrs`，将发出运行时警告。
+Unlike single root components, components with multiple roots do not have automatic `attribute` fallback behavior (not supported by applets). A runtime warning will be issued if `$attrs` is not explicitly bound.
 
 
 ```html
@@ -921,6 +925,7 @@ When a native event (e.g., click) is defined in the emits option, the component 
 
 
 示例
+Example
 
 ```html
 	<template>
@@ -1780,15 +1785,20 @@ You can even define fallbacks, to be used in case a slot prop is undefined:
 
 
 ## 小程序不支持列表
+## applet does not support list
 
 
 - 作用域插槽（HBuilderX 3.1.19 以下仅支持解构插槽且不可使用作用域外数据以及使用复杂的表达式）
+- Scoped slots (HBuilderX 3.1.19 and below only supports destructuring slots and cannot use out-of-scope data and complex expressions)
 - 动态组件
+- Dynamic components
 - 异步组件
 - `inline-template`
 - `X-Templates`
 - `keep-alive`（App端也未支持）
+- `keep-alive` (not supported on App side)
 - `transition` （可使用 `animation` 或 CSS 动画替代）
+- `transition` (can be replaced with `animation` or CSS animation)
 
 
 
@@ -1851,5 +1861,6 @@ Tips
 - 除以上列表中的名称外，标准的 HTML 及 SVG 标签名也不能作为组件名。
 - In addition to the names in the above list, standard HTML and SVG tag names cannot be used as component names.
 - 在百度小程序中使用时，不要在 data 内使用 hidden ，可能会导致渲染错误。
+- When using in Baidu applet, do not use hidden in data, it may cause rendering errors.
 - methods中不可使用与生命周期同名的方法名。
 - Methods cannot use a method name with the same name as a lifecycle.

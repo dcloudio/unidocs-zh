@@ -1,73 +1,122 @@
 ## 概述
+## Overview
 Native.js技术，简称NJS，是一种将手机操作系统的原生对象转义，映射为JS对象，在JS里编写原生代码的技术。
+Native.js technology, or NJS for short, is a technology for escaping the native objects of the mobile phone operating system, mapping them to JS objects, and writing native code in JS.
 如果说Node.js把js扩展到服务器世界，那么Native.js则把js扩展到手机App的原生世界。
+If Node.js extends js to the server world, then Native.js extends js to the native world of mobile apps.
 HTML/JS/Css全部语法只有7万多，而原生语法有几十万，Native.js大幅提升了HTML5的能力。
+There are only more than 70,000 HTML/JS/Css grammars, and hundreds of thousands of native grammars. Native.js has greatly improved the capabilities of HTML5.
 NJS突破了浏览器的功能限制，也不再需要像Hybrid那样由原生语言开发插件才能补足浏览器欠缺的功能。
+NJS breaks through the functional limitations of browsers, and no longer requires plug-ins developed in native languages like Hybrid to make up for the lack of browser functions.
 NJS编写的代码，最终需要在HBuilder里打包发行为App安装包，或者在支持Native.js技术的浏览器里运行。目前Native.js技术不能在普通手机浏览器里直接运行。
+The code written by NJS needs to be packaged and released as an App installation package in HBuilder, or run in a browser that supports Native.js technology. At present, Native.js technology cannot run directly in ordinary mobile phone browsers.
 
 - NJS大幅扩展了HTML5的能力范围，原本只有原生或Hybrid App的原生插件才能实现的功能如今可以使用JS实现。
+- NJS greatly expands the capabilities of HTML5, and functions that were originally only available in native or native plugins of Hybrid App can now be implemented using JS.
 - NJS大幅提升了App开发效率，将iOS、Android、Web的3个工程师组队才能完成的App，变为1个web工程师就搞定。
+- NJS has greatly improved the efficiency of App development. The App that can be completed by a team of three engineers of iOS, Android, and Web can be completed by one web engineer.
 - NJS不再需要配置原生开发和编译环境，调试、打包均在HBuilder里进行。没有mac和xcode一样可以开发iOS应用。
+- NJS no longer needs to configure the native development and compilation environment, debugging and packaging are all carried out in HBuilder. No mac can develop iOS apps like xcode.
 - 如果不熟悉原生API也没关系，我们汇总了很多NJS的代码示例，复制粘贴就可以用。[http://ask.dcloud.net.cn/article/114](http://ask.dcloud.net.cn/article/114)
+- If you are not familiar with the native API, it does not matter, we have compiled a lot of NJS code examples, copy and paste can be used. [http://ask.dcloud.net.cn/article/114](http://ask.dcloud.net.cn/article/114)
 
 再次强调，Native.js不是一个js库，不需要下载引入到页面的script中，也不像nodejs那样有单独的运行环境，Native.js的运行环境是集成在5+runtime里的，使用HBuilder打包的app或流应用都可以直接使用Native.js。
+Again, Native.js is not a js library. It does not need to download scripts introduced into the page, nor does it have a separate running environment like nodejs. The running environment of Native.js is integrated in 5+runtime and packaged with HBuilder. Your app or streaming app can use Native.js directly.
 
 ## 注意事项：
+## Precautions:
 Uni-app不支Native.js执行UI相关操作的API调用及webview相关API调用。将失效无法正常使用。Uni-app不推荐使用Native.js
+Uni-app does not support Native.js API calls for UI-related operations and webview-related API calls. will be invalid and cannot be used normally. Native.js is deprecated for Uni-app
 
 ### 技术要求
+### skills requirement
 由于NJS是直接调用Native API，需要对Native API有一定了解，知道所需要的功能调用了哪些原生API，能看懂原生代码并参考原生代码修改为JS代码。
+Since NJS directly calls the Native API, you need to have a certain understanding of the Native API, know which native APIs are called by the required functions, and be able to understand the native code and refer to the native code to modify it into JS code.
 否则只能直接copy别人写好的NJS代码。
+Otherwise, you can only directly copy the NJS code written by others.
 
 ## 开始使用
+## start using
 ### 判断平台
+### Judgment Platform
 Native API具有平台依赖性，所以需要通过以下方式判断当前的运行平台：
+Native API is platform-dependent, so the current running platform needs to be judged in the following ways:
 ``` javascript
 function judgePlatform(){
 	switch ( plus.os.name ) {
 		case "Android":
 		// Android平台: plus.android.*
+		// Android platform: plus.android.*
 		break;
 		case "iOS":
 		// iOS平台: plus.ios.*
+		// iOS platform: plus.ios.*
 		break;
 		default:
 		// 其它平台
+		// other platforms
 		break;
 	}
 }
 ```
 
 ### 类型转换
+### Type conversion
 在NJS中调用Native API或从Native API返回数据到NJS时会自动转换数据类型。
+Data types are automatically converted when calling the Native API in NJS or returning data from the Native API to NJS.
 #### 类型转换表
+#### Type conversion table
 | 类型      |    Objective-C | Java  | JavaScript  |
+| Types | Objective-C | Java | JavaScript |
 | :-------- | --------:| :--: | :--: |
 | 基本数据  | byte/short/int/long/float/double/... |  byte/short/int/long/float/double/...   |  Number  |
+| basic data | byte/short/int/long/float/double/... | byte/short/int/long/float/double/... | Number |
 | 字符      |    char            |  char      |  String  |
+| char | char | char | String |
 | 字符串    |    NSString/@""    | String/""  |  String  |
+| String | NSString/@"" | String/"" | String |
 |  数组     |  @[1,2,3]/NSArray  | new XXX[]  |  InstanceObject |
+| Array | @[1,2,3]/NSArray | new XXX[] | InstanceObject |
 |   类      |  @interface        |  class     |  ClassObject    |
+| class | @interface | class | ClassObject |
 | 对象（实例）| *                |  *         |  InstanceObject |
+| Object (Instance) | * | * | InstanceObject |
 | 空对象    |  nil               |  null      |  null           |
+| empty object | nil | null | null |
 |  其它     |  Protocol          |  Interface |  Object(JSON)   |
+| Others | Protocol | Interface | Object(JSON) |
 
 ### 其他转换
+### Other conversions
 - Android原生应用的主Activity对象 转为plus.android.runtimeMainActivity()
+- The main Activity object of the Android native application is converted to plus.android.runtimeMainActivity()
 Android的主Activity对象是启动应用时自动创建的，不是代码创建，此时通过plus.android.runtimeMainActivity()方法获取该Activity对象
+The main Activity object of Android is automatically created when the application is started, not created by code. At this time, the Activity object is obtained through the plus.android.runtimeMainActivity() method.
 - Objective-C方法冒号剔除
+- Objective-C method colon removal
 [pos setPositionX:(int)x Y:(int)y;]  转为 pos.setPositionXY(x,y);
+[pos setPositionX:(int)x Y:(int)y;] to pos.setPositionXY(x,y);
 OC语法中方法的定义格式为:
+The definition format of a method in OC syntax is:
 “(返回值类型) 函数名: (参数1类型) 形参1 参数2名称: (参数2类型) 形参2”
+"(return value type) function name: (parameter 1 type) formal parameter 1 parameter 2 name: (parameter 2 type) formal parameter 2"
 方法的完整名称为: “函数名:参数2名称:”。
+The full name of the method is: "function name: parameter 2 name:".
 如:“（void）setPositionX:(int)x Y:(int)y;”，方法的完整名称为“setPositionX:Y:”，调用时语法为：“[pos setPositionX:x Y:y];”。
+For example: "(void)setPositionX:(int)x Y:(int)y;", the full name of the method is "setPositionX:Y:", and the syntax is: "[pos setPositionX:x Y:y];" .
 在JS语法中函数名称不能包含“:”字符，所以OC对象的方法名映射成NJS对象方法名时将其中的“:”字符自动删除，上面方法名映射为“setPositionXY”，在NJS调用的语法为：“pos.setPositionXY(x,y);”。
+In the JS syntax, the function name cannot contain the ":" character, so when the method name of the OC object is mapped to the method name of the NJS object, the ":" character is automatically deleted. The above method name is mapped to "setPositionXY". The syntax of the NJS call is: "pos.setPositionXY(x,y);".
 - 文件路径转换
+- file path conversion
 Web开发里使用的image/1.png是该web工程的相对路径，而原生API中经常需要使用绝对路径，比如/sdcard/apptest/image/1.png，此时使用这个扩展方法来完成转换：plus.io.convertLocalFileSystemURL("image/1.png")
+The image/1.png used in web development is the relative path of the web project, and the native API often needs to use an absolute path, such as /sdcard/apptest/image/1.png, at this time use this extension method to complete the conversion: plus.io.convertLocalFileSystemURL("image/1.png")
 
 ### 概念
+### concept
 #### 类对象
+#### class object
 由于JavaScript中本身没有类的概念，为了使用Native API层的类，在NJS中引入了类对象（ClassObject）的概念，用于对Native中的类进行操作，如创建类的实例对象、访问类的静态属性、调用类的静态方法等。其原型如下：
+Since there is no concept of class in JavaScript, in order to use the class of the Native API layer, the concept of class object (ClassObject) is introduced in NJS, which is used to operate the class in Native, such as creating an instance object of a class, accessing the class object. Static properties, calling static methods of a class, etc. Its prototype is as follows:
 ``` javascript
 Interface ClassObject {
     function Object plusGetAttribute( String name );
@@ -76,14 +125,18 @@ Interface ClassObject {
 ```
 
 **获取类对象**
+**Get class object**
 在iOS平台我们可以通过plus.ios.importClass(name)方法导入类对象，参数name为类的名称；在Android平台我们可以通过plus.android.importClass(name)方法导入类对象，其参数name为类的名称，必须包含完整的命名空间。
+On the iOS platform, we can import the class object through the plus.ios.importClass(name) method, and the parameter name is the name of the class; on the Android platform, we can import the class object through the plus.android.importClass(name) method, and the parameter name is the class , which must contain the full namespace.
 
 **示例：**
 ``` javascript
 // iOS平台导入NSNotificationCenter类
+// Import NSNotificationCenter class for iOS platform
 var NSNotificationCenter = plus.ios.importClass("NSNotificationCenter");
 
 // Android平台导入Intent类
+// The Android platform imports the Intent class
 var Intent = plus.android.importClass("android.content.Intent");
 ```
 获取类对象后，可以通过类对象“.”操作符获取类的静态常量属性、调用类的静态方法，类的静态非常量属性需通过plusGetAttribute、plusSetAttribute方法操作。
@@ -100,13 +153,17 @@ Interface InstanceObject {
 有两种方式获取类的实例对象，一种是调用Native API返回值获取，另一种是通过new操作符来创建导入的类对象的实例，如下：
 ``` javascript
 // iOS平台导入NSDictionary类
+// Import NSDictionary class for iOS platform
 var NSDictionary = plus.ios.importClass("NSDictionary");
 // 创建NSDictionary的实例对象
+// Create an instance object of NSDictionary
 var ns = new NSDictionary();
 
 // Android平台导入Intent类
+// The Android platform imports the Intent class
 var Intent = plus.android.importClass("android.content.Intent");
 // 创建Intent的实例对象
+// Create an instance object of the Intent
 var intent = new Intent();
 ```
 获取实例对象后，可以通过实例对象“.”操作符获取对象的常量属性、调用对象的成员方法，实例对象的非常量属性则需通过plusGetAttribute、plusSetAttribute方法操作。
@@ -142,14 +199,22 @@ Objective-C和Java中类如果存在继承自基类，在NJS中对应的对象�
 import android.app.AlertDialog;
 //...
 // 创建提示框构造对象，Builder是AlertDialog的内部类。参数this指代Android的主Activity对象，该对象启动应用时自动生成
+// Create a prompt box construction object, Builder is the inner class of AlertDialog. The parameter this refers to the main Activity object of Android, which is automatically generated when the application is started.
 AlertDialog.Builder dlg = new AlertDialog.Builder(this);
 // 设置提示框标题
+// set the prompt box title
 dlg.setTitle("自定义标题");
+dlg.setTitle("custom title");
 // 设置提示框内容
+// set the prompt box content
 dlg.setMessage("使用NJS的原生弹出框，可自定义弹出框的标题、按钮");
+dlg.setMessage("Using NJS's native popup box, you can customize the title and button of the popup box");
 // 设置提示框按钮
+// set the prompt box button
 dlg.setPositiveButton("确定(或者其他字符)", null);
+dlg.setPositiveButton("OK (or other character)", null);
 // 显示提示框
+// show tooltip
 dlg.show();
 //...
 ```
@@ -157,19 +222,29 @@ Native.js代码：
 ``` javascript
 /**
  * 在Android平台通过NJS显示系统提示框
+ * Display system prompt box through NJS on Android platform
  */
 function njsAlertForAndroid(){
 	// 导入AlertDialog类
+	// Import the AlertDialog class
 	var AlertDialog = plus.android.importClass("android.app.AlertDialog");
 	// 创建提示框构造对象，构造函数需要提供程序全局环境对象，通过plus.android.runtimeMainActivity()方法获取
+	// Create a prompt box construction object. The constructor needs to provide the global environment object of the program, which is obtained through the plus.android.runtimeMainActivity() method
 	var dlg = new AlertDialog.Builder(plus.android.runtimeMainActivity());
 	// 设置提示框标题
+	// set the prompt box title
 	dlg.setTitle("自定义标题");
+	dlg.setTitle("custom title");
 	// 设置提示框内容
+	// set the prompt box content
 	dlg.setMessage("使用NJS的原生弹出框，可自定义弹出框的标题、按钮");
+	dlg.setMessage("Using NJS's native popup box, you can customize the title and button of the popup box");
 	// 设置提示框按钮
+	// set the prompt box button
 	dlg.setPositiveButton("确定(或者其他字符)",null);
+	dlg.setPositiveButton("OK (or other characters)",null);
 	// 显示提示框
+	// show tooltip
 	dlg.show();
 }
 //...
@@ -187,14 +262,22 @@ iOS原生Objective-C代码，用于比对参考：
 #import <UIKit/UIKit.h>
 //...
 // 创建UIAlertView类的实例对象
+// Create an instance object of the UIAlertView class
 UIAlertView *view = [UIAlertView alloc];
 // 设置提示对话上的内容
+// Set the content on the prompt dialog
 [view initWithTitle:@"自定义标题" // 提示框标题
+[view initWithTitle:@"custom title" // prompt box title
     message:@"使用NJS的原生弹出框，可自定义弹出框的标题、按钮" // 提示框上显示的内容
+    message:@"Using the native pop-up box of NJS, you can customize the title and button of the pop-up box" // The content displayed on the prompt box
     delegate:nil // 点击提示框后的通知代理对象，nil类似js的null，意为不设置
+    delegate:nil // The notification proxy object after clicking the prompt box, nil is similar to the null of js, which means not set
     cancelButtonTitle:@"确定(或者其他字符)" // 提示框上取消按钮的文字
+    cancelButtonTitle:@"OK (or other characters)" // The text of the cancel button on the prompt box
     otherButtonTitles:nil]; // 提示框上其它按钮的文字，设置为nil表示不显示
+    otherButtonTitles:nil]; // The text of other buttons on the prompt box, set to nil means not displayed
 // 调用show方法显示提示对话框，在OC中使用[]语法调用对象的方法
+// Call the show method to display the prompt dialog, and use the [] syntax to call the method of the object in OC
 [view show];
 //...
 ```
@@ -202,19 +285,29 @@ Native.js代码：
 ``` javascript
 /**
  * 在iOS平台通过NJS显示系统提示框
+ * Display system prompt box through NJS on iOS platform
  */
 function njsAlertForiOS(){
 	// 导入UIAlertView类
+	// Import UIAlertView class
 	var UIAlertView = plus.ios.importClass("UIAlertView");
 	// 创建UIAlertView类的实例对象
+	// Create an instance object of the UIAlertView class
 	var view = new UIAlertView();
 	// 设置提示对话上的内容
+	// Set the content on the prompt dialog
 	view.initWithTitlemessagedelegatecancelButtonTitleotherButtonTitles("自定义标题" // 提示框标题
+	view.initWithTitlemessagedelegatecancelButtonTitleotherButtonTitles("Custom Title" //Title of the prompt box
 	    , "使用NJS的原生弹出框，可自定义弹出框的标题、按钮" // 提示框上显示的内容
+	    , "Using the native popup box of NJS, you can customize the title and button of the popup box" // The content displayed on the prompt box
 	    , null // 操作提示框后的通知代理对象，暂不设置
+	    , null // The notification proxy object after the operation prompt box, not set yet
 	    , "确定(或者其他字符)" // 提示框上取消按钮的文字
+	    , "OK (or other characters)" // text of the cancel button on the tooltip
 	    , null ); // 提示框上其它按钮的文字，设置为null表示不显示
+	    , null ); // The text of other buttons on the prompt box, set to null means not displayed
 	// 调用show方法显示提示对话框，在JS中使用()语法调用对象的方法
+	// Call the show method to display the prompt dialog, and use the () syntax to call the method of the object in JS
 	view.show();
 }
 //...
@@ -239,23 +332,30 @@ iOS设备上运行效果图：
 package io.dcloud;
 
 // 定义类NjsHello
+// Define class NjsHello
 public class NjsHello {
 	// 静态常量
+	// static constant
 	public static final int CTYPE = 1;
 	// 静态变量
+	// static variable
 	public static int count;
 	// 成员常量
+	// member constant
 	public final String BIRTHDAY = "2013-01-13";
 	// 成员变量
+	// Member variables
 	String name; //定义属性name
 	NjsHelloEvent observer;
 	public void updateName( String newname ) { //定义方法updateName
+	public void updateName( String newname ) { //Define method updateName
 		name = newname;
 	}
 	public void setEventObserver( NjsHelloEvent newobserver ) {
 		observer = newobserver;
 	}
 	public void test() { //定义方法test
+	public void test() { //Define method test
 		System.out.printf( "My name is: %s", name );
 		observer.onEventInvoked( name );
 	}
@@ -263,6 +363,7 @@ public class NjsHello {
 		System.out.printf( "Static count is:%d", count );
 	}
 	static{  // 初始化类的静态变量
+	static{ // initialize the static variables of the class
 		NjsHello.count = 0;
 	}
 }
@@ -272,6 +373,7 @@ public class NjsHello {
 package io.dcloud;
 
 // 定义接口NjsHelloEvent
+// Define the interface NjsHelloEvent
 public interface NjsHelloEvent {
 	public void onEventInvoked( String name );
 }
@@ -297,6 +399,7 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello hello = new NjsHello();
     //...
 }
@@ -306,8 +409,10 @@ public static void main( String args[] ) {
 NJS代码：
 ``` js
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 创建NjsHello的实例对象
+// Create an instance object of NjsHello
 var hello = new NjsHello();
 // ...
 ```
@@ -323,8 +428,11 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 获取类的静态常量属性
+    // Get the static constant property of the class
     int type = NjsHello.CTYPE;
-    System.out.printf( "NjsHello Final's value: %d", type );  // 输出“NjsHello Final's value: 1”
+		// 输出“NjsHello Final's value: 1”
+		// print“NjsHello Final's value: 1”
+    System.out.printf( "NjsHello Final's value: %d", type );
     //...
 }
 //...
@@ -333,10 +441,14 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 获取类的静态常量属性
+// Get the static constant property of the class
 var type = NjsHello.CTYPE;
-console.log( "NjsHello Final's value: "+type ); // 输出“NjsHello Final's value: 1”
+// 输出“NjsHello Final's value: 1”
+// print“NjsHello Final's value: 1”
+console.log( "NjsHello Final's value: "+type );
 // ...
 ```
 
@@ -348,6 +460,7 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 调用类的静态方法
+    // call the static method of the class
     NjsHello.testCount();
     //...
 }
@@ -357,8 +470,10 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 调用类的静态方法
+// call the static method of the class
 NjsHello.testCount();
 // ...
 ```
@@ -383,6 +498,7 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 获取类的静态属性
+    // Get the static properties of the class
     int count = NjsHello.count;
     System.out.printf( "NjsHello Static's value: %d", count );  // 输出“NjsHello Static's value: 0”
     //...
@@ -393,8 +509,10 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 获取类的静态属性
+// Get the static properties of the class
 var count = NjsHello.plusGetAttribute( "count" );
 console.log( "NjsHello Static's value: "+count ); // 输出“NjsHello Static's value: 0”
 // ...
@@ -421,6 +539,7 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 设置类的静态属性值
+    // Set the static property value of the class
     NjsHello.count = 2;
     System.out.printf( "NjsHello Static's value: %d", NjsHello.count );  // 输出“NjsHello Static's value: 2”
     //...
@@ -431,8 +550,10 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 设置类的静态属性值
+// Set the static property value of the class
 NjsHello.plusSetAttribute( "count", 2 );
 console.log( "NjsHello Static's value: "+NjsHello.plusGetAttribute( "count" ) ); // 输出“NjsHello Static's value: 2”
 // ...
@@ -449,8 +570,10 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 创建NjsHello的实例对象
+    // Create an instance object of NjsHello
     NjsHello hello = new NjsHello();
     // 调用对象的方法
+    // call the object's method
     hello.updateName( "Tester" );
     //...
 }
@@ -460,10 +583,13 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 创建NjsHello的实例对象
+// Create an instance object of NjsHello
 var hello = new NjsHello();
 // 调用对象的方法
+// call the object's method
 hello.updateName( "Tester" );
 // ...
 ```
@@ -476,8 +602,10 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 创建NjsHello的实例对象
+    // Create an instance object of NjsHello
     NjsHello hello = new NjsHello();
     // 访问对象的常量属性
+    // access the constant property of the object
     String birthday = hello.BIRTHDAY;
     System.out.printf( "NjsHello Object Final's value: %s", birthday );  // 输出“NjsHello Object Final's value: 2013-01-13”
     //...
@@ -488,10 +616,13 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 创建NjsHello的实例对象
+// Create an instance object of NjsHello
 var hello = new NjsHello();
 // 访问对象的常量属性
+// access the constant property of the object
 var birthday = hello.BIRTHDAY;
 console.log( "NjsHello Object Final's value: "+birthday ); // 输出“NjsHello Object Final's value: 2013-01-13”
 // ...
@@ -516,9 +647,11 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello hello = new NjsHello();
     hello.updateName( "Tester" );
     // 获取其name属性值
+    // Get the value of its name property
     String name = hello.name;
     System.out.printf( "NjsHello Object's name: %s", name );  // 输出“NjsHello Object's name: Tester”
     //...
@@ -529,11 +662,14 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 创建对象的实例
+// create an instance of the object
 var hello = new NjsHello();
 hello.updateName( "Tester" );
 // 获取其name属性值
+// Get the value of its name property
 var name = hello.plusGetAttribute( "name" );
 console.log( "NjsHello Object's name: "+name );  // 输出“NjsHello Object's name: Tester”
 // ...
@@ -559,8 +695,10 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello hello = new NjsHello();
     // 设置其name属性值
+    // Set the value of its name property
     hello.name = "Tester";
     System.out.printf( "NjsHello Object's name: %s", hello.name );  // 输出“NjsHello Object's name: Tester”
     //...
@@ -571,10 +709,13 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var Hello = plus.android.importClass("NjsHello");
 // 创建对象的实例
+// create an instance of the object
 var hello = new NjsHello();
 // 设置其name属性值
+// Set the value of its name property
 hello.plusSetAttribute( "name", "Tester" );
 console.log( "NjsHello Object's name: "+hello.plusGetAttribute("name") ); // 输出“NjsHello Object's name: Tester”
 // ...
@@ -596,19 +737,26 @@ import io.dcloud.NjsHello;
 import io.dcloud.NjsHelloEvent;
 //...
 // Test类实现NjsHelloEvent接口
+// Test class implements NjsHelloEvent interface
 public class Test implements NjsHelloEvent {
 public static void main( String args[] ) {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello hello = new NjsHello();
     // 调用updateName方法
+    // call the updateName method
     hello.updateName( "Tester" );
     // 设置监听对象
+    // set the listener object
     hello.setEventObserver( this );
     // 调用test方法，触发接口事件
+    // Call the test method to trigger the interface event
     hello.test(); // 触发onEventInvoked函数运行
+    hello.test(); // Trigger the onEventInvoked function to run
     //...
 }
 // 实现接口NjsHelloEvent的onEventInvoked方法
+// Implement the onEventInvoked method of the interface NjsHelloEvent
 @Override
 public void onEventInvoked( String name ) {
 	System.out.printf( "Invoked Object's name is: %s", name );
@@ -619,21 +767,28 @@ public void onEventInvoked( String name ) {
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.android.importClass("io.dcloud.NjsHello");
 // 实现接口“NjsHelloEvent”对象
+// Implement the interface "NjsHelloEvent" object
 var hevent = plus.android.implements( "io.dcloud.NjsHelloEvent", {
     "onEventInvoked":function( name ){
         console.log( "Invoked Object’s name: "+name ); // 输出“Invoked Object’s name: Tester”
     }
 } );
 // 创建对象的实例
+// create an instance of the object
 var hello = new NjsHello();
 // 调用updateName方法
+// call the updateName method
 hello.updateName( "Tester" );
 // 设置监听对象
+// set the listener object
 hello.setEventObserver( hevent );
 // 调用test方法，触发代理事件
+// Call the test method to trigger the delegate event
 hello.test(); // 触发上面定义的匿名函数运行
+hello.test(); // trigger the anonymous function defined above to run
 // ...
 ```
 
@@ -653,25 +808,32 @@ import android.content.Intent;
 import android.net.Uri;
 //...
 // 获取主Activity对象的实例
+// Get an instance of the main Activity object
 Activity main = context;
 // 创建Intent
+// create Intent
 Uri uri = Uri.parse("tel:10086");
 Intent call = new Intent("android.intent.action.CALL",uri);
 // 调用startActivity方法拨打电话
+// Call the startActivity method to make a call
 main.startActivity(call);
 //...
 ```
 NJS代码：
 ``` javascript
 // 导入Activity、Intent类
+// Import Activity, Intent classes
 var Intent = plus.android.importClass("android.content.Intent");
 var Uri = plus.android.importClass("android.net.Uri");
 // 获取主Activity对象的实例
+// Get an instance of the main Activity object
 var main = plus.android.runtimeMainActivity();
 // 创建Intent
+// create Intent
 var uri = Uri.parse("tel:10086");
 var call = new Intent("android.intent.action.CALL",uri);
 // 调用startActivity方法拨打电话
+// Call the startActivity method to make a call
 main.startActivity( call );
 // ...
 ```
@@ -690,18 +852,23 @@ Java代码：
 import android.webkit.Webview;
 //...
 // 获取Webview对象
+// Get the Webview object
 Webview wv = this;
 // 跳转页面
+// jump to the page
 wv.loadUrl("http://www.dcloud.io/");
 //...
 ```
 NJS代码：
 ``` javascript
 // 导入Webview类
+// Import the Webview class
 var Webview = plus.android.importClass("android.webkit.Webview");
 // 当前Webview对象的实例
+// Instance of the current Webview object
 var wv = plus.android.currentWebview();
 // 跳转页面
+// jump to the page
 wv.loadUrl("http://www.dcloud.io/");
 // ...
 ```
@@ -712,12 +879,14 @@ wv.loadUrl("http://www.dcloud.io/");
 头文件njshello.h代码如下：
 ``` objc
 // 定义协议
+// define the protocol
 @protocol NjsHelloEvent <NSObject>
 @required
 -(void) onEventInvoked:(NSString*)name;
 @end
 // -------------------------------------------------------------
 // 定义类NjsHello
+// Define class NjsHello
 @interface NjsHello : NSObject {
     NSString *_name;
     id<NjsHelloEvent > _delegate;
@@ -735,6 +904,7 @@ wv.loadUrl("http://www.dcloud.io/");
 ``` objc
 #import "njshello.h"
 // 实现类NjsHello
+// Implement class NjsHello
 @implementation NjsHello
 @synthesize name=_name;
 -(void)updateName:(NSString*)newname{
@@ -774,6 +944,7 @@ Objective-C代码：
 int main( int argc, char *argv[] )
 {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello* hello = [[NjsHello alloc] init];
     // ...
 }
@@ -782,8 +953,10 @@ int main( int argc, char *argv[] )
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.ios.importClass("NjsHello");
 // 创建对象的实例
+// create an instance of the object
 var hello = new NjsHello();
 // ...
 ```
@@ -802,6 +975,7 @@ Objective-C代码：
 int main( int argc, char *argv[] )
 {
     // 调用类的静态方法
+    // call the static method of the class
     [NjsHello testCount];
     // ...
 }
@@ -810,8 +984,10 @@ int main( int argc, char *argv[] )
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.ios.importClass("NjsHello");
 // 调用类的静态方法
+// call the static method of the class
 NjsHello.testCount();
 // ...
 ```
@@ -827,6 +1003,7 @@ Objective-C代码：
 int main( int argc, char *argv[] )
 {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello* hello = [[NjsHello alloc] init];
     // ...
 }
@@ -835,8 +1012,10 @@ int main( int argc, char *argv[] )
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.ios.importClass("NjsHello");
 // 创建对象的实例
+// create an instance of the object
 var hello = new NjsHello();
 // ...
 ```
@@ -859,9 +1038,11 @@ Objective-C代码：
 int main( int argc, char *argv[] )
 {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello* hello = [[NjsHello alloc] init];
     [hello updateName:@"Tester"];
     // 获取其name属性值
+    // Get the value of its name property
     NSString* name = hello.name;
     NSLog(@"NjsHello Object's name: %@",name);  // 输出“NjsHello Object's name: Tester”
     // ...
@@ -870,11 +1051,14 @@ int main( int argc, char *argv[] )
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.ios.importClass("NjsHello");
 // 创建对象的实例
+// create an instance of the object
 var hello = new NjsHello();
 hello.updateName( "Tester" );
 // 获取其name属性值
+// Get the value of its name property
 var name = hello.plusGetAttribute( "name" );
 console.log( "NjsHello Object’s name: "+name );  // 输出“NjsHello Object’s name: Tester”
 // ...
@@ -899,8 +1083,10 @@ Java代码：
 int main( int argc, char *argv[] )
 {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello* hello = [[NjsHello alloc] init];
     // 设置其name属性值
+    // Set the value of its name property
     hello.name = @"Tester";
     NSLog(@"NjsHello Object's name: %@",hello.name);  // 输出“NjsHello Object's name: Tester”
     // ...
@@ -910,10 +1096,13 @@ int main( int argc, char *argv[] )
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.ios.importClass("NjsHello");
 // 创建对象的实例
+// create an instance of the object
 var hello = new NjsHello();
 // 设置其name属性值
+// Set the value of its name property
 hello.plusSetAttribute( "name", "Tester" );
 console.log( "NjsHello Object’s name: "+hello.plusGetAttribute("name") ); // 输出“NjsHello Object’s name: Tester”
 // ...
@@ -934,12 +1123,14 @@ Objective-C代码：
 ``` objc
 #import "njshello.h"
 // 定义代理类NjsDelegate
+// Define the proxy class NjsDelegate
 @interface NjsDelegate: NSObject<NjsHelloEvent> {
     -(void) onEventInvoked:(NSString*)name;
 }
 @end
 // -------------------------------------------------------------
 // 实现代理类NjsDelegate
+// Implement the proxy class NjsDelegate
 @implementation NjsDelegate
 -(void) onEventInvoked:(NSString*)name{
     NSLog(@"Invoked Object's name:%@",name);  // 输出“Invoked Object’s name: Tester”
@@ -947,37 +1138,50 @@ Objective-C代码：
 @end
 // -------------------------------------------------------------
 // 主函数
+// main function
 int main( int argc, char *argv[] )
 {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello* hello = [[NjsHello alloc] init];
     // 调用updateName方法
+    // call the updateName method
     [hello updateName:@"Tester"];
     // 创建代理对象
+    // create proxy object
     NjsDelegate* delegate = [[NjsDelegate alloc] init];
     // 设置监听对象
+    // set the listener object
     [hello setEventObserver:delegate];
     // 调用test方法，触发代理事件
+    // Call the test method to trigger the delegate event
     [hello test];  // 触发上面代理对象定义的onEventInvoked运行
+    [hello test]; // Trigger the onEventInvoked defined by the proxy object above to run
     // ...
 }
 ```
 在NJS中不需要创建新的类对象，调用plus.ios.implements实现协议接口即可创建出代理对象，代码如下：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.ios.importClass("NjsHello");
 // 实现协议“NjsHelloEvent”的代理
+// Proxy implementing protocol "NjsHelloEvent"
 var hevent = plus.ios.implements( "NjsHelloEvent", {
     "onEventInvoked:":function( name ){
         console.log( "Invoked Object’s name: "+name ); // 输出“Invoked Object’s name: Tester”
     }
 } );
 // 调用updateName方法
+// call the updateName method
 hello.updateName( "Tester" );
 // 设置监听对象
+// set the listener object
 hello.setEventObserver( hevent );
 // 调用test方法，触发代理事件
+// Call the test method to trigger the delegate event
 hello.test(); // 触发上面代理对象定义的匿名函数运行
+hello.test(); // Trigger the anonymous function defined by the proxy object above to run
 // ...
 ```
 
@@ -999,24 +1203,31 @@ Objective-C代码：
 int main( int argc, char *argv[] )
 {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello* hello = [[NjsHello alloc] init];
     // 调用updateName方法
+    // call the updateName method
     [hello updateName:@"Tester"];
     // ...
     // 使用完后销毁对象的实例
+    // Destroy the instance of the object after use
     [hello release];
 }
 ```
 NJS代码：
 ``` javascript
 // 导入测试类NjsHello
+// Import the test class NjsHello
 var NjsHello = plus.ios.importClass("NjsHello");
 // 创建对象的实例
+// create an instance of the object
 var hello = new NjsHello();
 // 调用updateName方法
+// call the updateName method
 hello.updateName( "Tester" );
 // ...
 // 使用完后销毁对象的实例
+// Destroy the instance of the object after use
 plus.ios.deleteObject( hello );
 ```
 
@@ -1032,28 +1243,37 @@ UIWebview对象的API请参考Apple开发文档[UIWebview](https://developer.app
 Objective-C代码：
 ``` objc
 // 获取当前Webview对象的实例
+// Get an instance of the current Webview object
 UIWebview* wv=self;
 // 创建请求对象
+// create request object
 NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.dcloud.io/"]];
 // 跳转页面
+// jump to the page
 [web loadRequest:req];
 // 释放对象
+// release the object
 // 系统自动回收
 // ...
 ```
 NJS代码：
 ``` javascript
 // 导入UIWebview、NSURLRequest、NSURL类
+// Import UIWebview, NSURLRequest, NSURL classes
 var Webview = plus.ios.importClass("UIWebview");
 var NSURLRequest = plus.ios.import('NSURLRequest');
 var NSURL = plus.ios.import('NSURL');
 // 获取当前Webview对象的实例
+// Get an instance of the current Webview object
 var wv = plus.ios.currentWebview();
 // 创建请求对象
+// create request object
 var req = NSURLRequest.requestWithURL(NSURL.URLWithString('http://www.dcloud.io/'));
 // 跳转页面
+// jump to the page
 plus.ios.invoke(wv,"loadRequest:",req);
 // 释放对象(可选)
+// release the object (optional)
 plus.ios.deleteObject(req);
 plus.ios.deleteObject(wv);
 // ...
@@ -1071,23 +1291,31 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Bitmap;
 // 创建桌面快捷方式
+// create desktop shortcut
 void createShortcut(){
 	// 获取主Activity
+	// Get the main Activity
 	Activity main = this;
 	// 创建快捷方式意图
+	// create shortcut intent
 	Intent shortcut = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
 	// 设置快捷方式的名称
+	// set the name of the shortcut
 	shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, "HelloH5+");
 	// 设置不可重复创建
+	// set non-reproducible creation
 	shortcut.putExtra("duplicate",false);
 	// 设置快捷方式图标
+	// set shortcut icon
 	Bitmap bitmap = BitmapFactory.decodeFile("/sdcard/icon.png");
 	shortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON, bitmap);
 	// 设置快捷方式启动执行动作
+	// Set the shortcut to start the execution action
 	Intent action = new Intent(Intent.ACTION_MAIN);
 	action.setComponent( main.getComponentName() );
 	shortcut.putExtra( Intent.EXTRA_SHORTCUT_INTENT, action );
 	// 广播创建快捷方式
+	// Broadcast create shortcut
 	main.sendBroadcast(shortcut);
 }
 ```
@@ -1098,36 +1326,48 @@ void createShortcut(){
 var Intent=null,BitmapFactory=null;
 var main=null;
 document.addEventListener( "plusready", function() {//"plusready"事件触发时执行plus对象的方法
+document.addEventListener( "plusready", function() {//The method of executing the plus object when the "plusready" event is triggered
 	// ...
 	if ( plus.os.name == "Android" ) {
 		// 导入要用到的类对象
+		// import the class object to be used
 		Intent = plus.android.importClass("android.content.Intent");
 		BitmapFactory = plus.android.importClass("android.graphics.BitmapFactory");
 		// 获取主Activity
+		// Get the main Activity
 		main = plus.android.runtimeMainActivity();
 	}
 }, false);
 /**
  * 创建桌面快捷方式
+ * Create desktop shortcuts
  */
 function createShortcut(){
 	// 创建快捷方式意图
+	// create shortcut intent
 	var shortcut = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
 	// 设置快捷方式的名称
+	// set the name of the shortcut
 	shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, "测试快捷方式");
+	shortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, "Test Shortcut");
 	// 设置不可重复创建
+	// set non-reproducible creation
 	shortcut.putExtra("duplicate",false);
 	// 设置快捷方式图标
+	// set shortcut icon
 	var iconPath = plus.io.convertLocalFileSystemURL("/icon.png"); // 将相对路径资源转换成系统绝对路径
 	var bitmap = BitmapFactory.decodeFile(iconPath);
 	shortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON,bitmap);
 	// 设置快捷方式启动执行动作
+	// Set the shortcut to start the execution action
 	var action = new Intent(Intent.ACTION_MAIN);
 	action.setClassName(main.getPackageName(), 'io.dcloud.PandoraEntry');
 	shortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT,action);
 	// 广播创建快捷方式
+	// Broadcast create shortcut
 	main.sendBroadcast(shortcut);
 	console.log( "桌面快捷方式已创建完成！" );
+	console.log( "Desktop shortcut has been created!" );
 }
 ```
 
@@ -1152,73 +1392,96 @@ function createShortcut(){
 ``` objc
 @interface Test: NSObject
 // 游戏玩家登录状态监听函数
+// Game player login status listener function
 - (void)authenticationChanged:(NSNotification*)notification;
 // 获取游戏玩家状态信息
+// Get game player status information
 - (void)playerInformation:(GKPlayer *)player;
 // 登录到游戏中心
+// Login to Game Center
 - (void)loginGamecenter;
 // 停止监听登录游戏状态变化
+// Stop monitoring the login game state changes
 - (void)logoutGamecenter;
 @end
 
 实现文件Test.m中代码如下：
 @implementation Test
 // 游戏玩家登录状态监听函数
+// Game player login status listener function
 - (void)authenticationChanged:(NSNotification*)notification
 {
     // 获取游戏玩家共享实例对象
+    // Get the game player shared instance object
     GKLocalPlayer *player = notification.object;
     if ( player.isAuthenticated ) {
         // 玩家已登录认证，获取玩家信息
+        // The player has logged in for authentication and obtains player information
         [self playerInformation:player];
     } else {
         // 玩家未登录认证，提示用户登录
+        // The player is not logged in for authentication, prompting the user to log in
         NSLog(@"请登录！");
+        NSLog(@"Please log in!");
     }
     // 释放使用的对象
+    // release the used object
     [player release];
 }
 // 获取游戏玩家状态信息
+// Get game player status information
 - (void)playerInformation:(GKPlayer *)player
 {
     // 获取游戏玩家的名称
+    // Get the player's name
     NSLog(@"Name: %@",player.displayName);
 }
 
 // 登录到游戏中心
+// Login to Game Center
 - (void)loginGamecenter
 {
     // 监听用户登录状态变更事件
+    // Listen for user login status change events
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self
            selector:@selector(authenticationChanged)
                name:@"GKPlayerAuthenticationDidChangeNotificationName"
              object:nil];
     // 获取游戏玩家共享实例对象
+    // Get the game player shared instance object
     GKLocalPlayer *localplayer = [GKLocalPlayer localPlayer];
     // 判断游戏玩家是否已经登录认证
+    // Determine if the player has logged in for authentication
     if ( localplayer.isAuthenticated ) {
         // 玩家已登录认证，获取玩家信息
+        // The player has logged in for authentication and obtains player information
         [self playerInformation:localplayer];
     } else {
         // 玩家未登录认证，发起认证请求
+        // The player is not logged in for authentication and initiates an authentication request
         [localplayer authenticateWithCompletionHandler:nil];
         NSLog(@"登录中...");
+        NSLog(@"Login...");
     }
 	// 释放使用的对象
+	// release the used object
     [localplayer release];
     [nc release];
 }
 
 // 停止监听登录游戏状态变化
+// Stop monitoring the login game state changes
 - (void)logoutGamecenter
 {
     // 取消监听用户登录状态变化
+    // Cancel the monitoring of user login status changes
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc removeObserver:self
                   name:@"GKPlayerAuthenticationDidChangeNotificationName"
                 object:nil];
 	// 释放使用的对象
+	// release the used object
     [nc release];
 }
 @end
@@ -1235,6 +1498,7 @@ plus.ios.newObject("@selector","authenticationChanged:")
 完整JavaScript代码如下：
 ``` js
 // 处理"plusready"事件
+// handle the "plusready" event
 var bLogin=false;
 document.addEventListener( "plusready", function() {
 	// ...
@@ -1247,6 +1511,7 @@ document.addEventListener( "plusready", function() {
 		bLogin = true;
 		setTimeout( function(){
 			plus.ui.toast( "此平台不支持Game Center功能！" );
+			plus.ui.toast( "This platform does not support Game Center function!" );
 		}, 500 );
 	}
 }, false);
@@ -1255,34 +1520,44 @@ var GKLocalPlayer=null,NSNotificationCenter=null;
 var delegate=null;
 
 // 游戏玩家登录状态监听函数
+// Game player login status listener function
 function authenticationChanged( notification ){
 	// 获取游戏玩家共享实例对象
+	// Get the game player shared instance object
 	var player = notification.plusGetAttribute("object");
 	if ( player.plusGetAttribute("isAuthenticated") ) {
 		// 玩家已登录认证，获取玩家信息
+		// The player has logged in for authentication and obtains player information
 		playerInformation(player);
 		bLogin = true;
 	} else {
 		// 玩家未登录认证，提示用户登录
+		// The player is not logged in for authentication, prompting the user to log in
 		alert("请登录");
+		alert("Please login");
         bLogin = false;
 	}
 	// 释放使用的对象
+	// release the used object
 	plus.ios.deleteObject(player);
 }
 
 // 获取游戏玩家状态信息
+// Get game player status information
 function playerInformation( player ){
 	var name = player.plusGetAttribute("displayName");
 	alert( name+" 已登录！" );
+	alert( name+" logged in!" );
 }
 
 // 登录到游戏中心
+// Login to Game Center
 function longinGamecenter(){
 	if ( bLogin ){
 		return;
 	}
     // 监听用户登录状态变更事件
+    // Listen for user login status change events
     var nc = NSNotificationCenter.defaultCenter();
     delegate = plus.ios.implements("NSObject",{"authenticationChanged:":authenticationChanged});
     nc.addObserverselectornameobject(delegate,
@@ -1290,26 +1565,34 @@ function longinGamecenter(){
     	"GKPlayerAuthenticationDidChangeNotificationName",
     	null);
     // 获取游戏玩家共享实例对象
+    // Get the game player shared instance object
     var localplayer = GKLocalPlayer.localPlayer();
     // 判断游戏玩家是否已经登录认证
+    // Determine if the player has logged in for authentication
     if ( localplayer.isAuthenticated() ) {	// localplayer.plusGetAttribute("isAuthenticated")
         // 玩家已登录认证，获取玩家信息
+        // The player has logged in for authentication and obtains player information
         playerInformation( localplayer );
         bLogin = true;
     } else {
         // 玩家未登录认证，发起认证请求
+        // The player is not logged in for authentication and initiates an authentication request
         localplayer.authenticateWithCompletionHandler(null);
         alert( "登录中..." );
+        alert( "Login..." );
     }
     // 释放使用的对象
+    // release the used object
 	plus.ios.deleteObject(localplayer);
 	plus.ios.deleteObject(nc);
 }
 
 // 停止监听登录游戏状态变化
+// Stop monitoring the login game state changes
 function stopGamecenterObserver()
 {
     // 取消监听用户登录状态变化
+    // Cancel the monitoring of user login status changes
     var nc = NSNotificationCenter.defaultCenter();
     nc.removeObservernameobject(delegate,"GKPlayerAuthenticationDidChangeNotificationName",null);
     plus.ios.deleteObject(nc);
@@ -1363,9 +1646,11 @@ Android 官方在线文档：[https://developer.android.com/reference/packages.h
 如果我们不导入类对象则无法通过new操作符实例化类对象，这时可通过plus.ios.newObject()、plus.android.newObject()方法来创建实例对象，如下：
 ``` javascript
 // iOS平台创建NSDictionary的实例对象
+// The iOS platform creates an instance object of NSDictionary
 var ns = plus.ios.newObject( "NSDictionary" );
 
 // Android平台创建Intent的实例对象
+// Android platform creates an instance object of Intent
 var intent = plus.android.newObject( "android.content.Intent" );
 ```
 
@@ -1390,6 +1675,7 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello hello = new NjsHello();
     //...
 }
@@ -1399,7 +1685,9 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 不调用plus.android.importClass("io.dcloud.NjsHello")导入类NjsHello
+// Do not call plus.android.importClass("io.dcloud.NjsHello") to import class NjsHello
 // 创建对象的实例
+// create an instance of the object
 var hello = plus.android.newObject( "io.dcloud.NjsHello" );
 // ...
 ```
@@ -1424,9 +1712,11 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 获取类的静态常量属性
+    // Get the static constant property of the class
     int type = NjsHello.CTYPE;
     System.out.printf( "NjsHello Final's value: %d", type );  // 输出“NjsHello Final's value: 1”
     // 获取类的静态属性
+    // Get the static properties of the class
     int count = NjsHello.count;
     System.out.printf( "NjsHello Static's value: %d", count );  // 输出“NjsHello Static's value: 0”
     //...
@@ -1437,7 +1727,9 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 不调用plus.android.importClass("io.dcloud.NjsHello")导入类NjsHello
+// Do not call plus.android.importClass("io.dcloud.NjsHello") to import class NjsHello
 // 访问类的静态常量属性
+// access the static constant property of the class
 var type = plus.android.getAttribute( "io.dcloud.NjsHello", "CTYPE" );
 console.log( "NjsHello Final's value: "+type ); // 输出“NjsHello Final's value: 1”
 // ...
@@ -1450,8 +1742,10 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello hello = new NjsHello();
     // 获取其name属性值
+    // Get the value of its name property
     String name = hello.name;
     System.out.printf( "NjsHello Object's name: %s", name );  // 输出“NjsHello Object's name: Tester”
     //...
@@ -1462,9 +1756,12 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 不调用plus.android.importClass("io.dcloud.NjsHello")导入类NjsHello
+// Do not call plus.android.importClass("io.dcloud.NjsHello") to import class NjsHello
 // 创建对象的实例
+// create an instance of the object
 var hello = plus.android.newObject( "io.dcloud.NjsHello" );
 // 获取其name属性值
+// Get the value of its name property
 var name = plus.android.getAttribute( hello, "name" );
 console.log( "NjsHello Object's name: "+name );  // 输出“NjsHello Object's name: Tester”
 // ...
@@ -1491,6 +1788,7 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 设置类的静态属性值
+    // Set the static property value of the class
     NjsHello.count = 2;
     System.out.printf( "NjsHello Static's value: %d", NjsHello.count );  // 输出“NjsHello Static's value: 2”
     //...
@@ -1501,7 +1799,9 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 不调用plus.android.importClass("io.dcloud.NjsHello")导入类NjsHello
+// Do not call plus.android.importClass("io.dcloud.NjsHello") to import class NjsHello
 // 设置类的静态属性值
+// Set the static property value of the class
 plus.android.setAttribute( "io.dcloud.NjsHello", "count", 2 );
 console.log( "NjsHello Static's value: "+plus.android.getAttribute("io.dcloud.NjsHello","count") ); // 输出“NjsHello Static's value: 2”
 // ...
@@ -1514,8 +1814,10 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello hello = new NjsHello();
     // 设置其name属性值
+    // Set the value of its name property
     hello.name = "Tester";
     System.out.printf( "NjsHello Object's name: %s", hello.name );  // 输出“NjsHello Object's name: Tester”
     //...
@@ -1526,9 +1828,12 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 不调用plus.android.importClass("io.dcloud.NjsHello")导入类NjsHello
+// Do not call plus.android.importClass("io.dcloud.NjsHello") to import class NjsHello
 // 创建对象的实例
+// create an instance of the object
 var hello = plus.android.newObject( "io.dcloud.NjsHello" );
 // 设置其name属性值
+// Set the value of its name property
 plus.android.setAttribute( hello, "name", "Tester" );
 console.log( "NjsHello Object's name: "+hello.plusGetAttribute("name") ); // 输出“NjsHello Object's name: Tester”
 // ...
@@ -1555,6 +1860,7 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 调用类的静态方法
+    // call the static method of the class
     NjsHello.testCount();
     //...
 }
@@ -1564,7 +1870,9 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 不调用plus.android.importClass("io.dcloud.NjsHello")导入类NjsHello
+// Do not call plus.android.importClass("io.dcloud.NjsHello") to import class NjsHello
 // 调用类的静态方法
+// call the static method of the class
 plus.android.invoke( "io.dcloud.NjsHello", "testCount" );
 // ...
 ```
@@ -1577,8 +1885,10 @@ import io.dcloud.NjsHello;
 public class Test {
 public static void main( String args[] ) {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello hello = new NjsHello();
     // 调用updateName方法
+    // call the updateName method
     hello.updateName( "Tester" );
     System.out.printf( "NjsHello Object's name: %s", name );  // 输出“NjsHello Object's name: Tester”
     //...
@@ -1589,9 +1899,12 @@ public static void main( String args[] ) {
 NJS代码：
 ``` javascript
 // 不调用plus.android.importClass("io.dcloud.NjsHello")导入类NjsHello
+// Do not call plus.android.importClass("io.dcloud.NjsHello") to import class NjsHello
 // 创建对象的实例
+// create an instance of the object
 var hello = plus.android.newObject( "io.dcloud.NjsHello" );
 // 调用updateName方法
+// call the updateName method
 plus.android.invoke( hello, "updateName", "Tester" );
 console.log( "NjsHello Object's name: "+hello.getAttribute("name") ); // 输出“NjsHello Object's name: Tester”
 // ...
@@ -1618,6 +1931,7 @@ Objective-C代码：
 int main( int argc, char *argv[] )
 {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello* hello = [[NjsHello alloc] init];
     // ...
 }
@@ -1625,7 +1939,9 @@ int main( int argc, char *argv[] )
 NJS代码：
 ``` javascript
 // 未导入“NjsHello”类
+// Class "NjsHello" is not imported
 // 创建对象的实例
+// create an instance of the object
 var hello = plus.ios.newObject( "NjsHello" );
 // ...
 ```
@@ -1650,8 +1966,10 @@ Objective-C代码：
 int main( int argc, char *argv[] )
 {
     // 创建对象的实例
+    // create an instance of the object
     NjsHello* hello = [[NjsHello alloc] init];
     // 调用updateName方法
+    // call the updateName method
     [hello updateName:@"Tester"];
     NSLog(@"NjsHello Object's name: %@",hello.name);  // 输出“NjsHello Object's name: Tester”
     // ...
@@ -1660,9 +1978,12 @@ int main( int argc, char *argv[] )
 NJS代码：
 ``` javascript
 // 未导入“NjsHello”类
+// Class "NjsHello" is not imported
 // 创建对象的实例
+// create an instance of the object
 var hello = plus.ios.newObject( "NjsHello" );
 // 调用updateName方法
+// call the updateName method
 plus.ios.invoke( hello, "updateName", "Tester" );
 console.log( "NjsHello Object's name: "+hello.getAttribute("name") ); // 输出“NjsHello Object's name: Tester”
 // ...
@@ -1677,14 +1998,18 @@ console.log( "NjsHello Object's name: "+hello.getAttribute("name") ); // 输出�
 Android平台调整NJS代码结构如下：
 ``` javascript
 // 保存Android导入对象和全局环境对象
+// Save Android import object and global environment object
 var AlertDialog=null,mainActivity=null;
 // H5+事件处理
+// H5+ event handling
 document.addEventListener("plusready",function(){
 	switch ( plus.os.name ) {
 		case "Android":
 		// 程序全局环境对象，内部自动导入Activity类
+		// Program global environment object, automatically import Activity class internally
 		mainActivity = plus.android.runtimeMainActivity();
 		// 导入AlertDialog类
+		// Import the AlertDialog class
 		AlertDialog = plus.android.importClass("android.app.AlertDialog");
 		break;
 		default:
@@ -1694,17 +2019,26 @@ document.addEventListener("plusready",function(){
 //...
 /**
  * 在Android平台通过NJS显示系统提示框
+ * Display system prompt box through NJS on Android platform
  */
 function njsAlertForAndroid(){
 	// 创建提示框构造对象，构造函数需要提供程序全局环境对象，通过plus.android.runtimeMainActivity()方法获取
+	// Create a prompt box construction object. The constructor needs to provide the global environment object of the program, which is obtained through the plus.android.runtimeMainActivity() method
 	var dlg = new AlertDialog.Builder(mainActivity);
 	// 设置提示框标题
+	// set the prompt box title
 	dlg.setTitle("自定义标题");
+	dlg.setTitle("custom title");
 	// 设置提示框内容
+	// set the prompt box content
 	dlg.setMessage("使用NJS的原生弹出框，可自定义弹出框的标题、按钮");
+	dlg.setMessage("Using NJS's native popup box, you can customize the title and button of the popup box");
 	// 设置提示框按钮
+	// set the prompt box button
 	dlg.setPositiveButton("确定(或者其他字符)",null);
+	dlg.setPositiveButton("OK (or other characters)",null);
 	// 显示提示框
+	// show tooltip
 	dlg.show();
 }
 //...
@@ -1712,12 +2046,15 @@ function njsAlertForAndroid(){
 iOS平台调整NJS代码结构如下：
 ``` javascript
 // 保存iOS平台导入的类对象
+// Save the class object imported by the iOS platform
 var UIAlertView=null;
 // H5+事件处理
+// H5+ event handling
 document.addEventListener("plusready",function(){
 	switch ( plus.os.name ) {
 		case "iOS":
 		// 导入UIAlertView类
+		// Import UIAlertView class
 		UIAlertView = plus.ios.importClass("UIAlertView");
 		break;
 		default:
@@ -1727,17 +2064,26 @@ document.addEventListener("plusready",function(){
 //...
 /**
  * 在iOS平台通过NJS显示系统提示框
+ * Display system prompt box through NJS on iOS platform
  */
 function njsAlertForiOS(){
 	// 创建UIAlertView类的实例对象
+	// Create an instance object of the UIAlertView class
 	var view = new UIAlertView();
 	// 设置提示对话上的内容
+	// Set the content on the prompt dialog
 	view.initWithTitlemessagedelegatecancelButtonTitleotherButtonTitles("自定义标题" // 提示框标题
+	view.initWithTitlemessagedelegatecancelButtonTitleotherButtonTitles("Custom Title" //Title of the prompt box
 		, "使用NJS的原生弹出框，可自定义弹出框的标题、按钮" // 提示框上显示的内容
+		, "Using the native popup box of NJS, you can customize the title and button of the popup box" // The content displayed on the prompt box
 		, null // 操作提示框后的通知代理对象，暂不设置
+		, null // The notification proxy object after the operation prompt box, not set yet
 		, "确定(或者其他字符)" // 提示框上取消按钮的文字
+		, "OK (or other characters)" // text of the cancel button on the tooltip
 		, null ); // 提示框上其它按钮的文字，设置为null表示不显示
+		, null ); // The text of other buttons on the prompt box, set to null means not displayed
 	// 调用show方法显示提示对话框
+	// Call the show method to display the prompt dialog
 	view.show();
 }
 //...
@@ -1749,12 +2095,15 @@ function njsAlertForiOS(){
 Android平台使用高级API优化代码如下：
 ``` javascript
 // 保存Android导入对象和全局环境对象
+// Save Android import object and global environment object
 var mainActivity=null;
 // H5+事件处理
+// H5+ event handling
 document.addEventListener("plusready",function(){
 	switch ( plus.os.name ) {
 		case "Android":
 		// 程序全局环境对象，内部自动导入Activity类
+		// Program global environment object, automatically import Activity class internally
 		mainActivity = plus.android.runtimeMainActivity();
 		break;
 		default:
@@ -1764,17 +2113,26 @@ document.addEventListener("plusready",function(){
 //...
 /**
  * 在Android平台通过NJS显示系统提示框
+ * Display system prompt box through NJS on Android platform
  */
 function njsAlertForAndroid(){
 	// 由于Builder类是android.app.AlertDialog类的内部类，这里需要使用$符号分割
+	// Since the Builder class is an inner class of the android.app.AlertDialog class, you need to use the $ symbol to separate
 	var dlg = plus.android.newObject("android.app.AlertDialog$Builder",mainActivity);
 	// 设置提示框标题
+	// set the prompt box title
 	plus.android.invoke(dlg,"setTitle","自定义标题");
+	plus.android.invoke(dlg,"setTitle","custom title");
 	// 设置提示框内容
+	// set the prompt box content
 	plus.android.invoke(dlg,"setMessage","使用NJS的原生弹出框，可自定义弹出框的标题、按钮");
+	plus.android.invoke(dlg,"setMessage","Using the native popup box of NJS, you can customize the title and button of the popup box");
 	// 设置提示框按钮
+	// set the prompt box button
 	plus.android.invoke(dlg,"setPositiveButton","确定(或者其他字符)",null);
+	plus.android.invoke(dlg,"setPositiveButton","OK (or other characters)",null);
 	// 显示提示框
+	// show tooltip
 	plus.android.invoke(dlg,"show");
 }
 //...
@@ -1784,18 +2142,27 @@ iOS平台使用高级API优化代码如下：
 ``` javascript
 /**
  * 在iOS平台通过NJS显示系统提示框
+ * Display system prompt box through NJS on iOS platform
  */
 function njsAlertForiOS(){
 	// 创建UIAlertView类的实例对象
+	// Create an instance object of the UIAlertView class
 	var view = plus.ios.newObject("UIAlertView");
 	// 设置提示对话上的内容，这里的方法名称中必须包含':'字符
+	// Set the content on the prompt dialog, where the method name must contain the ':' character
 	plus.ios.invoke(view,"initWithTitle:message:delegate:cancelButtonTitle:otherButtonTitles:"
 	    ,"自定义标题" // 提示框标题
+	    ,"custom title" // prompt box title
 	    , "使用NJS的原生弹出框，可自定义弹出框的标题、按钮" // 提示框上显示的内容
+	    , "Using the native popup box of NJS, you can customize the title and button of the popup box" // The content displayed on the prompt box
 	    , null // 操作提示框后的通知代理对象，暂不设置
+	    , null // The notification proxy object after the operation prompt box, not set yet
 	    , "确定(或者其他字符)" // 提示框上取消按钮的文字
+	    , "OK (or other characters)" // text of the cancel button on the tooltip
 	    , null ); // 提示框上其它按钮的文字，设置为null表示不显示
+	    , null ); // The text of other buttons on the prompt box, set to null means not displayed
 	// 调用show方法显示提示对话框，在JS中使用()语法调用对象的方法
+	// Call the show method to display the prompt dialog, and use the () syntax to call the method of the object in JS
 	plus.ios.invoke(view,"show");
 }
 //...

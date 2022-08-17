@@ -902,6 +902,7 @@ uni.addInterceptor({
 | API | Description |
 | :-------------------------------------------------------------------------------------------------------------- | :----------------------------- |
 | [uni.createIntersectionObserver](ui/intersection-observer?id=createintersectionobserver)                        | 创建 IntersectionObserver 对象 |
+| [uni.createIntersectionObserver](ui/intersection-observer?id=createintersectionobserver) | Create IntersectionObserver object |
 | [intersectionObserver.relativeTo](/api/ui/intersection-observer?id=intersectionobserver-对象的方法列表)         | 指定参照节点                   |
 | [intersectionObserver.relativeTo](/api/ui/intersection-observer?id=intersectionobserver-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95 %E5%88%97%E8%A1%A8) | Specify reference node |
 | [intersectionObserver.relativeToViewport](/api/ui/intersection-observer?id=intersectionobserver-对象的方法列表) | 指定页面显示区域作为参照区域   |
@@ -972,6 +973,7 @@ uni.addInterceptor({
 | [uni.shareWithSystem](/api/plugins/share?id=sharewithsystem)         | 使用系统分享                                                    |
 | [uni.shareWithSystem](/api/plugins/share?id=sharewithsystem) | Use system share |
 | [uni.requestPayment](/api/plugins/payment?id=requestpayment)         | 支付                                                            |
+| [uni.requestPayment](/api/plugins/payment?id=requestpayment) | payment |
 | [uni.subscribePush](/api/plugins/push?id=subscribepush)              | 开启推送                                                        |
 | [uni.subscribePush](/api/plugins/push?id=subscribepush) | Enable push |
 | [uni.unsubscribePush](/api/plugins/push?id=unsubscribepush)          | 关闭推送                                                        |

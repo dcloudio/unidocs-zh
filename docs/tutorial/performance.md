@@ -23,6 +23,7 @@ The logic layer runs in an independent jscore instead of depending on the webvie
 - node.js引擎，则是v8基础上补充一些电脑专用API，比如本地io；
 - node.js engine means to supplement some computer-specific API on the basis of v8, such as local io;
 - 那么uni-app的App端和小程序端的js引擎，其实是在jscore上补充了一批手机端常用的JS API，比如扫码。
+- Then the js engine on the App side and the applet side of uni-app actually supplements jscore with a number of JS APIs commonly used on the mobile phone side, such as scanning code.
 
 <div>
 	<img src="https://img.cdn.aliyun.dcloud.net.cn/uni-app/jscore.jpg" style="max-width:500px"></img>
@@ -32,11 +33,13 @@ The logic layer runs in an independent jscore instead of depending on the webvie
 ###### View layer details
 
 h5和小程序平台，以及app-vue，视图层是webview。而app-nvue的视图层是基于weex改造的原生渲染视图。
+h5 and applet platforms, as well as app-vue, the view layer is webview. The view layer of app-nvue is a native rendering view based on weex transformation.
 
 关于webview，在iOS上，只能使用iOS提供的Webview（默认是WKWebview）。它有一定的浏览器兼容问题，iOS版本不同，它的表现有细微差异（一般可忽略）。
 With regard to webview, you can only use webview provided by iOS on iOS (the default value is WKWebview). It has some browser compatibility problems, and its performance is slightly different (generally negligible) due to different iOS versions.
 
 Android上小程序大多自带了一个几十M的chromium webview，而App端没办法带这么大体积的三方包，所以App端默认使用了Android system webview，这个系统webview跟随手机不同而有差异。当然App端也支持使用腾讯X5引擎，此时可以在Android端统一视图层。
+Most small programs on Android come with a chromium webview of dozens of megabytes, and the App side cannot carry such a large three-party package, so the App side uses the Android system webview by default, and the system webview varies with the mobile phone. Of course, the App side also supports the use of the Tencent X5 engine. At this time, the view layer can be unified on the Android side.
 
 所以uni-app的js基本没有不同手机的兼容问题（因为js引擎自带了），而视图层的css，在app-vue上使用系统webview时会有手机浏览器的css兼容问题。此时或者不要用太新的css语法，或者集成腾讯x5引擎。
 Therefore, js of uni-app basically has no compatibility problem with different mobile phones (because the js engine comes with it), while the css in the view layer will have compatibility problems with the css of mobile browsers when using system webview on app-vue. At this time, either don not use too new css syntax or integrate Tencent x5 engine.
@@ -62,6 +65,7 @@ It is not so bad for iOS, but for Android low-end phones, every communication ta
 2. The view layer scrolls, operates with hands, and feeds back to the logic layer continuously, then js processes the logic and informs the view layer to make corresponding updates. At this time, you may find that the interaction does not follow the hands or gets stuck
 
 不管小程序还是app，不管app-vue还是app-nvue，都有这个两层通信损耗的问题。
+No matter the applet or the app, whether the app-vue or the app-nvue, there is the problem of this two-layer communication loss.
 
 解决这类问题，在webview渲染和原生渲染引用了不同的做法：
 To solve this kind of problem, different methods are referenced in webview rendering and native rendering:
@@ -70,14 +74,19 @@ To solve this kind of problem, different methods are referenced in webview rende
 - View layer of webview rendering
 
 在app-vue和微信小程序上，提供了一种运行于视图层的专属js，微信叫做[wxs](https://uniapp.dcloud.io/tutorial/miniprogram-subject.html#wxs)。
+On app-vue and WeChat applet, a dedicated js running on the view layer is provided, and WeChat is called [wxs](https://uniapp.dcloud.io/tutorial/miniprogram-subject.html#wxs).
 
 wxs中可以监听手势，以uni ui的swiperAction组件为例，手指拖动，侧边的列表菜单项要跟手滑出，此时就需要使用wxs才能实现流畅效果。还有插件市场里一些自定义下拉刷新的插件，通过wxs实现了更高的性能体验。
+Gestures can be monitored in wxs. Take the swiperAction component of uni ui as an example. When you drag your finger, the list menu items on the side must slide out with your hand. At this time, you need to use wxs to achieve a smooth effect. There are also some custom pull-to-refresh plug-ins in the plug-in market, which achieve a higher performance experience through wxs.
 
 uni-app支持把wxs编译到微信小程序、App和H5中。
+uni-app supports compiling wxs into WeChat applet, App and H5.
 
 微信里对wxs限制较多，只能实现有限的功能。app端提供了更强大的[renderjs](https://uniapp.dcloud.io/tutorial/renderjs.html)，并兼容到H5平台。
+There are many restrictions on wxs in WeChat, and only limited functions can be realized. The app side provides a more powerful [renderjs](https://uniapp.dcloud.io/tutorial/renderjs.html), which is compatible with the H5 platform.
 
 比如canvas动画，微信的canvas无法通过wxs操作，js不停绘制canvas动画因通信折损而无法流畅。uni-app的app-vue里的canvas对象设计在webview视图层的，通过renderjs可以在视图层直接操作canvas动画，将不再有通信折损，实现更流畅的效果，详见：[renderjs](https://uniapp.dcloud.io/tutorial/renderjs.html)
+For example, canvas animation, WeChat's canvas cannot be operated through wxs, and js keeps drawing canvas animation and cannot be smooth due to communication loss. The canvas object in the app-vue of uni-app is designed in the webview view layer. Through renderjs, you can directly operate the canvas animation in the view layer, there will be no communication loss, and a smoother effect will be achieved. For details, see: [renderjs]( https://uniapp.dcloud.io/tutorial/renderjs.html)
 
 - 原生渲染的视图层
 - View layer for native rendering
@@ -86,17 +95,22 @@ uni-app支持把wxs编译到微信小程序、App和H5中。
 In app-nvue, loss exists in both logic layer and view layer. react native has this problem too. It can be seen that native rendering is not that advanced.
 
 weex提供了一套[bindingx](https://uniapp.dcloud.io/tutorial/nvue-api?id=nvue-%e9%87%8c%e4%bd%bf%e7%94%a8-bindingx)机制，可以在js里一次性传一个表达式给原生层，由原生层解析后根据指令操作原生的视图层，避免反复跨层通信。这个技术在uni-app里也可以使用。
+weex provides a set of [bindingx](https://uniapp.dcloud.io/tutorial/nvue-api?id=nvue-%e9%87%8c%e4%bd%bf%e7%94%a8-bindingx) Mechanism, you can pass an expression in js to the native layer at one time, after parsing by the native layer, operate the native view layer according to the instructions, avoiding repeated cross-layer communication. This technique can also be used in uni-app.
 
 bindingx作为一种表达式，它的功能不及js强大，但手势监听、动画还是可以实现的，比如uni ui的swiperAction组件在app-nvue下运行时会自动启用bindingx，以实现流畅跟手。
 Bindingx, as a kind of expression, is not as powerful as js, but it can still implement gesture listening to and animation. For example, uni ui's swiperAction component will automatically enable bindingx when running under app-nvue to achieve smooth follow-hand experience.
 
 ###### app-vue和小程序的数据更新，分页面级和组件级
+###### App-vue and applet data update, page level and component level
 
 对于复杂页面，更新某个区域的数据时，需要把这个区域做成组件，这样更新数据时就只更新这个组件，否则会整个页面的数据更新，造成点击延迟卡顿。
+For complex pages, when updating data in a certain area, you need to make this area a component, so that only this component is updated when updating data, otherwise the data of the entire page will be updated, causing click delays to be stuck.
 
 比如微博长列表页面，点击一个点赞图标，赞数要立即+1，此时这个点赞按钮一定要做成组件。否则这个+1会引发页面级所有数据的从js层向视图层的同步。
+For example, on the Weibo long list page, if you click a like icon, the number of likes should be +1 immediately. At this time, the like button must be made into a component. Otherwise this +1 will cause synchronization of all data at the page level from the js layer to the view layer.
 
 app-nvue和h5不存在此问题。造成差异的原因是小程序目前只提供了组件差量更新的机制，不能自动计算所有页面差量。
+app-nvue and h5 do not have this problem. The reason for the difference is that the applet currently only provides a mechanism for component delta update, and cannot automatically calculate all page deltas.
 
 #### 优化建议
 #### Optimization suggestion
@@ -126,6 +140,7 @@ In `uni-app`, every time the data defined in data changes, the view layer will b
 - 长列表中每个item并不一定需要做成组件，取决于你的业务中是否需要差量更新某一行item的数据，如没有此类需求则不应该引入大量组件。（点击item后背景变色，属于css调整，没有更新data数据和渲染，不涉及这个问题）
 - Each item in the long list does not necessarily need to be made into a component, depending on whether you need to update the data of a row of items by variance in your business. If there is no such requirement, it is not recommended to introduce a large number of components. (After clicking item, the background changes color, which belongs to css adjustment. If data and rendering are not updated, this problem will not exist)
 - 单个组件中存在大量数据时（比如长列表），在App和小程序端数据更新时会消耗较多时间，建议使用组件对数据进行分页，将变更限制更小范围。可以参考：[长列表优化示例](https://ext.dcloud.net.cn/plugin?id=2863#detail)
+- When there is a large amount of data in a single component (such as a long list), it will take a lot of time to update the data on the App and applet side. It is recommended to use the component to paginate the data and limit the changes to a smaller scope. You can refer to: [Long List Optimization Example](https://ext.dcloud.net.cn/plugin?id=2863#detail)
 - app端nvue的长列表应该使用list组件，有自动的渲染资源回收机制。vue页面使用页面滚动的性能，好于使用scroll-view的区域滚动。uni ui封装了uList组件，在app-nvue下使用了list组件，在其他环境使用页面滚动，自动适配，强烈推荐开发者使用，避免自己写的不好产生性能问题。
 - The long list of nvue on the app side should use the list component, and there is an automatic rendering resource recycling mechanism. For vue pages, page scrolling provides better performance than area scrolling using scroll-view. uni ui encapsulates uList component, uses list component under app-nvue, and uses page scrolling and automatic adaptation in other environments. It is highly recommended for developers to use it to avoid performance problems caused by poor writing.
 - 如需要左右滑动的长列表，请在HBuilderX新建uni-app项目选新闻模板，那是一个标杆实现。自己用swiper和scroll-view做很容易引发性能问题。
@@ -158,6 +173,7 @@ When some nvue pages are first rendered on Android low-end phones, they will see
 * 多使用css动画，而不是通过js的定时器操作界面做动画
 * It is recommended to use css animation instead of animation through the js timer interface
 * 如需在canvas里做跟手操作，app端建议使用renderjs，小程序端建议使用web-view组件。web-view里的页面没有逻辑层和视图层分离的概念，自然也不会有通信折损。
+* If you need to do follow-up operations in canvas, it is recommended to use renderjs on the app side, and the web-view component on the applet side. The pages in the web-view do not have the concept of separation of the logical layer and the view layer, and naturally there will be no communication loss.
 
 ##### 优化页面切换动画
 ##### Optimize page switching animation
@@ -199,11 +215,13 @@ The background color of this translucent effect can be adjusted to dark color as
 ##### Use nvue instead of vue
 
 在 App 端 ```uni-app``` 的 nvue 页面可是基于weex升级改造的原生渲染引擎，实现了页面原生渲染能力、提高了页面流畅性。若对页面性能要求较高可以使用此方式开发，详见：[nvue](/tutorial/nvue-outline)。
+The nvue page of ``uni-app`` on the App side is a native rendering engine based on weex upgrade and transformation, which realizes the native rendering capability of the page and improves the fluency of the page. If you have high requirements on page performance, you can use this method to develop, see: [nvue](/tutorial/nvue-outline).
 
 ##### 优化启动速度
 ##### Optimize startup speed
 
 * 工程代码越多，包括背景图和本地字体文件越大，对小程序启动速度有影响，应注意控制体积。<image />组件引用的前景图不影响性能。
+* The more engineering codes, including the larger background images and local font files, will affect the startup speed of the applet, and you should pay attention to controlling the volume. The foreground image referenced by the <image /> component does not affect performance.
 * App端的 splash 关闭有白屏检测机制，如果首页一直白屏或首页本身就是一个空的中转页面，可能会造成 splash 10秒才关闭，可参考此文解决[https://ask.dcloud.net.cn/article/35565](https://ask.dcloud.net.cn/article/35565)
 * The splash shutdown on the App side has a white screen detection mechanism. If the homepage is always blank or the homepage itself is an empty transit page, it may cause the splash to be closed for 10 seconds, which can be solved by referring to [https://ask.dcloud.net.cn/article/35565](https://ask.dcloud.net.cn/article/35565)
 * App端，首页为nvue页面时，并设置为[fast启动模式](https://ask.dcloud.net.cn/article/36749)，此时App启动速度最快。
@@ -215,8 +233,11 @@ The background color of this translucent effect can be adjusted to dark color as
 ##### Optimize package size
 
 * uni-app发行到小程序时，自带引擎只有几十K，主要是一个定制过的vue.js核心库。如果使用了es6转es5、css对齐的功能，可能会增大代码体积，可以配置这些编译功能是否开启。
+* When uni-app is released to the applet, the built-in engine is only a few dozen K, mainly a customized vue.js core library. If you use the functions of es6 to es5 and css alignment, the code size may increase. You can configure whether these compilation functions are enabled.
 * uni-app的H5端，自带了vue.js、vue-router及部分es6 polyfill库，这部分的体积gzip后只有92k，和web开发使用vue基本一致。而内置组件ui库（如picker、switch等）、小程序的对齐js api等，相当于一个完善的大型ui库。但大多数应用不会用到所有内置组件和API。由此uni-app提供了摇树优化机制，未摇树优化前的uni-app整体包体积约500k，服务器部署gzip后162k。开启摇树优化需在manifest配置，[详情](https://uniapp.dcloud.io/collocation/manifest?id=optimization)。
+* The H5 side of uni-app comes with vue.js, vue-router and some es6 polyfill libraries. The volume of this part is only 92k after gzip, which is basically the same as the use of vue for web development. The built-in component ui library (such as picker, switch, etc.), the alignment js api of the applet, etc., is equivalent to a complete large-scale ui library. But most applications won't use all the built-in components and APIs. As a result, uni-app provides a tree-shaking optimization mechanism. The overall package size of uni-app before tree-shaking optimization is about 500k, and after the server is deployed with gzip, it is 162k. To enable tree shaking optimization, you need to configure it in the manifest, [Details](https://uniapp.dcloud.io/collocation/manifest?id=optimization).
 * uni-app的App端，因为自带了一个独立v8引擎和小程序框架，所以比HTML5Plus或mui等普通hybrid的App引擎体积要大。Android基础引擎约9M。App还提供了扩展模块，比如地图、蓝牙等，打包时如不需要这些模块，可以裁剪掉，以缩小发行包体积。在 manifest.json-App模块权限 里可以选择。
+* The App side of uni-app, because it comes with an independent v8 engine and applet framework, is larger than ordinary hybrid App engines such as HTML5Plus or mui. Android base engine is about 9M. The App also provides extension modules, such as maps, Bluetooth, etc. If these modules are not needed during packaging, they can be cut out to reduce the size of the distribution package. It is optional in manifest.json-App module permissions.
 * App端支持如果选择纯nvue项目（manifest里设置app-plus下的renderer:"native"），包体积可以进一步减少2M左右。
 * The App side supports that if the pure nvue project is selected (renderer:"native "under setting app-plus in manifest), the package size can be further reduced by about 2M.
 * uni-app的App-Android端有so库的概念，支持不同的cpu类型的so库越多，包越大。在HBuilderX 2.7以前，Android app默认包含arm32和x86两个cpu的支持so库。包体积比较大。如果你在意体积控制，可以在manifest里去掉x86 cpu的支持（manifest可视化界面-App其他设置里选择cpu），这可以减少包体积到9M。从HBuilderX 2.7起，默认不再包含x86，如有需求请自行在manifest里勾选后打包。一般手机都是arm的，涉及x86 cpu场景很少，包括：个别少见的Android pad、as的模拟器里选择x86类型。

@@ -1,7 +1,10 @@
 ## 国内应用市场上架
+## On the domestic application market
 最近为有效治理App强制授权、过度索权、超范围收集个人信息等现象，落实《网络安全法》《消费者权益保护法》的要求，保障个人信息安全，各大应用市场都加强应用审核的检测，要求应用必须符合相关政策，否则应用将有被通报或下架的风险。
+Recently, in order to effectively manage the phenomenon of compulsory authorization of apps, excessive claims, and collection of personal information beyond the scope, to implement the requirements of the "Cybersecurity Law" and the "Consumer Rights Protection Law" to ensure the security of personal information, major application markets have strengthened application review. Detection requires that the application must comply with relevant policies, otherwise the application will be at risk of being notified or removed from the shelf.
 
 **应用市场上架审核合规指南：**[https://ask.dcloud.net.cn/article/39073](https://ask.dcloud.net.cn/article/39073)
+**App Market Listing Review Compliance Guide:**[https://ask.dcloud.net.cn/article/39073](https://ask.dcloud.net.cn/article/39073)
 
 
 

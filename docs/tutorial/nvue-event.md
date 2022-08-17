@@ -1,5 +1,6 @@
 
 ```Weex``` 提供了通过事件触发动作的能力，例如在用户点击组件时执行 ```JavaScript```。
+```Weex``` provides the ability to trigger actions through events, such as executing ```JavaScript``` when the user clicks on a component.
 下面列出了可被添加到 ```Weex``` 组件上以定义事件动作的属性：
 Below are the common event attributes that can be added to weex components to define event actions.
 
@@ -20,6 +21,7 @@ Weex add attribute `eventPenetrationEnabled` to `<div>` component. When the valu
 ### View interactivity
 
 > 仅iOS支持
+> iOS only
 
 Weex在```view```组件中增加了```userInteractionEnabled```属性，当值为false（默认为true）时，View及其子View均不响应事件，事件向下层View传递。
 Weex add attribute `userInteractionEnabled` to `<div>` component. When the value is `false`(default would be `true`), neither the view nor its children views respond to the event. The event is passed to the lower layer View.

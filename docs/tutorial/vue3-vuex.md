@@ -272,6 +272,7 @@ export default store
 
 ```js
 // 页面路径：main.js 
+// Page path: main.js
 import App from './App'
 import store from './store'
 import {createSSRApp} from 'vue'
@@ -525,6 +526,7 @@ Register `getter` on `store`, and the `getter` method accepts the following para
 
 ```js
 // 页面路径：store/index.js 
+// Page path: store/index.js
 
 import { createStore } from 'vuex'
 const store = createStore({
@@ -804,6 +806,7 @@ Take the example of the accumulator to realize the parameter passing of the `mut
 
 ```js
 // 页面路径：store/index.js 
+// Page path: store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -851,6 +854,7 @@ export default store
 
 ```js
 // 页面路径：store/index.js 
+// Page path: store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -1154,6 +1158,7 @@ In practice, we often use ES2015 argument destructuring (opens new window)to sim
 
 ```js
 // 页面路径：store/index.js 
+// Page path: store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -1473,6 +1478,7 @@ To help with that, Vuex allows us to divide our store into modules. Each module 
 
 ```js
 	// 页面路径：main.js
+	// Page path: main.js
 	import {createSSRApp} from 'vue'
 	import store from './store'
 	export function createApp() {
@@ -1507,6 +1513,7 @@ export default createStore({
 
 ```js
 // 子模块moduleA路径：store/modules/moduleA.js 
+// Submodule moduleA path: store/modules/moduleA.js
 export default {
 	state: {
 		text:"我是moduleA模块下state.text的值"

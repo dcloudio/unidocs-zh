@@ -27,6 +27,7 @@ The combination of the unified `uni.requestPayment` on the front end and the uni
 |App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|
+|√|[Description](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

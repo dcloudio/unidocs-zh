@@ -38,6 +38,7 @@ Note: For the authorization judgment method of the App platform, see also: [http
 |scope.userInfo	|[uni.getUserInfo](/api/plugins/login?id=getuserinfo)	|用户信息||
 |scope.userInfo |[uni.getUserInfo](/api/plugins/login?id=getuserinfo) |User Info||
 |scope.userLocation|[uni.getLocation](/api/location/location?id=getlocation), [uni.chooseLocation](/api/location/location?id=chooselocation)	|地理位置||
+|scope.userLocation|[uni.getLocation](/api/location/location?id=getlocation), [uni.chooseLocation](/api/location/location?id=chooselocation) |Location||
 |scope.userLocationBackground|wx.userLocationBackground|后台定位|微信小程序|
 |scope.userLocationBackground|wx.userLocationBackground|Background Location|WeChat Mini Program|
 |scope.address	|[uni.chooseAddress](/api/other/choose-address)	|通信地址||

@@ -297,10 +297,13 @@ export default {
 attribute name|description
 :-:|:-:
 navigateTo|同 uni.navigateTo()
+navigateTo|same as uni.navigateTo()
 redirectTo|同 uni.reLaunch()
 redirectTo|same as uni.reLaunch()
 reLaunch|同 uni.reLaunch()
+reLaunch|same as uni.reLaunch()
 switchTab|同 uni.switchTab()
+switchTab|same as uni.switchTab()
 
 ### ListItem Events
 

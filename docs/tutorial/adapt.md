@@ -25,8 +25,10 @@ Interactive communication among these windows are supported.
 Here are two examples:
 - hello uni-app：[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
 - 分栏式的新闻模板：[https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/)，这个示例对应的源码在：[https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
+- Column-style news template: [https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp .com/#/), the source code for this example is at: [https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
 
 新闻示例项目，预览地址https://static-7d133019-9a7e-474a-b7c2-c01751f00ca5.bspapp.com/#/显示The requested file was not found on this server.
+News sample project, preview address https://static-7d133019-9a7e-474a-b7c2-c01751f00ca5.bspapp.com/#/ shows The requested file was not found on this server.
 
 
 以上示例建议使用最新版的chrome、Safari、或firefox访问。可以在PC模式和手机模式分别体验。以上示例源码的运行需使用HBuilderX 2.9+
@@ -106,6 +108,7 @@ If there is a uni-app designed for small screen at hand and it is intended to us
 If the parent page of the application is a list and the child page is the details, it is appropriate to use the original small-screen list as the main window and extend the rightWindow to display the details on the right.
 
 以新闻示例项目为例，预览地址[https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/)。这个项目的源码已经内置于HBuilderX 2.9中，新建uni-app项目时选择新闻/资讯模板。
+Take the news sample project as an example, the preview address [https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1. bspapp.com/#/). The source code of this project has been built into HBuilderX 2.9, select the news/information template when creating a new uni-app project.
 
 首先在这个项目的`pages.json`文件中，配置[`rightWindow`选项](https://uniapp.dcloud.net.cn/collocation/pages?id=rightwindow)，放置一个新页面`right-window.vue`。
 First, configure [`rightWindow`option](https://uniapp.dcloud.net.cn/collocation/pages?id=rightwindow) in the `pages.json` file of this project, and place a new page `right-window.vue`.
@@ -189,6 +192,7 @@ DCloud官方基于uni-app的pc版，推出了unicloud Admin：[https://uniapp.dc
 DCloud officially launched unicloud Admin based on the pc version of uni-app: [https://uniapp.dcloud.net.cn/uniCloud/admin](https://uniapp.dcloud.net.cn/uniCloud/admin)
 
 目前的leftWindow、rightWindow、topWindow 只支持web端。计划后续在Pad App上实现该配置。小程序无法支持该配置。
+The current leftWindow, rightWindow, and topWindow only support the web side. It is planned to implement this configuration on the Pad App in the future. The applet cannot support this configuration.
 
 
 #### 2. 组件级适配方案：match-media组件

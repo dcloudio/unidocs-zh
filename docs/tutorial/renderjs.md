@@ -1,5 +1,6 @@
 ## renderjs
 `renderjs`是一个运行在视图层的js。它比[WXS](/tutorial/miniprogram-subject.html#wxs)更加强大。它只支持app-vue和h5。
+`renderjs` is a js that runs in the view layer. It is more powerful than [WXS](/tutorial/miniprogram-subject.html#wxs). It only supports app-vue and h5.
 
 `renderjs`的主要作用有2个：
 `renderjs` has two main functions:
@@ -12,8 +13,10 @@
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|
+|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√(2.5.5+，仅支持vue)|√|x|x|x|x|x|
+|√(2.5.5+, vue only)|√|x|x|x|x|x|
 
 ### 使用方式
 ### Usage mode
@@ -45,15 +48,18 @@ Set lang of script node to renderjs
 - Greatly reduce the communication loss between the logic layer and the view layer, and provide high-performance view interaction capability
 
 逻辑层和视图层分离有很多好处，但也有一个副作用是在造成了两层之间通信阻塞。尤其是小程序和App的Android端阻塞问题影响了高性能应用的制作。
+Separating the logic layer from the view layer has many benefits, but it also has the side effect of blocking communication between the two layers. In particular, the Android-side blocking problem of small programs and apps affects the production of high-performance applications.
 
 `renderjs`运行在视图层，可以直接操作视图层的元素，避免通信折损。
 `renderjs` runs on the view layer and can be used to directly manipulate the elements of the view layer to avoid communication loss.
 
 在hello uni-app的canvas示例中，App端使用了`renderjs`，由运行在视图层的`renderjs`直接操作视图层的canvas，实现了远超微信小程序的流畅canvas动画示例。具体在[hello uni-app](https://m3w.cn/uniapp)示例中体验，对比App端和小程序端的性能差异。
+In the canvas example of hello uni-app, `renderjs` is used on the App side, and the `renderjs` running in the view layer directly operates the canvas of the view layer, realizing a smooth canvas animation example far exceeding the WeChat applet. Specifically, experience it in the example of [hello uni-app](https://m3w.cn/uniapp), and compare the performance difference between the App side and the applet side.
 
 - 在视图层操作dom，运行for web的js库
 - Operate dom in view layer and run js library for web
 官方不建议在uni-app里操作dom，但如果你不开发小程序，想使用一些操作了dom、window的库，其实可以使用`renderjs`来解决。
+The official does not recommend operating dom in uni-app, but if you do not develop small programs and want to use some libraries that operate dom and window, you can actually use `renderjs` to solve it.
 
 在app-vue环境下，视图层由webview渲染，而`renderjs`运行在视图层，自然可以操作dom和window。
 In the app-vue environment, the view layer is rendered by the webview, and `renderjs` runs on the view layer, which can naturally operate dom and window.
@@ -75,6 +81,7 @@ In the same way, libraries such as `f2` and `threejs` can all be used in this wa
 * 可以使用 vue 组件的生命周期不可以使用 App、Page 的生命周期
 * You can use the life cycle of vue components but not the life cycle of App and Page
 * 视图层和逻辑层通讯方式与 [WXS](/tutorial/miniprogram-subject.html#wxs) 一致，另外可以通过 this.$ownerInstance 获取当前组件的 ComponentDescriptor 实例。
+* The communication method between the view layer and the logic layer is consistent with [WXS](/tutorial/miniprogram-subject.html#wxs). In addition, the ComponentDescriptor instance of the current component can be obtained through this.$ownerInstance.
 * 观测更新的数据在视图层可以直接访问到。
 * The observation updated data can be directly accessed in the view layer.
 * APP 端视图层的页面引用资源的路径相对于根目录计算，例如：./static/test.js。

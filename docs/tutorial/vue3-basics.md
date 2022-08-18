@@ -442,7 +442,6 @@ These expressions will be evaluated as JavaScript in the data scope of the curre
 
 **错误示例**
 **Error example**
-
 ```html
 	<template>
 	  <view>

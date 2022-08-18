@@ -2214,8 +2214,8 @@ sort({
 })
 ```
 <!-- @ignore-translate -->
-<排序规则>可以是以下取值：
-<collation> can be the following values:
+`<排序规则>`可以是以下取值：
+`<collation />` can be the following values:
 
 - 1 代表升序排列（从小到大）；
 - 1 represents ascending order (smallest to largest);

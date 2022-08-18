@@ -25,7 +25,7 @@ The core of `Vue.js` is a system that allows the use of concise template syntax 
  **Thanks**
 
 本文大部分内容来源于[vue3中文文档官网](https://v3.cn.vuejs.org/guide/introduction.html#vue-js-%E6%98%AF%E4%BB%80%E4%B9%88)，但结合 `uni-app` 做了部分调整，以更有利于开发者快速上手。感谢Vue团队！
-Most of the content of this article comes from [vue3 Chinese document official website](https://v3.cn.vuejs.org/guide/introduction.html#vue-js-%E6%98%AF%E4%BB%80%E4% B9%88), but some adjustments have been made in combination with `uni-app` to make it easier for developers to get started quickly. Thanks to the Vue team!
+Most of the content of this article comes from [vue3 Chinese document official website](https://v3.cn.vuejs.org/guide/introduction.html#vue-js-%E6%98%AF%E4%BB%80%E4%B9%88), but some adjustments have been made in combination with `uni-app` to make it easier for developers to get started quickly. Thanks to the Vue team!
 
 
 **vue3的优势：**
@@ -250,7 +250,7 @@ So what is the difference between a label and a component, isn't it all surround
 - 现在的做法，是vue的绑定模式，给这个 DOM 元素绑定一个js变量，在script中修改js变量的值，DOM 会自动变化，页面会自动更新渲染。
 - The current practice is the binding mode of vue, bind a js variable to this DOM element, modify the value of the js variable in the script, the DOM will automatically change, and the page will automatically update the rendering.
 	- 前端改用 [MVVM](https://baike.baidu.com/item/MVVM/96310?fr=aladdin) (Model-View-ViewModel的简写)模式，简单来说，Model:代表数据模型，View:只专注视图UI处理，ViewModel:只处理业务和数据。它的核心是 MVVM 中的 VM，也就是 ViewModel。 ViewModel负责连接 View 和 Model，保证视图和数据的一致性，这种轻量级的架构让前端开发更加高效、便捷，大幅减少代码行数，同时差量渲染性能更好。
-	- The front end uses the [MVVM](short for Model-View-ViewModel) mode. Simply put, Model: represents the data model, View: only focuses on view UI processing, and ViewModel: only processes business and data. Its core is the VM in MVVM, which is the ViewModel. ViewModel is responsible for connecting View and Model to ensure the consistency of views and data. This lightweight architecture makes front-end development more efficient and convenient, greatly reducing the number of lines of code, and better differential rendering performance.
+	- The front end uses the [MVVM](https://baike.baidu.com/item/MVVM/96310?fr=aladdin) (short for Model-View-ViewModel) mode. Simply put, Model: represents the data model, View: only focuses on view UI processing, and ViewModel: only processes business and data. Its core is the VM in MVVM, which is the ViewModel. ViewModel is responsible for connecting View and Model to ensure the consistency of views and data. This lightweight architecture makes front-end development more efficient and convenient, greatly reducing the number of lines of code, and better differential rendering performance.
 	- `uni-app` 使用vue的数据绑定方式解决js和 DOM 界面交互的问题。
 	- `uni-app` solves the problem of interaction between js and DOM interface by using data binding method of vue.
 
@@ -295,7 +295,7 @@ So what is the difference between a label and a component, isn't it all surround
 Compared with the Web platform, the differences in the use of Vue.js in `uni-app` are mainly concentrated in two aspects:
 
 - 新增：`uni-app` 除了支持Vue实例的生命周期，还支持[应用生命周期](https://uniapp.dcloud.io/collocation/App#应用生命周期)以及[页面生命周期](https://uniapp.dcloud.io/tutorial/page#lifecycle)。
-- Added: `uni-app` In addition to supporting the life cycle of Vue instances, it also supports [application life cycle](https://uniapp.dcloud.io/collocation/App#%E5%BA%94%E7%94% A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F) and [Page Lifecycle](https://uniapp.dcloud.io/tutorial/page#lifecycle).
+- Added: `uni-app` In addition to supporting the life cycle of Vue instances, it also supports [application life cycle](https://uniapp.dcloud.io/collocation/App#%E5%BA%94%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F) and [Page Lifecycle](https://uniapp.dcloud.io/tutorial/page#lifecycle).
 - 受限：相比web平台，在小程序和App端部分功能受限。
 - Restricted: Compared with the web platform, some functions on the applet and App are limited.
 - uni-app 完整支持 Vue 模板语法。
@@ -368,8 +368,8 @@ The most common form of data binding is text interpolation:
 	</script>
 ```
 
-{{msg}}里的内容将会被替代为对应数据对象上msg的值。无论何时，绑定的数据对象上msg发生了改变，插值处的内容都会更新。
-The content in {{msg}} will be replaced with the value of msg on the corresponding data object. Whenever the msg on the bound data object changes, the content at the interpolation point will be updated.
+`msg`里的内容将会被替代为对应数据对象上msg的值。无论何时，绑定的数据对象上msg发生了改变，插值处的内容都会更新。
+The content in `msg` will be replaced with the value of msg on the corresponding data object. Whenever the msg on the bound data object changes, the content at the interpolation point will be updated.
 
 
 #### 使用 JavaScript 表达式
@@ -442,6 +442,7 @@ These expressions will be evaluated as JavaScript in the data scope of the curre
 
 **错误示例**
 **Error example**
+
 ```html
 	<template>
 	  <view>
@@ -507,9 +508,9 @@ These expressions will be evaluated as JavaScript in the data scope of the curre
 Directives are special attributes with the v- prefix. 
 
 - 指令属性的值预期是**单个 `JavaScript` 表达式** (`v-for` 和 `v-on` 是例外情况，稍后我们再讨论)。
-- Directive attribute values are expected to be a single JavaScript expression (with the exception of v-for and v-on, which will be discussed later). 
+- Directive attribute values are expected to be a **single JavaScript expression** (with the exception of v-for and v-on, which will be discussed later). 
 - 指令的作用是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 `DOM` 。
-- A directive's job is to reactively apply side effects to the DOM when the value of its expression changes. 
+- A directive's job is to reactively apply side effects to the `DOM` when the value of its expression changes. 
 - 一些指令能够接收一个“参数”，在指令名称之后以冒号（ : ）表示。
 - Some directives can take an "argument", denoted by a colon after the directive name. 
 

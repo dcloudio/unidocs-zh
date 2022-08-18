@@ -118,6 +118,7 @@ Aggregation stage. Add new fields to the output records. After the `addFields` a
 `addFields` is equivalent to the `project` phase specifying all existing fields and new fields at the same time.
 
 **`addFields` 的形式如下：**
+
 ```js
 addFields({
   // @ignore-translate
@@ -246,6 +247,7 @@ let res = await db.collection('vehicles').aggregate()
 `bucket` 只会在组内有至少一个记录的时候输出。
 
 **bucket 的形式如下：**
+
 ```js
 bucket({
   groupBy: <expression>,
@@ -265,6 +267,7 @@ bucket({
 `default` 可选，指定之后，没有进入任何分组的记录将都进入一个默认分组，这个分组记录的 `_id` 即由 `default` 决定。`default` 的值必须小于 `boundaries` 中的最小值或大于等于其中的最大值。`default` 的值可以与 `boundaries` 元素值类型不同。
 
 `output` 可选，用以决定输出记录除了 `_id` 外还要包含哪些字段，各个字段的值必须用累加器表达式指定。当 `output` 指定时，默认的 `count` 是不会被默认输出的，必须手动指定：
+
 ```js
 output: {
   count: $.sum(1),
@@ -359,6 +362,7 @@ let res = await db.collection('items').aggregate()
 每组分别作为一个记录输出，包含一个以包含组中最大值和最小值两个字段的对象为值的 _id 字段和一个以组中记录数为值的 count 字段。count 在没有指定 output 的时候是默认输出的。
 
 **bucketAuto 的形式如下：**
+
 ```js
 bucketAuto({
   groupBy: <expression>,
@@ -378,6 +382,7 @@ bucketAuto({
 `granularity` 是可选枚举值字符串，用于保证自动计算出的边界符合给定的规则。这个字段仅可在所有 `groupBy` 值都是数字并且没有 `NaN` 的情况下使用。枚举值包括：`R5、R10、R20、R40、R80、1-2-5、E6、E12、E24、E48、E96、E192、POWERSOF2`。
 
 `output` 可选，用以决定输出记录除了 `_id` 外还要包含哪些字段，各个字段的值必须用累加器表达式指定。当 `output` 指定时，默认的 `count` 是不会被默认输出的，必须手动指定：
+
 ```js
 output: {
   count: $.sum(1),
@@ -1929,6 +1934,7 @@ let res = await db.collection('users')
 **API 说明**
 
 **形式如下：**
+
 ```js
 sort({
     // @ignore-translate

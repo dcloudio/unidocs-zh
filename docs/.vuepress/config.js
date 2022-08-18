@@ -55,7 +55,7 @@ module.exports = merge({
   chainWebpack(config, isServer) {
     config.resolve.alias.set(
       '@theme-config',
-      path.resolve(process.cwd(), 'docs/.vuepress/config')
+      path.resolve(process.cwd(), 'docs/.vuepress/config', process.env.DOCS_LOCAL)
     )
   }
 }, config)

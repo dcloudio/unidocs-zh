@@ -98,41 +98,58 @@ The following results are returned when the user information cannot be obtained
 ```
 
 **示例**
+**Example**
 ```js
 console.log(uniCloud.getCurrentUserInfo().role.indexOf('admin')>-1); // 如果是admin用户的话，打印结果为true
 console.log(uniCloud.getCurrentUserInfo().role.indexOf('admin')>-1); // If it is an admin user, the print result is true
 ```
 
 ### 新增拦截器@add-interceptor
+### Add interceptor @add-interceptor
 
 > 新增于HBuilderX 3.1.20
+> Added in HBuilderX 3.1.20
 
 接口形式：`uniCloud.addInterceptor(String apiName, Object interceptorMap)`
+Interface form: `uniCloud.addInterceptor(String apiName, Object interceptorMap)`
 
 **平台兼容性**
+**Platform Compatibility**
 
 |阿里云	|腾讯云	|
+|Alibaba Cloud |Tencent Cloud |
 |----		|----		|
 |√			|√			|
 
 
 **入参说明**
+**Introduction to parameters**
 
 | 字段					| 类型	| 必填| 说明																												|
+| Fields | Type | Required | Description |
 | ---						| ---		| ---	| ---																													|
 | apiName				| string| 是	| 要拦截的Api名称，可选值：callFunction、database、uploadFile	|
+| apiName | string| Yes | Api name to be intercepted, optional values: callFunction, database, uploadFile |
 | interceptorMap| object| 是	| 要添加的拦截器																							|
+| interceptorMap| object| yes | interceptor to add |
 
 **interceptorMap参数说明**
+**interceptorMap parameter description**
 
 |参数名		|类型			|必填	|默认值	|说明					|平台差异说明	|
+|Parameter Name |Type |Required |Default Value |Description |Platform Difference Description |
 |---			|---			|---	|---		|---					|---					|
 |invoke		|Function	|否		|				|拦截前触发		|							|
+|invoke |Function |No | |Invoke before interception | |
 |success	|Function	|否		|				|成功回调拦截	|							|
+|success |Function |No | |Success callback interception | |
 |fail			|Function	|否		|				|失败回调拦截	|							|
+|fail |Function |No | |Fail callback interception | |
 |complete	|Function	|否		|				|完成回调拦截	|							|
+|complete |Function |No | |Complete callback interception | |
 
 示例
+Example
 
 ```js
 uniCloud.addInterceptor('callFunction', {
@@ -158,30 +175,45 @@ uniCloud.addInterceptor('callFunction', {
 ```
 
 ### 移除拦截器@remove-interceptor
+### Remove interceptor @remove-interceptor
 
 > 新增于HBuilderX 3.1.20
+> Added in HBuilderX 3.1.20
 
 接口形式：`uniCloud.removeInterceptor(String apiName, Object interceptorMap)`
+Interface form: `uniCloud.removeInterceptor(String apiName, Object interceptorMap)`
 
 **入参说明**
+**Introduction to parameters**
 
 | 字段					| 类型	| 必填| 说明																												|
+| Fields | Type | Required | Description |
 | ---						| ---		| ---	| ---																													|
 | apiName				| string| 是	| 要拦截的Api名称，可选值：callFunction、database、uploadFile	|
+| apiName | string| Yes | Api name to be intercepted, optional values: callFunction, database, uploadFile |
 | interceptorMap| object| 是	| 要移除的拦截器，选填，不传递此参数时移除此Api所有拦截器			|
+| interceptorMap| object| Yes | The interceptor to be removed, optional, if this parameter is not passed, remove all interceptors of this API |
 
 **interceptorMap参数说明**
+**interceptorMap parameter description**
 
 |参数名		|类型			|必填	|默认值	|说明					|平台差异说明	|
+|Parameter Name |Type |Required |Default Value |Description |Platform Difference Description |
 |---			|---			|---	|---		|---					|---					|
 |invoke		|Function	|否		|				|拦截前触发		|							|
+|invoke |Function |No | |Invoke before interception | |
 |success	|Function	|否		|				|成功回调拦截	|							|
+|success |Function |No | |Success callback interception | |
 |fail			|Function	|否		|				|失败回调拦截	|							|
+|fail |Function |No | |Fail callback interception | |
 |complete	|Function	|否		|				|完成回调拦截	|							|
+|complete |Function |No | |Complete callback interception | |
 
 **注意：**
+**Notice:**
 
 - 要移除的拦截器内方法需和添加的方法一致才可以移除，详情见下方示例
+- The method in the interceptor to be removed must be consistent with the added method. For details, see the example below
 
 ```js
 // 错误用法，无法移除invoke拦截器
@@ -211,12 +243,16 @@ uniCloud.removeInterceptor('callFunction', {
 ```
 
 ### 监听云端响应@on-response
+### Listen for cloud response @on-response
 
 > 新增于HBuilderX 3.4.13
+> Added in HBuilderX 3.4.13
 
 用于监听云函数、云对象、clientDB的请求响应
+Used to monitor cloud functions, cloud objects, and clientDB's request responses
 
 代码示例：
+Code example:
 
 ```js
 uniCloud.onResponse(function(event) {
@@ -226,6 +262,7 @@ uniCloud.onResponse(function(event) {
 ```
 
 **响应格式**
+**Response format**
 
 ```js
 interface OnResponseEvent {
@@ -236,6 +273,7 @@ interface OnResponseEvent {
 ```
 
 **以调用云对象方法为例**
+**Take calling cloud object method as an example**
 
 ```js
 uniCloud.onResponse(function(e){
@@ -246,6 +284,7 @@ const res = await to.add('todo title', 'todo content')
 ```
 
 上述代码中打印的e格式如下
+The e format printed in the above code is as follows
 
 ```js
 // 成功响应
@@ -270,6 +309,7 @@ e = {
 ```
 
 可以通过判断content内是否有真值的errCode判断是失败还是成功的响应
+You can judge whether it is a failure or a successful response by judging whether there is a true errCode in the content
 
 ```js
 uniCloud.onResponse(function(e){
@@ -281,14 +321,19 @@ uniCloud.onResponse(function(e){
 ```
 
 ### 移除云端响应的监听@off-response
+### Remove the monitoring of cloud response @off-response
 
 > 新增于HBuilderX 3.4.13
+> Added in HBuilderX 3.4.13
 
 用于移除onResponse添加的监听器
+Used to remove the listener added by onResponse
 
 **注意**
+**Notice**
 
 - 要移除的监听内方法需和添加的方法一致才可以移除，详情见下方示例
+- The method in the listener to be removed must be the same as the method added before it can be removed. For details, see the example below
 
 ```js
 // 错误用法，无法移除监听
@@ -311,12 +356,16 @@ uniCloud.offResponse(logResponse)
 
 
 ### 监听需要登录事件@on-need-login
+### Listen for login required events @on-need-login
 
 > 新增于HBuilderX 3.5.0
+> Added in HBuilderX 3.5.0
 
 用于监听客户端需要登录事件，此接口需要搭配uniIdRouter使用，参考：[uniIdRouter](uni-id-summary.md#uni-id-router)
+It is used to monitor the event that the client needs to log in. This interface needs to be used with uniIdRouter. Refer to: [uniIdRouter](uni-id-summary.md#uni-id-router)
 
 代码示例：
+Code example:
 
 ```js
 uniCloud.onNeedLogin(function(event) {
@@ -326,6 +375,7 @@ uniCloud.onNeedLogin(function(event) {
 ```
 
 **响应格式**
+**Response format**
 
 ```js
 interface OnNeedLoginEvent {
@@ -337,16 +387,22 @@ interface OnNeedLoginEvent {
 ```
 
 **注意**
+**Notice**
 
 - 开发者自定监听onNeedLogin事件后，uniIdRouter的自动跳转登录页面功能会禁用，由开发者在`onNeedLogin`内自行处理跳转
+- After the developer monitors the onNeedLogin event, the automatic login page function of uniIdRouter will be disabled, and the developer will handle the jump in `onNeedLogin`
 
 ### 移除需要登录事件的监听@off-need-login
+### Remove the listener @off-need-login that requires login events
 
 > 新增于HBuilderX 3.5.0
+> Added in HBuilderX 3.5.0
 
 **注意**
+**Notice**
 
 - 要移除的监听内方法需和添加的方法一致才可以移除，详情见下方示例
+- The method in the listener to be removed must be the same as the method added before it can be removed. For details, see the example below
 
 ```js
 // 错误用法，无法移除监听
@@ -369,12 +425,16 @@ uniCloud.offNeedLogin(log)
 
 
 ### 监听token刷新事件@on-refresh-token
+### Listen to the token refresh event @on-refresh-token
 
 > 新增于HBuilderX 3.5.0
+> Added in HBuilderX 3.5.0
 
 用于监听客户端token刷新事件，包括云对象返回newToken时自动更新token及clientDB自动更新token，注意uni-id-co登录返回的token也会触发此事件
+Used to monitor client token refresh events, including automatic token update when cloud object returns newToken and clientDB automatic token update, note that the token returned by uni-id-co login will also trigger this event
 
 代码示例：
+Code example:
 
 ```js
 uniCloud.onRefreshToken(function(event) {
@@ -384,6 +444,7 @@ uniCloud.onRefreshToken(function(event) {
 ```
 
 **响应格式**
+**Response format**
 
 ```js
 interface OnRefreshTokenEvent {
@@ -393,16 +454,22 @@ interface OnRefreshTokenEvent {
 ```
 
 **注意**
+**Notice**
 
 - 开发者自定监听onNeedLogin事件后，uniIdRouter的自动跳转登录页面功能会禁用，由开发者在`onNeedLogin`内自行处理跳转
+- After the developer monitors the onNeedLogin event, the automatic login page function of uniIdRouter will be disabled, and the developer will handle the jump in `onNeedLogin`
 
 ### 移除需要登录事件的监听@off-need-login
+### Remove the listener @off-need-login that requires login events
 
 > 新增于HBuilderX 3.5.0
+> Added in HBuilderX 3.5.0
 
 **注意**
+**Notice**
 
 - 要移除的监听内方法需和添加的方法一致才可以移除，详情见下方示例
+- The method in the listener to be removed must be the same as the method added before it can be removed. For details, see the example below
 
 ```js
 // 错误用法，无法移除监听
@@ -424,22 +491,34 @@ uniCloud.offNeedLogin(log)
 ```
 
 ## 属性
+## Attributes
 
 ### 获取当前uniCloud实例的服务商
+### Get the service provider of the current uniCloud instance
 
 用法：`uniCloud.config.provider`
+Usage: `uniCloud.config.provider`
 
 访问此属性会返回`tencent`、`aliyun`分别代表腾讯云和阿里云
+Accessing this property will return `tencent` and `aliyun` representing Tencent Cloud and Aliyun respectively
 
 ## 错误对象@uni-cloud-error
+## Error object @uni-cloud-error
 
 客户端请求云端时（包括请求云函数、云对象、clientDB、云存储等）可能存在抛出错误的场景，此时会抛出uniCloud标准的错误对象（以下记为uniCloudError），uniCloudError包含以下属性
+When the client requests the cloud (including requesting cloud functions, cloud objects, clientDB, cloud storage, etc.), there may be scenarios where errors may be thrown. In this case, an uniCloud standard error object (referred to as uniCloudError hereinafter) will be thrown, and uniCloudError contains the following attributes
 
 |属性		|类型	|必备	|说明												|
+|property |type |required |description |
 |--			|--		|--		|--													|
 |errCode	|string	|是		|错误码												|
+|errCode |string |yes |error code |
 |errMsg		|string	|是		|错误信息											|
+|errMsg |string |yes |error message |
 |requestId	|string	|否		|请求Id，用于排查错误								|
+|requestId |string |No |RequestId, for troubleshooting |
 |detail		|object	|否		|仅云对象主动返回错误对应的响应体规范时会有此属性	|
+|detail |object |No |This property only exists when the cloud object actively returns the response body specification corresponding to the error |
 
 另外uniCloudError对象上还有code属性和message属性，两者均不推荐使用。
+In addition, there are code properties and message properties on the uniCloudError object, neither of which is recommended.

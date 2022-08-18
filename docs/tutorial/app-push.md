@@ -156,6 +156,7 @@ plus.push.createMessage(str, "LocalMSG", options);
 ```
 <a id="receive" />
 **iOS平台创建本地消息也会触发监听的"receive"事件，此时需要添加特殊参数来标识本地创建的消息。**
+**The creation of a local message on the iOS platform will also trigger the monitored "receive" event. In this case, special parameters need to be added to identify the locally created message. **
 ```
 // 监听在线消息事件
 // Listen for online message events
@@ -179,7 +180,9 @@ plus.push.addEventListener( "receive", function( msg ) {
 ```
 
 - 获取所有消息
+- Get all messages
 可以调用[plus.push.getAllMessage](http://www.html5plus.org/doc/zh_cn/push.html#plus.push.getAllMessage)获取系统通知栏中属于当前应用的所有消息，示例代码如下：
+You can call [plus.push.getAllMessage](http://www.html5plus.org/doc/zh_cn/push.html#plus.push.getAllMessage) to get all the messages belonging to the current application in the system notification bar. The sample code is as follows:
 ```JavaScript
 var msgs = plus.push.getAllMessage();
 for(var i in msgs){  
@@ -188,49 +191,81 @@ for(var i in msgs){
 }
 ```
 **iOS平台不支持获取系统通知栏消息，返回空数组。**
+**The iOS platform does not support getting system notification bar messages and returns an empty array. **
 
 
 ## 推送平台申请
+## Push platform application
 使用推送前需要向推送平台申请应用，并获取推送参数（提交云端打包时需配置），如appid、appkey等。
+Before using push, you need to apply for an application to the push platform and obtain push parameters (which need to be configured when submitting cloud packaging), such as appid, appkey, etc.
 
 ### 个推推送
+### Tweets
 登录个推[消息推送开放平台](https://dev.getui.com/)：
+Log in to Getui [Message Push Open Platform](https://dev.getui.com/):
 如果已经申请过个推的消息推送应用，打开“个推·消息推送”页面，在应用列表中找到申请的应用，点击“应用配置”打开应用信息页面，可获取个推的AppID、AppKey、AppSecret等信息。
+If you have already applied for a Getui message push application, open the "Gitui·Message Push" page, find the applied application in the application list, click "App Configuration" to open the application information page, and you can get the AppID, AppKey, AppSecret of Getui and other information.
 如果没有申请过应用，打开“[应用管理](https://dev.getui.com/dev/#/appManage)”页面选择“创建应用”申请新应用，申请成功后再通过上面的方法获取AppID、AppKey、AppSecret等参数。
+If you have not applied for an app before, open the "[App Management](https://dev.getui.com/dev/#/appManage)" page and select "Create App" to apply for a new app. After the application is successful, you can obtain the AppID through the above method. , AppKey, AppSecret and other parameters.
 
 **个推推送平台相关问题可直接咨询个推客服，企业QQ：2880983159。也可以在ask中@[getui_johny](http://ask.dcloud.net.cn/people/getui_johny)**
+**For questions related to the push platform, you can directly consult the customer service of the push platform, corporate QQ: 2880983159. You can also ask @[getui_johny](http://ask.dcloud.net.cn/people/getui_johny)**
 
 ### 小米推送
+### Xiaomi push
 登录[小米开放平台](https://dev.mi.com/console/)，进入“[管理控制台](https://dev.mi.com/console/man/)”页面，在“应用服务”栏选择“消息推送”，打开[推送运营平台](http://admin.xmpush.xiaomi.com/zh_CN/app/nav)：
+Log in to the [Xiaomi Open Platform](https://dev.mi.com/console/), go to the "[Management Console](https://dev.mi.com/console/man/)" page, in the "Application In the "Service" column, select "Message Push" and open the [Push Operation Platform](http://admin.xmpush.xiaomi.com/zh_CN/app/nav):
 如果已经在小米开放平台申请应用，则在应用列表中点击相应应用的“应用信息”按钮，打开应用信息页面可查看小米推送的AppID、AppKey、AppSecret等信息；若应用没有启用推送服务，则点击“启用推送”按钮申请开通。
+If you have applied for an application on the Xiaomi Open Platform, click the "App Information" button of the corresponding application in the application list to open the application information page to view the AppID, AppKey, AppSecret and other information pushed by Xiaomi; if the application does not have the push service enabled, click "Enable Push" button to apply for activation.
 如果没有申请过应用，则点击页面左上角的“创建应用”按钮创建新应用，创建成功后再他通过上面的方法“启用推送”功能并获取小米推送的AppID、AppKey、AppSecret等参数。
+If you have not applied for an app, click the "Create App" button in the upper left corner of the page to create a new app. After the creation is successful, he will use the above method to "enable the push" function and obtain the AppID, AppKey, AppSecret and other parameters pushed by Xiaomi.
 **小米推送需要为Android和iOS平台分别创建两个应用**
+**Xiaomi push needs to create two apps for Android and iOS platforms respectively**
 
 
 ## 云端打包配置
+## Cloud package configuration
 HBuilder|HBuilderX中提交云端打包前，需在manifest.json文件中配置Push推送模块的参数。
+Before submitting cloud packaging in HBuilder|HBuilderX, you need to configure the parameters of the Push module in the manifest.json file.
 
 ### 1. 模块配置、
+### 1. Module configuration,
 打开应用的manifest.json文件，选择“模块权限配置”项，勾选“Push(消息推送)”，如下图所示：
+Open the manifest.json file of the application, select the "Module Permission Configuration" item, and check "Push (message push)", as shown in the following figure:
 ![Push(消息推送)-模块权限配置](http://www.dcloud.io/docs/a/push/x_s1.png)
+![Push (message push)-module permission configuration](http://www.dcloud.io/docs/a/push/x_s1.png)
 
 ### 2. SDK参数配置
+### 2. SDK parameter configuration
 打开应用的manifest.json文件，选择“SDK配置”项，选择应用使用的推送平台，并输入从此推送平台申请获取的配置参数，如下图所示：
+Open the manifest.json file of the application, select the "SDK Configuration" item, select the push platform used by the application, and enter the configuration parameters obtained from the application for this push platform, as shown in the following figure:
 ![Push(消息推送)-SDK配置](http://www.dcloud.io/docs/a/push/x_s2.png)
+![Push (message push)-SDK configuration](http://www.dcloud.io/docs/a/push/x_s2.png)
 
 **Android平台云端打包时需要确认填写的app包名和在推送平台创建应用时填写的包名一致**
+**When the Android platform is packaged in the cloud, you need to confirm that the app package name filled in is the same as the package name filled in when the app was created on the push platform**
 **iOS平台云端打包时需要确人打包填写的Bundle ID（Apple AppID）和提交给推送平台的APS证书内包含的AppID一致**
+**When packaging the iOS platform in the cloud, the Bundle ID (Apple AppID) filled in by the packaging person must be consistent with the AppID contained in the APS certificate submitted to the push platform**
 
 
 ## 常见问题
+## common problem
 **1.为什么真机运行时不能收到推送的消息**
+**1. Why can't I receive the push message when the real machine is running**
 答： 如果需要测试推送功能，需要使用HBuilder云打包生成安装包进行测试。
+A: If you need to test the push function, you need to use the HBuilder cloud package to generate the installation package for testing.
 
 **2.推送消息到安卓平台为什么没有在消息中心中显示**
+**2. Why is the push message to Android platform not displayed in the message center**
 答： 如果推送到安卓平台的消息是透传消息，并且格式不符合规范则会触发监听页面的receive事件，消息不会进入消息中心。
+A: If the message pushed to the Android platform is a transparent message, and the format does not conform to the specification, the receive event of the monitoring page will be triggered, and the message will not enter the message center.
 
 **3. IOS平台本地创建本地消息会触发“receive”事件，如何和服务器发送的消息进行区分。**
+**3. The "receive" event is triggered when a local message is created locally on the IOS platform, how to distinguish it from the message sent by the server. **
 答： 用户在创建IOS本地消息是可以在“payload”节点添加特殊标记对消息进行区分
+Answer: When creating IOS local messages, users can add special tags to the "payload" node to distinguish the messages
 
 **4. Android平台如何配置推送消息图标**
+**4. How to configure push message icon on Android platform**
 答：参考[https://ask.dcloud.net.cn/article/35537](https://ask.dcloud.net.cn/article/35537)
+Answer: Refer to [https://ask.dcloud.net.cn/article/35537](https://ask.dcloud.net.cn/article/35537)

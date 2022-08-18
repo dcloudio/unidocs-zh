@@ -160,6 +160,7 @@ We have carefully prepared a simple ten-minute introduction video to help you qu
 ## Why choose uni-app?
 
 ```uni-app```在开发者数量、案例、跨端抹平度、扩展灵活性、性能体验、周边生态、学习成本、开发成本等8大关键指标上拥有更强的优势。
+```uni-app``` has stronger advantages in 8 key indicators such as the number of developers, cases, cross-end smoothing, expansion flexibility, performance experience, surrounding ecology, learning cost, and development cost.
 <!-- ![](https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/uni20190418.png) -->
 <div class="uniapp-home-content">
     <div class="uniapp-home-content-item">

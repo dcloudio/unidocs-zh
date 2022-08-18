@@ -79,6 +79,7 @@ The catalog list of personal information collected and used by the SDK disclosed
 **Purpose of use:** Push message (please fill in according to the specific purpose of use)
 
 **使用的权限:**
+**Permissions used:**
 ```
 android.permission.ACCESS_NETWORK_STATE
 android.permission.ACCESS_WIFI_STATE
@@ -88,19 +89,27 @@ android.permission.GET_TASKS
 ```
 
 **涉及个人信息:** 设备信息（IMEI、ANDROID_ID、DEVICE_ID、IMSI）、应用已安装列表、网络信息
+**Involving personal information:** Device information (IMEI, ANDROID_ID, DEVICE_ID, IMSI), application installed list, network information
 
 **隐私权政策链接:** [http://docs.getui.com/privacy](http://docs.getui.com/privacy)
 ***
 #### 方式二 以表格方式向用户呈现：
+#### Method 2 Present to the user in a form:
 
 <table style="word-break:break-all">
   <tr>
     <th style="width:10%">SDK名称</th>
+    <th style="width:10%">SDK name</th>
     <th style="width:10%">包名信息</th>
+    <th style="width:10%">package name information</th>
 	<th style="width:15%">使用目的</th>
+	<th style="width:15%">purpose of usage</th>
 	<th style="width:30%">使用的权限</th>
+	<th style="width:30%">Permission to use</th>
 	<th style="width:20%">涉及个人信息</th>
+	<th style="width:20%">involving personal information</th>
 	<th style="width:10%">隐私权政策链接</th>
+	<th style="width:10%">Privacy Policy Link</th>
   </tr>
   <tr>
     <td>个推·消息推送</td>
@@ -120,33 +129,51 @@ android.permission.GET_TASKS
 
 <a id="feature"></a>
 ## 四、查看uni-app(5+ App/Wap2App)集成模块补充隐私协议
+## 4. View uni-app (5+ App/Wap2App) integrated module supplementary privacy agreement
 
 #### 查看uni-app(5+ App/Wap2App)应用功能模块
+#### View uni-app (5+ App/Wap2App) application function module
 
 使用HBuilder X查看manifest.json的`App模块配置`,查看勾选了哪些模块配置。 根据配置的模块查看[Android平台各功能模块隐私合规协议](https://ask.dcloud.net.cn/article/39484)补充隐私合规协议到你的《隐私政策》中。
+Use HBuilder X to view the `App module configuration` of manifest.json to see which module configurations are checked. Check the [Privacy Compliance Agreement of Each Functional Module of the Android Platform](https://ask.dcloud.net.cn/article/39484) according to the configured modules and supplement the privacy compliance agreement to your Privacy Policy.
 
 #### 查看uni-app(5+ App/Wap2App)应用权限配置
+#### View uni-app (5+ App/Wap2App) application permission configuration
 
 使用HBuilder X查看manifest.json的`App权限配置`,查看勾选了那些权限配置。各功能模块用了哪些权限可查看文档[Android平台云端打包权限配置](https://ask.dcloud.net.cn/article/36982),不需要的权限请及时删除以免上架被拒！
+Use HBuilder X to view the `App permission configuration` of manifest.json to see which permission configurations are checked. See the document [Android Platform Cloud Packaging Permission Configuration](https://ask.dcloud.net.cn/article/36982) which permissions are used by each functional module. Please delete unnecessary permissions in time to avoid rejection!
 
 ### 离线打包
+### Offline packaging
 
 #### 三方sdk隐私合规
+#### Three-party sdk privacy compliance
 离线打包目前仅支持配置uni-app(5+ App/Wap2App)提供的隐私弹窗。自定义原生写的隐私弹窗是无法规避隐私协议问题的。
+Offline packaging currently only supports the configuration of privacy pop-ups provided by uni-app (5+ App/Wap2App). Custom natively written privacy pop-ups cannot avoid privacy protocol issues.
 
 集成的是离线打包SDK提供的依赖库 根据实际模块划分查看[Android平台各功能模块隐私合规协议](https://ask.dcloud.net.cn/article/39484)补充《隐私政策》协议即可。
+The integration is the dependency library provided by the offline packaging SDK. View the [Privacy Compliance Agreement of Each Functional Module of the Android Platform](https://ask.dcloud.net.cn/article/39484) according to the actual module division. The supplementary "Privacy Policy" agreement is Can.
 
 如果是宿主自己集成的三方SDK：
+If it is a third-party SDK integrated by the host itself:
 + 去三方平台获取隐私协议信息。补充到《隐私政策》中。
++ Go to the third-party platform to obtain privacy agreement information. Supplement to the Privacy Policy.
 + 调用SDK提供的API方法。SDK.isAgreePrivacy获取隐私协议状态。调用三方SDK的初始化逻辑。
++ Call API methods provided by SDK. SDK.isAgreePrivacy gets the privacy agreement status. Call the initialization logic of the third-party SDK.
 
 #### App权限配置
+#### App permissions configuration
 
 原生项目APP模块查看`AndroidManifest.xml`,根据实际情况检查App所需权限。
+View `AndroidManifest.xml` in the APP module of the native project, and check the permissions required by the App according to the actual situation.
 各功能模块用了哪些权限可查看文档[Android平台云端打包权限配置](https://ask.dcloud.net.cn/article/36982),不需要的权限请及时删除以免上架被拒！
+What permissions are used by each functional module can be viewed in the document [Android Platform Cloud Packaging Permission Configuration](https://ask.dcloud.net.cn/article/36982). Please delete unnecessary permissions in time to avoid rejection!
 
 ### uni原生插件
+### uni native plugin
 
 1、如果App集成了uni原生插件 需要注意插件文档是否涉及到用户隐私获取或敏感权限。相应的要将合规协议补充到《隐私政策》中。
+1、If the app integrates uni native plugins, you need to pay attention to whether the plugin documentation involves user privacy acquisition or sensitive permissions. Accordingly, the compliance agreement should be supplemented to the "Privacy Policy".
 
 2、uni原生插件可能会获取用户隐私获取或敏感权限。导致用户的App无法上架。这种情况宿主无法排查。可以使用排除法。将插件删除重新检测。
+2、The uni native plugin may obtain user privacy or sensitive permissions. As a result, the user's App cannot be launched. In this case, the host cannot check. Exclusion can be used. Delete the plugin and check again.

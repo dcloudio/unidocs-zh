@@ -87,6 +87,7 @@ Make sure the phone is connected properly, make sure the debuggable app is launc
 
 ================================================
 **正常情况下，开发者阅读到此结束。后续文档是Android模拟器的安装教程和不使用HBuilder调试而使用chrome调试的教程**
+**Under normal circumstances, the developer reads this to the end. The follow-up documents are the installation tutorial of the Android emulator and the tutorial of debugging with chrome without debugging with HBuilder**
 ================================================
 ================================================
 ## 附录：Android模拟器调试环境

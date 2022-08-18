@@ -187,7 +187,7 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 
 ##### border-radius
 ```border-radius```：设置边框的圆角，默认值 0，如果四个方向的圆角弧度不同，可分别设置：
-``border-radius``: Set the rounded corners of the border, the default value is 0. If the rounded corners in the four directions are different, you can set them separately:
+```border-radius```: Set the rounded corners of the border, the default value is 0. If the rounded corners in the four directions are different, you can set them separately:
 
 |可选值								|描述				|
 | Property| Describe|
@@ -496,6 +496,7 @@ If your component is bigger than its parent, it will be partial invisible as Wee
 ## Transition 
 
 ```transition```允许 CSS 的属性值在一定的时间区间内平滑地过渡。
+```transition``` allows CSS property values to transition smoothly within a certain time interval.
 #### transition-property
 设置过渡动画的属性名，设置不同样式 ```transition``` 效果的键值对，默认值为空，表示不执行任何过渡效果
 Allows the name of the transitional animation to set the value of the different styles transition effect, the default value is empty, that does not perform any transition, the following table lists all the legitimate parameters of the property:

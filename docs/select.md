@@ -103,13 +103,13 @@ For a detailed comparative evaluation of uni-app and WeChat development, please 
 **Is uni-app needed for App-only development?**
 
 ```uni-app```是更好的跨平台开发框架，开发一次iOS、Android都有了。体验好、开发效率高。
-``uni-app`` is a better cross-platform development framework, both iOS and Android can be developed once. Good experience and high development efficiency.
+```uni-app``` is a better cross-platform development framework, both iOS and Android can be developed once. Good experience and high development efficiency.
 
 <!-- ```uni-app```在App侧可以使用小程序引擎或weex引擎渲染，性能体验高于其他Hybrid框架。 -->
 <!-- ``uni-app``` can be rendered using the applet engine or the weex engine on the App side, and the performance experience is higher than other Hybrid frameworks. -->
 
 ```uni-app```在App端，基于能力层/渲染层分离的架构设计（见下图），渲染层是webview和weex二选一，能力调用都是共同的plus api，比如蓝牙、扫码等能力；也就是weex被内置到```uni-app```中，并且被强化了。
-``uni-app`` On the App side, based on the architecture design of the capability layer/rendering layer separation (see the figure below), the rendering layer is a choice between webview and weex, and the capability calls are all common plus apis, such as Bluetooth , scan code and other capabilities; that is, weex is built into ``uni-app``` and is enhanced.
+```uni-app``` On the App side, based on the architecture design of the capability layer/rendering layer separation (see the figure below), the rendering layer is a choice between webview and weex, and the capability calls are all common plus apis, such as Bluetooth , scan code and other capabilities; that is, weex is built into ``uni-app``` and is enhanced.
 
 ![](https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/frame_app.png)
 
@@ -123,18 +123,19 @@ uni-app solves this problem by providing a large number of extended APIs, and ha
 ```uni-app``` On the App side, you can use rich applet SDKs, such as NetEase Yunxin, Huanxin, Qiniu and many other SDK manufacturers maintain their original applet SDK versions, and these SDKs can be directly App for uni-app and published as iOS, Android.
 
 ```uni-app```的插件市场里有非常多的ui库、组件、模板，可以大幅提升开发效率。
-There are many ui libraries, components and templates in the plugin market of ``uni-app``, which can greatly improve development efficiency.
+There are many ui libraries, components and templates in the plugin market of ```uni-app```, which can greatly improve development efficiency.
 
 相比纯原生开发，```uni-app```体验可商用，也不会限制功能调用，但开发效率和开发成本更优于原生开发。
-Compared with pure native development, the ``uni-app`` experience can be used for commercial use and will not limit function calls, but the development efficiency and development cost are better than native development.
+Compared with pure native development, the ```uni-app``` experience can be used for commercial use and will not limit function calls, but the development efficiency and development cost are better than native development.
 
 如果你已经有了原生App，那么可以局部使用```uni-app```，内嵌uni小程序SDK，把部分栏目小程序化，或者直接打造自己的小程序平台。
-If you already have a native app, you can use ``uni-app``` locally, embed the uni applet SDK, make some columns into applet, or directly create your own applet platform.
+If you already have a native app, you can use ```uni-app``` locally, embed the uni applet SDK, make some columns into applet, or directly create your own applet platform.
 
 **uni-app是多端写在一个项目统一升级维护，还是每个端不同的项目，只复用部分代码**
 **Is uni-app written on multiple ends in one project for unified upgrade and maintenance, or is it a different project on each end and only part of the code is reused?**
 
 ```uni-app```是多端写在一个基础项目下，差异使用条件编译来管理。
+``uni-app`` is multi-terminal written under a base project, and differences are managed using conditional compilation.
 ``uni-app`` is multi-terminal written under a base project, and differences are managed using conditional compilation.
 
 这有个巨大的好处是一套工程代码，升级时可多端同时更新。
@@ -224,7 +225,7 @@ There are official introductory training videos, and there are many training cha
 **Is uni-app mature?**
 
 ```uni-app```在2018年夏天推出，目前版本成熟，生态资源丰富，是当今主流的开发框架，案例众多，手机端引擎月活已经突破10亿！
-``uni-app`` was launched in the summer of 2018. The current version is mature and the ecological resources are rich. It is the mainstream development framework today. There are many cases, and the monthly activity of the mobile engine has exceeded 1 billion!
+```uni-app``` was launched in the summer of 2018. The current version is mature and the ecological resources are rich. It is the mainstream development framework today. There are many cases, and the monthly activity of the mobile engine has exceeded 1 billion!
 
 
 **uni-app的社区活跃吗？**
@@ -256,7 +257,7 @@ There are also many tripartite training based on ``uni-app``. Tencent Classroom 
 The HTML5Plus specification used in the ``DCloud``` product is a standard specification of the alliance rather than a private API.
 
 ```DCloud```的产品技术一直引领业内，2015年就上线业内第一个"小程序"：DCloud流应用。随后DCloud广泛推动业内各大公司上线"小程序"，普及该技术广泛应用。
-The product technology of ``DCloud`` has always been leading the industry. In 2015, the industry's first "mini program" was launched: DCloud streaming application. Subsequently, DCloud widely promoted major companies in the industry to launch "mini programs" and popularized the widespread application of this technology.
+The product technology of ```DCloud``` has always been leading the industry. In 2015, the industry's first "mini program" was launched: DCloud streaming application. Subsequently, DCloud widely promoted major companies in the industry to launch "mini programs" and popularized the widespread application of this technology.
 
 阿里小程序IDE官方内嵌`uni-app`、腾讯课堂官方录制`uni-app`培训视频、华为腾讯阿里字节跳动京东等众多一线公司使用uni-app，uni-app没有让他们失望，也不会让你失望。
 Alibaba Mini Program IDE officially embeds `uni-app`, Tencent Classroom officially recorded `uni-app` training videos, Huawei, Tencent, Alibaba, ByteDance, JD.com and many other first-tier companies use uni-app. uni-app did not disappoint them, and Will not disappoint you.

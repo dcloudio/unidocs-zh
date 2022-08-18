@@ -131,6 +131,7 @@ Automatically generated form pages, including new pages and edit pages. These pa
 > In versions before HBuilderX 3.1.15, `pages.json` will overwrite the existing `pages.json` in the user's project when importing. When confirming the import, choose not to import the file and manually copy the content to `pages.json`
 
 **全程演示视频**：
+**Full demonstration video**:
 </br>
 <video style="width:50vw;height:28vw;" id="video" preload="none" controls="controls"
 	poster="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a04e1d03-6d9f-43bf-a74b-80e9a5c31d7f.mp4?x-oss-process=video/snapshot,t_1000,f_jpg" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a04e1d03-6d9f-43bf-a74b-80e9a5c31d7f.mp4"></video>

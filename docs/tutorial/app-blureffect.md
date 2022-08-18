@@ -12,6 +12,7 @@
 Here's how to use the Gaussian blur effect, and some precautions.
 
 **效果**  
+**Effect**  
 ![](https://native-res.dcloud.net.cn/images/uniapp/blureffect/demo.png)
 
 
@@ -291,6 +292,7 @@ Note: backgroundColor needs to be set with a transparent color to see the Gaussi
 > The Android platform is not currently supported
 
 **效果**  
+**Effect**  
 ![](https://native-res.dcloud.net.cn/images/uniapp/blureffect/nvue.png)
 
 #### 使用方法  

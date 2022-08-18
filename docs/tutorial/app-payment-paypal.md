@@ -25,6 +25,7 @@ For more information, please refer to [Operation Guide for Applying to Open Payp
 ![](https://native-res.dcloud.net.cn/images/uniapp/payment/paypal_setup_manifest_info.png)
 
 **参数说明**  
+**Parameter Description**  
 - returnURL_android  
 Android平台使用的return URL，必须与paypal开发者中心配置的值一致，否则无法调起支付
 The return URL used by the Android platform must be the same as the value configured in the paypal developer center, otherwise the payment cannot be invoked

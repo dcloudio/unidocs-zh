@@ -21,6 +21,7 @@ For more information, see [Operation Guide for Applying for Stripe](https://unia
 ![](https://native-res.dcloud.net.cn/images/uniapp/payment/stripe_setup_manifest_info.png)
 
 **参数说明**  
+**Parameter Description**  
 - returnURL  
 Android平台使用，格式为"your-app://stripe"(示例 io.dcloud.test://stripe)，'your-app'为应用的bundle id或其它自定义scheme，参考:[配置一个自定义页面内跳转协议 (URL Scheme)](https://ask.dcloud.net.cn/article/64)
 For Android platform, the format is "your-app://stripe" (example io.dcloud.test://stripe), 'your-app' is the bundle id of the application or other custom schemes, refer to: [Configure a custom scheme Define the Jump Protocol (URL Scheme) in the page](https://ask.dcloud.net.cn/article/64)

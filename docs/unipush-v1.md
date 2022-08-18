@@ -731,6 +731,7 @@ For detailed tutorials, see: [https://ask.dcloud.net.cn/article/37356](https://a
 If the application can receive push messages online, but cannot receive push messages using the vendor channel when offline, please refer to **UniPush vendor channel FAQ [https://ask.dcloud.net.cn/article/36611](https:/ /ask.dcloud.net.cn/article/36611)**
 
 **最后也可以登录[个推官网](https://www.getui.com/)，或使用微信扫描下面二维码，进行技术咨询**  
+**Finally, you can also log in to the [Getui official website](https://www.getui.com/), or use WeChat to scan the QR code below for technical consultation**
 ![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/getui-service.jpg)
 
 

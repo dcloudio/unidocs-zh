@@ -168,6 +168,7 @@ When your business is on uniCloud, reference the common module `uni-open-bridge-
 > `Cloud function common module` is a way for different cloud functions to share code. If you don't know what `cloud function common module` is, please read the document [public module](https://uniapp.dcloud.io/uniCloud/cf-common)
 
 `uni-open-bridge-common` 提供了 `access_token`、`user_access_token`、`session_key`、`encrypt_key`、`ticket` 的读取、写入、删除操作。
+`uni-open-bridge-common` provides `access_token`, `user_access_token`, `session_key`, `encrypt_key`, `ticket` read, write, delete operations.
 
 `uni-open-bridge-common` 支持多层 读取 / 写入 机制，`redis -> database -> fallback`，优先级如下:
 `uni-open-bridge-common` supports multi-layer read/write mechanism, `redis -> database -> fallback`, the priority is as follows:
@@ -176,11 +177,13 @@ When your business is on uniCloud, reference the common module `uni-open-bridge-
 If the user does not activate `redis` or the operation fails, it will be transparently transmitted to `database`. After `database` fails, if the user configures `fallback`, continue to call the `fallback` method, otherwise throw `Error`, `database` corresponds to The table is: `opendb-open-data`
 
 在常见的情况下，在你的云函数/云对象中调用`uni-open-bridge-common`的几个get方法即可。
+In common cases, it is enough to call several get methods of `uni-open-bridge-common` in your cloud function/cloud object.
 
 ```js
 let uobc = require('uni-open-bridge-common')
 
 // 应用级凭据
+// application level credentials
 const key = {
   dcloudAppid: '__UNI__xxx', // DCloud Appid
   platform: 'mp-weixin' // 平台，解释见下
@@ -190,6 +193,7 @@ uobc.getTicket(key)
 
 
 // 用户级凭据
+// User level credentials
 const userKey = {
   dcloudAppid: '__UNI__xxx', // DCloud Appid
   platform: 'mp-weixin', // 平台，解释见下
@@ -204,17 +208,24 @@ uobc.getEncryptKey(userKey)
 #### Platform@platform
 
 平台对应的值
+The value corresponding to the platform
 
 |值					|描述				|
+|value |description |
 |:-:				|:-:				|
 |mp-weixin	|微信小程序	|
+|mp-weixin |WeChat Mini Program |
 |app-weixin	|微信 App	  |
+|app-weixin |WeChat App |
 |h5-weixin	|微信公众号	|
+|h5-weixin |WeChat Official Account |
 |web-weixin	|微信pc网页	|
+|web-weixin |WeChat pc webpage |
 |mp-qq			|QQ 小程序		|
 |app-qq			|QQ App			|
 
 提示：目前仅支持 `mp-weixin`、`h5-weixin` 后续补充其他平台
+Tip: Currently only `mp-weixin` and `h5-weixin` are supported. Other platforms will be added later
 
 #### getAccessToken(key: Object, fallback: Function)
 
@@ -224,10 +235,12 @@ read access_token
 #### setAccessToken(key: Object, value: Object, expiresIn: Number)
 
 写入 access_token。开发者一般只需使用get类方法，用不到set、remove类方法。下同
+Write access_token. Developers generally only need to use the get class method, and do not use the set and remove class methods. Same below
 
 #### removeAccessToken(key: Object)
 
 删除 access_token。开发者一般只需使用get类方法，用不到set、remove类方法。下同
+Remove access_token. Developers generally only need to use the get class method, and do not use the set and remove class methods. Same below
 
 
 **key 属性**
@@ -301,14 +314,17 @@ exports.main = async (event, context) => {
 #### getUserAccessToken(key: Object, fallback: Function)
 
 读取 `user_access_token`
+read `user_access_token`
 
 #### setUserAccessToken(key: Object, value: Object, expiresIn: Number)
 
 写入 `user_access_token`
+write `user_access_token`
 
 #### removeUserAccessToken(key: Object)
 
 删除 `user_access_token`
+remove `user_access_token`
 
 
 对应微信公众平台网页用户授权 `access_token`，详情见下文说明
@@ -686,6 +702,7 @@ In order to simplify calling `getAccessToken()`, `getTicket()` has built-in `fal
 
 
 ### 云对象URL化方式@cloudurl
+### Cloud object URLization method @cloudurl
 
 云对象 `uni-open-bridge` URL化后，让非uniCloud系统可通过 http 方式访问凭据。
 The cloud object `uni-open-bridge` is URLized to allow non-uniCloud systems to access credentials via http.
@@ -697,6 +714,7 @@ The cloud object `uni-open-bridge` is URLized to allow non-uniCloud systems to a
 Request type `POST`, IP whitelist field `ipWhiteList` can be configured, see `config.json`
 
 配置URL化后，其他系统可以通过下面的http接口，读写删各种开放平台凭据。
+After configuring URLization, other systems can read, write and delete various open platform credentials through the following http interface.
 
 #### getAccessToken
 
@@ -717,10 +735,12 @@ parameter
 ```
 
 其中参数platform值域[详见](#platform)。下同，不再复述。
+The parameter platform value range [see details](#platform). The same below, and will not be repeated.
 
 #### setAccessToken
 
 如果各种开放平台凭据由`uni-open-bridge`托管，那么只需要调用各种get方法，是用不到set等方法的。但在某些情况下，相关凭据没有由`uni-open-bridge`从微信服务器获取，就需要这些set方法了。[详见](#nouseuniopenbridge)
+If various open platform credentials are hosted by `uni-open-bridge`, you only need to call various get methods instead of set and other methods. But in some cases, the relevant credentials are not obtained from the WeChat server by `uni-open-bridge`, and these set methods are needed. [See details](#nouseuniopenbridge)
 
 Url
 
@@ -732,6 +752,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setAcces
 parameter
 
 由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
+The relevant credentials are obtained from WeChat by the external system, and then written. [See details](#nouseuniopenbridge)
 
 ```json
 {
@@ -795,6 +816,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setUserA
 parameter
 
 由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
+The relevant credentials are obtained from WeChat by the external system, and then written. [See details](#nouseuniopenbridge)
 
 ```json
 {
@@ -858,6 +880,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setSessi
 parameter
 
 由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
+The relevant credentials are obtained from WeChat by the external system, and then written. [See details](#nouseuniopenbridge)
 
 ```json
 {
@@ -922,6 +945,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setEncry
 parameter
 
 由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
+The relevant credentials are obtained from WeChat by the external system, and then written. [See details](#nouseuniopenbridge)
 
 ```json
 {
@@ -987,6 +1011,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setTicke
 parameter
 
 由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
+The relevant credentials are obtained from WeChat by the external system, and then written. [See details](#nouseuniopenbridge)
 
 ```json
 {
@@ -1122,31 +1147,46 @@ Developers can obtain the user's encryption key through the interfaces provided 
 `ticket` is a temporary ticket used by the official account to call the WeChat JS interface. Under normal circumstances, the validity period of `ticket` is 7200 seconds, which is obtained through `access_token`.
 
 由于获取 `ticket` 的 api 调用次数非常有限，频繁刷新 `ticket` 会导致 api 调用受限，影响自身业务，开发者必须在自己的服务全局缓存 `ticket `。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62)
+Since the number of api calls to obtain `ticket` is very limited, frequent refresh of `ticket` will limit api calls and affect their own business. Developers must cache `ticket` globally in their own services. [Details](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62)
 
 
 ## 不使用 `uni-open-bridge` 托管的情况@nouseuniopenbridge
+## Hosting without `uni-open-bridge` @nouseuniopenbridge
 
 如开发者的老业务里已经获取了微信的access_token等凭据，难以迁移到由`uni-open-bridge`来托管微信相关凭据。
+For example, the developer's old business has already obtained credentials such as WeChat's access_token, and it is difficult to migrate to `uni-open-bridge` to host WeChat-related credentials.
 
 那么`uni-open-bridge`也暴露了允许三方系统给`uni-open-bridge`写入微信相关凭据的接口。
+Then `uni-open-bridge` also exposes an interface that allows third-party systems to write WeChat-related credentials to `uni-open-bridge`.
 
 因为其他插件会依赖`uni-open-bridge`，比如：
+Because other plugins will depend on `uni-open-bridge`, for example:
 1. `uni-ad`微信小程序激励视频广告服务器回调
+1. `uni-ad` WeChat applet rewarded video ad server callback
 2. uni云端一体安全网络
+2. uni cloud integrated security network
 
 如果`uni-open-bridge`里没有相关凭据，上述插件或功能就无法使用。
+If there are no relevant credentials in `uni-open-bridge`, the above plugins or functions will not work.
 
 因此，开发者即不想改成由`uni-open-bridge`托管微信凭据，又需要使用上述依赖`uni-open-bridge`的功能或插件，就只能将老系统获取到的相关凭据写入到`uni-open-bridge`中。
+Therefore, developers do not want to change to `uni-open-bridge` to host WeChat credentials, but also need to use the above functions or plug-ins that rely on `uni-open-bridge`, they can only write the relevant credentials obtained by the old system into writing into `uni-open-bridge`.
 
 此时，开发者需通过以下方式处理：
+At this point, the developer needs to deal with it in the following ways:
 
 1. 取消`uni-open-bridge`云对象的定时任务，不再定时向微信服务器请求凭据
+1. Cancel the scheduled task of the `uni-open-bridge` cloud object, and no longer request credentials from the WeChat server regularly
 
 在`uni-open-bridge`云对象的package.json中找到定时器节点`triggers`，删除该节点。本地修改package.json后需重新上传到服务空间方生效。
+Find the timer node `triggers` in the package.json of the `uni-open-bridge` cloud object and delete this node. After modifying the package.json locally, it needs to be re-uploaded to the service space for it to take effect.
 
 参考[定时任务配置](cf-functions.md#packagejson))。
+Refer to [Scheduled Task Configuration](cf-functions.md#packagejson)).
 
 2. 老系统从微信服务器获取到相关凭据后调用`uni-open-bridge`的set方法写入凭据
+2. After the old system obtains the relevant credentials from the WeChat server, it calls the set method of `uni-open-bridge` to write the credentials
 
 先将云对象`uni-open-bridge`进行URL化，暴露出http接口。然后老系统调用setAccessToken、setUserAccessToken、setSessionKey、setEncryptKey、setTicket等接口。[参考](#cloudurl)
+First URLize the cloud object `uni-open-bridge` to expose the http interface. Then the old system calls interfaces such as setAccessToken, setUserAccessToken, setSessionKey, setEncryptKey, and setTicket. [Reference](#cloudurl)
 

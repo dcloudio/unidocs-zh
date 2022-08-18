@@ -167,14 +167,54 @@ When your business is on uniCloud, reference the common module `uni-open-bridge-
 > `云函数公共模块`是不同云函数共享代码的一种方式。如果你不了解什么是`云函数公共模块`，请另读文档[公共模块](https://uniapp.dcloud.io/uniCloud/cf-common)
 > `Cloud function common module` is a way for different cloud functions to share code. If you don't know what `cloud function common module` is, please read the document [public module](https://uniapp.dcloud.io/uniCloud/cf-common)
 
-`uni-open-bridge-common` 提供了 `access_token`、`session_key`、`encrypt_key`、`ticket` 的读取、写入、删除操作。
-`uni-open-bridge-common` provides read, write, delete operations for `access_token`, `session_key`, `encrypt_key`, `ticket`.
+`uni-open-bridge-common` 提供了 `access_token`、`user_access_token`、`session_key`、`encrypt_key`、`ticket` 的读取、写入、删除操作。
 
 `uni-open-bridge-common` 支持多层 读取 / 写入 机制，`redis -> database -> fallback`，优先级如下:
 `uni-open-bridge-common` supports multi-layer read/write mechanism, `redis -> database -> fallback`, the priority is as follows:
 
 如果用户没有开通 `redis` 或者操作失败，透传到 `database`，`database` 失败后，如果用户配置了 `fallback`，继续调用 `fallback` 方法，否则抛出 `Error`，`database` 对应的表为: `opendb-open-data`
 If the user does not activate `redis` or the operation fails, it will be transparently transmitted to `database`. After `database` fails, if the user configures `fallback`, continue to call the `fallback` method, otherwise throw `Error`, `database` corresponds to The table is: `opendb-open-data`
+
+在常见的情况下，在你的云函数/云对象中调用`uni-open-bridge-common`的几个get方法即可。
+
+```js
+let uobc = require('uni-open-bridge-common')
+
+// 应用级凭据
+const key = {
+  dcloudAppid: '__UNI__xxx', // DCloud Appid
+  platform: 'mp-weixin' // 平台，解释见下
+}
+uobc.getAccessToken(key)
+uobc.getTicket(key)
+
+
+// 用户级凭据
+const userKey = {
+  dcloudAppid: '__UNI__xxx', // DCloud Appid
+  platform: 'mp-weixin', // 平台，解释见下
+  openid: ''
+}
+uobc.getUserAccessToken(userKey)
+uobc.getSessionKey(userKey)
+uobc.getEncryptKey(userKey)
+
+```
+
+#### Platform@platform
+
+平台对应的值
+
+|值					|描述				|
+|:-:				|:-:				|
+|mp-weixin	|微信小程序	|
+|app-weixin	|微信 App	  |
+|h5-weixin	|微信公众号	|
+|web-weixin	|微信pc网页	|
+|mp-qq			|QQ 小程序		|
+|app-qq			|QQ App			|
+
+提示：目前仅支持 `mp-weixin`、`h5-weixin` 后续补充其他平台
 
 #### getAccessToken(key: Object, fallback: Function)
 
@@ -183,13 +223,11 @@ read access_token
 
 #### setAccessToken(key: Object, value: Object, expiresIn: Number)
 
-写入 access_token
-write access_token
+写入 access_token。开发者一般只需使用get类方法，用不到set、remove类方法。下同
 
 #### removeAccessToken(key: Object)
 
-删除 access_token
-delete access_token
+删除 access_token。开发者一般只需使用get类方法，用不到set、remove类方法。下同
 
 
 **key 属性**
@@ -262,18 +300,15 @@ exports.main = async (event, context) => {
 
 #### getUserAccessToken(key: Object, fallback: Function)
 
-读取 user_access_token
-read user_access_token
+读取 `user_access_token`
 
 #### setUserAccessToken(key: Object, value: Object, expiresIn: Number)
 
-写入 user_access_token
-write user_access_token
+写入 `user_access_token`
 
 #### removeUserAccessToken(key: Object)
 
-删除 user_access_token
-remove user_access_token
+删除 `user_access_token`
 
 
 对应微信公众平台网页用户授权 `access_token`，详情见下文说明
@@ -625,27 +660,6 @@ exports.main = async (event, context) => {
 ```
 
 
-#### Platform@platform
-
-平台对应的值
-The value corresponding to the platform
-
-|值					|描述				|
-|value |description |
-|:-:				|:-:				|
-|mp-weixin	|微信小程序	|
-|mp-weixin |WeChat Mini Program |
-|app-weixin	|微信 App	  |
-|app-weixin |WeChat App |
-|h5-weixin	|微信公众号	|
-|h5-weixin |WeChat Official Account |
-|web-weixin	|微信pc网页	|
-|web-weixin |WeChat pc webpage |
-|mp-qq			|QQ 小程序		|
-|app-qq			|QQ App			|
-
-提示：目前仅支持 `mp-weixin`、`h5-weixin` 后续补充其他平台
-Tip: Currently only `mp-weixin` and `h5-weixin` are supported. Other platforms will be added later
 
 #### fallback
 
@@ -671,8 +685,7 @@ In order to simplify calling `getAccessToken()`, `getTicket()` has built-in `fal
 - All methods check whether the `key` property is valid, if invalid, `throw new Error()`, for `value` only check whether it is `Object`
 
 
-### 云对象URL化方式
-### Cloud object URLization method
+### 云对象URL化方式@cloudurl
 
 云对象 `uni-open-bridge` URL化后，让非uniCloud系统可通过 http 方式访问凭据。
 The cloud object `uni-open-bridge` is URLized to allow non-uniCloud systems to access credentials via http.
@@ -683,6 +696,7 @@ The cloud object `uni-open-bridge` is URLized to allow non-uniCloud systems to a
 请求类型 `POST`, 可以配置IP白名单字段 `ipWhiteList`，参见 `config.json`
 Request type `POST`, IP whitelist field `ipWhiteList` can be configured, see `config.json`
 
+配置URL化后，其他系统可以通过下面的http接口，读写删各种开放平台凭据。
 
 #### getAccessToken
 
@@ -702,7 +716,11 @@ parameter
 }
 ```
 
+其中参数platform值域[详见](#platform)。下同，不再复述。
+
 #### setAccessToken
+
+如果各种开放平台凭据由`uni-open-bridge`托管，那么只需要调用各种get方法，是用不到set等方法的。但在某些情况下，相关凭据没有由`uni-open-bridge`从微信服务器获取，就需要这些set方法了。[详见](#nouseuniopenbridge)
 
 Url
 
@@ -713,8 +731,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setAcces
 参数
 parameter
 
-[如何获取需要传递的参数](#getdatawithwxserver)
-[How to get the parameters that need to be passed](#getdatawithwxserver)
+由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
 
 ```json
 {
@@ -746,8 +763,6 @@ parameter
 }
 ```
 
-其中参数platform值域[详见](#platform)
-The parameter platform value range [see details](#platform)
 
 #### getUserAccessToken
 
@@ -779,8 +794,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setUserA
 参数
 parameter
 
-[如何获取需要传递的参数](#getdatawithwxserver)
-[How to get the parameters that need to be passed](#getdatawithwxserver)
+由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
 
 ```json
 {
@@ -843,8 +857,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setSessi
 参数
 parameter
 
-[如何获取需要传递的参数](#getdatawithwxserver)
-[How to get the parameters that need to be passed](#getdatawithwxserver)
+由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
 
 ```json
 {
@@ -908,8 +921,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setEncry
 参数
 parameter
 
-[如何获取需要传递的参数](#getdatawithwxserver)
-[How to get the parameters that need to be passed](#getdatawithwxserver)
+由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
 
 ```json
 {
@@ -974,8 +986,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setTicke
 参数
 parameter
 
-[如何获取需要传递的参数](#getdatawithwxserver)
-[How to get the parameters that need to be passed](#getdatawithwxserver)
+由外部系统从微信获取到相关凭据，然后写入。[详见](#nouseuniopenbridge)
 
 ```json
 {
@@ -1005,48 +1016,6 @@ parameter
 }
 ```
 
-
-
-## 业务系统不在uniCloud时操作相关凭据的方法
-## How to operate related credentials when the business system is not in uniCloud
-
-当业务不在uniCloud上时，需要从业务服务器主动将数据同步到 `uni-open-bridge`
-When the business is not on uniCloud, the data needs to be actively synchronized from the business server to `uni-open-bridge`
-
-例如：`uni-ad`微信小程序激励视频广告服务器回调
-For example: `uni-ad` WeChat applet rewarded video ad server callback
-
-因`uni-ad`微信小程序激励视频广告服务器回调依赖 `uni-open-bridge` 接管三方平台数据，但现有业务也需要三方平台数据，又不想改动现有逻辑，通过以下方式处理
-Because the `uni-ad` WeChat applet rewarded video ad server callback relies on `uni-open-bridge` to take over the third-party platform data, but the existing business also needs the third-party platform data, and does not want to change the existing logic, it is handled in the following ways
-
-### 关闭定时刷新
-### Turn off scheduled refresh
-
-为了避免多处同时请求微信的服务器获取相关凭据后导致上次的值失效
-In order to avoid multiple servers requesting WeChat at the same time to obtain the relevant credentials, the last value will become invalid.
-
-所以需要关闭 `uni-open-bridge` 定时刷新功能，[详情](uniopenbridgeconfig)，然后由开发者的业务服务器统一获取后主动同步到 `uni-open-bridge`
-Therefore, it is necessary to turn off the `uni-open-bridge` timing refresh function, [Details](uniopenbridgeconfig), and then the developer's business server will obtain it and actively synchronize it to `uni-open-bridge`
-
-### 获取数据@getdatawithwxserver
-### Get data @getdatawithwxserver
-
-1. 从微信服务器统一获取相关凭据
-1. Obtain relevant credentials uniformly from the WeChat server
-2. 同步一份数据到 `uni-open-bridge`，以让依赖数据的模块可正常工作
-2. Sync a piece of data to `uni-open-bridge`, so that data-dependent modules can work properly
-
-### 同步数据
-### Synchronous Data
-
-将从微信服务器获取的凭据同步到 `uni-open-bridge`
-Sync credentials obtained from WeChat server to `uni-open-bridge`
-
-`uni-open-bridge` 提供了 http 的读取，写入、删除操作
-`uni-open-bridge` provides http read, write, delete operations
-
-提示：由于业务维护这些数据还是比较麻烦，推荐统一由 `uni-open-bridge` 接管，业务服务器通过 http 的方式获取
-Tip: Since it is still troublesome for business to maintain these data, it is recommended to take over by `uni-open-bridge`, and the business server obtains it through http.
 
 ## 微信凭据介绍
 ## WeChat Credentials Introduction
@@ -1153,4 +1122,31 @@ Developers can obtain the user's encryption key through the interfaces provided 
 `ticket` is a temporary ticket used by the official account to call the WeChat JS interface. Under normal circumstances, the validity period of `ticket` is 7200 seconds, which is obtained through `access_token`.
 
 由于获取 `ticket` 的 api 调用次数非常有限，频繁刷新 `ticket` 会导致 api 调用受限，影响自身业务，开发者必须在自己的服务全局缓存 `ticket `。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62)
-Since the number of api calls to obtain `ticket` is very limited, frequent refresh of `ticket` will limit api calls and affect their own business. Developers must cache `ticket` globally in their own services. [Details](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62)
+
+
+## 不使用 `uni-open-bridge` 托管的情况@nouseuniopenbridge
+
+如开发者的老业务里已经获取了微信的access_token等凭据，难以迁移到由`uni-open-bridge`来托管微信相关凭据。
+
+那么`uni-open-bridge`也暴露了允许三方系统给`uni-open-bridge`写入微信相关凭据的接口。
+
+因为其他插件会依赖`uni-open-bridge`，比如：
+1. `uni-ad`微信小程序激励视频广告服务器回调
+2. uni云端一体安全网络
+
+如果`uni-open-bridge`里没有相关凭据，上述插件或功能就无法使用。
+
+因此，开发者即不想改成由`uni-open-bridge`托管微信凭据，又需要使用上述依赖`uni-open-bridge`的功能或插件，就只能将老系统获取到的相关凭据写入到`uni-open-bridge`中。
+
+此时，开发者需通过以下方式处理：
+
+1. 取消`uni-open-bridge`云对象的定时任务，不再定时向微信服务器请求凭据
+
+在`uni-open-bridge`云对象的package.json中找到定时器节点`triggers`，删除该节点。本地修改package.json后需重新上传到服务空间方生效。
+
+参考[定时任务配置](cf-functions.md#packagejson))。
+
+2. 老系统从微信服务器获取到相关凭据后调用`uni-open-bridge`的set方法写入凭据
+
+先将云对象`uni-open-bridge`进行URL化，暴露出http接口。然后老系统调用setAccessToken、setUserAccessToken、setSessionKey、setEncryptKey、setTicket等接口。[参考](#cloudurl)
+

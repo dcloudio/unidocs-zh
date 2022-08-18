@@ -55,7 +55,12 @@ module.exports = merge({
   chainWebpack(config, isServer) {
     config.resolve.alias.set(
       '@theme-config',
-      path.resolve(process.cwd(), 'docs/.vuepress/config', process.env.DOCS_LOCAL || 'zh')
+      path.resolve(process.cwd(), 'docs/.vuepress/config')
     )
-  }
-}, config)
+  },
+  plugins: [
+    ["vuepress-plugin-juejin-style-copy", copyOptions]
+  ]
+}
+
+module.exports = config

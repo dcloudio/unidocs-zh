@@ -1,6 +1,5 @@
 ## 视频介绍
-## Video introduction
-<a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=11">
+<a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=12">
     <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/71d310a5-ef69-4ca5-88c8-9a3abf8fb8e3.png" alt="腾讯课堂uniCloud视频教程" style="width: 70%;margin-bottom:26px;">
     <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/71d310a5-ef69-4ca5-88c8-9a3abf8fb8e3.png" alt="Tencent classroom uniCloud video tutorial" style="width: 70%;margin-bottom:26px;">
 </a>
@@ -89,9 +88,7 @@ GitCode repository: [https://gitcode.net/dcloud/uni-starter](https://gitcode.net
 7. 内置拦截器：
 7. Built-in interceptor:
 	- 页面路由拦截，配置需强制登录的页面；打开时自动检测`token`若无效就自动跳转到登录页
-	- Page routing interception, configure the page that needs to be forced to log in; automatically detect the `token` when it is opened, and automatically jump to the login page if it is invalid
-	- 调用云函数（callFunction）拦截器，自动携带必要参数、自动处理响应体。详见9.自动完成1-2
-	- Call the cloud function (callFunction) interceptor, automatically carry the necessary parameters, and automatically process the response body. See 9. Autocomplete 1-2 for details
+	- 调用云函数（callFunction）拦截器，自动携带必要参数、自动处理响应体。详见8.自动完成1-2
 8. 自动完成：
 8. Autocomplete:
 	- 分析uniCloud.callfunction和clientDB操作的响应体，判断code执行对应的操作如跳转到登录页，自动续期token

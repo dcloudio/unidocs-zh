@@ -45,10 +45,18 @@ Finally, navigate to the left side of the above webpage and click `Front-end Web
 `Front-end web hosting` has no binding relationship with cloud functions. It can be deployed in the same service space with cloud functions, or in a different space, or even in the space of different cloud service providers.
 
 - 阿里云`前端网页托管`免费。
-- Alibaba Cloud `Front-end web hosting` is free.
-- 腾讯云`前端网页托管`需付费开通，定价由腾讯云提供。腾讯云的不同档套餐有不同规格，见文末附表：
-- Tencent Cloud `Front-end web hosting` needs to be activated for a fee, and the pricing is provided by Tencent Cloud. Different packages of Tencent Cloud have different specifications, see the attached table at the end of the article:
+- 腾讯云`前端网页托管`需付费开通，定价由腾讯云提供。由于腾讯云新计费已上线，新计费模式下前端网页托管仅支持按量计费模式，原包年包月套餐已下线。
 
+现存包年包月`前端网页托管`仅支持续费，不支持变配。如果服务空间已升级到新套餐，则`前端网页托管`支持切换为按量计费模式，如需切换，请发送邮件到service@dcloud.io申请，并提供以下信息
+
+```
+账号邮箱
+负责人
+联系电话
+申请的spaceId
+```
+
+> 前端网页托管申请切换按量计费前，请确保已充值保证金及余额
 
 ## 使用
 ## use

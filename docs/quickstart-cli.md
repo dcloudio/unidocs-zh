@@ -9,6 +9,8 @@ In addition to the HBuilderX visual interface, you can also use `cli` scaffoldin
 全局安装vue-cli
 Globally installed vue-cli
 
+> 目前仍推荐使用 vue-cli 4.x，对于 vue-cli 5.x / Webpack 5 的支持情况参考 [#3723](https://github.com/dcloudio/uni-app/issues/3723)
+
 ```shell
 npm install -g @vue/cli@4
 ```

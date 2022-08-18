@@ -566,4 +566,7 @@ There are two solutions:
 ### "Unauthenticated access is denied" when calling cloud functions @access-denied
 
 如使用腾讯云作为服务商，出现此问题时请检查前端是否有执行clearStorage操作。clearStorage会清理掉腾讯云设置的token，导致请求云函数报错。
-If Tencent Cloud is used as the service provider, please check whether the front-end clearStorage operation is performed when this problem occurs. clearStorage will clear the token set by Tencent Cloud, resulting in an error when requesting cloud functions.
+
+### 阿里云存储在部分地区、运营商无法访问的问题
+
+阿里云云存储目前没有服务空间级别的域名隔离，因此在有服务空间的云存储因为违法、违规被封禁域名时会影响其他服务空间。阿里云提供了一个备用CDN域名`vkceyugu-backup.cdn.bspapp.com`，替换原CDN域名`vkceyugu.cdn.bspapp.com`

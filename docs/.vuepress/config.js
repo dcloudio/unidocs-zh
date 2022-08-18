@@ -74,6 +74,12 @@ const config = {
         .use(require('./markdown/normallizeLink'))
     }
   },
+  chainWebpack(config, isServer) {
+    config.resolve.alias.set(
+      '@theme-config',
+      path.resolve(process.cwd(), 'docs/.vuepress/config')
+    )
+  },
   plugins: [
     ["vuepress-plugin-juejin-style-copy", copyOptions]
   ]

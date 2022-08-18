@@ -2171,7 +2171,7 @@ This method can also call the method of class object or instance object. If it i
 
 示例：
 Example:
-1．不导入类对象，调用类的静态方法
+1. 不导入类对象，调用类的静态方法
 1. Do not import the class object, call the static method of the class
 Java代码：
 Java code:

@@ -135,8 +135,7 @@ If you already have a native app, you can use ```uni-app``` locally, embed the u
 **Is uni-app written on multiple ends in one project for unified upgrade and maintenance, or is it a different project on each end and only part of the code is reused?**
 
 ```uni-app```是多端写在一个基础项目下，差异使用条件编译来管理。
-``uni-app`` is multi-terminal written under a base project, and differences are managed using conditional compilation.
-``uni-app`` is multi-terminal written under a base project, and differences are managed using conditional compilation.
+```uni-app``` is multi-terminal written under a base project, and differences are managed using conditional compilation.
 
 这有个巨大的好处是一套工程代码，升级时可多端同时更新。
 It has a huge advantage that a set of engineering codes can be updated at the same time when upgrading.

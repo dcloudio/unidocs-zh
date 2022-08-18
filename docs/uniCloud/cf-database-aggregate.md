@@ -2213,9 +2213,8 @@ sort({
     <fieldname2>: <collation>,
 })
 ```
-
+<!-- @ignore-translate -->
 <排序规则>可以是以下取值：
-<collation> can be the following values:
 <collation> can be the following values:
 
 - 1 代表升序排列（从小到大）；

@@ -1,3 +1,4 @@
+const path = require('path');
 const { slugify } = require('@vuepress/shared-utils')
 const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')

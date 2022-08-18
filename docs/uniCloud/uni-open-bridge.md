@@ -44,6 +44,17 @@
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
+## 凭据说明
+
+|凭据							|微信小程序	|微信公众号	|
+|:-:							|:-:				|:-:				|
+|access_token			|定时刷新		|定时刷新		|
+|user_access_token|						|开发者写入	|
+|session_key			|开发者写入	|						|
+|encrypt_key			|开发者写入	|						|
+|ticket						|						|定时刷新		|
+
+
 ## 使用
 1. **下载插件[uni-open-bridge](https://ext.dcloud.net.cn/plugin?id=9002)到项目中。
 
@@ -71,7 +82,7 @@
   },
   "web": {
     "oauth": {
-      "h5-weixin": {
+      "weixin-h5": {
         "appid": "", // 微信公众平台申请的网页授权 appid
         "appsecret": "" // 微信公众平台申请的网页授权 secret
       }
@@ -94,11 +105,11 @@
   "schedule": {
     "__UNI__xxxxxx": { // dcloudAppid, 需要和 `uni-config-center` uni-id中的配置一致
       "enable": true, // 任务全局开关，优先级最高
-      "mp-weixin": { // 平台，目前仅支持 微信小程序、微信 H5，详情参见 https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge#platform
+      "weixin-mp": { // 平台，目前仅支持 微信小程序、微信 H5，详情参见 https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge#platform
         "enable": true, // 当前平台任务开关
         "tasks": ["accessToken"] // 要执行的任务，微信小程序支持 accessToken
       },
-      "h5-weixin": {
+      "weixin-h5": {
         "enable": false,
         "tasks": ["ticket"] // 支持微信 H5 ticket，因 ticker 依赖微信 H5 accessToken，内部自动先获取 accessToken。此处的 accessToken 和微信小程序的 accessToken 不是一个值
       }
@@ -139,17 +150,17 @@ let uobc = require('uni-open-bridge-common')
 // 应用级凭据
 const key = {
   dcloudAppid: '__UNI__xxx', // DCloud Appid
-  platform: 'mp-weixin' // 平台，解释见下
+  platform: 'weixin-mp' // 平台，解释见下
 }
 uobc.getAccessToken(key)
 uobc.getTicket(key)
 
 
-// 用户级凭据
+// 用户级凭据，需要同时传入 openid 才能获得
 const userKey = {
   dcloudAppid: '__UNI__xxx', // DCloud Appid
-  platform: 'mp-weixin', // 平台，解释见下
-  openid: ''
+  platform: 'weixin-mp', // 平台，解释见下
+  openid: '' // 用户唯一标识，解释见下
 }
 uobc.getUserAccessToken(userKey)
 uobc.getSessionKey(userKey)
@@ -159,18 +170,18 @@ uobc.getEncryptKey(userKey)
 
 #### Platform@platform
 
-平台对应的值
+存储数据key对应平台的值
 
 |值					|描述				|
 |:-:				|:-:				|
-|mp-weixin	|微信小程序	|
-|app-weixin	|微信 App	  |
-|h5-weixin	|微信公众号	|
-|web-weixin	|微信pc网页	|
-|mp-qq			|QQ 小程序		|
-|app-qq			|QQ App			|
+|weixin-mp	|微信小程序	|
+|weixin-h5	|微信公众号	|
+|weixin-web	|微信pc网页	|
+|weixin-app	|微信 App		|
+|qq-mp			|QQ 小程序	|
+|qq-app			|QQ App			|
 
-提示：目前仅支持 `mp-weixin`、`h5-weixin` 后续补充其他平台
+提示：自动刷新固定应用级凭据目前仅支持 `weixin-mp`、`weixin-h5` 后续补充其他平台
 
 #### getAccessToken(key: Object, fallback: Function)
 
@@ -438,7 +449,7 @@ const {
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '__UNI__xxx',
-    platform: 'mp-weixin',
+    platform: 'weixin-mp',
     openid: '',
     version: 1
   }
@@ -511,7 +522,7 @@ const {
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '__UNI__xxx',
-    platform: 'h5-weixin'
+    platform: 'weixin-h5'
   }
   const value = {
     ticket: ''
@@ -580,7 +591,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getAcces
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin"
+  "platform": "weixin-mp"
 }
 ```
 
@@ -603,7 +614,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setAcces
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "value": {
     "access_token": ""
   },
@@ -625,7 +636,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeAc
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin"
+  "platform": "weixin-mp"
 }
 ```
 
@@ -643,7 +654,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getUserA
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin",
+  "platform": "weixin-h5",
   "openid": ""
 }
 ```
@@ -663,7 +674,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setUserA
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin",
+  "platform": "weixin-h5",
   "openid": "",
   "value": {
     "access_token": ""
@@ -685,7 +696,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeUs
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin",
+  "platform": "weixin-h5",
   "openid": ""
 }
 ```
@@ -703,7 +714,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getSessi
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": ""
 }
 ```
@@ -723,7 +734,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setSessi
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": "",
   "value": {
     "session_key": ""
@@ -745,7 +756,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeSe
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": ""
 }
 ```
@@ -763,7 +774,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getEncry
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": "",
   "version": 1 // 此版本号应根据客户端传递的版本号
 }
@@ -784,7 +795,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setEncry
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": "",
   "version": 1,
   "value": {
@@ -807,7 +818,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeEn
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": "",
   "version": 1
 }
@@ -827,7 +838,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getTicke
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin"
+  "platform": "weixin-h5"
 }
 ```
 
@@ -846,7 +857,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setTicke
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin",
+  "platform": "weixin-h5",
   "value": {
     "ticket": ""
   }
@@ -866,7 +877,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin"
+  "platform": "weixin-h5"
 }
 ```
 
@@ -910,7 +921,24 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 在微信内置浏览器H5无法区分两个相同名称值不同的 `access_token`，所以以更直观的名称 `user_access_token` 对应用户授权 `access_token`
 
-### session_key
+
+### code(临时凭据)@code
+
+微信小程序用户登录凭证校验
+
+在客户端通过调用 `uni.login()` 获得临时登录凭证 `code` 后传到开发者服务器在请求微信服务器获得 `session_key`、`openid`、`unionid`
+
+`code` 仅可使用一次，频率限制每个用户每分钟100次
+
+### openid(用户级)@openid
+
+微信小程序用户唯一标识
+
+需要在开发者服务器请求微信服务器获得，依赖参数 code，[详情](#code)
+
+可通过 `uni-id-co` 获取，[详情]()
+
+### session_key(用户级)
 
 平台对应的值
 
@@ -932,13 +960,13 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 当开发者在实现自定义登录态时，可以考虑以 `session_key` 有效期作为自身登录态有效期，也可以实现自定义的时效性策略。
 
-### encrypt_key
+### encrypt_key(用户级)
 
 为了避免小程序与开发者后台通信时数据被截取和篡改，微信侧维护了一个用户维度的可靠key，用于小程序和后台通信时进行加密和签名。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
 
 开发者可以分别通过小程序前端和微信后台提供的接口，获取用户的加密 key。
 
-### ticket
+### ticket(用户级)
 
 `ticket` 是公众号用于调用微信 JS 接口的临时票据。正常情况下，`ticket` 的有效期为7200秒，通过 `access_token` 来获取。
 
@@ -970,4 +998,3 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 2. 老系统从微信服务器获取到相关凭据后调用`uni-open-bridge`的set方法写入凭据
 
 先将云对象`uni-open-bridge`进行URL化，暴露出http接口。然后老系统调用setAccessToken、setUserAccessToken、setSessionKey、setEncryptKey、setTicket等接口。[参考](#cloudurl)
-

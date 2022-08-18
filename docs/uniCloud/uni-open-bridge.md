@@ -68,6 +68,17 @@ The flow chart is as follows:
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
+## 凭据说明
+
+|凭据							|微信小程序	|微信公众号	|
+|:-:							|:-:				|:-:				|
+|access_token			|定时刷新		|定时刷新		|
+|user_access_token|						|开发者写入	|
+|session_key			|开发者写入	|						|
+|encrypt_key			|开发者写入	|						|
+|ticket						|						|定时刷新		|
+
+
 ## 使用
 ## use
 1. **下载插件[uni-open-bridge](https://ext.dcloud.net.cn/plugin?id=9002)到项目中。
@@ -101,7 +112,7 @@ Then configure in the project's uniCloud/cloudfunctions/common/uni-config-center
   },
   "web": {
     "oauth": {
-      "h5-weixin": {
+      "weixin-h5": {
         "appid": "", // 微信公众平台申请的网页授权 appid
         "appsecret": "" // 微信公众平台申请的网页授权 secret
       }
@@ -127,11 +138,11 @@ Note: you need to remove the `comment` when copying the contents of this file
   "schedule": {
     "__UNI__xxxxxx": { // dcloudAppid, 需要和 `uni-config-center` uni-id中的配置一致
       "enable": true, // 任务全局开关，优先级最高
-      "mp-weixin": { // 平台，目前仅支持 微信小程序、微信 H5，详情参见 https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge#platform
+      "weixin-mp": { // 平台，目前仅支持 微信小程序、微信 H5，详情参见 https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge#platform
         "enable": true, // 当前平台任务开关
         "tasks": ["accessToken"] // 要执行的任务，微信小程序支持 accessToken
       },
-      "h5-weixin": {
+      "weixin-h5": {
         "enable": false,
         "tasks": ["ticket"] // 支持微信 H5 ticket，因 ticker 依赖微信 H5 accessToken，内部自动先获取 accessToken。此处的 accessToken 和微信小程序的 accessToken 不是一个值
       }
@@ -186,18 +197,17 @@ let uobc = require('uni-open-bridge-common')
 // application level credentials
 const key = {
   dcloudAppid: '__UNI__xxx', // DCloud Appid
-  platform: 'mp-weixin' // 平台，解释见下
+  platform: 'weixin-mp' // 平台，解释见下
 }
 uobc.getAccessToken(key)
 uobc.getTicket(key)
 
 
-// 用户级凭据
-// User level credentials
+// 用户级凭据，需要同时传入 openid 才能获得
 const userKey = {
   dcloudAppid: '__UNI__xxx', // DCloud Appid
-  platform: 'mp-weixin', // 平台，解释见下
-  openid: ''
+  platform: 'weixin-mp', // 平台，解释见下
+  openid: '' // 用户唯一标识，解释见下
 }
 uobc.getUserAccessToken(userKey)
 uobc.getSessionKey(userKey)
@@ -207,25 +217,19 @@ uobc.getEncryptKey(userKey)
 
 #### Platform@platform
 
-平台对应的值
-The value corresponding to the platform
+存储数据key对应平台的值
 
 |值					|描述				|
 |value |description |
 |:-:				|:-:				|
-|mp-weixin	|微信小程序	|
-|mp-weixin |WeChat Mini Program |
-|app-weixin	|微信 App	  |
-|app-weixin |WeChat App |
-|h5-weixin	|微信公众号	|
-|h5-weixin |WeChat Official Account |
-|web-weixin	|微信pc网页	|
-|web-weixin |WeChat pc webpage |
-|mp-qq			|QQ 小程序		|
-|app-qq			|QQ App			|
+|weixin-mp	|微信小程序	|
+|weixin-h5	|微信公众号	|
+|weixin-web	|微信pc网页	|
+|weixin-app	|微信 App		|
+|qq-mp			|QQ 小程序	|
+|qq-app			|QQ App			|
 
-提示：目前仅支持 `mp-weixin`、`h5-weixin` 后续补充其他平台
-Tip: Currently only `mp-weixin` and `h5-weixin` are supported. Other platforms will be added later
+提示：自动刷新固定应用级凭据目前仅支持 `weixin-mp`、`weixin-h5` 后续补充其他平台
 
 #### getAccessToken(key: Object, fallback: Function)
 
@@ -558,7 +562,7 @@ const {
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '__UNI__xxx',
-    platform: 'mp-weixin',
+    platform: 'weixin-mp',
     openid: '',
     version: 1
   }
@@ -646,7 +650,7 @@ const {
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '__UNI__xxx',
-    platform: 'h5-weixin'
+    platform: 'weixin-h5'
   }
   const value = {
     ticket: ''
@@ -730,7 +734,7 @@ parameter
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin"
+  "platform": "weixin-mp"
 }
 ```
 
@@ -757,7 +761,7 @@ The relevant credentials are obtained from WeChat by the external system, and th
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "value": {
     "access_token": ""
   },
@@ -780,7 +784,7 @@ parameter
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin"
+  "platform": "weixin-mp"
 }
 ```
 
@@ -799,7 +803,7 @@ parameter
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin",
+  "platform": "weixin-h5",
   "openid": ""
 }
 ```
@@ -821,7 +825,7 @@ The relevant credentials are obtained from WeChat by the external system, and th
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin",
+  "platform": "weixin-h5",
   "openid": "",
   "value": {
     "access_token": ""
@@ -844,7 +848,7 @@ parameter
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin",
+  "platform": "weixin-h5",
   "openid": ""
 }
 ```
@@ -863,7 +867,7 @@ parameter
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": ""
 }
 ```
@@ -885,7 +889,7 @@ The relevant credentials are obtained from WeChat by the external system, and th
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": "",
   "value": {
     "session_key": ""
@@ -908,7 +912,7 @@ parameter
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": ""
 }
 ```
@@ -927,7 +931,7 @@ parameter
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": "",
   "version": 1 // 此版本号应根据客户端传递的版本号
 }
@@ -950,7 +954,7 @@ The relevant credentials are obtained from WeChat by the external system, and th
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": "",
   "version": 1,
   "value": {
@@ -974,7 +978,7 @@ parameter
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "mp-weixin",
+  "platform": "weixin-mp",
   "openid": "",
   "version": 1
 }
@@ -995,7 +999,7 @@ parameter
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin"
+  "platform": "weixin-h5"
 }
 ```
 
@@ -1016,7 +1020,7 @@ The relevant credentials are obtained from WeChat by the external system, and th
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin",
+  "platform": "weixin-h5",
   "value": {
     "ticket": ""
   }
@@ -1037,7 +1041,7 @@ parameter
 ```json
 {
   "dcloudAppid": "__UNI__xxx",
-  "platform": "h5-weixin"
+  "platform": "weixin-h5"
 }
 ```
 
@@ -1101,7 +1105,24 @@ WeChat official platform webpage authorization has two same name `access_token`,
 在微信内置浏览器H5无法区分两个相同名称值不同的 `access_token`，所以以更直观的名称 `user_access_token` 对应用户授权 `access_token`
 In WeChat's built-in browser H5, two `access_token` with the same name and different values cannot be distinguished, so the more intuitive name `user_access_token` corresponds to the user authorization `access_token`
 
-### session_key
+
+### code(临时凭据)@code
+
+微信小程序用户登录凭证校验
+
+在客户端通过调用 `uni.login()` 获得临时登录凭证 `code` 后传到开发者服务器在请求微信服务器获得 `session_key`、`openid`、`unionid`
+
+`code` 仅可使用一次，频率限制每个用户每分钟100次
+
+### openid(用户级)@openid
+
+微信小程序用户唯一标识
+
+需要在开发者服务器请求微信服务器获得，依赖参数 code，[详情](#code)
+
+可通过 `uni-id-co` 获取，[详情]()
+
+### session_key(用户级)
 
 平台对应的值
 The value corresponding to the platform
@@ -1133,7 +1154,7 @@ When the `session_key` is invalid, the developer can obtain a valid `session_key
 当开发者在实现自定义登录态时，可以考虑以 `session_key` 有效期作为自身登录态有效期，也可以实现自定义的时效性策略。
 When developers implement a custom login state, they can consider using the `session_key` validity period as their own login state validity period, or implement a custom timeliness strategy.
 
-### encrypt_key
+### encrypt_key(用户级)
 
 为了避免小程序与开发者后台通信时数据被截取和篡改，微信侧维护了一个用户维度的可靠key，用于小程序和后台通信时进行加密和签名。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
 In order to avoid data interception and tampering when the applet communicates with the developer in the background, the WeChat side maintains a user-dimensional reliable key, which is used for encryption and signature when the applet communicates with the background. [Details](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
@@ -1141,7 +1162,7 @@ In order to avoid data interception and tampering when the applet communicates w
 开发者可以分别通过小程序前端和微信后台提供的接口，获取用户的加密 key。
 Developers can obtain the user's encryption key through the interfaces provided by the front-end of the applet and the back-end of WeChat respectively.
 
-### ticket
+### ticket(用户级)
 
 `ticket` 是公众号用于调用微信 JS 接口的临时票据。正常情况下，`ticket` 的有效期为7200秒，通过 `access_token` 来获取。
 `ticket` is a temporary ticket used by the official account to call the WeChat JS interface. Under normal circumstances, the validity period of `ticket` is 7200 seconds, which is obtained through `access_token`.
@@ -1188,5 +1209,3 @@ Refer to [Scheduled Task Configuration](cf-functions.md#packagejson)).
 2. After the old system obtains the relevant credentials from the WeChat server, it calls the set method of `uni-open-bridge` to write the credentials
 
 先将云对象`uni-open-bridge`进行URL化，暴露出http接口。然后老系统调用setAccessToken、setUserAccessToken、setSessionKey、setEncryptKey、setTicket等接口。[参考](#cloudurl)
-First URLize the cloud object `uni-open-bridge` to expose the http interface. Then the old system calls interfaces such as setAccessToken, setUserAccessToken, setSessionKey, setEncryptKey, and setTicket. [Reference](#cloudurl)
-

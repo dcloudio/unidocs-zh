@@ -43,8 +43,7 @@ Which pages will be rendered by the x5 core after integrating the x5 core?
 ### X5内核能解决什么问题：
 ### What problems can the X5 kernel solve:
 
-1. x5适配了rom的自定义主题字体，与原生字体保持一致。不会出现一个界面部分字体为原生字体、部分字体为webview字体的问题。之前系统webview在部分手机上不能适配rom自定义主题的字体  
-1. The x5 is adapted to the custom theme font of rom, which is consistent with the native font. There will not be a problem that some fonts of the interface are native fonts and some fonts are webview fonts. Previously, the system webview could not adapt to the font of the rom custom theme on some mobile phones
+1. x5适配了rom的自定义主题字体，与原生字体保持一致。不会出现一个界面部分字体为原生字体、部分字体为webview字体的问题。之前系统webview在部分手机上不能适配rom自定义主题的字体。（注意：部分设备可能需要重新系统或不支持自定义主题字体）
 2. 系统的webview有浏览器兼容问题，低端Android的webview有很多新语法都不支持。使用x5可以拉齐webview内核。对于5+App和wap2app，可以全部拉齐。对于uni-app，由于uni-app自带js引擎，在js和组件层面本身就不存在浏览器兼容问题，只有vue页面的css涉及浏览器兼容问题。如果你想使用比如sticky等新css语法，此时可通过x5拉齐。如果开发者比较注意，不使用太新的语法的话，其实此时x5在这方面没有用处  
 2. The system webview has browser compatibility issues, and the low-end Android webview has many new syntaxes that are not supported. Using x5 you can snap the webview kernel. For 5+App and wap2app, all can be flushed. For uni-app, since uni-app comes with its own js engine, there is no browser compatibility problem at the js and component level itself, only the css of the vue page involves browser compatibility issues. If you want to use new css syntax such as sticky, you can use x5 lashing at this time. If the developer pays more attention and does not use too new syntax, in fact, x5 is useless in this regard at this time
 3. x5内核自带的video实现强于html的video，支持视频格式更多。（这个只能用于5+app和wap2app的html里的自带video，以及uni-app的web-view组件里的video。uni-app默认的video组件本身就是原生的，和x5无关）  

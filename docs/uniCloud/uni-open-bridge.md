@@ -280,6 +280,7 @@ Remove access_token. Developers generally only need to use the get class method,
 **value attribute**
 
 |参数					|类型		|描述									|
+|parameter |type |description |
 |:-:					|:-:		|:-:									|
 |access_token	|String	|[详情](#access_token)|
 
@@ -369,8 +370,10 @@ Corresponding to WeChat official platform webpage user authorization `access_tok
 **value attribute**
 
 |参数					|类型		|描述																									|
+|parameter |type |description |
 |:-:					|:-:		|:-:																									|
 |access_token	|String	|微信公众平台用户会话密钥，[详情](#user_access_token)	|
+|access_token |String |WeChat public platform user session key, [Details](#user_access_token) |
 
 **expiresIn**
 
@@ -456,8 +459,10 @@ delete session_key
 **value attribute**
 
 |参数				|类型		|描述																			|
+|parameter |type |description |
 |:-:				|:-:		|:-:																			|
 |session_key|String	|微信小程序会话密钥，[详情](#session_key)	|
+|session_key|String |WeChat applet session key, [details](#session_key) |
 
 **expiresIn**
 
@@ -547,9 +552,12 @@ delete encrypt_key
 **value attribute**
 
 |参数				|类型		|描述														|
+|parameter |type |description |
 |:-:				|:-:		|:-:														|
 |encrypt_key|String	|加密 key，[详情](#encrypt_key)	|
+|encrypt_key|String |Encryption key, [details](#encrypt_key) |
 |iv					|String	|加密 iv												|
+|iv |String |encrypted iv |
 
 **expiresIn**
 
@@ -638,6 +646,7 @@ delete ticket
 |parameter |type |description |
 |:-:				|:-:		|:-:			|
 |ticket			|String	|[详情](#ticket)					|
+|ticket |String |[Details](#ticket) |
 
 **expiresIn**
 
@@ -1186,6 +1195,7 @@ In order to avoid data interception and tampering when the applet communicates w
 Developers can obtain the user's encryption key through the interfaces provided by the front-end of the applet and the back-end of WeChat respectively.
 
 ### ticket(用户级)@ticket
+### ticket (user level) @ticket
 
 `ticket` 是公众号用于调用微信 JS 接口的临时票据。正常情况下，`ticket` 的有效期为7200秒，通过 `access_token` 来获取。
 `ticket` is a temporary ticket used by the official account to call the WeChat JS interface. Under normal circumstances, the validity period of `ticket` is 7200 seconds, which is obtained through `access_token`.

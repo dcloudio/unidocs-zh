@@ -208,9 +208,9 @@ uobc.getEncryptKey(userKey)
 
 **value 属性**
 
-|参数					|类型		|描述					|
-|:-:					|:-:		|:-:					|
-|access_token	|String	|							|
+|参数					|类型		|描述									|
+|:-:					|:-:		|:-:									|
+|access_token	|String	|[详情](#access_token)|
 
 **expiresIn**
 
@@ -281,9 +281,9 @@ exports.main = async (event, context) => {
 
 **value 属性**
 
-|参数					|类型		|描述											|
-|:-:					|:-:		|:-:											|
-|access_token	|String	|微信公众平台用户会话密钥	|
+|参数					|类型		|描述																									|
+|:-:					|:-:		|:-:																									|
+|access_token	|String	|微信公众平台用户会话密钥，[详情](#user_access_token)	|
 
 **expiresIn**
 
@@ -353,9 +353,9 @@ exports.main = async (event, context) => {
 
 **value 属性**
 
-|参数				|类型		|描述								|
-|:-:				|:-:		|:-:								|
-|session_key|String	|微信小程序会话密钥	|
+|参数				|类型		|描述																			|
+|:-:				|:-:		|:-:																			|
+|session_key|String	|微信小程序会话密钥，[详情](#session_key)	|
 
 **expiresIn**
 
@@ -428,10 +428,10 @@ exports.main = async (event, context) => {
 
 **value 属性**
 
-|参数				|类型		|描述			|
-|:-:				|:-:		|:-:			|
-|encrypt_key|String	|加密 key	|
-|iv					|String	|加密 iv	  |
+|参数				|类型		|描述														|
+|:-:				|:-:		|:-:														|
+|encrypt_key|String	|加密 key，[详情](#encrypt_key)	|
+|iv					|String	|加密 iv												|
 
 **expiresIn**
 
@@ -504,7 +504,7 @@ exports.main = async (event, context) => {
 
 |参数				|类型		|描述			|
 |:-:				|:-:		|:-:			|
-|ticket			|String	|					|
+|ticket			|String	|[详情](#ticket)					|
 
 **expiresIn**
 
@@ -971,7 +971,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 开发者可以分别通过小程序前端和微信后台提供的接口，获取用户的加密 key。
 
-### ticket(用户级)@encrypt_key
+### ticket(用户级)@ticket
 
 `ticket` 是公众号用于调用微信 JS 接口的临时票据。正常情况下，`ticket` 的有效期为7200秒，通过 `access_token` 来获取。
 

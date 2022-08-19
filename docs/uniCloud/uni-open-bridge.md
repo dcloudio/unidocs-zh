@@ -68,22 +68,18 @@ The flow chart is as follows:
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
-## 凭据说明
-## Credential description
+## 凭据托管状态
 
-|凭据							|微信小程序	|微信公众号	|
-| Credentials | WeChat Mini Program | WeChat Official Account |
-|:-:							|:-:				|:-:				|
-|access_token			|定时刷新		|定时刷新		|
-|access_token |Timed refresh |Timed refresh |
-|user_access_token|						|开发者写入	|
-|user_access_token| |developer write |
-|session_key			|开发者写入	|						|
-|session_key |developer write | |
-|encrypt_key			|开发者写入	|						|
-|encrypt_key |developer write | |
-|ticket						|						|定时刷新		|
-|ticket | |Regular refresh |
+|凭据																		|微信小程序	|微信公众号(H5)	|
+|:-:																		|:-:				|:-:						|
+|[access_token](#access_token)					|定时刷新		|定时刷新				|
+|[user_access_token](#user_access_token)|						|开发者操作			|
+|[session_key](#session_key)						|开发者操作	|								|
+|[encrypt_key](#encrypt_key)						|开发者操作	|								|
+|[ticket](#ticket)											|						|定时刷新				|
+
+
+还有一些不常用的凭据暂不列出，例如：微信App access_token
 
 
 ## 使用
@@ -301,7 +297,7 @@ const {
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '__UNI__xxx',
-    platform: 'mp-weixin'
+    platform: 'weixin-mp'
   }
   const value = {
     access_token: ''
@@ -352,15 +348,11 @@ Corresponding to WeChat official platform webpage user authorization `access_tok
 **key 属性**
 **key attribute**
 
-|参数				|类型			|必填	|描述																															|
-|Parameters |Type |Required |Description |
-|:-:				|:-:			|:-:	|:-:																															|
-|dcloudAppid|String		|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
-|dcloudAppid|String |Yes |DCloud application appid. [Details](https://ask.dcloud.net.cn/article/35907) |
-|platform		|String		|是		|[详情](#platform)																								|
-|platform |String |Yes |[Details](#platform) |
-|openid			|String		|是		|																																	|
-|openid |String |Yes | |
+|参数				|类型		|必填	|描述																															|
+|:-:				|:-:		|:-:	|:-:																															|
+|dcloudAppid|String	|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
+|platform		|String	|是		|[详情](#platform)																								|
+|openid			|String	|是		|[详情](#openid)																									|
 
 **value 属性**
 **value attribute**
@@ -391,7 +383,7 @@ const {
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '__UNI__xxx',
-    platform: 'h5-weixin',
+    platform: 'weixin-h5',
     openid: ''
   }
   const value = {
@@ -441,15 +433,11 @@ delete session_key
 **key 属性**
 **key attribute**
 
-|参数				|类型			|必填	|描述																															|
-|Parameters |Type |Required |Description |
-|:-:				|:-:			|:-:	|:-:																															|
-|dcloudAppid|String		|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
-|dcloudAppid|String |Yes |DCloud application appid. [Details](https://ask.dcloud.net.cn/article/35907) |
-|platform		|String		|是		|[详情](#platform)																								|
-|platform |String |Yes |[Details](#platform) |
-|openid			|String		|是		|																																	|
-|openid |String |Yes | |
+|参数				|类型		|必填	|描述																															|
+|:-:				|:-:		|:-:	|:-:																															|
+|dcloudAppid|String	|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
+|platform		|String	|是		|[详情](#platform)																								|
+|openid			|String	|是		|[详情](#openid)																									|
 
 **value 属性**
 **value attribute**
@@ -481,7 +469,7 @@ const {
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '__UNI__xxx',
-    platform: 'mp-weixin',
+    platform: 'weixin-mp',
     openid: ''
   }
   const value = {
@@ -531,17 +519,12 @@ delete encrypt_key
 **key 属性**
 **key attribute**
 
-|参数				|类型			|必填	|描述																															|
-|Parameters |Type |Required |Description |
-|:-:				|:-:			|:-:	|:-:																															|
-|dcloudAppid|String		|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
-|dcloudAppid|String |Yes |DCloud application appid. [Details](https://ask.dcloud.net.cn/article/35907) |
-|platform		|String		|是		|[详情](#platform)																								|
-|platform |String |Yes |[Details](#platform) |
-|openid			|String		|是		|																																	|
-|openid |String |Yes | |
-|version		|Number		|是		|版本																															|
-|version |Number |Yes |Version|
+|参数				|类型		|必填	|描述																															|
+|:-:				|:-:		|:-:	|:-:																															|
+|dcloudAppid|String	|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
+|platform		|String	|是		|[详情](#platform)																								|
+|openid			|String	|是		|[详情](#openid)																									|
+|version		|Number	|是		|版本																															|
 
 
 **value 属性**
@@ -707,8 +690,7 @@ Optional `async function fallback()`, when `reids -> database` cannot find the c
 }
 ```
 
-为了简化调用 `getAccessToken()`、`getTicket()` 已内置 `fallback` 到微信的服务器，需要在 `config-center` 中配置 `appid` `appsecret`
-In order to simplify calling `getAccessToken()`, `getTicket()` has built-in `fallback` to WeChat server, you need to configure `appid` `appsecret` in `config-center`
+为了简化调用 `getAccessToken()`、`getTicket()` 已内置 `fallback` 到微信的服务器，需要在 `config-center` 中配置 `appid` `appsecret`，[详情](#uni-id-config)
 
 #### 注意事项
 #### Precautions
@@ -821,6 +803,8 @@ parameter
   "openid": ""
 }
 ```
+
+其中参数openid值域[详见](#openid)。下同，不再复述。
 
 #### setUserAccessToken
 
@@ -1129,8 +1113,7 @@ WeChat applet user login credential verification
 在客户端通过调用 `uni.login()` 获得临时登录凭证 `code` 后传到开发者服务器在请求微信服务器获得 `session_key`、`openid`、`unionid`
 The client obtains the temporary login credential `code` by calling `uni.login()` and then transmits it to the developer server to obtain the `session_key`, `openid`, `unionid` by requesting the WeChat server
 
-`code` 仅可使用一次，频率限制每个用户每分钟100次
-`code` can only be used once, with a frequency limit of 100 times per minute per user
+`code` 仅可在服务器使用一次，客户端调用频率限制每个用户每分钟100次
 
 ### openid(用户级)@openid
 ### openid (user level) @openid
@@ -1141,8 +1124,7 @@ WeChat Mini Program User Unique ID
 需要在开发者服务器请求微信服务器获得，依赖参数 code，[详情](#code)
 It needs to be obtained by requesting the WeChat server on the developer server, depending on the parameter code, [details](#code)
 
-可通过 `uni-id-co` 获取，[详情]()
-Available through `uni-id-co`, [details]()
+可通过 `uni-id-co` 获取，[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
 
 ### session_key(用户级)
 ### session_key (user level)

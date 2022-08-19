@@ -331,6 +331,7 @@ const uniIdCo = uniCloud.importObject('uni-id-co')
 |uniIdCo.getInvitedUser()		|获取受邀用户 [详情](#get-invited-user)						|
 |uniIdCo.setPushCid()			|更新device表的push_clien_id [详情](#set-push-cid)			|
 |uniIdCo.getSupportedLoginType()|获取支持的登录方式 [详情](#get-supported-login-type)		|
+|uniIdCo.getH5WeixinConfig()|获取微信公众号初始化配置 [详情](#get-h5-weixin-config)		|
 
 ### 注册登录和登出@register-login-logout
 
@@ -530,6 +531,38 @@ await uniIdCo.loginByWeixin({
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
 
+**注意**
+
+- 支持的登录方式：微信小程序、微信公众号、微信App、微信PC扫码
+- 微信登录会自动保存用户的openid，在`uni-id-pages 1.0.8`及更高版本在存储openid时会同时存储一份以当前应用的Appid（manifest.json内的DCloud AppId）为key的openid，见下方关于openid的说明。
+- 如果有多个应用同时使用微信小程序登录，且希望用户身份不隔离请确保这些应用在微信小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
+- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存session_key（微信小程序登录）、access_token（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
+
+**关于openid的说明**
+
+`uni-id-pages 1.0.7`及之前的版本会将微信的openid以以下形式存储
+
+```js
+{
+  "_id": "xx",
+  "wx_openid": {
+    "mp": "weixin-openid-demo"
+  }
+}
+```
+
+可以看到如果存在多个微信小程序关联同一个账号，这时候只能存储一个小程序的openid，在`uni-id-pages 1.0.8`版本对此进行了调整以Appid`__UNI_123456`为例，openid会在数据库内存储为以下形式
+
+```js
+{
+  "_id": "xx",
+  "wx_openid": {
+    "mp": "weixin-openid-demo",
+    "mp___UNI_123456": "weixin-openid-demo",
+  }
+}
+```
+
 #### QQ登录@login-by-qq
 
 QQ账号已存在时登录，否则注册
@@ -562,6 +595,38 @@ await uniIdCo.loginByQQ({
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
+
+**注意**
+
+- 支持的登录方式：QQ小程序、QQ App
+- QQ登录会自动保存用户的openid，在`uni-id-pages 1.0.8`及更高版本在存储openid时会同时存储一份以当前应用的Appid（manifest.json内的DCloud AppId）为key的openid，见下方关于openid的说明。
+- 如果有多个应用同时使用QQ小程序登录，且希望用户身份不隔离请确保这些应用在QQ小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
+- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存session_key（QQ小程序登录）、access_token（QQ App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
+
+**关于openid的说明**
+
+`uni-id-pages 1.0.7`及之前的版本会将QQ的openid以以下形式存储
+
+```js
+{
+  "_id": "xx",
+  "qq_openid": {
+    "mp": "weixin-openid-demo"
+  }
+}
+```
+
+可以看到如果存在多个QQ小程序关联同一个账号，这时候只能存储一个小程序的openid，在`uni-id-pages 1.0.8`版本对此进行了调整以Appid`__UNI_123456`为例，openid会在数据库内存储为以下形式
+
+```js
+{
+  "_id": "xx",
+  "qq_openid": {
+    "mp": "weixin-openid-demo",
+    "mp___UNI_123456": "weixin-openid-demo",
+  }
+}
+```
 
 #### 支付宝登录@login-by-alipay
 
@@ -771,7 +836,7 @@ await uniIdCo.bindMobileByUniverify({
 
 #### 通过微信绑定手机号@bind-mobile-by-mp-weixin
 
-使用此接口时务必注意，微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。如果有效则直接使用上次存储的sessionKey即可，如果无效应重新调用login接口再次刷新sessionKey。微信小程序登录，绑定小程序微信账号时会自动更新用户表的sessionKey。
+使用此接口时务必注意，微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。如果有效则直接使用上次存储的sessionKey即可，如果无效应重新调用login接口再次刷新sessionKey。微信小程序登录、绑定小程序微信账号时会自动更新用户的sessionKey。
 
 **接口形式**
 
@@ -1213,6 +1278,37 @@ await uniIdCo.setPushCid({
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
 
+#### 获取微信公众号初始化配置@get-h5-weixin-config
+
+**接口形式**
+
+```js
+await uniIdCo.getH5WeixinConfig({
+	url
+})
+```
+
+**参数说明**
+
+|参数名	|类型		|必填	|说明														|
+|--			|--			|--		|--															|
+|url		|string	|是		|当前客户端页面url，不带hash部分|
+
+**返回值**
+
+|参数名		|类型								|说明						|
+|--				|--									|--							|
+|errCode	|string&#124;number	|错误码					|
+|errMsg		|string							|错误信息				|
+|appId		|string							|微信公众号appId|
+|timestamp|number							|时间戳					|
+|nonceStr	|string							|随机串					|
+|signature|string							|签名						|
+
+客户端收到此接口响应后可以调用wx.config接口注入配置信息，详情参考：[微信公众号：通过 config 接口注入权限验证配置](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#4)
+
+**使用此接口前需要使用`uni-open-bridge`函数定时获取微信公众号的`access_token`及`ticket`，参考：[uni-open-bridge](uni-open-bridge.md)**
+
 ### 管理接口@admin
 
 #### 管理员新增用户@add-user
@@ -1431,7 +1527,6 @@ module.exports = {
 - 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/#/pages/sms/base)开通并充值
 - 教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
 - 密钥配置：`uni-id配置文件` --> `service` --> `sms` 填写相关密钥信息。
-
 
 # 从老版uni-id公共模块升级到uni-id-pages
 

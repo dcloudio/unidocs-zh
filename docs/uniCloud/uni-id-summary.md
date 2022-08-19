@@ -194,6 +194,7 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
 // 如果拷贝此内容切记去除注释
 {
   "passwordSecret": "passwordSecret-demo", // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的密钥，注意修改为自己的密钥，使用一个较长的字符串即可
+  "passwordStrength": "strong", // 密码强度，新增于 uni-id-pages 1.0.8版本，见下方说明
   "tokenSecret": "tokenSecret-demo", // 生成token所用的密钥，注意修改为自己的，使用一个较长的字符串即可
   "tokenExpiresIn": 7200, // 全平台token过期时间，未指定过期时间的平台会使用此值
   "tokenExpiresThreshold": 600, // 新增于uni-id 1.1.7版本，checkToken时如果token有效期小于此值且在有效期内则自动获取新token，请注意将新token返回给前端保存（云对象会自动保存符合uniCloud响应体规范的响应内的新token），如果不配置此参数则不开启自动获取新token功能
@@ -220,7 +221,17 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
     }
   },
   "web": { // 如果你使用旧版本uni-id公共模块而不是uni-id-common这里可能配置的是h5，务必注意调整为web
-    "tokenExpiresIn": 14400,
+    "tokenExpiresIn": 259200,
+    "oauth": {
+      "weixin-h5": { // 微信公众号登录配置
+        "appid": "weixin appid",
+        "appsecret": "weixin appsecret"
+      },
+      "weixin-web": { // 微信PC页面扫码登录配置
+        "appid": "weixin appid",
+        "appsecret": "weixin appsecret"
+      }
+    }
   },
   "mp-weixin": {
     "tokenExpiresIn": 259200,
@@ -275,13 +286,34 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
 }
 ```
 
-**关于token自动刷新**
+### token自动刷新@auto-refresh-token
 
 tokenExpiresThreshold用于指定token还有多长时间过期时自动刷新token。
 
 例：指定`tokenExpiresThreshold:600,tokenExpiresIn:7200`，token过期时间为2小时，在token有效期不足10分钟时自动刷新token
 
 在token还有5分钟过期时调用checkToken接口会返回新的token和新的token的过期时间（新token有效时间也是2小时）。
+
+### 密码强度@password-strength
+
+> 新增于uni-id-pages 1.0.8
+
+支持以下四种内置规则
+
+```js
+{
+  // 密码必须包含大小写字母、数字和特殊符号
+  super: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/])[0-9a-zA-Z~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/]{8,16}$/,
+  // 密码必须包含字母、数字和特殊符号
+  strong: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/])[0-9a-zA-Z~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/]{8,16}$/,
+  // 密码必须为字母、数字和特殊符号任意两种的组合
+  medium: /^(?![0-9]+$)(?![a-zA-Z]+$)(?![~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/]+$)[0-9a-zA-Z~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/]{8,16}$/,
+  // 密码必须包含字母和数字
+  weak: /^(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/]{6,16}$/
+}
+```
+
+uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则，如需自定义规则，请参考：[uni-id-co自定义校验规则](uni-id-pages.md#custom-validator)
 
 ## token令牌
 
@@ -1113,3 +1145,83 @@ module.exports = {
 ```
 
 uni-id会自动进行语言匹配，无需额外配置
+
+### 自动保存用户sessionKey、accessToken等信息@save-user-token
+
+uni-id-co在微信、QQ登录或注册时会自动保存用户的sessionKey、accessToken信息。
+
+在`uni-id-pages 1.0.8`之前，uni-id-co直接将这些信息保存在了用户表（uni-id-users）的third_party字段下，仅按照平台区分没有按照不同应用区分。具体结构如下
+
+```js
+{
+  "_id": "uid",
+  "wx_unionid": "xxx",
+  "qq_unionid": "xxx",
+  "third_party": {
+    "mp_weixin": {
+      "session_key": "xxxx"
+    },
+    "app_weixin": {
+      "access_token": "accessToken",
+      "access_token_expired": 1111
+    },
+    "mp_qq": {
+      "session_key": "xxxx"
+    },
+    "app_qq": {
+      "access_token": "accessToken",
+      "access_token_expired": 1111
+    }
+  }
+}
+```
+
+此结构无法满足多应用同一平台关联同一服务空间且允许用户跨应用登录的场景。因此在`uni-id-pages 1.0.8`及更高版本对此做出了调整，改为使用[uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge-common)存储用户token信息。同时为了兼容旧版本上述third_party字段仍存有这些信息。
+
+### 钩子@hooks
+
+> 新增于 uni-id-pages 1.0.8
+
+uni-id-co是一个完整的云对象，里面注册登录等流程都已完全实现，开发者不方便进行修改。例如要实现注册时为某端用户统一添加一个角色的功能，只能去修改uni-id-co的代码。因此uni-id-co提供了通过钩子干涉内置逻辑的功能
+ 
+uni-id钩子函数需要在uni-config-center内配置。在`uni-config-center/uni-id`下创建hooks目录并在其内创建`index.js`内容如下
+
+```js
+module.exports = {
+  beforeRegister: function (){
+    // 注册前钩子
+  }
+}
+```
+
+#### beforeRegister@before-register
+
+beforeRegister在注册用户记录入库前触发。钩子会接收到如下参数，需要返回处理后的用户记录用以入库存储
+
+|参数名			|类型		|说明																																		|
+|--					|--			|--																																			|
+|userRecord	|Object	|即将入库的用户记录																											|
+|clientInfo	|Object	|客户端信息，参考：[云对象 getClientInfo](cloud-obj.md#get-client-info)	|
+
+以为__UNI_123123这个应用注册的用户添加"teacher"角色为例，beforeRegister钩子示例如下
+
+```js
+// 钩子函数示例 hooks/index.js
+
+function beforeRegister({
+  userRecord,
+  clientInfo
+} = {}) {
+  if(clientInfo.appId === '__UNI_123123') {
+    if(userRecord.role) {
+      userRecord.role.push('teacher')
+    } else {
+      userRecord.role = ['teacher']
+    }
+  }
+}
+
+module.exports = {
+  beforeRegister
+}
+```

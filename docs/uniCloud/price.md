@@ -167,6 +167,8 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 - 在正式进行计费方式切换之日起，用户将不可继续续费或新购旧版套餐或按量计费服务空间。用户可选择是否切换新的计费方式，超时（2022.09.08）切换的服务空间将会停服释放。
 - From the date when the billing method is officially switched, users will not be able to continue to renew their bills or purchase new and old packages or pay-as-you-go service space. Users can choose whether to switch to the new billing method, and the service space switched over time (2022.09.08) will be suspended and released.
 
+**注：当包年包月服务空间升级新套餐时，如果已开通前端网页托管，则前端网页托管会自动转为按量计费，请确保账号余额充足！**
+
 ## 发生故障时如何判断故障点
 ## How to judge the fault point when a fault occurs
 

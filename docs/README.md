@@ -281,7 +281,7 @@ Developers who have some experience in ```Vue.js``` and applet development can q
 从下面`uni-app`功能框架图可看出，`uni-app`在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
 As can be seen from the functional framework diagram of `uni-app` below, in the process of cross-platform, `uni-app` can elegantly invoke platform-specific capabilities without sacrificing platform characteristics, and truly achieves the diversity of the sea and the strengths of each.
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29448a55-2785-4296-9248-913dbda9de7f.png)
+<img v-if="!$themeConfig.isEn" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29448a55-2785-4296-9248-913dbda9de7f.png" alt="">
 
 ## 一套代码，运行到多个平台
 ## A set of code that runs on multiple platforms
@@ -289,9 +289,11 @@ As can be seen from the functional framework diagram of `uni-app` below, in the 
 `uni-app`实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、web、微信开发者工具、支付宝小程序Studio、百度开发者工具、字节跳动开发者工具、QQ开发者工具（底部每个终端选项卡，代表1个终端模拟器）：
 `uni-app` implements a set of codes that run on multiple platforms at the same time; as shown in the figure below, a set of codes runs simultaneously on iOS simulators, Android simulators, web, WeChat developer tools, Alipay Mini Program Studio, Baidu Developer Tools, ByteDance Developer Tools, QQ Developer Tools (each terminal tab at the bottom, representing 1 terminal emulator):
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/efd8e280-60a9-11eb-a16f-5b3e54966275.jpg)
+<img v-if="!$themeConfig.isEn" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/efd8e280-60a9-11eb-a16f-5b3e54966275.jpg" alt="" style="max-width: 100%;">
+<img v-else src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b9a89b3b-d423-4f25-a61a-7fabde5fa6f5.jpg" alt="" style="max-width: 100%;">
 
 实际运行效果如下（点击图片可放大）：
 The actual running effect is as follows (click on the image to enlarge):
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ec6e95dd-77ad-4d14-aafa-ca503f5b9e53.jpg)
+<img v-if="!$themeConfig.isEn" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ec6e95dd-77ad-4d14-aafa-ca503f5b9e53.jpg" alt="" style="max-width: 100%;">
+<img v-else src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/a62bec9f-0e95-4e33-8a2e-8d5a9f19c5f1.png" alt="" style="max-width: 100%;">

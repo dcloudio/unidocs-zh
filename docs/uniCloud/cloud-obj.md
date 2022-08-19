@@ -385,6 +385,25 @@ module.exports = {
 }
 ```
 
+### 获取当前请求id@get-request-id
+
+**接口形式**
+
+`this.getUniCloudRequestId()`
+
+**示例**
+
+```js
+module.exports = {
+	_after: function(error, result) {
+		if(error) {
+			const requestId = this.getUniCloudRequestId()
+			// log(requestId, error) 出错时记录日志，log方法需自行实现
+		}
+	}
+}
+```
+
 ### 获取url化时的http信息@get-http-info
 
 > 新增于HBuilderX 3.5.2

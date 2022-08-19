@@ -12,7 +12,7 @@
 ### 5+应用：
 + plus节点 --> distribute节点 --> plugins节点 --> push节点 --> igexin节点（或者unipush节点） --> icons节点 --> small节点下配置
 
-```
+```json
 "plugins": { // 第三方sdk配置
 	"push": { // 模块名称
 		"igexin": { // 个推SDK参数配置

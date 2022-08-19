@@ -85,6 +85,7 @@
 * uni-id用户体系
 * uni-id user system
   * [综述](uniCloud/uni-id-summary.md)
+  * [Summary](uniCloud/uni-id-summary.md)
   * [uni-id-pages](uniCloud/uni-id-pages.md)
   * [uni-id-common](uniCloud/uni-id-common.md)
   * [老版uni-id 3.x文档](uniCloud/uni-id.md)

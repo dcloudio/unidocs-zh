@@ -1,8 +1,6 @@
 ## UniPush推送图标配置
 ## UniPush push icon configuration
 
-
-
 ### UniPush自定义推送图标，可自定义push图标和小图标，位置如下图所示：
 ### UniPush custom push icon, you can customize the push icon and small icon, the location is as shown below:
 

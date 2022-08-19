@@ -89,7 +89,7 @@ HBuilderX 中打开配有引用图标指示的文件，会打开原始地址。
 import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 ```
 
-- 如果要使用uni_modules中的页面，[见下](?id=pages-init)
+- 如果要使用uni_modules中的页面，[见下](#pages-init)
 
 
 #### 安装uni_modules插件依赖

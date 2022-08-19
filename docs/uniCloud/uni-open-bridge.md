@@ -44,15 +44,18 @@
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
-## 凭据说明
+## 凭据托管状态
 
-|凭据							|微信小程序	|微信公众号	|
-|:-:							|:-:				|:-:				|
-|access_token			|定时刷新		|定时刷新		|
-|user_access_token|						|开发者写入	|
-|session_key			|开发者写入	|						|
-|encrypt_key			|开发者写入	|						|
-|ticket						|						|定时刷新		|
+|凭据																		|微信小程序	|微信公众号(H5)	|
+|:-:																		|:-:				|:-:						|
+|[access_token](#access_token)					|定时刷新		|定时刷新				|
+|[user_access_token](#user_access_token)|						|开发者操作			|
+|[session_key](#session_key)						|开发者操作	|								|
+|[encrypt_key](#encrypt_key)						|开发者操作	|								|
+|[ticket](#ticket)											|						|定时刷新				|
+
+
+还有一些不常用的凭据暂不列出，例如：微信App access_token
 
 
 ## 使用
@@ -228,7 +231,7 @@ const {
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '__UNI__xxx',
-    platform: 'mp-weixin'
+    platform: 'weixin-mp'
   }
   const value = {
     access_token: ''
@@ -270,11 +273,11 @@ exports.main = async (event, context) => {
 
 **key 属性**
 
-|参数				|类型			|必填	|描述																															|
-|:-:				|:-:			|:-:	|:-:																															|
-|dcloudAppid|String		|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
-|platform		|String		|是		|[详情](#platform)																								|
-|openid			|String		|是		|																																	|
+|参数				|类型		|必填	|描述																															|
+|:-:				|:-:		|:-:	|:-:																															|
+|dcloudAppid|String	|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
+|platform		|String	|是		|[详情](#platform)																								|
+|openid			|String	|是		|[详情](#openid)																									|
 
 **value 属性**
 
@@ -300,7 +303,7 @@ const {
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '__UNI__xxx',
-    platform: 'h5-weixin',
+    platform: 'weixin-h5',
     openid: ''
   }
   const value = {
@@ -342,11 +345,11 @@ exports.main = async (event, context) => {
 
 **key 属性**
 
-|参数				|类型			|必填	|描述																															|
-|:-:				|:-:			|:-:	|:-:																															|
-|dcloudAppid|String		|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
-|platform		|String		|是		|[详情](#platform)																								|
-|openid			|String		|是		|																																	|
+|参数				|类型		|必填	|描述																															|
+|:-:				|:-:		|:-:	|:-:																															|
+|dcloudAppid|String	|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
+|platform		|String	|是		|[详情](#platform)																								|
+|openid			|String	|是		|[详情](#openid)																									|
 
 **value 属性**
 
@@ -373,7 +376,7 @@ const {
 exports.main = async (event, context) => {
   const key = {
     dcloudAppid: '__UNI__xxx',
-    platform: 'mp-weixin',
+    platform: 'weixin-mp',
     openid: ''
   }
   const value = {
@@ -415,12 +418,12 @@ exports.main = async (event, context) => {
 
 **key 属性**
 
-|参数				|类型			|必填	|描述																															|
-|:-:				|:-:			|:-:	|:-:																															|
-|dcloudAppid|String		|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
-|platform		|String		|是		|[详情](#platform)																								|
-|openid			|String		|是		|																																	|
-|version		|Number		|是		|版本																															|
+|参数				|类型		|必填	|描述																															|
+|:-:				|:-:		|:-:	|:-:																															|
+|dcloudAppid|String	|是		|DCloud应用appid。[详情](https://ask.dcloud.net.cn/article/35907)	|
+|platform		|String	|是		|[详情](#platform)																								|
+|openid			|String	|是		|[详情](#openid)																									|
+|version		|Number	|是		|版本																															|
 
 
 **value 属性**
@@ -560,7 +563,7 @@ exports.main = async (event, context) => {
 }
 ```
 
-为了简化调用 `getAccessToken()`、`getTicket()` 已内置 `fallback` 到微信的服务器，需要在 `config-center` 中配置 `appid` `appsecret`
+为了简化调用 `getAccessToken()`、`getTicket()` 已内置 `fallback` 到微信的服务器，需要在 `config-center` 中配置 `appid` `appsecret`，[详情](#uni-id-config)
 
 #### 注意事项
 
@@ -658,6 +661,8 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/getUserA
   "openid": ""
 }
 ```
+
+其中参数openid值域[详见](#openid)。下同，不再复述。
 
 #### setUserAccessToken
 
@@ -928,7 +933,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 在客户端通过调用 `uni.login()` 获得临时登录凭证 `code` 后传到开发者服务器在请求微信服务器获得 `session_key`、`openid`、`unionid`
 
-`code` 仅可使用一次，频率限制每个用户每分钟100次
+`code` 仅可在服务器使用一次，客户端调用频率限制每个用户每分钟100次
 
 ### openid(用户级)@openid
 
@@ -936,7 +941,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 需要在开发者服务器请求微信服务器获得，依赖参数 code，[详情](#code)
 
-可通过 `uni-id-co` 获取，[详情]()
+可通过 `uni-id-co` 获取，[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
 
 ### session_key(用户级)
 

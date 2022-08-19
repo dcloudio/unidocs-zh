@@ -236,7 +236,5 @@ plus.payment.getChannels((providers) => {
 						console.log("支付失败： " + JSON.stringify(e));
 					})
 				});
-
-
 ```
 

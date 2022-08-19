@@ -50,6 +50,7 @@ Finally, navigate to the left side of the above webpage and click `Front-end Web
 - Tencent Cloud `Front-end web hosting` needs to be activated for a fee, and the pricing is provided by Tencent Cloud. Since Tencent Cloud's new billing has been launched, the front-end web hosting under the new billing model only supports the pay-as-you-go billing model, and the original annual and monthly package has been offline.
 
 现存包年包月`前端网页托管`，如果服务空间升级到新套餐，则`前端网页托管`会自动切换为按量计费模式，请确保余额充足。
+Existing annual and monthly `Front-end web hosting`, if the service space is upgraded to a new package, the `Front-end web hosting` will automatically switch to the pay-as-you-go model, please ensure that the balance is sufficient.
 
 
 ## 使用

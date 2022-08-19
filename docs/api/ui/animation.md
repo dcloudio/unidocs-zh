@@ -103,10 +103,7 @@ Rotate:
 |method|parameters|description|
 |---|---|---|
 |rotate|deg|deg的范围-180~180，从原点顺时针旋转一个deg角度|
-The range of |rotate|deg|deg is -180~180, and it rotates a deg angle clockwise from the origin|
-The range of |rotate|deg|deg is -180~180, and it rotates a deg angle clockwise from the origin|
-The range of |rotate|deg|deg is -180~180, and it rotates a deg angle clockwise from the origin|
-The range of |rotate|deg|deg is -180~180, and it rotates a deg angle clockwise from the origin|
+|rotate|deg|The range of deg is -180~180, and it rotates a deg angle clockwise from the origin|
 |rotateX|deg|deg的范围-180~180，在X轴旋转一个deg角度|
 |rotateX|deg|deg range -180~180, rotate a deg angle on the X axYes|
 |rotateY|deg|deg的范围-180~180，在Y轴旋转一个deg角度|

@@ -128,8 +128,7 @@ Opening a file indicated by a reference icon in HBuilderX will open the original
 import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 ```
 
-- 如果要使用uni_modules中的页面，[见下](?id=pages-init)
-- If you want to use pages from uni_modules, [see below](?id=pages-init)
+- 如果要使用uni_modules中的页面，[见下](#pages-init)
 
 
 #### 安装uni_modules插件依赖

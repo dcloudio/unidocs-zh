@@ -80,7 +80,7 @@ var animation = uni.createAnimation({
 |scale|sx,[sy]|一个参数时，表示在X轴、Y轴同时缩放sx倍数；两个参数时表示在X轴缩放sx倍数，在Y轴缩放sy倍数|
 |scaleX|sx|在X轴缩放sx倍数|
 |scaleY|sy|在Y轴缩放sy倍数|
-|scaleZ|sz|在Z轴缩放sy倍数|
+|scaleZ|sz|在Z轴缩放sz倍数|
 |scale3d|(sx,sy,sz)|在X轴缩放sx倍数，在Y轴缩放sy倍数，在Z轴缩放sz倍数|
 
 偏移：
@@ -89,8 +89,8 @@ var animation = uni.createAnimation({
 |---|---|---|
 |translate|tx,[ty]|一个参数时，表示在X轴偏移tx，单位px；两个参数时，表示在X轴偏移tx，在Y轴偏移ty，单位px。|
 |translateX|tx|在X轴偏移tx，单位px|
-|translateY|ty|在Y轴偏移tx，单位px|
-|translateZ|tz|在Z轴偏移tx，单位px|
+|translateY|ty|在Y轴偏移ty，单位px|
+|translateZ|tz|在Z轴偏移tz，单位px|
 |translate3d|(tx,ty,tz)|在X轴偏移tx，在Y轴偏移ty，在Z轴偏移tz，单位px|
 
 倾斜：

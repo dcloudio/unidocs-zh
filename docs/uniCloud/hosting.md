@@ -49,18 +49,8 @@ Finally, navigate to the left side of the above webpage and click `Front-end Web
 - 腾讯云`前端网页托管`需付费开通，定价由腾讯云提供。由于腾讯云新计费已上线，新计费模式下前端网页托管仅支持按量计费模式，原包年包月套餐已下线。
 - Tencent Cloud `Front-end web hosting` needs to be activated for a fee, and the pricing is provided by Tencent Cloud. Since Tencent Cloud's new billing has been launched, the front-end web hosting under the new billing model only supports the pay-as-you-go billing model, and the original annual and monthly package has been offline.
 
-现存包年包月`前端网页托管`仅支持续费，不支持变配。如果服务空间已升级到新套餐，则`前端网页托管`支持切换为按量计费模式，如需切换，请发送邮件到service@dcloud.io申请，并提供以下信息
-The existing annual and monthly `front-end web hosting` only supports renewal, and does not support configuration changes. If the service space has been upgraded to a new plan, `Front-end web hosting` supports switching to the pay-as-you-go billing mode. If you need to switch, please send an email to service@dcloud.io to apply and provide the following information
+现存包年包月`前端网页托管`，如果服务空间升级到新套餐，则`前端网页托管`会自动切换为按量计费模式，请确保余额充足。
 
-```
-账号邮箱
-负责人
-联系电话
-申请的spaceId
-```
-
-> 前端网页托管申请切换按量计费前，请确保已充值保证金及余额
-> Before switching to metered billing when applying for front-end web hosting, please ensure that you have recharged the deposit and balance
 
 ## 使用
 ## use

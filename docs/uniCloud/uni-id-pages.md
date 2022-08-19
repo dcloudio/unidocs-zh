@@ -486,7 +486,9 @@ Return value example
 |uniIdCo.setPushCid()			|更新device表的push_clien_id [详情](#set-push-cid)			|
 |uniIdCo.setPushCid() |Update the push_clien_id of the device table [Details](#set-push-cid) |
 |uniIdCo.getSupportedLoginType()|获取支持的登录方式 [详情](#get-supported-login-type)		|
+|uniIdCo.getSupportedLoginType()|Get the supported login method [Details](#get-supported-login-type) |
 |uniIdCo.getH5WeixinConfig()|获取微信公众号初始化配置 [详情](#get-h5-weixin-config)		|
+|uniIdCo.getH5WeixinConfig()|Get WeChat Official Account Initial Configuration [Details](#get-h5-weixin-config) |
 
 ### 注册登录和登出@register-login-logout
 ### Register login and logout @register-login-logout
@@ -769,15 +771,22 @@ await uniIdCo.loginByWeixin({
 |&nbsp;&#124;-&nbsp;tokenExpired|string |token expiration time |
 
 **注意**
+**Notice**
 
 - 支持的登录方式：微信小程序、微信公众号、微信App、微信PC扫码
+- Supported login methods: WeChat applet, WeChat official account, WeChat App, WeChat PC scan code
 - 微信登录会自动保存用户的openid，在`uni-id-pages 1.0.8`及更高版本在存储openid时会同时存储一份以当前应用的Appid（manifest.json内的DCloud AppId）为key的openid，见下方关于openid的说明。
+- WeChat login will automatically save the user's openid. In `uni-id-pages 1.0.8` and later versions, when storing the openid, a copy of the current application's Appid (DCloud AppId in manifest.json) will be stored as the key. openid, see the description of openid below.
 - 如果有多个应用同时使用微信小程序登录，且希望用户身份不隔离请确保这些应用在微信小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
+- If there are multiple applications using WeChat applet to log in at the same time, and you want user identities not to be isolated, please ensure that these applications are owned by the same entity on the WeChat applet platform, that is, to ensure that different applications can obtain the same unionid
 - `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存session_key（微信小程序登录）、access_token（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
+- `uni-id-pages 1.0.8` and above will use uni-open-bridge-common to save session_key (WeChat applet login), access_token (WeChat official account login, WeChat App login) information, but for compatibility with older versions The logic still stores a copy of the user table. For details, please refer to: [Automatically save user sessionKey, accessToken and other information](uni-id-summary.md#save-user-token)
 
 **关于openid的说明**
+**Note about openid**
 
 `uni-id-pages 1.0.7`及之前的版本会将微信的openid以以下形式存储
+`uni-id-pages 1.0.7` and earlier versions will store WeChat's openid in the following format
 
 ```js
 {
@@ -789,6 +798,7 @@ await uniIdCo.loginByWeixin({
 ```
 
 可以看到如果存在多个微信小程序关联同一个账号，这时候只能存储一个小程序的openid，在`uni-id-pages 1.0.8`版本对此进行了调整以Appid`__UNI_123456`为例，openid会在数据库内存储为以下形式
+It can be seen that if there are multiple WeChat mini-programs associated with the same account, only the openid of one mini-program can be stored at this time. This has been adjusted in the `uni-id-pages 1.0.8` version. Take Appid`__UNI_123456` as an example , the openid will be stored in the database as the following
 
 ```js
 {
@@ -848,15 +858,22 @@ await uniIdCo.loginByQQ({
 |&nbsp;&#124;-&nbsp;tokenExpired|string |token expiration time |
 
 **注意**
+**Notice**
 
 - 支持的登录方式：QQ小程序、QQ App
+- Supported login methods: QQ applet, QQ App
 - QQ登录会自动保存用户的openid，在`uni-id-pages 1.0.8`及更高版本在存储openid时会同时存储一份以当前应用的Appid（manifest.json内的DCloud AppId）为key的openid，见下方关于openid的说明。
+- QQ login will automatically save the user's openid. In `uni-id-pages 1.0.8` and later versions, when storing the openid, a copy of the current application's Appid (DCloud AppId in manifest.json) will be stored as the key. openid, see the description of openid below.
 - 如果有多个应用同时使用QQ小程序登录，且希望用户身份不隔离请确保这些应用在QQ小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
+- If there are multiple applications using the QQ applet to log in at the same time, and you want the user identity not to be isolated, please ensure that these applications are owned by the same entity on the QQ applet platform, that is, to ensure that different applications can obtain the same unionid
 - `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存session_key（QQ小程序登录）、access_token（QQ App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
+- `uni-id-pages 1.0.8` and above will use uni-open-bridge-common to save session_key (QQ applet login), access_token (QQ App login) information, but for compatibility with the old version logic is still in the user table A copy is stored. For details, please refer to: [Automatically save user sessionKey, accessToken and other information](uni-id-summary.md#save-user-token)
 
 **关于openid的说明**
+**Note about openid**
 
 `uni-id-pages 1.0.7`及之前的版本会将QQ的openid以以下形式存储
+`uni-id-pages 1.0.7` and earlier versions will store QQ's openid in the following form
 
 ```js
 {
@@ -868,6 +885,7 @@ await uniIdCo.loginByQQ({
 ```
 
 可以看到如果存在多个QQ小程序关联同一个账号，这时候只能存储一个小程序的openid，在`uni-id-pages 1.0.8`版本对此进行了调整以Appid`__UNI_123456`为例，openid会在数据库内存储为以下形式
+It can be seen that if there are multiple QQ applets associated with the same account, only the openid of one applet can be stored at this time. This has been adjusted in the `uni-id-pages 1.0.8` version. Take Appid`__UNI_123456` as an example , the openid will be stored in the database as the following
 
 ```js
 {
@@ -1178,6 +1196,7 @@ await uniIdCo.bindMobileByUniverify({
 #### Bind mobile phone number via WeChat @bind-mobile-by-mp-weixin
 
 使用此接口时务必注意，微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。如果有效则直接使用上次存储的sessionKey即可，如果无效应重新调用login接口再次刷新sessionKey。微信小程序登录、绑定小程序微信账号时会自动更新用户的sessionKey。
+When using this interface, it must be noted that the WeChat applet rule is that the client should first use the checkSession interface to check whether the sessionKey obtained last time is still valid. If it is valid, you can directly use the sessionKey stored last time. If it is invalid, call the login interface again to refresh the sessionKey again. The user's sessionKey will be automatically updated when the WeChat applet logs in and binds the WeChat account of the applet.
 
 **接口形式**
 **Interface form**
@@ -1802,8 +1821,10 @@ await uniIdCo.setPushCid({
 |&nbsp;&#124;-&nbsp;tokenExpired|string |token expiration time |
 
 #### 获取微信公众号初始化配置@get-h5-weixin-config
+#### Get WeChat official account initialization configuration @get-h5-weixin-config
 
 **接口形式**
+**Interface form**
 
 ```js
 await uniIdCo.getH5WeixinConfig({
@@ -1812,25 +1833,38 @@ await uniIdCo.getH5WeixinConfig({
 ```
 
 **参数说明**
+**Parameter Description**
 
 |参数名	|类型		|必填	|说明														|
+|Parameter Name |Type |Required |Description |
 |--			|--			|--		|--															|
 |url		|string	|是		|当前客户端页面url，不带hash部分|
+|url |string |yes |Current client page url without hash part|
 
 **返回值**
+**return value**
 
 |参数名		|类型								|说明						|
+|parameter name |type |description |
 |--				|--									|--							|
 |errCode	|string&#124;number	|错误码					|
+|errCode |string&#124;number |Error code |
 |errMsg		|string							|错误信息				|
+|errMsg |string |Error message |
 |appId		|string							|微信公众号appId|
+|appId |string |WeChat official account appId|
 |timestamp|number							|时间戳					|
+|timestamp|number |Timestamp |
 |nonceStr	|string							|随机串					|
+|nonceStr |string |Random String |
 |signature|string							|签名						|
+|signature|string |Signature|
 
 客户端收到此接口响应后可以调用wx.config接口注入配置信息，详情参考：[微信公众号：通过 config 接口注入权限验证配置](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#4)
+After receiving the response from this interface, the client can call the wx.config interface to inject configuration information. For details, please refer to: [WeChat Public Account: Config interface injection permission verification configuration](https://developers.weixin.qq.com/doc/offiaccount /OA_Web_Apps/JS-SDK.html#4)
 
 **使用此接口前需要使用`uni-open-bridge`函数定时获取微信公众号的`access_token`及`ticket`，参考：[uni-open-bridge](uni-open-bridge.md)**
+**Before using this interface, you need to use the `uni-open-bridge` function to regularly obtain the `access_token` and `ticket` of the WeChat official account, refer to: [uni-open-bridge](uni-open-bridge.md)**
 
 ### 管理接口@admin
 ### Management interface @admin

@@ -401,6 +401,7 @@ Configuration item:
 ```
 
 ### token自动刷新@auto-refresh-token
+### Automatic token refresh @auto-refresh-token
 
 tokenExpiresThreshold用于指定token还有多长时间过期时自动刷新token。
 tokenExpiresThreshold is used to specify how long the token will expire and automatically refresh the token.
@@ -412,25 +413,33 @@ Example: Specify `tokenExpiresThreshold:600,tokenExpiresIn:7200`, the token expi
 Calling the checkToken interface when the token expires in 5 minutes will return the new token and the expiration time of the new token (the valid time of the new token is also 2 hours).
 
 ### 密码强度@password-strength
+### Password Strength @password-strength
 
 > 新增于uni-id-pages 1.0.8
+> Added in uni-id-pages 1.0.8
 
 支持以下四种内置规则
+The following four built-in rules are supported
 
 ```js
 {
   // 密码必须包含大小写字母、数字和特殊符号
+  // Password must contain uppercase and lowercase letters, numbers and special symbols
   super: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/])[0-9a-zA-Z~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/]{8,16}$/,
   // 密码必须包含字母、数字和特殊符号
+  // Password must contain letters, numbers and special symbols
   strong: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/])[0-9a-zA-Z~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/]{8,16}$/,
   // 密码必须为字母、数字和特殊符号任意两种的组合
+  // Password must be any combination of letters, numbers and special symbols
   medium: /^(?![0-9]+$)(?![a-zA-Z]+$)(?![~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/]+$)[0-9a-zA-Z~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/]{8,16}$/,
   // 密码必须包含字母和数字
+  // Password must contain letters and numbers
   weak: /^(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z~!@#$%^&*_\-+=`|\\(){}[\]:;"'<>,.?/]{6,16}$/
 }
 ```
 
 uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则，如需自定义规则，请参考：[uni-id-co自定义校验规则](uni-id-pages.md#custom-validator)
+Both uni-id-co and front-end pages in uni-id-pages support these four built-in rules. For custom rules, please refer to: [uni-id-co custom validation rules](uni-id-pages .md#custom-validator)
 
 ## token令牌
 ## token token
@@ -1601,12 +1610,16 @@ module.exports = {
 ```
 
 uni-id会自动进行语言匹配，无需额外配置
+uni-id will automatically perform language matching without additional configuration
 
 ### 自动保存用户sessionKey、accessToken等信息@save-user-token
+### Automatically save user sessionKey, accessToken and other information @save-user-token
 
 uni-id-co在微信、QQ登录或注册时会自动保存用户的sessionKey、accessToken信息。
+uni-id-co will automatically save the user's sessionKey and accessToken information when logging in or registering on WeChat or QQ.
 
 在`uni-id-pages 1.0.8`之前，uni-id-co直接将这些信息保存在了用户表（uni-id-users）的third_party字段下，仅按照平台区分没有按照不同应用区分。具体结构如下
+Before `uni-id-pages 1.0.8`, uni-id-co directly stored this information in the third_party field of the user table (uni-id-users), which was only distinguished by platform and not by different applications. The specific structure is as follows
 
 ```js
 {
@@ -1633,19 +1646,25 @@ uni-id-co在微信、QQ登录或注册时会自动保存用户的sessionKey、ac
 ```
 
 此结构无法满足多应用同一平台关联同一服务空间且允许用户跨应用登录的场景。因此在`uni-id-pages 1.0.8`及更高版本对此做出了调整，改为使用[uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge-common)存储用户token信息。同时为了兼容旧版本上述third_party字段仍存有这些信息。
+This structure cannot meet the scenario where multiple applications are associated with the same service space on the same platform and users are allowed to log in across applications. So in `uni-id-pages 1.0.8` and later this was adjusted to use [uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge- common) to store user token information. At the same time, this information still exists in the third_party field above for compatibility with older versions.
 
 ### 钩子@hooks
+### Hooks @hooks
 
 > 新增于 uni-id-pages 1.0.8
+> Added in uni-id-pages 1.0.8
 
 uni-id-co是一个完整的云对象，里面注册登录等流程都已完全实现，开发者不方便进行修改。例如要实现注册时为某端用户统一添加一个角色的功能，只能去修改uni-id-co的代码。因此uni-id-co提供了通过钩子干涉内置逻辑的功能
+uni-id-co is a complete cloud object, in which the registration and login processes have been fully implemented, and it is inconvenient for developers to modify it. For example, to realize the function of adding a role to a user at the time of registration, you can only modify the code of uni-id-co. So uni-id-co provides the ability to interfere with built-in logic through hooks
  
 uni-id钩子函数需要在uni-config-center内配置。在`uni-config-center/uni-id`下创建hooks目录并在其内创建`index.js`内容如下
+The uni-id hook function needs to be configured in uni-config-center. Create hooks directory under `uni-config-center/uni-id` and create `index.js` inside it with the following content
 
 ```js
 module.exports = {
   beforeRegister: function (){
     // 注册前钩子
+    // pre-registration hook
   }
 }
 ```
@@ -1653,16 +1672,22 @@ module.exports = {
 #### beforeRegister@before-register
 
 beforeRegister在注册用户记录入库前触发。钩子会接收到如下参数，需要返回处理后的用户记录用以入库存储
+beforeRegister is triggered before the registered user records are stored. The hook will receive the following parameters and need to return the processed user record for storage
 
 |参数名			|类型		|说明																																		|
+|parameter name |type |description |
 |--					|--			|--																																			|
 |userRecord	|Object	|即将入库的用户记录																											|
+|userRecord |Object |The user record to be stored |
 |clientInfo	|Object	|客户端信息，参考：[云对象 getClientInfo](cloud-obj.md#get-client-info)	|
+|clientInfo |Object |Client information, reference: [cloud object getClientInfo](cloud-obj.md#get-client-info) |
 
 以为__UNI_123123这个应用注册的用户添加"teacher"角色为例，beforeRegister钩子示例如下
+For example, adding the "teacher" role for the user registered by the application __UNI_123123, the example of the beforeRegister hook is as follows
 
 ```js
 // 钩子函数示例 hooks/index.js
+// hook function example hooks/index.js
 
 function beforeRegister({
   userRecord,

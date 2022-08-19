@@ -69,14 +69,21 @@ The flow chart is as follows:
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
 ## 凭据说明
+## Credential description
 
 |凭据							|微信小程序	|微信公众号	|
+| Credentials | WeChat Mini Program | WeChat Official Account |
 |:-:							|:-:				|:-:				|
 |access_token			|定时刷新		|定时刷新		|
+|access_token |Timed refresh |Timed refresh |
 |user_access_token|						|开发者写入	|
+|user_access_token| |developer write |
 |session_key			|开发者写入	|						|
+|session_key |developer write | |
 |encrypt_key			|开发者写入	|						|
+|encrypt_key |developer write | |
 |ticket						|						|定时刷新		|
+|ticket | |Regular refresh |
 
 
 ## 使用
@@ -204,6 +211,7 @@ uobc.getTicket(key)
 
 
 // 用户级凭据，需要同时传入 openid 才能获得
+// User-level credentials, you need to pass in openid at the same time to get
 const userKey = {
   dcloudAppid: '__UNI__xxx', // DCloud Appid
   platform: 'weixin-mp', // 平台，解释见下
@@ -218,18 +226,24 @@ uobc.getEncryptKey(userKey)
 #### Platform@platform
 
 存储数据key对应平台的值
+Stores the value of the data key corresponding to the platform
 
 |值					|描述				|
 |value |description |
 |:-:				|:-:				|
 |weixin-mp	|微信小程序	|
+|weixin-mp |WeChat Mini Program |
 |weixin-h5	|微信公众号	|
+|weixin-h5 |WeChat Official Account |
 |weixin-web	|微信pc网页	|
+|weixin-web |WeChat pc web page |
 |weixin-app	|微信 App		|
+|weixin-app |WeChat App |
 |qq-mp			|QQ 小程序	|
 |qq-app			|QQ App			|
 
 提示：自动刷新固定应用级凭据目前仅支持 `weixin-mp`、`weixin-h5` 后续补充其他平台
+Tip: Automatic refresh of fixed application-level credentials currently only supports `weixin-mp`, `weixin-h5`, and other platforms will be added later
 
 #### getAccessToken(key: Object, fallback: Function)
 
@@ -1107,22 +1121,31 @@ In WeChat's built-in browser H5, two `access_token` with the same name and diffe
 
 
 ### code(临时凭据)@code
+### code(temporary credentials)@code
 
 微信小程序用户登录凭证校验
+WeChat applet user login credential verification
 
 在客户端通过调用 `uni.login()` 获得临时登录凭证 `code` 后传到开发者服务器在请求微信服务器获得 `session_key`、`openid`、`unionid`
+The client obtains the temporary login credential `code` by calling `uni.login()` and then transmits it to the developer server to obtain the `session_key`, `openid`, `unionid` by requesting the WeChat server
 
 `code` 仅可使用一次，频率限制每个用户每分钟100次
+`code` can only be used once, with a frequency limit of 100 times per minute per user
 
 ### openid(用户级)@openid
+### openid (user level) @openid
 
 微信小程序用户唯一标识
+WeChat Mini Program User Unique ID
 
 需要在开发者服务器请求微信服务器获得，依赖参数 code，[详情](#code)
+It needs to be obtained by requesting the WeChat server on the developer server, depending on the parameter code, [details](#code)
 
 可通过 `uni-id-co` 获取，[详情]()
+Available through `uni-id-co`, [details]()
 
 ### session_key(用户级)
+### session_key (user level)
 
 平台对应的值
 The value corresponding to the platform
@@ -1155,6 +1178,7 @@ When the `session_key` is invalid, the developer can obtain a valid `session_key
 When developers implement a custom login state, they can consider using the `session_key` validity period as their own login state validity period, or implement a custom timeliness strategy.
 
 ### encrypt_key(用户级)
+### encrypt_key (user level)
 
 为了避免小程序与开发者后台通信时数据被截取和篡改，微信侧维护了一个用户维度的可靠key，用于小程序和后台通信时进行加密和签名。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
 In order to avoid data interception and tampering when the applet communicates with the developer in the background, the WeChat side maintains a user-dimensional reliable key, which is used for encryption and signature when the applet communicates with the background. [Details](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
@@ -1163,6 +1187,7 @@ In order to avoid data interception and tampering when the applet communicates w
 Developers can obtain the user's encryption key through the interfaces provided by the front-end of the applet and the back-end of WeChat respectively.
 
 ### ticket(用户级)
+### ticket (user level)
 
 `ticket` 是公众号用于调用微信 JS 接口的临时票据。正常情况下，`ticket` 的有效期为7200秒，通过 `access_token` 来获取。
 `ticket` is a temporary ticket used by the official account to call the WeChat JS interface. Under normal circumstances, the validity period of `ticket` is 7200 seconds, which is obtained through `access_token`.
@@ -1209,3 +1234,4 @@ Refer to [Scheduled Task Configuration](cf-functions.md#packagejson)).
 2. After the old system obtains the relevant credentials from the WeChat server, it calls the set method of `uni-open-bridge` to write the credentials
 
 先将云对象`uni-open-bridge`进行URL化，暴露出http接口。然后老系统调用setAccessToken、setUserAccessToken、setSessionKey、setEncryptKey、setTicket等接口。[参考](#cloudurl)
+First URLize the cloud object `uni-open-bridge` to expose the http interface. Then the old system calls interfaces such as setAccessToken, setUserAccessToken, setSessionKey, setEncryptKey, and setTicket. [Reference](#cloudurl)

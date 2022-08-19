@@ -129,6 +129,7 @@ import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 ```
 
 - 如果要使用uni_modules中的页面，[见下](#pages-init)
+- If you want to use pages from uni_modules, [see below](#pages-init)
 
 
 #### 安装uni_modules插件依赖

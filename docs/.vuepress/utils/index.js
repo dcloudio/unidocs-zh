@@ -21,5 +21,5 @@ module.exports = {
   isExternal,
   simplifySlugText,
   tabs_zh,
-  tabs_en
+  tabs_en: tabs_zh
 }

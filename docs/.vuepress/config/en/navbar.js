@@ -18,6 +18,11 @@ export const navbar = [
         link: '/'
       },
       {
+        text: 'Tutorial',
+        type: 'link',
+        link: '/tutorial/'
+      },
+      {
         text: 'Framework',
         type: 'link',
         link: '/collocation/pages'
@@ -33,6 +38,16 @@ export const navbar = [
         link: '/api/'
       },
       {
+        text: 'Plugin',
+        type: 'link',
+        link: '/plugin/'
+      },
+      {
+        text: 'Worktile',
+        type: 'link',
+        link: '/worktile/'
+      },
+      {
         link: "https://github.com/dcloudio/uni-app",
         target: "_blank",
         text: "GitHub",
@@ -40,11 +55,11 @@ export const navbar = [
       }
     ]
   },
-  /* {
+  {
     text: 'uniCloud',
     type: 'link',
     link: '/uniCloud/'
-  }, */
+  },
   {
     text: 'HBuilder X',
     link: 'https://www.dcloud.io/hbuilderx.html?lang=en',

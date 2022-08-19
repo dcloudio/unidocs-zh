@@ -8,8 +8,6 @@
 
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/custom_push_icon/custom_push_icon_small_instructions.png)
 
-
-
 ### 注意：需要手动在manifest.json配置 ，目前仅支持个推 & UniPush配置。
 ### Note: It needs to be manually configured in manifest.json. Currently, only push & UniPush configurations are supported.
 ### 5+应用：

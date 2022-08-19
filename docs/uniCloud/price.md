@@ -168,6 +168,7 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 - From the date when the billing method is officially switched, users will not be able to continue to renew their bills or purchase new and old packages or pay-as-you-go service space. Users can choose whether to switch to the new billing method, and the service space switched over time (2022.09.08) will be suspended and released.
 
 **注：当包年包月服务空间升级新套餐时，如果已开通前端网页托管，则前端网页托管会自动转为按量计费，请确保账号余额充足！**
+**Note: When the annual and monthly service space is upgraded to a new package, if the front-end web hosting has been activated, the front-end web hosting will be automatically converted to billing, please ensure that the account balance is sufficient! **
 
 ## 发生故障时如何判断故障点
 ## How to judge the fault point when a fault occurs

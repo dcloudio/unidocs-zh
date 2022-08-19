@@ -1126,8 +1126,7 @@ It needs to be obtained by requesting the WeChat server on the developer server,
 
 可通过 `uni-id-co` 获取，[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
 
-### session_key(用户级)
-### session_key (user level)
+### session_key(用户级)@session_key
 
 平台对应的值
 The value corresponding to the platform
@@ -1159,8 +1158,7 @@ When the `session_key` is invalid, the developer can obtain a valid `session_key
 当开发者在实现自定义登录态时，可以考虑以 `session_key` 有效期作为自身登录态有效期，也可以实现自定义的时效性策略。
 When developers implement a custom login state, they can consider using the `session_key` validity period as their own login state validity period, or implement a custom timeliness strategy.
 
-### encrypt_key(用户级)
-### encrypt_key (user level)
+### encrypt_key(用户级)@encrypt_key
 
 为了避免小程序与开发者后台通信时数据被截取和篡改，微信侧维护了一个用户维度的可靠key，用于小程序和后台通信时进行加密和签名。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
 In order to avoid data interception and tampering when the applet communicates with the developer in the background, the WeChat side maintains a user-dimensional reliable key, which is used for encryption and signature when the applet communicates with the background. [Details](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
@@ -1168,8 +1166,7 @@ In order to avoid data interception and tampering when the applet communicates w
 开发者可以分别通过小程序前端和微信后台提供的接口，获取用户的加密 key。
 Developers can obtain the user's encryption key through the interfaces provided by the front-end of the applet and the back-end of WeChat respectively.
 
-### ticket(用户级)
-### ticket (user level)
+### ticket(用户级)@encrypt_key
 
 `ticket` 是公众号用于调用微信 JS 接口的临时票据。正常情况下，`ticket` 的有效期为7200秒，通过 `access_token` 来获取。
 `ticket` is a temporary ticket used by the official account to call the WeChat JS interface. Under normal circumstances, the validity period of `ticket` is 7200 seconds, which is obtained through `access_token`.

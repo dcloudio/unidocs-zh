@@ -21,9 +21,16 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
     <p>一套代码编到14个平台，这不是梦想。眼见为实，扫描14个二维码，亲自体验最全面的跨平台效果！</p>
     <p>One set of code compiled to 14 platforms, this is not a dream. Seeing is believing, scan 14 QR codes and experience the most comprehensive cross-platform effect for yourself!</p>
     <div class="flex-img-group-view">
-      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
+      <a v-if="!$themeConfig.isEn" href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7c946930-bcf2-11ea-b997-9918a5dda011.png" width="160" />
+        </div>
+        <b>Android版</b>
+        <b>Android version</b>
+      </a>
+      <a v-else href="https://play.google.com/store/apps/details?id=io.dcloud.hellouniapp" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box">
+          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-97fca9f2-41f6-449f-a35e-3f135d4c3875/078ef38e-e2e9-4994-9a2c-9a5219105153.png" width="160" />
         </div>
         <b>Android版</b>
         <b>Android version</b>

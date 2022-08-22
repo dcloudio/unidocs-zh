@@ -1,6 +1,7 @@
 * [插件全景描述](/plugin/README.md)
 * [Plugin panorama description](/plugin/README.md)
 * [插件市场介绍](/plugin/plugin-ext-introduction.md)
+* [plugin-ext-introduction](/plugin/plugin-ext-introduction.md)
 * [uni_modules](/plugin/uni_modules.md)
 * [原生插件](/plugin/native-plugin.md)
 * [Native Plugin](/plugin/native-plugin.md)

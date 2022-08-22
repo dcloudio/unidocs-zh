@@ -66,6 +66,7 @@
     * [综述](/tutorial/nvue-outline.md)
     * [Overview](/tutorial/nvue-outline.md)
     * [样式](/tutorial/nvue-css.md)
+    * [Css](/tutorial/nvue-css.md)
     * [API](/tutorial/nvue-api.md)
     * [事件](/tutorial/nvue-event.md)
     * [event](/tutorial/nvue-event.md)
@@ -87,7 +88,7 @@
     * 功能模块
     * functional module
       * [Geolocation(定位)](/tutorial/app-geolocation.md)
-      * [Geolocation(location)](/tutorial/app-geolocation.md)
+      * [Geolocation](/tutorial/app-geolocation.md)
       * [Maps(地图)](/tutorial/app-maps.md)
       * [Maps](/tutorial/app-maps.md)
       * [OAuth(登录鉴权)](/tutorial/app-oauth.md)

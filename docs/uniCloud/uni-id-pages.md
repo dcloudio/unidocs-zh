@@ -486,9 +486,6 @@ Return value example
 |uniIdCo.setPushCid()			|更新device表的push_clien_id [详情](#set-push-cid)			|
 |uniIdCo.setPushCid() |Update the push_clien_id of the device table [Details](#set-push-cid) |
 |uniIdCo.getSupportedLoginType()|获取支持的登录方式 [详情](#get-supported-login-type)		|
-|uniIdCo.getSupportedLoginType()|Get the supported login method [Details](#get-supported-login-type) |
-|uniIdCo.getH5WeixinConfig()|获取微信公众号初始化配置 [详情](#get-h5-weixin-config)		|
-|uniIdCo.getH5WeixinConfig()|Get WeChat Official Account Initial Configuration [Details](#get-h5-weixin-config) |
 
 ### 注册登录和登出@register-login-logout
 ### Register login and logout @register-login-logout
@@ -1819,52 +1816,6 @@ await uniIdCo.setPushCid({
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
 |&nbsp;&#124;-&nbsp;tokenExpired|string |token expiration time |
-
-#### 获取微信公众号初始化配置@get-h5-weixin-config
-#### Get WeChat official account initialization configuration @get-h5-weixin-config
-
-**接口形式**
-**Interface form**
-
-```js
-await uniIdCo.getH5WeixinConfig({
-	url
-})
-```
-
-**参数说明**
-**Parameter Description**
-
-|参数名	|类型		|必填	|说明														|
-|Parameter Name |Type |Required |Description |
-|--			|--			|--		|--															|
-|url		|string	|是		|当前客户端页面url，不带hash部分|
-|url |string |yes |Current client page url without hash part|
-
-**返回值**
-**return value**
-
-|参数名		|类型								|说明						|
-|parameter name |type |description |
-|--				|--									|--							|
-|errCode	|string&#124;number	|错误码					|
-|errCode |string&#124;number |Error code |
-|errMsg		|string							|错误信息				|
-|errMsg |string |Error message |
-|appId		|string							|微信公众号appId|
-|appId |string |WeChat official account appId|
-|timestamp|number							|时间戳					|
-|timestamp|number |Timestamp |
-|nonceStr	|string							|随机串					|
-|nonceStr |string |Random String |
-|signature|string							|签名						|
-|signature|string |Signature|
-
-客户端收到此接口响应后可以调用wx.config接口注入配置信息，详情参考：[微信公众号：通过 config 接口注入权限验证配置](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#4)
-After receiving the response from this interface, the client can call the wx.config interface to inject configuration information. For details, please refer to: [WeChat Public Account: Config interface injection permission verification configuration](https://developers.weixin.qq.com/doc/offiaccount /OA_Web_Apps/JS-SDK.html#4)
-
-**使用此接口前需要使用`uni-open-bridge`函数定时获取微信公众号的`access_token`及`ticket`，参考：[uni-open-bridge](uni-open-bridge.md)**
-**Before using this interface, you need to use the `uni-open-bridge` function to regularly obtain the `access_token` and `ticket` of the WeChat official account, refer to: [uni-open-bridge](uni-open-bridge.md)**
 
 ### 管理接口@admin
 ### Management interface @admin

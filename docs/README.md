@@ -59,26 +59,26 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/gh_33446d7f7a26_430.jpg" width="160" /></div>
         <b>微信小程序版</b>
-        <b>WeChat applet version</b>
+        <b>WeChat applet</b>
       </a>
     </div>
     <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/30112940-bcf2-11ea-a30b-e311646dfaf2.png" width="160" /></div>
         <b>支付宝小程序版</b>
-        <b>Alipay applet version</b>
+        <b>Alipay applet</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/e7fc6700-bcf1-11ea-b680-7980c8a877b8.png" width="160" /></div>
         <b>百度小程序版</b>
-        <b>Baidu Mini Program Edition</b>
+        <b>Baidu applet</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/mp-toutiao.png" width="160" />
         </div>
         <b>字节跳动小程序版</b>
-        <b>ByteDance Mini Program Edition</b>
+        <b>ByteDance applet</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
@@ -94,7 +94,7 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hello-uni-qq.png" width="160" />
         </div>
         <b>QQ小程序版</b>
-        <b>QQ applet version</b>
+        <b>QQ applet</b>
       </a>
       <a href="https://so.mp.360.cn/mp.html?appid=qh4j181qqtru354st6" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
@@ -106,12 +106,12 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/04cb978b-070f-4122-b374-cb3cd9f9528f.png" width="160" /></div>
         <b>快手小程序版</b>
-        <b>Kuaishou applet version</b>
+        <b>Kuaishou applet</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/0daa3f31-47aa-4a9b-bd2f-6d3a7a968bd5.png" width="160" /></div>
         <b>飞书小程序版</b>
-        <b>Feishu Mini Program Edition</b>
+        <b>Feishu applet</b>
       </a>
     </div>
     <div class="flex-img-group-view" style="margin-top: 20px;">
@@ -120,14 +120,14 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
           <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/25463394-c584-4f68-bd57-6e05c43d55a7.png" width="160" />
         </div>
         <b>钉钉小程序版</b>
-        <b>DingTalk applet version</b>
+        <b>DingTalk applet</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/96e072fe-f338-46bd-b2d7-7b3aac7df501.png" width="160" />
         </div>
         <b>京东小程序版</b>
-        <b>JD Mini Program Edition</b>
+        <b>JD applet</b>
       </a>
       <a href="javascript:void(0)" οnclick="js_method()"  class="clear-style barcode-view">
         <div class="barcode-img-box">

@@ -13,7 +13,7 @@
 + 不要将自定义基座提交平台审核。调试模式下不会处理合规问题。需要注意！
 + APP没有配置隐私与政策提示框。请认真阅读[Android平台隐私与政策提示框配置方法](https://ask.dcloud.net.cn/article/36937)配置你APP的隐私弹窗。
 + 配置隐私弹窗时一定要配置使用`template`模式。否则无法上架应用市场。应用内部自己实现的隐私弹窗也不行。一定要使用uni提供的隐私弹窗并使用`template`模式切记！
-  ```
+  ```json
   //androidPrivacy.json
   {  
     "version": "1",    

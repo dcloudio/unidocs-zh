@@ -1263,9 +1263,7 @@ Client add-todo.vue
 **Notice**
 
 - pages.json内有`uniIdRouter`节点上述逻辑才会生效，自HBuilderX 3.5.0起创建空项目模板会自动配置空的`uniIdRouter`节点
-- The above logic will only take effect if there is a `uniIdRouter` node in pages.json. Since HBuilderX 3.5.0, creating an empty project template will automatically configure an empty `uniIdRouter` node
-- uniIdRouter底层使用navigateTo、redirectTo、reLaunch、switchTab的拦截器进行页面跳转拦截，不会拦截进入首页和点击原生tabbar。
-- The bottom layer of uniIdRouter uses the interceptors of navigateTo, redirectTo, reLaunch, and switchTab to intercept page jumps, and will not intercept entering the home page and clicking on the native tabbar.
+- uniIdRouter底层使用navigateTo、redirectTo、reLaunch、switchTab的拦截器进行页面跳转拦截，不会拦截进入首页，web端和app端会拦截原生tabbar点击，其他端不会拦截原生tabbar点击。
 一般tabbar页面都不做自动跳转，而是在页面内再提供登录按钮。比如tabbar上有购物车或个人中心，点击购物车后在购物车页面内部会放一个提示语和按钮，告知用户需要登录。
 Generally, the tabbar page does not automatically jump, but provides a login button in the page. For example, there is a shopping cart or personal center on the tabbar. After clicking the shopping cart, a prompt and a button will be placed inside the shopping cart page to inform the user that they need to log in.
 在页面内判断用户是否登录，使用API[uniCloud.getCurrentUserInfo()](client-sdk.md#client-getcurrentuserinfo)

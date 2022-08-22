@@ -25,8 +25,8 @@
 ## 流程介绍
 
 `uni-open-bridge` 包括：
-1. 一个云对象 `uni-open-bridge` 
-2. 一个公共模块 `uni-open-bridge-common` 
+1. 一个云对象 `uni-open-bridge`，插件[详情](https://ext.dcloud.net.cn/plugin?id=9002)
+2. 一个公共模块 `uni-open-bridge-common` ，插件[详情](https://ext.dcloud.net.cn/plugin?id=9002)
 3. 配套的数据库，表名为 `opendb-open-data`。在redis中的key格式为 `uni-id:[dcloudAppid]:[platform]:[openid]:[access-token|user-access-token|session-key|encrypt-key-version|ticket]`
 
 `uni-open-bridge`系统中，有一个同名云对象`uni-open-bridge`，它默认就是定时运行的，在package.json中配置了每小时定时运行一次（部署线上系统生效）。
@@ -35,10 +35,17 @@
 
 当所在服务空间开通redis时，还会缓存在redis的key。这会让系统性能更好。
 
+`uni-open-bridge` 依赖公共模块 [uni-open-bridge-common](#uni-open-bridge-common)，安装 `uni-open-bridge` 时会自动安装依赖插件 [uni-open-bridge-common](#uni-open-bridge-common)
+
+[uni-open-bridge](#uni-open-bridge) 提供了定时任务，外部系统访问能力，读写数据时依赖 [uni-open-bridge-common](#uni-open-bridge-common)
+
+[uni-open-bridge-common](#uni-open-bridge-common) 提供了多层读写Redis或数据库的能力，是为云函数或云对象设计的，可直接引入后调用相关方法，不走公网
+
 上述获取到微信的各种临时凭据后，当各个业务代码需要这些凭据时，通过如下方式获取。
 
 - 云函数/云对象获取这些临时凭据，可引用公共模块 `uni-open-bridge-common` ，通过该模块的API获取，比如getAccessToken。[见下](#uni-open-bridge-common)
 - 非uniCloud系统，比如传统云，获取这些凭据，需要将云对象`uni-open-bridge`进行URL化，通过Http方式请求凭据。[见下](#http)
+
 
 流程图如下：
 
@@ -65,6 +72,9 @@
 
 首先向微信的[公众平台](https://mp.weixin.qq.com/)申请 `appid` 和 `secret` 固定凭据
 然后在项目的 uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json 文件中配置
+
+如果不需要定时刷新 `access_token`、`ticket`、也不需要通过外部系统访问凭据时可单独引入 [uni-open-bridge-common](#uni-open-bridge-common)，然后在云函数或云对象中直接调用相关方法
+
 
 **示例代码**
 

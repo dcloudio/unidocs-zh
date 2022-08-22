@@ -286,13 +286,14 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.deleteFile()		|云函数删除云存储的文件 [详情](uniCloud/storage?id=clouddeletefile)																				|
 |uniCloud.getTempFileURL()	|获取云存储文件的临时路径 [详情](uniCloud/storage?id=cloudgettempfileurl)																		|
 |uniCloud.customAuth()		|使用云厂商自定义登录，仅腾讯云支持[详情](uniCloud/authentication.md?id=cloud-custom-auth)														|
-|uniCloud.callFunction()	|云函数/云对象中调用另一个云函数 [见下](?id=callbyfunction)	|
+|uniCloud.callFunction()	|云函数/云对象中调用另一个云函数 [见下](#callbyfunction)	|
 |uniCloud.importObject()	|云函数/云对象中调用另一个云对象 [详情](cloud-obj.md?id=call-by-cloud)	|
-|uniCloud.httpclient		|云函数中通过http访问其他系统 [见下](uniCloud/cf-functions?id=httpclient)																		|
+|uniCloud.httpclient		|云函数中通过http访问其他系统 [见下](#httpclient)																		|
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
+|uniCloud.httpProxyClient			|使用代理访问http服务，仅阿里云云端环境支持 [详见](#http-proxy-client)|
 
 ## 错误对象@uni-cloud-error
 
@@ -426,6 +427,110 @@ exports.main = async (event, context) => {
 };
 
 ```
+
+## 使用代理访问其他HTTP服务@http-proxy-client
+
+> 新增于 HBuilderX 3.5.5，仅阿里云云端环境支持
+
+uniCloud.httpProxyClient ，其原理是通过代理请求获得固定出口IP的能力。IP为轮转不固定，因此三方服务要求使用白名单时开发者需要将代理服务器可能的IP均加入到白名单中，见下方代理服务器列表。此外对于代理的域名有限制，当前仅持`weixin.qq.com`泛域名。若开发者有其他域名代理需求，发送邮件到service@dcloud.io申请。
+
+代理服务器IP列表
+
+```
+39.100.3.155
+47.92.39.39
+47.92.67.205
+47.92.25.106
+47.92.68.159
+```
+
+### 发送Get请求@http-proxy-client-get
+
+**用法**
+
+```js
+uniCloud.httpProxyClient.get(url: String, params?: Object)
+```
+
+**示例**
+
+```js
+uniCloud.httpProxyClient.get(
+  'https://api.weixin.qq.com/cgi-bin/token',
+  {
+    grant_type: 'client_credential', 
+    appid: 'xxxx',
+    secret: 'xxxx'
+  }
+)
+```
+
+
+### 发送POST请求携带表单数据@http-proxy-client-post-form
+
+注意，此接口以`application/x-www-form-urlencoded`格式post数据而不是`multipart/form-data`
+
+**用法**
+
+```js
+uniCloud.httpProxyClient.postForm(url: String, data?: Object, headers?: Object)
+```
+
+**示例**
+
+```js
+uniCloud.httpProxyClient.postForm(    
+  'https://www.example.com/search',
+  {
+    q: 'nodejs',
+    cat: '1001'
+  }
+)
+```
+
+### 发送POST请求携带JSON数据@http-proxy-client-post-json
+
+以`application/json`格式post数据
+
+**用法**
+
+```js
+uniCloud.httpProxyClient.postJson(url: String, json?: Object, headers?: Object)
+```
+
+**示例**
+
+```js
+uniCloud.httpProxyClient.postJson(    
+  'https://www.example.com/search',
+  {
+    q: 'nodejs',
+    cat: '1001'
+  }
+)
+```
+
+### POST通用数据@http-proxy-client-post
+
+**用法**
+
+```js
+uniCloud.httpProxyClient.post(url: String, text?: String, headers?: Object)
+```
+
+**示例**
+
+```js
+uniCloud.httpProxyClient.post(    
+  'https://www.example.com/search',
+  'abcdefg'
+)
+```
+
+**注意**
+
+- 不支持发送multipart格式的内容
+- 代理请求超时时间为5秒
 
 ## 扩展库@extension
 

@@ -509,7 +509,7 @@ new db.Geo.MultiPolygon([
 
 |腾讯云	|阿里云	|
 |--	|--	|
-|5秒	|3秒	|
+|5秒	|5秒	|
 
 如果是大数据批处理，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](uniCloud/cf-functions.md?id=recurrence)
 

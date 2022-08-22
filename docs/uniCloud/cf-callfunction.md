@@ -128,6 +128,7 @@ context对象的属性清单如下：
 |CLIENTIP					|string	|客户端IP。如果调用来源是其他服务器，会返回调用方的ip													|
 |CLIENTUA					|string	|客户端userAgent。注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云函数，但是云函数会从http请求头里面获取ua而不是clientInfo里面的ua				|
 |uniIdToken					|string	|客户端uni-id token字符串，新增于HBuilderX 3.5.1。														|
+|requestId					|string	|当前请求id，新增于HBuilderX 3.5.5。														|
 
 除了上述属性，如果是uni-app客户端通过callfunction访问云函数，那么context还会追加一批客户端信息。
 - HBuilderX 3.4.9前，context 添加了一批大写属性，如APPID、OS。

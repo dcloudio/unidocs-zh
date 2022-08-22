@@ -486,6 +486,7 @@ Return value example
 |uniIdCo.setPushCid()			|更新device表的push_clien_id [详情](#set-push-cid)			|
 |uniIdCo.setPushCid() |Update the push_clien_id of the device table [Details](#set-push-cid) |
 |uniIdCo.getSupportedLoginType()|获取支持的登录方式 [详情](#get-supported-login-type)		|
+|uniIdCo.getSupportedLoginType()|Get the supported login method [Details](#get-supported-login-type) |
 
 ### 注册登录和登出@register-login-logout
 ### Register login and logout @register-login-logout

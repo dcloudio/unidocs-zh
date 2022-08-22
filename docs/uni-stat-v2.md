@@ -951,7 +951,7 @@ db.collection('uni-stat-event-logs')
 3. 重新上传覆盖所有的`DB Schema`
 4. 将原`uni-stat-app-versions`表中的数据导入到`opendb-app-versions`表中；如下提供了一个代码片段，你可以创建一个云函数，将示例代码拷贝到云函数中，右键执行 “运行-本地云函数”，即可自动完成数据内容的迁移；
 
-```
+```js
 'use strict';
 const db = uniCloud.database()
 exports.main = async (event, context) => {

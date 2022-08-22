@@ -83,7 +83,7 @@ export const navbarLanguage = {
       text: '简体中文',
       link: 'javascript:;',
       click() {
-        location.href = 'https://uniapp.dcloud.net.cn' + location.pathname + location.search
+        location.href = 'https://uniapp.dcloud.net.cn' + location.pathname + location.hash + location.search
       }
     },
     {

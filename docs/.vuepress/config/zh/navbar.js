@@ -173,7 +173,7 @@ export const navbarLanguage = {
       text: 'English',
       link: 'javascript:;',
       click() {
-        location.href = 'https://en.uniapp.dcloud.io' + location.pathname + location.search
+        location.href = 'https://en.uniapp.dcloud.io' + location.pathname + location.hash + location.search
       }
     }
   ]

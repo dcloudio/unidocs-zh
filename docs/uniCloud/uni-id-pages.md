@@ -347,7 +347,6 @@ const uniIdCo = uniCloud.importObject('uni-id-co')
 |uniIdCo.getInvitedUser()		|获取受邀用户 [详情](#get-invited-user)						|
 |uniIdCo.setPushCid()			|更新device表的push_clien_id [详情](#set-push-cid)			|
 |uniIdCo.getSupportedLoginType()|获取支持的登录方式 [详情](#get-supported-login-type)		|
-|uniIdCo.getH5WeixinConfig()|获取微信公众号初始化配置 [详情](#get-h5-weixin-config)		|
 
 ### 注册登录和登出@register-login-logout
 
@@ -1293,37 +1292,6 @@ await uniIdCo.setPushCid({
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
-
-#### 获取微信公众号初始化配置@get-h5-weixin-config
-
-**接口形式**
-
-```js
-await uniIdCo.getH5WeixinConfig({
-	url
-})
-```
-
-**参数说明**
-
-|参数名	|类型		|必填	|说明														|
-|--			|--			|--		|--															|
-|url		|string	|是		|当前客户端页面url，不带hash部分|
-
-**返回值**
-
-|参数名		|类型								|说明						|
-|--				|--									|--							|
-|errCode	|string&#124;number	|错误码					|
-|errMsg		|string							|错误信息				|
-|appId		|string							|微信公众号appId|
-|timestamp|number							|时间戳					|
-|nonceStr	|string							|随机串					|
-|signature|string							|签名						|
-
-客户端收到此接口响应后可以调用wx.config接口注入配置信息，详情参考：[微信公众号：通过 config 接口注入权限验证配置](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#4)
-
-**使用此接口前需要使用`uni-open-bridge`函数定时获取微信公众号的`access_token`及`ticket`，参考：[uni-open-bridge](uni-open-bridge.md)**
 
 ### 管理接口@admin
 

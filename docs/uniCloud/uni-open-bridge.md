@@ -38,11 +38,8 @@ This central system is `uni-open-bridge`.
 ## Process introduction
 
 `uni-open-bridge` 包括：
-`uni-open-bridge` includes:
-1. 一个云对象 `uni-open-bridge` 
-1. A cloud object `uni-open-bridge`
-2. 一个公共模块 `uni-open-bridge-common` 
-2. A common module `uni-open-bridge-common`
+1. 一个云对象 `uni-open-bridge`，插件[详情](https://ext.dcloud.net.cn/plugin?id=9002)
+2. 一个公共模块 `uni-open-bridge-common` ，插件[详情](https://ext.dcloud.net.cn/plugin?id=9002)
 3. 配套的数据库，表名为 `opendb-open-data`。在redis中的key格式为 `uni-id:[dcloudAppid]:[platform]:[openid]:[access-token|user-access-token|session-key|encrypt-key-version|ticket]`
 3. The supporting database, the table name is `opendb-open-data`. The key format in redis is `uni-id:[dcloudAppid]:[platform]:[openid]:[access-token|user-access-token|session-key|encrypt-key-version|ticket]`
 
@@ -55,6 +52,12 @@ The cloud object has the right to periodically send requests to the WeChat serve
 当所在服务空间开通redis时，还会缓存在redis的key。这会让系统性能更好。
 When redis is activated in the service space where it is located, the key of redis will also be cached. This will make the system perform better.
 
+`uni-open-bridge` 依赖公共模块 [uni-open-bridge-common](#uni-open-bridge-common)，安装 `uni-open-bridge` 时会自动安装依赖插件 [uni-open-bridge-common](#uni-open-bridge-common)
+
+[uni-open-bridge](#uni-open-bridge) 提供了定时任务，外部系统访问能力，读写数据时依赖 [uni-open-bridge-common](#uni-open-bridge-common)
+
+[uni-open-bridge-common](#uni-open-bridge-common) 提供了多层读写Redis或数据库的能力，是为云函数或云对象设计的，可直接引入后调用相关方法，不走公网
+
 上述获取到微信的各种临时凭据后，当各个业务代码需要这些凭据时，通过如下方式获取。
 After the various temporary credentials of WeChat are obtained above, when these credentials are required by each business code, they are obtained in the following ways.
 
@@ -62,6 +65,7 @@ After the various temporary credentials of WeChat are obtained above, when these
 - To obtain these temporary credentials from cloud functions/cloud objects, you can refer to the public module `uni-open-bridge-common` and obtain them through the module's API, such as getAccessToken. [see below](#uni-open-bridge-common)
 - 非uniCloud系统，比如传统云，获取这些凭据，需要将云对象`uni-open-bridge`进行URL化，通过Http方式请求凭据。[见下](#http)
 - For non-uniCloud systems, such as traditional cloud, to obtain these credentials, you need to URLize the cloud object `uni-open-bridge` and request credentials through Http. [see below](#http)
+
 
 流程图如下：
 The flow chart is as follows:
@@ -102,6 +106,9 @@ There are also some less commonly used credentials that are not listed, for exam
 First apply for `appid` and `secret` fixed credentials from WeChat's [public platform](https://mp.weixin.qq.com/)
 然后在项目的 uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json 文件中配置
 Then configure in the project's uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json file
+
+如果不需要定时刷新 `access_token`、`ticket`、也不需要通过外部系统访问凭据时可单独引入 [uni-open-bridge-common](#uni-open-bridge-common)，然后在云函数或云对象中直接调用相关方法
+
 
 **示例代码**
 **Sample code**

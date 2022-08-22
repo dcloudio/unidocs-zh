@@ -362,7 +362,7 @@ uni统计新增的文件主要包括：
 
 为方便开发者使用 sourceMap 文件定位代码问题，增加在统计中使用 sourceMap 错误解析功能。
 
-#### 使用环境
+#### 使用环境@sourcemap-parse-error-env
 
 1. 使用腾讯云服务空间，不支持阿里云服务空间
 2. HBuiderX 3.5.3+

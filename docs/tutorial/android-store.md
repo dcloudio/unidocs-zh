@@ -22,6 +22,7 @@ Please read the following steps carefully to test your APP! Effectively solve li
 + APP没有配置隐私与政策提示框。请认真阅读[Android平台隐私与政策提示框配置方法](https://ask.dcloud.net.cn/article/36937)配置你APP的隐私弹窗。
 + The APP does not have a privacy and policy prompt box configured. Please read [Android platform privacy and policy prompt box configuration method](https://ask.dcloud.net.cn/article/36937) to configure your APP's privacy pop-up window.
 + 配置隐私弹窗时一定要配置使用`template`模式。否则无法上架应用市场。应用内部自己实现的隐私弹窗也不行。一定要使用uni提供的隐私弹窗并使用`template`模式切记！
++ Be sure to use `template` mode when configuring privacy popups. Otherwise, the application market will not be available. The privacy pop-up window implemented by the application itself does not work either. Be sure to use the privacy popup provided by uni and use the `template` mode remember!
   ```json
   //androidPrivacy.json
   {  

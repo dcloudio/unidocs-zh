@@ -25,9 +25,9 @@
 ## 流程介绍
 
 `uni-open-bridge` 包括：
-1. 一个云对象 `uni-open-bridge`，插件[详情](https://ext.dcloud.net.cn/plugin?id=9002)
-2. 一个公共模块 `uni-open-bridge-common` ，插件[详情](https://ext.dcloud.net.cn/plugin?id=9002)
-3. 配套的数据库，表名为 `opendb-open-data`。在redis中的key格式为 `uni-id:[dcloudAppid]:[platform]:[openid]:[access-token|user-access-token|session-key|encrypt-key-version|ticket]`
+1. 一个云对象 `uni-open-bridge`，插件下载地址：[https://ext.dcloud.net.cn/plugin?id=9002](https://ext.dcloud.net.cn/plugin?id=9002)。（其依赖了下面的公共模块，但不是一个插件）
+2. 一个公共模块 `uni-open-bridge-common` ，插件下载地址：[https://ext.dcloud.net.cn/plugin?id=9002](https://ext.dcloud.net.cn/plugin?id=9002)
+3. 配套的数据库，保存这些凭据，表名为 `opendb-open-data`。在redis中的key格式为 `uni-id:[dcloudAppid]:[platform]:[openid]:[access-token|user-access-token|session-key|encrypt-key-version|ticket]`
 
 `uni-open-bridge`系统中，有一个同名云对象`uni-open-bridge`，它默认就是定时运行的，在package.json中配置了每小时定时运行一次（部署线上系统生效）。
 
@@ -35,11 +35,9 @@
 
 当所在服务空间开通redis时，还会缓存在redis的key。这会让系统性能更好。
 
-`uni-open-bridge` 依赖公共模块 [uni-open-bridge-common](#uni-open-bridge-common)，安装 `uni-open-bridge` 时会自动安装依赖插件 [uni-open-bridge-common](#uni-open-bridge-common)
+[uni-open-bridge](#uni-open-bridge) 云对象提供了定时任务，外部系统访问能力，读写数据时依赖 [uni-open-bridge-common](#uni-open-bridge-common)。安装 `uni-open-bridge` 时会自动安装依赖插件 [uni-open-bridge-common](#uni-open-bridge-common)
 
-[uni-open-bridge](#uni-open-bridge) 提供了定时任务，外部系统访问能力，读写数据时依赖 [uni-open-bridge-common](#uni-open-bridge-common)
-
-[uni-open-bridge-common](#uni-open-bridge-common) 提供了多层读写Redis或数据库的能力，是为云函数或云对象设计的，可直接引入后调用相关方法，不走公网
+[uni-open-bridge-common](#uni-open-bridge-common) 提供了多层读写Redis或数据库的能力，是为业务云函数/云对象使用这些凭据而设计的。
 
 上述获取到微信的各种临时凭据后，当各个业务代码需要这些凭据时，通过如下方式获取。
 
@@ -51,7 +49,7 @@
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
-## 凭据托管状态
+## 凭据托管在不同平台的处理
 
 |凭据																		|微信小程序	|微信公众号(H5)	|
 |:-:																		|:-:				|:-:						|
@@ -64,21 +62,23 @@
 
 还有一些不常用的凭据暂不列出，例如：微信App access_token
 
+**微信凭据分应用级、用户级、一次性等凭据，如果你之前未接触过微信这些凭据，请务必阅读[微信凭据详细介绍](#wxtoken)**
 
 ## 使用
-1. **下载插件[uni-open-bridge](https://ext.dcloud.net.cn/plugin?id=9002)到项目中。
 
-2. 在`uni-config-center`的 `uni-id` 下配置固定凭据，详情见下面的示例代码
+### 1. **下载插件[uni-open-bridge](https://ext.dcloud.net.cn/plugin?id=9002)到项目中。
 
-首先向微信的[公众平台](https://mp.weixin.qq.com/)申请 `appid` 和 `secret` 固定凭据
+### 2. 在`uni-config-center`的 `uni-id` 下配置固定凭据，详情见下面的示例代码
+
+首先向微信的[公众平台](https://mp.weixin.qq.com/)申请 `appid` 和 `secret` 固定凭据。
+
 然后在项目的 uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json 文件中配置
 
 如果不需要定时刷新 `access_token`、`ticket`、也不需要通过外部系统访问凭据时可单独引入 [uni-open-bridge-common](#uni-open-bridge-common)，然后在云函数或云对象中直接调用相关方法
 
-
 **示例代码**
 
-### uni-id-config
+**uni-id-config**
 
 ```json
 // uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json
@@ -106,9 +106,9 @@
 
 注意：拷贝此文件内容时需要移除 `注释`
 
-3. 在`uni-config-center`目录下新建子目录`uni-open-bridge`, 新增 `config.json`，配置 dcloudAppid ，详情见下面的示例代码
+### 3. 在`uni-config-center`目录下新建子目录`uni-open-bridge`, 新增 `config.json`，配置 dcloudAppid ，详情见下面的示例代码
 
-### uni-open-bridge-config@uniopenbridgeconfig
+#### uni-open-bridge-config@uniopenbridgeconfig
 
 **示例代码**
 
@@ -134,8 +134,11 @@
 
 注意：拷贝此文件内容时需要移除 `注释`
 
-4. 将插件上传到服务空间。最好开通redis，会有更好的性能
-然后在数据库和redis的`uni-id`分组中会看到数据。
+### 4. 将插件上传到服务空间
+
+云对象上传到服务空间后，会每隔一个小时自动运行一次，从微信服务器获取相关凭据并保存到数据库。
+
+在数据库`opendb-open-data`中会看到数据。如开通redis则在redis的`uni-id`分组中查看（推荐开通redis以获取更好的性能）。
 
 如果异常，请在 [uniCloud Web控制台](https://unicloud.dcloud.net.cn/)，找到云函数/云对象 `uni-open-bridge` 检查运行日志。很可能是第一步或第二步的配置出错了。
 
@@ -149,7 +152,7 @@
 
 > `云函数公共模块`是不同云函数共享代码的一种方式。如果你不了解什么是`云函数公共模块`，请另读文档[公共模块](https://uniapp.dcloud.io/uniCloud/cf-common)
 
-`uni-open-bridge-common` 提供了 `access_token`、`user_access_token`、`session_key`、`encrypt_key`、`ticket` 的读取、写入、删除操作。
+`uni-open-bridge-common` 提供了 [access_token](#access_token)、[user_access_token](#user_access_token)、[session_key](#session_key)、[encrypt_key](#encrypt_key)、[ticket](#ticket) 的读取、写入、删除操作。
 
 `uni-open-bridge-common` 支持多层 读取 / 写入 机制，`redis -> database -> fallback`，优先级如下:
 
@@ -183,7 +186,7 @@ uobc.getEncryptKey(userKey)
 
 #### Platform@platform
 
-存储数据key对应平台的值
+存储数据key对应平台的值。注意不同于前端条件编译使用的uniPlatform。
 
 |值					|描述				|
 |:-:				|:-:				|
@@ -194,7 +197,7 @@ uobc.getEncryptKey(userKey)
 |qq-mp			|QQ 小程序	|
 |qq-app			|QQ App			|
 
-提示：自动刷新固定应用级凭据目前仅支持 `weixin-mp`、`weixin-h5` 后续补充其他平台
+提示：自动刷新固定应用级凭据目前仅支持 `weixin-mp`、`weixin-h5`。 后续补充其他平台
 
 #### getAccessToken(key: Object, fallback: Function)
 
@@ -897,7 +900,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 ```
 
 
-## 微信凭据介绍
+## 微信凭据详细介绍@wxtoken
 
 ### access_token(应用级)@access_token
 
@@ -921,7 +924,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 
 ### user_access_token(用户级)@user_access_token
 
-平台对应的值
+因微信的众多凭据命名都叫`access_token`，无法有效区分。对于用户级的`access_token`，在 uni-open-bridge 中改名 `user_access_token` 。
 
 |平台							|值						|描述																																																													|
 |:-:							|:-:					|:-:																																																													|
@@ -934,7 +937,7 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
 1、公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。
 2、网页授权接口调用凭证，用户授权的作用域 `access_token`。
 
-在微信内置浏览器H5无法区分两个相同名称值不同的 `access_token`，所以以更直观的名称 `user_access_token` 对应用户授权 `access_token`
+在微信内置浏览器H5无法区分两个相同名称值不同的 `access_token`，所以在 uni-open-bridge 中对用户级凭据进行改名，以更直观的名称 `user_access_token` 对应用户授权 `access_token`
 
 
 ### code(临时凭据)@code

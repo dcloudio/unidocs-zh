@@ -48,14 +48,12 @@
 + app-plus节点 --> distribute节点 --> sdkConfigs节点 --> push节点 --> igexin节点（或者unipush节点） --> icons节点 --> small节点下配置
 + app-plus node --> distribute node --> sdkConfigs node --> push node --> igexin node (or unipush node) --> icons node --> configuration under small node
 
-~~~
+```json
 "sdkConfigs": {
 	"push": {
 		"unipush": { 
 			"icons": { // 推送图片配置
-			"icons": { // push image configuration
 				"push": { // push图标，规格与应用图片一致，不配置则默认使用push图标
-				"push": { // push icon, the specifications are the same as the application picture, if not configured, the push icon will be used by default
 					"ldpi": "可选，48x48",
 					"ldpi": "Optional, 48x48",
 					"mdpi": "可选，48x48",
@@ -69,7 +67,6 @@
 					"xxxhdpi": "可选，192x192"
 				},
 				"small": { //  小图标，png格式图片，仅使用alpha图层
-				"small": { // small icon, png format image, only use alpha layer
 					"ldpi": "可选，18*18",
 					"ldpi": "Optional, 18*18",
 					"mdpi": "可选，24*24",
@@ -85,8 +82,7 @@
 		}
 	}
 }
-
-~~~
+```
 
 
 ### 具体配置信息说明如下：

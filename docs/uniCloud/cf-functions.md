@@ -294,6 +294,9 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
 |uniCloud.httpProxyClient			|使用代理访问http服务，仅阿里云云端环境支持 [详见](#http-proxy-client)|
+|uniCloud.getRequestList			|获取当前云函数实例内正在处理的请求Id列表 [详见](#get-request-list)|
+|uniCloud.getClientInfos			|获取当前云函数实例内正在处理的请求对应的客户端信息列表 [详见](#get-client-infos)|
+|uniCloud.getCloudInfos			|获取当前云函数实例内正在处理的请求对应的云端信息列表 [详见](#get-cloud-infos)|
 
 ## 错误对象@uni-cloud-error
 
@@ -531,6 +534,88 @@ uniCloud.httpProxyClient.post(
 
 - 不支持发送multipart格式的内容
 - 代理请求超时时间为5秒
+
+## 其他API
+
+### 获取请求id列表@get-request-list
+
+非单实例多并发场景下列表长度为1，仅有的一个requestId表示当前请求的requestId。单实例多并发场景下会返回正在处理的所有请求的requestId列表。如需获取当前请求的requestId参考：[云函数context](cf-callfunction.md#context)、[云对象获取当前请求的requestId](cloud-obj.md#get-request-id)
+
+**示例**
+
+```js
+uniCloud.getRequestList() // ['3228166e-3c17-4d58-9707-xxxxxxxx']
+```
+
+
+### 获取客户端信息列表#get-client-infos
+
+非单实例多并发场景下列表长度为1，仅有的一个cloudInfo表示当前请求的客户端信息。单实例多并发场景下返回正在处理的所有请求的客户端信息列表。
+
+```js
+const clientInfos = uniCloud.getClientInfos() 
+clientInfos = [{
+  appId: '__UNI_xxxxx',
+  requestId: '3228166e-3c17-4d58-9707-xxxxxxxx'
+  // ...
+}]
+```
+
+**返回值**
+
+getClientInfos返回的信息，是在客户端的[uni.getSystemInfo](/api/system/info.md#getsysteminfo)的基础之上，增加了一些额外的信息。
+
+除了`getSystemInfo`返回字段外，还包含以下信息
+
+|属性名		|类型		|说明																																																																					|
+|--				|--			|--																																																																						|
+|clientIP	|string	|客户端ip																																																																			|
+|userAgent|string	|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua|
+|source		|string	|调用来源，返回值见下。																																																												|
+|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.md#getlaunchoptionssync)返回的scene参数，													|
+|requestId|string	|请求Id，可以使用此字段筛选出当前请求的客户端信息																																															|
+
+云函数调用来源，它的值域为：
+
+|取值			|说明													|
+|--				|--														|
+|client		|uni-app客户端导入云对象调用	|
+|function	|由其他云函数或云对象调用			|
+|http			|云对象URL化后通过http访问调用|
+|timing		|定时任务调用云对象						|
+
+**注意事项**
+
+- 客户端上报的信息在理论上存在被篡改可能，实际业务中应验证前端传来的数据的合法性
+- 除了clientIP外，其他客户端信息只有使用uni-app客户端以callFunction或者importObject方式访问云函数或云对象时才有
+- 云对象与云函数内获取客户端platform稍有不同，云函数未拉齐vue2、vue3版本app平台的platform值，vue2为`app-plus`，vue3为`app`。云对象无论客户端是vue2还是vue3，在app平台获取的platform均为`app`。这一点在使用uni-id时需要特别注意，详情见：[uni-id文档 preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
+
+### 获取云端信息@get-cloud-infos
+
+非单实例多并发场景下列表长度为1，仅有的一个cloudInfo表示当前请求的云端信息。单实例多并发场景下返回正在处理的所有请求的云端信息列表。
+
+**示例**
+
+```js
+const cloudInfos = uniCloud.getCloudInfos() 
+cloudInfos = [{
+  provider: 'aliyun',
+  spaceId: 'xxxxx',
+  functionName: 'xxx',
+  functionType: 'xxxx',
+  requestId: '3228166e-3c17-4d58-9707-xxxxxxxx'
+}]
+```
+
+**返回值**
+
+|参数名				|类型		|必备	|说明																										|
+|--						|--			|--		|--																											|
+|provider			|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`|
+|spaceId			|string	|是		|服务空间Id																							|
+|functionName	|string	|是		|云对象名称，新增于																			|
+|functionType	|string	|是		|云对象此值固定为`cloudobject`，新增于									|
+|requestId		|string	|是		|请求Id，可以使用此字段筛选出当前请求的云端信息				|
 
 ## 扩展库@extension
 

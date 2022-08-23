@@ -394,6 +394,32 @@ When the client calls the cloud function, the uniIdToken is automatically added 
 }
 ```
 
+## 运行云对象时传配置运行测试参数@run-obj-param
+
+> 新增于HBuilderX 3.5.5
+
+右键点击云对象时选择`运行-本地云对象`或`调试运行-本地云对象`时，会自动创建运行参数文件`${objName}.param.js`，可在此文件内以以下格式配置参数，配置完毕后再次运行即可。
+
+其中`const clientInfo = {xxx}`为模拟客户端信息。完整clientInfo列表请参考：[getClientInfo](cloud-obj.md#get-client-info)
+
+`login('xxx', 'xxx')`用于指定调用的方法名和参数。
+
+```js
+const clientInfo = { // 模拟clientInfo
+  uniPlatform: 'web',
+  source: 'client', // 调用来源，不传时默认为 client
+  clientIP: '127.0.0.1', // 客户端ip，不传时默认为 127.0.0.1
+  userAgent: 'xx MicroMessenger/xxx' // 客户端ua，不传时默认为 HBuilderX
+  uniIdToken: 'xxx',
+}
+login('name-demo', 'password-demo') // 调用login方法传入参数'name-demo'和'password-demo'
+```
+
+**注意**
+
+- 此文件并非可执行的js文件，仅用来配置参数，因此不可在文件内定义变量并使用
+- 如果存在多个方法、参数配置运行时会使用第一个
+
 ## 断点调试云函数
 ## Breakpoint debugging cloud function
 

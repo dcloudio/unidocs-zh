@@ -4,8 +4,7 @@ Slow query means that the cloud database query is slow and cannot return results
 开发者应经常查阅自己的慢查询，修复问题，保证业务系统的健康稳定。
 Developers should check their slow queries frequently, fix problems, and ensure the health and stability of the business system.
 
-在数据库语句执行超过一定时间（**腾讯云为5秒，阿里云为3秒**）仍不能返回结果后，阿里云甚至会报错`operation exceeded time limit`。**如果对数据库超时时间有更高的需求，建议使用腾讯云。**
-If the database statement execution exceeds a certain time (**Tencent Cloud is 5 seconds, Alibaba Cloud is 3 seconds**) and still cannot return results, Alibaba Cloud will even report the error `operation exceeded time limit`. **If there is a higher demand for database timeout time, Tencent Cloud is recommended. **
+在数据库语句执行超过一定时间（**腾讯云、阿里云均为5秒**）仍不能返回结果后，数据库请求会报超时错误。
 
 这里介绍如何进行查询优化以避免此类问题。
 Here's how to do query optimization to avoid such problems.

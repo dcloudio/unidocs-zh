@@ -184,7 +184,7 @@ The list of properties of the context object is as follows:
 |CLIENTUA					|string	|客户端userAgent。注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云函数，但是云函数会从http请求头里面获取ua而不是clientInfo里面的ua				|
 |CLIENTUA |string |Client userAgent. Note that in a non-local operating environment, the client getSystemInfoSync will also obtain the ua parameter and upload it to the cloud function, but the cloud function will obtain ua from the http request header instead of ua in clientInfo |
 |uniIdToken					|string	|客户端uni-id token字符串，新增于HBuilderX 3.5.1。														|
-|uniIdToken |string |Client uni-id token string, added in HBuilderX 3.5.1. |
+|requestId					|string	|当前请求id，新增于HBuilderX 3.5.5。														|
 
 除了上述属性，如果是uni-app客户端通过callfunction访问云函数，那么context还会追加一批客户端信息。
 In addition to the above properties, if the uni-app client accesses the cloud function through callfunction, the context will also append a batch of client information.

@@ -21,16 +21,15 @@
 
 `<ad-interactive></ad-interactive>`
 
-
 **属性说明**
 
-|属性名																	|类型				|默认值		|说明																						|
-|:-																			|:-					|:-				|:-																							|
-|adpid																	|String			|					|广告位id																				|
-|open-page-path													|String			|					|点击广告后打开的页面路径，[详见](#openpagepath)|
-|v-slot:default="{data, loading, error}"|						|					|作用域插槽，[详见](#vslot)											|
-|@load																	|EventHandle|加载事件	|																								|
-|@error																	|EventHandle|错误事件	|																								|
+|属性名																	|类型				|说明																						|
+|:-																			|:-					|:-																							|
+|adpid																	|String			|广告位id																				|
+|open-page-path													|String			|点击广告后打开的页面路径，[详见](#openpagepath)|
+|v-slot:default="{data, loading, error}"|						|作用域插槽，[详见](#vslot)											|
+|@load																	|EventHandle|加载成功事件																		|
+|@error																	|EventHandle|加载失败事件																		|
 
 ### `v-slot:default="{data, loading, error}"` 属性说明@vslot
 
@@ -46,7 +45,6 @@
 ```html
 <template>
   <view>
-    <!-- 互动广告组件, 3.5.5+ -->
     <!-- 用户点击组件后将打开广告页面，参见属性 open-page-path -->
     <ad-interactive adpid="1000000001" v-slot:default="{data, loading, error}" open-page-path="/pages/ad-interactive-webview/ad-interactive-webview">
       <view v-if="data">
@@ -65,7 +63,6 @@
 ```html
 <template>
   <view class="content">
-    <!-- 互动广告组件, 3.5.5+ -->
     <!-- 用户点击组件后将打开广告页面，参见属性 open-page-path -->
     <ad-interactive adpid="1000000001" v-slot:default="{data, loading, error}" @load="onadload" @error="onaderror" open-page-path="/pages/ad-interactive-webview/ad-interactive-webview">
       <view v-if="loading">Loading</view>

@@ -293,10 +293,10 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
-|uniCloud.httpProxyClient			|使用代理访问http服务，仅阿里云云端环境支持 [详见](#http-proxy-client)|
-|uniCloud.getRequestList			|获取当前云函数实例内正在处理的请求Id列表 [详见](#get-request-list)|
-|uniCloud.getClientInfos			|获取当前云函数实例内正在处理的请求对应的客户端信息列表 [详见](#get-client-infos)|
-|uniCloud.getCloudInfos			|获取当前云函数实例内正在处理的请求对应的云端信息列表 [详见](#get-cloud-infos)|
+|uniCloud.httpProxyForEip			|使用云厂商代理访问http服务（阿里云固定IP方案），仅阿里云云端环境支持 [详见](#http-proxy-for-eip)，新增于`HBuilderX 3.5.5`|
+|uniCloud.getRequestList			|获取当前云函数实例内正在处理的请求Id列表 [详见](#get-request-list)，新增于`HBuilderX 3.5.5`|
+|uniCloud.getClientInfos			|获取当前云函数实例内正在处理的请求对应的客户端信息列表 [详见](#get-client-infos)，新增于`HBuilderX 3.5.5`|
+|uniCloud.getCloudInfos			|获取当前云函数实例内正在处理的请求对应的云端信息列表 [详见](#get-cloud-infos)，新增于`HBuilderX 3.5.5`|
 
 ## 错误对象@uni-cloud-error
 
@@ -430,110 +430,6 @@ exports.main = async (event, context) => {
 };
 
 ```
-
-## 使用代理访问其他HTTP服务@http-proxy-client
-
-> 新增于 HBuilderX 3.5.5，仅阿里云云端环境支持
-
-uniCloud.httpProxyClient ，其原理是通过代理请求获得固定出口IP的能力。IP为轮转不固定，因此三方服务要求使用白名单时开发者需要将代理服务器可能的IP均加入到白名单中，见下方代理服务器列表。此外对于代理的域名有限制，当前仅持`weixin.qq.com`泛域名。若开发者有其他域名代理需求，发送邮件到service@dcloud.io申请。
-
-代理服务器IP列表
-
-```
-39.100.3.155
-47.92.39.39
-47.92.67.205
-47.92.25.106
-47.92.68.159
-```
-
-### 发送Get请求@http-proxy-client-get
-
-**用法**
-
-```js
-uniCloud.httpProxyClient.get(url: String, params?: Object)
-```
-
-**示例**
-
-```js
-uniCloud.httpProxyClient.get(
-  'https://api.weixin.qq.com/cgi-bin/token',
-  {
-    grant_type: 'client_credential', 
-    appid: 'xxxx',
-    secret: 'xxxx'
-  }
-)
-```
-
-
-### 发送POST请求携带表单数据@http-proxy-client-post-form
-
-注意，此接口以`application/x-www-form-urlencoded`格式post数据而不是`multipart/form-data`
-
-**用法**
-
-```js
-uniCloud.httpProxyClient.postForm(url: String, data?: Object, headers?: Object)
-```
-
-**示例**
-
-```js
-uniCloud.httpProxyClient.postForm(    
-  'https://www.example.com/search',
-  {
-    q: 'nodejs',
-    cat: '1001'
-  }
-)
-```
-
-### 发送POST请求携带JSON数据@http-proxy-client-post-json
-
-以`application/json`格式post数据
-
-**用法**
-
-```js
-uniCloud.httpProxyClient.postJson(url: String, json?: Object, headers?: Object)
-```
-
-**示例**
-
-```js
-uniCloud.httpProxyClient.postJson(    
-  'https://www.example.com/search',
-  {
-    q: 'nodejs',
-    cat: '1001'
-  }
-)
-```
-
-### POST通用数据@http-proxy-client-post
-
-**用法**
-
-```js
-uniCloud.httpProxyClient.post(url: String, text?: String, headers?: Object)
-```
-
-**示例**
-
-```js
-uniCloud.httpProxyClient.post(    
-  'https://www.example.com/search',
-  'abcdefg'
-)
-```
-
-**注意**
-
-- 不支持发送multipart格式的内容
-- 代理请求超时时间为5秒
 
 ## 其他API
 
@@ -961,6 +857,8 @@ exports.main = async function() {
 
 ### 固定出口IP@eip
 
+#### 腾讯云@tencent-eip
+
 serverless默认是没有固定的服务器IP的，因为有很多服务器资源在后台供随时调用，每次调用到哪个服务器、哪个ip都不固定。
 
 但一些三方系统，要求配置固定ip白名单，比如微信公众号的js sdk，此时只能提供固定ip地址。
@@ -981,6 +879,115 @@ serverless默认是没有固定的服务器IP的，因为有很多服务器资�
 - 如果一个云函数已经开通固定出口ip，再关联redis扩展库时固定ip会发生变化
 
 建议已开通redis的服务空间先将云函数关联redis扩展再开通固定出口IP，**2022年7月20日起新上传的云函数会默认开启vpc功能，如需旧云函数和新云函数保持一致可以把旧云函数关联redis扩展后上传一次，注意这样操作会改变旧云函数的固定出口IP**
+
+#### 阿里云@aliyun-eip
+
+> 新增于 HBuilderX 3.5.5，仅阿里云支持
+
+uniCloud.httpProxyForEip ，其原理是通过代理请求获得固定出口IP的能力。IP为轮转不固定，因此三方服务要求使用白名单时开发者需要将代理服务器可能的IP均加入到白名单中，见下方代理服务器列表。此外对于代理的域名有限制，当前仅持`weixin.qq.com`泛域名。若开发者有其他域名代理需求，发送邮件到service@dcloud.io申请。
+
+代理服务器IP列表
+
+```
+39.100.3.155
+47.92.39.39
+47.92.67.205
+47.92.25.106
+47.92.68.159
+```
+
+如需在获取微信公众号access_token场景使用，请将上述ip配置到`微信公众平台 -> 基本配置 -> IP白名单`内，相关链接：[微信公众平台](https://mp.weixin.qq.com/)
+
+##### 发送Get请求@http-proxy-get
+
+**用法**
+
+```js
+uniCloud.httpProxyForEip.get(url: String, params?: Object)
+```
+
+**示例**
+
+```js
+await uniCloud.httpProxyForEip.get(
+  'https://api.weixin.qq.com/cgi-bin/token',
+  {
+    grant_type: 'client_credential', 
+    appid: 'xxxx',
+    secret: 'xxxx'
+  }
+)
+```
+
+##### 发送POST请求携带表单数据@http-proxy-post-form
+
+注意，此接口以`application/x-www-form-urlencoded`格式发送数据而不是`multipart/form-data`
+
+**用法**
+
+```js
+uniCloud.httpProxyForEip.postForm(url: String, data?: Object, headers?: Object)
+```
+
+**示例**
+
+```js
+uniCloud.httpProxyForEip.postForm(    
+  'https://www.example.com/search',
+  {
+    q: 'nodejs',
+    cat: '1001'
+  }
+)
+```
+
+##### 发送POST请求携带JSON数据@http-proxy-post-json
+
+以`application/json`格式post数据
+
+**用法**
+
+```js
+uniCloud.httpProxyForEip.postJson(url: String, json?: Object, headers?: Object)
+```
+
+**示例**
+
+```js
+uniCloud.httpProxyForEip.postJson(    
+  'https://www.example.com/search',
+  {
+    q: 'nodejs',
+    cat: '1001'
+  }
+)
+```
+
+##### POST通用数据@http-proxy-post
+
+**用法**
+
+```js
+uniCloud.httpProxyForEip.post(url: String, text?: String, headers?: Object)
+```
+
+**示例**
+
+```js
+uniCloud.httpProxyForEip.post(    
+  'https://www.example.com/search',
+  'abcdefg',
+  {
+    "Content-Type": "text/plain"
+  }
+)
+```
+
+**注意**
+
+- 不支持发送multipart格式的内容
+- 代理请求超时时间为5秒
+- 上述接口支持本地运行
 
 ### 单实例多并发@concurrency
 

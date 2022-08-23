@@ -1,8 +1,6 @@
 ::: warning 注意 
 ::: warning attention
  您正在浏览的是老版uni统计1.0的文档。推荐升级到[uni统计2.0](uni-stat-v2.html)
- You are browsing the documentation for the old version of uni stats 1.0. It is recommended to upgrade to [uni stats 2.0](uni-stat-v2.html)
- 
 :::
 
 uni-app 2.2.3+ 版本新增 `uni 统计1.0`，支持全平台业务统计，包括App、H5及各家小程序。

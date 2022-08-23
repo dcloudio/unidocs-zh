@@ -322,12 +322,12 @@ uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则，�
 |用户名、手机号、邮箱+密码|配置`passwordSecret`即可																																																						|
 |手机号+验证码						|配置`service.sms`，在开发者中心短信服务内获取配置信息：[短信服务](https://dev.dcloud.net.cn/#/pages/sms/base)											|
 |手机号一键登录						|配置`service.univerify`，在开发者中心一键登录服务内获取：[一键登录](https://dev.dcloud.net.cn/#/pages/uniLogin/index)							|
-|微信小程序登录						|配置`mp-weixin.oauth.weixin`，在微信公众平台获取：[微信开放平台](https://mp.weixin.qq.com/)																				|
-|微信公众号登录						|配置`web.oauth.weixin-h5`，在微信公众平台获取：[微信开放平台](https://mp.weixin.qq.com/)																						|
+|微信小程序登录						|配置`mp-weixin.oauth.weixin`，在微信公众平台获取：[微信公众平台](https://mp.weixin.qq.com/)																				|
+|微信公众号登录						|配置`web.oauth.weixin-h5`，在微信公众平台获取：[微信公众平台](https://mp.weixin.qq.com/)																						|
 |微信PC页面扫码登录				|配置`web.oauth.weixin-web`，在微信开放平台获取：[微信开放平台](https://open.weixin.qq.com/)																				|
 |微信APP端登录						|配置`app.oauth.weixin`，在微信开放平台获取：[微信开放平台](https://open.weixin.qq.com/)																						|
 |QQ 小程序端登录					|配置`mp-qq.oauth.qq`，在QQ开放平台获取：[QQ开放平台](https://q.qq.com/)																														|
-|QQ APP端登录							|配置`app.oauth.qq`，在QQ互联获取：[QQ互联](https://connect.qq.com/)																															|
+|QQ APP端登录							|配置`app.oauth.qq`，在QQ互联获取：[QQ互联](https://connect.qq.com/)																																|
 |支付宝小程序端登录				|配置`mp-alipay.oauth.alipay`，在支付宝开放平台获取：[支付宝开放平台](https://openhome.alipay.com/develop/manage)										|
 |Apple APP端登录					|配置`app.oauth.apple`，在Apple开发者中心自行配置：[Apple开发者中心](https://developer.apple.com/account/resources/identifiers/list)|
 

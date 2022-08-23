@@ -79,12 +79,18 @@ The flow chart is as follows:
 ## Handling of credentials hosted on different platforms
 
 |凭据																		|微信小程序	|微信公众号	|微信PC网页	|微信App		|
+|Credentials |WeChat Mini Program |WeChat Official Account |WeChat PC Webpage |WeChat App |
 |:-:																		|:-:				|:-:				|:-:				|:-:				|
 |[access_token](#access_token)					|定时刷新		|定时刷新		|						|开发者操作	|
+|[access_token](#access_token) |Regular refresh |Regular refresh | |Developer operation |
 |[user_access_token](#user_access_token)|						|开发者操作	|						|						|
+|[user_access_token](#user_access_token)| |Developer Actions | | |
 |[session_key](#session_key)						|开发者操作	|						|						|						|
+|[session_key](#session_key) |Developer action | | | |
 |[encrypt_key](#encrypt_key)						|开发者操作	|						|						|						|
+|[encrypt_key](#encrypt_key) |Developer Actions | | | |
 |[ticket](#ticket)											|						|定时刷新		|						|						|
+|[ticket](#ticket) | |Regular refresh | | |
 
 
 还有一些不常用的凭据暂不列出，例如：微信App access_token

@@ -39,7 +39,7 @@ This central system is `uni-open-bridge`.
 
 `uni-open-bridge` 包括：
 1. 一个云对象 `uni-open-bridge`，插件下载地址：[https://ext.dcloud.net.cn/plugin?id=9002](https://ext.dcloud.net.cn/plugin?id=9002)。（其依赖了下面的公共模块，但不是一个插件）
-2. 一个公共模块 `uni-open-bridge-common` ，插件下载地址：[https://ext.dcloud.net.cn/plugin?id=9002](https://ext.dcloud.net.cn/plugin?id=9002)
+2. 一个公共模块 `uni-open-bridge-common` ，插件下载地址：[https://ext.dcloud.net.cn/plugin?id=9177](https://ext.dcloud.net.cn/plugin?id=9177)
 3. 配套的数据库，保存这些凭据，表名为 `opendb-open-data`。在redis中的key格式为 `uni-id:[dcloudAppid]:[platform]:[openid]:[access-token|user-access-token|session-key|encrypt-key-version|ticket]`
 
 `uni-open-bridge`系统中，有一个同名云对象`uni-open-bridge`，它默认就是定时运行的，在package.json中配置了每小时定时运行一次（部署线上系统生效）。

@@ -49,7 +49,19 @@
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
-## 凭据托管
+## 凭据使用场景
+
+### 微信小程序
+
+1. 客户端登陆需要保存 [session_key](#session_key)
+2. 解密用户敏感数据需要 [access_token](#access_token)、[session_key](#session_key)，例如获取用户授权的手机号、用户敏感资料
+3. 解密安全网络通道使用的加密数据需要 [access_token](#access_token)、[session_key](#session_key) 、[encrypt_key](#encrypt_key)
+
+### 微信公众号
+
+1. 微信应用内公众号页面用户登陆需要用到 [user_access_token](#user_access_token)、[ticket](#ticket)
+
+## 凭据托管状态
 
 |凭据																		|微信小程序	|微信公众号	|微信PC网页	|微信App		|
 |:-:																		|:-:				|:-:				|:-:				|:-:				|
@@ -68,8 +80,9 @@
 
 还有一些不常用的凭据暂不列出，例如：微信App access_token
 
-**微信凭据分应用级、用户级、一次性等凭据，如果你之前未接触过微信这些凭据，请务必阅读下面的微信凭据详细介绍
+## 微信凭据详细介绍@wxtoken
 
+**微信凭据分应用级、用户级、一次性等凭据，如果你之前未接触过微信这些凭据，请务必阅读下面的详细介绍
 
 ### access_token(应用级)@access_token
 

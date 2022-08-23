@@ -392,6 +392,7 @@ The supported styles are listed below:
 
 
 ## nvue 里使用 BindingX@bindingx
+## Using BindingX@bindingx in nvue
 
 `uni-app` 是逻辑层和视图层分离的。此时会产生两层通信成本。比如拖动视图层的元素，如果在逻辑层不停接收事件，因为通信损耗会产生不顺滑的体验。
 `uni-app` is the separation of the logical layer and the view layer. At this point, two layers of communication costs will be incurred. Dragging elements in the view layer, for example, might not be a smooth experience due to communication loss if events are constantly received in the logic layer.
@@ -400,6 +401,7 @@ The supported styles are listed below:
 [BindingX](https://alibaba.github.io/bindingx/) is a pre-description interaction syntax provided by weex. Analyze the BindingX rule by native, and handle the interaction and dynamic effect of the view layer according to this rule. No more real-time de-js logic layer running and communicating.
 
 BindingX是一种规则，解析快，但没有js那样足够强的编程灵活性。
+BindingX is a rule, fast parsing, but not as flexible as js.
 
 `uni-app` 内置了 BindingX，可在 `nvue` 中使用 BindingX 完成复杂的动画效果。
 `uni-app` has built-in BindingX, which can be used in `nvue` to complete complex animation effects.
@@ -408,6 +410,7 @@ BindingX是一种规则，解析快，但没有js那样足够强的编程灵活�
 - From HBuilderX 2.3.4+, the `uni-app` compilation mode can directly reference the `uni.requireNativePlugin('bindingx')` module, and the weex mode also needs to use npm to reference.
 
 - BindingX demo示例可参考 BindingX 示例里 vue 的相关示例，将相关 vue 代码拷贝到 `nvue` 文件里即可。
+- For the BindingX demo example, please refer to the relevant examples of vue in the BindingX example, and copy the relevant vue code to the `nvue` file.
 
 
 ##### 注意

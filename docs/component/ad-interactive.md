@@ -68,6 +68,7 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 <template>
   <view>
     <!-- 互动广告组件, 3.5.5+ -->
+    <!-- Interactive Ads Component, 3.5.5+ -->
     <!-- 用户点击组件后将打开广告页面，参见属性 open-page-path -->
     <!-- After the user clicks on the component, the advertisement page will be opened, see the property open-page-path -->
     <ad-interactive adpid="1000000001" v-slot:default="{data, loading, error}" open-page-path="/pages/ad-interactive-webview/ad-interactive-webview">
@@ -91,6 +92,7 @@ Note: need to add dependent pages [open-page-path](#openpagepath)
 <template>
   <view class="content">
     <!-- 互动广告组件, 3.5.5+ -->
+    <!-- Interactive Ads Component, 3.5.5+ -->
     <!-- 用户点击组件后将打开广告页面，参见属性 open-page-path -->
     <!-- After the user clicks on the component, the advertisement page will be opened, see the property open-page-path -->
     <ad-interactive adpid="1000000001" v-slot:default="{data, loading, error}" @load="onadload" @error="onaderror" open-page-path="/pages/ad-interactive-webview/ad-interactive-webview">

@@ -10,5 +10,3 @@
 * [uni.scss](collocation/uni-scss.md)
 * [App.vue](collocation/App.md)
 * [main.js](collocation/main.md)
-* [plugin.json 生成小程序插件](collocation/miniprogram-plugin.md)
-* [plugin.json generates miniprogram plugin](collocation/miniprogram-plugin.md)

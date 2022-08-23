@@ -33,12 +33,18 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 **Property description**
 
 |属性名																	|类型				|说明																						|
+|property name |type |description |
 |:-																			|:-					|:-																							|
 |adpid																	|String			|广告位id																				|
+|adpid |String |Ad slot id |
 |open-page-path													|String			|点击广告后打开的页面路径，[详见](#openpagepath)|
+|open-page-path |String |The page path to open after clicking the ad, [see details](#openpagepath)|
 |v-slot:default="{data, loading, error}"|						|作用域插槽，[详见](#vslot)											|
+|v-slot:default="{data, loading, error}"| |Scope slot, [see details](#vslot) |
 |@load																	|EventHandle|加载成功事件																		|
+|@load |EventHandle|Load success event |
 |@error																	|EventHandle|加载失败事件																		|
+|@error |EventHandle|Load failure event |
 
 ### `v-slot:default="{data, loading, error}"` 属性说明@vslot
 ### `v-slot:default="{data, loading, error}"` Attribute description @vslot

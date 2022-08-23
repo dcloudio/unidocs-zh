@@ -24,13 +24,21 @@
 
 **属性说明**
 
-|属性名																	|类型				|默认值		|说明																|
-|:-																			|:-					|:-				|:-																	|
-|adpid																	|String			|					|广告位id														|
-|open-page-path													|String			|					|点击广告后需要打开的webview页面路径|
-|v-slot:default="{data, loading, error}"|						|					|组件内部广告加载状态和加载错误信息	|
-|@load																	|EventHandle|加载事件	|																		|
-|@error																	|EventHandle|错误事件	|																		|
+|属性名																	|类型				|默认值		|说明																						|
+|:-																			|:-					|:-				|:-																							|
+|adpid																	|String			|					|广告位id																				|
+|open-page-path													|String			|					|点击广告后打开的页面路径，[详见](#openpagepath)|
+|v-slot:default="{data, loading, error}"|						|					|作用域插槽，[详见](#vslot)											|
+|@load																	|EventHandle|加载事件	|																								|
+|@error																	|EventHandle|错误事件	|																								|
+
+### `v-slot:default="{data, loading, error}"` 属性说明@vslot
+
+|属性名	|类型		|说明												|
+|:-			|:-			|:-													|
+|data		|Object	|广告位数据, {imgUrl }			|
+|loading|Boolean|加载状态										|
+|error	|Object	|加载错误, {errCode, errMsg}|
 
 
 ### 简单示例

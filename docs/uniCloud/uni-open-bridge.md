@@ -78,19 +78,13 @@ The flow chart is as follows:
 ## 凭据托管在不同平台的处理
 ## Handling of credentials hosted on different platforms
 
-|凭据																		|微信小程序	|微信公众号(H5)	|
-| Credentials | WeChat Mini Program | WeChat Official Account (H5) |
-|:-:																		|:-:				|:-:						|
-|[access_token](#access_token)					|定时刷新		|定时刷新				|
-|[access_token](#access_token) |Regular refresh |Regular refresh |
-|[user_access_token](#user_access_token)|						|开发者操作			|
-|[user_access_token](#user_access_token)| |Developer Actions |
-|[session_key](#session_key)						|开发者操作	|								|
-|[session_key](#session_key) |Developer operation | |
-|[encrypt_key](#encrypt_key)						|开发者操作	|								|
-|[encrypt_key](#encrypt_key) |Developer action | |
-|[ticket](#ticket)											|						|定时刷新				|
-|[ticket](#ticket) | |Regular refresh |
+|凭据																		|微信小程序	|微信公众号	|微信PC网页	|微信App		|
+|:-:																		|:-:				|:-:				|:-:				|:-:				|
+|[access_token](#access_token)					|定时刷新		|定时刷新		|						|开发者操作	|
+|[user_access_token](#user_access_token)|						|开发者操作	|						|						|
+|[session_key](#session_key)						|开发者操作	|						|						|						|
+|[encrypt_key](#encrypt_key)						|开发者操作	|						|						|						|
+|[ticket](#ticket)											|						|定时刷新		|						|						|
 
 
 还有一些不常用的凭据暂不列出，例如：微信App access_token

@@ -263,7 +263,7 @@ mapContext
 
 缩小地图可看到多个 marker 合并为 1 个并显示聚合数量，放大地图后恢复
 
-```
+```html
 <template>
   <view class="content">
     <map id="map" class="map" :show-location="true" :latitude="latitude" :longitude="longitude"></map>

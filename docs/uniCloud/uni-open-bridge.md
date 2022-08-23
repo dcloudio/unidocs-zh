@@ -75,8 +75,19 @@ The flow chart is as follows:
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
-## 凭据托管
-## Credential hosting
+## 凭据使用场景
+
+### 微信小程序
+
+1. 客户端登陆需要保存 [session_key](#session_key)
+2. 解密用户敏感数据需要 [access_token](#access_token)、[session_key](#session_key)，例如获取用户授权的手机号、用户敏感资料
+3. 解密安全网络通道使用的加密数据需要 [access_token](#access_token)、[session_key](#session_key) 、[encrypt_key](#encrypt_key)
+
+### 微信公众号
+
+1. 微信应用内公众号页面用户登陆需要用到 [user_access_token](#user_access_token)、[ticket](#ticket)
+
+## 凭据托管状态
 
 |凭据																		|微信小程序	|微信公众号	|微信PC网页	|微信App		|
 |Credentials |WeChat Mini Program |WeChat Official Account |WeChat PC Webpage |WeChat App |
@@ -107,9 +118,9 @@ The flow chart is as follows:
 还有一些不常用的凭据暂不列出，例如：微信App access_token
 There are also some less commonly used credentials that are not listed, for example: WeChat App access_token
 
-**微信凭据分应用级、用户级、一次性等凭据，如果你之前未接触过微信这些凭据，请务必阅读下面的微信凭据详细介绍
-**WeChat credentials are divided into application-level, user-level, one-time and other credentials. If you have not contacted WeChat credentials before, please be sure to read the detailed introduction of WeChat credentials below
+## 微信凭据详细介绍@wxtoken
 
+**微信凭据分应用级、用户级、一次性等凭据，如果你之前未接触过微信这些凭据，请务必阅读下面的详细介绍
 
 ### access_token(应用级)@access_token
 ### access_token (application level) @access_token

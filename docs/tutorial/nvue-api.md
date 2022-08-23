@@ -391,8 +391,7 @@ The supported styles are listed below:
 
 
 
-## nvue 里使用 BindingX
-## Using BindingX in nvue
+## nvue 里使用 BindingX@bindingx
 
 `uni-app` 是逻辑层和视图层分离的。此时会产生两层通信成本。比如拖动视图层的元素，如果在逻辑层不停接收事件，因为通信损耗会产生不顺滑的体验。
 `uni-app` is the separation of the logical layer and the view layer. At this point, two layers of communication costs will be incurred. Dragging elements in the view layer, for example, might not be a smooth experience due to communication loss if events are constantly received in the logic layer.
@@ -400,8 +399,7 @@ The supported styles are listed below:
 [BindingX](https://alibaba.github.io/bindingx/) 是weex提供的一种预描述交互语法。由原生解析BindingX规则，按此规则处理视图层的交互和动效。不再实时去js逻辑层运行和通信。
 [BindingX](https://alibaba.github.io/bindingx/) is a pre-description interaction syntax provided by weex. Analyze the BindingX rule by native, and handle the interaction and dynamic effect of the view layer according to this rule. No more real-time de-js logic layer running and communicating.
 
-BindingX类似一种强化版的css，运行性能高，但没有js那样足够强的编程灵活性。
-BindingX is similar to an enhanced version of css, with high running performance, but not as much programming flexibility as js.
+BindingX是一种规则，解析快，但没有js那样足够强的编程灵活性。
 
 `uni-app` 内置了 BindingX，可在 `nvue` 中使用 BindingX 完成复杂的动画效果。
 `uni-app` has built-in BindingX, which can be used in `nvue` to complete complex animation effects.
@@ -409,8 +407,7 @@ BindingX is similar to an enhanced version of css, with high running performance
 - 从HBuilderX 2.3.4起，`uni-app` 编译模式可直接引用 `uni.requireNativePlugin('bindingx')` 模块，weex 模式还需使用 npm 方式引用。
 - From HBuilderX 2.3.4+, the `uni-app` compilation mode can directly reference the `uni.requireNativePlugin('bindingx')` module, and the weex mode also needs to use npm to reference.
 
-- BindingX demo示例可参考 BindingX 示例里 vue 的相关示例，将实验田里的 vue 代码拷贝到 `nvue` 文件里即可。
-- For the BindingX demo example, please refer to the related examples of vue in the BindingX example, and copy the vue code in the experimental field to the `nvue` file.
+- BindingX demo示例可参考 BindingX 示例里 vue 的相关示例，将相关 vue 代码拷贝到 `nvue` 文件里即可。
 
 
 ##### 注意

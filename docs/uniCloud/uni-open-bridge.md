@@ -80,6 +80,21 @@
 
 还有一些不常用的凭据暂不列出，例如：微信App access_token
 
+### Platform@platform
+
+存储数据key对应平台的值。注意不同于前端条件编译使用的uniPlatform。
+
+|值					|描述				|
+|:-:				|:-:				|
+|weixin-mp	|微信小程序	|
+|weixin-h5	|微信公众号	|
+|weixin-web	|微信pc网页	|
+|weixin-app	|微信 App		|
+|qq-mp			|QQ 小程序	|
+|qq-app			|QQ App			|
+
+提示：自动刷新固定应用级凭据目前仅支持 `weixin-mp`、`weixin-h5`。 后续补充其他平台
+
 ## 微信凭据详细介绍@wxtoken
 
 **微信凭据分应用级、用户级、一次性等凭据，如果你之前未接触过微信这些凭据，请务必阅读下面的详细介绍
@@ -293,21 +308,6 @@ uobc.getSessionKey(userKey)
 uobc.getEncryptKey(userKey)
 
 ```
-
-#### Platform@platform
-
-存储数据key对应平台的值。注意不同于前端条件编译使用的uniPlatform。
-
-|值					|描述				|
-|:-:				|:-:				|
-|weixin-mp	|微信小程序	|
-|weixin-h5	|微信公众号	|
-|weixin-web	|微信pc网页	|
-|weixin-app	|微信 App		|
-|qq-mp			|QQ 小程序	|
-|qq-app			|QQ App			|
-
-提示：自动刷新固定应用级凭据目前仅支持 `weixin-mp`、`weixin-h5`。 后续补充其他平台
 
 #### getAccessToken(key: Object, fallback: Function)
 

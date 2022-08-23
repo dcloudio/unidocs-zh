@@ -29,23 +29,16 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 
 `<ad-interactive></ad-interactive>`
 
-
 **属性说明**
 **Property description**
 
-|属性名																	|类型				|默认值		|说明																						|
-|property name |type |default value |description |
-|:-																			|:-					|:-				|:-																							|
-|adpid																	|String			|					|广告位id																				|
-|adpid |String | |Ad slot id |
-|open-page-path													|String			|					|点击广告后打开的页面路径，[详见](#openpagepath)|
-|open-page-path |String | |The path of the page opened after clicking the advertisement, [see details](#openpagepath)|
-|v-slot:default="{data, loading, error}"|						|					|作用域插槽，[详见](#vslot)											|
-|v-slot:default="{data, loading, error}"| | |Scope slot, [see details](#vslot) |
-|@load																	|EventHandle|加载事件	|																								|
-|@load |EventHandle|Load event | |
-|@error																	|EventHandle|错误事件	|																								|
-|@error |EventHandle|Error event | |
+|属性名																	|类型				|说明																						|
+|:-																			|:-					|:-																							|
+|adpid																	|String			|广告位id																				|
+|open-page-path													|String			|点击广告后打开的页面路径，[详见](#openpagepath)|
+|v-slot:default="{data, loading, error}"|						|作用域插槽，[详见](#vslot)											|
+|@load																	|EventHandle|加载成功事件																		|
+|@error																	|EventHandle|加载失败事件																		|
 
 ### `v-slot:default="{data, loading, error}"` 属性说明@vslot
 ### `v-slot:default="{data, loading, error}"` Attribute description @vslot
@@ -67,8 +60,6 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 ```html
 <template>
   <view>
-    <!-- 互动广告组件, 3.5.5+ -->
-    <!-- Interactive Ads Component, 3.5.5+ -->
     <!-- 用户点击组件后将打开广告页面，参见属性 open-page-path -->
     <!-- After the user clicks on the component, the advertisement page will be opened, see the property open-page-path -->
     <ad-interactive adpid="1000000001" v-slot:default="{data, loading, error}" open-page-path="/pages/ad-interactive-webview/ad-interactive-webview">
@@ -91,8 +82,6 @@ Note: need to add dependent pages [open-page-path](#openpagepath)
 ```html
 <template>
   <view class="content">
-    <!-- 互动广告组件, 3.5.5+ -->
-    <!-- Interactive Ads Component, 3.5.5+ -->
     <!-- 用户点击组件后将打开广告页面，参见属性 open-page-path -->
     <!-- After the user clicks on the component, the advertisement page will be opened, see the property open-page-path -->
     <ad-interactive adpid="1000000001" v-slot:default="{data, loading, error}" @load="onadload" @error="onaderror" open-page-path="/pages/ad-interactive-webview/ad-interactive-webview">

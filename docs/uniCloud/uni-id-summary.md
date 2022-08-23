@@ -384,12 +384,12 @@ Configuration item:
       "codeExpiresIn": 180, // 验证码过期时间，单位为秒，注意一定要是60的整数倍
       "smsKey": "your sms key", // 短信密钥key，开通短信服务处可以看到
       "smsSecret": "your sms secret", // 短信密钥secret，开通短信服务处可以看到
-	  "scene": {
-		  "bind-mobile": { // 对绑定手机号场景的配置
-			  "templateId": "your template id", // 绑定手机号使用的短信验证码模板
-			  "codeExpiresIn": 240 // 绑定手机号验证码过期时间
-		  }
-	  }
+      "scene": {
+        "bind-mobile": { // 对绑定手机号场景的配置
+          "templateId": "your template id", // 绑定手机号使用的短信验证码模板
+          "codeExpiresIn": 240 // 绑定手机号验证码过期时间
+        }
+      }
     },
     "univerify": {
       "appid": "your appid", // 当前应用的appid，使用云函数URL化，此项必须配置
@@ -440,6 +440,22 @@ The following four built-in rules are supported
 
 uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则，如需自定义规则，请参考：[uni-id-co自定义校验规则](uni-id-pages.md#custom-validator)
 Both uni-id-co and front-end pages in uni-id-pages support these four built-in rules. For custom rules, please refer to: [uni-id-co custom validation rules](uni-id-pages .md#custom-validator)
+
+### 登录方式及配置说明@login-and-config
+
+|登录方式									|配置及获取方式																																																											|
+|--												|--																																																																	|
+|用户名、手机号、邮箱+密码|配置`passwordSecret`即可																																																						|
+|手机号+验证码						|配置`service.sms`，在开发者中心短信服务内获取配置信息：[短信服务](https://dev.dcloud.net.cn/#/pages/sms/base)											|
+|手机号一键登录						|配置`service.univerify`，在开发者中心一键登录服务内获取：[一键登录](https://dev.dcloud.net.cn/#/pages/uniLogin/index)							|
+|微信小程序登录						|配置`mp-weixin.oauth.weixin`，在微信公众平台获取：[微信开放平台](https://mp.weixin.qq.com/)																				|
+|微信公众号登录						|配置`web.oauth.weixin-h5`，在微信公众平台获取：[微信开放平台](https://mp.weixin.qq.com/)																						|
+|微信PC页面扫码登录				|配置`web.oauth.weixin-web`，在微信开放平台获取：[微信开放平台](https://open.weixin.qq.com/)																				|
+|微信APP端登录						|配置`app.oauth.weixin`，在微信开放平台获取：[微信开放平台](https://open.weixin.qq.com/)																						|
+|QQ 小程序端登录					|配置`mp-qq.oauth.qq`，在QQ开放平台获取：[QQ开放平台](https://q.qq.com/)																														|
+|QQ APP端登录							|配置`app.oauth.qq`，在QQ互联获取：[QQ互联](https://connect.qq.com/)																															|
+|支付宝小程序端登录				|配置`mp-alipay.oauth.alipay`，在支付宝开放平台获取：[支付宝开放平台](https://openhome.alipay.com/develop/manage)										|
+|Apple APP端登录					|配置`app.oauth.apple`，在Apple开发者中心自行配置：[Apple开发者中心](https://developer.apple.com/account/resources/identifiers/list)|
 
 ## token令牌
 ## token token
@@ -1645,8 +1661,16 @@ Before `uni-id-pages 1.0.8`, uni-id-co directly stored this information in the t
 }
 ```
 
-此结构无法满足多应用同一平台关联同一服务空间且允许用户跨应用登录的场景。因此在`uni-id-pages 1.0.8`及更高版本对此做出了调整，改为使用[uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge-common)存储用户token信息。同时为了兼容旧版本上述third_party字段仍存有这些信息。
-This structure cannot meet the scenario where multiple applications are associated with the same service space on the same platform and users are allowed to log in across applications. So in `uni-id-pages 1.0.8` and later this was adjusted to use [uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge- common) to store user token information. At the same time, this information still exists in the third_party field above for compatibility with older versions.
+此结构无法满足多应用同一平台关联同一服务空间且允许用户跨应用登录的场景。因此在`uni-id-pages 1.0.8`及更高版本对此做出了调整，改为使用[uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge-common)存储用户在三方平台的凭据信息。同时为了兼容旧版本上述third_party字段仍存有这些信息。
+
+目前被`uni-id-co`保存的三方凭据有以下几种：
+
+- 微信小程序端用户session_key，通过`uni-open-bridge-common`的`setSessionKey`方法写入
+- 微信公众号页面用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
+- 微信web页面扫码登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
+- 微信APP登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
+- QQ小程序端用户session_key，通过`uni-open-bridge-common`的`setSessionKey`方法写入
+- QQ APP登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
 
 ### 钩子@hooks
 ### Hooks @hooks

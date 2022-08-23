@@ -51,13 +51,13 @@
 
 ## 凭据托管在不同平台的处理
 
-|凭据																		|微信小程序	|微信公众号(H5)	|
-|:-:																		|:-:				|:-:						|
-|[access_token](#access_token)					|定时刷新		|定时刷新				|
-|[user_access_token](#user_access_token)|						|开发者操作			|
-|[session_key](#session_key)						|开发者操作	|								|
-|[encrypt_key](#encrypt_key)						|开发者操作	|								|
-|[ticket](#ticket)											|						|定时刷新				|
+|凭据																		|微信小程序	|微信公众号	|微信PC网页	|微信App		|
+|:-:																		|:-:				|:-:				|:-:				|:-:				|
+|[access_token](#access_token)					|定时刷新		|定时刷新		|						|开发者操作	|
+|[user_access_token](#user_access_token)|						|开发者操作	|						|						|
+|[session_key](#session_key)						|开发者操作	|						|						|						|
+|[encrypt_key](#encrypt_key)						|开发者操作	|						|						|						|
+|[ticket](#ticket)											|						|定时刷新		|						|						|
 
 
 还有一些不常用的凭据暂不列出，例如：微信App access_token

@@ -293,7 +293,7 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
-|uniCloud.httpProxyForEip			|使用云厂商代理访问http服务（阿里云固定IP方案），仅阿里云云端环境支持 [详见](#http-proxy-for-eip)，新增于`HBuilderX 3.5.5`|
+|uniCloud.httpProxyForEip			|使用云厂商代理访问http服务（阿里云固定IP方案），仅阿里云云端环境支持 [详见](#aliyun-eip)，新增于`HBuilderX 3.5.5`|
 |uniCloud.getRequestList			|获取当前云函数实例内正在处理的请求Id列表 [详见](#get-request-list)，新增于`HBuilderX 3.5.5`|
 |uniCloud.getClientInfos			|获取当前云函数实例内正在处理的请求对应的客户端信息列表 [详见](#get-client-infos)，新增于`HBuilderX 3.5.5`|
 |uniCloud.getCloudInfos			|获取当前云函数实例内正在处理的请求对应的云端信息列表 [详见](#get-cloud-infos)，新增于`HBuilderX 3.5.5`|

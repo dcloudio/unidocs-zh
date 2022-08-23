@@ -49,9 +49,9 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <b>Web版</b>
         <b>Web version</b>
       </a>
-      <a v-else href="https://hellouniapp.dcloud.net.cn/en/" target="_blank" class="clear-style barcode-view">
+      <a v-else href="https://en.uniapp.dcloud.io/web/" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a65a9719-9547-476b-b077-291058f6955d.png" width="160" />
+          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d6f49e7c-1bd9-4144-b052-23b740366da4.jpg" width="160" />
         </div>
         <b>Web版</b>
         <b>Web version</b>

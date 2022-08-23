@@ -203,9 +203,8 @@
 * 小程序专题
 * Small program topic
   * [组件与WXS](/tutorial/miniprogram-subject.md)
-  * [Components and WXS](/tutorial/miniprogram-subject.md)
-  * [小程序插件](/tutorial/mp-weixin-plugin.md)
-  * [Mini Program Plugin](/tutorial/mp-weixin-plugin.md)
+  * [使用小程序插件](/tutorial/mp-weixin-plugin.md)
+  * [开发小程序插件](/tutorial/mp-weixin-plugin-dev.md)
   * [一键上传微信平台](/tutorial/build/publish-mp-weixin-cli.md)
   * [One-click upload to WeChat platform](/tutorial/build/publish-mp-weixin-cli.md)
 * 运行和调试

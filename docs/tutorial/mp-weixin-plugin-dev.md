@@ -1,5 +1,4 @@
-> 本文档意在介绍如何把uni-app项目编译为小程序插件，如果想了解如何在uni-app中引用和使用小程序插件，另见文档：[使用小程序插件](/tutorial/mp-weixin-plugin)
-> This document is intended to introduce how to compile a uni-app project into an applet plugin. If you want to know how to reference and use applet plugins in uni-app, please refer to the document: [Using applet plugins](/tutorial/mp- weixin-plugin)
+> 本文档意在介绍如何把uni-app项目编译为小程序插件，如果想了解如何在uni-app中引用和使用小程序插件，另见文档：[使用小程序插件](mp-weixin-plugin.md)
 
 小程序插件规范由小程序厂商定义，插件是对一组 js 接口、自定义组件或页面的封装，用于嵌入到小程序中使用。
 The applet plug-in specification is defined by the applet manufacturer. A plug-in is a package of a set of js interfaces, custom components or pages, and is used to be embedded in the applet.

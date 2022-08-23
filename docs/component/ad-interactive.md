@@ -34,20 +34,31 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 **Property description**
 
 |属性名																	|类型				|默认值		|说明																						|
+|property name |type |default value |description |
 |:-																			|:-					|:-				|:-																							|
 |adpid																	|String			|					|广告位id																				|
+|adpid |String | |Ad slot id |
 |open-page-path													|String			|					|点击广告后打开的页面路径，[详见](#openpagepath)|
+|open-page-path |String | |The path of the page opened after clicking the advertisement, [see details](#openpagepath)|
 |v-slot:default="{data, loading, error}"|						|					|作用域插槽，[详见](#vslot)											|
+|v-slot:default="{data, loading, error}"| | |Scope slot, [see details](#vslot) |
 |@load																	|EventHandle|加载事件	|																								|
+|@load |EventHandle|Load event | |
 |@error																	|EventHandle|错误事件	|																								|
+|@error |EventHandle|Error event | |
 
 ### `v-slot:default="{data, loading, error}"` 属性说明@vslot
+### `v-slot:default="{data, loading, error}"` Attribute description @vslot
 
 |属性名	|类型		|说明												|
+|property name |type |description |
 |:-			|:-			|:-													|
 |data		|Object	|广告位数据, {imgUrl }			|
+|data |Object |Ad slot data, {imgUrl } |
 |loading|Boolean|加载状态										|
+|loading|Boolean|Loading Status|
 |error	|Object	|加载错误, {errCode, errMsg}|
+|error |Object |Load error, {errCode, errMsg}|
 
 
 ### 简单示例

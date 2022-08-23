@@ -82,7 +82,7 @@ mapContext
 - nvue没有`$getAppMap()`，请使用`createMapContext`
 - nvue doesn't have `$getAppMap()`, use `createMapContext`
 - `uni-app`中使用原生地图无需提供占位div，得到`$getAppMap()`后直接js使用即可。
-- There is no need to provide a placeholder div to use the native map in `uni-app`. After getting `$getAppMap()`, you can use it directly in js.
+- There is no need to provide a placeholder div to use native maps in `uni-app`, and you can use js directly after getting `$getAppMap()`.
 - `openMapApp` iOS 暂不支持，后续补充
 - `openMapApp` iOS is not currently supported, and will be added later
 

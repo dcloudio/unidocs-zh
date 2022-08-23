@@ -12,7 +12,7 @@ It is recommended that the third step is to read the ["uni-app official course"]
 1. 看完这篇[白话uni-app](http://ask.dcloud.net.cn/article/35657)
 1. After reading this [vernacular uni-app](http://ask.dcloud.net.cn/article/35657)
 2. DCloud与vue合作，在[vue.js官网](https://cn.vuejs.org/v2/guide/)提供了免费视频教程，也可以直达教程地址：[https://learning.dcloud.io](https://learning.dcloud.io)
-2. In cooperation with vue, DCloud provides free video tutorials on the [vue.js official website](https://cn.vuejs.org/v2/guide/), and you can also go directly to the tutorial address: [https://learning.dcloud .io](https://learning.dcloud.io)
+2. DCloud cooperates with vue and provides free video tutorials on the [vue.js official website](https://cn.vuejs.org/v2/guide/), and you can also go directly to the tutorial address: [https://learning.dcloud .io](https://learning.dcloud.io)
 3. 不需要专门去学习小程序的语法，uni-app使用的是vue的语法，不是小程序自定义的语法。
 3. There is no need to learn the syntax of the applet. uni-app uses the syntax of Vue, not the syntax of the applet.
 
@@ -42,7 +42,7 @@ The following is the video tutorial of the tripartite professional training inst
 * [《uni-app 跨平台应用开发教程》](http://www.hcoder.net/course/info_242.html)，出品人：hcoder 刘海君，课时：共25节。亮点：讲师经验丰富，也是graceui框架作者。
 * ["Uni-app Cross-Platform Application Development Course"](http://www.hcoder.net/course/info_242.html), Producer: hcoder Liu Haijun, class hours: 25 lessons in total. Highlights: The lecturer is experienced and is also the author of the graceui framework.
 * [《uni-app 实战教程 - “悦读”项目实战》](https://ke.qq.com/course/364262?tuin=4f8da6)，出品人：hcoder 刘海君
-* ["Uni-app Practical Tutorial - "Yue Du" Project Practical Combat"](https://ke.qq.com/course/364262?tuin=4f8da6), Producer: hcoder Liu Haijun
+* ["uni-app practical tutorial - "Yuedu" project combat"](https://ke.qq.com/course/364262?tuin=4f8da6), Producer: hcoder Liu Haijun
 * [《uni-app实战社区交友类app开发》](https://study.163.com/course/introduction.htm?courseId=1209188809&_trace_c_p_k2_=4b765abfb2f946039c8ea6230737f6af)，出品人：帝莎IT学院。适用人群：具备Html+Css+Javascript基础知识。
 * ["Uni-app actual combat community dating app development"](https://study.163.com/course/introduction.htm?courseId=1209188809&_trace_c_p_k2_=4b765abfb2f946039c8ea6230737f6af), Producer: Desha IT Academy. Applicable people: Have basic knowledge of Html+Css+Javascript.
 * [《uni-app仿小米商城实战》](https://study.163.com/course/courseMain.htm?courseId=1209401825&share=2&shareId=480000001892585)，出品人：帝莎IT学院。首页使用nvue开发，目前支持app端和小程序端。
@@ -56,7 +56,7 @@ The following is the video tutorial of the tripartite professional training inst
 * [《uni-app 5小时快速入门》](https://www.imooc.com/learn/1215)，出品人：meHaoTian
 * ["Uni-app 5 Hours Quick Start"](https://www.imooc.com/learn/1215), Producer: meHaoTian
 * [《uni-app实战直播app全栈开发》](https://study.163.com/course/courseMain.htm?courseId=1210217810&share=2&shareId=480000001892585)，出品人：帝莎IT学院
-* ["uni-app actual combat live app full-stack development"](https://study.163.com/course/courseMain.htm?courseId=1210217810&share=2&shareId=480000001892585), Producer: Desha IT Academy
+* ["Uni-app actual combat live app full-stack development"](https://study.163.com/course/courseMain.htm?courseId=1210217810&share=2&shareId=480000001892585), Producer: Desha IT Academy
 * [《uni-app博客实战开发教程》](https://ke.qq.com/course/3455428?tuin=258d8def)，出品人：卢小兵
 * ["Uni-app Blog Practical Development Course"](https://ke.qq.com/course/3455428?tuin=258d8def), Producer: Lu Xiaobing
 * [《uni-app快速入门到社区论坛项目多端开发实战》](https://www.bilibili.com/video/BV1oy4y1j75s?p=1)，出品人：千锋教育

@@ -43,7 +43,9 @@ Alibaba Cloud's service space is purely free. However, to avoid resource abuse, 
 |云存储容量					|10GB				|-																																																|
 |Cloud Storage Capacity |10GB |- |
 |云数据库容量				|100GB				|-																																																|
+|Cloud Database Capacity |100GB |- |
 |单次数据库执行时长限制		|5秒				|**不可申请调整**																																												|
+|Single database execution time limit |5 seconds |**Cannot apply for adjustment** |
 
 尤其注意阿里云的cdn确实是全免费的，这些免费资源可用于正常公司业务，阿里云不允许开发者使用这些免费的存储及CDN资源来开展图床类业务。
 In particular, pay attention to the fact that Alibaba Cloud's CDN is completely free. These free resources can be used for normal company business. Alibaba Cloud does not allow developers to use these free storage and CDN resources to carry out image bed services.

@@ -477,12 +477,15 @@ module.exports = {
 ```
 
 ### 获取当前请求id@get-request-id
+### Get current request id@get-request-id
 
 **接口形式**
+**Interface form**
 
 `this.getUniCloudRequestId()`
 
 **示例**
+**Example**
 
 ```js
 module.exports = {
@@ -490,6 +493,7 @@ module.exports = {
 		if(error) {
 			const requestId = this.getUniCloudRequestId()
 			// log(requestId, error) 出错时记录日志，log方法需自行实现
+			// log(requestId, error) records the log when an error occurs, the log method needs to be implemented by itself
 		}
 	}
 }

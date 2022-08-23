@@ -718,6 +718,7 @@ Different from traditional development, there is a time limit for a single opera
 |Tencent Cloud |Alibaba Cloud |
 |--	|--	|
 |5秒	|5秒	|
+|5 seconds |5 seconds |
 
 如果是大数据批处理，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](uniCloud/cf-functions.md?id=recurrence)
 If it is a batch of big data, you can refer to the recursive call of cloud functions to continuously execute multiple cloud functions to process a task [Details](uniCloud/cf-functions.md?id=recurrence)

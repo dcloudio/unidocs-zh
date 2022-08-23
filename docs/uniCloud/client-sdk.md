@@ -32,7 +32,9 @@ List of Client APIs
 |uniCloud.addInterceptor()		|新增拦截器 [详情](#add-interceptor)											|
 |uniCloud.addInterceptor() |Add Interceptor [Details](#add-interceptor) |
 |uniCloud.removeInterceptor()	|移除拦截器 [详情](#remove-interceptor)											|
+|uniCloud.removeInterceptor() |Remove the interceptor [Details](#remove-interceptor) |
 |uniCloud.interceptObject()	|拦截云对象请求 [详情](#intercept-object)											|
+|uniCloud.interceptObject() |Intercept cloud object requests [Details](#intercept-object) |
 |uniCloud.onResponse()			|监听服务端（云函数、云对象、clientDB）响应 [详情](#on-response)				|
 |uniCloud.onResponse() |Listen to the server (cloud function, cloud object, clientDB) response [Details](#on-response) |
 |uniCloud.offResponse()			|移除监听服务端（云函数、云对象、clientDB）响应 [详情](#off-response)			|
@@ -111,6 +113,7 @@ console.log(uniCloud.getCurrentUserInfo().role.indexOf('admin')>-1); // If it is
 > Added in HBuilderX 3.1.20
 
 接口形式：`uniCloud.addInterceptor(String apiName, Object interceptor)`
+Interface form: `uniCloud.addInterceptor(String apiName, Object interceptor)`
 
 **平台兼容性**
 **Platform Compatibility**
@@ -128,9 +131,12 @@ console.log(uniCloud.getCurrentUserInfo().role.indexOf('admin')>-1); // If it is
 | Fields | Type | Required | Description |
 | ---						| ---		| ---	| ---																													|
 | apiName				| string| 是	| 要拦截的Api名称，可选值：callFunction、database、uploadFile	|
+| apiName | string| Yes | Api name to be intercepted, optional values: callFunction, database, uploadFile |
 | interceptor| object| 是	| 要添加的拦截器																							|
+| interceptor| object| Yes | the interceptor to add |
 
 **interceptor参数说明**
+**Interceptor parameter description**
 
 |参数名		|类型			|必填	|默认值	|说明					|平台差异说明	|
 |Parameter Name |Type |Required |Default Value |Description |Platform Difference Description |
@@ -177,6 +183,7 @@ uniCloud.addInterceptor('callFunction', {
 > Added in HBuilderX 3.1.20
 
 接口形式：`uniCloud.removeInterceptor(String apiName, Object interceptor)`
+Interface form: `uniCloud.removeInterceptor(String apiName, Object interceptor)`
 
 **入参说明**
 **Introduction to parameters**
@@ -185,9 +192,12 @@ uniCloud.addInterceptor('callFunction', {
 | Fields | Type | Required | Description |
 | ---						| ---		| ---	| ---																													|
 | apiName				| string| 是	| 要拦截的Api名称，可选值：callFunction、database、uploadFile	|
+| apiName | string| Yes | Api name to be intercepted, optional values: callFunction, database, uploadFile |
 | interceptor| object| 是	| 要移除的拦截器，选填，不传递此参数时移除此Api所有拦截器			|
+| interceptor| object| Yes | The interceptor to be removed, optional, if this parameter is not passed, remove all interceptors of this API |
 
 **interceptor参数说明**
+**Interceptor parameter description**
 
 |参数名		|类型			|必填	|默认值	|说明					|平台差异说明	|
 |Parameter Name |Type |Required |Default Value |Description |Platform Difference Description |
@@ -235,21 +245,31 @@ uniCloud.removeInterceptor('callFunction', {
 ```
 
 ### 拦截云对象请求intercept-object
+### Intercept cloud object request intercept-object
 
 > 新增于HBuilderX 3.5.5
+> Added in HBuilderX 3.5.5
 
 接口形式：`uniCloud.interceptObject(Object interceptor)`
+Interface form: `uniCloud.interceptObject(Object interceptor)`
 
 **interceptor参数说明**
+**Interceptor parameter description**
 
 |参数名		|类型			|必填	|默认值	|说明					|平台差异说明	|
+|Parameter Name |Type |Required |Default Value |Description |Platform Difference Description |
 |---			|---			|---	|---		|---					|---					|
 |invoke		|Function	|否		|				|拦截前触发		|							|
+|invoke |Function |No | |Invoke before interception | |
 |success	|Function	|否		|				|成功回调拦截	|							|
+|success |Function |No | |Success callback interception | |
 |fail			|Function	|否		|				|失败回调拦截	|							|
+|fail |Function |No | |Fail callback interception | |
 |complete	|Function	|否		|				|完成回调拦截	|							|
+|complete |Function |No | |Complete callback interception | |
 
 **invoke**拦截器内将会收到以下形式的参数
+The **invoke** interceptor will receive parameters of the following form
 
 ```js
 {
@@ -260,6 +280,7 @@ uniCloud.removeInterceptor('callFunction', {
 ```
 
 **success**拦截器内将会收到以下形式的参数
+The **success** interceptor will receive parameters of the following form
 
 ```js
 {
@@ -271,6 +292,7 @@ uniCloud.removeInterceptor('callFunction', {
 ```
 
 **fail**拦截器内将会收到以下形式的参数
+The **fail** interceptor will receive parameters of the following form
 
 ```js
 {
@@ -282,6 +304,7 @@ uniCloud.removeInterceptor('callFunction', {
 ```
 
 **complete**拦截器内将会收到success或fail拦截器相同的参数，具体以云函数是否执行成功为准
+The **complete** interceptor will receive the same parameters as the success or fail interceptor, depending on whether the cloud function is successfully executed or not.
 
 ### 监听云端响应@on-response
 ### Listen for cloud response @on-response

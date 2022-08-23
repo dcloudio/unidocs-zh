@@ -464,7 +464,7 @@ Both uni-id-co and front-end pages in uni-id-pages support these four built-in r
 |QQ 小程序端登录					|配置`mp-qq.oauth.qq`，在QQ开放平台获取：[QQ开放平台](https://q.qq.com/)																														|
 |QQ applet login |Configure `mp-qq.oauth.qq` and obtain it on the QQ open platform: [QQ open platform](https://q.qq.com/) |
 |QQ APP端登录							|配置`app.oauth.qq`，在QQ互联获取：[QQ互联](https://connect.qq.com/)																															|
-|QQ APP login |Configure `app.oauth.qq` and get it from QQ Internet: [QQ Internet](https://connect.qq.com/) |
+|QQ APP login |Configure `app.oauth.qq` and get it in QQ Interconnection: [QQ Interconnection](https://connect.qq.com/) |
 |支付宝小程序端登录				|配置`mp-alipay.oauth.alipay`，在支付宝开放平台获取：[支付宝开放平台](https://openhome.alipay.com/develop/manage)										|
 |Alipay applet login |Configure `mp-alipay.oauth.alipay` and obtain it on the Alipay open platform: [Alipay Open Platform](https://openhome.alipay.com/develop/manage) |
 |Apple APP端登录					|配置`app.oauth.apple`，在Apple开发者中心自行配置：[Apple开发者中心](https://developer.apple.com/account/resources/identifiers/list)|
@@ -1691,7 +1691,7 @@ The three-party credentials currently saved by `uni-id-co` are as follows:
 - QQ小程序端用户session_key，通过`uni-open-bridge-common`的`setSessionKey`方法写入
 - QQ applet user session_key, written through the `setSessionKey` method of `uni-open-bridge-common`
 - QQ APP登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
-- The user access_token returned by QQ APP when logging in, is written through the `setUserAccessToken` method of `uni-open-bridge-common`
+- The user access_token returned by the QQ APP when logging in, written through the `setUserAccessToken` method of `uni-open-bridge-common`
 
 ### 钩子@hooks
 ### Hooks @hooks

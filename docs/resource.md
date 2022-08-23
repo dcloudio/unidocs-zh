@@ -12,9 +12,9 @@ It is recommended that the third step is to read the ["uni-app official course"]
 1. 看完这篇[白话uni-app](http://ask.dcloud.net.cn/article/35657)
 1. After reading this [vernacular uni-app](http://ask.dcloud.net.cn/article/35657)
 2. DCloud与vue合作，在[vue.js官网](https://cn.vuejs.org/v2/guide/)提供了免费视频教程，也可以直达教程地址：[https://learning.dcloud.io](https://learning.dcloud.io)
-2. DCloud cooperates with vue and provides free video tutorials on the [vue.js official website](https://cn.vuejs.org/v2/guide/), and you can also go directly to the tutorial address: [https://learning.dcloud .io](https://learning.dcloud.io)
+2. In cooperation with vue, DCloud provides free video tutorials on the [vue.js official website](https://cn.vuejs.org/v2/guide/), and you can also go directly to the tutorial address: [https://learning.dcloud .io](https://learning.dcloud.io)
 3. 不需要专门去学习小程序的语法，uni-app使用的是vue的语法，不是小程序自定义的语法。
-3. There is no need to learn the syntax of the applet. uni-app uses the syntax of Vue, not the syntax of the applet.
+3. There is no need to learn the syntax of the applet. uni-app uses the syntax of vue, not the syntax of the applet.
 
 #### 如果你熟悉小程序，但不熟悉vue
 #### If you are familiar with applet, but not with vue
@@ -36,13 +36,13 @@ At present, major video learning websites have many uni-app learning resources:
 - [MOOC uni-app related courses](https://www.imooc.com/search/?words=uni-app)
 
 如下是三方专业培训机构的视频教程
-The following is the video tutorial of the tripartite professional training institutions
+The following is the video tutorial of the tripartite professional training institution
 * [《uni-app 商业级应用实战》](https://ke.qq.com/course/379043?from=800006421)，出品人：腾讯课堂NEXT学院。亮点：腾讯课堂官方出品；不懂 vue 的工程师也可快速学习；从入门到实战都包括。
 * ["uni-app commercial application practice"](https://ke.qq.com/course/379043?from=800006421), Producer: Tencent Classroom NEXT Academy. Highlights: Officially produced by Tencent Classroom; engineers who do not understand vue can also learn quickly; from entry to actual combat.
 * [《uni-app 跨平台应用开发教程》](http://www.hcoder.net/course/info_242.html)，出品人：hcoder 刘海君，课时：共25节。亮点：讲师经验丰富，也是graceui框架作者。
 * ["Uni-app Cross-Platform Application Development Course"](http://www.hcoder.net/course/info_242.html), Producer: hcoder Liu Haijun, class hours: 25 lessons in total. Highlights: The lecturer is experienced and is also the author of the graceui framework.
 * [《uni-app 实战教程 - “悦读”项目实战》](https://ke.qq.com/course/364262?tuin=4f8da6)，出品人：hcoder 刘海君
-* ["uni-app practical tutorial - "Yuedu" project combat"](https://ke.qq.com/course/364262?tuin=4f8da6), Producer: hcoder Liu Haijun
+* ["Uni-app Practical Tutorial - "Yue Du" Project Practical Combat"](https://ke.qq.com/course/364262?tuin=4f8da6), Producer: hcoder Liu Haijun
 * [《uni-app实战社区交友类app开发》](https://study.163.com/course/introduction.htm?courseId=1209188809&_trace_c_p_k2_=4b765abfb2f946039c8ea6230737f6af)，出品人：帝莎IT学院。适用人群：具备Html+Css+Javascript基础知识。
 * ["Uni-app actual combat community dating app development"](https://study.163.com/course/introduction.htm?courseId=1209188809&_trace_c_p_k2_=4b765abfb2f946039c8ea6230737f6af), Producer: Desha IT Academy. Applicable people: Have basic knowledge of Html+Css+Javascript.
 * [《uni-app仿小米商城实战》](https://study.163.com/course/courseMain.htm?courseId=1209401825&share=2&shareId=480000001892585)，出品人：帝莎IT学院。首页使用nvue开发，目前支持app端和小程序端。
@@ -114,7 +114,7 @@ For each end, there are management rules for each end, which is not something th
 - 比如H5端的浏览器有跨域限制；
 - For example, the browser on the H5 side has cross-domain restrictions;
 - 比如微信小程序会强制要求https链接，并且所有要联网的服务器域名都要配到微信的白名单中；
-- For example, the WeChat applet will require HTTPS links, and all server domain names to be connected to the Internet must be assigned to the WeChat whitelist;
+- For example, the WeChat applet will force https links, and all server domain names to be connected to the Internet must be assigned to the WeChat whitelist;
 - 比如App端，iOS对隐私控制和虚拟支付控制非常严格；
 - For example, on the App side, iOS is very strict on privacy control and virtual payment control;
 - 比如App端，Android、国产rom各种兼容性差异，尤其是因为谷歌服务被墙，导致的push、定位等开发混乱的坑；

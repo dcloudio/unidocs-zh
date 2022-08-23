@@ -5,6 +5,7 @@ Slow query means that the cloud database query is slow and cannot return results
 Developers should check their slow queries frequently, fix problems, and ensure the health and stability of the business system.
 
 在数据库语句执行超过一定时间（**腾讯云、阿里云均为5秒**）仍不能返回结果后，数据库请求会报超时错误。
+After the database statement execution exceeds a certain time (**Tencent Cloud and Alibaba Cloud are both 5 seconds**) and still cannot return the result, the database request will report a timeout error.
 
 这里介绍如何进行查询优化以避免此类问题。
 Here's how to do query optimization to avoid such problems.

@@ -22,7 +22,12 @@ HBuilderX is a general front-end development tool, but it is specially enhanced 
 在点击工具栏里的文件 -> 新建 -> 项目（快捷键`Ctrl+N`）：
 Click File -> New -> Project in the toolbar (shortcut `Ctrl+N`):
 <div align=center>
+  <!-- @ifdef ZH -->
   <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b925a1c0-4f19-11eb-97b7-0dc4655d6e68.png"/>
+  <!-- @endif -->
+  <!-- @ifdef EN -->
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9f53bf42-b206-437a-9cd6-333fb6af3904.jpg"/>
+  <!-- @endif -->
 </div>
 
 选择`uni-app`类型，输入工程名，选择模板，点击创建，即可成功创建。
@@ -32,7 +37,12 @@ uni-app自带的模板有 默认的空项目模板、Hello uni-app 官方组件�
 The templates that come with uni-app include the default empty project template, Hello uni-app official components and API examples, and an important template is the uni ui project template, which is recommended for daily development, and has built-in a large number of common components.
 
 <div align=center>
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d0cba1a3-c0cc-4095-a105-a4fea51857fe.jpg"/>
+  <!-- @ifdef ZH -->
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/4da27a35-8683-46ff-b890-cb3e57c94175.jpg"/>
+  <!-- @endif -->
+  <!-- @ifdef EN -->
+  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/4da27a35-8683-46ff-b890-cb3e57c94175.jpg"/>
+  <!-- @endif -->
 </div>
 
 
@@ -52,55 +62,60 @@ If developers are accustomed to projects in node mode and are confused about the
 1. 浏览器运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到浏览器 -> 选择浏览器，即可在浏览器里面体验uni-app 的 H5 版。
 1. Run on browser: Enter the hello-uniapp project, click Run -> Run to browser -> Select browser on the toolbar, and you can experience the H5 version of uni-app in the browser.
   <div align=center>
+    <!-- @ifdef ZH -->
   	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7bf15128-6629-4037-a6c5-988ab03671f1.png"/>
+    <!-- @endif -->
+    <!-- @ifdef EN -->
+  	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/52e3ae83-38e7-419f-adf7-7410b80efac5.jpg"/>
+    <!-- @endif -->
   </div>
 
+<!-- @ifdef ZH -->
 2. 运行App到手机或模拟器：连接手机，开启USB调试，进入hello-uniapp项目，点击工具栏的运行 -> 真机运行 -> 选择运行的设备，即可在该设备里面体验uni-app。
-2. Run the App to the mobile phone or simulator: connect the mobile phone, enable USB debugging, enter the hello-uniapp project, click Run on the toolbar -> Run on real machine -> Select the running device, you can experience uni-app in the device .
 	<div align=center>
 		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c4d3c057-40dc-4dea-9277-be1c33a252ed.png"/>
 	</div>
-	
+<!-- @endif -->
+<!-- @ifdef EN -->
+2. Run the App to the mobile phone or simulator: connect the mobile phone, enable USB debugging, enter the hello-uniapp project, click Run on the toolbar -> Run on real machine -> Select the running device, you can experience uni-app in the device .
+	<div align=center>
+		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/5d7ebe44-0146-4cce-8fa8-b57f4f39f358.jpg"/>
+	</div>
+<!-- @endif -->
 	如手机无法识别，请点击菜单运行-运行到手机或模拟器-真机运行常见故障排查指南。
 	If the mobile phone fail to be identified, please click the menu Run - Run to the mobile phone or simulator - Guide to common troubleshooting in run on mobile App Playground.
-	
+
+
+<!-- @ifdef ZH -->
 3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。
-3. Run in WeChat Developer Tools: Enter the hello-uniapp project, click Run on the toolbar -> Run to Mini Program Simulator -> WeChat Developer Tools, you can experience uni-app in WeChat Developer Tools.
     <br/>
     <div align=center>
-    	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5e058d1a-a6c6-4501-ae65-4333e7f82ad6.png"/>
+    	<img v-if="!$themeConfig.isEn" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5e058d1a-a6c6-4501-ae65-4333e7f82ad6.png"/>
     </div>
     
     **注意**：如果是第一次使用，需要先配置小程序ide的相关路径，才能运行成功。如下图，需在输入框输入微信开发者工具的安装路径。
-    **Note**: If you use it for the first time, you need to configure the relevant path of the applet ide before it can run successfully. As shown in the figure below, you need to enter the installation path of the WeChat developer tool in the input box.
     <br/>
     <div align=center>
       <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a142b6a0-4f1a-11eb-8a36-ebb87efcf8c0.png"/>
     </div>
 
     **注意**：微信开发者工具需要开启服务端口 在微信工具的设置->安全中。
-    **Note**: Wechat developer tools need to open the service port in the settings->security of wechat tools.
 		
 4. 在支付宝小程序开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 支付宝小程序开发者工具，即可在支付宝小程序开发者工具里面体验uni-app。
-4. Run in the Alipay applet developer tool: enter the hello-uniapp project, click Run on the toolbar -> run to the applet simulator -> Alipay applet developer tool, you can find it in the Alipay applet developer tool Experience uni-app.
     <br/>
     <div align=center>
     	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/fee90480-4f1a-11eb-bd01-97bc1429a9ff.png"/>
     </div>
 
 5. 在百度、字节跳动、QQ、快应用（分联盟和华为）、快手、飞书、360、京东等小程序开发工具里运行：内容同上，不再重复。
-5. Run in small program development tools such as Baidu, ByteDance, QQ, Kuaishou (sub-union and Huawei), Kuaishou, Feishu, 360, JD.com, etc. The content is the same as above and will not be repeated.
 
 **Tips**
 
 * 如果是第一次使用，需要配置开发工具的相关路径。点击工具栏的运行 -> 运行到小程序模拟器 -> 运行设置，配置相应小程序开发者工具的路径。
-* If you are using it for the first time, you need to configure the relevant path of the development tool. Click Run -> Run to Mini Program Simulator -> Run Settings on the toolbar to configure the path of the corresponding Mini Program developer tools.
 * 微信小程序工具需要配置允许权限，不然HBuilder无法调用微信小程序开发工具的命令行
-* The WeChat applet tool needs to be configured with permission, otherwise HBuilder cannot call the command line of the WeChat applet development tool
 * 支付宝/百度/字节跳动/360小程序工具，不支持直接指定项目启动并运行。因此开发工具启动后，请将 HBuilderX 控制台中提示的项目路径，在相应小程序开发者工具中打开。
-* Alipay/Baidu/ByteDance/360 applet tools do not support directly specifying the project to start and run. Therefore, after the development tool is started, please open the project path indicated in the HBuilderX console in the corresponding applet developer tool.
 * 如果自动启动小程序开发工具失败，请手动启动小程序开发工具并将 HBuilderX 控制台提示的项目路径，打开项目。
-* If the automatic startup of the applet development tool fails, please manually start the applet development tool and open the project with the project path prompted by the HBuilderX console.
+<!-- @endif -->
 
 运行的快捷键是`Ctrl+R`。
 The shortcut key to run is `Ctrl+R`.
@@ -108,7 +123,8 @@ The shortcut key to run is `Ctrl+R`.
 HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行的设备：
 HBuilderX also provides a shortcut run menu, which allows quick selection for the equipment to run by pressing number keys:
 <div align=center>
-	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/aef21b70-4f37-11eb-a16f-5b3e54966275.png"/>
+	<img v-if="!$themeConfig.isEn" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/aef21b70-4f37-11eb-a16f-5b3e54966275.png"/>
+	<img v-else src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/a8be0b4d-c81d-466a-ab30-38bc86344669.jpg"/>
 </div>
 
 如需调试，可参考：[uni-app调试](tutorial/run-and-debug.md)
@@ -124,12 +140,14 @@ For debugging, please refer to: [uni-app debugging](tutorial/run-and-debug.md)
 On the HBuilderX toolbar, click Release and select Native app - Cloud packaging, as shown in the figure below:
 
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b8332fd0-4f37-11eb-8ff1-d5dcf8779628.png"/>
+  <img v-if="!$themeConfig.isEn" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b8332fd0-4f37-11eb-8ff1-d5dcf8779628.png"/>
+  <img v-else src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/01428666-e555-4e3d-8f08-496e0510a801.jpg"/>
 </div>
 出现如下界面，点击打包即可。
 ...
 <div align=center>
-  <img style="max-width:600px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/001a20b0-d85a-11ea-81ea-f115fe74321c.png"/>
+  <img v-if="!$themeConfig.isEn" style="max-width:600px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/001a20b0-d85a-11ea-81ea-f115fe74321c.png"/>
+  <img v-else style="max-width:600px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/919fc62e-936a-4a3d-8bdb-9f9670f15ed8.jpg"/>
 </div>
 
 云端打包支持安心打包，保护用户隐私，不会上传代码和证书，通过差量包制作方式实现安心打包。详见：[https://ask.dcloud.net.cn/article/37979](https://ask.dcloud.net.cn/article/37979)
@@ -159,13 +177,14 @@ iOS App packaging requires a certificate from Apple.
 2. 在HBuilderX工具栏，点击发行，选择网站-H5手机版，如下图，点击即可生成 H5 的相关资源文件，保存于 unpackage 目录。
 2. On the toolbar of HBuilderX, click Release, and select the Website - H5 Mobile Version, as shown in the figure below. Click to generate the H5-related resource files and save them in unpackage directory.
 
-<div align=center>
-	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b7391860-4f37-11eb-8a36-ebb87efcf8c0.png" style="max-width:600px;height:auto;"/>
-</div>
+  <div align=center>
+    <img v-if="!$themeConfig.isEn" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b7391860-4f37-11eb-8a36-ebb87efcf8c0.png" style="max-width:600px;height:auto;"/>
+    <img v-else src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d6d22340-e7b6-4650-8abb-a4a605de6802.jpg" style="max-width:600px;height:auto;"/>
+  </div>
 
-<div align=center>
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e7c3669a-5d46-4a5b-be23-fac43052180f.png"/>
-</div>
+  <div v-if="!$themeConfig.isEn" align=center>
+    <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e7c3669a-5d46-4a5b-be23-fac43052180f.png"/>
+  </div>
 
 **注意**
 **Notice**

@@ -12,7 +12,7 @@ It is recommended that the third step is to read the ["uni-app official course"]
 1. 看完这篇[白话uni-app](http://ask.dcloud.net.cn/article/35657)
 1. After reading this [vernacular uni-app](http://ask.dcloud.net.cn/article/35657)
 2. DCloud与vue合作，在[vue.js官网](https://cn.vuejs.org/v2/guide/)提供了免费视频教程，也可以直达教程地址：[https://learning.dcloud.io](https://learning.dcloud.io)
-2. In cooperation with vue, DCloud provides free video tutorials on the [vue.js official website](https://cn.vuejs.org/v2/guide/), and you can also go directly to the tutorial address: [https://learning.dcloud .io](https://learning.dcloud.io)
+2. DCloud cooperates with vue and provides free video tutorials on the [vue.js official website](https://cn.vuejs.org/v2/guide/), and you can also go directly to the tutorial address: [https://learning.dcloud .io](https://learning.dcloud.io)
 3. 不需要专门去学习小程序的语法，uni-app使用的是vue的语法，不是小程序自定义的语法。
 3. There is no need to learn the syntax of the applet. uni-app uses the syntax of Vue, not the syntax of the applet.
 
@@ -48,7 +48,7 @@ The following is the video tutorial of the tripartite professional training inst
 * [《uni-app仿小米商城实战》](https://study.163.com/course/courseMain.htm?courseId=1209401825&share=2&shareId=480000001892585)，出品人：帝莎IT学院。首页使用nvue开发，目前支持app端和小程序端。
 * ["The uni-app imitation of Xiaomi Mall"](https://study.163.com/course/courseMain.htm?courseId=1209401825&share=2&shareId=480000001892585), Producer: Desha IT Academy. The homepage is developed using nvue, and currently supports app and small programs.
 * [《uni-app多端调试环境配置》](https://study.163.com/course/courseMain.htm?courseId=1209401924&share=2&shareId=480000001892585)，出品人：帝莎IT学院。
-* ["Uni-app Multi-terminal Debugging Environment Configuration"](https://study.163.com/course/courseMain.htm?courseId=1209401924&share=2&shareId=480000001892585), Producer: Desha IT Academy.
+* ["Uni-app Multi-terminal Debugging Environment Configuration"](https://study.163.com/course/courseMain.htm?courseId=1209401924&share=2&shareId=480000001892585), Producer: Desa IT Academy.
 * [《uni-app实战仿微信app全栈开发》](https://study.163.com/course/courseMain.htm?courseId=1209487898&share=2&shareId=480000001892585)，出品人：帝莎IT学院。
 * ["Uni-app actual combat imitation WeChat app full-stack development"](https://study.163.com/course/courseMain.htm?courseId=1209487898&share=2&shareId=480000001892585), Producer: Desha IT Academy.
 * [《uni-app实战视频点播app小程序》](https://study.163.com/course/courseMain.htm?courseId=1209644880&share=2&shareId=480000001892585)，出品人：帝莎IT学院。

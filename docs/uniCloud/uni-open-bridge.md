@@ -76,18 +76,26 @@ The flow chart is as follows:
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
 ## 凭据使用场景
+## Credential usage scenarios
 
 ### 微信小程序
+### WeChat Mini Program
 
 1. 客户端登陆需要保存 [session_key](#session_key)
+1. Client login needs to save [session_key](#session_key)
 2. 解密用户敏感数据需要 [access_token](#access_token)、[session_key](#session_key)，例如获取用户授权的手机号、用户敏感资料
+2. [access_token](#access_token), [session_key](#session_key) are required to decrypt user sensitive data, such as obtaining user authorized mobile phone number, user sensitive information
 3. 解密安全网络通道使用的加密数据需要 [access_token](#access_token)、[session_key](#session_key) 、[encrypt_key](#encrypt_key)
+3. [access_token](#access_token), [session_key](#session_key), [encrypt_key](#encrypt_key) are required to decrypt encrypted data used by secure network channels
 
 ### 微信公众号
+### WeChat public account
 
 1. 微信应用内公众号页面用户登陆需要用到 [user_access_token](#user_access_token)、[ticket](#ticket)
+1. [user_access_token](#user_access_token), [ticket](#ticket) are required for user login on the official account page of the WeChat app
 
 ## 凭据托管状态
+## Credential escrow status
 
 |凭据																		|微信小程序	|微信公众号	|微信PC网页	|微信App		|
 |Credentials |WeChat Mini Program |WeChat Official Account |WeChat PC Webpage |WeChat App |
@@ -119,8 +127,10 @@ The flow chart is as follows:
 There are also some less commonly used credentials that are not listed, for example: WeChat App access_token
 
 ## 微信凭据详细介绍@wxtoken
+## WeChat Credential Details @wxtoken
 
 **微信凭据分应用级、用户级、一次性等凭据，如果你之前未接触过微信这些凭据，请务必阅读下面的详细介绍
+**WeChat credentials are divided into application-level, user-level, one-time and other credentials. If you have not contacted WeChat credentials before, please be sure to read the detailed introduction below
 
 ### access_token(应用级)@access_token
 ### access_token (application level) @access_token

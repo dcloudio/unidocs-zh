@@ -82,7 +82,7 @@ mapContext
 - nvue没有`$getAppMap()`，请使用`createMapContext`
 - nvue doesn't have `$getAppMap()`, use `createMapContext`
 - `uni-app`中使用原生地图无需提供占位div，得到`$getAppMap()`后直接js使用即可。
-- There is no need to provide a placeholder div to use the native map in `uni-app`. After getting `$getAppMap()`, you can use it directly in js.
+- There is no need to provide a placeholder div to use native maps in `uni-app`, and you can use js directly after getting `$getAppMap()`.
 - `openMapApp` iOS 暂不支持，后续补充
 - `openMapApp` iOS is not currently supported, and will be added later
 
@@ -108,7 +108,7 @@ mapContext
 |Parameter |Type |Required |Description |
 |:-				|:-				|:-		|:-																																		|
 |longitude|Number		|否		|经度 ，App 2.6.8、H5、京东小程序、仅微信小程序 2.8.0+ 支持																			|
-|longitude|Number |No |Longitude , App 2.6.8, H5, Jingdong applet, only WeChat applet 2.8.0+ support |
+|longitude|Number |No |Longitude , App 2.6.8, H5, JD.com, WeChat applet 2.8.0+ only |
 |latitude	|Number		|否		|纬度 ，App 2.6.8、H5、京东小程序、仅微信小程序 2.8.0+ 支持																			|
 |latitude |Number |No |Latitude , App 2.6.8, H5, Jingdong applet, only WeChat applet 2.8.0+ support |
 |success	|Function	|否		|接口调用成功的回调函数 ，res = { longitude: "经度", latitude: "纬度"}|

@@ -452,7 +452,7 @@ Both uni-id-co and front-end pages in uni-id-pages support these four built-in r
 |手机号+验证码						|配置`service.sms`，在开发者中心短信服务内获取配置信息：[短信服务](https://dev.dcloud.net.cn/#/pages/sms/base)											|
 |Mobile phone number + verification code |Configure `service.sms`, get configuration information in the SMS service of the developer center: [SMS service](https://dev.dcloud.net.cn/#/pages/sms/base) |
 |手机号一键登录						|配置`service.univerify`，在开发者中心一键登录服务内获取：[一键登录](https://dev.dcloud.net.cn/#/pages/uniLogin/index)							|
-|One-click login with mobile phone number |Configure `service.univerify` and get it in the one-click login service in the developer center: [One-click login](https://dev.dcloud.net.cn/#/pages/uniLogin/index ) |
+|One-click login with mobile phone number |Configure `service.univerify` and obtain it in the one-click login service in the developer center: [One-click login](https://dev.dcloud.net.cn/#/pages/uniLogin/index ) |
 |微信小程序登录						|配置`mp-weixin.oauth.weixin`，在微信公众平台获取：[微信开放平台](https://mp.weixin.qq.com/)																				|
 |WeChat applet login |Configure `mp-weixin.oauth.weixin` and obtain it on the WeChat public platform: [WeChat Open Platform](https://mp.weixin.qq.com/) |
 |微信公众号登录						|配置`web.oauth.weixin-h5`，在微信公众平台获取：[微信开放平台](https://mp.weixin.qq.com/)																						|
@@ -460,7 +460,7 @@ Both uni-id-co and front-end pages in uni-id-pages support these four built-in r
 |微信PC页面扫码登录				|配置`web.oauth.weixin-web`，在微信开放平台获取：[微信开放平台](https://open.weixin.qq.com/)																				|
 |Scan the QR code to log in on the WeChat PC page |Configure `web.oauth.weixin-web` and obtain it on the WeChat open platform: [WeChat Open Platform](https://open.weixin.qq.com/) |
 |微信APP端登录						|配置`app.oauth.weixin`，在微信开放平台获取：[微信开放平台](https://open.weixin.qq.com/)																						|
-|WeChat APP login |Configure `app.oauth.weixin` and obtain it on WeChat Open Platform: [WeChat Open Platform](https://open.weixin.qq.com/) |
+|WeChat APP login |Configure `app.oauth.weixin` and obtain it on the WeChat open platform: [WeChat open platform](https://open.weixin.qq.com/) |
 |QQ 小程序端登录					|配置`mp-qq.oauth.qq`，在QQ开放平台获取：[QQ开放平台](https://q.qq.com/)																														|
 |QQ applet login |Configure `mp-qq.oauth.qq` and obtain it on the QQ open platform: [QQ open platform](https://q.qq.com/) |
 |QQ APP端登录							|配置`app.oauth.qq`，在QQ互联获取：[QQ互联](https://connect.qq.com/)																															|
@@ -1685,13 +1685,13 @@ The three-party credentials currently saved by `uni-id-co` are as follows:
 - 微信公众号页面用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
 - Wechat official account page user access_token, written through the `setUserAccessToken` method of `uni-open-bridge-common`
 - 微信web页面扫码登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
-- The user access_token returned when the WeChat web page scans the QR code to log in, written through the `setUserAccessToken` method of `uni-open-bridge-common`
+- The user access_token returned when the WeChat web page scans the code to log in, which is written through the `setUserAccessToken` method of `uni-open-bridge-common`
 - 微信APP登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
 - The user access_token returned by WeChat APP when logging in, written through the `setUserAccessToken` method of `uni-open-bridge-common`
 - QQ小程序端用户session_key，通过`uni-open-bridge-common`的`setSessionKey`方法写入
 - QQ applet user session_key, written through the `setSessionKey` method of `uni-open-bridge-common`
 - QQ APP登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
-- The user access_token returned by QQ APP when logging in, is written through the `setUserAccessToken` method of `uni-open-bridge-common`
+- The user access_token returned by the QQ APP when logging in, written through the `setUserAccessToken` method of `uni-open-bridge-common`
 
 ### 钩子@hooks
 ### Hooks @hooks

@@ -272,16 +272,16 @@ Developers who have some experience in ```Vue.js``` and applet development can q
 
 - 对于技术人员而言：不用学那么多的平台开发技术、研究那么多前端框架，学会基于vue的```uni-app```就够了。
 - For technical personnel: It is enough to learn ``uni-app`` based on vue without learning so many platform development technologies and researching so many front-end frameworks.
-- 对于公司而言：更低成本，覆盖更多用户，```uni-app```是高效利器。 -->
+- 对于公司而言：更低成本，覆盖更多用户，```uni-app```是高效利器
 - For companies: lower cost, covering more users, ``uni-app``` is an efficient tool. -->
 
+<!-- @ifdef ZH  -->
 ## 功能框架图
-## Functional framework diagram
 
 从下面`uni-app`功能框架图可看出，`uni-app`在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
-As can be seen from the functional framework diagram of `uni-app` below, in the process of cross-platform, `uni-app` can elegantly invoke platform-specific capabilities without sacrificing platform characteristics, and truly achieves the diversity of the sea and the strengths of each.
 
-<img v-if="!$themeConfig.isEn" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29448a55-2785-4296-9248-913dbda9de7f.png" alt="">
+<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29448a55-2785-4296-9248-913dbda9de7f.png" alt="">
+<!-- @endif -->
 
 ## 一套代码，运行到多个平台
 ## A set of code that runs on multiple platforms

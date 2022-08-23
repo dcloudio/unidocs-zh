@@ -49,20 +49,116 @@
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
-## 凭据托管在不同平台的处理
+## 凭据托管
 
 |凭据																		|微信小程序	|微信公众号	|微信PC网页	|微信App		|
 |:-:																		|:-:				|:-:				|:-:				|:-:				|
-|[access_token](#access_token)					|定时刷新		|定时刷新		|						|开发者操作	|
-|[user_access_token](#user_access_token)|						|开发者操作	|						|						|
-|[session_key](#session_key)						|开发者操作	|						|						|						|
-|[encrypt_key](#encrypt_key)						|开发者操作	|						|						|						|
-|[ticket](#ticket)											|						|定时刷新		|						|						|
+|[access_token](#access_token)					|定时刷新		|定时刷新		|开发者操作	|开发者操作	|
+|[user_access_token](#user_access_token)|						|开发者操作	|-					|-					|
+|[session_key](#session_key)						|开发者操作	|-					|-					|-					|
+|[encrypt_key](#encrypt_key)						|开发者操作	|-					|-					|-					|
+|[ticket](#ticket)											|-					|定时刷新		|-					|-					|
 
+`定时刷新` 由云对象 `uni-open-bridge` 的定时任务触发，从微信服务器获取数据，通过调用 `uni-open-bridge-common` 写入到Redis或数据库
+`开发者操作` 由开发者引入公共模块 `uni-open-bridge-common`，调用相关[方法](#uni-open-bridge-common)
+
+`session_key` 如果使用了uni-id，uni-id用户登陆时会读写
+`encrypt_key` 依赖 `access_token`、`session_key`，如果依赖的值已存在，可直接读取 `encrypt_key`，如果不存在自动向微信服务器获取、开发者应该仅读取该值，如果有外部系统依赖时可写入
+`ticket` 依赖 `access_token`，直接获取 `ticket` 会检查 `access_token`，如果不存在默认先请求微信服务器获取并保存，继续请求 `ticket`
 
 还有一些不常用的凭据暂不列出，例如：微信App access_token
 
-**微信凭据分应用级、用户级、一次性等凭据，如果你之前未接触过微信这些凭据，请务必阅读[微信凭据详细介绍](#wxtoken)**
+**微信凭据分应用级、用户级、一次性等凭据，如果你之前未接触过微信这些凭据，请务必阅读下面的微信凭据详细介绍
+
+
+### access_token(应用级)@access_token
+
+- 微信小程序 `access_token` 是微信小程序全局唯一后台接口调用凭据，调用绝大多数后台接口时都需使用。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/server-ability/backend-api.html#access_token)
+
+- 微信H5 `access_token` 是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。开发者需要进行妥善保存。`access_token` 的存储至少要保留512个字符空间。`access_token` 的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的 `access_token` 失效。
+
+公众平台的 API 调用所需的 `access_token` 的使用及生成方式说明：
+
+1、建议公众号开发者使用中控服务器统一获取和刷新 `access_token`，其他业务逻辑服务器所使用的 `access_token` 均来自于该中控服务器，不应该各自去刷新，否则容易造成冲突，导致 `access_token` 覆盖而影响业务；
+
+2、目前`access_token` 的有效期通过返回的expires_in来传达，目前是7200秒之内的值。中控服务器需要根据这个有效时间提前去刷新新 `access_token`。在刷新过程中，中控服务器可对外继续输出的老 `access_token`，此时公众平台后台会保证在5分钟内，新老 `access_token` 都可用，这保证了第三方业务的平滑过渡；
+
+3、`access_token` 的有效时间可能会在未来有调整，所以中控服务器不仅需要内部定时主动刷新，还需要提供被动刷新 `access_token` 的接口，这样便于业务服务器在 API 调用获知 `access_token` 已超时的情况下，可以触发 `access_token` 的刷新流程。
+
+4、对于可能存在风险的调用，在开发者进行获取 `access_token` 调用时进入风险调用确认流程，需要用户管理员确认后才可以成功获取。具体流程为：
+
+开发者通过某 IP 发起调用->平台返回错误码[89503]并同时下发模板消息给公众号管理员->公众号管理员确认该 IP 可以调用->开发者使用该 IP 再次发起调用->调用成功。
+
+如公众号管理员第一次拒绝该 IP 调用，用户在1个小时内将无法使用该 IP 再次发起调用，如公众号管理员多次拒绝该 IP 调用，该 IP 将可能长期无法发起调用。平台建议开发者在发起调用前主动与管理员沟通确认调用需求，或请求管理员开启 IP 白名单功能并将该 IP 加入 IP 白名单列表。
+
+### user_access_token(用户级)@user_access_token
+
+因微信的众多凭据命名都叫`access_token`，无法有效区分。对于用户级的`access_token`，在 uni-open-bridge 中改名 `user_access_token` 。
+
+|平台							|值						|描述																																																													|
+|:-:							|:-:					|:-:																																																													|
+|微信内置浏览器H5	|access_token	|微信内置浏览器H5用户会话密钥。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)	|
+
+对应微信公众平台网页用户授权 `access_token`
+
+微信公众平台网页授权有两个相同名字 `access_token`，分别用于
+
+1、公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。
+2、网页授权接口调用凭证，用户授权的作用域 `access_token`。
+
+在微信内置浏览器H5无法区分两个相同名称值不同的 `access_token`，所以在 uni-open-bridge 中对用户级凭据进行改名，以更直观的名称 `user_access_token` 对应用户授权 `access_token`
+
+
+### code(临时凭据)@code
+
+微信小程序用户登录凭证校验
+
+在客户端通过调用 `uni.login()` 获得临时登录凭证 `code` 后传到开发者服务器在请求微信服务器获得 `session_key`、`openid`、`unionid`
+
+`code` 仅可在服务器使用一次，客户端调用频率限制每个用户每分钟100次
+
+### openid(用户级)@openid
+
+微信小程序用户唯一标识
+
+需要在开发者服务器请求微信服务器获得，依赖参数 code，[详情](#code)
+
+可通过 `uni-id-co` 获取，[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
+
+### session_key(用户级)@session_key
+
+平台对应的值
+
+|平台				|值					|描述																																																								|
+|:-:				|:-:				|:-:																																																								|
+|微信小程序	|session_key|微信小程序会话密钥。[详情](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html)	|
+
+会话密钥 `session_key` 有效性
+
+开发者如果遇到因为 `session_key` 不正确而校验签名失败或解密失败，请关注下面几个与 `session_key` 有关的注意事项。
+
+`uni.login` 调用时，用户的 `session_key` 可能会被更新而致使旧 `session_key` 失效（刷新机制存在最短周期，如果同一个用户短时间内多次调用 `uni.login`，并非每次调用都导致 `session_key` 刷新）。
+
+开发者应该在明确需要重新登录时才调用 `uni.login`，及时通过 `code2Session` 接口更新服务器存储的 `session_key`。
+
+微信不会把 `session_key` 的有效期告知开发者。我们会根据用户使用小程序的行为对 `session_key` 进行续期。用户越频繁使用小程序，`session_key` 有效期越长。
+
+开发者在 `session_key` 失效时，可以通过重新执行登录流程获取有效的 `session_key`。使用接口 `uni.checkSession` 可以校验 `session_key` 是否有效，从而避免小程序反复执行登录流程。
+
+当开发者在实现自定义登录态时，可以考虑以 `session_key` 有效期作为自身登录态有效期，也可以实现自定义的时效性策略。
+
+### encrypt_key(用户级)@encrypt_key
+
+为了避免小程序与开发者后台通信时数据被截取和篡改，微信侧维护了一个用户维度的可靠key，用于小程序和后台通信时进行加密和签名。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
+
+开发者可以分别通过小程序前端和微信后台提供的接口，获取用户的加密 key。
+
+### ticket(用户级)@ticket
+
+`ticket` 是公众号用于调用微信 JS 接口的临时票据。正常情况下，`ticket` 的有效期为7200秒，通过 `access_token` 来获取。
+
+由于获取 `ticket` 的 api 调用次数非常有限，频繁刷新 `ticket` 会导致 api 调用受限，影响自身业务，开发者必须在自己的服务全局缓存 `ticket `。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62)
+
 
 ## 使用
 
@@ -70,7 +166,8 @@
 
 ### 2. 在`uni-config-center`的 `uni-id` 下配置固定凭据，详情见下面的示例代码
 
-首先向微信的[公众平台](https://mp.weixin.qq.com/)申请 `appid` 和 `secret` 固定凭据。
+微信小程序或微信公众号，首先向微信的[公众平台](https://mp.weixin.qq.com/)申请 `appid` 和 `secret` 固定凭据。
+微信App或PC网页，首先向微信的[开放平台](https://open.weixin.qq.com/)申请 `appid` 和 `secret` 固定凭据。
 
 然后在项目的 uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json 文件中配置
 
@@ -898,97 +995,6 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
   "platform": "weixin-h5"
 }
 ```
-
-
-## 微信凭据详细介绍@wxtoken
-
-### access_token(应用级)@access_token
-
-- 微信小程序 `access_token` 是微信小程序全局唯一后台接口调用凭据，调用绝大多数后台接口时都需使用。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/server-ability/backend-api.html#access_token)
-
-- 微信H5 `access_token` 是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。开发者需要进行妥善保存。`access_token` 的存储至少要保留512个字符空间。`access_token` 的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的 `access_token` 失效。
-
-公众平台的 API 调用所需的 `access_token` 的使用及生成方式说明：
-
-1、建议公众号开发者使用中控服务器统一获取和刷新 `access_token`，其他业务逻辑服务器所使用的 `access_token` 均来自于该中控服务器，不应该各自去刷新，否则容易造成冲突，导致 `access_token` 覆盖而影响业务；
-
-2、目前`access_token` 的有效期通过返回的expires_in来传达，目前是7200秒之内的值。中控服务器需要根据这个有效时间提前去刷新新 `access_token`。在刷新过程中，中控服务器可对外继续输出的老 `access_token`，此时公众平台后台会保证在5分钟内，新老 `access_token` 都可用，这保证了第三方业务的平滑过渡；
-
-3、`access_token` 的有效时间可能会在未来有调整，所以中控服务器不仅需要内部定时主动刷新，还需要提供被动刷新 `access_token` 的接口，这样便于业务服务器在 API 调用获知 `access_token` 已超时的情况下，可以触发 `access_token` 的刷新流程。
-
-4、对于可能存在风险的调用，在开发者进行获取 `access_token` 调用时进入风险调用确认流程，需要用户管理员确认后才可以成功获取。具体流程为：
-
-开发者通过某 IP 发起调用->平台返回错误码[89503]并同时下发模板消息给公众号管理员->公众号管理员确认该 IP 可以调用->开发者使用该 IP 再次发起调用->调用成功。
-
-如公众号管理员第一次拒绝该 IP 调用，用户在1个小时内将无法使用该 IP 再次发起调用，如公众号管理员多次拒绝该 IP 调用，该 IP 将可能长期无法发起调用。平台建议开发者在发起调用前主动与管理员沟通确认调用需求，或请求管理员开启 IP 白名单功能并将该 IP 加入 IP 白名单列表。
-
-### user_access_token(用户级)@user_access_token
-
-因微信的众多凭据命名都叫`access_token`，无法有效区分。对于用户级的`access_token`，在 uni-open-bridge 中改名 `user_access_token` 。
-
-|平台							|值						|描述																																																													|
-|:-:							|:-:					|:-:																																																													|
-|微信内置浏览器H5	|access_token	|微信内置浏览器H5用户会话密钥。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)	|
-
-对应微信公众平台网页用户授权 `access_token`
-
-微信公众平台网页授权有两个相同名字 `access_token`，分别用于
-
-1、公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。
-2、网页授权接口调用凭证，用户授权的作用域 `access_token`。
-
-在微信内置浏览器H5无法区分两个相同名称值不同的 `access_token`，所以在 uni-open-bridge 中对用户级凭据进行改名，以更直观的名称 `user_access_token` 对应用户授权 `access_token`
-
-
-### code(临时凭据)@code
-
-微信小程序用户登录凭证校验
-
-在客户端通过调用 `uni.login()` 获得临时登录凭证 `code` 后传到开发者服务器在请求微信服务器获得 `session_key`、`openid`、`unionid`
-
-`code` 仅可在服务器使用一次，客户端调用频率限制每个用户每分钟100次
-
-### openid(用户级)@openid
-
-微信小程序用户唯一标识
-
-需要在开发者服务器请求微信服务器获得，依赖参数 code，[详情](#code)
-
-可通过 `uni-id-co` 获取，[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
-
-### session_key(用户级)@session_key
-
-平台对应的值
-
-|平台				|值					|描述																																																								|
-|:-:				|:-:				|:-:																																																								|
-|微信小程序	|session_key|微信小程序会话密钥。[详情](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html)	|
-
-会话密钥 `session_key` 有效性
-
-开发者如果遇到因为 `session_key` 不正确而校验签名失败或解密失败，请关注下面几个与 `session_key` 有关的注意事项。
-
-`uni.login` 调用时，用户的 `session_key` 可能会被更新而致使旧 `session_key` 失效（刷新机制存在最短周期，如果同一个用户短时间内多次调用 `uni.login`，并非每次调用都导致 `session_key` 刷新）。
-
-开发者应该在明确需要重新登录时才调用 `uni.login`，及时通过 `code2Session` 接口更新服务器存储的 `session_key`。
-
-微信不会把 `session_key` 的有效期告知开发者。我们会根据用户使用小程序的行为对 `session_key` 进行续期。用户越频繁使用小程序，`session_key` 有效期越长。
-
-开发者在 `session_key` 失效时，可以通过重新执行登录流程获取有效的 `session_key`。使用接口 `uni.checkSession` 可以校验 `session_key` 是否有效，从而避免小程序反复执行登录流程。
-
-当开发者在实现自定义登录态时，可以考虑以 `session_key` 有效期作为自身登录态有效期，也可以实现自定义的时效性策略。
-
-### encrypt_key(用户级)@encrypt_key
-
-为了避免小程序与开发者后台通信时数据被截取和篡改，微信侧维护了一个用户维度的可靠key，用于小程序和后台通信时进行加密和签名。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
-
-开发者可以分别通过小程序前端和微信后台提供的接口，获取用户的加密 key。
-
-### ticket(用户级)@ticket
-
-`ticket` 是公众号用于调用微信 JS 接口的临时票据。正常情况下，`ticket` 的有效期为7200秒，通过 `access_token` 来获取。
-
-由于获取 `ticket` 的 api 调用次数非常有限，频繁刷新 `ticket` 会导致 api 调用受限，影响自身业务，开发者必须在自己的服务全局缓存 `ticket `。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62)
 
 
 ## 不使用 `uni-open-bridge` 托管的情况@nouseuniopenbridge

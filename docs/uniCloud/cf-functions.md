@@ -286,13 +286,17 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.deleteFile()		|云函数删除云存储的文件 [详情](uniCloud/storage?id=clouddeletefile)																				|
 |uniCloud.getTempFileURL()	|获取云存储文件的临时路径 [详情](uniCloud/storage?id=cloudgettempfileurl)																		|
 |uniCloud.customAuth()		|使用云厂商自定义登录，仅腾讯云支持[详情](uniCloud/authentication.md?id=cloud-custom-auth)														|
-|uniCloud.callFunction()	|云函数/云对象中调用另一个云函数 [见下](?id=callbyfunction)	|
+|uniCloud.callFunction()	|云函数/云对象中调用另一个云函数 [见下](#callbyfunction)	|
 |uniCloud.importObject()	|云函数/云对象中调用另一个云对象 [详情](cloud-obj.md?id=call-by-cloud)	|
-|uniCloud.httpclient		|云函数中通过http访问其他系统 [见下](uniCloud/cf-functions?id=httpclient)																		|
+|uniCloud.httpclient		|云函数中通过http访问其他系统 [见下](#httpclient)																		|
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
+|uniCloud.httpProxyForEip			|使用云厂商代理访问http服务（阿里云固定IP方案），仅阿里云云端环境支持 [详见](#http-proxy-for-eip)，新增于`HBuilderX 3.5.5`|
+|uniCloud.getRequestList			|获取当前云函数实例内正在处理的请求Id列表 [详见](#get-request-list)，新增于`HBuilderX 3.5.5`|
+|uniCloud.getClientInfos			|获取当前云函数实例内正在处理的请求对应的客户端信息列表 [详见](#get-client-infos)，新增于`HBuilderX 3.5.5`|
+|uniCloud.getCloudInfos			|获取当前云函数实例内正在处理的请求对应的云端信息列表 [详见](#get-cloud-infos)，新增于`HBuilderX 3.5.5`|
 
 ## 错误对象@uni-cloud-error
 
@@ -426,6 +430,88 @@ exports.main = async (event, context) => {
 };
 
 ```
+
+## 其他API
+
+### 获取请求id列表@get-request-list
+
+非单实例多并发场景下列表长度为1，仅有的一个requestId表示当前请求的requestId。单实例多并发场景下会返回正在处理的所有请求的requestId列表。如需获取当前请求的requestId参考：[云函数context](cf-callfunction.md#context)、[云对象获取当前请求的requestId](cloud-obj.md#get-request-id)
+
+**示例**
+
+```js
+uniCloud.getRequestList() // ['3228166e-3c17-4d58-9707-xxxxxxxx']
+```
+
+
+### 获取客户端信息列表#get-client-infos
+
+非单实例多并发场景下列表长度为1，仅有的一个cloudInfo表示当前请求的客户端信息。单实例多并发场景下返回正在处理的所有请求的客户端信息列表。
+
+```js
+const clientInfos = uniCloud.getClientInfos() 
+clientInfos = [{
+  appId: '__UNI_xxxxx',
+  requestId: '3228166e-3c17-4d58-9707-xxxxxxxx'
+  // ...
+}]
+```
+
+**返回值**
+
+getClientInfos返回的信息，是在客户端的[uni.getSystemInfo](/api/system/info.md#getsysteminfo)的基础之上，增加了一些额外的信息。
+
+除了`getSystemInfo`返回字段外，还包含以下信息
+
+|属性名		|类型		|说明																																																																					|
+|--				|--			|--																																																																						|
+|clientIP	|string	|客户端ip																																																																			|
+|userAgent|string	|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua|
+|source		|string	|调用来源，返回值见下。																																																												|
+|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.md#getlaunchoptionssync)返回的scene参数，													|
+|requestId|string	|请求Id，可以使用此字段筛选出当前请求的客户端信息																																															|
+
+云函数调用来源，它的值域为：
+
+|取值			|说明													|
+|--				|--														|
+|client		|uni-app客户端导入云对象调用	|
+|function	|由其他云函数或云对象调用			|
+|http			|云对象URL化后通过http访问调用|
+|timing		|定时任务调用云对象						|
+
+**注意事项**
+
+- 客户端上报的信息在理论上存在被篡改可能，实际业务中应验证前端传来的数据的合法性
+- 除了clientIP外，其他客户端信息只有使用uni-app客户端以callFunction或者importObject方式访问云函数或云对象时才有
+- 云对象与云函数内获取客户端platform稍有不同，云函数未拉齐vue2、vue3版本app平台的platform值，vue2为`app-plus`，vue3为`app`。云对象无论客户端是vue2还是vue3，在app平台获取的platform均为`app`。这一点在使用uni-id时需要特别注意，详情见：[uni-id文档 preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
+
+### 获取云端信息@get-cloud-infos
+
+非单实例多并发场景下列表长度为1，仅有的一个cloudInfo表示当前请求的云端信息。单实例多并发场景下返回正在处理的所有请求的云端信息列表。
+
+**示例**
+
+```js
+const cloudInfos = uniCloud.getCloudInfos() 
+cloudInfos = [{
+  provider: 'aliyun',
+  spaceId: 'xxxxx',
+  functionName: 'xxx',
+  functionType: 'xxxx',
+  requestId: '3228166e-3c17-4d58-9707-xxxxxxxx'
+}]
+```
+
+**返回值**
+
+|参数名				|类型		|必备	|说明																										|
+|--						|--			|--		|--																											|
+|provider			|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`|
+|spaceId			|string	|是		|服务空间Id																							|
+|functionName	|string	|是		|云对象名称，新增于																			|
+|functionType	|string	|是		|云对象此值固定为`cloudobject`，新增于									|
+|requestId		|string	|是		|请求Id，可以使用此字段筛选出当前请求的云端信息				|
 
 ## 扩展库@extension
 
@@ -771,6 +857,8 @@ exports.main = async function() {
 
 ### 固定出口IP@eip
 
+#### 腾讯云@tencent-eip
+
 serverless默认是没有固定的服务器IP的，因为有很多服务器资源在后台供随时调用，每次调用到哪个服务器、哪个ip都不固定。
 
 但一些三方系统，要求配置固定ip白名单，比如微信公众号的js sdk，此时只能提供固定ip地址。
@@ -791,6 +879,115 @@ serverless默认是没有固定的服务器IP的，因为有很多服务器资�
 - 如果一个云函数已经开通固定出口ip，再关联redis扩展库时固定ip会发生变化
 
 建议已开通redis的服务空间先将云函数关联redis扩展再开通固定出口IP，**2022年7月20日起新上传的云函数会默认开启vpc功能，如需旧云函数和新云函数保持一致可以把旧云函数关联redis扩展后上传一次，注意这样操作会改变旧云函数的固定出口IP**
+
+#### 阿里云@aliyun-eip
+
+> 新增于 HBuilderX 3.5.5，仅阿里云支持
+
+uniCloud.httpProxyForEip ，其原理是通过代理请求获得固定出口IP的能力。IP为轮转不固定，因此三方服务要求使用白名单时开发者需要将代理服务器可能的IP均加入到白名单中，见下方代理服务器列表。此外对于代理的域名有限制，当前仅持`weixin.qq.com`泛域名。若开发者有其他域名代理需求，发送邮件到service@dcloud.io申请。
+
+代理服务器IP列表
+
+```
+39.100.3.155
+47.92.39.39
+47.92.67.205
+47.92.25.106
+47.92.68.159
+```
+
+如需在获取微信公众号access_token场景使用，请将上述ip配置到`微信公众平台 -> 基本配置 -> IP白名单`内，相关链接：[微信公众平台](https://mp.weixin.qq.com/)
+
+##### 发送Get请求@http-proxy-get
+
+**用法**
+
+```js
+uniCloud.httpProxyForEip.get(url: String, params?: Object)
+```
+
+**示例**
+
+```js
+await uniCloud.httpProxyForEip.get(
+  'https://api.weixin.qq.com/cgi-bin/token',
+  {
+    grant_type: 'client_credential', 
+    appid: 'xxxx',
+    secret: 'xxxx'
+  }
+)
+```
+
+##### 发送POST请求携带表单数据@http-proxy-post-form
+
+注意，此接口以`application/x-www-form-urlencoded`格式发送数据而不是`multipart/form-data`
+
+**用法**
+
+```js
+uniCloud.httpProxyForEip.postForm(url: String, data?: Object, headers?: Object)
+```
+
+**示例**
+
+```js
+uniCloud.httpProxyForEip.postForm(    
+  'https://www.example.com/search',
+  {
+    q: 'nodejs',
+    cat: '1001'
+  }
+)
+```
+
+##### 发送POST请求携带JSON数据@http-proxy-post-json
+
+以`application/json`格式post数据
+
+**用法**
+
+```js
+uniCloud.httpProxyForEip.postJson(url: String, json?: Object, headers?: Object)
+```
+
+**示例**
+
+```js
+uniCloud.httpProxyForEip.postJson(    
+  'https://www.example.com/search',
+  {
+    q: 'nodejs',
+    cat: '1001'
+  }
+)
+```
+
+##### POST通用数据@http-proxy-post
+
+**用法**
+
+```js
+uniCloud.httpProxyForEip.post(url: String, text?: String, headers?: Object)
+```
+
+**示例**
+
+```js
+uniCloud.httpProxyForEip.post(    
+  'https://www.example.com/search',
+  'abcdefg',
+  {
+    "Content-Type": "text/plain"
+  }
+)
+```
+
+**注意**
+
+- 不支持发送multipart格式的内容
+- 代理请求超时时间为5秒
+- 上述接口支持本地运行
 
 ### 单实例多并发@concurrency
 

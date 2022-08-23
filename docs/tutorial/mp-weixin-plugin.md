@@ -1,6 +1,6 @@
-> 本文档意在介绍如何在uni-app中引用和使用小程序插件，如果想了解如何把uni-app项目编译为小程序插件，另见文档：[发布为小程序插件](/collocation/miniprogram-plugin)
+> 本文档意在介绍如何在uni-app中引用和使用小程序插件，如果想了解如何把uni-app项目编译为小程序插件，另见文档：[发布为小程序插件](mp-weixin-plugin-dev.md)
 
-#### 什么是小程序插件
+#### 什么是小程序插件 @mp-plugin
 
 小程序插件不同于小程序自定义组件。
 
@@ -17,7 +17,7 @@
 - [百度小程序动态库](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)
 - [QQ小程序插件](https://q.qq.com/wiki/develop/miniprogram/frame/plugins/)
 
-#### 在uni-app中引入插件
+#### 在uni-app中引入插件代码包 @import-mp-plugin
 
 在`manifest.json`中的各平台对应的字段内声明使用的插件，具体配置参照所用插件的开发文档
 
@@ -60,7 +60,9 @@
 
 - `HBuilder X 3.2.13+` 支持 `export` 字段，即小程序导出到插件。目前仅 微信小程序 和 支付宝小程序 支持
 
-#### 在页面中使用
+#### 在页面中使用插件 @page-import-mp-plugin
+
+> 使用插件提供的自定义组件，和使用普通自定义组件的方式相仿。在 json 文件定义需要引入的自定义组件时，使用 plugin:// 协议指明插件的引用名和自定义组件名
 
 在页面内使用插件内包含的组件需要在`pages.json`内对应页面的`style`节点下配置对应平台的`usingComponents`或`usingSwanComponents`，示例如下：
 
@@ -107,7 +109,23 @@
 
 ```
 
-#### 在分包内引入插件代码包
+页面上使用。代码示例：
+
+```html
+<!-- 微信小程序和支付宝小程序 -->
+<navigator url="plugin://myPlugin/hello-component">
+  Go to pages/hello-page!
+</navigator>
+
+<!-- 百度小程序 -->
+<view class="container">
+    <view>下面这个自定义组件来自于动态库</view>
+    <!-- 这里的 'my-special-list' 就是本页面中对于此自定义组件的别名 -->
+    <my-special-list />
+</view>
+```
+
+#### 在分包内引入插件代码包 @subpackages-import-mp-plugin
 
 支付宝小程序、百度小程序不支持在分包内引入插件。此外如果项目使用了分包，在支付宝小程序内不可使用插件。本节内容仅针对微信小程序。
 
@@ -137,7 +155,7 @@
 * 不能从分包外的页面直接跳入分包内的插件页面，需要先跳入分包内的非插件页面、再跳入同一分包内的插件页面。
 
 
-#### 可能遇到的问题
+#### 可能遇到的问题 @mp-plugin-issue
 
 * 某些插件可能会需要一些权限才能正常运行，请在`manifest.json`中的`mp-weixin`内配置`permission`[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#permission)
 * 微信开发工具提示 “插件版本不存在”，可能是插件开发文档示例代码中使用的版本已经不存在，请在声明插件处更改版本

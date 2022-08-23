@@ -109,7 +109,8 @@
   * [前端安全专题](/tutorial/web-security.md)
 * 小程序专题
   * [组件与WXS](/tutorial/miniprogram-subject.md)
-  * [小程序插件](/tutorial/mp-weixin-plugin.md)
+  * [使用小程序插件](/tutorial/mp-weixin-plugin.md)
+  * [开发小程序插件](/tutorial/mp-weixin-plugin-dev.md)
   * [一键上传微信平台](/tutorial/build/publish-mp-weixin-cli.md)
 * 运行和调试
   * [概述](run-and-debug.md)

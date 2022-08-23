@@ -1,5 +1,5 @@
 > 本文档意在介绍如何在uni-app中引用和使用小程序插件，如果想了解如何把uni-app项目编译为小程序插件，另见文档：[发布为小程序插件](mp-weixin-plugin-dev.md)
-> This document is intended to introduce how to reference and use applet plugins in uni-app. If you want to know how to compile a uni-app project into an applet plugin, please refer to the document: [Publish as applet plugin](mp-weixin- plugin-dev.md)
+> This document is intended to introduce how to reference and use applet plugins in uni-app. If you want to know how to compile a uni-app project into an applet plugin, please refer to the document: [Publish as applet plugin](mp-weixin-plugin-dev.md)
 
 #### 什么是小程序插件 @mp-plugin
 #### What is a Mini Program Plugin @mp-plugin

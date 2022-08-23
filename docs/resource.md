@@ -56,7 +56,7 @@ The following is the video tutorial of the tripartite professional training inst
 * [《uni-app 5小时快速入门》](https://www.imooc.com/learn/1215)，出品人：meHaoTian
 * ["Uni-app 5 Hours Quick Start"](https://www.imooc.com/learn/1215), Producer: meHaoTian
 * [《uni-app实战直播app全栈开发》](https://study.163.com/course/courseMain.htm?courseId=1210217810&share=2&shareId=480000001892585)，出品人：帝莎IT学院
-* ["uni-app actual combat live app full-stack development"](https://study.163.com/course/courseMain.htm?courseId=1210217810&share=2&shareId=480000001892585), Producer: Desha IT Academy
+* ["Uni-app actual combat live app full-stack development"](https://study.163.com/course/courseMain.htm?courseId=1210217810&share=2&shareId=480000001892585), Producer: Desha IT Academy
 * [《uni-app博客实战开发教程》](https://ke.qq.com/course/3455428?tuin=258d8def)，出品人：卢小兵
 * ["Uni-app Blog Practical Development Course"](https://ke.qq.com/course/3455428?tuin=258d8def), Producer: Lu Xiaobing
 * [《uni-app快速入门到社区论坛项目多端开发实战》](https://www.bilibili.com/video/BV1oy4y1j75s?p=1)，出品人：千锋教育

@@ -450,9 +450,9 @@ Both uni-id-co and front-end pages in uni-id-pages support these four built-in r
 |用户名、手机号、邮箱+密码|配置`passwordSecret`即可																																																						|
 |Username, mobile phone number, email + password|Configure `passwordSecret` |
 |手机号+验证码						|配置`service.sms`，在开发者中心短信服务内获取配置信息：[短信服务](https://dev.dcloud.net.cn/#/pages/sms/base)											|
-|Mobile phone number + verification code |Configure `service.sms`, get configuration information in the SMS service of the developer center: [SMS service](https://dev.dcloud.net.cn/#/pages/sms/base) |
+|Mobile phone number + verification code |Configure `service.sms`, get configuration information in the developer center SMS service: [SMS service](https://dev.dcloud.net.cn/#/pages/sms/base) |
 |手机号一键登录						|配置`service.univerify`，在开发者中心一键登录服务内获取：[一键登录](https://dev.dcloud.net.cn/#/pages/uniLogin/index)							|
-|One-click login with mobile phone number |Configure `service.univerify` and obtain it in the one-click login service in the developer center: [One-click login](https://dev.dcloud.net.cn/#/pages/uniLogin/index ) |
+|One-click login with mobile phone number |Configure `service.univerify` and get it in the one-click login service in the developer center: [One-click login](https://dev.dcloud.net.cn/#/pages/uniLogin/index ) |
 |微信小程序登录						|配置`mp-weixin.oauth.weixin`，在微信公众平台获取：[微信开放平台](https://mp.weixin.qq.com/)																				|
 |WeChat applet login |Configure `mp-weixin.oauth.weixin` and obtain it on the WeChat public platform: [WeChat Open Platform](https://mp.weixin.qq.com/) |
 |微信公众号登录						|配置`web.oauth.weixin-h5`，在微信公众平台获取：[微信开放平台](https://mp.weixin.qq.com/)																						|
@@ -1691,7 +1691,7 @@ The three-party credentials currently saved by `uni-id-co` are as follows:
 - QQ小程序端用户session_key，通过`uni-open-bridge-common`的`setSessionKey`方法写入
 - QQ applet user session_key, written through the `setSessionKey` method of `uni-open-bridge-common`
 - QQ APP登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
-- The user access_token returned by the QQ APP when logging in, written through the `setUserAccessToken` method of `uni-open-bridge-common`
+- The user access_token returned by QQ APP when logging in, is written through the `setUserAccessToken` method of `uni-open-bridge-common`
 
 ### 钩子@hooks
 ### Hooks @hooks

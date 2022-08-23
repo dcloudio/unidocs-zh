@@ -129,17 +129,24 @@ There are also some less commonly used credentials that are not listed, for exam
 ### Platform@platform
 
 存储数据key对应平台的值。注意不同于前端条件编译使用的uniPlatform。
+Stores the value of the data key corresponding to the platform. Note that it is different from the uniPlatform used by the front-end conditional compilation.
 
 |值					|描述				|
+|value |description |
 |:-:				|:-:				|
 |weixin-mp	|微信小程序	|
+|weixin-mp |WeChat Mini Program |
 |weixin-h5	|微信公众号	|
+|weixin-h5 |WeChat Official Account |
 |weixin-web	|微信pc网页	|
+|weixin-web |WeChat pc web page |
 |weixin-app	|微信 App		|
+|weixin-app |WeChat App |
 |qq-mp			|QQ 小程序	|
 |qq-app			|QQ App			|
 
 提示：自动刷新固定应用级凭据目前仅支持 `weixin-mp`、`weixin-h5`。 后续补充其他平台
+Tip: Auto refresh of fixed app-level credentials currently only supports `weixin-mp`, `weixin-h5`. Additional platforms will be added later
 
 ## 微信凭据详细介绍@wxtoken
 ## WeChat Credential Details @wxtoken

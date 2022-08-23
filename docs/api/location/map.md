@@ -253,7 +253,7 @@ mapContext
 
 示例代码
 
-```
+```js
   MapContext.on('markerClusterCreate', (res) => {})
   MapContext.on('markerClusterClick', (res) => {})
 ```

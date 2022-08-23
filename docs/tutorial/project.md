@@ -1,11 +1,15 @@
 
 ## 工程简介
+## G
 
 一个 uni-app 工程，就是一个 Vue 项目，你可以通过 HBuilderX 或 cli 方式快速创建 uni-app 工程，详见：[快速上手](/quickstart-hx.html)。
+A uni-app project is a Vue project. You can quickly create a uni-app project through HBuilderX or cli. For details, see: [Quick Start](/quickstart-hx.html).
 
 ## 目录结构
+## Directory Structure
 
 一个uni-app工程，默认包含如下目录及文件：
+A uni-app project contains the following directories and files by default:
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
@@ -34,19 +38,32 @@
 
 **Tips**
 - 编译到任意平台时，`static` 目录下的文件均会被完整打包进去，且不会编译。非 `static` 目录下的文件（vue、js、css 等）只有被引用到才会被打包编译进去。
+- When compiling to any platform, the files in the `static` directory will be fully packaged and will not be compiled. Files (vue, js, css, etc.) not in the `static` directory will be packaged and compiled only if they are referenced.
 - `static` 目录下的 `js` 文件不会被编译，如果里面有 `es6` 的代码，不经过转换直接运行，在手机设备上会报错。
+- The `js` file in the `static` directory will not be compiled. If there is `es6` code in it, it will run directly without conversion, and an error will be reported on the mobile device.
 - `css`、`less/scss` 等资源不要放在 `static` 目录下，建议这些公用的资源放在自建的 `common` 目录下。
+- Do not put resources such as `css` and `less/scss` in the `static` directory. It is recommended to put these common resources in the self-built `common` directory.
 - HbuilderX 1.9.0+ 支持在根目录创建 `ext.json`、`sitemap.json` 等小程序需要的文件。
+- HbuilderX 1.9.0+ supports creating `ext.json`, `sitemap.json` and other files required by the applet in the root directory.
 
 |有效目录|说明|
+|Valid Directory|Description|
 |:-:|:-:|
 |app-plus|App|
 |h5|H5|
 |mp-weixin|微信小程序|
+|mp-weixin|WeChat Mini Program|
 |mp-alipay|支付宝小程序|
+|mp-alipay|Alipay Mini Program|
 |mp-baidu|百度小程序|
+|mp-baidu|Baidu Mini Program|
 |mp-qq|QQ小程序|
+|mp-qq|QQ Mini Program|
 |mp-toutiao|字节小程序|
+|mp-toutiao|Byte applet|
 |mp-lark|飞书小程序|
+|mp-lark|Feishu Mini Program|
 |mp-kuaishou|快手小程序|
+|mp-kuaishou|Kaishou Mini Program|
 |mp-jd|京东小程序|
+|mp-jd|JD Mini Program|

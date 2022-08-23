@@ -1,13 +1,19 @@
 
 ::: tip 组件名：uni-segmented-control
+::: tip component name: uni-segmented-control
 > 代码块： `uSegmentedControl`
+> Code block: `uSegmentedControl`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-segmented-control)
+[Click to download & install](https://ext.dcloud.net.cn/plugin?name=uni-segmented-control)
 :::
 
 用作不同视图的显示
+Used as a display for different views
 ## 介绍
+## introduce
 ### 基本用法
+### Basic usage
 
 ```html
 <template>
@@ -53,25 +59,36 @@ export default {
 ### SegmentedControl Props
 
 |属性名|类型|默认值|说明|
+|property name|type|default value|description|
 |:-:|:-:|:-:|:-:|
 |current|Number|0|当前选中的tab索引值，从0计数|
+|current|Number|0|The index value of the currently selected tab, counted from 0|
 |styleType|String|button|分段器样式类型，可选值：button（按钮类型），text（文字类型）	|
+|styleType|String|button|Segmenter style type, optional values: button (button type), text (text type) |
 |activeColor|String|#007aff|选中的标签背景色与边框颜色|
+|activeColor|String|#007aff|Selected label background color and border color|
 |values|Array|-|选项数组|
+|values|Array|-|Array of options|
 
 ### SegmentedControl Events
 
 |事件名|说明|返回值|
+|Event Name|Description|Return Value|
 |:-:|:-:|:-:|
 |@clickItem	|组件触发点击事件时触发|e={currentIndex}	|
+|@clickItem |fired when the component fires a click event |e={currentIndex} |
 
 
 
 ## 示例
+## example
 ::: warning 注意
+::: warning attention
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
+The example relies on multiple components such as `uni-card` `uni-section` `uni-scss`, copying the example code directly will not work properly.
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-segmented-control) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name=uni-segmented-control), select `Import sample project using HBuilderX` on the right side of the page to experience the complete component example.
 :::
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/segmented-control/segmented-control
@@ -254,3 +271,4 @@ export default {
 ```
 :::
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/segmented-control/segmented-control)
+[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/segmented-control/segmented-control)

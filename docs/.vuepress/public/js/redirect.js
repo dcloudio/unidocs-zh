@@ -1,4 +1,4 @@
-var { host, pathname, search } = location
+var { host, pathname, search, hash } = location
 var LOCAL_ZH = 'zh'
 var LOCAL_EN = 'en'
 var website_ZH_host = 'uniapp.dcloud.net.cn'
@@ -14,7 +14,7 @@ if (host === 'uniapp.dcloud.io') {
     navigator.language.indexOf('zh') !== -1
       ? website_ZH
       : website_EN;
-  window.location.href = website_finally + pathname + search;
+  window.location.href = website_finally + pathname + hash + search;
 } else {
   // overwrite referrer
   if (

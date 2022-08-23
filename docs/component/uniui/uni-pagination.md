@@ -1,16 +1,22 @@
 
 ::: tip 组件名：uni-pagination
+::: tip component name: uni-pagination
 > 代码块： `uPagination`
+> Code block: `uPagination`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-pagination)
+[Click to download & install](https://ext.dcloud.net.cn/plugin?name=uni-pagination)
 :::
 
 分页器组件，用于展示页码、请求数据等。
+Pager component, used to display page numbers, request data, etc.
 
 
 ## 介绍
+## introduce
 
 ### 基本用法
+### Basic usage
 
 ```html
 <uni-pagination title="标题文字" total="20"></uni-pagination>
@@ -22,28 +28,42 @@
 ### Pagination Props
 
 |属性名|类型	|默认值	|说明|
+|property name|type |default value |description|
 |:-:|:-:|:-:|:-:|
 |prevText|String|上一页|左侧按钮文字|
+|prevText|String|Previous page|left button text|
 |nextText|String|下一页|右侧按钮文字|
+|nextText|String|Next page|Right button text|
 |value/v-model|Number|1|当前页|
+|value/v-model|Number|1|Current Page|
 |current|Number	|1|当前页, 优先级高于 value|
+|current|Number |1|Current page, higher priority than value|
 |total|Number|0|数据总量|
+|total|Number|0|Total data|
 |pageSize|Number|10|每页数据量|
+|pageSize|Number|10|Data size per page|
 |showIcon|Boolean|false	|是否以 icon 形式展示按钮	|
+|showIcon|Boolean|false |Whether to show the button as an icon |
 
 
 ### Pagination Events
 
 |事件称名|说明|返回值|
+|Event Name|Description|Return Value|
 |:-:|:-:|:-:|
 |@change|点击页码按钮时触发	|e={type,current} current为当前页，type值为：next/prev，表示点击的是上一页还是下一个|
+|@change|Triggered when the page number button is clicked |e={type,current} current is the current page, and the type value is: next/prev, indicating whether the previous page or the next page is clicked|
 
 
 ## 示例
+## example
 ::: warning 注意
+::: warning attention
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
+The example relies on multiple components such as `uni-card` `uni-section` `uni-scss`, copying the example code directly will not work properly.
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-pagination) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name=uni-pagination) , select `Import sample project using HBuilderX` on the right side of the page to experience the complete component example.
 :::
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/pagination/pagination
@@ -152,3 +172,4 @@
 :::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/pagination/pagination)
+[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/pagination/pagination)

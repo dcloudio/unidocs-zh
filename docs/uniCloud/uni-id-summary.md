@@ -442,20 +442,33 @@ uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则，�
 Both uni-id-co and front-end pages in uni-id-pages support these four built-in rules. For custom rules, please refer to: [uni-id-co custom validation rules](uni-id-pages .md#custom-validator)
 
 ### 登录方式及配置说明@login-and-config
+### Login method and configuration instructions @login-and-config
 
 |登录方式									|配置及获取方式																																																											|
+|Login method |Configuration and access method |
 |--												|--																																																																	|
 |用户名、手机号、邮箱+密码|配置`passwordSecret`即可																																																						|
+|Username, mobile phone number, email + password|Configure `passwordSecret` |
 |手机号+验证码						|配置`service.sms`，在开发者中心短信服务内获取配置信息：[短信服务](https://dev.dcloud.net.cn/#/pages/sms/base)											|
+|Mobile phone number + verification code |Configure `service.sms`, get configuration information in the SMS service of the developer center: [SMS service](https://dev.dcloud.net.cn/#/pages/sms/base) |
 |手机号一键登录						|配置`service.univerify`，在开发者中心一键登录服务内获取：[一键登录](https://dev.dcloud.net.cn/#/pages/uniLogin/index)							|
+|One-click login with mobile phone number |Configure `service.univerify` and get it in the one-click login service in the developer center: [One-click login](https://dev.dcloud.net.cn/#/pages/uniLogin/index ) |
 |微信小程序登录						|配置`mp-weixin.oauth.weixin`，在微信公众平台获取：[微信开放平台](https://mp.weixin.qq.com/)																				|
+|WeChat applet login |Configure `mp-weixin.oauth.weixin` and obtain it on the WeChat public platform: [WeChat Open Platform](https://mp.weixin.qq.com/) |
 |微信公众号登录						|配置`web.oauth.weixin-h5`，在微信公众平台获取：[微信开放平台](https://mp.weixin.qq.com/)																						|
+|WeChat Official Account Login |Configure `web.oauth.weixin-h5` and obtain it on the WeChat public platform: [WeChat Open Platform](https://mp.weixin.qq.com/) |
 |微信PC页面扫码登录				|配置`web.oauth.weixin-web`，在微信开放平台获取：[微信开放平台](https://open.weixin.qq.com/)																				|
+|Scan the QR code to log in on the WeChat PC page |Configure `web.oauth.weixin-web` and obtain it on the WeChat open platform: [WeChat Open Platform](https://open.weixin.qq.com/) |
 |微信APP端登录						|配置`app.oauth.weixin`，在微信开放平台获取：[微信开放平台](https://open.weixin.qq.com/)																						|
+|WeChat APP login |Configure `app.oauth.weixin` and obtain it on WeChat Open Platform: [WeChat Open Platform](https://open.weixin.qq.com/) |
 |QQ 小程序端登录					|配置`mp-qq.oauth.qq`，在QQ开放平台获取：[QQ开放平台](https://q.qq.com/)																														|
+|QQ applet login |Configure `mp-qq.oauth.qq` and obtain it on the QQ open platform: [QQ open platform](https://q.qq.com/) |
 |QQ APP端登录							|配置`app.oauth.qq`，在QQ互联获取：[QQ互联](https://connect.qq.com/)																															|
+|QQ APP login |Configure `app.oauth.qq` and get it from QQ Internet: [QQ Internet](https://connect.qq.com/) |
 |支付宝小程序端登录				|配置`mp-alipay.oauth.alipay`，在支付宝开放平台获取：[支付宝开放平台](https://openhome.alipay.com/develop/manage)										|
+|Alipay applet login |Configure `mp-alipay.oauth.alipay` and obtain it on the Alipay open platform: [Alipay Open Platform](https://openhome.alipay.com/develop/manage) |
 |Apple APP端登录					|配置`app.oauth.apple`，在Apple开发者中心自行配置：[Apple开发者中心](https://developer.apple.com/account/resources/identifiers/list)|
+|Apple APP login |Configure `app.oauth.apple` and configure it yourself in the Apple Developer Center: [Apple Developer Center](https://developer.apple.com/account/resources/identifiers/list)|
 
 ## token令牌
 ## token token
@@ -1662,15 +1675,23 @@ Before `uni-id-pages 1.0.8`, uni-id-co directly stored this information in the t
 ```
 
 此结构无法满足多应用同一平台关联同一服务空间且允许用户跨应用登录的场景。因此在`uni-id-pages 1.0.8`及更高版本对此做出了调整，改为使用[uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge-common)存储用户在三方平台的凭据信息。同时为了兼容旧版本上述third_party字段仍存有这些信息。
+This structure cannot meet the scenario where multiple applications are associated with the same service space on the same platform and users are allowed to log in across applications. So in `uni-id-pages 1.0.8` and later this was adjusted to use [uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge- common) to store the user's credential information on the third-party platform. At the same time, this information still exists in the third_party field above for compatibility with older versions.
 
 目前被`uni-id-co`保存的三方凭据有以下几种：
+The three-party credentials currently saved by `uni-id-co` are as follows:
 
 - 微信小程序端用户session_key，通过`uni-open-bridge-common`的`setSessionKey`方法写入
+- Wechat applet user session_key, written through the `setSessionKey` method of `uni-open-bridge-common`
 - 微信公众号页面用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
+- Wechat official account page user access_token, written through the `setUserAccessToken` method of `uni-open-bridge-common`
 - 微信web页面扫码登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
+- The user access_token returned when the WeChat web page scans the QR code to log in, written through the `setUserAccessToken` method of `uni-open-bridge-common`
 - 微信APP登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
+- The user access_token returned by WeChat APP when logging in, written through the `setUserAccessToken` method of `uni-open-bridge-common`
 - QQ小程序端用户session_key，通过`uni-open-bridge-common`的`setSessionKey`方法写入
+- QQ applet user session_key, written through the `setSessionKey` method of `uni-open-bridge-common`
 - QQ APP登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
+- The user access_token returned by QQ APP when logging in, is written through the `setUserAccessToken` method of `uni-open-bridge-common`
 
 ### 钩子@hooks
 ### Hooks @hooks

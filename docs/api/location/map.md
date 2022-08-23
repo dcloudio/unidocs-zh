@@ -82,7 +82,7 @@ mapContext
 - nvue没有`$getAppMap()`，请使用`createMapContext`
 - nvue doesn't have `$getAppMap()`, use `createMapContext`
 - `uni-app`中使用原生地图无需提供占位div，得到`$getAppMap()`后直接js使用即可。
-- There is no need to provide a placeholder div to use native maps in `uni-app`, and you can use js directly after getting `$getAppMap()`.
+- There is no need to provide a placeholder div to use the native map in `uni-app`. After getting `$getAppMap()`, you can use it directly in js.
 - `openMapApp` iOS 暂不支持，后续补充
 - `openMapApp` iOS is not currently supported, and will be added later
 
@@ -108,7 +108,7 @@ mapContext
 |Parameter |Type |Required |Description |
 |:-				|:-				|:-		|:-																																		|
 |longitude|Number		|否		|经度 ，App 2.6.8、H5、京东小程序、仅微信小程序 2.8.0+ 支持																			|
-|longitude|Number |No |Longitude , App 2.6.8, H5, JD.com, WeChat applet 2.8.0+ only |
+|longitude|Number |No |Longitude , App 2.6.8, H5, Jingdong applet, only WeChat applet 2.8.0+ support |
 |latitude	|Number		|否		|纬度 ，App 2.6.8、H5、京东小程序、仅微信小程序 2.8.0+ 支持																			|
 |latitude |Number |No |Latitude , App 2.6.8, H5, Jingdong applet, only WeChat applet 2.8.0+ support |
 |success	|Function	|否		|接口调用成功的回调函数 ，res = { longitude: "经度", latitude: "纬度"}|
@@ -402,7 +402,7 @@ return parameter
 |zoomOnClick				|boolean	|true		|否		|点击已经聚合的标记点时是否实现聚合分离															|
 |zoomOnClick |boolean |true |no |Whether to implement aggregation separation when clicking on an already aggregated marker |
 |gridSize						|boolean	|60			|否		|聚合算法的可聚合距离，即距离小于该值的点会聚合至一起，以像素为单位	|
-|gridSize |boolean |60 |No |The aggregatable distance of the aggregation algorithm, that is, points whose distance is less than this value will be clustered together, in pixels |
+|gridSize |boolean |60 |No |The aggregatable distance of the aggregation algorithm, that is, points with a distance less than this value will be aggregated together, in pixels |
 |success						|function	|				|否		|接口调用成功的回调函数																							|
 |success |function | |No |Callback function for successful interface call |
 |fail								|function	|				|否		|接口调用失败的回调函数																							|
@@ -671,7 +671,7 @@ poiList|Array.&lt;poiObject&gt;| POI information array
 - 无 GPS 模块的 PC 设备使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败。
 - When a PC device without a GPS module uses the Chrome browser, the location information is obtained by connecting to the Google server, and domestic users may fail to obtain the location information.
 - App 端使用地图组件需要向高德或百度等三方服务商申请SDK资质，获取AppKey，打包时需要在manifest的SDK配置中填写Appkey。在manifest可视化界面有详细申请指南，详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)
-- To use the map component on the app side, you need to apply for the SDK qualification from a third-party service provider such as AutoNavi or Baidu, and obtain the AppKey. You need to fill in the Appkey in the SDK configuration of the manifest when packaging. There are detailed application guidelines in the manifest visualization interface, see: [https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)
+- To use the map component on the app side, you need to apply for SDK qualification from third-party service providers such as AutoNavi or Baidu, and obtain the AppKey. When packaging, you need to fill in the Appkey in the SDK configuration of the manifest. There are detailed application guidelines in the manifest visualization interface, see: [https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)
 - H5 端使用地图和定位相关，需要在 [manifest.json](https://uniapp.dcloud.io/collocation/manifest.html#h5sdkconfig) 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。
 - The use of maps on the H5 side is related to positioning. It is necessary to configure the secret key applied for by a third-party map service provider such as Tencent or Google in [manifest.json](https://uniapp.dcloud.io/collocation/manifest.html#h5sdkconfig) ( key).
 - ``<map>`` 组件默认为国测局坐标，调用 ``uni.getLocation`` 返回结果传递给 ``<map>`` 组件时，需指定 type 为 gcj02。

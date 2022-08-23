@@ -12,7 +12,7 @@ It is recommended that the third step is to read the ["uni-app official course"]
 1. 看完这篇[白话uni-app](http://ask.dcloud.net.cn/article/35657)
 1. After reading this [vernacular uni-app](http://ask.dcloud.net.cn/article/35657)
 2. DCloud与vue合作，在[vue.js官网](https://cn.vuejs.org/v2/guide/)提供了免费视频教程，也可以直达教程地址：[https://learning.dcloud.io](https://learning.dcloud.io)
-2. DCloud cooperates with vue and provides free video tutorials on the [vue.js official website](https://cn.vuejs.org/v2/guide/), and you can also go directly to the tutorial address: [https://learning.dcloud .io](https://learning.dcloud.io)
+2. In cooperation with vue, DCloud provides free video tutorials on the [vue.js official website](https://cn.vuejs.org/v2/guide/), and you can also go directly to the tutorial address: [https://learning.dcloud .io](https://learning.dcloud.io)
 3. 不需要专门去学习小程序的语法，uni-app使用的是vue的语法，不是小程序自定义的语法。
 3. There is no need to learn the syntax of the applet. uni-app uses the syntax of Vue, not the syntax of the applet.
 
@@ -56,7 +56,7 @@ The following is the video tutorial of the tripartite professional training inst
 * [《uni-app 5小时快速入门》](https://www.imooc.com/learn/1215)，出品人：meHaoTian
 * ["Uni-app 5 Hours Quick Start"](https://www.imooc.com/learn/1215), Producer: meHaoTian
 * [《uni-app实战直播app全栈开发》](https://study.163.com/course/courseMain.htm?courseId=1210217810&share=2&shareId=480000001892585)，出品人：帝莎IT学院
-* ["Uni-app actual combat live app full-stack development"](https://study.163.com/course/courseMain.htm?courseId=1210217810&share=2&shareId=480000001892585), Producer: Desha IT Academy
+* ["uni-app actual combat live app full-stack development"](https://study.163.com/course/courseMain.htm?courseId=1210217810&share=2&shareId=480000001892585), Producer: Desha IT Academy
 * [《uni-app博客实战开发教程》](https://ke.qq.com/course/3455428?tuin=258d8def)，出品人：卢小兵
 * ["Uni-app Blog Practical Development Course"](https://ke.qq.com/course/3455428?tuin=258d8def), Producer: Lu Xiaobing
 * [《uni-app快速入门到社区论坛项目多端开发实战》](https://www.bilibili.com/video/BV1oy4y1j75s?p=1)，出品人：千锋教育

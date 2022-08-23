@@ -48,7 +48,7 @@ The following is the video tutorial of the tripartite professional training inst
 * [《uni-app仿小米商城实战》](https://study.163.com/course/courseMain.htm?courseId=1209401825&share=2&shareId=480000001892585)，出品人：帝莎IT学院。首页使用nvue开发，目前支持app端和小程序端。
 * ["The uni-app imitation of Xiaomi Mall"](https://study.163.com/course/courseMain.htm?courseId=1209401825&share=2&shareId=480000001892585), Producer: Desha IT Academy. The homepage is developed using nvue, and currently supports app and small programs.
 * [《uni-app多端调试环境配置》](https://study.163.com/course/courseMain.htm?courseId=1209401924&share=2&shareId=480000001892585)，出品人：帝莎IT学院。
-* ["Uni-app Multi-terminal Debugging Environment Configuration"](https://study.163.com/course/courseMain.htm?courseId=1209401924&share=2&shareId=480000001892585), Producer: Desa IT Academy.
+* ["Uni-app Multi-terminal Debugging Environment Configuration"](https://study.163.com/course/courseMain.htm?courseId=1209401924&share=2&shareId=480000001892585), Producer: Desha IT Academy.
 * [《uni-app实战仿微信app全栈开发》](https://study.163.com/course/courseMain.htm?courseId=1209487898&share=2&shareId=480000001892585)，出品人：帝莎IT学院。
 * ["Uni-app actual combat imitation WeChat app full-stack development"](https://study.163.com/course/courseMain.htm?courseId=1209487898&share=2&shareId=480000001892585), Producer: Desha IT Academy.
 * [《uni-app实战视频点播app小程序》](https://study.163.com/course/courseMain.htm?courseId=1209644880&share=2&shareId=480000001892585)，出品人：帝莎IT学院。
@@ -114,7 +114,7 @@ For each end, there are management rules for each end, which is not something th
 - 比如H5端的浏览器有跨域限制；
 - For example, the browser on the H5 side has cross-domain restrictions;
 - 比如微信小程序会强制要求https链接，并且所有要联网的服务器域名都要配到微信的白名单中；
-- For example, the WeChat applet will force https links, and all server domain names to be connected to the Internet must be assigned to the WeChat whitelist;
+- For example, the WeChat applet will require HTTPS links, and all server domain names to be connected to the Internet must be assigned to the WeChat whitelist;
 - 比如App端，iOS对隐私控制和虚拟支付控制非常严格；
 - For example, on the App side, iOS is very strict on privacy control and virtual payment control;
 - 比如App端，Android、国产rom各种兼容性差异，尤其是因为谷歌服务被墙，导致的push、定位等开发混乱的坑；

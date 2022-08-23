@@ -55,7 +55,7 @@ Set lang of script node to renderjs
 - Greatly reduce the communication loss between the logic layer and the view layer, and provide high-performance view interaction capability
 
 uni-app的app端逻辑层和视图层是分离的，这种机制有很多好处，但也有一个副作用是在造成了两层之间通信阻塞。尤其是App的Android端阻塞问题影响了高性能应用的制作。
-The app-side logic layer of uni-app is separated from the view layer. This mechanism has many benefits, but it also has a side effect of blocking communication between the two layers. In particular, the blocking problem on the Android side of the App affects the production of high-performance applications.
+The app-side logic layer and view layer of uni-app are separated. This mechanism has many advantages, but it also has a side effect of blocking communication between the two layers. In particular, the blocking problem on the Android side of the App affects the production of high-performance applications.
 
 `renderjs`运行在视图层，可以直接操作视图层的元素，避免通信折损。
 `renderjs` runs on the view layer and can be used to directly manipulate the elements of the view layer to avoid communication loss.

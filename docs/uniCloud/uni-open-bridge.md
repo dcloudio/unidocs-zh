@@ -76,116 +76,172 @@ The flow chart is as follows:
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b80cec3b-e106-489d-9075-90b5ecb02963.png)
 
 ## 凭据托管
+## Credential hosting
 
 |凭据																		|微信小程序	|微信公众号	|微信PC网页	|微信App		|
 |Credentials |WeChat Mini Program |WeChat Official Account |WeChat PC Webpage |WeChat App |
 |:-:																		|:-:				|:-:				|:-:				|:-:				|
 |[access_token](#access_token)					|定时刷新		|定时刷新		|开发者操作	|开发者操作	|
+|[access_token](#access_token) |Regular refresh |Regular refresh |Developer operation |Developer operation |
 |[user_access_token](#user_access_token)|						|开发者操作	|-					|-					|
+|[user_access_token](#user_access_token)| |Developer action |- |- |
 |[session_key](#session_key)						|开发者操作	|-					|-					|-					|
+|[session_key](#session_key) |Developer operation |- |- |- |
 |[encrypt_key](#encrypt_key)						|开发者操作	|-					|-					|-					|
+|[encrypt_key](#encrypt_key) |Developer action |- |- |- |
 |[ticket](#ticket)											|-					|定时刷新		|-					|-					|
+|[ticket](#ticket) |- |Regular refresh |- |- |
 
 `定时刷新` 由云对象 `uni-open-bridge` 的定时任务触发，从微信服务器获取数据，通过调用 `uni-open-bridge-common` 写入到Redis或数据库
+`Scheduled refresh` is triggered by the scheduled task of the cloud object `uni-open-bridge`, obtains data from the WeChat server, and writes to Redis or database by calling `uni-open-bridge-common`
 `开发者操作` 由开发者引入公共模块 `uni-open-bridge-common`，调用相关[方法](#uni-open-bridge-common)
+`Developer operation` The public module `uni-open-bridge-common` is introduced by the developer, and the related [method](#uni-open-bridge-common) is called
 
 `session_key` 如果使用了uni-id，uni-id用户登陆时会读写
+`session_key` If uni-id is used, the uni-id user will read and write when logging in
 `encrypt_key` 依赖 `access_token`、`session_key`，如果依赖的值已存在，可直接读取 `encrypt_key`，如果不存在自动向微信服务器获取、开发者应该仅读取该值，如果有外部系统依赖时可写入
+`encrypt_key` depends on `access_token`, `session_key`. If the dependent value already exists, you can directly read `encrypt_key`. If it does not exist, it will be automatically obtained from the WeChat server. The developer should only read this value. If there is an external system dependency writable
 `ticket` 依赖 `access_token`，直接获取 `ticket` 会检查 `access_token`，如果不存在默认先请求微信服务器获取并保存，继续请求 `ticket`
+`ticket` depends on `access_token`, directly obtaining `ticket` will check `access_token`, if it does not exist, it will first request the WeChat server to obtain and save it, and continue to request `ticket`
 
 还有一些不常用的凭据暂不列出，例如：微信App access_token
 There are also some less commonly used credentials that are not listed, for example: WeChat App access_token
 
 **微信凭据分应用级、用户级、一次性等凭据，如果你之前未接触过微信这些凭据，请务必阅读下面的微信凭据详细介绍
+**WeChat credentials are divided into application-level, user-level, one-time and other credentials. If you have not contacted WeChat credentials before, please be sure to read the detailed introduction of WeChat credentials below
 
 
 ### access_token(应用级)@access_token
+### access_token (application level) @access_token
 
 - 微信小程序 `access_token` 是微信小程序全局唯一后台接口调用凭据，调用绝大多数后台接口时都需使用。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/server-ability/backend-api.html#access_token)
+- Wechat applet `access_token` is the globally unique backend interface calling credential of the Wechat applet, and it needs to be used when calling most backend interfaces. [Details](https://developers.weixin.qq.com/miniprogram/dev/framework/server-ability/backend-api.html#access_token)
 
 - 微信H5 `access_token` 是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。开发者需要进行妥善保存。`access_token` 的存储至少要保留512个字符空间。`access_token` 的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的 `access_token` 失效。
+- Wechat H5 `access_token` is the globally unique API call credential of the official account. The official account needs to use the `access_token` when calling each API. Developers need to keep it properly. The storage of `access_token` must reserve at least 512 characters of space. The `access_token` is currently valid for 2 hours and needs to be refreshed regularly. Repeated acquisition will cause the last acquired `access_token` to be invalid.
 
 公众平台的 API 调用所需的 `access_token` 的使用及生成方式说明：
+Instructions on the use and generation of `access_token` required for API calls on the public platform:
 
 1、建议公众号开发者使用中控服务器统一获取和刷新 `access_token`，其他业务逻辑服务器所使用的 `access_token` 均来自于该中控服务器，不应该各自去刷新，否则容易造成冲突，导致 `access_token` 覆盖而影响业务；
+1、 It is recommended that developers of official accounts use the central control server to obtain and refresh `access_token` in a unified manner. The `access_token` used by other business logic servers all come from the central control server and should not be refreshed separately, otherwise it is easy to cause conflicts and lead to ` access_token` overrides and affects the business;
 
 2、目前`access_token` 的有效期通过返回的expires_in来传达，目前是7200秒之内的值。中控服务器需要根据这个有效时间提前去刷新新 `access_token`。在刷新过程中，中控服务器可对外继续输出的老 `access_token`，此时公众平台后台会保证在5分钟内，新老 `access_token` 都可用，这保证了第三方业务的平滑过渡；
+2、 The current validity period of `access_token` is conveyed by the returned expires_in, which is currently the value within 7200 seconds. The central control server needs to refresh the new `access_token` in advance according to this valid time. During the refresh process, the central control server can continue to output the old `access_token`. At this time, the backend of the public platform will ensure that both the new and old `access_token` are available within 5 minutes, which ensures a smooth transition of third-party services;
 
 3、`access_token` 的有效时间可能会在未来有调整，所以中控服务器不仅需要内部定时主动刷新，还需要提供被动刷新 `access_token` 的接口，这样便于业务服务器在 API 调用获知 `access_token` 已超时的情况下，可以触发 `access_token` 的刷新流程。
+3、 The valid time of `access_token` may be adjusted in the future, so the central control server not only needs to actively refresh the `access_token` internally, but also needs to provide an interface for passively refreshing the `access_token`, which is convenient for the business server to know that the `access_token` has timed out in the API call In the case of `access_token`, the refresh process of `access_token` can be triggered.
 
 4、对于可能存在风险的调用，在开发者进行获取 `access_token` 调用时进入风险调用确认流程，需要用户管理员确认后才可以成功获取。具体流程为：
+4、 For calls that may have risks, when the developer makes a call to obtain `access_token`, it enters the risk call confirmation process, and the user administrator can confirm it before it can be successfully obtained. The specific process is:
 
 开发者通过某 IP 发起调用->平台返回错误码[89503]并同时下发模板消息给公众号管理员->公众号管理员确认该 IP 可以调用->开发者使用该 IP 再次发起调用->调用成功。
+The developer initiates a call through an IP -> the platform returns an error code [89503] and at the same time sends a template message to the official account administrator -> the official account administrator confirms that the IP can be called -> the developer uses the IP to initiate a call again -> The call succeeded.
 
 如公众号管理员第一次拒绝该 IP 调用，用户在1个小时内将无法使用该 IP 再次发起调用，如公众号管理员多次拒绝该 IP 调用，该 IP 将可能长期无法发起调用。平台建议开发者在发起调用前主动与管理员沟通确认调用需求，或请求管理员开启 IP 白名单功能并将该 IP 加入 IP 白名单列表。
+If the official account administrator rejects the IP call for the first time, the user will not be able to use the IP to call again within 1 hour. If the official account administrator rejects the IP call for many times, the IP may not be able to initiate the call for a long time. The platform recommends that developers actively communicate with the administrator to confirm the invocation requirements before initiating the call, or request the administrator to enable the IP whitelist function and add the IP to the IP whitelist.
 
 ### user_access_token(用户级)@user_access_token
+### user_access_token (user level) @user_access_token
 
 因微信的众多凭据命名都叫`access_token`，无法有效区分。对于用户级的`access_token`，在 uni-open-bridge 中改名 `user_access_token` 。
+Because many WeChat credentials are named `access_token`, they cannot be effectively distinguished. For user-level `access_token`, rename `user_access_token` in uni-open-bridge.
 
 |平台							|值						|描述																																																													|
+|Platform |Value |Description |
 |:-:							|:-:					|:-:																																																													|
 |微信内置浏览器H5	|access_token	|微信内置浏览器H5用户会话密钥。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)	|
+|WeChat built-in browser H5 |access_token |WeChat built-in browser H5 user session key. [Details](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html) |
 
 对应微信公众平台网页用户授权 `access_token`
+Corresponding to WeChat official platform webpage user authorization `access_token`
 
 微信公众平台网页授权有两个相同名字 `access_token`，分别用于
+WeChat official platform webpage authorization has two same name `access_token`, which are used for
 
 1、公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。
+1、 The globally unique API call credentials of the official account. The official account needs to use `access_token` when calling each API.
 2、网页授权接口调用凭证，用户授权的作用域 `access_token`。
+2、 The web page authorization interface calls the credentials, and the scope of user authorization is `access_token`.
 
 在微信内置浏览器H5无法区分两个相同名称值不同的 `access_token`，所以在 uni-open-bridge 中对用户级凭据进行改名，以更直观的名称 `user_access_token` 对应用户授权 `access_token`
+In WeChat's built-in browser H5, it is impossible to distinguish two `access_token` with the same name and different values, so the user-level credentials are renamed in uni-open-bridge, and the more intuitive name `user_access_token` corresponds to the user authorization `access_token`
 
 
 ### code(临时凭据)@code
+### code(temporary credentials)@code
 
 微信小程序用户登录凭证校验
+WeChat applet user login credential verification
 
 在客户端通过调用 `uni.login()` 获得临时登录凭证 `code` 后传到开发者服务器在请求微信服务器获得 `session_key`、`openid`、`unionid`
+The client obtains the temporary login credential `code` by calling `uni.login()` and then transmits it to the developer server to request the WeChat server to obtain the `session_key`, `openid`, `unionid`
 
 `code` 仅可在服务器使用一次，客户端调用频率限制每个用户每分钟100次
+`code` can only be used once on the server, and the client-side call frequency is limited to 100 times per minute per user
 
 ### openid(用户级)@openid
+### openid (user level) @openid
 
 微信小程序用户唯一标识
+WeChat Mini Program User Unique ID
 
 需要在开发者服务器请求微信服务器获得，依赖参数 code，[详情](#code)
+It needs to be obtained by requesting the WeChat server on the developer server, depending on the parameter code, [details](#code)
 
 可通过 `uni-id-co` 获取，[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
+Available through `uni-id-co`, [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
 
 ### session_key(用户级)@session_key
+### session_key (user level) @session_key
 
 平台对应的值
+The value corresponding to the platform
 
 |平台				|值					|描述																																																								|
+|Platform |Value |Description |
 |:-:				|:-:				|:-:																																																								|
 |微信小程序	|session_key|微信小程序会话密钥。[详情](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html)	|
+|WeChat applet |session_key|WeChat applet session key. [Details](https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html) |
 
 会话密钥 `session_key` 有效性
+Session key `session_key` validity
 
 开发者如果遇到因为 `session_key` 不正确而校验签名失败或解密失败，请关注下面几个与 `session_key` 有关的注意事项。
+If the developer encounters that the signature verification fails or the decryption fails because the `session_key` is incorrect, please pay attention to the following notes related to `session_key`.
 
 `uni.login` 调用时，用户的 `session_key` 可能会被更新而致使旧 `session_key` 失效（刷新机制存在最短周期，如果同一个用户短时间内多次调用 `uni.login`，并非每次调用都导致 `session_key` 刷新）。
+When `uni.login` is called, the user's `session_key` may be updated, causing the old `session_key` to become invalid (the refresh mechanism has a shortest period, if the same user calls `uni.login` multiple times in a short period of time, not every time calls result in a `session_key` refresh).
 
 开发者应该在明确需要重新登录时才调用 `uni.login`，及时通过 `code2Session` 接口更新服务器存储的 `session_key`。
+Developers should only call `uni.login` when they clearly need to log in again, and update the `session_key` stored by the server through the `code2Session` interface in time.
 
 微信不会把 `session_key` 的有效期告知开发者。我们会根据用户使用小程序的行为对 `session_key` 进行续期。用户越频繁使用小程序，`session_key` 有效期越长。
+WeChat will not inform developers about the validity period of `session_key`. We will renew the `session_key` based on the user's behavior of using the applet. The more frequently the user uses the applet, the longer the `session_key` is valid.
 
 开发者在 `session_key` 失效时，可以通过重新执行登录流程获取有效的 `session_key`。使用接口 `uni.checkSession` 可以校验 `session_key` 是否有效，从而避免小程序反复执行登录流程。
+When the `session_key` is invalid, the developer can obtain a valid `session_key` by re-executing the login process. Use the interface `uni.checkSession` to check whether the `session_key` is valid, so as to avoid the applet from repeatedly performing the login process.
 
 当开发者在实现自定义登录态时，可以考虑以 `session_key` 有效期作为自身登录态有效期，也可以实现自定义的时效性策略。
+When developers implement a custom login state, they can consider using the `session_key` validity period as the validity period of their own login state, or they can implement a custom timeliness strategy.
 
 ### encrypt_key(用户级)@encrypt_key
+### encrypt_key (user level) @encrypt_key
 
 为了避免小程序与开发者后台通信时数据被截取和篡改，微信侧维护了一个用户维度的可靠key，用于小程序和后台通信时进行加密和签名。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
+In order to avoid data interception and tampering when the applet communicates with the developer in the background, the WeChat side maintains a user-dimensional reliable key, which is used for encryption and signature when the applet communicates with the background. [Details](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/user-encryptkey.html)
 
 开发者可以分别通过小程序前端和微信后台提供的接口，获取用户的加密 key。
+Developers can obtain the user's encryption key through the interfaces provided by the front-end of the applet and the back-end of WeChat respectively.
 
 ### ticket(用户级)@ticket
+### ticket (user level) @ticket
 
 `ticket` 是公众号用于调用微信 JS 接口的临时票据。正常情况下，`ticket` 的有效期为7200秒，通过 `access_token` 来获取。
+`ticket` is a temporary ticket used by the official account to call the WeChat JS interface. Under normal circumstances, the validity period of `ticket` is 7200 seconds, which is obtained through `access_token`.
 
 由于获取 `ticket` 的 api 调用次数非常有限，频繁刷新 `ticket` 会导致 api 调用受限，影响自身业务，开发者必须在自己的服务全局缓存 `ticket `。[详情](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62)
+Since the number of api calls to obtain `ticket` is very limited, frequent refresh of `ticket` will limit api calls and affect their own business. Developers must cache `ticket` globally in their own services. [Details](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62)
 
 
 ## 使用
@@ -198,7 +254,9 @@ There are also some less commonly used credentials that are not listed, for exam
 ### 2. Configure fixed credentials under `uni-id` of `uni-config-center`, see the sample code below for details
 
 微信小程序或微信公众号，首先向微信的[公众平台](https://mp.weixin.qq.com/)申请 `appid` 和 `secret` 固定凭据。
+For WeChat Mini Programs or WeChat Official Accounts, first apply for `appid` and `secret` fixed credentials from WeChat's [public platform](https://mp.weixin.qq.com/).
 微信App或PC网页，首先向微信的[开放平台](https://open.weixin.qq.com/)申请 `appid` 和 `secret` 固定凭据。
+WeChat App or PC webpage, first apply for `appid` and `secret` fixed credentials from WeChat's [Open Platform](https://open.weixin.qq.com/).
 
 然后在项目的 uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json 文件中配置
 Then configure in the project's uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json file

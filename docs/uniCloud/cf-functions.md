@@ -111,7 +111,7 @@ Cloud functions are the foundation of uniCloud. In essence, both clientDB and cl
 - When clientDB applies:
 
 如果客户端使用uni-app开发，且向uniCloud服务空间的请求主要是为了操作云数据库（无论增删改查），那么推荐使用clientDB方式，由uni-app客户端直接操作云数据库。
-If the client is developed using uni-app, and the request to the uniCloud service space is mainly to operate the cloud database (regardless of additions, deletions, modifications, and queries), it is recommended to use the clientDB method, and the uni-app client can directly operate the cloud database.
+If the client is developed using uni-app, and the request to the uniCloud service space is mainly to operate the cloud database (regardless of addition, deletion, modification and query), it is recommended to use the clientDB method, and the uni-app client can directly operate the cloud database.
 
 如果操作数据库的同时，还需要同时执行一些云函数，可以使用clientDB的action云函数。
 If you need to execute some cloud functions while operating the database, you can use the action cloud function of clientDB.
@@ -412,11 +412,11 @@ In addition to the standard API, the `uniCloud` object is built into the cloud f
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.sendSms() | To send SMS, you need to add an extension library [see details](uniCloud/send-sms.md) |
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
-|uniCloud.getPhoneNumber() | To get the one-click login phone number, you need to add an extension library [see details](uniCloud/univerify.md?id=cloud) |
+|uniCloud.getPhoneNumber() |To get the phone number for one-click login, you need to add an extension library [see details](uniCloud/univerify.md?id=cloud) |
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.init() |Get the uniCloud instance of the specified service space [see details](uniCloud/concepts/space.md?id=multi-space) |
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
-|uniCloud.logger |The log system (non-HBuilderX console) that prints logs to [uniCloud web console](https://unicloud.dcloud.net.cn/) in cloud functions [details](rundebug.md?id= uniCloudlogger) |
+|uniCloud.logger |The log system (non-HBuilderX console) in the cloud function that prints logs to the [uniCloud web console](https://unicloud.dcloud.net.cn/) [details](rundebug.md?id= uniCloudlogger) |
 |uniCloud.httpProxyForEip			|使用云厂商代理访问http服务（阿里云固定IP方案），仅阿里云云端环境支持 [详见](#aliyun-eip)，新增于`HBuilderX 3.5.5`|
 |uniCloud.httpProxyForEip |Use cloud vendor proxy to access http service (Alibaba Cloud fixed IP solution), only supported by Alibaba Cloud cloud environment [see details](#aliyun-eip), added in `HBuilderX 3.5.5`|
 |uniCloud.getRequestList			|获取当前云函数实例内正在处理的请求Id列表 [详见](#get-request-list)，新增于`HBuilderX 3.5.5`|
@@ -430,7 +430,7 @@ In addition to the standard API, the `uniCloud` object is built into the cloud f
 ## Error object @uni-cloud-error
 
 云函数调用uniCloud接口时（包括请求云函数、云对象、云存储等）可能存在抛出错误的场景，此时会抛出uniCloud标准的错误对象（以下记为uniCloudError），uniCloudError包含以下属性
-When a cloud function calls the uniCloud interface (including requesting cloud functions, cloud objects, cloud storage, etc.), an error may be thrown. In this case, an uniCloud standard error object (hereinafter referred to as uniCloudError) will be thrown. uniCloudError contains the following attributes
+When a cloud function calls the uniCloud interface (including requesting cloud functions, cloud objects, cloud storage, etc.), an error may be thrown. In this case, an uniCloud standard error object (referred to as uniCloudError hereinafter) may be thrown, and uniCloudError contains the following attributes
 
 |属性		|类型	|必备	|说明												|
 |property |type |required |description |
@@ -533,7 +533,7 @@ If you need to request other http services in cloud functions, use `uniCloud.htt
 |beforeRequest			|Function																																																		|-				|-			|请求发送前的钩子																																																																													|
 |beforeRequest |Function |- |- |Hook before request is sent |
 |streaming					|Boolean																																																		|-				|false	|是否直接返回响应流，开启 streaming 之后，HttpClient 会在拿到响应对象 res 之后马上返回， 此时 result.headers 和 result.status 已经可以读取到，只是没有读取 data 数据而已。|
-|streaming |Boolean |- |false |Whether to return the response stream directly, after enabling streaming, HttpClient will return immediately after getting the response object res, at this time result.headers and result.status can be read, but not read data is just data. |
+|streaming |Boolean |- |false |Whether to return the response stream directly, after enabling streaming, HttpClient will return immediately after getting the response object res, at this time result.headers and result.status can already be read, but not read data is just data. |
 |gzip								|Boolean																																																		|-				|false	|是否支持 gzip 响应格式。开启 gzip 之后，HttpClient 将自动设置 Accept-Encoding: gzip 请求头， 并且会自动解压带 Content-Encoding: gzip 响应头的数据。											|
 |gzip |Boolean |- |false |Whether gzip response format is supported. After enabling gzip, HttpClient will automatically set the Accept-Encoding: gzip request header, and will automatically decompress the data with the Content-Encoding: gzip response header. |
 |timing							|Boolean																																																		|-				|false	|是否开启请求各阶段的时间测量																																																																							|
@@ -859,7 +859,7 @@ You can manually pass the token during cloud function intermodulation, or verify
 When the cloud function/cloud object calls each other, the caller will access the callee through the public network, and the access speed is not as fast as putting the logic directly on the caller for execution. Make sure you really need this feature before using it.
 
 `HBuilderX 3.4.0`版本之前**云函数右键本地运行时**，里面的代码再次callFunction会调用云端的云函数而不是本地云函数，此bug后续版本已修复。
-Before the `HBuilderX 3.4.0` version, right click on the cloud function to run locally**, the code inside the callFunction will call the cloud function in the cloud instead of the local cloud function again. This bug has been fixed in subsequent versions.
+Before the `HBuilderX 3.4.0` version, right-click the cloud function in the local runtime**, the code inside the callFunction will call the cloud function in the cloud instead of the local cloud function. This bug has been fixed in subsequent versions.
 
 ### 云函数递归调用自身@recurrence
 ### Cloud function recursively calls itself @recurrence
@@ -868,7 +868,7 @@ Before the `HBuilderX 3.4.0` version, right click on the cloud function to run l
 In addition to calling tripartite cloud functions, cloud functions can in fact call themselves recursively.
 
 当一个云函数实例的资源不能满足需求，或超时时间不够用时。比如要给10万个用户发送短信，而短信发送接口一次调用最多支持50个手机号码，这样最少需要调用2000次接口才能完成；而一个云函数实例完成不了2000次接口的调用。这种场景就可以使用云函数递归调用，分解任务实现。
-When the resources of a cloud function instance cannot meet the demand, or the timeout period is not enough. For example, to send SMS messages to 100,000 users, the SMS sending interface supports up to 50 mobile phone numbers in one call, so at least 2,000 API calls are required to complete it; however, one cloud function instance cannot complete 2,000 API calls. In this scenario, cloud function recursive calls can be used to decompose tasks for implementation.
+When the resources of a cloud function instance cannot meet the demand, or the timeout period is not enough. For example, to send SMS messages to 100,000 users, and the SMS sending interface supports a maximum of 50 mobile phone numbers at a time, so at least 2,000 API calls are required to complete it; however, a cloud function instance cannot complete 2,000 API calls. In this scenario, cloud function recursive calls can be used to decompose tasks for implementation.
 
 示例代码如下：
 The sample code is as follows:
@@ -1064,7 +1064,7 @@ Both cloud vendors are still optimizing for the cold start problem. The current 
   但使用这种方式需注意平衡，如果业务代码太多，每次云函数请求产生的内存消耗也会不少。
   However, you need to pay attention to balance when using this method. If there are too many business codes, the memory consumption generated by each cloud function request will also be a lot.
 3. 非高频访问的云函数，可以通过定时任务持续运行它（注意腾讯云可以使用这个方式完全避开冷启动，而阿里云的定时任务最短周期大于资源回收周期）
-3. For cloud functions that are not frequently accessed, you can run them continuously through scheduled tasks (note that Tencent Cloud can use this method to completely avoid cold starts, while Alibaba Cloud's scheduled tasks have the shortest period longer than the resource recovery period)
+3. For cloud functions that are not frequently accessed, you can run them continuously through scheduled tasks (note that Tencent Cloud can use this method to completely avoid cold starts, while Alibaba Cloud’s scheduled tasks have a shorter period than the resource recovery period)
 4. 阿里云支持配置云函数的单实例多并发，请参考：[单实例多并发](cf-functions.md?id=concurrency)
 4. Alibaba Cloud supports single-instance multi-concurrency configuration of cloud functions, please refer to: [Single-instance multi-concurrency](cf-functions.md?id=concurrency)
 5. 腾讯云付费进行实例预留
@@ -1258,7 +1258,7 @@ Proxy server IP list
 ```
 
 如需在获取微信公众号access_token场景使用，请将上述ip配置到`微信公众平台 -> 基本配置 -> IP白名单`内，相关链接：[微信公众平台](https://mp.weixin.qq.com/)
-If you want to use it in the scenario of obtaining WeChat official account access_token, please configure the above IP to `WeChat Official Platform -> Basic Configuration -> IP Whitelist`, related link: [WeChat Official Platform](https://mp.weixin. qq.com/)
+If you want to use it in the scenario of obtaining WeChat official account access_token, please configure the above IP to `WeChat official platform -> Basic configuration -> IP whitelist`, related link: [WeChat official platform](https://mp.weixin. qq.com/)
 
 ##### 发送Get请求@http-proxy-get
 ##### Send Get request @http-proxy-get
@@ -1401,9 +1401,9 @@ You can configure the concurrency of a single instance on the cloud function det
 - 云函数内存使用量会随着并发量增大而增加
 - Cloud function memory usage will increase as the concurrency increases
 - 如果并发的不同请求对全局变量同时进行读写会污染全局变量，可能会导致意想不到的后果，开启单实例多并发后请不要编写修改全局变量的代码，除非你熟悉这种技术带来的特殊应用，比如下文进阶部分提到的ip过滤。
-- If concurrent different requests read and write global variables at the same time, it will pollute the global variables, which may lead to unintended consequences. Please do not write code that modifies global variables after enabling single-instance multi-concurrency, unless you are familiar with this technology. Special applications, such as ip filtering mentioned in the advanced section below.
+- If different concurrent requests read and write global variables at the same time, it will pollute the global variables, which may lead to unintended consequences. After enabling single-instance multi-concurrency, please do not write code that modifies global variables unless you are familiar with the technology. Special applications, such as ip filtering mentioned in the advanced section below.
 - 设置过大的单实例多并发可能会导致实例底层网络请求排队从而导致请求超时，**再次强调此项，一般情况下不要设置过大的并发度，具体数值可以自己针对业务代码测试一下**
-- Setting too large a single instance with multiple concurrency may lead to queuing of the underlying network requests of the instance and cause the request to time out. **This item is emphasized again. In general, do not set too large concurrency. The specific value can be tested for the business code by yourself* *
+- Setting too large a single instance with multiple concurrency may lead to queuing of the underlying network requests of the instance and cause the request to time out. **Emphasizing this again, in general, do not set too large concurrency, the specific value can be tested for the business code by yourself* *
 
 **适用场景**
 **Applicable scene**
@@ -1434,7 +1434,7 @@ exports.main = async function(event, context) {
 }
 
 // 由于uni-id默认会从一个内置全局变量上获取客户端平台信息，不同请求会修改此全局变量可能造成混乱，开启单实例多并发后需要将uni-id修改为如下写法
-// Since uni-id obtains client platform information from a built-in global variable by default, different requests may modify this global variable, which may cause confusion. After enabling single-instance multi-concurrency, the uni-id needs to be modified as follows
+// Since uni-id obtains client platform information from a built-in global variable by default, different requests will modify this global variable, which may cause confusion. After enabling single-instance multi-concurrency, you need to modify uni-id as follows
 let uniID = require('uni-id')
 exports.main = async function(event, context) {
   let uniIDIns = uniID.createInstance({ // 创建uni-id实例，其上方法同uniID
@@ -1613,7 +1613,7 @@ Since redis needs to establish a connection with the server, this connection wil
 If you need to continue execution after return, you need to disconnect the redis connection after use, and call the `redis.quit()` method to disconnect. It should be noted that the previously established connection will no longer be available after the disconnection, and the `uniCloud.redis()` method needs to be used to re-establish the connection when the next request comes.
 
 **如未按照上述说明进行操作，redis连接将会一直占用云函数实例，导致云厂商持续计算云函数执行时间，可能会导致消耗大量云资源而产生额外费用**
-**If you do not follow the above instructions, the redis connection will always occupy the cloud function instance, causing the cloud vendor to continuously calculate the execution time of the cloud function, which may consume a lot of cloud resources and incur additional costs**
+**If you do not follow the above instructions, the redis connection will always occupy the cloud function instance, causing the cloud vendor to continuously calculate the execution time of the cloud function, which may consume a large amount of cloud resources and incur additional costs**
 
 **务必确定自己已理解此文档内容，因未按照文档说明使用导致的额外计费DCloud不承担任何责任**
 **Be sure to make sure you understand the content of this document, DCloud is not responsible for any additional billing caused by not using it according to the documentation**

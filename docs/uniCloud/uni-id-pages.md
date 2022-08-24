@@ -105,7 +105,8 @@
 
 # 前端页面
 ## 初始化
-你需要在App.vue中初始化`uni-id-pages`的`init.js`文件  
+需要在App.vue中初始化`uni-id-pages`的`init.js`文件  
+
 示例代码如下：
 ```js
 <script>
@@ -172,7 +173,8 @@ export default {
 
 
 #### 调试模式@debug
-debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-co`的`getSupportedLoginType`），
+debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-co`的`getSupportedLoginType`）。
+
 检查：uni-id-pages客户端配置的登录方式，是否未在uniCloud服务端配置正确，否则抛出异常。
 
 #### 登录方式@loginTypes
@@ -180,8 +182,8 @@ debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-c
 |--			|--	|--	|
 |univerify	|[一键登录](https://uniapp.dcloud.io/univerify.html)	|App 3.0.0+|
 |smsCode	|短信验证码登录			||
-|weixin		|微信登录	|App，微信小程序，H5（uni-id-pages 版本号1.0.8起支持，含微信公众号内的网页授权登录 和 普通浏览器内网页生成二维码，实现手机微信扫码登录） |
-|apple		|苹果登录[Apple登录](https://ask.dcloud.net.cn/article/36651)	| iOS13+支持，App 2.4.7+|
+|weixin		|微信登录	|App，微信小程序，Web（uni-id-pages 版本号1.0.8起支持） |
+|apple		|苹果登录[Apple登录](https://uniapp.dcloud.io/tutorial/app-oauth-apple)	| iOS13+支持，App 2.4.7+|
 |username	|用户名密码登录				||
 
 ##### 配置示例
@@ -212,7 +214,7 @@ export default {
 }
 ```
 
-**注意：** iOS的App Store应用规则：应用若支持三方社交登录服务（如:一键登录、微信登录等），则必须同时向用户提供“以苹果账号登录”的选项。即：如果你的应用不支持三方登录，那么可以不带上苹果登录，如果你的应用支持三方登录，那必须同时把苹果登录也带上。
+**注意：** iOS 的 AppStore 规则：应用若支持三方社交登录服务（如:一键登录、微信登录等），则必须同时向用户提供“以苹果账号登录”的选项。即：如果你的应用不支持三方登录，那么可以不带上苹果登录，如果你的应用支持三方登录，那必须同时把苹果登录也带上。
 
 以上配置仅开启前端登录入口，实现功能还需：
 1. 开通对应登录方式服务，获得服务密钥，并在服务端`uni-id`模块的配置文件中完成配置。详情查看：[登录服务开通与配置](#登录服务开通与配置)
@@ -232,11 +234,11 @@ export default {
 |register	|String	|注册（包括注册并登录，如：微信登录、苹果登录、短信验证码登录）	|
 |login		|String	|登录（如：用户名密码登录）									|
 
-一款规范的小程序或要上架到国内应用商店app必须提供《隐私政策和用户使用协议》，参考模版：[隐私权政策模板.zip](https://ask.dcloud.net.cn/file/download/file_name-6ZqQ56eB5p2D5pS/562W5qih5p2/LnppcA==__url-Ly9pbWctY2RuLXRjLmRjbG91ZC5uZXQuY24vdXBsb2Fkcy9hcnRpY2xlLzIwMjAwMjE0LzUyMDRmMWU2Y2Q3NjcwZWE0YTJjMjBmZGRhMTBhMDdh)
+一款规范的小程序或App要上架到国内应用商店必须提供《隐私政策和用户使用协议》，参考模版：[隐私权政策模板.zip](https://ask.dcloud.net.cn/file/download/file_name-6ZqQ56eB5p2D5pS/562W5qih5p2/LnppcA==__url-Ly9pbWctY2RuLXRjLmRjbG91ZC5uZXQuY24vdXBsb2Fkcy9hcnRpY2xlLzIwMjAwMjE0LzUyMDRmMWU2Y2Q3NjcwZWE0YTJjMjBmZGRhMTBhMDdh)
 
 更多合规问题[详情参考](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
 
-推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://ask.dcloud.net.cn/article/37573)上传到[前端网页托管](hosting.md#%E7%AE%80%E4%BB%8B)获得链接
+推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://hx.dcloud.net.cn/Tutorial/extension/markdown_share)上传到[前端网页托管](hosting.md)获得链接
 
 #### 接入各类服务（如微信登录服务）的应用id@appid
 
@@ -247,12 +249,14 @@ export default {
 |&nbsp;&#124;-&nbsp;web	|String	|微信开放平台的appid</br>来源：[微信开放平台](https://open.weixin.qq.com) -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> AppID|
 
 ## 页面介绍
-`uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[详情查看](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
+`uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[插件地址](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
+
 项目中常有打开登录页面的需求，这里对登录页面展开介绍；包括两类登录方式：
 - 密码登录（账号密码登录），页面路径: `/uni_modules/uni-id-pages/pages/login/login-withpwd`
 - 免密登录（一键登录，短信验证码登录，微信登录，苹果登录），页面路径: `/uni_modules/uni-id-pages/pages/login/login-withoutpwd`
 
 执行`uni.navigateTo`打开登录页面，会默认使用配置中`loginTypes`值的第一项为登录方式。
+
 例如`loginTypes`：`["weixin","apple","univerify"]`会以`weixin`，即`微信登录`为默认登录方式
 
 `uni-id-pages`支持通过传递参数`type`，指定登录方式。例如：指定苹果登录，使用如下代码即可
@@ -548,14 +552,14 @@ await uniIdCo.loginByWeixin({
 
 **注意**
 
-- 支持的登录方式：微信小程序、微信公众号、微信App、微信PC扫码
+- 支持的登录方式：微信小程序、微信公众号、App、web站微信扫码登录
 - 微信登录会自动保存用户的openid，在`uni-id-pages 1.0.8`及更高版本在存储openid时会同时存储一份以当前应用的Appid（manifest.json内的DCloud AppId）为key的openid，见下方关于openid的说明。
 - 如果有多个应用同时使用微信小程序登录，且希望用户身份不隔离请确保这些应用在微信小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
-- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存session_key（微信小程序登录）、access_token（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
+- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存`session_key`（微信小程序登录）、`access_token`（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
 
 **关于openid的说明**
 
-`uni-id-pages 1.0.7`及之前的版本会将微信的openid以以下形式存储
+`uni-id-pages 1.0.7`及之前的版本会将微信的openid存为如下格式
 
 ```js
 {
@@ -566,7 +570,9 @@ await uniIdCo.loginByWeixin({
 }
 ```
 
-可以看到如果存在多个微信小程序关联同一个账号，这时候只能存储一个小程序的openid，在`uni-id-pages 1.0.8`版本对此进行了调整以Appid`__UNI_123456`为例，openid会在数据库内存储为以下形式
+可以看到如果存在多个微信小程序应用连接一个uniCloud后台且关联同一个账号，此时只能存储一个小程序的openid。
+
+在`uni-id-pages 1.0.8`版本对此进行了调整修正，多个DCloud Appid可以对应不同的微信openid。以Appid`__UNI_123456`为例，openid会在数据库内存储为以下形式：
 
 ```js
 {
@@ -851,7 +857,11 @@ await uniIdCo.bindMobileByUniverify({
 
 #### 通过微信绑定手机号@bind-mobile-by-mp-weixin
 
-使用此接口时务必注意，微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。如果有效则直接使用上次存储的sessionKey即可，如果无效应重新调用login接口再次刷新sessionKey。微信小程序登录、绑定小程序微信账号时会自动更新用户的sessionKey。
+使用此接口时务必注意，微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。
+
+如果有效则直接使用上次存储的sessionKey即可，如果无效应重新调用login接口再次刷新sessionKey。
+
+微信小程序登录、绑定小程序微信账号时会自动更新用户的sessionKey。
 
 **接口形式**
 
@@ -1498,7 +1508,11 @@ module.exports = {
 
 uni-id-pages已全面支持：app、小程序、web（uni-id-pages 版本号1.0.8起），三端的微信登录。
 
-微信将应用分为4类：`移动应用`、`网站应用`、`公众帐号`、`小程序`；
+微信将应用分为4类：
+1. 移动应用：指非微信的App，调用微信登陆。属于微信开放平台[微信开放平台账号](https://open.weixin.qq.com/)
+2. 网站应用：指微信外的浏览器网页，通过手机微信扫码等方式调用微信登录。属于微信开放平台[微信开放平台账号](https://open.weixin.qq.com/)
+3. 公众帐号：指在微信内置浏览器访问公众号H5。属于微信公众号平台[https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)
+4. 小程序：指微信内的小程序。属于微信公众号平台[https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)
 
 这里的`网站应用`和`公众帐号`都是给web应用，接入微信登录功能。但有如下区别：
 
@@ -1508,21 +1522,26 @@ uni-id-pages已全面支持：app、小程序、web（uni-id-pages 版本号1.0.
 |普通浏览器	|网站应用	|手机微信扫码登录	|
 
 
-### 是否申请[微信开放平台账号](https://open.weixin.qq.com/)？
+### 如何选择微信开放平台和微信公众平台
 
-如果你的应用只有微信小程序端，或者只运行在微信app内才支持登录的web端。那就无需开通`微信开放平台账号`，开通`小程序`或者`公众帐号`即可。
+- 如果你的应用只运行在`微信内`，不管是微信小程序还是微信公众号H5，都属于[微信公众平台](https://open.weixin.qq.com/)。
+- 如果你的应用运行在`微信外`，不管是其他App还是微信外的其他网页，都属于[微信开放平台](https://open.weixin.qq.com/)。
 
-而以下两种情况必须开通`微信开放平台账号`
-1. `APP端，微信授权登录`和`web端，手机微信扫码登录`，必须开通[微信开放平台账号](https://open.weixin.qq.com/)，创建`移动应用`和`网站应用`才能接入微信登录。
-2. 如果你的应用有多端，实现同一个用户在公众号、小程序、APP、官方网站等不同场景里的身份统一识别、信息同步和行为跟踪（详情参考：[“UnionID关联”功能介绍及运营建议](https://developers.weixin.qq.com/community/business/doc/00024a52cec260f09b69c704e5b00d)）就需要将`小程序`、`公众帐号`绑定到同一个`微信开放平台账号`下。
-  * 绑定方式：登录[微信开放平台](https://open.weixin.qq.com/) -> `管理中心` -> 选择`公众号/小程序` -> 点击`绑定公众号/小程序`
+根据你的需求开通相应平台账户即可。
+
+**注意**
+
+如果你的应用有多端，实现同一个用户在公众号、小程序、APP、官方网站等不同场景里的身份统一识别、信息同步和行为跟踪
+（详情参考：[“UnionID关联”功能介绍及运营建议](https://developers.weixin.qq.com/community/business/doc/00024a52cec260f09b69c704e5b00d)）
+就需要将`小程序`、`公众帐号`绑定到同一个`微信开放平台账号`下。
+* 绑定方式：登录[微信开放平台](https://open.weixin.qq.com/) -> `管理中心` -> 选择`公众号/小程序` -> 点击`绑定公众号/小程序`
 
 ### 客户端配置  
-- APP端，
+- APP端：
 	* 打开`manifest.json` ->`App模块配置` -> `OAuth（登录鉴权）` -> `勾选微信登录` -> 填写`appid`、`ios平台通用链接`。
 	* iOS平台微信登录SDK需要配置通用链接，详情参考：[https://uniapp.dcloud.io/api/plugins/universal-links.html](https://uniapp.dcloud.io/api/plugins/universal-links.html)。
-- 小程序端，打开`manifest.json` -> `微信小程序配置` -> 填写微信小程序AppID
-- web端，打开`/uni_modules/uni-id-pages/config.js` -> `appid` -> `weixin` 在`h5`节点配置微信公众号的appid，`web`节点配置微信开放平台创建的网站应用appid
+- 小程序端：打开`manifest.json` -> `微信小程序配置` -> 填写微信小程序AppID
+- web端：打开`/uni_modules/uni-id-pages/config.js` -> `appid` -> `weixin` 在`h5`节点配置微信公众号的appid，`web`节点配置微信开放平台创建的网站应用appid
 
 ### 服务端配置  
 * 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，完整的配置信息[详情查看](uni-id-summary.md#config)
@@ -1534,8 +1553,10 @@ uni-id-pages已全面支持：app、小程序、web（uni-id-pages 版本号1.0.
 2. 进入授权页面，用户同意授权得到code；以get参数的形式携带code，重定向至步骤1填写的redirect_uri
 3. 回到应用页面，拿到code值调用`uni-id-co`云对象的`loginByWeiXin`方法，得到`token`完成登录
 
-`appid`说明：微信app内打开的网页，为公众号的appid。其他场景则为在`微信开放平台`创建的`网站应用`的appid。  
-`redirect_uri`说明：进入授权页面后返回的网站链接，此链接的域名需要先在服务后台配置，详情查看:[回调域名的配置](#redirect_uri)
+- `appid`说明：微信app内打开的网页，为公众号的appid。其他场景则为在`微信开放平台`创建的`网站应用`的appid。  
+- `redirect_uri`说明：进入授权页面后返回的网站链接，此链接的域名需要先在服务后台配置，详情查看:[回调域名的配置](#redirect_uri)
+
+示例代码已经在uni-id-pages插件中提供。
 
 #### 回调域名的配置@redirect_uri
 

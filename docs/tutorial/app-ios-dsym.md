@@ -24,11 +24,17 @@ dSYM文件内容为：
 因此统计平台也需要开发者上传 dsym 文件。
 
 
-##### HBuilderX中云端打包配置生成符号表文件
+#### HBuilderX中云端打包配置生成符号表文件
 
-> HBuilderX3.2.23+版本新增支持云端打包支持生成iOS符号表 dsym 文件
+> HBuilderX3.5.0+版本生成iOS符号表 dsym 文件配置项调整到原生App-云打包窗口 
 
-在HBuilderX中云端打包打开项目的manifest.json文件，在“App常用其它设置”界面中的勾选“生成iOS符号表（dsym）文件”：
+在HBuilderX中菜单项 “发行” -> “原生App-云打包” 界面勾选“生成iOS符号表（dsym）文件”：
+
+![](https://native-res.dcloud.net.cn/images/hx/dist/ios-dsym.png)
+
+> HBuilderX 从 3.2.23 至 3.4.18 版本 在项目的 manifest.json 可视化界面中配置生成iOS符号表 dsym 文件
+
+在HBuilderX中打开项目的manifest.json文件，在“App常用其它设置”界面中的勾选“生成iOS符号表（dsym）文件”：
 
 ![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/ios/dsym-hx.png)
 

@@ -364,6 +364,10 @@ If you do not need to refresh `access_token`, `ticket` regularly, or access cred
 }
 ```
 
+- 在 `weixin-mp`、`weixin-h5` 平台，通过调用 [uni-open-bridge-common](#uni-open-bridge-common) 的方法可自动从微信服务器获取 [access_token](#access_token)、[encrypt_key](#encrypt_key)、[user_access_token](#user_access_token)、[ticket](#ticket) 时需要用到配置文件中的 `appid`、`appsecret`
+- 暂时不需要配置 `weixin-web`、`weixin-app`、`qq-mp`、`qq-app`，后续支持这些平台时需要再次补充配置，但仍然可通过调用 [uni-open-bridge-common](#uni-open-bridge-common) 的方法传入设置值
+
+
 注意：拷贝此文件内容时需要移除 `注释`。标准json不支持注释。在HBuilderX中可用多选//来批量移除注释。
 Note: The `comments` need to be removed when copying the contents of this file. Standard json does not support annotations. In HBuilderX, you can use multiple selection // to remove comments in batches.
 

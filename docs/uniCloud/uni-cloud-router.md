@@ -14,6 +14,7 @@
     - [如何编写 Controller](#如何编写-controller)
     - [获取请求参数](#获取请求参数)
     - [调用 Service](#调用-service)
+    - [集成化返回](#集成化返回)
     - [定制 URL 化返回的状态码](#定制-url-化返回的状态码)
     - [Cookie使用](#Cookie使用)
   - [服务（Service）](#服务service)
@@ -216,6 +217,137 @@ class PostController extends Controller {
 ```
 
 Service 的具体写法，请查看 [Service](#服务service) 章节。
+
+
+#### 集成化返回
+在`uni-cloud-router`的`Controller内集成化返回与云函数集成化返回稍有不同
+
+> 返回字符串
+```js
+
+class PostController extends Controller 
+{
+    async load(ctx) {
+        //必须设置 如果直接return 'abc', 客户端输为 '"abc"'
+        ctx.headers = {'content-type':'text/html'}
+        ctx.body = 'String' 
+        //或 return 'String'
+    }
+}
+```
+
+
+> 返回javascript
+```js
+
+class PostController extends Controller 
+{
+    async load(ctx) {
+        ctx.headers = {'content-type':'application/javascript'}
+        ctx.body = 'console.log("abc")'
+    }
+}
+```
+
+
+
+> 返回html
+```js
+
+class PostController extends Controller 
+{
+    async load(ctx) {
+        ctx.headers = {'content-type':'text/html'}
+        ctx.body = `<html>
+    <head>    
+    </head>
+    <body>
+           <h1>Hellow</h1>
+    </body>
+</html>
+`
+    }
+}
+```
+
+> 返回XML
+```js
+
+class PostController extends Controller 
+{
+    async load(ctx) {
+        ctx.headers = {'content-type':'text/xml'}
+        ctx.body = `<xml>
+            <return_code><![CDATA[SUCCESS]]></return_code>
+            <return_msg><![CDATA[OK]]></return_msg>
+        </xml>`
+}
+}
+```
+
+> 从远程加载一张图片返回二进制流
+```js
+
+/**
+* @params {Buffer} fileBuffer  加载的图片数据
+* @return {String} 不带.的图片扩展名
+*/
+getImageExtensionName(fileBuffer) {
+// 将上文提到的 文件标识头 按 字节 整理到数组中
+    const imageBufferHeaders = [
+        {bufBegin: [0xff, 0xd8],bufEnd: [0xff, 0xd9], ext: 'jpg' },
+        {bufBegin: [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a], ext: 'png'},
+        {bufBegin: [0x47, 0x49, 0x46, 0x38, 0x39, 0x61],ext: 'gif'},
+        {bufBegin: [0x47, 0x49, 0x46, 0x38, 0x37, 0x61],ext: 'gif'},
+        {bufBegin: [0x42, 0x4d],ext: 'bmp'},
+        {bufBegin: [0x49, 0x49],ext: 'tif'},
+        {bufBegin: [0x4d, 0x4d],ext: 'tif'},
+        {bufBegin: [0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x20, 0x20],ext: 'ico'}
+    ]
+    for (const imageBufferHeader of imageBufferHeaders) {
+        let isEqual
+        // 判断标识头前缀
+        if (imageBufferHeader.bufBegin) {
+            const buf = Buffer.from(imageBufferHeader.bufBegin)
+            //使用 buffer.slice 方法 对 buffer 以字节为单位切割
+            isEqual = buf.equals(fileBuffer.slice(0, imageBufferHeader.bufBegin.length))
+	}
+        // 判断标识头后缀
+        if (isEqual && imageBufferHeader.bufEnd) {
+            const buf = Buffer.from(imageBufferHeader.bufEnd)
+            isEqual = buf.equals(fileBuffer.slice(-imageBufferHeader.bufEnd.length))
+        }
+        if (isEqual) {
+            return imageBufferHeader.ext
+        }
+    }
+    // 未能识别到该文件类型
+    return ''
+}
+
+class MediaController extends Controller 
+{
+    async load(ctx) {
+        const {data} = await this.curl('图片地址后获取图片的url')
+        
+        ctx.isBase64Encoded = true
+        if( data && data.constructor == Buffer )
+        {
+            //假设你知道加载的图片类型可以直接设置content-type
+            //如果图片类型未知则需要通过getImageExtensionName分析data的图片类型，例如微信通过media_id获取素材资源等
+            const ext = getImageExtensionName(data)
+            ctx.headers = {'content-type': `image/${ext}`}
+            ctx.body = Buffer.from(data).toString('base64')
+        }
+        else
+        {
+            ctx.headers = {'content-type': 'image/png'}
+            ctx.body = '一个默认的png类型的Base64图片'
+        }
+    }
+}
+```
+
 
 #### 定制 URL 化返回的状态码
 

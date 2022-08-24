@@ -37,7 +37,7 @@ After the cloud function is started, the environment will be retained for a peri
 - 单个云函数大小限制为10M（包含node_modules），过大的云函数影响运行性能，也会增加计费的gbs。
 - The size of a single cloud function is limited to 10M (including node_modules). An excessively large cloud function will affect the running performance and increase the billing gbs.
 - uniCloud的阿里云版，暂不可使用相对路径读取文件（比如`fs.readFileSync('./info.txt')`），可以使用绝对路径`fs.readFileSync(path.resolve(__dirname,'./info.txt'))`
-- For the Alibaba Cloud version of uniCloud, relative paths cannot be used to read files (such as `fs.readFileSync('./info.txt')`), but absolute paths `fs.readFileSync(path.resolve(__dirname,'. /info.txt'))`
+- For the Alibaba Cloud version of uniCloud, you cannot use relative paths to read files (such as `fs.readFileSync('./info.txt')`). You can use absolute paths `fs.readFileSync(path.resolve(__dirname,'. /info.txt'))`
 
 ## 云函数的分类
 ## Classification of cloud functions
@@ -94,7 +94,7 @@ In the uniCloud system, there are 4 ways for the client and server to communicat
 |前端调用方式|传统ajax|uni-app客户端通过`uniCloud.callFunction(functionname)`来调用云函数|uni-app客户端通过`uniCloud.importObject(objectname)`导入一个云对象，直接使用这个对象的方法	|uni-app客户端通过`<uniCloud-db>`组件或`uniCloud.database()` API来访问uniCloud数据库。也支持搭配action云函数追加服务器逻辑	|
 |Front-end calling method|Traditional ajax|uni-app client calls cloud functions through `uniCloud.callFunction(functionname)`|uni-app client imports a cloud object through `uniCloud.importObject(objectname)`, and uses this object directly Methods of |uni-app clients access the uniCloud database through the `<uniCloud-db>` component or the `uniCloud.database()` API. It also supports adding server logic with action cloud functions |
 |适用场景	|http链接需要自己注册域名。如果前端是uni-app，则不推荐使用URL化。如果是非uni-app的系统需要访问云函数，只能使用URL化	|相比云函数URL，callfunction更加安全、更serverless，不暴露域名和ip，不怕攻击，也无需注册域名|uni-app 3.4起支持。相比callfunction方式。代码更加精简、逻辑更加清晰、开发更加高效	|如果uni-app前端发起的服务器请求目的主要是查询或操作数据库，则推荐使用clientDB方式|
-|Applicable scenarios |The http link needs to register a domain name by yourself. URLization is deprecated if the frontend is a uni-app. If a non-uni-app system needs to access cloud functions, it can only use URLization | Compared with cloud function URLs, call functions are more secure and serverless, do not expose domain names and IPs, are not afraid of attacks, and do not need to register domain names|uni-app 3.4 onwards support. Compared to the callfunction method. The code is more concise, the logic is clearer, and the development is more efficient | If the server request initiated by the front end of uni-app is mainly to query or operate the database, it is recommended to use the clientDB method|
+|Applicable scenarios |The http link needs to register a domain name by yourself. URLization is deprecated if the frontend is a uni-app. If a non-uni-app system needs to access cloud functions, it can only use URLization | Compared with cloud function URLs, call functions are more secure and serverless, do not expose domain names and IPs, are not afraid of attacks, and do not need to register domain names|uni-app 3.4 onwards support. Compared to the callfunction method. The code is more streamlined, the logic is clearer, and the development is more efficient | If the server request initiated by the uni-app front-end is mainly to query or operate the database, it is recommended to use the clientDB method|
 
 云函数是uniCloud的基础，本质上 clientDB 和 云对象 都是建立在云函数上针对特定场景的优化。
 Cloud functions are the foundation of uniCloud. In essence, both clientDB and cloud objects are optimized for specific scenarios based on cloud functions.
@@ -412,7 +412,7 @@ In addition to the standard API, the `uniCloud` object is built into the cloud f
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.sendSms() | To send SMS, you need to add an extension library [see details](uniCloud/send-sms.md) |
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
-|uniCloud.getPhoneNumber() | To get the one-click login phone number, you need to add an extension library [see details](uniCloud/univerify.md?id=cloud) |
+|uniCloud.getPhoneNumber() |To get the phone number for one-click login, you need to add an extension library [see details](uniCloud/univerify.md?id=cloud) |
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.init() |Get the uniCloud instance of the specified service space [see details](uniCloud/concepts/space.md?id=multi-space) |
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
@@ -626,7 +626,7 @@ exports.main = async (event, context) => {
 ### Get request id list @get-request-list
 
 非单实例多并发场景下列表长度为1，仅有的一个requestId表示当前请求的requestId。单实例多并发场景下会返回正在处理的所有请求的requestId列表。如需获取当前请求的requestId参考：[云函数context](cf-callfunction.md#context)、[云对象获取当前请求的requestId](cloud-obj.md#get-request-id)
-In a non-single-instance-multiple-concurrency scenario, the list length is 1, and the only requestId is the requestId of the current request. In a single-instance-multiple-concurrency scenario, the requestId list of all requests being processed will be returned. To get the requestId of the current request: [cloud function context](cf-callfunction.md#context), [cloud object to get the requestId of the current request](cloud-obj.md#get-request-id)
+In a non-single-instance-multiple-concurrency scenario, the list length is 1, and the only requestId is the requestId of the current request. In a single-instance-multiple-concurrency scenario, the requestId list of all requests being processed will be returned. To get the requestId reference of the current request: [cloud function context](cf-callfunction.md#context), [cloud object to get the requestId of the current request](cloud-obj.md#get-request-id)
 
 **示例**
 **Example**
@@ -693,11 +693,11 @@ Cloud function call source, its value range is:
 **Precautions**
 
 - 客户端上报的信息在理论上存在被篡改可能，实际业务中应验证前端传来的数据的合法性
-- In theory, the information reported by the client may be tampered with. In actual business, the legality of the data sent from the front end should be verified.
+- The information reported by the client may be tampered in theory, and the legality of the data sent from the front end should be verified in actual business
 - 除了clientIP外，其他客户端信息只有使用uni-app客户端以callFunction或者importObject方式访问云函数或云对象时才有
 - Except for clientIP, other client information is only available when using the uni-app client to access cloud functions or cloud objects in callFunction or importObject mode
 - 云对象与云函数内获取客户端platform稍有不同，云函数未拉齐vue2、vue3版本app平台的platform值，vue2为`app-plus`，vue3为`app`。云对象无论客户端是vue2还是vue3，在app平台获取的platform均为`app`。这一点在使用uni-id时需要特别注意，详情见：[uni-id文档 preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
-- The cloud object is slightly different from the client platform obtained in the cloud function. The cloud function does not match the platform value of the app platform of the vue2 and vue3 versions, vue2 is `app-plus`, and vue3 is `app`. Regardless of whether the client is vue2 or vue3, the platform obtained from the app platform is `app`. This point needs special attention when using uni-id. For details, see: [uni-id document preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
+- The cloud object is slightly different from the client platform obtained in the cloud function. The cloud function does not match the platform value of the app platform of the vue2 and vue3 versions. The vue2 is `app-plus`, and the vue3 is `app`. Regardless of whether the client is vue2 or vue3, the platform obtained from the app platform is `app`. This point needs special attention when using uni-id. For details, see: [uni-id document preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
 
 ### 获取云端信息@get-cloud-infos
 ### Get cloud information @get-cloud-infos
@@ -853,7 +853,7 @@ let callFunctionResult = await uniCloud.callFunction({
 Since the caller is not a uni-app client, APIs such as the context of cloud functions and this.getClientInfo of cloud objects cannot obtain client information, including uni-id-token.
 
 可以在云函数互调时手动传递 token ，或者校验调用来源（source）为云函数（function）时不验证用户 token。
-You can manually pass the token during cloud function intermodulation, or verify that the user token is not verified when the source of the call is a cloud function (function).
+You can manually pass the token during cloud function intermodulation, or verify that the user token is not verified when the calling source (source) is a cloud function (function).
 
 云函数/云对象互相调用时调用方会通过公网访问被调用方，访问速度不如直接将逻辑放在调用方执行。使用前请确保你确实需要此功能。
 When the cloud function/cloud object calls each other, the caller will access the callee through the public network, and the access speed is not as fast as putting the logic directly on the caller for execution. Make sure you really need this feature before using it.
@@ -868,7 +868,7 @@ Before the `HBuilderX 3.4.0` version, right-click the cloud function in the loca
 In addition to calling tripartite cloud functions, cloud functions can in fact call themselves recursively.
 
 当一个云函数实例的资源不能满足需求，或超时时间不够用时。比如要给10万个用户发送短信，而短信发送接口一次调用最多支持50个手机号码，这样最少需要调用2000次接口才能完成；而一个云函数实例完成不了2000次接口的调用。这种场景就可以使用云函数递归调用，分解任务实现。
-When the resources of a cloud function instance cannot meet the demand, or the timeout period is not enough. For example, to send SMS messages to 100,000 users, the SMS sending interface supports up to 50 mobile phone numbers in one call, so at least 2,000 API calls are required to complete it; however, one cloud function instance cannot complete 2,000 API calls. In this scenario, cloud function recursive calls can be used to decompose tasks for implementation.
+When the resources of a cloud function instance cannot meet the demand, or the timeout period is not enough. For example, to send SMS messages to 100,000 users, and the SMS sending interface supports a maximum of 50 mobile phone numbers at a time, so at least 2,000 API calls are required to complete it; however, a cloud function instance cannot complete 2,000 API calls. In this scenario, cloud function recursive calls can be used to decompose tasks for implementation.
 
 示例代码如下：
 The sample code is as follows:
@@ -1064,7 +1064,7 @@ Both cloud vendors are still optimizing for the cold start problem. The current 
   但使用这种方式需注意平衡，如果业务代码太多，每次云函数请求产生的内存消耗也会不少。
   However, you need to pay attention to balance when using this method. If there are too many business codes, the memory consumption generated by each cloud function request will also be a lot.
 3. 非高频访问的云函数，可以通过定时任务持续运行它（注意腾讯云可以使用这个方式完全避开冷启动，而阿里云的定时任务最短周期大于资源回收周期）
-3. For cloud functions that are not frequently accessed, you can run them continuously through scheduled tasks (note that Tencent Cloud can use this method to completely avoid cold starts, while Alibaba Cloud's scheduled tasks have the shortest period longer than the resource recovery period)
+3. For cloud functions that are not frequently accessed, you can run them continuously through scheduled tasks (note that Tencent Cloud can use this method to completely avoid cold starts, while Alibaba Cloud’s scheduled tasks have a shorter period than the resource recovery period)
 4. 阿里云支持配置云函数的单实例多并发，请参考：[单实例多并发](cf-functions.md?id=concurrency)
 4. Alibaba Cloud supports single-instance multi-concurrency configuration of cloud functions, please refer to: [Single-instance multi-concurrency](cf-functions.md?id=concurrency)
 5. 腾讯云付费进行实例预留
@@ -1206,7 +1206,7 @@ If the timeout is still not enough, you can refer to the recursive call of cloud
 #### Tencent Cloud @tencent-eip
 
 serverless默认是没有固定的服务器IP的，因为有很多服务器资源在后台供随时调用，每次调用到哪个服务器、哪个ip都不固定。
-By default, serverless does not have a fixed server IP, because there are many server resources in the background that can be called at any time, and which server and IP are not fixed each time it is called.
+Serverless does not have a fixed server IP by default, because there are many server resources in the background for calling at any time, and the server and IP are not fixed each time it is called.
 
 但一些三方系统，要求配置固定ip白名单，比如微信公众号的js sdk，此时只能提供固定ip地址。
 However, some third-party systems require the configuration of a fixed IP whitelist, such as the js sdk of the WeChat public account, which can only provide a fixed IP address at this time.
@@ -1258,7 +1258,7 @@ Proxy server IP list
 ```
 
 如需在获取微信公众号access_token场景使用，请将上述ip配置到`微信公众平台 -> 基本配置 -> IP白名单`内，相关链接：[微信公众平台](https://mp.weixin.qq.com/)
-If you want to use it in the scenario of obtaining WeChat official account access_token, please configure the above IP to `WeChat official platform -> Basic configuration -> IP whitelist`, related link: [WeChat official platform](https://mp.weixin. qq.com/)
+If you want to use it in the scenario of obtaining WeChat official account access_token, please configure the above IP to `WeChat Official Platform -> Basic Configuration -> IP Whitelist`, related link: [WeChat Official Platform](https://mp.weixin. qq.com/)
 
 ##### 发送Get请求@http-proxy-get
 ##### Send Get request @http-proxy-get
@@ -1401,7 +1401,7 @@ You can configure the concurrency of a single instance on the cloud function det
 - 云函数内存使用量会随着并发量增大而增加
 - Cloud function memory usage will increase as the concurrency increases
 - 如果并发的不同请求对全局变量同时进行读写会污染全局变量，可能会导致意想不到的后果，开启单实例多并发后请不要编写修改全局变量的代码，除非你熟悉这种技术带来的特殊应用，比如下文进阶部分提到的ip过滤。
-- If different concurrent requests read and write global variables at the same time, it will pollute the global variables, which may lead to unintended consequences. After enabling single-instance multi-concurrency, please do not write code that modifies global variables unless you are familiar with the technology. Special applications, such as ip filtering mentioned in the advanced section below.
+- If concurrent different requests read and write global variables at the same time, it will pollute the global variables, which may lead to unintended consequences. Please do not write code that modifies global variables after enabling single-instance multi-concurrency, unless you are familiar with this technology. Special applications, such as ip filtering mentioned in the advanced section below.
 - 设置过大的单实例多并发可能会导致实例底层网络请求排队从而导致请求超时，**再次强调此项，一般情况下不要设置过大的并发度，具体数值可以自己针对业务代码测试一下**
 - Setting too large a single instance with multiple concurrency may lead to queuing of the underlying network requests of the instance and cause the request to time out. **This item is emphasized again. In general, do not set too large concurrency. The specific value can be tested for the business code by yourself* *
 
@@ -1456,7 +1456,7 @@ exports.main = async function(event, context) {
 The reuse of global variables after enabling single-instance multi-concurrency is not necessarily a bad result. If you understand this behavior well, you can also use it effectively.
 
 例：[ip-filter](https://ext.dcloud.net.cn/plugin?id=4619)中就利用云函数全局缓存一些ip访问信息来限制单ip访问频率，可以下载示例项目体验一下
-For example: [ip-filter](https://ext.dcloud.net.cn/plugin?id=4619) uses cloud functions to globally cache some ip access information to limit the frequency of single ip access. You can download the sample project to experience
+Example: [ip-filter](https://ext.dcloud.net.cn/plugin?id=4619) uses cloud functions to globally cache some ip access information to limit the frequency of single ip access. You can download the sample project to experience
 
 
 ## 云函数package.json@packagejson
@@ -1582,10 +1582,10 @@ exports.main = async function(event, context) {
 If this cloud function runs on Alibaba Cloud or Tencent Cloud nodejs8, the console.log in setTimeout will not be executed in this cloud function call, but may continue to be executed when the cloud function instance is reused again.
 
 如果此云函数运行在腾讯云nodejs12，setTimeout里面的console.log会在本次云函数调用内，同样的本次云函数**计费时间（与云函数GBs指标相关）**也会按照最终执行完成的时间计算（5000ms+return耗时）。但是前端无需等待5秒即可收到响应。注意：如果有未断开的长连接（例如：redis连接）会导致云函数一直运行到配置的超时时间
-If this cloud function runs on Tencent Cloud nodejs12, the console.log in setTimeout will be in this cloud function call, and the same cloud function ** billing time (related to the cloud function GBs indicator)** will also be calculated according to the final Completion time calculation (5000ms+return time). But the frontend doesn't need to wait 5 seconds to receive the response. Note: If there is an unbroken long connection (for example: redis connection), it will cause the cloud function to run until the configured timeout period
+If this cloud function runs on Tencent Cloud nodejs12, the console.log in setTimeout will be in this cloud function call, and the same cloud function ** billing time (related to the cloud function GBs indicator)** will also be calculated according to the final Completion time calculation (5000ms+return time). But the frontend doesn't need to wait 5 seconds to receive the response. Note: If there is an unbroken long connection (for example: redis connection), the cloud function will run until the configured timeout period
 
 当在云函数package.json内的cloudfunction-config内配置了`keepRunningAfterReturn: false`时，可以改变腾讯云nodejs12的表现，云函数return之后将不再继续执行，未断开的长连接也不会增加云函数实际运行时间，云函数return后长连接也不会被中断，简单来说其表现和腾讯云nodejs8一致。
-When `keepRunningAfterReturn: false` is configured in cloudfunction-config in cloud function package.json, the performance of Tencent Cloud nodejs12 can be changed. After the cloud function returns, it will not continue to execute, and the number of unbroken long connections will not increase. The actual running time of the cloud function and the long connection will not be interrupted after the cloud function returns. In short, its performance is consistent with Tencent Cloud nodejs8.
+When `keepRunningAfterReturn: false` is configured in the cloudfunction-config in the cloud function package.json, the performance of Tencent Cloud nodejs12 can be changed. After the cloud function returns, it will not continue to execute, and the number of unbroken long connections will not increase. The actual running time of the cloud function and the long connection will not be interrupted after the cloud function returns. In short, its performance is consistent with Tencent Cloud nodejs8.
 
 **在云函数中发送网络请求**
 **Send network request in cloud function**

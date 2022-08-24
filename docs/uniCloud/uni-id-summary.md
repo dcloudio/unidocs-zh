@@ -492,6 +492,7 @@ This is a common design in the industry.
 Under traditional development, the client and server each need to do a lot of things for the token. Under the integration of uni cloud, developers don't need to worry about it, they only need to configure the token's secret and validity period in the uni-id cloud config.json. The rest of the work is handled automatically.
 
 uni-id云端会在login方法成功后自动返回token，uni-app前端框架会自动识别并保存这个token在storage中（uni_id_token），在前端每次连接uniCloud（不管是clientDB、callfunction、云对象调用），都会自动带上这个token。
+The uni-id cloud will automatically return the token after the login method is successful, and the uni-app front-end framework will automatically identify and save the token in the storage (uni_id_token), and connect to uniCloud every time in the front-end (whether it is clientDB, callfunction, cloud object call) , will automatically bring this token.
 
 云函数和云对象都提供了获取和校验token的方法，在uni-id相关业务中，校验token的代码都已经写好。
 Both cloud functions and cloud objects provide methods for obtaining and verifying tokens. In uni-id related services, the code for verifying tokens has been written.
@@ -1183,6 +1184,7 @@ Combine the following code and comments to learn how to use `uniIdRouter`
 ```
 
 以上代码，指定了登录页为首页`index`，然后将`list`页面和`detail`目录下的所有页面，设为需要登录才能访问。那么访问`list`页面和`detail`目录下的页面时，如果客户端未登录或登录状态过期（也就是uni_id_token失效），那么会自动跳转到`index`页面来登录。
+The above code specifies the login page as the home page `index`, and then sets the `list` page and all pages in the `detail` directory to require login to access. Then when accessing the `list` page and the pages in the `detail` directory, if the client is not logged in or the login status is expired (that is, the uni_id_token is invalid), it will automatically jump to the `index` page to log in.
 
 与此功能对应的有两个uniCloud客户端api，`uniCloud.onNeedLogin()`和`uniCloud.offNeedLogin()`，开发者在监听onNeedLogin事件后，框架就不再自动跳转到登录页面，而是由开发者在onNeedLogin事件内自行处理。详情参考：[uniCloud.onNeedLogin](uniCloud/client-sdk.md?id=on-need-login)
 There are two uniCloud client APIs corresponding to this function, `uniCloud.onNeedLogin()` and `uniCloud.offNeedLogin()`. After the developer listens to the onNeedLogin event, the framework will no longer automatically jump to the login page, but It is handled by the developer in the onNeedLogin event. For details, please refer to: [uniCloud.onNeedLogin](uniCloud/client-sdk.md?id=on-need-login)

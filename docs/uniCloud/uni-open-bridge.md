@@ -365,6 +365,7 @@ If you do not need to refresh `access_token`, `ticket` regularly, or access cred
 ```
 
 - 在 `weixin-mp`、`weixin-h5` 平台，通过调用 [uni-open-bridge-common](#uni-open-bridge-common) 的get相关方法可自动从微信服务器获取 [access_token](#access_token)、[encrypt_key](#encrypt_key)、[ticket](#ticket) 时需要用到配置文件中的 `appid`、`appsecret`
+- On the `weixin-mp` and `weixin-h5` platforms, the [access_token]( #access_token), [encrypt_key](#encrypt_key), [ticket](#ticket) need to use `appid`, `appsecret` in the configuration file
 - 暂时不需要配置 `weixin-web`、`weixin-app`、`qq-mp`、`qq-app`，后续支持这些平台时需要再次补充配置，但仍然可通过调用 [uni-open-bridge-common](#uni-open-bridge-common) 的方法传入设置值
 - `weixin-web`, `weixin-app`, `qq-mp`, `qq-app` do not need to be configured for the time being. When these platforms are supported in the future, the configuration needs to be supplemented again, but it can still be configured by calling [uni-open-bridge -common](#uni-open-bridge-common) method to pass in the setting value
 

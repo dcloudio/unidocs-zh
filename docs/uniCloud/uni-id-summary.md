@@ -345,7 +345,7 @@ uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则，�
 
 在传统开发下，客户端和服务器各自需要为了token做很多事情。在uni云端一体下，开发者无需操心，只需要在uni-id云端config.json中配置好token的secret和有效期即可。剩余的工作都被自动处理了。
 
-uni-id云端会在login方法成功后自动返回token，uni-app前端框架会自动识别并保存这个token在storage中（uni-id-token），在前端每次连接uniCloud（不管是clientDB、callfunction、云对象调用），都会自动带上这个token。
+uni-id云端会在login方法成功后自动返回token，uni-app前端框架会自动识别并保存这个token在storage中（uni_id_token），在前端每次连接uniCloud（不管是clientDB、callfunction、云对象调用），都会自动带上这个token。
 
 云函数和云对象都提供了获取和校验token的方法，在uni-id相关业务中，校验token的代码都已经写好。
 
@@ -818,7 +818,7 @@ uniIdRouter 是一个运行在前端的、对前端页面访问权限路由进�
 
 ```
 
-以上代码，指定了登录页为首页`index`，然后将`list`页面和`detail`目录下的所有页面，设为需要登录才能访问。那么访问`list`页面和`detail`目录下的页面时，如果客户端未登录或登录状态过期（也就是uni-id-token失效），那么会自动跳转到`index`页面来登录。
+以上代码，指定了登录页为首页`index`，然后将`list`页面和`detail`目录下的所有页面，设为需要登录才能访问。那么访问`list`页面和`detail`目录下的页面时，如果客户端未登录或登录状态过期（也就是uni_id_token失效），那么会自动跳转到`index`页面来登录。
 
 与此功能对应的有两个uniCloud客户端api，`uniCloud.onNeedLogin()`和`uniCloud.offNeedLogin()`，开发者在监听onNeedLogin事件后，框架就不再自动跳转到登录页面，而是由开发者在onNeedLogin事件内自行处理。详情参考：[uniCloud.onNeedLogin](uniCloud/client-sdk.md?id=on-need-login)
 

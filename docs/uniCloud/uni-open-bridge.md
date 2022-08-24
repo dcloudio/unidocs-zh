@@ -118,6 +118,8 @@
 
 - 微信公众号H5 `access_token` 是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。开发者需要进行妥善保存。`access_token` 的存储至少要保留512个字符空间。`access_token` 的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的 `access_token` 失效。
 
+**注意：微信公众号H5`access_token`的获取需要固定IP，需将IP白名单填入到微信公众平台。uniCloud中默认没有固定IP，获取固定IP需另见文档[固定IP](cf-functions.md#eip)**
+
 公众平台的 API 调用所需的 `access_token` 的使用及生成方式说明：
 
 1、建议公众号开发者使用中控服务器统一获取和刷新 `access_token`，其他业务逻辑服务器所使用的 `access_token` 均来自于该中控服务器，不应该各自去微信服务器刷新，否则容易造成冲突，导致 `access_token` 覆盖而影响业务；
@@ -285,6 +287,10 @@
 如果异常，请在 [uniCloud Web控制台](https://unicloud.dcloud.net.cn/)，找到云函数/云对象 `uni-open-bridge` 检查运行日志。很可能是第一步或第二步的配置出错了。
 
 当然如果不需要定时任务，可以修改云对象package.json里的定时任务配置并重新上传。或在uniCloud web控制台修改定时任务。一般不推荐修改定时任务设置。
+
+**注意**
+
+如需获取微信公众号H5平台的`access_token`，需要处理服务空间的固定出口IP问题。因为需将IP白名单填入到微信公众平台，然后才能在从微信服务器拿到该凭据。uniCloud中默认没有固定IP，获取固定IP需另见文档[固定IP](cf-functions.md#eip)
 
 ## 业务系统获取相关凭据的方法
 

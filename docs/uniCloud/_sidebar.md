@@ -76,6 +76,7 @@
   * [uni-sec-check 内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
   * [统一发行页面](uni-portal.md)
   * [uni-cloud-router](uniCloud/uni-cloud-router.md)
+  * [uni-open-bridge](uniCloud/uni-open-bridge.md)
 * [案例](uniCloud/resource.md)
 * [开发者使用反馈](uniCloud/feedback.md)
 * [DCloud行业认证服务商](https://ask.dcloud.net.cn/article/39388)

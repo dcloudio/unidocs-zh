@@ -398,6 +398,7 @@ When the client calls the cloud function, the uniIdToken is automatically added 
 ## When running the cloud object, pass the configuration running test parameters @run-obj-param
 
 > 新增于HBuilderX 3.5.6
+> Added in HBuilderX 3.5.6
 
 右键点击云对象时选择`运行-本地云对象`或`调试运行-本地云对象`时，会自动创建运行参数文件`${objName}.param.js`，可在此文件内以以下格式配置参数，配置完毕后再次运行即可。
 When right-clicking on a cloud object and selecting `Run - Local Cloud Object` or `Debug Run - Local Cloud Object`, the run parameter file `${objName}.param.js` will be automatically created, which can be configured in the following format parameters, you can run it again after the configuration is complete.
@@ -423,7 +424,9 @@ login('name-demo', 'password-demo') // 调用login方法传入参数'name-demo'�
 **Notice**
 
 - 此文件并非可执行的js文件，仅用来配置参数，因此不可在文件内定义变量并使用
+- This file is not an executable js file, it is only used to configure parameters, so variables cannot be defined in the file and used
 - 如果存在多个方法、参数配置运行时会使用第一个 -->
+- If there are multiple methods, parameter configuration runtime will use the first one -->
 
 ## 断点调试云函数
 ## Breakpoint debugging cloud function

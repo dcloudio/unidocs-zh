@@ -189,6 +189,8 @@ WeChat credentials are divided into application-level, user-level, one-time and 
 - 微信公众号H5 `access_token` 是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用 `access_token`。开发者需要进行妥善保存。`access_token` 的存储至少要保留512个字符空间。`access_token` 的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的 `access_token` 失效。
 - WeChat Official Account H5 `access_token` is the globally unique API call credential of the Official Account. The Official Account must use `access_token` when calling each API. Developers need to keep it properly. The storage of `access_token` must reserve at least 512 characters of space. The `access_token` is currently valid for 2 hours and needs to be refreshed regularly. Repeated acquisition will cause the last acquired `access_token` to be invalid.
 
+**注意：微信公众号H5`access_token`的获取需要固定IP，需将IP白名单填入到微信公众平台。uniCloud中默认没有固定IP，获取固定IP需另见文档[固定IP](cf-functions.md#eip)**
+
 公众平台的 API 调用所需的 `access_token` 的使用及生成方式说明：
 Instructions on the use and generation of `access_token` required for API calls on the public platform:
 
@@ -419,6 +421,10 @@ If abnormal, please find the cloud function/cloud object `uni-open-bridge` in th
 
 当然如果不需要定时任务，可以修改云对象package.json里的定时任务配置并重新上传。或在uniCloud web控制台修改定时任务。一般不推荐修改定时任务设置。
 Of course, if you do not need scheduled tasks, you can modify the scheduled task configuration in the cloud object package.json and upload it again. Or modify the scheduled task in the uniCloud web console. It is generally not recommended to modify the scheduled task settings.
+
+**注意**
+
+如需获取微信公众号H5平台的`access_token`，需要处理服务空间的固定出口IP问题。因为需将IP白名单填入到微信公众平台，然后才能在从微信服务器拿到该凭据。uniCloud中默认没有固定IP，获取固定IP需另见文档[固定IP](cf-functions.md#eip)
 
 ## 业务系统获取相关凭据的方法
 ## How the business system obtains the relevant credentials

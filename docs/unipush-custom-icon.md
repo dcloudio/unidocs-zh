@@ -45,7 +45,7 @@
 ### uni应用：
 + app-plus节点 --> distribute节点 --> sdkConfigs节点 --> push节点 --> igexin节点（或者unipush节点） --> icons节点 --> small节点下配置
 
-~~~
+```json
 "sdkConfigs": {
 	"push": {
 		"unipush": { 
@@ -71,7 +71,7 @@
 	}
 }
 
-~~~
+```
 
 
 

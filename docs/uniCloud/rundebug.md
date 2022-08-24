@@ -42,7 +42,7 @@
 **使用方式**
 
 - 如果没有安装本地运行插件，按照提示安装即可
-- 如需配置运行参数请参考：[配置运行测试参数](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=runparam)
+- 如需配置运行参数请参考：[配置运行测试参数](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#runparam)
 
 <div align=center>
   <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/cb5457a0-4b19-11eb-8ff1-d5dcf8779628.jpg"/>
@@ -63,7 +63,7 @@
 
 运行云函数时，如需要给云函数传参，又不想启动客户端，那么可以通过配置json文件来传测试参数。
 
-在云函数对应的目录右键可以配置运行测试参数，如下图，选择之后会生成一个形如`${函数名}.param.json`的文件，此文件内容会在云函数`上传并运行`以及`本地运行云函数`时作为参数传入云函数内。详细用法可参考：[配置运行测试参数](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=runparam)
+在云函数对应的目录右键可以配置运行测试参数，如下图，选择之后会生成一个形如`${函数名}.param.json`的文件，此文件内容会在云函数`上传并运行`以及`本地运行云函数`时作为参数传入云函数内。详细用法可参考：[配置运行测试参数](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#runparam)
 
 ## 上传并运行云函数@uploadandrun
 

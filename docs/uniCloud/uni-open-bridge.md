@@ -242,7 +242,7 @@
 }
 ```
 
-- 在 `weixin-mp`、`weixin-h5` 平台，通过调用 [uni-open-bridge-common](#uni-open-bridge-common) 的方法可自动从微信服务器获取 [access_token](#access_token)、[encrypt_key](#encrypt_key)、[user_access_token](#user_access_token)、[ticket](#ticket) 时需要用到配置文件中的 `appid`、`appsecret`
+- 在 `weixin-mp`、`weixin-h5` 平台，通过调用 [uni-open-bridge-common](#uni-open-bridge-common) 的get相关方法可自动从微信服务器获取 [access_token](#access_token)、[encrypt_key](#encrypt_key)、[ticket](#ticket) 时需要用到配置文件中的 `appid`、`appsecret`
 - 暂时不需要配置 `weixin-web`、`weixin-app`、`qq-mp`、`qq-app`，后续支持这些平台时需要再次补充配置，但仍然可通过调用 [uni-open-bridge-common](#uni-open-bridge-common) 的方法传入设置值
 
 

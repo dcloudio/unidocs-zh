@@ -138,9 +138,8 @@ Complete uni-app directory structure [details view](https://uniapp.dcloud.io/fra
 # 前端页面
 # front page
 ## 初始化
-## Initialize
-你需要在App.vue中初始化`uni-id-pages`的`init.js`文件  
-You need to initialize the `init.js` file of `uni-id-pages` in App.vue
+需要在App.vue中初始化`uni-id-pages`的`init.js`文件  
+
 示例代码如下：
 The sample code is as follows:
 ```js
@@ -222,9 +221,8 @@ export default {
 
 
 #### 调试模式@debug
-#### Debug mode @debug
-debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-co`的`getSupportedLoginType`），
-In debug mode, starting the application will automatically initiate a network request (calling `getSupportedLoginType` of `uni-id-co`),
+debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-co`的`getSupportedLoginType`）。
+
 检查：uni-id-pages客户端配置的登录方式，是否未在uniCloud服务端配置正确，否则抛出异常。
 Check: Whether the login method configured on the uni-id-pages client is not configured correctly on the uniCloud server, otherwise an exception will be thrown.
 
@@ -236,11 +234,8 @@ Check: Whether the login method configured on the uni-id-pages client is not con
 |univerify	|[一键登录](https://uniapp.dcloud.io/univerify.html)	|App 3.0.0+|
 |univerify |[One-click login](https://uniapp.dcloud.io/univerify.html) |App 3.0.0+|
 |smsCode	|短信验证码登录			||
-|smsCode |SMS verification code login ||
-|weixin		|微信登录	|App，微信小程序，H5（uni-id-pages 版本号1.0.8起支持，含微信公众号内的网页授权登录 和 普通浏览器内网页生成二维码，实现手机微信扫码登录） |
-|weixin |WeChat login |App, WeChat applet, H5 (supported from uni-id-pages version 1.0.8, including web page authorization login in WeChat official account and QR code generation for web pages in ordinary browsers, to realize mobile WeChat Scan code to log in) |
-|apple		|苹果登录[Apple登录](https://ask.dcloud.net.cn/article/36651)	| iOS13+支持，App 2.4.7+|
-|apple |Apple login [Apple login](https://ask.dcloud.net.cn/article/36651) | iOS13+ support, App 2.4.7+|
+|weixin		|微信登录	|App，微信小程序，Web（uni-id-pages 版本号1.0.8起支持） |
+|apple		|苹果登录[Apple登录](https://uniapp.dcloud.io/tutorial/app-oauth-apple)	| iOS13+支持，App 2.4.7+|
 |username	|用户名密码登录				||
 |username |Login with username and password ||
 
@@ -277,8 +272,7 @@ export default {
 }
 ```
 
-**注意：** iOS的App Store应用规则：应用若支持三方社交登录服务（如:一键登录、微信登录等），则必须同时向用户提供“以苹果账号登录”的选项。即：如果你的应用不支持三方登录，那么可以不带上苹果登录，如果你的应用支持三方登录，那必须同时把苹果登录也带上。
-**Note:** iOS App Store application rules: If the application supports three-party social login services (such as: one-click login, WeChat login, etc.), it must provide users with the option of "Login with Apple Account" at the same time. That is: if your application does not support three-way login, you can not bring Apple login, if your application supports three-way login, you must also bring Apple login.
+**注意：** iOS 的 AppStore 规则：应用若支持三方社交登录服务（如:一键登录、微信登录等），则必须同时向用户提供“以苹果账号登录”的选项。即：如果你的应用不支持三方登录，那么可以不带上苹果登录，如果你的应用支持三方登录，那必须同时把苹果登录也带上。
 
 以上配置仅开启前端登录入口，实现功能还需：
 The above configuration only opens the front-end login entry. To achieve the function, you need to:
@@ -310,14 +304,12 @@ The above configuration only opens the front-end login entry. To achieve the fun
 |login		|String	|登录（如：用户名密码登录）									|
 |login |String |Login (eg: login with username and password) |
 
-一款规范的小程序或要上架到国内应用商店app必须提供《隐私政策和用户使用协议》，参考模版：[隐私权政策模板.zip](https://ask.dcloud.net.cn/file/download/file_name-6ZqQ56eB5p2D5pS/562W5qih5p2/LnppcA==__url-Ly9pbWctY2RuLXRjLmRjbG91ZC5uZXQuY24vdXBsb2Fkcy9hcnRpY2xlLzIwMjAwMjE0LzUyMDRmMWU2Y2Q3NjcwZWE0YTJjMjBmZGRhMTBhMDdh)
-A standardized applet or an app to be listed on the domestic app store must provide the "Privacy Policy and User Agreement", reference template: [Privacy Policy Template.zip](https://ask.dcloud.net.cn/file /download/file_name-6ZqQ56eB5p2D5pS/562W5qih5p2/LnppcA==__url-Ly9pbWctY2RuLXRjLmRjbG91ZC5uZXQuY24vdXBsb2Fkcy9hcnRpY2xlLzMDIwMjAwMjE0LzUyMDRmMWU2Y2Q3NjchMTWE0)
+一款规范的小程序或App要上架到国内应用商店必须提供《隐私政策和用户使用协议》，参考模版：[隐私权政策模板.zip](https://ask.dcloud.net.cn/file/download/file_name-6ZqQ56eB5p2D5pS/562W5qih5p2/LnppcA==__url-Ly9pbWctY2RuLXRjLmRjbG91ZC5uZXQuY24vdXBsb2Fkcy9hcnRpY2xlLzIwMjAwMjE0LzUyMDRmMWU2Y2Q3NjcwZWE0YTJjMjBmZGRhMTBhMDdh)
 
 更多合规问题[详情参考](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
 More compliance issues [see details](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9% 97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
 
-推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://ask.dcloud.net.cn/article/37573)上传到[前端网页托管](hosting.md#%E7%AE%80%E4%BB%8B)获得链接
-Recommended use: HBuilderX editor, edit "Privacy Policy and User Agreement" in markdown document format, upload by right-clicking in the document [one-click sharing](https://ask.dcloud.net.cn/article/37573) Go to [Front-end web hosting](hosting.md#%E7%AE%80%E4%BB%8B) to get the link
+推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://hx.dcloud.net.cn/Tutorial/extension/markdown_share)上传到[前端网页托管](hosting.md)获得链接
 
 #### 接入各类服务（如微信登录服务）的应用id@appid
 #### Application id@appid for accessing various services (such as WeChat login service)
@@ -333,9 +325,8 @@ Recommended use: HBuilderX editor, edit "Privacy Policy and User Agreement" in m
 |&nbsp;&#124;-&nbsp;web |String |WeChat Open Platform appid</br>Source: [WeChat Open Platform](https://open.weixin.qq.com) -> Management Center -> Website Application -> Select the corresponding application name, click View -> AppID|
 
 ## 页面介绍
-## page introduction
-`uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[详情查看](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
-`uni-id-pages` includes: account registration, password-free login, avatar replacement, nickname modification, mobile phone number binding, password retrieval, account cancellation and other pages. [View details](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
+`uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[插件地址](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
+
 项目中常有打开登录页面的需求，这里对登录页面展开介绍；包括两类登录方式：
 There is often a need to open the login page in the project. Here is an introduction to the login page; there are two types of login methods:
 - 密码登录（账号密码登录），页面路径: `/uni_modules/uni-id-pages/pages/login/login-withpwd`
@@ -344,7 +335,7 @@ There is often a need to open the login page in the project. Here is an introduc
 - Password-free login (one-key login, SMS verification code login, WeChat login, Apple login), page path: `/uni_modules/uni-id-pages/pages/login/login-withoutpwd`
 
 执行`uni.navigateTo`打开登录页面，会默认使用配置中`loginTypes`值的第一项为登录方式。
-Execute `uni.navigateTo` to open the login page, the first item of the `loginTypes` value in the configuration will be used as the login method by default.
+
 例如`loginTypes`：`["weixin","apple","univerify"]`会以`weixin`，即`微信登录`为默认登录方式
 For example `loginTypes`: `["weixin","apple","univerify"]` will use `weixin`, ie `WeChat login` as the default login method
 
@@ -771,20 +762,16 @@ await uniIdCo.loginByWeixin({
 **注意**
 **Notice**
 
-- 支持的登录方式：微信小程序、微信公众号、微信App、微信PC扫码
-- Supported login methods: WeChat applet, WeChat official account, WeChat App, WeChat PC scan code
+- 支持的登录方式：微信小程序、微信公众号、App、web站微信扫码登录
 - 微信登录会自动保存用户的openid，在`uni-id-pages 1.0.8`及更高版本在存储openid时会同时存储一份以当前应用的Appid（manifest.json内的DCloud AppId）为key的openid，见下方关于openid的说明。
 - WeChat login will automatically save the user's openid. In `uni-id-pages 1.0.8` and later versions, when storing the openid, a copy of the current application's Appid (DCloud AppId in manifest.json) will be stored as the key. openid, see the description of openid below.
 - 如果有多个应用同时使用微信小程序登录，且希望用户身份不隔离请确保这些应用在微信小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
-- If there are multiple applications using WeChat applet to log in at the same time, and you want user identities not to be isolated, please ensure that these applications are owned by the same entity on the WeChat applet platform, that is, to ensure that different applications can obtain the same unionid
-- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存session_key（微信小程序登录）、access_token（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
-- `uni-id-pages 1.0.8` and above will use uni-open-bridge-common to save session_key (WeChat applet login), access_token (WeChat official account login, WeChat App login) information, but for compatibility with older versions The logic still stores a copy of the user table. For details, please refer to: [Automatically save user sessionKey, accessToken and other information](uni-id-summary.md#save-user-token)
+- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存`session_key`（微信小程序登录）、`access_token`（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
 
 **关于openid的说明**
 **Note about openid**
 
-`uni-id-pages 1.0.7`及之前的版本会将微信的openid以以下形式存储
-`uni-id-pages 1.0.7` and earlier versions will store WeChat's openid in the following format
+`uni-id-pages 1.0.7`及之前的版本会将微信的openid存为如下格式
 
 ```js
 {
@@ -795,8 +782,9 @@ await uniIdCo.loginByWeixin({
 }
 ```
 
-可以看到如果存在多个微信小程序关联同一个账号，这时候只能存储一个小程序的openid，在`uni-id-pages 1.0.8`版本对此进行了调整以Appid`__UNI_123456`为例，openid会在数据库内存储为以下形式
-It can be seen that if there are multiple WeChat mini-programs associated with the same account, only the openid of one mini-program can be stored at this time. This has been adjusted in the `uni-id-pages 1.0.8` version. Take Appid`__UNI_123456` as an example , the openid will be stored in the database as the following
+可以看到如果存在多个微信小程序应用连接一个uniCloud后台且关联同一个账号，此时只能存储一个小程序的openid。
+
+在`uni-id-pages 1.0.8`版本对此进行了调整修正，多个DCloud Appid可以对应不同的微信openid。以Appid`__UNI_123456`为例，openid会在数据库内存储为以下形式：
 
 ```js
 {
@@ -1193,8 +1181,11 @@ await uniIdCo.bindMobileByUniverify({
 #### 通过微信绑定手机号@bind-mobile-by-mp-weixin
 #### Bind mobile phone number via WeChat @bind-mobile-by-mp-weixin
 
-使用此接口时务必注意，微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。如果有效则直接使用上次存储的sessionKey即可，如果无效应重新调用login接口再次刷新sessionKey。微信小程序登录、绑定小程序微信账号时会自动更新用户的sessionKey。
-When using this interface, it must be noted that the WeChat applet rule is that the client should first use the checkSession interface to check whether the sessionKey obtained last time is still valid. If it is valid, you can directly use the sessionKey stored last time. If it is invalid, call the login interface again to refresh the sessionKey again. The user's sessionKey will be automatically updated when the WeChat applet logs in and binds the WeChat account of the applet.
+使用此接口时务必注意，微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。
+
+如果有效则直接使用上次存储的sessionKey即可，如果无效应重新调用login接口再次刷新sessionKey。
+
+微信小程序登录、绑定小程序微信账号时会自动更新用户的sessionKey。
 
 **接口形式**
 **Interface form**
@@ -2096,8 +2087,11 @@ One-click login is a solution provided by operators, which is more convenient, s
 uni-id-pages已全面支持：app、小程序、web（uni-id-pages 版本号1.0.8起），三端的微信登录。
 uni-id-pages has fully supported: app, applet, web (from uni-id-pages version 1.0.8), WeChat login on three terminals.
 
-微信将应用分为4类：`移动应用`、`网站应用`、`公众帐号`、`小程序`；
-WeChat divides applications into 4 categories: `mobile application`, `website application`, `official account`, `mini program`;
+微信将应用分为4类：
+1. 移动应用：指非微信的App，调用微信登陆。属于微信开放平台[微信开放平台账号](https://open.weixin.qq.com/)
+2. 网站应用：指微信外的浏览器网页，通过手机微信扫码等方式调用微信登录。属于微信开放平台[微信开放平台账号](https://open.weixin.qq.com/)
+3. 公众帐号：指在微信内置浏览器访问公众号H5。属于微信公众号平台[https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)
+4. 小程序：指微信内的小程序。属于微信公众号平台[https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)
 
 这里的`网站应用`和`公众帐号`都是给web应用，接入微信登录功能。但有如下区别：
 The `website application` and `official account` here are both for web applications, accessing the WeChat login function. But there are the following differences:
@@ -2111,33 +2105,27 @@ The `website application` and `official account` here are both for web applicati
 |Ordinary browser |Website application |Mobile WeChat scan code login |
 
 
-### 是否申请[微信开放平台账号](https://open.weixin.qq.com/)？
-### Do you want to apply for [WeChat Open Platform Account](https://open.weixin.qq.com/)?
+### 如何选择微信开放平台和微信公众平台
 
-如果你的应用只有微信小程序端，或者只运行在微信app内才支持登录的web端。那就无需开通`微信开放平台账号`，开通`小程序`或者`公众帐号`即可。
-If your application only has the WeChat applet, or only runs in the WeChat app, it only supports the login web side. Then you don't need to open a `WeChat Open Platform Account`, just open a `Mini Program` or an `Official Account`.
+- 如果你的应用只运行在`微信内`，不管是微信小程序还是微信公众号H5，都属于[微信公众平台](https://open.weixin.qq.com/)。
+- 如果你的应用运行在`微信外`，不管是其他App还是微信外的其他网页，都属于[微信开放平台](https://open.weixin.qq.com/)。
 
-而以下两种情况必须开通`微信开放平台账号`
-In the following two cases, you must open a `WeChat Open Platform Account`
-1. `APP端，微信授权登录`和`web端，手机微信扫码登录`，必须开通[微信开放平台账号](https://open.weixin.qq.com/)，创建`移动应用`和`网站应用`才能接入微信登录。
-1. `APP side, WeChat authorized login` and `web side, mobile WeChat scan code login`, you must open a [WeChat Open Platform Account](https://open.weixin.qq.com/), create a `mobile application` and `website application` to access WeChat login.
-2. 如果你的应用有多端，实现同一个用户在公众号、小程序、APP、官方网站等不同场景里的身份统一识别、信息同步和行为跟踪（详情参考：[“UnionID关联”功能介绍及运营建议](https://developers.weixin.qq.com/community/business/doc/00024a52cec260f09b69c704e5b00d)）就需要将`小程序`、`公众帐号`绑定到同一个`微信开放平台账号`下。
-2. If your application has multiple ends, realize unified identification, information synchronization and behavior tracking of the same user in different scenarios such as official accounts, mini programs, APPs, and official websites (for details, please refer to: ["UnionID Association" function introduction and Operation suggestion](https://developers.weixin.qq.com/community/business/doc/00024a52cec260f09b69c704e5b00d)), you need to bind `Mini Program` and `Official Account` to the same `WeChat Open Platform Account`.
-  * 绑定方式：登录[微信开放平台](https://open.weixin.qq.com/) -> `管理中心` -> 选择`公众号/小程序` -> 点击`绑定公众号/小程序`
-  * Binding method: log in to [WeChat Open Platform](https://open.weixin.qq.com/) -> `Management Center` -> select `Official Account/Mini Program` -> Click `Bind Official Account/ applet
+根据你的需求开通相应平台账户即可。
+
+**注意**
+
+如果你的应用有多端，实现同一个用户在公众号、小程序、APP、官方网站等不同场景里的身份统一识别、信息同步和行为跟踪
+（详情参考：[“UnionID关联”功能介绍及运营建议](https://developers.weixin.qq.com/community/business/doc/00024a52cec260f09b69c704e5b00d)）
+就需要将`小程序`、`公众帐号`绑定到同一个`微信开放平台账号`下。
+* 绑定方式：登录[微信开放平台](https://open.weixin.qq.com/) -> `管理中心` -> 选择`公众号/小程序` -> 点击`绑定公众号/小程序`
 
 ### 客户端配置  
-### Client configuration
-- APP端，
-- APP side,
+- APP端：
 	* 打开`manifest.json` ->`App模块配置` -> `OAuth（登录鉴权）` -> `勾选微信登录` -> 填写`appid`、`ios平台通用链接`。
 	* Open `manifest.json` -> `App module configuration` -> `OAuth (login authentication)` -> `Check WeChat login` -> fill in `appid`, `ios platform universal link`.
 	* iOS平台微信登录SDK需要配置通用链接，详情参考：[https://uniapp.dcloud.io/api/plugins/universal-links.html](https://uniapp.dcloud.io/api/plugins/universal-links.html)。
-	* For iOS platform WeChat login SDK, you need to configure universal links. For details, please refer to: [https://uniapp.dcloud.io/api/plugins/universal-links.html](https://uniapp.dcloud.io/api/plugins/ universal-links.html).
-- 小程序端，打开`manifest.json` -> `微信小程序配置` -> 填写微信小程序AppID
-- On the applet side, open `manifest.json` -> `WeChat applet configuration` -> fill in the WeChat applet AppID
-- web端，打开`/uni_modules/uni-id-pages/config.js` -> `appid` -> `weixin` 在`h5`节点配置微信公众号的appid，`web`节点配置微信开放平台创建的网站应用appid
-- On the web side, open `/uni_modules/uni-id-pages/config.js` -> `appid` -> `weixin` Configure the appid of the WeChat public account on the `h5` node, and configure the WeChat open platform creation on the `web` node web application appid
+- 小程序端：打开`manifest.json` -> `微信小程序配置` -> 填写微信小程序AppID
+- web端：打开`/uni_modules/uni-id-pages/config.js` -> `appid` -> `weixin` 在`h5`节点配置微信公众号的appid，`web`节点配置微信开放平台创建的网站应用appid
 
 ### 服务端配置  
 ### Server configuration
@@ -2156,10 +2144,10 @@ The login process is:
 3. 回到应用页面，拿到code值调用`uni-id-co`云对象的`loginByWeiXin`方法，得到`token`完成登录
 3. Go back to the application page, get the code value and call the `loginByWeiXin` method of the `uni-id-co` cloud object, and get the `token` to complete the login
 
-`appid`说明：微信app内打开的网页，为公众号的appid。其他场景则为在`微信开放平台`创建的`网站应用`的appid。  
-`appid` description: The web page opened in the WeChat app is the appid of the official account. Other scenarios are the appid of the `web application` created on the `WeChat Open Platform`.
-`redirect_uri`说明：进入授权页面后返回的网站链接，此链接的域名需要先在服务后台配置，详情查看:[回调域名的配置](#redirect_uri)
-`redirect_uri` description: The website link returned after entering the authorization page. The domain name of this link needs to be configured in the service background first. For details, see: [Configuration of the callback domain name](#redirect_uri)
+- `appid`说明：微信app内打开的网页，为公众号的appid。其他场景则为在`微信开放平台`创建的`网站应用`的appid。  
+- `redirect_uri`说明：进入授权页面后返回的网站链接，此链接的域名需要先在服务后台配置，详情查看:[回调域名的配置](#redirect_uri)
+
+示例代码已经在uni-id-pages插件中提供。
 
 #### 回调域名的配置@redirect_uri
 #### Callback domain name configuration @redirect_uri

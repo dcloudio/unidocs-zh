@@ -52,7 +52,9 @@ This central system is `uni-open-bridge`.
 1. 一个同名云对象 `uni-open-bridge`，插件下载地址：[https://ext.dcloud.net.cn/plugin?id=9002](https://ext.dcloud.net.cn/plugin?id=9002)。（其依赖了下面的公共模块，但不是一个插件）
 1. A cloud object with the same name `uni-open-bridge`, the plugin download address: [https://ext.dcloud.net.cn/plugin?id=9002](https://ext.dcloud.net.cn/ plugin?id=9002). (which depends on the public module below, but is not a plugin)
 2. 一个公共模块 `uni-open-bridge-common` ，插件下载地址：[https://ext.dcloud.net.cn/plugin?id=9177](https://ext.dcloud.net.cn/plugin?id=9177)。它独立为单独插件，是为了方便其他业务模块引用。事实上uni-id就引用了这个common插件。
+2. A public module `uni-open-bridge-common`, plugin download address: [https://ext.dcloud.net.cn/plugin?id=9177](https://ext.dcloud.net.cn /plugin?id=9177). It is an independent plug-in for the convenience of reference by other business modules. In fact, uni-id refers to this common plugin.
 3. 配套的数据库，保存这些凭据，表名为 [opendb-open-data](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-open-data/collection.json)。在redis中的key格式为 `uni-id:[dcloudAppid]:[platform]:[openid]:[access-token|user-access-token|session-key|encrypt-key-version|ticket]`
+3. The supporting database, save these credentials, the table name is [opendb-open-data](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-open-data/collection.json). The key format in redis is `uni-id:[dcloudAppid]:[platform]:[openid]:[access-token|user-access-token|session-key|encrypt-key-version|ticket]`
 
 云对象`uni-open-bridge`默认是定时运行的，在package.json中配置了每小时定时运行一次（部署到线上服务空间后生效）。
 The cloud object `uni-open-bridge` runs regularly by default, and is configured to run every hour in package.json (it will take effect after it is deployed to the online service space).
@@ -106,9 +108,13 @@ WeChat provides two systems, the public platform and the open platform.
 |Credentials |WeChat Mini Programs |WeChat Official Account H5 |Websites outside WeChat |Non-WeChat Apps|
 |:-:									|:-:					|:-:			|:-:			|:-:		|
 |[access_token](#access_token)			|定时刷新				|定时刷新		|开发者操作		|开发者操作	|
+|[access_token](#access_token) |Regular refresh |Regular refresh |Developer operation |Developer operation |
 |[user_access_token](#user_access_token)|-					|开发者操作		|-				|-			|
+|[user_access_token](#user_access_token)|- |Developer action |- |- |
 |[session_key](#session_key)			|uni-id维护或开发者操作	|-				|-				|-			|
+|[session_key](#session_key) |uni-id maintenance or developer operation |- |- |- |
 |[encrypt_key](#encrypt_key)			|[uni云端一体安全网络](secret-net)或开发者操作				|-				|-				|-			|
+|[encrypt_key](#encrypt_key) |[uni Cloud Integrated Security Network](secret-net) or developer operation |- |- |- |
 |[ticket](#ticket)						|-						|定时刷新		|-				|-			|
 |[ticket](#ticket) |- |Regular refresh |- |- |
 
@@ -118,7 +124,9 @@ WeChat provides two systems, the public platform and the open platform.
 - `Developer operation`: refers to the introduction of the public module `uni-open-bridge-common` by the developer, calling the relevant read and write [methods](#uni-open-bridge-common)
 
 - `session_key`： 如果使用了uni-id，则uni-id用户登陆时会自动读写该凭据。一般无需开发者维护。
+- `session_key`: If a uni-id is used, the uni-id user will automatically read and write the credentials when they log in. Usually no developer maintenance is required.
 - `encrypt_key` 依赖 `access_token`、`session_key`，如果依赖的值已存在，可直接读取 `encrypt_key`，如果不存在自动向微信服务器获取、开发者应该仅读取该值，如果使用了[uni云端一体安全网络](secret-net)由其维护，如果有不使用 `uni-open-bridge` 托管的[情况](#nouseuniopenbridge)，则有外部系统操作
+- `encrypt_key` depends on `access_token`, `session_key`, if the dependent value already exists, you can directly read `encrypt_key`, if it does not exist, it will be automatically obtained from the WeChat server, the developer should only read the value, if using [ uni cloud integrated security network](secret-net) is maintained by it, if there is a [case](#nouseuniopenbridge) that does not use `uni-open-bridge` hosting, there are external system operations
 - `ticket` 依赖 `access_token`，直接获取 `ticket` 会检查 `access_token`，如果不存在默认先请求微信服务器获取并保存，继续请求 `ticket`
 - `ticket` depends on `access_token`, directly obtaining `ticket` will check `access_token`, if it does not exist by default, first request the WeChat server to obtain and save it, and continue to request `ticket`
 
@@ -157,8 +165,11 @@ Tip: Auto refresh of fixed app-level credentials currently only supports `weixin
 - WeChat applet
 
 1. 客户端登陆需要保存 [session_key](#session_key)
+1. Client login needs to save [session_key](#session_key)
 2. 解密用户敏感数据需要 [access_token](#access_token)、[session_key](#session_key)，例如：获取用户授权的手机号、用户敏感资料
+2. [access_token](#access_token), [session_key](#session_key) are required to decrypt user sensitive data, for example: obtain user authorized mobile phone number, user sensitive information
 3. 解密[uni云端一体安全网络](secret-net)通道使用的加密数据需要 [access_token](#access_token)、[session_key](#session_key) 、[encrypt_key](#encrypt_key)
+3. [access_token](#access_token), [session_key](#session_key), [encrypt_key](#encrypt_key) are required to decrypt the encrypted data used by the [uni cloud integrated security network](secret-net) channel
 
 - 微信公众号
 - WeChat public account
@@ -278,6 +289,7 @@ Developers should only call `uni.login` when they clearly need to log in again, 
 WeChat will not inform the developer of the validity period of the `session_key`, and will renew the `session_key` according to the user's behavior of using the applet. The more frequently the user uses the applet, the longer the `session_key` is valid.
 
 开发者在 `session_key` 失效时，可以通过重新执行登录流程获取有效的 `session_key`。使用接口 [uni.checkSession](https://uniapp.dcloud.net.cn/api/plugins/login.html#uni-checksession) 可以校验 `session_key` 是否有效，从而避免小程序反复执行登录流程。
+When the `session_key` is invalid, the developer can obtain a valid `session_key` by re-executing the login process. Use the interface [uni.checkSession](https://uniapp.dcloud.net.cn/api/plugins/login.html#uni-checksession) to check whether the `session_key` is valid, so as to avoid the applet from repeatedly performing the login process.
 
 当开发者在实现自定义登录态时，可以考虑以 `session_key` 有效期作为自身登录态有效期，也可以实现自定义的时效性策略。
 When developers implement a custom login state, they can consider using the `session_key` validity period as the validity period of their own login state, or they can implement a custom timeliness strategy.

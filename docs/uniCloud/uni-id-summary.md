@@ -452,7 +452,7 @@ Both uni-id-co and front-end pages in uni-id-pages support these four built-in r
 |手机号+验证码						|配置`service.sms`，在开发者中心短信服务内获取配置信息：[短信服务](https://dev.dcloud.net.cn/#/pages/sms/base)											|
 |Mobile phone number + verification code |Configure `service.sms`, get configuration information in the developer center SMS service: [SMS service](https://dev.dcloud.net.cn/#/pages/sms/base) |
 |手机号一键登录						|配置`service.univerify`，在开发者中心一键登录服务内获取：[一键登录](https://dev.dcloud.net.cn/#/pages/uniLogin/index)							|
-|One-click login with mobile phone number |Configure `service.univerify` and obtain it in the one-click login service in the developer center: [One-click login](https://dev.dcloud.net.cn/#/pages/uniLogin/index ) |
+|One-click login with mobile phone number |Configure `service.univerify` and get it in the one-click login service in the developer center: [One-click login](https://dev.dcloud.net.cn/#/pages/uniLogin/index ) |
 |微信小程序登录						|配置`mp-weixin.oauth.weixin`，在微信公众平台获取：[微信公众平台](https://mp.weixin.qq.com/)																				|
 |WeChat applet login |Configure `mp-weixin.oauth.weixin` and obtain it on the WeChat public platform: [WeChat public platform](https://mp.weixin.qq.com/) |
 |微信公众号登录						|配置`web.oauth.weixin-h5`，在微信公众平台获取：[微信公众平台](https://mp.weixin.qq.com/)																						|
@@ -464,7 +464,7 @@ Both uni-id-co and front-end pages in uni-id-pages support these four built-in r
 |QQ 小程序端登录					|配置`mp-qq.oauth.qq`，在QQ开放平台获取：[QQ开放平台](https://q.qq.com/)																														|
 |QQ applet login |Configure `mp-qq.oauth.qq` and obtain it on the QQ open platform: [QQ open platform](https://q.qq.com/) |
 |QQ APP端登录							|配置`app.oauth.qq`，在QQ互联获取：[QQ互联](https://connect.qq.com/)																																|
-|QQ APP login |Configure `app.oauth.qq` and get it from QQ Internet: [QQ Internet](https://connect.qq.com/) |
+|QQ APP login |Configure `app.oauth.qq` and get it in QQ Interconnection: [QQ Interconnection](https://connect.qq.com/) |
 |支付宝小程序端登录				|配置`mp-alipay.oauth.alipay`，在支付宝开放平台获取：[支付宝开放平台](https://openhome.alipay.com/develop/manage)										|
 |Alipay applet login |Configure `mp-alipay.oauth.alipay` and obtain it on the Alipay open platform: [Alipay Open Platform](https://openhome.alipay.com/develop/manage) |
 |Apple APP端登录					|配置`app.oauth.apple`，在Apple开发者中心自行配置：[Apple开发者中心](https://developer.apple.com/account/resources/identifiers/list)|

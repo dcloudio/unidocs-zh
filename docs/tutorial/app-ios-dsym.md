@@ -36,16 +36,21 @@ Therefore, the statistical platform also requires developers to upload dsym file
 
 
 #### HBuilderX中云端打包配置生成符号表文件
+#### Cloud packaging configuration in HBuilderX generates symbol table file
 
 > HBuilderX3.5.0+版本生成iOS符号表 dsym 文件配置项调整到原生App-云打包窗口 
+> HBuilderX3.5.0+ version generates iOS symbol table dsym file configuration items are adjusted to the native App-cloud packaging window
 
 在HBuilderX中菜单项 “发行” -> “原生App-云打包” 界面勾选“生成iOS符号表（dsym）文件”：
+In HBuilderX, select "Generate iOS symbol table (dsym) file" in the menu item "Release" -> "Native App-Cloud Packaging" interface:
 
 ![](https://native-res.dcloud.net.cn/images/hx/dist/ios-dsym.png)
 
 > HBuilderX 从 3.2.23 至 3.4.18 版本 在项目的 manifest.json 可视化界面中配置生成iOS符号表 dsym 文件
+> HBuilderX from version 3.2.23 to 3.4.18 Configure the generated iOS symbol table dsym file in the manifest.json visual interface of the project
 
 在HBuilderX中打开项目的manifest.json文件，在“App常用其它设置”界面中的勾选“生成iOS符号表（dsym）文件”：
+Open the manifest.json file of the project in HBuilderX, and check the "Generate iOS Symbol Table (dsym) File" in the "App Common Other Settings" interface:
 
 ![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/ios/dsym-hx.png)
 

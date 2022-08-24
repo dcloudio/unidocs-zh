@@ -190,6 +190,7 @@ WeChat credentials are divided into application-level, user-level, one-time and 
 - WeChat Official Account H5 `access_token` is the globally unique API call credential of the Official Account. The Official Account must use `access_token` when calling each API. Developers need to keep it properly. The storage of `access_token` must reserve at least 512 characters of space. The `access_token` is currently valid for 2 hours and needs to be refreshed regularly. Repeated acquisition will cause the last acquired `access_token` to be invalid.
 
 **注意：微信公众号H5`access_token`的获取需要固定IP，需将IP白名单填入到微信公众平台。uniCloud中默认没有固定IP，获取固定IP需另见文档[固定IP](cf-functions.md#eip)**
+**Note: The acquisition of the WeChat official account H5 `access_token` requires a fixed IP, and the IP whitelist needs to be filled in the WeChat public platform. There is no fixed IP by default in uniCloud. To obtain a fixed IP, please refer to the document [Fixed IP](cf-functions.md#eip)**
 
 公众平台的 API 调用所需的 `access_token` 的使用及生成方式说明：
 Instructions on the use and generation of `access_token` required for API calls on the public platform:
@@ -423,8 +424,10 @@ If abnormal, please find the cloud function/cloud object `uni-open-bridge` in th
 Of course, if you do not need scheduled tasks, you can modify the scheduled task configuration in the cloud object package.json and upload it again. Or modify the scheduled task in the uniCloud web console. It is generally not recommended to modify the scheduled task settings.
 
 **注意**
+**Notice**
 
 如需获取微信公众号H5平台的`access_token`，需要处理服务空间的固定出口IP问题。因为需将IP白名单填入到微信公众平台，然后才能在从微信服务器拿到该凭据。uniCloud中默认没有固定IP，获取固定IP需另见文档[固定IP](cf-functions.md#eip)
+If you want to obtain the `access_token` of the WeChat official account H5 platform, you need to deal with the fixed export IP of the service space. Because the IP whitelist needs to be filled in the WeChat public platform, and then the credentials can be obtained from the WeChat server. There is no fixed IP by default in uniCloud. To obtain a fixed IP, please refer to the document [Fixed IP](cf-functions.md#eip)
 
 ## 业务系统获取相关凭据的方法
 ## How the business system obtains the relevant credentials

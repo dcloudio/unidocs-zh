@@ -1734,7 +1734,7 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 - 如果提供了至少两个参数，其余的参数均会默认设置为 1（如果没有指定 day 参数）或者 0（如果没有指定 day 以外的参数）。
 - If at least two parameters are provided, the remaining parameters will default to 1 (if no day parameter is specified) or 0 (if no parameter other than day is specified).
 - uts 的时间由世界标准时间（UTC）1970 年 1 月 1 日开始，用毫秒计时，一天由 86,400,000 毫秒组成。Date 对象的范围是 -100,000,000 天至 100,000,000 天（等效的毫秒值）。
-- The time in uts is counted in milliseconds from January 1, 1970 UTC, and a day consists of 86,400,000 milliseconds. Date objects range from -100,000,000 days to 100,000,000 days (equivalent to millisecond values).
+- The time in uts is measured in milliseconds from January 1, 1970 UTC, and a day consists of 86,400,000 milliseconds. Date objects range from -100,000,000 days to 100,000,000 days (equivalent to millisecond values).
 - 
 ##### 静态方法
 ##### static methods

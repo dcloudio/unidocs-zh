@@ -10,6 +10,10 @@ uts is a cross-platform, high-performance, strongly-typed modern programming lan
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。因此前端工程师可以快速的掌握 uts 开发
 uts adopts the same syntax specification as ts and supports most ES6 APIs. Therefore, front-end engineers can quickly master uts development
 
+**学习 uts 基础知识**
+
+如果你已熟悉一门或多门编程语言并想学习 uts，请从这些 uts 学习资料开始。
+
 ## 快速入门
 ## Quick start
 ### 基本语法
@@ -45,6 +49,12 @@ str = "hello world"; // 重新赋值
 const str = "hello"; // 声明一个字符串变量
 str = "hello world"; // 报错，不允许重新赋值
 ```
+
+注意事项：
+
+1. 当前 uts 并未限制使用 var 来声明变量，但当使用 var 来声明变量时需要注意不同平台差异
+-  编译至 JavaScript 平台时，等同于 JavaScript 平台的 var （存在变量提升现象）
+-  编译至 Kotlin 平台时，等同于 Kotlin 平台的 var（允许重新赋值）
 
 #### 变量
 #### variables
@@ -1259,7 +1269,7 @@ test.test()
 ```
 
 ### 内置对象
-### Built-in objects
+
 #### Array
 
 Array 对象是用于构造数组的全局对象，数组是类似于列表的高阶对象。
@@ -1273,128 +1283,305 @@ Array objects are global objects used to construct arrays, which are higher-orde
 数组中的元素个数
 the number of elements in the array
 
+```ts
+const clothing = ['shoes', 'shirts', 'socks', 'sweaters'];
+console.log(clothing.length);
+// expected output: 4
+```
+
 ##### 实例方法
 ##### Instance Methods
 
 ###### concat
 
-用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组
-Used to combine two or more arrays. This method does not change the existing array but returns a new array
+concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+
+```ts
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+console.log(array3);
+// expected output: Array ["a", "b", "c", "d", "e", "f"]
+```
 
 ###### copyWithin
 
-浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度
-Shallow copy part of an array to another location in the same array and return it without changing the length of the original array
+copyWithin() 方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。
+
+```ts
+const array1 = ['a', 'b', 'c', 'd', 'e'];
+// copy to index 0 the element at index 3
+console.log(array1.copyWithin(0, 3, 4));
+// expected output: Array ["d", "b", "c", "d", "e"]
+// copy to index 1 all elements from index 3 to the end
+console.log(array1.copyWithin(1, 3));
+// expected output: Array ["d", "d", "e", "d", "e"]
+```
 
 ###### every
 
-测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值
-Tests whether all elements in an array pass the test of a specified function. it returns a boolean
+every() 方法测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。
+
+```ts
+const isBelowThreshold = (currentValue:number):boolean => currentValue < 40;
+const array1 = [1, 30, 39, 29, 10, 13];
+console.log(array1.every(isBelowThreshold));
+// expected output: true
+```
 
 ###### fill
 
-用一个固定值填充一个数组中从起始索引到终止索引内的全部元素
-Fills all elements from the start index to the end index in an array with a fixed value
+fill() 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。
 
+```ts
+const array1 = [1, 2, 3, 4];
+
+// fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// expected output: [1, 2, 0, 0]
+
+// fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// expected output: [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// expected output: [6, 6, 6, 6]
+
+```
 ###### filter
 
-创建一个新数组，其包含通过所提供函数实现的测试的所有元素
-Creates a new array containing all elements of the test implemented by the provided function
+filter() 方法创建一个新数组，其包含通过所提供函数实现的测试的所有元素。
 
+```ts
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter((word:string):boolean => word.length > 6);
+
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+
+```
 ###### find
 
-返回数组中满足提供的测试函数的第一个元素的值
-Returns the value of the first element in the array that satisfies the provided test function
+find() 方法返回数组中满足提供的测试函数的第一个元素的值。
+
+```ts
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find((element:number):boolean => element > 10);
+
+console.log(found);
+// expected output: 12
+
+```
 
 ###### findIndex
 
-返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回 -1
-Returns the index of the first element in the array that satisfies the provided test function. Returns -1 if the corresponding element is not found
+findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回-1。
+
+```ts
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element:number):boolean => element > 13;
+
+console.log(array1.findIndex(isLargeNumber));
+// expected output: 3
+
+```
 
 ###### flat
 
-按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回
-Recursively traverses the array at a specified depth and returns all elements and elements of the traversed subarrays into a new array
+flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
 
-###### flatMap
+```ts
+const arr1 = [0, 1, 2, [3, 4]];
 
-使用映射函数映射每个元素，然后将结果压缩成一个新数组
-Map each element using a map function, then compress the result into a new array
+console.log(arr1.flat());
+// expected output: [0, 1, 2, 3, 4]
+
+const arr2 = [0, 1, 2, [[[3, 4]]]];
+
+console.log(arr2.flat(2));
+// expected output: [0, 1, 2, [3, 4]]
+```
 
 ###### forEach
 
-对数组的每个元素执行一次给定的函数
-Executes the given function once for each element of the array
+forEach() 方法对数组的每个元素执行一次给定的函数。
+
+```ts
+const array1 = ['a', 'b', 'c'];
+array1.forEach(element => console.log(element));
+// expected output: "a"
+// expected output: "b"
+// expected output: "c"
+```
 
 ###### includes
 
-判断一个数组是否包含一个指定的值，如果包含则返回 true，否则返回 false
-Checks whether an array contains a specified value, returns true if it does, false otherwise
+includes() 方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回 false。
+
+```ts
+const array1 = [1, 2, 3];
+
+console.log(array1.includes(2));
+// expected output: true
+
+const pets = ['cat', 'dog', 'bat'];
+
+console.log(pets.includes('cat'));
+// expected output: true
+
+console.log(pets.includes('at'));
+// expected output: false
+
+```
 
 ###### indexOf
 
-返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回 -1
-Returns the first index in the array at which a given element can be found, or -1 if it does not exist
+indexOf() 方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。
+
+```ts
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+console.log(beasts.indexOf('bison'));
+// expected output: 1
+
+// start from index 2
+console.log(beasts.indexOf('bison', 2));
+// expected output: 4
+
+console.log(beasts.indexOf('giraffe'));
+// expected output: -1
+
+```
 
 ###### join
 
-将一个数组的所有元素连接成一个字符串并返回这个字符串
-Concatenates all elements of an array into a string and returns the string
+join() 方法将一个数组的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。
+
+```ts
+const elements = ['Fire', 'Air', 'Water'];
+
+console.log(elements.join());
+// expected output: "Fire,Air,Water"
+
+console.log(elements.join(''));
+// expected output: "FireAirWater"
+
+console.log(elements.join('-'));
+// expected output: "Fire-Air-Water"
+
+```
 
 ###### lastIndexOf
 
-返回指定元素在数组中的最后一个的索引，如果不存在则返回 -1
-Returns the index of the last element in the array for the specified element, or -1 if it does not exist
+lastIndexOf() 方法返回指定元素在数组中的最后一个的索引，如果不存在则返回 -1。从数组的后面向前查找，从 fromIndex 处开始。
 
+```ts
+const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
+
+console.log(animals.lastIndexOf('Dodo'));
+// expected output: 3
+
+console.log(animals.lastIndexOf('Tiger'));
+// expected output: 1
+
+```
 ###### map
 
-返回一个新数组，其结果是该数组中的每个元素是调用一次提供的函数后的返回值
-Returns a new array whose result is that each element in the array is the return value after calling the provided function once
+map() 方法创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。
+
+```ts
+const array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.map((x:number):number => x * 2);
+
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]
+
+```
 
 ###### pop
 
-从数组中删除最后一个元素，并返回该元素的值
-Remove the last element from the array and return the value of that element
+pop() 方法从数组中删除最后一个元素，并返回该元素的值。此方法会更改数组的长度。
+
+```ts
+const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+console.log(plants.pop());
+// expected output: "tomato"
+
+console.log(plants);
+// expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+plants.pop();
+
+console.log(plants);
+// expected output: Array ["broccoli", "cauliflower", "cabbage"]
+
+```
 
 ###### push
 
-将一个或多个元素添加到数组的末尾，并返回该数组的新长度
-Adds one or more elements to the end of an array and returns the new length of the array
+push() 方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度。
+
+```ts
+const animals = ['pigs', 'goats', 'sheep'];
+
+const count = animals.push('cows');
+console.log(count);
+// expected output: 4
+console.log(animals);
+// expected output: Array ["pigs", "goats", "sheep", "cows"]
+
+animals.push('chickens', 'cats', 'dogs');
+console.log(animals);
+// expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+
+```
 
 ###### reduce
 
-对数组中的每个元素执行一个由您提供的 reducer 函数（升序执行），将其结果汇总为单个返回值
-Executes a reducer function (executed in ascending order) provided by you on each element in the array, aggregating its results into a single return value
+reduce() 方法对数组中的每个元素按序执行一个由您提供的 reducer 函数，每一次运行 reducer 会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。
 
-###### reduceRight
+第一次执行回调函数时，不存在“上一次的计算结果”。如果需要回调函数从数组索引为 0 的元素开始执行，则需要传递初始值。否则，数组索引为 0 的元素将被作为初始值 initialValue，迭代器将从第二个元素开始执行（索引为 1 而不是 0）。
 
-接受一个函数作为累加器（accumulator）和数组的每个值（从右到左）将其减少为单个值
-Takes a function as an accumulator and each value of the array (from right to left) reduces it to a single value
+```ts
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (previousValue:number, currentValue:number):number => previousValue + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+// expected output: 10
+
+```
 
 ###### shift
 
-从数组中删除第一个元素，并返回该元素的值
-Remove the first element from the array and return the value of that element
+shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。
 
 ###### slice
 
-提取源数组的一部分并返回一个新数组
-Extract a portion of the source array and return a new array
+slice() 方法返回一个新的数组对象，这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）。原始数组不会被改变。
 
 ###### some
 
-测试数组中是不是至少有一个元素通过了被提供的函数测试
-Tests whether at least one element in the array passes the provided function test
+some() 方法测试数组中是不是至少有 1 个元素通过了被提供的函数测试。它返回的是一个 Boolean 类型的值。
 
 ###### splice
 
-通过删除或替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容
-Modify the array by removing or replacing existing elements or adding new elements in place, and return the modified contents as an array
+splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容。此方法会改变原数组。
 
 ###### unshift
 
-将一个或多个元素添加到数组的头部，并返回该数组的新长度
-Adds one or more elements to the head of an array and returns the new length of the array
+unshift() 方法将一个或多个元素添加到数组的开头，并返回该数组的新长度（该方法修改原有数组）。
 
 ##### 常见操作
 ##### Common operations
@@ -1499,12 +1686,304 @@ console.log(arr.0) // a syntax error
 ```
 
 #### Date
+
+创建一个 Date 实例，该实例呈现时间中的某个时刻。Date 对象则基于 Unix Time Stamp，即自 1970 年 1 月 1 日（UTC）起经过的毫秒数。
+
+##### 语法
+
+```ts
+new Date();
+new Date(value);
+new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
+```
+
+- 如果没有输入任何参数，则 Date 的构造器会依据系统设置的当前时间来创建一个 Date 对象。
+- 如果提供了至少两个参数，其余的参数均会默认设置为 1（如果没有指定 day 参数）或者 0（如果没有指定 day 以外的参数）。
+- uts 的时间由世界标准时间（UTC）1970 年 1 月 1 日开始，用毫秒计时，一天由 86,400,000 毫秒组成。Date 对象的范围是 -100,000,000 天至 100,000,000 天（等效的毫秒值）。
+- 
+##### 静态方法
+###### now
+
+表示自 UNIX 纪元开始（1970 年 1 月 1 日 00:00:00 (UTC)）到当前时间的毫秒数。
+
+```ts
+// this example takes 2 seconds to run
+const start = Date.now()
+console.log('starting timer...')
+// expected output: starting timer...
+setTimeout(() => {
+  const millis = Date.now() - start
+  console.log(`seconds elapsed = ${Math.floor(millis / 1000)}`)
+  // expected output: seconds elapsed = 2
+}, 2000)
+```
+
+##### 实例方法
+
+###### getDate
+
+根据本地时间，返回一个指定的日期对象为一个月中的哪一日（从 1--31）。
+
+###### getDay
+
+根据本地时间，返回一个具体日期中一周的第几天，0 表示星期天。对于某个月中的第几天
+
+###### getFullYear
+
+根据本地时间返回指定日期的年份。
+
+###### getHours
+
+根据本地时间，返回一个指定的日期对象的小时。
+
+###### getMilliseconds
+
+根据本地时间，返回一个指定的日期对象的毫秒数。
+
+###### getMinutes
+
+根据本地时间，返回一个指定的日期对象的分钟数。
+
+###### getMonth
+
+指定的日期对象的月份，为基于 0 的值（0 表示一年中的第一月）。
+
+###### getSeconds
+
+根据本地时间，返回一个指定的日期对象的秒数。
+
+###### getTime
+
+返回一个时间的格林威治时间数值。
+
+###### setDate
+
+根据本地时间来指定一个日期对象的天数。
+
+###### setFullYear
+
+根据本地时间为一个日期对象设置年份。
+
+###### setHours
+
+根据本地时间为一个日期对象设置小时数，返回从 1970-01-01 00:00:00 UTC 到更新后的 日期 对象实例所表示时间的毫秒数。
+
+###### setMilliseconds
+
+根据本地时间设置一个日期对象的豪秒数。
+
+###### setMinutes
+
+根据本地时间为一个日期对象设置分钟数。
+
+###### setMonth
+
+根据本地时间为一个日期对象设置月份。
+
+###### setSeconds
+
+根据本地时间设置一个日期对象的秒数。
+
+###### setTime
+
+以一个表示从 1970-1-1 00:00:00 UTC 计时的毫秒数为来为 Date 对象设置时间。
+
+
 #### Error
+
+当运行时错误产生时，Error 对象会被抛出。Error 对象也可用于用户自定义的异常的基础对象。
+
+##### 实例属性
+
+###### message
+错误消息。对于用户创建的 Error 对象，这是构造函数的第一个参数提供的字符串。
+
+##### 示例
+
+```ts
+try {
+  throw new Error('Whoops!')
+} catch (e) {
+  console.error(e.name + ': ' + e.message)
+}
+```
+
 #### JSON
+
+##### 静态方法
+
+###### parse
+
+JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的 UTSJSONObject。
+
+```ts
+const json = `{"result":true, "count":42}`;
+const obj = JSON.parse(json);
+
+console.log(obj["count"]);
+// expected output: 42
+
+console.log(obj["result"]);
+// expected output: true
+```
+
+###### stringify
+
+JSON.stringify() 方法将一个 uts 对象或值转换为 JSON 字符串
+
+```ts
+console.log(JSON.stringify({ x: 5, y: 6 }));
+// expected output: "{"x":5,"y":6}"
+
+console.log(JSON.stringify([3, 'false', boolean]));
+// expected output: "[3,"false",false]"
+
+console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
+// expected output: ""2006-01-02T15:04:05.000Z""
+
+```
 #### Map
-#### Promise
-#### RegExp
+
+Map 对象保存键值对。任何值（对象或者基本类型）都可以作为一个键或一个值。
+
+##### 实例属性
+
+###### size
+
+返回 Map 对象的成员数量。
+
+```ts
+const map1 = new Map<string,string>();
+map1.set('a', 'alpha');
+map1.set('b', 'beta');
+map1.set('g', 'gamma');
+console.log(map1.size);
+// expected output: 3
+
+```
+
+##### 实例方法
+
+###### clear
+
+移除 Map 对象中的所有元素。
+
+```ts
+const map1 = new Map<string,string>();
+map1.set('bar', 'baz');
+map1.set(1, 'foo');
+console.log(map1.size);
+// expected output: 2
+map1.clear();
+console.log(map1.size);
+// expected output: 0
+```
+
+####### delete
+
+用于移除 Map 对象中指定的元素。
+
+```ts
+const map1 = new Map<string,string>();
+map1.set('bar', 'foo');
+console.log(map1.delete('bar'));
+// expected result: true
+// (true indicates successful removal)
+console.log(map1.has('bar'));
+// expected result: false
+```
+
+###### get
+
+返回某个 Map 对象中的一个指定元素。
+
+###### has
+
+返回一个布尔值，用来表明 Map 中是否存在指定元素。
+
+###### set
+
+添加或更新一个指定了键（key）和值（value）的（新）键值对。
+
 #### Set
+
+Set 对象是值的集合，你可以按照插入的顺序迭代它的元素。Set 中的元素只会出现一次，即 Set 中的元素是唯一的。
+
+
+##### 实例属性
+
+###### size
+
+返回 Set 对象中元素的个数。
+
+```ts
+const set1 = new Set<Any>();
+
+set1.add(42);
+set1.add('forty two');
+set1.add('forty two');
+
+console.log(set1.size);
+// expected output: 2
+```
+
+##### 实例方法
+
+###### add
+
+add() 方法用来向一个 Set 对象的末尾添加一个指定的值。
+
+```ts
+const set1 = new Set<number>();
+set1.add(42);
+set1.add(42);
+set1.add(13);
+set1.forEach((item)=>{
+  console.log(item);
+  // expected output: 42
+  // expected output: 13  
+})
+```
+###### clear
+
+clear() 方法用来清空一个 Set 对象中的所有元素。
+
+```ts
+const set1 = new Set<any>();
+set1.add(1);
+set1.add('foo');
+console.log(set1.size);
+// expected output: 2
+set1.clear();
+console.log(set1.size);
+// expected output: 0
+```
+
+####### delete
+
+delete() 方法可以从一个 Set 对象中删除指定的元素。
+
+```ts
+const map1 = new Map<string,string>();
+map1.set('bar', 'foo');
+console.log(map1.delete('bar'));
+// expected result: true
+// (true indicates successful removal)
+console.log(map1.has('bar'));
+// expected result: false
+```
+
+###### forEach
+
+forEach 方法会根据集合中元素的插入顺序，依次执行提供的回调函数。
+
+###### has
+
+has() 方法返回一个布尔值来指示对应的值 value 是否存在 Set 对象中。
+
+## 开发指南
+
+### 使用 uts 开发 uni-app 原生插件
 
 ## 学习资料
 ## Learning materials

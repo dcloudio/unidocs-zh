@@ -54,7 +54,7 @@ Cloud functions have several sub-concepts, including common cloud functions, clo
 - action云函数：为了弥补clientDB客户端直接操作数据库的局限而设计的，详见[clientDB action文档](/uniCloud/clientdb?id=action)
 - action cloud function: designed to make up for the limitation of clientDB client directly operating the database, see [clientDB action document](/uniCloud/clientdb?id=action)
 - uniCloud扩展库：为了裁剪和控制云函数体积而设计的，一些不太常用的功能比如Redis，独立为扩展库，避免增大每个云函数的体积，详见[uniCloud扩展库](/uniCloud/cf-functions?id=扩展库)
-- uniCloud extension library: designed to cut and control the volume of cloud functions. Some less commonly used functions, such as Redis, are independent extension libraries to avoid increasing the size of each cloud function. For details, see [uniCloud extension library](/uniCloud /cf-functions?id=%E6%89%A9%E5%B1%95%E5%BA%93)
+- uniCloud extension library: designed to cut and control the volume of cloud functions. Some less commonly used functions such as Redis are independently extended libraries to avoid increasing the size of each cloud function. For details, see [uniCloud extension library](/uniCloud /cf-functions?id=%E6%89%A9%E5%B1%95%E5%BA%93)
 
 HBuilderX中uniCloud项目的云函数均在项目的`uniCloud/cloudfunctions`目录下，目录结构如下：
 The cloud functions of the uniCloud project in HBuilderX are all in the `uniCloud/cloudfunctions` directory of the project. The directory structure is as follows:
@@ -309,7 +309,7 @@ The data format returned by the uniCloud server to the client is generally json,
 Without a unified format, it will be impossible to write effective network interceptors on the client side and handle errors uniformly.
 
 另外，如果不同的插件，云端返回的数据格式千差万别，那使用者整合这些插件也会非常麻烦。国际化更无法落地。
-In addition, if different plug-ins return different data formats from the cloud, it will be very troublesome for users to integrate these plug-ins. Internationalization is even more incapable of landing.
+In addition, if the data formats returned by different plug-ins vary widely, it will be very troublesome for users to integrate these plug-ins. Internationalization is even more incapable of landing.
 
 为此DCloud推出了`uniCloud响应体规范`。
 To this end, DCloud introduced the `uniCloud response body specification`.
@@ -412,7 +412,7 @@ In addition to the standard API, the `uniCloud` object is built into the cloud f
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.sendSms() | To send SMS, you need to add an extension library [see details](uniCloud/send-sms.md) |
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
-|uniCloud.getPhoneNumber() |To get the phone number for one-click login, you need to add an extension library [see details](uniCloud/univerify.md?id=cloud) |
+|uniCloud.getPhoneNumber() | To get the one-click login phone number, you need to add an extension library [see details](uniCloud/univerify.md?id=cloud) |
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.init() |Get the uniCloud instance of the specified service space [see details](uniCloud/concepts/space.md?id=multi-space) |
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
@@ -430,7 +430,7 @@ In addition to the standard API, the `uniCloud` object is built into the cloud f
 ## Error object @uni-cloud-error
 
 云函数调用uniCloud接口时（包括请求云函数、云对象、云存储等）可能存在抛出错误的场景，此时会抛出uniCloud标准的错误对象（以下记为uniCloudError），uniCloudError包含以下属性
-When a cloud function calls the uniCloud interface (including requesting cloud functions, cloud objects, cloud storage, etc.), an error may be thrown. In this case, an uniCloud standard error object (referred to as uniCloudError hereinafter) may be thrown, and uniCloudError contains the following attributes
+When a cloud function calls the uniCloud interface (including requesting cloud functions, cloud objects, cloud storage, etc.), an error may be thrown. In this case, an uniCloud standard error object (hereinafter referred to as uniCloudError) will be thrown. uniCloudError contains the following attributes
 
 |属性		|类型	|必备	|说明												|
 |property |type |required |description |
@@ -626,7 +626,7 @@ exports.main = async (event, context) => {
 ### Get request id list @get-request-list
 
 非单实例多并发场景下列表长度为1，仅有的一个requestId表示当前请求的requestId。单实例多并发场景下会返回正在处理的所有请求的requestId列表。如需获取当前请求的requestId参考：[云函数context](cf-callfunction.md#context)、[云对象获取当前请求的requestId](cloud-obj.md#get-request-id)
-In a non-single-instance-multiple-concurrency scenario, the list length is 1, and the only requestId is the requestId of the current request. In a single-instance-multiple-concurrency scenario, the requestId list of all requests being processed will be returned. To get the requestId of the current request: [cloud function context](cf-callfunction.md#context), [cloud object to get the requestId of the current request](cloud-obj.md#get-request-id)
+In a non-single-instance-multiple-concurrency scenario, the list length is 1, and the only requestId is the requestId of the current request. In a single-instance-multiple-concurrency scenario, the requestId list of all requests being processed will be returned. To get the requestId reference of the current request: [cloud function context](cf-callfunction.md#context), [cloud object to get the requestId of the current request](cloud-obj.md#get-request-id)
 
 **示例**
 **Example**
@@ -666,7 +666,7 @@ In addition to the fields returned by `getSystemInfo`, the following information
 |clientIP	|string	|客户端ip																																																																			|
 |clientIP |string |client ip |
 |userAgent|string	|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua|
-|userAgent|string |Client ua, note that the client getSystemInfoSync in a non-local operating environment will also get the ua parameter and upload it to the cloud object, but the cloud object will get ua from the http request header instead of ua| in clientInfo
+|userAgent|string |Client ua, note that the client getSystemInfoSync will also get the ua parameter and upload it to the cloud object in a non-local operating environment, but the cloud object will get ua from the http request header instead of ua| in clientInfo
 |source		|string	|调用来源，返回值见下。																																																												|
 |source |string |The source of the call, the return value is shown below. |
 |scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.md#getlaunchoptionssync)返回的scene参数，													|
@@ -697,7 +697,7 @@ Cloud function call source, its value range is:
 - 除了clientIP外，其他客户端信息只有使用uni-app客户端以callFunction或者importObject方式访问云函数或云对象时才有
 - Except for clientIP, other client information is only available when using the uni-app client to access cloud functions or cloud objects in callFunction or importObject mode
 - 云对象与云函数内获取客户端platform稍有不同，云函数未拉齐vue2、vue3版本app平台的platform值，vue2为`app-plus`，vue3为`app`。云对象无论客户端是vue2还是vue3，在app平台获取的platform均为`app`。这一点在使用uni-id时需要特别注意，详情见：[uni-id文档 preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
-- The cloud object is slightly different from the client platform obtained in the cloud function. The cloud function does not match the platform value of the app platform of the vue2 and vue3 versions, vue2 is `app-plus`, and vue3 is `app`. Regardless of whether the client is vue2 or vue3, the platform obtained from the app platform is `app`. This point needs special attention when using uni-id. For details, see: [uni-id document preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
+- The cloud object is slightly different from the client platform obtained in the cloud function. The cloud function does not match the platform value of the app platform of the vue2 and vue3 versions. The vue2 is `app-plus`, and the vue3 is `app`. Regardless of whether the client is vue2 or vue3, the platform obtained from the app platform is `app`. This point needs special attention when using uni-id. For details, see: [uni-id document preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
 
 ### 获取云端信息@get-cloud-infos
 ### Get cloud information @get-cloud-infos
@@ -868,7 +868,7 @@ Before the `HBuilderX 3.4.0` version, right-click the cloud function in the loca
 In addition to calling tripartite cloud functions, cloud functions can in fact call themselves recursively.
 
 当一个云函数实例的资源不能满足需求，或超时时间不够用时。比如要给10万个用户发送短信，而短信发送接口一次调用最多支持50个手机号码，这样最少需要调用2000次接口才能完成；而一个云函数实例完成不了2000次接口的调用。这种场景就可以使用云函数递归调用，分解任务实现。
-When the resources of a cloud function instance cannot meet the demand, or the timeout period is not enough. For example, to send SMS messages to 100,000 users, and the SMS sending interface supports a maximum of 50 mobile phone numbers at a time, so at least 2,000 API calls are required to complete it; however, a cloud function instance cannot complete 2,000 API calls. In this scenario, cloud function recursive calls can be used to decompose tasks for implementation.
+When the resources of a cloud function instance cannot meet the demand, or the timeout period is not enough. For example, to send SMS messages to 100,000 users, the SMS sending interface supports up to 50 mobile phone numbers in one call, so at least 2,000 API calls are required to complete it; however, one cloud function instance cannot complete 2,000 API calls. In this scenario, cloud function recursive calls can be used to decompose tasks for implementation.
 
 示例代码如下：
 The sample code is as follows:
@@ -1077,7 +1077,7 @@ Both cloud vendors are still optimizing for the cold start problem. The current 
 Because of the difference between hot and cold start, the global variables in cloud functions may be different every time. That is, cloud functions are stateless.
 
 以如下代码为例，`count`作为全局变量，当多次调用该云函数时，可能会出现变量累加的情况（实例未复用时，每次返回0，若实例被复用，则可能返回1、2、3等各种意外情况）。所以不要这么使用。
-Take the following code as an example, `count` is used as a global variable. When the cloud function is called multiple times, variables may accumulate (when the instance is not reused, it returns 0 each time, and if the instance is reused, it may return 1, 2, 3 and other unexpected situations). So don't use it like that.
+Taking the following code as an example, `count` is used as a global variable. When the cloud function is called multiple times, variables may accumulate (when the instance is not reused, it returns 0 each time, and if the instance is reused, it may return 1, 2, 3 and other unexpected situations). So don't use it like that.
 
 
 ```javascript
@@ -1258,7 +1258,7 @@ Proxy server IP list
 ```
 
 如需在获取微信公众号access_token场景使用，请将上述ip配置到`微信公众平台 -> 基本配置 -> IP白名单`内，相关链接：[微信公众平台](https://mp.weixin.qq.com/)
-If you want to use it in the scenario of obtaining WeChat official account access_token, please configure the above IP to `WeChat official platform -> Basic configuration -> IP whitelist`, related link: [WeChat official platform](https://mp.weixin. qq.com/)
+If you want to use it in the scenario of obtaining WeChat official account access_token, please configure the above IP to `WeChat Official Platform -> Basic Configuration -> IP Whitelist`, related link: [WeChat Official Platform](https://mp.weixin. qq.com/)
 
 ##### 发送Get请求@http-proxy-get
 ##### Send Get request @http-proxy-get
@@ -1401,9 +1401,9 @@ You can configure the concurrency of a single instance on the cloud function det
 - 云函数内存使用量会随着并发量增大而增加
 - Cloud function memory usage will increase as the concurrency increases
 - 如果并发的不同请求对全局变量同时进行读写会污染全局变量，可能会导致意想不到的后果，开启单实例多并发后请不要编写修改全局变量的代码，除非你熟悉这种技术带来的特殊应用，比如下文进阶部分提到的ip过滤。
-- If different concurrent requests read and write global variables at the same time, it will pollute the global variables, which may lead to unintended consequences. After enabling single-instance multi-concurrency, please do not write code that modifies global variables unless you are familiar with the technology. Special applications, such as ip filtering mentioned in the advanced section below.
+- If concurrent different requests read and write global variables at the same time, it will pollute the global variables, which may lead to unintended consequences. Please do not write code that modifies global variables after enabling single-instance multi-concurrency, unless you are familiar with this technology. Special applications, such as ip filtering mentioned in the advanced section below.
 - 设置过大的单实例多并发可能会导致实例底层网络请求排队从而导致请求超时，**再次强调此项，一般情况下不要设置过大的并发度，具体数值可以自己针对业务代码测试一下**
-- Setting too large a single instance with multiple concurrency may lead to queuing of the underlying network requests of the instance and cause the request to time out. **Emphasizing this again, in general, do not set too large concurrency, the specific value can be tested for the business code by yourself* *
+- Setting too large a single instance with multiple concurrency may lead to queuing of the underlying network requests of the instance and cause the request to time out. **This item is emphasized again. In general, do not set too large concurrency. The specific value can be tested for the business code by yourself* *
 
 **适用场景**
 **Applicable scene**
@@ -1456,7 +1456,7 @@ exports.main = async function(event, context) {
 The reuse of global variables after enabling single-instance multi-concurrency is not necessarily a bad result. If you understand this behavior well, you can also use it effectively.
 
 例：[ip-filter](https://ext.dcloud.net.cn/plugin?id=4619)中就利用云函数全局缓存一些ip访问信息来限制单ip访问频率，可以下载示例项目体验一下
-For example: [ip-filter](https://ext.dcloud.net.cn/plugin?id=4619) uses cloud functions to globally cache some ip access information to limit the frequency of single ip access. You can download the sample project to experience
+Example: [ip-filter](https://ext.dcloud.net.cn/plugin?id=4619) uses cloud functions to globally cache some ip access information to limit the frequency of single ip access. You can download the sample project to experience
 
 
 ## 云函数package.json@packagejson
@@ -1616,7 +1616,7 @@ If you need to continue execution after return, you need to disconnect the redis
 **If you do not follow the above instructions, the redis connection will always occupy the cloud function instance, causing the cloud vendor to continuously calculate the execution time of the cloud function, which may consume a large amount of cloud resources and incur additional costs**
 
 **务必确定自己已理解此文档内容，因未按照文档说明使用导致的额外计费DCloud不承担任何责任**
-**Be sure to make sure you understand the content of this document, DCloud is not responsible for any additional billing caused by not using it according to the documentation**
+**Be sure to make sure you understand the content of this document, DCloud does not take any responsibility for additional billing caused by not using it according to the documentation**
 
 ### 注意事项
 ### Precautions

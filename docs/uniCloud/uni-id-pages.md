@@ -167,17 +167,16 @@ The sample code is as follows:
 路径：`/uni_modules/uni-id-pages/config.js`
 Path: `/uni_modules/uni-id-pages/config.js`
 
-|字段	|类型	|描述		|
-|Field |Type |Description |
-|--			|--		|--			|
-|debug		|Boolean|调试模式[详情](#debug)|
-|debug |Boolean|Debug mode [details](#debug)|
-|loginTypes	|Array	|登录方式[详情](#loginTypes)	|
-|loginTypes |Array |Login Methods[Details](#loginTypes) |
-|agreements	|Array	|隐私政策	[详情](#agreements)|
-|agreements |Array |Privacy Policy [details](#agreements)|
-|appid		|Object	|接入各类服务（如微信登录服务）的应用id[详情](#appid)|
-|appid |Object |Application id for accessing various services (such as WeChat login service)[Details](#appid)|
+|字段		|类型	|描述											|
+|--			|--		|--												|
+|debug		|Boolean|调试模式[详情](#debug)							|
+|loginTypes	|Array	|登录方式[详情](#loginTypes)						|
+|agreements	|Array	|隐私政策[详情](#agreements)						|
+|appid		|Object	|接入各类服务（如微信登录服务）的应用id[详情](#appid)	|
+|password	|Object	|密码配置	|
+|&nbsp;&nbsp;&#124;-&nbsp;strength|String	|密码强度	[详情](#strength)|
+|&nbsp;&nbsp;&#124;-&nbsp;length	|Array	|密码长度，默认值为：在6-20位之间</br>用数组表示，如：[10, 25] 表示密码长度：在10-25位之间|
+
 
 完整示例：
 Complete example:
@@ -220,7 +219,6 @@ export default {
 	}
 }
 ```
-
 
 #### 调试模式@debug
 #### Debug mode @debug
@@ -333,6 +331,16 @@ Recommended use: HBuilderX editor, edit the "Privacy Policy and User Agreement" 
 |&nbsp;&#124;-&nbsp;h5 |String |WeChat official account appid</br>Source: [WeChat official account](https://mp.weixin.qq.com)-> Settings and Development-> Basic Configuration -> Official Account Development Information -> AppID|
 |&nbsp;&#124;-&nbsp;web	|String	|微信开放平台的appid</br>来源：[微信开放平台](https://open.weixin.qq.com) -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> AppID|
 |&nbsp;&#124;-&nbsp;web |String |WeChat Open Platform appid</br>Source: [WeChat Open Platform](https://open.weixin.qq.com) -> Management Center -> Website Application -> Select the corresponding application name, click View -> AppID|
+
+#### 密码强度@strength
+
+|字段		|类型	|描述												|
+|--			|--		|--													|
+|为空或false| -		|不验证密码强度										|
+|superstrong|String	|超强：密码必须包含大小写字母、数字和特殊符号		|
+|strong		|String	|强: 密码必须包含字母、数字和特殊符号				|
+|medium		|String	|中：密码必须为字母、数字和特殊符号任意两种的组合	|
+|weak		|String	|弱：密码必须包含字母								|
 
 ## 页面介绍
 ## page introduction

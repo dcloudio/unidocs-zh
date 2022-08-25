@@ -128,12 +128,16 @@
 ## 配置@config
 路径：`/uni_modules/uni-id-pages/config.js`
 
-|字段	|类型	|描述		|
-|--			|--		|--			|
-|debug		|Boolean|调试模式[详情](#debug)|
-|loginTypes	|Array	|登录方式[详情](#loginTypes)	|
-|agreements	|Array	|隐私政策	[详情](#agreements)|
-|appid		|Object	|接入各类服务（如微信登录服务）的应用id[详情](#appid)|
+|字段		|类型	|描述											|
+|--			|--		|--												|
+|debug		|Boolean|调试模式[详情](#debug)							|
+|loginTypes	|Array	|登录方式[详情](#loginTypes)						|
+|agreements	|Array	|隐私政策[详情](#agreements)						|
+|appid		|Object	|接入各类服务（如微信登录服务）的应用id[详情](#appid)	|
+|password	|Object	|密码配置	|
+|&nbsp;&nbsp;&#124;-&nbsp;strength|String	|密码强度	[详情](#strength)|
+|&nbsp;&nbsp;&#124;-&nbsp;length	|Array	|密码长度，默认值为：在6-20位之间</br>用数组表示，如：[10, 25] 表示密码长度：在10-25位之间|
+
 
 完整示例：
 ```js
@@ -169,7 +173,6 @@ export default {
 	}
 }
 ```
-
 
 #### 调试模式@debug
 debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-co`的`getSupportedLoginType`），
@@ -245,6 +248,16 @@ export default {
 |weixin	|Object	|微信|
 |&nbsp;&#124;-&nbsp;h5	|String	|微信公众号的appid</br>来源：[微信公众号](https://mp.weixin.qq.com)-> 设置与开发 -> 基本配置 -> 公众号开发信息 -> AppID|
 |&nbsp;&#124;-&nbsp;web	|String	|微信开放平台的appid</br>来源：[微信开放平台](https://open.weixin.qq.com) -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> AppID|
+
+#### 密码强度@strength
+
+|字段		|类型	|描述												|
+|--			|--		|--													|
+|为空或false| -		|不验证密码强度										|
+|superstrong|String	|超强：密码必须包含大小写字母、数字和特殊符号		|
+|strong		|String	|强: 密码必须包含字母、数字和特殊符号				|
+|medium		|String	|中：密码必须为字母、数字和特殊符号任意两种的组合	|
+|weak		|String	|弱：密码必须包含字母								|
 
 ## 页面介绍
 `uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[详情查看](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)

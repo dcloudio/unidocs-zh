@@ -275,9 +275,11 @@ class PostController extends Controller {
 - Please use all lowercase for each field in the response header, for example: 'Content-Type' ×, 'content-type' √
 
 #### URL 化返回响应体@url-binary
+#### URLized return response body @url-binary
 
 ```js
 // 返回javascript内容
+// return javascript content
 class GetController extends Controller {
   async create() {
     ctx.headers = {'content-type':'application/javascript'}
@@ -288,6 +290,7 @@ class GetController extends Controller {
 
 ```js
 // 返回图片
+// return image
 class GetController extends Controller {
   async create() {
     ctx.isBase64Encoded = true

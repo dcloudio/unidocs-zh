@@ -102,7 +102,7 @@ In uts, there are certain rules for using variable names.
 ##### Comparison operators
 
 | 运算符                              | 描述                                        | 返回 true 的示例 |
-| operator | description | examples that return true |
+| operator | description | example that returns true |
 | ----------------------------------- | ------------------------------------------- | ---------------- |
 | 等于 Equal (==)                     | 如果两边操作数相等时返回 true。             | var1==var2       |
 | Equal to Equal (==) | Returns true if both operands are equal. | var1==var2 |
@@ -144,7 +144,7 @@ In uts, there are certain rules for using variable names.
 | 按位或 OR                       | a \| b  | 在 a,b 的位表示中，每一个对应的位，只要有一个为 1 则返回 1， 否则返回 0.                                         |
 | Bitwise OR | a \| b | In the bit representation of a,b, if each corresponding bit is 1, it returns 1, otherwise it returns 0. |
 | 按位异或 XOR                    | a ^ b   | 在 a,b 的位表示中，每一个对应的位，两个不相同则返回 1，相同则返回 0.                                             |
-| Bitwise XOR | a ^ b | In the bit representation of a,b, for each corresponding bit, if the two are different, it returns 1, and if they are the same, it returns 0. |
+| Bitwise XOR | a ^ b | In the bit representation of a,b, for each corresponding bit, if the two are not identical, it returns 1, and if they are identical, it returns 0. |
 | 按位非 NOT                      | ~ a     | 反转被操作数的位。                                                                                               |
 | Bitwise NOT NOT | ~ a | Inverts the bits of the operand. |
 | 左移 shift                      | a << b  | 将 a 的二进制串向左移动 b 位,右边移入 0.                                                                         |
@@ -439,7 +439,7 @@ An optional break statement is associated with each case statement, ensuring tha
 ##### Ternary expressions
 
 uts 支持使用三元表达式。一个条件后面会跟一个问号（?），如果条件为 true ，则问号后面的表达式 A 将会执行；表达式 A 后面跟着一个冒号（:），如果条件为 false ，则冒号后面的表达式 B 将会执行。本运算符经常作为 if 语句的简捷形式来使用。
-uts supports the use of ternary expressions. A condition is followed by a question mark (?), if the condition is true, the expression A after the question mark will be executed; expression A is followed by a colon (:), if the condition is false, the expression B after the colon is executed will execute. This operator is often used as a shorthand for an if statement.
+uts supports the use of ternary expressions. A condition is followed by a question mark (?), if the condition is true, the expression A following the question mark will be executed; expression A is followed by a colon (:), if the condition is false, the expression B following the colon will be executed will execute. This operator is often used as a shorthand for an if statement.
 
 ```ts
 function getFee(isMember: boolean): string {
@@ -966,7 +966,7 @@ Square.name 函数上必须加上 override 修饰符。如果没写，编译器�
 The override modifier must be added to the Square.name function. If it is not written, the compiler will report an error.
 
 ##### 覆盖属性
-##### Override properties
+##### Override Properties
 
 属性与方法的覆盖机制相同。在超类中声明然后在派生类中重新声明的属性必须以 override 开头，并且它们必须具有兼容的类型。
 Properties have the same overriding mechanism as methods. Properties declared in a superclass and then redeclared in a derived class must start with override and they must have compatible types.
@@ -1191,7 +1191,7 @@ console.log(howard.name); // 错误
 ```
 
 注意，我们不能在 Person 类外使用 name，但是我们仍然可以通过 Employee 类的实例方法访问，因为 Employee 是由 Person 派生而来的。
-Note that we cannot use the name outside of the Person class, but we can still access it through the instance methods of the Employee class, since Employee is derived from Person.
+Note that we cannot use the name outside the Person class, but we can still access it through the instance methods of the Employee class because Employee is derived from Person.
 
 ### 模块
 ### Modules
@@ -1364,7 +1364,7 @@ Adds one or more elements to the end of an array and returns the new length of t
 ###### reduce
 
 对数组中的每个元素执行一个由您提供的 reducer 函数（升序执行），将其结果汇总为单个返回值
-Executes a reducer function (executed in ascending order) provided by you on each element in the array, aggregating its results into a single return value
+Executes a reducer function provided by you (in ascending order) on each element in the array, aggregating its results into a single return value
 
 ###### reduceRight
 

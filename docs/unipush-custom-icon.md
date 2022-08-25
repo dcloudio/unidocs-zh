@@ -4,7 +4,7 @@
 
 
 ### UniPush自定义推送图标，可自定义push图标和小图标，位置如下图所示：
-### UniPush custom push icon, you can customize the push icon and small icon, the location is as shown below:
+### UniPush custom push icon, push icon and small icon can be customized, the location is as shown below:
 
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/custom_push_icon/custom_push_icon_small_instructions.png)
 

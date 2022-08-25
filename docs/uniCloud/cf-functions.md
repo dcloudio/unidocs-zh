@@ -35,7 +35,7 @@ After the cloud function is started, the environment will be retained for a peri
 - 在HBuilderX创建云函数时，如果新云函数与服务器上已存在同名云函数，会用新函数覆盖。所以应先选择从服务空间下载云函数。
 - When creating a cloud function in HBuilderX, if the new cloud function and the cloud function with the same name already exist on the server, it will be overwritten with the new function. Therefore, you should first choose to download cloud functions from the service space.
 - 单个云函数大小限制为10M（包含node_modules），过大的云函数影响运行性能，也会增加计费的gbs。
-- The size of a single cloud function is limited to 10M (including node_modules). Excessive cloud functions will affect the running performance and increase the billing gbs.
+- The size of a single cloud function is limited to 10M (including node_modules). An excessively large cloud function will affect the running performance and increase the billing gbs.
 - uniCloud的阿里云版，暂不可使用相对路径读取文件（比如`fs.readFileSync('./info.txt')`），可以使用绝对路径`fs.readFileSync(path.resolve(__dirname,'./info.txt'))`
 - For the Alibaba Cloud version of uniCloud, you cannot use relative paths to read files (such as `fs.readFileSync('./info.txt')`). You can use absolute paths `fs.readFileSync(path.resolve(__dirname,'. /info.txt'))`
 
@@ -54,7 +54,7 @@ Cloud functions have several sub-concepts, including common cloud functions, clo
 - action云函数：为了弥补clientDB客户端直接操作数据库的局限而设计的，详见[clientDB action文档](/uniCloud/clientdb?id=action)
 - action cloud function: designed to make up for the limitation of clientDB client directly operating the database, see [clientDB action document](/uniCloud/clientdb?id=action)
 - uniCloud扩展库：为了裁剪和控制云函数体积而设计的，一些不太常用的功能比如Redis，独立为扩展库，避免增大每个云函数的体积，详见[uniCloud扩展库](/uniCloud/cf-functions?id=扩展库)
-- uniCloud extension library: designed to cut and control the volume of cloud functions. Some less commonly used functions such as Redis are independently extended libraries to avoid increasing the size of each cloud function. For details, see [uniCloud extension library](/uniCloud /cf-functions?id=%E6%89%A9%E5%B1%95%E5%BA%93)
+- uniCloud extension library: designed to cut and control the volume of cloud functions. Some less commonly used functions, such as Redis, are independent extension libraries to avoid increasing the size of each cloud function. For details, see [uniCloud extension library](/uniCloud /cf-functions?id=%E6%89%A9%E5%B1%95%E5%BA%93)
 
 HBuilderX中uniCloud项目的云函数均在项目的`uniCloud/cloudfunctions`目录下，目录结构如下：
 The cloud functions of the uniCloud project in HBuilderX are all in the `uniCloud/cloudfunctions` directory of the project. The directory structure is as follows:
@@ -195,7 +195,7 @@ Due to the length of the space, to learn cloud objects, please refer to the docu
 clientDB和云对象可以混合使用：
 clientDB and cloud objects can be mixed:
 1. 比如官方提供了[uni-id-pages](uni-id-pages.md)，是基于云对象的登录注册系统，开发者可以导出这个插件处理账户体系，然后剩余的业务如果不算复杂，就可以使用clientDB搞定。
-1. For example, [uni-id-pages](uni-id-pages.md) is officially provided, which is a login and registration system based on cloud objects. Developers can export this plug-in to handle the account system, and then the rest of the business is not complicated. , you can use clientDB to get it.
+1. For example, [uni-id-pages](uni-id-pages.md) is officially provided, which is a login registration system based on cloud objects. Developers can export this plug-in to handle the account system, and then the rest of the business is not complicated. , you can use clientDB to get it.
 2. 一个业务的用户端和admin端也可以是不同的技术栈。比如业务端有复杂的动态权限，而管理端只有一个admin管理员使用，那么admin端使用[schema2code](schema2code.md)会非常高效，而这些技术都基于clientDB。
 2. The client and admin of a business can also be different technology stacks. For example, the business side has complex dynamic permissions, and the management side is only used by one admin administrator, then it will be very efficient to use [schema2code](schema2code.md) on the admin side, and these technologies are based on clientDB.
 
@@ -294,7 +294,7 @@ Due to the length of the article, please refer to the document [Cloud Function U
 ### uniCloud response body specification @resformat
 
 `uniCloud响应体规范`（uniCloud response format），是DCloud制定的、服务器给客户端返回json数据的一种建议格式。
-The `uniCloud response body specification` (uniCloud response format) is a recommended format formulated by DCloud for the server to return json data to the client.
+The `uniCloud response body specification` (uniCloud response format) is a recommended format for the server to return json data to the client formulated by DCloud.
 
 云对象、clientDB、uni-id公共模块均支持此规范。
 Cloud objects, clientDB, and uni-id public modules all support this specification.
@@ -412,7 +412,7 @@ In addition to the standard API, the `uniCloud` object is built into the cloud f
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.sendSms() | To send SMS, you need to add an extension library [see details](uniCloud/send-sms.md) |
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
-|uniCloud.getPhoneNumber() | To get the one-click login phone number, you need to add an extension library [see details](uniCloud/univerify.md?id=cloud) |
+|uniCloud.getPhoneNumber() |To get the phone number for one-click login, you need to add an extension library [see details](uniCloud/univerify.md?id=cloud) |
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.init() |Get the uniCloud instance of the specified service space [see details](uniCloud/concepts/space.md?id=multi-space) |
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
@@ -553,7 +553,7 @@ If you need to request other http services in cloud functions, use `uniCloud.htt
 **Notice**
 
 默认情况下request接口不会处理返回的数据，即不传`dataType`参数时会返回buffer类型的数据，如需自动解析json格式的返回结果，需要将`dataType`设置为`"json"`
-By default, the request interface will not process the returned data, that is, if the `dataType` parameter is not passed, the data of the buffer type will be returned. To automatically parse the returned result in json format, you need to set `dataType` to `"json"`
+By default, the request interface will not process the returned data, that is, if the `dataType` parameter is not passed, the data of the buffer type will be returned. To automatically parse the return result in json format, you need to set `dataType` to `"json"`
 
 **示例代码**
 **Sample code**
@@ -626,7 +626,7 @@ exports.main = async (event, context) => {
 ### Get request id list @get-request-list
 
 非单实例多并发场景下列表长度为1，仅有的一个requestId表示当前请求的requestId。单实例多并发场景下会返回正在处理的所有请求的requestId列表。如需获取当前请求的requestId参考：[云函数context](cf-callfunction.md#context)、[云对象获取当前请求的requestId](cloud-obj.md#get-request-id)
-In a non-single-instance-multiple-concurrency scenario, the list length is 1, and the only requestId is the requestId of the current request. In a single-instance-multiple-concurrency scenario, the requestId list of all requests being processed will be returned. To get the requestId reference of the current request: [cloud function context](cf-callfunction.md#context), [cloud object to get the requestId of the current request](cloud-obj.md#get-request-id)
+In a non-single-instance-multiple-concurrency scenario, the list length is 1, and the only requestId is the requestId of the current request. In a single-instance-multiple-concurrency scenario, the requestId list of all requests being processed will be returned. To get the requestId of the current request: [cloud function context](cf-callfunction.md#context), [cloud object to get the requestId of the current request](cloud-obj.md#get-request-id)
 
 **示例**
 **Example**
@@ -666,7 +666,7 @@ In addition to the fields returned by `getSystemInfo`, the following information
 |clientIP	|string	|客户端ip																																																																			|
 |clientIP |string |client ip |
 |userAgent|string	|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua|
-|userAgent|string |Client ua, note that the client getSystemInfoSync will also get the ua parameter and upload it to the cloud object in a non-local operating environment, but the cloud object will get ua from the http request header instead of ua| in clientInfo
+|userAgent|string |Client ua, note that the client getSystemInfoSync in a non-local operating environment will also get the ua parameter and upload it to the cloud object, but the cloud object will get ua from the http request header instead of ua| in clientInfo
 |source		|string	|调用来源，返回值见下。																																																												|
 |source |string |The source of the call, the return value is shown below. |
 |scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.md#getlaunchoptionssync)返回的scene参数，													|
@@ -697,7 +697,7 @@ Cloud function call source, its value range is:
 - 除了clientIP外，其他客户端信息只有使用uni-app客户端以callFunction或者importObject方式访问云函数或云对象时才有
 - Except for clientIP, other client information is only available when using the uni-app client to access cloud functions or cloud objects in callFunction or importObject mode
 - 云对象与云函数内获取客户端platform稍有不同，云函数未拉齐vue2、vue3版本app平台的platform值，vue2为`app-plus`，vue3为`app`。云对象无论客户端是vue2还是vue3，在app平台获取的platform均为`app`。这一点在使用uni-id时需要特别注意，详情见：[uni-id文档 preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
-- The cloud object is slightly different from the client platform obtained in the cloud function. The cloud function does not match the platform value of the app platform of the vue2 and vue3 versions. The vue2 is `app-plus`, and the vue3 is `app`. Regardless of whether the client is vue2 or vue3, the platform obtained from the app platform is `app`. This point needs special attention when using uni-id. For details, see: [uni-id document preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
+- The cloud object is slightly different from the client platform obtained in the cloud function. The cloud function does not match the platform value of the app platform of the vue2 and vue3 versions, vue2 is `app-plus`, and vue3 is `app`. Regardless of whether the client is vue2 or vue3, the platform obtained from the app platform is `app`. This point needs special attention when using uni-id. For details, see: [uni-id document preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
 
 ### 获取云端信息@get-cloud-infos
 ### Get cloud information @get-cloud-infos
@@ -791,7 +791,7 @@ Cloud functions support public modules. The shared parts of multiple cloud funct
 The runtime environment of cloud functions is `Node.js`, so we can use `npm` to install third-party dependencies.
 
 注意：阿里云目前仅支持全量上传云函数（整个 node_modules文件夹全部上传），因此提醒开发者精简依赖，否则可能会每次上传时间很慢，影响开发体验。并且太大的npm库影响云函数的运行性能。
-Note: Alibaba Cloud currently only supports full upload of cloud functions (the entire node_modules folder is uploaded), so developers are reminded to simplify dependencies, otherwise each upload time may be very slow, affecting the development experience. And too large npm library affects the running performance of cloud functions.
+Note: Alibaba Cloud currently only supports full upload of cloud functions (the entire node_modules folder is all uploaded), so developers are reminded to simplify dependencies, otherwise each upload time may be very slow, affecting the development experience. And too large npm library affects the running performance of cloud functions.
 
 腾讯云会在上传云函数后自动安装需要的npm依赖。
 Tencent Cloud will automatically install the required npm dependencies after uploading the cloud function.
@@ -859,7 +859,7 @@ You can manually pass the token during cloud function intermodulation, or verify
 When the cloud function/cloud object calls each other, the caller will access the callee through the public network, and the access speed is not as fast as putting the logic directly on the caller for execution. Make sure you really need this feature before using it.
 
 `HBuilderX 3.4.0`版本之前**云函数右键本地运行时**，里面的代码再次callFunction会调用云端的云函数而不是本地云函数，此bug后续版本已修复。
-Before the `HBuilderX 3.4.0` version, right click on the cloud function to run locally**, the code inside the callFunction will call the cloud function in the cloud instead of the local cloud function again. This bug has been fixed in subsequent versions.
+Before the `HBuilderX 3.4.0` version, right-click the cloud function in the local runtime**, the code inside the callFunction will call the cloud function in the cloud instead of the local cloud function. This bug has been fixed in subsequent versions.
 
 ### 云函数递归调用自身@recurrence
 ### Cloud function recursively calls itself @recurrence
@@ -868,7 +868,7 @@ Before the `HBuilderX 3.4.0` version, right click on the cloud function to run l
 In addition to calling tripartite cloud functions, cloud functions can in fact call themselves recursively.
 
 当一个云函数实例的资源不能满足需求，或超时时间不够用时。比如要给10万个用户发送短信，而短信发送接口一次调用最多支持50个手机号码，这样最少需要调用2000次接口才能完成；而一个云函数实例完成不了2000次接口的调用。这种场景就可以使用云函数递归调用，分解任务实现。
-When the resources of a cloud function instance cannot meet the demand, or the timeout period is not enough. For example, to send SMS messages to 100,000 users, the SMS sending interface supports up to 50 mobile phone numbers in one call, so at least 2,000 API calls are required to complete it; however, one cloud function instance cannot complete 2,000 API calls. In this scenario, cloud function recursive calls can be used to decompose tasks for implementation.
+When the resources of a cloud function instance cannot meet the demand, or the timeout period is not enough. For example, to send SMS messages to 100,000 users, and the SMS sending interface supports a maximum of 50 mobile phone numbers at a time, so at least 2,000 API calls are required to complete it; however, a cloud function instance cannot complete 2,000 API calls. In this scenario, cloud function recursive calls can be used to decompose tasks for implementation.
 
 示例代码如下：
 The sample code is as follows:
@@ -1034,7 +1034,7 @@ When a cloud function is triggered for the first time, its complete process is a
 4. Execute the code
 
 函数被调用时，执行这些完整步骤的过程一般称作`冷启动`, 冷启动的耗时长于热启动，一般在一秒出头。 
-When the function is called, the process of performing these complete steps is generally referred to as a `cold start`, and a cold start takes longer than a warm start, usually in the lower part of a second.
+The process of performing these complete steps when the function is called is commonly referred to as a `cold start`, and a cold start takes longer than a warm start, usually in the lower part of a second.
 
 而如果函数实例和执行进程都被复用的情况下一般被定义为`热启动`, 热启动没有性能问题。
 And if the function instance and the execution process are reused, it is generally defined as `warm start`, and there is no performance problem with hot start.
@@ -1077,7 +1077,7 @@ Both cloud vendors are still optimizing for the cold start problem. The current 
 Because of the difference between hot and cold start, the global variables in cloud functions may be different every time. That is, cloud functions are stateless.
 
 以如下代码为例，`count`作为全局变量，当多次调用该云函数时，可能会出现变量累加的情况（实例未复用时，每次返回0，若实例被复用，则可能返回1、2、3等各种意外情况）。所以不要这么使用。
-Taking the following code as an example, `count` is used as a global variable. When the cloud function is called multiple times, variables may accumulate (when the instance is not reused, it returns 0 each time, and if the instance is reused, it may return 1, 2, 3 and other unexpected situations). So don't use it like that.
+Take the following code as an example, `count` is used as a global variable. When the cloud function is called multiple times, variables may accumulate (when the instance is not reused, it returns 0 each time, and if the instance is reused, it may return 1, 2, 3 and other unexpected situations). So don't use it like that.
 
 
 ```javascript
@@ -1406,7 +1406,7 @@ You can configure the concurrency of a single instance on the cloud function det
 - 如果并发的不同请求对全局变量同时进行读写会污染全局变量，可能会导致意想不到的后果，开启单实例多并发后请不要编写修改全局变量的代码，除非你熟悉这种技术带来的特殊应用，比如下文进阶部分提到的ip过滤。
 - If concurrent different requests read and write global variables at the same time, it will pollute the global variables, which may lead to unintended consequences. Please do not write code that modifies global variables after enabling single-instance multi-concurrency, unless you are familiar with this technology. Special applications, such as ip filtering mentioned in the advanced section below.
 - 设置过大的单实例多并发可能会导致实例底层网络请求排队从而导致请求超时，**一般情况下不要设置过大的并发度，具体数值可以自己针对业务代码测试一下**
-- Setting too large a single instance with multiple concurrency may lead to queuing of the underlying network requests of the instance, resulting in request timeout. **In general, do not set too large concurrency, the specific value can be tested by yourself for the business code**
+- Setting too large a single instance with multiple concurrency may lead to queuing of the underlying network requests of the instance and cause the request to time out. **In general, do not set too large concurrency, the specific value can be tested by yourself for the business code**
 
 **适用场景**
 **Applicable scene**
@@ -1437,7 +1437,7 @@ exports.main = async function(event, context) {
 }
 
 // 由于uni-id默认会从一个内置全局变量上获取客户端平台信息，不同请求会修改此全局变量可能造成混乱，开启单实例多并发后需要将uni-id修改为如下写法
-// Since uni-id obtains client platform information from a built-in global variable by default, different requests may modify this global variable, which may cause confusion. After enabling single-instance multi-concurrency, the uni-id needs to be modified as follows
+// Since uni-id obtains client platform information from a built-in global variable by default, different requests will modify this global variable, which may cause confusion. After enabling single-instance multi-concurrency, you need to modify uni-id as follows
 let uniID = require('uni-id')
 exports.main = async function(event, context) {
   let uniIDIns = uniID.createInstance({ // 创建uni-id实例，其上方法同uniID
@@ -1463,7 +1463,7 @@ Unlike the old version of uni-id common module uni-id-common cannot be used dire
 The reuse of global variables after enabling single-instance multi-concurrency is not necessarily a bad result. If you understand this behavior well, you can also use it effectively.
 
 例：[ip-filter](https://ext.dcloud.net.cn/plugin?id=4619)中就利用云函数全局缓存一些ip访问信息来限制单ip访问频率，可以下载示例项目体验一下
-Example: [ip-filter](https://ext.dcloud.net.cn/plugin?id=4619) uses cloud functions to globally cache some ip access information to limit the frequency of single ip access. You can download the sample project to experience
+For example: [ip-filter](https://ext.dcloud.net.cn/plugin?id=4619) uses cloud functions to globally cache some ip access information to limit the frequency of single ip access. You can download the sample project to experience
 
 受单实例多并发的影响，云函数全局存放与本次请求有关的信息会造成混乱。因此uniCloud提供了根据当前requestId获取客户端信息和云端信息。参考以下文档
 Affected by multiple concurrency in a single instance, cloud functions can store information related to this request globally, causing confusion. Therefore, uniCloud provides access to client information and cloud information based on the current requestId. Refer to the following documents
@@ -1483,7 +1483,7 @@ Affected by multiple concurrency in a single instance, cloud functions can store
 ## Cloud functions package.json@packagejson
 
 HBuilderX 3.0版本之前，package.json只是一个标准的package.json，安装依赖或公共模块才需要。HBuilderX 3.0及以上版本，package.json也可以用来配置云函数。
-Before HBuilderX 3.0, package.json was just a standard package.json, which was only required to install dependencies or common modules. For HBuilderX 3.0 and above, package.json can also be used to configure cloud functions.
+Before HBuilderX version 3.0, package.json was just a standard package.json, which was only required to install dependencies or common modules. For HBuilderX 3.0 and above, package.json can also be used to configure cloud functions.
 
 uniCloud web控制台提供了很多云函数的设置，比如内存大小、url化、定时触发等，从HBuilderX 3.0起，在云函数的package.json里也可以编写这些设置。
 The uniCloud web console provides many cloud function settings, such as memory size, urlization, timing trigger, etc. Since HBuilderX 3.0, these settings can also be written in the cloud function's package.json.
@@ -1536,7 +1536,7 @@ The cloudfunction-config field is the cloud function configuration, and the supp
   "memorySize": 256, // 函数的最大可用内存，单位MB，可选值： 128|256|512|1024|2048，默认值256
   "timeout": 5, // 函数的超时时间，单位秒，默认值5。最长为60秒，阿里云在定时触发时最长可以是600秒
   // triggers 字段是触发器数组，目前仅支持一个触发器，即数组只能填写一个，不可添加多个
-  // The triggers field is an array of triggers, currently only one trigger is supported, that is, only one array can be filled in, and multiple cannot be added
+  // The triggers field is an array of triggers, currently only one trigger is supported, that is, only one array can be filled in, and multiple ones cannot be added
   "triggers": [{ // 阿里云腾讯云均为此形式，请阅读下方说明
       // name: 触发器的名字，规则见https://uniapp.dcloud.net.cn/uniCloud/trigger，name不对阿里云生效
       // name: The name of the trigger, see https://uniapp.dcloud.net.cn/uniCloud/trigger for the rules, the name does not take effect on Alibaba Cloud
@@ -1605,7 +1605,7 @@ If this cloud function runs on Alibaba Cloud or Tencent Cloud nodejs8, the conso
 If this cloud function runs on Tencent Cloud nodejs12, the console.log in setTimeout will be in this cloud function call, and the same cloud function ** billing time (related to the cloud function GBs indicator)** will also be calculated according to the final Completion time calculation (5000ms+return time). But the frontend doesn't need to wait 5 seconds to receive the response. Note: If there is an unbroken long connection (for example: redis connection), the cloud function will run until the configured timeout period
 
 当在云函数package.json内的cloudfunction-config内配置了`keepRunningAfterReturn: false`时，可以改变腾讯云nodejs12的表现，云函数return之后将不再继续执行，未断开的长连接也不会增加云函数实际运行时间，云函数return后长连接也不会被中断，简单来说其表现和腾讯云nodejs8一致。
-When `keepRunningAfterReturn: false` is configured in the cloudfunction-config in the cloud function package.json, the performance of Tencent Cloud nodejs12 can be changed. After the cloud function returns, it will not continue to execute, and the number of unbroken long connections will not increase. The actual running time of the cloud function, and the long connection will not be interrupted after the cloud function returns. In short, its performance is consistent with Tencent Cloud nodejs8.
+When `keepRunningAfterReturn: false` is configured in the cloudfunction-config in the cloud function package.json, the performance of Tencent Cloud nodejs12 can be changed. After the cloud function returns, it will not continue to execute, and the number of unbroken long connections will not increase. The actual running time of the cloud function and the long connection will not be interrupted after the cloud function returns. In short, its performance is consistent with Tencent Cloud nodejs8.
 
 **在云函数中发送网络请求**
 **Send network request in cloud function**
@@ -1733,7 +1733,7 @@ cloudfunction-config instructions are as follows
   "memorySize": 256, // 函数的最大可用内存，单位MB，可选值： 128|256|512|1024|2048，默认值256
   "timeout": 5, // 函数的超时时间，单位秒，默认值5。最长为60秒，阿里云在定时触发时最长可以是600秒
   // triggers 字段是触发器数组，目前仅支持一个触发器，即数组只能填写一个，不可添加多个
-  // The triggers field is an array of triggers, currently only one trigger is supported, that is, only one array can be filled in, and multiple ones cannot be added
+  // The triggers field is an array of triggers, currently only one trigger is supported, that is, only one array can be filled in, and multiple cannot be added
   "triggers": [{
       // name: 触发器的名字，规则见https://uniapp.dcloud.net.cn/uniCloud/trigger，name不对阿里云生效
       // name: The name of the trigger, see https://uniapp.dcloud.net.cn/uniCloud/trigger for the rules, the name does not take effect on Alibaba Cloud

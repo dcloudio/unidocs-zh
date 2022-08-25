@@ -831,8 +831,13 @@ Report when the page jumps. In the SDK, it is triggered by the onHide life cycle
 |ttn|title set via API uni.setnavigationbartitle|
 |ttc|通过 uni.report 上报的页面的 title|
 |ttc|The title of the page reported via uni.report|
-|ttct |title 组件中设置的 title|
-|ttct|The title set in the title component|
+|ttct|title 组件中设置的 title|
+The title| set in the |ttct|title component
+The title| set in the |ttct|title component
+The title| set in the |ttct|title component
+The title| set in the |ttct|title component
+The title| set in the |ttct|title component
+The title| set in the |ttct|title component
 |urlref		|应用退出时停留的页面|
 |urlref |Page where the app exits|
 |urlref_ts	|应用退出时，最后一个页面的停留时间|

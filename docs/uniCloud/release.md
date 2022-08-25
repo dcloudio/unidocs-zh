@@ -3,26 +3,47 @@ Note: This changelog is only for uniCloud, including the uniCloud web console an
 
 #### 2022-08-25
   + 优化 阿里云 数据库超时时间由3秒调整为5秒
+  + Optimized Alibaba Cloud database timeout time from 3 seconds to 5 seconds
   + 新增 阿里云 通过代理解决微信服务器需要固定IP的问题 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#http-proxy-client)
+  + Added Alibaba Cloud to solve the problem that the WeChat server needs a fixed IP through a proxy [Details](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#http-proxy-client)
   + 新增 提供了一批新API，更优雅的处理同实例多并发请求
+  + Added a batch of new APIs to handle multiple concurrent requests of the same instance more gracefully
     - 新增 uniCloud.getRequestList 用于获取当前云函数实例内正在处理的请求的 requestId 列表 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-request-list)
+    - Added uniCloud.getRequestList to get the requestId list of requests being processed in the current cloud function instance [Details](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-request-list )
     - 云函数 新增 context.requestId 用于获取当前请求id [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#context)
+    - Cloud Functions Added context.requestId to get the current request id [Details](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#context)
     - 云对象 新增 this.getUniCloudRequestId() 用于获取当前请求id [详情](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#get-request-id)
+    - Cloud Object Added this.getUniCloudRequestId() to get the current request id [Details](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#get-request-id)
   + 新增 云函数 uniCloud.getCloudInfos 获取云端信息。同时兼容有无并发请求的情况 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-cloud-infos)
+  + Added cloud function uniCloud.getCloudInfos to get cloud information. At the same time, it is compatible with or without concurrent requests [Details](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-cloud-infos)
   + 新增 云函数 uniCloud.getClientInfos 获取客户端信息。同时兼容有无并发请求的情况 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-client-infos)
+  + Added cloud function uniCloud.getClientInfos to get client information. At the same time compatible with or without concurrent requests [Details](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-client-infos)
   + 修复 客户端sdk 未关联 uniCloud 服务空间时使用 uniCloud 对象导致报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3758)
+  + Fix the bug of using uniCloud object when client sdk is not associated with uniCloud service space [Details](https://github.com/dcloudio/uni-app/issues/3758)
   + 修复 JQL 一个表内多个包含 parentKey 字段时树查询报错的Bug [详情](https://ask.dcloud.net.cn/question/151834)
+  + Fix the bug of tree query error when there are multiple parentKey fields in a JQL table [Details](https://ask.dcloud.net.cn/question/151834)
   + 修复 本地调试插件 部分情况下全局对象复用导致的扩展库提示不正确的Bug [详情](https://ask.dcloud.net.cn/question/150357)
+  + Fixed the bug that the extension library prompts incorrectly caused by the reuse of global objects in local debugging plugins in some cases [Details](https://ask.dcloud.net.cn/question/150357)
   + 优化 本地调试插件 持续调试会导致内存占用过高并且响应缓慢的Bug
+  + Optimization Local debugging plugin Continuous debugging will lead to high memory usage and slow response bugs
   + 优化 uniIdRouter 支持对首页、直达页面进行拦截并跳转到登录页面
+  + Optimized uniIdRouter to support intercepting the home page and direct page and jumping to the login page
   + 优化 uni-id-co 密码规则调整，废除之前的简单校验，允许配置密码强度 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#password-strength)
+  + Optimize the adjustment of uni-id-co password rules, abolish the previous simple verification, and allow to configure the password strength [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#password- strength)
   + 调整 uni-id-co 存储用户 openid（`wx_openid.${mp|h5|app|web}`）时同时在`wx_openid.${mp|h5|app|web}_${DCloudAppId}`存储了一份副本，参考：[微信登录](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-weixin)、[QQ登录](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-qq)
+  + Adjust uni-id-co to store user openid (`wx_openid.${mp|h5|app|web}`) also in `wx_openid.${mp|h5|app|web}_${DCloudAppId}` A copy, reference: [WeChat login](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-weixin), [QQ login](https://uniapp .dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-qq)
   + 调整 uni-id-co 依赖 uni-open-bridge-common 存储用户 `session_key`、`access_token` 等凭据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
+  + Adjust uni-id-co to rely on uni-open-bridge-common to store user credentials such as `session_key`, `access_token` [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary. html#save-user-token)
   + 新增 uni-id-co 增加 beforeRegister 钩子用户在注册前向用户记录内添加一些数据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#before-register)
+  + Added uni-id-co Added beforeRegister hook to add some data to user records before registration [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#before- register)
   + 【重要】新增 uni-id-pages Web端支持微信登录（包括微信公众号内H5登录 和 普通浏览器内手机微信扫码登录）[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#weixinlogin)
+  + [Important] Added uni-id-pages web terminal to support WeChat login (including H5 login in WeChat official account and mobile phone WeChat scan code login in ordinary browsers) [Details](https://uniapp.dcloud.net.cn /uniCloud/uni-id-pages.html#weixinlogin)
   + 新增 uni-id-pages 支持密码强度（是否必须包含大小写字母、数字和特殊符号以及长度）配置 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#config)
+  + Added uni-id-pages to support password strength (whether it must contain uppercase and lowercase letters, numbers and special symbols and length) configuration [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages .html#config)
   + 新增 uni-id-pages 登录成功（全局）回调事件：`uni-id-pages-login-success`，支持通过[uni.$on](https://uniapp.dcloud.net.cn/api/window/communication.html#on)监听 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
+  + Added uni-id-pages login success (global) callback event: `uni-id-pages-login-success`, support through [uni.$on](https://uniapp.dcloud.net.cn/api /window/communication.html#on) monitor [details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
   + 新增 uni-open-bridge 开源库，统一管理微信等三方开放平台的凭据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html)
+  + Added uni-open-bridge open source library, unified management of credentials for three-party open platforms such as WeChat [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html)
 
 #### 2022-08-05
   + 【重要】新增云函数ip防刷功能，避免大量无效请求导致云函数、数据库响应变慢 [详情](https://uniapp.dcloud.net.cn/uniCloud/ip-filter.html)

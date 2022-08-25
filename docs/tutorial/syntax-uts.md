@@ -140,11 +140,11 @@ In uts, there are certain rules for using variable names.
 | Operator                        | Usage   | Description                                                                                                      |
 | ------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
 | 按位与 AND                      | a & b   | 在 a,b 的位表示中，每一个对应的位都为 1 则返回 1， 否则返回 0.                                                   |
-| Bitwise AND | a & b | In the bit representation of a,b, if each corresponding bit is 1, return 1, otherwise return 0. |
+| Bitwise AND | a & b | In the bit representation of a,b, if each corresponding bit is 1, it returns 1, otherwise it returns 0. |
 | 按位或 OR                       | a \| b  | 在 a,b 的位表示中，每一个对应的位，只要有一个为 1 则返回 1， 否则返回 0.                                         |
 | Bitwise OR | a \| b | In the bit representation of a,b, if each corresponding bit is 1, it returns 1, otherwise it returns 0. |
 | 按位异或 XOR                    | a ^ b   | 在 a,b 的位表示中，每一个对应的位，两个不相同则返回 1，相同则返回 0.                                             |
-| Bitwise XOR | a ^ b | In the bit representation of a,b, for each corresponding bit, if the two are not identical, it returns 1, and if they are identical, it returns 0. |
+| Bitwise XOR | a ^ b | In the bit representation of a,b, for each corresponding bit, if the two are different, it returns 1, and if they are the same, it returns 0. |
 | 按位非 NOT                      | ~ a     | 反转被操作数的位。                                                                                               |
 | Bitwise NOT NOT | ~ a | Inverts the bits of the operand. |
 | 左移 shift                      | a << b  | 将 a 的二进制串向左移动 b 位,右边移入 0.                                                                         |
@@ -433,7 +433,7 @@ switch (expression) {
 The program first looks for a case statement that matches expression, then transfers control to that clause, executing the associated statement. If there is no match, the program looks for the default statement, and if it finds it, control transfers to that clause and the associated statement is executed. If no default is found, the program continues with the statement following the switch statement. The default statement usually appears at the end of the switch statement, although this is not required.
 
 可选的 break 语句与每个 case 语句相关联， 保证在匹配的语句被执行后程序可以跳出 switch 并且继续执行 switch 后面的语句。如果 break 被忽略，则程序将继续执行 switch 语句中的下一条语句。
-An optional break statement is associated with each case statement, ensuring that the program can break out of the switch after the matching statement has been executed and continue executing the statement following the switch. If break is ignored, the program will continue to the next statement in the switch statement.
+An optional break statement is associated with each case statement, ensuring that the program can break out of switch after the matching statement has been executed and continue execution of the statement following the switch. If break is ignored, the program will continue to the next statement in the switch statement.
 
 ##### 三元表达式
 ##### Ternary expressions
@@ -966,7 +966,7 @@ Square.name 函数上必须加上 override 修饰符。如果没写，编译器�
 The override modifier must be added to the Square.name function. If it is not written, the compiler will report an error.
 
 ##### 覆盖属性
-##### Override Properties
+##### Override properties
 
 属性与方法的覆盖机制相同。在超类中声明然后在派生类中重新声明的属性必须以 override 开头，并且它们必须具有兼容的类型。
 Properties have the same overriding mechanism as methods. Properties declared in a superclass and then redeclared in a derived class must start with override and they must have compatible types.
@@ -1191,7 +1191,7 @@ console.log(howard.name); // 错误
 ```
 
 注意，我们不能在 Person 类外使用 name，但是我们仍然可以通过 Employee 类的实例方法访问，因为 Employee 是由 Person 派生而来的。
-Note that we cannot use the name outside of the Person class, but we can still access it through the instance methods of the Employee class, since Employee is derived from Person.
+Note that we cannot use the name outside the Person class, but we can still access it through the instance methods of the Employee class because Employee is derived from Person.
 
 ### 模块
 ### Modules

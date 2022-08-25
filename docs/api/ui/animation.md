@@ -111,6 +111,7 @@ Rotate:
 |rotateZ|deg|deg的范围-180~180，在Z轴旋转一个deg角度|
 |rotateZ|deg|deg range -180~180, rotate a deg angle on the Z axYes|
 |rotate3d|(x,y,z,deg)|同[transform-function rotate3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d)|
+|rotate3d|(x,y,z,deg)|Same as [transform-function rotate3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d)|
 
 缩放：
 Zoom:
@@ -166,7 +167,9 @@ Matrix deformation:
 |method|parameters|description|
 |---|---|---|
 |matrix|(a,b,c,d,tx,ty)|同	[transform-function matrix](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix)|
+|matrix|(a,b,c,d,tx,ty)|Same as [transform-function matrix](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix )|
 |matrix3d||同[transform-function matrix3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d)|
+|matrix3d||Same as [transform-function matrix3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d)|
 
 **动画队列**
 **Animation queue**

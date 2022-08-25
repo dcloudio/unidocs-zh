@@ -519,6 +519,7 @@ Remove access_token. Developers generally only need to use the get class method,
 |parameter |type |description |
 |:-:					|:-:		|:-:									|
 |access_token	|String	|[详情](#access_token)|
+|access_token |String |[Details](#access_token)|
 
 **expiresIn**
 

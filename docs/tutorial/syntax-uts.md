@@ -11,8 +11,10 @@ uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。�
 uts adopts the same syntax specification as ts and supports most ES6 APIs. Therefore, front-end engineers can quickly master uts development
 
 **学习 uts 基础知识**
+**Learn uts basics**
 
 如果你已熟悉一门或多门编程语言并想学习 uts，请从这些 uts 学习资料开始。
+If you're already familiar with one or more programming languages and want to learn uts, start with these uts learning materials.
 
 ## 快速入门
 ## Quick start
@@ -51,10 +53,14 @@ str = "hello world"; // 报错，不允许重新赋值
 ```
 
 注意事项：
+Precautions:
 
 1. 当前 uts 并未限制使用 var 来声明变量，但当使用 var 来声明变量时需要注意不同平台差异
+1. Currently uts does not restrict the use of var to declare variables, but when using var to declare variables, you need to pay attention to the differences between different platforms
 -  编译至 JavaScript 平台时，等同于 JavaScript 平台的 var （存在变量提升现象）
+- When compiled to the JavaScript platform, it is equivalent to the var of the JavaScript platform (there is a phenomenon of variable promotion)
 -  编译至 Kotlin 平台时，等同于 Kotlin 平台的 var（允许重新赋值）
+- When compiling to Kotlin platform, equivalent to Kotlin platform var (allows reassignment)
 
 #### 变量
 #### variables
@@ -1269,6 +1275,7 @@ test.test()
 ```
 
 ### 内置对象
+### Built-in objects
 
 #### Array
 
@@ -1295,6 +1302,7 @@ console.log(clothing.length);
 ###### concat
 
 concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+The concat() method is used to combine two or more arrays. This method does not change the existing array, but returns a new array.
 
 ```ts
 const array1 = ['a', 'b', 'c'];
@@ -1307,6 +1315,7 @@ console.log(array3);
 ###### copyWithin
 
 copyWithin() 方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。
+The copyWithin() method shallowly copies part of an array to another location in the same array and returns it without changing the length of the original array.
 
 ```ts
 const array1 = ['a', 'b', 'c', 'd', 'e'];
@@ -1321,6 +1330,7 @@ console.log(array1.copyWithin(1, 3));
 ###### every
 
 every() 方法测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。
+The every() method tests whether all elements in an array pass the test of a specified function. It returns a boolean value.
 
 ```ts
 const isBelowThreshold = (currentValue:number):boolean => currentValue < 40;
@@ -1332,6 +1342,7 @@ console.log(array1.every(isBelowThreshold));
 ###### fill
 
 fill() 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。
+The fill() method fills all elements in an array from the start index to the end index with a fixed value. Termination index is not included.
 
 ```ts
 const array1 = [1, 2, 3, 4];
@@ -1351,6 +1362,7 @@ console.log(array1.fill(6));
 ###### filter
 
 filter() 方法创建一个新数组，其包含通过所提供函数实现的测试的所有元素。
+The filter() method creates a new array containing all the elements of the test implemented by the provided function.
 
 ```ts
 const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
@@ -1364,6 +1376,7 @@ console.log(result);
 ###### find
 
 find() 方法返回数组中满足提供的测试函数的第一个元素的值。
+The find() method returns the value of the first element in the array that satisfies the provided test function.
 
 ```ts
 const array1 = [5, 12, 8, 130, 44];
@@ -1378,6 +1391,7 @@ console.log(found);
 ###### findIndex
 
 findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回-1。
+The findIndex() method returns the index of the first element in the array that satisfies the provided test function. Returns -1 if no corresponding element is found.
 
 ```ts
 const array1 = [5, 12, 8, 130, 44];
@@ -1392,6 +1406,7 @@ console.log(array1.findIndex(isLargeNumber));
 ###### flat
 
 flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
+The flat() method recursively traverses the array to a specified depth, and returns all elements combined with the elements in the traversed subarrays into a new array.
 
 ```ts
 const arr1 = [0, 1, 2, [3, 4]];
@@ -1408,6 +1423,7 @@ console.log(arr2.flat(2));
 ###### forEach
 
 forEach() 方法对数组的每个元素执行一次给定的函数。
+The forEach() method executes the given function once for each element of the array.
 
 ```ts
 const array1 = ['a', 'b', 'c'];
@@ -1420,6 +1436,7 @@ array1.forEach(element => console.log(element));
 ###### includes
 
 includes() 方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回 false。
+The includes() method is used to determine whether an array contains a specified value. According to the situation, it returns true if it contains, otherwise it returns false.
 
 ```ts
 const array1 = [1, 2, 3];
@@ -1440,6 +1457,7 @@ console.log(pets.includes('at'));
 ###### indexOf
 
 indexOf() 方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。
+The indexOf() method returns the first index in the array at which a given element can be found, or -1 if it does not exist.
 
 ```ts
 const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
@@ -1459,6 +1477,7 @@ console.log(beasts.indexOf('giraffe'));
 ###### join
 
 join() 方法将一个数组的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。
+The join() method joins all elements of an array into a string and returns the string. If the array has only one item, then that item is returned without a delimiter.
 
 ```ts
 const elements = ['Fire', 'Air', 'Water'];
@@ -1477,6 +1496,7 @@ console.log(elements.join('-'));
 ###### lastIndexOf
 
 lastIndexOf() 方法返回指定元素在数组中的最后一个的索引，如果不存在则返回 -1。从数组的后面向前查找，从 fromIndex 处开始。
+The lastIndexOf() method returns the index of the last specified element in the array, or -1 if it does not exist. Search forward from the back of the array, starting at fromIndex.
 
 ```ts
 const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
@@ -1491,6 +1511,7 @@ console.log(animals.lastIndexOf('Tiger'));
 ###### map
 
 map() 方法创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。
+The map() method creates a new array consisting of the return value of calling the provided function once for each element in the original array.
 
 ```ts
 const array1 = [1, 4, 9, 16];
@@ -1506,6 +1527,7 @@ console.log(map1);
 ###### pop
 
 pop() 方法从数组中删除最后一个元素，并返回该元素的值。此方法会更改数组的长度。
+The pop() method removes the last element from the array and returns the value of that element. This method changes the length of the array.
 
 ```ts
 const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
@@ -1526,6 +1548,7 @@ console.log(plants);
 ###### push
 
 push() 方法将一个或多个元素添加到数组的末尾，并返回该数组的新长度。
+The push() method adds one or more elements to the end of an array and returns the new length of the array.
 
 ```ts
 const animals = ['pigs', 'goats', 'sheep'];
@@ -1545,8 +1568,10 @@ console.log(animals);
 ###### reduce
 
 reduce() 方法对数组中的每个元素按序执行一个由您提供的 reducer 函数，每一次运行 reducer 会将先前元素的计算结果作为参数传入，最后将其结果汇总为单个返回值。
+The reduce() method executes a reducer function you provide in order for each element in the array, each run of the reducer passes in the result of the previous element's calculation as a parameter, and finally aggregates its results into a single return value.
 
 第一次执行回调函数时，不存在“上一次的计算结果”。如果需要回调函数从数组索引为 0 的元素开始执行，则需要传递初始值。否则，数组索引为 0 的元素将被作为初始值 initialValue，迭代器将从第二个元素开始执行（索引为 1 而不是 0）。
+When the callback function is executed for the first time, there is no "last calculation result". If you want the callback function to execute from the element at index 0 of the array, you need to pass the initial value. Otherwise, the element at index 0 of the array will be used as initialValue, and the iterator will be executed from the second element (index 1 instead of 0).
 
 ```ts
 const array1 = [1, 2, 3, 4];
@@ -1566,22 +1591,27 @@ console.log(sumWithInitial);
 ###### shift
 
 shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。
+The shift() method removes the first element from the array and returns the value of that element. This method changes the length of the array.
 
 ###### slice
 
 slice() 方法返回一个新的数组对象，这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）。原始数组不会被改变。
+The slice() method returns a new array object that is a shallow copy of the original array determined by begin and end (including begin, but not end). The original array will not be altered.
 
 ###### some
 
 some() 方法测试数组中是不是至少有 1 个元素通过了被提供的函数测试。它返回的是一个 Boolean 类型的值。
+The some() method tests whether at least 1 element in the array passes the provided function test. It returns a value of type Boolean.
 
 ###### splice
 
 splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容。此方法会改变原数组。
+The splice() method modifies an array by removing or replacing existing elements or adding new elements in place, and returns the modified contents as an array. This method changes the original array.
 
 ###### unshift
 
 unshift() 方法将一个或多个元素添加到数组的开头，并返回该数组的新长度（该方法修改原有数组）。
+The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array (this method modifies the original array).
 
 ##### 常见操作
 ##### Common operations
@@ -1688,8 +1718,10 @@ console.log(arr.0) // a syntax error
 #### Date
 
 创建一个 Date 实例，该实例呈现时间中的某个时刻。Date 对象则基于 Unix Time Stamp，即自 1970 年 1 月 1 日（UTC）起经过的毫秒数。
+Create a Date instance that renders a moment in time. Date objects are based on the Unix Time Stamp, which is the number of milliseconds elapsed since January 1, 1970 (UTC).
 
 ##### 语法
+##### grammar
 
 ```ts
 new Date();
@@ -1698,13 +1730,18 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 ```
 
 - 如果没有输入任何参数，则 Date 的构造器会依据系统设置的当前时间来创建一个 Date 对象。
+- If no parameters are entered, the Date constructor will create a Date object based on the current time set by the system.
 - 如果提供了至少两个参数，其余的参数均会默认设置为 1（如果没有指定 day 参数）或者 0（如果没有指定 day 以外的参数）。
+- If at least two parameters are provided, the remaining parameters will default to 1 (if no day parameter is specified) or 0 (if no parameter other than day is specified).
 - uts 的时间由世界标准时间（UTC）1970 年 1 月 1 日开始，用毫秒计时，一天由 86,400,000 毫秒组成。Date 对象的范围是 -100,000,000 天至 100,000,000 天（等效的毫秒值）。
+- The time in uts is counted in milliseconds from January 1, 1970 UTC, and a day consists of 86,400,000 milliseconds. Date objects range from -100,000,000 days to 100,000,000 days (equivalent to millisecond values).
 - 
 ##### 静态方法
+##### static methods
 ###### now
 
 表示自 UNIX 纪元开始（1970 年 1 月 1 日 00:00:00 (UTC)）到当前时间的毫秒数。
+Represents the number of milliseconds since the beginning of the UNIX epoch (January 1, 1970 00:00:00 (UTC)) to the current time.
 
 ```ts
 // this example takes 2 seconds to run
@@ -1719,86 +1756,108 @@ setTimeout(() => {
 ```
 
 ##### 实例方法
+##### Instance Methods
 
 ###### getDate
 
 根据本地时间，返回一个指定的日期对象为一个月中的哪一日（从 1--31）。
+Returns the day of the month (from 1--31) for a specified date object according to local time.
 
 ###### getDay
 
 根据本地时间，返回一个具体日期中一周的第几天，0 表示星期天。对于某个月中的第几天
+Returns the day of the week for a specific date, according to local time, with 0 for Sunday. for the day of the month
 
 ###### getFullYear
 
 根据本地时间返回指定日期的年份。
+Returns the year of the specified date according to local time.
 
 ###### getHours
 
 根据本地时间，返回一个指定的日期对象的小时。
+Returns the hour of a specified date object according to local time.
 
 ###### getMilliseconds
 
 根据本地时间，返回一个指定的日期对象的毫秒数。
+Returns the number of milliseconds for a specified date object according to local time.
 
 ###### getMinutes
 
 根据本地时间，返回一个指定的日期对象的分钟数。
+Returns the number of minutes in a specified date object according to local time.
 
 ###### getMonth
 
 指定的日期对象的月份，为基于 0 的值（0 表示一年中的第一月）。
+The month of the specified date object, as a 0-based value (0 represents the first month of the year).
 
 ###### getSeconds
 
 根据本地时间，返回一个指定的日期对象的秒数。
+Returns the number of seconds in a specified date object according to local time.
 
 ###### getTime
 
 返回一个时间的格林威治时间数值。
+Returns the GMT value of a time.
 
 ###### setDate
 
 根据本地时间来指定一个日期对象的天数。
+Specifies the number of days in a date object according to local time.
 
 ###### setFullYear
 
 根据本地时间为一个日期对象设置年份。
+Sets the year for a date object based on local time.
 
 ###### setHours
 
 根据本地时间为一个日期对象设置小时数，返回从 1970-01-01 00:00:00 UTC 到更新后的 日期 对象实例所表示时间的毫秒数。
+Sets the hour for a Date object according to local time, returning the number of milliseconds from 1970-01-01 00:00:00 UTC to the time represented by the updated Date object instance.
 
 ###### setMilliseconds
 
 根据本地时间设置一个日期对象的豪秒数。
+Sets the milliseconds of a date object according to local time.
 
 ###### setMinutes
 
 根据本地时间为一个日期对象设置分钟数。
+Sets the minutes for a date object according to local time.
 
 ###### setMonth
 
 根据本地时间为一个日期对象设置月份。
+Sets the month for a date object according to local time.
 
 ###### setSeconds
 
 根据本地时间设置一个日期对象的秒数。
+Sets the seconds for a date object according to local time.
 
 ###### setTime
 
 以一个表示从 1970-1-1 00:00:00 UTC 计时的毫秒数为来为 Date 对象设置时间。
+Sets the time for a Date object as a number of milliseconds representing the time since 1970-1-1 00:00:00 UTC.
 
 
 #### Error
 
 当运行时错误产生时，Error 对象会被抛出。Error 对象也可用于用户自定义的异常的基础对象。
+The Error object is thrown when a runtime error occurs. Error objects can also be used as base objects for user-defined exceptions.
 
 ##### 实例属性
+##### Instance Properties
 
 ###### message
 错误消息。对于用户创建的 Error 对象，这是构造函数的第一个参数提供的字符串。
+wrong information. For user-created Error objects, this is the string provided as the first parameter of the constructor.
 
 ##### 示例
+##### Example
 
 ```ts
 try {
@@ -1811,10 +1870,12 @@ try {
 #### JSON
 
 ##### 静态方法
+##### static methods
 
 ###### parse
 
 JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的 UTSJSONObject。
+The JSON.parse() method is used to parse a JSON string and construct a UTSJSONObject described by the string.
 
 ```ts
 const json = `{"result":true, "count":42}`;
@@ -1830,6 +1891,7 @@ console.log(obj["result"]);
 ###### stringify
 
 JSON.stringify() 方法将一个 uts 对象或值转换为 JSON 字符串
+The JSON.stringify() method converts a uts object or value to a JSON string
 
 ```ts
 console.log(JSON.stringify({ x: 5, y: 6 }));
@@ -1845,12 +1907,15 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 #### Map
 
 Map 对象保存键值对。任何值（对象或者基本类型）都可以作为一个键或一个值。
+Map objects hold key-value pairs. Any value (object or primitive type) can be a key or a value.
 
 ##### 实例属性
+##### Instance Properties
 
 ###### size
 
 返回 Map 对象的成员数量。
+Returns the number of members of the Map object.
 
 ```ts
 const map1 = new Map<string,string>();
@@ -1863,10 +1928,12 @@ console.log(map1.size);
 ```
 
 ##### 实例方法
+##### Instance Methods
 
 ###### clear
 
 移除 Map 对象中的所有元素。
+Removes all elements from the Map object.
 
 ```ts
 const map1 = new Map<string,string>();
@@ -1882,6 +1949,7 @@ console.log(map1.size);
 ####### delete
 
 用于移除 Map 对象中指定的元素。
+Used to remove the specified element in the Map object.
 
 ```ts
 const map1 = new Map<string,string>();
@@ -1896,25 +1964,31 @@ console.log(map1.has('bar'));
 ###### get
 
 返回某个 Map 对象中的一个指定元素。
+Returns a specified element in a Map object.
 
 ###### has
 
 返回一个布尔值，用来表明 Map 中是否存在指定元素。
+Returns a boolean value indicating whether the specified element exists in the Map.
 
 ###### set
 
 添加或更新一个指定了键（key）和值（value）的（新）键值对。
+Adds or updates a (new) key-value pair specifying a key and a value.
 
 #### Set
 
 Set 对象是值的集合，你可以按照插入的顺序迭代它的元素。Set 中的元素只会出现一次，即 Set 中的元素是唯一的。
+A Set object is a collection of values, and you can iterate over its elements in the order they were inserted. The elements in the Set will only appear once, that is, the elements in the Set are unique.
 
 
 ##### 实例属性
+##### Instance Properties
 
 ###### size
 
 返回 Set 对象中元素的个数。
+Returns the number of elements in the Set object.
 
 ```ts
 const set1 = new Set<Any>();
@@ -1928,10 +2002,12 @@ console.log(set1.size);
 ```
 
 ##### 实例方法
+##### Instance Methods
 
 ###### add
 
 add() 方法用来向一个 Set 对象的末尾添加一个指定的值。
+The add() method is used to add a specified value to the end of a Set object.
 
 ```ts
 const set1 = new Set<number>();
@@ -1947,6 +2023,7 @@ set1.forEach((item)=>{
 ###### clear
 
 clear() 方法用来清空一个 Set 对象中的所有元素。
+The clear() method is used to clear all elements in a Set object.
 
 ```ts
 const set1 = new Set<any>();
@@ -1962,6 +2039,7 @@ console.log(set1.size);
 ####### delete
 
 delete() 方法可以从一个 Set 对象中删除指定的元素。
+The delete() method deletes the specified element from a Set object.
 
 ```ts
 const map1 = new Map<string,string>();
@@ -1976,14 +2054,18 @@ console.log(map1.has('bar'));
 ###### forEach
 
 forEach 方法会根据集合中元素的插入顺序，依次执行提供的回调函数。
+The forEach method executes the provided callback function in sequence according to the insertion order of the elements in the collection.
 
 ###### has
 
 has() 方法返回一个布尔值来指示对应的值 value 是否存在 Set 对象中。
+The has() method returns a boolean value indicating whether the corresponding value value exists in the Set object.
 
 ## 开发指南
+## Development Guide
 
 ### 使用 uts 开发 uni-app 原生插件
+### Using uts to develop uni-app native plugins
 
 ## 学习资料
 ## Learning materials

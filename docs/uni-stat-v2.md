@@ -38,7 +38,7 @@ There is no need to connect different SDKs at each end, and there is no need to 
 **2. Open source, free, free to customize**
 
 无论前端采集数据的SDK、云端接收数据的云函数、云端跑批统计的云函数、展示统计结果的报表，所有这些代码全部开源。
-Regardless of the SDK that collects data in the front-end, the cloud function that receives data in the cloud, the cloud function that runs batch statistics in the cloud, and the report that displays the statistical results, all these codes are all open source.
+Regardless of the SDK that collects data in the front-end, the cloud function that receives data in the cloud, the cloud function that runs batch statistics in the cloud, or the report that displays the statistical results, all these codes are all open source.
 
 前端自定义打点，后端自定义统计维度，自由定制报表，一切都可以灵活定制。
 Front-end custom management, back-end custom statistical dimensions, free custom reports, everything can be flexibly customized.
@@ -103,10 +103,10 @@ uni statistics goes deep into the bottom layer of uni-app and uniCloud framework
 **7. Open Ecosystem**
 
 uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
-The open source of uni statistics and based on the plug-in specification of [uni-admin](/uniCloud/admin) provides a plug-in mechanism, and more plug-in authors will provide various statistical plug-ins (such as e-commerce statistics, content statistics, etc.). See [Plugin Market](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
+The open source of uni statistics and based on the [uni-admin](/uniCloud/admin) plug-in specification provides a plug-in mechanism, and more plug-in authors will provide a variety of rich statistical plug-ins (such as e-commerce statistics, content statistics, etc.). See [Plugin Market](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
 **DCloud非常重视数据驱动开发者业务的增长，近期联合专业的大数据服务商<a href="https://www.sensorsdata.cn/" target="_blank">神策</a>和<a href="https://tj.aldwx.com/" target="_blank">阿拉丁</a>共同完善Uni统计2.0的产品模块和生态建设。
-**DCloud attaches great importance to the growth of data-driven developer business, and recently cooperated with professional big data service providers <a href="https://www.sensorsdata.cn/" target="_blank">Shence</a> and <a href="https://tj.aldwx.com/" target="_blank">Aladdin</a> to jointly improve the product modules and ecological construction of Uni Statistics 2.0.
+**DCloud attaches great importance to the growth of data-driven developer business. Recently, it has cooperated with professional big data service providers <a href="https://www.sensorsdata.cn/" target="_blank">Shence</a> and <a href="https://tj.aldwx.com/" target="_blank">Aladdin</a> to jointly improve the product modules and ecological construction of Uni Statistics 2.0.
 如果你对数据分析有任何需求，欢迎您填写<a href="https://sdmarketing.wjx.cn/vj/h2UFHnx.aspx" target="_blank">需求调研问卷</a>，我们会根据您的宝贵建议，在原有Uni统计产品的基础上，完成迭代更新。**
 If you have any demand for data analysis, you are welcome to fill in the <a href="https://sdmarketing.wjx.cn/vj/h2UFHnx.aspx" target="_blank">demand survey questionnaire</a> . We will complete the iterative update based on the original Uni statistical products based on your valuable suggestions. **
 
@@ -188,7 +188,7 @@ Set the `version` property to `"2"` to enable new version statistics
 |version|String|"1"|"1" ， "2"|统计版本 ，如不填写，默认使用版本1.0，推荐使用2.0版本|
 |version|String|"1"|"1" , "2"|Statistical version, if not filled in, the default version 1.0 is used, and the 2.0 version is recommended|
 |debug|Boolean|false|true ， false|开启统计调试模式 ，会产生大量日志，且会在开发阶段上报数据，应用发布请关闭此项|
-|debug|Boolean|false|true , false|Enable the statistical debugging mode, which will generate a lot of logs, and will report data during the development stage, please turn off this item when the application is released|
+|debug|Boolean|false|true , false|Enable statistical debugging mode, which will generate a lot of logs, and will report data during the development stage, please turn off this option for application release|
 |reportInterval|Number|10|true ， false|前端数据上报周期 **HBuilderX 3.5.4+ 支持**|
 |reportInterval|Number|10|true ， false|Front-end data reporting cycle **HBuilderX 3.5.4+ support**|
 |collectItems|Object|-|-|采集项配置 **HBuilderX 3.5.5+ 支持**|
@@ -267,7 +267,7 @@ According to the selected uniCloud cloud vendor, you can configure the correspon
 Set the `debug` field under `manifest.json -> uniStatistics` to `true|false` to enable and disable the `uni statistics` debug mode
 
 在调试模式下，会将上报数据的关键信息打印到控制台，方便观察采集信息是否正确 ，多用在自定义扩展的时候
-In debug mode, the key information of the reported data will be printed to the console, which is convenient to observe whether the collected information is correct. It is mostly used when customizing extensions.
+In the debug mode, the key information of the reported data will be printed to the console, which is convenient to observe whether the collected information is correct. It is mostly used when customizing extensions.
 
 **日志格式**
 **Log format**
@@ -336,7 +336,7 @@ Please refer to [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-adm
 3. 部署云端资源：上传部署云函数、公共模块、通过`db_init.json`初始化数据库表。如之前的表已经有冲突数据，需要自己手动合并下
 3. Deploy cloud resources: upload and deploy cloud functions, public modules, and initialize database tables through `db_init.json`. If the previous table already has conflicting data, you need to manually merge it yourself
 4. 在云端配置中心完成其它初始化配置，如：在 `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` 文件中填写自己的 passwordSecret 字段 (用于加密密码入库的密钥) 和 tokenSecret 字段 (为生成 token 需要的密钥，测试期间跳过本条也可以)，然后对`uni-config-center`公共模块点右键上传更新。注意：`业务端App项目`和`报表端uni-admin项目`关联相同服务空间时，可能会出现`uni-config-center`的相互覆盖问题，此时建议单点维护，[详见](https://uniapp.dcloud.net.cn/uni-stat-v2.html#常见问题)。
-4. Complete other initialization configurations in the cloud configuration center, such as: fill in your own passwordSecret field in the `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` file (used for encrypted password storage key) and tokenSecret fields (to generate the secret key required for token generation, you can also skip this item during the test), then right-click on the `uni-config-center` public module to upload the update. Note: When the `business-side App project` and the `report-side uni-admin project` are associated with the same service space, the mutual coverage problem of `uni-config-center` may occur. In this case, single-point maintenance is recommended. [See details]( https://uniapp.dcloud.net.cn/uni-stat-v2.html#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98).
+4. Complete other initialization configurations in the cloud configuration center, such as: fill in your own passwordSecret field in the `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` file (used for encrypted password storage key) and tokenSecret fields (to generate the secret key required for token generation, you can skip this item during the test), then right-click on the `uni-config-center` public module to upload the update. Note: When the `business-side App project` and the `report-side uni-admin project` are associated with the same service space, the mutual coverage problem of `uni-config-center` may occur. In this case, it is recommended to maintain a single point. [See details]( https://uniapp.dcloud.net.cn/uni-stat-v2.html#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98).
 5. 运行 uni-admin 项目，一般是运行到浏览器
 5. Run the uni-admin project, usually to the browser
 6. 设置管理员账户
@@ -346,7 +346,7 @@ Please refer to [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-adm
 8. 配置结束后，启动业务App，将会在运行后的`uni-admin`页面左侧的uni统计菜单里看到业务App的数据（如看不到数据，见下方常见问题章节）
 8. After the configuration is complete, start the business app, and you will see the data of the business app in the uni statistics menu on the left side of the `uni-admin` page after running (if you can't see the data, see the FAQ section below)
 9. 测试通过后，在HBuilder发行菜单里发行`uni-admin`项目，选择部署到uniCloud服务空间的前端网页托管里。可以在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)自定义域名。
-9. After the test is passed, issue the `uni-admin` project in the HBuilder issue menu, and choose to deploy it to the front-end web hosting of the uniCloud service space. You can customize the domain name in the [uniCloud web console](https://unicloud.dcloud.net.cn/).
+9. After passing the test, issue the `uni-admin` project in the HBuilder issue menu, and choose to deploy it to the front-end web hosting of the uniCloud service space. You can customize the domain name in the [uniCloud web console](https://unicloud.dcloud.net.cn/).
 
 
 ::: warning 注意
@@ -365,7 +365,7 @@ If the business you need to count has used `uni-admin` before, you can upgrade `
 uni统计新增的文件主要包括：
 The newly added files of uni statistics mainly include:
 - 云函数：`uniCloud/cloudfunctions/uni-stat-cron`（定时跑批云函数）、`uniCloud/cloudfunctions/uni-stat-receiver`（接收前端打点的云对象）
-- Cloud functions: `uniCloud/cloudfunctions/uni-stat-cron` (run and batch cloud functions regularly), `uniCloud/cloudfunctions/uni-stat-receiver` (receive cloud objects processed by the front end)
+- Cloud functions: `uniCloud/cloudfunctions/uni-stat-cron` (running batch cloud functions regularly), `uniCloud/cloudfunctions/uni-stat-receiver` (receiving front-end cloud objects)
 - 云函数公共模块：`uniCloud/cloudfunctions/common/uni-stat`
 - Cloud functions common module: `uniCloud/cloudfunctions/common/uni-stat`
 - 数据表：`uniCloud/database`目录下`uni-stat`开头的若干`schema`文件
@@ -390,14 +390,14 @@ When `db_init.json` initializes the database, the menu table `opendb-admin-menus
 In `uni statistics 2.0`, the default trigger period of the `timed task cloud function (uni-stat-cron)` is to trigger once every hour (ie: every 1 hour, the system will automatically trigger the `uni-stat-cron` cloud function ).
 
 你可以根据需要修改`定时任务云函数（uni-stat-cron）`的触发周期到分钟级(即每隔n分钟触发一次)，但要注意触发周期修改后，需要确保[定时任务配置项](#定时任务配置说明)中设置的分钟数是否会被触发，比如你的配置项中设置的是每小时的第10分钟触发（表达式：`* * * 10`），而定时触发器设置的为每20分钟触发1次（`0 1/20 * * * * *`），那这个配置项将永远不会触发。
-You can modify the trigger period of the `Scheduled task cloud function (uni-stat-cron)` to the minute level as needed (that is, every n minutes), but it should be noted that after the trigger period is modified, you need to ensure that [Scheduled task configuration item](#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E ) whether the number of minutes set in ) will be triggered, for example, your configuration item is set to trigger on the 10th minute of every hour (expression: `* * * 10`), while the timing trigger is set to trigger every 20 minutes 1 time (`0 1/20 * * * * *`), then this configuration item will never be triggered.
+You can modify the trigger period of the `Scheduled Task Cloud Function (uni-stat-cron)` to the minute level (that is, every n minutes) as needed, but pay attention to the modification of the trigger period, you need to ensure that [Scheduled Task Configuration Item](#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E ) whether the number of minutes set in ) will be triggered, for example, your configuration item is set to trigger on the 10th minute of every hour (expression: `* * * 10`), while the timing trigger is set to trigger every 20 minutes 1 time (`0 1/20 * * * * *`), then this configuration item will never be triggered.
 
 ::: warning 注意
 ::: warning attention
 1. 现阶段阿里云仅支持小时级的定时任务（即阿里云云函数的定时触发的最小间隔只能设置为每小时触发一次），因此现阶段阿里云用户如想将`定时任务云函数（uni-stat-cron）`的触发周期设置为分钟级须先向DCloud申请后再开启。[申请方式](https://uniapp.dcloud.io/uniCloud/price.html#aliyun)
 1. At this stage, Alibaba Cloud only supports hourly scheduled tasks (that is, the minimum interval of timed triggering of Alibaba Cloud cloud functions can only be set to be triggered once an hour). -stat-cron)`'s trigger period is set to minute level. You must apply to DCloud before enabling it. [How to apply](https://uniapp.dcloud.io/uniCloud/price.html#aliyun)
 2. 因云函数单次最大运行时长为10分钟，所以开启分钟级定时任务后，如果想重新设置定时任务中触发时间的话，最好确保各定时任务之间的触发间隔时间要大于等于10分钟，防止出现运行超时的问题。默认定时任务类型和触发时间可参考下方[定时任务配置说明](#定时任务配置说明)的说明。
-2. Because the cloud function can run for a maximum of 10 minutes at a time, if you want to reset the trigger time of the scheduled task after enabling the minute-level scheduled task, it is best to ensure that the trigger interval between the scheduled tasks is greater than or equal to 10 minutes. , to prevent the problem of running timeout. The default scheduled task type and trigger time can refer to the following [Scheduled Task Configuration Description](#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7 %BD%AE%E8%AF%B4%E6%98%8E).
+2. Since the cloud function can run for a maximum of 10 minutes at a time, if you want to reset the trigger time in the scheduled task after enabling the minute-level scheduled task, it is best to ensure that the trigger interval between the scheduled tasks is greater than or equal to 10 minutes. , to prevent the problem of running timeout. For the default scheduled task type and trigger time, please refer to the following [Scheduled Task Configuration Description](#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7 %BD%AE%E8%AF%B4%E6%98%8E).
 :::
 
 - 我们这里以将跑批周期修改为每隔10分钟触发1次为例，正确的步骤为：
@@ -446,7 +446,7 @@ Before enabling the redis cache, you need to confirm whether the redis service h
 2. 分别在数据`上报数据接收器（uni-stat-receiver）`和`定时任务云函数（uni-stat-cron）`下的`package.json`文件中添加redis拓展库。
 2. Add the redis extension library to the `package.json` file under the data `Report data receiver (uni-stat-receiver)` and `Scheduled task cloud function (uni-stat-cron)` respectively.
 3. 重新上传部署数据`上报数据接收器（uni-stat-receiver）`、`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
-3. Re-upload the deployment data `Report Data Receiver (uni-stat-receiver)`, `Scheduled Task Cloud Function (uni-stat-cron)` and `Configuration Center (uni-config-center)`.
+3. Re-upload the deployment data `Report data receiver (uni-stat-receiver)`, `Scheduled task cloud function (uni-stat-cron)` and `Configuration center (uni-config-center)`.
 
 ::: preview 
 > 配置uni-stat-receiver的redis拓展库
@@ -509,7 +509,7 @@ In order for the data collected by the client app to be correctly received and c
 1. 选择用户端项目（需采集用户数据的项目）
 1. Select the client project (the project that needs to collect user data)
 2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 阿里云|腾讯云`；否则，进入第3步；
-2. If `uniCloud` has not been enabled before, right-click and select `Create uniCloud cloud development environment -> Alibaba Cloud|Tencent Cloud`; otherwise, go to step 3;
+2. If `uniCloud` has not been enabled before, right click and select `Create uniCloud cloud development environment -> Alibaba Cloud|Tencent Cloud`; otherwise, go to step 3;
 
 ![关联前后台数据](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b2ad84ed-a69a-43dc-b8d1-6efaafd96a14.png)
 ![Associated front and back data](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b2ad84ed-a69a-43dc-b8d1-6efaafd96a14.png)
@@ -623,7 +623,7 @@ In order to facilitate developers to use sourceMap files to locate code problems
 	![cloudSpaceId](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f1dee8fc-dfb5-49b1-b905-22f8fa733eca.jpg)
 
 2. 将 uni-admin 项目运行到浏览器中，在 `uni 统计 / 错误统计 / js报错` 页面，错误信息列表表格的右上角有 `上传 sourceMap` 按钮。点击后展示如下：
-2. Run the uni-admin project into the browser, and on the `uni statistics / error statistics / js error report` page, there is an `upload sourceMap` button in the upper right corner of the error message list table. After clicking, it will display as follows:
+2. Run the uni-admin project into the browser, and on the `uni statistics / error statistics / js error report` page, there is an `upload sourceMap` button in the upper right corner of the error information list table. After clicking, it will display as follows:
 
 	![上传 sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/50878ced-c415-4d8d-923d-f3127e4a1add.png)
 	![Upload sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/50878ced-c415-4d8d-923d-f3127e4a1add.png)
@@ -688,7 +688,7 @@ Parsed error message:
 #### Data reporting logic @report-time
 
 数据上报间隔默认是 10s 上报一次 ，在上报间隔内，会将每次上报节点的数据加入统计数据队列，10s后会在下一个上报节点，统一对数据队列进行一定的处理进行上报。
-The data reporting interval is 10s by default. During the reporting interval, the data of each reporting node will be added to the statistics data queue. After 10s, the next reporting node will uniformly process the data queue and report it.
+The default data reporting interval is 10s. During the reporting interval, the data of each reporting node will be added to the statistics data queue. After 10s, the next reporting node will uniformly process the data queue and report it.
 
 为节约服务端资源，前端采集到的数据按固定周期上报。所以上报请求不是时实发生的。
 To save server-side resources, the data collected by the front-end is reported on a regular basis. So the escalation request does not happen in real time.
@@ -831,12 +831,8 @@ Report when the page jumps. In the SDK, it is triggered by the onHide life cycle
 |ttn|title set via API uni.setnavigationbartitle|
 |ttc|通过 uni.report 上报的页面的 title|
 |ttc|The title of the page reported via uni.report|
-|ttct|title 组件中设置的 title|
-The title| set in the |ttct|title component
-The title| set in the |ttct|title component
-The title| set in the |ttct|title component
-The title| set in the |ttct|title component
-The title| set in the |ttct|title component
+|ttct |title 组件中设置的 title|
+|ttct|The title set in the title component|
 |urlref		|应用退出时停留的页面|
 |urlref |Page where the app exits|
 |urlref_ts	|应用退出时，最后一个页面的停留时间|
@@ -1177,7 +1173,7 @@ Note: After modifying the uni statistics configuration items, you need to re-upl
 |  realtimeStat		|  true		|开启实时统计，true: 开启，false:关闭，开启后会每小时统计一次，数据库读写次数会增多，可按需决定是否开启。																							|
 | realtimeStat | true | Enable real-time statistics, true: enabled, false: disabled. After it is enabled, statistics will be counted every hour, and the number of database reads and writes will increase. You can decide whether to enable it as needed. |
 |  cronMin			|  false	|开启分钟级定时任务，true: 开启，false:关闭。开启后定时任务将细分到分钟级执行，分摊数据计算压力，适合应用日活较大或有特殊需求的用户群体。具体的开启方法见[设置定时任务云函数的触发周期](#设置定时任务云函数的触发周期)。	|
-| cronMin | false | Enable minute-level scheduled tasks, true: enable, false: disable. After opening, the scheduled tasks will be subdivided into minute-level execution to distribute the data calculation pressure, which is suitable for user groups with large daily activities or special needs. For the specific opening method, see [Set the trigger period of the scheduled task cloud function](#%E8%AE%BE%E7%BD%AE%E5%AE%9A%E6%97%B6%E4%BB%BB%E5% 8A%A1%E4%BA%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%A7%A6%E5%8F%91%E5%91%A8%E6%9C% 9F). |
+| cronMin | false | Enable minute-level scheduled tasks, true: enable, false: disable. After opening, the scheduled tasks will be subdivided into minute-level execution, and the data calculation pressure will be distributed, which is suitable for user groups with large daily activities or special needs. For the specific opening method, see [Set the trigger period of the cloud function of the scheduled task](#%E8%AE%BE%E7%BD%AE%E5%AE%9A%E6%97%B6%E4%BB%BB%E5% 8A%A1%E4%BA%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%A7%A6%E5%8F%91%E5%91%A8%E6%9C% 9F). |
 |  cron				|  -		|用于配置定时任务触发时间，详情见下方[定时任务配置说明](#定时任务配置说明)。																														|
 | cron | - | is used to configure the trigger time of scheduled tasks. For details, see the following [Scheduled Task Configuration Instructions](#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9 %85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E). |
 |  batchInsertNum	|  5000		|当有批量写入操作时，限制单次写入数据库的最大条数。为防止写入超时，最大值为5000条。																													|
@@ -1219,9 +1215,9 @@ The current types of scheduled tasks are (`The content in brackets below indicat
 - `retention-device`：设备留存数据统计，统计维度包括：
 - `retention-device`: Device retention data statistics, statistical dimensions include:
   - 日统计，默认`每天上午2点（20分钟）`触发，统计设备日留存数据（初始统计前天到昨天的留存情况，因此需至少运行三天才会有数据）
-  - Daily statistics, the default is triggered by `2:00 am (20 minutes) every day`, and the daily retained data of the device will be counted (the initial statistics of the retention status from the day before yesterday to yesterday, so there will be data after at least three days of operation)
+  - Daily statistics, the default is triggered by `every day at 2:00 am (20 minutes)`, and the daily retained data of the device is counted (the initial statistics of the retention status from the day before yesterday to yesterday, so it takes at least three days to have data)
   - 周统计，默认`每周一上午2点（30分钟）`触发，统计设备周留存数据（初始统计上上周到上周的留存情况，因此需至少运行三周才会有数据）
-  - Weekly statistics, triggered by `every Monday at 2:00 am (30 minutes)` by default, to count the weekly retained data of the equipment (the initial statistics of the retention from the last week to the last week, so it takes at least three weeks to have data)
+  - Weekly statistics, triggered by `every Monday at 2:00 am (30 minutes)` by default, to count the weekly retained data of the device (the initial statistics of the retention from the last week to the last week, so it takes at least three weeks to have data)
   - 月统计，默认`每月1号上午4点（30分钟）`触发，统计设备月留存数据（初始统计上上月到上月的留存情况，因此需至少运行三个月才会有数据）
   - Monthly statistics, the default is triggered by `4:00 am (30 minutes) on the 1st of each month`, and the monthly retained data of the device is counted (the initial statistics are for the retention of the previous month to the previous month, so it will take at least three months to run to have data)
 
@@ -1285,7 +1281,7 @@ The `errorCheck` parameter is used to limit the same error log to be written to 
 #### Log cleaning configuration instructions
 
 `cleanLog`参数用于配置定时清理过期的日志，减少数据库数据的存储量，提升uni统计性能。
-The `cleanLog` parameter is used to configure regular cleaning of expired logs, reduce the storage capacity of database data, and improve uni statistics performance.
+The `cleanLog` parameter is used to configure the regular cleaning of expired logs, reduce the storage capacity of database data, and improve the performance of uni statistics.
 
 |参数			|说明																																								|
 |Parameters |Description |
@@ -1293,7 +1289,7 @@ The `cleanLog` parameter is used to configure regular cleaning of expired logs, 
 | open			|是否开启日志清理：true：是；false:否																																|
 | open | Whether to enable log cleaning: true: yes; false: no |
 | reserveDays	|各项日志的保留天数配置，参数格式：`日志类型:保留天数`，例如： `sessionLog:31`代表保留31天的会话日志，保留天数设置为0时表示永久保留(此举会累积大量无用数据，不推荐)	|
-| reserveDays | Retention days configuration for each log, parameter format: `log type: retention days`, for example: `sessionLog: 31` means to reserve session logs for 31 days, if the retention days is set to 0, it means permanent retention (this will Accumulate a lot of useless data, not recommended) |
+| reserveDays | Retention days configuration for each log, parameter format: `log type: retention days`, for example: `sessionLog: 31` means to reserve session logs for 31 days, and if the retention days is set to 0, it means permanent retention (this will Accumulate a lot of useless data, not recommended) |
 
 目前可配置的日志类型有：
 The currently configurable log types are:
@@ -1489,7 +1485,7 @@ A: Refer to [uni-admin creates multiple login accounts for the system and sets d
 **5. Why is the total device count less than the active device count? **
 
 答：总设备数计算公式为：总设备数 = 原设备数 + 新设备数，而判断一个设备是否为新设备的依据是在客户端SDK中是否已储存该设备上次访问某一应用的时间，未存储则认为是该应用的新设备(即lvts=0时为新设备，lvts>0为老设备)。 因此如果之前某一设备已经访问过某一应用，就算此时清除数据库中的数据，由于已经在客户端SDK中储存该设备上次访问应用的时（即此时lvts > 0），所以该设备也不会再被认为是该应用的新设备从而不会再被计算进该应用的总设备数中而只会计算进活跃设备数中，此时可能就会出现总设备数小于活跃设备数的情况。
-A: The calculation formula of the total number of devices is: total number of devices = number of original devices + number of new devices, and the basis for judging whether a device is a new device is whether the last time the device accessed an application has been stored in the client SDK. , if it is not stored, it is considered as a new device of the application (that is, when lvts=0, it is a new device, and if lvts>0, it is an old device). Therefore, if a device has accessed an application before, even if the data in the database is cleared at this time, since the last time the device accessed the application (ie lvts > 0) has been stored in the client SDK, the device It will no longer be considered a new device for the application and will no longer be counted in the total number of devices in the application, but only in the number of active devices. At this time, there may be cases where the total number of devices is less than the number of active devices. Happening.
+A: The calculation formula of the total number of devices is: total number of devices = number of original devices + number of new devices, and the basis for judging whether a device is a new device is whether the last time the device accessed an application has been stored in the client SDK. , if it is not stored, it is considered as a new device of the application (that is, when lvts=0, it is a new device, and if lvts>0, it is an old device). Therefore, if a device has accessed an application before, even if the data in the database is cleared at this time, since the last time the device accessed the application (ie lvts > 0 at this time) has been stored in the client SDK, the device It will no longer be considered a new device for the application and will no longer be counted in the total number of devices in the application, but only in the number of active devices. At this time, there may be cases where the total number of devices is less than the number of active devices. Happening.
 
 **6. uni-stat-cron运行日志显示 Not Found the cofnig file** 
 **6. The uni-stat-cron log shows Not Found the cofnig file**

@@ -562,7 +562,7 @@ uni统计新增的文件主要包括：
 |ttpj|pages.json 中定义的页面的 title|
 |ttn|通过API uni.setnavigationbartitle 设置的 title|
 |ttc|通过 uni.report 上报的页面的 title|
-|ttct|title 组件中设置的 title|
+|ttct |title 组件中设置的 title|
 |urlref		|应用退出时停留的页面|
 |urlref_ts	|应用退出时，最后一个页面的停留时间|
 |ch	|渠道信息|

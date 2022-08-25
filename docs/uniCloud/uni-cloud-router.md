@@ -6,60 +6,6 @@
 源码仓库：[https://gitee.com/dcloud/uni-cloud-router](https://gitee.com/dcloud/uni-cloud-router)
 Source code repository: [https://gitee.com/dcloud/uni-cloud-router](https://gitee.com/dcloud/uni-cloud-router)
 
-
----
-
-- [uni-cloud-router](#uni-cloud-router)
-  - [云函数端](#云函数端)
-  - [Cloud function side](#cloud-function-side)
-    - [安装](#安装)
-    - [Install](#install)
-  - [介绍](#介绍)
-  - [introduce](#introduce)
-    - [目录结构](#目录结构)
-    - [Directory Structure](#directory-structure)
-    - [快速开始](#快速开始)
-    - [Quick start](#quick-start)
-  - [深入学习](#深入学习)
-  - [Deep learning](#deep-learning)
-    - [控制器（Controller）](#控制器controller)
-    - [Controller](#controller)
-      - [如何编写 Controller](#如何编写-controller)
-      - [How to write Controller](#how-to-write-controller)
-      - [获取请求参数](#获取请求参数)
-      - [Get request parameters](#get-request-parameters)
-      - [调用 Service](#调用-service)
-      - [call Service](#call-service)
-      - [定制 URL 化返回的状态码](#定制-url-化返回的状态码)
-      - [Customize the status code returned by URLization](#customize-the-status-code-returned-by-urlization)
-      - [定制 URL 化返回响应头](#定制-url-化返回响应头)
-      - [Customized URL-based response headers](#customized-url-based-response-headers)
-  - [Cookie的使用](#cookie的使用)
-  - [Cookie usage](#cookie-usage)
-    - [服务（Service）](#服务service)
-    - [Service](#service)
-      - [使用场景](#使用场景)
-      - [scenes to be used](#scenes-to-be-used)
-      - [如何编写 Service](#如何编写-service)
-      - [How to write Service](#how-to-write-service)
-      - [使用 Service](#使用-service)
-      - [Using Service](#using-service)
-    - [中间件（Middleware）](#中间件middleware)
-    - [Middleware](#middleware)
-      - [开发中间件](#开发中间件)
-      - [Development middleware](#development-middleware)
-      - [使用中间件](#使用中间件)
-      - [Using middleware](#using-middleware)
-    - [Context](#context)
-      - [获取方式](#获取方式)
-      - [method of obtaining](#method-of-obtaining)
-    - [客户端使用云函数@use-in-client](#客户端使用云函数use-in-client)
-    - [Client uses cloud functions @use-in-client](#client-uses-cloud-functions-use-in-client)
-      - [发送请求](#发送请求)
-      - [send request](#send-request)
-      - [返回结果](#返回结果)
-      - [return result](#return-result)
-
 ## 云函数端
 ## Cloud function side
 
@@ -328,7 +274,28 @@ class PostController extends Controller {
 - 响应头内各个字段请使用全小写，例：'Content-Type' ×，'content-type' √
 - Please use all lowercase for each field in the response header, for example: 'Content-Type' ×, 'content-type' √
 
+#### URL 化返回响应体@url-binary
 
+```js
+// 返回javascript内容
+class GetController extends Controller {
+  async create() {
+    ctx.headers = {'content-type':'application/javascript'}
+    ctx.body = 'console.log("abc")'
+  }
+}
+```
+
+```js
+// 返回图片
+class GetController extends Controller {
+  async create() {
+    ctx.isBase64Encoded = true
+    ctx.headers = {'content-type': 'image/png'}
+    ctx.body = '图片Buffer对应的base64内容'
+  }
+}
+```
 
 ## Cookie的使用
 ## Cookie usage

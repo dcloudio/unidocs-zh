@@ -4,31 +4,6 @@
 
 源码仓库：[https://gitee.com/dcloud/uni-cloud-router](https://gitee.com/dcloud/uni-cloud-router)
 
-
----
-
-- [云函数端](#云函数端)
-  - [安装](#安装)
-  - [目录结构](#目录结构)
-  - [控制器（Controller）](#控制器controller)
-    - [如何编写 Controller](#如何编写-controller)
-    - [获取请求参数](#获取请求参数)
-    - [调用 Service](#调用-service)
-    - [定制 URL 化返回的状态码](#定制-url-化返回的状态码)
-    - [Cookie使用](#Cookie使用)
-  - [服务（Service）](#服务service)
-    - [使用场景](#使用场景)
-    - [如何编写 Service](#如何编写-service)
-    - [使用 Service](#使用-service)
-  - [中间件（Middleware）](#中间件middleware)
-    - [开发中间件](#开发中间件)
-    - [使用中间件](#使用中间件)
-  - [Context](#context)
-    - [获取方式](#获取方式)
-- [客户端](#客户端)
-  - [发送请求](#发送请求)
-  - [返回结果](#返回结果)
-
 ## 云函数端
 
 ### 安装
@@ -244,7 +219,28 @@ class PostController extends Controller {
 
 - 响应头内各个字段请使用全小写，例：'Content-Type' ×，'content-type' √
 
+#### URL 化返回响应体@url-binary
 
+```js
+// 返回javascript内容
+class GetController extends Controller {
+  async create() {
+    ctx.headers = {'content-type':'application/javascript'}
+    ctx.body = 'console.log("abc")'
+  }
+}
+```
+
+```js
+// 返回图片
+class GetController extends Controller {
+  async create() {
+    ctx.isBase64Encoded = true
+    ctx.headers = {'content-type': 'image/png'}
+    ctx.body = '图片Buffer对应的base64内容'
+  }
+}
+```
 
 ## Cookie的使用
 

@@ -398,6 +398,7 @@
   + Added uni-app vue2 project to support using `@/pages.json` to refer to the conditionally compiled `pages.json` file
   + 修复 3.4.17 版本引发的 vue3 项目 运行在小程序平台 `<script setup>`中使用 const 定义 reactive 对象访问出错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3606)
   + Fix the vue3 project caused by version 3.4.17 to run on the applet platform` <script setup>`中使用 const 定义 reactive 对象访问出错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3606)
+  + Fix the vue3 project caused by version 3.4.17 to run on the applet platform` <script setup>`中使用 const 定义 reactive 对象访问出错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3606)
   + App、Web平台 修复 3.4.10 版本引出的 vue2项目 image 组件 load 事件图像大小信息不准确的Bug [详情](https://ask.dcloud.net.cn/question/147174)
   + App, Web platform Fix the bug of inaccurate image size information in the image component load event of the vue2 project introduced by version 3.4.10 [Details](https://ask.dcloud.net.cn/question/147174)
   + App平台 优化 slot name 支持动态赋值 [详情](https://ask.dcloud.net.cn/question/95109)

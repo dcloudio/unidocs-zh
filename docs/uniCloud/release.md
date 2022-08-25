@@ -15,7 +15,7 @@ Note: This changelog is only for uniCloud, including the uniCloud web console an
     - 云对象 新增 this.getUniCloudRequestId() 用于获取当前请求id [详情](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#get-request-id)
     - Cloud Object Added this.getUniCloudRequestId() to get the current request id [Details](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#get-request-id)
   + 新增 云函数 uniCloud.getCloudInfos 获取云端信息。同时兼容有无并发请求的情况 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-cloud-infos)
-  + Added cloud function uniCloud.getCloudInfos to get cloud information. At the same time, it is compatible with or without concurrent requests [Details](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-cloud-infos)
+  + Added cloud function uniCloud.getCloudInfos to get cloud information. Also compatible with concurrent requests [Details](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-cloud-infos)
   + 新增 云函数 uniCloud.getClientInfos 获取客户端信息。同时兼容有无并发请求的情况 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-client-infos)
   + Added cloud function uniCloud.getClientInfos to get client information. At the same time compatible with or without concurrent requests [Details](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-client-infos)
   + 修复 客户端sdk 未关联 uniCloud 服务空间时使用 uniCloud 对象导致报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3758)
@@ -43,7 +43,7 @@ Note: This changelog is only for uniCloud, including the uniCloud web console an
   + 新增 uni-id-pages 登录成功（全局）回调事件：`uni-id-pages-login-success`，支持通过[uni.$on](https://uniapp.dcloud.net.cn/api/window/communication.html#on)监听 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
   + Added uni-id-pages login success (global) callback event: `uni-id-pages-login-success`, support through [uni.$on](https://uniapp.dcloud.net.cn/api /window/communication.html#on) monitor [details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
   + 新增 uni-open-bridge 开源库，统一管理微信等三方开放平台的凭据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html)
-  + Added uni-open-bridge open source library, unified management of credentials for three-party open platforms such as WeChat [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html)
+  + Added uni-open-bridge open source library, unified management of credentials of three-party open platforms such as WeChat [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html)
 
 #### 2022-08-05
   + 【重要】新增云函数ip防刷功能，避免大量无效请求导致云函数、数据库响应变慢 [详情](https://uniapp.dcloud.net.cn/uniCloud/ip-filter.html)

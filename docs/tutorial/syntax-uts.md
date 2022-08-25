@@ -140,7 +140,7 @@ In uts, there are certain rules for using variable names.
 | Operator                        | Usage   | Description                                                                                                      |
 | ------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
 | 按位与 AND                      | a & b   | 在 a,b 的位表示中，每一个对应的位都为 1 则返回 1， 否则返回 0.                                                   |
-| Bitwise AND | a & b | In the bit representation of a,b, if each corresponding bit is 1, it returns 1, otherwise it returns 0. |
+| Bitwise AND | a & b | In the bit representation of a,b, if each corresponding bit is 1, return 1, otherwise return 0. |
 | 按位或 OR                       | a \| b  | 在 a,b 的位表示中，每一个对应的位，只要有一个为 1 则返回 1， 否则返回 0.                                         |
 | Bitwise OR | a \| b | In the bit representation of a,b, if each corresponding bit is 1, it returns 1, otherwise it returns 0. |
 | 按位异或 XOR                    | a ^ b   | 在 a,b 的位表示中，每一个对应的位，两个不相同则返回 1，相同则返回 0.                                             |
@@ -150,7 +150,7 @@ In uts, there are certain rules for using variable names.
 | 左移 shift                      | a << b  | 将 a 的二进制串向左移动 b 位,右边移入 0.                                                                         |
 | shift left | a << b | Shift the binary string of a to the left by b bits and to the right by 0. |
 | 算术右移                        | a >> b  | 把 a 的二进制表示向右移动 b 位，丢弃被移出的所有位.(译注:算术右移左边空出的位是根据最高位是 0 和 1 来进行填充的) |
-| Arithmetic right shift | a >> b | Shifts the binary representation of a to the right by b bits, discarding all the shifted bits. ) |
+| Arithmetic right shift | a >> b | Shift the binary representation of a to the right by b bits, discarding all the shifted bits. ) |
 | 无符号右移(左边空出位用 0 填充) | a >>> b | 把 a 的二进制表示向右移动 b 位，丢弃被移出的所有位，并把左边空出的位都填充为 0                                   |
 | Unsigned right shift (left vacant bits are filled with 0s) | a >>> b | Shift the binary representation of a to the right by b bits, discarding all shifted bits, and filling the left vacant bits with 0s |
 
@@ -433,13 +433,13 @@ switch (expression) {
 The program first looks for a case statement that matches expression, then transfers control to that clause, executing the associated statement. If there is no match, the program looks for the default statement, and if it finds it, control transfers to that clause and the associated statement is executed. If no default is found, the program continues with the statement following the switch statement. The default statement usually appears at the end of the switch statement, although this is not required.
 
 可选的 break 语句与每个 case 语句相关联， 保证在匹配的语句被执行后程序可以跳出 switch 并且继续执行 switch 后面的语句。如果 break 被忽略，则程序将继续执行 switch 语句中的下一条语句。
-An optional break statement is associated with each case statement, ensuring that the program can break out of switch after the matching statement has been executed and continue execution of the statement following the switch. If break is ignored, the program will continue to the next statement in the switch statement.
+An optional break statement is associated with each case statement, ensuring that the program can break out of the switch after the matching statement has been executed and continue executing the statement following the switch. If break is ignored, the program will continue to the next statement in the switch statement.
 
 ##### 三元表达式
 ##### Ternary expressions
 
 uts 支持使用三元表达式。一个条件后面会跟一个问号（?），如果条件为 true ，则问号后面的表达式 A 将会执行；表达式 A 后面跟着一个冒号（:），如果条件为 false ，则冒号后面的表达式 B 将会执行。本运算符经常作为 if 语句的简捷形式来使用。
-uts supports the use of ternary expressions. A condition is followed by a question mark (?), if the condition is true, the expression A after the question mark will be executed; expression A is followed by a colon (:), if the condition is false, the expression B after the colon is executed will execute. This operator is often used as a shorthand for an if statement.
+uts supports the use of ternary expressions. A condition is followed by a question mark (?), if the condition is true, the expression A following the question mark will be executed; expression A is followed by a colon (:), if the condition is false, the expression B following the colon will be executed will execute. This operator is often used as a shorthand for an if statement.
 
 ```ts
 function getFee(isMember: boolean): string {
@@ -1191,7 +1191,7 @@ console.log(howard.name); // 错误
 ```
 
 注意，我们不能在 Person 类外使用 name，但是我们仍然可以通过 Employee 类的实例方法访问，因为 Employee 是由 Person 派生而来的。
-Note that we cannot use the name outside the Person class, but we can still access it through the instance methods of the Employee class because Employee is derived from Person.
+Note that we cannot use the name outside of the Person class, but we can still access it through the instance methods of the Employee class, since Employee is derived from Person.
 
 ### 模块
 ### Modules
@@ -1314,7 +1314,7 @@ Returns the index of the first element in the array that satisfies the provided 
 ###### flat
 
 按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回
-Recursively traverses the array at a specified depth, and returns all elements and elements in the traversed subarrays into a new array.
+Recursively traverses the array at a specified depth and returns all elements and elements of the traversed subarrays into a new array
 
 ###### flatMap
 

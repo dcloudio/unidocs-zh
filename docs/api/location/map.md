@@ -48,6 +48,7 @@ mapContext
 - 在组件中，必须在 `mounted` 中调用。
 - nvue没有`$getAppMap()`，请使用`createMapContext`
 - `uni-app`中使用原生地图无需提供占位div，得到`$getAppMap()`后直接js使用即可。
+- `openMapApp` iOS 暂不支持，后续补充
 
 
 **getCenterLocation 的 OBJECT 参数列表**
@@ -252,7 +253,7 @@ mapContext
 
 示例代码
 
-```
+```js
   MapContext.on('markerClusterCreate', (res) => {})
   MapContext.on('markerClusterClick', (res) => {})
 ```
@@ -262,7 +263,7 @@ mapContext
 
 缩小地图可看到多个 marker 合并为 1 个并显示聚合数量，放大地图后恢复
 
-```
+```html
 <template>
   <view class="content">
     <map id="map" class="map" :show-location="true" :latitude="latitude" :longitude="longitude"></map>

@@ -42,7 +42,7 @@
 **使用方式**
 
 - 如果没有安装本地运行插件，按照提示安装即可
-- 如需配置运行参数请参考：[配置运行测试参数](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=runparam)
+- 如需配置运行参数请参考：[配置运行测试参数](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#runparam)
 
 <div align=center>
   <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/cb5457a0-4b19-11eb-8ff1-d5dcf8779628.jpg"/>
@@ -63,7 +63,7 @@
 
 运行云函数时，如需要给云函数传参，又不想启动客户端，那么可以通过配置json文件来传测试参数。
 
-在云函数对应的目录右键可以配置运行测试参数，如下图，选择之后会生成一个形如`${函数名}.param.json`的文件，此文件内容会在云函数`上传并运行`以及`本地运行云函数`时作为参数传入云函数内。详细用法可参考：[配置运行测试参数](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=runparam)
+在云函数对应的目录右键可以配置运行测试参数，如下图，选择之后会生成一个形如`${函数名}.param.json`的文件，此文件内容会在云函数`上传并运行`以及`本地运行云函数`时作为参数传入云函数内。详细用法可参考：[配置运行测试参数](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#runparam)
 
 ## 上传并运行云函数@uploadandrun
 
@@ -288,6 +288,32 @@ const hour = getOffsetDate(8).getHours()
   "uniIdToken": "xxxx"
 }
 ```
+<!-- 
+## 运行云对象时传配置运行测试参数@run-obj-param
+
+> 新增于HBuilderX 3.5.6
+
+右键点击云对象时选择`运行-本地云对象`或`调试运行-本地云对象`时，会自动创建运行参数文件`${objName}.param.js`，可在此文件内以以下格式配置参数，配置完毕后再次运行即可。
+
+其中`const clientInfo = {xxx}`为模拟客户端信息。完整clientInfo列表请参考：[getClientInfo](cloud-obj.md#get-client-info)
+
+`login('xxx', 'xxx')`用于指定调用的方法名和参数。
+
+```js
+const clientInfo = { // 模拟clientInfo
+  uniPlatform: 'web',
+  source: 'client', // 调用来源，不传时默认为 client
+  clientIP: '127.0.0.1', // 客户端ip，不传时默认为 127.0.0.1
+  userAgent: 'xx MicroMessenger/xxx' // 客户端ua，不传时默认为 HBuilderX
+  uniIdToken: 'xxx',
+}
+login('name-demo', 'password-demo') // 调用login方法传入参数'name-demo'和'password-demo'
+```
+
+**注意**
+
+- 此文件并非可执行的js文件，仅用来配置参数，因此不可在文件内定义变量并使用
+- 如果存在多个方法、参数配置运行时会使用第一个 -->
 
 ## 断点调试云函数
 

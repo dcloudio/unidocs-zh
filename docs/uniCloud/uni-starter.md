@@ -1,5 +1,5 @@
 ## 视频介绍
-<a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=11">
+<a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=12">
     <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/71d310a5-ef69-4ca5-88c8-9a3abf8fb8e3.png" alt="腾讯课堂uniCloud视频教程" style="width: 70%;margin-bottom:26px;">
 </a>
 
@@ -51,7 +51,7 @@ GitCode 仓库：[https://gitcode.net/dcloud/uni-starter](https://gitcode.net/dc
 6. 更好的性能：首页采用nvue，fast编译模式，加快App端启动速度
 7. 内置拦截器：
 	- 页面路由拦截，配置需强制登录的页面；打开时自动检测`token`若无效就自动跳转到登录页
-	- 调用云函数（callFunction）拦截器，自动携带必要参数、自动处理响应体。详见9.自动完成1-2
+	- 调用云函数（callFunction）拦截器，自动携带必要参数、自动处理响应体。详见8.自动完成1-2
 8. 自动完成：
 	- 分析uniCloud.callfunction和clientDB操作的响应体，判断code执行对应的操作如跳转到登录页，自动续期token
 	- 操作注册/登录操作自动获取客户端设备：push_clientid、imei、oaid、idfa新增/更新到数据表uni-id-device

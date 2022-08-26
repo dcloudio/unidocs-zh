@@ -1244,6 +1244,7 @@ function beforeRegister({
       userRecord.role = ['teacher']
     }
   }
+  return userRecord // 务必返回处理后的userRecord
 }
 
 module.exports = {

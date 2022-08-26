@@ -4,7 +4,7 @@
 
 对于那些不依赖 UI 交互的原生功能，nvue将其封装成模块，这是一种通过 javascript 调用原生能力的方法。
 - uni-app默认内置集成原生模块，如：BindingX，animation， DOM.addRule等。
-  通过```uni.requireNativePlugin```引入 App 原生插件
+  通过`uni.requireNativePlugin`引入 App 原生插件
 
   
 ```js
@@ -58,13 +58,13 @@
 
 **addRule(type, contentObject)**
 - @fontFace 协议名称，不可修改。
-- @fontFamily ```font-family```的名称。
+- @fontFamily `font-family`的名称。
 - @src 字体地址，url('') 是保留字段，其参数如下:
-	- http. 从HTTP请求加载, e.g. ```url('http://at.alicdn.com/t/font_1469606063_76593.ttf')```
-	- https. 从HTTPS请求加载, e.g. ```url('https://at.alicdn.com/t/font_1469606063_76593.ttf')```
+	- http. 从HTTP请求加载, e.g. `url('http://at.alicdn.com/t/font_1469606063_76593.ttf')`
+	- https. 从HTTPS请求加载, e.g. `url('https://at.alicdn.com/t/font_1469606063_76593.ttf')`
 	- local, Android ONLY. 从assets目录读取, e.g. url('local://foo.ttf'), foo.ttf 是文件名在你的assets目录中.
-	- file. 从本地文件读取, e.g. ```url('file://storage/emulated/0/Android/data/com.alibaba.weex/cache/http:__at.alicdn.com_t_font_1469606063_76593.ttf')```
-	- data. 从base64读取, e.g. ```url('data:font/truetype;charset=utf-8;base64,AAEAAAALAIAAAwAwR1NVQrD+....')```, 上述data字段不全。
+	- file. 从本地文件读取, e.g. `url('file://storage/emulated/0/Android/data/com.alibaba.weex/cache/http:__at.alicdn.com_t_font_1469606063_76593.ttf')`
+	- data. 从base64读取, e.g. `url('data:font/truetype;charset=utf-8;base64,AAEAAAALAIAAAwAwR1NVQrD+....')`, 上述data字段不全。
 	
 **注意**
 > addRule 方法里的 fontFamily 可以随意取。这个名字不是字体真正的名字。字体真正的名字（font-family），也就是注册到系统中的名字是保存在字体二进制文件中的。你需要确保你使用的字体的真正名字（font-family）足够特殊，否则在向系统注册时可能发生冲突，导致注册失败，你的字符被显示为‘?’。
@@ -75,7 +75,7 @@
 
 ### scrollToElement<div id="scrollToElement"></div>
 
-让页面滚动到 ref 对应的组件，这个 API 只能用于可滚动组件的子节点，例如 ```<scroller>```，```<list>```, ```<waterfall>``` 等可滚动组件中。
+让页面滚动到 ref 对应的组件，这个 API 只能用于可滚动组件的子节点，例如 `<scroller>`，`<list>`, `<waterfall>` 等可滚动组件中。
 
 **scrollToElement(ref, options)**
 - @ref，要滚动到的那个节点。
@@ -182,7 +182,7 @@
 - @callback，异步方法，通过回调返回信息。
 
 回调方法中的数据样例：
-```html
+```js
   {
     result: true,
     size: {
@@ -206,9 +206,9 @@
 
 ## animation
 
-```animation```模块可以用来在组件上执行动画。JS-Animation可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。
+`animation`模块可以用来在组件上执行动画。JS-Animation可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。
 
-举个例子，如果有一个```image```组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。
+举个例子，如果有一个`image`组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。
 
 ```html
   <template>
@@ -275,7 +275,7 @@
 |duration		|指定动画的持续时间 (单位是毫秒)，默认值是 0，表示瞬间达到动画结束状态。																																				|
 |delay			|指定请求动画操作到执行动画之间的时间间隔 (单位是毫秒)，默认值是 0，表示没有延迟，在请求后立即执行动画。																												|
 |needLayout		|动画执行是否影响布局，默认值是false。																																													|
-|timingFunction	|描述动画执行的速度曲线，用于描述动画已消耗时间和动画完成进度间的映射关系。默认值是 ```linear```，表示动画从开始到结束都拥有同样的速度。详见下						|
+|timingFunction	|描述动画执行的速度曲线，用于描述动画已消耗时间和动画完成进度间的映射关系。默认值是 `linear`，表示动画从开始到结束都拥有同样的速度。详见下						|
 
 
 下表列出了styles所有合法的参数：
@@ -316,7 +316,7 @@
 
 
 **注意**
-- iOS上可以获取 ```animation``` 是否执行成功的信息，callback中的result参数会有两种，分别是是Success与Fail。
+- iOS上可以获取 `animation` 是否执行成功的信息，callback中的result参数会有两种，分别是是Success与Fail。
 - Android 的callback 函数不支持result参数。
 
 
@@ -350,20 +350,20 @@ BindingX是一种规则，解析快，但没有js那样足够强的编程灵活�
 
 ```html
 	<template>
-	    <div class="container">
-	        <div ref="b1" class="btn" style="background-color:#6A1B9A" @click="clickBtn">
+	    <view class="container">
+	        <view ref="b1" class="btn" style="background-color:#6A1B9A" @click="clickBtn">
 	            <text class="text">A</text>
-	        </div>
-	        <div ref="b2" class="btn" style="background-color:#0277BD" @click="clickBtn">
+	        </view>
+	        <view ref="b2" class="btn" style="background-color:#0277BD" @click="clickBtn">
 	            <text class="text">B</text>
-	        </div>
-	        <div ref="b3" class="btn" style="background-color:#FF9800" @click="clickBtn">
+	        </view>
+	        <view ref="b3" class="btn" style="background-color:#FF9800" @click="clickBtn">
 	            <text class="text">C</text>
-	        </div>
-	        <div ref="main_btn" class="btn" @click="clickBtn">
+	        </view>
+	        <view ref="main_btn" class="btn" @click="clickBtn">
 	            <image class="image" ref="main_image" src="https://gw.alicdn.com/tfs/TB1PZ25antYBeNjy1XdXXXXyVXa-128-128.png" />
-	        </div>
-	    </div>
+	        </view>
+	    </view>
 	</template>
 	<script>
 	    const Binding = uni.requireNativePlugin('bindingx');
@@ -532,7 +532,7 @@ BindingX是一种规则，解析快，但没有js那样足够强的编程灵活�
 ## nvue 和 vue 相互通讯@communication
 在 uni-app 中，nvue 和 vue 页面可以混搭使用。
 
-推荐使用 ```uni.$on``` , ```uni.$emit``` 的方式进行页面通讯，旧的通讯方式（uni.postMessage及plus.webview.postMessageToUniNView）不再推荐使用。
+推荐使用 `uni.$on` , `uni.$emit` 的方式进行页面通讯，旧的通讯方式（uni.postMessage及plus.webview.postMessageToUniNView）不再推荐使用。
 
 ##### 通讯实现方式
 
@@ -600,8 +600,8 @@ BindingX是一种规则，解析快，但没有js那样足够强的编程灵活�
 
 ##### 步骤：
 
-1. 在 ```vue``` 里使用 ```plus.webview.postMessageToUniNView(data,nvueId)``` 发送消息，```data``` 为 ```JSON``` 格式（键值对的值仅支持String），```nvueId``` 为 ```nvue``` 所在 webview 的 id，webview的 id 获取方式参考：[$getAppWebview()](/tutorial/page.html#getappwebview)。
-2. 在 ```nvue``` 里引用 ```globalEvent``` 模块监听 ```plusMessage``` 事件，如下： 
+1. 在 `vue` 里使用 `plus.webview.postMessageToUniNView(data,nvueId)` 发送消息，`data` 为 `JSON` 格式（键值对的值仅支持String），`nvueId` 为 `nvue` 所在 webview 的 id，webview的 id 获取方式参考：[$getAppWebview()](/tutorial/page.html#getappwebview)。
+2. 在 `nvue` 里引用 `globalEvent` 模块监听 `plusMessage` 事件，如下： 
 
 
 ```javascript
@@ -676,14 +676,14 @@ BindingX是一种规则，解析快，但没有js那样足够强的编程灵活�
 
 ## vue 和 nvue 共享的变量和数据@sharevar
 
-除了通信事件，vue 和 nvue 页面之间还可以共享变量和存储。 ```uni-app```提供的共享变量和数据的方案如下：
+除了通信事件，vue 和 nvue 页面之间还可以共享变量和存储。 `uni-app`提供的共享变量和数据的方案如下：
 
-1. **vuex:** 自HBuilderX 2.2.5起，nvue支持```vuex```。这是vue官方的状态管理工具。
-> 注意：不支持直接引入```store```使用，可以使用```mapState```、```mapGetters```、```mapMutations```等辅助方法或者使用```this.$store```
+1. **vuex:** 自HBuilderX 2.2.5起，nvue支持`vuex`。这是vue官方的状态管理工具。
+> 注意：不支持直接引入`store`使用，可以使用`mapState`、`mapGetters`、`mapMutations`等辅助方法或者使用`this.$store`
 2. **uni.storage:**
-	- vue和nvue页面可以使用相同的```uni.storage```存储。这个存储是持久化的。 比如登录状态可以保存在这里。
-	- App端还支持```plus.sqlite```，也是共享通用的。
-3. **globalData:** 小程序有```globalData```机制，这套机制在```uni-app```里也可以使用，全端通用。 在App.vue文件里定义```globalData```，如下：
+	- vue和nvue页面可以使用相同的`uni.storage`存储。这个存储是持久化的。 比如登录状态可以保存在这里。
+	- App端还支持`plus.sqlite`，也是共享通用的。
+3. **globalData:** 小程序有`globalData`机制，这套机制在`uni-app`里也可以使用，全端通用。 在App.vue文件里定义`globalData`，如下：
 
 ```javascript
 	<script>  
@@ -705,8 +705,8 @@ BindingX是一种规则，解析快，但没有js那样足够强的编程灵活�
 ```
 
 
-- js中操作```globalData```的方式如下： ```getApp().globalData.text = 'test'```
-- 如果需要把```globalData```的数据绑定到页面上，可在页面的onShow生命周期里进行变量重赋值。
+- js中操作`globalData`的方式如下： `getApp().globalData.text = 'test'`
+- 如果需要把`globalData`的数据绑定到页面上，可在页面的onShow生命周期里进行变量重赋值。
 
 
 

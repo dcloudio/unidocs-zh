@@ -14,6 +14,7 @@ UTS语言编译到Android平台，会转为kotlin；编译到iOS平台，会转�
 UTS language compiled to the Android platform will be converted to kotlin; compiled to the iOS platform, it will be converted to swift.
 
 **所以UTS开发的插件，编译后也就是kotlin和swift开发的插件。**
+**So the plug-ins developed by UTS, after compilation, are the plug-ins developed by kotlin and swift. **
 
 开发UTS插件不需要熟悉kotlin和swift的语言语法，因为使用的是基于ts的uts语法。但需要熟悉Android和iOS的系统API，否则无法调用原生能力。
 The development of UTS plugins does not require familiarity with the language syntax of kotlin and swift, because the ts-based uts syntax is used. However, you need to be familiar with the system APIs of Android and iOS, otherwise you cannot call native capabilities.
@@ -46,10 +47,14 @@ Different names mean that they require developers to write in different language
 |Call method|uni.requireNativePlugin()|Ordinary js direct import|
 
 uts插件的优势：
+Advantages of uts plugin:
 
 1. 统一了编程语言（UTS），一种语言开发所有平台，真正大前端。
+1. Unified programming language (UTS), one language to develop all platforms, really big front-end.
 2. 统一了开发工具（HBuilderX），免除搭建复杂的原生开发环境。
+2. The development tool (HBuilderX) is unified, eliminating the need to build a complex native development environment.
 3. 插件封装中要理解的概念更少。 传统原生语言插件需要在js和原生层处理通信，使用各种特殊转换，使用特殊语法导入，注意事项很多。**uts统一为纯前端概念，简单清晰。**
+3. There are fewer concepts to understand in plugin packaging. Traditional native language plug-ins need to handle communication at the js and native layers, use various special transformations, import using special syntax, and have many precautions. **uts is unified as a pure front-end concept, simple and clear. **
 4. uts下前端和原生可以统一在HBuilderX中联调。而传统原生语言插件需要原生开发后打包，然后在js中调用，有问题再改原生，比较低效。
 4. The front-end and native under uts can be jointly debugged in HBuilderX. The traditional native language plug-ins need to be packaged after native development, and then called in js. If there is a problem, then change the native language, which is relatively inefficient.
 
@@ -95,6 +100,7 @@ UTS plugin directory structure
 ### 2.3 Manifest file package.json
 
 package.json为插件的清单文件，这里集成了整个UTS插件的配置信息，下面是一个完整的示例
+package.json is the manifest file of the plugin, which integrates the configuration information of the entire UTS plugin. The following is a complete example
 
 ```json
 {
@@ -109,13 +115,17 @@ package.json为插件的清单文件，这里集成了整个UTS插件的配置�
 ```
 
 ### 2.4 插件的平台实现
+### 2.4 Platform implementation of plugins
 
 一个UTS插件，代表的应该是**Uni标准的下一种原生扩展能力**
+A UTS plug-in, which should represent the next native extension capability of the **Uni standard**
 
 插件目录下 index.d.ts文件是对当前插件能力的声明，index.uts文件是对当前插件能力的实现
+The index.d.ts file in the plugin directory is the declaration of the current plugin capabilities, and the index.uts file is the implementation of the current plugin capabilities
 
 
 插件目录下，app-android、app-ios 等目录，用以存放不同的平台的能力实现
+Under the plugin directory, app-android, app-ios and other directories are used to store the capabilities of different platforms
 
 ```
 插件标识  
@@ -139,13 +149,17 @@ package.json为插件的清单文件，这里集成了整个UTS插件的配置�
 ```
 
 下面以app-android 平台为例，介绍具体平台实现的构成
+The following takes the app-android platform as an example to introduce the composition of the specific platform implementation.
 
 app-android 文件夹下 index.uts
+index.uts in the app-android folder
 
 
 config.json 存放是该插件能力android平台下实现的配置。
+The config.json storage is the configuration implemented under the android platform of the plug-in capability.
 
 下面是一个实例
+Below is an example
 
 ```json
 {
@@ -230,6 +244,7 @@ Two common introduction methods are described below.
 
 1.泛型引用
 1. Generic references
+1. Generic references
 
 作为一个对象全部import进来，然后通过点运算符调用这个对象的方法或属性。
 All imported as an object, and then call the method or property of this object through the dot operator.
@@ -246,6 +261,7 @@ UTSHello.getBatteryCapacity()
 
 
 2.显性引用
+2. Explicit references
 2. Explicit references
 
 从可导出的选项里import 1个或多个（逗号分隔），然后直接使用导出的方法或属性。

@@ -29,7 +29,7 @@ Redis is a key-value storage system that supports many types of stored values, i
 - 频繁读且变化不频繁的查库
 - Frequent reads and infrequent changes to the database
 假如你的应用有5千万条新闻数据，这类数据不经常变化。页面用固定的查询条件获取并显示这些数据；每个用户每次打开页面的时候，都是通过数据库执行查询语句获取数据。显然这样的效率非常低且浪费资源，更高效的做法是把它缓存到redis，每次取数前先从缓存取值，如果取不到数据，再去请求数据库。并将数据加入缓存，下一个用户就能直接从缓存中读取，使得请求能够迅速响应。
-Let's say your app has 50 million pieces of news data that don't change very often. The page uses fixed query conditions to obtain and display these data; each time each user opens the page, the data is obtained by executing the query statement through the database. Obviously, this is very inefficient and wastes resources. A more efficient way is to cache it in redis, and get the value from the cache before each fetch. If the data cannot be retrieved, then request the database. And add the data to the cache, the next user can directly read from the cache, so that the request can be responded quickly.
+Let's say your app has 50 million pieces of news data that don't change very often. The page uses fixed query conditions to obtain and display these data; each time each user opens the page, the data is obtained by executing the query statement through the database. Obviously, this is very inefficient and wastes resources. The more efficient way is to cache it in redis, and get the value from the cache before each fetch. If the data cannot be retrieved, then request the database. And add the data to the cache, the next user can directly read from the cache, so that the request can be responded quickly.
 - 高并发，短期高频访问的数据
 - High concurrency, short-term high-frequency access data
 比如热点数据，秒杀等高并发场景。直接使用mongoDB会遇到性能的瓶颈，所有的请求直接访问数据库，数据库会出现连接异常。此时我们也应当使用缓存作为中间件，redis做一个缓冲操作，让请求先访问到redis，而不是直接访问数据库。

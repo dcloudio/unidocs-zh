@@ -5,7 +5,9 @@
 对于那些不依赖 UI 交互的原生功能，nvue将其封装成模块，这是一种通过 javascript 调用原生能力的方法。
 For those native functions that do not depend on UI interaction, nvue encapsulates them into modules, which is a method of calling native capabilities through javascript.
 - uni-app默认内置集成原生模块，如：BindingX，animation， DOM.addRule等。
+- uni-app has built-in integrated native modules by default, such as: BindingX, animation, DOM.addRule, etc.
   通过`uni.requireNativePlugin`引入 App 原生插件
+  Introduce App native plugins through `uni.requireNativePlugin`
 
   
 ```js
@@ -65,13 +67,21 @@ For those native functions that do not depend on UI interaction, nvue encapsulat
 
 **addRule(type, contentObject)**
 - @fontFace 协议名称，不可修改。
+- @fontFace protocol name, cannot be modified.
 - @fontFamily `font-family`的名称。
+- @fontFamily the name of the `font-family`.
 - @src 字体地址，url('') 是保留字段，其参数如下:
+- @src font address, url('') is a reserved field, and its parameters are as follows:
 	- http. 从HTTP请求加载, e.g. `url('http://at.alicdn.com/t/font_1469606063_76593.ttf')`
+	- http. Load from HTTP request, e.g. `url('http://at.alicdn.com/t/font_1469606063_76593.ttf')`
 	- https. 从HTTPS请求加载, e.g. `url('https://at.alicdn.com/t/font_1469606063_76593.ttf')`
+	- https. Load from HTTPS request, e.g. `url('https://at.alicdn.com/t/font_1469606063_76593.ttf')`
 	- local, Android ONLY. 从assets目录读取, e.g. url('local://foo.ttf'), foo.ttf 是文件名在你的assets目录中.
+	- local, Android ONLY. Read from assets directory, e.g. url('local://foo.ttf'), foo.ttf is the filename in your assets directory.
 	- file. 从本地文件读取, e.g. `url('file://storage/emulated/0/Android/data/com.alibaba.weex/cache/http:__at.alicdn.com_t_font_1469606063_76593.ttf')`
+	- file. Read from local file, e.g. `url('file://storage/emulated/0/Android/data/com.alibaba.weex/cache/http:__at.alicdn.com_t_font_1469606063_76593.ttf')`
 	- data. 从base64读取, e.g. `url('data:font/truetype;charset=utf-8;base64,AAEAAAALAIAAAwAwR1NVQrD+....')`, 上述data字段不全。
+	- data. Read from base64, e.g. `url('data:font/truetype;charset=utf-8;base64,AAEAAAALAIAAAwAwR1NVQrD+....')`, the above data fields are incomplete.
 	
 **注意**
 **Notice**
@@ -87,6 +97,7 @@ For those native functions that do not depend on UI interaction, nvue encapsulat
 ### scrollToElement<div id="scrollToElement"></div>
 
 让页面滚动到 ref 对应的组件，这个 API 只能用于可滚动组件的子节点，例如 `<scroller>`，`<list>`, `<waterfall>` 等可滚动组件中。
+Let the page scroll to the component corresponding to ref. This API can only be used for the child nodes of scrollable components, such as `<scroller>`, `<list>`, `<waterfall>` and other scrollable components.
 
 **scrollToElement(ref, options)**
 - @ref，要滚动到的那个节点。
@@ -198,6 +209,7 @@ You can get the bounding rect of the referenced component using this API.
 - @callback, the callback function after executing this action.
 
 回调方法中的数据样例：
+Sample data in callback method:
 ```js
   {
     result: true,
@@ -225,8 +237,10 @@ You can get the bounding rect of the referenced component using this API.
 ## animation
 
 `animation`模块可以用来在组件上执行动画。JS-Animation可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。
+The `animation` module can be used to perform animations on components. JS-Animation can perform a series of simple transformations on components (position, size, rotation, background color and opacity).
 
 举个例子，如果有一个`image`组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。
+For example, if you have an `image` component, through animation you can move, rotate, stretch or shrink it.
 
 ```html
   <template>
@@ -300,7 +314,9 @@ The following table lists all legal parameters of options:
 |delay			|指定请求动画操作到执行动画之间的时间间隔 (单位是毫秒)，默认值是 0，表示没有延迟，在请求后立即执行动画。																												|
 | delay| specifies the waiting time before the animation starts. The default value is `0`.|
 |needLayout		|动画执行是否影响布局，默认值是false。																																													|
+|needLayout |Whether the animation execution affects the layout, the default value is false. |
 |timingFunction	|描述动画执行的速度曲线，用于描述动画已消耗时间和动画完成进度间的映射关系。默认值是 `linear`，表示动画从开始到结束都拥有同样的速度。详见下						|
+|timingFunction |Describes the speed curve of animation execution, which is used to describe the mapping relationship between the elapsed time of animation and the progress of animation completion. The default value is `linear`, which means the animation has the same speed from start to finish. See below |
 
 
 下表列出了styles所有合法的参数：
@@ -361,7 +377,9 @@ The supported styles are listed below:
 
 
 **注意**
+**Notice**
 - iOS上可以获取 `animation` 是否执行成功的信息，callback中的result参数会有两种，分别是是Success与Fail。
+- On iOS, you can get information about whether `animation` is successfully executed. There are two result parameters in the callback, namely Success and Fail.
 - Android 的callback 函数不支持result参数。
 - Android doesn't support the result parameter.
 
@@ -592,6 +610,7 @@ BindingX is a rule, fast parsing, but not as flexible as js.
 In uni-app, nvue and vue pages can be mixed and used.
 
 推荐使用 `uni.$on` , `uni.$emit` 的方式进行页面通讯，旧的通讯方式（uni.postMessage及plus.webview.postMessageToUniNView）不再推荐使用。
+It is recommended to use `uni.$on` , `uni.$emit` for page communication, and the old communication methods (uni.postMessage and plus.webview.postMessageToUniNView) are no longer recommended.
 
 ##### 通讯实现方式
 ##### Communication implementation method
@@ -669,7 +688,9 @@ In uni-app, nvue and vue pages can be mixed and used.
 ##### Step:
 
 1. 在 `vue` 里使用 `plus.webview.postMessageToUniNView(data,nvueId)` 发送消息，`data` 为 `JSON` 格式（键值对的值仅支持String），`nvueId` 为 `nvue` 所在 webview 的 id，webview的 id 获取方式参考：[$getAppWebview()](/tutorial/page.html#getappwebview)。
+1. Use `plus.webview.postMessageToUniNView(data,nvueId)` to send messages in `vue`, `data` is in `JSON` format (the value of key-value pair only supports String), `nvueId` is where `nvue` is located The id of the webview, the method of obtaining the id of the webview, please refer to: [$getAppWebview()](/tutorial/page.html#getappwebview).
 2. 在 `nvue` 里引用 `globalEvent` 模块监听 `plusMessage` 事件，如下： 
+2. In `nvue`, refer to the `globalEvent` module to listen to the `plusMessage` event, as follows:
 
 
 ```javascript
@@ -747,13 +768,19 @@ In uni-app, nvue and vue pages can be mixed and used.
 ## Variables and data shared between vue and nvue @sharevar
 
 除了通信事件，vue 和 nvue 页面之间还可以共享变量和存储。 `uni-app`提供的共享变量和数据的方案如下：
+In addition to communicating events, variables and storage can be shared between vue and nvue pages. The scheme for shared variables and data provided by `uni-app` is as follows:
 
 1. **vuex:** 自HBuilderX 2.2.5起，nvue支持`vuex`。这是vue官方的状态管理工具。
+1. **vuex:** Since HBuilderX 2.2.5, nvue supports `vuex`. This is the official state management tool of vue.
 > 注意：不支持直接引入`store`使用，可以使用`mapState`、`mapGetters`、`mapMutations`等辅助方法或者使用`this.$store`
+> Note: Direct introduction of `store` is not supported, you can use helper methods such as `mapState`, `mapGetters`, `mapMutations` or use `this.$store`
 2. **uni.storage:**
 	- vue和nvue页面可以使用相同的`uni.storage`存储。这个存储是持久化的。 比如登录状态可以保存在这里。
+	- vue and nvue pages can use the same `uni.storage` storage. This storage is persistent. For example, the login status can be saved here.
 	- App端还支持`plus.sqlite`，也是共享通用的。
+	- The App side also supports `plus.sqlite`, which is also shared and common.
 3. **globalData:** 小程序有`globalData`机制，这套机制在`uni-app`里也可以使用，全端通用。 在App.vue文件里定义`globalData`，如下：
+3. **globalData:** The MiniApp has a `globalData` mechanism, which can also be used in `uni-app`, and is universal to all terminals. Define `globalData` in the App.vue file as follows:
 
 ```javascript
 	<script>  
@@ -776,7 +803,9 @@ In uni-app, nvue and vue pages can be mixed and used.
 
 
 - js中操作`globalData`的方式如下： `getApp().globalData.text = 'test'`
+- The way to operate `globalData` in js is as follows: `getApp().globalData.text = 'test'`
 - 如果需要把`globalData`的数据绑定到页面上，可在页面的onShow生命周期里进行变量重赋值。
+- If you need to bind the data of `globalData` to the page, you can reassign the variable in the onShow life cycle of the page.
 
 
 

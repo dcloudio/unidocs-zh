@@ -432,6 +432,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |es6|Boolean|ES6 转 ES5|
 |postcss|Boolean|上传代码时样式是否自动补全|
 |minified|Boolean|上传代码时是否自动压缩|
+|bigPackageSizeSupport|Boolean|预览及真机调试时包体积上限是否调整为4M，默认为true（HBuilderX 3.5.5+）。|
 
 #### optimization
 

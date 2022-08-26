@@ -142,6 +142,7 @@ const unipayIns = unipay.initWeixin({
   mchId: 'your mchId',
   key: 'you parterner key',
   // pfx: fs.readFileSync('/path/to/your/pfxfile'), // p12文件路径，使用微信退款时需要，需要注意的是务必使用绝对路径
+  // pfx: fs.readFileSync('/path/to/your/pfxfile'), // p12 file path, it is required when using WeChat refund, it should be noted that absolute path must be used
 })
 
 

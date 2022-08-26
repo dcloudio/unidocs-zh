@@ -240,6 +240,7 @@ Releasing ssr will get two parts: the cloud part and the static resource part. T
 **Use HBuilderX to release and deploy automatically**
 
 需要HBuilderX版本`3.5.1`及以上版本，支持部署到阿里云和腾讯云此前仅支持自动部署到阿里云
+Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Cloud and Tencent Cloud previously only supported automatic deployment to Alibaba Cloud
 
 1. 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
 1. By `Release Menu -> website PC-Web or mobile phone H5` of `HBuilderX`, check `ssr`, check `Deploy the compiled resource at uniCloud front-end website hosting`

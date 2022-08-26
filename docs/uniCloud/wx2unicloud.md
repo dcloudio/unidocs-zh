@@ -141,8 +141,7 @@ const unipayIns = unipay.initWeixin({
   appId: 'your appId',
   mchId: 'your mchId',
   key: 'you parterner key',
-  // pfx: fs.readFileSync('/path/to/your/pfxfile'), // p12文件路径，使用微信退款时需要，需要注意的是阿里云目前不支持以相对路径读取文件，请使用绝对路径的形式
-  // pfx: fs.readFileSync('/path/to/your/pfxfile'), // p12 file path, which is required when using WeChat for refunds. It should be noted that Alibaba Cloud does not currently support reading files with relative paths. Please Use the form of an absolute path
+  // pfx: fs.readFileSync('/path/to/your/pfxfile'), // p12文件路径，使用微信退款时需要，需要注意的是务必使用绝对路径
 })
 
 

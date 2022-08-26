@@ -1,3 +1,4 @@
+> HBuilderX 3.6+ 支持uts原生插件
 
 ## 1 UTS原生插件介绍
 ## 1 UTS native plugin introduction
@@ -5,38 +6,40 @@
 ### 1.1 什么是uts原生插件
 ### 1.1 What is uts native plugin
 
-UTS原生插件 是用UTS作为插件开发语言的一种新型插件形式。
-UTS native plug-in is a new form of plug-in that uses UTS as the plug-in development language.
+UTS原生插件 是用 [UTS语言](缺链接) 开发的App原生插件。
 
+UTS语言编译到Android平台，会转为kotlin；编译到iOS平台，会转为swift。
+
+所以UTS开发的插件，编译后也就是kotlin和swift开发的插件。
+
+开发UTS插件不需要熟悉kotlin和swift的语言语法，因为使用的是基于ts的uts语法。但需要熟悉Android和iOS的系统API，否则无法调用原生能力。
 
 ![uts插件结构](https://native-res.dcloud.net.cn/images/uts/UTS%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE1.png)
 ![uts plugin structure](https://native-res.dcloud.net.cn/images/uts/UTS%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F %E5%9B%BE1.png)
 
-### 1.2 uts原生插件与uni原生插件的区别
-### 1.2 The difference between uts native plugin and uni native plugin
+### 1.2 uts插件与uni原生语言插件的区别
 
-|-|传统原生插件|uts原生插件|
-|-|Traditional native plugins|uts native plugins|
+在HBuilderX 3.6以前，uni-app在App侧只有一种原生插件，即用java或object-c开发的插件。
+
+在uts推出后，原来的App原生插件，更名为 App原生语言插件。
+
+不同的名字，代表它们需要开发者编写语言不同。但殊途同归，最后都编译为原生的二进制代码。
+
+|-|原生语言插件|uts原生插件|
 |-|-------|--------|
 |开发语言|java/oc|uts|
 |Development language|java/oc|uts|
 |开发环境|Android studio/XCode|HBuilderX|
 |Development Environment|Android studio/XCode|HBuilderX|
 |打包方式|外挂aar 等产出物|编译时生成原生代码|
-|Packaging method|External output such as plug-in aar|Generate native code when compiling|
+|调用方式|uni.requireNativePlugin()|普通的js直接import|
 
-优点：
-advantage:
+uts的优势：
 
-1  减少原生环境搭建环节，降低插件开发难度
-1 Reduce the link of building the native environment and reduce the difficulty of plug-in development
-
-2  进一步降低平台差异，一种语言开发两个平台插件
-2 Further reduce platform differences, develop two platform plugins in one language
-
-3  编译时生成原生代码，提高代码执行效率
-3 Generate native code at compile time to improve code execution efficiency
-
+1. 统一了编程语言（uts），一种语言开发所有平台，真正大前端。
+2. 统一了开发工具（HBuilderX），免除搭建复杂的原生开发环境。
+3. 插件封装中要理解的概念更少，传统原生语言插件需要在js和原生层处理通信，使用各种特殊转换，使用特殊语法导入，注意事项很多。uts统一为纯前端概念，简单清晰。
+4. uts下前端和原生可以统一在HBuilderX中联调。而传统原生语言插件需要原生开发后打包，然后在js中调用，有问题再改原生，比较低效。
 
 
 ## 2 创建UTS插件
@@ -53,10 +56,6 @@ If it doesn't exist, you need to create one manually.
 
 ![插件目录](https://native-res.dcloud.net.cn/images/uts/uni_modules.jpg)
 ![Plugin Directory](https://native-res.dcloud.net.cn/images/uts/uni_modules.jpg)
-
-
-
-
 
 ### 2.2 新建步骤拆解
 ### 2.2 New step disassembly
@@ -84,8 +83,7 @@ UTS plugin directory structure
 ### 2.3 Manifest file package.json
 
 package.json为插件的清单文件，这里集成了整个UTS插件的配置信息，下面是一个完整的示例
-package.json is the manifest file of the plugin, which integrates the configuration information of the entire UTS plugin. The following is a complete example
-```
+```json
 {
   "id": "uts-helloworld",
   "displayName": "UTS插件示例",
@@ -125,8 +123,6 @@ package.json is the manifest file of the plugin, which integrates the configurat
 以android平台获取电量为例，介绍UTS原生插件开发步骤
 Taking the android platform to obtain electricity as an example, this paper introduces the development steps of UTS native plug-in
 
-
-
 ![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo.jpg)
 ![OSAPI example](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo.jpg)
 
@@ -134,15 +130,14 @@ Taking the android platform to obtain electricity as an example, this paper intr
 In the android platform directory, edit index.uts and type the following
 
 
-```
+```ts
 // index.uts
 
 // 引用android api
 // refer to android api
 import Context from "android.content.Context";
 import BatteryManager from "android.os.BatteryManager";
-// 引用uts环境 api
-// Refer to the uts environment api
+// 引用uts环境库
 import { getAppContext } from "io.dcloud.uts.android";
 
 export function getBatteryCapacity(): string {
@@ -164,17 +159,14 @@ export function getBatteryCapacity(): string {
 ```
 
 
-关于android开发UTS插件的更多细节说明，参考文档[todo]
-For more detailed instructions on developing UTS plugins for android, refer to the documentation [todo]
-
-
-
 至此，我们已经完成一个android平台上获取电量的原生能力封装。
 So far, we have completed the encapsulation of the native ability to obtain electricity on the android platform.
 
-我们可以像使用普通js函数一样，使用getBatteryCapacity函数来获取设备电量
-We can use the getBatteryCapacity function to get the power of the device just like a normal js function
+在下一节，将介绍插件的使用，可以像使用普通js函数一样，使用getBatteryCapacity函数来获取设备电量。
 
+关于android开发UTS插件的更多细节说明，参考文档[todo]和[示例](缺地址)
+
+注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
 
 ## 4 使用插件
 ## 4 Using plugins
@@ -182,73 +174,63 @@ We can use the getBatteryCapacity function to get the power of the device just l
 ### 4.1 引用UTS插件
 ### 4.1 Reference UTS plugin
 
+虽然uts插件由uts语法开发，但前端引用插件并非一定需要ts，普通js即可。
+
 下面介绍两种常见的引入方式
 Two common introduction methods are described below.
 
+1.泛型引用
 
-1 显性引用
-1 Explicit reference
+作为一个对象全部import进来，然后通过点运算符调用这个对象的方法或属性。
 
-```
-//引用
-//reference
-import {
-  getBatteryCapacity,
-} from "../../../uni_modules/uts-helloworld";
-
-// 使用代码
-// use code
-getBatteryCapacity()
-```
-2 泛型引用
-2 Generic references
-
-```
-// 引用
-// reference
+```js
+// 先引用，全部导入，对象起名为UTSHello
 import * as UTSHello from "../../../uni_modules/uts-helloworld";
-// 使用代码
-// use code
+
+// 然后使用UTSHello的方法
 UTSHello.getBatteryCapacity()
 ```
 
 
-### 4.2 使用UTS插件
-### 4.2 Using the UTS plugin
+2.显性引用
 
-与普通的js函数无使用差异.
-There is no difference in usage with ordinary js functions.
+从可导出的选项里import 1个或多个（逗号分隔），然后直接使用导出的方法或属性。
 
-更多的使用示例，可以参考HelloUTS中入门章节
-For more usage examples, please refer to the Getting Started chapter in HelloUTS
+```js
+//先引用，导入指定方法或属性
+import {
+  getBatteryCapacity
+} from "../../../uni_modules/uts-helloworld";
 
-```
-var capacity = getBatteryCapacity()
-uni.showToast({
-	title:"当前电量："+capacity,
-	icon:'none'
-});
+// 然后使用导入的方法
+getBatteryCapacity()
 ```
 
-## 5 测试
-## 5 test
+更多使用示例，可以参考示例插件 [HelloUTS](缺地址) 。
 
-### 5.1 真机运行
-### 5.1 Real machine operation
+## 5 真机运行
 
-UTS原生插件与原来的插件调试没有差异，可以直接运行测试。
-The UTS native plugin is no different from the original plugin debugging, and the test can be run directly.
+uts虽然是原生代码，但同样具有真机运行功能。
 
-需要注意的是，如果是涉及自定义信息，需要选择自定义基座运行
-It should be noted that if it involves custom information, you need to select a custom base to run
+若HBuilderX中没有`uts编译运行插件`，在第一次运行时会自动下载。
 
-### 5.2 云端打包
-### 5.2 Cloud Packaging
+在Android上，运行体验与uni-app基本无差异。一样可以热刷新，打印console.log。
 
+目前遗留，后续发版支持事项：
+- 目前还不能debug uts源码
+- iOS版目前还未发布
 
+关于自定义基座，同之前的uni-app。如果涉及微信支付等自定义manifest信息，需要选择自定义基座运行。自定义基座也支持uts插件。
 
-### 5.3 示例项目
-### 5.3 Example project
+## 6 云端打包
+
+正常支持云端打包。
+
+但注意，虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
+
+<!-- 提供了Androidmanifest.xml -->
+
+## 7 示例项目
 
 完整的示例项目地址：
 Complete example project address:

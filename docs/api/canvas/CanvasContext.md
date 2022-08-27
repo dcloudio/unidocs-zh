@@ -1319,7 +1319,7 @@ canvasContext.setTransform(scaleX, skewX, skewY, scaleY, translateX, translateY)
 |translateY	|Number	|垂直移动	|
 
 ### CanvasContext.stroke
-画出当前路径的边框。默认颜色色为黑色。
+画出当前路径的边框。默认颜色为黑色。
 
 **Tip:** ``stroke()`` 描绘的的路径是从 ```beginPath()``` 开始计算，但是不会将 ```strokeRect()``` 包含进去，详情见例二。
 

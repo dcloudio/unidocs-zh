@@ -42,7 +42,9 @@ Different names mean that they require developers to write in different language
 |开发环境|Android studio/XCode|HBuilderX|
 |Development Environment|Android studio/XCode|HBuilderX|
 |打包方式|外挂aar 等产出物|编译时生成原生代码|
+|Packaging method|External output such as plug-in aar|Generate native code when compiling|
 |调用方式|uni.requireNativePlugin()|普通的js函数/对象，可以直接使用|
+|Call method|uni.requireNativePlugin()|Ordinary js function/object, you can use it directly|
 
 uts插件的优势：
 Advantages of uts plugin:
@@ -127,13 +129,17 @@ A UTS plug-in should represent an extension capability under the **Uni standard*
 Under the plugin directory:
  
 index.d.ts文件是对当前插件能力的**声明**
+The index.d.ts file is a **declaration** of the current plugin capabilities
 
 index.uts文件是对当前插件能力的**实现**
+The index.uts file is an **implementation** of the current plugin capabilities
 
 针对一些通用的功能，可以用过插件根目录下 index.uts实现即可。
+For some common functions, you can use index.uts in the root directory of the plugin to achieve it.
 
 
 但是类似获取电量等原生强相关的场景，不同的平台有不同的语法和API差异。
+However, for scenarios that are strongly related to native power, such as obtaining electricity, different platforms have different syntax and API differences.
 
 因此我们设计了 app-android、app-ios 等目录，用以存放不同的平台的能力实现
 Therefore, we have designed directories such as app-android and app-ios to store the capabilities of different platforms.
@@ -161,31 +167,40 @@ Therefore, we have designed directories such as app-android and app-ios to store
 
 
 下面以 android 平台为例，介绍平台目录的使用。
+The following takes the android platform as an example to introduce the use of the platform directory.
 
 
 app-android 文件夹下存在两个文件
+There are two files in the app-android folder
 
 |文件名|用途|
+|filename|purpose|
 |index.uts|index.d.ts声明的能力在Android平台下的实现|
+|index.uts|index.d.ts to declare the ability to realize under the Android platform|
 |config.json|Android平台下的配置文件|
+|config.json|Configuration file under Android platform|
  
 
 
 
 下面是一个config.json 实例，这里的格式与原有的 package.json保持一致的。[关于package.json的更多说明](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)
+The following is an example of config.json, the format here is consistent with the original package.json. [More instructions on package.json](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)
 
 ```json
 {
          // 依赖某些arr
+         // depend on some arr
 	"libs": [
 	  "xxx.aar"
 	],
         // 依赖某些gradle配置
+        // Depends on some gradle configuration
 	"dependencies": [{
 	  "id": "com.xxx.richtext:richtext",
 	  "source": "implementation 'com.xxx.richtext:richtext:3.0.7'"
 	}],
         // Android系统版本要求，最低Android 5.0
+        // Android system version requirements, minimum Android 5.0
 	"minSdkVersion": 21
 },
 ```
@@ -193,6 +208,7 @@ app-android 文件夹下存在两个文件
 
 
 *注意:当同时存在平台目录的index.uts和 根目录index.uts时，会优先获取具体的平台目录*
+*Note: When the index.uts of the platform directory and the index.uts of the root directory exist at the same time, the specific platform directory will be obtained first*
 
 
 ## 3 开发UTS原生插件
@@ -267,6 +283,7 @@ Two common introduction methods are described below.
 1. Generic references
 1. Generic references
 1. Generic references
+1. Generic references
 
 作为一个对象全部import进来，然后通过点运算符调用这个对象的方法或属性。
 All imported as an object, and then call the method or property of this object through the dot operator.
@@ -283,6 +300,7 @@ UTSHello.getBatteryCapacity()
 
 
 2.显性引用
+2. Explicit references
 2. Explicit references
 2. Explicit references
 2. Explicit references

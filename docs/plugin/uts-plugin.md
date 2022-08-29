@@ -99,8 +99,8 @@ UTS plugin directory structure
 ### 2.3 清单文件package.json
 ### 2.3 Manifest file package.json
 
-package.json为插件的清单文件，这里集成了整个UTS插件的配置信息，下面是一个完整的示例
-package.json is the manifest file of the plugin, which integrates the configuration information of the entire UTS plugin. The following is a complete example
+package.json为插件的清单文件，这里集成了整个UTS插件的配置信息，下面是一个简单的示例
+
 
 ```json
 {
@@ -114,18 +114,24 @@ package.json is the manifest file of the plugin, which integrates the configurat
 }
 ```
 
+[关于package.json的更多说明](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)
+
+
 ### 2.4 插件的平台实现
 ### 2.4 Platform implementation of plugins
 
-一个UTS插件，代表的应该是**Uni标准的下一种原生扩展能力**
-A UTS plug-in, which should represent the next native extension capability of the **Uni standard**
+一个UTS插件，代表的应该是**Uni标准下的一种扩展能力**
 
-插件目录下 index.d.ts文件是对当前插件能力的声明，index.uts文件是对当前插件能力的实现
-The index.d.ts file in the plugin directory is the declaration of the current plugin capabilities, and the index.uts file is the implementation of the current plugin capabilities
+插件目录下：
+ 
+index.d.ts文件是对当前插件能力的声明，
+index.uts文件是对当前插件能力的实现
 
+针对一些通用的功能，可以用过index.uts实现即可。
+但是类似获取电量等原生相关的场景，不同的平台有不同的代码实现，即使使用UTS也无法完全抹平。
 
-插件目录下，app-android、app-ios 等目录，用以存放不同的平台的能力实现
-Under the plugin directory, app-android, app-ios and other directories are used to store the capabilities of different platforms
+因此我们设计了 app-android、app-ios 等目录，用以存放不同的平台的能力实现
+
 
 ```
 插件标识  

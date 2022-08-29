@@ -40,9 +40,9 @@
 
 #### head标签@head
 
-> 新增于`HBuilderX 3.3.0` 
+> 新增于`HBuilderX 3.3.0`
 
-vue3 下还可以使用在`page-meta`内使用浏览器原生 head 标签，**此用法仅 vue3 版本可用**，方便在 编译为 ssr 时进行 seo 优化。
+vue3 下还可以使用在`page-meta`内使用浏览器原生 head 标签，**此用法仅 vue3 版本 ssr 可用**，方便在 编译为 ssr 时进行 seo 优化。
 
 ```html
 <template>
@@ -55,7 +55,7 @@ vue3 下还可以使用在`page-meta`内使用浏览器原生 head 标签，**�
     page-style="color: green"
     root-font-size="16px"
   >
-		<head> // 仅vue3支持，此节点下的元素会被拷贝到h5页面的head标签下（服务端渲染时也会生效），可以利用此特性进行seo优化
+		<head> // 仅vue3 ssr支持，此节点下的元素会被拷贝到h5页面的head标签下，可以利用此特性进行seo优化
 			<meta name="keyword" :content="title" />
 		</head>
   </page-meta>
@@ -128,4 +128,3 @@ vue3 下还可以使用在`page-meta`内使用浏览器原生 head 标签，**�
   }
 </script>
 ```
-

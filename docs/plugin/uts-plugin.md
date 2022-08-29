@@ -286,6 +286,7 @@ Two common introduction methods are described below.
 1. Generic references
 1. Generic references
 1. Generic references
+1. Generic references
 
 作为一个对象全部import进来，然后通过点运算符调用这个对象的方法或属性。
 All imported as an object, and then call the method or property of this object through the dot operator.
@@ -302,6 +303,7 @@ UTSHello.getBatteryCapacity()
 
 
 2.显性引用
+2. Explicit references
 2. Explicit references
 2. Explicit references
 2. Explicit references

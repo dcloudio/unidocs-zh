@@ -1694,6 +1694,7 @@ The three-party credentials currently saved by `uni-id-co` are as follows:
 - The user access_token returned by the QQ APP when logging in, written through the `setUserAccessToken` method of `uni-open-bridge-common`
 
 开发者如需获取某用户对应的openid，可以在用户使用相应的登录操作之后自行读取用户记录获取。代码示例如下：
+If the developer needs to obtain the openid corresponding to a user, he can read the user record by himself after the user uses the corresponding login operation. The code example is as follows:
 
 ```js
 const uid = 'xx'

@@ -1203,6 +1203,24 @@ uni-id-co在微信、QQ登录或注册时会自动保存用户的sessionKey、ac
 - QQ小程序端用户session_key，通过`uni-open-bridge-common`的`setSessionKey`方法写入
 - QQ APP登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
 
+开发者如需获取某用户对应的openid，可以在用户使用相应的登录操作之后自行读取用户记录获取。代码示例如下：
+
+```js
+const uid = 'xx'
+const appId = '__UNI_xxx'
+const wxPlatform = 'mp' // mp：小程序，h5：公众号，web：web页面，app：App微信登录
+
+const db = uniCloud.database()
+const getUserRes = await db.collection('uni-id-users').doc(uid).get()
+
+const userRecord = getUserRes.data[0]
+if(!userRecord) {
+  throw new Error('未匹配到此用户')
+}
+const wxOpenid = userRecord.wx_openid || {}
+const openid = wxOpenid[wxPlatform + '_' + appId]  || wxOpenid[wxPlatform]
+```
+
 ### 钩子@hooks
 
 > 新增于 uni-id-pages 1.0.8

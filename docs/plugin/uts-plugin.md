@@ -42,9 +42,7 @@ Different names mean that they require developers to write in different language
 |开发环境|Android studio/XCode|HBuilderX|
 |Development Environment|Android studio/XCode|HBuilderX|
 |打包方式|外挂aar 等产出物|编译时生成原生代码|
-|Packaging method|External output such as plug-in aar|Generate native code when compiling|
-|调用方式|uni.requireNativePlugin()|普通的js直接import|
-|Call method|uni.requireNativePlugin()|Ordinary js direct import|
+|调用方式|uni.requireNativePlugin()|普通的js函数/对象，可以直接使用|
 
 uts插件的优势：
 Advantages of uts plugin:
@@ -128,66 +126,73 @@ A UTS plug-in should represent an extension capability under the **Uni standard*
 插件目录下：
 Under the plugin directory:
  
-index.d.ts文件是对当前插件能力的声明，
-The index.d.ts file is a declaration of the current plugin capabilities,
-index.uts文件是对当前插件能力的实现
-The index.uts file is the implementation of the current plugin capabilities
+index.d.ts文件是对当前插件能力的**声明**
 
-针对一些通用的功能，可以用过index.uts实现即可。
-For some general functions, you can use index.uts to achieve it.
-但是类似获取电量等原生相关的场景，不同的平台有不同的代码实现，即使使用UTS也无法完全抹平。
-However, for native-related scenarios such as power acquisition, different platforms have different code implementations, and even using UTS cannot be completely smoothed out.
+index.uts文件是对当前插件能力的**实现**
+
+针对一些通用的功能，可以用过插件根目录下 index.uts实现即可。
+
+
+但是类似获取电量等原生强相关的场景，不同的平台有不同的语法和API差异。
 
 因此我们设计了 app-android、app-ios 等目录，用以存放不同的平台的能力实现
 Therefore, we have designed directories such as app-android and app-ios to store the capabilities of different platforms.
 
 
+
 ```
 插件标识  
   - utssdk
-  	+ app-android
+  	+ app-android //Android平台目录
   	  * index.uts
   	  * config.json
-  	+ app-ios
+  	+ app-ios //ios平台目录
   	  * index.uts
   	  * config.json
-  	+ web
+  	+ web //web 平台目录
 	  * index.uts
-  	+ mp-weixin
-	  * index.uts
-  	+ mp-xxx
+  	+ mp-xxx  // 其他平台，待实现
   - common
   - static
   - package.json
-  - index.d.ts
-  - index.uts
+  - index.d.ts  // 插件能力声明
+  - index.uts   // 插件能力实现
 ```
 
-下面以app-android 平台为例，介绍具体平台实现的构成
-The following takes the app-android platform as an example to introduce the composition of the specific platform implementation.
 
-app-android 文件夹下 index.uts
-index.uts in the app-android folder
+下面以 android 平台为例，介绍平台目录的使用。
 
 
-config.json 存放是该插件能力android平台下实现的配置。
-The config.json storage is the configuration implemented under the android platform of the plug-in capability.
+app-android 文件夹下存在两个文件
 
-下面是一个实例
-Below is an example
+|文件名|用途|
+|index.uts|index.d.ts声明的能力在Android平台下的实现|
+|config.json|Android平台下的配置文件|
+ 
+
+
+
+下面是一个config.json 实例，这里的格式与原有的 package.json保持一致的。[关于package.json的更多说明](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)
 
 ```json
 {
+         // 依赖某些arr
 	"libs": [
 	  "xxx.aar"
 	],
+        // 依赖某些gradle配置
 	"dependencies": [{
 	  "id": "com.xxx.richtext:richtext",
 	  "source": "implementation 'com.xxx.richtext:richtext:3.0.7'"
 	}],
+        // Android系统版本要求，最低Android 5.0
 	"minSdkVersion": 21
 },
 ```
+
+
+
+*注意:当同时存在平台目录的index.uts和 根目录index.uts时，会优先获取具体的平台目录*
 
 
 ## 3 开发UTS原生插件

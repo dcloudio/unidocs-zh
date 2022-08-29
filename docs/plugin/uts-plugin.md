@@ -279,14 +279,7 @@ Although the uts plugin is developed by the uts syntax, the front-end reference 
 下面介绍两种常见的引入方式
 Two common introduction methods are described below.
 
-1.泛型引用
-1. Generic references
-1. Generic references
-1. Generic references
-1. Generic references
-1. Generic references
-1. Generic references
-1. Generic references
+ **泛型引用**
 
 作为一个对象全部import进来，然后通过点运算符调用这个对象的方法或属性。
 All imported as an object, and then call the method or property of this object through the dot operator.
@@ -302,14 +295,7 @@ UTSHello.getBatteryCapacity()
 ```
 
 
-2.显性引用
-2. Explicit references
-2. Explicit references
-2. Explicit references
-2. Explicit references
-2. Explicit references
-2. Explicit references
-2. Explicit references
+**显性引用**
 
 从可导出的选项里import 1个或多个（逗号分隔），然后直接使用导出的方法或属性。
 Import 1 or more (comma-separated) from the exportable options, and then use the exported methods or properties directly.
@@ -325,6 +311,7 @@ import {
 // then use the imported method
 getBatteryCapacity()
 ```
+
 
 更多使用示例，可以参考示例插件 [HelloUTS](缺地址) 。
 For more usage examples, please refer to the example plugin [HelloUTS](missing address).

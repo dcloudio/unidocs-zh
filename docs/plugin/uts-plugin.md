@@ -138,6 +138,9 @@ The index.uts file is an **implementation** of the current plugin capabilities
 For some common functions, you can use index.uts in the root directory of the plugin to achieve
 
 
+但是类似获取电量等原生强相关的场景，不同的平台有不同的语法和API差异。
+
+因此我们设计了 app-android、app-ios 等目录，用以存放不同的平台的能力实现
 
 
 ```
@@ -160,20 +163,15 @@ For some common functions, you can use index.uts in the root directory of the pl
 ```
 
 
-但是类似获取电量等原生强相关的场景，不同的平台有不同的语法和API差异。
-However, for scenarios that are strongly related to native power, such as obtaining electricity, different platforms have different syntax and API differences.
-
-因此我们设计了 app-android、app-ios 等目录，用以存放不同的平台的能力实现
-Therefore, we have designed directories such as app-android and app-ios to store the capabilities of different platforms.
 
 
 下面以 android 平台为例，介绍平台目录的使用。
 The following takes the android platform as an example to introduce the use of the platform directory.
 
 
-app-android 文件夹下存在两个文件
-There are two files in the app-android folder
+app-android 文件夹下存在下面两个文件
 
+|---|---|
 |文件名|用途|
 |filename|purpose|
 |index.uts|index.d.ts声明的能力在Android平台下的实现|
@@ -321,14 +319,25 @@ For more usage examples, please refer to the example plugin [HelloUTS](missing a
 ## 5 真机运行
 ## 5 Real machine running
 
-uts虽然是原生代码，但同样具有真机运行功能。
-Although uts is a native code, it also has the function of running on a real machine.
+### 5.1 注意事项
+
+正常支持真机运行
+
+
+**uts虽然是原生代码，但同样具有真机运行功能。**
 
 若HBuilderX中没有`uts编译运行插件`，在第一次运行时会自动下载。
 If there is no `uts compile and run plugin` in HBuilderX, it will be downloaded automatically when it is run for the first time.
 
 在Android上，运行体验与uni-app基本无差异。一样可以热刷新，打印console.log。
 On Android, the running experience is basically the same as uni-app. You can also hot refresh and print console.log.
+
+
+### 5.2 自定义基座
+
+同之前的uni-app。如果涉及微信支付等自定义manifest信息，需要选择自定义基座运行。自定义基座也支持uts插件。
+
+### 5.3 真机运行遗留问题
 
 目前遗留，后续发版支持事项：
 The current legacy, the follow-up release support matters:
@@ -337,8 +346,6 @@ The current legacy, the follow-up release support matters:
 - iOS版目前还未发布
 - iOS version is not yet released
 
-关于自定义基座，同之前的uni-app。如果涉及微信支付等自定义manifest信息，需要选择自定义基座运行。自定义基座也支持uts插件。
-Regarding the custom base, the same as the previous uni-app. If custom manifest information such as WeChat payment is involved, you need to select a custom base to run. Custom docks also support uts plugins.
 
 ## 6 云端打包
 ## 6 Cloud Packaging
@@ -346,11 +353,8 @@ Regarding the custom base, the same as the previous uni-app. If custom manifest 
 正常支持云端打包。
 Cloud packaging is normally supported.
 
-但注意，虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
-However, note that although uts supports hot flashing when the real machine is running, after packaging, uts is compiled into pure native binary code and does not support wgt hot update.
+**注意，虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。**
 
-<!-- 提供了Androidmanifest.xml -->
-<!-- Androidmanifest.xml provided -->
 
 ## 7 示例项目
 ## 7 Example project

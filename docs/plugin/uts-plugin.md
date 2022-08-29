@@ -135,6 +135,7 @@ index.uts文件是对当前插件能力的**实现**
 The index.uts file is an **implementation** of the current plugin capabilities
 
 针对一些通用的功能，可以用过插件根目录下 index.uts实现
+For some common functions, you can use index.uts in the root directory of the plugin to achieve
 
 
 
@@ -160,8 +161,10 @@ The index.uts file is an **implementation** of the current plugin capabilities
 
 
 但是类似获取电量等原生强相关的场景，不同的平台有不同的语法和API差异。
+However, for scenarios that are strongly related to native power, such as obtaining electricity, different platforms have different syntax and API differences.
 
 因此我们设计了 app-android、app-ios 等目录，用以存放不同的平台的能力实现
+Therefore, we have designed directories such as app-android and app-ios to store the capabilities of different platforms.
 
 
 下面以 android 平台为例，介绍平台目录的使用。
@@ -282,6 +285,7 @@ Two common introduction methods are described below.
 1. Generic references
 1. Generic references
 1. Generic references
+1. Generic references
 
 作为一个对象全部import进来，然后通过点运算符调用这个对象的方法或属性。
 All imported as an object, and then call the method or property of this object through the dot operator.
@@ -298,6 +302,7 @@ UTSHello.getBatteryCapacity()
 
 
 2.显性引用
+2. Explicit references
 2. Explicit references
 2. Explicit references
 2. Explicit references

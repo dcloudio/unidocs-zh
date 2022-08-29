@@ -198,7 +198,7 @@ export function getBatteryCapacity(): string {
 
 在下一节，将介绍插件的使用，可以像使用普通js函数一样，使用getBatteryCapacity函数来获取设备电量。
 
-关于android开发UTS插件的更多细节说明，参考文档[UTSAndroid开发文档](https://uniapp.dcloud.net.cn/plugin/UTSForAndroid.html)和[示例](缺地址)
+关于android开发UTS插件的更多细节说明，参考文档[UTSAndroid开发文档](https://uniapp.dcloud.net.cn/plugin/UTSForAndroid.html)和[示例](https://gitcode.net/dcloud/hello-uts)
 
 注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
 

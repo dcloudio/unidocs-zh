@@ -100,6 +100,7 @@ UTS plugin directory structure
 ### 2.3 Manifest file package.json
 
 package.json为插件的清单文件，这里集成了整个UTS插件的配置信息，下面是一个简单的示例
+package.json is the manifest file of the plug-in, which integrates the configuration information of the entire UTS plug-in. The following is a simple example
 
 
 ```json
@@ -115,22 +116,30 @@ package.json为插件的清单文件，这里集成了整个UTS插件的配置�
 ```
 
 [关于package.json的更多说明](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)
+[More instructions on package.json](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)
 
 
 ### 2.4 插件的平台实现
 ### 2.4 Platform implementation of plugins
 
 一个UTS插件，代表的应该是**Uni标准下的一种扩展能力**
+A UTS plug-in should represent an extension capability under the **Uni standard**
 
 插件目录下：
+Under the plugin directory:
  
 index.d.ts文件是对当前插件能力的声明，
+The index.d.ts file is a declaration of the current plugin capabilities,
 index.uts文件是对当前插件能力的实现
+The index.uts file is the implementation of the current plugin capabilities
 
 针对一些通用的功能，可以用过index.uts实现即可。
+For some general functions, you can use index.uts to achieve it.
 但是类似获取电量等原生相关的场景，不同的平台有不同的代码实现，即使使用UTS也无法完全抹平。
+However, for native-related scenarios such as power acquisition, different platforms have different code implementations, and even using UTS cannot be completely smoothed out.
 
 因此我们设计了 app-android、app-ios 等目录，用以存放不同的平台的能力实现
+Therefore, we have designed directories such as app-android and app-ios to store the capabilities of different platforms.
 
 
 ```
@@ -252,6 +261,7 @@ Two common introduction methods are described below.
 1. Generic references
 1. Generic references
 1. Generic references
+1. Generic references
 
 作为一个对象全部import进来，然后通过点运算符调用这个对象的方法或属性。
 All imported as an object, and then call the method or property of this object through the dot operator.
@@ -268,6 +278,7 @@ UTSHello.getBatteryCapacity()
 
 
 2.显性引用
+2. Explicit references
 2. Explicit references
 2. Explicit references
 2. Explicit references

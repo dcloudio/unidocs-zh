@@ -134,15 +134,8 @@ The index.d.ts file is a **declaration** of the current plugin capabilities
 index.uts文件是对当前插件能力的**实现**
 The index.uts file is an **implementation** of the current plugin capabilities
 
-针对一些通用的功能，可以用过插件根目录下 index.uts实现即可。
-For some common functions, you can use index.uts in the root directory of the plugin to achieve it.
+针对一些通用的功能，可以用过插件根目录下 index.uts实现
 
-
-但是类似获取电量等原生强相关的场景，不同的平台有不同的语法和API差异。
-However, for scenarios that are strongly related to native power, such as obtaining electricity, different platforms have different syntax and API differences.
-
-因此我们设计了 app-android、app-ios 等目录，用以存放不同的平台的能力实现
-Therefore, we have designed directories such as app-android and app-ios to store the capabilities of different platforms.
 
 
 
@@ -164,6 +157,11 @@ Therefore, we have designed directories such as app-android and app-ios to store
   - index.d.ts  // 插件能力声明
   - index.uts   // 插件能力实现
 ```
+
+
+但是类似获取电量等原生强相关的场景，不同的平台有不同的语法和API差异。
+
+因此我们设计了 app-android、app-ios 等目录，用以存放不同的平台的能力实现
 
 
 下面以 android 平台为例，介绍平台目录的使用。

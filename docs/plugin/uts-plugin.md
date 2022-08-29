@@ -262,8 +262,7 @@ So far, we have completed the encapsulation of the native ability to obtain elec
 在下一节，将介绍插件的使用，可以像使用普通js函数一样，使用getBatteryCapacity函数来获取设备电量。
 In the next section, we will introduce the use of plug-ins. You can use the getBatteryCapacity function to get the device battery like a normal js function.
 
-关于android开发UTS插件的更多细节说明，参考文档[todo]和[示例](缺地址)
-For more detailed instructions on developing UTS plugins for android, refer to the documents [todo] and [example](missing address)
+关于android开发UTS插件的更多细节说明，参考文档[UTSAndroid开发文档](https://uniapp.dcloud.net.cn/plugin/UTSForAndroid.html)和[示例](缺地址)
 
 注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
 Note: HBuilderX's code prompt system supports prompting Android's native API in the uts file.

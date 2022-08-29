@@ -1693,6 +1693,24 @@ The three-party credentials currently saved by `uni-id-co` are as follows:
 - QQ APP登录时返回的用户access_token，通过`uni-open-bridge-common`的`setUserAccessToken`方法写入
 - The user access_token returned by the QQ APP when logging in, written through the `setUserAccessToken` method of `uni-open-bridge-common`
 
+开发者如需获取某用户对应的openid，可以在用户使用相应的登录操作之后自行读取用户记录获取。代码示例如下：
+
+```js
+const uid = 'xx'
+const appId = '__UNI_xxx'
+const wxPlatform = 'mp' // mp：小程序，h5：公众号，web：web页面，app：App微信登录
+
+const db = uniCloud.database()
+const getUserRes = await db.collection('uni-id-users').doc(uid).get()
+
+const userRecord = getUserRes.data[0]
+if(!userRecord) {
+  throw new Error('未匹配到此用户')
+}
+const wxOpenid = userRecord.wx_openid || {}
+const openid = wxOpenid[wxPlatform + '_' + appId]  || wxOpenid[wxPlatform]
+```
+
 ### 钩子@hooks
 ### Hooks @hooks
 

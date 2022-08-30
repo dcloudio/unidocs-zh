@@ -20,6 +20,8 @@ module.exports = merge({
     nextLinks: false,
     prevLinks: false,
     repo: 'dcloudio/uni-app',
+    docsRepo: 'https://gitcode.net/dcloud/unidocs-zh',
+    docsBranch: 'master',
     docsDir: 'docs',
     editLinks: true,
     isDevelopment: process.env.NODE_ENV === 'development',

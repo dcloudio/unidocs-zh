@@ -19,14 +19,14 @@
 #### H5 平台
 
 预加载 /pages/test/test 对应的js文件，不执行页面预渲染逻辑
-```
+```js
 uni.preloadPage({url: "/pages/test/test"});
 ```
 
 #### App-nvue 平台
 
 预加载nvue页面 /pages/test/test
-```
+```js
 uni.preloadPage({url: "/pages/test/test"});
 ```
 

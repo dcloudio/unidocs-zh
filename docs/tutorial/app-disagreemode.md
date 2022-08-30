@@ -51,6 +51,7 @@ At the same time, users are required to not read any personal information (inclu
 ### Configure to support disagreeMode
 
 在HBuilderX中打开项目的原生隐私政策提示框配置文件[androidPrivacy.json](https://ask.dcloud.net.cn/article/36937)，添加`disagreeMode`配置设置`support`为true. 
+Open the project's native privacy policy prompt box configuration file [androidPrivacy.json](https://ask.dcloud.net.cn/article/36937) in HBuilderX, add the `disagreeMode` configuration setting `support` to true.
 ```json
 {
 	"prompt": "template",

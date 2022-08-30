@@ -393,7 +393,7 @@ When the client calls the cloud function, the uniIdToken is automatically added 
   "uniIdToken": "xxxx"
 }
 ```
-<!-- 
+
 ## 运行云对象时传配置运行测试参数@run-obj-param
 ## When running the cloud object, pass the configuration running test parameters @run-obj-param
 
@@ -424,9 +424,7 @@ login('name-demo', 'password-demo') // 调用login方法传入参数'name-demo'�
 **Notice**
 
 - 此文件并非可执行的js文件，仅用来配置参数，因此不可在文件内定义变量并使用
-- This file is not an executable js file, it is only used to configure parameters, so variables cannot be defined in the file and used
-- 如果存在多个方法、参数配置运行时会使用第一个 -->
-- If there are multiple methods, parameter configuration runtime will use the first one -->
+- 如果存在多个方法、参数配置运行时会使用第一个
 
 ## 断点调试云函数
 ## Breakpoint debugging cloud function

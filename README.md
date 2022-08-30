@@ -1,29 +1,28 @@
-`uni-app` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/QQ/快手/钉钉/淘宝）、快应用等多个平台。
+`uni-app` is a framework for developing all front-end applications using [Vue.js](https://vuejs.org/). Developers write a set of codes that can be published to iOS, Android, Web (responsive), And various MiniApp(WeChat/Alipay/Baidu/Toutiao/QQ/ Kuaishou/DingTalk/Taobao), QuickApp and other platforms.
 
-官网地址：[uniapp.dcloud.io](https://uniapp.dcloud.io)
+Official website address: [uniapp.dcloud.io](https://uniapp.dcloud.io)
 
-## 文档编写注意事项
+## Documentation Notes
 
-1. 右侧导航仅支持二级、三级、四级
-2. 文档如有标题，必须从二级开始，不允许只有三级，没有二级的情况；也不允许先有三级、后有二级的情况；
-3. FAQ、注意事项、常见问题，要放在文档最下方，不要穿插在文档中间位置
+1. The right navigation only supports Level 2, Level 3 and Level 4
+2. If the document has a title, it must start from the second level. It is not allowed to have only the third level without the second level; nor is it allowed to have the third level and then the second level;
+3. FAQs, precautions, and frequently asked questions should be placed at the bottom of the document, not interspersed in the middle of the document
 
-## 手动标注翻译
+## Manual annotation translation
 
-使用 `<!-- @ignore-translate -->` 或 `// @ignore-translate` 进行标注。
-`<!-- @ignore-translate -->` 的下一行为中文，下两行为英文，如：
+Annotate with `<!-- @ignore-translate -->` or `// @ignore-translate`.
+The next line of `<!-- @ignore-translate -->` is Chinese, and the next two lines are English, such as:
 
 ```md
-<!-- @ignore-translate -->
-## 官方示例
 ## Official example
 ```
 
-## 术语表
+## Glossary
 
 > my_zh_en_glossary.tmx
 
 格式为：
+The format is:
 ```html
 <tu>
   <tuv xml:lang="zh">
@@ -35,4 +34,4 @@
 </tu>
 ```
 
-经测试使用 Cloud Storage api 上传报错。因此修改后需要手动上传 Cloud Storage 后更新才可使用最新术语表。
+After testing, the upload error is reported using the Cloud Storage api. Therefore, after modification, you need to manually upload to Cloud Storage and then update to use the latest glossary.

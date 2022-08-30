@@ -45,7 +45,7 @@ Do not check android.permission.INSTALL_PACKAGES, android.permission.REQUEST_INS
 2. 请查看原生项目中的AndroidManifest.xml。如果包含以下权限请手动删除：
 2. Please check the AndroidManifest.xml in the native project. If it contains the following permissions, please delete it manually:
 
-```
+```html
 <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
 <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 ```

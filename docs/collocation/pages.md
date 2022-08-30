@@ -223,7 +223,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 
 通过matchMedia的调节，可以自适应在不同屏幕上显示指定的window。
 
-```javascript
+```json
 {
   "pages": [
     {

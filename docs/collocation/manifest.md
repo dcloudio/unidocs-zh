@@ -272,7 +272,7 @@ Configure the following nodes in the manifest to start subcontracting on the App
 ```
 
 在manifest中启动分包后，需要在pages.json中配置具体的分包规则，与小程序的配置相同，详见：[https://uniapp.dcloud.io/collocation/pages?id=subpackages](https://uniapp.dcloud.io/collocation/pages?id=subpackages)
-After starting subpackage in manifest, you need to configure specific subpackage rules in pages.json, which is the same as the configuration of MiniApp. For details, see: [ <a href="https://uniapp.dcloud.io/collocation/pages?id=subpackages](https://uniapp.dcloud.io/collocation/pages?id=subpackages">https://uniapp.dcloud.io/collocation/pages?id=subpackages](https://uniapp.dcloud.io/collocation/pages?id=subpackages</a> )
+After starting subpackage in manifest, you need to configure specific subpackage rules in pages.json, which is the same as the configuration of applet. For details, see: [https://uniapp.dcloud.io/collocation/pages?id=subpackages](https://uniapp.dcloud.io/collocation/pages?id=subpackages)
 
 也就是一旦在pages.json里配置分包，小程序一定生效，而app是否生效，取决于manifest里是否开启。
 That is, once the subpackage is configured in pages.json, the MiniApp will take effect, and whether the app will take effect depends on whether it is enabled in the manifest.
@@ -438,7 +438,7 @@ But the era of SEO is changing, and now it is more effective to use uni-app to r
 |mode|String|hash|路由跳转模式，支持 hash、history|
 |mode|String|hash|Route jump mode, support hash, history|
 |base|String|/|应用基础路径，例如，如果整个单页应用服务在 /app/ 下，然后 base 就应该设为 "/app/"，支持设置为相对路径 "./"|
-|base|String|/|The application base path, for example, if the entire single page application service is under /app/, then the base should be set to "/app/", support setting it as a relative path "./"|
+|base|String|/|The application base path, for example, if the entire single-page application service is under /app/, then base should be set to "/app/", support setting it as a relative path "./"|
 
 **注意：**
 **Notice:**
@@ -589,67 +589,45 @@ Tips: For the principle and optimization results of tree Shaking, please refer t
 |property|type|description|
 |:-|:-|:-|
 |appid|String|微信小程序的AppID，登录 [https://mp.weixin.qq.com](https://mp.weixin.qq.com) 申请|
-|appid|String|AppID of WeChat MiniApp, log in to [ <a href="https://mp.weixin.qq.com](https://mp.weixin.qq.com">https://mp.weixin.qq.com](https://mp.weixin.qq.com</a> ) to apply|
+|appid|String|AppID of the WeChat applet, log in to [https://mp.weixin.qq.com](https://mp.weixin.qq.com) to apply|
 |setting|Object|微信小程序项目设置，参考[setting](/collocation/manifest?id=setting)|
-|setting|Object|Wechat MiniApp project settings, refer to [setting](/collocation/manifest?id=setting)|
+|setting|Object|Wechat applet project settings, refer to [setting](/collocation/manifest?id=setting)|
 |functionalPages|Boolean|微信小程序是否启用插件功能页，默认关闭|
-|functionalPages|Boolean|Whether the WeChat MiniApp enables the plug-in function page, it is disabled by default|
+|functionalPages|Boolean|Whether the WeChat applet enables the plug-in function page, it is disabled by default|
 |requiredBackgroundModes|Array|微信小程序需要在后台使用的能力,[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#requiredbackgroundmodes)|
-|requiredBackgroundModes|Array|WeChat MiniApp needs the ability to use in the background, [see details]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#requiredbackgroundmodes)|">https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#requiredbackgroundmodes)|</a>
+|requiredBackgroundModes|Array|WeChat Mini Program needs to use the ability in the background, [see details](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#requiredbackgroundmodes)|
 |plugins|Object|使用到的插件，[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)|
 |plugins|Object|The plugins used, [see details](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)|
 |resizable|Boolean|在iPad上小程序是否支持屏幕旋转，默认关闭|
-|resizable|Boolean|Whether the MiniApp supports screen rotation on iPad, off by default|
+|resizable|Boolean|Whether the applet supports screen rotation on iPad, off by default|
 |navigateToMiniProgramAppIdList|Array|需要跳转的小程序列表，[详见](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html)|
-|navigateToMiniProgramAppIdList|Array|List of MiniApp to be jumped to, [see details]( <a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html)|">https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html) |</a>
+|navigateToMiniProgramAppIdList|Array|List of mini programs to be jumped to, [see details](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html) |
 |permission|Object|微信小程序接口权限相关设置，比如申请位置权限必须填此处[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)|
-|permission|Object|WeChat MiniApp interface permissions related settings, such as applying for location permissions, you must fill in here [see details]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)|">https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)|</a>
+|permission|Object|WeChat Mini Program interface permissions related settings, such as applying for location permissions, you must fill in here [see details](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)|
 |workers|String|Worker 代码放置的目录。 [详见](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|
 |workers|String|Directory where Worker code is placed. [See details](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|
 |optimization|Object| 对微信小程序的优化配置 |
-|optimization|Object| Optimized configuration for WeChat MiniApp|
+|optimization|Object| Optimized configuration for WeChat Mini Programs |
 |cloudfunctionRoot|String| 配置云开发目录，参考[setting](/collocation/manifest?id=cloudfunctionRoot)|
 |cloudfunctionRoot|String| Configure the cloud development directory, refer to [setting](/collocation/manifest?id=cloudfunctionRoot)|
 |uniStatistics|Object|[微信小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
-|uniStatistics|Object|[Whether the WeChat MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether the WeChat applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 |mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
 |mergeVirtualHostAttributes|Boolean|Merge component [virtual node](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE) outer attributes ( Currently only supports style and class attributes), uni-app 3.5.1+ starts to support|
 |embeddedAppIdList|Array|要半屏跳转的小程序appid。[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
-|embeddedAppIdList|Array|The MiniApp appid to be jumped half-screen. [See details]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|">https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|</a>
+|embeddedAppIdList|Array|The applet appid to be jumped half-screen. [See details](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
 |requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/community/develop/doc/000a02f2c5026891650e7f40351c01)|
 |requiredPrivateInfos|Array|Location related interface. [See details](https://developers.weixin.qq.com/community/develop/doc/000a02f2c5026891650e7f40351c01)|
 |lazyCodeLoading|String| 目前仅支持值 requiredComponents，代表开启小程序[按需注入](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a>
-|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the MiniApp[on-demand injection]( <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload .html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev /reference/configuration/app.html#lazyCodeLoading)|">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80 %E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|</a >
+|lazyCodeLoading|String| Currently only supports the value requiredComponents, which means enabling the mini program [on-demand injection](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C% 89%E9%9C%80%E6%B3%A8%E5%85%A5) features, [see details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html #lazyCodeLoading)|
 
 
 #### setting
 
 编译到微信小程序平台下的项目设置。
-Compile to the project settings under the WeChat MiniApp platform.
+Compile to the project settings under the WeChat applet platform.
 
 |属性|类型|说明|
 |property|type|description|
@@ -668,7 +646,7 @@ Compile to the project settings under the WeChat MiniApp platform.
 #### optimization
 
 对微信小程序的优化配置
-Optimized configuration of WeChat MiniApp
+Optimized configuration of WeChat applet
 
 |属性|类型|说明|
 |property|type|description|
@@ -679,7 +657,7 @@ Optimized configuration of WeChat MiniApp
 #### cloudfunctionRoot
 
 如果需要使用微信小程序的云开发，需要在 mp-weixin 配置云开发目录
-If you need to use the cloud development of WeChat MiniApp, you need to configure the cloud development directory in mp-weixin
+If you need to use the cloud development of WeChat applet, you need to configure the cloud development directory in mp-weixin
 
 ```javascript
 "mp-weixin":{
@@ -718,7 +696,7 @@ After configuring the directory, you need to create a new `vue.config.js` in the
 |component2						|Boolean| 是否启用 `component2` 编译，默认为true，[查看详情](https://docs.alipay.com/mini/framework/custom-component-overview)	|
 |component2 |Boolean| Whether to enable `component2` compilation, the default is true, [View details](https://docs.alipay.com/mini/framework/custom-component-overview) |
 |enableAppxNg         |Boolean| 是否启用 `enableAppxNg` 小程序基础库 2.x 构建，默认为true，[查看详情](https://opendocs.alipay.com/mini/framework/project)，HBuilderX 3.2.10+ |
-|enableAppxNg |Boolean| Whether to enable `enableAppxNg` MiniApp base library 2.x build, the default is true, [View Details]( <a href="https://opendocs.alipay.com/mini/framework/project)，HBuilderX">https://opendocs.alipay.com/mini/framework/project</a> ), HBuilderX 3.2.10+ |
+|enableAppxNg |Boolean| Whether to enable the `enableAppxNg` applet base library 2.x build, the default is true, [View Details](https://opendocs.alipay.com/mini/framework/project), HBuilderX 3.2.10+ |
 |axmlStrictCheck			|Boolean| 是否启用 `axml` 严格语法检查，默认为false	|
 |axmlStrictCheck |Boolean| Whether to enable `axml` strict syntax checking, default is false |
 |enableParallelLoader	|Boolean| 是否启用多进程编译，默认为false	|
@@ -726,7 +704,7 @@ After configuring the directory, you need to create a new `vue.config.js` in the
 |enableDistFileMinify	|Boolean| 是否压缩编译产物（仅在真机预览/真机调试时生效），默认为false	|
 |enableDistFileMinify |Boolean| Whether to compress the compiled product (only valid for real machine preview/real machine debugging), the default is false |
 |uniStatistics				|Object	|[支付宝小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
-|uniStatistics |Object |[Whether the Alipay MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
+|uniStatistics |Object |[Whether the Alipay applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 |mergeVirtualHostAttributes|Boolean|合并组件节点外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
@@ -741,15 +719,15 @@ After configuring the directory, you need to create a new `vue.config.js` in the
 |property|type|description|
 |:-|:-|:-|
 |appid|String|百度小程序的 AppID，登录 [https://smartprogram.baidu.com/docs/introduction/enter_application/](https://smartprogram.baidu.com/docs/introduction/enter_application/) 申请|
-|appid|String|AppID of Baidu MiniApp, log in [ <a href="https://smartprogram.baidu.com/docs/introduction/enter_application/](https://smartprogram.baidu.com/docs/introduction/enter_application/">https://smartprogram.baidu.com/docs/introduction/enter_application/](https://smartprogram.baidu.com/docs/introduction/enter_application/</a> ) to apply|
+|appid|String|AppID of Baidu Mini Program, log in to [https://smartprogram.baidu.com/docs/introduction/enter_application/](https://smartprogram.baidu.com/docs/introduction/enter_application/) to apply|
 |requiredBackgroundModes|Array|小程序需要在后台使用的能力，目前支持背景音频播放，"requiredBackgroundModes": ["audio"]，[详见](https://smartprogram.baidu.com/docs/develop/tutorial/process/#requiredBackgroundModes)	|
-|requiredBackgroundModes|Array| The MiniApp needs the ability to use in the background, currently supports background audio playback, "requiredBackgroundModes": ["audio"], [see]( <a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/#requiredBackgroundModes">https://smartprogram.baidu.com/docs/develop/tutorial /process/#requiredBackgroundModes</a> ) |
+|requiredBackgroundModes|Array|The applet needs the ability to be used in the background, and currently supports background audio playback, "requiredBackgroundModes": ["audio"], [see details](https://smartprogram.baidu.com/docs/develop/tutorial /process/#requiredBackgroundModes) |
 |prefetches|Array|预请求的所有url的列表，[详见](https://smartprogram.baidu.com/docs/develop/tutorial/process/#prefetches)																|
-|prefetches|Array|List of all pre-requested urls, [see details](https://smartprogram.baidu.com/docs/develop/tutorial/process/#prefetches) |
+|prefetches|Array|List of all pre-requested URLs, [see details](https://smartprogram.baidu.com/docs/develop/tutorial/process/#prefetches) |
 |optimization|Object| 对百度小程序的优化配置 |
-|optimization|Object| Optimization configuration for Baidu MiniApp|
+|optimization|Object| Optimized configuration for Baidu Mini Programs |
 |uniStatistics|Object|[百度小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
-|uniStatistics|Object|[Whether Baidu MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether Baidu Mini Program enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 |dynamicLib|Object|引入动态库，详情请参考[使用动态库](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)|
@@ -758,7 +736,7 @@ After configuring the directory, you need to create a new `vue.config.js` in the
 #### optimization
 
 对百度小程序的优化配置
-Optimized configuration of Baidu MiniApp
+Optimized configuration of Baidu applet
 
 |属性|类型|说明|
 |property|type|description|
@@ -772,18 +750,18 @@ Optimized configuration of Baidu MiniApp
 |property|type|description|
 |:-|:-|:-|
 |appid|String|字节跳动小程序的 AppID，登录 [https://developer.toutiao.com/](https://developer.toutiao.com/) 申请|
-|appid|String|AppID of the ByteDance MiniApp, log in to [ <a href="https://developer.toutiao.com/](https://developer.toutiao.com/">https://developer.toutiao.com/](https://developer.toutiao.com/</a> ) to apply|
+|appid|String|AppID of the ByteDance applet, log in to [https://developer.toutiao.com/](https://developer.toutiao.com/) to apply|
 |setting|Object|字节跳动小程序项目设置，参考[字节跳动小程序项目设置](/collocation/manifest?id=mp-toutiao-setting)|
-|setting|Object| ByteDance MiniApp project settings, refer to [ByteDance MiniApp project settings](/collocation/manifest?id=mp-toutiao-setting)|
+|setting|Object| ByteDance applet project settings, refer to [ByteDance applet project settings](/collocation/manifest?id=mp-toutiao-setting)|
 |navigateToMiniProgramAppIdList	|Array|需要跳转的小程序列表，[详见](https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration)	|
-|navigateToMiniProgramAppIdList |Array|The list of MiniApp to be jumped to, [see details]( <a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration</a> ) |
+|navigateToMiniProgramAppIdList |Array|The list of mini programs to be jumped to, [see details](https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration) |
 |uniStatistics|Object|[字节跳动小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
-|uniStatistics|Object|[Whether the ByteDance MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether the ByteDance applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 
 #### 字节跳动小程序项目设置@mp-toutiao-setting
-#### ByteDance MiniApp project setting @mp-toutiao-setting
+#### ByteDance applet project setting @mp-toutiao-setting
 
 |属性|类型|说明|
 |property|type|description|
@@ -803,16 +781,16 @@ Optimized configuration of Baidu MiniApp
 |property|type|description|
 |:-|:-|:-|
 |appid|String|飞书小程序的 AppID，登录 [https://open.feishu.cn](https://open.feishu.cn) 申请|
-|appid|String|AppID of Feishu MiniApp, log in to [ <a href="https://open.feishu.cn](https://open.feishu.cn">https://open.feishu.cn](https://open.feishu.cn</a> ) to apply|
+|appid|String|AppID of Feishu applet, log in to [https://open.feishu.cn](https://open.feishu.cn) to apply|
 |setting|Object|飞书小程序项目设置，参考[飞书小程序项目设置](/collocation/manifest?id=mp-lark-setting)|
-|setting|Object|Feishu MiniApp project setting, refer to [Feishu MiniApp project setting](/collocation/manifest?id=mp-lark-setting)|
+|setting|Object|Feishu applet project setting, refer to [Feishu applet project setting](/collocation/manifest?id=mp-lark-setting)|
 |uniStatistics|Object|[飞书小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
-|uniStatistics|Object|[Whether the Feishu MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether the Feishu applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 
 #### 飞书小程序项目设置@mp-lark-setting
-#### Feishu MiniApp project setting @mp-lark-setting
+#### Feishu applet project setting @mp-lark-setting
 
 |属性|类型|说明|
 |property|type|description|
@@ -832,28 +810,28 @@ Optimized configuration of Baidu MiniApp
 |property |type |description |
 |:-								|:-				|:-																																													|
 |appid							|String			|qq 小程序的 AppID，登录 [https://q.qq.com](https://q.qq.com) 申请																													|
-|appid |String |AppID of the qq MiniApp, log in to [ <a href="https://q.qq.com](https://q.qq.com">https://q.qq.com](https://q.qq.com</a> ) to apply |
+|appid |String |AppID of the qq applet, log in to [https://q.qq.com](https://q.qq.com) to apply |
 |requiredBackgroundModes		|Array			|小程序需要在后台使用的能力，目前支持背景音频播放，"requiredBackgroundModes": ["audio"]，[详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#requiredbackgroundmodes)	|
-|requiredBackgroundModes |Array | MiniApp needs the ability to use in the background, currently supports background audio playback, "requiredBackgroundModes": ["audio"], [see details]( <a href="https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#requiredbackgroundmodes">https://q.qq.com/wiki/develop/miniprogram /frame/dispose.html#requiredbackgroundmodes</a> ) |
+|requiredBackgroundModes |Array | Mini program needs the ability to be used in the background, currently supports background audio playback, "requiredBackgroundModes": ["audio"], [see details](https://q.qq.com/wiki/develop/miniprogram /frame/dispose.html#requiredbackgroundmodes) |
 |navigateToMiniProgramAppIdList	|Array			|需要跳转的小程序列表，[详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#navigatetominiprogramappidlist)																|
-|navigateToMiniProgramAppIdList |Array |A list of MiniApp to be jumped to, [see details]( <a href="https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#navigatetominiprogramappidlist">https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#navigatetominiprogramappidlist</a> ) |
+|navigateToMiniProgramAppIdList |Array |A list of mini programs that need to be jumped, [see details](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#navigatetominiprogramappidlist) |
 |permission						|Object			|小程序接口权限相关设置，比如申请位置权限必须填此处[详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#permission)														|
-|permission |Object | MiniApp interface permissions related settings, such as applying for location permissions must fill in here [see details]( <a href="https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#permission">https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#permission</a> ) |
+|permission |Object |Mini program interface permissions related settings, such as applying for location permissions, you must fill in here [see details](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#permission) |
 |workers						|String			|Worker 代码放置的目录。 [详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#workers)																					|
 |workers |String |Directory where Worker code is placed. [See details](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#workers) |
 |groupIdList					|String Array	|需要打开群资料卡的群号列表，详见button的open-type																																		|
 |groupIdList |String Array |The group ID list that needs to open the group data card, see button open-type |
 |optimization|Object| 对QQ小程序的优化配置 |
-|optimization|Object| Optimization configuration for QQ MiniApp|
+|optimization|Object| Optimization configuration for QQ applet |
 |uniStatistics|Object|[QQ小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
-|uniStatistics|Object|[Whether the QQ MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether the QQ applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: auto|
 
 #### optimization
 
 对QQ小程序的优化配置
-Optimized configuration of QQ MiniApp
+Optimized configuration of QQ applet
 
 |属性|类型|说明|
 |property|type|description|
@@ -867,9 +845,9 @@ Optimized configuration of QQ MiniApp
 |property|type|description|
 |:-|:-|:-|
 |appid|String|快手小程序的 AppID，登录 [https://mp.kuaishou.com](https://mp.kuaishou.com) 申请|
-|appid|String|AppID of the Kuaishou MiniApp, log in to [ <a href="https://mp.kuaishou.com](https://mp.kuaishou.com">https://mp.kuaishou.com](https://mp.kuaishou.com</a> ) to apply|
+|appid|String|AppID of the Kuaishou applet, log in to [https://mp.kuaishou.com](https://mp.kuaishou.com) to apply|
 |uniStatistics|Object|[快手小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
-|uniStatistics|Object|[Whether the Kuaishou MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
+|uniStatistics|Object|[Whether the Kuaishou applet enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：augmented|
 |scopedSlotsCompiler|String|Vue2 scoped slot compilation mode, supported since uni-app 3.1.19+, optional: legacy, auto, augmented, default: augmented|
 
@@ -905,7 +883,7 @@ Optimized configuration of QQ MiniApp
 Taking the above sub-package as an example, the static files placed in the corresponding directory of the root of each sub-package will be packaged into this sub-package.
 
 ### 快应用@quickapp-webview
-### QuickApp@quickapp-webview
+### Quick App @quickapp-webview
 
 |属性							 |类型			|说明|
 |property |type |description|

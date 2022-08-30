@@ -170,7 +170,7 @@ For the difference between the ordinary authorized version and the source code a
 > 从HBuilderX 3.2.0版本开始，当发布云端一体项目模板或云端一体页面模板的付费插件时，前端js文件也支持加密了，设置方式与云函数类似，在uni_modules->encrypt中定义文件路径，如：
 > Starting from HBuilderX 3.2.0, when a paid plug-in for cloud-integrated project template or cloud-integrated page template is released, the front-end js file also supports encryption. The setting method is similar to the cloud function. Define the file path in uni_modules->encrypt, like:
 
-```
+```json
 {
 	"uni_modules": {
 		"encrypt": [

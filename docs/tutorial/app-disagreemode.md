@@ -32,7 +32,7 @@
 ### 配置支持disagreeMode
 
 在HBuilderX中打开项目的原生隐私政策提示框配置文件[androidPrivacy.json](https://ask.dcloud.net.cn/article/36937)，添加`disagreeMode`配置设置`support`为true. 
-```
+```json
 {
 	"prompt": "template",
 	"buttonAccept": "同意并接受",  

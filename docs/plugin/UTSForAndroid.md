@@ -122,7 +122,7 @@ let textSize =  30.0.toFloat();
 
 ### 泛型参数
 
-android中UI相关的api,很多都要去泛型，目前UTS支持用as关键字强转，满足类似的场景
+android中UI相关的api,很多会要求泛型，目前UTS支持用as关键字强转，满足类似的场景
 
 ```
 let frameContent = decorView.findViewById(android.R.id.content) as FrameLayout

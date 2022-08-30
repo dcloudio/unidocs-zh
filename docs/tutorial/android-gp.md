@@ -31,7 +31,7 @@ uni-app中部分功能模块不符合Google Play审核要求，请仔细阅读�
 
 2. 请查看原生项目中的AndroidManifest.xml。如果包含以下权限请手动删除：
 
-```
+```html
 <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
 <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 ```

@@ -57,4 +57,56 @@ UTS插件 = 使用HX + typescript 开发插件
 ## 3 Android常用API
 
 
+### getAppContext
+
+获取当前应用Application上下文，对应android平台上的application context
+```
+fun getAppContext():Context?
+```
+
+### getUniActivity
+
+获取当前应用宿主activity示例，当前Uni-APP 应用实例的宿主activity
+```
+fun getAppContext():Context?
+```
+
+### getResourcePath(resourceName:String)
+
+获取指定插件资源 的运行期绝对路径
+```
+fun getResourcePath(resourceName:String):String
+```
+
+比如，插件A使用到了一张图片,开发期间 存放位置为
+> ni_modules/test-uts-static/static/logo.png
+
+程序运行期间，需要获取到此资源，可以使用 
+ 
+```
+getResourcePath("uni_modules/test-uts-static/static/logo.png")
+```
+
+得到文件运行时路径: 
+
+> /storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png
+
+
+### onAppActivityPause
+
+容器的宿主activity onPause时触发
+
+### onAppActivityResume
+
+容器的宿主activity onResume时触发
+
+### onAppActivityDestroy
+
+容器的宿主activity onDestroy时触发
+
+### onAppActivityBack
+
+容器的宿主activity 回退物理按键点击时触发
+
+
 ## 4 注意事项

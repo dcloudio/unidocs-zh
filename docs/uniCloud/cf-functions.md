@@ -16,13 +16,13 @@
 
 云函数的配置文件和 npm规范 相同，在云函数目录下可新建一个 package.json 来存放配置。uniCloud云函数扩展了 package.json，增加了一些特有的配置项。[详见](/uniCloud/cf-functions?id=packagejson)
 
-云函数启动后环境会保留一段时间（如15分钟），超过保留期后若该云函数一直没有被再调用，那这个环境会被释放。所以云函数有冷启动的概念。不过由于js环境的启动要比php和java更快，所以js适合serverless方式。
+云函数启动后实例会保留一段时间（如15分钟），超过保留期后若该云函数一直没有被再调用，那这个实例会被释放。所以云函数有冷启动的概念。不过由于js实例的启动要比php和java更快，所以js更适合serverless方式。
 
 **注意事项**
 - 云函数内使用commonjs规范，不可使用import、export，参考：[commonjs模块](http://nodejs.cn/api/modules.html#modules_modules_commonjs_modules)
 - 不同项目使用同一个服务空间时，不可使用同名云函数。同名云函数会相互覆盖。
 - 在HBuilderX创建云函数时，如果新云函数与服务器上已存在同名云函数，会用新函数覆盖。所以应先选择从服务空间下载云函数。
-- 单个云函数大小限制为10M（包含node_modules），过大的云函数影响运行性能，也会增加计费的gbs。
+- 单个云函数大小限制为10M（包含`node_modules`），过大的云函数影响运行性能，也会增加计费的gbs。同时腾讯云支持在云端安装`node_modules`，此时不占用云函数体积。
 - uniCloud的阿里云版，暂不可使用相对路径读取文件（比如`fs.readFileSync('./info.txt')`），可以使用绝对路径`fs.readFileSync(path.resolve(__dirname,'./info.txt'))`
 
 ## 云函数的分类
@@ -33,7 +33,7 @@
 - 云对象：是通过前端导入对象来操作的，客户端使用`uniCloud.importObject("")`导入云对象。详见[云对象](/uniCloud/cloud-obj)
 - 公共模块：用于不同的云函数/云对象，抽取和共享相同代码，详见[公共模块文档](/uniCloud/cf-functions?id=公共模块)
 - action云函数：为了弥补clientDB客户端直接操作数据库的局限而设计的，详见[clientDB action文档](/uniCloud/clientdb?id=action)
-- uniCloud扩展库：为了裁剪和控制云函数体积而设计的，一些不太常用的功能比如Redis，独立为扩展库，避免增大每个云函数的体积，详见[uniCloud扩展库](/uniCloud/cf-functions?id=扩展库)
+- uniCloud扩展库：为了裁剪和控制云函数体积而设计的，一些不太常用的功能比如Redis，独立为可选扩展库，避免增大每个云函数的体积，详见[uniCloud扩展库](/uniCloud/cf-functions?id=扩展库)
 
 HBuilderX中uniCloud项目的云函数均在项目的`uniCloud/cloudfunctions`目录下，目录结构如下：
 
@@ -74,19 +74,6 @@ uniCloud体系里，客户端和服务端的云函数通信，有4种方式：
 
 ### clientDB方式
 
-- clientDB适用的情况：
-
-如果客户端使用uni-app开发，且向uniCloud服务空间的请求主要是为了操作云数据库（无论增删改查），那么推荐使用clientDB方式，由uni-app客户端直接操作云数据库。
-
-如果操作数据库的同时，还需要同时执行一些云函数，可以使用clientDB的action云函数。
-
-- clientDB不适用的情况：
-
-1. 请求不操作云数据库，比如向外部web系统发请求、操作redis、删除云文件等；
-2. 操作的云数据库请求不希望暴露在前端；
-3. 数据库表和字段数量多而接口数量少。给每个数据配置权限的工作量超过了控制少数接口权限的工作量；
-4. 权限体系较复杂，除了用户和管理员外还有较多其他权限条件或动态权限。此时在schema和action中编写代码的复杂度超过了写接口。
-
 **直观体验代码示例**
 
 clientDB分API方式和组件方式，此处使用API方式来演示
@@ -102,6 +89,19 @@ db.collection('list').get()
 ```
 
 由于篇幅较长，学习clientDB需另见文档[clientDB](clientdb.md)
+
+- clientDB适用的情况：
+
+如果客户端使用uni-app开发，且向uniCloud服务空间的请求主要是为了操作云数据库（无论增删改查），那么推荐使用clientDB方式，由uni-app客户端直接操作云数据库。
+
+如果操作数据库的同时，还需要同时执行一些云函数，可以使用clientDB的action云函数。
+
+- clientDB不适用的情况：
+
+1. 请求不操作云数据库，比如向外部web系统发请求、操作redis、删除云文件等；
+2. 操作的云数据库请求不希望暴露在前端；
+3. 数据库表和字段数量多而接口数量少。给每个数据配置权限的工作量超过了控制少数接口权限的工作量；
+4. 权限体系较复杂，除了用户和管理员外还有较多其他权限条件或动态权限。此时在schema和action中编写代码的复杂度超过了写接口。
 
 ### 云对象方式
 
@@ -180,21 +180,7 @@ exports.main = async (event, context) => {
 ```
 
 由于篇幅较长，需另见文档[云函数callfunction方式](/uniCloud/cf-callfunction)
-<!-- 
-因文档地址迁移，为防止老链接失效，备份如下：
-#### 获取用户token@client-token
-文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=client-token)
-#### 获取客户端IP@clientip
-文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=clientip)
-#### 获取客户端user-agent@client-user-agent
-文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=client-user-agent)
-#### 获取服务空间信息@context-space-info
-文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=context-space-info)
-#### 获取云函数调用来源@context-source
-文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=context-source)
-#### 其他客户端信息@client-info
-文档已迁移至：[普通云函数callFunction](/uniCloud/cf-callfunction.md?id=client-info)
- -->
+
 ### 云函数URL化方式
 
 可以让云函数/云对象生成一个HTTP URL。这样非uni-app应用，可以通过ajax请求和云函数/云对象通信。
@@ -222,9 +208,9 @@ uniCloud服务器给客户端返回的数据格式一般是json，但json的格�
 
 为了与uni-app前端的API错误回调风格统一，uniCloud响应体规范定义的云端返回信息（尤其是报错时）应包含`errCode`和`errMsg`。
 
-除此之外响应体规范还包含`newToken`字段，用于token的自动续期（云对象接收含有newToken的响应后会自动更新storage内存储的uni_id_token及uni_id_token_expired，此行为新增于`HBuilderX 3.4.13`）。开发者一般无需关心此数据，uni-app客户端和云端uni-id之间会自动管理token及续期。
+除此之外响应体规范还包含`newToken`字段，用于token的自动续期（云对象接收含有newToken的响应后会自动更新storage内存储的`uni_id_token`及`uni_id_token_expired`，此行为新增于`HBuilderX 3.4.13`）。开发者一般无需关心此数据，uni-app客户端和云端uni-id之间会自动管理token及续期。
 
-示例如下：
+`uniCloud响应体`示例如下：
 
 ```json
 // 失败返回值
@@ -289,14 +275,14 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 |uniCloud.callFunction()	|云函数/云对象中调用另一个云函数 [见下](#callbyfunction)	|
 |uniCloud.importObject()	|云函数/云对象中调用另一个云对象 [详情](cloud-obj.md?id=call-by-cloud)	|
 |uniCloud.httpclient		|云函数中通过http访问其他系统 [见下](#httpclient)																		|
+|uniCloud.httpProxyForEip	|使用云厂商代理访问http服务（阿里云的解决微信需要固定IP的方案），仅阿里云云端环境支持 [详见](#aliyun-eip)，新增于`HBuilderX 3.5.5`|
 |uniCloud.sendSms()			|发送短信，需添加扩展库 [详见](uniCloud/send-sms.md)																											|
 |uniCloud.getPhoneNumber()	|获取一键登录手机号，需添加扩展库 [详见](uniCloud/univerify.md?id=cloud)																						|
 |uniCloud.init()			|获取指定服务空间的uniCloud实例 [详见](uniCloud/concepts/space.md?id=multi-space)														|
 |uniCloud.logger			|云函数中打印日志到[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的日志系统（非HBuilderX控制台）[详情](rundebug.md?id=uniCloudlogger)															|
-|uniCloud.httpProxyForEip			|使用云厂商代理访问http服务（阿里云固定IP方案），仅阿里云云端环境支持 [详见](#aliyun-eip)，新增于`HBuilderX 3.5.5`|
-|uniCloud.getRequestList			|获取当前云函数实例内正在处理的请求Id列表 [详见](#get-request-list)，新增于`HBuilderX 3.5.5`|
-|uniCloud.getClientInfos			|获取当前云函数实例内正在处理的请求对应的客户端信息列表 [详见](#get-client-infos)，新增于`HBuilderX 3.5.5`|
-|uniCloud.getCloudInfos			|获取当前云函数实例内正在处理的请求对应的云端信息列表 [详见](#get-cloud-infos)，新增于`HBuilderX 3.5.5`|
+|uniCloud.getRequestList	|获取当前云函数实例内正在处理的请求Id列表 [详见](#get-request-list)，新增于`HBuilderX 3.5.5`|
+|uniCloud.getClientInfos	|获取当前云函数实例内正在处理的请求对应的客户端信息列表 [详见](#get-client-infos)，新增于`HBuilderX 3.5.5`|
+|uniCloud.getCloudInfos		|获取当前云函数实例内正在处理的请求对应的云端信息列表 [详见](#get-cloud-infos)，新增于`HBuilderX 3.5.5`|
 
 ## 错误对象@uni-cloud-error
 
@@ -431,31 +417,47 @@ exports.main = async (event, context) => {
 
 ```
 
-## 其他API
+## 请求和环境API
+
+由于存在[单实例多并发](#concurrency)的情况，实例级的uniCloud对象，和每个请求request是一对多的关系。
+
+这也造成了与请求相关的上下文，比如客户端信息，需要通过请求来获取。
+
+为了更好的管理请求和请求相关的上下文，uniCloud提供了下面一批API。
 
 ### 获取请求id列表@get-request-list
-
-非单实例多并发场景下列表长度为1，仅有的一个requestId表示当前请求的requestId。单实例多并发场景下会返回正在处理的所有请求的requestId列表。如需获取当前请求的requestId参考：[云函数context](cf-callfunction.md#context)、[云对象获取当前请求的requestId](cloud-obj.md#get-request-id)
 
 **示例**
 
 ```js
-uniCloud.getRequestList() // ['3228166e-3c17-4d58-9707-xxxxxxxx']
+uniCloud.getRequestList()
+// 返回值：['3228166e-3c17-4d58-9707-xxxxxxxx']
 ```
 
+如没有配置[单实例多并发](#concurrency)，数组里只会返回一项内容。配置后可能会多项，正在并发的所有请求的requestId都会返回。
+
+当返回多项时，在uniCloud对象上无法明确当前请求是数组中的哪一个。所以提供了其他方法来获取当前请求：
+- 云对象通过`this.getUniCloudRequestId()`。[详情](cloud-obj.md#get-request-id)
+- 云函数通过函数自带参数context。[详情](cf-callfunction.md#context)
 
 ### 获取客户端信息列表#get-client-infos
 
-非单实例多并发场景下列表长度为1，仅有的一个cloudInfo表示当前请求的客户端信息。单实例多并发场景下返回正在处理的所有请求的客户端信息列表。
+同理，考虑到单实例多并发，`uniCloud.getClientInfos()`获取客户端信息也是一个数组。
 
 ```js
 const clientInfos = uniCloud.getClientInfos() 
+```
+
+返回值
+```js
 clientInfos = [{
   appId: '__UNI_xxxxx',
   requestId: '3228166e-3c17-4d58-9707-xxxxxxxx'
   // ...
 }]
 ```
+
+如未开启单实例多并发，那么数组只有1项。单实例多并发场景下返回正在并发的所有请求的客户端信息列表。
 
 **返回值**
 
@@ -465,13 +467,13 @@ getClientInfos返回的信息，是在客户端的[uni.getSystemInfo](/api/syste
 
 |属性名		|类型		|说明																																																																					|
 |--				|--			|--																																																																						|
+|requestId|string	|请求Id，可以使用此字段筛选出当前请求的客户端信息																																															|
 |clientIP	|string	|客户端ip																																																																			|
 |userAgent|string	|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua|
 |source		|string	|调用来源，返回值见下。																																																												|
 |scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.md#getlaunchoptionssync)返回的scene参数，													|
-|requestId|string	|请求Id，可以使用此字段筛选出当前请求的客户端信息																																															|
 
-云函数调用来源，它的值域为：
+云函数调用来源source，它的值域为：
 
 |取值			|说明													|
 |--				|--														|
@@ -486,9 +488,13 @@ getClientInfos返回的信息，是在客户端的[uni.getSystemInfo](/api/syste
 - 除了clientIP外，其他客户端信息只有使用uni-app客户端以callFunction或者importObject方式访问云函数或云对象时才有
 - 云对象与云函数内获取客户端platform稍有不同，云函数未拉齐vue2、vue3版本app平台的platform值，vue2为`app-plus`，vue3为`app`。云对象无论客户端是vue2还是vue3，在app平台获取的platform均为`app`。这一点在使用uni-id时需要特别注意，详情见：[uni-id文档 preferedAppPlatform](uniCloud/uni-id.md?id=prefered-app-platform)
 
+除了`uniCloud.getClientInfos()`API，在云函数context和云对象this中，也可以直接获取当前客户端信息。
+- 云对象通过`this.getClientInfo()`。[详情](cloud-obj.md#get-client-info)
+- 云函数通过函数自带参数context。[详情](cf-callfunction.md#context)
+
 ### 获取云端信息@get-cloud-infos
 
-非单实例多并发场景下列表长度为1，仅有的一个cloudInfo表示当前请求的云端信息。单实例多并发场景下返回正在处理的所有请求的云端信息列表。
+同上，为了兼容并发场景，获取云端信息`uniCloud.getCloudInfos()`返回的也是数组。
 
 **示例**
 
@@ -505,13 +511,25 @@ cloudInfos = [{
 
 **返回值**
 
-|参数名				|类型		|必备	|说明																										|
-|--						|--			|--		|--																											|
-|provider			|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`|
-|spaceId			|string	|是		|服务空间Id																							|
-|functionName	|string	|是		|云对象名称，新增于																			|
-|functionType	|string	|是		|云对象此值固定为`cloudobject`，新增于									|
-|requestId		|string	|是		|请求Id，可以使用此字段筛选出当前请求的云端信息				|
+|参数名			|类型	|必备	|说明													|
+|--				|--		|--		|--														|
+|provider		|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`|
+|spaceId		|string	|是		|服务空间Id												|
+|functionName	|string	|是		|云函数名称												|
+|functionType	|string	|是		|云对象为`cloudobject`、云对象为`cloudfunction`			|
+|requestId		|string	|是		|请求Id，可以使用此字段筛选出当前请求的云端信息			|
+
+除了`uniCloud.getCloudInfos()`API，在云函数context和云对象this中，也可以直接获取当前请求的云端信息。
+- 云对象通过`this.getCloudInfo()`。[详情](cloud-obj.md#get-cloud-info)
+- 云函数通过函数自带参数context。[详情](cf-callfunction.md#context)
+
+
+上述3个API，都因为单实例多并发而被设计成数组方式。实际上，大多数开发者并不使用单实例多并发。
+
+在不考虑单实例多并发时，也可以直接使用uniCloud的getRequestList、getClientInfos、getCloudInfos方法中第一个数组项。
+
+或者在云对象的this和云函数的context里获取相关上下文信息也可以。
+
 
 ## 扩展库@extension
 
@@ -710,35 +728,9 @@ myCloud.uploadFile()
 
 - 连接本地云函数调试时，如果存在跨服务空间调用，则callFunction会使用云端云函数
 
-## 云函数运行环境说明@runtime
+## serverless环境说明@runtime
 
-云函数运行在 node 环境中。可以使用 node api `process.version` 获取 node 版本。
-
-- uniCloud 阿里云默认是 node8.17.0，也可以在 package.json 中选择 node12
-- uniCloud 腾讯云默认是 node8.9.4，也可以在 package.json 中选择 node12
-- HBuilderX 本地运行环境使用的是 HBuilderX 自带的 node 版本，目前为 node12。在 package.json 选择 node版本 只云端生效，且只在第一次上传云函数时生效。
-
-**注意**
-- 本地开发一旦使用了 node12 的专用 api，上传云函数时必须在package.json里手动配置选择 node12 的运行环境。
-	之所以没有在云端默认统一使用 node12，是因为腾讯云 node12 的 return 策略有一些特殊情况，[见下](?id=return)。
-- 运行环境在云端云函数创建时设定，不可通过更新云函数来修改。
-	也就是第一次上传云函数的时候，package.json里配了什么，就是什么。如果需要修改，需先删除云端云函数，重新上传。
-
-node版本可以在云函数的package.json文件的`cloudfunction-config->runtime`字段进行配置，详情参考：[云函数package.json](uniCloud/cf-functions.md?id=packagejson)
-
-### 云函数实例及部分变量说明@instance
-
-所谓实例是指云函数的一个执行环境，可以简单的理解为一个node进程。客户端发起的请求都会由一个个的云函数实例进行处理。
-
-**全局变量说明**
-
-在一个实例内uniCloud只会进行一次初始化，因此一个实例也只有一个uniCloud全局对象。
-
-**局部变量说明**
-
-云函数入口入参包含一个event和一个context，这两个参数和请求相关，每次有新请求到云函数实例时就会有一个新的event对象和一个新的context对象
-
-云对象的this和event、context类似，每个请求都对应一个单独的this。
+serverless是动态分别计算资源的，由此会引发的出一批特有概念：冷启动、实例、并发请求、无状态、伪全局变量。
 
 ### 云函数冷启动、热启动@launchtype
 
@@ -749,11 +741,14 @@ node版本可以在云函数的package.json文件的`cloudfunction-config->runti
 1. severless实例化计算实例
 2. 加载函数代码
 3. 启动 node
-4. 执行代码
+4. 执行云函数代码
 
-函数被调用时，执行这些完整步骤的过程一般称作`冷启动`, 冷启动的耗时长于热启动，一般在一秒出头。 
+函数被调用时，执行这些完整步骤的过程称作`冷启动`, 冷启动的耗时一般在一秒左右。 
 
-而如果函数实例和执行进程都被复用的情况下一般被定义为`热启动`, 热启动没有性能问题。
+一个云函数实例冷启动后，serverless调度中心会保留这个实例一定时间。在实例保留期间，客户端再次请求云函数，不会触发冷启动，速度会更快。实例的详细定义[见下](#instance)
+
+云函数实例和执行进程都被复用的情况下称之为`热启动`, 热启动性能要好非常多，因为它只有一个步骤：
+1. 执行云函数代码
 
 如果一个云函数实例长时间没有被再次调用，则该计算实例会被**回收**；后续再次调用该云函数时，就会再次触发云函数的**冷启动**。
 
@@ -773,34 +768,205 @@ node版本可以在云函数的package.json文件的`cloudfunction-config->runti
 4. 阿里云支持配置云函数的单实例多并发，请参考：[单实例多并发](cf-functions.md?id=concurrency)
 5. 腾讯云付费进行实例预留
 
-### 云函数的无状态@state-less
+### 实例与请求@instance
 
-因为存在冷热启动的差异，云函数中的全局变量就可能出现每次不一样的情况。也就是**云函数是无状态的**。
+`实例`，指云函数的一个执行环境，可以简单的理解为一个node进程。
 
-以如下代码为例，`count`作为全局变量，当多次调用该云函数时，可能会出现变量累加的情况（实例未复用时，每次返回0，若实例被复用，则可能返回1、2、3等各种意外情况）。所以不要这么使用。
+每次客户端发起`请求`（request）时，serverless的调度中心会查看已启动、且空闲的实例，分配一个实例来接收这个请求。如果没有空闲实例，则新起一个实例。
 
+新起一个实例需要一定时间，也即上文说的冷启动问题。详见[冷启动](#launchtype)
 
-```javascript
+一个实例启动后，一般在1秒内就会完成请求，但serverless调度中心会保留这个实例一定时间（时间见上一节）。在实例保留期间，客户端再次请求云函数，不会触发冷启动。
+
+也就是说，**在实例保留期间，1个实例会接受多个客户端请求。**
+
+所以要注意`实例`和`请求`不是一对一关系。
+
+`请求`（request），指一次连接云函数的网络请求。不同请求有不同的上下文信息（比如客户端UA）。
+
+所以想要获取客户端信息，一定注意不是在实例的全局对象上获取，而是需要在请求的上下文中获取。[详见]()
+
+在uniCloud阿里云版，阿里云还提供了1个实例的多并发请求配置，即同一时间多个请求可以并发执行。
+也就是同一时间的请求发到云函数时，没有配置单实例多并发会新开一个云函数实例，配置了单实例多并发则不会新开实例，在一个实例中增加并发。
+详见[单实例多并发](#concurrency)。
+
+一个云函数，可以同时存在多个实例。比如cf1云函数，如未配置单实例多并发，10个请求同时达到云函数，就会开10个实例。
+
+不管开了多少实例，云函数的计费是按请求计费的。实例响应请求后到保留期结束之间，如果不发生新请求是不会计费的。
+
+### 云函数的无状态和全局变量@state-less
+
+因为实例可能第一次启动，也可能已经启动，所以云函数中的js全局变量其实是伪全局变量。也就是**云函数是无状态的**。
+
+在云函数中，写在`module.exports = {}`之前，云函数写在`exports.main = async (event, context) => {}`之前的变量定义，是伪全局变量。
+
+它们在实例有效期内的多次请求中会复用。
+
+以如下代码为例，`count`作为全局变量，当多次调用该云函数时，可能会出现变量累加的情况。
+
+- 云对象示例
+```js
 let count = 0;
-module.exports = async (event) => {
-  return count++
-  //此示例为错误示例
-  //云函数实例未复用时，每次返回0
-  //若实例被复用，则可能返回1、2、3等各种意外情况
+module.exports = {
+	methoda() {
+		return count++
+	}
 }
 ```
 
-**require由于存在缓存，也存在同样的问题。尽量不要直接修改require返回的内容**
+- 云函数示例
 
-虽然云函数无状态，但我们也可以通过其他方式来替代全局变量：
+```javascript
+let count = 0;
+exports.main = async (event, context) => {
+	return count++
+}
+```
+
+上面2个示例中，实例未复用时，也就是冷启动时，count的值每次都是0；若实例被复用，则可能返回1、2、3等各种意外情况。
+
+当然，可以用这个方法来获知一个实例被重用了多少次请求。
+
+**require由于存在缓存，也存在同样的问题。尽量不要直接修改require返回的内容。**
+
+**uniCloud全局对象也是跨请求的，与请求相关的内容不应该挂载到uniCloud全局对象上。**
+
+**正确的全局变量，应该使用如下方案：**
 - uni-config-center：静态全局变量可以使用uni提供的配置中心。[详见](uni-config-center.md)
-- redis：动态变量使用redis。[详见](https://uniapp.dcloud.io/uniCloud/redis-introduction.html)
+- redis：动态全局变量使用redis。[详见](redis-introduction.md)
+
+### 请求的上下文
+
+由于上节提到的，uniCloud全局对象是实例级的、跨请求的，1个实例内uniCloud只会在冷启动时进行一次初始化。
+
+所以与请求相关的上下文，比如客户端信息，需要通过请求来获取。
+
+为了让开发者清晰的了解实例和请求的关系，uniCloud提供了如下方案。
+
+1. 通过uniCloud.getRequestList()，可以获得当前实例的请求id列表
+每个请求，都有一个requestId，在运行回调里、云端日志里都有体现。
+```js
+uniCloud.getRequestList()
+// 返回值：['3228166e-3c17-4d58-9707-xxxxxxxx']
+```
+	
+	- 如果未配置阿里云的单实例多并发，getRequestList()返回的数组里面只有一项，即只能拿到当前的请求id。
+	- 如果配置了阿里云的单实例多并发，当并发发生时，这个列表就会返回多项，当前并发的每个requestId都在里面。
+
+2. uniCloud.getClientInfos()，可以返回当前所有请求的客户端信息。
+该方法返回一个数组，当前每个并发执行中的请求的客户端信息都在里面。
+```json
+[
+  {
+    "appId": "__UNI_xxxxx",
+    "requestId": "3228166e-3c17-4d58-9707-xxxxxxxx"
+    // ...
+  }
+]
+```
+
+	- 如果未配置阿里云的单实例多并发，getRequestList()返回的数组里面只有一项，即只能拿到当前的请求id。
+	- 如果配置了阿里云的单实例多并发，当并发发生时，这个列表就会返回多项，当前并发的每个requestId都在里面。
+
+3. 
+
+如果是uniCloud私有云，
+如果想获取与请求相关的信息，比如这次请求的客户端UA，或云函数环境信息，无法直接在uniCloud全局对象中获取。
+
+
+云函数入口入参包含一个event和一个context，这两个参数和请求相关，每次有新请求到云函数实例时就会有一个新的event对象和一个新的context对象
+
+云对象的this和event、context类似，每个请求都对应一个单独的this。
+
+### 单实例多并发@concurrency
+
+> 仅阿里云支持
+
+默认情况下云函数仅支持单实例单并发，即同一时间一个实例仅可为一个请求服务（不同请求同一时间访问会被分派到不同实例进行处理）。不过在uniCloud web控制台中，阿里云可以通过修改云函数单实例并发度，可以修改云函数同一时间最多能处理多少请求。
+
+假设同时有3个请求需要处理：
+
+当实例并发度设置为1时，需要创建3个实例来处理这3个请求，每个实例分别处理1个请求。而每开启一个实例都会引发云函数冷启动；
+
+当云函数的实例并发度设置为10时（即1个实例可以同时处理10个请求），只需要创建1个实例就能处理这3个请求。这样后面2个并发请求不会有因云函数实例创建带来的冷启动问题。
+
+相关文档：[云函数实例及部分变量说明](#instance) 、[云函数的无状态](#state-less)
+
+**开启方式**
+
+云函数详情页面配置单实例并发度即可，支持1-100之间的数值
+
+**效果**
+
+- 有效减少并发请求时云函数冷启动次数
+  
+**使用注意**
+
+- 虽然阿里云云函数支持配置多并发，但在高并发下异步请求排队效果未必好于新开一个实例。尤其是并发操作数据库性能不佳。**一般情况下不要设置过大的并发度，可以自己针对业务代码测试比较下是否启用并发或并发数配成多少**
+- 云函数内存使用量会随着并发量增大而增加，过大的内存可能导致OOM
+- 注意云函数是有超时时间的。设置过大的单实例多并发可能会导致实例底层网络请求排队从而导致请求超时，
+- 如果并发的不同请求对全局变量同时进行读写会污染全局变量，可能会导致意想不到的后果，详见[全局变量](#state-less)
+
+**适用场景**
+
+|场景									|适用性	|理由																	|
+|:-:									|:-:	|:-:																	|
+|函数中有较多时间在等待下游服务的响应	|适用	|等待响应一般不消耗资源，在一个实例内并发处理可以节省费用。				|
+|函数中有共享状态且不能并发访问			|不适用	|例如全局变量，多请求并发执行修改共享状态可能会导致错误。				|
+|单个请求的执行要消耗大量CPU及内存资源	|不适用	|多请求并发执行会造成资源争抢，可能会导致内存不足（OOM）或者延时增加。	|
+
+**关于旧版本uni-id公共模块的特殊说明**
+
+旧版本uni-id公共模块指uni-id-common推出之前的版本。[详见](uni-id.md)
+
+```js
+// 开启单实例多并发前的uni-id用法
+const uniID = require('uni-id')
+exports.main = async function(event, context) {
+  const res = uniID.login({
+    // ...一些参数
+  })
+  return res
+}
+
+// 由于uni-id默认会从一个内置全局变量上获取客户端平台信息，不同请求会修改此全局变量可能造成混乱，开启单实例多并发后需要将uni-id修改为如下写法
+let uniID = require('uni-id')
+exports.main = async function(event, context) {
+  let uniIDIns = uniID.createInstance({ // 创建uni-id实例，其上方法同uniID
+    context: context // 传入context防止不同请求互相影响
+    // config: {} // 完整uni-id配置信息，使用config.json进行配置时无需传此参数
+  })
+  const res = uniIDIns.login({
+    // ...一些参数
+  })
+  return res
+}
+```
+
+不同于旧版uni-id公共模块，新版uni-id-common不可直接require后使用，必须使用createInstance方法
+
+**进阶**
+
+开启单实例多并发后的全局变量复用并非一定是坏的结果，如果你很了解此行为，也可以对此进行有效的利用
+
+例：[ip-filter](https://ext.dcloud.net.cn/plugin?id=4619)中就利用云函数全局缓存一些ip访问信息来限制单ip访问频率，可以下载示例项目体验一下
+
+受单实例多并发的影响，云函数全局存放与本次请求有关的信息会造成混乱。因此uniCloud提供了根据当前requestId获取客户端信息和云端信息。参考以下文档
+
+- [云函数获取当前requestId](cf-callfunction.md#context)
+- [云对象获取当前requestId](cloud-obj.md#get-request-id)
+- [获取当前云函数实例正在处理的请求对应的requestId列表](#get-request-list)
+- [获取当前云函数实例正在处理的请求对应的客户端信息列表](#get-client-infos)
+- [获取当前云函数实例正在处理的请求对应的云端信息列表](#get-cloud-infos)
+
 
 ### 临时存储空间
 
 云函数是运行在云端的代码，运行环境由云服务器弹性调配，这是和传统`Node.js`应用很大的区别。
 
-换言之，云函数每次执行的宿主环境（可简单理解为虚拟机或服务器硬件）可能相同，也可能不同，因此传统`Node.js`开发中将部分信息存储本地硬盘或内存的方案就不再适合，建议通过云数据库或云存储的方案替代。
+换言之，云函数每次执行的宿主环境（可简单理解为虚拟机或服务器硬件）可能相同，也可能不同，因此传统`Node.js`开发中将部分信息存储本地硬盘或内存的方案就不再适合。
+
+所以，不建议使用node的fs文件系统相关的API。建议通过云数据库、云存储、redis的方案替代。
 
 ### 云函数中的异步行为
 
@@ -853,9 +1019,27 @@ exports.main = async function() {
 
 **腾讯云因为按 GBS 对云函数计费，在 node12 时，尤其要注意，如果未有效终止云函数，会一直计费**
 
+### node版本
+云函数运行在 node 环境中。可以使用 node api `process.version` 获取 node 版本。
+
+- uniCloud 阿里云默认是 node8.17.0，也可以在 package.json 中选择 node12
+- uniCloud 腾讯云默认是 node8.9.4，也可以在 package.json 中选择 node12
+- HBuilderX 本地运行环境使用的是 HBuilderX 自带的 node 版本，目前为 node12。在 package.json 选择 node版本 只云端生效，且只在第一次上传云函数时生效。
+
+**注意**
+- 本地开发一旦使用了 node12 的专用 api，上传云函数时必须在package.json里手动配置选择 node12 的运行环境。
+	之所以没有在云端默认统一使用 node12，是因为腾讯云 node12 的 return 策略有一些特殊情况，[见下](?id=return)。
+- 运行环境在云端云函数创建时设定，不可通过更新云函数来修改。
+	也就是第一次上传云函数的时候，package.json里配了什么，就是什么。如果需要修改node环境，需先删除云端云函数，重新上传。
+
+node版本可以在云函数的package.json文件的`cloudfunction-config->runtime`字段进行配置，详情参考：[云函数package.json](uniCloud/cf-functions.md?id=packagejson)
+
+
 ### 时区
 
-- 云端的云函数中使用的时区是 `UTC+0`，而不是 `UTC+8`，在云函数中使用时间时需特别注意。云函数在HBuilderX本地运行时，时区则是电脑的时区，很可能是 `UTC+8`。建议使用时间戳，可以规避时区问题。
+云端的云函数中使用的时区是 `UTC+0`，而不是 `UTC+8`，在云函数中使用时间时需特别注意。
+
+云函数在HBuilderX本地运行时，时区则是电脑的时区，很可能是 `UTC+8`。建议统一使用时间戳，可以规避时区问题。
 
 ## 云函数配置
 
@@ -877,15 +1061,13 @@ serverless默认是没有固定的服务器IP的，因为有很多服务器资�
 
 但一些三方系统，要求配置固定ip白名单，比如微信公众号的js sdk，此时只能提供固定ip地址。
 
-目前腾讯云的收费版，提供了云函数的固定出口ip。ip属于有价资源，阿里云和腾讯云的免费版不提供这方面的能力。
-> 如果因此你想要切换云厂商，需要把uniCloud阿里云版中的数据，迁移到腾讯云版。参考：[云厂商之间的迁移](https://uniapp.dcloud.io/uniCloud/hellodb?id=cross-provider)
+目前腾讯云的收费版，提供了云函数的固定出口ip
 
 在uniCloud [Web控制台](https://unicloud.dcloud.net.cn)，创建付费的腾讯云服务空间，选择一个云函数，在云函数的详情界面可以开启固定出口ip。开启后界面上会显示可用的固定ip。拿着这个ip去需要固定ip的界面（如微信公众号管理界面）配置即可。
 
 **注意**
 
 - 如果你是免费版升配到付费版，开启`固定IP`功能后，会导致付费版到期无法自动降级到免费版，请注意按时续费
-
 
 腾讯云原本的设计是同一个服务空间内所有开启固定出口IP的云函数使用的是同一个IP。但是对于开通vpc的云函数无法和未开通vpc的函数共用同一个出口ip。具体使用中有以下表现
 
@@ -896,7 +1078,7 @@ serverless默认是没有固定的服务器IP的，因为有很多服务器资�
 
 #### 阿里云@aliyun-eip
 
-> 新增于 HBuilderX 3.5.5，仅阿里云支持
+> 新增于 HBuilderX 3.5.5
 
 uniCloud.httpProxyForEip ，其原理是通过代理请求获得固定出口IP的能力。IP为轮转不固定，因此三方服务要求使用白名单时开发者需要将代理服务器可能的IP均加入到白名单中，见下方代理服务器列表。此外对于代理的域名有限制，当前仅持`weixin.qq.com`泛域名。若开发者有其他域名代理需求，发送邮件到service@dcloud.io申请。
 
@@ -1003,86 +1185,6 @@ uniCloud.httpProxyForEip.post(
 - 代理请求超时时间为5秒
 - 上述接口支持本地运行
 
-### 单实例多并发@concurrency
-
-> 仅阿里云支持
-
-所谓实例是指云函数的一个执行环境，可以简单的理解为一个node进程。客户端发起的请求都会由一个个的云函数实例进行处理。
-
-默认情况下云函数仅支持单实例单并发，即同一时间一个实例仅可为一个请求服务（不同请求同一时间访问会被分派到不同实例进行处理）。通过修改云函数单实例并发度，可以修改云函数同一时间最多能处理多少请求。
-
-假设同时有3个请求需要处理：
-
-当实例并发度设置为1时，需要创建3个实例来处理这3个请求，每个实例分别处理1个请求。而每开启一个实例都会引发云函数冷启动；
-
-当云函数的实例并发度设置为10时（即1个实例可以同时处理10个请求），只需要创建1个实例就能处理这3个请求。这样后面2个并发请求不会有因云函数实例创建带来的冷启动问题。
-
-相关文档：[云函数实例及部分变量说明](#instance) 、[云函数的无状态](#state-less)
-
-**开启方式**
-
-云函数详情页面配置单实例并发度即可，支持1-100之间的数值
-
-**效果**
-
-- 有效减少并发请求时云函数冷启动次数
-  
-**使用注意**
-
-- 适用于云函数连接三方服务器的场景，如果你的云函数只处理数据库请求，不要修改此配置，保持为1即可
-- 云函数内存使用量会随着并发量增大而增加
-- 如果并发的不同请求对全局变量同时进行读写会污染全局变量，可能会导致意想不到的后果，开启单实例多并发后请不要编写修改全局变量的代码，除非你熟悉这种技术带来的特殊应用，比如下文进阶部分提到的ip过滤。
-- 设置过大的单实例多并发可能会导致实例底层网络请求排队从而导致请求超时，**一般情况下不要设置过大的并发度，具体数值可以自己针对业务代码测试一下**
-
-**适用场景**
-
-|场景									|适用性	|理由																	|
-|:-:									|:-:	|:-:																	|
-|函数中有较多时间在等待下游服务的响应	|适用	|等待响应一般不消耗资源，在一个实例内并发处理可以节省费用。				|
-|函数中有共享状态且不能并发访问			|不适用	|例如全局变量，多请求并发执行修改共享状态可能会导致错误。				|
-|单个请求的执行要消耗大量CPU及内存资源	|不适用	|多请求并发执行会造成资源争抢，可能会导致内存不足（OOM）或者延时增加。	|
-
-**关于旧版本uni-id公共模块的特殊说明**
-
-```js
-// 开启单实例多并发前的uni-id用法
-const uniID = require('uni-id')
-exports.main = async function(event, context) {
-  const res = uniID.login({
-    // ...一些参数
-  })
-  return res
-}
-
-// 由于uni-id默认会从一个内置全局变量上获取客户端平台信息，不同请求会修改此全局变量可能造成混乱，开启单实例多并发后需要将uni-id修改为如下写法
-let uniID = require('uni-id')
-exports.main = async function(event, context) {
-  let uniIDIns = uniID.createInstance({ // 创建uni-id实例，其上方法同uniID
-    context: context // 传入context防止不同请求互相影响
-    // config: {} // 完整uni-id配置信息，使用config.json进行配置时无需传此参数
-  })
-  const res = uniIDIns.login({
-    // ...一些参数
-  })
-  return res
-}
-```
-
-不同于旧版uni-id公共模块uni-id-common不可直接require后使用，必须使用createInstance方法
-
-**进阶**
-
-开启单实例多并发后的全局变量复用并非一定是坏的结果，如果你很了解此行为，也可以对此进行有效的利用
-
-例：[ip-filter](https://ext.dcloud.net.cn/plugin?id=4619)中就利用云函数全局缓存一些ip访问信息来限制单ip访问频率，可以下载示例项目体验一下
-
-受单实例多并发的影响，云函数全局存放与本次请求有关的信息会造成混乱。因此uniCloud提供了根据当前requestId获取客户端信息和云端信息。参考以下文档
-
-- [云函数获取当前requestId](cf-callfunction.md#context)
-- [云对象获取当前requestId](cloud-obj.md#get-request-id)
-- [获取当前云函数实例正在处理的请求对应的requestId列表](#get-request-list)
-- [获取当前云函数实例正在处理的请求对应的客户端信息列表](#get-client-infos)
-- [获取当前云函数实例正在处理的请求对应的云端信息列表](#get-cloud-infos)
 
 ## 云函数package.json@packagejson
 

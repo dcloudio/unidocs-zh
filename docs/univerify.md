@@ -561,7 +561,7 @@ exports.main = async(event) => {
 		"Content-Length": "53",
 		"Date": "Fri, 06 Nov 2020 08:57:21 GMT",
 		"X-CloudBase-Request-Id": "xxxxxxxxxxx",
-		"ETag": "xxxxxx""
+		"ETag": "xxxxxx"
 	},
 	"errMsg": "request:ok"
 }

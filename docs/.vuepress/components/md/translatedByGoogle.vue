@@ -2,10 +2,9 @@
 	<div v-if="$themeConfig.isEn" class="devsite-banner devsite-banner-translated">
 		<div class="devsite-banner-message">
 			<div class="devsite-banner-message-text">
-				<img src="../static/translated.svg" class="devsite-banner-translated-image" alt="" />
 				<span class="devsite-banner-translated-text">
 					This page is translated by
-					<a href="//cloud.google.com/translate/">Cloud Translation API</a>
+					<a href="//cloud.google.com/translate/">Google Cloud Translation API</a>
 				</span>
 			</div>
 			<a :href="chineseHref" class="button" data-label="Switch to Chinese">Switch to Chinese</a>

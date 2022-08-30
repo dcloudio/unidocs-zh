@@ -109,4 +109,22 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 容器的宿主activity 回退物理按键点击时触发
 
 
-## 4 注意事项
+## 4 常见问题
+
+
+### Float类型传参
+
+android很多布局参数强制要求Float,但是ts中没有内置这种类型。可以使用下面的代码实现转换
+
+```
+var textSize =  30.0.toFloat();
+```
+
+### 泛型参数
+
+android中UI相关的api,很多都要去泛型，目前UTS支持用as关键字强转，满足类似的场景
+
+```
+var frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
+```
+

@@ -90,7 +90,7 @@ HBuilderX插件是安装在HBuilderX工具里的。是编辑器的插件，不�
 
 定义加密云函数，为了与uni_modules统一规范，废弃原encryptlist.json，需在插件根目录下添加package.json，在uni_modules-> encrypt中配置需要加密的文件，如：
 
-```
+```json
 {
 	"uni_modules": {
 		"encrypt": [ // 配置要加密的文件，为插件包中真实存在且相对根目录的文件路径，需注意uniCloud目录的后缀需与项目一致

@@ -138,7 +138,7 @@ If you upload a paid cloud function plugin, you must select the cloud function y
 定义加密云函数，为了与uni_modules统一规范，废弃原encryptlist.json，需在插件根目录下添加package.json，在uni_modules-> encrypt中配置需要加密的文件，如：
 Define the encrypted cloud function. In order to unify the standard with uni_modules and discard the original encryptlist.json, you need to add package.json to the root directory of the plugin, and configure the files to be encrypted in uni_modules->encrypt, such as:
 
-```
+```json
 {
 	"uni_modules": {
 		"encrypt": [ // 配置要加密的文件，为插件包中真实存在且相对根目录的文件路径，需注意uniCloud目录的后缀需与项目一致

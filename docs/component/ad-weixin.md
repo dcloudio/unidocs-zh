@@ -5,7 +5,7 @@
 3.4.10+ support
 
 在微信小程序上，有2种广告类型：
-1. DCloud的uni-ad广告（简称uni-ad广告），uni-ad微信小程序广告[开通指南](https://ask.dcloud.net.cn/article/39928)
+1. DCloud的uni-ad广告（简称uni-ad广告），uni-ad微信小程序广告开通指南[点击这里](https://ask.dcloud.net.cn/article/39928)
 2. 微信小程序自带的流量主广告（简称wx广告）
 2. The main traffic ad (referred to as wx ad) that comes with the WeChat applet
 

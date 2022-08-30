@@ -600,7 +600,7 @@ in:
 如下为示例：
 The following is an example:
 
-```js
+```json
 {
   {
     "_id":"5f8428181c229600010389f6",

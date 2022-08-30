@@ -27,6 +27,7 @@ Page pre-loading is a performance optimization technology. The preloaded pages c
 #### H5 platform
 
 预加载 /pages/test/test 对应的js文件，不执行页面预渲染逻辑
+Preload the js file corresponding to /pages/test/test without executing the page pre-rendering logic
 ```js
 uni.preloadPage({url: "/pages/test/test"});
 ```
@@ -35,6 +36,7 @@ uni.preloadPage({url: "/pages/test/test"});
 #### App-nvue platform
 
 预加载nvue页面 /pages/test/test
+Preload nvue page /pages/test/test
 ```js
 uni.preloadPage({url: "/pages/test/test"});
 ```

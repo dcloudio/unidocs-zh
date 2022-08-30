@@ -33,7 +33,7 @@ const config = {
     prevLinks: false,
     // TODO use theme
     repo: 'dcloudio/uni-app',
-    docsRepo: 'https://gitee.com/dcloud/unidocs-zh',
+    docsRepo: 'https://gitcode.net/dcloud/unidocs-zh',
     docsBranch: 'master',
     docsDir: 'docs',
     editLinks: true,

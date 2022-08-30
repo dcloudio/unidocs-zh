@@ -167,7 +167,7 @@
 |rpxCalcMaxDeviceWidth|Number|960|rpx 计算所支持的最大设备宽度，单位 px|App（vue2 且不含 nvue）、H5（2.8.12+）|
 |rpxCalcBaseDeviceWidth|Number|375|rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px|App（vue2 且不含 nvue）、H5（2.8.12+）|
 |rpxCalcIncludeWidth|Number|750|rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpx|App（vue2 且不含 nvue）、H5（2.8.12+）|
-|dynamicRpx|Boolean|false|动态 rpx，屏幕大小变化会重新渲染 rpx|App-nvue 3.2.13+|
+|dynamicRpx|Boolean|false|动态 rpx，屏幕大小变化会重新渲染 rpx|App-nvue（vue2 且不含 vue3） 3.2.13+|
 |maxWidth|Number||单位px，当浏览器可见区域宽度大于maxWidth时，两侧留白，当小于等于maxWidth时，页面铺满；不同页面支持配置不同的maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选)|H5（2.9.9+）|
 
 **注意**
@@ -175,6 +175,7 @@
 - 支付宝小程序使用`titleImage`时必须使用`https`的图片链接地址，需要真机调试才能看到效果，支付宝开发者工具内无效果
 - `globalStyle`中设置的`titleImage`也会覆盖掉`pages`->`style`内的设置文字标题
 - 使用 `maxWidth` 时，页面内fixed元素需要使用--window-left,--window-right来保证布局位置正确
+- `dynamicRpx` vue3 nvue页面已移除此配置，升级为横竖屏切换自动rpx，如果不需要可以使用 px
 
 ## topWindow@topwindow
 

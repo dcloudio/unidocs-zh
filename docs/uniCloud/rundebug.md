@@ -424,7 +424,9 @@ login('name-demo', 'password-demo') // 调用login方法传入参数'name-demo'�
 **Notice**
 
 - 此文件并非可执行的js文件，仅用来配置参数，因此不可在文件内定义变量并使用
+- This file is not an executable js file, it is only used to configure parameters, so variables cannot be defined in the file and used
 - 如果存在多个方法、参数配置运行时会使用第一个
+- If there are multiple methods, the parameter configuration runtime will use the first one
 
 ## 断点调试云函数
 ## Breakpoint debugging cloud function

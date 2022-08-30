@@ -21,6 +21,7 @@ module.exports = function (md) {
       url = isExternal(url)
         ? url
         : normalizeLink(url)
+          .replace(/\s+/g,'')
           .replace(/\.md\b/, '')
           .replace(/\bREADME\b/, '')
           .replace(/\/index/, '/')

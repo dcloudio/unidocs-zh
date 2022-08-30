@@ -14,14 +14,15 @@ Annotate with `<!-- @ignore-translate -->` or `// @ignore-translate`.
 The next line of `<!-- @ignore-translate -->` is Chinese, and the next two lines are English, such as:
 
 ```md
+<!-- @ignore-translate -->
+## 官方示例
 ## Official example
 ```
 
 ## Glossary
 
-> my_zh_en_glossary.tmx
+> uni_zh_en_glossary.tmx
 
-格式为：
 The format is:
 ```html
 <tu>

@@ -217,7 +217,9 @@ await uniPush.sendMessage(OBJECT)
 |strategy|Object|否|{"strategy":{"default":1}}|厂商通道策略，详细内容见strategy|
 |strategy|Object|No|{"strategy":{"default":1}}|Vendor channel strategy, see strategy|
 |speed|Number|否|0|定速推送，例如100，个推控制下发速度在100条/秒左右，0表示不限速|
+|speed|Number|No|0|Constant speed push, such as 100, the speed of individual push control is about 100 pieces/second, 0 means unlimited speed|
 |schedule_time|Number|否|无|设置定时推送时间（仅向所有启动过应用的设备群发时有效），必须是7天内的时间，格式：毫秒时间戳，此功能需要开通VIP，如需开通请点击右侧“技术咨询”了解详情|
+|schedule_time|Number|No|None|Set the timing push time (only valid when sending to all devices that have started the app), it must be within 7 days, format: millisecond timestamp, this function requires VIP to be activated, if you need to activate it, please Click "Technical Consultation" on the right for details|
 
 ##### strategy 厂商下发策略选择
 ##### strategy The choice of strategy issued by the manufacturer

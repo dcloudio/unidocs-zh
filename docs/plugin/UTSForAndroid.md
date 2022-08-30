@@ -51,7 +51,7 @@ UTS插件 = 使用HX + typescript 开发插件
 
 ### 2.2 Android 知识部分
 
-需要具备基本的Android开发知识 [Android 开发官方文档]()
+需要具备基本的Android开发知识 [Android 开发官方文档](https://developer.android.com/)
 
 
 ## 3 Android常用API
@@ -117,7 +117,7 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 android很多布局参数强制要求Float,但是ts中没有内置这种类型。可以使用下面的代码实现转换
 
 ```
-var textSize =  30.0.toFloat();
+let textSize =  30.0.toFloat();
 ```
 
 ### 泛型参数
@@ -125,6 +125,6 @@ var textSize =  30.0.toFloat();
 android中UI相关的api,很多都要去泛型，目前UTS支持用as关键字强转，满足类似的场景
 
 ```
-var frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
+let frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
 ```
 

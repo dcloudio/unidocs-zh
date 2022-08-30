@@ -39,8 +39,7 @@
 
 此时`uni_modules`目录下的目录结构和uni-app的项目结构是一致的，如下：
 
-<pre v-pre="" data-lang="">
-	<code class="lang-" style="padding:0">
+```md
 uni_modules                                项目根目录下
 └── [plugin_id] // 插件 ID
     ├── uniCloud                           插件内的uniCloud内容会被虚拟合并到项目根目录的uniCloud中（注意：插件内的uniCloud目录，没有-aliyun,-tcb后缀）
@@ -54,8 +53,7 @@ uni_modules                                项目根目录下
     ├── readme.md                          插件文档
     ├── changelog.md                       插件更新日志
     ├── menu.json                          如果是uniCloud admin插件，可以通过menu.json注册动态菜单，<a href="/uniCloud/admin?id=admin-%e6%8f%92%e4%bb%b6%e5%bc%80%e5%8f%91">详见 menu.json 配置</a>
-	</code>
-</pre>
+```
 
 也就是`uni_modules`目录下相当于复制一遍uni-app的项目结构。
 

@@ -418,8 +418,7 @@ Calling the checkToken interface when the token expires in 5 minutes will return
 > 新增于uni-id-pages 1.0.8
 > Added in uni-id-pages 1.0.8
 
-支持以下四种内置规则
-The following four built-in rules are supported
+`passwordStrength`配置项支持以下四种内置规则
 
 ```js
 {
@@ -438,8 +437,7 @@ The following four built-in rules are supported
 }
 ```
 
-uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则，如需自定义规则，请参考：[uni-id-co自定义校验规则](uni-id-pages.md#custom-validator)
-Both uni-id-co and front-end pages in uni-id-pages support these four built-in rules. For custom rules, please refer to: [uni-id-co custom validation rules](uni-id-pages .md#custom-validator)
+uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则
 
 ### 登录方式及配置说明@login-and-config
 ### Login method and configuration instructions @login-and-config

@@ -114,8 +114,7 @@ Select **uts native plugin**
 uts插件目录结构
 uts plugin directory structure
 
-![新建插件3](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin3.jpg)
-![New Plugin 3](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin3.jpg)
+![新建插件3](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin3_1.jpg)
 
 
 ### 清单文件package.json

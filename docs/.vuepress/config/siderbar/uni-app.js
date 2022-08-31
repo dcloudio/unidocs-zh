@@ -184,7 +184,7 @@ export default {
 			"number": "166188631",
 			"state": 1,
 			"prefix": "群32"
-		}
+		},
 		{
 			"number": "498071674",
 			"state": 1,

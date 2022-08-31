@@ -671,7 +671,7 @@ Among them, `permission_id` is a permission flag, which is globally unique and c
 如下为示例内容：
 The following is an example content:
 
-```js
+```json
 {
   {
     "_id":"5f8428181c229600010389f6",

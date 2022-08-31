@@ -8,15 +8,22 @@
 ### what is uts
 
 uts，全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。
+uts, the full name of uni type script, is a cross-platform, high-performance, strongly typed modern programming language.
 
 它可以被编译为不同平台的编程语言，如：
+It can be compiled into programming languages for different platforms, such as:
 - web平台，编译为JavaScript
+- web platform, compiled to JavaScript
 - Android平台，编译为Kotlin
+- Android platform, compiled to Kotlin
 - iOS平台，编译Swift（暂未发布）
+- iOS platform, compile Swift (not yet released)
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
+uts adopts the same syntax specification as ts and supports most ES6 APIs.
 
 如需详细了解uts语法，另见[uts语法介绍](../tutorial/syntax-uts.md)
+For details on uts syntax, see also [uts syntax introduction](../tutorial/syntax-uts.md)
 
 ### 什么是uts插件
 ### What is uts plugin
@@ -192,10 +199,13 @@ The following two files exist in the app-android folder
 |index.uts	|index.d.ts声明的能力在Android平台下的实现	|
 |index.uts |The implementation of the capabilities declared by index.d.ts under the Android platform |
 |config.json|Android平台下的配置文件					|
+|config.json|Configuration file under Android platform |
 
 ### 原生层配置
+### Native layer configuration
 
 app-android、app-ios目录下的config.json，是uts插件在相应平台的原生层配置文件。可以在其中配置依赖的aar包或gradle配置。
+The config.json in the app-android and app-ios directories is the native layer configuration file of the uts plugin on the corresponding platform. Dependent aar package or gradle configuration can be configured in it.
 
 ```json
 {
@@ -217,12 +227,17 @@ app-android、app-ios目录下的config.json，是uts插件在相应平台的原
 ```
 
 config.json只是uts插件的配置。如需要配置uni-app应用级的原生配置，需要另行在uni-app主项目中配置。
+config.json is just the configuration for the uts plugin. If you need to configure the uni-app application-level native configuration, you need to configure it in the uni-app main project.
 
 uni-app项目根目录有：
+The root directory of the uni-app project has:
 - manifest.json：uni-app封装的常用的原生层配置
+- manifest.json: common native layer configuration encapsulated by uni-app
 - AndroidManifest.xml：Android打包时的扩展配置。manifest.json中不包含的部分，可以在这里配置。如没有这个文件，可自行创建。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+- AndroidManifest.xml: Extended configuration when Android is packaged. Parts not included in manifest.json can be configured here. If you don't have this file, you can create it yourself. [See details](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 uni-app项目根目录还支持 nativeresource 目录，下面有 android、ios 目录。其中 android 目录下可以放原生应用资源目录 res、assets。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+The root directory of the uni-app project also supports the nativeresource directory, and there are android and ios directories below. Among them, the android directory can put the native application resource directory res and assets. [See details](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ## 3 开发uts原生插件
 ## 3 Develop uts native plugin
@@ -357,10 +372,13 @@ Remaining matters will be upgraded and improved later.
 Cloud packaging is normally supported.
 
 **注意**
+**Notice**
 
 虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
+Although uts supports hot flashing when the real machine is running, after packaging, uts is compiled into pure native binary code and does not support wgt hot update.
 
 ## Android内置库@iodcloudutsandroid
+## Android built-in library @iodcunutsandroid
 
 在uts里，Android的所有api都可以访问。同时DCloud提供了`io.dcloud.uts.android`库，处理在uni-app下的特殊情况。
 In uts, all APIs of Android can be accessed. At the same time, DCloud provides the `io.dcloud.uts.android` library to handle special cases under uni-app.
@@ -427,6 +445,7 @@ Triggered when the container's host activity is onDestroy
 Fired when the container's host activity rolls back the physical button click
 
 ## 常见问题
+## common problem
 
 ### Float类型传参
 ### Float type parameter
@@ -450,5 +469,7 @@ let frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
 
 
 ## 示例项目
+## Example project
 
 DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。
+DCloud provides an example of Hello UTS, [see details](https://gitcode.net/dcloud/hello-uts).

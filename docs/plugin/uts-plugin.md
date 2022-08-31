@@ -73,7 +73,7 @@ uts插件编译到app平台时，在功能上相当于uni-app之前的app原生�
 
 uts插件目录结构
 
-![新建插件3](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin3.jpg)
+![新建插件3](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin3_1.jpg)
 
 
 ### 清单文件package.json

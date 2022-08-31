@@ -97,7 +97,7 @@ package.json的完整文档[详见](uni_modules.md#package.json)
 
 ### 插件的目录结构
 
-```
+```md
 uni_modules插件标识  
   - utssdk
   	+ app-android //Android平台目录

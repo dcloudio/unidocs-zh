@@ -1168,7 +1168,7 @@ uni-id-co在微信、QQ登录或注册时会自动保存用户的sessionKey、ac
 
 在`uni-id-pages 1.0.8`之前，uni-id-co直接将这些信息保存在了用户表（uni-id-users）的third_party字段下，仅按照平台区分没有按照不同应用区分。具体结构如下
 
-```js
+```json
 {
   "_id": "uid",
   "wx_unionid": "xxx",

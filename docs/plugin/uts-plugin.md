@@ -228,8 +228,7 @@ Below is an example of config.json where aar package or gradle configuration can
 以android平台获取电量为例，介绍uts原生插件开发步骤
 Taking the android platform to obtain electricity as an example, this paper introduces the development steps of uts native plug-in
 
-![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo.jpg)
-![OSAPI example](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo.jpg)
+![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 
 在android平台目录下，编辑index.uts，键入以下内容。
 Under the android platform directory, edit index.uts and type the following.

@@ -477,7 +477,7 @@ RBAC：Role-Based Access Control，基于角色的访问控制。
 
 如下为示例内容：
 
-```js
+```json
 {
   {
     "_id":"5f8428181c229600010389f6",

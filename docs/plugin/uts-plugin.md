@@ -143,7 +143,7 @@ Full documentation of package.json [see details](uni_modules.md#package.json)
 ### 插件的目录结构
 ### Plugin directory structure
 
-```
+```md
 uni_modules插件标识  
   - utssdk
   	+ app-android //Android平台目录

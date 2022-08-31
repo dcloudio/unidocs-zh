@@ -1650,7 +1650,7 @@ uni-id-co will automatically save the user's sessionKey and accessToken informat
 在`uni-id-pages 1.0.8`之前，uni-id-co直接将这些信息保存在了用户表（uni-id-users）的third_party字段下，仅按照平台区分没有按照不同应用区分。具体结构如下
 Before `uni-id-pages 1.0.8`, uni-id-co directly stored this information in the third_party field of the user table (uni-id-users), which was only distinguished by platform and not by different applications. The specific structure is as follows
 
-```js
+```json
 {
   "_id": "uid",
   "wx_unionid": "xxx",

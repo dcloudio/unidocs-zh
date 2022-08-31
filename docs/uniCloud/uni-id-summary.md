@@ -419,6 +419,7 @@ Calling the checkToken interface when the token expires in 5 minutes will return
 > Added in uni-id-pages 1.0.8
 
 `passwordStrength`配置项支持以下四种内置规则
+The `passwordStrength` configuration item supports the following four built-in rules
 
 ```js
 {
@@ -438,6 +439,7 @@ Calling the checkToken interface when the token expires in 5 minutes will return
 ```
 
 uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则
+Front-end pages within uni-id-co and uni-id-pages both support these four built-in rules
 
 ### 登录方式及配置说明@login-and-config
 ### Login method and configuration instructions @login-and-config

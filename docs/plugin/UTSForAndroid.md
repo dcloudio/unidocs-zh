@@ -66,7 +66,7 @@ Need to know about UTS plugin [UTS development official documentation](https://u
 
 	
 ### 2.1 UTS语言部分
-### 2.1 UTS language section
+### 2.1 UTS language part
 
 需要掌握uts语言  [UTS语法文档]()
 Need to master uts language [UTS grammar document]()

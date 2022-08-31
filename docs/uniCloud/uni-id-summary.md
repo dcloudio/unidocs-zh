@@ -691,7 +691,7 @@ The following is an example content:
 如下是权限在clientDB中的配置示例：
 The following is an example of the configuration of permissions in clientDB:
 
-```js
+```json
 // uni-id-users.schema.json
 {
   "permission": {

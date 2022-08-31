@@ -496,7 +496,7 @@ RBAC：Role-Based Access Control，基于角色的访问控制。
 
 如下是权限在clientDB中的配置示例：
 
-```js
+```json
 // uni-id-users.schema.json
 {
   "permission": {

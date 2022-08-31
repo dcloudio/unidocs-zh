@@ -1001,8 +1001,12 @@ Under the App platform, you can customize some of the pull-down refresh configur
 |style|String| circle on Android platform; default on iOS platform. |Available values: "default" - classic pull-down refresh style (page content follows when pull-down dragging); "circle" - circle style pull-down refresh control style (only refresh control follows when pull-down dragging). |
 |height|String||窗口的下拉刷新控件进入刷新状态的拉拽高度。支持百分比，如"10%"；像素值，如"50px"，不支持rpx。|
 |height|String||The pull-down height of the window's pull-to-refresh control to enter the refresh state. Percentage is supported, such as "10%"; pixel value, such as "50px", does not support rpx. |
-|range |String||窗口可下拉拖拽的范围。支持百分比，如"10%"；像素值，如"50px"，不支持rpx。|
-|range|String|| The range of the window that can be dragged and dropped. Percentage is supported, such as "10%"; pixel value, such as "50px", does not support rpx. |
+|range|String||窗口可下拉拖拽的范围。支持百分比，如"10%"；像素值，如"50px"，不支持rpx。|
+The range of the |range|String|| window that can be dragged and dropped. Percentage is supported, such as "10%"; pixel value, such as "50px", does not support rpx. |
+The range of the |range|String|| window that can be dragged and dropped. Percentage is supported, such as "10%"; pixel value, such as "50px", does not support rpx. |
+The range of the |range|String|| window that can be dragged and dropped. Percentage is supported, such as "10%"; pixel value, such as "50px", does not support rpx. |
+The range of the |range|String|| window that can be dragged and dropped. Percentage is supported, such as "10%"; pixel value, such as "50px", does not support rpx. |
+The range of the |range|String|| window that can be dragged and dropped. Percentage is supported, such as "10%"; pixel value, such as "50px", does not support rpx. |
 |offset|String|0px|下拉刷新控件的起始位置。仅对"circle"样式下拉刷新控件有效，用于定义刷新控件下拉时的起始位置。支持百分比，如"10%"；像素值，如"50px"，不支持rpx。如使用了非原生title且需要原生下拉刷新，一般都使用circle方式并将offset调至自定义title的高度|
 |offset|String|0px| The starting position of the pull-down refresh control. Only valid for "circle" style drop-down refresh control, it is used to define the starting position of the refresh control when it is pulled down. Percentage is supported, such as "10%"; pixel value, such as "50px", does not support rpx. If a non-native title is used and a native pull-down refresh is required, the circle method is generally used and the offset is adjusted to the height of the custom title|
 |contentdown|Object||目前支持一个属性：caption——在下拉可刷新状态时下拉刷新控件上显示的标题内容。仅对"default"样式下拉刷新控件有效。|

@@ -2,13 +2,16 @@
 
 **uts 是什么**
 
-uts 是一门跨平台的、高性能的、强类型的现代编程语言。它可以被翻译为不同平台的原生编程语言。如：JavaScript、Kotlin、Swift 等。
+uts，全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。
 
-uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。因此前端工程师可以快速的掌握 uts 开发
+它可以被编译为不同平台的编程语言，如：
+- web平台，编译为JavaScript
+- Android平台，编译为Kotlin
+- iOS平台，编译Swift
 
-**学习 uts 基础知识**
+uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
-如果你已熟悉一门或多门编程语言并想学习 uts，请从这些 uts 学习资料开始。
+本文是 uts 的基本语法介绍。如想了解 uni-app 下如何开发 uts插件，另见文档[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。
 
 ## 快速入门
 ### 基本语法

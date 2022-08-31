@@ -4,15 +4,16 @@
 
 ### 什么是uts
 
-uts，是DCloud推出的、基于typescript的、跨平台的、高性能的编程语言。
+uts，全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。
 
-- UTS语言编译到Web和小程序平台，会转为js
-- 编译到Android平台，会转为kotlin
-- 编译到iOS平台，会转为swift（暂未发版）
+它可以被编译为不同平台的编程语言，如：
+- web平台，编译为JavaScript
+- Android平台，编译为Kotlin
+- iOS平台，编译Swift（暂未发布）
 
-js的跨平台，需要在每个平台的js引擎上运行，性能受限。而uts不需要js引擎，它直接编译为真正的原生语言。
+uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
-详见[uts语法介绍](../tutorial/syntax-uts.md)
+如需详细了解uts语法，另见[uts语法介绍](../tutorial/syntax-uts.md)
 
 ### 什么是uts插件
 
@@ -138,8 +139,10 @@ app-android 文件夹下存在下面两个文件
 |---		|---										|
 |index.uts	|index.d.ts声明的能力在Android平台下的实现	|
 |config.json|Android平台下的配置文件					|
- 
-下面是config.json的示例，可以在其中配置aar包或gradle配置。
+
+### 原生层配置
+
+app-android、app-ios目录下的config.json，是uts插件在相应平台的原生层配置文件。可以在其中配置依赖的aar包或gradle配置。
 
 ```json
 {
@@ -157,6 +160,13 @@ app-android 文件夹下存在下面两个文件
 }
 ```
 
+config.json只是uts插件的配置。如需要配置uni-app应用级的原生配置，需要另行在uni-app主项目中配置。
+
+uni-app项目根目录有：
+- manifest.json：uni-app封装的常用的原生层配置
+- AndroidManifest.xml：Android打包时的扩展配置。manifest.json中不包含的部分，可以在这里配置。如没有这个文件，可自行创建。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+
+uni-app项目根目录还支持 nativeresource 目录，下面有 android、ios 目录。其中 android 目录下可以放原生应用资源目录 res、assets。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ## 3 开发uts原生插件
 
@@ -256,10 +266,11 @@ getBatteryCapacity()
 
 正常支持云端打包。
 
-**注意，虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。**
+**注意**
 
+虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
 
-## 7 Android内置库@iodcloudutsandroid
+## Android内置库@iodcloudutsandroid
 
 在uts里，Android的所有api都可以访问。同时DCloud提供了`io.dcloud.uts.android`库，处理在uni-app下的特殊情况。
 
@@ -314,8 +325,7 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 容器的宿主activity 回退物理按键点击时触发
 
-
-## 8 常见问题
+## 常见问题
 
 ### Float类型传参
 
@@ -334,6 +344,6 @@ let frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
 ```
 
 
-## 9 示例项目
+## 示例项目
 
-完整的示例项目地址：[HelloUTS](https://gitcode.net/dcloud/hello-uts)。
+DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。

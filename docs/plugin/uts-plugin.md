@@ -7,21 +7,16 @@
 ### 什么是uts
 ### what is uts
 
-uts，是DCloud推出的、基于typescript的、跨平台的、高性能的编程语言。
-uts is a typescript-based, cross-platform, high-performance programming language launched by DCloud.
+uts，全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。
 
-- UTS语言编译到Web和小程序平台，会转为js
-- UTS language is compiled to the web and MiniApp platforms, and will be converted to js
-- 编译到Android平台，会转为kotlin
-- Compiled to the Android platform, it will be converted to kotlin
-- 编译到iOS平台，会转为swift（暂未发版）
-- Compiled to the iOS platform, it will be converted to swift (not yet released)
+它可以被编译为不同平台的编程语言，如：
+- web平台，编译为JavaScript
+- Android平台，编译为Kotlin
+- iOS平台，编译Swift（暂未发布）
 
-js的跨平台，需要在每个平台的js引擎上运行，性能受限。而uts不需要js引擎，它直接编译为真正的原生语言。
-The cross-platform js needs to run on the js engine of each platform, and the performance is limited. And uts does not need a js engine, it is directly compiled into a real native language.
+uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
-详见[uts语法介绍](../tutorial/syntax-uts.md)
-See [uts syntax introduction](../tutorial/syntax-uts.md)
+如需详细了解uts语法，另见[uts语法介绍](../tutorial/syntax-uts.md)
 
 ### 什么是uts插件
 ### What is uts plugin
@@ -197,10 +192,10 @@ The following two files exist in the app-android folder
 |index.uts	|index.d.ts声明的能力在Android平台下的实现	|
 |index.uts |The implementation of the capabilities declared by index.d.ts under the Android platform |
 |config.json|Android平台下的配置文件					|
-|config.json|Configuration file under Android platform |
- 
-下面是config.json的示例，可以在其中配置aar包或gradle配置。
-Below is an example of config.json where aar package or gradle configuration can be configured.
+
+### 原生层配置
+
+app-android、app-ios目录下的config.json，是uts插件在相应平台的原生层配置文件。可以在其中配置依赖的aar包或gradle配置。
 
 ```json
 {
@@ -221,6 +216,13 @@ Below is an example of config.json where aar package or gradle configuration can
 }
 ```
 
+config.json只是uts插件的配置。如需要配置uni-app应用级的原生配置，需要另行在uni-app主项目中配置。
+
+uni-app项目根目录有：
+- manifest.json：uni-app封装的常用的原生层配置
+- AndroidManifest.xml：Android打包时的扩展配置。manifest.json中不包含的部分，可以在这里配置。如没有这个文件，可自行创建。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+
+uni-app项目根目录还支持 nativeresource 目录，下面有 android、ios 目录。其中 android 目录下可以放原生应用资源目录 res、assets。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ## 3 开发uts原生插件
 ## 3 Develop uts native plugin
@@ -354,12 +356,11 @@ Remaining matters will be upgraded and improved later.
 正常支持云端打包。
 Cloud packaging is normally supported.
 
-**注意，虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。**
-**Note that although uts supports hot flashing when the real machine is running, after packaging, uts is compiled into pure native binary code and does not support wgt hot update. **
+**注意**
 
+虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
 
-## 7 Android内置库@iodcloudutsandroid
-##7 Android built-in library @iodcloudutsandroid
+## Android内置库@iodcloudutsandroid
 
 在uts里，Android的所有api都可以访问。同时DCloud提供了`io.dcloud.uts.android`库，处理在uni-app下的特殊情况。
 In uts, all APIs of Android can be accessed. At the same time, DCloud provides the `io.dcloud.uts.android` library to handle special cases under uni-app.
@@ -425,9 +426,7 @@ Triggered when the container's host activity is onDestroy
 容器的宿主activity 回退物理按键点击时触发
 Fired when the container's host activity rolls back the physical button click
 
-
-## 8 常见问题
-## 8 Frequently Asked Questions
+## 常见问题
 
 ### Float类型传参
 ### Float type parameter
@@ -450,8 +449,6 @@ let frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
 ```
 
 
-## 9 示例项目
-## 9 Example project
+## 示例项目
 
-完整的示例项目地址：[HelloUTS](https://gitcode.net/dcloud/hello-uts)。
-Complete example project address: [HelloUTS](https://gitcode.net/dcloud/hello-uts).
+DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。

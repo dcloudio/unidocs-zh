@@ -1889,8 +1889,10 @@ console.log(obj["result"]);
 ```
 
 **注意**
+**Notice**
 
 - JSON.parse 解析出来的对象，目前仅支持使用方括号[]访问
+- The object parsed by JSON.parse currently only supports access using square brackets []
 
 ###### stringify
 
@@ -2066,78 +2068,115 @@ has() 方法返回一个布尔值来指示对应的值 value 是否存在 Set �
 The has() method returns a boolean value indicating whether the corresponding value value exists in the Set object.
 
 ## 语言参考
+## Language Reference
 
 ### 关键词
+### Key words
 
 - `as` 
     * 用于类型转换。
+    * is used for type conversion.
     * 为导入指定一个别名
+    * Specify an alias for the import
 - `break` 
     * 中止当前循环，switch语句，并把程序控制流转到紧接着被中止语句后面的语句。
+    * Aborts the current loop, switch statement, and transfers program control to the statement immediately following the aborted statement.
 - `case` 
     * 与 `switch` 搭配使用。
+    * Used with `switch`.
 - `catch` 
     * 与 `try` 搭配使用，捕获程序异常。
+    * Use with `try` to catch program exceptions.
 - `class` 
     * 声明创建一个新类。
+    * declares to create a new class.
 - `const` 
     * 声明一个常量，不能重新赋值。
+    * declares a constant that cannot be reassigned.
 - `continue` 
     * 声明终止当前循环或标记循环的当前迭代中的语句执行，并在下一次迭代时继续执行循环。
+    The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
 - `debugger` 
     * 调用任何可用的调试功能，例如设置断点。 如果没有调试功能可用，则此语句不起作用。
+    * Call any available debugging functions, such as setting breakpoints. This statement has no effect if no debugging functionality is available.
 - `default` 
     * 与 `switch` 搭配，匹配不存在时做的事情，也可以用于 `export` 语句。
+    * Pairs with `switch` to match what to do if it doesn't exist, and can also be used in `export` statements.
 - `delete` 
     * 在 `Javascript` 平台，用于删除对象的某个属性；如果没有指向这个属性的引用，那它最终会被释放。
+    * On the `Javascript` platform, used to delete a property of an object; if there is no reference to this property, it will eventually be freed.
 - `do` 
     * 创建一个执行指定语句的循环，直到condition值为 false。在执行statement 后检测condition，所以指定的statement至少执行一次。
+    * Create a loop that executes the specified statement until the condition is false. The condition is checked after executing the statement, so the specified statement is executed at least once.
 - `else` 
     * 与 `if` 搭配使用。
+    * Used with `if`.
 - `export` 
     * 用于模块导出。
+    * for module export.
 - `extends` 
     * 用于 `class` 继承。
+    * for `class` inheritance.
 - `finally` 
     * 与 `try-catch` 搭配使用。
+    * Use with `try-catch`.
 - `for` 
     * 创建一个循环，它包含了三个可选的表达式，这三个表达式被包围在圆括号之中，使用分号分隔，后跟一个用于在循环中执行的语句（通常是一个块语句）。
+    * Creates a loop consisting of three optional expressions enclosed in parentheses, separated by semicolons, followed by a statement to execute in the loop (usually a block statement ).
 - `function` 
     * 声明定义一个具有指定参数的函数。
+    The * declaration defines a function with the specified parameters.
 - `if` 
     * 当指定条件为真，if 语句会执行一段语句。如果条件为假，则执行另一段语句。
+    * When the specified condition is true, the if statement will execute a statement. If the condition is false, execute another statement.
 - `import` 
     * 用于导入由另一个模块导出的绑定。
+    * is used to import bindings exported by another module.
 - `in` 
     * 可在 for 循环中迭代对象。
+    * Objects can be iterated over in a for loop.
 - `instanceof` 
     * 检测一个值具有指定类型。
+    * Checks that a value has the specified type.
 - `new` 
     * 创建一个 `class` 实例。
+    * Create a `class` instance.
 - `return` 
     * 终止函数的执行，并返回一个指定的值给函数调用者。
+    * Terminate the execution of the function and return a specified value to the function caller.
 - `super` 
     * 用于访问和调用一个对象的父对象上的函数。
+    * Used to access and call functions on an object's parent.
 - `switch` 
     * 评估一个表达式，将表达式的值与case子句匹配，并执行与该情况相关联的语句。
+    * Evaluates an expression, matches the value of the expression to a case clause, and executes the statement associated with that case.
 - `this` 
     * 引用当前接收者。
+    * Refers to the current recipient.
 - `throw` 
     * 抛出一个异常。
+    * throws an exception.
 - `try` ]
     * 捕获一个异常。
+    * Catch an exception.
 - `typeof` 
     * 在 `Javascript` 平台，返回一个字符串，表示未经计算的操作数的类型。
+    * On the `Javascript` platform, returns a string representing the type of the unevaluated operand.
 - `var` 
     * 声明一个变量，不建议使用。
+    * Declare a variable, deprecated.
 - `void` 
     * 表示函数没有返回结果。
+    * Indicates that the function did not return a result.
 - `while` 
     * 在某个条件表达式为真的前提下，循环执行指定的一段代码，直到那个表达式不为真时结束循环。
+    * Under the premise that a conditional expression is true, execute the specified piece of code in a loop, until the expression is not true to end the loop.
 - `with` 
     * 在 `Javascript` 平台，扩展一个语句的作用域链。
+    * On the `Javascript` platform, extend the scope chain of a statement.
 - `yield` 
     * 在 `Javascript` 平台，用来暂停和恢复一个生成器函数。
+    * On the `Javascript` platform, used to pause and resume a generator function.
 - `enum`
 - `implements`
 - `interface`
@@ -2165,76 +2204,104 @@ The has() method returns a boolean value indicating whether the corresponding va
 - `volatile`
 
 ### 操作符
+### operator
 
 - `+`
     * 相加运算符 (+) 用于对两个操作数进行相加运算。
+    * The addition operator (+) is used to add two operands.
 - `+=`
     * 加法赋值操作符 (+=) 将右操作数的值添加到变量，并将结果分配给该变量。两个操作数的类型确定加法赋值运算符的行为。
+    * The addition assignment operator (+=) adds the value of the right operand to a variable and assigns the result to the variable. The types of the two operands determine the behavior of the addition assignment operator.
 - `=`
     * 简单赋值操作符 (=) 用于为变量赋值。赋值表达式本身的值为要赋值的值。
+    * The simple assignment operator (=) is used to assign values to variables. The value of the assignment expression itself is the value to be assigned.
 - `&`
     * 按位与运算符 (&) 在两个操作数对应的二进位都为 1 时，该位的结果值才为 1，否则为 0。
+    * The bitwise AND operator (&) returns 1 only when the corresponding binary bits of both operands are 1, and 0 otherwise.
 - `&=`
     * 按位与赋值运算符（＆=）表示两个操作数的二进制，对它们进行按位 AND 运算并将结果分配给变量。
+    * The bitwise AND assignment operator (&=) represents the binary of two operands, performs a bitwise AND operation on them and assigns the result to a variable.
 - `~`
     * 按位非运算符（~），反转操作数的位。
+    * The bitwise NOT operator (~) reverses the bits of the operand.
 - `|`
     * 按位或运算符（|），如果两位之一为 1 则设置每位为 1。
+    * The bitwise OR operator (|) sets each bit to 1 if one of the two bits is 1.
 - `|=`
     * 按位或赋值操作符 (|=) 使用二进制表示操作数，进行一次按位或操作并赋值。
+    * The bitwise OR assignment operator (|=) uses binary representation of operands, performs a bitwise OR operation and assigns it.
 - `^`
     * 按位异或运算符（^），如果两位只有一位为 1 则设置每位为 1。
+    * Bitwise XOR operator (^), if only one of the two bits is 1, set each bit to 1.
 - `^=`
     * 按位异或赋值操作符 (^=) 使用二进制表示操作数，进行一次按位异或操作并赋值。
+    * The bitwise XOR assignment operator (^=) uses the binary representation of the operand, performs a bitwise XOR operation and assigns it.
 - `?`
 - `--`
     * 自减运算符 (--) 将它的操作数减一，然后返回操作数。
+    * The decrement operator (--) decrements its operand by one and returns the operand.
 - `/`
     * 除法运算符 (/) 计算了两个操作数的商，左边的数是被除数，右边的是除数。
+    * The division operator (/) computes the quotient of two operands, the number on the left is the dividend and the number on the right is the divisor.
 - `/=`
 - `==`
 - `>`
     * 当左边操作数大于右边的时候，大于 (>) 运算符返回true，否则返回false。
+    * The greater than (>) operator returns true when the left operand is greater than the right, and false otherwise.
 - `>=`
     * 当左边操作数大于等于右边的时候，大于等于 (>=) 运算符返回true，否则返回false。
+    * The greater than or equal (>=) operator returns true when the left operand is greater than or equal to the right, and false otherwise.
 - `++`
     * 自增运算符 (++) 将其操作数递增（加 1）并返回一个值。
+    * The increment operator (++) increments (adds 1) its operand and returns a value.
 - `!=`
 - `<<`
     * 左移操作符 (<<) 将第一个操作数向左移动指定位数，左边超出的位数将会被清除，右边将会补零。
+    * The left shift operator (<<) moves the first operand to the left by the specified number of digits, the excess digits on the left will be cleared, and the right will be filled with zeros.
 - `<<=`
     * 左移赋值运算符 (<<=) 将变量向左移动指定数量的位，并将结果赋值给变量。
+    * Left-shift assignment operator (<<=) Shifts a variable to the left by a specified number of bits and assigns the result to the variable.
 - `<`
     * 当左边操作数小于右边的时候，小于 (<) 运算符返回true，否则返回false。
+    * The less than (<) operator returns true when the left operand is less than the right, false otherwise.
 - `<=`
     * 当左边操作数小于等于右边的时候，小于等于 (>=) 运算符返回true，否则返回false。
+    * The less than or equal (>=) operator returns true when the left operand is less than or equal to the right, and false otherwise.
 - `&&`
     * 逻辑与
+    * Logical AND
 - `&&=`
 - `!`
 - `??=`
 - `||`
     * 逻辑或。
+    * Logical OR.
 - `||=`
     * 逻辑或赋值（x ||= y）运算仅在 x 为虚值时赋值。
+    * The logical OR assignment (x ||= y) operation only assigns a value if x is imaginary.
 - `*`
     * 乘法运算符 (*) 计算操作数的乘积。
+    * The multiplication operator (*) computes the product of the operands.
 - `*=`
 - `??`
 - `?.`
 - `%`
     * 当一个操作数除以第二个操作数时，取余运算符（％）返回剩余的余数。它与被除数的符号保持一致。
+    * The remainder operator (%) returns the remainder remaining when one operand is divided by the second. It is consistent with the sign of the dividend.
 - `%=`
 - `>>`
     * 右移操作符 (>>) 是将一个操作数按指定移动的位数向右移动，右边移出位被丢弃，左边移出的空位补符号位（最左边那位）。
+    * The right shift operator (>>) shifts an operand to the right by the specified number of bits, the bits shifted from the right are discarded, and the empty bits shifted from the left are filled with the sign bit (the leftmost bit).
 - `>>=`
     * 右移赋值运算符 (>>=) 将变量向右移动指定数量的位，并将结果赋值给变量。
+    * Right-shift assignment operator (>>=) Shifts a variable to the right by a specified number of bits and assigns the result to the variable.
 - `===`
 - `!==`
 - `-`
 - `-=`
 - `>>>`
     * 无符号右移运算符（>>>）（零填充右移）将第一个操作数向右移动指定（二进制）位数。
+    * The unsigned right shift operator (>>>) (zero-padded right shift) shifts the first operand to the right by the specified (binary) number of places.
 - `>>>=`
 
 ## 开发指南

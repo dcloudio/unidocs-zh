@@ -162,7 +162,7 @@ app-android 文件夹下存在下面两个文件
 
 以android平台获取电量为例，介绍uts原生插件开发步骤
 
-![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo.jpg)
+![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 
 在android平台目录下，编辑index.uts，键入以下内容。
 

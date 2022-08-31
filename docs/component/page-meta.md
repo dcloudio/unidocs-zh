@@ -69,6 +69,7 @@ From HBuilderX 2.6.3, `page-meta` is supported on all platforms when compiled, b
 > Added in `HBuilderX 3.3.0`
 
 vue3 下还可以在`page-meta`内使用浏览器原生 head 标签，**此用法仅 vue3 版本 ssr 可用**，方便在 编译为 ssr 时进行 seo 优化。
+Under vue3, you can also use the browser's native head tag in `page-meta`. **This usage is only available in vue3 version ssr**, which is convenient for seo optimization when compiling to ssr.
 
 ```html
 <template>

@@ -42,7 +42,7 @@
 
 > 新增于`HBuilderX 3.3.0`
 
-vue3 下还可以使用在`page-meta`内使用浏览器原生 head 标签，**此用法仅 vue3 版本 ssr 可用**，方便在 编译为 ssr 时进行 seo 优化。
+vue3 下还可以在`page-meta`内使用浏览器原生 head 标签，**此用法仅 vue3 版本 ssr 可用**，方便在 编译为 ssr 时进行 seo 优化。
 
 ```html
 <template>

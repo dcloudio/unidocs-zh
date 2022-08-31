@@ -298,7 +298,7 @@ tokenExpiresThreshold用于指定token还有多长时间过期时自动刷新tok
 
 > 新增于uni-id-pages 1.0.8
 
-支持以下四种内置规则
+`passwordStrength`配置项支持以下四种内置规则
 
 ```js
 {
@@ -313,7 +313,7 @@ tokenExpiresThreshold用于指定token还有多长时间过期时自动刷新tok
 }
 ```
 
-uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则，如需自定义规则，请参考：[uni-id-co自定义校验规则](uni-id-pages.md#custom-validator)
+uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则
 
 ### 登录方式及配置说明@login-and-config
 

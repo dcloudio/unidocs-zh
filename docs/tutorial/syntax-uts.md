@@ -2385,6 +2385,7 @@ Most JavaScript code can be turned into uts code with only a few modifications a
 Example:
 
 ```js
+// js 求和两个数字
 function add(left, right) {
     return left + right;
 }
@@ -2394,6 +2395,7 @@ function add(left, right) {
 After adding type annotations, it can be turned into uts code
 
 ```ts
+// uts 求和
 function add(left: number, right: number): number {
     return left + right;
 }

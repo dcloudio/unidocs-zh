@@ -1,8 +1,8 @@
 
-# 状态管理Vuex 
+# 状态管理Vuex
 
 > 这是与 Vue 3 匹配的 Vuex 4 的文档。差异对比可参阅[从 3.x 迁移到 4.0](https://next.vuex.vuejs.org/zh/guide/migrating-to-4-0-from-3-x.html)
-> 
+>
 > 已经有 Vue2项目，需要适配 Vue3 的可参阅 [vue2 项目迁移 vue3](https://uniapp.dcloud.io/migration-to-vue3)！
 
 
@@ -210,7 +210,7 @@ export default store
 2. 在 `main.js` 中导入文件。
 
 ```js
-// 页面路径：main.js 
+// 页面路径：main.js
 import App from './App'
 import store from './store'
 import {createSSRApp} from 'vue'
@@ -243,7 +243,7 @@ export function createApp() {
 		},
 		computed: {
 			username() {
-				return store.state.username 
+				return store.state.username
 			}
 		}
 	}
@@ -266,7 +266,7 @@ export function createApp() {
 		},
 		computed: {
 			username() {
-				return this.$store.state.username 
+				return this.$store.state.username
 			}
 		}
 	}
@@ -300,7 +300,7 @@ export function createApp() {
 		   // 从state中拿到数据 箭头函数可使代码更简练
 		   username: state => state.username,
 			age: state => state.age,
-		}) 
+		})
 	}
 </script>
 ```
@@ -348,11 +348,11 @@ export function createApp() {
 			return {
 				firstName:"Li"
 			}
-		},	
+		},
 		computed: {
 			...mapState({
 				username: function (state) {
-				    return this.firstName + ' ' +  state.username 
+				    return this.firstName + ' ' +  state.username
 				},
 				age: state => state.age,
 			})
@@ -437,7 +437,7 @@ export default store
 - getters, 等同于 store.getters
 
 ```js
-// 页面路径：store/index.js 
+// 页面路径：store/index.js
 
 import { createStore } from 'vuex'
 const store = createStore({
@@ -481,7 +481,7 @@ export default store
 ```html
 <!-- 页面路径：pages/index/index.vue -->
 <template>
-	<view>	
+	<view>
 		<view v-for="(item,index) in todos">
 			<view>{{item.id}}</view>
 			<view>{{item.text}}</view>
@@ -510,7 +510,7 @@ export default store
 ```html
 <!-- 页面路径：pages/index/index.vue -->
 <template>
-	<view>	
+	<view>
 		<view v-for="(item,index) in todos">
 			<view>{{item.id}}</view>
 			<view>{{item.text}}</view>
@@ -549,7 +549,7 @@ export default store
 	export default {
 		computed: {
 			todos() {
-				return this.$store.getters.getTodoById(2) 
+				return this.$store.getters.getTodoById(2)
 			}
 		}
 	}
@@ -657,7 +657,7 @@ export default store
 	</view>
 </template>
 <script>
-import store from '@/store/index.js'	
+import store from '@/store/index.js'
 export default {
 	computed: {
 		count() {
@@ -685,7 +685,7 @@ export default {
 - 在 `mutation` 传参（载荷）可以传递一个参数。
 
 ```js
-// 页面路径：store/index.js 
+// 页面路径：store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -730,7 +730,7 @@ export default store
 
 
 ```js
-// 页面路径：store/index.js 
+// 页面路径：store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -869,27 +869,6 @@ const store = createStore({
 export default store
 ```
 
-
-
-**遵守规则**
-
-
-既然 `Vuex` 的 `store` 中的状态是响应式的，那么当我们变更状态时，监视状态的 `Vue` 组件也会自动更新。这也意味着 `Vuex` 中的 `mutation` 也需要与使用 `Vue` 一样遵守一些注意事项：
-
-- 最好提前在你的 `store` 中初始化好所有所需属性。
-
-- 当需要在对象上添加新属性时，你应该
-
-	- 使用 `Vue.set(obj, 'newProp', 123)`, 或者
-
-	- 以新对象替换老对象。例如，利用对象展开运算符我们可以这样写：
-
-```js
-	state.obj = { ...state.obj, newProp: 123 }
-```
-
-
-
 **Mutation 必须是同步函数**
 
 一条重要的原则就是要记住** mutation 必须是同步函数**
@@ -998,7 +977,7 @@ export default store
 
 
 ```js
-// 页面路径：store/index.js 
+// 页面路径：store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -1007,7 +986,7 @@ const store = createStore({
 	mutations:{
 		add(state, payload) {
 			state.count += payload.amount
-		} 
+		}
 	},
 	actions:{
 		addCountAction (context , payload) {
@@ -1118,7 +1097,7 @@ export default store
 注意我们正在进行一系列的异步操作，并且通过提交 `mutation` 来记录 `action` 产生的状态变更。
 
 
-#### mapActions 
+#### mapActions
 
 2. 通过 `mapActions` 辅助函数分发。
 
@@ -1146,7 +1125,7 @@ export default store
 		},
 		methods: {
 			...mapActions([
-			    'addCountAction', 
+			    'addCountAction',
 				// 将 `this.addCountAction()` 映射为 `this.$store.dispatch('addCountAction')`
 			])
 		}
@@ -1162,8 +1141,8 @@ export default store
 ```js
 	methods: {
 		...mapActions([
-		    'addCountAction' 
-			// 将 `this.addCountAction(amount)` 映射为 
+		    'addCountAction'
+			// 将 `this.addCountAction(amount)` 映射为
 			//`this.$store.dispatch('addCountAction', amount)`
 		]),
 	}
@@ -1258,10 +1237,10 @@ export default store
 
 ```html
 ├── components             # 组件文件夹
-    └── myButton 
+    └── myButton
         └── myButton.vue   # myButton组件
 ├── pages
-    └── index 
+    └── index
 	    └── index.vue      # index页面
 ├── static
 ├── store
@@ -1311,19 +1290,19 @@ export default createStore({
 4. 子模块 `moduleA` 页面内容。
 
 ```js
-// 子模块moduleA路径：store/modules/moduleA.js 
+// 子模块moduleA路径：store/modules/moduleA.js
 export default {
 	state: {
 		text:"我是moduleA模块下state.text的值"
 	},
 	getters: {
-		
+
 	},
 	mutations: {
-		
+
 	},
-	actions: { 
-		
+	actions: {
+
 	}
 }
 ```
@@ -1376,7 +1355,7 @@ export default {
 	</view>
 </template>
 <script>
-	import {mapState,mapGetters} from 'vuex' 
+	import {mapState,mapGetters} from 'vuex'
 	export default {
 		computed: {
 			...mapState({
@@ -1415,6 +1394,3 @@ export default {
 ```
 
 vue是单向数据流，子组件不能直接修改父组件的数据，而通过vuex状态管理实现：把组件的共享状态抽取出来，以一个全局单例模式管理。在这种模式下，我们的组件树构成了一个巨大的“视图”，不管在树的哪个位置，任何组件都能获取状态或者触发行为！
-
-
-

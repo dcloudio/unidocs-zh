@@ -135,9 +135,7 @@
 |loginTypes	|Array	|登录方式[详情](#loginTypes)						|
 |agreements	|Array	|隐私政策[详情](#agreements)						|
 |appid		|Object	|接入各类服务（如微信登录服务）的应用id[详情](#appid)	|
-|password	|Object	|密码配置	|
-|&nbsp;&nbsp;&#124;-&nbsp;strength|String	|密码强度	[详情](#strength)|
-|&nbsp;&nbsp;&#124;-&nbsp;length	|Array	|密码长度，默认值为：在6-20位之间</br>用数组表示，如：[10, 25] 表示密码长度：在10-25位之间|
+|passwordStrength	|Object	|密码配置	[详情](#strength)	|
 
 
 完整示例：
@@ -253,13 +251,13 @@ export default {
 
 #### 密码强度@strength
 
-|字段		|类型	|描述												|
-|--			|--		|--													|
-|为空或false| -		|不验证密码强度										|
-|superstrong|String	|超强：密码必须包含大小写字母、数字和特殊符号		|
-|strong		|String	|强: 密码必须包含字母、数字和特殊符号				|
-|medium		|String	|中：密码必须为字母、数字和特殊符号任意两种的组合	|
-|weak		|String	|弱：密码必须包含字母								|
+|字段		|类型	|描述														|
+|--			|--		|--															|
+|为空或false| -		|不验证密码强度												|
+|super		|String	|超强：密码必须包含大小写字母、数字和特殊符号，长度范围：8-16位之间	|
+|strong		|String	|强: 密密码必须包含字母、数字和特殊符号，长度范围：8-16位之间		|
+|medium		|String	|中：密码必须为字母、数字和特殊符号任意两种的组合，长度范围：8-16位之间|
+|weak		|String	|弱：密码必须包含字母和数字，长度范围：6-16位之间					|
 
 ## 页面介绍
 `uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[插件地址](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)

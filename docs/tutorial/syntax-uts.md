@@ -1922,6 +1922,7 @@ foo.split(' ');
 举例：
 
 ```js
+// js 求和两个数字
 function add(left, right) {
     return left + right;
 }
@@ -1930,6 +1931,7 @@ function add(left, right) {
 补充类型批注后，即可变成 uts 代码
 
 ```ts
+// uts 求和
 function add(left: number, right: number): number {
     return left + right;
 }

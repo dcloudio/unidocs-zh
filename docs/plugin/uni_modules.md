@@ -44,6 +44,7 @@ uni_modules                                项目根目录下
 └── [plugin_id] // 插件 ID
     ├── uniCloud                           插件内的uniCloud内容会被虚拟合并到项目根目录的uniCloud中（注意：插件内的uniCloud目录，没有-aliyun,-tcb后缀）
     ├── components                         符合vue组件规范的uni-app组件目录，支持easycom规范
+    ├── utssdk                             存放uts插件
     ├── hybrid                             存放本地网页的目录，<a href="/component/web-view">详见</a>
     ├── pages                              业务页面文件存放的目录 
     ├── static                             存放应用引用静态资源（如图片、视频等）的目录，<b>注意：</b>静态资源只能存放于此

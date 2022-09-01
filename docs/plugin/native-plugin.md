@@ -1,6 +1,14 @@
+uni-app在App侧的原生扩展插件，支持使用java、object-c等原生语言编写。
+
+从HBuilderX 3.6起，新增支持了使用uts来开发原生插件。文档另见[uts插件](uts-plugin.md)
+
+为了和uts插件区别，之前的`App原生插件`，改名为`App原生语言插件`。
+
+本文为`App原生语言插件`的开发文档。
+
 ### uni.requireNativePlugin(PluginName)
 
-引入 App 原生插件。
+引入 App 原生语言插件。
 
 平台差异说明：App
 

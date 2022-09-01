@@ -446,6 +446,10 @@ Fired when the container's host activity rolls back the physical button click
 ## 常见问题
 ## common problem
 
+### 使用uts插件对 HBuilderX 的版本要求
+
+uts插件对 HBuilderX 的最低要求为3.6.0，在低于此版本的 HBuilderX 中使用uts插件，编译时将报错。
+
 ### Float类型传参
 ### Float type parameter
 

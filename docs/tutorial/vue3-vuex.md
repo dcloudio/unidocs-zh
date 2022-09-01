@@ -1596,4 +1596,4 @@ export default {
 ```
 
 vue是单向数据流，子组件不能直接修改父组件的数据，而通过vuex状态管理实现：把组件的共享状态抽取出来，以一个全局单例模式管理。在这种模式下，我们的组件树构成了一个巨大的“视图”，不管在树的哪个位置，任何组件都能获取状态或者触发行为！
-Vue is a one-way data flow. Subcomponents cannot directly modify the data of parent components, but are implemented through vuex state management: the shared state of components is extracted and managed in a global singleton mode. In this mode, our component tree forms one giant "view", and any component can get state or trigger actions, no matter where it is in the tree!
+Vue is a one-way data flow. Subcomponents cannot directly modify the data of parent components, but are implemented through Vuex state management: the shared state of components is extracted and managed in a global singleton mode. In this mode, our component tree forms one giant "view", and no matter where it is in the tree, any component can get state or trigger actions!

@@ -23,7 +23,9 @@ uts adopts the same syntax specification as ts and supports most ES6 APIs.
 This article is an introduction to the basic syntax of uts. If you want to know how to develop uts plug-ins under uni-app, see the document [https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin /uts-plugin.html).
 
 ## 基本语法
+## Basic syntax
 ### 声明
+### Declaration
 
 uts 有两种声明方式
 There are two ways to declare uts
@@ -65,6 +67,7 @@ Precautions:
 - When compiling to Kotlin platform, equivalent to Kotlin platform var (allows reassignment)
 
 ### 变量
+### variables
 
 在 uts 中，使用变量名需要遵守一定的规则。
 In uts, there are certain rules for using variable names.
@@ -82,8 +85,10 @@ In uts, there are certain rules for using variable names.
 > Note: Unlike TypeScript, uts does not allow variables starting with $
 
 ### 操作符
+### operator
 
 #### 赋值运算符(Assignment operators)
+#### Assignment operators
 
 | 名字                                              | 简写的操作符 | 含义        |
 | name | shorthand operator | meaning |
@@ -114,6 +119,7 @@ In uts, there are certain rules for using variable names.
 | Bitwise OR assignment | x \|= y | x \|= y | x = x \| y |
 
 #### 比较运算符(Comparison operators)
+#### Comparison operators
 
 | 运算符                              | 描述                                        | 返回 true 的示例 |
 | operator | description | examples that return true |
@@ -136,6 +142,7 @@ In uts, there are certain rules for using variable names.
 | Less than or equal (<=) | Left operand less than or equal to right operand returns true | var1<=var2 |
 
 #### 算数运算符(Arithmetic operators)
+#### Arithmetic operators
 
 | 运算符   | 范例 | 描述                                                                                                                                     |
 | Operator | Example | Description |
@@ -148,6 +155,7 @@ In uts, there are certain rules for using variable names.
 | Decrement (--) | | Unary operator. Decrements the value of the operand by one. The return value of the two usages of prefix and suffix is similar to the increment operator. |
 
 #### 位运算符(Bitwise operators)
+#### Bitwise operators
 
 | Operator                        | Usage   | Description                                                                                                      |
 | ------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -167,6 +175,7 @@ In uts, there are certain rules for using variable names.
 | Unsigned right shift (left vacant bits are filled with 0s) | a >>> b | Shift the binary representation of a to the right by b bits, discarding all shifted bits, and filling the left vacant bits with 0s |
 
 #### 逻辑运算符(Logical operators)
+#### Logical operators
 
 | 运算符       | 范例             | 描述     |
 | Operator | Example | Description |
@@ -179,6 +188,7 @@ In uts, there are certain rules for using variable names.
 | Logical NOT (!) | !expr | (Logical NOT) |
 
 #### 字符串运算符(String operators)
+#### String operators
 
 除了比较操作符，它可以在字符串值中使用，连接操作符（+）连接两个字符串值相连接，返回另一个字符串，它是两个操作数串的结合。
 In addition to comparison operators, which can be used on string values, the concatenation operator (+) concatenates two string values, returning another string, which is the union of the two operand strings.
@@ -188,6 +198,7 @@ console.log("my " + "string"); // console logs the string "my string".
 ```
 
 #### 条件（三元）运算符(Conditional operator)
+#### Conditional operator
 
 条件运算符是 uts 中唯一需要三个操作数的运算符。运算的结果根据给定条件在两个值中取其一。语法为：
 The conditional operator is the only operator in uts that requires three operands. The result of the operation takes one of two values according to a given condition. The syntax is:
@@ -200,18 +211,22 @@ const status = age >= 18 ? "adult" : "minor";
 ```
 
 ## 基本类型
+## basic type
 
 ### 布尔值（Boolean）
+### Boolean
 
     有 2 个值分别是：true 和 false。
     There are 2 values: true and false.
 
 ### 数字（Number）
+### Number
 
     整数或浮点数，例如： 42 或者 3.14159。
     Integer or floating point number, for example: 42 or 3.14159.
 
 ### 字符串（String）
+### String
 
     字符串是一串表示文本值的字符序列，例如："hello" 。
     A string is a sequence of characters representing a text value, for example: "hello".
@@ -222,6 +237,7 @@ const status = age >= 18 ? "adult" : "minor";
     A special keyword that indicates a null value.
 
 ## 字面量
+## literal
 
 字面量是由语法表达式定义的常量；或，通过由一定字词组成的语词表达式定义的常量
 A literal is a constant defined by a syntactic expression; or, a constant defined by a lexical expression consisting of certain words
@@ -230,6 +246,7 @@ A literal is a constant defined by a syntactic expression; or, a constant define
 In uts, you can use various literals. These literals are fixed values given literally, not variables
 
 ### 数组字面量
+### Array literals
 
 数组字面值是一个封闭在方括号对 ([]) 中的包含有零个或多个表达式的列表，其中每个表达式代表数组的一个元素。当你使用数组字面值创建一个数组时，该数组将会以指定的值作为其元素进行初始化，而其长度被设定为元素的个数。
 An array literal is a list of zero or more expressions enclosed in a pair of square brackets ([]), where each expression represents an element of the array. When you create an array using an array literal, the array is initialized with the specified value as its elements, and its length is set to the number of elements.
@@ -248,16 +265,19 @@ console.log(a[0]) // 3
 Array literals are also array objects.
 
 ### 布尔字面量
+### boolean literal
 
 布尔类型有两种字面量：true和false。
 The boolean type has two literals: true and false.
 
 ### 数字字面量
+### Numeric literals
 
 数字字面量包括多种基数的整数字面量和以 10 为基数的浮点数字面量
 Numeric literals include integer literals in multiple bases and floating-point literals in base 10
 
 #### 整数字面量
+#### integer literals
 
 整数可以用十进制（基数为 10）、十六进制（基数为 16）、二进制（基数为 2）表示。
 Integers can be represented in decimal (base 10), hexadecimal (base 16), or binary (base 2).
@@ -272,6 +292,7 @@ Integers can be represented in decimal (base 10), hexadecimal (base 16), or bina
 - Binary integers start with 0b (or 0B) and can only contain the digits 0 and 1. For example: `0b11, 0b0011 , -0b11`
 
 #### 浮点数字面量
+#### floating point number literals
 
 浮点数字面值可以有以下的组成部分：
 A floating-point number literal can have the following components:
@@ -306,6 +327,7 @@ E.g:
 ```
 
 ### RegExp字面量
+### RegExp literal
 
 正则表达式是字符被斜线围成的表达式。下面是一个正则表达式文字的一个例子。
 Regular expressions are expressions in which characters are surrounded by slashes. Below is an example of a regular expression literal.
@@ -315,6 +337,7 @@ const re = /ab+c/;
 ```
 
 ### 字符串字面量
+### String literals
 
 字符串字面量是由双引号（"）对或单引号（'）括起来的零个或多个字符。字符串被限定在同种引号之间；也即，必须是成对单引号或成对双引号。下面的例子都是字符串字面值：
 A string literal is zero or more characters enclosed in double quotation marks (") pairs or single quotation marks ('). Strings are bounded between quotation marks of the same kind; that is, they must be pairs of single quotation marks or single quotation marks ('). Double quotes. The following examples are all string literals:
@@ -339,6 +362,7 @@ console.log("John's cat".length)
 ```
 
 #### 模板字符串
+#### template string
 
 模板字面量 是允许嵌入表达式的字符串字面量。你可以使用多行字符串和字符串插值功能。也被称为“模板字符串”。
 Template literals are string literals that allow embedded expressions. You can use multiline strings and string interpolation functions. Also known as "template strings".
@@ -356,6 +380,7 @@ var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 ```
 #### 转义特殊字符
+#### escape special characters
 
 |字符	|意思		|
 |character |meaning |
@@ -378,10 +403,13 @@ var name = "Bob", time = "today";
 |`\\` | backslash character |
 
 ## 控制流程
+## control flow
 
 ### 条件
+### condition
 
 #### If 语句
+#### If statement
 
 当一个逻辑条件为真，用 if 语句执行一个语句。当这个条件为假，使用可选择的 else 从句来执行这个语句。if 语句如下所示：
 Use the if statement to execute a statement when a logical condition is true. When the condition is false, use the optional else clause to execute the statement. The if statement looks like this:
@@ -402,6 +430,7 @@ if (condition_1) {
 > Note: Conditional expressions in if and else if must be boolean
 
 #### switch 语句
+#### switch statement
 
 switch 语句允许一个程序求一个表达式的值并且尝试去匹配表达式的值到一个 case 标签。如果匹配成功，这个程序执行相关的语句。switch 语句如下所示：
 The switch statement allows a program to evaluate an expression and try to match the expression's value to a case label. If the match is successful, the program executes the associated statement. The switch statement looks like this:
@@ -427,6 +456,7 @@ The program first looks for a case statement that matches expression, then trans
 An optional break statement is associated with each case statement, ensuring that the program can break out of the switch after the matching statement has been executed and continue executing the statement following the switch. If break is ignored, the program will continue to the next statement in the switch statement.
 
 #### 三元表达式
+#### Ternary expressions
 
 uts 支持使用三元表达式。一个条件后面会跟一个问号（?），如果条件为 true ，则问号后面的表达式 A 将会执行；表达式 A 后面跟着一个冒号（:），如果条件为 false ，则冒号后面的表达式 B 将会执行。本运算符经常作为 if 语句的简捷形式来使用。
 uts supports the use of ternary expressions. A condition is followed by a question mark (?), if the condition is true, the expression A following the question mark will be executed; expression A is followed by a colon (:), if the condition is false, the expression B following the colon will be executed will execute. This operator is often used as a shorthand for an if statement.
@@ -476,6 +506,7 @@ function example(): string {
 ```
 
 ### 循环
+### loop
 
 #### for
 
@@ -613,6 +644,7 @@ while (true) {
 ```
 
 ### 异常
+### exception
 
 你可以用 throw 语句抛出一个异常并且用 try...catch 语句捕获处理它。
 You can throw an exception with the throw statement and catch it with the try...catch statement.
@@ -643,6 +675,7 @@ try {
 ```
 
 ## 函数
+## function
 
 函数是 uts 中的基本组件之一。 一个函数是 uts 过程 — 一组执行任务或计算值的语句。要使用一个函数，你必须将其定义在你希望调用它的作用域内。
 Functions are one of the basic components in uts. A function is a uts procedure — a set of statements that perform a task or compute a value. To use a function, you must define it in the scope where you wish to call it.
@@ -651,8 +684,10 @@ Functions are one of the basic components in uts. A function is a uts procedure 
 A uts function is defined with the function keyword followed by the function name and parentheses.
 
 ### 定义函数
+### define function
 
 #### 函数声明
+#### function declaration
 
 一个函数定义（也称为函数声明，或函数语句）由一系列的 function 关键字组成，依次为：
 A function definition (also called a function declaration, or function statement) consists of a series of function keywords, in order:
@@ -679,6 +714,7 @@ function add(x: string, y: string): string {
 ```
 
 #### 函数表达式
+#### function expressions
 
 虽然上面的函数声明在语法上是一个语句，但函数也可以由函数表达式创建。这样的函数可以是匿名的；它不必有一个名称。例如，函数 add 也可这样来定义：
 Although the function declaration above is syntactically a statement, functions can also be created from function expressions. Such a function can be anonymous; it does not have to have a name. For example, the function add can also be defined like this:
@@ -693,6 +729,7 @@ const add = function (x: string, y: string): string {
 > Note: Function expressions do not support the use of function names, e.g. `const add = function add(){}` is not allowed.
 
 ### 调用函数
+### Call functions
 
 定义一个函数并不会自动的执行它。定义了函数仅仅是赋予函数以名称并明确函数被调用时该做些什么。调用函数才会以给定的参数真正执行这些动作。例如，一旦你定义了函数 add，你可以如下这样调用它：
 Defining a function does not automatically execute it. Defining a function simply gives the function a name and specifies what the function should do when it is called. Only when the function is called will actually perform these actions with the given parameters. For example, once you have defined the function add, you can call it like this:
@@ -705,6 +742,7 @@ add("hello", "world");
 The above statement calls the function by providing the parameters "hello" and "world". The function returns the value "hello world" when it finishes executing its statement.
 
 ### 函数作用域
+### function scope
 
 在函数内定义的变量不能在函数之外的任何地方访问，因为变量仅仅在该函数的域的内部有定义。相对应的，一个函数可以访问定义在其范围内的任何变量和函数。
 Variables defined inside a function cannot be accessed anywhere outside the function, because variables are only defined inside the function's domain. Correspondingly, a function can access any variable and function defined in its scope.
@@ -719,6 +757,7 @@ function add(): string {
 ```
 
 #### 嵌套函数
+#### Nested functions
 
 你可以在一个函数里面嵌套另外一个函数。嵌套（内部）函数对其容器（外部）函数是私有的。它自身也形成了一个闭包。一个闭包是一个可以自己拥有独立的环境与变量的表达式（通常是函数）。
 You can nest a function inside another function. Nested (inner) functions are private to their container (outer) functions. It also forms a closure itself. A closure is an expression (usually a function) that can have its own independent environment and variables.
@@ -750,6 +789,7 @@ addSquares(4, 5); // returns 41
 ```
 
 #### 命名冲突
+#### naming conflicts
 
 当同一个闭包作用域下两个参数或者变量同名时，就会产生命名冲突。更近的作用域有更高的优先权，所以最近的优先级最高，最远的优先级最低。这就是作用域链。链的第一个元素就是最里面的作用域，最后一个元素便是最外层的作用域。
 A naming conflict occurs when two parameters or variables in the same closure scope have the same name. Closer scopes have higher precedence, so the closest has the highest priority and the farthest has the lowest. This is the scope chain. The first element of the chain is the innermost scope, and the last element is the outermost scope.
@@ -773,6 +813,7 @@ outside()(10); // 返回值为 20 而不是 10
 The naming conflict occurs on return x, the inside parameter x and the outside variable x conflict. The scope here is {inside, outside}. So inside x has the highest priority, returning 20 (inside x) instead of 10 (outside x).
 
 ### 闭包
+### Closure
 
 闭包是 uts 中最强大的特性之一。uts 允许函数嵌套，并且内部函数可以访问定义在外部函数中的所有变量和函数，以及外部函数能访问的所有变量和函数。
 Closures are one of the most powerful features in uts. uts allows function nesting, and the inner function can access all variables and functions defined in the outer function, and all variables and functions that the outer function can access.
@@ -803,8 +844,10 @@ const myPet = pet("Vivie");
 myPet(); // 返回结果 "Vivie"
 ```
 ### 函数参数
+### function parameters
 
 #### 默认参数
+#### default parameters
 
 函数参数可以有默认值，当省略相应的参数时使用默认值。
 Function parameters can have default values, which are used when the corresponding parameter is omitted.
@@ -816,6 +859,7 @@ function multiply(a:number, b:number = 1):number {
 multiply(5); // 5
 ```
 ### 箭头函数
+### Arrow functions
 
 箭头函数表达式（也称胖箭头函数）相比函数表达式具有较短的语法。箭头函数总是匿名的。
 Arrow function expressions (also called fat arrow functions) have a shorter syntax than function expressions. Arrow functions are always anonymous.
@@ -831,6 +875,7 @@ console.log(a3); // logs [ 8, 6, 7, 9 ]
 ```
 
 ## 类
+## kind
 
 uts 中使用关键字 class 声明类
 Use the keyword class to declare a class in uts
@@ -845,6 +890,7 @@ class Person {
 A class declaration consists of a class name and a class body surrounded by curly braces.
 
 ### 构造函数
+### Constructor
 
 constructor 是一种用于创建和初始化 class 创建的对象的特殊方法。
 The constructor is a special method used to create and initialize objects created by a class.
@@ -889,6 +935,7 @@ class Square extends Polygon {
 ```
 
 ### 继承
+### Inheritance
 
 uts 允许使用继承来扩展现有的类。
 uts allows the use of inheritance to extend existing classes.
@@ -916,6 +963,7 @@ class Square extends Polygon {}
 ```
 
 #### 覆盖方法
+#### Override methods
 
 uts 对于可覆盖的成员以及覆盖后的成员需要显式修饰符：
 uts requires explicit modifiers for overridable and overridden members:
@@ -938,6 +986,7 @@ Square.name 函数上必须加上 override 修饰符。如果没写，编译器�
 The override modifier must be added to the Square.name function. If it is not written, the compiler will report an error.
 
 #### 覆盖属性
+#### Override properties
 
 属性与方法的覆盖机制相同。在超类中声明然后在派生类中重新声明的属性必须以 override 开头，并且它们必须具有兼容的类型。
 Properties have the same overriding mechanism as methods. Properties declared in a superclass and then redeclared in a derived class must start with override and they must have compatible types.
@@ -953,6 +1002,7 @@ class Rectangle extends Shape {
 ```
 
 #### 调用超类实现
+#### calling superclass implementation
 
 派生类中的代码可以使用 super 关键字调用其超类的函数实现：
 Code in a derived class can call its superclass's function implementation using the super keyword:
@@ -970,11 +1020,13 @@ class FilledRectangle extends Rectangle {
 ```
 
 ### 实例属性
+### instance properties
 
 uts 中实例属性存在于类的每一个实例中。
 Instance attributes in uts exist in every instance of the class.
 
 #### 声明实例属性
+#### Declare instance properties
 
 uts 可以在类中声明属性，默认可读，可写。
 uts can declare properties in the class, which are readable and writable by default.
@@ -997,6 +1049,7 @@ function copyAddress(address: Address): Address {
 ```
 
 #### Getter 与 Setter
+#### Getter and Setter
 
 uts 支持通过 getters/setters 来截取对对象成员的访问。 它能帮助你有效的控制对对象成员的访问。
 uts supports intercepting access to object members through getters/setters. It helps you effectively control access to object members.
@@ -1038,6 +1091,7 @@ dad.name = "Man with the 3-piece suit"; // 错误! name 是只读的.
 ```
 
 ### 静态属性
+### static properties
 
 使用关键字 static 来将一个属性声明为静态属性。静态属性不会在实例中被调用，而只会被类本身调用。
 Use the keyword static to declare a property as static. Static properties are not called on the instance, only by the class itself.
@@ -1051,11 +1105,13 @@ console.log(ClassWithStaticField.staticField);
 ```
 
 ### 实例方法
+### Instance Methods
 
 uts 中实例方法存在于类的每一个实例中。
 Instance methods in uts exist in every instance of the class.
 
 #### 声明实例方法
+#### Declare instance methods
 
 uts 可以在类中声明实例方法。
 uts can declare instance methods in a class.
@@ -1083,6 +1139,7 @@ square.calcArea();
 ```
 
 ### 静态方法
+### static method
 
 使用关键字 static 来将一个方法声明为静态方法。静态方法不会在实例中被调用，而只会被类本身调用。它们经常是工具函数，比如用来创建或者复制对象。
 Use the keyword static to declare a method as static. Static methods are not called on the instance, but only by the class itself. They are often utility functions, such as to create or copy objects.
@@ -1097,6 +1154,7 @@ ClassWithStaticMethod.staticMethod();
 ```
 
 ### 可见性修饰符
+### Visibility Modifiers
 
 类的方法与属性都可以有可见性修饰符。
 Both methods and properties of a class can have visibility modifiers.
@@ -1156,11 +1214,13 @@ console.log(howard.name); // 错误
 Note that we cannot use the name outside of the Person class, but we can still access it through the instance methods of the Employee class, since Employee is derived from Person.
 
 ## 模块
+## module
 
 uts 支持将程序拆分为可按需导入的单独模块，模块中可以导入和导出各种类型的变量，如函数，字符串，数字，布尔值，类等。
 uts supports splitting programs into separate modules that can be imported on demand, where various types of variables can be imported and exported, such as functions, strings, numbers, booleans, classes, etc.
 
 ### 导出
+### export
 
 export 语句可以将一个文件中的函数，类等导出。比如：
 The export statement can export functions, classes, etc. in a file. for example:
@@ -1181,6 +1241,7 @@ export default class Canvas {} // default 关键词支持默认导出
 - Export by export, add { } when importing, export default is not required.
 
 ### 导入
+### import
 
 import 语句可以将另一个文件中的函数，类等导入到当前文件。比如：
 The import statement can import functions, classes, etc. from another file into the current file. for example:
@@ -1218,6 +1279,7 @@ test.test()
 ```
 
 ## 内置对象
+## built-in objects
 
 ### Array
 
@@ -1225,6 +1287,7 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 Array objects are global objects used to construct arrays, which are higher-order objects similar to lists.
 
 #### 实例属性
+#### instance properties
 
 #### length
 
@@ -1238,6 +1301,7 @@ console.log(clothing.length);
 ```
 
 #### 实例方法
+#### instance methods
 
 #### concat
 
@@ -1554,6 +1618,7 @@ unshift() 方法将一个或多个元素添加到数组的开头，并返回该�
 The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array (this method modifies the original array).
 
 #### 常见操作
+#### Common operations
 
 - 创建数组
 - create array
@@ -1639,6 +1704,7 @@ const shallowCopy = fruits.slice() // this is how to make a copy
 // ["Strawberry", "Mango"]
 ```
 #### 访问数组元素
+#### access array elements
 
 数组的索引是从 0 开始的，第一个元素的索引为 0，最后一个元素的索引等于该数组的 长度 减 1。
 The index of the array is 0-based, the index of the first element is 0, and the index of the last element is equal to the length of the array minus 1.
@@ -1659,6 +1725,7 @@ console.log(arr.0) // a syntax error
 Create a Date instance that renders a moment in time. Date objects are based on the Unix Time Stamp, which is the number of milliseconds elapsed since January 1, 1970 (UTC).
 
 #### 语法
+#### grammar
 
 ```ts
 new Date();
@@ -1692,6 +1759,7 @@ setTimeout(() => {
 ```
 
 #### 实例方法
+#### instance methods
 
 #### getDate
 
@@ -1785,12 +1853,14 @@ Sets the time for a Date object as a number of milliseconds representing the tim
 The Error object is thrown when a runtime error occurs. Error objects can also be used as base objects for user-defined exceptions.
 
 #### 实例属性
+#### instance properties
 
 #### message
 错误消息。对于用户创建的 Error 对象，这是构造函数的第一个参数提供的字符串。
 wrong information. For user-created Error objects, this is the string provided as the first parameter of the constructor.
 
 #### 示例
+#### Example
 
 ```ts
 try {
@@ -1803,6 +1873,7 @@ try {
 ### JSON
 
 #### 静态方法
+#### static methods
 
 #### parse
 
@@ -1848,6 +1919,7 @@ Map 对象保存键值对。任何值（对象或者基本类型）都可以作�
 Map objects hold key-value pairs. Any value (object or primitive type) can be a key or a value.
 
 #### 实例属性
+#### instance properties
 
 #### size
 
@@ -1865,6 +1937,7 @@ console.log(map1.size);
 ```
 
 #### 实例方法
+#### instance methods
 
 #### clear
 
@@ -1919,6 +1992,7 @@ A Set object is a collection of values, and you can iterate over its elements in
 
 
 #### 实例属性
+#### instance properties
 
 #### size
 
@@ -1937,6 +2011,7 @@ console.log(set1.size);
 ```
 
 #### 实例方法
+#### instance methods
 
 #### add
 
@@ -1996,6 +2071,7 @@ has() 方法返回一个布尔值来指示对应的值 value 是否存在 Set �
 The has() method returns a boolean value indicating whether the corresponding value value exists in the Set object.
 
 ## 关键词
+## Key words
 
 - `as` 
     * 用于类型转换。
@@ -2019,6 +2095,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     * declares a constant that cannot be reassigned.
 - `continue` 
     * 声明终止当前循环或标记循环的当前迭代中的语句执行，并在下一次迭代时继续执行循环。
+    The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
@@ -2052,6 +2129,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     * Creates a loop consisting of three optional expressions enclosed in parentheses, separated by semicolons, followed by a statement to execute in the loop (usually a block statement ).
 - `function` 
     * 声明定义一个具有指定参数的函数。
+    The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
@@ -2134,6 +2212,7 @@ The has() method returns a boolean value indicating whether the corresponding va
 - `volatile`
 
 ## 操作符
+## operator
 
 - `+`
     * 相加运算符 (+) 用于对两个操作数进行相加运算。
@@ -2238,8 +2317,10 @@ The has() method returns a boolean value indicating whether the corresponding va
 ## Development Guide
 
 - [使用 uts 开发 uni-app 原生插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
+- [Using uts to develop uni-app native plugin](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 ## 学习资料
 ## Learning materials
 
 ### JavaScript 开发者快速上手 uts
+### JavaScript developers quickly get started with uts

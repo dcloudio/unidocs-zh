@@ -23,6 +23,7 @@
     * [pinia](/tutorial/vue3-pinia.md)
   * [vue2 升 3 指南](/tutorial/migration-to-vue3.md)
 * [ts/typescript 专题](/tutorial/typescript-subject.md)
+* [uts语法](syntax-uts.md)
 * 编译器（条件编译）
   * [什么是编译器](/tutorial/compiler.md)
   * [条件编译处理多端差异](/tutorial/platform.md)

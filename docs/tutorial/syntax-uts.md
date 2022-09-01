@@ -217,20 +217,24 @@ const status = age >= 18 ? "adult" : "minor";
 ### Boolean
 
 有 2 个值分别是：true 和 false。
+There are 2 values: true and false.
 
 ### 数字（Number）
 ### Number
 
 整数或浮点数，例如： 42 或者 3.14159。
+Integer or floating point number, for example: 42 or 3.14159.
 
 ### 字符串（String）
 ### String
 
 字符串是一串表示文本值的字符序列，例如："hello" 。
+A string is a sequence of characters representing a text value, for example: "hello".
 
 ### null
 
 一个表明 null 值的特殊关键字。
+A special keyword that indicates a null value.
 
 ## 字面量
 ## literal
@@ -2099,6 +2103,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
+    The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
 - `debugger` 
     * 调用任何可用的调试功能，例如设置断点。 如果没有调试功能可用，则此语句不起作用。
     * Call any available debugging functions, such as setting breakpoints. This statement has no effect if no debugging functionality is available.
@@ -2128,6 +2133,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     * Creates a loop consisting of three optional expressions enclosed in parentheses, separated by semicolons, followed by a statement to execute in the loop (usually a block statement ).
 - `function` 
     * 声明定义一个具有指定参数的函数。
+    The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.

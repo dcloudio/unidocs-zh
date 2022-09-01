@@ -1281,6 +1281,34 @@ test.test()
 ## 内置对象
 ## built-in objects
 
+### console
+
+#### debug
+在控制台打印 debug 日志
+```ts
+console.debug(msg1, msg2, msg3)
+```
+#### error
+在控制台打印 error 日志
+```ts
+console.error(msg1, msg2, msg3)
+```
+#### info
+在控制台打印 info 日志
+```ts
+console.info(msg1, msg2, msg3)
+```
+#### log
+在控制台打印 log 日志
+```ts
+console.log(msg1, msg2, msg3)
+```
+#### warn
+在控制台打印 warn 日志
+```ts
+console.warn(msg1, msg2, msg3)
+```
+
 ### Array
 
 Array 对象是用于构造数组的全局对象，数组是类似于列表的高阶对象。
@@ -2070,6 +2098,40 @@ The forEach method executes the provided callback function in sequence according
 
 has() 方法返回一个布尔值来指示对应的值 value 是否存在 Set 对象中。
 The has() method returns a boolean value indicating whether the corresponding value value exists in the Set object.
+
+
+### 定时器
+
+#### setTimeout
+设定一个定时器。在定时到期以后执行注册的回调函数
+```ts
+setTimeout(() => {
+  console.log("Delayed for 1 second.")
+}, 1000)
+```
+#### clearTimeout
+取消由 setTimeout 设置的定时器。
+```ts
+const timer = setTimeout(() => {
+  console.log("Delayed for 1 second.")
+}, 1000)
+clearTimeout(timer)
+```
+#### setInterval
+设定一个定时器。按照指定的周期（以毫秒计）来执行注册的回调函数
+```ts
+setInterval(() => {
+  console.log(Date.now())
+}, 1000)
+```
+#### clearInterval
+取消由 setInterval 设置的定时器。
+```ts
+const timer = setInterval(() => {
+  console.log(Date.now())
+}, 1000)
+clearInterval(timer)
+```
 
 ## 关键词
 ## Key words

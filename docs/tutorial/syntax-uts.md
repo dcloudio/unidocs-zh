@@ -2103,6 +2103,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     * 声明终止当前循环或标记循环的当前迭代中的语句执行，并在下一次迭代时继续执行循环。
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
+    The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
 - `debugger` 
     * 调用任何可用的调试功能，例如设置断点。 如果没有调试功能可用，则此语句不起作用。
     * Call any available debugging functions, such as setting breakpoints. This statement has no effect if no debugging functionality is available.
@@ -2132,6 +2133,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     * Creates a loop consisting of three optional expressions enclosed in parentheses, separated by semicolons, followed by a statement to execute in the loop (usually a block statement ).
 - `function` 
     * 声明定义一个具有指定参数的函数。
+    The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
 - `if` 

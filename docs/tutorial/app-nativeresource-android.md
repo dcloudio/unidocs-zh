@@ -18,7 +18,7 @@ HBuilderX3.6.0起，支持直接在应用项目中配置应用清单文件 Andro
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/androidmanifest.png)
 
 根据应用需求编辑添加需要的内容，如下示例：
-```
+``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" 
   package="io.dcloud.nativeresouce">

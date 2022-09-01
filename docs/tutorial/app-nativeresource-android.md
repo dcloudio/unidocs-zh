@@ -70,7 +70,7 @@ Enter the name `nativeResouces` (note that it is case sensitive), identify and c
 **Notice**
 - android目录下不支持放java/kotlin源码文件，需要开发源码建议使用[UTS插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
 - assets、res目录中的资源不能通过uni API使用，需通过 Android 原生 API 访问，参考[Android应用资源概览](https://developer.android.google.cn/guide/topics/resources/providing-resources)。也就是在uni-app中，访问这些资源需要通过uts代码访问或编写[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
-- assets目录中已经保留使用以下目录/文件名称，需注意避免冲突
+- assets目录中已经保留使用以下文件，需注意避免冲突
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─apps                          //应用资源目录

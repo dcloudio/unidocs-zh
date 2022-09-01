@@ -216,25 +216,21 @@ const status = age >= 18 ? "adult" : "minor";
 ### 布尔值（Boolean）
 ### Boolean
 
-    有 2 个值分别是：true 和 false。
-    There are 2 values: true and false.
+有 2 个值分别是：true 和 false。
 
 ### 数字（Number）
 ### Number
 
-    整数或浮点数，例如： 42 或者 3.14159。
-    Integer or floating point number, for example: 42 or 3.14159.
+整数或浮点数，例如： 42 或者 3.14159。
 
 ### 字符串（String）
 ### String
 
-    字符串是一串表示文本值的字符序列，例如："hello" 。
-    A string is a sequence of characters representing a text value, for example: "hello".
+字符串是一串表示文本值的字符序列，例如："hello" 。
 
 ### null
 
-    一个表明 null 值的特殊关键字。
-    A special keyword that indicates a null value.
+一个表明 null 值的特殊关键字。
 
 ## 字面量
 ## literal
@@ -1718,6 +1714,7 @@ The following writing is wrong, and a SyntaxError exception will be thrown at ru
 ```ts
 console.log(arr.0) // a syntax error
 ```
+
 
 ### Date
 

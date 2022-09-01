@@ -1,7 +1,9 @@
 
 # 状态管理Vuex
+# State management Vuex
 
 > 这是与 Vue 3 匹配的 Vuex 4 的文档。差异对比可参阅[从 3.x 迁移到 4.0](https://next.vuex.vuejs.org/zh/guide/migrating-to-4-0-from-3-x.html)
+> This is the documentation for Vuex 4 that matches Vue 3. For a comparison of the differences, see [Migrating from 3.x to 4.0](https://next.vuex.vuejs.org/zh/guide/migrating-to-4-0-from-3-x.html)
 >
 > 已经有 Vue2项目，需要适配 Vue3 的可参阅 [vue2 项目迁移 vue3](https://uniapp.dcloud.io/migration-to-vue3)！
 > There are already Vue2 projects, and those that need to adapt to Vue3 can be referred to [Vue2 project migration vue3](https://uniapp.dcloud.io/migration-to-vue3)!
@@ -270,6 +272,7 @@ export default store
 
 ```js
 // 页面路径：main.js
+// Page path: main.js
 import App from './App'
 import store from './store'
 import {createSSRApp} from 'vue'
@@ -523,6 +526,7 @@ Register `getter` on `store`, and the `getter` method accepts the following para
 
 ```js
 // 页面路径：store/index.js
+// Page path: store/index.js
 
 import { createStore } from 'vuex'
 const store = createStore({
@@ -802,6 +806,7 @@ Take the example of the accumulator to realize the parameter passing of the `mut
 
 ```js
 // 页面路径：store/index.js
+// Page path: store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -849,6 +854,7 @@ export default store
 
 ```js
 // 页面路径：store/index.js
+// Page path: store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -1125,6 +1131,7 @@ In practice, we often use ES2015 argument destructuring (opens new window)to sim
 
 ```js
 // 页面路径：store/index.js
+// Page path: store/index.js
 import { createStore } from 'vuex'
 const store = createStore({
 	state: {
@@ -1479,6 +1486,7 @@ export default createStore({
 
 ```js
 // 子模块moduleA路径：store/modules/moduleA.js
+// Submodule moduleA path: store/modules/moduleA.js
 export default {
 	state: {
 		text:"我是moduleA模块下state.text的值"
@@ -1588,3 +1596,4 @@ export default {
 ```
 
 vue是单向数据流，子组件不能直接修改父组件的数据，而通过vuex状态管理实现：把组件的共享状态抽取出来，以一个全局单例模式管理。在这种模式下，我们的组件树构成了一个巨大的“视图”，不管在树的哪个位置，任何组件都能获取状态或者触发行为！
+Vue is a one-way data flow. Subcomponents cannot directly modify the data of parent components, but are implemented through vuex state management: the shared state of components is extracted and managed in a global singleton mode. In this mode, our component tree forms one giant "view", and any component can get state or trigger actions, no matter where it is in the tree!

@@ -2101,6 +2101,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
+    The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
 - `debugger` 
     * 调用任何可用的调试功能，例如设置断点。 如果没有调试功能可用，则此语句不起作用。
     * Call any available debugging functions, such as setting breakpoints. This statement has no effect if no debugging functionality is available.
@@ -2130,6 +2131,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     * Creates a loop consisting of three optional expressions enclosed in parentheses, separated by semicolons, followed by a statement to execute in the loop (usually a block statement ).
 - `function` 
     * 声明定义一个具有指定参数的函数。
+    The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
@@ -2325,42 +2327,57 @@ The has() method returns a boolean value indicating whether the corresponding va
 ## Learning materials
 
 ### JavaScript 开发者快速上手 uts
+### JavaScript developers quickly get started with uts
 
 JavaScript 是一门非常灵活的编程语言：
+JavaScript is a very flexible programming language:
 
 - 没有类型约束，一个变量可能初始化时是字符串，然后又被赋值为数字。
+- Without type constraints, a variable may be initialized as a string and then assigned as a number.
 - 因为隐式类型转换的存在，使得变量的类型很难在运行前就确定。
+- Because of the existence of implicit type conversion, it is difficult to determine the type of the variable before running.
 - 基于原型的面向对象编程，原型上的属性或方法可以在运行时被修改。
+- Object-oriented programming based on prototype, properties or methods on the prototype can be modified at runtime.
 
 这种灵活性，一方面使得 JavaScript 蓬勃发展，另一方面也让它的代码质量参差不齐，维护成本高。
+This flexibility, on the one hand, allows JavaScript to flourish, on the other hand, it also makes its code quality uneven and expensive to maintain.
 
 而 uts 的类型系统，可以在很大程度上弥补 JavaScript 的缺点。
+The type system of uts can largely make up for the shortcomings of JavaScript.
 
 **uts 是静态类型**
+**uts is a static type**
 
 类型系统按照「类型检查的时机」来分类，可以分为动态类型和静态类型。
+The type system is classified according to the "timing of type checking", which can be divided into dynamic type and static type.
 
 动态类型是指在运行时才会进行类型检查，这种语言的类型错误往往会导致运行时错误。JavaScript 是一门解释型语言，没有编译阶段，所以它是动态类型，以下这段代码在运行时才会报错：
+Dynamic typing means that type checking happens at runtime, and type errors in this language often lead to runtime errors. JavaScript is an interpreted language, there is no compilation phase, so it is dynamically typed, and the following code will report an error at runtime:
 
 ```js
 let foo = 1;
 foo.split(' ');
 // Uncaught TypeError: foo.split is not a function
 // 运行时会报错（foo.split 不是一个函数），造成线上 bug
+// An error will be reported at runtime (foo.split is not a function), causing an online bug
 ```
 
 静态类型是指编译阶段就能确定每个变量的类型，这种语言的类型错误往往会导致语法错误。uts 在编译阶段就会进行类型检查，所以 uts 是静态类型，这段 uts 代码在编译阶段就会报错了：
+Static typing means that the type of each variable can be determined at the compile stage, and type errors in this language often lead to syntax errors. uts will perform type checking during the compilation phase, so uts is a static type, and this uts code will report an error during the compilation phase:
 
 ```ts
 let foo = 1;
 foo.split(' ');
 // Property 'split' does not exist on type 'number'.
 // 编译时会报错（数字没有 split 方法），无法通过编译
+// An error will be reported when compiling (the number does not have a split method) and cannot be compiled
 ```
 
 大部分 JavaScript 代码只需要经过少量的修改，增加类型批注，就可以变成 uts 代码，这跟 ts 非常接近。
+Most JavaScript code can be turned into uts code with only a few modifications and type annotations, which is very close to ts.
 
 举例：
+Example:
 
 ```js
 function add(left, right) {
@@ -2369,6 +2386,7 @@ function add(left, right) {
 ```
 
 补充类型批注后，即可变成 uts 代码
+After adding type annotations, it can be turned into uts code
 
 ```ts
 function add(left: number, right: number): number {
@@ -2379,5 +2397,6 @@ function add(left: number, right: number): number {
 **hello uts**
 
 目前我们可以通过[开发uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-%E5%BC%80%E5%8F%91uts%E5%8E%9F%E7%94%9F%E6%8F%92%E4%BB%B6)来学习 uts。
+At present, we can develop uts plugin through [Development uts plugin](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-%E5%BC%80%E5%8F%91uts%E5%8E%9F %E7%94%9F%E6%8F%92%E4%BB%B6) to learn uts.
 
 

@@ -5,15 +5,22 @@
 **what is uts**
 
 uts，全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。
+uts, the full name of uni type script, is a cross-platform, high-performance, strongly typed modern programming language.
 
 它可以被编译为不同平台的编程语言，如：
+It can be compiled into programming languages for different platforms, such as:
 - web平台，编译为JavaScript
+- web platform, compiled to JavaScript
 - Android平台，编译为Kotlin
+- Android platform, compiled to Kotlin
 - iOS平台，编译Swift
+- iOS platform, compile Swift
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
+uts adopts the same syntax specification as ts and supports most ES6 APIs.
 
 本文是 uts 的基本语法介绍。如想了解 uni-app 下如何开发 uts插件，另见文档[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。
+This article is an introduction to the basic syntax of uts. If you want to know how to develop uts plug-ins under uni-app, see the document [https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin /uts-plugin.html).
 
 ## 快速入门
 ## Quick start
@@ -2095,6 +2102,7 @@ The has() method returns a boolean value indicating whether the corresponding va
 - `continue` 
     * 声明终止当前循环或标记循环的当前迭代中的语句执行，并在下一次迭代时继续执行循环。
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
+    The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
 - `debugger` 
     * 调用任何可用的调试功能，例如设置断点。 如果没有调试功能可用，则此语句不起作用。
     * Call any available debugging functions, such as setting breakpoints. This statement has no effect if no debugging functionality is available.
@@ -2124,6 +2132,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     * Creates a loop consisting of three optional expressions enclosed in parentheses, separated by semicolons, followed by a statement to execute in the loop (usually a block statement ).
 - `function` 
     * 声明定义一个具有指定参数的函数。
+    The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
 - `if` 
     * 当指定条件为真，if 语句会执行一段语句。如果条件为假，则执行另一段语句。

@@ -24,8 +24,7 @@ Since HBuilderX3.6.0, it supports to configure the application manifest file And
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/androidmanifest.png)
 
 根据应用需求编辑添加需要的内容，如下示例：
-Edit and add the required content according to the application requirements, as shown in the following example:
-```
+``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" 
   package="io.dcloud.nativeresouce">

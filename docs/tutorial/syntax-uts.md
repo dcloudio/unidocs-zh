@@ -140,19 +140,19 @@ const status = age >= 18 ? "adult" : "minor";
 
 ### 布尔值（Boolean）
 
-    有 2 个值分别是：true 和 false。
+有 2 个值分别是：true 和 false。
 
 ### 数字（Number）
 
-    整数或浮点数，例如： 42 或者 3.14159。
+整数或浮点数，例如： 42 或者 3.14159。
 
 ### 字符串（String）
 
-    字符串是一串表示文本值的字符序列，例如："hello" 。
+字符串是一串表示文本值的字符序列，例如："hello" 。
 
 ### null
 
-    一个表明 null 值的特殊关键字。
+一个表明 null 值的特殊关键字。
 
 ## 字面量
 
@@ -1404,6 +1404,7 @@ const shallowCopy = fruits.slice() // this is how to make a copy
 ```ts
 console.log(arr.0) // a syntax error
 ```
+
 
 ### Date
 

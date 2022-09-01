@@ -110,8 +110,7 @@ Select the `uni_modules` directory -- right click -- create a new plugin
 选择 **uts原生插件**
 Select **uts native plugin**
 
-![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2.jpg)
-![New Plugin 2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2.jpg)
+![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
 
 uts插件目录结构
 uts plugin directory structure

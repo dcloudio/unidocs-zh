@@ -40,7 +40,7 @@
   * [vue2 升 3 指南](/tutorial/migration-to-vue3.md)
   * [vue2 liter 3 guide](/tutorial/migration-to-vue3.md)
 * [ts/typescript 专题](/tutorial/typescript-subject.md)
-* [ts/typescript subject](/tutorial/typescript-subject.md)
+* [uts语法](syntax-uts.md)
 * 编译器（条件编译）
 * Compiler (conditional compilation)
   * [什么是编译器](/tutorial/compiler.md)
@@ -237,6 +237,4 @@
 * [国际化专题](/tutorial/i18n.md)
 * [Internationalization Topics](/tutorial/i18n.md)
 	* [国际化开发指南](/tutorial/i18n.md)
-	* [Internationalization Development Guide](/tutorial/i18n.md)
 	* [海外开发者使用指南](/tutorial/internationalization.md)
-	* [Overseas Developer User Guide](/tutorial/internationalization.md)

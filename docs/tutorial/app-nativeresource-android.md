@@ -77,7 +77,7 @@ Copy the Android native resource files to be added to the assets and res directo
 - android目录下不支持放java/kotlin源码文件，需要开发源码建议使用[UTS插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
 - java/kotlin source code files are not supported in the android directory. If you need to develop source code, it is recommended to use [UTS plugin](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html) or [uni native language plugin](https://nativesupport.dcloud.net.cn/NativePlugin/README)
 - assets、res目录中的资源不能通过uni API使用，需通过 Android 原生 API 访问，参考[Android应用资源概览](https://developer.android.google.cn/guide/topics/resources/providing-resources)。也就是在uni-app中，访问这些资源需要通过uts代码访问或编写uni原生语言插件。
-- The resources in the assets and res directories cannot be used through the uni API, and must be accessed through the Android native API. Please refer to [Android Application Resources Overview](https://developer.android.google.cn/guide/topics/resources/providing-resources ). That is, in uni-app, accessing these resources requires accessing or writing uni native language plugins through uts code.
+- The resources in the assets and res directories cannot be used through the uni API and must be accessed through the Android native API. Please refer to [Android Application Resources Overview](https://developer.android.google.cn/guide/topics/resources/providing-resources ). That is, in uni-app, accessing these resources requires accessing or writing uni native language plugins through uts code.
 
 
 ## 离线打包  

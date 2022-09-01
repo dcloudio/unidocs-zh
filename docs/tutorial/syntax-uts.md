@@ -2105,6 +2105,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
+    The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
 - `debugger` 
     * 调用任何可用的调试功能，例如设置断点。 如果没有调试功能可用，则此语句不起作用。
     * Call any available debugging functions, such as setting breakpoints. This statement has no effect if no debugging functionality is available.
@@ -2134,6 +2135,7 @@ The has() method returns a boolean value indicating whether the corresponding va
     * Creates a loop consisting of three optional expressions enclosed in parentheses, separated by semicolons, followed by a statement to execute in the loop (usually a block statement ).
 - `function` 
     * 声明定义一个具有指定参数的函数。
+    The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
@@ -2386,6 +2388,7 @@ Example:
 
 ```js
 // js 求和两个数字
+// js sums two numbers
 function add(left, right) {
     return left + right;
 }
@@ -2396,6 +2399,7 @@ After adding type annotations, it can be turned into uts code
 
 ```ts
 // uts 求和
+// uts sum
 function add(left: number, right: number): number {
     return left + right;
 }

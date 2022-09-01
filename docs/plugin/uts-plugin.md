@@ -292,6 +292,7 @@ In the next section, we will introduce the use of plug-ins. You can use the getB
 注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
 Note: HBuilderX's code prompt system supports prompting Android's native API in the uts file.
 
+
 ## 4 前端使用插件
 ## 4 Front-end using plugins
 
@@ -370,11 +371,7 @@ Remaining matters will be upgraded and improved later.
 正常支持云端打包。
 Cloud packaging is normally supported.
 
-**注意**
-**Notice**
-
-虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
-Although uts supports hot flashing when the real machine is running, after packaging, uts is compiled into pure native binary code and does not support wgt hot update.
+注意：虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
 
 ## Android内置库@iodcloudutsandroid
 ## Android built-in library @iodcunutsandroid
@@ -446,33 +443,42 @@ Fired when the container's host activity rolls back the physical button click
 ## 常见问题
 ## common problem
 
-### 使用uts插件对 HBuilderX 的版本要求
+### 常见报错
 
-uts插件对 HBuilderX 的最低要求为3.6.0，在低于此版本的 HBuilderX 中使用uts插件，编译时将报错。
+- [plugin:vite:resolve] Failed toresolve entry for package "插件路径"
+	HBuilderX 的最低要求为3.6.0，低于此版本无法import uts插件，编译时将报错。
 
 ### Float类型传参
 ### Float type parameter
 
-android很多布局参数强制要求Float,但是ts中没有内置这种类型。可以使用下面的代码实现转换
-Float is mandatory for many layout parameters in android, but there is no built-in type of this type in ts. The conversion can be achieved using the following code
+android很多布局参数强制要求Float，但是ts中没有内置这种类型。可以使用下面的代码实现转换
 
-```
+```ts
 let textSize =  30.0.toFloat();
 ```
 
 ### 泛型参数
 ### Generic parameters
 
-android中UI相关的api,很多会要求泛型，目前uts支持用as关键字强转，满足类似的场景
-Many UI-related APIs in android will require generics. Currently, uts supports forced conversion with the as keyword to meet similar scenarios.
+android中UI相关的api，很多会要求泛型，目前uts支持用as关键字强转，满足类似的场景
 
-```
+```ts
 let frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
 ```
+
+## 路线图
+
+uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
+1. iOS相关功能
+2. debug
+3. UI操作能力
+
+最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
+
+那时，即便是最复杂的应用，比如微信，也可以使用uts来开发，毫无功能和性能的影响。
 
 
 ## 示例项目
 ## Example project
 
 DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。
-DCloud provides an example of Hello UTS, [see details](https://gitcode.net/dcloud/hello-uts).

@@ -33,7 +33,7 @@ export default {
     },
     resultsScreen: {
       resultsText: '${resultHits} related results',
-      noResultsText: '`No results were found for ${categoryText}`',
+      noResultsText: 'No results were found for ${categoryText}',
       askNoResultsText: 'The following is ${categoryText} related content'
     }
   }

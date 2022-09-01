@@ -39,7 +39,7 @@ export default {
     },
     resultsScreen: {
       resultsText: '${resultHits}个相关结果',
-      noResultsText: '`没有找到${categoryText}相关内容`',
+      noResultsText: '没有找到${categoryText}相关内容',
       askNoResultsText: '以下为${categoryText}相关内容'
     }
   }

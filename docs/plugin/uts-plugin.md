@@ -327,6 +327,10 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 ## 常见问题
 
+### 使用uts插件对 HBuilderX 的版本要求
+
+uts插件对 HBuilderX 的最低要求为3.6.0，在低于此版本的 HBuilderX 中使用uts插件，编译时将报错。
+
 ### Float类型传参
 
 android很多布局参数强制要求Float,但是ts中没有内置这种类型。可以使用下面的代码实现转换

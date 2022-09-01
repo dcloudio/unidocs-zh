@@ -100,9 +100,8 @@ uni.getLocation({
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 
 **注意**
-- 因平台差异，如果SDK配置百度地图，需要设置keyword，才能显示相关地点
-- `nvue` 下支持高德地图和Google地图(3.4+)，不支持百度地图
-- `HBuilderX 2.4.0+` 非 weex 编译模式仅支持高德地图
+- 因平台差异，如果SDK配置百度地图，需要设置 keyword，才能显示相关地点
+- [非 weex 编译模式](/collocation/manifest.html#app-plus)不支持百度地图
 
 
 **success 返回参数说明**

@@ -70,7 +70,7 @@ uts插件编译到app平台时，在功能上相当于uni-app之前的app原生�
 
 选择 **uts原生插件**
 
-![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2.jpg)
+![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
 
 uts插件目录结构
 

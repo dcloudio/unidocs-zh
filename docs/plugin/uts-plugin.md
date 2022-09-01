@@ -211,6 +211,7 @@ export function getBatteryCapacity(): string {
 
 注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
 
+
 ## 4 前端使用插件
 
 虽然uts插件由uts语法开发，但前端引用插件并不要求一定需要ts，普通js即可引用uts插件。
@@ -266,9 +267,7 @@ getBatteryCapacity()
 
 正常支持云端打包。
 
-**注意**
-
-虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
+注意：虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
 
 ## Android内置库@iodcloudutsandroid
 
@@ -327,25 +326,37 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 ## 常见问题
 
-### 使用uts插件对 HBuilderX 的版本要求
+### 常见报错
 
-uts插件对 HBuilderX 的最低要求为3.6.0，在低于此版本的 HBuilderX 中使用uts插件，编译时将报错。
+- [plugin:vite:resolve] Failed toresolve entry for package "插件路径"
+	HBuilderX 的最低要求为3.6.0，低于此版本无法import uts插件，编译时将报错。
 
 ### Float类型传参
 
-android很多布局参数强制要求Float,但是ts中没有内置这种类型。可以使用下面的代码实现转换
+android很多布局参数强制要求Float，但是ts中没有内置这种类型。可以使用下面的代码实现转换
 
-```
+```ts
 let textSize =  30.0.toFloat();
 ```
 
 ### 泛型参数
 
-android中UI相关的api,很多会要求泛型，目前uts支持用as关键字强转，满足类似的场景
+android中UI相关的api，很多会要求泛型，目前uts支持用as关键字强转，满足类似的场景
 
-```
+```ts
 let frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
 ```
+
+## 路线图
+
+uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
+1. iOS相关功能
+2. debug
+3. UI操作能力
+
+最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
+
+那时，即便是最复杂的应用，比如微信，也可以使用uts来开发，毫无功能和性能的影响。
 
 
 ## 示例项目

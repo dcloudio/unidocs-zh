@@ -45,7 +45,7 @@ HBuilderX3.6.0起，支持直接在应用项目中配置应用清单文件 Andro
 
 ## 应用资源  
 
-HBuilderX中对项目右键菜单 "新建" -> "目录"
+HBuilderX中对项目右键菜单 "新建" -> "目录"  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/newdir.png)
 
 输入名称 `nativeResouces`（注意大小写敏感），确定并创建目录。

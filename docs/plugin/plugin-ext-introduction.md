@@ -13,3 +13,4 @@ DCloud的插件市场还提供了优秀作者及热门插件排行榜，欢迎�
 DCloud's plug-in market also provides excellent authors and popular plug-in rankings. You are welcome to objectively evaluate the plug-ins you have used, help authors improve plug-ins, and jointly create a positive plug-in market.
 
 除了排行榜这种荣誉激励，DCloud还支持对uniCloud插件、原生插件设置付费销售，帮助插件作者进行技术变现。
+In addition to the honorary incentives such as leaderboards, DCloud also supports paid sales for uniCloud plug-ins and native plug-ins to help plug-in authors realize technical monetization.

@@ -32,8 +32,11 @@ uni-app has built-in `weex`, and `weex` native plugins or ui libraries can be us
 The H5 side of `uni-app` supports all browser APIs. But as we all know, because the js of the applet does not run in the browser, the HTML and DOM APIs are not supported in the applet.
 
 `uni-app`的App端虽然和小程序是相同的架构，逻辑层也运行在独立`jscore`而不是浏览器里，但App端和小程序还是有区别的：
+Although the App side of `uni-app` has the same architecture as the MiniApp, and the logic layer also runs in the independent `jscore` instead of the browser, there are still differences between the App side and the MiniApp:
   * 一方面可通过web-view组件加载HTML，引入web相关库；
+  * On the one hand, HTML can be loaded through the web-view component, and web-related libraries can be introduced;
   * 另一方面可通过[renderjs](/tutorial/renderjs.html)实现在渲染层执行js，此时完整`echart`、`threejs`等web库均可使用。
+  * On the other hand, it is possible to execute js in the rendering layer through [renderjs](/tutorial/renderjs.html). At this time, complete web libraries such as `echart` and `threejs` can be used.
 （但为了全端使用，仍然建议减少对dom库的依赖，在`uni-app`的插件市场可寻找全端兼容的库来替代）
 (But for full-end use, it is still recommended to reduce the dependence on the dom library. In the plugin market of `uni-app`, you can find a full-end compatible library instead)
 
@@ -44,8 +47,11 @@ The H5 side of `uni-app` supports all browser APIs. But as we all know, because 
 2. 支持 比小程序能力更多的[plus JSAPI](http://www.html5plus.org/doc/h5p.html)
 2. Support [plus JSAPI] (http://www.html5plus.org/doc/h5p.html) more capable than applet
 3. 支持 [Native.js](https://ask.dcloud.net.cn/docs/#//ask.dcloud.net.cn/article/88) 直接调用原生api
+3. Support [Native.js](https://ask.dcloud.net.cn/docs/#//ask.dcloud.net.cn/article/88) to directly call native api
 4. 支持 [uts插件](uts-plugin.md)
+4. Support [uts plugin](uts-plugin.md)
 5. 支持 [原生语言插件](native-plugin.md)
+5. Support [Native Language Plugin](native-plugin.md)
 
 
 - App端支持双渲染引擎

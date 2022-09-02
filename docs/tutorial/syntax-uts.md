@@ -1285,26 +1285,31 @@ test.test()
 
 #### debug
 在控制台打印 debug 日志
+print debug log in console
 ```ts
 console.debug(msg1, msg2, msg3)
 ```
 #### error
 在控制台打印 error 日志
+print error log in console
 ```ts
 console.error(msg1, msg2, msg3)
 ```
 #### info
 在控制台打印 info 日志
+print info log in console
 ```ts
 console.info(msg1, msg2, msg3)
 ```
 #### log
 在控制台打印 log 日志
+print log in console
 ```ts
 console.log(msg1, msg2, msg3)
 ```
 #### warn
 在控制台打印 warn 日志
+print warn log in console
 ```ts
 console.warn(msg1, msg2, msg3)
 ```
@@ -2101,9 +2106,11 @@ The has() method returns a boolean value indicating whether the corresponding va
 
 
 ### 定时器
+### Timer
 
 #### setTimeout
 设定一个定时器。在定时到期以后执行注册的回调函数
+Set a timer. Execute the registered callback function after the timer expires
 ```ts
 setTimeout(() => {
   console.log("Delayed for 1 second.")
@@ -2111,6 +2118,7 @@ setTimeout(() => {
 ```
 #### clearTimeout
 取消由 setTimeout 设置的定时器。
+Cancels the timer set by setTimeout.
 ```ts
 const timer = setTimeout(() => {
   console.log("Delayed for 1 second.")
@@ -2119,6 +2127,7 @@ clearTimeout(timer)
 ```
 #### setInterval
 设定一个定时器。按照指定的周期（以毫秒计）来执行注册的回调函数
+Set a timer. Execute the registered callback function according to the specified period (in milliseconds)
 ```ts
 setInterval(() => {
   console.log(Date.now())
@@ -2126,6 +2135,7 @@ setInterval(() => {
 ```
 #### clearInterval
 取消由 setInterval 设置的定时器。
+Cancels the timer set by setInterval.
 ```ts
 const timer = setInterval(() => {
   console.log(Date.now())
@@ -2168,6 +2178,7 @@ clearInterval(timer)
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
     The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
+    The * statement terminates the execution of statements in the current loop or marks the current iteration of the loop, and continues execution of the loop on the next iteration.
 - `debugger` 
     * 调用任何可用的调试功能，例如设置断点。 如果没有调试功能可用，则此语句不起作用。
     * Call any available debugging functions, such as setting breakpoints. This statement has no effect if no debugging functionality is available.
@@ -2197,6 +2208,7 @@ clearInterval(timer)
     * Creates a loop consisting of three optional expressions enclosed in parentheses, separated by semicolons, followed by a statement to execute in the loop (usually a block statement ).
 - `function` 
     * 声明定义一个具有指定参数的函数。
+    The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.
     The * declaration defines a function with the specified parameters.

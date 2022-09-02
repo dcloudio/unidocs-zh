@@ -177,7 +177,9 @@ Path: `/uni_modules/uni-id-pages/config.js`
 |agreements	|Array	|隐私政策[详情](#agreements)						|
 |agreements |Array |Privacy Policy [details](#agreements) |
 |appid		|Object	|接入各类服务（如微信登录服务）的应用id[详情](#appid)	|
+|appid |Object |Application id for accessing various services (such as WeChat login service)[Details](#appid) |
 |passwordStrength	|Object	|密码配置	[详情](#strength)	|
+|passwordStrength |Object |Password Configuration [Details](#strength) |
 
 
 完整示例：
@@ -338,12 +340,18 @@ Recommended use: HBuilderX editor, edit the "Privacy Policy and User Agreement" 
 #### Password Strength @strength
 
 |字段		|类型	|描述														|
+|Field |Type |Description |
 |--			|--		|--															|
 |为空或false| -		|不验证密码强度												|
+|null or false| - |Do not verify password strength |
 |super		|String	|超强：密码必须包含大小写字母、数字和特殊符号，长度范围：8-16位之间	|
+|super |String |Super strong: The password must contain uppercase and lowercase letters, numbers and special symbols, the length range: between 8-16 characters |
 |strong		|String	|强: 密密码必须包含字母、数字和特殊符号，长度范围：8-16位之间		|
+|strong |String |Strong: The password must contain letters, numbers and special symbols, the length range: between 8-16 characters |
 |medium		|String	|中：密码必须为字母、数字和特殊符号任意两种的组合，长度范围：8-16位之间|
+|medium |String |In: The password must be any combination of letters, numbers and special symbols, the length range: between 8-16 digits|
 |weak		|String	|弱：密码必须包含字母和数字，长度范围：6-16位之间					|
+|weak |String |Weak: Password must contain letters and numbers, length range: between 6-16 characters |
 
 ## 页面介绍
 ## page introduction

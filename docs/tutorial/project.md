@@ -67,4 +67,6 @@ A uni-app project contains the following directories and files by default:
 |mp-lark|飞书小程序|
 |mp-lark|Feishu Mini Program|
 |mp-kuaishou|快手小程序|
+|mp- Kuaishou |Kaishou MiniApp|
 |mp-jd|京东小程序|
+|mp-jd|JD MiniApp|

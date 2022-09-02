@@ -29,6 +29,7 @@ For details on uts syntax, see also [uts syntax introduction](../tutorial/syntax
 ### What is uts plugin
 
 现有的uni-app，仍以js引擎为主。但从HBuilderX 3.6.0开始，uni-app支持uts插件（暂时仅支持vue3编译器，后续补充vue2）。
+The existing uni-app is still dominated by the js engine. But starting from HBuilderX 3.6.0, uni-app supports the uts plugin (for the time being, only the vue3 compiler is supported, and vue2 will be added later).
 
 也就是uts的第一步不是完整开发一个独立的app，而是作为uni-app的插件。后续uts会持续迭代，达到完整开发app的水平。
 That is, the first step of uts is not to develop a complete independent app, but as a plug-in for uni-app. Subsequent uts will continue to iterate to reach the level of complete app development.
@@ -79,15 +80,23 @@ Equivalent to native language plugins, the advantages of uts plugins:
 4. The front-end and native under uts can be jointly debugged in HBuilderX. However, traditional native language plug-ins need to switch between multiple development tools, and the joint debugging is complicated.
 
 但当前的uts插件的完善度还没有达到原生语言插件的水平，虽然会陆续升级解决，但明示如下：
+However, the completeness of the current uts plug-in has not yet reached the level of the native language plug-in. Although it will be upgraded one after another, it is clearly stated as follows:
 1. uts插件只支持vue3编译器，还不支持vue2
+1. The uts plugin only supports the vue3 compiler, not vue2
 2. uts插件还不支持iOS
+2. The uts plugin does not support iOS yet
 3. uts插件无法封装nvue页面组件
+3. uts plugin cannot encapsulate nvue page components
 4. uts插件还无法在插件市场计费销售
+4. The uts plug-in cannot be billed and sold in the plug-in market
 
 ### uts插件和Native.js的区别
+### Difference between uts plugin and Native.js
 
 - [Native.js](../tutorial/native-js.md)运行在js上，通过反射调用os api。功能和性能都不及真正的原生
+- [Native.js](../tutorial/native-js.md) runs on js and calls os api through reflection. Features and performance are not as good as true native
 - uts在app上不运行在js引擎里，是真正的原生。
+- uts does not run in the js engine on the app, it is truly native.
 
 
 ## 2 创建uts插件
@@ -121,6 +130,7 @@ Select the `uni_modules` directory -- right click -- create a new plugin
 Select **uts native plugin**
 
 ![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
+![New Plugin 2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
 
 uts插件目录结构
 uts plugin directory structure
@@ -351,8 +361,10 @@ getBatteryCapacity()
 ```
 
 关于电量这个插件，插件市场已经提供好了现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+Regarding the plug-in of electricity, the plug-in market has already provided ready-made plug-ins. In addition to Android, it also supports web and MiniApp, which can be downloaded and experienced. [See details](https://ext.dcloud.net.cn/plugin?id=9295)
 
 更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
+For more development examples, you can refer to [HelloUTS](https://gitcode.net/dcloud/hello-uts).
 
 ## 5 真机运行
 ## 5 Real machine running
@@ -386,6 +398,7 @@ Remaining matters will be upgraded and improved later.
 Cloud packaging is normally supported.
 
 注意：虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
+Note: Although uts supports hot flashing when the real machine is running, after packaging, uts is compiled into pure native binary code and does not support wgt hot update.
 
 ## Android内置库@iodcloudutsandroid
 ## Android built-in library @iodcunutsandroid
@@ -400,12 +413,15 @@ import { getAppContext } from "io.dcloud.uts.android";
 ### getAppContext
 
 获取当前应用Application上下文，对应android平台 Context.getApplicationContext 函数实现
+Get the application context of the current application, corresponding to the android platform Context.getApplicationContext function implementation
 
 Android开发场景中，调用应用级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档]()
+In Android development scenarios, this context is required to invoke application-level resources/capabilities. For more usage, refer to [Android official documentation]()
 
 
 ```ts
 // [示例]获取asset下的音频，并且播放
+// [Example] Get the audio under the asset and play it
 let assetManager = getAppContext()!.getAssets();
 let afd = assetManager.openFd("free.mp3");
 let mediaPlayer = new MediaPlayer();
@@ -417,22 +433,28 @@ mediaPlayer.start();
 ### getUniActivity
 
 获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
+Get the activity instance to which the current plugin belongs, corresponding to the android platform getActivity function implementation
 
 Android开发场景中，调用活动的级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档]()
+In Android development scenarios, this context is required to invoke resources/capabilities at the activity level. For more usage, refer to [Android official documentation]()
 
 ```ts
 // [示例]获取当前activity顶层容器
+// [Example] Get the current activity top-level container
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 
 ### getResourcePath(resourceName:String)
 
 获取指定插件资源 的运行期绝对路径
+Get the runtime absolute path of the specified plugin resource
 
  
 ```ts
 // [示例]获取指定资源路径
+// [Example] Get the specified resource path
 // 得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
+// Get the file runtime path: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
 getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 ```
@@ -491,17 +513,23 @@ onAppActivityBack(() => {
 ## common problem
 
 ### 常见报错
+### Common errors
 
 - [plugin:vite:resolve] Failed toresolve entry for package "插件路径"
+- [plugin:vite:resolve] Failed toresolve entry for package "plugin path"
 	HBuilderX 的最低要求为3.6.0，低于此版本无法import uts插件，编译时将报错。
+	The minimum requirement of HBuilderX is 3.6.0. The uts plugin cannot be imported below this version, and an error will be reported when compiling.
 
 - 文件查找失败：'uts插件路径'
+- file lookup failed: 'uts plugin path'
     目前暂未支持 vue2，vue2 的uni-app项目无法import uts插件，编译时将报错。
+    Currently, vue2 is not supported. The uni-app project of vue2 cannot import the uts plugin, and an error will be reported when compiling.
 
 ### Float类型传参
 ### Float type parameter
 
 android很多布局参数强制要求Float，但是ts中没有内置这种类型。可以使用下面的代码实现转换
+Float is mandatory for many layout parameters in android, but there is no built-in type of this type in ts. The conversion can be achieved using the following code
 
 ```ts
 let textSize =  30.0.toFloat();
@@ -511,6 +539,7 @@ let textSize =  30.0.toFloat();
 ### Generic parameters
 
 android中UI相关的api，很多会要求泛型，目前uts支持用as关键字强转，满足类似的场景
+Many UI-related APIs in android will require generics. Currently, uts supports forced conversion with the as keyword to meet similar scenarios.
 
 ```ts
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
@@ -518,22 +547,32 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 ```
 
 ## 路线图
+## route map
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
+uts is a grand project, and the product will be released in stages. To be released in the near future:
 1. 支持vue2编译器
+1. Support vue2 compiler
 2. iOS相关功能
+2. iOS related functions
 3. debug
 4. UI操作能力
+4. UI operation ability
 5. 插件市场支持uts插件的加密和计费销售
+5. The plug-in market supports encryption and billing sales of uts plug-ins
 
 最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
+Ultimately, uts is no longer a plugin for uni-app, but the body of the app. (Now it is mainly js, uts exists as a plug-in, and the main engine is still in v8 or jscore)
 
 那时，即便是最复杂的应用，比如微信，也可以使用uts来开发，毫无功能和性能的影响。
+At that time, even the most complex applications, such as WeChat, could be developed using uts without any functional or performance impact.
 
 
 ## 示例项目
 ## Example project
 
 DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。
+DCloud provides an example of Hello UTS, [see details](https://gitcode.net/dcloud/hello-uts).
 
 插件市场提供了一个跨Android、web、微信小程序的电量获取封装插件，[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+The plug-in market provides a power acquisition package plug-in across Android, web, and WeChat MiniApp, [see details](https://ext.dcloud.net.cn/plugin?id=9295)

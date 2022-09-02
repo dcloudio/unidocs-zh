@@ -24,6 +24,7 @@ Since HBuilderX3.6.0, it supports to configure the application manifest file And
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/androidmanifest.png)
 
 根据应用需求编辑添加需要的内容，如下示例：
+Edit and add the required content according to the application requirements, as shown in the following example:
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" 
@@ -44,10 +45,15 @@ Since HBuilderX3.6.0, it supports to configure the application manifest file And
 - 清单文件必须符合标准的xml格式  
 - Manifest file must conform to standard xml format
 - 清单文件必须符合Android系统规范，详情参考[Google官方AndroidManifest.xml文档](https://developer.android.google.cn/guide/topics/manifest/manifest-intro)  
+- The manifest file must conform to the Android system specification. For details, please refer to [Google's official AndroidManifest.xml document](https://developer.android.google.cn/guide/topics/manifest/manifest-intro)
 	* 根节点必须是manifest  
+	* The root node must be manifest
 	* 根节点必须添加示例中的XML命名空间 xmlns:android 和 xmlns:tools  
+	* The root node must add the XML namespaces xmlns:android and xmlns:tools in the example
 	* 根节点必须配置 package 属性，且属性值不能为空，属性值建议使用云端打包时配置的Android包名  
+	* The root node must be configured with the package attribute, and the attribute value cannot be empty. It is recommended to use the Android package name configured during cloud packaging for the attribute value.
 - AndroidManifest.xml的内容，和manifest.json的内容应避免冲突，即不配置manifest中已经配置过的内容。云端打包时应用清单文件会合并，出现冲突错误时请根据打包日志进行排查
+- The content of AndroidManifest.xml and the content of manifest.json should avoid conflicts, that is, the content that has been configured in the manifest should not be configured. The application manifest files will be merged during cloud packaging. If there is a conflict error, please check according to the packaging log.
 
 
 
@@ -64,12 +70,16 @@ Enter the name `nativeResouces` (note that it is case sensitive), identify and c
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/directory.png)
 
 将需要添加的Android原生资源文件分别拷贝到assets、res目录，云端打包时将会合并到安装包中。
+Copy the Android native resource files to be added to the assets and res directories respectively, and they will be merged into the installation package when packaged in the cloud.
 
 **注意**
 **Notice**
 - android目录下不支持放java/kotlin源码文件，需要开发源码建议使用[UTS插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
+- java/kotlin source code files are not supported in the android directory. If you need to develop source code, it is recommended to use [UTS plugin](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html) or [uni native language plugin](https://nativesupport.dcloud.net.cn/NativePlugin/README)
 - assets、res目录中的资源不能通过uni API使用，需通过 Android 原生 API 访问，参考[Android应用资源概览](https://developer.android.google.cn/guide/topics/resources/providing-resources)。也就是在uni-app中，访问这些资源需要通过uts代码访问或编写[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
+- The resources in the assets and res directories cannot be used through the uni API and must be accessed through the Android native API. Please refer to [Android Application Resources Overview](https://developer.android.google.cn/guide/topics/resources/providing-resources ). That is, in uni-app, accessing these resources requires accessing or writing [uni native language plugin] through uts code (https://nativesupport.dcloud.net.cn/NativePlugin/README)
 - assets目录中已经保留使用以下文件，需注意避免冲突
+- The following files have been reserved in the assets directory, and care should be taken to avoid conflicts
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─apps                          //应用资源目录

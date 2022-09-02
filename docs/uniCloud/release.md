@@ -3,8 +3,11 @@ Note: This changelog is only for uniCloud, including the uniCloud web console an
 
 #### 2022-09-01
   + 调整 本地调试插件 云对象运行参数配置文件改为 ${objectName}.param.js [详情](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#run-obj-param)
+  + Adjust the local debugging plugin cloud object running parameter configuration file to ${objectName}.param.js [Details](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#run-obj-param)
   + 修复 本地调试插件 HBuilderX 3.5.5 版本引出的使用 push 扩展库导致其他云函数不能正常运行的Bug
+  + Fixed the bug that the use of push extension library caused by the local debugging plugin HBuilderX 3.5.5 caused other cloud functions to fail to run normally
   + 修复 本地调试插件 HBuilderX 3.5.5 版本引出的连接本地云函数时偶发 `SIGN_PARAM_INVALID` 错误
+  + Fixed the occasional `SIGN_PARAM_INVALID` error when connecting to a local cloud function caused by the local debugging plugin HBuilderX 3.5.5
 
 #### 2022-08-25
   + 优化 阿里云 数据库超时时间由3秒调整为5秒

@@ -1,6 +1,11 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 Note: This changelog is only for uniCloud, including the uniCloud web console and the uniCloud cloud operating environment. These updates do not follow HBuilderX release updates.
 
+#### 2022-09-01
+  + 调整 本地调试插件 云对象运行参数配置文件改为 ${objectName}.param.js [详情](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#run-obj-param)
+  + 修复 本地调试插件 HBuilderX 3.5.5 版本引出的使用 push 扩展库导致其他云函数不能正常运行的Bug
+  + 修复 本地调试插件 HBuilderX 3.5.5 版本引出的连接本地云函数时偶发 `SIGN_PARAM_INVALID` 错误
+
 #### 2022-08-25
   + 优化 阿里云 数据库超时时间由3秒调整为5秒
   + Optimized Alibaba Cloud database timeout time from 3 seconds to 5 seconds

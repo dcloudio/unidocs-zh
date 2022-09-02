@@ -60,7 +60,7 @@ Edit and add the required content according to the application requirements, as 
 ## 应用资源  
 ## Application resources
 
-HBuilderX中对项目右键菜单 "新建" -> "目录"
+HBuilderX中对项目右键菜单 "新建" -> "目录"  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/newdir.png)
 
 输入名称 `nativeResouces`（注意大小写敏感），确定并创建目录。

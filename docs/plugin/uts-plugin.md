@@ -100,22 +100,22 @@ package.json的完整文档[详见](uni_modules.md#package.json)
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-uni_modules插件标识  
-  - utssdk
-  	+ app-android //Android平台目录
-  	  * index.uts
-  	  * config.json //Android原生配置
-  	+ app-ios //ios平台目录
-  	  * index.uts
-  	  * config.json //ios原生配置
-  	+ web //web平台目录
-	  * index.uts
-  	+ mp-xxx  // 其他平台，待实现
-  - common // 可跨端公用的uts代码。推荐，不强制
-  - static // 静态资源
-  - package.json
-  - index.d.ts  // 插件能力声明，非必需
-  - index.uts   // 插件能力实现
+┌─utssdk
+│	├─app-android //Android平台目录
+│	│ └─index.uts
+│	│ └─config.json //Android原生配置
+│	├─app-ios //ios平台目录
+│	│ └─index.uts
+│	│ └─config.json //ios原生配置
+│	├─web //web平台目录
+│	│ └─index.uts
+│	└─mp-xxx  // 其他平台，待实现
+├─common // 可跨端公用的uts代码。推荐，不强制
+├─static // 静态资源
+├─package.json
+├─index.d.ts  // 插件能力声明，非必需
+└─index.uts   // 插件能力实现
+
 </code>
 </pre>
 

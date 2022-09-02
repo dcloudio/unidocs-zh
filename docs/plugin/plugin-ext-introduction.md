@@ -10,30 +10,41 @@ The DCloud plugin market divides plugins into 7 categories and more than 20 subc
 <table>
 <tr>
 	    <td>插件市场</td>
+	    <td>Plugin Market</td>
 	    <td>一级分类</td>
+	    <td>First-level classification</td>
 	    <td>二级分类</td>
+	    <td>Secondary classification</td>
 	</tr>
 	<tr>
 	    <td rowspan="20">DCloud市场</td>
+	    <td rowspan="20">DCloud Market</td>
 	    <td rowspan="4">前端组件</td>
+	    <td rowspan="4">Front-end components</td>
 	    <td>通用组件</td>
+	    <td>Common Components</td>
 	</tr>
 	<tr>
     <td>nvue组件</td>
+    <td>nvue components</td>
   </tr>
 	<tr>
     <td>小程序组件</td>
+    <td> MiniApp Components</td>
   </tr>
 	<tr>
     <td >DataCom组件</td>
+    <td>DataCom Components</td>
   </tr>
   <!-- ************ -->
   <tr>
 	    <td rowspan="3">JS SDK</td>
 	    <td>通用SDK</td>
+	    <td>Generic SDK</td>
 	</tr>
 	<tr>
     <td>微信小程序SDK</td>
+    <td>WeChat MiniApp SDK</td>
   </tr>
 	<tr>
     <td>Navive.js</td>
@@ -41,45 +52,60 @@ The DCloud plugin market divides plugins into 7 categories and more than 20 subc
   <!-- ************ -->
   <tr>
 	    <td>uts插件</td>
+	    <td>uts plugin</td>
 	    <td>uts插件</td>
+	    <td>uts plugin</td>
 	</tr>
   <!-- ************ -->
   <tr>
 	    <td rowspan="3">uni-app前端模板</td>
+	    <td rowspan="3">uni-app front-end template</td>
 	    <td>前端页面模板</td>
+	    <td>Front-end page template</td>
 	</tr>
 	<tr>
     <td>nvue页面模板</td>
+    <td>nvue page template</td>
   </tr>
 	<tr>
     <td>uni-app前端项目模板</td>
+    <td>uni-app front-end project template</td>
   </tr>
   <!-- ************ -->
   <tr>
 	    <td>App原生插件</td>
+	    <td>App Native Plugin</td>
 	    <td>App原生插件</td>
+	    <td>App Native Plugin</td>
 	</tr>
   <!-- ************ -->
   <tr>
 	    <td>web项目</td>
+	    <td>web project</td>
 	    <td>web项目模板</td>
+	    <td>web project template</td>
 	</tr>
   <!-- ************ -->
   <tr>
 	    <td rowspan="5">uniCloud</td>
 	    <td>云函数模板</td>
+	    <td>Cloud Function Template</td>
 	</tr>
   <tr>
     <td>云端一体页面模板</td>
+    <td>Cloud Integration Page Template</td>
   </tr>
   <tr>
     <td>云端一体项目模板</td>
+    <td>Cloud Integration Project Template</td>
   </tr>
   <tr>
     <td>Admin插件</td>
+    <td>Admin plugin</td>
   </tr>
   <tr>
     <td>DB Schema及验证函数</td>
+    <td>DB Schema and validation functions</td>
   </tr>
   <!-- ************ -->
   <tr>
@@ -88,6 +114,7 @@ The DCloud plugin market divides plugins into 7 categories and more than 20 subc
 	</tr>
   <tr>
     <td>语言包</td>
+    <td>Language Pack</td>
   </tr>
 </table>
 

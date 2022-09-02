@@ -202,11 +202,15 @@ Marker points are used to display the marker's location on the map
 |fontSize|Text Size|Number|App-nvue 2.1.5+, WeChat MiniApp, H5, Baidu MiniApp, Alipay MiniApp|
 |x|label的坐标，原点是 marker 对应的经纬度|Number|H5、百度小程序|
 The coordinates of |x|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu MiniApp|
+The coordinates of |x|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu MiniApp|
 |y|label的坐标，原点是 marker 对应的经纬度|Number|H5、百度小程序|
+The coordinates of |y|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu MiniApp|
 The coordinates of |y|label, the origin is the latitude and longitude corresponding to the marker|Number|H5, Baidu MiniApp|
 |anchorX|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
 The coordinates of |anchorX|label, the origin is the latitude and longitude corresponding to the marker|Number|App-nvue 2.1.5+, WeChat MiniApp|
+The coordinates of |anchorX|label, the origin is the latitude and longitude corresponding to the marker|Number|App-nvue 2.1.5+, WeChat MiniApp|
 |anchorY|label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
+The coordinates of |anchorY|label, the origin is the latitude and longitude corresponding to the marker|Number|App-nvue 2.1.5+, WeChat MiniApp|
 The coordinates of |anchorY|label, the origin is the latitude and longitude corresponding to the marker|Number|App-nvue 2.1.5+, WeChat MiniApp|
 |borderWidth|边框宽度|Number|微信小程序、百度小程序|
 |borderWidth|Border width|Number|WeChat MiniApp, Baidu MiniApp|

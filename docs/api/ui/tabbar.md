@@ -14,7 +14,7 @@
 |:-|:-|:-|:-|:-|:-|
 |index|number||是|tabBar 的哪一项，从左边算起||
 |text|String||否|tab 上的按钮文字||
-|iconPath|String||否|图片路径，icon 大小限制为 40kb，建议尺寸为 81px * 81px，当 position 为 top 时，此参数无效，不支持网络图片||
+|iconPath|String||否|图片路径，icon 大小限制为 40kb，建议尺寸为 81px * 81px，当 position 为 top 时，此参数无效。微信小程序 2.7.0+、支付宝小程序支持网络图片，其他平台暂不支持网络图片||
 |selectedIconPath|String||否|选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效||
 |pagePath|String||否|页面绝对路径，必须在 [pages](/collocation/pages?id=pages) 中先定义，被替换掉的 pagePath 不会变成普通页面（仍然需要使用 uni.switchTab 跳转）|App（2.8.4+）、H5（2.8.4+）|
 |visible|Boolean|true|否|该项是否显示|App（3.2.10+）、H5（3.2.10+）|

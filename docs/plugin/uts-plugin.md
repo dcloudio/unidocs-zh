@@ -144,24 +144,26 @@ Full documentation of package.json [see details](uni_modules.md#package.json)
 ### 插件的目录结构
 ### Plugin directory structure
 
-```md
-uni_modules插件标识  
-  - utssdk
-  	+ app-android //Android平台目录
-  	  * index.uts
-  	  * config.json //Android原生配置
-  	+ app-ios //ios平台目录
-  	  * index.uts
-  	  * config.json //ios原生配置
-  	+ web //web平台目录
-	  * index.uts
-  	+ mp-xxx  // 其他平台，待实现
-  - common // 可跨端公用的uts代码。推荐，不强制
-  - static // 静态资源
-  - package.json
-  - index.d.ts  // 插件能力声明，非必需
-  - index.uts   // 插件能力实现
-```
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+┌─utssdk
+│	├─app-android //Android平台目录
+│	│ └─index.uts
+│	│ └─config.json //Android原生配置
+│	├─app-ios //ios平台目录
+│	│ └─index.uts
+│	│ └─config.json //ios原生配置
+│	├─web //web平台目录
+│	│ └─index.uts
+│	└─mp-xxx  // 其他平台，待实现
+├─common // 可跨端公用的uts代码。推荐，不强制
+├─static // 静态资源
+├─package.json
+├─index.d.ts  // 插件能力声明，非必需
+└─index.uts   // 插件能力实现
+
+</code>
+</pre>
 
 
 index.uts文件是程序主入口。如果插件根目录下没有index.uts，则会在编译到不同平台时，寻找分平台的目录下的index.uts文件。

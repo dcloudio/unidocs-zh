@@ -312,10 +312,6 @@ let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 
 获取指定插件资源 的运行期绝对路径
 
-
-比如，插件A使用到了一张图片，开发期间 存放位置为`uni_modules/test-uts-static/static/logo.png`
-
-程序运行期间，需要获取到此资源，可以使用 
  
 ```ts
 // [示例]获取指定资源路径
@@ -325,22 +321,49 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 ```
 
 
-
 ### onAppActivityPause
 
 容器的宿主activity onPause时触发
+
+```ts
+onAppActivityPause(() => {
+    let eventName = "onAppActivityPause - " + Date.now();
+    console.log(eventName);
+});
+```
 
 ### onAppActivityResume
 
 容器的宿主activity onResume时触发
 
+```ts
+onAppActivityResume(() => {
+     let eventName = "onAppActivityResume - " + Date.now();
+     console.log(eventName);
+});
+```
+
 ### onAppActivityDestroy
 
 容器的宿主activity onDestroy时触发
 
+```ts
+onAppActivityDestroy(() => {
+     let eventName = "onAppActivityDestroy- " + Date.now();
+     console.log(eventName);
+});
+```
+
 ### onAppActivityBack
 
 容器的宿主activity 回退物理按键点击时触发
+
+```ts
+onAppActivityBack(() => {
+     let eventName = "onAppActivityBack- " + Date.now();
+     console.log(eventName);
+});
+```
 
 
 ## 常见问题

@@ -386,6 +386,9 @@ onAppActivityBack(() => {
 - [plugin:vite:resolve] Failed toresolve entry for package "插件路径"
 	HBuilderX 的最低要求为3.6.0，低于此版本无法import uts插件，编译时将报错。
 
+- 文件查找失败：'uts插件路径'
+    目前暂未支持 vue2，vue2 的uni-app项目无法import uts插件，编译时将报错。
+
 ### Float类型传参
 
 android很多布局参数强制要求Float，但是ts中没有内置这种类型。可以使用下面的代码实现转换

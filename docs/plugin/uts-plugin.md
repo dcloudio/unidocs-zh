@@ -146,6 +146,7 @@ Full documentation of package.json [see details](uni_modules.md#package.json)
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
+
 ┌─utssdk
 │	├─app-android //Android平台目录
 │	│ └─index.uts
@@ -155,7 +156,7 @@ Full documentation of package.json [see details](uni_modules.md#package.json)
 │	│ └─config.json //ios原生配置
 │	├─web //web平台目录
 │	│ └─index.uts
-│	└─mp-xxx  // 其他平台，待实现
+│	└─mp-xxx  // 其他平台
 ├─common // 可跨端公用的uts代码。推荐，不强制
 ├─static // 静态资源
 ├─package.json
@@ -387,27 +388,36 @@ import { getAppContext } from "io.dcloud.uts.android";
 
 ### getAppContext
 
-获取当前应用Application上下文，对应android平台上的application context
-Get the application context of the current application, corresponding to the application context on the android platform
+获取当前应用Application上下文，对应android平台 Context.getApplicationContext 函数实现
+
+Android开发场景中，调用应用级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档]()
+
+
 ```ts
-fun getAppContext():Context?
+// [示例]获取asset下的音频，并且播放
+let assetManager = getAppContext()!.getAssets();
+let afd = assetManager.openFd("free.mp3");
+let mediaPlayer = new MediaPlayer();
+mediaPlayer.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(), afd.getLength());
+mediaPlayer.prepare();
+mediaPlayer.start();
 ```
 
 ### getUniActivity
 
-获取当前应用宿主activity示例，当前 uni-app 应用实例的宿主activity
-Get the current application host activity example, the host activity of the current uni-app application instance
+获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
+
+Android开发场景中，调用活动的级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档]()
+
 ```ts
-fun getUniActivity():Context?
+// [示例]获取当前activity顶层容器
+let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 
 ### getResourcePath(resourceName:String)
 
 获取指定插件资源 的运行期绝对路径
-Get the runtime absolute path of the specified plugin resource
-```ts
-fun getResourcePath(resourceName:String):String
-```
+
 
 比如，插件A使用到了一张图片，开发期间 存放位置为`uni_modules/test-uts-static/static/logo.png`
 For example, plugin A uses an image, and the storage location during development is `uni_modules/test-uts-static/static/logo.png`
@@ -416,11 +426,13 @@ For example, plugin A uses an image, and the storage location during development
 During the running of the program, you need to obtain this resource, you can use
  
 ```ts
+// [示例]获取指定资源路径
+// 得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
 getResourcePath("uni_modules/test-uts-static/static/logo.png")
+
 ```
 
-得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
-Get the file runtime path: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
+
 
 ### onAppActivityPause
 
@@ -441,6 +453,7 @@ Triggered when the container's host activity is onDestroy
 
 容器的宿主activity 回退物理按键点击时触发
 Fired when the container's host activity rolls back the physical button click
+
 
 ## 常见问题
 ## common problem
@@ -465,7 +478,8 @@ let textSize =  30.0.toFloat();
 android中UI相关的api，很多会要求泛型，目前uts支持用as关键字强转，满足类似的场景
 
 ```ts
-let frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
+let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
+let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
 ```
 
 ## 路线图

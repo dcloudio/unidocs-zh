@@ -44,7 +44,7 @@ Conditional compilation is marked with special comments which are the basic of c
 |:-|:-|
 |VUE3|HBuilderX 3.2.0+ [详情](https://ask.dcloud.net.cn/article/37834)|
 |APP-PLUS|App|
-|APP-PLUS-NVUE或APP-NVUE|App nvue|
+|APP-PLUS-NVUE或APP-NVUE|App nvue 页面|
 |H5|H5|
 |MP-WEIXIN|微信小程序|
 |MP-WEIXIN|WeChat Mini Program|

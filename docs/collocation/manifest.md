@@ -359,14 +359,22 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` �
 	"sdkConfigs": {
 		// 使用地图或位置相关功能必须填写其一
 		"maps": {
-			"qqmap": {
-				// 腾讯地图秘钥 https://lbs.qq.com/dev/console/key/manage
-				"key": ""
-			},
-			"google": {
-				// 谷歌地图秘钥（HBuilderX 3.2.10+）https://developers.google.com/maps/documentation/javascript/get-api-key
-				"key": ""
-			}
+            "qqmap": {
+                // 腾讯地图秘钥 https://lbs.qq.com/dev/console/key/manage
+                "key": ""
+            },
+            "google": {
+                // 谷歌地图秘钥（HBuilderX 3.2.10+）https://developers.google.com/maps/documentation/javascript/get-api-key
+                "key": ""
+            },
+            "amap": {
+                // 谷歌地图秘钥（HBuilderX 3.6.0+）https://console.amap.com/dev/key/app
+                "key": "",
+                // 谷歌地图安全密钥（HBuilderX 3.6.0+）https://console.amap.com/dev/key/app
+                "securityJsCode": "",
+                // 谷歌地图安全密钥代理服务器地址（HBuilderX 3.6.0+）https://lbs.amap.com/api/jsapi-v2/guide/abc/prepare
+                "serviceHost": "",
+            }
 		}
 	}
 }

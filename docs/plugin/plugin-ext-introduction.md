@@ -4,7 +4,7 @@ DCloud有活跃的插件市场，[https://ext.dcloud.net.cn/](https://ext.dcloud
 
 DCloud插件市场将插件分为前端组件、JS SDK、uni-app前端模板、App原生插件、uniCloud等7大类、20多个子类，你可以根据需要进行筛选查询。
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/8799e39a-2b96-456a-a5c0-e3df99f8c78f.png)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/42e7ac52-2060-46d6-8712-72afdf272593.png)
 
 DCloud的插件市场还提供了优秀作者及热门插件排行榜，欢迎大家客观评价自己使用过的插件，帮助作者完善插件，共同创造正向的插件市场。
 

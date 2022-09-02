@@ -17,7 +17,7 @@ uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
 ### 什么是uts插件
 
-现有的uni-app，仍以js引擎为主。但从HBuilderX 3.6开始，uni-app支持uts插件。
+现有的uni-app，仍以js引擎为主。但从HBuilderX 3.6.0开始，uni-app支持uts插件（暂时仅支持vue3编译器，后续补充vue2）。
 
 也就是uts的第一步不是完整开发一个独立的app，而是作为uni-app的插件。后续uts会持续迭代，达到完整开发app的水平。
 
@@ -48,6 +48,17 @@ uts插件编译到app平台时，在功能上相当于uni-app之前的app原生�
 2. 统一了开发工具（HBuilderX），免除搭建复杂的原生开发环境。
 3. 插件封装中要理解的概念更少。 传统原生语言插件需要在js和原生层处理通信，使用各种特殊转换，使用特殊语法导入，注意事项很多。**uts统一为纯前端概念，简单清晰。**
 4. uts下前端和原生可以统一在HBuilderX中联调。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
+
+但当前的uts插件的完善度还没有达到原生语言插件的水平，虽然会陆续升级解决，但明示如下：
+1. uts插件只支持vue3编译器，还不支持vue2
+2. uts插件还不支持iOS
+3. uts插件无法封装nvue页面组件
+4. uts插件还无法在插件市场计费销售
+
+### uts插件和Native.js的区别
+
+- [Native.js](../tutorial/native-js.md)运行在js上，通过反射调用os api。功能和性能都不及真正的原生
+- uts在app上不运行在js引擎里，是真正的原生。
 
 
 ## 2 创建uts插件
@@ -100,6 +111,7 @@ package.json的完整文档[详见](uni_modules.md#package.json)
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
+
 ┌─utssdk
 │	├─app-android //Android平台目录
 │	│ └─index.uts
@@ -109,7 +121,7 @@ package.json的完整文档[详见](uni_modules.md#package.json)
 │	│ └─config.json //ios原生配置
 │	├─web //web平台目录
 │	│ └─index.uts
-│	└─mp-xxx  // 其他平台，待实现
+│	└─mp-xxx  // 其他平台
 ├─common // 可跨端公用的uts代码。推荐，不强制
 ├─static // 静态资源
 ├─package.json
@@ -247,7 +259,9 @@ import {
 getBatteryCapacity()
 ```
 
-更多示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
+关于电量这个插件，插件市场已经提供好了现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+
+更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
 
 ## 5 真机运行
 
@@ -281,50 +295,89 @@ import { getAppContext } from "io.dcloud.uts.android";
 
 ### getAppContext
 
-获取当前应用Application上下文，对应android平台上的application context
+获取当前应用Application上下文，对应android平台 Context.getApplicationContext 函数实现
+
+Android开发场景中，调用应用级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档]()
+
+
 ```ts
-fun getAppContext():Context?
+// [示例]获取asset下的音频，并且播放
+let assetManager = getAppContext()!.getAssets();
+let afd = assetManager.openFd("free.mp3");
+let mediaPlayer = new MediaPlayer();
+mediaPlayer.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(), afd.getLength());
+mediaPlayer.prepare();
+mediaPlayer.start();
 ```
 
 ### getUniActivity
 
-获取当前应用宿主activity示例，当前 uni-app 应用实例的宿主activity
+获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
+
+Android开发场景中，调用活动的级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档]()
+
 ```ts
-fun getUniActivity():Context?
+// [示例]获取当前activity顶层容器
+let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 
 ### getResourcePath(resourceName:String)
 
 获取指定插件资源 的运行期绝对路径
-```ts
-fun getResourcePath(resourceName:String):String
-```
 
-比如，插件A使用到了一张图片，开发期间 存放位置为`uni_modules/test-uts-static/static/logo.png`
-
-程序运行期间，需要获取到此资源，可以使用 
  
 ```ts
+// [示例]获取指定资源路径
+// 得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
 getResourcePath("uni_modules/test-uts-static/static/logo.png")
+
 ```
 
-得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
 
 ### onAppActivityPause
 
 容器的宿主activity onPause时触发
 
+```ts
+onAppActivityPause(() => {
+    let eventName = "onAppActivityPause - " + Date.now();
+    console.log(eventName);
+});
+```
+
 ### onAppActivityResume
 
 容器的宿主activity onResume时触发
+
+```ts
+onAppActivityResume(() => {
+     let eventName = "onAppActivityResume - " + Date.now();
+     console.log(eventName);
+});
+```
 
 ### onAppActivityDestroy
 
 容器的宿主activity onDestroy时触发
 
+```ts
+onAppActivityDestroy(() => {
+     let eventName = "onAppActivityDestroy- " + Date.now();
+     console.log(eventName);
+});
+```
+
 ### onAppActivityBack
 
 容器的宿主activity 回退物理按键点击时触发
+
+```ts
+onAppActivityBack(() => {
+     let eventName = "onAppActivityBack- " + Date.now();
+     console.log(eventName);
+});
+```
+
 
 ## 常见问题
 
@@ -332,6 +385,9 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 - [plugin:vite:resolve] Failed toresolve entry for package "插件路径"
 	HBuilderX 的最低要求为3.6.0，低于此版本无法import uts插件，编译时将报错。
+
+- 文件查找失败：'uts插件路径'
+    目前暂未支持 vue2，vue2 的uni-app项目无法import uts插件，编译时将报错。
 
 ### Float类型传参
 
@@ -346,16 +402,18 @@ let textSize =  30.0.toFloat();
 android中UI相关的api，很多会要求泛型，目前uts支持用as关键字强转，满足类似的场景
 
 ```ts
-let frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
+let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
+let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
 ```
 
 ## 路线图
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-1. iOS相关功能
-2. debug
-3. UI操作能力
-4. 插件市场支持uts插件的加密和计费销售
+1. 支持vue2编译器
+2. iOS相关功能
+3. debug
+4. UI操作能力
+5. 插件市场支持uts插件的加密和计费销售
 
 最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
 
@@ -365,3 +423,5 @@ uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
 ## 示例项目
 
 DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。
+
+插件市场提供了一个跨Android、web、微信小程序的电量获取封装插件，[详见](https://ext.dcloud.net.cn/plugin?id=9295)

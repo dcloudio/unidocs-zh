@@ -28,8 +28,7 @@ For details on uts syntax, see also [uts syntax introduction](../tutorial/syntax
 ### 什么是uts插件
 ### What is uts plugin
 
-现有的uni-app，仍以js引擎为主。但从HBuilderX 3.6开始，uni-app支持uts插件。
-The existing uni-app is still dominated by the js engine. But since HBuilderX 3.6, uni-app supports uts plugin.
+现有的uni-app，仍以js引擎为主。但从HBuilderX 3.6.0开始，uni-app支持uts插件（暂时仅支持vue3编译器，后续补充vue2）。
 
 也就是uts的第一步不是完整开发一个独立的app，而是作为uni-app的插件。后续uts会持续迭代，达到完整开发app的水平。
 That is, the first step of uts is not to develop a complete independent app, but as a plug-in for uni-app. Subsequent uts will continue to iterate to reach the level of complete app development.
@@ -78,6 +77,17 @@ Equivalent to native language plugins, the advantages of uts plugins:
 3. There are fewer concepts to understand in plugin packaging. Traditional native language plug-ins need to handle communication at the js and native layers, use various special transformations, import using special syntax, and have many precautions. **uts is unified as a pure front-end concept, simple and clear. **
 4. uts下前端和原生可以统一在HBuilderX中联调。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
 4. The front-end and native under uts can be jointly debugged in HBuilderX. However, traditional native language plug-ins need to switch between multiple development tools, and the joint debugging is complicated.
+
+但当前的uts插件的完善度还没有达到原生语言插件的水平，虽然会陆续升级解决，但明示如下：
+1. uts插件只支持vue3编译器，还不支持vue2
+2. uts插件还不支持iOS
+3. uts插件无法封装nvue页面组件
+4. uts插件还无法在插件市场计费销售
+
+### uts插件和Native.js的区别
+
+- [Native.js](../tutorial/native-js.md)运行在js上，通过反射调用os api。功能和性能都不及真正的原生
+- uts在app上不运行在js引擎里，是真正的原生。
 
 
 ## 2 创建uts插件
@@ -340,8 +350,9 @@ import {
 getBatteryCapacity()
 ```
 
-更多示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
-For more examples, you can refer to [HelloUTS](https://gitcode.net/dcloud/hello-uts).
+关于电量这个插件，插件市场已经提供好了现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+
+更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
 
 ## 5 真机运行
 ## 5 Real machine running
@@ -506,10 +517,11 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 ## 路线图
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-1. iOS相关功能
-2. debug
-3. UI操作能力
-4. 插件市场支持uts插件的加密和计费销售
+1. 支持vue2编译器
+2. iOS相关功能
+3. debug
+4. UI操作能力
+5. 插件市场支持uts插件的加密和计费销售
 
 最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
 
@@ -520,3 +532,5 @@ uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
 ## Example project
 
 DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。
+
+插件市场提供了一个跨Android、web、微信小程序的电量获取封装插件，[详见](https://ext.dcloud.net.cn/plugin?id=9295)

@@ -183,11 +183,7 @@ open-type 为 feedback时：
 When open-type is feedback:
 
 - 小程序中，开发者可以登录 [微信小程序管理后台](https://mp.weixin.qq.com/) 、[QQ小程序后台](https://q.qq.com/#/)后，进入菜单“客服反馈”页面获取反馈内容。
-MiniApp, developers can log in to the [WeChat MiniApp management background](https://mp.weixin.qq.com/), [QQ MiniApp background]( <a href="https://q.qq.com/#/)后，进入菜单“客服反馈”页面获取反馈内容。">https://q.qq.com/#/ ), enter the menu "Customer Service Feedback" page to get feedback content.</a>
-MiniApp, developers can log in to the [WeChat MiniApp management background](https://mp.weixin.qq.com/), [QQ MiniApp background]( <a href="https://q.qq.com/#/)后，进入菜单“客服反馈”页面获取反馈内容。">https://q.qq.com/#/ ), enter the menu "Customer Service Feedback" page to get feedback content.</a>
-MiniApp, developers can log in to the [WeChat MiniApp management background](https://mp.weixin.qq.com/), [QQ MiniApp background](https://q.qq.com/#/ ), enter the menu "Customer Service Feedback" page to get feedback content.
-MiniApp, developers can log in to the [WeChat MiniApp management background](https://mp.weixin.qq.com/), [QQ MiniApp background]( <a href="https://q.qq.com/#/)后，进入菜单“客服反馈”页面获取反馈内容。">https://q.qq.com/#/ ), enter the menu "Customer Service Feedback" page to get feedback content.</a>
-MiniApp, developers can log in to the [WeChat MiniApp management background](https://mp.weixin.qq.com/), [QQ MiniApp background](https://q.qq.com/#/ ), enter the menu "Customer Service Feedback" page to get feedback content.
+- MiniApp, developers can log in to the [WeChat MiniApp management background](https://mp.weixin.qq.com/), [QQ MiniApp background](https://q.qq.com/#/ ), enter the menu "Customer Service Feedback" page to get feedback content.
 - 在 App 中，开发者登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) 后点击应用名称，进入左侧菜单“用户反馈”页面获取反馈内容。
 - In the app, developers log in to [DCloud Developer Center](https://dev.dcloud.net.cn/) and click the app name to enter the "User Feedback" page on the left menu to get feedback.
 - 但推荐使用全端的、开源的、云端一体的意见反馈功能，[前端部分](https://ext.dcloud.net.cn/plugin?id=50)、[管理端部分](https://ext.dcloud.net.cn/plugin?id=4992)

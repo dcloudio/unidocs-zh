@@ -28,7 +28,7 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 |:-|:-|
 |VUE3|HBuilderX 3.2.0+ [详情](https://ask.dcloud.net.cn/article/37834)|
 |APP-PLUS|App|
-|APP-PLUS-NVUE或APP-NVUE|App nvue|
+|APP-PLUS-NVUE或APP-NVUE|App nvue 页面|
 |H5|H5|
 |MP-WEIXIN|微信小程序|
 |MP-ALIPAY|支付宝小程序|

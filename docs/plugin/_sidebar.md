@@ -4,7 +4,9 @@
 * [plugin-ext-introduction](/plugin/plugin-ext-introduction.md)
 * [uni_modules](/plugin/uni_modules.md)
 * [uts插件](uts-plugin.md)
+* [uts plugin](uts-plugin.md)
 * [原生语言插件](/plugin/native-plugin.md)
+* [Native language plugin](/plugin/native-plugin.md)
 * 插件作者专区
 * Plugin author area
   * [发布插件](/plugin/publish.md)

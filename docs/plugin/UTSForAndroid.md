@@ -67,14 +67,14 @@ fun getAppContext():Context?
 ### getUniActivity
 
 获取当前应用宿主activity示例，当前Uni-APP 应用实例的宿主activity
-```
+```ts
 fun getAppContext():Context?
 ```
 
 ### getResourcePath(resourceName:String)
 
 获取指定插件资源 的运行期绝对路径
-```
+```ts
 fun getResourcePath(resourceName:String):String
 ```
 
@@ -83,7 +83,7 @@ fun getResourcePath(resourceName:String):String
 
 程序运行期间，需要获取到此资源，可以使用 
  
-```
+```ts
 getResourcePath("uni_modules/test-uts-static/static/logo.png")
 ```
 
@@ -116,7 +116,7 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 android很多布局参数强制要求Float,但是ts中没有内置这种类型。可以使用下面的代码实现转换
 
-```
+```ts
 let textSize =  30.0.toFloat();
 ```
 
@@ -124,7 +124,7 @@ let textSize =  30.0.toFloat();
 
 android中UI相关的api,很多会要求泛型，目前UTS支持用as关键字强转，满足类似的场景
 
-```
+```ts
 let frameContent = decorView.findViewById(android.R.id.content) as FrameLayout
 ```
 

@@ -22,8 +22,7 @@ See: [Database Index](db-index.md).
 请参阅：[jql-cache-redis](jql-cache-redis.md)
 See: [jql-cache-redis](jql-cache-redis.md)
 
-## 大量数据查询优化
-## Large amount of data query optimization
+## 大数据量时查询语句写法注意
 
 如果您的数据量非常大，在设置合适的索引之后仍然会查询超时，您要考虑以下优化方案。
 If your data volume is very large and the query still times out after setting a suitable index, you should consider the following optimizations.

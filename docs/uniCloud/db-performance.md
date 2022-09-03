@@ -113,4 +113,10 @@ A typical slow query log contains the following information
 |查询语句			|详细的查询指令模板，例：{"filter":{"invite_code":"?"}}，表示以 invite_code: "xxx" 作为查询条件进行的查询	|
 |Query Statement |Detailed query instruction template, for example: {"filter":{"invite_code":"?"}}, which means the query with invite_code: "xxx" as the query condition |
 |最大执行时间	|该慢查询最慢多久执行完毕																																									|
-|Maximum execution time |The slowest time to complete the execution of the slow query |
+
+## 分表和冗余表
+如果你的数据表记录条数超过几十万，可以使用分表策略来优化。
+
+比如很多电商系统的订单表，最近3个月的订单是一张表，超期的订单会挪到其他表。银行系统也会把几年前的交易数据归档，防止数据量太大查不动。
+
+冗余表是另一种策略，不是分表，而是把大表中的高频数据单独摘出来成为一张表。其实 [jql-cache-redis](jql-cache-redis.md) 就是一种冗余思路，把数据在redis里多存一份。

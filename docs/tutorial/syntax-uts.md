@@ -20,8 +20,10 @@ uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 uts adopts the same syntax specification as ts and supports most ES6 APIs.
 
 但为了跨端，uts进行了一些约束和特定平台的增补。
+But in order to cross-end, uts has some constraints and platform-specific additions.
 
 过去在js引擎下运行支持的语法，大部分在uts的处理下也可以平滑的在kotlin和swift中使用。但有一些无法抹平，需要使用条件编译。和uni-app的条件编译类似，uts也支持条件编译。写在条件编译里的，可以调用平台特有的扩展语法。
+In the past, most of the supported syntaxes that ran under the js engine can also be smoothly used in kotlin and swift under the processing of uts. But there are some that cannot be smoothed out and require the use of conditional compilation. Similar to the conditional compilation of uni-app, uts also supports conditional compilation. Written in conditional compilation, you can call platform-specific extended syntax.
 
 本文是 uts 的基本语法介绍。如想了解 uni-app 下如何开发 uts插件，另见文档[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。
 This article is an introduction to the basic syntax of uts. If you want to know how to develop uts plug-ins under uni-app, see the document [https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin /uts-plugin.html).

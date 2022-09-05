@@ -1314,7 +1314,7 @@ let res = await db.collection('todos').doc('doc-id').update({
  Suppose there is a field `cities` The element structure in the array is as follows
 
  
-```json
+```js
 {
   "name": string
   "places": Place[]
@@ -1324,7 +1324,7 @@ let res = await db.collection('todos').doc('doc-id').update({
 `Place` has the following structure:
 
  
-```json
+```js
 {
   "type": string
   "area": number

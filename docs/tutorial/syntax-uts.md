@@ -11,7 +11,12 @@ uts，全称 uni type script，是一门跨平台的、高性能的、强类型�
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
+但为了跨端，uts进行了一些约束和特定平台的增补。
+
+过去在js引擎下运行支持的语法，大部分在uts的处理下也可以平滑的在kotlin和swift中使用。但有一些无法抹平，需要使用条件编译。和uni-app的条件编译类似，uts也支持条件编译。写在条件编译里的，可以调用平台特有的扩展语法。
+
 本文是 uts 的基本语法介绍。如想了解 uni-app 下如何开发 uts插件，另见文档[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。
+
 
 ## 基本语法
 ### 声明

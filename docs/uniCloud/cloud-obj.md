@@ -962,34 +962,7 @@ uniCloud.importObject('todo', {
 ## 本地运行@run-local
 ## run locally @run-local
 
-`HBuilderX 3.4.8`之前，云对象无法直接本地运行。可以通过其他云函数调用本地云对象（在调用云对象的云函数右键本地运行），或者客户端调用本地云对象的方式来实现云对象的本地运行。
-Before `HBuilderX 3.4.8`, cloud objects cannot be run directly locally. You can call the local cloud object through other cloud functions (run it locally by right-clicking the cloud function that calls the cloud object), or the client can call the local cloud object to implement the local operation of the cloud object.
-
-`HBuilderX 3.4.8`起，云对象可以本地运行。打开云对象下的js文件，按Ctrl+r或点击运行菜单运行云对象。
-From `HBuilderX 3.4.8`, cloud objects can run locally. Open the js file under the cloud object, press Ctrl+r or click the run menu to run the cloud object.
-
-运行云对象之前需要先选择执行云对象的哪个方法，以及传递什么参数。
-Before running the cloud object, you need to choose which method of the cloud object to execute and what parameters to pass.
-
-以下述云对象为例：
-Take the following cloud object as an example:
-
-```js
-module.exports = {
-	login(username, password) {
-		// ...
-		return {
-			errCode: 0
-		}
-	}
-}
-
-```
-
-调用login方法，传递username及password参数，的运行参数配置如下：
-Call the login method, pass the username and password parameters, and the running parameters are configured as follows:
-
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/db974aec-7975-45b7-bb64-24afd8a59213.jpg)
+文档移至：[云对象本地运行](rundebug.md#run-obj-param)
 
 ## jsdoc+语法提示
 ## jsdoc + syntax hints

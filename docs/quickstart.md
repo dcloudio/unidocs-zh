@@ -445,13 +445,9 @@ Huawei Quick App Documentation - Mini Program Quick App [https://developer.huawe
 * build 模式编译出的各平台代码存放于根目录下的 ``/dist/build/`` 目录，发布时选择此目录进行发布；
 * The code of each platform compiled in build mode is stored in the ``/dist/build/`` directory under the root directory, and this directory is selected for publishing when publishing;
 * dev 和 build 模式的区别：
-* Differences between dev and build modes:
-    1. dev 模式有 SourceMap 可以方便的进行断点调试；
-    1. In dev mode, there is SourceMap for easy breakpoint debugging;
-    2. build 模式会将代码进行压缩，体积更小更适合发布为正式版应用；
-    2. The build mode will compress the code, which is smaller and more suitable for publishing as an official version of the application;
-    3. 进行 [环境判断](/frame?id=运行环境判断) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
-    3. Perform [environmental judgment](/frame?id=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%88%A4%E6%96%AD) , the value of process.env.NODE_ENV in dev mode is development, and the value of process.env.NODE_ENV in build mode is production.
+  1. dev 模式有 SourceMap 可以方便的进行断点调试；
+  2. build 模式会将代码进行压缩，体积更小更适合发布为正式版应用；
+  3. 进行 [环境判断](/frame?id=运行环境判断) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
 
 ## 使用cli创建项目和使用HBuilderX可视化界面创建项目有什么区别
 ## What is the difference between creating a project using cli and creating a project using the HBuilderX visual interface

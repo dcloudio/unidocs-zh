@@ -963,6 +963,7 @@ uniCloud.importObject('todo', {
 ## run locally @run-local
 
 文档移至：[云对象本地运行](rundebug.md#run-obj-param)
+Documentation moved to: [Cloud object run locally](rundebug.md#run-obj-param)
 
 ## jsdoc+语法提示
 ## jsdoc + syntax hints

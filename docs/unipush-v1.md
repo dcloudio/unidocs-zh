@@ -767,5 +767,8 @@ A: [Android Platform App Offline Packaging-Push](https://nativesupport.dcloud.ne
 A：参考：[https://ask.dcloud.net.cn/article/36955](https://ask.dcloud.net.cn/article/36955#push)
 A: Reference: [https://ask.dcloud.net.cn/article/36955](https://ask.dcloud.net.cn/article/36955#push)
 
+- Q：为什么Android应用进入后台后（App未销毁），点击通知消息无法拉起App。      
+A：检查设备是否有禁止后台弹出界面，路径>>设置-应用管理-测试应用-权限管理-后台弹出界面，(一般是小米、oppo、
+vivo设备)。
 
 

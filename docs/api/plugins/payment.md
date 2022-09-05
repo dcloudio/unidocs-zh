@@ -853,6 +853,7 @@ uni.requestPayment({
 	1、可以在web-view组件里使用它们的wap版支付；2、可以集成原生sdk，插件市场均有，[详见](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98)。也可以自行开发原生插件，开发文档见[https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428)。
 	1. You can use their wap version for payment in the web-view component; 2. You can integrate native sdk, which are available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=% E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
 	1. You can use their wap version for payment in the web-view component; 2. You can integrate native sdk, which are available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=% E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
+	1. You can use their wap version for payment in the web-view component; 2. You can integrate native sdk, which are available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=% E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
 
 - Q：Appstore审核报PGPay SDK不允许上架的问题
 - Q: Appstore audit reports that PGPay SDK is not allowed to be listed

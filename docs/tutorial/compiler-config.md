@@ -14,6 +14,7 @@ In vue.config.js, you can modify the webpack configuration, including environmen
 **vite.config.js**
 
 在 vite.config.js 中可以修改 Vite 配置，包括环境变量，具体参考 [vite.config.js](/collocation/vite-config)。
+Vite configuration, including environment variables, can be modified in vite.config.js, please refer to [vite.config.js](/collocation/vite-config).
 
 **package.json**
 

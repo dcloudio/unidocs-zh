@@ -1115,7 +1115,7 @@ let res = await db.collection('todos').doc('doc-id').update({
  假设有字段 `cities` 数组中的元素结构如下  
 
  
-```json
+```js
 {
   "name": string
   "places": Place[]
@@ -1124,7 +1124,7 @@ let res = await db.collection('todos').doc('doc-id').update({
 `Place` 结构如下：  
 
  
-```json
+```js
 {
   "type": string
   "area": number

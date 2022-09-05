@@ -321,9 +321,9 @@ HBuilderX 2.7.10+ 版支持
 * dev 模式编译出的各平台代码存放于根目录下的 ``/dist/dev/``目录，打开各平台开发工具选择对应平台目录即可进行预览（h5 平台不会在此目录，存在于缓存中）；
 * build 模式编译出的各平台代码存放于根目录下的 ``/dist/build/`` 目录，发布时选择此目录进行发布；
 * dev 和 build 模式的区别：
-    1. dev 模式有 SourceMap 可以方便的进行断点调试；
-    2. build 模式会将代码进行压缩，体积更小更适合发布为正式版应用；
-    3. 进行 [环境判断](/frame?id=运行环境判断) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
+  1. dev 模式有 SourceMap 可以方便的进行断点调试；
+  2. build 模式会将代码进行压缩，体积更小更适合发布为正式版应用；
+  3. 进行 [环境判断](/frame?id=运行环境判断) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
 
 ## 使用cli创建项目和使用HBuilderX可视化界面创建项目有什么区别
 

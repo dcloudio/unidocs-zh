@@ -39,7 +39,8 @@ HBuilderX3.6.0起，支持直接在应用项目中配置应用清单文件 Andro
 	* 根节点必须是manifest  
 	* 根节点必须添加示例中的XML命名空间 xmlns:android 和 xmlns:tools  
 	* 根节点必须配置 package 属性，且属性值不能为空，属性值建议使用云端打包时配置的Android包名  
-- AndroidManifest.xml的内容，和manifest.json的内容应避免冲突，即不配置manifest中已经配置过的内容。云端打包时应用清单文件会合并，出现冲突错误时请根据打包日志进行排查
+- AndroidManifest.xml的内容，和manifest.json的内容应避免冲突，即不配置manifest中已经配置过的内容。云端打包时应用清单文件会合并，出现冲突错误时请根据打包日志进行排查  
+- 清单文件配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
 
 
@@ -81,7 +82,8 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 └─uni-jsframework-vue3-dev.js  //uni-app vue3框架（开发模式）
 	</code>
 </pre>
-
+- res目录资源将合并到主项目中编译，会覆盖其它模块的资源
+- 应用资源目录配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
 ## 离线打包  
 离线打包时应用清单文件和资源需要开发者手动合并到Android原生工程中。

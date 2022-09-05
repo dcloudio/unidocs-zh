@@ -446,6 +446,7 @@ Relatively speaking, the server callback will be more secure, and you can rely o
 
 
 ![激励视频回调](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/66afeef2-4c38-4718-bd65-1ebb396284c1.png)
+![Incentive video callback](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/66afeef2-4c38-4718-bd65-1ebb39png )
 
 
 

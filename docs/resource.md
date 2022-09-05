@@ -5,7 +5,7 @@
 建议第三步，看完[《uni-app官方教程》](https://ke.qq.com/course/3169971)，出品人：DCloud，课时：共3节。
 
 #### 如果你熟悉h5，但不熟悉vue和小程序 
-1. 看完这篇[白话uni-app](http://ask.dcloud.net.cn/article/35657)
+1. 看完这篇[白话uni-app](/vernacular)
 2. DCloud与vue合作，在[vue.js官网](https://cn.vuejs.org/v2/guide/)提供了免费视频教程，也可以直达教程地址：[https://learning.dcloud.io](https://learning.dcloud.io)
 3. 不需要专门去学习小程序的语法，uni-app使用的是vue的语法，不是小程序自定义的语法。
 

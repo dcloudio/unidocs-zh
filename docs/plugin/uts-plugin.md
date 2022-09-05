@@ -111,30 +111,32 @@ package.json的完整文档[详见](uni_modules.md#package.json)
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-
-┌─utssdk
-│	├─app-android //Android平台目录
-│	│ └─index.uts
-│	│ └─config.json //Android原生配置
-│	├─app-ios //ios平台目录
-│	│ └─index.uts
-│	│ └─config.json //ios原生配置
-│	├─web //web平台目录
-│	│ └─index.uts
-│	└─mp-xxx  // 其他平台
-├─common // 可跨端公用的uts代码。推荐，不强制
-├─static // 静态资源
-├─package.json
-├─index.d.ts  // 插件能力声明，非必需
-└─index.uts   // 插件能力实现
-
+┌─common                          // 可跨端公用的uts代码。推荐，不强制
+├─static                          // 静态资源
+├─utssdk
+│	├─app-android                 //Android平台目录
+│	│	├─assets                  //Android原生assets资源目录，可选
+│	│	├─libs                    //Android原生库目录，可选
+│	│	├─res                     //Android原生res资源目录，可选
+│	│	├─AndroidManifest.xml     //Android原生应用清单文件，可选
+│	│	├─config.json             //Android原生配置文件
+│	│	└─index.uts
+│	├─app-ios                     //ios平台目录
+│	│	├─config.json             //ios原生配置文件
+│	│	└─index.uts
+│	├─web                         //web平台目录
+│	│	└─index.uts
+│	└─mp-xxx                      // 其他平台目录
+├─package.json                    // 插件清单文件
+├─index.d.ts                      // 插件能力声明，可选
+└─index.uts                       // 插件能力实现
 </code>
 </pre>
 
 
 index.uts文件是程序主入口。如果插件根目录下没有index.uts，则会在编译到不同平台时，寻找分平台的目录下的index.uts文件。
 
-比如编译到app-android平台时，如果uts插件根目录没有index.uts，会寻找app-android/index.uts。如果也没有找到，会报错。
+比如编译到app-android平台时，如果uts插件根目录没有index.uts，会寻找utssdk/app-android/index.uts。如果也没有找到，会报错。
 
 当同时存在分平台目录的index.uts和根目录index.uts时，会优先获取具体的分平台目录。
 
@@ -147,48 +149,71 @@ index.d.ts文件是对当前插件能力的**声明**，用于语法提示。它
 因为uts写好后，HBuilderX可以自动识别uts api并进行语法提示。它更多的用于后续uts插件加密时给予语法提示。
 如果不熟悉d.ts，可以自行网上搜索，它属于ts标准技术。
 
-app-android 文件夹下存在下面两个文件
+### App原生配置
 
-|文件名		|用途										|
-|---		|---										|
-|index.uts	|index.d.ts声明的能力在Android平台下的实现	|
-|config.json|Android平台下的配置文件					|
+#### Android平台原生配置
 
-### 原生层配置
+app-android 文件夹下存在Android平台原生配置，包括以下目录或文件
 
-app-android、app-ios目录下的config.json，是uts插件在相应平台的原生层配置文件。可以在其中配置依赖的aar包或gradle配置。
+|目录名/文件名			|用途									|
+|---					|---									|
+|assets					|Android平台原生assets资源目录			|
+|libs					|Android平台原生引用的三方jar/aar目录		|
+|res					|Android平台原生res资源目录				|
+|AndroidManifest.xml	|Android平台原生应用清单文件				|
+|config.json			|Android平台下的配置文件					|
+|index.uts				|index.d.ts声明的能力在Android平台下的实现	|
+
+
+##### assets  
+Android平台原生assets资源目录，建议只保存UTS插件内置的资源文件。
+如果需要插件使用者配置（如三方SDK的授权文件）则应该在插件使用文档中告诉插件使用者配置到项目的Android原生应用资源目录，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+
+##### libs  
+Android平台原生三方库目录，支持以下类型文件：
+- jar 
+- aar
+
+如果使用了NDK开发so库，也支持保存到此目录，需按Android的abi类型分目录保存。
+
+##### res  
+Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
+如果需要插件使用者配置使用自定义资源，则应该在插件使用文档中告诉插件使用者配置到项目的Android原生应用资源目录，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+
+##### AndroidManifest.xml  
+Android原生应用清单文件，建议只保存UTS插件内置的清单文件配置。
+如果需要插件使用者Android原生应用清单文件，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+
+##### config.json
+uts插件在Android平台的原生层配置文件，可以在其中配置依赖仓储等gradle相关内容。
 
 ```json
 {
-         // 依赖某些aar
-	"libs": [
-	  "xxx.aar"
+	// 使用NDK时支持的CPU类型，可选
+	"abis": [
+	    "使用NDK时支持的cpu类型, 可取值armeabi-v7a|arm64-v8a|x86"
 	],
-        // 依赖某些gradle配置
+    // 依赖的仓储配置，可选，打包时会合并到原生工程的build.gradle中
 	"dependencies": [{
-	  "id": "com.xxx.richtext:richtext",
-	  "source": "implementation 'com.xxx.richtext:richtext:3.0.7'"
+		"id": "com.xxx.richtext:richtext",
+		"source": "implementation 'com.xxx.richtext:richtext:3.0.7'"
 	}],
-        // Android系统版本要求，最低Android 5.0
+    // Android系统版本要求，最低Android 5.0
 	"minSdkVersion": 21
 }
 ```
 
-config.json只是uts插件的配置。如需要配置uni-app应用级的原生配置，需要另行在uni-app主项目中配置。
+**注意**
+Android平台原生配置需提交云端打包才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
-uni-app项目根目录有：
-- manifest.json：uni-app封装的常用的原生层配置
-- AndroidManifest.xml：Android打包时的扩展配置。manifest.json中不包含的部分，可以在这里配置。如没有这个文件，可自行创建。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
-
-uni-app项目根目录还支持 nativeresource 目录，下面有 android、ios 目录。其中 android 目录下可以放原生应用资源目录 res、assets。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ## 3 开发uts原生插件
 
-以android平台获取电量为例，介绍uts原生插件开发步骤
+以Android平台获取电量为例，介绍uts原生插件开发步骤
 
 ![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 
-在android平台目录下，编辑index.uts，键入以下内容。
+在Android平台目录下，编辑index.uts，键入以下内容。
 
 
 ```ts
@@ -219,7 +244,7 @@ export function getBatteryCapacity(): string {
 
 `io.dcloud.uts.android`库介绍文档[见下](#iodcloudutsandroid)
 
-至此，我们已经完成一个android平台上获取电量的原生能力封装。
+至此，我们已经完成一个Android平台上获取电量的原生能力封装。
 
 在下一节，将介绍插件的使用，可以像使用普通js函数一样，使用getBatteryCapacity函数来获取设备电量。
 

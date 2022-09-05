@@ -193,6 +193,7 @@ index.uts文件是程序主入口。如果插件根目录下没有index.uts，�
 The index.uts file is the main entry point of the program. If there is no index.uts in the root directory of the plugin, it will look for the index.uts file in the sub-platform directory when compiling to different platforms.
 
 比如编译到app-android平台时，如果uts插件根目录没有index.uts，会寻找utssdk/app-android/index.uts。如果也没有找到，会报错。
+For example, when compiling to the app-android platform, if the root directory of the uts plugin does not have index.uts, it will look for utssdk/app-android/index.uts. If it is not found, an error will be reported.
 
 当同时存在分平台目录的index.uts和根目录index.uts时，会优先获取具体的分平台目录。
 When the index.uts of the sub-platform directory and the index.uts of the root directory exist at the same time, the specific sub-platform directory will be obtained first.
@@ -214,72 +215,98 @@ Because after uts is written, HBuilderX can automatically recognize uts api and 
 If you are not familiar with d.ts, you can search online by yourself. It belongs to the standard technology of ts.
 
 ### App原生配置
+### App native configuration
 
 #### Android平台原生配置
+#### Android platform native configuration
 
 app-android 文件夹下存在Android平台原生配置，包括以下目录或文件
+The native configuration of the Android platform exists in the app-android folder, including the following directories or files
 
 |目录名/文件名			|用途									|
+|directory name/file name |purpose |
 |---					|---									|
 |assets					|Android平台原生assets资源目录			|
+|assets |Android platform native assets resource directory |
 |libs					|Android平台原生引用的三方jar/aar目录		|
+|libs |The third-party jar/aar directory natively referenced by the Android platform |
 |res					|Android平台原生res资源目录				|
+|res |Android platform native res resource directory |
 |AndroidManifest.xml	|Android平台原生应用清单文件				|
+|AndroidManifest.xml |Android platform native application manifest file |
 |config.json			|Android平台下的配置文件					|
+|config.json |Configuration file under Android platform |
 |index.uts				|index.d.ts声明的能力在Android平台下的实现	|
+|index.uts |The implementation of the capabilities declared by index.d.ts under the Android platform |
 
 
 ##### assets  
 Android平台原生assets资源目录，建议只保存UTS插件内置的资源文件。
+The native assets resource directory of the Android platform, it is recommended to save only the resource files built in the UTS plugin.
 如果需要插件使用者配置（如三方SDK的授权文件）则应该在插件使用文档中告诉插件使用者配置到项目的Android原生应用资源目录，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+If the plugin user configuration (such as the authorization file of the third-party SDK) is required, the plugin user should be told to configure the Android native application resource directory of the project in the plugin usage document, [see details](https://uniapp.dcloud.net. cn/tutorial/app-nativeresource-android)
 
 ##### libs  
 Android平台原生三方库目录，支持以下类型文件：
+The Android platform's native third-party library directory supports the following types of files:
 - jar 
 - aar
 
 如果使用了NDK开发so库，也支持保存到此目录，需按Android的abi类型分目录保存。
+If you use the NDK development so library, it also supports saving to this directory, and it needs to be saved in directories according to the Android abi type.
 
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
+Android platform native res resource directory, it is recommended to save only the resource files built in the UTS plugin.
 如果需要插件使用者配置使用自定义资源，则应该在插件使用文档中告诉插件使用者配置到项目的Android原生应用资源目录，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+If plug-in users need to configure and use custom resources, they should tell plug-in users to configure the Android native application resource directory of the project in the plug-in usage documentation, [see details](https://uniapp.dcloud.net.cn/tutorial /app-nativeresource-android)
 
 ##### AndroidManifest.xml  
 Android原生应用清单文件，建议只保存UTS插件内置的清单文件配置。
+Android native application manifest file, it is recommended to save only the built-in manifest file configuration of the UTS plugin.
 如果需要插件使用者Android原生应用清单文件，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+If you need the Android native application manifest file for plugin users, [see details](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ##### config.json
 uts插件在Android平台的原生层配置文件，可以在其中配置依赖仓储等gradle相关内容。
+The uts plugin is in the native layer configuration file of the Android platform, where you can configure gradle-related content such as dependency repositories.
 
 ```json
 {
 	// 使用NDK时支持的CPU类型，可选
+	// CPU type supported when using NDK, optional
 	"abis": [
 	    "使用NDK时支持的cpu类型, 可取值armeabi-v7a|arm64-v8a|x86"
 	],
     // 依赖的仓储配置，可选，打包时会合并到原生工程的build.gradle中
+    // Dependent repository configuration, optional, will be merged into the build.gradle of the native project when packaged
 	"dependencies": [{
 		"id": "com.xxx.richtext:richtext",
 		"source": "implementation 'com.xxx.richtext:richtext:3.0.7'"
 	}],
     // Android系统版本要求，最低Android 5.0
+    // Android system version requirements, minimum Android 5.0
 	"minSdkVersion": 21
 }
 ```
 
 **注意**
+**Notice**
 Android平台原生配置需提交云端打包才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
+The native configuration of the Android platform needs to be submitted to the cloud to take effect. When the real machine is running, please use the [custom debugging base](https://ask.dcloud.net.cn/article/35115)
 
 
 ## 3 开发uts原生插件
 ## 3 Develop uts native plugin
 
 以Android平台获取电量为例，介绍uts原生插件开发步骤
+Taking the Android platform to obtain electricity as an example, the development steps of the uts native plug-in are introduced.
 
 ![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 ![OSAPI example](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 
 在Android平台目录下，编辑index.uts，键入以下内容。
+In the Android platform directory, edit index.uts and type the following.
 
 
 ```ts
@@ -315,6 +342,7 @@ export function getBatteryCapacity(): string {
 `io.dcloud.uts.android` library introduction document [see below](#iodcloudutsandroid)
 
 至此，我们已经完成一个Android平台上获取电量的原生能力封装。
+So far, we have completed the packaging of the native ability to obtain electricity on the Android platform.
 
 在下一节，将介绍插件的使用，可以像使用普通js函数一样，使用getBatteryCapacity函数来获取设备电量。
 In the next section, we will introduce the use of plug-ins. You can use the getBatteryCapacity function to get the device battery like a normal js function.

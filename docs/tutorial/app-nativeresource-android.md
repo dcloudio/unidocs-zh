@@ -51,8 +51,11 @@ Edit and add the required content according to the application requirements, as 
 	* 根节点必须添加示例中的XML命名空间 xmlns:android 和 xmlns:tools  
 	* The root node must add the XML namespaces xmlns:android and xmlns:tools in the example
 	* 根节点必须配置 package 属性，且属性值不能为空，属性值建议使用云端打包时配置的Android包名  
+	* The root node must be configured with the package attribute, and the attribute value cannot be empty. It is recommended to use the Android package name configured during cloud packaging for the attribute value.
 - AndroidManifest.xml的内容，和manifest.json的内容应避免冲突，即不配置manifest中已经配置过的内容。云端打包时应用清单文件会合并，出现冲突错误时请根据打包日志进行排查  
+- The content of AndroidManifest.xml and the content of manifest.json should avoid conflicts, that is, the content that has been configured in the manifest should not be configured. The application manifest files will be merged during cloud packaging. If there is a conflict error, please check according to the packaging log.
 - 清单文件配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
+- The manifest file configuration can only take effect after submitting the cloud package. Please use the [custom debugging base] when running on a real machine (https://ask.dcloud.net.cn/article/35115)
 
 
 
@@ -102,7 +105,9 @@ Copy the Android native resource files to be added to the assets and res directo
 	</code>
 </pre>
 - res目录资源将合并到主项目中编译，会覆盖其它模块的资源
+- The res directory resources will be merged into the main project and compiled, which will overwrite the resources of other modules
 - 应用资源目录配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
+- The configuration of the application resource directory can only take effect after submitting the cloud package. Please use the [custom debugging base] when the real machine is running (https://ask.dcloud.net.cn/article/35115)
 
 ## 离线打包  
 ## Offline packaging

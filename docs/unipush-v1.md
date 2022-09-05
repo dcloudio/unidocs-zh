@@ -768,7 +768,10 @@ A：参考：[https://ask.dcloud.net.cn/article/36955](https://ask.dcloud.net.cn
 A: Reference: [https://ask.dcloud.net.cn/article/36955](https://ask.dcloud.net.cn/article/36955#push)
 
 - Q：为什么Android应用进入后台后（App未销毁），点击通知消息无法拉起App。      
+- Q: Why after the Android app enters the background (the app is not destroyed), the app cannot be launched by clicking the notification message.
 A：检查设备是否有禁止后台弹出界面，路径>>设置-应用管理-测试应用-权限管理-后台弹出界面，(一般是小米、oppo、
+A: Check whether the device has a pop-up interface in the background, path >> Settings - Application Management - Test Application - Permission Management - Pop-up interface in the background, (usually Xiaomi, oppo,
 vivo设备)。
+vivo devices).
 
 

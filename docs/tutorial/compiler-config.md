@@ -8,9 +8,9 @@
 
 在 vue.config.js 中可以修改 webpack 配置，包括环境变量，具体参考 [vue-config.js](/collocation/vue-config)。
 
-<!-- **vite.config.js** -->
+**vite.config.js**
 
-<!-- 在 vite.config.js 中可以修改 Vite 配置，包括环境变量，具体参考 [vite.config.js](/collocation/vite-config)。 -->
+在 vite.config.js 中可以修改 Vite 配置，包括环境变量，具体参考 [vite.config.js](/collocation/vite-config)。
 
 **package.json**
 

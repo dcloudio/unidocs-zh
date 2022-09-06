@@ -193,9 +193,9 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
 ```json
 // 如果拷贝此内容切记去除注释
 {
-  "passwordSecret": "passwordSecret-demo", // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的密钥，注意修改为自己的密钥，使用一个较长的字符串即可
-  "passwordStrength": "strong", // 密码强度，新增于 uni-id-pages 1.0.8版本，见下方说明
-  "tokenSecret": "tokenSecret-demo", // 生成token所用的密钥，注意修改为自己的，使用一个较长的字符串即可
+  "passwordSecret": "", // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的密钥，注意修改为自己的密钥，使用一个较长的字符串即可
+  "passwordStrength": "medium", // 密码强度，新增于 uni-id-pages 1.0.8版本，见下方说明
+  "tokenSecret": "", // 生成token所用的密钥，注意修改为自己的，使用一个较长的字符串即可
   "tokenExpiresIn": 7200, // 全平台token过期时间，未指定过期时间的平台会使用此值
   "tokenExpiresThreshold": 600, // 新增于uni-id 1.1.7版本，checkToken时如果token有效期小于此值且在有效期内则自动获取新token，请注意将新token返回给前端保存（云对象会自动保存符合uniCloud响应体规范的响应内的新token），如果不配置此参数则不开启自动获取新token功能
   "passwordErrorLimit": 6, // 密码错误最大重试次数
@@ -207,16 +207,16 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
     "oauth": {
       // App微信登录所用到的appid、appsecret需要在微信开放平台获取，注意：不是公众平台而是开放平台
       "weixin": {
-        "appid": "weixin appid",
-        "appsecret": "weixin appsecret"
+        "appid": "",
+        "appsecret": ""
       },
       // App QQ登录所用到的appid、appsecret需要在腾讯开放平台获取，注意：不是公众平台而是开放平台
       "qq": {
-        "appid": "qq appid",
-        "appsecret": "qq appsecret"
+        "appid": "",
+        "appsecret": ""
       },
       "apple": { // 使用苹果登录时需要
-        "bundleId": "your bundleId"
+        "bundleId": ""
       }
     }
   },
@@ -224,12 +224,12 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
     "tokenExpiresIn": 259200,
     "oauth": {
       "weixin-h5": { // 微信公众号登录配置
-        "appid": "weixin appid",
-        "appsecret": "weixin appsecret"
+        "appid": "",
+        "appsecret": ""
       },
       "weixin-web": { // 微信PC页面扫码登录配置
-        "appid": "weixin appid",
-        "appsecret": "weixin appsecret"
+        "appid": "",
+        "appsecret": ""
       }
     }
   },
@@ -238,8 +238,8 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
     "oauth": {
       // 微信小程序登录所用的appid、appsecret需要在对应的小程序管理控制台获取
       "weixin": {
-        "appid": "weixin appid",
-        "appsecret": "weixin appsecret"
+        "appid": "",
+        "appsecret": ""
       }
     }
   },
@@ -248,8 +248,8 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
     "oauth": {
       // QQ小程序登录所用的appid、appsecret需要在对应的小程序管理控制台获取
       "qq": {
-        "appid": "qq appid",
-        "appsecret": "qq appsecret"
+        "appid": "",
+        "appsecret": ""
       }
     }
   },
@@ -258,29 +258,29 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
     "oauth": {
       // 支付宝小程序登录用到的appid、privateKey请参考支付宝小程序的文档进行设置或者获取，https://opendocs.alipay.com/open/291/105971#LDsXr
       "alipay": {
-        "appid": "alipay appid",
-        "privateKey": "alipay privateKey", // 私钥
+        "appid": "",
+        "privateKey": "", // 私钥
         "keyType": "PKCS8" // 私钥类型，如果私钥类型不是PKCS8，需要填写此字段，否则会出现“error:0D0680A8:asn1 encoding routines:ASN1_CHECK_TLEN:wrong tag”错误
       }
     }
   },
   "service": {
     "sms": {
-      "name": "your app name", // 应用名称，对应短信模版的name
+      "name": "", // 应用名称，对应短信模版的name
       "codeExpiresIn": 180, // 验证码过期时间，单位为秒，注意一定要是60的整数倍
-      "smsKey": "your sms key", // 短信密钥key，开通短信服务处可以看到
-      "smsSecret": "your sms secret", // 短信密钥secret，开通短信服务处可以看到
+      "smsKey": "", // 短信密钥key，开通短信服务处可以看到
+      "smsSecret": "", // 短信密钥secret，开通短信服务处可以看到
       "scene": {
         "bind-mobile": { // 对绑定手机号场景的配置
-          "templateId": "your template id", // 绑定手机号使用的短信验证码模板
+          "templateId": "", // 绑定手机号使用的短信验证码模板
           "codeExpiresIn": 240 // 绑定手机号验证码过期时间
         }
       }
     },
     "univerify": {
-      "appid": "your appid", // 当前应用的appid，使用云函数URL化，此项必须配置
-      "apiKey": "your apiKey", // apiKey 和 apiSecret 在开发者中心获取，开发者中心：https://dev.dcloud.net.cn/#/pages/uniLogin/index，文档：https://ask.dcloud.net.cn/article/37965
-      "apiSecret": "your apiSecret"
+      "appid": "", // 当前应用的appid，使用云函数URL化，此项必须配置
+      "apiKey": "", // apiKey 和 apiSecret 在开发者中心获取，开发者中心：https://dev.dcloud.net.cn/#/pages/uniLogin/index，文档：https://ask.dcloud.net.cn/article/37965
+      "apiSecret": ""
     }
   }
 }

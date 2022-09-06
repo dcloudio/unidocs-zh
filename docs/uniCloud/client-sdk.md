@@ -168,7 +168,7 @@ uniCloud.removeInterceptor('callFunction', {
 })
 ```
 
-### 拦截云对象请求intercept-object
+### 拦截云对象请求@intercept-object
 
 > 新增于HBuilderX 3.5.5
 

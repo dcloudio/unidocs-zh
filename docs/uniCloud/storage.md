@@ -921,6 +921,14 @@ The data processing functions supported by Tencent Cloud are as follows:
 |快速缩略模板|w,h,format,q,rq,lq		|[点击查看](https://cloud.tencent.com/document/product/436/44893)	|
 |Quick Thumbnail Template|w,h,format,q,rq,lq |[Click to view](https://cloud.tencent.com/document/product/436/44893) |
 |限制图片大小|size-limit|[点击查看](https://cloud.tencent.com/document/product/436/56734)	|
-|Limit image size|size-limit|[Click to view](https://cloud.tencent.com/document/product/436/56734)|
 |管道操作符|	&#124;	|[点击查看](https://cloud.tencent.com/document/product/436/44894)	|
-|Pipe operator| &#124; |[Click to view](https://cloud.tencent.com/document/product/436/44894) |
+
+## 阿里云云存储CDN独立域名@aliyun-cdn-domain
+
+阿里云公测版本所有服务空间使用了相同CDN域名，因此偶尔会出现部分服务空间云存储内存在违规内容导致此CDN域名被封禁的情况。为解决此问题，阿里云为每个服务空间提供了独立的云存储CDN域名。由于资源限制，需要手动在[uniCloud web 控制台](https://unicloud.dcloud.net.cn/)云存储管理页面申请才可以开启，有一定业务量的服务空间申请会自动通过。
+
+开通云存储CDN独立域名有以下注意事项：
+
+- 上传文件会返回新CDN域名对应的URL。如果有小程序端下载文件需求，需要更新小程序安全域名。
+- 旧文件也可以通过新CDN域名进行访问
+- 旧文件删除时必须使用旧的共享CDN域名才可以删除

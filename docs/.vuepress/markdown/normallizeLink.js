@@ -22,7 +22,7 @@ module.exports = function (md) {
         ? url
         : normalizeLink(url)
           .replace(/\s+/g,'')
-          .replace(/\.md\b/, '')
+          .replace(/\.md\b/, '.html')
           .replace(/\bREADME\b/, '')
           .replace(/\/index/, '/')
           .replace(/\?id=/, '#')

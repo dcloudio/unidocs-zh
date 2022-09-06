@@ -177,11 +177,11 @@ uni.requestPayment({
 6. 服务器验证票据有效后在客户端关闭订单 (iapChannel.finishTransaction)
 
 
-3.5.1 之前因自动关闭订单导致某些情况下丢单的问题
+HBuilder 3.5.1 之前因自动关闭订单导致某些情况下丢单的问题
 
-3.5.1 + 增加了手动关闭订单参数 `manualFinishTransaction`, 在合适的时机调用 `iapChannel.finishTransaction` 关闭订单
+HBuilder 3.5.1 + 增加了手动关闭订单参数 `manualFinishTransaction`, 在合适的时机调用 `iapChannel.finishTransaction` 关闭订单
 
-3.5.1+ 开始支持通过 `uni.getProvider` 获取IAP支付通道的方法
+HBuilder 3.5.1+ 开始支持通过 `uni.getProvider` 获取IAP支付通道的方法
 
 ### 获取IAP支付通道
 

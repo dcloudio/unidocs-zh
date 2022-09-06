@@ -2029,12 +2029,15 @@ Adds or updates a (new) key-value pair specifying a key and a value.
 ### Number
 
 Number 对象是经过封装的能让你处理数字值的对象。
+Number objects are encapsulated objects that allow you to work with numeric values.
 
 #### 实例方法
+#### instance methods
 
 #### toFixed
 
 toFixed() 方法使用定点表示法来格式化一个数值。
+The toFixed() method formats a number using fixed-point notation.
 
 ```ts
 function financial(x: Number): String {

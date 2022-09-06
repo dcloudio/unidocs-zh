@@ -36,7 +36,7 @@ At present, major video learning websites have many uni-app learning resources:
 - [MOOC uni-app related courses](https://www.imooc.com/search/?words=uni-app)
 
 如下是三方专业培训机构的视频教程
-The following is the video tutorial of the tripartite professional training institutions
+The following is the video tutorial of the tripartite professional training institution
 * [《uni-app 商业级应用实战》](https://ke.qq.com/course/379043?from=800006421)，出品人：腾讯课堂NEXT学院。亮点：腾讯课堂官方出品；不懂 vue 的工程师也可快速学习；从入门到实战都包括。
 * ["uni-app commercial application practice"](https://ke.qq.com/course/379043?from=800006421), Producer: Tencent Classroom NEXT Academy. Highlights: Officially produced by Tencent Classroom; engineers who do not understand vue can also learn quickly; from entry to actual combat.
 * [《uni-app 跨平台应用开发教程》](http://www.hcoder.net/course/info_242.html)，出品人：hcoder 刘海君，课时：共25节。亮点：讲师经验丰富，也是graceui框架作者。

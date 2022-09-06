@@ -12,6 +12,7 @@
 - The iOS platform can obtain the client ID after the credential is created (the Android platform does not need the client ID)
 
 更多信息详见 [申请开通Google登录操作指南](https://uniapp.dcloud.io/app-oauth-google-open)  
+For more information, see [Operation Guide for Applying for Google Login](https://uniapp.dcloud.io/app-oauth-google-open)
 
 
 ### 配置  

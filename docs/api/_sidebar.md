@@ -41,6 +41,7 @@
 * 位置
   * [获取位置](api/location/location.md)
   * [查看位置](api/location/open-location.md)
+  * [位置更新](api/location/location-change.md)
   * [地图组件控制](api/location/map.md)
 * 媒体
   * [图片](api/media/image.md)

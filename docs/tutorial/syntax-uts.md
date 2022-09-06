@@ -1663,6 +1663,26 @@ console.log(map1.has('bar'));
 
 添加或更新一个指定了键（key）和值（value）的（新）键值对。
 
+### Number
+
+Number 对象是经过封装的能让你处理数字值的对象。
+
+#### 实例方法
+
+#### toFixed
+
+toFixed() 方法使用定点表示法来格式化一个数值。
+
+```ts
+function financial(x: Number): String {
+  return x.toFixed(2);
+}
+console.log(financial(123.456));
+// expected output: "123.46"
+console.log(financial(0.004));
+// expected output: "0.00"
+```
+
 ### Set
 
 Set 对象是值的集合，你可以按照插入的顺序迭代它的元素。Set 中的元素只会出现一次，即 Set 中的元素是唯一的。

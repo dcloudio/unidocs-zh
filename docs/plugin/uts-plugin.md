@@ -403,6 +403,28 @@ onAppActivityBack(() => {
 });
 ```
 
+### onAppActivityRequestPermissionsResult
+
+容器的宿主activity 获得权限请求结果的回调
+
+```ts
+onAppActivityRequestPermissionsResult((requestCode: number,
+                                                     permissions: MutableList<string>,
+                                                     grantResults: MutableList<number>) => {
+            /**
+			* 0 已同意
+			* -1 已拒绝
+			*/
+														
+		console.log(grantResults);
+		console.log(permissions);   
+		console.log(requestCode);
+	});
+
+//发起定位权限申请
+ActivityCompat.requestPermissions(getUniActivity()!,
+	    arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 1001);
+```
 
 ## 常见问题
 

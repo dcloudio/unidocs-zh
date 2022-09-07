@@ -18,7 +18,7 @@ Since HBuilderX3.6.0, it supports to configure the application manifest file And
 ## Application manifest file AndroidManifest.xml
 
 在HBuilderX中，对项目根目录右键菜单 "新建" -> "自定义文件"  
-![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newfile.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/newfile.png)
 
 输入文件名称 `AndroidManifest.xml`（注意大小写敏感），点击 “创建” 按钮新建文件  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/androidmanifest.png)
@@ -63,7 +63,7 @@ Edit and add the required content according to the application requirements, as 
 ## Application resources
 
 HBuilderX中对项目右键菜单 "新建" -> "目录"  
-![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newfile.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/newdir.png)
 
 输入名称 `nativeResouces`（注意大小写敏感），确定并创建目录。
 Enter the name `nativeResouces` (note that it is case sensitive), identify and create the directory.

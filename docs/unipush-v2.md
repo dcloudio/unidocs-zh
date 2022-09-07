@@ -359,7 +359,7 @@ export default {
 - 离线推送时，Android手机厂商通道推送[需设置消息渠道id](/uniCloud/uni-cloud-push/api.html#channel)，否则会被限制频次和静默推送(静音且需下拉系统通知栏才可见)
 - When offline push, the Android phone manufacturer channel push [need to set the message channel id](/uniCloud/uni-cloud-push/api.html#channel), otherwise it will be limited frequency and silent push (mute and need to pull down the system notification bar only visible)
 - 如果Android应用进入后台后（App未销毁），点击通知消息无法拉起App，请检查设备是否有禁止后台弹出界面，路径>>设置-应用管理-测试应用-权限管理-后台弹出界面，(一般是小米、oppo、
-- If the Android app enters the background (the App is not destroyed), and the app cannot be launched by clicking the notification message, please check whether the device has a pop-up interface that prohibits the background. Path >> Settings - Application Management - Test Application - Permission Management - Background pop-up interface, ( Usually millet, oppo,
+- If the Android app enters the background (the App is not destroyed), and the app cannot be launched by clicking the notification message, please check whether the device has a pop-up interface that prohibits the background. Usually millet, oppo,
 vivo设备)。
 vivo devices).
 

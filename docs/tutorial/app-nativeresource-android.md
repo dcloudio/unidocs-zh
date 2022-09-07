@@ -12,7 +12,7 @@ HBuilderX3.6.0起，支持直接在应用项目中配置应用清单文件 Andro
 ## 应用清单文件 AndroidManifest.xml
 
 在HBuilderX中，对项目根目录右键菜单 "新建" -> "自定义文件"  
-![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/newfile.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newfile.png)
 
 输入文件名称 `AndroidManifest.xml`（注意大小写敏感），点击 “创建” 按钮新建文件  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/androidmanifest.png)
@@ -47,7 +47,7 @@ HBuilderX3.6.0起，支持直接在应用项目中配置应用清单文件 Andro
 ## 应用资源  
 
 HBuilderX中对项目右键菜单 "新建" -> "目录"  
-![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/android/newdir.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newfile.png)
 
 输入名称 `nativeResouces`（注意大小写敏感），确定并创建目录。
 

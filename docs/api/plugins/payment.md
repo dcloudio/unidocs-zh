@@ -855,7 +855,9 @@ uni.requestPayment({
   	  1. You can use their wap version to pay in the web-view component;
   	  1. You can use their wap version to pay in the web-view component;
   	  1. You can use their wap version to pay in the web-view component;
+  	  1. You can use their wap version to pay in the web-view component;
   	2. 可以集成原生sdk，插件市场均有，[详见](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98)。也可以自行开发原生插件，开发文档见[https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428)。
+  	  2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
   	  2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
   	  2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
   	  2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).

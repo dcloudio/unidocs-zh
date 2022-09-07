@@ -176,6 +176,12 @@ Android平台原生三方库目录，支持以下类型文件：
 
 如果使用了NDK开发so库，也支持保存到此目录，需按Android的abi类型分目录保存。
 
+**HX 3.6.0版本注意**
+
++ UTS真机运行功能，暂时不支持仓库依赖，需要将gradle配置手动下载后，放置在libs目录
++ Uni项目内置了一部分依赖（比如androidX），对于这部分依赖，需要与uni内置依赖版本保持一致
++ 对于uni没有内置的依赖项目，需要确保不要和config.json里重复配置
+
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
 如果需要插件使用者配置使用自定义资源，则应该在插件使用文档中告诉插件使用者配置到项目的Android原生应用资源目录，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
@@ -205,6 +211,7 @@ uts插件在Android平台的原生层配置文件，可以在其中配置依赖�
 
 **注意**
 Android平台原生配置需提交云端打包才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
+
 
 
 ## 3 开发uts原生插件
@@ -401,6 +408,28 @@ onAppActivityBack(() => {
      let eventName = "onAppActivityBack- " + Date.now();
      console.log(eventName);
 });
+```
+
+### onAppActivityRequestPermissionsResult
+容器的宿主activity 获得权限请求结果的回调
+
+```ts
+onAppActivityRequestPermissionsResult((requestCode: number,
+                                                     permissions: MutableList<string>,
+                                                     grantResults: MutableList<number>) => {
+		/**
+		 * 0 已同意
+		 * -1 已拒绝
+		 */
+		console.log(grantResults);
+		console.log(permissions);   
+		console.log(requestCode);
+	});
+
+//发起定位权限申请
+ActivityCompat.requestPermissions(getUniActivity()!,
+	    arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 1001);
+
 ```
 
 

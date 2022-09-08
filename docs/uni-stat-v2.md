@@ -110,7 +110,7 @@ uni statistics goes deep into the bottom layer of uni-app and uniCloud framework
 **7. Open Ecosystem**
 
 uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
-The open source of uni statistics and based on the [uni-admin](/uniCloud/admin) plug-in specification provides a plug-in mechanism, and more plug-in authors will provide a variety of rich statistical plug-ins (such as e-commerce statistics, content statistics, etc.). See [Plugin Market](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
+The open source of uni statistics and based on the plug-in specification of [uni-admin](/uniCloud/admin) provides a plug-in mechanism, and more plug-in authors will provide various statistical plug-ins (such as e-commerce statistics, content statistics, etc.). See [Plugin Market](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
 **DCloud非常重视数据驱动开发者业务的增长，近期联合专业的大数据服务商<a href="https://www.sensorsdata.cn/" target="_blank">神策</a>和<a href="https://tj.aldwx.com/" target="_blank">阿拉丁</a>共同完善Uni统计2.0的产品模块和生态建设。
 **DCloud attaches great importance to the growth of data-driven developer business. Recently, it has cooperated with professional big data service providers <a href="https://www.sensorsdata.cn/" target="_blank">Sensors</a> and <a href="https://tj.aldwx.com/" target="_blank">Aladdin</a> will jointly improve the product modules and ecological construction of Uni Statistics 2.0.
@@ -343,7 +343,7 @@ Please refer to [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-adm
 3. 部署云端资源：上传部署云函数、公共模块、通过`db_init.json`初始化数据库表。如之前的表已经有冲突数据，需要自己手动合并下
 3. Deploy cloud resources: upload and deploy cloud functions, public modules, and initialize database tables through `db_init.json`. If the previous table already has conflicting data, you need to manually merge it yourself
 4. 在云端配置中心完成其它初始化配置，如：在 `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` 文件中填写自己的 passwordSecret 字段 (用于加密密码入库的密钥) 和 tokenSecret 字段 (为生成 token 需要的密钥，测试期间跳过本条也可以)，然后对`uni-config-center`公共模块点右键上传更新。注意：`业务端App项目`和`报表端uni-admin项目`关联相同服务空间时，可能会出现`uni-config-center`的相互覆盖问题，此时建议单点维护，[详见](https://uniapp.dcloud.net.cn/uni-stat-v2.html#常见问题)。
-4. Complete other initialization configurations in the cloud configuration center, such as: fill in your own passwordSecret field in the `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` file (used for encrypted password storage key) and tokenSecret fields (to generate the secret key required for token generation, you can skip this item during the test), then right-click on the `uni-config-center` public module to upload the update. Note: When the `business-side App project` and the `report-side uni-admin project` are associated with the same service space, the mutual coverage problem of `uni-config-center` may occur. In this case, it is recommended to maintain a single point. [See details]( https://uniapp.dcloud.net.cn/uni-stat-v2.html#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98).
+4. Complete other initialization configurations in the cloud configuration center, such as: fill in your own passwordSecret field in the `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` file (used for encrypted password storage key) and tokenSecret fields (to generate the secret key required for token generation, you can also skip this item during the test), then right-click on the `uni-config-center` public module to upload the update. Note: When the `business-side App project` and the `report-side uni-admin project` are associated with the same service space, the mutual coverage problem of `uni-config-center` may occur. In this case, single-point maintenance is recommended. [See details]( https://uniapp.dcloud.net.cn/uni-stat-v2.html#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98).
 5. 运行 uni-admin 项目，一般是运行到浏览器
 5. Run the uni-admin project, usually to the browser
 6. 设置管理员账户
@@ -453,7 +453,7 @@ Before enabling the redis cache, you need to confirm whether the redis service h
 2. 分别在数据`上报数据接收器（uni-stat-receiver）`和`定时任务云函数（uni-stat-cron）`下的`package.json`文件中添加redis拓展库。
 2. Add the redis extension library to the `package.json` file under the data `Report data receiver (uni-stat-receiver)` and `Scheduled task cloud function (uni-stat-cron)` respectively.
 3. 重新上传部署数据`上报数据接收器（uni-stat-receiver）`、`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
-3. Re-upload the deployment data `Report data receiver (uni-stat-receiver)`, `Scheduled task cloud function (uni-stat-cron)` and `Configuration center (uni-config-center)`.
+3. Re-upload the deployment data `Report Data Receiver (uni-stat-receiver)`, `Scheduled Task Cloud Function (uni-stat-cron)` and `Configuration Center (uni-config-center)`.
 
 ::: preview 
 > 配置uni-stat-receiver的redis拓展库

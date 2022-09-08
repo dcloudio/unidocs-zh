@@ -455,8 +455,11 @@ Return value example
 |uniIdCo.removeAuthorizedApp()	|移除用户登录授权 [详情](#remove-authorized-app)			|
 |uniIdCo.removeAuthorizedApp() |Remove user login authorization [Details](#remove-authorized-app) |
 |uniIdCo.setAuthorizedApp()		|设置用户允许登录的应用列表 [详情](#set-authorized-app)		|
+|uniIdCo.setAuthorizedApp() |Set the list of apps that the user is allowed to log in to [Details](#set-authorized-app) |
 |uniIdCo.registerUser()			|注册普通用户 [详情](#register-user)						|
+|uniIdCo.registerUser() |Register ordinary users [Details](#register-user) |
 |uniIdCo.registerUserByEmail()	|通过邮箱验证码注册普通用户 [详情](#register-user-by-email)	|
+|uniIdCo.registerUserByEmail() |Register ordinary users through email verification code [Details](#register-user-by-email) |
 |uniIdCo.login()				|用户名密码登录 [详情](#login)								|
 |uniIdCo.login() |Login with username and password [Details](#login) |
 |uniIdCo.loginBySms()			|短信验证码登录 [详情](#login-by-sms)						|
@@ -488,8 +491,11 @@ Return value example
 |uniIdCo.bindApple()			|绑定苹果账号 [详情](#bind-apple)							|
 |uniIdCo.bindApple() |Bind Apple Account [Details](#bind-apple) |
 |uniIdCo.updatePwd()			|更新密码 [详情](#update-pwd)								|
+|uniIdCo.updatePwd() |Update password [details](#update-pwd) |
 |uniIdCo.resetPwdBySms()		|通过短信验证码重置密码 [详情](#reset-pwd-by-sms)			|
+|uniIdCo.resetPwdBySms() |Reset password via SMS verification code [Details](#reset-pwd-by-sms) |
 |uniIdCo.resetPwdByEmail()		|通过邮箱验证码重置密码 [详情](#reset-pwd-by-email)			|
+|uniIdCo.resetPwdByEmail() |Reset password by email verification code [Details](#reset-pwd-by-email) |
 |uniIdCo.closeAccount()			|注销账户 [详情](#close-account)							|
 |uniIdCo.closeAccount() |Close account [Details](#close-account) |
 |uniIdCo.getAccountInfo()		|获取账户账户简略信息 [详情](#get-account-info)				|
@@ -497,8 +503,11 @@ Return value example
 |uniIdCo.createCaptcha()		|创建图形验证码 [详情](#create-captcha)						|
 |uniIdCo.createCaptcha() |Create a graphic captcha [Details](#create-captcha) |
 |uniIdCo.refreshCaptcha()		|刷新图形验证码 [详情](#refresh-captcha)					|
+|uniIdCo.refreshCaptcha() |Refresh graphic captcha [Details](#refresh-captcha) |
 |uniIdCo.sendSmsCode()			|发送短信验证码 [详情](#send-sms-code)						|
+|uniIdCo.sendSmsCode() |Send SMS verification code [Details](#send-sms-code) |
 |uniIdCo.sendEmailCode()		|发送邮箱验证码 [详情](#send-email-code)					|
+|uniIdCo.sendEmailCode() |Send email verification code [Details](#send-email-code) |
 |uniIdCo.refreshToken()			|刷新token [详情](#refresh-token)							|
 |uniIdCo.refreshToken() |Refresh token [Details](#refresh-token) |
 |uniIdCo.acceptInvite()			|接受邀请 [详情](#accept-invite)							|
@@ -607,10 +616,13 @@ await uniIdCo.registerUser({
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
+|&nbsp;&#124;-&nbsp;tokenExpired|string |token expiration time |
 
 #### 邮箱验证码注册用户@register-user-by-email
+#### Email verification code registered user @register-user-by-email
 
 **接口形式**
+**Interface form**
 
 ```js
 await uniIdCo.registerUserByEmail({
@@ -623,21 +635,32 @@ await uniIdCo.registerUserByEmail({
 ```
 
 **参数说明**
+**Parameter Description**
 
 |参数名		|类型	|必填	|说明		|
+|Parameter Name |Type |Required |Description |
 |--			|--		|--		|--			|
 |email		|string	|是		|邮箱		|
+|email |string |Yes |Email |
 |password	|string	|是		|密码		|
+|password |string |yes |password|
 |code		|string	|是		|邮箱验证码	|
+|code |string |Yes |Email Verification Code |
 |nickname	|string	|否		|昵称		|
+|nickname |string |no |nickname|
 |inviteCode	|string	|否		|邀请码		|
+|inviteCode |string |No |InviteCode |
 
 **返回值**
+**return value**
 
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+|errCode |string&#124;number |Error code |
 |errMsg							|string				|错误信息		|
+|errMsg |string |Error message |
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
@@ -1559,11 +1582,15 @@ await uniIdCo.resetPwdBySms({
 |parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+|errCode |string&#124;number |Error code |
 |errMsg							|string				|错误信息		|
+|errMsg |string |Error message |
 
 #### 通过邮箱验证码重置密码@reset-pwd-by-email
+#### Reset password via email verification code @reset-pwd-by-email
 
 **接口形式**
+**Interface form**
 
 ```js
 await uniIdCo.resetPwdBySms({
@@ -1575,19 +1602,28 @@ await uniIdCo.resetPwdBySms({
 ```
 
 **参数说明**
+**Parameter Description**
 
 |参数名		|类型	|必填	|说明		|
+|Parameter Name |Type |Required |Description |
 |--			|--		|--		|--			|
 |email		|string	|是		|邮箱		|
+|email |string |Yes |Email |
 |code		|string	|是		|邮箱验证码	|
+|code |string |Yes |Email Verification Code |
 |password	|string	|是		|密码		|
+|password |string |yes |password|
 |captcha	|string	|否		|图形验证码	|
+|captcha |string |no |graphic captcha |
 
 **返回值**
+**return value**
 
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+|errCode |string&#124;number |Error code |
 |errMsg							|string				|错误信息		|
 |errMsg |string |Error message |
 
@@ -1754,6 +1790,7 @@ await uniIdCo.createCaptcha({
 |Parameter Name |Type |Required |Description |
 |--		|--		|--		|--															|
 |scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
+|scene |string |Yes |The usage scenario of the captcha, refer to: [Graphic captcha scene](uni-id-summary.md#captcha-scene) |
 
 **返回值**
 **return value**
@@ -1785,6 +1822,7 @@ await uniIdCo.refreshCaptcha({
 |Parameter Name |Type |Required |Description |
 |--		|--		|--		|--															|
 |scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
+|scene |string |Yes |The usage scenario of the captcha, refer to: [Graphic captcha scene](uni-id-summary.md#captcha-scene) |
 
 **返回值**
 **return value**
@@ -1820,18 +1858,26 @@ await uniIdCo.sendSmsCode({
 |mobile	|string	|是		|手机号码								|
 |mobile |string |yes |mobile number |
 |captcha|string	|是		|图形验证码								|
+|captcha|string |Yes |Captcha |
 |scene	|string	|是		|短信类型，参考：[短信类型](uni-id-summary.md#sms-scene)	|
+|scene |string |Yes |SMS type, reference: [SMS type](uni-id-summary.md#sms-scene) |
 
 **返回值**
+**return value**
 
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+|errCode |string&#124;number |Error code |
 |errMsg							|string				|错误信息		|
+|errMsg |string |Error message |
 
 #### 发送邮箱验证码@send-email-code
+#### Send email verification code@send-email-code
 
 **接口形式**
+**Interface form**
 
 ```js
 await uniIdCo.sendEmailCode({
@@ -1842,12 +1888,17 @@ await uniIdCo.sendEmailCode({
 ```
 
 **参数说明**
+**Parameter Description**
 
 |参数名	|类型	|必填	|说明									|
+|Parameter Name |Type |Required |Description |
 |--		|--		|--		|--										|
 |email	|string	|是		|邮箱								|
+|email |string |Yes |Email |
 |captcha|string	|是		|图形验证码								|
+|captcha|string |Yes |Captcha |
 |scene	|string	|是		|使用场景，参考：[手机、邮箱验证码使用场景](#sms-type)	|
+|scene |string |Yes |Use scenarios, refer to: [Mobile phone, email verification code usage scenarios](#sms-type) |
 
 **返回值**
 **return value**

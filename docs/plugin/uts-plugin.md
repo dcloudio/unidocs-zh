@@ -256,10 +256,14 @@ The Android platform's native third-party library directory supports the followi
 If you use the NDK development so library, it also supports saving to this directory, and it needs to be saved in directories according to the Android abi type.
 
 **HX 3.6.0版本注意**
+**HX 3.6.0 version note**
 
 + UTS真机运行功能，暂时不支持仓库依赖，需要将gradle配置手动下载后，放置在libs目录
++ UTS real machine operation function, temporarily does not support warehouse dependencies, you need to manually download the gradle configuration and place it in the libs directory
 + Uni项目内置了一部分依赖（比如androidX），对于这部分依赖，需要与uni内置依赖版本保持一致
++ The Uni project has some built-in dependencies (such as androidX), and for this part of the dependencies, it needs to be consistent with the uni built-in dependency version
 + 对于uni没有内置的依赖项目，需要确保不要和config.json里重复配置
++ For uni without built-in dependencies, make sure not to duplicate the configuration in config.json
 
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
@@ -552,6 +556,7 @@ onAppActivityBack(() => {
 
 ### onAppActivityRequestPermissionsResult
 容器的宿主activity 获得权限请求结果的回调
+The callback for the container's host activity to obtain the result of the permission request
 
 ```ts
 onAppActivityRequestPermissionsResult((requestCode: number,
@@ -567,6 +572,7 @@ onAppActivityRequestPermissionsResult((requestCode: number,
 	});
 
 //发起定位权限申请
+//Initiate a positioning permission application
 ActivityCompat.requestPermissions(getUniActivity()!,
 	    arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 1001);
 

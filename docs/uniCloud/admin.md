@@ -8,7 +8,7 @@ uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源
 
 - 它基于 uni-app 的宽屏适配，可自动适配 PC 宽屏和手机各端。了解[宽屏适配](https://uniapp.dcloud.io/adapt)
 - 它基于 uniCloud，是 serverless 的云开发。了解[uniCloud](https://uniapp.dcloud.io/uniCloud/README)
-- 它基于 uni-id，使用 uni-id 的用户账户、角色、权限系统。了解[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id)
+- 它基于 uni-id，使用 uni-id 的用户账户、角色、权限系统。了解[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)
 
 官方搭建了[uni-admin演示站点](http://hellouniadmin.dcloud.net.cn/admin/)，你登录后即可快速体验uni-admin。
 
@@ -414,7 +414,7 @@ uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台
 **4. 默认功能丰富**
 
 - 设备统计
-- 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id.html)）
+- 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)）
 - 页面统计
 - 新增、活跃、留存、跳出率分析
 - 渠道分析：辅助渠道推广
@@ -445,7 +445,7 @@ uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插�
 
 ### 用户-角色-权限
 
-uni-admin 框架基于 uni-id，复用 uni-id 的用户、角色、权限系统，详见[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id)。
+uni-admin 框架基于 uni-id，复用 uni-id 的用户、角色、权限系统，详见[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)。
 
 需要注意的是，admin 框架的动态菜单同样依赖 uni-id 的权限表（uni-id-permissions）。
 
@@ -653,4 +653,3 @@ uni-admin框架运行的基础路径默认为`/admin/`，部署到前端网页�
 
 - 问： 使用uni-admin新建用户无法登录，会提示“该账号暂无权限登录” ？
   > 答：用户登录逻辑：登录时系统检测没有菜单会提示“暂无权限登录”，需要给新账号绑定角色，角色有菜单方可登录
-  

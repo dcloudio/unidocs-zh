@@ -202,7 +202,7 @@
   + App-iOS平台 修复 uni.setTabBarItem 动态更新 icon 可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/149955)
   + App-iOS platform Fix the bug that uni.setTabBarItem dynamic update icon may not take effect [Details](https://ask.dcloud.net.cn/question/149955)
   + App-iOS平台 修复 nvue map 组件使用 Google 地图时，多个页面中使用地图组件可能无法正常加载的Bug [详情](https://ask.dcloud.net.cn/question/150080)
-  + App-iOS platform Fix the bug that when the nvue map component uses Google Maps, the map component may not be loaded normally in multiple pages [Details](https://ask.dcloud.net.cn/question/150080)
+  + App-iOS platform Fix the bug that when the nvue map component uses Google Maps, the map component may not be loaded properly in multiple pages [Details](https://ask.dcloud.net.cn/question/150080)
   + Web平台 优化 web-view 组件支持 fullscreen 属性 [详情](https://uniapp.dcloud.net.cn/component/web-view.html)
   + Web Platform Optimized web-view component to support fullscreen attribute [Details](https://uniapp.dcloud.net.cn/component/web-view.html)
   + Web平台 修复 vue3 项目 canvas 组件 touch 事件 stop、prevent 修饰符无效的Bug [详情](https://ask.dcloud.net.cn/question/148195)
@@ -299,11 +299,11 @@
   + 修复 uni-id-common 部分情况下报read property 'reduce' of undefined的Bug
   + Fix the bug that read property 'reduce' of undefined is reported in some cases of uni-id-common
   + 优化 uni-admin 应用管理模块可管理App下载地址、小程序二维码等更多应用信息 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#app-manager)
-  + Optimize the uni-admin application management module to manage more application information such as App download address, MiniApp QR code [Details](https://uniapp.dcloud.io/uniCloud/admin.html#app-manager)
+  + Optimize the uni-admin application management module to manage more application information such as App download address, MiniApp QR code [details](https://uniapp.dcloud.io/uniCloud/admin.html#app-manager)
   + 调整 uni-admin 内置 统一发布页（uni-portal）插件 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#uni-portal)
   + Adjust uni-admin built-in unified publishing page (uni-portal) plugin [Details](https://uniapp.dcloud.io/uniCloud/admin.html#uni-portal)
   + 调整 uni-admin 内置 App升级中心（uni-upgrade-center）插件，并支持多应用商店更新 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#uni-upgrade-center)
-  + Adjust uni-admin built-in uni-upgrade-center(uni-upgrade-center) plugin, and support multi-app store update [Details](https://uniapp.dcloud.io/uniCloud/admin.html#uni-upgrade-center)
+  + Adjust the uni-admin built-in uni-upgrade-center(uni-upgrade-center) plugin, and support multi-app store update [Details](https://uniapp.dcloud.io/uniCloud/admin.html#uni-upgrade-center)
   + 新增 uni-id-pages 允许覆盖uni-id-co内置校验规则 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#custom-validator)
   + Added uni-id-pages to allow overriding the built-in validation rules of uni-id-co [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#custom-validator)
   + 修复 uni-id-pages uni-id-co的logout接口时没有删除token的Bug
@@ -449,7 +449,7 @@
   + 优化 uni-AD 激励视频和信息流广告支持并发请求
   + Optimized uni-AD rewarded video and in-feed Native Ads to support concurrent requests
   + Android平台 新增 Google Pay 支持配置支付网关信息 buildTokenizationSpecification [详情](https://uniapp.dcloud.io/tutorial/app-payment-google.html#%E4%BD%BF%E7%94%A8google%E6%94%AF%E4%BB%98)
-  + Added support for configuring payment gateway information for Google Pay on Android platform buildTokenizationSpecification [Details](https://uniapp.dcloud.io/tutorial/app-payment-google.html#%E4%BD%BF%E7%94%A8google% E6%94%AF%E4%BB%98)
+  + Android platform adds Google Pay support to configure payment gateway information buildTokenizationSpecification [Details](https://uniapp.dcloud.io/tutorial/app-payment-google.html#%E4%BD%BF%E7%94%A8google% E6%94%AF%E4%BB%98)
   + Android平台 更新 腾讯X5内核为 4.3.0.299 版
   + Android platform update Tencent X5 kernel to version 4.3.0.299
   + Android平台 新增 Facebook 登录 SDK 为 12.0.0 版，解决登录受限的问题 [详情](https://ask.dcloud.net.cn/question/147788)
@@ -529,7 +529,7 @@
   + Android平台 更新 云端打包环境 Gradle 为 7.3.3，Android Gradle plugin 为 4.2.0，compileSdkVersion 为 31
   + Android platform update Cloud packaging environment Gradle is 7.3.3, Android Gradle plugin is 4.2.0, compileSdkVersion is 31
   + Android平台 新增 云端打包支持设置 dataBinding、viewBinding [文档](https://uniapp.dcloud.io/collocation/manifest.html#buildfeatures)
-  + Android platform Added support for setting dataBinding, viewBinding in cloud packaging [Documentation](https://uniapp.dcloud.io/collocation/manifest.html#buildfeatures)
+  + Android platform Added support for setting dataBinding and viewBinding in cloud packaging [Documentation](https://uniapp.dcloud.io/collocation/manifest.html#buildfeatures)
   + Android平台 修复 startBluetoothDevicesDiscovery 搜索附近蓝牙设备在 Android12 设备可能引起应用崩溃的Bug [详情](https://ask.dcloud.net.cn/question/146849)
   + Android platform Fix the bug that startBluetoothDevicesDiscovery search for nearby Bluetooth devices may cause the app to crash on Android12 devices [Details](https://ask.dcloud.net.cn/question/146849)
   + Android平台 修复 UniPush 存在监听`ACTION_BOOT_COMPLETED`广播行为，可能违反应用市场上架合规检测问题 [详情](https://ask.dcloud.net.cn/question/147319)
@@ -789,7 +789,7 @@
 * 【App插件(含5+App和uni-app的App端)】
 * [App Plug-in (App side including 5+App and uni-app)]
   + 修复 音频播放 AudioPlayer 暂停后设置播放倍速大于 0 会自动触发播放的Bug [详情](https://ask.dcloud.net.cn/question/143757)
-  + Fix the bug that AudioPlayer will automatically trigger playback after setting the playback speed greater than 0 after the audio playback is paused [Details](https://ask.dcloud.net.cn/question/143757)
+  + Fix the bug that when AudioPlayer is paused, setting the playback speed greater than 0 will automatically trigger playback [Details](https://ask.dcloud.net.cn/question/143757)
   + Android平台 修复 uni-AD 开屏广告开通腾讯优量汇可能引起应用启动白屏的Bug
   + On Android platform, fix the bug that uni-AD App Open Ads and opening Tencent Youlianghui may cause the application to start a white screen
   + iOS平台 修复 登录鉴权、分享的 authorize 方法传入认证参数 options 不生效的Bug
@@ -1148,7 +1148,7 @@
   + App平台 修复 3.4.0 引发的 vue2 项目 canvas 组件 fillText 失效的Bug [详情](https://ask.dcloud.net.cn/question/140786)
   + App platform Fix the bug that the fillText of the canvas component of the vue2 project caused by 3.4.0 is invalid [Details](https://ask.dcloud.net.cn/question/140786)
   + App平台 修复 3.4.0 引发的 vue2 项目 nvue 页面的 uni.createLivePusherContext 无效Bug [详情](https://ask.dcloud.net.cn/question/140743)
-  + App platform Fix the invalid bug of uni.createLivePusherContext on the nvue page of the vue2 project caused by 3.4.0 [Details](https://ask.dcloud.net.cn/question/140743)
+  + App platform Fix the bug of invalid uni.createLivePusherContext on the nvue page of the vue2 project caused by 3.4.0 [Details](https://ask.dcloud.net.cn/question/140743)
   + App平台 修复 vue3 项目 navigator 组件和 rich-text 组件嵌套使用时 scopeId 值不一致导致的样式Bug [详情](https://ask.dcloud.net.cn/question/140644)
   + App platform Fix the style bug caused by inconsistent scopeId values when the navigator component of the vue3 project and the rich-text component are nested. [Details](https://ask.dcloud.net.cn/question/140644)
   + App-iOS平台 修复 nvue map 组件 marker 的 joinCluster 为 false 时 removeMarkers 方法不生效的Bug [详情](https://ask.dcloud.net.cn/question/140648)
@@ -1260,7 +1260,7 @@
   + 支付宝小程序平台 修复 vue2 项目小程序组件事件监听失效的Bug [详情](https://github.com/dcloudio/uni-app/issues/2273)
   + The Alipay MiniApp platform fixes the bug that the event monitoring of the MiniApp component of the vue2 project fails [Details](https://github.com/dcloudio/uni-app/issues/2273)
   + 支付宝小程序平台 修复 vue2 项目小程序插件中组件事件监听失效的Bug [详情](https://github.com/dcloudio/uni-app/issues/2410)
-  + The Alipay MiniApp platform fixes the bug that the component event monitoring fails in the MiniApp plug-in of the vue2 project [Details](https://github.com/dcloudio/uni-app/issues/2410)
+  + The Alipay MiniApp platform fixes the bug of the component event monitoring failure in the MiniApp plug-in of the vue2 project [Details](https://github.com/dcloudio/uni-app/issues/2410)
   + 【重要】hello uniCloud 新增云对象基础使用示例[详情](https://ext.dcloud.net.cn/plugin?id=4082)
   + [Important] hello uniCloud adds cloud object basic usage example [details](https://ext.dcloud.net.cn/plugin?id=4082)
 * 【uniCloud】
@@ -1303,7 +1303,7 @@
   + Android平台 修复 本地相册选择视频设置 compressed 为 false 时依然会压缩的Bug [详情](https://ask.dcloud.net.cn/question/140417)
   + Android platform Fix the bug that the video will still be compressed when the local album selects compressed to false [Details](https://ask.dcloud.net.cn/question/140417)
   + iOS平台 新增 uni原生插件支持 applicationMain 获取 main 函数启动参数 argc、argv [文档](https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=hook%e7%b3%bb%e7%bb%9f%e4%ba%8b%e4%bb%b6)
-  + Added uni native plugin for iOS platform to support applicationMain to get main function startup parameters argc, argv [Documentation](https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=hook%e7%b3%bb% e7%bb%9f%e4%ba%8b%e4%bb%b6)
+  + Added uni native plugin for iOS platform to support applicationMain to get main function startup parameters argc, argv [document](https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=hook%e7%b3%bb% e7%bb%9f%e4%ba%8b%e4%bb%b6)
   + iOS平台 修复 Webview窗口标题栏 titleNView无法动态更新网络页面标题的Bug [详情](https://ask.dcloud.net.cn/question/138958)
   + iOS platform Fix the bug that the title bar of the Webview window titleNView cannot dynamically update the title of the web page [Details](https://ask.dcloud.net.cn/question/138958)
   + iOS平台 修复 compressVideo 视频压缩可能出现尺寸错乱的Bug [详情](https://ask.dcloud.net.cn/question/138303)
@@ -1338,7 +1338,7 @@
   + App-Android平台 修复 vue3 项目 安卓低版本时使用 type=number 的 input 组件输入报错的Bug [详情](https://ask.dcloud.net.cn/question/138088)
   + App-Android platform Fix the bug that the input component of type=number is used to input errors in the vue3 project when the Android version is low [Details](https://ask.dcloud.net.cn/question/138088)
   + App-iOS平台 修复 3.3.2 版本引出的支持多个音频同时播放引发iOS影响静音开关的问题，默认不支持同时播放多个文件，如果需要可手动设置 sessionCategory
-  + App-iOS platform Fixed the problem that the 3.3.2 version supports simultaneous playback of multiple audios and causes iOS to affect the mute switch. By default, multiple files are not supported at the same time. If necessary, you can manually set sessionCategory
+  + App-iOS platform Fixed the issue that the 3.3.2 version supports simultaneous playback of multiple audios and causes iOS to affect the mute switch. By default, multiple files are not supported at the same time. If necessary, you can manually set sessionCategory
   + App-iOS平台 修复 vue3 项目 canvas 组件绘制本地图像后无法导出到本地到Bug
   + App-iOS platform Fix the bug that the canvas component of the vue3 project cannot export to the local after drawing the local image
   + H5平台 优化 uni.chooseLocation 支持传入坐标

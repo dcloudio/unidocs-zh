@@ -120,17 +120,17 @@ First make sure that the uni_modules folder exists in the project root directory
 ### 新建步骤拆解
 ### New step disassembly
 
-选中`uni_modules`目录 -- 右键 -- 新建插件
-Select the `uni_modules` directory -- right click -- create a new plugin
+右键点击`uni_modules`目录 -> 新建插件
 
 ![新建插件1](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin.jpg)
 ![New Plugin 1](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin.jpg)
 
-选择 **uts原生插件**
-Select **uts native plugin**
+选择类型 **uts原生插件**
 
 ![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
 ![New Plugin 2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
+
+为了避免和插件市场的其他插件冲突，建议起一个自己的插件前缀名称。
 
 uts插件目录结构
 uts plugin directory structure
@@ -139,11 +139,9 @@ uts plugin directory structure
 ![New Plugin 3](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin3_1.jpg)
 
 
-### 清单文件package.json
-### Manifest file package.json
+### package.json
 
-package.json为插件配置清单文件，负责描述插件的基本配置。
-package.json is the plugin configuration manifest file, which is responsible for describing the basic configuration of the plugin.
+package.json为uni_modules插件配置清单文件，负责描述插件的基本配置。
 
 
 ```json
@@ -208,9 +206,9 @@ Developers have several ways to organize their code:
 3. Instead of writing index.uts in the root directory, write index.uts directly in the sub-platform directory. When it is not cross-end, such as only making an Android plug-in, it is relatively simple to write this way
 
 index.d.ts文件是对当前插件能力的**声明**，用于语法提示。它不是必写项。
-The index.d.ts file is a **declaration** of the current plugin capabilities for syntax hints. It is not required.
+
 因为uts写好后，HBuilderX可以自动识别uts api并进行语法提示。它更多的用于后续uts插件加密时给予语法提示。
-Because after uts is written, HBuilderX can automatically recognize uts api and give syntax hints. It is more used to give syntax hints when encrypting subsequent uts plugins.
+
 如果不熟悉d.ts，可以自行网上搜索，它属于ts标准技术。
 If you are not familiar with d.ts, you can search online by yourself. It belongs to the standard technology of ts.
 
@@ -235,16 +233,14 @@ The native configuration of the Android platform exists in the app-android folde
 |AndroidManifest.xml	|Android平台原生应用清单文件				|
 |AndroidManifest.xml |Android platform native application manifest file |
 |config.json			|Android平台下的配置文件					|
-|config.json |Configuration file under Android platform |
-|index.uts				|index.d.ts声明的能力在Android平台下的实现	|
-|index.uts |The implementation of the capabilities declared by index.d.ts under the Android platform |
+|index.uts				|主入口，index.d.ts声明的能力在Android平台下的实现	|
 
 
 ##### assets  
 Android平台原生assets资源目录，建议只保存UTS插件内置的资源文件。
-The native assets resource directory of the Android platform, it is recommended to save only the resource files built in the UTS plugin.
-如果需要插件使用者配置（如三方SDK的授权文件）则应该在插件使用文档中告诉插件使用者配置到项目的Android原生应用资源目录，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
-If the plugin user configuration (such as the authorization file of the third-party SDK) is required, the plugin user should be told to configure the Android native application resource directory of the project in the plugin usage document, [see details](https://uniapp.dcloud.net. cn/tutorial/app-nativeresource-android)
+
+除了插件下有assets目录，项目下也有。注意2者的区别。
+如果需要插件使用者配置（如三方SDK的授权文件），则插件作者应该在插件文档中告诉插件使用者，配置到项目的Android原生应用资源目录，而不是配置在插件目录下。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ##### libs  
 Android平台原生三方库目录，支持以下类型文件：
@@ -255,27 +251,23 @@ The Android platform's native third-party library directory supports the followi
 如果使用了NDK开发so库，也支持保存到此目录，需按Android的abi类型分目录保存。
 If you use the NDK development so library, it also supports saving to this directory, and it needs to be saved in directories according to the Android abi type.
 
-关于libs目录的时候，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
-For the libs directory, you can refer to [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
+如果封装三方原生sdk为uni-app插件，经常需要使用本目录。
+
+关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 
 **遗留事项**
-**Legacy**
 
-HX 3.6.1 libs使用存在[临时注意事项](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-6-1-%E9%81%97%E7%95%99%E4%BA%8B%E9%A1%B9)
-HX 3.6.1 libs usage exists [temporary note](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-6-1-%E9%81%97%E7%95% 99%E4%BA%8B%E9%A1%B9)
-
+HX 3.6.1 libs使用存在[临时注意事项](#tempnotice)
 
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
-Android platform native res resource directory, it is recommended to save only the resource files built in the UTS plugin.
-如果需要插件使用者配置使用自定义资源，则应该在插件使用文档中告诉插件使用者配置到项目的Android原生应用资源目录，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
-If plug-in users need to configure and use custom resources, they should tell plug-in users to configure the Android native application resource directory of the project in the plug-in usage documentation, [see details](https://uniapp.dcloud.net.cn/tutorial /app-nativeresource-android)
+
+除了插件下有res目录，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ##### AndroidManifest.xml  
 Android原生应用清单文件，建议只保存UTS插件内置的清单文件配置。
-Android native application manifest file, it is recommended to save only the built-in manifest file configuration of the UTS plugin.
-如果需要插件使用者Android原生应用清单文件，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
-If you need the Android native application manifest file for plugin users, [see details](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+
+除了插件下有AndroidManifest.xml，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ##### config.json
 uts插件在Android平台的原生层配置文件，可以在其中配置依赖仓储等gradle相关内容。
@@ -300,33 +292,26 @@ The uts plugin is in the native layer configuration file of the Android platform
 }
 ```
 
-**注意**
-**Notice**
-Android平台原生配置需提交云端打包才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
-The native configuration of the Android platform needs to be submitted to the cloud to take effect. When the real machine is running, please use the [custom debugging base](https://ask.dcloud.net.cn/article/35115)
+**注意：**
 
-#### HX3.6.1 遗留事项
-#### HX3.6.1 Legacy
+Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
-+ config.json 目前还不支持配置仓库依赖，需要将gradle配置手动下载后，放置在libs目录，使用手动添加的方式集成
-+ config.json does not currently support configuration warehouse dependencies. You need to manually download the gradle configuration, place it in the libs directory, and integrate it by adding it manually.
+#### HX3.6.1 临时注意事项@tempnotice
 
-+ Uni内置了一部分依赖（比如androidX），对于这部分依赖:
-+ Uni has built-in some dependencies (such as androidX), for this part of the dependencies:
+使用HBuilderX 3.6.1版本时，关于原生依赖的处理有部分不完善，需要注意以下事项：
 
++ config.json 目前还不支持配置仓库依赖，需要将gradle配置的库手动下载后，放置在libs目录，使用手动添加的方式集成
+
++ uni-app引擎内置了部分依赖库（比如androidX，清单详见下方），如你的插件需使用相同依赖，请注意：
 	
-	1 需要确保与内置的依赖版本一致。  
-	1 Need to ensure that it is consistent with the built-in dependency version.
+	1. 确保与内置的依赖版本一致。
 	
-	2 提交自定义基座时需要先从libs中暂时移除，避免打包类重复报错。生成自定义基座之后再添加回libs目录。
-	2 When submitting a custom base, you need to temporarily remove it from libs to avoid repeated errors in packaging classes. After generating the custom base, add it back to the libs directory.
+	2. 真机运行时，需将依赖库copy到libs目录下。但注意，打包自定义基座时需先从libs中暂时移除，避免打包类重复报错。生成自定义基座之后再将这些内置依赖库移回libs目录下，否则无法真机运行。
 	
 [内置依赖清单](https://uniapp.dcloud.net.cn/plugin/androidInnerLib.html)
 [Built-in dependency list](https://uniapp.dcloud.net.cn/plugin/androidInnerLib.html)
 
-
-遗留事项后续升级完善。
-Remaining matters will be upgraded and improved later.
+这些遗留事项会尽快升级完善。
 
 ## 3 开发uts原生插件
 ## 3 Develop uts native plugin
@@ -376,8 +361,7 @@ export function getBatteryCapacity(): string {
 至此，我们已经完成一个Android平台上获取电量的原生能力封装。
 So far, we have completed the packaging of the native ability to obtain electricity on the Android platform.
 
-在下一节，将介绍插件的使用，可以像使用普通js函数一样，使用getBatteryCapacity函数来获取设备电量。
-In the next section, we will introduce the use of plug-ins. You can use the getBatteryCapacity function to get the device battery like a normal js function.
+在下一节，将介绍前端如何使用这个插件。
 
 注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
 Note: HBuilderX's code prompt system supports prompting Android's native API in the uts file.
@@ -466,20 +450,13 @@ Like native plugins, it involves the following scenarios, which require a custom
 To sum up, all the capabilities that standard docks do not have, such as new dependencies/gralde configuration/androidManifest.xml/resources, require a custom dock
 
 
-
 ### 5.3 遗留问题
 ### 5.3 Legacy issues
 
 截止到HBuilderX 3.6.1 时遗留事项：
-Leftovers as of HBuilderX 3.6.1:
-- 不能debug uts源码
-- Cannot debug uts source code
+- 不能debug断点uts源码
 - iOS版还未发布
-- iOS version not released yet
-- UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-6-1-%E9%81%97%E7%95%99%E4%BA%8B%E9%A1%B9)
-- UTS plugin does not support remote repository dependencies. For the configuration method of adding plugins, please refer to [this chapter](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-6-1-%E9 %81%97%E7%95%99%E4%BA%8B%E9%A1%B9)
-
-
+- UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](#tempnotice)
 
 遗留事项后续升级完善。
 Remaining matters will be upgraded and improved later.
@@ -493,8 +470,9 @@ Cloud packaging is normally supported.
 注意：虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
 Note: Although uts supports hot flashing when the real machine is running, after packaging, uts is compiled into pure native binary code and does not support wgt hot update.
 
-## Android内置库@iodcloudutsandroid
-## Android built-in library @iodcunutsandroid
+打包若包含了已经内置的依赖库，则需注意参考 [这个章节](#tempnotice)
+
+## uni-app的Android内置库@iodcloudutsandroid
 
 在uts里，Android的所有api都可以访问。同时DCloud提供了`io.dcloud.uts.android`库，处理在uni-app下的特殊情况。
 In uts, all APIs of Android can be accessed. At the same time, DCloud provides the `io.dcloud.uts.android` library to handle special cases under uni-app.
@@ -539,9 +517,7 @@ let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 
 ### getResourcePath(resourceName:String)
 
-获取指定插件资源 的运行期绝对路径
-Get the runtime absolute path of the specified plugin resource
-
+获取指定插件资源的运行期绝对路径
  
 ```ts
 // [示例]获取指定资源路径
@@ -552,11 +528,9 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 ```
 
-
 ### onAppActivityPause
 
-容器的宿主activity onPause时触发
-Triggered when the container's host activity is onPause
+App的activity onPause时触发
 
 ```ts
 onAppActivityPause(() => {
@@ -567,8 +541,7 @@ onAppActivityPause(() => {
 
 ### onAppActivityResume
 
-容器的宿主activity onResume时触发
-Fired when the container's host activity is onResume
+App的activity onResume时触发
 
 ```ts
 onAppActivityResume(() => {
@@ -579,8 +552,7 @@ onAppActivityResume(() => {
 
 ### onAppActivityDestroy
 
-容器的宿主activity onDestroy时触发
-Triggered when the container's host activity is onDestroy
+App 的 activity onDestroy时触发
 
 ```ts
 onAppActivityDestroy(() => {
@@ -591,8 +563,7 @@ onAppActivityDestroy(() => {
 
 ### onAppActivityBack
 
-容器的宿主activity 回退物理按键点击时触发
-Fired when the container's host activity rolls back the physical button click
+App 的 activity 回退物理按键点击时触发
 
 ```ts
 onAppActivityBack(() => {
@@ -602,8 +573,7 @@ onAppActivityBack(() => {
 ```
 
 ### onAppActivityRequestPermissionsResult
-容器的宿主activity 获得权限请求结果的回调
-The callback for the container's host activity to obtain the result of the permission request
+App 的 activity 获得权限请求结果的回调
 
 ```ts
 onAppActivityRequestPermissionsResult((requestCode: number,
@@ -667,11 +637,8 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 ## route map
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-uts is a grand project, and the product will be released in stages. To be released in the near future:
-1. 支持vue2编译器
-1. Support vue2 compiler
-2. iOS相关功能
-2. iOS related functions
+1. iOS相关功能
+2. 支持vue2编译器
 3. debug
 4. UI操作能力
 4. UI operation ability

@@ -1302,7 +1302,7 @@ The `cleanLog` parameter is used to configure regular cleaning of expired logs, 
 The currently configurable log types are:
 
 - `基础会话日志：sessionLog`，默认保留`31`天的日志。注意：因设备留存统计中最长需要统计30后的留存数据， 所以基础会话日志要至少保存`31`天的日志，否则会对设备留存统计造成影响。
-- `Basic session log: sessionLog`, keep logs for `31` days by default. Note: Because the device retention statistics need to count the retained data after 30 days at the longest, the basic session logs must be kept for at least `31` days, otherwise, the device retention statistics will be affected.
+- `Basic session log: sessionLog`, keep logs for `31` days by default. Note: Because the device retention statistics need to count the retained data after 30 days at the longest, the basic session logs must be stored for at least `31` days, otherwise the device retention statistics will be affected.
 - `用户会话日志：userSessionLog`，默认保留`31`天的日志。注意：因用户留存统计中最长需要统计30后的留存数据， 所以用户会话日志要至少保存`31`天的日志，否则会对用户留存统计造成影响。
 - `User session log: userSessionLog`, keep logs for `31` days by default. Note: Because the user retention statistics need to count the retained data after 30 days at the longest, the user session log must be kept for at least `31` days, otherwise it will affect the user retention statistics.
 - `页面日志：pageLog`，默认保留`7`天的日志。

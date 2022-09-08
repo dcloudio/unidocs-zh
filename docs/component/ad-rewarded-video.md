@@ -516,15 +516,22 @@ Notice:
 3. It is not recommended to modify the callback service space and cloud function name in `uniAD` web control, because it will take some time for the modification to take effect
 
 ### 微信小程序说明@callbackweixin
+### WeChat MiniApp description @callbackweixin
 
 3.6.2+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id-summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
+3.6.2+ supports WeChat MiniApp server callback, currently only supports MiniApp using [uni-id](/uniCloud/uni-id-summary.html) user system, and will support non-uni-id user system in the future
 
 #### 接入流程
+#### Access process
 
 1. 更新依赖库支持
+1. Update dependency library support
 - 如果项目使用了 [uni-id](/uniCloud/uni-id-summary.html) 需要更新到 3.3.29+
+- If the project uses [uni-id](/uniCloud/uni-id-summary.html) need to update to 3.3.29+
 - 如果项目使用了 [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) 需要更新到 1.0.8+
+- If the project uses [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) need to update to 1.0.8+
 2. 使用 [uni-open-bridge](/uniCloud/uni-open-beidge.html) 托管三方开放平台数据
+2. Use [uni-open-bridge](/uniCloud/uni-open-beidge.html) to host third-party open platform data
 
 ### Q&A
 

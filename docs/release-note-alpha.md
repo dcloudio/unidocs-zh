@@ -709,7 +709,7 @@
   + 新增 uni.getSystemInfo 支持获取更多属性 [详情](https://uniapp.dcloud.io/api/system/info.html)
   + Added uni.getSystemInfo support to get more properties [Details](https://uniapp.dcloud.io/api/system/info.html)
   + 优化 vue3 项目 兼容 pnpm@7.0.0
-  + Optimized vue3 project compatible with pnpm@7.0.0
+  + Optimize vue3 project compatible with pnpm@7.0.0
   + 修复 vue3 项目 部分情况下错误信息不准确的Bug
   + Fix the bug of inaccurate error information in some cases of vue3 project
   + 修复 vue3 项目 vite.config.js 配置 build.minify 为 terser 不生效的Bug [详情](https://ask.dcloud.net.cn/question/144992)

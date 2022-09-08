@@ -59,9 +59,7 @@ Different names mean that they require developers to write in different language
 |- |Native language plugin |uts plugin |
 |-				|-------					|--------						|
 |开发语言		|java/oc					|uts							|
-|Development language |java/oc |uts |
-|开发环境		|Android studio/XCode		|HBuilderX						|
-|Development Environment |Android studio/XCode |HBuilderX |
+|开发环境		|Android Studio/XCode		|HBuilderX						|
 |打包方式		|外挂aar 等产出物			|编译时生成原生代码				|
 |Packaging |Plug-in aar and other outputs |Generate native code when compiling |
 |js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接import|
@@ -142,8 +140,7 @@ uts plugin directory structure
 ### 清单文件package.json
 ### Manifest file package.json
 
-package.json为uni_modules的配置清单文件。
-package.json is the configuration manifest file of uni_modules.
+package.json为插件配置清单文件，负责描述插件的基本配置。
 
 
 ```json
@@ -158,8 +155,7 @@ package.json is the configuration manifest file of uni_modules.
 }
 ```
 
-package.json的完整文档[详见](uni_modules.md#package.json)
-Full documentation of package.json [see details](uni_modules.md#package.json)
+上面是一个默认的清单文件示例,关于package.json更多描述[详见](uni_modules.md#package.json)
 
 ### 插件的目录结构
 ### Plugin directory structure
@@ -255,6 +251,12 @@ The Android platform's native third-party library directory supports the followi
 如果使用了NDK开发so库，也支持保存到此目录，需按Android的abi类型分目录保存。
 If you use the NDK development so library, it also supports saving to this directory, and it needs to be saved in directories according to the Android abi type.
 
+关于libs目录的时候，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
+
+**遗留事项**
+
+HX 3.6.1 libs使用存在[临时注意事项](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-6-1-%E9%81%97%E7%95%99%E4%BA%8B%E9%A1%B9)
+
 
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
@@ -296,8 +298,7 @@ The uts plugin is in the native layer configuration file of the Android platform
 Android平台原生配置需提交云端打包才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 The native configuration of the Android platform needs to be submitted to the cloud to take effect. When the real machine is running, please use the [custom debugging base](https://ask.dcloud.net.cn/article/35115)
 
-#### 3.6.1 遗留事项
-#### 3.6.1 Legacy
+#### HX3.6.1 遗留事项
 
 + config.json 目前还不支持配置仓库依赖，需要将gradle配置手动下载后，放置在libs目录，使用手动添加的方式集成
 + config.json does not currently support configuration warehouse dependencies. You need to manually download the gradle configuration, place it in the libs directory, and integrate it by adding it manually.
@@ -312,8 +313,7 @@ The native configuration of the Android platform needs to be submitted to the cl
 	2 提交自定义基座时需要先从libs中暂时移除，避免打包类重复报错。生成自定义基座之后再添加回libs目录。
 	2 When submitting a custom base, you need to temporarily remove it from libs to avoid repeated errors in packaging classes. After generating the custom base, add it back to the libs directory.
 	
-[内置依赖清单](缺链接)
-[Built-in dependency list](missing link)
+[内置依赖清单](https://uniapp.dcloud.net.cn/plugin/androidInnerLib.html)
 
 
 遗留事项后续升级完善。
@@ -466,9 +466,7 @@ Leftovers as of HBuilderX 3.6.1:
 - 不能debug uts源码
 - Cannot debug uts source code
 - iOS版还未发布
-- iOS version not released yet
-- UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](缺链接)
-- UTS plugin does not yet support remote warehouse dependencies. For the configuration method of adding plugins, please refer to [this chapter](link missing)
+- UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-6-1-%E9%81%97%E7%95%99%E4%BA%8B%E9%A1%B9)
 
 
 

@@ -173,6 +173,7 @@ iOS平台云端打包相关配置
             "allowDownloadWithoutWiFi": false // 是否允许用户在非WiFi网络时进行x5内核的下载。（如果为true，就不会显示用户确认的弹窗。）
           }
         },
+		"checkPermissionDenied": false, // 是否校验已拒绝权限 如果拒绝则不会再申请 默认false 不校验已拒绝权限
         "distribute": {      //必选，JSON对象，云端打包配置
             "android": {            //可选，JSON对象，Android平台云端打包配置
                 "packagename": "",          //必填，字符串类型，Android包名

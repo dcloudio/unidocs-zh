@@ -343,7 +343,7 @@ Please refer to [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-adm
 3. 部署云端资源：上传部署云函数、公共模块、通过`db_init.json`初始化数据库表。如之前的表已经有冲突数据，需要自己手动合并下
 3. Deploy cloud resources: upload and deploy cloud functions, public modules, and initialize database tables through `db_init.json`. If the previous table already has conflicting data, you need to manually merge it yourself
 4. 在云端配置中心完成其它初始化配置，如：在 `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` 文件中填写自己的 passwordSecret 字段 (用于加密密码入库的密钥) 和 tokenSecret 字段 (为生成 token 需要的密钥，测试期间跳过本条也可以)，然后对`uni-config-center`公共模块点右键上传更新。注意：`业务端App项目`和`报表端uni-admin项目`关联相同服务空间时，可能会出现`uni-config-center`的相互覆盖问题，此时建议单点维护，[详见](https://uniapp.dcloud.net.cn/uni-stat-v2.html#常见问题)。
-4. Complete other initialization configurations in the cloud configuration center, such as: fill in your own passwordSecret field in the `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` file (used for encrypted password storage key) and tokenSecret fields (to generate the secret key required for token generation, you can also skip this item during the test), then right-click on the `uni-config-center` public module to upload the update. Note: When the `business-side App project` and the `report-side uni-admin project` are associated with the same service space, the mutual coverage problem of `uni-config-center` may occur. In this case, single-point maintenance is recommended. [See details]( https://uniapp.dcloud.net.cn/uni-stat-v2.html#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98).
+4. Complete other initialization configurations in the cloud configuration center, such as: fill in your own passwordSecret field in the `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json` file (used for encrypted password storage key) and tokenSecret fields (to generate the secret key required for token generation, you can skip this item during the test), then right-click on the `uni-config-center` public module to upload the update. Note: When the `business-side App project` and the `report-side uni-admin project` are associated with the same service space, the mutual coverage problem of `uni-config-center` may occur. In this case, it is recommended to maintain a single point. [See details]( https://uniapp.dcloud.net.cn/uni-stat-v2.html#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98).
 5. 运行 uni-admin 项目，一般是运行到浏览器
 5. Run the uni-admin project, usually to the browser
 6. 设置管理员账户
@@ -453,7 +453,7 @@ Before enabling the redis cache, you need to confirm whether the redis service h
 2. 分别在数据`上报数据接收器（uni-stat-receiver）`和`定时任务云函数（uni-stat-cron）`下的`package.json`文件中添加redis拓展库。
 2. Add the redis extension library to the `package.json` file under the data `Report data receiver (uni-stat-receiver)` and `Scheduled task cloud function (uni-stat-cron)` respectively.
 3. 重新上传部署数据`上报数据接收器（uni-stat-receiver）`、`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
-3. Re-upload the deployment data `Report Data Receiver (uni-stat-receiver)`, `Scheduled Task Cloud Function (uni-stat-cron)` and `Configuration Center (uni-config-center)`.
+3. Re-upload the deployment data `Report data receiver (uni-stat-receiver)`, `Scheduled task cloud function (uni-stat-cron)` and `Configuration center (uni-config-center)`.
 
 ::: preview 
 > 配置uni-stat-receiver的redis拓展库
@@ -1233,7 +1233,7 @@ The current types of scheduled tasks are (`The content in brackets below indicat
   - 日统计，默认`每天上午3点（40分钟）`触发，统计用户日留存数据（初始统计前天到昨天的留存情况，因此需至少运行三天才会有数据）
   - Daily statistics, triggered by `every day at 3:00 a.m. (40 minutes)` by default, to count the daily retained data of users (the initial statistics of retention from the day before yesterday to yesterday, so it takes at least three days to have data)
   - 周统计，默认`每周一上午5点（30分钟）`触发，统计用户周留存数据（初始统计上上周到上周的留存情况，因此需至少运行三周才会有数据）
-  - Weekly statistics, triggered by `every Monday at 5:00 am (30 minutes)` by default, and statistics the user's weekly retention data (the initial statistics of the retention status from the last week to the last week, so there will be data after at least three weeks of operation)
+  - Weekly statistics, triggered by `every Monday at 5:00 am (30 minutes)` by default, and statistics the user's weekly retained data (the initial statistics of the retention from the last week to the last week, so there will be data after at least three weeks of operation)
   - 月统计，默认`每月1号上午6点（40分钟）`触发，统计用户月留存数据（初始统计上上月到上月的留存情况，因此需至少运行三个月才会有数据）
   - Monthly statistics, triggered by the default `6:00 am (40 minutes) on the 1st of each month`, to count the monthly retention data of users (the retention status from the previous month to the previous month is initially counted, so it takes at least three months to have data)
 

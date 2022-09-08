@@ -1,6 +1,8 @@
 ## android内置依赖
+## android built-in dependencies
 
 |依赖名|
+|dependency name|
 |------|
 |com.github.bumptech.glide:glide:4.9.0|
 |androidx.legacy:legacy-support-v4:1.0.0|

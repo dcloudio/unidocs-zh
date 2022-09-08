@@ -299,7 +299,7 @@
   + 修复 uni-id-common 部分情况下报read property 'reduce' of undefined的Bug
   + Fix the bug that read property 'reduce' of undefined is reported in some cases of uni-id-common
   + 优化 uni-admin 应用管理模块可管理App下载地址、小程序二维码等更多应用信息 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#app-manager)
-  + Optimize the uni-admin application management module to manage more application information such as App download address, MiniApp QR code [Details](https://uniapp.dcloud.io/uniCloud/admin.html#app-manager)
+  + Optimize the uni-admin application management module to manage more application information such as App download address, MiniApp QR code [details](https://uniapp.dcloud.io/uniCloud/admin.html#app-manager)
   + 调整 uni-admin 内置 统一发布页（uni-portal）插件 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#uni-portal)
   + Adjust uni-admin built-in unified publishing page (uni-portal) plugin [Details](https://uniapp.dcloud.io/uniCloud/admin.html#uni-portal)
   + 调整 uni-admin 内置 App升级中心（uni-upgrade-center）插件，并支持多应用商店更新 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#uni-upgrade-center)
@@ -407,7 +407,7 @@
   + 新增 uni-push2.0 全端支持（App、小程序、web）的云端一体的统一推送服务 [详情](https://uniapp.dcloud.io/unipush-v2.html)
   + Added uni-push2.0 full-end support (App, MiniApp, web) cloud-integrated unified push service [Details](https://uniapp.dcloud.io/unipush-v2.html)
   + 新增 腾讯云平台 数据万象，对云存储文件进行图片缩放、增加水印等计算功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage.html#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86)
-  + Added Tencent Cloud Platform Data Vientiane, zooming in and out of cloud storage files, adding watermarks and other computing functions [Details](https://uniapp.dcloud.net.cn/uniCloud/storage.html#%E6%95%B0 %E6%8D%AE%E5%A4%84%E7%90%86)
+  + Added Tencent Cloud Platform Data Vientiane, which can perform image scaling, watermarking and other computing functions for cloud storage files [Details](https://uniapp.dcloud.net.cn/uniCloud/storage.html#%E6%95%B0 %E6%8D%AE%E5%A4%84%E7%90%86)
   + 新增 keepRunningAfterReturn 配置云函数是否能在 return 后继续运行，仅腾讯云 nodejs12 生效 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#keep-running)
   + Added keepRunningAfterReturn to configure whether the cloud function can continue to run after return. Only Tencent Cloud nodejs12 takes effect [Details](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#keep-running)
   + 新增 Redis扩展库 增加 quit 接口用于断开 redis 连接 [详情](https://uniapp.dcloud.net.cn/uniCloud/redis.html#quit)
@@ -1338,7 +1338,7 @@
   + App-Android平台 修复 vue3 项目 安卓低版本时使用 type=number 的 input 组件输入报错的Bug [详情](https://ask.dcloud.net.cn/question/138088)
   + App-Android platform Fix the bug that the input component of type=number is used to input errors in the vue3 project when the Android version is low [Details](https://ask.dcloud.net.cn/question/138088)
   + App-iOS平台 修复 3.3.2 版本引出的支持多个音频同时播放引发iOS影响静音开关的问题，默认不支持同时播放多个文件，如果需要可手动设置 sessionCategory
-  + App-iOS platform Fixed the issue that the 3.3.2 version supports simultaneous playback of multiple audios and causes iOS to affect the mute switch. By default, multiple files are not supported at the same time. If necessary, you can manually set sessionCategory
+  + App-iOS platform Fixed the problem that the 3.3.2 version supports simultaneous playback of multiple audios and causes iOS to affect the mute switch. By default, multiple files are not supported at the same time. If necessary, you can manually set sessionCategory
   + App-iOS平台 修复 vue3 项目 canvas 组件绘制本地图像后无法导出到本地到Bug
   + App-iOS platform Fix the bug that the canvas component of the vue3 project cannot export to the local after drawing the local image
   + H5平台 优化 uni.chooseLocation 支持传入坐标

@@ -303,7 +303,7 @@
   + 调整 uni-admin 内置 统一发布页（uni-portal）插件 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#uni-portal)
   + Adjust uni-admin built-in unified publishing page (uni-portal) plugin [Details](https://uniapp.dcloud.io/uniCloud/admin.html#uni-portal)
   + 调整 uni-admin 内置 App升级中心（uni-upgrade-center）插件，并支持多应用商店更新 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#uni-upgrade-center)
-  + Adjust the uni-admin built-in uni-upgrade-center(uni-upgrade-center) plugin, and support multi-app store update [Details](https://uniapp.dcloud.io/uniCloud/admin.html#uni-upgrade-center)
+  + Adjust uni-admin built-in uni-upgrade-center(uni-upgrade-center) plugin, and support multi-app store update [Details](https://uniapp.dcloud.io/uniCloud/admin.html#uni-upgrade-center)
   + 新增 uni-id-pages 允许覆盖uni-id-co内置校验规则 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#custom-validator)
   + Added uni-id-pages to allow overriding the built-in validation rules of uni-id-co [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#custom-validator)
   + 修复 uni-id-pages uni-id-co的logout接口时没有删除token的Bug
@@ -449,7 +449,7 @@
   + 优化 uni-AD 激励视频和信息流广告支持并发请求
   + Optimized uni-AD rewarded video and in-feed Native Ads to support concurrent requests
   + Android平台 新增 Google Pay 支持配置支付网关信息 buildTokenizationSpecification [详情](https://uniapp.dcloud.io/tutorial/app-payment-google.html#%E4%BD%BF%E7%94%A8google%E6%94%AF%E4%BB%98)
-  + Android platform adds Google Pay support to configure payment gateway information buildTokenizationSpecification [Details](https://uniapp.dcloud.io/tutorial/app-payment-google.html#%E4%BD%BF%E7%94%A8google% E6%94%AF%E4%BB%98)
+  + Added support for configuring payment gateway information for Google Pay on Android platform buildTokenizationSpecification [Details](https://uniapp.dcloud.io/tutorial/app-payment-google.html#%E4%BD%BF%E7%94%A8google% E6%94%AF%E4%BB%98)
   + Android平台 更新 腾讯X5内核为 4.3.0.299 版
   + Android platform update Tencent X5 kernel to version 4.3.0.299
   + Android平台 新增 Facebook 登录 SDK 为 12.0.0 版，解决登录受限的问题 [详情](https://ask.dcloud.net.cn/question/147788)
@@ -735,7 +735,7 @@
   + App-Android平台 补齐 tabBar 和 navigationBar 支持高斯模糊效果 [详情](https://uniapp.dcloud.io/tutorial/app-blureffect)
   + App-Android platform completes tabBar and navigationBar to support Gaussian blur effect [Details](https://uniapp.dcloud.io/tutorial/app-blureffect)
   + H5平台 修复 rich-text 组件部分标签没有加上 scopeId 导致样式应用不上的Bug [详情](https://ask.dcloud.net.cn/question/144042)
-  + H5 platform Fix the bug that the style cannot be applied because the scopeId is not added to some tags of the rich-text component [Details](https://ask.dcloud.net.cn/question/144042)
+  + H5 platform Fix the bug that the rich-text component tags are not added with scopeId, which causes the style to not be applied [Details](https://ask.dcloud.net.cn/question/144042)
   + H5平台 修复 vue3 项目使用 picker 组件报错的Bug [详情](https://ask.dcloud.net.cn/question/144073)
   + H5 platform Fix the bug that the vue3 project uses the picker component to report errors [Details](https://ask.dcloud.net.cn/question/144073)
   + H5平台 修复 vue3 项目 当页面同时存在 vue、nvue 时，样式不正确的Bug [详情](https://ask.dcloud.net.cn/question/144687)
@@ -789,7 +789,7 @@
 * 【App插件(含5+App和uni-app的App端)】
 * [App Plug-in (App side including 5+App and uni-app)]
   + 修复 音频播放 AudioPlayer 暂停后设置播放倍速大于 0 会自动触发播放的Bug [详情](https://ask.dcloud.net.cn/question/143757)
-  + Fix the bug that when AudioPlayer is paused, setting the playback speed greater than 0 will automatically trigger playback [Details](https://ask.dcloud.net.cn/question/143757)
+  + Fix the bug that AudioPlayer will automatically trigger playback after setting the playback speed greater than 0 after the audio playback is paused [Details](https://ask.dcloud.net.cn/question/143757)
   + Android平台 修复 uni-AD 开屏广告开通腾讯优量汇可能引起应用启动白屏的Bug
   + On Android platform, fix the bug that uni-AD App Open Ads and opening Tencent Youlianghui may cause the application to start a white screen
   + iOS平台 修复 登录鉴权、分享的 authorize 方法传入认证参数 options 不生效的Bug
@@ -1299,7 +1299,7 @@
   + Android平台 修复 在部分设备调用 plus.runtime.restart 可能引起应用闪退的Bug [详情](https://ask.dcloud.net.cn/question/138965)
   + Android platform Fix the bug that calling plus.runtime.restart on some devices may cause the application to crash [Details](https://ask.dcloud.net.cn/question/138965)
   + Android平台 修复 系统语言设置为土耳其语时，tabbar 切换选项可能导致不显示的Bug [详情](https://ask.dcloud.net.cn/question/139313)
-  + Android platform fix When the system language is set to Turkish, the tabbar switch option may cause a bug that is not displayed [Details](https://ask.dcloud.net.cn/question/139313)
+  + Android platform Fix When the system language is set to Turkish, the tabbar switch option may cause a bug that is not displayed [Details](https://ask.dcloud.net.cn/question/139313)
   + Android平台 修复 本地相册选择视频设置 compressed 为 false 时依然会压缩的Bug [详情](https://ask.dcloud.net.cn/question/140417)
   + Android platform Fix the bug that the video will still be compressed when the local album selects compressed to false [Details](https://ask.dcloud.net.cn/question/140417)
   + iOS平台 新增 uni原生插件支持 applicationMain 获取 main 函数启动参数 argc、argv [文档](https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=hook%e7%b3%bb%e7%bb%9f%e4%ba%8b%e4%bb%b6)
@@ -1338,7 +1338,7 @@
   + App-Android平台 修复 vue3 项目 安卓低版本时使用 type=number 的 input 组件输入报错的Bug [详情](https://ask.dcloud.net.cn/question/138088)
   + App-Android platform Fix the bug that the input component of type=number is used to input errors in the vue3 project when the Android version is low [Details](https://ask.dcloud.net.cn/question/138088)
   + App-iOS平台 修复 3.3.2 版本引出的支持多个音频同时播放引发iOS影响静音开关的问题，默认不支持同时播放多个文件，如果需要可手动设置 sessionCategory
-  + App-iOS platform Fixed the issue that the 3.3.2 version supports simultaneous playback of multiple audios and causes iOS to affect the mute switch. By default, multiple files are not supported at the same time. If necessary, you can manually set sessionCategory
+  + App-iOS platform Fixed the problem that the 3.3.2 version supports simultaneous playback of multiple audios and causes iOS to affect the mute switch. By default, multiple files are not supported at the same time. If necessary, you can manually set sessionCategory
   + App-iOS平台 修复 vue3 项目 canvas 组件绘制本地图像后无法导出到本地到Bug
   + App-iOS platform Fix the bug that the canvas component of the vue3 project cannot export to the local after drawing the local image
   + H5平台 优化 uni.chooseLocation 支持传入坐标

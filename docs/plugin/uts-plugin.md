@@ -297,20 +297,27 @@ Android平台原生配置需提交云端打包才能生效，真机运行时请�
 The native configuration of the Android platform needs to be submitted to the cloud to take effect. When the real machine is running, please use the [custom debugging base](https://ask.dcloud.net.cn/article/35115)
 
 #### 3.6.1 遗留事项
+#### 3.6.1 Legacy
 
 + config.json 目前还不支持配置仓库依赖，需要将gradle配置手动下载后，放置在libs目录，使用手动添加的方式集成
++ config.json does not currently support configuration warehouse dependencies. You need to manually download the gradle configuration, place it in the libs directory, and integrate it by adding it manually.
 
 + Uni内置了一部分依赖（比如androidX），对于这部分依赖:
++ Uni has built-in some dependencies (such as androidX), for this part of the dependencies:
 
 	
 	1 需要确保与内置的依赖版本一致。  
+	1 Need to ensure that it is consistent with the built-in dependency version.
 	
 	2 提交自定义基座时需要先从libs中暂时移除，避免打包类重复报错。生成自定义基座之后再添加回libs目录。
+	2 When submitting a custom base, you need to temporarily remove it from libs to avoid repeated errors in packaging classes. After generating the custom base, add it back to the libs directory.
 	
 [内置依赖清单](缺链接)
+[Built-in dependency list](missing link)
 
 
 遗留事项后续升级完善。
+Remaining matters will be upgraded and improved later.
 
 ## 3 开发uts原生插件
 ## 3 Develop uts native plugin
@@ -421,8 +428,10 @@ For more development examples, you can refer to [HelloUTS](https://gitcode.net/d
 ## 5 Real machine running
 
 ### 5.1 UTS支持真机运行
+### 5.1 UTS supports real machine operation
 
 **uts虽然是原生代码，但同样具有真机运行功能**
+**Although uts is a native code, it also has the function of running on a real machine**
 
 若HBuilderX中没有`uts编译运行插件`，在第一次运行时会自动下载。
 If there is no `uts compile and run plugin` in HBuilderX, it will be downloaded automatically when it is run for the first time.
@@ -431,25 +440,35 @@ If there is no `uts compile and run plugin` in HBuilderX, it will be downloaded 
 On Android, the running experience is basically the same as uni-app. You can also hot refresh and print console.log.
 
 ### 5.2 自定义基座
+### 5.2 Custom Dock
 
 自定义基座也支持uts插件。
+Custom docks also support uts plugins.
 
 与原生插件一样,涉及以下场景,需要自定义基座后方能生效:
+Like native plugins, it involves the following scenarios, which require a custom base to take effect:
 
 - 1 集成三方sdk
+- 1 integrated third party sdk
 - 2 新增资源(包括res/asset 等)
+- 2 New resources (including res/asset, etc.)
 
 总结来说，就是所有 涉及新增依赖/gralde配置/androidManifest.xml/资源 等标准基座不具备的能力时，需要自定义基座
+To sum up, all the capabilities that standard docks do not have, such as new dependencies/gralde configuration/androidManifest.xml/resources, require a custom dock
 
 
 
 ### 5.3 遗留问题
+### 5.3 Legacy issues
 
 截止到HBuilderX 3.6.1 时遗留事项：
+Leftovers as of HBuilderX 3.6.1:
 - 不能debug uts源码
 - Cannot debug uts source code
 - iOS版还未发布
+- iOS version not released yet
 - UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](缺链接)
+- UTS plugin does not yet support remote warehouse dependencies. For the configuration method of adding plugins, please refer to [this chapter](link missing)
 
 
 
@@ -628,6 +647,7 @@ let textSize =  30.0.toFloat();
 ### Generic parameters
 
 android中UI相关的api，很多会要求泛型，目前uts中可以使用下面的代码实现
+Many UI-related APIs in android will require generics. Currently, the following code can be used in uts.
 
 ```ts
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)

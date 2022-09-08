@@ -30,4 +30,4 @@ uni统计官网地址：[https://tongji.dcloud.net.cn/](https://tongji.dcloud.ne
 
 #### 加入换量联盟
 
-```uni-app``` 发行成原生App后，可加入DCloud换量平台，和其他开发者交叉换量、彼此推广，每日新增用户可翻倍！详情及开通方式：[http://ask.dcloud.net.cn/article/13300](http://ask.dcloud.net.cn/article/13300)
+`uni-app` 发行成原生App后，可加入DCloud换量平台，和其他开发者交叉换量、彼此推广，每日新增用户可翻倍！详情及开通方式：[http://ask.dcloud.net.cn/article/13300](http://ask.dcloud.net.cn/article/13300)

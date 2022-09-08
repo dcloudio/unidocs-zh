@@ -113,7 +113,7 @@ It is recommended to use the component's autoloading logic directly, and there i
 #### 简单示例
 #### Simple example
 
-```html
+```vue
 <template>
   <view>
     <ad-rewarded-video adpid="1507000689" :loadnext="true" v-slot:default="{loading, error}">

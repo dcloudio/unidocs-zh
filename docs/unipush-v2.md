@@ -255,7 +255,7 @@ vivo设备)。
 
 > 先跟着示例代码简单体验，详细的uni.getPushClientId api介绍[详情参考](/uniCloud/uni-cloud-push/api.html#getpushclientid)  
 代码示例：
-```js 
+```js
 // uni-app客户端获取push客户端标记
 uni.getPushClientId({
 	success: (res) => {

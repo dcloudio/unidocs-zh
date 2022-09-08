@@ -671,7 +671,7 @@ iOS platform cloud packaging related configuration
         },
         "popGesture": "none",                       //可选，字符串类型，窗口侧滑返回默认效果，可取值none、close、hide
         "runmode": "liberate",                      //可选，字符串类型，应用资源运行模式，可取值normal、liberate
-        "safearera": {                              //可选，JSON对象，安全区域配置
+        "safearea": {                              //可选，JSON对象，安全区域配置
             "background": "#RRGGBB",                                //可选，字符串类型，#RRGGBB格式，安全区域背景颜色
             "backgroundDark": "#RRGGBB",                            //可选，字符串类型，#RRGGBB格式，暗黑模式安全区域背景颜色
             "bottom": {                                             //可选，JSON对象，底部安全区域配置

@@ -51,8 +51,7 @@ Follow-up support
 1. 下载uni-id插件
 1. Download the uni-id plugin
 
-- `uni-id-co` [详情]()
-- `uni-id-co` [details]()
+- `uni-id-co` [详情](/uniCloud/uni-id-summary.html#save-user-token)
 
 2. 下载uni-open-bridge插件
 2. Download the uni-open-bridge plugin
@@ -60,14 +59,12 @@ Follow-up support
 在微信小程序上依赖 `access_token`、`session_key`, `encrypt_key`。这些凭据需要`uni-open-bridge`统一接管。
 Depends on `access_token`, `session_key`, `encrypt_key` on WeChat applet. These credentials need to be taken over by `uni-open-bridge`.
 
-- `uni-open-bridge` [详情]()
-- `uni-open-bridge` [Details]()
+- `uni-open-bridge` [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html)
 
 3. 在应用的生命周期 `onLaunch` 中检查微信登陆状态，如果过期需要登陆
 3. Check the WeChat login status in the application life cycle `onLaunch`, if it expires, you need to log in
 
-注意 `uni.checkSession` 有调用次数限制警告，一个 `pv` 可调用 `2` 次
-Note that `uni.checkSession` has a limit warning, a `pv` can be called `2` times
+注意: [uni.checkSession](https://uniapp.dcloud.net.cn/api/plugins/login.html#uni-checksession) 有调用次数限制警告，一个 `pv` 可调用 `2` 次
 
 ```js
 // App.vue
@@ -113,7 +110,7 @@ uniCloud.callFunction({
   data: {
     name: 'user'
   },
-  secret: 'both'
+  secretType: 'both'
 })
 ```
 

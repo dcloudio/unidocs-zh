@@ -244,6 +244,16 @@ public class MyApplication extends DCloudApplication {
 + 可以改androidPrivacy.json的hrefLoader配置 system 提供系统浏览器显示隐私条款修复问题 具体[参考文档](https://uniapp.dcloud.io/tutorial/app-privacy-android.html)
 + You can change the hrefLoader configuration of androidPrivacy.json system Provide system browser to display privacy terms and fix the problem Specific [Reference Document](https://uniapp.dcloud.io/tutorial/app-privacy-android.html)
 
+#### 20、关于拒绝权限重复弹窗
+
+HX3.6.1+版本 可以配置manifest.json配置checkPermissionDenied = true 校验已拒绝权限不再申请。(仅针对官方api主动权限申请行为，三方SDK、uni原生插件、plus.android.requestPermissions不受限制)
+```
+"app-plus": {
+	...
+	"checkPermissionDenied" : true,
+}
+```
+
 #### 看不懂文档不知道如何修改？
 #### Can't understand the document and don't know how to modify it?
 

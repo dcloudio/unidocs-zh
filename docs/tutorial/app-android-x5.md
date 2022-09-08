@@ -110,7 +110,7 @@ It is currently known that after the TBS45738 version is updated, the input comp
 +  周五周六（18:00-21:00）服务器维护不支持下载
 +  不支持X86设备
 +  频繁下载x5浏览器内核的IP会被限流下载
-+ 非wifi环境需要配置`allowDownloadWithoutWiFi`为true开启下载
++  非wifi环境需要配置`allowDownloadWithoutWiFi`为true开启下载
 +  离线打包debug环境下，可会导致下载失败
 
 ### 非WiFi情况下载X5浏览器内核

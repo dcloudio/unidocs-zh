@@ -33,6 +33,11 @@ uni-ad可以一套代码全端变现，包括app、web、微信小程序；wx广
 
 uni-ad内置了安全防护策略，减少广告被刷风险
 
+3.6.2+ 支持激励视频服务器安全回调，[详情](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)
+
+服务器回调用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)服务器会访问配置的云函数，通知用户完成观看激励视频。
+相对来讲服务器回调将更加安全
+
 6. 开通方式
 
 uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)申请，开发者与DCloud开票结算；而wx广告在微信小程序后台申请，开发者与微信开票结算

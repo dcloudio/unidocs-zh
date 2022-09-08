@@ -75,22 +75,24 @@ uts插件编译到app平台时，在功能上相当于uni-app之前的app原生�
 
 ### 新建步骤拆解
 
-选中`uni_modules`目录 -- 右键 -- 新建插件
+右键点击`uni_modules`目录 -> 新建插件
 
 ![新建插件1](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin.jpg)
 
-选择 **uts原生插件**
+选择类型 **uts原生插件**
 
 ![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
+
+为了避免和插件市场的其他插件冲突，建议起一个自己的插件前缀名称。
 
 uts插件目录结构
 
 ![新建插件3](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin3_1.jpg)
 
 
-### 清单文件package.json
+### package.json
 
-package.json为插件配置清单文件，负责描述插件的基本配置。
+package.json为uni_modules插件配置清单文件，负责描述插件的基本配置。
 
 
 ```json
@@ -146,7 +148,9 @@ index.uts文件是程序主入口。如果插件根目录下没有index.uts，�
 3. 不写根目录的index.uts，直接在分平台目录写index.uts。不跨端时，比如只做一个Android插件，这样写比较简单
 
 index.d.ts文件是对当前插件能力的**声明**，用于语法提示。它不是必写项。
+
 因为uts写好后，HBuilderX可以自动识别uts api并进行语法提示。它更多的用于后续uts插件加密时给予语法提示。
+
 如果不熟悉d.ts，可以自行网上搜索，它属于ts标准技术。
 
 ### App原生配置
@@ -162,12 +166,14 @@ app-android 文件夹下存在Android平台原生配置，包括以下目录或�
 |res					|Android平台原生res资源目录				|
 |AndroidManifest.xml	|Android平台原生应用清单文件				|
 |config.json			|Android平台下的配置文件					|
-|index.uts				|index.d.ts声明的能力在Android平台下的实现	|
+|index.uts				|主入口，index.d.ts声明的能力在Android平台下的实现	|
 
 
 ##### assets  
 Android平台原生assets资源目录，建议只保存UTS插件内置的资源文件。
-如果需要插件使用者配置（如三方SDK的授权文件）则应该在插件使用文档中告诉插件使用者配置到项目的Android原生应用资源目录，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+
+除了插件下有assets目录，项目下也有。注意2者的区别。
+如果需要插件使用者配置（如三方SDK的授权文件），则插件作者应该在插件文档中告诉插件使用者，配置到项目的Android原生应用资源目录，而不是配置在插件目录下。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ##### libs  
 Android平台原生三方库目录，支持以下类型文件：
@@ -176,20 +182,23 @@ Android平台原生三方库目录，支持以下类型文件：
 
 如果使用了NDK开发so库，也支持保存到此目录，需按Android的abi类型分目录保存。
 
-关于libs目录的时候，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
+如果封装三方原生sdk为uni-app插件，经常需要使用本目录。
+
+关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 
 **遗留事项**
 
-HX 3.6.1 libs使用存在[临时注意事项](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-6-1-%E9%81%97%E7%95%99%E4%BA%8B%E9%A1%B9)
-
+HX 3.6.1 libs使用存在[临时注意事项](#tempnotice)
 
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
-如果需要插件使用者配置使用自定义资源，则应该在插件使用文档中告诉插件使用者配置到项目的Android原生应用资源目录，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+
+除了插件下有res目录，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ##### AndroidManifest.xml  
 Android原生应用清单文件，建议只保存UTS插件内置的清单文件配置。
-如果需要插件使用者Android原生应用清单文件，[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+
+除了插件下有AndroidManifest.xml，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 ##### config.json
 uts插件在Android平台的原生层配置文件，可以在其中配置依赖仓储等gradle相关内容。
@@ -210,24 +219,25 @@ uts插件在Android平台的原生层配置文件，可以在其中配置依赖�
 }
 ```
 
-**注意**
-Android平台原生配置需提交云端打包才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
+**注意：**
 
-#### HX3.6.1 遗留事项
+Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
-+ config.json 目前还不支持配置仓库依赖，需要将gradle配置手动下载后，放置在libs目录，使用手动添加的方式集成
+#### HX3.6.1 临时注意事项@tempnotice
 
-+ Uni内置了一部分依赖（比如androidX），对于这部分依赖:
+使用HBuilderX 3.6.1版本时，关于原生依赖的处理有部分不完善，需要注意以下事项：
 
++ config.json 目前还不支持配置仓库依赖，需要将gradle配置的库手动下载后，放置在libs目录，使用手动添加的方式集成
+
++ uni-app引擎内置了部分依赖库（比如androidX，清单详见下方），如你的插件需使用相同依赖，请注意：
 	
-	1 需要确保与内置的依赖版本一致。  
+	1. 确保与内置的依赖版本一致。
 	
-	2 提交自定义基座时需要先从libs中暂时移除，避免打包类重复报错。生成自定义基座之后再添加回libs目录。
+	2. 真机运行时，需将依赖库copy到libs目录下。但注意，打包自定义基座时需先从libs中暂时移除，避免打包类重复报错。生成自定义基座之后再将这些内置依赖库移回libs目录下，否则无法真机运行。
 	
 [内置依赖清单](https://uniapp.dcloud.net.cn/plugin/androidInnerLib.html)
 
-
-遗留事项后续升级完善。
+这些遗留事项会尽快升级完善。
 
 ## 3 开发uts原生插件
 
@@ -268,7 +278,7 @@ export function getBatteryCapacity(): string {
 
 至此，我们已经完成一个Android平台上获取电量的原生能力封装。
 
-在下一节，将介绍插件的使用，可以像使用普通js函数一样，使用getBatteryCapacity函数来获取设备电量。
+在下一节，将介绍前端如何使用这个插件。
 
 注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
 
@@ -332,15 +342,12 @@ getBatteryCapacity()
 总结来说，就是所有 涉及新增依赖/gralde配置/androidManifest.xml/资源 等标准基座不具备的能力时，需要自定义基座
 
 
-
 ### 5.3 遗留问题
 
 截止到HBuilderX 3.6.1 时遗留事项：
-- 不能debug uts源码
+- 不能debug断点uts源码
 - iOS版还未发布
-- UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-6-1-%E9%81%97%E7%95%99%E4%BA%8B%E9%A1%B9)
-
-
+- UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](#tempnotice)
 
 遗留事项后续升级完善。
 
@@ -350,7 +357,9 @@ getBatteryCapacity()
 
 注意：虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
 
-## Android内置库@iodcloudutsandroid
+打包若包含了已经内置的依赖库，则需注意参考 [这个章节](#tempnotice)
+
+## uni-app的Android内置库@iodcloudutsandroid
 
 在uts里，Android的所有api都可以访问。同时DCloud提供了`io.dcloud.uts.android`库，处理在uni-app下的特殊情况。
 
@@ -388,8 +397,7 @@ let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 
 ### getResourcePath(resourceName:String)
 
-获取指定插件资源 的运行期绝对路径
-
+获取指定插件资源的运行期绝对路径
  
 ```ts
 // [示例]获取指定资源路径
@@ -398,10 +406,9 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 ```
 
-
 ### onAppActivityPause
 
-容器的宿主activity onPause时触发
+App的activity onPause时触发
 
 ```ts
 onAppActivityPause(() => {
@@ -412,7 +419,7 @@ onAppActivityPause(() => {
 
 ### onAppActivityResume
 
-容器的宿主activity onResume时触发
+App的activity onResume时触发
 
 ```ts
 onAppActivityResume(() => {
@@ -423,7 +430,7 @@ onAppActivityResume(() => {
 
 ### onAppActivityDestroy
 
-容器的宿主activity onDestroy时触发
+App 的 activity onDestroy时触发
 
 ```ts
 onAppActivityDestroy(() => {
@@ -434,7 +441,7 @@ onAppActivityDestroy(() => {
 
 ### onAppActivityBack
 
-容器的宿主activity 回退物理按键点击时触发
+App 的 activity 回退物理按键点击时触发
 
 ```ts
 onAppActivityBack(() => {
@@ -444,7 +451,7 @@ onAppActivityBack(() => {
 ```
 
 ### onAppActivityRequestPermissionsResult
-容器的宿主activity 获得权限请求结果的回调
+App 的 activity 获得权限请求结果的回调
 
 ```ts
 onAppActivityRequestPermissionsResult((requestCode: number,
@@ -496,8 +503,8 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 ## 路线图
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-1. 支持vue2编译器
-2. iOS相关功能
+1. iOS相关功能
+2. 支持vue2编译器
 3. debug
 4. UI操作能力
 5. 插件市场支持uts插件的加密和计费销售

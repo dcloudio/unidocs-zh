@@ -6,8 +6,8 @@
   * [1. Via HBuilderX visual interface](quickstart-hx.md)
   * [2. 通过vue-cli命令行](quickstart-cli.md)
   * [2. Via vue-cli command line](quickstart-cli.md)
-* [uni-app的由来](history.md)
-* [Origin of uni-app](history.md)
+<!-- * [uni-app的由来](history.md) -->
+<!-- * [Origin of uni-app](history.md) -->
 * [如何学习](resource.md)
 * [How to learn](resource.md)
 * [选型指南](select.md)

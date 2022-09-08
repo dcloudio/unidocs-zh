@@ -48,7 +48,6 @@ The combination of the unified `uni.requestPayment` on the front end and the uni
 |signType|String|微信小程序必填|签名算法，应与后台下单时的值一致|微信小程序|
 |signType|String|Required for WeChat MiniApp|Signature algorithm, which should be the same as the value when placing an order in the background|WeChat MiniApp|
 |paySign|String|微信小程序必填|签名，具体签名方案参见 [微信小程序支付文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=3)|微信小程序|
-|paySign|String|Required for WeChat MiniApp|Signature, please refer to [WeChat MiniApp Payment Document](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=3)|WeChat MiniApp|
 |bannedChannels|Array&lt;String&gt;|否|需要隐藏的支付方式，详见 [百度小程序支付文档](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)|百度小程序|
 |bannedChannels|Array&lt;String&gt;|No|A hidden payment method is required, see [Baidu MiniApp Payment Documentation](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)|BaiduMiniApp|
 |service|Number|字节跳动小程序必填|固定值：5（拉起小程序收银台）开发者如果不希望使用字节跳动小程序收银台，service设置为3/4时，可以直接拉起微信/支付宝进行支付：service=3： 微信API支付，不拉起小程序收银台；service=4： 支付宝API支付，不拉起小程序收银台。其中service=3、4，仅在1.35.0.1+基础库(头条743+)支持|字节跳动小程序|
@@ -851,21 +850,7 @@ uni.requestPayment({
   A：App 3.4+ 已支持 PayPal，App 3.4 以前的版本使用下面的方案
   A: App 3.4+ already supports PayPal, the previous version of App 3.4 uses the following scheme
   	1. 可以在web-view组件里使用它们的wap版支付；
-  	1. You can use their wap version to pay in the web-view component;
-  	  1. You can use their wap version to pay in the web-view component;
-  	  1. You can use their wap version to pay in the web-view component;
-  	  1. You can use their wap version to pay in the web-view component;
-  	  1. You can use their wap version to pay in the web-view component;
-  	  1. You can use their wap version to pay in the web-view component;
-  	  1. You can use their wap version to pay in the web-view component;
   	2. 可以集成原生sdk，插件市场均有，[详见](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98)。也可以自行开发原生插件，开发文档见[https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428)。
-  	2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
-  	  2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
-  	  2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
-  	  2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
-  	  2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
-  	  2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
-  	  2. Native sdk can be integrated, available in the plug-in market, [see details](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98). You can also develop native plug-ins by yourself. For the development documents, see [https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428).
 
 - Q：Appstore审核报PGPay SDK不允许上架的问题
 - Q: Appstore audit reports that PGPay SDK is not allowed to be listed

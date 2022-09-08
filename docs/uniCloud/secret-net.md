@@ -132,8 +132,7 @@ uniCloud.importObject('object-name', {
 ```
 
 
-**secret 属性说明**
-**secret attribute description**
+**secretType 属性说明**@secretType
 
 |值				|描述																						|
 |value |description |
@@ -150,8 +149,7 @@ uniCloud.importObject('object-name', {
 **secretMethods 属性说明**
 **secretMethods property description**
 
-`secretMethods` 是云对象中指定需要加密的方法名。因为云对象导入后，调用方法时没有额外指定的方式，所以集中在这里配置。如果不配置，则云对象的所有方法请求时都会加密。
-`secretMethods` is the name of the method specified in the cloud object that needs to be encrypted. Because after the cloud object is imported, there is no additional way to specify the method when calling the method, so the configuration is concentrated here. If not configured, all methods of the cloud object will be encrypted when requested.
+`secretMethods` 是云对象中指定需要加密的方法名。可对每个方法配置，例如: `secretMethods: {'login':'both'}`，指定 `login` 方法的 `secretType` 为 both
 
 
 ## 小贴士

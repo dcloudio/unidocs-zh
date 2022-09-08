@@ -255,15 +255,6 @@ The Android platform's native third-party library directory supports the followi
 如果使用了NDK开发so库，也支持保存到此目录，需按Android的abi类型分目录保存。
 If you use the NDK development so library, it also supports saving to this directory, and it needs to be saved in directories according to the Android abi type.
 
-**HX 3.6.0版本注意**
-**HX 3.6.0 version note**
-
-+ UTS真机运行功能，暂时不支持仓库依赖，需要将gradle配置手动下载后，放置在libs目录
-+ UTS real machine operation function, temporarily does not support warehouse dependencies, you need to manually download the gradle configuration and place it in the libs directory
-+ Uni项目内置了一部分依赖（比如androidX），对于这部分依赖，需要与uni内置依赖版本保持一致
-+ The Uni project has some built-in dependencies (such as androidX), and for this part of the dependencies, it needs to be consistent with the uni built-in dependency version
-+ 对于uni没有内置的依赖项目，需要确保不要和config.json里重复配置
-+ For uni without built-in dependencies, make sure not to duplicate the configuration in config.json
 
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
@@ -305,7 +296,21 @@ The uts plugin is in the native layer configuration file of the Android platform
 Android平台原生配置需提交云端打包才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 The native configuration of the Android platform needs to be submitted to the cloud to take effect. When the real machine is running, please use the [custom debugging base](https://ask.dcloud.net.cn/article/35115)
 
+#### 3.6.1 遗留事项
 
++ config.json 目前还不支持配置仓库依赖，需要将gradle配置手动下载后，放置在libs目录，使用手动添加的方式集成
+
++ Uni内置了一部分依赖（比如androidX），对于这部分依赖:
+
+	
+	1 需要确保与内置的依赖版本一致。  
+	
+	2 提交自定义基座时需要先从libs中暂时移除，避免打包类重复报错。生成自定义基座之后再添加回libs目录。
+	
+[内置依赖清单](缺链接)
+
+
+遗留事项后续升级完善。
 
 ## 3 开发uts原生插件
 ## 3 Develop uts native plugin
@@ -415,8 +420,9 @@ For more development examples, you can refer to [HelloUTS](https://gitcode.net/d
 ## 5 真机运行
 ## 5 Real machine running
 
-**uts虽然是原生代码，但同样具有真机运行功能。**
-Although **uts is a native code, it also has the function of running on a real machine. **
+### 5.1 UTS支持真机运行
+
+**uts虽然是原生代码，但同样具有真机运行功能**
 
 若HBuilderX中没有`uts编译运行插件`，在第一次运行时会自动下载。
 If there is no `uts compile and run plugin` in HBuilderX, it will be downloaded automatically when it is run for the first time.
@@ -424,15 +430,28 @@ If there is no `uts compile and run plugin` in HBuilderX, it will be downloaded 
 在Android上，运行体验与uni-app基本无差异。一样可以热刷新，打印console.log。
 On Android, the running experience is basically the same as uni-app. You can also hot refresh and print console.log.
 
-**自定义基座**：同之前的uni-app。如果涉及微信支付等自定义manifest信息，需要选择自定义基座运行。自定义基座也支持uts插件。
-**Custom Dock**: Same as the previous uni-app. If custom manifest information such as WeChat payment is involved, you need to select a custom base to run. Custom docks also support uts plugins.
+### 5.2 自定义基座
 
-截止到HBuilderX 3.6时遗留事项：
-Leftovers as of HBuilderX 3.6:
+自定义基座也支持uts插件。
+
+与原生插件一样,涉及以下场景,需要自定义基座后方能生效:
+
+- 1 集成三方sdk
+- 2 新增资源(包括res/asset 等)
+
+总结来说，就是所有 涉及新增依赖/gralde配置/androidManifest.xml/资源 等标准基座不具备的能力时，需要自定义基座
+
+
+
+### 5.3 遗留问题
+
+截止到HBuilderX 3.6.1 时遗留事项：
 - 不能debug uts源码
 - Cannot debug uts source code
 - iOS版还未发布
-- iOS version not released yet
+- UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](缺链接)
+
+
 
 遗留事项后续升级完善。
 Remaining matters will be upgraded and improved later.
@@ -608,8 +627,7 @@ let textSize =  30.0.toFloat();
 ### 泛型参数
 ### Generic parameters
 
-android中UI相关的api，很多会要求泛型，目前uts支持用as关键字强转，满足类似的场景
-Many UI-related APIs in android will require generics. Currently, uts supports forced conversion with the as keyword to meet similar scenarios.
+android中UI相关的api，很多会要求泛型，目前uts中可以使用下面的代码实现
 
 ```ts
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)

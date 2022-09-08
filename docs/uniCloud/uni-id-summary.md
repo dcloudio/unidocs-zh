@@ -1102,9 +1102,10 @@ Corresponds to the scene field of the `opendb-verify-codes` table SMS, email ver
 |login-by-sms		|短信验证码登录			|
 |login-by-sms |SMS verification code login |
 |reset-pwd-by-sms	|短信验证码重置密码		|
-|reset-pwd-by-sms |SMS verification code reset password |
-|bind-mobile-by-sms |短信验证码绑定手机号	|
-|bind-mobile-by-sms |SMS verification code binding mobile phone number |
+|bind-mobile-by-sms	|短信验证码绑定手机号	|
+|login-by-email		|邮箱验证码登录			|
+|reset-pwd-by-email	|邮箱验证码重置密码		|
+
 
 ### 图形验证码使用场景@captcha-scene
 ### Graphical captcha usage scenario @captcha-scene
@@ -1120,9 +1121,9 @@ Corresponds to the scene field of the record related to the graphic verification
 |login-by-sms		|短信验证码登录				|
 |login-by-sms |SMS verification code login |
 |reset-pwd-by-sms	|短信验证码重置密码			|
-|reset-pwd-by-sms |SMS verification code reset password |
+|reset-pwd-by-email	|邮箱验证码重置密码			|
 |send-sms-code		|发送短信验证码				|
-|send-sms-code |Send SMS Verification Code |
+|send-email-code	|发送邮箱验证码				|
 |bind-mobile-by-sms	|短信验证码绑定手机号		|
 |bind-mobile-by-sms |SMS verification code binding mobile phone number |
 

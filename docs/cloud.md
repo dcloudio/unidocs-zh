@@ -24,8 +24,7 @@ uni statistics official website address: [https://tongji.dcloud.net.cn/](https:/
 ### 广告变现
 ### Ad monetization
 
-```uni-app``` 支持接入`uni-AD`广告联盟，开发者可实现**一次开发，多端变现**。
-```uni-app``` supports access to `uni-AD` advertising alliance, developers can realize **one development, multi-terminal realization**.
+`uni-app` 支持接入`uni-AD`广告联盟，开发者可实现**一次开发，多端变现**。
 
 `uni-AD`支持开屏、信息流、激励视频、悬浮红包、推送等丰富的广告形式，且聚合了腾讯广点通、今日头条穿山甲、快手、360联盟等主流广告源，有更高的广告填充率。
 `uni-AD` supports rich advertising forms such as screen opening, information flow, rewarded video, floating red envelopes, push, etc., and aggregates mainstream advertising sources such as Tencent Guangdiantong, Toutiao Pangolin, Kuaishou, 360 Alliance, etc. Ad fill rate.
@@ -47,5 +46,4 @@ How to make? Develop a uni-app, and then in HBuilderX's menu tool - release - ge
 #### 加入换量联盟
 #### Join the Exchange Alliance
 
-```uni-app``` 发行成原生App后，可加入DCloud换量平台，和其他开发者交叉换量、彼此推广，每日新增用户可翻倍！详情及开通方式：[http://ask.dcloud.net.cn/article/13300](http://ask.dcloud.net.cn/article/13300)
-```uni-app``` After being released as a native app, you can join the DCloud exchange platform, exchange volume with other developers, and promote each other, and the number of new users every day can be doubled! Details and opening method: [http://ask.dcloud.net.cn/article/13300](http://ask.dcloud.net.cn/article/13300)
+`uni-app` 发行成原生App后，可加入DCloud换量平台，和其他开发者交叉换量、彼此推广，每日新增用户可翻倍！详情及开通方式：[http://ask.dcloud.net.cn/article/13300](http://ask.dcloud.net.cn/article/13300)

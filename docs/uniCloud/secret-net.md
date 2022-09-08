@@ -153,6 +153,7 @@ module.exports = {
     const methodName = this.getMethodName()
     const clientInfo = this.getClientInfo()
     const secretType = clientInfo.secretType
+    // methodName 是客户端调用的方法名
     // secretType 是客户端调用 uniCloud.importObject 传递的参数 secretMethods
 
     if (methodName === 'login' && (secretType !== 'both' || secretType !== 'response')) {

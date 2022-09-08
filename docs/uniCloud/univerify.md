@@ -13,6 +13,8 @@ univerify is a one-click login product launched by DCloud. Through in-depth coop
 univerify是替代短信验证登录的下一代登录验证方式，能消除现有短信验证模式等待时间长、操作繁琐和容易泄露的痛点。
 Univerify is a next-generation login verification method that replaces SMS verification login, which can eliminate the pain points of long waiting time, cumbersome operation and easy leakage of the existing SMS verification mode.
 
+> ## 注意：一键登录必须是手机使用流量的前提下才能获取到手机号码，用Wi-Fi联网时无法获取到手机号码，同时如果是双卡手机，获取到的手机号码是默认移动收据的那个手机卡的号码。
+
 ## 重要调整
 ## Important adjustments
 

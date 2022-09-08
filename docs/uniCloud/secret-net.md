@@ -117,7 +117,6 @@ uniCloud.callFunction({
 })
 ```
 
-
 - 云对象
 - cloud objects
 
@@ -129,6 +128,40 @@ uniCloud.importObject('object-name', {
   customUI: false,
   secretMethods: {'login':'both'}
 })
+```
+
+## 服务器端
+
+为了避免客户端伪造参数获取服务器敏感数据，应以服务器端为准，如果客户端携带的 `secretType` 不符合要求应拒绝响应数据
+
+- callFunction
+
+```js
+exports.main = async (event, context) => {
+  const secretType = context.secretType
+  // secretType 是客户端调用 uniCloud.callFunction 传递的参数 secretType
+
+  if (secretType !== 'both' || secretType !== 'response') {
+    return null
+  }
+}
+```
+
+- 云对象
+
+```js
+module.exports = {
+  async _before() {
+    const methodName = this.getMethodName()
+    const clientInfo = this.getClientInfo()
+    const secretType = clientInfo.secretType
+    // secretType 是客户端调用 uniCloud.importObject 传递的参数 secretMethods
+
+    if (methodName === 'login' && (secretType !== 'both' || secretType !== 'response')) {
+      throw new Error('secretType invalid')
+    }
+  }
+}
 ```
 
 
@@ -150,6 +183,8 @@ uniCloud.importObject('object-name', {
 **secretMethods property description**
 
 `secretMethods` 是云对象中指定需要加密的方法名。可对每个方法配置，例如: `secretMethods: {'login':'both'}`，指定 `login` 方法的 `secretType` 为 both
+
+
 
 
 ## 小贴士

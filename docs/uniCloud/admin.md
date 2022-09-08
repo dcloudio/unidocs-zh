@@ -13,7 +13,9 @@ For developers of uniCloud, their background management system should use this f
 - 它基于 uni-app 的宽屏适配，可自动适配 PC 宽屏和手机各端。了解[宽屏适配](https://uniapp.dcloud.io/adapt)
 - It is based on uni-app's widescreen adaptation, which can automatically adapt to PC widescreen and mobile terminals. Learn about [Widescreen Adaptation](https://uniapp.dcloud.io/adapt)
 - 它基于 uniCloud，是 serverless 的云开发。了解[uniCloud](https://uniapp.dcloud.io/uniCloud/README)
+- It is based on uniCloud and is serverless cloud development. Learn about [uniCloud](https://uniapp.dcloud.io/uniCloud/README)
 - 它基于 uni-id，使用 uni-id 的用户账户、角色、权限系统。了解[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)
+- It is based on uni-id and uses uni-id's user account, role, permission system. Learn about [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)
 
 官方搭建了[uni-admin演示站点](http://hellouniadmin.dcloud.net.cn/admin/)，你登录后即可快速体验uni-admin。
 The official build [uni-admin demo site](http://hellouniadmin.dcloud.net.cn/admin/), you can quickly experience uni-admin after logging in.
@@ -547,7 +549,9 @@ Using traditional saas statistical products, all data are reported to statistica
 **4. The default function is rich**
 
 - 设备统计
+- Device Statistics
 - 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)）
+- Registered user statistics (based on [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary))
 - 页面统计
 - Page Statistics
 - 新增、活跃、留存、跳出率分析
@@ -598,6 +602,7 @@ uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug
 ### user-role-permission
 
 uni-admin 框架基于 uni-id，复用 uni-id 的用户、角色、权限系统，详见[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)。
+The uni-admin framework is based on uni-id, and reuses uni-id's user, role, and permission system. For details, see [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary).
 
 需要注意的是，admin 框架的动态菜单同样依赖 uni-id 的权限表（uni-id-permissions）。
 It should be noted that the dynamic menu of the admin framework also relies on the uni-id permission table (uni-id-permissions).
@@ -898,3 +903,4 @@ If you want to customize the base path of the project's running, modify the valu
 - 问： 使用uni-admin新建用户无法登录，会提示“该账号暂无权限登录” ？
 - Q: I cannot log in when I use uni-admin to create a new user, and it will prompt "This account does not have permission to log in at this time"?
   > 答：用户登录逻辑：登录时系统检测没有菜单会提示“暂无权限登录”，需要给新账号绑定角色，角色有菜单方可登录
+  > Answer: User login logic: When logging in, the system detects that there is no menu and will prompt "No permission to log in at this time". You need to bind a role to the new account, and the role can only log in if there is a menu.

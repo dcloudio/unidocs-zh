@@ -1,6 +1,8 @@
 **云端一体安全网络**
+**Cloud integrated security network**
 
 > HBuilderX 3.6.2+ 支持
+> HBuilderX 3.6.2+ support
 
 ## 简介
 ## Introduction
@@ -20,8 +22,10 @@ When an attacker knows what kind of data your server receives, they can imperson
 Especially when your business involves promotions, rebates, incentive videos and other scenarios, it is very easy to be brushed. Bedding wool is already a very mature grey product.
 
 DCloud面向开发者同时提供了端引擎`uni-app` 和 云引擎`uniCloud`，其实可以提供云端一体的安全网络的能力。
+DCloud provides both the end engine `uni-app` and the cloud engine `uniCloud` for developers, which can actually provide the ability of a cloud-integrated secure network.
 
 `uni-app` 连接 `uniCloud` 时，可以选择是否启动安全网络。它通过高安全的保护机制，防止客户端伪造和通信内容抓包。
+When `uni-app` connects to `uniCloud`, you can choose whether to enable secure network. It uses a high-security protection mechanism to prevent client forgery and communication content capture.
 
 注意：安全网络不支持web平台，只支持微信小程序和App。并且App的安全级别更高。
 Note: Safe Network does not support web platform, only WeChat applet and App. And the security level of the App is higher.
@@ -36,37 +40,53 @@ Note: Safe Network does not support web platform, only WeChat applet and App. An
 |Follow-up support|3.6.2+|
 
 ## 准备工作
+## Preparation
 
 ### 微信小程序
+### WeChat MiniApp
 
 安全网络在微信小程序上的实现，依赖了微信提供的一些用户级的凭据。所以需要下载`uni-id`和`uni-open-bridge`，并在app.vue里初始化。
+The implementation of the secure network on the WeChat MiniApp relies on some user-level credentials provided by WeChat. So you need to download `uni-id` and `uni-open-bridge` and initialize them in app.vue.
 
 1. 工程中导入uni-id
+1. Import uni-id into the project
 
 - `uni-id` [文档](uni-id-summary.md#save-user-token)
+- `uni-id` [documentation](uni-id-summary.md#save-user-token)
 - `uni-id-co` [插件下载地址](https://ext.dcloud.net.cn/plugin?id=8577)
+- `uni-id-co` [plugin download address](https://ext.dcloud.net.cn/plugin?id=8577)
 
 `uni-id-pages`这个插件是云端一体的登录插件，其实安全网络只需要其中的`uni-id-co`云对象。插件中前端登录页面是否使用由开发者自己根据业务决定。
+The `uni-id-pages` plugin is a cloud-integrated login plugin. In fact, the security network only needs the `uni-id-co` cloud object. Whether to use the front-end login page in the plug-in is decided by the developer according to the business.
 
 2. 工程中导入uni-open-bridge插件
+2. Import the uni-open-bridge plugin into the project
 
 安全网络在微信小程序上依赖了微信的 `access_token`、`session_key`、`encrypt_key`等凭据。这些凭据需要`uni-open-bridge`统一接管。
+Security Network relies on WeChat's `access_token`, `session_key`, `encrypt_key` and other credentials on the WeChat MiniApp. These credentials need to be taken over by `uni-open-bridge`.
 
 - `uni-open-bridge` [文档](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html)
+- `uni-open-bridge` [documentation](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html)
 - `uni-open-bridge` [插件下载地址](https://ext.dcloud.net.cn/plugin?id=9002)
+- `uni-open-bridge` [plugin download address](https://ext.dcloud.net.cn/plugin?id=9002)
 
 3. 配置uni-id和uni-open-bridge
+3. Configure uni-id and uni-open-bridge
 
 **缺内容，说清楚从微信小程序后台取哪些凭据，填到哪里？**
+**Lack of content, clarify which credentials are taken from the WeChat MiniApp backend, and where should they be filled? **
 
 如果项目之前已经使用过uni-id和uni-open-bridge，则上述步骤可省略。
+If the project has used uni-id and uni-open-bridge before, the above steps can be omitted.
 
 4. 在应用的生命周期 `onLaunch` 中检查微信登陆状态，如果过期需要登陆
+4. Check the WeChat login status in the application's life cycle `onLaunch`, if it expires, you need to log in
 
 注意: [uni.checkSession](https://uniapp.dcloud.net.cn/api/plugins/login.html#uni-checksession) 有调用次数限制警告，一个 `pv` 可调用 `2` 次
 Note: [uni.checkSession](https://uniapp.dcloud.net.cn/api/plugins/login.html#uni-checksession) has a warning about the number of calls, a `pv` can be called `2` times
 
 App.vue页面需要补充如下代码：
+The App.vue page needs to add the following code:
 ```js
 <script>
   function checkUserSession() {
@@ -94,16 +114,20 @@ App.vue页面需要补充如下代码：
 ```
 
 5. 在manifest中勾选加密模块
+5. Check the encryption module in the manifest
 **缺内容？**
+**Missing content? **
 
 ## 调用方式
 ## calling method
 
 准备工作完成后，在uni-app客户端调用uniCloud服务器时，可以通过加入secret参数来声明这次请求走安全网络，对传输数据加密。
+After the preparations are completed, when the uni-app client calls the uniCloud server, it can declare that the request goes through the secure network by adding the secret parameter to encrypt the transmitted data.
 
 - callFunction
 
 客户端通过callFunction调用云函数时，加入secretType参数。
+When the client calls the cloud function through callFunction, add the secretType parameter.
 ```js
 uniCloud.callFunction({
   name: 'collection',
@@ -118,6 +142,7 @@ uniCloud.callFunction({
 - cloud objects
 
 客户端通过importObject调用云对象时，通过secretMethods参数来配置每个方法调用时是否加密。
+When the client calls cloud objects through importObject, configure whether to encrypt each method through the secretMethods parameter.
 
 ```js
 uniCloud.importObject('object-name', {
@@ -126,32 +151,46 @@ uniCloud.importObject('object-name', {
 ```
 
 **clientDB呢？**
+**What about clientDB? **
 
 **secretType 属性说明**
+**secretType attribute description**
 
 |值			|描述												|
+|value |description |
 |:-:		|:-:												|
 |none		|不加密，默认值										|
+|none |No encryption, default |
 |request	|只加密客户端请求时的上行数据，服务器下发数据不加密	|
+|request |Only the uplink data requested by the client is encrypted, and the data sent by the server is not encrypted |
 |response	|客户端请求时不加密数据，只加密服务器下发的数据		|
+|response |The data is not encrypted when the client requests, only the data sent by the server is encrypted |
 |both		|客户端和服务器上行下行数据都加密数据				|
+|both |Client and server upstream and downstream data are encrypted data |
 
 **secretMethods 属性说明**
+**secretMethods property description**
 
 `secretMethods` 是云对象中指定需要加密的方法名。可对每个方法配置，例如: `secretMethods: {'login':'both'}`，指定 `login` 方法的 `secretType` 为 both
+`secretMethods` is the name of the method specified in the cloud object that needs to be encrypted. It can be configured for each method, for example: `secretMethods: {'login':'both'}`, specify the `secretType` of the `login` method as both
 
 ## 服务器端
 ## Service-Terminal
 
 虽然uni-app客户端和uniCloud云端通信是加密的，但对于开发者而言过程是透明的。
+Although the communication between the uni-app client and the uniCloud cloud is encrypted, the process is transparent to the developer.
 
 **不管是客户端接收云端数据、还是云端接受客户端数据，开发者的代码拿到的拿到的数据都是加密后的数据。**
+**Whether the client receives cloud data or the cloud accepts client data, the data obtained by the developer's code is encrypted data. **
 
 但云端有一个注意事项：为了避免客户端伪造`secretType`获取服务器敏感数据，应以服务器端为准，如果客户端携带的 `secretType` 不符合要求应拒绝响应数据。示例代码如下
+However, there is a caveat in the cloud: in order to prevent the client from forging `secretType` to obtain sensitive server data, the server side should prevail. If the `secretType` carried by the client does not meet the requirements, the response data should be rejected. The sample code is as follows
 
 - 云函数中验证secretType
+- Verify secretType in cloud function
 
 在云函数的context中有secretType。
+There is secretType in the context of the cloud function.
 
 ```js
 exports.main = async (event, context) => {
@@ -166,8 +205,10 @@ exports.main = async (event, context) => {
 ```
 
 - 云对象中验证secretType
+- Validate secretType in cloud object
 
 在云对象的this中有secretType。
+There is secretType in this of the cloud object.
 
 ```js
 module.exports = {
@@ -188,11 +229,15 @@ module.exports = {
 ```
 
 ## 错误码
+## error code
 
 **缺内容，客户端错误，服务器解密错误，都应该把错误码列出来？**
+**Lack of content, client error, server decryption error, should the error code be listed? **
 
 ## 小贴士
 ## Tips
 
 1. 安全是相对的，没有绝对的安全。
+1. Security is relative, there is no absolute security.
 2. 安全是有代价的，加密的数据越庞大，加密和解密的耗时越长。
+2. Security comes at a price. The larger the encrypted data, the longer it takes to encrypt and decrypt.

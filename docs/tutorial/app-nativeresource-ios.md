@@ -44,7 +44,7 @@ HBuilderX3.6.1起，支持直接在应用项目中配置 iOS 平台的 Info.plis
 - plist文件必须符合Apple Information Property List规范，参考[详情](https://developer.apple.com/documentation/bundleresources/information_property_list)  
 	* 文件头需加`<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">`
 	* 根节点必须是plist，二级节点必须是dict   
-- Info.plis的内容和manifest.json的内容应避免冲突，即不配置manifest中已经配置过的内容。云端打包时会合并到app中的Info.list文件，出现冲突时Info.plist的内容会覆盖manifest.json中配置  
+- Info.plist的内容和manifest.json的内容应避免冲突，即不配置manifest中已经配置过的内容。云端打包时会合并到app中的Info.list文件，出现冲突时Info.plist的内容会覆盖manifest.json中配置  
 - plist文件配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
 
@@ -56,7 +56,7 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 
 输入名称 `nativeResouces`（注意大小写敏感），确定并创建目录。
 
-继续创建“ios”子目录、创建“resources”，结构如下：  
+继续创建“ios”子目录、创建“resources”二级子目录，结构如下：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/ios/directory.png)
 
 将需要添加的iOS原生资源文件拷贝到resources目录，云端打包时将会合并到安装包的.app中。

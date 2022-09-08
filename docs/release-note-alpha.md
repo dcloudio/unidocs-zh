@@ -709,7 +709,7 @@
   + 新增 uni.getSystemInfo 支持获取更多属性 [详情](https://uniapp.dcloud.io/api/system/info.html)
   + Added uni.getSystemInfo support to get more properties [Details](https://uniapp.dcloud.io/api/system/info.html)
   + 优化 vue3 项目 兼容 pnpm@7.0.0
-  + Optimize vue3 project compatible with pnpm@7.0.0
+  + Optimized vue3 project compatible with pnpm@7.0.0
   + 修复 vue3 项目 部分情况下错误信息不准确的Bug
   + Fix the bug of inaccurate error information in some cases of vue3 project
   + 修复 vue3 项目 vite.config.js 配置 build.minify 为 terser 不生效的Bug [详情](https://ask.dcloud.net.cn/question/144992)
@@ -735,7 +735,7 @@
   + App-Android平台 补齐 tabBar 和 navigationBar 支持高斯模糊效果 [详情](https://uniapp.dcloud.io/tutorial/app-blureffect)
   + App-Android platform completes tabBar and navigationBar to support Gaussian blur effect [Details](https://uniapp.dcloud.io/tutorial/app-blureffect)
   + H5平台 修复 rich-text 组件部分标签没有加上 scopeId 导致样式应用不上的Bug [详情](https://ask.dcloud.net.cn/question/144042)
-  + H5 platform Fix the bug that the rich-text component tags are not added with scopeId, which causes the style to not be applied [Details](https://ask.dcloud.net.cn/question/144042)
+  + H5 platform Fix the bug that the style cannot be applied because the scopeId is not added to some tags of the rich-text component [Details](https://ask.dcloud.net.cn/question/144042)
   + H5平台 修复 vue3 项目使用 picker 组件报错的Bug [详情](https://ask.dcloud.net.cn/question/144073)
   + H5 platform Fix the bug that the vue3 project uses the picker component to report errors [Details](https://ask.dcloud.net.cn/question/144073)
   + H5平台 修复 vue3 项目 当页面同时存在 vue、nvue 时，样式不正确的Bug [详情](https://ask.dcloud.net.cn/question/144687)
@@ -1299,7 +1299,7 @@
   + Android平台 修复 在部分设备调用 plus.runtime.restart 可能引起应用闪退的Bug [详情](https://ask.dcloud.net.cn/question/138965)
   + Android platform Fix the bug that calling plus.runtime.restart on some devices may cause the application to crash [Details](https://ask.dcloud.net.cn/question/138965)
   + Android平台 修复 系统语言设置为土耳其语时，tabbar 切换选项可能导致不显示的Bug [详情](https://ask.dcloud.net.cn/question/139313)
-  + Android platform Fix When the system language is set to Turkish, the tabbar switch option may cause a bug that is not displayed [Details](https://ask.dcloud.net.cn/question/139313)
+  + Android platform fix When the system language is set to Turkish, the tabbar switch option may cause a bug that is not displayed [Details](https://ask.dcloud.net.cn/question/139313)
   + Android平台 修复 本地相册选择视频设置 compressed 为 false 时依然会压缩的Bug [详情](https://ask.dcloud.net.cn/question/140417)
   + Android platform Fix the bug that the video will still be compressed when the local album selects compressed to false [Details](https://ask.dcloud.net.cn/question/140417)
   + iOS平台 新增 uni原生插件支持 applicationMain 获取 main 函数启动参数 argc、argv [文档](https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=hook%e7%b3%bb%e7%bb%9f%e4%ba%8b%e4%bb%b6)

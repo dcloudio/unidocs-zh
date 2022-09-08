@@ -411,7 +411,7 @@ The server-side SDK of uni-push is not small in size, and it is not built into t
 下面是一个开启了`uni-cloud-push`扩展库的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
 The following is a package.json example of a cloud function with the `uni-cloud-push` extension library enabled. **Note that there should be no comments. The comments in the following file content are for illustration only. If you copy this file, remember to remove the comments**
 
-```js
+```json
 {
 	"name": "test",
 	"version": "1.0.0",

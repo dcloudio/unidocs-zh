@@ -110,7 +110,7 @@ uni statistics goes deep into the bottom layer of uni-app and uniCloud framework
 **7. Open Ecosystem**
 
 uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
-The open source of uni statistics and based on the plug-in specification of [uni-admin](/uniCloud/admin) provides a plug-in mechanism, and more plug-in authors will provide various statistical plug-ins (such as e-commerce statistics, content statistics, etc.). See [Plugin Market](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
+The open source of uni statistics and based on the [uni-admin](/uniCloud/admin) plug-in specification provides a plug-in mechanism, and more plug-in authors will provide a variety of rich statistical plug-ins (such as e-commerce statistics, content statistics, etc.). See [Plugin Market](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
 **DCloud非常重视数据驱动开发者业务的增长，近期联合专业的大数据服务商<a href="https://www.sensorsdata.cn/" target="_blank">神策</a>和<a href="https://tj.aldwx.com/" target="_blank">阿拉丁</a>共同完善Uni统计2.0的产品模块和生态建设。
 **DCloud attaches great importance to the growth of data-driven developer business. Recently, it has cooperated with professional big data service providers <a href="https://www.sensorsdata.cn/" target="_blank">Sensors</a> and <a href="https://tj.aldwx.com/" target="_blank">Aladdin</a> will jointly improve the product modules and ecological construction of Uni Statistics 2.0.

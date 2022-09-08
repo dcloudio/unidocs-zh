@@ -38,7 +38,7 @@ uts插件编译到app平台时，在功能上相当于uni-app之前的app原生�
 |-				|原生语言插件				|uts插件					|
 |-				|-------					|--------						|
 |开发语言		|java/oc					|uts							|
-|开发环境		|Android studio/XCode		|HBuilderX						|
+|开发环境		|Android Studio/XCode		|HBuilderX						|
 |打包方式		|外挂aar 等产出物			|编译时生成原生代码				|
 |js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接import|
 
@@ -90,7 +90,7 @@ uts插件目录结构
 
 ### 清单文件package.json
 
-package.json为uni_modules的配置清单文件。
+package.json为插件配置清单文件，负责描述插件的基本配置。
 
 
 ```json
@@ -105,7 +105,7 @@ package.json为uni_modules的配置清单文件。
 }
 ```
 
-package.json的完整文档[详见](uni_modules.md#package.json)
+上面是一个默认的清单文件示例,关于package.json更多描述[详见](uni_modules.md#package.json)
 
 ### 插件的目录结构
 
@@ -176,6 +176,12 @@ Android平台原生三方库目录，支持以下类型文件：
 
 如果使用了NDK开发so库，也支持保存到此目录，需按Android的abi类型分目录保存。
 
+关于libs目录的时候，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
+
+**遗留事项**
+
+HX 3.6.1 libs使用存在[临时注意事项](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-6-1-%E9%81%97%E7%95%99%E4%BA%8B%E9%A1%B9)
+
 
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
@@ -207,7 +213,7 @@ uts插件在Android平台的原生层配置文件，可以在其中配置依赖�
 **注意**
 Android平台原生配置需提交云端打包才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
-#### 3.6.1 遗留事项
+#### HX3.6.1 遗留事项
 
 + config.json 目前还不支持配置仓库依赖，需要将gradle配置手动下载后，放置在libs目录，使用手动添加的方式集成
 
@@ -218,7 +224,7 @@ Android平台原生配置需提交云端打包才能生效，真机运行时请�
 	
 	2 提交自定义基座时需要先从libs中暂时移除，避免打包类重复报错。生成自定义基座之后再添加回libs目录。
 	
-[内置依赖清单](缺链接)
+[内置依赖清单](https://uniapp.dcloud.net.cn/plugin/androidInnerLib.html)
 
 
 遗留事项后续升级完善。
@@ -332,7 +338,7 @@ getBatteryCapacity()
 截止到HBuilderX 3.6.1 时遗留事项：
 - 不能debug uts源码
 - iOS版还未发布
-- UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](缺链接)
+- UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#_3-6-1-%E9%81%97%E7%95%99%E4%BA%8B%E9%A1%B9)
 
 
 

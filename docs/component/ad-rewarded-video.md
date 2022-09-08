@@ -74,7 +74,7 @@
 
 #### 简单示例
 
-```html
+```vue
 <template>
   <view>
     <ad-rewarded-video adpid="1507000689" :loadnext="true" v-slot:default="{loading, error}">

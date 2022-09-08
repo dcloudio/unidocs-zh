@@ -753,7 +753,10 @@ function hasPermission(token, permission) {
 |--					|--						|
 |login-by-sms		|短信验证码登录			|
 |reset-pwd-by-sms	|短信验证码重置密码		|
-|bind-mobile-by-sms |短信验证码绑定手机号	|
+|bind-mobile-by-sms	|短信验证码绑定手机号	|
+|login-by-email		|邮箱验证码登录			|
+|reset-pwd-by-email	|邮箱验证码重置密码		|
+
 
 ### 图形验证码使用场景@captcha-scene
 
@@ -764,7 +767,9 @@ function hasPermission(token, permission) {
 |login-by-pwd		|用户名/手机/邮箱+密码登录	|
 |login-by-sms		|短信验证码登录				|
 |reset-pwd-by-sms	|短信验证码重置密码			|
+|reset-pwd-by-email	|邮箱验证码重置密码			|
 |send-sms-code		|发送短信验证码				|
+|send-email-code	|发送邮箱验证码				|
 |bind-mobile-by-sms	|短信验证码绑定手机号		|
 
 ## uniIdRouter自动路由@uni-id-router

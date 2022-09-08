@@ -136,7 +136,7 @@ module.exports = {
 ```
 
 
-**secretType 属性说明**@secretType
+**secretType 属性说明**
 
 |值				|描述																						|
 |:-:			|:-:																						|

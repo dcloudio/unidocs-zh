@@ -21,8 +21,7 @@ Especially when your business involves promotions, rebates, incentive videos and
 当DCloud同时提供了`uni-app` 和 `uniCloud`时，事实上具备了提供云端一体的安全网络的能力。
 When DCloud provides both `uni-app` and `uniCloud`, it actually has the ability to provide a cloud-integrated secure network.
 
-在HBuilderX 3.5.5+ ，当开发者同时使用 `uni-app` 和 `uniCloud` 时，可以在网络请求时选择是否通过安全网络运行，它通过高安全的保护机制，防止客户端伪造和通信内容抓包。
-In HBuilderX 3.5.5+, when developers use `uni-app` and `uniCloud` at the same time, they can choose whether to run through a secure network when requesting a network. It uses a high-security protection mechanism to prevent clients from forging and communicating content Capture packets.
+在HBuilderX 3.6.2+ ，当开发者同时使用 `uni-app` 和 `uniCloud` 时，可以在网络请求时选择是否通过安全网络运行，它通过高安全的保护机制，防止客户端伪造和通信内容抓包。
 
 注意：安全网络不支持web平台，只支持微信小程序和App。并且App的安全级别更高。
 Note: Safe Network does not support web platform, only WeChat applet and App. And the security level of the App is higher.
@@ -33,8 +32,7 @@ Note: Safe Network does not support web platform, only WeChat applet and App. An
 |App|微信小程序|
 |App|WeChat Mini Program|
 |:-:|:-:|
-|后续支持|3.5.5+|
-|Follow-up support|3.5.5+|
+|后续支持|3.6.2+|
 
 ## 开通流程
 ## Opening process

@@ -13,7 +13,7 @@
 
 当DCloud同时提供了`uni-app` 和 `uniCloud`时，事实上具备了提供云端一体的安全网络的能力。
 
-在HBuilderX 3.5.5+ ，当开发者同时使用 `uni-app` 和 `uniCloud` 时，可以在网络请求时选择是否通过安全网络运行，它通过高安全的保护机制，防止客户端伪造和通信内容抓包。
+在HBuilderX 3.6.2+ ，当开发者同时使用 `uni-app` 和 `uniCloud` 时，可以在网络请求时选择是否通过安全网络运行，它通过高安全的保护机制，防止客户端伪造和通信内容抓包。
 
 注意：安全网络不支持web平台，只支持微信小程序和App。并且App的安全级别更高。
 
@@ -21,7 +21,7 @@
 
 |App|微信小程序|
 |:-:|:-:|
-|后续支持|3.5.5+|
+|后续支持|3.6.2+|
 
 ## 开通流程
 
@@ -90,7 +90,6 @@ uniCloud.callFunction({
 })
 ```
 
-
 - 云对象
 
 客户端通过importObject调用云对象时，加入secret和secretMethods参数。
@@ -102,8 +101,42 @@ uniCloud.importObject('object-name', {
 })
 ```
 
+## 服务器端
 
-**secret 属性说明**
+为了避免客户端伪造参数获取服务器敏感数据，应以服务器端为准，如果客户端携带的 `secretType` 不符合要求应拒绝响应数据
+
+- callFunction
+
+```js
+exports.main = async (event, context) => {
+  const secretType = context.secretType
+  // secretType 是客户端调用 uniCloud.callFunction 传递的参数 secretType
+
+  if (secretType !== 'both' || secretType !== 'response') {
+    return null
+  }
+}
+```
+
+- 云对象
+
+```js
+module.exports = {
+  async _before() {
+    const methodName = this.getMethodName()
+    const clientInfo = this.getClientInfo()
+    const secretType = clientInfo.secretType
+    // secretType 是客户端调用 uniCloud.importObject 传递的参数 secretMethods
+
+    if (methodName === 'login' && (secretType !== 'both' || secretType !== 'response')) {
+      throw new Error('secretType invalid')
+    }
+  }
+}
+```
+
+
+**secretType 属性说明**
 
 |值				|描述																						|
 |:-:			|:-:																						|
@@ -114,7 +147,9 @@ uniCloud.importObject('object-name', {
 
 **secretMethods 属性说明**
 
-`secretMethods` 是云对象中指定需要加密的方法名。因为云对象导入后，调用方法时没有额外指定的方式，所以集中在这里配置。如果不配置，则云对象的所有方法请求时都会加密。
+`secretMethods` 是云对象中指定需要加密的方法名。可对每个方法配置，例如: `secretMethods: {'login':'both'}`，指定 `login` 方法的 `secretType` 为 both
+
+
 
 
 ## 小贴士

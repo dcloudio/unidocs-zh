@@ -55,9 +55,7 @@ Edit and add the required content according to the application requirements, as 
 	* 文件头需加`<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">`
 	* The file header needs to add `<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">`
 	* 根节点必须是plist，二级节点必须是dict   
-	* The root node must be a plist, and the secondary node must be a dict
-- Info.plis的内容和manifest.json的内容应避免冲突，即不配置manifest中已经配置过的内容。云端打包时会合并到app中的Info.list文件，出现冲突时Info.plist的内容会覆盖manifest.json中配置  
-- The content of Info.plis and the content of manifest.json should avoid conflict, that is, the content that has been configured in the manifest should not be configured. When packaged in the cloud, it will be merged into the Info.list file in the app. When there is a conflict, the content of the Info.plist will overwrite the configuration in manifest.json
+- Info.plist的内容和manifest.json的内容应避免冲突，即不配置manifest中已经配置过的内容。云端打包时会合并到app中的Info.list文件，出现冲突时Info.plist的内容会覆盖manifest.json中配置  
 - plist文件配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 - The plist file configuration can only take effect after submitting the cloud package. Please use the [custom debugging base] when the real machine is running (https://ask.dcloud.net.cn/article/35115)
 
@@ -72,7 +70,7 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 输入名称 `nativeResouces`（注意大小写敏感），确定并创建目录。
 Enter the name `nativeResouces` (note that it is case sensitive), identify and create the directory.
 
-继续创建“ios”子目录、创建“resources”，结构如下：  
+继续创建“ios”子目录、创建“resources”二级子目录，结构如下：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/ios/directory.png)
 
 将需要添加的iOS原生资源文件拷贝到resources目录，云端打包时将会合并到安装包的.app中。

@@ -1270,7 +1270,7 @@ await uniIdCo.createCaptcha({
 
 |参数名	|类型	|必填	|说明														|
 |--		|--		|--		|--															|
-|scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](#captcha-scene)	|
+|scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
 
 **返回值**
 
@@ -1293,7 +1293,7 @@ await uniIdCo.refreshCaptcha({
 
 |参数名	|类型	|必填	|说明														|
 |--		|--		|--		|--															|
-|scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](#captcha-scene)	|
+|scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
 
 **返回值**
 
@@ -1320,7 +1320,7 @@ await uniIdCo.sendSmsCode({
 |--		|--		|--		|--										|
 |mobile	|string	|是		|手机号码								|
 |captcha|string	|是		|图形验证码								|
-|scene	|string	|是		|短信类型，参考：[短信类型](#sms-scene)	|
+|scene	|string	|是		|短信类型，参考：[短信类型](uni-id-summary.md#sms-scene)	|
 
 **返回值**
 

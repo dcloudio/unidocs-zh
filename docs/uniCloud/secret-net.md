@@ -33,17 +33,17 @@
 
 1. 下载uni-id插件
 
-- `uni-id-co` [详情]()
+- `uni-id-co` [详情](/uniCloud/uni-id-summary.html#save-user-token)
 
 2. 下载uni-open-bridge插件
 
 在微信小程序上依赖 `access_token`、`session_key`, `encrypt_key`。这些凭据需要`uni-open-bridge`统一接管。
 
-- `uni-open-bridge` [详情]()
+- `uni-open-bridge` [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html)
 
 3. 在应用的生命周期 `onLaunch` 中检查微信登陆状态，如果过期需要登陆
 
-注意 `uni.checkSession` 有调用次数限制警告，一个 `pv` 可调用 `2` 次
+注意: [uni.checkSession](https://uniapp.dcloud.net.cn/api/plugins/login.html#uni-checksession) 有调用次数限制警告，一个 `pv` 可调用 `2` 次
 
 ```js
 // App.vue
@@ -86,7 +86,7 @@ uniCloud.callFunction({
   data: {
     name: 'user'
   },
-  secret: 'both'
+  secretType: 'both'
 })
 ```
 

@@ -414,6 +414,17 @@ export default {
 2. 服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果
 3. 不建议在 `uniAD` web控制修改回调的服务空间和云函数名称，因为修改后生效需要一段时间
 
+### 微信小程序说明@callbackweixin
+
+3.6.2+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id-summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
+
+#### 接入流程
+
+1. 更新依赖库支持
+- 如果项目使用了 [uni-id](/uniCloud/uni-id-summary.html) 需要更新到 3.3.29+
+- 如果项目使用了 [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) 需要更新到 1.0.8+
+2. 使用 [uni-open-bridge](/uniCloud/uni-open-beidge.html) 托管三方开放平台数据
+
 ### Q&A
 
 Q: 回调为什么使用[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)，而不是直接配置开发者的服务器
@@ -478,7 +489,7 @@ const ProviderType = {
   KS: "ks"
 };
 
-const collectionName = "opendb-uniad-callback-log";
+const collectionName = "uni-ad-callback-log";
 
 class DB {
 

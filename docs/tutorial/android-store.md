@@ -14,7 +14,9 @@ According to the above specification requirements, all major application markets
 Please read the following steps carefully to test your APP! Effectively solve listing problems
 
 + APP不是由HbuilderX`3.6.1+`云打包生产的请抓紧时间升级到HbuilderX`3.6.1+`版本。重新打包！
++ APP is not packaged and produced by HbuilderX`3.6.1+` cloud, please hurry up and upgrade to HbuilderX`3.6.1+` version. Repack!
 + APP是离线打包请升级SDK到`3.6.1+`版本重新编辑打包！[下载地址](https://nativesupport.dcloud.net.cn/AppDocs/download/android)
++ APP is offline packaging, please upgrade the SDK to `3.6.1+` version and re-edit and package! [Download address](https://nativesupport.dcloud.net.cn/AppDocs/download/android)
 + 不要将自定义基座提交平台审核。调试模式下不会处理合规问题。需要注意！
 + Do not submit custom docks for platform review. Compliance issues are not handled in debug mode. requires attention!
 + APP没有配置隐私与政策提示框。请认真阅读[Android平台隐私与政策提示框配置方法](https://ask.dcloud.net.cn/article/36937)配置你APP的隐私弹窗。
@@ -79,6 +81,7 @@ For permission issues, pay attention to the following aspects:
 #### 2. Offline packaged apk! Submit market review and be reported to obtain user information in advance
 
 离线打包请使用3.6.1+版本的SDK。并配置uni-app的隐私协议弹窗。不要自行通过原生能力实现隐私弹窗，否则无法正常限制SDK内部获取用户信息逻辑。导致合规检测不合规！
+For offline packaging, please use SDK version 3.6.1+. And configure the uni-app privacy agreement pop-up window. Do not implement the privacy pop-up window through native capabilities by yourself, otherwise the logic of obtaining user information inside the SDK will not be properly restricted. Resulting in non-compliance with compliance detection!
 
 #### 3、如何解决“强制用户使用定向推送功能”问题
 #### 3. How to solve the problem of "Forcing users to use the directed push function"
@@ -90,6 +93,7 @@ In the "Privacy Policy", keywords such as "recommendation", "customization" and 
 #### 4. How to solve the problem before the user clicks "Agree" in the "Privacy Policy", the APP and SDK should not do anything, including that the SDK cannot be initialized, and the APP or SDK cannot collect user information (including but not limited to IMEI, IMSI, device MAC address, software list, device serial number, androidID)
 
 + 请先确保APK是基于3.6.1+版本生产的！
++ Please make sure that the APK is produced based on version 3.6.1+!
 + 确保已配置使用“template”模式隐私与政策提示框！
 + Make sure the Privacy and Policy Toolbox is configured to use the "template" mode!
 + 隐私链接不能存在获取用户信息、定位信息等js代码。如有请去除！
@@ -132,6 +136,7 @@ If you rewrite DCloudApplication, you need to pay attention to the compliance op
 #### 8. The app did not check the third-party advertising module, but it was rejected when it was put on the Huawei Market.
 
 + 请使用HX3.6.1+重新打包
++ Please use HX3.6.1+ to repackage
 
 #### 9、华为市场检测app在用户同意隐私政策前申请获取用户个人信息导致无法上架市场架
 #### 9. The Huawei Market Detection app cannot be put on the market because it applies for obtaining the user's personal information before the user agrees to the privacy policy.
@@ -153,6 +158,7 @@ In this case, please contact Huawei AppGallery technical support, tell him that 
 #### 11. The Android application vulnerability caused the problem of not being able to be listed
 
 + 请使用HX3.6.1+重新云打包
++ Please use HX3.6.1+ to repackage the cloud
 + 对apk进行加固。推荐使用腾讯云
 + Reinforce the apk. Tencent Cloud is recommended
 
@@ -163,6 +169,7 @@ In this case, please contact Huawei AppGallery technical support, tell him that 
 #### 12. Your application has the behavior of obtaining sensitive information of the user's software installation list
 
 + 请使用HX3.6.1+重新云打包
++ Please use HX3.6.1+ to repackage the cloud
 + 检查您的应用都使用了什么模块。然后查看[Android平台各功能模块隐私合规协议](https://ask.dcloud.net.cn/article/39484)文档相关协议。将协议补充道隐私协议中。切记不要只填写链接。明文说明获取了什么信息干什么用了都要说清楚。越清晰越好。
 + Check what modules your app uses. Then check the relevant agreements in the [Privacy Compliance Agreement of Each Functional Module of the Android Platform](https://ask.dcloud.net.cn/article/39484). Add the agreement to the privacy agreement. Remember not to just fill in the link. It is clear in plain text that what information is obtained and what it is used for. The clearer the better.
 
@@ -170,6 +177,7 @@ In this case, please contact Huawei AppGallery technical support, tell him that 
 #### 13. There is an unreasonable behavior in the application to obtain relevant permissions for SMS records
 
 + 请使用HX3.6.1+打包
++ Please use HX3.6.1+ package
 + 查看是否使用了“Messaging”模块。Messaging会涉及短信相关权限。如果不需要请删除配置。
 + Check if the "Messaging" module is used. Messaging will involve SMS-related permissions. Delete the configuration if it is not needed.
 + 查看是否使用uni原生插件。可能是原生插件携带的权限。建议使用排除法删除插件在检测。
@@ -245,8 +253,10 @@ public class MyApplication extends DCloudApplication {
 + You can change the hrefLoader configuration of androidPrivacy.json system Provide system browser to display privacy terms and fix the problem Specific [Reference Document](https://uniapp.dcloud.io/tutorial/app-privacy-android.html)
 
 #### 20、关于拒绝权限重复弹窗
+#### 20. Repeated pop-up window about denying permission
 
 HX3.6.1+版本 可以配置manifest.json配置checkPermissionDenied = true 校验已拒绝权限不再申请。(仅针对官方api主动权限申请行为，三方SDK、uni原生插件、plus.android.requestPermissions不受限制)
+HX3.6.1+ version You can configure manifest.json to configure checkPermissionDenied = true to verify that the permission has been denied and no longer apply. (Only for the official api active permission application behavior, the third-party SDK, uni native plug-in, plus.android.requestPermissions are not restricted)
 ```
 "app-plus": {
 	...

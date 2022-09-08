@@ -145,7 +145,7 @@
   + 优化 uniIdRouter 支持对首页、直达页面进行拦截并跳转到登录页面
   + Optimized uniIdRouter to support intercepting the home page and direct page and jumping to the login page
   + 优化 uni-id-co 密码规则调整，废除之前的简单校验，允许配置密码强度 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#password-strength)
-  + Optimize the adjustment of uni-id-co password rules, abolish the previous simple verification, and allow to configure the password strength [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#password- strength)
+  + Optimize the adjustment of uni-id-co password rules, abolish the previous simple verification, and allow the configuration of password strength [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#password- strength)
   + 调整 uni-id-co 存储用户 openid（`wx_openid.${mp|h5|app|web}`）时同时在`wx_openid.${mp|h5|app|web}_${DCloudAppId}`存储了一份副本，参考：[微信登录](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-weixin)、[QQ登录](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-qq)
   + Adjust uni-id-co to store user openid (`wx_openid.${mp|h5|app|web}`) also in `wx_openid.${mp|h5|app|web}_${DCloudAppId}` A copy, reference: [WeChat login](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-weixin), [QQ login](https://uniapp .dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-qq)
   + 调整 uni-id-co 依赖 uni-open-bridge-common 存储用户 `session_key`、`access_token` 等凭据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
@@ -407,7 +407,7 @@
   + 新增 uni-push2.0 全端支持（App、小程序、web）的云端一体的统一推送服务 [详情](https://uniapp.dcloud.io/unipush-v2.html)
   + Added uni-push2.0 full-end support (App, MiniApp, web) cloud-integrated unified push service [Details](https://uniapp.dcloud.io/unipush-v2.html)
   + 新增 腾讯云平台 数据万象，对云存储文件进行图片缩放、增加水印等计算功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage.html#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86)
-  + Added Tencent Cloud Platform Data Vientiane, which can perform image scaling, watermarking and other computing functions for cloud storage files [Details](https://uniapp.dcloud.net.cn/uniCloud/storage.html#%E6%95%B0 %E6%8D%AE%E5%A4%84%E7%90%86)
+  + Added Tencent Cloud Platform Data Vientiane, zooming in and out of cloud storage files, adding watermarks and other computing functions [Details](https://uniapp.dcloud.net.cn/uniCloud/storage.html#%E6%95%B0 %E6%8D%AE%E5%A4%84%E7%90%86)
   + 新增 keepRunningAfterReturn 配置云函数是否能在 return 后继续运行，仅腾讯云 nodejs12 生效 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#keep-running)
   + Added keepRunningAfterReturn to configure whether the cloud function can continue to run after return. Only Tencent Cloud nodejs12 takes effect [Details](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#keep-running)
   + 新增 Redis扩展库 增加 quit 接口用于断开 redis 连接 [详情](https://uniapp.dcloud.net.cn/uniCloud/redis.html#quit)
@@ -789,7 +789,7 @@
 * 【App插件(含5+App和uni-app的App端)】
 * [App Plug-in (App side including 5+App and uni-app)]
   + 修复 音频播放 AudioPlayer 暂停后设置播放倍速大于 0 会自动触发播放的Bug [详情](https://ask.dcloud.net.cn/question/143757)
-  + Fix the bug that AudioPlayer will automatically trigger playback after setting the playback speed greater than 0 after the audio playback is paused [Details](https://ask.dcloud.net.cn/question/143757)
+  + Fix the bug that when AudioPlayer is paused, setting the playback speed greater than 0 will automatically trigger playback [Details](https://ask.dcloud.net.cn/question/143757)
   + Android平台 修复 uni-AD 开屏广告开通腾讯优量汇可能引起应用启动白屏的Bug
   + On Android platform, fix the bug that uni-AD App Open Ads and opening Tencent Youlianghui may cause the application to start a white screen
   + iOS平台 修复 登录鉴权、分享的 authorize 方法传入认证参数 options 不生效的Bug

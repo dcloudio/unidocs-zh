@@ -22,6 +22,7 @@ Especially when your business involves promotions, rebates, incentive videos and
 When DCloud provides both `uni-app` and `uniCloud`, it actually has the ability to provide a cloud-integrated secure network.
 
 在HBuilderX 3.6.2+ ，当开发者同时使用 `uni-app` 和 `uniCloud` 时，可以在网络请求时选择是否通过安全网络运行，它通过高安全的保护机制，防止客户端伪造和通信内容抓包。
+In HBuilderX 3.6.2+, when developers use `uni-app` and `uniCloud` at the same time, they can choose whether to run through a secure network when requesting the network. It uses a high-security protection mechanism to prevent clients from forging and communicating content Capture packets.
 
 注意：安全网络不支持web平台，只支持微信小程序和App。并且App的安全级别更高。
 Note: Safe Network does not support web platform, only WeChat applet and App. And the security level of the App is higher.
@@ -33,6 +34,7 @@ Note: Safe Network does not support web platform, only WeChat applet and App. An
 |App|WeChat Mini Program|
 |:-:|:-:|
 |后续支持|3.6.2+|
+|Follow-up support|3.6.2+|
 
 ## 开通流程
 ## Opening process
@@ -129,8 +131,10 @@ uniCloud.importObject('object-name', {
 ```
 
 ## 服务器端
+## Service-Terminal
 
 为了避免客户端伪造参数获取服务器敏感数据，应以服务器端为准，如果客户端携带的 `secretType` 不符合要求应拒绝响应数据
+In order to prevent the client from forging parameters to obtain sensitive data from the server, the server should prevail. If the `secretType` carried by the client does not meet the requirements, the response data should be rejected
 
 - callFunction
 
@@ -138,6 +142,7 @@ uniCloud.importObject('object-name', {
 exports.main = async (event, context) => {
   const secretType = context.secretType
   // secretType 是客户端调用 uniCloud.callFunction 传递的参数 secretType
+  // secretType is the parameter secretType passed by the client to call uniCloud.callFunction
 
   if (secretType !== 'both' || secretType !== 'response') {
     return null
@@ -146,6 +151,7 @@ exports.main = async (event, context) => {
 ```
 
 - 云对象
+- cloud objects
 
 ```js
 module.exports = {
@@ -154,7 +160,9 @@ module.exports = {
     const clientInfo = this.getClientInfo()
     const secretType = clientInfo.secretType
     // methodName 是客户端调用的方法名
+    // methodName is the method name called by the client
     // secretType 是客户端调用 uniCloud.importObject 传递的参数 secretMethods
+    // secretType is the parameter secretMethods passed by the client when calling uniCloud.importObject
 
     if (methodName === 'login' && (secretType !== 'both' || secretType !== 'response')) {
       throw new Error('secretType invalid')
@@ -165,6 +173,7 @@ module.exports = {
 
 
 **secretType 属性说明**
+**secretType attribute description**
 
 |值				|描述																						|
 |value |description |
@@ -182,6 +191,7 @@ module.exports = {
 **secretMethods property description**
 
 `secretMethods` 是云对象中指定需要加密的方法名。可对每个方法配置，例如: `secretMethods: {'login':'both'}`，指定 `login` 方法的 `secretType` 为 both
+`secretMethods` is the name of the method specified in the cloud object that needs to be encrypted. It can be configured for each method, for example: `secretMethods: {'login':'both'}`, specify the `secretType` of the `login` method as both
 
 
 

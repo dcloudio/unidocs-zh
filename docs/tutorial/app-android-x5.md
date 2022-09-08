@@ -106,20 +106,31 @@ The x5 kernel has a self-update mechanism. Therefore, there may be compatibility
 It is currently known that after the TBS45738 version is updated, the input component adjust-position=false of the uniapp vue page will become invalid! Students who use the x5 kernel, please know to adapt as soon as possible, you can change to nvue or not apply the x5 kernel.
 
 ### 汇总x5浏览器内核加载失败问题
+### Summary of x5 browser kernel loading failure problems
 
 +  周五周六（18:00-21:00）服务器维护不支持下载
++ Friday and Saturday (18:00-21:00) server maintenance does not support download
 +  不支持X86设备
++ Does not support X86 devices
 +  频繁下载x5浏览器内核的IP会被限流下载
++ Frequent download of the IP of the x5 browser kernel will be limited to download
 +  非wifi环境需要配置`allowDownloadWithoutWiFi`为true开启下载
++ Non-wifi environment needs to configure `allowDownloadWithoutWiFi` to true to enable download
 +  离线打包debug环境下，可会导致下载失败
++ In the offline package debug environment, the download may fail
 
 ### 非WiFi情况下载X5浏览器内核
+### Download X5 browser kernel in non-WiFi situation
 
 manifest.json 配置webView节点
+manifest.json configures the webView node
 + 5+app 放在plus节点
++ 5+app on the plus node
 + uni-app 放在app-plus节点
++ uni-app is placed on the app-plus node
 
 **示例：**
+**Example:**
 ```
 app-plus {
 	...

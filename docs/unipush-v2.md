@@ -373,8 +373,7 @@ Similarly, to push a message to a client, you also need to know the client push 
 > 先跟着示例代码简单体验，详细的uni.getPushClientId api介绍[详情参考](/uniCloud/uni-cloud-push/api.html#getpushclientid)  
 > First follow the sample code for a simple experience, detailed uni.getPushClientId api introduction [details reference](/uniCloud/uni-cloud-push/api.html#getpushclientid)
 代码示例：
-Code example:
-```js 
+```js
 // uni-app客户端获取push客户端标记
 // uni-app client gets push client tag
 uni.getPushClientId({

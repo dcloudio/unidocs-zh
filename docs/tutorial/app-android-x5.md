@@ -105,3 +105,31 @@ The x5 kernel has a self-update mechanism. Therefore, there may be compatibility
 目前已知 TBS45738版本更新后会导致 uniapp vue页面的input组件adjust-position=false失效！使用x5内核的同学请知晓尽快适配，可以改为nvue或不适用x5内核。
 It is currently known that after the TBS45738 version is updated, the input component adjust-position=false of the uniapp vue page will become invalid! Students who use the x5 kernel, please know to adapt as soon as possible, you can change to nvue or not apply the x5 kernel.
 
+### 汇总x5浏览器内核加载失败问题
+
++  周五周六（18:00-21:00）服务器维护不支持下载
++  不支持X86设备
++  频繁下载x5浏览器内核的IP会被限流下载
++  离线打包debug环境下，可会导致下载失败
+
+### 非WiFi情况下载X5浏览器内核
+
+manifest.json 配置webView节点
++ 5+app 放在plus节点
++ uni-app 放在app-plus节点
+
+**示例：**
+```
+app-plus {
+	...
+	...
+	"webView": {// 3.5.0 + 仅Android支持
+	    "x5": { // 此属性需要勾选 Android X5 Webview 模块，详细参见下面的说明
+	        "timeOut": 3000, // 超时时间
+	        "showTipsWithoutWifi": true, // 是否在非WiFi网络环境时，显示用户确认下载x5内核的弹窗。默认值false
+	        "allowDownloadWithoutWiFi": false // 是否允许用户在非WiFi网络时进行x5内核的下载。默认值false（如果为true，就不会显示用户确认的弹窗。）
+	    }
+	}
+}
+
+```

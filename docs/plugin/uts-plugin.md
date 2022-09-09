@@ -491,6 +491,28 @@ android很多布局参数强制要求Float，但是ts中没有内置这种类型
 let textSize =  30.0.toFloat();
 ```
 
+### 匿名内部类
+
+UTS目前还不支持匿名内部类的写法，在android中类似这样的场景
+
+```kotlin
+getUniActivity()!!.runOnUiThread(Runnable(){
+    // do something
+});
+```
+
+需要声明一个实现类，再新建实例的方式实现，代码如下
+
+```
+class AddUIRunnable extends Runnable {
+    override run():void {
+		// do something
+    }
+};
+let uiRunable = new AddUIRunnable();
+getUniActivity()!.runOnUiThread(uiRunable)
+```
+
 ### 泛型参数
 
 android中UI相关的api，很多会要求泛型，目前uts中可以使用下面的代码实现

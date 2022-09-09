@@ -109,7 +109,7 @@ Security Network relies on WeChat's `access_token`, `session_key`, `encrypt_key`
 }
 ```
 
-注意：拷贝此文件内容时需要移除 `注释`。标准json不支持注释。在HBuilderX中可用多选//来批量移除注释。
+注意：拷贝此文件内容时需要移除 `注释`。标准json不支持注释。在HBuilderX中可用多选`//`来批量移除注释。
 
 如果项目之前已经使用过uni-id和uni-open-bridge，则上述步骤可省略。
 If the project has used uni-id and uni-open-bridge before, the above steps can be omitted.

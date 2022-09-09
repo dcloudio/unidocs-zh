@@ -371,7 +371,7 @@ import { getAppContext } from "io.dcloud.uts.android";
 
 获取当前应用Application上下文，对应android平台 Context.getApplicationContext 函数实现
 
-Android开发场景中，调用应用级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档]()
+Android开发场景中，调用应用级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档](https://developer.android.google.cn/docs)
 
 
 ```ts
@@ -388,7 +388,7 @@ mediaPlayer.start();
 
 获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
 
-Android开发场景中，调用活动的级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档]()
+Android开发场景中，调用活动的级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档](https://developer.android.google.cn/docs)
 
 ```ts
 // [示例]获取当前activity顶层容器

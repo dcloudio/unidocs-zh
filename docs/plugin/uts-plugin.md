@@ -251,13 +251,11 @@ The Android platform's native third-party library directory supports the followi
 如果使用了NDK开发so库，也支持保存到此目录，需按Android的abi类型分目录保存。
 If you use the NDK development so library, it also supports saving to this directory, and it needs to be saved in directories according to the Android abi type.
 
-如果封装三方原生sdk为uni-app插件，经常需要使用本目录。
+如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但不推荐这么做，如果三方原生sdk支持仓储建议优先使用仓储，参考config.json的[dependencies](#dependencies)。  
 
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 
-**遗留事项**
-
-HX 3.6.1 libs使用存在[临时注意事项](#tempnotice)
+> 遗留事项: HBuilderX3.6.1版本对libs目录使用还不完善，[详见](#tempnotice)
 
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
@@ -278,19 +276,50 @@ The uts plugin is in the native layer configuration file of the Android platform
 	// 使用NDK时支持的CPU类型，可选
 	// CPU type supported when using NDK, optional
 	"abis": [
-	    "使用NDK时支持的cpu类型, 可取值armeabi-v7a|arm64-v8a|x86"
+	    "使用NDK时支持的cpu类型, 可取值armeabi-v7a|arm64-v8a|x86|x86_64"
 	],
     // 依赖的仓储配置，可选，打包时会合并到原生工程的build.gradle中
-    // Dependent repository configuration, optional, will be merged into the build.gradle of the native project when packaged
-	"dependencies": [{
-		"id": "com.xxx.richtext:richtext",
-		"source": "implementation 'com.xxx.richtext:richtext:3.0.7'"
-	}],
+	"dependencies": [
+		"androidx.core:core-ktx:1.6.0",
+		{
+			"id": "com.xxx.richtext:richtext",
+			"source": "implementation 'com.xxx.richtext:richtext:3.0.7'"
+		}
+	],
     // Android系统版本要求，最低Android 5.0
     // Android system version requirements, minimum Android 5.0
 	"minSdkVersion": 21
 }
 ```
+
+- abis  
+当插件使用了NDK开发的so库时配置，描述插件支持CPU类型。  
+可取值：armeabi-v7a、arm64-v8a、x86、x86_64
+
+<a id="dependencies"/>
+
+- dependencies  
+配置插件依赖的仓储，云端打包时会合并到Android原生工程的build.gradle的  
+数组类型，数组中的项可以是字符串类型或JSON对象  
+对于字符串类型项，将会作为`implementation`方式依赖添加到build.gradle中，上面示例中"androidx.core:core-ktx:1.6.0"将会添加以下配置  
+```
+dependencies {
+  implementation 'androidx.core:core-ktx:1.6.0'
+}
+```
+对于JSON类型项，将会把source字段值作为gradle源码添加到build.gradle中，上面示例中"id": "com.xxx.richtext:richtext"项将会添加以下配置  
+```
+dependencies {
+  implementation 'com.xxx.richtext:richtext:3.0.7'
+}
+```
+
+> 遗留事项: HBuilderX3.6.1版本对dependencies配置支持还不完善，[详见](#tempnotice)
+
+- minSdkVersion  
+插件支持的Android最低版本，整数类型，取值范围为Android API Level  
+默认uni-app最低支持版本为19，即Android4.3.3
+
 
 **注意：**
 

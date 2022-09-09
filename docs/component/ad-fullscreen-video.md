@@ -14,7 +14,7 @@ How to activate reference rewarded video ads [https://uniapp.dcloud.net.cn/api/a
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|QQ applet|Quick app|360 applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√（3.4.8+）|x|√（3.4.8+）|x|x|x|x|x|x|x|x|
+|√（3.4.8+）|x|x|x|x|x|x|x|x|x|x|
 
 - app端的广告源由腾讯优量汇、头条穿山甲、快手等广告联盟提供，DCloud负责聚合
 - The advertising sources on the app side are provided by Tencent Youlianghui, Toutiao Pangolin, Kuaishou and other advertising alliances, and DCloud is responsible for the aggregation

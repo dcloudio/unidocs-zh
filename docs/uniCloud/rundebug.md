@@ -350,8 +350,7 @@ If you need to simulate the client type, you can add the clientInfo field to the
   "otherParam": "***",
   "clientInfo":{
     // HBuilderX 3.5.1之前的版本需要传全大写的参数才可以在context内使用context.OS、context.LOCALE等
-    // Versions before HBuilderX 3.5.1 need to pass parameters in all uppercase to use context.OS, context.LOCALE, etc. in the context
-    "OS": "ios" // 系统类型 ios、android
+    "OS": "ios", // 系统类型 ios、android
     "PLATFORM": "web", // 客户端类型 app、web、mp-weixin、mp-alipay等
     "DEVICEID": "", // 设备id
     "APPID": "", // 应用DCloud AppId

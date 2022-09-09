@@ -47,7 +47,43 @@ DCloud面向开发者同时提供了端引擎`uni-app` 和 云引擎`uniCloud`�
 
 3. 配置uni-id和uni-open-bridge
 
-**缺内容，说清楚从微信小程序后台取哪些凭据，填到哪里？**
+登陆微信公众平台[https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)，获取微信小程序的固定凭据 `appid` 和 `secret`，配置到 uni-id-config
+
+```json
+// uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json
+{
+  "dcloudAppid": "__UNI__xxxxxx", // 在项目的 manifest.json 中
+  "mp-weixin": {
+    "tokenExpiresIn": 259200,
+    "oauth": {
+      "weixin": {
+        "appid": "", // 微信公众平台申请的小程序 appid
+        "appsecret": "" // 微信公众平台申请的小程序 secret
+      }
+    }
+  }
+}
+```
+
+配置 `uni-open-bridge` 定时任务，定时从微信服务器获取 [access_token](/uniCloud/uni-open-bridge.html#access_token) 并保存到Redis或数据库
+
+```json
+// uniCloud/cloudfunctions/common/uni-config-center/uni-open-bridge/config.json
+{
+  "schedule": {
+    "__UNI__xxxxxx": { // dcloudAppid, 需要和 `uni-config-center` uni-id中的配置一致
+      "enable": true, // 任务全局开关，优先级最高
+      "weixin-mp": { // 平台，目前仅支持 微信小程序、微信 H5，详情参见 https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge#platform
+        "enable": true, // 当前平台任务开关
+        "tasks": ["accessToken"] // 要执行的任务，微信小程序支持 accessToken
+      }
+    }
+  },
+  "ipWhiteList": ["0.0.0.0"] // 用于 URL化后 http 调用的服务器IP白名单，即指定ip的服务器才可以访问URL化后的`uni-open-bridge云对象
+}
+```
+
+注意：拷贝此文件内容时需要移除 `注释`。标准json不支持注释。在HBuilderX中可用多选//来批量移除注释。
 
 如果项目之前已经使用过uni-id和uni-open-bridge，则上述步骤可省略。
 

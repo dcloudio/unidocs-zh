@@ -91,6 +91,7 @@
 |clusterId|自定义点聚合簇效果时使用|Number|否||App-nvue 3.1.0+、微信小程序|
 |customCallout|自定义气泡窗口|Object|否||App-nvue 2.1.5+、微信小程序、支付宝小程序|
 |aria-label|无障碍访问，（属性）元素的额外描述|String|否||App-nvue 3.1.0+、微信小程序|
+|joinCluster|是否参与点聚合|Boolean|否|如果指定点聚合 此选项值必须设置为true,才会生效|App-nvue 3.1.0+、微信小程序|
 
 **marker 上的气泡 callout**
 
@@ -126,7 +127,6 @@
 |textAlign|文本对齐方式。有效值: left, right, center|String|App-nvue 2.1.5+、微信小程序、百度小程序|
 |customCallout|自定义气泡窗口|Object|App暂时不支持、微信小程序|
 |aria-label|无障碍访问，（属性）元素的额外描述|String|App-nvue 3.1.0+、微信小程序|
-|joinCluster|是否参与点聚合|Boolean|App-nvue 3.1.0+、微信小程序|
 
 ### 点聚合
 

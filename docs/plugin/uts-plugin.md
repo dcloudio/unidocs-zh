@@ -620,6 +620,28 @@ Float is mandatory for many layout parameters in android, but there is no built-
 let textSize =  30.0.toFloat();
 ```
 
+### 匿名内部类
+
+UTS目前还不支持匿名内部类的写法，在android中类似这样的场景
+
+```kotlin
+getUniActivity()!!.runOnUiThread(Runnable(){
+    // do something
+});
+```
+
+需要声明一个实现类，再新建实例的方式实现，代码如下
+
+```
+class AddUIRunnable extends Runnable {
+    override run():void {
+		// do something
+    }
+};
+let uiRunable = new AddUIRunnable();
+getUniActivity()!.runOnUiThread(uiRunable)
+```
+
 ### 泛型参数
 ### Generic parameters
 

@@ -181,12 +181,13 @@ When the client calls cloud objects through importObject, configure whether to e
 
 ```js
 uniCloud.importObject('object-name', {
-  secretMethods: {'login':'both'}
+  secretMethods: {'login':'both'} // 支持配置所有方法设置加密参见下面的 secretMethods 说明
 })
 ```
 
-**clientDB呢？**
-**What about clientDB? **
+- clientDB
+
+暂不支持
 
 **secretType 属性说明**
 **secretType attribute description**
@@ -206,8 +207,12 @@ uniCloud.importObject('object-name', {
 **secretMethods 属性说明**
 **secretMethods property description**
 
-`secretMethods` 是云对象中指定需要加密的方法名。可对每个方法配置，例如: `secretMethods: {'login':'both'}`，指定 `login` 方法的 `secretType` 为 both
-`secretMethods` is the name of the method specified in the cloud object that needs to be encrypted. It can be configured for each method, for example: `secretMethods: {'login':'both'}`, specify the `secretType` of the `login` method as both
+`secretMethods` 是云对象中指定需要加密的方法名。
+
+- 对所有方法设置加密，例如 `secretMethods: {'*':'both'}`
+- 对每个方法配置加密，例如 `secretMethods: {'login':'both'}`，指定 `login` 方法的 `secretType` 为 both
+
+方法级配置优先级最高，例如 `secretMethods: {'*':'response', 'login':'both'}`，login 的 both 覆盖了 `'*':'response'`
 
 ## 服务器端
 ## Service-Terminal

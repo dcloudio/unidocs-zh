@@ -1,4 +1,3 @@
-
 > `uni-app`支持通过 可视化界面、[`vue-cli`命令行](https://uniapp.dcloud.io/quickstart-cli) 两种方式快速创建项目。
 > `uni-app` supports quick project creation through the visual interface and [`vue-cli` command line](https://uniapp.dcloud.io/quickstart-cli).
 
@@ -59,8 +58,7 @@ If developers are accustomed to projects in node mode and are confused about the
 ## Run uni-app
 
 
-1. 浏览器运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到浏览器 -> 选择浏览器，即可在浏览器里面体验uni-app 的 H5 版。
-1. Run on browser: Enter the hello-uniapp project, click Run -> Run to browser -> Select browser on the toolbar, and you can experience the H5 version of uni-app in the browser.
+1. 浏览器运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到浏览器 -> 选择浏览器，即可体验 uni-app 的 web 版。
   <div align=center>
     <!-- @ifdef ZH -->
   	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7bf15128-6629-4037-a6c5-988ab03671f1.png"/>
@@ -70,23 +68,14 @@ If developers are accustomed to projects in node mode and are confused about the
     <!-- @endif -->
   </div>
 
-<!-- @ifdef ZH -->
-2. 运行App到手机或模拟器：连接手机，开启USB调试，进入hello-uniapp项目，点击工具栏的运行 -> 真机运行 -> 选择运行的设备，即可在该设备里面体验uni-app。
+2. 运行App到手机或模拟器：使用电压足够的usb端口连接手机，设置中开启USB调试，手机上允许电脑设备调试手机，进入hello-uniapp项目，点击工具栏的运行 -> 运行App到手机或模拟器，即可在该设备里面体验uni-app。
 	<div align=center>
 		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c4d3c057-40dc-4dea-9277-be1c33a252ed.png"/>
 	</div>
-<!-- @endif -->
-<!-- @ifdef EN -->
-2. Run the App to the mobile phone or simulator: connect the mobile phone, enable USB debugging, enter the hello-uniapp project, click Run on the toolbar -> Run on real machine -> Select the running device, you can experience uni-app in the device .
-	<div align=center>
-		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/5d7ebe44-0146-4cce-8fa8-b57f4f39f358.jpg"/>
-	</div>
-<!-- @endif -->
-	如手机无法识别，请点击菜单运行-运行到手机或模拟器-真机运行常见故障排查指南。
-	If the mobile phone fail to be identified, please click the menu Run - Run to the mobile phone or simulator - Guide to common troubleshooting in run on mobile App Playground.
-
-
-<!-- @ifdef ZH -->
+	
+	- 如手机或模拟器无法识别，请点击[常见故障排查指南](https://uniapp.dcloud.net.cn/tutorial/run/run-app-faq.html)。
+  - 如需运行在苹果手机真机上，注意需使用自定义基座。[详见](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+	
 3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。
     <br/>
     <div align=center>

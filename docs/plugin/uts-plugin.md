@@ -186,12 +186,14 @@ Android平台原生三方库目录，支持以下类型文件：
 
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 
-> 遗留事项: HBuilderX3.6.1版本对libs目录使用还不完善，[详见](#tempnotice)
+> 遗留事项: HBuilderX3.6.2版本对libs目录使用还不完善，[详见](#tempnotice)
 
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
 
 除了插件下有res目录，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
+
+注意：截止到HBuilderX3.6.2，uts插件无法使用res。图片资源建议放在assets目录。
 
 ##### AndroidManifest.xml  
 Android原生应用清单文件，建议只保存UTS插件内置的清单文件配置。
@@ -253,9 +255,9 @@ dependencies {
 
 Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
-#### HX3.6.1 临时注意事项@tempnotice
+#### HX3.6.2 临时注意事项@tempnotice
 
-使用HBuilderX 3.6.1版本时，关于原生依赖的处理有部分不完善，需要注意以下事项：
+使用HBuilderX 3.6.2版本及更早版本，关于原生依赖的处理有部分不完善，需要注意以下事项：
 
 + config.json 目前还不支持配置仓库依赖，需要将gradle配置的库手动下载后，放置在libs目录，使用手动添加的方式集成
 
@@ -374,10 +376,11 @@ getBatteryCapacity()
 
 ### 5.3 遗留问题
 
-截止到HBuilderX 3.6.1 时遗留事项：
+截止到HBuilderX 3.6.2 时遗留事项：
 - 不能debug断点uts源码
 - iOS版还未发布
-- UTS插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](#tempnotice)
+- uts插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](#tempnotice)
+- uts插件无法使用res。图片资源建议放在assets目录。
 
 遗留事项后续升级完善。
 

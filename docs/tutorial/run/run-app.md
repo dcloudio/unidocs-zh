@@ -1,4 +1,3 @@
-
 因手机差异较大，HBuilder并没有提供App的模拟器。不管uni-app或5+App/wap2app项目，都需要连接真实的手机或手机模拟器来运行测试，称之为“真机运行”。
 Due to the large differences in mobile phones, HBuilder does not provide an App simulator. Regardless of uni-app or 5+App/wap2app projects, you need to connect a real mobile phone or mobile phone emulator to run the test, which is called "real machine running".
 
@@ -82,6 +81,8 @@ But a device can only run one project at the same time, and when different proje
 - 手机连接电脑后，确保在手机上弹出的“要信任此电脑吗？”提示框中点了“信任”按钮  
 - After the phone is connected to the computer, make sure to click the "Trust" button in the "Do you want to trust this computer?" prompt box that pops up on the phone
 
+
+<a id="ios_simulator"/>
 
 如果是Mac电脑安装XCode后，“标准运行基座”支持使用iOS模拟器  
 ![](https://native-res.dcloud.net.cn/images/hx/run/ios-sim.png)  
@@ -174,6 +175,4 @@ Note: The custom running base is a beta version and cannot be directly commercia
 You can use the offline SDK to package and generate a custom running base. After generation, store the apk and ipa packages in the project directory /unpackage/debug directory, and the file names are android_debug.apk and iOS_debug.ipa respectively.
 
 - [Android平台离线生成自定义调试基座](https://ask.dcloud.net.cn/article/35482)
-- [Offline generation of custom debugging base for Android platform](https://ask.dcloud.net.cn/article/35482)
 - [iOS平台离线生成自定义调试基座](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94%a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)
-- [Offline Generation of Custom Debugging Dock for iOS Platform](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94% a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c% e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)

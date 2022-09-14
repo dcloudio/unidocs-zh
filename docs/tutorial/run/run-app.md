@@ -48,7 +48,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 #### iOS设备选择@ios_device
 
 > HBuilderX中自带的标准真机运行基座，使用DCloud向苹果申请的企业开发者证书签名，根据[苹果开发者企业计划许可协议](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20220606-Chinese-Simplified.pdf)要求，使用企业开发者证书签名的App只允许企业员工内部使用，不允许企业外部人员安装使用。  
-> 因收到苹果公司警告，自2022年9月14日起iOS真机设备不再支持使用标准真机运行基座，详情见论坛公告：[https://ask.dcloud.net.cn/article/40041](https://ask.dcloud.net.cn/article/40041)
+> 因收到苹果公司警告，自2022年9月14日起iOS真机设备不再支持使用标准真机运行基座，详情见论坛公告：[https://ask.dcloud.net.cn/article/40041](https://ask.dcloud.net.cn/article/40041)  
 > 在iOS真机设备上运行请向苹果申请证书制作[自定义基座](#customplayground)或者在Mac电脑使用[iOS模拟器](#ios_simulator)
 
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/04b9d6fa-51f5-4ca7-8301-9200cbe935eb.jpg)
@@ -111,7 +111,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 
 一个项目只能生成一个自定义基座，多次生成只保留最后一次结果。
 
-生成自定义基座后，在顶部运行菜单可以选择使用自定义运行基座：
+生成自定义基座后，在顶部运行菜单可以选择使用自定义运行基座：  
 ![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20181228/9a4abc6fc3b72b2ede0393cfaab6a890.png)
 <!-- 这个图在修改运行界面后要换掉 -->
 

@@ -1,4 +1,3 @@
-
 因手机差异较大，HBuilder并没有提供App的模拟器。不管uni-app或5+App/wap2app项目，都需要连接真实的手机或手机模拟器来运行测试，称之为“真机运行”。
 
 - Android平台  
@@ -54,6 +53,8 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 - 如果windows电脑连接iOS设备需电脑安装iTunes软件，并确保apple的mobile device服务开启、iTunes可找到手机  
 - 手机连接电脑后，确保在手机上弹出的“要信任此电脑吗？”提示框中点了“信任”按钮  
 
+
+<a id="ios_simulator"/>
 
 如果是Mac电脑安装XCode后，“标准运行基座”支持使用iOS模拟器  
 ![](https://native-res.dcloud.net.cn/images/hx/run/ios-sim.png)  

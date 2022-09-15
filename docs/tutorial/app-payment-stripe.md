@@ -6,7 +6,7 @@
 更多信息详见[申请开通Stripe操作指南](https://uniapp.dcloud.io/app-payment-stripe-open)
 
 **注意**
-- 仅支持iOS13.0及以上版本
+- iOS系统仅支持iOS13.0及以上版本
 
 ### 配置  
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数

@@ -68,7 +68,7 @@
         * [Google支付](/tutorial/app-payment-google.md)
       * Push(消息推送)
         * [UniPush](/tutorial/app-push-unipush.md)
-      * [Sare(分享)](/tutorial/app-share.md)
+      * [Share(分享)](/tutorial/app-share.md)
         * [微信分享](/tutorial/app-share-weixin.md)
         * [QQ分享](/tutorial/app-share-qq.md)
         * [新浪微博分享](/tutorial/app-share-weibo.md)

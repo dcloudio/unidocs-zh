@@ -28,6 +28,10 @@ Redis不是真正意义上的可持久化数据库，可以给数据加上一个
 
 
 ### 注意
-- redis虽支持持久化存储，但它是异步持久化，极端情况下（如：断电）存在丢数据的可能性；改同步的话性能就没有了。所以对数据有强一致需求仍然需要使用mongoDB
+- redis虽支持持久化存储，但它是异步持久化，极端情况下（如：断电）存在丢数据的可能性；改同步的话性能就没有了。所以对数据有强一致需求仍然需要使用mongoDB。
+- 每个服务空间一个redis，只有本服务空间的云函数才能访问。
 
-虽然Redis的优势明显，但是我们仍然不可用Redis完全替代mongoDB；推荐：mongoDB+redis组合使用。所有数据都在MongoDB里有一份，适合缓存入redis里的则使用redis。
+虽然Redis的优势明显，但是我们仍然不可用Redis完全替代mongoDB。
+推荐：mongoDB+redis组合使用。所有数据都在MongoDB里有一份，适合缓存入redis里的则使用redis。
+
+HBuilderX 3.5.2+，新出了`JQL Cache Redis`，可以方便的将 MongoDB 中的数据缓存到 Redis 中。[详见](https://uniapp.dcloud.net.cn/uniCloud/jql-cache-redis.html)

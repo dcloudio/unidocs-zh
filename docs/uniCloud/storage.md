@@ -8,9 +8,7 @@
 - 如果有开发者在存储上上传了非法文件，或者非法app指向了uniCloud的阿里云云存储，被某地公安发现，就会导致所有uniCloud阿里云用户的存储域名在该地被封禁（有时只有一些运营商网络禁封）。
 - If a developer uploads an illegal file on the storage, or an illegal app points to the Alibaba Cloud storage of uniCloud, and is discovered by the public security in a certain place, the storage domain name of all uniCloud Alibaba Cloud users will be banned there (sometimes only Some carrier networks are banned).
 - 如遇到部分地区或部分网络无法访问阿里云存储默认域名，请及时在论坛发帖反馈。另外阿里云还提供了一个备用云存储CDN域名：`vkceyugu-backup.cdn.bspapp.com`，必要时可以将文件url的域名替换为备用域名来使用。
-- If you encounter that the default domain name of Alibaba Cloud Storage cannot be accessed in some regions or some networks, please post feedback in the forum in time. In addition, Alibaba Cloud also provides an alternate cloud storage CDN domain name: `vkceyugu-backup.cdn.bspapp.com`. If necessary, you can replace the domain name of the file url with an alternate domain name for use.
-- 阿里云后续会提供隔离方案。
-- Alibaba Cloud will provide isolation solutions in the future.
+- 阿里云现已提供cdn域名隔离方案，详情参考：[阿里云cdn独立域名](#aliyun-cdn-domain)。
 :::
 
 

@@ -18,9 +18,7 @@ Displays the message prompt box.
 |mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序|
 |mask|Boolean|No|Whether to display a transparent mask to prevent touch penetration, default: false|App, WeChat applet|
 |duration|Number|否|提示的延迟时间，单位毫秒，默认：1500||
-| duration| Number| No| Prompt delay time, in milliseconds, default: 1500| |
-|position|String|否|纯文本轻提示显示位置，填写有效值后只有 `title` 属性生效， 有效值详见下方说明。|App|
-| position| String| No| The plain text light prompt displays the location. After filling in the valid value, only the `title` attribute takes effect. See the description below for the valid value.| App|
+|position|String|否|纯文本轻提示显示位置，填写有效值后只有 `title` 属性生效，且不支持通过 uni.hideToast 隐藏。有效值详见下方说明。|App|
 |success|Function|否|接口调用成功的回调函数||
 | success| Function| No| Callback function for successful interface calling| |
 |fail|Function|否|接口调用失败的回调函数||
@@ -296,5 +294,3 @@ uni.showActionSheet({
 - 在非H5端，本章的所有弹出控件都是原生控件，层级最高，可覆盖video、map、tabbar等原生控件。
 - On the non-H5 side, all pop-up controls in this chapter are native controls with the highest level, covering native controls such as video, map and tabbar.
 - [uni-app插件市场](https://ext.dcloud.net.cn/)有很多封装好的前端组件，但注意前端组件层级不是最高，无法覆盖原生组件，除非使用cover-view或nvue。
-- Many encapsulated front-end components are available on the [uni-app plug-in market](https://ext.dcloud.net.cn/). Note that the front-end component level is not the highest and cannot override native components unless cover-view or nvue is used.
-

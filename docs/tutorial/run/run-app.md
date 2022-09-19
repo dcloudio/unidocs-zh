@@ -3,7 +3,7 @@
 - Android平台  
 HBuilder支持adb协议，在HBuilder运行的电脑上，可以使用usb线连接Android设备，也可以使用安装在电脑上的Android模拟器（包括google官方模拟器，三方模拟器如“雷电”、“夜神”等）  
 - iOS平台  
-HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接iPhone或iPad；如果是mac电脑，则可以连接xocde自带的iOS模拟器。如果是arm架构cpu，还可以直接启动真机运行基座。   
+HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接iPhone或iPad；如果是mac电脑，则可以连接XCode自带的iOS模拟器。如果是arm架构cpu，还可以直接启动真机运行基座。   
 
 真机运行的目的，是为了实现代码修改的热刷新，避免打包才能看到效果。在HBuilder中编辑代码，在手机上实时看到修改效果，并且可以在HBuilder控制台看到日志。
 

@@ -21,7 +21,15 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.2.3+|x|基础库2.7+|x|x|x|√|√|√|
 
-**CALLBACK 返回参数**
+**参数**
+
+function listener
+
+键盘高度变化事件的监听函数
+
+**参数**
+
+Object res
 
 |参数|类型|说明|
 |:-|:-|:-|
@@ -45,10 +53,20 @@ uni.onKeyboardHeightChange(res => {
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 3.1.0+|x|基础库2.9.2+|x|x|x|x|x|√|
 
+**参数**
+
+function listener
+
+onKeyboardHeightChange 传入的监听函数。不传此参数则移除所有监听函数。
+
+
 **示例代码**
 
 ```js
-uni.offKeyboardHeightChange(callback)
+const listener = function (res) { console.log(res) }
+
+uni.onKeyboardHeightChange(listener)
+uni.offKeyboardHeightChange(listener) // 需传入与监听时同一个的函数对象
 ```
 
 ### uni.getSelectedTextRange(OBJECT) @getselectedtextrange

@@ -27,9 +27,10 @@
 **代码示例**
 
 ```javascript
-uni.onMemoryWarning(function () {
-  console.log('onMemoryWarningReceive')
-})
+const callback = function (res) {
+ console.log(res,'onMemoryWarningReceive');
+}
+uni.onMemoryWarning(callback);
 ```
 
 ### uni.offMemoryWarning(CALLBACK)
@@ -44,10 +45,20 @@ uni.onMemoryWarning(function () {
 |x|x|√|√|√|x|x|√|√|
 
 
-**参数**
-
 |属性	|	类型|说明|
 |--	|--	|--	|
 |	回调函数|	Function|内存不足告警事件的回调函数|
 
+**代码示例**
+
+```javascript
+const callback = function (res) {
+ console.log(res);
+}
+uni.onMemoryWarning(callback);
+// 和 onMemoryWarning 传入同一个函数即可
+uni.offMemoryWarning(callback);
+```
+**Tips**
+- `CALLBACK`为调用`uni.onMemoryWarning`时传入的`CALLBACK`
 

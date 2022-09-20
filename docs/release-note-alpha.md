@@ -1,3 +1,7 @@
+## 3.6.3.20220919-alpha
+* 【uni-app】
+  + 小程序平台 修复 onReady 生命周期触发两次的Bug [详情](https://ask.dcloud.net.cn/question/153422)
+
 ## 3.6.1.20220907-alpha
 * 【uni-app】
   + App-Android平台 修复 uts 插件 部分情况下编译后丢失导入类的Bug [详情](https://ask.dcloud.net.cn/question/152597)

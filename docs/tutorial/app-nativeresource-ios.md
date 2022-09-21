@@ -52,14 +52,14 @@ HBuilderX3.6.1起，支持直接在应用项目中配置 iOS 平台的 Info.plis
 ##  资源文件（Bundle Resources）  
 
 HBuilderX中对项目右键菜单 "新建" -> "目录"  
-![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newfile.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newdir.png)
 
-输入名称 `nativeResouces`（注意大小写敏感），确定并创建目录。
+输入名称 `nativeResources`（注意大小写敏感），确定并创建目录。
 
-继续创建“ios”子目录、创建“resources”二级子目录，结构如下：  
+继续创建“ios”子目录、创建“Resources”二级子目录，结构如下：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/ios/directory.png)
 
-将需要添加的iOS原生资源文件拷贝到resources目录，云端打包时将会合并到安装包的.app中。
+将需要添加的iOS原生资源文件拷贝到Resources目录，云端打包时将会合并到安装包的.app中。
 
 **注意**
 - ios目录下不支持放Object-C/Swift源码文件，需要开发源码建议使用[UTS插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  

@@ -210,7 +210,7 @@ auth.signInWithTicket('YourTicket').then(() => {
 
 **注意：重复生成私钥会使之前生成的私钥失效，并导致用户登录状态失效**
 
-![uniCloud下载私钥](https://img.cdn.aliyun.dcloud.net.cn/uni-app/uniCloud/cloud-token-web.png)
+![uniCloud下载私钥](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/51ceddac-53a1-4be4-8906-1e0284f63e6b.jpg)
 
 ### 第二步：使用云函数创建登录凭据
 

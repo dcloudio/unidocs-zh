@@ -107,8 +107,7 @@ The client uploads the file to the cloud function, and the cloud function upload
 **关于腾讯云是否有权限覆盖/删除云端文件**
 **About whether Tencent Cloud has permission to overwrite/delete cloud files**
 
-腾讯云使用[自定义登录](uniCloud/authentication.md)的方式确定用户身份。以下以默认权限”所有用户可读，仅创建者及管理员可写“为例进行讲解
-Tencent Cloud uses [custom login](uniCloud/authentication.md) to determine user identity. The following takes the default permission "readable by all users, writable only by creators and administrators" as an example to explain
+腾讯云使用[自定义登录](authentication.md)的方式确定用户身份。以下以默认权限”所有用户可读，仅创建者及管理员可写“为例进行讲解
 
 默认情况下用户以匿名身份登录（为了方便暂时称此身份为“匿名用户A”）
 By default users log in as anonymous (for convenience we will temporarily call this identity "Anonymous User A")
@@ -123,8 +122,7 @@ By default users log in as anonymous (for convenience we will temporarily call t
 匿名用户A身份过期之后再次获取的身份并不是”匿名用户A“（暂记为”匿名用户B“），这时匿名用户B是没有权限覆盖匿名用户A上传的文件的。
 After the identity of anonymous user A expires, the identity obtained again is not "anonymous user A" (which is temporarily referred to as "anonymous user B"). At this time, anonymous user B does not have permission to overwrite the files uploaded by anonymous user A.
 
-如果使用了[自定义登录](uniCloud/authentication.md)，那么云存储就可以确定用户身份，这时候用户可以覆盖自己上传的文件，删除同理。
-If [custom login](uniCloud/authentication.md) is used, the cloud storage can determine the user's identity. At this time, the user can overwrite the uploaded file and delete it in the same way.
+如果使用了[自定义登录](authentication.md)，那么云存储就可以确定用户身份，这时候用户可以覆盖自己上传的文件，删除同理。
 
 #### 响应参数
 #### Response parameters

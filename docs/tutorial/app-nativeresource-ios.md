@@ -67,16 +67,14 @@ Edit and add the required content according to the application requirements, as 
 ## Bundle Resources
 
 HBuilderX中对项目右键菜单 "新建" -> "目录"  
-![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newfile.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newdir.png)
 
-输入名称 `nativeResouces`（注意大小写敏感），确定并创建目录。
-Enter the name `nativeResouces` (note that it is case sensitive), identify and create the directory.
+输入名称 `nativeResources`（注意大小写敏感），确定并创建目录。
 
-继续创建“ios”子目录、创建“resources”二级子目录，结构如下：  
+继续创建“ios”子目录、创建“Resources”二级子目录，结构如下：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/ios/directory.png)
 
-将需要添加的iOS原生资源文件拷贝到resources目录，云端打包时将会合并到安装包的.app中。
-Copy the iOS native resource files to be added to the resources directory, and they will be merged into the .app of the installation package when packaged in the cloud.
+将需要添加的iOS原生资源文件拷贝到Resources目录，云端打包时将会合并到安装包的.app中。
 
 **注意**
 **Notice**

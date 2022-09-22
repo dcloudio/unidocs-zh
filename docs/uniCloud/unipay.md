@@ -44,23 +44,44 @@ const unipay = require('@dcloudio/unipay')
 ## 初始化@init
 
 进行初始化操作返回 unipay 实例
-
-### 微信支付
+### 微信支付V3
+> 新增于 ```uni-pay 1.1.0```
 
 **入参说明**
 
-|   参数名	|  类型		|  必填	|                        默认值												|                  说明											|
-| :--------:| :-----:	| :----:| :--------------------------------------------------:| :------------------------------------:		|
-|   appId		| String	|   是	|                          -													|     当前应用在对应支付平台的 appId				|
-|   mchId		| String	|   是	|                          -													|                 商户号										|
-|   subAppId| String	|   否	|                          -													|                 子商户appId								|
-|   subMchId| String	|   否	|                          -													|                 子商户号									|
-|    key		| String	|   是	|                          -													|            支付商户 key （API密钥）				|
-|    pfx		| String&#124;Buffer|                   使用退款功能必填|-									|       微信支付商户 API 证书，主要用于退款	|
-|  timeout	| Number	|   否	|                         5000												|        请求超时时间，单位：毫秒						|
-|  signType	| String	|   否	|                         MD5													|                签名类型										|
-|  sandbox	| Boolean	|   否	|                        false												|            是否启用沙箱环境								|
-| clientType| String	|   否	| 默认自动获取客户端类型，同 `context` 内的 `PLATFORM`| 客户端类型，主要用于返回客户端支付参数		|
+|        参数名	         |  类型		| 必填	 | 默认值												  |        说明											         |
+|:-------------------:| :-----:	|:---:|:----------------:|:----------------------------:|
+|       appId		       | String	| 是	  |  -													  |    当前应用在对应支付平台的 appId				    |
+|       mchId		       | String	| 是	  |  -													  |        商户号										         |
+|       v3Key		       | String	| 是	  |  -													  |     API v3 密钥										      |
+|    appCertPath		    | String	| 是	  |  -													  |     商户 API 证书										      |
+| appPrivateKeyPath		 | String	| 是	  |  -													  |     商户 API 私钥										      |
+|      timeout	       | Number	| 否	  | 5000												 |      请求超时时间，单位：毫秒						      |
+
+```js
+const unipayIns = unipay.initWeixinV3({
+  appId: 'your appId',
+  mchId: 'your mchId',
+  v3Key: 'you parterner key',
+  appCertPath: path.resolve('/path/to/you/cert'),
+  appPrivateKeyPath: path.resolve('/path/to/you/privateKey')
+})
+```
+### 微信支付v2
+
+**入参说明**
+
+|   参数名	    |  类型		|  必填	|  默认值												  |        说明											         |
+|:---------:| :-----:	| :----:|:-----------------:|:----------------------------:|
+|  appId		  | String	|   是	|  -													   |    当前应用在对应支付平台的 appId				    |
+|  mchId		  | String	|   是	|  -													   |        商户号										         |
+| subAppId  | String	|   否	|  -													   |       子商户appId								       |
+| subMchId  | String	|   否	|  -													   |        子商户号									         |
+|   key		   | String	|   是	|  -													   |     支付商户 key （API密钥）				     |
+|   pfx		   | String&#124;Buffer|                   使用退款功能必填|    -									     |    微信支付商户 API 证书，主要用于退款	     |
+| timeout	  | Number	|   否	| 5000												  |      请求超时时间，单位：毫秒						      |
+| signType	 | String	|   否	| MD5													  |        签名类型										        |
+| sandbox	  | Boolean	|   否	| false												 |       是否启用沙箱环境								       |
 
 ```js
 const unipayIns = unipay.initWeixin({
@@ -96,7 +117,6 @@ const unipayIns = unipay.initWeixin({
 |     timeout						| Number	|  否	|                         5000												|        请求超时时间，单位：毫秒				|
 |    signType						| String	|  否	|                         RSA2												|                签名类型								|
 |     sandbox						| Boolean	|  否	|                        false												|            是否启用沙箱环境						|
-|   clientType					| String	|  否	| 默认自动获取客户端类型，同 `context` 内的 `PLATFORM`| 客户端类型，主要用于返回客户端支付参数|
 |   alipayRootCertPath	| String	|  否	| -																										| `1.0.6+`，支付宝根证书文件路径				|
 |   appCertPath					| String	|  否	| -																										| `1.0.6+`，应用公钥证书文件路径				|
 |   alipayPublicCertPath| String	|  否	| -																										| `1.0.6+`，支付宝公钥证书文件路径			|
@@ -154,8 +174,8 @@ const unipayIns = unipay.initAppleIapPayment({
 | outTradeNo		| String|必填																					|   -		|商户订单号,有长度限制（微信支付为32字符以内，支付宝为64字符以内）、只能包含字母、数字、下划线；需保证在商户端不重复|													|
 |  totalFee			| Number|必填																					|   -		|订单金额，单位：分																																																	| 支付宝小程序、微信小程序|
 | notifyUrl			| String|必填																					|   -		|支付结果通知地址，**需要注意支付宝支付时退款也会通知到此地址，务必处理好自己的业务逻辑**														|													|
-| tradeType			| String|非小程序支付、App支付时必填									|   -		| `1.0.6+`交易类型，见下方tradeType的说明																																						|-												|
 | spbillCreateIp| String|必填																					|   -		|客户端IP，云函数内可以通过`context.CLIENTIP`获取																																		|-												|
+|     tradeType	      | String	| 是	  |  -												   | 交易类型；见下方 tradeType 的说明						 |
 | sceneInfo			| Object|微信tradeType为MWEB时必填										|   -		|见下方sceneInfo的说明																																															|-												|
 
 **tradeType的说明**
@@ -254,16 +274,16 @@ uniCloud.callFunction({
 
 **返回值说明**
 
-|       参数名			|  类型	|说明																																				| 支持平台|
-| :----------------:| :----:| :---------------------------------------------:														| :------:|
-|       appId				| String|平台分配的应用 ID																													| 微信支付|
-|       mchId				| String|商户号，（微信支付文档里面叫商户号：mch_id，支付宝支付叫卖家id：seller_id）| 微信支付|
-|     outTradeNo		| String|商户订单号																																	|     -		|
-|   transactionId		| String|平台订单号																																	|      -	|
-|     tradeState		| String| 订单状态，见下方订单状态说明																							|					|
-|      totalFee			| Number|标价金额 ，单位：分																												|     -		|
-| settlementTotalFee| Number|应结订单金额，单位：分																											|     -		|
-|      cashFee			| Number|现金支付金额，单位：分																											|     -		|
+|       参数名			|  类型	|说明																																				|  支持平台   |
+| :----------------:| :----:| :---------------------------------------------:														|:-------:|
+|       appId				| String|平台分配的应用 ID																													|  微信支付   |
+|       mchId				| String|商户号，（微信支付文档里面叫商户号：mch_id，支付宝支付叫卖家id：seller_id）|  微信支付   |
+|     outTradeNo		| String|商户订单号																																	|   -		   |
+|   transactionId		| String|平台订单号																																	|   -	    |
+|     tradeState		| String| 订单状态，见下方订单状态说明																							|  					  |
+|      totalFee			| Number|标价金额 ，单位：分																												|   -		   |
+| settlementTotalFee| Number|应结订单金额，单位：分																											| 支付宝支付		 |
+|      cashFee			| Number|现金支付金额，单位：分																											|   -		   |
 
 
 **订单状态**
@@ -313,11 +333,11 @@ exports.main = async function (event) {
 **返回值说明**
 
 |    参数名     |  类型  |       说明        |  支持平台  |
-| :-----------: | :----: | :---------------: | :--------: |
-|     appId     | String | 平台分配的应用 ID |  微信支付  |
-|     mchId     | String |      商户号       |  微信支付  |
-|  outTradeNo   | String |    商户订单号     | 支付宝支付 |
-| transactionId | String |    平台订单号     | 支付宝支付 |
+| :-----------: | :----: | :---------------: |:------:|
+|     appId     | String | 平台分配的应用 ID | 微信支付V2 |
+|     mchId     | String |      商户号       | 微信支付V2 |
+|  outTradeNo   | String |    商户订单号     | 支付宝支付  |
+| transactionId | String |    平台订单号     | 支付宝支付  |
 
 **使用示例**
 
@@ -373,16 +393,16 @@ exports.main = async function (event) {
 
 **入参说明**
 
-|    参数名		|  类型	|             必填				| 默认值|     说明											| 支持平台	|
-| :-----------:	| :----:| :--------------------------:	| :----:| :----------:										| :------:	|
-|  outTradeNo	| String|   和 transactionId 二选一		|   -	|  商户订单号										|     -		|
-| transactionId	| String|     和 outTradeNo 二选一		|   -	|  平台订单号										|     -		|
-|  outRefundNo	| String| 微信支付必填，支付宝支付选填	|   -	| 商户退款单号										|      -	|
-|   totalFee	| Number|         微信支付必填			|   -	|  订单总金额										| -			|
-|   refundFee	| Number|             必填				|   -	|  退款总金额										| 微信支付	|
-| refundFeeType	| String|             选填				|   -	|   货币种类										|     -		|
-|  refundDesc	| String|             选填				|   -	|   退款原因										|     -		|
-|   notifyUrl	| String|  微信支付选填，支付宝不支持	|   -	| 退款通知 url，支付宝会通知获取支付参数时的通知地址| 微信支付	|
+|    参数名		|  类型	|        必填				         | 默认值|     说明											| 支持平台	  |
+| :-----------:	| :----:|:---------------------:| :----:| :----------:										|:------:|
+|  outTradeNo	| String| 和 transactionId 二选一		 |   -	|  商户订单号										|  -		   |
+| transactionId	| String|  和 outTradeNo 二选一		   |   -	|  平台订单号										|  -		   |
+|  outRefundNo	| String|    微信支付必填，支付宝支付选填	    |   -	| 商户退款单号										|   -	   |
+|   totalFee	| Number|       微信支付必填			       |   -	|  订单总金额										|  -			  |
+|   refundFee	| Number|        必填				         |   -	|  退款总金额										| 微信支付	  |
+| refundFeeType	| String|     微信支付V3必填				      |   -	|   货币种类										|   微信支付V3		   |
+|  refundDesc	| String|        选填				         |   -	|   退款原因										|  -		   |
+|   notifyUrl	| String|    微信支付选填，支付宝不支持	     |   -	| 退款通知 url，支付宝会通知获取支付参数时的通知地址| 微信支付	  |
 
 **返回值说明**
 
@@ -415,13 +435,13 @@ exports.main = async function (event) {
 
 **入参说明**
 
-|    参数名     |  类型  |                     必填                      | 默认值 |                                        说明                                        | 支持平台 |
-| :-----------: | :----: | :-------------------------------------------: | :----: | :--------------------------------------------------------------------------------: | :------: |
-|  outTradeNo   | String | 微信支付四选一，支付宝和 transactionId 二选一 |   -    |                                     商户订单号                                     |     -     |
-| transactionId | String |  微信支付四选一，支付宝和 outTradeNo 二选一   |   -    |                                     平台订单号                                     |     -     |
-|  outRefundNo  | String |          微信支付四选一，支付宝必填           |   -    |                                    商户退款单号                                    |     -     |
-|   refundId    | String |                微信支付四选一                 |   -    |                                    平台退款单号                                    | 微信支付 |
-|    offset     | Number |                 微信支付选填                  |   -    | 偏移量，当部分退款次数超过 10 次时可使用，表示返回的查询结果从这个偏移量开始取记录 |      -    |
+|    参数名     |  类型  |                    必填                     | 默认值 |                                        说明                                        | 支持平台 |
+| :-----------: | :----: |:-----------------------------------------:| :----: | :--------------------------------------------------------------------------------: | :------: |
+|  outTradeNo   | String | 微信支付V3必填，微信支付V2四选一，支付宝和 transactionId 二选一 |   -    |                                     商户订单号                                     |     -     |
+| transactionId | String |       微信支付V2四选一，支付宝和 outTradeNo 二选一       |   -    |                                     平台订单号                                     |     -     |
+|  outRefundNo  | String |              微信支付V2四选一，支付宝必填              |   -    |                                    商户退款单号                                    |     -     |
+|   refundId    | String |                 微信支付V2四选一                 |   -    |                                    平台退款单号                                    | 微信支付 |
+|    offset     | Number |                 微信支付V2选填                  |   -    | 偏移量，当部分退款次数超过 10 次时可使用，表示返回的查询结果从这个偏移量开始取记录 |      -    |
 
 **注意**
 
@@ -429,16 +449,16 @@ exports.main = async function (event) {
 
 **返回值说明**
 
-|     参数名     |              类型               |             说明             |  支持平台  |
-| :------------: | :-----------------------------: | :--------------------------: | :--------: |
-|   outTradeNo   |             String              |          商户订单号          |      -      |
-| transactionId  |             String              |          平台订单号          |      -      |
-|    totalFee    |             Number              |           订单金额           |      -      |
-|    refundId    |             String              |  平台退款单号，仅支付宝返回  |       -     |
-|   refundFee    |             Number              |          退款总金额          |     -       |
-|   refundDesc   |             String              |           退款理由           |      -      |
-|   refundList   |     Array&lt;refundItem&gt;     | 分笔退款信息，仅微信支付返回 |  微信支付  |
-| refundRoyaltys | Array&lt;refundRoyaltysItem&gt; | 退分账明细信息，仅支付宝返回 | 支付宝支付 |
+|     参数名     |              类型               |          说明          | 支持平台  |
+| :------------: | :-----------------------------: |:--------------------:|:-----:|
+|   outTradeNo   |             String              |        商户订单号         |   -   |
+| transactionId  |             String              |        平台订单号         |   -   |
+|    totalFee    |             Number              |         订单金额         |   -   |
+|    refundId    |             String              | 平台退款单号，仅支付宝、微信支付V3返回 |   -   |
+|   refundFee    |             Number              |        退款总金额         |   -   |
+|   refundDesc   |             String              |         退款理由         |   -   |
+|   refundList   |     Array&lt;refundItem&gt;     |   分笔退款信息，仅微信支付V2返回   | 微信支付V2 |
+| refundRoyaltys | Array&lt;refundRoyaltysItem&gt; |    退分账明细信息，仅支付宝返回    | 支付宝支付 |
 
 **refundItem 说明**
 
@@ -503,7 +523,7 @@ exports.main = async function (event) {
 
 |  参数名  |  类型  | 必填 | 默认值 |                                                                                              说明                                                                                              | 支持平台 |
 | :------: | :----: | :--: | :----: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: |
-| billDate | String | 必填 |   -    |                                                                                下载对账单的日期，格式：20140603                                                                                |     -     |
+| billDate | String | 必填 |   -    |                                                                                下载对账单的日期，格式：2014-06-03                                                                                |     -     |
 | billType | String | 选填 |  ALL   | ALL（默认值），返回当日所有订单信息（不含充值退款订单）,SUCCESS，返回当日成功支付的订单（不含充值退款订单）,REFUND，返回当日退款订单（不含充值退款订单）,RECHARGE_REFUND，返回当日充值退款订单 |     -     |
 
 **返回值说明**
@@ -564,7 +584,7 @@ exports.main = async function (event) {
 
 |   参数名    |  类型  | 必填 | 默认值 |                                  说明                                   | 支持平台 |
 | :---------: | :----: | :--: | :----: | :---------------------------------------------------------------------: | :------: |
-|  billDate   | String | 必填 |   -    |                    下载对账单的日期，格式：20140603                     |    -     |
+|  billDate   | String | 必填 |   -    |                    下载对账单的日期，格式：2014-06-03                     |    -     |
 | accountType | String | 选填 | Basic  | 账单的资金来源账户：Basic 基本账户，Operation 运营账户，Fees 手续费账户 |     -     |
 
 **返回值说明**
@@ -640,16 +660,30 @@ exports.main = async function (event) {
   let res = await unipayIns.verifyPaymentNotify(event)
   // 处理完毕其他业务
   // 注意如果处理成功需要严格按照下面的格式进行返回，否则厂商会持续通知
-  // 微信处理成功之后 
-  return {  
-    statusCode: 200,  
-    headers: {  
-        'content-type': 'text/xml;charset=utf-8'  
-    },  
-    body: `<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>`  
+  // 微信支付V3处理成功之后 
+  return {
+    mpserverlessComposedResponse: true,
+    statusCode: 200,
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+        code: 'SUCCESS',
+        message: '成功'
+    })
+  }
+  // 微信支付V2处理成功之后 
+  return {
+    mpserverlessComposedResponse: true, 
+    statusCode: 200,
+    headers: {
+      'content-type': 'text/xml;charset=utf-8'
+    },
+    body: `<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>`
   }
   // 支付宝处理成功后  
-  return {  
+  return {
+    mpserverlessComposedResponse: true,
     statusCode: 200,
     headers: {  
       'content-type': 'text/plain'  
@@ -694,8 +728,8 @@ exports.main = async function (event) {
   let res = await unipayIns.verifyRefundNotify(event)
   // 注意如果处理成功需要严格按照下面的格式进行返回，否则厂商会持续通知
   // 微信处理成功之后 
-  return {  
-    "mpserverlessComposedResponse": true,
+  return {
+    mpserverlessComposedResponse: true,
     statusCode: 200,  
     headers: {  
         'content-type': 'text/xml;charset=utf-8'  
@@ -703,12 +737,12 @@ exports.main = async function (event) {
     body: `<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>`  
   }
   // 支付宝处理成功后  
-  return {  
-    "mpserverlessComposedResponse": true,
+  return {
+    mpserverlessComposedResponse: true,
     statusCode: 200,
-    headers: {  
+    headers: {
       'content-type': 'text/plain'  
-    },  
+    },
     body: "success"
   }
 }

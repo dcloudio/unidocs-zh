@@ -97,12 +97,12 @@
 
 |属性|说明|类型|平台差异说明|
 |:-|:-|:-|:-|
-|content|文本|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
+|content|文本|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序、支付宝小程序|
 |color|文本颜色|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
 |fontSize|文字大小|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
 |borderRadius|callout边框圆角|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
-|borderWidth|边框宽度|Number|京东小程序|
-|borderColor|边框颜色|String|京东小程序|
+|borderWidth|边框宽度|Number|微信小程序、京东小程序、百度小程序|
+|borderColor|边框颜色|String|微信小程序、京东小程序、百度小程序|
 |bgColor|背景色|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
 |padding|文本边缘留白|Number|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
 |display|'BYCLICK':点击显示; 'ALWAYS':常显|String|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|

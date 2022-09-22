@@ -1,4 +1,4 @@
-## 3.6.3.20220917
+#### 3.6.3.20220917
 * 【uni-app】
   + 小程序平台 修复 onReady 生命周期触发两次的Bug [详情](https://ask.dcloud.net.cn/question/153422)
   + App平台 修复 UniPush 2.0 在vue2项目中 启用离线推送后，获取不到 pushClientId 的Bug [详情](https://ask.dcloud.net.cn/question/153322)
@@ -8,7 +8,7 @@
   + uni-id-pages 新增 管理员注册页面，并提供配置项`isAdmin`区分是否为管理端 [详情](https://ext.dcloud.net.cn/plugin?id=8577)
   + uni-id-pages 新增 登录成功后三种自动跳转行为；优先级依次为：路由携带(`uniIdRedirectUrl`参数) > 返回上一路由 > 跳转首页 [详情](https://ext.dcloud.net.cn/plugin?id=8577)
 
-## 3.6.2.20220914
+#### 3.6.2.20220914
 * 【uni-app】
   + 【重要】新增 uts Android版插件 [详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
   + 修复 项目路径包含括号时编译异常的Bug [详情](https://ask.dcloud.net.cn/question/150173)
@@ -105,7 +105,7 @@
   + Android平台 优化 默认菜单字体大小为20px
   + iOS平台 修复 uni.setStorage 存储数据可能出错的Bug
 
-## 3.5.3.20220729
+#### 3.5.3.20220729
 * 【uni-app】
   + 编译器 新增 vue2 项目 支持使用 `@/pages.json` 引用条件编译后的 `pages.json` 文件
   + 编译器 修复 vue3 项目 编译器清空输出目录可能报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3650)

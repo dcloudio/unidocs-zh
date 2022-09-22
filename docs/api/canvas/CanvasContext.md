@@ -172,7 +172,7 @@ CanvasContext.arcTo(x1, y1, x2, y2, radius)
 开始创建一个路径，需要调用fill或者stroke才会使用路径进行填充或描边。
 
 **Tip:** 在最开始的时候相当于调用了一次 ```beginPath()```。
-**Tip:** 同一个路径内的多次```setFillStyle()```、``setStrokeStyle()```、```setLineWidth()```等设置，以最后一次设置为准。
+**Tip:** 同一个路径内的多次`setFillStyle()`、`setStrokeStyle()`、`setLineWidth()`等设置，以最后一次设置为准。
 
 
 **示例代码**
@@ -267,7 +267,7 @@ ctx.draw()
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/03cf3750-4f28-11eb-b997-9918a5dda011.png)
 
-针对 ```moveTo(20, 20)`` ```bezierCurveTo(20, 100, 200, 100, 200, 20)``` 的三个关键坐标如下：
+针对 `moveTo(20, 20)` ```bezierCurveTo(20, 100, 200, 100, 200, 20)``` 的三个关键坐标如下：
 
 * 红色：起始点(20, 20)
 * 蓝色：两个控制点(20, 100) (200, 100)
@@ -764,7 +764,7 @@ ctx.draw()
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/2a0a0d00-4f28-11eb-bd01-97bc1429a9ff.png)
 
-针对 ```moveTo(20, 20)`` ```quadraticCurveTo(20, 100, 200, 20)``` 的三个关键坐标如下：
+针对 `moveTo(20, 20)` ```quadraticCurveTo(20, 100, 200, 20)``` 的三个关键坐标如下：
 
 * 红色：起始点(20, 20)
 * 蓝色：控制点(20, 100)
@@ -889,7 +889,7 @@ ctx.draw()
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/2d528140-4f28-11eb-8ff1-d5dcf8779628.png)
 
-### CanvasContext.setFillStyle
+### CanvasContext.setFillStyle@canvascontextsetfillstyle
 设置填充色，如果没有设置 fillStyle，默认颜色为 black。
 
 **语法**
@@ -970,7 +970,7 @@ ctx.draw()
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/23c43740-4f28-11eb-bdc1-8bd33eb6adaa.png)
 
-### CanvasContext.setLineCap
+### CanvasContext.setLineCap@canvascontextsetlinecap
 设置线条的端点样式。
 
 **参数**
@@ -1041,7 +1041,7 @@ ctx.draw()
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/2e1d4b50-4f28-11eb-8ff1-d5dcf8779628.png)
 
-### CanvasContext.setLineJoin
+### CanvasContext.setLineJoin@canvascontextsetlinejoin
 设置线条的交点样式。
 
 **参数**
@@ -1089,7 +1089,7 @@ ctx.draw()
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/264f9d10-4f28-11eb-bd01-97bc1429a9ff.png)
 
-### CanvasContext.setLineWidth
+### CanvasContext.setLineWidth@canvascontextsetlinewidth
 设置线条的宽度。
 
 **参数**
@@ -1130,7 +1130,7 @@ ctx.draw()
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/27d356e0-4f28-11eb-bd01-97bc1429a9ff.png)
 
-### CanvasContext.setMiterLimit
+### CanvasContext.setMiterLimit@canvascontextsetmiterlimit
 设置最大斜接长度，斜接长度指的是在两条线交汇处内角和外角之间的距离。 当 ``setLineJoin()`` 为 miter 时才有效。超过最大倾斜长度的，连接处将以 lineJoin 为 bevel 来显示。
 
 **参数**
@@ -1208,7 +1208,7 @@ ctx.draw()
 
 ![uniapp](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/308068a0-4f28-11eb-b997-9918a5dda011.png)
 
-### CanvasContext.setStrokeStyle
+### CanvasContext.setStrokeStyle@canvascontextsetstrokestyle
 设置边框颜色。如果没有设置 fillStyle，默认颜色为 black。
 
 **参数**

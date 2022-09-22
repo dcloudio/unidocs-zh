@@ -124,7 +124,8 @@ package.json在每个`uni_modules`插件中都必须存在，包含了插件的�
         "HBuilderX": "^3.1.0"
     },
     "dcloudext": { // DCloud插件市场配置
-      "category": ["前端组件", "通用组件"], // 必填， 插件市场分类
+      "category": ["前端组件", "通用组件"], // 可选（HBuilderX低于3.6.0时必填）， 插件市场分类
+      "type": "component-vue", // 必填（HBuilderX 3.6.0 以上支持），插件市场分类标识，分类标识可以参考下边列出的表格
       "sale": { // 销售 （目前仅限uniCloud类插件）
           "regular": { // 普通授权版价格，单位为元，如果为免费插件，设置普通授权版价格为 0 即可。
               "price": "0.00"
@@ -191,6 +192,23 @@ package.json在每个`uni_modules`插件中都必须存在，包含了插件的�
 ```
 **Tips**
 - 上述配置基于npm [package.json](https://docs.npmjs.com/cli/v6/configuring-npm/package-json)规范扩展，故标准的package.json属性也同样支持，比如可以通过files来控制要上传的插件包内容
+- 插件市场分类标识（对应：package.json->dcloudext->type）
+
+| 一级分类			| 二级分类				| type						|
+| ---				| ---					| ---						|
+| 前端组件			| 通用组件				| component-vue				|
+| 前端组件			| 小程序组件			| component-mp				|
+| JS SDK			| 通用 SDK				| sdk-js					|
+| uts插件			| uts插件				| uts						|
+| uni-app前端模板	| 前端页面模板			| uniapp-template-page		|
+| uni-app前端模板	| uni-app前端项目模板	| uniapp-template-project	|
+| uniCloud			| 云函数模板			| unicloud-template-function|
+| uniCloud			| 云端一体页面模板		| unicloud-template-page	|
+| uniCloud			| 云端一体项目模板		| unicloud-template-project	|
+| uniCloud			| Admin插件				| unicloud-admin			|
+| uniCloud			| DB Schema及验证函数	| unicloud-database			|
+
+
 
 #### uni_modules.config.json
 `uni_modules.config.json`在项目根目录，可以配置插件更新后的触发脚本（通常用于执行自定义的自动化任务），插件uniCloud支持的服务空间。以下是`uni_modules.config.json`的详细配置说明

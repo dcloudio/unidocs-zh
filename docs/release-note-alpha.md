@@ -1,8 +1,8 @@
-## 3.6.3.20220919-alpha
+#### 3.6.3.20220919-alpha
 * 【uni-app】
   + 小程序平台 修复 onReady 生命周期触发两次的Bug [详情](https://ask.dcloud.net.cn/question/153422)
 
-## 3.6.1.20220907-alpha
+#### 3.6.1.20220907-alpha
 * 【uni-app】
   + App-Android平台 修复 uts 插件 部分情况下编译后丢失导入类的Bug [详情](https://ask.dcloud.net.cn/question/152597)
   + App平台 修复 切换tabbar页面时使用uni.createVideoContext的pause无法暂停播放的Bug[详情](https://ask.dcloud.net.cn/question/151933)
@@ -25,7 +25,7 @@
 * 【uni小程序SDK】
   + iOS平台 修复 uni.setStorage 存储数据可能出错的Bug
 
-## 3.6.0.20220901-alpha
+#### 3.6.0.20220901-alpha
 * 【uni-app】
   + 【重要】新增 uts Android版插件 [详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
   + App-iOS平台 修复 uni.openLocation 底部安全区适配问题 [详情](https://ask.dcloud.net.cn/question/150074)
@@ -47,7 +47,7 @@
   + iOS平台 修复 3.5.0版本引出的 快手开屏广告点击打开落地页返回后无法进入应用首页的Bug [详情](https://ask.dcloud.net.cn/question/152441)
   + iOS平台 修复 未使用Push模块上传 AppStore 报`ITMS-90078: Missing Push Notification Entitlement`警告的Bug
 
-## 3.5.5.20220825-alpha
+#### 3.5.5.20220825-alpha
 * 【uni-app】
   + 修复 项目路径包含括号时编译异常的Bug [详情](https://ask.dcloud.net.cn/question/150173)
   + App平台 修复 vue 页面 cover-view 组件 flex 布局无效的Bug [详情](https://ask.dcloud.net.cn/question/151697)
@@ -101,7 +101,7 @@
 * 【uni小程序SDK】
   + Android平台 优化 默认菜单字体大小为20px
 
-## 3.5.4.20220805-alpha
+#### 3.5.4.20220805-alpha
 * 【uni-app】
   + App平台 优化 vue2 项目 web-view 组件通过 webviewStyles 设置更多样式 [详情](https://ask.dcloud.net.cn/question/149212)
   + App平台 优化 vue 页面 web-view 组件内页面默认支持绘制到安全区外 [详情](https://ask.dcloud.net.cn/question/149472)
@@ -124,7 +124,7 @@
   + iOS平台 修复 3.5.3版本引出的 开通 uni-AD 开屏广告后台切前台可能导致页面回退不正常的Bug [详情](https://ask.dcloud.net.cn/question/150053)
   + iOS平台 修复 图片选择界面设置 crop 属性选择 iCloud 图片黑屏的Bug [详情](https://ask.dcloud.net.cn/question/149219)
 
-## 3.5.3.20220727-alpha
+#### 3.5.3.20220727-alpha
 * 【uni-app】
   + App平台 新增 uni.openAppAuthorizeSetting 跳转系统授权管理页 [详情](https://uniapp.dcloud.io/api/system/openappauthorizesetting.html)
   + App-iOS平台 修复 https 请求配置自签名 p12 证书包含中间证书时请求报错的Bug [详情](https://ask.dcloud.net.cn/question/149526)
@@ -143,7 +143,7 @@
 * 【uni小程序SDK】
   + iOS平台 修复 未开启后台运行，多次切换小程序和原生界面可能导致小程序返回按钮无效的Bug
 
-## 3.5.2.20220719-alpha
+#### 3.5.2.20220719-alpha
 * 【uni-app】
   + App平台 新增 uni.getSystemSetting 获取手机系统的定位、蓝牙、wifi开关等设置 [详情](https://uniapp.dcloud.io/api/system/getsystemsetting)
   + App平台 新增 uni.getAppAuthorizeSetting 获取应用权限状态，是否被授予定位、相册等权限 [详情](https://uniapp.dcloud.io/api/system/getappauthorizesetting)
@@ -183,7 +183,7 @@
   + iOS平台 修复 偶现内存泄漏可能引起应用崩溃的Bug
   + iOS平台 修复 直达二级页面后再打开此页面，关闭时会直接返回首页的Bug
 
-## 3.5.1.20220707-alpha
+#### 3.5.1.20220707-alpha
 * 【uni-app】
   + 修复 vue3 项目 编译器清空输出目录可能报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3650)
   + App、H5平台 优化 movable-view 组件触摸过程中支持设置 disabled 属性 [详情](https://github.com/dcloudio/uni-app/issues/2384)
@@ -254,7 +254,7 @@
   + Android平台 修复 getAppRuningForAppid 在部分场景可能报空指针错误的Bug
   + iOS平台 修复 小程序未开启后台运行，前台运行时调用 open 方法直达页面无效的Bug
 
-## 3.5.0.20220623-alpha
+#### 3.5.0.20220623-alpha
 * 【uni-app】
   + 新增 uni-app vue2项目 支持使用`@/pages.json`引用条件编译后的`pages.json`文件
   + 修复 3.4.17 版本引发的 vue3 项目 运行在小程序平台 `<script setup>`中使用 const 定义 reactive 对象访问出错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3606)
@@ -293,7 +293,7 @@
 * 【Uni小程序SDK】
   + Android平台 修复 启动小程序直达页面参数与文档规范不一致的Bug
 
-## 3.4.17.20220614-alpha
+#### 3.4.17.20220614-alpha
 * 【uni-app】
   + 修复 vue3 项目 onError 生命周期不生效的Bug
   + App、Web平台 修复 vue3 项目 uni.setTabBarItem 设置 pagePath 不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3592)
@@ -317,7 +317,7 @@
   + Android平台 修复 uni-AD 开屏广告在部分小米手机可能会卡在启动界面的Bug
   + iOS平台 更新 uni-AD 快手广告SDK为 3.3.25 版，快手内容联盟SDK为 3.3.29 版，解决调用系统相册可能引起崩溃的问题
 
-## 3.4.13.20220601-alpha
+#### 3.4.13.20220601-alpha
 * 【uni-app】
   + App、H5平台 新增 uni.getDeviceInfo [详情](https://uniapp.dcloud.io/api/system/getDeviceInfo.html)
   + App、H5平台 新增 uni.getAppBaseInfo [详情](https://uniapp.dcloud.io/api/system/getAppBaseInfo.html)
@@ -352,11 +352,11 @@
   + Android平台 修复 小程序应用资源更新可能引起页面卡顿的Bug
   + iOS平台 修复 存在自定义 UIWindow 时 toast 可能无法显示的Bug
 
-## 3.4.12.20220523-alpha
+#### 3.4.12.20220523-alpha
 * 【uniCloud】
   + 修复 HBuilderX 3.4.10 引起的关联服务空间运行云函数错误的Bug [详情](https://ask.dcloud.net.cn/question/145551)
 
-## 3.4.11.20220520-alpha
+#### 3.4.11.20220520-alpha
 * 【uni-app】
   + App平台 修复 nvue 页面 switch 组件切换状态无限闪动的Bug [详情](https://ask.dcloud.net.cn/question/145272)
   + App平台 修复 纯 nvue 编译模式 uni_modules 内静态资源未拷贝的Bug
@@ -375,7 +375,7 @@
 * 【App插件(含5+App和uni-app的App端)】
   + 更新 uni-AD 今日头条穿山甲SDK Android为 4.5.1.1 版；腾讯优量汇SDK iOS为 4.13.65 版；快手广告SDK Android为 3.3.24 版，iOS为 3.3.24 版；百度百青藤广告SDK Android为 9.212 版，iOS为 4.87 版；Sigmob广告联盟SDK Android为 3.5.9 版
 
-## 3.4.10.20220517-alpha
+#### 3.4.10.20220517-alpha
 * 【uni-app】
   + 【重要】新增 uni统计2.0版本发布，开源、私有部署、易定制 [详情](https://uniapp.dcloud.net.cn/uni-stat-v2.html)
   + 【重要】uniAD 支持微信小程序平台，降低开通流量主门槛 [详情](https://uniapp.dcloud.net.cn/component/ad-weixin.html)
@@ -417,7 +417,7 @@
   + Android平台 修复 多进程模式下微信分享过程中手动返回页面显示异常的Bug
   + Android平台 修复 3.4.7版本引出的 宿主事件回调格式异常的Bug
 
-## 3.4.9.20220508-alpha
+#### 3.4.9.20220508-alpha
 * 【uni-app】
   + uni统计 修复 3.4.8 版本引发的上报数据不正常的Bug [详情](https://ask.dcloud.net.cn/question/144408)
   + App-iOS平台 修复 nvue textarea 组件默认换行不生效的Bug [详情](https://ask.dcloud.net.cn/question/143784)
@@ -436,7 +436,7 @@
   + uni-id 调整 用户注册时记录用户注册环境到 register_env 字段 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html#user-table)
   + uni-id 调整 用户注册时将注册 ip 移至 register_env 内
 
-## 3.4.8.20220428-alpha
+#### 3.4.8.20220428-alpha
 * 【uni-app】
   + 新增 vue3 项目内置支持 pinia [详情](https://uniapp.dcloud.net.cn/tutorial/vue3-pinia.html)
   + 修复 3.4.6 版本引发的 vue3 项目使用 pinia 报错的Bug [详情](https://ask.dcloud.net.cn/question/143578)
@@ -477,7 +477,7 @@
 * 【Uni小程序SDK】
   + iOS平台 修复 调用 closeWithCompletion 方法关闭小程序后紧接着在打开小程序可能引起崩溃的Bug
 
-## 3.4.6.20220416-alpha
+#### 3.4.6.20220416-alpha
 * 【uni-app】
   + 优化 vue3 项目 支持导出 onSaveExitState 生命周期 [详情](https://github.com/dcloudio/uni-app/issues/3427)
   + 修复 vue3 项目 错误信息行号可能不正确的Bug [详情](https://ask.dcloud.net.cn/question/143075)
@@ -510,7 +510,7 @@
 * 【Uni小程序SDK】
   + Android平台 新增 支持自定义实现获取匿名设备标识符OAID
 
-## 3.4.5.20220408-alpha
+#### 3.4.5.20220408-alpha
 * 【uni-app】
   + 优化 vue3 项目 支持 vitest 测试框架 [详情](https://github.com/dcloudio/uni-app/issues/3398)
   + 优化 vue3 项目 全平台支持使用 props 接收页面参数 [详情](https://uniapp.dcloud.net.cn/tutorial/migration-to-vue3.html#url-search-params)
@@ -536,7 +536,7 @@
   + iOS平台 修复 安心打包使用 swift 开发的uni原生插件时上传 AppStore 报`ITMS-90426: Invalid Swift Support`错误的Bug [详情](https://ask.dcloud.net.cn/question/142611)
   + iOS平台 修复 在 iOS15.4 及以上设备系统时间设置为12小时制 pickDate 返回值异常的Bug [详情](https://ask.dcloud.net.cn/question/141906)
 
-## 3.4.4.20220403-alpha
+#### 3.4.4.20220403-alpha
 * 【uni-app】
   + App平台、H5平台 新增 input 组件配置 ignoreCompositionEvent 属性 [详情](https://uniapp.dcloud.io/component/input?id=input)
   + App平台 新增 tabbar 支持配置 iconfont [详情](https://uniapp.dcloud.net.cn/api/ui/tabbar?id=settabbaritem)
@@ -562,7 +562,7 @@
   + 【重要】Android平台 修复 uni-AD 穿山甲广告联盟在部分设备可能提示`应用的uni-AD业务状态异常`的Bug
   + iOS平台 修复 视频播放控件 video 播放视频音量与系统音量不一致的Bug
 
-## 3.4.3.20220325-alpha
+#### 3.4.3.20220325-alpha
 * 【uni-app】
   + 【重要】App平台 nvue 页面支持 vue3（需要项目的 Vue 版本切换为3）[详情](https://uniapp.dcloud.net.cn/tutorial/migration-to-vue3.html)
   + App平台、H5平台 新增 map 组件支持 polygons [详情](https://uniapp.dcloud.io/component/map)
@@ -595,7 +595,7 @@
   + Android平台 修复 转场动画在 Android12 设备可能失效的Bug
   + Android平台 修复 调用 startActivityForUniMPTask 在 Android8 以下设备可能会引起应用崩溃的Bug
 
-## 3.4.2.20220310-alpha
+#### 3.4.2.20220310-alpha
 * 【uni-app】
   + App平台 新增 vue 页面支持 live-pusher 组件 [详情](https://uniapp.dcloud.net.cn/component/live-pusher)
   + App平台 修复 uni.request、uni.onSocketMessage 等接口返回的 ArrayBuffer 类型不可用 instanceof 做类型判断的Bug
@@ -612,7 +612,7 @@
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 新增 Google支付支持 isReadyToPay 方法 [文档](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.PaymentChannel.isReadyToPay)
 
-## 3.4.1.20220308-alpha
+#### 3.4.1.20220308-alpha
 * 【uni-app】
   + App平台 修复 uni.getBackgroundAudioManager 的 onPrev onNext 事件无效Bug [详情](https://ask.dcloud.net.cn/question/107325)
   + App平台 修复 3.4.0 引发的 vue2 项目 canvas 组件 fillText 失效的Bug [详情](https://ask.dcloud.net.cn/question/140786)
@@ -627,7 +627,7 @@
 * 【UniMPSDK】
   + iOS平台 修复 小程序SDK中设置 user-agent 影响宿主原生页面中 Webview 的Bug
 
-## 3.4.0.20220304-alpha
+#### 3.4.0.20220304-alpha
 * 【uni-app】
   + 新增 vue2 项目支持发布到 京东小程序
   + 修复 vue3 项目兼容 vite@2.8.x [详情](https://ask.dcloud.net.cn/question/139311)
@@ -709,7 +709,7 @@
   + Android平台 修复 小程序切换到后台，直达页面启动时出现闪屏的Bug
   + iOS平台 修复 关闭小程序后快速启动小程序并直达页面，重复操作偶现崩溃的Bug
 
-## 3.3.12.20220222-alpha
+#### 3.3.12.20220222-alpha
 * 【uni-app】
   + App平台、H5平台 修复 vue3 项目两个开启了下拉刷新的页面跳转后返回，下拉刷新不触发 onPullDownRefresh 生命周期的Bug [详情](https://github.com/dcloudio/uni-app/issues/3187)
   + App平台 修复 vue3 项目 nvue 页面使用 map 组件时部分方法不生效的Bug [详情](https://ask.dcloud.net.cn/question/138515)
@@ -732,7 +732,7 @@
 * 【uni小程序SDK】
   + iOS平台 修复 动态切换横竖屏导致页面布局异常的Bug
 
-## 3.3.8.20220114-alpha
+#### 3.3.8.20220114-alpha
 * 【uniCloud】
   + 修复 3.3.7-alpha引出的JQL数据库管理无法正常使用的Bug [详情](https://ask.dcloud.net.cn/question/138139)
 * 【uni-app】
@@ -744,7 +744,7 @@
   + 微信小程序平台 修复 vue3 项目无法自动开启开发工具窗口的Bug
   + 支付宝小程序平台 修复 vue3 项目 mixin 中包含 props 运行报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3191)
 
-## 3.3.7.20220112-alpha
+#### 3.3.7.20220112-alpha
 * 【uni-app】
   + App平台、H5平台 新增 textarea、input 组件支持 confirm-hold 属性 [详情](https://uniapp.dcloud.io/component/input)
   + App平台、H5平台 优化 image 组件 draggable 属性默认值改为 false
@@ -792,7 +792,7 @@
   + iOS平台 修复 同时打开多个小程序 getCurrentPageUrl 获取当前显示的小程序页面路径不正确的Bug
 
 
-## 已归档的历史版本
+#### 已归档的历史版本
 
 [更多已归档版本的更新日志](release-note-alpha-archive.md)
 

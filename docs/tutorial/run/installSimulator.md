@@ -2,8 +2,8 @@
 
 > Android模拟器在MacOSX、Windows上都可以安装；iOS模拟器只能在MacOSX上安装。
 
-- [安装iOS模拟器](/Tutorial/App/installSimulator?id=ios模拟器)
-- [安装Android模拟器](/Tutorial/App/installSimulator?id=android模拟器)
+- [安装iOS模拟器](#ios)
+- [安装Android模拟器](#android)
 
 ## ios模拟器@ios
 

@@ -606,8 +606,7 @@ The rewarded video advertisement can support the callback from the advertisement
 Relatively speaking, the server callback will be more secure, and you can rely on the anti-cheating mechanism of the advertising platform to prevent users from simulating the completion of watching the advertisement.
 
 
-![激励视频回调](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d0e94790-68e4-4007-8e34-bdb8cb6b4d34.jpg)
-![Incentive video callback](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d0e94790-68e4-4007-8e34-bdb8cb6b4d34.jpg)
+![激励视频回调](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ae610d8f-95dc-4538-9458-46c595549db3.png)
 
 
 如何使用

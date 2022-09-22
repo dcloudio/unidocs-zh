@@ -42,7 +42,7 @@
 **特别注意：**
 
 - uni-app普通项目，需要通过插件`hbuilderx-for-uniapp-test`来安装测试环境。
-- uniapp-cli项目，只需在项目下安装相关测试依赖即可。[详情](#uniapp-cli项目)
+- uniapp-cli项目，只需在项目下安装相关测试依赖即可。[详情](#cli)
 
 ### uni-app普通项目@uni-app
 
@@ -50,7 +50,7 @@ uni-app普通项目，`初始化测试环境`或`运行测试`时，如果未安
 
 如下图所示，项目管理器，选中项目，右键菜单【初始化测试环境】
 
-注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](/docs/file/jest_config)，则会自动创建测试配置文件。
+注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ca0f9ce4-1d45-4103-9800-36a1608062d4.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 
@@ -92,7 +92,7 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 
 ### 选择设备@select-devices
 
-> 如果无法获取到设备信息，请[参考](https://ask.dcloud.net.cn/article/97)
+> 如果无法获取到设备信息，请[参考](tutorial/run/run-app-faq.md)
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/48721bc9-247c-461c-b6f8-8fca1838b734.png" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
 
@@ -105,7 +105,7 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 
 **如上图**
 
-- 支持自定义**`测试报告`**路径。
+- 支持自定义**测试报告**路径。
 - 自动修改jest.config.js文件中的testMatch，默认为`true`。去掉勾选后，将不再自动修改testMatch。
 - 插件0.0.4+版本，新增配置项 支持自定义设置使用何种node版本进行uni-app编译。即您可以选择使用HBuilderX`内置的Node`、还是使用`操作系统`安装的Node进行uni-app编译。
 
@@ -169,9 +169,9 @@ describe('test title', () => {
 });
 ```
 
-扩展：如上测试代码中，使用了`beforeAll`函数，它用于在所有测试之前执行。[了解jest更多钩子函数](/docs/jest/SetupTeardown)
+扩展：如上测试代码中，使用了`beforeAll`函数，它用于在所有测试之前执行。[了解jest更多钩子函数](#SetupTeardown)
 
-## Setup and Teardown
+## Setup and Teardown@SetupTeardown
 
 > 通常在编写测试时，您需要在测试运行之前进行一些设置工作，并且在测试运行之后需要进行一些完成工作。可以使用Jest的钩子函数来解决这个问题.
 

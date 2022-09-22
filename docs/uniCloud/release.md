@@ -1,5 +1,6 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
-Note: This changelog is only for uniCloud, including the uniCloud web console and the uniCloud cloud operating environment. These updates do not follow HBuilderX release updates.
+#### 2022-09-22
+  + 新增 uni-pay 支持微信支付V3接口 [详情](https://uniapp.dcloud.io/uniCloud/unipay?id=微信支付v3)
 
 #### 2022-09-01
   + 调整 本地调试插件 云对象运行参数配置文件改为 ${objectName}.param.js [详情](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#run-obj-param)

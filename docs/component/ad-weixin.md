@@ -51,8 +51,7 @@ Compared with WeChat's own traffic main advertisement, uni-ad developers can app
 uni-ad内置了安全防护策略，减少广告被刷风险
 uni-ad has built-in security protection strategies to reduce the risk of ads being brushed
 
-3.6.2+ 支持激励视频服务器安全回调，[详情](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)
-3.6.2+ supports rewarded video server security callback, [details](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)
+3.6.4+ 支持激励视频服务器安全回调，[详情](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)
 
 服务器回调用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)服务器会访问配置的云函数，通知用户完成观看激励视频。
 The server callback is used by the business system to determine whether to provide rewards to users who watch advertisements. After the server callback is configured, when the user successfully finishes watching the ad, the [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/) server will access the configured cloud function and notify the user to finish watching the rewarded video.

@@ -67,37 +67,45 @@ const unipay = require('@dcloudio/unipay')
 ## Initialize @init
 
 进行初始化操作返回 unipay 实例
-Perform initialization operation to return unipay instance
+### 微信支付V3
+> 新增于 ```uni-pay 1.1.0```
 
-### 微信支付
-### WeChat Pay
+**入参说明**
+
+|        参数名	         |  类型		| 必填	 | 默认值												  |        说明											         |
+|:-------------------:| :-----:	|:---:|:----------------:|:----------------------------:|
+|       appId		       | String	| 是	  |  -													  |    当前应用在对应支付平台的 appId				    |
+|       mchId		       | String	| 是	  |  -													  |        商户号										         |
+|       v3Key		       | String	| 是	  |  -													  |     API v3 密钥										      |
+|    appCertPath		    | String	| 是	  |  -													  |     商户 API 证书										      |
+| appPrivateKeyPath		 | String	| 是	  |  -													  |     商户 API 私钥										      |
+|      timeout	       | Number	| 否	  | 5000												 |      请求超时时间，单位：毫秒						      |
+
+```js
+const unipayIns = unipay.initWeixinV3({
+  appId: 'your appId',
+  mchId: 'your mchId',
+  v3Key: 'you parterner key',
+  appCertPath: path.resolve('/path/to/you/cert'),
+  appPrivateKeyPath: path.resolve('/path/to/you/privateKey')
+})
+```
+### 微信支付v2
 
 **入参说明**
 **Introduction to parameters**
 
-|   参数名	|  类型		|  必填	|                        默认值												|                  说明											|
-| Parameter Name | Type | Required | Default Value | Description |
-| :--------:| :-----:	| :----:| :--------------------------------------------------:| :------------------------------------:		|
-|   appId		| String	|   是	|                          -													|     当前应用在对应支付平台的 appId				|
-| appId | String | Yes | - | The appId of the current application on the corresponding payment platform |
-|   mchId		| String	|   是	|                          -													|                 商户号										|
-| mchId | String | Yes | - | Merchant ID |
-|   subAppId| String	|   否	|                          -													|                 子商户appId								|
-| subAppId| String | No | - | Sub-merchant appId |
-|   subMchId| String	|   否	|                          -													|                 子商户号									|
-| subMchId| String | No | - | Sub-merchant ID |
-|    key		| String	|   是	|                          -													|            支付商户 key （API密钥）				|
-| key | String | Yes | - | Payment merchant key (API key) |
-|    pfx		| String&#124;Buffer|                   使用退款功能必填|-									|       微信支付商户 API 证书，主要用于退款	|
-| pfx | String&#124;Buffer| Required to use the refund function|- | WeChat payment merchant API certificate, mainly used for refund |
-|  timeout	| Number	|   否	|                         5000												|        请求超时时间，单位：毫秒						|
-| timeout | Number | No | 5000 | Request timeout, unit: milliseconds |
-|  signType	| String	|   否	|                         MD5													|                签名类型										|
-| signType | String | No | MD5 | Signature Type |
-|  sandbox	| Boolean	|   否	|                        false												|            是否启用沙箱环境								|
-| sandbox | Boolean | no | false | whether to enable sandbox environment |
-| clientType| String	|   否	| 默认自动获取客户端类型，同 `context` 内的 `PLATFORM`| 客户端类型，主要用于返回客户端支付参数		|
-| clientType| String | No | The client type is automatically obtained by default, same as the `PLATFORM`| client type in `context`, mainly used to return client payment parameters |
+|   参数名	    |  类型		|  必填	|  默认值												  |        说明											         |
+|:---------:| :-----:	| :----:|:-----------------:|:----------------------------:|
+|  appId		  | String	|   是	|  -													   |    当前应用在对应支付平台的 appId				    |
+|  mchId		  | String	|   是	|  -													   |        商户号										         |
+| subAppId  | String	|   否	|  -													   |       子商户appId								       |
+| subMchId  | String	|   否	|  -													   |        子商户号									         |
+|   key		   | String	|   是	|  -													   |     支付商户 key （API密钥）				     |
+|   pfx		   | String&#124;Buffer|                   使用退款功能必填|    -									     |    微信支付商户 API 证书，主要用于退款	     |
+| timeout	  | Number	|   否	| 5000												  |      请求超时时间，单位：毫秒						      |
+| signType	 | String	|   否	| MD5													  |        签名类型										        |
+| sandbox	  | Boolean	|   否	| false												 |       是否启用沙箱环境								       |
 
 ```js
 const unipayIns = unipay.initWeixin({
@@ -144,9 +152,6 @@ const unipayIns = unipay.initWeixin({
 |    signType						| String	|  否	|                         RSA2												|                签名类型								|
 | signType | String | No | RSA2 | Signature Type |
 |     sandbox						| Boolean	|  否	|                        false												|            是否启用沙箱环境						|
-| sandbox | Boolean | no | false | whether to enable sandbox environment |
-|   clientType					| String	|  否	| 默认自动获取客户端类型，同 `context` 内的 `PLATFORM`| 客户端类型，主要用于返回客户端支付参数|
-| clientType | String | No | The client type is automatically obtained by default, same as the `PLATFORM`| client type in `context`, mainly used to return client payment parameters|
 |   alipayRootCertPath	| String	|  否	| -																										| `1.0.6+`，支付宝根证书文件路径				|
 | alipayRootCertPath | String | No | - | `1.0.6+`, Alipay root certificate file path |
 |   appCertPath					| String	|  否	| -																										| `1.0.6+`，应用公钥证书文件路径				|
@@ -227,11 +232,8 @@ const unipayIns = unipay.initAppleIapPayment({
 |  totalFee			| Number|必填																					|   -		|订单金额，单位：分																																																	| 支付宝小程序、微信小程序|
 | totalFee | Number|Required | - |Order amount, unit: cents | Alipay applet, WeChat applet|
 | notifyUrl			| String|必填																					|   -		|支付结果通知地址，**需要注意支付宝支付时退款也会通知到此地址，务必处理好自己的业务逻辑**														|													|
-| notifyUrl | String|Required | - |Payment result notification address, **It should be noted that the refund will also be notified to this address when Alipay pays, be sure to handle your own business logic** | |
-| tradeType			| String|非小程序支付、App支付时必填									|   -		| `1.0.6+`交易类型，见下方tradeType的说明																																						|-												|
-| tradeType | String|Required for non-mini-program payment and App payment | - | `1.0.6+` transaction type, see the description of tradeType below |- |
 | spbillCreateIp| String|必填																					|   -		|客户端IP，云函数内可以通过`context.CLIENTIP`获取																																		|-												|
-| spbillCreateIp| String|Required | - |Client IP, which can be obtained through `context.CLIENTIP` in the cloud function |- |
+|     tradeType	      | String	| 是	  |  -												   | 交易类型；见下方 tradeType 的说明						 |
 | sceneInfo			| Object|微信tradeType为MWEB时必填										|   -		|见下方sceneInfo的说明																																															|-												|
 | sceneInfo | Object|Required when WeChat tradeType is MWEB | - |See the description of sceneInfo below |- |
 
@@ -356,25 +358,16 @@ uniCloud.callFunction({
 **返回值说明**
 **Return value description**
 
-|       参数名			|  类型	|说明																																				| 支持平台|
-| Parameter Name | Type | Description | Supported Platforms |
-| :----------------:| :----:| :---------------------------------------------:														| :------:|
-|       appId				| String|平台分配的应用 ID																													| 微信支付|
-| appId | String| The app ID assigned by the platform | WeChat Pay|
-|       mchId				| String|商户号，（微信支付文档里面叫商户号：mch_id，支付宝支付叫卖家id：seller_id）| 微信支付|
-| mchId | String| Merchant ID, (in WeChat payment document it is called merchant ID: mch_id, Alipay payment is called seller id: seller_id) | WeChat payment|
-|     outTradeNo		| String|商户订单号																																	|     -		|
-| outTradeNo | String | Merchant order number | - |
-|   transactionId		| String|平台订单号																																	|      -	|
-| transactionId | String | Platform order number | - |
-|     tradeState		| String| 订单状态，见下方订单状态说明																							|					|
-| tradeState | String| Order status, see order status description below | |
-|      totalFee			| Number|标价金额 ，单位：分																												|     -		|
-| totalFee | Number|Amount of price, unit: cents | - |
-| settlementTotalFee| Number|应结订单金额，单位：分																											|     -		|
-| settlementTotalFee| Number|The amount of the order to be settled, unit: cent | - |
-|      cashFee			| Number|现金支付金额，单位：分																											|     -		|
-| cashFee | Number| Amount of cash payment, unit: cents | - |
+|       参数名			|  类型	|说明																																				|  支持平台   |
+| :----------------:| :----:| :---------------------------------------------:														|:-------:|
+|       appId				| String|平台分配的应用 ID																													|  微信支付   |
+|       mchId				| String|商户号，（微信支付文档里面叫商户号：mch_id，支付宝支付叫卖家id：seller_id）|  微信支付   |
+|     outTradeNo		| String|商户订单号																																	|   -		   |
+|   transactionId		| String|平台订单号																																	|   -	    |
+|     tradeState		| String| 订单状态，见下方订单状态说明																							|  					  |
+|      totalFee			| Number|标价金额 ，单位：分																												|   -		   |
+| settlementTotalFee| Number|应结订单金额，单位：分																											| 支付宝支付		 |
+|      cashFee			| Number|现金支付金额，单位：分																											|   -		   |
 
 
 **订单状态**
@@ -448,16 +441,11 @@ exports.main = async function (event) {
 **Return value description**
 
 |    参数名     |  类型  |       说明        |  支持平台  |
-| Parameter Name | Type | Description | Supported Platforms |
-| :-----------: | :----: | :---------------: | :--------: |
-|     appId     | String | 平台分配的应用 ID |  微信支付  |
-| appId | String | Platform-assigned app ID | WeChat Pay |
-|     mchId     | String |      商户号       |  微信支付  |
-| mchId | String | Merchant ID | WeChat Pay |
-|  outTradeNo   | String |    商户订单号     | 支付宝支付 |
-| outTradeNo | String | Merchant order number | Alipay payment |
-| transactionId | String |    平台订单号     | 支付宝支付 |
-| transactionId | String | Platform order number | Alipay payment |
+| :-----------: | :----: | :---------------: |:------:|
+|     appId     | String | 平台分配的应用 ID | 微信支付V2 |
+|     mchId     | String |      商户号       | 微信支付V2 |
+|  outTradeNo   | String |    商户订单号     | 支付宝支付  |
+| transactionId | String |    平台订单号     | 支付宝支付  |
 
 **使用示例**
 **Use example**
@@ -534,25 +522,16 @@ exports.main = async function (event) {
 **入参说明**
 **Introduction to parameters**
 
-|    参数名		|  类型	|             必填				| 默认值|     说明											| 支持平台	|
-| Parameter Name | Type | Required | Default Value | Description |
-| :-----------:	| :----:| :--------------------------:	| :----:| :----------:										| :------:	|
-|  outTradeNo	| String|   和 transactionId 二选一		|   -	|  商户订单号										|     -		|
-| outTradeNo | String| and transactionId can be selected | - | Merchant order number | - |
-| transactionId	| String|     和 outTradeNo 二选一		|   -	|  平台订单号										|     -		|
-| transactionId | String| and outTradeNo choose one | - | Platform order number | - |
-|  outRefundNo	| String| 微信支付必填，支付宝支付选填	|   -	| 商户退款单号										|      -	|
-| outRefundNo | String| Required for WeChat payment, optional for Alipay payment | - | Merchant refund order number | - |
-|   totalFee	| Number|         微信支付必填			|   -	|  订单总金额										| -			|
-| totalFee | Number| WeChat payment required | - | Total order amount | - |
-|   refundFee	| Number|             必填				|   -	|  退款总金额										| 微信支付	|
-| refundFee | Number| Required | - | Total Refund Amount | WeChat Pay |
-| refundFeeType	| String|             选填				|   -	|   货币种类										|     -		|
-| refundFeeType | String| Optional | - | Currency | - |
-|  refundDesc	| String|             选填				|   -	|   退款原因										|     -		|
-| refundDesc | String| Optional | - | Refund Reason | - |
-|   notifyUrl	| String|  微信支付选填，支付宝不支持	|   -	| 退款通知 url，支付宝会通知获取支付参数时的通知地址| 微信支付	|
-| notifyUrl | String| Optional for WeChat payment, Alipay does not support | - | Refund notification url, Alipay will notify the notification address when obtaining payment parameters | WeChat payment |
+|    参数名		|  类型	|        必填				         | 默认值|     说明											| 支持平台	  |
+| :-----------:	| :----:|:---------------------:| :----:| :----------:										|:------:|
+|  outTradeNo	| String| 和 transactionId 二选一		 |   -	|  商户订单号										|  -		   |
+| transactionId	| String|  和 outTradeNo 二选一		   |   -	|  平台订单号										|  -		   |
+|  outRefundNo	| String|    微信支付必填，支付宝支付选填	    |   -	| 商户退款单号										|   -	   |
+|   totalFee	| Number|       微信支付必填			       |   -	|  订单总金额										|  -			  |
+|   refundFee	| Number|        必填				         |   -	|  退款总金额										| 微信支付	  |
+| refundFeeType	| String|     微信支付V3必填				      |   -	|   货币种类										|   微信支付V3		   |
+|  refundDesc	| String|        选填				         |   -	|   退款原因										|  -		   |
+|   notifyUrl	| String|    微信支付选填，支付宝不支持	     |   -	| 退款通知 url，支付宝会通知获取支付参数时的通知地址| 微信支付	  |
 
 **返回值说明**
 **Return value description**
@@ -597,19 +576,13 @@ exports.main = async function (event) {
 **入参说明**
 **Introduction to parameters**
 
-|    参数名     |  类型  |                     必填                      | 默认值 |                                        说明                                        | 支持平台 |
-| Parameter Name | Type | Required | Default Value | Description |
-| :-----------: | :----: | :-------------------------------------------: | :----: | :--------------------------------------------------------------------------------: | :------: |
-|  outTradeNo   | String | 微信支付四选一，支付宝和 transactionId 二选一 |   -    |                                     商户订单号                                     |     -     |
-| outTradeNo | String | Wechat payment can choose one of four, Alipay and transactionId can choose one | - | Merchant order number | - |
-| transactionId | String |  微信支付四选一，支付宝和 outTradeNo 二选一   |   -    |                                     平台订单号                                     |     -     |
-| transactionId | String | WeChat payment can choose one of four, Alipay and outTradeNo can choose one | - | Platform order number | - |
-|  outRefundNo  | String |          微信支付四选一，支付宝必填           |   -    |                                    商户退款单号                                    |     -     |
-| outRefundNo | String | WeChat payment can choose one of four, Alipay is required | - | Merchant refund order number | - |
-|   refundId    | String |                微信支付四选一                 |   -    |                                    平台退款单号                                    | 微信支付 |
-| refundId | String | WeChat payment choose one of four | - | platform refund order number | WeChat payment |
-|    offset     | Number |                 微信支付选填                  |   -    | 偏移量，当部分退款次数超过 10 次时可使用，表示返回的查询结果从这个偏移量开始取记录 |      -    |
-| offset | Number | Wechat payment optional | - | Offset, which can be used when the number of partial refunds exceeds 10 times, indicating that the returned query result starts from this offset and records records | - |
+|    参数名     |  类型  |                    必填                     | 默认值 |                                        说明                                        | 支持平台 |
+| :-----------: | :----: |:-----------------------------------------:| :----: | :--------------------------------------------------------------------------------: | :------: |
+|  outTradeNo   | String | 微信支付V3必填，微信支付V2四选一，支付宝和 transactionId 二选一 |   -    |                                     商户订单号                                     |     -     |
+| transactionId | String |       微信支付V2四选一，支付宝和 outTradeNo 二选一       |   -    |                                     平台订单号                                     |     -     |
+|  outRefundNo  | String |              微信支付V2四选一，支付宝必填              |   -    |                                    商户退款单号                                    |     -     |
+|   refundId    | String |                 微信支付V2四选一                 |   -    |                                    平台退款单号                                    | 微信支付 |
+|    offset     | Number |                 微信支付V2选填                  |   -    | 偏移量，当部分退款次数超过 10 次时可使用，表示返回的查询结果从这个偏移量开始取记录 |      -    |
 
 **注意**
 **Notice**
@@ -620,25 +593,16 @@ exports.main = async function (event) {
 **返回值说明**
 **Return value description**
 
-|     参数名     |              类型               |             说明             |  支持平台  |
-| Parameter Name | Type | Description | Supported Platforms |
-| :------------: | :-----------------------------: | :--------------------------: | :--------: |
-|   outTradeNo   |             String              |          商户订单号          |      -      |
-| outTradeNo | String | Merchant order number | - |
-| transactionId  |             String              |          平台订单号          |      -      |
-| transactionId | String | Platform order number | - |
-|    totalFee    |             Number              |           订单金额           |      -      |
-| totalFee | Number | Order Amount | - |
-|    refundId    |             String              |  平台退款单号，仅支付宝返回  |       -     |
-| refundId | String | Platform refund order number, only returned by Alipay | - |
-|   refundFee    |             Number              |          退款总金额          |     -       |
-| refundFee | Number | Total refund amount | - |
-|   refundDesc   |             String              |           退款理由           |      -      |
-| refundDesc | String | Reason for refund | - |
-|   refundList   |     Array&lt;refundItem&gt;     | 分笔退款信息，仅微信支付返回 |  微信支付  |
-| refundList | Array&lt;refundItem&gt; | Refund information by instalments, only WeChat Pay returns | WeChat Pay |
-| refundRoyaltys | Array&lt;refundRoyaltysItem&gt; | 退分账明细信息，仅支付宝返回 | 支付宝支付 |
-| refundRoyaltys | Array&lt;refundRoyaltysItem&gt; | Refund details, only Alipay returns | Alipay payment |
+|     参数名     |              类型               |          说明          | 支持平台  |
+| :------------: | :-----------------------------: |:--------------------:|:-----:|
+|   outTradeNo   |             String              |        商户订单号         |   -   |
+| transactionId  |             String              |        平台订单号         |   -   |
+|    totalFee    |             Number              |         订单金额         |   -   |
+|    refundId    |             String              | 平台退款单号，仅支付宝、微信支付V3返回 |   -   |
+|   refundFee    |             Number              |        退款总金额         |   -   |
+|   refundDesc   |             String              |         退款理由         |   -   |
+|   refundList   |     Array&lt;refundItem&gt;     |   分笔退款信息，仅微信支付V2返回   | 微信支付V2 |
+| refundRoyaltys | Array&lt;refundRoyaltysItem&gt; |    退分账明细信息，仅支付宝返回    | 支付宝支付 |
 
 **refundItem 说明**
 **refundItem description**
@@ -740,8 +704,7 @@ exports.main = async function (event) {
 |  参数名  |  类型  | 必填 | 默认值 |                                                                                              说明                                                                                              | 支持平台 |
 | Parameter Name | Type | Required | Default Value | Description |
 | :------: | :----: | :--: | :----: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: |
-| billDate | String | 必填 |   -    |                                                                                下载对账单的日期，格式：20140603                                                                                |     -     |
-| billDate | String | Required | - | Download date of the statement, format: 20140603 | - |
+| billDate | String | 必填 |   -    |                                                                                下载对账单的日期，格式：2014-06-03                                                                                |     -     |
 | billType | String | 选填 |  ALL   | ALL（默认值），返回当日所有订单信息（不含充值退款订单）,SUCCESS，返回当日成功支付的订单（不含充值退款订单）,REFUND，返回当日退款订单（不含充值退款订单）,RECHARGE_REFUND，返回当日充值退款订单 |     -     |
 | billType | String | Optional | ALL | ALL (default), returns all order information on the day (excluding recharge and refund orders), SUCCESS, returns orders successfully paid on the day (excluding recharge and refund orders), REFUND, returns Same-day refund order (excluding recharge and refund order), RECHARGE_REFUND, return the same-day recharge and refund order | - |
 
@@ -826,8 +789,7 @@ exports.main = async function (event) {
 |   参数名    |  类型  | 必填 | 默认值 |                                  说明                                   | 支持平台 |
 | Parameter Name | Type | Required | Default Value | Description |
 | :---------: | :----: | :--: | :----: | :---------------------------------------------------------------------: | :------: |
-|  billDate   | String | 必填 |   -    |                    下载对账单的日期，格式：20140603                     |    -     |
-| billDate | String | Required | - | Download date of the statement, format: 20140603 | - |
+|  billDate   | String | 必填 |   -    |                    下载对账单的日期，格式：2014-06-03                     |    -     |
 | accountType | String | 选填 | Basic  | 账单的资金来源账户：Basic 基本账户，Operation 运营账户，Fees 手续费账户 |     -     |
 | accountType | String | Optional | Basic | Account for the source of funds for the bill: Basic account, Operation account, Fees fee account | - |
 
@@ -933,19 +895,30 @@ exports.main = async function (event) {
   // 处理完毕其他业务
   // Finish other business
   // 注意如果处理成功需要严格按照下面的格式进行返回，否则厂商会持续通知
-  // Note that if the processing is successful, it needs to be returned in strict accordance with the following format, otherwise the manufacturer will continue to notify
-  // 微信处理成功之后 
-  // After WeChat is processed successfully
-  return {  
-    statusCode: 200,  
-    headers: {  
-        'content-type': 'text/xml;charset=utf-8'  
-    },  
-    body: `<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>`  
+  // 微信支付V3处理成功之后 
+  return {
+    mpserverlessComposedResponse: true,
+    statusCode: 200,
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+        code: 'SUCCESS',
+        message: '成功'
+    })
+  }
+  // 微信支付V2处理成功之后 
+  return {
+    mpserverlessComposedResponse: true, 
+    statusCode: 200,
+    headers: {
+      'content-type': 'text/xml;charset=utf-8'
+    },
+    body: `<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>`
   }
   // 支付宝处理成功后  
-  // After Alipay processing is successful
-  return {  
+  return {
+    mpserverlessComposedResponse: true,
     statusCode: 200,
     headers: {  
       'content-type': 'text/plain'  
@@ -1011,9 +984,8 @@ exports.main = async function (event) {
   // 注意如果处理成功需要严格按照下面的格式进行返回，否则厂商会持续通知
   // Note that if the processing is successful, it needs to be returned in strict accordance with the following format, otherwise the manufacturer will continue to notify
   // 微信处理成功之后 
-  // After WeChat is processed successfully
-  return {  
-    "mpserverlessComposedResponse": true,
+  return {
+    mpserverlessComposedResponse: true,
     statusCode: 200,  
     headers: {  
         'content-type': 'text/xml;charset=utf-8'  
@@ -1021,13 +993,12 @@ exports.main = async function (event) {
     body: `<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>`  
   }
   // 支付宝处理成功后  
-  // After Alipay processing is successful
-  return {  
-    "mpserverlessComposedResponse": true,
+  return {
+    mpserverlessComposedResponse: true,
     statusCode: 200,
-    headers: {  
+    headers: {
       'content-type': 'text/plain'  
-    },  
+    },
     body: "success"
   }
 }

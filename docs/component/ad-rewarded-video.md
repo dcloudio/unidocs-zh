@@ -518,8 +518,7 @@ Notice:
 ### 微信小程序说明@callbackweixin
 ### WeChat MiniApp description @callbackweixin
 
-3.6.2+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id-summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
-3.6.2+ supports WeChat MiniApp server callback, currently only supports MiniApp using [uni-id](/uniCloud/uni-id-summary.html) user system, and will support non-uni-id user system in the future
+3.6.4+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id-summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
 
 #### 接入流程
 #### Access process

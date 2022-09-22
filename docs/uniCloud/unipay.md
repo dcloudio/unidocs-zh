@@ -49,14 +49,16 @@ const unipay = require('@dcloudio/unipay')
 
 **入参说明**
 
-|        参数名	         |  类型		| 必填	 | 默认值												  |        说明											         |
-|:-------------------:| :-----:	|:---:|:----------------:|:----------------------------:|
-|       appId		       | String	| 是	  |  -													  |    当前应用在对应支付平台的 appId				    |
-|       mchId		       | String	| 是	  |  -													  |        商户号										         |
-|       v3Key		       | String	| 是	  |  -													  |     API v3 密钥										      |
-|    appCertPath		    | String	| 是	  |  -													  |     商户 API 证书										      |
-| appPrivateKeyPath		 | String	| 是	  |  -													  |     商户 API 私钥										      |
-|      timeout	       | Number	| 否	  | 5000												 |      请求超时时间，单位：毫秒						      |
+|          参数名	          |  类型		| 必填	 | 默认值												  |        说明											         |
+|:----------------------:| :-----:	|:--:|:----------------:|:----------------------------:|
+|        appId		         | String	| 是	 |  -													  |    当前应用在对应支付平台的 appId				    |
+|        mchId		         | String	| 是	 |  -													  |        商户号										         |
+|        v3Key		         | String	| 是	 |  -													  |     API v3 密钥										      |
+|     appCertPath		      | String	| 是	  |  -													  |     商户 API 证书文件路径（文件路径与字符串二选一）										      |
+|    appCertContent		    | String	| 是	 |  -													  |     商户 API 证书字符串（文件路径与字符串二选一）										      |
+|  appPrivateKeyPath		   | String	| 是	 |  -													  |     商户 API 私钥文件路径（文件路径与字符串二选一）										      |
+| appPrivateKeyContent		 | String	| 是	 |  -													  |     商户 API 私钥字符串（文件路径与字符串二选一）										      |
+|        timeout	        | Number	| 否	 | 5000												 |      请求超时时间，单位：毫秒						      |
 
 ```js
 const unipayIns = unipay.initWeixinV3({
@@ -64,8 +66,26 @@ const unipayIns = unipay.initWeixinV3({
   mchId: 'your mchId',
   v3Key: 'you parterner key',
   appCertPath: path.resolve('/path/to/you/cert'),
-  appPrivateKeyPath: path.resolve('/path/to/you/privateKey')
+  // appCertContent: "", 
+  appPrivateKeyPath: path.resolve('/path/to/you/privateKey'),
+  // appPrivateKeyContent: "",
 })
+```
+**说明**
+
+证书字符串与私钥字符串格式要求：
+- 证书字符串不应包含`-----BEGIN CERTIFICATE-----` 与 `-----END CERTIFICATE-----`，并且证书内容不能换行
+- 私钥字符串不应包含`-----BEGIN PRIVATE KEY-----` 与 `-----END PRIVATE KEY-----`，并且私钥内容不能换行
+
+例：
+```
+// 证书内容
+-----BEGIN CERTIFICATE-----
+your certificate content...
+-----END CERTIFICATE-----
+
+// 证书字符串
+appCertContent = 'your certificate content...'
 ```
 ### 微信支付v2
 

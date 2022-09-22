@@ -220,8 +220,7 @@ uniCloud.importObject('object-name', {
 虽然uni-app客户端和uniCloud云端通信是加密的，但对于开发者而言过程是透明的。
 Although the communication between the uni-app client and the uniCloud cloud is encrypted, the process is transparent to the developer.
 
-**不管是客户端接收云端数据、还是云端接受客户端数据，开发者的代码拿到的拿到的数据都是加密后的数据。**
-**Whether the client receives cloud data or the cloud accepts client data, the data obtained by the developer's code is encrypted data. **
+**不管是客户端接收云端数据、还是云端接受客户端数据，开发者的代码拿到的数据都是加密后的数据。**
 
 但云端有一个注意事项：为了避免客户端伪造`secretType`获取服务器敏感数据，应以服务器端为准，如果客户端携带的 `secretType` 不符合要求应拒绝响应数据。示例代码如下
 However, there is a caveat in the cloud: in order to prevent the client from forging `secretType` to obtain sensitive server data, the server side should prevail. If the `secretType` carried by the client does not meet the requirements, the response data should be rejected. The sample code is as follows

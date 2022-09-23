@@ -2,6 +2,9 @@
 #### 2022-09-22
   + 新增 uni-pay 支持微信支付V3接口 [详情](https://uniapp.dcloud.io/uniCloud/unipay?id=微信支付v3)
 
+#### 2022-09-05
+  + 新增 阿里云 支持申请云存储独立CDN域名，避免因其他服务空间违规导致云存储被封禁 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage.html#aliyun-cdn-domain)
+
 #### 2022-09-01
   + 调整 本地调试插件 云对象运行参数配置文件改为 ${objectName}.param.js [详情](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#run-obj-param)
   + Adjust the local debugging plugin cloud object running parameter configuration file to ${objectName}.param.js [Details](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#run-obj-param)

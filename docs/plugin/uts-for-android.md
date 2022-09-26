@@ -47,7 +47,7 @@
 
 学习kotlin语言，方便排查问题和复杂功能实现
 
-因此建议学习一下2.3 章节 kotlin语法，
+因此建议学习一下2.3 章节 kotlin语法
 
 
 
@@ -55,7 +55,7 @@
 
 建议掌握kotlin语法，可以参考下面的文档
 
-+ kotlin[文档](https://kotlinlang.org/)
++ kotlin [文档](https://kotlinlang.org/)
 
 + kotlin for android[文档](https://developer.android.com/kotlin)
 
@@ -150,7 +150,7 @@ uts-nativepage  ->  uts.sdk.modules.utsNativepage
 ### 3.2 配置res资源
 
 
-![](./uts_android_res_folder.jpg)
+![](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_res_folder.jpg)
 
 
 示例文件在hello uts中的位置：
@@ -169,14 +169,13 @@ uts-nativepage  ->  uts.sdk.modules.utsNativepage
 
 ~\uni_modules\uts-advance\utssdk\app-android\assets
 
-![](./uts_android_assets_folder.jpg)
-
+![](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_assets_folder.jpg)
 
 ### 3.4 增加libs依赖资源
 
 以Hello UTS项目下的uts-tencentgeolocation 插件为例
 
-![](./uts_android_libs_folder.jpg)
+![](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_libs_folder.jpg)
 
 
 示例文件在hello uts中的位置：

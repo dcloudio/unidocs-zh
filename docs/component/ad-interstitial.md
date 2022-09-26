@@ -32,23 +32,16 @@ Interstitial ad components are composed of client-side native image, text, and v
 **属性说明**
 **Property description**
 
-|属性名														|类型													|默认值		|说明																																									|平台差异	|
-|property name |type |default value |description |platform difference |
-|:-																|:-														|:-				|:-																																										|:-				|
-|adpid														|String&#124;Number&#124;Array|					|广告位id，如果传入的是数组，会从索引0开始请求失败后继续下一个，适用于已配置底价的逻辑|					|
-|adpid |String&#124;Number&#124;Array| |Ad slot id, if an array is passed in, it will start from index 0 and continue to the next after the request fails, which applies to the logic of the configured reserve price| |
-|preload                          |Boolean                      |true     |页面就绪后加载广告数据                                                                  |          |
-|preload |Boolean |true |Load ad data when page is ready | |
-|loadnext													|Boolean											|false		|自动加载下一条广告数据																																	|					|
-|loadnext |Boolean |false |Automatically load next ad data | |
-|v-slot:default="{loading, error}"|															|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息																	|					|
-|v-slot:default="{loading, error}"| | |The scope slot can get the loading status and loading error information of the ad inside the component | |
-|@load														|EventHandle									|加载事件	|																																											|					|
-|@load |EventHandle |Load event | | |
-|@close														|EventHandle									|关闭事件	|																																											|					|
-|@close |EventHandle |Close event | | |
-|@error														|EventHandle									|错误事件	|																																											|					|
-|@error |EventHandle |Error event | | |
+|属性名																			|类型													|默认值		|说明																																									|平台差异	|
+|:-																					|:-														|:-				|:-																																										|:-				|
+|adpid																			|String&#124;Number&#124;Array|					|广告位id，如果传入的是数组，会从索引0开始请求失败后继续下一个，适用于已配置底价的逻辑|					|
+|preload																		|Boolean											|true			|页面就绪后加载广告数据																																|					|
+|loadnext																		|Boolean											|false		|自动加载下一条广告数据																																|					|
+|options																		|Object												|					|透传到作用域插槽																																			|					|
+|v-slot:default="{loading, error, options}"	|															|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息																	|					|
+|@load																			|EventHandle									|加载事件	|微信小程序暂不支持																																		|					|
+|@close																			|EventHandle									|关闭事件	|微信小程序暂不支持																																		|					|
+|@error																			|EventHandle									|错误事件	|微信小程序暂不支持																																		|					|
 
 **方法说明**
 **Method Description**

@@ -13,7 +13,8 @@
     "build": "cross-env DOCS_LOCAL=zh node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
     "build:zh": "cross-env DOCS_LOCAL=zh node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
     "build:en": "cross-env DOCS_LOCAL=en node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
-    "sitemap": "node ./script/createSiteMap.js"
+    "sitemap": "node ./script/createSiteMap.js",
+    "prebuild:en": "node ./script/checkBuildEn.js"
   },
   "repository": {
     "type": "git",

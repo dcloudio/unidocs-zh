@@ -1,3 +1,18 @@
+#### 3.6.4.20220922
+* 【uni-app】
+  + 修复 uni-app App调试插件 运行空白的Bug
+  + 修复 HBuilderX 3.6.3 版本引出的 uni.onPushMessage 监听不到推送消息及通知栏消息的点击事件 [详情](https://ask.dcloud.net.cn/question/153964)
+  + App-Android平台 修复 3.6.2版本引出 input 组件自动获取焦点可能失效的Bug [详情](https://ask.dcloud.net.cn/question/153481)
+* 【uniCloud】
+  + 修复 HBuilderX 3.6.2 版本引出的客户端连接本地腾讯云云函数时在云函数内调用云函数报错的Bug
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 本地打包生成的自定义基座可能无法识别安装的Bug
+  + Android平台 修复 3.6.2版本引出的 在 Android4.4 设备无法正常运行的Bug [详情](https://ask.dcloud.net.cn/question/153910)
+  + iOS平台 更新 uni-AD 今日头条穿山甲SDK更新为 4.8.0.3 版，穿山甲Gromore SDK更新为 3.7.0.0 版
+  + iOS平台 修复 uni-AD 穿山甲Gromore 激励视频偶现可能无法显示的Bug [详情](https://ask.dcloud.net.cn/question/153717)
+  + iOS平台 修复 3.6.2版本引出的 uni原生语言插件Hook不到applicationWillEnterForeground、applicationDidEnterBackground等系统事件的Bug
+  + iOS平台 修复 安全检测可能报获取设备idfv的Bug
+
 #### 3.6.3.20220917
 * 【uni-app】
   + 小程序平台 修复 onReady 生命周期触发两次的Bug [详情](https://ask.dcloud.net.cn/question/153422)

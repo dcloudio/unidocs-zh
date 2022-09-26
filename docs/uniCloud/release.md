@@ -338,5 +338,4 @@
   + Fix the local debug plug-in. In some cases, the client connected to the local cloud function with the JQL extension enabled.
 
 #### 已归档的历史版本
-
 [更多已归档版本的更新日志](uniCloud/release-archive.md)

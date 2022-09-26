@@ -22,9 +22,7 @@ Also note that offline packaging cannot enjoy paid native plugins in the plugin 
 **The problem of mixed development of uni-app and native applet:**
 
 - 方式1：把原生小程序转换为uni-app源码。有各种转换工具，[详见](translate.md)
-- Method 1: Convert native applet to uni-app source code. There are various conversion tools, [see details](translate.md)
-- 方式2：新建一个uni-app项目，把原生小程序的代码变成小程序组件，进而整合到uni-app项目下。uni-app支持使用小程序wxml组件，[参考](/tutorial/miniprogram-subject.html#小程序自定义组件支持)
-- Method 2: Create a new uni-app project, turn the code of the native applet into a applet component, and then integrate it into the uni-app project. uni-app supports the use of miniprogram wxml components, [Reference](/tutorial/miniprogram-subject.html#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87%AA%E5% AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81)
+- 方式2：新建一个uni-app项目，把原生小程序的代码变成小程序组件，进而整合到uni-app项目下。uni-app支持使用小程序wxml组件，[参考](/tutorial/miniprogram-subject.md#小程序自定义组件支持)
 - 方式3：原生开发的小程序仍保留，部分新功能使用uni-app开发。
 - Method 3: The natively developed applet is still retained, and some new functions are developed using uni-app.
   * 使用发行为混合分包的功能

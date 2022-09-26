@@ -20,7 +20,7 @@ filters|Array[Number] |[0,1,2]|否|条码类型过滤器，条码类型常量数
 **码类型常量**
 - QR: QR二维码，数值为0
 - EAN13: EAN条形码标准版，数值为1
-- EAN8: ENA条形码简版，数值为2
+- EAN8: EAN条形码简版，数值为2
 - AZTEC: Aztec二维码，数值为3
 - DATAMATRIX: Data Matrix二维码，数值为4
 - UPCA: UPC条形码标准版，数值为5

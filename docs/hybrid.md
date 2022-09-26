@@ -13,7 +13,7 @@
 **uni-app和原生小程序混合开发问题：** 
 
 - 方式1：把原生小程序转换为uni-app源码。有各种转换工具，[详见](translate.md)
-- 方式2：新建一个uni-app项目，把原生小程序的代码变成小程序组件，进而整合到uni-app项目下。uni-app支持使用小程序wxml组件，[参考](/tutorial/miniprogram-subject.html#小程序自定义组件支持)
+- 方式2：新建一个uni-app项目，把原生小程序的代码变成小程序组件，进而整合到uni-app项目下。uni-app支持使用小程序wxml组件，[参考](/tutorial/miniprogram-subject.md#小程序自定义组件支持)
 - 方式3：原生开发的小程序仍保留，部分新功能使用uni-app开发。
   * 使用发行为混合分包的功能
     + 在 HBuilderX 3.1.0+ 中点击发行小程序的菜单，勾选发行混合分包，填写分包目录名称，打包后，将对应目录文件拷贝至已有小程序中，需要自己补充原小程序app.json中的页面或分包配置

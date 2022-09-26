@@ -725,8 +725,7 @@ function hasPermission(token, permission) {
 }
 ```
 
-注意：**在uniCloud admin中，封装了可视化的用户、权限、角色的管理，新增删除修改均支持。**无需自己维护。[详见](admin.md#mutiladmin)
-Note: **In uniCloud admin, visual management of users, permissions, and roles is encapsulated, and additions, deletions, and modifications are supported. **No maintenance required. [See details](admin.md#mutiladmin)
+注意： **在uniCloud admin中，封装了可视化的用户、权限、角色的管理，新增删除修改均支持**，无需自己维护。[详见](admin.md#mutiladmin)
 
 ## uni-id数据表@db-schema
 ## uni-id data table @db-schema

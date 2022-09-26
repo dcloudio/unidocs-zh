@@ -306,8 +306,7 @@ class GetController extends Controller {
 在某些场景下，cookie依然占有重要地位，例如在云函数URL化的情况下，获取客户端的状态
 In some scenarios, cookies still play an important role, for example, in the case of URLization of cloud functions, to obtain the status of the client
 
-在云函数中使用cookie需要依赖cookie库[npm页面地址](http://https://www.npmjs.com/package/cookie)，可以通过`npm inistall cookie` 安装
-Using cookies in cloud functions needs to rely on the cookie library [npm page address](http://https://www.npmjs.com/package/cookie), which can be installed through `npm inistall cookie`
+在云函数中使用cookie需要依赖cookie库[npm页面地址](http://https://www.npmjs.com/package/cookie)，可以通过`npm install cookie` 安装
 
 ```js
 'use strict';

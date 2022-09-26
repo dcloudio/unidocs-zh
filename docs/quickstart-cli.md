@@ -1,4 +1,3 @@
-
 除了HBuilderX可视化界面，也可以使用 `cli` 脚手架，可以通过 `vue-cli` 创建 `uni-app` 项目。
 
 
@@ -55,7 +54,7 @@ npm install -g @vue/cli@4
 
 #### 修改依赖为指定版本@cliversion
 
-可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本：
+可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，此工具仅自动增加或更新 uni-app 编译器主要依赖，对于新增的编译命令（scripts）暂时不会自动处理，需手动参考新工程进行配置。
 
 * 更新到最新正式版
   ```shell

@@ -177,6 +177,14 @@ Vue3 现在提供了一个`emits`选项，类似于现有`props`选项。此选�
 </script>
 ```
 
+### Vue3 项目部分小程序端事件延迟或调用失败
+可在执行事件的元素上添加 `data-eventsync="true"` 属性以解决此问题，如：
+```html
+<template>
+  <button @click="onClick" data-eventsync="true">OK</button>
+</template>
+```
+
 ## v-model 的适配
 
 Vue3 的 v-model 相对 Vue2 来说 ，有了较大的改变。可以使用多 `model`,相应语法也有变化。[更多](https://v3.cn.vuejs.org/guide/migration/v-model.html#%E6%A6%82%E8%A7%88)

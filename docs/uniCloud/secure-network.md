@@ -27,7 +27,7 @@ DCloud面向开发者同时提供了端引擎`uni-app` 和 云引擎`uniCloud`�
 
 ## 准备工作
 
-### 微信小程序
+### 微信小程序@mp-weixin
 
 安全网络在微信小程序上的实现，依赖了微信提供的一些用户级的凭据。所以需要下载`uni-id`和`uni-open-bridge`，并在app.vue里初始化。
 

@@ -745,7 +745,7 @@ function hasPermission(token, permission) {
 |bind-apple	|绑定苹果账号	|
 |bind-alipay|绑定支付宝账号	|
 
-### 手机、邮箱验证码使用场景@sms-type
+### 手机、邮箱验证码使用场景@sms-scene
 
 对应`opendb-verify-codes`表短信、邮箱验证码相关记录的的scene字段
 

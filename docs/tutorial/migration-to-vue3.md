@@ -211,6 +211,14 @@ This is especially important because the `.native` modifier is removed. `emits` 
 </script>
 ```
 
+### Vue3 项目部分小程序端事件延迟或调用失败
+可在执行事件的元素上添加 `data-eventsync="true"` 属性以解决此问题，如：
+```html
+<template>
+  <button @click="onClick" data-eventsync="true">OK</button>
+</template>
+```
+
 ## v-model 的适配
 ## v-model adaptation
 

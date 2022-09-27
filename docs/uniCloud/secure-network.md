@@ -42,8 +42,7 @@ Note: Safe Network does not support web platform, only WeChat applet and App. An
 ## 准备工作
 ## Preparation
 
-### 微信小程序
-### WeChat MiniApp
+### 微信小程序@mp-weixin
 
 安全网络在微信小程序上的实现，依赖了微信提供的一些用户级的凭据。所以需要下载`uni-id`和`uni-open-bridge`，并在app.vue里初始化。
 The implementation of the secure network on the WeChat MiniApp relies on some user-level credentials provided by WeChat. So you need to download `uni-id` and `uni-open-bridge` and initialize them in app.vue.

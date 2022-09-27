@@ -1089,8 +1089,7 @@ Corresponds to the type field of the `uni-id-log` table
 |bind-alipay|绑定支付宝账号	|
 |bind-alipay|Bind Alipay account |
 
-### 手机、邮箱验证码使用场景@sms-type
-### Mobile phone and email verification code usage scenarios @sms-type
+### 手机、邮箱验证码使用场景@sms-scene
 
 对应`opendb-verify-codes`表短信、邮箱验证码相关记录的的scene字段
 Corresponds to the scene field of the `opendb-verify-codes` table SMS, email verification code related records

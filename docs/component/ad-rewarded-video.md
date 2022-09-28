@@ -86,6 +86,14 @@ The rewarded video ad component is a native component, the highest level, and wi
 |@error														|EventHandle									|错误事件	|																																											|					|
 |@error |EventHandle |Error event | | |
 
+**url-callback说明**
+
+|字段定义|类型|字段名称|备注|
+|:-:|:-:|:-:|:-:|
+|userId|String|用户id|调用SDK透传，应用对用户的唯一标识|
+|extra|String|自定义数据|调用SDK传入并透传，如无需要则为空|
+
+
 **方法说明**
 **Method Description**
 

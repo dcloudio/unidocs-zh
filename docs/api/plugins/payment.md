@@ -592,6 +592,7 @@ The system pop-up box guides the user to bind the payment method. This process w
           // Request Apple Pay
           const transaction = await this._iap.requestPayment({
             productId: this.productId,
+            manualFinishTransaction: true,
             // username: username + orderId //根据业务需求透传参数，关联用户和订单关系
             // username: username + orderId //Transparent parameters according to business requirements, associating user and order relationship
           });
@@ -730,6 +731,7 @@ class Iap {
   restoreCompletedTransactions(username) {
     return new Promise((resolve, reject) => {
       this._channel.restoreCompletedTransactions({
+        manualFinishTransaction: true,
         username
       }, (res) => {
         resolve(res);

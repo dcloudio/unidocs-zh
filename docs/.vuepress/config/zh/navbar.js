@@ -75,7 +75,7 @@ export const navbar = [
           {
             text: '字节跳动小程序',
             type: 'link',
-            link: 'https://developer.toutiao.com/dev/cn/mini-app/develop/component/introduction/basic-component'
+            link: 'https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/introduction/basic-component'
           },
           {
             text: '飞书小程序',

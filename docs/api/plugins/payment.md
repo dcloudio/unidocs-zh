@@ -442,6 +442,7 @@ uni.requestPayment({
           // 请求苹果支付
           const transaction = await this._iap.requestPayment({
             productId: this.productId,
+            manualFinishTransaction: true,
             // username: username + orderId //根据业务需求透传参数，关联用户和订单关系
           });
 
@@ -578,6 +579,7 @@ class Iap {
   restoreCompletedTransactions(username) {
     return new Promise((resolve, reject) => {
       this._channel.restoreCompletedTransactions({
+        manualFinishTransaction: true,
         username
       }, (res) => {
         resolve(res);

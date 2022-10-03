@@ -46,6 +46,8 @@
 
 
 #### uni-app相关书籍
+
+- 北京大学出版社：[uni-app跨平台开发与应用，从入门到实践](https://item.jd.com/13389767.html)
 - 清华大学出版社：[Vue.js核心技术解析与uni-app跨平台实战开发](https://item.jd.com/13568136.html)
 - 中国铁道出版社：[移动应用开发——基于UNI-APP框架](https://item.jd.com/10051626112071.html)
 - 中国水利水电出版社：[保姆级uni-app多端跨平台开发从入门到企业级实战](https://item.jd.com/13214957.html)

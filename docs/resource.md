@@ -80,7 +80,8 @@ The following is the video tutorial of the tripartite professional training inst
 
 
 #### uni-app相关书籍
-#### uni-app related books
+
+- 北京大学出版社：[uni-app跨平台开发与应用，从入门到实践](https://item.jd.com/13389767.html)
 - 清华大学出版社：[Vue.js核心技术解析与uni-app跨平台实战开发](https://item.jd.com/13568136.html)
 - Tsinghua University Press: [Vue.js core technology analysis and uni-app cross-platform development](https://item.jd.com/13568136.html)
 - 中国铁道出版社：[移动应用开发——基于UNI-APP框架](https://item.jd.com/10051626112071.html)

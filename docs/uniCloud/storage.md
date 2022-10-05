@@ -1,14 +1,13 @@
 ## 概述
 ## Overview
 
-::: warning 注意事项
-::: warning Notes
-- uniCloud阿里云版目前免费，不同服务空间的所有存储使用相同的域名，没有隔离。
-- uniCloud Alibaba Cloud Edition is currently free, and all storage in different service spaces use the same domain name without isolation.
+::: warning 公共域名封禁注意事项
+- uniCloud阿里云版目前免费，默认情况下，不同服务空间的所有存储使用相同的域名，没有隔离。
 - 如果有开发者在存储上上传了非法文件，或者非法app指向了uniCloud的阿里云云存储，被某地公安发现，就会导致所有uniCloud阿里云用户的存储域名在该地被封禁（有时只有一些运营商网络禁封）。
-- If a developer uploads an illegal file on the storage, or an illegal app points to the Alibaba Cloud storage of uniCloud, and is discovered by the public security in a certain place, the storage domain name of all uniCloud Alibaba Cloud users will be banned there (sometimes only Some carrier networks are banned).
-- 如遇到部分地区或部分网络无法访问阿里云存储默认域名，请及时在论坛发帖反馈。另外阿里云还提供了一个备用云存储CDN域名：`vkceyugu-backup.cdn.bspapp.com`，必要时可以将文件url的域名替换为备用域名来使用。
-- 阿里云现已提供cdn域名隔离方案，详情参考：[阿里云cdn独立域名](#aliyun-cdn-domain)。
+- 如遇到部分地区或部分网络无法访问阿里云存储默认域名，请：
+1. 及时在论坛发帖反馈。
+2. 使用备份域名：阿里云还提供了一个备用云存储CDN域名：`vkceyugu-backup.cdn.bspapp.com`，必要时可以将文件url的域名替换为备用域名来使用。
+3. 申请独立域名隔离，详情参考：[阿里云cdn独立域名](#aliyun-cdn-domain)。
 :::
 
 

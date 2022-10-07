@@ -192,14 +192,19 @@ exports.main = async (event, context) => {
 【uniID】“DCloud”验证码：123456，3分钟内有效，请勿泄露并尽快验证。
 ```
 
-**注意事项**
+### 发送失败注意@fail
 
-- data内如果有`测试`、`test`等字样，系统可能会被判定为测试用途，不会真正把短信下发到对应手机（此行为由运营商控制，可能真实发送，也可能不发送）
-- 在[DCloud开发者中心](https://dev.dcloud.net.cn/#/pages/sms/base)绑定`uniCloud`服务空间后，将会只允许绑定的服务空间调用此接口，绑定列表为空时表示不限制服务空间
+- data内如果有`测试`、`test`等字样，系统可能会被判定为测试用途，不会真正把短信下发到对应手机（此行为由运营商控制，可能真实发送，也可能不发送） 
 - 短信内容不可包含★、 ※、 →、 ●等特殊符号，可能会导致短信乱码
+- 如果本地运行提示`不支持的模板ID`，请更新到`2.9.9+`版本的HBuilderX 
+- 使用同一短信模板给同一个手机号发送短信时，频率不能太高。如果1分钟内超过1次，会被运营商判定为骚扰或短信重发而被拦截，导致短信发送失败
+- 尽量使用企业实名认证，个人实名认证的审核更严格，更容易发送失败
+
+
+**其他注意事项**
+
+- 在[DCloud开发者中心](https://dev.dcloud.net.cn/#/pages/sms/base)绑定`uniCloud`服务空间后，将会只允许绑定的服务空间调用此接口，绑定列表为空时表示不限制服务空间
 - 如果是用于用户注册的短信验证码，那么强烈推荐使用uni-id，这是一套云端一体的、完善的用户管理方案，已经内置封装好的短信验证码功能，详见：[uni-id-pages](uni-id-pages.md)。
-- 发送短信如果需要图形验证码来防止机刷，可以使用[uni-captcha图形验证码](https://ext.dcloud.net.cn/plugin?id=4048)。在[uni-id-pages](uni-id-pages.md)模板中已经集成了uni-id、uni-captcha
+- 发送短信前，如果需要图形验证码来防止机刷，可以使用[uni-captcha图形验证码](https://ext.dcloud.net.cn/plugin?id=4048)。在[uni-id-pages](uni-id-pages.md)模板中已经集成了uni-id、uni-captcha
 - Android手机在App端获取短信验证码，参考：[https://ask.dcloud.net.cn/article/676](https://ask.dcloud.net.cn/article/676)
 - 短信内容超过70个字符时为长短信，需分条发送，每67个字按一条短信计算
-- 如果本地运行提示`不支持的模板ID`，请更新到`2.9.9+`版本的HBuilderX 
-- 单个手机号码使用同一短信模板发送短信时，1分钟内只能发送1次，超过1次会被运营商判定为短信重发而被拦截导致短信发送失败

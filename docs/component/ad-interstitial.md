@@ -55,8 +55,7 @@ Interstitial ad components are composed of client-side native image, text, and v
 |show|Show Ads|
 
 
-HBuilder 基座的测试广告位 `adpid` 为 `1111111113`
-The test ad slot `adpid` of the HBuilder base is `1111111113`
+HBuilder 基座的测试广告位 `adpid` 为 `1111111113`，微信小程序暂不提供测试广告位
 
 
 简单示例
@@ -109,6 +108,15 @@ export default {
 }
 </script>
 ```
+
+**注意**
+
+- 微信小程序插屏广告触发频率限制：
+  - 小程序启动一定时间内不允许展示插屏广告
+  - 距离小程序插屏广告或者激励视频广告上次播放时间间隔不足，不允许展示插屏广告
+  - 当前正在播放激励视频广告或者插屏广告，不允许再次展示插屏广告
+
+
 
 **错误码**
 **error code**

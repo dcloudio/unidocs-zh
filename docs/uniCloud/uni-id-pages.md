@@ -2007,19 +2007,17 @@ await uniIdCo.addUser({
 **参数说明**
 **Parameter Description**
 
-|参数名			|类型				|必填	|说明				|
-|Parameter Name |Type |Required |Description |
-|--				|--					|--		|--					|
-|username		|string				|是		|用户名				|
-|username |string |yes |username|
-|password		|string				|是		|密码				|
-|password |string |yes |password|
-|authorizedApp	|Array&lt;string&gt;|否		|允许登录的app列表	|
-|authorizedApp |Array&lt;string&gt;|No |List of apps allowed to log in |
-|nickname		|string				|否		|昵称				|
-|nickname |string |no |nickname|
-|role			|Array&lt;string&gt;|否		|用户角色			|
-|role |Array&lt;string&gt;|No |User Role |
+|参数名				|类型								|必填	|说明																											|
+|--						|--									|--		|--																												|
+|username			|string							|是		|用户名																										|
+|password			|string							|是		|密码																											|
+|authorizedApp|Array&lt;string&gt;|否		|允许登录的app列表																				|
+|nickname			|string							|否		|昵称																											|
+|role					|Array&lt;string&gt;|否		|用户角色																									|
+|mobile				|string							|否		|手机号																										|
+|email				|string							|否		|邮箱																											|
+|tags					|array							|否		|用户标签																									|
+|status				|number							|否		|用户状态，参考：[用户状态](uni-id-summary.md#user-status)|
 
 **返回值**
 **return value**

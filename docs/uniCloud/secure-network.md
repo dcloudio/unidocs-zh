@@ -44,11 +44,17 @@ Note: Safe Network does not support web platform, only WeChat applet and App. An
 
 ### 微信小程序@mp-weixin
 
-安全网络在微信小程序上的实现，依赖了微信提供的一些用户级的凭据。所以需要下载`uni-id`和`uni-open-bridge`，并在app.vue里初始化。
-The implementation of the secure network on the WeChat MiniApp relies on some user-level credentials provided by WeChat. So you need to download `uni-id` and `uni-open-bridge` and initialize them in app.vue.
+安全网络在微信小程序上的实现，依赖了微信提供的一些用户级的凭据。所以需要下载`uni-id-pages`和`uni-open-bridge`，并在app.vue里初始化。
 
-1. 工程中导入uni-id
-1. Import uni-id into the project
+1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 【名称待定】`内填写微信小程序的appId。一个应用只能有一个发行配置，但是可以有多个开发配置
+
+  【图片待补充】
+  
+2. 在uniCloud控制台关联允许发送安全网络请求的应用
+
+  【图片待补充】
+
+3. 工程中导入uni-id-pages
 
 - `uni-id` [文档](uni-id-summary.md#save-user-token)
 - `uni-id` [documentation](uni-id-summary.md#save-user-token)
@@ -58,8 +64,7 @@ The implementation of the secure network on the WeChat MiniApp relies on some us
 `uni-id-pages`这个插件是云端一体的登录插件，其实安全网络只需要其中的`uni-id-co`云对象。插件中前端登录页面是否使用由开发者自己根据业务决定。
 The `uni-id-pages` plugin is a cloud-integrated login plugin. In fact, the security network only needs the `uni-id-co` cloud object. Whether to use the front-end login page in the plug-in is decided by the developer according to the business.
 
-2. 工程中导入uni-open-bridge插件
-2. Import the uni-open-bridge plugin into the project
+4. 工程中导入uni-open-bridge插件
 
 安全网络在微信小程序上依赖了微信的 `access_token`、`session_key`、`encrypt_key`等凭据。这些凭据需要`uni-open-bridge`统一接管。
 Security Network relies on WeChat's `access_token`, `session_key`, `encrypt_key` and other credentials on the WeChat MiniApp. These credentials need to be taken over by `uni-open-bridge`.
@@ -69,8 +74,7 @@ Security Network relies on WeChat's `access_token`, `session_key`, `encrypt_key`
 - `uni-open-bridge` [插件下载地址](https://ext.dcloud.net.cn/plugin?id=9002)
 - `uni-open-bridge` [plugin download address](https://ext.dcloud.net.cn/plugin?id=9002)
 
-3. 配置uni-id和uni-open-bridge
-3. Configure uni-id and uni-open-bridge
+5. 配置uni-id和uni-open-bridge
 
 登陆微信公众平台[https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)，获取微信小程序的固定凭据 `appid` 和 `secret`，配置到 uni-id-config
 
@@ -110,11 +114,9 @@ Security Network relies on WeChat's `access_token`, `session_key`, `encrypt_key`
 
 注意：拷贝此文件内容时需要移除 `注释`。标准json不支持注释。在HBuilderX中可用多选`//`来批量移除注释。
 
-如果项目之前已经使用过uni-id和uni-open-bridge，则上述步骤可省略。
-If the project has used uni-id and uni-open-bridge before, the above steps can be omitted.
+如果项目之前已经使用过uni-id-pages和uni-open-bridge，则上述步骤可省略。
 
-4. 在应用的生命周期 `onLaunch` 中检查微信登陆状态，如果过期需要登陆
-4. Check the WeChat login status in the application's life cycle `onLaunch`, if it expires, you need to log in
+6. 在应用的生命周期 `onLaunch` 中检查微信登陆状态，如果过期需要登陆
 
 注意: [uni.checkSession](https://uniapp.dcloud.net.cn/api/plugins/login.html#uni-checksession) 有调用次数限制警告，一个 `pv` 可调用 `2` 次
 Note: [uni.checkSession](https://uniapp.dcloud.net.cn/api/plugins/login.html#uni-checksession) has a warning about the number of calls, a `pv` can be called `2` times
@@ -146,19 +148,34 @@ The App.vue page needs to add the following code:
   }
 </script>
 ```
+  
+7. 在项目根目录manifest.json文件内为微信小程序平台开启安全网络模块
+  
+  【图片待补充】
 
-5. 在manifest中勾选加密模块
-5. Check the encryption module in the manifest
-**缺内容？**
-**Missing content? **
+### App@app
 
+App平台安全网络需使用[自定义基座](../tutorial/run/run-app.md#customplayground)，App端安全网络不依赖于登录逻辑。
+
+1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 证书管理`内填写安卓应用的包名、签名和iOS应用的bundleId。一个应用只能有一个发行证书配置，但是可以有多个开发证书配置
+
+  【图片待补充】
+
+2. 在uniCloud控制台关联允许发送安全网络请求的应用
+
+  【图片待补充】
+  
+3. 在项目根目录manifest.json文件内为app平台开启安全网络模块
+
+  【图片待补充】
+  
 ## 调用方式
 ## calling method
 
 准备工作完成后，在uni-app客户端调用uniCloud服务器时，可以通过加入secret参数来声明这次请求走安全网络，对传输数据加密。
 After the preparations are completed, when the uni-app client calls the uniCloud server, it can declare that the request goes through the secure network by adding the secret parameter to encrypt the transmitted data.
 
-- callFunction
+### 云函数
 
 客户端通过callFunction调用云函数时，加入secretType参数。
 When the client calls the cloud function through callFunction, add the secretType parameter.
@@ -172,8 +189,7 @@ uniCloud.callFunction({
 })
 ```
 
-- 云对象
-- cloud objects
+### 云对象
 
 客户端通过importObject调用云对象时，通过secretMethods参数来配置每个方法调用时是否加密。
 When the client calls cloud objects through importObject, configure whether to encrypt each method through the secretMethods parameter.
@@ -184,7 +200,7 @@ uniCloud.importObject('object-name', {
 })
 ```
 
-- clientDB
+### clientDB
 
 暂不支持
 
@@ -213,13 +229,17 @@ uniCloud.importObject('object-name', {
 
 方法级配置优先级最高，例如 `secretMethods: {'*':'response', 'login':'both'}`，login 的 both 覆盖了 `'*':'response'`
 
+**注意**
+
+- 微信小程序安全网络依赖于登录逻辑，因此在客户端检测到发送安全网络请求时用户未登录时会自动调用uni-id-co的loginByWeixin接口
+
 ## 服务器端
 ## Service-Terminal
 
 虽然uni-app客户端和uniCloud云端通信是加密的，但对于开发者而言过程是透明的。
 Although the communication between the uni-app client and the uniCloud cloud is encrypted, the process is transparent to the developer.
 
-**不管是客户端接收云端数据、还是云端接受客户端数据，开发者的代码拿到的数据都是加密后的数据。**
+**不管是客户端接收云端数据、还是云端接受客户端数据，开发者的代码拿到的数据都是解密后的数据。**
 
 但云端有一个注意事项：为了避免客户端伪造`secretType`获取服务器敏感数据，应以服务器端为准，如果客户端携带的 `secretType` 不符合要求应拒绝响应数据。示例代码如下
 However, there is a caveat in the cloud: in order to prevent the client from forging `secretType` to obtain sensitive server data, the server side should prevail. If the `secretType` carried by the client does not meet the requirements, the response data should be rejected. The sample code is as follows
@@ -269,8 +289,13 @@ module.exports = {
 ## 错误码
 ## error code
 
-**缺内容，客户端错误，服务器解密错误，都应该把错误码列出来？**
-**Lack of content, client error, server decryption error, should the error code be listed? **
+|错误码									|说明											|平台				|
+|---										|---											|---				|
+|ACCOUNT_NOT_EXISTS			|用户账号不存在						|微信小程序	|
+|OPENID_NOT_FOUND				|用户表记录内openid未找到	|微信小程序	|
+|GET_ENCRYPT_KEY_FAILED	|获取加密key失败					|微信小程序	|
+
+微信小程序加解密时还会使用uni-id-common的checkToken方法，相关错误码参考：[uni-id错误码](uni-id-summary.md#errcode)
 
 ## 小贴士
 ## Tips

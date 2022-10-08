@@ -1427,13 +1427,17 @@ await uniIdCo.addUser({
 
 **参数说明**
 
-|参数名			|类型				|必填	|说明				|
-|--				|--					|--		|--					|
-|username		|string				|是		|用户名				|
-|password		|string				|是		|密码				|
-|authorizedApp	|Array&lt;string&gt;|否		|允许登录的app列表	|
-|nickname		|string				|否		|昵称				|
-|role			|Array&lt;string&gt;|否		|用户角色			|
+|参数名				|类型								|必填	|说明																											|
+|--						|--									|--		|--																												|
+|username			|string							|是		|用户名																										|
+|password			|string							|是		|密码																											|
+|authorizedApp|Array&lt;string&gt;|否		|允许登录的app列表																				|
+|nickname			|string							|否		|昵称																											|
+|role					|Array&lt;string&gt;|否		|用户角色																									|
+|mobile				|string							|否		|手机号																										|
+|email				|string							|否		|邮箱																											|
+|tags					|array							|否		|用户标签																									|
+|status				|number							|否		|用户状态，参考：[用户状态](uni-id-summary.md#user-status)|
 
 **返回值**
 

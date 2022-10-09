@@ -36,8 +36,7 @@ Note: Safe Network does not support web platform, only WeChat applet and App. An
 |App|微信小程序|
 |App|WeChat Mini Program|
 |:-:|:-:|
-|后续支持|3.6.2+|
-|Follow-up support|3.6.2+|
+|3.6.6+|3.6.6+|
 
 ## 准备工作
 ## Preparation
@@ -172,8 +171,7 @@ App平台安全网络需使用[自定义基座](../tutorial/run/run-app.md#custo
 ## 调用方式
 ## calling method
 
-准备工作完成后，在uni-app客户端调用uniCloud服务器时，可以通过加入secret参数来声明这次请求走安全网络，对传输数据加密。
-After the preparations are completed, when the uni-app client calls the uniCloud server, it can declare that the request goes through the secure network by adding the secret parameter to encrypt the transmitted data.
+准备工作完成后，在uni-app客户端调用uniCloud服务器时，可以通过参数来声明这次请求走安全网络，对传输数据加密。
 
 ### 云函数
 
@@ -244,8 +242,7 @@ Although the communication between the uni-app client and the uniCloud cloud is 
 但云端有一个注意事项：为了避免客户端伪造`secretType`获取服务器敏感数据，应以服务器端为准，如果客户端携带的 `secretType` 不符合要求应拒绝响应数据。示例代码如下
 However, there is a caveat in the cloud: in order to prevent the client from forging `secretType` to obtain sensitive server data, the server side should prevail. If the `secretType` carried by the client does not meet the requirements, the response data should be rejected. The sample code is as follows
 
-- 云函数中验证secretType
-- Verify secretType in cloud function
+### 云函数中验证secretType
 
 在云函数的context中有secretType。
 There is secretType in the context of the cloud function.
@@ -262,8 +259,7 @@ exports.main = async (event, context) => {
 }
 ```
 
-- 云对象中验证secretType
-- Validate secretType in cloud object
+### 云对象中验证secretType
 
 在云对象的this中有secretType。
 There is secretType in this of the cloud object.
@@ -279,7 +275,7 @@ module.exports = {
     // secretType 是客户端调用 uniCloud.importObject 传递的参数 secretMethods
     // secretType is the parameter secretMethods passed by the client when calling uniCloud.importObject
 
-    if (methodName === 'login' && (secretType !== 'both' || secretType !== 'response')) {
+    if (methodName === 'reward' && (secretType !== 'both' || secretType !== 'response')) {
       throw new Error('secretType invalid')
     }
   }

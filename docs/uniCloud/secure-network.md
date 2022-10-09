@@ -23,7 +23,7 @@ DCloud面向开发者同时提供了端引擎`uni-app` 和 云引擎`uniCloud`�
 
 |App|微信小程序|
 |:-:|:-:|
-|后续支持|3.6.2+|
+|3.6.6+|3.6.6+|
 
 ## 准备工作
 
@@ -148,7 +148,7 @@ App平台安全网络需使用[自定义基座](../tutorial/run/run-app.md#custo
   
 ## 调用方式
 
-准备工作完成后，在uni-app客户端调用uniCloud服务器时，可以通过加入secret参数来声明这次请求走安全网络，对传输数据加密。
+准备工作完成后，在uni-app客户端调用uniCloud服务器时，可以通过参数来声明这次请求走安全网络，对传输数据加密。
 
 ### 云函数
 
@@ -207,7 +207,7 @@ uniCloud.importObject('object-name', {
 
 但云端有一个注意事项：为了避免客户端伪造`secretType`获取服务器敏感数据，应以服务器端为准，如果客户端携带的 `secretType` 不符合要求应拒绝响应数据。示例代码如下
 
-- 云函数中验证secretType
+### 云函数中验证secretType
 
 在云函数的context中有secretType。
 
@@ -222,7 +222,7 @@ exports.main = async (event, context) => {
 }
 ```
 
-- 云对象中验证secretType
+### 云对象中验证secretType
 
 在云对象的this中有secretType。
 
@@ -235,7 +235,7 @@ module.exports = {
     // methodName 是客户端调用的方法名
     // secretType 是客户端调用 uniCloud.importObject 传递的参数 secretMethods
 
-    if (methodName === 'login' && (secretType !== 'both' || secretType !== 'response')) {
+    if (methodName === 'reward' && (secretType !== 'both' || secretType !== 'response')) {
       throw new Error('secretType invalid')
     }
   }

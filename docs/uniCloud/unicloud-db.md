@@ -845,7 +845,7 @@ unicloud-db组件简化了列表分页的写法，只需简单的配置每页需
       </view>
       <view class="loading" v-if="loading">加载中...</view>
       <!-- 分页组件 -->
-      <uni-pagination show-icon :page-size="pagination.size" total="pagination.count" @change="onpagination" />
+      <uni-pagination show-icon :page-size="pagination.size" :total="pagination.count" @change="onpagination" />
     </unicloud-db>
   </view>
 </template>

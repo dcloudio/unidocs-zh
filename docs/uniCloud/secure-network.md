@@ -1,8 +1,7 @@
 **云端一体安全网络**
 **Cloud integrated security network**
 
-> HBuilderX 3.6.2+ 支持
-> HBuilderX 3.6.2+ support
+> HBuilderX 3.6.6+ 支持
 
 ## 简介
 ## Introduction
@@ -10,22 +9,17 @@
 网络安全的问题很多：
 There are many problems with network security:
 
-1. 客户端受信。因为过去采用无状态网络通过接口交换数据，客户端的真实性很难保证。
-1. The client is trusted. Because in the past, stateless networks were used to exchange data through interfaces, the authenticity of the client was difficult to guarantee.
-2. 网络抓包，即便是https的请求也会被抓包。
-2. Network packet capture, even https requests will be captured.
+1. 客户端受信。由于http的无状态，客户端的真实性很难保证。模拟客户端、重签apk，防不胜防。
+2. 网络受信。即便是https的请求也会被抓包，路由器、地方运营商都可能获取你的数据、劫持和改写你的请求。
 
 当攻击者了解了你的服务器接收什么样的数据时，就可以冒名客户端，提交假数据来攻击你的服务器。
 When an attacker knows what kind of data your server receives, they can impersonate the client and submit fake data to attack your server.
 
-尤其当你的业务中涉及促销、返佣、激励视频等场景，非常容易被刷。褥羊毛已经是一个非常成熟的灰产。
-Especially when your business involves promotions, rebates, incentive videos and other scenarios, it is very easy to be brushed. Bedding wool is already a very mature grey product.
+尤其当你的业务中涉及促销、返佣、激励视频等场景，非常容易被刷。褥羊毛已经是一个非常成熟的灰产，哪里有漏洞，哪里就有他们赚钱的机会。
 
-DCloud面向开发者同时提供了端引擎`uni-app` 和 云引擎`uniCloud`，其实可以提供云端一体的安全网络的能力。
-DCloud provides both the end engine `uni-app` and the cloud engine `uniCloud` for developers, which can actually provide the ability of a cloud-integrated secure network.
+DCloud面向开发者同时提供了端引擎`uni-app` 和 云引擎`uniCloud`，如今进一步升级，提供云端一体的安全网络的能力。
 
-`uni-app` 连接 `uniCloud` 时，可以选择是否启动安全网络。它通过高安全的保护机制，防止客户端伪造和通信内容抓包。
-When `uni-app` connects to `uniCloud`, you can choose whether to enable secure network. It uses a high-security protection mechanism to prevent client forgery and communication content capture.
+`uni-app` 连接 `uniCloud` 时，可以选择是否启动安全网络。它通过高安全的保护机制，解决了客户端受信和网络受信的问题，防止客户端伪造和通信内容抓包。
 
 注意：安全网络不支持web平台，只支持微信小程序和App。并且App的安全级别更高。
 Note: Safe Network does not support web platform, only WeChat applet and App. And the security level of the App is higher.
@@ -38,10 +32,40 @@ Note: Safe Network does not support web platform, only WeChat applet and App. An
 |:-:|:-:|
 |3.6.6+|3.6.6+|
 
-## 准备工作
-## Preparation
+## 如何开通
 
-### 微信小程序@mp-weixin
+App和微信小程序略有区别，但大体都要经过如下流程：
+1. 在dev.dcloud.net.cn的应用管理中指定要开通的应用，在“各平台信息”中配置app的包名、签名摘要或者微信小程序的appid。
+2. 在uniCloud web控制台选定一个服务空间，选择安全网络，关联某个app。
+
+两个平台细化说明如下。
+
+### App平台开通安全网络@app
+
+1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 证书管理`内填写安卓应用的包名、签名和iOS应用的bundleId。一个应用只能有一个发行证书配置，但是可以有多个开发证书配置
+
+  【图片待补充】
+
+2. 在uniCloud控制台关联允许发送安全网络请求的应用
+
+  【图片待补充】
+  
+3. 在项目根目录manifest.json文件内为app平台开启安全网络模块
+
+  【图片待补充】
+
+注意：打包后生效。测试时需打包[自定义基座](../tutorial/run/run-app.md#customplayground)。
+
+4. 在服务空间创建数据表[opendb-app-client-key](缺链接!!!!!!!!!!)用于保存发放给客户端的密钥对
+
+  - 切勿删除或修改此集合内容，否则会导致部分客户端不能发送安全网络请求（重新安装客户端或清除客户端数据后才能正常使用）
+  - 如果服务空间开通了redis会在redis内存储一份客户端密钥对以加速安全网络请求的处理，所使用的键为`unicloud:encryption:app-client-key:{appId}:{deviceId}:string`
+
+5. 上传任意schema文件到服务空间以触发一次clientDB云端模块的更新
+
+**这只写了云打包，离线打包呢？!!!!!!!**
+
+### 微信小程序开通安全网络@mp-weixin
 
 安全网络在微信小程序上的实现，依赖了微信提供的一些用户级的凭据。所以需要下载`uni-id-pages`和`uni-open-bridge`，并在app.vue里初始化。
 
@@ -152,35 +176,16 @@ The App.vue page needs to add the following code:
   
   【图片待补充】
 
-### App@app
 
-App平台安全网络需使用[自定义基座](../tutorial/run/run-app.md#customplayground)，App端安全网络不依赖于登录逻辑。
+## 数据加密传输的开发方式
 
-1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 证书管理`内填写安卓应用的包名、签名和iOS应用的bundleId。一个应用只能有一个发行证书配置，但是可以有多个开发证书配置
+如果你只需要客户端身份验真，不需要对网络传输的数据加密，那么参考上一章节的文档就够了。
 
-  【图片待补充】
+如果还需要加密传输的数据，则在客户端和服务器都要编写代码，倒不需要写具体的加密解密算法，而是需要在客户端指定哪些请求、哪些数据要加密，而在云端要校验客户端是否指定了正确的条件。
 
-2. 在uniCloud控制台关联允许发送安全网络请求的应用
+具体写法如下：
 
-  【图片待补充】
-  
-3. 在项目根目录manifest.json文件内为app平台开启安全网络模块
-
-  【图片待补充】
-
-4. 创建集合`opendb-app-client-key`用于保存发放给客户端的密钥对
-
-  - 切勿删除或修改此集合内容，否则会导致部分客户端不能发送安全网络请求（重新安装客户端或清除客户端数据后才能正常使用）
-  - 如果服务空间开通了redis会在redis内存储一份客户端密钥对以加速安全网络请求的处理，所使用的键为`unicloud:encryption:app-client-key:{appId}:{deviceId}:string`
-
-5. 通过上传schema触发一次clientDB云函数的更新
-  
-## 调用方式
-## calling method
-
-准备工作完成后，在uni-app客户端调用uniCloud服务器时，可以通过参数来声明这次请求走安全网络，对传输数据加密。
-
-### 云函数
+### 客户端请求云函数
 
 客户端通过callFunction调用云函数时，加入secretType参数。
 When the client calls the cloud function through callFunction, add the secretType parameter.
@@ -194,16 +199,20 @@ uniCloud.callFunction({
 })
 ```
 
-### 云对象
+也就是每个callFunction请求，都可以指定是否加密，以及是对上行数据还是下行数据加密。
+
+### 客户端请求云对象
 
 客户端通过importObject调用云对象时，通过secretMethods参数来配置每个方法调用时是否加密。
 When the client calls cloud objects through importObject, configure whether to encrypt each method through the secretMethods parameter.
 
 ```js
 uniCloud.importObject('object-name', {
-  secretMethods: {'login':'both'} // 支持配置所有方法设置加密参见下面的 secretMethods 说明
+  secretMethods: {'login':'both'} // 对login方法设置为上下行的数据均要加密。也支持配置所有方法设置加密，参见下面的 secretMethods 说明
 })
 ```
+
+也就是云对象导入时配置某个方法的请求是否要加密，以及是对上行数据还是下行数据加密。那么在客户端调用云对象的相应方法时会自动按这个配置执行。
 
 ### clientDB
 
@@ -215,14 +224,15 @@ uniCloud.importObject('object-name', {
 |值			|描述												|
 |value |description |
 |:-:		|:-:												|
-|none		|不加密，默认值										|
-|none |No encryption, default |
+|none		|上下行都不加密，默认值										|
 |request	|只加密客户端请求时的上行数据，服务器下发数据不加密	|
 |request |Only the uplink data requested by the client is encrypted, and the data sent by the server is not encrypted |
 |response	|客户端请求时不加密数据，只加密服务器下发的数据		|
 |response |The data is not encrypted when the client requests, only the data sent by the server is encrypted |
 |both		|客户端和服务器上行下行数据都加密数据				|
 |both |Client and server upstream and downstream data are encrypted data |
+
+- 之所以提供如此精细的加密配置，是因为加解密都是消耗资源的，增加了等待时间。一般只对真正需要防止网络窃取的保密数据才加密。
 
 **secretMethods 属性说明**
 **secretMethods property description**
@@ -236,23 +246,22 @@ uniCloud.importObject('object-name', {
 
 **注意**
 
-- 微信小程序安全网络依赖于登录逻辑，因此在客户端检测到发送安全网络请求时用户未登录时会自动调用uni-id-co的loginByWeixin接口
+- 微信小程序安全网络依赖于登录逻辑，因此在客户端检测到发送安全网络请求时，若用户未登录则会自动调用uni-id-co的loginByWeixin接口
 
 ## 服务器端
 ## Service-Terminal
 
-虽然uni-app客户端和uniCloud云端通信是加密的，但对于开发者而言过程是透明的。
-Although the communication between the uni-app client and the uniCloud cloud is encrypted, the process is transparent to the developer.
+uni云端一体安全网络，已经在底层封装好了复杂的安全相关的算法。开发者只需关心对哪些请求、哪些数据进行加密。
 
-**不管是客户端接收云端数据、还是云端接受客户端数据，开发者的代码拿到的数据都是解密后的数据。**
+**不管是客户端接收云端数据、还是云端接受客户端数据，开发者的代码拿到的数据永远都是解密后的数据。**
 
-但云端有一个注意事项：为了避免客户端伪造`secretType`获取服务器敏感数据，应以服务器端为准，如果客户端携带的 `secretType` 不符合要求应拒绝响应数据。示例代码如下
-However, there is a caveat in the cloud: in order to prevent the client from forging `secretType` to obtain sensitive server data, the server side should prevail. If the `secretType` carried by the client does not meet the requirements, the response data should be rejected. The sample code is as follows
+但云端有一个注意事项：为了避免客户端伪造`secretType`获取服务器敏感数据，应以服务器端为准，如果客户端携带的 `secretType` 不符合要求应拒绝响应数据。
+
+示例代码如下：
 
 ### 云函数中验证secretType
 
-在云函数的context中有secretType。
-There is secretType in the context of the cloud function.
+在云函数的context中有secretType。如果这个云函数的返回数据必须加密，那么应该使用如下方式校验客户端的请求是否合法。
 
 ```js
 exports.main = async (event, context) => {
@@ -261,15 +270,14 @@ exports.main = async (event, context) => {
   // secretType is the parameter secretType passed by the client to call uniCloud.callFunction
 
   if (secretType !== 'both' || secretType !== 'response') {
-    return null
+    return null // 拒绝返回有效数据
   }
 }
 ```
 
 ### 云对象中验证secretType
 
-在云对象的this中有secretType。
-There is secretType in this of the cloud object.
+在云对象的this中有secretType。如果这个云对象的reward方法的返回数据必须加密，那么应该使用如下方式校验客户端的请求是否合法。
 
 ```js
 module.exports = {
@@ -283,7 +291,7 @@ module.exports = {
     // secretType is the parameter secretMethods passed by the client when calling uniCloud.importObject
 
     if (methodName === 'reward' && (secretType !== 'both' || secretType !== 'response')) {
-      throw new Error('secretType invalid')
+      throw new Error('secretType invalid') // 拒绝返回有效数据
     }
   }
 }

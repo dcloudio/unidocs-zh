@@ -167,6 +167,13 @@ App平台安全网络需使用[自定义基座](../tutorial/run/run-app.md#custo
 3. 在项目根目录manifest.json文件内为app平台开启安全网络模块
 
   【图片待补充】
+
+4. 创建集合`opendb-app-client-key`用于保存发放给客户端的密钥对
+
+  - 切勿删除或修改此集合内容，否则会导致部分客户端不能发送安全网络请求（重新安装客户端或清除客户端数据后才能正常使用）
+  - 如果服务空间开通了redis会在redis内存储一份客户端密钥对以加速安全网络请求的处理，所使用的键为`unicloud:encryption:app-client-key:{appId}:{deviceId}:string`
+
+5. 通过上传schema触发一次clientDB云函数的更新
   
 ## 调用方式
 ## calling method

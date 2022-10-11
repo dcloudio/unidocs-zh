@@ -314,7 +314,7 @@ module.exports = {
 ## 小贴士
 ## Tips
 
-1. 安全是相对的，没有绝对的安全。
-1. Security is relative, there is no absolute security.
-2. 安全是有代价的，加密的数据越庞大，加密和解密的耗时越长。
-2. Security comes at a price. The larger the encrypted data, the longer it takes to encrypt and decrypt.
+1. 安全是相对的，没有绝对的安全。uni云端一体安全网络只是帮助普通开发者达到了业内一流的安全水准。
+2. 安全涉及的范围很广，除了安全网络包含的范围外，还有账户密码、云端各种key和secret，都要保护好。很多安全事故是程序员误把关键key提交到github等代码托管平台。
+3. 安全是有代价的，加密的数据越庞大，加密和解密的耗时越长。
+4. 开启安全网络后，如果觉的联网速度变慢，一方面要开启redis，并在云函数中挂载redis扩展库；另一方面控制加密的数据量，没必要加密的数据就别加密。

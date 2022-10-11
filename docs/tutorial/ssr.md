@@ -207,6 +207,14 @@ Example:
 	</script>
 	```
 
+#### 运行与调试@run-debug
+
+HBuilderX创建的项目在运行菜单勾选`启用SSR`再运行到浏览器即可
+
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/afe086f6-cea8-4231-abe7-4e3ded0b08fd.jpg)
+
+cli创建的项目使用`npm run dev:h5:ssr`运行即可
+
 #### 发行与部署@distribute
 #### Release and deploy @distribute
 

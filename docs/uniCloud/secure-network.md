@@ -44,7 +44,7 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 
 1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 证书管理`内填写安卓应用的包名、签名和iOS应用的bundleId。一个应用只能有一个发行证书配置，但是可以有多个开发证书配置
 
-  【图片待补充】
+  ![证书管理](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b4e76aed-6659-47e6-a18e-e41bdf804643.jpg)
 
 2. 在uniCloud控制台关联允许发送安全网络请求的应用
 
@@ -52,18 +52,21 @@ App和微信小程序略有区别，但大体都要经过如下流程：
   
 3. 在项目根目录manifest.json文件内为app平台开启安全网络模块
 
-  【图片待补充】
+  ![App云端一体安全网络模块](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fe4620a4-2e16-4306-b9ae-38f1ded13a43.jpg)
 
-注意：打包后生效。测试时需打包[自定义基座](../tutorial/run/run-app.md#customplayground)。
+  **注意：**打包后生效。测试时需打包[自定义基座](../tutorial/run/run-app.md#customplayground)。
 
 4. 在服务空间创建数据表[opendb-app-client-key](缺链接!!!!!!!!!!)用于保存发放给客户端的密钥对
 
   - 切勿删除或修改此集合内容，否则会导致部分客户端不能发送安全网络请求（重新安装客户端或清除客户端数据后才能正常使用）
-  - 如果服务空间开通了redis会在redis内存储一份客户端密钥对以加速安全网络请求的处理，所使用的键为`unicloud:encryption:app-client-key:{appId}:{deviceId}:string`
+  - 如果服务空间开通了redis会在redis内存储一份客户端密钥对以加速安全网络请求的处理，所使用的键为`unicloud:secure:app-client-key:{appId}:{deviceId}:string`
+  - **强烈建议开启redis功能并在云函数关联redis扩展，**会大幅加快访问速度并减少数据库请求次数
 
 5. 上传任意schema文件到服务空间以触发一次clientDB云端模块的更新
 
-**这只写了云打包，离线打包呢？!!!!!!!**
+**注意**
+
+- 安全网络暂未支持离线打包，后续会提供离线打包的方案
 
 ### 微信小程序开通安全网络@mp-weixin
 
@@ -71,7 +74,7 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 
 1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 【名称待定】`内填写微信小程序的appId。一个应用只能有一个发行配置，但是可以有多个开发配置
 
-  【图片待补充】
+  ![微信小程序AppId绑定](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/8a1c5106-23ba-46a6-ab3b-3f2ca7c6883a.jpg)
   
 2. 在uniCloud控制台关联允许发送安全网络请求的应用
 
@@ -172,9 +175,9 @@ The App.vue page needs to add the following code:
 </script>
 ```
   
-7. 在项目根目录manifest.json文件内为微信小程序平台开启安全网络模块
+7. 在项目根目录manifest.json文件内为微信小程序平台开启`云端一体安全网络模块`
   
-  【图片待补充】
+  ![微信小程序云端一体安全网络模块](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ab96f1f7-af14-4f08-8b1c-699ecfce3381.jpg)
 
 
 ## 数据加密传输的开发方式

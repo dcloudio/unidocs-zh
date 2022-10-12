@@ -41,8 +41,7 @@ In the plugin market, every type of template plugin can be found, but if they ar
 所有uniCloud的标准应用，都基于`uni-id`来做。`uni-id-common`公共模块自动内置在每个服务空间里的。
 All uniCloud standard applications are based on `uni-id`. The `uni-id-common` common module is automatically built into each service space.
 
-有了统一的账户规范，并且围绕这套账户规范，有各种各样插件，那么开发者可以随意整合这些插件，让数据连同。
-With a unified account specification, and around this set of account specifications, there are various plug-ins, so developers can integrate these plug-ins at will, and let the data go together.
+有了统一的账户规范，并且围绕这套账户规范，有各种各样插件，那么开发者可以随意整合这些插件，让数据互通。
 
 规范，还可以让上下游充分协同。插件市场会出现各种数据迁移插件，比如把从discuz里把用户迁移到`uni-id`中的插件，相信围绕这套规范的产业链会非常活跃。
 Specifications can also allow the upstream and downstream to fully cooperate. There will be various data migration plug-ins in the plug-in market, such as plug-ins that migrate users from discuz to `uni-id`. I believe that the industry chain around this specification will be very active.

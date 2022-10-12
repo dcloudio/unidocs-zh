@@ -22,7 +22,7 @@ keyword: Troubleshooting guide for real machine operation, can't connect to Andr
 - Android 11部分手机真机运行文件同步失败的问题，HBuilderX 3.1.19已解决此问题，请升级HBuilderX 到3.1.19+版本。
 - Some Android 11 mobile phones failed to synchronize files when running on real devices. HBuilderX 3.1.19 has solved this problem. Please upgrade HBuilderX to version 3.1.19+.
 - HBuilderX，【设置 - 运行设置】，自定义过adb路径。如有自定义，请检查adb路径是否有效。如不确定，请清除。然后重启HBuilderX.
-- HBuilderX, [Settings - Run Settings], customize the adb path. If customized, please check if the adb path is valid. If unsure, please clear. Then restart HBuilderX.
+- 如果是华为荣耀Magic UI系列手机，检测不到手机，请参考 [华为荣耀Magic UI系列手机ADB连接手机方法](https://ask.dcloud.net.cn/article/40005)
 
 出现问题手机分析清楚问题在哪个环节。
 When there is a problem, the mobile phone analyzes the problem clearly.
@@ -69,7 +69,7 @@ Special attention: Windows is connected to an Android phone, and you must ensure
 4. Android5.0及以上系统，不要使用访客模式。这种模式下无法成功运行。
 4. For Android 5.0 and above systems, do not use guest mode. It will not work successfully in this mode.
 5. 部分手机如小米，有usb安装应用的权限设置，需在手机上允许通过usb安装应用。不同rom的界面不一样，请自行百度你的手机打开usb安装应用的方式。
-5. Some mobile phones, such as Xiaomi, have permission settings for installing applications via usb, and it is necessary to allow installation of applications through usb on the mobile phone. The interface of different roms is different, please Baidu your mobile phone to open the usb installation method.
+6. 如果是华为荣耀Magic UI系列手机，请参考 [华为荣耀Magic UI系列手机ADB连接手机方法](https://ask.dcloud.net.cn/article/40005)
 
 ## 3. Mac 连接手机/模拟器说明@macosx
 ## 3. Mac connection phone/emulator instructions @macosx

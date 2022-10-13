@@ -82,8 +82,7 @@ When creating a new table in the uniCloud web console, you can also select vario
 uniCloud同时支持阿里云和腾讯云，它们的数据库大体相同，有细微差异。阿里云的数据库是mongoDB4.0，腾讯云则使用自研的文档型数据库（兼容mongoDB 4.0版本）。uniCloud基本抹平了不同云厂商的差异，有差异的部分会在文档中单独标注。
 uniCloud supports both Alibaba Cloud and Tencent Cloud, and their databases are roughly the same, with minor differences. Alibaba Cloud's database is mongoDB4.0, while Tencent Cloud uses a self-developed document database (compatible with mongoDB 4.0 version). uniCloud basically smoothes out the differences between different cloud vendors, and the differences will be marked separately in the document.
 
-## 创建第一个表
-## create the first table
+## 创建第一个表@create-collection
 
 1. 打开 uniCloud web控制台 [https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)
 1. Open the uniCloud web console [https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)

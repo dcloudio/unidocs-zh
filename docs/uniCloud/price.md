@@ -4,8 +4,7 @@
 选择阿里云作为服务商时，服务空间资源完全免费，每个账号最多允许创建50个服务空间。**阿里云目前处于公测阶段，如有正式业务对稳定性有较高要求建议使用腾讯云。**
 When Alibaba Cloud is selected as the service provider, the service space resources are completely free, and each account is allowed to create a maximum of 50 service spaces. **Alibaba Cloud is currently in the public beta stage. If you have a formal business that requires high stability, it is recommended to use Tencent Cloud. **
 
-选择腾讯云作为服务商时，可以创建一个免费的服务空间，资源详情参考[腾讯云免费额度](uniCloud/price?id=price-free)；如想提升免费空间资源配额，或创建更多服务空间，则需付费购买。
-When you choose Tencent Cloud as a service provider, you can create a free service space. For resource details, please refer to [Tencent Cloud Free Quota](uniCloud/price?id=price-free); if you want to increase the free space resource quota, or create more services space, you need to pay for it.
+选择腾讯云作为服务商时，需付费购买套餐，超出套餐后可开启按量计费，套餐详情参考[腾讯云基础套餐](uniCloud/price?id=tencent-package)。
 
 付费用户享受腾讯云提供的服务协议SLA，[详见](https://uniapp.dcloud.net.cn/uniCloud/agreement)
 Paid users enjoy the service agreement SLA provided by Tencent Cloud, [see details](https://uniapp.dcloud.net.cn/uniCloud/agreement)
@@ -169,6 +168,13 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 
 **注：当包年包月服务空间升级新套餐时，如果已开通前端网页托管，则前端网页托管会自动转为按量计费，请确保账号余额充足！**
 **Note: When the annual and monthly service space is upgraded to a new package, if the front-end web hosting has been activated, the front-end web hosting will be automatically converted to metered billing, please ensure that the account balance is sufficient! **
+
+### 保证金
+腾讯云购买基础套餐后，如果开启了`超限按量`功能，在超出套餐资源用量后，每日的资源用量会在第二天按照按量计费结算并从余额中扣除。由于存在余额超支的情况，使用按量计费服务需要缴纳保证金，账户保证金在停止使用按量计费服务后可以申请退还，所以账户保证金不能申请开具发票。若需退还保证金，需满足以下条件：
+1. 服务空间未开启`超限按量`功能
+2. 服务空间未开通`前端网页托管`
+
+由于包年包月前端网页托管已下线，新开通的前端网页托管均为按量计费，如果开通了上面两项功能，请先关闭，然后发邮件到 service@dcloud.io 申请退还。
 
 ## 发生故障时如何判断故障点
 ## How to judge the fault point when a fault occurs

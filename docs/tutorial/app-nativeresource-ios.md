@@ -7,11 +7,9 @@ App packaging provides configuration Info.plist and Bundle Resources in iOS nati
 但manifest.json不能包含所有iOS的配置。
 But manifest.json cannot contain all iOS configuration.
 
-在HBuilderX 3.6以前，开发者如需使用manifest未封装的配置、或需自定义资源文件（Bundle Resources）内容，只能离线打包或开发[App原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)。
-Before HBuilderX 3.6, if developers need to use the unpackaged configuration of the manifest or customize the content of the resource file (Bundle Resources), they can only package or develop the [App native language plug-in](https://nativesupport.dcloud.net .cn/NativePlugin/README).
+在HBuilderX 3.6.5以前，开发者如需使用manifest未封装的配置、或需自定义资源文件（Bundle Resources）内容，只能离线打包或开发[App原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)。
 
-HBuilderX3.6.1起，支持直接在应用项目中配置 iOS 平台的 Info.plist 和 资源文件（Bundle Resources）。
-Since HBuilderX 3.6.1, it supports to configure the iOS platform Info.plist and Bundle Resources directly in the application project.
+HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plist 和 资源文件（Bundle Resources）。
 
 
 ## 配置文件 Info.plist

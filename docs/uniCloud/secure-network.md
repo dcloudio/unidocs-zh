@@ -41,7 +41,7 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 
 2. 在uniCloud控制台关联允许发送安全网络请求的应用
 
-  【图片待补充】
+  ![关联应用到服务空间安全网络](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fa9fdcff-5fd0-4515-9f64-220008efd27b.jpg)
   
 3. 在项目根目录manifest.json文件内为app平台开启安全网络模块
 
@@ -49,7 +49,7 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 
   **注意：**打包后生效。测试时需打包[自定义基座](../tutorial/run/run-app.md#customplayground)。
 
-4. 在服务空间创建数据表[opendb-app-client-key](缺链接!!!!!!!!!!)用于保存发放给客户端的密钥对
+4. 在服务空间创建数据表[opendb-app-client-key](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-app-client-key)用于保存发放给客户端的密钥对，参考文档：[创建一个表](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#create-collection)
 
   - 切勿删除或修改此集合内容，否则会导致部分客户端不能发送安全网络请求（重新安装客户端或清除客户端数据后才能正常使用）
   - 如果服务空间开通了redis会在redis内存储一份客户端密钥对以加速安全网络请求的处理，所使用的键为`unicloud:secure:app-client-key:{appId}:{deviceId}:string`
@@ -71,7 +71,7 @@ App和微信小程序略有区别，但大体都要经过如下流程：
   
 2. 在uniCloud控制台关联允许发送安全网络请求的应用
 
-  【图片待补充】
+  ![关联应用到服务空间安全网络](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fa9fdcff-5fd0-4515-9f64-220008efd27b.jpg)
 
 3. 工程中导入uni-id-pages
 
@@ -167,9 +167,9 @@ App.vue页面需要补充如下代码：
 
 ## 数据加密传输的开发方式
 
-如果你只需要客户端身份验真，不需要对网络传输的数据加密，那么参考上一章节的文档就够了。
+<!-- 如果你只需要客户端身份验真，不需要对网络传输的数据加密，那么参考上一章节的文档就够了。 -->
 
-如果还需要加密传输的数据，则在客户端和服务器都要编写代码，倒不需要写具体的加密解密算法，而是需要在客户端指定哪些请求、哪些数据要加密，而在云端要校验客户端是否指定了正确的条件。
+如需加密传输的数据，则在客户端和服务器都要编写代码，倒不需要写具体的加密解密算法，而是需要在客户端指定哪些请求、哪些数据要加密，而在云端要校验客户端是否指定了正确的条件。
 
 具体写法如下：
 
@@ -248,7 +248,7 @@ exports.main = async (event, context) => {
   // secretType 是客户端调用 uniCloud.callFunction 传递的参数 secretType
 
   if (secretType !== 'both' || secretType !== 'response') {
-    return null // 拒绝返回有效数据
+    throw new Error('secretType invalid') // 拒绝返回有效数据
   }
 }
 ```

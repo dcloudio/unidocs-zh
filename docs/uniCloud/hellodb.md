@@ -57,7 +57,7 @@ _此处仅为举例，实际业务中，登录日志单独存放在另一个表�
 
 uniCloud同时支持阿里云和腾讯云，它们的数据库大体相同，有细微差异。阿里云的数据库是mongoDB4.0，腾讯云则使用自研的文档型数据库（兼容mongoDB 4.0版本）。uniCloud基本抹平了不同云厂商的差异，有差异的部分会在文档中单独标注。
 
-## 创建第一个表
+## 创建第一个表@create-collection
 
 1. 打开 uniCloud web控制台 [https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)
 

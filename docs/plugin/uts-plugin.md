@@ -180,9 +180,9 @@ Android平台原生三方库目录，支持以下类型文件：
 - jar 
 - aar
 
-如果使用了NDK开发so库，也支持保存到此目录，需按Android的abi类型分目录保存。
+如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但不推荐这么做，因为多个uts插件引用相同三方原生sdk时可能会产生冲突，如果sdk支持仓储，建议优先使用仓储，参考config.json的[dependencies](#dependencies)。  
 
-如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但不推荐这么做，如果三方原生sdk支持仓储建议优先使用仓储，参考config.json的[dependencies](#dependencies)。  
+如果使用的三方sdk包含了so库，也可以保存到此目录，需按Android的abi类型分目录保存。
 
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 

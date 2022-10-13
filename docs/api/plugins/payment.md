@@ -90,15 +90,9 @@ WeChat MiniApp`signType` description
 1. 百度小程序的 orderInfo 为 Object 类型，详细的数据结构，参考：[百度收银台支付](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)。
 1. The orderInfo of Baidu MiniApp is of Object type. For detailed data structure, please refer to: [Baidu Cashier Payment](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/).
 2. 支付宝小程序的 orderInfo(支付宝的规范为 tradeNO) 为 String 类型，表示支付宝交易号。
-2. The orderInfo of the Alipay MiniApp(the specification of Alipay is tradeNO) is of String type, indicating the Alipay transaction number.
-3. 字节跳动小程序的 orderInfo 为 Object 类型，详见：[发起头条支付](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/payment/pay)
-3. The orderInfo of the ByteDance MiniApp is of type Object, see: [Initiate Toutiao Payment](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/payment/pay)
-4. 由于头条新版支付接口要求版本较高，在不支持新版支付接口的情况下仍会对应旧版支付接口，此时 orderInfo 对应字节跳动小程序 data， 详见：[头条支付旧版接口](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/payment/requestpayment-deprecated)。用户可以使用 tt.pay 判断是否支持新版接口。另外需要注意字节跳动小程序在`1.35.0+`版本基础库支持了 canIUse ，在`1.19.4+`版本基础库支持了新版支付接口 tt.pay ，所以应避免使用 canIUse 判断是否为新版接口。
-4. Since the new version of Toutiao payment interface requires a higher version, it will still correspond to the old version of the payment interface if it does not support the new version of the payment interface. At this time, orderInfo corresponds to the ByteDance MiniApp data. For details, please refer to: [Toutiao payment old version interface](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/payment/requestpayment-deprecated). Users can usett.pay to determine whether the new version of the interface is supported. In addition, it should be noted that the ByteDance MiniApp supports canIUse in the `1.35.0+` version of the basic library, and supports the new version of the payment interface tt.pay in the `1.19.4+` version of the basic library, so you should avoid using canIUse to judge whether it is a new version interface.
-5. App端，支付宝支付 orderInfo 为 String 类型。
-5. On the App side, Alipay payment orderInfo is of String type.
-6. App端，微信支付 orderInfo 为 Object 类型。
-6. On the App side, WeChat payment orderInfo is of type Object.
+3. 字节跳动小程序的 orderInfo 为 Object 类型，详见：[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay/)
+4. App端，支付宝支付 orderInfo 为 String 类型。
+5. App端，微信支付 orderInfo 为 Object 类型。
 6. App端，苹果应用内支付 orderInfo 为Object 类型，{productid: 'productid'}。
 6. On the App side, Apple in-app payment orderInfo is of type Object, {productid: 'productid'}.
 

@@ -4,9 +4,9 @@ app打包，在iOS原生开发中提供了配置 Info.plist 和 资源文件（B
 
 但manifest.json不能包含所有iOS的配置。
 
-在HBuilderX 3.6以前，开发者如需使用manifest未封装的配置、或需自定义资源文件（Bundle Resources）内容，只能离线打包或开发[App原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)。
+在HBuilderX 3.6.5以前，开发者如需使用manifest未封装的配置、或需自定义资源文件（Bundle Resources）内容，只能离线打包或开发[App原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)。
 
-HBuilderX3.6.1起，支持直接在应用项目中配置 iOS 平台的 Info.plist 和 资源文件（Bundle Resources）。
+HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plist 和 资源文件（Bundle Resources）。
 
 
 ## 配置文件 Info.plist

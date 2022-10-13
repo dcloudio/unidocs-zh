@@ -180,8 +180,8 @@ With uni-push, developers should no longer use other push schemes. However, we f
 	答：能部分替代。uni-push客户端接收消息的通讯协议属于websocket；但业务服务端向uniPush服务发送消息用的是http通讯协议，会有1-2秒的延时。需要超低延迟的应用场景，如多人交互远程画板不合适。但对于普通的im消息、聊天、通知都没有问题。
 	A: Partial replacement is possible. The communication protocol used by the uni-push client to receive messages belongs to websocket; however, the service server uses the HTTP communication protocol to send messages to the uniPush service, and there will be a delay of 1-2 seconds. Application scenarios that require ultra-low latency, such as multi-person interactive remote drawing boards, are not suitable. But there is no problem with normal im messages, chats, notifications.
 
-- 5+app和wap2app支持uni-push2.0吗？
-
+- 5+app和wap2app支持uni-push2.0吗？  
+	
 	答：暂不支持。
 
 # 快速上手

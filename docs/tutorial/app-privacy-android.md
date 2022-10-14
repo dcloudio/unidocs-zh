@@ -64,11 +64,8 @@
     "buttonRefuse": "退出应用"
   },
   "disagreeMode":{
-    // 用户拒绝隐私协议后，是否直接进入游客模式
     "support": false,
-    // 游客模式下，是否加载原生插件
     "loadNativePlugins": false,
-     // HX 3.6.7 版本后支持，默认false,当设置为true，隐私协议弹窗 会出现 游客模式 按钮
     "visitorEntry": true
   },
   "styles": {
@@ -83,7 +80,6 @@
     "buttonRefuse": {
       "color": "#00ffff"
     },
-    // HX 3.6.7 版本后支持，游客模式按钮字体颜色
     "buttonVisitor": {
       "color": "#00ffff"
     }
@@ -106,6 +102,12 @@
 - hrefLoader  HX 3.4.13之后版本新增，system 使用系统webview 打开隐私协议链接，默认使用uni-app内置web组件
   隐私政策提示框中的链接地址加载方式，可取值：system-表示使用系统浏览器打开；default-表示使用应用内置webview页面打开。默认值为default。  
   **注意：可能有些检测机构认为webview会读取隐私信息，这时可以配置为system来解决此问题**  
+- disagreeMode 
+  用户不同意隐私协议的响应配置 
+  + support 用户拒绝隐私协议后，是否直接进入游客模式，默认关闭 
+  + loadNativePlugins 游客模式下，是否加载原生插件
+  + visitorEntry HX 3.6.7 版本后支持，默认false,当设置为true，隐私协议弹窗 会出现 游客模式 按钮
+
 - second  
   配置二次确认提示框显示内容，message属性值不为空时弹出二次确认提示框  
   + title 二次确认提示框上的标题  
@@ -119,6 +121,7 @@
   + title 提示框标题样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
   + buttonAccept 接受按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
   + buttonRefuse 拒绝按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
+  + buttonVisitor HX 3.6.7 版本后支持，游客模式按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
 - disagreeMode  
   未同意隐私政策模式 `HBuilder X 3.3.1版本新增支持` 具体配置及说明查看[https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode)  
   + support  true表示开启disagreeMode；false表示不开启（用户不同意“隐私政策”则退出应用）。默认值为false。  

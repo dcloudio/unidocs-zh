@@ -145,6 +145,9 @@ package.json在每个`uni_modules`插件中都必须存在，包含了插件的�
       "npmurl":"" // npm 地址
     },
     "uni_modules": { // uni_modules配置
+        "scripts": {
+            "init": "node scripts/init.js" // 新增于 HBuilderX 3.6.7，初次安装此插件时执行，如果一次安装多个插件及依赖会在所有插件安装完毕执行
+        },
         "dependencies": [], // 依赖的 uni_modules 插件ID列表
         "encrypt": [ // 配置云函数，公共模块，clientDB Action加密
             "uniCloud/cloudfunctions/uni-admin/controller/permission.js" // 注意这里是真实的文件路径，uni_modules下的uniCloud不带-aliyun、-tcb后缀，但是项目根目录下的uniCloud是带有后缀的

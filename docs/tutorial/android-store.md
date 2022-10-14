@@ -264,6 +264,11 @@ HX3.6.1+ version You can configure manifest.json to configure checkPermissionDen
 }
 ```
 
+#### 21、APP存在收集传感器行为
+
++ 如果应用中没有使用任何传感器相关API，但上架应用市场反馈APP存在收集传感器行为，请使用HX3.6.4+版本重新打包上架。
++ 如果应用中调用了传感器相关API或勾选了地图定位相关模块，请根据实际使用目的方式等补充好隐私政策并使用HX3.6.4+版本重新打包上架。
+
 #### 看不懂文档不知道如何修改？
 #### Can't understand the document and don't know how to modify it?
 

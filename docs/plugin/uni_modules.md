@@ -307,6 +307,103 @@ HBuilderX中合并路由界面效果图：
 - `pages_init.json` 暂不支持带注释(包括：条件编译)。
 - 如果HBuilderX版本低于3.5，或插件作者并没有提供`pages_init.json`，那么仍然需要手动编辑pages.json注册页面。
 
+
+#### 将插件导出的API自动注册到uni上@exports
+> 新增于HBuilderX 3.6.7+
+
+过去，插件作者提供一些jssdk方法时，需要使用者自己手动导入该uni_modules插件，如：
+
+```js
+// 引用插件
+import getBatteryInfo from "@/uni_modules/uni-getbatteryinfo";
+// 获取电量信息
+getBatteryInfo({
+ success(res) {
+     console.log(res);
+ }
+})
+```
+
+现在，uni_modules支持了将API自动注册到uni上，使用者无需手动导入，可以直接使用uni来访问插件提供的API，如：
+
+```json
+// 插件配置：package.json->uni_modules->exports
+{
+  "uni_modules": {
+    "exports": {
+      "uni": "getBatteryInfo"
+      // 等同于
+      // import getBatteryInfo from "@/uni_modules/uni-getbatteryinfo";
+      // uni.getBatteryInfo = getBatteryInfo
+    }
+  }
+}
+```
+
+```js
+// 使用者可以直接使用 uni 来访问
+uni.getBatteryInfo({
+ success(res) {
+     console.log(res);
+ }
+})
+```
+
+`exports`支持的格式
+
+- 默认导出
+
+```json
+{
+  "uni_modules": {
+    "exports": {
+      "uni": "getBatteryInfo"
+      // 等同于
+      // import getBatteryInfo from "@/uni_modules/uni-getbatteryinfo";
+      // uni.getBatteryInfo = getBatteryInfo
+    }
+  }
+}
+```
+- 导出多个
+
+```json
+{
+  "uni_modules": {
+    "exports": {
+      "uni": ["getBatteryInfo", "isCharging"]
+      // 等同于
+      // import { getBatteryInfo, isCharging } from "@/uni_modules/uni-getbatteryinfo";
+      // uni.getBatteryInfo = getBatteryInfo
+      // uni.isCharging = isCharging
+    }
+  }
+}
+```
+
+- 导出别名
+
+```json
+{
+  "uni_modules": {
+    "exports": {
+      "uni": {
+        "onUserCaptureScreen": "onCaptureScreen",
+        "offUserCaptureScreen": "offCaptureScreen"
+      }
+      // 等同于
+      // import { onCaptureScreen, offCaptureScreen } from "@/uni_modules/uni-getbatteryinfo";
+      // uni.onUserCaptureScreen = onCaptureScreen
+      // uni.offUserCaptureScreen = offCaptureScreen
+    }
+  }
+}
+```
+
+**注意**
+
+- 如果要使用 exports 来扩展 uni 时，需要确保导出的内容可以通过`@/uni_modules/[插件ID]`访问到
+
 ### 开发 uni_modules 插件
 #### 新建uni_modules目录
 在uni-app项目根目录下，创建uni_modules目录，在HBuilderX中可以项目右键菜单中点击`新建uni_modules目录`

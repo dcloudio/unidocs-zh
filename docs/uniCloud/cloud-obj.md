@@ -231,6 +231,33 @@ todo.add('title demo', 'content demo').then(res => {
 })
 ```
 
+**importObject参数说明**
+
+```js
+interface ImportObjectOptions {
+  /**
+   * 是否移除自动展示的ui
+   */
+  customUI?: boolean;
+  /**
+   * loading界面配置
+   */
+  loadingOptions?: ImportObjectLoadingOptions;
+  /**
+   * 错误提示配置
+   */
+  errorOptions?: ImportObjectErrorOptions;
+  /**
+   * 使用安全网络的方法及安全网络类型
+   */
+  secretMethods?: Record<string, keyof typeof SECRET_TYPE>;
+  /**
+   * 转化云对象内未捕获的错误或客户端网络错误
+   */
+  parseSystemError?: (params: ParseSystemErrorParams) => Promise<ParsedSystemError> | ParsedSystemError;
+}
+```
+
 
 ## 云对象的API@api
 
@@ -761,7 +788,18 @@ uniCloud.importObject('todo', {
 	errorOptions: { // 错误界面相关配置
 		type: 'modal', // 错误信息展示方式，可取值：modal（弹框，默认）、toast（toast消息框）。默认值为：modal
 		retry: false // 是否展示重试按钮，仅在type为modal时生效。用户点击重试按钮时将重新请求调用的方法，默认为false
-	}
+	},
+  parseSystemError({ // 转化云对象内未捕获的错误，或客户端网络错误
+    objectName, // 云对象名
+    methodName, // 方法名
+    params, // 调用方法时传的参数，注意params是一个数组
+    errCode, // 请求返回的错误码
+    errMsg // 请求返回的错误信息
+  } = {}){
+    return {
+      errMsg: '系统错误，请稍后再试' // 用于展示的错误信息
+    }
+  }
 })
 ```
 

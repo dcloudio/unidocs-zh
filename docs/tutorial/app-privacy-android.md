@@ -63,6 +63,14 @@
     "buttonAccept": "同意并继续",
     "buttonRefuse": "退出应用"
   },
+  "disagreeMode":{
+    // 用户拒绝隐私协议后，是否直接进入游客模式
+    "support": false,
+    // 游客模式下，是否加载原生插件
+    "loadNativePlugins": false,
+     // HX 3.6.7 版本后支持，默认false,当设置为true，隐私协议弹窗 会出现 游客模式 按钮
+    "visitorEntry": true
+  },
   "styles": {
     "backgroundColor": "#00FF00",
     "borderRadius":"5px",
@@ -73,6 +81,10 @@
       "color": "#ffff00"
     },
     "buttonRefuse": {
+      "color": "#00ffff"
+    },
+    // HX 3.6.7 版本后支持，游客模式按钮字体颜色
+    "buttonVisitor": {
       "color": "#00ffff"
     }
   }

@@ -7,9 +7,10 @@
 uts，全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。
 
 它可以被编译为不同平台的编程语言，如：
+
 - web平台，编译为JavaScript
 - Android平台，编译为Kotlin
-- iOS平台，编译Swift（暂未发布）
+- iOS平台，编译为Swift（HX 3.6.7+ 版本支持）
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
@@ -17,59 +18,59 @@ uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
 ### 什么是uts插件
 
-现有的uni-app，仍以js引擎为主。但从HBuilderX 3.6.0开始，uni-app支持uts插件（暂时仅支持vue3编译器，后续补充vue2）。
+现有的 uni-app，仍以js引擎为主。但从HBuilderX 3.6.0开始，uni-app 支持 uts 插件（暂时仅支持vue3编译器，后续补充vue2）。
 
-也就是uts的第一步不是完整开发一个独立的app，而是作为uni-app的插件。后续uts会持续迭代，达到完整开发app的水平。
+也就是 uts 的第一步不是完整开发一个独立的 app，而是作为 uni-app 的插件。后续 uts 会持续迭代，达到完整开发 app 的水平。
 
-uts插件编译到app平台时，在功能上相当于uni-app之前的app原生插件，也就是kotlin和swift开发的插件。
+uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 原生插件，也就是 Kotlin 和 Swift 开发的插件。
 
-开发uts插件不需要熟悉kotlin和swift的语法，因为使用的是基于ts的语法。但需要熟悉Android和iOS的系统API，否则无法调用原生能力。
+开发 uts 插件不需要熟悉 Kotlin 和 Swift 的语法，因为使用的是基于 ts 的语法。但需要熟悉 Android 和 iOS 的系统 API，否则无法调用原生能力。
 
 ![uts插件结构](https://native-res.dcloud.net.cn/images/uts/UTS%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE1.png)
 
 ### uts插件与uni原生语言插件的区别
 
-在HBuilderX 3.6以前，uni-app在App侧只有一种原生插件，即用java或object-c开发的插件。
+在 HBuilderX 3.6 以前，uni-app 在 App 侧只有一种原生插件，即用 java 或 Objective-C 开发的插件。
 
-在uts推出后，原来的“App原生插件”，更名为“App原生语言插件”。
+在 uts 推出后，原来的 “App原生插件”，更名为 “App原生语言插件”。
 
 不同的名字，代表它们需要开发者编写语言不同。但殊途同归，最后都编译为原生的二进制代码。
 
-|-				|原生语言插件				|uts插件					|
-|-				|-------					|--------						|
-|开发语言		|java/oc					|uts							|
-|开发环境		|Android Studio/XCode		|HBuilderX						|
-|打包方式		|外挂aar 等产出物			|编译时生成原生代码				|
-|js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接import|
+|				|原生语言插件				|uts插件|
+|:------		|:-------					|:--------|
+|开发语言		|java/oc					|uts|
+|开发环境		|Android Studio/XCode		|HBuilderX|
+|打包方式		|外挂aar 等产出物			|编译时生成原生代码|
+|js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接 import|
 
 相当于原生语言插件，uts插件的优势：
 
 1. 统一了编程语言（uts），一种语言开发所有平台，真正大前端。
 2. 统一了开发工具（HBuilderX），免除搭建复杂的原生开发环境。
 3. 插件封装中要理解的概念更少。 传统原生语言插件需要在js和原生层处理通信，使用各种特殊转换，使用特殊语法导入，注意事项很多。**uts统一为纯前端概念，简单清晰。**
-4. uts下前端和原生可以统一在HBuilderX中联调。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
+4. uts 下前端和原生可以统一在 HBuilderX 中联调。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
 
-但当前的uts插件的完善度还没有达到原生语言插件的水平，虽然会陆续升级解决，但明示如下：
-1. uts插件只支持vue3编译器，还不支持vue2
-2. uts插件还不支持iOS
-3. uts插件无法封装nvue页面组件
-4. uts插件还无法在插件市场计费销售
+但当前的 uts 插件的完善度还没有达到原生语言插件的水平，虽然会陆续升级解决，但明示如下：
+
+1. uts 插件只支持 vue3 编译器，还不支持 vue2
+2. uts 插件无法封装 nvue 页面组件
+3. uts 插件还无法在插件市场计费销售
 
 ### uts插件和Native.js的区别
 
-- [Native.js](../tutorial/native-js.md)运行在js上，通过反射调用os api。功能和性能都不及真正的原生
-- uts在app上不运行在js引擎里，是真正的原生。
+- [Native.js](../tutorial/native-js.md) 运行在js上，通过反射调用os api。功能和性能都不及真正的原生
+- uts 在 app 上不运行在 js 引擎里，是真正的原生。
 
 
 ## 2 创建uts插件
 
-### uts插件目录结构
+### uts 插件目录结构
 
-在uni-app的项目工程下，提供了独立的目录`utssdk`，来存放uts插件。
+在 uni-app 的项目工程下，提供了独立的目录 `utssdk`，来存放 uts 插件。
 
-当然官方更推荐使用[uni_modules](uni_modules.md)方式，这是更好的包管理方案。
+当然官方更推荐使用 [uni_modules](uni_modules.md) 方式，这是更好的包管理方案。
 
-首先确保项目根目录存在uni_modules文件夹，如果不存在，需要手动创建一个。
+首先确保项目根目录存在 uni_modules 文件夹，如果不存在，需要手动创建一个。
 
 ![插件目录](https://native-res.dcloud.net.cn/images/uts/uni_modules.jpg)
 
@@ -83,7 +84,7 @@ uts插件编译到app平台时，在功能上相当于uni-app之前的app原生�
 
 ![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
 
-为了避免和插件市场的其他插件冲突，建议起一个自己的插件前缀名称。
+**为了避免和插件市场的其他插件冲突，建议起一个自己的插件前缀名称。**
 
 uts插件目录结构
 
@@ -92,7 +93,7 @@ uts插件目录结构
 
 ### package.json
 
-package.json为uni_modules插件配置清单文件，负责描述插件的基本配置。
+package.json 为 uni_modules 插件配置清单文件，负责描述插件的基本配置。
 
 
 ```json
@@ -107,7 +108,7 @@ package.json为uni_modules插件配置清单文件，负责描述插件的基本
 }
 ```
 
-上面是一个默认的清单文件示例,关于package.json更多描述[详见](uni_modules.md#package.json)
+上面是一个默认的清单文件示例,关于 package.json 更多描述[详见](uni_modules.md#package.json)
 
 ### 插件的目录结构
 
@@ -123,8 +124,11 @@ package.json为uni_modules插件配置清单文件，负责描述插件的基本
 │	│	├─AndroidManifest.xml     //Android原生应用清单文件，可选
 │	│	├─config.json             //Android原生配置文件
 │	│	└─index.uts
-│	├─app-ios                     //ios平台目录
-│	│	├─config.json             //ios原生配置文件
+│	├─app-ios                     //iOS 平台目录
+│	│	├─Frameworks              //iOS 插件依赖的第三方 framework 依赖库存放目录，可选
+│	│	├─Resources               //iOS 插件所依赖的资源文件存放目录，可选
+│	│	├─info.plist              //iOS 插件所需要添加到主 info.plist 文件中的配置文件，可选
+│	│	├─config.json             //iOS 插件配置文件
 │	│	└─index.uts
 │	├─web                         //web平台目录
 │	│	└─index.uts
@@ -136,22 +140,23 @@ package.json为uni_modules插件配置清单文件，负责描述插件的基本
 </pre>
 
 
-index.uts文件是程序主入口。如果插件根目录下没有index.uts，则会在编译到不同平台时，寻找分平台的目录下的index.uts文件。
+根目录 index.uts 文件是程序主入口。如果插件根目录下没有 index.uts，则会在编译到不同平台时，寻找分平台的目录下的 index.uts 文件。
 
-比如编译到app-android平台时，如果uts插件根目录没有index.uts，会寻找utssdk/app-android/index.uts。如果也没有找到，会报错。
+比如编译到 app-android 平台时，如果 uts 插件根目录没有 index.uts，会寻找 utssdk/app-android/index.uts。如果也没有找到，会报错。
 
-当同时存在分平台目录的index.uts和根目录index.uts时，会优先获取具体的分平台目录。
+当同时存在分平台目录的 index.uts 和根目录 index.uts 时，会优先获取具体的分平台目录。
 
 开发者有多种组织自己代码的方式：
-1. 在插件根目录的index.uts中写条件编译代码。简单的业务一个文件搞定
-2. 在插件根目录index.uts中写条件编译，import分平台的文件
-3. 不写根目录的index.uts，直接在分平台目录写index.uts。不跨端时，比如只做一个Android插件，这样写比较简单
 
-index.d.ts文件是对当前插件能力的**声明**，用于语法提示。它不是必写项。
+1. 在插件根目录的 index.uts 中写条件编译代码。简单的业务一个文件搞定
+2. 在插件根目录 index.uts 中写条件编译，import 分平台的文件
+3. 不写根目录的 index.uts，直接在分平台目录写 index.uts。不跨端时，比如只做一个 Android 插件，这样写比较简单
 
-因为uts写好后，HBuilderX可以自动识别uts api并进行语法提示。它更多的用于后续uts插件加密时给予语法提示。
+index.d.ts 文件是对当前插件能力的**声明**，用于语法提示。它不是必写项。
 
-如果不熟悉d.ts，可以自行网上搜索，它属于ts标准技术。
+因为 uts 写好后，HBuilderX 可以自动识别 uts api 并进行语法提示。它更多的用于后续 uts 插件加密时给予语法提示。
+
+如果不熟悉 d.ts，可以自行网上搜索，它属于 ts 标准技术。
 
 ### App原生配置
 
@@ -254,9 +259,9 @@ dependencies {
 
 **注意：**
 
-Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+- Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
-#### HX3.6.2 临时注意事项@tempnotice
+##### HX3.6.2 临时注意事项@tempnotice
 
 使用HBuilderX 3.6.2版本及更早版本，关于原生依赖的处理有部分不完善，需要注意以下事项：
 
@@ -272,9 +277,78 @@ Android平台原生配置需提交云端打包才能生效，真机运行时需�
 
 这些遗留事项会尽快升级完善。
 
+#### iOS 平台原生配置
+
+app-ios 文件夹下存在 iOS 平台原生配置，包括以下目录或文件
+
+|目录名/文件名	|用途|
+|:---|:---|
+| Frameworks |iOS 插件需要引用的三方 framework 依赖库存放目录|
+| Resources |iOS 插件需要引用的资源文件存放目录|
+| info.plist|iOS 插件需要添加到原生工程 info.plist 中的配置文件|
+| config.json| iOS 原生工程的配置文件|
+|index.uts| 主入口，index.d.ts 声明的能力在 iOS 平台下的实现|
+
+##### Frameworks 
+
+如果 uts 插件需要依赖三方库，需要将三方依赖库存放到 Frameworks 目录中，注意：目前仅支持 .framework 依赖库
+
+##### Resources
+
+如果 uts 插件需要依赖资源文件，需要将资源文件存放到 Resources 目录中，打包时会将 Resources 目录中的所有文件添加到应用 main bundle 中
+
+##### info.plist
+
+如果 uts 插件需要在原生工程的 info.plist 中添加配置，则需要在插件工程中添加 info.plist 配置文件添加插件所需要的配置项，打包时会将配置信息同步到原生工程的 info.plist 中
+
+示例： 添加位置权限描述信息 和 开启后台定位
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>NSLocationAlwaysUsageDescription</key>
+	<string>访问位置权限</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>使用期间获取位置权限</string>
+	<key>TencentLBSAPIKey</key>
+	<string>LZTBZ-77PCJ-HJAFN-KWXJ2-H357V-DJBK4</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
+  </dict>
+</plist>
+```
+
+##### config.json
+
+uts 插件在 iOS 平台的原生层配置文件，可以在其中配置依赖的系统库等配置信息 
+
+```json
+{
+	"frameworks": [
+		"可选，依赖的系统库(系统库有.framework和.tbd和.dylib类型)" 
+	],
+	"deploymentTarget": "9.0",   // 可选，插件支持的最低 iOS 版本  默认：9.0"
+	"validArchitectures": [    // 可选，支持的 CPU 架构类型 默认：armv7、arm64
+		"arm64"    // 支持多个值，可取值："arm64", "armv7"
+	]
+}
+```
+
+**注意：**
+
+- iOS 平台 uts 原生插件需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+
 ## 3 开发uts原生插件
 
-以Android平台获取电量为例，介绍uts原生插件开发步骤
+以获取电量为例，介绍uts原生插件开发步骤
+
+**首先在 uni_modules 目录下新建名为 uni-getbatteryinfo 的 uts 插件**
+
+### Android平台
 
 ![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 
@@ -315,6 +389,47 @@ export function getBatteryCapacity(): string {
 
 注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
 
+### iOS 平台
+
+![](https://native-res.dcloud.net.cn/images/uts/iOS/getbatteryinfo1.png)
+
+在 iOS 平台目录下，编辑 index.uts，键入以下内容
+
+```uts
+// index.uts
+
+// 引用 iOS 原生平台 api
+import { UIDevice } from "UIKit";
+
+/**
+ * 定义 接口参数
+ */
+type GetBatteryInfoOptions = {
+    success?: (res: UTSJSONObject) => void;
+    fail?: (res: UTSJSONObject) => void;
+    complete?: (res: UTSJSONObject) => void;
+};
+
+/**
+ * 导出 获取电量方法 
+ */
+export default function getBatteryInfo(options: GetBatteryInfoOptions) {
+	
+	// 开启电量检测
+	UIDevice.current.isBatteryMonitoringEnabled = true
+	
+	// 返回数据
+    const res = {
+        errMsg: "getBatteryInfo:ok",
+        level: Number(UIDevice.current.batteryLevel * 100),
+        isCharging: UIDevice.current.batteryState == UIDevice.BatteryState.charging,
+    };
+    options.success?.(res);
+    options.complete?.(res);
+}
+```
+
+至此，我们已经完成一个 iOS 平台上获取电量的原生能力封装。
 
 ## 4 前端使用插件
 
@@ -363,6 +478,10 @@ getBatteryCapacity()
 
 在Android上，运行体验与uni-app基本无差异。一样可以热刷新，打印console.log。
 
+**注意：**
+
+- iOS 平台 uts 插件需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+
 ### 5.2 自定义基座
 
 自定义基座也支持uts插件。
@@ -379,7 +498,6 @@ getBatteryCapacity()
 
 截止到HBuilderX 3.6.2 时遗留事项：
 - 不能debug断点uts源码
-- iOS版还未发布
 - uts插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](#tempnotice)
 - uts插件无法使用res。图片资源建议放在assets目录。
 

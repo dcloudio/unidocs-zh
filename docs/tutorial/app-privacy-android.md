@@ -94,11 +94,8 @@ After checking, the androidPrivacy.json file will be automatically added to the 
     "buttonRefuse": "退出应用"
   },
   "disagreeMode":{
-    // 用户拒绝隐私协议后，是否直接进入游客模式
     "support": false,
-    // 游客模式下，是否加载原生插件
     "loadNativePlugins": false,
-     // HX 3.6.7 版本后支持，默认false,当设置为true，隐私协议弹窗 会出现 游客模式 按钮
     "visitorEntry": true
   },
   "styles": {
@@ -113,7 +110,6 @@ After checking, the androidPrivacy.json file will be automatically added to the 
     "buttonRefuse": {
       "color": "#00ffff"
     },
-    // HX 3.6.7 版本后支持，游客模式按钮字体颜色
     "buttonVisitor": {
       "color": "#00ffff"
     }
@@ -145,7 +141,12 @@ After checking, the androidPrivacy.json file will be automatically added to the 
   隐私政策提示框中的链接地址加载方式，可取值：system-表示使用系统浏览器打开；default-表示使用应用内置webview页面打开。默认值为default。  
   The link address loading method in the privacy policy prompt box. Possible values: system- means to use the system browser to open; default- means to use the built-in webview page of the application to open. The default value is default.
   **注意：可能有些检测机构认为webview会读取隐私信息，这时可以配置为system来解决此问题**  
-  **Note: Some testing agencies may think that webview will read private information, then it can be configured as system to solve this problem**
+- disagreeMode 
+  用户不同意隐私协议的响应配置 
+  + support 用户拒绝隐私协议后，是否直接进入游客模式，默认关闭 
+  + loadNativePlugins 游客模式下，是否加载原生插件
+  + visitorEntry HX 3.6.7 版本后支持，默认false,当设置为true，隐私协议弹窗 会出现 游客模式 按钮
+
 - second  
   配置二次确认提示框显示内容，message属性值不为空时弹出二次确认提示框  
   Configure the display content of the second confirmation prompt box. When the value of the message attribute is not empty, a second confirmation prompt box will pop up.
@@ -169,7 +170,7 @@ After checking, the androidPrivacy.json file will be automatically added to the 
   + buttonAccept 接受按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
   + buttonAccept accepts the button style, under which only the color attribute is supported to configure the text color, the value is the #RRGGBB format string
   + buttonRefuse 拒绝按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
-  + buttonRefuse rejects the button style, under which only the color attribute is supported to configure the text color, the value is #RRGGBB format string
+  + buttonVisitor HX 3.6.7 版本后支持，游客模式按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
 - disagreeMode  
   未同意隐私政策模式 `HBuilder X 3.3.1版本新增支持` 具体配置及说明查看[https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode)  
   Do not agree to the privacy policy mode `HBuilder X 3.3.1 version added support` For specific configuration and instructions, see [https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode )

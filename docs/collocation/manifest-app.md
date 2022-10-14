@@ -23,6 +23,7 @@ App-Android平台云端打包相关配置
 |resizeableActivity|Boolean|是否支持分屏调整窗口大小|
 |hasTaskAffinity|Boolean|是否设置android：taskAffinity|
 |buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
+|pushRegisterMode|String|使用“Push(消息推送)”模块时申请系统推送权限模式，设置为manual表示调用push相关API时申请，设置为其它值表示应用启动时自动申请|
 
 
 #### buildFeatures@buildFeatures  

@@ -381,7 +381,7 @@ HBuilderX中合并路由界面效果图：
 - If the HBuilderX version is lower than 3.5, or the plugin author does not provide `pages_init.json`, you still need to manually edit the pages.json registration page.
 
 
-#### 将插件导出的API自动注册到uni上@exports
+#### 将插件自动注册到uni上@exports
 > 新增于HBuilderX 3.6.7+
 
 过去，插件作者提供一些jssdk方法时，需要使用者自己手动导入该uni_modules插件，如：

@@ -121,13 +121,12 @@ Take `"hello-component": "plugin://myPlugin/hello-component"` as an example, `ke
   }
 }
 
-// 百度小程序 注意是 usingSwanComponents 不是 usingComponents（HBuilder 3.1.0+ 可以使写为 usingComponents）
-// Baidu applet note that usingSwanComponents is not usingComponents (HBuilder 3.1.0+ can be written as usingComponents)
+// 百度小程序 注意是 HBuilder 3.1.0 以下部分插件需使用 usingSwanComponents
 {
   "path": "pages/index/index",
   "style": {
     "mp-baidu": {
-      "usingSwanComponents": {
+      "usingComponents": {
         "my-special-list": "dynamicLib://myDynamicLib/special-list"
       }
     }

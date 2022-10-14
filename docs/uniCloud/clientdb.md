@@ -124,8 +124,6 @@ This sample code directly queries the `list` table of ApsaraDB for a front-end p
 // 获取db引用
 // get db reference
 const db = uniCloud.database() //代码块为cdb
-// 使用uni-clientDB
-// use uni-clientDB
 db.collection('list')
   .where({
     name: "hello-uni-app" //传统MongoDB写法，不是jql写法。实际开发中推荐使用jql写法
@@ -146,8 +144,6 @@ db.collection('list')
 // 获取db引用
 // get db reference
 const db = uniCloud.database() //代码块为cdb
-// 使用uni-clientDB
-// use uni-clientDB
 db.collection('list')
   .where('name=="hello-uni-app"')
 	.get()
@@ -174,6 +170,33 @@ The syntax of the front-end operation database is the same as that of cloud func
 - The update operator `db.command.inc`, etc. cannot be used when updating the database
 - 更新数据时键值不可使用`{'a.b.c': 1}`的形式，需要写成`{a:{b:{c:1}}}`形式
 - When updating data, the key value cannot be in the form of `{'a.b.c': 1}`, it needs to be written in the form of `{a:{b:{c:1}}}`
+
+clientDB有两种方式获取数据库引用`uniCloud.database()`和`uniCloud.databaseForJQL()`（新增于HBuilderX 3.6.7）。推荐在支持`databaseForJQL`接口的版本使用`databaseForJQL`接口，和云端jql扩展库返回结构一致，方便代码复用
+
+database接口和databaseForJQL有以下不同点
+
+1. database接口返回的数据结构多了一层result
+
+  在上面的示例中res的结构如下
+  ```js
+  {
+    result: {
+      data: [{
+        xx: xx
+      }]
+    }
+  }
+  ```
+  如果使用databaseForJQL接口，res结构如下
+  ```js
+  {
+    data: [{
+      xx: xx
+    }]
+  }
+  ```
+  
+2. 使用拦截器相关接口拦截或取消拦截 databaseForJQL 接口时需使用，`databaseForJQL`作为接口名，关于拦截器的更多信息，请参考：[uniCloud 拦截器](client-sdk.md#add-interceptor)
 
 
 ## 客户端事件@event

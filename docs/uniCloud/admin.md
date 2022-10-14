@@ -596,6 +596,34 @@ uni statistics goes deep into the bottom layer of uni-app and uniCloud framework
 uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug-in specification provides a plug-in mechanism, and more plug-in authors will provide various statistical plug-ins (such as e-commerce statistics, content statistics, etc.). See [Plugin Market](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
+### 群发短信 <Badge text="uni-admin 2.0.0+" />
+**前提准备**
+1. 在[开发者中心](https://dev.dcloud.net.cn)开通短信验证码服务
+2. 在 ```uni-config-center/uni-sms-co/config.json```中配置短信 API 密钥
+```json
+{
+  "smsKey": "your smsKey",
+  "smsSecret": "your smsSecret"
+}
+```
+**功能介绍**
+> 第一次使用此功能，请在[开发者中心](https://dev.dcloud.net.cn) - "短信验证码" - "模板配置" 导出短信模板，在群发短信界面上传短信模板后使用。
+
+- 支持 给指定用户、全部用户、指定标签用户群发短信
+  - 指定用户：在用户列表中勾选要接收短信的用户（必须有手机号）后，点击“群发信息”创建短信任务。
+  - 全部用户：在用户列表界面直接点击“群发短信”创建短信任务。
+  - 指定标签用户：在用户标签列表中勾选标签（如标签关联的用户没有手机号将不会发送短信）后，点击“群发短信”创建短信任务。
+- 支持 短信模板中的变量替换为“固定文本”与“数据库字段”
+  - 固定文本：固定字符串，所有用户会接收同样的内容，例如：```DCloud```
+  - 数据库字段：可以关联数据库中指定字段，内容较为个性化。格式为 ```{数据库表名.字段}```，例如: ```{uni-id-users.username}``` 目前仅支持```uni-id-users```表
+- 支持 发送前预览前5人短信内容，用于检测模板变量是否配置正确，提高发送成功率。
+
+![群发短信](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1452ae6f-1370-4dc7-9214-38e83504d780/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
+
+
+
+- 在“安全审计” - “短信任务”中可查看创建的短信任务，在此可以查看以往所有的短信任务，同时可以查看任务中手机号发送的状态，此状态不包括短信回执，查看短信回执请在开发中中心-短信验证码-发送记录中查看。
+![短信任务](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1452ae6f-1370-4dc7-9214-38e83504d780/f87b46a7-4c85-4b81-a0e5-3ee5b7f45bef.png)
 
 
 ### 用户-角色-权限

@@ -121,7 +121,7 @@ Take `"hello-component": "plugin://myPlugin/hello-component"` as an example, `ke
   }
 }
 
-// 百度小程序 注意是 HBuilder 3.1.0 以下部分插件需使用 usingSwanComponents
+// 百度小程序 注意 HBuilder 3.1.0 以下部分插件需使用 usingSwanComponents
 {
   "path": "pages/index/index",
   "style": {

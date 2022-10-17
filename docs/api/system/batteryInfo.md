@@ -2,9 +2,13 @@
 
 获取设备电量
 
+> 本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[getBatteryInfo](https://ext.dcloud.net.cn/plugin?id=9295)
+
+> uni ext api 需 HBuilderX 3.6.7+
+
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√[由uts插件支持](https://ext.dcloud.net.cn/plugin?id=9295)|√[由uts插件支持](https://ext.dcloud.net.cn/plugin?id=9295)|√[由uts插件支持](https://ext.dcloud.net.cn/plugin?id=9295)|[规范详情](https://docs.alipay.com/mini/api/nrnziy)|[规范详情](https://smartprogram.baidu.com/docs/develop/api/device_battery/#swan-getBatteryInfo/)|x|x|[规范详情](https://q.qq.com/wiki/develop/miniprogram/API/equipment/ibeacon_battery.html)|x|x|
+|√|√|√|√|√|x|x|√|x|x|
 
 **OBJECT 参数说明**
 

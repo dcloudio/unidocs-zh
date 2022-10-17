@@ -6,6 +6,8 @@
 
 > uni ext api 需 HBuilderX 3.6.7+
 
+> Android和iOS的uts代码，需 vue3 编译器。
+
 > iOS 运行需要打自定义基座
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|

@@ -26,3 +26,13 @@
 |:-|:-|:-|
 |level|Number|设备电量，范围 1 - 100|
 |isCharging|Boolean|是否正在充电中|
+
+**示例代码**
+
+```js
+uni.getBatteryInfo({
+  success: (res) => {
+    console.log(res)
+  }
+})
+```

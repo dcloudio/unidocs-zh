@@ -538,6 +538,34 @@ await uniIdCo.loginBySms({
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
 
+#### 微信授权手机号登录@login-by-weixin-mobile <Badge text="uni-id-co 1.0.25+" />
+
+**接口形式**
+
+```js
+await uniIdCo.loginByWeixinMobile({
+  phoneCode,
+  inviteCode
+})
+```
+
+**参数说明**
+
+|参数名			|类型	|必填	|说明								|
+|--				|--		|--		|--									|
+|phoneCode	|string	|是		|getPhoneNumber 事件回调获取到动态令牌code	|
+|inviteCode		|string	|否		|邀请码，仅注册时生效				|
+
+**返回值**
+
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+|newToken						|object				|token信息		|
+|&nbsp;&#124;-&nbsp;token		|string				|token			|
+|&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
+
 #### 一键登录@login-by-univerify
 
 手机号已存在时登录，否则注册
@@ -907,18 +935,29 @@ await uniIdCo.bindMobileByUniverify({
 
 #### 通过微信绑定手机号@bind-mobile-by-mp-weixin
 
-使用此接口时务必注意，微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。
+::: warning 使用此接口时务必注意
+**微信小程序对获取手机号的接口进行了安全升级，自 `uni-id-co@1.0.25` 以上版本开始，支持getPhoneNumber事件回调的动态口令`code`，同时为了向下兼容保留`encryptedData` 与 `iv`参数，建议开发者升级，以增强小程序安全性。**
+
+微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。
 
 如果有效则直接使用上次存储的sessionKey即可，如果无效应重新调用login接口再次刷新sessionKey。
 
 微信小程序登录、绑定小程序微信账号时会自动更新用户的sessionKey。
 
+:::
+
 **接口形式**
 
 ```js
+// uni-id-co >= 1.0.25
 await uniIdCo.bindMobileByMpWeixin({
-  encryptedData,
-  iv
+    code
+})
+
+// uni-id-co < 1.0.25
+await uniIdCo.bindMobileByMpWeixin({
+    encryptedData,
+    iv
 })
 ```
 
@@ -926,8 +965,9 @@ await uniIdCo.bindMobileByMpWeixin({
 
 |参数名			|类型	|必填	|说明										|
 |--				|--		|--		|--											|
-|encryptedData	|string	|是		|微信小程序获取手机号返回的encryptedData参数|
-|iv				|string	|是		|微信小程序获取手机号返回的iv参数			|
+|encryptedData	|string	|是		|微信小程序获取手机号返回的encryptedData参数 |
+|iv				|string	|是		|微信小程序获取手机号返回的iv参数 |
+|code				|string	|是		|微信小程序获取手机号返回的code参数； `uni-id-co >= 1.0.25支持`			|
 
 **返回值**
 
@@ -1064,6 +1104,52 @@ await uniIdCo.bindApple({
 **注意**
 
 - 仅在用户token即将过期时返回新newToken
+
+### 解绑第三方账号@unbind-third-account <Badge text="uni-id-co 1.0.25+" />
+> 如账号只有一个第三方登录方式时，需绑定手机号后在解绑。
+#### 解绑微信@unbind-weixin
+**接口形式**
+```js
+await uniIdCo.unbindWeixin()
+```
+**返回值**
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+
+#### 解绑QQ@unbind-qq
+**接口形式**
+```js
+await uniIdCo.unbindQQ()
+```
+**返回值**
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+
+#### 解绑支付宝@unbind-alipay
+**接口形式**
+```js
+await uniIdCo.unbindAlipay()
+```
+**返回值**
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+
+#### 解绑苹果账号@unbind-apple
+**接口形式**
+```js
+await uniIdCo.unbindApple()
+```
+**返回值**
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
 
 ### 用户信息@user-info
 

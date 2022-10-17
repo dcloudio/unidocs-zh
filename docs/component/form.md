@@ -130,7 +130,7 @@ uni://form-field
 <template>  
     <view class="content">  
         <form @submit="onSubmit">  
-            <comp-input name="test" v-model="testValue"></comp-input>  
+            <compInput name="test" v-model="testValue"></compInput>  
             <button form-type="submit">Submit</button>  
         </form>  
     </view>  
@@ -150,11 +150,11 @@ uni://form-field
         }  
     }  
 </script>  
-
-<style>  
-
-</style>
 ```
+
+::: preview
+
+> Vue2
 
 ```html
 <!-- /components/compInput/compInput.vue -->
@@ -168,6 +168,11 @@ uni://form-field
     export default {  
         name: 'compInput',  
         behaviors: ['uni://form-field'],
+		data(){
+			return{
+				value:""
+			}
+		},
         methods: {  
             onInput(e) {  
                 this.$emit('input', e.detail.value)  
@@ -175,11 +180,37 @@ uni://form-field
         }  
     }  
 </script>  
-
-<style>  
-
-</style>  
 ```
+
+
+> Vue3
+
+```html
+<!-- /components/compInput/compInput.vue -->
+<template>  
+    <view>  
+        <input name="test" style="border: solid 1px #999999;height: 80px;" type="text" @input="onInput" :value="value" />  
+    </view>  
+</template>  
+
+<script>  
+    export default {  
+        name: 'compInput',
+        behaviors: ['uni://form-field'],
+		data(){
+			return{
+				value:""
+			}
+		},
+        methods: {  
+            onInput(e) {  
+                this.$emit('update:modelValue',e.detail.value) 
+            }  
+        }  
+    }  
+</script>  
+```
+:::
 
 
 **增强的uni-forms组件**

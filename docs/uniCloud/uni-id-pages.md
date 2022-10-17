@@ -345,13 +345,9 @@ Recommended use: HBuilderX editor, edit the "Privacy Policy and User Agreement" 
 |Field |Type |Description |
 |--			|--		|--															|
 |为空或false| -		|不验证密码强度												|
-|null or false| - |Do not verify password strength |
 |super		|String	|超强：密码必须包含大小写字母、数字和特殊符号，长度范围：8-16位之间	|
-|super |String |Super strong: The password must contain uppercase and lowercase letters, numbers and special symbols, the length range: between 8-16 characters |
 |strong		|String	|强: 密密码必须包含字母、数字和特殊符号，长度范围：8-16位之间		|
-|strong |String |Strong: The password must contain letters, numbers and special symbols, the length range: between 8-16 characters |
 |medium		|String	|中：密码必须为字母、数字和特殊符号任意两种的组合，长度范围：8-16位之间|
-|medium |String |In: The password must be any combination of letters, numbers and special symbols, the length range: between 8-16 digits|
 |weak		|String	|弱：密码必须包含字母和数字，长度范围：6-16位之间					|
 |weak |String |Weak: Password must contain letters and numbers, length range: between 6-16 characters |
 
@@ -455,9 +451,7 @@ Return value example
 |uniIdCo.removeAuthorizedApp()	|移除用户登录授权 [详情](#remove-authorized-app)			|
 |uniIdCo.removeAuthorizedApp() |Remove user login authorization [Details](#remove-authorized-app) |
 |uniIdCo.setAuthorizedApp()		|设置用户允许登录的应用列表 [详情](#set-authorized-app)		|
-|uniIdCo.setAuthorizedApp() |Set the list of apps that the user is allowed to log in to [Details](#set-authorized-app) |
 |uniIdCo.registerUser()			|注册普通用户 [详情](#register-user)						|
-|uniIdCo.registerUser() |Register ordinary users [Details](#register-user) |
 |uniIdCo.registerUserByEmail()	|通过邮箱验证码注册普通用户 [详情](#register-user-by-email)	|
 |uniIdCo.registerUserByEmail() |Register ordinary users through email verification code [Details](#register-user-by-email) |
 |uniIdCo.login()				|用户名密码登录 [详情](#login)								|
@@ -491,9 +485,7 @@ Return value example
 |uniIdCo.bindApple()			|绑定苹果账号 [详情](#bind-apple)							|
 |uniIdCo.bindApple() |Bind Apple Account [Details](#bind-apple) |
 |uniIdCo.updatePwd()			|更新密码 [详情](#update-pwd)								|
-|uniIdCo.updatePwd() |Update password [details](#update-pwd) |
 |uniIdCo.resetPwdBySms()		|通过短信验证码重置密码 [详情](#reset-pwd-by-sms)			|
-|uniIdCo.resetPwdBySms() |Reset password via SMS verification code [Details](#reset-pwd-by-sms) |
 |uniIdCo.resetPwdByEmail()		|通过邮箱验证码重置密码 [详情](#reset-pwd-by-email)			|
 |uniIdCo.resetPwdByEmail() |Reset password by email verification code [Details](#reset-pwd-by-email) |
 |uniIdCo.closeAccount()			|注销账户 [详情](#close-account)							|
@@ -503,9 +495,7 @@ Return value example
 |uniIdCo.createCaptcha()		|创建图形验证码 [详情](#create-captcha)						|
 |uniIdCo.createCaptcha() |Create a graphic captcha [Details](#create-captcha) |
 |uniIdCo.refreshCaptcha()		|刷新图形验证码 [详情](#refresh-captcha)					|
-|uniIdCo.refreshCaptcha() |Refresh graphic captcha [Details](#refresh-captcha) |
 |uniIdCo.sendSmsCode()			|发送短信验证码 [详情](#send-sms-code)						|
-|uniIdCo.sendSmsCode() |Send SMS verification code [Details](#send-sms-code) |
 |uniIdCo.sendEmailCode()		|发送邮箱验证码 [详情](#send-email-code)					|
 |uniIdCo.sendEmailCode() |Send email verification code [Details](#send-email-code) |
 |uniIdCo.refreshToken()			|刷新token [详情](#refresh-token)							|
@@ -616,7 +606,6 @@ await uniIdCo.registerUser({
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
-|&nbsp;&#124;-&nbsp;tokenExpired|string |token expiration time |
 
 #### 邮箱验证码注册用户@register-user-by-email
 #### Email verification code registered user @register-user-by-email
@@ -759,6 +748,34 @@ await uniIdCo.loginBySms({
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
 |&nbsp;&#124;-&nbsp;tokenExpired|string |token expiration time |
+
+#### 微信授权手机号登录@login-by-weixin-mobile <Badge text="uni-id-co 1.0.25+" />
+
+**接口形式**
+
+```js
+await uniIdCo.loginByWeixinMobile({
+  phoneCode,
+  inviteCode
+})
+```
+
+**参数说明**
+
+|参数名			|类型	|必填	|说明								|
+|--				|--		|--		|--									|
+|phoneCode	|string	|是		|getPhoneNumber 事件回调获取到动态令牌code	|
+|inviteCode		|string	|否		|邀请码，仅注册时生效				|
+
+**返回值**
+
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+|newToken						|object				|token信息		|
+|&nbsp;&#124;-&nbsp;token		|string				|token			|
+|&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
 
 #### 一键登录@login-by-univerify
 #### One-click login @login-by-univerify
@@ -1275,8 +1292,10 @@ await uniIdCo.bindMobileByUniverify({
 #### 通过微信绑定手机号@bind-mobile-by-mp-weixin
 #### Bind mobile phone number via WeChat @bind-mobile-by-mp-weixin
 
-使用此接口时务必注意，微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。
-When using this interface, it must be noted that the WeChat applet rule is that the client should first use the checkSession interface to check whether the sessionKey obtained last time is still valid.
+::: warning 使用此接口时务必注意
+**微信小程序对获取手机号的接口进行了安全升级，自 `uni-id-co@1.0.25` 以上版本开始，支持getPhoneNumber事件回调的动态口令`code`，同时为了向下兼容保留`encryptedData` 与 `iv`参数，建议开发者升级，以增强小程序安全性。**
+
+微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。
 
 如果有效则直接使用上次存储的sessionKey即可，如果无效应重新调用login接口再次刷新sessionKey。
 If it is valid, you can directly use the sessionKey stored last time. If it is invalid, call the login interface again to refresh the sessionKey again.
@@ -1284,13 +1303,21 @@ If it is valid, you can directly use the sessionKey stored last time. If it is i
 微信小程序登录、绑定小程序微信账号时会自动更新用户的sessionKey。
 The user's sessionKey will be automatically updated when the WeChat applet logs in and binds the WeChat account of the applet.
 
+:::
+
 **接口形式**
 **Interface form**
 
 ```js
+// uni-id-co >= 1.0.25
 await uniIdCo.bindMobileByMpWeixin({
-  encryptedData,
-  iv
+    code
+})
+
+// uni-id-co < 1.0.25
+await uniIdCo.bindMobileByMpWeixin({
+    encryptedData,
+    iv
 })
 ```
 
@@ -1300,10 +1327,9 @@ await uniIdCo.bindMobileByMpWeixin({
 |参数名			|类型	|必填	|说明										|
 |Parameter Name |Type |Required |Description |
 |--				|--		|--		|--											|
-|encryptedData	|string	|是		|微信小程序获取手机号返回的encryptedData参数|
-|encryptedData |string |Yes |The encryptedData parameter returned by the WeChat applet to get the mobile phone number|
-|iv				|string	|是		|微信小程序获取手机号返回的iv参数			|
-|iv |string |Yes |The iv parameter returned by the WeChat applet to obtain the mobile phone number |
+|encryptedData	|string	|是		|微信小程序获取手机号返回的encryptedData参数 |
+|iv				|string	|是		|微信小程序获取手机号返回的iv参数 |
+|code				|string	|是		|微信小程序获取手机号返回的code参数； `uni-id-co >= 1.0.25支持`			|
 
 **返回值**
 **return value**
@@ -1497,6 +1523,52 @@ await uniIdCo.bindApple({
 - 仅在用户token即将过期时返回新newToken
 - only return a new newToken when the user's token is about to expire
 
+### 解绑第三方账号@unbind-third-account <Badge text="uni-id-co 1.0.25+" />
+> 如账号只有一个第三方登录方式时，需绑定手机号后在解绑。
+#### 解绑微信@unbind-weixin
+**接口形式**
+```js
+await uniIdCo.unbindWeixin()
+```
+**返回值**
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+
+#### 解绑QQ@unbind-qq
+**接口形式**
+```js
+await uniIdCo.unbindQQ()
+```
+**返回值**
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+
+#### 解绑支付宝@unbind-alipay
+**接口形式**
+```js
+await uniIdCo.unbindAlipay()
+```
+**返回值**
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+
+#### 解绑苹果账号@unbind-apple
+**接口形式**
+```js
+await uniIdCo.unbindApple()
+```
+**返回值**
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+
 ### 用户信息@user-info
 ### User info @user-info
 
@@ -1582,9 +1654,7 @@ await uniIdCo.resetPwdBySms({
 |parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
-|errCode |string&#124;number |Error code |
 |errMsg							|string				|错误信息		|
-|errMsg |string |Error message |
 
 #### 通过邮箱验证码重置密码@reset-pwd-by-email
 #### Reset password via email verification code @reset-pwd-by-email
@@ -1869,9 +1939,7 @@ await uniIdCo.sendSmsCode({
 |parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
-|errCode |string&#124;number |Error code |
 |errMsg							|string				|错误信息		|
-|errMsg |string |Error message |
 
 #### 发送邮箱验证码@send-email-code
 #### Send email verification code@send-email-code

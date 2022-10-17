@@ -6,6 +6,10 @@ uni ext api，是一种需要下载[uni_modules](https://uniapp.dcloud.net.cn/pl
 
 它是uni对象的方法，但不预置在uni-app的runtime中，需要单独下载对应的`uni_modules`。
 
+示例：
+
+uni.getBatteryInfo，这个API就是一个`ext api`，需要下载插件才能使用。[详见](https://uniapp.dcloud.net.cn/api/system/batteryInfo.html)
+
 - 背景1，uni-app runtime越来越大
 
 uni对象的api，如uni.navigateTo，之前都是内置在uni-app的runtime中的，跟随uni-app/HBuilder的升级而变化。

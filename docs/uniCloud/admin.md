@@ -441,7 +441,7 @@ uni统计深入uni-app和uniCloud框架底层，提供了众多其他统计平�
 
 uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
-### 群发短信 <Badge text="uni-admin 2.0.0+" />
+### 群发短信@batch-sms <Badge text="uni-admin 2.1.0+" />
 **前提准备**
 1. 在[开发者中心](https://dev.dcloud.net.cn)开通短信验证码服务
 2. 在 ```uni-config-center/uni-sms-co/config.json```中配置短信 API 密钥
@@ -464,12 +464,6 @@ uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插�
 - 支持 发送前预览前5人短信内容，用于检测模板变量是否配置正确，提高发送成功率。
 
 ![群发短信](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1452ae6f-1370-4dc7-9214-38e83504d780/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
-
-
-
-- 在“安全审计” - “短信任务”中可查看创建的短信任务，在此可以查看以往所有的短信任务，同时可以查看任务中手机号发送的状态，此状态不包括短信回执，查看短信回执请在开发中中心-短信验证码-发送记录中查看。
-![短信任务](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1452ae6f-1370-4dc7-9214-38e83504d780/f87b46a7-4c85-4b81-a0e5-3ee5b7f45bef.png)
-
 
 ### 用户-角色-权限
 

@@ -96,12 +96,10 @@ uni-app的runtime不适合内置很多waiting样式和资源，而使用三方�
 
 只有uni的内置api才跟随HBuilder升级。请记得内置api和`ext api`的区别。
 
-3. `ext api`在真机运行时，在如下情况需要打包自定义基座才能运行
-
-- iOS目前只能打包自定义基座。后续官方会继续优化
-- Android涉及arr、jar、so库等三方sdk的时候，也需打包自定义基座。
-
-4. wgt升级只对js、css生效，uts代码无法使用热更新
+3. `ext api`的实现不一定都是uts，但如果使用了uts，则将受uts自身的约束。如
+- uts在iOS上真机运行必须打包自定义基座。后续官方会继续优化
+- uts在Android上涉及arr、jar、so库等三方sdk的时候，也需打包自定义基座才能真机运行。
+- wgt升级只对js、css生效，uts代码无法热更新。但这不意味着使用uts的项目就失去热更新能力，只是uts部分不能热更。js、vue、css、图片仍然可以打包成wgt热更。
 
 ## 如何开发uni ext api
 

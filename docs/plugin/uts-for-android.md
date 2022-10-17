@@ -182,6 +182,65 @@ uts-nativepage  ->  uts.sdk.modules.utsNativepage
 
 ~\uni_modules\uts-tencentgeolocation\utssdk\app-android\libs 
 
+------
+
+HX3.6.7 版本内置了以下依赖
+
+开发者在使用列表中的依赖时，需要注意两点：
+
++  真机运行时，不需要添加列表中的依赖，即可直接引用相关类
++  请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
+
+```gradle
++--- my-imageloader.jar
++--- my-nineoldandroids-2.4.0.jar
++--- zip4j-2.8.0.jar
++--- uts-runtime-jvm-1.0.jar
++--- android-gif-drawable-release@1.2.23.aar
++--- msa_mdid_1.0.13.aar
++--- breakpad-build-release.aar
++--- androidx.multidex:multidex:2.0.0@aar
++--- androidx.recyclerview:recyclerview:1.0.0@aar
++--- androidx.legacy:legacy-support-v4:1.0.0@aar
++--- androidx.appcompat:appcompat:1.0.0@aar
++--- com.github.bumptech.glide:glide:4.9.0@aar
++--- com.alibaba:fastjson:1.1.46.android@jar
++--- androidx.fragment:fragment:1.0.0@aar
++--- androidx.vectordrawable:vectordrawable-animated:1.0.0@aar
++--- androidx.legacy:legacy-support-core-ui:1.0.0@aar
++--- androidx.media:media:1.0.0@aar
++--- androidx.legacy:legacy-support-core-utils:1.0.0@aar
++--- androidx.vectordrawable:vectordrawable:1.0.0@aar
++--- androidx.viewpager:viewpager:1.0.0@aar
++--- androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar
++--- androidx.drawerlayout:drawerlayout:1.0.0@aar
++--- androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar
++--- androidx.customview:customview:1.0.0@aar
++--- androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar
++--- androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar
++--- androidx.loader:loader:1.0.0@aar
++--- androidx.core:core:1.0.0@aar
++--- androidx.versionedparcelable:versionedparcelable:1.0.0@aar
++--- androidx.collection:collection:1.0.0@jar
++--- androidx.cursoradapter:cursoradapter:1.0.0@aar
++--- com.github.bumptech.glide:gifdecoder:4.9.0@aar
++--- androidx.lifecycle:lifecycle-runtime:2.0.0@aar
++--- androidx.interpolator:interpolator:1.0.0@aar
++--- androidx.documentfile:documentfile:1.0.0@aar
++--- androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar
++--- androidx.print:print:1.0.0@aar
++--- androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar
++--- androidx.lifecycle:lifecycle-livedata:2.0.0@aar
++--- androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar
++--- androidx.lifecycle:lifecycle-common:2.0.0@jar
++--- androidx.arch.core:core-runtime:2.0.0@aar
++--- androidx.arch.core:core-common:2.0.0@jar
++--- androidx.annotation:annotation:1.0.0@jar
++--- com.github.bumptech.glide:disklrucache:4.9.0@jar
+\--- com.github.bumptech.glide:annotations:4.9.0@jar
+
+
+```
 
 
 ## 4 语法差异重点介绍 (持续更新)

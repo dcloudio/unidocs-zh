@@ -261,19 +261,20 @@ dependencies {
 
 - Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
-##### HX3.6.2 临时注意事项@tempnotice
+##### 三方依赖临时注意事项@tempnotice
 
-使用HBuilderX 3.6.2版本及更早版本，关于原生依赖的处理有部分不完善，需要注意以下事项：
+截止到HBuilderX 3.6.7版本，关于原生依赖的处理有部分不完善，需要注意以下事项：
 
 + config.json 目前还不支持配置仓库依赖，需要将gradle配置的库手动下载后，放置在libs目录，使用手动添加的方式集成
 
-+ uni-app引擎内置了部分依赖库（比如androidX，清单详见下方），如你的插件需使用相同依赖，请注意：
++ 内置依赖需要手动添加的问题在HX3.6.7 已修复。开发者在使用列表中的依赖时，需要注意两点：
+
+   1  真机运行时，不需要添加列表中的依赖，即可直接引用相关类
+
+   2  请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
+
 	
-	1. 确保与内置的依赖版本一致。
-	
-	2. 真机运行时，需将依赖库copy到libs目录下。但注意，打包自定义基座时需先从libs中暂时移除，避免打包类重复报错。生成自定义基座之后再将这些内置依赖库移回libs目录下，否则无法真机运行。
-	
-[内置依赖清单](https://uniapp.dcloud.net.cn/plugin/androidInnerLib.html)
+[内置依赖清单](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-4-%E5%A2%9E%E5%8A%A0libs%E4%BE%9D%E8%B5%96%E8%B5%84%E6%BA%90)
 
 这些遗留事项会尽快升级完善。
 

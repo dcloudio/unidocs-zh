@@ -164,6 +164,9 @@ App.vue页面需要补充如下代码：
   
   ![微信小程序云端一体安全网络模块](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ab96f1f7-af14-4f08-8b1c-699ecfce3381.jpg)
 
+**注意**
+
+- 发送加密请求前如果检测到客户端storage内不存在`uni_id_token`（即用户未登录），则会自动调用一次`uni-id-co`的`loginByWeixin`方法进行一次登录
 
 ## 数据加密传输的开发方式
 

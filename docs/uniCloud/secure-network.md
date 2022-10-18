@@ -49,6 +49,8 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 
   ![关联应用到服务空间安全网络](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fa9fdcff-5fd0-4515-9f64-220008efd27b.jpg)
   
+  本质上安全网络绑定的是应用的appid、包名、证书等信息。只不过这些信息统一配置在dev中，在uniCloud的web控制台来选择。所以务必注意dev配置的正式版、测试版的包名、签名是否正确。
+
 3. 在项目根目录manifest.json文件内为app平台开启安全网络模块
 
   ![App云端一体安全网络模块](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fe4620a4-2e16-4306-b9ae-38f1ded13a43.jpg)

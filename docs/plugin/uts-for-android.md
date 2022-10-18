@@ -359,7 +359,7 @@ constructor (){
 
 ### 4.7 匿名内部类
 
-`kotlin中`可以使用匿名内部类
+`kotlin`中可以使用匿名内部类
 
 ```kotlin
 // kotlin 新建事件监听
@@ -380,6 +380,27 @@ class MyListener extends Listener{
 // 新建实例
 let myListener = new MyListener();
 user.setListener(myListener);
+```
+
+
+### 4.8 java lang包的引入问题
+
+`kotlin` 或者`java` 中java.lang.*是被特殊处理的，可以直接使用而不需要引入。
+
+```kotlin
+// 获取当前时间戳
+System.currentTimeMillis()
+```
+
+
+UTS环境中，lang包没有被特殊对待，需要手动引入。
+
+```ts
+// 手动引入lang包下的类
+import System from 'java.lang.System';
+
+// 获取当前时间戳
+System.currentTimeMillis()
 ```
 
 

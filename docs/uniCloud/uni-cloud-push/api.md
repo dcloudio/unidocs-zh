@@ -30,7 +30,7 @@
 
 ## 客户端API [详情参考](/api/plugins/push)
 
-## 服务端Api @uni-cloud-push
+## 服务端API @uni-cloud-push
 
 以下为uni-cloud-push扩展库的api文档；关于uni-cloud-push扩展库的详细介绍，以及如何在需要操作uni-push的云函数里，手动配置uni-cloud-push扩展库[详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%8E%A8%E9%80%81%E6%B6%88%E6%81%AF)
 
@@ -49,7 +49,7 @@
 
 **注意**：`user_id`、`user_tag`、`device_id`、`push_clientid`、`getui_custom_tag`、`getui_big_data_tag`、`getui_alias`不可多选。全为空表示向所有启动过应用的设备推送。
 
-如果用户处于未登录状态，你可以基于`device_id`向用户推送消息，但是推送服务器底层只识别`push_clientid`，需要通过查数据库获得`push_clientid`。而`device_id`与`push_clientid`的映射关系不由`uni-push`提供，而是由[uni统计](https://uniapp.dcloud.io/uni-stat-v2.html)模块内置的功能实现。如果你不使用uni统计，则需要在应用启动时调用[getPushClientId](https://uniapp.dcloud.io/uniCloud/uni-cloud-push/api.html#getpushclientid)获取`push_clientid`，获取成功后（应用未在manifest中启用uni-push2.0则会获取失败）调用服务端云对象的某个方法（参数：`push_clientid`）执行向`opendb-device`表写入或更新（存在时）：[设备信息](https://uniapp.dcloud.io/uniCloud/cloud-obj.html#get-client-info)和`push_clientid`。
+如果用户处于未登录状态，你可以基于`device_id`向用户推送消息，但是推送服务器底层只识别`push_clientid`，需要通过查数据库获得`push_clientid`。而`device_id`与`push_clientid`的映射关系不由`uni-push`提供，而是由[uni统计](https://uniapp.dcloud.io/uni-stat-v2.html)模块内置的功能实现。如果你不使用uni统计，则需要在应用启动时调用[getPushClientId](/api/plugins/push)获取`push_clientid`，获取成功后（应用未在manifest中启用uni-push2.0则会获取失败）调用服务端云对象的某个方法（参数：`push_clientid`）执行向`opendb-device`表写入或更新（存在时）：[设备信息](https://uniapp.dcloud.io/uniCloud/cloud-obj.html#get-client-info)和`push_clientid`。
 
 同理基于`user_id`向用户推送消息，需要`user_id`与`push_clientid`的映射关系，可以直接使用[uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577)插件内置的功能实现。如果你不使用`uni-di-pages`需要在`App.vue`调用[uniCloud.onRefreshToken](https://uniapp.dcloud.io/uniCloud/client-sdk.html#on-refresh-token) 监听token发生变化（即：用户登录和token续期时），调用服务端云对象的某个方法（参数：`push_clientid`）操作`uni-id-device`表，记录`device_id` 与 `user_id`（防客户端伪造，需校验`token`）的映射关系；完整字段包含`user_id`、`device_id`、`token_expired`、`push_clientid`、`appid`。同时再向`opendb-device`表写入或更新（存在时）：[设备信息](https://uniapp.dcloud.io/uniCloud/cloud-obj.html#get-client-info)和`push_clientid`。
 

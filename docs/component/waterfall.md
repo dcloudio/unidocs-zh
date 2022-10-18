@@ -6,7 +6,7 @@ app端nvue专用组件。
 
 在nvue中，使用普通view做瀑布流，无法实现复用和不可见渲染资源释放。使用`<waterfall>`组件且指定`cell`后，原生引擎会自动优化性能。
 
-```
+```html
 <template>
   <waterfall column-count="2" column-width="auto">
     <cell v-for="num in lists" >
@@ -46,16 +46,16 @@ app端nvue专用组件。
 - column-width : `[可选]`描述瀑布流每一列的列宽
   - `auto`: 意味着列宽是被其他属性所决定的(比如 column-count)
   - `<length>`: 最佳列宽，实际的列宽可能会更宽(需要填充剩余的空间)， 或者更窄(如果剩余空间比列宽还要小)。 该值必须大于0
-- column-gap: [可选]列与列的间隙. 如果指定了 `normal` ，则对应 32.
-- left-gap: [可选]左边cell和列表的间隙. 如果未指定 ，则对应 `0`
-- right-gap: [可选]右边cell和列表的间隙. 如果未指定，则对应 `0`
+- column-gap: `[可选]`列与列的间隙. 如果指定了 `normal` ，则对应 32.
+- left-gap: `[可选]`左边cell和列表的间隙. 如果未指定 ，则对应 `0`
+- right-gap: `[可选]`右边cell和列表的间隙. 如果未指定，则对应 `0`
   <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/e78b5450-4f2e-11eb-b680-7980c8a877b8.png" />
 - always-scrollable-vertical : `[可选]` 可选值为 true/ false，默认值为 false，iOS 平台，内容不满一屏无法触发下拉刷新时需要设置为true，因为默认子视图高度不超过父视图高度的时候 waterfall 不能滑动
 
-其他支持的属性参见 `<list>` 组件属性部分
+其他支持的属性参见 `<list>` [组件属性部分](https://uniapp.dcloud.net.cn/component/list.html)
 
 #### 事件
-支持所有通用事件：
+支持所有[通用事件](https://uniapp.dcloud.net.cn/tutorial/nvue-event.html)：
 
 - click：用于监听点击事件。（例如：一般绑定于子组件之上触发跳转）。
 - longpress：用于监听长按事件（一般绑定于子组件之上例如：长按可删除）。

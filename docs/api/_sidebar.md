@@ -158,3 +158,4 @@
   * [小程序更新](api/other/update.md)
   * [调试](api/other/set-enable-debug.md)
   * [获取第三方平台数据](api/other/get-extconfig.md)
+* [uni ext api](extapi.md)

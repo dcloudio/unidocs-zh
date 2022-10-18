@@ -329,9 +329,10 @@ db.command.aggregate.ln(<number>)
 ####  示例代码
  
 ####  db.command.aggregate.ln
- 聚合操作符。计算给定数字在自然对数值。  
+ 
+计算给定数字在自然对数值。  
 
- 语法如下：  
+语法如下：  
 
  
 ```js
@@ -407,9 +408,10 @@ db.command.aggregate.log(<number>)
 ####  示例代码
  
 ####  db.command.aggregate.log10
- 聚合操作符。计算给定数字在对数底为 10 下的 log 值。  
 
- 语法如下：  
+计算给定数字在对数底为 10 下的 log 值。  
+
+语法如下：  
 
  
 ```js

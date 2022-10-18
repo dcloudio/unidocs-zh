@@ -84,7 +84,7 @@ let res = await db.collection('scores').aggregate()
 
 **聚合操作符**
 
-参考[聚合操作符](#aggregate-operator)
+参考[聚合操作符](cf-database-aggregate-operator.md)
 
 ## addFields@aggregate-add-fields
 

@@ -1,4 +1,4 @@
-#### uni.getBatteryInfo(OBJECT)
+### uni.getBatteryInfo(OBJECT)
 
 获取设备电量
 

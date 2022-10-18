@@ -27,7 +27,7 @@
   * [云函数URL化](uniCloud/http.md)
   * [Cloud function URLization](uniCloud/http.md)
   * [IP防刷](ip-filter.md)
-  * [IP Anti-Brush](ip-filter.md)
+  * [安全网络](secure-network.md)
 * 云数据库
 * Cloud database
   * [云数据库入门](uniCloud/hellodb.md)

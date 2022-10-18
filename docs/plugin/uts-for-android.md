@@ -404,6 +404,30 @@ System.currentTimeMillis()
 ```
 
 
+### 4.9 UTS 不建议使用 快捷构造
+
+`kotlin`  中 支持通过()的方式，快速实现无参构造器的声明
+
+```kotlin
+// 获取当前时间戳
+class ScreenReceiver extends BroadcastReceiver(){
+  
+}
+```
+
+
+UTS环境中，不建议这样做（虽然目前这样做不会影响编译），建议使用手动声明无参构造
+
+```ts
+class ScreenReceiver extends BroadcastReceiver{
+	
+	constructor (){
+		super();
+	}
+
+}
+```
+
 
 ## 5  常见问题(持续更新)
 

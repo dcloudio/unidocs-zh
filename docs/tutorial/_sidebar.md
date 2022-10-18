@@ -173,6 +173,7 @@
       * [iOS SafePack certificate installation](tutorial/build/iosSafePack.md)
     * [Android 自定义渠道包](tutorial/build/AndroidChannel.md)
     * [Android原生应用清单文件和资源](/tutorial/app-nativeresource-android.md)
+	* [iOS原生应用配置文件和资源](/tutorial/app-nativeresource-ios.md)
   * App 本地打包
   * App local packaging
     * [Android本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android)

@@ -26,7 +26,7 @@
 |object-fit|String|contain|当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|App、微信小程序、字节跳动小程序、飞书小程序、H5、京东小程序|
 |poster|String||视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效||
 |show-mute-btn|Boolean|false|是否显示静音按钮|微信小程序、App-nvue|
-|title|String||视频的标题，全屏时在顶部展示|微信小程序|
+|title|String||视频的标题，全屏时在顶部展示|微信小程序、App（3.6.7+）|
 |play-btn-position|String|bottom|播放按钮的位置|微信小程序、字节跳动小程序、飞书小程序|
 |mobilenet-hint-type|number|1|移动网络提醒样式：0是不提醒，1是提醒，默认值为1|京东小程序|
 |enable-play-gesture|Boolean|false|是否开启播放手势，即双击切换播放/暂停|微信小程序、快手小程序|
@@ -86,7 +86,7 @@
 
 
 **示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/video/video)
- 
+
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/video/video
 > Template
 ```vue
@@ -175,7 +175,7 @@ export default {
 相关api：[uni.createVideoContext](/api/media/video-context?id=createvideocontext)
 
 **注意**
- 
+
 - 视频播放格式说明：
 	* H5平台：支持的视频格式视浏览器而定，一般通用的都支持：mp4、webm 和 ogg。（``<video/>`` 组件编译到 H5 时会替换为标准 html 的 video 标签）。H5端也可以自行在条件编译里使用video.js等三方库，这些库可以自动判断环境兼容以决定使用标准video或flash来播放。
 	* 小程序平台：各小程序平台支持程度不同，详见各家文档：[微信小程序视频组件文档](https://developers.weixin.qq.com/miniprogram/dev/component/video.html)、[支付宝小程序video组件](https://docs.alipay.com/mini/component/video)、[百度小程序视频组件文档](https://smartprogram.baidu.com/docs/develop/component/media/#video/)、[字节跳动小程序视频组件文档](https://developer.toutiao.com/dev/cn/mini-app/develop/component/media-component/video)、[QQ小程序视频组件文档](https://q.qq.com/wiki/develop/miniprogram/component/media/camera.html)、[华为快应用视频组件文档](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-component-video)

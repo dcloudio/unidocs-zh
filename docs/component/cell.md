@@ -16,6 +16,8 @@ Cell supports adding any type of component as its own sub-component, but please 
 #### 属性
 #### Attribute
 
+- keep-scroll-position boolean, 它控制插入单元格后是否保持最后一个滑动位置。
+
 - insert-animation string, cell 的插入动画。当前只支持 `none` 和 `default`。
 - insert-animation string, the insertion animation of cell. Currently, only `none` and `default` are supported.
 
@@ -28,8 +30,7 @@ Cell supports adding any type of component as its own sub-component, but please 
 #### 样式
 #### Style
 
-- 通用样式.
-- Universal style.
+- 通用样式. [详见](https://uniapp.dcloud.net.cn/tutorial/nvue-css.html)
 
 > TIP
 > - 不要指定 `<cell>` 的 `flex` 值。Cell 的宽度是由它的父容器决定的，你也不需要指定它的高度。
@@ -40,5 +41,4 @@ Cell supports adding any type of component as its own sub-component, but please 
 #### 事件
 #### Event
 
-- 通用事件.
-- General events.
+- 通用事件. [详见](https://uniapp.dcloud.net.cn/tutorial/nvue-event.html)

@@ -50,7 +50,7 @@
 ```
 
 
-### uni.onPushMessage([callback,eventName])
+### uni.onPushMessage([callback,eventName])@onPushMessage
 启动监听推送消息事件
 代码示例：
 ```js 
@@ -80,7 +80,7 @@ uni.offPushMessage(eventName);
 - 如果uni.offPushMessage没有传入参数，则移除App级别的所有事件监听器；
 - 如果只提供了事件名（eventName），则移除该事件名对应的所有监听器；
 
-### uni.createPushMessage(OBJECT)
+### uni.createPushMessage(OBJECT)@createPushMessage
 创建本地通知栏消息（HBuilderX 3.5.2起支持）
 
 **平台差异说明**
@@ -132,4 +132,4 @@ QQ小程序订阅消息文档：[https://q.qq.com/wiki/develop/miniprogram/frame
 
 华为快应用推送文档：[https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush)
 
-## 服务端Api [详情参考](/uniCloud/uni-cloud-push/api)
+## 服务端API [详情参考](/uniCloud/uni-cloud-push/api)

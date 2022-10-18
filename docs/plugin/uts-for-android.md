@@ -428,6 +428,21 @@ class ScreenReceiver extends BroadcastReceiver{
 }
 ```
 
+### 4.10 UTS 中下划线前缀的变量，有屏蔽未使用警告的含义
+
+```uts
+// IDE会提示 name,status,desc 变量未使用
+onStatusUpdate(name:string, status:Int, desc:string){
+	
+}
+
+
+// 不会警告变量未使用
+onStatusUpdate(_name:string, _status:Int, _desc:string){
+	
+}
+```
+
 
 ## 5  常见问题(持续更新)
 

@@ -1379,8 +1379,7 @@ The query statement written above can be compared and verified with the permissi
 > HBuilderX 3.1.0起支持
 > Supported since HBuilderX 3.1.0
 
-复杂查询内可以使用[数据库运算方法](uniCloud/jql.md?id=aggregate-operator)。需要注意的是，与云函数内使用聚合操作符不同jql内对数据库运算方法的用法进行了简化。
-[Database operation method](uniCloud/jql.md?id=aggregate-operator) can be used in complex queries. It should be noted that, unlike the aggregation operator used in cloud functions, the usage of database operation methods in jql has been simplified.
+复杂查询内可以使用[数据库运算方法](uniCloud/jql.md?id=aggregate-operator)。需要注意的是，与云函数内使用数据库运算方法不同jql内对数据库运算方法的用法进行了简化。
 
 例：数据表test内有以下数据
 Example: The data table test has the following data

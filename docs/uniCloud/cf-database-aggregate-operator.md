@@ -392,11 +392,10 @@ db.command.aggregate.ln(<number>)
 #### Sample code
  
 ####  db.command.aggregate.ln
- 聚合操作符。计算给定数字在自然对数值。  
- Aggregation operator. Calculates the natural logarithm of the given number.
+ 
+计算给定数字在自然对数值。  
 
- 语法如下：  
- The syntax is as follows:
+语法如下：  
 
  
 ```js
@@ -489,11 +488,10 @@ db.command.aggregate.log(<number>)
 #### Sample code
  
 ####  db.command.aggregate.log10
- 聚合操作符。计算给定数字在对数底为 10 下的 log 值。  
- Aggregation operator. Calculates the log value of the given number in log base 10.
 
- 语法如下：  
- The syntax is as follows:
+计算给定数字在对数底为 10 下的 log 值。  
+
+语法如下：  
 
  
 ```js

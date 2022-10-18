@@ -11,6 +11,8 @@ Cell 支持添加任意类型的组件作为自己的子组件，但是请不要
 
 #### 属性
 
+- keep-scroll-position boolean, 它控制插入单元格后是否保持最后一个滑动位置。
+
 - insert-animation string, cell 的插入动画。当前只支持 `none` 和 `default`。
 
 - delete-animation string, cell 的删除动画。当前只支持 `none` 和 `default`。
@@ -19,7 +21,7 @@ Cell 支持添加任意类型的组件作为自己的子组件，但是请不要
 
 #### 样式
 
-- 通用样式.
+- 通用样式. [详见](https://uniapp.dcloud.net.cn/tutorial/nvue-css.html)
 
 > TIP
 > - 不要指定 `<cell>` 的 `flex` 值。Cell 的宽度是由它的父容器决定的，你也不需要指定它的高度。
@@ -27,4 +29,4 @@ Cell 支持添加任意类型的组件作为自己的子组件，但是请不要
 
 #### 事件
 
-- 通用事件.
+- 通用事件. [详见](https://uniapp.dcloud.net.cn/tutorial/nvue-event.html)

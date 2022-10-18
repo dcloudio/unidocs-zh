@@ -353,8 +353,7 @@ export default {
 }
 ```
 
-> 先跟着示例代码简单体验，详细的uni.onPushMessage api介绍[详情参考](/uniCloud/uni-cloud-push/api.html#onpushmessage)
-> First follow the sample code for a simple experience, detailed uni.onPushMessage api introduction [details reference](/uniCloud/uni-cloud-push/api.html#onpushmessage)
+> 先跟着示例代码简单体验，详细的uni.onPushMessage API介绍[详情参考](/api/plugins/push.html#onpushmessage)
 
 **APP端真机运行注意:** 
 **Note for real machine operation on the APP side:**
@@ -374,8 +373,7 @@ If I want to call "Zhang San", I need to know the phone ID of the other party, t
 同理，要给某个客户端推送消息，也需要知道该设备的客户端推送标识。
 Similarly, to push a message to a client, you also need to know the client push identifier of the device.
 
-> 先跟着示例代码简单体验，详细的uni.getPushClientId api介绍[详情参考](/uniCloud/uni-cloud-push/api.html#getpushclientid)  
-> First follow the sample code for a simple experience, detailed uni.getPushClientId api introduction [details reference](/uniCloud/uni-cloud-push/api.html#getpushclientid)
+> 先跟着示例代码简单体验，详细的uni.getPushClientId API介绍[详情参考](/api/plugins/push.md)
 代码示例：
 Code example:
 ```js
@@ -454,8 +452,7 @@ exports.main = async (event, context) => {
 在云函数文件目录右键（或按快捷键ctrl + r）-> `上传并运行云函数`，此时你的客户端将收到推送消息（应用关闭时为通知栏消息，在线时代码监听到推送消息）
 Right-click on the cloud function file directory (or press the shortcut key ctrl + r) -> `Upload and run cloud function`, at this time your client will receive a push message (the notification bar message when the application is closed, and the code listens when it is online). forward news)
 
-> 先跟着示例代码简单体验一下，详细的uniPush.sendMessage api介绍[详情参考](/uniCloud/uni-cloud-push/api.html#uni-cloud-push)
-> Let’s have a simple experience with the sample code first, the detailed introduction of uniPush.sendMessage api [details reference](/uniCloud/uni-cloud-push/api.html#uni-cloud-push)
+> 先跟着示例代码简单体验一下，详细的uniPush.sendMessage API介绍[详情参考](/uniCloud/uni-cloud-push/api.html#uni-cloud-push)
 
 如果按步骤操作完毕，此时你运行起来的uni-app客户端就会打印出“收到推送消息：xxxx”。如遇异常，可以重新运行一遍。
 If the steps are completed, the uni-app client you run at this time will print out "Push message received: xxxx". In case of exception, you can run it again.

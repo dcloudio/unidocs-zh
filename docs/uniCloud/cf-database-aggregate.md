@@ -102,8 +102,7 @@ Constants can be of any type. By default, strings starting with $ are treated as
 **聚合操作符**
 **aggregation operator**
 
-参考[聚合操作符](#aggregate-operator)
-See [aggregate operator](#aggregate-operator)
+参考[聚合操作符](cf-database-aggregate-operator.md)
 
 ## addFields@aggregate-add-fields
 

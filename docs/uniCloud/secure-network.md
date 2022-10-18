@@ -1,7 +1,7 @@
 **云端一体安全网络**
 **Cloud integrated security network**
 
-> HBuilderX 3.6.6+ 支持
+> HBuilderX 3.6.7+ 支持
 
 ## 简介
 ## Introduction
@@ -30,7 +30,7 @@ Note: Safe Network does not support web platform, only WeChat applet and App. An
 |App|微信小程序|
 |App|WeChat Mini Program|
 |:-:|:-:|
-|3.6.6+|3.6.6+|
+|3.6.7+|3.6.7+|
 
 ## 如何开通
 

@@ -1,6 +1,6 @@
-> 新增于HBuilderX 3.6.7
-
 ## 什么是 uni ext api
+
+> 新增于HBuilderX 3.6.7
 
 uni ext api，是一种需要下载[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)插件才能使用的、uni.开头的js API。
 

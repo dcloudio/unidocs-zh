@@ -57,9 +57,7 @@ Create a `tsconfig.json` file in the root directory and perform personalized con
 Personalized configuration is optional, without `tsconfig.json` it will automatically run with the default configuration.
 
 ### TypeScript 支持兼容性说明
-### TypeScript Support Compatibility Notes
-- uni-app 的 vue2 模式：nvue 文件中不支持编写 ts。vue 文件中可以使用 ts，但 ts 版本根据项目类型有区别。HBuilderX 创建的项目使用 ts 3.7.5，cli 创建的项目使用 ts 3.0.0。
-- vue2 mode for uni-app: writing ts is not supported in nvue files. ts can be used in vue files, but the ts version is different according to the project type. The project created by HBuilderX uses ts 3.7.5 and the project created by cli uses ts 3.0.0.
+- uni-app 的 vue2 模式：nvue 文件中不支持编写 ts。vue 文件中可以使用 ts，但 ts 版本根据项目类型有区别。HBuilderX 创建的项目使用 ts 3.7.5，cli 创建的项目使用 ts 4.x。
 - uni-app 的 vue3 模式：vue 文件及 nvue 文件均支持最新版 ts。
 - vue3 mode of uni-app: Both vue files and nvue files support the latest version of ts.
 

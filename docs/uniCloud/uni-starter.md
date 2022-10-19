@@ -1,4 +1,3 @@
-
 > 以下为uni-starter v2的文档，新项目推荐直接使用。如果你的老项目使用的是uni-starter v1版，不想升级请查看：[uni-starter v1 文档](https://gitcode.net/dcloud/uni-starter/-/blob/v1/README.md)
 
 ## 简介
@@ -329,6 +328,32 @@ uni-starter
 1. 真机运行需要制作自定义基座，制作后选择运行到自定义基座
 2. 苹果登录的图标，需要满足苹果应用市场的审核规范请勿随便修改；如需修改请先阅读:[Sign in with Apple Button](https://appleid.apple.com/signinwithapple/button)
 3. 应用登录功能，默认不勾选同意隐私权限是响应安卓应用市场的规范；请勿修改该逻辑。
+4. uni-id-pages 默认在刷新token（登录、注销、切换用户）后获取push客户端标识同步至uni-id-device表;如果你不使用push模块，请注释或删除，路径：`/uni-starter/uni_modules/uni-id-pages/init.js` 如下代码：
+```js
+//4. 同步客户端push_clientid至uni-id-device表
+if (uniCloud.onRefreshToken) {
+	uniCloud.onRefreshToken(() => {
+		console.log('onRefreshToken');
+		if (uni.getPushClientId) {
+			uni.getPushClientId({
+				success: async function(e) {
+					console.log(e)
+					let pushClientId = e.cid
+					console.log(pushClientId);
+					let res = await uniIdCo.setPushCid({
+						pushClientId
+					})
+					console.log('getPushClientId', res);
+				},
+				fail(e) {
+					console.error(e,'更多详情：https://uniapp.dcloud.net.cn/uniCloud/uni-starter.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9')
+				}
+			})
+		}
+	})
+}
+```
+						
 
 ## FAQ：常见问题
 1. 提示“公共模块uni-id缺少配置信息”解决方案：在cloudfunctions右键‘上传所有云函数、公共模块及actions’之后，需要在cloudfunctions -> common -> uni-config-center 目录单独上传一次，右键‘上传公共模块’。

@@ -242,8 +242,7 @@ await uniPush.sendMessage(OBJECT)
 |名称|类型|必填|默认值|描述|
 |Name|Type|Required|Default|Description|
 |--|--|--|--|--|
-|HW|string|否|无|需要先向华为侧发邮件申请权限参见[华为消息分类申请](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835)。|
-|HW|string|No|None|You need to send an email to Huawei to apply for permission, see [Huawei Message Classification Application](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message- classification-0000001149358835). |
+|HW|string|否|无|取值为“LOW”时，表示消息为资讯营销；取值为“NORMAL”时，表示消息为服务与通讯。需要先向华为侧发邮件申请权限参见[华为消息分类申请](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-classification-0000001149358835)。|
 |XM|string|否|无|小米推送的消息通道分为“普通消息”（默认）和“重要消息”两类，默认下发普通消息。普通消息单日可推送数量有限制，重要消息不限。重要消息申请具体请参考： [小米推送消息分类新规](https://dev.mi.com/console/doc/detail?pId=2422)|
 |XM|string|No|None|The message channels of Xiaomi Push are divided into two categories: "Normal Message" (default) and "Important Message", and common messages are delivered by default. The number of ordinary messages that can be pushed in a single day is limited, and there is no limit to important messages. For details of important news application, please refer to: [Xiaomi push news classification new rules](https://dev.mi.com/console/doc/detail?pId=2422)|
 |OP|string|否|无|需要联系客服开通;OPush平台上所有通道分为“公信”(默认)、“私信”两类，默认下发公信消息。公信消息单日可推送数量有限制，私信消息不限(仅限单个用户)。私信消息申请请参见（OPPO官方文档）[推送私信通道申请](https://open.oppomobile.com/new/developmentDoc/info?id=11227)。|

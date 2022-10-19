@@ -77,9 +77,7 @@ After filling in the domain name certificate in the previous step and the bindin
 - uniCloud提供默认域名供体验和测试该特性
 - uniCloud provides a default domain name for experience and testing of this feature
 - 需要注意的是绑定的域名必须已经备案
-- It should be noted that the bound domain name must have been filed
-- 腾讯云单个服务空间可支持被访问的最大 QPS 为5000，单个云函数可支持被访问的最大 QPS 为2000（具体频次受函数并发限制）
-- The maximum QPS that a single Tencent Cloud service space can support is 5000, and the maximum QPS that a single cloud function can support is 2000 (the specific frequency is limited by the function concurrency)
+- 腾讯云单个服务空间可支持QPS收服务空间QPS限制，参考：[套餐资源](price.md#tencent-package)
 - 阿里云单个服务空间可支持被访问的最大 QPS 为1000（具体频次受函数并发限制）
 - The maximum QPS that can be accessed by a single Alibaba Cloud service space is 1000 (the specific frequency is limited by function concurrency)
 - 默认域名可支持被访问的最大 QPS 为200，推荐您绑定自定义域名以获取更大的访问频次

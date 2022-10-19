@@ -42,7 +42,7 @@ uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn
 个性化配置是可选的，没有`tsconfig.json`时会自动使用默认配置运行。
 
 ### TypeScript 支持兼容性说明
-- uni-app 的 vue2 模式：nvue 文件中不支持编写 ts。vue 文件中可以使用 ts，但 ts 版本根据项目类型有区别。HBuilderX 创建的项目使用 ts 3.7.5，cli 创建的项目使用 ts 3.0.0。
+- uni-app 的 vue2 模式：nvue 文件中不支持编写 ts。vue 文件中可以使用 ts，但 ts 版本根据项目类型有区别。HBuilderX 创建的项目使用 ts 3.7.5，cli 创建的项目使用 ts 4.x。
 - uni-app 的 vue3 模式：vue 文件及 nvue 文件均支持最新版 ts。
 
 ### 注意事项

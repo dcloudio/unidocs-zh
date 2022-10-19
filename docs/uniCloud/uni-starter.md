@@ -332,25 +332,25 @@ uni-starter
 ```js
 //4. 同步客户端push_clientid至uni-id-device表
 if (uniCloud.onRefreshToken) {
-	uniCloud.onRefreshToken(() => {
-		console.log('onRefreshToken');
-		if (uni.getPushClientId) {
-			uni.getPushClientId({
-				success: async function(e) {
-					console.log(e)
-					let pushClientId = e.cid
-					console.log(pushClientId);
-					let res = await uniIdCo.setPushCid({
-						pushClientId
-					})
-					console.log('getPushClientId', res);
-				},
-				fail(e) {
-					console.error(e,'更多详情：https://uniapp.dcloud.net.cn/uniCloud/uni-starter.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9')
-				}
-			})
-		}
-	})
+ uniCloud.onRefreshToken(() => {
+  console.log('onRefreshToken');
+  if (uni.getPushClientId) {
+   uni.getPushClientId({
+    success: async function(e) {
+     console.log(e)
+     let pushClientId = e.cid
+     console.log(pushClientId);
+     let res = await uniIdCo.setPushCid({
+      pushClientId
+     })
+     console.log('getPushClientId', res);
+    },
+    fail(e) {
+     console.error(e,'更多详情：https://uniapp.dcloud.net.cn/uniCloud/uni-starter.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9')
+    }
+   })
+  }
+ })
 }
 ```
 						

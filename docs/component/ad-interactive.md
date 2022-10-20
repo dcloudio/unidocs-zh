@@ -171,6 +171,4 @@ When running to the WeChat applet, you need to add the request legal domain name
 1. 登陆 [微信公众平台](https://mp.weixin.qq.com/)，左侧栏找到 `开发管理` 并点击 开发设置->服务器域名
 1. Log in to [WeChat Public Platform](https://mp.weixin.qq.com/), find `Development Management` in the left column and click Development Settings->Server Domain Name
 2. 新增 `request合法域名`: `https://wxac1.dcloud.net.cn`
-2. Added `request legal domain name`: `https://wxac1.dcloud.net.cn`
-3. 新增 `业务域名`: `https://engine.dcad01.com`
-3. Added `business domain name`: `https://engine.dcad01.com`
+3. 新增 `业务域名`: `https://engine.dcad01.com` 和 `https://xcx.dcad01.com`

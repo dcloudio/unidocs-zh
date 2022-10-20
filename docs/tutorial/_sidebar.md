@@ -29,6 +29,7 @@
     * [Components](/tutorial/vue-components.md)
     * [API](/tutorial/vue-api.md)
     * [vuex](/tutorial/vue-vuex.md)
+    * [组合式 API](/tutorial/vue-composition-api.md)
   * [vue3](/tutorial/vue3-basics.md)
     * [基础](/tutorial/vue3-basics.md)
     * [Basic](/tutorial/vue3-basics.md)

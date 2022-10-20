@@ -539,8 +539,7 @@ In order to facilitate developers to use sourceMap files to locate code problems
 #### 使用环境@sourcemap-parse-error-env
 #### Using the environment @sourcemap-parse-error-env
 
-1. 使用腾讯云服务空间，不支持阿里云服务空间
-1. Using Tencent Cloud Service Space, Alibaba Cloud Service Space is not supported
+1. 使用腾讯云服务空间，不支持阿里云服务空间（原因是sourcemap含有源码，阿里云的存储不支持对文档设权限，如果sourcemap放在阿里云上会导致所有人可以了解应用js源码信息）
 2. HBuiderX 3.5.3+
 3. uni-admin 1.9.4+
 4. 不支持 IE
@@ -548,6 +547,10 @@ In order to facilitate developers to use sourceMap files to locate code problems
 
 #### 生成 sourceMap@create-sourcemap
 #### Generate sourceMap@create-sourcemap
+
+线上运行端在各种用户环境下可能会有报错，需要开发者统计和分析。但三方统计系统（如友盟、阿拉丁、百度），对运行端的报错采集，提示的是uni-app编译器编译后的代码报错的行数，相当于乱码，无法告知开发者是uni-app的vue或js的哪一行代码报错。
+
+uni统计的sourceMap功能可以解决这一问题，在统计后台可以清晰的看到报错的环境和准确的报错代码，是uni-app编译前的vue或js的具体信息。
 
 - 在 HBuiderX 中生成 sourceMap 文件
 - Generate sourceMap file in HBuiderX

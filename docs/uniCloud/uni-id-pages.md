@@ -2315,9 +2315,7 @@ Hereinafter referred to as: `uni-id configuration file`, complete configuration 
 ## 一键登录
 ## One-click login
 一键登录是运营商提供的、比短信验证码更方便、更安全、更便宜的方案。[详见](https://uniapp.dcloud.net.cn/univerify)。
-One-click login is a solution provided by operators, which is more convenient, safer and cheaper than SMS verification codes. [See details](https://uniapp.dcloud.net.cn/univerify).
-- 使用本功能需要在[DCloud开发者中心 -> ](https://dev.dcloud.net.cn/#/pages/uniLogin/index)开通并充值
-- To use this function, you need to activate and recharge in [DCloud Developer Center -> ](https://dev.dcloud.net.cn/#/pages/uniLogin/index)
+- 使用本功能需要在[DCloud开发者中心 -> ](https://dev.dcloud.net.cn/pages/uniLogin/index)开通并充值
 - 模块配置：`manifest.json`-->`App模块配置` -->`OAuth（登录鉴权）`-->` 一键登录`，点击后面的`开通配置`，在随后打开的web界面中，同意协议，并点击充值按钮充值。如只是测试，可以只充值1元钱。如果你已经确定包名，则可以在web界面点击“添加应用”，提交审核。这个是正式打包必须的。真机运行可以跳过此环节。记住页面上展示的`apiKey`和`apiSecret`，下一步需要用到。
 - Module configuration: `manifest.json`-->`App module configuration` -->`OAuth (login authentication)`-->`One-click login`, click on the back of `Activate configuration`, and then open the web In the interface, agree to the agreement, and click the recharge button to recharge. If it is just a test, you can only recharge 1 yuan. If you have determined the package name, you can click "Add Application" on the web interface to submit for review. This is required for official packaging. You can skip this link in real machine operation. Remember the `apiKey` and `apiSecret` shown on the page, which will be used in the next step.
 - uni-id配置：`uni-id配置文件` --> `service` --> `univerify`，填写`appid`、`apiKey`和 `apiSecret`。`appid`就是`manifest`里的`appid`。`apiKey`和`apiSecret`则是从上一步的web界面得来的。
@@ -2465,9 +2463,7 @@ Access the domain name at this time, if you can see the same effect as your proj
 ## 短信验证码
 ## SMS verification code
 为了方便开发调试，`uni-id-pages`未配置短信登录时，自动启动测试模式；直接使用：123456作为短信验证码即可。
-In order to facilitate development and debugging, when `uni-id-pages` is not configured with SMS login, the test mode is automatically activated; directly use: 123456 as the SMS verification code.
-- 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/#/pages/sms/base)开通并充值
-- To use this function, you need to activate and recharge in [DCloud Developer Center -> SMS Verification Code](https://dev.dcloud.net.cn/#/pages/sms/base)
+- 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/pages/sms/base)开通并充值
 - 教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
 - Tutorial reference [SMS Service Activation Guide](https://ask.dcloud.net.cn/article/37534)
 - 密钥配置：`uni-id配置文件` --> `service` --> `sms` 填写相关密钥信息。

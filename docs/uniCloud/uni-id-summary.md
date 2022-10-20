@@ -285,9 +285,7 @@ Configuration item:
 + `passwordErrorLimit`密码错误重试次数，分ip记录密码错误次数，达到重试次数之后等待`passwordErrorRetryTime`时间之后才可以重试
 + `passwordErrorLimit` the number of retries for password errors, record the number of password errors by ip, and wait for `passwordErrorRetryTime` time before retrying after reaching the number of retries
 + `passwordErrorRetryTime`单位为秒
-+ `passwordErrorRetryTime` in seconds
-+ 如果使用`sendSmsCode`接口发送短信需要前往[https://dev.dcloud.net.cn/#/pages/sms/base](https://dev.dcloud.net.cn/#/pages/sms/base)充值短信额度，配置`config.json`的`service`字段，字段说明见下方示例
-+ If you use the `sendSmsCode` interface to send SMS, you need to go to [https://dev.dcloud.net.cn/#/pages/sms/base](https://dev.dcloud.net.cn/#/pages/sms /base) to recharge the SMS quota, configure the `service` field of `config.json`, see the example below for field descriptions
++ 如果使用`sendSmsCode`接口发送短信需要前往[https://dev.dcloud.net.cn/pages/sms/base](https://dev.dcloud.net.cn/pages/sms/base)充值短信额度，配置`config.json`的`service`字段，字段说明见下方示例
 + 另外可以按照客户端平台进行不同的配置，参考下面示例
 + In addition, different configurations can be made according to the client platform, refer to the following example
 
@@ -392,7 +390,7 @@ Configuration item:
     },
     "univerify": {
       "appid": "", // 当前应用的appid，使用云函数URL化，此项必须配置
-      "apiKey": "", // apiKey 和 apiSecret 在开发者中心获取，开发者中心：https://dev.dcloud.net.cn/#/pages/uniLogin/index，文档：https://ask.dcloud.net.cn/article/37965
+      "apiKey": "", // apiKey 和 apiSecret 在开发者中心获取，开发者中心：https://dev.dcloud.net.cn/pages/uniLogin/index，文档：https://ask.dcloud.net.cn/article/37965
       "apiSecret": ""
     }
   }
@@ -447,11 +445,8 @@ Front-end pages within uni-id-co and uni-id-pages both support these four built-
 |Login method |Configuration and access method |
 |--												|--																																																																	|
 |用户名、手机号、邮箱+密码|配置`passwordSecret`即可																																																						|
-|Username, mobile phone number, email + password|Configure `passwordSecret` |
-|手机号+验证码						|配置`service.sms`，在开发者中心短信服务内获取配置信息：[短信服务](https://dev.dcloud.net.cn/#/pages/sms/base)											|
-|Mobile phone number + verification code |Configure `service.sms`, get configuration information in the developer center SMS service: [SMS service](https://dev.dcloud.net.cn/#/pages/sms/base) |
-|手机号一键登录						|配置`service.univerify`，在开发者中心一键登录服务内获取：[一键登录](https://dev.dcloud.net.cn/#/pages/uniLogin/index)							|
-|One-click login with mobile phone number |Configure `service.univerify` and get it in the one-click login service in the developer center: [One-click login](https://dev.dcloud.net.cn/#/pages/uniLogin/index ) |
+|手机号+验证码						|配置`service.sms`，在开发者中心短信服务内获取配置信息：[短信服务](https://dev.dcloud.net.cn/pages/sms/base)											|
+|手机号一键登录						|配置`service.univerify`，在开发者中心一键登录服务内获取：[一键登录](https://dev.dcloud.net.cn/pages/uniLogin/index)							|
 |微信小程序登录						|配置`mp-weixin.oauth.weixin`，在微信公众平台获取：[微信公众平台](https://mp.weixin.qq.com/)																				|
 |WeChat applet login |Configure `mp-weixin.oauth.weixin` and obtain it on the WeChat public platform: [WeChat public platform](https://mp.weixin.qq.com/) |
 |微信公众号登录						|配置`web.oauth.weixin-h5`，在微信公众平台获取：[微信公众平台](https://mp.weixin.qq.com/)																						|

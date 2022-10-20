@@ -199,7 +199,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 
 |属性|类型|说明|
 |:-|:-|:-|
-|minUserAgentVersion|String|最小webview版本，例如：95.0.4638.75。（当低于最小版本要求时，显示 `WebView版本过低`  弹框，点击确定退出应用。）|
+|minUserAgentVersion|String|最小webview版本，例如：64.0.3282.116。（当低于最小版本要求时，显示 `WebView版本过低`  弹框，点击确定退出应用。）|
 |x5|Object|此属性需要在manifest模块配置中勾选 Android X5 Webview 模块，详细参见下面的说明|
 
 x5 属性说明
@@ -217,7 +217,7 @@ webview示例
 {
   "app-plus" : {
     "webView": {
-      "minUserAgentVersion": "95.0.4638.75",
+      "minUserAgentVersion": "64.0.3282.116",
       "x5": {
         "timeOut": 3000,
         "showTipsWithoutWifi": true,
@@ -228,6 +228,7 @@ webview示例
 }
 ```
 
+提示：vue3 vue页面 要求 Android 系统 webview 最低版本为 `64.0.3282.116`
 
 ### h5
 |属性|类型|说明|

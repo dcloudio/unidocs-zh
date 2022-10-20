@@ -1696,7 +1696,7 @@ module.exports = {
 
 ## 一键登录
 一键登录是运营商提供的、比短信验证码更方便、更安全、更便宜的方案。[详见](https://uniapp.dcloud.net.cn/univerify)。
-- 使用本功能需要在[DCloud开发者中心 -> ](https://dev.dcloud.net.cn/#/pages/uniLogin/index)开通并充值
+- 使用本功能需要在[DCloud开发者中心 -> ](https://dev.dcloud.net.cn/pages/uniLogin/index)开通并充值
 - 模块配置：`manifest.json`-->`App模块配置` -->`OAuth（登录鉴权）`-->` 一键登录`，点击后面的`开通配置`，在随后打开的web界面中，同意协议，并点击充值按钮充值。如只是测试，可以只充值1元钱。如果你已经确定包名，则可以在web界面点击“添加应用”，提交审核。这个是正式打包必须的。真机运行可以跳过此环节。记住页面上展示的`apiKey`和`apiSecret`，下一步需要用到。
 - uni-id配置：`uni-id配置文件` --> `service` --> `univerify`，填写`appid`、`apiKey`和 `apiSecret`。`appid`就是`manifest`里的`appid`。`apiKey`和`apiSecret`则是从上一步的web界面得来的。
 
@@ -1784,7 +1784,7 @@ host文件路径： Windows系统一般为：`C:\Windows\System32\drivers\etc`�
 
 ## 短信验证码
 为了方便开发调试，`uni-id-pages`未配置短信登录时，自动启动测试模式；直接使用：123456作为短信验证码即可。
-- 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/#/pages/sms/base)开通并充值
+- 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/pages/sms/base)开通并充值
 - 教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
 - 密钥配置：`uni-id配置文件` --> `service` --> `sms` 填写相关密钥信息。
 

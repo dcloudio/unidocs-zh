@@ -169,7 +169,9 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 **注：当包年包月服务空间升级新套餐时，如果已开通前端网页托管，则前端网页托管会自动转为按量计费，请确保账号余额充足！**
 **Note: When the annual and monthly service space is upgraded to a new package, if the front-end web hosting has been activated, the front-end web hosting will be automatically converted to metered billing, please ensure that the account balance is sufficient! **
 
-### 保证金
+### 余额及保证金@tencent-balance
+腾讯云余额可用于服务空间`按量计费`产生的费用扣款，如服务空间套餐资源用尽后`超限按量`、前端网页托管等服务产生的费用。单次充值不低于10元，充值后不支持退款，**余额不支持购买腾讯云包年包月套餐，请根据业务使用量合理选择充值金额**。
+
 腾讯云购买基础套餐后，如果开启了`超限按量`功能，在超出套餐资源用量后，每日的资源用量会在第二天按照按量计费结算并从余额中扣除。由于存在余额超支的情况，使用按量计费服务需要缴纳保证金，账户保证金在停止使用按量计费服务后可以申请退还，所以账户保证金不能申请开具发票。若需退还保证金，需满足以下条件：
 1. 服务空间未开启`超限按量`功能
 2. 服务空间未开通`前端网页托管`

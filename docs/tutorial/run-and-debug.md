@@ -54,3 +54,9 @@ uni-app一般是先运行后调试。debug的入口在运行之后的控制台�
 运行后的控制台，右上角会有一个红色虫子图标或调试的checkbox。
 
 ![](https://hx.dcloud.net.cn/static/snapshots/app/h5-debug/open-debug.png)
+
+### 线上平台排错
+
+应用上线后，各种用户环境下可能会有报错，需要开发者统计和分析。但三方统计系统（如友盟、阿拉丁、百度），对运行端的报错采集，提示的是uni-app编译器编译后的代码报错的行数，相当于乱码，无法告知开发者是uni-app的vue或js的哪一行代码报错。
+
+为了解决这个问题，DCloud提供了uni统计的sourceMap功能，在uni统计后台可以清晰的看到报错的环境和准确的报错代码，是uni-app编译前的vue或js的具体信息。[详见](https://uniapp.dcloud.net.cn/uni-stat-v2.html#sourcemap-parse-error)

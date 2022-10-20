@@ -134,4 +134,4 @@ export default {
 
 1. 登陆 [微信公众平台](https://mp.weixin.qq.com/)，左侧栏找到 `开发管理` 并点击 开发设置->服务器域名
 2. 新增 `request合法域名`: `https://wxac1.dcloud.net.cn`
-3. 新增 `业务域名`: `https://engine.dcad01.com`
+3. 新增 `业务域名`: `https://engine.dcad01.com` 和 `https://xcx.dcad01.com`

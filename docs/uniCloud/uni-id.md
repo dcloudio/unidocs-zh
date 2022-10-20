@@ -3753,6 +3753,8 @@ exports.main = async function(event, context) {
 
 uni-id 3.3.29起支持，此功能无需额外开发，升级uni-id到此版本后会自动依赖[uni-open-bridge-common](uni-open-bridge.md#common)，在用户使用微信、QQ等三方登录时会自动将用户在三方平台的凭证存储到`opendb-open-data`表，以便其他功能使用这些凭证。注意升级不要忘记上传`uni-open-bridge-common`模块。
 
+由于保存三方凭证只在登录时进行，而存量用户可能需要等到token过期才会重新登录，因此无法确保所有三方平台登录的用户都有凭证信息。
+
 # 迁移指南@migration
 
 ## 自1.x.x版本升级到2.x.x@m1to2

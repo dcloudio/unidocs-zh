@@ -99,22 +99,21 @@ Special attention: Windows is connected to an Android phone, and you must ensure
 ### 3.2 Mac: 连接Android手机@mac-android
 ### 3.2 Mac: Connect Android phone @mac-android
 
+- 特别注意：HBuilderX菜单【设置 - 运行设置】，如果自定义过adb路径，请检查adb路径是否有效，注意必须是有效的adb（通常程序名都是adb)。如不确定，清除掉试试。然后重启HBuilderX。
+- 如果是检测不到mumu等Android模拟器，HBuilderX菜单【设置 - 运行设置】,请检查配置的端口号。
+- 关闭HBuilderX，打开任务管理器，看下是否存在adb进程，如存在，请杀死所有adb进程。
+
+1. 重启电脑重试，重启电脑通常能解决90%的问题。 
+2. 如重启HBuilderX仍然不行，请使用命令行(终端.app)，切换到HBuilderX自带的adb目录。
+3. HBuilderX正式版的adb目录位置：tools/adbs目录（MAC下为HBuilderX.app/Contents/tools/adbs目录）；HBuilderX Alpha版的adb目录位置：plugins/launcher/tools/adbs目录（MAC下为`/Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/launcher/tools/adbs`目录）
+4. 在adbs目录下运行`./adb kill-server`重试。
+
+**修改adb_usb.ini**
 1. 关于本机(指Mac系统的关于本机，非手机) --> 系统报告 -> usb  -> 你所连接的device --> 厂商ID或者供应商ID(Vendor ID)
-1. About the machine (referring to the Mac system about this machine, not the mobile phone) --> system report -> usb -> your connected device --> manufacturer ID or vendor ID (Vendor ID)
-2. 在终端执行如下命令：echo xxxxxx >> ~/.android/adb_usb.ini （“xxxxxx”为厂商ID或者供应商ID(Vendor ID)，有些系统下echo命令并不能正确写入文件，可在~/.android/目录下修改或新建adb_usb.ini添加xxxxxx）
-2. Execute the following command in the terminal: echo xxxxxx >> ~/.android/adb_usb.ini (“xxxxxx” is the vendor ID or vendor ID (Vendor ID). In some systems, the echo command cannot write the file correctly. Modify or create adb_usb.ini in the ~/.android/ directory to add xxxxxx)
-3. 重启HBuilderX。
-3. Restart HBuilderX.
-4. 如重启HBuilderX仍然不行，请使用命令行(终端.app)，切换到HBuilderX自带的adb目录。
-4. If restarting HBuilderX still does not work, please use the command line (terminal.app) to switch to the adb directory that comes with HBuilderX.
-5. HBuilderX正式版的adb目录位置：tools/adbs目录（MAC下为HBuilderX.app/Contents/tools/adbs目录）
-5. The location of the adb directory of the official version of HBuilderX: tools/adbs directory (HBuilderX.app/Contents/tools/adbs directory under MAC)
-6. HBuilderX Alpha版的adb目录位置：plugins/launcher/tools/adbs目录（MAC下为`/Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/launcher/tools/adbs`目录）
-6. The location of the adb directory of HBuilderX Alpha version: plugins/launcher/tools/adbs directory (`/Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/launcher/tools/adbs` directory under MAC)
-7. 在adbs目录下运行`./adb kill-server`重试。
-7. Run `./adb kill-server` in the adbs directory to try again.
-8. 重启电脑重试。
-8. Restart the computer and try again.
+2. 在终端执行如下命令：echo xxxxxx >> ~/.android/adb_usb.ini （“xxxxxx”为厂商ID或者供应商ID(Vendor ID)，有些系统下echo命令并不能正确写入文件，可在~/.android/目录下修改或新建adb_usb.ini添加xxxxxx），重启HBuilderX。
+
+> 如果上面的方法还无法解决，菜单【帮助】【查看运行日志】，看下日志中存在什么相关的错误。
+> 也可到[DCloud论坛](https://ask.dcloud.net.cn/)发帖。发帖时，详细说明操作系统信息、HBuilderX版本号、手机型号以及手机系统信息，并提供运行日志。
 
 ## 4. Windows 连接手机/模拟器说明@windows
 ## 4. Windows connection phone/emulator instructions @windows
@@ -138,12 +137,9 @@ If there is no response from the mobile phone connection or a driver problem is 
 #### 4.1.2 注意事项：
 #### 4.1.2 Notes:
 
-- Windows Android: 如果是华为手机，下列各种方法都尝试后还不行，请安装[华为手机助手](https://consumer.huawei.com/cn/support/content/zh-cn00731203/?ivk_sa=1024320u)
-- Windows Android: If it is a Huawei mobile phone, after trying all the following methods, it still does not work, please install [Huawei Mobile Assistant](https://consumer.huawei.com/cn/support/content/zh-cn00731203/?ivk_sa= 1024320u)
-- HBuilderX，【设置 - 运行设置】，是否自定义过adb路径。如有自定义，请检查adb路径是否有效。如不确定，清除掉试试。然后重启HBuilderX
-- HBuilderX, [Settings - Run Settings], whether you have customized the adb path. If customized, please check if the adb path is valid. If you are not sure, try clearing it. Then restart HBuilderX
-- 关闭HBuilderX，打开任务管理器，看下是否存在adb进程，如存在，请杀死所有adb进程
-- Close HBuilderX, open the task manager to see if there is an adb process, if so, kill all adb processes
+- 特别注意：HBuilderX菜单【设置 - 运行设置】，如果自定义过adb路径，请检查adb路径是否有效，注意必须是有效的adb（通常windows下，程序名都是adb.exe)。如不确定，清除掉试试。然后重启HBuilderX
+- 如果是检测不到夜神、mumu等Android模拟器，HBuilderX菜单【设置 - 运行设置】,请检查配置的端口号。
+- 关闭HBuilderX，打开任务管理器，看下是否存在adb进程，如存在，请杀死所有adb进程。
 
 1. 如果在启动HBuilderX后才安装驱动连接上手机，可能需要重启HBuilderX。
 1. If the driver is installed and connected to the phone after HBuilderX is started, it may be necessary to restart HBuilderX.
@@ -162,10 +158,23 @@ If there is no response from the mobile phone connection or a driver problem is 
 8. 有些软件结束adb进程后又会自动启动，所以得将`adb.exe`文件重命名一下，实在不行卸载了这些流氓软件。
 8. Some software will start automatically after ending the adb process, so you have to rename the `adb.exe` file, it is impossible to uninstall these rogue software.
 9. 关闭所有手机助手及进程里各种`adb.exe`（包括`kadb.exe`等），再试。
-9. Close all mobile assistants and various `adb.exe` (including `kadb.exe`, etc.) in the process and try again.
+10. 如果是华为手机，下列各种方法都尝试后还不行，请安装[华为手机助手](https://consumer.huawei.com/cn/support/content/zh-cn00731203/?ivk_sa=1024320u)
+11. 如果是华为荣耀Magic UI系列手机，检测不到手机，请参考 [华为荣耀Magic UI系列手机ADB连接手机方法](https://ask.dcloud.net.cn/article/40005)
 
-#### 4.1.3 adb占用问题
-#### 4.1.3 adb occupation problem
+> 如果上面的方法还无法解决，菜单【帮助】【查看运行日志】，看下日志中存在什么相关的错误。
+> 也可到[DCloud论坛](https://ask.dcloud.net.cn/)发帖。发帖时，详细说明操作系统信息、HBuilderX版本号、手机型号以及手机系统信息，并提供运行日志。
+
+#### 4.1.3 其它问题
+
+如果以上方式仍然不行，还有一种可能是手机对adb的版本有特定要求（遇到一些魅族手机有此问题），此时需要更换HBuilder的adb版本。
+- HBuilder安装目录下带了多个版本的adb。
+- HBuilder的adb目录位置：tools/adbs目录（MAC下为HBuilder.app/Contents/tools/adbs目录）
+- HBuilderX的adb目录位置：plugins/launcher/tools/adbs目录（MAC下为`/Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/launcher/tools/adbs`目录）
+替换版本前，将默认版本的adb.exe备份下。然后把1.0.31版的adb.exe拷贝出来替换主目录下的exe。
+
+> 当然也可下载[Android SDK](https://developer.android.google.cn/)，将其中的adb替换HBuilderX自带的adb.
+
+#### 4.1.4 adb占用问题
 
 如果你找不到被谁占用，则还可以使用如下方式检测，寻找幕后黑手：
 If you can't find who is occupied, you can also use the following methods to detect and find the culprit:
@@ -200,20 +209,6 @@ If you can't find who is occupied, you can also use the following methods to det
   adb.exe (the name is generally not adb.exe, take adb.exe as an example) as the started adb process.
   或者手工在任务管理器中定位这个进程，打开任务管理器后，进入进程选项卡，如果列表里有PID，直接找；如果列表里没有PID，点菜单查看-选择列，勾上PID。
   Or manually locate the process in the task manager, open the task manager, go to the process tab, if there is a PID in the list, look for it directly; if there is no PID in the list, click the menu to view - select a column, and tick the PID.
-
-#### 4.1.4 其它问题
-#### 4.1.4 Other issues
-
-如果以上方式仍然不行，还有一种可能是手机对adb的版本有特定要求（遇到一些魅族手机有此问题），此时需要更换HBuilder的adb版本。
-If the above method still does not work, there is another possibility that the mobile phone has specific requirements for the adb version (some Meizu mobile phones have this problem), and the adb version of HBuilder needs to be replaced at this time.
-- HBuilder安装目录下带了多个版本的adb。
-- There are multiple versions of adb in the HBuilder installation directory.
-- HBuilder的adb目录位置：tools/adbs目录（MAC下为HBuilder.app/Contents/tools/adbs目录）
-- HBuilder's adb directory location: tools/adbs directory (HBuilder.app/Contents/tools/adbs directory under MAC)
-- HBuilderX的adb目录位置：plugins/launcher/tools/adbs目录（MAC下为`/Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/launcher/tools/adbs`目录）
-- HBuilderX's adb directory location: plugins/launcher/tools/adbs directory (`/Applications/HBuilderX-Alpha.app/Contents/HBuilderX/plugins/launcher/tools/adbs` directory under MAC)
-替换版本前，将默认版本的adb.exe备份下。然后把1.0.31版的adb.exe拷贝出来替换主目录下的exe。
-Before replacing the version, backup the default version of adb.exe. Then copy the adb.exe of version 1.0.31 to replace the exe in the main directory.
 
 ### 4.2 Windows: 连接iOS手机@windows-ios
 ### 4.2 Windows: Connecting to an iOS phone @windows-ios

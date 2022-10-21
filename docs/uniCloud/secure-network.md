@@ -20,8 +20,9 @@ DCloud面向开发者同时提供了端引擎`uni-app` 和 云引擎`uniCloud`�
 
 `uni-app` 连接 `uniCloud` 时，可以选择是否启动安全网络。它通过高安全的保护机制，解决了客户端受信和网络受信的问题，防止客户端伪造和通信内容抓包。
 
-注意：安全网络不支持web平台，只支持微信小程序和App。并且App的安全级别更高。
-Note: Safe Network does not support web platform, only WeChat applet and App. And the security level of the App is higher.
+安全网络有两个主要功能，**客户端验证**和**网络请求加密**，这两个功能对应里面会详细讲解，参考：[客户端验证](#verify-client)、[网络请求加密](#encrypt-data)
+
+注意：安全网络不支持web平台，只支持微信小程序和App。并且App的安全级别更高。安全网络在客户端callFunction时生效，云函数url化等场景下不生效。
 
 **平台差异说明**
 **Platform Difference Description**
@@ -45,7 +46,7 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 
   ![证书管理](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b4e76aed-6659-47e6-a18e-e41bdf804643.jpg)
 
-2. 在uniCloud控制台关联允许发送安全网络请求的应用
+2. 在[uniCloud控制台](https://unicloud.dcloud.net.cn/)关联允许发送安全网络请求的应用
 
   ![关联应用到服务空间安全网络](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fa9fdcff-5fd0-4515-9f64-220008efd27b.jpg)
   
@@ -72,6 +73,8 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 ### 微信小程序开通安全网络@mp-weixin
 
 安全网络在微信小程序上的实现，依赖了微信提供的一些用户级的凭据。所以需要下载`uni-id-pages`和`uni-open-bridge`，并在app.vue里初始化。
+
+**无论是处理加密请求还是需要进行验证客户端的云函数在处理微信小程序发起的请求时都必须依赖`uni-id-common`和`uni-open-bridge-common`**
 
 1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 【名称待定】`内填写微信小程序的appId。一个应用只能有一个发行配置，但是可以有多个开发配置
 
@@ -182,11 +185,51 @@ The App.vue page needs to add the following code:
 
 **注意**
 
-- 发送加密请求前如果检测到客户端storage内不存在`uni_id_token`（即用户未登录），则会自动调用一次`uni-id-co`的`loginByWeixin`方法进行一次登录
+- 发送安全网络请求前如果检测到客户端storage内不存在`uni_id_token`（即用户未登录），则会自动调用一次`uni-id-co`的`loginByWeixin`方法进行一次登录
 
-## 数据加密传输的开发方式
+## 客户端验证@verify-client
 
-<!-- 如果你只需要客户端身份验真，不需要对网络传输的数据加密，那么参考上一章节的文档就够了。 -->
+> 新增于 HBuilderX 3.6.8
+
+客户端验证用于确保发起请求的客户端的真实性。客户端验证功能全流程由uniCloud进行控制，开启此功能后将直接拒绝无权访问的客户端调用云函数。
+
+开发者需在[uniCloud控制台](https://unicloud.dcloud.net.cn/)的安全网络菜单内添加客户端校验相关配置。
+
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/bd8f8939-67d5-415b-85eb-f63d4d1dc2dc.jpg)
+
+开启客户端验证功能后，默认对所有云函数启用安全验证，仅在安全网络应用列表内配置的应用允许访问云函数。
+
+如有自定义安全规则的需求，需打开自定义规则开关手动配置。开启自定义规则后，未被规则匹配到的云函数不进行客户端验证。
+
+### 自定义规则语法
+
+自定义规则是一个标准的json，不支持编写注释，如需拷贝示例代码请务必去除注释。
+
+如下示例为一个简单的自定义规则配置
+
+```json
+{
+  "verify-client": [{ // 可访问云函数verify-client的应用列表
+    "appId": "__UNI_xxxx",  // 客户端的DCloud AppId
+    "platform": "android",  // 客户端平台，有三个可选值：android（安卓）、ios（iOS）、mp-weixin（微信小程序）
+    "version": "production" // 客户端版本，有两个可选值：production（正式版）、development（测试版）
+  }]
+}
+```
+
+云函数名有以下几种写法
+
+1. 单个云函数`verify-client`
+2. 多个云函数`verify-client1,verify-client2`，注意逗号为英文逗号
+3. 通配符`*`
+
+当匹配一个云函数的自定义规则配置时，优先使用单个云函数名的配置，其次是多个云函数名的配置，最后是通配符的配置。如果都未匹配到则不对此云函数执行验证客户端的逻辑。
+
+**注意**
+
+- 如果修改客户端验证配置需要重新打包做出修改的客户端。
+
+## 数据加密传输@encrypt-data
 
 如需加密传输的数据，则在客户端和服务器都要编写代码，倒不需要写具体的加密解密算法，而是需要在客户端指定哪些请求、哪些数据要加密，而在云端要校验客户端是否指定了正确的条件。
 
@@ -259,8 +302,7 @@ uniCloud.importObject('object-name', {
 
 - 微信小程序安全网络依赖于登录逻辑，因此在客户端检测到发送安全网络请求时，若用户未登录则会自动调用uni-id-co的loginByWeixin接口
 
-## 服务器端
-## Service-Terminal
+### 服务器端
 
 uni云端一体安全网络，已经在底层封装好了复杂的安全相关的算法。开发者只需关心对哪些请求、哪些数据进行加密。
 
@@ -270,7 +312,7 @@ uni云端一体安全网络，已经在底层封装好了复杂的安全相关�
 
 示例代码如下：
 
-### 云函数中验证secretType
+#### 云函数中验证secretType
 
 在云函数的context中有secretType。如果这个云函数的返回数据必须加密，那么应该使用如下方式校验客户端的请求是否合法。
 
@@ -286,7 +328,7 @@ exports.main = async (event, context) => {
 }
 ```
 
-### 云对象中验证secretType
+#### 云对象中验证secretType
 
 在云对象的this中有secretType。如果这个云对象的reward方法的返回数据必须加密，那么应该使用如下方式校验客户端的请求是否合法。
 

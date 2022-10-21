@@ -22,7 +22,7 @@ Notes for H5 platform login:
 注意事项：
 Precautions:
 - 百度小程序平台需要在button组件的@login事件后再调用 uni.login ，[详见](https://smartprogram.baidu.com/docs/develop/function/login/),否则会返回“请登录”的错误信息，建议在@login事件中调用。
-- The Baidu Mini Program platform needs to call uni.login after the @login event of the button component, [see details](https://smartprogram.baidu.com/docs/develop/function/login/), otherwise it will return "Please Login" error message, it is recommended to call it in the @login event.
+- uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getLoginCode) 替代 uni.login 解决。
 - 京东小程序IDE 暂时不支持此uni.login()，请用真机查看；IDE调用，只能返回模拟数据 code为200。
 - The JD Mini Program IDE does not support this uni.login() temporarily, please use a real device to view it; when called by the IDE, it can only return simulated data. The code is 200.
 
@@ -106,6 +106,29 @@ uni.login({
 });
 ```
 
+### uni.getLoginCode(OBJECT)@getLoginCode
+获取宿主 App 登录凭证（Authorization Code）
+
+**平台差异说明**
+
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|x|x|√|x|x|x|x|
+
+**OBJECT 参数说明**
+
+|参数名|类型|必填|说明|
+|:-|:-|:-|:-|
+|timeout|Number|否|超时时间（单位：ms）|
+|success|Function|否|接口调用成功的回调函数|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+**success 返回参数说明**
+
+|参数名|类型|平台差异说明|
+|:-|:-|:-|
+|code|String|用户登录凭证（有效期十分钟），开发者需要在开发者服务器后台调用 API ，使用 code 换取 session_key 等信息。用户登录凭证 code 只能使用一次。|
 
 ### uni.checkSession
 检查登录状态是否过期
@@ -146,8 +169,7 @@ Get user information.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
 
-**注意：** 
-**Notice:** 
+**注意：**
 - 微信小程序端，在用户未授权过的情况下调用此接口，不会出现授权弹窗，会直接进入 fail 回调（详见[《微信小程序公告》](https://developers.weixin.qq.com/community/develop/doc/0000a26e1aca6012e896a517556c01)）。在用户已授权的情况下调用此接口，可成功获取用户信息。
 - On the WeChat applet, if the user calls this interface without authorization, the authorization pop-up window will not appear, and it will directly enter the fail callback (see ["WeChat applet announcement"](https://developers.weixin. qq.com/community/develop/doc/0000a26e1aca6012e896a517556c01)). When the user is authorized to call this interface, the user information can be successfully obtained.
 - 京东小程序端，在用户未授权，调用该接口将直接报错。用户已经授权过，可使用该接口直接获取用户信息，不会弹二次授权框
@@ -518,8 +540,7 @@ Get the globally unique one-click login manager univerifyManager
 **Use example**
 
 ```js
-// 使用时不需要传递 provider 
-// No need to pass provider when using
+// 使用时不需要传递 provider
 const univerifyManager = uni.getUniverifyManager()
 
 // 预登录
@@ -541,7 +562,7 @@ univerifyManager.login({
             {
                 "provider": "apple",
                 "iconPath": "/static/apple.png"
-            }, 
+            },
             {
                 "provider": "weixin",
                 "iconPath": "/static/wechat.png"

@@ -165,11 +165,32 @@ uts-nativepage  ->  uts.sdk.modules.utsNativepage
 
 以hello UTS中的uts-advance插件为例。
 
-示例文件在hello uts中的位置：
+
+![目录结构](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_assets_folder.jpg)
+
+
+关键代码:
+
+```ts
+// 获取asset管理器
+let assetManager = getAppContext()!.getAssets();
+// 加载free.mp3 资源
+let afd = assetManager.openFd("free.mp3");
+// 使用android 自带的媒体组件进行播放
+let mediaPlayer = new MediaPlayer();
+mediaPlayer.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(), afd.getLength());
+mediaPlayer.prepare();
+mediaPlayer.start();
+```
+
+完整的代码在hello uts中的位置：
 
 ~\uni_modules\uts-advance\utssdk\app-android\assets
 
-![](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_assets_folder.jpg)
+
+
+
+
 
 ### 3.4 增加libs依赖资源
 

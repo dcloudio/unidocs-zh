@@ -18,11 +18,11 @@
 
 **level 的合法值**
 
-|值|说明|
-|---|---|
-|5|TRIM_MEMORY_RUNNING_MODERATE|
-|10|TRIM_MEMORY_RUNNING_LOW|
-|15|TRIM_MEMORY_RUNNING_CRITICAL|
+|值|对应的Android告警值|说明|
+|---|---|---|
+|5|TRIM_MEMORY_RUNNING_MODERATE|进程在后台LRU列表的中间；释放内存可以帮助系统保持列表中稍后运行的其他进程，以获得更好的整体性能。|
+|10|TRIM_MEMORY_RUNNING_LOW|该进程不是可消耗的后台进程，但设备内存不足|
+|15|TRIM_MEMORY_RUNNING_CRITICAL|该进程不是可消耗的后台进程，但设备运行的内存极低，即将无法保持任何后台进程运行。|
 
 **代码示例**
 

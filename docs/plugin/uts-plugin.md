@@ -26,7 +26,7 @@ For details on uts syntax, see also [uts syntax introduction](../tutorial/syntax
 ### 什么是uts插件
 ### What is uts plugin
 
-现有的 uni-app，仍以js引擎为主。但从HBuilderX 3.6.0开始，uni-app 支持 uts 插件（暂时仅支持vue3编译器，后续补充vue2）。
+现有的 uni-app，仍以js引擎为主。但从HBuilderX 3.6开始，uni-app 支持 uts 插件（暂时仅支持vue3编译器，后续补充vue2）。
 
 也就是 uts 的第一步不是完整开发一个独立的 app，而是作为 uni-app 的插件。后续 uts 会持续迭代，达到完整开发 app 的水平。
 
@@ -770,7 +770,7 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 ## route map
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-1. iOS相关功能
+1. iOS热刷新
 2. 支持vue2编译器
 3. debug
 4. UI操作能力

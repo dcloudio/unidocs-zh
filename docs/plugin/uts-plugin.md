@@ -1,8 +1,7 @@
-> HBuilderX 3.6+ 支持uts插件
-> HBuilderX 3.6+ supports uts plugin
-
 ## 1 uts插件介绍
 ## 1 uts plugin introduction
+
+> HBuilderX 3.6+ 支持uts插件
 
 ### 什么是uts
 ### what is uts

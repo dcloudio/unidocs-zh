@@ -396,7 +396,7 @@ export function getBatteryCapacity(): string {
 
 在 iOS 平台目录下，编辑 index.uts，键入以下内容
 
-```uts
+```ts
 // index.uts
 
 // 引用 iOS 原生平台 api

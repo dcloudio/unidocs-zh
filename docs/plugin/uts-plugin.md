@@ -439,7 +439,7 @@ Note: HBuilderX's code prompt system supports prompting Android's native API in 
 
 在 iOS 平台目录下，编辑 index.uts，键入以下内容
 
-```uts
+```ts
 // index.uts
 
 // 引用 iOS 原生平台 api

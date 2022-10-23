@@ -1,6 +1,6 @@
-> HBuilderX 3.6+ 支持uts插件
-
 ## 1 uts插件介绍
+
+> HBuilderX 3.6+ 支持uts插件
 
 ### 什么是uts
 

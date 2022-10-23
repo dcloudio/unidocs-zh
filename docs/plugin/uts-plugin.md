@@ -744,7 +744,7 @@ getUniActivity()!!.runOnUiThread(Runnable(){
 
 需要声明一个实现类，再新建实例的方式实现，代码如下
 
-```
+```js
 class AddUIRunnable extends Runnable {
     override run():void {
 		// do something

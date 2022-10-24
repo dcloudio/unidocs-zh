@@ -1,6 +1,6 @@
 为了更好的服务欢迎：
 <a class="join-group-chat" target="_blank" href="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a095a3e4-2192-403e-b2c5-6bbfa1b7c936.png">
-	欢迎加入一键登录交流群
+	欢迎加入DCloud一键登录技术交流群
 	<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a095a3e4-2192-403e-b2c5-6bbfa1b7c936.png">
 </a>
 
@@ -816,7 +816,7 @@ Dual SIM phones are authenticated with a SIM card with data traffic turned on.
 大多数情况 是因为部分特定设备，不支持双卡双待的网络环境。
 In most cases, it is because some specific devices do not support dual-card dual-standby network environment.
 
-更多问题<a class="join-group-chat" target="_blank" href="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a095a3e4-2192-403e-b2c5-6bbfa1b7c936.png">欢迎加入一键登录交流群讨论	<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a095a3e4-2192-403e-b2c5-6bbfa1b7c936.png">
+更多问题<a class="join-group-chat" target="_blank" href="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a095a3e4-2192-403e-b2c5-6bbfa1b7c936.png">欢迎加入DCloud一键登录技术交流群咨询	<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a095a3e4-2192-403e-b2c5-6bbfa1b7c936.png">
 </a>
 
 

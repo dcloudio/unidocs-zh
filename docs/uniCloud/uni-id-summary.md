@@ -1112,6 +1112,7 @@ Corresponds to the scene field of the record related to the graphic verification
 |值					|说明						|
 |value |description |
 |--					|--							|
+|register    |用户名密码注册  |
 |login-by-pwd		|用户名/手机/邮箱+密码登录	|
 |login-by-pwd |Username/Mobile/Email+Password Login |
 |login-by-sms		|短信验证码登录				|

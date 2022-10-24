@@ -1964,9 +1964,7 @@ await uniIdCo.sendEmailCode({
 |email	|string	|是		|邮箱								|
 |email |string |Yes |Email |
 |captcha|string	|是		|图形验证码								|
-|captcha|string |Yes |Captcha |
-|scene	|string	|是		|使用场景，参考：[手机、邮箱验证码使用场景](#sms-type)	|
-|scene |string |Yes |Use scenarios, refer to: [Mobile phone, email verification code usage scenarios](#sms-type) |
+|scene	|string	|是		|使用场景，参考：[手机、邮箱验证码使用场景](#sms-scene)	|
 
 **返回值**
 **return value**

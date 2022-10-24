@@ -1,3 +1,29 @@
+为了更好的服务欢迎：
+<a class="join-group-chat" target="_blank" href="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a095a3e4-2192-403e-b2c5-6bbfa1b7c936.png">
+	欢迎加入一键登录交流群
+	<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a095a3e4-2192-403e-b2c5-6bbfa1b7c936.png">
+</a>
+
+<style>
+	.join-group-chat{
+		position: relative;
+	}
+	.join-group-chat img{
+		display: none;
+	}
+	.join-group-chat:hover img{
+		position: absolute;
+                background: #FFF;
+		top: 25px;
+		right: 0;
+		display: block;
+		width: 150px;
+		height: 150px;
+		box-shadow:#999 0px 0px 20px;
+		padding: 3px;
+	}
+</style>
+
 ## 概述
 
 `uni一键登录`是DCloud联合个推公司推出的，整合了三大运营商网关认证能力的服务。

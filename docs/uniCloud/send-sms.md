@@ -208,3 +208,25 @@ exports.main = async (event, context) => {
 - 发送短信前，如果需要图形验证码来防止机刷，可以使用[uni-captcha图形验证码](https://ext.dcloud.net.cn/plugin?id=4048)。在[uni-id-pages](uni-id-pages.md)模板中已经集成了uni-id、uni-captcha
 - Android手机在App端获取短信验证码，参考：[https://ask.dcloud.net.cn/article/676](https://ask.dcloud.net.cn/article/676)
 - 短信内容超过70个字符时为长短信，需分条发送，每67个字按一条短信计算
+
+更多问题<a class="join-group-chat" target="_blank" href="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/69a69072-8874-4ec1-bc0f-6f820f3919ee.png">欢迎加入DCloud短信技术交流群咨询	<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/69a69072-8874-4ec1-bc0f-6f820f3919ee.png">
+</a>
+<style>
+	.join-group-chat{
+		position: relative;
+	}
+	.join-group-chat img{
+		display: none;
+	}
+	.join-group-chat:hover img{
+		position: absolute;
+                background: #FFF;
+		top: 25px;
+		right: 0;
+		display: block;
+		width: 150px;
+		height: 150px;
+		box-shadow:#999 0px 0px 20px;
+		padding: 3px;
+	}
+</style>

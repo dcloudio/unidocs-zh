@@ -77,7 +77,7 @@ Hello uniCloud 的源码地址：[https://ext.dcloud.net.cn/plugin?id=4082](http
 
 4. 给云对象编写方法
 
-打开helloco.obj.js，我们为它添加一个 sum 方法，逻辑就是接收传入a和b2个参数，返回求和结果。
+打开index.obj.js，我们为它添加一个 sum 方法，逻辑就是接收传入a和b2个参数，返回求和结果。
 
 ```js
 module.exports = {

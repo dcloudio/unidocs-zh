@@ -431,7 +431,7 @@ export default {
 1. 更新依赖库支持
 - 如果项目使用了 [uni-id](/uniCloud/uni-id-summary.html) 需要更新到 3.3.29+
 - 如果项目使用了 [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) 需要更新到 1.0.8+
-2. 使用 [uni-open-bridge](/uniCloud/uni-open-beidge.html) 托管三方开放平台数据
+2. 使用 [uni-open-bridge](/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
 
 ### Q&A
 

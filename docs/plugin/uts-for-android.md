@@ -89,18 +89,26 @@ uts语法详细介绍：[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/
 
 **数据类型以UTS 内置的类型为准， 各原生平台都会对其自动适配。**
 
-**但是 继承/实现 原生系统api时，需要以原生明确要求的数据类型为准。**
+**但是 UTS本身是跨平台语言，当具体平台的api 有明确要求时，需要以对方明确要求的数据类型为准。**
 
 
 举例一： Int 和Number
 
-默认情况下UTS 开发者可以使用 Number 覆盖android 平台上的 int场景。
+默认情况下`UTS` 开发者可以使用 `Number` 覆盖`android` 平台上的 int场景。
 
-但是当开发者重写 Android平台 Service 组件onStartCommand 方法时，必须明确指定接收参数为 Int
+但是当开发者重写 `Android`平台 `Service` 组件`onStartCommand` 方法时，必须明确指定接收参数为 Int，以满足`Android`平台API要求
 
  
+ UTS 实现代码：
  ```ts
  override onStartCommand(intent:Intent ,flags:Int ,startId:Int):Int {
+ }
+ ```
+
+对应的Kotlin 代码实现:
+ 
+ ```kotlin
+ override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
  }
  ```
 
@@ -108,7 +116,9 @@ uts语法详细介绍：[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/
  
 `MutableList`是`android`平台 特有的数据类型，一般场景下，可以使用UTS中内置类型 `Array` 替代
 
-但是在android平台 响应权限申请结果时，必须要以此为类型
+但是在`android`平台 响应权限申请结果时，必须要以此为类型
+
+ UTS 实现代码：
 
 ```ts
 onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableList<string>,grantResults: MutableList<number>) => {
@@ -116,8 +126,13 @@ onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableL
 });
 
 ```
+对应的Kotlin 代码实现:
+```kotlin
 
-
+onAppActivityRequestPermissionsResult(fun(requestCode: Number, permissions: MutableList<String>, grantResults: MutableList<Number>){
+      
+});
+```
 ## 3 Android原生环境配置 （目前版本暂不支持）
 
 

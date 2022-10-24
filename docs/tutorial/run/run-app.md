@@ -185,7 +185,7 @@ You can use the offline SDK to package and generate a custom running base. After
 
 因收到苹果公司警告，目前开发者已无法在iOS真机设备使用未签名的标准基座，[更多详情](https://ask.dcloud.net.cn/article/40041)。
 
-HBuilderX 3.6.8+, 开发者可使用自己申请的Apple证书签名，对标准基座进行本地签名，签名后可运行标准基座到iOS真机设备。
+HBuilderX 3.6.8+, 开发者可使用自己申请的Apple证书，对标准基座进行本地签名，签名后可运行标准基座到iOS真机设备。
  
 注意：标准基座签名功能，目前仅支持MacOSX。
 

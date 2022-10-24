@@ -123,7 +123,7 @@ Method 2. Upload through HBuilderX tool.
 6. 一个`前端网页托管`的空间里，可以上传多个网站，用不同目录区分开，访问时使用同一个域名后加不同目录的方式访问。不支持每个目录单独设置不同域名。
 6. In a `front-end web hosting` space, you can upload multiple websites, separate them with different directories, and use the same domain name followed by different directories to access. Different domain names are not supported for each directory.
 7. 部署到不同的服务空间的`前端网页托管`内的网站，也是可以访问同一个服务空间内的云函数的，只需要在部署云函数的服务空间的`跨域配置`内添加部署前端页面的域名即可
-7. Websites in `Front-end web hosting` deployed to different service spaces can also access cloud functions in the same service space. You only need to add the deployment front-end in the `cross-domain configuration` of the service space where cloud functions are deployed. the domain name of the page
+8. 腾讯云缓存时间默认为1天，阿里云一般情况下文件变动后会一小段时间内自动刷新缓存
 
 ## 基础配置@base-config
 ## Basic configuration @base-config
@@ -449,60 +449,3 @@ Taking an admin project and a client project as an example, the client project c
 - 单文件最大限制为50MB
 - The maximum limit for a single file is 50MB
 
-
-<!--
-### 腾讯云费用说明
-### Tencent Cloud Fee Description
-
-**新购**
-**NEW PURCHASED**
-
-- 新购时某套餐时有效期按自然月计。例：2020年5月28日购买2个月套餐，则套餐有效期至2020年7月28日23时59分59秒
-- When a new package is purchased, the validity period is calculated in calendar months. Example: If you purchase a 2-month package on May 28, 2020, the package will be valid until July 28, 2020 at 23:59:59
-
-**续费**
-**Renewal**
-
-- 续费逻辑和新购一样以自然月计。例：当前有效期至2020年7月28日23时59分59秒，续费一个月，则套餐有效期至2020年8月28日23时59分59秒
-- The renewal logic is the same as the new purchase, which is calculated by natural month. Example: The current validity period is until 23:59:59 on July 28, 2020, and if the subscription is renewed for one month, the package is valid until 23:59:59 on August 28, 2020
-
-**升配**
-**Upgrade**
-
-- 升配费用 = 按月升配差价 × 升配天数 / (365 / 12) × 适用折扣
-- Upgrade fee = monthly upgrade price difference × upgrade days / (365 / 12) × applicable discount
-  - 按月升配差价：新老配置原价按月的单价。
-  - Monthly upgrade price difference: The original price of the new and old configuration is the monthly unit price.
-  - 升配的费用按天计算：升配天数 = 资源到期时间 - 当前时间。
-  - The cost of an upgrade is calculated on a daily basis: upgrade days = resource expiration time - current time.
-  - 适用折扣：根据升配天数向下匹配适用折扣。
-  - Applicable discounts: The applicable discounts are matched downwards according to the upgrade days.
-  - 折扣为现网生效的折扣。
-  - Discounts are valid on the current network.
-- 升配不影响资源到期时间。
-- Upgrading does not affect the resource expiration time.
-
-**升配示例**
-**Upgrade example**
-
->以下价格仅作示例用，非官网实际价格，实际单价请以购买时为准。
->The following prices are for example only, not the actual prices on the official website, please refer to the actual unit price at the time of purchase.
-
-举例：
-Example:
-
-2019年11月1日，购买3个月专业版套餐，到期时间为2020年2月1日23时59分59秒，包年包月单价为100元/月。
-On November 1, 2019, the 3-month Professional Edition package is purchased, and the expiration time is 23:59:59 on February 1, 2020. The unit price of the annual package is 100 yuan/month.
-
-2019年12月15日，将该套餐升级为1000元/月的企业版套餐。
-On December 15, 2019, the package was upgraded to a 1,000 yuan/month enterprise version package.
-
-- 按月升配差价 = 1000 - 100 = 900元/月
-- Monthly upgrade price difference = 1000 - 100 = 900 yuan/month
-- 升配天数 = 31 × 1 + 15 + 1 = 47天（1指1月份为31天，15指12月份剩余15天， 1指2月份1天）
-- Upgrade days = 31 × 1 + 15 + 1 = 47 days (1 means 31 days in January, 15 means the remaining 15 days in December, 1 means 1 day in February)
-- 适用折扣：暂无折扣
-- Applicable discounts: No discounts yet
-- 升配费用 = （1000 - 100） × 47 /（365 / 12） = 1390.53元
-- Upgrade fee = (1000 - 100) × 47 / (365 / 12) = 1390.53 yuan
--->

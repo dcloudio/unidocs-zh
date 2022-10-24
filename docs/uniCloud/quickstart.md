@@ -120,8 +120,7 @@ In this tutorial, we create a cloud object named helloco.
 4. 给云对象编写方法
 4. Write methods for cloud objects
 
-打开helloco.obj.js，我们为它添加一个 sum 方法，逻辑就是接收传入a和b2个参数，返回求和结果。
-Open helloco.obj.js, we add a sum method to it, the logic is to receive the incoming a and b2 parameters and return the summation result.
+打开index.obj.js，我们为它添加一个 sum 方法，逻辑就是接收传入a和b2个参数，返回求和结果。
 
 ```js
 module.exports = {

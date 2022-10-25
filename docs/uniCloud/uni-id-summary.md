@@ -303,13 +303,14 @@ Configuration item:
   "passwordStrength": "medium", // 密码强度，新增于 uni-id-pages 1.0.8版本，见下方说明
   "tokenSecret": "", // 生成token所用的密钥，注意修改为自己的，使用一个较长的字符串即可
   "tokenExpiresIn": 7200, // 全平台token过期时间，未指定过期时间的平台会使用此值
-  "tokenExpiresThreshold": 600, // 新增于uni-id 1.1.7版本，checkToken时如果token有效期小于此值且在有效期内则自动获取新token，请注意将新token返回给前端保存（云对象会自动保存符合uniCloud响应体规范的响应内的新token），如果不配置此参数则不开启自动获取新token功能
+  "tokenExpiresThreshold": 3600, // 新增于uni-id 1.1.7版本，checkToken时如果token有效期小于此值且在有效期内则自动获取新token，请注意将新token返回给前端保存（云对象会自动保存符合uniCloud响应体规范的响应内的新token），如果不配置此参数则不开启自动获取新token功能
   "passwordErrorLimit": 6, // 密码错误最大重试次数
   "passwordErrorRetryTime": 3600, // 密码错误重试次数超限之后的冻结时间
   "autoSetInviteCode": false, // 是否在用户注册时自动设置邀请码，默认不自动设置
   "forceInviteCode": false, // 是否强制用户注册时必填邀请码，默认为false
   "app": { // 如果你使用旧版本uni-id公共模块而不是uni-id-common这里可能配置的是app-plus，务必注意调整为app
     "tokenExpiresIn": 2592000,
+    "tokenExpiresThreshold": 864000,
     "oauth": {
       // App微信登录所用到的appid、appsecret需要在微信开放平台获取，注意：不是公众平台而是开放平台
       // The appid and appsecret used for App WeChat login need to be obtained on the WeChat open platform. Note: it is not a public platform but an open platform
@@ -329,7 +330,8 @@ Configuration item:
     }
   },
   "web": { // 如果你使用旧版本uni-id公共模块而不是uni-id-common这里可能配置的是h5，务必注意调整为web
-    "tokenExpiresIn": 259200,
+    "tokenExpiresIn": 7200,
+    "tokenExpiresThreshold": 3600,
     "oauth": {
       "weixin-h5": { // 微信公众号登录配置
         "appid": "",
@@ -343,6 +345,7 @@ Configuration item:
   },
   "mp-weixin": {
     "tokenExpiresIn": 259200,
+    "tokenExpiresThreshold": 86400,
     "oauth": {
       // 微信小程序登录所用的appid、appsecret需要在对应的小程序管理控制台获取
       // The appid and appsecret used for WeChat applet login need to be obtained from the corresponding applet management console
@@ -354,6 +357,7 @@ Configuration item:
   },
   "mp-qq": {
     "tokenExpiresIn": 259200,
+    "tokenExpiresThreshold": 86400,
     "oauth": {
       // QQ小程序登录所用的appid、appsecret需要在对应的小程序管理控制台获取
       // The appid and appsecret used for QQ applet login need to be obtained from the corresponding applet management console
@@ -365,6 +369,7 @@ Configuration item:
   },
   "mp-alipay": {
     "tokenExpiresIn": 259200,
+    "tokenExpiresThreshold": 86400,
     "oauth": {
       // 支付宝小程序登录用到的appid、privateKey请参考支付宝小程序的文档进行设置或者获取，https://opendocs.alipay.com/open/291/105971#LDsXr
       // For the appid and privateKey used for Alipay applet login, please refer to the Alipay applet documentation to set or obtain, https://opendocs.alipay.com/open/291/105971#LDsXr

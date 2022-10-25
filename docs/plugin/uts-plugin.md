@@ -243,12 +243,11 @@ The uts plugin is in the native layer configuration file of the Android platform
 
 ```json
 {
-	// 使用NDK时支持的CPU类型，可选
-	// CPU type supported when using NDK, optional
+	// 使用NDK时支持的CPU类型，可选（打包时不要复制注释）
 	"abis": [
 	    "使用NDK时支持的cpu类型, 可取值armeabi-v7a|arm64-v8a|x86|x86_64"
 	],
-    // 依赖的仓储配置，可选，打包时会合并到原生工程的build.gradle中
+    // 依赖的仓储配置，可选，打包时会合并到原生工程的build.gradle中（打包时不要复制注释）
 	"dependencies": [
 		"androidx.core:core-ktx:1.6.0",
 		{
@@ -256,8 +255,7 @@ The uts plugin is in the native layer configuration file of the Android platform
 			"source": "implementation 'com.xxx.richtext:richtext:3.0.7'"
 		}
 	],
-    // Android系统版本要求，最低Android 5.0
-    // Android system version requirements, minimum Android 5.0
+    // Android系统版本要求，最低Android 5.0（打包时不要复制注释）
 	"minSdkVersion": 21
 }
 ```

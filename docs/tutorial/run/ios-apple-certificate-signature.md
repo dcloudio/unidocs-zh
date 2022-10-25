@@ -32,7 +32,7 @@ Windows, iOS标准基座路径：`HBuilderX安装目录\plugins\launcher\base\iP
 
 <img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/96dc25ee-b4ec-4fae-936f-f874c33ab9cd.jpg" style="zoom: 50%" />
 
-如果签名成功，爱思助手会提示签名成功。签名成功后，打开基座所在目录，将`iPhone_base.ipa`拷贝一份，并命名为`iPhone_base_signed.ipa`。
+如果签名成功，爱思助手会提示签名成功。签名成功后，找到签名后的ipa文件，并命名为`iPhone_base_signed.ipa`，然后将其拷贝到`HBuilderX安装目录\plugins\launcher\base`。
 
 <img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b2028ea5-1636-4b88-bb42-a9d3897fff49.jpg" style="zoom: 50%" />
 

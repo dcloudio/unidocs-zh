@@ -211,11 +211,11 @@ uts插件在Android平台的原生层配置文件，可以在其中配置依赖�
 
 ```json
 {
-	// 使用NDK时支持的CPU类型，可选
+	// 使用NDK时支持的CPU类型，可选（打包时不要复制注释）
 	"abis": [
 	    "使用NDK时支持的cpu类型, 可取值armeabi-v7a|arm64-v8a|x86|x86_64"
 	],
-    // 依赖的仓储配置，可选，打包时会合并到原生工程的build.gradle中
+    // 依赖的仓储配置，可选，打包时会合并到原生工程的build.gradle中（打包时不要复制注释）
 	"dependencies": [
 		"androidx.core:core-ktx:1.6.0",
 		{
@@ -223,7 +223,7 @@ uts插件在Android平台的原生层配置文件，可以在其中配置依赖�
 			"source": "implementation 'com.xxx.richtext:richtext:3.0.7'"
 		}
 	],
-    // Android系统版本要求，最低Android 5.0
+    // Android系统版本要求，最低Android 5.0（打包时不要复制注释）
 	"minSdkVersion": 21
 }
 ```

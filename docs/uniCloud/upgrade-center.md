@@ -226,4 +226,5 @@ The following functions are provided:
 - Beautiful, functional, customizable and extensible
 
 在插件市场安装，根据 readme 部署即可。[插件地址](https://ext.dcloud.net.cn/plugin?id=4542)
-Install it in the plugin market and deploy it according to the readme. [Plugin address](https://ext.dcloud.net.cn/plugin?id=4542)
+
+**关于应用转让后升级中心（uni-upgrade-center）的使用问题** [详情](https://ask.dcloud.net.cn/article/40112)

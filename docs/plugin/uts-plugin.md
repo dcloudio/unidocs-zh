@@ -601,6 +601,40 @@ onAppActivityBack(() => {
      let eventName = "onAppActivityBack- " + Date.now();
      console.log(eventName);
 });
+
+```
+
+### onAppActivityResult
+
+App 的 activity 启动其他activity的回调结果监听 对应原生的 onActivityResult
+
+```ts
+onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
+	let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:"+resultCode + " -data:"+JSON.stringify(data);
+    console.log(eventName);
+});
+```
+
+### onAppTrimMemory
+
+App 内存不足时，系统回调函数 对应原生的API: onTrimMemory
+
+```ts
+onAppTrimMemory((level:Number) => {
+	let eventName = "onAppTrimMemory - " + level;
+	console.log(eventName);
+});
+```
+
+### onAppConfigChange
+
+App 配置发生变化时触发，比如横竖屏切换 对应原生的API: onConfigurationChanged
+
+```ts
+onAppConfigChange((ret:UTSJSONObject) => {
+	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
+	console.log(eventName);
+});
 ```
 
 ### onAppActivityRequestPermissionsResult

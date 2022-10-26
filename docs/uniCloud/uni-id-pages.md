@@ -1495,6 +1495,15 @@ await uniIdCo.setPushCid({
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
 
+
+#### 微信安全网络握手@secure-network-handshake-by-weixin
+
+此接口用于微信小程序端安全网络的握手，安全网络相关文档请参考：[安全网络](secure-network.md)
+
+一般无需通过uniCloud.importObject方式调用，在客户端调用`uniCloud.initSecureNetworkByWeixin()`时会通过此接口获取会话相关信息。
+
+此接口会将会话信息存储在`opendb-open-data`表内，如果在`initSecureNetworkByWeixin`方法内传递了`callLoginByWeixin: true`会在存储会话信息的同时执行一次uni-id-co的`loginByWeixin`方法
+
 ### 管理接口@admin
 
 #### 管理员新增用户@add-user

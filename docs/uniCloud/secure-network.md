@@ -82,7 +82,7 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 3. 工程中导入uni-id-pages
 
 - `uni-id` [文档](uni-id-summary.md#save-user-token)
-- `uni-id-co` [插件下载地址](https://ext.dcloud.net.cn/plugin?id=8577)
+- `uni-id-pages` [插件下载地址](https://ext.dcloud.net.cn/plugin?id=8577)，需要`uni-id-pages 1.0.27`及以上版本
 
 `uni-id-pages`这个插件是云端一体的登录插件，其实安全网络只需要其中的`uni-id-co`云对象。插件中前端登录页面是否使用由开发者自己根据业务决定。
 
@@ -135,44 +135,26 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 
 如果项目之前已经使用过uni-id-pages和uni-open-bridge，则上述步骤可省略。
 
-6. 在应用的生命周期 `onLaunch` 中检查微信登陆状态，如果过期需要登陆
-
-注意: [uni.checkSession](https://uniapp.dcloud.net.cn/api/plugins/login.html#uni-checksession) 有调用次数限制警告，一个 `pv` 可调用 `2` 次
+6. 在应用的生命周期 `onLaunch` 调用 `uniCloud.initSecureNetworkByWeixin()`，进行安全网络请求前的握手操作，关于此接口详细描述见：[uniCloud.initSecureNetworkByWeixin](client-sdk.md#init-secure-network-by-weixin)
 
 App.vue页面需要补充如下代码：
 ```js
 <script>
-  function checkUserSession() {
-    uni.checkSession({
-      fail: (err) => {
-        uni.login({
-          success: async ({ code }) => {
-            const uniIdCo = uniCloud.importObject('uni-id-co') // uniCloud云对象 uni-id-co
-            await uniIdCo.loginByWeixin({ code })
-          }
-        })
-      }
-    })
-  }
-
   export default {
-    onLaunch: function() {
-      console.log('App Launch')
+    onLaunch: async function() {
       // #ifdef MP-WEIXIN
-      checkUserSession();
+      await uniCloud.initSecureNetworkByWeixin()
       // #endif
     }
   }
 </script>
 ```
+
+在此方法内部会调用一次微信小程序的login，然后使用返回的code调用`uni-id-co`的`secureNetworkHandshakeByWeixin`方法（新增于uni-id-pages 1.0.27）
   
 7. 在项目根目录manifest.json文件内为微信小程序平台开启`云端一体安全网络模块`
   
   ![微信小程序云端一体安全网络模块](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ab96f1f7-af14-4f08-8b1c-699ecfce3381.jpg)
-
-**注意**
-
-- 发送安全网络请求前如果检测到客户端storage内不存在`uni_id_token`（即用户未登录），则会自动调用一次`uni-id-co`的`loginByWeixin`方法进行一次登录
 
 ## 客户端验证@verify-client
 
@@ -215,6 +197,7 @@ App.vue页面需要补充如下代码：
 **注意**
 
 - 如果修改客户端验证配置需要重新打包做出修改的客户端。
+- 如需对clientDB请求验真需要使用`uni-clientDB`作为云函数名
 
 ## 数据加密传输@encrypt-data
 

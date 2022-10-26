@@ -26,6 +26,7 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 |uniCloud.offNeedLogin()		|移除监听需要登录事件 [详情](#off-need-login)									|
 |uniCloud.onRefreshToken()		|监听token更新事件 [详情](#on-refresh-token)									|
 |uniCloud.offRefreshToken()		|移除监听token更新事件 [详情](#off-refresh-token)								|
+|uniCloud.initSecureNetworkByWeixin()		|在微信小程序安全网络请求发送之前与云函数握手 [详情](#init-secure-network-by-weixin)								|
 
 ### 获取当前用户信息getCurrentUserInfo@client-getcurrentuserinfo
 
@@ -414,6 +415,45 @@ function log(e) {
 uniCloud.onNeedLogin(log)
 uniCloud.offNeedLogin(log)
 ```
+
+### 微信小程序安全网络初始化@init-secure-network-by-weixin
+
+> 新增于 3.6.8
+
+安全网络相关文档请参考：[安全网络](secure-network.md)
+
+**参数**
+
+|参数							|类型		|必填	|默认值	|说明																				|
+|---							|---		|---	|---		|---																				|
+|callLoginByWeixin|boolean|否		|false	|是否在安全网络初始化同时执行一次uni-id-co的微信登录|
+
+**示例**
+
+```js
+// App.vue
+<script>
+  export default {
+    onLaunch: async function() {
+      // #ifdef MP-WEIXIN
+      const res = await uniCloud.initSecureNetworkByWeixin({
+        callLoginByWeixin: true
+      })
+      // #endif
+      console.log('initSecureNetworkByWeixin', res);
+      console.log('App Launch')
+    }
+  }
+</script>
+
+<style>
+</style>
+```
+
+**注意**
+
+- 发送安全网络请求前uniCloud客户端sdk会判断是否完成初始化，如未完成会等待完成后再发送安全网络请求。
+- 需要确保安全网络请求在此方法调用后执行
 
 ## 属性
 

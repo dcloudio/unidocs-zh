@@ -91,8 +91,10 @@ uts语法详细介绍：[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/
 
 **但是 UTS本身是跨平台语言，当具体平台的api 有明确要求时，需要以对方明确要求的数据类型为准。**
 
+-------------------------
 
-举例一： Int 和Number
+
+#### 举例一： Int 和Number
 
 默认情况下`UTS` 开发者可以使用 `Number` 覆盖`android` 平台上的 int场景。
 
@@ -126,7 +128,7 @@ uts语法详细介绍：[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/
  ```
 
 
-举例二：`MutableList`
+#### 举例二：`MutableList`
  
 `MutableList`是`android`平台 特有的数据类型，一般场景下，可以使用UTS中内置类型 `Array` 替代
 

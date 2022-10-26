@@ -105,7 +105,7 @@ uts语法详细介绍：[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/
 
  ```kotlin
  override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-	 return super.onStartCommand(intent, flags, startId);
+	return super.onStartCommand(intent, flags, startId);
  }
  ```
 
@@ -116,7 +116,7 @@ uts语法详细介绍：[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/
 
 ```ts
  override onStartCommand(intent:Intent ,flags:Int ,startId:Int):Int {
-	 return super.onStartCommand(intent, flags, startId);
+	return super.onStartCommand(intent, flags, startId);
  }
 ```
 
@@ -148,7 +148,7 @@ onAppActivityRequestPermissionsResult(fun(requestCode: Number, permissions: Muta
 
 ```ts
 onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableList<string>,grantResults: MutableList<number>) => {
-		// 权限申请结果
+	
 });
 
 ```

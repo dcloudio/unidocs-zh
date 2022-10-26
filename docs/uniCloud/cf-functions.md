@@ -681,7 +681,7 @@ exports.main = async (event, context) => {
 			}
 		}
 		let phoneList = res.data.map(item => item.phone)
-		res = await uniCloud.sendSms({
+		let sendSmsRes = await uniCloud.sendSms({
 			phoneList,
 			appid: '__UNI__xxxxxxx',
 			smsKey: '****************',
@@ -692,8 +692,8 @@ exports.main = async (event, context) => {
 				text2: 'xxx'
 			}
 		})
-		if (res.errCode) {
-			return res
+		if (sendSmsRes.errCode) {
+			return sendSmsRes
 		}
 		return {
 			errCode: 0,

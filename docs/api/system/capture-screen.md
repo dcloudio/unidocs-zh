@@ -6,9 +6,9 @@
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|√|√|√|√|
+|√|x|√|√|√|√|√|√|√|
 
-注：App没有内置截屏相关功能，可以在插件市场搜索相关插件，[详见](https://ext.dcloud.net.cn/search?q=%E6%88%AA%E5%B1%8F)
+> 在 App 平台本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[uni-usercapturescreen](https://ext.dcloud.net.cn/plugin?name=uni-usercapturescreen)
 
 **CALLBACK返回参数：**
 
@@ -31,8 +31,9 @@ uni.onUserCaptureScreen(function() {
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|√|x|√|√|
+|√|x|√|√|√|√|x|√|√|
 
+> 在 App 平台本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[uni-usercapturescreen](https://ext.dcloud.net.cn/plugin?name=uni-usercapturescreen)
 
 **参数**
 

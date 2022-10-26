@@ -110,7 +110,7 @@ uts语法详细介绍：[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/
  ```
 
 
- 而标准的TS环境中，只有`Number`类型而没有`Int`类型
+ 标准的TS环境中，只有`Number`类型而没有`Int`类型
 
  为了适应这种情况，UTS 允许开发者使用原生平台的数据类型Int，来满足原生API对数据类型的要求：
 

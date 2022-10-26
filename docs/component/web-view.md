@@ -1,4 +1,4 @@
-#### web-view
+## web-view
 
 `web-view` 是一个 web 浏览器组件，可以用来承载网页的容器，会自动铺满整个页面（nvue 使用需要手动指定宽高）。
 
@@ -71,7 +71,7 @@
 ```
 :::
 
-注意：
+**注意：**
 - 小程序仅支持加载网络网页，不支持本地html
 - 补充说明：app-vue下web-view组件不支持自定义样式，而v-show的本质是改变组件的样式。即组件支持v-if而不是支持v-show。
 - 小程序端 web-view 组件一定有原生导航栏，下面一定是全屏的 web-view 组件，navigationStyle: custom 对 web-view 组件无效。
@@ -125,7 +125,7 @@
 |uni.postMessage|向应用发送消息|字节跳动小程序不支持、H5 暂不支持（可以直接使用 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)）|
 |uni.getEnv|获取当前环境|字节跳动小程序与飞书小程序不支持|
 
-##### uni.postMessage(OBJECT)
+### uni.postMessage(OBJECT)
 网页向应用发送消息，在 `<web-view>` 的 `message` 事件回调 `event.detail.data` 中接收消息。
 
 **Tips**
@@ -133,7 +133,7 @@
 - 传递的消息信息，必须写在 data 对象中。
 - `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）
 
-##### uni.getEnv(CALLBACK)
+### uni.getEnv(CALLBACK)
 
 **callback 返回的对象**
 
@@ -289,7 +289,7 @@
 ```
 
 
-##### **App端web-view的扩展**
+## **App端web-view的扩展**
 App端的webview是非常强大的，可以更灵活的控制和拥有更丰富的API。
 
 每个vue页面，其实都是一个webview，而vue页面里的web-view组件，其实是webview里的一个子webview。这个子webview被append到父webview上。
@@ -361,14 +361,14 @@ export default {
 };
 ```
 
-##### `web-view`组件的层级问题解决
+### `web-view`组件的层级问题解决
 web-view组件在App和小程序中层级较高，如需要在vue页面中写代码为web-view组件覆盖内容，小程序端无解，只能由web-view的组件自己弹出div。App端有如下若干方案：
 1. 比较简单的方式是actionsheet等原生弹出菜单（小程序也可以使用此方案）
 2. 使用plus.nativeObj.view。这里有一个底部图标菜单的示例，可参考[https://ext.dcloud.net.cn/plugin?id=69](https://ext.dcloud.net.cn/plugin?id=69)
 3. 使用[原生子窗体subNvue](/api/window/subNVues)
 4. 可以在web-view组件内嵌的网页中弹出z-index更高的div。如果是外部网页，可以在vue中获得子webview对象后，通过[evalJS](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.evalJS)为这个子webview注入一段js，操作其弹出div层。
 
-##### web-view组件的浏览器内核说明
+### web-view组件的浏览器内核说明
 - H5端的web-view其实是被转为iframe运行，使用的是当前的浏览器
 - 小程序的web-view使用的是小程序自带的浏览器内核，不同厂商不一样，[详见](https://ask.dcloud.net.cn/article/1318)
 - App端，Android，默认使用的是os自带的浏览器内核，在设置-所有应用里，显示系统服务，可查看Android System Webview的版本。在Android5+，系统webview支持安装升级。
@@ -384,18 +384,7 @@ web-view组件在App和小程序中层级较高，如需要在vue页面中写代
 - 小程序平台，个人类型与海外类型的小程序使用 `web-view` 组件，提交审核时注意微信等平台是否允许使用
 - 小程序平台， `src` 指向的链接需登录小程序管理后台配置域名白名单。`App`和`H5` 无此限制。
 
-##### FAQ
-
-Q：web-view 的页面怎么和应用内的页面交互？
-A：调用 uni 相关的 API，就可以实现页面切换及发送消息。参考：[在 web-view 加载的 HTML 中调用 uni 的 API](https://ask.dcloud.net.cn/article/35083)
-
-Q：web-view 加载的 HTML 中，能够调用 5+ 的能力么？
-A：加载的 HTML 中是有 5+ 环境的，在 plusready 后调用即可。参考：[一个简单实用的 plusready 方法](https://ask.dcloud.net.cn/article/34922)
-
-Q: web-view 加载 uni-app H5，内部跳转冲突如何解决
-A：使用 uni.webView.navigateTo...
-
-
+### UniAppJSBridgeReady 的使用
 uni.webView.navigateTo 示例，注意uni sdk放到body下面
 ```html
 <!DOCTYPE html>
@@ -424,7 +413,7 @@ uni.webView.navigateTo 示例，注意uni sdk放到body下面
 </html>
 ```
 
-nvue webview通信示例
+### nvue webview通信示例
 ```html
 <template>
 	<view>
@@ -450,3 +439,14 @@ nvue webview通信示例
 	}
 </script>
 ```
+
+### FAQ
+
+Q：web-view 的页面怎么和应用内的页面交互？
+A：调用 uni 相关的 API，就可以实现页面切换及发送消息。参考：[在 web-view 加载的 HTML 中调用 uni 的 API](https://ask.dcloud.net.cn/article/35083)
+
+Q：web-view 加载的 HTML 中，能够调用 5+ 的能力么？
+A：加载的 HTML 中是有 5+ 环境的，在 plusready 后调用即可。参考：[一个简单实用的 plusready 方法](https://ask.dcloud.net.cn/article/34922)
+
+Q: web-view 加载 uni-app H5，内部跳转冲突如何解决
+A：使用 uni.webView.navigateTo...

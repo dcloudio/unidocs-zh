@@ -1,4 +1,3 @@
-
 ## 简介@intro
 
 云函数是运行在云端的 `JavaScript` 代码，是基于 `Node.js` 的扩展。
@@ -516,7 +515,7 @@ cloudInfos = [{
 |provider		|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`|
 |spaceId		|string	|是		|服务空间Id												|
 |functionName	|string	|是		|云函数名称												|
-|functionType	|string	|是		|云对象为`cloudobject`、云对象为`cloudfunction`			|
+|functionType	|string	|是		|云对象为`cloudobject`、云函数为`cloudfunction`			|
 |requestId		|string	|是		|请求Id，可以使用此字段筛选出当前请求的云端信息			|
 
 除了`uniCloud.getCloudInfos()`API，在云函数context和云对象this中，也可以直接获取当前请求的云端信息。

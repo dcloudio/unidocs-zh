@@ -10,6 +10,7 @@
 |方法|描述|平台说明|
 |---|---|---|
 |page.$getAppWebview()|获取当前页面的webview对象实例|App|
+|page.$vm|当前页面的 Vue 实例||
 |page.route|获取当前页面的路由|&nbsp;|
 
 Tips：
@@ -60,3 +61,23 @@ console.log(currentWebview.isVisible());//查询当前webview是否可见
 ```
 
 uni-app自带的web-view组件，是页面中新插入的一个子webview。获取该对象的方法见：[https://ask.dcloud.net.cn/article/35036](https://ask.dcloud.net.cn/article/35036)
+
+
+### $vm
+
+当前页面的 Vue 实例
+
+通过页面的 Vue 实例可以获取页面的数据、调用页面上的方法以及监听页面的生命周期等
+
+```js
+const page = getCurrentPages()[0];
+const vm = page.$vm;
+// 监听生命周期，小程序端部分其他生命周期需在页面选项中配置过才可生效
+vm.$on('hook:onHide', () => {
+  console.log('onHide');
+});
+// 获取页面数据
+console.log(vm.$data.title);
+// 调用页面方法
+vm.test()
+```

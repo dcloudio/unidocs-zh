@@ -110,12 +110,12 @@ uts语法详细介绍：[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/
  ```
 
 
- 标准的UTS环境中，只有`Number`类型而没有`Int`类型
+ 而标准的TS环境中，只有`Number`类型而没有`Int`类型
 
- 为了适应这种情况，UTS 允许开发者使用原生平台的数据类型Int，来原生平台API对数据类型的要求：
+ 为了适应这种情况，UTS 允许开发者使用原生平台的数据类型Int，来满足原生API对数据类型的要求：
 
 ```ts
- override onStartCommand(intent:Intent ,flags:Int ,startId:Int):Number {
+ override onStartCommand(intent:Intent ,flags:Int ,startId:Int):Int {
 	 return super.onStartCommand(intent, flags, startId);
  }
 ```
@@ -141,9 +141,9 @@ onAppActivityRequestPermissionsResult(fun(requestCode: Number, permissions: Muta
 ```
 
 
-标准的UTS环境中，没有`MutableList`类型，与之相近的数据类型是 `Array`
+标准的TS环境中，没有`MutableList`类型，与之相近的数据类型是 `Array`
 
-为了适应这种情况，UTS 允许开发者使用原生平台的数据类型`MutableList`，来满足原生平台API对数据类型的明确要求：
+为了适应这种情况，UTS 允许开发者使用原生平台的数据类型`MutableList`，来满足原生平台API对数据类型的要求：
 
 
 ```ts

@@ -1356,7 +1356,7 @@ await uniIdCo.createCaptcha({
 
 |参数名	|类型	|必填	|说明														|
 |--		|--		|--		|--															|
-|scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
+|scene	|string	|是		|图形验证码使用场景，务必确保使用验证码的场景和生成验证码时传的场景参数相匹配，否则会校验不通过，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
 
 **返回值**
 
@@ -1390,6 +1390,11 @@ await uniIdCo.refreshCaptcha({
 
 #### 发送短信@send-sms-code
 
+发送短信功能需要以下前置工作
+
+1. 在[开发者中心](https://dev.dcloud.net.cn)开通短信服务，并申请短信模板
+2. 在uni-id的配置文件里面添加验证码使用场景对应的短信模板信息，参考：[uni-id配置文件](uni-id-summary.md#config)
+
 **接口形式**
 
 ```js
@@ -1406,7 +1411,7 @@ await uniIdCo.sendSmsCode({
 |--		|--		|--		|--										|
 |mobile	|string	|是		|手机号码								|
 |captcha|string	|是		|图形验证码								|
-|scene	|string	|是		|短信类型，参考：[短信类型](uni-id-summary.md#sms-scene)	|
+|scene	|string	|是		|短信验证码使用场景，务必确保使用验证码的场景和发送验证码时传的场景参数相匹配，否则会校验不通过，参考：[短信验证码使用场景](uni-id-summary.md#sms-scene)	|
 
 **返回值**
 

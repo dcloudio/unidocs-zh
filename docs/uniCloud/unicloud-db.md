@@ -1043,8 +1043,7 @@ The following sample code does not use the uList component. It is recommended to
       </view>
       <view class="loading" v-if="loading">加载中...</view>
       <!-- 分页组件 -->
-      <!-- Pagination component -->
-      <uni-pagination show-icon :page-size="pagination.size" total="pagination.count" @change="onpagination" />
+      <uni-pagination show-icon :page-size="pagination.size" :total="pagination.count" @change="onpagination" />
     </unicloud-db>
   </view>
 </template>

@@ -43,7 +43,7 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 
 2. 在[uniCloud控制台](https://unicloud.dcloud.net.cn/)关联允许发送安全网络请求的应用
 
-  ![关联应用到服务空间安全网络](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fa9fdcff-5fd0-4515-9f64-220008efd27b.jpg)
+  ![关联应用到服务空间安全网络](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/61e912c0-8287-441b-917d-7dd184bae729.jpg)
   
   本质上安全网络绑定的是应用的appid、包名、证书等信息。只不过这些信息统一配置在dev中，在uniCloud的web控制台来选择。所以务必注意dev配置的正式版、测试版的包名、签名是否正确。
 
@@ -77,7 +77,7 @@ App和微信小程序略有区别，但大体都要经过如下流程：
   
 2. 在uniCloud控制台关联允许发送安全网络请求的应用
 
-  ![关联应用到服务空间安全网络](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fa9fdcff-5fd0-4515-9f64-220008efd27b.jpg)
+  ![关联应用到服务空间安全网络](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/61e912c0-8287-441b-917d-7dd184bae729.jpg)
 
 3. 工程中导入uni-id-pages
 

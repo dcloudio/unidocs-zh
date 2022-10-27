@@ -584,17 +584,23 @@ Note: Although uts supports hot flashing when the real machine is running, after
 
 ## uni-app的Android内置库@iodcloudutsandroid
 
-在uts里，Android的所有api都可以访问。同时DCloud提供了`io.dcloud.uts.android`库，处理在uni-app下的特殊情况。
-In uts, all APIs of Android can be accessed. At the same time, DCloud provides the `io.dcloud.uts.android` library to handle special cases under uni-app.
+在uts里，Android的所有api都可以访问。同时DCloud提供了`io.dcloud.uts.android`库，方便开发者快速获取android 上下文环境
+
+
+### 1 application 上下文相关
+
+
+
+#### 1.1 getAppContext
+
+HX 3.6.3+ 版本支持
+
 
 ```ts
 import { getAppContext } from "io.dcloud.uts.android";
 ```
 
-### getAppContext
-
-获取当前应用Application上下文，对应android平台 Context.getApplicationContext 函数实现
-Get the application context of the current application, corresponding to the android platform Context.getApplicationContext function implementation
+用法说明：获取当前应用Application上下文，对应android平台 Context.getApplicationContext 函数实现
 
 Android开发场景中，调用应用级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档](https://developer.android.google.cn/docs)
 
@@ -610,20 +616,15 @@ mediaPlayer.prepare();
 mediaPlayer.start();
 ```
 
-### getUniActivity
 
-获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
-Get the activity instance to which the current plugin belongs, corresponding to the android platform getActivity function implementation
+#### 1.2 getResourcePath(resourceName:String)
 
-Android开发场景中，调用活动的级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档](https://developer.android.google.cn/docs)
+HX 3.6.3+ 版本支持
+
 
 ```ts
-// [示例]获取当前activity顶层容器
-// [Example] Get the current activity top-level container
-let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
+import { getResourcePath } from "io.dcloud.uts.android";
 ```
-
-### getResourcePath(resourceName:String)
 
 获取指定插件资源的运行期绝对路径
  
@@ -636,7 +637,78 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 ```
 
-### onAppActivityPause
+#### 1.3 onAppTrimMemory
+
+HX 3.6.8+ 版本支持
+
+```ts
+import { onAppTrimMemory } from "io.dcloud.uts.android";
+```
+
+App 内存不足时，系统回调函数 对应原生的API: onTrimMemory
+
+```ts
+onAppTrimMemory((level:Number) => {
+	let eventName = "onAppTrimMemory - " + level;
+	console.log(eventName);
+});
+```
+
+### 1.4 onAppConfigChange
+
+HX 3.6.8+ 版本支持
+
+```ts
+import { onAppConfigChange } from "io.dcloud.uts.android";
+```
+
+App 配置发生变化时触发，比如横竖屏切换 对应原生的API: onConfigurationChanged
+
+```ts
+onAppConfigChange((ret:UTSJSONObject) => {
+	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
+	console.log(eventName);
+});
+```
+
+
+特别说明：除了本章节列出的函数外，android环境下 application 其他上下文方法都可以通过 getAppContext()!.xxx()的方式实现
+
+比如获取app缓存目录：
+
+```
+getAppContext()!.getExternalCacheDir()!.getPath()
+```
+
+
+### 2.2 Activity 上下文
+
+
+
+#### 2.1 getUniActivity
+
+HX 3.6.3+ 版本支持
+
+```ts
+import { getUniActivity } from "io.dcloud.uts.android";
+```
+
+获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
+
+Android开发场景中，调用活动的级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档](https://developer.android.google.cn/docs)
+
+```ts
+// [示例]获取当前activity顶层容器
+let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
+```
+
+#### 2.2 onAppActivityPause
+
+HX 3.6.3+ 版本支持
+
+```ts
+import { onAppActivityPause } from "io.dcloud.uts.android";
+```
 
 App的activity onPause时触发
 
@@ -647,7 +719,13 @@ onAppActivityPause(() => {
 });
 ```
 
-### onAppActivityResume
+#### 2.3 onAppActivityResume
+
+HX 3.6.3+ 版本支持
+
+```ts
+import { onAppActivityResume } from "io.dcloud.uts.android";
+```
 
 App的activity onResume时触发
 
@@ -658,7 +736,13 @@ onAppActivityResume(() => {
 });
 ```
 
-### onAppActivityDestroy
+#### 2.4 onAppActivityDestroy
+
+HX 3.6.3+ 版本支持
+
+```ts
+import { onAppActivityDestroy } from "io.dcloud.uts.android";
+```
 
 App 的 activity onDestroy时触发
 
@@ -669,7 +753,13 @@ onAppActivityDestroy(() => {
 });
 ```
 
-### onAppActivityBack
+#### 2.5 onAppActivityBack
+
+HX 3.6.3+ 版本支持
+
+```ts
+import { onAppActivityBack } from "io.dcloud.uts.android";
+```
 
 App 的 activity 回退物理按键点击时触发
 
@@ -681,7 +771,13 @@ onAppActivityBack(() => {
 
 ```
 
-### onAppActivityResult
+#### 2.6 onAppActivityResult
+
+HX 3.6.8+ 版本支持
+
+```ts
+import { onAppActivityResult } from "io.dcloud.uts.android";
+```
 
 App 的 activity 启动其他activity的回调结果监听 对应原生的 onActivityResult
 
@@ -692,39 +788,23 @@ onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
 });
 ```
 
-### onAppTrimMemory
 
-App 内存不足时，系统回调函数 对应原生的API: onTrimMemory
 
-```ts
-onAppTrimMemory((level:Number) => {
-	let eventName = "onAppTrimMemory - " + level;
-	console.log(eventName);
-});
-```
+#### 2.7 onAppActivityRequestPermissionsResult
 
-### onAppConfigChange
-
-App 配置发生变化时触发，比如横竖屏切换 对应原生的API: onConfigurationChanged
+HX 3.6.3+ 版本支持
 
 ```ts
-onAppConfigChange((ret:UTSJSONObject) => {
-	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
-	console.log(eventName);
-});
+import { onAppActivityRequestPermissionsResult } from "io.dcloud.uts.android";
 ```
 
-### onAppActivityRequestPermissionsResult
 App 的 activity 获得权限请求结果的回调
 
 ```ts
 onAppActivityRequestPermissionsResult((requestCode: number,
                                                      permissions: MutableList<string>,
                                                      grantResults: MutableList<number>) => {
-		/**
-		 * 0 已同意
-		 * -1 已拒绝
-		 */
+		
 		console.log(grantResults);
 		console.log(permissions);   
 		console.log(requestCode);
@@ -735,6 +815,15 @@ onAppActivityRequestPermissionsResult((requestCode: number,
 ActivityCompat.requestPermissions(getUniActivity()!,
 	    arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 1001);
 
+```
+
+
+特别说明：除了本章节列出的函数外，android环境下 activity 其他上下文方法都可以通过 getUniActivity()!.xxx()的方式实现
+
+比如获取当前activity的顶层View容器
+
+```
+getUniActivity()!.getWindow().getDecorView();
 ```
 
 

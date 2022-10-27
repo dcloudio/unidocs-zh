@@ -6,7 +6,7 @@
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|√|x|√|x|
+|√|√|√|x|√|√|x|√|x|
 
 **FUNCTION CALLBACK 参数**
 
@@ -14,9 +14,9 @@
 |:-|:-|:-|:-|
 |latitude|Number|纬度，范围为 -90~90，负数表示南纬。||
 |longitude|Number|经度，范围为 -180~180，负数表示西经。||
-|speed|Number|速度 (m/s)||
+|speed|Number|速度 (m/s)|H5不支持|
 |accuracy|number|位置的精确度||
-|altitude|number|高度 (m)||
+|altitude|number|高度 (m)|H5不支持|
 |verticalAccuracy|number|垂直精度 (m)|字节小程序、快手小程序 Android 无法获取，返回 0|
 |horizontalAccuracy|number|水平精度 (m)|字节小程序不支持|
 |city|string|定位到的城市信息|百度小程序、字节小程序（iOS 不支持）|
@@ -28,6 +28,7 @@ province|String|省份|百度小程序|
 streetNumber|String|街道号码|百度小程序|
 district|String|区|百度小程序|
 isFullAccuracy|Boolean|是不是精确定位信息|百度小程序|
+altitudeAccuracy|Number|海拔的精确度信息|App|
 
 **注意**
 - 该方法会持续监听地理位置信息的变化，建议在不需要监听地理位置信息变化后，直接调用 `uni.stopLocationUpdate` 方法取消监听。
@@ -42,6 +43,27 @@ uni.onLocationChange(function (res) {
 	console.log('经度：' + res.longitude);
 });
 ```
+### uni.offLocationChange(FUNCTION CALLBACK)
+
+关闭监听实时位置变化，前后台都停止消息接收。
+
+**平台差异说明**
+
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|x|√|√|x|√|x|
+
+**FUNCTION CALLBACK 参数**
+
+|参数名|类型|说明|平台差异说明|
+|:-|:-|:-|:-|
+|latitude|number|纬度，范围 [-90, 90]，负数表示南纬|快手小程序|
+|longitude|number|经度，范围 [-180, 180]，负数表示西经|快手小程序|
+|speed|number|速度 (m/s)|快手小程序|
+|accuracy|number|位置的精确度|快手小程序|
+|altitude|number|高度 (m)|快手小程序|
+|verticalAccuracy|number|垂直精度 (m)（Android 无法获取，返回 0）|快手小程序|
+|horizontalAccuracy|number|水平精度 (m)|快手小程序|
 
 ### uni.onLocationChangeError(FUNCTION CALLBACK)
 
@@ -51,7 +73,7 @@ uni.onLocationChange(function (res) {
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|x|√|x|x|x|
+|√|√|√|x|x|√|x|x|x|
 
 **FUNCTION CALLBACK 参数**
 
@@ -59,6 +81,20 @@ uni.onLocationChange(function (res) {
 |:-|:-|:-|:-|
 |errCode|Number|错误|微信小程序|
 |errMsg|String|错误信息|字节小程序|
+
+### uni.offLocationChangeError(FUNCTION CALLBACK)
+
+取消注册位置更新错误回调。
+
+**平台差异说明**
+
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|x|x|√|x|x|x|
+
+**FUNCTION CALLBACK 参数**
+
+无返回值。
 
 ### uni.startLocationUpdate(OBJECT)
 
@@ -68,7 +104,7 @@ uni.onLocationChange(function (res) {
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|√|x|√|x|
+|√|√|√|x|√|√|x|√|x|
 
 **OBJECT 参数**
 
@@ -91,6 +127,24 @@ uni.startLocationUpdate({
 });
 ```
 
+### uni.stopLocationUpdate(OBJECT)
+
+关闭监听实时位置变化，前后台都停止消息接收。
+
+**平台差异说明**
+
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|x|√|√|x|√|x|
+
+**OBJECT 参数**
+
+|参数名|类型|必填|说明|平台差异说明|
+|:-|:-|:-|:-|:-:|
+|success|Function|否|接口调用成功的回调函数||
+|fail|Function|否|接口调用失败的回调函数||
+|complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
+
 ### uni.startLocationUpdateBackground(OBJECT)
 
 开始监听实时地理位置信息变化事件，小程序进入前后台时均接收实时地理位置信息。
@@ -109,57 +163,3 @@ uni.startLocationUpdate({
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
-
-### uni.stopLocationUpdate(OBJECT)
-
-关闭监听实时位置变化，前后台都停止消息接收。
-
-**平台差异说明**
-
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|√|x|√|x|
-
-**OBJECT 参数**
-
-|参数名|类型|必填|说明|平台差异说明|
-|:-|:-|:-|:-|:-:|
-|success|Function|否|接口调用成功的回调函数||
-|fail|Function|否|接口调用失败的回调函数||
-|complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
-
-### uni.offLocationChange(FUNCTION CALLBACK)
-
-关闭监听实时位置变化，前后台都停止消息接收。
-
-**平台差异说明**
-
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|√|x|√|x|
-
-**FUNCTION CALLBACK 参数**
-
-|参数名|类型|说明|平台差异说明|
-|:-|:-|:-|:-|
-|latitude|number|纬度，范围 [-90, 90]，负数表示南纬|快手小程序|
-|longitude|number|经度，范围 [-180, 180]，负数表示西经|快手小程序|
-|speed|number|速度 (m/s)|快手小程序|
-|accuracy|number|位置的精确度|快手小程序|
-|altitude|number|高度 (m)|快手小程序|
-|verticalAccuracy|number|垂直精度 (m)（Android 无法获取，返回 0）|快手小程序|
-|horizontalAccuracy|number|水平精度 (m)|快手小程序|
-
-### uni.offLocationChangeError(FUNCTION CALLBACK)
-
-取消注册位置更新错误回调。
-
-**平台差异说明**
-
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|x|√|x|x|x|
-
-**FUNCTION CALLBACK 参数**
-
-无返回值。

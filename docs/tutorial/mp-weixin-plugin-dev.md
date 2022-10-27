@@ -92,9 +92,9 @@ plugin
 
 #### 编译步骤
 
-- 安装 cli 最新的 alpha 版或最新的稳定版。截止文章发布时最新版本为：`2.0.0-alpha-32120210809004`。
-- 执行命令行：`yarn dev:mp-weixin -- --plugin test-plugin`。
-- 其中 `test-plugin` 为编译出插件包的名字。 `项目根目录\dist\dev\mp-weixin\test-plugin` 中即是可执行小程序插件代码。
+- 将 CLI 创建的工程编译器依赖更新到 3.2.1 以上，更新编译器依赖参考：[https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion](https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion)。
+- 执行命令行：`yarn dev:mp-weixin -- --plugin plugin-name`。
+- 其中 `plugin-name` 为编译出插件包的名字。 `项目根目录\dist\dev\mp-weixin\plugin-name` 中即是可执行小程序插件代码。
 - `mp-alipay` 平台插件编译后续发布，请留意更新日志。
 
 #### 如何在项目中使用插件

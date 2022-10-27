@@ -5,22 +5,14 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
 
 ### 环境准备
 
-升级 uni-app 编译器到 3.6.7 alpha
+升级 uni-app 编译器到 3.6.8 alpha
 
   * HBuilderX 创建的项目直接升级 HBuilderX 到最新 alpha 版即可
   * CLI 创建的项目参考 [https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion](https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion) 升级依赖到最新 alpha 版
   
 ### 使用组合式API
 
-  1. 使用 npm/yarn 安装 @vue/composition-api，此包目前仅用于提供语法提示等，编译器内部内置修改过的固定版本。
-
-  ```shell
-  npm install @vue/composition-api
-  # or
-  yarn add @vue/composition-api  
-  ```
-
-  2. 在 main.js/ts 文件内增加安装 @vue/composition-api 插件
+  1. 在 main.js/ts 文件内增加安装 @vue/composition-api 插件
   
   ::: preview
   
@@ -48,15 +40,7 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   
   :::
 
-  3. 使用 npm/yarn 安装 @dcloudio/uni-app
-  
-  ```shell
-  npm install @dcloudio/uni-app@alpha
-  # or
-  yarn add @dcloudio/uni-app@alpha  
-  ```
-  
-  4. 从 @vue/composition-api 包内导入并使用基础的组合式API，具体的兼容性仍需参考：[@vue/composition-api](https://github.com/vuejs/composition-api#browser-compatibility)。从 @dcloudio/uni-app 包内导入 uni-app 其他生命周期API。
+  2. 从 @vue/composition-api 包内导入并使用基础的组合式API，具体的兼容性仍需参考：[@vue/composition-api](https://github.com/vuejs/composition-api#browser-compatibility)。从 @dcloudio/uni-app 包内导入 uni-app 其他生命周期API。
 
   ```js
   import { defineComponent, ref } from '@vue/composition-api'
@@ -117,5 +101,4 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   
 ### 与 TypesSript 一起使用
 
-* CLI 项目：创建项目时需选择 TS 模板，与 Script Setup 一同使用时会禁用默认的类型检查，具体请参考 [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
-* HBuilderX 项目：使用 TS 时目前不可单独使用 Script Setup，需同时使用 defineComponent。
+> 与 Script Setup 一同使用时会禁用默认的类型检查，具体请参考 [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)

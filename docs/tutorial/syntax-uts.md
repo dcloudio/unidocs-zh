@@ -2211,6 +2211,8 @@ clearInterval(timer)
 ## 开发指南
 
 - [使用 uts 开发 uni-app 原生插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
+- [Android开发者UTS快速上手指南](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)
+
 
 ## 学习资料
 

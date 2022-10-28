@@ -351,6 +351,7 @@ uts 插件在 iOS 平台的原生层配置文件，可以在其中配置依赖�
 
 ### Android平台
 
+
 ![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 
 在Android平台目录下，编辑index.uts，键入以下内容。
@@ -389,6 +390,12 @@ export function getBatteryCapacity(): string {
 在下一节，将介绍前端如何使用这个插件。
 
 注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
+
+
+特别提示：
+
+**有android开发经验的开发者可以参考：[Android开发者UTS快速上手指南](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)**
+
 
 ### iOS 平台
 

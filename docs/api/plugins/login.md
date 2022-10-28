@@ -1,23 +1,42 @@
 ### uni.login(OBJECT)
 登录
 
+uni.login是一个客户端API，统一封装了各个平台的各种常见的登录方式，包括App手机号一键登陆、三方登录（微信、微博、QQ、Apple、google、facebook）、各家小程序内置登录。
+
+除了前端API，DCloud还提供了[uni-id](/uniCloud/uni-id-summary.md)，这是一个云端一体的、完整的、账户开源框架。不仅包括客户端API，还包括前端页面、服务器代码、管理后台等所有与登录账户有关的服务，包括短信验证码、密码加密存储、忘记密码、头像更新等所有常见账户相关功能。
+
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|Web|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
 
-H5平台登录注意事项：
-- 微信内嵌浏览器运行H5版时，可通过js sdk实现微信登录，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
-- 普通浏览器上实现微信登录，并非开放API，需要向微信申请，仅个别开发者有此权限
-- H5平台的其他登录，比如QQ登录、微博登录，uni-app未封装，请在条件编译里按普通H5写法编写。
+大多数登录方式，都需要申请开通相关服务，具体点击下面的文档查看。
 
-注意事项：
-- 百度小程序平台需要在button组件的@login事件后再调用 uni.login ，[详见](https://smartprogram.baidu.com/docs/develop/function/login/),否则会返回“请登录”的错误信息，建议在@login事件中调用。
-- uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getLoginCode) 替代 uni.login 解决。
-- 京东小程序IDE 暂时不支持此uni.login()，请用真机查看；IDE调用，只能返回模拟数据 code为200。
+#### App平台支持的登录方式
+- [手机号一键登录（univerify）](/tutorial/univerify.md)
+- [苹果登录（Sign in with Apple）](/tutorial/app-oauth-apple.md)
+- [微信登录](/tutorial/app-oauth-weixin.md)
+- [QQ登录](/tutorial/app-oauth-qq.md)
+- [新浪微博登录](/tutorial/app-oauth-sina.md)
+- [Google登录](/tutorial/app-oauth-google.md)
+- [Facebook登录](/tutorial/app-oauth-facebook.md)
 
-**OBJECT 参数说明**
+#### 小程序平台支持的登录方式
+* [微信小程序登录](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
+* [支付宝小程序登录](https://docs.alipay.com/mini/introduce/authcode)
+* [百度小程序登录](https://smartprogram.baidu.com/docs/develop/api/open_log/#%E6%8E%88%E6%9D%83%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/)
+* [字节跳动小程序登录](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/log-in/login)
+* [QQ小程序登录](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_login.html)
+* [快手小程序登录](https://mp.kuaishou.com/docs/develop/api-next/open/login/ks.login.html)
+* [京东小程序登录](https://mp-docs.jd.com/api/openInterface/login.html)
+
+#### web平台支持的登录方式
+Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](/uniCloud/uni-id-summary.md)
+
+如不使用uni-id，微信内嵌浏览器运行H5版时，可通过js sdk实现微信登录，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
+
+#### OBJECT 参数说明
 
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -30,10 +49,9 @@ H5平台登录注意事项：
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-#### onlyAuthorize说明
+**onlyAuthorize说明**
 
 微信登录在未配置`onlyAuthorize`的情况下，调用`uni.login`接口用户登录凭证(`code`)不返回，用以换取登录信息(`authResult`)；需要在项目manifest.json中配置的`appsecret`，此参数云端打包后会保存在apk/ipa中，存在参数泄露的风险；HBuilderX3.4.18+ 不再提供此参数的可视化配置。对于安全性要求较低的开发者，可以通过manifest.json -> 源码视图 -> app-plus -> distribute -> sdkConfigs -> oauth -> weixin -> 添加appsecret 配置。
-
 
 **success 返回参数说明**
 
@@ -44,30 +62,21 @@ H5平台登录注意事项：
 |appleInfo|Object|否|`苹果登录`返回的信息|App 3.4.3+|
 |errMsg|描述信息||
 
-各个平台的登录流程存在差异，详细请参考相关平台的文档说明：
-
-* [微信小程序登录](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
-* [支付宝小程序用户授权](https://docs.alipay.com/mini/introduce/authcode)
-* [百度小程序登录](https://smartprogram.baidu.com/docs/develop/api/open_log/#%E6%8E%88%E6%9D%83%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/)
-* [字节跳动小程序登录](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/log-in/login)
-* [Apple登录、苹果登录、Sign in with Apple](/tutorial/app-oauth-apple)
-* [一键登录](/univerify)
-
-如果服务端使用`uniCloud`，那么官方提供了[uni-id](/uniCloud/uni-id)云端统一登录服务，把微信登录、短信验证码登录及角色权限管理等服务端登录开发，进行了统一的封装。
-
-前端统一的`uni.login`和云端统一的`uni-id`搭配，可以极大提升登录业务的开发效率，强烈推荐给开发者使用。uni-id的文档另见：[https://uniapp.dcloud.net.cn/uniCloud/uni-id](/uniCloud/uni-id-summary.md)
-
-
 **示例**
 
 ```javascript
 uni.login({
-  provider: 'weixin',
+  provider: 'weixin', //使用微信登录
   success: function (loginRes) {
     console.log(loginRes.authResult);
   }
 });
 ```
+
+#### 注意事项
+- 百度小程序平台需要在button组件的@login事件后再调用 uni.login ，[详见](https://smartprogram.baidu.com/docs/develop/function/login/),否则会返回“请登录”的错误信息，建议在@login事件中调用。
+- uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getLoginCode) 替代 uni.login 解决。
+- 京东小程序IDE 暂时不支持此uni.login()，请用真机查看；IDE调用，只能返回模拟数据 code为200。
 
 ### uni.getLoginCode(OBJECT)@getLoginCode
 获取宿主 App 登录凭证（Authorization Code）
@@ -200,19 +209,19 @@ uni.login({
 });
 ```
 
-#### App端集成其他登录SDK如支付宝、淘宝、facebook登录的说明 @app-oauth
-1. [支付宝登录](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98%E5%AE%9D%E7%99%BB%E9%99%86)、[淘宝登录](https://ext.dcloud.net.cn/search?q=%E7%99%BE%E5%B7%9D)、[抖音登录](https://ext.dcloud.net.cn/search?q=%E6%8A%96%E9%9F%B3%E7%99%BB%E5%BD%95)等在插件市场均已有插件，还有[sharesdk](https://ext.dcloud.net.cn/search?q=sharesdk)等专业集成多家登录分享的插件。
-2. 现已支持登录：
-  - [facebook 登录](/tutorial/app-oauth-facebook)
-  - [Google 登录](/tutorial/app-oauth-google)
-3. 也可以内嵌web-view组件，使用web登录模式集成这些三方登录
+#### App端集成其他登录SDK如支付宝、淘宝登录的说明 @app-oauth
+1. 在插件市场寻找插件
+- [支付宝登录](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98%E5%AE%9D%E7%99%BB%E9%99%86)
+- [淘宝登录](https://ext.dcloud.net.cn/search?q=%E7%99%BE%E5%B7%9D)
+- [抖音登录](https://ext.dcloud.net.cn/search?q=%E6%8A%96%E9%9F%B3%E7%99%BB%E5%BD%95)
+- [sharesdk](https://ext.dcloud.net.cn/search?q=sharesdk)
+2. 内嵌web-view组件，使用web登录模式集成这些三方登录
+3. 开发原生插件集成三方sdk，[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 
 ### uni.getUserProfile(OBJECT)
 
 获取用户信息。每次请求都会弹出授权窗口，用户同意后返回 userInfo。
-
-
 
 **平台差异说明**
 
@@ -220,8 +229,11 @@ uni.login({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√（基础库2.10.4）|x|x|x|x|x|x|
 
-**注意：** 该API仅支持微信小程序端，微信小程序调整了相关接口（详见[《小程序登录、用户信息相关接口调整说明》](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)）。每次触发 uni.getUserProfile 均会弹出授权窗口，用户授权后可成功获取用户信息。该API暂不支持在事件中使用异步操作，否则会触发错误：{errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}
-抖音从基础库 2.30.0 开始支持本方法，低版本需做兼容处理(详见：https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-profile/).
+**注意：** 
+
+该API仅支持微信小程序端，微信小程序调整了相关接口（详见[《小程序登录、用户信息相关接口调整说明》](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)）。每次触发 uni.getUserProfile 均会弹出授权窗口，用户授权后可成功获取用户信息。该API暂不支持在事件中使用异步操作，否则会触发错误：{errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}
+
+抖音从基础库 2.30.0 开始支持本方法，低版本需做兼容处理。[详见](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-profile/)
 
 **OBJECT 参数说明**
 
@@ -241,7 +253,7 @@ uni.login({
 |zh_TW|繁体中文|
 |en|英文|
 
-**注意：**可以使用 if(uni.getUserProfile) 判断uni.getUserProfile是否可用。
+**注意：**可以使用 `if(uni.getUserProfile)` 判断uni.getUserProfile是否可用。
 
 **success 返回参数说明**
 
@@ -285,7 +297,7 @@ uni.login({
 
 
 ### uni.preLogin(OBJECT)
-预登录。
+预登录。用于App手机号一键登录。
 
 **平台差异说明**
 
@@ -305,6 +317,8 @@ uni.login({
 
 ### uni.closeAuthView()
 关闭[一键登录](/univerify)页面。
+
+按照中国移动、中国联通、中国电信等运营商的要求，一键登录必须有界面。可用此API关闭页面。
 
 **平台差异说明**
 

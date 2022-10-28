@@ -63,27 +63,21 @@ When you use the run menu in HBuilderX to run to the applet, it will connect to 
 即使在开发工具勾选了忽略域名校验，体验版与正式版不会忽略域名校验。**如果要发布`体验版`或`正式版`，请务必在HBuilderX内使用发行菜单。**
 Even if Ignore Domain Name Verification is checked in the development tool, the trial version and the official version will not ignore domain name verification. **If you want to release the 'Trial Version' or 'Release Version', please be sure to use the Release menu within HBuilderX. **
 
-### H5中使用uniCloud的跨域处理@useinh5
-### Cross-domain processing using uniCloud in H5 @useinh5
+### Web中使用uniCloud的跨域处理@useinh5
 
-H5前端js访问云函数，涉及跨域问题，导致前端js无法连接云函数服务器。处理方式如下：。
-The H5 front-end js accesses cloud functions, which involves cross-domain issues, so the front-end js cannot connect to the cloud function server. The processing method is as follows: .
+云函数的域名是bspapp.com或tencentcloudapi.com。但开发者的web前端肯定是部署在其他域名下（含unicloud的前端网页托管）。那么Web前端js访问云函数就涉及跨域问题，导致前端js无法连接云函数服务器。
 
-- 运行到H5端时，使用HBuilderX内置浏览器，可以忽略跨域问题（需 HBuilderX 2.5.10+）。
-- When running to the H5 side, using the built-in browser of HBuilderX, you can ignore cross-domain problems (HBuilderX 2.5.10+ is required).
-- 发行到H5端时，需要在uniCloud后台操作，绑定安全域名（在部署云函数的服务空间配置部署h5的域名作为安全域名），否则会因为跨域问题而无法访问。（在`cloudfunctions`目录右键可打开uniCloud后台）
-- When issuing to the H5 terminal, you need to operate in the uniCloud background and bind the security domain name (configure the domain name of h5 deployment as the security domain name in the service space where the cloud function is deployed), otherwise it will be inaccessible due to cross-domain problems. (Right-click in the `cloudfunctions` directory to open the uniCloud background)
-
-> 注意跨域配置需要带上端口信息。例如：前端页面运行于：www.xxx.com:5001，跨域配置内配置：www.xxx.com不会对此页面生效，需要配置为：www.xxx.com:5001
-> Note that the cross-domain configuration requires port information. For example: the front-end page runs on: www.xxx.com:5001, the configuration in the cross-domain configuration: www.xxx.com will not take effect on this page, it needs to be configured as: www.xxx.com:5001
-
-**uniCloud后台跨域配置：**
-**uniCloud background cross-domain configuration:**
+此时需要在uniCloud后台操作，为云函数绑定安全域名。哪个域名下的前端网页的js想访问云函数，就配置哪个域名。如使用unicloud前端网页托管，不管是自带测试域名还是开发者的域名，只要想访问云函数，都得把域名配在这里。
 
 <div align=center>
   <img src="https://img.cdn.aliyun.dcloud.net.cn/uni-app/uniCloud/uniCloud-add-domain.png"/>
 </div>
 
+
+> 注意跨域配置需要带上端口信息。例如：前端页面运行于：www.xxx.com:5001，跨域配置内配置：www.xxx.com不会对此页面生效，需要配置为：www.xxx.com:5001
+
+如果是运行时期想突破跨域限制，还有如下方案：
+- 运行到Web端时，使用HBuilderX内置浏览器，可以忽略跨域问题。
 - 如果运行时，想使用外部浏览器运行，方案如下：
 - If you want to use an external browser to run when running, the scheme is as follows:
   * 方式1：在uniCloud web控制台绑定测试期的地址为安全域名，如配置：localhost:8080、192.168.0.1:8080（建议直接使用内置浏览器测试）
@@ -106,11 +100,9 @@ After `September 16, 2021`, Alibaba Cloud cross-domain configuration can take ef
 ### 前端网页托管
 ### Front-end web hosting
 
-uniCloud支持前端静态网页托管，在HBuilderX中点发行菜单，生成H5，将生成的前端文件部署在uniCloud的前端网页托管内即可[详情参考](uniCloud/hosting.md)。
-uniCloud supports front-end static web page hosting, click the issue menu in HBuilderX, generate H5, and deploy the generated front-end files in the front-end web page hosting of uniCloud [For details](uniCloud/hosting.md).
+uniCloud支持前端静态网页托管，在HBuilderX中点发行菜单，生成Web，将生成的前端文件部署在uniCloud的前端网页托管内即可[详情参考](uniCloud/hosting.md)。
 
-需要注意的是你仍在[uniCloud web控制台](https://unicloud.dcloud.net.cn) 配置H5安全域名。
-It should be noted that you are still configuring the H5 secure domain name in the [uniCloud web console](https://unicloud.dcloud.net.cn).
+需要注意的是你仍需在[uniCloud web控制台](https://unicloud.dcloud.net.cn) 配置绑定安全域名（见上一章节），这样前端网页的js才能访问云函数。
 
 ### App升级中心
 ### App Upgrade Center
@@ -131,4 +123,3 @@ App, applet, web unified publishing page. [See details](uni-publish.md)
 During large-scale development, it is often necessary to issue through the command line for continuous integration.
 
 HBuilderX提供了cli，[详见](https://hx.dcloud.net.cn/cli/README)
-HBuilderX provides cli, [see details](https://hx.dcloud.net.cn/cli/README)

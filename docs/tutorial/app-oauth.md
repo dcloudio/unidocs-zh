@@ -26,21 +26,13 @@ The basic process of using the login authentication function:
 - Call the API in the App project to log in, and after success, obtain the authorization ID and submit it to the business server to complete the login operation
 
 支持的三方登录平台：
-Supported third-party login platforms:
-- [一键登录（univerify）](https://uniapp.dcloud.io/univerify)  
-- [One-click login (univerify)](https://uniapp.dcloud.io/univerify)
-- [苹果登录（Sign in with Apple）](https://uniapp.dcloud.io/app-oauth-apple)  
-- [Sign in with Apple](https://uniapp.dcloud.io/app-oauth-apple)
-- [微信登录](https://uniapp.dcloud.io/app-oauth-weixin)  
-- [WeChat login](https://uniapp.dcloud.io/app-oauth-weixin)
-- [QQ登录](https://uniapp.dcloud.io/app-oauth-qq)  
-- [QQ login](https://uniapp.dcloud.io/app-oauth-qq)
-- [新浪微博登录](https://uniapp.dcloud.io/app-oauth-sina)  
-- [Sina Weibo login](https://uniapp.dcloud.io/app-oauth-sina)
-- [Google登录](https://uniapp.dcloud.io/app-oauth-google)  
-- [Google Login](https://uniapp.dcloud.io/app-oauth-google)
-- [Facebook登录](https://uniapp.dcloud.io/app-oauth-facebook)  
-- [Facebook login](https://uniapp.dcloud.io/app-oauth-facebook)
+- [一键登录（univerify）](univerify.md)
+- [苹果登录（Sign in with Apple）](app-oauth-apple.md)
+- [微信登录](app-oauth-weixin.md)
+- [QQ登录](app-oauth-qq.md)
+- [新浪微博登录](app-oauth-sina.md)
+- [Google登录](app-oauth-google.md)
+- [Facebook登录](app-oauth-facebook.md)
 
 
 

@@ -1,7 +1,9 @@
 * [插件全景描述](/plugin/README.md)
 * [插件市场介绍](/plugin/plugin-ext-introduction.md)
 * [uni_modules](/plugin/uni_modules.md)
-* [uts插件](uts-plugin.md)
+* uts插件
+  * [uts插件概述](/plugin/uts-plugin.md)
+  * [Android平台uts开发指南](/plugin/uts-for-android.md)
 * [原生语言插件](/plugin/native-plugin.md)
 * 插件作者专区
   * [发布插件](/plugin/publish.md)

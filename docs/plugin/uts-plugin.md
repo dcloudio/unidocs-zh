@@ -384,6 +384,7 @@ uts 插件在 iOS 平台的原生层配置文件，可以在其中配置依赖�
 
 ### Android平台
 
+
 ![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 ![OSAPI example](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 
@@ -430,6 +431,12 @@ So far, we have completed the packaging of the native ability to obtain electric
 
 注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
 Note: HBuilderX's code prompt system supports prompting Android's native API in the uts file.
+
+
+特别提示：
+
+**有android开发经验的开发者可以参考：[Android开发者UTS快速上手指南](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)**
+
 
 ### iOS 平台
 

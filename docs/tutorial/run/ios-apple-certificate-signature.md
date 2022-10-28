@@ -1,6 +1,6 @@
 # 使用Apple证书签名iOS标准基座@iOSAppleCertificateSignature
 
-> 此功能仅支持HBuilderX 3.6.8+
+> 此功能仅支持HBuilderX 3.6.9+
 
 因收到苹果公司警告，目前开发者已无法在iOS真机设备使用未签名的标准基座，[更多详情](https://ask.dcloud.net.cn/article/40041)。
 

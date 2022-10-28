@@ -476,11 +476,7 @@ The published cloud functions also have logs under [uniCloud web console](https:
 除了常规的运行日志、错误日志，也可以通过 API `uniCloud.logger` 打印日志。
 In addition to the regular operation log and error log, the log can also be printed through the API `uniCloud.logger`.
 
-使用腾讯云时，以 `uniCloud.logger` 方式打印的日志会保留30天，普通 console 方式打印的日志会保留7天。
-When using Tencent Cloud, logs printed in `uniCloud.logger` mode will be retained for 30 days, and logs printed in ordinary console mode will be retained for 7 days.
-
-使用阿里云时，两种方式都是只能保留7天。
-When using Alibaba Cloud, both methods can only be reserved for 7 days.
+日志会保留7天。
 
 |接口									|描述											|
 |Interface |Description |

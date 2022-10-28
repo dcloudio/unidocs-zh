@@ -164,7 +164,7 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 | |Number of partitions |0.04 yuan/piece/day |
 
 - 在正式进行计费方式切换之日起，用户将不可继续续费或新购旧版套餐或按量计费服务空间。用户可选择是否切换新的计费方式，超时（2022.09.08）切换的服务空间将会停服释放。
-- From the date when the billing method is officially switched, users will not be able to continue to renew their bills or purchase new and old packages or pay-as-you-go service space. Users can choose whether to switch to the new billing method, and the service space switched over time (2022.09.08) will be suspended and released.
+- 新计费下腾讯云云函数日志保存时长为7天
 
 **注：当包年包月服务空间升级新套餐时，如果已开通前端网页托管，则前端网页托管会自动转为按量计费，请确保账号余额充足！**
 **Note: When the annual and monthly service space is upgraded to a new package, if the front-end web hosting has been activated, the front-end web hosting will be automatically converted to metered billing, please ensure that the account balance is sufficient! **

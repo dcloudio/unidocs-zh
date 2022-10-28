@@ -435,7 +435,7 @@ Note: HBuilderX's code prompt system supports prompting Android's native API in 
 
 特别提示：
 
-**有android开发经验的开发者可以参考：[Android开发者UTS快速上手指南](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)**
+**有android开发经验的开发者可以参考：[Android开发者uts快速上手指南](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)**
 
 
 ### iOS 平台

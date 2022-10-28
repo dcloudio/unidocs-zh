@@ -394,7 +394,7 @@ export function getBatteryCapacity(): string {
 
 特别提示：
 
-**有android开发经验的开发者可以参考：[Android开发者uts快速上手指南](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)**
+**有android开发经验的开发者可以参考：[Android平台uts开发指南](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)**
 
 
 ### iOS 平台

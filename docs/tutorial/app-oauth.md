@@ -18,13 +18,13 @@ App端OAuth(登录鉴权)模块封装了市场上主流的三方登录SDK，提�
 - 在App项目中调用API进行登录，成功后获取到授权标识提交到业务服务器完成登录操作
 
 支持的三方登录平台：
-- [一键登录（univerify）](https://uniapp.dcloud.io/univerify)  
-- [苹果登录（Sign in with Apple）](https://uniapp.dcloud.io/app-oauth-apple)  
-- [微信登录](https://uniapp.dcloud.io/app-oauth-weixin)  
-- [QQ登录](https://uniapp.dcloud.io/app-oauth-qq)  
-- [新浪微博登录](https://uniapp.dcloud.io/app-oauth-sina)  
-- [Google登录](https://uniapp.dcloud.io/app-oauth-google)  
-- [Facebook登录](https://uniapp.dcloud.io/app-oauth-facebook)  
+- [一键登录（univerify）](univerify.md)
+- [苹果登录（Sign in with Apple）](app-oauth-apple.md)
+- [微信登录](app-oauth-weixin.md)
+- [QQ登录](app-oauth-qq.md)
+- [新浪微博登录](app-oauth-sina.md)
+- [Google登录](app-oauth-google.md)
+- [Facebook登录](app-oauth-facebook.md)
 
 
 

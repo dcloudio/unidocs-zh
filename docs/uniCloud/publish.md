@@ -40,21 +40,21 @@ HBuilderX内使用运行菜单运行到小程序时会连接本地调试服务�
 
 即使在开发工具勾选了忽略域名校验，体验版与正式版不会忽略域名校验。**如果要发布`体验版`或`正式版`，请务必在HBuilderX内使用发行菜单。**
 
-### H5中使用uniCloud的跨域处理@useinh5
+### Web中使用uniCloud的跨域处理@useinh5
 
-H5前端js访问云函数，涉及跨域问题，导致前端js无法连接云函数服务器。处理方式如下：。
+云函数的域名是bspapp.com或tencentcloudapi.com。但开发者的web前端肯定是部署在其他域名下（含unicloud的前端网页托管）。那么Web前端js访问云函数就涉及跨域问题，导致前端js无法连接云函数服务器。
 
-- 运行到H5端时，使用HBuilderX内置浏览器，可以忽略跨域问题（需 HBuilderX 2.5.10+）。
-- 发行到H5端时，需要在uniCloud后台操作，绑定安全域名（在部署云函数的服务空间配置部署h5的域名作为安全域名），否则会因为跨域问题而无法访问。（在`cloudfunctions`目录右键可打开uniCloud后台）
-
-> 注意跨域配置需要带上端口信息。例如：前端页面运行于：www.xxx.com:5001，跨域配置内配置：www.xxx.com不会对此页面生效，需要配置为：www.xxx.com:5001
-
-**uniCloud后台跨域配置：**
+此时需要在uniCloud后台操作，为云函数绑定安全域名。哪个域名下的前端网页的js想访问云函数，就配置哪个域名。如使用unicloud前端网页托管，不管是自带测试域名还是开发者的域名，只要想访问云函数，都得把域名配在这里。
 
 <div align=center>
   <img src="https://img.cdn.aliyun.dcloud.net.cn/uni-app/uniCloud/uniCloud-add-domain.png"/>
 </div>
 
+
+> 注意跨域配置需要带上端口信息。例如：前端页面运行于：www.xxx.com:5001，跨域配置内配置：www.xxx.com不会对此页面生效，需要配置为：www.xxx.com:5001
+
+如果是运行时期想突破跨域限制，还有如下方案：
+- 运行到Web端时，使用HBuilderX内置浏览器，可以忽略跨域问题。
 - 如果运行时，想使用外部浏览器运行，方案如下：
   * 方式1：在uniCloud web控制台绑定测试期的地址为安全域名，如配置：localhost:8080、192.168.0.1:8080（建议直接使用内置浏览器测试）
   * 方式2：在外部浏览器安装跨域插件，详见：[https://ask.dcloud.net.cn/article/35267](https://ask.dcloud.net.cn/article/35267)。要跨域的地址，详见上述文档中小程序配置安全域名章节。
@@ -69,9 +69,9 @@ H5前端js访问云函数，涉及跨域问题，导致前端js无法连接云�
 
 ### 前端网页托管
 
-uniCloud支持前端静态网页托管，在HBuilderX中点发行菜单，生成H5，将生成的前端文件部署在uniCloud的前端网页托管内即可[详情参考](uniCloud/hosting.md)。
+uniCloud支持前端静态网页托管，在HBuilderX中点发行菜单，生成Web，将生成的前端文件部署在uniCloud的前端网页托管内即可[详情参考](uniCloud/hosting.md)。
 
-需要注意的是你仍在[uniCloud web控制台](https://unicloud.dcloud.net.cn) 配置H5安全域名。
+需要注意的是你仍需在[uniCloud web控制台](https://unicloud.dcloud.net.cn) 配置绑定安全域名（见上一章节），这样前端网页的js才能访问云函数。
 
 ### App升级中心
 

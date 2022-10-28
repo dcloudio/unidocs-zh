@@ -37,11 +37,7 @@ There is no need to connect different SDKs at each end, and there is no need to 
 **2. 开源、免费、自由定制**
 **2. Open source, free, free to customize**
 
-无论前端采集数据的SDK、云端接收数据的云函数、云端跑批统计的云函数、展示统计结果的报表，所有这些代码全部开源。
-Regardless of the SDK that collects data in the front-end, the cloud function that receives data in the cloud, the cloud function that runs batch statistics in the cloud, or the report that displays the statistical results, all these codes are all open source.
-
-前端自定义打点，后端自定义统计维度，自由定制报表，一切都可以灵活定制。
-Front-end custom management, back-end custom statistical dimensions, free custom reports, everything can be flexibly customized.
+代码全部开源。采集什么数据可以自定义；跑批频率可以自定义（搞活动时实时统计都可以做到）；展示报表可以自定义。
 
 **3. 私有部署、数据自控**
 **3. Private deployment, data automatic control**

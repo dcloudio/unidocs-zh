@@ -383,8 +383,7 @@ uni.navigateTo({
 # 云对象（uni-id-co）
 # Cloud object (uni-id-co)
 
-uni-id-co是uni-id-pages的核心云对象，包含了诸多用户相关的接口。作为uni-id体系的一部分，uni-id-co也使用uni-id的配置文件（`cloudfunctions/common/uni-config-center/uni-id/config.json`）。
-uni-id-co is the core cloud object of uni-id-pages, which contains many user-related interfaces. As part of the uni-id system, uni-id-co also uses the uni-id configuration file (`cloudfunctions/common/uni-config-center/uni-id/config.json`).
+uni-id-co是uni-id-pages的核心云对象，包含了诸多用户相关的接口。作为uni-id体系的一部分，uni-id-co也使用uni-id的配置文件（`cloudfunctions/common/uni-config-center/uni-id/config.json`）。**目前此云对象依赖了一些客户端信息，暂不支持url化调用，后续会提供url化方案。**
 
 前端调用云对象`uni-id-co`内的方法前应先获取云对象的引用，代码如下
 The front-end should obtain the reference of the cloud object before calling the method in the cloud object `uni-id-co`. The code is as follows

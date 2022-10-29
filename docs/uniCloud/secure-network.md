@@ -1,6 +1,6 @@
-## 云端一体安全网络
+## uni云端一体安全网络
 
-> HBuilderX 3.6.7+ 支持
+> HBuilderX 3.6.8+ 支持
 
 ## 简介
 ## Introduction
@@ -20,25 +20,30 @@ DCloud面向开发者同时提供了端引擎`uni-app` 和 云引擎`uniCloud`�
 
 `uni-app` 连接 `uniCloud` 时，可以选择是否启动安全网络。它通过高安全的保护机制，解决了客户端受信和网络受信的问题，防止客户端伪造和通信内容抓包。
 
-安全网络有两个主要功能，**客户端验证**和**网络请求加密**，这两个功能对应里面会详细讲解，参考：[客户端验证](#verify-client)、[网络请求加密](#encrypt-data)
+uni云端一体安全网络，提供了如下2个实用功能：
 
-注意：安全网络不支持web平台，只支持微信小程序和App。并且App的安全级别更高。安全网络在客户端callFunction时生效，云函数url化等场景下不生效。
+|功能名称		|功能描述															|是否需要编码							|具体文档				|
+|--				|--																	|--										|--						|
+|客户端校验		|指定合法的客户端，包括包名、证书、appid。不授信的客户端将无法请求服务器	|只需配置，无需编码						|[文档](#verify-client)	|
+|网络传输数据加密	|对网络传输的数据进行端到端加密，防止中间节点截获和篡改					|需要在联网请求的代码里设定是否加密的参数	|[文档](#encrypt-data)	|
+
 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|微信小程序|
-|App|WeChat Mini Program|
-|:-:|:-:|
-|3.6.7+|3.6.7+|
+|App	|微信小程序	|Web|其他小程序	|
+|:-:	|:-:		|:-:|:-:		|
+|3.6.8+	|3.6.8+		|x	|x			|
+
+注意：安全网络只支持微信小程序和App。并且App的安全级别更高。安全网络仅在uni-app客户端连unicloud云函数/云对象生效，云函数url化场景下不生效。
 
 ## 如何开通
 
-App和微信小程序略有区别，但大体都要经过如下流程：
-1. 在dev.dcloud.net.cn的应用管理中指定要开通的应用，在“各平台信息”中配置app的包名、签名摘要或者微信小程序的appid。
-2. 在uniCloud web控制台选定一个服务空间，选择安全网络，关联某个app。
+不管使用安全网络的哪个功能，首先要开通安全网络。App和微信小程序略有区别，但大体都要经过如下流程：
+1. 前端应用配置：在[https://dev.dcloud.net.cn/](https://dev.dcloud.net.cn/)的应用管理中指定要开通的应用，在“各平台信息”中配置app的包名、签名摘要或者微信小程序的appid。
+2. 云端配置：在[uniCloud控制台](https://unicloud.dcloud.net.cn/)选定一个服务空间，在“安全网络”页面，关联在dev配好的某个应用。
 
-两个平台细化说明如下。
+App和微信两个平台细化说明如下：
 
 ### App平台开通安全网络@app
 
@@ -58,21 +63,26 @@ App和微信小程序略有区别，但大体都要经过如下流程：
 
   **注意：**打包后生效。测试时需打包[自定义基座](../tutorial/run/run-app.md#customplayground)。
 
-4. 在服务空间创建数据表[opendb-app-client-key](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-app-client-key)用于保存发放给客户端的密钥对，参考文档：[创建一个表](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#create-collection)
+4. 在服务空间创建数据表[opendb-app-client-key](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-app-client-key)用于保存发放给客户端的密钥对。
+
+  - 如果在[uniCloud控制台](https://unicloud.dcloud.net.cn/)，新建表界面在opendb表的其他分类中
+  - 如果在HBuilderX的database目录点右键新建，可直接搜索`opendb-app-client-key`。新建后记得上传到uniCloud服务空间。
+  
+  参考文档：[创建一个表](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#create-collection)
 
   - 切勿删除或修改此集合内容，否则会导致部分客户端不能发送安全网络请求（重新安装客户端或清除客户端数据后才能正常使用）
-  - 如果服务空间开通了redis会在redis内存储一份客户端密钥对以加速安全网络请求的处理，所使用的键为`unicloud:secure:app-client-key:{appId}:{deviceId}:string`
-  - **强烈建议开启redis功能并在云函数关联redis扩展，**会大幅加快访问速度并减少数据库请求次数
+  - 如果服务空间开通了redis，会自动在redis内存储一份客户端密钥对，以加速安全网络请求的处理。所使用的键为`unicloud:secure:app-client-key:{appId}:{deviceId}:string`
+  - **强烈强烈建议开启redis功能、且在云函数package.json中关联redis扩展，**会大幅加快访问速度并减少数据库请求次数。因安全网络的加密行为已经导致比普通网络多耗时，所以商用项目请务必开通redis以保障速度。在[uniCloud控制台](https://unicloud.dcloud.net.cn/)点redis即可开通。
 
 5. 上传任意schema文件到服务空间以触发一次clientDB云端模块的更新
 
-**注意**
+**遗留**
 
 - 安全网络暂未支持离线打包，后续会提供离线打包的方案
 
 ### 微信小程序开通安全网络@mp-weixin
 
-安全网络在微信小程序上的实现，依赖了微信提供的一些用户级的凭据。所以需要下载`uni-id-pages`和`uni-open-bridge`，并在app.vue里初始化。
+安全网络在微信小程序上的实现，依赖了微信提供的一些用户级的凭据。所以需要下载 [uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577) 和 [uni-open-bridge](uni-open-bridge.md)，并在app.vue里初始化。
 
 **无论是处理加密请求还是需要进行验证客户端的云函数在处理微信小程序发起的请求时都必须依赖`uni-id-common`和`uni-open-bridge-common`**
 
@@ -122,7 +132,7 @@ Security Network relies on WeChat's `access_token`, `session_key`, `encrypt_key`
 }
 ```
 
-配置 `uni-open-bridge` 定时任务，定时从微信服务器获取 [access_token](/uniCloud/uni-open-bridge.html#access_token) 并保存到Redis或数据库
+配置 `uni-open-bridge` 定时任务，定时从微信服务器获取 [access_token](uni-open-bridge.md#access_token) 并保存到Redis或数据库
 
 ```json
 // uniCloud/cloudfunctions/common/uni-config-center/uni-open-bridge/config.json
@@ -140,7 +150,7 @@ Security Network relies on WeChat's `access_token`, `session_key`, `encrypt_key`
 }
 ```
 
-注意：拷贝此文件内容时需要移除 `注释`。标准json不支持注释。在HBuilderX中可用多选`//`来批量移除注释。
+**注意**：拷贝此文件内容时需要移除 `注释`。标准json不支持注释。在HBuilderX中可用多选`//`来批量移除注释。
 
 如果项目之前已经使用过uni-id-pages和uni-open-bridge，则上述步骤可省略。
 
@@ -160,58 +170,74 @@ The App.vue page needs to add the following code:
 </script>
 ```
 
-在此方法内部会调用一次微信小程序的login，然后使用返回的code调用`uni-id-co`的`secureNetworkHandshakeByWeixin`方法（新增于uni-id-pages 1.0.27）
+注意：此方法内部会调用一次微信小程序的login，然后使用返回的code调用`uni-id-co`的`secureNetworkHandshakeByWeixin`方法（新增于uni-id-pages 1.0.27）
   
 7. 在项目根目录manifest.json文件内为微信小程序平台开启`云端一体安全网络模块`
   
   ![微信小程序云端一体安全网络模块](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ab96f1f7-af14-4f08-8b1c-699ecfce3381.jpg)
 
-## 客户端验证@verify-client
+## 客户端强制验证@verify-client
 
 > 新增于 HBuilderX 3.6.8
 
-客户端验证用于确保发起请求的客户端的真实性。客户端验证功能全流程由uniCloud进行控制，开启此功能后将直接拒绝无权访问的客户端调用云函数。
+客户端验证用于确保发起请求的客户端的真实性，只有指定的客户端才能访问云函数。
 
-开发者需在[uniCloud控制台](https://unicloud.dcloud.net.cn/)的安全网络菜单内添加客户端校验相关配置。
+客户端验证功能全流程由uniCloud进行控制，开启此功能后将直接拒绝无权访问的客户端调用云函数。
+
+开发者首先在[uniCloud控制台](https://unicloud.dcloud.net.cn/)的安全网络页面选择哪些客户端应用可以与uniCloud建立安全网络，然后在页面上单独开启客户端强制校验。
 
 ![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/bd8f8939-67d5-415b-85eb-f63d4d1dc2dc.jpg)
 
-开启客户端验证功能后，默认对所有云函数启用安全验证，仅在安全网络应用列表内配置的应用允许访问云函数。
+**切记**
+1. 由于uni安全网络不支持web，一旦开启客户端强制校验后，web端将无法连接云函数。
+2. 由于uni安全网络必须绑定自己的应用，所以不支持标准基座的真机运行，只能使用自定义基座。
 
-如有自定义安全规则的需求，需打开自定义规则开关手动配置。开启自定义规则后，未被规则匹配到的云函数不进行客户端验证。
+开启客户端验证功能后，默认对**所有云函数**启用安全验证，仅在安全网络应用列表内配置的应用允许访问云函数。但有时，会有排除某个云函数的需求。比如指定的云函数校验或不校验客户端身份，这个云函数可能要url供外部访问。
 
-### 自定义规则语法
+所以uni安全网络提供了自定义客户端校验规则。
 
-自定义规则是一个标准的json，不支持编写注释，如需拷贝示例代码请务必去除注释。
+### 自定义客户端校验规则
 
-如下示例为一个简单的自定义规则配置
+在 uniCloud web控制台 的 安全网络页面，可打开自定义规则开关。开启自定义规则后，将不再执行全体云函数统一的客户端校验。改为，未被规则匹配到的云函数不进行客户端验证。
+
+如下示例为一个简单的自定义规则配置：
 
 ```json
 {
   "verify-client": [{ // 可访问云函数verify-client的应用列表
     "appId": "__UNI_xxxx",  // 客户端的DCloud AppId
-    "platform": "android",  // 客户端平台，有三个可选值：android（安卓）、ios（iOS）、mp-weixin（微信小程序）
-    "version": "production" // 客户端版本，有两个可选值：production（正式版）、development（测试版）
+    "platform": "android",  // 客户端平台，有三个可选值：android（安卓）、ios（iOS）、mp-weixin（微信小程序）。注意是小写
+    "version": "production" // 客户端版本，有两个可选值：production（正式版）、development（测试版）。注意是小写
   }]
 }
 ```
 
-云函数名有以下几种写法
+上述规则意味着，这个名为`verify-client`的云函数，只有应用的appid为`__UNI_xxxx`、platform即客户端平台为android、且为正式版，才能访问这个云函数；其他客户端无法访问这个云函数；且除了`verify-client`外，其他云函数可以被任何客户端随意访问。
+
+如果想增加更多规则，在json中添加更多数组，每个数组是一条规则。比如想配置ios平台，就追加一个数组。
+
+注意：自定义规则是一个标准的json，不支持编写注释，如需拷贝示例代码请务必去除注释。
+
+云函数名为json的key，但可以写多个云函数。包括以下几种写法：
 
 1. 单个云函数`verify-client`
 2. 多个云函数`verify-client1,verify-client2`，注意逗号为英文逗号
-3. 通配符`*`
+3. 通配符`*`，代表所有云函数
 
 当匹配一个云函数的自定义规则配置时，优先使用单个云函数名的配置，其次是多个云函数名的配置，最后是通配符的配置。如果都未匹配到则不对此云函数执行验证客户端的逻辑。
 
 **注意**
 
 - 如果修改客户端验证配置需要重新打包做出修改的客户端，如果是正在运行期间修改了配置需要重新运行客户端才会生效。
-- 如需对clientDB请求验真需要使用`uni-clientDB`作为云函数名
+- 如需对clientDB请求进行客户端校验，使用`uni-clientDB`作为云函数名
 
 ## 数据加密传输@encrypt-data
 
-如需加密传输的数据，则在客户端和服务器都要编写代码，倒不需要写具体的加密解密算法，而是需要在客户端指定哪些请求、哪些数据要加密，而在云端要校验客户端是否指定了正确的条件。
+除了校验客户端身份外，uni安全网络还提供了网络上下行传输数据的加密。
+
+此时需要在客户端和服务器都要编写代码，倒不需要写具体的加密解密算法，而是需要在客户端指定哪些请求、哪些数据要加密，而在云端要校验客户端是否指定了正确的条件。
+
+加密解密使用的是国际通行的高位AES算法。
 
 具体写法如下：
 
@@ -225,7 +251,7 @@ uniCloud.callFunction({
   data: {
     name: 'user'
   },
-  secretType: 'both' //both指上下行数据都加密，具体见下
+  secretType: 'both' //both指上下行数据都加密，具体见下面的secretType章节
 })
 ```
 
@@ -250,7 +276,9 @@ uniCloud.importObject('object-name', {
 
 ### clientDB
 
-暂不支持
+clientDB暂不支持网络数据加密传输。但仍可以使用客户端身份校验。
+
+### 参数说明
 
 **secretType 属性说明**
 **secretType attribute description**

@@ -22,6 +22,10 @@ uni.onUserCaptureScreen(function() {
 });
 ```
 
+**注意**
+
+Android的截屏监听原理是监听相册中截屏目录的文件新增，需赋予App本地文件读取权限。
+
 ### uni.offUserCaptureScreen(function callback)
 
 用户主动截屏事件。取消事件监听。

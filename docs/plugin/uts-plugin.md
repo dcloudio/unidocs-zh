@@ -253,7 +253,8 @@ dependencies {
 > 遗留事项: HBuilderX3.6.1版本对dependencies配置支持还不完善，[详见](#tempnotice)
 
 - minSdkVersion  
-插件支持的Android最低版本，整数类型，取值范围为Android API Level  
+插件支持的Android最低版本，整数类型，取值范围为Android API Level
+
 默认uni-app最低支持版本为19，即Android4.3.3
 
 
@@ -484,17 +485,15 @@ getBatteryCapacity()
 
 若HBuilderX中没有`uts编译运行插件`，在第一次运行时会自动下载。
 
-在Android上，运行体验与uni-app基本无差异。一样可以热刷新，打印console.log。
+- Android上，运行体验与uni-app基本无差异。一样可以热刷新，打印console.log。
 
-**注意：**
-
-- iOS 平台 uts 插件需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+- iOS上，uts 插件需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
 ### 5.2 自定义基座
 
 自定义基座也支持uts插件。
 
-与原生插件一样,涉及以下场景,需要自定义基座后方能生效:
+Android上编写普通uts代码时标准基座也可以。但与原生插件一样，涉及以下场景，需要自定义基座后方能生效:
 
 - 1 集成三方sdk
 - 2 新增资源(包括res/asset 等)
@@ -515,22 +514,23 @@ getBatteryCapacity()
 
 正常支持云端打包。
 
-注意：虽然uts在真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
+注意：虽然uts在Android真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
 
-打包若包含了已经内置的依赖库，则需注意参考 [这个章节](#tempnotice)
+打包若包含了uni-app引擎内置的依赖库，会报错。需注意参考 [这个章节](#tempnotice)
 
 ## uni-app的Android内置库@iodcloudutsandroid
 
-在uts里，Android的所有api都可以访问。同时DCloud提供了`io.dcloud.uts.android`库，方便开发者快速获取android 上下文环境
+在uts里，Android的所有api都可以访问。
 
+但Android开发中经常要复写application和activity，uni-app主引擎已经复写了相关类。所以想要操作application和activity，需要调用uni-app引擎封装的API。
+
+这些api在`io.dcloud.uts.android`库中，具体见下。
 
 ### 1 application 上下文相关
 
-
-
 #### 1.1 getAppContext
 
-HX 3.6.3+ 版本支持
+> HBuilderX 3.6.3+
 
 
 ```ts
@@ -555,7 +555,7 @@ mediaPlayer.start();
 
 #### 1.2 getResourcePath(resourceName:String)
 
-HX 3.6.3+ 版本支持
+> HBuilderX 3.6.3+
 
 
 ```ts
@@ -573,7 +573,7 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 #### 1.3 onAppTrimMemory
 
-HX 3.6.8+ 版本支持
+> HBuilderX 3.6.8+
 
 ```ts
 import { onAppTrimMemory } from "io.dcloud.uts.android";
@@ -590,7 +590,7 @@ onAppTrimMemory((level:Number) => {
 
 ### 1.4 onAppConfigChange
 
-HX 3.6.8+ 版本支持
+> HBuilderX 3.6.8+
 
 ```ts
 import { onAppConfigChange } from "io.dcloud.uts.android";
@@ -617,11 +617,9 @@ getAppContext()!.getExternalCacheDir()!.getPath()
 
 ### 2.2 Activity 上下文
 
-
-
 #### 2.1 getUniActivity
 
-HX 3.6.3+ 版本支持
+> HBuilderX 3.6.3+
 
 ```ts
 import { getUniActivity } from "io.dcloud.uts.android";
@@ -638,7 +636,7 @@ let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 
 #### 2.2 onAppActivityPause
 
-HX 3.6.3+ 版本支持
+> HBuilderX 3.6.3+
 
 ```ts
 import { onAppActivityPause } from "io.dcloud.uts.android";
@@ -655,7 +653,7 @@ onAppActivityPause(() => {
 
 #### 2.3 onAppActivityResume
 
-HX 3.6.3+ 版本支持
+> HBuilderX 3.6.3+
 
 ```ts
 import { onAppActivityResume } from "io.dcloud.uts.android";
@@ -672,7 +670,7 @@ onAppActivityResume(() => {
 
 #### 2.4 onAppActivityDestroy
 
-HX 3.6.3+ 版本支持
+> HBuilderX 3.6.3+
 
 ```ts
 import { onAppActivityDestroy } from "io.dcloud.uts.android";
@@ -689,7 +687,7 @@ onAppActivityDestroy(() => {
 
 #### 2.5 onAppActivityBack
 
-HX 3.6.3+ 版本支持
+> HBuilderX 3.6.3+
 
 ```ts
 import { onAppActivityBack } from "io.dcloud.uts.android";
@@ -707,7 +705,7 @@ onAppActivityBack(() => {
 
 #### 2.6 onAppActivityResult
 
-HX 3.6.8+ 版本支持
+> HBuilderX 3.6.8+
 
 ```ts
 import { onAppActivityResult } from "io.dcloud.uts.android";
@@ -726,7 +724,7 @@ onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
 
 #### 2.7 onAppActivityRequestPermissionsResult
 
-HX 3.6.3+ 版本支持
+> HBuilderX 3.6.3+
 
 ```ts
 import { onAppActivityRequestPermissionsResult } from "io.dcloud.uts.android";
@@ -827,4 +825,8 @@ uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
 
 DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。
 
-插件市场提供了一个跨Android、web、微信小程序的电量获取封装插件，[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+插件市场提供了很多uts项目：
+- 电量获取封装插件，[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+- 截屏监听插件，[详见](https://ext.dcloud.net.cn/plugin?id=9897)
+
+更多uts插件见：[https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)

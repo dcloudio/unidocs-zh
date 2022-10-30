@@ -588,7 +588,7 @@ onAppTrimMemory((level:Number) => {
 });
 ```
 
-### 1.4 onAppConfigChange
+#### 1.4 onAppConfigChange
 
 > HBuilderX 3.6.8+
 
@@ -615,7 +615,7 @@ getAppContext()!.getExternalCacheDir()!.getPath()
 ```
 
 
-### 2.2 Activity 上下文
+### 2 Activity 上下文
 
 #### 2.1 getUniActivity
 

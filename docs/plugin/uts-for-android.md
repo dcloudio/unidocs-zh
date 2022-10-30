@@ -1,87 +1,38 @@
-## 写在最前
+## uts for Android
 
-本文旨在 引导Android开发者，快速上手UTS插件开发
+本文旨在帮助Android开发者，快速上手UTS。
 
 需要阅读者具备Android原生应用开发经验。
 
 
 ## 1 了解UTS插件是什么
 
+`UTS插件`是`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点。[详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
 
-`UTS插件`是最新发布的`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点
+对于Android开发者来说，我们需要了解的是：
 
-[更多介绍看这里](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
-
-
-
-对于Android开发者来说，我们需要了解的是
-
-1 编译时：当我们在保存`UTS`源码文件时，IDE会同步将其编译为对应的Kotlin代码。
-
-2 运行时：在真机运行/云打包时，这些编译后的kotlin源码也会成为apk的一部分
-
-
+1. 编译时：当我们在保存`UTS`源码文件时，IDE会同步将其编译为对应的Kotlin代码。
+2. 运行时：在真机运行/云打包时，这些编译后的kotlin源码也会成为apk的一部分
 
 ## 2 掌握UTS语法
 
-
-开发UTS插件的第一步是掌握UTS语法
-
-
 ### 2.1  对于掌握kotlin语言者
 
-因为UTS语法与kotlin很类似，可以从2.4 章节 开始阅读。
-
-建议快速阅读后，在实践中掌握这UTS语法。
-
+因为UTS语法与kotlin很类似，建议快速阅读后，在实践中掌握这UTS语法。[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/syntax-uts)。
 
 ### 2.2  对于仅掌握java语言者
 
+与js相比，uts的语法和java更加类似。但是依然存在较大的差异，需要详细阅读2.3语法部分。
 
-与js相比,uts的语法和java更加类似。
+尽管开发UTS插件，并不要求一定掌握kotlin，但是鉴于`UTS`目前在android平台上，会编译为kotlin源码。学会kotlin语言，方便排查问题和复杂功能实现。
 
-但是依然存在较大的差异，需要详细阅读2.3语法部分。
+因此建议学习一下kotlin语法。
 
++ kotlin [https://kotlinlang.org/](https://kotlinlang.org/)
 
-尽管开发UTS插件，并不要求一定掌握kotlin，但是鉴于`UTS`目前在android平台上，会编译为kotlin源码。
++ kotlin for android [https://developer.android.com/kotlin](https://developer.android.com/kotlin)
 
-学习kotlin语言，方便排查问题和复杂功能实现
-
-因此建议学习一下2.3 章节 kotlin语法
-
-
-
-### 2.3 kotlin 语法部分
-
-建议掌握kotlin语法，可以参考下面的文档
-
-+ kotlin [文档](https://kotlinlang.org/)
-
-+ kotlin for android[文档](https://developer.android.com/kotlin)
-
-
-### 2.4 UTS语法部分
-
-uts，全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。
-
-
-> 它可以被编译为不同平台的编程语言，如：
-> 
-> web平台，编译为JavaScript
-> 
-> Android平台，编译为Kotlin
-> 
-> iOS平台，编译Swift（暂未发布）
-> 
-> uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
-
-
-uts语法详细介绍：[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/syntax-uts)
-
-
----------------------------------
-
-### 2.5 数据类型差异
+### 2.3 数据类型差异
 
 虽然 UTS 和 koltin 在数据类型上基本保持了一致，但是在部分场景下，还是会有差异，在此特别说明
 
@@ -129,8 +80,6 @@ uts语法详细介绍：[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/
 
 但是在 调用`onAppActivityRequestPermissionsResult` 函数监听权限申请结果时，明确要求使用此类型的参数
 
-
-
 在原生环境中，应该这样写：
 
 ```kotlin
@@ -145,7 +94,6 @@ onAppActivityRequestPermissionsResult(fun(requestCode: Number, permissions: Muta
 
 为了适应这种情况，UTS 允许开发者使用原生平台的数据类型`MutableList`，来满足原生平台API对数据类型的要求：
 
-
 ```ts
 onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableList<string>,grantResults: MutableList<number>) => {
 	
@@ -153,24 +101,18 @@ onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableL
 
 ```
 
-
-## 3 Android原生环境配置 （目前版本暂不支持）
-
+## 3 Android原生环境配置
 
 对于Android项目来说，除了源码之外，还会涉及依赖，资源，配置等常见问题
 
 本章节将会介绍，UTS插件开发环境中如何配置这些属性
-
 
 注意：
 
 + 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
 + 2 本章节设计的配置，均需自定义基座后才能生效
 
-
-
 ### 3.1 配置AndroidManifest.xml
-
 
 以hello UTS中的native-page插件中的配置文件为例:
 
@@ -224,25 +166,19 @@ uts-nativepage  ->  uts.sdk.modules.utsNativepage
 
 ### 3.2 配置res资源
 
-
 ![](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_res_folder.jpg)
-
 
 示例文件在hello uts中的位置：
 
 ~\uni_modules\uts-nativepage\utssdk\app-android\res 
 
-
-除了这里列出的layout,values目录外，还支持anim等所有android标准资源目录
-
+除了这里列出的layout、values目录外，还支持anim等所有android标准资源目录
 
 ### 3.3 配置asset资源
 
 以hello UTS中的uts-advance插件为例。
 
-
 ![目录结构](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_assets_folder.jpg)
-
 
 关键代码:
 
@@ -261,11 +197,6 @@ mediaPlayer.start();
 完整的代码在hello uts中的位置：
 
 ~\uni_modules\uts-advance\utssdk\app-android\assets
-
-
-
-
-
 
 ### 3.4 增加libs依赖资源
 
@@ -345,7 +276,7 @@ HX3.6.7 版本内置了以下依赖
 
 至此我们认为你已经掌握了UTS语法，掌握了基本的Kotlin语法，掌握了UTS对于android资源的支持。
 
-但是对于一个熟悉android开发的kotlin语言者来说，有很多常用的习惯发生了改变，我们会在这个章节特别指出,便于开发者加深认识。
+但是对于一个熟悉android开发的kotlin语言者来说，有很多常用的习惯发生了改变，我们会在这个章节特别指出，便于开发者加深认识。
 
 
 ### 4.1 语法差异
@@ -354,7 +285,7 @@ HX3.6.7 版本内置了以下依赖
 
 #### 4.1.1 可为空的语法标识
 
-kotlin中可为空的语法统一为类型后加`?`,已下面的代码为例
+kotlin中可为空的语法统一为类型后加`?`，以下面的代码为例
 
 ```ts
 // 一个可为空的字符串变量，变量名为user
@@ -378,7 +309,7 @@ let user?:string
 
 `uts`中对应`var`的变量类型为 `var/let`
 
-推荐使用`let` 因为只会在作用域内生效,需要慎用`var`，因为它具备有更大的作用范围
+推荐使用`let` 因为只会在作用域内生效，需要慎用`var`，因为它具备有更大的作用范围
 
 
 #### 4.1.3 方法定义
@@ -399,13 +330,12 @@ uts中，需要区分全局方法、成员方法
  }
 ```
  
-```uts
- // 全局方法方法
+```ts
+ // 全局方法
  function startListener():void{
 	 
  }
 ```
-
 
 #### 4.1.4 extends
 
@@ -427,9 +357,6 @@ class MediaContentObserver : ContentObserver {
 class MediaContentObserver extends ContentObserver {
 }
 ```
-
-
-
 
 #### 4.1.5 非空断言
 
@@ -472,8 +399,6 @@ user.setListener(Listener(){
 	//todo
 });
 ```
-
-
 
 目前版本UTS还不支持匿名内部类，需要显性的声明再新建
 
@@ -540,20 +465,17 @@ class ScreenReceiver extends BroadcastReceiver{
 
 #### 4.2.3 `UTS` 中下划线前缀的变量，有屏蔽未使用警告的含义
 
-```uts
+```ts
 // IDE会提示 name,status,desc 变量未使用
 onStatusUpdate(name:string, status:Int, desc:string){
 	
 }
-
 
 // 不会警告变量未使用
 onStatusUpdate(_name:string, _status:Int, _desc:string){
 	
 }
 ```
-
-
 
 
 ## 5  常见问题(持续更新)

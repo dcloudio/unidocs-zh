@@ -312,27 +312,31 @@ dependencies {
 
 #### iOS 平台原生配置
 
-app-ios 文件夹下存在 iOS 平台原生配置，包括以下目录或文件
+app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
 
-|目录名/文件名	|用途|
-|:---|:---|
-| Frameworks |iOS 插件需要引用的三方 framework 依赖库存放目录|
-| Resources |iOS 插件需要引用的资源文件存放目录|
-| info.plist|iOS 插件需要添加到原生工程 info.plist 中的配置文件|
-| config.json| iOS 原生工程的配置文件|
-|index.uts| 主入口，index.d.ts 声明的能力在 iOS 平台下的实现|
+|目录名/文件名	|用途		|
+|:---			|:---		|
+|Frameworks		|iOS平台插件需要引用的三方 framework 依赖库存放目录		|
+|Resources		|iOS平台插件需要引用的资源文件存放目录					|
+|Info.plist		|iOS平台插件需要添加到原生工程Info.plist中的配置文件		|
+|config.json	|iOS平台原生工程的配置文件								|
+|index.uts		|主入口，index.d.ts声明的能力在iOS平台下的实现			|
 
 ##### Frameworks 
-
-如果 uts 插件需要依赖三方库，需要将三方依赖库存放到 Frameworks 目录中，注意：目前仅支持 .framework 依赖库
+iOS平台插件依赖的三方库存放目录，支持以下类型文件：
+- a  
+- framework  
+- xcframework
 
 ##### Resources
+iOS平台原生资源目录，建议只保存uts插件内置的资源文件。云端打包时会将此目录下的所有文件添加到应用 main bundle 中。  
 
-如果 uts 插件需要依赖资源文件，需要将资源文件存放到 Resources 目录中，打包时会将 Resources 目录中的所有文件添加到应用 main bundle 中
+除了插件下有Resources目录，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6-bundle-resources)  
 
-##### info.plist
+##### Info.plist
+iOS平台原生 Info.plist 文件配置，云端打包时会将配置信息合并到原生工程的 Info.plist 中。
 
-如果 uts 插件需要在原生工程的 info.plist 中添加配置，则需要在插件工程中添加 info.plist 配置文件添加插件所需要的配置项，打包时会将配置信息同步到原生工程的 info.plist 中
+除了插件下有Info.plist，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-info-plist)
 
 示例： 添加位置权限描述信息 和 开启后台定位
 
@@ -345,8 +349,6 @@ app-ios 文件夹下存在 iOS 平台原生配置，包括以下目录或文件
 	<string>访问位置权限</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>使用期间获取位置权限</string>
-	<key>TencentLBSAPIKey</key>
-	<string>LZTBZ-77PCJ-HJAFN-KWXJ2-H357V-DJBK4</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
@@ -356,8 +358,7 @@ app-ios 文件夹下存在 iOS 平台原生配置，包括以下目录或文件
 ```
 
 ##### config.json
-
-uts 插件在 iOS 平台的原生层配置文件，可以在其中配置依赖的系统库等配置信息 
+uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖的系统库等信息  
 
 ```json
 {
@@ -374,6 +375,7 @@ uts 插件在 iOS 平台的原生层配置文件，可以在其中配置依赖�
 **注意：**
 
 - iOS 平台 uts 原生插件需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+
 
 ## 3 开发uts原生插件
 ## 3 Develop uts native plugin
@@ -544,15 +546,15 @@ If there is no `uts compile and run plugin` in HBuilderX, it will be downloaded 
 
 - Android上，运行体验与uni-app基本无差异。一样可以热刷新，打印console.log。
 
-- iOS上，uts 插件需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+- iOS上，uts插件暂不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)才能生效  
 
 ### 5.2 自定义基座
 ### 5.2 Custom Dock
 
-自定义基座也支持uts插件。
-Custom docks also support uts plugins.
+自定义基座支持uts插件。
 
-Android上编写普通uts代码时标准基座也可以。但与原生插件一样，涉及以下场景，需要自定义基座后方能生效:
+#### Android平台  
+普通uts代码可以直接使用标准基座真机运行。但与原生插件一样，涉及以下场景，需要自定义基座后方能生效:
 
 - 1 集成三方sdk
 - 1 integrated third party sdk
@@ -562,27 +564,27 @@ Android上编写普通uts代码时标准基座也可以。但与原生插件一�
 总结来说，就是所有 涉及新增依赖/gralde配置/androidManifest.xml/资源 等标准基座不具备的能力时，需要自定义基座
 To sum up, all the capabilities that standard docks do not have, such as new dependencies/gralde configuration/androidManifest.xml/resources, require a custom dock
 
+#### iOS平台  
+uts代码暂不支持直接使用标准基座真机运行。与原生插件一眼，需要自定义基座才能生效。
+
 
 ### 5.3 遗留问题
 ### 5.3 Legacy issues
 
 截止到HBuilderX 3.6.2 时遗留事项：
-- 不能debug断点uts源码
-- uts插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](#tempnotice)
-- uts插件无法使用res。图片资源建议放在assets目录。
+- 不能debug断点uts源码  
+- Android平台uts插件还不支持远程仓库依赖，目前添加插件的配置方法参考 [这个章节](#tempnotice)  
+- Android平台uts插件无法使用res，图片资源建议放在assets目录  
+- iOS平台uts插件需要提交云端生成自定义基座才能真机运行，修改uts代码后需重新提交云端打包才能生效  
 
 遗留事项后续升级完善。
 Remaining matters will be upgraded and improved later.
 
+
 ## 6 云端打包
-## 6 Cloud Packaging
 
-正常支持云端打包。
-Cloud packaging is normally supported.
+正常支持云端打包。但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。  
 
-注意：虽然uts在Android真机运行时支持热刷，但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
-
-打包若包含了uni-app引擎内置的依赖库，会报错。需注意参考 [这个章节](#tempnotice)
 
 ## uni-app的Android内置库@iodcloudutsandroid
 

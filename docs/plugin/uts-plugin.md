@@ -565,7 +565,7 @@ If there is no `uts compile and run plugin` in HBuilderX, it will be downloaded 
 To sum up, all the capabilities that standard docks do not have, such as new dependencies/gralde configuration/androidManifest.xml/resources, require a custom dock
 
 #### iOS平台  
-uts代码暂不支持直接使用标准基座真机运行。与原生插件一眼，需要自定义基座才能生效。
+uts代码暂不支持直接使用标准基座真机运行。与原生插件一样，需要自定义基座才能生效。
 
 
 ### 5.3 遗留问题

@@ -18,7 +18,7 @@ uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
 ### 什么是uts插件
 
-现有的 uni-app，仍以js引擎为主。但从HBuilderX 3.6开始，uni-app 支持 uts 插件（暂时仅支持vue3编译器，后续补充vue2）。
+现有的 uni-app，仍以js引擎为主。但从HBuilderX 3.6开始，uni-app 支持 uts 插件（3.6支持vue3编译器，3.6.8支持vue2编译器）。
 
 也就是 uts 的第一步不是完整开发一个独立的 app，而是作为 uni-app 的插件。后续 uts 会持续迭代，达到完整开发 app 的水平。
 
@@ -52,9 +52,8 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 
 但当前的 uts 插件的完善度还没有达到原生语言插件的水平，虽然会陆续升级解决，但明示如下：
 
-1. uts 插件只支持 vue3 编译器，还不支持 vue2
-2. uts 插件无法封装 nvue 页面组件
-3. uts 插件还无法在插件市场计费销售
+1. uts 插件无法封装 nvue 页面组件
+2. uts 插件还无法在插件市场计费销售
 
 ### uts插件和Native.js的区别
 
@@ -766,7 +765,7 @@ getUniActivity()!.getWindow().getDecorView();
 	HBuilderX 的最低要求为3.6.0，低于此版本无法import uts插件，编译时将报错。
 
 - 文件查找失败：'uts插件路径'
-    目前暂未支持 vue2，vue2 的uni-app项目无法import uts插件，编译时将报错。
+    vue2项目使用 uts 插件的最低版本要求是HBuilderX 3.6.8，低于此版本，编译时将报错。
 
 ### Float类型传参
 
@@ -811,7 +810,7 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
 1. iOS热刷新
-2. 支持vue2编译器
+2. 支持vue2编译器（HBuilderX 3.6.8已支持）
 3. debug
 4. UI操作能力
 5. 插件市场支持uts插件的加密和计费销售

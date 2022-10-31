@@ -111,7 +111,7 @@ onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableL
 
 + 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
 + 2 本章节设计的配置，均需自定义基座后才能生效
-+ 3 截止到HX 3.6.8,还不支持R文件的自动生成，因此本章节中涉及R文件生成部分暂时还不支持。这是个遗留问题，稍后版本会支持
++ 3 截止到HX 3.6.8，还不支持R文件的自动生成，因此本章节中涉及R文件生成部分暂时还不支持。这是个遗留问题，稍后版本会支持。
 
 ### 3.1 配置AndroidManifest.xml
 

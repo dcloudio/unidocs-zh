@@ -2,15 +2,15 @@
 
 ## 简介@introduction
 
-`uni-pay-pages`，是 `uni-pay` 体系的一部分。
+`uni-pay-pages` 是 `uni-pay` 体系的一部分。
 
-它基于 `uni-pay-common` 提供了一批现成的、开源的、第三方支付相关的前端页面和云端云对象
+它基于 `uni-pay-common` 提供了一批现成的、开源的、第三方支付相关的前端页面和云端云对象。
 
-而 `uni-pay-common` 是基于原 `uni-pay` 模块的拓展（即原 `uni-pay` 公共模块改为名 `uni-pay-common`）。
+而 `uni-pay-common` 是基于原 `uni-pay` 模块的拓展（原 `uni-pay` 公共模块改为名 `uni-pay-common`）。
  
 即 `uni-pay-common` + `uni-pay-pages` 组成了现在的 `uni-pay` 体系。
 
-`uni-pay-pages` 是一个云端一体页面[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)插件，其包含了页面（支付收银台、支付完成页）和云对象（`uni-pay-co`）
+`uni-pay-pages` 是一个云端一体页面[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)插件，其包含了页面和云对象（uni-pay-co）
 
 开发者在项目中引入 `uni-pay-pages` 后，微信支付、支付宝支付等功能无需自己再开发。由于源码的开放性和层次结构清晰，有二次开发需求也很方便调整。
 
@@ -21,11 +21,9 @@
 **页面**
 
 - 支付收银台弹窗组件
-- 支付成功结果页（可配置uni-ad广告，增加开发者收益）
+- 支付成功结果页（可配置uni-ad广告，增加开发者收益）[uni-AD 广告联盟](https://uniad.dcloud.net.cn/login)
 
 **云对象（uni-pay-co）**
-
-
 
 - 微信支付
 	+ 微信APP支付 
@@ -55,7 +53,7 @@
 │    └─uni-pay-pages
 │        ├─uniCloud
 │        │    └─cloudfunctions                        云函数目录
-│        │        └─uni-pay-co                        集成调用uni-id方法的云对象
+│        │        └─uni-pay-co                        集成调用uni-pay方法的云对象
 │        │            ├─common                        公用逻辑
 │        │            ├─config                        配置
 │        │            │  └─permission.js              调用接口所需的权限配置
@@ -68,7 +66,7 @@
 │        │            │  ├─wxpay.js                   微信支付平台相关API
 │        │            ├─middleware                    中间件
 │        │            ├─notify                        异步通知逻辑（你自己的异步通知逻辑写在这里）
-│        │            └─service                       分模块存放的云对象方法的服务实现
+│        │            └─service                       云对象方法的服务实现
 │        ├─components                                 组件目录
 │        │    └─uni-pay                               uni-pay收银台弹窗组件
 │        │        └─uni-pay.vue

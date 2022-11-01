@@ -69,19 +69,19 @@
 		"fontSize": "10px",
 		"iconWidth": "24px",
 		"spacing": "3px",
-    "iconfontSrc":"static/iconfont.ttf", // app tabbar 字体.ttf文件路径 app 3.4.4+
+    	"iconfontSrc":"static/iconfont.ttf", // app tabbar 字体.ttf文件路径 app 3.4.4+
 		"list": [{
 			"pagePath": "pages/component/index",
 			"iconPath": "static/image/icon_component.png",
 			"selectedIconPath": "static/image/icon_component_HL.png",
 			"text": "组件",
-      "iconfont": { // 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc
-        "text": "\ue102",
-        "selectedText": "\ue103",
-        "fontSize": "17px",
-        "color": "#000000",
-        "selectedColor": "#0000ff"
-      }
+      		"iconfont": { // 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc
+       			"text": "\ue102",
+        		"selectedText": "\ue103",
+        		"fontSize": "17px",
+        		"color": "#000000",
+        		"selectedColor": "#0000ff"
+      		}
 		}, {
 			"pagePath": "pages/API/index",
 			"iconPath": "static/image/icon_API.png",
@@ -963,6 +963,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 |spacing|String|否|3px|图标和文字的间距|App 2.3.4+、H5 3.0.0+|
 |height|String|否|50px|tabBar 默认高度|App 2.3.4+、H5 3.0.0+|
 |midButton|Object|否||中间按钮 仅在 list 项为偶数时有效|App 2.3.4+、H5 3.0.0+|
+|iconfontSrc|String|否||list设置 iconfont 属性时，需要指定字体文件路径 |App 3.4.4+、H5 3.5.3+|
 
 其中 list 接收一个数组，数组中的每个项都是一个对象，其属性值如下：
 
@@ -972,8 +973,8 @@ h5 平台下拉刷新动画，只有 circle 类型。
 |text|String|是|tab 上按钮文字，在 App 和 H5 平台为非必填。例如中间可放一个没有文字的+号图标||
 |iconPath|String|否|图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 position 为 top 时，此参数无效，不支持网络图片，不支持字体图标||
 |selectedIconPath|String|否|选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效||
-|visible|Boolean|否|该项是否显示，默认显示|App (3.2.10+)、H5 (3.2.10)+|
-|iconfont|Object|否|字体图标，优先级高于 iconPath|App（3.4.4+）|
+|visible|Boolean|否|该项是否显示，默认显示|App (3.2.10+)、H5 (3.2.10+)|
+|iconfont|Object|否|字体图标，优先级高于 iconPath|App（3.4.4+）、H5 (3.5.3+)|
 
 
 **midButton 属性说明**

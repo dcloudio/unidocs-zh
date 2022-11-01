@@ -299,7 +299,7 @@ dependencies {
 
 + config.json 目前还不支持配置仓库依赖，需要将gradle配置的库手动下载后，放置在libs目录，使用手动添加的方式集成
 
-+ HX3.6.7 内置了android常见的依赖,详情查看[内置依赖清单](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-4-%E5%A2%9E%E5%8A%A0libs%E4%BE%9D%E8%B5%96%E8%B5%84%E6%BA%90) 开发者在使用列表中的依赖时，需要注意两点：
++ HX3.6.7 之后，内置了android常见的依赖,详情查看[内置依赖清单](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-4-%E5%A2%9E%E5%8A%A0libs%E4%BE%9D%E8%B5%96%E8%B5%84%E6%BA%90) 开发者在使用列表中的依赖时，需要注意两点：
 
    1  真机运行时，不需要添加列表中的依赖，即可直接引用相关类
 

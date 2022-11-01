@@ -299,11 +299,11 @@ dependencies {
 
 + config.json 目前还不支持配置仓库依赖，需要将gradle 依赖手动下载为 jar/aar，放置在libs目录下集成
 
-+ HX3.6.7 之后，内置了android常见的依赖，[内置依赖清单](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-4-%E5%A2%9E%E5%8A%A0libs%E4%BE%9D%E8%B5%96%E8%B5%84%E6%BA%90) 开发者在使用列表中的依赖时，需要注意两点：
++ HBuilderX 内置了android常见的依赖：[内置依赖清单](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-4-%E5%A2%9E%E5%8A%A0libs%E4%BE%9D%E8%B5%96%E8%B5%84%E6%BA%90)  开发者在使用列表中的依赖时，需要注意两点：
 
-   1  真机运行时，需要添加列表中的依赖，即可直接引用相关类
+   1   内置清单中涉及的依赖，无需手动添加，即可直接使用
 
-   2  请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
+   2   请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
 
 
 

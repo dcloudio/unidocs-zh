@@ -286,7 +286,7 @@ dependencies {
 - minSdkVersion  
 插件支持的Android最低版本，整数类型，取值范围为Android API Level
 
-默认uni-app最低支持版本为19，即Android4.3.3
+默认uni-app最低支持版本为19，即Android4.4.2
 
 
 **注意：**

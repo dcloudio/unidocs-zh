@@ -43,6 +43,41 @@ export function createApp() {
 
 :::
 
+## 环境变量
+
+::: preview
+
+> Vue2
+
+```JS
+// 配置环境变量
+// 根目录.env文件 必须 VUE_APP_ 开头
+VUE_APP_SOME_KEY = 123
+
+// 获取环境变量
+process.env.NODE_ENV         // 应用运行的模式
+process.env.VUE_APP_SOME_KEY // 123
+```
+
+> Vue3
+
+```JS
+// 配置环境变量
+// 根目录.env文件 必须 VITE_ 开头
+VITE_SOME_KEY = 123
+
+// 获取环境变量
+process.env.NODE_ENV          // 应用运行的模式
+import.meta.env.VITE_SOME_KEY // 123
+```
+
+:::
+
+**Tips**
+- Vue2 更多 [设置环境变量方式](https://uniapp.dcloud.net.cn/tutorial/env.html#env)
+- Vue3 非H5端，应直接访问 process.env.* 获取环境变量，不支持访问 process
+
+
 ## 全局属性
 ## global properties
 

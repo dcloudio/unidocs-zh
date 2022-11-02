@@ -9,7 +9,7 @@ To monitor real-time location change events, it needs to be used in conjunction 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp, Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|x|√|x|
+|√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
 **FUNCTION CALLBACK 参数**
 **FUNCTION CALLBACK parameter**
@@ -72,7 +72,7 @@ uni.onLocationChange(function (res) {
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|x|√|x|
+|√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
 **FUNCTION CALLBACK 参数**
 
@@ -97,7 +97,7 @@ Triggered when the monitoring continuous positioning interface returns failure.
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp, Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|x|√|x|x|x|
+|√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
 **FUNCTION CALLBACK 参数**
 **FUNCTION CALLBACK parameter**
@@ -118,7 +118,7 @@ Triggered when the monitoring continuous positioning interface returns failure.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|x|√|x|x|x|
+|√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
 **FUNCTION CALLBACK 参数**
 
@@ -135,7 +135,7 @@ Receive location messages when opening the MiniApp and entering the foreground.
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp, Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|x|√|x|
+|√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
 **OBJECT 参数**
 **OBJECT parameter**
@@ -176,7 +176,7 @@ uni.startLocationUpdate({
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp, Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|x|√|x|
+|√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
 **OBJECT 参数**
 **OBJECT parameter**

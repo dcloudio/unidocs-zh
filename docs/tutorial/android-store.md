@@ -178,6 +178,15 @@ HX3.6.1+版本 可以配置manifest.json配置checkPermissionDenied = true 校�
 + 如果应用中没有使用任何传感器相关API，但上架应用市场反馈APP存在收集传感器行为，请使用HX3.6.4+版本重新打包上架。
 + 如果应用中调用了传感器相关API或勾选了地图定位相关模块，请根据实际使用目的方式等补充好隐私政策并使用HX3.6.4+版本重新打包上架。
 
+#### 22、小米上架，用户同意隐私政策前存在收集OAID的行为
+
++ 如果应用支持未同意模式运行，并且上架应用市场反馈用户同意隐私政策前存在收集OAID的行为，请补充好关于OAID的相关隐私政策并使用HX3.6.8+版本重新打包上架。
+
+#### 23、应用启动时弹出权限申请
+
++ 参考[应用启动会主动申请手机存储权限、访问设备信息权限影响应用上架](https://uniapp.dcloud.net.cn/tutorial/android-store.html#_18%E3%80%81%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E4%BC%9A%E4%B8%BB%E5%8A%A8%E7%94%B3%E8%AF%B7%E6%89%8B%E6%9C%BA%E5%AD%98%E5%82%A8%E6%9D%83%E9%99%90%E3%80%81%E8%AE%BF%E9%97%AE%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF%E6%9D%83%E9%99%90%E5%BD%B1%E5%93%8D%E5%BA%94%E7%94%A8%E4%B8%8A%E6%9E%B6)进行配置。
++ 排查业务逻辑中是否有提前调用[plus.device.getInfo](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo)等需要权限的API或主动调用[plus.android.requestPermissions](https://www.html5plus.org/doc/zh_cn/android.html#plus.android.requestPermissions)申请权限的情况，如果有则需要调整相关API的调用时机，触发相关业务场景时再调用，不要提前调用。
+
 #### 看不懂文档不知道如何修改？
 
 可开通付费技术服务 参考：[https://ask.dcloud.net.cn/article/13015](https://ask.dcloud.net.cn/article/13015)

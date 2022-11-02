@@ -23,6 +23,17 @@
 - 支付收银台弹窗组件
 - 支付成功结果页（可配置uni-ad广告，增加开发者收益）[uni-AD 广告联盟](https://uniad.dcloud.net.cn/login)
 
+**页面效果截图（此为H5运行效果图）**
+
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-cf0c5e69-620c-4f3c-84ab-f4619262939f/8e879976-8d4e-4e00-b1a4-b5cc81f54333.png)
+![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-cf0c5e69-620c-4f3c-84ab-f4619262939f/17796805-ebb7-43af-be18-14ffe5de6e3d.png)
+
+插件会自动识别平台，如微信小程序会屏蔽支付宝支付，支付宝小程序也会屏蔽微信支付。
+
+**友情提示：**
+
+微信内的H5（即公众号网页等，插件支持支付宝支付）
+
 **云对象（uni-pay-co）**
 
 - 微信支付
@@ -225,7 +236,7 @@ module.exports = {
 
 **注意**
 
-微信支付分V2版本和V3版本
+微信支付同时支持V2版本和V3版本
 
 以微信小程序支付为例
 
@@ -658,7 +669,7 @@ module.exports = {
 
 **前端完整示例代码**
 
-```js
+```html
 <template>
 	<view class="app">
 		<view>

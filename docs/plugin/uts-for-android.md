@@ -413,6 +413,32 @@ let myListener = new MyListener();
 user.setListener(myListener);
 ```
 
+#### 4.1.8 可为空函数调用
+
+
+有一种特殊场景，我们需要定义一些可为空的函数变量，比如下面的 success,fail：
+
+```ts
+type Option = {
+	success?: (res: object) => void;
+	fail?: (res: object) => void;
+};
+
+```
+
+
+这个时候我们需要这样调用
+
+```ts
+options.success?.(res)
+```
+
+这样的调用方式在kotlin中是非法的，属于TS中的特有语法，需要特别注意。
+
+
+
+
+
 ---------------------------------
 
 ### 4.2 警告优化

@@ -34,7 +34,7 @@
 - 支付宝支付
 	+ 支付宝APP支付 
 	+ 支付宝小程序支付
-	+ 支付宝手机外部浏览器H5支付
+	+ 支付宝手机外部浏览器H5支付（支持在微信APP的H5页面中使用支付宝支付）
 	+ 支付宝PC扫码支付
 - 通用接口
 	+ 支付异步回调
@@ -221,6 +221,55 @@ module.exports = {
 		}
 	}
 }
+```
+
+**注意**
+
+微信支付分V2版本和V3版本
+
+以微信小程序支付为例
+
+**V2版本**
+
+```js
+"mp": {
+	"appId": "", // 小程序的appid
+	"secret": "", // 小程序的secret
+	"mchId": "", // 商户id
+	"key": "", // v2的api key
+	"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+	"version": 2, // 启用支付的版本 2代表v2版本 3 代表v3版本
+},
+```
+
+**V3版本**
+
+```js
+"mp": {
+	"appId": "", // 小程序的appid
+	"secret": "", // 小程序的secret
+	"mchId": "", // 商户id
+	"v3Key": "", // v3的api key
+	"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
+	"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
+	"version": 3, // 启用支付的版本 2代表v2版本 3 代表v3版本
+},
+```
+
+当然你也可以全部配置了，这样可以方便自由切换V2和V3
+
+```js
+"mp": {
+	"appId": "", // 小程序的appid
+	"secret": "", // 小程序的secret
+	"mchId": "", // 商户id
+	"key": "", // v2的api key
+	"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+	"v3Key": "", // v3的api key
+	"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
+	"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
+	"version": 2, // 启用支付的版本 2代表v2版本 3 代表v3版本
+},
 ```
 
 ### 支付回调配置@config-notify
@@ -1178,7 +1227,7 @@ await uniIdCo.getPayProvider();
 |-----------------|---------|---------------------------|
 | wxpay           | boolean  |  是否支持微信支付   |
 | alipay          | boolean  |  是否支持支付宝支付   |
-| provider        | array&lt;string&lt; |  支持哪些支付供应商，如["wxpay","alipay"]   |
+| provider        | array&lt;string&gt; |  支持哪些支付供应商，如["wxpay","alipay"]   |
 
 ### 获取支付配置内的appid@get-appId
 

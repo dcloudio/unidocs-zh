@@ -89,6 +89,7 @@ uni.setTabBarItem({
 |backgroundImage|String||否|图片背景。支持设置本地图片或创建线性渐变如，优先级高于 backgroundColor，仅 App 2.7.1+ 支持|
 |backgroundRepeat|String||否|背景图平铺方式。repeat：背景图片在垂直方向和水平方向平铺；repeat-x：背景图片在水平方向平铺，垂直方向拉伸；repeat-y：背景图片在垂直方向平铺，水平方向拉伸；no-repeat：背景图片在垂直方向和水平方向都拉伸。 默认使用 no-repeat。仅 App 2.7.1+ 支持|
 |borderStyle|String||否|tabBar上边框的颜色， 仅支持 black/white|
+|midButton|Object||否|中间按钮 仅在 list 项为偶数时有效 [详情](https://uniapp.dcloud.net.cn/collocation/pages.html#tabbar)。HBuilderX 3.6.9+|
 |success|Funtion||否|接口调用成功的回调函数|
 |fail|Funtion||否|接口调用失败的回调函数|
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|

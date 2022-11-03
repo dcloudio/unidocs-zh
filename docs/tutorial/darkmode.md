@@ -1,0 +1,243 @@
+## 深色模式适配
+
+> HBuilder X 3.6.9+ 支持
+
+### 开启 DarkMode
+
+> 在 `manifest.json` 配置，应用的部分配置可通过变量的形式配置，在变量配置文件中定义不同主题下的颜色或图标，各平台配置如下：
+
+#### app-plus
+
+在 `manifest.json -> app-plus` 中配置：
+
+1. 配置 `darkmode:true`
+2. 配置 `themeLocation`，指定变量配置文件 `theme.json` 路径，例如：在根目录下新增 `theme.json`，需要配置 `"themeLocation":"theme.json"`
+3. 在 `theme.json` 中定义相关变量
+4. 在 `pages.json` 中以@开头引用变量
+5. 整体配置 
+   ```json
+	 "app-plus" : {
+			"darkmode" : false,
+			"themeLocation" : "theme.json", // 开启 darkmode。如果 theme.json 在根目录可省略
+			"distribute" : {
+				// 安卓端开启跟随系统主题。需要云端打包生效
+				 "android" : {
+						"defaultNightMode" : "auto"
+					},
+				// 安卓端开启跟随系统主题。需要云端打包生效
+					"ios" : {
+						"UIUserInterfaceStyle" : "Automatic"
+					},
+			}
+	 }
+	 ```
+
+#### h5
+
+在 `manifest.json -> h5` 中配置：
+
+1. 配置 `darkmode:true`
+2. 配置 `themeLocation`，指定变量配置文件 `theme.json` 路径，例如：在根目录下新增 `theme.json`，需要配置 `"themeLocation":"theme.json"`
+3. 在 `theme.json` 中定义相关变量
+4. 在 `pages.json` 中以@开头引用变量
+5. 整体配置 
+   ```json
+	 "h5" : {
+			"darkmode" : false,
+			"themeLocation" : "theme.json" // 开启 darkmode。如果 theme.json 在根目录可省略
+	 }
+	 ```
+
+#### mp-weixin
+
+在 `manifest.json -> mp-weixin` 中配置：
+
+1. 配置 `darkmode:true`
+2. 配置 `themeLocation`，指定变量配置文件 `theme.json` 路径，例如：在根目录下新增 `theme.json`，需要配置 `"themeLocation":"theme.json"`
+3. 在 `theme.json` 中定义相关变量
+4. 在 `pages.json` 中以@开头引用变量
+5. 整体配置 
+   ```json
+	 "mp-weixin" : {
+			"darkmode" : false,
+			"themeLocation" : "theme.json" // 开启 darkmode。如果 theme.json 在根目录可省略
+	 }
+	 ```
+
+支持通过变量配置的属性如下所示：
+
+- 全局配置 globalStyle 与页面支持
+
+  - navigationBarBackgroundColor
+  - navigationBarTextStyle
+  - backgroundColor
+  - backgroundTextStyle
+  - backgroundColorTop
+  - backgroundColorBottom
+
+- 全局配置 tabbar 属性：
+  - color
+  - selectedColor
+  - backgroundColor
+  - borderStyle
+  - list
+    - iconPath
+    - selectedIconPath
+
+
+### 变量配置文件 theme.json
+
+`theme.json` 用于颜色主题相关的变量定义，需要先在 `themeLocation` 中配置 `theme.json` 的路径，否则无法读取变量配置。包含以下属性：
+
+| 属性  | 类型   | 必填 | 描述                 |
+| :---- | :----- | :--- | :------------------- |
+| light | Object | 是   | 浅色模式下的变量定义 |
+| dark  | Object | 是   | 深色模式下的变量定义 |
+
+示例如下：
+
+```json
+{
+	"light": {
+		"navBgColor": "#f8f8f8",
+		"navTxtStyle": "black"
+	},
+	"dark": {
+		"navBgColor": "#292929",
+		"navTxtStyle": "white"
+	}
+}
+```
+
+完成定义后，可在 `pages.json` 中全局配置或页面配置的相关属性中以 `@` 开头引用，例如：
+
+```json
+// 全局配置
+{
+  "window": {
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle"
+  }
+}
+// 页面配置
+{
+	"path": "pages/index/index",
+	"style":{
+		"navigationBarBackgroundColor": "@navBgColor",
+		"navigationBarTextStyle": "@navTxtStyle"
+	}
+}
+```
+
+配置完成后，调用相应 api 框架会自动所设属性，展示对应主题下的颜色。
+
+### 配置示例
+
+pages.json（示例省略了主题相关以外的配置项）
+
+```json
+{
+	"globalStyle": {
+		"navigationBarBackgroundColor": "@navBgColor",
+		"navigationBarTextStyle": "@navTxtStyle",
+		"backgroundColor": "@bgColor",
+		"backgroundTextStyle": "@bgTxtStyle",
+		"backgroundColorTop": "@bgColorTop",
+		"backgroundColorBottom": "@bgColorBottom"
+	},
+	"tabBar": {
+		"color": "@tabFontColor",
+		"selectedColor": "@tabSelectedColor",
+		"backgroundColor": "@tabBgColor",
+		"borderStyle": "@tabBorderStyle",
+		"list": [
+			{
+				"iconPath": "@iconPath1",
+				"selectedIconPath": "@selectedIconPath1"
+			},
+			{
+				"iconPath": "@iconPath2",
+				"selectedIconPath": "@selectedIconPath2"
+			}
+		]
+	}
+}
+```
+
+theme.json
+
+```json
+{
+	"light": {
+		"navBgColor": "#f8f8f8",
+		"navTxtStyle": "black",
+		"bgColor": "#ffffff",
+		"bgTxtStyle": "light",
+		"bgColorTop": "#eeeeee",
+		"bgColorBottom": "#efefef",
+		"tabFontColor": "#000000",
+		"tabSelectedColor": "#3cc51f",
+		"tabBgColor": "#ffffff",
+		"tabBorderStyle": "black",
+		"iconPath1": "image/icon1_light.png",
+		"selectedIconPath1": "image/selected_icon1_light.png",
+		"iconPath2": "image/icon2_light.png",
+		"selectedIconPath2": "image/selected_icon2_light.png"
+	},
+	"dark": {
+		"navBgColor": "#292929",
+		"navTxtStyle": "white",
+		"bgColor": "#1f1f1f",
+		"bgTxtStyle": "dark",
+		"bgColorTop": "#292929",
+		"bgColorBottom": "#1f1f1f",
+		"tabFontColor": "#ffffff",
+		"tabSelectedColor": "#51a937",
+		"tabBgColor": "#292929",
+		"tabBorderStyle": "white",
+		"iconPath1": "image/icon1_dark.png",
+		"selectedIconPath1": "image/selected_icon1_dark.png",
+		"iconPath2": "image/icon2_dark.png",
+		"selectedIconPath2": "image/selected_icon2_dark.png"
+	}
+}
+```
+
+### 获取当前主题
+
+如果 `manifest.json` 对应平台配置中声明了`"darkmode": true`，`uni.getSystemInfo` 或 `uni.getSystemInfoSync` 的返回结果中会包含 `theme` 属性，值为 `light` 或 `dark`。
+
+如果 `manifest.json` 对应平台配置未声明`"darkmode": true`，则无法获取到 `theme` 属性（即 theme 为 undefined）。
+
+### 监听主题切换事件
+
+支持 2 中方式：
+
+1. 在 `App.vue` 中写上 `onThemeChange` 生命周期，主题切换时会触发
+2. 通过 `uni.onThemeChange` 监听主题变化，`uni.offThemeChange` 取消监听
+
+### 页面 css 适配
+
+在 css 中，支持通过媒体查询 `prefers-color-scheme` 适配不同主题，与 Web 中适配方式一致，例如：
+
+```css
+/* 一般情况下的样式 begin */
+.some-background {
+	background: white;
+}
+.some-text {
+	color: black;
+}
+/* 一般情况下的样式 end */
+
+@media (prefers-color-scheme: dark) {
+	/* DarkMode 下的样式 start */
+	.some-background {
+		background: #1b1b1b;
+	}
+	.some-text {
+		color: #ffffff;
+	}
+	/* DarkMode 下的样式 end */
+}
+```

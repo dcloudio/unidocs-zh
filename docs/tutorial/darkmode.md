@@ -1,4 +1,4 @@
-## 深色模式适配
+## DarkMode 适配指南
 
 > HBuilder X 3.6.9+ 支持
 

@@ -14,7 +14,7 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 大多数登录方式，都需要申请开通相关服务，具体点击下面的文档查看。
 
 #### App平台支持的登录方式
-- [手机号一键登录（univerify）](/tutorial/univerify.md)
+- [手机号一键登录（univerify）](/univerify.md)
 - [苹果登录（Sign in with Apple）](/tutorial/app-oauth-apple.md)
 - [微信登录](/tutorial/app-oauth-weixin.md)
 - [QQ登录](/tutorial/app-oauth-qq.md)

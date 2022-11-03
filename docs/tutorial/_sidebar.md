@@ -30,7 +30,6 @@
   * [条件编译处理多端差异](/tutorial/platform.md)
   * [环境变量](/tutorial/env.md)
   * [编译器配置](/tutorial/compiler-config.md)
-  * [DarkMode 适配](/tutorial/darkmode.md)
 * web 专题
   * [跨域](/tutorial/CORS.md)
   * [宽屏适配](/tutorial/adapt.md)
@@ -132,3 +131,4 @@
 * [国际化专题](/tutorial/i18n.md)
 	* [国际化开发指南](/tutorial/i18n.md)
 	* [海外开发者使用指南](/tutorial/internationalization.md)
+* [暗黑主题](/tutorial/darkmode.md)

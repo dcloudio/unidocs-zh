@@ -1,4 +1,4 @@
-## DarkMode 适配指南
+## DarkMode 适配指南@darkmode
 
 > HBuilder X 3.6.9+ 支持
 
@@ -85,7 +85,7 @@
     - selectedIconPath
 
 
-### 变量配置文件 theme.json
+### 变量配置文件 theme.json@themejson
 
 `theme.json` 用于颜色主题相关的变量定义，需要先在 `themeLocation` 中配置 `theme.json` 的路径，否则无法读取变量配置。包含以下属性：
 
@@ -131,7 +131,7 @@
 
 配置完成后，调用相应 api 框架会自动所设属性，展示对应主题下的颜色。
 
-### 配置示例
+### 配置示例@themeconfig
 
 pages.json（示例省略了主题相关以外的配置项）
 
@@ -203,20 +203,22 @@ theme.json
 }
 ```
 
-### 获取当前主题
+### 获取当前主题@gettheme
 
 如果 `manifest.json` 对应平台配置中声明了`"darkmode": true`，`uni.getSystemInfo` 或 `uni.getSystemInfoSync` 的返回结果中会包含 `theme` 属性，值为 `light` 或 `dark`。
 
 如果 `manifest.json` 对应平台配置未声明`"darkmode": true`，则无法获取到 `theme` 属性（即 theme 为 undefined）。
 
-### 监听主题切换事件
+### 监听主题切换事件@onthemechange
 
 支持两种方式：
 
 1. 在 `App.vue` 中写上 `onThemeChange` 生命周期，主题切换时会触发
 2. 通过 `uni.onThemeChange` 监听主题变化，`uni.offThemeChange` 取消监听
 
-### 页面 css 适配
+### 页面 css 适配@perfers-color-scheme
+
+> [css 支持情况](https://caniuse.com/?search=prefers-color-scheme)
 
 在 css 中，支持通过媒体查询 `prefers-color-scheme` 适配不同主题，与 Web 中适配方式一致，例如：
 

@@ -211,7 +211,7 @@ theme.json
 
 ### 监听主题切换事件
 
-支持 2 中方式：
+支持两种方式：
 
 1. 在 `App.vue` 中写上 `onThemeChange` 生命周期，主题切换时会触发
 2. 通过 `uni.onThemeChange` 监听主题变化，`uni.offThemeChange` 取消监听
@@ -221,7 +221,7 @@ theme.json
 在 css 中，支持通过媒体查询 `prefers-color-scheme` 适配不同主题，与 Web 中适配方式一致，例如：
 
 ```css
-/* 一般情况下的样式 begin */
+/* 一般情况下的样式 start */
 .some-background {
 	background: white;
 }

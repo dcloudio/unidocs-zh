@@ -443,7 +443,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 #### 导航栏@app-titleNView
 |属性|类型|默认值|描述|版本兼容性|
 |:-|:-|:-|:-|:-|
-|backgroundColor|String|#F7F7F7|背景颜色，颜色值格式为"#RRGGBB"。在使用半透明标题栏时，也可以设置rgba格式||
+|backgroundColor|String|#F7F7F7|背景颜色，支持16进制颜色或RGBA颜色。|App端仅悬浮导航栏支持RGBA颜色|
 |buttons|Array||自定义按钮，详见 [buttons](/collocation/pages?id=app-titlenview-buttons)|纯nvue即render:native时暂不支持|
 |titleColor|String|#000000|标题文字颜色||
 |titleOverflow|String|ellipsis|标题文字超出显示区域时处理方式。"clip"-超出显示区域时内容裁剪；"ellipsis"-超出显示区域时尾部显示省略标记（...）。||

@@ -27,6 +27,8 @@ Cell supports adding any type of component as its own sub-component, but please 
 - recycle boolean, 默认值 true。这个属性控制这个 Cell 的 view 和子 views 是否在列表滚动时进行回收，在 iOS 上通常必须指定为 true （因为默认为 true，所以一般不需要写这个属性），如果设置为 false，列表滚动时，页面会占用非常高的内存。Android上默认是true，设置为false可以防止Image和Text上数据重新绑定。
 - recycle boolean, with true as default. This attribute controls whether the view and sub-views of this Cell are reused when the list is scrolled. It is normally specified as true on iOS (for the default is true, it is generally unnecessary to write this attribute). If it is set to false, the page will occupy very high memory as the list scrolls. On Android, the default is true, and setting it to false can prevent data rebinding on Image and Text.
 
+- render-reverse-position boolean, 默认值 false。定义开始渲染的位置，需搭配list的属性`render-reverse`共同使用，单独配置不起作用。HBuilderX3.6.9+支持。
+
 #### 样式
 #### Style
 

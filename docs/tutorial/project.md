@@ -31,25 +31,14 @@
 ├─App.vue               应用配置，用来配置App全局样式以及监听 <a href="/collocation/App#应用生命周期">应用生命周期</a>
 ├─manifest.json         配置应用名称、appid、logo、版本等打包信息，<a href="/collocation/manifest">详见</a>
 ├─pages.json            配置页面路由、导航条、选项卡等页面类信息，<a href="/collocation/pages">详见</a>
-└─uni.scss              这里是uni-app内置的常用样式变量 
+└─uni.scss              这里是uni-app内置的常用样式变量
 	</code>
 </pre>
 
-**Tips**
-- 编译到任意平台时，`static` 目录下的文件均会被完整打包进去，且不会编译。非 `static` 目录下的文件（vue、js、css 等）只有被引用到才会被打包编译进去。
-- `static` 目录下的 `js` 文件不会被编译，如果里面有 `es6` 的代码，不经过转换直接运行，在手机设备上会报错。
-- `css`、`less/scss` 等资源不要放在 `static` 目录下，建议这些公用的资源放在自建的 `common` 目录下。
-- HbuilderX 1.9.0+ 支持在根目录创建 `ext.json`、`sitemap.json` 等小程序需要的文件。
 
-|有效目录|说明|
-|:-:|:-:|
-|app-plus|App|
-|h5|H5|
-|mp-weixin|微信小程序|
-|mp-alipay|支付宝小程序|
-|mp-baidu|百度小程序|
-|mp-qq|QQ小程序|
-|mp-toutiao|字节小程序|
-|mp-lark|飞书小程序|
-|mp-kuaishou|快手小程序|
-|mp-jd|京东小程序|
+`static目录` 使用注意
+- 编译到任意平台时，`static` 目录下除不满足[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)的文件，会直接复制到最终的打包目录，不会打包编译。非 `static` 目录下的文件（vue、js、css 等）只有被引用时，才会被打包编译。
+- `css`、`less/scss` 等资源不要放在 `static` 目录下，建议这些公用的资源放在自建的 `common` 目录下。
+
+**Tips**
+- HbuilderX 1.9.0+ 支持在根目录创建 `ext.json`、`sitemap.json` 等小程序需要的文件。

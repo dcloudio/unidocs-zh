@@ -180,22 +180,36 @@ For conditional compilation of json, if the key names of different platforms are
 ### static 目录的条件编译
 ### Conditional compilation of static directory
 
-在不同平台，引用的静态资源可能也存在差异，通过 static 的的条件编译可以解决此问题，static 目录下新建不同平台的专有目录（目录名称同 `%PLATFORM%` 值域,但字母均为小写），专有目录下的静态资源只有在特定平台才会编译进去。
-In different platforms, there may be differences in the referenced static resources. This problem can be solved by conditional compilation of static. Create a dedicated directory for different platforms under the static directory (the directory name is the same as the `%PLATFORM%` value range, but the letters are all lowercase)), the static resources in the dedicated directory will only be compiled on a specific platform.
+在不同平台，引用的静态资源可能也存在差异，通过 static 的条件编译可以解决此问题，static 目录下新建不同平台的专有目录，
+
+|目录名称|说明|
+|:-:|:-:|
+|app-plus|App|
+|h5|H5|
+|mp-weixin|微信小程序|
+|mp-alipay|支付宝小程序|
+|mp-baidu|百度小程序|
+|mp-qq|QQ小程序|
+|mp-toutiao|字节小程序|
+|mp-lark|飞书小程序|
+|mp-kuaishou|快手小程序|
+|mp-jd|京东小程序|
+
+专有目录下的静态资源只有在特定平台才会编译进去。
 
 如以下目录结构，``a.png`` 只有在微信小程序平台才会编译进去，``b.png`` 在所有平台都会被编译。
 As shown in the following directory structure, ``a.png`` will only be compiled in the WeChat applet platform, and ``b.png`` will be compiled in all platforms.
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─static                
+┌─static
 │  ├─mp-weixin
-│  │  └─a.png     
+│  │  └─a.png
 │  └─b.png
-├─main.js        
-├─App.vue      
-├─manifest.json 
-└─pages.json     
+├─main.js
+├─App.vue
+├─manifest.json
+└─pages.json
 	</code>
 </pre>
 
@@ -208,8 +222,7 @@ If you want to separate the page files of each platform more thoroughly, you can
 **注意**
 **Notice**
 
-- `platforms`目录下只支持放置页面文件（即页面vue文件），如果需要对其他资源条件编译建议使用[static 目录的条件编译](https://uniapp.dcloud.io/platform?id=static-%e7%9b%ae%e5%bd%95%e7%9a%84%e6%9d%a1%e4%bb%b6%e7%bc%96%e8%af%91)
-- The `platforms` directory only supports the placement of page files (that is, page vue files). If conditional compilation of other resources is required, it is recommended to use [conditional compilation in the static directory](https://uniapp.dcloud.io/platform?id=static-%e7%9b%ae%e5%bd%95%e7%9a%84%e6%9d%a1%e4%bb%b6%e7%bc%96%e8%af%91)
+- `platforms`目录下只支持放置页面文件（即页面vue文件），如果需要对其他资源条件编译，建议使用[static 目录的条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)。
 
 ### HBuilderX 支持
 ### HBuilderX support
@@ -221,8 +234,7 @@ HBuilderX provides rich support for conditional compilation of `uni-app`:
 **Code block support**
 
 在 HBuilderX 中开发 ``uni-app`` 时，通过输入 **ifdef** 可快速生成条件编译的代码片段
-When developing `uni-app` in HBuilderX, you can quickly generate code fragments for conditional compilation by entering **ifdef**
- 
+
  ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/0a1766f0-4f3c-11eb-8a36-ebb87efcf8c0.png)
 
 **语法高亮**

@@ -56,6 +56,7 @@ app端nvue专用组件。在app-nvue下，如果是长列表，使用list组件�
 |pagingEnabled|是否按分页模式显示List，默认值false|boolean|true/false|
 |scrollable|是否允许List滚动|boolean|true/false|
 |enable-back-to-top|iOS点击顶部状态栏滚动条返回顶部，只支持竖向|boolean|false|
+|render-reverse|定义是否从底部渲染，需搭配cell的属性render-reverse-position共同使用，单独配置会导致渲染异常。HBuilderX3.6.9+支持|boolean|false|
 
 `loadmoreoffset` 示意图：
 
@@ -143,7 +144,7 @@ headerHeight|float|0|是|要吸顶的header顶部距离scroller顶部的距离�
 
 ```html
 <template>
-		<!-- ios 需要配置 fixFreezing="true" -->
+    <!-- ios 需要配置 fixFreezing="true" -->
     <view class="uni-swiper-page">
         <list ref="list" fixFreezing="true">
         </list>
@@ -157,13 +158,13 @@ headerHeight|float|0|是|要吸顶的header顶部距离scroller顶部的距离�
       }
     },
     methods: {
-        // 重置 loadmore
-        setSpecialEffects() {
-            this.$refs["list"].setSpecialEffects({id:"scroller", headerHeight:150});
-        },
-				clearSpecialEffects() {
-					this.$refs["list"].setSpecialEffects({});
-				}
+      // 重置 loadmore
+      setSpecialEffects() {
+        this.$refs["list"].setSpecialEffects({id:"scroller", headerHeight:150});
+      },
+      clearSpecialEffects() {
+        this.$refs["list"].setSpecialEffects({});
+      }
     }
   }
 </script>

@@ -438,7 +438,7 @@ options.success?.(res)
 
 #### 4.1.9 一个类只能有一个构造函数
 
-在Kotlin/java中允许一个函数有多个构造器，但是UTS中是不被允许的
+在`Kotlin`/`java`中允许一个函数有多个构造器，但是UTS中是不被允许的
 
 
 

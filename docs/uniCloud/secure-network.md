@@ -252,6 +252,17 @@ uniCloud.callFunction({
     name: 'user'
   },
   secretType: 'both' //both指上下行数据都加密，具体见下面的secretType章节
+}).then(res => {
+  const {
+    errCode,
+    errMsg
+  } = res.result
+  if(errCode) {
+    uni.showModal({
+      content: errMsg,
+      showCancel: false
+    })
+  }
 })
 ```
 
@@ -260,6 +271,7 @@ uniCloud.callFunction({
 **注意**
 
 - 安全网络相关接口不支持本地调试。即使在HBuilderX里面勾选连接本地云函数，客户端在请求时也会自动连接云端云函数。
+- 由于云厂商会处理云函数抛出的错误，为保证客户端取到正确的错误码，云函数在返回安全网络错误时会在success回调内`res.result`内包含具体错误
 
 ### 客户端请求云对象
 
@@ -267,8 +279,14 @@ uniCloud.callFunction({
 When the client calls cloud objects through importObject, configure whether to encrypt each method through the secretMethods parameter.
 
 ```js
-uniCloud.importObject('object-name', {
+const obj = uniCloud.importObject('object-name', {
   secretMethods: {'login':'both'} // 对login方法设置为上下行的数据均要加密。也支持配置所有方法设置加密，参见下面的 secretMethods 说明
+})
+obj.test().then(()=>{}).catch(err => {
+  uni.showModal({
+    content: err.errMsg || err.message,
+    showCancel: false
+  })
 })
 ```
 

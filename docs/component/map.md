@@ -312,6 +312,7 @@ nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/3790
 - App 端使用地图组件需要**向高德或百度等三方服务商申请SDK资质，获取AppKey，打包时需要在manifest文件中勾选相应模块，在SDK配置中填写Appkey。注意申请包名和打包时的包名需匹配一致，证书信息匹配**。在manifest可视化界面有详细申请指南。
 - H5 端使用地图和定位相关，需要在 [manifest.json](/collocation/manifest?id=h5sdkconfig) 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。高德地图需要额外配置 securityJsCode 或 serviceHost，具体参考[高德地图文档](https://lbs.amap.com/api/jsapi-v2/guide/abc/prepare)。
 - ios nvue Color 不支持 ARGB 十六进制，使用 rgba(r,g,b,a) 代替
+- 注意位置坐标系转换，有全球gps标准、国标、百度私标，如果定位是用的一个标准，地图是另一个标准，那呈现在地图上就会有位移偏差。一般推荐统一使用国标gcj02。
 
 ##### FAQ
 
@@ -333,3 +334,5 @@ A: App 3.4+ 已支持 Google 地图， App 3.4 以下版本使用下面的方案
   * 腾讯地图：商用授权收费，超出配额收费。
   * 谷歌地图：按量收费，每月赠送一定金额。
   * 小程序平台内置地图：无需关心地图服务商，免费使用，无配额限制。
+
+如开发者需要商业授权折扣，可以联系bd@dcloud.io，提供appid和HBuilder账户。

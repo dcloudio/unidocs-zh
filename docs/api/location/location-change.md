@@ -53,6 +53,8 @@ uni.onLocationChange(function (res) {
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
+**注意：App端及H5端callback参数为必填。**
+
 **FUNCTION CALLBACK 参数**
 
 |参数名|类型|说明|平台差异说明|
@@ -91,6 +93,8 @@ uni.onLocationChange(function (res) {
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
+
+**注意：App端及H5端callback参数为必填。**
 
 **FUNCTION CALLBACK 参数**
 

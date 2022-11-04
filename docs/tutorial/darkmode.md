@@ -16,21 +16,12 @@
 2. 配置 `themeLocation`，指定变量配置文件 `theme.json` 路径，例如：在根目录下新增 `theme.json`，需要配置 `"themeLocation":"theme.json"`
 3. 在 `theme.json` 中定义相关变量
 4. 在 `pages.json` 中以@开头引用变量
-5. 整体配置 
+5. 需要云端打包生效
+6. 整体配置 
    ```json
 	 "app-plus" : {
-			"darkmode" : false,
-			"themeLocation" : "theme.json", // 开启 darkmode。如果 theme.json 在根目录可省略
-			"distribute" : {
-				// 安卓端开启跟随系统主题。需要云端打包生效
-				 "android" : {
-						"defaultNightMode" : "auto"
-					},
-				// 安卓端开启跟随系统主题。需要云端打包生效
-					"ios" : {
-						"UIUserInterfaceStyle" : "Automatic"
-					},
-			}
+			"darkmode" : true,
+			"themeLocation" : "theme.json" // 如果 theme.json 在根目录可省略
 	 }
 	 ```
 
@@ -45,8 +36,8 @@
 5. 整体配置 
    ```json
 	 "h5" : {
-			"darkmode" : false,
-			"themeLocation" : "theme.json" // 开启 darkmode。如果 theme.json 在根目录可省略
+			"darkmode" : true,
+			"themeLocation" : "theme.json" // 如果 theme.json 在根目录可省略
 	 }
 	 ```
 
@@ -61,8 +52,8 @@
 5. 整体配置 
    ```json
 	 "mp-weixin" : {
-			"darkmode" : false,
-			"themeLocation" : "theme.json" // 开启 darkmode。如果 theme.json 在根目录可省略
+			"darkmode" : true,
+			"themeLocation" : "theme.json" // 如果 theme.json 在根目录可省略
 	 }
 	 ```
 

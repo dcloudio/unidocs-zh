@@ -4,7 +4,7 @@
 
 > 暗黑模式（Dark Mode），也被称为夜间模式或深色模式，是一种高对比度，或者反色模式的显示模式。是一种有利于在黑暗环境下观看手机的高对比度的模式，与传统的白底黑字相反，在夜间长时间观看手机不至于太难受，会给你一种更舒适的感觉，可能会对视力有所保护。
 
-### 开启 DarkMode
+### 开启 DarkMode @open-darkmode
 
 > 在 `manifest.json` 配置，应用的部分配置可通过变量的形式配置，在变量配置文件中定义不同主题下的颜色或图标，各平台配置如下：
 
@@ -196,13 +196,13 @@ theme.json
 }
 ```
 
-### 获取当前主题@gettheme
+### 获取当前主题@get-theme
 
 如果 `manifest.json` 对应平台配置中声明了`"darkmode": true`，`uni.getSystemInfo` 或 `uni.getSystemInfoSync` 的返回结果中会包含 `theme` 属性，值为 `light` 或 `dark`。
 
 如果 `manifest.json` 对应平台配置未声明`"darkmode": true`，则无法获取到 `theme` 属性（即 theme 为 undefined）。
 
-### 监听主题切换事件@onthemechange
+### 监听主题切换事件@on-theme-change
 
 支持两种方式：
 

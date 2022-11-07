@@ -30,21 +30,16 @@ uniCloud provides two billing methods (Monthly and Pay-As-You-Go (Tencent Cloud 
 阿里云的服务空间是纯免费的。但为避免资源滥用，有一些限制，见下。
 Alibaba Cloud's service space is purely free. However, to avoid resource abuse, there are some restrictions, see below.
 
-|资源类目					|限制				|说明																																															|
-|Resource Category |Restrictions |Description |
-|:-:						|:-:				|:-:																																															|
-|云函数并发限制				|1000个实例/服务空间|实际普通项目很难达到这个并发数，阿里云可以设置单实例多并发单实例最多100，理论最大并发量1000*100=100000 (10万)，关于单实例多并发请参考：[单实例多并发](uniCloud/cf-functions.md?id=concurrency)	|
-|Cloud function concurrency limit|1000 instances/service space|Actual ordinary projects are difficult to achieve this number of concurrency, Alibaba Cloud can set a single instance with multiple concurrent single instance up to 100, the theoretical maximum concurrency is 1000*100=100000 (100,000), For information on single instance multiple concurrency, please refer to: [Single instance multiple concurrency](uniCloud/cf-functions.md?id=concurrency) |
-|每个服务空间的云函数数量	|48个				|实际项目中由于clientDB和单路由云函数，只会用到几个云函数，达不到限制数字。[详见](https://uniapp.dcloud.net.cn/uniCloud/faq?id=merge-functions)													|
-|Number of cloud functions in each service space |48 |In the actual project, due to clientDB and single-route cloud functions, only a few cloud functions are used, which cannot reach the limit number. [See details](https://uniapp.dcloud.net.cn/uniCloud/faq?id=merge-functions) |
-|云函数定时触发最小间隔		|1小时				|-																																																|
-|Minimum interval of timed triggering of cloud functions |1 hour |- |
-|云存储容量					|10GB				|-																																																|
-|Cloud Storage Capacity |10GB |- |
-|云数据库容量				|100GB				|-																																																|
-|Cloud Database Capacity |100GB |- |
-|单次数据库执行时长限制		|5秒				|**不可申请调整**																																												|
-|Single database execution time limit |5 seconds |**Cannot apply for adjustment** |
+|资源类目					|限制											|说明																							|
+|:-:						|:-:											|:-:																							|
+|云函数并发限制				|1000个实例/服务空间			|实际普通项目很难达到这个并发数，阿里云可以设置单实例多并发单实例最多100，理论最大并发量1000*100=100000 (10万)，关于单实例多并发请参考：[单实例多并发](uniCloud/cf-functions.md?id=concurrency)|
+|每个服务空间的云函数数量	|48个											|实际项目中由于clientDB和单路由云函数，只会用到几个云函数，达不到限制数字。[详见](https://uniapp.dcloud.net.cn/uniCloud/faq?id=merge-functions)|
+|云函数定时触发最小间隔		|1小时										|-																								|
+|云存储容量					|10GB											|-																								|
+|云数据库容量				|100GB										|-																								|
+|单次数据库执行时长限制		|5秒											|**不可申请调整**																	|
+|闲置停服时间							|30天无活跃服务空间会进行停服，在未销毁前可以恢复	|
+|停服销毁时间							|自动销毁后15天后销毁服务空间，在未销毁前可以恢复	|
 
 尤其注意阿里云的cdn确实是全免费的，这些免费资源可用于正常公司业务，阿里云不允许开发者使用这些免费的存储及CDN资源来开展图床类业务。
 In particular, pay attention to the fact that Alibaba Cloud's CDN is completely free. These free resources can be used for normal company business. Alibaba Cloud does not allow developers to use these free storage and CDN resources to carry out image bed services.

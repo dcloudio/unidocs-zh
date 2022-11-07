@@ -26,9 +26,7 @@ It is a nosql non-relational database. If you are familiar with sql relational d
 - 一个数据库可以有多个表；
 - A database can have multiple tables;
 - 一个表可以有多个记录；
-- A table can have multiple records;
-- 一个个记录可以有多个字段。
-- A record can have multiple fields.
+- 一个记录可以有多个字段。
 
 例如，数据库中有一个表，名为user，存放用户信息。表user的数据内容如下：
 For example, there is a table in the database, named user, which stores user information. The data content of table user is as follows:
@@ -1014,4 +1012,3 @@ example:
 ### Migration between cloud providers @cross-provider
 
 文档移至：[在云厂商之间迁移数据库](uniCloud/price.md?id=cross-provider-db)
-Documentation moved to: [Migrating databases between cloud providers](uniCloud/price.md?id=cross-provider-db)

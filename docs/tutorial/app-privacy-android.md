@@ -319,8 +319,10 @@ This mode can be used if not submitting to the app market.
 ### 离线打包配置方式
 ### Offline packaging configuration method
 
-**HBuilderX3.2.1+版本新增androidPrivacy.json配置隐私政策提示框，优先级高于原生环境配置，新版本没有必要再在原生工程中配置**
-**HBuilderX3.2.1+ version adds androidPrivacy.json configuration privacy policy prompt box, the priority is higher than the native environment configuration, the new version does not need to be configured in the native project**
+**HBuilderX3.2.1+版本新增androidPrivacy.json配置隐私政策提示框，优先级高于原生环境配置，HBuilderX3.2.1+版本建议使用androidPrivacy.json 替代本章节的离线打包配置**
+
+----------------------
+
 
 在原生工程中应用的AndroidManifest.xml中配置隐私提供框模式，在application节点下添加meta-data节点数据，如下：
 Configure the privacy provider mode in the AndroidManifest.xml applied in the native project, and add the meta-data node data under the application node, as follows:

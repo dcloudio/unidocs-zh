@@ -223,7 +223,10 @@ privacy节点数据格式如下：
 
 ### 离线打包配置方式
 
-**HBuilderX3.2.1+版本新增androidPrivacy.json配置隐私政策提示框，优先级高于原生环境配置，新版本没有必要再在原生工程中配置**
+**HBuilderX3.2.1+版本新增androidPrivacy.json配置隐私政策提示框，优先级高于原生环境配置，HBuilderX3.2.1+版本建议使用androidPrivacy.json 替代本章节的离线打包配置**
+
+----------------------
+
 
 在原生工程中应用的AndroidManifest.xml中配置隐私提供框模式，在application节点下添加meta-data节点数据，如下：
 ```xml

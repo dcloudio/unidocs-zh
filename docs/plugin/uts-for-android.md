@@ -224,6 +224,7 @@ HX3.6.7 版本内置了以下依赖
 +--- my-nineoldandroids-2.4.0.jar
 +--- zip4j-2.8.0.jar
 +--- uts-runtime-jvm-1.0.jar
++--- com.google.code.gson:gson@2.8.9.jar
 +--- android-gif-drawable-release@1.2.23.aar
 +--- msa_mdid_1.0.13.aar
 +--- breakpad-build-release.aar

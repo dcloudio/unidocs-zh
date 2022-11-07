@@ -797,7 +797,7 @@ serverless是动态分别计算资源的，由此会引发的出一批特有概�
 
 因为实例可能第一次启动，也可能已经启动，所以云函数中的js全局变量其实是伪全局变量。也就是**云函数是无状态的**。
 
-在云函数中，写在`module.exports = {}`之前，云函数写在`exports.main = async (event, context) => {}`之前的变量定义，是伪全局变量。
+在云对象中，写在`module.exports = {}`之前，云函数写在`exports.main = async (event, context) => {}`之前的变量定义，是伪全局变量。
 
 它们在实例有效期内的多次请求中会复用。
 

@@ -32,6 +32,7 @@ uni.request({
         var paymentIntent = res.data.paymentIntent; 
         var customer = res.data.customer;
         var ephemeralKey = res.data.ephemeralKey;
+        var billingDetails = res.data.billingDetails,
     }
 });
 ```
@@ -56,6 +57,7 @@ Object对象类型
 | merchantName | String | 是 | 商户名称 |
 | paymentIntent | String | 是 | Stripe的[PaymentIntent](https://stripe.com/docs/api/payment_intents)对象，对应服务器生成的支付订单 |
 | publishKey | String | 是 | 公钥，在Stripe注册账号后可获取 |
+| billingDetails | Object | 否 | 银行卡账单信息(包含姓名、手机号码、邮箱地址、账单地址等)|
 
 > 注意：customer与ephemeralKey必须成对出现，只传其一无效
 
@@ -71,6 +73,19 @@ var orderInfo = {
     "merchantName": "DCloud",                          //商户名
     "paymentIntent": "Stripe的PaymentIntent",          //订单信息
     "publishKey": "Public Key",                        //公钥
+    "billingDetails":{         //账单信息(可选)
+        "name":"",
+        "email":"",
+        "phone":"",
+        "address":{
+            "city":"",
+            "country":"CN",//国家代码(ISO 3166-1 alpha-2)
+            "line1":"",
+            "line2":"",
+            "postalCode":"",
+            "state":""
+        }
+    }                      
 };
 // 从Stripe测试服务器获取订单数据
 uni.request({
@@ -84,6 +99,7 @@ uni.request({
             "merchantName": "DCloud",
             "paymentIntent": res.data.paymentIntent,
             "publishKey": res.data.publishableKey,
+            "billingDetails": res.data.billingDetails
         };
     }
 });
@@ -118,6 +134,19 @@ var orderInfo = {
     "merchantName": "DCloud",                          //商户名
     "paymentIntent": "Stripe的PaymentIntent",          //订单信息
     "publishKey": "Public Key",                        //公钥
+    "billingDetails":{         //账单信息(可选)
+        "name":"",
+        "email":"",
+        "phone":"",
+        "address":{
+            "city":"",
+            "country":"CN",//国家代码(ISO 3166-1 alpha-2)
+            "line1":"",
+            "line2":"",
+            "postalCode":"",
+            "state":""
+        }
+    }
 };
 //获取支付渠道
 var stripeSev = null;

@@ -780,6 +780,11 @@ android很多布局参数强制要求Float，但是ts中没有内置这种类型
 let textSize =  30.0.toFloat();
 ```
 
+### 异步任务
+
+目前UTS 还不支持使用promise执行异步任务，类似场景可以使用setTimeOut
+
+
 ### 匿名内部类
 
 UTS目前还不支持匿名内部类的写法，在android中类似这样的场景

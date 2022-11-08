@@ -523,8 +523,7 @@ These two systems are completely independent. If both systems fail, it means tha
 当遇到uniCloud故障时，在uniCloud的QQ群或论坛里反馈即可。因为阿里云、腾讯云其实都有拨测系统，他们也会及时知道故障并解决的。
 When encountering uniCloud failure, you can give feedback in the uniCloud QQ group or forum. Because Alibaba Cloud and Tencent Cloud actually have a dialing and testing system, they will also know the fault in time and solve it.
 
-### 常见数据库错误
-### Common database errors
+### 常见错误@freq-error
 
 **`operation exceeded time limit`、`云数据库执行时间超限`错误**
 **`operation exceeded time limit`, `cloud database execution time exceeded` errors**
@@ -537,6 +536,12 @@ This error is generally caused by database operation timeout. For details on how
 
 事务的执行会锁行，同时执行的不同事务在操作同一行数据是会存在冲突导致写入失败。尽量优化流程，避免事务互相冲突
 The execution of the transaction will lock the row, and different transactions executed at the same time will conflict with the same row of data and cause the write to fail. Try to optimize the process to avoid conflicting transactions
+
+**长时间未使用的服务空间再次访问时报错**
+
+可能出现的错误信息有：`请求云函数超时`、`Response timeout for 10000ms, POST https://api.bspapp.com/server -1`
+
+此问题一般是数据库长时间未访问，mongoDB WiredTiger存储引擎在内存中淘汰了表和索引，导致数据库请求超时引发云函数报错。
 
 ### 云函数通过https访问其他服务器时出现“certificate has expired”@lets-encrypt-cert
 ### "certificate has expired" when cloud functions access other servers via https @lets-encrypt-cert

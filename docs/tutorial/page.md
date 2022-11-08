@@ -88,7 +88,7 @@ onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代�
 
 |属性|类型|说明|
 |---|---|---|
-|index|String|被点击tabItem的序号，从0开始|
+|index|Number|被点击tabItem的序号，从0开始|
 |pagePath|String|被点击tabItem的页面路径|
 |text|String|被点击tabItem的按钮文字|
 
@@ -163,7 +163,7 @@ export default {
 
 ```javascript
 const app = getApp()
-console.log(app.globalData) 
+console.log(app.globalData)
 ```
 
 **注意：**
@@ -314,7 +314,7 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 			<button type="primary" @click="comunicationOff">结束监听</button>
 		</view>
 	</template>
-	
+
 	<script>
 		export default {
 			data() {
@@ -340,7 +340,7 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 			}
 		}
 	</script>
-	
+
 	<style>
 		.content {
 			display: flex;
@@ -348,19 +348,19 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 			align-items: center;
 			justify-content: center;
 		}
-	
+
 		.data {
 			text-align: center;
 			line-height: 40px;
 			margin-top: 40px;
 		}
-	
+
 		button {
 			width: 200px;
 			margin: 20px 0;
 		}
 	</style>
-	
+
 ```
 
 
@@ -451,4 +451,3 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 19. 不能在 `style` 中引入字体文件，nvue 中字体图标的使用参考：[加载自定义字体](/tutorial/nvue-api?id=addrule)。如果是本地字体，可以用`plus.io`的 API 转换路径。
 20. 目前不支持在 nvue 页面使用 `typescript/ts`。
 21. nvue 页面关闭原生导航栏时，想要模拟状态栏，可以[参考文章](https://ask.dcloud.net.cn/article/35111)。但是，仍然强烈建议在 nvue 页面使用原生导航栏。nvue 的渲染速度再快，也没有原生导航栏快。原生排版引擎解析`json`绘制原生导航栏耗时很少，而解析 nvue 的 js 绘制整个页面的耗时要大的多，尤其在新页面进入动画期间，对于复杂页面，没有原生导航栏会在动画期间产生整个屏幕的白屏或闪屏。
-

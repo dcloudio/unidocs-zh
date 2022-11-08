@@ -52,7 +52,7 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件�
 |onNavigationBarSearchInputConfirmed|监听原生标题栏搜索输入框搜索事件，用户点击软键盘上的“搜索”按钮时触发。|App、H5|1.6.0|
 |onNavigationBarSearchInputClicked|监听原生标题栏搜索输入框点击事件（pages.json 中的 searchInput 配置 disabled 为 true 时才会触发）|App、H5|1.6.0|
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
-|onAddToFavorites|监听用户点击右上角收藏|微信小程序|2.8.1+|
+|onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
 
 `onInit`使用注意
 - 仅百度小程序基础库 3.260 以上支持 onInit 生命周期

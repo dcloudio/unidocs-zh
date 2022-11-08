@@ -266,8 +266,11 @@ HX3.6.1+ version You can configure manifest.json to configure checkPermissionDen
 
 #### 21、APP存在收集传感器行为
 
-+ 如果应用中没有使用任何传感器相关API，但上架应用市场反馈APP存在收集传感器行为，请使用HX3.6.4+版本重新打包上架。
-+ 如果应用中调用了传感器相关API或勾选了地图定位相关模块，请根据实际使用目的方式等补充好隐私政策并使用HX3.6.4+版本重新打包上架。
++ 如果应用中有以下行为，请根据实际使用传感器的目的方式等补充好隐私政策并使用HX3.6.4+版本重新打包上架。
+  1. 使用了传感器相关API
+  2. 集成了地图定位相关模块
+  3. 使用了[plus.navigator.isSimulator](https://uniapp.dcloud.net.cn/tutorial/app-sec-api.html#issimulator)
++ 如果应用中没有上述行为，但上架应用市场反馈APP存在收集传感器行为，请使用HX3.6.4+版本重新打包上架。
 
 #### 22、小米上架，用户同意隐私政策前存在收集OAID的行为
 

@@ -362,7 +362,7 @@ uniCloud客户端callFunction及数据库相关接口会返回Promise类型结�
 
 当遇到uniCloud故障时，在uniCloud的QQ群或论坛里反馈即可。因为阿里云、腾讯云其实都有拨测系统，他们也会及时知道故障并解决的。
 
-### 常见数据库错误
+### 常见错误@freq-error
 
 **`operation exceeded time limit`、`云数据库执行时间超限`错误**
 
@@ -371,6 +371,12 @@ uniCloud客户端callFunction及数据库相关接口会返回Promise类型结�
 **使用事务时出现`WriteConflict`错误**
 
 事务的执行会锁行，同时执行的不同事务在操作同一行数据是会存在冲突导致写入失败。尽量优化流程，避免事务互相冲突
+
+**长时间未使用的服务空间再次访问时报错**
+
+可能出现的错误信息有：`请求云函数超时`、`Response timeout for 10000ms, POST https://api.bspapp.com/server -1`
+
+此问题一般是数据库长时间未访问，mongoDB WiredTiger存储引擎在内存中淘汰了表和索引，导致数据库请求超时引发云函数报错。
 
 ### 云函数通过https访问其他服务器时出现“certificate has expired”@lets-encrypt-cert
 

@@ -86,9 +86,7 @@ When you delete a page, you need to do two things:
 |onNavigationBarSearchInputClicked|监听原生标题栏搜索输入框点击事件（pages.json 中的 searchInput 配置 disabled 为 true 时才会触发）|App、H5|1.6.0|
 |onNavigationBarSearchInputClicked|Listen to the click event of the native title bar search input box (only triggered when the searchInput configuration in pages.json is disabled to true)|App, H5|1.6.0|
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
-|onShareTimeline|Monitoring users click on the upper right corner to forward to the circle of friends|WeChat applet|2.8.1+|
-|onAddToFavorites|监听用户点击右上角收藏|微信小程序|2.8.1+|
-|onAddToFavorites|Listening user clicks favorites in the upper right corner|WeChat applet|2.8.1+|
+|onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
 
 `onInit`使用注意
 `onInit` use note
@@ -142,8 +140,7 @@ Description of the json object returned by `onTabItemTap`:
 |属性|类型|说明|
 | Attribute| Type| Instruction|
 |---|---|---|
-|index|String|被点击tabItem的序号，从0开始|
-| index| String| The serial number of the clicked tabItem, starting from 0|
+|index|Number|被点击tabItem的序号，从0开始|
 |pagePath|String|被点击tabItem的页面路径|
 | pagePath| String| The page path of the clicked tabItem|
 |text|String|被点击tabItem的按钮文字|
@@ -249,7 +246,7 @@ The ```getApp()``` function is used to get the current application instance, gen
 
 ```javascript
 const app = getApp()
-console.log(app.globalData) 
+console.log(app.globalData)
 ```
 
 **注意：**
@@ -449,7 +446,7 @@ Remove the global custom event listener.
 			<button type="primary" @click="comunicationOff">结束监听</button>
 		</view>
 	</template>
-	
+
 	<script>
 		export default {
 			data() {
@@ -475,7 +472,7 @@ Remove the global custom event listener.
 			}
 		}
 	</script>
-	
+
 	<style>
 		.content {
 			display: flex;
@@ -483,19 +480,19 @@ Remove the global custom event listener.
 			align-items: center;
 			justify-content: center;
 		}
-	
+
 		.data {
 			text-align: center;
 			line-height: 40px;
 			margin-top: 40px;
 		}
-	
+
 		button {
 			width: 200px;
 			margin: 20px 0;
 		}
 	</style>
-	
+
 ```
 
 
@@ -631,5 +628,3 @@ Rendering based on native engines, although it is still a front-end technology s
 20. 目前不支持在 nvue 页面使用 `typescript/ts`。
 20. Currently using `typescript/ts` in nvue pages is not supported.
 21. nvue 页面关闭原生导航栏时，想要模拟状态栏，可以[参考文章](https://ask.dcloud.net.cn/article/35111)。但是，仍然强烈建议在 nvue 页面使用原生导航栏。nvue 的渲染速度再快，也没有原生导航栏快。原生排版引擎解析`json`绘制原生导航栏耗时很少，而解析 nvue 的 js 绘制整个页面的耗时要大的多，尤其在新页面进入动画期间，对于复杂页面，没有原生导航栏会在动画期间产生整个屏幕的白屏或闪屏。
-21. When the nvue page closes the native navigation bar, if you want to simulate the status bar, you can [refer to the article](https://ask.dcloud.net.cn/article/35111). However, it is still highly recommended to use native navbars on nvue pages. No matter how fast the rendering speed of nvue is, it is not as fast as the native navigation bar. It takes very little time for the native typesetting engine to parse `json` to draw the native navigation bar, while parsing the js of nvue to draw the entire page takes a lot more time, especially when the new page enters the animation. For complex pages, there is no native navigation bar. Produces a white screen or splash screen of the entire screen during animation.
-

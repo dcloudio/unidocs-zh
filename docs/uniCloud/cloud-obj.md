@@ -361,7 +361,7 @@ In addition to the fields returned by `getSystemInfo`, the following information
 |userAgent|string|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua	|
 |userAgent|string|Client ua, note that the client getSystemInfoSync in a non-local operating environment will also get the ua parameter and upload it to the cloud object, but the cloud object will get ua from the http request header instead of ua in clientInfo |
 |source		|string	|调用来源，返回值见下。`HBuilderX 3.5.1+`								|
-|source |string |The source of the call, the return value is shown below. `HBuilderX 3.5.1+` |
+|requestId|string	|请求id。`HBuilderX 3.5.1+`								|
 |scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)返回的scene参数，新增于`HBuilderX 3.5.1`	|
 |scene |string |Scene value. The scene parameter returned by the client [uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync), added in `HBuilderX 3.5.1` |
 

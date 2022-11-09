@@ -1288,7 +1288,7 @@ module.exports = {
 
 ### 密码安全@password-safe
 
-uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-id-co@1.0.28` 版本起新增了 `hmac-sha256` 加密算法，开发者可以自己需求选择不同的算法，推荐使用 `hmac-sha256`算法。
+uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-id-pages@1.0.28` 版本起新增了 `hmac-sha256` 加密算法，开发者可以自己需求选择不同的算法，推荐使用 `hmac-sha256`算法。
 
 在 `uni-config-center/uni-id/config.json` 中配置， [uni-id/config.json说明](uni-id-summary.html#config)
 
@@ -1306,7 +1306,7 @@ uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-
 修改 passwordSecret [参考](uni-id-summary.html#modifysecret)
 
 #### 升级 hmac-256 加密算法指南
-适用于 `uni-id-co@1.0.28` 以下版本，
+适用于 `uni-id-pages@1.0.28` 以下版本，
 首先确认 `uni-config-center/uni-id/config.json` 中 `passwordSecret` 字段类型
 
 `passwordSecret` 字段可能是`string`或者`array`类型，示例如下：
@@ -1342,7 +1342,7 @@ uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-
 }
 ```
 
-#### 自定义加密算法
+#### 自定义加密算法@custom-password-encrypt
 
 如果内置的加密算法无法满足业务需求，可以自定义加密规则。
 
@@ -1399,8 +1399,8 @@ module.exports = {
 }
 ```
 
-#### 其它系统迁移用户至uni-id兼容方案
-从其他数据库或者从业务中迁移系统的用户表到`uni-id`可能会遇到用户密码兼容问题，比如旧系统中用户密码加密方案为 `md5`，而`uni-id`使用的是 `hmac-sha256`，为了无缝迁移用户密码可以采用`uni-id`自定义密码规则过渡到 `hmac-sha256` 加密算法。
+#### 将其它系统用户迁移至uni-id方案@move-users-to-uni-id
+从其他数据库或者从业务中迁移系统的用户表到`uni-id`可能会遇到用户密码兼容问题，比如旧系统中用户密码加密方案为 `md5`，而`uni-id`使用的是 `hmac-sha256`，为了无缝迁移用户密码可以采用自定义密码规则过渡到 `hmac-sha256` 加密算法。
 
 1. 迁移之前我们需要在`uni-config-center/uni-id/config.json`文件中创建自定义类型的`paswordSecret`，如下：
 ```json

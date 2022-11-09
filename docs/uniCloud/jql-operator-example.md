@@ -130,11 +130,10 @@ groupField内可使用且仅能使用如下运算方法。
 |sum			|返回一组字段所有数值的总和																					|sum(表达式)			|-									|
 |mergeObjects	|将一组对象合并为一个对象																					|mergeObjects(表达式)	|在groupField内使用时仅接收一个参数	|
 
+## 常用运算方法
+以下列举常用的运算方法在 JQL 中的应用
 
-## 常用运算符表达式
-以下列举常用的运算符表达式在 JQL 中的应用
-
-### 算术表达式运算符
+### 算术运算方法
 算术表达式对数字执行数学运算。一些算术表达式也可以支持日期算术。
 #### abs
 返回一个数字的绝对值。
@@ -511,7 +510,7 @@ db.collection('test').field('trunc(value, 1) as truncatedValue').get()
 { "_id" : 3, "truncatedValue" : 34.3 }
 { "_id" : 4, "truncatedValue" : -45.3 }
 ```
-### 数组表达式运算符
+### 数组运算方法
 #### arrayElemAt
 返回在指定数组下标的元素。
 
@@ -909,7 +908,7 @@ db.collection('matrices').field('zip(arrayElemAt(matrix, 0), arrayElemAt(matrix,
 {"transposed":[[8,7,5],[7,6,4]]}
 ```
 
-### 布尔表达式运算符
+### 布尔运算方法
 布尔表达式将其参数表达式计算为布尔值，并返回一个布尔值作为结果。
 
 #### and
@@ -1003,7 +1002,7 @@ db.collection('inventory').field('item, or(gt(qty, 250), lt(qty, 200)) as result
 {"_id":5,"item":"VWZ2","result":true}
 ```
 
-### 比较表达式运算符
+### 比较运算方法
 比较表达式返回一个布尔值，除了 `cmp`，它返回一个数字。
 
 #### cmp
@@ -1205,7 +1204,7 @@ db.collection('inventory').field('item, qty, neq(qty, 250) as qtyNe250').get()
 {"_id": 5,"item":"VWZ2","qty":180,"qtyNe250":true}
 ```
 
-### 条件表达式运算符
+### 条件运算方法
 #### cond
 计算布尔表达式1，成立返回表达式2，否则返回表达式3。
 
@@ -1280,7 +1279,7 @@ db.collection('grades').field('name, switch([{case: gte(avg(scores), 90), then: 
 {"_id":3,"name":"James Torrelio","summary":"Doing great!"}
 ```
 
-### 日期表达式运算符
+### 日期运算方法
 
 #### dateFromParts
 给定日期的相关信息，构建并返回一个日期对象。
@@ -1664,7 +1663,7 @@ db.collection('sales').field('item, timestampToDate(date) as date').get()
 {"_id":1,"item":"abc","date": "2022-10-02T08:00:00.000Z"}
 ```
 
-### 文字表达式运算符
+### 文字运算方法
 #### literal
 直接返回一个值的字面量，不经过任何解析和处理。
 
@@ -1691,7 +1690,7 @@ db.collection('records').field('eq(price, literal($1)) as costsOneDollar').get()
 {"_id":3,"costsOneDollar":true}
 ```
 
-### 对象表达式运算符
+### 对象运算方法
 #### mergeObjects
 将多个对象合并为单个对象。
 
@@ -1788,7 +1787,7 @@ db.collection('inventory').field('item, objectToArray(dimensions) as dimensionsA
 {"_id":3,"item":"XYZ1","dimensions":[{"k":"l","v":70},{"k":"w","v":75},{"k":"uom","v":"cm"}]}
 ```
 
-### 集合表达式运算符
+### 集合运算方法
 Set 表达式对数组执行 set 操作，将数组视为 sets。 Set 表达式忽略每个输入数组中的重复条目和元素的顺序。
 
 如果 set 操作返回一个 set，则该操作会过滤掉结果中的重复项，以输出仅包含唯一条目的 array。输出 array 中元素的顺序未指定。
@@ -2048,7 +2047,7 @@ db.collection('experiments').field('A, B, setUnion(A, B) as allValues').get()
 {"A":[],"B":[],"allValues":[]}{"A":[],"B":["red"],"allValues":["red"]}
 ```
 
-### 字符串表达式运算符
+### 字符串运算方法
 字符串表达式（除外 `concat`）仅对ASCII字符字符串具有明确定义的行为。
 
 `concat` 行为是明确定义的，与所使用的字符无关。
@@ -2393,7 +2392,7 @@ db.collection('inventory').field('toUpper(item) as item, toUpper(description) as
 {"_id":3,"item":"XYZ1","description":""}
 ```
 
-### 分组(groupBy)运算符
+### 分组(groupBy)运算方法
 
 #### addToSet
 向数组中添加值，如果数组中已存在该值，不执行任何操作。

@@ -20,7 +20,7 @@ Functions (modules) using the so library in HBuilder/HBuilderX
 - Speech（语音输入）：百度，**注意：讯飞不支持64位**
 - Speech (voice input): Baidu, **Note: iFLYTEK does not support 64-bit**
 - Weex（原生渲染）：uni-app（自定义组件模式、nvue页面）， **注意：HBuilderX2.1.5及以上版本支持**
-- Weex (native rendering): uni-app (custom component mode, nvue page), **Note: HBuilderX2.1.5 and above versions support**
+- Android X5 Webview（腾讯TBS）：腾讯X5内核，**注意：不支持x86**
 
 > HBuilderX2.7.0+ 调整 云端打包默认不再包含 x86 CPU类型库，减少apk包体积[详情](id=nox86)  
 > HBuilderX2.7.0+ adjustment Cloud package no longer includes x86 CPU type library by default, reducing the size of apk package [Details](id=nox86)

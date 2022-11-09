@@ -299,7 +299,12 @@ Configuration item:
 // 如果拷贝此内容切记去除注释
 // If you copy this content, remember to remove the comment
 {
-  "passwordSecret": "", // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的密钥，注意修改为自己的密钥，使用一个较长的字符串即可
+  "passwordSecret": [
+    {
+      "value": "hmac-sha256",
+      "version": 1
+    }
+  ], // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的加密算法，详见[密码安全]
   "passwordStrength": "medium", // 密码强度，新增于 uni-id-pages 1.0.8版本，见下方说明
   "tokenSecret": "", // 生成token所用的密钥，注意修改为自己的，使用一个较长的字符串即可
   "tokenExpiresIn": 7200, // 全平台token过期时间，未指定过期时间的平台会使用此值
@@ -1776,5 +1781,183 @@ function beforeRegister({
 
 module.exports = {
   beforeRegister
+}
+```
+
+### 密码安全@password-safe
+
+uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-id-co@1.0.28` 版本起新增了 `hmac-sha256` 加密算法，开发者可以自己需求选择不同的算法，推荐使用 `hmac-sha256`算法。
+
+在 `uni-config-center/uni-id/config.json` 中配置， [uni-id/config.json说明](uni-id-summary.html#config)
+
+```json
+{
+  "passwordSecret": [
+    {
+      "type": "hmac-sha256", // 必须指定算法类型 默认 hmac-sha1
+      "version": 1
+    }
+  ]
+}
+```
+
+修改 passwordSecret [参考](uni-id-summary.html#modifysecret)
+
+#### 升级 hmac-256 加密算法指南
+适用于 `uni-id-co@1.0.28` 以下版本，
+首先确认 `uni-config-center/uni-id/config.json` 中 `passwordSecret` 字段类型
+
+`passwordSecret` 字段可能是`string`或者`array`类型，示例如下：
+```json
+// 1 string
+{
+  "passwordSecret": "passwordSecret-demo"
+}
+// 2 array
+{
+  "passwordSecret": [
+    {
+      "value": "passwordSecret-demo",
+      "version": 1
+    }
+  ]
+}
+
+```
+
+如果 `passwordSecret` 是字符串类型，修改为数组类型后，在 `passwordSecret` 中添加 `hmac-256` 算法，同时 `version` 加 1
+```json
+{
+  "passwordSecret": [
+    {
+      "value": "passwordSecret-demo",
+      "version": 1
+    },{
+      "type": "hmac-256",
+      "version": 2
+    }
+  ]
+}
+```
+
+#### 自定义加密算法
+
+如果内置的加密算法无法满足业务需求，可以自定义加密规则。
+
+首先在 `uni-config-center/uni-id/config.json` 中增加自定义密码类型 `custom`
+
+```json
+{
+  "passwordSecret": [
+    {
+      "value": "passwordSecret-demo",
+      "version": 1
+    },
+    {
+      "type": "hmac-sha256", // 必须指定算法类型 默认 hmac-sha1
+      "version": 2
+    },
+    {
+      "type": "custom", // 固定值 custom，代表使用自定义规则
+      "version": 3
+    }
+  ]
+}
+```
+
+在 `uni-config-center/uni-id/custom-password.js`文件（没有请手动创建）中创建加密与验证方法即可。
+
+```javascript
+module.exports = {
+    /**
+     * 密码加密
+     * @param {String} password 用户输入的密码
+     * @param {Object} clientInfo 客户端信息
+     * @param {Object} passwordSecret config.json 匹配到的 passwordSecret
+     * @return {{version, passwordHash}}
+     */
+    encryptPassword: function ({password, clientInfo, passwordSecret}) {
+        // 必须按照此格式返回
+        return {
+            passwordHash: password,
+            version: passwordSecret.version
+        }
+    },
+    /**
+     * 密码验证
+     * @param {String} password 用户输入的密码
+     * @param {Object} userRecord 用户信息
+     * @param {Object} clientInfo 客户端信息
+     * @param {Object} passwordSecret config.json 匹配到的 passwordSecret
+     * @return {boolean}
+     */
+    verifyPassword: function ({password, userRecord, clientInfo, passwordSecret}) {
+        return password === userRecord.password
+    }
+}
+```
+
+#### 其它系统迁移用户至uni-id兼容方案
+从其他数据库或者从业务中迁移系统的用户表到`uni-id`可能会遇到用户密码兼容问题，比如旧系统中用户密码加密方案为 `md5`，而`uni-id`使用的是 `hmac-sha256`，为了无缝迁移用户密码可以采用`uni-id`自定义密码规则过渡到 `hmac-sha256` 加密算法。
+
+1. 迁移之前我们需要在`uni-config-center/uni-id/config.json`文件中创建自定义类型的`paswordSecret`，如下：
+```json
+{
+  "passwordSecret": [
+    {
+      "type": "custom",
+      "version": 1
+    }
+  ]
+}
+```
+
+2. 处理旧系统中用户表数据，主要处理以下与密码相关的字段
+
+   - 密码字段重命名为`password`，值不变
+   - 添加`password_secret_version`字段，值为 `custom` 类型的 `version`
+
+3. 在 `uni-config-center/uni-id/custom-password.js` 文件中创建 `verifyPassword` 方法用户验证旧系统用户密码。
+
+```javascript
+module.exports = {
+    /**
+     * 密码验证
+     * @param {String} password 用户输入的密码
+     * @param {Object} userRecord 用户信息
+     * @param {Object} clientInfo 客户端信息
+     * @param {Object} passwordSecret config.json 匹配到的 passwordSecret
+     * @return {boolean}
+     */
+    verifyPassword: function ({password, userRecord, clientInfo, passwordSecret}) {
+        return password === userRecord.password
+    }
+}
+```
+
+4. 将处理完毕的用户表导入进 uni-id-users 表中即可。
+
+5. 旧系统用户第一次登录时将会使用自定义规则的验证方法，验证通过后密码将升级为配置文件中最新的算法规则。
+
+**注意**
+
+如果最新版本的 type 是 custom，那么所有用户的加密及校验都会使用自定义算法规则。
+
+如果仅是为了迁移使用，请另外在 `passwordSecret` 中添加 `hmac-sha256` 类型算法，用于其他用户的加密与校验。
+
+这样只有旧系统中的用户才会使用 `custom` 自定义规则，其他用户或者迁移后的用户会使用 `hmac-sha256` 算法规则。
+
+```json
+{
+  "passwordSecret": [
+  {
+    "type": "custom",
+    "version": 1
+  },
+  {
+    "type": "hmac-sha256",
+    "version": 2
+  }
+  ]
 }
 ```

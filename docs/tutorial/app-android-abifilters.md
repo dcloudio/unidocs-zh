@@ -101,6 +101,14 @@ ARM64位（arm64-v8a）CPU可以兼容ARM32的指令，也就是说只选择arme
 
 
 ### 常见问题  
+#### CPU类型配置了x86，云端打包后缺没有包含x86
+如果勾选了不支持x86的内置模块或uni原生插件，云端打包后不会包含x86
+- 不支持x86的内置模块  
+  + Android X5 Webview（腾讯TBS）
+- uni原生插件  
+  + 云端插件可以在插件页面详情页面的“平台兼容性”中查看兼容的CPU类型
+  + 内地插件可以在[package.json查看abis属性配置](https://nativesupport.dcloud.net.cn/NativePlugin/course/package?id=abis)
+
 #### 上架Google Play市场对CPU类型的要求
 提交Google Play时要求支持64位，建议选择"armeabi-v7a"和"arm64-v8a"两个即可，也可以只选择"arm64-v8a"。  
 

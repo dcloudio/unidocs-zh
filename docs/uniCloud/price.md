@@ -12,23 +12,25 @@ Paid users enjoy the service agreement SLA provided by Tencent Cloud, [see detai
 uniCloud的腾讯云版的定价、套餐内容、服务SLA，是由腾讯公司直接公布的。DCloud公司不会加价，包括开发者通过DCloud充值也会直接充到开发者在腾讯云建立的子账户下。DCloud只从腾讯云等云厂商获取返佣，也不会在未来加价收割开发者。
 The pricing, package content, and service SLA of the Tencent Cloud version of uniCloud are directly announced by Tencent. DCloud will not increase the price, including the developer's recharge through DCloud will also be directly charged to the sub-account established by the developer in Tencent Cloud. DCloud only gets rebates from cloud vendors such as Tencent Cloud, and will not increase prices to harvest developers in the future.
 
-uniCloud提供包月、按量计费两种计费方式（仅腾讯云），具体说明如下：
-uniCloud provides two billing methods (Monthly and Pay-As-You-Go (Tencent Cloud only), the details are as follows:
+uniCloud提供包月、按量计费两种计费方式（仅阿里云），具体说明如下：
 
 |计费方式	|付费方式									|计费单位																							|
 |Billing method |Payment method |Billing unit |
 |:-:			|:-:											|:-:																									|
-|包月	|预付费										|参考 [腾讯云包月套餐](uniCloud/price?id=price-month)																|
-|Monthly |Prepaid |Reference [Tencent Cloud Monthly Package](uniCloud/price?id=price-month) |
-|按量计费	|结算时冻结费用，每日结算	|参考 [腾讯云按量计费](uniCloud/price?id=price-info)|
-|Pay-As-You-Go |Frozen fees during settlement, daily settlement |Reference [Tencent Cloud Pay-As-You-Go](uniCloud/price?id=price-info)|
+|包月	|预付费										|参考 [腾讯云包月套餐](uniCloud/price?id=price-month)	、[阿里云包月套餐](uniCloud/price?id=aliyun-package)															|
+|按量计费	|结算时冻结费用，每日结算	|参考 [阿里云按量计费](uniCloud/price?id=aliyun-postpay)|
 
 
 ## 阿里云@aliyun
 ## Aliyun@aliyun
 
-阿里云的服务空间是纯免费的。但为避免资源滥用，有一些限制，见下。
-Alibaba Cloud's service space is purely free. However, to avoid resource abuse, there are some restrictions, see below.
+阿里云商业版计划将于**2022年11月中旬**上线，届时公测版服务空间将下线不再支持新建。对现存的公测版服务空间，阿里云会提供一个预期**两个月的过渡期**，在此期间已创建的服务空间仍可继续使用，**过渡期满后将停服释放**。
+
+在商业版上线后，uniCloud控制台会于近期增加公测版迁移商业版的相关功能以便开发者迁移。
+
+
+### 公测版@aliyun-public
+阿里云公测版的服务空间是纯免费的。但为避免资源滥用，有一些限制，见下。
 
 |资源类目					|限制											|说明																							|
 |:-:						|:-:											|:-:																							|
@@ -47,9 +49,6 @@ In particular, pay attention to the fact that Alibaba Cloud's CDN is completely 
 除上面的描述外，阿里云没有其他限制。
 Apart from the above description, Alibaba Cloud has no other restrictions.
 
-因为阿里云免费向DCloud提供了硬件资源，所以DCloud也没有向开发者收费。如果阿里云后续明确了收费计划，DCloud也会第一时间公布在这里。
-Because Alibaba Cloud provides hardware resources to DCloud for free, DCloud does not charge developers. If Alibaba Cloud clarifies the charging plan in the future, DCloud will also announce it here as soon as possible.
-
 如有超大型应用突破阿里云资源限制，请发邮件到service@dcloud.io请求协助，可以特批扩大资源。
 If a super-large application exceeds the resource limit of Alibaba Cloud, please send an email to service@dcloud.io to request assistance, and the resources can be expanded with special approval.
 
@@ -67,6 +66,65 @@ The following information is required in the application email
 申请资源		// 要具体到申请资源量，例如：云存储要写明申请多大、定时触发要写明申请的触发频率
 申请日期
 ```
+
+**阿里云商业版上线后，将不再支持公测版资源扩容，如有需求请使用商业版本。**
+
+
+### 商业版@aliyun-business
+
+阿里云商业版支持`包年包月`及`按量计费`两种计费模式，创建`按量计费`服务空间需先充值保证金及阿里云余额。
+
+#### 免费额度
+阿里云针对每个账号提供了一个有免费额度的服务空间，以方便产品开发测试及体验。具体额度请阅读下方[包年包月套餐](uniCloud/price.md?id=aliyun-package)中的开发者版。
+
+**免费额度注意事项：**
+- 单个账号只能创建一个阿里云免费服务空间
+- 阿里云免费服务空间有有效期，到期时需主动续费，否则将会被停服释放
+
+#### 包年包月套餐@aliyun-package
+|资源分类		|资源细项				|开发者版（免费版）	|基础版			|标准版			|专业版			|企业版			|旗舰版			|
+|:-:		|:-:				|:-:				|:-:			|:-:			|:-:			|:-:			|:-:			|
+|云函数		|资源使用量（GBs/月）	|1000				|1万				|20万			|40万			|150万			|400万			|
+|			|调用次数（万次/月）	|1.5				|15				|300			|600			|2400			|6000			|
+|			|出网流量（GB/月）		|1					|1				|20				|40				|160			|500			|
+|云数据库		|容量（GB）			|2					|2				|3				|5				|10				|10				|
+|			|读操作数（万次/天）	|0.05				|5				|25				|50				|150			|500			|
+|			|写操作数（万次/天）	|0.03				|3				|15				|30				|100			|300			|
+|云存储		|容量（GB）			|5					|8				|10				|50				|100			|500			|
+|			|下载操作次数（万次/月）|0.2				|10				|200			|750			|1500			|3750			|
+|			|上传操作次数（万次/月）|0.1				|5				|100			|300			|600			|1500			|
+|			|CDN流量（GB/月）		|1					|2				|10				|50				|150			|500			|
+|前端网页托管	|容量（GB）			|5					|8				|10				|50				|100			|500			|
+|			|CDN流量（GB/月）		|1					|2				|10				|50				|150			|500			|
+|售价（元/月）|-					|免费				|5				|24				|82				|316			|688			|
+
+
+#### 按量计费@aliyun-postpay
+按量计费，意味着不是每个月支付固定套餐，而是根据使用量付费。
+
+按量付费需要预存一定金额，每日根据前一日资源消耗生成账单，从阿里云预存金额中扣除。
+
+如果预存金额不足，则服务空间将不可用，需要立即充值。
+
+阿里云按量计费服务空间定价如下：
+
+|资源分类			|资源细项								|售价（元）		|
+|:-:			|:-:								|:-:				|
+|云函数			|资源使用量（GBs）						|0.000110592		|
+|				|调用次数（万次）						|0.0133				|
+|				|出网流量（GB）						|0.8				|
+|云数据库			|容量（GB/天）						|0.07				|
+|				|读操作数（万次）						|0.015				|
+|				|写操作数（万次）						|0.05				|
+|云存储			|容量（GB/天）						|0.0043				|
+|				|下载操作次数（万次）					|0.01				|
+|				|上传操作次数（万次）					|0.01				|
+|				|CDN 流量（GB）						|0.18				|
+|前端网站托管		|容量（GB/天）						|0.0043				|
+|				|流量（GB）							|0.18				|
+
+**注意**
+- 按量计费是延迟结算，可能存在余额超支的情况，故创建按量付费服务空间时，需支付一定的保证金，用以抵消超支结算的情况。如果您不再申请使用uniCloud服务，可以申请退还保证金（目前需要发送邮件到service@dcloud.io）。
 
 ## 腾讯云@tencent
 ## Tencent Cloud @tencent
@@ -164,14 +222,20 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 **注：当包年包月服务空间升级新套餐时，如果已开通前端网页托管，则前端网页托管会自动转为按量计费，请确保账号余额充足！**
 **Note: When the annual and monthly service space is upgraded to a new package, if the front-end web hosting has been activated, the front-end web hosting will be automatically converted to metered billing, please ensure that the account balance is sufficient! **
 
-### 余额及保证金@tencent-balance
-腾讯云余额可用于服务空间`按量计费`产生的费用扣款，如服务空间套餐资源用尽后`超限按量`、前端网页托管等服务产生的费用。单次充值不低于10元，充值后不支持退款，**余额不支持购买腾讯云包年包月套餐，请根据业务使用量合理选择充值金额**。
+## 余额及保证金@balance
 
-腾讯云购买基础套餐后，如果开启了`超限按量`功能，在超出套餐资源用量后，每日的资源用量会在第二天按照按量计费结算并从余额中扣除。由于存在余额超支的情况，使用按量计费服务需要缴纳保证金，账户保证金在停止使用按量计费服务后可以申请退还，所以账户保证金不能申请开具发票。若需退还保证金，需满足以下条件：
-1. 服务空间未开启`超限按量`功能
-2. 服务空间未开通`前端网页托管`
+腾讯云余额可用于服务空间`按量计费`产生的费用扣款，如服务空间套餐资源用尽后`超限按量`、前端网页托管等服务产生的费用。
 
-由于包年包月前端网页托管已下线，新开通的前端网页托管均为按量计费，如果开通了上面两项功能，请先关闭，然后发邮件到 service@dcloud.io 申请退还。
+阿里云商业版服务空间没有`超限按量`功能，但是提供了`按量计费`的服务空间，阿里云余额适用于`按量计费`服务空间产生的费用扣款。
+
+余额单次充值不低于10元，充值后不支持退款，**余额不支持购买腾讯云及阿里云包年包月套餐，请根据业务使用量合理选择充值金额**。
+
+腾讯云购买基础套餐后，如果开启了`超限按量`功能；或开通了阿里云`按量计费`服务空间；在超出套餐资源用量后，每日的资源用量会在第二天按照按量计费结算并从余额中扣除。由于存在余额超支的情况，使用按量计费服务需要缴纳保证金，账户保证金在停止使用按量计费服务后可以申请退还，所以账户保证金不能申请开具发票。若需退还保证金，需满足以下条件：
+1. 腾讯云服务空间未开启`超限按量`功能
+2. 腾讯云服务空间未开通`前端网页托管`
+3. 未开通阿里云`按量计费`服务空间
+
+由于腾讯云包年包月前端网页托管已下线，新开通的前端网页托管均为按量计费，如果开通了上面两项功能，请先关闭，然后发邮件到 service@dcloud.io 申请退还。
 
 ## 发生故障时如何判断故障点
 ## How to judge the fault point when a fault occurs

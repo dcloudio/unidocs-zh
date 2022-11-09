@@ -10,6 +10,7 @@ HBuilder/HBuilderX中使用so库的功能（模块）
 - Share（分享）：新浪微博
 - Speech（语音输入）：百度，**注意：讯飞不支持64位**
 - Weex（原生渲染）：uni-app（自定义组件模式、nvue页面）， **注意：HBuilderX2.1.5及以上版本支持**
+- Android X5 Webview（腾讯TBS）：腾讯X5内核，**注意：不支持x86**
 
 > HBuilderX2.7.0+ 调整 云端打包默认不再包含 x86 CPU类型库，减少apk包体积[详情](id=nox86)  
 > HBuilderX2.1.5+ 开始支持Android平台的新增适配64位CPU类型，云端打包支持配置App支持的CPU类型

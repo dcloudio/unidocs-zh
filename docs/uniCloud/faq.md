@@ -547,6 +547,10 @@ The execution of the transaction will lock the row, and different transactions e
 
 此问题一般出现在腾讯云云函数本地调试时，一般由当前开发用机器系统时间错误引起
 
+**腾讯云报`access token disabled for ANONYMOUS login`错误**
+
+服务空间从来没有上传过云函数，上传一个云函数即可
+
 ### 云函数通过https访问其他服务器时出现“certificate has expired”@lets-encrypt-cert
 ### "certificate has expired" when cloud functions access other servers via https @lets-encrypt-cert
 

@@ -100,8 +100,7 @@ Equivalent to native language plugins, the advantages of uts plugins:
 
 选择类型 **uts插件**
 
-![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
-![New Plugin 2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
+![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg){:height="400" width="600"}
 
 **为了避免和插件市场的其他插件冲突，建议起一个自己的插件前缀名称。**
 

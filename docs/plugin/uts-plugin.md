@@ -83,7 +83,7 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 
 选择类型 **uts插件**
 
-![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
+![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg){:height="400" width="600"}
 
 **为了避免和插件市场的其他插件冲突，建议起一个自己的插件前缀名称。**
 

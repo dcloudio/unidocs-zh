@@ -11,22 +11,21 @@ MacOSX，安装ios模拟器，需要先安装[xcode](https://developer.apple.com
 
 xcode安装打开，按下快捷键`command+,`，打开`Preferences`窗口，如下图：
 
-![](https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/iosSimulator.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/iosSimulator.jpg" style="zoom: 50%" />
 
 如上窗口，点击【Locations】，点击【Command Line Tools】
 
-![](https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/xcodeCommandLineTools.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/xcodeCommandLineTools.jpg" style="zoom: 50%" />
 
 ## 运行App到iOS模拟器@run-app-ios-simulator
 
 项目管理器，选中要运行的项目，点击工具栏 运行图标，如下图：
 
-![](https://hx.dcloud.net.cn/static/snapshots/app/app_ios_simulator.jpg)
-
+<img src="https://hx.dcloud.net.cn/static/snapshots/app/app_ios_simulator.jpg" style="zoom: 50%" />
 
 运行app项目到iOS模拟器效果如下：
 
-![](https://hx.dcloud.net.cn/static/snapshots/app/app_ios_simulator_run.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/app/app_ios_simulator_run.jpg" style="zoom: 50%" />
 
 ## Android模拟器@android
 
@@ -36,14 +35,14 @@ xcode安装打开，按下快捷键`command+,`，打开`Preferences`窗口，如
 
 android studio模拟器如下图所示：
 
-![](https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/androidSimulator.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/androidSimulator.jpg" style="zoom: 50%" />
 
 ## 运行App到Android模拟器@run-app-android-emulator
 
 Android模拟器启动后，HBuilderX会将其识别为名称为`emulator-xxxx`的Android手机，其中的xxxx为模拟器的id如下图：
 
-![](https://hx.dcloud.net.cn/static/snapshots/app/Android-emulator.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/app/Android-emulator.jpg" style="zoom: 50%" />
 
 运行app项目到android模拟器效果如下：
 
-![](https://hx.dcloud.net.cn/static/snapshots/app/Android-emulator-start.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/app/Android-emulator-start.jpg" style="zoom: 50%" />

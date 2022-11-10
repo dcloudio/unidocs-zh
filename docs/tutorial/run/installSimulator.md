@@ -16,12 +16,12 @@ MacOSX, to install the ios simulator, you need to install [xcode](https://develo
 xcode安装打开，按下快捷键`command+,`，打开`Preferences`窗口，如下图：
 Open the xcode installation, press the shortcut key `command+,` to open the `Preferences` window, as shown below:
 
-![](https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/iosSimulator.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/iosSimulator.jpg" style="zoom: 50%" />
 
 如上窗口，点击【Locations】，点击【Command Line Tools】
 In the above window, click [Locations], click [Command Line Tools]
 
-![](https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/xcodeCommandLineTools.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/xcodeCommandLineTools.jpg" style="zoom: 50%" />
 
 ## 运行App到iOS模拟器@run-app-ios-simulator
 ## Run App to iOS Simulator @run-app-ios-simulator
@@ -29,13 +29,12 @@ In the above window, click [Locations], click [Command Line Tools]
 项目管理器，选中要运行的项目，点击工具栏 运行图标，如下图：
 Project Manager, select the project to be run, click the run icon on the toolbar, as shown below:
 
-![](https://hx.dcloud.net.cn/static/snapshots/app/app_ios_simulator.jpg)
-
+<img src="https://hx.dcloud.net.cn/static/snapshots/app/app_ios_simulator.jpg" style="zoom: 50%" />
 
 运行app项目到iOS模拟器效果如下：
 The effect of running the app project to the iOS simulator is as follows:
 
-![](https://hx.dcloud.net.cn/static/snapshots/app/app_ios_simulator_run.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/app/app_ios_simulator_run.jpg" style="zoom: 50%" />
 
 ## Android模拟器@android
 ## Android emulator @android
@@ -49,7 +48,7 @@ Of course, Google officially has its own emulator, you can install different ver
 android studio模拟器如下图所示：
 The android studio emulator is shown below:
 
-![](https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/androidSimulator.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/androidSimulator.jpg" style="zoom: 50%" />
 
 ## 运行App到Android模拟器@run-app-android-emulator
 ## Run the App to the Android emulator @run-app-android-emulator
@@ -57,9 +56,9 @@ The android studio emulator is shown below:
 Android模拟器启动后，HBuilderX会将其识别为名称为`emulator-xxxx`的Android手机，其中的xxxx为模拟器的id如下图：
 After the Android emulator is started, HBuilderX will recognize it as an Android phone named `emulator-xxxx`, where xxxx is the id of the emulator as shown below:
 
-![](https://hx.dcloud.net.cn/static/snapshots/app/Android-emulator.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/app/Android-emulator.jpg" style="zoom: 50%" />
 
 运行app项目到android模拟器效果如下：
 The effect of running the app project to the android emulator is as follows:
 
-![](https://hx.dcloud.net.cn/static/snapshots/app/Android-emulator-start.jpg)
+<img src="https://hx.dcloud.net.cn/static/snapshots/app/Android-emulator-start.jpg" style="zoom: 50%" />

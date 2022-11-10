@@ -52,7 +52,7 @@ Different names mean that they require developers to write in different language
 |开发语言		|java/oc					|uts|
 |开发环境		|Android Studio/XCode		|HBuilderX|
 |打包方式		|外挂aar 等产出物			|编译时生成原生代码|
-|js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接 import|
+|js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接 import，支持摇树优化|
 
 相当于原生语言插件，uts插件的优势：
 Equivalent to native language plugins, the advantages of uts plugins:

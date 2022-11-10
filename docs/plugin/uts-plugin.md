@@ -81,7 +81,7 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 
 ![新建插件1](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin.jpg)
 
-选择类型 **uts原生插件**
+选择类型 **uts插件**
 
 ![新建插件2](https://native-res.dcloud.net.cn/images/uts/new_uts_plugin2_1.jpg)
 
@@ -347,11 +347,11 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 - iOS 平台 uts 原生插件需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
 
-## 3 开发uts原生插件
+## 3 开发uts插件
 
-以获取电量为例，介绍uts原生插件开发步骤
+以获取电量为例，介绍`uts`插件开发步骤
 
-**首先在 uni_modules 目录下新建名为 uni-getbatteryinfo 的 uts 插件**
+**首先在 `uni_modules` 目录下新建名为 uni-getbatteryinfo 的 uts 插件**
 
 ### Android平台
 

@@ -443,6 +443,15 @@ options.success?.(res)
 
 
 
+#### 4.1.10 界面跳转写法
+
+android开发中场景的 intent跳转需要传入 目标界面的class对象，目前UTS中仅支持一种写法
+
+```uts
+let intent = new Intent(getUniActivity(),DemoActivity().javaClass);
+getUniActivity()!.startActivity(intent);
+```
+
 
 ---------------------------------
 

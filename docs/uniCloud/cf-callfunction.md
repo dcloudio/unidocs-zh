@@ -52,8 +52,10 @@ The parameters and return values of the `callFunction` method are as follows:
 |success	|bool			|执行是否成功															|
 |success |bool |Whether the execution is successful |
 
-注意：HBuilderX本地运行云函数时只返回`result`，其他需要在云端运行云函数才会返回
-Note: HBuilderX only returns `result` when running cloud functions locally, other cloud functions need to be run in the cloud will return
+注意：
+
+- HBuilderX本地运行云函数时不返回`header`，需要在云端运行云函数才会返回
+- callFunction内部会使用uni.request来发送请求，如果有对uni.request写拦截器务必准确区分要拦截的内容
 
 返回格式，下文有详细解读 [详见](?id=returnformat)
 The return format is explained in detail below [see details](?id=returnformat)

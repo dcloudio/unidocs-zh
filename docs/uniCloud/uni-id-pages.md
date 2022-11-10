@@ -67,8 +67,7 @@ Features of `uni-id-pages` include:
 - User Service Agreement and Privacy Policy Terms Authorization
 
 
-# 目录结构  
-# Directory Structure  
+## 目录结构  
 <pre v-pre="" data-lang="">
 <code class="lang-" style="padding:0">
 ├─uni_modules                                         存放[uni_module](/uni_modules)规范的插件。
@@ -134,13 +133,10 @@ Features of `uni-id-pages` include:
 │        └─readme.md                                  插件自述文件
 </code>
 </pre>
-完整的uni-app目录结构[详情查看](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84)
-Complete uni-app directory structure [details view](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84 )
+**完整的uni-app目录结构[详情查看](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84)
 
-# 前端页面
-# front page
-## 初始化
-## Initialize
+## 前端页面
+### 初始化
 需要在App.vue中初始化`uni-id-pages`的`init.js`文件  
 The `init.js` file for `uni-id-pages` needs to be initialized in App.vue
 
@@ -164,8 +160,7 @@ The sample code is as follows:
 </script>
 ```
 
-## 配置@config
-## configure @config
+### 配置@config
 路径：`/uni_modules/uni-id-pages/config.js`
 Path: `/uni_modules/uni-id-pages/config.js`
 
@@ -351,8 +346,7 @@ Recommended use: HBuilderX editor, edit the "Privacy Policy and User Agreement" 
 |weak		|String	|弱：密码必须包含字母和数字，长度范围：6-16位之间					|
 |weak |String |Weak: Password must contain letters and numbers, length range: between 6-16 characters |
 
-## 页面介绍
-## page introduction
+### 页面介绍
 `uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[插件地址](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
 `uni-id-pages` includes: account registration, password-free login, avatar replacement, nickname modification, mobile phone number binding, password retrieval, account cancellation and other pages. [Plugin address](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
 
@@ -380,8 +374,7 @@ uni.navigateTo({
 可以配套使用[uniIdRouter](uni-id-summary.md#uni-id-router)；当用户未登录，但访问了需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时均需要打开登录页面。你需要把以上两个路径路径定义为`loginPage`。
 [uniIdRouter](uni-id-summary.md#uni-id-router) can be used together; when the user is not logged in, but visits a page that requires forced login, or the interface prompts that the token is invalid or expired (the response body starts with TOKEN_INVALID) You need to open the login page at all times. You need to define the above two path paths as `loginPage`.
 
-# 云对象（uni-id-co）
-# Cloud object (uni-id-co)
+## 云对象（uni-id-co）
 
 uni-id-co是uni-id-pages的核心云对象，包含了诸多用户相关的接口。作为uni-id体系的一部分，uni-id-co也使用uni-id的配置文件（`cloudfunctions/common/uni-config-center/uni-id/config.json`）。**目前此云对象依赖了一些客户端信息，暂不支持url化调用，后续会提供url化方案。**
 
@@ -392,8 +385,7 @@ The front-end should obtain the reference of the cloud object before calling the
 const uniIdCo = uniCloud.importObject('uni-id-co')
 ```
 
-## 目录说明
-## directory description
+### 目录说明
 
 ```text
 ├─common 					// 公用逻辑
@@ -407,8 +399,7 @@ const uniIdCo = uniCloud.importObject('uni-id-co')
 └─module					// 分模块存放的云对象方法
 ```
 
-## 公共响应参数@co-public-response
-## public response parameters @co-public-response
+### 公共响应参数@co-public-response
 
 `uni-id-co`所有api返回值均满足[uniCloud响应体规范](cf-functions.md#resformat)
 All api return values of `uni-id-co` satisfy the [uniCloud response body specification](cf-functions.md#resformat)
@@ -435,8 +426,55 @@ Return value example
 - 需要校验token的接口在token即将过期时也会返回newToken，token即将过期的阈值由开发者自行配置
 - The interface that needs to verify the token will also return newToken when the token is about to expire. The threshold for the token to be expired is configured by the developer.
 
-## API列表
-## API list
+### 适配URL化@adapter-http
+自`uni-id-pages@1.0.29`版本起支持URL化 [什么是URL化](uniCloud/http.html#cloudobject)
+
+调用规范：
+1. HTTP 请求头中的`Content-Type`必须为`application/json`，请求方法必须是`POST`, 如不满足条件将会返回 `uni-id-unsupported-request` 错误码
+2. 请求体需按照以下格式：
+```json
+{
+	"clientInfo": {},
+	"uniIdToken": "",
+	"params": {}
+}
+```
+字段说明
+
+|字段|说明|
+|--|--|
+|clientInfo|客户端信息; `uni.getSystemInfo`返回的字段|
+|uniIdToken|用户Token; 用户登录后必填|
+|params|API接口参数字段|
+
+假设已在uniCloud 控制台已设置URL化域名PATH，以PATH为`/http/uni-id-co`为例，演示登录示例：
+
+```javascript
+uni.request({
+	url: 'https://{云函数Url化域名}/http/uni-id-co/login',
+	method: 'POST',
+	data: {
+		clientInfo: uni.getSystemInfoSync(),
+		uniIdToken: '用户Token',
+		params: {
+			username:"username",
+			password:"password"
+		}
+	},
+	header: {
+		'Content-Type': 'application/json'
+	},
+	success: (res) => {
+		// 返回值
+	}
+})
+```
+
+**注意**
+
+请不要添加 Query 参数，URL化后将忽略 Query 参数
+
+### API列表
 
 |API							|描述														|
 |API |Description |
@@ -2248,8 +2286,7 @@ await uniIdCo.setAuthorizedApp({
 - 仅在用户token即将过期时返回新newToken
 - only return a new newToken when the user's token is about to expire
 
-## 其他功能@extra-function
-## Other functions @extra-function
+### 其他功能@extra-function
 
 ### 覆盖或新增校验规则@custom-validator
 ### Override or add validation rules @custom-validator
@@ -2313,15 +2350,13 @@ module.exports = {
 }
 ```
 
-# 登录服务开通与配置
-# Login service activation and configuration
+## 登录服务开通与配置
 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`
 The key information of the server `uni-id` is uniformly configured in `uni-config-center`, the path: `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/ config.json`
 以下简称：`uni-id配置文件`，完整的配置信息[详情查看](uni-id-summary.md#config)
 Hereinafter referred to as: `uni-id configuration file`, complete configuration information [see details](uni-id-summary.md#config)
 
-## 一键登录
-## One-click login
+### 一键登录
 一键登录是运营商提供的、比短信验证码更方便、更安全、更便宜的方案。[详见](https://uniapp.dcloud.net.cn/univerify)。
 - 使用本功能需要在[DCloud开发者中心 -> ](https://dev.dcloud.net.cn/pages/uniLogin/index)开通并充值
 - 模块配置：`manifest.json`-->`App模块配置` -->`OAuth（登录鉴权）`-->` 一键登录`，点击后面的`开通配置`，在随后打开的web界面中，同意协议，并点击充值按钮充值。如只是测试，可以只充值1元钱。如果你已经确定包名，则可以在web界面点击“添加应用”，提交审核。这个是正式打包必须的。真机运行可以跳过此环节。记住页面上展示的`apiKey`和`apiSecret`，下一步需要用到。
@@ -2329,8 +2364,7 @@ Hereinafter referred to as: `uni-id configuration file`, complete configuration 
 - uni-id配置：`uni-id配置文件` --> `service` --> `univerify`，填写`appid`、`apiKey`和 `apiSecret`。`appid`就是`manifest`里的`appid`。`apiKey`和`apiSecret`则是从上一步的web界面得来的。
 - uni-id configuration: `uni-id configuration file` --> `service` --> `univerify`, fill in `appid`, `apiKey` and `apiSecret`. `appid` is the `appid` in the `manifest`. `apiKey` and `apiSecret` are obtained from the web interface in the previous step.
 
-## 微信登录@weixinLogin
-## WeChat login @weixinLogin
+### 微信登录@weixinLogin
 
 uni-id-pages已全面支持：app、小程序、web（uni-id-pages 版本号1.0.8起），三端的微信登录。
 uni-id-pages has fully supported: app, applet, web (from uni-id-pages version 1.0.8), WeChat login on three terminals.
@@ -2459,8 +2493,7 @@ Open the hosts file with HBuilderX, add a line `127.0.0.1 your domain name` at t
 此时访问域名，如果就能看到和你的项目运行到浏览器一样的效果，说明已经成功了。
 Access the domain name at this time, if you can see the same effect as your project running to the browser, it means that it has been successful.
 	
-## 苹果登录集成指南
-## Apple Login Integration Guide
+### 苹果登录集成指南
 - 模块配置：`manifest.json` --> `App模块配置` --> OAuth（登录鉴权）勾选`苹果登录`，[IOS苹果授权登录参考文档](https://ask.dcloud.net.cn/article/36651)。如不发布到Appstore，不需要配置此项
 - Module configuration: `manifest.json` --> `App module configuration` --> OAuth (login authentication) check `Apple login`, [IOS Apple Authorized Login Reference Document](https://ask.dcloud. net.cn/article/36651). If you do not publish to the Appstore, you do not need to configure this
 - uni-id配置：`uni-id配置文件` --> `app` --> `oauth` --> `apple` 填写`bundleId`。
@@ -2468,8 +2501,7 @@ Access the domain name at this time, if you can see the same effect as your proj
 - 关联域配置：`manifest.json` --> `App常用其他设置` --> `iOS设置` --> `关联域(Associated Domains)` 填写配置  [参考教程](https://ask.dcloud.net.cn/article/36393)。如不发布到Appstore，不需要配置此项
 - Associated domain configuration: `manifest.json` --> `App common other settings` --> `iOS settings` --> `Associated Domains` Fill in the configuration [Reference Tutorial](https://ask. dcloud.net.cn/article/36393). If you do not publish to the Appstore, you do not need to configure this
 
-## 短信验证码
-## SMS verification code
+### 短信验证码
 为了方便开发调试，`uni-id-pages`未配置短信登录时，自动启动测试模式；直接使用：123456作为短信验证码即可。
 - 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/pages/sms/base)开通并充值
 - 教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
@@ -2477,8 +2509,7 @@ Access the domain name at this time, if you can see the same effect as your proj
 - 密钥配置：`uni-id配置文件` --> `service` --> `sms` 填写相关密钥信息。
 - Key configuration: `uni-id configuration file` --> `service` --> `sms` Fill in the relevant key information.
 
-# 从老版uni-id公共模块升级到uni-id-pages
-# Upgrade from old uni-id common module to uni-id-pages
+## 从老版uni-id公共模块升级到uni-id-pages
 
 在HBuilderX 3.5之前，DCloud提供了一个公共模块[uni-id](https://ext.dcloud.net.cn/plugin?id=2116)（注意别和uni-id-common混淆）和一个示例性云函数uni-id-cf（集成在uni-starter和uni-admin中）。
 Before HBuilderX 3.5, DCloud provided a common module [uni-id](https://ext.dcloud.net.cn/plugin?id=2116) (not to be confused with uni-id-common) and an example Cloud function uni-id-cf (integrated in uni-starter and uni-admin).

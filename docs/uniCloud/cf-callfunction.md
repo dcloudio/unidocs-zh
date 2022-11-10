@@ -32,7 +32,10 @@ callFunction方式避免了服务器提供域名，不暴露固定ip，减少被
 |errCode	|Number或String	|服务器错误码															|
 |success	|bool			|执行是否成功															|
 
-注意：HBuilderX本地运行云函数时只返回`result`，其他需要在云端运行云函数才会返回
+注意：
+
+- HBuilderX本地运行云函数时不返回`header`，需要在云端运行云函数才会返回
+- callFunction内部会使用uni.request来发送请求，如果有对uni.request写拦截器务必准确区分要拦截的内容
 
 返回格式，下文有详细解读 [详见](?id=returnformat)
 

@@ -39,6 +39,8 @@ uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望
 
 阿里云不支持控制前端访问云储存的权限
 
+云存储客户端api内部会使用`uni.request`、`uni.uploadFile`来发送请求，如果有这两个接口写拦截器务必准确区分要拦截的内容
+
 ### uploadFile(Object object)@uploadfile
 
 直接上传文件到云存储。

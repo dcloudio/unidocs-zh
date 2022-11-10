@@ -180,14 +180,12 @@ Whether the cloud function runs directly locally or the client connects to the l
 本地运行环境与uniCloud现网的差别：
 The difference between the local operating environment and the current uniCloud network:
 
-1. 本地环境只有node运行环境
-1. The local environment only has the node runtime environment
+### 本地环境只有node运行环境
 
 也就是云函数、DB Schema可以使用本地，但本地没有MongoDB、没有redis、没有云存储，数据内容仍然存放在uniCloud现网服务空间。数据库索引也在云端才生效。
 That is, cloud functions and DB Schema can be used locally, but there is no MongoDB, no redis, and no cloud storage locally, and the data content is still stored in the uniCloud live network service space. The database index also takes effect in the cloud.
 
-2. node版本差异
-2. Node version difference
+### node版本差异
 
 本地运行的nodejs版本为node12。
 The nodejs version running locally is node12.
@@ -195,19 +193,17 @@ The nodejs version running locally is node12.
 服务空间的nodejs版本可以选择8或12，如果你使用了nodejs的api，在本地测试之后部署到云端建议测试一下兼容性。如果只使用uniCloud的api，无需顾虑兼容性。
 The nodejs version of the service space can be selected from 8 or 12. If you use the nodejs api, it is recommended to test the compatibility after deploying to the cloud after local testing. If you only use the uniCloud api, there is no need to worry about compatibility.
 
-3. 本地环境的云函数没有超时限制
-3. There is no timeout limit for cloud functions in the local environment
+### 本地环境的云函数没有超时限制
 
 云函数超时时间、运行内存配置，在本地调试时不会生效。
 Cloud function timeout and running memory configuration will not take effect during local debugging.
 
-4. return 策略差异
-4. Differences in return strategy
+### return 策略差异
+
 [详见](cf-functions.md?id=return)
 [See details](cf-functions.md?id=return)
 
-5. 公用模块使用注意
-5. Notes on the use of common modules
+### 公用模块使用注意
 
 - `HBuilderX 3.0.0`之前需要在云函数内执行`npm install ../common/xxx`安装公共模块，详细请参考[云函数公用模块](uniCloud/cf-common.md)
 - Before `HBuilderX 3.0.0`, you need to execute `npm install ../common/xxx` in the cloud function to install the common module. For details, please refer to [Cloud Function Common Module](uniCloud/cf-common.md)
@@ -218,8 +214,7 @@ Cloud function timeout and running memory configuration will not take effect dur
 - `HBuilderX 3.0.0`版本运行uniCloud项目时，uniCloud本地调试插件会自动进行云函数依赖安装（包括公共模块和package.json里面的其他依赖）
 - When the `HBuilderX 3.0.0` version runs the uniCloud project, the uniCloud local debugging plugin will automatically install cloud function dependencies (including public modules and other dependencies in package.json)
 
-6. 时区问题
-6. Time zone issues
+### 时区问题@timezone
 
 uniCloud云端的云函数使用的时区是utc+0，本地运行时使用的是本机时间，中国一般是+8。在使用“时间戳”时两者没有差异，但如果要获取年、月、日、小时要注意时区的差异。
 The time zone used by cloud functions in the uniCloud cloud is utc+0, the local time is used when running locally, and China is generally +8. There is no difference between the two when using "timestamp", but if you want to get the year, month, day, and hour, pay attention to the difference in time zones.
@@ -247,17 +242,14 @@ const hour = getOffsetDate(8).getHours()
 推荐使用`<uni-dateformat>`组件格式化显示日期，[详情](https://ext.dcloud.net.cn/plugin?id=3279)
 It is recommended to use the `<uni-dateformat>` component to format the display date, [details](https://ext.dcloud.net.cn/plugin?id=3279)
 
-7. 调用其他云函数
-7. Call other cloud functions
+### 云函数内调用其他云函数
 
-“本地运行云函数”时云函数内callFunction会调用云端已部署的云函数
-When "running cloud function locally", the callFunction in the cloud function will call the cloud function that has been deployed in the cloud
+HBuilderX 3.4.0之前的版本“本地运行云函数”时云函数内callFunction会调用云端已部署的云函数，HBuilderX 3.4.0及之后的版本会调用本地云函数
 
 “客户端连接本地云函数时”云函数内callFunction会调用本地云函数
 "When the client connects to the local cloud function" callFunction in the cloud function will call the local cloud function
 
-8. 数据与存储
-8. Data and Storage
+### 数据与存储
 
 请务必注意云函数在本地运行时依然是连接的云端数据库与存储
 It is important to note that cloud functions are still connected cloud databases and storages when running locally
@@ -265,8 +257,7 @@ It is important to note that cloud functions are still connected cloud databases
 云函数上传文件到云存储只有腾讯云支持。当然也可以在前端直接上传文件，此时阿里云腾讯云均支持。
 Cloud function uploading files to cloud storage is only supported by Tencent Cloud. Of course, you can also upload files directly on the front end, which is supported by Alibaba Cloud and Tencent Cloud.
 
-9. 插件市场加密插件
-9. Plugin Marketplace Encryption Plugin
+### 插件市场加密插件
 
 插件市场销售的加密云函数或公共模块，在未购买获得源码前，无法在本地运行。本地运行时会自动请求云端已部署的云函数。请留意控制台输出。
 The encrypted cloud functions or public modules sold in the plug-in market cannot be run locally until the source code is purchased. The local runtime automatically requests cloud functions that have been deployed in the cloud. Note the console output.
@@ -274,14 +265,13 @@ The encrypted cloud functions or public modules sold in the plug-in market canno
 发送clientDB请求时，如果使用了加密的action（在插件市场销售），当前请求会使用云端已部署资源而不是本地资源（包括schema、validateFunction、action），请留意控制台输出。
 When sending a clientDB request, if an encrypted action (sold in the plugin market) is used, the current request will use the cloud-deployed resources instead of local resources (including schema, validateFunction, and action). Please pay attention to the console output.
 
-10. 文件系统
-10. File System
+### 文件系统
 
 云函数在云端运行于一个只读文件系统内（仅`/tmp`目录可以写入文件），本地运行时没有这些限制。如需在云端运行时写入文件请在/tmp目录下操作
 Cloud functions run in a read-only file system in the cloud (only `/tmp` directory can write files), and there are no such restrictions when running locally. To write files when running in the cloud, please operate in the /tmp directory
 
-11. 其他注意事项
-11. Other Notes
+### 其他注意事项
+
 - 虽然云函数、数据库schema、validatefunction在本地，但云存储、数据库的数据和索引，仍然在云端。也就是开发机不能完全脱线开发。只是代码可以在本地写，免上传就能联调。
 - Although cloud functions, database schema, and validate functions are local, cloud storage, database data and indexes are still in the cloud. That is, the development machine cannot be completely developed offline. It's just that the code can be written locally, and joint debugging can be done without uploading.
 - 连接线上环境时请记得上传本地的schema、validatefunction、action

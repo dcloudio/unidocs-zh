@@ -382,6 +382,10 @@ uniCloud客户端callFunction及数据库相关接口会返回Promise类型结�
 
 此问题一般出现在腾讯云云函数本地调试时，一般由当前开发用机器系统时间错误引起
 
+**腾讯云报`access token disabled for ANONYMOUS login`错误**
+
+服务空间从来没有上传过云函数，上传一个云函数即可
+
 ### 云函数通过https访问其他服务器时出现“certificate has expired”@lets-encrypt-cert
 
 > 本章节仅对let's encrypt证书调整进行说明，其他情况请检查对应网站证书是否过期

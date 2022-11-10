@@ -378,6 +378,10 @@ uniCloud客户端callFunction及数据库相关接口会返回Promise类型结�
 
 此问题一般是数据库长时间未访问，mongoDB WiredTiger存储引擎在内存中淘汰了表和索引，导致数据库请求超时引发云函数报错。
 
+**腾讯云报`SIGN_PARAM_INVALID signature is expired`**错误
+
+此问题一般出现在腾讯云云函数本地调试时，一般由当前开发用机器系统时间错误引起
+
 ### 云函数通过https访问其他服务器时出现“certificate has expired”@lets-encrypt-cert
 
 > 本章节仅对let's encrypt证书调整进行说明，其他情况请检查对应网站证书是否过期

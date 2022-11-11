@@ -46,7 +46,7 @@ function CallBack(err:UniError){
 源错误可以根据业务情况扩展其它属性，如uni-AD中，可以添加slotId来表示聚合的三方广告位标识
 
 ### AggregateError  
-用于保存多个源错误，如app端某个错误可能是由多个三方SDK的错误引起，这是会将多个源错误组成AggregateError对象。
+用于保存多个源错误，如app端某个错误可能是由多个三方SDK的错误引起，可将多个源错误组成AggregateError对象。
 包括以下属性：
 - errors  
 	数组，可包含SourceError或AggregateError对象  

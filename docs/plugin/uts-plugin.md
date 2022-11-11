@@ -550,7 +550,7 @@ If there is no `uts compile and run plugin` in HBuilderX, it will be downloaded 
 #### iOS平台
 
 - HBuilderX 3.6.9以下版本，uts插件不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)才能生效  
-- HBuilderX 3.6.9+，uts插件，支持本地编译和真机运行 [详情](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-io.html)
+- HBuilderX 3.6.9+，uts插件，支持本地编译和真机运行 [详情](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
 
 ### 5.2 自定义基座
 ### 5.2 Custom Dock

@@ -128,7 +128,7 @@
   * [小程序平台：运行调试](tutorial/debug/debug-mp.md)
 * [高效开发技巧](/tutorial/snippet.md)
 * [性能优化专题](/tutorial/performance.md)
-* [uni错误码规范](/tutorial/err-spec.md)
+* [uni错误规范](/tutorial/err-spec.md)
 * [国际化专题](/tutorial/i18n.md)
 	* [国际化开发指南](/tutorial/i18n.md)
 	* [海外开发者使用指南](/tutorial/internationalization.md)

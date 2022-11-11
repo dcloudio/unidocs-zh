@@ -488,9 +488,14 @@ getBatteryCapacity()
 
 若HBuilderX中没有`uts编译运行插件`，在第一次运行时会自动下载。
 
+#### Android平台
+
 - Android上，运行体验与uni-app基本无差异。一样可以热刷新，打印console.log。
 
-- iOS上，uts插件暂不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)才能生效  
+#### iOS平台
+
+- HBuilderX 3.6.9以下版本，uts插件不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)才能生效  
+- HBuilderX 3.6.9+，uts插件，支持本地编译和真机运行 [详情](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-io.html)
 
 ### 5.2 自定义基座
 

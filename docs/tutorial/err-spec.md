@@ -74,19 +74,28 @@ function CallBack(err:UniError){
 ```
 
 
-## 主题（模块）名称  
+## 模块（主题）名称  
+
+errSubject属性值表示返回错误的调用模块名称。
 
 |模块名称|描述|
 |----|----|
-| uni-runtime | SDK错误，如没有配置模块 |
+| uni-runtime | app端SDK运行环境错误 |
 | uni-secure-network | 安全网络 |
 | uni-ad | uni-AD |
 | uni-push | UniPush |
 | uni-login | OAuth（登录鉴权） |
 | uni-verify | 一键登录 |
 
+
 **注意**  
-插件中返回错误时建议将“插件id”作为errSubject属性值，如果插件的API较多时可将每个API单独定义errSubject，建议使用errSubject属性值格式为“插件id-API名称”。  
+- uni内置模块errSubject属性值为“uni-模块英文名称”，如果英文名称由多个单词组成，单词键应该加-分割
+- uni API的errSubject属性值
+	+ uni.XXX API时  
+	errSubject属性值为“uni-API名称”，如uni.getSystemInfo()，错误回调中errSubject属性值为“uni-getSystemInfo”  
+	+ Object.XX API时  
+	errSubject属性值为“uni-Object名称-API名称”，如SocketTask.onMessage()，错误回调中errSubject属性值为“uni-SocketTask-onMessage”  
+- uni插件中返回错误时建议将“插件id”作为errSubject属性值，如果插件的API较多时可将每个API单独定义errSubject，建议使用errSubject属性值格式为“插件id-API名称”。  
 
 
 

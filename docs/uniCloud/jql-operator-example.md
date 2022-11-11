@@ -9,12 +9,13 @@ uniCloud的云数据库，提供了一批强大的运算方法。这些方法是
 比如sum()方法，可以对多行记录的某个字段值求和、可以对单行记录的若干字段的值求和，如果字段是一个数组，还可以对数组的各项求和。
 
 为方便书写，JQL内将数据库运算方法的用法进行了简化（相对于[原始数据库运算方法写法](cf-database-aggregate-operator.md)而言），主要是参数摊平，以字符串方式表达。以下是可以在JQL中使用的数据库运算方法
-## 运算方法汇总
+## 数据库运算方法汇总
 ### 完整运算方法列表
-|运算方法						|用途																																																															|JQL简化用法																																								|说明																			|
-|---							|---																																																															|---																																	|---																			|
-|abs							|返回一个数字的绝对值																																																							|abs(表达式)																																								|-																				|
-|add							|将数字相加或将数字加在日期上。如果参数中的其中一个值是日期，那么其他值将被视为毫秒数加在该日期上															|add(表达式1,表达式2)																																				|-																				|
+
+|运算方法	|用途|JQL简化用法|说明|
+|---|---|---|---|
+|abs|返回一个数字的绝对值|abs(表达式)|-	|
+|add							|将数字相加或将数字加在日期上。如果参数中的其中一个值是日期，那么其他值将被视为毫秒数加在该日期上																	|add(表达式1,表达式2)																																				|-																				|
 |ceil							|向上取整																																																													|ceil(表达式)																																								|-																				|
 |divide						|传入被除数和除数，求商																																																						|divide(表达式1,表达式2)																																		|-																				|
 |exp							|取 e（自然对数的底数，欧拉数） 的 n 次方																																													|exp(表达式)																																								|-																				|
@@ -107,6 +108,100 @@ uniCloud的云数据库，提供了一批强大的运算方法。这些方法是
 |sum							|在groupField内返回一组字段所有数值的总和，非groupField内返回一个数组所有元素的和																									|sum(表达式)																																								|-																				|
 |let							|自定义变量，并且在指定表达式中使用，返回的结果是表达式的结果																																			|let(vars,in)																																								|-																				|
 
+以上操作符还可以组合使用
+
+例：数据表article内有以下数据
+
+```js
+{
+  "_id": "1",
+  "publish_date": 1611141512751,
+  "content": "hello uniCloud content 01",
+  "content": "hello uniCloud title 01",
+}
+
+{
+  "_id": "2",
+  "publish_date": 1611141512752,
+  "content": "hello uniCloud content 02",
+  "content": "hello uniCloud title 02",
+}
+
+{
+  "_id": "3",
+  "publish_date": 1611141512753,
+  "content": "hello uniCloud content 03",
+  "content": "hello uniCloud title 03",
+}
+```
+
+可以通过以下查询将publish_date字段从时间戳转为`2021-01-20`形式，然后进行按天进行统计
+
+```js
+const res = await db.collection('article')
+.groupBy('dateToString(add(new Date(0),publish_date),"%Y-%m-%d","+0800") as publish_date_str')
+.groupField('count(*) as total')
+.get()
+```
+
+上述代码使用add方法将publish_date时间戳转为日期类型，再用dateToString将上一步的日期按照时区'+0800'（北京时间），格式化为`4位年-2位月-2位日`格式，完整格式化参数请参考[dateToString](uniCloud/cf-database-aggregate-operator.md?id=datetostring)。
+
+上述代码执行结果为
+
+```js
+res = {
+  result: {
+    data: [{
+      publish_date_str: '2021-01-20',
+      total: 3
+    }]
+  }
+}
+```
+
+**注意**
+
+运算方法中仅数据库字段可以直接去除引号作为变量书写，其他字符串仍要写成字符串形式
+
+例：
+
+数据库内有以下数据：
+
+```js
+{
+  "_id": 1,
+  "sales": [ 1.32, 6.93, 2.48, 2.82, 5.74 ]
+}
+{
+  "_id": 2,
+  "sales": [ 2.97, 7.13, 1.58, 6.37, 3.69 ]
+}
+```
+
+云函数内对以下数据中的sales字段取整
+
+```js
+const db = uniCloud.database()
+const $ = db.command.aggregate
+let res = await db.collection('stats').aggregate()
+  .project({
+    truncated: $.map({
+      input: '$sales',
+      as: 'num',
+      in: $.trunc('$$num'),
+    })
+  })
+  .end()
+```
+
+JQL语法内同样功能的实现
+
+```js
+const db = uniCloud.database()
+const res = await db.collection('stats')
+.field('map(sales,"num",trunc("$$num")) as truncated')
+.get()
+```
 
 ### 分组运算方法@accumulator
 
@@ -130,7 +225,8 @@ groupField内可使用且仅能使用如下运算方法。
 |sum			|返回一组字段所有数值的总和																					|sum(表达式)			|-									|
 |mergeObjects	|将一组对象合并为一个对象																					|mergeObjects(表达式)	|在groupField内使用时仅接收一个参数	|
 
-## 常用运算方法
+
+## 常用运算方法示例
 以下列举常用的运算方法在 JQL 中的应用
 
 ### 算术运算方法

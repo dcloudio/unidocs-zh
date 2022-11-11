@@ -167,31 +167,6 @@ db.collection('user').where({
 
 - 这些变量使用时并非直接获取对应的值，而是生成一个标记，在云端执行数据库操作时再将这个标记替换为实际的值
 
-## jql条件语句的运算符@operator
-
-|运算符			|说明			|示例								|示例解释(集合查询)																		|
-|:-:			|:-:			|:-:								|:-:																					|
-|==				|等于			|name == 'abc'						|查询name属性为abc的记录，左侧为数据库字段												|
-|!=				|不等于			|name != 'abc'						|查询name属性不为abc的记录，左侧为数据库字段											|
-|>				|大于			|age>10								|查询条件的 age 属性大于 10，左侧为数据库字段											|
-|>=				|大于等于		|age>=10							|查询条件的 age 属性大于等于 10，左侧为数据库字段										|
-|<				|小于			|age<10								|查询条件的 age 属性小于 10，左侧为数据库字段											|
-|<=				|小于等于		|age<=10							|查询条件的 age 属性小于等于 10，左侧为数据库字段										|
-|in				|存在在数组中	|status in ['a','b']	|查询条件的 status 是['a','b']中的一个，左侧为数据库字段								|
-|!(xx in [])				|在数组中不存在				|!(status in ['a','b'])				|查询条件的 status 不是['a','b']中的任何一个											|
-|&&				|与				|uid == auth.uid && age > 10		|查询记录uid属性 为 当前用户uid 并且查询条件的 age 属性大于 10							|
-|&#124;&#124;	|或				|uid == auth.uid&#124;&#124;age>10	|查询记录uid属性 为 当前用户uid 或者查询条件的 age 属性大于 10							|
-|test			|正则校验		|/abc/.test(content)				|查询 content字段内包含 abc 的记录。可用于替代sql中的like。还可以写更多正则实现更复杂的功能	|
-
-这里的test方法比较强大，格式为：`正则规则.test(fieldname)`。
-
-具体到这个正则 `/abc/.test(content)`，类似于sql中的`content like '%abc%'`，即查询所有字段content包含abc的数据记录。
-
-**注意**
-
-- 不支持非操作
-- 编写查询条件时，除test外，均为运算符左侧为数据库字段，右侧为常量
-
 ## 返回值说明@returnvalue
 
 ### 正常请求返回结果
@@ -1135,18 +1110,29 @@ where内还支持使用云端环境变量，详情参考：[云端环境变量](
 
 简单查询条件包括以下几种，对应着db.command下的各种[操作符](https://uniapp.dcloud.net.cn/uniCloud/cf-database?id=dbcmd)以及不使用操作符的查询如`where({a:1})`。
 
-|运算符				|说明			|
-|---					|---			|
-|>						|大于			|
-|<						|小于			|
-|==						|等于			|
-|>=						|大于等于	|
-|<=						|小于等于	|
-|!=						|不等于		|
-|&&						|与				|
-|&#124;&#124;	|或				|
-|!						|非				|
-|test					|正则			|
+|运算符			|说明			|示例								|示例解释(集合查询)																		|
+|:-:			|:-:			|:-:								|:-:																					|
+|==				|等于			|name == 'abc'						|查询name属性为abc的记录，左侧为数据库字段												|
+|!=				|不等于			|name != 'abc'						|查询name属性不为abc的记录，左侧为数据库字段											|
+|>				|大于			|age>10								|查询条件的 age 属性大于 10，左侧为数据库字段											|
+|>=				|大于等于		|age>=10							|查询条件的 age 属性大于等于 10，左侧为数据库字段										|
+|<				|小于			|age<10								|查询条件的 age 属性小于 10，左侧为数据库字段											|
+|<=				|小于等于		|age<=10							|查询条件的 age 属性小于等于 10，左侧为数据库字段										|
+|in				|存在在数组中	|status in ['a','b']	|查询条件的 status 是['a','b']中的一个，左侧为数据库字段								|
+|!(xx in [])				|在数组中不存在				|!(status in ['a','b'])				|查询条件的 status 不是['a','b']中的任何一个											|
+|&&				|与				|uid == auth.uid && age > 10		|查询记录uid属性 为 当前用户uid 并且查询条件的 age 属性大于 10							|
+|&#124;&#124;	|或				|uid == auth.uid&#124;&#124;age>10	|查询记录uid属性 为 当前用户uid 或者查询条件的 age 属性大于 10							|
+|test			|正则校验		|/abc/.test(content)				|查询 content字段内包含 abc 的记录。可用于替代sql中的like。还可以写更多正则实现更复杂的功能	|
+
+这里的test方法比较强大，格式为：`正则规则.test(fieldname)`。
+
+具体到这个正则 `/abc/.test(content)`，类似于sql中的`content like '%abc%'`，即查询所有字段content包含abc的数据记录。
+
+**注意**
+
+- 不支持非操作
+- 编写查询条件时，除test外，均为运算符左侧为数据库字段，右侧为常量
+
 
 简单查询条件内要求二元运算符两侧不可均为数据库内的字段
 
@@ -1156,7 +1142,7 @@ where内还支持使用云端环境变量，详情参考：[云端环境变量](
 
 > HBuilderX 3.1.0起支持
 
-复杂查询内可以使用[数据库运算方法](uniCloud/jql.md?id=aggregate-operator)。需要注意的是，与云函数内使用数据库运算方法不同jql内对数据库运算方法的用法进行了简化。
+复杂查询内可以使用[数据库运算方法](uniCloud/jql-operator-example.md)。需要注意的是，与云函数内使用数据库运算方法不同jql内对数据库运算方法的用法进行了简化。
 
 例：数据表test内有以下数据
 
@@ -1287,6 +1273,8 @@ db.collection('book')
 查询时可以使用field方法指定返回字段。不使用field方法时会返回所有字段
 
 field可以指定字符串，也可以指定一个对象。
+
+field中可以使用所有[数据库运算方法](uniCloud/jql-operator-example.md)
 
 - 字符串写法：列出字段名称，多个字段以半角逗号做分隔符。比如`db.collection('book').field("title,author")`，查询结果会返回`_id`、`title`、`author`3个字段的数据。字符串写法，`_id`是一定会返回的
 
@@ -3352,227 +3340,3 @@ module.exports = {
 **注意**
 
 - action上传后可能需要一段时间才会在云端生效，通常是3分钟左右
-## 数据库运算方法列表@aggregate-operator
-
-uniCloud的云数据库，提供了一批强大的运算方法。这些方法是数据库执行的，而不是云函数执行的。
-
-这些运算方法是与数据查询搭配使用的，它们可以对字段的值或字段的值的一部分进行运算，将运算后的结果返回给查询请求。
-
-数据库运算方法，提供了比传统SQL更大强大和灵活的查询。可以实现更多功能、可以一次性查询出期待的结果。不必多次查库多次运算，那样不仅代码复杂，而且会造成多次查库性能下降；如果使用计费云空间，使用这些方法还可以减少数据库查询次数。
-
-比如sum()方法，可以对多行记录的某个字段值求和、可以对单行记录的若干字段的值求和，如果字段是一个数组，还可以对数组的各项求和。
-
-为方便书写，JQL内将数据库运算方法的用法进行了简化（相对于[原始数据库运算方法写法](cf-database-aggregate-operator.md)而言），主要是参数摊平，以字符串方式表达。以下是可以在JQL中使用的数据库运算方法
-
-|运算方法						|用途																																																															|JQL简化用法																																								|说明																			|
-|---							|---																																																															|---																																												|---																			|
-|abs							|返回一个数字的绝对值																																																							|abs(表达式)																																								|-																				|
-|add							|将数字相加或将数字加在日期上。如果参数中的其中一个值是日期，那么其他值将被视为毫秒数加在该日期上																	|add(表达式1,表达式2)																																				|-																				|
-|ceil							|向上取整																																																													|ceil(表达式)																																								|-																				|
-|divide						|传入被除数和除数，求商																																																						|divide(表达式1,表达式2)																																		|-																				|
-|exp							|取 e（自然对数的底数，欧拉数） 的 n 次方																																													|exp(表达式)																																								|-																				|
-|floor						|向下取整																																																													|floor(表达式)																																							|-																				|
-|ln								|计算给定数字在自然对数值																																																					|ln(表达式)																																									|-																				|
-|log							|计算给定数字在给定对数底下的 log 值																																															|log(表达式1,表达式2)																																				|-																				|
-|log10						|计算给定数字在对数底为 10 下的 log 值																																														|log10(表达式)																																							|-																				|
-|mod							|取模运算，第一个数字是被除数，第二个数字是除数																																										|mod(表达式1,表达式2)																																				|-																				|
-|multiply					|取传入的数字参数相乘的结果																																																				|multiply(表达式1,表达式2)																																	|-																				|
-|pow							|求给定基数的指数次幂																																																							|pow(表达式1,表达式2)																																				|-																				|
-|sqrt							|求平方根																																																													|sqrt(表达式1,表达式2)																																			|-																				|
-|subtract					|将两个数字相减然后返回差值，或将两个日期相减然后返回相差的毫秒数，或将一个日期减去一个数字返回结果的日期。												|subtract(表达式1,表达式2)																																	|-																				|
-|trunc						|将数字截断为整形																																																									|trunc(表达式)																																							|-																				|
-|arrayElemAt			|返回在指定数组下标的元素																																																					|arrayElemAt(表达式1,表达式2)																																|-																				|
-|arrayToObject		|将一个数组转换为对象																																																							|arrayToObject(表达式)																																			|-																				|
-|concatArrays			|将多个数组拼接成一个数组																																																					|concatArrays(表达式1,表达式2)																															|-																				|
-|filter						|根据给定条件返回满足条件的数组的子集																																															|filter(input,as,cond)																																			|-																				|
-|in								|给定一个值和一个数组，如果值在数组中则返回 true，否则返回 false																																	|in(表达式1,表达式2)																																				|-																				|
-|indexOfArray			|在数组中找出等于给定值的第一个元素的下标，如果找不到则返回 -1																																		|indexOfArray(表达式1,表达式2)																															|-																				|
-|isArray					|判断给定表达式是否是数组，返回布尔值																																															|isArray(表达式)																																						|-																				|
-|map							|类似 JavaScript Array 上的 map 方法，将给定数组的每个元素按给定转换方法转换后得出新的数组																				|map(input,as,in)																																						|-																				|
-|objectToArray		|将一个对象转换为数组。方法把对象的每个键值对都变成输出数组的一个元素，元素形如 `{ k: <key>, v: <value> }`												|objectToArray(表达式)																																			|-																				|
-|range						|返回一组生成的序列数字。给定开始值、结束值、非零的步长，range 会返回从开始值开始逐步增长、步长为给定步长、但不包括结束值的序列。	|range(表达式1,表达式2)																																			|-																				|
-|reduce						|类似 JavaScript 的 reduce 方法，应用一个表达式于数组各个元素然后归一成一个元素																										|reduce(input,initialValue,in)																															|-																				|
-|reverseArray			|返回给定数组的倒序形式																																																						|reverseArray(表达式)																																				|-																				|
-|size							|返回数组长度																																																											|size(表达式)																																								|-																				|
-|slice						|类似 JavaScritp 的 slice 方法。返回给定数组的指定子集																																						|slice(表达式1,表达式2)																																			|-																				|
-|zip							|把二维数组的第二维数组中的相同序号的元素分别拼装成一个新的数组进而组装成一个新的二维数组。																				|zip(inputs,useLongestLength,defaults)																											|-																				|
-|and							|给定多个表达式，and 仅在所有表达式都返回 true 时返回 true，否则返回 false																												|and(表达式1,表达式2)																																				|-																				|
-|not							|给定一个表达式，如果表达式返回 true，则 not 返回 false，否则返回 true。注意表达式不能为逻辑表达式（and、or、nor、not）						|not(表达式)																																								|-																				|
-|or								|给定多个表达式，如果任意一个表达式返回 true，则 or 返回 true，否则返回 false																											|or(表达式1,表达式2)																																				|-																				|
-|cmp							|给定两个值，返回其比较值。如果第一个值小于第二个值，返回 -1 如果第一个值大于第二个值，返回 1 如果两个值相等，返回 0							|cmp(表达式1,表达式2)																																				|-																				|
-|eq								|匹配两个值，如果相等则返回 true，否则返回 false																																									|eq(表达式1,表达式2)																																				|-																				|
-|gt								|匹配两个值，如果前者大于后者则返回 true，否则返回 false																																					|gt(表达式1,表达式2)																																				|-																				|
-|gte							|匹配两个值，如果前者大于或等于后者则返回 true，否则返回 false																																		|gte(表达式1,表达式2)																																				|-																				|
-|lt								|匹配两个值，如果前者小于后者则返回 true，否则返回 false																																					|lt(表达式1,表达式2)																																				|-																				|
-|lte							|匹配两个值，如果前者小于或等于后者则返回 true，否则返回 false																																		|lte(表达式1,表达式2)																																				|-																				|
-|neq							|匹配两个值，如果不相等则返回 true，否则返回 false																																								|neq(表达式1,表达式2)																																				|-																				|
-|cond							|计算布尔表达式1，成立返回表达式2，否则返回表达式3																																													|cond(表达式1,表达式2,表达式3)																																			|-																				|
-|ifNull						|计算给定的表达式，如果表达式结果为 null、undefined 或者不存在，那么返回一个替代值；否则返回原值。																|ifNull(表达式1,表达式2)																																		|-																				|
-|switch						|根据给定的 switch-case-default 计算返回值																																												|switch(branches,default)																																		|-																				|
-|dateFromParts		|给定日期的相关信息，构建并返回一个日期对象																																												|dateFromParts(year,month,day,hour,minute,second,millisecond,timezone)											|-																				|
-|isoDateFromParts	|给定日期的相关信息，构建并返回一个日期对象																																												|isoDateFromParts(isoWeekYear,isoWeek,isoDayOfWeek,hour,minute,second,millisecond,timezone)	|-																				|
-|dateFromString		|将一个日期/时间字符串转换为日期对象																																															|dateFromString(dateString,format,timezone,onError,onNull)																	|-																				|
-|dateToString			|根据指定的表达式将日期对象格式化为符合要求的字符串																																								|dateToString(date,format,timezone,onNull)																									|-																				|
-|dayOfMonth				|返回日期字段对应的天数（一个月中的哪一天），是一个介于 1 至 31 之间的数字																												|dayOfMonth(date,timezone)																																	|-																				|
-|dayOfWeek				|返回日期字段对应的天数（一周中的第几天），是一个介于 1（周日）到 7（周六）之间的整数																							|dayOfWeek(date,timezone)																																		|-																				|
-|dayOfYear				|返回日期字段对应的天数（一年中的第几天），是一个介于 1 到 366 之间的整数																													|dayOfYear(date,timezone)																																		|-																				|
-|hour							|返回日期字段对应的小时数，是一个介于 0 到 23 之间的整数。																																				|hour(date,timezone)																																				|-																				|
-|isoDayOfWeek			|返回日期字段对应的 ISO 8601 标准的天数（一周中的第几天），是一个介于 1（周一）到 7（周日）之间的整数。														|isoDayOfWeek(date,timezone)																																|-																				|
-|isoWeek					|返回日期字段对应的 ISO 8601 标准的周数（一年中的第几周），是一个介于 1 到 53 之间的整数。																				|isoWeek(date,timezone)																																			|-																				|
-|isoWeekYear			|返回日期字段对应的 ISO 8601 标准的天数（一年中的第几天）																																					|isoWeekYear(date,timezone)																																	|-																				|
-|millisecond			|返回日期字段对应的毫秒数，是一个介于 0 到 999 之间的整数																																					|millisecond(date,timezone)																																	|-																				|
-|minute						|返回日期字段对应的分钟数，是一个介于 0 到 59 之间的整数																																					|minute(date,timezone)																																			|-																				|
-|month						|返回日期字段对应的月份，是一个介于 1 到 12 之间的整数																																						|month(date,timezone)																																				|-																				|
-|second						|返回日期字段对应的秒数，是一个介于 0 到 59 之间的整数，在特殊情况下（闰秒）可能等于 60																						|second(date,timezone)																																			|-																				|
-|week							|返回日期字段对应的周数（一年中的第几周），是一个介于 0 到 53 之间的整数																													|week(date,timezone)																																				|-																				|
-|year							|返回日期字段对应的年份																																																						|year(date,timezone)																																				|-																				|
-|timestampToDate	|传入一个时间戳，返回对应的日期对象																																																|timestampToDate(timestamp)																																	|仅JQL字符串内支持，HBuilderX 3.1.0起支持	|
-|literal					|直接返回一个值的字面量，不经过任何解析和处理																																											|literal(表达式)																																						|-																				|
-|mergeObjects			|将多个对象合并为单个对象																																																					|mergeObjects(表达式1,表达式2)																															|-																				|
-|allElementsTrue	|输入一个数组，或者数组字段的表达式。如果数组中所有元素均为真值，那么返回 true，否则返回 false。空数组永远返回 true								|allElementsTrue(表达式1,表达式2)																														|-																				|
-|anyElementTrue		|输入一个数组，或者数组字段的表达式。如果数组中任意一个元素为真值，那么返回 true，否则返回 false。空数组永远返回 false						|anyElementTrue(表达式1,表达式2)																														|-																				|
-|setDifference		|输入两个集合，输出只存在于第一个集合中的元素																																											|setDifference(表达式1,表达式2)																															|-																				|
-|setEquals				|输入两个集合，判断两个集合中包含的元素是否相同（不考虑顺序、去重）																																|setEquals(表达式1,表达式2)																																	|-																				|
-|setIntersection	|输入两个集合，输出两个集合的交集																																																	|setIntersection(表达式1,表达式2)																														|-																				|
-|setIsSubset			|输入两个集合，判断第一个集合是否是第二个集合的子集																																								|setIsSubset(表达式1,表达式2)																																|-																				|
-|setUnion					|输入两个集合，输出两个集合的并集																																																	|setUnion(表达式1,表达式2)																																	|-																				|
-|concat						|连接字符串，返回拼接后的字符串																																																		|concat(表达式1,表达式2)																																		|-																				|
-|indexOfBytes			|在目标字符串中查找子字符串，并返回第一次出现的 UTF-8 的字节索引（从0开始）。如果不存在子字符串，返回 -1													|indexOfBytes(表达式1,表达式2)																															|-																				|
-|indexOfCP				|在目标字符串中查找子字符串，并返回第一次出现的 UTF-8 的 code point 索引（从0开始）。如果不存在子字符串，返回 -1									|indexOfCP(表达式1,表达式2)																																	|-																				|
-|split						|按照分隔符分隔数组，并且删除分隔符，返回子字符串组成的数组。如果字符串无法找到分隔符进行分隔，返回原字符串作为数组的唯一元素			|split(表达式1,表达式2)																																			|-																				|
-|strLenBytes			|计算并返回指定字符串中 utf-8 编码的字节数量																																											|strLenBytes(表达式)																																				|-																				|
-|strLenCP					|计算并返回指定字符串的UTF-8 code points 数量																																											|strLenCP(表达式)																																						|-																				|
-|strcasecmp				|对两个字符串在不区分大小写的情况下进行大小比较，并返回比较的结果																																	|strcasecmp(表达式1,表达式2)																																|-																				|
-|substr						|返回字符串从指定位置开始的指定长度的子字符串																																											|substr(表达式1,表达式2)																																		|-																				|
-|substrBytes			|返回字符串从指定位置开始的指定长度的子字符串。子字符串是由字符串中指定的 UTF-8 字节索引的字符开始，长度为指定的字节数						|substrBytes(表达式1,表达式2)																																|-																				|
-|substrCP					|返回字符串从指定位置开始的指定长度的子字符串。子字符串是由字符串中指定的 UTF-8 字节索引的字符开始，长度为指定的字节数						|substrCP(表达式1,表达式2)																																	|-																				|
-|toLower					|将字符串转化为小写并返回																																																					|toLower(表达式)																																						|-																				|
-|toUpper					|将字符串转化为大写并返回																																																					|toUpper(表达式)																																						|-																				|
-|addToSet					|聚合运算符。向数组中添加值，如果数组中已存在该值，不执行任何操作。它只能在 group stage 中使用																		|addToSet(表达式)																																						|-																				|
-|avg							|返回指定表达式对应数据的平均值																																																		|avg(表达式)																																								|-																				|
-|first						|返回指定字段在一组集合的第一条记录对应的值。仅当这组集合是按照某种定义排序（ sort ）后，此操作才有意义														|first(表达式)																																							|-																				|
-|last							|返回指定字段在一组集合的最后一条记录对应的值。仅当这组集合是按照某种定义排序（ sort ）后，此操作才有意义。												|last(表达式)																																								|-																				|
-|max							|返回一组数值的最大值																																																							|max(表达式)																																								|-																				|
-|min							|返回一组数值的最小值																																																							|min(表达式)																																								|-																				|
-|push							|返回一组中表达式指定列与对应的值，一起组成的数组																																									|push(表达式)																																								|-																				|
-|stdDevPop				|返回一组字段对应值的标准差																																																				|stdDevPop(表达式)																																					|-																				|
-|stdDevSamp				|计算输入值的样本标准偏差																																																					|stdDevSamp(表达式)																																					|-																				|
-|sum							|在groupField内返回一组字段所有数值的总和，非groupField内返回一个数组所有元素的和																									|sum(表达式)																																								|-																				|
-|let							|自定义变量，并且在指定表达式中使用，返回的结果是表达式的结果																																			|let(vars,in)																																								|-																				|
-
-以上操作符还可以组合使用
-
-例：数据表article内有以下数据
-
-```js
-{
-  "_id": "1",
-  "publish_date": 1611141512751,
-  "content": "hello uniCloud content 01",
-  "content": "hello uniCloud title 01",
-}
-
-{
-  "_id": "2",
-  "publish_date": 1611141512752,
-  "content": "hello uniCloud content 02",
-  "content": "hello uniCloud title 02",
-}
-
-{
-  "_id": "3",
-  "publish_date": 1611141512753,
-  "content": "hello uniCloud content 03",
-  "content": "hello uniCloud title 03",
-}
-```
-
-可以通过以下查询将publish_date字段从时间戳转为`2021-01-20`形式，然后进行按天进行统计
-
-```js
-const res = await db.collection('article')
-.groupBy('dateToString(add(new Date(0),publish_date),"%Y-%m-%d","+0800") as publish_date_str')
-.groupField('count(*) as total')
-.get()
-```
-
-上述代码使用add方法将publish_date时间戳转为日期类型，再用dateToString将上一步的日期按照时区'+0800'（北京时间），格式化为`4位年-2位月-2位日`格式，完整格式化参数请参考[dateToString](uniCloud/cf-database-aggregate-operator.md?id=datetostring)。
-
-上述代码执行结果为
-
-```js
-res = {
-  result: {
-    data: [{
-      publish_date_str: '2021-01-20',
-      total: 3
-    }]
-  }
-}
-```
-
-**注意**
-
-运算方法中仅数据库字段可以直接去除引号作为变量书写，其他字符串仍要写成字符串形式
-
-例：
-
-数据库内有以下数据：
-
-```js
-{
-  "_id": 1,
-  "sales": [ 1.32, 6.93, 2.48, 2.82, 5.74 ]
-}
-{
-  "_id": 2,
-  "sales": [ 2.97, 7.13, 1.58, 6.37, 3.69 ]
-}
-```
-
-云函数内对以下数据中的sales字段取整
-
-```js
-const db = uniCloud.database()
-const $ = db.command.aggregate
-let res = await db.collection('stats').aggregate()
-  .project({
-    truncated: $.map({
-      input: '$sales',
-      as: 'num',
-      in: $.trunc('$$num'),
-    })
-  })
-  .end()
-```
-
-JQL语法内同样功能的实现
-
-```js
-const db = uniCloud.database()
-const res = await db.collection('stats')
-.field('map(sales,"num",trunc("$$num")) as truncated')
-.get()
-```
-
-### 分组运算方法@accumulator
-
-分组运算方法是专用于统计汇总的数据库运算方法。它也是数据库的方法，而不是js的方法。
-
-**等同于mongoDB累计器操作符概念**
-
-groupField内可使用且仅能使用如下运算方法。
-
-|操作符			|用途																										|用法					|说明								|
-|---			|---																										|---					|---								|
-|addToSet		|向数组中添加值，如果数组中已存在该值，不执行任何操作														|addToSet(表达式)		|-									|
-|avg			|返回指定表达式对应数据的平均值																				|avg(表达式)			|-									|
-|first			|返回指定字段在一组集合的第一条记录对应的值。仅当这组集合是按照某种定义排序（ sort ）后，此操作才有意义		|first(表达式)			|-									|
-|last			|返回指定字段在一组集合的最后一条记录对应的值。仅当这组集合是按照某种定义排序（ sort ）后，此操作才有意义。	|last(表达式)			|-									|
-|max			|返回一组数值的最大值																						|max(表达式)			|-									|
-|min			|返回一组数值的最小值																						|min(表达式)			|-									|
-|push			|返回一组中表达式指定列与对应的值，一起组成的数组															|push(表达式)			|-									|
-|stdDevPop		|返回一组字段对应值的标准差																					|stdDevPop(表达式)		|-									|
-|stdDevSamp		|计算输入值的样本标准偏差																					|stdDevSamp(表达式)		|-									|
-|sum			|返回一组字段所有数值的总和																					|sum(表达式)			|-									|
-|mergeObjects	|将一组对象合并为一个对象																					|mergeObjects(表达式)	|在groupField内使用时仅接收一个参数	|

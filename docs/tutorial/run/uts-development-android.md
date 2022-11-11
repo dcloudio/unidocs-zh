@@ -4,15 +4,17 @@
 
 HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Gradle 仓储。
 
-当您运行带有uts插件的项目到`iOS真机设备`时，会自动安装【uts开发扩展 - iOS】插件，请务必安装。具体如下：
-
-<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/411b69b4-e77e-4b1f-ad3d-880908619119.jpg" style="zoom: 50%" />
-
-如果您遇到以下提示，请配置[运行环境](#环境配置)
+运行带有uts插件的项目到Android设备，如果您遇到以下提示，请配置[运行环境](#Android环境配置)
 
 <img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ea6943e1-d2c1-4c27-99b4-ed2550abd6fd.jpg" style="zoom: 50%;" />
 
-## 环境配置
+## uts扩展插件
+
+当您运行带有uts插件的项目到`iOS真机设备`时，会自动安装【uts开发扩展 - Android】插件，请务必安装。具体如下：
+
+<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/411b69b4-e77e-4b1f-ad3d-880908619119.jpg" style="zoom: 50%" />
+
+## Android环境配置
 
 下载插件后打开 HBuilderX 到 【设置 - 插件配置】：如图
 

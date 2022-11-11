@@ -67,7 +67,8 @@ uni.getLocation({
   - 微信公众号可使用微信js sdk，[详见](https://ask.dcloud.net.cn/article/35380)
   - `2.9.9 版本以上`，优化 uni.getLocation 支持通过 IP 定位。默认通过 GPS 获取，如果获取失败，备选方案是通过 IP 定位获取，需填写三方地图服务平台的秘钥（key）。key配置：manifest.json ---> H5配置 ---> 定位和地图 ---> key。
 - `App 平台`
-  - Android由于谷歌服务被墙，或者手机上没有GMS，想正常定位就需要向高德等三方服务商申请SDK资质，获取AppKey。否则打包后定位就会不准。云打包时需要在manifest的SDK配置中填写 Appkey。在 manifest 可视化界面有详细申请指南，详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)。离线打包自行在原生工程中配置。注意包名、appkey、证书信息必须匹配。真机运行可以正常定位，是因为真机运行基座使用了DCloud向高德申请的sdk配置，打包后必须由开发者自己申请。如果手机自带GMS且网络环境可以正常访问google定位服务器，此时无需在 manifest 填写高德定位的 sdk 配置。
+  - Android由于谷歌服务被墙，或者手机上没有GMS，想正常定位就需要向高德等三方服务商申请SDK资质，获取AppKey。否则打包后定位就会不准。云打包时需要在manifest的SDK配置中填写 Appkey。在 manifest 可视化界面有详细申请指南，详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)。离线打包自行在原生工程中配置。注意**包名、appkey、证书信息**必须匹配。真机运行可以正常定位，是因为真机运行基座使用了DCloud向高德申请的sdk配置，打包后必须由开发者自己申请。如果手机自带GMS且网络环境可以正常访问google定位服务器，此时无需在 manifest 填写高德定位的 sdk 配置。
+  - 注意手机自身要开启定位、同时要给App赋予定位权限。权限判断可参考：[https://uniapp.dcloud.net.cn/api/system/getappauthorizesetting.html](https://uniapp.dcloud.net.cn/api/system/getappauthorizesetting.html)
   - `<map>` 组件默认为国测局坐标 gcj02，调用 `uni.getLocation` 返回结果传递给 `<map>` 组件时，需指定 type 为 gcj02。
   - 定位 和 map 是两个东西。通过 `getLocation` 得到位置坐标后，可以在任意map地图上展示，比如定位使用高德，地图使用 google 的 webview 版地图。如果坐标系不同时，注意转换坐标系。
   - 如果使用 `web-view` 加载地图，无需在manifest里配地图的sdk配置。
@@ -145,3 +146,5 @@ uni.chooseLocation({
   * 腾讯地图：商用授权收费，超出配额收费。
   * 谷歌地图：按量收费，每月可获得一些赠送金额。
   * 小程序平台内置地图：无需关心地图服务商，免费使用，无配额限制。
+
+DCloud为开发者争取了福利，可打折获取高德的商业服务，如有需求请发邮件到bd@dcloud.io。

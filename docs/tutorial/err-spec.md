@@ -1,4 +1,23 @@
-## 错误信息规范  
+# uni错误规范  
+
+## 背景
+
+小程序平台的错误信息，大多返回的格式是errCode和errMsg。但不同的小程序平台，返回的errCode有可能不一样。
+
+在实际开发中，uni-app引擎、三方插件、开发者自己的业务代码，都会返回错误，但errCode也可能彼此冲突。
+
+在统一的错误拦截和uni统计中，混乱的errCode会造成很多问题。
+
+很多错误是由更底层的错误引发的，但只暴露最外层错误难以入手排查，需要暴露更底层的错误。
+
+为了进一步规范错误信息格式，uni-app定义了更完善的错误规范：
+1. 补充了errSubject，用于区隔不同平台或不同模块errCode相同的情况
+2. 补充了cause，用于反馈错误的上一层来源。比如在app平台，uni.login API返回错误时，可能是底层的三方社交登录sdk报了错，此时会把三方sdk的错误追加到cause里
+
+从2022-11-11起，DCloud新增的所有API将使用这套uni错误规范。同时我们推荐所有的插件作者也使用这套规范，在errSubject中声明自己的插件id。
+
+## 定义
+
 所有异步API，都应通过callback回调返回错误，在回调函数参数中包含错误信息，回调函数参数为UniError类型
 
 完整错误类型定义如下：
@@ -31,7 +50,7 @@ function CallBack(err:UniError){
 }
 ```  
 
-### SourceError  
+## SourceError  
 用于保存引起错误的源错误，如app端三方SDK的错误信息，包括以下属性：
 - subject  
 	源错误（如app端三方SDK）模块名称，如uni-AD中的穿山甲广告SDK的模块名称为"csj"
@@ -45,13 +64,13 @@ function CallBack(err:UniError){
 **注意**  
 源错误可以根据业务情况扩展其它属性，如uni-AD中，可以添加slotId来表示聚合的三方广告位标识
 
-### AggregateError  
+## AggregateError  
 用于保存多个源错误，如app端某个错误可能是由多个三方SDK的错误引起，可将多个源错误组成AggregateError对象。
 包括以下属性：
 - errors  
 	数组，可包含SourceError或AggregateError对象  
 
-### UniError  
+## UniError  
 Uni统一错误信息，用于统一各平台（端）错误信息  
 - errSubject
 	统一错误主题（模块）名称，字符串类型，存在多级模块时使用"::"分割，即"模块名称::二级模块名称"，详情参考[主题（模块）名称](#主题（模块）名称)
@@ -74,7 +93,7 @@ function CallBack(err:UniError){
 ```
 
 
-## 模块（主题）名称  
+## errSubject（模块/主题）名称  
 
 errSubject属性值表示返回错误的调用模块名称。
 

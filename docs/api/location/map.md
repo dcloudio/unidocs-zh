@@ -186,7 +186,7 @@ mapContext
 |fail				|function	|				|否		|接口调用失败的回调函数															|
 |complete		|function	|				|否		|接口调用结束的回调函数（调用成功、失败都会执行）			|
 
-**setLocMarkerIcon 的 OBJECT 参数列表**
+**setLocMarkerIcon 的 OBJECT 参数列表**@setLocMarkerIcon
 
 |属性			|类型			|默认值	|必填	|说明																							|
 |:-          |:-        |:-      |:-    |:-                                         |
@@ -195,6 +195,7 @@ mapContext
 |fail			|function	|				|否		|接口调用失败的回调函数														|
 |complete	|function	|				|否		|接口调用结束的回调函数（调用成功、失败都会执行）	|
 
+App nvue 3.6.9+ 支持
 
 **mapContext （App平台地图服务商差异）**
 

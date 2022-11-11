@@ -584,5 +584,8 @@ If Tencent Cloud is used as the service provider, please check whether the front
 ### 阿里云存储在部分地区、运营商无法访问的问题
 ### Alibaba Cloud storage in some regions, the operator can not access the problem
 
-阿里云云存储目前没有服务空间级别的域名隔离，因此在有服务空间的云存储因为违法、违规被封禁域名时会影响其他服务空间。阿里云提供了一个备用CDN域名`vkceyugu-backup.cdn.bspapp.com`，替换原CDN域名`vkceyugu.cdn.bspapp.com`
-Alibaba Cloud Cloud Storage currently does not have domain name isolation at the service space level. Therefore, when a cloud storage with a service space is blocked due to illegal or illegal domain names, other service spaces will be affected. Alibaba Cloud provides a backup CDN domain name `vkceyugu-backup.cdn.bspapp.com` to replace the original CDN domain name `vkceyugu.cdn.bspapp.com`
+阿里云云存储目前没有服务空间级别的域名隔离，因此在有服务空间的云存储因为违法、违规被封禁域名时会影响其他服务空间。阿里云提供了一个备用CDN域名`vkceyugu-backup.cdn.bspapp.com`，替换原CDN域名`vkceyugu.cdn.bspapp.com`。有一定业务量的用户可以在uniCloud web控制台云存储界面申请独立cdn域名。
+
+### 等级保护认证
+
+如需云厂商提供等级保护证书，请发送邮件到service@dcloud.io申请

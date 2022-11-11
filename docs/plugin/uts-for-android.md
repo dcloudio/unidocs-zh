@@ -452,6 +452,25 @@ let intent = new Intent(getUniActivity(),DemoActivity().javaClass);
 getUniActivity()!.startActivity(intent);
 ```
 
+#### 4.1.11 指定double数据类型
+
+某些场景下开发者需要获得 指定double数据类型的数据
+
+前端常用的写法：
+```
+let a:Int =3
+let b:Int =4
+let c:Double  = a/b
+```
+
+但是Android原生环境中，数据类型的精度是向下兼容的，如果想要获得一个double类型，必须要有一个double类型参与运算：
+
+```
+let a:Int =3
+let b:Int =4
+let c:Double  = a * 1.0 / b
+```
+
 
 ---------------------------------
 

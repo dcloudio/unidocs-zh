@@ -217,6 +217,8 @@ The cloud object configuration using url still needs to follow the above steps, 
 调用url化的云对象时，以`url化路径/云对象方法名`形式的链接访问云对象的方法。例如：云对象配置的触发路径是`/todo`，调用`/todo/addTodo`即会触发云对象的addTodo方法。方法区分大小写且不可含`/`。
 When invoking a urlified cloud object, access the cloud object's method with a link in the form of `url_path/cloud_object_method_name`. For example, the trigger path of the cloud object configuration is `/todo`, and calling `/todo/addTodo` will trigger the addTodo method of the cloud object. Methods are case-sensitive and cannot contain `/`.
 
+2022年11月11日之前，访问路径只能以方法名结尾，在此时间之后调整为，允许使用多段路径访问云对象方法。仍以上述配置为例，`/todo/addTodo/self`和`/todo/addTodo/group`都会调用云对象的addTodo方法。
+
 ### 云对象入参@input
 ### Cloud object input parameter @input
 

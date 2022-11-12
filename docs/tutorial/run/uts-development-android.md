@@ -10,7 +10,7 @@ HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Grad
 
 ## uts扩展插件
 
-当您运行带有uts插件的项目到`iOS真机设备`时，会自动安装【uts开发扩展 - Android】插件，请务必安装。具体如下：
+当您运行带有uts插件的项目到Android设备时，会自动安装【uts开发扩展 - Android】插件，请务必安装。具体如下：
 
 <img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/411b69b4-e77e-4b1f-ad3d-880908619119.jpg" style="zoom: 50%" />
 

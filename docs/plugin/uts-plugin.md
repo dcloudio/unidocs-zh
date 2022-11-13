@@ -664,8 +664,7 @@ offAppConfigChange(function(ret){
 ```
 
 
-
-
+--------------------------------
 
 
 特别说明：除了本章节列出的函数外，android环境下 application 其他上下文方法都可以通过 getAppContext()!.xxx()的方式实现
@@ -696,7 +695,9 @@ Android开发场景中，调用活动的级别的资源/能力，需要使用此
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 
-#### 2.2 onAppActivityPause
+#### 2.2 onAppActivityPause / offAppActivityPause
+
+##### onAppActivityPause
 
 > HBuilderX 3.6.3+
 
@@ -713,7 +714,31 @@ onAppActivityPause(() => {
 });
 ```
 
-#### 2.3 onAppActivityResume
+##### offAppActivityPause
+
+> HBuilderX 3.6.9+
+
+onAppActivityPause 对应的接触取消注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { offAppActivityPause } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+offAppActivityPause();
+// 移除指定监听
+offAppActivityPause(() => {
+});
+```
+
+
+
+#### 2.3 onAppActivityResume / offAppActivityResume
+
+##### onAppActivityResume
 
 > HBuilderX 3.6.3+
 
@@ -730,7 +755,31 @@ onAppActivityResume(() => {
 });
 ```
 
-#### 2.4 onAppActivityDestroy
+##### offAppActivityResume
+
+> HBuilderX 3.6.9+
+
+onAppActivityResume 对应的接触取消注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { onAppActivityResume } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+onAppActivityResume();
+// 移除指定监听
+onAppActivityResume(() => {
+});
+```
+
+
+
+#### 2.4 onAppActivityDestroy / offAppActivityDestroy
+
+##### onAppActivityDestroy
 
 > HBuilderX 3.6.3+
 
@@ -747,7 +796,31 @@ onAppActivityDestroy(() => {
 });
 ```
 
-#### 2.5 onAppActivityBack
+##### offAppActivityDestroy
+
+> HBuilderX 3.6.9+
+
+onAppActivityDestroy 对应的接触取消注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { offAppActivityDestroy } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+offAppActivityDestroy();
+// 移除指定监听
+offAppActivityDestroy(() => {
+});
+```
+
+
+
+#### 2.5 onAppActivityBack / offAppActivityBack
+
+##### onAppActivityBack
 
 > HBuilderX 3.6.3+
 
@@ -765,7 +838,31 @@ onAppActivityBack(() => {
 
 ```
 
-#### 2.6 onAppActivityResult
+##### offAppActivityBack
+
+> HBuilderX 3.6.9+
+
+onAppActivityBack 对应的接触取消注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { offAppActivityBack } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+offAppActivityBack();
+// 移除指定监听
+offAppActivityBack(() => {
+});
+```
+
+
+
+#### 2.6 onAppActivityResult / offAppActivityResult
+
+##### onAppActivityResult
 
 > HBuilderX 3.6.8+
 
@@ -782,9 +879,30 @@ onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
 });
 ```
 
+##### offAppActivityResult
+
+> HBuilderX 3.6.9+
+
+onAppActivityResult 对应的接触取消注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { offAppActivityResult } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+offAppActivityResult();
+// 移除指定监听
+offAppActivityResult(() => {
+});
+```
 
 
-#### 2.7 onAppActivityRequestPermissionsResult
+#### 2.7 onAppActivityRequestPermissionsResult / offAppActivityRequestPermissionsResult
+
+##### onAppActivityRequestPermissionsResult
 
 > HBuilderX 3.6.3+
 
@@ -809,6 +927,27 @@ ActivityCompat.requestPermissions(getUniActivity()!,
 	    arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 1001);
 
 ```
+
+##### offAppActivityRequestPermissionsResult
+
+> HBuilderX 3.6.9+
+
+onAppActivityRequestPermissionsResult 对应的接触取消注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { offAppActivityRequestPermissionsResult } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+offAppActivityRequestPermissionsResult();
+// 移除指定监听
+offAppActivityRequestPermissionsResult(() => {
+});
+
+-----------------------------
 
 
 特别说明：除了本章节列出的函数外，android环境下 activity 其他上下文方法都可以通过 getUniActivity()!.xxx()的方式实现

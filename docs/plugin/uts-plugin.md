@@ -582,7 +582,9 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 ```
 
-#### 1.3 onAppTrimMemory
+#### 1.3 onAppTrimMemory / offAppTrimMemory
+
+##### onAppTrimMemory
 
 > HBuilderX 3.6.8+
 
@@ -599,7 +601,31 @@ onAppTrimMemory((level:Number) => {
 });
 ```
 
-#### 1.4 onAppConfigChange
+##### offAppTrimMemory
+
+> HBuilderX 3.6.9+
+
+```ts
+import { offAppTrimMemory } from "io.dcloud.uts.android";
+```
+
+onAppTrimMemory 对应的接触取消注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+// 移除所有监听
+offAppTrimMemory()
+// 移除指定监听
+offAppTrimMemory((level:Number) => {
+	
+});
+```
+
+
+#### 1.4 onAppConfigChange / offAppConfigChange
+
+##### onAppConfigChange
 
 > HBuilderX 3.6.8+
 
@@ -615,6 +641,31 @@ onAppConfigChange((ret:UTSJSONObject) => {
 	console.log(eventName);
 });
 ```
+
+##### offAppConfigChange
+
+> HBuilderX 3.6.9+
+
+```ts
+import { offAppConfigChange } from "io.dcloud.uts.android";
+```
+
+与onAppConfigChange 对应的接触取消注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+// 移除所有监听
+offAppConfigChange();
+// 移除指定监听
+offAppConfigChange(function(ret){
+
+});
+```
+
+
+
+
 
 
 特别说明：除了本章节列出的函数外，android环境下 application 其他上下文方法都可以通过 getAppContext()!.xxx()的方式实现

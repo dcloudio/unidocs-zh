@@ -609,7 +609,7 @@ onAppTrimMemory((level:Number) => {
 import { offAppTrimMemory } from "io.dcloud.uts.android";
 ```
 
-onAppTrimMemory 对应的接触取消注册函数
+onAppTrimMemory 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
@@ -650,7 +650,7 @@ onAppConfigChange((ret:UTSJSONObject) => {
 import { offAppConfigChange } from "io.dcloud.uts.android";
 ```
 
-与onAppConfigChange 对应的接触取消注册函数
+与onAppConfigChange 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
@@ -718,7 +718,7 @@ onAppActivityPause(() => {
 
 > HBuilderX 3.6.9+
 
-onAppActivityPause 对应的接触取消注册函数
+onAppActivityPause 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
@@ -759,7 +759,7 @@ onAppActivityResume(() => {
 
 > HBuilderX 3.6.9+
 
-onAppActivityResume 对应的接触取消注册函数
+onAppActivityResume 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
@@ -800,7 +800,7 @@ onAppActivityDestroy(() => {
 
 > HBuilderX 3.6.9+
 
-onAppActivityDestroy 对应的接触取消注册函数
+onAppActivityDestroy 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
@@ -842,7 +842,7 @@ onAppActivityBack(() => {
 
 > HBuilderX 3.6.9+
 
-onAppActivityBack 对应的接触取消注册函数
+onAppActivityBack 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
@@ -883,7 +883,7 @@ onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
 
 > HBuilderX 3.6.9+
 
-onAppActivityResult 对应的接触取消注册函数
+onAppActivityResult 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
@@ -932,7 +932,7 @@ ActivityCompat.requestPermissions(getUniActivity()!,
 
 > HBuilderX 3.6.9+
 
-onAppActivityRequestPermissionsResult 对应的接触取消注册函数
+onAppActivityRequestPermissionsResult 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 

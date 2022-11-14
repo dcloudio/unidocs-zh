@@ -100,6 +100,7 @@ The following information is required in the application email
 
 
 #### 按量计费@aliyun-postpay
+
 按量计费，意味着不是每个月支付固定套餐，而是根据使用量付费。
 
 按量付费需要预存一定金额，每日根据前一日资源消耗生成账单，从阿里云预存金额中扣除。
@@ -125,6 +126,20 @@ The following information is required in the application email
 
 **注意**
 - 按量计费是延迟结算，可能存在余额超支的情况，故创建按量付费服务空间时，需支付一定的保证金，用以抵消超支结算的情况。如果您不再申请使用uniCloud服务，可以申请退还保证金（目前需要发送邮件到service@dcloud.io）。
+
+#### 系统限制@aliyun-system-limit
+
+|资源分类	|限制项											|限额	|
+|---			|---												|---	|
+|云函数		|callFunction请求QPS				|1000	|
+|					|url化请求QPS（自定义域名）	|1000	|
+|					|url化请求QPS（默认域名）		|100	|
+|					|固定IP代理请求QPS					|20		|
+|数据库		|QPS												|1000	|
+|					|并发执行数									|100	|
+|云存储		|上传QPS										|300	|
+|					|删除QPS										|300	|
+|					|查询QPS										|300	|
 
 ## 腾讯云@tencent
 ## Tencent Cloud @tencent

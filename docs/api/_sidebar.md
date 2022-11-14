@@ -76,7 +76,7 @@
   * [拨打电话](api/system/phone.md)
   * [扫码](api/system/barcode.md)
   * [剪贴板](api/system/clipboard.md)
-  * [屏幕](api/system/brightness.md)
+  * [屏幕亮度](api/system/brightness.md)
   * [用户截屏事件](api/system/capture-screen.md)
   * [振动](api/system/vibrate.md)
   * [手机联系人](api/system/contact.md)

@@ -8,7 +8,9 @@
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|x|√|√|√|
+|Android 3.6.9+、iOS暂不支持|x|√|√|√|x|√|√|√|
+
+> 本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[https://ext.dcloud.net.cn/plugin?id=10071](https://ext.dcloud.net.cn/plugin?id=10071)
 
 **CALLBACK返回参数：**
 

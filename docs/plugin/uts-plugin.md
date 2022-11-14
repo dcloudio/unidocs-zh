@@ -258,13 +258,16 @@ dependencies {
 默认uni-app最低支持版本为19，即Android4.4.2
 
 
-**注意：**
+**注意1：**
 
 - Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
-** 三方依赖临时注意事项@tempnotice **
+- HBuilderX 内置了android常见的依赖：内置依赖清单 ，开发者需要注意两点：
 
-HBuilderX 3.6.9+ 版本已解决前期遗留问题
+1 内置清单中涉及的依赖，无需手动添加，即可直接使用
+
+2 请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
+
 
 
 

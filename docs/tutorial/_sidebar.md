@@ -235,7 +235,7 @@
 * [高效开发技巧](/tutorial/snippet.md)
 * [Efficient Development Tips](/tutorial/snippet.md)
 * [性能优化专题](/tutorial/performance.md)
-<!--* [uni错误规范](/tutorial/err-spec.md)-->
+* [uni错误规范](/tutorial/err-spec.md)
 * [国际化专题](/tutorial/i18n.md)
 * [Internationalization Topics](/tutorial/i18n.md)
 	* [国际化开发指南](/tutorial/i18n.md)

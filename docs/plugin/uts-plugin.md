@@ -229,7 +229,6 @@ Android平台原生res资源目录，建议只保存UTS插件内置的资源文�
 
 除了插件下有res目录，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
-注意：截止到HBuilderX3.6.2，uts插件无法使用res。图片资源建议放在assets目录。
 
 ##### AndroidManifest.xml  
 Android原生应用清单文件，建议只保存UTS插件内置的清单文件配置。
@@ -288,15 +287,15 @@ dependencies {
 默认uni-app最低支持版本为19，即Android4.4.2
 
 
-**注意1：**
+**注意：**
 
 - Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
 - HBuilderX 内置了android常见的依赖：内置依赖清单 ，开发者需要注意两点：
 
-1 内置清单中涉及的依赖，无需手动添加，即可直接使用
+    1 内置清单中涉及的依赖，无需手动添加，即可直接使用
 
-2 请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
+    2 请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
 
 
 

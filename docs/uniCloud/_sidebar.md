@@ -133,6 +133,7 @@
   * [uni-config-center 配置中心](uniCloud/uni-config-center.md)
   * [uni-config-center](uniCloud/uni-config-center.md)
   * [uni-starter](uniCloud/uni-starter.md)
+  * [uni-im](uniCloud/uni-im.md)
   * [uni-admin](uniCloud/admin.md)
   * [uni-upgrade-center App升级中心](uniCloud/upgrade-center.md)
   * [uni-upgrade-center App Upgrade Center](uniCloud/upgrade-center.md)

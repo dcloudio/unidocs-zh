@@ -6,6 +6,8 @@
 
 > 使用 `HBuilder X` 不需要手动安装，直接使用即可。使用 `CLI` 需要手动安装，执行 `yarn add pinia` 或 `npm install pinia`。
 
+> Vue 2 项目暂不支持
+
 ### Pinia 是什么？
 
 Pinia（发音为 `/piːnjʌ/`，如英语中的 `peenya`） 是 Vue 的存储库，它允许您跨组件、页面共享状态。在服务器端以及小型单页应用程序中，您也可以从使用 Pinia 中获得很多好处：

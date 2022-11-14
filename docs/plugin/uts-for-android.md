@@ -272,7 +272,439 @@ HX3.6.7 版本内置了以下依赖
 ```
 
 
-## 4 Kotlin与UTS差异重点介绍 (持续更新)
+## 4 Android内置库@iodcloudutsandroid
+
+在uts里，Android的所有api都可以访问。
+
+但Android开发中经常要复写application和activity，uni-app主引擎已经复写了相关类。所以想要操作application和activity，需要调用uni-app引擎封装的API。
+
+这些api在`io.dcloud.uts.android`库中，具体见下。
+
+### 4.1 application 上下文相关
+
+#### 4.1.1 getAppContext
+
+> HBuilderX 3.6.3+
+
+
+```ts
+import { getAppContext } from "io.dcloud.uts.android";
+```
+
+用法说明：获取当前应用Application上下文，对应android平台 Context.getApplicationContext 函数实现
+
+Android开发场景中，调用应用级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档](https://developer.android.google.cn/docs)
+
+
+```ts
+// [示例]获取asset下的音频，并且播放
+let assetManager = getAppContext()!.getAssets();
+let afd = assetManager.openFd("free.mp3");
+let mediaPlayer = new MediaPlayer();
+mediaPlayer.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(), afd.getLength());
+mediaPlayer.prepare();
+mediaPlayer.start();
+```
+
+
+#### 4.1.2 getResourcePath(resourceName:String)
+
+> HBuilderX 3.6.3+
+
+
+```ts
+import { getResourcePath } from "io.dcloud.uts.android";
+```
+
+获取指定插件资源的运行期绝对路径
+ 
+```ts
+// [示例]获取指定资源路径
+// 得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
+getResourcePath("uni_modules/test-uts-static/static/logo.png")
+
+```
+
+#### 4.1.3 onAppTrimMemory / offAppTrimMemory
+
+##### onAppTrimMemory
+
+> HBuilderX 3.6.8+
+
+```ts
+import { onAppTrimMemory } from "io.dcloud.uts.android";
+```
+
+App 内存不足时，系统回调函数 对应原生的API: onTrimMemory
+
+```ts
+onAppTrimMemory((level:Number) => {
+	let eventName = "onAppTrimMemory - " + level;
+	console.log(eventName);
+});
+```
+
+##### offAppTrimMemory
+
+> HBuilderX 3.6.9+
+
+```ts
+import { offAppTrimMemory } from "io.dcloud.uts.android";
+```
+
+onAppTrimMemory 对应的反注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+// 移除所有监听
+offAppTrimMemory()
+// 移除指定监听
+offAppTrimMemory((level:Number) => {
+	
+});
+```
+
+
+#### 4.1.4 onAppConfigChange / offAppConfigChange
+
+##### onAppConfigChange
+
+> HBuilderX 3.6.8+
+
+```ts
+import { onAppConfigChange } from "io.dcloud.uts.android";
+```
+
+App 配置发生变化时触发，比如横竖屏切换 对应原生的API: onConfigurationChanged
+
+```ts
+onAppConfigChange((ret:UTSJSONObject) => {
+	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
+	console.log(eventName);
+});
+```
+
+##### offAppConfigChange
+
+> HBuilderX 3.6.9+
+
+```ts
+import { offAppConfigChange } from "io.dcloud.uts.android";
+```
+
+与onAppConfigChange 对应的反注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+// 移除所有监听
+offAppConfigChange();
+// 移除指定监听
+offAppConfigChange(function(ret){
+
+});
+```
+
+
+--------------------------------
+
+
+特别说明：除了本章节列出的函数外，android环境下 application 其他上下文方法都可以通过 getAppContext()!.xxx()的方式实现
+
+比如获取app缓存目录：
+
+```
+getAppContext()!.getExternalCacheDir()!.getPath()
+```
+
+
+### 4.2 Activity 上下文
+
+#### 4.2.1 getUniActivity
+
+> HBuilderX 3.6.3+
+
+```ts
+import { getUniActivity } from "io.dcloud.uts.android";
+```
+
+获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
+
+Android开发场景中，调用活动的级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档](https://developer.android.google.cn/docs)
+
+```ts
+// [示例]获取当前activity顶层容器
+let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
+```
+
+#### 4.2.2 onAppActivityPause / offAppActivityPause
+
+##### onAppActivityPause
+
+> HBuilderX 3.6.3+
+
+```ts
+import { onAppActivityPause } from "io.dcloud.uts.android";
+```
+
+App的activity onPause时触发
+
+```ts
+onAppActivityPause(() => {
+    let eventName = "onAppActivityPause - " + Date.now();
+    console.log(eventName);
+});
+```
+
+##### offAppActivityPause
+
+> HBuilderX 3.6.9+
+
+onAppActivityPause 对应的反注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { offAppActivityPause } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+offAppActivityPause();
+// 移除指定监听
+offAppActivityPause(() => {
+});
+```
+
+
+
+#### 4.2.3 onAppActivityResume / offAppActivityResume
+
+##### onAppActivityResume
+
+> HBuilderX 3.6.3+
+
+```ts
+import { onAppActivityResume } from "io.dcloud.uts.android";
+```
+
+App的activity onResume时触发
+
+```ts
+onAppActivityResume(() => {
+     let eventName = "onAppActivityResume - " + Date.now();
+     console.log(eventName);
+});
+```
+
+##### offAppActivityResume
+
+> HBuilderX 3.6.9+
+
+onAppActivityResume 对应的反注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { onAppActivityResume } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+onAppActivityResume();
+// 移除指定监听
+onAppActivityResume(() => {
+});
+```
+
+
+
+#### 4.2.4 onAppActivityDestroy / offAppActivityDestroy
+
+##### onAppActivityDestroy
+
+> HBuilderX 3.6.3+
+
+```ts
+import { onAppActivityDestroy } from "io.dcloud.uts.android";
+```
+
+App 的 activity onDestroy时触发
+
+```ts
+onAppActivityDestroy(() => {
+     let eventName = "onAppActivityDestroy- " + Date.now();
+     console.log(eventName);
+});
+```
+
+##### offAppActivityDestroy
+
+> HBuilderX 3.6.9+
+
+onAppActivityDestroy 对应的反注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { offAppActivityDestroy } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+offAppActivityDestroy();
+// 移除指定监听
+offAppActivityDestroy(() => {
+});
+```
+
+
+
+#### 4.2.5 onAppActivityBack / offAppActivityBack
+
+##### onAppActivityBack
+
+> HBuilderX 3.6.3+
+
+```ts
+import { onAppActivityBack } from "io.dcloud.uts.android";
+```
+
+App 的 activity 回退物理按键点击时触发
+
+```ts
+onAppActivityBack(() => {
+     let eventName = "onAppActivityBack- " + Date.now();
+     console.log(eventName);
+});
+
+```
+
+##### offAppActivityBack
+
+> HBuilderX 3.6.9+
+
+onAppActivityBack 对应的反注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { offAppActivityBack } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+offAppActivityBack();
+// 移除指定监听
+offAppActivityBack(() => {
+});
+```
+
+
+
+#### 4.2.6 onAppActivityResult / offAppActivityResult
+
+##### onAppActivityResult
+
+> HBuilderX 3.6.8+
+
+```ts
+import { onAppActivityResult } from "io.dcloud.uts.android";
+```
+
+App 的 activity 启动其他activity的回调结果监听 对应原生的 onActivityResult
+
+```ts
+onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
+	let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:"+resultCode + " -data:"+JSON.stringify(data);
+    console.log(eventName);
+});
+```
+
+##### offAppActivityResult
+
+> HBuilderX 3.6.9+
+
+onAppActivityResult 对应的反注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { offAppActivityResult } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+offAppActivityResult();
+// 移除指定监听
+offAppActivityResult(() => {
+});
+```
+
+
+#### 4.2.7 onAppActivityRequestPermissionsResult / offAppActivityRequestPermissionsResult
+
+##### onAppActivityRequestPermissionsResult
+
+> HBuilderX 3.6.3+
+
+```ts
+import { onAppActivityRequestPermissionsResult } from "io.dcloud.uts.android";
+```
+
+App 的 activity 获得权限请求结果的回调
+
+```ts
+onAppActivityRequestPermissionsResult((requestCode: number,
+                                                     permissions: MutableList<string>,
+                                                     grantResults: MutableList<number>) => {
+		
+		console.log(grantResults);
+		console.log(permissions);   
+		console.log(requestCode);
+	});
+
+//发起定位权限申请
+ActivityCompat.requestPermissions(getUniActivity()!,
+	    arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 1001);
+
+```
+
+##### offAppActivityRequestPermissionsResult
+
+> HBuilderX 3.6.9+
+
+onAppActivityRequestPermissionsResult 对应的反注册函数
+
+如果传入的函数可为空，如果为空，则视为移除所有监听
+
+```ts
+import { offAppActivityRequestPermissionsResult } from "io.dcloud.uts.android";
+```
+
+```ts
+// 移除全部监听
+offAppActivityRequestPermissionsResult();
+// 移除指定监听
+offAppActivityRequestPermissionsResult(() => {
+});
+
+-----------------------------
+
+
+特别说明：除了本章节列出的函数外，android环境下 activity 其他上下文方法都可以通过 getUniActivity()!.xxx()的方式实现
+
+比如获取当前activity的顶层View容器
+
+```ts
+getUniActivity()!.getWindow().getDecorView();
+```
+
+
+
+
+## 5 Kotlin与UTS差异重点介绍 (持续更新)
 
 通过上面的章节的阅读。
 
@@ -281,11 +713,11 @@ HX3.6.7 版本内置了以下依赖
 但是对于一个熟悉android开发的kotlin语言者来说，有很多常用的习惯发生了改变，我们会在这个章节特别指出，便于开发者加深认识。
 
 
-### 4.1 语法差异
+### 5.1 语法差异
 
 -------------------------------
 
-#### 4.1.1 可为空的语法标识
+#### 5.1.1 可为空的语法标识
 
 kotlin中可为空的语法统一为类型后加`?`，以下面的代码为例
 
@@ -305,7 +737,7 @@ let user:string | null
 let user?:string
 ```
 
-#### 4.1.2  let和var
+#### 5.1.2  let和var
 
 `kotlin`中 可变变量修饰为 `var`、`val`。 区别在于 val 不可变，var可变。
 
@@ -314,7 +746,7 @@ let user?:string
 推荐使用`let` 因为只会在作用域内生效，需要慎用`var`，因为它具备有更大的作用范围
 
 
-#### 4.1.3 方法定义
+#### 5.1.3 方法定义
 
 方法定义 `kotlin`里的方法只有一种定义方式
 
@@ -339,7 +771,7 @@ uts中，需要区分全局方法、成员方法
  }
 ```
 
-#### 4.1.4 extends
+#### 5.1.4 extends
 
 `kotlin`中的: 继承操作符，需要用`extends`取代
 
@@ -360,7 +792,7 @@ class MediaContentObserver extends ContentObserver {
 }
 ```
 
-#### 4.1.5 非空断言
+#### 5.1.5 非空断言
 
 kotlin中的非空断言是`!!`，ts中是一个`!`
 
@@ -373,7 +805,7 @@ user!!.sayHello();
 ```
 
 
-#### 4.1.6 快速调用父类实现
+#### 5.1.6 快速调用父类实现
 
 
 ```ts
@@ -391,7 +823,7 @@ constructor (){
 ```
 
 
-#### 4.1.7 匿名内部类
+#### 5.1.7 匿名内部类
 
 `kotlin`中可以使用匿名内部类
 
@@ -414,7 +846,7 @@ let myListener = new MyListener();
 user.setListener(myListener);
 ```
 
-#### 4.1.8 可为空函数调用
+#### 5.1.8 可为空函数调用
 
 
 有一种特殊场景，我们需要定义一些可为空的函数变量，比如下面的 success,fail：
@@ -437,13 +869,13 @@ options.success?.(res)
 这样的调用方式在kotlin中是非法的，属于TS中的特有语法，需要特别注意。
 
 
-#### 4.1.9 一个类只能有一个构造函数
+#### 5.1.9 一个类只能有一个构造函数
 
 在`Kotlin`/`java`中允许一个函数有多个构造器，但是UTS中是不被允许的
 
 
 
-#### 4.1.10 界面跳转写法
+#### 5.1.10 界面跳转写法
 
 android开发中场景的 intent跳转需要传入 目标界面的class对象，目前UTS中仅支持一种写法
 
@@ -452,7 +884,7 @@ let intent = new Intent(getUniActivity(),DemoActivity().javaClass);
 getUniActivity()!.startActivity(intent);
 ```
 
-#### 4.1.11 指定double数据类型
+#### 5.1.11 指定double数据类型
 
 某些场景下开发者需要获得 指定double数据类型的数据
 
@@ -474,11 +906,11 @@ let c:Double  = a * 1.0 / b
 
 ---------------------------------
 
-### 4.2 警告优化
+### 5.2 警告优化
 
 下面的内容不会影响功能使用，但是在UTS环境中，有合适的解决办法
 
-#### 4.2.1 java lang包的引入问题
+#### 5.2.1 java lang包的引入问题
 
 `kotlin` 或者`java` 中java.lang.*是被特殊处理的，可以直接使用而不需要引入。
 
@@ -499,7 +931,7 @@ System.currentTimeMillis()
 ```
 
 
-#### 4.2.2 `UTS` 不建议使用 快捷构造
+#### 5.2.2 `UTS` 不建议使用 快捷构造
 
 `kotlin`  中 支持通过()的方式，快速实现无参构造器的声明
 
@@ -523,7 +955,7 @@ class ScreenReceiver extends BroadcastReceiver{
 }
 ```
 
-#### 4.2.3 `UTS` 中下划线前缀的变量，有屏蔽未使用警告的含义
+#### 5.2.3 `UTS` 中下划线前缀的变量，有屏蔽未使用警告的含义
 
 ```ts
 // IDE会提示 name,status,desc 变量未使用
@@ -538,9 +970,9 @@ onStatusUpdate(_name:string, _status:Int, _desc:string){
 ```
 
 
-## 5  常见问题(持续更新)
+## 6  常见问题(持续更新)
 
-### 5.1 如何在UTS环境中，新建一个`activity`？
+### 6.1 如何在UTS环境中，新建一个`activity`？
 
 参考Hello UTS项目中的uts-nativepage插件
 
@@ -548,7 +980,7 @@ onStatusUpdate(_name:string, _status:Int, _desc:string){
 > ~\uni_modules\uts-nativepage
 
 
-### 5.2 如何在UTS环境中，新建一个`service`？
+### 6.2 如何在UTS环境中，新建一个`service`？
 
 参考Hello UTS项目中的uts-nativepage插件
 

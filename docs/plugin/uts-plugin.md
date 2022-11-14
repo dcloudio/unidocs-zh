@@ -222,7 +222,7 @@ The Android platform's native third-party library directory supports the followi
 
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 
-> 遗留事项: HBuilderX3.6.2版本对libs目录使用还不完善，[详见](#tempnotice)
+
 
 ##### res  
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
@@ -281,7 +281,6 @@ dependencies {
 }
 ```
 
-> 遗留事项: HBuilderX3.6.1版本对dependencies配置支持还不完善，[详见](#tempnotice)
 
 - minSdkVersion  
 插件支持的Android最低版本，整数类型，取值范围为Android API Level
@@ -293,14 +292,11 @@ dependencies {
 
 - Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
-##### 三方依赖临时注意事项@tempnotice
+** 三方依赖临时注意事项@tempnotice **
 
 HBuilderX 3.6.9+ 版本已解决前期遗留问题
 
 
-
-
-这些遗留事项会尽快升级完善。
 
 #### iOS 平台原生配置
 

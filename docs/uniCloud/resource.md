@@ -114,5 +114,9 @@ Main functions of the game: Players can directly obtain cash rewards by guessing
 - 柳州市人民医院流行病学调查表：调查登记小程序。微信小程序搜索“柳州市人民医院流行病学调查表	”
 - Liuzhou People's Hospital Epidemiological Survey Form: Small Program for Survey Registration. Wechat applet search "Liuzhou People's Hospital Epidemiological Questionnaire"
 
+- 安心记待办：极简风手机应用。日程管理App，每日心情记录，安心习惯养成。[iOS App](https://apps.apple.com/cn/app/id1641634853)
+<a href="https://apps.apple.com/cn/app/id1641634853" target="_blank">
+  <img width="600" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-df196dec-63c4-4f42-a710-d976c4d4b380/a0419fde-64c6-40aa-bdb4-5947165562e4.png">
+</a>
+
 更多uniClouid项目和插件，见**插件市场**：[https://ext.dcloud.net.cn/?cat1=7](https://ext.dcloud.net.cn/?cat1=7)
-For more uniCloud projects and plugins, see **Plugin Market**: [https://ext.dcloud.net.cn/?cat1=7](https://ext.dcloud.net.cn/?cat1=7 )

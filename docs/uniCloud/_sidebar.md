@@ -70,6 +70,7 @@
 * 重要开源库```{"collapsable": false}```
   * [uni-config-center 配置中心](uniCloud/uni-config-center.md)
   * [uni-starter](uniCloud/uni-starter.md)
+  * [uni-im](uniCloud/uni-im.md)
   * [uni-admin](uniCloud/admin.md)
   * [uni-upgrade-center App升级中心](uniCloud/upgrade-center.md)
   * [unipay 统一支付](uniCloud/unipay.md)

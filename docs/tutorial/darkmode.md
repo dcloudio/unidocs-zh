@@ -23,13 +23,11 @@
    		"themeLocation" : "theme.json" // 如果 theme.json 在根目录可省略
     }
    ```
-6. 需要云端打包生效
-
 #### iOS 安全区域适配
 
 - 开启安全区域占位
 
-  > 在 manifest.json 文件的"plus" 节点下添加 "safearea" 适配 iOS 的安全区域，"background" 对应正常模式下安全区域外的背景颜色，"backgroundDark"对应暗黑模式下安全区域外的背景颜色
+  > 在 manifest.json 文件的 "plus" 节点下添加 "safearea" 适配 iOS 的安全区域，"background" 对应正常模式下安全区域外的背景颜色，"backgroundDark"对应暗黑模式下安全区域外的背景颜色
 
 	```json
 	"plus" : {
@@ -54,7 +52,9 @@
 	}
 	```
 
-**注意：iOS 13+、Android 10+设备上才支持**
+**注意：**
+- `iOS 13+`、`Android 10+`设备上才支持
+- 需要云端打包生效
 
 ### h5
 
@@ -137,7 +137,7 @@
 ```json
 // 全局配置
 {
-  "window": {
+  "globalStyle": {
     "navigationBarBackgroundColor": "@navBgColor",
     "navigationBarTextStyle": "@navTxtStyle"
   }
@@ -202,10 +202,10 @@ theme.json
 		"tabSelectedColor": "#3cc51f",
 		"tabBgColor": "#ffffff",
 		"tabBorderStyle": "black",
-		"iconPath1": "image/icon1_light.png",
-		"selectedIconPath1": "image/selected_icon1_light.png",
-		"iconPath2": "image/icon2_light.png",
-		"selectedIconPath2": "image/selected_icon2_light.png"
+		"iconPath1": "/static/icon1_light.png",
+		"selectedIconPath1": "/static/selected_icon1_light.png",
+		"iconPath2": "/static/icon2_light.png",
+		"selectedIconPath2": "/static/selected_icon2_light.png"
 	},
 	"dark": {
 		"navBgColor": "#292929",
@@ -218,10 +218,10 @@ theme.json
 		"tabSelectedColor": "#51a937",
 		"tabBgColor": "#292929",
 		"tabBorderStyle": "white",
-		"iconPath1": "image/icon1_dark.png",
-		"selectedIconPath1": "image/selected_icon1_dark.png",
-		"iconPath2": "image/icon2_dark.png",
-		"selectedIconPath2": "image/selected_icon2_dark.png"
+		"iconPath1": "/static/icon1_dark.png",
+		"selectedIconPath1": "/static/selected_icon1_dark.png",
+		"iconPath2": "/static/icon2_dark.png",
+		"selectedIconPath2": "/static/selected_icon2_dark.png"
 	}
 }
 ```

@@ -246,6 +246,7 @@ uni-im v1.0.0 暂时比较简单，云端有1个云对象`uni-im-co`，2个opend
 |参数名	|类型	|必填	|说明			|
 |--		|--		|--		|--				|
 |to_uid	|string	|否		|接受消息的用户id	|
+|appId	|string	|否		|接收消息的appId，默认为当前应用的appId。如果你是2个不同appId的应用相互发，请修改此值为相对的appId	|
 |type	|string	|是		|消息类型，暂时仅支持：text(表示文本类型)、image(表示图片类型)|
 |body	|string	|是		|消息内容，`type = text`时为文本内容.`type = image`时为图片网络地址|
 

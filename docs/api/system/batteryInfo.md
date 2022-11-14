@@ -4,15 +4,13 @@
 
 > 本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[getBatteryInfo](https://ext.dcloud.net.cn/plugin?id=9295)
 
-> uni ext api 需 HBuilderX 3.6.7+
-
-> Android和iOS的uts代码，需 vue3 编译器。
+> uni ext api 需 HBuilderX 3.6.8+
 
 > iOS 运行需要打自定义基座
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√（vue3）|√|√|√|√|x|x|√|x|x|
+|√|√|√|√|√|x|x|√|x|x|
 
 **OBJECT 参数说明**
 

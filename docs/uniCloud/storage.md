@@ -223,8 +223,7 @@ Tencent Cloud obtains the temporary download link of the file. Alibaba Cloud has
 |字段		|类型						|必填	|默认值	|说明								|平台差异说明	|
 |Field |Type |Required |Default |Description |Platform Difference Description |
 |:-:		|:-:						|:-:	|:-:	|:-:								|:-:			|
-|fileList	|&lt;Array&gt;.String,Object|是		|-		|要获取下载链接的文件 ID 组成的数组	|-	|
-|fileList |&lt;Array&gt;.String,Object|Yes |- |Array of file IDs to get download links for |- |
+|fileList	|Array&lt;String&gt;|是		|-		|要获取下载链接的文件 ID 组成的数组	|-	|
 
 **请求参数中的fileList**
 **fileList in request parameters**
@@ -241,8 +240,7 @@ Tencent Cloud obtains the temporary download link of the file. Alibaba Cloud has
 |字段		|类型					|说明							|
 |Field |Type |Description |
 |:-:		|:-:					|:-:							|
-|fileList	|&lt;Array&gt;.Object	|存储下载链接的数组				|
-|fileList |&lt;Array&gt;.Object |Array to store download links |
+|fileList	|Array&lt;Object&gt;	|存储下载链接的数组				|
 |requestId	|String					|请求序列号，用于错误排查		|
 |requestId |String |Request serial number, used for troubleshooting |
 

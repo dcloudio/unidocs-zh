@@ -416,7 +416,8 @@ Precautions
 - 相同订单，重复调用 `restoreCompletedTransactions` 后 `transactionReceipt` 会发生变化，并非唯一值
 - For the same order, `transactionReceipt` will change after calling `restoreCompletedTransactions` repeatedly, not a unique value
 - 调用 `finishTransaction` 关闭订单可能不会立即生效，取决于苹果的服务器
-- Calling `finishTransaction` to close an order may not take effect immediately, depending on Apple's servers
+- 沙盒环境：一个测试账号相同产品仅能购买一次，重复测试需要清除购买记录或重新添加沙盒测试账号
+- 沙盒环境：调用 `restoreCompletedTransactions` 长时间无反应，检查设备登陆的沙箱账号是否正常
 
 ### 订单丢失场景
 ### Order Lost Scenario

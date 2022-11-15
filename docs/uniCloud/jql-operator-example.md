@@ -835,9 +835,9 @@ db.collection('inventory').field('item, objectToArray(dimensions) as dimensionsA
 执行结果：
 
 ```javascript
-{"_id":1,"item":"ABC1","dimensions":[{"k":"l","v":25},{"k":"w","v":10},{"k":"uom","v":"cm"}]}
-{"_id":2,"item":"ABC2","dimensions":[{"k":"l","v":50},{"k":"w","v":25},{"k":"uom","v":"cm"}]}
-{"_id":3,"item":"XYZ1","dimensions":[{"k":"l","v":70},{"k":"w","v":75},{"k":"uom","v":"cm"}]}
+{"_id":1,"item":"ABC1","dimensionsArray":[{"k":"l","v":25},{"k":"w","v":10},{"k":"uom","v":"cm"}]}
+{"_id":2,"item":"ABC2","dimensionsArray":[{"k":"l","v":50},{"k":"w","v":25},{"k":"uom","v":"cm"}]}
+{"_id":3,"item":"XYZ1","dimensionsArray":[{"k":"l","v":70},{"k":"w","v":75},{"k":"uom","v":"cm"}]}
 ```
 
 #### range

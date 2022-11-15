@@ -300,8 +300,7 @@ class GetController extends Controller {
 }
 ```
 
-## Cookie的使用
-## Cookie usage
+### Cookie的使用
 
 在某些场景下，cookie依然占有重要地位，例如在云函数URL化的情况下，获取客户端的状态
 In some scenarios, cookies still play an important role, for example, in the case of URLization of cloud functions, to obtain the status of the client

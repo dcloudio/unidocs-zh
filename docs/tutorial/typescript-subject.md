@@ -27,14 +27,25 @@ uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn
 // tsconfig.json
 {
   "compilerOptions": {
-    // 与 Vue 的浏览器支持保持一致
-    "target": "es5",
-    // 这可以对 `this` 上的数据 property 进行更严格的推断
+    "target": "esnext",
+    "module": "esnext",
     "strict": true,
-    // 如果使用 webpack 2+ 或 rollup，可以利用 tree-shake:
-    "module": "es2015",
+    "jsx": "preserve",
     "moduleResolution": "node",
-    "types": ["@dcloudio/types"]
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "types": [
+      "@dcloudio/types"
+    ]
   }
 }
 ```

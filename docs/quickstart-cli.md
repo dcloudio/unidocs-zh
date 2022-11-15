@@ -5,7 +5,7 @@
 
 全局安装vue-cli
 
-> 目前仍推荐使用 vue-cli 4.x（需 node 版本低于 18），对于 vue-cli 5.x / Webpack 5 的支持情况参考 [#3723](https://github.com/dcloudio/uni-app/issues/3723)
+> 目前仍推荐使用 vue-cli 4.x（node 版本 12-16），对于 vue-cli 5.x / Webpack 5 的支持情况参考 [#3723](https://github.com/dcloudio/uni-app/issues/3723)
 
 ```shell
 npm install -g @vue/cli@4

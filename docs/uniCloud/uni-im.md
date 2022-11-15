@@ -85,10 +85,12 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 		onShow: function() {
 			//4.在onShow生命周期，更改全局变量中app是否显示在前台为true
 			this.globalData.uniIm.appIsShow = true
+			//5.清理系统通知栏消息和app角标
+			uniImUtils.clearPushNotify()
 			console.log('App Show')
 		},
 		onHide: function() {
-			//5.在onHide生命周期，更改全局变量中app是否显示在前台为false
+			//6.在onHide生命周期，更改全局变量中app是否显示在前台为false
 			this.globalData.uniIm.appIsShow = false
 			console.log('App Hide')
 		}

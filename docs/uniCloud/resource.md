@@ -84,7 +84,7 @@
 
 - 安心记待办：极简风手机应用。日程管理App，每日心情记录，安心习惯养成。[iOS App](https://apps.apple.com/cn/app/id1641634853)
 <a href="https://apps.apple.com/cn/app/id1641634853" target="_blank">
-  <img width="600" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-df196dec-63c4-4f42-a710-d976c4d4b380/a0419fde-64c6-40aa-bdb4-5947165562e4.png">
+  <img width="600" src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c7fa0cd4-32f8-4b48-b3e0-ef7013c137c1.png">
 </a>
 
 更多uniClouid项目和插件，见**插件市场**：[https://ext.dcloud.net.cn/?cat1=7](https://ext.dcloud.net.cn/?cat1=7)

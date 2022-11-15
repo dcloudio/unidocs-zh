@@ -233,6 +233,7 @@ module.exports {
 - getTemp联表时主表所在的getTemp内的where和field会传递给触发器，虚拟联表的where和field不会传给触发器
 - getCount不会触发count触发器，只会触发read触发器
 - 通过jql的redis缓存读取的内容不会触发读触发器
+- jql数据管理不会触发任何触发器
 
 ### 和action的关系
 

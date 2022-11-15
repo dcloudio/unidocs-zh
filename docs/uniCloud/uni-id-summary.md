@@ -1897,10 +1897,15 @@ module.exports = {
 }
 ```
 
-#### 将其它系统用户迁移至uni-id方案@move-users-to-uni-id
-从其他数据库或者从业务中迁移系统的用户表到`uni-id`可能会遇到用户密码兼容问题，比如旧系统中用户密码加密方案为 `md5`，而`uni-id`使用的是 `hmac-sha256`，为了无缝迁移用户密码可以采用自定义密码规则过渡到 `hmac-sha256` 加密算法。
+### 将用户迁移至 uni-id@move-users-to-uni-id
+如果你想将自己系统内的用户导入至 uni-id，请按照以下步骤操作
 
-1. 迁移之前我们需要在`uni-config-center/uni-id/config.json`文件中创建自定义类型的`paswordSecret`，如下：
+#### 1. 准备自定义用户密码函数
+uni-id 默认使用了 `hmac-256` 密码加密算法，可能与你的加密算法不同，所以在迁移前需要自定义你的密码加密函数。
+当用户第一次在 uni-id 中进行登录时，会先使用自定义验证密码(`verifyPassword`)函数进行验证，这样用户用之前的密码依旧能够登录，不需要用户重置密码。
+在用户第一次登录成功后用户密码的加密算法规则将升级为配置文件中最新的算法规则。
+
+首先在`uni-config-center/uni-id/config.json`文件中创建自定义类型的`paswordSecret`，如下：
 ```json
 {
   "passwordSecret": [
@@ -1912,13 +1917,7 @@ module.exports = {
 }
 ```
 
-2. 处理旧系统中用户表数据，主要处理以下与密码相关的字段
-
-   - 密码字段重命名为`password`，值不变
-   - 添加`password_secret_version`字段，值为 `custom` 类型的 `version`
-
-3. 在 `uni-config-center/uni-id/custom-password.js` 文件中创建 `verifyPassword` 方法用户验证旧系统用户密码。
-
+在 `uni-config-center/uni-id/custom-password.js` 文件（不存在请手动创建）中创建 `verifyPassword` 函数验证之前用户密码。
 ```javascript
 module.exports = {
     /**
@@ -1935,17 +1934,13 @@ module.exports = {
 }
 ```
 
-4. 将处理完毕的用户表导入进 uni-id-users 表中即可。
-
-5. 旧系统用户第一次登录时将会使用自定义规则的验证方法，验证通过后密码将升级为配置文件中最新的算法规则。
-
 **注意**
 
-如果最新版本的 type 是 custom，那么所有用户的加密及校验都会使用自定义算法规则。
+如果配置文件中`passwordSecret`最新版本的 type 是 `custom`，那么所有用户的加密及校验都会使用自定义算法规则。
 
 如果仅是为了迁移使用，请另外在 `passwordSecret` 中添加 `hmac-sha256` 类型算法，用于其他用户的加密与校验。
 
-这样只有旧系统中的用户才会使用 `custom` 自定义规则，其他用户或者迁移后的用户会使用 `hmac-sha256` 算法规则。
+这样只有之前的用户才会使用 `custom` 自定义规则，其他用户或者迁移后的新注册的用户会使用 `hmac-sha256` 算法规则。
 
 ```json
 {
@@ -1961,3 +1956,94 @@ module.exports = {
   ]
 }
 ```
+
+#### 2. 导出用户数据
+> 导出文件大小最大不超过 50MB，超过 50MB 请导出多个json文件
+> 
+> 如果存在表A关联表B的字段的场景需要保证关联字段在A、B内是一致的（特别需要注意的是各种与_id关联的字段）
+> 
+> [参考从文件中导入数据](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#import)
+
+请将用户数据导出为json格式文件，注意json文件不是标准的json文件，请按照以下格式每行是一个json格式的用户记录导出：
+```json
+{"user_id":0,"nickname":"张三","age":25,"password":"123456"}
+{"user_id":1,"nickname":"李四","age":18,"password":"000000"}
+```
+#### 3. 处理用户数据
+> 在 uni-id 中 userId 是系统自动创建的 _id，如果想保留之前用户的userId，可以将用户的 userId 映射为 _id，如果不保留 userId 建议删除 userId 字段，在数据导入中会创建 _id。
+> 
+> 注意`password_secret_version`字段，字段值需要修改为自定义密码类型的 `version`
+
+导入到 uni-id 之前，需要处理用户数据与 uni-id 字段的映射关系，见下方 uni-id 字段及说明：
+
+| 字段                      | 类型        | 默认值 | 说明                              |
+|-------------------------|-----------|-----|---------------------------------|
+| _id                     | -         | -   | 存储文档 ID（用户 ID），系统自动生成           |
+| ali_openid              | string    | -   | 支付宝平台openid                     |
+| apple_openid            | string    | -   | 苹果登录openid                      |
+| avatar                  | string    | -   | 头像地址 （完整路径）                     |
+| avatar_file             | file      | -   | 用file类型方便使用uni-file-picker组件    |
+| comment                 | string    | -   | 备注                              |
+| dcloud_appid            | array     | -   | 允许登录的客户端的appid列表                |
+| department_id           | array     | -   | 部门ID                            |
+| email                   | string    | -   | 邮箱地址                            |
+| email_confirmed         | int       | 0   | 邮箱验证状态：0 未验证 1 已验证              |
+| gender                  | int       | 0   | 用户性别：0 未知 1 男性 2 女性             |
+| invite_time             | timestamp | -   | 受邀时间                            |
+| inviter_uid             | array     | -   | 用户全部上级邀请者                       |
+| last_login_date         | timestamp | -   | 最后登录时间                          |
+| last_login_ip           | string    | -   | 最后登录时 IP 地址                     |
+| mobile                  | string    | -   | 手机号码                            |
+| mobile_confirmed        | int       | 0   | 手机号验证状态：0 未验证 1 已验证             |
+| my_invite_code          | string    | -   | 用户自身邀请码                         |
+| nickname                | string    | -   | 用户昵称                            |
+| password                | password  | -   | 密码，加密存储                         |
+| password_secret_version | int       | -   | 密码使用的passwordSecret版本           |
+| realname_auth           | object    | -   | 实名认证信息；见下方 realname_auth 结构     |
+| register_date           | timestamp | -   | 注册时间                            |
+| register_ip             | string    | -   | 注册时 IP 地址                       |
+| role                    | array     | -   | 用户角色                            |
+| score                   | int       | -   | 用户积分，积分变更记录可参考：uni-id-scores表定义 |
+| status                  | int       | -   | 用户状态：0 正常 1 禁用 2 审核中 3 审核拒绝     |
+| token                   | array     | -   | 用户token                         |
+| username                | string    | -   | 用户名，不允许重复                       |
+| wx_openid               | object    | -   | 微信各个平台openid；见下方 wx_openid 结构   |
+| wx_unionid              | string    | -   | 微信unionid                       |
+| qq_openid               | object    | -   | QQ各个平台openid；见下方 qq_openid 结构   |
+| qq_unionid              | string    | -   | QQ unionid                      |
+| third_party             | object    | -   | 三方平台凭证                          |
+
+**realname_auth 结构**
+| 字段| 类型| 默认值 | 说明|
+|---|---|---|---|
+|auth_date|timestamp|-|认证通过时间|
+|auth_status|int|0|认证状态：0 未认证 1 等待认证 2 认证通过 3 认证失败|
+|contact_email|string|-|联系人邮箱|
+|contact_mobile|string|-|联系人手机号码|
+|contact_person|string|-|联系人姓名|
+|id_card_back|string|-|身份证反面照 URL|
+|id_card_front|string|-|身份证正面照 URL|
+|identity|string|-|身份证号码/营业执照号码|
+|in_hand|string|-|手持身份证照片 URL|
+|license|string|-|营业执照 URL|
+|real_name|string|-|真实姓名/企业名称|
+|type|int|-|用户类型：0 个人用户 1 企业用户|
+
+**wx_openid 结构**
+| 字段                      | 类型        | 默认值 | 说明                              |
+|---|---|---|---|
+|app|string|-|app平台微信openid|
+|mp|string|-|微信小程序平台openid|
+|h5|string|-|微信公众号登录openid|
+|web|string|-|PC页面扫码登录openid|
+
+**qq_openid 结构**
+| 字段                      | 类型        | 默认值 | 说明                              |
+|---|---|---|---|
+|app|string|-|app平台QQ openid|
+|mp|string|-|QQ小程序平台openid|
+
+#### 4. 导入数据
+在 [uniCloud 控制台](https://unicloud.dcloud.net.cn/)，找到 uni-id 所在的服务空间，在云数据库中选中 `uni-id-users` 表，点击导入按钮，上传用户数据json文件即可。
+
+[从文件中导入数据说明](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#import)

@@ -4,6 +4,8 @@
 
 暗黑模式（Dark Mode），也被称为夜间模式或深色模式，是一种高对比度，或者反色模式的显示模式。是一种有利于在黑暗环境下观看手机的高对比度的模式。uni-app的暗黑模式，是帮助开发者完成自己应用的暗黑模式的一批配置和API。开发者可以参考本文实现自己应用的暗黑模式。
 
+> 插件市场示例项目：[https://ext.dcloud.net.cn/plugin?name=hello-darkmode](https://ext.dcloud.net.cn/plugin?name=hello-darkmode)
+
 ## 开启 DarkMode @open-darkmode
 
 > 在 `manifest.json` 配置，应用的部分配置可通过变量的形式配置，在变量配置文件中定义不同主题下的颜色或图标，各平台配置如下：

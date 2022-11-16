@@ -987,3 +987,26 @@ onStatusUpdate(_name:string, _status:Int, _desc:string){
 路径:
 > ~\uni_modules\uts-nativepage
 
+### 6.3 如何在UTS环境中，新建一个`Thread`？
+
+简单示例
+```uts
+class CustomThread extends Thread{
+	
+	constructor (){
+		super();
+	}
+	
+	override run(){
+		for(let i = 1;i < 10;i++){
+			Thread.sleep(1000)
+			console.log("i = " + i)
+		}
+	}
+}
+```
+
+完整示例参考Hello UTS项目中的uts-nativepage插件
+
+路径:
+> ~\uni_modules\uts-nativepage

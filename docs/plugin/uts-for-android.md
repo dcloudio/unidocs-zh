@@ -993,15 +993,13 @@ onStatusUpdate(_name:string, _status:Int, _desc:string){
 ```uts
 class CustomThread extends Thread{
 	
-	constructor (){
+	constructor(){
 		super();
 	}
 	
 	override run(){
-		for(let i = 1;i < 10;i++){
-			Thread.sleep(1000)
-			console.log("i = " + i)
-		}
+		Thread.sleep(1000)
+		console.log("CustomThread = " + Thread.currentThread().getName())
 	}
 }
 ```

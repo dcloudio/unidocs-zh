@@ -188,6 +188,74 @@ The above scenarios will perform data verification when adding or modifying data
 - 更新数据时键值不可使用`{'a.b.c': 1}`的形式，需要写成`{a:{b:{c:1}}}`形式
 - When updating data, the key value cannot be in the form of `{'a.b.c': 1}`, it needs to be written in the form of `{a:{b:{c:1}}}`
 
+## JQL方法使用限制
+
+### 简单查询
+
+下面这些方法必须严格按照下面的顺序进行调用，其他方法需要在这些方法之后调用（不限制顺序）
+
+```
+collection
+aggregate
+doc
+where
+field
+groupBy
+groupField
+```
+
+### 联表查询
+
+临时表可以使用以下方法（需按照下面的顺序调用）
+
+```
+collection
+where
+field
+orderBy
+skip
+limit
+getTemp
+```
+
+虚拟联表可以使用以下方法（需按照下面的顺序调用）
+
+```
+collection
+foreignKey
+where
+field
+groupBy
+groupField
+distinct
+orderBy
+skip
+limit
+get
+```
+
+### 新增
+
+仅允许`collection().add()`这样的形式
+
+### 修改
+
+仅允许以下两种形式
+
+```js
+db.collection('xx').doc('xxx').update({})
+db.collection('xx').where('xxxx').update({})
+```
+
+### 删除
+
+仅允许以下两种形式
+
+```js
+db.collection('xx').doc('xxx').remove()
+db.collection('xx').where('xxxx').remove()
+```
+
 ## jql语句内云端环境变量@variable
 ## Cloud environment variable @variable in jql statement
 

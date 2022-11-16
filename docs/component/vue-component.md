@@ -1,7 +1,6 @@
 ### component
 
-渲染一个“元组件”为动态组件。依 `is` 的值，来决定哪个组件被渲染。[详见](https://cn.vuejs.org/v2/api/#component)
-Render a "meta-component" as a dynamic component. Which component is rendered depends on the value of `is`. [See details](https://cn.vuejs.org/v2/api/#component)
+渲染一个“元组件”为动态组件。依 `is` 的值，来决定哪个组件被渲染。[详见](https://v2.cn.vuejs.org/v2/api/#component)
 
 
 
@@ -19,8 +18,7 @@ Render a "meta-component" as a dynamic component. Which component is rendered de
 
 ### template
 
-`uni-app` 支持在 `template` 模板中嵌套 `<template/>` 和 `<block/>`，用来进行 [列表渲染](https://uniapp.dcloud.io/vue-basics?id=listrendering) 和 [条件渲染](https://uniapp.dcloud.io/vue-basics?id=condition)。
-`uni-app` supports nesting `<template/>` and `<block/>` in the `template` template for [List rendering](https://uniapp.dcloud.io/vue-basics?id=listrendering) and [Conditional rendering](https://uniapp.dcloud.io/vue-basics?id=condition).
+`uni-app` 支持在 `template` 模板中嵌套 `<template/>` 和 `<block/>`，用来进行 [列表渲染](/tutorial/vue-basics.html#listrendering) 和 [条件渲染](/tutorial/vue-basics.html#condition)。
 
 `<template/>` 和 `<block/>` 并不是一个组件，它们仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。
 `<template/>` and `<block/>` are not a component but just a packaging element. They will not be rendered on the page and only accept control attributes.
@@ -80,8 +78,7 @@ Render a "meta-component" as a dynamic component. Which component is rendered de
 
 ### transition
 
-`<transition>` 元素作为单个元素/组件的过渡效果。`<transition>` 只会把过渡效果应用到其包裹的内容上，而不会额外渲染 DOM 元素，也不会出现在可被检查的组件层级中。[详见](https://cn.vuejs.org/v2/api/#transition)
-`<transition>` element serves as a transition effect of a single element/component. `<transition>` Only the transition effect will be applied to its wrapped content, without extra rendering of DOM elements. It will not appear in the component level that can be checked. [See details](https://cn.vuejs.org/v2/api/#transition)
+`<transition>` 元素作为单个元素/组件的过渡效果。`<transition>` 只会把过渡效果应用到其包裹的内容上，而不会额外渲染 DOM 元素，也不会出现在可被检查的组件层级中。[详见](https://v2.cn.vuejs.org/v2/api/#transition)
 
 
 **平台差异说明**
@@ -97,8 +94,7 @@ Render a "meta-component" as a dynamic component. Which component is rendered de
 
 ### transition-group
 
-`<transition-group>` 元素作为多个元素/组件的过渡效果。`<transition-group>` 渲染一个真实的 DOM 元素。默认渲染 `<span>`，可以通过 tag attribute 配置哪个元素应该被渲染。[详见](https://cn.vuejs.org/v2/api/#transition-group)
-`<transition-group>` element serves as a transition effect of multiple elements/components.`<transition-group>` Render a real DOM element. The default rendering is `<span>`. You can configure which element should be rendered by tag attribute. [See details](https://cn.vuejs.org/v2/api/#transition-group)
+`<transition-group>` 元素作为多个元素/组件的过渡效果。`<transition-group>` 渲染一个真实的 DOM 元素。默认渲染 `<span>`，可以通过 tag attribute 配置哪个元素应该被渲染。[详见](https://v2.cn.vuejs.org/v2/api/#transition-group)
 
 
 
@@ -115,8 +111,7 @@ Render a "meta-component" as a dynamic component. Which component is rendered de
 
 ### keep-alive
 
-`<keep-alive>` 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。和 `<transition>` 相似，`<keep-alive>` 是一个抽象组件：它自身不会渲染一个 DOM 元素，也不会出现在组件的父组件链中。[详见](https://cn.vuejs.org/v2/api/#keep-alive)
-When `<keep-alive>` wraps dynamic components, inactive component instances are cached instead of destroyed. Similar to `<transition>`, `<keep-alive>` is an abstract component that does not render a DOM element by itself, nor does it appear in the parent component chain of the component. [See details](https://cn.vuejs.org/v2/api/#keep-alive)
+`<keep-alive>` 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。和 `<transition>` 相似，`<keep-alive>` 是一个抽象组件：它自身不会渲染一个 DOM 元素，也不会出现在组件的父组件链中。[详见](https://v2.cn.vuejs.org/v2/api/#keep-alive)
 
 
 **平台差异说明**

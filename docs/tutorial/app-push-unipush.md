@@ -221,7 +221,7 @@ Design specifications need to pay attention to:
 2. 背景必须是透明的。 （如果非透明就会显示为白色方块）  
 2. The background must be transparent. (If it is not transparent, it will be displayed as a white square)
 
-![](http://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/unipsuh_small_icon_style.png.png) 
+![](http://native-res.dcloud.net.cn/images/uniapp/push/unipsuh_small_icon_style.png.png) 
 
 
 

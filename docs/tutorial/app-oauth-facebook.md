@@ -18,7 +18,7 @@ For more information, see [Operation Guide for Applying for Facebook Login](http
 ### 配置  
 ### Configuration
 打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“Facebook登录”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/oauth/facebook-manifest.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/oauth/facebook-manifest.png)
 
 - appid  
 Facebook开发者中心申请的应用编号（AppID）  

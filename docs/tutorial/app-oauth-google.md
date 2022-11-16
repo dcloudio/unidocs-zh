@@ -18,7 +18,7 @@ For more information, see [Operation Guide for Applying for Google Login](https:
 ### 配置  
 ### Configuration
 打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“Google登录”：
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/oauth/google-manifest.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/oauth/google-manifest.png)
 
 - iOS平台客户端ID  
 - iOS platform client ID

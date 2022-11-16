@@ -663,7 +663,7 @@ HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要�
 After HBuilderX3.0.7, in addition to configuring the original vendor information, Huawei needs to add a new configuration agconnect-services.json file.
 
 该文件，需要从华为开发者后台--项目设置界面下载  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/huawei-apconnect-services.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/push/huawei-apconnect-services.png)
 
 
 #### VIVO厂商通道
@@ -683,7 +683,7 @@ Precautions:
 - Support vivo push function HBuilderX minimum version 2.1.0 and above.
 
 具体请参考图中数据  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/vivo-datas.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/push/vivo-datas.png)
 
 
 #### OPPO厂商通道
@@ -731,8 +731,7 @@ For detailed tutorials, see: [https://ask.dcloud.net.cn/article/37356](https://a
 If the application can receive push messages online, but cannot receive push messages using the vendor channel when offline, please refer to **UniPush vendor channel FAQ [https://ask.dcloud.net.cn/article/36611](https:/ /ask.dcloud.net.cn/article/36611)**
 
 **最后也可以登录[个推官网](https://www.getui.com/)，或使用微信扫描下面二维码，进行技术咨询**  
-**Finally, you can also log in to the [Getui official website](https://www.getui.com/), or use WeChat to scan the QR code below for technical consultation**
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/getui-service.jpg)
+![](https://native-res.dcloud.net.cn/images/uniapp/push/getui-service.jpg)
 
 
 

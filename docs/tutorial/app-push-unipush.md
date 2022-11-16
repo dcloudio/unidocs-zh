@@ -167,7 +167,7 @@ UniPush和个推推送模块支持设置自定义推送图标，包括push图标
 1. 必须是带 Alpha 透明通道的 PNG 图片。 
 2. 背景必须是透明的。 （如果非透明就会显示为白色方块）  
 
-![](http://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/unipsuh_small_icon_style.png.png) 
+![](http://native-res.dcloud.net.cn/images/uniapp/push/unipsuh_small_icon_style.png.png) 
 
 
 

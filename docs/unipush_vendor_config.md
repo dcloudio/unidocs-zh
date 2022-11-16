@@ -36,7 +36,7 @@
   ![huawei_appid](https://native-res.dcloud.net.cn/images/uniapp/push/adnroid_vendor/manufacture_huawei2.png)
   
 * 下载agconnect-services.json文件备用。如下
-	![img](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/huawei-apconnect-services.png)
+	![img](https://native-res.dcloud.net.cn/images/uniapp/push/huawei-apconnect-services.png)
 
 * 在 “项目设置 > 推送服务> 配置”中开通项目回执状态，配置个推侧的回调地址以及HTTPS证书。如下
 

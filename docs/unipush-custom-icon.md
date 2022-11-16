@@ -87,6 +87,6 @@
 
 
 
-![](http://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/unipsuh_small_icon_style.png.png)
+![](http://native-res.dcloud.net.cn/images/uniapp/push/unipsuh_small_icon_style.png.png)
 
 

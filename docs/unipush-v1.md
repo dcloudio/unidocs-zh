@@ -489,7 +489,7 @@ UniPush 推送服务已经封装好 iOS&Android 平台的原生集成工作，�
 HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要新增配置  agconnect-services.json文件。
 
 该文件，需要从华为开发者后台--项目设置界面下载  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/huawei-apconnect-services.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/push/huawei-apconnect-services.png)
 
 
 #### VIVO厂商通道
@@ -502,7 +502,7 @@ HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要�
 - 支持vivo推送功能HBuilderX最低版2.1.0及以上。
 
 具体请参考图中数据  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/vivo-datas.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/push/vivo-datas.png)
 
 
 #### OPPO厂商通道
@@ -532,7 +532,7 @@ HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要�
 如果应用在线可以接收到推送消息，离线时使用厂商通道无法接收到推送消息，可参考**UniPush厂商通道常见问题[https://ask.dcloud.net.cn/article/36611](https://ask.dcloud.net.cn/article/36611)**
 
 **最后也可以登录[个推官网](https://www.getui.com/)，或使用微信扫描下面二维码，进行技术咨询**  
-![](https://partner-dcloud-native.oss-cn-hangzhou.aliyuncs.com/images/uniapp/push/getui-service.jpg)
+![](https://native-res.dcloud.net.cn/images/uniapp/push/getui-service.jpg)
 
 
 

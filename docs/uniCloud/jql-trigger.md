@@ -35,6 +35,10 @@ module.exports = {
 
 如上配置会在使用jql读取此表内容时触发`beforeRead`和`afterRead`。除这两个时机外还有`beforeCount`、`afterCount`、`beforeCreate`、`afterCreate`、`beforeUpdate`、`afterUpdate`、`beforeDelete`、`afterDelete`这些触发时机，后续章节会详细说明
 
+在通过clientDB访问时触发器内可以使用包含在clientDB内的公共模块，如何将公共模块引入clientDB请参考：[jql依赖公共模块](jql.md#common-for-jql)
+
+在通过云函数/云对象使用jql访问时，触发器可以使用云函数/云对象依赖的公共模块。
+
 ## 触发器入参@trigger-param
 
 所有触发器均在数据校验、权限校验之后执行，beforeXxx会在实际执行数据库指令之前执行，afterXxx会在实际执行数据库指令之后执行。

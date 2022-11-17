@@ -3990,17 +3990,16 @@ module.exports = {
 }
 ```
 
-**如需在before和after内传参，建议直接在state上挂载。但是切勿覆盖上述属性**
-**If you need to pass parameters in before and after, it is recommended to mount them directly on the state. But never override the above properties**
+**注意**
 
-### action内使用公共模块和扩展库@common-for-action
-### Use common modules and extension libraries within actions @common-for-action
+- 如需在before和after内传参，建议直接在state上挂载。但是切勿覆盖上述属性
+- action上传后可能需要一段时间才会在云端生效，通常是3分钟左右
 
-目前JQL依赖了`uni-id`或`uni-id-common`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action内直接使用的。
-Currently JQL depends on `uni-id` or `uni-id-common`, and uni-id 3.0.7 and above also depends on `uni-config-center`, these two common modules can be used directly in actions of.
+## jql依赖公共模块和扩展库@common-for-jql
 
-自`HBuilderX 3.2.7`起，action内可配置要使用的公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和JQL关联。
-Since `HBuilderX 3.2.7`, the public modules to be used can be configured within the action. A public module can be associated with JQL by configuring `"includeInClientDB":true` in the package.json of the public module to be used.
+目前JQL依赖了`uni-id`或`uni-id-common`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action或触发器内直接使用的。
+
+自`HBuilderX 3.2.7`起，可配置要jql依赖的公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和JQL关联。
 
 一个在JQL内使用的公共模块的package.json示例如下。
 An example package.json for a common module used within JQL is as follows.
@@ -4035,13 +4034,6 @@ An example package.json for a common module used within JQL is as follows.
 扩展库：
 Extension library:
 
-目前action只能使用redis扩展库，后续会支持其他扩展库配置。
-At present, actions can only use the redis extension library, and other extension library configurations will be supported in the future.
+目前jql只能使用redis扩展库，后续会支持其他扩展库配置。
 
-如果所在服务空间开通了redis，action内可直接使用redis扩展。目前只能云端运行，后续会支持本地运行时在action内使用redis扩展
-If the service space you are in has redis enabled, you can directly use the redis extension in the action. At present, it can only run in the cloud, and it will support the use of redis extensions in actions at local runtime in the future.
-
-**注意**
-**Notice**
-
-- action上传后可能需要一段时间才会在云端生效，通常是3分钟左右
+如果所在服务空间开通了redis，jql内可直接使用redis扩展。目前只能云端运行，后续会支持本地运行时在jql内使用redis扩展

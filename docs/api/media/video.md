@@ -162,7 +162,7 @@ uni.chooseMedia({
   maxDuration: 30,
   camera: 'back',
   success(res) {
-    console.log(res.tempFilest)
+    console.log(res.tempFiles)
   }
 })
 

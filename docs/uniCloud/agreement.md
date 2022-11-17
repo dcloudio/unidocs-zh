@@ -23,9 +23,9 @@ uniCloud 是 DCloud 联合阿里云、腾讯云等云厂商（以下简称云厂
 
 1.4 当您使用uniCloud的阿里云公测版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/118037.htm](https://help.aliyun.com/document_detail/118037.htm)
 
-1.4 当您使用uniCloud的阿里云正式版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/434218.html](https://help.aliyun.com/document_detail/434218.html)、隐私协议：[https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html)、以及SLA服务等级协议：[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)
+1.5 当您使用uniCloud的阿里云正式版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/434218.html](https://help.aliyun.com/document_detail/434218.html)、隐私协议：[https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html)、以及SLA服务等级协议：[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)
 
-1.5 当您使用uniCloud的腾讯云服务时，您同时需要遵守腾讯云的服务协议：[https://cloud.tencent.com/document/product/301/1967](https://cloud.tencent.com/document/product/301/1967)、隐私协议：[https://cloud.tencent.com/document/product/301/11470](https://cloud.tencent.com/document/product/301/11470)、以及SLA服务等级协议：[https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)
+1.6 当您使用uniCloud的腾讯云服务时，您同时需要遵守腾讯云的服务协议：[https://cloud.tencent.com/document/product/301/1967](https://cloud.tencent.com/document/product/301/1967)、隐私协议：[https://cloud.tencent.com/document/product/301/11470](https://cloud.tencent.com/document/product/301/11470)、以及SLA服务等级协议：[https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)
 
 ## 2. 账号
 2.1 您应依法具备必要、适当的权利能力和行为能力，按照DCloud的要求完成注册、获得DCloud服务账号（以下简称“账号”）。

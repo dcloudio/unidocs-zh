@@ -396,11 +396,15 @@ let's encrypt于2021年9月30日根证书过期并切换到新版根证书。详
 
 1. 将云函数升级到nodejs12，删除旧云函数，配置node版本之后重新上传。详情参考：[云函数package.json](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=packagejson)
 
-2. （不推荐）使用`uniCloud.httpclient.request`时传入`rejectUnauthorized: false`。示例代码如下：
+2. （不推荐）使用`uniCloud.httpclient.request`时使用`rejectUnauthorized: false`。示例代码如下：
 
   ```js
+  const https = require('https')
+  const httpsAgent = new https.Agent({
+    rejectUnauthorized: false
+  })
   await uniCloud.httpclient.request('https://xxx.com/get', {
-  	rejectUnauthorized: false
+  	httpsAgent
   })
   ```
 

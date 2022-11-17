@@ -1008,3 +1008,10 @@ class CustomThread extends Thread{
 
 路径:
 > ~\uni_modules\uts-nativepage
+
+
+## 7  已知待解决问题(持续更新)
+
+### 7.1 结构入参 boolean 参数默认为true
+
+当以type 结构体为参数时，其内部boolean字段 默认值为false,不支持指定。

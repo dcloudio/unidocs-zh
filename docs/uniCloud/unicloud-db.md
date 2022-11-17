@@ -251,8 +251,7 @@ It is also used for join table query, but different from the way of directly spl
 where中指定要查询的条件。比如只查询某个字段的值符合一定条件的记录。
 where specifies the conditions to be queried. For example, only query records whose value of a field meets certain conditions.
 
-组件的where属性，与clientDB的JS API是一致的，且内容较多，所以详见js API中相关`jql`文档：[详情](/uniCloud/uni-clientDB?id=jsquery)
-The where attribute of the component is consistent with the JS API of clientDB, and has a lot of content, so please refer to the relevant `jql` document in the js API: [Details](/uniCloud/uni-clientDB?id=jsquery)
+组件的where属性，与clientDB的JS API是一致的，且内容较多，所以详见js API中相关`jql`文档：[详情](/uniCloud/jql.html#where)
 
 但组件与js API有一个差别，就是组件的属性中若使用js中的变量，需额外注意。
 However, there is a difference between the component and the js API, that is, if you use the variables in js in the properties of the component, you need to pay extra attention.
@@ -302,25 +301,100 @@ Method 2. Do not write in properties, but concatenate strings in js
 			this.$nextTick(() => {
 			  this.$refs.udb.loadData()
 			})
-
-			// 多条件示例
-			// multi-condition example
-
-			// id = this.tempstr 且 create_time > 1613960340000
-			// this.sWhere = "id=='" + this.tempstr + "' && create_time > 1613960340000"
-
-			// id = this.tempstr 或 name != null
-			// this.sWhere = "id=='" + this.tempstr + "' || name != null"
 		}
 	}
 </script>
 ```
+多条件查询示例：
 
+方式1. 使用模板字符串，用${}包裹变量
+```html
+<template>
+    <view>
+        <unicloud-db ref="udb" collection="uni-id-users" where="`id==${this.tempstr} && create_time > 1613960340000`"></unicloud-db>
+    </view>
+</template>
+<script>
+    export default {
+        data() {
+            return {
+                tempstr: '123'
+            }
+        }
+    }
+</script>
+```
+
+方式2. 使用js拼接字符串
+```html
+<template>
+	<view>
+		<unicloud-db ref="udb" collection="uni-id-users" :where="sWhere" loadtime="manual"></unicloud-db>
+	</view>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      tempstr: '123',
+      sWhere: ''
+    }
+  }
+  onLoad() {
+    // id = this.tempstr 且 create_time > 1613960340000
+    this.sWhere = "id=='" + this.tempstr + "' && create_time > 1613960340000"
+
+    // id = this.tempstr 或 name != null
+    // this.sWhere = "id=='" + this.tempstr + "' || name != null"
+    
+    // 组件上配置了 loadtime = "manual", 这里需要手动加载数据
+    this.$nextTick(() => {
+      this.$refs.udb.loadData()
+    })
+  }
+}
+</script>
+```
 上述示例使用的是==比较符，如需进行模糊搜索，则使用正则表达式。插件市场提供了完整的云端一体搜索模板，搜索类页面无需自行开发，可直接使用。[详见](https://ext.dcloud.net.cn/plugin?id=3851)
 The above example uses the == comparator, and for fuzzy searches, regular expressions are used. The plug-in market provides a complete cloud-integrated search template, and search pages can be used directly without self-development. [See details](https://ext.dcloud.net.cn/plugin?id=3851)
 
-再次强调，where条件内容较多，组件和api用法相同，完整的where条件文档在api文档中，另见：[JQL文档](/uniCloud/uni-clientDB?id=jsquery)
-Once again, there are many where conditions, components and api usage are the same, the complete where conditions documents are in the api documents, see also: [JQL document](/uniCloud/uni-clientDB?id=jsquery)
+使用正则模糊查询示例：
+```html
+<template>
+	<view class="content">
+		<input @input="onKeyInput" placeholder="请输入搜索值" />
+		<unicloud-db v-slot:default="{data, loading, error, options}" collection="goods" :where="where">
+			<view v-if="error">{{error.message}}</view>
+			<view v-else>
+				
+			</view>
+		</unicloud-db>
+	</view>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      searchVal: ''
+    }
+  },
+  computed: {
+    where() {
+      return `${new RegExp(this.searchVal, 'i')}.test(name)` // 使用计算属性得到完整where
+    }
+  },
+  methods: {
+    onKeyInput(e) {
+      // 实际开发中这里应该还有防抖或者节流操作，这里不做演示
+      this.searchVal = e.target.value
+    }
+  }
+}
+</script>
+```
+
+再次强调，where条件内容较多，组件和api用法相同，完整的where条件文档在api文档中，另见：[JQL文档](/uniCloud/jql.html#where)
 
 ## orderby
 

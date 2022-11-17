@@ -1364,6 +1364,8 @@ jql supports two types of query conditions. The following content is helpful to 
 where内还支持使用云端环境变量，详情参考：[云端环境变量](uniCloud/jql.md?id=variable)
 where also supports the use of cloud environment variables. For details, please refer to: [Cloud environment variables](uniCloud/jql.md?id=variable)
 
+在 unicloud-db 组件中使用where查询 [参考](uniCloud/unicloud-db.md?id=where)
+
 #### 简单查询条件@simple-where
 #### Simple query condition @simple-where
 

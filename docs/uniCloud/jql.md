@@ -150,6 +150,7 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 ```
 collection
 aggregate
+geoNear // 新增于 HBuilderX 3.6.10
 doc
 where
 field
@@ -163,6 +164,7 @@ groupField
 
 ```
 collection
+geoNear // 新增于 HBuilderX 3.6.10
 where
 field
 orderBy
@@ -2628,6 +2630,40 @@ const res = await db.collection('score')
 
 - distinct指对返回结果中完全相同的记录进行去重，重复的记录只保留一条。因为`_id`字段是必然不同的，所以使用distinct时必须同时指定field，且field中不可存在`_id`字段
 
+### 地理位置查询geoNear@geo-near
+
+> 新增于 HBuilderX 3.6.10
+
+geoNear可用于查询位置在给定点一定距离内的数据库记录。此方法必须紧跟在collection方法或aggregate方法后。
+
+**参数**
+
+|属性								|类型								|默认值	|必填	|说明																																														|
+|near								|GeoPoint						|				|是		|GeoJSON Point，用于判断距离的点																																|
+|spherical					|true								|				|是		|必填，值为 true																																								|
+|maxDistance				|number							|				|否		|距离最大值																																											|
+|minDistance				|number							|				|否		|距离最小值																																											|
+|query							|object&#124;string	|				|否		|要求记录必须同时满足该条件（语法同 where）																											|
+|distanceMultiplier	|number							|				|否		|返回时在距离上乘以该数字																																				|
+|distanceField			|string							|				|是		|存放距离的输出字段名，可以用点表示法表示一个嵌套字段																						|
+|includeLocs				|string							|				|否		|列出要用于距离计算的字段，如果记录中有多个字段都是地理位置时有用																|
+|key								|string							|				|否		|选择要用的地理位置索引。如果集合由多个地理位置索引，则必须指定一个，指定的方式是指定对应的字段	|
+
+**示例**
+
+```js
+const res = await db.collection('geo-near').aggregate().geoNear({
+    distanceField: 'distance',
+    spherical: true,
+    near: new db.Geo.Point(116.397689, 39.904626), // 人民英雄纪念碑
+    maxDistance: 500,
+    query: 'name == "readable"'
+  }).end()
+```
+
+**注意事项**
+
+- 存在geoNear时其query参数将取代where/doc作为权限校验依据，即query匹配到的结果需要满足权限才可以查询
 
 ## 新增数据记录@add
 

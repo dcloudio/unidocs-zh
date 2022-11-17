@@ -35,11 +35,15 @@ You develop cloud code through the tools provided by DCloud, and finally deploy 
 1.4 当您使用uniCloud的阿里云服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/118037.htm](https://help.aliyun.com/document_detail/118037.htm)
 1.4 When you use the Alibaba Cloud service of uniCloud, you also need to abide by the Alibaba Cloud service agreement: [https://help.aliyun.com/document_detail/118037.htm](https://help.aliyun.com/document_detail /118037.htm)
 
-1.5 当您使用uniCloud的腾讯云服务时，您同时需要遵守腾讯云的服务协议：[https://cloud.tencent.com/document/product/301/1967](https://cloud.tencent.com/document/product/301/1967)、隐私协议：[https://cloud.tencent.com/document/product/301/11470](https://cloud.tencent.com/document/product/301/11470)、以及SLA服务等级协议：[https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)
-1.5 When you use uniCloud's Tencent Cloud service, you also need to abide by Tencent Cloud's service agreement: [https://cloud.tencent.com/document/product/301/1967](https://cloud.tencent.com /document/product/301/1967), Privacy Agreement: [https://cloud.tencent.com/document/product/301/11470](https://cloud.tencent.com/document/product/301/11470 ), and SLA Service Level Agreement: [https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)
+1.3 双方均保证已经依照国家相关规定获得了合法经营资质或政府审批等，有权依法运营其产品及服务。双方进一步保证，在本协议有效期内持续保持具备国家相关规定要求的经营资质或审批手续。
+
+1.4 当您使用uniCloud的阿里云公测版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/118037.htm](https://help.aliyun.com/document_detail/118037.htm)
+
+1.5 当您使用uniCloud的阿里云正式版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/434218.html](https://help.aliyun.com/document_detail/434218.html)、隐私协议：[https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html)、以及SLA服务等级协议：[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)
+
+1.6 当您使用uniCloud的腾讯云服务时，您同时需要遵守腾讯云的服务协议：[https://cloud.tencent.com/document/product/301/1967](https://cloud.tencent.com/document/product/301/1967)、隐私协议：[https://cloud.tencent.com/document/product/301/11470](https://cloud.tencent.com/document/product/301/11470)、以及SLA服务等级协议：[https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)
 
 ## 2. 账号
-## 2. Account
 2.1 您应依法具备必要、适当的权利能力和行为能力，按照DCloud的要求完成注册、获得DCloud服务账号（以下简称“账号”）。
 2.1 You shall have the necessary and appropriate rights and capacity in accordance with the law, complete the registration and obtain a DCloud service account (hereinafter referred to as "account") in accordance with DCloud's requirements.
 

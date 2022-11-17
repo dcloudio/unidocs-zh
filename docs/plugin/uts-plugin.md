@@ -573,6 +573,15 @@ let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
 ```
 
+### 函数参数默认值
+
+函数参数支持设置默认值，比如下面testName
+
+```ts
+function connectWifi(option: WifiConnectOption,testName :string = "zhangsan") 
+```
+
+
 ## 路线图
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：

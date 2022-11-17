@@ -650,6 +650,17 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 function connectWifi(option: WifiConnectOption,testName :string = "zhangsan") 
 ```
 
+### 访问JSON对象属性
+
+`uts`环境中访问`JSON`对象的属性，不能用`user.age` 而要用 `user['age']`
+
+```ts
+
+let jsonContent = "{'username':'zhangsan','age':12}"
+let jsonObj = JSON.parse(jsonContent);
+console.log("jsonObj['age']  == " + jsonObj['age'] );
+
+```
 
 ## 路线图
 ## route map

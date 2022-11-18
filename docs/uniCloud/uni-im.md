@@ -52,10 +52,9 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 5. 到此部署已经结束。登录的用户通过用户列表可以选择对方发起会话聊天
 
 ## 部署到自己的项目
-1. 你的项目账户体系需使用`uni-id-pages`实现，如果不是请按[文档](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html) 的步骤部署。（后续将推出非uniCloud项目，使用uni-im的方法）
-2. 打开`uni-im`插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-im](https://ext.dcloud.net.cn/plugin?name=uni-im)
-3. 点击`使用HBuilderX导入插件`，选择你的项目，按提示操作自动配置`pages.json`
-4. 打开项目根目录的App.vue文件，进行如下操作：
+1. 打开`uni-im`插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-im](https://ext.dcloud.net.cn/plugin?name=uni-im)
+2. 点击`使用HBuilderX导入插件`，选择你的项目，点击确定（同时会自动导入依赖的uni_modules`uni-id-pages`）按提示操作自动配置`pages.json`
+3. 打开项目根目录的App.vue文件，进行如下操作：
 - 导入uniIm的Utils
 - 初始化uniIm
 - 在globalData中添加预置数据
@@ -64,41 +63,35 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 
 ```html
 <script>
-	import uniIdPagesinit from '@/uni_modules/uni-id-pages/init.js';
-	//1. 导入uniIm的Utils工具类
+	//1. 导入uni身份信息管理模块
+	import uniIdPagesInit from '@/uni_modules/uni-id-pages/init.js';
+	//2. 导入uniIm的Utils工具类
 	import uniImUtils from '@/uni_modules/uni-im/common/utils.js';
 	export default {
-		globalData:{
-			//2. 初始化uniIm全局变量
-			uniIm:{
-				msgManagers:{},
-				//app是否显示在前台
-				appIsShow:false
+		globalData: {
+			//3. 初始化uniIm全局变量
+			uniIm: {
+				msgManagers: {}
 			}
 		},
-		onLaunch: function() {
+		onLaunch: async function() {
 			console.log('App Launch');
-			uniIdPagesinit();
-			//3.初始化uniIm
+			//4. 初始化uni身份信息管理模块
+			uniIdPagesInit();
+			//5. 初始化uniIm
 			uniImUtils.init();
 		},
 		onShow: function() {
-			//4.在onShow生命周期，更改全局变量中app是否显示在前台为true
-			this.globalData.uniIm.appIsShow = true
-			//5.清理系统通知栏消息和app角标
-			uniImUtils.clearPushNotify()
-			console.log('App Show')
+			console.log('App Show');
 		},
 		onHide: function() {
-			//6.在onHide生命周期，更改全局变量中app是否显示在前台为false
-			this.globalData.uniIm.appIsShow = false
-			console.log('App Hide')
+			console.log('App Hide');
 		}
-	}
+	};
 </script>
 ```
 
-5. 启用Vuex并引入uni-im的store
+4. 启用Vuex并引入uni-im的store
 - 打开项目根目录的main.js文件启用Vuex
 ```js
 	import App from './App'
@@ -153,13 +146,60 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 	export default store
 ```
 
-6. 接下来打开，“用户列表页”（路径：`/uni_modules/uni-im/pages/userList/userList`）可以看到所有的注册用户。
+5. 账号打通
 
+uni-im经常用于嵌入其他App中，成为其中的一个模块。比如客服模块。这就涉及现有应用和uni-im的账户打通问题。
+
+uni-im的账户体系是uni-id的。如果开发者的现有应用要接入uni-im，但账户体系并不在uni-id里，或使用的是老版uni-id，就需要参考本章节打通账户。
+
+- 基于`uni-id-pages`的项目，直接登录即可，无需额外打通工作。
+- 基于`uni-id-co`的项目，需要在登录成功和用户信息更新时，同步更新uniId store内的当前用户信息（uni-im显示当前用户头像、昵称时会用到）示例代码：
+```js
+	//导入uniCloud客户端账户体系，用户信息状态管理模块
+	import {mutations as uniIdMutations} from '@/uni_modules/uni-id-pages/common/store.js';
+	await uniIdMutations.updateUserInfo()
+```
+- 基于老版uni-id(版本号：3.x) 开发的项目，需要如下改造：
+	1. 在登录成功和token续期后，绑定当前账号与设备推送标识的关联关系。示例代码：
+```js
+	const uniIdCo = uniCloud.importObject("uni-id-co", {customUI: true})
+	uni.getPushClientId({
+		success: async function(e) {
+			console.log(e)
+			let pushClientId = e.cid
+			let res = await uniIdCo.setPushCid({
+				pushClientId
+			})
+			console.log('getPushClientId', res);
+		},
+		fail(e) {
+			console.error(e)
+		}
+	})
+```
+	2. 在登录成功和用户信息更新时，同步更新uniId store内的当前用户信息（uni-im显示当前用户头像、昵称时会用到）示例代码：
+```js
+	//导入uniCloud客户端账户体系，用户信息状态管理模块
+	import {mutations as uniIdMutations} from '@/uni_modules/uni-id-pages/common/store.js';
+	await uniIdMutations.updateUserInfo()
+```
+- 客户端是uni-app的，但服务器不是uniCloud的情况。需开通uniCloud，然后在客户端通过uni-im-co的loginWithJWT方法实现联登，因内容较多，需另见[文档](#uniImCoLoginWithJWT)。
+- 客户端如果不是uni-app的，如果是网页，可iframe内嵌。如果是app，可嵌入[uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
+
+6. 确保账户对接后，打开“用户列表页”（路径：`/uni_modules/uni-im/pages/userList/userList`）可以看到所有的注册用户。
 7. 点击某个用户，会自动创建与该用户的会话，并打开“聊天对话页”（路径：`/uni_modules/uni-im/pages/chat/chat`），然后就可以开始聊天了。
-
 8. 还可以导入uni-im的示例项目作为管理员端与用户聊天。
-
 9. 如果你是2个不同appId的应用相互通讯（比如：淘宝的买家端和卖家端通讯）的场景，请打开聊天对话文件（路径：`/uni_modules/uni-im/pages/chat/chat`）搜索`data.appId = this.systemInfo.appId`修改`this.systemInfo.appId`为相对的appId
+
+
+**补充：**（基于uni-id-pages开发的项目可忽略）
+
+为了实现用户退出登录后，不再收到im消息，需要在执行退出登录时同步状态给uni-id-pages。示例代码如下：
+```js
+import {mutations as uniIdMutations} from '@/uni_modules/uni-id-pages/common/store.js'
+uniIdMutations.logout()
+```
+
 
 ## 限制普通用户向其他用户发起会话
 客服场景下，我们希望管理员客服可以向任意用户发起会话。而普通用户的会话对象只能是客服。
@@ -171,12 +211,10 @@ uni.navigateTo({
 	url:'/uni_modules/uni-im/pages/chat/chat?user_id' + 对应的用户id
 })
 ```
-> 这里的参数还可以使用会话id`conversation_id`可以通过点击用户列表页后，在浏览器地址栏获得，或通过[工具类](#utils)生成。
 
 - 服务端限制  
 打开`uni-im-co` 路径：`/uni_modules/uni-im/uniCloud/cloudfunctions/uni-im-co/index.obj.js`
 配置第一行 `admin_user_id`的值为管理员客服id。如果会话双方均不属于此域则无法通讯
-
 
 # 开发文档  
 ## 目录结构  
@@ -217,16 +255,143 @@ uni-im v1.0.0 暂时比较简单，云端有1个云对象`uni-im-co`，2个opend
 
 名词解释
 - 聊天会话ID  
-根据通讯双方用户id，生成唯一索引；通过该索引值，查询双方的聊天记录等信息。
+根据通讯双方用户id，生成的唯一索引值；
 - 聊天会话  
-以会话ID为索引的一组数据，记录：未读消息数量、会话类型、所属用户id、对话的用户id、对话的群id、未读消息数量、最后一条消息概述（文本消息的前15个字，消息为多媒体时只描述类型）、最后一条消息时间
+以会话ID为索引的一组数据，记录：未读消息数量、会话更新时间、会话类型、会话所属用户的id、对话的用户id、对话的群id、最后一条消息概述（文本消息的前15个字，消息为多媒体时只描述类型）
 
 ## uni-im-co 云函数（云对象）
 ### API列表
-|API			|描述		|
-|--				|--			|
-|getConversationList|获取会话列表	[见下方](#coGetConversationList)|
-|sendMsg		|发送聊天消息	[见下方](#coSendMsg)|
+|API				|描述											|
+|--					|--												|
+|loginWithJWT		|基于jwt签名的账号登录方式[见下方](#uniImCoLoginWithJWT)				|
+|getConversationList|获取会话列表[见下方](#coGetConversationList)	|
+|sendMsg			|发送聊天消息[见下方](#coSendMsg)				|
+
+#### 账号登录loginWithJWT@uniImCoLoginWithJWT
+
+如果你的项目是基于非uniCloud开发的项目（比如：应用服务端的开发语言是php、java等，用户信息并没未存储在uniCloud云数据库中）需要通过跨平台签名认证的方式，向uniCloud账户体系新增用户（创建过则更新用户信息）并获取token实现登录。
+
+**接口形式**
+
+```js
+await uniImCo.loginWithJWT(signedData)
+```
+
+signedData 为通过<a target="_blank" href="https://jwt.io">jwt</a>签名后的数据
+
+> 各类计算机语言，jwt库下载地址：<a target="_blank" href="https://jwt.io/libraries">https://jwt.io/libraries</a>
+
+**signedData 包含的数据说明**
+
+| 字段		| 类型		|必填	| 描述							|
+| --		| --		| --	| --							|
+| exp		| timestamp	| 否	    | 签名数据的过期时间					|
+| userInfo	| Object	| 是	    | 用户信息[详情](#signedDataUserInfo)	|
+
+**userInfo 参数说明 @signedDataUserInfo**
+
+| 字段				| 类型	|必填| 描述											|
+| --				| --	| --| --											|
+| openid			| String| 是	| 原系统的用户id									|
+| nickname			| String| 否	| 用户昵称										|
+| avatar_file		| file	| 否	| 用户头像文件对象									|
+| gender			| int	| 否	| 用户性别：0 未知 1 男性 2 女性					|
+| mobile			| String| 否	| 手机号码										|
+| email				| String| 否	| 邮箱地址										|
+
+签名密钥配置路径： `/cloudfunctions/common/uni-config-center/uni-im/config.json` 
+
+**Nodejs环境，生成signedData示例代码：**
+```js
+const jwtSecret = "jwtSecretDemo"; //切勿泄露此密钥，且应当与uni-config-center中配置的一致
+const jwt = require("jsonwebtoken");
+const payload = {
+	"exp":Date.now() + 60 * 1000,//60秒后过期
+	"userInfo":{
+		"avatar_file":{
+			"extname": "",
+			"name": "",
+			"url":'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png'
+		},
+		"openid":"100001",
+		"nickname":"张三"
+	}
+}
+
+// 签名
+let token = jwt.sign(payload, jwtSecret);
+console.log(token);
+
+/*
+// 验证签名
+try{
+	let decoded = jwt.verify(token, wjtSecret);
+	console.log(decoded)
+}catch{
+	console.error("签名验证失败")
+}
+*/
+```
+
+
+**返回值**
+
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息			|
+|newToken						|object				|新token信息（uniCloud客户端监听到云对象返回newToken，</br>会自动将新token及过期时间存储在storage内。</br>当客户端调用云函数（云对象）的方法时，会自动带上token供服务端校验	|
+|&nbsp;&#124;-&nbsp;token		|string				|token			|
+|&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
+
+
+**示例代码：**
+
+以下为客户端的示例，演示了在客户端中登录之前的账户体系成功后，把signedData传给uni-im，调用uni-im的联登接口。
+
+```js
+// 1. 导入uniCloud客户端账户体系，用户信息状态管理模块
+import {
+	mutations as uniIdMutations
+} from '@/uni_modules/uni-id-pages/common/store.js';
+
+// 2. 导入uni-im的云对象
+const uniImCo = uniCloud.importObject("uni-im-co")
+
+// 3. 客户端向传统服务器的登录接口发起请求，验证登录信息无误后：将userInfo通过jwt签名与token一起返回
+uni.request({
+	data:{
+		username:"xxx",
+		password:"xxx"
+	},
+	url:'https://xxx.com/login.php',//你在传统服务端的登录地址（示例链接非真实地址）
+	success: res => {
+		const {token,signedData} = res.data
+		//4. 存储token实现登录
+		uni.setStorageSync('token',token)
+		
+		//5. 将签名后的signedData作为参数调用uni-im的登录接口
+		res = uniImCo.loginWithJWT(signedData)
+
+		//6. 更新uniId store内的当前用户信息（uni-im显示当前用户头像、昵称时会用到）
+		await uniIdMutations.updateUserInfo()
+
+		/*
+		// 注：uni-im会话列表页面，已内置步骤5、6；如果是登录后，需要立即打开会话页面的项目，直接将signedData作为token传参，可省略步骤5、6。如下：
+		uni.navigateTo({
+			url:'/uni_modules/uni-im/pages/index/index?token='+signedData,
+			complete: () => {
+				uni.hideLoading()
+			}
+		})
+		*/
+	}
+})
+```
+
+**注意：** 登录有效期默认为：2小时；当有效期小于1小时，账号活跃会自动续期。如果与你的系统登录配置不同请修改。配置路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，配置文档[详情查看](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#config)
+
+
 
 #### 获取会话列表getConversationList@coGetConversationList
 **参数说明**

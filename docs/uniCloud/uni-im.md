@@ -213,8 +213,15 @@ uni.navigateTo({
 ```
 
 - 服务端限制  
-打开`uni-im-co` 路径：`/uni_modules/uni-im/uniCloud/cloudfunctions/uni-im-co/index.obj.js`
-配置第一行 `admin_user_id`的值为管理员客服id。如果会话双方均不属于此域则无法通讯
+
+1. 添加`uni-im`配置文件，打开：`/uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/`；新建`uni-im`文件夹和`config.json`文件，示例如下：
+```json
+{
+	"admin_uid":false
+}
+```
+
+2. 配置`admin_uid`的值为管理员客服的user_id（支持多个以数组的形式指定），如果会话双方均不属于此域则无法通讯。不配置或为false则表示不限制。
 
 # 开发文档  
 ## 目录结构  
@@ -270,6 +277,14 @@ uni-im v1.0.0 暂时比较简单，云端有1个云对象`uni-im-co`，2个opend
 #### 账号登录loginWithJWT@uniImCoLoginWithJWT
 
 如果你的项目是基于非uniCloud开发的项目（比如：应用服务端的开发语言是php、java等，用户信息并没未存储在uniCloud云数据库中）需要通过跨平台签名认证的方式，向uniCloud账户体系新增用户（创建过则更新用户信息）并获取token实现登录。
+
+前置要求：添加`uni-im`配置文件，打开：`/uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/`；新建`uni-im`文件夹和`config.json`文件，示例如下：
+```json
+{
+	"jwtSecret":"jwtSecretDemo",
+}
+```
+这里的值`jwtSecretDemo`为示例，注意修改为自己的，使用一个较长的字符串即可。
 
 **接口形式**
 

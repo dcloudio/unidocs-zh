@@ -1365,9 +1365,10 @@ This can be fixed by moving v-for to a wrapping `<template>` tag:
 ### Listening to Events
 
 我们可以使用 `v-on` 指令 (通常缩写为 @ 符号，下文简称为：@事件) 来监听 DOM 事件，并在触发事件时执行一些 `JavaScript`。
-We can use the `v-on` directive, which we typically shorten to the @ symbol, to listen to DOM events and run some JavaScript when they're triggered.
-用法为 `v-on:click="methodName"` 或使用快捷方式 `@click="methodName"`
-The usage would be `v-on:click="methodName`" or with the shortcut, `@click="methodName"`
+
+用法为 `v-on:click="methodName"` 或使用快捷方式 `@click="methodName"` （uni-app里一般都使用@缩写方式）
+
+指令的值，字符串里直接写js。比如下面的`counter += 1`就是一段js。
 
 ```html
 	<template>
@@ -1391,8 +1392,7 @@ The usage would be `v-on:click="methodName`" or with the shortcut, `@click="meth
 ### 事件处理方法
 ### Method Event Handlers
 
-然而许多事件处理逻辑会更为复杂，所以直接把 `JavaScript` 代码写在@事件中是不可行的。因此@事件还可以接收一个需要调用的方法名称。
-The logic for many event handlers will be more complex though, so keeping your JavaScript in the value of the `v-on` attribute isn't feasible. That's why `v-on` can also accept the name of a method you'd like to call.
+然而许多事件处理逻辑会更为复杂，所以直接把 `JavaScript` 代码写在组件属性值里是不可行的。因此@事件还可以接收一个需要调用的方法名称。
 
 示例：
 Example:
@@ -1575,16 +1575,13 @@ v-on provides event modifiers:
 **使用 v-on 或 @ 有几个好处**
 **there are several benefits in using v-on or @:**
 
-1. 扫一眼 `HTML` 模板便能轻松定位在 `JavaScript` 代码里对应的方法。
-1. It's easier to locate the handler function implementations within your JS code by skimming the `HTML` template.
+1. 扫一眼 `template` 模板便能轻松定位在 `JavaScript` 代码里对应的方法。
 
 2. 因为你无须在 `JavaScript` 里手动绑定事件，你的 `ViewModel` 代码可以是非常纯粹的逻辑，和 `DOM` 完全解耦，更易于测试。
 2. Since you don't have to manually attach event listeners in JS, your `ViewModel` code can be pure logic and DOM-free. This makes it easier to test.
 
 3. 当一个 `ViewModel` 被销毁时，所有的事件处理器都会自动被删除。你无须担心如何清理它们。
 3. When a `ViewModel` is destroyed, all event listeners are automatically removed. You don't need to worry about cleaning it up yourself.
-
-
 
 
 ### 事件映射表
@@ -1632,6 +1629,7 @@ You can use the `v-model` directive to create two-way data bindings on form `inp
 > v-model 会忽略所有表单元素的 `value`、`checked`、`selected` attribute 的初始值而总是将 Vue 实例的数据作为数据来源。你应该通过 JavaScript 在组件的 data 选项中声明初始值。
 > v-model will ignore the initial `value`, `checked` or `selected` attributes found on any form elements. It will always treat the current active instance data as the source of truth. You should declare the initial value on the JavaScript side, inside the data option of your component.
 
+在下面的示例中，输入框通过`v-model`绑定了`message`，用户在输入框里输入内容时，这个内容会实施赋值给`message`。当然在代码里为`message`赋值也会实时同步到界面上input里。这就是双向绑定。
 
 ```html
 	<template>
@@ -1650,6 +1648,7 @@ You can use the `v-model` directive to create two-way data bindings on form `inp
 		}
 	</script>
 ```
+
 
 
 ### uni-app表单组件
@@ -1781,8 +1780,7 @@ In-template expressions are very convenient, but they are meant for simple opera
 ```
 
 
-我们想根据 author 是否已经有一些书来显示不同的消息
-And we want to display different messages depending on if `author` already has some books or not
+我们想根据 author 是否已经有一些书来显示不同的消息，可以使用模板内的表达式
 
 
 ```html
@@ -1799,9 +1797,7 @@ At this point, the template is no longer simple and declarative. You have to loo
 That's why for complex logic that includes reactive data, you should use a **computed property**.
 
 
-
-**例子**
-**Example:**
+**使用计算属性的例子**
 
 ```html
 	<template>

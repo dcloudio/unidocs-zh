@@ -48,7 +48,7 @@
   * [uni-id-pages](uniCloud/uni-id-pages.md)
   * [uni-id-common](uniCloud/uni-id-common.md)
   * [老版uni-id 3.x文档](uniCloud/uni-id.md)
-* [uni一键登录](uniCloud/univerify.md)
+* [uni手机号一键登录](uniCloud/univerify.md)
 * [发送短信](uniCloud/send-sms.md)
 * Redis扩展库
   * [简介](uniCloud/redis-introduction.md)
@@ -70,10 +70,10 @@
 * 重要开源库```{"collapsable": false}```
   * [uni-config-center 配置中心](uniCloud/uni-config-center.md)
   * [uni-starter](uniCloud/uni-starter.md)
-  * [uni-im](uniCloud/uni-im.md)
   * [uni-admin](uniCloud/admin.md)
   * [uni-upgrade-center App升级中心](uniCloud/upgrade-center.md)
   * [unipay 统一支付](uniCloud/unipay.md)
+  * [uni-im](uniCloud/uni-im.md)
   * [uSearch 云端一体搜索](https://ext.dcloud.net.cn/plugin?id=3851)
   * [uni-captcha 图形验证码](uniCloud/uni-captcha.md)
   * [uni-sec-check 内容安全](https://ext.dcloud.net.cn/plugin?id=5460)

@@ -19,45 +19,38 @@ Vue (读音 /vjuː/，类似于 `view`) 是一套用于构建用户界面的**�
 
 本文大部分内容来源于[vue3中文文档官网](https://v3.cn.vuejs.org/guide/introduction.html#vue-js-%E6%98%AF%E4%BB%80%E4%B9%88)，但结合 `uni-app` 做了部分调整，以更有利于开发者快速上手。感谢Vue团队！
 
-
-**vue3的优势：**
-
-- 响应式系统提升
-- 虚拟DOM重写
-- 更快，性能比Vue2快1.2~2倍(diff方法优化、静态提升、时间侦听器缓存、[ssr渲染](https://uniapp.dcloud.io/tutorial/ssr))
-- 更小，按需编译，体积比Vue2更小
-- 组合API，加强API设计一致性，实现逻辑模块化和重用
-- 加强TypeScript支持
-- 暴露了自定义渲染API
-- 提高自身可维护性
-
-
-## vue相比传统js的开发优势
+## vue的优势
 
 在传统开发中，用原生的 JavaScript DOM 操作函数对 DOM 进行频繁操作的时候，浏览器要不停的渲染新的 DOM 树，导致页面看起来非常卡顿。
 
 vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要请求所有数据和 DOM ，这样大大加快了访问速度和提升用户体验。
 
-
-
 **vue的优势：**
 
-- 轻量级渐进式框架
-- 视图、数据和结构的分离
-- 响应式双向数据绑定
-- 组件化
-- 虚拟DOM
-- 运行速度快，易于上手
-- 便于与第三方库或既有项目整合
+- 轻量级：几十K的体积
+- 界面与逻辑分离，与html接近的概念和写法
+- 响应式双向数据绑定，更新数据时无需再写代码更新界面，反之亦然。
+- 组件化，可方便协作。方便造轮子，也就自然有大量轮子可用
+- 虚拟DOM，比大多数手写操作dom的代码都更高效
+- 易于上手，设计直观、文档丰富
 
+**vue3相比vue2的优势：**
 
+- 响应式系统提升
+- 更快，性能比Vue2快1.2~2倍(diff方法优化、静态提升、时间侦听器缓存、[ssr渲染](https://uniapp.dcloud.io/tutorial/ssr))
+- 更小，按需编译，体积比Vue2更小
+- 组合式API，提供更灵活的写法，也易于吸引react开发者
+- 加强TypeScript支持
+
+## 白话uni-app
+
+如果你了解html、js，那么本章节将让你快速了解uni-app和它们的差异。
 
 ### 文件类型变化
 
 - 以前是.html文件，开发也是html，运行也是html。
-- 现在是.vue文件，开发是vue，经过编译后，运行时已经变成了js文件。
+- 现在每个页面是一个.vue文件，开发是vue，但经过编译后，运行时已经变成了js文件（如果是uts则可能编译成kotlin、swift）。
 - 现代前端开发，很少直接使用HTML，基本都是开发、编译、运行。所以 `uni-app` 有编译器、运行时的概念。
-
 
 ### 文件内代码架构的变化
 
@@ -80,7 +73,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 ```
 
 
-- 现在 `template` 是一级节点，用于写tag组件， `script` 和 `style` 是并列的一级节点，也就是有3个一级节点。这个叫[vue单文件组件规范sfc](https://cn.vuejs.org/v2/guide/single-file-components.html)。
+- 现在 `template` 是一级节点，用于写tag组件， `script` 和 `style` 是并列的一级节点，也就是有3个一级节点。这个叫[vue单文件组件规范sfc](vue3-components.md)。
 
 ```html
 	<template>  
@@ -110,6 +103,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 - 现在是es6的写法， `import` 引入外部的js模块(注意不是文件)或css；
 
 **js要require进来，变成了对象**。
+
 在hello uni-app的 `common` 目录有一个工具类 `util.js` ，可以在hello uni-app中搜索这个例子查看。hello uni-app示例代码可从 [github](https://github.com/dcloudio/hello-uniapp) 获取。
 
 
@@ -120,7 +114,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 	</script>
 ```
 
-而在这个 `util.js` 里，要把之前的 `function` 封装为对象的方法
+而在这个 `util.js` 里，要把之前的 `function` 封装为模块（module）的方法并导出（exports）。只有被导出的方法和属性才能被外部调用，不导出的属于模块内部函数和变量。这是es6的模块规范。
 
 ```js
 	function formatTime(time) {  
@@ -132,7 +126,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 ```
 
 
-当然还有一些高级的用法
+当然还有一些高级的用法，比如在导出时可以重命名
 
 ```js
 	// 直接使用js模块的属性。在hello uni-app有示例 
@@ -154,7 +148,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 ```
 
 
-**另外，vue支持组件导入，可以更方便的封装一个包括界面、js、样式的库**。[详见](/vue-components.md)
+**另外，vue支持组件导入，可以更方便的封装一个包括界面、js、样式的库**。[详见](vue3-components.md)
 
 
 ### 组件/标签的变化
@@ -170,6 +164,56 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 ### js的变化
 
+- 以前script里随便写js变量和function
+```html
+<script type="text/javascript">  
+	var a; 
+	function funa () {  
+		  
+	}
+</script> 
+```
+
+- 现在script里默认有export default，在里面写data、事件和method
+
+	* 写在 `export default {` 前面的变量，是页面内部的全局变量，可以在各种方法里使用。
+	* `export default {}` 里是一个大json，data、生命周期、method都需要用逗号分隔。
+	* data -> return 里，编写可以绑定在页面template模板里的变量，页面组件的text里绑定data数据使用{{}}，比如下面例子中的`textvalue`。而下面的globalvar就不能在模板里绑定使用。在HBuilderX中，敲vdata代码块，可以快捷生成data的代码结构。
+	* 页面的生命周期/事件，如下面的`onLoad`，和data平级。
+	* 模板里要调用的方法，都需要写在`methods`下面。每个方法也需要用逗号分隔。不需要再使用`function`声明，只要写在`methods`下的函数，都可以在template里调用。同样，HBuilderX里敲`vmethods`代码块，也可以生成相应结构。
+
+```html
+<template>  
+		<view>  
+			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->
+			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->
+		</view>  
+	</template> 
+<script>
+	var globalvar = 1
+	function globalfun(){}
+	export default {  
+		data() {  
+			return {  
+				textvalue:"123",  
+				buttontype:"primary"  
+			};  
+		},  
+		onLoad() {  
+			globalvar = 2
+			globalfun()
+			this.textvalue="456"//这里修改textvalue的值
+		},  
+		methods: {  
+			changetextvalue() {  
+				this.textvalue="789"//这里修改textvalue的值
+			}  
+		}  
+	}  
+</script>
+```
+
+在上述例子中，传统写法的定义的变量globalvar和函数globalfun，可以在`export default { }`里使用，但无法在模板里直接绑定和调用。模板里只能绑定data里的变量、调用methods里的方法。
 
 - 以前的 DOM 操作，如果你想改变某个 DOM 元素的显示内容，比如一个view的显示文字：给view设id，然后js里通过选择器获取 DOM 元素，进一步通过js进行赋值操作，修改 DOM 元素的属性或值。
 
@@ -226,9 +270,10 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 ```
 
 
+- 以前在是html的tag里用一个属性`onclick`来写点击事件
+- 现在是使用`@click`（其实是`v-on:click`的缩写，在uni-app里基本都使用缩写）调用methods里的方法。
 
-
-## 在 uni-app 中使用差异
+## 在 uni-app 中使用vue的差异
 
 `uni-app` 在发布到H5时支持所有vue的语法；发布到App和小程序时，由于平台限制，无法实现全部vue语法，但 `uni-app` 仍是对vue语法支持度最高的跨端框架。
 
@@ -241,21 +286,17 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 [uni-app 项目支持 vue 3.0介绍，及升级指南](https://ask.dcloud.net.cn/article/37834)
 
+`uni-app` 项目对 vue 3.0 的支持版本情况如下：
 
-`HBuilderX 3.2.5`新增在App平台支持 vue 3.0，至此 `uni-app` 项目对 vue 3.0 的支持情况如下：
-
-- H5/PC Web平台支持，编译器升级为`vite`。
-- 小程序平台：`HBuilderX 3.3.3+` 支持 `vite`。
-- App 平台：支持，编译器升级为`vite`，`HBuilderX 3.3.13` 起 `nvue`编译器升级为`vite`。
-
+- Web平台：支持。
+- 小程序平台：`HBuilderX 3.3.3+` 编译器改为 `vite`，之前版本的编译器为`webpack`。
+- App 平台：`uni-app 3.2.5+`支持。`HBuilderX 3.3.13` 起 `nvue`编译器升级为`vite`。
 
 **注意事项**
 
 - vue3 响应式基于 `Proxy` 实现，不支持`iOS9`和`ie11`。
 - 暂不支持新增的 `Teleport`,`Suspense` 组件。
 - 目前 `HBuilderX 3.2` 起已预置，之前的版本只能使用cli方式。
-
-
 
 
 ## 模板语法

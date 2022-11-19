@@ -45,7 +45,7 @@ There are two ways to declare uts
     > Equivalent to let in TypeScript, var in kotlin
 
 ```ts
-let str = "hello"; // 声明一个字符串变量
+let str: string = "hello"; // 声明一个字符串变量
 str = "hello world"; // 重新赋值
 ```
 
@@ -58,7 +58,7 @@ str = "hello world"; // 重新赋值
     > Equivalent to const in TypeScript, val in kotlin
 
 ```ts
-const str = "hello"; // 声明一个字符串变量
+const str: string = "hello"; // 声明一个字符串变量
 str = "hello world"; // 报错，不允许重新赋值
 ```
 
@@ -262,9 +262,6 @@ The following example generates the array coffees with 3 elements and its length
 
 ```ts
 const coffees = ["French Roast", "Colombian", "Kona"]
-const a=[3]
-console.log(a.length) // 1
-console.log(a[0]) // 3
 ```
 
 数组字面值同时也是数组对象。

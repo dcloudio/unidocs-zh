@@ -19,9 +19,12 @@ In the script node of the vue or nvue page, add the attribute `lang="ts"`
 ```html
 <script lang="ts">
 // 这里编写ts代码
-// write ts code here
+	let s:string = "123"
+	console.log(s)
 </script>
 ```
+
+如果需使用vue组件，则需要`import Vue from 'vue'`，具体[见下](#component)
 
 - cli创建的项目
 - cli created project
@@ -69,8 +72,7 @@ Personalized configuration is optional, without `tsconfig.json` it will automati
 - uni-app 的 vue3 模式：vue 文件及 nvue 文件均支持最新版 ts。
 - vue3 mode of uni-app: Both vue files and nvue files support the latest version of ts.
 
-### 注意事项
-### Precautions
+### ts组件@component
 
 声明 `lang="ts"` 后，该 vue/nvue 文件 import 进来的所有 vue 组件，均需要使用 ts 编写。
 After declaring `lang="ts"`, all vue components imported by this vue/nvue file need to be written in ts.

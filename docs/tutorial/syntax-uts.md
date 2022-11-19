@@ -30,7 +30,7 @@ uts 有两种声明方式
     > 相当于 TypeScript 中的 let，kotlin 中的 var
 
 ```ts
-let str = "hello"; // 声明一个字符串变量
+let str: string = "hello"; // 声明一个字符串变量
 str = "hello world"; // 重新赋值
 ```
 
@@ -41,7 +41,7 @@ str = "hello world"; // 重新赋值
     > 相当于 TypeScript 中的 const, kotlin 中的 val
 
 ```ts
-const str = "hello"; // 声明一个字符串变量
+const str: string = "hello"; // 声明一个字符串变量
 str = "hello world"; // 报错，不允许重新赋值
 ```
 
@@ -173,9 +173,6 @@ const status = age >= 18 ? "adult" : "minor";
 
 ```ts
 const coffees = ["French Roast", "Colombian", "Kona"]
-const a=[3]
-console.log(a.length) // 1
-console.log(a[0]) // 3
 ```
 
 数组字面值同时也是数组对象。

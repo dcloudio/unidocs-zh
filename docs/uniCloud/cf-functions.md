@@ -207,9 +207,11 @@ uniCloud服务器给客户端返回的数据格式一般是json，但json的格�
 
 为了与uni-app前端的API错误回调风格统一，uniCloud响应体规范定义的云端返回信息（尤其是报错时）应包含`errCode`和`errMsg`。
 
-除此之外响应体规范还包含`newToken`字段，用于token的自动续期（云对象接收含有newToken的响应后会自动更新storage内存储的`uni_id_token`及`uni_id_token_expired`，此行为新增于`HBuilderX 3.4.13`）。开发者一般无需关心此数据，uni-app客户端和云端uni-id之间会自动管理token及续期。
+#### HBuilderX 3.6.10及之后版本的错误规范
 
-`uniCloud响应体`示例如下：
+错误规范继承自[uni错误规范](/tutorial/err-spec.md)
+
+#### HBuilderX 3.6.10之前版本的错误规范
 
 ```json
 // 失败返回值
@@ -218,6 +220,26 @@ uniCloud服务器给客户端返回的数据格式一般是json，但json的格�
   "errMsg": '账号被禁用'
 }
 ```
+
+- errCode
+
+errCode在成功时应返回数字`0`,失败时应返回一个以插件id开头的“字符串”，每个单词以连字符（`-`）分割。做出这样的规定是为了防止不同插件之间出现重复错误码
+
+以`'uni-id-account-banned'`错误码为例，`uni-id`为插件id，`account-banned`为错误缩写。
+
+如果业务开发的代码并不发布插件市场，那么为了避免下载了一个市场的插件产生冲突，推荐使用不包含“-”的字符串来做errCode（插件市场的所有插件ID必须包含“-”）。
+
+后续uniCloud会提供自动根据errCode对errMsg进行国际化处理的功能，开发者仅需保证云函数返回值满足`uniCloud响应体规范`即可。
+
+- errMsg
+
+errMsg用于存放具体错误信息，包括展示给开发者、终端用户的错误信息
+
+#### 请求成功的响应
+
+除此之外响应体规范还包含`newToken`字段，用于token的自动续期（云对象接收含有newToken的响应后会自动更新storage内存储的`uni_id_token`及`uni_id_token_expired`，此行为新增于`HBuilderX 3.4.13`）。开发者一般无需关心此数据，uni-app客户端和云端uni-id之间会自动管理token及续期。
+
+`uniCloud响应体`示例如下：
 
 ```json
 // 成功返回值
@@ -236,24 +258,11 @@ HBuilderX内使用代码块`returnu`可以快速输入以下代码（`HBuilderX 
 
 ```js
 return {
+  errSubject: '', // HBuilderX 3.6.10新增
 	errCode: 0,
 	errMsg: ''
 }
 ```
-
-- errCode
-
-errCode在成功时应返回数字`0`,失败时应返回一个以插件id开头的“字符串”，每个单词以连字符（`-`）分割。做出这样的规定是为了防止不同插件之间出现重复错误码
-
-以`'uni-id-account-banned'`错误码为例，`uni-id`为插件id，`account-banned`为错误缩写。
-
-如果业务开发的代码并不发布插件市场，那么为了避免下载了一个市场的插件产生冲突，推荐使用不包含“-”的字符串来做errCode（插件市场的所有插件ID必须包含“-”）。
-
-后续uniCloud会提供自动根据errCode对errMsg进行国际化处理的功能，开发者仅需保证云函数返回值满足`uniCloud响应体规范`即可。
-
-- errMsg
-
-errMsg用于存放具体错误信息，包括展示给开发者、终端用户的错误信息
 
 ## uniCloud API列表
 

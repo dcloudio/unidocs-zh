@@ -25,47 +25,67 @@ js是无类型的，TypeScript 的 type 就是类型的意思，给js加上了�
 
 uts 中声明变量可以用 let 或 const，详见下。
 
-1. let
+#### 变量定义（let）
 
     声明一个可重新赋值的变量。语法 `let [变量名] : [类型] = 值;`。
 
     > 相当于 TypeScript 中的 let，kotlin 中的 var
 
 ```ts
-let str: string = "hello"; // 声明一个字符串变量
+let str :string = "hello"; // 声明一个字符串变量
 str = "hello world"; // 重新赋值
 ```
 
 类型除了 string 之外，更多类型[见下](#基本类型)
 
-2. const
+#### 常量定义（const）
 
     声明一个只读常量，只能为其赋值一次。语法 `const [变量名] : [类型] = 值;`。
 
     > 相当于 TypeScript 中的 const, kotlin 中的 val
 
 ```ts
-const str: string = "hello"; // 声明一个字符串变量
+const str :string = "hello"; // 声明一个字符串变量
 str = "hello world"; // 报错，不允许重新赋值
 ```
 
 注意事项：
 
-1. 当前 uts 并未限制使用 var 来声明变量，但当使用 var 来声明变量时需要注意不同平台差异
--  编译至 JavaScript 平台时，等同于 JavaScript 平台的 var （存在变量提升现象）
--  编译至 Kotlin 平台时，等同于 Kotlin 平台的 var（允许重新赋值）
+- 当前 uts 并未限制使用 var 来声明变量，但当使用 var 来声明变量时需要注意不同平台差异
+	* 编译至 JavaScript 平台时，等同于 JavaScript 平台的 var （存在变量提升现象）
+	* 编译至 Kotlin 平台时，等同于 Kotlin 平台的 var（允许重新赋值）
+- 类型定义的冒号，左右可以有一个空格，也可以没有空格。`let str:string` 和 `let str : string` 和 `let str :string` 和 `let str: string` 都是合法的。
 
-### 变量
+#### 变量命名规则
 
 在 uts 中，使用变量名需要遵守一定的规则。
 
 -   变量名称可以包含数字和字母。
-
 -   除了下划线 \_ 外，不能包含其他特殊字符，包括空格。
-
 -   变量名不能以数字开头。
 
 > 注意：与 TypeScript 不同的是，uts 不允许以 $ 开头命名变量
+
+#### 类型自动推导
+
+uts具备类型自动推导。在定义变量时如果直接赋值，而不使用冒号定义类型，也可以合法运行。
+
+如下2种写法都是合法的，两个变量都是string类型：
+
+```ts
+let s1 :string = "hello"; 
+let s2 = "hello"; 
+```
+
+#### any类型
+
+如果定义变量时没有声明类型，也没有赋值。那么这个变量会被视为any类型。虽然可以使用，但uts中非常不建议这样使用。
+
+```ts
+let s;
+s = "123"
+console.log(s) // hello world
+```
 
 ### 操作符
 
@@ -145,27 +165,53 @@ console.log("my " + "string"); // console logs the string "my string".
 const status = age >= 18 ? "adult" : "minor";
 ```
 
+### 代码语句的分割
+
+uts的多个代码语句，可以以回车或分号分割。行尾的分号可以省略。如果写在一行，应以分号分割。
+
+如下的代码都是合法的：
+
+```ts
+let a:number = 1 //行尾可以不加分号
+let b:number = 2;
+let c:number = 3 ; let d:number = 4 // 同行需要用分号分割
+```
+
 ## 基本类型
 
 ### 布尔值（Boolean）
 
-有 2 个值分别是：true 和 false。
+有 2 个值分别是：`true` 和 `false`。
 
 ### 数字（Number）
 
-整数或浮点数，例如： 42 或者 3.14159。
+整数或浮点数，例如： `42` 或者 `3.14159` 或者 `-1` 。
 
 ### 字符串（String）
 
-字符串是一串表示文本值的字符序列，例如："hello" 。
+字符串是一串表示文本值的字符序列，例如：`"hello world"`。
+
+### 日期（Date）
+
+日期对象表示日期，包括年月日时分秒等各种日期。详[见下](#Date)
+
+<!-- ### json
+
+json对象，详[见下](#json) -->
 
 ### null
 
 一个表明 null 值的特殊关键字。
 
+### any类型
+
+未定义类型，即任意类型。一般不推荐使用。
+
+除了上述基本类型，uts还支持数组（array）、json、map、正则、error等类型，以及复杂类型class，见后续介绍。
+
 ## 字面量
 
-字面量是由语法表达式定义的常量；或，通过由一定字词组成的语词表达式定义的常量
+字面量是由语法表达式定义的常量；或，通过由一定字词组成的语词表达式定义的常量。
 
 在 uts 中，你可以使用各种字面量。这些字面量是按字面意思给出的固定的值，而不是变量
 
@@ -516,15 +562,17 @@ try {
 
 ## 函数（function）
 
-函数是 uts 中的基本组件之一。 一个函数是 uts 过程 — 一组执行任务或计算值的语句。要使用一个函数，你必须将其定义在你希望调用它的作用域内。
+函数是编程语言常见的功能，它可以封装一批代码，对外接收参数，然后返回值。被封装的逻辑，可以被不同的其他代码调用，达到共同复用逻辑的目的。
 
-一个 uts 函数用 function 关键字定义，后面跟着函数名和圆括号。
+函数用 function 关键字定义，后面跟着函数名和圆括号。
+
+同时注意，定义函数涉及作用域。
 
 ### 定义函数
 
-#### 函数声明
+#### 普通函数声明
 
-一个函数定义（也称为函数声明，或函数语句）由一系列的 function 关键字组成，依次为：
+一个函数定义（也称为函数声明，或函数语句）由一系列在 function 关键字后的内容组成，依次为：
 
 -   函数的名称。
 -   函数参数列表，包围在括号中并由逗号分隔。
@@ -533,45 +581,79 @@ try {
 
 > 注意：函数必须明确标明返回值类型
 
-例如，以下的代码定义了一个简单的 add 函数：
+例如，以下的代码定义了一个简单的函数。函数名为 add，有2个参数 x 和 y，都是 string类型，函数的返回值类型也是 string。
+
+函数的内容是将入参 x 和 y 相加，赋值给变量z，然后通过 return关键字返回z。
 
 ```ts
-function add(x: string, y: string): string {
-    return x + y;
+function add(x :string, y :string) :string {
+    let z : string = x + " " + y
+	return z;
 }
 ```
 
-#### 函数表达式
+#### 无返回值的函数定义（void）
 
-虽然上面的函数声明在语法上是一个语句，但函数也可以由函数表达式创建。这样的函数可以是匿名的；它不必有一个名称。例如，函数 add 也可这样来定义：
+如果这个函数不需要返回值，需要使用void关键字，同时函数内部末尾不需要return来返回内容。
+
+```ts
+function add(x :string, y :string) :void {
+    let z :string = x + " " + y
+	console.log(z)
+	// 不需要return
+}
+```
+
+#### 函数表达式和匿名函数定义
+
+虽然上面的函数声明在语法上是一个语句，但函数也可以由函数表达式创建。这样的函数可以是匿名的，它不必有一个名称。例如，函数 add 也可这样来定义：
 
 ```ts
 const add = function (x: string, y: string): string {
-    return x + y;
+    return x + " " + y;
 };
 ```
 
-> 注意：函数表达式不支持使用函数名，比如`const add = function add(){}`是不允许的。
+注意：
+- 通过表达式定义的函数必须使用return关键字返回内容。
+- 函数表达式不支持使用函数名，比如`const add = function add(){}`是不允许的。
 
 ### 调用函数
 
-定义一个函数并不会自动的执行它。定义了函数仅仅是赋予函数以名称并明确函数被调用时该做些什么。调用函数才会以给定的参数真正执行这些动作。例如，一旦你定义了函数 add，你可以如下这样调用它：
+定义一个函数并不会自动的执行它。定义了函数仅仅是赋予函数以名称并明确函数被调用时该做些什么。调用函数才会以给定的参数真正执行这些动作。
+
+定义了函数 add 后，你可以如下这样调用它：
 
 ```ts
-add("hello", "world");
+function add(x :string, y :string) :string {
+    let z :string = x + " " + y
+	return z;
+}
+add("hello", "world"); // 调用add函数
 ```
 
-上述语句通过提供参数 "hello" 和 "world" 来调用函数。函数执行完它的语句会返回值 "hello world"。
+上述语句通过提供参数 "hello" 和 "world" 来调用函数。
+
+虽然调用了add函数，但并没有获取到返回值。如需要获取返回值，需要再赋值：
+```ts
+function add(x :string, y :string) :string {
+	let z :string = x + " " + y
+	return z;
+}
+let s :string = add("hello", "world");
+console.log(s) // hello world
+```
 
 ### 函数作用域
 
 在函数内定义的变量不能在函数之外的任何地方访问，因为变量仅仅在该函数的域的内部有定义。相对应的，一个函数可以访问定义在其范围内的任何变量和函数。
 
 ```ts
-const hello = "hello";
-const world = "world";
+const hello :string = "hello";
+const world :string = "world";
 
 function add(): string {
+	let s1 :string = "123";
     return hello + world; // 可以访问到 hello 和 world
 }
 ```
@@ -623,7 +705,7 @@ outside()(10); // 返回值为 20 而不是 10
 
 ### 闭包
 
-闭包是 uts 中最强大的特性之一。uts 允许函数嵌套，并且内部函数可以访问定义在外部函数中的所有变量和函数，以及外部函数能访问的所有变量和函数。
+uts 允许函数嵌套，并且内部函数可以访问定义在外部函数中的所有变量和函数，以及外部函数能访问的所有变量和函数。
 
 但是，外部函数却不能够访问定义在内部函数中的变量和函数。这给内部函数的变量提供了一定的安全性。
 

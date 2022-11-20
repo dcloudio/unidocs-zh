@@ -21,7 +21,9 @@ uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 ## 基本语法
 ### 声明
 
-uts 有两种声明方式
+js是无类型的，TypeScript 的 type 就是类型的意思，给js加上了类型。它的类型定义方式是在变量名后面通过加冒号和类型来进行定义。
+
+uts 中声明变量可以用 let 或 const，详见下。
 
 1. let
 
@@ -902,9 +904,11 @@ ClassWithStaticMethod.staticMethod(); // 不实例化，直接调用class的方�
 
 ### 继承（extends）@extends
 
-uts 允许使用继承来扩展现有的类。扩展的派生类继承了父类的属性方法，但又可以添加自己独有的属性方法，以及复写父类定义的属性方法。
+uts 允许使用继承来扩展现有的类。扩展的子类继承了父类的属性方法，但又可以添加自己独有的属性方法，以及复写父类定义的属性方法。
 
-被继承的类称为父类（如果是顶级类也称为超类），新扩展的类称为派生类（也称为子类）。
+被继承的类称为父类（也称为超类、基类），新扩展的类称为子类（也称为派生类）。
+
+比如定义了Person类存储人的基本信息，还可以定义一个Developer子类继承自Person类，在子类里追加Developer的独有信息。
 
 -   语法：
 
@@ -914,24 +918,24 @@ class ChildClass extends ParentClass { ... }
 
 -   描述：
 
-extends 关键字用来创建一个类的派生类。
+extends 关键字用来创建一个类的子类。
 
 -   示例：
 
 ```ts
 // 定义父类
 class Person {
-		name:string = "";
-		constructor(newname:string) {
-			this.name = newname;
-		}
+	name:string = "";
+	constructor(newname:string) {
+		this.name = newname;
 	}
-// 定义派生类
+}
+// 定义子类
 class Developer extends Person{
 	likeLanguage:string = "ts"
 }
 
-let d = new Developer("tom"); // 实例化。由于派生类没有声明和复写自己的构造函数，所以默认继承了父类的构造函数
+let d = new Developer("tom"); // 实例化。由于子类没有声明和复写自己的构造函数，所以默认继承了父类的构造函数
 console.log(d.name); // tom
 console.log(d.likeLanguage); // ts
 ```
@@ -941,7 +945,9 @@ console.log(d.likeLanguage); // ts
 
 #### 覆盖方法（override）
 
-uts 对于可覆盖的成员以及覆盖后的成员需要显式修饰符：
+覆盖，也称为复写、重写。在继承中，用于在子类中改写父类定义的方法或属性。
+
+uts 对于可覆盖的成员以及覆盖后的成员需要显式修饰符override。
 
 ```ts
 class Polygon {
@@ -961,7 +967,7 @@ Square.name 函数上必须加上 override 修饰符。如果没写，编译器�
 
 #### 覆盖属性
 
-属性与方法的覆盖机制相同。在超类中声明然后在派生类中重新声明的属性必须以 override 开头，并且它们必须具有兼容的类型。
+属性与方法的覆盖机制相同。父类中已声明的同名属性，在子类中重新声明必须以 override 开头，并且它们必须具有兼容的类型（都是字符串、或数字、布尔值等）。
 
 ```ts
 class Shape {
@@ -973,9 +979,9 @@ class Rectangle extends Shape {
 }
 ```
 
-#### 调用超类实现
+#### 调用父类实现
 
-派生类中的代码可以使用 super 关键字调用其超类的函数实现：
+子类中的代码可以使用 super 关键字调用其父类的方法。不能跨级调用父类的父类（爷爷类）的方法。
 
 ```ts
 class Rectangle {
@@ -1005,16 +1011,16 @@ class FilledRectangle extends Rectangle {
 当成员被标记成 private 时，它就不能在声明它的类的外部访问。比如：
 
 ```ts
-class Cat {
+class Person {
     private name: string = "Cat";
 }
 
-new Cat().name; // 错误: 'name' 是私有的.
+new Person().name; // 错误: 'name' 是私有的.
 ```
 
 #### protected
 
-protected 修饰符与 private 修饰符的行为很相似，但有一点不同，protected 成员在派生类中仍然可以访问。比如：
+protected 修饰符与 private 修饰符的行为很相似，但有一点不同，protected 成员在继承的派生类中仍然可以访问。比如：
 
 ```ts
 class Person {
@@ -1097,7 +1103,7 @@ const test = new Test()
 test.test()
 ```
 
-## 内置对象
+## 内置对象和API
 
 uts 有一批内置对象。不管将 uts 编译为 js/kotlin/swfit，这些内置对象都可以跨平台使用。
 

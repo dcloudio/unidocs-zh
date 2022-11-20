@@ -496,6 +496,22 @@ import * as UTSHello from "../../../uni_modules/uts-osapi";
 UTSHello.getBatteryCapacity()
 ```
 
+**特别注意**
+
+需要特别注意的是，import UTS插件时，只能到插件的根目录，不能直接引入到最终的文件
+
+```
+// 正确的写法
+import * as UTSHello from "../../../uni_modules/uts-osapi";
+
+```
+```
+// 错误的写法
+import * as UTSHello from "../../../uni_modules/uts-osapi/index.uts";
+
+```
+
+
 
 **显性引用**
 **Explicit references**
@@ -514,6 +530,8 @@ import {
 // then use the imported method
 getBatteryCapacity()
 ```
+
+
 
 关于电量这个插件，插件市场已经提供好了现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
 Regarding the plug-in of electricity, the plug-in market has already provided ready-made plug-ins. In addition to Android, it also supports web and MiniApp, which can be downloaded and experienced. [See details](https://ext.dcloud.net.cn/plugin?id=9295)

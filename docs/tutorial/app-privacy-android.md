@@ -66,7 +66,7 @@
   "disagreeMode":{
     "support": false,
     "loadNativePlugins": false,
-    "visitorEntry": true
+    "visitorEntry": true,
     "showAlways": true 
   },
   "styles": {

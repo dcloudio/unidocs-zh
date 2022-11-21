@@ -284,7 +284,7 @@ uni-im v1.0.0 暂时比较简单，云端有1个云对象`uni-im-co`，2个opend
 	"jwtSecret":"jwtSecretDemo",
 }
 ```
-这里的值`jwtSecretDemo`为示例，注意修改为自己的，使用一个较长的字符串即可。
+这里的值`jwtSecretDemo`为示例，注意修改为自己的，使用一个较长的字符串即可（越长安全性越高，建议大于32位）。
 
 **接口形式**
 

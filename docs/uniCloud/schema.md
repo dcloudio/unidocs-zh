@@ -2079,9 +2079,7 @@ action is a companion function of `clientDB`. Its function is to execute a `uni-
 Some complex services require that an action cloud function must be executed at the same time to allow the front-end to modify specific data.
 
 以user表为例，假使用户在修改自己的name时，必须要触发一个名为changenamelog的action云函数，在该云函数里会记录一条留痕日志，如果没有记录日志则不允许修改name。
-Taking the user table as an example, if a user modifies his name, he must trigger an action cloud function named changenamelog, and a trace log will be recorded in the cloud function. If no log is recorded, the name is not allowed to be modified.
-那么在`DB Schema`里要配置`action == 'changenamelog'`
-Then configure `action == 'changenamelog'` in `DB Schema`
+那么在`DB Schema`里要配置`'changenamelog' in action`
 
 ```json
 // user表的schema
@@ -2103,7 +2101,7 @@ Then configure `action == 'changenamelog'` in `DB Schema`
 		"title": "名称",
 		"permission": {
 		  "read": true, 
-		  "write": "(doc._id == auth.uid) && (action == 'changenamelog')" // 允许登录的用户修改自己的name字段，但必须同时触发执行action云函数changenamelog
+		  "write": "(doc._id == auth.uid) && ('changenamelog' in action)" // 允许登录的用户修改自己的name字段，但必须同时触发执行action云函数changenamelog
 		}
 	},
     "pwd": {

@@ -83,6 +83,5 @@ Used to listen to the application language switching
   * 西班牙语 es
   * es
 * 在 [manifest.json](/collocation/manifest) -> locale 可以配置应用的默认语言。
-* You can configure the default language of the application in [manifest.json](/collocation/manifest) -> locale.
 * 仅 3.1.5 - 3.2.4 版本会自动使用 vue-i18n 内配置的语言。
-* Only versions 3.1.5-3.2.4 will automatically apply the language configured in vue-i18n.
+* 在小程序平台仅影响用户业务层（vue-i18n）的语言配置，不能影响小程序原生组件和接口的语言。

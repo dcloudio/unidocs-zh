@@ -1,3 +1,13 @@
+#### 3.6.5.20221121
+* 【uni-app】
+  + 修复 Vue2 项目中 TypeScript 使用 onLoad 等生命周期报错的Bug [详情](https://ask.dcloud.net.cn/question/157035)
+  + App-Android平台 修复 uni.getStorageSync 在某些情况下可能报`SyntaxError`错误的Bug [详情](https://ask.dcloud.net.cn/question/154284)
+  + 百度小程序平台 修复 onInit 生命周期不触发的Bug [详情](https://ask.dcloud.net.cn/question/154352)
+  + 支付宝小程序平台 修复 uni.showToast 不支持 duration 参数的Bug [详情](https://ask.dcloud.net.cn/question/147279)
+  + 支付宝小程序平台 修复 uni.showLoading 提示 mask 参数无效的Bug [详情](https://ask.dcloud.net.cn/question/156944)
+* 【uniCloud】
+  + 【重要】阿里云商用版正式上线 [详情](https://ask.dcloud.net.cn/article/40144)
+
 #### 3.6.4.20220922
 * 【uni-app】
   + 修复 uni-app App调试插件 运行空白的Bug

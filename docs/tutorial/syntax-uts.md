@@ -177,7 +177,7 @@ let b:number = 2;
 let c:number = 3 ; let d:number = 4 // 同行需要用分号分割
 ```
 
-## 基本类型
+## 数据类型
 
 ### 布尔值（Boolean）
 
@@ -203,11 +203,13 @@ json对象，详[见下](#json) -->
 
 一个表明 null 值的特殊关键字。
 
+### Object类型
+
+对象（object）是指内存中的可以被标识符引用的一块区域，是一种引用类型。包括Array，Date，Map，Set，JSON等，uts 有一个内置对象的标准库。详[见下](#内置对象和api)。
+
 ### any类型
 
 未定义类型，即任意类型。一般不推荐使用。
-
-除了上述基本类型，uts还支持数组（array）、json、map、正则、error等类型，以及复杂类型class，见后续介绍。
 
 ## 字面量
 
@@ -1732,7 +1734,7 @@ setTimeout(() => {
 try {
   throw new Error('Whoops!')
 } catch (e) {
-  console.error(e.name + ': ' + e.message)
+  console.error(e.message)
 }
 ```
 

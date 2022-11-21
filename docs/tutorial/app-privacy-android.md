@@ -67,6 +67,7 @@
     "support": false,
     "loadNativePlugins": false,
     "visitorEntry": true
+    "showAlways": true 
   },
   "styles": {
     "backgroundColor": "#00FF00",
@@ -106,8 +107,8 @@
   用户不同意隐私协议的响应配置 
   + support 用户拒绝隐私协议后，是否直接进入游客模式，默认关闭 
   + loadNativePlugins 游客模式下，是否加载原生插件
-  + visitorEntry HX 3.6.7 版本后支持，默认false,当设置为true，隐私协议弹窗 会出现 游客模式 按钮
-
+  + visitorEntry HBuilderX 3.6.7 版本后支持，默认false,当设置为true，隐私协议弹窗 会出现 游客模式 按钮
+  + showAlways HBuilderX 3.6.10 版本后支持，默认true 标记用户拒绝协议后，下次启动是否继续弹出
 - second  
   配置二次确认提示框显示内容，message属性值不为空时弹出二次确认提示框  
   + title 二次确认提示框上的标题  

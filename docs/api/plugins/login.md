@@ -122,6 +122,8 @@ uni.login({
 
 ### uni.getUserInfo(OBJECT)
 
+> 微信小程序端用户头像昵称获取规则已调整，参考 [用户信息接口调整说明](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801)、[小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)
+
 获取用户信息。
 
 **平台差异说明**
@@ -154,7 +156,7 @@ uni.login({
 |zh_TW|繁体中文|
 |en|英文|
 
-**注意：**在小程序 withCredentials 为 true 时或是在 App 调用 uni.getUserInfo，要求此前有调用过 uni.login 且登录态尚未过期。微信基础库2.10.4版本对用户信息相关接口进行了调整，使用 uni.getUserInfo 获取得到的 userInfo 为匿名数据，建议使用 uni.getUserProfile 获取用户信息。
+**注意：** 在小程序 withCredentials 为 true 时或是在 App 调用 uni.getUserInfo，要求此前有调用过 uni.login 且登录态尚未过期。微信基础库2.10.4版本对用户信息相关接口进行了调整，使用 uni.getUserInfo 获取得到的 userInfo 为匿名数据，建议使用 uni.getUserProfile 获取用户信息。
 
 **success 返回参数说明**
 
@@ -221,6 +223,8 @@ uni.login({
 
 ### uni.getUserProfile(OBJECT)
 
+> 微信小程序端基础库2.27.1及以上版本，**[wx.getUserProfile 接口](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html)被收回**，详见[《小程序用户头像昵称获取规则调整公告》](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)。
+
 获取用户信息。每次请求都会弹出授权窗口，用户同意后返回 userInfo。
 
 **平台差异说明**
@@ -231,7 +235,8 @@ uni.login({
 
 **注意：** 
 
-该API仅支持微信小程序端，微信小程序调整了相关接口（详见[《小程序登录、用户信息相关接口调整说明》](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)）。每次触发 uni.getUserProfile 均会弹出授权窗口，用户授权后可成功获取用户信息。该API暂不支持在事件中使用异步操作，否则会触发错误：{errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}
+- 如业务需获取用户头像昵称，可以使用[「头像昵称填写能力」](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/userProfile.html)（基础库 2.21.2 版本开始支持，覆盖iOS与安卓微信 8.0.16 以上版本）。
+- 该API仅支持微信小程序端（基础库2.10.4-2.27.0版本），微信小程序调整了相关接口（详见[《小程序登录、用户信息相关接口调整说明》](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)）。每次触发 uni.getUserProfile 均会弹出授权窗口，用户授权后可成功获取用户信息。该API暂不支持在事件中使用异步操作，否则会触发错误：{errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}
 
 抖音从基础库 2.30.0 开始支持本方法，低版本需做兼容处理。[详见](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-profile/)
 
@@ -253,7 +258,7 @@ uni.login({
 |zh_TW|繁体中文|
 |en|英文|
 
-**注意：**可以使用 `if(uni.getUserProfile)` 判断uni.getUserProfile是否可用。
+**注意：** 可以使用 `if(uni.getUserProfile)` 判断uni.getUserProfile是否可用。
 
 **success 返回参数说明**
 

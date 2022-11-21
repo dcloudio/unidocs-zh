@@ -1110,7 +1110,7 @@ Corresponds to the scene field of the `opendb-verify-codes` table SMS, email ver
 |login-by-email		|邮箱验证码登录			|
 |login-by-email |Email verification code login |
 |reset-pwd-by-email	|邮箱验证码重置密码		|
-|reset-pwd-by-email |Email verification code reset password |
+|set-pwd-by-sms	|手机验证码设置登录密码		|
 
 
 ### 图形验证码使用场景@captcha-scene
@@ -1136,7 +1136,7 @@ Corresponds to the scene field of the record related to the graphic verification
 |send-email-code	|发送邮箱验证码				|
 |send-email-code |Send Email Verification Code |
 |bind-mobile-by-sms	|短信验证码绑定手机号		|
-|bind-mobile-by-sms |SMS verification code binding mobile phone number |
+|set-pwd-by-sms	|手机验证码设置登录密码		|
 
 ## uniIdRouter自动路由@uni-id-router
 ## uniIdRouter auto-route @uni-id-router

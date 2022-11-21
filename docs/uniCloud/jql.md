@@ -2641,6 +2641,7 @@ geoNear可用于查询位置在给定点一定距离内的数据库记录。此�
 **参数**
 
 |属性								|类型								|默认值	|必填	|说明																																														|
+| ----            	| ------				    | ----	|----	|----	|
 |near								|GeoPoint						|				|是		|GeoJSON Point，用于判断距离的点																																|
 |spherical					|true								|				|是		|必填，值为 true																																								|
 |maxDistance				|number							|				|否		|距离最大值																																											|

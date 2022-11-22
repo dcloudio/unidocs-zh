@@ -47,6 +47,7 @@ List of Client APIs
 |uniCloud.onRefreshToken() |Listen to the token update event [Details](#on-refresh-token) |
 |uniCloud.offRefreshToken()		|移除监听token更新事件 [详情](#off-refresh-token)								|
 |uniCloud.initSecureNetworkByWeixin()		|在微信小程序安全网络请求发送之前与云函数握手 [详情](#init-secure-network-by-weixin)								|
+|uniCloud.getFileInfo()		|阿里云迁移服务空间到商用版时，使用公测版云存储链接获取商用版云存储链接 [详情](storage.md#get-file-info)								|
 
 ### 获取当前用户信息getCurrentUserInfo@client-getcurrentuserinfo
 ### Get current user information getCurrentUserInfo@client-getcurrentuserinfo

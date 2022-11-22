@@ -207,6 +207,46 @@ uniCloud.getTempFileURL({
 });
 ```
 
+### getFileInfo(Object object)@get-file-info
+
+阿里云迁移服务空间后，旧云存储url需要通过此接口获取新服务空间的cdn链接
+
+**平台兼容性**
+
+|阿里云																										|腾讯云	|
+|----																											|----		|
+|HBuilderX 3.6.10+（alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+
+#### 请求参数
+
+|字段		|类型						|必填	|默认值	|说明								|平台差异说明	|
+|:-:		|:-:						|:-:	|:-:	|:-:								|:-:			|
+|fileList	|Array&lt;String&gt;|是		|-		|要获取下载链接的文件 ID 组成的数组	|-	|
+
+**请求参数中的fileList**
+
+|字段	|类型	|必填	|说明					|
+|:-:	|:-:	|:-:	|:-:					|
+|fileID	|String	|是		|旧云存储url			|
+
+#### 响应参数
+
+|字段		|类型					|说明							|
+|:-:		|:-:					|:-:							|
+|fileList	|Array&lt;Object&gt;	|存储下载链接的数组				|
+
+**响应参数中的fileList**
+
+|字段				|类型		|说明															|
+|:-:				|:-:		|:-:															|
+|fileId			|string	|文件 ID（从文件url中解析出的id）	|
+|gmtCreate	|number	|文件上传时间（精确到秒的时间戳）	|
+|gmtModified|number	|文件更改时间（精确到秒的时间戳）	|
+|name				|string	|文件原始名称											|
+|size				|number	|文件大小（Byte）									|
+|type				|string	|文件类型													|
+|url				|string	|文件cdn链接											|
+
 ### chooseAndUploadFile(Object object)@chooseanduploadfile
 
 > HBuilderX 3.1.0起支持
@@ -622,9 +662,52 @@ let result = await uniCloud.downloadFile({
 });
 ```
 
+
+### getFileInfo(Object object)@get-file-info
+
+阿里云迁移服务空间后，旧云存储url需要通过此接口获取新服务空间的cdn链接
+
+**平台兼容性**
+
+|阿里云																										|腾讯云	|
+|----																											|----		|
+|HBuilderX 3.6.10+（alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+
+#### 请求参数
+
+|字段		|类型						|必填	|默认值	|说明								|平台差异说明	|
+|:-:		|:-:						|:-:	|:-:	|:-:								|:-:			|
+|fileList	|Array&lt;String&gt;|是		|-		|要获取下载链接的文件 ID 组成的数组	|-	|
+
+**请求参数中的fileList**
+
+|字段	|类型	|必填	|说明					|
+|:-:	|:-:	|:-:	|:-:					|
+|fileID	|String	|是		|旧云存储url			|
+
+#### 响应参数
+
+|字段		|类型					|说明							|
+|:-:		|:-:					|:-:							|
+|fileList	|Array&lt;Object&gt;	|存储下载链接的数组				|
+
+**响应参数中的fileList**
+
+|字段				|类型		|说明															|
+|:-:				|:-:		|:-:															|
+|fileId			|string	|文件 ID（从文件url中解析出的id）	|
+|gmtCreate	|number	|文件上传时间（精确到秒的时间戳）	|
+|gmtModified|number	|文件更改时间（精确到秒的时间戳）	|
+|name				|string	|文件原始名称											|
+|size				|number	|文件大小（Byte）									|
+|type				|string	|文件类型													|
+|url				|string	|文件cdn链接											|
+
 ## 数据处理
 
 **阿里云**
+
+> 阿里云商用版目前仍可使用此功能，但是未来可能会进行计费
 
 使用阿里云作为服务商时，云存储支持直接使用**restful api**对资源进行处理，下表列出支持的操作类型。
 

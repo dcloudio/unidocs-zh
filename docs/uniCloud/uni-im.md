@@ -54,11 +54,7 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 ## 部署到自己的项目
 1. 打开`uni-im`插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-im](https://ext.dcloud.net.cn/plugin?name=uni-im)
 2. 点击`使用HBuilderX导入插件`，选择你的项目，点击确定（同时会自动导入依赖的uni_modules`uni-id-pages`）按提示操作自动配置`pages.json`
-3. 打开项目根目录的App.vue文件，进行如下操作：
-- 导入uniIm的Utils
-- 初始化uniIm
-- 在globalData中添加预置数据
-- 在onShow和onHide生命周期更改app是否显示在前台的值
+3. 打开项目根目录的App.vue文件，初始化uni-id-pages和uniIm模块
 示例如下：
 
 ```html
@@ -68,17 +64,11 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 	//2. 导入uniIm的Utils工具类
 	import uniImUtils from '@/uni_modules/uni-im/common/utils.js';
 	export default {
-		globalData: {
-			//3. 初始化uniIm全局变量
-			uniIm: {
-				msgManagers: {}
-			}
-		},
 		onLaunch: async function() {
 			console.log('App Launch');
-			//4. 初始化uni身份信息管理模块
+			//3. 初始化uni身份信息管理模块
 			uniIdPagesInit();
-			//5. 初始化uniIm
+			//4. 初始化uniIm
 			uniImUtils.init();
 		},
 		onShow: function() {

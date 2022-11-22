@@ -111,7 +111,7 @@ onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableL
 
 + 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
 + 2 本章节设计的配置，均需自定义基座后才能生效
-+ 3 截止到HX 3.6.8，还不支持R文件的自动生成，因此本章节中涉及R文件生成部分暂时还不支持。这是个遗留问题，稍后版本会支持。
++ 3 R文件的自动生成，已经在HBuilder X 3.6.9 版本支持，请使用最新版本开发
 
 ### 3.1 配置AndroidManifest.xml
 
@@ -778,7 +778,7 @@ uts中，需要区分全局方法、成员方法
 |语法|kotlin|uts|
 |---|-------|---|
 |继承类|:|extends|
-|实现接口|:|extends|
+|实现type接口|:|extends|
 
 
 ```kotlin
@@ -888,8 +888,9 @@ getUniActivity()!.startActivity(intent);
 
 某些场景下开发者需要获得 指定double数据类型的数据
 
-前端常用的写法：
+开发者下意识的写法可能是：
 ```
+// 这样是错误的
 let a:Int =3
 let b:Int =4
 let c:Double  = a/b
@@ -898,6 +899,7 @@ let c:Double  = a/b
 但是Android原生环境中，数据类型的精度是向下兼容的，如果想要获得一个double类型，必须要有一个double类型参与运算：
 
 ```
+// 这样才是正确的
 let a:Int =3
 let b:Int =4
 let c:Double  = a * 1.0 / b

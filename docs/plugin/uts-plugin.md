@@ -124,19 +124,19 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	│	├─res                     //Android原生res资源目录，可选
 │	│	├─AndroidManifest.xml     //Android原生应用清单文件，可选
 │	│	├─config.json             //Android原生配置文件
-│	│	└─index.uts
-│	├─app-ios                     //iOS 平台目录
-│	│	├─Frameworks              //iOS 插件依赖的第三方 framework 依赖库存放目录，可选
-│	│	├─Resources               //iOS 插件所依赖的资源文件存放目录，可选
-│	│	├─info.plist              //iOS 插件所需要添加到主 info.plist 文件中的配置文件，可选
-│	│	├─config.json             //iOS 插件配置文件
-│	│	└─index.uts
+│	│	└─index.uts               //Android原生插件能力实现
+│	├─app-ios                     //iOS平台目录
+│	│	├─Frameworks              //iOS原生依赖的第三方 framework 依赖库存放目录，可选
+│	│	├─Resources               //iOS原生所依赖的资源文件存放目录，可选
+│	│	├─info.plist              //iOS原生所需要添加到主 info.plist 文件中的配置文件，可选
+│	│	├─config.json             //iOS原生配置文件
+│	│	└─index.uts               //iOS原生插件能力实现
 │	├─web                         //web平台目录
 │	│	└─index.uts
-│	└─mp-xxx                      // 其他平台目录
-├─package.json                    // 插件清单文件
-├─index.d.ts                      // 插件能力声明，可选
-└─index.uts                       // 插件能力实现
+│	├─mp-xxx                      // 其他平台目录
+│	├─index.d.ts                  // 插件能力声明，可选
+│	└─index.uts                   // 跨平台插件能力实现，可选
+└─package.json                    // 插件清单文件
 </code>
 </pre>
 
@@ -453,6 +453,22 @@ import * as UTSHello from "../../../uni_modules/uts-osapi";
 UTSHello.getBatteryCapacity()
 ```
 
+**特别注意**
+
+需要特别注意的是，import UTS插件时，只能到插件的根目录，不能直接引入到最终的文件
+
+```
+// 正确的写法
+import * as UTSHello from "../../../uni_modules/uts-osapi";
+
+```
+```
+// 错误的写法
+import * as UTSHello from "../../../uni_modules/uts-osapi/index.uts";
+
+```
+
+
 
 **显性引用**
 
@@ -467,6 +483,8 @@ import {
 // 然后使用导入的方法
 getBatteryCapacity()
 ```
+
+
 
 关于电量这个插件，插件市场已经提供好了现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
 

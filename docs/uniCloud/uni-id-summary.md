@@ -766,6 +766,7 @@ function hasPermission(token, permission) {
 |bind-mobile-by-sms	|短信验证码绑定手机号	|
 |login-by-email		|邮箱验证码登录			|
 |reset-pwd-by-email	|邮箱验证码重置密码		|
+|set-pwd-by-sms	|手机验证码设置登录密码		|
 
 
 ### 图形验证码使用场景@captcha-scene
@@ -782,6 +783,7 @@ function hasPermission(token, permission) {
 |send-sms-code		|发送短信验证码				|
 |send-email-code	|发送邮箱验证码				|
 |bind-mobile-by-sms	|短信验证码绑定手机号		|
+|set-pwd-by-sms	|手机验证码设置登录密码		|
 
 ## uniIdRouter自动路由@uni-id-router
 

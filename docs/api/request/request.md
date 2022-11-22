@@ -32,7 +32,7 @@
 |PUT|√|√|√|x|√|√|x|x|
 |DELETE|√|√|√|x|√|x|x|x|
 |CONNECT|x|√|√|x|x|x|x|x|
-|HEAD|x|√|√|x|√|x|x|x|
+|HEAD|√|√|√|x|√|x|x|x|
 |OPTIONS|√|√|√|x|√|x|x|x|
 |TRACE|x|√|√|x|x|x|x|x|
 

@@ -138,7 +138,7 @@
 |agreements	|Array	|隐私政策[详情](#agreements)						|
 |appid		|Object	|接入各类服务（如微信登录服务）的应用id[详情](#appid)	|
 |passwordStrength	|Object	|密码配置	[详情](#strength)	|
-
+|setPasswordAfterLogin|Boolean/Object|登录后设置密码 [详情](#set-pwd-after-login)|
 
 完整示例：
 ```js
@@ -171,7 +171,27 @@ export default {
 			// 微信开放平台的appid，来源:登录微信开放平台（https://open.weixin.qq.com） -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> AppID
 			"web":"wx4dcf96ab6af4c5e8"
 		}
-	}
+	},
+	/**
+	 * 密码强度
+	 * super（超强：密码必须包含大小写字母、数字和特殊符号，长度范围：8-16位之间）
+	 * strong（强: 密密码必须包含字母、数字和特殊符号，长度范围：8-16位之间）
+	 * medium (中：密码必须为字母、数字和特殊符号任意两种的组合，长度范围：8-16位之间)
+	 * weak（弱：密码必须包含字母和数字，长度范围：6-16位之间）
+	 * 为空或false则不验证密码强度
+	 */
+	"passwordStrength":"medium",
+	/**
+	 * 登录后允许用户设置密码（只针对未设置密码得用户）
+	 * 开启此功能将 setPasswordAfterLogin 设置为 true 即可
+	 * "setPasswordAfterLogin": false
+	 *
+	 * 如果允许用户跳过设置密码 将 allowSkip 设置为 true
+	 * "setPasswordAfterLogin": {
+	 *   "allowSkip": true
+	 * }
+	 * */
+	"setPasswordAfterLogin": false
 }
 ```
 
@@ -260,6 +280,22 @@ export default {
 |strong		|String	|强: 密密码必须包含字母、数字和特殊符号，长度范围：8-16位之间		|
 |medium		|String	|中：密码必须为字母、数字和特殊符号任意两种的组合，长度范围：8-16位之间|
 |weak		|String	|弱：密码必须包含字母和数字，长度范围：6-16位之间					|
+
+#### 登录后设置密码@set-pwd-after-login
+
+用户如果没有设置密码，在登录后会跳转设置密码页面
+
+此功能默认不开启, 开启请将 `setPasswordAfterLogin` 设置为 `true`，如下：
+```javascript
+{
+	setPasswordAfterLogin: true,
+	// setPasswordAfterLogin: {
+	// 	allowSkip: false
+	// }
+}
+```
+
+如果不需要强制设置密码可以将 `allowSkip` 设置为 `true` 用户可以选择跳过设置密码。
 
 ### 页面介绍
 `uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[插件地址](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
@@ -1200,6 +1236,31 @@ await uniIdCo.unbindApple()
 |errMsg							|string				|错误信息		|
 
 ### 用户信息@user-info
+
+#### 设置密码@set-pwd
+
+**接口形式**
+```js
+await uniIdCo.setPwd({
+	code,
+	captcha,
+	password
+})
+```
+
+**参数说明**
+
+|参数名		|类型	|必填	|说明	|
+|--			|--		|--		|--		|
+|code|string	|是		|手机验证码	|
+|captcha|string	|否		|图形验证码	|
+|password|string	|是		|密码	|
+
+**返回值**
+
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
 
 #### 修改密码@update-pwd
 

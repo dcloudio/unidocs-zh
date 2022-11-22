@@ -21,47 +21,71 @@ uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 ## 基本语法
 ### 声明
 
-uts 有两种声明方式
+js是无类型的，TypeScript 的 type 就是类型的意思，给js加上了类型。它的类型定义方式是在变量名后面通过加冒号和类型来进行定义。
 
-1. let
+uts 中声明变量可以用 let 或 const，详见下。
+
+#### 变量定义（let）
 
     声明一个可重新赋值的变量。语法 `let [变量名] : [类型] = 值;`。
 
     > 相当于 TypeScript 中的 let，kotlin 中的 var
 
 ```ts
-let str = "hello"; // 声明一个字符串变量
+let str :string = "hello"; // 声明一个字符串变量
 str = "hello world"; // 重新赋值
 ```
 
-2. const
+类型除了 string 之外，更多类型[见下](#基本类型)
+
+#### 常量定义（const）
 
     声明一个只读常量，只能为其赋值一次。语法 `const [变量名] : [类型] = 值;`。
 
     > 相当于 TypeScript 中的 const, kotlin 中的 val
 
 ```ts
-const str = "hello"; // 声明一个字符串变量
+const str :string = "hello"; // 声明一个字符串变量
 str = "hello world"; // 报错，不允许重新赋值
 ```
 
 注意事项：
 
-1. 当前 uts 并未限制使用 var 来声明变量，但当使用 var 来声明变量时需要注意不同平台差异
--  编译至 JavaScript 平台时，等同于 JavaScript 平台的 var （存在变量提升现象）
--  编译至 Kotlin 平台时，等同于 Kotlin 平台的 var（允许重新赋值）
+- 当前 uts 并未限制使用 var 来声明变量，但当使用 var 来声明变量时需要注意不同平台差异
+	* 编译至 JavaScript 平台时，等同于 JavaScript 平台的 var （存在变量提升现象）
+	* 编译至 Kotlin 平台时，等同于 Kotlin 平台的 var（允许重新赋值）
+- 类型定义的冒号，左右可以有一个空格，也可以没有空格。`let str:string` 和 `let str : string` 和 `let str :string` 和 `let str: string` 都是合法的。
 
-### 变量
+#### 变量命名规则
 
 在 uts 中，使用变量名需要遵守一定的规则。
 
 -   变量名称可以包含数字和字母。
-
 -   除了下划线 \_ 外，不能包含其他特殊字符，包括空格。
-
 -   变量名不能以数字开头。
 
 > 注意：与 TypeScript 不同的是，uts 不允许以 $ 开头命名变量
+
+#### 类型自动推导
+
+uts具备类型自动推导。在定义变量时如果直接赋值，而不使用冒号定义类型，也可以合法运行。
+
+如下2种写法都是合法的，两个变量都是string类型：
+
+```ts
+let s1 :string = "hello"; 
+let s2 = "hello"; 
+```
+
+#### any类型
+
+如果定义变量时没有声明类型，也没有赋值。那么这个变量会被视为any类型。虽然可以使用，但uts中非常不建议这样使用。
+
+```ts
+let s;
+s = "123"
+console.log(s) // hello world
+```
 
 ### 操作符
 
@@ -141,27 +165,55 @@ console.log("my " + "string"); // console logs the string "my string".
 const status = age >= 18 ? "adult" : "minor";
 ```
 
-## 基本类型
+### 代码语句的分割
+
+uts的多个代码语句，可以以回车或分号分割。行尾的分号可以省略。如果写在一行，应以分号分割。
+
+如下的代码都是合法的：
+
+```ts
+let a:number = 1 //行尾可以不加分号
+let b:number = 2;
+let c:number = 3 ; let d:number = 4 // 同行需要用分号分割
+```
+
+## 数据类型
 
 ### 布尔值（Boolean）
 
-有 2 个值分别是：true 和 false。
+有 2 个值分别是：`true` 和 `false`。
 
 ### 数字（Number）
 
-整数或浮点数，例如： 42 或者 3.14159。
+整数或浮点数，例如： `42` 或者 `3.14159` 或者 `-1` 。
 
 ### 字符串（String）
 
-字符串是一串表示文本值的字符序列，例如："hello" 。
+字符串是一串表示文本值的字符序列，例如：`"hello world"`。
+
+### 日期（Date）
+
+日期对象表示日期，包括年月日时分秒等各种日期。详[见下](#Date)
+
+<!-- ### json
+
+json对象，详[见下](#json) -->
 
 ### null
 
 一个表明 null 值的特殊关键字。
 
+### Object类型
+
+对象（object）是指内存中的可以被标识符引用的一块区域，是一种引用类型。包括Array，Date，Map，Set，JSON等，uts 有一个内置对象的标准库。详[见下](#内置对象和api)。
+
+### any类型
+
+未定义类型，即任意类型。一般不推荐使用。
+
 ## 字面量
 
-字面量是由语法表达式定义的常量；或，通过由一定字词组成的语词表达式定义的常量
+字面量是由语法表达式定义的常量；或，通过由一定字词组成的语词表达式定义的常量。
 
 在 uts 中，你可以使用各种字面量。这些字面量是按字面意思给出的固定的值，而不是变量
 
@@ -173,9 +225,6 @@ const status = age >= 18 ? "adult" : "minor";
 
 ```ts
 const coffees = ["French Roast", "Colombian", "Kona"]
-const a=[3]
-console.log(a.length) // 1
-console.log(a[0]) // 3
 ```
 
 数组字面值同时也是数组对象。
@@ -513,17 +562,19 @@ try {
 
 ```
 
-## 函数
+## 函数（function）
 
-函数是 uts 中的基本组件之一。 一个函数是 uts 过程 — 一组执行任务或计算值的语句。要使用一个函数，你必须将其定义在你希望调用它的作用域内。
+函数是编程语言常见的功能，它可以封装一批代码，对外接收参数，然后返回值。被封装的逻辑，可以被不同的其他代码调用，达到共同复用逻辑的目的。
 
-一个 uts 函数用 function 关键字定义，后面跟着函数名和圆括号。
+函数用 function 关键字定义，后面跟着函数名和圆括号。
+
+同时注意，定义函数涉及作用域。
 
 ### 定义函数
 
-#### 函数声明
+#### 普通函数声明
 
-一个函数定义（也称为函数声明，或函数语句）由一系列的 function 关键字组成，依次为：
+一个函数定义（也称为函数声明，或函数语句）由一系列在 function 关键字后的内容组成，依次为：
 
 -   函数的名称。
 -   函数参数列表，包围在括号中并由逗号分隔。
@@ -532,45 +583,79 @@ try {
 
 > 注意：函数必须明确标明返回值类型
 
-例如，以下的代码定义了一个简单的 add 函数：
+例如，以下的代码定义了一个简单的函数。函数名为 add，有2个参数 x 和 y，都是 string类型，函数的返回值类型也是 string。
+
+函数的内容是将入参 x 和 y 相加，赋值给变量z，然后通过 return关键字返回z。
 
 ```ts
-function add(x: string, y: string): string {
-    return x + y;
+function add(x :string, y :string) :string {
+    let z : string = x + " " + y
+	return z;
 }
 ```
 
-#### 函数表达式
+#### 无返回值的函数定义（void）
 
-虽然上面的函数声明在语法上是一个语句，但函数也可以由函数表达式创建。这样的函数可以是匿名的；它不必有一个名称。例如，函数 add 也可这样来定义：
+如果这个函数不需要返回值，需要使用void关键字，同时函数内部末尾不需要return来返回内容。
+
+```ts
+function add(x :string, y :string) :void {
+    let z :string = x + " " + y
+	console.log(z)
+	// 不需要return
+}
+```
+
+#### 函数表达式和匿名函数定义
+
+虽然上面的函数声明在语法上是一个语句，但函数也可以由函数表达式创建。这样的函数可以是匿名的，它不必有一个名称。例如，函数 add 也可这样来定义：
 
 ```ts
 const add = function (x: string, y: string): string {
-    return x + y;
+    return x + " " + y;
 };
 ```
 
-> 注意：函数表达式不支持使用函数名，比如`const add = function add(){}`是不允许的。
+注意：
+- 通过表达式定义的函数必须使用return关键字返回内容。
+- 函数表达式不支持使用函数名，比如`const add = function add(){}`是不允许的。
 
 ### 调用函数
 
-定义一个函数并不会自动的执行它。定义了函数仅仅是赋予函数以名称并明确函数被调用时该做些什么。调用函数才会以给定的参数真正执行这些动作。例如，一旦你定义了函数 add，你可以如下这样调用它：
+定义一个函数并不会自动的执行它。定义了函数仅仅是赋予函数以名称并明确函数被调用时该做些什么。调用函数才会以给定的参数真正执行这些动作。
+
+定义了函数 add 后，你可以如下这样调用它：
 
 ```ts
-add("hello", "world");
+function add(x :string, y :string) :string {
+    let z :string = x + " " + y
+	return z;
+}
+add("hello", "world"); // 调用add函数
 ```
 
-上述语句通过提供参数 "hello" 和 "world" 来调用函数。函数执行完它的语句会返回值 "hello world"。
+上述语句通过提供参数 "hello" 和 "world" 来调用函数。
+
+虽然调用了add函数，但并没有获取到返回值。如需要获取返回值，需要再赋值：
+```ts
+function add(x :string, y :string) :string {
+	let z :string = x + " " + y
+	return z;
+}
+let s :string = add("hello", "world");
+console.log(s) // hello world
+```
 
 ### 函数作用域
 
 在函数内定义的变量不能在函数之外的任何地方访问，因为变量仅仅在该函数的域的内部有定义。相对应的，一个函数可以访问定义在其范围内的任何变量和函数。
 
 ```ts
-const hello = "hello";
-const world = "world";
+const hello :string = "hello";
+const world :string = "world";
 
 function add(): string {
+	let s1 :string = "123";
     return hello + world; // 可以访问到 hello 和 world
 }
 ```
@@ -622,7 +707,7 @@ outside()(10); // 返回值为 20 而不是 10
 
 ### 闭包
 
-闭包是 uts 中最强大的特性之一。uts 允许函数嵌套，并且内部函数可以访问定义在外部函数中的所有变量和函数，以及外部函数能访问的所有变量和函数。
+uts 允许函数嵌套，并且内部函数可以访问定义在外部函数中的所有变量和函数，以及外部函数能访问的所有变量和函数。
 
 但是，外部函数却不能够访问定义在内部函数中的变量和函数。这给内部函数的变量提供了一定的安全性。
 
@@ -669,21 +754,62 @@ const a3 = arr.map((s): number => s.length);
 console.log(a3); // logs [ 8, 6, 7, 9 ]
 ```
 
-## 类
+## 类（class）
 
-uts 中使用关键字 class 声明类
-
-```ts
-class Person {
-    /*……*/
-}
-```
+uts 中使用关键字 class 声明类。
 
 类声明由类名以及由花括号包围的类体构成。
 
-### 构造函数
+```ts
+// 定义Person Class
+class Person {
+	
+}
+```
 
-constructor 是一种用于创建和初始化 class 创建的对象的特殊方法。
+### 基本概念
+
+类是对象化的概念，有属性、方法、构造函数。
+- 属性：是一个简单的值，可以是字符串、数字、布尔或另一个class。可以用 `对象.属性名` 的访问，也可以通过 `对象.属性名=xxx` 的方式赋值。
+- 方法：是一段代码的集合，有入参、有返回值（均可选）。可以用 `对象.方法名(参数)` 的方式访问。
+- 构造函数：用于初始化实例。详[见下](#constructor)
+
+下面的示例中，定义了一个 Person 的 class，它有一个属性 name，有一个构造函数 constructor（名称不可改），还有一个方法 getNameLength。
+
+```ts
+// 定义Person Class
+class Person {
+	name:string = ""; // 属性name
+	constructor(newname:string) { // 构造函数，参数newname
+		console.log("开始实例化"); 
+		this.name = newname;
+	}
+	getNameLength():number{ // 方法getNameLength
+		return this.name.length
+	}
+}
+```
+
+定义了class后，需要实例化（通过new关键字）。定义一个实例后，即可使用该实例对象的属性和方法。
+
+一个class可以被多次实例化为不同的实例，互不影响。
+
+```ts
+//实例化上面定义的class并调用其属性方法
+let p = new Person("tom"); // 使用 new 关键字实例化对象时，会自动触发构造函数
+console.log(p.name); // 访问p这个对象的属性name，返回值tom
+console.log(p.getNameLength()); // 调用p这个对象的方法getNameLength，返回值3
+
+let p2 = new Person("jerry"); // 使用 new 关键字再实例化一个新对象
+console.log(p2.name); //jerry
+console.log(p2.getNameLength()); //5
+
+
+```
+
+### 构造函数（constructor）@constructor
+
+构造函数 constructor ，在创建新对象时（new的时候）会自动执行，用于初始化对象属性。
 
 -   语法：
 
@@ -693,16 +819,25 @@ constructor([arguments]) { ... }
 
 -   描述：
 
-在一个类中只能有一个名为 “constructor” 的特殊方法。 一个类中出现多次构造函数 (constructor)方法将会抛出一个 SyntaxError 错误。
+你可以不写构造函数。如果没有显式指定构造函数，运行环境会自动添加默认的 constructor 方法。
 
-在一个构造方法中可以使用 super 关键字来调用一个父类的构造方法。
-
-如果没有显式指定构造方法，则会添加默认的 constructor 方法。
-
-如果不指定一个构造函数(constructor)方法, 则使用一个默认的构造函数(constructor)。
+在一个类中只能有一个名为 “constructor” 的特殊方法。一个类中出现多次构造函数 (constructor)方法将会抛出一个 SyntaxError 错误。
 
 -   示例：
 
+```ts
+class Person {
+	name:string = "";
+	constructor(newname:string) {
+		this.name = newname;
+	}
+}
+
+let person = new Person("tom"); // 使用 new 关键字创建对象时，会自动触发构造函数
+console.log(person.name); // tom
+```
+
+在一个构造函数中可以使用 super 关键字来调用一个父类的构造函数。这涉及继承的概念。如不了解继承可[见下](#extends)
 ```ts
 class Polygon {
     constructor() {
@@ -717,151 +852,94 @@ class Square extends Polygon {
 }
 ```
 
-### 继承
-
-uts 允许使用继承来扩展现有的类。
-
--   语法：
-
-```ts
-class ChildClass extends ParentClass { ... }
-```
-
--   描述：
-
-extends 关键字用来创建一个类的子类。
-
--   示例：
-
-```ts
-class Polygon {}
-
-class Square extends Polygon {}
-```
-
-#### 覆盖方法
-
-uts 对于可覆盖的成员以及覆盖后的成员需要显式修饰符：
-
-```ts
-class Polygon {
-    name(): string {
-        return "Polygon";
-    }
-}
-
-class Square extends Polygon {
-    override name(): string {
-        return "Square";
-    }
-}
-```
-
-Square.name 函数上必须加上 override 修饰符。如果没写，编译器会报错。
-
-#### 覆盖属性
-
-属性与方法的覆盖机制相同。在超类中声明然后在派生类中重新声明的属性必须以 override 开头，并且它们必须具有兼容的类型。
-
-```ts
- class Shape {
-     vertexCount: Int = 0
-}
-
-class Rectangle extends Shape {
-    override  vertexCount = 4
-}
-```
-
-#### 调用超类实现
-
-派生类中的代码可以使用 super 关键字调用其超类的函数实现：
-
-```ts
-class Rectangle {
-    draw() {}
-}
-class FilledRectangle extends Rectangle {
-    override draw() {
-        super.draw();
-    }
-}
-
-```
-
 ### 实例属性
 
-uts 中实例属性存在于类的每一个实例中。
+class 有实例属性和静态属性。uts 中实例属性存在于类的每一个实例中。
 
 #### 声明实例属性
 
 uts 可以在类中声明属性，默认可读，可写。
 
 ```ts
-class Address {
-    city: String = "beijing";
+class Person {
+	name:string = ""; // 声明实例属性name
+	city:string = "beijing" // 声明实例属性city
+	constructor(newname:string) {
+		this.name = newname; // 在构造函数中对name重新赋值
+	}
 }
-```
 
-使用一个实例属性，以类实例引用它即可：
-
-```ts
-function copyAddress(address: Address): Address {
-    const result = new Address();
-    result.city = address.city; // 访问 city 属性
-    return result;
-}
+let person1 = new Person("tom"); // 使用 new 关键字创建对象时，会自动触发构造函数
+console.log(person1.name); //tom
+console.log(person1.city); //beijing
+let person2 = new Person("jerry"); // 使用 new 关键字创建对象时，会自动触发构造函数
+console.log(person2.name); //jerry
+console.log(person2.city); //beijing
 ```
 
 #### Getter 与 Setter
 
-uts 支持通过 getters/setters 来截取对对象成员的访问。 它能帮助你有效的控制对对象成员的访问。
+uts 支持通过 getters/setters 来截取对对象属性的访问。它可以理解为属性的读取/写入的拦截器。
+
+下面的例子中，针对 person对象提供了name的get和set的拦截，paascode不正确时无法修改name的值。
 
 ```ts
 const passcode = "secret passcode";
-class Employee {
-    private _fullName: string = "";
-
-    get fullName(): string {
-        return this._fullName;
-    }
-
-    set fullName(newName: string) {
-        if (passcode === "secret passcode") {
-            this._fullName = newName;
-        } else {
-            console.log("Error: Unauthorized update of employee!");
-        }
-    }
+class Person {
+	private _name: string = ""; // private是私有的，外部不能访问
+	get name(): string { // 读取name会触发此拦截器
+		console.log("start to get person.name");
+		return this._name;
+	}
+	set name(newName: string) { // 给name赋值会触发此拦截器
+		console.log("start to set person.name");
+		if (passcode === "secret passcode") { // 校验是否有权修改name的值，这里的条件可以修改以方便测试
+			this._name = newName;
+		} else {
+			console.log("Error: set person.name fail");
+		}
+	}
 }
+let p = new Person()
+p.name = "tom" // 会打印"start to set person.name"
+console.log(p.name); // 先打印"start to get person.name"，然后打印"tom"
 ```
 
 #### readonly
 
-uts 可以使用 readonly 关键字将属性设置为只读的。 只读属性必须在声明时或构造函数里被初始化。
+uts 可以使用 readonly 关键字将属性设置为只读的。只读属性必须在声明时或构造函数里被初始化。
 
 ```ts
-class Octopus {
-    readonly name: string;
-    readonly numberOfLegs: number = 8;
-    constructor (theName: string) {
-        this.name = theName;
-    }
+class Person {
+	readonly name: string;
+	readonly age: number = 0;
+	constructor (theName: string) {
+		this.name = theName;
+	}
 }
-let dad = new Octopus("Man with the 8 strong legs");
-dad.name = "Man with the 3-piece suit"; // 错误! name 是只读的.
+let p = new Person("tom");
+console.log(p.name);
+p.name = "jerry"; // 错误! name 是只读的
+p.age = 1 // 错误！ age 是只读的
 ```
 
-### 静态属性
+但 readonly 更多是一种开发环境的语法校验。在运行时，该值往往可以改变。
+
+### 静态属性（static）
 
 使用关键字 static 来将一个属性声明为静态属性。静态属性不会在实例中被调用，而只会被类本身调用。
 
 ```ts
-class ClassWithStaticField {
-    static staticField = "static field";
+class Person {
+	static age:number = 10; // age是静态属性。不能在实例p中访问，但可以通过类Person访问
+	getAge():number{
+		return Person.age
+	}
 }
-
-console.log(ClassWithStaticField.staticField);
+console.log(Person.age); //10
+let p = new Person(); //新建一个实例
+console.log(p.age); //undefined
+console.log(p.getAge()); //10
 ```
 
 ### 实例方法
@@ -871,6 +949,8 @@ uts 中实例方法存在于类的每一个实例中。
 #### 声明实例方法
 
 uts 可以在类中声明实例方法。
+
+下面定义一个通过高度乘以宽度计算面积的类。
 
 ```ts
 class Rectangle {
@@ -890,10 +970,10 @@ class Rectangle {
 
 ```ts
 const square = new Rectangle(10, 10);
-square.calcArea();
+square.calcArea(); // 100
 ```
 
-### 静态方法
+### 静态方法（static）
 
 使用关键字 static 来将一个方法声明为静态方法。静态方法不会在实例中被调用，而只会被类本身调用。它们经常是工具函数，比如用来创建或者复制对象。
 
@@ -903,10 +983,104 @@ class ClassWithStaticMethod {
         return "static method has been called.";
     }
 }
-ClassWithStaticMethod.staticMethod();
+ClassWithStaticMethod.staticMethod(); // 不实例化，直接调用class的方法
 ```
 
-### 可见性修饰符
+### 继承（extends）@extends
+
+uts 允许使用继承来扩展现有的类。扩展的子类继承了父类的属性方法，但又可以添加自己独有的属性方法，以及复写父类定义的属性方法。
+
+被继承的类称为父类（也称为超类、基类），新扩展的类称为子类（也称为派生类）。
+
+比如定义了Person类存储人的基本信息，还可以定义一个Developer子类继承自Person类，在子类里追加Developer的独有信息。
+
+-   语法：
+
+```ts
+class ChildClass extends ParentClass { ... }
+```
+
+-   描述：
+
+extends 关键字用来创建一个类的子类。
+
+-   示例：
+
+```ts
+// 定义父类
+class Person {
+	name:string = "";
+	constructor(newname:string) {
+		this.name = newname;
+	}
+}
+// 定义子类
+class Developer extends Person{
+	likeLanguage:string = "ts"
+}
+
+let d = new Developer("tom"); // 实例化。由于子类没有声明和复写自己的构造函数，所以默认继承了父类的构造函数
+console.log(d.name); // tom
+console.log(d.likeLanguage); // ts
+```
+
+- 如果要控制父类中某些属性方法不被子类继承，可使用可见性修饰符（private、protected等），具体[见下](#modifier)
+- 多重继承：子类还可以被孙类继承
+
+#### 覆盖方法（override）
+
+覆盖，也称为复写、重写。在继承中，用于在子类中改写父类定义的方法或属性。
+
+uts 对于可覆盖的成员以及覆盖后的成员需要显式修饰符override。
+
+```ts
+class Polygon {
+    name(): string {
+        return "Polygon";
+    }
+}
+
+class Square extends Polygon {
+    override name(): string {
+        return "Square";
+    }
+}
+```
+
+Square.name 函数上必须加上 override 修饰符。如果没写，编译器会报错。
+
+#### 覆盖属性
+
+属性与方法的覆盖机制相同。父类中已声明的同名属性，在子类中重新声明必须以 override 开头，并且它们必须具有兼容的类型（都是字符串、或数字、布尔值等）。
+
+```ts
+class Shape {
+     vertexCount: Int = 0
+}
+
+class Rectangle extends Shape {
+    override  vertexCount = 4
+}
+```
+
+#### 调用父类实现
+
+子类中的代码可以使用 super 关键字调用其父类的方法。不能跨级调用父类的父类（爷爷类）的方法。
+
+```ts
+class Rectangle {
+    draw() {}
+}
+class FilledRectangle extends Rectangle {
+    override draw() {
+        super.draw();
+    }
+}
+
+```
+
+
+### 可见性修饰符@modifier
 
 类的方法与属性都可以有可见性修饰符。
 
@@ -921,16 +1095,16 @@ ClassWithStaticMethod.staticMethod();
 当成员被标记成 private 时，它就不能在声明它的类的外部访问。比如：
 
 ```ts
-class Cat {
+class Person {
     private name: string = "Cat";
 }
 
-new Cat().name; // 错误: 'name' 是私有的.
+new Person().name; // 错误: 'name' 是私有的.
 ```
 
 #### protected
 
-protected 修饰符与 private 修饰符的行为很相似，但有一点不同，protected 成员在派生类中仍然可以访问。比如：
+protected 修饰符与 private 修饰符的行为很相似，但有一点不同，protected 成员在继承的派生类中仍然可以访问。比如：
 
 ```ts
 class Person {
@@ -1013,7 +1187,9 @@ const test = new Test()
 test.test()
 ```
 
-## 内置对象
+## 内置对象和API
+
+uts 有一批内置对象。不管将 uts 编译为 js/kotlin/swfit，这些内置对象都可以跨平台使用。
 
 ### console
 
@@ -1558,7 +1734,7 @@ setTimeout(() => {
 try {
   throw new Error('Whoops!')
 } catch (e) {
-  console.error(e.name + ': ' + e.message)
+  console.error(e.message)
 }
 ```
 
@@ -2059,7 +2235,7 @@ clearInterval(timer)
 - `default` 
     * 与 `switch` 搭配，匹配不存在时做的事情，也可以用于 `export` 语句。
 - `delete` 
-    * 在 `Javascript` 平台，用于删除对象的某个属性；如果没有指向这个属性的引用，那它最终会被释放。
+    * 用于删除对象的某个属性；如果没有指向这个属性的引用，那它最终会被释放。（目前仅支持 `Javascript` 平台）
 - `do` 
     * 创建一个执行指定语句的循环，直到condition值为 false。在执行statement 后检测condition，所以指定的statement至少执行一次。
 - `else` 
@@ -2097,7 +2273,7 @@ clearInterval(timer)
 - `try` ]
     * 捕获一个异常。
 - `typeof` 
-    * 在 `Javascript` 平台，返回一个字符串，表示未经计算的操作数的类型。
+    * 返回一个字符串，表示未经计算的操作数的类型。（目前仅支持 `Javascript` 平台）
 - `var` 
     * 声明一个变量，不建议使用。
 - `void` 
@@ -2105,9 +2281,9 @@ clearInterval(timer)
 - `while` 
     * 在某个条件表达式为真的前提下，循环执行指定的一段代码，直到那个表达式不为真时结束循环。
 - `with` 
-    * 在 `Javascript` 平台，扩展一个语句的作用域链。
+    * 扩展一个语句的作用域链。（目前仅支持 `Javascript` 平台）
 - `yield` 
-    * 在 `Javascript` 平台，用来暂停和恢复一个生成器函数。
+    * 用来暂停和恢复一个生成器函数。（目前仅支持 `Javascript` 平台）
 - `enum`
 - `implements`
 - `interface`

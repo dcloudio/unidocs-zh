@@ -27,6 +27,7 @@ uniCloud分为客户端和云端两部分，有些接口名称相同，参数也
 |uniCloud.onRefreshToken()		|监听token更新事件 [详情](#on-refresh-token)									|
 |uniCloud.offRefreshToken()		|移除监听token更新事件 [详情](#off-refresh-token)								|
 |uniCloud.initSecureNetworkByWeixin()		|在微信小程序安全网络请求发送之前与云函数握手 [详情](#init-secure-network-by-weixin)								|
+|uniCloud.getFileInfo()		|阿里云迁移服务空间到商用版时，使用公测版云存储链接获取商用版云存储链接 [详情](storage.md#get-file-info)								|
 
 ### 获取当前用户信息getCurrentUserInfo@client-getcurrentuserinfo
 

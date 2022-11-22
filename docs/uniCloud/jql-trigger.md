@@ -8,7 +8,7 @@
 
 ## 触发器配置@config
 
-在项目的`uniCloud/database`目录下创建`${表名}.schema.js`，内容如下。
+在项目的`uniCloud/database`目录下创建`${表名}.schema.ext.js`，内容如下。
 
 ```js
 module.exports = {
@@ -100,7 +100,7 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 为了不增加示例的复杂度，所有权限均设置为true，实际项目中切勿随意设置权限
 
 ```js
-// article.schema.js
+// article.schema.ext.js
 {
   "bsonType": "object",
   "required": ["title", "content"],
@@ -142,7 +142,7 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 ### 读取后触发实现阅读量加1
 
 ```js
-// article.schema.js
+// article.schema.ext.js
 module.exports {
   trigger: {
     afterRead: async function({
@@ -167,7 +167,7 @@ module.exports {
 ### 删除前备份
 
 ```js
-// article.schema.js
+// article.schema.ext.js
 module.exports {
   trigger: {
     beforeDelete: async function({
@@ -192,7 +192,7 @@ module.exports {
 ### 修改文章更新时间
 
 ```js
-// article.schema.js
+// article.schema.ext.js
 module.exports {
   trigger: {
     beforeUpdate: async function({
@@ -215,7 +215,7 @@ module.exports {
 ### 新增文章时自动添加摘要
 
 ```js
-// article.schema.js
+// article.schema.ext.js
 module.exports {
   trigger: {
     beforeCreate: async function({

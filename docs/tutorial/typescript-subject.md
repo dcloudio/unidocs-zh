@@ -13,8 +13,12 @@ uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn
 ```html
 <script lang="ts">
 // 这里编写ts代码
+	let s:string = "123"
+	console.log(s)
 </script>
 ```
+
+如果需使用vue组件，则需要`import Vue from 'vue'`，具体[见下](#component)
 
 - cli创建的项目
 
@@ -56,7 +60,7 @@ uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn
 - uni-app 的 vue2 模式：nvue 文件中不支持编写 ts。vue 文件中可以使用 ts，但 ts 版本根据项目类型有区别。HBuilderX 创建的项目使用 ts 3.7.5，cli 创建的项目使用 ts 4.x。
 - uni-app 的 vue3 模式：vue 文件及 nvue 文件均支持最新版 ts。
 
-### 注意事项
+### ts组件@component
 
 声明 `lang="ts"` 后，该 vue/nvue 文件 import 进来的所有 vue 组件，均需要使用 ts 编写。
 

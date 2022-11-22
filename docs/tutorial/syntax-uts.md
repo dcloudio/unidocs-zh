@@ -241,8 +241,8 @@ uts的多个代码语句，可以以回车或分号分割。行尾的分号可�
 
 ```ts
 let a:number = 1 //行尾可以不加分号
-let b:number = 2;
-let c:number = 3 ; let d:number = 4 // 同行需要用分号分割
+let b:boolean = false; //行尾可以加分号
+let c:number = 3 ; let d:number = 4 // 同行多语句需要用分号分割
 ```
 
 ## 数据类型
@@ -255,7 +255,19 @@ let c:number = 3 ; let d:number = 4 // 同行需要用分号分割
 ### 数字（Number）
 ### Number
 
-整数或浮点数，例如： `42` 或者 `3.14159` 或者 `-1` 。
+所有数字，包括整数或浮点数，包括正数负数。例如： 正整数 `42` 或者 浮点数 `3.14159` 或者 负数 `-1` 。
+
+```ts
+let a:number = 42
+```
+
+在 kotlin 和 swift 中，数字还有其他分支类型，包括Int、Float、Double。有些系统API或三方SDK的传入和返回强制约定了这些分支类型，此时无法使用 number。
+这种情况下可以使用下面的方法，虽然可能会被编辑器报语法错误（后续HBuilderX会修复这类误报），但编译到 kotlin 和 swift 时是可用的。
+```ts
+let a:Int =3 //注意目前Int是首字母大写，后续可能会调整
+let b:Int =4
+let c:Double  = a * 1.0 / b
+```
 
 ### 字符串（String）
 ### String
@@ -266,14 +278,17 @@ let c:number = 3 ; let d:number = 4 // 同行需要用分号分割
 
 日期对象表示日期，包括年月日时分秒等各种日期。详[见下](#Date)
 
-<!-- ### json
-
-json对象，详[见下](#json) -->
-
 ### null
 
 一个表明 null 值的特殊关键字。
 A special keyword that indicates a null value.
+
+有时需定义可为null的字符串，可以在类型描述中使用`|`操作符。
+```ts
+let user: string | null
+```
+
+> 注意：uts 编译为kotlin和swift时不支持 undefined。
 
 ### Object类型
 

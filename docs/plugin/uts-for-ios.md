@@ -151,7 +151,7 @@ import { DCUTS } from "DCUTSFoundation"
 
 `~/uni_modules/uts-alert/utssdk/app-ios/index.uts`
 
-```
+```ts
 export function showAlert(title: string|null, message: string|null, result: (index: Number) => void) {
 	// uts方法默认会在子线程中执行，涉及 UI 操作必须在主线程中运行，通过 DispatchQueue.main.async 方法可将代码在主线程中运行
 	DispatchQueue.main.async(execute=():void => {
@@ -280,7 +280,7 @@ var alert = new UIAlertController()
 
 示例
 
-```
+```swift
 // swift
 var alert = UIAlertController(title: "提示", message: "提示内容", preferredStyle: .alert);
 ```

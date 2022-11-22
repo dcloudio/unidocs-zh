@@ -314,9 +314,11 @@ app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
 
 ##### Frameworks 
 iOS平台插件依赖的三方库存放目录，支持以下类型文件：
-- a  
+
 - framework  
 - xcframework
+
+注意：目前只支持静态库
 
 ##### Resources
 iOS平台原生资源目录，建议只保存uts插件内置的资源文件。云端打包时会将此目录下的所有文件添加到应用 main bundle 中。  

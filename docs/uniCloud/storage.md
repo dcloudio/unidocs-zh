@@ -1006,6 +1006,8 @@ The data processing functions supported by Tencent Cloud are as follows:
 ## 阿里云云存储CDN独立域名@aliyun-cdn-domain
 ## Aliyun cloud storage CDN independent domain name @aliyun-cdn-domain
 
+> 仅适用于阿里云公测版，阿里云商用版每个服务空间都是单独的域名
+
 阿里云公测版本所有服务空间使用了相同CDN域名，因此偶尔会出现部分服务空间云存储内存在违规内容导致此CDN域名被封禁的情况。为解决此问题，阿里云为每个服务空间提供了独立的云存储CDN域名。由于资源限制，需要手动在[uniCloud web 控制台](https://unicloud.dcloud.net.cn/)云存储管理页面申请才可以开启，有一定业务量的服务空间申请会自动通过。
 All service spaces of the Alibaba Cloud beta version use the same CDN domain name. Therefore, there may occasionally be cases where the CDN domain name is banned due to illegal content in the cloud storage of some service spaces. To solve this problem, Alibaba Cloud provides an independent cloud storage CDN domain name for each service space. Due to resource limitations, you need to manually apply on the [uniCloud web console](https://unicloud.dcloud.net.cn/) cloud storage management page to enable it. The application for service space with a certain amount of business will be automatically approved.
 

@@ -888,8 +888,9 @@ getUniActivity()!.startActivity(intent);
 
 某些场景下开发者需要获得 指定double数据类型的数据
 
-前端常用的写法：
+开发者下意识的写法可能是：
 ```
+// 这样是错误的
 let a:Int =3
 let b:Int =4
 let c:Double  = a/b
@@ -898,6 +899,7 @@ let c:Double  = a/b
 但是Android原生环境中，数据类型的精度是向下兼容的，如果想要获得一个double类型，必须要有一个double类型参与运算：
 
 ```
+// 这样才是正确的
 let a:Int =3
 let b:Int =4
 let c:Double  = a * 1.0 / b

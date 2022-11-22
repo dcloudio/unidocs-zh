@@ -622,7 +622,7 @@ const ProviderType = {
   KS: "ks"
 };
 
-const collectionName = "uni-ad-callback-log";
+const collectionName = "uni-ad-callback-log"; // 如果选择了腾讯云，需要手动预创建表
 
 class DB {
 

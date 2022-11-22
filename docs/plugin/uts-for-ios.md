@@ -259,7 +259,22 @@ uts 中也支持在变量名称后面加 ？表示可选类型，这是标准 ts
 let user?:string = null
 ```
 
-#### 5.1.3 函数参数标签
+#### 5.1.3 调用构造方法
+
+swift 中调用构造方法创建实例对象时不需要使用 `new` 关键字
+
+```swift
+var alert = UIAlertController()
+```
+
+uts 中调用构造方法实例化对象时需要在构造方法前加上 `new` 关键字
+
+```TypeScript
+var alert = new UIAlertController()
+```
+
+
+#### 5.1.4 函数参数标签
 
 在 swift 中方法参数存在标签时使用 `:` 连接在标签和参数值之间，在 uts 中需要使用 `=` 连接
 
@@ -276,7 +291,7 @@ var alert = UIAlertController(title: "提示", message: "提示内容", preferre
 let alert = new UIAlertController(title="提示", message="提示内容", preferredStyle=UIAlertController.Style.alert)
 ```
 
-#### 5.1.4 枚举值
+#### 5.1.5 枚举值
 
 枚举在 swift 中可以忽略枚举类型直接简写 `.枚举值` ，在 uts 中不支持简写，需要完整的写出 `枚举类型.枚举值`
 上面的示例中 swift 中最后一个参数 preferredStyle 的值可以简写为
@@ -292,7 +307,7 @@ UIAlertController.Style.alert
 ```
 
 
-#### 5.1.5 类继承
+#### 5.1.6 类继承
 
 swift 中定义子类继承父类时需要在子类名称后加上父类名称，中间以冒号`:`分隔
 
@@ -312,7 +327,7 @@ class Son extends Father {
 }
 ```
 
-#### 5.1.6 遵循协议方法
+#### 5.1.7 遵循协议方法
 
 swift 中要让自定义类型遵循某个协议，在定义类型时，需要在类型名称后加上协议名称，中间以冒号`:`分隔。遵循多个协议时，各协议之间用逗号`,`分隔：
 
@@ -330,7 +345,7 @@ class SomeClass implements FirstProtocol, AnotherProtocol {
 }
 ```
 
-#### 5.1.7 系统版本判断
+#### 5.1.8 系统版本判断
 
 swift 中系统版本判断的方法
 
@@ -349,7 +364,7 @@ if (UIDevice.current.systemVersion >= "10.0") {
 }
 ```
 
-#### 5.1.8 闭包
+#### 5.1.9 闭包
 
 swift 中闭包可以简写
 
@@ -369,7 +384,7 @@ let action = new UIAlertAction(title="确认", style=UIAlertAction.Style.default
 })
 ```
 
-#### 5.1.9 target-action 方法
+#### 5.1.10 target-action 方法
 
 uts 中调用原生中涉及 target-action 的方法时，比如给`UIButton`添加点击事件方法、注册通知中心事件方法时注意事项，
 
@@ -397,7 +412,7 @@ NotificationCenter.default.addObserver(this, selector = method, name = UIApplica
 }
 ```
 
-#### 5.1.10 字典类型
+#### 5.1.11 字典类型
 
 swift 中的 Dictionary 类型，在 uts 中使用 Map 类型代替
 
@@ -412,7 +427,7 @@ value["name"] = "uts"
 let map: Map<string,any> = new Map()
 map.set("name","uts")
 ```
-#### 5.1.11 覆写方法存在参数标签的兼容问题
+#### 5.1.12 覆写方法存在参数标签的兼容问题
 
 当覆写系统方法，或实现三方SDK的协议方法时，一些方法可能会存在参数标签的情况
 

@@ -1,0 +1,506 @@
+## uts for iOS
+
+本文旨在帮助 iOS 开发者，快速上手 UTS。
+
+需要阅读者具备 iOS 原生应用开发经验。
+
+## 1 了解 UTS 插件是什么
+
+UTS 插件是 uni-app 新型插件形式 [详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
+
+对于 iOS 开发者来说，我们需要了解的是：
+
+1. 编译时：当我们在保存 UTS 源码文件时，IDE 会同步将其编译为对应的 swift 代码，并且会生成一个对应的插件 Framework 工程在编译出对应的`framework`依赖库
+2. 运行时：在真机运行/云打包时，会将`framework`依赖库添加到打包工程生成最终的 ipa 包
+
+## 2 掌握UTS语法
+
+### 2.1  对于掌握 swift 语言者
+
+因为 UTS 语法与 swift 较类似，建议快速阅读后，在实践中掌握 UTS 语法。[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/syntax-uts)。
+
+### 2.2  对于仅掌握`objective-c`语言者
+
+尽管开发 UTS 插件，并不要求一定掌握 swift，但是鉴于 UTS 目前在 iOS 平台上，会编译为 swift 源码，掌握 swift 语言，方便排查问题和复杂功能实现。
+
+因此建议学习一下 swift 语法，推荐阅读
+
++ [swift 官方文档](https://docs.swift.org/swift-book/)
++ [swift 中文版](https://swiftgg.gitbook.io/swift/)
+
+### 2.3 数据类型差异
+
+UTS 和 swift 在数据类型上基本保持了一致，但是在部分场景下，还是会有差异，在此特别说明
+
+原则上：  
+
+**数据类型以 UTS 内置的类型为准， 各原生平台都会对其自动适配。**
+
+**当具体平台的 api 参数无法使用 UTS 类型兼容时，允许以对方明确要求的数据类型为准。**
+
+-------------------------
+
+
+#### 举例一： Int、Float、Double 和 Number
+
+UTS 中不存在 Int、Float、Double 类型开发者在开发过程中应该使用  Number 类型覆盖 iOS 平台上使用 Int、Float、Double 的场景
+
+但是当开发中需要重写系统方法或实现第三方依赖库的协议方法（delegate 方法）时，比如 API 明确要求参数为 Int 时，则需要写原生的类型 Int
+
+下面以一个协议方法为例，需要实现一个三方依赖库中定义的协议方法
+
+```swift
+// swift 
+// 此协议定义在其他三方 SDK 中
+protocol TestProtocol {
+   func addTwoInts(_ a: Int, _ b: Int) -> Int
+}
+```
+
+我们在 UTS 中需要实现上面三方库中的协议方法时，由于参数和返回值类型都要求是 Int 类型，为了适应这种情况，UTS 允许开发者使用原生平台的数据类型 Int，来满足原生 API 对数据类型的要求：
+
+```TypeScript
+// UTS 中实现协议方法
+class TestClass implements TestProtocol {
+	addTwoInts(a: Int, b: Int): Int {
+		return a + b
+	}
+}
+```
+
+注意：UTS 中使用 `implements` 关键字表示遵循某个协议，下文会有详细说明
+
+## 3 iOS 原生环境配置
+
+对于 iOS 项目来说，除了源码之外，还会涉及依赖，资源，工程配置等常见问题
+
+本章节将会介绍，UTS插件开发环境中如何配置这些属性
+
+注意：
+
++ 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
++ 2 本章节设计的配置，均需自定义基座后才能生效
+
+### 3.1 配置 Info.plist
+
+以 hello uts 中的 uts-tencentgeolocation 腾讯定位插件中的配置文件为例:
+
+示例文件在 hello uts 中的位置：
+
+`~/uni_modules/uts-tencentgeolocation/utssdk/app-ios/Info.plist`
+
+此示例表示需要在 Info.plist 中配置 APIKey 及开启后台定位权限
+
+Info.plist 示例：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+	<key>TencentLBSAPIKey</key>
+	<string>您申请的APIKey</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
+  </dict>
+</plist>
+```
+
+Info.plist 格式及配置规则与 iOS 工程中是一致的，云端打包时会将配置信息合并到原生工程的 Info.plist 中
+
+### 3.2 依赖资源文件
+
+如果您的插件需要依赖资源文件比如图片，音频等，可将资源文件放到插件目录下  `~/utssdk/app-ios/Resources/`路径中
+
+云端打包时会将此目录下的所有文件添加到应用 main bundle 中，建议只保存 uts 插件内置的资源文件。
+
+### 3.3 依赖三方库
+
+uts 插件支持依赖三方库，目前仅支持 framework 和 xcframework 静态库
+
+需要将依赖的三方库文件存放到插件目录下  `~/utssdk/app-ios/Framework/`路径中
+
+云端打包时会将此目录中所有的依赖库添加到工程中，建议只存放与插件相关的依赖库
+
+以 hello uts 中的 uts-tencentgeolocation 腾讯定位插件为例，本插件需要依赖腾讯定位库 `TencentLBS.framework`，则将依赖库存放到 `~/uni_modules/uts-tencentgeolocation/utssdk/app-ios/Framework/TencentLBS.framework` 位置即可
+
+## 4 iOS 平台内置库 DCUTSFoundation
+
+DCUTSFoundation 为框架内置库，所有 uts 插件都会依赖此基础库
+
+DCUTSFoundation 会封装一些常用方法便于开发者直接调用
+
+使用时需要在 uts 文件中先导入 DCUTS 类，所有方法都通过 DCUTS 类调用
+
+```TypeScript
+// 从 DCUTSFoundation 依赖库中导入 DCUTS 类
+import { DCUTS } from "DCUTSFoundation"
+```
+
+### 4.1 getCurrentViewController(): UIViewController
+
+> HBuilderX 版本待确认
+
+获取当前 app 显示的 UIViewController 实例
+
+以 hello uts 中的 uts-alert 为例：
+
+示例文件在 hello uts 中的位置：
+
+`~/uni_modules/uts-alert/utssdk/app-ios/index.uts`
+
+```
+export function showAlert(title: string|null, message: string|null, result: (index: Number) => void) {
+	// uts方法默认会在子线程中执行，涉及 UI 操作必须在主线程中运行，通过 DispatchQueue.main.async 方法可将代码在主线程中运行
+	DispatchQueue.main.async(execute=():void => {
+		
+		// 初始化 UIAlertController 实例对象 alert
+		let alert = new UIAlertController(title=title,message=message,preferredStyle=UIAlertController.Style.alert)
+		
+		// 创建 UIAlertAction 按钮
+		let okAction = new UIAlertAction(title="确认", style=UIAlertAction.Style.default, handler=(action: UIAlertAction):void => {
+			// 点击按钮的回调方法
+			result(0)
+		})
+		
+		// 创建 UIAlertAction 按钮
+		let cancelAction = new UIAlertAction(title="取消", style=UIAlertAction.Style.cancel, handler=(action: UIAlertAction):void => {
+			// 点击按钮的回调方法
+			result(1)
+		})
+		
+		// 将 UIAlertAction 添加到 alert 上
+		alert.addAction(okAction)
+		alert.addAction(cancelAction)
+		
+		// 打开 alert 弹窗
+		DCUTS.getCurrentViewController().present(alert, animated= true)
+	})
+}
+```
+
+
+#### 4.2 colorWithString(value: string): UIColor
+
+> HBuilderX 版本待确认
+
+将字符串色值转换为 UIColor
+
+格式支持
+
+- 精简写法的十六进制 如：#f00
+- 十六进制 如：#ff0000
+- RGB 如：rgb(255, 0, 0)
+- RGBA 如:rgba(255, 0, 0, 0.5)
+- 色值关键字，如： red
+   
+示例
+ 
+```TypeScript
+let bgColor = DCUTS.colorWithString("#000000")
+view.backgroundColor = bgColor
+```
+
+持续更新中
+
+## 5 swift 与 UTS 差异重点介绍 (持续更新)
+
+通过上面的章节的阅读。
+
+至此我们认为你已经掌握了UTS语法，掌握了基本的 swift 语法，掌握了 UTS 对于 iOS 资源的支持。
+
+但是对于一个熟悉 iOS 开发的 swift 语言者来说，有很多常用的习惯发生了改变，我们会在这个章节特别指出，便于开发者加深认识。
+
+
+### 5.1 语法差异
+
+-------------------------------
+
+#### 5.1.1  常量和变量
+
+swift 中用 `let` 来声明常量，用 `var` 来声明变量
+
+```swift
+// swift
+var str = "abc" // 声明一个字符串变量
+let str1 = "abc" // 声明一个字符串常量
+```
+
+`uts`中用 `const` 来声明常量，用 `let` 来声明变量
+
+```TypeScript
+// swift
+let str = "abc" // 声明一个字符串变量
+const str1 = "abc" // 声明一个字符串常量
+```
+
+#### 5.1.2 可选类型
+
+swift 中的可选类型定义为 `类型?`
+
+```swift
+// swift
+var user: String? = nil
+```
+
+ uts 中可选类型的定义为 `类型 | null`
+
+```TypeScript
+// uts
+let user: string | null = null
+```
+
+uts 中也支持在变量名称后面加 ？表示可选类型，这是标准 ts 语法，但是这种写法在 uts 中不推荐使用，因为在 ts 中可选类型默认为 `undefined`类型，uts 中没有 `undefined` 类型
+
+```TypeScript
+// uts
+let user?:string = null
+```
+
+#### 5.1.3 函数参数标签
+
+在 swift 中方法参数存在标签时使用 `:` 连接在标签和参数值之间，在 uts 中需要使用 `=` 连接
+
+示例
+
+```
+// swift
+var alert = UIAlertController(title: "提示", message: "提示内容", preferredStyle: .alert);
+```
+
+ 
+```TypeScript
+// uts 中写法
+let alert = new UIAlertController(title="提示", message="提示内容", preferredStyle=UIAlertController.Style.alert)
+```
+
+#### 5.1.4 枚举值
+
+枚举在 swift 中可以忽略枚举类型直接简写 `.枚举值` ，在 uts 中不支持简写，需要完整的写出 `枚举类型.枚举值`
+上面的示例中 swift 中最后一个参数 preferredStyle 的值可以简写为
+
+```swift
+.alert
+```
+
+在 uts 中需要完整的写出 
+
+```TypeScript
+UIAlertController.Style.alert
+```
+
+
+#### 5.1.5 类继承
+
+swift 中定义子类继承父类时需要在子类名称后加上父类名称，中间以冒号`:`分隔
+
+```swift
+// swift
+class Son: Father {
+    
+}
+```
+
+uts 中需要使用`extends`关键字代替冒号`:`
+
+```TypeScript
+// uts
+class Son extends Father {
+
+}
+```
+
+#### 5.1.6 遵循协议方法
+
+swift 中要让自定义类型遵循某个协议，在定义类型时，需要在类型名称后加上协议名称，中间以冒号`:`分隔。遵循多个协议时，各协议之间用逗号`,`分隔：
+
+```swift
+class SomeClass: FirstProtocol, AnotherProtocol {
+
+}
+```
+
+uts 中需要使用`implements`关键字代替冒号 `:`
+
+```TypeScript
+class SomeClass implements FirstProtocol, AnotherProtocol {
+	
+}
+```
+
+#### 5.1.7 系统版本判断
+
+swift 中系统版本判断的方法
+
+```swift
+// swift
+if #available(iOS 10.0, *) {
+    
+}
+```
+
+在 uts 中不支持这种语法可使用下面方式代替
+
+```TypeScript
+if (UIDevice.current.systemVersion >= "10.0") {
+  
+}
+```
+
+#### 5.1.8 闭包
+
+swift 中闭包可以简写
+
+```swift
+// swift 中最后一个参数如果是闭包称作为尾随闭包，可以忽略参数标签类型等简写为下面的方式
+let action = UIAlertAction(title: "确认", style: .default) { action in
+            
+}
+```
+
+uts 中不支持简写语法，需要完整的写出闭包函数
+
+```TypeScript
+// uts 中 handler 对应的闭包函数必须写完整
+let action = new UIAlertAction(title="确认", style=UIAlertAction.Style.default, handler=(action: UIAlertAction):void => {
+
+})
+```
+
+#### 5.1.9 target-action 方法
+
+uts 中调用原生中涉及 target-action 的方法时，比如给`UIButton`添加点击事件方法、注册通知中心事件方法时注意事项，
+
+1. 接口要求的 selector 通过 Selector("方法名字符串") 的方法构建
+2. 定义的回调方法需要添加 @objc 前缀
+
+下面以监听截屏事件为例：
+
+示例文件在 hello uts 中的位置：
+
+`~/uni_modules/uts-screenshot-listener/utssdk/app-ios/index.uts`
+
+```TypeScript
+// 注册监听截屏事件及回调方法
+// target-action 回调方法需要通过 Selector("方法名") 构建
+const method = Selector("userDidTakeScreenshot")
+NotificationCenter.default.addObserver(this, selector = method, name = UIApplication.userDidTakeScreenshotNotification, object = null)
+
+// 捕获截屏回调的方法
+// target-action 的方法前需要添加 @objc 前缀
+@objc static userDidTakeScreenshot() {
+    const obj = new UTSJSONObject()
+    // 回调
+    this.listener?.(obj)
+}
+```
+
+#### 5.1.10 字典类型
+
+swift 中的 Dictionary 类型，在 uts 中使用 Map 类型代替
+
+```swift
+// swift
+var value: Dictionary<String,Any> = Dictionary()
+value["name"] = "uts"
+```
+
+```TypeScript
+// uts
+let map: Map<string,any> = new Map()
+map.set("name","uts")
+```
+#### 5.1.11 覆写方法存在参数标签的兼容问题
+
+当覆写系统方法，或实现三方SDK的协议方法时，一些方法可能会存在参数标签的情况
+
+以 hello uts 中腾讯定位为例，监听位置变化时需要实现协议方法：
+
+ `tencentLBSLocationManager(_ manager: TencentLBSLocationManager, didUpdate location: TencentLBSLocation)`
+ 
+ 此方法第二个参数存在 `didUpdate` 参数标签
+
+原生 swift 中的实现为
+
+```swift
+// swift
+func tencentLBSLocationManager(_ manager: TencentLBSLocationManager, didUpdate location: TencentLBSLocation) {
+        var response = LocationResponse();
+        response.name = location.name;
+        response.address = location.address;
+        response.latitude = NSNumber(location.location.coordinate.latitude);
+        response.longitude = NSNumber(location.location.coordinate.longitude);
+        self.locationOptions?.success(response);
+}
+```
+
+uts 中需要用注解语法 @argumentLabel("didUpdate") 来表示参数标签
+
+```TypeScript
+// 实现位置更新的 delegate 方法
+tencentLBSLocationManager(manager: TencentLBSLocationManager, @argumentLabel("didUpdate") location: TencentLBSLocation) {
+		let response = new LocationResponse();
+		response.name = location.name;
+		response.address = location.address;
+		response.latitude = Number(location.location.coordinate.latitude);
+		response.longitude = Number(location.location.coordinate.longitude);
+		this.locationOptions?.success(response)
+}
+```
+
+示例文件在 hello uts 中的位置：
+
+`~/uni_modules/uts-tencentgeolocation/utssdk/app-ios/index.uts`
+
+
+
+## 6  常见问题(持续更新)
+
+### 6.1 如何在UTS环境中，获取当前 UIViewController 实例
+
+参考 Hello UTS 项目中的 uts-alert 插件
+
+路径:
+> ~/uni_modules/uts-alert/utssdk/app-ios/index.uts
+
+
+### 6.2 如何在UTS环境中，操作 UI 线程
+
+```
+DispatchQueue.main.async(execute=():void => {
+	// 在主线程中可操作 UI
+})
+```
+
+参考Hello UTS项目中的 uts-toast 插件
+
+路径:
+> ~/uni_modules/uts-toast/utssdk/app-ios/index.uts
+
+
+
+## 7  已知待解决问题(持续更新)
+
+### 7.1 语法提示问题
+
+HBuilderX 目前写iOS uts 插件时部分语法提示会有缺失、参数类型不准确的问题，例如：
+
+- 类的构造方法目前只会提示一个，实际上可能会存在多个；
+- 缺失可选类型标识；
+- 参数标签没有标记无法知道是否需要忽略参数标签；
+- 不支持导入包含有子模块的原生模块；
+
+这些问题会在后续版本中优化
+
+### 7.2 语法不兼容问题
+
+#### 7.2.1 for 循环语法问题
+
+- for in  循环目前有语法兼容问题
+- for (int i = 0, i < array.length, i++)  方法目前有语法兼容问题
+
+### 7.3 类型兼容问题
+
+- 元祖类型目前不支持

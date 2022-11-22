@@ -34,8 +34,7 @@ According to the following table, set the request legal domain name and uploadFi
 |服务提供商	|request合法域名			|uploadFile合法域名					|download合法域名|
 |Service Provider |request legal domain name |uploadFile legal domain name |download legal domain name|
 |:-:		|:-:						|:-:								|:-:|
-|阿里云		|api.bspapp.com				|bsppub.oss-cn-shanghai.aliyuncs.com|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
-|Alibaba Cloud |api.bspapp.com |bsppub.oss-cn-shanghai.aliyuncs.com|You only need to configure when you need to download files from cloud storage. Different service spaces have different domain names. You can view the file details in the web console. to |
+|阿里云		|api.bspapp.com（公测版）、api.next.bspapp.com（商用版）				|bsppub.oss-cn-shanghai.aliyuncs.com|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
 |腾讯云		|tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com		|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
 |Tencent Cloud |tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com |You only need to configure when you need to download files from cloud storage. Different service spaces have different domain names. You can view the file details in the web console. to |
 

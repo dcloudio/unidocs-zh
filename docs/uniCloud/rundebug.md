@@ -353,13 +353,8 @@ uni-app前端也支持debug调试，注意不要混淆。
 
 发布后的云函数，在 [uniCloud web控制台](https://unicloud.dcloud.net.cn/) -> 云函数 下也有日志。
 
-除了常规的运行日志、错误日志，也可以通过 API `uniCloud.logger` 打印日志。
+通过console api打印的日志会在云端记录。
 
-日志会保留7天。
+腾讯云日志服务为单独计费项，目前新建腾讯云服务空间回关闭日志服务。后续提供开启及设置保存时长功能。
 
-|接口									|描述											|
-|:-:									|:-:											|
-|uniCloud.logger.log	|以 log 日志等级输出日志	|
-|uniCloud.logger.info	|以 info 日志等级输出日志	|
-|uniCloud.logger.warn	|以 warn 日志等级输出日志	|
-|uniCloud.logger.error|以 error 日志等级输出日志|
+阿里云云函数日志最长保留7天

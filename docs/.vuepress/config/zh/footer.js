@@ -63,6 +63,10 @@ export default {
           subTitle: 'uni-upgrade-center',
           url: 'https://uniapp.dcloud.io/uniCloud/upgrade-center',
         },
+		  {
+		    subTitle: 'uni-im',
+		    url: 'https://uniapp.dcloud.net.cn/uniCloud/uni-im',
+		  }
       ],
     },
   ],

@@ -281,7 +281,7 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
       "smsKey": "", // 短信密钥key，开通短信服务处可以看到
       "smsSecret": "", // 短信密钥secret，开通短信服务处可以看到
       "scene": {
-        "bind-mobile": { // 对绑定手机号场景的配置
+        "bind-mobile-by-sms": { // 对绑定手机号场景的配置，短信验证码场景值参考：https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#sms-scene
           "templateId": "", // 绑定手机号使用的短信验证码模板
           "codeExpiresIn": 240 // 绑定手机号验证码过期时间
         }

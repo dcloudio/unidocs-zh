@@ -1,69 +1,33 @@
 ## 概述
 ## Overview
 
-选择阿里云作为服务商时，有一个免费服务空间。更多服务空间需要付费。
+1. uniCloud为每个开发者提供一个免费的服务空间，更低门槛
+2. 按量付费是serverless的特色，如果没有消耗硬件资源，就完全不用付款
+3. serverless具有比传统的云主机更便宜
+4. 传统云主机一旦被攻击，高防价格非常昂贵。而uniCloud无需支付高防费用，不惧DDoS攻击。
 
-选择腾讯云作为服务商时，需付费购买套餐，超出套餐后可开启按量计费，套餐详情参考[腾讯云基础套餐](uniCloud/price?id=tencent-package)。
+uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。DCloud公司不会加价。uniCloud已经上线近3年，DCloud一直以良心方式服务开发者，努力降低应用的开发门槛、提高应用的开发效率。
+- 选择阿里云作为服务商时，有一个免费服务空间。更多服务空间需要付费。
+- 选择腾讯云作为服务商时，需付费购买套餐，超出套餐后可开启按量计费，套餐详情参考[腾讯云基础套餐](uniCloud/price?id=tencent-package)。
 
 付费用户享受阿里云和腾讯云提供的服务协议SLA，[详见](https://uniapp.dcloud.net.cn/uniCloud/agreement)
 
-uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。DCloud公司不会加价。uniCloud已经上线近3年，DCloud一直以良心方式服务开发者。
-
 uniCloud提供包月、按量计费两种计费方式，具体说明如下：
 
-|计费方式	|付费方式									|计费单位																							|
-|Billing method |Payment method |Billing unit |
-|:-:			|:-:											|:-:																									|
-|包月	|预付费										|参考 [腾讯云包月套餐](uniCloud/price?id=price-month)	、[阿里云包月套餐](uniCloud/price?id=aliyun-package)															|
-|按量计费	|结算时冻结费用，每日结算	|参考 [阿里云按量计费](uniCloud/price?id=aliyun-postpay)|
+|计费方式	|付费方式					|计费单位																									|
+|:-:		|:-:						|:-:																										|
+|包月		|预付费						|参考 [腾讯云包月套餐](uniCloud/price?id=price-month)、[阿里云包月套餐](uniCloud/price?id=aliyun-package)	|
+|按量计费	|结算时冻结费用，每日结算	|参考 [阿里云按量计费](uniCloud/price?id=aliyun-postpay)													|
 
 
 ## 阿里云@aliyun
 ## Aliyun@aliyun
 
-阿里云公测版于2022年11月21日停止新建，对现存的公测版服务空间，阿里云会提供**两个月的过渡期**，在此期间已创建的服务空间仍可继续使用，开发者需在2022年1月21日前完成迁移。同时uniCloud控制台会于近期增加公测版迁移商业版的相关功能以便开发者平滑迁移。
+阿里云分公测版和正式版。正式版于2022年11月21日上线，同时公测版停止新建。
+对现存的公测版服务空间，阿里云会提供**两个月的过渡期**，在此期间已创建的服务空间仍可继续使用，开发者需在2022年1月21日前完成迁移。
+同时uniCloud控制台会于近期增加公测版迁移正式版的相关功能以便开发者平滑迁移。
 
-
-### 公测版@aliyun-public
-阿里云公测版的服务空间是纯免费的。但为避免资源滥用，有一些限制，见下。
-
-|资源类目					|限制											|说明																							|
-|:-:						|:-:											|:-:																							|
-|云函数并发限制				|1000个实例/服务空间			|实际普通项目很难达到这个并发数，阿里云可以设置单实例多并发单实例最多100，理论最大并发量1000*100=100000 (10万)，关于单实例多并发请参考：[单实例多并发](uniCloud/cf-functions.md?id=concurrency)|
-|每个服务空间的云函数数量	|48个											|实际项目中由于clientDB和单路由云函数，只会用到几个云函数，达不到限制数字。[详见](https://uniapp.dcloud.net.cn/uniCloud/faq?id=merge-functions)|
-|云函数定时触发最小间隔		|1小时										|-																								|
-|云存储容量					|10GB											|-																								|
-|云数据库容量				|100GB										|-																								|
-|单次数据库执行时长限制		|5秒											|**不可申请调整**																	|
-|闲置停服时间							|30天无活跃服务空间会进行停服，在未销毁前可以恢复	|
-|停服销毁时间							|自动销毁后15天后销毁服务空间，在未销毁前可以恢复	|
-
-尤其注意阿里云的cdn确实是全免费的，这些免费资源可用于正常公司业务，阿里云不允许开发者使用这些免费的存储及CDN资源来开展图床类业务。
-In particular, pay attention to the fact that Alibaba Cloud's CDN is completely free. These free resources can be used for normal company business. Alibaba Cloud does not allow developers to use these free storage and CDN resources to carry out image bed services.
-
-除上面的描述外，阿里云没有其他限制。
-Apart from the above description, Alibaba Cloud has no other restrictions.
-
-如有超大型应用突破阿里云资源限制，请发邮件到service@dcloud.io请求协助，可以特批扩大资源。
-If a super-large application exceeds the resource limit of Alibaba Cloud, please send an email to service@dcloud.io to request assistance, and the resources can be expanded with special approval.
-
-申请邮件内需要提供以下信息
-The following information is required in the application email
-
-```
-公司信息		// 个人用户无须此项
-负责人
-联系电话
-公司介绍		// 个人用户无须此项
-业务场景		// 与申请资源相关的业务场景，包括应用名称及发布平台
-用户规模
-申请spaceId
-申请资源		// 要具体到申请资源量，例如：云存储要写明申请多大、定时触发要写明申请的触发频率
-申请日期
-```
-
-**阿里云正式版上线后，将不再支持公测版资源扩容，如有需求请使用商业版本。**
-
+相关公告见：[https://ask.dcloud.net.cn/article/40144](https://ask.dcloud.net.cn/article/40144)
 
 ### 阿里云正式版@aliyun-business
 
@@ -78,30 +42,31 @@ The following information is required in the application email
 - 免费版如需升配，只能针对剩余有效期进行操作，无法自定义升配时间
 
 #### 包年包月套餐@aliyun-package
-|资源分类		|资源细项				|开发者版（免费版）	|基础版			|标准版			|专业版			|企业版			|旗舰版			|
-|:-:		|:-:				|:-:				|:-:			|:-:			|:-:			|:-:			|:-:			|
-|云函数		|资源使用量（GBs/月）	|1000				|1万				|20万			|40万			|150万			|400万			|
-|			|调用次数（万次/月）	|1.5				|15				|300			|600			|2400			|6000			|
-|			|出网流量（GB/月）		|1					|1				|20				|40				|160			|500			|
-|云数据库		|容量（GB）			|2					|2				|3				|5				|10				|10				|
-|			|读操作数（万次/天）	|0.05				|5				|25				|50				|150			|500			|
-|			|写操作数（万次/天）	|0.03				|3				|15				|30				|100			|300			|
-|云存储		|容量（GB）			|5					|8				|10				|50				|100			|500			|
-|			|下载操作次数（万次/月）|0.2				|10				|200			|750			|1500			|3750			|
-|			|上传操作次数（万次/月）|0.1				|5				|100			|300			|600			|1500			|
-|			|CDN流量（GB/月）		|1					|2				|10				|50				|150			|500			|
-|前端网页托管	|容量（GB）			|5					|8				|10				|50				|100			|500			|
-|			|CDN流量（GB/月）		|1					|2				|10				|50				|150			|500			|
-|售价（元/月）|-					|免费				|5				|24				|82				|316			|688			|
+|资源分类		|资源细项				|开发者版（免费版）	|基础版	|标准版	|专业版	|企业版	|旗舰版	|
+|:-:			|:-:					|:-:				|:-:	|:-:	|:-:	|:-:	|:-:	|
+|云函数			|资源使用量（GBs/月）	|1000				|1万	|20万	|40万	|150万	|400万	|
+|				|调用次数（万次/月）	|1.5				|15		|300	|600	|2400	|6000	|
+|				|出网流量（GB/月）		|1					|1		|20		|40		|160	|500	|
+|云数据库		|容量（GB）				|2					|2		|3		|5		|10		|10		|
+|				|读操作数（万次/天）	|0.05				|5		|25		|50		|150	|500	|
+|				|写操作数（万次/天）	|0.03				|3		|15		|30		|100	|300	|
+|云存储			|容量（GB）				|5					|8		|10		|50		|100	|500	|
+|				|下载操作次数（万次/月）|0.2				|10		|200	|750	|1500	|3750	|
+|				|上传操作次数（万次/月）|0.1				|5		|100	|300	|600	|1500	|
+|				|CDN流量（GB/月）		|1					|2		|10		|50		|150	|500	|
+|前端网页托管	|容量（GB）				|5					|8		|10		|50		|100	|500	|
+|				|CDN流量（GB/月）		|1					|2		|10		|50		|150	|500	|
+|售价（元/月）	|-						|免费				|5		|24		|82		|316	|688	|
 
+如果你难以预估会消耗多少云资源，推荐使用下方的按量计费。很多情况下套餐模式被用于固定预算，业务量变大也不增加预算。按量计费有充足的弹性。
 
 #### 按量计费@aliyun-postpay
 
 按量计费，意味着不是每个月支付固定套餐，而是根据使用量付费。
 
-按量付费需要预存一定金额，每日根据前一日资源消耗生成账单，从阿里云预存金额中扣除。
+按量付费需要预存一定金额（余额），每日根据前一日资源消耗生成账单，从阿里云预存余额中扣除。
 
-如果预存金额不足，则服务空间将不可用，需要立即充值。
+如果预存余额不足，则服务空间将不可用，需要立即充值。
 
 阿里云按量计费服务空间定价如下：
 
@@ -121,36 +86,56 @@ The following information is required in the application email
 |				|流量（GB）							|0.18				|
 
 **注意**
-- 按量计费是延迟结算，可能存在余额超支的情况，故创建按量付费服务空间时，需支付一定的保证金，用以抵消超支结算的情况。如果您不再申请使用uniCloud服务，可以申请退还保证金（目前需要发送邮件到service@dcloud.io）。
+- 按量计费是延迟结算，可能存在前一日消耗大于余额导致超支的情况。故创建按量付费服务空间时，需支付一定的**保证金**，用以抵消超支结算的情况。如果您不再使用uniCloud服务，可以申请退还保证金（目前需要发送邮件到service@dcloud.io）。
 
-#### 系统限制@aliyun-system-limit
+#### 现阶段系统限制@aliyun-system-limit
 
-|资源分类	|限制项											|限额	|
-|---			|---												|---	|
-|云函数		|callFunction请求QPS				|1000	|
-|					|url化请求QPS（自定义域名）	|1000	|
-|					|url化请求QPS（默认域名）		|100	|
-|					|固定IP代理请求QPS					|20		|
-|					|最大实例数									|300	|
-|数据库		|QPS												|1000	|
-|					|并发执行数									|100	|
-|云存储		|上传QPS										|300	|
-|					|删除QPS										|300	|
-|					|查询QPS										|300	|
+|资源分类	|限制项						|限额	|
+|---		|---						|---	|
+|云函数		|callFunction请求QPS		|1000	|
+|			|url化请求QPS（自定义域名）	|1000	|
+|			|url化请求QPS（默认域名）	|100	|
+|			|固定IP代理请求QPS			|20		|
+|			|最大实例数					|300	|
+|数据库		|QPS						|1000	|
+|			|并发执行数					|100	|
+|云存储		|上传QPS					|300	|
+|			|删除QPS					|300	|
+|			|查询QPS					|300	|
 
 #### 其他说明
 
 **云存储数据处理**
 
-图片裁剪、视频截帧等功能。在阿里云商业版初期，此功能仍免费提供给用户使用。后续数据处理功能可能会收费。
+图片裁剪、视频截帧等功能。在阿里云正式版初期，此功能仍免费提供给用户使用。后续数据处理功能可能会收费。
 
 **违规图片检测**
 
-商业版不再自动进行云存储违规检测，请开发者自行保证云存储文件合规。
+正式版不再自动进行云存储违规检测，请开发者自行保证云存储文件合规。
 
 **前端网页托管**
 
-商业版不再自动根据文件修改刷新缓存，提供手动刷新缓存功能。
+正式版不再自动根据文件修改刷新缓存，提供手动刷新缓存功能。
+
+
+### 阿里云公测版@aliyun-public
+
+阿里云公测版已经停止创建新服务空间，并将于2023年1月22日下线。本章节文档仅适用于老用户。
+
+阿里云公测版的服务空间是纯免费的。但为避免资源滥用，有一些限制，见下。
+
+|资源类目					|限制												|说明																																															|
+|:-:						|:-:												|:-:																																															|
+|云函数并发限制				|1000个实例/服务空间								|实际普通项目很难达到这个并发数，阿里云可以设置单实例多并发单实例最多100，理论最大并发量1000*100=100000 (10万)，关于单实例多并发请参考：[单实例多并发](uniCloud/cf-functions.md?id=concurrency)	|
+|每个服务空间的云函数数量	|48个												|实际项目中由于clientDB和单路由云函数，只会用到几个云函数，达不到限制数字。[详见](https://uniapp.dcloud.net.cn/uniCloud/faq?id=merge-functions)													|
+|云函数定时触发最小间隔		|1小时												|-																																																|
+|云存储容量					|10GB												|-																																																|
+|云数据库容量				|100GB												|-																																																|
+|单次数据库执行时长限制		|5秒												|**不可申请调整**																																												|
+|闲置停服时间										|30天无活跃服务空间会进行停服，在未销毁前可以恢复																																				|
+|停服销毁时间										|自动销毁后15天后销毁服务空间，在未销毁前可以恢复																																				|
+
+尤其注意阿里云的cdn确实是全免费的，这些免费资源可用于正常公司业务，阿里云不允许开发者使用这些免费的存储及CDN资源来开展图床类业务。
 
 ## 腾讯云@tencent
 ## Tencent Cloud @tencent
@@ -158,33 +143,23 @@ The following information is required in the application email
 **使用腾讯云Nodejs12版本时，务必仔细阅读此文档：[keepRunningAfterReturn](uniCloud/cf-functions.md?id=keep-running)**
 **Be sure to read this document carefully when using Tencent Cloud Nodejs12 version: [keepRunningAfterReturn](uniCloud/cf-functions.md?id=keep-running)**
 
-为了给各位用户提供更加优质可靠的产品服务，腾讯云计划将于2022年8月12日，对计费方式进行如下升级：
-In order to provide users with more high-quality and reliable products and services, Tencent Cloud plans to upgrade the billing method as follows on August 12, 2022:
-
+腾讯云于2022年8月12日更新了计费方式。
 新计费模式下，统一采用**基础套餐+按量计费**的模式，开发者可先购买带有一定配额的基础套餐，超出套餐配额部分按使用量付费。
 Under the new billing model, the model of **basic package + pay-as-you-go** is uniformly adopted. Developers can purchase a basic package with a certain quota first, and the portion exceeding the quota of the package will be charged according to the usage.
 
 ### 基础套餐@tencent-package
 ### Basic Package @tencent-package
 
-| 配额						| 个人版						| 入门版| 初创版	| 商用版	| 团队版	| 单位	|
-| Quota | Personal Edition | Starter Edition | Startup Edition | Commercial Edition | Team Edition |
-| ---							| ---								| ---		| ---			| ---			|  ---		| ---		|
-| QPS							| 500								| 500		| 500			| 800			| 1000		| -			|
-| 调用次数				| 20								| 500		| 1000		| 2000		| 5000		| 万次	|
-| Number of calls | 20 | 500 | 1000 | 2000 | 5000 |
-| 容量						| 2									| 30		| 100			| 200			| 300			| GB		|
-| Capacity | 2 | 30 | 100 | 200 | 300 | GB |
-| 云函数资源使用量| 10								| 30		| 45			| 60			| 100			| 万GBs	|
-| Cloud Function Resource Usage | 10 | 30 | 45 | 60 | 1 million | Ten Thousand GBs |
-| 云函数外网出流量| 2									| 8			| 10			| 15			| 25			| GB		|
-| Cloud Function Extranet Outbound Traffic | 2 | 8 | 10 | 15 | 25 | GB |
-| CDN流量					| 5									| 80		| 200			| 400			| 600			| GB		|
-| CDN Traffic | 5 | 80 | 200 | 400 | 600 | GB |
-| CDN回源流量			| 5									| 40		| 100			| 200			| 300			| GB		|
-| CDN back-to-source traffic | 5 | 40 | 100 | 200 | 300 | GB |
-| 价格						| **~~39.9~~ 19.9**	| **99**| **299**	| **499**	| **999**	| 元/月	|
-| Price | **~~39.9~~ 19.9** | **99**| **299** | **499** | **999** | RMB/month |
+| 配额				| 个人版			| 入门版| 初创版	| 商用版	| 团队版	| 单位	|
+| ---				| ---				| ---	| ---		| ---		|  ---		| ---	|
+| QPS				| 500				| 500	| 500		| 800		| 1000		| -		|
+| 调用次数			| 20				| 500	| 1000		| 2000		| 5000		| 万次	|
+| 容量				| 2					| 30	| 100		| 200		| 300		| GB	|
+| 云函数资源使用量	| 10				| 30	| 45		| 60		| 100		| 万GBs	|
+| 云函数外网出流量	| 2					| 8		| 10		| 15		| 25		| GB	|
+| CDN流量			| 5					| 80	| 200		| 400		| 600		| GB	|
+| CDN回源流量		| 5					| 40	| 100		| 200		| 300		| GB	|
+| 价格				| **~~39.9~~ 19.9**	| **99**| **299**	| **499**	| **999**	| 元/月	|
 
 1. 个人版5折折扣至少延续至2022年底，后续折扣如有变化将另行通知。
 1. The 50% discount on the personal edition will be extended to at least the end of 2022, and further notices will be notified if the subsequent discount changes.
@@ -202,45 +177,29 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 ### 按量付费/超量使用定价@tencent-postpay
 ### Pay-As-You-Go/Overage Pricing @tencent-postpay
 
-| 计费项					| 定价						|
-| Billing Items | Pricing |
-| ---							| ---							|
-| 调用次数				| 0.5元/万次/天		|
-| Number of calls | 0.5 yuan/10,000 times/day |
-| 容量						| 0.1元/GB/天			|
-| Capacity | 0.1 yuan/GB/day |
-| 云函数资源使用量| 0.00011108元/GBs|
-| Cloud function resource usage| 0.00011108 yuan/GBs|
-| 云函数外网出流量|  0.8元/GB				|
-| Cloud Function Extranet Outbound Traffic | 0.8 yuan/GB |
-| CDN流量					| 0.21元/GB				|
-| CDN traffic | 0.21 yuan/GB |
-| CDN回源流量			| 0.15元/GB				|
-| CDN back-to-source traffic | 0.15 yuan/GB |
+| 计费项			| 定价				|
+| ---				| ---				|
+| 调用次数			| 0.5元/万次/天		|
+| 容量				| 0.1元/GB/天		|
+| 云函数资源使用量	| 0.00011108元/GBs	|
+| 云函数外网出流量	| 0.8元/GB			|
+| CDN流量			| 0.21元/GB			|
+| CDN回源流量		| 0.15元/GB			|
 
 
 ### 高级功能按量计费定价@tencent-advanced
 ### Premium Features Pay-As-You-Go Pricing @tencent-advanced
 
-| 计费项		|计费项								|定价							|
-| Billing Items | Billing Items |Pricing |
-| ---				| ---									|---							|
-|前端网页托管		|容量									|0.005元/GB/天		|
-|Front-end web hosting |Capacity |0.005 yuan/GB/day |
-|						|流量									|0.21元/GB				|
-| |traffic |0.21 yuan/GB |
-|日志服务		|标准索引存储					|0.0115元/GB/日		|
-|Log Service |Standard Index Storage |0.0115 yuan/GB/day |
-|						|标准日志存储					|0.0115元/GB/日		|
-| |Standard log storage |0.0115 yuan/GB/day |
-|						|标准索引流量					|0.35元/GB/日			|
-| |Standard index traffic |0.35 yuan/GB/day |
-|						|写流量								|0.18元/GB/日			|
-| |Write traffic |0.18 yuan/GB/day |
-|						|请求次数							|0.15元/百万次/日	|
-| |Number of requests |0.15 yuan/million times/day |
-|						|分区数量							|0.04元/个/日			|
-| |Number of partitions |0.04 yuan/piece/day |
+| 计费项		|计费项			|定价				|
+| ---			| ---			|---				|
+|前端网页托管	|容量			|0.005元/GB/天		|
+|				|流量			|0.21元/GB			|
+|日志服务		|标准索引存储	|0.0115元/GB/日		|
+|				|标准日志存储	|0.0115元/GB/日		|
+|				|标准索引流量	|0.35元/GB/日		|
+|				|写流量			|0.18元/GB/日		|
+|				|请求次数		|0.15元/百万次/日	|
+|				|分区数量		|0.04元/个/日		|
 
 - 在正式进行计费方式切换之日起，用户将不可继续续费或新购旧版套餐或按量计费服务空间。用户可选择是否切换新的计费方式，超时（2022.09.08）切换的服务空间将会停服释放。
 - 新计费下腾讯云云函数日志保存时长为7天
@@ -252,14 +211,17 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 
 腾讯云余额可用于服务空间`按量计费`产生的费用扣款，如服务空间套餐资源用尽后`超限按量`、前端网页托管等服务产生的费用。
 
-阿里云商业版服务空间没有`超限按量`功能，但是提供了`按量计费`的服务空间，阿里云余额适用于`按量计费`服务空间产生的费用扣款。
+阿里云正式版服务空间没有`超限按量`功能，但是提供了`按量计费`的服务空间，阿里云余额适用于`按量计费`服务空间产生的费用扣款。
 
 余额单次充值不低于10元，充值后不支持退款，**余额不支持购买腾讯云及阿里云包年包月套餐，请根据业务使用量合理选择充值金额**。
 
-腾讯云购买基础套餐后，如果开启了`超限按量`功能；或开通了阿里云`按量计费`服务空间；在超出套餐资源用量后，每日的资源用量会在第二天按照按量计费结算并从余额中扣除。由于存在余额超支的情况，使用按量计费服务需要缴纳保证金，账户保证金在停止使用按量计费服务后可以申请退还，所以账户保证金不能申请开具发票。若需退还保证金，需满足以下条件：
-1. 腾讯云服务空间未开启`超限按量`功能
-2. 腾讯云服务空间未开通`前端网页托管`
-3. 未开通阿里云`按量计费`服务空间
+腾讯云购买基础套餐后，如果开启了`超限按量`功能；或开通了阿里云`按量计费`服务空间；在超出套餐资源用量后，每日的资源用量会在第二天按照按量计费结算并从余额中扣除。
+
+由于存在上一日消耗大于余额导致超支的情况，使用按量计费服务需要缴纳保证金。
+
+账户保证金在停止使用按量计费服务后可以申请退还，所以账户保证金不能申请开具发票。若需退还保证金，需满足以下条件：
+1. 阿里云未开通`按量计费`服务空间
+2. 腾讯云未开启`超限按量`功能且未开通`前端网页托管`
 
 由于腾讯云包年包月前端网页托管已下线，新开通的前端网页托管均为按量计费，如果开通了上面两项功能，请先关闭，然后发邮件到 service@dcloud.io 申请退还。
 
@@ -376,18 +338,18 @@ parseCollection()
 ```
 
 
-#### 阿里云公测版迁移到商业版@aliyun-beta-to-aliyun-biz
+#### 阿里云公测版迁移到正式版@aliyun-beta-to-aliyun-biz
 
-阿里云提供了公测版一键迁移到商业版的功能。执行一键迁移后云存储、云函数、数据库都会被迁移到新服务空间。迁移过程中云函数、数据库均可正常访问，云存储无法写入（删除或上传文件）
+阿里云提供了公测版一键迁移到正式版的功能。执行一键迁移后云存储、云函数、数据库都会被迁移到新服务空间。迁移过程中云函数、数据库均可正常访问，云存储无法写入（删除或上传文件）
 
-- 公测版不可迁移到商业版的免费版
+- 公测版不可迁移到正式版的免费版
 - 客户端需要重新打包以使用新服务空间，需要`HBuilderX 3.6.10-alpha`或`HBuilderX 3.6.5`及以上版本
 - 注意迁移后服务空间id会变，如果云函数内有用到相关逻辑请务必注意调整。短信、一键登录功能使用了服务空间白名单的也务必将新空间加到白名单内
 - 旧服务空间云函数url化默认域名会保留一段时间（请求会被转发到新服务空间），在后续清理时会彻底删除
 - 云函数url化自定义域名需要重新绑定
-- 迁移到商业版后旧服务空间的数据库备份不会被迁移过来
+- 迁移到正式版后旧服务空间的数据库备份不会被迁移过来
 - 旧云存储url需要通过`uniCloud.getFileInfo`（云函数接口：[uniCloud.getFileInfo](storage.md#get-file-info)，客户端接口：[uniCloud.getFileInfo](storage.md#cloud-get-file-info)）接口获取新服务空间的cdn链接，需要`HBuilderX 3.6.10-alpha`或`HBuilderX 3.6.5`及以上版本
-- 商业版云存储和云函数位于同一区域，云函数上传文件到云存储会比之前快很多
+- 正式版云存储和云函数位于同一区域，云函数上传文件到云存储会比之前快很多
 - 前端网页托管自定义域名需要重新绑定
 - 前端网页托管不再提供文件变动自动刷新缓存功能，提供手动刷新功能
 

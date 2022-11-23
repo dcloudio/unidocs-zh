@@ -59,7 +59,7 @@ protocol TestProtocol {
 
 我们在 UTS 中需要实现上面三方库中的协议方法时，由于参数和返回值类型都要求是 Int 类型，为了适应这种情况，UTS 允许开发者使用原生平台的数据类型 Int，来满足原生 API 对数据类型的要求：
 
-```TypeScript
+```ts
 // UTS 中实现协议方法
 class TestClass implements TestProtocol {
 	addTwoInts(a: Int, b: Int): Int {
@@ -134,7 +134,7 @@ DCUTSFoundation 会封装一些常用方法便于开发者直接调用
 
 使用时需要在 uts 文件中先导入 DCUTS 类，所有方法都通过 DCUTS 类调用
 
-```TypeScript
+```ts
 // 从 DCUTSFoundation 依赖库中导入 DCUTS 类
 import { DCUTS } from "DCUTSFoundation"
 ```
@@ -198,7 +198,7 @@ export function showAlert(title: string|null, message: string|null, result: (ind
    
 示例
  
-```TypeScript
+```ts
 let bgColor = DCUTS.colorWithString("#000000")
 view.backgroundColor = bgColor
 ```
@@ -230,7 +230,7 @@ let str1 = "abc" // 声明一个字符串常量
 
 `uts`中用 `const` 来声明常量，用 `let` 来声明变量
 
-```TypeScript
+```ts
 // swift
 let str = "abc" // 声明一个字符串变量
 const str1 = "abc" // 声明一个字符串常量
@@ -247,14 +247,14 @@ var user: String? = nil
 
  uts 中可选类型的定义为 `类型 | null`
 
-```TypeScript
+```ts
 // uts
 let user: string | null = null
 ```
 
 uts 中也支持在变量名称后面加 ？表示可选类型，这是标准 ts 语法，但是这种写法在 uts 中不推荐使用，因为在 ts 中可选类型默认为 `undefined`类型，uts 中没有 `undefined` 类型
 
-```TypeScript
+```ts
 // uts
 let user?:string = null
 ```
@@ -269,7 +269,7 @@ var alert = UIAlertController()
 
 uts 中调用构造方法实例化对象时需要在构造方法前加上 `new` 关键字
 
-```TypeScript
+```ts
 var alert = new UIAlertController()
 ```
 
@@ -286,7 +286,7 @@ var alert = UIAlertController(title: "提示", message: "提示内容", preferre
 ```
 
  
-```TypeScript
+```ts
 // uts 中写法
 let alert = new UIAlertController(title="提示", message="提示内容", preferredStyle=UIAlertController.Style.alert)
 ```
@@ -302,7 +302,7 @@ let alert = new UIAlertController(title="提示", message="提示内容", prefer
 
 在 uts 中需要完整的写出 
 
-```TypeScript
+```ts
 UIAlertController.Style.alert
 ```
 
@@ -320,7 +320,7 @@ class Son: Father {
 
 uts 中需要使用`extends`关键字代替冒号`:`
 
-```TypeScript
+```ts
 // uts
 class Son extends Father {
 
@@ -339,7 +339,7 @@ class SomeClass: FirstProtocol, AnotherProtocol {
 
 uts 中需要使用`implements`关键字代替冒号 `:`
 
-```TypeScript
+```ts
 class SomeClass implements FirstProtocol, AnotherProtocol {
 	
 }
@@ -358,7 +358,7 @@ if #available(iOS 10.0, *) {
 
 在 uts 中不支持这种语法可使用下面方式代替
 
-```TypeScript
+```ts
 if (UIDevice.current.systemVersion >= "10.0") {
   
 }
@@ -377,7 +377,7 @@ let action = UIAlertAction(title: "确认", style: .default) { action in
 
 uts 中不支持简写语法，需要完整的写出闭包函数
 
-```TypeScript
+```ts
 // uts 中 handler 对应的闭包函数必须写完整
 let action = new UIAlertAction(title="确认", style=UIAlertAction.Style.default, handler=(action: UIAlertAction):void => {
 
@@ -397,7 +397,7 @@ uts 中调用原生中涉及 target-action 的方法时，比如给`UIButton`添
 
 `~/uni_modules/uts-screenshot-listener/utssdk/app-ios/index.uts`
 
-```TypeScript
+```ts
 // 注册监听截屏事件及回调方法
 // target-action 回调方法需要通过 Selector("方法名") 构建
 const method = Selector("userDidTakeScreenshot")
@@ -422,7 +422,7 @@ var value: Dictionary<String,Any> = Dictionary()
 value["name"] = "uts"
 ```
 
-```TypeScript
+```ts
 // uts
 let map: Map<string,any> = new Map()
 map.set("name","uts")
@@ -453,7 +453,7 @@ func tencentLBSLocationManager(_ manager: TencentLBSLocationManager, didUpdate l
 
 uts 中需要用注解语法 @argumentLabel("didUpdate") 来表示参数标签
 
-```TypeScript
+```ts
 // 实现位置更新的 delegate 方法
 tencentLBSLocationManager(manager: TencentLBSLocationManager, @argumentLabel("didUpdate") location: TencentLBSLocation) {
 		let response = new LocationResponse();

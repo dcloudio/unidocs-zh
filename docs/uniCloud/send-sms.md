@@ -197,7 +197,6 @@ exports.main = async (event, context) => {
       data: {
         name: 'DCloud',
         code: '123456',
-        action: '注册',
         expMinute: '3',
       }
     })
@@ -230,7 +229,6 @@ exports.main = async (event, context) => {
       data: {
         name: 'DCloud',
         code: '123456',
-        action: '注册',
         expMinute: '3',
       }
     })

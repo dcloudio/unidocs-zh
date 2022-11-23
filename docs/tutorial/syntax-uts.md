@@ -1922,6 +1922,12 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 表示自 UNIX 纪元开始（1970 年 1 月 1 日 00:00:00 (UTC)）到当前时间的毫秒数。
 Represents the number of milliseconds since the beginning of the UNIX epoch (January 1, 1970 00:00:00 (UTC)) to the current time.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 ```ts
 // this example takes 2 seconds to run
 const start = Date.now()
@@ -1942,10 +1948,22 @@ setTimeout(() => {
 根据本地时间，返回一个指定的日期对象为一个月中的哪一日（从 1--31）。
 Returns the day of the month (from 1--31) for a specified date object according to local time.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 #### getDay
 
 根据本地时间，返回一个具体日期中一周的第几天，0 表示星期天。对于某个月中的第几天
 Returns the day of the week for a specific date, according to local time, with 0 for Sunday. for the day of the month
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 #### getFullYear
 
@@ -1957,40 +1975,88 @@ Returns the year of the specified date according to local time.
 根据本地时间，返回一个指定的日期对象的小时。
 Returns the hour of a specified date object according to local time.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 #### getMilliseconds
 
 根据本地时间，返回一个指定的日期对象的毫秒数。
 Returns the number of milliseconds for a specified date object according to local time.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 #### getMinutes
 
 根据本地时间，返回一个指定的日期对象的分钟数。
 Returns the number of minutes in a specified date object according to local time.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 #### getMonth
 
 指定的日期对象的月份，为基于 0 的值（0 表示一年中的第一月）。
 The month of the specified date object, as a 0-based value (0 represents the first month of the year).
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 #### getSeconds
 
 根据本地时间，返回一个指定的日期对象的秒数。
 Returns the number of seconds in a specified date object according to local time.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 #### getTime
 
 返回一个时间的格林威治时间数值。
 Returns the GMT value of a time.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 #### setDate
 
 根据本地时间来指定一个日期对象的天数。
 Specifies the number of days in a date object according to local time.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 #### setFullYear
 
 根据本地时间为一个日期对象设置年份。
 Sets the year for a date object based on local time.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 #### setHours
 
@@ -2022,6 +2088,11 @@ Sets the seconds for a date object according to local time.
 以一个表示从 1970-1-1 00:00:00 UTC 计时的毫秒数为来为 Date 对象设置时间。
 Sets the time for a Date object as a number of milliseconds representing the time since 1970-1-1 00:00:00 UTC.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 ### Error
 
@@ -2174,6 +2245,12 @@ Number objects are encapsulated objects that allow you to work with numeric valu
 toFixed() 方法使用定点表示法来格式化一个数值。
 The toFixed() method formats a number using fixed-point notation.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 ```ts
 function financial(x: Number): String {
   return x.toFixed(2);
@@ -2197,6 +2274,12 @@ A Set object is a collection of values, and you can iterate over its elements in
 
 返回 Set 对象中元素的个数。
 Returns the number of elements in the Set object.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 ```ts
 const set1 = new Set<Any>();
@@ -2233,6 +2316,12 @@ set1.forEach((item)=>{
 clear() 方法用来清空一个 Set 对象中的所有元素。
 The clear() method is used to clear all elements in a Set object.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 ```ts
 const set1 = new Set<any>();
 set1.add(1);
@@ -2248,6 +2337,12 @@ console.log(set1.size);
 
 delete() 方法可以从一个 Set 对象中删除指定的元素。
 The delete() method deletes the specified element from a Set object.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 ```ts
 const map1 = new Map<string,string>();
@@ -2268,6 +2363,12 @@ The forEach method executes the provided callback function in sequence according
 
 has() 方法返回一个布尔值来指示对应的值 value 是否存在 Set 对象中。
 The has() method returns a boolean value indicating whether the corresponding value value exists in the Set object.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 ### String
 
@@ -2367,6 +2468,12 @@ console.log(`The character code ${sentence.charCodeAt(index)} is equal to ${sent
 concat() 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。
 The concat() method concatenates one or more strings with the original string to form a new string and returns it.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 ```ts
 let hello = 'Hello, '
 console.log(hello.concat('Kevin', '. Have a nice day.'))
@@ -2377,6 +2484,12 @@ console.log(hello.concat('Kevin', '. Have a nice day.'))
 
 endsWith() 方法用来判断当前字符串是否是以另外一个给定的子字符串“结尾”的，根据判断结果返回 true 或 false。
 The endsWith() method is used to judge whether the current string "ends" with another given substring, and returns true or false according to the judgment result.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 ```ts
 const str1 = 'Cats are the best!';
@@ -2394,6 +2507,12 @@ console.log(str2.endsWith('question'));
 includes() 方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。
 The includes() method is used to determine whether a string is included in another string, and returns true or false according to the situation.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 ```ts
 const str = 'To be, or not to be, that is the question.';
 
@@ -2407,6 +2526,12 @@ console.log(str.includes('TO BE'));       // false
 
 indexOf() 方法返回调用它的 String 对象中第一次出现的指定值的索引，从 fromIndex 处进行搜索。如果未找到该值，则返回 -1。
 The indexOf() method returns the index of the first occurrence of the specified value in the String object on which it was called, searching from fromIndex. Returns -1 if the value is not found.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 ```ts
 const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
@@ -2426,6 +2551,12 @@ console.log(`The index of the 2nd "${searchTerm}" is ${paragraph.indexOf(searchT
 padEnd() 方法会用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的末尾（右侧）开始填充。
 The padEnd() method pads the current string with a string (repeatedly if necessary), and returns a string of the specified length after padding. Padding starts from the end (right side) of the current string.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 ```ts
 const str1 = 'Breaded Mushrooms';
 console.log(str1.padEnd(25, '.'));
@@ -2439,6 +2570,12 @@ console.log(str2.padEnd(5));
 padStart() 方法用另一个字符串填充当前字符串 (如果需要的话，会重复多次)，以便产生的字符串达到给定的长度。从当前字符串的左侧开始填充。
 The padStart() method pads the current string with another string (repeated as many times as necessary) so that the resulting string reaches the given length. Padding starts from the left of the current string.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 ```ts
 const str1 = '5';
 console.log(str1.padStart(2, '0'));
@@ -2448,6 +2585,12 @@ console.log(str1.padStart(2, '0'));
 
 repeat() 构造并返回一个新字符串，该字符串包含被连接在一起的指定数量的字符串的副本。
 repeat() constructs and returns a new string containing the specified number of copies of the string concatenated together.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 ```ts
 "abc".repeat(0)      // ""
@@ -2460,6 +2603,12 @@ repeat() constructs and returns a new string containing the specified number of 
 
 replace() 方法返回一个由替换值（replacement）替换部分或所有的模式（pattern）匹配项后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配都要调用的回调函数。如果pattern是字符串，则仅替换第一个匹配项。原字符串不会改变。
 The replace() method returns a new string with some or all pattern matches replaced by the replacement value. The pattern can be a string or a regular expression, and the replacement value can be a string or a callback function to be called for each match. If pattern is a string, only the first match is replaced. The original string will not be changed.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 ```ts
 const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
@@ -2476,6 +2625,12 @@ console.log(p.replace(regex, 'ferret'));
 search() 方法执行正则表达式和 String 对象之间的一个搜索匹配。
 The search() method performs a search match between the regular expression and the String object.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 ```ts
 const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
 // any character that is not a word character or whitespace
@@ -2490,6 +2645,12 @@ console.log(paragraph[paragraph.search(regex)]);
 slice() 方法提取某个字符串的一部分，并返回一个新的字符串，且不会改动原字符串。
 The slice() method extracts part of a string and returns a new string without changing the original string.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 ```ts
 const str = 'The quick brown fox jumps over the lazy dog.';
 console.log(str.slice(31));
@@ -2502,6 +2663,12 @@ console.log(str.slice(4, 19));
 
 split() 方法使用指定的分隔符字符串将一个String对象分割成子字符串数组，以一个指定的分割字串来决定每个拆分的位置。
 The split() method splits a String object into an array of substrings using the specified delimiter string, and uses a specified split string to determine the position of each split.
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 ```ts
 const str = 'The quick brown fox jumps over the lazy dog.';
@@ -2518,6 +2685,12 @@ console.log(chars[8]);
 toLowerCase() 会将调用该方法的字符串值转为小写形式，并返回。
 toLowerCase() converts the string value that calls this method to lowercase and returns it.
 
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
+
 ```ts
 console.log('中文简体 zh-CN || zh-Hans'.toLowerCase());
 // 中文简体 zh-cn || zh-hans
@@ -2529,6 +2702,12 @@ console.log('中文简体 zh-CN || zh-Hans'.toLowerCase());
 
 toUpperCase() 方法将调用该方法的字符串转为大写形式并返回（如果调用该方法的值不是字符串类型会被强制转换）。
 The toUpperCase() method converts the string that calls this method to uppercase and returns it (if the method is called with a value other than a string, it will be coerced).
+
+**平台差异说明**
+
+|Web|Kotlin|Swift|
+|:-:|:-:|:-:|
+|√|√|x|
 
 ```ts
 const sentence = 'The quick brown fox jumps over the lazy dog.';

@@ -153,7 +153,15 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	│	└─index.uts               //iOS原生插件能力实现
 │	├─web                         //web平台目录
 │	│	└─index.uts
-│	├─mp-xxx                      // 其他平台目录
+│	├─mp-alipay                   // 支付宝小程序平台，可选
+│	├─mp-baidu                    // 百度小程序平台，可选
+│	├─mp-jd                       // 京东小程序平台（仅限vue2），可选
+│	├─mp-kuaishou                 // 快手小程序平台，可选
+│	├─mp-lark                     // 飞书小程序平台，可选
+│	├─mp-qq                       // QQ小程序平台，可选
+│	├─mp-toutiao                  // 字节跳动小程序平台，可选
+│	├─mp-weixin                   // 微信小程序平台，可选
+│	├─mp-xhs                      // 小红书小程序平台（仅限vue2），可选
 │	├─index.d.ts                  // 插件能力声明，可选
 │	└─index.uts                   // 跨平台插件能力实现，可选
 └─package.json                    // 插件清单文件

@@ -261,12 +261,45 @@ let c:number = 3 ; let d:number = 4 // 同行多语句需要用分号分割
 let a:number = 42
 ```
 
-在 kotlin 和 swift 中，数字还有其他分支类型，包括Int、Float、Double。有些系统API或三方SDK的传入和返回强制约定了这些分支类型，此时无法使用 number。
+#### Kotlin 特有的数字类型
+
+- Byte, UByte
+- Short, UShort
+- Int, UInt
+- Long, ULong
+- Float
+- Double
+
+#### Swift 特有的数字类型
+
+- Int, UInt, Int8, UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64
+- Float, Float16, Float32, Float64
+- Double
+
+**注意**
+
+在 kotlin 和 swift 中，有些系统API或三方SDK的传入和返回强制约定了这些平台数字类型，此时无法使用 number。
 这种情况下可以使用下面的方法，虽然可能会被编辑器报语法错误（后续HBuilderX会修复这类误报），但编译到 kotlin 和 swift 时是可用的。
+
+- 声明特定的平台数字类型
 ```ts
-let a:Int =3 //注意目前Int是首字母大写，后续可能会调整
-let b:Int =4
+
+let a:Int = 3 //注意 Int 是首字母大写
+let b:Int = 4
 let c:Double  = a * 1.0 / b
+```
+
+- 在 kotlin(app-android) 下转换特定的平台数字类型
+```ts
+let a:Int = 3
+a.toFloat() // 转换为 Float 类型，后续也将支持 new Float(a) 方式转换
+a.toDouble() // 转换为 Double 类型，后续也将支持 new Double(a) 方式转换
+```
+
+- 在 swift(app-ios) 下转换特定的平台数字类型
+```ts
+let a:Int = 3
+let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 ```
 
 ### 字符串（String）

@@ -50,6 +50,7 @@
       * [插屏广告](component/ad-interstitial.md)
       * [Draw视频信息流广告](component/ad-draw.md)
       * [短视频内容联盟广告](component/ad-content-page.md)
+      * [互动广告](component/ad-interactive.md)
       * [微信小程序](component/ad-weixin.md)
       * [微信小程序格子广告](component/ad-grid.md)
       * [广告错误码](component/ad-error-code.md)

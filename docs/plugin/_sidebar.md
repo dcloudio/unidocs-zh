@@ -4,7 +4,7 @@
 * uts插件
   * [uts插件开发入门](/plugin/uts-plugin.md)
   * [Android平台uts开发指南](/plugin/uts-for-android.md)
-  * [iOS平台uts开发指南](/plugin/ios.md)
+  * [iOS平台uts开发指南](/plugin/uts-for-ios.md)
 * [原生语言插件](/plugin/native-plugin.md)
 * 插件作者专区
   * [发布插件](/plugin/publish.md)

@@ -138,8 +138,8 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * 引用第三方 js 的方式：
     1. 通过 npm 引入（通过条件编译，只有是 h5 平台才 import 相应的库）
     2. 在 `manifest.json` 文件编辑 h5 节点的 template 属性，填写 html 模版路径，在 html 模版里面可以使用 script 的方式引入三方的 js，如下示例是加了百度统计的 html 模板部分代码，模版全部代码可参考：[自定义模板](/collocation/manifest?id=h5-template)
-```
-...
+```html
+//...
 <body>
             <noscript>
                 <strong>Please enable JavaScript to continue.</strong>
@@ -156,7 +156,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
                 })();
             </script>
 </body>
-...
+//...
 ```
 
 * H5 版 `uni-app` 全支持 `vue` 语法，所以可能造成部分写法在 H5 端生效，在小程序或 App 端不生效。

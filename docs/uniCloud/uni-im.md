@@ -198,7 +198,7 @@ uniIdMutations.logout()
 逻辑代码如下：
 ```js
 uni.navigateTo({
-	url:'/uni_modules/uni-im/pages/chat/chat?user_id' + 对应的用户id
+	url:'/uni_modules/uni-im/pages/chat/chat?user_id=' + 对应的用户id
 })
 ```
 

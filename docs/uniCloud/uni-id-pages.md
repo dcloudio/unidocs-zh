@@ -456,6 +456,8 @@ uni.request({
 
 #### 注册超级管理员@register-admin
 
+接口名：registerAdmin
+
 **接口形式**
 
 ```js
@@ -489,6 +491,8 @@ await uniIdCo.registerAdmin({
 - 系统中仅可存在一个超级管理员
 
 #### 用户名密码注册用户@register-user
+
+接口名：registerUser
 
 **接口形式**
 
@@ -524,6 +528,8 @@ await uniIdCo.registerUser({
 
 #### 邮箱验证码注册用户@register-user-by-email
 
+接口名：registerUserByEmail
+
 **接口形式**
 
 ```js
@@ -557,6 +563,8 @@ await uniIdCo.registerUserByEmail({
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
 
 #### 密码登录@login
+
+接口名：login
 
 **接口形式**
 
@@ -592,6 +600,8 @@ await uniIdCo.login({
 
 手机号已存在时登录，否则注册
 
+接口名：loginBySms
+
 **接口形式**
 
 ```js
@@ -624,6 +634,8 @@ await uniIdCo.loginBySms({
 
 #### 微信授权手机号登录@login-by-weixin-mobile <Badge text="uni-id-co 1.0.25+" />
 
+接口名：loginByWeixinMobile
+
 **接口形式**
 
 ```js
@@ -653,6 +665,8 @@ await uniIdCo.loginByWeixinMobile({
 #### 一键登录@login-by-univerify
 
 手机号已存在时登录，否则注册
+
+接口名：loginByUniverify
 
 **接口形式**
 
@@ -685,6 +699,8 @@ await uniIdCo.loginByUniverify({
 #### 微信登录@login-by-weixin
 
 微信账号已存在时登录，否则注册
+
+接口名：loginByWeixin
 
 **接口形式**
 
@@ -749,6 +765,8 @@ await uniIdCo.loginByWeixin({
 #### QQ登录@login-by-qq
 
 QQ账号已存在时登录，否则注册
+
+接口名：loginByQQ
 
 **接口形式**
 
@@ -815,6 +833,8 @@ await uniIdCo.loginByQQ({
 
 支付宝账号已存在时登录，否则注册
 
+接口名：loginByAlipay
+
 **接口形式**
 
 ```js
@@ -844,6 +864,8 @@ await uniIdCo.loginByAlipay({
 #### 苹果登录@login-by-apple
 
 苹果账号已存在时登录，否则注册
+
+接口名：loginByApple
 
 **接口形式**
 
@@ -875,6 +897,8 @@ await uniIdCo.loginByApple({
 
 #### 登出@logout
 
+接口名：logout
+
 **接口形式**
 
 ```js
@@ -896,6 +920,8 @@ await uniIdCo.logout()
 
 调用此接口后用户status将会设置为注销状态，需要注意的是目前token不会自动失效，后续会引入redis解决此问题。如果不需要此功能建议手动修改代码。
 
+接口名：closeAccount
+
 **接口形式**
 
 ```js
@@ -915,6 +941,8 @@ await uniIdCo.closeAccount()
 
 
 #### 获取支持的登录方式@get-supported-login-type
+
+接口名：getSupportedLoginType
 
 **接口形式**
 
@@ -953,6 +981,8 @@ await uniIdCo.getSupportedLoginType()
 
 #### 使用短信验证码绑定手机号@bind-mobile-by-sms
 
+接口名：bindMobileBySms
+
 **接口形式**
 
 ```js
@@ -986,6 +1016,8 @@ await uniIdCo.bindMobileBySms({
 - 仅在用户token即将过期时返回新newToken
 
 #### 使用一键登录绑定手机号@bind-mobile-by-univerify
+
+接口名：bindMobileByUniverify
 
 **接口形式**
 
@@ -1030,6 +1062,8 @@ await uniIdCo.bindMobileByUniverify({
 
 :::
 
+接口名：bindMobileByMpWeixin
+
 **接口形式**
 
 ```js
@@ -1069,6 +1103,8 @@ await uniIdCo.bindMobileByMpWeixin({
 
 #### 绑定微信@bind-weixin
 
+接口名：bindWeixin
+
 **接口形式**
 
 ```js
@@ -1098,6 +1134,8 @@ await uniIdCo.bindWeixin({
 - 仅在用户token即将过期时返回新newToken
 
 #### 绑定QQ@bind-qq
+
+接口名：bindQQ
 
 **接口形式**
 
@@ -1131,6 +1169,8 @@ await uniIdCo.bindQQ({
 
 #### 绑定支付宝账号@bind-alipay
 
+接口名：bindAlipay
+
 **接口形式**
 
 ```js
@@ -1161,6 +1201,8 @@ await uniIdCo.bindAlipay({
 
 #### 绑定苹果账号@bind-apple
 
+接口名：bindApple
+
 **接口形式**
 
 ```js
@@ -1190,12 +1232,19 @@ await uniIdCo.bindApple({
 - 仅在用户token即将过期时返回新newToken
 
 ### 解绑第三方账号@unbind-third-account <Badge text="uni-id-co 1.0.25+" />
+
 > 如账号只有一个第三方登录方式时，需绑定手机号后在解绑。
+
 #### 解绑微信@unbind-weixin
+
+接口名：unbindWeixin
+
 **接口形式**
+
 ```js
 await uniIdCo.unbindWeixin()
 ```
+
 **返回值**
 |参数名							|类型				|说明			|
 |--								|--					|--				|
@@ -1203,6 +1252,7 @@ await uniIdCo.unbindWeixin()
 |errMsg							|string				|错误信息		|
 
 #### 解绑QQ@unbind-qq
+接口名：unbindQQ
 **接口形式**
 ```js
 await uniIdCo.unbindQQ()
@@ -1214,6 +1264,7 @@ await uniIdCo.unbindQQ()
 |errMsg							|string				|错误信息		|
 
 #### 解绑支付宝@unbind-alipay
+接口名：unbindAlipay
 **接口形式**
 ```js
 await uniIdCo.unbindAlipay()
@@ -1225,6 +1276,7 @@ await uniIdCo.unbindAlipay()
 |errMsg							|string				|错误信息		|
 
 #### 解绑苹果账号@unbind-apple
+接口名：unbindApple
 **接口形式**
 ```js
 await uniIdCo.unbindApple()
@@ -1238,6 +1290,8 @@ await uniIdCo.unbindApple()
 ### 用户信息@user-info
 
 #### 设置密码@set-pwd
+
+接口名：setPwd
 
 **接口形式**
 ```js
@@ -1263,6 +1317,8 @@ await uniIdCo.setPwd({
 |errCode						|string&#124;number	|错误码			|
 
 #### 修改密码@update-pwd
+
+接口名：updatePwd
 
 **接口形式**
 
@@ -1296,6 +1352,8 @@ await uniIdCo.updatePwd({
 
 #### 通过短信验证码重置密码@reset-pwd-by-sms
 
+接口名：resetPwdBySms
+
 **接口形式**
 
 ```js
@@ -1325,10 +1383,12 @@ await uniIdCo.resetPwdBySms({
 
 #### 通过邮箱验证码重置密码@reset-pwd-by-email
 
+接口名：resetPwdByEmail
+
 **接口形式**
 
 ```js
-await uniIdCo.resetPwdBySms({
+await uniIdCo.resetPwdByEmail({
   email,
   code,
   password,
@@ -1354,6 +1414,7 @@ await uniIdCo.resetPwdBySms({
 
 #### 获取账户简略信息@get-account-info
 
+接口名：getAccountInfo
 
 **接口形式**
 
@@ -1384,6 +1445,8 @@ await uniIdCo.getAccountInfo()
 
 #### 接受邀请@accept-invite
 
+接口名：acceptInvite
+
 **接口形式**
 
 ```js
@@ -1413,6 +1476,8 @@ await uniIdCo.acceptInvite({
 - 仅在用户token即将过期时返回新newToken
 
 #### 获取邀请的用户@get-invited-user
+
+接口名：getInvitedUser
 
 **接口形式**
 
@@ -1453,6 +1518,8 @@ await uniIdCo.getInvitedUser({
 
 #### 创建图形验证码@create-captcha
 
+接口名：createCaptcha
+
 **接口形式**
 
 ```js
@@ -1475,6 +1542,8 @@ await uniIdCo.createCaptcha({
 |errMsg							|string				|错误信息		|
 
 #### 刷新图形验证码@refresh-captcha
+
+接口名：refreshCaptcha
 
 **接口形式**
 
@@ -1504,6 +1573,8 @@ await uniIdCo.refreshCaptcha({
 1. 在[开发者中心](https://dev.dcloud.net.cn)开通短信服务，并申请短信模板
 2. 在uni-id的配置文件里面添加验证码使用场景对应的短信模板信息，参考：[uni-id配置文件](uni-id-summary.md#config)
 
+接口名：sendSmsCode
+
 **接口形式**
 
 ```js
@@ -1530,6 +1601,8 @@ await uniIdCo.sendSmsCode({
 |errMsg							|string				|错误信息		|
 
 #### 发送邮箱验证码@send-email-code
+
+接口名：sendEmailCode
 
 **接口形式**
 
@@ -1560,6 +1633,8 @@ await uniIdCo.sendEmailCode({
 
 #### 刷新token@refresh-token
 
+接口名：refreshToken
+
 **接口形式**
 
 ```js
@@ -1584,6 +1659,8 @@ await uniIdCo.refreshToken()
 #### 更新/设置uni-push clientId@set-push-cid
 
 如未使用`uni-push 2.0`无需关注此接口。此接口用于更新uni-id-device表的unipush_clientid字段，用于按客户端、用户等维度推送消息
+
+接口名：setPushCid
 
 **接口形式**
 
@@ -1622,6 +1699,8 @@ await uniIdCo.setPushCid({
 
 #### 管理员新增用户@add-user
 
+接口名：addUser
+
 **接口形式**
 
 ```js
@@ -1658,6 +1737,8 @@ await uniIdCo.addUser({
 
 #### 授权用户登录指定客户端@authorize-app-login
 
+接口名：authorizeAppLogin
+
 **接口形式**
 
 ```js
@@ -1691,6 +1772,8 @@ await uniIdCo.authorizeAppLogin({
 
 #### 移除用户登录授权@remove-authorized-app
 
+接口名：removeAuthorizedApp
+
 **接口形式**
 
 ```js
@@ -1723,6 +1806,8 @@ await uniIdCo.removeAuthorizedApp({
 - 仅在用户token即将过期时返回新newToken
 
 #### 设置允许登录的应用列表@set-authorized-app
+
+接口名：setAuthorizedApp
 
 **接口形式**
 

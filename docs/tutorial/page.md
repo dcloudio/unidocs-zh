@@ -216,22 +216,14 @@ The `uni-app` component supports the same lifecycle as the vue standard componen
 |函数名|说明|平台差异说明|最低版本|
 | Function name| Instruction| Platform difference description| Minimum version|
 |:-|:-|:-|:-|
-|beforeCreate|在实例初始化之前被调用。[详见](https://cn.vuejs.org/v2/api/#beforeCreate)|||
-|beforeCreate| is called before the instance is initialized. [See details](https://cn.vuejs.org/v2/api/#beforeCreate)|||
-|created|在实例创建完成后被立即调用。[详见](https://cn.vuejs.org/v2/api/#created)|||
-| created| Called immediately after the instance is created. [See details](https://cn.vuejs.org/v2/api/#created)| | |
-|beforeMount|在挂载开始之前被调用。[详见](https://cn.vuejs.org/v2/api/#beforeMount)|||
-| beforeMount| Called before mounting. [See details](https://cn.vuejs.org/v2/api/#beforeMount)| | |
-|mounted|挂载到实例上去之后调用。[详见](https://cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用```$nextTick```[Vue官方文档](https://cn.vuejs.org/v2/api/#Vue-nextTick)|||
-| mounted| Called after being mounted to the instance. [See details](https://cn.vuejs.org/v2/api/#mounted) Note: It is not certain that all the sub-components are mounted here. If you need to perform operations after sub-components are fully mounted, you can use `$nextTick`[Vue official documents](https://cn.vuejs.org/v2/api/#Vue-nextTick)| | |
-|beforeUpdate|数据更新时调用，发生在虚拟 DOM 打补丁之前。[详见](https://cn.vuejs.org/v2/api/#beforeUpdate)|仅H5平台支持||
-| beforeUpdate| Called when the data is updated, which occurs before the virtual DOM is patched. [See details](https://cn.vuejs.org/v2/api/#beforeUpdate)| Only supported by H5 platform| |
-|updated|由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。[详见](https://cn.vuejs.org/v2/api/#updated)|仅H5平台支持||
-| updated| The virtual DOM is re-rendered and patched due to data changes, after which the hook will be called. [See details](https://cn.vuejs.org/v2/api/#updated)| Only supported by H5 platform| |
-|beforeDestroy|实例销毁之前调用。在这一步，实例仍然完全可用。[详见](https://cn.vuejs.org/v2/api/#beforeDestroy)|||
-| beforeDestroy| Called before the instance is destroyed. At this step, the instance is still fully available. [See details](https://cn.vuejs.org/v2/api/#beforeDestroy)| | |
-|destroyed|Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。[详见](https://cn.vuejs.org/v2/api/#destroyed)|||
-| destroyed| Call after the Vue instance is destroyed. After calling, everything indicated by Vue instance will be unbound. All event listeners will be removed, and all sub-instances will be destroyed. [See details](https://cn.vuejs.org/v2/api/#destroyed)| | |
+|beforeCreate|在实例初始化之前被调用。[详见](https://v2.cn.vuejs.org/v2/api/#beforeCreate)|||
+|created|在实例创建完成后被立即调用。[详见](https://v2.cn.vuejs.org/v2/api/#created)|||
+|beforeMount|在挂载开始之前被调用。[详见](https://v2.cn.vuejs.org/v2/api/#beforeMount)|||
+|mounted|挂载到实例上去之后调用。[详见](https://v2.cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用```$nextTick```[Vue官方文档](https://v2.cn.vuejs.org/v2/api/#vm-nextTick)|||
+|beforeUpdate|数据更新时调用，发生在虚拟 DOM 打补丁之前。[详见](https://v2.cn.vuejs.org/v2/api/#beforeUpdate)|仅H5平台支持||
+|updated|由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。[详见](https://v2.cn.vuejs.org/v2/api/#updated)|仅H5平台支持||
+|beforeDestroy|实例销毁之前调用。在这一步，实例仍然完全可用。[详见](https://v2.cn.vuejs.org/v2/api/#beforeDestroy)|||
+|destroyed|Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。[详见](https://v2.cn.vuejs.org/v2/api/#destroyed)|||
 
 ## 页面调用接口
 ## page call interface

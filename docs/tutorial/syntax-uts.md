@@ -1924,7 +1924,7 @@ Represents the number of milliseconds since the beginning of the UNIX epoch (Jan
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -1950,7 +1950,7 @@ Returns the day of the month (from 1--31) for a specified date object according 
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -1961,7 +1961,7 @@ Returns the day of the week for a specific date, according to local time, with 0
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -1977,7 +1977,7 @@ Returns the hour of a specified date object according to local time.
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -1988,7 +1988,7 @@ Returns the number of milliseconds for a specified date object according to loca
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -1999,7 +1999,7 @@ Returns the number of minutes in a specified date object according to local time
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2010,7 +2010,7 @@ The month of the specified date object, as a 0-based value (0 represents the fir
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2021,7 +2021,7 @@ Returns the number of seconds in a specified date object according to local time
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2032,7 +2032,7 @@ Returns the GMT value of a time.
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2043,7 +2043,7 @@ Specifies the number of days in a date object according to local time.
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2054,7 +2054,7 @@ Sets the year for a date object based on local time.
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2090,7 +2090,7 @@ Sets the time for a Date object as a number of milliseconds representing the tim
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2247,7 +2247,7 @@ The toFixed() method formats a number using fixed-point notation.
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2277,7 +2277,7 @@ Returns the number of elements in the Set object.
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2318,7 +2318,7 @@ The clear() method is used to clear all elements in a Set object.
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2340,7 +2340,7 @@ The delete() method deletes the specified element from a Set object.
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2366,7 +2366,7 @@ The has() method returns a boolean value indicating whether the corresponding va
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2470,7 +2470,7 @@ The concat() method concatenates one or more strings with the original string to
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2487,7 +2487,7 @@ The endsWith() method is used to judge whether the current string "ends" with an
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2509,7 +2509,7 @@ The includes() method is used to determine whether a string is included in anoth
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2529,7 +2529,7 @@ The indexOf() method returns the index of the first occurrence of the specified 
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2553,7 +2553,7 @@ The padEnd() method pads the current string with a string (repeatedly if necessa
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2572,7 +2572,7 @@ The padStart() method pads the current string with another string (repeated as m
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2588,7 +2588,7 @@ repeat() constructs and returns a new string containing the specified number of 
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2606,7 +2606,7 @@ The replace() method returns a new string with some or all pattern matches repla
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2627,7 +2627,7 @@ The search() method performs a search match between the regular expression and t
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2647,7 +2647,7 @@ The slice() method extracts part of a string and returns a new string without ch
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2666,7 +2666,7 @@ The split() method splits a String object into an array of substrings using the 
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2687,7 +2687,7 @@ toLowerCase() converts the string value that calls this method to lowercase and 
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 
@@ -2705,7 +2705,7 @@ The toUpperCase() method converts the string that calls this method to uppercase
 
 **平台差异说明**
 
-|Web|Kotlin|Swift|
+|JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|x|
 

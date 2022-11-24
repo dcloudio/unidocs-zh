@@ -126,86 +126,7 @@ uts 插件支持依赖三方库，目前仅支持 framework 和 xcframework 静�
 
 以 hello uts 中的 uts-tencentgeolocation 腾讯定位插件为例，本插件需要依赖腾讯定位库 `TencentLBS.framework`，则将依赖库存放到 `~/uni_modules/uts-tencentgeolocation/utssdk/app-ios/Framework/TencentLBS.framework` 位置即可
 
-## 4 iOS 平台内置库 DCUTSFoundation
-
-DCUTSFoundation 为框架内置库，所有 uts 插件都会依赖此基础库
-
-DCUTSFoundation 会封装一些常用方法便于开发者直接调用
-
-使用时需要在 uts 文件中先导入 DCUTS 类，所有方法都通过 DCUTS 类调用
-
-```ts
-// 从 DCUTSFoundation 依赖库中导入 DCUTS 类
-import { DCUTS } from "DCUTSFoundation"
-```
-
-### 4.1 getCurrentViewController(): UIViewController
-
-> HBuilderX 版本待确认
-
-获取当前 app 显示的 UIViewController 实例
-
-以 hello uts 中的 uts-alert 为例：
-
-示例文件在 hello uts 中的位置：
-
-`~/uni_modules/uts-alert/utssdk/app-ios/index.uts`
-
-```ts
-export function showAlert(title: string|null, message: string|null, result: (index: Number) => void) {
-	// uts方法默认会在子线程中执行，涉及 UI 操作必须在主线程中运行，通过 DispatchQueue.main.async 方法可将代码在主线程中运行
-	DispatchQueue.main.async(execute=():void => {
-		
-		// 初始化 UIAlertController 实例对象 alert
-		let alert = new UIAlertController(title=title,message=message,preferredStyle=UIAlertController.Style.alert)
-		
-		// 创建 UIAlertAction 按钮
-		let okAction = new UIAlertAction(title="确认", style=UIAlertAction.Style.default, handler=(action: UIAlertAction):void => {
-			// 点击按钮的回调方法
-			result(0)
-		})
-		
-		// 创建 UIAlertAction 按钮
-		let cancelAction = new UIAlertAction(title="取消", style=UIAlertAction.Style.cancel, handler=(action: UIAlertAction):void => {
-			// 点击按钮的回调方法
-			result(1)
-		})
-		
-		// 将 UIAlertAction 添加到 alert 上
-		alert.addAction(okAction)
-		alert.addAction(cancelAction)
-		
-		// 打开 alert 弹窗
-		DCUTS.getCurrentViewController().present(alert, animated= true)
-	})
-}
-```
-
-
-#### 4.2 colorWithString(value: string): UIColor
-
-> HBuilderX 版本待确认
-
-将字符串色值转换为 UIColor
-
-格式支持
-
-- 精简写法的十六进制 如：#f00
-- 十六进制 如：#ff0000
-- RGB 如：rgb(255, 0, 0)
-- RGBA 如:rgba(255, 0, 0, 0.5)
-- 色值关键字，如： red
-   
-示例
- 
-```ts
-let bgColor = DCUTS.colorWithString("#000000")
-view.backgroundColor = bgColor
-```
-
-持续更新中
-
-## 5 swift 与 UTS 差异重点介绍 (持续更新)
+## 4 swift 与 UTS 差异重点介绍 (持续更新)
 
 通过上面的章节的阅读。
 
@@ -214,11 +135,11 @@ view.backgroundColor = bgColor
 但是对于一个熟悉 iOS 开发的 swift 语言者来说，有很多常用的习惯发生了改变，我们会在这个章节特别指出，便于开发者加深认识。
 
 
-### 5.1 语法差异
+### 4.1 语法差异
 
 -------------------------------
 
-#### 5.1.1  常量和变量
+#### 4.1.1  常量和变量
 
 swift 中用 `let` 来声明常量，用 `var` 来声明变量
 
@@ -236,7 +157,7 @@ let str = "abc" // 声明一个字符串变量
 const str1 = "abc" // 声明一个字符串常量
 ```
 
-#### 5.1.2 可选类型
+#### 4.1.2 可选类型
 
 swift 中的可选类型定义为 `类型?`
 
@@ -259,7 +180,7 @@ uts 中也支持在变量名称后面加 ？表示可选类型，这是标准 ts
 let user?:string = null
 ```
 
-#### 5.1.3 调用构造方法
+#### 4.1.3 调用构造方法
 
 swift 中调用构造方法创建实例对象时不需要使用 `new` 关键字
 
@@ -274,7 +195,7 @@ var alert = new UIAlertController()
 ```
 
 
-#### 5.1.4 函数参数标签
+#### 4.1.4 函数参数标签
 
 在 swift 中方法参数存在标签时使用 `:` 连接在标签和参数值之间，在 uts 中需要使用 `=` 连接
 
@@ -291,7 +212,7 @@ var alert = UIAlertController(title: "提示", message: "提示内容", preferre
 let alert = new UIAlertController(title="提示", message="提示内容", preferredStyle=UIAlertController.Style.alert)
 ```
 
-#### 5.1.5 枚举值
+#### 4.1.5 枚举值
 
 枚举在 swift 中可以忽略枚举类型直接简写 `.枚举值` ，在 uts 中不支持简写，需要完整的写出 `枚举类型.枚举值`
 上面的示例中 swift 中最后一个参数 preferredStyle 的值可以简写为
@@ -307,7 +228,7 @@ UIAlertController.Style.alert
 ```
 
 
-#### 5.1.6 类继承
+#### 4.1.6 类继承
 
 swift 中定义子类继承父类时需要在子类名称后加上父类名称，中间以冒号`:`分隔
 
@@ -327,7 +248,7 @@ class Son extends Father {
 }
 ```
 
-#### 5.1.7 遵循协议方法
+#### 4.1.7 遵循协议方法
 
 swift 中要让自定义类型遵循某个协议，在定义类型时，需要在类型名称后加上协议名称，中间以冒号`:`分隔。遵循多个协议时，各协议之间用逗号`,`分隔：
 
@@ -345,7 +266,7 @@ class SomeClass implements FirstProtocol, AnotherProtocol {
 }
 ```
 
-#### 5.1.8 系统版本判断
+#### 4.1.8 系统版本判断
 
 swift 中系统版本判断的方法
 
@@ -364,7 +285,7 @@ if (UIDevice.current.systemVersion >= "10.0") {
 }
 ```
 
-#### 5.1.9 闭包
+#### 4.1.9 闭包
 
 swift 中闭包可以简写
 
@@ -384,7 +305,7 @@ let action = new UIAlertAction(title="确认", style=UIAlertAction.Style.default
 })
 ```
 
-#### 5.1.10 target-action 方法
+#### 4.1.10 target-action 方法
 
 uts 中调用原生中涉及 target-action 的方法时，比如给`UIButton`添加点击事件方法、注册通知中心事件方法时注意事项，
 
@@ -412,7 +333,7 @@ NotificationCenter.default.addObserver(this, selector = method, name = UIApplica
 }
 ```
 
-#### 5.1.11 字典类型
+#### 4.1.11 字典类型
 
 swift 中的 Dictionary 类型，在 uts 中使用 Map 类型代替
 
@@ -427,7 +348,7 @@ value["name"] = "uts"
 let map: Map<string,any> = new Map()
 map.set("name","uts")
 ```
-#### 5.1.12 覆写方法存在参数标签的兼容问题
+#### 4.1.12 覆写方法存在参数标签的兼容问题
 
 当覆写系统方法，或实现三方SDK的协议方法时，一些方法可能会存在参数标签的情况
 
@@ -471,9 +392,9 @@ tencentLBSLocationManager(manager: TencentLBSLocationManager, @argumentLabel("di
 
 
 
-## 6  常见问题(持续更新)
+## 5  常见问题(持续更新)
 
-### 6.1 如何在UTS环境中，获取当前 UIViewController 实例
+### 5.1 如何在UTS环境中，获取当前 UIViewController 实例
 
 参考 Hello UTS 项目中的 uts-alert 插件
 
@@ -481,7 +402,7 @@ tencentLBSLocationManager(manager: TencentLBSLocationManager, @argumentLabel("di
 > ~/uni_modules/uts-alert/utssdk/app-ios/index.uts
 
 
-### 6.2 如何在UTS环境中，操作 UI 线程
+### 5.2 如何在UTS环境中，操作 UI 线程
 
 ```
 DispatchQueue.main.async(execute=():void => {
@@ -496,9 +417,9 @@ DispatchQueue.main.async(execute=():void => {
 
 
 
-## 7  已知待解决问题(持续更新)
+## 6  已知待解决问题(持续更新)
 
-### 7.1 语法提示问题
+### 6.1 语法提示问题
 
 HBuilderX 目前写iOS uts 插件时部分语法提示会有缺失、参数类型不准确的问题，例如：
 
@@ -509,13 +430,13 @@ HBuilderX 目前写iOS uts 插件时部分语法提示会有缺失、参数类�
 
 这些问题会在后续版本中优化
 
-### 7.2 语法不兼容问题
+### 6.2 语法不兼容问题
 
-#### 7.2.1 for 循环语法问题
+#### 6.2.1 for 循环语法问题
 
 - for in  循环目前有语法兼容问题
 - for (int i = 0, i < array.length, i++)  方法目前有语法兼容问题
 
-### 7.3 类型兼容问题
+### 6.3 类型兼容问题
 
 - 元祖类型目前不支持

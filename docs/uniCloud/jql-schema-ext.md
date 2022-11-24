@@ -1,4 +1,6 @@
-## 简介
+schema扩展主要用于用于扩展schema的能力，实现一些不方便在schema.json文件内进行描述或处理的逻辑。目前schema扩展仅增加了触发器功能。
+
+## 触发器@trigger
 
 新增于 HBuilderX 3.6.10，JQL触发器用于在执行一段数据库指令的同时触发相应的操作。可以使用触发器方便的实现如下功能：
 
@@ -6,7 +8,7 @@
 2. 发布一篇文章后自动给文章作者列表文章数量加1
 3. 更新文章时自动将更新时间修改为当前时间
 
-## 触发器配置@config
+### 触发器配置@config
 
 在项目的`uniCloud/database`目录下创建`${表名}.schema.ext.js`，内容如下。
 
@@ -39,7 +41,7 @@ module.exports = {
 
 在通过云函数/云对象使用jql访问时，触发器可以使用云函数/云对象依赖的公共模块。
 
-## 触发器入参@trigger-param
+### 触发器入参@trigger-param
 
 所有触发器均在数据校验、权限校验之后执行，beforeXxx会在实际执行数据库指令之前执行，afterXxx会在实际执行数据库指令之后执行。
 
@@ -54,31 +56,31 @@ module.exports = {
 |addDataList|array&lt;object&gt;|-			|create必备	|新增操作传入的数据列表（见下方说明）												|
 |updateData	|object							|-			|update必备	|更新操作传入的数据（见下方说明）														|
 
-### where
+#### where
 
 > read、count、delete、update操作可能有此参数
 
 触发器收到的where参数为转化后的查询条件，可以直接作为参数传给db.collection()和dbJql.collection()的where方法。jql语句使用doc方法时也会转成where，形如：{_id: 'xxx'}
 
-### field
+#### field
 
 > 仅read操作有此参数
 
 field为所有被访问的字段的组成的数组，嵌套的字段会被摊平。
 
-### addDataList
+#### addDataList
 
 > 仅create操作有此参数
 
 数据库指令add方法的参数和schema内defaultValue、forceDefaultValue合并后的列表。注意为统一数据结构，add方法内只传递一个对象时此参数也是一个仅有一项的数组
 
-### updateData
+#### updateData
 
 > 仅update操作有此参数
 
 数据库指令update方法的参数
 
-## 触发时机@trigger-timing
+### 触发时机@trigger-timing
 
 |触发时机			|说明				|
 |---					|---				|
@@ -93,7 +95,7 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 |beforeDelete	|删除前触发	|
 |afterDelete	|删除后触发	|
 
-## 示例@demo
+### 示例@demo
 
 以下article表为例。
 
@@ -139,7 +141,7 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 }
 ```
 
-### 读取后触发实现阅读量加1
+#### 读取后触发实现阅读量加1
 
 ```js
 // article.schema.ext.js
@@ -164,7 +166,7 @@ module.exports {
 }
 ```
 
-### 删除前备份
+#### 删除前备份
 
 ```js
 // article.schema.ext.js
@@ -189,7 +191,7 @@ module.exports {
 }
 ```
 
-### 修改文章更新时间
+#### 修改文章更新时间
 
 ```js
 // article.schema.ext.js
@@ -212,7 +214,7 @@ module.exports {
 }
 ```
 
-### 新增文章时自动添加摘要
+#### 新增文章时自动添加摘要
 
 ```js
 // article.schema.ext.js
@@ -230,7 +232,7 @@ module.exports {
 }
 ```
 
-## 注意事项
+### 注意事项
 
 - 非getTemp联表查询（不推荐的用法）在触发器内获取的where为null、field为当前表的所有字段。
 - 联表查询时只会触发主表触发器，不会触发副表触发器
@@ -239,7 +241,7 @@ module.exports {
 - 通过jql的redis缓存读取的内容不会触发读触发器
 - jql数据管理不会触发任何触发器
 
-### 和action的关系
+#### 和action的关系
 
 数据库触发器能实现很多常见的action功能，并且无需修改schema和数据库指令。
 

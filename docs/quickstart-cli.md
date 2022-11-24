@@ -41,6 +41,13 @@ npm install -g @vue/cli@4
 <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/h5-cli-01.png" width="300">
 </div>
 
+**注意**
+
+- Vue3/Vite版要求 node 版本`^14.18.0 || >=16.0.0`
+- 如果使用 HBuilderX（3.6.7以下版本）运行 Vue3/Vite 创建的最新的 cli 工程，需要在 HBuilderX 运行配置最底部设置 node路径 为自己本机高版本 node 路径（注意需要重启 HBuilderX 才可以生效）
+    * HBuilderX Mac 版本菜单栏左上角 HBuilderX->偏好设置->运行配置->node路径
+    * HBuilderX Windows 版本菜单栏 工具->设置->运行配置->node路径
+
 #### 自定义模板
 选择自定义模板时，需要填写 uni-app 模板地址，这个地址其实就是托管在云端的仓库地址。以 GitHub 为例，地址格式为 `userName/repositoryName`，如 `dcloudio/uni-template-picture` 就是下载图片模板。
 

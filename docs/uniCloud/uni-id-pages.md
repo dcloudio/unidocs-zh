@@ -319,13 +319,15 @@ uni.navigateTo({
 
 ## 云对象（uni-id-co）
 
-uni-id-co是uni-id-pages的核心云对象，包含了诸多用户相关的接口。作为uni-id体系的一部分，uni-id-co也使用uni-id的配置文件（`cloudfunctions/common/uni-config-center/uni-id/config.json`）。**目前此云对象依赖了一些客户端信息，暂不支持url化调用，后续会提供url化方案。**
+uni-id-co是uni-id-pages的核心云对象，包含了诸多用户相关的接口。作为uni-id体系的一部分，uni-id-co也使用uni-id的配置文件（`cloudfunctions/common/uni-config-center/uni-id/config.json`）。**目前此云对象依赖了一些客户端信息，不支持被其他云函数/云对象调用。已支持url化调用，参考：[uni-id-co url化](#adapter-http)**
 
 前端调用云对象`uni-id-co`内的方法前应先获取云对象的引用，代码如下
 
 ```js
 const uniIdCo = uniCloud.importObject('uni-id-co')
 ```
+
+如调用uni-id-co方法时出现找不到`lodash.merge`模块的错误，请手动在uni-id-co云对象目录执行`npm install`。如果是运行客户端的话uniCloud插件会自动给uni-id-co安装缺失的依赖。
 
 ### 目录说明
 

@@ -597,14 +597,76 @@ exports.main = async (event, context) => {
 #### 用户云函数详细说明
 #### User cloud function details
 
-如果业务使用了uniCloud，可以直接在云函数内部处理
-If the business uses uniCloud, it can be processed directly inside the cloud function
+1. 如果业务使用了uniCloud，可以直接在云函数内部处理
+2. 没有使用uniCloud，将结果通过http发送给已有服务器
 
-也可以将结果发送给已有业务服务器
-You can also send the results to an existing business server
+示例代码: 用户业务系统在uniCloud
+```js
+'use strict';
 
-示例代码
-sample code
+const crypto = require('crypto');
+
+const db = uniCloud.database();
+
+const collectionName = "ad-callback-log"; // 如果选择了腾讯云，需要手动预创建表
+
+class DB {
+
+  static save(data) {
+    return new DB().add(data);
+  }
+
+  add(data) {
+    const collection = db.collection(collectionName);
+    const data2 = Object.assign(data, {
+      ad_type: 0,
+      create_date: new Date()
+    })
+    return collection.add(data2);
+  }
+}
+
+exports.main = async (event, context) => {
+  //event为客户端上传的参数
+  console.log('event : ', event);
+
+  const {
+    path,
+    queryStringParameters
+  } = event;
+
+  const data = {
+    adpid: event.adpid,
+    platform: event.platform,
+    provider: event.provider,
+    trans_id: event.trans_id,
+    sign: event.sign,
+    user_id: event.user_id,
+    extra: event.extra,
+  }
+
+  // 注意::必须验签请求来源
+  const secret = "";// uniad 后台开通激励视频回调后生成的 Security key
+  const trans_id = event.trans_id;
+  const sign2 = crypto.createHash('sha256').update(`${secret}:${trans_id}`).digest('hex');
+  if (event.sign !== sign2) {
+    return null;
+  }
+
+  // 可选将回调记录保存到uniCloud，避免用户服务器没有响应时有日志可查，如果选择了保存记录需要做定时清理日志，避免日志过多影响性能
+  // try {
+  //   await DB.save(data);
+  // } catch (e) {
+  //   console.log(e);
+  // }
+
+  // 开发者在此处处理自己的回调业务，需要返回值
+
+  return null
+};
+```
+
+示例代码: 用户业务系统不在uniCloud，通过http的方式发送数据到已有服务器
 ```js
 'use strict';
 
@@ -714,8 +776,8 @@ exports.main = async (event, context) => {
   //   console.log(e);
   // }
 
-  //const url = "https://"; // 用户业务服务器地址，为了避免请求被伪造，必须使用签名的方式请求
-  //let reuslt = await UserServer.send(url, data);
+  const url = "https://"; // 用户业务服务器地址，为了避免请求被伪造，必须使用签名的方式请求
+  let reuslt = await UserServer.send(url, data);
 
   return reuslt
 };

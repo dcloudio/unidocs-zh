@@ -2854,10 +2854,10 @@ class Sign {
 
 	getParamsString (params) {
 		return Object.keys(params)
-						.sort()
-						.filter(item => typeof params[item] !== "object")
-						.map(item => `${item}=${params[item]}`)
-						.join('&')
+			.sort()
+			.filter(item => typeof params[item] !== "object")
+			.map(item => `${item}=${params[item]}`)
+			.join('&')
 	}
 }
 

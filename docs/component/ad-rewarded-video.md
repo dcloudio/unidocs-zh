@@ -530,11 +530,7 @@ Notice:
 #### 接入流程
 #### Access process
 
-1. 更新依赖库支持
-1. Update dependency library support
-- 如果项目使用了 [uni-id](/uniCloud/uni-id-summary.html) 需要更新到 3.3.29+
-- If the project uses [uni-id](/uniCloud/uni-id-summary.html) need to update to 3.3.29+
-- 如果项目使用了 [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) 需要更新到 1.0.8+
+1. 项目使用了 [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) 并更新到 1.0.8+
 2. 使用 [uni-open-bridge](/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
 
 ### Q&A
@@ -577,8 +573,7 @@ Return json data, the fields are as follows:
 字段名称|说明|字段类型|备注|
 field name|description|field type|remark|
 :-|:-|:-|:-|
-isValid|校验结果|Blean|判定结果，是否发放奖励|
-isValid|Verification result|Blean|Judgment result, whether to issue rewards|
+isValid|校验结果|Blean|判定结果，是否发放奖励，具体发放奖励由用户自己的业务系统决定|
 
 示例
 example
@@ -589,10 +584,16 @@ exports.main = async (event, context) => {
   console.log('event : ', event);
 
   return {
-    "isValid": true
+    "isValid": true // 将结果返给广告商服务器，暂不支持在客户端获取此返回结果，可以先将结果报错到数据，由客户端发送请求到服务器查询确认
   }
 };
 ```
+
+注意事项
+1. 看一次广告收到2次回调结果，且 `trans_id` 相同，产生2次的可能原因有
+> 1.1 在云函数里没有向广告商的请求返回 isValid: true
+> 1.2 服务器响应过慢
+
 
 #### 用户云函数详细说明
 #### User cloud function details

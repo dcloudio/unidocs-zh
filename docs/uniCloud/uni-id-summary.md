@@ -307,6 +307,7 @@ Configuration item:
   ], // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的加密算法，详见[密码安全]
   "passwordStrength": "medium", // 密码强度，新增于 uni-id-pages 1.0.8版本，见下方说明
   "tokenSecret": "", // 生成token所用的密钥，注意修改为自己的，使用一个较长的字符串即可
+  "requestAuthSecret": "", // URL化请求鉴权签名密钥
   "tokenExpiresIn": 7200, // 全平台token过期时间，未指定过期时间的平台会使用此值
   "tokenExpiresThreshold": 3600, // 新增于uni-id 1.1.7版本，checkToken时如果token有效期小于此值且在有效期内则自动获取新token，请注意将新token返回给前端保存（云对象会自动保存符合uniCloud响应体规范的响应内的新token），如果不配置此参数则不开启自动获取新token功能
   "passwordErrorLimit": 6, // 密码错误最大重试次数

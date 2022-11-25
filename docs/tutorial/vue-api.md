@@ -162,7 +162,7 @@
 | --				| --						| --	|--		|--			| --	|
 |key	| 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 对比时辨识 VNodes [详情](https://v2.cn.vuejs.org/v2/api/#key) 	|√	| √	| √		| |
 |ref	| ref 被用来给元素或子组件注册引用信息 [详情](https://v2.cn.vuejs.org/v2/api/#ref) 	|√	| √	| √		|非 H5 平台只能获取 vue 组件实例不能获取到内置组件实例|
-|is	| 用于动态组件且基于 DOM 内模板的限制来工作 [详情](https://v2.cn.vuejs.org/v2/api/#is) 	|√	| √	| x		|	-	|
+|is	| 用于动态组件且基于 DOM 内模板的限制来工作 [详情](https://v2.cn.vuejs.org/v2/api/#is) 	|√	| √ (需传入 String 类型) | x		|	-	|
 
 
 

@@ -382,9 +382,15 @@ const uniIdCo = uniCloud.importObject('uni-id-co')
 
 |字段|说明|
 |--|--|
-|clientInfo|客户端信息; `uni.getSystemInfo`返回的字段|
+|clientInfo|客户端信息; [uni.getSystemInfo](/api/system/info.md#getsysteminfo)返回的字段|
 |uniIdToken|用户Token; 用户登录后必填|
 |params|API接口参数字段|
+
+如果是在 uni-app 之外的应用中调用 URL 化接口，请确保clientInfo中存在以下字段:
+|字段|说明|
+|--|--|
+|uniPlatform|应用运行平台，与条件编译平台相同。[详见](/api/system/info.md#uniplatform)|
+|appId|manifest 中应用appid，即DCloud appid。如没有请手动指定一个，需确保唯一性。|
 
 假设已在uniCloud 控制台已设置URL化域名PATH，以PATH为`/http/uni-id-co`为例，演示登录示例：
 
@@ -1842,6 +1848,77 @@ await uniIdCo.setAuthorizedApp({
 - 此接口为管理端接口
 - 仅在用户token即将过期时返回新newToken
 
+### 外部系统联登@external
+#### 注册用户@external-register
+
+外部用户注册，将自身系统的用户账号导入uniId，为其创建一个对应uniId的账号(unieid)，使得该账号可以使用依赖uniId的系统及功能。
+
+注册成功后，uni-id 返回 unieid 与 用户 token ，请务必在自身系统中维护好 unieid 与 token。
+
+该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
+
+**接口形式**
+
+```js
+await uniIdCo.externalRegister({
+	unieid,
+	nickname,
+	avatar,
+	gender
+})
+```
+
+**参数说明**
+
+|参数名		|类型				|必填	|说明									|
+|--			|--					|--		|--										|
+|unieid		|string				|是		|uni-id账号，必须保证唯一性。只允许使用数字、字母、“_”及“-”，但不能为纯数字。									|
+|nickname	|string|否		|用户昵称	|
+|avatar	|string|否		|用户头像	|
+|gender	|string|否		|用户性别；0 未知 1 男性 2 女性	|
+
+**返回值**
+
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+|newToken						|object				|token信息		|
+|&nbsp;&#124;-&nbsp;token		|string				|token			|
+|&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
+|unieid							|string				|用户id		|
+
+#### 用户登录@external-login
+
+外部用户登录，用于获取用户token
+
+该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
+
+**接口形式**
+
+```js
+await uniIdCo.externalLogin({
+	unieid
+})
+```
+
+**参数说明**
+
+|参数名		|类型				|必填	|说明									|
+|--			|--					|--		|--										|
+|unieid		|string				|是		|uni-id账号，必须保证唯一性。只允许使用数字、字母、“_”及“-”，但不能为纯数字。									|
+
+**返回值**
+
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+|newToken						|object				|token信息		|
+|&nbsp;&#124;-&nbsp;token		|string				|token			|
+|&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
+|unieid							|string				|用户id		|
+
 ### 其他功能@extra-function
 
 ### 覆盖或新增校验规则@custom-validator
@@ -2053,4 +2130,328 @@ exports.main = async (event, context) => {
   return {}
 };
 
+```
+
+## URL化请求鉴权签名@http-reqeust-auth
+
+uni-id 在URL化请求时，会对以下 API 进行调用鉴权验证，在调用 API 时，开发者需要使用请求鉴权密钥`requestAuthSecret`按照 uni-id 的约定方式对请求中的关键数据进行签名值计算，并将签名值添加到Header请求头的 `uni-id-signature` 参数中传给 uni-id 进行签名验证，uni-id 会对接收到数据进行签名值计算，并与接收到的请求签名值进行比对，如果签名值不一致，则视为无限签名，将拒绝本次请求。
+
+需要进行签名的API列表
+|API|
+|---|
+|externalRegister|
+|externalLogin|
+
+### 请求头公共参数
+
+|参数名称|类型|是否必须|描述|
+|---|---|---|---|
+|uni-id-nonce|string|是|随机字符串|
+|uni-id-timestamp|string|是|当前时间戳; 单位毫秒|
+|uni-id-signature|string|是|请求鉴权签名; 签名算法见下|
+
+### 鉴权签名算法
+1. 将API请求参数（只包括请求body中的params参数，但除去array与object类型的参数），根据参数名称的ASCII码表的顺序排序。如：`foo:1, bar:2, foo_bar:3, foobar:4`排序后的顺序是 `bar:2, foo:1, foo_bar:3, foobar:4`
+2. 将排序好的参数名和参数值按照 `key1=value1&key2=value2` 格式拼装在一起，根据上面的示例得到的结果为：`bar=2&foo=1&foo_bar=3&foobar=4`
+3. 把拼装好的字符串采用utf-8编码，开发者使用请求鉴权密钥与随机串对时间戳与待签名字符串进行 HmacSHA256 加密处理，计算得出请求签名值,如：`HmacSHA256(timestamp + bar=2&foo=1&foo_bar=3&foobar=4, requestAuthSecret + nonce)`
+4. 将加密得到的二进制结果使用十六进制表示，值必须为大写，如：`Hex.stringify(Utf8.parse("helloworld")) = "68656C6C6F776F726C64"`
+
+### 签名值计算示例
+
+#### Nodejs
+```javascript
+const crypto = require('crypto')
+
+function getSignature (params, nonce, timestamp) {
+	const paramsStr = Object.keys(params)
+					.sort()
+					.filter(item => typeof params[item] !== "object")
+					.map(item => `${item}=${params[item]}`)
+					.join('&')
+
+	const signature = crypto.createHmac('sha256', `${requestAuthSecret}${nonce}`).update(`${timestamp}${paramsStr}`).digest('hex')
+
+	return signature.toUpperCase()
+}
+
+const requestAuthSecret = "testSecret"
+const nonce = Math.random().toString(36).substring(2)
+const timestamp = Date.now()
+
+const params = {
+	foo: 1,
+	bar: 2,
+	foo_bar: 3,
+	foobar: 4
+}
+
+const signature = getSignature(params, nonce, timestamp)
+
+console.log("nonce: ", nonce)
+console.log("timestamp: ", timestamp)
+console.log("signature: ", signature)
+
+```
+#### PHP
+```php
+<?php
+
+class Sign {
+    private $requestAuthSecret;
+
+    public function __construct ($requestAuthSecret) {
+        $this->requestAuthSecret = $requestAuthSecret;
+    }
+
+    public function getSignature ($params, $nonce, $timestamp) {
+        $paramsStr = $this->getParamsString($params);
+        $signature = hash_hmac('sha256', utf8_encode((string)$timestamp . $paramsStr), utf8_encode($this->requestAuthSecret . $nonce));
+
+        return strtoupper($signature);
+    }
+    
+    private function getParamsString ($params) {
+        ksort($params);
+
+        $paramsStr = [];
+        foreach($params as $key=>$value){
+            if (gettype($value) == "array" || gettype($value) == "object") {
+                continue;
+            }
+
+            array_push($paramsStr, $key . '=' . $value);
+        }
+        
+        return join('&', $paramsStr);
+    }
+}
+
+$requestAuthSecret = "testSecret";
+$nonce = sprintf("%d", rand());
+$timestamp = time() * 1000;
+
+$params = [
+    "foo" => 1,
+    "bar" => 2,
+    "foobar" => 4,
+    "foo_bar" => 3,
+];
+
+$sign = new Sign($requestAuthSecret);
+$signature = $sign->getSignature($params, $nonce, $timestamp);
+
+print_r("nonce: " . $nonce . PHP_EOL);
+print_r("timestamp: " . $timestamp . PHP_EOL);
+print_r("signature: " . $signature);
+
+```
+
+#### Python
+```python
+import hmac
+import hashlib
+import time
+
+class Sign:
+  def __init__(self, requestAuthSecret):
+        self.requestAuthSecret = requestAuthSecret
+
+  def get_signature (self, params, nonce, timestamp):
+    params_str = self.get_params_string(params)
+    signature = hmac.new(bytes("%s%s" % (self.requestAuthSecret, nonce), 'utf-8'), bytes("%s%s" % (timestamp, params_str), 'utf-8'), digestmod = hashlib.sha256).hexdigest().upper()
+    
+    return signature
+  
+  def get_params_string(self, params):
+    params_str = []
+    for k in sorted(params):
+      if isinstance(params[k], (list, dict)):
+        continue 
+      params_str.append("%s=%s" % (k, params[k]))
+      
+    return "&".join(params_str)
+
+if __name__ == "__main__":   
+  requestAuthSecret = "testSecret"
+  nonce = "xxxxxxx"
+  timestamp = int(round(time.time() * 1000))
+
+  params = {
+    "foo": 1,
+    "bar": 2,
+    "foobar": 4,
+    "foo_bar": 3,
+  }
+
+  sign = Sign(requestAuthSecret)
+  signature = sign.get_signature(params, nonce, timestamp)
+
+  print(nonce, timestamp, signature)
+```
+
+#### Go
+```golang
+package main
+
+import (
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/hex"
+	"fmt"
+	"sort"
+	"strconv"
+	"strings"
+	"time"
+)
+
+type Sign struct {
+	requestAuthSecret string
+}
+
+func (sign Sign) getSignature(params map[string]string, nonce string, timestamp int64) string {
+	paramsStr := sign.getParamsString(params)
+
+	mac := hmac.New(sha256.New, []byte(sign.requestAuthSecret+nonce))
+	mac.Write([]byte(strconv.Itoa(int(timestamp)) + paramsStr))
+	hexSignature := mac.Sum(nil)
+	signature := hex.EncodeToString(hexSignature)
+
+	return strings.ToUpper(signature)
+}
+
+func (sign Sign) getParamsString(params map[string]string) string {
+	keys := make([]string, 0, len(params))
+	for k := range params {
+		keys = append(keys, k)
+	}
+
+	sort.Strings(keys)
+
+	var paramsStr string = ""
+	i := 0
+	for _, k := range keys {
+		v := params[k]
+		if i != 0 {
+			paramsStr += "&"
+		}
+		paramsStr += k
+		paramsStr += "="
+		paramsStr += v
+		i++
+	}
+
+	return paramsStr
+}
+
+func main() {
+	requestAuthSecret := "testSecret"
+	nonce := "xxxxxxx"
+	timestamp := time.Now().UnixMilli()
+
+	params := map[string]string{
+		"foo":     "1",
+		"bar":     "2",
+		"foo_bar": "3",
+		"foobar":  "4",
+	}
+
+	sign := Sign{
+		requestAuthSecret: requestAuthSecret,
+	}
+	signature := sign.getSignature(params, nonce, timestamp)
+
+	result := fmt.Sprintf("nonce: %s, timestamp: %d, signature: %s", nonce, timestamp, signature)
+
+	fmt.Println(result)
+}
+
+```
+
+#### Java
+```java
+import java.util.HashMap;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import java.util.Arrays;
+import java.util.Map;
+
+public class Sign {
+    static String requestAuthSecret = "testSecret";
+
+    public static void main(String[] args) {
+        String nonce = "xxxxxx";
+        long timestamp = System.currentTimeMillis();
+
+        Map<String, String> params = new HashMap<String, String>();
+
+        params.put("foo", "1");
+        params.put("bar", "2");
+        params.put("foo_bar", "4");
+        params.put("foobar", "3");
+
+        String signature = getSignature(params, nonce, timestamp);
+
+        System.out.println("nonce: " + nonce);
+        System.out.println("timestamp: " + timestamp);
+        System.out.println("signature: " + signature);
+    }
+
+    public static String getSignature (Map<String, String> params, String nonce, long timestamp) {
+        String paramsStr = getParamsString(params);
+        String algorithm = "HmacSHA256";
+        Mac hmacSha256;
+        String digestHexString = null;
+
+        try {
+            hmacSha256 = Mac.getInstance(algorithm);
+           
+            String key = new StringBuilder().append(requestAuthSecret).append(nonce).toString();
+            String message = new StringBuilder().append(Long.toString(timestamp)).append(paramsStr).toString();
+
+            byte[] keyBytes = key.getBytes("utf-8");
+            byte[] messageBytes = message.getBytes("utf-8");
+            
+            hmacSha256.init(new SecretKeySpec(keyBytes, 0, keyBytes.length, algorithm));
+            byte[] digestBytes = hmacSha256.doFinal(messageBytes);
+
+            digestHexString = byteArrayToHexString(digestBytes);
+        } catch (Exception e) {
+            System.out.println("[ERROR] not supposed to happen: " + e.getMessage());
+        }
+
+        return digestHexString.toUpperCase();
+    }
+
+    private static String getParamsString (Map<String, String> params) {
+
+        String[] keys = params.keySet().toArray(new String[0]);
+        Arrays.sort(keys);
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < keys.length; i ++) {
+            String key = keys[i];
+
+            if (i != 0) {
+                sb.append("&");
+            }
+            
+            sb.append(key).append("=").append(params.get(key));
+        }
+
+        return sb.toString();
+    }
+
+    private static String byteArrayToHexString(byte[] b) {
+        StringBuilder hs = new StringBuilder();
+        String stmp;
+        for (int n = 0; b!=null && n < b.length; n++) {
+            stmp = Integer.toHexString(b[n] & 0XFF);
+            if (stmp.length() == 1)
+                hs.append('0');
+            hs.append(stmp);
+        }
+        return hs.toString();
+    }
+}
 ```

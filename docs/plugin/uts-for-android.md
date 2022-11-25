@@ -779,6 +779,7 @@ uts中，需要区分全局方法、成员方法
 |---|-------|---|
 |继承类|:|extends|
 |实现type接口|:|extends|
+|实现接口|:|implements|
 
 
 ```kotlin

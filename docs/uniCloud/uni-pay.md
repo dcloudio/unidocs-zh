@@ -1,78 +1,76 @@
-# uni-pay-pages
+> 本文档适用于`uni-pay 2.0.0`及以上版本，需 HBuilderX 3.5.0 及以上版本。旧版本文档请访问：[uni-pay 1.x 文档](unipay.md)
+
+# uni-pay 2.x
 
 ## 简介@introduction
 
-`uni-pay-pages` 是 `uni-pay` 体系的一部分。
+大部分应用，都要开发支付功能，如微信支付、支付宝支付，其中包含发起支付、支付状态查询、支付异步回调、发起退款、退款状态查询、支付统计等众多功能，从前端到后端都需要。
 
-它基于 `uni-pay-common` 提供了一批现成的、开源的、第三方支付相关的前端页面和云端云对象。
+为什么不能有一个开源的通用项目，避免大家的重复开发呢？
 
-而 `uni-pay-common` 是基于原 `uni-pay` 模块的拓展（原 `uni-pay` 公共模块改为名 `uni-pay-common`）。
- 
-即 `uni-pay-common` + `uni-pay-pages` 组成了现在的 `uni-pay` 体系。
+`uni-pay`应需而生。
 
-`uni-pay-pages` 是一个云端一体页面[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)插件，其包含了页面和云对象（uni-pay-co）
+之前版本的`uni-pay 1.x`仅仅只是一个公共模块，它为`uniCloud`开发者提供了简单、易用、统一的支付能力封装。让开发者无需研究支付宝、微信等支付平台的后端开发、无需为它们编写不同代码，拿来即用，屏蔽差异。
 
-开发者在项目中引入 `uni-pay-pages` 后，微信支付、支付宝支付等功能无需自己再开发。由于源码的开放性和层次结构清晰，有二次开发需求也很方便调整。
+但开发者还是需要自己编写云函数或云对象，来对接`uni-pay`公共模块的接口，因此还是有一定的开发难度和工作量的，特别对于新手来说，门槛还是太高了。
 
-> 下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-pay-pages](https://ext.dcloud.net.cn/plugin?name=uni-pay-pages)
+那么到底有没有更方便的开发方式，做到开发者连云对象、页面都不需要写，你只需要在前端放一个支付组件就能完成支付的整个流程呢？
 
-`uni-pay-pages` 的功能包括：
+答案是有的，所以 `uni-pay 2.x` 诞生了。
 
-**页面**
+**注意：`uni-pay 2.x`向下兼容`uni-pay 1.x`，即从`uni-pay 1.x`可以一键升级到`uni-pay 2.x`，且不会对你的老项目造成影响。**
 
-- 支付收银台弹窗组件
-- 支付成功结果页（可配置uni-ad广告，增加开发者收益）[uni-AD 广告联盟](https://uniad.dcloud.net.cn/login)
+开发者在项目中引入 `uni-pay` 后，微信支付、支付宝支付等功能无需自己再开发。由于源码的开放性和层次结构清晰，有二次开发需求也很方便调整。
 
-**页面效果截图（此为H5运行效果图）**
+> 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=uni-pay](https://ext.dcloud.net.cn/plugin?name=uni-pay)
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-cf0c5e69-620c-4f3c-84ab-f4619262939f/8e879976-8d4e-4e00-b1a4-b5cc81f54333.png)
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-cf0c5e69-620c-4f3c-84ab-f4619262939f/17796805-ebb7-43af-be18-14ffe5de6e3d.png)
+`uni-pay` 的功能包括：
 
-插件会自动识别平台，如微信小程序会屏蔽支付宝支付，支付宝小程序也会屏蔽微信支付。
+- 页面
+	+ 支付收银台弹窗组件 [组件详情](#uni-pay-component)
+	+ 支付成功结果页（可配置uni-ad广告，增加开发者收益）[uni-AD 广告联盟](https://uniad.dcloud.net.cn/login)
 
-**友情提示：**
-
-微信内的H5（即公众号网页等，插件支持支付宝支付）
-
-**云对象（uni-pay-co）**
-
-- 微信支付
-	+ 微信APP支付 
-	+ 微信小程序支付
-	+ 微信公众号支付
-	+ 微信手机外部浏览器H5支付
-	+ 微信PC扫码支付
-- 支付宝支付
-	+ 支付宝APP支付 
-	+ 支付宝小程序支付
-	+ 支付宝手机外部浏览器H5支付（支持在微信APP的H5页面中使用支付宝支付）
-	+ 支付宝PC扫码支付
-- 通用接口
-	+ 支付异步回调
-	+ 查询支付状态
-	+ 发起退款
-	+ 查询退款状态
-	+ 关闭订单（取消订单）
-	+ 获取当前支持的支付方式
-	+ 获取当前支付用户的openid
+- 云对象（[uni-pay-co](#uni-pay-co)）
+	+ 微信支付
+		+ 微信APP支付 
+		+ 微信小程序支付
+		+ 微信公众号支付
+		+ 微信手机外部浏览器H5支付
+		+ 微信PC扫码支付
+	+ 支付宝支付
+		+ 支付宝APP支付 
+		+ 支付宝小程序支付
+		+ 支付宝手机外部浏览器H5支付（支持在微信APP的H5页面中使用支付宝支付）
+		+ 支付宝PC扫码支付
+	+ 通用接口
+		+ 支付异步回调
+		+ 查询订单
+		+ 发起退款
+		+ 查询退款
+		+ 关闭订单
+		+ 获取当前支持的支付方式
+		+ 获取当前支付用户的openid
 
 ## 目录结构@catalogue
 
 ```
 ├─uni_modules                                         存放[uni_module](/uni_modules)规范的插件。
 │    ├─其他module
-│    └─uni-pay-pages
+│    └─uni-pay
 │        ├─uniCloud
 │        │    └─cloudfunctions                        云函数目录
+│        │        ├─common                            云端公共模块目录
+│        │            └─uni-pay                       uni-pay公共模块
 │        │        └─uni-pay-co                        集成调用uni-pay方法的云对象
 │        │            ├─common                        公用逻辑
 │        │            ├─config                        配置
 │        │            │  └─permission.js              调用接口所需的权限配置
 │        │            ├─dao                           数据库操作相关API
 │        │            ├─lang                          国际化目录
-│        │            ├─lib                           基础功能，不建议修改此目录下文件
+│        │            ├─lib                           基础功能（不建议修改此目录下文件）
 │        │            │  ├─alipay.js                  支付宝平台相关API
 │        │            │  ├─common.js                  一些通用API
+│        │            │  ├─crypto.js                  跨云函数通信加解密API
 │        │            │  ├─qrcode.js                  云端生成二维码的插件（来自于npm i qrcode的压缩版）
 │        │            │  ├─wxpay.js                   微信支付平台相关API
 │        │            ├─middleware                    中间件
@@ -94,27 +92,24 @@
 
 完整的uni-app目录结构[详情查看](https://uniapp.dcloud.net.cn/frame?id=%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84)
 
-## 快速上手 - 安装步骤@install
+## 示例项目运行教程@rundemo
 
-**友情提醒：**
+在对接自己的项目之前，建议先跑通示例项目，能跑通示例项目，代表你的配置和证书一定是正确的，然后再将`uni-pay`集成到你自己的项目中。
 
-在对接自己的项目之前，建议先下载[uni-pay-pages的示例项目](https://ext.dcloud.net.cn/plugin?name=uni-pay-pages)，先将示例项目跑通之后再来对接你自己的项目。
+**示例项目运行步骤**
 
-**如果你已经跑通了示例项目，则继续往下看！**
+* 1、从插件市场导入`uni-pay`示例项目。[前往插件市场](https://ext.dcloud.net.cn/plugin?name=uni-pay)
 
-**安装步骤**
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ea3b48ad-6b97-4d36-b569-8fb360afbf3e.png)
 
-* 1、从插件市场安装 `uni-pay-pages` 插件到你的项目中。[前往插件市场](https://ext.dcloud.net.cn/plugin?name=uni-pay-pages)
+* 2、打开`uni-pay`配置文件，配置文件地址: `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js` [查看支付配置介绍](#config)
 
-* 2、配置支付参数文件地址: `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js`（没有则新建，注意它是 `.js文件`）[查看支付配置](#配置)
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/59d5f656-bac8-4504-9584-719e17d1a52a.png)
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-cf0c5e69-620c-4f3c-84ab-f4619262939f/2722102d-5787-4f07-9476-d82716010035.png)
-
-* 3、上传公共模块 `uni-config-center`（右键，上传公共模块）
-* 4、上传公共模块 `uni-pay-common`（右键，上传公共模块）
-* 5、上传云函数 `uni-pay-co`（右键，上传云函数）
-* 6、启动项目，完成
-
+* 3、上传公共模块 `uni-config-center`（右键，上传公共模块，每次修改了支付配置，都需要重新上传此模块才会生效）
+* 4、上传公共模块 `uni-pay`（右键，上传公共模块）
+* 5、上传云对象 `uni-pay-co`（右键，上传部署）
+* 6、启动项目，点击唤起收银台支付，如果可以正常支付，代表示例项目运行成功，可以开始对接自己的项目了。 [对接自己项目](#install)
 
 ## 配置@config
 
@@ -131,6 +126,7 @@ module.exports = {
 		// 线上正式环境-支付回调地址
 		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
 	},
+	"notifyKey":"5FB2CD73C7B53918728417C50762E6D45FB2CD73C7B53918728417C50762E6D4", // 跨云函数通信时的加密密钥，建议手动改下，不要使用默认的密钥，长度保持在64位以上即可
 	// 微信支付相关
 	"wxpay": {
 		"enable": true, // 是否启用微信支付
@@ -234,6 +230,8 @@ module.exports = {
 }
 ```
 
+如果你对支付配置中各参数如何获取有疑问，请点击[获取支付配置帮助](#get-config-help)
+
 **注意**
 
 微信支付同时支持V2版本和V3版本
@@ -305,18 +303,17 @@ module.exports = {
 
 [点击此处进入服务空间列表](https://unicloud.dcloud.net.cn/home)，找到你项目用的服务空间，复制其服务空间ID
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-cf0c5e69-620c-4f3c-84ab-f4619262939f/d96ba9b7-5cf4-469a-9821-3bc31a173f9d.png)
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2bcfdc2d-3273-448a-a767-b590967032c7.png)
 
 **URL化地址如何获取？**
 
 [点击此处进入服务空间列表](https://unicloud.dcloud.net.cn/home)，找到你项目用的服务空间，点击服务空间名称进入空间详情页，点击左侧菜单【云函数/云对象】- 点击【uni-pay-co】云对象右侧的【详情】按钮
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-cf0c5e69-620c-4f3c-84ab-f4619262939f/e15594be-8645-4b53-b6c1-d22e15fb9860.png)
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6d620a14-81f0-4ded-9a82-8ccf635908c4.png)
 
 进入详情后，点下面的【复制路径】，复制的内容就是【URL化地址】
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-cf0c5e69-620c-4f3c-84ab-f4619262939f/e08ece50-68e3-4276-89b6-5cea16beec46.png)
-
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/70e629bb-7a8a-401b-aaed-204bcaf17087.png)
 
 ### 只配置部分支付示例@config-part
 
@@ -618,10 +615,27 @@ module.exports = {
 }
 ```
 
+
+## 安装到自己项目教程@install
+
+在对接自己的项目之前，建议先[跑通示例项目](#rundemo)，能跑通示例项目，代表你的配置和证书一定是正确的，然后再将`uni-pay`集成到你自己的项目中。
+
+**安装步骤**
+
+* 1、从插件市场导入`uni-pay`插件到你自己的项目。[前往插件市场](https://ext.dcloud.net.cn/plugin?name=uni-pay)
+
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/88b4e923-9015-4469-800c-0ff4881e9aae.png)
+
+* 2、复制你刚运行的示例项目中的`uni-pay`配置文件，配置文件地址: `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js`到你的项目中 [查看支付配置介绍](#config)
+
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/59d5f656-bac8-4504-9584-719e17d1a52a.png)
+
+* 3、上传公共模块 `uni-config-center`（右键，上传公共模块，每次修改了支付配置，都需要重新上传此模块才会生效）
+* 4、上传公共模块 `uni-pay`（右键，上传公共模块）
+* 5、上传云对象 `uni-pay-co`（右键，上传部署）
+* 6、安装完成
+
 ## 快速上手 - 前端@quickly-pages
-
-注意：示例项目中的首页（`/pages/index/index`）为示例页面，运行后可直接体验支付功能。
-
 
 前端调用支付时，只需要在 `template` 内放一个 `uni-pay` 组件标签即可，如下
 
@@ -632,7 +646,6 @@ module.exports = {
 ### uni-pay组件@uni-pay-component
 
 **属性**
-
 
 | 属性名             | 说明                           | 类型    | 默认值  | 可选值 |
 |-----------------|-------------------------------|---------|--------|-------|
@@ -645,11 +658,10 @@ module.exports = {
 
 | 事件名             | 说明                |  参数  |
 |-----------------|---------------------|---------|
-| pay-success     | 支付成功的回调       |  res  | 
-| pay-cancel      | 支付取消的回调       |  res |
-| pay-fail        | 支付失败的回调       |  res | 
-| pay-create      | 状态支付订单时的回调  | res | 
-
+| success     | 支付成功的回调       |  res  | 
+| cancel      | 支付取消的回调       |  res |
+| fail        | 支付失败的回调       |  res | 
+| create      | 创建支付订单时的回调（此时用户还未支付）  | res | 
 
 **方法**
 
@@ -657,14 +669,14 @@ module.exports = {
 
 | 方法名             | 说明                | 
 |--------------------|---------------------|
-| open               | 发起支付 - 打开支付收银台弹窗    [查看详情](#createPayment) |
-| createPayment      | 直接发起支付（无收银台） [查看详情](#createPayment) |
-| queryPayment       | 查询支付状态     [查看详情](#queryPayment) |
+| open               | 发起支付 - 打开支付收银台弹窗    [查看详情](#create-order) |
+| createOrder        | 直接发起支付（无收银台） [查看详情](#create-order) |
+| getOrder           | 查询订单     [查看详情](#get-order) |
 | refund             | 发起退款（此接口需要权限才可以访问）  [查看详情](#refund) |
-| queryRefund        | 查询退款状态  [查看详情](#query-refund) | 
-| closeOrder         | 关闭订单（取消订单）  [查看详情](#close-order) |
-| getPayProvider     | 获取支持的支付供应商  [查看详情](#get-pay-provider) |
-| getAppId           | 获取支付配置内的appid（主要用于获取微信公众号的appid，用以获取code） [查看详情](#get-appId) |
+| getRefund     | 查询退款  [查看详情](#get-refund) | 
+| closeOrder         | 关闭订单  [查看详情](#close-order) |
+| getPayProviderFromCloud    | 获取支持的支付供应商  [查看详情](#get-pay-provider-from-cloud) |
+| getProviderAppId           | 获取支付配置内的appid（主要用于获取微信公众号的appid，用以获取code） [查看详情](#get-provider-appid) |
 | getOpenid          | 根据code获取openid （主要用于微信公众号code换取openid） [查看详情](#get-openid) |
 
 **前端完整示例代码**
@@ -682,23 +694,23 @@ module.exports = {
 		</view>
 		<button @click="open">唤起收银台支付</button>
 		<!-- #ifdef MP-WEIXIN || H5 || APP -->
-		<button @click="createPayment('wxpay')">直接发起微信支付</button>
+		<button @click="createOrder('wxpay')">直接发起微信支付</button>
 		<!-- #endif -->
 		<!-- #ifdef MP-ALIPAY || H5 || APP -->
-		<button @click="createPayment('alipay')">直接发起支付宝支付</button>
+		<button @click="createOrder('alipay')">直接发起支付宝支付</button>
 		<!-- #endif -->
 		
-		<button @click="queryPayment">查询支付状态</button>
+		<button @click="getOrder">查询支付状态</button>
 		<!--
 		<button @click="refund">发起退款</button>
-		<button @click="queryRefund">查询退款状态</button>
+		<button @click="getRefund">查询退款</button>
 		<button @click="closeOrder">关闭订单</button>
 		-->
 		<!-- #ifdef H5 -->
 		<button v-if="h5Env === 'h5-weixin'" @click="getWeiXinJsCode('snsapi_base')">公众号获取openid示例</button>
 		<!-- #endif -->
 		<!-- 统一支付组件 -->
-		<uni-pay ref="uniPay" :mode="mode" :adpid="adpid" return-url="/pages/order-detail/order-detail" logo="/static/logo.png" @pay-success="paySuccess"></uni-pay>
+		<uni-pay ref="uniPay" :mode="mode" :adpid="adpid" return-url="/pages/order-detail/order-detail" logo="/static/logo.png" @success="paySuccess"></uni-pay>
 	</view>
 </template>
 
@@ -757,11 +769,11 @@ module.exports = {
 			 * 发起支付（不唤起收银台，手动指定支付方式）
 			 * 在调用此api前，你应该先创建自己的业务系统订单，并获得订单号 order_no，把order_no当参数传给此api，而示例中为了简化跟支付插件无关的代码，这里直接已时间戳生成了order_no
 			 */
-			createPayment(provider){
+			createOrder(provider){
 				this.order_no = `test`+Date.now();
 				this.out_trade_no = `${this.order_no}-1`;
 				// 发起支付
-				this.$refs.uniPay.createPayment({
+				this.$refs.uniPay.createOrder({
 					provider: provider, // 支付供应商
 					total_fee: this.total_fee, // 支付金额，单位分 100 = 1元
 					order_no: this.order_no, // 业务系统订单号（即你自己业务系统的订单表的订单号）
@@ -773,9 +785,9 @@ module.exports = {
 					custom: this.custom, // 自定义数据
 				});
 			},
-			// 查询支付状态
-			async queryPayment() {
-				let res = await this.$refs.uniPay.queryPayment({
+			// 查询订单
+			async getOrder() {
+				let res = await this.$refs.uniPay.getOrder({
 					out_trade_no: this.out_trade_no, // 插件支付单号
 					await_notify: true
 				});
@@ -805,9 +817,9 @@ module.exports = {
 					});
 				}
 			},
-			// 查询退款状态
-			async queryRefund() {
-				let res = await this.$refs.uniPay.queryRefund({
+			// 查询退款
+			async getRefund() {
+				let res = await this.$refs.uniPay.getRefund({
 					out_trade_no: this.out_trade_no, // 插件支付单号
 				});
 				if (res) {
@@ -831,7 +843,7 @@ module.exports = {
 			},
 			// 获取公众号code
 			async getWeiXinJsCode(scope="snsapi_base") {
-				let res = await this.$refs.uniPay.getAppId({
+				let res = await this.$refs.uniPay.getProviderAppId({
 					provider: "wxpay",
 					provider_pay_type: "jsapi"
 				});
@@ -914,7 +926,6 @@ module.exports = {
 
 ```
 
-
 ## 快速上手 - 云对象（uni-pay-co）@uni-pay-co
 
 ### 目录结构@cloudobject-catalogue
@@ -934,7 +945,6 @@ module.exports = {
 ├─notify                  异步通知逻辑（你自己的异步通知逻辑写在这里）
 └─service                 分模块存放的云对象方法的服务实现
 ```
-
 
 ### 公共响应参数@co-public-response
 
@@ -956,16 +966,16 @@ module.exports = {
 
 | API             | 说明                | 
 |-----------------|---------------------|
-| uniPayCo.createPayment     | 创建支付 [查看详情](#create-payment)  |
-| uniPayCo.queryPayment        | 查询支付状态 [查看详情](#query-payment)      |
+| uniPayCo.createOrder     | 创建支付 [查看详情](#create-order)  |
+| uniPayCo.getOrder        | 查询订单 [查看详情](#get-order)      |
 | uniPayCo.refund      | 发起退款（此接口需要权限才可以访问） [查看详情](#refund)  | 
-| uniPayCo.queryRefund      | 查询退款状态   [查看详情](#query-refund)| 
-| uniPayCo.closeOrder      | 关闭订单（取消订单） [查看详情](#close-order)  | 
-| uniPayCo.getPayProvider      | 获取支持的支付供应商  [查看详情](#get-pay-provider) | 
-| uniPayCo.getAppId      | 获取支付配置内的appid（主要用于获取微信公众号的appid，用以获取code） [查看详情](#get-appId)  | 
+| uniPayCo.getRefund      | 查询退款   [查看详情](#get-refund)| 
+| uniPayCo.closeOrder      | 关闭订单 [查看详情](#close-order)  | 
+| uniPayCo.getPayProviderFromCloud      | 获取支持的支付供应商  [查看详情](#get-pay-provider-from-cloud) | 
+| uniPayCo.getProviderAppId      | 获取支付配置内的appid（主要用于获取微信公众号的appid，用以获取code） [查看详情](#get-provider-appid)  | 
 | uniPayCo.getOpenid      | 根据code获取openid （主要用于微信公众号code换取openid） [查看详情](#get-openid) |
 
-### 创建支付@create-payment
+### 创建支付@create-order
 
 **支付组件方法形式（带收银台）（推荐）**
 
@@ -983,7 +993,7 @@ this.$refs.uniPay.open({
 **支付组件方法形式（不带收银台）**
 
 ```js
-this.$refs.uniPay.createPayment({
+this.$refs.uniPay.createOrder({
 	provider: "wxpay", // 支付供应商
 	total_fee: 1, // 支付金额，单位分 100 = 1元
 	type: "recharge", // 支付回调类型
@@ -996,7 +1006,7 @@ this.$refs.uniPay.createPayment({
 **云对象接口形式**
 
 ```js
-await uniIdCo.createPayment({
+await uniIdCo.createOrder({
   provider: "wxpay", // 支付供应商
   total_fee: 1, // 支付金额，单位分 100 = 1元
 	type: "recharge", // 支付回调类型
@@ -1043,7 +1053,7 @@ await uniIdCo.createPayment({
 
 - 1、前端用户登录（非本插件功能）
 - 2、前端用户购买商品并下单，云端生成你自己写的业务系统商品订单信息，并返回订单号 `order_no` 给前端（非本插件功能）
-- 3、用上一步云端返回的 `order_no` 调用插件的[创建支付](#create-payment)API（type参数的值写 `goods`），发起真正的支付功能（本插件功能）
+- 3、用上一步云端返回的 `order_no` 调用插件的[创建支付](#create-order)API（type参数的值写 `goods`），发起真正的支付功能（本插件功能）
 - 4、用户支付成功后，云端接收第三方支付发过来的异步回调请求，云端校验请求合法性后，执行商品付款成功异步回调逻辑（即执行 `goods` 回调），同时标记订单为已付款（本插件功能）
 - 5、前端监听到付款成功事件，跳转到支付成功页，并展示广告（本插件功能）
 - 6、用户点击查看订单，跳转到你自己写的业务系统商品订单详情页（本插件功能）
@@ -1053,18 +1063,18 @@ await uniIdCo.createPayment({
 
 - 1、前端用户登录（非本插件功能）
 - 2、前端用户提交充值余额的数量，云端生成你自己写的业务系统充值订单信息，并返回订单号 `order_no` 给前端（非本插件功能）
-- 3、用上一步云端返回的 `order_no` 调用插件的[创建支付](#create-payment)API（type参数的值写 `recharge`），发起真正的支付功能（本插件功能）
+- 3、用上一步云端返回的 `order_no` 调用插件的[创建支付](#create-order)API（type参数的值写 `recharge`），发起真正的支付功能（本插件功能）
 - 4、用户支付成功后，云端接收第三方支付发过来的异步回调请求，云端校验请求合法性后，执行余额充值付款成功异步回调逻辑（即执行 `recharge` 回调），同时标记订单为已付款（本插件功能）
 - 5、前端监听到付款成功事件，跳转到支付成功页，并展示广告（本插件功能）
 - 6、用户点击查看订单，跳转到你自己写的业务系统充值订单详情页（本插件功能）
 - 7、完成
 
-### 查询支付状态@query-payment
+### 查询订单@get-order
 
 **支付组件方法形式（推荐）**
 
 ```js
-await this.$refs.uniPay.queryPayment({
+await this.$refs.uniPay.getOrder({
 	out_trade_no: "2022102701100010100101001", // 插件支付单号
 	await_notify: true, // 是否需要等待异步通知执行完成，若为了响应速度，可以设置为false，若需要等待异步回调执行完成，则设置为true
 });
@@ -1073,7 +1083,7 @@ await this.$refs.uniPay.queryPayment({
 **云对象接口形式**
 
 ```js
-await uniIdCo.queryPayment({
+await uniIdCo.getOrder({
   out_trade_no: "2022102701100010100101001", // 插件支付单号
   await_notify: true, // 是否需要等待异步通知执行完成，若为了响应速度，可以设置为false，若需要等待异步回调执行完成，则设置为true
 });
@@ -1139,13 +1149,12 @@ await uniIdCo.refund({
 |-----------------|---------|---------------------------|
 | result           | object  |  第三方供应商返回的结果   |
 
-
-### 查询退款状态@query-refund
+### 查询退款@get-refund
 
 **支付组件方法形式（推荐）**
 
 ```js
-await this.$refs.uniPay.queryRefund({
+await this.$refs.uniPay.getRefund({
 	out_trade_no: "2022102701100010100101001", // 插件支付单号
 });
 ```
@@ -1153,7 +1162,7 @@ await this.$refs.uniPay.queryRefund({
 **云对象接口形式**
 
 ```js
-await uniIdCo.queryRefund({
+await uniIdCo.getRefund({
   out_trade_no: "2022102701100010100101001", // 插件支付单号
 });
 ```
@@ -1212,20 +1221,20 @@ await uniIdCo.closeOrder({
 |-----------------|---------|---------------------------|
 | result           | object  |  第三方供应商返回的结果   |
 
-### 获取支持的支付供应商@get-pay-provider
+### 获取支持的支付供应商@get-pay-provider-from-cloud
 
 一般情况下，无需调用此api，`uni-pay` 组件内部已自动调用此api。
 
 **支付组件方法形式（推荐）**
 
 ```js
-await this.$refs.uniPay.getPayProvider();
+await this.$refs.uniPay.getPayProviderFromCloud();
 ```
 
 **云对象接口形式**
 
 ```js
-await uniIdCo.getPayProvider();
+await uniIdCo.getPayProviderFromCloud();
 ```
 
 **参数说明**
@@ -1240,10 +1249,10 @@ await uniIdCo.getPayProvider();
 | alipay          | boolean  |  是否支持支付宝支付   |
 | provider        | array&lt;string&gt; |  支持哪些支付供应商，如["wxpay","alipay"]   |
 
-### 获取支付配置内的appid@get-appId
+### 获取支付配置内的appid@get-provider-appid
 
 ```js
-await this.$refs.uniPay.getAppId({
+await this.$refs.uniPay.getProviderAppId({
 	provider: "wxpay",
 	provider_pay_type: "jsapi",
 });
@@ -1251,7 +1260,7 @@ await this.$refs.uniPay.getAppId({
 
 **云对象接口形式**
 ```js
-await uniIdCo.getAppId({
+await uniIdCo.getProviderAppId({
   provider: "wxpay",
   provider_pay_type: "jsapi",
 });
@@ -1307,10 +1316,11 @@ await uniIdCo.getOpenid({
 |-----------------|---------|---------------------------|
 | openid           | string  |  openid   |
 
+## 支付成功异步回调通知@notify
 
-### 支付成功异步回调@notify
+当用户支付成功后，我们要给用户增加余额或者给业务订单标记支付成功，这些通过异步回调通知来实现的。
 
-**提示：异步通知写在 `uni-pay-co/notify` 目录下，在此目录新建2个js文件，分别为 `recharge.js`、`goods.js` 文件，同时复制以下代码要你新建的2个js文件里。**
+**提示：异步回调通知写在 `uni-pay-co/notify` 目录下，在此目录新建2个js文件，分别为 `recharge.js`、`goods.js` 文件，同时复制以下代码要你新建的2个js文件里。**
 
 **注意**
 
@@ -1361,6 +1371,8 @@ this.$refs.uniPay.open({
 });
 ```
 
+**注意：每次修改都需要重新上传云对象`uni-pay-co`**
+
 ## 注意事项@tips
 
 ### 微信公众号@tips-wxpay-jsapi
@@ -1395,36 +1407,51 @@ module.exports = {
 
 微信小程序支付除了配置uni-pay的支付配置外，还需要配置 `manifest.json` 内的 微信小程序appid，如下图所示。
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-cf0c5e69-620c-4f3c-84ab-f4619262939f/193905eb-6840-43fb-a5db-d3cfde6a9a3d.png)
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/0baa997a-36ce-4f43-b07d-beeabe50768f.png)
 
 ### APP支付@tips-app
 
 APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付模块，如下图所示。
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-cf0c5e69-620c-4f3c-84ab-f4619262939f/817520e4-5cfd-48cd-b66b-62ccf4dc11d7.png)
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/47faf380-37ab-435a-be18-7ca66723aaff.png)
 
 同时，还需要打自定义基座（包名需要和开放平台下填写的一致），且你在开放平台下的这个应用必须通过审核才可以。（比如微信开放平台下的APP应用显示通过审核才可以）
 
+## 数据库表@database
+
+- 支付订单表 [uni-pay-orders](https://gitee.com/dcloud/opendb/blob/master/collection/uni-pay-orders/collection.json)
 
 ## 全局错误码@errorcode
 	
-| 错误码                           |             说明          |
-|---------------------------------|---------------------------|
-| uni-pay-permission-error        |  权限不足 |
-| uni-pay-invalid-out-trade-no    | 支付单号（out_trade_no）不能为空 |
-| uni-pay-invalid-code        |  code不能为空 |
-| uni-pay-invalid-order-no        |  订单号（order_no）不能为空 |
-| uni-pay-invalid-type        |  回调类型（type）不能为空，如设置为goods代表商品订单 |
-| uni-pay-invalid-total-fee        |  支付金额（total_fee）必须为正整数（>0的整数）（注意：100=1元） |
-| uni-pay-invalid-description        |  支付描述（description）不能为空 |
-| uni-pay-invalid-provider        |  支付供应商（provider）不能为空 |
-| uni-pay-not-exist-pay-order        |  查询的支付订单不存在 |
-| uni-pay-not-exist-notify-url        |  未配置正确的异步回调URL |
-| uni-pay-create-payment-error        |  获取支付信息失败（具体信息以控制台打印的日志为准） |
-| uni-pay-refund-error        |  退款失败（具体信息以控制台打印的日志为准） |
-| uni-pay-query-refund-error        |  查询退款信息失败（具体信息以控制台打印的日志为准）  |
-| uni-pay-close-order-error        |  关闭订单失败（具体信息以控制台打印的日志为准）  |
-| uni-pay-cert-verify-error        |  证书错误，请检查支付证书 |
+| 错误模块 |    错误码    |             说明          |
+|---------|-------------|---------------------------|
+| uni-pay |    50403    | 当前登录用户的角色权限不足 |
+| uni-pay |    51001    | 支付单号（out_trade_no）不能为空 |
+| uni-pay |    51002    | code不能为空 |
+| uni-pay |    51003    | 订单号（order_no）不能为空 |
+| uni-pay |    51004    | 回调类型（type）不能为空，如设置为goods代表商品订单 |
+| uni-pay |    51005    | 支付金额（total_fee）必须为正整数（>0的整数）（注意：100=1元） |
+| uni-pay |    51006    | 支付描述（description）不能为空 |
+| uni-pay |    51007    | 支付供应商（provider）不能为空 |
+| uni-pay |    51008    | 未获取到 clientInfo |
+| uni-pay |    51009    | 未获取到 cloudInfo |
+| uni-pay |    52001    | 查询的支付订单不存在 |
+| uni-pay |    52002    | 未配置正确的异步回调URL |
+| uni-pay |    53001    | 获取支付信息失败（具体信息以控制台打印的日志为准） |
+| uni-pay |    53002    | 退款失败（具体信息以控制台打印的日志为准） |
+| uni-pay |    53003    | 查询退款信息失败（具体信息以控制台打印的日志为准）  |
+| uni-pay |    53004    | 关闭订单失败（具体信息以控制台打印的日志为准）  |
+| uni-pay |    53005    | 证书错误，请检查支付证书 |
+
+返回值示例
+
+```json
+{
+	"errMsg": "支付单号（out_trade_no）不能为空",
+	"errCode": 51001,
+	"errSubject": "uni-pay"
+}
+```
 
 ## 常见问题@question
 
@@ -1447,3 +1474,22 @@ APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付�
 **注意**
 
 支付账号申请需要企业资质（个体工商户也可以，但不可以是个人资质，需要有营业执照，银行对公账户）。
+
+### 如何获得插件需要的密钥参数@get-config-help
+
+#### 微信支付@get-wxpay-config-help
+
+[微信支付参数和证书生成教程](https://docs.qq.com/doc/DWUpGTW1kSUdpZGF5)
+
+- pfx：微信支付v2需要用到的证书，是一个后缀名为`.p12`的文件，如果你的`.p12`文件不是`wxpay.p12`，则将它改名成`wxpay.p12`，并复制到 `uni-config-center/uni-pay/wxpay/` 目录下
+- appCertPath：微信支付v3需要用到的证书，是一个名为`apiclient_cert.pem`的文件，将它复制到 `uni-config-center/uni-pay/wxpay/` 目录下
+- appPrivateKeyPath：微信支付v3需要用到的证书，是一个名为`apiclient_key.pem`的文件，将它复制到 `uni-config-center/uni-pay/wxpay/` 目录下
+
+#### 支付宝@get-alipay-config-help
+
+[支付宝支付证书生成教程](https://docs.qq.com/doc/DWVBlVkZ1Z21SZFpS)
+
+- privateKey：支付宝商户私钥
+- appCertPath：支付宝商户公钥路径，是一个后缀名为`appCertPublicKey.crt`的文件，将它复制到 `uni-config-center/uni-pay/alipay/` 目录下
+- alipayPublicCertPath：支付宝商户公钥路径，是一个后缀名为`alipayCertPublicKey_RSA2.crt`的文件，将它复制到 `uni-config-center/uni-pay/alipay/` 目录下
+- alipayRootCertPath：支付宝根证书路径，是一个后缀名为`alipayRootCert.crt`的文件，将它复制到 `uni-config-center/uni-pay/alipay/` 目录下

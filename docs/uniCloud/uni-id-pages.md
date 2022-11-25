@@ -2840,16 +2840,25 @@ uni-id 在URL化请求时，会对以下 API 进行调用鉴权验证，在调�
 ```javascript
 const crypto = require('crypto')
 
-function getSignature (params, nonce, timestamp) {
-	const paramsStr = Object.keys(params)
-					.sort()
-					.filter(item => typeof params[item] !== "object")
-					.map(item => `${item}=${params[item]}`)
-					.join('&')
+class Sign {
+	constructor (requestAuthSecret) {
+		this.requestAuthSecret = requestAuthSecret
+	}
 
-	const signature = crypto.createHmac('sha256', `${requestAuthSecret}${nonce}`).update(`${timestamp}${paramsStr}`).digest('hex')
+	getSignature (params, nonce, timestamp) {
+		const paramsStr = this.getParamsString(params)
+		const signature = crypto.createHmac('sha256', `${requestAuthSecret}${nonce}`).update(`${timestamp}${paramsStr}`).digest('hex')
 
-	return signature.toUpperCase()
+		return signature.toUpperCase()
+	}
+
+	getParamsString (params) {
+		return Object.keys(params)
+						.sort()
+						.filter(item => typeof params[item] !== "object")
+						.map(item => `${item}=${params[item]}`)
+						.join('&')
+	}
 }
 
 const requestAuthSecret = "testSecret"
@@ -2863,12 +2872,12 @@ const params = {
 	foobar: 4
 }
 
-const signature = getSignature(params, nonce, timestamp)
+const sign = new Sign(requestAuthSecret)
+const signature = sign.getSignature(params, nonce, timestamp)
 
 console.log("nonce: ", nonce)
 console.log("timestamp: ", timestamp)
 console.log("signature: ", signature)
-
 ```
 #### PHP
 ```php

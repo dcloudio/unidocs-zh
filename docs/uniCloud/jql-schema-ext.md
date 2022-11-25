@@ -1,12 +1,31 @@
-schema扩展主要用于用于扩展schema的能力，实现一些不方便在schema.json文件内进行描述或处理的逻辑。目前schema扩展仅增加了触发器功能。
+# DB Schema扩展js
 
-## 触发器@trigger
+DB Schema 的json文件无法编程，可编程扩展的js将大大增强schema的控制能力。
 
-新增于 HBuilderX 3.6.10，JQL触发器用于在执行一段数据库指令的同时触发相应的操作。可以使用触发器方便的实现如下功能：
+过去clientDB里使用action来处理schema.json不足的地方。但action云函数有个安全缺陷，无法禁止客户端发起指定action的调用。
+
+从 HBuilderX 3.6.10+，uniCloud提供了可编程schema，每个`${表名}.schema.json`旁边都可以配置一个`${表名}.schema.ext.js`。
+
+- 在HBuilderX项目下，在目录 uniCloud/database/ 下可以创建`${表名}.schema.ext.js`。
+- 在uniCloud web控制台的数据库表管理界面，在schema.json旁边也有`${表名}.schema.ext.js`的在线管理。
+
+schema扩展js在规划中可以实现很多事情，目前仅上线数据库触发器功能，推荐开发者使用JQL数据库触发器来替代action云函数。
+
+## 数据库触发器@trigger
+
+JQL的数据库触发器，用于在执行一段JQL数据库指令（增删改查等）的同时触发相应的操作。
+
+仅限使用JQL来操作数据库，客户端和云端均可以执行JQL。但使用传统MongoDB写法不支持数据库触发器。
+
+可以使用触发器方便的实现很多功能，例如：
 
 1. 读取文章详情后阅读量加1
 2. 发布一篇文章后自动给文章作者列表文章数量加1
 3. 更新文章时自动将更新时间修改为当前时间
+
+由于数据库触发器是在云端执行的，所以clientDB操作数据库时很多不宜写在前端的代码，就可以挪到数据库触发器中实现。
+
+如果把数据库的schema定义好，包括json和ext.js，那么各个业务模块就可以随便安心的调用数据库了，数据一致性逻辑和安全保障将被统一管理，不担心不良业务代码的破坏。
 
 ### 触发器配置@config
 
@@ -15,13 +34,17 @@ schema扩展主要用于用于扩展schema的能力，实现一些不方便在sc
 ```js
 module.exports = {
   trigger: {
-    beforeRead: async function ({
+	// 注册数据表的read前事件
+    beforeRead: async function (
+	// 确定要监听的什么样的JQL指令
+	{
       collection,
       operation,
       where,
       field
     } = {}) {
-
+		// 当上述jql指令被触发时，将执行这里的代码。这里就是普通的uniCloud代码，可以调用uniCloud的各种api。
+		console.log("这个触发器被触发了")
     },
     afterRead: async function ({
       collection,
@@ -35,11 +58,12 @@ module.exports = {
 }
 ```
 
-如上配置会在使用jql读取此表内容时触发`beforeRead`和`afterRead`。除这两个时机外还有`beforeCount`、`afterCount`、`beforeCreate`、`afterCreate`、`beforeUpdate`、`afterUpdate`、`beforeDelete`、`afterDelete`这些触发时机，后续章节会详细说明
+如上配置会在使用jql读取此表内容时触发`beforeRead`和`afterRead`。
+除这两个时机外还有`beforeCount`、`afterCount`、`beforeCreate`、`afterCreate`、`beforeUpdate`、`afterUpdate`、`beforeDelete`、`afterDelete`这些触发时机，后续章节会详细说明
 
-在通过clientDB访问时触发器内可以使用包含在clientDB内的公共模块，如何将公共模块引入clientDB请参考：[jql依赖公共模块](jql.md#common-for-jql)
-
-在通过云函数/云对象使用jql访问时，触发器可以使用云函数/云对象依赖的公共模块。
+ext.js里引入公共模块的机制：
+- 在通过clientDB访问时触发器内可以使用包含在clientDB内的公共模块，如何将公共模块引入clientDB请参考：[jql依赖公共模块](jql.md#common-for-jql)
+- 在通过云函数/云对象使用jql访问时，触发器可以使用云函数/云对象依赖的公共模块。
 
 ### 触发器入参@trigger-param
 
@@ -47,14 +71,14 @@ module.exports = {
 
 触发器的入参有以下几个，不同时机的触发器参数略有不同
 
-|参数名			|类型								|默认值	|是否必备		|说明																												|
-|--					|--									|--			|--					|--																													|
-|collection	|string							|-			|是					|当前表名																										|
-|operation	|string							|-			|是					|当前操作类型：`create`、`update`、`delete`、`read`、`count`|
-|where			|object							|-			|否					|当前请求使用的查询条件（见下方说明）												|
-|field			|array&lt;string&gt;|-			|read必备		|当前请求访问的字段列表（见下方说明）												|
-|addDataList|array&lt;object&gt;|-			|create必备	|新增操作传入的数据列表（见下方说明）												|
-|updateData	|object							|-			|update必备	|更新操作传入的数据（见下方说明）														|
+|参数名		|类型				|默认值	|是否必备	|说明														|
+|--			|--					|--		|--			|--															|
+|collection	|string				|-		|是			|当前表名													|
+|operation	|string				|-		|是			|当前操作类型：`create`、`update`、`delete`、`read`、`count`|
+|where		|object				|-		|否			|当前请求使用的查询条件（见下方说明）						|
+|field		|array&lt;string&gt;|-		|read必备	|当前请求访问的字段列表（见下方说明）						|
+|addDataList|array&lt;object&gt;|-		|create必备	|新增操作传入的数据列表（见下方说明）						|
+|updateData	|object				|-		|update必备	|更新操作传入的数据（见下方说明）							|
 
 #### where
 
@@ -72,13 +96,17 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 
 > 仅create操作有此参数
 
-数据库指令add方法的参数和schema内defaultValue、forceDefaultValue合并后的列表。注意为统一数据结构，add方法内只传递一个对象时此参数也是一个仅有一项的数组
+数据库指令add方法的参数和schema内defaultValue、forceDefaultValue合并后的列表。注意为统一数据结构，add方法内只传递一个对象时此参数也是一个仅有一项的数组。
+
+如果在给数据库插入数据前拦截并修改了addDataList的数据，那么插入数据库的就会是新修改的数据。
 
 #### updateData
 
 > 仅update操作有此参数
 
-数据库指令update方法的参数
+数据库指令update方法的参数。
+
+如果在给数据库修改数据前拦截并修改了updateData的数据，那么更新进数据库的就会是新修改的数据。
 
 ### 触发时机@trigger-timing
 
@@ -99,7 +127,7 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 
 以下article表为例。
 
-为了不增加示例的复杂度，所有权限均设置为true，实际项目中切勿随意设置权限
+为了不增加示例的复杂度，所有权限均设置为true，实际项目中切勿随意模仿。
 
 ```js
 // article.schema.ext.js

@@ -129,6 +129,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	│	├─Frameworks              //iOS原生依赖的第三方 framework 依赖库存放目录，可选
 │	│	├─Resources               //iOS原生所依赖的资源文件存放目录，可选
 │	│	├─info.plist              //iOS原生所需要添加到主 info.plist 文件中的配置文件，可选
+│	│	├─UTS.entitlements        //iOS原生所需要添加到主工程 .entitlements 文件中的配置文件，可选
 │	│	├─config.json             //iOS原生配置文件
 │	│	└─index.uts               //iOS原生插件能力实现
 │	├─web                         //web平台目录
@@ -282,13 +283,14 @@ dependencies {
 
 app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
 
-|目录名/文件名	|用途		|
-|:---			|:---		|
-|Frameworks		|iOS平台插件需要引用的三方 framework 依赖库存放目录		|
-|Resources		|iOS平台插件需要引用的资源文件存放目录					|
-|Info.plist		|iOS平台插件需要添加到原生工程Info.plist中的配置文件		|
-|config.json	|iOS平台原生工程的配置文件								|
-|index.uts		|主入口，index.d.ts声明的能力在iOS平台下的实现			|
+|目录名/文件名		|用途													|
+|:---				|:---													|
+|Frameworks			|iOS平台插件需要引用的三方 framework 依赖库存放目录			|
+|Resources			|iOS平台插件需要引用的资源文件存放目录						|
+|Info.plist			|iOS平台插件需要添加到原生工程Info.plist中的配置文件			|
+|UTS.entitlements	|iOS平台插件需要添加到原生工程 entitlements 文件中的配置文件		|
+|config.json		|iOS平台原生工程的配置文件									|
+|index.uts			|主入口，index.d.ts声明的能力在iOS平台下的实现				|
 
 ##### Frameworks 
 iOS平台插件依赖的三方库存放目录，支持以下类型文件：
@@ -308,22 +310,38 @@ iOS平台原生 Info.plist 文件配置，云端打包时会将配置信息合�
 
 除了插件下有Info.plist，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-info-plist)
 
-示例： 添加位置权限描述信息 和 开启后台定位
+示例： 添加自定义字段 TencentLBSAPIKey 和 开启后台定位
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
-    <key>NSLocationAlwaysUsageDescription</key>
-	<string>访问位置权限</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>使用期间获取位置权限</string>
+	<key>TencentLBSAPIKey</key>
+	<string>填写您申请的APIKey</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
 	</array>
   </dict>
+</plist>
+```
+
+##### UTS.entitlements
+iOS平台原生 entitlements 文件配置，云端打包时会将配置信息合并到原生工程的 entitlements 配置文件中
+
+插件需要开启 capabilities 中的相关服务时需要配置 UTS.entitlements 文件
+
+示例：在 capabilities 中勾选 Access WiFi Information 项后对应的 UTS.entitlements 的配置
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.developer.networking.wifi-info</key>
+	<true/>
+</dict>
 </plist>
 ```
 

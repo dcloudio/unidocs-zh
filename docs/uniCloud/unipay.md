@@ -1,3 +1,6 @@
+> 本文档为`uni-pay 1.x`版本文档。适用于老项目。
+> 新项目请另行查阅 [uni-pay 2.x 版本文档](uniCloud/uni-pay.md)。
+
 ## 简介
 ## Introduction
 

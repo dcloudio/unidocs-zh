@@ -1,4 +1,4 @@
-> 本文档适用于`uni-pay 2.0.0`及以上版本，需 HBuilderX 3.5.0 及以上版本。旧版本文档请访问：[uni-pay 1.x 文档](unipay.md)
+> 本文档适用于`uni-pay 2.0.0`及以上版本，需 HBuilderX 3.6.5 及以上版本。旧版本文档请访问：[uni-pay 1.x 文档](unipay.md)
 
 # uni-pay 2.x
 
@@ -652,37 +652,47 @@ module.exports = {
 
 **属性**
 
-| 属性名             | 说明                           | 类型    | 默认值  | 可选值 |
+| 属性名          | 说明                           | 类型    | 默认值  | 可选值 |
 |-----------------|-------------------------------|---------|--------|-------|
 | adpid           | uni-ad的广告位ID，若填写，则会在支付成功结果页展示广告（可以增加开发者广告收益）  | string | -  | - |
 | returnUrl       | 支付成功后，用户点击【查看订单】按钮时跳转的页面地址，如果不填写此属性，则没有【查看订单】按钮 | string  | - | -  |
+| mainColor       | 支付结果页主色调，默认支付宝小程序为#108ee9，其他端均为#01be6e | string | #01be6e | 见下  |
 | mode            | 收银台模式，可选 mobile 手机模式 pc 电脑模式 | string  | mobile | mobile、pc |
 | logo            | 当mode为PC时，展示的logo | string | /static/logo.png | -  |
 
+**mainColor值参考：**
+- 绿色系 #01be6e 
+- 蓝色系 #108ee9 
+- 咖啡色 #816a4e 
+- 粉红 #fe4070 
+- 橙黄 #ffac0c 
+- 橘黄 #ff7100
+- 其他 可自定义
+
 **事件**
 
-| 事件名             | 说明                |  参数  |
-|-----------------|---------------------|---------|
+| 事件名       | 说明                |  参数  |
+|-------------|---------------------|--------|
 | success     | 支付成功的回调       |  res  | 
-| cancel      | 支付取消的回调       |  res |
-| fail        | 支付失败的回调       |  res | 
+| cancel      | 支付取消的回调       |  res  |
+| fail        | 支付失败的回调       |  res  | 
 | create      | 创建支付订单时的回调（此时用户还未支付）  | res | 
 
 **方法**
 
 通过 `let res = await this.$refs.uniPay.xxx();` 方式调用，详情调用方式参考下方的【前端完整示例代码】
 
-| 方法名             | 说明                | 
-|--------------------|---------------------|
-| open               | 发起支付 - 打开支付收银台弹窗    [查看详情](#create-order) |
-| createOrder        | 直接发起支付（无收银台） [查看详情](#create-order) |
-| getOrder           | 查询订单     [查看详情](#get-order) |
-| refund             | 发起退款（此接口需要权限才可以访问）  [查看详情](#refund) |
-| getRefund     | 查询退款  [查看详情](#get-refund) | 
-| closeOrder         | 关闭订单  [查看详情](#close-order) |
-| getPayProviderFromCloud    | 获取支持的支付供应商  [查看详情](#get-pay-provider-from-cloud) |
-| getProviderAppId           | 获取支付配置内的appid（主要用于获取微信公众号的appid，用以获取code） [查看详情](#get-provider-appid) |
-| getOpenid          | 根据code获取openid （主要用于微信公众号code换取openid） [查看详情](#get-openid) |
+| 方法名                    | 说明                | 
+|---------------------------|---------------------|
+| open                      | 发起支付 - 打开支付收银台弹窗    [查看详情](#create-order) |
+| createOrder               | 直接发起支付（无收银台） [查看详情](#create-order) |
+| getOrder                  | 查询订单     [查看详情](#get-order) |
+| refund                    | 发起退款（此接口需要权限才可以访问）  [查看详情](#refund) |
+| getRefund                 | 查询退款  [查看详情](#get-refund) | 
+| closeOrder                | 关闭订单  [查看详情](#close-order) |
+| getPayProviderFromCloud   | 获取支持的支付供应商  [查看详情](#get-pay-provider-from-cloud) |
+| getProviderAppId          | 获取支付配置内的appid（主要用于获取微信公众号的appid，用以获取code） [查看详情](#get-provider-appid) |
+| getOpenid                 | 根据code获取openid （主要用于微信公众号code换取openid） [查看详情](#get-openid) |
 
 **前端完整示例代码**
 
@@ -698,6 +708,7 @@ module.exports = {
 			<view><input v-model.number="total_fee" /></view>
 		</view>
 		<button @click="open">唤起收银台支付</button>
+		<view class="tips">支付前，让用户自己选择微信还是支付宝</view>
 		<!-- #ifdef MP-WEIXIN || H5 || APP -->
 		<button @click="createOrder('wxpay')">直接发起微信支付</button>
 		<!-- #endif -->
@@ -705,17 +716,21 @@ module.exports = {
 		<button @click="createOrder('alipay')">直接发起支付宝支付</button>
 		<!-- #endif -->
 		
+		<button @click="createQRcode('wxpay')">生成独立支付二维码</button>
+		<view class="tips">用于把生成的二维码放到自己写的页面中（组件不会弹窗，请从日志中查看二维码base64值）</view>
+		
 		<button @click="getOrder">查询支付状态</button>
 		<!--
 		<button @click="refund">发起退款</button>
-		<button @click="getRefund">查询退款</button>
+		<view class="tips">发起退款需要admin权限，本示例未对接登录功能</view>
+		<button @click="getRefund">查询退款状态</button>
 		<button @click="closeOrder">关闭订单</button>
 		-->
 		<!-- #ifdef H5 -->
 		<button v-if="h5Env === 'h5-weixin'" @click="getWeiXinJsCode('snsapi_base')">公众号获取openid示例</button>
 		<!-- #endif -->
 		<!-- 统一支付组件 -->
-		<uni-pay ref="uniPay" :mode="mode" :adpid="adpid" return-url="/pages/order-detail/order-detail" logo="/static/logo.png" @success="paySuccess"></uni-pay>
+		<uni-pay ref="uniPay" :mode="mode" :adpid="adpid" return-url="/pages/order-detail/order-detail" logo="/static/logo.png" @success="onSuccess" @create="onCreate"></uni-pay>
 	</view>
 </template>
 
@@ -752,7 +767,7 @@ module.exports = {
 		},
 		methods: {
 			/**
-			 * 发起支付（唤起收银台）
+			 * 发起支付（唤起收银台，如果只有一种支付方式，则收银台不会弹出来，会直接使用此支付方式）
 			 * 在调用此api前，你应该先创建自己的业务系统订单，并获得订单号 order_no，把order_no当参数传给此api，而示例中为了简化跟支付插件无关的代码，这里直接已时间戳生成了order_no
 			 */
 			open() {
@@ -790,7 +805,28 @@ module.exports = {
 					custom: this.custom, // 自定义数据
 				});
 			},
-			// 查询订单
+			/**
+			 * 生成支付独立二维码（只返回支付二维码）
+			 * 在调用此api前，你应该先创建自己的业务系统订单，并获得订单号 order_no，把order_no当参数传给此api，而示例中为了简化跟支付插件无关的代码，这里直接已时间戳生成了order_no
+			 */
+			createQRcode(provider){
+				this.order_no = `test`+Date.now();
+				this.out_trade_no = `${this.order_no}-1`;
+				// 发起支付
+				this.$refs.uniPay.createOrder({
+					provider: provider, // 支付供应商
+					total_fee: this.total_fee, // 支付金额，单位分 100 = 1元
+					order_no: this.order_no, // 业务系统订单号（即你自己业务系统的订单表的订单号）
+					out_trade_no: this.out_trade_no, // 插件支付单号
+					description: this.description, // 支付描述
+					type: this.type, // 支付回调类型
+					qr_code: true, // 是否强制使用扫码支付
+					cancel_popup: true, // 配合qr_code:true使用，是否只生成支付二维码，没有二维码弹窗
+					openid: this.openid, // 微信公众号需要
+					custom: this.custom, // 自定义数据
+				});
+			},
+			// 查询支付状态
 			async getOrder() {
 				let res = await this.$refs.uniPay.getOrder({
 					out_trade_no: this.out_trade_no, // 插件支付单号
@@ -822,7 +858,7 @@ module.exports = {
 					});
 				}
 			},
-			// 查询退款
+			// 查询退款状态
 			async getRefund() {
 				let res = await this.$refs.uniPay.getRefund({
 					out_trade_no: this.out_trade_no, // 插件支付单号
@@ -871,13 +907,17 @@ module.exports = {
 					});
 				}
 			},
-			
+			// 监听事件 - 支付订单创建成功（此时用户还未支付）
+			onCreate(res){
+				console.log('create: ', res);
+				// 如果只是想生成支付二维码，不需要组件自带的弹窗，则在这里可以获取到支付二维码 qr_code_image
+			},
 			// 监听事件 - 支付成功
-			paySuccess(res){
-				console.log('paySuccess: ', res)
+			onSuccess(res){
+				console.log('success: ', res);
 				if (res.user_order_success) {
 					// 代表用户已付款，且你自己写的回调成功并正确执行了
-
+					
 				} else {
 					// 代表用户已付款，但你自己写的回调执行成功（通常是因为你的回调代码有问题）
 	
@@ -925,6 +965,12 @@ module.exports = {
 	
 	.label{
 		margin: 10rpx 0;
+	}
+	
+	.tips{
+		margin-top: 20rpx;
+		font-size: 24rpx;
+		color: #565656;
 	}
 	
 </style>

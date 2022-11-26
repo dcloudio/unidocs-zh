@@ -141,7 +141,7 @@ module.exports = {
 			"secret": "", // 小程序的secret
 			"mchId": "", // 商户id
 			"key": "", // v2的api key
-			"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+			"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 			"v3Key": "", // v3的api key
 			"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 			"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -153,7 +153,7 @@ module.exports = {
 			"secret": "", // app开放平台下的应用的secret
 			"mchId": "", // 商户id
 			"key": "", // v2的api key
-			"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+			"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 			"v3Key": "", // v3的api key
 			"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 			"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -165,7 +165,7 @@ module.exports = {
 			"secret": "", // secret
 			"mchId": "", // 商户id
 			"key": "", // v2的api key
-			"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+			"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 			"v3Key": "", // v3的api key
 			"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 			"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -177,7 +177,7 @@ module.exports = {
 			"secret": "", // 公众号的secret
 			"mchId": "", // 商户id
 			"key": "", // v2的api key
-			"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+			"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 			"v3Key": "", // v3的api key
 			"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 			"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -189,7 +189,7 @@ module.exports = {
 			"secret": "", // secret
 			"mchId": "", // 商户id
 			"key": "", // v2的api key
-			"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+			"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 			"v3Key": "", // v3的api key
 			"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 			"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -251,7 +251,7 @@ module.exports = {
 	"secret": "", // 小程序的secret
 	"mchId": "", // 商户id
 	"key": "", // v2的api key
-	"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+	"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 	"version": 2, // 启用支付的版本 2代表v2版本 3 代表v3版本
 },
 ```
@@ -278,7 +278,7 @@ module.exports = {
 	"secret": "", // 小程序的secret
 	"mchId": "", // 商户id
 	"key": "", // v2的api key
-	"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+	"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 	"v3Key": "", // v3的api key
 	"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 	"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -346,7 +346,7 @@ module.exports = {
 			"secret": "", // app开放平台下的应用的secret
 			"mchId": "", // 商户id
 			"key": "", // v2的api key
-			"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+			"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 			"v3Key": "", // v3的api key
 			"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 			"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -380,7 +380,7 @@ module.exports = {
 			"secret": "", // 小程序的secret
 			"mchId": "", // 商户id
 			"key": "", // v2的api key
-			"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+			"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 			"v3Key": "", // v3的api key
 			"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 			"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -414,7 +414,7 @@ module.exports = {
 			"secret": "", // 公众号的secret
 			"mchId": "", // 商户id
 			"key": "", // v2的api key
-			"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+			"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 			"v3Key": "", // v3的api key
 			"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 			"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -448,7 +448,7 @@ module.exports = {
 			"secret": "", // secret
 			"mchId": "", // 商户id
 			"key": "", // v2的api key
-			"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+			"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 			"v3Key": "", // v3的api key
 			"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 			"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -490,7 +490,7 @@ module.exports = {
 			"secret": "", // secret
 			"mchId": "", // 商户id
 			"key": "", // v2的api key
-			"pfx": fs.readFileSync(__dirname + '/wxpay/wxpay.p12'), // v2需要用到的证书
+			"pfx": fs.readFileSync(__dirname + '/wxpay/apiclient_cert.p12'), // v2需要用到的证书
 			"v3Key": "", // v3的api key
 			"appCertPath": path.join(__dirname, 'wxpay/apiclient_cert.pem'), // v3需要用到的证书
 			"appPrivateKeyPath": path.join(__dirname, 'wxpay/apiclient_key.pem'), // v3需要用到的证书
@@ -1532,7 +1532,7 @@ APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付�
 
 [微信支付参数和证书生成教程](https://docs.qq.com/doc/DWUpGTW1kSUdpZGF5)
 
-- pfx：微信支付v2需要用到的证书，是一个后缀名为`.p12`的文件，如果你的`.p12`文件不是`wxpay.p12`，则将它改名成`wxpay.p12`，并复制到 `uni-config-center/uni-pay/wxpay/` 目录下
+- pfx：微信支付v2需要用到的证书，是一个后缀名为`.p12`的文件，如果你的`.p12`文件不是`apiclient_cert.p12`，则将它改名成`apiclient_cert.p12`，并复制到 `uni-config-center/uni-pay/wxpay/` 目录下
 - appCertPath：微信支付v3需要用到的证书，是一个名为`apiclient_cert.pem`的文件，将它复制到 `uni-config-center/uni-pay/wxpay/` 目录下
 - appPrivateKeyPath：微信支付v3需要用到的证书，是一个名为`apiclient_key.pem`的文件，将它复制到 `uni-config-center/uni-pay/wxpay/` 目录下
 

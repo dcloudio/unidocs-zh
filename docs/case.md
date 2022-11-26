@@ -304,7 +304,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **小米有品：** 微信小程序搜同名
 
-**小米：** 米家App内米家智能厨房页面，[App内H5](https://g.home.mi.com/partner/nfc/prod/index.html?m=chunmi.ihcooker.slim#/)；lbs门店微信群：[微信H5](http://s1.mi.com/m/wx/lbs/#/)
+**小米：** 米家App内部分页面，[App内H5](https://g.home.mi.com/partner/nfc/prod/index.html?m=chunmi.ihcooker.slim#/)；lbs门店微信群：[微信H5](http://s1.mi.com/m/wx/lbs/#/)
 
 **快手：** 微信小程序、QQ小程序搜索“快手短视频”
 
@@ -722,8 +722,20 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **T3出行：**  微信小程序搜同名
 
-**人民出行：**  微信小程序搜同名
+**人民出行：** 微信小程序搜同名
 
+
+### 智能硬件
+
+**鱼跃胎心仪：** fetalheart胎心仪，[iOS和Android](https://sj.qq.com/appdetail/com.ledo.fetalheart)
+
+**云米到家：** 微信小程序搜同名
+
+**元气扫码购：** 元气森林自助扫码购物机小程序。微信小程序搜同名
+
+**极米：** [极米官方app](https://sj.qq.com/myapp/detail.htm?apkName=com.xgimi.zhushou&info=FB45015C23ACF368D22855D6C4964312)、[官网H5版](https://m.xgimi.com/)、微信小程序搜索“极米官方商城”、微信小程序搜索“极米care+”售后服务宣传
+
+**小米手环4自定义表盘软件：** [Android](https://www.coolapk.com/apk/tech.pingx.watchface)、[H5](http://watchface.pingx.tech/h5/)
 
 ### 游戏
 
@@ -873,8 +885,6 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **指动全城：** 一个为宝宝选择好产品的线上渠道。[App和小程序通用链接](https://m3w.cn/__uni__6020544)
 
 **极客修：** 专门修手机的小程序。微信、支付宝搜索 极客修 小程序
-
-**小米手环4自定义表盘软件：** [Android](https://www.coolapk.com/apk/tech.pingx.watchface)、[H5](http://watchface.pingx.tech/h5/)
 
 **斗豆侠：** 购物App。[iOS](https://apps.apple.com/cn/app/id1395120441)、[Android](https://obs.myhwclouds.com/vipbean/xgyx_guns/APK/yq.apk)
 

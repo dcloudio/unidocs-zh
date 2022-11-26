@@ -72,7 +72,9 @@
   * [uni-starter](uniCloud/uni-starter.md)
   * [uni-admin](uniCloud/admin.md)
   * [uni-upgrade-center App升级中心](uniCloud/upgrade-center.md)
-  * [unipay 统一支付](uniCloud/unipay.md)
+  * uni-pay 统一支付```{"collapsable": true}```
+	* * [uni-pay 云端一体页面模板](uniCloud/uni-pay.md)
+	* * [uni-pay 公共模块](uniCloud/unipay.md)
   * [uni-im](uniCloud/uni-im.md)
   * [uSearch 云端一体搜索](https://ext.dcloud.net.cn/plugin?id=3851)
   * [uni-captcha 图形验证码](uniCloud/uni-captcha.md)

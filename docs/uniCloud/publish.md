@@ -21,7 +21,7 @@ HBuilderX有多种发行方式
 
 |服务提供商	|request合法域名			|uploadFile合法域名					|download合法域名|
 |:-:		|:-:						|:-:								|:-:|
-|阿里云		|api.bspapp.com（公测版）、api.next.bspapp.com（商用版）				|bsppub.oss-cn-shanghai.aliyuncs.com|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
+|阿里云		|api.bspapp.com（公测版）、api.next.bspapp.com（商用版）				|bsppub.oss-cn-shanghai.aliyuncs.com（公测版），商用版每个服务空间都是不同的域名可以先上传一个文件将网络请求里面看到的上传域名添加即可。后续会在uniCloud web控制台展示相关域名信息|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
 |腾讯云		|tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com		|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
 
 **如果需要用uni.request请求云存储内的文件，需要将云存储域名（即上表中的download合法域名）配置到request合法域名内**

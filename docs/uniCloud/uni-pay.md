@@ -1,3 +1,4 @@
+> 注意：uni-pay2.0 插件市场还未发布，即将发布，敬请期待！
 > 本文档适用于`uni-pay 2.0.0`及以上版本，需 HBuilderX 3.6.5 及以上版本。旧版本文档请访问：[uni-pay 1.x 文档](unipay.md)
 
 # uni-pay 2.x

@@ -1470,6 +1470,8 @@ APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付�
 
 ## 数据库表@database
 
+支付插件需要创建以下表后才能正常运行，可以右键执行插件自带的 `db_init.json` 的初始化数据库功能来创建表。
+
 - 支付订单表 [uni-pay-orders](https://gitee.com/dcloud/opendb/blob/master/collection/uni-pay-orders/collection.json)
 
 ## 全局错误码@errorcode
@@ -1505,6 +1507,10 @@ APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付�
 ```
 
 ## 常见问题@question
+
+### 发起支付时报数据库表不存在？
+
+支付插件需要创建支付相关的表后才能正常运行。[查看相关的数据库表](#database)
 
 ### 支付账号如何申请?
 

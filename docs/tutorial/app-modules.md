@@ -37,7 +37,7 @@ App端根据功能划分为不同的模块，项目使用到特定功能时选�
 
 <a id="bcor"/>
 
-为了避免App默认包含敏感权限，从HBuilderX3.6.11版本开始，将App打包默认包含的Barcode(扫码)、Camera(相机/相册)、Orientation(传感器)、Record(录音)等调整为独立功能模块。  
+为了避免App隐私合规检测报包含麦克风、相机/相册、运动等敏感权限，从HBuilderX3.6.11版本开始，将App打包默认包含的Barcode(扫码)、Camera(相机/相册)、Orientation(传感器)、Record(录音)等调整为独立功能模块。  
 更新到HBuilderX3.6.11版本后云端打包时默认将不会包含以上功能，需在manifest.json的“App模块配置”中手动勾选要使用的模块。  
 Orientation(传感器)将不再维护，在manifest.json中不提供可视化界面配置，如需继续使用，请在manifest.json的“源码视图”中手动在 "app-plus" -> "modules" 添加 "Orientation"，如下：  
 ```json

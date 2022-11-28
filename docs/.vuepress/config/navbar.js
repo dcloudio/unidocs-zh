@@ -112,11 +112,11 @@ export const navbar = [
             type: 'link',
             link: 'https://mp.360.cn/doc/miniprogram/dev/#/view'
           },
-          {
+          /* {
             text: 'Weex',
             type: 'link',
             link: 'http://doc.weex.io/zh/guide/introduction.html'
-          },
+          }, */
         ]
       },
       {

@@ -620,25 +620,6 @@ uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug
 
 ![群发短信](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1452ae6f-1370-4dc7-9214-38e83504d780/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
 
-#### 优化 schema 文件命名规范@rename-batch-sms-schema
-> 仅适用于 uni-admin@2.1.6 以下版本
-
-在[uniCloud控制台](https://unicloud.dcloud.net.cn)中导出`batch-sms-template` `batch-sms-task` `batch-sms-result`数据库表，导出的文件注意重新命名保存。
-
-按照正常升级方式将 uni-admin 升级为最新版本。
-
-在 `uniCloud/database` 文件夹下上传`uni-batch-sms-template` `uni-batch-sms-task` `uni-batch-sms-result` schema 文件。
-
-打开 [uniCloud控制台](https://unicloud.dcloud.net.cn)，将导出的数据库表导入进新的表中，新表与旧表对应关系如下：
-
-|旧表|新表|
-|---|---|
-|batch-sms-template|uni-batch-sms-template|
-|batch-sms-task|uni-batch-sms-task|
-|batch-sms-result|uni-batch-sms-result|
-
-在 `uniCloud/database` 文件夹下删除 `batch-sms-template` `batch-sms-task` `batch-sms-result` schema 文件。
-
 ### 用户-角色-权限
 ### user-role-permission
 

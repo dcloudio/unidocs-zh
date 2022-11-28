@@ -25,8 +25,7 @@
     6. 如果不发布Web版，你将不需要购买备案域名。小程序和App可以免域名使用服务器；
     6. If you do not publish the web version, you will not need to purchase a registered domain name. Mini Programs and Apps can use the server without a domain name;
 
-目前uniCloud阿里云版免费，助力开发者低门槛实现自己的想法。
-At present, uniCloud Alibaba Cloud Edition is free, helping developers realize their ideas with low threshold.
+uniCloud为每个开发者提供一个免费服务空间，让你也可以拥有自己的服务器。
 
 ### 看视频，只需25分钟，快速入门uniCloud
 ### Watch the video, just 25 minutes, get started quickly with uniCloud
@@ -116,8 +115,9 @@ Just like uni-app can be cross-end, uniCloud can be cross-cloud. Based on uniClo
 1、传统云服务的租用，按占用的硬件资源的上限值+固定时长来租用。
 1、 The rental of traditional cloud services is based on the upper limit of the occupied hardware resources + fixed duration.
 
-选择CPU和内存的配置，不到满配时，资源是浪费的，接近满配就需要立即扩容新的配置。
-Select the configuration of CPU and memory. When the configuration is not full, resources are wasted. When the configuration is close to full configuration, you need to expand the new configuration immediately.
+传统云是按配置买服务器，买了之后不管用不用都要交钱。而serverless是按量计费，如果没有使用，一分钱都不用交。
+
+传统云选择CPU和内存的配置，不到满配时，资源是浪费的，接近满配就需要立即扩容新的配置。
 
 serverless不是传统云，它不需要开发者选择CPU和内存配置，也没有操作系统的选择。开发者编写云函数代码，上传到uniCloud的阿里云版或腾讯云版。
 Serverless is not a traditional cloud, it does not require developers to choose CPU and memory configuration, and there is no choice of operating system. The developer writes the cloud function code and uploads it to the Alibaba Cloud version or Tencent Cloud version of uniCloud.
@@ -140,11 +140,9 @@ From a technical point of view, serverless has obvious cost advantages, so renti
 在传统云的世界里，有大量的收费产品。
 In the world of traditional cloud, there are a plethora of premium offerings.
 
-在阿里云和腾讯云的官网可以看到长长的收费产品列表，比如负载均衡、高防、安全中心...
-On the official websites of Alibaba Cloud and Tencent Cloud, you can see a long list of charging products, such as load balancing, high defense, security center...
+在阿里云和腾讯云的官网可以看到长长的收费产品列表，比如负载均衡、高防、cdn回源、安全中心...
 
-在uniCloud的世界，简单清晰，没有这些收费项。
-In the world of uniCloud, simple and clear, there are no such charges.
+这个计费项又贵又让开发者头晕。在uniCloud的世界，简单清晰，**没有这些收费项**。
 
 只需按对计算资源、存储资源的消耗计费，只需关心业务，无需关心其他各种名目的增值产品，也无需为它们付费。
 You only need to pay for the consumption of computing resources and storage resources, you only need to care about the business, and you don't need to care about other value-added products in various names, and you don't need to pay for them.
@@ -155,14 +153,9 @@ You must know that a high-defense package for anti-DDoS is at least tens of thou
 展开说下uniCloud为什么不用买高防也不害怕DDoS：由于阿里云和腾讯云的serverless有巨大的资源池，且serverless没有固定ip，云函数使用的是阿里云和腾讯云的自有域名，前端网页托管在cdn上，DDoS攻击者打不起、也打不挂uniCloud。
 Let's talk about why uniCloud does not need to buy high defense and is not afraid of DDoS: Because Alibaba Cloud and Tencent Cloud's serverless have huge resource pools, and serverless does not have a fixed IP, cloud functions use Alibaba Cloud and Tencent Cloud's own domain names, front-end Web pages are hosted on CDNs, and DDoS attackers can't fight or hang up uniCloud.
 
-3、云厂商的促销补贴
-3、 Promotional subsidies for cloud vendors
+3、云厂商的补贴优惠
 
-目前阿里云为uniCloud提供了免费的云资源，不但云函数、云数据库免费，连存储和cdn都免费（云存储目前有限额，但是正常业务均可申请提额，具体参考：[阿里云费用](https://uniapp.dcloud.io/uniCloud/price?id=aliyun)）。
-At present, Alibaba Cloud provides free cloud resources for uniCloud. Not only cloud functions and cloud databases are free, but also storage and CDN are free (cloud storage currently has a limit, but normal business can apply for an increase. For specific reference: [Alibaba Cloud Fees](https://uniapp.dcloud.io/uniCloud/price?id=aliyun)).
-
-腾讯云也提供了一个免费服务空间，此外再建服务空间的收费也比传统云要低很多。
-Tencent Cloud also provides a free service space, and the fee for re-building the service space is much lower than that of traditional clouds.
+uniCloud阿里云版为每个开发者提供1个免费的服务空间。传统云可没有这种优惠。
 
 基于以上3点原因，uniCloud大幅降低了开发者云资源的租用成本。
 Based on the above three reasons, uniCloud greatly reduces the rental cost of developers' cloud resources.
@@ -313,7 +306,8 @@ Listed below are some commonly used wheels
 - uni-sec-check：免费的内容安全审查，防止用户提交违法的文字或图片。[详见](https://ext.dcloud.net.cn/plugin?id=5460)
 - uni-sec-check: Free content security review to prevent users from submitting illegal text or images. [See details](https://ext.dcloud.net.cn/plugin?id=5460)
 - uni-upgrade-center：App升级中心。支持整包升级、wgt热更新；支持直接下载安装包或跳转应用商店。[详见](upgrade-center.md)
-- uni-upgrade-center: App upgrade center. Support whole package upgrade, wgt hot update; support direct download of the installation package or jump to the app store. [See details](upgrade-center.md)
+- uni-push2：云端一体的推送，大幅简化推送开发。[/unipush-v2.md]
+- uni-im：开源IM。[uni-im.md]
 
 **2. 社区的优秀插件**
 **2. Excellent plugins from the community**
@@ -324,7 +318,6 @@ Listed below are some commonly used wheels
 - banner管理
 - banner management
 - 留言反馈
-- IM
 - 日志管理
 - log management
 - 敏感词过滤

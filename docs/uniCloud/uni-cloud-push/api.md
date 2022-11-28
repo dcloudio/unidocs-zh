@@ -113,9 +113,7 @@ await uniPush.sendMessage(OBJECT)
 |title|String|是|无|通知栏标题，长度小于20|APP|
 |title|String|Yes|None|Title of notification bar, length less than 20|APP|
 |content|String|是|无|通知栏内容，长度小于50|APP|
-|content|String|Yes|None|Notification bar content, length less than 50|APP|
-|payload|String、Object|是|无|推送透传数据，app程序接受的数据，长度小于800;</br>注意：为了确保离线厂商通道，可以获得payload的值，请用Object格式如：`{"text":"xxx"}`| |
-|payload|String, Object|Yes|None|Push transparent data, the length of the data accepted by the app program is less than 800;</br>Note: In order to ensure the offline vendor channel, the payload value can be obtained, please use the Object format such as: `{"text":"xxx"}`| |
+|payload|String、Object|是|无|推送透传数据，app程序接受的数据，长度小于800字符;</br>注意：为了确保离线厂商通道，可以获得payload的值，请用Object格式如：`{"text":"xxx"}`| |
 |force_notification|Boolean|否|false|无论是离线推送还是在线推送，都自创建通知栏消息。HBuilderX 3.5.2 及其以上版本的客户端支持| App|
 |force_notification|Boolean|No |false|Whether offline push or online push, self-create notification bar message. Client support for HBuilderX 3.5.2 and above | App|
 |badge|Number、String|否|+1|设置应用右上角数字，用于提醒用户未阅读消息数量，支持在原有数字上的+、-操作;</br>例如：badge=+1，表示当前角标+1；</br>badge=-1，(仅iOS支持)表示当前角标-1(角标>=0)；</br>badge=1，(仅iOS和华为EMUI版本10.0.0+支持)表示当前角标置成1。| ios、android-华为|

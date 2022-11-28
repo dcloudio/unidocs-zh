@@ -195,7 +195,7 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
 {
   "passwordSecret": [
     {
-      "value": "hmac-sha256",
+      "type": "hmac-sha256",
       "version": 1
     }
   ], // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的加密算法，详见[密码安全]

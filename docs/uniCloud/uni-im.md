@@ -370,13 +370,21 @@ uni.request({
 		password:"xxx"
 	},
 	url:'https://xxx.com/login.php',//你在传统服务端的登录地址（示例链接非真实地址）
-	success: res => {
+	success: async res => {
 		const {token,signedData} = res.data
 		//4. 存储token实现登录
 		uni.setStorageSync('token',token)
 		
 		//5. 将签名后的signedData作为参数调用uni-im的登录接口
-		res = uniImCo.loginWithJWT(signedData)
+		res = await  uniImCo.loginWithJWT(signedData)
+
+		if(res.errCode){
+			return uni.showModal({
+				content: JSON.stringify(),
+				showCancel: false,
+				confirmText: '知道了',
+			});
+		}
 
 		//6. 更新uniId store内的当前用户信息（uni-im显示当前用户头像、昵称时会用到）
 		await uniIdMutations.updateUserInfo()

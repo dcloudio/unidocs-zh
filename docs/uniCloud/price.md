@@ -182,6 +182,11 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 6. 前端网页托管开通后即为按量计费，不管服务空间有没有开启允许超量使用，前端网页托管计费参考[高级功能按量计费](#tencent-advanced)
 6. After the front-end web hosting is activated, it is billed according to the amount. No matter whether the service space is enabled or not to allow over-use, the billing of the front-end web hosting refers to [advanced function billing](#tencent-advanced)
 
+**关于数据库读写次数的额外说明**
+
+- 数据库单次写入操作每1KB数据计算一次写操作数，向上取整
+- 数据库单次读取操作每4KB数据计算一次读操作数，向上取整
+
 ### 按量付费/超量使用定价@tencent-postpay
 ### Pay-As-You-Go/Overage Pricing @tencent-postpay
 

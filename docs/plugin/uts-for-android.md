@@ -1013,6 +1013,13 @@ class CustomThread extends Thread{
 > ~\uni_modules\uts-nativepage
 
 
+### 6.4 如果我要实现一个官方已有的三方SDK功能，比如微信支付，如何处理？
+
+因为android中，每个UTS插件都对应一个gradle 子项目，所以类似的情况不能简单复用 自定义基座中的官方依赖。
+
+需要：  **不要勾选官方的依赖，然后在uts插件中，按照文档配置依赖**
+
+
 ## 7  已知待解决问题(持续更新)
 
 ### 7.1 结构入参 boolean 参数默认为true

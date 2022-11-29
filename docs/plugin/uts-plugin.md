@@ -397,11 +397,13 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 
 ## 3 开发uts插件
 
+### 3.1 获取电量插件示例
+
 以获取电量为例，介绍`uts`插件开发步骤
 
 **首先在 `uni_modules` 目录下新建名为 uni-getbatteryinfo 的 uts 插件**
 
-### Android平台
+#### Android平台
 
 
 ![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
@@ -457,7 +459,7 @@ Note: HBuilderX's code prompt system supports prompting Android's native API in 
 **有android开发经验的开发者可以参考：[Android平台uts开发指南](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)**
 
 
-### iOS 平台
+#### iOS 平台
 
 ![](https://native-res.dcloud.net.cn/images/uts/iOS/getbatteryinfo1.png)
 
@@ -498,6 +500,63 @@ export default function getBatteryInfo(options: GetBatteryInfoOptions) {
 ```
 
 至此，我们已经完成一个 iOS 平台上获取电量的原生能力封装。
+
+
+### 3.2 UTS 与 JS环境数据交互说明
+
+
+UTS向uni-app传值：
+
+支持下列类型： 
+
+1 TS基本数据类型： Number,string,boolean 等
+```ts
+// 基础类型-Number
+export function getPluginVersionNum(): Number{
+	return 120
+}
+// 基础类型-string
+export function getPluginVersion(): string{
+	return "1.2.0"
+}
+```
+
+2 UTSJSONObjct 
+
+```ts
+// UTSJSONObjct 示例
+export function getPluginVersion(): UTSJSONObject{
+	
+	var ret = {
+		version: "1.2.0",
+		versionNum: 120,
+		pluginArray:["core","debug","network"]
+	}
+	return ret
+}
+```
+
+3 JSONObject
+
+```ts
+// JSONObject 示例
+export function getPluginVersion(): JSONObject{
+	
+	var retJson = new JSONObject()
+	retJson["version"] = "1.2.0"
+	retJson["versionNum"] = 120
+	return retJson
+}
+```
+
+uni-app向UTS环境传值
+
+1 TS基本数据类型： Number,string,boolean 等
+2 type数据类型
+3 数组类型
+4 支持UTSJSONObjct 
+
+
 
 ## 4 前端使用插件
 ## 4 Front-end using plugins

@@ -514,10 +514,59 @@ export function getPluginVersion(): JSONObject{
 uni-app向UTS环境传值
 
 1 TS基本数据类型： Number,string,boolean 等
-2 type数据类型
-3 数组类型
-4 支持UTSJSONObjct 
+```ts
+// 基础数据类型示例
+export function postUserInfo(name:string,age:Number){
+	console.log("name == " + name);
+	console.log("age == " + age);
+}
+```
 
+```js
+// uni-app 调用代码
+postUserInfo("zhangsan",12);
+```
+
+2 type数据类型
+
+```ts
+// type 数据类型示例
+export function postUserInfo(name:string,age:Number){
+	console.log("name == " + name);
+	console.log("age == " + age);
+}
+```
+
+```js
+// uni-app 调用代码
+postUserInfo({
+	name:"zhangsan",
+	age:12
+});
+```
+
+
+3 UTSJSONObjct
+
+```ts
+// UTSJSONObjct 数据类型示例
+export function postUserInfo(user:UTSJSONObject){
+	console.log(user);
+}
+```
+
+```js
+// uni-app 调用代码
+postUserInfo({
+	name:"zhangsan",
+	age:12,
+	scoreInfo:{
+		"语文":100,
+		"数学":80,
+	}
+});
+
+```
 
 
 ## 4 前端使用插件

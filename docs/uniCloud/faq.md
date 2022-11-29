@@ -419,3 +419,7 @@ let's encrypt于2021年9月30日根证书过期并切换到新版根证书。详
 ### 等级保护认证
 
 如需云厂商提供等级保护证书，请发送邮件到service@dcloud.io申请
+
+### 使用uniCloud.init初始化阿里云正式版服务空间报“InvalidSpaceId.NotFound”
+
+商用版如果使用uniCloud.init需要自行传递endpoint参数，参考：[uniCloud.init](concepts/space.md#multi-space)

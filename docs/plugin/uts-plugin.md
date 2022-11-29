@@ -502,7 +502,7 @@ export default function getBatteryInfo(options: GetBatteryInfoOptions) {
 至此，我们已经完成一个 iOS 平台上获取电量的原生能力封装。
 
 
-### 3.2 UTS 与 JS环境数据交互说明
+### 3.2 `uts`与`uni-app`环境数据交互说明
 
 
 UTS向uni-app传值，支持下列类型：

@@ -290,6 +290,12 @@ uni.requestPayment({
 - 沙盒环境：一个测试账号相同产品仅能购买一次，重复测试需要清除购买记录或重新添加沙盒测试账号
 - 沙盒环境：调用 `restoreCompletedTransactions` 长时间无反应，检查设备登陆的沙箱账号是否正常
 
+### 沙箱账号
+
+1. 登陆苹果开发者中心，添加沙箱账号
+2. 手机或iPad登陆沙箱账号，在 `系统设置 -> App Store`
+
+
 ### 订单丢失场景
 
 - 用户没有绑定 `AppStore` 支付方式，调用 `uni.requestPayment()` 准备支付，触发失败 `fail` 回调，errCode=2，用户未绑定支付方式，app内支付流程结束。

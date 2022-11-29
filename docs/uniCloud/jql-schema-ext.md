@@ -253,7 +253,11 @@ module.exports {
       clientInfo
     } = {}) {
       for(let i = 0; i < addDataList.length; i++) {
-        addDataList[i].summary = addDataList[i].content && addDataList[i].content.slice(0, 100)
+        const addDataItem = addDataList[i]
+        if(!addDataItem.content) {
+          throw new Error('缺少文章内容')
+        }
+        addDataItem.summary = addDataItem.content.slice(0, 100)
       }
     }
   }

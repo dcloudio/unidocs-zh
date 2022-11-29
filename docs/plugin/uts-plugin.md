@@ -505,14 +505,13 @@ export default function getBatteryInfo(options: GetBatteryInfoOptions) {
 ### 3.2 UTS 与 JS环境数据交互说明
 
 
-UTS向uni-app传值：
+UTS向uni-app传值，支持下列类型：
 
-支持下列类型： 
 
-1 TS基本数据类型： Number,string,boolean 等
+1 TS基本数据类型： number,string,boolean 等
 ```ts
 // 基础类型-Number
-export function getPluginVersionNum(): Number{
+export function getPluginVersionNum(): number{
 	return 120
 }
 // 基础类型-string
@@ -549,12 +548,12 @@ export function getPluginVersion(): JSONObject{
 }
 ```
 
-uni-app向UTS环境传值
+uni-app向UTS环境传值，支持下列类型：
 
-1 TS基本数据类型： Number,string,boolean 等
+1 TS基本数据类型： number,string,boolean 等
 ```ts
 // 基础数据类型示例
-export function postUserInfo(name:string,age:Number){
+export function postUserInfo(name:string,age:number){
 	console.log("name == " + name);
 	console.log("age == " + age);
 }
@@ -569,7 +568,7 @@ postUserInfo("zhangsan",12);
 
 ```ts
 // type 数据类型示例
-export function postUserInfo(name:string,age:Number){
+export function postUserInfo(name:string,age:number){
 	console.log("name == " + name);
 	console.log("age == " + age);
 }

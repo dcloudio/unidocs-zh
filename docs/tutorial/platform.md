@@ -45,6 +45,8 @@ Conditional compilation is marked with special comments which are the basic of c
 |VUE3|HBuilderX 3.2.0+ [详情](https://ask.dcloud.net.cn/article/37834)|
 |APP-PLUS|App|
 |APP-PLUS-NVUE或APP-NVUE|App nvue 页面|
+|APP-ANDROID|App Android 平台 仅限 uts文件|
+|APP-IOS|App iOS 平台 仅限 uts文件|
 |H5|H5|
 |MP-WEIXIN|微信小程序|
 |MP-WEIXIN|WeChat Mini Program|
@@ -223,6 +225,16 @@ If you want to separate the page files of each platform more thoroughly, you can
 **Notice**
 
 - `platforms`目录下只支持放置页面文件（即页面vue文件），如果需要对其他资源条件编译，建议使用[static 目录的条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)。
+
+### uts 的条件编译
+
+用法与 API 的条件编译一致，多出了`APP-ANDROID`和`APP-IOS`两个平台。
+
+<pre v-pre="" data-lang="javascript"><code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  %PLATFORM%</b></span>
+平台特有的API实现
+<span class="token comment">//<span style="color:#859900;"> #endif</span></span></code></pre>
+
+
 
 ### HBuilderX 支持
 ### HBuilderX support

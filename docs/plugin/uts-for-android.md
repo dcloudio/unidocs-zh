@@ -278,7 +278,7 @@ HX3.6.7 版本内置了以下依赖
 
 但Android开发中经常要复写application和activity，uni-app主引擎已经复写了相关类。所以想要操作application和activity，需要调用uni-app引擎封装的API。
 
-这些api在`io.dcloud.uts.android`库中，具体见下。
+这些api在`io.dcloud.uts`库下 UTSAndroid对象，具体见下。
 
 ### 4.1 application 上下文相关
 
@@ -288,7 +288,7 @@ HX3.6.7 版本内置了以下依赖
 
 
 ```ts
-import { getAppContext } from "io.dcloud.uts.android";
+import { UTSAndroid } from "io.dcloud.uts";
 ```
 
 用法说明：获取当前应用Application上下文，对应android平台 Context.getApplicationContext 函数实现
@@ -298,7 +298,7 @@ Android开发场景中，调用应用级别的资源/能力，需要使用此上
 
 ```ts
 // [示例]获取asset下的音频，并且播放
-let assetManager = getAppContext()!.getAssets();
+let assetManager = UTSAndroid.getAppContext()!.getAssets();
 let afd = assetManager.openFd("free.mp3");
 let mediaPlayer = new MediaPlayer();
 mediaPlayer.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(), afd.getLength());
@@ -313,7 +313,7 @@ mediaPlayer.start();
 
 
 ```ts
-import { getResourcePath } from "io.dcloud.uts.android";
+import { UTSAndroid } from "io.dcloud.uts";
 ```
 
 获取指定插件资源的运行期绝对路径
@@ -321,7 +321,7 @@ import { getResourcePath } from "io.dcloud.uts.android";
 ```ts
 // [示例]获取指定资源路径
 // 得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
-getResourcePath("uni_modules/test-uts-static/static/logo.png")
+UTSAndroid.getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 ```
 
@@ -329,16 +329,13 @@ getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 ##### onAppTrimMemory
 
-> HBuilderX 3.6.8+
+> HBuilderX 3.6.11+
 
-```ts
-import { onAppTrimMemory } from "io.dcloud.uts.android";
-```
 
 App 内存不足时，系统回调函数 对应原生的API: onTrimMemory
 
 ```ts
-onAppTrimMemory((level:Number) => {
+UTSAndroid.onAppTrimMemory((level:Number) => {
 	let eventName = "onAppTrimMemory - " + level;
 	console.log(eventName);
 });
@@ -346,11 +343,8 @@ onAppTrimMemory((level:Number) => {
 
 ##### offAppTrimMemory
 
-> HBuilderX 3.6.9+
+> HBuilderX 3.6.11+
 
-```ts
-import { offAppTrimMemory } from "io.dcloud.uts.android";
-```
 
 onAppTrimMemory 对应的反注册函数
 
@@ -358,9 +352,9 @@ onAppTrimMemory 对应的反注册函数
 
 ```ts
 // 移除所有监听
-offAppTrimMemory()
+UTSAndroid.offAppTrimMemory()
 // 移除指定监听
-offAppTrimMemory((level:Number) => {
+UTSAndroid.offAppTrimMemory((level:Number) => {
 	
 });
 ```
@@ -370,16 +364,13 @@ offAppTrimMemory((level:Number) => {
 
 ##### onAppConfigChange
 
-> HBuilderX 3.6.8+
+> HBuilderX 3.6.1+
 
-```ts
-import { onAppConfigChange } from "io.dcloud.uts.android";
-```
 
 App 配置发生变化时触发，比如横竖屏切换 对应原生的API: onConfigurationChanged
 
 ```ts
-onAppConfigChange((ret:UTSJSONObject) => {
+UTSAndroid.onAppConfigChange((ret:UTSJSONObject) => {
 	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
 	console.log(eventName);
 });
@@ -387,11 +378,6 @@ onAppConfigChange((ret:UTSJSONObject) => {
 
 ##### offAppConfigChange
 
-> HBuilderX 3.6.9+
-
-```ts
-import { offAppConfigChange } from "io.dcloud.uts.android";
-```
 
 与onAppConfigChange 对应的反注册函数
 
@@ -399,9 +385,9 @@ import { offAppConfigChange } from "io.dcloud.uts.android";
 
 ```ts
 // 移除所有监听
-offAppConfigChange();
+UTSAndroid.offAppConfigChange();
 // 移除指定监听
-offAppConfigChange(function(ret){
+UTSAndroid.offAppConfigChange(function(ret){
 
 });
 ```
@@ -415,7 +401,7 @@ offAppConfigChange(function(ret){
 比如获取app缓存目录：
 
 ```
-getAppContext()!.getExternalCacheDir()!.getPath()
+UTSAndroid.getAppContext()!.getExternalCacheDir()!.getPath()
 ```
 
 
@@ -423,11 +409,8 @@ getAppContext()!.getExternalCacheDir()!.getPath()
 
 #### 4.2.1 getUniActivity
 
-> HBuilderX 3.6.3+
+> HBuilderX 3.6.11+
 
-```ts
-import { getUniActivity } from "io.dcloud.uts.android";
-```
 
 获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
 
@@ -444,14 +427,11 @@ let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 
 > HBuilderX 3.6.3+
 
-```ts
-import { onAppActivityPause } from "io.dcloud.uts.android";
-```
 
 App的activity onPause时触发
 
 ```ts
-onAppActivityPause(() => {
+UTSAndroid.onAppActivityPause(() => {
     let eventName = "onAppActivityPause - " + Date.now();
     console.log(eventName);
 });
@@ -465,15 +445,12 @@ onAppActivityPause 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
-```ts
-import { offAppActivityPause } from "io.dcloud.uts.android";
-```
 
 ```ts
 // 移除全部监听
-offAppActivityPause();
+UTSAndroid.offAppActivityPause();
 // 移除指定监听
-offAppActivityPause(() => {
+UTSAndroid.offAppActivityPause(() => {
 });
 ```
 
@@ -485,14 +462,12 @@ offAppActivityPause(() => {
 
 > HBuilderX 3.6.3+
 
-```ts
-import { onAppActivityResume } from "io.dcloud.uts.android";
-```
+
 
 App的activity onResume时触发
 
 ```ts
-onAppActivityResume(() => {
+UTSAndroid.onAppActivityResume(() => {
      let eventName = "onAppActivityResume - " + Date.now();
      console.log(eventName);
 });
@@ -506,15 +481,12 @@ onAppActivityResume 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
-```ts
-import { onAppActivityResume } from "io.dcloud.uts.android";
-```
 
 ```ts
 // 移除全部监听
-onAppActivityResume();
+UTSAndroid.onAppActivityResume();
 // 移除指定监听
-onAppActivityResume(() => {
+UTSAndroid.onAppActivityResume(() => {
 });
 ```
 
@@ -526,14 +498,11 @@ onAppActivityResume(() => {
 
 > HBuilderX 3.6.3+
 
-```ts
-import { onAppActivityDestroy } from "io.dcloud.uts.android";
-```
 
 App 的 activity onDestroy时触发
 
 ```ts
-onAppActivityDestroy(() => {
+UTSAndroid.onAppActivityDestroy(() => {
      let eventName = "onAppActivityDestroy- " + Date.now();
      console.log(eventName);
 });
@@ -547,15 +516,12 @@ onAppActivityDestroy 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
-```ts
-import { offAppActivityDestroy } from "io.dcloud.uts.android";
-```
 
 ```ts
 // 移除全部监听
-offAppActivityDestroy();
+UTSAndroid.offAppActivityDestroy();
 // 移除指定监听
-offAppActivityDestroy(() => {
+UTSAndroid.offAppActivityDestroy(() => {
 });
 ```
 
@@ -567,14 +533,11 @@ offAppActivityDestroy(() => {
 
 > HBuilderX 3.6.3+
 
-```ts
-import { onAppActivityBack } from "io.dcloud.uts.android";
-```
 
 App 的 activity 回退物理按键点击时触发
 
 ```ts
-onAppActivityBack(() => {
+UTSAndroid.onAppActivityBack(() => {
      let eventName = "onAppActivityBack- " + Date.now();
      console.log(eventName);
 });
@@ -589,15 +552,12 @@ onAppActivityBack 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
-```ts
-import { offAppActivityBack } from "io.dcloud.uts.android";
-```
 
 ```ts
 // 移除全部监听
-offAppActivityBack();
+UTSAndroid.offAppActivityBack();
 // 移除指定监听
-offAppActivityBack(() => {
+UTSAndroid.offAppActivityBack(() => {
 });
 ```
 
@@ -609,14 +569,10 @@ offAppActivityBack(() => {
 
 > HBuilderX 3.6.8+
 
-```ts
-import { onAppActivityResult } from "io.dcloud.uts.android";
-```
-
 App 的 activity 启动其他activity的回调结果监听 对应原生的 onActivityResult
 
 ```ts
-onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
+UTSAndroid.onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
 	let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:"+resultCode + " -data:"+JSON.stringify(data);
     console.log(eventName);
 });
@@ -630,15 +586,12 @@ onAppActivityResult 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
-```ts
-import { offAppActivityResult } from "io.dcloud.uts.android";
-```
 
 ```ts
 // 移除全部监听
-offAppActivityResult();
+UTSAndroid.offAppActivityResult();
 // 移除指定监听
-offAppActivityResult(() => {
+UTSAndroid.offAppActivityResult(() => {
 });
 ```
 
@@ -649,14 +602,11 @@ offAppActivityResult(() => {
 
 > HBuilderX 3.6.3+
 
-```ts
-import { onAppActivityRequestPermissionsResult } from "io.dcloud.uts.android";
-```
 
 App 的 activity 获得权限请求结果的回调
 
 ```ts
-onAppActivityRequestPermissionsResult((requestCode: number,
+UTSAndroid.onAppActivityRequestPermissionsResult((requestCode: number,
                                                      permissions: MutableList<string>,
                                                      grantResults: MutableList<number>) => {
 		
@@ -679,15 +629,12 @@ onAppActivityRequestPermissionsResult 对应的反注册函数
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
 
-```ts
-import { offAppActivityRequestPermissionsResult } from "io.dcloud.uts.android";
-```
 
 ```ts
 // 移除全部监听
-offAppActivityRequestPermissionsResult();
+UTSAndroid.offAppActivityRequestPermissionsResult();
 // 移除指定监听
-offAppActivityRequestPermissionsResult(() => {
+UTSAndroid.offAppActivityRequestPermissionsResult(() => {
 });
 
 -----------------------------
@@ -698,7 +645,7 @@ offAppActivityRequestPermissionsResult(() => {
 比如获取当前activity的顶层View容器
 
 ```ts
-getUniActivity()!.getWindow().getDecorView();
+UTSAndroid.getUniActivity()!.getWindow().getDecorView();
 ```
 
 

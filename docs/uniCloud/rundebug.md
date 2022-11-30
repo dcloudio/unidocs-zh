@@ -473,3 +473,6 @@ The published cloud functions also have logs under [uniCloud web console](https:
 
 腾讯云日志服务为[套餐外单独计费项](https://uniapp.dcloud.net.cn/uniCloud/price.html#tencent-advanced)。如果你购买了包月套餐，在使用日志服务时会产生额外费用（日志服务为按量计费，从余额扣除）。为避免因日志服务欠费引发其他按量计费资源不可使用，目前新建腾讯云服务空间默认关闭了日志服务，可在 [uniCloud web控制台](https://unicloud.dcloud.net.cn/) -> 云函数 -> 日志中开启。
 
+此外日志服务开启的状态下，腾讯云可以设置日志保存时长。
+
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/dccee853-2df8-46b6-b15d-1e280023ad5d.jpg)

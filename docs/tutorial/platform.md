@@ -228,7 +228,7 @@ If you want to separate the page files of each platform more thoroughly, you can
 
 ### uts 的条件编译
 
-用法与 API 的条件编译一致，多出了`APP-ANDROID`和`APP-IOS`两个平台。
+用法与 [API 的条件编译](#api-的条件编译)一致，多出了`APP-ANDROID`和`APP-IOS`两个平台。
 
 <pre v-pre="" data-lang="javascript"><code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  %PLATFORM%</b></span>
 平台特有的API实现

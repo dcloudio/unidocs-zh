@@ -4,7 +4,7 @@ DB Schema 的json文件无法编程，可编程扩展的js将大大增强schema�
 
 过去clientDB里使用action来处理schema.json不足的地方。但action云函数有个安全缺陷，无法禁止客户端发起指定action的调用。
 
-从 HBuilderX 3.6.10+，uniCloud提供了可编程schema，每个`${表名}.schema.json`旁边都可以配置一个`${表名}.schema.ext.js`。
+从 HBuilderX 3.6.11+，uniCloud提供了可编程schema，每个`${表名}.schema.json`旁边都可以配置一个`${表名}.schema.ext.js`。
 
 - 在HBuilderX项目下，在目录 uniCloud/database/ 下可以创建`${表名}.schema.ext.js`。
 - 在uniCloud web控制台的数据库表管理界面，在schema.json旁边也有`${表名}.schema.ext.js`的在线管理。

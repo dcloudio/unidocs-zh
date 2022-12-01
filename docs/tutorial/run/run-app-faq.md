@@ -402,4 +402,28 @@ The adaptation of other simulators can be searched in the forum.
 #### Q14: How to run the real machine through wifi without plugging in the data cable?
 
 参考[http://ask.dcloud.net.cn/article/565](http://ask.dcloud.net.cn/article/565)
-Reference [http://ask.dcloud.net.cn/article/565](http://ask.dcloud.net.cn/article/565)
+
+## 6. HBuilderX Node真机运行常见问题@node
+
+HBuilderX 3.5.3之后的版本，App真机运行 使用Node运行，不再依赖Java。
+
+> 如果您在HBuilderX 3.5.3及之前的版本，运行项目到手机正常。HBuilderX 3.5.3之后的版本不正常，有可能是bug，请联系我们。
+
+### 6.1 同步资源失败，未得到同步资源的授权，请停止运行后重新运行，并注意手机上的授权提示
+
+![](https://ask.dcloud.net.cn/uploads/questions/20220926/5c27261e36d8ca75f1342d98bd666b3a.jpg)
+
+**如果您遇到以下错误，请先查看基座类型：**
+
+- 标准基座
+- HBuilderX 云打包自定义基座
+- 离线SDK Android Studio制作的自定义基座
+
+**尝试以下解决方法**
+
+- Android手机上，找到应用App，删除，重新运行。
+- 关闭开发者模式，usb调试，重新打开试试
+- 如果是`离线SDK Android Studio制作的自定义基座`, 检查下是否缺少`implementation 'com.squareup.okhttp3:okhttp:3.12.12'`, `implementation 'com.squareup.okio:okio:1.15.0'`, 如果缺少请添加它们。
+- 如果是`离线SDK Android Studio制作的自定义基座`, 可以尝试使用HBuilderX 云打包自定义基座，看下是否正常。
+- 手机USB设置，各个选项尝试一下
+- 更多参考下这个帖子 [详情](https://ask.dcloud.net.cn/question/154229), 如上上述方法没有解决问题，请到 [Ask论坛](https://ask.dcloud.net.cn/)详细说明问题（需要包含操作系统、HBuilderX版本、项目信息、基座信息、手机信息等，详细的信息有助于我们排查问题）

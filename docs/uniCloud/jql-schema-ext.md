@@ -79,6 +79,7 @@ ext.js里引入公共模块的机制：
 |field		|array&lt;string&gt;|-		|read必备	|当前请求访问的字段列表（见下方说明）						|
 |addDataList|array&lt;object&gt;|-		|create必备	|新增操作传入的数据列表（见下方说明）						|
 |updateData	|object				|-		|update必备	|更新操作传入的数据（见下方说明）							|
+|clientInfo	|object				|-		|必备	|客户端信息，详见：[clientInfo](cf-functions.md#get-client-infos)				|
 
 #### where
 
@@ -261,6 +262,71 @@ module.exports {
       }
     }
   }
+}
+```
+
+
+### 在触发器内使用jql语法@using-jql-in-schema
+
+jql触发器内可以使用jql语法操作数据库。
+
+我们现在增加一个阅读记录表，schema如下
+
+为了不增加示例的复杂度，所有权限均设置为true，实际项目中切勿随意模仿。
+
+```js
+// article.schema.ext.js
+{
+  "bsonType": "object",
+  "required": ["title", "content"],
+  "permission": {
+    "read": true,
+    "create": true,
+    "update": true,
+    "delete": true
+  },
+  "properties": {
+    "_id": {
+      "bsonType": "string"
+    },
+    "article_id": {
+      "bsonType": "string",
+      "foreignKey": "article._id"
+    },
+    "reader_id": {
+      "bsonType": "string",
+      "foreignKey": "uni-id-users._id",
+      "forceDefaultValue": {
+        "$env": "uid"
+      }
+    }
+  }
+}
+```
+
+使用jql语法可以自动验证客户端身份，仍以上述article表为例，在afterRead触发器内插入阅读记录。此时会将读者id插入到reader_id字段
+
+```js
+module.exports = {
+  trigger: {
+    afterRead: async function ({
+      where,
+      field,
+      clientInfo
+    } = {}) {
+      const id = where && where._id
+      if(typeof id !== 'string' || !field.includes('content')) {
+        return
+      }
+      const dbJQL = uniCloud.databaseForJQL({
+        clientInfo
+      })
+      await dbJQL.collection('article-view-log')
+        .add({
+          article_id: id,
+          reader_id: dbJQL.getCloudEnv('$cloudEnv_uid')
+        })
+    }
 }
 ```
 

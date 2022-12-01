@@ -9,7 +9,9 @@ DB Schema 的json文件无法编程，可编程扩展的js将大大增强schema�
 - 在HBuilderX项目下，在目录 uniCloud/database/ 下可以创建`${表名}.schema.ext.js`。
 - 在uniCloud web控制台的数据库表管理界面，在schema.json旁边也有`${表名}.schema.ext.js`的在线管理。
 
-schema扩展js在规划中可以实现很多事情，目前仅上线数据库触发器功能，推荐开发者使用JQL数据库触发器来替代action云函数。
+schema扩展js在规划中可以实现很多事情，目前仅上线数据库触发器功能。
+
+推荐开发者使用JQL数据库触发器来替代action云函数。
 
 ## 数据库触发器@trigger
 
@@ -339,8 +341,9 @@ module.exports = {
 - 通过jql的redis缓存读取的内容不会触发读触发器
 - jql数据管理不会触发任何触发器
 
-#### 和action的关系
+#### 和action云函数的关系
 
-数据库触发器能实现很多常见的action功能，并且无需修改schema和数据库指令。
-
-触发器的before会在所有action的before执行之前再执行，after会在所有action的after执行之后再执行。action无法捕获触发器抛出的错误。
+- 数据库触发器比action云函数更安全，不会被前端错误指定。
+- 数据库触发器支持JQL语法。action云函数只支持使用传统MongoDB方式。
+- 数据库触发器能实现很多常见的action云函数功能，并且无需修改schema和数据库指令。
+- 如果同时使用数据库触发器和action云函数，注意触发器的before会在所有action的before执行之前再执行，after会在所有action的after执行之后再执行。action无法捕获触发器抛出的错误。

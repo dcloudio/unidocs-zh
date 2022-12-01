@@ -111,6 +111,10 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 
 如果在给数据库修改数据前拦截并修改了updateData的数据，那么更新进数据库的就会是新修改的数据。
 
+### 触发器返回值@trigger-response
+
+触发器返回值无任何意义，建议不要返回任何内容
+
 ### 触发时机@trigger-timing
 
 |触发时机			|说明				|
@@ -339,7 +343,7 @@ module.exports = {
 - getTemp联表时主表所在的getTemp内的where和field会传递给触发器，虚拟联表的where和field不会传给触发器
 - getCount不会触发count触发器，只会触发read触发器
 - 通过jql的redis缓存读取的内容不会触发读触发器
-- jql数据管理不会触发任何触发器
+- HBuilderX内使用jql数据管理功能执行jql语句时不会触发任何触发器
 
 #### 和action云函数的关系
 

@@ -45,7 +45,7 @@
 **Tips**
 
 - `input` 事件处理函数可以直接 return 一个字符串，将替换输入框的内容。仅微信小程序支持。
-- 如果遇到 value 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/vue-api?id=_4-组件属性设置不生效解决办法)
+- 如果遇到 value 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.html#componentsolutions)
 - `input` 组件上有默认的 `min-height` 样式，如果 `min-height` 的值大于 `height` 的值那么 `height` 样式无效。
 - H5 暂未支持动态切换，请使用 `v-if`进行整体切换。
 
@@ -99,7 +99,7 @@
 
 - App平台的nvue页面，如果是weex编译模式，需通过weex的api设置（weex模式已被淘汰）
 - App平台的vue页面及 H5平台 的弹出键盘使用的是浏览器控制的键盘，在Chrome81+、Safari13.7+之前，键盘右下角文字只能设置完成和搜索，从Chrome81+、Safari13.7+起支持设置发送、下一个。
-- App平台涉及聊天的建议使用nvue，一方面因为app-vue控制键盘右下角按键文字为“发送”对webview内核有要求，另一方面聊天记录如使用sroll-view，过长的内容在app-vue上会有性能问题。
+- App平台涉及聊天的建议使用nvue，一方面因为app-vue控制键盘右下角按键文字为“发送”对webview内核有要求，另一方面聊天记录如使用scroll-view，过长的内容在app-vue上会有性能问题。
 
 #### App平台iOS端软键盘上方横条去除方案
 

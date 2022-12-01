@@ -51,7 +51,7 @@
 		+ 关闭订单
 		+ 获取当前支持的支付方式
 		+ 获取当前支付用户的openid
-	+ 苹果内购支付（暂未上线，敬请期待）
+	+ ios内购支付
 	+ 支付统计（暂未上线，敬请期待）
 		+ 收款趋势
 		+ 转换漏斗分析
@@ -260,6 +260,15 @@ module.exports = {
 			"appCertPath": path.join(__dirname, 'alipay/appCertPublicKey.crt'), // 支付宝商户公钥路径
 			"alipayPublicCertPath": path.join(__dirname, 'alipay/alipayCertPublicKey_RSA2.crt'), // 支付宝公钥路径
 			"alipayRootCertPath": path.join(__dirname, 'alipay/alipayRootCert.crt'), // 支付宝根证书路径
+		}
+	},
+	// ios内购相关
+	"appleiap" :{
+		// ios内购支付
+		"app": {
+			"password": "", // App 专用共享密钥，App 专用共享密钥是用于接收此 App 自动续期订阅收据的唯一代码。如果您要将此 App 转让给其他开发者或不想公开主共享密钥，建议使用 App 专用共享密钥。非自动续订场景不需要此参数
+			"timeout": 10000, // 请求超时时间，单位：毫秒
+			"sandbox": false, // 是否是沙箱环境（本地调试ios走的是沙箱环境，故要设置为true，正式发布后，需要设置为false）
 		}
 	}
 }
@@ -652,6 +661,33 @@ module.exports = {
 }
 ```
 
+
+#### ios内购支付@config-appleiap-app
+
+对应支付配置的节点是 `appleiap.app`
+
+```js
+const fs = require('fs');
+const path = require('path')
+module.exports = {
+	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
+	"notifyUrl": {
+		// 本地开发环境-支付回调地址
+		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		// 线上正式环境-支付回调地址
+		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+	},
+	// ios内购相关
+	"appleiap" :{
+		// ios内购支付
+		"app": {
+			"password": "", // App 专用共享密钥，App 专用共享密钥是用于接收此 App 自动续期订阅收据的唯一代码。如果您要将此 App 转让给其他开发者或不想公开主共享密钥，建议使用 App 专用共享密钥。非自动续订场景不需要此参数
+			"timeout": 10000, // 请求超时时间，单位：毫秒
+			"sandbox": false, // 是否是沙箱环境（本地调试ios走的是沙箱环境，故要设置为true，正式发布后，需要设置为false）
+		}
+	}
+}
+```
 
 ## 集成到自己项目的教程@install
 
@@ -1782,6 +1818,179 @@ await uniIdCo.getOpenid({
 |-----------------|---------|---------------------------|
 | openid           | string  |  openid   |
 
+
+### ios内购支付@appleiap
+
+**概述**
+
+IAP 全称：In-App Purchase，是指苹果 App Store 的应用内购买，是苹果为 App 内购买虚拟商品或服务提供的一套交易系统。
+
+适用范围：在 App 内需要付费使用的产品功能或虚拟商品/服务，如游戏道具、电子书、音乐、视频、订阅会员、App的高级功能等需要使用 IAP，而在 App 内购买实体商品（如淘宝购买手机）或者不在 App 内使用的虚拟商品（如充话费）或服务（如滴滴叫车）则不适用于 IAP。
+
+简而言之，苹果规定：适用范围内的虚拟商品或服务，必须使用 IAP 进行购买支付，不允许使用支付宝、微信支付等其它第三方支付方式（包括Apple Pay），也不允许以任何方式（包括跳出App、提示文案等）引导用户通过应用外部渠道购买。
+
+**示例代码**
+
+注意：只能使用uni-pay支付组件发起
+
+```js
+// 发起ios内购支付
+this.$refs.uniPay.createOrder({
+	provider: "appleiap", // 支付供应商（这里固定未appleiap，代表ios内购支付）
+	order_no: "20221027011000101001010", // 业务系统订单号
+	out_trade_no: "2022102701100010100101001", // 插件支付单号
+	type: "appleiap", // 支付回调类型（可自定义，建议填写appleiap）
+	productid: "io_dcloud_hellouniapp_pay_like6", // ios内购产品id（仅ios内购生效）
+	// 自定义数据
+	custom: {}
+});
+```
+ 
+[点击查看ios内购注意事项](#tips-appleiap)
+
+完整ios内购支付示例代码
+
+```html
+<template>
+	<view class="content">
+		<view class="uni-list">
+			<radio-group @change="applePriceChange">
+				<label class="uni-list-cell" v-for="(item, index) in productList" :key="index">
+					<radio :value="item.productid" :checked="item.checked" />
+					<view class="price">{{item.title}} {{item.price}}元</view>
+				</label>
+			</radio-group>
+		</view>
+		<view class="uni-padding-wrap">
+			<button class="btn-pay" @click="createOrder" :loading="loading" :disabled="disabled">立即支付</button>
+		</view>
+		
+		<!-- 统一支付组件 -->
+		<uni-pay ref="uniPay" :debug="true" :adpid="adpid" return-url="/pages/order-detail/order-detail" @mounted="onMounted" @success="onSuccess"></uni-pay>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				order_no: "", // 业务系统订单号（即你自己业务系统的订单表的订单号）
+				out_trade_no: "", // 插件支付单号
+				adpid: "1000000001", // uni-ad的广告位id
+				
+				loading: false, // 支付按钮是否在loading中
+				disabled: true, // 支付按钮是否禁用
+				productid: "", // 用户选择的商品id
+				// 出售的ios内购商品列表
+				productList: [
+					{
+						"description": "为DCloud提供的免费软件进行赞助",
+						"price": 1,
+						"productid": "io_dcloud_hellouniapp_pay_like1",
+						"title": "赞赏"
+					},
+					{
+						"description": "为DCloud提供的免费软件进行赞助",
+						"price": 6,
+						"productid": "io_dcloud_hellouniapp_pay_like6",
+						"title": "赞赏"
+					}
+				],
+			}
+		},
+		onLoad: function() {
+			
+		},
+		onShow() {
+			if (this.$refs.uniPay && this.$refs.uniPay.appleiapRestore) {
+				// ios内购支付漏单重试
+				this.$refs.uniPay.appleiapRestore();
+			}
+		},
+		onUnload() {},
+		methods: {
+			// 支付组件加载完毕后执行
+			onMounted(insideData){
+				this.init();
+			},
+			// 初始化
+			async init() {
+				this.productList[0].checked = true;
+				this.productid = this.productList[0].productid;
+				this.disabled = false;
+				if (this.$refs.uniPay && this.$refs.uniPay.appleiapRestore) {
+					// ios内购支付漏单重试
+					this.$refs.uniPay.appleiapRestore();
+				}
+			},
+			/**
+			 * 发起支付
+			 * 在调用此api前，你应该先创建自己的业务系统订单，并获得订单号 order_no，把order_no当参数传给此api，而示例中为了简化跟支付插件无关的代码，这里直接已时间戳生成了order_no
+			 */
+			createOrder(){
+				this.order_no = `test`+Date.now();
+				this.out_trade_no = this.order_no;
+				// 发起支付
+				this.$refs.uniPay.createOrder({
+					provider: "appleiap", // 支付供应商（这里固定未appleiap，代表ios内购支付）
+					order_no: this.order_no, // 业务系统订单号（即你自己业务系统的订单表的订单号）
+					out_trade_no: this.out_trade_no, // 插件支付单号
+					type: "appleiap", // 支付回调类型（可自定义，建议填写appleiap）
+					productid: this.productid, // ios内购产品id（仅ios内购生效）
+					// 自定义数据
+					custom: {}
+				});
+			},
+			// 监听事件 - 支付成功
+			onSuccess(res){
+				console.log('success: ', res);
+				if (res.user_order_success) {
+					// 代表用户已付款，且你自己写的回调成功并正确执行了
+					
+				} else {
+					// 代表用户已付款，但你自己写的回调执行失败（通常是因为你的回调代码有问题）
+				
+				}
+			},
+			
+			// 监听-多选框选中的值改变
+			applePriceChange(e) {
+				this.productid = e.detail.value;
+			},
+		}
+	}
+</script>
+
+<style>
+	.content {
+		padding: 15px;
+	}
+
+	button {
+		background-color: #007aff;
+		color: #ffffff;
+	}
+
+	.uni-list-cell {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 10px;
+		border-bottom: 1px solid #eee;
+	}
+
+	.price {
+		margin-left: 10px;
+	}
+
+	.btn-pay {
+		margin-top: 30px;
+	}
+</style>
+
+```
+
+
 ## 注意事项@tips
 
 ### 微信公众号@tips-wxpay-jsapi
@@ -1825,6 +2034,15 @@ APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付�
 ![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/47faf380-37ab-435a-be18-7ca66723aaff.png)
 
 同时，还需要打自定义基座（包名需要和开放平台下填写的一致），且你在开放平台下的这个应用必须通过审核才可以。（比如微信开放平台下的APP应用显示通过审核才可以）
+
+### ios内购支付@tips-appleiap
+
+1. ios内购支付需勾选App模块配置中的Apple应用内支付
+2. 需要打ios自定义基座
+3. 需要注册ios开发者账号，且交了年费（688元/年）
+4. 需要在ios开发者平台添加内购商品，并获得商品id
+5. ios沙箱测试时，需要先在ios开发者平台添加沙箱测试账号，同时你的测试手机上需要登录ios沙箱账号
+6. 目前hbx版本热刷新会导致ios支付无法正常调用，因此每次修改完代码保存后，需要先关闭手机App，然后hbx重启项目，再打开手机app。（后面HBX会修复此问题）
 
 ## 全局错误码@errorcode
 	

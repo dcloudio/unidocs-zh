@@ -1403,7 +1403,7 @@ uni-pay前端组件和uni-pay-co云对象的方法是一样的。通常情况下
 
 ### 创建支付@create-order
 
-**支付组件方法形式（带收银台）（推荐）**
+**支付组件方法形式（收银台弹窗模式）（推荐）**
 
 `open`和`createOrder`参数是一致的，唯一区别是`open`会打开收银台，而`createOrder`不带收银台，直接调用支付。
 
@@ -1411,7 +1411,6 @@ uni-pay前端组件和uni-pay-co云对象的方法是一样的。通常情况下
 
 ```js
 this.$refs.uniPay.open({
-	provider: "wxpay", // 支付供应商
 	total_fee: 1, // 支付金额，单位分 100 = 1元
 	type: "recharge", // 支付回调类型
 	order_no: "20221027011000101001010", // 业务系统订单号
@@ -1420,7 +1419,44 @@ this.$refs.uniPay.open({
 });
 ```
 
+**直接跳收银台页面模式（推荐）**
+
+与弹窗模式的区别是：跳页面模式是通过 `uni.navigateTo` 直接跳到收银台页面，而弹窗模式是在原页面弹出收银台。
+
+```js
+let options = {
+	total_fee: 1, // 支付金额，单位分 100 = 1元
+	type: "recharge", // 支付回调类型
+	order_no: "20221027011000101001010", // 业务系统订单号
+	out_trade_no: "2022102701100010100101001", // 插件支付单号
+	description: "uniCloud个人版包月套餐", // 支付描述
+};
+let optionsStr = encodeURI(JSON.stringify(options));
+uni.navigateTo({
+	url:`/uni_modules/uni-pay/pages/pay-desk/pay-desk?options=${optionsStr}`
+});
+```
+
+收银台页面源码在 `/uni_modules/uni-pay/pages/pay-desk/pay-desk` 中
+
+如果你想要自定义收银台样式，建议复制该页面到你的项目pages目录，如`/pages/pay-desk/pay-desk`，然后在复制的页面上进行修改样式，同时跳转到自定义收银台的代码如下：
+```js
+let options = {
+	total_fee: 1, // 支付金额，单位分 100 = 1元
+	type: "recharge", // 支付回调类型
+	order_no: "20221027011000101001010", // 业务系统订单号
+	out_trade_no: "2022102701100010100101001", // 插件支付单号
+	description: "uniCloud个人版包月套餐", // 支付描述
+};
+let optionsStr = encodeURI(JSON.stringify(options));
+uni.navigateTo({
+	url:`/pages/pay-desk/pay-desk?options=${optionsStr}`
+});
+```
+
 **支付组件方法形式（不带收银台）**
+
+不带收银台时，provider参数为必传项，代表支付供应商
 
 ```js
 this.$refs.uniPay.createOrder({

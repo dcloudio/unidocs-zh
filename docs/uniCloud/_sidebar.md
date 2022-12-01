@@ -17,6 +17,7 @@
 * 云数据库
   * [云数据库入门](uniCloud/hellodb.md)
   * [DB Schema表结构](uniCloud/schema.md)
+  * [DB Schema扩展](uniCloud/jql-schema-ext.md)
   * [openDB](uniCloud/opendb)
   * [数据库索引](uniCloud/db-index.md)
   * [JQL语法](uniCloud/jql.md)

@@ -1,6 +1,6 @@
 ## DB Schema概述
 
-`DB Schema`是基于 JSON 格式定义的数据结构的规范。
+`DB Schema`是基于 JSON 格式定义的数据结构的规范。除schema外jql还支持使用js编写schema扩展，详见：[DB schema 扩展](jql-schema-ext.md)
 
 它有很多重要的作用：
 

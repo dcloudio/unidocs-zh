@@ -52,6 +52,16 @@ export const navbar = [
         target: "_blank",
         text: "GitHub",
         type: "link"
+      },
+      {
+        text: '其他规范',
+        type: 'links',
+        link: 'http://www.html5plus.org/doc/h5p.html',
+        items: [{
+          text: 'Weex',
+          type: 'link',
+          link: 'https://weexapp.com/'
+        }]
       }
     ]
   },

@@ -92,7 +92,7 @@ uniCloud在MongoDB的基础上改良，进一步提供了`DB Schema`和`JQL`。
 
 ### 支持websocket吗？
 1. uni-push2.0，全端支持（APP、H5、各端小程序）当应用在线时就是一个免费的websocket服务，详情文档：[https://uniapp.dcloud.io/unipush-v2.html](https://uniapp.dcloud.io/unipush-v2.html)
-2. 如果是im方面的需求，那么基于uniPush的im服务是非常推荐的选择：[https://ext.dcloud.net.cn/plugin?id=2670](https://ext.dcloud.net.cn/plugin?id=2670)
+2. 如果是im方面的需求，有DCloud基于uni-push2.0开发的云端一体的、全平台的、免费的、开源即时通讯系统，详情查看：[https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
 
 ### 如何导入老数据库的数据？
 - 方式1：可以在HBuilderX里用db_init.json来批量创建云数据库和插入表内容，[详见](https://uniapp.dcloud.io/uniCloud/cf-database?id=%e4%bd%bf%e7%94%a8db_initjson%e5%88%9d%e5%a7%8b%e5%8c%96%e9%a1%b9%e7%9b%ae%e6%95%b0%e6%8d%ae%e5%ba%93)

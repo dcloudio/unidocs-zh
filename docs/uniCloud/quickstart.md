@@ -201,3 +201,8 @@ web控制台网址：[https://unicloud.dcloud.net.cn](https://unicloud.dcloud.ne
   }
 }
 ```
+
+#### Web中使用uniCloud的跨域处理@useinh5
+
+文档已移至：[Web中使用uniCloud的跨域处理](publish.md#useinh5)
+

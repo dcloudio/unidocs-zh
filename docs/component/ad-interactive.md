@@ -11,10 +11,9 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 **平台差异说明**
 **Platform Difference Description**
 
-|App				|H5					|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序	|QQ小程序	|快应用	|360小程序|快手小程序	|京东小程序	|
-|App |H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet |QQ applet |Quick application |360 applet | Kuaishou applet |Jingdong applet |
+|App				|Web				|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序	|QQ小程序	|快应用	|360小程序|快手小程序	|京东小程序	|
 |:-:				|:-:				|:-:				|:-:					|:-:				|:-:						|:-:			|:-:		|:-:			|:-:				|:-:				|
-|√(3.5.5+)	|√(3.5.5+)	|√(3.5.5+)	|x						|x					|x							|x				|x			|x				|x					|x					|
+|√(3.6.11+)	|√(3.6.11+)	|√(3.5.5+)	|x						|x					|x							|x				|x			|x				|x					|x					|
 
 
 **开通配置广告**
@@ -23,6 +22,9 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 [开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 [Details of the steps to activate advertising](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 
+注意
+- 3.6.11+ 支持App平台和Web平台，需要开启 App 基础广告，收益归基础广告；否者显示DCloud公益广告
+- 在App平台和Web平台不需要设置广告位属性 `adpid`
 
 ## 语法
 ## grammar

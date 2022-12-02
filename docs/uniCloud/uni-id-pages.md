@@ -2134,7 +2134,10 @@ exports.main = async (event, context) => {
 
 ## URL化请求鉴权签名@http-reqeust-auth
 
-uni-id 在URL化请求时，会对以下 API 进行调用鉴权验证，在调用 API 时，开发者需要使用请求鉴权密钥`requestAuthSecret`按照 uni-id 的约定方式对请求中的关键数据进行签名值计算，并将签名值添加到Header请求头的 `uni-id-signature` 参数中传给 uni-id 进行签名验证，uni-id 会对接收到数据进行签名值计算，并与接收到的请求签名值进行比对，如果签名值不一致，则视为无限签名，将拒绝本次请求。
+uni-id 在URL化请求时，会对以下 API 进行调用鉴权验证，
+在调用 API 时，开发者需要使用请求鉴权密钥`requestAuthSecret`按照 uni-id 的约定方式对请求中的关键数据进行签名值计算，
+并将签名值添加到Header请求头的 `uni-id-signature` 参数中传给 uni-id 进行签名验证，uni-id 会对接收到数据进行签名值计算，
+并与接收到的请求签名值进行比对，如果签名值不一致，则视为无效签名，将拒绝本次请求。
 
 需要进行签名的API列表
 |API|

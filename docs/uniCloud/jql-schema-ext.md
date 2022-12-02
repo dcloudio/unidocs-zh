@@ -21,13 +21,13 @@ JQL的数据库触发器，用于在执行一段JQL数据库指令（增删改�
 
 可以使用触发器方便的实现很多功能，例如：
 
-1. 读取文章详情后阅读量加1
-2. 发布一篇文章后自动给文章作者列表文章数量加1
-3. 更新文章时自动将更新时间修改为当前时间
+1. 更新数据时自动将更新时间修改为当前时间
+2. 读取文章详情后阅读量加1
+3. 发布一篇文章后自动给文章作者列表文章数量加1
 
 由于数据库触发器是在云端执行的，所以clientDB操作数据库时很多不宜写在前端的代码，就可以挪到数据库触发器中实现。
 
-如果把数据库的schema定义好，包括json和ext.js，那么各个业务模块就可以随便安心的调用数据库了，数据一致性逻辑和安全保障将被统一管理，不担心不良业务代码的破坏。
+如果把数据库的schema定义好，包括json和ext.js，那么各个业务模块就可以随便安心的调用数据库了，数据一致性逻辑和安全保障将被统一管理，不担心不良业务代码的破坏、不担心哪次调用会漏掉更新时间字段。
 
 ### 触发器配置@config
 
@@ -81,7 +81,7 @@ ext.js里引入公共模块的机制：
 |field		|array&lt;string&gt;|-		|read必备	|当前请求访问的字段列表（见下方说明）						|
 |addDataList|array&lt;object&gt;|-		|create必备	|新增操作传入的数据列表（见下方说明）						|
 |updateData	|object				|-		|update必备	|更新操作传入的数据（见下方说明）							|
-|clientInfo	|object				|-		|必备	|客户端信息，详见：[clientInfo](cf-functions.md#get-client-infos)				|
+|clientInfo	|object				|-		|必备	|客户端信息，包括设备信息、uid等，详见：[clientInfo](cf-functions.md#get-client-infos)				|
 
 #### where
 
@@ -176,6 +176,29 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 }
 ```
 
+#### 修改文章更新时间
+
+```js
+// article.schema.ext.js
+module.exports {
+  trigger: {
+    beforeUpdate: async function({
+      where,
+      updateData,
+      clientInfo
+    } = {}) {
+      const id = where && where._id
+      if(typeof id === 'string' && (updateData.title || updateData.content)) { //如果字段较多，也可以不列举字段，删掉后半个判断
+        if(updateData.content) {
+          // updateData.summary = 'xxxx' // 根据content生成summary
+        }
+        updateData.update_date = Date.now() // 更新数据的update_date字段赋值为当前服务器时间
+      }
+    }
+  }
+}
+```
+
 #### 读取后触发实现阅读量加1
 
 ```js
@@ -226,28 +249,6 @@ module.exports {
 }
 ```
 
-#### 修改文章更新时间
-
-```js
-// article.schema.ext.js
-module.exports {
-  trigger: {
-    beforeUpdate: async function({
-      where,
-      updateData,
-      clientInfo
-    } = {}) {
-      const id = where && where._id
-      if(typeof id === 'string' && (updateData.title || updateData.content)) {
-        if(updateData.content) {
-          // updateData.summary = 'xxxx' // 根据content生成summary
-        }
-        updateData.update_date = Date.now()
-      }
-    }
-  }
-}
-```
 
 #### 新增文章时自动添加摘要
 

@@ -38,7 +38,7 @@
 在日常营销推广、促销活动等场景下（如双11大促、产品上新、重要资讯等），APP可对目标用户进行定向通知栏消息+应用内消息推送，吸引用户参与活动，提升日活。
 
 - 基于uniCloud的IM、聊天、客服、棋牌游戏交互等  
-DCloud基于`uni-push2`在开发`uni-im`，后续会开源，敬请关注。
+例如：DCloud基于`uni-push2`开发了`uni-im`详情:[https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
 另外棋牌游戏等，需要客户端被动接收消息的需求都可以用`uni-push`实现。
 
 # 简介

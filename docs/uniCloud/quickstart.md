@@ -281,3 +281,8 @@ Note: Timestamps don't need to be so complicated. Timestamps can simply be enter
   }
 }
 ```
+
+#### Web中使用uniCloud的跨域处理@useinh5
+
+文档已移至：[Web中使用uniCloud的跨域处理](publish.md#useinh5)
+

@@ -49,7 +49,8 @@ It is also a user message push, the implementation principle is actually to cust
 In daily marketing promotion, promotional activities and other scenarios (such as the Double 11 promotion, new product launches, important information, etc.), the APP can send targeted notifications to target users + push in-app messages to attract users to participate in activities and improve daily activities.
 
 - 基于uniCloud的IM、聊天、客服、棋牌游戏交互等  
-例如：DCloud基于`uni-push2`开发了`uni-im`详情:[https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
+例如：DCloud基于`uni-push2`开发并开源了`uni-im`详情:[https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
+
 另外棋牌游戏等，需要客户端被动接收消息的需求都可以用`uni-push`实现。
 In addition, chess and card games and other requirements that require the client to passively receive messages can be implemented with `uni-push`.
 

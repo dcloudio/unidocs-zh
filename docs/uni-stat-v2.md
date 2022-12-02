@@ -535,7 +535,7 @@ In order to facilitate developers to use sourceMap files to locate code problems
 #### 使用环境@sourcemap-parse-error-env
 #### Using the environment @sourcemap-parse-error-env
 
-1. 使用腾讯云服务空间，不支持阿里云服务空间（原因是sourcemap含有源码，阿里云的存储不支持对文档设权限，如果sourcemap放在阿里云上会导致所有人可以了解应用js源码信息）
+1. 使用腾讯云服务空间，不支持阿里云服务空间（原因是因为阿里云存储不支持目录）
 2. HBuiderX 3.5.3+
 3. uni-admin 1.9.4+
 4. 不支持 IE
@@ -642,9 +642,7 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 3. The contents of the folder will be uploaded to the `cloud storage/__UNI__/uni-stat/sourcemap/application appId/platform (eg web, mp-weixin, ios)/version/` directory
 
 **注意事项**
-**Precautions**
-1. 云存储需要配置权限：`所有用户可读`
-1. Cloud storage requires configuration permissions: `Readable by all users`
+1. 云存储需要配置权限：如果使用的腾讯云服务空间不是当前项目绑定，则需要设置为：`所有用户可读`
 2. 如果出现跨域需要在 `跨域配置` 中绑定安全域名
 2. If there is cross-domain, you need to bind the security domain name in `cross-domain configuration`
 3. 上传失败可能会有如下原因：

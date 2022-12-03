@@ -491,7 +491,43 @@ tencentLBSLocationManager(manager: TencentLBSLocationManager, @argumentLabel("di
 
 `~/uni_modules/uts-tencentgeolocation/utssdk/app-ios/index.uts`
 
+#### 5.1.13 异步方法
 
+swift 标记某个函数或者方法是异步的，你可以在它的声明中的参数列表后边加上 `async` 关键字
+
+```swift
+// swift 
+@available(iOS 13.0.0, *)
+func testAsync(_ opts: AsyncOptions) async -> UTSJSONObject {
+    if (opts.type == "success") {
+        opts.success("success");
+    }
+     else {
+        opts.fail("fail");
+    }
+    opts.complete("complete");
+    return UTSJSONObject([
+        "name": "testAsync"
+    ]);
+}
+```
+
+uts 中定义异步方法是在方法最前面加上 `async` 关键字
+
+```ts
+// uts
+async function testAsync(opts: AsyncOptions) {
+  if (opts.type == "success") {
+    opts.success("success");
+  } else {
+    opts.fail("fail");
+  }
+  opts.complete("complete");
+  return { name: "testAsync" };
+}
+```
+
+**需要注意：使用 async 定义异步方法只有 iOS 13+ 版本才支持，低版本调用会报错**
 
 ## 6  常见问题(持续更新)
 

@@ -285,12 +285,20 @@ module.exports {
 
 jql触发器内可以使用jql语法操作数据库。
 
-由于在触发器内再使用jql语法操作数据库还会执行触发器，未防止开发者不小心写出无限循环执行的代码，uniCloud.databaseForJQL方法增加了参数`skipTrigger`，用于指定本次数据库操作跳过触发器的执行。建议在触发器内使用jql语法时传递此参数。
+注意：在触发器内再使用jql语法操作数据库还会执行触发器，很容易引发死循环！
+
+为此，uniCloud.databaseForJQL方法增加了参数`skipTrigger`，用于指定本次数据库操作跳过触发器的执行。
+
+skipTrigger是一个bool值，true跳过执行触发器，false则继续执行触发器。默认为false。
+
+该参数客户端不生效，仅云端生效。
+
+示例如下：
 
 ```js
 uniCloud.databaseForJQL({
   clientInfo,
-  skipTrigger: true // 跳过执行触发器
+  skipTrigger: true // true跳过执行触发器，false则继续执行触发器。默认为false
 })
 ```
 

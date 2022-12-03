@@ -134,7 +134,7 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 
 以下article表为例。
 
-为了不增加示例的复杂度，所有权限均设置为true，实际项目中切勿随意模仿。
+为了不增加示例的复杂度，所有权限均设置为true，实际项目中切勿模仿。
 
 ```js
 // article.schema.ext.js
@@ -183,6 +183,8 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 module.exports {
   trigger: {
     beforeUpdate: async function({
+      collection,
+      operation,
       where,
       updateData,
       clientInfo
@@ -206,6 +208,8 @@ module.exports {
 module.exports {
   trigger: {
     afterRead: async function({
+      collection,
+      operation,
       where,
       field,
       clientInfo
@@ -215,7 +219,7 @@ module.exports {
       // clientInfo.uniIdToken可以解出客户端用户信息，再进行判断是否应该加1。为了让示例简单清晰，此处省略相关逻辑
       if(typeof id === 'string' && field.includes('content')) {
         // 读取了content字段后view_count加1
-        await db.collection('article').doc(id).update({
+        await db.collection('article').where(where).update({
           view_count: db.command.inc(1)
         })
       }
@@ -231,6 +235,8 @@ module.exports {
 module.exports {
   trigger: {
     beforeDelete: async function({
+      collection,
+      operation,
       where,
       clientInfo
     } = {}) {
@@ -239,7 +245,7 @@ module.exports {
       if(typeof id !== 'string') { // 此处也可以加入管理员可以批量删除的逻辑
         throw new Error('禁止批量删除')
       }
-      const res = await db.collection('article').doc(id).get()
+      const res = await db.collection('article').where(where).get()
       const record = res.data[0]
       if(record) {
         await db.collection('article-archived').add(record)
@@ -257,6 +263,8 @@ module.exports {
 module.exports {
   trigger: {
     beforeCreate: async function({
+      collection,
+      operation,
       addDataList,
       clientInfo
     } = {}) {
@@ -277,9 +285,18 @@ module.exports {
 
 jql触发器内可以使用jql语法操作数据库。
 
+由于在触发器内再使用jql语法操作数据库还会执行触发器，未防止开发者不小心写出无限循环执行的代码，uniCloud.databaseForJQL方法增加了参数`skipTrigger`，用于指定本次数据库操作跳过触发器的执行。建议在触发器内使用jql语法时传递此参数。
+
+```js
+uniCloud.databaseForJQL({
+  clientInfo,
+  skipTrigger: true // 跳过执行触发器
+})
+```
+
 我们现在增加一个阅读记录表，schema如下
 
-为了不增加示例的复杂度，所有权限均设置为true，实际项目中切勿随意模仿。
+为了不增加示例的复杂度，所有权限均设置为true，实际项目中切勿模仿。
 
 ```js
 // article.schema.ext.js
@@ -326,7 +343,8 @@ module.exports = {
         return
       }
       const dbJQL = uniCloud.databaseForJQL({
-        clientInfo
+        clientInfo,
+        skipTrigger: true
       })
       await dbJQL.collection('article-view-log')
         .add({

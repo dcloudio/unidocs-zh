@@ -224,6 +224,23 @@ let bgColor = UTSiOS.colorWithString("#000000")
 view.backgroundColor = bgColor
 ```
 
+#### 4.3 getResourcePath(resourceName: string): string
+> HBuilder X 3.6.11+ 版本支持
+
+获取指定插件资源的运行期绝对路径
+
+插架资源路径请传该资源在工程目录下的绝对路径
+   
+示例
+ 
+```ts
+const imagePath = UTSiOS.getResourcePath("/static/logo.png")
+console.log(imagePath)
+const image = new UIImage(contentsOfFile = imagePath)
+/* imagePath: "/var/mobile/Containers/Data/Application/FA7080BA-3EF7-4C4E-B7C5-0332539B2964/Documents/Pandora/apps/__UNI__FB95CAB/www/static/logo.png" */
+
+```
+
 持续更新中
 
 ## 5 swift 与 UTS 差异重点介绍 (持续更新)
@@ -576,4 +593,4 @@ HBuilderX 目前写iOS uts 插件时部分语法提示会有缺失、参数类�
 
 ### 7.3 类型兼容问题
 
-- 元祖类型目前不支持
+- 元组类型目前不支持

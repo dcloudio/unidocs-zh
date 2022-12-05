@@ -392,6 +392,7 @@ module.exports = {
 |70007	|获取加密key失败																								|
 |70008	|客户端验证所需的签名缺失，详见下方详细说明																				|
 |70009	|未找到加密key																									|
+|70010	|模拟器或root设备禁止访问																				|
 
 微信小程序加解密时还会使用uni-id-common的checkToken方法，相关错误码参考：[uni-id错误码](uni-id-summary.md#errcode)
 

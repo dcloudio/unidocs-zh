@@ -1,4 +1,3 @@
-> 注意：uni-pay2.0 插件市场还未发布，即将发布，敬请期待！
 > 本文档适用于`uni-pay 2.0.0`及以上版本，需 HBuilderX 3.6.5 及以上版本。旧版本文档请访问：[uni-pay 1.x 文档](unipay.md)
 
 # uni-pay 2
@@ -24,6 +23,10 @@
 开发者在项目中引入 `uni-pay` 后，微信支付、支付宝支付等功能无需自己再开发。由于源码的开放性和层次结构清晰，有二次开发需求也很方便调整。
 
 > 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=uni-pay](https://ext.dcloud.net.cn/plugin?name=uni-pay)
+
+**线上体验地址**
+
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a9489bd6-37d6-4664-9e0b-346f8859534c.png)
 
 `uni-pay` 的功能包括：
 

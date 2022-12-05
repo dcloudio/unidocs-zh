@@ -19,5 +19,5 @@ const tabs = ['/uniCloud/', '/plugin/', '/worktile/', '/tutorial/', '/collocatio
 module.exports = {
   isExternal,
   simplifySlugText,
-  tabs
+  tabs: process.env.DOCS_LITE ? [] : tabs
 }

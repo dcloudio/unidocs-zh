@@ -4,6 +4,8 @@
 
 > HBuilderX 3.6+ 支持uts插件
 
+UTS插件开发官方QQ交流群：527828934 [点此加入](https://qm.qq.com/cgi-bin/qm/qr?k=3Z-cQCXGiTyThkrqufUNNw7TaJd2xEPb&jump_from=webapi&authKey=4UQdplol3kPLwlDfuSdYleE8JUHnJChC2+8HcuBavZq2q51iAkLdzT4Bupt4ZJZu)
+
 ### 什么是uts
 ### what is uts
 

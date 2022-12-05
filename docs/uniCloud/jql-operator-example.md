@@ -9,7 +9,7 @@ uniCloud的云数据库，提供了一批强大的运算方法。这些方法是
 比如sum()方法，可以对多行记录的某个字段值求和、可以对单行记录的若干字段的值求和，如果字段是一个数组，还可以对数组的各项求和。
 
 为方便书写，JQL内将数据库运算方法的用法进行了简化（相对于[原始数据库运算方法写法](cf-database-aggregate-operator.md)而言），主要是参数摊平，以字符串方式表达。以下是可以在JQL中使用的数据库运算方法
-## 数据库运算方法汇总
+## 数据库运算方法汇总@summary
 ### 完整运算方法列表
 
 |运算方法	|用途|JQL简化用法|说明|
@@ -226,7 +226,7 @@ groupField内可使用且仅能使用如下运算方法。
 |mergeObjects	|将一组对象合并为一个对象																					|mergeObjects(表达式)	|在groupField内使用时仅接收一个参数	|
 
 
-## 常用运算方法示例
+## 常用运算方法示例@demo
 以下列举常用的运算方法在 JQL 中的应用
 
 ### 算术运算方法
@@ -2488,7 +2488,7 @@ db.collection('inventory').field('toUpper(item) as item, toUpper(description) as
 {"_id":3,"item":"XYZ1","description":""}
 ```
 
-### 分组(groupBy)运算方法
+### 分组(groupBy)运算方法@group
 
 #### addToSet
 向数组中添加值，如果数组中已存在该值，不执行任何操作。
@@ -2806,7 +2806,7 @@ db.collection('sales').groupBy('item').groupField('mergeObjects(quantity) as mer
 {"_id":"A","mergedSales":{"2017Q1":500,"2017Q2":500,"2016Q1":400,"2016Q2":300,"2016Q3":0,"2016Q4":0}}
 ```
 
-## 商城示例
+## 商城示例@shop-demo
 ::: details Schema
 ```json
 // 商品表 goods

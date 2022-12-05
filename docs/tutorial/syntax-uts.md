@@ -1690,7 +1690,7 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 // this example takes 2 seconds to run
@@ -1714,7 +1714,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getDay
 
@@ -1724,7 +1724,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getFullYear
 
@@ -1738,7 +1738,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getMilliseconds
 
@@ -1748,7 +1748,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getMinutes
 
@@ -1758,7 +1758,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getMonth
 
@@ -1768,7 +1768,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getSeconds
 
@@ -1778,7 +1778,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getTime
 
@@ -1788,7 +1788,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### setDate
 
@@ -1798,7 +1798,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### setFullYear
 
@@ -1808,7 +1808,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### setHours
 
@@ -1838,7 +1838,7 @@ setTimeout(() => {
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ### Error
 
@@ -1974,7 +1974,7 @@ toFixed() 方法使用定点表示法来格式化一个数值。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 function financial(x: Number): String {
@@ -2001,7 +2001,7 @@ Set 对象是值的集合，你可以按照插入的顺序迭代它的元素。S
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const set1 = new Set<Any>();
@@ -2039,7 +2039,7 @@ clear() 方法用来清空一个 Set 对象中的所有元素。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const set1 = new Set<any>();
@@ -2060,7 +2060,7 @@ delete() 方法可以从一个 Set 对象中删除指定的元素。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const map1 = new Map<string,string>();
@@ -2084,7 +2084,7 @@ has() 方法返回一个布尔值来指示对应的值 value 是否存在 Set �
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ### String
 
@@ -2179,7 +2179,7 @@ concat() 方法将一个或多个字符串与原字符串连接合并，形成�
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 let hello = 'Hello, '
@@ -2195,7 +2195,7 @@ endsWith() 方法用来判断当前字符串是否是以另外一个给定的子
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str1 = 'Cats are the best!';
@@ -2216,7 +2216,7 @@ includes() 方法用于判断一个字符串是否包含在另一个字符串中
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str = 'To be, or not to be, that is the question.';
@@ -2235,7 +2235,7 @@ indexOf() 方法返回调用它的 String 对象中第一次出现的指定值�
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
@@ -2258,7 +2258,7 @@ padEnd() 方法会用一个字符串填充当前字符串（如果需要的话�
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str1 = 'Breaded Mushrooms';
@@ -2276,7 +2276,7 @@ padStart() 方法用另一个字符串填充当前字符串 (如果需要的话�
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str1 = '5';
@@ -2291,7 +2291,7 @@ repeat() 构造并返回一个新字符串，该字符串包含被连接在一�
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 "abc".repeat(0)      // ""
@@ -2308,7 +2308,7 @@ replace() 方法返回一个由替换值（replacement）替换部分或所有�
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
@@ -2328,7 +2328,7 @@ search() 方法执行正则表达式和 String 对象之间的一个搜索匹配
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
@@ -2347,7 +2347,7 @@ slice() 方法提取某个字符串的一部分，并返回一个新的字符串
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str = 'The quick brown fox jumps over the lazy dog.';
@@ -2365,7 +2365,7 @@ split() 方法使用指定的分隔符字符串将一个String对象分割成子
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str = 'The quick brown fox jumps over the lazy dog.';
@@ -2385,7 +2385,7 @@ toLowerCase() 会将调用该方法的字符串值转为小写形式，并返回
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 console.log('中文简体 zh-CN || zh-Hans'.toLowerCase());
@@ -2401,7 +2401,7 @@ toUpperCase() 方法将调用该方法的字符串转为大写形式并返回（
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const sentence = 'The quick brown fox jumps over the lazy dog.';

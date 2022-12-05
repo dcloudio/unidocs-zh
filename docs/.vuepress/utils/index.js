@@ -20,6 +20,5 @@ const tabs_en = ['/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/comp
 module.exports = {
   isExternal,
   simplifySlugText,
-  tabs_zh,
-  tabs_en: tabs_zh
+  tabs: process.env.DOCS_LITE ? [] : tabs
 }

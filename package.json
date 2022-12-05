@@ -7,14 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "cross-env DOCS_LOCAL=zh vuepress dev docs",
-    "dev:zh": "cross-env DOCS_LOCAL=zh vuepress dev docs",
-    "dev:en": "cross-env DOCS_LOCAL=en vuepress dev docs",
-    "build": "cross-env DOCS_LOCAL=zh node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
-    "build:zh": "cross-env DOCS_LOCAL=zh node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
-    "build:en": "cross-env DOCS_LOCAL=en node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
+    "dev": "vuepress dev docs",
+    "build": "node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
     "sitemap": "node ./script/createSiteMap.js",
-    "prebuild:en": "node ./script/checkBuildEn.js"
+    "build-lite": "cross-env DOCS_LITE=true node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs-lite --no-cache"
   },
   "repository": {
     "type": "git",
@@ -38,6 +34,7 @@
   },
   "dependencies": {
     "@docsearch/js": "^3.1.0",
+    "node-html-parser": "^6.1.4",
     "vuepress-theme-uni-app-test": "^1.2.12"
   }
 }

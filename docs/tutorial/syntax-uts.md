@@ -1961,7 +1961,7 @@ Represents the number of milliseconds since the beginning of the UNIX epoch (Jan
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 // this example takes 2 seconds to run
@@ -1987,7 +1987,7 @@ Returns the day of the month (from 1--31) for a specified date object according 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getDay
 
@@ -1998,7 +1998,7 @@ Returns the day of the week for a specific date, according to local time, with 0
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getFullYear
 
@@ -2014,7 +2014,7 @@ Returns the hour of a specified date object according to local time.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getMilliseconds
 
@@ -2025,7 +2025,7 @@ Returns the number of milliseconds for a specified date object according to loca
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getMinutes
 
@@ -2036,7 +2036,7 @@ Returns the number of minutes in a specified date object according to local time
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getMonth
 
@@ -2047,7 +2047,7 @@ The month of the specified date object, as a 0-based value (0 represents the fir
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getSeconds
 
@@ -2058,7 +2058,7 @@ Returns the number of seconds in a specified date object according to local time
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### getTime
 
@@ -2069,7 +2069,7 @@ Returns the GMT value of a time.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### setDate
 
@@ -2080,7 +2080,7 @@ Specifies the number of days in a date object according to local time.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### setFullYear
 
@@ -2091,7 +2091,7 @@ Sets the year for a date object based on local time.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 #### setHours
 
@@ -2127,7 +2127,7 @@ Sets the time for a Date object as a number of milliseconds representing the tim
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ### Error
 
@@ -2284,7 +2284,7 @@ The toFixed() method formats a number using fixed-point notation.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 function financial(x: Number): String {
@@ -2314,7 +2314,7 @@ Returns the number of elements in the Set object.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const set1 = new Set<Any>();
@@ -2355,7 +2355,7 @@ The clear() method is used to clear all elements in a Set object.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const set1 = new Set<any>();
@@ -2377,7 +2377,7 @@ The delete() method deletes the specified element from a Set object.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const map1 = new Map<string,string>();
@@ -2403,7 +2403,7 @@ The has() method returns a boolean value indicating whether the corresponding va
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ### String
 
@@ -2507,7 +2507,7 @@ The concat() method concatenates one or more strings with the original string to
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 let hello = 'Hello, '
@@ -2524,7 +2524,7 @@ The endsWith() method is used to judge whether the current string "ends" with an
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str1 = 'Cats are the best!';
@@ -2546,7 +2546,7 @@ The includes() method is used to determine whether a string is included in anoth
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str = 'To be, or not to be, that is the question.';
@@ -2566,7 +2566,7 @@ The indexOf() method returns the index of the first occurrence of the specified 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
@@ -2590,7 +2590,7 @@ The padEnd() method pads the current string with a string (repeatedly if necessa
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str1 = 'Breaded Mushrooms';
@@ -2609,7 +2609,7 @@ The padStart() method pads the current string with another string (repeated as m
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str1 = '5';
@@ -2625,7 +2625,7 @@ repeat() constructs and returns a new string containing the specified number of 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 "abc".repeat(0)      // ""
@@ -2643,7 +2643,7 @@ The replace() method returns a new string with some or all pattern matches repla
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
@@ -2664,7 +2664,7 @@ The search() method performs a search match between the regular expression and t
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
@@ -2684,7 +2684,7 @@ The slice() method extracts part of a string and returns a new string without ch
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str = 'The quick brown fox jumps over the lazy dog.';
@@ -2703,7 +2703,7 @@ The split() method splits a String object into an array of substrings using the 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const str = 'The quick brown fox jumps over the lazy dog.';
@@ -2724,7 +2724,7 @@ toLowerCase() converts the string value that calls this method to lowercase and 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 console.log('中文简体 zh-CN || zh-Hans'.toLowerCase());
@@ -2742,7 +2742,7 @@ The toUpperCase() method converts the string that calls this method to uppercase
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|x|
+|√|√|√ `(3.6.11+)`|
 
 ```ts
 const sentence = 'The quick brown fox jumps over the lazy dog.';

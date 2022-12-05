@@ -81,7 +81,7 @@ ext.js里引入公共模块的机制：
 |field		|array&lt;string&gt;|-		|read必备	|当前请求访问的字段列表（见下方说明）						|
 |addDataList|array&lt;object&gt;|-		|create必备	|新增操作传入的数据列表（见下方说明）						|
 |updateData	|object				|-		|update必备	|更新操作传入的数据（见下方说明）							|
-|clientInfo	|object				|-		|必备	|客户端信息，包括设备信息、uid等，详见：[clientInfo](cf-functions.md#get-client-infos)				|
+|clientInfo	|object				|-		|是	|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)				|
 
 #### where
 

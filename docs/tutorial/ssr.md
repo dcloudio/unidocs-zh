@@ -263,9 +263,9 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
 		plugins: [
 			uni(),
 		],
-    ssr: {
-      format: 'cjs'
-    }
+		ssr: {
+			format: 'cjs'
+		}
 	})
 	```
 
@@ -293,9 +293,9 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
 		plugins: [
 			uni(),
 		],
-    ssr: {
-      format: 'cjs'
-    }
+		ssr: {
+			format: 'cjs'
+		}
 	})
 	```
 

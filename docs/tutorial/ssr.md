@@ -250,14 +250,31 @@ Releasing ssr will get two parts: the cloud part and the static resource part. T
 需要HBuilderX版本`3.5.1`及以上版本，支持部署到阿里云和腾讯云此前仅支持自动部署到阿里云
 Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Cloud and Tencent Cloud previously only supported automatic deployment to Alibaba Cloud
 
-1. 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
-1. By `Release Menu -> website PC-Web or mobile phone H5` of `HBuilderX`, check `ssr`, check `Deploy the compiled resource at uniCloud front-end website hosting`
+1. 配置`vite.config.js`中的`base`为`前端网页托管`地址
+
+	```js
+	import {
+		defineConfig
+	} from 'vite'
+	import uni from '@dcloudio/vite-plugin-uni'
+	// https://vitejs.dev/config/
+	export default defineConfig({
+		base: 'https://static-xxxx.bspapp.com/', // uniCloud 前端网页托管资源地址（主要是应用编译后的js，图片等静态资源，可以配置为二级目录）
+		plugins: [
+			uni(),
+		],
+    ssr: {
+      format: 'cjs'
+    }
+	})
+	```
+
+2. 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
 
 	![自动部署](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/a57a589e-4193-497f-ac89-d33c1208d3e1.png)
 	![Automatic deployment](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/a57a589e-4193-497f-ac89-d33c1208d3e1.png)
 	
-2. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
-2. To configure the URL path of the cloud function of `uni-ssr`, please refer to the document [URL normalization of cloud function](https://uniapp.dcloud.net.cn/uniCloud/http)
+3. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
 
 **手动发行部署**
 **Manual release and deployment**
@@ -276,6 +293,9 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
 		plugins: [
 			uni(),
 		],
+    ssr: {
+      format: 'cjs'
+    }
 	})
 	```
 

@@ -331,7 +331,6 @@ parseCollection()
 - 迁移后开发者下次在HBuilderX打包发行时会使用新服务空间id。请注意这时候需要修改小程序request域名白名单，将`api.next.bspapp.com`添加到request域名白名单内
 - 正式版固定IP代理出口IP和公测版不同，如有在三方平台配置域名白名单请自行修改，参考：[阿里云固定IP](cf-functions.md#aliyun-eip)
 - 前端网页托管自定义域名需要重新绑定
-- 跨域配置需要重新在uniCloud web控制台添加，阿里云正式版跨域配置最多配置10项，但是相比公测版支持使用通配符配置域名。正式版默认允许localhost跨域
 
 **迁移过程中受影响的业务**
 

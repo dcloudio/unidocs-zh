@@ -207,9 +207,9 @@ cli创建的项目使用`npm run dev:h5:ssr`运行即可
 		plugins: [
 			uni(),
 		],
-    ssr: {
-      format: 'cjs'
-    }
+		ssr: {
+			format: 'cjs'
+		}
 	})
 	```
 
@@ -234,9 +234,9 @@ cli创建的项目使用`npm run dev:h5:ssr`运行即可
 		plugins: [
 			uni(),
 		],
-    ssr: {
-      format: 'cjs'
-    }
+		ssr: {
+			format: 'cjs'
+		}
 	})
 	```
 

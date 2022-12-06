@@ -869,6 +869,9 @@ await uniIdCo.loginByWeixinMobile({
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
 
+**注意**
+- 此接口会调用微信凭证接口获取access_token，uni-id-pages 1.0.8及以上版本会使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 保存 access_token 信息。
+- 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
 #### 一键登录@login-by-univerify
 #### One-click login @login-by-univerify
 
@@ -970,8 +973,7 @@ await uniIdCo.loginByWeixin({
 - 如果有多个应用同时使用微信小程序登录，且希望用户身份不隔离请确保这些应用在微信小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
 - If there are multiple applications using WeChat applet to log in at the same time, and you want user identities not to be isolated, please ensure that these applications are owned by the same entity on the WeChat applet platform, that is, to ensure that different applications can obtain the same unionid
 - `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存`session_key`（微信小程序登录）、`access_token`（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
-- `uni-id-pages 1.0.8` and above will use uni-open-bridge-common to save `session_key` (WeChat applet login), `access_token` (WeChat official account login, WeChat App login) information, However, a copy is still stored in the user table for compatibility with legacy logic. For details, please refer to: [Automatically save user sessionKey, accessToken and other information](uni-id-summary.md#save-user-token)
-
+- - 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
 **关于openid的说明**
 **Note about openid**
 
@@ -1508,8 +1510,7 @@ await uniIdCo.bindWeixin({
 **Notice**
 
 - 仅在用户token即将过期时返回新newToken
-- only return a new newToken when the user's token is about to expire
-
+- 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
 #### 绑定QQ@bind-qq
 #### Bind QQ@bind-qq
 

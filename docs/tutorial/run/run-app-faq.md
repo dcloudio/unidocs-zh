@@ -6,9 +6,7 @@ keyword: Troubleshooting guide for real machine operation, can't connect to Andr
 -->
 
 > 关于真机运行，iOS: 首先请确保`iTunes`可以连接iPhone;
-> About real machine operation, iOS: First make sure `iTunes` can connect to iPhone;
-> Android: `手机助手`（如360手机助手）可以正常Android连接手机。
-> Android: `Mobile Assistant` (such as 360 Mobile Assistant) can connect to the mobile phone normally with Android.
+> Android: 确定adb devices命令，可以检测到Android连接手机。
 
 > 如果仍有问题请查阅以下问题是否与自己遇到的情况相同!
 > If you still have problems, please check whether the following problems are the same as yours!

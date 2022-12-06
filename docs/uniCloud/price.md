@@ -192,7 +192,7 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 
 | 计费项			| 定价				|
 | ---				| ---				|
-| 调用次数			| 0.5元/万次/天		|
+| 调用次数			| 0.5元/万次		|
 | 容量				| 0.1元/GB/天		|
 | 云函数资源使用量	| 0.00011108元/GBs	|
 | 云函数外网出流量	| 0.8元/GB			|

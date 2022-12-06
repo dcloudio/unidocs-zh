@@ -4,7 +4,7 @@ keyword: 真机运行常见故障排查指南,无法连接Android手机,无法�
 -->
 
 > 关于真机运行，iOS: 首先请确保`iTunes`可以连接iPhone;
-> Android: `手机助手`（如360手机助手）可以正常Android连接手机。
+> Android: 确定adb devices命令，可以检测到Android连接手机。
 
 > 如果仍有问题请查阅以下问题是否与自己遇到的情况相同!
 

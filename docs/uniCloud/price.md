@@ -356,7 +356,7 @@ parseCollection()
 
 **需要操作**
 
-- 迁移前两天开发者应该在小程序后台配置新的上传域名到上传域名白名单内，配置新的云存储的cdn域名到下载域名白名单内，在uniCloud web控制台提前获取迁移后的云存储的上传域名、cdn域名
+- 由于小程序安全域名白名单在客户端有缓存，迁移前两天开发者应该在小程序后台配置新的上传域名到上传域名白名单内，配置新的云存储的cdn域名到下载域名白名单内，在uniCloud web控制台提前获取迁移后的云存储的上传域名、cdn域名（注意不要移除旧服务空间的上传下载域名）
 - 迁移时需要手动选择云函数内获取到的服务空间id（context.SPACEINFO.spaceId 或 cloudInfo.spaceId）是新服务空间id还是旧服务空间id
 - 迁移后开发者下次在HBuilderX打包发行时会使用新服务空间id。请注意这时候需要修改小程序request域名白名单，将`api.next.bspapp.com`添加到request域名白名单内
 - 正式版固定IP代理出口IP和公测版不同，如有在三方平台配置域名白名单请自行修改，参考：[阿里云固定IP](cf-functions.md#aliyun-eip)

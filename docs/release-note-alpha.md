@@ -1,3 +1,9 @@
+#### 3.6.12.20221207-alpha
+* 【uniCloud】
+  + 本地调试插件 修复 云函数调用云函数时，被调用云函数无返回值导致报错的Bug
+* 【App插件(含5+App和uni-app的App端)】
+  + iOS平台 修复 3.6.11 版本引出的 显示开屏广告时弹出系统 alert 窗偶现崩溃的Bug
+
 #### 3.6.11.20221205-alpha
 * 【uni-app】
   + 新增 ad-interactive 互动广告组件 [详情](https://uniapp.dcloud.net.cn/component/ad-interactive.html)

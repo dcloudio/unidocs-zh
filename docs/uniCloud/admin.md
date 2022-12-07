@@ -135,8 +135,6 @@ After the creation is complete, you can follow the `cloud service space initiali
 **注意**：
 **Notice**:
 
-- 在 HBuilderX 中运行需在插件市场在安装 [sass 插件](https://ext.dcloud.net.cn/plugin?id=2046)
-- To run in HBuilderX, you need to install [sass plugin] in the plugin market (https://ext.dcloud.net.cn/plugin?id=2046)
 - 浏览器联网失败，报 `request：fail`，需要去云服务空间的`跨域配置`配置跨域域名，需带端口。[详见](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
 - The browser fails to connect to the Internet and reports `request: fail`. You need to go to the `Cross-domain configuration` of the cloud service space to configure a cross-domain domain name, and a port is required. [See details](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
 - 如从未接触过uniCloud，是无法直接上手uni-admin的，建议先通读下uniCloud文档的概念介绍和快速上手章节。[详见](https://uniapp.dcloud.net.cn/uniCloud/README)
@@ -881,8 +879,7 @@ The following is a list of existing uni-admin plugins, you can refer to: [https:
 **插件开发后如何上传插件市场**
 **How to upload plugin market after plugin development**
 
-插件上传等更多信息，参考 [DCloud 插件开发指南汇总](https://ask.dcloud.net.cn/article/35408) 及其中的 `admin 插件`部分，插件作者可以按此文档提交插件，在插件市场的上传发布页面选择`uniCloud` 分类的 `Admin 插件` 。
-For more information on plugin upload, please refer to [Summary of DCloud Plugin Development Guide](https://ask.dcloud.net.cn/article/35408) and the `admin plugin` section. Plugin authors can submit plugins according to this document. Select `Admin Plugins` in the `uniCloud` category on the Upload and Publish page of the Plugin Marketplace.
+插件上传等更多信息，参考 [DCloud 插件开发指南汇总](https://uniapp.dcloud.io/plugin/publish.html) 及其中的 `admin 插件`部分，插件作者可以按此文档提交插件，在插件市场的上传发布页面选择`uniCloud` 分类的 `Admin 插件` 。
 
 ### uni-admin中使用三方组件库
 ### Using third-party component library in uni-admin

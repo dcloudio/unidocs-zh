@@ -46,7 +46,7 @@
 |参数|类型|必填|说明|
 |:-|:-|:-|:-|
 |timeoutCallback|Function|否|接超过30s或页面 onHide 时会结束录像|
-|timeout|Number|否|录制时长上限，单位为秒，最长不能超过 5 分钟，默认值30。**仅微信小程序 2.22.0+ 支持**|
+|timeout|Number|否|录制时长上限，单位为秒，默认30s。微信小程序最长不能超过 5 分钟，支付宝小程序最大录制时长 10 分钟。**仅微信2.22.0+ 、支付宝1.11.0+小程序支持**|
 |selfieMirror|Boolean|否|是否开启镜像，默认true。**仅微信小程序 2.22.0+ 支持**|
 |success|Function|否|接口调用成功的回调函数|
 |fail|Function|否|接口调用失败的回调函数|
@@ -57,7 +57,7 @@
 
 |参数|类型|默认值|必填|说明|
 |:-|:-|:-|:-|:-|
-|compressed|Boolean|false|否|启动视频压缩，压缩效果同 `chooseVideo` ,**微信小程序 2.10.0+ 支持**|
+|compressed|Boolean|false|否|启动视频压缩，压缩效果同 `chooseVideo` 。微信2.10.0+ 、字节2.41.0（Android暂不支持）、快手小程序支持|
 |success|Function||否|接口调用成功的回调函数 ，返回封面与视频的临时路径，res = { tempThumbPath, tempVideoPath }。|
 |fail|Function||否|接口调用失败的回调函数|
 |complete|Function||否|接口调用结束的回调函数（调用成功、失败都会执行）|

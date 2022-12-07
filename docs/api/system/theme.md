@@ -25,7 +25,7 @@ uni.onThemeChange(function (res) {
 ```
 
 ### uni.offThemeChange(CALLBACK)
-监听系统主题状态变化。
+取消监听系统主题状态变化。
 
 > 相关文档：[DarkMode 适配指南](https://uniapp.dcloud.net.cn/tutorial/darkmode.html)
 

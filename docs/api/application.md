@@ -99,11 +99,11 @@
 
 #### 参数
 
-**function callback**
+**CALLBACK**
 
 应用切后台事件的回调函数
 
-### uni.offPageNotFound(function callback)
+### uni.offPageNotFound(CALLBACK)
 
 取消监听应用要打开的页面不存在事件。
 
@@ -113,11 +113,11 @@
 
 #### 参数
 
-**function callback**
+**CALLBACK**
 
 应用要打开的页面不存在事件的回调函数
 
-### uni.offError(function callback)
+### uni.offError(CALLBACK)
 
 取消监听应用错误事件。
 
@@ -127,11 +127,11 @@
 
 #### 参数
 
-**function callback**
+**CALLBACK**
 
 应用错误事件的回调函数
 
-### uni.offAppShow(function callback)
+### uni.offAppShow(CALLBACK)
 
 取消监听小程序切前台事件。
 
@@ -141,11 +141,11 @@
 
 #### 参数
 
-**function callback**
+**CALLBACK**
 
 应用切前台事件的回调函数
 
-### uni.offAppHide(function callback)
+### uni.offAppHide(CALLBACK)
 
 取消监听小程序切后台事件。
 
@@ -155,6 +155,6 @@
 
 #### 参数
 
-**function callback**
+**CALLBACK**
 
 应用切后台事件的回调函数

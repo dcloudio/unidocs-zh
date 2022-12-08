@@ -1,4 +1,4 @@
-### uni.onPageNotFound(function callback)
+### uni.onPageNotFound(CALLBACK)
 
 监听应用要打开的页面不存在事件。该事件与 `App.onPageNotFound` 的回调时机一致
 

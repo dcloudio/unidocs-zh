@@ -26,7 +26,7 @@
 - 如果回调中又重定向到另一个不存在的页面，将推入客户端原生的页面不存在提示页面，并且不再第二次回调。
 - 在除了 `App.vue` 的其他时机中调用 `uni.onPageNotFound` 的话，需要用uni.offPageNotFound取消监听，否则会出现监听多次的情况
 
-### uni.onError(function callback)
+### uni.onError(CALLBACK)
 
 监听小程序错误事件。如脚本错误或 `API` 调用报错等。该事件与 `App.onError` 的回调时机与参数一致。
 

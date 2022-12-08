@@ -1,5 +1,4 @@
-JQL语法相关文档已移至：[JQL语法](uniCloud/jql.md)
-JQL syntax related documentation has been moved to: [JQL syntax](uniCloud/jql.md)
+JQL语法相关文档已移至：[JQL语法](jql.md)
 
 ## clientDB简介
 ## clientDB introduction
@@ -25,8 +24,8 @@ Of course, using `clientDB` requires reversing the traditional concept of back-e
 在`DB Schema`中，配置数据操作的权限和字段值域校验规则，阻止前端不恰当的数据读写。详见：[DB Schema](https://uniapp.dcloud.net.cn/uniCloud/schema)
 In `DB Schema`, configure the permissions of data operations and field value domain validation rules to prevent inappropriate data reading and writing at the front end. See: [DB Schema](https://uniapp.dcloud.net.cn/uniCloud/schema)
 
-如果需要数据库操作之前或之后，云端执行关联逻辑（比如获取文章详情后，文章阅读量+1），`clientDB`提供了action云函数机制。在HBuilderX项目的`cloudfunctions/uni-clientDB-actions`目录编写上传js，参考：[action](uniCloud/jql?id=action)
-If the cloud needs to execute the associated logic before or after the database operation (for example, after obtaining the article details, the article reading volume +1), `clientDB` provides the action cloud function mechanism. Write and upload js in the `cloudfunctions/uni-clientDB-actions` directory of the HBuilderX project, refer to: [action](uniCloud/jql?id=action)
+如果需要数据库操作之前或之后，云端执行关联逻辑（比如获取文章详情后，文章阅读量+1），`clientDB`提供了[数据库触发器](jql-schema-ext.md)（从HBuilderX 3.6.11开始）。
+在不支持数据库触发器的低版本，使用[action云函数](jql.md#action)
 
 **注意**
 **Notice**
@@ -145,13 +144,12 @@ db.collection('list')
 // get db reference
 const db = uniCloud.database() //代码块为cdb
 db.collection('list')
-  .where('name=="hello-uni-app"')
+	.where('name=="hello-uni-app"')
 	.get()
-  .then((res)=>{
+	.then((res)=>{
     // res 为数据库查询结果
-    // res is the database query result
-  }).catch((err)=>{
-    console.log(err.code); // 打印错误码
+	}).catch((err)=>{
+		console.log(err.code); // 打印错误码
 		console.log(err.message); // 打印错误内容
   })
 ```

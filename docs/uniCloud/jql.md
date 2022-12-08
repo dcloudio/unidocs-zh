@@ -98,8 +98,7 @@ The writing of nosql is too complicated. For example, the following three exampl
 这些问题竖起一堵墙，让后端开发难度加大，成为一个“专业领域”。但其实这堵墙是完全可以推倒的。
 These problems put up a wall, making back-end development more difficult and becoming a "professional field". But in fact, this wall can be completely torn down.
 
-`jql`将解决这些问题，让js工程师没有难操作的数据。
-`jql` will solve these problems, so that js engineers do not have difficult data to manipulate.
+`jql`将解决这些问题，让js工程师没有难操作的数据库。
 
 具体看以下示例
 See the following example for details
@@ -156,9 +155,8 @@ The above scenarios will perform data verification when adding or modifying data
 - 不会校验任何权限，相当于以数据库管理员的身份执行
 - Does not verify any permissions, equivalent to executing as a database administrator
 - 即使是admin不能读写的password类型数据也可以读写
-- Even password type data that admin cannot read and write can be read and written
-- 不可以执行action
-- cannot execute action
+- 不会触发数据库触发器
+- 不可以执行action云函数
 
 **客户端clientDB：**
 **Client clientDB:**
@@ -172,9 +170,7 @@ The above scenarios will perform data verification when adding or modifying data
 **Cloud Function JQL:**
 
 - 同clientDB，但是password类型的数据可以配置权限，默认权限是false，可以被admin用户操作。
-- The same as clientDB, but the password type data can be configured with permissions. The default permission is false, which can be operated by the admin user.
-- 可以指定当前执行数据库操作的用户身份。
-- You can specify the user identity that is currently performing database operations.
+- 可以通过setUser指定当前执行数据库操作的用户身份。
 
 ## JQL的限制@limit
 ## JQL limit @limit
@@ -3828,6 +3824,10 @@ db.collection('goods').where('name == "n1"').get()
 
 ## action@action
 
+**注意：**
+
+> 从HBuilderX 3.6.11开始，推荐使用[数据库触发器](jql-schema-ext.md)替代action云函数。以下内容仅为向下兼容保留
+
 action的作用是在执行前端发起的数据库操作时，额外触发一段云函数逻辑。它是一个可选模块。action是运行于云函数内的，可以使用云函数内的所有接口。
 The role of action is to trigger an additional piece of cloud function logic when executing a database operation initiated by the front end. It is an optional module. Actions run in cloud functions and can use all interfaces in cloud functions.
 
@@ -4017,6 +4017,8 @@ An example package.json for a common module used within JQL is as follows.
   "includeInClientDB": true
 }
 ```
+
+通过上述步骤建立起关联关系后，可正常在数据库触发器或action云函数中使用公共模块。
 
 **注意**
 **Notice**

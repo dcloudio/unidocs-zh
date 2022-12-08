@@ -36,7 +36,7 @@
 
 #### 参数
 
-**function callback**
+**CALLBACK**
 
 应用错误事件的回调函数
 

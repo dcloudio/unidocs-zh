@@ -8,7 +8,7 @@
 
 #### 参数
 
-**function callback**
+**CALLBACK**
 
 要打开的页面不存在事件的回调函数
 

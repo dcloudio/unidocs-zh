@@ -84,7 +84,7 @@
 |appId|String|来源小程序的appId||
 |extraData|Object|来源小程序传过来的数据|微信小程序和qq小程序 scene=1037或1038时支持|
 
-### uni.onAppHide(function callback)
+### uni.onAppHide(CALLBACK)
 
 监听应用切后台事件。该事件与 `App.onHide` 的回调参数一致。
 

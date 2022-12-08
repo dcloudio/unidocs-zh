@@ -99,9 +99,7 @@ Mobile smart terminal supplementary device identification system and SDK privacy
 - APP 包名，用于校验签名
 - APP package name, used to verify the signature
 
-### UniPush
-
-<a id="push"></a>
+### UniPush@push
 
 UniPush是DCloud联合个推公司推出的集成型统一推送服务，使用了个推提供的SDK，因此需要在《隐私政策》中添加“个推消息推送SDK”相关说明。
 UniPush is an integrated unified push service launched by DCloud and Getui Company. It uses the SDK provided by Getui. Therefore, it is necessary to add a description of "Geetui Message Push SDK" in the "Privacy Policy".

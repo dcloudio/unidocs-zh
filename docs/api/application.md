@@ -45,7 +45,7 @@
 
 错误信息，包含堆栈
 
-### uni.onAppShow(function callback)
+### uni.onAppShow(CALLBACK)
 
 监听应用切前台事件。该事件与 `App.onShow` 的回调参数一致。
 
@@ -60,7 +60,7 @@
 
 #### 参数
 
-**function callback**
+**CALLBACK**
 
 应用切前台事件的回调函数
 

@@ -33,7 +33,7 @@
   * [云数据库入门](uniCloud/hellodb.md)
   * [Getting Started with Cloud Database](uniCloud/hellodb.md)
   * [DB Schema表结构](uniCloud/schema.md)
-  * [DB Schema扩展](uniCloud/jql-schema-ext.md)
+  * [DB Schema扩展(数据库触发器)](uniCloud/jql-schema-ext.md)
   * [openDB](uniCloud/opendb)
   * [数据库索引](uniCloud/db-index.md)
   * [Database Index](uniCloud/db-index.md)

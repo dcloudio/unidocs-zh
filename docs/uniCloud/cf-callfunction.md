@@ -174,7 +174,7 @@ The list of properties of the context object is as follows:
 |&nbsp;&#124;- spaceId		|string	|服务空间id																								|
 |&nbsp;&#124;- spaceId |string |Service space id |
 |&nbsp;&#124;- provider		|string	|服务空间供应商：aliyun&#124;tencent																	|
-|&nbsp;&#124;- provider |string |Service space provider: aliyun&#124;tencent |
+|&nbsp;&#124;- useOldSpaceId		|boolean	|当前获取的服务空间id是否为迁移前的服务空间id，新增于`HBuilderX 3.6.13`															|
 |SOURCE						|string	|云函数调用来源 [详见](?id=context-source)																|
 |SOURCE |string |Cloud function call source [see details](?id=context-source) |
 |FUNCTION_NAME				|string	|获取云函数名称																							|

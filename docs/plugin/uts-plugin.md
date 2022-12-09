@@ -821,13 +821,10 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 ## route map
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-1. iOS热刷新
-2. 支持vue2编译器（HBuilderX 3.6.8已支持）
-3. debug
-4. UI操作能力
-4. UI operation ability
-5. 插件市场支持uts插件的加密和计费销售
-5. The plug-in market supports encryption and billing sales of uts plug-ins
+1. 原生插件的组件
+2. ide debug
+3. 插件市场支持uts插件的加密和计费销售
+4. uvue页面，纯原生的视图组件构成的页面
 
 最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
 Ultimately, uts is no longer a plugin for uni-app, but the body of the app. (Now it is mainly js, uts exists as a plug-in, and the main engine is still in v8 or jscore)

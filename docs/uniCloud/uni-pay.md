@@ -2003,6 +2003,19 @@ this.$refs.uniPay.createOrder({
 
 即将上线，敬请期待
 
+`uni-admin 2.2.0`即以上版本已内置支付统计，菜单位置为`uni统计 / 支付统计`
+
+如果你当前使用的是旧版`uni-admin`，则需要先更新到新版`uni-admin`，
+
+同时新建一个空的json文件，复制下面的内容到新建的json文件中，最后去`uniCloud控制台`的`opendb-admin-menus`表手动导入json文件
+
+```json
+{"menu_id": "uni-stat-pay","name": "支付统计","icon": "uni-icons-circle","url": "","sort": 2122,"parent_id": "uni-stat","permission": [],"enable": true,"create_date": 1667386977981}
+{"menu_id": "uni-stat-pay-overview","name": "概况","icon": "","url": "/pages/uni-stat/pay-order/overview/overview","sort": 21221,"parent_id": "uni-stat-pay","permission": [],"enable": true,"create_date": 1667387038602}
+{"menu_id": "uni-stat-pay-funnel","name": "漏斗分析","icon": "","url": "/pages/uni-stat/pay-order/funnel/funnel","sort": 21222,"parent_id": "uni-stat-pay","permission": [],"enable": true,"create_date": 1668430092890}
+{"menu_id": "uni-stat-pay-ranking","name": "价值用户排行","icon": "","url": "/pages/uni-stat/pay-order/ranking/ranking","sort": 21223,"parent_id": "uni-stat-pay","permission": [],"enable": true,"create_date": 1668430128302}
+```
+
 ### 收款趋势
 
 ![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/dc3474c4-bb40-4638-a16b-b5f9ef3c0db4.png)

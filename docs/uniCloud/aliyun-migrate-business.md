@@ -15,8 +15,7 @@
 
 由于待迁移正式版空间是一个全新且独立的空间，所以在创建后会分配新的SpaceId，规则为`mp-公测版SpaceId`。
 
-为了更好的在云函数/云对象中兼容，购买待迁移正式版空间时， 可选择`是否在云函数/云对象代码中兼容 SpaceID`，如果开启该选项，迁移后在云函数/云对象内获取的
-`context.SPACEINFO.spaceId` 及 `cloudInfo` 内的 SpaceId 将保持不变，仍为原公测版SpaceId。
+为了更好的在云函数/云对象中兼容，购买待迁移正式版空间时， 可选择`是否在云函数/云对象代码中兼容 SpaceID`，如果开启该选项，迁移后在云函数/云对象内获取的`context.SPACEINFO.spaceId` 及 `cloudInfo` 内的 SpaceId 将保持不变，仍为原公测版SpaceId。开发者可以通过`context.SPACEINFO.useOldSpaceId` 或 `cloudInfo.useOldSpaceId`判断当前获取的spaceId是不是迁移前的，true表示当前服务空间在云函数内取到的服务空间id为迁移前的服务空间id，否则为新空间id。**迁移后的新服务空间id为旧空间id加`mp-`前缀。**
 
 ![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f6c7281f-063f-4691-b600-c9ba6f361a9c.png)
 

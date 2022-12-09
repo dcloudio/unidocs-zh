@@ -31,7 +31,7 @@
 - 云函数：通过传统json接口方式和客户端通信，客户端使用`uniCloud.callfunction("")`调用云函数
 - 云对象：是通过前端导入对象来操作的，客户端使用`uniCloud.importObject("")`导入云对象。详见[云对象](/uniCloud/cloud-obj)
 - 公共模块：用于不同的云函数/云对象，抽取和共享相同代码，详见[公共模块文档](/uniCloud/cf-functions?id=公共模块)
-- action云函数：为了弥补clientDB客户端直接操作数据库的局限而设计的，详见[clientDB action文档](/uniCloud/clientdb?id=action)
+- action云函数（不推荐使用）：为了弥补clientDB客户端直接操作数据库的局限而设计的，详见[clientDB action文档](/uniCloud/clientdb?id=action)。从HBuilderX 3.6.11开始，推荐使用[数据库触发器](jql-schema-ext.md)替代action云函数。
 - uniCloud扩展库：为了裁剪和控制云函数体积而设计的，一些不太常用的功能比如Redis，独立为可选扩展库，避免增大每个云函数的体积，详见[uniCloud扩展库](/uniCloud/cf-functions?id=扩展库)
 
 HBuilderX中uniCloud项目的云函数均在项目的`uniCloud/cloudfunctions`目录下，目录结构如下：
@@ -43,7 +43,7 @@ HBuilderX中uniCloud项目的云函数均在项目的`uniCloud/cloudfunctions`�
 |   |   └──hello-common           云函数公用模块
 |   |      │──index.js            公用模块代码
 |   |      └──package.json        公用模块package.json
-|   │───uni-clientDB-actions
+|   │───uni-clientDB-actions      （推荐用数据库触发器替代action云函数）
 |   │      └──new_action.js       clientDB action代码 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=action">详情</a>
 |   │───function-name             云函数目录
 |   │     │──index.js             云函数代码
@@ -93,14 +93,14 @@ db.collection('list').get()
 
 如果客户端使用uni-app开发，且向uniCloud服务空间的请求主要是为了操作云数据库（无论增删改查），那么推荐使用clientDB方式，由uni-app客户端直接操作云数据库。
 
-如果操作数据库的同时，还需要同时执行一些云函数，可以使用clientDB的action云函数。
+如果操作数据库的同时，还需要同时执行一些云端逻辑：HBuilderX 3.6.11以前使用action云函数；从HBuilderX 3.6.11开始，推荐使用[数据库触发器](jql-schema-ext.md)替代action云函数。
 
 - clientDB不适用的情况：
 
 1. 请求不操作云数据库，比如向外部web系统发请求、操作redis、删除云文件等；
 2. 操作的云数据库请求不希望暴露在前端；
 3. 数据库表和字段数量多而接口数量少。给每个数据配置权限的工作量超过了控制少数接口权限的工作量；
-4. 权限体系较复杂，除了用户和管理员外还有较多其他权限条件或动态权限。此时在schema和action中编写代码的复杂度超过了写接口。
+4. 权限体系非常复杂，除了用户和管理员外还有较多其他权限条件或动态权限。此时在schema.json/schema.ext.js中编写代码的复杂度超过了写接口。
 
 ### 云对象方式
 
@@ -258,7 +258,7 @@ HBuilderX内使用代码块`returnu`可以快速输入以下代码（`HBuilderX 
 
 ```js
 return {
-  errSubject: '', // HBuilderX 3.6.10新增
+	errSubject: '', // HBuilderX 3.6.10新增
 	errCode: 0,
 	errMsg: ''
 }
@@ -309,8 +309,8 @@ return {
 
 云函数中支持访问本服务空间下的、或经授权的其他服务空间下的，数据库。
 
-- 使用 MongoDB 语法操作数据库，另见[文档](uniCloud/cf-database.md)
 - 使用 JQL 语法操作数据库，另见[文档](uniCloud/jql-cloud.md)
+- 使用 MongoDB 语法操作数据库，另见[文档](uniCloud/cf-database.md)
 
 ## 访问其他HTTP服务@httpclient
 
@@ -572,13 +572,13 @@ uniCloud的api中，有些api对应的实现，其代码体积较大，且这些
 
 ## 公共模块@common
 
-云函数支持公共模块。多个云函数的共享部分，可以抽离为公共模块，然后被多个云函数引用。由于篇幅较长，[详见](uniCloud/cf-common)
+云函数支持公共模块。多个云函数/云对象的共享部分，可以抽离为公共模块，然后被多个云函数引用。由于篇幅较长，[详见](uniCloud/cf-common)
 
 ## 使用npm
 
 云函数的运行环境是 `Node.js`，因此我们可以使用 `npm` 安装第三方依赖。
 
-注意：阿里云目前仅支持全量上传云函数（整个node_modules文件夹全部上传，会在上传前自动在本地安装依赖，不会直接使用云函数目录下的node_modules），因此提醒开发者精简依赖，否则可能会每次上传时间很慢，影响开发体验。并且太大的npm库影响云函数的运行性能。
+注意：阿里云目前仅支持全量上传云函数（整个`node_modules`文件夹全部上传，会在上传前自动在本地安装依赖，不会直接使用云函数目录下的node_modules），因此提醒开发者精简依赖，否则可能会每次上传时间很慢，影响开发体验。并且太大的npm库影响云函数的运行性能。
 
 腾讯云会在上传云函数后自动安装需要的npm依赖。
 
@@ -738,7 +738,7 @@ myCloud.uploadFile()
 
 ## serverless环境说明@runtime
 
-serverless是动态分别计算资源的，由此会引发的出一批特有概念：冷启动、实例、并发请求、无状态、伪全局变量。
+serverless是动态分配计算资源的，由此会引发的出一批特有概念：冷启动、实例、并发请求、无状态、伪全局变量。
 
 ### 云函数冷启动、热启动@launchtype
 
@@ -772,7 +772,7 @@ serverless是动态分别计算资源的，由此会引发的出一批特有概�
 1. 使用clientDB可以减少遇到冷启动问题的概率
 2. 非高频访问的云函数，合并到高频云函数中。也有的开发者使用单路由方式编写云函数，即在一个云函数中通过路由处理实现了整个应用的所有后台逻辑。参考[插件](https://ext.dcloud.net.cn/search?q=%E8%B7%AF%E7%94%B1&cat1=7&orderBy=UpdatedDate)。
   但使用这种方式需注意平衡，如果业务代码太多，每次云函数请求产生的内存消耗也会不少。
-3. 非高频访问的云函数，可以通过定时任务持续运行它（注意腾讯云可以使用这个方式完全避开冷启动，而阿里云的定时任务最短周期大于资源回收周期）
+3. 非高频访问的云函数，可以通过定时任务持续运行它（注意阿里云公测版的定时任务最短周期大于资源回收周期）
 4. 阿里云支持配置云函数的单实例多并发，请参考：[单实例多并发](cf-functions.md?id=concurrency)
 5. 腾讯云付费进行实例预留
 
@@ -1069,9 +1069,7 @@ serverless默认是没有固定的服务器IP的，因为有很多服务器资�
 
 但一些三方系统，要求配置固定ip白名单，比如微信公众号的js sdk，此时只能提供固定ip地址。
 
-目前腾讯云的收费版，提供了云函数的固定出口ip
-
-在uniCloud [Web控制台](https://unicloud.dcloud.net.cn)，创建付费的腾讯云服务空间，选择一个云函数，在云函数的详情界面可以开启固定出口ip。开启后界面上会显示可用的固定ip。拿着这个ip去需要固定ip的界面（如微信公众号管理界面）配置即可。
+腾讯云的收费版，提供了云函数的固定出口ip，在uniCloud [Web控制台](https://unicloud.dcloud.net.cn)，创建付费的腾讯云服务空间，选择一个云函数，在云函数的详情界面可以开启固定出口ip。开启后界面上会显示可用的固定ip。拿着这个ip去需要固定ip的界面（如微信公众号管理界面）配置即可。
 
 **注意**
 
@@ -1100,7 +1098,7 @@ uniCloud.httpProxyForEip ，其原理是通过代理请求获得固定出口IP�
 47.92.68.159
 ```
 
-**代理服务器IP列表（商业版）**
+**代理服务器IP列表（正式版）**
 
 ```
 47.92.132.2
@@ -1269,7 +1267,7 @@ package.json是一个标准json文件，不可带注释。下面是一个package
 
 **使用腾讯云Nodejs12版本时，务必仔细阅读此文档：[keepRunningAfterReturn](#keep-running)**
 
-#### triggers@triggers
+#### 定时任务triggers@triggers
 
 阿里云定时触发的cron表达式不支持代表年的第七位，但是在package.json内配置时仍需将第七位设置为*。
 

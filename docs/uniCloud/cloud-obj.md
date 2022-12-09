@@ -347,12 +347,13 @@ module.exports = {
 
 **返回值**
 
-|参数名			|类型	|必备	|说明																								|
-|--				|--		|--		|--																									|
-|provider		|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`														|
-|spaceId		|string	|是		|服务空间Id																							|
-|functionName	|string	|是		|云对象名称，新增于`HBuilderX 3.5.1`																|
-|functionType	|string	|是		|云对象此值固定为`cloudobject`，新增于`HBuilderX 3.5.1`																|
+|参数名				|类型		|必备	|说明																										|
+|--						|--			|--		|--																											|
+|provider			|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`|
+|spaceId			|string	|是		|服务空间Id																							|
+|useOldSpaceId|boolean|是		|当前获取的服务空间id是否为迁移前的服务空间id，新增于`HBuilderX 3.6.13`																|
+|functionName	|string	|是		|云对象名称，新增于`HBuilderX 3.5.1`										|
+|functionType	|string	|是		|云对象此值固定为`cloudobject`，新增于`HBuilderX 3.5.1`	|
 
 ### 获取客户端token@get-uni-id-token
 

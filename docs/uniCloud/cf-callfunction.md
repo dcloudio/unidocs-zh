@@ -125,6 +125,7 @@ context对象的属性清单如下：
 |SPACEINFO					|object	|服务空间信息																							|
 |&nbsp;&#124;- spaceId		|string	|服务空间id																								|
 |&nbsp;&#124;- provider		|string	|服务空间供应商：aliyun&#124;tencent																	|
+|&nbsp;&#124;- useOldSpaceId		|boolean	|当前获取的服务空间id是否为迁移前的服务空间id，新增于`HBuilderX 3.6.13`															|
 |SOURCE						|string	|云函数调用来源 [详见](?id=context-source)																|
 |FUNCTION_NAME				|string	|获取云函数名称																							|
 |FUNCTION_TYPE				|string	|获取云函数类型，对于云函数来说，这里一定会返回`cloudfunction`，新增于HBuilderX 3.5.1。					|

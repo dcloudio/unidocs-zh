@@ -9,8 +9,7 @@ UTS插件开发官方QQ交流群：527828934 [点此加入](https://qm.qq.com/cg
 ### 什么是uts
 ### what is uts
 
-uts，全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。
-uts, the full name of uni type script, is a cross-platform, high-performance, strongly typed modern programming language.
+uts，全称 uni type script，统一、强类型、脚本语言。
 
 它可以被编译为不同平台的编程语言，如：
 

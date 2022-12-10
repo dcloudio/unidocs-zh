@@ -108,7 +108,7 @@ uni_modules插件目录是独立存在的，如果您不再需要该插件，可
 
 
 ### 配置
-#### package.json
+#### package.json@package-json
 
 package.json在每个`uni_modules`插件中都必须存在，包含了插件的基本信息。以下是package.json的详细配置说明
 ```json

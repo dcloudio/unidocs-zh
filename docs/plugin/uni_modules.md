@@ -157,8 +157,7 @@ The uni_modules plug-in directory is standalone. If you no longer need the plug-
 
 
 ### 配置
-### Configuration
-#### package.json
+#### package.json@package-json
 
 package.json在每个`uni_modules`插件中都必须存在，包含了插件的基本信息。以下是package.json的详细配置说明
 package.json must exist in every `uni_modules` plug-in and contains the basic information of plug-ins. The following is a detailed configuration description of package.json

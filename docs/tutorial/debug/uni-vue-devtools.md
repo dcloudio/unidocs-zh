@@ -2,6 +2,10 @@
 
 `uni-vue-devtools` 是基于 [vue-devtools](https://devtools.vuejs.org/) 开发的 `uni-app` 项目调试工具。
 
+相当于chrome的dev tools，它提供了2个特色功能：
+- 可以方便的查看data、修改data并在页面上实时查看效果
+- 可以审查自定义的vue组件
+
 **平台差异说明**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
@@ -10,6 +14,7 @@
 
 **注意事项：**
 
+- `uni-vue-devtools`只能审查自定义的vue组件，不能审查内置基础组件。
 - 目前仅支持 `cli`(3.0.0-alpha-3061220221207002+) 创建的 `Vue3` 项目。
 - App、小程序端暂不支持 `script setup` 语法糖。
 

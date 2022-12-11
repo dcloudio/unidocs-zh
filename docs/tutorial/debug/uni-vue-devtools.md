@@ -1,6 +1,6 @@
 ## uni-vue-devtools
 
-`uni-vue-devtools` 是基于 [vue-devtools](https://github.com/vuejs/devtools) 开发的 `uni-app` 项目调试工具。
+`uni-vue-devtools` 是基于 [vue-devtools](https://devtools.vuejs.org/) 开发的 `uni-app` 项目调试工具。
 
 **平台差异说明**
 
@@ -11,7 +11,7 @@
 **注意事项：**
 
 - 目前仅支持 `cli`(3.0.0-alpha-3061220221207002+) 创建的 `Vue3` 项目。
-- App、小程序端暂不支持 `script setup`。
+- App、小程序端暂不支持 `script setup` 语法糖。
 
 ### 使用方法
 

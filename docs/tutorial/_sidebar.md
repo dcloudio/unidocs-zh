@@ -50,7 +50,7 @@
     * [基础配置](/tutorial/app-base.md)
     * [图标配置](/tutorial/app-icons.md)
     * [启动界面](/tutorial/app-splashscreen.md)
-    * 功能模块
+    * [功能模块](/tutorial/app-modules.md)
       * [Geolocation(定位)](/tutorial/app-geolocation.md)
       * [Maps(地图)](/tutorial/app-maps.md)
       * [OAuth(登录鉴权)](/tutorial/app-oauth.md)

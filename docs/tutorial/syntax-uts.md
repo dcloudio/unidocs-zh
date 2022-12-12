@@ -857,7 +857,7 @@ console.log(p2.getNameLength()); //5
 
 ```
 
-### 构造函数（constructor）@constructor
+### 构造函数（constructor）@uts-constructor
 
 构造函数 constructor ，在创建新对象时（new的时候）会自动执行，用于初始化对象属性。
 

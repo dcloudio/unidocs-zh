@@ -10,7 +10,7 @@ App端根据功能划分为不同的模块，项目使用到特定功能时选�
 | :- | :- | :- | :- |
 | Barcode(扫码) | 调用相机扫码功能 | HBuilderX3.6.11+新增 | Android、iOS|
 | Bluetooth(低功耗蓝牙) | 使用设备蓝牙功能 |  | Android、iOS |
-| Camera(相机/相册) | 调用相机拍照，访问或修改相册 | HBuilderX3.6.11+新增 | Android、iOS |
+| Camera&Gallery(相机和相册) | 调用相机拍照，访问或修改相册 | HBuilderX3.6.11+新增 | Android、iOS |
 | Contact(通讯录) | 访问或修改系统通讯录 |  | Android、iOS |
 | FaceID(人脸识别) | 访问系统人脸识别 |  | iOS |
 | Fingerprint(指纹识别) | 访问系统指纹识别 |  | Android、iOS |

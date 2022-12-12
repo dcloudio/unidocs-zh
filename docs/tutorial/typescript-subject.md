@@ -50,7 +50,12 @@ uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn
     "types": [
       "@dcloudio/types"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "unpackage",
+    "src/**/*.nvue"
+  ]
 }
 ```
 

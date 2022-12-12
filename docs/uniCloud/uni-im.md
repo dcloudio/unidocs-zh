@@ -48,8 +48,9 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 2. 点击`使用HBuilderX导入示例项目`
 3. 按提示，通过云服务空间初始化向导部署项目（注意：选择绑定的服务空间，须在uni-push2.0的[web控制台](https://dev.dcloud.net.cn/pages/app/push2/info)关联）
 4. `运行项目`到2个不同的浏览器，因为在同一个浏览器打开相同网络地址（ip或者域名）的uni-im项目，socket会相互占线。
-	所以需要使用两个浏览器（或者使用浏览器`打开新的无痕式窗口`功能充当第二个浏览器）分别`注册账号并登录`
-5. 到此部署已经结束。登录的用户通过用户列表可以选择对方发起会话聊天
+	所以需要使用两个浏览器（或者使用浏览器`打开新的无痕式窗口`功能充当第二个浏览器）分别`注册账号并登录`，
+	到此部署已经结束
+5. 向对应的用户发起会话，通过访问路径：`/uni_modules/uni-im/pages/chat/chat?user_id=` + `对应的用户id` 即可
 
 ## 部署到自己的项目
 1. 打开`uni-im`插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-im](https://ext.dcloud.net.cn/plugin?name=uni-im)
@@ -176,7 +177,7 @@ uni-im的账户体系是uni-id的。如果开发者的现有应用要接入uni-i
 - 客户端是uni-app的，但服务器不是uniCloud的情况。需开通uniCloud，然后在客户端通过uni-im-co的loginWithJWT方法实现联登，因内容较多，需另见[文档](#uniImCoLoginWithJWT)。
 - 客户端如果不是uni-app的，如果是网页，可iframe内嵌。如果是app，可嵌入[uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
 
-6. 确保账户对接后，打开“用户列表页”（路径：`/uni_modules/uni-im/pages/userList/userList`）可以看到所有的注册用户。
+6. 确保账户对接成功后，打开“用户列表页”，路径：`/uni_modules/uni-im/pages/userList/userList`可以看到所有的注册用户（默认仅登录的账号为超级管理员才有权限访问，你也可以根据自己的业务需求修改`uniCloud/database/uni-id-users.schema.json`配置权限[更多详情](https://uniapp.dcloud.net.cn/uniCloud/schema.html#permission)）
 7. 点击某个用户，会自动创建与该用户的会话，并打开“聊天对话页”（路径：`/uni_modules/uni-im/pages/chat/chat`），然后就可以开始聊天了。
 8. 还可以导入uni-im的示例项目作为管理员端与用户聊天。
 9. 如果你是2个不同appId的应用相互通讯（比如：淘宝的买家端和卖家端通讯）的场景，请打开聊天对话文件（路径：`/uni_modules/uni-im/pages/chat/chat`）搜索`data.appId = this.systemInfo.appId`修改`this.systemInfo.appId`为相对的appId
@@ -303,6 +304,7 @@ signedData 为通过<a target="_blank" href="https://jwt.io">jwt</a>签名后的
 | gender			| int	| 否	| 用户性别：0 未知 1 男性 2 女性					|
 | mobile			| String| 否	| 手机号码										|
 | email				| String| 否	| 邮箱地址										|
+| role				| Array	| 否	| 用户角色列表，由role_id组成的数组[详情查看](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#rbac)。<br/>当值为：`["admin"]`表示为超级管理员，不受任何权限限制；|
 
 签名密钥配置路径： `/cloudfunctions/common/uni-config-center/uni-im/config.json` 
 
@@ -319,7 +321,8 @@ const payload = {
 			"url":'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png'
 		},
 		"openid":"100001",
-		"nickname":"张三"
+		"nickname":"张三",
+		"role":["admin"] // 设置该用户为超级管理员，不受任何权限限制
 	}
 }
 

@@ -329,8 +329,12 @@ The background statistics report of `uni statistics 2.0` is a built-in plugin of
 [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html)是一个开源管理后台。也就是使用`uni统计2.0`，需要安装这个后台系统，在里面找到uni统计的菜单并使用。
 [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html) is an open source management background. That is, to use `uni statistics 2.0`, you need to install this background system, find the menu of uni statistics and use it.
 
-请参考[uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)文档，完成如下操作：
-Please refer to [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5% 90%8D-unicloud-admin) document, complete the following operations:
+目前安装`uni-admin`的方式分为两种：`一键部署` 和 `手动安装`。
+
+`一键部署uni-admin`仅需要前往[插件市场](https://ext.dcloud.net.cn)搜索找到`uni-admin`插件后，选择进入[uni-admin插件详情页](https://ext.dcloud.net.cn/plugin?id=3268)并点击`一键部署插件到uniCloud`按钮，然后选择需要部署`uni-admin`项目的服务空间后耐心等待系统自动部署完成即可（注意：`一键部署uni-admin`功能目前仅支持部署到腾讯云服务空间。阿里云服务空间一键部署即将上线，敬请期待）。
+
+
+`手动安装uni-admin`则请参考[uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)文档，完成如下操作：
 
 1. 创建新的`uni-admin`项目（HBuilderX新建项目界面选择uni-admin模板）
 1. Create a new `uni-admin` project (select the uni-admin template in the HBuilderX new project interface)

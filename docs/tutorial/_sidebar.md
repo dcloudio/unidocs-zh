@@ -88,9 +88,7 @@
     * [图标配置](/tutorial/app-icons.md)
     * [icon configuration](/tutorial/app-icons.md)
     * [启动界面](/tutorial/app-splashscreen.md)
-    * [Startup screen](/tutorial/app-splashscreen.md)
-    * 功能模块
-    * functional module
+    * [功能模块](/tutorial/app-modules.md)
       * [Geolocation(定位)](/tutorial/app-geolocation.md)
       * [Geolocation](/tutorial/app-geolocation.md)
       * [Maps(地图)](/tutorial/app-maps.md)

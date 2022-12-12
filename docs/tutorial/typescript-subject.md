@@ -60,7 +60,12 @@ Create a `tsconfig.json` file in the root directory and perform personalized con
     "types": [
       "@dcloudio/types"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "unpackage",
+    "src/**/*.nvue"
+  ]
 }
 ```
 

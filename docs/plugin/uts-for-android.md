@@ -966,6 +966,12 @@ class CustomThread extends Thread{
 
 需要：  **不要勾选官方的依赖，然后在uts插件中，按照文档配置依赖**
 
+### 6.5 UTSCallback 和 UTSJSONObject 是什么？
+
+UTSCallback 和 UTSJSONObject 是UTS内置专门用于UTS环境和前端交互的特定类型。
+
+uni环境与UTS环境交互时，除了基本数据类型之外，涉及function的需要使用UTSCallback替代，涉及复杂对象object需要用UTSJSONObject 替代
+
 
 ## 7  已知待解决问题(持续更新)
 

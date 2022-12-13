@@ -1,8 +1,7 @@
 ## uni-admin 框架（原名 uniCloud admin）
 ## uni-admin framework (formerly uniCloud admin)
 
-### uni-admin 概述
-### uni-admin overview
+## 简介
 
 uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源框架。
 The uni-admin framework is an open source framework for application background management based on uni-app and uniCloud.
@@ -23,8 +22,7 @@ The official build [uni-admin demo site](http://hellouniadmin.dcloud.net.cn/admi
 uni-admin 是开源的，遵循 MIT 协议，你可以从[Github](https://github.com/dcloudio/uni-admin)或[码云](https://gitee.com/dcloud/uni-admin)获取源码，也可以从[DCloud插件市场](https://ext.dcloud.net.cn/plugin?id=3268)快捷下载。
 uni-admin is open source and follows the MIT license, you can download it from [Github](https://github.com/dcloudio/uni-admin) or [Code Cloud](https://gitee.com/dcloud/uni- admin) to get the source code, or you can quickly download it from [DCloud Plugin Market](https://ext.dcloud.net.cn/plugin?id=3268).
 
-### 看视频，15分钟掌握uni-admin
-### Watch the video, master uni-admin in 15 minutes
+## 看视频，15分钟掌握uni-admin
 
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=13">
     <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/4332911b-6624-4587-8c77-78b68f1f8c78.jpg" alt="uni-admin视频教程" style="width: 60%;">
@@ -32,8 +30,7 @@ uni-admin is open source and follows the MIT license, you can download it from [
 </a>
 
 
-### uni-admin 功能
-### uni-admin function
+## uni-admin 功能
 
 uni-admin有预置功能、插件生态和数据表管理的代码生成工具。
 uni-admin has code generation tools for preset functions, plugin ecology and data table management.
@@ -99,8 +96,33 @@ The mobile terminal is as follows:
 uni-admin是完整开源的一个uni-app项目，任何熟悉uni-app的工程师都可以自行开发扩展功能。
 uni-admin is a complete open source uni-app project, any engineer familiar with uni-app can develop extended functions by themselves.
 
-### 使用说明
-### Instructions for use
+## 使用说明
+
+### 一键部署@fast-install
+
+uni-admin的`一键部署`，会自动上传云函数、创建数据库，并将前端页面编译上传到前端网页托管中，帮你一键生成网站并自动部署uni统计；如果你需要在HBuilderX中修改定制代码，后续可再选择[手动部署](#install)方式导入项目源码到HBuilderX。
+
+1. 在插件市场点击一键部署插件到uniCloud
+
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c1ce5f01-1f9a-46c5-8bcf-8df458b46e7b.png)
+
+2. 选择服务空间（目前只支持选择腾讯云服务空间，且不可以是协作者身份，需空间创建者的账号登录）
+
+如需要部署在阿里云空间，则请使用[手动部署](#install)方式
+
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/113fca82-b4cb-4596-a857-3f325f17be4d.png)
+
+3. 在此页面隔几分钟刷新点击一下刷新，直到提示部署完成。
+
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3ea33005-b38d-4ffc-8173-56c6c892b6a2.png)
+
+4. 部署完成后，点击前端网页默认访问链接即可访问uni-admin
+
+![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f017b8d9-69a0-4fc8-9707-4ccdf0c29f00.png)
+
+### 手动部署@install
+
+当你需要使用`uni-admin`来开发时，需要使用`手动部署`方式导入源码到HBX中进行开发。
 
 #### 创建
 #### create
@@ -140,8 +162,7 @@ After the creation is complete, you can follow the `cloud service space initiali
 - 如从未接触过uniCloud，是无法直接上手uni-admin的，建议先通读下uniCloud文档的概念介绍和快速上手章节。[详见](https://uniapp.dcloud.net.cn/uniCloud/README)
 - If you have never been in contact with uniCloud, you cannot directly get started with uni-admin. It is recommended to read the concept introduction and quick start chapters of the uniCloud documentation first. [See details](https://uniapp.dcloud.net.cn/uniCloud/README)
 
-#### 目录结构
-#### Directory Structure
+## 目录结构
 
 ```bash
 ├── cloudfunctions                      # 云函数
@@ -237,8 +258,7 @@ After the creation is complete, you can follow the `cloud service space initiali
 └── uni.scss
 ```
 
-### 登录页
-### Login page
+## 登录页
 
 首次使用，可以通过登录页面底部链接创建一个超级管理员（仅允许创建一次），该接口会判断系统里如果有 admin 角色的用户，就不再允许添加新的超级管理员。
 For the first use, you can create a super administrator through the link at the bottom of the login page (only one creation is allowed). This interface will determine that if there is a user with the admin role in the system, it is no longer allowed to add a new super administrator.
@@ -246,18 +266,16 @@ For the first use, you can create a super administrator through the link at the 
 > 注意：注册完毕后，建议从登录页面移除该链接
 > Note: After registration, it is recommended to remove this link from the login page
 
-![login](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/c3f33850-15db-11eb-8ff1-d5dcf8779628.png)
+![login](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5553958b-2a38-40e5-8229-0c2ad1f3d224.png)
 
-### 分栏窗体介绍
-### Column window introduction
+## 分栏窗体介绍
 
 登录后我们会看到如下窗体, 窗体分为三个部分，topWindow 顶部窗口（导航栏），leftwindow 左侧窗口（菜单栏），右侧的内容主窗体
 After logging in, we will see the following form, which is divided into three parts, topWindow top window (navigation bar), leftwindow left window (menu bar), and the content main form on the right
 
 ![index](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/c3591b30-15db-11eb-8ff1-d5dcf8779628.png)
 
-#### 顶部窗口（导航栏）
-#### Top window (navigation bar)
+### 顶部窗口（导航栏）
 
 顶部窗口默认在左侧展示系统 Logo、右侧显示导航链接，效果如上图。展示内容可通过项目根目录下的`admin.config.js`文件进行配置，如下为示例：
 By default, the top window displays the system logo on the left and the navigation links on the right. The effect is as shown above. The display content can be configured through the `admin.config.js` file in the project root directory. The following is an example:
@@ -289,8 +307,7 @@ The style of the top navigation bar can be customized through `uni.scss` in the 
 $top-window-text-color: #999; /* 文字颜色 */
 ```
 
-#### 左侧窗口（菜单栏）
-#### Left window (menu bar)
+### 左侧窗口（菜单栏）
 
 左侧窗口内主要是菜单，菜单包含静态菜单和动态菜单，支持无限层级嵌套，但建议层级不要超过三级
 There are mainly menus in the left window. The menus include static menus and dynamic menus. It supports infinite level nesting, but it is recommended that the level should not exceed three levels.
@@ -303,8 +320,7 @@ There are mainly menus in the left window. The menus include static menus and dy
   > 用户登录时，会根据用户的 _角色_ 去查找其拥有的 _权限_ ，再根据 _权限_ 去查找对应的 _菜单_
   > When a user logs in, it will look up the _authority_ that the user has according to the user's _role_, and then look up the corresponding _menu_ according to the _authority_
 
-##### 管理静态菜单
-##### Manage static menus
+#### 管理静态菜单
 
 通过 [admin.config.js](https://github.com/dcloudio/uni-admin/blob/master/admin.config.js) 配置侧边栏内容，所有用户都能看到静态菜单。
 Configure the sidebar content via [admin.config.js](https://github.com/dcloudio/uni-admin/blob/master/admin.config.js), and all users can see the static menu.
@@ -339,8 +355,7 @@ export default {
 };
 ```
 
-##### 管理动态菜单
-##### Manage dynamic menus
+#### 管理动态菜单
 
 在左侧导航菜单中，找到`系统管理 -> 菜单管理`，可视化的维护菜单。
 In the left navigation menu, find `System Management -> Menu Management`, a visual maintenance menu.
@@ -385,8 +400,7 @@ Menu items are divided into directory menu and page menu.
 - Page menu item: leaf node, no submenu, and the `url` field cannot be empty, clicking this menu item will go to the `url` page. The menu cannot be displayed if `url` is empty.
 
 
-##### 侧边栏样式管理
-##### Sidebar style management
+#### 侧边栏样式管理
 
 通过 [uni.scss](https://github.com/dcloudio/uni-admin/blob/master/uni.scss) 配置侧边栏样式
 Configure sidebar styles via [uni.scss](https://github.com/dcloudio/uni-admin/blob/master/uni.scss)
@@ -403,8 +417,7 @@ $menu-text-color: #333; /* 菜单前景色 */
 $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
 ```
 
-#### 右侧窗口（内容主窗体)
-#### Right window (content main window)
+### 右侧窗口（内容主窗体)
 
 右侧窗口是内容主窗体，和 uni-app 保持一致，用户登录后看到的第一个页面，默认是 pages 数组中第一项表示应用启动页。
 The right window is the main content form, which is consistent with uni-app. The first page the user sees after logging in, the default is the first item in the pages array, which represents the application startup page.
@@ -413,8 +426,7 @@ The right window is the main content form, which is consistent with uni-app. The
 If you want to transfer the page developed by yourself to the home page after login, you can adjust it in page.json.
 
 
-### 应用管理 <Badge text="uni-admin 1.9.3+" />@app-manager
-### Application Manager <Badge text="uni-admin 1.9.3+" />@app-manager
+## 应用管理 <Badge text="uni-admin 1.9.3+" />@app-manager
 
 在进入应用管理后可看到如下界面，点击有上角 `新增` 按钮可新增一个应用
 After entering the application management, you can see the following interface, click the `Add` button in the upper corner to add an application
@@ -483,8 +495,7 @@ After entering the application management, you can see the following interface, 
    }
    ```
 
-### uni-portal：统一发布页 <Badge text="uni-admin 1.9.3+" />@uni-portal
-### uni-portal: Unified release page <Badge text="uni-admin 1.9.3+" />@uni-portal
+## uni-portal：统一发布页 <Badge text="uni-admin 1.9.3+" />@uni-portal
 
 自`uni-admin 1.9.3+`版本开始，`uni-portal`作为`uni-admin`的内置插件，内置在`uni-admin`项目中。
 Since `uni-admin 1.9.3+` versions, `uni-portal` is built into the `uni-admin` project as a built-in plugin of `uni-admin`.
@@ -495,8 +506,7 @@ The `uni-admin` administrator can quickly generate an application release page a
 更多uni-portal的介绍，详见：[uni-portal](uni-portal.md)
 For more uni-portal introduction, see: [uni-portal](uni-portal.md)
 
-### uni-upgrade-center：App升级中心 <Badge text="uni-admin 1.9.3+" />@uni-upgrade-center
-### uni-upgrade-center：App upgrade center <Badge text="uni-admin 1.9.3+" />@uni-upgrade-center
+## uni-upgrade-center：App升级中心 <Badge text="uni-admin 1.9.3+" />@uni-upgrade-center
 
 自`uni-admin 1.9.3+`版本开始，`uni-upgrade-center`作为`uni-admin`的内置插件，内置在`uni-admin`项目中。
 Since `uni-admin 1.9.3+` versions, `uni-upgrade-center` is built into the `uni-admin` project as a built-in plugin of `uni-admin`.
@@ -507,8 +517,7 @@ After the `uni-admin` administrator fills in the application information (such a
 更多uni-portal的介绍，详见：[uni-upgrade-center](upgrade-center.md)
 For more uni-portal introduction, see: [uni-upgrade-center](upgrade-center.md)
 
-### uni统计2.0
-### uni stats 2.0
+## uni统计2.0
 
 uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台，下图为概览图和简介，详见[统计文档](https://uniapp.dcloud.net.cn/uni-stat-v2.html)
 uni Statistics 2.0 is an open source, full-end, cloud-integrated statistical platform that is more suitable for uni-app. stat-v2.html)
@@ -594,7 +603,7 @@ uni statistics goes deep into the bottom layer of uni-app and uniCloud framework
 uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug-in specification provides a plug-in mechanism, and more plug-in authors will provide various statistical plug-ins (such as e-commerce statistics, content statistics, etc.). See [Plugin Market](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
-### 群发短信@batch-sms <Badge text="uni-admin 2.1.0+" />
+## 群发短信@batch-sms <Badge text="uni-admin 2.1.0+" />
 **前提准备**
 1. 在[开发者中心](https://dev.dcloud.net.cn)开通短信验证码服务
 2. 在 ```uni-config-center/uni-sms-co/config.json```中配置短信 API 密钥
@@ -618,8 +627,7 @@ uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug
 
 ![群发短信](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1452ae6f-1370-4dc7-9214-38e83504d780/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
 
-### 用户-角色-权限
-### user-role-permission
+## 用户-角色-权限
 
 uni-admin 框架基于 uni-id，复用 uni-id 的用户、角色、权限系统，详见[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)。
 The uni-admin framework is based on uni-id, and reuses uni-id's user, role, and permission system. For details, see [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary).
@@ -676,43 +684,31 @@ admin provides two built-in methods to facilitate the authentication of login us
 </template>
 ```
 
-#### 给系统创建多个登录账户并设置不同的权限@mutiladmin
-#### Create multiple login accounts for the system and set different permissions @mutiladmin
+### 给系统创建多个登录账户并设置不同的权限@mutiladmin
 下面以增加一个普通成员的角色为例，该角色的用户登录admin系统后只能看用户表数据，不能改动数据。
-The following is an example of adding a common member role. After logging in to the admin system, users in this role can only view the data in the user table and cannot change the data.
-##### 1. 先用admin账户登录admin系统。
-##### 1. Log in to the admin system with the admin account first.
+1. 先用admin账户登录admin系统。
 - admin示例项目地址：[https://unicloudadmindemo.dcloud.net.cn/#/pages/login/login](https://unicloudadmindemo.dcloud.net.cn/#/pages/login/login)
 - admin sample project address: [https://unicloudadmindemo.dcloud.net.cn/#/pages/login/login](https://unicloudadmindemo.dcloud.net.cn/#/pages/login/login)
 - 体验账号：admin      密码：123456
 - Experience account: admin Password: 123456
 
-##### 2. 创建权限。在uni-admin左侧菜单的权限管理，新增权限“查询信息”，标识为“read”
-##### 2. Create permissions. In the permission management of the left menu of uni-admin, add a new permission "query information", marked as "read"
+2. 创建权限。在uni-admin左侧菜单的权限管理，新增权限“查询信息”，标识为“read”
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ab997406-d36e-4d42-87ab-339bd5a8a50a.jpg)
-##### 3. 创建角色。在左侧菜单的角色管理里，新增角色“普通成员”，标识为“member”，绑定上面的“查询信息”权限
-##### 3. Create a role. In the role management on the left menu, add a new role "ordinary member", marked as "member", and bind the "query information" permission above.
+3. 创建角色。在左侧菜单的角色管理里，新增角色“普通成员”，标识为“member”，绑定上面的“查询信息”权限
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f3b563b3-3e86-4823-9373-64c9bebdd51c.jpg)
-##### 4. 创建账户并赋予角色。在左侧菜单的用户管理里，添加用户“张三”，然后给用户赋予角色“普通成员”
-##### 4. Create an account and assign roles. In the user management on the left menu, add the user "Zhang San", and then assign the user the role "ordinary member"
+4. 创建账户并赋予角色。在左侧菜单的用户管理里，添加用户“张三”，然后给用户赋予角色“普通成员”
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/18676740-4be8-419b-8c12-40559ded1413.jpg)
-##### 5.如果你退出账户，登录刚刚创建的账户张三。我们发现会提示：该账户没有被赋予登录admin系统的权限, 请联系系统管理员绑定角色赋权限。因为：你登录的账户没有访问任何admin系统菜单的权限，所以不能访问admin系统。
-##### 5. If you log out of your account, log in to the account you just created. We found that it will prompt: The account has not been granted the permission to log in to the admin system, please contact the system administrator to bind the role to grant permissions. Because: the account you are logged in does not have permission to access any admin system menu, so it cannot access the admin system.
+5. 如果你退出账户，登录刚刚创建的账户张三。我们发现会提示：该账户没有被赋予登录admin系统的权限, 请联系系统管理员绑定角色赋权限。因为：你登录的账户没有访问任何admin系统菜单的权限，所以不能访问admin系统。
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/0b627d45-da68-435b-995b-a191e7330624.jpg)
-##### 6.设置有查询信息权限的人，拥有访问admin系统菜单"用户管理"的权限。在左侧菜单的菜单管理里，找到菜单“用户管理”，点修改，在权限列表里勾选“查询信息”，也就是有查询信息权限的人，可以看到本菜单
-##### 6. The person who has the right to query information has the right to access the "User Management" of the admin system menu. In the menu management on the left menu, find the menu "User Management", click Modify, and check "Query Information" in the permission list, that is, those who have the permission to query information can see this menu
+6. 设置有查询信息权限的人，拥有访问admin系统菜单"用户管理"的权限。在左侧菜单的菜单管理里，找到菜单“用户管理”，点修改，在权限列表里勾选“查询信息”，也就是有查询信息权限的人，可以看到本菜单
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/74c48248-d8ae-4427-9abb-8a6c5d54c53d.jpg)
-##### 7.这时你用账户“张三”登录，就能进入到admin系统。但你会看到如下图提示“权限校验未通过”。因为刚刚仅为该用户赋予了访问菜单的权限。还未赋予访问uni-id-users表的阅读权限
-##### 7. At this time, you log in with the account "Zhang San", and you can enter the admin system. But you will see the message "Permission verification failed" as shown in the figure below. Because access to the menu has just been given to that user. Read permission to access the uni-id-users table has not been granted
+7. 这时你用账户“张三”登录，就能进入到admin系统。但你会看到如下图提示“权限校验未通过”。因为刚刚仅为该用户赋予了访问菜单的权限。还未赋予访问uni-id-users表的阅读权限
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/37d1604e-bcb1-4096-a373-90397b9a96c0.jpg)
-##### 8. 需要在hbuilderx中将表uni-id-users的schema文件中设置新角色的权限，将permission下的read节点配置为`"read": "'read' in auth.permission"`，并上传到云端。当然这在示例项目不能实现，需要你自己搭建admin系统，重复以上步骤，[点此下载uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)
-##### 8. You need to set the permissions of the new role in the schema file of the table uni-id-users in hbuilderx, and configure the read node under the permission as `"read": "'read' in auth.permission" `, and upload to the cloud. Of course, this cannot be achieved in the example project, you need to build the admin system yourself, repeat the above steps, [click here to download uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)
+8. 需要在hbuilderx中将表uni-id-users的schema文件中设置新角色的权限，将permission下的read节点配置为`"read": "'read' in auth.permission"`，并上传到云端。当然这在示例项目不能实现，需要你自己搭建admin系统，重复以上步骤，[点此下载uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)
 ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/81e38081-9507-4e00-bafd-7dab26e9a119.png)
-##### 9.此时你再刷新页面即可访问用户管理的数据列表
-##### 9. At this point, you can refresh the page to access the user-managed data list
+9. 此时你再刷新页面即可访问用户管理的数据列表
 
-### icon 图标
-### icon icon
+## icon 图标
 
 admin 框架内置了一套 icon 图标，在`静态功能演示-图标`菜单中，点击图标即可复制图标的 class 定义。
 The admin framework has a built-in set of icon icons. In the `Static Function Demonstration - Icon` menu, click the icon to copy the class definition of the icon.
@@ -733,8 +729,7 @@ Of course, you can also use a third-party icon library. Take the icon using `ele
 在标签上使用图标的 class 名称即可：``el-icon-s-tools``
 Just use the icon's class name on the label: ``el-icon-s-tools``
 
-### 新增页面
-### Add page
+## 新增页面
 
 新增页面可以自己开发页面，也可以从插件市场下载插件。页面如需添加菜单，参见上文的[菜单管理](#静态菜单和动态菜单)。
 To add new pages, you can develop your own pages, or you can download plug-ins from the plug-in market. If you need to add a menu to the page, see [Menu management] above (#%E9%9D%99%E6%80%81%E8%8F%9C%E5%8D%95%E5%92%8C%E5%8A %A8%E6%80%81%E8%8F%9C%E5%8D%95).
@@ -754,14 +749,12 @@ The development page is not limited to the development method:
 > 注意：在使用 uni-cloud-router 时，controller 下的文件夹和文件，不要命名相同，例如：app/room 这个写法目前分辨不了 `app` 是文件 `app.js`，还是文件夹 `app`
 > Note: When using uni-cloud-router, the folders and files under the controller should not be named the same. For example, the writing of app/room cannot tell whether `app` is the file `app.js` or the folder `app` `
 
-#### 自己开发页面
-#### Develop your own pages
+### 自己开发页面
 
 admin 中开发页面，和 uni-app 开发 vue 页面是一致的。
 The development page in admin is the same as the uni-app development vue page.
 
-#### 从插件市场下载插件，并注册到 admin 的左侧动态菜单中
-#### Download the plugin from the plugin market and register it in the dynamic menu on the left of admin
+### 从插件市场下载插件，并注册到 admin 的左侧动态菜单中
 
 _使用步骤:_
 _Steps for usage:_
@@ -781,8 +774,7 @@ _Steps for usage:_
 ---------------------------------- Dividing line-------------- --------------------------
 
 
-### admin 插件开发
-### admin plugin development
+## admin 插件开发
 
 我们不仅是插件的使用者，也可以是插件的开发者，那么如何开发一款 uni-admin 插件呢？
 We are not only users of plugins, but also developers of plugins, so how to develop a uni-admin plugin?
@@ -881,8 +873,7 @@ The following is a list of existing uni-admin plugins, you can refer to: [https:
 
 插件上传等更多信息，参考 [DCloud 插件开发指南汇总](https://uniapp.dcloud.io/plugin/publish.html) 及其中的 `admin 插件`部分，插件作者可以按此文档提交插件，在插件市场的上传发布页面选择`uniCloud` 分类的 `Admin 插件` 。
 
-### uni-admin中使用三方组件库
-### Using third-party component library in uni-admin
+## uni-admin中使用三方组件库
 
 uni-admin 支持所有三方的 Vue UI 库，包括 elementUI 等非 uni-app 的 UI 库，但注意这些 for h5 的 ui 库只能在浏览器中使用，无法适配 App 和小程序，按如下操作。
 uni-admin supports all three-party Vue UI libraries, including non-uni-app UI libraries such as elementUI, but note that these for h5 ui libraries can only be used in browsers and cannot be adapted to apps and applets, as follows.
@@ -916,10 +907,8 @@ The base path where the uni-admin framework runs is `/admin/` by default. After 
 如果你希望自定义项目的运行的基础路径，修改`manifest.json`文件的`h5 -> router -> base`的值即可。
 If you want to customize the base path of the project's running, modify the value of `h5 -> router -> base` in the `manifest.json` file.
 
-### 常见问题
-### common problem
+## 常见问题
 
-- 问： 使用uni-admin新建用户无法登录，会提示“该账号暂无权限登录” ？
-- Q: I cannot log in when I use uni-admin to create a new user, and it will prompt "This account does not have permission to log in at this time"?
-  > 答：用户登录逻辑：登录时系统检测没有菜单会提示“暂无权限登录”，需要给新账号绑定角色，角色有菜单方可登录
-  > Answer: User login logic: When logging in, the system detects that there is no menu and will prompt "No permission to log in at this time". You need to bind a role to the new account, and the role can only log in if there is a menu.
+### 使用uni-admin新建用户无法登录，会提示“该账号暂无权限登录” ？
+
+用户登录逻辑：登录时系统检测没有菜单会提示“暂无权限登录”，需要给新账号绑定角色，角色有菜单方可登录

@@ -73,29 +73,32 @@ ext.js里引入公共模块的机制：
 
 触发器的入参有以下几个，不同时机的触发器参数略有不同
 
-|参数名		|类型				|默认值	|是否必备	|说明														|
-|--			|--					|--		|--			|--															|
-|collection	|string				|-		|是			|当前表名													|
-|operation	|string				|-		|是			|当前操作类型：`create`、`update`、`delete`、`read`、`count`|
-|where		|object				|-		|否			|当前请求使用的查询条件（见下方说明）						|
-|field		|array&lt;string&gt;|-		|read必备	|当前请求访问的字段列表（见下方说明）						|
-|addDataList|array&lt;object&gt;|-		|create必备	|新增操作传入的数据列表（见下方说明）						|
-|updateData	|object				|-		|update必备	|更新操作传入的数据（见下方说明）							|
-|clientInfo	|object				|-		|是	|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)				|
+|参数名				|类型								|默认值	|是否必备				|说明																																												|
+|--						|--									|--			|--							|--																																													|
+|collection		|string							|-			|是							|当前表名																																										|
+|operation		|string							|-			|是							|当前操作类型：`create`、`update`、`delete`、`read`、`count`																|
+|where				|object							|-			|否							|当前请求使用的查询条件（见下方说明）																												|
+|field				|array&lt;string&gt;|-			|read必备				|当前请求访问的字段列表（见下方说明）																												|
+|addDataList	|array&lt;object&gt;|-			|create必备			|新增操作传入的数据列表（见下方说明）																												|
+|updateData		|object							|-			|update必备			|更新操作传入的数据（见下方说明）																														|
+|clientInfo		|object							|-			|是							|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)|
+|userInfo			|object							|-			|是							|用户信息																																										|
+|result				|object							|-			|afterXxx内必备	|本次请求结果																																								|
+|isEqualToJql	|function						|-			|是							|用于判断当前执行的jql语句和执行语句是否相等																								|
 
-#### where
+#### where@where
 
 > read、count、delete、update操作可能有此参数
 
 触发器收到的where参数为转化后的查询条件，可以直接作为参数传给db.collection()和dbJql.collection()的where方法。jql语句使用doc方法时也会转成where，形如：{_id: 'xxx'}
 
-#### field
+#### field@field
 
 > 仅read操作有此参数
 
 field为所有被访问的字段的组成的数组，嵌套的字段会被摊平。
 
-#### addDataList
+#### addDataList@add-data-list
 
 > 仅create操作有此参数
 
@@ -103,13 +106,98 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 
 如果在给数据库插入数据前拦截并修改了addDataList的数据，那么插入数据库的就会是新修改的数据。
 
-#### updateData
+#### updateData@update-data
 
 > 仅update操作有此参数
 
 数据库指令update方法的参数。
 
 如果在给数据库修改数据前拦截并修改了updateData的数据，那么更新进数据库的就会是新修改的数据。
+
+#### userInfo@user-info
+
+> 新增于 HBuilderX 3.6.14
+
+用户信息包含以下字段
+
+|字段名			|类型							|说明															|
+|--					|--								|--																|
+|uid				|string&#124;null	|用户id，未能获取用户信息时为null	|
+|role				|array						|角色列表，默认为空数组						|
+|permission	|array						|权限列表，默认为空数组						|
+
+#### result@result
+
+> 新增于 HBuilderX 3.6.14
+
+本次数据库操作的结果，不同操作返回不同的结构。对result对象的修改会应用到最终返回的结果内
+
+**查询**
+
+```js
+{
+	data: [] // 获取到的数据列表
+}
+```
+
+**查询带count**
+
+```js
+{
+	data: [], // 获取到的数据列表
+  count: 0 // 符合条件的数据条数
+}
+```
+
+**新增单条**
+
+```js
+{
+	id: '' // 新增数据的id
+}
+```
+
+**新增多条**
+
+```js
+{
+	ids: [], // 新增数据的id列表
+	inserted: 3 // 新增成功的条数
+}
+```
+
+**更新数据**
+
+```js
+{
+	updated: 1 // 更新的条数，数据更新前后无变化则更新条数为0
+}
+```
+
+#### isEqualToJql@is-equal-to-jql
+
+> 新增于 HBuilderX 3.6.14
+
+用于判断当前执行的jql语句和执行语句是否相等的方法
+
+**示例**
+
+```js
+// article.schema.ext.js
+module.exports {
+  trigger: {
+    beforeCount: async function({
+      isEqualToJql
+    } = {}) {
+      if(isEqualToJql('db.collection("article").count()')) {
+        console.log('执行不带条件的count')
+      } else {
+        throw new Error('禁止执行带条件的count')
+      }
+    }
+  }
+}
+```
 
 ### 触发器返回值@trigger-response
 

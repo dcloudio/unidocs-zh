@@ -33,10 +33,10 @@
   ```
 
   服务启动后，会自动在默认浏览器打开一个页面，并显示待连接状态\
-  ![](https://running-snail.site/devtools/waiting-connect.png)
+  ![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/02f47c42-acba-477f-930d-6b26ca22db26.png)
 
   对应平台项目运行后会与该页面建立连接\
-  ![](https://running-snail.site/devtools/connected.png)
+  ![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/8a67ae2c-5116-4a17-ba19-041e0c3627fb.png)
 
 **Tips:**
 

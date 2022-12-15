@@ -228,6 +228,10 @@ module.exports {
 |beforeDelete	|删除前触发	|
 |afterDelete	|删除后触发	|
 
+**注意**
+
+- count有两种触发情况一种是在数据库指令使用了count方法，另一种是在get方法内传getCount参数。
+
 ### 示例@demo
 
 以下article表为例。
@@ -466,7 +470,6 @@ module.exports = {
 - 非getTemp联表查询（不推荐的用法）在触发器内获取的where为null、field为当前表的所有字段。
 - 联表查询时只会触发主表触发器，不会触发副表触发器
 - getTemp联表时主表所在的getTemp内的where和field会传递给触发器，虚拟联表的where和field不会传给触发器
-- getCount不会触发count触发器，只会触发read触发器
 - 通过jql的redis缓存读取的内容不会触发读触发器
 - HBuilderX内使用jql数据管理功能执行jql语句时不会触发任何触发器
 

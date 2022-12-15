@@ -1,3 +1,16 @@
+#### 3.6.14.20221215
+* 【uni-app】
+* App平台 修复 3.6.13 版本引出的启动调试工具报错的Bug [详情](https://ask.dcloud.net.cn/question/159523)
+* App-Android平台 修复 使用 canvas 模块后 wgt 升级提示没有配置 canvas 模块的Bug [详情](https://ask.dcloud.net.cn/question/159283)
+* 小程序平台 修复 3.6.13 版本引出的使用 async/await 发布后运行报错的Bug [详情](https://ask.dcloud.net.cn/question/159413)
+* uts插件 App-Android平台 修复 正则表达式包含转义字符时编译报错的Bug
+* 【uniCloud】
+* 修复 3.6.13引出的 云函数 调试运行 无法进行Debug断点调试的Bug
+* JQL语法 新增 触发器内可以获取用户信息和本次数据库操作结果 [用户信息](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#user-info)、[执行结果](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#result)
+* JQL语法 新增 触发器内可以判断当前执行的语句是否和指定语句相同 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#is-equal-to-jql)
+* JQL语法 调整 对于 schema 内定义的复杂类型数据（file、array、object）类型的字段，忽略赋给此字段的 null 值
+* 本地调试插件 修复 在部分旧系统运行时本地调试服务启动失败的Bug [详情](https://ask.dcloud.net.cn/question/159343)
+
 #### 3.6.13.20221209
 * 【uni-app】
   + 【重要】新增 uts iOS版插件。将uts代码转为swift代码。 [详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)

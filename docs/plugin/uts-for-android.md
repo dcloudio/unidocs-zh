@@ -973,6 +973,25 @@ UTSCallback 和 UTSJSONObject 是UTS内置专门用于UTS环境和前端交互�
 uni环境与UTS环境交互时，除了基本数据类型之外，涉及function的需要使用UTSCallback替代，涉及复杂对象object需要用UTSJSONObject 替代
 
 
+### 6.6 如何生成android平台Array对象
+
+UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数据结构是 `MutableList`
+
+理论上来说 `MutableList`确实更加灵活强大，但是部分android 平台api 明确要求了 Array格式的数据(比如请求权限)
+
+类似场景下，我们就要使用 toTypedArray() 函数进行转换
+
+```typescript
+
+// 得到一个MutableList
+let permissionArray :String[] = []
+// 得到一个Array
+console.log(permissionArray.toTypedArray())
+
+```
+
+
+
 ## 7  已知待解决问题(持续更新)
 
 ### 7.1 结构入参 boolean 参数默认为true

@@ -238,7 +238,7 @@ module.exports {
 
 **注意**
 
-- count有两种触发情况一种是在数据库指令使用了count方法，另一种是在get方法内传getCount参数。
+- count有两种触发情况一种是在数据库指令使用了count方法，另一种是在get方法内传getCount参数。截至HBuilderX 3.6.14版本，get方法内传getCount参数不会触发count触发器，此问题会在后续版本进行修复。
 
 ### 示例@demo
 

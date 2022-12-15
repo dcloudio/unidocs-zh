@@ -178,7 +178,11 @@ field为所有被访问的字段的组成的数组，嵌套的字段会被摊平
 
 > 新增于 HBuilderX 3.6.14
 
-用于判断当前执行的jql语句和传入的语句是否相等的方法
+用于判断触发器当前执行的jql语句和方法传入的语句是否等价的方法。
+
+开发者除了使用field、where等分解后的对象，也可以使用isEqualToJql来判断当前执行的JQL语句是什么。
+
+如果单纯使用字符串比较，开发者会遇到单双引号、换行等原因造成比较失败。所以提供了isEqualToJql方法。
 
 **用法**
 
@@ -200,7 +204,7 @@ module.exports {
       isEqualToJql
     } = {}) {
       if(isEqualToJql('db.collection("article").count()')) {
-        console.log('执行不带条件的count')
+        console.log('成功匹配了JQL命令：对article表进行count计数且未带条件')
       } else {
         throw new Error('禁止执行带条件的count')
       }

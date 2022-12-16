@@ -186,7 +186,7 @@ The above scenarios will perform data verification when adding or modifying data
 
 ## JQL方法使用限制
 
-### 简单查询
+### 单表查询
 
 下面这些方法必须严格按照下面的顺序进行调用，其他方法需要在这些方法之后调用（不限制顺序）
 

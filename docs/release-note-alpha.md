@@ -1,3 +1,18 @@
+#### 3.6.14.20221216-alpha
+* 【uni-app】
+* App-Android平台 修复 使用 canvas 模块后 wgt 升级提示没有配置 canvas 模块的Bug [详情](https://ask.dcloud.net.cn/question/159283)
+* App-iOS平台 修复 UniPush 2.0 在vue2项目中 启用离线推送后，调用 uni.getPushClientId 某些情况下获取不到cid的Bug [详情](https://ask.dcloud.net.cn/question/158921)
+* 小程序平台 修复 3.6.13版引出的 使用 async/await 发布后运行报错的Bug [详情](https://ask.dcloud.net.cn/question/159413)
+* 【uniCloud】
+* JQL语法 新增 触发器内可以获取用户信息和本次数据库操作结果 [用户信息](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#user-info)、[执行结果](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#result)
+* JQL语法 新增 触发器内可以判断当前执行的语句是否和指定语句相同 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#is-equal-to-jql)
+* JQL语法 调整 对于 schema 内定义的复杂类型数据（file、array、object）类型的字段，忽略赋给此字段的 null 值
+* 本地调试插件 修复 在部分旧系统运行时本地调试服务启动失败的Bug [详情](https://ask.dcloud.net.cn/question/159343)
+* 本地调试插件 修复 3.6.12版引出的 云函数 调试运行 无法进行Debug断点调试的Bug
+* 本地调试插件 修复 阿里云正式版本地云函数内上传文件到云存储时，上传的文件无法在 uniCloud web 控制台看到的Bug [详情](https://ask.dcloud.net.cn/question/159109)
+* 【App插件(含5+App和uni-app的App端)】
+* iOS平台 修复 plus.push.getClientInfoAsync 在应用热重启后调用不触发回调的Bug
+
 #### 3.6.12.20221207-alpha
 * 【uniCloud】
   + 本地调试插件 修复 云函数调用云函数时，被调用云函数无返回值导致报错的Bug

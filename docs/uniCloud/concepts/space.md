@@ -26,8 +26,6 @@ After creating a service space, associate the service space in the same `uniClou
 web控制台可以新建、删除服务空间，管理线上的服务空间资源。
 The web console can create and delete service spaces and manage online service space resources.
 
-**服务空间数量限制**：每个DCloud开发者账户，腾讯云版提供1个免费服务空间，最多可创建49个收费服务空间。阿里云版最多可创建50个免费服务空间。
-**Limited number of service spaces**: For each DCloud developer account, Tencent Cloud Edition provides 1 free service space, and a maximum of 49 paid service spaces can be created. Alibaba Cloud Edition can create up to 50 free service spaces.
 
 **新建服务空间注意**
 **Note for new service space**

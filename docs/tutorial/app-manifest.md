@@ -146,7 +146,7 @@
                 "forceDarkAllowed": false,      //可选，Boolean类型，是否强制允许暗黑模式
                 "resizeableActivity": false,    //可选，Boolean类型，是否支持分屏调整窗口大小
                 "hasTaskAffinity": false,       //可选，Boolean类型，是否设置android：taskAffinity
-                "buildFeatures": {              //（HBuilderX3.5.0+版本支持）可选，JSON对象，Android平台云端打包时build.gradle的buildFeatures配置项  
+                "buildFeatures": {              //（HBuilderX3.5.0+版本支持）可选，JSON对象，Android平台云端打包时build.gradle的buildFeatures配置项
                     "dataBinding": false,           //可选，Boolean类型，是否设置dataBinding
                     "viewBinding": false            //可选，Boolean类型，是否设置viewBinding
                 }
@@ -374,22 +374,22 @@
                     "bd": {                         //可选，JSON对象，使用百度百青藤广告联盟SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
                     },
                     "BXM-AD": {                     //可选，JSON对象，使用互动游戏(变现猫)SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
-                    }                    
+                    }
                 }
             },
             "icons": {              //可选，JSON对象，应用图标相关配置
-                "ios":{                     //可选，JSON对象，iOS平台图标配置 
+                "ios":{                     //可选，JSON对象，iOS平台图标配置
                     "appstore": "",                 //必填，字符串类型，分辨率1024x1024, 提交app sotre使用的图标路径
                     "iphone":{                      //可选，JSON对象，iPhone设备图标配置
-                        "app@2x": "",                       //可选，字符串类型，分辨率120x120，程序图标路径  
-                        "app@3x": "",                       //可选，字符串类型，分辨率180x180，程序图标路径  
+                        "app@2x": "",                       //可选，字符串类型，分辨率120x120，程序图标路径
+                        "app@3x": "",                       //可选，字符串类型，分辨率180x180，程序图标路径
                         "spotlight@2x": "",                 //可选，字符串类型，分辨率80x80，Spotlight搜索图标路径
                         "spotlight@3x": "",                 //可选，字符串类型，分辨率120x120，Spotlight搜索图标路径
                         "settings@2x": "",                  //可选，字符串类型，分辨率58x58，Settings设置图标路径
                         "settings@3x": "",                  //可选，字符串类型，分辨率87x87，Settings设置图标路径
                         "notification@2x": "",              //可选，字符串类型，分辨率40x40，通知栏图标路径
                         "notification@3x": ""               //可选，字符串类型，分辨率60x60，通知栏图标路径
-                    },  
+                    },
                     "ipad":{                        //可选，JSON对象，iPad设备图标配置
                         "app": "",                          //可选，字符串类型，分辨率76x76，程序图标图标路径
                         "app@2x": "",                       //可选，字符串类型，分辨率152x152，程序图标图标路径
@@ -400,11 +400,11 @@
                         "settings@2x": "",                  //可选，字符串类型，分辨率58x58，Settings设置图标路径
                         "notification": "",                 //可选，字符串类型，分辨率20x20，通知栏图标路径
                         "notification@2x": ""               //可选，字符串类型，分辨率740x40，通知栏图标路径
-                    }  
-                },  
+                    }
+                },
                 "android":{                 //可选，JSON对象，Android平台图标配置
-                    "ldpi": "",                         //可选，字符串类型，普通屏设备程序图标，分辨率要求48x48，已废弃  
-                    "mdpi": "",                         //可选，字符串类型，大屏设备程序图标，分辨率要求48x48，已废弃  
+                    "ldpi": "",                         //可选，字符串类型，普通屏设备程序图标，分辨率要求48x48，已废弃
+                    "mdpi": "",                         //可选，字符串类型，大屏设备程序图标，分辨率要求48x48，已废弃
                     "hdpi": "",                         //可选，字符串类型，高分屏设备程序图标，分辨率要求72x72
                     "xhdpi": "",                        //可选，字符串类型，720P高分屏设备程序图标，分辨率要求96x96
                     "xxhdpi": "",                       //可选，字符串类型，1080P高分屏设备程序图标，分辨率要求144x144
@@ -413,16 +413,16 @@
             },
             "splashscreen":{    //可选，JSON对象，启动界面配置
                 "iosStyle": "common",   //可选，字符串类型，iOS平台启动界面样式，可取值common、default、storyboard
-                "ios":{                 //可选，JSON对象，iOS平台启动界面配置 
+                "ios":{                 //可选，JSON对象，iOS平台启动界面配置
                     "storyboard": "",               //可选，字符串类型，自定义storyboard启动界面文件路径，iosStyle值为storyboard时生效
                     "iphone":{                      //可选，JSON对象，iPhone设备启动图配置，iosStyle值为default时生效
-                        "default": "",                      //可选，字符串类型，分辨率320x480，iPhone3（G/GS）启动图片路径，已废弃  
-                         "retina35": "",                    //可选，字符串类型，分辨率640x960，3.5英寸设备(iPhone4/4S)启动图片路径，已废弃 
+                        "default": "",                      //可选，字符串类型，分辨率320x480，iPhone3（G/GS）启动图片路径，已废弃
+                         "retina35": "",                    //可选，字符串类型，分辨率640x960，3.5英寸设备(iPhone4/4S)启动图片路径，已废弃
                          "retina40": "",                    //可选，字符串类型，分辨率640x1136，4.0英寸设备(iPhone5/5S)启动图片路径
                          "retina40l":"",                    //可选，字符串类型，分辨率1136x640，4.0英寸设备(iPhone5/5S)横屏启动图片路径
                          "retina47": "",                    //可选，字符串类型，分辨率750x1334，4.7英寸设备（iPhone6/7/8）启动图片路径
                          "retina47l": "",                   //可选，字符串类型，分辨率1334x750，4.7英寸设备（iPhone6/7/8）横屏启动图片路径
-                         "retina55": "",                    //可选，字符串类型，分辨率1242x2208，5.5英寸设备（iPhone6/7/8Plus）启动图片路径  
+                         "retina55": "",                    //可选，字符串类型，分辨率1242x2208，5.5英寸设备（iPhone6/7/8Plus）启动图片路径
                          "retina55l": "",                   //可选，字符串类型，分辨率2208x1242，5.5英寸设备（iPhone6/7/8Plus）横屏启动图片路径
                          "iphonex": "",                     //可选，字符串类型，分辨率1125x2436，5.8英寸设备（iPhoneX/XS）启动图片路径
                          "iphonexl": "",                    //可选，字符串类型，分辨率2436x1125，5.8英寸设备（iPhoneX/XS）横屏启动图片路径
@@ -430,13 +430,13 @@
                          "landscape-896h@2x": "",           //可选，字符串类型，分辨率1792x828，6.1英寸设备（iPhoneXR）iPhoneXR横屏启动图片路径
                          "portrait-896h@3x": "",            //可选，字符串类型，分辨率1242x2688，6.5英寸设备（iPhoneXS Max）启动图片路径
                          "landscape-896h@3x": ""            //可选，字符串类型，分辨率2688x1242，6.5英寸设备（iPhoneXS Max）横屏启动图片路径
-                    },  
+                    },
                     "ipad":{                        //可选，JSON对象，iPad设备启动图配置，iosStyle值为default时生效
-                         "portrait": "",                    //可选，字符串类型，分辨率768x1004，iPad竖屏启动图片路径，已废弃  
-                         "portrait-retina": "",             //可选，字符串类型，分辨率1536x2008，iPad高分屏竖屏启动图片路径，已废弃  
-                         "landscape": "",                   //可选，字符串类型，分辨率1024x748，iPad横屏启动图片路径，已废弃   
-                         "landscape-retina": "",            //可选，字符串类型，分辨率2048x1496，iPad高分屏横屏启动图片路径，已废弃  
-                         "portrait7": "",                   //可选，字符串类型，分辨率768x1024，9.7/7.9英寸iPad/mini竖屏启动图片路径 
+                         "portrait": "",                    //可选，字符串类型，分辨率768x1004，iPad竖屏启动图片路径，已废弃
+                         "portrait-retina": "",             //可选，字符串类型，分辨率1536x2008，iPad高分屏竖屏启动图片路径，已废弃
+                         "landscape": "",                   //可选，字符串类型，分辨率1024x748，iPad横屏启动图片路径，已废弃
+                         "landscape-retina": "",            //可选，字符串类型，分辨率2048x1496，iPad高分屏横屏启动图片路径，已废弃
+                         "portrait7": "",                   //可选，字符串类型，分辨率768x1024，9.7/7.9英寸iPad/mini竖屏启动图片路径
                          "landscape7": "",                  //可选，字符串类型，分辨率1024x768，9.7/7.9英寸iPad/mini横屏启动图片路径
                          "portrait-retina7": "",            //可选，字符串类型，分辨率1536x2048，9.7/7.9英寸iPad/mini高分屏竖屏图片路径
                          "landscape-retina7": "",           //可选，字符串类型，分辨率2048x1536，9.7/7.9英寸iPad/mini高分屏横屏启动图片路径
@@ -446,7 +446,7 @@
                          "landscape-1194h@2x":"",           //可选，字符串类型，分辨率2388x1668，11英寸iPad Pro横屏启动图片路径
                          "portrait-1366h@2x":"",            //可选，字符串类型，分辨率2048x2732，12.9英寸iPad Pro竖屏启动图片路径
                          "landscape-1366h@2x":""            //可选，字符串类型，分辨率2732x2048，12.9英寸iPad Pro横屏启动图片路径
-                    }  
+                    }
                 },
                 "androidStyle": "common",//可选，字符串类型，Android平台启动界面样式，可取值common、default
                 "android":{         //可选，JSON对象，Android平台启动图片配置， androidStyle值为default时生效
@@ -455,9 +455,9 @@
                    "hdpi": "",                          //可选，字符串类型，分辨率480x762，高密度屏幕启动图片路径
                    "xhdpi": "",                         //可选，字符串类型，分辨率720x1242，720P高密度屏幕启动图片路径
                    "xxhdpi": ""                         //可选，字符串类型，分辨率1080x1882，1080P高密度屏幕启动图片路径
-                }  
+                }
             },
-            "orientation": [            //可选，字符串数组类型，应用支持的横竖屏，**已废弃，使用screenOrientation配置** 
+            "orientation": [            //可选，字符串数组类型，应用支持的横竖屏，**已废弃，使用screenOrientation配置**
                 "portrait-primary",
                 "portrait-secondary",
                 "landscape-primary",
@@ -500,57 +500,57 @@
                     "mime":"",                                      //可选，字符串类型，拦截资源的数据类型mime
                     "encoding":"",                                  //可选，字符串类型，拦截资源的数据编码
                     "header": {                                     //可选，JSON对象，拦截资源的http头数据
-                    }  
+                    }
                 }
-            ],  
+            ],
             "overrideurl": {                                //可选，JSON对象，应用首页的拦截链接请求处理逻辑
                 "mode": "reject",                                   //可选，字符串类型，拦截模式，可取值allow、reject
                 "match": "",                                        //可选，字符串类型，匹配拦截规则，支持正则表达式
                 "exclude": "none"                                   //可选，字符串类型，排除拦截理规则，可取值none、redirect
-            },  
+            },
             "replacewebapi": {                              //可选，JSON对象，是否重写Web API实现相关配置
-                "geolocation": "none"                               //可选，字符串类型，重写标准定位API，可取值none、alldevice、auto 
-            },  
+                "geolocation": "none"                               //可选，字符串类型，重写标准定位API，可取值none、alldevice、auto
+            },
             "subNViews": [                                  //可选，JSON对象数组，首页原生View相关配置，已废弃
-                {  
+                {
                     "id": "",                                       //可选，字符串类型，原生View标识
                     "styles": {                                     //可选，JSON对象，原生View样式
-                    },  
+                    },
                     "tags": [                                       //可选，JSON对象数组，原生View中包含的tag标签列表
                         {}
-                    ]  
+                    ]
                 }
-            ],  
+            ],
             "titleNView": {                                 //可选，JSON对象，标题栏相关配置
                 "backgroundColor": "#RRGGBB",                       //可选，字符串类型，#RRGGBB格式，标题栏背景颜色
                 "titleText": "",                                    //可选，字符串类型，标题栏标题文字内容
-                "titleColor": "#RRGGBB",                            //可选，字符串类型，#RRGGBB格式，标题栏标题文字颜色  
+                "titleColor": "#RRGGBB",                            //可选，字符串类型，#RRGGBB格式，标题栏标题文字颜色
                 "titleSize": "17px",                                //可选，字符串类型，标题字体大小，默认大小为17px
                 "autoBackButton": true,                             //可选，Boolean类型，是否显示标题栏上返回键
                 "backButton": {                                     //可选，JSON对象，返回键样式
                     "backgournd": "#RRGGBB",                                //可选，字符串类型，#RRGGBB格式，返回按钮背景颜色
                     "color": "#RRGGBB",                                     //可选，字符串类型，#RRGGBB格式，返回图标颜色
                     "colorPressed": "#RRGGBB",                              //可选，字符串类型，#RRGGBB，返回图标按下时的颜色
-                },  
+                },
                 "buttons": [                                        //可选，JSON对象数组，标题栏按钮配置
-                    {  
+                    {
                         "color": "#RRGGBB",                                 //可选，字符串类型，#RRGGBB格式，按钮上的文字颜色
                         "colorPressed": "#RRGGBB",                          //可选，字符串类型，#RRGGBB格式，按钮按下状态的文字颜色
-                        "float": "right",                                   //可选，字符串类型，按钮显示位置，可取值left、right  
+                        "float": "right",                                   //可选，字符串类型，按钮显示位置，可取值left、right
                         "fontWeight": "normal",                             //可选，字符串类型，按钮上文字的粗细，可取值normal、bold
-                        "fontSize": "22px",                                 //可选，字符串类型，按钮上文字的大小  
+                        "fontSize": "22px",                                 //可选，字符串类型，按钮上文字的大小
                         "fontSrc": "",                                      //可选，字符串类型，按钮上文字使用的字体文件路径
                         "text": ""                                          //可选，字符串类型，按钮上显示的文字
                     }
-                ],  
+                ],
                 "splitLine": {                                      //可选，JSON对象，标题栏分割线样式
                     "color": "#RRGGBB",                                     //可选，字符串类型，#RRGGBB格式，分割线颜色
                     "height": "1px"                                         //可选，字符串类型，分割线高度
-                } 
-            },  
+                }
+            },
             "statusbar": {                                  //可选，JSON对象，状态栏配置
                 "background": "#RRGGBB"                             //可选，字符串类型，#RRGGBB格式，沉浸式状态栏样式下系统状态栏背景颜色
-            },  
+            },
             "top": "0px",                                   //可选，字符串类型，Webview的顶部偏移量，支持px、%单位
             "height": "100%",                               //可选，字符串类型，Webview窗口高度，支持px、%单位
             "bottom": "0px",                                //可选，字符串类型，Webview的底部偏移量，仅在未同时设置top和height属性时生效
@@ -564,7 +564,7 @@
         },
         "popGesture": "none",                       //可选，字符串类型，窗口侧滑返回默认效果，可取值none、close、hide
         "runmode": "liberate",                      //可选，字符串类型，应用资源运行模式，可取值normal、liberate
-        "safearera": {                              //可选，JSON对象，安全区域配置
+        "safearea": {                              //可选，JSON对象，安全区域配置
             "background": "#RRGGBB",                                //可选，字符串类型，#RRGGBB格式，安全区域背景颜色
             "backgroundDark": "#RRGGBB",                            //可选，字符串类型，#RRGGBB格式，暗黑模式安全区域背景颜色
             "bottom": {                                             //可选，JSON对象，底部安全区域配置
@@ -620,57 +620,57 @@
                     "mime":"",                                      //可选，字符串类型，拦截资源的数据类型mime
                     "encoding":"",                                  //可选，字符串类型，拦截资源的数据编码
                     "header": {                                     //可选，JSON对象，拦截资源的http头数据
-                    }  
+                    }
                 }
-            ],  
+            ],
             "overrideurl": {                                //可选，JSON对象，应用应用第二个页面的拦截链接请求处理逻辑
                 "mode": "reject",                                   //可选，字符串类型，拦截模式，可取值allow、reject
                 "match": "",                                        //可选，字符串类型，匹配拦截规则，支持正则表达式
                 "exclude": "none"                                   //可选，字符串类型，排除拦截理规则，可取值none、redirect
-            },  
+            },
             "replacewebapi": {                              //可选，JSON对象，是否重写Web API实现相关配置
-                "geolocation": "none"                               //可选，字符串类型，重写标准定位API，可取值none、alldevice、auto 
-            },  
+                "geolocation": "none"                               //可选，字符串类型，重写标准定位API，可取值none、alldevice、auto
+            },
             "subNViews": [                                  //可选，JSON对象数组，应用第二个页面原生View相关配置，已废弃
-                {  
+                {
                     "id": "",                                       //可选，字符串类型，原生View标识
                     "styles": {                                     //可选，JSON对象，原生View样式
-                    },  
+                    },
                     "tags": [                                       //可选，JSON对象数组，原生View中包含的tag标签列表
                         {}
-                    ]  
+                    ]
                 }
-            ],  
+            ],
             "titleNView": {                                 //可选，JSON对象，标题栏相关配置
                 "backgroundColor": "#RRGGBB",                       //可选，字符串类型，#RRGGBB格式，标题栏背景颜色
                 "titleText": "",                                    //可选，字符串类型，标题栏标题文字内容
-                "titleColor": "#RRGGBB",                            //可选，字符串类型，#RRGGBB格式，标题栏标题文字颜色  
+                "titleColor": "#RRGGBB",                            //可选，字符串类型，#RRGGBB格式，标题栏标题文字颜色
                 "titleSize": "17px",                                //可选，字符串类型，标题字体大小，默认大小为17px
                 "autoBackButton": true,                             //可选，Boolean类型，是否显示标题栏上返回键
                 "backButton": {                                     //可选，JSON对象，返回键样式
                     "backgournd": "#RRGGBB",                                //可选，字符串类型，#RRGGBB格式，返回按钮背景颜色
                     "color": "#RRGGBB",                                     //可选，字符串类型，#RRGGBB格式，返回图标颜色
                     "colorPressed": "#RRGGBB",                              //可选，字符串类型，#RRGGBB，返回图标按下时的颜色
-                },  
+                },
                 "buttons": [                                        //可选，JSON对象数组，标题栏按钮配置
-                    {  
+                    {
                         "color": "#RRGGBB",                                 //可选，字符串类型，#RRGGBB格式，按钮上的文字颜色
                         "colorPressed": "#RRGGBB",                          //可选，字符串类型，#RRGGBB格式，按钮按下状态的文字颜色
-                        "float": "right",                                   //可选，字符串类型，按钮显示位置，可取值left、right  
+                        "float": "right",                                   //可选，字符串类型，按钮显示位置，可取值left、right
                         "fontWeight": "normal",                             //可选，字符串类型，按钮上文字的粗细，可取值normal、bold
-                        "fontSize": "22px",                                 //可选，字符串类型，按钮上文字的大小  
+                        "fontSize": "22px",                                 //可选，字符串类型，按钮上文字的大小
                         "fontSrc": "",                                      //可选，字符串类型，按钮上文字使用的字体文件路径
                         "text": ""                                          //可选，字符串类型，按钮上显示的文字
                     }
-                ],  
+                ],
                 "splitLine": {                                      //可选，JSON对象，标题栏分割线样式
                     "color": "#RRGGBB",                                     //可选，字符串类型，#RRGGBB格式，分割线颜色
                     "height": "1px"                                         //可选，字符串类型，分割线高度
-                } 
-            },  
+                }
+            },
             "statusbar": {                                  //可选，JSON对象，状态栏配置
                 "background": "#RRGGBB"                             //可选，字符串类型，#RRGGBB格式，沉浸式状态栏样式下系统状态栏背景颜色
-            },  
+            },
             "top": "0px",                                   //可选，字符串类型，Webview的顶部偏移量，支持px、%单位
             "height": "100%",                               //可选，字符串类型，Webview窗口高度，支持px、%单位
             "bottom": "0px",                                //可选，字符串类型，Webview的底部偏移量，仅在未同时设置top和height属性时生效
@@ -683,96 +683,72 @@
         },
     }
 }
-```  
+```
 
 
 <a id="android"/>
 
-### Android平台云端打包配置  
-### Android platform cloud packaging configuration
-manifest.json文件的 "app-plus" -> "distribute" -> "android" 节点用于设置Android平台云端打包相关配置，支持以下参数：  
-The "app-plus" -> "distribute" -> "android" node of the manifest.json file is used to set the configuration related to the cloud packaging of the Android platform. The following parameters are supported:
-- packagename  
-  字符串类型，Android平台云端打包的包名  
-  String type, the package name of the cloud package on the Android platform
-- keystore  
-  字符串类型，Android平台云端打包使用的签名证书文件路径  
-  String type, the path to the signature certificate file used by the Android platform cloud packaging
-- password  
-  字符串类型，Android平台云端打包使用的签名证书的密码，要求证书存储密码和证书密码相同  
-  String type, the password of the signing certificate used by the Android platform cloud packaging, the certificate storage password and the certificate password are required to be the same
-- aliasname  
-  字符串类型，Android平台遇到你打包使用的证书别名  
-  String type, the Android platform encounters the certificate alias you packaged with
-- schemes  
-  字符串类型，Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[Android平台设置UrlSchemes](https://uniapp.dcloud.io/tutorial/app-android-schemes)  
-  String type, the scheme registered by the App on the Android platform, and multiple schemes are separated by ",". For details, refer to: [Android Platform Settings UrlSchemes](https://uniapp.dcloud.io/tutorial/app-android-schemes)
-- abiFilters  
-  字符串数组类型，Android平台App支持的cpu类型，详情参考：[Android平台设置CPU类型](https://uniapp.dcloud.io/tutorial/app-android-abifilters)  
-  String array type, the CPU type supported by the Android platform App, please refer to: [Android platform set CPU type](https://uniapp.dcloud.io/tutorial/app-android-abifilters)
-- permissions  
-  字符串数组类型，Android平台App使用的权限  
-  String array type, permission used by Android platform App
-- custompermissions  
-  Boolean类型，是否自定义Android权限配置  
-  Boolean type, whether to customize Android permission configuration
-- permissionExternalStorage  
-  JSON对象类型，Android平台应用启动时申请读写手机存储权限策略配置，详情参考：[Android平台应用启动时读写手机存储权限策略](https://ask.dcloud.net.cn/article/36549)，支持以下属性  
-  + request  
-    字符串类型，申请读取设备信息权限策略，可取值none、once、always  
-    String type, apply for the permission policy to read device information, the values can be none, once, always
-  + prompt  
-    字符串类型，当request设置为always值用户拒绝时弹出提示框上的内容  
-    String type, the content on the pop-up prompt box when the request is set to the always value and the user rejects it
-- permissionPhoneState  
-  JSON对象，Android平台应用启动时申请读取设备信息权限配置，详情参考：[Android平台应用启动时访问设备信息(如IMEI)权限策略](https://ask.dcloud.net.cn/article/36549)，支持以下属性  
-  + request  
-    字符串类型，申请读取设备信息权限策略，可取值none、once、always  
-    String type, apply for the permission policy to read device information, the values can be none, once, always
-  + prompt  
-    字符串类型，当request设置为always值用户拒绝时弹出提示框上的内容  
-    String type, the content on the pop-up prompt box when the request is set to the always value and the user rejects it
-- minSdkVersion  
-  数字类型，Android平台最低支持版本，详情参考：[Android平台设置minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)  
-  Number type, the minimum supported version of the Android platform, please refer to: [Android platform setting minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)
-- targetSdkVersion  
-  数字类型，Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)  
-  Number type, Android platform target version, refer to: [Android platform setting targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)
-- packagingOptions  
-  字符串数组类型，Android平台云端打包时build.gradle的packagingOptions配置项，如下示例源码 
-  String array type, the packagingOptions configuration item of build.gradle when the Android platform is packaged in the cloud, the following sample source code
-```json  
+### Android平台云端打包配置
+manifest.json文件的 "app-plus" -> "distribute" -> "android" 节点用于设置Android平台云端打包相关配置，支持以下参数：
+- packagename
+  字符串类型，Android平台云端打包的包名
+- keystore
+  字符串类型，Android平台云端打包使用的签名证书文件路径
+- password
+  字符串类型，Android平台云端打包使用的签名证书的密码，要求证书存储密码和证书密码相同
+- aliasname
+  字符串类型，Android平台遇到你打包使用的证书别名
+- schemes
+  字符串类型，Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[Android平台设置UrlSchemes](https://uniapp.dcloud.io/tutorial/app-android-schemes)
+- abiFilters
+  字符串数组类型，Android平台App支持的cpu类型，详情参考：[Android平台设置CPU类型](https://uniapp.dcloud.io/tutorial/app-android-abifilters)
+- permissions
+  字符串数组类型，Android平台App使用的权限
+- custompermissions
+  Boolean类型，是否自定义Android权限配置
+- permissionExternalStorage
+  JSON对象类型，Android平台应用启动时申请读写手机存储权限策略配置，详情参考：[Android平台应用启动时读写手机存储权限策略](https://ask.dcloud.net.cn/article/36549)，支持以下属性
+  + request
+    字符串类型，申请读取设备信息权限策略，可取值none、once、always
+  + prompt
+    字符串类型，当request设置为always值用户拒绝时弹出提示框上的内容
+- permissionPhoneState
+  JSON对象，Android平台应用启动时申请读取设备信息权限配置，详情参考：[Android平台应用启动时访问设备信息(如IMEI)权限策略](https://ask.dcloud.net.cn/article/36549)，支持以下属性
+  + request
+    字符串类型，申请读取设备信息权限策略，可取值none、once、always
+  + prompt
+    字符串类型，当request设置为always值用户拒绝时弹出提示框上的内容
+- minSdkVersion
+  数字类型，Android平台最低支持版本，详情参考：[Android平台设置minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)
+- targetSdkVersion
+  数字类型，Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)
+- packagingOptions
+  字符串数组类型，Android平台云端打包时build.gradle的packagingOptions配置项，如下示例源码
+```json
 "packagingOptions": [
-    "doNotStrip '*/armeabi-v7a/*.so'",   // build.gradle中的源码字符串  
+    "doNotStrip '*/armeabi-v7a/*.so'",   // build.gradle中的源码字符串
     "merge '**/LICENSE.txt'"
 ],
-```  
-- jsEngine  
-  字符串类型，uni-app使用的JS引擎，可取值v8、jsc，**将废弃，后续不再支持jsc引擎**  
-  String type, the JS engine used by uni-app, the values can be v8, jsc, **will be discarded, and the jsc engine will not be supported in the future**
-- debuggable  
-  Boolean类型，是否开启Android调试开关  
-  Boolean type, whether to enable the Android debugging switch
-- locale  
-  字符串类型，应用的语言  
-  String type, the language of the application
-- forceDarkAllowed  
-  Boolean类型，是否强制允许暗黑模式  
-  Boolean type, whether to force dark mode
-- resizeableActivity  
-  Boolean类型，是否支持分屏调整窗口大小  
-  Boolean type, whether to support split-screen resizing of windows
-- hasTaskAffinity  
+```
+- jsEngine
+  字符串类型，uni-app使用的JS引擎，可取值v8、jsc，**将废弃，后续不再支持jsc引擎**
+- debuggable
+  Boolean类型，是否开启Android调试开关
+- locale
+  字符串类型，应用的语言
+- forceDarkAllowed
+  Boolean类型，是否强制允许暗黑模式
+- resizeableActivity
+  Boolean类型，是否支持分屏调整窗口大小
+- hasTaskAffinity
   Boolean类型，是否设置android：taskAffinity
   Boolean type, whether to set android:taskAffinity
 
 <a id="buildFeatures" />
 
-- buildFeatures（HBuilderX 3.5.0+版本支持）  
-- buildFeatures (supported by HBuilderX 3.5.0+)
-  JSON对象，Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
-  JSON object, the buildFeatures configuration item of build.gradle when the Android platform is packaged in the cloud, the supported attributes reference: [Android official documentation](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com /android/build/api/dsl/BuildFeatures?hl=en), the following sample source code:
-```json  
+- buildFeatures（HBuilderX 3.5.0+版本支持）
+  JSON对象，Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：
+```json
 "buildFeatures": {
     "dataBinding": true,  //开启dataBinding
     "viewBinding": true   //开启viewBinding
@@ -782,124 +758,83 @@ The "app-plus" -> "distribute" -> "android" node of the manifest.json file is us
 
 <a id="ios"/>
 
-### iOS平台云端打包配置  
-### iOS platform cloud packaging configuration
-manifest.json文件的 "app-plus" -> "distribute" -> "ios" 节点用于设置iOS平台云端打包相关配置，支持以下参数：  
-The "app-plus" -> "distribute" -> "ios" node of the manifest.json file is used to set the configuration related to the cloud packaging of the iOS platform. The following parameters are supported:
-- appid  
-  字符串类型，iOS平台云端打包使用的Bundle ID  
-  String type, the Bundle ID used for cloud packaging on the iOS platform
-- mobileprovision  
-  字符串类型，iOS平台云端打包使用的profile文件路径  
-  String type, profile file path used by iOS platform cloud packaging
-- p12  
-  字符串类型，iOS平台云端打包使用的证书文件路径  
-  String type, the path to the certificate file used by the iOS platform cloud packaging
-- password  
-  字符串类型，iOS打包使用的证书密码  
-  String type, the certificate password used by iOS packaging
-- devices  
-  字符串类型，iOS支持的设备类型，可取值iphone（仅支持iPhone设备）、ipad（仅支持iPad设备）、universal（同时支持iPhone和iPad设备）  
-  String type, the device type supported by iOS, can be iphone (supports only iPhone devices), ipad (supports only iPad devices), universal (supports both iPhone and iPad devices)
-- urlschemewhitelist  
-  字符串类型，应用访问白名单列表，多个白名单使用“,”分割，详情参考：[iOS设置应用访问白名单](https://uniapp.dcloud.io/tutorial/app-ios-schemewhitelist)  
-  String type, application access whitelist list, multiple whitelists are separated by ",", for details, please refer to: [iOS setting application access whitelist](https://uniapp.dcloud.io/tutorial/app-ios-schemewhitelist)
-- urltypes  
-  字符串类型，Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[iOS设置应用UrlSchemes](https://uniapp.dcloud.io/tutorial/app-ios-schemes)  
-  String type, the scheme registered by the App on the Android platform, and multiple schemes are separated by ",". For details, please refer to: [iOS Settings Application UrlSchemes](https://uniapp.dcloud.io/tutorial/app-ios-schemes)
-- UIBackgroundModes  
-  字符串类型，应用后台运行模式，详情参考：[iOS设置应用后台运行能力](https://uniapp.dcloud.io/tutorial/app-ios-uibackgroundmodes)  
-  String type, application background running mode, for details, please refer to: [iOS Setting App Background Running Capability](https://uniapp.dcloud.io/tutorial/app-ios-uibackgroundmodes)
-- frameworks  
-  字符串数组类型，依赖的系统库，**已废弃，推荐使用uni原生插件扩展使用系统依赖库**  
-  String array type, dependent system library, **obsolete, it is recommended to use the uni native plug-in extension to use the system dependent library**
-- deploymentTarget  
-  字符串类型，iOS支持的最低版本  
-  String type, the minimum version supported by iOS
-- privacyDescription  
-  JSON对象，iOS隐私信息访问的许可描述，支持以下属性  
-  + NSPhotoLibraryUsageDescription  
-    系统相册读取权限描述  
-    System album read permission description
-  + NSPhotoLibraryAddUsageDescription  
-    系统相册写入权限描述  
-    System Album Write Permission Description
-  + NSCameraUsageDescription  
-    摄像头使用权限描述  
-    Description of camera permission
-  + NSMicrophoneUsageDescription  
-    麦克风使用权限描述  
-    Description of Microphone Access Permissions
-  + NSLocationWhenInUseUsageDescription  
-    运行期访问位置权限描述  
-    Runtime access location permission description
-  + NSLocationAlwaysUsageDescription  
-    后台运行访问位置权限描述  
-    Background operation access location permission description
-  + NSLocationAlwaysAndWhenInUseUsageDescription  
-    运行期后后台访问位置权限描述  
-    Description of background access location permissions after runtime
-  + NSCalendarsUsageDescription  
-    使用日历权限描述  
-    Description of the permission to use the calendar
-  + NSContactsUsageDescription  
-    使用通讯录权限描述  
-    Description of Use Contacts Permission
-  + NSBluetoothPeripheralUsageDescription  
-    使用蓝牙权限描述  
-    Description of permission to use bluetooth
-  + NSBluetoothAlwaysUsageDescription  
-    后台使用蓝牙权限描述  
-    Background use Bluetooth permission description
+### iOS平台云端打包配置
+manifest.json文件的 "app-plus" -> "distribute" -> "ios" 节点用于设置iOS平台云端打包相关配置，支持以下参数：
+- appid
+  字符串类型，iOS平台云端打包使用的Bundle ID
+- mobileprovision
+  字符串类型，iOS平台云端打包使用的profile文件路径
+- p12
+  字符串类型，iOS平台云端打包使用的证书文件路径
+- password
+  字符串类型，iOS打包使用的证书密码
+- devices
+  字符串类型，iOS支持的设备类型，可取值iphone（仅支持iPhone设备）、ipad（仅支持iPad设备）、universal（同时支持iPhone和iPad设备）
+- urlschemewhitelist
+  字符串类型，应用访问白名单列表，多个白名单使用“,”分割，详情参考：[iOS设置应用访问白名单](https://uniapp.dcloud.io/tutorial/app-ios-schemewhitelist)
+- urltypes
+  字符串类型，Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[iOS设置应用UrlSchemes](https://uniapp.dcloud.io/tutorial/app-ios-schemes)
+- UIBackgroundModes
+  字符串类型，应用后台运行模式，详情参考：[iOS设置应用后台运行能力](https://uniapp.dcloud.io/tutorial/app-ios-uibackgroundmodes)
+- frameworks
+  字符串数组类型，依赖的系统库，**已废弃，推荐使用uni原生插件扩展使用系统依赖库**
+- deploymentTarget
+  字符串类型，iOS支持的最低版本
+- privacyDescription
+  JSON对象，iOS隐私信息访问的许可描述，支持以下属性
+  + NSPhotoLibraryUsageDescription
+    系统相册读取权限描述
+  + NSPhotoLibraryAddUsageDescription
+    系统相册写入权限描述
+  + NSCameraUsageDescription
+    摄像头使用权限描述
+  + NSMicrophoneUsageDescription
+    麦克风使用权限描述
+  + NSLocationWhenInUseUsageDescription
+    运行期访问位置权限描述
+  + NSLocationAlwaysUsageDescription
+    后台运行访问位置权限描述
+  + NSLocationAlwaysAndWhenInUseUsageDescription
+    运行期后后台访问位置权限描述
+  + NSCalendarsUsageDescription
+    使用日历权限描述
+  + NSContactsUsageDescription
+    使用通讯录权限描述
+  + NSBluetoothPeripheralUsageDescription
+    使用蓝牙权限描述
+  + NSBluetoothAlwaysUsageDescription
+    后台使用蓝牙权限描述
   + NSSpeechRecognitionUsageDescription
-    系统语音识别权限描述  
-    Description of System Speech Recognition Permissions
-  + NSRemindersUsageDescription  
-    系统提醒事项权限描述  
-    System reminder permission description
-  + NSMotionUsageDescription  
-    使用运动与健康权限描述  
-    Description of Use Exercise and Health Permissions
-  + NSHealthUpdateUsageDescription  
-    使用健康更新权限描述  
-    Use Health Update Permission Description
-  + NSHealthShareUsageDescription  
-    使用健康分享权限描述  
-    Use Health Sharing Permission Description
-  + NSAppleMusicUsageDescription  
-    使用媒体资料库权限描述  
-    Use Media Library permission description
-  + NFCReaderUsageDescription  
-    使用NFC权限描述  
-    Description of permissions using NFC
-  + NSHealthClinicalHealthRecordsShareUsageDescription  
-    访问临床记录权限描述  
-    Description of access rights to clinical records
-  + NSHomeKitUsageDescription  
-    访问HomeKit权限描述  
-    Access HomeKit permission description
-  + NSSiriUsageDescription  
-    访问Siri权限描述  
-    Access Siri permission description
-  + NSFaceIDUsageDescription  
-    使用FaceID权限描述  
-    Description of permission to use FaceID
-  + NSLocalNetworkUsageDescription  
-    访问本地网络权限描述  
-    Access to the local network permission description
-  + NSUserTrackingUsageDescription  
-    跟踪用户活动权限描述  
-    Track user activity permission description
-- idfa  
-  Boolean类型，是否使用广告标识  
-  Boolean type, whether to use the advertising logo
-- capabilities  
-  JSON对象，应用的能力配置（Capabilities）  
-  JSON object, the capability configuration of the application (Capabilities)
-- CFBundleName  
-  字符串类型，CFBundleName名称  
-  String type, CFBundleName name
-- validArchitectures  
-  字符串数组类型，编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64  
-  String array type, CPU instructions supported at compile time, can take values arm64, arm64e, armv7, armv7s, x86_64
-
+    系统语音识别权限描述
+  + NSRemindersUsageDescription
+    系统提醒事项权限描述
+  + NSMotionUsageDescription
+    使用运动与健康权限描述
+  + NSHealthUpdateUsageDescription
+    使用健康更新权限描述
+  + NSHealthShareUsageDescription
+    使用健康分享权限描述
+  + NSAppleMusicUsageDescription
+    使用媒体资料库权限描述
+  + NFCReaderUsageDescription
+    使用NFC权限描述
+  + NSHealthClinicalHealthRecordsShareUsageDescription
+    访问临床记录权限描述
+  + NSHomeKitUsageDescription
+    访问HomeKit权限描述
+  + NSSiriUsageDescription
+    访问Siri权限描述
+  + NSFaceIDUsageDescription
+    使用FaceID权限描述
+  + NSLocalNetworkUsageDescription
+    访问本地网络权限描述
+  + NSUserTrackingUsageDescription
+    跟踪用户活动权限描述
+- idfa
+  Boolean类型，是否使用广告标识
+- capabilities
+  JSON对象，应用的能力配置（Capabilities）
+- CFBundleName
+  字符串类型，CFBundleName名称
+- validArchitectures
+  字符串数组类型，编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64

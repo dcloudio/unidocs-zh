@@ -325,4 +325,4 @@ parseCollection()
 #### 使用一键迁移功能迁移阿里云公测版到正式版@aliyun-beta-to-aliyun-biz
 
 阿里云提供了公测版一键迁移到正式版的功能。执行一键迁移后云存储、云函数、数据库都会被迁移到新服务空间。迁移过程中云函数、数据库均可正常访问，云存储无法写入（删除或上传文件）,
-详见：[阿里云公测版迁移正式版](aliyun-migrate-business.md)
+详见：[阿里云公测版迁移正式版](uniCloud/aliyun-migrate-business.md)

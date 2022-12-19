@@ -62,6 +62,8 @@ uniCloud提供包月、按量计费两种计费方式，具体说明如下：
 |							|CDN流量（GB/月）				|1									|2			|10			|50			|150		|500		|
 |售价（元/月）|-											|免费								|5			|24			|82			|316		|688		|
 
+套餐在有效期内可随时进行续费、升配，到期后只可续费，暂不支持降配。
+
 如果你难以预估会消耗多少云资源，推荐使用下方的按量计费。很多情况下套餐模式被用于固定预算，业务量变大也不增加预算。按量计费有充足的弹性。
 
 **关于数据库读写次数的额外说明**
@@ -182,9 +184,8 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 4. **CDN流量**、**CDN回源流量**：仅包含云存储，不含前端网页托管
 4. **CDN traffic**, **CDN back-to-source traffic**: only includes cloud storage, excluding front-end web hosting
 5. 开通基础套餐时可以选择是否允许超量，开启后如果用量超出套餐配额将按照按量付费定价进行收费
-5. When opening the basic package, you can choose whether to allow overage. If the usage exceeds the package quota, you will be charged according to the pay-as-you-go pricing.
-6. 前端网页托管开通后即为按量计费，不管服务空间有没有开启允许超量使用，前端网页托管计费参考[高级功能按量计费](#tencent-advanced)
-6. After the front-end web hosting is activated, it is billed according to the amount. No matter whether the service space is enabled or not to allow over-use, the billing of the front-end web hosting refers to [advanced function billing](#tencent-advanced)
+6. 套餐在有效期内可进行续费、升配，到期当天可降配，到期后只可续费
+7. 前端网页托管开通后即为按量计费，不管服务空间有没有开启允许超量使用，前端网页托管计费参考[高级功能按量计费](#tencent-advanced)
 
 **关于数据库读写次数的额外说明**
 

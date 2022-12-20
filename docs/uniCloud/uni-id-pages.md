@@ -330,8 +330,7 @@ The above configuration only opens the front-end login entry. To achieve the fun
 |login		|String	|登录（如：用户名密码登录）									|
 |login |String |Login (eg: login with username and password) |
 
-一款规范的小程序或App要上架到国内应用商店必须提供《隐私政策和用户使用协议》，参考模版：[隐私权政策模板.zip](https://ask.dcloud.net.cn/file/download/file_name-6ZqQ56eB5p2D5pS/562W5qih5p2/LnppcA==__url-Ly9pbWctY2RuLXRjLmRjbG91ZC5uZXQuY24vdXBsb2Fkcy9hcnRpY2xlLzIwMjAwMjE0LzUyMDRmMWU2Y2Q3NjcwZWE0YTJjMjBmZGRhMTBhMDdh)
-To put a standard Mini Program or App on the domestic app store, it must provide the "Privacy Policy and User Agreement", reference template: [Privacy Policy Template.zip](https://ask.dcloud.net.cn/file /download/file_name-6ZqQ56eB5p2D5pS/562W5qih5p2/LnppcA==__url-Ly9pbWctY2RuLXRjLmRjbG91ZC5uZXQuY24vdXBsb2Fkcy9hcnRpY2xlLzMDIwMjAwMjE0LzUyMDRmMWU2Y2Q3NjchMTWE0)
+一款规范的小程序或App要上架到国内应用商店必须提供《隐私政策和用户使用协议》，参考模版：[隐私权政策模板.zip](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/68be3397-d9e9-44e5-9e26-f98da5fba5a9.zip)
 
 更多合规问题[详情参考](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
 More compliance issues [see details](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9% 97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)

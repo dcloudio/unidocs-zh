@@ -316,6 +316,7 @@ getClientInfo().source，返回云函数调用来源，它的值域为：
 |function	|由其他云函数或云对象调用		|
 |http	|云对象URL化后通过http访问调用 `HBuilderX 3.5.2+`		|
 |timing	|定时任务调用云对象 `HBuilderX 3.5.2+`		|
+|server	|云函数上传并运行	|
 
 
 **注意事项**

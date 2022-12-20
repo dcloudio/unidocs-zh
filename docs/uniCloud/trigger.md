@@ -91,9 +91,7 @@ Cron expressions have seven **required** fields, separated by spaces. Among them
 | - （短横线）| 包含指定范围的所有值。例如：在“日”字段中，1 - 15包含指定月份的1号到15号 |
 | - (dash) | Contains all values in the specified range. Example: In the "Day" field, 1 - 15 contains the 1st to the 15th of the specified month |
 | * （星号） | 表示所有值。在“小时”字段中，* 表示每个小时 |
-| * (asterisk) | means all values. In the Hour field, * means every hour |
-| / （正斜杠） | 指定增量。在“分钟”字段中，输入1/10以指定从第一分钟开始的每隔十分钟重复。例如，第11分钟、第21分钟和第31分钟，以此类推 |
-| / (forward slash) | specifies an increment. In the Minutes field, enter 1/10 to specify a repeat every ten minutes starting from the first minute. For example, 11th minute, 21st minute, 31st minute, and so on |
+| / （正斜杠） | 指定增量。在“分钟”字段中，输入1/10以指定从第一分钟开始的每隔十分钟重复。例如，第11分钟、第21分钟和第31分钟，以此类推。正斜杠前后均需要有值，不可省略 |
 
 
 - 腾讯云：在 Cron 表达式中的“日”和“星期”字段同时指定值时，两者为“或”关系，即两者的条件均生效。

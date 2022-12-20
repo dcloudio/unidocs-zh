@@ -378,7 +378,7 @@ getClientInfo().source, returns the cloud function call source, its value range 
 |http	|云对象URL化后通过http访问调用 `HBuilderX 3.5.2+`		|
 |http | After the cloud object is URLized, call `HBuilderX 3.5.2+` through http access |
 |timing	|定时任务调用云对象 `HBuilderX 3.5.2+`		|
-|timing |Timed task calls cloud object `HBuilderX 3.5.2+` |
+|server	|云函数上传并运行	|
 
 
 **注意事项**

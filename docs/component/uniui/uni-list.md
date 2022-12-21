@@ -291,7 +291,6 @@ switchTab|同 uni.switchTab()
 |badgeText|String|-|	数字角标内容，设置为 `dot` 将显示圆点|
 |badgePositon|String|right|	角标位置|
 |link|String|navigateTo|	是否展示右侧箭头并开启点击反馈，可选值见下表|
-|clickable|Boolean|false|	是否开启点击反馈|
 |to|String|-|跳转页面地址，如填写此属性，click 会返回页面是否跳转成功	|
 |time|String|-|	右侧时间显示|
 |avatarCircle|Boolean|false|	是否显示圆形头像|

@@ -497,6 +497,9 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |mergeVirtualHostAttributes|Boolean|合并组件节点外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
 |lazyCodeLoading|String|是否开启代码按需执行。|
 
+**Tips:**
+
+可在项目根目录(cli 项目为 src 目录)下创建 mini.project.json 自定义支付宝小程序 mini.project.json 配置。
 
 ### mp-baidu
 

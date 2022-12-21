@@ -56,11 +56,6 @@ export default {
 			"prefix": "群5"
 		},
 		{
-			"number": "697264024",
-			"state": 1,
-			"prefix": "群6"
-		},
-		{
 			"number": "942061423",
 			"state": 1,
 			"prefix": "群7"
@@ -124,6 +119,11 @@ export default {
 			"number": "165657124",
 			"state": 1,
 			"prefix": "群19"
+		},
+		{
+			"number": "165796402",
+			"state": 1,
+			"prefix": "群20"
 		},
 		{
 			"number": "717019120",
@@ -201,10 +201,10 @@ export default {
 			"prefix": "群35"
 		},
 		{
-			"number": "165796402",
+			"number": "697264024",
 			"state": 0,
-			"prefix": "群20"
+			"prefix": "群6"
 		}
 	],
-	joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=DMJHXr-KZapZECjC55niKNe2hiVRgwhk&jump_from=webapi&authKey=8ESQ0mwsGK/owLLWP++yo8R80q2z1h0TaIRc9lrdeIdMXRBW1kpxf3C1FTUFNEks'
+	joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=VEeQbKYs1Z6o4UP_2wN3NvvGvEmDO4vt&jump_from=webapi&authKey=29zDXNvKrJS52mZM9khSJgWiPntVO0pGd9C9agmbLkPJ46ztLKoYImPymg2gotZZ'
 }

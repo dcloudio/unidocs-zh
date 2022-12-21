@@ -86,7 +86,7 @@ plugin
        "hello-pages": "pages/hello-page"
      },
      "pages": [
-       "pages/hello-page"
+       "pages/hello-page",
        "pages/index"
      ],
      "main": "index.js"

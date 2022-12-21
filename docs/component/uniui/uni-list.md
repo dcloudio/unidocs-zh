@@ -396,9 +396,6 @@ switchTab|same as uni.switchTab()
 |badgePositon|String|right|	角标位置|
 |badgePositon|String|right| Badge Position|
 |link|String|navigateTo|	是否展示右侧箭头并开启点击反馈，可选值见下表|
-|link|String|navigateTo| Whether to display the right arrow and enable click feedback, the optional values are shown in the following table|
-|clickable|Boolean|false|	是否开启点击反馈|
-|clickable|Boolean|false| Whether to enable clickable feedback|
 |to|String|-|跳转页面地址，如填写此属性，click 会返回页面是否跳转成功	|
 |to|String|-|Jump page address, if fill in this attribute, click will return whether the page jump is successful |
 |time|String|-|	右侧时间显示|

@@ -100,7 +100,7 @@ export const navbar = [
           {
             text: '京东小程序',
             type: 'link',
-            link: 'https://mp-docs.jd.com/framework/'
+            link: 'https://mp-docs.jd.com/doc/forst/second/-1'
           },
           {
             text: '华为快应用',

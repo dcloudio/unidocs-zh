@@ -31,7 +31,8 @@
 1. 存储文件体积太大，低档套餐的存储不够，迁移不了
 2. 定时任务导致云函数使用量和数据库读写量偏高
 3. 不合理的代码设计，一个页面发起太多请求次数
-4. 如果之前使用uni统计，建议调整下统计的上报数据频率和云端跑批频率。不能太造资源。[详见](https://uniapp.dcloud.net.cn/uni-stat-v2.html#savemoney)
+4. 云函数运行内存设的太高。正常情况下256M内存是够的。可以在[云函数package.json](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#memory)或web控制台调整。
+5. 如果之前使用uni统计，建议调整下统计的上报数据频率和云端跑批频率。不能太造资源。[详见](https://uniapp.dcloud.net.cn/uni-stat-v2.html#savemoney)
 
 DCloud始终是为开发者提供更高性价比方案的产品服务公司，DCloud不会为了挣钱故意推荐开发者用不着的高档套餐。
 

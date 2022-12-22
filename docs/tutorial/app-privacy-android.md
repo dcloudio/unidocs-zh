@@ -143,9 +143,9 @@ After checking, the androidPrivacy.json file will be automatically added to the 
   The link address loading method in the privacy policy prompt box. Possible values: system- means to use the system browser to open; default- means to use the built-in webview page of the application to open. The default value is default.
   **注意：可能有些检测机构认为webview会读取隐私信息，这时可以配置为system来解决此问题**  
 - disagreeMode 
-  用户不同意隐私协议的响应配置 
-  + support 用户拒绝隐私协议后，是否直接进入游客模式，默认关闭 
-  + loadNativePlugins 游客模式下，是否加载原生插件
+  用户不同意隐私协议的响应配置 **具体配置及说明查看**[https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode)  
+  + support 用户拒绝隐私协议后，是否直接进入游客模式，默认false关闭 
+  + loadNativePlugins 表示在disagreeMode模式是否加载uni原生插件，true表示加载；false表示不加载（此时调用uni.requireNativePlugin加载插件扩展Module返回undefined，扩展组件Component也无法使用）。默认值为true。  
   + visitorEntry HBuilderX 3.6.7 版本后支持，默认false,当设置为true，隐私协议弹窗 会出现 游客模式 按钮
   + showAlways HBuilderX 3.6.10 版本后支持，默认false 标记用户拒绝协议后，下次启动是否继续弹出，默认false,拒绝后不弹出
 - second  
@@ -172,13 +172,6 @@ After checking, the androidPrivacy.json file will be automatically added to the 
   + buttonAccept accepts the button style, under which only the color attribute is supported to configure the text color, the value is the #RRGGBB format string
   + buttonRefuse 拒绝按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
   + buttonVisitor HX 3.6.7 版本后支持，游客模式按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
-- disagreeMode  
-  未同意隐私政策模式 `HBuilder X 3.3.1版本新增支持` 具体配置及说明查看[https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode)  
-  Do not agree to the privacy policy mode `HBuilder X 3.3.1 version added support` For specific configuration and instructions, see [https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode )
-  + support  true表示开启disagreeMode；false表示不开启（用户不同意“隐私政策”则退出应用）。默认值为false。  
-  + support true means to open disagreeMode; false means not to open (the user does not agree to the "Privacy Policy" and exits the application). The default value is false.
-  + loadNativePlugins  表示在disagreeMode模式是否加载uni原生插件，true表示加载；false表示不加载（此时调用uni.requireNativePlugin加载插件扩展Module返回undefined，扩展组件Component也无法使用）。默认值为true。  
-  + loadNativePlugins indicates whether to load uni native plugins in disagreeMode mode, true indicates loading; false indicates not loading (at this time, calling uni.requireNativePlugin to load the plugin extension Module returns undefined, and the extension component Component cannot be used). The default value is true.
 
 uni-app项目可以使用uni原生插件能支持更多自定义隐私政策提示框样式，可参考：[https://ext.dcloud.net.cn/plugin?id=5581](https://ext.dcloud.net.cn/plugin?id=5581)  
 The uni-app project can use the uni native plugin to support more custom privacy policy prompt box styles, please refer to: [https://ext.dcloud.net.cn/plugin?id=5581](https://ext. dcloud.net.cn/plugin?id=5581)

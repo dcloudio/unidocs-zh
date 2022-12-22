@@ -104,9 +104,9 @@
   隐私政策提示框中的链接地址加载方式，可取值：system-表示使用系统浏览器打开；default-表示使用应用内置webview页面打开。默认值为default。  
   **注意：可能有些检测机构认为webview会读取隐私信息，这时可以配置为system来解决此问题**  
 - disagreeMode 
-  用户不同意隐私协议的响应配置 
-  + support 用户拒绝隐私协议后，是否直接进入游客模式，默认关闭 
-  + loadNativePlugins 游客模式下，是否加载原生插件
+  用户不同意隐私协议的响应配置 **具体配置及说明查看**[https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode)  
+  + support 用户拒绝隐私协议后，是否直接进入游客模式，默认false关闭 
+  + loadNativePlugins 表示在disagreeMode模式是否加载uni原生插件，true表示加载；false表示不加载（此时调用uni.requireNativePlugin加载插件扩展Module返回undefined，扩展组件Component也无法使用）。默认值为true。  
   + visitorEntry HBuilderX 3.6.7 版本后支持，默认false,当设置为true，隐私协议弹窗 会出现 游客模式 按钮
   + showAlways HBuilderX 3.6.10 版本后支持，默认false 标记用户拒绝协议后，下次启动是否继续弹出，默认false,拒绝后不弹出
 - second  
@@ -123,10 +123,6 @@
   + buttonAccept 接受按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
   + buttonRefuse 拒绝按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
   + buttonVisitor HX 3.6.7 版本后支持，游客模式按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
-- disagreeMode  
-  未同意隐私政策模式 `HBuilder X 3.3.1版本新增支持` 具体配置及说明查看[https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode)  
-  + support  true表示开启disagreeMode；false表示不开启（用户不同意“隐私政策”则退出应用）。默认值为false。  
-  + loadNativePlugins  表示在disagreeMode模式是否加载uni原生插件，true表示加载；false表示不加载（此时调用uni.requireNativePlugin加载插件扩展Module返回undefined，扩展组件Component也无法使用）。默认值为true。  
 
 uni-app项目可以使用uni原生插件能支持更多自定义隐私政策提示框样式，可参考：[https://ext.dcloud.net.cn/plugin?id=5581](https://ext.dcloud.net.cn/plugin?id=5581)  
 

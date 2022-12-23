@@ -68,7 +68,7 @@ The following is the video tutorial of the tripartite professional training inst
 * [《uniapp 原生插件开发-iOS》](https://www.bilibili.com/video/BV1Db4y1D7Yr?spm_id_from=333.999.0.0)，出品人：朱哲
 * ["Uniapp Native Plugin Development-iOS"](https://www.bilibili.com/video/BV1Db4y1D7Yr?spm_id_from=333.999.0.0), Producer: Zhu Zhe
 * [《雪狐uni-app+阿里直播实战项目开发第一季》](https://www.studyfox.cn/487.html)，出品人：雪狐网
-* ["Snowhu uni-app+Alibaba Live Project Development Season 1"](https://www.studyfox.cn/487.html), Producer: Xuehu.com
+* [《2022新课uniapp零基础入门到项目打包》](https://www.bilibili.com/video/BV1mT411K7nW?p=1)，出品人：咸虾米_
 
 
 

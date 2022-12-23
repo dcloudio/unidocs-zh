@@ -37,6 +37,7 @@
 * [《uniapp 原生插件开发-android》](https://www.bilibili.com/video/BV13V411H7W2?spm_id_from=333.999.0.0&vd_source=b123f8c166833c59567e6923b9aa2013)，出品人：朱哲
 * [《uniapp 原生插件开发-iOS》](https://www.bilibili.com/video/BV1Db4y1D7Yr?spm_id_from=333.999.0.0)，出品人：朱哲
 * [《雪狐uni-app+阿里直播实战项目开发第一季》](https://www.studyfox.cn/487.html)，出品人：雪狐网
+* [《2022新课uniapp零基础入门到项目打包》](https://www.bilibili.com/video/BV1mT411K7nW?p=1)，出品人：咸虾米_
 
 
 

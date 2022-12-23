@@ -1,4 +1,3 @@
-
 掌握uniCloud，不需要学习nodejs。
 To master uniCloud, no need to learn nodejs.
 
@@ -27,7 +26,7 @@ Video tutorial:
 - [网易云课堂unicloud入门到精通](https://study.163.com/course/introduction.htm?courseId=1209978085#/courseDetail?tab=1)
 - [NetEase Cloud Classroom unicloud entry to proficient](https://study.163.com/course/introduction.htm?courseId=1209978085#/courseDetail?tab=1)
 - [B站uniCloud视频](https://search.bilibili.com/all?keyword=unicloud)
-- [B station uniCloud video](https://search.bilibili.com/all?keyword=unicloud)
+- [uniCloud云开发进阶篇-多用户社区博客实战项目开发教程](https://www.bilibili.com/video/BV1yG4y1h7ck/?vd_source=b123f8c166833c59567e6923b9aa2013)
 
 uni-app结合云函数开发小程序博客教程：
 uni-app combined with cloud function to develop applet blog tutorial:

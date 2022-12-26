@@ -10,7 +10,7 @@
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|1.9.0+|x|√|
+|√|√|√|√|√|√|1.9.0+|√|√|
 
 mapContext
 
@@ -22,23 +22,25 @@ mapContext
 |:-|:-|:-|:-|:-|
 |getCenterLocation|OBJECT|获取当前地图中心的经纬度，返回的是 gcj02 坐标系，可以用于 [uni.openLocation](api/location/location?id=getlocation)|||
 |moveToLocation|OBJECT|将地图中心移动到当前定位点，需要配合map组件的show-location使用|||
-|translateMarker|OBJECT|平移marker，带动画||app-nvue 2.1.5+、微信小程序带动画、京东小程序|
-|includePoints|OBJECT|缩放视野展示所有经纬度||app-nvue 2.1.5+、微信小程序、京东小程序|
+|translateMarker|OBJECT|平移marker，带动画||app-nvue 2.1.5+、微信小程序带动画、字节、支付宝、京东、百度、QQ小程序|
+|includePoints|OBJECT|缩放视野展示所有经纬度||app-nvue 2.1.5+、微信、字节、支付宝、京东、百度、快手、QQ小程序|
 |getRegion|OBJECT|获取当前地图的视野范围|||
+|getRotate|OBJECT|获取当前地图的旋转角||微信、字节、支付宝、京东、QQ小程序|
 |getScale|OBJECT|获取当前地图的缩放级别|||
+|getSkew|OBJECT|获取当前地图的倾斜角||微信、字节、支付宝、京东、QQ小程序|
 |addCustomLayer|OBJECT|添加个性化图层||微信小程序|
-|addGroundOverlay|OBJECT|创建自定义图片图层，图片会随着地图缩放而缩放||App-nvue 3.1.0+，微信小程序|
+|addGroundOverlay|OBJECT|创建自定义图片图层，图片会随着地图缩放而缩放||App-nvue 3.1.0+，微信、字节小程序|
 |addMarkers |OBJECT|添加 marker||App-nvue 3.1.0+，微信小程序|
 |fromScreenLocation|OBJECT|获取屏幕上的点对应的经纬度，坐标原点为地图左上角||微信小程序|
 |initMarkerCluster|OBJECT|初始化点聚合的配置，未调用时采用默认配置||App-nvue 3.1.0+，微信小程序|
-|moveAlong|OBJECT|沿指定路径移动 marker，用于轨迹回放等场景。动画完成时触发回调事件，若动画进行中，对同一 marker 再次调用 moveAlong 方法，前一次的动画将被打断。|支持 android 不支持autoRotate属性设置 默认ture|App-nvue 3.1.0+，微信小程序|
-|openMapApp|OBJECT|拉起地图APP选择导航。||App-nvue 3.1.0+，微信小程序|
+|moveAlong|OBJECT|沿指定路径移动 marker，用于轨迹回放等场景。动画完成时触发回调事件，若动画进行中，对同一 marker 再次调用 moveAlong 方法，前一次的动画将被打断。|支持 android 不支持autoRotate属性设置 默认ture|App-nvue 3.1.0+，微信、字节小程序|
+|openMapApp|OBJECT|拉起地图APP选择导航。||App-nvue 3.1.0+，微信、字节、快手小程序|
 |removeCustomLayer|OBJECT|移除个性化图层 ||微信小程序|
 |removeGroundOverlay|OBJECT|移除自定义图片图层||App-nvue 3.1.0+，微信小程序|
 |removeMarkers|OBJECT|移除 marker。||App-nvue 3.1.0+，微信小程序|
-|setCenterOffset|OBJECT|设置地图中心点偏移，向后向下为增长，屏幕比例范围(0.25~0.75)，默认偏移为[0.5, 0.5]||微信小程序|
+|setCenterOffset|OBJECT|设置地图中心点偏移，向后向下为增长，屏幕比例范围(0.25~0.75)，默认偏移为[0.5, 0.5]||微信、字节小程序|
 |toScreenLocation|OBJECT|获取经纬度对应的屏幕坐标，坐标原点为地图左上角。||微信小程序|
-|updateGroundOverlay|OBJECT|更新自定义图片图层。||App-nvue 3.1.0+，微信小程序|
+|updateGroundOverlay|OBJECT|更新自定义图片图层。||App-nvue 3.1.0+，微信、字节小程序|
 |on|Method|监听地图事件。||App-nvue 3.1.0+，微信小程序|
 |$getAppMap||获取原生地图对象 [plus.maps.Map](https://www.html5plus.org/doc/zh_cn/maps.html#plus.maps.Map)|app-vue|1.9.3|
 
@@ -92,22 +94,44 @@ mapContext
 |:-|:-|:-|:-|
 |points|Array|是|要显示在可视区域内的坐标点列表，[{latitude, longitude}]|
 |padding|Array|否|坐标点形成的矩形边缘到地图边缘的距离，单位像素。格式为[上，右，下，左]，安卓上只能识别数组第一项，上下左右的padding一致。开发者工具暂不支持padding参数。|
+|success|Function|否|接口调用成功的回调函数（支付宝小程序不支持）|
+|fail|Function|否|接口调用失败的回调函数（支付宝小程序不支持）|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）（支付宝小程序不支持）|
 
 **getRegion 的 OBJECT 参数列表**
 
 |参数|类型|必填|说明|
 |:-|:-|:-|:-|
 |success|Function|否|接口调用成功的回调函数，res = {southwest, northeast}，西南角与东北角的经纬度|
-|fail|Function|否|接口调用失败的回调函数|
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+|fail|Function|否|接口调用失败的回调函数（支付宝小程序不支持）|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）（支付宝小程序不支持）|
+
+
+**getRotate 的 OBJECT 参数列表**
+
+|参数|类型|必填|说明|
+|:-|:-|:-|:-|
+|success|Function|否|接口调用成功的回调函数，res = {rotate}，旋转角|
+|fail|Function|否|接口调用失败的回调函数（支付宝小程序不支持）|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）（支付宝小程序不支持）|
+
 
 **getScale 的 OBJECT 参数列表**
 
 |参数|类型|必填|说明|
 |:-|:-|:-|:-|
-|success|Function|否|接口调用成功的回调函数，res = {scale}|
-|fail|Function|否|接口调用失败的回调函数|
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+|success|Function|否|接口调用成功的回调函数，res = {scale}，缩放值|
+|fail|Function|否|接口调用失败的回调函数（支付宝小程序不支持）|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）（支付宝小程序不支持）|
+
+
+**getSkew 的 OBJECT 参数列表**
+
+|参数|类型|必填|说明|
+|:-|:-|:-|:-|
+|success|Function|否|接口调用成功的回调函数，res = {skew}，倾斜角|
+|fail|Function|否|接口调用失败的回调函数（支付宝小程序不支持）|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）（支付宝小程序不支持）|
 
 
 **addCustomLayer 的 OBJECT 参数列表**

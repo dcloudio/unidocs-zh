@@ -7,13 +7,11 @@ keyword: 手机号
 keyword: mobile phone number
 -->
 
-univerify 是DCloud 推出的一键登录产品，通过与运营商深度合作，实现APP用户无需输入帐号密码，即可使用本机手机号码自动登录的能力。
-univerify is a one-click login product launched by DCloud. Through in-depth cooperation with operators, APP users can automatically log in using their mobile phone numbers without entering account passwords.
+`univerify` 是DCloud 推出的一键登录产品，通过与运营商深度合作，实现APP用户无需输入帐号密码，即可使用本机手机号码自动登录的能力。
 
-univerify是替代短信验证登录的下一代登录验证方式，能消除现有短信验证模式等待时间长、操作繁琐和容易泄露的痛点。
-Univerify is a next-generation login verification method that replaces SMS verification login, which can eliminate the pain points of long waiting time, cumbersome operation and easy leakage of the existing SMS verification mode.
+`univerify`是替代短信验证登录的下一代登录验证方式，能消除现有短信验证模式等待时间长、操作繁琐和容易泄露的痛点。
 
-> ## 注意：一键登录必须是手机使用流量的前提下才能获取到手机号码，用Wi-Fi联网时无法获取到手机号码，同时如果是双卡手机，获取到的手机号码是默认移动数据的那个手机卡的号码。
+>  注意：一键登录必须是手机使用流量的前提下才能获取到手机号码，用Wi-Fi联网时无法获取到手机号码，同时如果是双卡手机，获取到的手机号码是默认移动数据的那个手机卡的号码。
 
 ## 重要调整
 ## Important adjustments

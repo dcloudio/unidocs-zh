@@ -214,7 +214,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html)
 * [支付宝开发者工具](https://docs.alipay.com/mini/ide/download)
 * [百度开发者工具](https://smartprogram.baidu.com/docs/introduction/tool/)
-* [字节跳动开发者工具](https://developer.toutiao.com/dev/cn/mini-app/develop/developer-instrument/developer-instrument-update-and-download)
+* [字节跳动开发者工具](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log/)
 * [飞书开发者工具](https://open.feishu.cn/document/uYjL24iN/ucDOzYjL3gzM24yN4MjN)
 
 #### 各家小程序更新日志列表

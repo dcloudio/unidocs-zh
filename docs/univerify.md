@@ -100,8 +100,6 @@ uni.login({
 
 在uniCloud的云函数中拿到手机号后，可以直接使用，也可以再转给传统服务器处理，也可以通过[云函数url化](https://uniapp.dcloud.io/uniCloud/http)方式生成普通的http接口给5+ App使用。
 
-开通uniCloud是免费的，其中阿里云是全免费，腾讯云是提供一个免费服务空间。
-
 注意:
 **虽然一键登录需要uniCloud，但并不要求开发者把所有的后台服务都迁移到uniCloud**
 

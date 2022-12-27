@@ -430,8 +430,8 @@ exports.main = async (event, context) => {
 ```
 
 完整的项目实例源码，可以参考：
-1. 云端一体项目模板：[https://ext.dcloud.net.cn/plugin?id=13](https://ext.dcloud.net.cn/plugin?id=13)
-2. hello uni-app。打包后直接体验：[https://m3w.cn/uniapp](https://m3w.cn/uniapp)；源码获取：在HBuilderX中新建uni-app项目，选择hello uni-app模板。一键登录的具体位置在 API - login 栏目中。
+1. uni-starter，云端一体应用快速开发基本项目模版：[https://ext.dcloud.net.cn/plugin?id=5057](https://ext.dcloud.net.cn/plugin?id=5057)
+2. hello uni-app，打包后直接体验：[https://m3w.cn/uniapp](https://m3w.cn/uniapp)；源码获取：在HBuilderX中新建uni-app项目，选择hello uni-app模板。一键登录的具体位置在 API - login 栏目中。
 
 **注意**
 

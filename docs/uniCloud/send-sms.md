@@ -61,8 +61,7 @@ The parameter structure is in json format.
 #### 云函数使用短信扩展库@extension
 #### Cloud functions use SMS extension library @extension
 
-自HBuilderX 3.4.0起，短信相关功能移至扩展库`uni-cloud-sms`内。在一段时间内无论开发者是否使用扩展库云函数都可以正常使用`uniCloud.sendSms`。预计于2022年3月初发布的HBuilderX内强制使用扩展库，即使用在此时间点后发布的HBuilderX上传云函数时如果没有指定使用`uni-cloud-sms`扩展库的云函数将无法调用uniCloud.sendSms接口。
-Since HBuilderX 3.4.0, SMS related functions have been moved to the extension library `uni-cloud-sms`. For a while, `uniCloud.sendSms` can be used normally regardless of whether the developer uses the extension library cloud function or not. The extension library is expected to be mandatory in HBuilderX released in early March 2022, that is, when uploading cloud functions using HBuilderX released after this time point, cloud functions that use the `uni-cloud-sms` extension library will not be able to call uniCloud. sendSms interface.
+自HBuilderX 3.4.0起，短信相关功能移至扩展库`uni-cloud-sms`内。在一段时间内无论开发者是否使用扩展库云函数都可以正常使用`uniCloud.sendSms`。HBuilderX 3.4.0及之后的版本上传云函数时如果没有指定使用`uni-cloud-sms`扩展库的云函数将无法调用uniCloud.sendSms接口。
 
 关于扩展库的说明见：[云函数扩展库](cf-functions.md#extension)
 For the description of the extension library, see: [Cloud Function Extension Library](cf-functions.md#extension)
@@ -74,7 +73,7 @@ Add a reference to `uni-cloud-sms` in the cloud function's package.json to enabl
 {
 	"name": "uni-sms",
 	"extensions": {
-		"uni-cloud-sms": {} // 启用uni-cloud-sms扩展，值为空对象即可
+		"uni-cloud-sms": {} // 启用短信扩展，值为空对象即可
 	}
 }
 ```

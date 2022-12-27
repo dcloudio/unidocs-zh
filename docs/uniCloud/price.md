@@ -133,6 +133,9 @@ uniCloud提供包月、按量计费两种计费方式，具体说明如下：
 
 正式版不再自动根据文件修改刷新缓存，提供手动刷新缓存功能。
 
+#### 欠费停服及资源销毁
+
+包月套餐到期时开始停服，按量计费空间账户欠费时开始停服。服务空间资源在停服后保留7天。7天内可以充正、续费，7天后会销毁空间资源。
 
 ### 阿里云公测版@aliyun-public
 
@@ -230,6 +233,10 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 
 **注：当包年包月服务空间升级新套餐时，如果已开通前端网页托管，则前端网页托管会自动转为按量计费，请确保账号余额充足！**
 **Note: When the annual and monthly service space is upgraded to a new package, if the front-end web hosting has been activated, the front-end web hosting will be automatically converted to metered billing, please ensure that the account balance is sufficient! **
+
+### 欠费停服及资源销毁
+
+套餐到期时开始停服。服务空间资源保留7天。7天内可以充正、续费，7天后会销毁空间资源。
 
 ## 余额及保证金@balance
 

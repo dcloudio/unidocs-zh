@@ -40,7 +40,7 @@ keyword: 短信,sms
 
 #### 云函数使用短信扩展库@extension
 
-自HBuilderX 3.4.0起，短信相关功能移至扩展库`uni-cloud-sms`内。在一段时间内无论开发者是否使用扩展库云函数都可以正常使用`uniCloud.sendSms`。预计于2022年3月初发布的HBuilderX内强制使用扩展库，即使用在此时间点后发布的HBuilderX上传云函数时如果没有指定使用`uni-cloud-sms`扩展库的云函数将无法调用uniCloud.sendSms接口。
+自HBuilderX 3.4.0起，短信相关功能移至扩展库`uni-cloud-sms`内。在一段时间内无论开发者是否使用扩展库云函数都可以正常使用`uniCloud.sendSms`。HBuilderX 3.4.0及之后的版本上传云函数时如果没有指定使用`uni-cloud-sms`扩展库的云函数将无法调用uniCloud.sendSms接口。
 
 关于扩展库的说明见：[云函数扩展库](cf-functions.md#extension)
 
@@ -50,7 +50,7 @@ keyword: 短信,sms
 {
 	"name": "uni-sms",
 	"extensions": {
-		"uni-cloud-sms": {} // 启用uni-cloud-sms扩展，值为空对象即可
+		"uni-cloud-sms": {} // 启用短信扩展，值为空对象即可
 	}
 }
 ```

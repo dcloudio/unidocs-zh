@@ -15,7 +15,7 @@ keyword: 手机号
 
 ### 云函数使用一键登录扩展库@extension
 
-自`HBuilderX 3.4.0`起，一键登录相关功能移至扩展库`uni-cloud-verify`内。在一段时间内无论开发者是否使用扩展库云函数都可以正常使用`uniCloud.getPhoneNumber`。预计于2022年3月初发布的HBuilderX内强制使用扩展库，即使用在此时间点后发布的HBuilderX上传云函数时如果没有指定使用`uni-cloud-verify`扩展库的云函数将无法调用uniCloud.getPhoneNumber接口。
+自`HBuilderX 3.4.0`起，一键登录相关功能移至扩展库`uni-cloud-verify`内。在一段时间内无论开发者是否使用扩展库云函数都可以正常使用`uniCloud.getPhoneNumber`。HBuilderX 3.4.0及之后的版本上传云函数时如果没有指定使用`uni-cloud-verify`扩展库的云函数将无法调用uniCloud.getPhoneNumber接口。
 
 关于扩展库的说明见：[云函数扩展库](uniCloud/cf-functions.md?id=extension)
 
@@ -25,7 +25,7 @@ keyword: 手机号
 {
 	"name": "univerify",
 	"extensions": {
-		"uni-cloud-verify": {} // 启用uni-cloud-jql扩展，值为空对象即可
+		"uni-cloud-verify": {} // 启用一键登录扩展，值为空对象即可
 	}
 }
 ```

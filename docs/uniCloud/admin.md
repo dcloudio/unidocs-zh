@@ -428,8 +428,7 @@ If you want to transfer the page developed by yourself to the home page after lo
 
 ## 应用管理 <Badge text="uni-admin 1.9.3+" />@app-manager
 
-在进入应用管理后可看到如下界面，点击有上角 `新增` 按钮可新增一个应用
-After entering the application management, you can see the following interface, click the `Add` button in the upper corner to add an application
+在进入应用管理后可看到如下界面，点击右上角 `新增` 按钮可新增一个应用
 ![新增应用](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/12b0eb73-f791-4cc4-998c-0c95ec97b3fd.png)
 ![New application](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/12b0eb73-f791-4cc4-998c-0c95ec97b3fd.png)
 

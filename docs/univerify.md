@@ -43,8 +43,7 @@ Through the operator's underlying SDK, the App can directly obtain the mobile ph
 
 <a id="fullscreen"/>
 
-> HBuilderX3.1.6+版本授权登录界面支持全屏模式
-> HBuilderX3.1.6+ version authorized login interface supports full screen mode
+HBuilderX3.1.6+版本授权登录界面支持全屏模式
 
 调用uni.login时设置univerifyStyle中的fullScreen属性值为true即可：
 When calling uni.login, set the fullScreen property value in unverifyStyle to true:

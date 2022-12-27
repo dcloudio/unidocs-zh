@@ -1,26 +1,6 @@
 >本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0详情：[https://ask.dcloud.net.cn/article/35622](https://ask.dcloud.net.cn/article/35622)
 >This article is an introduction to uni-push2.0 (requires HBuilderX 3.5.1 and above), if the old project needs to use the old version of uniPush1.0 Details: [https://ask.dcloud.net.cn/article/35622](https://ask.dcloud.net.cn/article/35622)
 
-<style>
-	.join-group-chat{
-		position: relative;
-	}
-	.join-group-chat img{
-		display: none;
-	}
-	.join-group-chat:hover img{
-		position: absolute;
-                background: #FFF;
-		top: 25px;
-		right: 0;
-		display: block;
-		width: 150px;
-		height: 150px;
-		box-shadow:#999 0px 0px 20px;
-		padding: 3px;
-	}
-</style>
-
 # 应用场景
 # application scenarios
 以下功能可以用uni-push 实现  

@@ -152,8 +152,7 @@ For details about the server API, see: [Using One-Key Login in UniCloud Cloud Fu
 本文主要介绍uni-app的客户端调用方法。5+ App（Wap2App）请另行参考：[5+ App一键登录使用指南](https://ask.dcloud.net.cn/article/38009)
 This article mainly introduces the client calling method of uni-app. For 5+ App (Wap2App), please refer to: [5+ App One-Key Login User Guide](https://ask.dcloud.net.cn/article/38009)
 
-DCloud还提供了更易用的封装。在[uni-id](/uniCloud/uni-id)里已经预置了`uni一键登录`，并基于`uni-id`提供了[前后一体登录模板](https://ext.dcloud.net.cn/plugin?id=13)（也可以在HBuilderX 3.0+ 新建项目界面选择“前后一体登录模板”），开发者可以拿去直接用
-DCloud also provides an easier-to-use package. In [uni-id](/uniCloud/uni-id), `uni one-click login` has been preset, and based on `uni-id`, it provides [front and back integrated login template](https://ext.dcloud. net.cn/plugin?id=13) (you can also select "front and back integrated login template" in the HBuilderX 3.0+ new project interface), developers can use it directly
+DCloud还提供了更易用的封装。在[uni-id](/uniCloud/uni-id)里已经预置了`uni一键登录`，并基于`uni-id`提供了[云端一体应用快速开发基本项目模版](https://ext.dcloud.net.cn/plugin?id=5057)，该项目模版内置了包括一键登录在内的各种常用登录示例，开发者可以拿去直接用
 
 接下来继续介绍原始API的用法。
 Next, continue to introduce the usage of the original API.

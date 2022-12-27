@@ -1,11 +1,5 @@
 >本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0详情：[https://ask.dcloud.net.cn/article/35622](https://ask.dcloud.net.cn/article/35622)
 
-为了更好的服务：
-<a class="join-group-chat" target="_blank" href="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
-	欢迎加入uni-push2.0 交流群
-	<img src="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
-</a>
-
 <style>
 	.join-group-chat{
 		position: relative;
@@ -124,6 +118,9 @@ DCloud与个推深度合作，为uni-app的开发者提供了比传统方案便�
 - 5+app和wap2app支持uni-push2.0吗？  
 	
 	答：暂不支持。
+
+- **使用有其他疑问**，欢迎扫码加入 uni-push2.0 微信交流群讨论：
+    <br/><img src="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG" width="250"/>
 
 # 快速上手
 ## 第一步：开通  

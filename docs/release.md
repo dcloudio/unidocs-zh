@@ -1,3 +1,12 @@
+#### 3.6.15.20221228
+* 【uni-app】
+* App平台 修复 vue3 项目 nvue 页面 webview 组件 onPostMessage 事件无效的Bug [详情](https://ask.dcloud.net.cn/question/158925)
+* 小程序平台、Web平台 修复 uni-push2.0 WebSocket连接不稳定的Bug [详情](https://ask.dcloud.net.cn/question/159690?item_id=224222&rf=false)
+* 【uniCloud】
+* JQL语法 修复 触发器内使用 JQL 操作数据库再触发触发器时丢失 clientInfo 的Bug
+* JQL语法 修复 getCount 不能触发 count 触发器的Bug
+* JQL语法 修复 未传 where 条件时触发器收到的 where 不正常的Bug
+
 #### 3.6.14.20221215
 * 【uni-app】
 * App平台 修复 3.6.13 版本引出的启动调试工具报错的Bug [详情](https://ask.dcloud.net.cn/question/159523)

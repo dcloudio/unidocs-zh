@@ -213,6 +213,19 @@ mapContext
 |fail				|function	|				|否		|接口调用失败的回调函数															|
 |complete		|function	|				|否		|接口调用结束的回调函数（调用成功、失败都会执行）			|
 
+
+**openMapApp 的 OBJECT 参数列表**
+
+|属性				|类型			|默认值	|必填	|说明																							|
+|:-					|:-				|:-			|:-		|:-																							|
+|longitude		|Number		|				|是		|目的地经度																			|
+|latitude				|Number		|				|是		|目的地纬度	|
+|destination	|String	|		    |是		|目的地名称							|
+|success		|function	|				|否		|接口调用成功的回调函数															|
+|fail				|function	|				|否		|接口调用失败的回调函数															|
+|complete		|function	|				|否		|接口调用结束的回调函数（调用成功、失败都会执行）			|
+
+
 **setLocMarkerIcon 的 OBJECT 参数列表**@setLocMarkerIcon
 
 |属性			|类型			|默认值	|必填	|说明																							|

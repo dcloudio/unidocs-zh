@@ -293,6 +293,7 @@ uni-push is a websocket on the web and applet side; each applet platform require
 According to the following table, set the socket legal domain name in the applet management background. The domain names in the table below are all self-owned domain names, not the domain names of DCloud.
 
 - HBuilderX 3.6.15以下版本
+
 |域名|端口|
 |Domain Name|Port|
 |--	|--	|
@@ -301,6 +302,7 @@ According to the following table, set the socket legal domain name in the applet
 |wshzn.gepush.com |5223|
 
 - HBuilderX 3.6.15及以上版本
+
 |域名|端口|
 |--	|--	|
 |wshzn.gepush.com |5223|

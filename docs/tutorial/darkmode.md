@@ -29,10 +29,10 @@
 
 - 开启安全区域占位
 
-  > 在 manifest.json 文件的 "plus" 节点下添加 "safearea" 适配 iOS 的安全区域，"background" 对应正常模式下安全区域外的背景颜色，"backgroundDark"对应暗黑模式下安全区域外的背景颜色
+  > 在 manifest.json 文件的 "app-plus" 节点下添加 "safearea" 适配 iOS 的安全区域，"background" 对应正常模式下安全区域外的背景颜色，"backgroundDark"对应暗黑模式下安全区域外的背景颜色
 
 	```json
-	"plus" : {
+	"app-plus" : {
 		"safearea": { //iOS平台的安全区域
 			"background": "#ffffff",
 			"backgroundDark": "#2f0508", // HX 3.1.19+支持

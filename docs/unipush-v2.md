@@ -193,11 +193,17 @@ uni-push在web和小程序端就是个websocket；各家小程序平台，均要
 
 根据下表，在小程序管理后台设置socket合法域名。下表的域名均为个推自有域名，并非DCloud所属域名。
 
+- HBuilderX 3.6.15以下版本
 |域名|端口|
 |--	|--	|
 |wshz.getui.net|5223|
 |wshz.gepush.com|5223|
+|wshzn.gepush.com |5223|
 
+- HBuilderX 3.6.15及以上版本
+|域名|端口|
+|--	|--	|
+|wshzn.gepush.com |5223|
 
 
 ### 客户端监听推送消息@listener  

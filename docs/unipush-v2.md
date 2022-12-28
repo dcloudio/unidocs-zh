@@ -299,7 +299,6 @@ According to the following table, set the socket legal domain name in the applet
 |--	|--	|
 |wshz.getui.net|5223|
 |wshz.gepush.com|5223|
-|wshzn.gepush.com |5223|
 
 - HBuilderX 3.6.15及以上版本
 

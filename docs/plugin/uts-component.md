@@ -9,11 +9,11 @@
 
 组件是一种独立，可复用的UI单元，方便单独封装和承担一定的代码逻辑，组件化有利于降低项目的整体工程复杂度和可维护性
 
-UTS组件，即使用UTS语言在uni平台进行组件开发的技术。关于UTS的 [更多介绍](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
+UTS组件，即:使用UTS语言在uni平台进行组件开发的技术。 [关于UTS的更多介绍](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
-UTS组件，与传统JS组件区别在于，它秉承了UTS的跨平台特性，统一的语法，本地的产出物。
-在Android平台会被编译为 Android原生组件，会被渲染为Android原生View实例
-IOS或其他平台也是如此。
+UTS组件，与传统JS组件区别在于，它秉承了UTS的跨平台特性，统一的UTS语法，具体终端的本地的产出物。
+
+在Android平台会被编译为 Android原生组件，会被渲染为Android原生View实例.IOS或其他平台也是如此。
 
 
 ## 3 如何开发组件-举个例子

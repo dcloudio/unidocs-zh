@@ -101,6 +101,33 @@ onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableL
 
 ```
 
+### 2.4 线程环境差异
+
+UTS环境中，默认是没有线程概念的。 代码默认执行在uts 单独的线程池中。
+
+如果需要执行异步任务，建议通过内置函数`setTimeOut`执行
+
+```uts
+console.log("这里是UTS默认线程 :"  + Thread.currentThread().getName())
+setTimeOut(function(){
+	console.log("这里是异步任务线程 :"  + Thread.currentThread().getName())
+},1000)
+```
+
+如果是android原生api 需要部分代码必须执行在UI线程，则需要通过原生api进行操作：
+
+```uts
+class AddUIRunnable extends Runnable {
+    override run():void {
+		// do something
+		console.log("这里是android平台主线程 :"  + Thread.currentThread().getName())
+    }
+};
+let uiRunable = new AddUIRunnable();
+getUniActivity()!.runOnUiThread(uiRunable)
+```
+
+
 ## 3 Android原生环境配置
 
 对于Android项目来说，除了源码之外，还会涉及依赖，资源，配置等常见问题

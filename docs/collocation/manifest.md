@@ -67,6 +67,7 @@ uni 统计配置项
 |nvueLaunchMode|String|Nvue 首页启动模式，可选值：normal、fast 默认 normal（HBuilderX 2.4.4-2.4.9 固定为 fast） [详见](https://ask.dcloud.net.cn/article/36749)|2.5.0+|
 |nvue|Object|nvue 页面布局初始配置，[详见](/collocation/manifest?id=nvue)|2.0.3+|
 |optimization|Object|分包配置，可以减轻启动时加载的js数量，提升启动速度|2.7.12+|
+|runmode|String|normal：默认模式，liberate：资源释放模式||
 |uniStatistics|Object|[App 是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|2.2.3+|
 |webView|Object|当系统webview低于指定版本时，会弹出提示。或者下载x5内核后继续启动，仅Android支持，[详情](/collocation/manifest?id=appwebview)|3.5.0+|
 

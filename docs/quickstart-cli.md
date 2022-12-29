@@ -92,10 +92,16 @@ The template project is stored in Github. The download may fail due to network p
 * 更新到正式版指定版本
 * Update to the official version specified version
   ```shell
+  npx @dcloudio/uvm 3.2.0
+  ```
+  ```shell
   npx @dcloudio/uvm 3.2.12.20211029
   ```
 * 更新到 alpha 版指定版本
 * Update to alpha specified version
+  ```shell
+  npx @dcloudio/uvm 3.2.0-alpha
+  ```
   ```shell
   npx @dcloudio/uvm 3.2.14.20211112-alpha
   ```

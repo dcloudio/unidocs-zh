@@ -118,7 +118,7 @@ setTimeOut(function(){
 
 ```uts
 class AddUIRunnable extends Runnable {
-    override run():void {
+	override run():void {
 		// do something
 		console.log("这里是android平台主线程 :"  + Thread.currentThread().getName())
     }

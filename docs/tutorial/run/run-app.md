@@ -8,8 +8,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 真机运行的目的，是为了实现代码修改的热刷新，避免打包才能看到效果。在HBuilder中编辑代码，在手机上实时看到修改效果，并且可以在HBuilder控制台看到日志。
 
 
-
-### 运行入口
+## 运行入口
 通过HBuilder顶部运行菜单、或工具栏运行按钮、或快捷键，均可激活运行入口。
 
 1. HBuilder顶部运行菜单  
@@ -30,7 +29,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 
 
 
-### 连接设备
+## 连接设备
 
 点击运行到iOS或Android设备时，会弹出选择界面，需选择要连接的手机设备或模拟器。  
 
@@ -39,7 +38,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 
 > 连接设备过程中如果找不到手机，可以尝试点击“刷新”按钮，如果还是无法找到手机请参考[真机运行常见问题](run-app-faq.md)
 
-#### Android设备选择  
+### Android设备选择  
 
 <img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/9031cf41-da1c-476e-8f20-aaba3e432b92.jpeg" style="zoom: 50%;" />
 
@@ -48,7 +47,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 - 确认Android手机设置中`USB调试`模式已开启。通常在手机的【设置】【开发者选项】里，有的手机在插上数据线后在系统通知栏里也可以设置，注意不能设置为u盘模式，如果是充电模式则必须同时设置充电时`允许usb调试`。
 
 
-#### iOS设备选择@ios_device
+### iOS设备选择@ios_device
 
 > HBuilderX中自带的标准真机运行基座使用DCloud向苹果申请的企业开发者证书签名，根据[苹果开发者企业计划许可协议](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20220606-Chinese-Simplified.pdf)要求，使用企业开发者证书签名的App只允许企业员工内部使用，不允许企业外部人员安装使用。  
 > 因收到苹果公司警告，自2022年9月14日起iOS真机设备不再支持使用标准真机运行基座，详情见论坛公告：[https://ask.dcloud.net.cn/article/40041](https://ask.dcloud.net.cn/article/40041)  
@@ -73,7 +72,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 上面的界面会额外显示搜索框，因XCode的iOS模拟器非常多，可通过搜索框过滤快速选择需要使用的模拟器。  
 
 
-### 运行流程  
+## 运行
 
 初次运行时会提示安装“真机运行插件”。
 
@@ -89,7 +88,23 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ac78ba4d-16c2-4ca0-8cf8-2c8bb7260052.jpg" style="zoom: 50%;" />
 
-### 标准基座和自定义基座@customplayground  
+### 运行项目到iOS真机App自启动@ios-app-automatically-open
+
+> 目前仅支持MacOSX，不支持Windows
+
+HBuilderX 3.6.16版本，新增 运行App项目到iOS真机，安装基座，App自动打开。
+
+注意：MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。
+
+使用如下命令，可以查看Xcode iOS Platforms数据。
+
+```shell
+ls -lh  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport
+```
+
+<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d219c758-ea33-44a7-bc7b-1c814011266a.jpg" style="zoom: 50%;" />
+
+## 标准基座和自定义基座@customplayground  
 
 标准运行基座，是DCloud为方便开发者低门槛调试而提供的，此基座App使用的是DCloud的包名、证书和三方SDK配置。
 
@@ -120,25 +135,9 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 
 注意：自定义运行基座是测试版，不可直接商用（使用自定义运行基座覆盖安装apk不会更新应用资源，并且有toast警告）。正式发版时需要按正常打包方式重新打包。
 
-### 离线打包生成自定义运行基座
+## 离线打包生成自定义运行基座
 
 可使用离线SDK打包生成自定义运行基座，生成后将apk和ipa包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk和iOS_debug.ipa。
 
 - [Android平台离线生成自定义调试基座](https://ask.dcloud.net.cn/article/35482)
 - [iOS平台离线生成自定义调试基座](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94%a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)
-
-### 运行项目到iOS真机App自启动@ios-app-automatically-open
-
-> 目前仅支持MacOSX，不支持Windows
-
-HBuilderX 3.6.16版本，新增 运行App项目到iOS真机，安装基座，App自动打开。
-
-注意：MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。
-
-使用如下命令，可以查看Xcode iOS Platforms数据。
-
-```shell
-ls -lh  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport
-```
-
-<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d219c758-ea33-44a7-bc7b-1c814011266a.jpg" style="zoom: 50%;" />

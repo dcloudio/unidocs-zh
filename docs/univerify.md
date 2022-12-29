@@ -74,7 +74,7 @@ uni.login({
 2. 用户同意授权后，SDK底层访问运营商网关鉴权，获得当前设备`access_token`等信息。
 3. 在服务器侧通过 uniCloud 将`access_token`等信息 置换为当前设备的真实手机号码。然后服务器直接入库，避免手机号传递到前端发生的不可信情况。
 
-![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/univerify/process.png)
+![](https://native-res.dcloud.net.cn/images/univertify/process.png)
 
 前置条件：
 + 手机安装有sim卡

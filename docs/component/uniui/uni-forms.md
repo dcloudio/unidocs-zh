@@ -289,7 +289,7 @@ rules: {
 ::: warning 注意
 - 需要注意，如果需要使用 `validateFunction` 自定义校验规则,则不能采用 `uni-forms` 的 `rules` 属性来配置校验规则，这时候需要通过`ref`，在`onReady`生命周期调用组件的`setRules`方法绑定验证规则
 - 无法通过props传递变量，是因为微信小程序会过滤掉对象中的方法，导致自定义验证规则无效。
-- 如果使用了 `validateFunction` 且 `request` 为 `false`的情况，表现为不填写内容不校验，有内容才校验，所以内容为空时 `validateFunction` 不会执行
+- 如果使用了 `validateFunction` 且 `required` 为 `false`的情况，表现为不填写内容不校验，有内容才校验，所以内容为空时 `validateFunction` 不会执行
 ::: 
 
 

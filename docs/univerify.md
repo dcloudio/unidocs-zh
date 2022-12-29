@@ -97,7 +97,7 @@ There is no need for native plug-ins or custom bases (the HBuilder standard base
 3. 在服务器侧通过 uniCloud 将`access_token`等信息 置换为当前设备的真实手机号码。然后服务器直接入库，避免手机号传递到前端发生的不可信情况。
 3. On the server side, use uniCloud to replace the `access_token` and other information with the real mobile phone number of the current device. Then the server is directly stored in the warehouse to avoid the untrustworthy situation that the mobile phone number is passed to the front end.
 
-![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/univerify/process.png)
+![](https://native-res.dcloud.net.cn/images/univertify/process.png)
 
 前置条件：
 precondition:

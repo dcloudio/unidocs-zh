@@ -541,9 +541,7 @@ A：
 1. 由于多家广告商的回调和签名验证逻辑不同，开发者需要写很多逻辑，`uniCloud` 中的云函数 `uniAdCallback` 已抹平了差异，开发者按照统一的参数处理即可
 1. Due to the different callback and signature verification logic of multiple advertisers, developers need to write a lot of logic. The cloud function `uniAdCallback` in `uniCloud` has smoothed out the difference, and developers can handle it according to the unified parameters.
 2. 开发者的服务器有可能响应慢或失去响应造成回调数据丢失, 使用 `uniCloud` 可以帮助开发者保存一份来自广告商服务器的回调数据到开发者的云数据中，以便开发者主动查询
-2. The developer's server may respond slowly or lose response, resulting in loss of callback data. Using `uniCloud` can help developers save a copy of the callback data from the advertiser's server to the developer's cloud data, so that the developer can actively query
-3. `uniCloud` 可以承载大并发、防DDoS攻击，无需运营人员维护，如果选择了 `阿里云` 且是免费的
-3. `uniCloud` can carry large concurrency and prevent DDoS attacks without maintenance by operators. If you choose `Aliyun`, it is free
+3. `uniCloud` 可以承载大并发、防DDoS攻击，无需运营人员维护
 
 ### 云函数uniAdCallback传递的参数
 ### Parameters passed by cloud function uniAdCallback

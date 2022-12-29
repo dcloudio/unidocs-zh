@@ -12,9 +12,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 The purpose of running the real machine is to realize the hot refresh of code modification and avoid packaging to see the effect. Edit the code in HBuilder, see the modification effect in real time on the mobile phone, and you can see the log in the HBuilder console.
 
 
-
-### 运行入口
-### Run entry
+## 运行入口
 通过HBuilder顶部运行菜单、或工具栏运行按钮、或快捷键，均可激活运行入口。
 The run entry can be activated through the run menu at the top of HBuilder, the run button on the toolbar, or a shortcut key.
 
@@ -40,8 +38,7 @@ Actually activates the toolbar run button. You can continue to match the number 
 
 
 
-### 连接设备
-### Connect the device
+## 连接设备
 
 点击运行到iOS或Android设备时，会弹出选择界面，需选择要连接的手机设备或模拟器。  
 When you click Run to iOS or Android device, a selection interface will pop up, and you need to select the mobile device or emulator to be connected.
@@ -54,7 +51,7 @@ But a device can only run one project at the same time, and when different proje
 > 连接设备过程中如果找不到手机，可以尝试点击“刷新”按钮，如果还是无法找到手机请参考[真机运行常见问题](run-app-faq.md)
 > If you can't find your phone during the process of connecting the device, you can try to click the "Refresh" button. If you still can't find your phone, please refer to [Real Phone Running FAQs](run-app-faq.md)
 
-#### Android设备选择  
+### Android设备选择  
 
 <img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/9031cf41-da1c-476e-8f20-aaba3e432b92.jpeg" style="zoom: 50%;" />
 
@@ -66,7 +63,7 @@ But a device can only run one project at the same time, and when different proje
 - Make sure the `USB debugging` mode is turned on in the Android phone settings. Usually in the [Settings] [Developer Options] of the mobile phone, some mobile phones can also be set in the system notification bar after plugging in the data cable. Note that it cannot be set to U disk mode. If it is charging mode, you must set the charging time at the same time. `Allow usb debugging`.
 
 
-#### iOS设备选择@ios_device
+### iOS设备选择@ios_device
 
 > HBuilderX中自带的标准真机运行基座使用DCloud向苹果申请的企业开发者证书签名，根据[苹果开发者企业计划许可协议](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20220606-Chinese-Simplified.pdf)要求，使用企业开发者证书签名的App只允许企业员工内部使用，不允许企业外部人员安装使用。  
 > 因收到苹果公司警告，自2022年9月14日起iOS真机设备不再支持使用标准真机运行基座，详情见论坛公告：[https://ask.dcloud.net.cn/article/40041](https://ask.dcloud.net.cn/article/40041)  
@@ -95,8 +92,7 @@ But a device can only run one project at the same time, and when different proje
 上面的界面会额外显示搜索框，因XCode的iOS模拟器非常多，可通过搜索框过滤快速选择需要使用的模拟器。  
 
 
-### 运行流程  
-### Run the process
+## 运行
 
 初次运行时会提示安装“真机运行插件”。
 When you run it for the first time, you will be prompted to install the "real machine running plug-in".
@@ -119,8 +115,23 @@ Select the mobile device or simulator to run in the run menu, click the run butt
 
 <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ac78ba4d-16c2-4ca0-8cf8-2c8bb7260052.jpg" style="zoom: 50%;" />
 
-### 标准基座和自定义基座@customplayground  
-### Standard Pedestals and Custom Pedestals @customplayground
+### 运行项目到iOS真机App自启动@ios-app-automatically-open
+
+> 目前仅支持MacOSX，不支持Windows
+
+HBuilderX 3.6.16版本，新增 运行App项目到iOS真机，安装基座，App自动打开。
+
+注意：MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。
+
+使用如下命令，可以查看Xcode iOS Platforms数据。
+
+```shell
+ls -lh  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport
+```
+
+<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d219c758-ea33-44a7-bc7b-1c814011266a.jpg" style="zoom: 50%;" />
+
+## 标准基座和自定义基座@customplayground  
 
 标准运行基座，是DCloud为方便开发者低门槛调试而提供的，此基座App使用的是DCloud的包名、证书和三方SDK配置。
 The standard operating base is provided by DCloud to facilitate the low-threshold debugging of developers. This base App uses DCloud's package name, certificate and third-party SDK configuration.
@@ -165,27 +176,10 @@ Only one custom pedestal can be generated for a project, and multiple generation
 注意：自定义运行基座是测试版，不可直接商用（使用自定义运行基座覆盖安装apk不会更新应用资源，并且有toast警告）。正式发版时需要按正常打包方式重新打包。
 Note: The custom running base is a beta version and cannot be directly commercialized (using the custom running base to overwrite the installation of the apk will not update the application resources, and there is a toast warning). When the official version is released, it needs to be repackaged according to the normal packaging method.
 
-### 离线打包生成自定义运行基座
-### Offline packaging to generate custom running base
+## 离线打包生成自定义运行基座
 
 可使用离线SDK打包生成自定义运行基座，生成后将apk和ipa包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk和iOS_debug.ipa。
 You can use the offline SDK to package and generate a custom running base. After generation, store the apk and ipa packages in the project directory /unpackage/debug directory, and the file names are android_debug.apk and iOS_debug.ipa respectively.
 
 - [Android平台离线生成自定义调试基座](https://ask.dcloud.net.cn/article/35482)
 - [iOS平台离线生成自定义调试基座](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94%a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)
-
-### 运行项目到iOS真机App自启动@ios-app-automatically-open
-
-> 目前仅支持MacOSX，不支持Windows
-
-HBuilderX 3.6.16版本，新增 运行App项目到iOS真机，安装基座，App自动打开。
-
-注意：MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。
-
-使用如下命令，可以查看Xcode iOS Platforms数据。
-
-```shell
-ls -lh  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport
-```
-
-<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d219c758-ea33-44a7-bc7b-1c814011266a.jpg" style="zoom: 50%;" />

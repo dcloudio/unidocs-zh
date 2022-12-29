@@ -71,9 +71,15 @@ npm install -g @vue/cli
   ```
 * 更新到正式版指定版本
   ```shell
+  npx @dcloudio/uvm 3.2.0
+  ```
+  ```shell
   npx @dcloudio/uvm 3.2.12.20211029
   ```
 * 更新到 alpha 版指定版本
+  ```shell
+  npx @dcloudio/uvm 3.2.0-alpha
+  ```
   ```shell
   npx @dcloudio/uvm 3.2.14.20211112-alpha
   ```

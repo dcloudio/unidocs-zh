@@ -1,3 +1,5 @@
+# UTS 组件开发
+
 ## 1 前置条件
 
 + HBuilderX 3.6.15 及之后版本
@@ -10,27 +12,25 @@
 
 ### 2.1 UTS组件简介
 
-组件是一种独立，可复用的UI单元，方便单独封装和承担一定的代码逻辑，组件化有利于降低项目的整体工程复杂度和可维护性
+组件是一种独立，可复用的UI单元，方便单独封装和承担一定的代码逻辑，组件化有利于降低项目的工程复杂度,提升可维护性
 
-UTS组件，即使用UTS语言在uni平台进行组件开发的技术。 [关于UTS的更多介绍](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
-
-语法上采用了类Vue组件的语法，[关于Vue的更多介绍](https://cn.vuejs.org/guide/essentials/component-basics.html)
+UTS组件，即:使用UTS语言在uni平台进行组件开发的技术。 [关于UTS的更多介绍](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 
-### 2.2 UTS组件特点
+组件约定上采用了类Vue组件的语法，[关于Vue组件的更多介绍](https://cn.vuejs.org/guide/essentials/component-basics.html)
 
-UTS组件，与传统Vue组件区别在于，它秉承了UTS的跨平台特性，统一的语法，本地的产出物。
 
-在Android平台会被编译为 Android原生组件，会被渲染为Android原生View实例
+### 2.2 UTS组件和Vue组件差异
 
-IOS或其他平台也是如此。
+UTS组件，与传统Vue组件区别在于，它秉承了UTS的跨平台特性，统一的UTS语法，各终端不同的本地产出物。
 
+在Android平台会被编译为会被渲染为Android原生View实例，IOS或其他终端平台也是如此。
 
 
 
 ## 3 如何开发组件-举个例子
 
-以lottie动画组件为例,示例的源码可以在Hello UTS 中找到
+以lottie动画组件为例,本章节提到全部示例源码可以在Hello UTS 中找到
 
 
 #### 3.1 目录结构
@@ -124,7 +124,7 @@ IOS或其他平台也是如此。
 
 ```
 
-#### 3.3 组件开发重点
+#### 3.3 组件开发关键函数
 
 
 首先开发者需要重点关注的是 NVLoad 函数，开发者需要在这个函数内实现View载体的具体实现

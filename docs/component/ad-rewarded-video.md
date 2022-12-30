@@ -70,11 +70,9 @@ The rewarded video ad component is a native component, the highest level, and wi
 |property name |type |default value |description |platform difference |
 |:-																|:-														|:-				|:-																																										|:-				|
 |adpid														|String&#124;Number&#124;Array|					|广告位id，如果传入的是数组，会从索引0开始请求失败后继续下一个，适用于已配置底价的逻辑|					|
-|adpid |String&#124;Number&#124;Array| |Ad slot id, if an array is passed in, it will start from index 0 and continue to the next after the request fails, which applies to the logic of the configured reserve price| |
-|preload                          |Boolean                      |true     |页面就绪后加载广告数据                                                                  |          |
-|preload |Boolean |true |Load ad data when page is ready | |
-|loadnext													|Boolean											|false		|自动加载下一条广告数据																																	|					|
-|loadnext |Boolean |false |Automatically load next ad data | |
+|preload													|Boolean											|true			|页面就绪后加载广告数据																																|					|
+|loadnext													|Boolean											|false		|自动加载下一条广告数据																																|					|
+|disabled													|Boolean											|false		|禁用默认点击行为																																			|					|
 |url-callback											|Object												|					|服务器回调透传数据																																		|					|
 |url-callback |Object | |Server callback data transparently | |
 |v-slot:default="{loading, error}"|															|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息																	|					|

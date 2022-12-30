@@ -71,20 +71,22 @@ Use the `openid` and `access_token` in the above results to call the interface i
 The call form of the interface in the cloud function is as follows
 
 ```js
-const res = await uniCloud.getPhoneNumber({
-  provider: 'univerify',
-  appid: '_UNI_ABCDEFG', // 替换成自己开通一键登录的应用的DCloud appid
-  apiKey: 'xxx', // 在开发者中心开通服务并获取apiKey
-  apiSecret: 'xxx', // 在开发者中心开通服务并获取apiSecret
-  access_token: event.access_token,
-  openid: event.openid
-})
-// res形式如下
-// {
-//   code: 0,
-//   message: '',
-//   phoneNumber: '138xxxxxxxx'
-// }
+exports.main = async function(event, context){
+  const res = await uniCloud.getPhoneNumber({
+    provider: 'univerify',
+    appid: context.APPID, // 客户端callFunction时携带的AppId信息
+    apiKey: 'xxx', // 在开发者中心开通服务并获取apiKey
+    apiSecret: 'xxx', // 在开发者中心开通服务并获取apiSecret
+    access_token: event.access_token,
+    openid: event.openid
+  })
+  // res形式如下
+  // {
+  //   code: 0,
+  //   message: '',
+  //   phoneNumber: '138xxxxxxxx'
+  // }
+}
 ```
 
 **相关文档**
@@ -120,10 +122,9 @@ uniCloud.callFunction({
 })
 
 // 云函数
-// cloud function
-exports.main = async function (event){
+exports.main = async function (event, context){
   const res = await uniCloud.getPhoneNumber({
-    appid: '_UNI_ABCDEFG', // 替换成自己开通一键登录的应用的DCloud appid
+    appid: context.APPID, // 客户端callFunction时携带的AppId信息
   	provider: 'univerify',
   	apiKey: 'xxx', // 在开发者中心开通服务并获取apiKey
   	apiSecret: 'xxx', // 在开发者中心开通服务并获取apiSecret

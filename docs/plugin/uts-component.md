@@ -4,23 +4,33 @@
 
 + HBuilderX 3.6.15 及之后版本
 
++ 了解Vue 组件基本概念
+
 + 目前仅支持nvue
 
 ## 2 组件概述
 
+### 2.1 UTS组件简介
 
 组件是一种独立，可复用的UI单元，方便单独封装和承担一定的代码逻辑，组件化有利于降低项目的工程复杂度,提升可维护性
 
 UTS组件，即:使用UTS语言在uni平台进行组件开发的技术。 [关于UTS的更多介绍](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
-UTS组件，与传统JS组件区别在于，它秉承了UTS的跨平台特性，统一的UTS语法，具体终端的本地产出物。
 
-比如在Android平台会被编译为 Android原生组件，会被渲染为Android原生View实例.IOS或其他平台也是如此。
+组件约定上采用了类Vue组件的语法，[关于Vue组件的更多介绍](https://cn.vuejs.org/guide/essentials/component-basics.html)
+
+
+### 2.2 UTS组件和Vue组件差异
+
+UTS组件，与传统Vue组件区别在于，它秉承了UTS的跨平台特性，统一的UTS语法，各终端不同的本地产出物。
+
+在Android平台会被编译为会被渲染为Android原生View实例，IOS或其他终端平台也是如此。
+
 
 
 ## 3 如何开发组件-举个例子
 
-以lottie动画组件为例,示例的源码可以在Hello UTS 中找到
+以lottie动画组件为例,本章节提到全部示例源码可以在Hello UTS 中找到
 
 
 #### 3.1 目录结构

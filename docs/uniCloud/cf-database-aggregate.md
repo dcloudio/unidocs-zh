@@ -38,6 +38,29 @@ exports.main = async function(){
 }
 ```
 
+将上述两个用法修正为正确用法分别如下：
+
+
+```js
+const db = uniCloud.database()
+const collection = db.collection('test')
+exports.main = async function(){
+  const aggregate = collection.aggregate() // 每次执行云函数会有独立的聚合实例
+  const res = await aggregate.match({a:1}).end()
+  return {res}
+}
+```
+
+```js
+const db = uniCloud.database()
+const collection = db.collection('test')
+exports.main = async function(){
+  const res1 = await collection.aggregate().match({a:1}).end() // 两个请求分别调用aggregate方法产生聚合实例
+  const res2 = await collection.aggregate().match({a:2}).end()
+  return {res1, res2}
+}
+```
+
 ## 聚合表达式@aggregate-expression
 
 表达式可以是字段路径、常量、或数据库运算方法。表达式可以嵌套表达式。

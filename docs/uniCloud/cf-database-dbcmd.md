@@ -121,8 +121,8 @@ The query operator is used to express a logical "or" relationship, indicating th
 
  
 ```js
-let res = await const dbCmd = db.command
-db.collection('todo').where({
+const dbCmd = db.command
+let res = await db.collection('todo').where({
   progress: dbCmd.gt(80).or(dbCmd.lt(20))
 }).get()
 ```

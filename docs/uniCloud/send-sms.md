@@ -190,6 +190,7 @@ exports.main = async (event, context) => {
 【uniID】“DCloud”验证码：123456，3分钟内有效，请勿泄露并尽快验证。
 ```
 
+
 ### 发送失败注意@fail
 
 - data内如果有`测试`、`test`等字样，系统可能会被判定为测试用途，不会真正把短信下发到对应手机（此行为由运营商控制，可能真实发送，也可能不发送） 
@@ -209,6 +210,16 @@ exports.main = async (event, context) => {
 
 更多问题：欢迎加入<a class="join-group-chat" target="_blank" href="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/69a69072-8874-4ec1-bc0f-6f820f3919ee.png">DCloud短信技术交流群	<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/69a69072-8874-4ec1-bc0f-6f820f3919ee.png">
 </a>咨询
+
+
+### 短信费用说明@sms-fee
+
+- 短信费用为：0.036元/条，但在实际使用中需要依赖`uniCloud`云服务，在阿里云商业化后，每条大约需要多花0.0000139元，几乎可以忽略不计，详情查看[短信及一键登录性价比测评](uniCloud/sms-and-unilogin-evaluation.md)。
+- 计费条数计算方法：短信内容少于70个字符（每个汉字、标点、空格、字母均算一个字符）算作1条短信，短信内容多于70个字符时，每67个字符算作一条短信，并向上取整（不足67个字符的部分也算做1条）。 例： 短信内容有 100个字符时计费短信条数应为 100 / 67 ≈ 1.49 向上取整后算作2条。
+- 最终按照成功回执状态为"成功"的短信条数计费，成功回执状态可在"发送记录"页面查看。
+
+特别注意：短信成功回执最长延迟为72小时。
+
 
 <style>
 	.join-group-chat{

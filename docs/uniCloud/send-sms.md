@@ -7,7 +7,7 @@ keyword: 短信,sms
 
 > 自`HBuilderX 3.3.0`起，本接口支持传入phoneList参数批量发送短信，其他参数均于发送单条短信相同
 
-> 自`HBuilderX 3.4.0`起云函数需启用uni-cloud-sms之后才可以调用sendSms接口，详细说明见：[云函数使用短信扩展库](#extension)
+> 自`HBuilderX 3.4.0`起云函数需启用扩展库uni-cloud-sms之后才可以调用sendSms接口，详细说明见：[云函数使用短信扩展库](#extension)
 
 自HBuilderX 2.8.1起，uniCloud内置了短信发送API。给开发者提供更方便、更便宜的短信发送能力。
 
@@ -207,6 +207,7 @@ exports.main = async (event, context) => {
 - 发送短信前，如果需要图形验证码来防止机刷，可以使用[uni-captcha图形验证码](https://ext.dcloud.net.cn/plugin?id=4048)。在[uni-id-pages](uni-id-pages.md)模板中已经集成了uni-id、uni-captcha
 - Android手机在App端获取短信验证码，参考：[https://ask.dcloud.net.cn/article/676](https://ask.dcloud.net.cn/article/676)
 - 短信内容超过70个字符时为长短信，需分条发送，每67个字按一条短信计算
+- App平台的短信验证码需求，建议优先通过App一键登陆来替代，更便捷、更便宜。[详见](univerify.md)
 
 更多问题：欢迎加入<a class="join-group-chat" target="_blank" href="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/69a69072-8874-4ec1-bc0f-6f820f3919ee.png">DCloud短信技术交流群	<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/69a69072-8874-4ec1-bc0f-6f820f3919ee.png">
 </a>咨询
@@ -214,7 +215,10 @@ exports.main = async (event, context) => {
 
 ### 短信费用说明@sms-fee
 
-- 短信费用为：0.036元/条，但在实际使用中需要依赖`uniCloud`云服务，在使用阿里云正式版后，每条大约需要多花0.0000139元，几乎可以忽略不计，费用计算详见[短信及一键登录资源消耗评估](uniCloud/aliyun-migrate-business.md#sms-unilogin-fee)。
+- 短信费用为：0.036元/条。
+
+但在实际使用中需要依赖`uniCloud`云服务。如使用uniCloud阿里云商业版，每条大约需要多花0.0000139元，几乎可以忽略不计。您也可以粗略认为每条短信的费用为0.0360139元/条。费用计算详见[短信及一键登录资源消耗评估](uniCloud/aliyun-migrate-business.md#sms-unilogin-fee)。
+
 - 计费条数计算方法：短信内容少于70个字符（每个汉字、标点、空格、字母均算一个字符）算作1条短信，短信内容多于70个字符时，每67个字符算作一条短信，并向上取整（不足67个字符的部分也算做1条）。 例： 短信内容有 100个字符时计费短信条数应为 100 / 67 ≈ 1.49 向上取整后算作2条。
 - 最终按照成功回执状态为"成功"的短信条数计费，成功回执状态可在"发送记录"页面查看。
 

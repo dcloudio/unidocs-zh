@@ -42,8 +42,7 @@ With unipush, developers should no longer use other push schemes. However, we fo
 - 常见误解 1：“uniPush的专业性，和专业的个推、极光等服务可相比吗？”
 - Common Misunderstanding 1: "Is uniPush's professionalism comparable to professional personal push, Aurora and other services?"
 
-  答：uniPush 是由个推将其本来收费的 vip push 产品，免费提供给了 DCloud 的开发者。它与个推 vip push 的只有 2 个区别：
-  A: uniPush is a vip push product that Gentuo originally paid for and provided it to DCloud developers for free. There are only 2 differences between it and a vip push:
+  答：uniPush 是由个推将其本来收费的 push 产品，其中重要VIP部分功能免费提供给了DCloud的开发者。它与个推 vip push 的只有 2 个区别：
 
   - 免费
   - free

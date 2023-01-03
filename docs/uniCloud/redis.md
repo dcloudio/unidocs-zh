@@ -2166,7 +2166,7 @@ member 移除成功返回 1，member 不是 source 集合成员，并且没有�
 **示例**
 
 ```js
-await redis.sadd('key', 'a', 'b', 'c')
+await redis.sadd('source', 'a', 'b', 'c')
 await redis.smove('source', 'destination', 'a') // 返回 1
 ```
 

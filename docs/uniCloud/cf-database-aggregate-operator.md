@@ -315,32 +315,41 @@ let res = await db.collection('sales').aggregate()
 
       
 ####  API 说明
- 语法如下：  
-
- 
-```js
-db.command.aggregate.ln(<number>)
-```
-`<number>` 可以是任意解析为非负数字的表达式。  
-
- `ln` 等价于 `log([<number>, Math.E])`，其中 `Math.E` 是 `JavaScript` 获取 `e` 的值的方法。  
-
- 
-####  示例代码
- 
-####  db.command.aggregate.ln
- 
-计算给定数字在自然对数值。  
 
 语法如下：  
 
- 
 ```js
 db.command.aggregate.ln(<number>)
 ```
 `<number>` 可以是任意解析为非负数字的表达式。  
 
- `ln` 等价于 `log([<number>, Math.E])`，其中 `Math.E` 是 `JavaScript` 获取 `e` 的值的方法。
+`ln` 等价于 `log([<number>, Math.E])`，其中 `Math.E` 是 `JavaScript` 获取 `e` 的值的方法。  
+
+ 
+####  示例代码
+
+假设集合 curve 有如下记录：
+```js
+{ _id: 1, x: 1 }
+{ _id: 2, x: 2 }
+{ _id: 3, x: 3 }
+```
+计算 ln(x) 的值：
+```js
+const $ = db.command.aggregate
+let res = await db.collection('curve').aggregate()
+  .project({
+    log: $.ln('$x')
+  })
+  .end()
+```
+返回结果如下：
+```js
+{ _id: 1, ln: 0 }
+{ _id: 2, ln: 0.6931471805599453 }
+{ _id: 3, ln: 1.0986122886681098 }
+```
+
 
 ### log
 

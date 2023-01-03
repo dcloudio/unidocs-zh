@@ -239,4 +239,4 @@ exports.main = async function (event){
 
 ### 一键登录费用说明@unilogin-fee
 
-- 0.02元/次，失败不计费，但在实际使用中需要依赖`uniCloud`云服务，在阿里云商业化后，每条大约需要多花0.0000139元，几乎可以忽略不计，详情查看[短信及一键登录性价比测评](uniCloud/sms-and-unilogin-evaluation.md)
+- 0.02元/次，失败不计费，但在实际使用中需要依赖`uniCloud`云服务，在阿里云商业化后，每条大约需要多花0.0000139元，几乎可以忽略不计，费用计算详见[短信及一键登录资源消耗评估](uniCloud/aliyun-migrate-business.md#sms-unilogin-fee)。

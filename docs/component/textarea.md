@@ -30,7 +30,7 @@
 |ignoreCompositionEvent|boolean|true|是否忽略组件内对文本合成系统事件的处理。为 `false` 时将触发 `compositionstart、compositionend、compositionupdate` 事件，且在文本合成期间会触发 `input` 事件|App-vue (3.4.4+)、H5 (3.4.4+)、App-nvue不支持|
 |@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（HBuilderX 2.0+ [nvue uni-app模式](http://ask.dcloud.net.cn/article/36074)） 、QQ小程序支持 height|
 |@blur|EventHandle||输入框失去焦点时触发，event.detail = {value, cursor}|快手小程序不支持|
-|@linechange|EventHandle||输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0}|字节跳动小程序、飞书小程序、快手小程序不支持,nvue ios暂不支持|
+|@linechange|EventHandle||输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0}|字节跳动小程序、飞书小程序、快手小程序不支持|
 |@input|EventHandle||当键盘输入时，触发 input 事件，event.detail = {value, cursor}， @input 处理函数的返回值并不会反映到 textarea 上|快手小程序不支持|
 |@confirm|EventHandle||点击完成时， 触发 confirm 事件，event.detail = {value: value}|微信小程序、百度小程序、QQ小程序、京东小程序|
 |@keyboardheightchange|Eventhandle||键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}|微信小程序基础库2.7.0+、App 3.1.0+|
@@ -48,7 +48,7 @@
 |done|右下角按钮为“完成”|
 
 **示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/textarea/textarea)
- 
+
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/textarea/textarea

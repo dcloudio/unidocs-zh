@@ -1,6 +1,11 @@
 # UTS 组件开发
 
+本文旨在帮助开发者，使用UTS开发Uni-App平台组件功能。
+
+
 ## 1 前置条件
+
+继续阅读文档前，开发者需要了解以下前置条件：
 
 + HBuilderX 3.6.15 及之后版本
 
@@ -8,23 +13,29 @@
 
 + 目前仅支持nvue
 
-## 2 组件概述
+## 2 了解UTS组件是什么
 
 ### 2.1 UTS组件简介
 
 组件是一种独立，可复用的UI单元，方便单独封装和承担一定的代码逻辑，组件化有利于降低项目的工程复杂度,提升可维护性
 
-UTS组件，即:使用UTS语言在uni平台进行组件开发的技术。 [关于UTS的更多介绍](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
+
+UTS组件，即:使用UTS语言在uni平台进行组件开发的技术。 [UTS的更多介绍](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 
-组件约定上采用了类Vue组件的语法，[关于Vue组件的更多介绍](https://cn.vuejs.org/guide/essentials/component-basics.html)
+UTS组件约定上采用了类Vue组件的语法，[Vue组件的更多介绍](https://cn.vuejs.org/guide/essentials/component-basics.html)，但是具体的约定上会有定制，具体参考第四章节。
 
 
 ### 2.2 UTS组件和Vue组件差异
 
-UTS组件，与传统Vue组件区别在于，它秉承了UTS的跨平台特性，统一的UTS语法，各终端不同的本地产出物。
+UTS组件，与Vue组件区别在于，它秉承了UTS的跨平台特性，统一的UTS语法，各终端不同的本地产出物。
 
 在Android平台会被编译为会被渲染为Android原生View实例，IOS或其他终端平台也是如此。
+
+|				|Vue组件						|uts插件|
+|:------		|:-------					|:--------|
+|开发语言		|js/ts						|uts|
+|组件载体		|WebView内部标签				|编译时生成原生View对象|
 
 
 

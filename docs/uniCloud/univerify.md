@@ -244,3 +244,5 @@ exports.main = async function (event){
 实际使用中需要依赖`uniCloud`云服务，这方面费用如下：在使用阿里云正式版后，每次一键登陆请求大约需要消耗uniCloud费用0.0000139元，几乎可以忽略不计。也可以粗略认为每次使用一键登陆的成本为0.0200139元/次。
 
 费用计算详见[短信及一键登录资源消耗评估](uniCloud/aliyun-migrate-business.md#sms-unilogin-fee)。
+
+很明显一键登陆是比短信验证码更便宜的用户身份验证方式。

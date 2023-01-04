@@ -28,9 +28,8 @@ Also note that offline packaging cannot enjoy paid native plugins in the plugin 
   * 使用发行为混合分包的功能
   * Use the feature that releases as a mixed subpackage
     + 在 HBuilderX 3.1.0+ 中点击发行小程序的菜单，勾选发行混合分包，填写分包目录名称，打包后，将对应目录文件拷贝至已有小程序中，需要自己补充原小程序app.json中的页面或分包配置
-    + In HBuilderX 3.1.0+, click the menu of the distribution applet, check the release mixed subpackage, fill in the subpackage directory name, after packaging, copy the corresponding directory file to the existing applet, you need to supplement the original applet app by yourself Page or subpackage configuration in .json
-    
-      ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/dc4655a0-62e2-11eb-bdc1-8bd33eb6adaa.png)
+      ![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/eec33372-ce0f-409c-94d5-b494614ebb0c.jpg)
+      
       
     + 在 cli 中，执行命令：`npm run build:mp-weixin -- --subpackage=sub1` 或 `yarn build:mp-weixin --subpackage=sub1`
     + In cli, execute the command: `npm run build:mp-weixin -- --subpackage=sub1` or `yarn build:mp-weixin --subpackage=sub1`

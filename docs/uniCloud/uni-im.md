@@ -39,7 +39,7 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 
 # 快速部署体验
 ## 前提条件
-1. 开通uniCloud并创建服务空间 [控制面板](https://unicloud.dcloud.net.cn/home)
+1. 开通uniCloud并创建服务空间 [控制面板](https://unicloud.dcloud.net.cn/)
 2. 开通`uni-push2.0`[详情参考](https://uniapp.dcloud.net.cn/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
 
 ## 体验步骤

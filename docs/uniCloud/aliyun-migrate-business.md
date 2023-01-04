@@ -171,11 +171,7 @@ url化访问时不管是默认域名还是自定义域名均和上述转发逻�
 `短信`和`一键登录`业务涉及费用的部分主要是云函数/云对象的使用量、调用次数、和出网流量(如：使用`uni-id-co`或自定义的云函数/云对象来发送短信)。
 接下来，我们对不同资源，分别进行费用评估。
 
-我们按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)列出的按量计费规则，计算一下云函数的资源消耗。
-
-![](https://mp-8ca8132b-2139-4831-aff2-582d4c8385da.cdn.bspapp.com/cloudstorage/8492ba8e-f4c6-45de-abf2-f9d6825ceefb.png)
-
-我们可以简单得出如下公式：
+我们按照uniCloud官网列出的[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)规则，可以简单得出如下公式：
 
 `云函数/云对象费用 = 资源使用量 * 0.000110592  + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8`
 
@@ -228,11 +224,7 @@ url化访问时不管是默认域名还是自定义域名均和上述转发逻�
 
 启用`uni-upgrade-center`升级中心后，你的App每次启动，会请求一次`uni-upgrade-center`云函数。
 
-我们按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)列出的按量计费规则，计算一下云函数的资源消耗。
-
-![](https://mp-8ca8132b-2139-4831-aff2-582d4c8385da.cdn.bspapp.com/cloudstorage/8492ba8e-f4c6-45de-abf2-f9d6825ceefb.png)
-
-我们可以简单得出如下公式：
+我们按照uniCloud官网列出的[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)规则，可以得出如下云函数资源消耗计算公式：
 
 `云函数费用 = 资源使用量 * 0.000110592  + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8`
 

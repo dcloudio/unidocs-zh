@@ -28,25 +28,25 @@ DCloud提供了`uni-forms`前端组件，该组件的表单校验规范完全符
 ### 首先创建“带schema的通讯录”数据表
 1. 登录 [uniCloud控制台](https://unicloud.dcloud.net.cn)，选中“云数据库”
 2. 点击新建数据表
-  ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1ef863ed-d919-46f3-bd01-6092f2ed1e21.jpg)
+  ![](https://web-assets.dcloud.net.cn/unidoc/zh/20210303135233.jpg)
 3. 使用[OpenDB](opendb.md)表模板创建： `opendb-contacts` 通讯录表
-  ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/0e2ee195-05ae-4445-af41-45c41b2da70a.jpg)
+  ![](https://web-assets.dcloud.net.cn/unidoc/zh/02.jpg)
 
 ### schema2code有两种方式
 - 方式1：在HBuilderX中操作
 1.1 下载刚刚创建的通讯录表的schema
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c2ea33f4-8619-41a6-bd14-5f9ce044985d.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/1.%E4%B8%8B%E8%BD%BD%E5%88%9A%E5%88%9A%E5%88%9B%E5%BB%BA%E7%9A%84%E9%80%9A%E8%AE%AF%E5%BD%95%E8%A1%A8%E7%9A%84schema.jpg)
 1.2 项目根目录的 `uniCloud/database/opendb-contacts.schema.json`  文件上点击右键，或者在已打开的 Schema 编辑器点击右键.如果没有该菜单，请在插件市场安装插件：[https://ext.dcloud.net.cn/plugin?id=4684](https://ext.dcloud.net.cn/plugin?id=4684) 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/82f69a99-c652-4cbc-a96b-1cfbe3d40529.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/2.%E5%9C%A8%E5%AF%B9%E5%BA%94%E7%9A%84schema%E6%96%87%E4%BB%B6%E5%8F%B3%E9%94%AE%E7%82%B9%E5%87%BBschema2code.jpg)
 1.3 弹出一个对话框 `schema2code`，选择要导出的项目类型（uni-app用户端项目还是admin管理端项目），以及表字段名（去掉不需要在前端展现或编辑的字段）
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fb49118b-364e-412b-9900-f275803cce37.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/3.11.jpg)
 1.4 点击对话框右下角的确定按钮，将执行导入动作，如果导入的文件和工程中的文件有差异将弹出文件对比框，继续操作并确认导入
 
 - 方式2：在uniCloud web控制台操作
 2.1 选中刚创建好的数据表`opendb-contacts`，点击进入表结构schema界面，点击按钮 “schema2code”
-  ![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3f93a350-2d13-4b8e-afb6-7dc367437b49.jpg)
+  ![](https://web-assets.dcloud.net.cn/unidoc/zh/4.jpg)
 2.2 点击“导入HBuilderX”或“下载zip”按钮，将生成的代码合并到自己的项目中
-  ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/ba87a6b0-1519-11eb-81ea-f115fe74321c.png)
+  ![](https://web-assets.dcloud.net.cn/unidoc/zh/schema-export.png)
 
 上图每个区域的解释如下：
 
@@ -89,7 +89,7 @@ DCloud提供了`uni-forms`前端组件，该组件的表单校验规范完全符
 **全程演示视频**：
 </br>
 <video style="width:50vw;height:28vw;" id="video" preload="none" controls="controls"
-	poster="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a04e1d03-6d9f-43bf-a74b-80e9a5c31d7f.mp4?x-oss-process=video/snapshot,t_1000,f_jpg" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a04e1d03-6d9f-43bf-a74b-80e9a5c31d7f.mp4"></video>
+	poster="https://web-assets.dcloud.net.cn/unidoc/zh/schema2code%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F.mp4?x-oss-process=video/snapshot,t_1000,f_jpg" src="https://web-assets.dcloud.net.cn/unidoc/zh/schema2code%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F.mp4"></video>
 
 
 
@@ -339,7 +339,7 @@ schema2code作为一个插件，有单独的版本号，[详见](https://ext.dcl
 以城市选择举例。
 
 <div align=center>
-  <img style="max-width:550px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/e56e7cc0-50b8-11eb-97b7-0dc4655d6e68.png"/>
+  <img style="max-width:550px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-data-picker.png"/>
 </div>
 
 在这个业务里涉及2个表，一个是用户的地址信息表[uni-id-address](https://gitee.com/dcloud/opendb/tree/master/collection/uni-id-address)，一个是候选的省市区数据表[opendb-city-china](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-city-china)。

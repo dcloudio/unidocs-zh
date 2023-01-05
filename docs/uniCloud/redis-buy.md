@@ -8,7 +8,7 @@
 2. 选择一个服务空间
 3. 选择左侧redis菜单，选择实例并购买即可
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3a29e715-827d-43bb-b61b-fcff71cb42f6.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-new.jpg)
 
 **注意**
 
@@ -44,7 +44,7 @@
 
 在uniCloud web控制台redis详情页面可以对redis实例进行续费操作。
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d848dd0a-15aa-46ec-89f9-84ade9721246.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-renew.jpg)
 
 实例到期后的第1~7天，实例状态为被禁用，无法被访问。如需继续使用，您需要及时为实例续费
 

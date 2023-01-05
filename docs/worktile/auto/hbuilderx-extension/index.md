@@ -27,7 +27,7 @@
 
 如下图所示，在插件市场，进入[插件详情页](https://ext.dcloud.net.cn/plugin?id=5708)，点击【导入插件】，会自动拉起本地安装的HBuilderX。
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/49342aa6-62c8-4b28-8ba7-00f8cff29b9c.jpeg" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/plugins_install_1.jpeg" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
 
 > 特别注意：插件安装，依赖HBuilderX 终端插件。
 
@@ -52,7 +52,7 @@ uni-app普通项目，`初始化测试环境`或`运行测试`时，如果未安
 
 注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ca0f9ce4-1d45-4103-9800-36a1608062d4.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/env_install.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 
 ### uniapp-cli项目@cli
 
@@ -67,13 +67,13 @@ npm install --save cross-env puppeteer adbkit node-simctl jest playwright @playw
 
 uni-app项目，pages页面，右键菜单，创建测试用例
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/2b15f277-5a79-425e-b978-19e16d3062f5.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 15px;"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/testcase_create.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 15px;"/>
 
 ## 测试运行@test-run
 
 创建测试用例之后，选中项目，右键菜单【运行uni-app自动化测试】，选择运行平台，即可开始运行测试。
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/97a253eb-6c10-4b4d-a66f-1b45de1acc59.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 10px;"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/run_test.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 10px;"/>
 
 **注意**：如果要运行指定的测试用例，请在项目管理器**选中**要运行的用例，右键菜单【运行当前测试用例】
 
@@ -88,20 +88,20 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 
 如下图所示，运行测试时，支持选择对应平台。
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/856d6345-3274-4856-8830-3bccfcc9d747.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/test_platforms.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
 
 ### 选择设备@select-devices
 
 > 如果无法获取到设备信息，请[参考](tutorial/run/run-app-faq.md)
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/48721bc9-247c-461c-b6f8-8fca1838b734.png" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/select_devices.png" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
 
 
 ## 插件配置@extension-config
 
 点击菜单【设置】【插件配置】，找到hbuilderx-for-uniapp-test项，即可看到设置项。
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/3a04e761-bb25-4c0e-addc-802f02bd38c6.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/plugins_settings.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
 
 **如上图**
 
@@ -151,7 +151,7 @@ describe("sum test", () => {
 
 编写测试用例，检查`index.vue`页面，标题是否为`Hello`
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ffe6294f-77b7-4e53-9e10-649381b2206c.jpg" style="zoom: 50%;border: 1px solid #eee;border-radius: 20px;"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uniapp-test-example.jpg" style="zoom: 50%;border: 1px solid #eee;border-radius: 20px;"/>
 
 ```js
 describe('test title', () => {

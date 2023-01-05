@@ -1,4 +1,4 @@
-#### 宽屏适配指南
+### 宽屏适配指南
 
 uni-app是以移动为先的理念诞生的。从uni-app 2.9起，提供了PC等宽屏的适配方案，完成了全端统一。
 
@@ -296,7 +296,7 @@ uni-app理论上不限定浏览器。在HBuilderX 2.9发版时，就新闻示例
 
 当然还可以在iframe旁边放置二维码，提供手机版扫码地址，例如：
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/979f7940-12ba-11eb-b680-7980c8a877b8.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/hello-uni-pc.png)
 
 #### 通过electron打包为windows、mac、linux客户端
 

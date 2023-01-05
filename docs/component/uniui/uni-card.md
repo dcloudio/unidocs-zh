@@ -39,7 +39,7 @@
 使用 `thumbnail` 属性设置卡片标题左略缩图
 
 ```html
-<uni-card title="基础卡片" sub-title="副标题" extra="额外信息" thumbnail="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png">
+<uni-card title="基础卡片" sub-title="副标题" extra="额外信息" thumbnail="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png">
 	<text>这是一个带头像和双标题的基础卡片，此示例展示了一个完整的卡片。</text>
 </uni-card>
 ```
@@ -60,7 +60,7 @@
 
 
 ```html
-<uni-card cover="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png">
+<uni-card cover="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png">
 	<text>这是一个带封面和操作栏的卡片示例，此示例展示了封面插槽和操作栏插槽的用法。</text>
 	<template v-slot:actions>
 		<view class="card-actions">
@@ -251,8 +251,8 @@
 		components: {},
 		data() {
 			return {
-				cover: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
-				avatar: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png',
+				cover: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
+				avatar: 'https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png',
 				extraIcon:{
 					color: '#4cd964',
 					size: '22',

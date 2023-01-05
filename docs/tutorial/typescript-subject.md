@@ -73,7 +73,7 @@ uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn
 
 改造 uni-badge.vue
 
-```javascript
+```ts
 <script lang="ts">
     // 仅展示需要修改的核心代码，完整代码请参考原来的组件。
 	import Vue from 'vue';
@@ -116,9 +116,9 @@ uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn
 
 在 index.vue 中引用 uni-badge 组件
 
-```javascript
+```ts
 <script lang="ts">
-    import Vue from 'vue';
+	import Vue from 'vue';
 	import uniBadge from '../../components/uni-badge.vue';
 	export default Vue.extend({
 		data() {

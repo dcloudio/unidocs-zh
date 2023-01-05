@@ -17,13 +17,13 @@ pageClass: custom-page-class
     <div class="flex-img-group-view">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7c946930-bcf2-11ea-b997-9918a5dda011.png" width="160" />
+          <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-android.png" width="160" />
         </div>
         <b>Android版</b>
       </a>
       <a href="https://itunes.apple.com/cn/app/hello-uni-app/id1417078253?mt=8" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7c910dd0-bcf2-11ea-b680-7980c8a877b8.png" width="160" />
+          <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ios.png" width="160" />
         </div>
         <b>iOS版</b>
       </a>
@@ -40,11 +40,11 @@ pageClass: custom-page-class
     </div>
     <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"><img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/30112940-bcf2-11ea-a30b-e311646dfaf2.png" width="160" /></div>
+        <div class="barcode-img-box"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/alipay1.png" width="160" /></div>
         <b>支付宝小程序版</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"><img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/e7fc6700-bcf1-11ea-b680-7980c8a877b8.png" width="160" /></div>
+        <div class="barcode-img-box"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/baidu-uniapp.png" width="160" /></div>
         <b>百度小程序版</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
@@ -74,36 +74,36 @@ pageClass: custom-page-class
         <b>360小程序</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/04cb978b-070f-4122-b374-cb3cd9f9528f.png" width="160" /></div>
+        <div class="barcode-img-box"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/mp-kuaishou-new.png" width="160" /></div>
         <b>快手小程序版</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/0daa3f31-47aa-4a9b-bd2f-6d3a7a968bd5.png" width="160" /></div>
+        <div class="barcode-img-box"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/lark-qr-code.png" width="160" /></div>
         <b>飞书小程序版</b>
       </a>
     </div>
     <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/25463394-c584-4f68-bd57-6e05c43d55a7.png" width="160" />
+          <img src="https://web-assets.dcloud.net.cn/unidoc/zh/dingding-qr-code.png" width="160" />
         </div>
         <b>钉钉小程序版</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/96e072fe-f338-46bd-b2d7-7b3aac7df501.png" width="160" />
+          <img src="https://web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
         </div>
         <b>京东小程序版</b>
       </a>
       <a href="javascript:void(0)" οnclick="js_method()"  class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img style="opacity: 0;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/96e072fe-f338-46bd-b2d7-7b3aac7df501.png" width="160" />
+          <img style="opacity: 0;" src="https://web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
         </div>
         <b></b>
       </a>
       <a href="javascript:void(0)" οnclick="js_method()" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img style="opacity: 0;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/96e072fe-f338-46bd-b2d7-7b3aac7df501.png" width="160" />
+          <img style="opacity: 0;" src="https://web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
         </div>
         <b></b>
       </a>
@@ -119,9 +119,9 @@ pageClass: custom-page-class
 
 我们精心准备了一个简单的十分钟介绍视频，方便你快速了解`uni-app`的主要特征：
 
-<!-- <video id="video" onplay="videoPlay()" preload="none" controls="controls" width="100%" poster="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/poster.png" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/78e4ebc0-54be-11eb-a16f-5b3e54966275.mp4"></video> -->
+<!-- <video id="video" onplay="videoPlay()" preload="none" controls="controls" width="100%" poster="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/poster.png" src="https://web-assets.dcloud.net.cn/unidoc/zh/DCloud.mp4"></video> -->
 
-<video id="video" onplay="videoPlay()" preload="none" controls="controls" width="100%" poster="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/9d299680-555d-11eb-8a36-ebb87efcf8c0.jpg" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a876efc0-4f35-11eb-97b7-0dc4655d6e68.mp4"></video>
+<video id="video" onplay="videoPlay()" preload="none" controls="controls" width="100%" poster="https://web-assets.dcloud.net.cn/unidoc/zh/dcloudPoster.jpg" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20200317%20(3).mp4"></video>
 
 ## 为什么要选择uni-app？
 
@@ -130,7 +130,7 @@ pageClass: custom-page-class
 <div class="uniapp-home-content">
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/9c70d280-4f36-11eb-8a36-ebb87efcf8c0.png">
+        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/12x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">开发者/案例数量更多</h5>
@@ -140,7 +140,7 @@ pageClass: custom-page-class
     </div>
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/9d2b6ff0-4f36-11eb-b680-7980c8a877b8.png">
+        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/22x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">平台能力不受限</h5>
@@ -150,7 +150,7 @@ pageClass: custom-page-class
     </div>
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/9e0d6b80-4f36-11eb-97b7-0dc4655d6e68.png">
+        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/32x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">性能体验优秀</h5>
@@ -161,7 +161,7 @@ pageClass: custom-page-class
     </div>
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/9f01dda0-4f36-11eb-8a36-ebb87efcf8c0.png">
+        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/42x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">周边生态丰富</h5>
@@ -172,7 +172,7 @@ pageClass: custom-page-class
     </div>
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/9fc22060-4f36-11eb-bdc1-8bd33eb6adaa.png">
+        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/52x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">学习成本低</h5>
@@ -181,7 +181,7 @@ pageClass: custom-page-class
     </div>
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a09723a0-4f36-11eb-97b7-0dc4655d6e68.png">
+        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/62x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">开发成本低</h5>
@@ -210,14 +210,14 @@ pageClass: custom-page-class
 
 从下面`uni-app`功能框架图可看出，`uni-app`在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29448a55-2785-4296-9248-913dbda9de7f.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-function-diagram.png)
 
 ## 一套代码，运行到多个平台
 
 `uni-app`实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、web、微信开发者工具、支付宝小程序Studio、百度开发者工具、字节跳动开发者工具、QQ开发者工具（底部每个终端选项卡，代表1个终端模拟器）：
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/efd8e280-60a9-11eb-a16f-5b3e54966275.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/dev1x8.jpg)
 
 实际运行效果如下（点击图片可放大）：
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ec6e95dd-77ad-4d14-aafa-ca503f5b9e53.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)

@@ -65,7 +65,7 @@ uniCloud同时支持阿里云和腾讯云，它们的数据库大体相同，有
 
 比如我们创建一个简历表，名为 `resume`。点击上方右侧的 创建 按钮即可。
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e8ca747e-d39f-4da2-8a82-733f9d486cb0.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/createtablebywebconsole2.jpg)
 
 新建表时，支持选择现成的 [opendb](opendb.md) 表模板，选择一个或多个模板表，可以点击右下方按钮创建。
 
@@ -102,13 +102,13 @@ record可以增删改查、排序统计。后续有API介绍。
 }
 ```
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/cf0ffb14-c81d-486f-a687-55f84bc99969.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/newrecordebywebconsole.jpg)
 
 创建一条新记录，是不管在web控制台创建，还是通过API创建，每条记录都会自带一个`_id`字段用以作为该记录的唯一标志。
 
 `_id`字段是每个数据表默认自带且不可删除的字段。同时，它也是数据表的索引。
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7ed5185c-cfcd-461b-a178-5516e9937798.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/recordcontent.jpg)
 
 阿里云使用的是标准的mongoDB，`_id`是自增的，后创建的记录的`_id`总是大于先生成的`_id`。传统数据库的自然数自增字段在多物理机的大型数据库下很难保持同步，大型数据库均使用`_id`这种长度较长、不会重复且仍然保持自增规律的方式。
 
@@ -141,7 +141,7 @@ record可以增删改查、排序统计。后续有API介绍。
 
 **在web控制台添加上述索引**
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/fca53140-1d91-11eb-880a-0db19f4f74bb.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/composed-index.jpg)
 
 **注意**
 - 如果记录中已经存在多个记录某字段相同的情况，那么将该字段设为唯一型索引会失败。

@@ -4,7 +4,7 @@
 
 MacOSX HBuilderX 3.6.11+，支持选择标准基座签名后的位置。如下图所示：
 
-<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5971bd01-3960-4c17-afde-c4b23352bb64.jpg" style="zoom: 50%;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/ipa_save.jpg" style="zoom: 50%;" />
 
 **保存在HBuilderX插件目录下**
 

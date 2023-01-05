@@ -14,54 +14,54 @@
 - [中国教育发布(中国教育部官方App )](http://xwapp.moe.gov.cn/h5/sharepage/download.html)[详见报道](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
 
 <a href="http://xwapp.moe.gov.cn/h5/sharepage/download.html" target="_blank">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/777555f6-d237-47bb-9677-f8cd8d4761cb.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/10.png">
 </a>
 
 
-- [鲸鱼解忧馆](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png) 一个通过交流与诉说以消除烦恼的平台。
+- [鲸鱼解忧馆](https://web-assets.dcloud.net.cn/unidoc/zh/123.png) 一个通过交流与诉说以消除烦恼的平台。
 我们的愿望是每个用户在这里写下烦恼后能够得到解答与回应，并且找到与自己拥有同样烦恼的人和群体。
 也许回应不会那么迅速，但总归会得到暖心的回复。答案难道不是一种值得期待的事情吗？
 也许“答案”不是那么“准确”，因为人与人的心理与性格各异。但我们初心的是引导你走出心里的围墙。
 一个无需过多言语便懂你的慢社交轻社区。
 
-<a href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png" target="_blank">
-<img width="800" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png">
+<a href="https://web-assets.dcloud.net.cn/unidoc/zh/123.png" target="_blank">
+<img width="800" src="https://web-assets.dcloud.net.cn/unidoc/zh/123.png">
 </a>
 
 - [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)
 一个集成了大量商用项目常见功能的，云端一体应用快速开发基本项目模版。
 
 <a href="https://ext.dcloud.net.cn/plugin?id=5057" target="_blank">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/72ccebcc-e9e0-4b9f-9f7b-1249edde3aba.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-starter-img.png">
 </a>
 
 - [合成类网赚游戏](https://ext.dcloud.net.cn/plugin?id=4095) 该款网赚游戏是基于uni-app、uniCloud、uni-AD开发的合成类项目，源码和文档完全开放。
 游戏主要功能：玩家通过签到等方式赚取金币，使用金币购买低等级猫然后合成为更高等级猫。金币不足时，通过观看激励视频广告，获取新的金币。玩家通过邀请好友一起养猫，下线观看激励视频，邀请者可获得激励红包。
 
 <a href="https://ext.dcloud.net.cn/plugin?id=4095">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/04ab1423-4dd6-48a8-a4ae-53012684b2ae.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/cat-ad.png">
 </a>
 
 - [猜歌类网赚游戏](https://ext.dcloud.net.cn/plugin?id=4826) 该游戏基于uni-app、uniCloud、uni-AD开发的小游戏，通过猜歌曲、观看广告赚取现金奖励。代码开源、文档公开。
 游戏主要功能：玩家可以通过猜歌、做任务等方式直接获取现金奖励。玩家可以通过猜歌、拆红包、做任务等方式获取金币奖励，当金币累积到一定数量可以兑换现金。玩家可以通过做带有抽奖字样的任务获取现金抽奖次数。支持App和微信小程序双平台变现。
 
 <a href="https://ext.dcloud.net.cn/plugin?id=4826">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-c26ec39a-f602-435d-b8bb-0453aa221eb0/b4812d7a-6438-4c33-89de-e2dc9752b028.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/song-game.png">
 </a>
 
 
 - [猜字谜](https://ext.dcloud.net.cn/plugin?id=7996) 该游戏基于猜歌类网赚游戏改版，代码开源、文档公开，支持App和微信小程序双平台变现。
 
 <a href="https://ext.dcloud.net.cn/plugin?id=7996">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e4482b33-43b1-4279-8a2a-d29e24b55a89.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/caizimi.png">
 </a>
 
 
 - 俄钓宝典 (微信小程序)，俄罗斯钓鱼4游戏助手，游戏攻略、实时点位、游戏资料库、游戏圈子等等应有尽有
 
-<a href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/df33b3c9-1c69-4020-933e-6a840ea42124.jpg
+<a href="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BF%84%E9%92%93%E5%AE%9D%E5%85%B8qrcode.jpg
 ">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ce5cd6be-f446-4df4-b7c7-30f3a83a6064.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BF%84%E9%92%93%E5%AE%9D%E5%85%B8.png">
 </a>
 
 
@@ -84,7 +84,7 @@
 
 - 安心记待办：极简风手机应用。日程管理App，每日心情记录，安心习惯养成。[iOS App](https://apps.apple.com/cn/app/id1641634853)
 <a href="https://apps.apple.com/cn/app/id1641634853" target="_blank">
-  <img width="600" src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c7fa0cd4-32f8-4b48-b3e0-ef7013c137c1.png">
+  <img width="600" src="https://web-assets.dcloud.net.cn/unidoc/zh/resource-anxinji-todo.png">
 </a>
 
 更多uniClouid项目和插件，见**插件市场**：[https://ext.dcloud.net.cn/?cat1=7](https://ext.dcloud.net.cn/?cat1=7)

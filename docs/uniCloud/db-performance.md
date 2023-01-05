@@ -67,7 +67,7 @@ sample操作在大数据量高频触发时会响应缓慢，使用前请务必�
 
 如果遇到终端用户反馈接口响应慢/超时，请查看[uniCloud web控制台](https://unicloud.dcloud.net.cn/)上是否有慢查询日志。如果有慢查询日志请参考本文档进行优化。
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6fc59690-4cc5-4dfd-ade2-d1f83b23cad5.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/db-slow.jpg)
 
 一个典型的慢查询日志包含以下信息
 

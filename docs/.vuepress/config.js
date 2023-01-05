@@ -13,7 +13,7 @@ const config = {
     ['link', {
       rel: 'shortcut icon',
       type: 'image/x-icon',
-      href: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d23e842c-58fc-4574-998d-17fdc7811cc3.png?v=1556263038788'
+      href: 'https://web-assets.dcloud.net.cn/unidoc/zh/icon.png?v=1556263038788'
     }],
     ['script', { src: `/js/redirect.js?${Date.now()}&v=${Date.now()}&version=${Date.now()}` }],
     ['script', { src: 'https://hm.baidu.com/hm.js?fe3b7a223fc08c795f0f4b6350703e6f' }]
@@ -24,8 +24,8 @@ const config = {
     }
   },
   themeConfig: {
-    titleLogo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1ae87107-2943-4ba6-be2b-390ca27c6260.png',
-    logo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5a7f902b-21a7-4822-884f-925219eacc4b.png',
+    titleLogo: 'https://web-assets.dcloud.net.cn/unidoc/zh/uni-app.png',
+    logo: 'https://web-assets.dcloud.net.cn/unidoc/zh/logo.png',
     // TODO use plugin/theme
     sidebar: createSidebar(tabs),
     sidebarDepth: 0,

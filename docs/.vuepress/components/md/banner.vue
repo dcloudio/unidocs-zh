@@ -20,11 +20,11 @@
 		data() {
 			return {
 				images: [
-					'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/41136990-4f3e-11eb-8ff1-d5dcf8779628.png',
-					'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/3ecf6d00-4f3e-11eb-8ff1-d5dcf8779628.png',
-					'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/3df62400-4f3e-11eb-8ff1-d5dcf8779628.png',
-					'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/3f872440-4f3e-11eb-8a36-ebb87efcf8c0.png',
-					'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/40596860-4f3e-11eb-bdc1-8bd33eb6adaa.png',
+					'https://web-assets.dcloud.net.cn/unidoc/zh/case6.png',
+					'https://web-assets.dcloud.net.cn/unidoc/zh/case2.png',
+					'https://web-assets.dcloud.net.cn/unidoc/zh/case1.png',
+					'https://web-assets.dcloud.net.cn/unidoc/zh/case3.png',
+					'https://web-assets.dcloud.net.cn/unidoc/zh/case4.png',
 				],
 			};
 		},
@@ -194,7 +194,7 @@
 		-webkit-transform: translateY(-50%);
 		z-index: 20;
 		display: none;
-		background-image: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d2c41062-9e93-478f-9c06-06778b0f2c84.png);
+		background-image: url(https://web-assets.dcloud.net.cn/unidoc/zh/arrow.png);
 	}
 
 	.banner .slider-btn.slider-btn-left {

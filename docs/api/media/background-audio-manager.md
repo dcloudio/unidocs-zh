@@ -62,7 +62,7 @@ errCode 说明
 const bgAudioManager = uni.getBackgroundAudioManager();
 bgAudioManager.title = '致爱丽丝';
 bgAudioManager.singer = '暂无';
-bgAudioManager.coverImgUrl = 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/7fbf26a0-4f4a-11eb-b680-7980c8a877b8.png';
+bgAudioManager.coverImgUrl = 'https://web-assets.dcloud.net.cn/unidoc/zh/music-a.png';
 bgAudioManager.src = 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-hello-uniapp/2cc220e0-c27a-11ea-9dfb-6da8e309e0d8.mp3';
 ```
 

@@ -25,7 +25,7 @@ Hello uniCloud 的源码地址：[https://ext.dcloud.net.cn/plugin?id=4082](http
 	- 初次体验推荐阿里云，因为腾讯云的开户流程更复杂。
 	- 推荐使用vue3版本，因为编译速度更快。但注意不支持低版本Android。
 	<div align=center>
-	  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9623d950-5652-493e-9e0f-7c9aa846f6f3.jpg"/>
+	  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/create-unicloud.jpg"/>
 	</div>
 2. HBuilderX 会在项目创建后弹出 uniCloud初始化向导，根据向导部署
 	- 按照法律要求，开通云服务器需实名认证，如未认证请根据提示完成
@@ -63,7 +63,7 @@ Hello uniCloud 的源码地址：[https://ext.dcloud.net.cn/plugin?id=4082](http
 在`uniCloud/cloudfunctions`目录右键创建云函数/云对象
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/a18b3bb0-53d8-11eb-8ff1-d5dcf8779628.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/createFun-a.jpg"/>
 </div>
 
 - 创建云函数后，生成一个目录，该目录下自动生成index.js，是该云函数的入口文件，不可改名。

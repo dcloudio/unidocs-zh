@@ -499,7 +499,7 @@ rewardedVideoAd.load()
 
 ### 监听用户关闭广告
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/24d1db60-441f-11eb-bd01-97bc1429a9ff.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rewarded-video-close.png)
 
 只有在用户点击激励视频广告组件上的 关闭广告 按钮时，广告才会关闭。这个事件可以通过 `RewardedVideoAd.onClose()` 监听。
 
@@ -535,7 +535,7 @@ App平台 3.1.15+ 支持穿山甲/优量汇/快手
 相对来讲服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
 
 
-![激励视频回调](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a1bf0617-c59a-4904-a902-e9c8888855d6.png)
+![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
 
 
 如何使用

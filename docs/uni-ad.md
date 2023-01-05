@@ -30,7 +30,7 @@
 3. 更快结算
   - 默认每月4日、19日两次结算。扫描联系商务申请更短结算周期
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e5e4a83a-8a05-40a1-978d-471871f939a6.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
 
 ### 开通配置广告步骤@start
 

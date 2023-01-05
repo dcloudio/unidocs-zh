@@ -155,7 +155,7 @@ _注：以上例子仅用于方便初学者理解。实际开发中对于简单�
 
 云对象，其实是对云函数的封装。和创建云函数一样，在`uniCloud/cloudfunctions`目录右键新建云函数，选择云对象类型，输入云对象名称创建云对象，此处以云对象todo为例，创建的云对象包含一个`index.obj.js`。
 
-![创建云对象](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1c2bff0e-3c93-4417-bc21-90a842c779af.jpg)
+![创建云对象](https://web-assets.dcloud.net.cn/unidoc/zh/uni-cloud-object-new.jpg)
 
 一个空的云对象内容如下
 
@@ -841,7 +841,7 @@ method1(param1) {
 ```
 
 调用该方法时可以看到代码提示：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a94aa7c2-daa6-4bcb-a74c-d0e5c5c58b12.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/cloudobjjsdoc1.jpg)
 
 ## 在云对象中使用cookie
 

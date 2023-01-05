@@ -2,7 +2,7 @@
 
 > HBuilderX 3.3.7+, uni-app 发行到微信小程序，支持自动上传代码到微信平台，无需再打开微信开发者工具上传发行
 
-<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f6a5835a-1fcc-4241-a995-11f50240ece8.jpg" style="zoom: 50%;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8F%91%E8%A1%8C.jpg" style="zoom: 50%;" />
 
 通过微信小程序CI，使用上传密钥上传代码，无需打开微信开发者工具，一键完成微信小程序代码的上传、预览等操作。
 

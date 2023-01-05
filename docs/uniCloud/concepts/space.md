@@ -9,7 +9,7 @@
 在 `uniCloud` 目录右键菜单中创建服务空间
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/b16f9740-4c05-11eb-8a36-ebb87efcf8c0.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/create1.jpg"/>
 </div>
 
 创建服务空间后，在同样的 `uniCloud` 目录右键菜单中关联该服务空间。只有项目关联好服务空间后，才能上传云函数、操作服务空间下的数据库、存储等资源。
@@ -40,11 +40,11 @@ web控制台可以新建、删除服务空间，管理线上的服务空间资�
 2. 在服务空间详情页面左侧菜单点击`成员管理`
 3. 输入协作者邮箱并点击`搜索`，下方会出现搜索到的结果，确认无误后点击`添加成员`进行添加
 
-  ![成员管理](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/bd8f298b-b6bb-4de5-b0f5-250b5e27f776.png)
+  ![成员管理](https://web-assets.dcloud.net.cn/unidoc/zh/space-actor-search.png)
   
 4. 下方`成员列表`中可以查看以及移除已添加的协作者
   
-  ![成员列表](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/21fd2c45-1c9d-4698-9c1b-3b9827ce4ec6.png)
+  ![成员列表](https://web-assets.dcloud.net.cn/unidoc/zh/space-actor-list.png)
 
 **注意**
 

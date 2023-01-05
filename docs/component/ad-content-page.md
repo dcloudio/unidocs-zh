@@ -4,7 +4,7 @@
 
 ⼀个视频内容频道，支持上下滑动切换视频内容
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9146fb82-0d0e-4210-804c-93e292f4273e.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-content-page.png)
 
 **平台差异说明**
 

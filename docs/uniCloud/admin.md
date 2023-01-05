@@ -17,7 +17,7 @@ uni-admin 是开源的，遵循 MIT 协议，你可以从[Github](https://github
 ## 看视频，15分钟掌握uni-admin
 
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=13">
-    <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/4332911b-6624-4587-8c77-78b68f1f8c78.jpg" alt="uni-admin视频教程" style="width: 60%;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210826112813.jpg" alt="uni-admin视频教程" style="width: 60%;">
 </a>
 
 
@@ -48,11 +48,11 @@ uni-admin 同时支持 PC 端 和移动端。基础模块是全端可用的，�
 
 PC 端如下图：
 
-![pc](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/c2a69410-15db-11eb-880a-0db19f4f74bb.png)
+![pc](https://web-assets.dcloud.net.cn/unidoc/zh/admin-ui-pc%E5%89%AF%E6%9C%AC.png)
 
 移动端如下图：
 
-<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/2766a010-11d7-11eb-8bd0-2998ac5bbf7e.png" width="375"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/admin-mobile.png" width="375"/>
 
 
 4. 扩展插件
@@ -73,21 +73,21 @@ uni-admin的`一键部署`，会自动上传云函数、创建数据库，并将
 
 1. 在插件市场点击一键部署插件到uniCloud
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c1ce5f01-1f9a-46c5-8bcf-8df458b46e7b.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-0.png)
 
 2. 选择服务空间（目前只支持选择腾讯云服务空间，且不可以是协作者身份，需空间创建者的账号登录）
 
 如需要部署在阿里云空间，则请使用[手动部署](#install)方式
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/113fca82-b4cb-4596-a857-3f325f17be4d.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-1.png)
 
 3. 在此页面隔几分钟刷新点击一下刷新，直到提示部署完成。
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3ea33005-b38d-4ffc-8173-56c6c892b6a2.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-2.png)
 
 4. 部署完成后，点击前端网页默认访问链接即可访问uni-admin
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f017b8d9-69a0-4fc8-9707-4ccdf0c29f00.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-3.png)
 
 ### 手动部署@install
 
@@ -97,11 +97,11 @@ uni-admin的`一键部署`，会自动上传云函数、创建数据库，并将
 
 [HBuilderX](https://www.dcloud.io/hbuilderx.html) 3.0+版本新建 uni-app 项目，选择 uni-admin 项目模板，如下图
 
-![download-admin](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/c2085840-15db-11eb-880a-0db19f4f74bb.png)
+![download-admin](https://web-assets.dcloud.net.cn/unidoc/zh/create-admin.png)
 
 创建完成后，可以跟随`云服务空间初始化向导`初始化项目，创建并绑定云服务空间
 
-![download-admin](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/2baaddd0-11f5-11eb-81ea-f115fe74321c.png)
+![download-admin](https://web-assets.dcloud.net.cn/unidoc/zh/cloud-init.png)
 
 <!-- 除了可视化向导外，也可以从[https://github.com/dcloudio/uni-admin](https://github.com/dcloudio/uni-admin)获取代码。 -->
 
@@ -220,13 +220,13 @@ uni-admin的`一键部署`，会自动上传云函数、创建数据库，并将
 
 > 注意：注册完毕后，建议从登录页面移除该链接
 
-![login](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5553958b-2a38-40e5-8229-0c2ad1f3d224.png)
+![login](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-1.png)
 
 ## 分栏窗体介绍
 
 登录后我们会看到如下窗体, 窗体分为三个部分，topWindow 顶部窗口（导航栏），leftwindow 左侧窗口（菜单栏），右侧的内容主窗体
 
-![index](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/c3591b30-15db-11eb-8ff1-d5dcf8779628.png)
+![index](https://web-assets.dcloud.net.cn/unidoc/zh/pc-admin%E5%89%AF%E6%9C%AC.png)
 
 ### 顶部窗口（导航栏）
 
@@ -352,12 +352,12 @@ $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
 ## 应用管理 <Badge text="uni-admin 1.9.3+" />@app-manager
 
 在进入应用管理后可看到如下界面，点击右上角 `新增` 按钮可新增一个应用
-![新增应用](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/12b0eb73-f791-4cc4-998c-0c95ec97b3fd.png)
+![新增应用](https://web-assets.dcloud.net.cn/unidoc/zh/create_app(1).png)
 
 **整体界面布局**
   > 本页面信息，在应用发布、app升级模块中，都会关联使用，请认真填写
 
-  ![新增页面](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/12198ea2-34eb-4881-8211-f7c1b7caa116.jpg)
+  ![新增页面](https://web-assets.dcloud.net.cn/unidoc/zh/create_app_page.jpg)
 
 **各项信息说明**
 
@@ -416,7 +416,7 @@ $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
 
 uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台，下图为概览图和简介，详见[统计文档](https://uniapp.dcloud.net.cn/uni-stat-v2.html)
 
-![统计-概况页](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/28ddae77-dda6-448f-86aa-7e59bb7c4f8d.png)
+![统计-概况页](https://web-assets.dcloud.net.cn/unidoc/zh/admin3.png)
 
 **1. 全端**
 
@@ -535,19 +535,19 @@ admin 提供了两个内置方法，方便在页面中鉴定登录用户权限�
 - 体验账号：admin      密码：123456
 
 2. 创建权限。在uni-admin左侧菜单的权限管理，新增权限“查询信息”，标识为“read”
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ab997406-d36e-4d42-87ab-339bd5a8a50a.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/admin-permision.jpg)
 3. 创建角色。在左侧菜单的角色管理里，新增角色“普通成员”，标识为“member”，绑定上面的“查询信息”权限
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f3b563b3-3e86-4823-9373-64c9bebdd51c.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/4mutiladmin.jpg)
 4. 创建账户并赋予角色。在左侧菜单的用户管理里，添加用户“张三”，然后给用户赋予角色“普通成员”
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/18676740-4be8-419b-8c12-40559ded1413.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/16f173a2-e889-404b-b509-346d3b929a0d.jpg)
 5. 如果你退出账户，登录刚刚创建的账户张三。我们发现会提示：该账户没有被赋予登录admin系统的权限, 请联系系统管理员绑定角色赋权限。因为：你登录的账户没有访问任何admin系统菜单的权限，所以不能访问admin系统。
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/0b627d45-da68-435b-995b-a191e7330624.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/9mutiladmin.jpg)
 6. 设置有查询信息权限的人，拥有访问admin系统菜单"用户管理"的权限。在左侧菜单的菜单管理里，找到菜单“用户管理”，点修改，在权限列表里勾选“查询信息”，也就是有查询信息权限的人，可以看到本菜单
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/74c48248-d8ae-4427-9abb-8a6c5d54c53d.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/11mutiladmin.jpg)
 7. 这时你用账户“张三”登录，就能进入到admin系统。但你会看到如下图提示“权限校验未通过”。因为刚刚仅为该用户赋予了访问菜单的权限。还未赋予访问uni-id-users表的阅读权限
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/37d1604e-bcb1-4096-a373-90397b9a96c0.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/12mutiladmin.jpg)
 8. 需要在hbuilderx中将表uni-id-users的schema文件中设置新角色的权限，将permission下的read节点配置为`"read": "'read' in auth.permission"`，并上传到云端。当然这在示例项目不能实现，需要你自己搭建admin系统，重复以上步骤，[点此下载uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/81e38081-9507-4e00-bafd-7dab26e9a119.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/d92e3738-f25a-4c46-9ab4-2edbdf92518a.png)
 9. 此时你再刷新页面即可访问用户管理的数据列表
 
 ## icon 图标

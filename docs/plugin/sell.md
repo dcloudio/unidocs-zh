@@ -9,7 +9,7 @@ DCloud插件市场支持对uniCloud插件、原生插件设置付费销售，帮
 
 插件作者在发布uniCloud插件、原生插件时，可自定义售卖价格及形式(uniCloud分类)，见下图：
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9cc1a4a9-bd08-49c3-8062-1611cadd1054.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-publish-set-price.png)
 
 如未设置价格，则默认为免费插件，所有用户均可下载使用；
 
@@ -33,12 +33,12 @@ app原生插件的销售和客户端appid、包名绑定。购买者购买时绑
 
 用户购买插件后，插件作者可以在[销售订单列表](https://ext.dcloud.net.cn/order?pluginId=0&status=10)中查看订单流水：
 
-![]( https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/a0da0432-ba93-46ac-a441-5e353c196cc0.png)
+![]( https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-order-list-new.png)
 
 uniCloud源码授权版需在用户及插件作者双方签署合同后方可购买，合同签署采用`e签宝`线上进行签署，具体流程参见[e签宝介绍](https://ask.dcloud.net.cn/article/37878)。
 
 每天凌晨，系统会自动统计前一天产生的收益，插件作者可登录插件市场后台，查看每天的收益明细。注意：收益分为插件销售收益、插件赞赏收益；
-![]( https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/2debc956-0e3f-4722-8c9c-b73236dd6364.png)
+![]( https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-report-list-new.png)
 
 `Tips：` 好的插件及更好的售后会增加用户打赏的积极性！
 
@@ -46,17 +46,17 @@ uniCloud源码授权版需在用户及插件作者双方签署合同后方可购
 
 DCloud插件市场在每月1日出上月的月度账单，待提现的账单累计金额达到100元以上时可提现，如有多笔待提现账单可针对多笔账单进行合并提现。插件作者可登录插件市场后台，查看[月度账单](https://ext.dcloud.net.cn/manage/payment)：
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/c01c6588-17e8-4ea2-ad76-7ca80dfce79b.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-bill-list.png)
 
 DCloud会收取账单金额的15%做为服务费，然后将剩余款项支付给插件作者，具体参见[插件作者协议](https://ext.dcloud.net.cn/manage/profile)。
 
 申请提现后，如果账号认证为企业认证，提供发票的途径在原有的线下邮寄和发送邮件基础上，新增了电子发票上传功能，插件作者可在[提现记录](https://ext.dcloud.net.cn/manage/payment-detail)中自行上传，电子发票只支持`pdf格式`：
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/95d80128-2345-4f6e-87df-05fc8113af00.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-cash-list.png)
 
 由于DCloud要向插件作者支付款项，故需插件作者提供对应金额的发票给DCloud公司，开票信息及付款规则如下：
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/84fd6647-d614-4425-b660-6297fb7febe5.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-pay-rules.png)
 
 为了更好的服务插件作者，帮助插件作者节税，插件市场引入了`云账户`，参考[云账户介绍](https://ask.dcloud.net.cn/article/37525)。
 

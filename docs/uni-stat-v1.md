@@ -73,7 +73,7 @@ uni统计报表网址：[https://tongji.dcloud.net.cn](https://tongji.dcloud.net
 
 在HBluiderX中先登录，然后在项目根目录打开 `manifest.json`，在可视化界面点击获取 `APPID` 获取，无需其他设置，如下图
 
-![获取appid](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/4e33ea58-4d1b-4a9b-a865-d9ac23009567.png)
+![获取appid](https://web-assets.dcloud.net.cn/unidoc/zh/appid.png)
 
 **方式2. 登录DCoud开发者中心获取(即将支持)**
 

@@ -7,7 +7,7 @@
 每个云函数是一个js包，在云函数被调用时，由 serverless 调度系统分配硬件资源启动一个 node 环境来运行这个云函数。
 
 在HBuilderX中可以新建云函数（HBuilderX 3.4 同时可以新建云对象）。
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/a18b3bb0-53d8-11eb-8ff1-d5dcf8779628.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/createFun-a.jpg)
 
 每个云函数是一个目录，其中普通云函数有`index.js`入口文件，云对象的入口文件则是`index.obj.js`。
 

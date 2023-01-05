@@ -43,7 +43,7 @@ nvue盒模型基于 CSS 盒模型，每个 nvue 元素都可视作一个盒子�
 
 盒模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界 `margin edge`, 边框边界 `border edge`, 内边距边界 `padding edge` 与内容边界 `content edge`。这四层边界，形成一层层的盒子包裹起来，这就是盒模型大体上的含义。
 
-![图片描述文字](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/ec4f2810-2fec-11eb-899d-733ae62bed2f.png)
+![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/flexBox.png)
 
 
 > nvue盒模型的 `box-sizing` 默认为 `border-box`，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。
@@ -59,7 +59,7 @@ nvue盒模型基于 CSS 盒模型，每个 nvue 元素都可视作一个盒子�
 ```html
 	<template>
 		<view>
-			<image style="width: 400rpx; height: 200rpx; margin-left: 20rpx;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/9c877c50-2f0c-11eb-899d-733ae62bed2f.png"></image>
+			<image style="width: 400rpx; height: 200rpx; margin-left: 20rpx;" src="https://web-assets.dcloud.net.cn/unidoc/zh/loveIcon.png"></image>
 		</view>
 	</template>
 ```
@@ -216,7 +216,7 @@ nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一�
 |space-around	|表示 flex 成员项两侧的间隔相等，所以，成员项之间的间隔比成员项与边框的间隔大一倍	|
 
 
-![图片描述文字](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/9610d190-2f17-11eb-97b7-0dc4655d6e68.png)
+![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/justify-content.png)
 
 
 
@@ -232,7 +232,7 @@ nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一�
 |flex-end	|下对齐，所有的成员项排列在容器底部	|
 |center		|中间对齐，所有成员项都垂直地居中显示	|
 
-![图片描述文字](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/ad305030-2f17-11eb-b680-7980c8a877b8.png)
+![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/align-items.png)
 
 ### flex
 	
@@ -409,7 +409,7 @@ flex {number}：值为 number 类型。
 <template>
 	<view class="row">
 		<view class="box" :class="{'active':isActive}" @click="isActive = !isActive">
-			<image class="img" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/9c877c50-2f0c-11eb-899d-733ae62bed2f.png" mode="aspectFill"></image>
+			<image class="img" src="https://web-assets.dcloud.net.cn/unidoc/zh/loveIcon.png" mode="aspectFill"></image>
 		</view>
 	</view>
 </template>
@@ -452,7 +452,7 @@ flex {number}：值为 number 类型。
 </style>
 ```
 
-<img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/0d2fc7a0-3089-11eb-8ff1-d5dcf8779628.gif" />
+<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gitb.gif" />
 
 ## Transform
 
@@ -584,7 +584,7 @@ flex {number}：值为 number 类型。
 
 
 
-<img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/810e5de0-3088-11eb-b997-9918a5dda011.gif" />
+<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gifa.gif" />
 
 
 ## 伪类
@@ -603,7 +603,7 @@ flex {number}：值为 number 类型。
 
 - 互联规则如下所示
 
-<img width="400px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/f3069420-2f17-11eb-8a36-ebb87efcf8c0.png" />
+<img width="400px" src="https://web-assets.dcloud.net.cn/unidoc/zh/active.png" />
 
 
 ## 线性渐变
@@ -633,7 +633,7 @@ flex {number}：值为 number 类型。
 > **目前暂不支持 radial-gradient（径向渐变）。**
 
 
-<img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/8f70e4e0-308b-11eb-97b7-0dc4655d6e68.PNG" />
+<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gradients.PNG" />
 
 
 ## 阴影@boxshadow

@@ -8,7 +8,7 @@
 
 #### DCloud出品的视频教程：
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=1">
-    <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/707756af-e9a9-4d08-8db9-5d1f34b84ea6.jpg" alt="uniCloud视频教程" style="width: 70%;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg" alt="uniCloud视频教程" style="width: 70%;">
 </a>
 
 

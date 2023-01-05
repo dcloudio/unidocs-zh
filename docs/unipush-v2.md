@@ -43,8 +43,8 @@ push，指服务器主动向客户端发送消息的技术。无需客户端持�
 2. 专业push服务器再向客户端发送消息
 3. 若手机应用在线，直接收到push；若不在线，手机用户在操作系统的通知栏中看到push消息，点击后呼起客户端应用，客户端代码可以接收响应获得消息；如果是小程序的话，则是在微信消息里看到订阅消息，点击后呼起小程序并拿到启动参数。
 <div style="float:clear;">
-	<img width="30%" style="margin-left:5%;max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3bb2b4c4-1b73-426d-b713-f076aff80868.jpg"/>
-	<img width="30%" style="margin-left:5%;max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/368bb2ca-1213-4895-9ad7-f39e28ee8b5a.jpg"/>
+	<img width="30%" style="margin-left:5%;max-width:260px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/20220325203150.jpg"/>
+	<img width="30%" style="margin-left:5%;max-width:260px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/3bb2b4c4-1b73-426d-b713-f076aff80868.jpg"/>
 </div>
 
 由于手机厂商众多，他们各自都有不同的推送服务，包括Apple、google（仅能在海外使用）、华为、小米、oppo、vivo、魅族，以及还有一些没有专业推送服务的中小手机品牌。他们对App后台耗电都有查杀机制，除了微信等大应用，普通应用很难常驻后台。
@@ -59,7 +59,7 @@ DCloud与个推深度合作，为uni-app的开发者提供了比传统方案便�
 首先开发者的uniCloud应用服务器向uniPush服务器发送push消息，然后
 - 如果客户端应用在线，客户端通过socket直接收到push在线消息；
 - 客户端应用不联网时，`uni-push`服务器根据客户端类型，把push消息发给某个手机厂商的push服务器或小程序的订阅消息服务器；然后厂商push通道会把这条消息发到手机的通知栏或微信的订阅消息里；手机用户点击通知栏消息或小程序订阅消息后，启动App或小程序，客户端才能收到离线消息。
-	<img width="100%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1b3b17d1-d6fb-4d26-96d4-c0dbc4300aad.png"/></br>
+	<img width="100%" src="https://web-assets.dcloud.net.cn/unidoc/zh/cd3e676a-6a3b-44ea-9045-5bc058d0d8ae.png"/></br>
 
 
 总结下`uni-push`提供的功能：
@@ -108,7 +108,7 @@ uni-push产品有2个入口：
 1. 通过 HBuilderX(3.5.1及其以上版本)进入
 
 	打开 HBuilderX，双击项目中的 “manifest.json” 文件，选择“App 模块配置”，向下找到“Push(消息推送)”，勾选后，点击 “uniPush” 下面的配置链接。如下图所示：
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/27015d7e-33e6-4596-a6bd-36ffa616a321.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/20220525104554.jpg)
 2. 通过开发者中心进入
 	
 	使用 HBuilder 账号登录 [开发者中心](https://dev.dcloud.net.cn) ，登录后
@@ -158,7 +158,7 @@ uni-push产品有2个入口：
 ## 第三步：客户端操作
 ### 名词解释
 #### 离线推送@offline
-<img width="30%" style="margin-left:20px;margin-top:0;float:right;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/3bb2b4c4-1b73-426d-b713-f076aff80868.jpg"/>
+<img width="30%" style="margin-left:20px;margin-top:0;float:right;" src="https://web-assets.dcloud.net.cn/unidoc/zh/20220325203150.jpg"/>
 仅APP端支持，当应用被用户关闭，或者运行到后台时，手机厂商为了省电或释放内存，会终止App后台联网。
 
 消息将通过不会离线的手机厂商通道，下发到手机系统推送服务模块；
@@ -177,14 +177,14 @@ uni-push产品有2个入口：
 ### 客户端启用uniPush2.0
 
 操作步骤打开`manifest.json` - `App模块配置` - 中勾选`uniPush 2.0` - `重新编译项目`
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f897176a-6216-48bd-98c8-439b2bd2cb42.jpg)
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1280af61-06a3-46d3-bfc3-0e1c1aee2580.jpg)
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2c5af727-2a43-4a4a-95e0-07403aafb019.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/20220525105852.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/20220525105914.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/87accaa0-e6a4-4916-9a74-87719142abaa.jpg)
 其他小程序启用方式参考微信小程序，这里不一一列举
 
 在`manifest.json`中配置完之后，需要重新编译项目，即：点击如图`重新运行`按钮
 
-<img width="50%" style="max-width:260px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1cc74094-043b-4150-bdcc-8c0dbf90195b.jpeg"/>
+<img width="50%" style="max-width:260px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/WechatIMG589.jpeg"/>
 
 
 #### 小程序中使用uni-push2.0的白名单配置@useinmp
@@ -266,9 +266,9 @@ uni-push的服务端sdk的体积不小，没有内置在云函数中。在需要
 
 - HBuilderX 中新建云函数时可选择uni-cloud-push扩展库，或者如下图所示在已有的云函数目录点右键选择“管理公共模块或扩展库依赖”
 
-<img style="width:80%;max-width:600px;margin:0 10%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/cb2bc39d-0dbd-4321-ba6f-cc4c782c820c.jpg"/>
+<img style="width:80%;max-width:600px;margin:0 10%" src="https://web-assets.dcloud.net.cn/unidoc/zh/uniPush-glkzk.jpg"/>
 </br>
-<img style="width:80%;max-width:450px;margin:0 10%" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/66f41377-5492-4345-b85c-e6978dd5ef63.jpg"/>
+<img style="width:80%;max-width:450px;margin:0 10%" src="https://web-assets.dcloud.net.cn/unidoc/zh/uniPush-kzk.jpg"/>
 </br>
 
 下面是一个开启了`uni-cloud-push`扩展库的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
@@ -321,4 +321,4 @@ uni-id-pages已经内置：在登录账号、退出账号、切换账号、token
 
 此外uni-push2.0 还提供了uni-admin中的web控制台[uni-push-admin](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)。如图，包含消息推送、推送统计等功能的，
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/507dd9ff-0171-4c89-ba9e-30f39babfe98.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/f981f620-f9de-11ec-8412-6b7a68f609ab_0.jpg)

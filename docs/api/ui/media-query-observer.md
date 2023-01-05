@@ -46,7 +46,7 @@ MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如
 
 以下示例代码，推荐使用HBuilderX，新建uni-app项目，可直接体验完整示例。
 
-```
+```vue
 <template>
     <view class="content">
         <view class="">

@@ -6,7 +6,7 @@
 
 手机用户观看几十秒视频广告，在广告播放完毕后可获得应用开发商提供的奖励，而应用开发商则可以从广告平台获取不菲的广告收入。
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/23fcff30-441f-11eb-b680-7980c8a877b8.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rewarded-video.png)
 
 与开屏、信息流等广告变现方式不同，激励视频收益高、但场景设计和编程工作量也较高。
 
@@ -315,7 +315,7 @@ export default {
 
 ### 监听用户关闭广告
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/24d1db60-441f-11eb-bd01-97bc1429a9ff.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rewarded-video-close.png)
 
 只有在用户点击激励视频广告组件上的 关闭广告 按钮时，广告才会关闭。这个事件可以通过 `@close` 监听。
 
@@ -369,7 +369,7 @@ App平台 3.1.15+ 支持穿山甲/优量汇/快手
 相对来讲服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
 
 
-![激励视频回调](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a1bf0617-c59a-4904-a902-e9c8888855d6.png)
+![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
 
 
 

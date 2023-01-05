@@ -14,7 +14,7 @@ HBuilderX是通用的前端开发工具，但为`uni-app`做了特别强化。
 
 在点击工具栏里的文件 -> 新建 -> 项目（快捷键`Ctrl+N`）：
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b925a1c0-4f19-11eb-97b7-0dc4655d6e68.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/hx-create-01.png"/>
 </div>
 
 选择`uni-app`类型，输入工程名，选择模板，点击创建，即可成功创建。
@@ -22,7 +22,7 @@ HBuilderX是通用的前端开发工具，但为`uni-app`做了特别强化。
 uni-app自带的模板有 默认的空项目模板、Hello uni-app 官方组件和API示例，还有一个重要模板是 uni ui项目模板，日常开发推荐使用该模板，已内置大量常用组件。
 
 <div align=center>
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d0cba1a3-c0cc-4095-a105-a4fea51857fe.jpg"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/create-uniapp.jpg"/>
 </div>
 
 
@@ -37,12 +37,12 @@ uni-app自带的模板有 默认的空项目模板、Hello uni-app 官方组件�
 
 1. 浏览器运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到浏览器 -> 选择浏览器，即可体验 uni-app 的 web 版。
   <div align=center>
-  	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7bf15128-6629-4037-a6c5-988ab03671f1.png"/>
+  	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/menurun.png"/>
   </div>
 
 2. 运行App到手机或模拟器：使用电压足够的usb端口连接手机，设置中开启USB调试，手机上允许电脑设备调试手机，进入hello-uniapp项目，点击工具栏的运行 -> 运行App到手机或模拟器，即可在该设备里面体验uni-app。
 	<div align=center>
-		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c4d3c057-40dc-4dea-9277-be1c33a252ed.png"/>
+		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/menurunapp.png"/>
 	</div>
 	
 	- 如手机或模拟器无法识别，请点击[常见故障排查指南](https://uniapp.dcloud.net.cn/tutorial/run/run-app-faq.html)。
@@ -51,13 +51,13 @@ uni-app自带的模板有 默认的空项目模板、Hello uni-app 官方组件�
 3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。
     <br/>
     <div align=center>
-    	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5e058d1a-a6c6-4501-ae65-4333e7f82ad6.png"/>
+    	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/menurunminiapp.png"/>
     </div>
     
     **注意**：如果是第一次使用，需要先配置小程序ide的相关路径，才能运行成功。如下图，需在输入框输入微信开发者工具的安装路径。
     <br/>
     <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a142b6a0-4f1a-11eb-8a36-ebb87efcf8c0.png"/>
+      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/weixin-setting.png"/>
     </div>
 
     **注意**：微信开发者工具需要开启服务端口 在微信工具的设置->安全中。
@@ -65,7 +65,7 @@ uni-app自带的模板有 默认的空项目模板、Hello uni-app 官方组件�
 4. 在支付宝小程序开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 支付宝小程序开发者工具，即可在支付宝小程序开发者工具里面体验uni-app。
     <br/>
     <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/fee90480-4f1a-11eb-bd01-97bc1429a9ff.png"/>
+    	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/run-ali.png"/>
     </div>
 
 5. 在百度、字节跳动、QQ、快应用（分联盟和华为）、快手、飞书、360、京东等小程序开发工具里运行：内容同上，不再重复。
@@ -81,7 +81,7 @@ uni-app自带的模板有 默认的空项目模板、Hello uni-app 官方组件�
 
 HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行的设备：
 <div align=center>
-	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/aef21b70-4f37-11eb-a16f-5b3e54966275.png"/>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/runtool.png"/>
 </div>
 
 如需调试，可参考：[uni-app调试](tutorial/run-and-debug.md)
@@ -93,11 +93,11 @@ HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行�
 在HBuilderX工具栏，点击发行，选择原生app-云端打包，如下图：
 
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b8332fd0-4f37-11eb-8ff1-d5dcf8779628.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-11.png"/>
 </div>
 出现如下界面，点击打包即可。
 <div align=center>
-  <img style="max-width:600px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/001a20b0-d85a-11ea-81ea-f115fe74321c.png"/>
+  <img style="max-width:600px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-pack-cloud.png"/>
 </div>
 
 云端打包支持安心打包，保护用户隐私，不会上传代码和证书，通过差量包制作方式实现安心打包。详见：[https://ask.dcloud.net.cn/article/37979](https://ask.dcloud.net.cn/article/37979)
@@ -115,16 +115,16 @@ iOS App打包需要向Apple申请证书。
 
 1. 在 ``manifest.json`` 的可视化界面，进行如下配置（发行在网站根目录可不配置应用基本路径），此时发行网站路径是 www.xxx.com/h5，如：[https://hellouniapp.dcloud.net.cn](https://hellouniapp.dcloud.net.cn)。
   <div align=center>
-    <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bf90de30-4f37-11eb-8ff1-d5dcf8779628.png" style="max-width:600px;height:auto;"/>
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/build-h5-1.png" style="max-width:600px;height:auto;"/>
   </div>
 2. 在HBuilderX工具栏，点击发行，选择网站-H5手机版，如下图，点击即可生成 H5 的相关资源文件，保存于 unpackage 目录。
 
 <div align=center>
-	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b7391860-4f37-11eb-8a36-ebb87efcf8c0.png" style="max-width:600px;height:auto;"/>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-10.png" style="max-width:600px;height:auto;"/>
 </div>
 
 <div align=center>
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e7c3669a-5d46-4a5b-be23-fac43052180f.png"/>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/buildweb.png"/>
 </div>
 
 **注意**
@@ -138,7 +138,7 @@ iOS App打包需要向Apple申请证书。
 1. 申请微信小程序AppID，参考：[微信教程](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html#%E7%94%B3%E8%AF%B7%E5%B8%90%E5%8F%B7)。
 2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-微信"，输入小程序名称和appid点击发行即可
 <div align=center>
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/44a058ef-7934-46d0-bbb1-2a473e24988a.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/buildmpweixin.png"/>
 </div>
 
 如果手动发行，则点击发行按钮后，会在项目的目录 ``unpackage/dist/build/mp-weixin`` 生成微信小程序项目代码。在微信小程序开发者工具中，导入生成的微信小程序项目，测试项目代码运行正常后，点击“上传”按钮，之后按照 “提交审核” => “发布” 小程序标准流程，逐步操作即可，详细查看：[微信官方教程](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/release.html#%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF)。
@@ -149,7 +149,7 @@ iOS App打包需要向Apple申请证书。
 4. 入驻小程序并申请百度小程序AppID，参考：[百度小程序教程](https://smartprogram.baidu.com/docs/introduction/enter_application/)。
 5. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-百度"，输入小程序名称和appid点击发行即可在 ``/unpackage/dist/build/mp-baidu`` 生成百度小程序项目代码。
   <div align=center>
-    <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b42a03a0-4f37-11eb-8a36-ebb87efcf8c0.png"/>
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-7.png"/>
   </div>
 3. 在百度小程序开发者工具中，导入生成的百度小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，之后在百度小程序的 [管理中心](https://smartprogram.baidu.com/developer/applist.html) 选择创建的应用点击前往发布，选择对应的版本然后提交审核。
 
@@ -158,7 +158,7 @@ iOS App打包需要向Apple申请证书。
 4. 入驻支付宝小程序，参考：[支付宝小程序教程](https://docs.alipay.com/mini/introduce)。
 5. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-支付宝"，即可在 ``/unpackage/dist/build/mp-alipay`` 生成支付宝小程序项目代码。
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b636c390-4f37-11eb-bd01-97bc1429a9ff.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-8.png"/>
 </div>
 3. 在支付宝小程序开发者工具中，导入生成的支付宝小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，在 [支付宝小程序后台](https://open.alipay.com/platform/mini.htm#/app)，选择刚提交的版本点击提交审核，详见：[支付宝小程序文档](https://docs.alipay.com/mini/developer/publish)。
 
@@ -167,7 +167,7 @@ iOS App打包需要向Apple申请证书。
    1. 入驻字节跳动小程序，参考：[字节跳动小程序教程](https://developer.toutiao.com/dev/cn/mini-app/introduction/plug-in/registration)。
    2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-字节跳动"，即可在 ``/unpackage/dist/build/mp-toutiao`` 生成字节跳动小程序项目代码。
      <div align=center>
-       <img style="max-width:300px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a6ba4ed0-4f39-11eb-b997-9918a5dda011.jpg"/>
+       <img style="max-width:300px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/zjdance.jpg"/>
      </div>
    3. 在字节跳动小程序开发者工具中，导入生成的字节跳动小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，在 [字节跳动小程序后台](https://developer.toutiao.com/app/applist)，选择刚提交的版本点击提交审核，详见：[字节跳动小程序文档](https://developer.toutiao.com/dev/cn/mini-app/introduction/plug-in/verification)。
 
@@ -175,7 +175,7 @@ iOS App打包需要向Apple申请证书。
    4. 入驻360小程序，参考：[360小程序教程](https://mp.360.cn/doc/miniprogram/dev/#/)。
    5. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-360"，即可在 ``/unpackage/dist/build/mp-360`` 生成360小程序项目代码。
      <div align=center>
-       <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/baba28d0-4f37-11eb-bdc1-8bd33eb6adaa.png"/>
+       <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-release-mp-360.png"/>
      </div>
    6. 在360浏览器中，导入生成的360小程序项目
 
@@ -187,7 +187,7 @@ iOS App打包需要向Apple申请证书。
   1. 入驻快应用(webview)，参考：[快应用(webview)教程](https://www.quickapp.cn/)。
   2. 在HBuilderX中顶部菜单依次点击 "发行" => "快应用联盟"，即可在 ``/unpackage/dist/build/quickapp-webview`` 生成快应用(webview)项目代码。
     <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bd0db5c0-4f37-11eb-8ff1-d5dcf8779628.png"/>
+      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-release-quickapp-webview.png"/>
     </div>
   3. 在快应用联盟工具中，导入生成的快应用联盟项目，测试项目代码运行正常后，点击”构建“打包正式版，在[快应用联盟后台](https://www.quickapp.cn/)上传
 
@@ -196,7 +196,7 @@ iOS App打包需要向Apple申请证书。
   4. 入驻华为快应用，参考：[华为快应用教程](https://developer.huawei.com/consumer/cn/quickApp)。
   5. 在HBuilderX中顶部菜单依次点击 "发行" => "快应用-华为"，即可在 ``/unpackage/dist/build/quickapp-webview`` 生成华为快应用项目代码。
     <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bece2a70-4f37-11eb-8ff1-d5dcf8779628.png"/>
+      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-release-quickapp-webview-huawei.png"/>
     </div>
   6. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在[华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp)上传。
 

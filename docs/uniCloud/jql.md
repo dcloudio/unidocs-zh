@@ -104,7 +104,7 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
 
 这里选择以使用了JQL完整功能clientDB为例，JQL操作数据库的流程如下。不同使用场景的区别请参考： [JQL的使用场景](uniCloud/jql.md?id=scene)
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b673c28f-c41b-406d-8b7a-c3f4bfbf4b31.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
 
 ## JQL的使用场景@scene
 
@@ -3316,7 +3316,7 @@ action是一种特殊的云函数，它不占用服务空间的云函数数量�
 
 **新建action**
 
-![新建action](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/b6846d00-1460-11eb-b997-9918a5dda011.jpg)
+![新建action](https://web-assets.dcloud.net.cn/unidoc/zh/create-client-actions.jpg)
 
 每个action在uni-clientDB-actions目录下存放一个以action名称命名的js文件。
 

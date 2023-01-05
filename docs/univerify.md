@@ -642,7 +642,7 @@ exports.main = async(event) => {
 
 - **使用有其他疑问**
 欢迎扫码加入 一键登录 微信交流群讨论：
-    <br/><img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a095a3e4-2192-403e-b2c5-6bbfa1b7c936.png" width="250"/>
+    <br/><img src="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E4%B8%80%E9%94%AE%E8%AE%A4%E8%AF%81.png" width="250"/>
 
 
 

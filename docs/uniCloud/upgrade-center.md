@@ -49,14 +49,14 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 1. 在版本管理list的右上角点击`发布新版`，可以发布`原生App安装包`和`wgt资源包`。在左上角点击`下拉列表`，可以切换展示应用。
 
 <div align="center">
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/442e84e7-e7f3-4d27-9c98-45568e5db835.png" width="800"></img>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/version_list_new.png" width="800"></img>
 </div>
 
 - 发布原生App安装包
 	1. 在上传安装包界面填写此次发版信息
 
 	<div align="center" >
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6368e998-8d98-4a0c-9de9-da35433a5e35.jpg" width="600"></img>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/publish_apk.jpg" width="600"></img>
 	</div>
 
   1. `Android应用市场`
@@ -84,7 +84,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	1. 大部分配置与发布 `原生App安装包` 一致
 
 	<div align="center">
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/ec916cde-0d0e-4bf3-a735-643ea2a45b74.png" width="400"></img>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/publish_wgt.png" width="400"></img>
 	</div>
 
 	2. `原生App最低版本`
@@ -102,7 +102,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 - 发布完成页面
 
 	<div align="center">
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/c5470d8c-cc37-4b41-8d56-6d50f8daac62.png" width="800"></img>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/version_list_new2.png" width="800"></img>
 	</div>
 
 **Tips**
@@ -127,9 +127,9 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 负责前台检查升级更新。
 
 <div align="left" style="display:flex;align-items:center;">
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/b47b89ad-1b81-45db-8115-d246fb5ca906.jpg" alt="官方升级弹框样式" width="250"></img>
-	<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7b6af9ff-2fe3-4f5a-a704-0274e49292ac.png" alt="升级支持多商店" width="250"></img>
-	<img style="margin-left:20px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9e2d38af-90e5-47fb-8a18-d2a76e7ae2b4.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/2.jpg" alt="官方升级弹框样式" width="250"></img>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/update_app_store.png" alt="升级支持多商店" width="250"></img>
+	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/4.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
 </div>
 
 提供了如下功能：

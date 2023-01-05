@@ -12,7 +12,7 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   
 ### 使用组合式API
 
-  1. 在 main.js/ts 文件内增加安装 @vue/composition-api 插件
+  1. 在 main.js/ts 文件内增加安装 @vue/composition-api 插件。如果使用 nvue 页面，也需要在每个 nvue 页面安装，且每个 nvue 页面之间插件状态默认不会共享。
   
   ::: preview
   
@@ -38,6 +38,19 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   Vue.use(VueCompositionAPI)
   ```
   
+  > pages/index/index.nvue
+  
+  ```js
+  import '../../composition-api.js'
+  import {  } from '@vue/composition-api'
+  import {  } from '@dcloudio/uni-app'
+  export default defineComponent({
+    setup () {
+      
+    }
+  })
+  ```
+  
   :::
 
   2. 从 @vue/composition-api 包内导入并使用基础的组合式API，具体的兼容性仍需参考：[@vue/composition-api](https://github.com/vuejs/composition-api#browser-compatibility)。从 @dcloudio/uni-app 包内导入 uni-app 其他生命周期API。
@@ -60,7 +73,7 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
 
 ### 使用 Script Setup
 
-  1. 使用 npm/yarn 安装 unplugin-vue2-script-setup
+  1. 使用 npm/yarn 安装 unplugin-vue2-script-setup 插件，此插件暂不支持 nvue 页面。
   
   ```shell
   npm install unplugin-vue2-script-setup -D

@@ -88,7 +88,7 @@ After declaring `lang="ts"`, all vue components imported by this vue/nvue file n
 改造 uni-badge.vue
 Modification uni-badge.vue
 
-```javascript
+```ts
 <script lang="ts">
     // 仅展示需要修改的核心代码，完整代码请参考原来的组件。
     //Only the core code that needs to be modified is displayed. For the complete code, please refer to the original components.
@@ -133,9 +133,9 @@ Modification uni-badge.vue
 在 index.vue 中引用 uni-badge 组件
 Reference the uni-badge component in index.vue
 
-```javascript
+```ts
 <script lang="ts">
-    import Vue from 'vue';
+	import Vue from 'vue';
 	import uniBadge from '../../components/uni-badge.vue';
 	export default Vue.extend({
 		data() {

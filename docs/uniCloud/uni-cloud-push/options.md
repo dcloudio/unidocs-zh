@@ -301,7 +301,7 @@ key description
 因此需要在小米平台上新建channel通道，设置自定义铃声前端路径如：android.resource://your packagename/raw/test（路径不需要带音频后缀名）如图
 Therefore, it is necessary to create a new channel channel on the Xiaomi platform, and set the custom ringtone front-end path such as: android.resource://your packagename/raw/test (the path does not need to have an audio suffix name) as shown in the figure
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/42e8152b-f458-462e-9353-43dede93c294.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/custom_sound.png)
 
 
 **Rest-v2 示例：**
@@ -1040,7 +1040,7 @@ Notification display style, text + long text style and text + large image style,
 
 <div class="weixin-support">
     <div class="weixin-support-focus">
-        <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/628c90e2-c04f-4f92-8564-85d54b467e4f.png" alt="" class="weixin-support-icon">
+        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/weixin.png" alt="" class="weixin-support-icon">
         联系
         connect
         <br>
@@ -1048,7 +1048,7 @@ Notification display style, text + long text style and text + large image style,
         push
     </div>
     <div class="weixin-support-content">
-		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f91f57ca-ea30-47ee-a740-954153977e88.jpg" alt="" class="weixin-support-icon">
+		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/support.jpg" alt="" class="weixin-support-icon">
        微信扫一扫
        WeChat scan
 		<br>

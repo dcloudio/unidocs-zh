@@ -89,11 +89,11 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
   	```
 3. 在微信小程序端，`uni-app` 将数据绑定功能委托给`Vue`，开发者需按`Vue 2.0`的写法实现数据绑定，不支持微信小程序的数据绑定写法，故如下写法不支持：
 	
-	```javascript
+	```vue
 	  <view id="item-{{id}}"></view>	
 	```
 	需修改为：
-	```javascript
+	```vue
 	<view v-bind:id="'item-' + id "></view>	
 	```
  
@@ -130,7 +130,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * H5 发布到服务器注意：
     1. 配置发行后的路径（发行在网站根目录可不配置），比如发行网站路径是 www.xxx.com/html5，在 `manifest.json` 文件内编辑 h5 节点，router 下增加 base 属性为 html5
 <div>
-<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/9f026b20-4f3c-11eb-b680-7980c8a877b8.png" width="500">
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/html5-a.png" width="500">
 </div>
     2. 点击菜单 发行-> H5
     3. 在当下项目下的 ``unpackage/dist/build/h5`` 目录找到出的资源，部署服务器（或者使用本地服务器预览），如需部署到相对路径（支持本地file协议打开）参考：https://ask.dcloud.net.cn/article/37432。
@@ -139,7 +139,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
     1. 通过 npm 引入（通过条件编译，只有是 h5 平台才 import 相应的库）
     2. 在 `manifest.json` 文件编辑 h5 节点的 template 属性，填写 html 模版路径，在 html 模版里面可以使用 script 的方式引入三方的 js，如下示例是加了百度统计的 html 模板部分代码，模版全部代码可参考：[自定义模板](/collocation/manifest?id=h5-template)
 ```html
-//...
+<!-- ... -->
 <body>
             <noscript>
                 <strong>Please enable JavaScript to continue.</strong>
@@ -156,7 +156,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
                 })();
             </script>
 </body>
-//...
+<!-- ... -->
 ```
 
 * H5 版 `uni-app` 全支持 `vue` 语法，所以可能造成部分写法在 H5 端生效，在小程序或 App 端不生效。
@@ -256,12 +256,16 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * 默认为H5平台组件，如果需要360平台组件请使用 <se-...></se-...>，例如 `<se-video></se-video>`
 * `<se-...></se-...>` 为360平台专有组件，不能跨平台，需要条件编译 `mp-360`
 pages 配置
-```
-"globalStyle": {
-	"mp-360": {
-	  "navigationStyle": "custom" // 去掉uni-app header，使用360小程序header
+```json
+{
+	//...
+	"globalStyle": {
+		"mp-360": {
+			"navigationStyle": "custom" // 去掉uni-app header，使用360小程序header
+		}
 	}
-},
+	//...
+}
 ```
 [360小程序文档](https://mp.360.cn/doc/miniprogram/dev/#/)
 

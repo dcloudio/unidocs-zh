@@ -176,7 +176,7 @@ uni.share({
 	provider: "weixin",
 	scene: "WXSceneSession",
 	type: 2,
-	imageUrl: "https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/d8590190-4f28-11eb-b680-7980c8a877b8.png",
+	imageUrl: "https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
 	success: function (res) {
 		console.log("success:" + JSON.stringify(res));
 	},
@@ -201,7 +201,7 @@ uni.share({
 	href: "http://uniapp.dcloud.io/",
 	title: "uni-app分享",
 	summary: "我正在使用HBuilderX开发uni-app，赶紧跟我一起来体验！",
-	imageUrl: "https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/d8590190-4f28-11eb-b680-7980c8a877b8.png",
+	imageUrl: "https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
 	success: function (res) {
 		console.log("success:" + JSON.stringify(res));
 	},
@@ -239,7 +239,7 @@ uni.share({
 	provider: "weixin",
 	scene: "WXSceneTimeline",
 	type: 2,
-	imageUrl: "https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/d8590190-4f28-11eb-b680-7980c8a877b8.png",
+	imageUrl: "https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
 	success: function (res) {
 		console.log("success:" + JSON.stringify(res));
 	},
@@ -263,7 +263,7 @@ uni.share({
 	href: "http://uniapp.dcloud.io/",
 	title: "uni-app分享",
 	summary: "我正在使用HBuilderX开发uni-app，赶紧跟我一起来体验！",
-	imageUrl: "https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/d8590190-4f28-11eb-b680-7980c8a877b8.png",
+	imageUrl: "https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
 	success: function (res) {
 		console.log("success:" + JSON.stringify(res));
 	},
@@ -281,7 +281,7 @@ uni.share({
     provider: 'weixin',
     scene: "WXSceneSession",
     type: 5,
-    imageUrl: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/962fc340-4f2c-11eb-bdc1-8bd33eb6adaa.png',
+    imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/share-logo@3.png',
     title: '欢迎体验uniapp',
     miniProgram: {
         id: 'gh_abcdefg',
@@ -318,14 +318,14 @@ In the App SDK configuration of manifest.json, check WeChat messages and Moments
 - iOS平台微信SDK配置通用链接：[https://ask.dcloud.net.cn/article/36445](https://ask.dcloud.net.cn/article/36445)。
 - General link for WeChat SDK configuration on iOS platform: [https://ask.dcloud.net.cn/article/36445](https://ask.dcloud.net.cn/article/36445).
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/da6b1be0-4f2c-11eb-8a36-ebb87efcf8c0.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/mp-weixin-manifest-share.png)
 
 ##### 新浪微博分享
 ##### Share on Sina Weibo
 在 manifest.json 的 App SDK 配置里，勾选勾选新浪微博，并填写相关appkey，新浪微博 appkey 申请步骤可参考：[https://ask.dcloud.net.cn/article/209](https://ask.dcloud.net.cn/article/209)。
 In the App SDK configuration of manifest.json, check Sina Weibo, and fill in the relevant appkey. For the Sina Weibo appkey application steps, please refer to: [https://ask.dcloud.net.cn/article/209]( https://ask.dcloud.net.cn/article/209).
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/db61d7f0-4f2c-11eb-8a36-ebb87efcf8c0.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni2019022502.png)
 
 ##### QQ 分享
 ##### QQ Share
@@ -339,7 +339,7 @@ In the App SDK configuration of manifest.json, check Share to QQ friends, and fi
 3. 创建应用，选择移动 App，填写相关信息，然后等待审核，审核通过后即可得到AppId。
 3. Create an app, select a mobile app, fill in the relevant information, and wait for the review. After the review is passed, you can get the AppId.
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/d97fd180-4f2c-11eb-bdc1-8bd33eb6adaa.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni2019022503.png)
 
 这些配置需要打包生效，真机运行仍然是HBuilder基座的设置，可使用[自定义基座包](http://ask.dcloud.net.cn/article/12723)调试。离线打包请参考离线打包文档在原生工程中配置。
 These configurations need to be packaged to take effect, and the real machine operation is still the setting of the HBuilder base, which can be debugged using the [custom base package](http://ask.dcloud.net.cn/article/12723). For offline packaging, please refer to the offline packaging documentation to configure in the native project.

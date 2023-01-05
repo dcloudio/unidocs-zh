@@ -42,7 +42,7 @@ According to the following table, set the request legal domain name and uploadFi
 
 **阿里云查看上传、下载安全域名**
 
-![阿里云查看上传、下载安全域名](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a2a7492e-da42-465e-a077-0a4b83242f69.jpg)
+![阿里云查看上传、下载安全域名](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-aliyun-secure-domain.jpg)
 
 小程序开发工具的真机预览功能，必须添加上述域名白名单，否则无法调用云函数。模拟器的PC端预览、真机调试不受此影响。
 For the real machine preview function of the applet development tool, the above-mentioned domain name whitelist must be added, otherwise the cloud function cannot be called. The PC-side preview and real-device debugging of the simulator are not affected by this.

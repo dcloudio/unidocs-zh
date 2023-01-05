@@ -10,7 +10,7 @@ Rewarded video ads are the most profitable form of advertising in CPM.
 手机用户观看几十秒视频广告，在广告播放完毕后可获得应用开发商提供的奖励，而应用开发商则可以从广告平台获取不菲的广告收入。
 Mobile phone users watch video advertisements for dozens of seconds, and after the advertisements are played, they can get rewards from application developers, and application developers can get a lot of advertising revenue from advertising platforms.
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/23fcff30-441f-11eb-b680-7980c8a877b8.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rewarded-video.png)
 
 与开屏、信息流等广告变现方式不同，激励视频收益高、但场景设计和编程工作量也较高。
 Different from advertising monetization methods such as screen opening and information flow, incentive videos have high revenue, but the workload of scene design and programming is also high.
@@ -384,7 +384,7 @@ If an automatic pull of the component fails, you can call `load()` to manually p
 ### 监听用户关闭广告
 ### Listen for users to close ads
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/24d1db60-441f-11eb-bd01-97bc1429a9ff.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rewarded-video-close.png)
 
 只有在用户点击激励视频广告组件上的 关闭广告 按钮时，广告才会关闭。这个事件可以通过 `@close` 监听。
 The ad will only close when the user clicks the Close Ad button on the rewarded video ad component. This event can be listened to via `@close`.
@@ -451,7 +451,7 @@ The rewarded video advertisement can support the callback from the advertisement
 Relatively speaking, the server callback will be more secure, and you can rely on the anti-cheating mechanism of the advertising platform to prevent users from simulating the completion of watching the advertisement.
 
 
-![激励视频回调](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a1bf0617-c59a-4904-a902-e9c8888855d6.png)
+![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
 
 
 

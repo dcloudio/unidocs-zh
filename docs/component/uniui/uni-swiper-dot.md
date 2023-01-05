@@ -181,17 +181,17 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 			return {
 				info: [{
 						colorClass: 'uni-bg-red',
-						url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
+						url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
 						content: '内容 A'
 					},
 					{
 						colorClass: 'uni-bg-green',
-						url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
+						url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
 						content: '内容 B'
 					},
 					{
 						colorClass: 'uni-bg-blue',
-						url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
+						url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
 						content: '内容 C'
 					}
 				],

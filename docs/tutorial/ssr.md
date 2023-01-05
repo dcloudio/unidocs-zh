@@ -211,7 +211,7 @@ Example:
 
 HBuilderX创建的项目在运行菜单勾选`启用SSR`再运行到浏览器即可
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/afe086f6-cea8-4231-abe7-4e3ded0b08fd.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/run-ssr-checked.jpg)
 
 cli创建的项目使用`npm run dev:h5:ssr`运行即可
 
@@ -271,8 +271,7 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
 
 2. 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
 
-	![自动部署](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/a57a589e-4193-497f-ac89-d33c1208d3e1.png)
-	![Automatic deployment](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/a57a589e-4193-497f-ac89-d33c1208d3e1.png)
+	![自动部署](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
 	
 3. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
 
@@ -308,8 +307,7 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
   非cli工程：通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
   Non-cli project: by `Release Menu -> website PC-Web or mobile phone H5` of `HBuilderX 3.1.16 and above`, check `ssr`
   
-  ![以ssr模式发行](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d7574ced-e253-4b73-8187-86d6a8811364.jpg)
-  ![Release in ssr mode](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d7574ced-e253-4b73-8187-86d6a8811364.jpg)
+  ![以ssr模式发行](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
   
 3. 部署静态资源到[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
 3. Deploy static resources to [Front-end web hosting](https://uniapp.dcloud.net.cn/uniCloud/hosting)

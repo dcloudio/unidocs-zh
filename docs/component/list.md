@@ -84,7 +84,7 @@ The sub-components of `<list>` can only include the following four components or
 `loadmoreoffset` 示意图：
 Schematic diagram of `loadmoreoffset`:
 
-<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/40e33a30-4f30-11eb-b997-9918a5dda011.png" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/app-nvue-component-list.png" />
 
 #### setSpecialEffects(object)
 设置嵌套list父容器支持swiper-list吸顶滚动效果

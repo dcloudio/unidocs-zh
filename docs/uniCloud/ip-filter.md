@@ -58,7 +58,7 @@ If this information exists in MongoDB, there is no meaning of anti-brush, and re
 IP黑名单是用来完全阻止设定的IP或IP网段（cidr规范）访问云函数或clientDB的功能。
 IP blacklist is used to completely block the set IP or IP network segment (cidr specification) from accessing cloud functions or clientDB.
 
-![black list](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7bf5e358-e627-4b3a-bafb-2b18d43c4d4b.jpg)
+![black list](https://web-assets.dcloud.net.cn/unidoc/zh/ip-black-list.jpg)
 
 被封禁IP访问云函数及clientDB时会收到错误响应，错误码为：`ACCESS_DENIED`，错误信息为：`Access denied`
 The blocked IP will receive an error response when accessing cloud functions and clientDB, the error code is: `ACCESS_DENIED`, and the error message is: `Access denied`
@@ -123,7 +123,7 @@ As far as the client experience is concerned, this configuration means that **an
 - duration或limit配置为0时将不再限制访问频率，但是已被临时封禁的用户依然需要等到解封后才可以访问
 - When the duration or limit is set to 0, the access frequency will no longer be restricted, but users who have been temporarily banned still need to wait until they are unblocked before they can access
 
-![frequency limit](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/76130f29-7c64-4406-af69-a3759e264726.jpg)
+![frequency limit](https://web-assets.dcloud.net.cn/unidoc/zh/ip-freq-limit.jpg)
 
 访问频率过高的用户及由于访问频率过高被临时封禁的用户访问云函数及clientDB时会收到错误响应，错误码为：`OPERATION_TOO_FREQUENT`，错误信息为：`Operation is too frequent, please try again later`
 Users with high access frequency and users who are temporarily banned due to high access frequency will receive an error response when accessing cloud functions and clientDB. The error code is: `OPERATION_TOO_FREQUEENT`, and the error message is: `Operation is too frequent, please try again later`

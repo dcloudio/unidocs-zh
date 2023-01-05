@@ -209,7 +209,7 @@ exports.main = async (event, context) => {
 - 短信内容超过70个字符时为长短信，需分条发送，每67个字按一条短信计算
 - App平台的短信验证码需求，建议优先通过App一键登陆来替代，更便捷、更便宜。[详见](univerify.md)
 
-更多问题：欢迎加入<a class="join-group-chat" target="_blank" href="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/69a69072-8874-4ec1-bc0f-6f820f3919ee.png">DCloud短信技术交流群	<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/69a69072-8874-4ec1-bc0f-6f820f3919ee.png">
+更多问题：欢迎加入<a class="join-group-chat" target="_blank" href="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4%BF%A1.png">DCloud短信技术交流群	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4%BF%A1.png">
 </a>咨询
 
 

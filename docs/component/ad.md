@@ -14,7 +14,7 @@ In-app display advertising component, which can be used for banner or news feed.
 Banner或信息流广告展现场景非常灵活，常见的展现场景为：文章顶部，详情页面顶部，第一屏中部等。建议信息流广告不要放置在底部
 Banner or information flow advertisement display scenarios are very flexible. Common display scenarios are: the top of the article, the top of the details page, the middle of the first screen, etc. It is recommended not to place in-feed ads at the bottom
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b613df50-4420-11eb-bc56-c9cea619f663.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-feed.png)
 
 
 - App端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道以及部分DCloud直投广告组成，在DCloud的uni-AD后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
@@ -387,8 +387,7 @@ Document address: [https://uniapp.dcloud.io/component/ad-interstitial](https://u
 - App端除了ad组件，还支持开屏、激励视频等多种广告形式。详见[uni-AD官网](https://uniad.dcloud.net.cn/)
 - In addition to the ad component, the App side also supports various advertising forms such as screen opening and rewarded video. For details, please refer to [uni-AD official website](https://uniad.dcloud.net.cn/)
 - App端uni-AD聚合了腾讯广点通、头条穿山甲、360广告联盟等服务，打包时必须勾选相应的sdk，详见：[https://ask.dcloud.net.cn/article/36718](https://ask.dcloud.net.cn/article/36718)
-- uni-AD on the App side aggregates services such as Tencent Guangdiantong, Toutiao Pangolin, 360 Advertising Alliance, etc. You must check the corresponding sdk when packaging, see: [https://ask.dcloud.net.cn/article/36718 ](https://ask.dcloud.net.cn/article/36718)
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/f21eb570-4f32-11eb-b680-7980c8a877b8.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/ad.jpg)
 
 
 **错误码**

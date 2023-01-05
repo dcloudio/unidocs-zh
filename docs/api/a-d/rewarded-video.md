@@ -557,7 +557,7 @@ rewardedVideoAd.load()
 ### 监听用户关闭广告
 ### Listen for users to close ads
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/24d1db60-441f-11eb-bd01-97bc1429a9ff.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rewarded-video-close.png)
 
 只有在用户点击激励视频广告组件上的 关闭广告 按钮时，广告才会关闭。这个事件可以通过 `RewardedVideoAd.onClose()` 监听。
 The ad will only close when the user clicks the Close Ad button on the rewarded video ad component. This event can be listened to by `RewardedVideoAd.onClose()`.
@@ -606,7 +606,7 @@ The rewarded video advertisement can support the callback from the advertisement
 Relatively speaking, the server callback will be more secure, and you can rely on the anti-cheating mechanism of the advertising platform to prevent users from simulating the completion of watching the advertisement.
 
 
-![激励视频回调](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a1bf0617-c59a-4904-a902-e9c8888855d6.png)
+![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
 
 
 如何使用

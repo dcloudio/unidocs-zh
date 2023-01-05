@@ -31,7 +31,7 @@ If you use the `cli` method to create a project, you can download the standard v
 在点击工具栏里的文件 -> 新建 -> 项目：
 Click File -> New -> Project in the toolbar:
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/c16d8d70-4f37-11eb-8a36-ebb87efcf8c0.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/create1.png"/>
 </div>
 
 选择`uni-app`类型，输入工程名，选择模板，点击创建，即可成功创建。
@@ -41,7 +41,7 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
 The template that comes with uni-app is Hello uni-app , which is the official component and API example. Another important template is the uni ui project template, which is recommended for daily development, and has built-in a large number of common components.
 
 <div align=center>
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d0cba1a3-c0cc-4095-a105-a4fea51857fe.jpg"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/create-uniapp.jpg"/>
 </div>
 
 
@@ -50,13 +50,13 @@ The template that comes with uni-app is Hello uni-app , which is the official co
 1. 浏览器运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到浏览器 -> 选择浏览器，即可在浏览器里面体验uni-app 的 H5 版。
 1. Browser operation: Enter the hello-uniapp project, click Run on the toolbar -> Run to the browser -> Select the browser, you can experience the H5 version of uni-app in the browser.
   <div align=center>
-  	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/c2808410-4f37-11eb-97b7-0dc4655d6e68.png"/>
+  	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/run-chrome.png"/>
   </div>
 
 2. 真机运行：连接手机，开启USB调试，进入hello-uniapp项目，点击工具栏的运行 -> 真机运行 -> 选择运行的设备，即可在该设备里面体验uni-app。
 2. Real machine operation: connect the mobile phone, enable USB debugging, enter the hello-uniapp project, click Run on the toolbar -> Real machine operation -> select the running device, you can experience the uni-app in the device.
 	<div align=center>
-		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/c371c1e0-4f37-11eb-97b7-0dc4655d6e68.png"/>
+		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/run-phone.png"/>
 	</div>
 	
 	如手机无法识别，请点击菜单运行-运行到手机或模拟器-真机运行常见故障排查指南。
@@ -68,7 +68,7 @@ The template that comes with uni-app is Hello uni-app , which is the official co
 3. Run in WeChat Developer Tools: Enter the hello-uniapp project, click Run on the toolbar -> Run to Mini Program Simulator -> WeChat Developer Tools, you can experience uni-app in WeChat Developer Tools.
     <br/>
     <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/afd79970-4f37-11eb-b680-7980c8a877b8.png"/>
+    	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-1.png"/>
     </div>
     
     **注意：**如果是第一次使用，需要先配置小程序ide的相关路径，才能运行成功。如下图，需在输入框输入微信开发者工具的安装路径。 若HBuilderX不能正常启动微信开发者工具，需要开发者手动启动，然后将uni-app生成小程序工程的路径拷贝到微信开发者工具里面，在HBuilderX里面开发，在微信开发者工具里面就可看到实时的效果。
@@ -78,49 +78,49 @@ The template that comes with uni-app is Hello uni-app , which is the official co
     uni-app compiles the project to the unpackage directory of the root directory by default.
     <br/>
     <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bde30720-4f37-11eb-8ff1-d5dcf8779628.png"/>
+      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/weixin-setting.png"/>
     </div>
 		
 4. 在支付宝小程序开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 支付宝小程序开发者工具，即可在支付宝小程序开发者工具里面体验uni-app。
 4. Run in the Alipay applet developer tool: enter the hello-uniapp project, click Run on the toolbar -> run to the applet simulator -> Alipay applet developer tool, you can find it in the Alipay applet developer tool Experience uni-app.
     <br/>
     <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b1d08340-4f37-11eb-a16f-5b3e54966275.png"/>
+    	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-3.png"/>
     </div>
 
 5. 在百度开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 百度开发者工具，即可在百度开发者工具里面体验uni-app。
 5. Run in Baidu Developer Tools: Enter the hello-uniapp project, click Run on the toolbar -> Run to Mini Program Simulator -> Baidu Developer Tools, you can experience uni-app in Baidu Developer Tools.
     <br/>
     <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b0a17920-4f37-11eb-8a36-ebb87efcf8c0.png"/>
+    	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-2.png"/>
     </div>
  
 6. 在字节跳动开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 字节跳动开发者工具，即可在字节跳动开发者工具里面体验uni-app。
 6. Run in ByteDance Developer Tools: Enter the hello-uniapp project, click Run on the toolbar -> Run to Mini Program Simulator -> ByteDance Developer Tools, you can find it in ByteDance Developer Tools Experience uni-app.
     <br/>
     <div align=center>
-    	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b29e0c70-4f37-11eb-b997-9918a5dda011.png"/>
+    	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-4.png"/>
     </div>
 
 7. 在360开发工具中导入：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 360开发工具，即可在360开发工具里面体验uni-app。
 7. Import in 360 development tools: Enter the hello-uniapp project, click Run on the toolbar -> Run to the applet simulator -> 360 development tools, you can experience uni-app in the 360 development tools.
     <br/>
     <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b9edff30-4f37-11eb-97b7-0dc4655d6e68.png"/>
+      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-debug-mp-360.png"/>
     </div>
 
 8. 在快应用联盟工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 快应用联盟工具，即可在快应用联盟工具里面体验uni-app。
 8. Run in the quick app alliance tool: enter the hello-uniapp project, click Run on the toolbar -> run to the applet simulator -> quick app alliance tool, you can experience uni-app in the quick app alliance tool.
     <br/>
     <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bba35050-4f37-11eb-8ff1-d5dcf8779628.png"/>
+      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-debug-quickapp-webview.png"/>
     </div>
 
 9. 在华为开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 华为开发者工具，即可在华为开发者工具里面体验uni-app。
 9. Run in Huawei Developer Tools: Enter the hello-uniapp project, click Run on the toolbar -> Run to Mini Program Simulator -> Huawei Developer Tools, you can experience uni-app in Huawei Developer Tools.
     <br/>
     <div align=center>
-      <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bece2a70-4f37-11eb-8ff1-d5dcf8779628.png"/>
+      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-release-quickapp-webview-huawei.png"/>
     </div>
 
 10. 在QQ小程序开发工具里运行：内容同上，不再重复。
@@ -140,7 +140,7 @@ The shortcut key to run is `Ctrl+r`.
 HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行的设备：
 HBuilderX also provides a quick run menu, you can quickly select the device to run by number:
 <div align=center>
-	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/aef21b70-4f37-11eb-a16f-5b3e54966275.png"/>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/runtool.png"/>
 </div>
 
 如需调试，可参考：[uni-app调试](/snippet?id=使用-chrome-调试)
@@ -156,12 +156,12 @@ For debugging, please refer to: [uni-app debugging](/snippet?id=%E4%BD%BF%E7%94%
 On the HBuilderX toolbar, click Release and select Native App-Cloud Packaging, as shown below:
 
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b8332fd0-4f37-11eb-8ff1-d5dcf8779628.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-11.png"/>
 </div>
 出现如下界面，点击打包即可。
 The following interface appears, click Package.
 <div align=center>
-  <img style="max-width:600px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/001a20b0-d85a-11ea-81ea-f115fe74321c.png"/>
+  <img style="max-width:600px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-pack-cloud.png"/>
 </div>
 
 ### 打包为原生App（离线）
@@ -174,7 +174,7 @@ The following interface appears, click Package.
 On the HBuilderX toolbar, click Release, select local packaging, as shown in the figure below, click to generate offline packaging resources.
 
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b9269080-4f37-11eb-8a36-ebb87efcf8c0.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-12.png"/>
 </div>
 
 ### 发布为H5
@@ -183,13 +183,13 @@ On the HBuilderX toolbar, click Release, select local packaging, as shown in the
 1. 在 ``manifest.json`` 的可视化界面，进行如下配置（发行在网站根目录可不配置应用基本路径），此时发行网站路径是 www.xxx.com/h5，如：[https://hellouniapp.dcloud.net.cn](https://hellouniapp.dcloud.net.cn)。
 1. In the visual interface of ``manifest.json``, perform the following configuration (the application base path may not be configured in the root directory of the website), at this time, the path of the issuing website is www.xxx.com/h5, such as: [https:/ /hellouniapp.dcloud.net.cn](https://hellouniapp.dcloud.net.cn).
 <div align=center>
-	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bf90de30-4f37-11eb-8ff1-d5dcf8779628.png" style="max-width:600px;height:auto;"/>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/build-h5-1.png" style="max-width:600px;height:auto;"/>
 </div>
 2. 在HBuilderX工具栏，点击发行，选择网站-H5手机版，如下图，点击即可生成 H5 的相关资源文件，保存于 unpackage 目录。
 2. On the HBuilderX toolbar, click Release, select Website-H5 Mobile Version, as shown in the figure below, click to generate H5 related resource files and save them in the unpackage directory.
 
 <div align=center>
-	<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b7391860-4f37-11eb-8a36-ebb87efcf8c0.png" style="max-width:600px;height:auto;"/>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-10.png" style="max-width:600px;height:auto;"/>
 </div>
 
 **注意**
@@ -209,7 +209,7 @@ On the HBuilderX toolbar, click Release, select local packaging, as shown in the
 2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-微信"，输入小程序名称和appid点击发行即可在 ``unpackage/dist/build/mp-weixin`` 生成微信小程序项目代码。
 2. Click "Release" => "Mini Program-WeChat" in the top menu of HBuilderX, enter the applet name and appid and click Release to generate a WeChat applet project in ``unpackage/dist/build/mp-weixin`` code.
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b36294f0-4f37-11eb-8a36-ebb87efcf8c0.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-6.png"/>
 </div>
 3. 在微信小程序开发者工具中，导入生成的微信小程序项目，测试项目代码运行正常后，点击“上传”按钮，之后按照 “提交审核” => “发布” 小程序标准流程，逐步操作即可，详细查看：[微信官方教程](https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/release.html)。
 3. In the WeChat applet developer tool, import the generated WeChat applet project, and after the test project code runs normally, click the "Upload" button, and then follow the "Submit for Review" => "Publish" applet standard process, step by step That's it, check it out in detail: [WeChat Official Tutorial](https://developers.weixin.qq.com/miniprogram/dev/quickstart/basic/release.html).
@@ -221,7 +221,7 @@ On the HBuilderX toolbar, click Release, select local packaging, as shown in the
 2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-百度"，输入小程序名称和appid点击发行即可在 ``/unpackage/dist/build/mp-baidu`` 生成百度小程序项目代码。
 2. Click "Release" => "Mini Program-Baidu" in the top menu of HBuilderX, enter the applet name and appid and click Release to generate Baidu applet at ``/unpackage/dist/build/mp-baidu`` project code.
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b42a03a0-4f37-11eb-8a36-ebb87efcf8c0.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-7.png"/>
 </div>
 3. 在百度小程序开发者工具中，导入生成的百度小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，之后在百度小程序的 [管理中心](https://smartprogram.baidu.com/developer/applist.html) 选择创建的应用点击前往发布，选择对应的版本然后提交审核。
 3. In the Baidu applet developer tool, import the generated Baidu applet project, and after the test project code runs normally, click the "Upload" button to upload the code, and then upload the code in the Baidu applet's [Management Center](https://smartprogram .baidu.com/developer/applist.html) Select the created app and click Go to Publish, select the corresponding version and submit it for review.
@@ -234,7 +234,7 @@ On the HBuilderX toolbar, click Release, select local packaging, as shown in the
 2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-支付宝"，即可在 ``/unpackage/dist/build/mp-alipay`` 生成支付宝小程序项目代码。
 2. Click "Issue" => "Mini Program-Alipay" in the top menu of HBuilderX, and you can generate the Alipay Mini Program project code in ``/unpackage/dist/build/mp-alipay``.
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b636c390-4f37-11eb-bd01-97bc1429a9ff.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni20190222-8.png"/>
 </div>
 3. 在支付宝小程序开发者工具中，导入生成的支付宝小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，在 [支付宝小程序后台](https://open.alipay.com/platform/mini.htm#/app)，选择刚提交的版本点击提交审核，详见：[支付宝小程序文档](https://docs.alipay.com/mini/developer/publish)。
 3. In the Alipay applet developer tool, import the generated Alipay applet project, and after the test project code is running normally, click the "Upload" button to upload the code, and in the [Alipay applet background](https://open.alipay. com/platform/mini.htm#/app), select the version just submitted and click Submit for review, see: [Alipay Mini Program Documentation](https://docs.alipay.com/mini/developer/publish).
@@ -247,7 +247,7 @@ On the HBuilderX toolbar, click Release, select local packaging, as shown in the
 2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-字节跳动"，即可在 ``/unpackage/dist/build/mp-alipay`` 生成字节跳动小程序项目代码。
 2. On the top menu of HBuilderX, click "Release" => "Mini Program-ByteDance" to generate the ByteDance applet project code in ``/unpackage/dist/build/mp-alipay``.
 <div align=center>
-  <img style="max-width:300px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/a6ba4ed0-4f39-11eb-b997-9918a5dda011.jpg"/>
+  <img style="max-width:300px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/zjdance.jpg"/>
 </div>
 3. 在字节跳动小程序开发者工具中，导入生成的字节跳动小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，在 [字节跳动小程序后台](https://developer.toutiao.com/app/applist)，选择刚提交的版本点击提交审核，详见：[字节跳动小程序文档](https://developer.toutiao.com/dev/cn/mini-app/introduction/plug-in/verification)。
 3. In the ByteDance applet developer tool, import the generated ByteDance applet project, and after the test project code runs normally, click the "Upload" button to upload the code, and in the [ByteDance applet background](https: //developer.toutiao.com/app/applist), select the version just submitted and click submit for review, see: [ByteDance Mini Program Documentation](https://developer.toutiao.com/dev/cn/mini- app/introduction/plug-in/verification).
@@ -259,7 +259,7 @@ On the HBuilderX toolbar, click Release, select local packaging, as shown in the
 2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-360"，即可在 ``/unpackage/dist/build/mp-360`` 生成360小程序项目代码。
 2. Click "Release" => "Mini Program-360" in the top menu of HBuilderX, and you can generate the 360 Mini Program project code in ``/unpackage/dist/build/mp-360``.
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/baba28d0-4f37-11eb-bdc1-8bd33eb6adaa.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-release-mp-360.png"/>
 </div>
 3. 在360浏览器中，导入生成的360小程序项目
 3. In the 360 browser, import the generated 360 applet project
@@ -277,7 +277,7 @@ On the HBuilderX toolbar, click Release, select local packaging, as shown in the
 2. 在HBuilderX中顶部菜单依次点击 "发行" => "快应用联盟"，即可在 ``/unpackage/dist/build/quickapp-webview`` 生成快应用(webview)项目代码。
 2. Click "Release" => "Quick App Alliance" in the top menu of HBuilderX, and then you can generate the quick app (webview) project code in ``/unpackage/dist/build/quickapp-webview``.
 <div align=center>
-  <img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bd0db5c0-4f37-11eb-8ff1-d5dcf8779628.png"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-release-quickapp-webview.png"/>
 </div>
 3. 在快应用联盟工具中，导入生成的快应用联盟项目，测试项目代码运行正常后，点击”构建“打包正式版，在[快应用联盟后台](https://www.quickapp.cn/)上传
 3. In the Quick App Alliance tool, import the generated Quick App Alliance project, and after the test project code is running normally, click "Build" to package the official version, and in the [Quick App Alliance background](https://www.quickapp.cn/ ) upload
@@ -290,7 +290,7 @@ On the HBuilderX toolbar, click Release, select local packaging, as shown in the
 2. 在HBuilderX中顶部菜单依次点击 "发行" => "快应用-华为"，即可在 ``/unpackage/dist/build/quickapp-webview`` 生成华为快应用项目代码。
 2. On the top menu of HBuilderX, click "Release" => "Quick App-Huawei" to generate Huawei Quick App project code in ``/unpackage/dist/build/quickapp-webview``.
 <div align=center>
-  <img src="![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/bece2a70-4f37-11eb-8ff1-d5dcf8779628.png)g"/>
+  <img src="![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-release-quickapp-webview-huawei.png)g"/>
 </div>
 3. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在[华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp)上传
 3. In the Huawei Developer Tools, import the generated Huawei Quick App project, and after the test project code runs normally, click "Build" to package the official version, and in the [Huawei Quick App Background](https://developer.huawei.com/ consumer/cn/quickApp) upload

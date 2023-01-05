@@ -45,17 +45,17 @@ App和微信两个平台细化说明如下：
 
 1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 证书管理`内填写安卓应用的包名、签名和iOS应用的bundleId。一个应用只能有一个发行证书配置，但是可以有多个开发证书配置
 
-  ![证书管理](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b4e76aed-6659-47e6-a18e-e41bdf804643.jpg)
+  ![证书管理](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-dev-cert.jpg)
 
 2. 在[uniCloud控制台](https://unicloud.dcloud.net.cn/)关联允许发送安全网络请求的应用
 
-  ![关联应用到服务空间安全网络](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/61e912c0-8287-441b-917d-7dd184bae729.jpg)
+  ![关联应用到服务空间安全网络](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-unicloud-relate.jpg)
   
   本质上安全网络绑定的是应用的appid、包名、证书等信息。只不过这些信息统一配置在dev中，在uniCloud的web控制台来选择。所以务必注意dev配置的正式版、测试版的包名、签名是否正确。
 
 3. 在项目根目录manifest.json文件内为app平台开启安全网络模块
 
-  ![App云端一体安全网络模块](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fe4620a4-2e16-4306-b9ae-38f1ded13a43.jpg)
+  ![App云端一体安全网络模块](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-app-manifest.jpg)
 
   **注意：**打包后生效。测试时需打包[自定义基座](../tutorial/run/run-app.md#customplayground)。
 
@@ -84,11 +84,11 @@ App和微信两个平台细化说明如下：
 
 1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 【名称待定】`内填写微信小程序的appId。一个应用只能有一个发行配置，但是可以有多个开发配置
 
-  ![微信小程序AppId绑定](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/8a1c5106-23ba-46a6-ab3b-3f2ca7c6883a.jpg)
+  ![微信小程序AppId绑定](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-dev-wx-appid.jpg)
   
 2. 在uniCloud控制台关联允许发送安全网络请求的应用
 
-  ![关联应用到服务空间安全网络](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/61e912c0-8287-441b-917d-7dd184bae729.jpg)
+  ![关联应用到服务空间安全网络](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-unicloud-relate.jpg)
 
 3. 工程中导入uni-id-pages
 
@@ -165,7 +165,7 @@ App.vue页面需要补充如下代码：
   
 7. 在项目根目录manifest.json文件内为微信小程序平台开启`云端一体安全网络模块`
   
-  ![微信小程序云端一体安全网络模块](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ab96f1f7-af14-4f08-8b1c-699ecfce3381.jpg)
+  ![微信小程序云端一体安全网络模块](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-wx-manifest.jpg)
 
 ## 客户端强制验证@verify-client
 
@@ -177,7 +177,7 @@ App.vue页面需要补充如下代码：
 
 开发者首先在[uniCloud控制台](https://unicloud.dcloud.net.cn/)的安全网络页面选择哪些客户端应用可以与uniCloud建立安全网络，然后在页面上单独开启客户端强制校验。
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/bd8f8939-67d5-415b-85eb-f63d4d1dc2dc.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-verify-client-config.jpg)
 
 **切记**
 1. 由于uni安全网络不支持web，一旦开启客户端强制校验后，web端将无法连接云函数。

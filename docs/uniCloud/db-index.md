@@ -29,14 +29,12 @@ If the related field is not set as an index, when the number of records in the d
 2. 切换到【云数据库】标签页，并选择需要添加索引的集合，进入索引管理 tab 页，如下图。
 2. Switch to the [Cloud Database] tab, and select the collection to be indexed, and enter the index management tab, as shown in the figure below.
 
-  ![web控制台添加索引](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/15d24770-5faf-11eb-8d54-21c4ca4ce5d7.jpg)  
-  ![web console add index](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/15d24770-5faf-11eb-8d54-21c4ca4ce5d7.jpg)
+  ![web控制台添加索引](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index.jpg)  
   
 3. 添加索引。
 3. Add an index.
   
-  ![添加索引](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/fca53140-1d91-11eb-880a-0db19f4f74bb.jpg)
-  ![Add index](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/fca53140-1d91-11eb-880a-0db19f4f74bb.jpg)
+  ![添加索引](https://web-assets.dcloud.net.cn/unidoc/zh/composed-index.jpg)
 
 注意：
 Notice:
@@ -142,8 +140,7 @@ For example, create a geographic index for a collection with a geographic field 
 }
 ```
 
-![地理位置索引](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/21b31780-5fb0-11eb-bdc1-8bd33eb6adaa.jpg)
-![Location Index](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/21b31780-5fb0-11eb-bdc1-8bd33eb6adaa.jpg)
+![地理位置索引](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index-geo.jpg)
 
 ### TTL索引@ttl
 ### TTL index @ttl
@@ -154,7 +151,7 @@ The ttl index is used to set the data expiration time and delete the data after 
 配置方式如下：
 The configuration is as follows:
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/25187fa4-dc40-48a2-ba00-e6ad8c604c39.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/ttl-index.jpg)
 
 **注意**
 **Notice**
@@ -199,7 +196,7 @@ Sparse indexes are suitable for scenarios where a field needs to be unique, but 
 **配置索引为稀疏索引**
 **Configure the index as a sparse index**
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/daf77fd0-5fb3-11eb-b680-7980c8a877b8.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index-sparse.jpg)
 
 ### 字段大小限制
 ### Field size limit

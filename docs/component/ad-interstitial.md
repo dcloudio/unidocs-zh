@@ -4,7 +4,7 @@
 插屏广告组件是由客户端原生的图片、文本、视频控件组成的；插屏广告与信息流或横幅广告相比展现尺寸更大，同样能够满足您对大量曝光和用户转化的需求。
 Interstitial ad components are composed of client-side native image, text, and video controls; interstitial ads have a larger display size than information flow or banner ads, and can also meet your needs for a large number of exposures and user conversions.
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/5dc1ce6b-b786-4175-aec5-dd2ab4a5e34c.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/interstitial-ad.png)
 
 
 **平台差异说明**

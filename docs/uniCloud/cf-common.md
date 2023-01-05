@@ -38,8 +38,7 @@ cloudfunctions
 **在`HBuilderX 3.0.0`以上版本上述步骤4、5可以在云函数上右键选择`管理公共模块依赖`来实现，如下图**
 **In `HBuilderX 3.0.0` and above, the above steps 4 and 5 can be implemented by right-clicking on the cloud function and selecting `Manage public module dependencies`, as shown below**
 
-![管理公共模块依赖](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fc2da708-304e-4c92-9a0a-dc48fa5e73ed.png)
-![Manage Common Module Dependencies](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fc2da708-304e-4c92-9a0a-dc48fa5e73ed.png)
+![管理公共模块依赖](https://web-assets.dcloud.net.cn/unidoc/zh/manage-common.png)
 
 公共模块依赖其他公共模块同理
 Public modules depend on other public modules in the same way

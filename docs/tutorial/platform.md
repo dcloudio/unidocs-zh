@@ -109,12 +109,12 @@ Conditional compilation is marked with special comments which are the basic of c
 示例，如下代码仅在 App 下出现:
 For example, the following codes only appear on App:
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/07834e90-4f3c-11eb-b680-7980c8a877b8.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-7.png)
 
 示例，如下代码不会在 H5 平台上出现：
 For example, the following codes will not appear on the H5 platform:
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/06a79490-4f3c-11eb-b680-7980c8a877b8.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-6.png)
 
 除了支持单个平台的条件编译外，还支持**多平台**同时编译，使用 || 来分隔平台名称。
 In addition to conditional compilation on a single platform, it also supports simultaneous compilation on **multiple platforms**. Use || to separate the platform names.
@@ -122,7 +122,7 @@ In addition to conditional compilation on a single platform, it also supports si
 示例，如下代码会在 App 和 H5 平台上出现：
 For example, the following codes will appear on App and H5 platforms:
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/05c1ef80-4f3c-11eb-b680-7980c8a877b8.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-5.png)
 
 ### 组件的条件编译
 ### Conditional compilation of components
@@ -159,19 +159,19 @@ For example, the following public account follow components will only appear in 
 正确写法
 Correct writing
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/0bd78d80-4f3c-11eb-a16f-5b3e54966275.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-2.png)
 
 错误写法
 Wrong writing
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/0c9c8b30-4f3c-11eb-8a36-ebb87efcf8c0.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-3.png)
 
 ### pages.json 的条件编译
 ### Conditional compilation of pages.json
 下面的页面，只有运行至 App 时才会编译进去。
 The following pages will only be compiled when running to App.
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/04ecec40-4f3c-11eb-97b7-0dc4655d6e68.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-4.png)
 
 不同平台下的特有功能，以及小程序平台的分包，都可以通过 pages.json 的条件编译来更好地实现。这样，就不会在其它平台产生多余的资源，进而减小包体积。
 The unique functions under different platforms, as well as the subcontracting of the applet platform, can be better realized through the conditional compilation of pages.json. In this way, redundant resources will not be generated on other platforms, thereby reducing the package size.
@@ -247,7 +247,7 @@ HBuilderX provides rich support for conditional compilation of `uni-app`:
 
 在 HBuilderX 中开发 ``uni-app`` 时，通过输入 **ifdef** 可快速生成条件编译的代码片段
 
- ![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/0a1766f0-4f3c-11eb-8a36-ebb87efcf8c0.png)
+ ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-022402.png)
 
 **语法高亮**
 **Syntax highlighting**
@@ -255,7 +255,7 @@ HBuilderX provides rich support for conditional compilation of `uni-app`:
 在 HBuilderX 中对条件编译的代码注释部分提供了语法高亮，可分辨出写法是否正确，使得代码更加清晰（独立js文件需在编辑器右下角切换javascript es6+编辑器，独立css文件暂不支持高亮，但不高亮不影响使用）
 HBuilderX provides syntax highlighting for the code comment part of conditional comments, which can distinguish whether the writing mode is correct or not, making the code clearer (For standalone js files, you need to switch the javascript es6+ editor in the lower right corner of the editor. Standalone css files do not support highlighting, which does not affect the use effect)
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/0868a580-4f3c-11eb-8a36-ebb87efcf8c0.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-012403.png)
 
 
 **正确注释和快速选中**
@@ -264,12 +264,12 @@ HBuilderX provides syntax highlighting for the code comment part of conditional 
 在 HBuilderX 中，ctrl+alt+/ 即可生成正确注释（js：``// 注释``、css：``/* 注释 */``、vue/nvue模板： ``<!-- 注释 -->``）。
 In HBuilderX, ctrl+alt+/ can generate correct comments (js: `// Comments`, css: `/* Comments */`, vue/nvue template: `<!-- Comments -->`).
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/0af9d7b0-4f3c-11eb-8a36-ebb87efcf8c0.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni2019012801.png)
 
 点击 **ifdef** 或 **endif** 可快速选中条件编译部分；点击左侧的折叠图标，可折叠条件编译部分代码。
 Click **ifdef** or **endif** to quickly select the conditional compilation part; Click the folding icon on the left to collapse part of the conditional compilation code.
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/09460d30-4f3c-11eb-8a36-ebb87efcf8c0.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-012501.png)
 
 
 

@@ -558,7 +558,7 @@ Cross-end rich text processing scheme can be found in: [https://ask.dcloud.net.c
 		export default {
 			data() {
 				return {
-					rawHtml: '<div style="text-align:center;background-color: #007AFF;"><div >我是内容</div><img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/d8590190-4f28-11eb-b680-7980c8a877b8.png"/></div>'
+					rawHtml: '<div style="text-align:center;background-color: #007AFF;"><div >我是内容</div><img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png"/></div>'
 				}
 			}
 		}

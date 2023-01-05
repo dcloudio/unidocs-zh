@@ -13,7 +13,7 @@ Experience system: [https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.
 注：uni统计内置在[uni-admin](/uniCloud/admin)中，体验系统的数据会定期重置。
 Note: uni statistics are built in [uni-admin](/uniCloud/admin), and the data of the experience system will be reset periodically.
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/28ddae77-dda6-448f-86aa-7e59bb7c4f8d.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/admin3.png)
 
 ## 产品特色
 ## feature of product
@@ -159,8 +159,7 @@ For developers using uni stats 1.0, it is recommended to upgrade to uni stats 2.
 在业务App项目的 `manifest.json` 里，选择 `uni统计配置` 项，根据需求，选择开通 `uni统计` ，勾选 `2.0` 开启新版统计。
 In the `manifest.json` of the business app project, select the `uni statistics configuration` item, select to enable `uni statistics` as required, and check `2.0` to enable the new version of statistics.
 
-![开启统计](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/14b2b045-3d8e-4535-acad-2e745441c816.png)
-![Open statistics](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/14b2b045-3d8e-4535-acad-2e745441c816.png)
+![开启统计](https://web-assets.dcloud.net.cn/unidoc/zh/iShot2022-05-17%2020.22.52.png)
 
 上述可视化操作，其实对应manifest源码视图的 `uniStatistics` 节点。如下文档对manifest规范进行详述。**如不关心规范细节，可以不阅读本小节，继续看下一节《小程序域名白名单》**。
 The above visualization operations actually correspond to the `uniStatistics` node of the manifest source view. The manifest specification is detailed in the following document. **If you don't care about the specification details, you can skip this section and continue to read the next section "MiniApp Domain Name Whitelist"**.
@@ -518,14 +517,12 @@ In order for the data collected by the client app to be correctly received and c
 2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 阿里云|腾讯云`；否则，进入第3步；
 2. If `uniCloud` has not been enabled before, right click and select `Create uniCloud cloud development environment -> Alibaba Cloud|Tencent Cloud`; otherwise, go to step 3;
 
-![关联前后台数据](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b2ad84ed-a69a-43dc-b8d1-6efaafd96a14.png)
-![Associated front and back data](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b2ad84ed-a69a-43dc-b8d1-6efaafd96a14.png)
+![关联前后台数据](https://web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.11.18.png)
 
 3. 在`uniCloud`目录右键并选择`关联云服务空间或项目`，在打开的窗口中选择对应`uni-admin`项目关联的服务空间
 3. Right-click on the `uniCloud` directory and select `Associate cloud service space or project`, and select the service space associated with the `uni-admin` project in the opened window
 
-![关联前后台数据](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/14744bf3-c88e-4408-b2fa-0ecf0dcf4fe1.png)
-![Associated front and back data](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/14744bf3-c88e-4408-b2fa-0ecf0dcf4fe1.png)
+![关联前后台数据](https://web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.08.51.png)
 
 ### 错误解析 <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error 
 ### Error parsing <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error
@@ -557,18 +554,15 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 	- web 平台在`发行-> 网站`时，勾选 `生成 sourceMap` 选项。
 	- For the web platform, check the `Generate sourceMap` option in `Release -> Website`.
 
-		![web 平台生成 sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c9872cf7-39b1-4c00-9fe6-afc5939b3b31.jpg)
-		![Web platform generates sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c9872cf7-39b1-4c00-9fe6-afc5939b3b31.jpg)
+		![web 平台生成 sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/create_sourcemap.jpg)
 	- App 平台在`发行 -> 原生App-云打包`时，勾选 `生成 sourceMap` 选项。
 	- When the App platform is `Release -> Native App-Cloud Packaging`, check the `Generate sourceMap` option.
 
-		![app 平台生成 sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5366655c-0ba3-4f5a-b5fc-e80289ed1a17.jpg)
-		![app platform generates sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5366655c-0ba3-4f5a-b5fc-e80289ed1a17.jpg)
+		![app 平台生成 sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/app_sourcemap.jpg)
 	- 微信小程序平台在`发行 -> 小程序-微信`时，勾选 `生成 sourceMap` 选项。
 	- When the WeChat MiniApp platform is `Issue -> MiniApp- WeChat`, check the `Generate sourceMap` option.
 
-		![微信小程序平台生成 sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/85c3eed9-e1b3-41c6-888f-bc1e2cb21a46.jpg)
-		![WeChat MiniApp platform generates sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/85c3eed9-e1b3-41c6-888f-bc1e2cb21a46.jpg)
+		![微信小程序平台生成 sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/wx_sourcemap.jpg)
 
 - cli 项目生成 sourceMap 文件
 - cli project generates sourceMap file
@@ -599,8 +593,7 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 1. 项目编译完成后，可在 `/unpackage/dist/build/.sourcemap` 中查看到生成的各平台的 sourceMap 文件。
 1. After the project is compiled, you can view the generated sourceMap files for each platform in `/unpackage/dist/build/.sourcemap`.
 
-	![生成的 sourceMap 路径](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/52e1a71d-a6f2-4458-9213-186dd78684de.jpg)
-	![generated sourceMap path](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/52e1a71d-a6f2-4458-9213-186dd78684de.jpg)
+	![生成的 sourceMap 路径](https://web-assets.dcloud.net.cn/unidoc/zh/sourcemap_file.jpg)
 
 3. 由于微信小程序平台上传发布后，会再压缩打包一次，所以需要额外一个步骤：
 3. After the WeChat MiniApp platform is uploaded and released, it will be compressed and packaged again, so an additional step is required:
@@ -609,8 +602,7 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
    2. 将下载好的文件解压到所生成的 .sourcemap 文件夹中： `/unpackage/dist/build/.sourcemap/mp-weixin/__WEIXIN__/`（__WEIXIN__为新建的目录，解析错误时会根据这个名字查找）
    2. Unzip the downloaded file into the generated .sourcemap folder: `/unpackage/dist/build/.sourcemap/mp-weixin/__WEIXIN__/` (__WEIXIN__ is the newly created directory, and the parsing error will be based on this name lookup)
 
-   ![微信 download sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/2e4d0e4f-5be6-4a72-adf0-697a576dd3fa.png)
-   ![WeChat download sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/2e4d0e4f-5be6-4a72-adf0-697a576dd3fa.png)
+   ![微信 download sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/mp-weixin-download-sourcemap.png)
 
 	**注意事项**
 	**Precautions**
@@ -630,13 +622,12 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
    2. 搜索 `cloudSourceMapUrl` 补充腾讯云云存储访问地址（如：https://xx-xx-xx.tcb.qcloud.la/\_\_UNI\_\_/uni-stat/sourcemap）
    2. Search for `cloudSourceMapUrl` to supplement Tencent Cloud cloud storage access address (eg: https://xx-xx-xx.tcb.qcloud.la/\_\_UNI\_\_/uni-stat/sourcemap)
 
-	![cloudSpaceId](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f1dee8fc-dfb5-49b1-b905-22f8fa733eca.jpg)
+	![cloudSpaceId](https://web-assets.dcloud.net.cn/unidoc/zh/upload_spaceId.jpg)
 
 2. 将 uni-admin 项目运行到浏览器中，在 `uni 统计 / 错误统计 / js报错` 页面，错误信息列表表格的右上角有 `上传 sourceMap` 按钮。点击后展示如下：
 2. Run the uni-admin project into the browser, and on the `uni statistics / error statistics / js error report` page, there is an `upload sourceMap` button in the upper right corner of the error message list table. After clicking, it will display as follows:
 
-	![上传 sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/50878ced-c415-4d8d-923d-f3127e4a1add.png)
-	![Upload sourceMap](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/50878ced-c415-4d8d-923d-f3127e4a1add.png)
+	![上传 sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/%E4%B8%8A%E4%BC%A0%20sourcemap%20%E6%8A%BD%E5%B1%89.png)
 
 1. 上传请前请填写完整信息：`应用`、`平台`、`版本`
 1. Please fill in the complete information before uploading: `Application`, `Platform`, `Version`
@@ -668,14 +659,12 @@ On the `uni statistics / error statistics / js error report` page, in the error 
 原始错误信息：
 Original error message:
 
-![原始错误：](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1a8f0fcc-9bbf-4563-9c33-ebe4c7e14800.jpg)
-![Original error:](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1a8f0fcc-9bbf-4563-9c33-ebe4c7e14800.jpg)
+![原始错误：](https://web-assets.dcloud.net.cn/unidoc/zh/originalErrMsg.jpg)
 
 解析后的错误信息：
 Parsed error message:
 
-![原始错误：](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/300b16e0-bfea-4dd5-ba95-e06dc1b75b51.jpg)
-![Original error:](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/300b16e0-bfea-4dd5-ba95-e06dc1b75b51.jpg)
+![原始错误：](https://web-assets.dcloud.net.cn/unidoc/zh/parse_error.jpg)
 
 - 解析错误是逐行解析，某一行解析失败会返回原错误信息
 - Parsing errors are parsed line by line. If a line fails to parse, the original error message will be returned

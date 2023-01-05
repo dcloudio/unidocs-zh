@@ -318,7 +318,7 @@ const payload = {
 		"avatar_file":{
 			"extname": "",
 			"name": "",
-			"url":'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png'
+			"url":'https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png'
 		},
 		"openid":"100001",
 		"nickname":"张三",

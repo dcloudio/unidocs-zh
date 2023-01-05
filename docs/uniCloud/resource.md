@@ -20,12 +20,11 @@ Integrate check-in, lottery, gold coin points and a variety of fun incentive gam
 - [China Education Release (Official App of the Ministry of Education of China )](http://xwapp.moe.gov.cn/h5/sharepage/download.html)[See report for details](http://www.moe.gov. cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
 
 <a href="http://xwapp.moe.gov.cn/h5/sharepage/download.html" target="_blank">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/777555f6-d237-47bb-9677-f8cd8d4761cb.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/10.png">
 </a>
 
 
-- [鲸鱼解忧馆](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png) 一个通过交流与诉说以消除烦恼的平台。
-- [Whale Relief Museum](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png) One is to eliminate by communicating and telling Troubled platform.
+- [鲸鱼解忧馆](https://web-assets.dcloud.net.cn/unidoc/zh/123.png) 一个通过交流与诉说以消除烦恼的平台。
 我们的愿望是每个用户在这里写下烦恼后能够得到解答与回应，并且找到与自己拥有同样烦恼的人和群体。
 Our wish is that every user can get answers and responses after writing their troubles here, and find people and groups who have the same troubles as themselves.
 也许回应不会那么迅速，但总归会得到暖心的回复。答案难道不是一种值得期待的事情吗？
@@ -35,8 +34,8 @@ Maybe the "answer" is not so "accurate" because people's psychology and personal
 一个无需过多言语便懂你的慢社交轻社区。
 A slow social light community that understands you without too many words.
 
-<a href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png" target="_blank">
-<img width="800" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/29a2f324-a91c-4390-b702-4d61ad50037a.png">
+<a href="https://web-assets.dcloud.net.cn/unidoc/zh/123.png" target="_blank">
+<img width="800" src="https://web-assets.dcloud.net.cn/unidoc/zh/123.png">
 </a>
 
 - [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)
@@ -44,7 +43,7 @@ A slow social light community that understands you without too many words.
 A basic project template for rapid development of cloud-integrated applications that integrates common functions of a large number of commercial projects.
 
 <a href="https://ext.dcloud.net.cn/plugin?id=5057" target="_blank">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/72ccebcc-e9e0-4b9f-9f7b-1249edde3aba.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-starter-img.png">
 </a>
 
 - [合成类网赚游戏](https://ext.dcloud.net.cn/plugin?id=4095) 该款网赚游戏是基于uni-app、uniCloud、uni-AD开发的合成类项目，源码和文档完全开放。
@@ -53,7 +52,7 @@ A basic project template for rapid development of cloud-integrated applications 
 Main functions of the game: Players earn gold coins by signing in and other methods, use gold coins to buy low-level cats and then synthesize them into higher-level cats. When the gold coins are insufficient, you can get new gold coins by watching rewarded video ads. Players invite friends to raise cats together, watch incentive videos offline, and inviters can get incentive red envelopes.
 
 <a href="https://ext.dcloud.net.cn/plugin?id=4095">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/04ab1423-4dd6-48a8-a4ae-53012684b2ae.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/cat-ad.png">
 </a>
 
 - [猜歌类网赚游戏](https://ext.dcloud.net.cn/plugin?id=4826) 该游戏基于uni-app、uniCloud、uni-AD开发的小游戏，通过猜歌曲、观看广告赚取现金奖励。代码开源、文档公开。
@@ -62,7 +61,7 @@ Main functions of the game: Players earn gold coins by signing in and other meth
 Main functions of the game: Players can directly obtain cash rewards by guessing songs, doing tasks, etc. Players can obtain gold coin rewards by guessing songs, opening red envelopes, and doing tasks. When the gold coins accumulate to a certain amount, they can be exchanged for cash. Players can get the number of cash draws by doing tasks with the word "draw". Support dual platform realization of App and WeChat applet.
 
 <a href="https://ext.dcloud.net.cn/plugin?id=4826">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-c26ec39a-f602-435d-b8bb-0453aa221eb0/b4812d7a-6438-4c33-89de-e2dc9752b028.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/song-game.png">
 </a>
 
 
@@ -70,16 +69,16 @@ Main functions of the game: Players can directly obtain cash rewards by guessing
 - [Guess the word puzzle](https://ext.dcloud.net.cn/plugin?id=7996) This game is based on the revision of the song guessing online earning game, the code is open source, the document is open, and it supports dual platform realization of App and WeChat applet .
 
 <a href="https://ext.dcloud.net.cn/plugin?id=7996">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e4482b33-43b1-4279-8a2a-d29e24b55a89.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/caizimi.png">
 </a>
 
 
 - 俄钓宝典 (微信小程序)，俄罗斯钓鱼4游戏助手，游戏攻略、实时点位、游戏资料库、游戏圈子等等应有尽有
 - Russian Fishing Collection (WeChat applet), Russian Fishing 4 game assistant, game guide, real-time points, game database, game circle, etc.
 
-<a href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/df33b3c9-1c69-4020-933e-6a840ea42124.jpg
+<a href="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BF%84%E9%92%93%E5%AE%9D%E5%85%B8qrcode.jpg
 ">
-  <img width="400" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ce5cd6be-f446-4df4-b7c7-30f3a83a6064.png">
+  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BF%84%E9%92%93%E5%AE%9D%E5%85%B8.png">
 </a>
 
 
@@ -116,7 +115,7 @@ Main functions of the game: Players can directly obtain cash rewards by guessing
 
 - 安心记待办：极简风手机应用。日程管理App，每日心情记录，安心习惯养成。[iOS App](https://apps.apple.com/cn/app/id1641634853)
 <a href="https://apps.apple.com/cn/app/id1641634853" target="_blank">
-  <img width="600" src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c7fa0cd4-32f8-4b48-b3e0-ef7013c137c1.png">
+  <img width="600" src="https://web-assets.dcloud.net.cn/unidoc/zh/resource-anxinji-todo.png">
 </a>
 
 更多uniClouid项目和插件，见**插件市场**：[https://ext.dcloud.net.cn/?cat1=7](https://ext.dcloud.net.cn/?cat1=7)

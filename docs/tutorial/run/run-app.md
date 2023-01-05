@@ -18,11 +18,11 @@ The run entry can be activated through the run menu at the top of HBuilder, the 
 
 1. HBuilder顶部运行菜单  
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c4d3c057-40dc-4dea-9277-be1c33a252ed.png" style="zoom: 50%;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/menurunapp.png" style="zoom: 50%;" />
 
 2. 工具栏运行按钮
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1f9bb269-0534-4562-ba90-a96c01a6f221.png" style="zoom: 50%;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/toolbarrunmenuapp.png" style="zoom: 50%;" />
 
 可以按数字快速选择菜单项。比如按“4”选择“运行到Android App基座”。也可以按上下键然后回车选择。
 Menu items can be quickly selected by number. For example, press "4" to select "Run to Android App Dock". You can also press the up and down keys and then enter to select.
@@ -53,7 +53,7 @@ But a device can only run one project at the same time, and when different proje
 
 ### Android设备选择  
 
-<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/9031cf41-da1c-476e-8f20-aaba3e432b92.jpeg" style="zoom: 50%;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/select-android.jpeg" style="zoom: 50%;" />
 
 **注意事项**  
 **Precautions**  
@@ -69,7 +69,7 @@ But a device can only run one project at the same time, and when different proje
 > 因收到苹果公司警告，自2022年9月14日起iOS真机设备不再支持使用标准真机运行基座，详情见论坛公告：[https://ask.dcloud.net.cn/article/40041](https://ask.dcloud.net.cn/article/40041)  
 > 在iOS真机设备上运行请向苹果申请证书制作[自定义基座](#customplayground)或者在Mac电脑使用[iOS模拟器](#ios_simulator)
 
-<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b919d962-79c0-461e-8817-47b4e9c76053.jpeg" style="zoom: 50%;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/select-ios.jpeg" style="zoom: 50%;" />
 
 **注意事项**  
 **Precautions**  
@@ -113,7 +113,7 @@ Select the mobile device or simulator to run in the run menu, click the run butt
 
 运行成功后，HBuilder底部的控制台显示成功日志。此后修改代码会差量同步到手机上，手机程序会动态热刷。同时console.log代码会打印到控制台上，点击打印日志可以跳转到相关代码。  
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ac78ba4d-16c2-4ca0-8cf8-2c8bb7260052.jpg" style="zoom: 50%;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/run-app-console.jpg" style="zoom: 50%;" />
 
 ### 运行项目到iOS真机App自启动@ios-app-automatically-open
 
@@ -129,7 +129,7 @@ HBuilderX 3.6.16版本，新增 运行App项目到iOS真机，安装基座，App
 ls -lh  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport
 ```
 
-<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d219c758-ea33-44a7-bc7b-1c814011266a.jpg" style="zoom: 45%;border: 1px solid #EEEEEE !important; border-radius: 20px;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios-version.jpg" style="zoom: 45%;border: 1px solid #EEEEEE !important; border-radius: 20px;" />
 
 ## 标准基座和自定义基座@customplayground  
 
@@ -145,7 +145,7 @@ If you want to customize the native layer, you need to go through the packaging 
 但打包后无法方便调试，不能热重载和显示控制台日志。所以HBuilder在打包时提供了一个特殊选项，打包“自定义运行基座”。
 However, after packaging, it cannot be easily debugged, and cannot be hot reloaded and console logs displayed. So HBuilder provides a special option when packaging, packaging a "custom run base".
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/9429d3a0-2223-41a7-9914-73037ad85aa5.jpg" style="zoom: 50%;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/build-app-customplayground.jpg" style="zoom: 50%;" />
 
 > 打包App的入口在HBuilder顶部发行菜单，或快捷键【Ctrl+u】
 > The entry of the packaged App is in the release menu at the top of HBuilder, or the shortcut key [Ctrl+u]

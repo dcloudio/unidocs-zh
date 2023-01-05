@@ -91,7 +91,7 @@ uniCloud supports both Alibaba Cloud and Tencent Cloud, and their databases are 
 比如我们创建一个简历表，名为 `resume`。点击上方右侧的 创建 按钮即可。
 For example, let's create a resume table called `resume`. Click the Create button on the right above.
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e8ca747e-d39f-4da2-8a82-733f9d486cb0.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/createtablebywebconsole2.jpg)
 
 新建表时，支持选择现成的 [opendb](opendb.md) 表模板，选择一个或多个模板表，可以点击右下方按钮创建。
 When creating a new table, you can select the ready-made [opendb](opendb.md) table template, select one or more template tables, and click the button at the bottom right to create.
@@ -144,7 +144,7 @@ enter a json
 }
 ```
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/cf0ffb14-c81d-486f-a687-55f84bc99969.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/newrecordebywebconsole.jpg)
 
 创建一条新记录，是不管在web控制台创建，还是通过API创建，每条记录都会自带一个`_id`字段用以作为该记录的唯一标志。
 Create a new record, whether it is created in the web console or through the API, each record will have a `_id` field that is used as the unique identifier of the record.
@@ -152,7 +152,7 @@ Create a new record, whether it is created in the web console or through the API
 `_id`字段是每个数据表默认自带且不可删除的字段。同时，它也是数据表的索引。
 The `_id` field is a default and non-deletable field in each data table. At the same time, it is also the index of the data table.
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7ed5185c-cfcd-461b-a178-5516e9937798.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/recordcontent.jpg)
 
 阿里云使用的是标准的mongoDB，`_id`是自增的，后创建的记录的`_id`总是大于先生成的`_id`。传统数据库的自然数自增字段在多物理机的大型数据库下很难保持同步，大型数据库均使用`_id`这种长度较长、不会重复且仍然保持自增规律的方式。
 Alibaba Cloud uses standard mongoDB, `_id` is self-incrementing, and the `_id` of the record created later is always greater than the `_id` generated earlier. The natural number auto-increment fields of traditional databases are difficult to keep synchronized in large databases with multiple physical machines. Large databases use `_id`, which is a long, non-repetitive method that still maintains the auto-increment rule.
@@ -200,7 +200,7 @@ There are many index contents, and there are concepts such as "combined index", 
 **在web控制台添加上述索引**
 **Add the above index in the web console**
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/fca53140-1d91-11eb-880a-0db19f4f74bb.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/composed-index.jpg)
 
 **注意**
 **Notice**

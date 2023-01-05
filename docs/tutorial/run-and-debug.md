@@ -49,12 +49,12 @@ In HBuilder, there are three run entries: top menu, toolbar run button, and shor
 1. 顶部运行菜单
 1. Top run menu
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/7bf15128-6629-4037-a6c5-988ab03671f1.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/menurun.png)
 
 2. toolbar工具栏上的运行按钮
 2. The run button on the toolbar
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/05f69c39-5aee-460a-95d6-7c98141c5cb0.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/toolbarrun.png)
 
 	toolbar的运行按钮点击后会展开一个菜单。这个菜单可配置，通过`自定义菜单`将不常用的运行项目折叠起来。
 	The toolbar's run button will expand a menu when clicked. This menu is configurable to collapse infrequently used run items via the `Custom Menu`.

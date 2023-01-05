@@ -18,14 +18,11 @@ Please follow the steps below to complete account registration:
 1. 点击 HBuilderX 左下角的“未登录”文字，打开登录窗口
 1. Click the "Not logged in" text in the lower left corner of HBuilderX to open the login window
 2. 选择“Global”，点击下方的“No account?Sign up”连接
-2. Select "Global" and click the "No account?Sign up" link below
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ef5d8808-6268-48a4-b363-3edda1503d85.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-01.png)
 3. 在打开的浏览器中，输入用户名、邮箱、密码等信息
-3. In the opened browser, enter the user name, email address, password and other information
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6610ae74-2c8c-4e5a-99d8-38b49f77b01e.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-02.png)
 4. 注册成功的话，会提示已发送激活邮箱
-4. If the registration is successful, you will be prompted that an activation email has been sent
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fd5782a6-f337-4e3f-87d1-5f178796b2b7.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-03.png)
 5. 登录你的邮箱，收取激活邮件，并点击其中的链接，完成账号激活
 5. Log in to your email, receive the activation email, and click the link to complete the account activation
 6. 账号激活后，返回 HBuilderX 界面，重新点击左下角的”未登录”文字，打开登录窗口，使用刚才注册的账号、密码，完成登录。
@@ -48,7 +45,7 @@ The basic operation of cloud packaging for accounts in "International Area" is t
 4. “国际区”账号不支持使用公共测试证书（test keystore）和DCloud老版证书（DCloud keystore）
 4. "International zone" accounts do not support the use of public test certificates (test keystore) and DCloud old certificates (DCloud keystore)
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2884f5b8-1141-4d8a-8dee-a1e4cd9c30d0.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-06.png)
 
 ## 隐私政策
 ## Privacy Policy

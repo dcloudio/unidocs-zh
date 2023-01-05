@@ -128,7 +128,7 @@ See the following example for details
 这里选择以使用了JQL完整功能clientDB为例，JQL操作数据库的流程如下。不同使用场景的区别请参考： [JQL的使用场景](uniCloud/jql.md?id=scene)
 Here we choose to use clientDB with the full function of JQL as an example. The process of operating the database with JQL is as follows. For the difference between different usage scenarios, please refer to: [JQL usage scenarios](uniCloud/jql.md?id=scene)
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b673c28f-c41b-406d-8b7a-c3f4bfbf4b31.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
 
 ## JQL的使用场景@scene
 ## JQL usage scenarios @scene
@@ -3859,8 +3859,7 @@ Action is a special cloud function that does not occupy the number of cloud func
 **新建action**
 **New action**
 
-![新建action](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/b6846d00-1460-11eb-b997-9918a5dda011.jpg)
-![New action](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/b6846d00-1460-11eb-b997-9918a5dda011.jpg)
+![新建action](https://web-assets.dcloud.net.cn/unidoc/zh/create-client-actions.jpg)
 
 每个action在uni-clientDB-actions目录下存放一个以action名称命名的js文件。
 Each action stores a js file named after the action in the uni-clientDB-actions directory.

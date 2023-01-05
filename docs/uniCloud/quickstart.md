@@ -42,7 +42,7 @@ Source address of Hello uniCloud: [https://ext.dcloud.net.cn/plugin?id=4082](htt
 	- 推荐使用vue3版本，因为编译速度更快。但注意不支持低版本Android。
 	- The vue3 version is recommended because the compilation speed is faster. But note that lower versions of Android are not supported.
 	<div align=center>
-	  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9623d950-5652-493e-9e0f-7c9aa846f6f3.jpg"/>
+	  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/create-unicloud.jpg"/>
 	</div>
 2. HBuilderX 会在项目创建后弹出 uniCloud初始化向导，根据向导部署
 2. HBuilderX will pop up the uniCloud initialization wizard after the project is created, and deploy according to the wizard
@@ -100,7 +100,7 @@ After the `uniCloud` project is created and bound to the service space, develope
 Right-click in the `uniCloud/cloudfunctions` directory to create cloud functions/cloud objects
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/a18b3bb0-53d8-11eb-8ff1-d5dcf8779628.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/createFun-a.jpg"/>
 </div>
 
 - 创建云函数后，生成一个目录，该目录下自动生成index.js，是该云函数的入口文件，不可改名。

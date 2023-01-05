@@ -14,7 +14,25 @@ const config = process.env.DOCS_LOCAL === 'en' ? config_en : config_zh
 
 module.exports = merge({
   theme: 'vuepress-theme-uni-app-test',
+  title: 'uni-app官网',
+  head: [
+    ['link', {
+      rel: 'shortcut icon',
+      type: 'image/x-icon',
+      href: 'https://web-assets.dcloud.net.cn/unidoc/zh/icon.png?v=1556263038788'
+    }],
+    ['script', { src: `/js/redirect.js?${Date.now()}&v=${Date.now()}&version=${Date.now()}` }],
+    ['script', { src: 'https://hm.baidu.com/hm.js?fe3b7a223fc08c795f0f4b6350703e6f' }]
+  ],
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+    }
+  },
   themeConfig: {
+    titleLogo: 'https://web-assets.dcloud.net.cn/unidoc/zh/uni-app.png',
+    logo: 'https://web-assets.dcloud.net.cn/unidoc/zh/logo.png',
+    // TODO use plugin/theme
     sidebar: createSidebar(tabs),
     sidebarDepth: 0,
     nextLinks: false,

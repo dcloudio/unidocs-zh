@@ -39,11 +39,9 @@ uts 中声明变量可以用 let 或 const，详见下。
 
 #### 变量定义（let）
 
-    声明一个可重新赋值的变量。语法 `let [变量名] : [类型] = 值;`。
-    Declare a reassignable variable. Syntax `let [variable name] : [type] = value;`.
+声明一个可重新赋值的变量。语法 `let [变量名] : [类型] = 值;`。
 
-    > 相当于 TypeScript 中的 let，kotlin 中的 var
-    > Equivalent to let in TypeScript, var in kotlin
+> 相当于 TypeScript 中的 let，kotlin 中的 var
 
 ```ts
 let str :string = "hello"; // 声明一个字符串变量
@@ -54,11 +52,9 @@ str = "hello world"; // 重新赋值
 
 #### 常量定义（const）
 
-    声明一个只读常量，只能为其赋值一次。语法 `const [变量名] : [类型] = 值;`。
-    Declare a read-only constant that can only be assigned a value once. Syntax `const [variable name] : [type] = value;`.
+声明一个只读常量，只能为其赋值一次。语法 `const [变量名] : [类型] = 值;`。
 
-    > 相当于 TypeScript 中的 const, kotlin 中的 val
-    > Equivalent to const in TypeScript, val in kotlin
+> 相当于 TypeScript 中的 const, kotlin 中的 val
 
 ```ts
 const str :string = "hello"; // 声明一个字符串变量

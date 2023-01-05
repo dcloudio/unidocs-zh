@@ -67,7 +67,7 @@ It is a self-contained app with the following parts:
 This is a simple representation of the concept of "one-way data flow":
 
 
-<img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/b0ed6b40-45ec-11eb-bf0a-894cbc80c40a.png" />
+<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/vuex-flow.png" />
 
 
 
@@ -90,7 +90,7 @@ Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒�
 Vuex is a library implementation tailored specifically for Vue.js to take advantage of its granular reactivity system for efficient updates.
 
 
-<img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/b1ba7f40-45ec-11eb-8a36-ebb87efcf8c0.png" />
+<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/vuex-a.png" />
 
 
 如果你想交互式地学习 Vuex，可以看这个 [Scrimba 上的 Vuex 课程](https://scrimba.com/learn/vuex)，它将录屏和代码试验场混合在了一起，你可以随时暂停并尝试。

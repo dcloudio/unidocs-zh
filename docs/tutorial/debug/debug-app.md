@@ -13,15 +13,15 @@ If you need more functionality, such as inspecting elements, breaking point debu
 在 `HBuilderX` 中，正确运行项目： `运行 --> 运行到手机或模拟器 --> 选择设备`，项目启动后，在下方的控制台选择 `debug` 图标。
 In `HBuilderX`, run the project correctly: `Run --> Run to phone or emulator --> Select device`, after the project starts, select the `debug` icon in the console below.
 
-![debug](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/55245430-4f34-11eb-97b7-0dc4655d6e68.png)
+![debug](https://web-assets.dcloud.net.cn/unidoc/zh/debug-icon.png)
 
 正确打开调试窗口后，显示如下：
-![debug](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/50f7e890-4f34-11eb-b680-7980c8a877b8.png)
+![debug](https://web-assets.dcloud.net.cn/unidoc/zh/csdndebug-window.png)
 
 ### Elements
 
 根据上一步，启动完成`debug`窗口后，可以看到`Elements`。`Elements` 主要显示当前页面的组织结构，目前`Elements`只支持`nvue`。
-![debug](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/5433b2a0-4f34-11eb-8a36-ebb87efcf8c0.png)
+![debug](https://web-assets.dcloud.net.cn/unidoc/zh/debug-elements.png)
 
 ### console.log 打日志
 ### console.log log
@@ -38,7 +38,7 @@ In `HBuilderX`, run the project correctly: `Run --> Run to phone or emulator -->
 `debug`窗口中看`console.log`的方法如下图：
 The method of viewing `console.log` in the `debug` window is as follows:
 
-![debug](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/53673ae0-4f34-11eb-a16f-5b3e54966275.jpg)
+![debug](https://web-assets.dcloud.net.cn/unidoc/zh/debug-console-new.jpg)
 
 ### 调试页面
 ### Debug page
@@ -49,12 +49,12 @@ In the `Sources` (indicated 1 in the figure) column of the debug window console,
 在 `uniapp`（图中指示 2）下找到需要调试的页面，单击打开 ，在右侧可以看到我们需要调试的内容（图中指示 3）。在需要调试的代码行号的位置，点击打上断点（图中指示 4）。
 Find the page that needs to be debugged under `uniapp` (indicated by 2 in the figure), click Open , and you can see the content we need to debug on the right (indicated by 3 in the figure). Click to place a breakpoint at the position of the line of code that needs to be debugged (indicated by 4 in the figure).
 
-![debug](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/58f09e70-4f34-11eb-8a36-ebb87efcf8c0.png)
+![debug](https://web-assets.dcloud.net.cn/unidoc/zh/csdndebug-log.png)
 
 之后，在设备上进行操作，进入断点位置，可以方便我们跟踪调试代码。
 After that, operate on the device and enter the breakpoint position, which is convenient for us to trace and debug the code.
 
-![debug](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/5839d190-4f34-11eb-8a36-ebb87efcf8c0.png)
+![debug](https://web-assets.dcloud.net.cn/unidoc/zh/csdndebug-breakpoint.png)
 
 ### 同步断点到调试器
 ### Synchronize breakpoints to debugger
@@ -65,7 +65,7 @@ It is quite troublesome to find the code to be debugged among the many codes in 
 操作步骤：在 HBuilderX 编辑器中对目标行的行号处点右键，在右键菜单中选择“同步断点到调试器”，然后调试控制台会自动打开对应的代码并在指定行处标记断点。演示如下：
 Operation steps: Right-click on the line number of the target line in the HBuilderX editor, select "Synchronize breakpoint to debugger" in the right-click menu, and then the debugging console will automatically open the corresponding code and mark the breakpoint at the specified line . The demo is as follows:
 
-![debug](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/55de5560-4f34-11eb-8a36-ebb87efcf8c0.gif)
+![debug](https://web-assets.dcloud.net.cn/unidoc/zh/debug-console-light.gif)
 
 ### 注意事项
 ### Precautions

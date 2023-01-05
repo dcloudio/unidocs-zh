@@ -194,6 +194,6 @@ export default {
       ],
     },
   ],
-  domainImg: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/769929a3-65eb-4d11-815d-84f88197a152.png',
+  domainImg: 'https://web-assets.dcloud.net.cn/unidoc/zh/jgwab.png',
   beian: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802035340'
 }

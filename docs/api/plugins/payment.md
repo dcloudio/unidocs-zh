@@ -132,8 +132,7 @@ Process: Payment platform function application -> configure payment parameters i
 1. 在`manifest.json - App模块权限选择` 中勾选 payment(支付)
 1. Check payment in `manifest.json - App module permission selection`
 2. 在 `manifest.json - App SDK配置` 中，勾选需要的支付平台，目前有微信支付、支付宝支付、苹果应用内支付(IAP)，其中微信支付需要填写从微信开放平台获取的AppID
-2. In `manifest.json - App SDK Configuration`, check the required payment platform, currently there are WeChat Pay, Alipay, Apple In-App Payment (IAP), and WeChat Pay needs to fill in the AppID obtained from the WeChat open platform
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/b803e140-4f1d-11eb-8ff1-d5dcf8779628.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/manifest-config.png)
 <!-- ![uniapp](https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/pay1.png) -->
 <!-- 临时把老图注掉，替换正式地址时再把老图地址放开 -->
 <!-- Temporarily note out the old picture, and release the old picture address when replacing the official address -->

@@ -15,7 +15,7 @@ Other types of plug-ins do not support billing.
 插件作者在发布uniCloud插件、原生插件时，可自定义售卖价格及形式(uniCloud分类)，见下图：
 When publishing uniCloud plug-ins and native plug-ins, plug-in authors can customize the sales price and form (uniCloud classification), as shown in the following figure:
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/9cc1a4a9-bd08-49c3-8062-1611cadd1054.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-publish-set-price.png)
 
 如未设置价格，则默认为免费插件，所有用户均可下载使用；
 If no price is set, the default is a free plug-in, which can be downloaded and used by all users;
@@ -49,13 +49,13 @@ But DCloud provides a trial mechanism for all sales plugins, allowing buyers to 
 用户购买插件后，插件作者可以在[销售订单列表](https://ext.dcloud.net.cn/order?pluginId=0&status=10)中查看订单流水：
 After the user purchases the plug-in, the plug-in author can view the order flow in [Sales Order List](https://ext.dcloud.net.cn/order?pluginId=0&status=10):
 
-![]( https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/a0da0432-ba93-46ac-a441-5e353c196cc0.png)
+![]( https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-order-list-new.png)
 
 uniCloud源码授权版需在用户及插件作者双方签署合同后方可购买，合同签署采用`e签宝`线上进行签署，具体流程参见[e签宝介绍](https://ask.dcloud.net.cn/article/37878)。
 The authorized version of uniCloud source code can only be purchased after the user and the plug-in author have signed the contract. The contract signing is done online using `e-signbao`. For the specific process, see [e-signbao introduction](https://ask.dcloud.net. cn/article/37878).
 
 每天凌晨，系统会自动统计前一天产生的收益，插件作者可登录插件市场后台，查看每天的收益明细。注意：收益分为插件销售收益、插件赞赏收益；
-![]( https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/2debc956-0e3f-4722-8c9c-b73236dd6364.png)
+![]( https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-report-list-new.png)
 
 `Tips：` 好的插件及更好的售后会增加用户打赏的积极性！
 `Tips:` Good plugins and better after-sales will increase the enthusiasm of users to tip!
@@ -66,7 +66,7 @@ The authorized version of uniCloud source code can only be purchased after the u
 DCloud插件市场在每月1日出上月的月度账单，待提现的账单累计金额达到100元以上时可提现，如有多笔待提现账单可针对多笔账单进行合并提现。插件作者可登录插件市场后台，查看[月度账单](https://ext.dcloud.net.cn/manage/payment)：
 The DCloud plug-in market publishes the monthly bill of the previous month on the 1st of each month. When the accumulative amount of the bill to be withdrawn reaches more than 100 yuan, it can be withdrawn. If there are multiple bills to be withdrawn, the multiple bills can be combined for withdrawal. Plug-in authors can log in to the plug-in market background and view the [Monthly Bill](https://ext.dcloud.net.cn/manage/payment):
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/c01c6588-17e8-4ea2-ad76-7ca80dfce79b.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-bill-list.png)
 
 DCloud会收取账单金额的15%做为服务费，然后将剩余款项支付给插件作者，具体参见[插件作者协议](https://ext.dcloud.net.cn/manage/profile)。
 DCloud will charge 15% of the bill amount as a service fee, and then pay the remaining amount to the plugin author. For details, please refer to the [Plugin Author Agreement](https://ext.dcloud.net.cn/manage/profile).
@@ -74,12 +74,12 @@ DCloud will charge 15% of the bill amount as a service fee, and then pay the rem
 申请提现后，如果账号认证为企业认证，提供发票的途径在原有的线下邮寄和发送邮件基础上，新增了电子发票上传功能，插件作者可在[提现记录](https://ext.dcloud.net.cn/manage/payment-detail)中自行上传，电子发票只支持`pdf格式`：
 After applying for cash withdrawal, if the account is certified as enterprise certification, the way to provide invoices is based on the original offline mailing and sending emails, and the function of uploading electronic invoices has been added. dcloud.net.cn/manage/payment-detail), the electronic invoice only supports `pdf format`:
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/95d80128-2345-4f6e-87df-05fc8113af00.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-cash-list.png)
 
 由于DCloud要向插件作者支付款项，故需插件作者提供对应金额的发票给DCloud公司，开票信息及付款规则如下：
 Since DCloud needs to pay the plug-in author, the plug-in author needs to provide an invoice of the corresponding amount to DCloud. The invoicing information and payment rules are as follows:
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/84fd6647-d614-4425-b660-6297fb7febe5.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-pay-rules.png)
 
 为了更好的服务插件作者，帮助插件作者节税，插件市场引入了`云账户`，参考[云账户介绍](https://ask.dcloud.net.cn/article/37525)。
 In order to better serve plug-in authors and help plug-in authors save tax, the plug-in market has introduced `cloud account`, refer to [Cloud Account Introduction](https://ask.dcloud.net.cn/article/37525).

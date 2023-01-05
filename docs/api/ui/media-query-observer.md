@@ -72,7 +72,7 @@ Note: Alipay applet, qq applet, Baidu applet, and byte applet do not currently s
 以下示例代码，推荐使用HBuilderX，新建uni-app项目，可直接体验完整示例。
 For the following sample code, it is recommended to use HBuilderX to create a new uni-app project, able to directly experience the complete example.
 
-```
+```vue
 <template>
     <view class="content">
         <view class="">

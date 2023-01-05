@@ -62,7 +62,7 @@ For those native functions that do not depend on UI interaction, nvue encapsulat
 	
 ```
 
-<img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/18870440-30a9-11eb-bd01-97bc1429a9ff.PNG" />
+<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/iconfontImg.PNG" />
 
 
 **addRule(type, contentObject)**
@@ -195,7 +195,7 @@ Let the page scroll to the component corresponding to ref. This API can only be 
 
 
 
-<img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/a3478060-33c8-11eb-880a-0db19f4f74bb.gif" />
+<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gite.gif" />
 
 ### getComponentRect
 
@@ -287,7 +287,7 @@ For example, if you have an `image` component, through animation you can move, r
 ```
 
 
-<img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/1852eff0-312d-11eb-8ff1-d5dcf8779628.gif" />
+<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gifd.gif" />
 
 
 
@@ -597,7 +597,7 @@ BindingX is a rule, fast parsing, but not as flexible as js.
 	</style>
 ```
 
-<img width="300px" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/6c9f84b0-30a6-11eb-880a-0db19f4f74bb.gif" />
+<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gitc.gif" />
 
 
 

@@ -34,7 +34,7 @@ The `uni-portal` unified publishing page is responsive, compatible with PC wides
 - **PC宽屏**
 - **PC widescreen**
 
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/14b02d74-57ab-48eb-9933-8d40037f5397.png" style="max-width:800px !important"></img>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-pc.png" style="max-width:800px !important"></img>
 
 - **手机窄屏**
 - **Narrow screen for mobile phones**
@@ -42,9 +42,9 @@ The `uni-portal` unified publishing page is responsive, compatible with PC wides
 手机浏览器上，默认展示效果如下：
 On mobile browsers, the default display effect is as follows:
 
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/e3b2171c-baf7-4be0-a2f3-fedd4f421e4c.png" style="max-width:400px !important"></img>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mobile.png" style="max-width:400px !important"></img>
 
 `uni-portal`统一发布页同时会识别当前浏览器环境，在微信等特殊浏览器上，自动提示“点击右上角菜单，在浏览器中打开”，效果如下：
 The `uni-portal` unified publishing page will also recognize the current browser environment. On special browsers such as WeChat, it will automatically prompt "click the menu in the upper right corner to open in the browser", the effect is as follows:
 
-<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-8ed92fab-502d-4290-af3c-1d65c4dbfc4d/f4b41d5f-861b-4bef-b670-9a2597643e3c.jpg" style="max-width:400px !important"></img>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mp.jpg" style="max-width:400px !important"></img>

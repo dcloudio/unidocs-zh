@@ -6,18 +6,18 @@ HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Grad
 
 运行带有uts插件的项目到Android设备，如果您遇到以下提示，请配置[运行环境](#Android环境配置)
 
-<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ea6943e1-d2c1-4c27-99b4-ed2550abd6fd.jpg" style="zoom: 50%;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/20221111173829.jpg" style="zoom: 50%;" />
 
 ## uts扩展插件
 
 当您运行带有uts插件的项目到Android设备时，会自动安装【uts开发扩展 - Android】插件，请务必安装。具体如下：
 
-<img src="https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/411b69b4-e77e-4b1f-ad3d-880908619119.jpg" style="zoom: 50%" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/20221111171012.jpg" style="zoom: 50%" />
 
 ## 环境配置
 > 下载插件后打开 HBuilderX到 【设置 - 插件配置】：如图
 
-![image](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/c7057273-2477-4b23-9046-dcfb3c73c3dc.png)
+![image](https://web-assets.dcloud.net.cn/unidoc/zh/%E9%85%8D%E7%BD%AE.png)
 
 #### 上面的截图展示了以下配置：
 
@@ -25,7 +25,7 @@ HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Grad
 
 1. 点击图标1的下载地址进入下载页面。如图所示，点击红圈部分下载工具包。
 
- ![image](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/278d63c2-f1fe-4aac-a340-d63e0a10d8f8.png)
+ ![image](https://web-assets.dcloud.net.cn/unidoc/zh/gradle.png)
  
 2. 将步骤1下载的内容解压后，找到bin目录下的执行脚本，填入图标3处。
 
@@ -38,7 +38,7 @@ HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Grad
 ###### ◇ 下载Android Studio
 1. 如图所示，根据平台下载Android Studio
 
-![image](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a6831fd6-931d-4b4a-91e6-de07bd56e082.png)
+![image](https://web-assets.dcloud.net.cn/unidoc/zh/sdk-2.png)
 
 2. 安装后获取Android Studio中sdk的路径地址填入到图标4处。
 
@@ -47,7 +47,7 @@ HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Grad
 ###### ◇ 如不需要安装Android Studio可通过下载Command line tools only
 1. 如图所示，根据平台下载Command line tools only。
 
-![image](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/cd46e8f5-e9b9-431b-a686-921bc75cdde6.png)
+![image](https://web-assets.dcloud.net.cn/unidoc/zh/sdk.png)
  
 2. 下载解压后通过`%解压目录%/bin/sdkmanager脚本安装build-tools和platforms
 ```
@@ -65,7 +65,7 @@ sdkmanager --sdk_root=%sdk路径% --install "platforms;android-30"
 ##### 配置示例
 配置后如下图（根据本地目录结构有所不同）
 
- ![image](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/dc253f26-1523-4bf6-a5f3-2cc4c5690a44.png)
+ ![image](https://web-assets.dcloud.net.cn/unidoc/zh/%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90.png)
 
 **注意**
 

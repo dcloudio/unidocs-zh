@@ -65,7 +65,7 @@ UTS组件的创建过程与UTS插件一样。
 
 下面是一个组件源码 index.vue 完整示例：
 
-```uts
+```ts
 
     export default {
 		/**

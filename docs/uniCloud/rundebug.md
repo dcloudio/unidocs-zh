@@ -31,7 +31,7 @@ Cloud functions/cloud objects can be run via menu or shortcut keys.
 1. Right-click menu: Right-click the cloud function directory in the project manager, and select "Run cloud function locally", "Upload and run cloud function" in the pop-up menu
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/cb5457a0-4b19-11eb-8ff1-d5dcf8779628.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/localRun.jpg"/>
 </div>
 
 2. 工具栏：编辑器打开云函数时，点击工具栏`运行`按钮，下拉菜单也有“本地运行云函数”、“上传并运行云函数”
@@ -40,7 +40,7 @@ Cloud functions/cloud objects can be run via menu or shortcut keys.
 3. Shortcut key: When the editor opens the cloud function, press the [Ctrl+r] shortcut key to activate the above run menu.
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/723ec000-4b1a-11eb-b680-7980c8a877b8.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/localCtrlRrun.jpg"/>
 </div>
 
 如果没有安装本地运行插件，按照提示安装即可。本地运行云函数需HBuilderX 2.8.1+
@@ -67,7 +67,7 @@ Run cloud functions or cloud objects directly in the node environment of HBuilde
 - To configure running parameters, please refer to: [Configure running test parameters](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#runparam)
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/cb5457a0-4b19-11eb-8ff1-d5dcf8779628.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/localRun.jpg"/>
 </div>
 
 
@@ -75,14 +75,14 @@ Run cloud functions or cloud objects directly in the node environment of HBuilde
 In the cloud function editor, press `Ctrl+r` to run the shortcut key (or click Run on the toolbar) to see several menus for running cloud functions. `Ctrl+r` and press Enter or select `0` to execute the local operation, you can immediately see the operation results and log output in the console. As shown below:
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/723ec000-4b1a-11eb-b680-7980c8a877b8.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/localCtrlRrun.jpg"/>
 </div>
 
 云函数打印`console.log`看日志。
 Cloud functions print `console.log` to see the log.
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/caddd2a0-4b1a-11eb-b680-7980c8a877b8.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/lookLog.jpg"/>
 </div>
 
 运行云函数时，如需要给云函数传参，又不想启动客户端，那么可以通过配置json文件来传测试参数。
@@ -113,21 +113,21 @@ Note: Cloud objects do not support upload and run.
 Running a uni-app project with uniCloud starts the uniCloud console in addition to the client console.
 
 <div align=center>
-  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/04d44f25-ce5f-4b39-a221-6600a0b80417.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-debug-dist.jpg"/>
 </div>
 
 可以在客户端控制台的右上角切换是连接本地云函数还是云端云函数，如下图所示
 You can switch whether to connect to a local cloud function or a cloud cloud function in the upper right corner of the client console, as shown in the following figure
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/28f84f90-3f69-11eb-8ff1-d5dcf8779628.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/client-to-local.jpg"/>
 </div>
 
 uniCloud控制台日志如下图：
 The uniCloud console log is as follows:
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/b6f52050-3f7a-11eb-8a36-ebb87efcf8c0.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/client-to-local-log.jpg"/>
 </div>
 
 此时客户端的日志和云函数的日志都可以看到，联调非常方便。
@@ -310,7 +310,7 @@ In the upload and run menu or right-click menu of the cloud function, there is t
 You can open a json and configure the running parameters. After the json is configured, the json will be processed as the upstream parameter of the cloud function call when running the cloud function, and the parameters can be received in the cloud function.
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/37245420-4b1b-11eb-b997-9918a5dda011.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/setRunParam.jpg"/>
 </div>
 
 在云函数目录右键运行云函数，也可以在云函数编辑器里，按`Ctrl+r`运行快捷键，或点工具栏的运行
@@ -325,7 +325,7 @@ Right-click in the cloud function directory to run the cloud function, or in the
 At this time, the cloud function operation will carry the configured operation parameters.
 
 <div align=center>
-  <img style="max-width:750px;" src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/84352e10-4b1b-11eb-8ff1-d5dcf8779628.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/setRunParamLog.jpg"/>
 </div>
 
 
@@ -427,28 +427,28 @@ login('name-demo', 'password-demo') // 调用login方法传入参数'name-demo'�
 The way to enable breakpoint debugging is shown in the figure below. After the uniCloud local operating environment is started, select Enable breakpoint debugging in the upper right corner of the uniCloud console.
 
 <div align=center>
-  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/015ee94b-23af-4aa0-b39b-b788b010dc4d.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-serve-debug.jpg"/>
 </div>
 
 开启调试后会出现调试界面，如下图所示。和浏览器的调试功能类似，详情可以参考：[JavaScript调试器](https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/What_are_browser_developer_tools#javascript%E8%B0%83%E8%AF%95%E5%99%A8)
 After the debugging is enabled, the debugging interface will appear, as shown in the following figure. Similar to the browser's debugging function, please refer to: [JavaScript Debugger](https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/What_are_browser_developer_tools#javascript%E8%B0%83%E8% AF%95%E5%99%A8)
 
 <div align=center>
-  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ed6120d4-2882-44b5-892f-f3fec8493e8b.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-debug-overview.jpg"/>
 </div>
 
 在调试文件的编辑器界面的行号处双击可以插入断点，也可以右键选择更多操作（添加/删除/禁用断点）
 Double-click at the line number of the editor interface of the debug file to insert a breakpoint, or right-click to select more operations (add/delete/disable breakpoints)
 
 <div align=center>
-  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/fda77798-3cb8-4aaa-8ac9-ba718520352e.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-debug-break-point.jpg"/>
 </div>
 
 如需从调试界面切换回项目视图，可以在项目管理器底部点击按钮进行切换
 To switch back to the project view from the debug interface, click the button at the bottom of the project manager to switch
 
 <div align=center>
-  <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/9cc24dbe-cde9-4a82-8872-4803ada97298.jpg"/>
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-debug-switch-project.jpg"/>
 </div>
 
 uni-app前端也支持debug调试，注意不要混淆。
@@ -475,4 +475,4 @@ The published cloud functions also have logs under [uniCloud web console](https:
 
 此外日志服务开启的状态下，腾讯云可以设置日志保存时长。
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/dccee853-2df8-46b6-b15d-1e280023ad5d.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/tcb-log-switch.jpg)

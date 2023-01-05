@@ -107,7 +107,7 @@ UTS环境中，默认是没有线程概念的。 代码默认执行在uts 单独
 
 如果需要执行异步任务，建议通过内置函数`setTimeOut`执行
 
-```uts
+```ts
 console.log("这里是UTS默认线程 :"  + Thread.currentThread().getName())
 setTimeOut(function(){
 	console.log("这里是异步任务线程 :"  + Thread.currentThread().getName())
@@ -116,7 +116,7 @@ setTimeOut(function(){
 
 如果是android原生api 需要部分代码必须执行在UI线程，则需要通过原生api进行操作：
 
-```uts
+```ts
 class AddUIRunnable extends Runnable {
 	override run():void {
 		// do something
@@ -854,7 +854,7 @@ options.success?.(res)
 
 android开发中场景的 intent跳转需要传入 目标界面的class对象，目前UTS中仅支持一种写法
 
-```uts
+```ts
 let intent = new Intent(getUniActivity(),DemoActivity().javaClass);
 getUniActivity()!.startActivity(intent);
 ```
@@ -967,7 +967,7 @@ onStatusUpdate(_name:string, _status:Int, _desc:string){
 ### 6.3 如何在UTS环境中，新建一个`Thread`？
 
 简单示例
-```uts
+```ts
 class CustomThread extends Thread{
 	
 	constructor(){

@@ -31,8 +31,7 @@ uniCloud为每个开发者提供一个免费服务空间，让你也可以拥有
 ### Watch the video, just 25 minutes, get started quickly with uniCloud
 
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=1">
-    <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/707756af-e9a9-4d08-8db9-5d1f34b84ea6.jpg" alt="uniCloud视频教程" style="width: 70%;">
-    <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/707756af-e9a9-4d08-8db9-5d1f34b84ea6.jpg" alt="uniCloud video tutorial" style="width: 70%;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg" alt="uniCloud视频教程" style="width: 70%;">
 </a>
 
 ### uniCloud是什么和不是什么
@@ -216,7 +215,7 @@ In the one year since uniCloud was launched, uni-app + uniCloud has become a hug
 开发效率提升10倍，并非某个杀手功能的功劳，而是庞大的生态共同的作用。本章节篇幅较长，请耐心阅读。
 The 10-fold increase in development efficiency is not due to a certain killer function, but the common effect of a huge ecosystem. This chapter is long, please read it with patience.
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/80364c0b-2dd8-4629-b0f7-cbead0df7922.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/c50d2741-6a47-4dcd-a02c-fdd683fa4ea4.png)
 
 #### 一个故事
 #### a story
@@ -381,7 +380,7 @@ However, in the uni cloud-integrated ecosystem, with the schema of the database,
 The following is the operation demonstration video of [schema2code](schema2code.md):
 
 <video style="width:50vw;height:28vw;" id="video" preload="none" controls="controls"
-	poster="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b537e2ca-0f4e-4ff0-a097-48fdeafb9873/bfcc37f1-389f-40e9-a538-bf6d53ab0990.mp4?x-oss-process=video/snapshot,t_1000,f_jpg" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b537e2ca-0f4e-4ff0-a097-48fdeafb9873/bfcc37f1-389f-40e9-a538-bf6d53ab0990.mp4"></video>
+	poster="https://web-assets.dcloud.net.cn/unidoc/zh/create-schema2code.jfif" src="https://web-assets.dcloud.net.cn/unidoc/zh/create-schema2code-video.mp4"></video>
 
 
 可以实战体验这个[云端一体通讯录](https://ext.dcloud.net.cn/plugin?id=2574)的项目，几乎没有单独写代码。设计好通讯录的表schema，用[schema2code](schema2code.md)即可生成这个项目。
@@ -518,7 +517,7 @@ The following figure is an example:
 In traditional development, item is a json returned by request, and it is impossible for IDE to know the data structure of this json, so it cannot prompt.
 
 由于三位一体协同，HBuilderX可以解析本地schema文件，直接提示item后面的数据结构。避免开发者写错代码、减少服务器联调工作。
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/88f093d0-1abd-487d-bf24-e0627c471977.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/hx%E6%8F%90%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5.jpg)
 
 云对象的方法，HBuilderX同样可以完美解析，让编写客户端代码时直接提示云对象的方法、参数。
 The methods of cloud objects can also be perfectly parsed by HBuilderX, so that the methods and parameters of cloud objects can be directly prompted when writing client code.

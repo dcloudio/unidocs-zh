@@ -5,7 +5,7 @@
 ## 购买正式版迁移空间
 公测版迁移正式版，需通过`迁移正式版`操作来下单购买待迁移的正式版空间，该操作会为两个空间增加迁移绑定关系，方便后续迁移配置。
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/a0eea46e-f89f-40de-ac99-6f0eb09a55f3.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/%E8%BF%81%E7%A7%BB%E6%AD%A3%E5%BC%8F%E7%89%88%E6%8C%89%E9%92%AE.png)
 
 迁移时，可以选择新空间使用**按量计费**或**包月套餐**。
 
@@ -46,7 +46,7 @@ DCloud始终是为开发者提供更高性价比方案的产品服务公司，DC
 
 为了更好的在云函数/云对象中兼容，购买待迁移正式版空间时， 可选择`是否在云函数/云对象代码中兼容 SpaceID`，如果开启该选项，迁移后在云函数/云对象内获取的`context.SPACEINFO.spaceId` 及 `cloudInfo` 内的 SpaceId 将保持不变，仍为原公测版SpaceId。开发者可以通过`context.SPACEINFO.useOldSpaceId` 或 `cloudInfo.useOldSpaceId`判断当前获取的spaceId是不是迁移前的，true表示当前服务空间在云函数内取到的服务空间id为迁移前的服务空间id，否则为新空间id。如运行本地云函数，此特性于`HBuilderX 3.6.13`起支持，云端默认支持此特性。**迁移后的新服务空间id为旧空间id加`mp-`前缀。**
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/1febab5f-e51e-462e-8833-aad26127efc5.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/%E8%BF%81%E7%A7%BB%E4%B8%8B%E5%8D%95.png)
 
 
 **注意**：
@@ -153,7 +153,7 @@ url化访问时不管是默认域名还是自定义域名均和上述转发逻�
 
 由于自定义域名仍绑定在公测版服务空间，正式版空间前端网页托管的域名状态为`需解绑后重新绑定`
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/5fa6249a-2900-40aa-b4b8-16f37d2307a1.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5%E6%89%98%E7%AE%A1%E5%9F%9F%E5%90%8D%E7%8A%B6%E6%80%81.png)
 
 需要开发者在[uniCloud控制台](https://unicloud.dcloud.net.cn)将自定义域名删除后重新绑定，通过该操作获取到新的CNAME后，将域名解析更换到新的CNAME以完成域名迁移。 这个期间前端网页托管自定义域名访问会中断，建议在访问量较低的时候处理。
 

@@ -53,7 +53,7 @@ In `DB Schema`, configure the permissions of data operations and field value dom
 27 lines of code need to be written, as shown in the figure:
 
 <div align=center>
-  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f0798882-cbcc-4b41-affc-7bce5ebaeb0e.png"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BC%A0%E7%BB%9Fphp%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BB%A3%E7%A0%812.png"/>
 </div>
 
 2. 前端用ajax携带必要参数请求API，然后将请求结果赋值给data中的变量。最终把变量在视图中渲染出来。
@@ -63,7 +63,7 @@ In `DB Schema`, configure the permissions of data operations and field value dom
 37 lines of code need to be written, as shown in the figure:
 
 <div align=center>
-  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/d2194fea-c90e-4f02-b241-d27167ccb015.png"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BC%A0%E7%BB%9F%E5%BC%80%E5%8F%91%E6%96%B9%E5%BC%8F%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81.png"/>
 </div>
 
 
@@ -80,7 +80,7 @@ In `DB Schema`, configure the permissions of data operations and field value dom
 Only: 5 lines of code as shown:
 
 <div align=center>
-  <img style="max-width:750px;" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6d7fe2a6-1115-4535-8f3f-cdbb7c90e0ef.jpg"/>
+  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/clientDB%E7%9A%84%E6%96%B9%E5%BC%8F.jpg"/>
 </div>
 
 
@@ -89,8 +89,7 @@ Only: 5 lines of code as shown:
 
 
 ## clientDB图解
-## clientDB diagram
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/b673c28f-c41b-406d-8b7a-c3f4bfbf4b31.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
 
 `clientDB`的前端，有两种用法，可以用js API操作云数据库，也可以使用`<unicloud-db>`组件。
 The front end of `clientDB` can be used in two ways. You can use the js API to operate cloud database, or you can use the `<unicloud-db>` component.

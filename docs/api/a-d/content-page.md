@@ -8,7 +8,7 @@ Introduction
 ⼀个视频内容频道，支持上下滑动切换视频内容
 A video content channel that supports sliding up and down to switch video content
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/673f23ff-0924-4302-8467-9c1c1fd03b96.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-content-page.png)
 
 
 内容联盟广告是一个原生全屏组件，大小不可控制

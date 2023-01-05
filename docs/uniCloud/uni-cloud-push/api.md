@@ -2159,7 +2159,7 @@ The errCode of the uni-cloud-push extension library starts with uni-cloud-push-e
 
 <div class="weixin-support">
     <div class="weixin-support-focus">
-        <img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/628c90e2-c04f-4f92-8564-85d54b467e4f.png" alt="" class="weixin-support-icon">
+        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/weixin.png" alt="" class="weixin-support-icon">
         联系
         connect
         <br>
@@ -2167,7 +2167,7 @@ The errCode of the uni-cloud-push extension library starts with uni-cloud-push-e
         push
     </div>
     <div class="weixin-support-content">
-		<img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/f91f57ca-ea30-47ee-a740-954153977e88.jpg" alt="" class="weixin-support-icon">
+		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/support.jpg" alt="" class="weixin-support-icon">
        微信扫一扫
        WeChat scan
 		<br>

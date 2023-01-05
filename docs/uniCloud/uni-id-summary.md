@@ -530,7 +530,7 @@ RBAC: Role-Based Access Control, role-based access control.
 其基本思想：对系统操作的各种权限不是直接授予具体的用户，而是在用户集合与权限集合之间建立一个角色集合。每一种角色对应一组相应的权限。一旦用户被分配了适当的角色后，该用户就拥有此角色的所有权限。
 Its basic idea: various permissions for system operations are not directly granted to specific users, but a role set is established between the user set and the permission set. Each role corresponds to a corresponding set of permissions. Once a user is assigned the appropriate role, the user has all the permissions of that role.
 
-![](https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-dc-site/431878b0-0ca0-11eb-8a36-ebb87efcf8c0.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-rbac.png)
 
 这样做的好处是，增强系统管理的扩展性，对于批量用户的权限变更，仅需变更该批用户角色对应权限即可，而无需对该批每个用户变更权限。
 The advantage of this is that it enhances the scalability of system management. For the permission changes of batch users, it is only necessary to change the permissions corresponding to the roles of the batch of users, without changing the permissions of each user in the batch.

@@ -8,7 +8,7 @@
 互动游戏是DCloud联合三方服务商为开发者提供新的广告场景增值服务。开发者在App中放置入口，用户点击入口参与权益化、趣味性的活动。通过观看激励视频广告加速获取权益。沉浸的游戏体验能够降低对广告的抵触心理，增加激励视频广告展示的同时有效提高广告收益。
 Interactive games are DCloud and third-party service providers to provide developers with new value-added services for advertising scenarios. The developer places the entrance in the App, and the user clicks the entrance to participate in the equity and interesting activities. Accelerate your benefits by watching rewarded video ads. An immersive gaming experience can reduce resistance to ads, increase the display of rewarded video ads, and effectively increase ad revenue.
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/c19c9518-c953-49c3-89a0-33a1e595be7f.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/interactive1.png)
 
 
 ## 活动场景类型：
@@ -24,7 +24,7 @@ There are three types of scenarios: lottery, game, and development. Developers c
 3. 养成类活动：果园、农场、养牛等长期活动，用户通过连续签到、道具收集、任务体系等玩法提升养成对象的等级，升级后可获得红包奖励或兑换奖品
 3. Cultivation activities: long-term activities such as orchards, farms, and cattle raising. Users can improve the level of the cultivation objects through continuous check-in, item collection, task system and other gameplay. After upgrading, they can get red envelopes or exchange prizes
 
-![](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/994e3f54-d498-4642-8e61-3177dcfef63a.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/interactive2.jpg)
 
 ### 活动分类表
 ### Activity classification table

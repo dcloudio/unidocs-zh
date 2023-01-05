@@ -624,7 +624,7 @@ uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug
   - 数据库字段：可以关联数据库中指定字段，内容较为个性化。格式为 ```{数据库表名.字段}```，例如: ```{uni-id-users.username}``` 目前仅支持```uni-id-users```表
 - 支持 发送前预览前5人短信内容，用于检测模板变量是否配置正确，提高发送成功率。
 
-![群发短信](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1452ae6f-1370-4dc7-9214-38e83504d780/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
+![群发短信](https://web-assets.dcloud.net.cn/unidoc/zh/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
 
 ## 用户-角色-权限
 

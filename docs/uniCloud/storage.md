@@ -154,47 +154,43 @@ onUploadProgress: function(progressEvent) {
 //前端代码
 // front end code
 uni.chooseImage({
-	count: 1,
-	success(res) {
-		console.log(res);
-		if (res.tempFilePaths.length > 0) {
-			let filePath = res.tempFilePaths[0]
-			//进行上传操作
-			// perform upload operation
+  count: 1,
+  success(res) {
+    console.log(res);
+    if (res.tempFilePaths.length > 0) {
+      let filePath = res.tempFilePaths[0]
+      //进行上传操作
 
-			// promise方式
-			// promise method
-			const result = await uniCloud.uploadFile({
-				filePath: filePath,
-        cloudPath: 'a.jpg',
-				onUploadProgress: function(progressEvent) {
-			          console.log(progressEvent);
-			          var percentCompleted = Math.round(
-			            (progressEvent.loaded * 100) / progressEvent.total
-			          );
-			        }
-			});
-
-			// callback方式，与promise方式二选一即可
-			//callback method, you can choose either the promise method or the callback method
-			uniCloud.uploadFile({
-				filePath: filePath,
+      // promise方式
+      const result = await uniCloud.uploadFile({
+        filePath: filePath,
         cloudPath: 'a.jpg',
         onUploadProgress: function(progressEvent) {
           console.log(progressEvent);
           var percentCompleted = Math.round(
             (progressEvent.loaded * 100) / progressEvent.total
           );
-				},
-				success() {},
-				fail() {},
-				complete() {}
-			});
-			
-		}
-	}
-});
+        }
+      });
 
+      // callback方式，与promise方式二选一即可
+      uniCloud.uploadFile({
+        filePath: filePath,
+        cloudPath: 'a.jpg',
+        onUploadProgress: function(progressEvent) {
+          console.log(progressEvent);
+          var percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          );
+        },
+        success() {},
+        fail() {},
+        complete() {}
+      });
+
+    }
+  }
+});
 ```
 
 **Tips**

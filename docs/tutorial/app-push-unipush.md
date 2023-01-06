@@ -175,3 +175,6 @@ UniPush和个推推送模块支持设置自定义推送图标，包括push图标
 - **uni-app项目详细使用教程请参考 [统一推送UniPush](https://uniapp.dcloud.io/unipush)**
 - **5+ App、Wap2App项目详细使用教程请参考 [UniPush使用指南](https://ask.dcloud.net.cn/article/35622)**
 
+### 常见问题
+- **iOS勾选推送并且基于HBuilderX 3.6.14+打包ipa变大的问题**  原因是推送SDK升级需要支持Swift环境，用生产证书+AppStore类型的描述文件打出来的ipa会增大60-70M左右，苹果为了兼容iOS12之前的Swift版本，打包AppStore的ipa需要将全部版本的Swift环境添加到ipa的根目录，上传的AppStore后苹果会处理这些Swift环境，用户实际下载的安装包不会大特别多
+

@@ -1546,7 +1546,7 @@ await redis.lrem('key', 0, 'a') // 返回 1
 **接口形式**
 
 ```js
-await redis.lrem(key: string, index: number, value: string)
+await redis.lset(key: string, index: number, value: string)
 ```
 
 **入参说明**
@@ -1575,7 +1575,7 @@ await redis.lset('key', 0, 'b') // 返回 OK
 **接口形式**
 
 ```js
-await redis.lrem(key: string, start: number, end: number)
+await redis.ltrim(key: string, start: number, end: number)
 ```
 
 **入参说明**

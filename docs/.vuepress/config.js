@@ -79,7 +79,6 @@ module.exports = merge({
     )
   },
   plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions],
     'vuepress-plugin-mermaidjs'
   ]
-})
+}, config)

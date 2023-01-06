@@ -12,8 +12,8 @@ const config = {
     ['script', { src: 'https://hm.baidu.com/hm.js?335faa6b53d8671e088767b0b95a706e' }]
   ],
   themeConfig: {
-    titleLogo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/e422ceca-23ef-449a-afd7-745ad177a7e9.png',
-    logo: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/49f7ac67-4a95-47ad-81ec-b1c2bdde1ece.png',
+    titleLogo: 'https://web-assets.dcloud.net.cn/unidoc/zh/logo-en.png',
+    logo: 'https://web-assets.dcloud.net.cn/unidoc/zh/logo-en-D.png',
     docsRepo: 'https://github.com/dcloudio/unidocs-en',
     docsBranch: 'main',
     editLinkText: 'Edit this page on GitHub',

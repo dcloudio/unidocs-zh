@@ -57,13 +57,13 @@ uni对象的api，如uni.navigateTo，之前都是内置在uni-app的runtime中�
 
 这种模式，还给开发者带来若干好处，比如开放性和灵活性。
 
-	* 以往，uni-app内置api如果有bug，普通开发者很难看懂源码，很难参与完善。
+* 以往，uni-app内置api如果有bug，普通开发者很难看懂源码，很难参与完善。
 
-	现在，在uts的支持下，普通前端也可以review这些api的实现，发现其中的问题和提出改进方案。
+现在，在uts的支持下，普通前端也可以review这些api的实现，发现其中的问题和提出改进方案。
 
-	* 以往，这些uni api的bug被修复时，需要等待HBuilder发版，由于每次发版都需要发很多功能，可能bug1虽然已经修好，但bug2复测出问题，导致版本不能及时发布。
+* 以往，这些uni api的bug被修复时，需要等待HBuilder发版，由于每次发版都需要发很多功能，可能bug1虽然已经修好，但bug2复测出问题，导致版本不能及时发布。
 
-	现在，ext api的`uni_modules`脱离HBuilder独立升级，快速解决开发者的问题。并且开发者可以自己修本地工程中ext api的bug。让问题得以更快速的解决。
+现在，ext api的`uni_modules`脱离HBuilder独立升级，快速解决开发者的问题。并且开发者可以自己修本地工程中ext api的bug。让问题得以更快速的解决。
 
 - 背景3，内置api复写
 

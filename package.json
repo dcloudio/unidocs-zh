@@ -36,7 +36,8 @@
     "fs-extra": "^10.0.0",
     "preprocess": "^3.2.0",
     "glob": "^7.1.7",
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-mermaidjs": "1.9.1"
   },
   "dependencies": {
     "@docsearch/js": "^3.1.0",

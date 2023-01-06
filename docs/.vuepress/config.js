@@ -14,7 +14,7 @@ const config = process.env.DOCS_LOCAL === 'en' ? config_en : config_zh
 
 module.exports = merge({
   theme: 'vuepress-theme-uni-app-test',
-  title: 'uni-app官网',
+  title: 'uni-app',
   head: [
     ['link', {
       rel: 'shortcut icon',

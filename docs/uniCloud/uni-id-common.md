@@ -71,7 +71,7 @@ module.exports = {
 
 ### token校验@checktoken
 
-一个校验客户端发起请求（uniCloud.callFunction）自带的uniIdToken，获得用户的uid、token、token的过期时间、角色、权限、用户信息(uni-id-users全部字段)的API。
+一个校验客户端发起请求（uniCloud.callFunction）自带的uniIdToken，获得用户的uid、token、token的过期时间、角色、权限的API。
 
 这是非常高频且重要的API通常用于换取操作当前云函数的用户Id。
 

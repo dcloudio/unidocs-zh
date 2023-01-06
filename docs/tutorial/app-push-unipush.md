@@ -232,3 +232,6 @@ Design specifications need to pay attention to:
 - **5+ App、Wap2App项目详细使用教程请参考 [UniPush使用指南](https://ask.dcloud.net.cn/article/35622)**
 - **Please refer to [UniPush User Guide](https://ask.dcloud.net.cn/article/35622) for detailed usage tutorials of 5+ App and Wap2App projects.**
 
+### 常见问题
+- **iOS勾选推送并且基于HBuilderX 3.6.14+打包ipa变大的问题**  原因是推送SDK升级需要支持Swift环境，用生产证书+AppStore类型的描述文件打出来的ipa会增大60-70M左右，苹果为了兼容iOS12之前的Swift版本，打包AppStore的ipa需要将全部版本的Swift环境添加到ipa的根目录，上传的AppStore后苹果会处理这些Swift环境，用户实际下载的安装包不会大特别多
+

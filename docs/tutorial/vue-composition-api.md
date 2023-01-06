@@ -42,11 +42,13 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   
   ```js
   import '../../composition-api.js'
-  import {  } from '@vue/composition-api'
-  import {  } from '@dcloudio/uni-app'
+  import { defineComponent } from '@vue/composition-api'
+  import { onReady } from '@dcloudio/uni-app'
   export default defineComponent({
-    setup () {
-      
+    setup() {
+      onReady(() => {
+        console.log('onReady')
+      })
     }
   })
   ```

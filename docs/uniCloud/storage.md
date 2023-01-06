@@ -68,8 +68,7 @@ Upload files directly to cloud storage.
 客户端上传文件到云函数、云函数再上传文件到云存储，这样的过程会导致文件流量带宽耗费较大。所以一般上传文件都是客户端直传。
 The client uploads the file to the cloud function, and the cloud function uploads the file to the cloud storage. This process will result in a large bandwidth consumption of file traffic. Therefore, the uploaded files are generally uploaded directly from the client.
 
-**阿里云单文件大小限制为100M，腾讯云单文件最大为5G**
-**Alibaba cloud single file size is limited to 100M, and Tencent cloud single file size is limited to 5G**
+**阿里云公测版单文件大小限制为100M，2023年1月6日阿里云正式版调整单文件大小限制到5GB，腾讯云单文件最大为5G**
 
 **支付宝小程序开发工具上传文件到腾讯云时可能会返回失败，请以真机为准**
 **Alipay applet development tool may return a failure when uploading files to Tencent Cloud, please refer to the real machine**
@@ -103,7 +102,7 @@ The client uploads the file to the cloud function, and the cloud function upload
 - 腾讯云`cloudPath`为文件标识，相同的`cloudPath`会覆盖，如果没有权限覆盖则会上传失败。阿里云以自动生成的ID为文件标识，不会存在覆盖问题
 - Tencent Cloud `cloudPath` is the file identifier. The same `cloudPath` will be overwritten. If there is no permission to overwrite, the upload will fail. Alibaba Cloud uses the automatically generated ID as the file identifier, so there will be no overwriting problem
 - 阿里云目前由于安全原因暂时禁止云存储内上传html文件
-- Alibaba Cloud temporarily prohibits uploading html files in cloud storage due to security reasons
+- 上传文件超时时间可以在项目manifest.json内进行配置
 
 **关于腾讯云是否有权限覆盖/删除云端文件**
 **About whether Tencent Cloud has permission to overwrite/delete cloud files**

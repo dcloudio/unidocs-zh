@@ -3,7 +3,7 @@
 本文旨在帮助开发者，使用UTS开发Uni-App平台组件功能。
 
 
-## 1 前置条件
+## 前置条件
 
 继续阅读文档前，开发者需要了解以下前置条件：
 
@@ -13,31 +13,34 @@
 
 + 目前仅支持nvue
 
-## 2 了解UTS组件是什么
+## UTS组件简介
 
-### 2.1 UTS组件简介
+#### 为什么使用组件
 
-UTS组件，即:使用UTS语言在uni平台进行组件开发的技术。 [关于UTS](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
+组件是一种独立，可复用的UI单元，用于单独封装和承担一定的代码逻辑，组件化可以降低项目的工程复杂度，提升可维护性
 
+组件与插件的区别在于：前者倾向于以标签的形式 对外提供UI封装，后者倾向于以函数/类 的形式 对外提供功能封装。如果你的需求更倾向于封装能力，请移步 [UTS插件开发](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
-组件是一种独立，可复用的UI单元，用于单独封装和承担一定的代码逻辑，组件化可以降低项目的工程复杂度,提升可维护性
-
-
-
-UTS组件整体采用了类Vue组件的语法，[关于Vue组件](https://cn.vuejs.org/guide/essentials/component-basics.html)，但是具体的函数上会有定制，具体参考第四章节。
+组件一般适用于组件非全屏的场景，如果需要封装的UI始终是全屏，那么可以考虑通过开发原生实现
 
 
-### 2.2 UTS组件优势
+#### 为什么使用UTS开发组件
+
+UTS组件，即：使用UTS语言在uni平台进行组件开发的技术。
+
 
 UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语法，各终端不同的本地产出物。
 
 在Android平台会被编译为会被渲染为Android原生View实例，IOS或其他终端平台也是如此。
 
-|				|Vue组件						|uts组件					|uni原生组件				|
-|:------		|:-------					|:--------				|:-------- 				|
-|开发语言		|js/ts						|uts					|java/object-c			|
-|组件载体		|WebView内部标签				|系统原生View对象		|系统原生View对象		|
 
+|				|uts组件					|uni原生组件				|Vue组件				|
+|:------		|:--------				|:-------- 				|:-------			|
+|开发语言		|uts					|java/object-c			|js/ts				|
+|组件载体		|系统原生View对象		|系统原生View对象		|WebView内部标签		|
+
+
+为了兼容前端开发者的门槛，UTS组件结构采用了类Vue组件的语法，[关于Vue组件](https://cn.vuejs.org/guide/essentials/component-basics.html)，但是具体的函数上会有定制，我们会在下一个章节详细介绍
 
 
 ## 3 如何开发组件

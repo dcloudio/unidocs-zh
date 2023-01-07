@@ -2,8 +2,8 @@
 pageClass: custom-page-class
 ---
 
-```uni-app``` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。
-```uni-app``` is a framework for developing all front-end applications using [Vue.js](https://vuejs.org/), developers write a set of codes, which can be published to iOS, Android, Web ( Responsive), as well as various small programs (WeChat/Alipay/Baidu/Toutiao/Feishu/QQ/Kuishou/DingTalk/Taobao), Quick Apps and other platforms.
+`uni-app` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。
+`uni-app` is a framework for developing all front-end applications using [Vue.js](https://vuejs.org/), developers write a set of codes, which can be published to iOS, Android, Web ( Responsive), as well as various small programs (WeChat/Alipay/Baidu/Toutiao/Feishu/QQ/Kuishou/DingTalk/Taobao), Quick Apps and other platforms.
 
 `DCloud`公司拥有900万开发者、数百万应用、12亿手机端月活用户、数千款uni-app插件、70+微信/qq群。阿里小程序工具官方内置uni-app（[详见](https://opendocs.alipay.com/mini/ide/overview)），腾讯课堂官方为uni-app录制培训课程（[详见](https://ask.dcloud.net.cn/article/35640)），开发者可以放心选择。
 The `DCloud` company has 9 million developers, millions of applications, 1.2 billion mobile monthly active users, thousands of uni-app plug-ins, and 70+ WeChat/QQ groups. The official Alipay tool has built-in uni-app ([see](https://opendocs.alipay.com/mini/ide/overview)), and Tencent Classroom officially recorded training courses for uni-app ([see](https://ask.dcloud.net.cn/article/35640)), developers can choose with confidence.

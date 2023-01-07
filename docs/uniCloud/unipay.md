@@ -64,13 +64,15 @@ const unipay = require('@dcloudio/unipay')
 |        timeout	        | Number	| 否	 | 5000												 |      请求超时时间，单位：毫秒						      |
 
 ```js
+const path = require('path'); // 引入内置的path模块
+
 const unipayIns = unipay.initWeixinV3({
   appId: 'your appId',
   mchId: 'your mchId',
   v3Key: 'you parterner key',
-  appCertPath: path.resolve('/path/to/you/cert'),
+  appCertPath: path.resolve(__dirname, 'your appCertPath'),
   // appCertContent: "", 
-  appPrivateKeyPath: path.resolve('/path/to/you/privateKey'),
+  appPrivateKeyPath: path.resolve(__dirname, 'your appPrivateKeyPath'),
   // appPrivateKeyContent: "",
 })
 ```

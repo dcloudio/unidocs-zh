@@ -622,6 +622,8 @@ uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug
 
 ![群发短信](https://web-assets.dcloud.net.cn/unidoc/zh/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
 
+详细操作流程参考[营销短信群发](send-sms.md#batch-sms)
+
 ## 用户-角色-权限
 
 uni-admin 框架基于 uni-id，复用 uni-id 的用户、角色、权限系统，详见[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)。

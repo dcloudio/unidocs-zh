@@ -82,8 +82,7 @@ const config = {
     )
   },
   plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions],
-    'vuepress-plugin-mermaidjs'
+    ["vuepress-plugin-juejin-style-copy", copyOptions]
   ]
 }
 

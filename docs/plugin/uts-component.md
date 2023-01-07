@@ -21,7 +21,7 @@
 
 组件与插件的区别在于：前者倾向于以标签的形式 对外提供UI封装，后者倾向于以函数/类 的形式 对外提供功能封装。如果你的需求更倾向于封装能力，请移步 [UTS插件开发](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
-组件一般适用于组件非全屏的场景，如果需要封装的UI始终是全屏，那么可以考虑通过UTS开发原生页面实现。 [UTS开发原生页面示例](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage)
+组件一般适用于封装非全屏的场景，如果需要你需要封装的UI始终是全屏，那么可以考虑通过UTS开发原生页面来实现。 [UTS开发原生页面示例](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage)
 
 
 #### 为什么使用UTS开发组件
@@ -34,13 +34,14 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 在Android平台会被编译为会被渲染为Android原生View实例，IOS或其他终端平台也是如此。
 
 
+
 |				|uts组件					|uni原生组件				|Vue组件				|
 |:------		|:--------				|:-------- 				|:-------			|
 |开发语言		|uts					|java/object-c			|js/ts				|
 |组件载体		|系统原生View对象		|系统原生View对象		|WebView内部标签		|
 
 
-为了降低前端开发者的开发门槛，UTS组件结构采用了类Vue组件的语法，[关于Vue组件](https://cn.vuejs.org/guide/essentials/component-basics.html)，但是具体的函数上会有定制，我们会在下一个章节详细介绍
+为了降低前端开发者的开发门槛，UTS组件采用了类Vue组件的语法，[关于Vue组件](https://cn.vuejs.org/guide/essentials/component-basics.html)，但是具体的函数上会有定制，我们会在下一个章节详细介绍
 
 
 ## 如何开发UTS组件
@@ -53,6 +54,9 @@ HBuilderX 3.6.16 版本之后，支持一键创建
 选中 项目目录/uni_modules 右键 新建组件  
 
 TODO
+
+至此，我们已经得到了一个最基本的UTS插件目录，下个章节我们介绍其中各文件的作用
+
 
 #### UTS组件目录结构
 
@@ -100,15 +104,15 @@ TODO
 </pre>
 
 
-UTS组件的目录结构与UTS插件基本相同。
+如上所示，UTS组件的目录结构与UTS插件基本相同。
 
 唯一的差别在于，UTS组件入口文件有两个，一个必选的index.vue 组件入口，和一个可选的index.uts 函数能力入口
 
 
+用户如果在开发组件的同时，存在一些与组件无关的能力需要对外暴露，则可以同时开发两个入口。
 
-用户如果在开发组件的同时，存在一些与组件无关的能力需要对外暴露，则可以同时封装
 
-大多数情况下，只需要开发一个index.vue，具体规范会在下一个章节介绍
+大多数情况下，组件其实我们只需要开发一个index.vue 即可，关于index.vue 的具体规范会在下一个章节介绍
 
 
 

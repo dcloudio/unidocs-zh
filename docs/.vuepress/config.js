@@ -77,8 +77,5 @@ module.exports = merge({
       '@theme-config',
       path.resolve(process.cwd(), 'docs/.vuepress/config', process.env.DOCS_LOCAL)
     )
-  },
-  plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions]
-  ]
+  }
 }, config)

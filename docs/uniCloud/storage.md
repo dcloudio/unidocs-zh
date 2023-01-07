@@ -24,6 +24,13 @@ There are 3 ways to upload to cloud storage:
 - 在允许用户上传图片的应用里，违规检测是必不可少的，为此uniCloud提供了内容安全检测模块，可以很方便的实现图片鉴黄等功能。详情参考：[内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
 - In applications that allow users to upload pictures, violation detection is essential. For this reason, uniCloud provides a content security detection module, which can easily implement functions such as image identification. For details, please refer to: [Content Security](https://ext.dcloud.net.cn/plugin?id=5460)
 
+阿里云的云存储有一些限制：
+- 不支持目录
+- 同名文件上传也是按新文件名对待，不会覆盖
+- 文件没有读权限控制，任意人知道路径都可以读。
+
+腾讯云没有上述限制。
+
 ### 文件权限
 ### File Permissions
 
@@ -988,10 +995,9 @@ The data processing functions supported by Tencent Cloud are as follows:
 |管道操作符|	&#124;	|[点击查看](https://cloud.tencent.com/document/product/436/44894)	|
 |Pipe operator| &#124; |[Click to view](https://cloud.tencent.com/document/product/436/44894) |
 
-## 阿里云云存储CDN独立域名@aliyun-cdn-domain
-## Aliyun cloud storage CDN independent domain name @aliyun-cdn-domain
+## 阿里云公测版云存储CDN独立域名@aliyun-cdn-domain
 
-> 仅适用于阿里云公测版，阿里云商用版每个服务空间都是单独的域名
+> 本节仅适用于阿里云公测版。阿里云商用版每个服务空间都是单独的域名，不涉及这个问题
 
 阿里云公测版本所有服务空间使用了相同CDN域名，因此偶尔会出现部分服务空间云存储内存在违规内容导致此CDN域名被封禁的情况。为解决此问题，阿里云为每个服务空间提供了独立的云存储CDN域名。由于资源限制，需要手动在[uniCloud web 控制台](https://unicloud.dcloud.net.cn/)云存储管理页面申请才可以开启，有一定业务量的服务空间申请会自动通过。
 All service spaces of the Alibaba Cloud beta version use the same CDN domain name. Therefore, there may occasionally be cases where the CDN domain name is banned due to illegal content in the cloud storage of some service spaces. To solve this problem, Alibaba Cloud provides an independent cloud storage CDN domain name for each service space. Due to resource limitations, you need to manually apply on the [uniCloud web console](https://unicloud.dcloud.net.cn/) cloud storage management page to enable it. The application for service space with a certain amount of business will be automatically approved.

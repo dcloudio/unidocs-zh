@@ -21,7 +21,7 @@
 
 组件与插件的区别在于：前者倾向于以标签的形式 对外提供UI封装，后者倾向于以函数/类 的形式 对外提供功能封装。如果你的需求更倾向于封装能力，请移步 [UTS插件开发](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
-组件一般适用于组件非全屏的场景，如果需要封装的UI始终是全屏，那么可以考虑通过开发原生实现
+组件一般适用于组件非全屏的场景，如果需要封装的UI始终是全屏，那么可以考虑通过UTS开发原生页面实现。 [UTS开发原生页面示例](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage)
 
 
 #### 为什么使用UTS开发组件
@@ -45,14 +45,14 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 
 ## 如何开发UTS组件
 
->本章节提到全部示例源码可以在Hello UTS 中找到
-
 
 #### 创建UTS组件
 
 HBuilderX 3.6.16 版本之后，支持一键创建
 
-选中 项目目录/uni_modules 右键 新建组件  TODO
+选中 项目目录/uni_modules 右键 新建组件  
+
+TODO
 
 #### UTS组件目录结构
 
@@ -61,13 +61,59 @@ HBuilderX 3.6.16 版本之后，支持一键创建
 
 
 
-组件的入口文件是index.vue，具体规范会在下一个章节介绍
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+┌─common                          // 可跨端公用的uts代码。推荐，不强制
+├─static                          // 静态资源
+├─utssdk
+│	├─app-android                 //Android平台目录
+│	│	├─assets                  //Android原生assets资源目录，可选
+│	│	├─libs                    //Android原生库目录，可选
+│	│	├─res                     //Android原生res资源目录，可选
+│	│	├─AndroidManifest.xml     //Android原生应用清单文件，可选
+│	│	├─config.json             //Android原生配置文件
+│	│	├─index.uts               //Android原生插件能力实现，可选
+|	|	└─index.vue               //Android原生组件能力实现，必选
+│	├─app-ios                     //iOS平台目录
+│	│	├─Frameworks              //iOS原生依赖的第三方 framework 依赖库存放目录，可选
+│	│	├─Resources               //iOS原生所依赖的资源文件存放目录，可选
+│	│	├─info.plist              //iOS原生所需要添加到主 info.plist 文件中的配置文件，可选
+│	│	├─UTS.entitlements        //iOS原生所需要添加到主工程 .entitlements 文件中的配置文件，可选
+│	│	├─config.json             //iOS原生配置文件
+│	│	├─index.uts               //iOS原生插件能力实现，可选
+|	|	└─index.vue               //iOS原生组件能力实现，必选
+│	├─web                         //web平台目录
+│	│	└─index.uts
+│	├─mp-alipay                   // 支付宝小程序平台，可选
+│	├─mp-baidu                    // 百度小程序平台，可选
+│	├─mp-jd                       // 京东小程序平台（仅限vue2），可选
+│	├─mp-kuaishou                 // 快手小程序平台，可选
+│	├─mp-lark                     // 飞书小程序平台，可选
+│	├─mp-qq                       // QQ小程序平台，可选
+│	├─mp-toutiao                  // 字节跳动小程序平台，可选
+│	├─mp-weixin                   // 微信小程序平台，可选
+│	├─mp-xhs                      // 小红书小程序平台（仅限vue2），可选
+│	├─index.d.ts                  // 插件能力声明，可选
+│	└─index.uts                   // 跨平台插件能力实现，可选
+└─package.json                    // 插件清单文件
+</code>
+</pre>
 
-另外 组件允许存在入口文件：index.uts 对外提供函数能力，具体参考 UTS 插件介绍
+
+UTS组件的目录结构与UTS插件基本相同。
+
+唯一的差别在于，UTS组件入口文件有两个，一个必选的index.vue 组件入口，和一个可选的index.uts 函数能力入口
 
 
 
-#### 编写UTS组件代码
+用户如果在开发组件的同时，存在一些与组件无关的能力需要对外暴露，则可以同时封装
+
+大多数情况下，只需要开发一个index.vue，具体规范会在下一个章节介绍
+
+
+
+
+#### UTS组件 代码格式解析
 
 
 下面是一个组件源码 index.vue 完整示例：
@@ -316,11 +362,11 @@ doMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 
 
+## UTS组件开发使用示例
 
 
+## 包含第三方功能的 UTS组件开发使用示例
 
-
-## 4 使用组件
 
 
 #### 使用组件的注意事项

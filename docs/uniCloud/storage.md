@@ -198,6 +198,8 @@ uni.chooseImage({
 
 ### getTempFileURL(Object object)
 
+在云函数中，把文件的fileid转换为临时URL。临时URL有有效期限制，避免其他人获取URL后可以持续访问该文件。
+
 **平台兼容性**
 **Platform Compatibility**
 
@@ -206,8 +208,9 @@ uni.chooseImage({
 |----							|----		|
 |HBuilderX 3.1.0+	|√			|
 
-腾讯云获取文件临时下载链接。自HBuilderX 3.1.0起阿里云也支持此接口，仅为抹平和腾讯云的接口差异
-Tencent Cloud obtains the temporary download link of the file. Alibaba Cloud has also supported this interface since HBuilderX 3.1.0, only to smooth out the interface difference between Tencent Cloud and HBuilderX
+腾讯云获取文件临时下载链接。
+
+自HBuilderX 3.1.0起阿里云也支持此接口，但仅为抹平和腾讯云的接口差异。因为阿里云的云存储不支持权限控制。
 
 #### 请求参数
 #### request parameters

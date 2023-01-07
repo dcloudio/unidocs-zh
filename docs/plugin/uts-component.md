@@ -40,21 +40,25 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 |组件载体		|系统原生View对象		|系统原生View对象		|WebView内部标签		|
 
 
-为了兼容前端开发者的门槛，UTS组件结构采用了类Vue组件的语法，[关于Vue组件](https://cn.vuejs.org/guide/essentials/component-basics.html)，但是具体的函数上会有定制，我们会在下一个章节详细介绍
+为了降低前端开发者的开发门槛，UTS组件结构采用了类Vue组件的语法，[关于Vue组件](https://cn.vuejs.org/guide/essentials/component-basics.html)，但是具体的函数上会有定制，我们会在下一个章节详细介绍
 
 
-## 3 如何开发组件
+## 3 如何开发UTS组件
 
 >本章节提到全部示例源码可以在Hello UTS 中找到
 
 
-#### 3.1 创建组件
+#### 3.1 创建UTS组件
 
-UTS组件的创建过程与UTS插件一样。
+HBuilderX 3.6.16 版本之后，支持一键创建
 
 选中 项目目录/uni_modules 右键 新建组件  TODO
 
+#### 3.2 UTS组件目录结构
+
+
 ![目录结构](https://native-res.dcloud.net.cn/images/uts/component/image1.png)
+
 
 
 组件的入口文件是index.vue，具体规范会在下一个章节介绍
@@ -63,7 +67,7 @@ UTS组件的创建过程与UTS插件一样。
 
 
 
-#### 3.2 示例代码简介
+#### 3.2 编写UTS组件代码
 
 
 下面是一个组件源码 index.vue 完整示例：
@@ -76,8 +80,8 @@ UTS组件的创建过程与UTS插件一样。
 		 */
         name: "xxx-view",
         /**
-         * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
-         */
+        * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
+          */
         emits: ['bindended'],
 		/**
 		 * 属性声明，组件的使用者会传递这些属性值到组件

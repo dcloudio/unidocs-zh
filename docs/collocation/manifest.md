@@ -371,11 +371,11 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` �
                 "key": ""
             },
             "amap": {
-                // 谷歌地图秘钥（HBuilderX 3.6.0+）https://console.amap.com/dev/key/app
+                // 高德地图秘钥（HBuilderX 3.6.0+）https://console.amap.com/dev/key/app
                 "key": "",
-                // 谷歌地图安全密钥（HBuilderX 3.6.0+）https://console.amap.com/dev/key/app
+                // 高德地图安全密钥（HBuilderX 3.6.0+）https://console.amap.com/dev/key/app
                 "securityJsCode": "",
-                // 谷歌地图安全密钥代理服务器地址（HBuilderX 3.6.0+）https://lbs.amap.com/api/jsapi-v2/guide/abc/prepare
+                // 高德地图安全密钥代理服务器地址（HBuilderX 3.6.0+）https://lbs.amap.com/api/jsapi-v2/guide/abc/prepare
                 "serviceHost": "",
             }
 		}

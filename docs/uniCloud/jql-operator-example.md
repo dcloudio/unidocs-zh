@@ -482,55 +482,7 @@ db.collection('test').field('multiply(price, quantity) as total').get()
 { "_id" : 2, "total" : 20 }
 { "_id" : 3, "total" : 50 }
 ```
-#### round
-将数字四舍五入为整数或指定的小数位。
 
-示例集合 `test` 数据如下：
-```javascript
-{ _id: 1, value: 19.25 }
-{ _id: 2, value: 28.73 }
-{ _id: 3, value: 34.32 }
-{ _id: 4, value: -45.39 }
-```
-
-**返回 `value` 四舍五入到小数点后第一位**
-```javascript
-db.collection('test').field('round(value, 1) as roundedValue').get()
-```
-
-执行结果
-```javascript
-{ "_id" : 1, "roundedValue" : 19.2 }
-{ "_id" : 2, "roundedValue" : 28.7 }
-{ "_id" : 3, "roundedValue" : 34.3 }
-{ "_id" : 4, "roundedValue" : -45.4 }
-```
-
-**返回value 使用小数点左边的第一位四舍五入的结果**
-```javascript
-db.collection('test').field('round(value, -1) as roundedValue').get()
-```
-
-执行结果
-```javascript
-{ "_id" : 1, "roundedValue" : 10 }
-{ "_id" : 2, "roundedValue" : 20 }
-{ "_id" : 3, "roundedValue" : 30 }
-{ "_id" : 4, "roundedValue" : -50 }
-```
-
-**返回value舍入为整数的整数**
-```javascript
-db.collection('test').field('round(value, 0) as roundedValue').get()
-```
-
-执行结果
-```javascript
-{ "_id" : 1, "roundedValue" : 19 }
-{ "_id" : 2, "roundedValue" : 29 }
-{ "_id" : 3, "roundedValue" : 34 }
-{ "_id" : 4, "roundedValue" : -45 }
-```
 #### sqrt
 计算平方根。
 

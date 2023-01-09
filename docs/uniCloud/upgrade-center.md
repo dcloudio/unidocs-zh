@@ -226,7 +226,7 @@ The following functions are provided:
 
 **关于应用转让后升级中心（uni-upgrade-center）的使用问题** [详情](https://ask.dcloud.net.cn/article/40112)
 
-### 费用评测
+### 费用评测@upgrade-center-fee
 
 
 近期，uniCloud阿里云版开始正式商用，部分开发者对基于uniCloud的`uni-upgrade-center`等云端一体业务，开始纠结，不清楚这些业务预计会花费多少钱，不清楚相比传统服务器而言，何种方案性价比更好。

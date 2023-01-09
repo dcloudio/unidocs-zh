@@ -1,5 +1,11 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2023-01-09
+* JQL语法 修复 使用 setUser 方法未传 permission 参数且使用触发器时报错的Bug
+* JQL语法 修复 add 方法传递的字段值为对象且其中包含null值时报错的Bug
+* JQL语法 新增 数据库触发器增加 triggerContext 参数，用于在 before 和 after 内共享数据 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-context)
+* 阿里云 调整 正式版云存储单文件100MB限制调整为5GB
+
 #### 2023-01-06
 * 阿里云 正式版云存储单文件100MB限制调整为5GB
 

@@ -120,6 +120,20 @@ Note: The operating system or browser will automatically pop up a window to ask 
 `uni-push`即降低了开发成本，又提高了push送达率，还支持全平台，并且免费，是当前推送的最佳解决方案。
 `uni-push` not only reduces the development cost, but also improves the push delivery rate. It also supports all platforms and is free. It is the best solution for current push.
 
+# uni-push2.0费用说明
+
+uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而uniCloud价格很实惠：  
+- 调用10000次云函数仅需0.0133元
+- 调用10000次数据库查询仅需0.015元
+
+可见价格之低，几乎可以忽略不计。
+
+一次消息推送 = 1次云函数请求 + 最高3次数据库查询（最常用的基于user_id推送仅需一次查询，详情参考：推送接口查库详解 )  
+
+即：最高(1 x 0.0133 + 3 x 0.015)/10000 = 0.00000583元/每次（注：给你的应用的所有注册用户群发消息算一次）  
+
+详细的计费参考：[阿里云版uniCloud按量计费文档](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)
+
 # 常见问题
 # common problem
 有了uni-push，开发者不应该再使用其他push方案了。但我们发现很多开发者有误解，导致还在错误使用其他推送。

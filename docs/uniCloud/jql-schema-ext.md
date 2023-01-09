@@ -85,6 +85,7 @@ ext.js里引入公共模块的机制：
 |userInfo			|object							|-			|是							|用户信息																																										|
 |result				|object							|-			|afterXxx内必备	|本次请求结果																																								|
 |isEqualToJql	|function						|-			|是							|用于判断当前执行的jql语句和执行语句是否相等																								|
+|triggerContext	|object						|-			|是							|用于在before和after内共享数据																								|
 
 #### where@where
 
@@ -215,6 +216,32 @@ module.exports {
         console.log('成功匹配了JQL命令：对article表进行count计数且未带条件')
       } else {
         throw new Error('禁止执行带条件的count')
+      }
+    }
+  }
+}
+```
+
+#### triggerContext@trigger-context
+
+> 新增于 HBuilderX 3.6.16
+
+此参数为一个空对象，仅用于在before内挂载数据并在after内获取使用
+
+**示例**
+
+```js
+// article.schema.ext.js
+module.exports {
+  trigger: {
+    beforeUpdate: async function({
+      triggerContext
+    } = {}) {
+      triggerContext.shareVar = 1
+    },
+    afterUpdate: async function(){
+      if (triggerContext.shareVar === 1) {
+        console.log('获取到的triggerContext.shareVar为1')
       }
     }
   }

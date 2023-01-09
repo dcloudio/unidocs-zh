@@ -40,6 +40,7 @@
 - app-nvue 平台只有纯nvue项目（render为native）才支持 `<navigator>`。非render为native的情况下，nvue暂不支持navigator组件，请使用API跳转。
 - app下退出应用，Android平台可以使用[plus.runtime.quit](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.quit)。iOS没有退出应用的概念。
 - [uLink组件](https://ext.dcloud.net.cn/plugin?id=1182)是navigator组件的增强版，样式上自带下划线，功能上支持打开在线网页、其他App的schema、mailto发邮件、tel打电话。
+- Vue3 项目因 SSR 需要，H5 端会在外层嵌套 a 标签
 
 **示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/navigator/navigator)
  

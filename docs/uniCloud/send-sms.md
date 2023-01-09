@@ -259,68 +259,19 @@ exports.main = async (event, context) => {
 特别注意：短信成功回执最长延迟为72小时。
 
 ## 营销短信群发@batch-sms
-如有客户关怀、会员服务、电商活动、新品上线等场景需要给用户发送短信时，不再需要开发，在uni-admin控制台选择用户/标签即可向用户群发短信，省时高效。
-同时支持动态替换短信模板变量，使短信更加个性化。
+如有客户关怀、会员服务、电商活动、新品上线等场景需要给用户发送短信时，通过uni-admin群发短信功能，无需开发，及时送达用户。
+[营销短信群发配置](uniCloud/admin.md#batch-sms)
 
-**步骤一：开通短信服务**
+**功能亮点**
 
-如您首次使用请登录[DCloud开发者中心](https://dev.dcloud.net.cn/)开通短信服务
+支持给用户打标签分组，按照分组群发短信，可以同时给多个分组群发
+![](https://web-assets.dcloud.net.cn/unidoc/zh/20230109154350.png)
+短信模板变量支持从数据库表字段中读取
+![](https://web-assets.dcloud.net.cn/unidoc/zh/20230109194715.png)
+发送前预览短信内容；防止内容错误，提高发送成功率
+![](https://web-assets.dcloud.net.cn/unidoc/zh/20230109155202.png)
 
-**步骤二：添加签名与模板**
-
-在[签名配置页面](https://dev.dcloud.net.cn/pages/sms/sign)添加短信签名
-
-在[模板配置页面](https://dev.dcloud.net.cn/pages/sms/template)中添加短信模板
-
-例如：`【测试】亲爱的${username}, 祝您生日快乐！感谢您长期以来对xx商城的信任与支持，会员生日月畅享购物双倍积分，期待您的光临！`
-
-**步骤三：导出短信模板**
-
-在短信模板页面-点击”导出模板“按钮，导出短信模板。
-![导出短信模板](https://web-assets.dcloud.net.cn/unidoc/zh/20230107203307.png)
-
-**步骤四：通过uni-admin控制台发送短信**
-
-如您未部署过uni-admin，请在插件市场中安装[uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)
-
-首次使用，请在`uni-config-center/uni-sms-co/config.json`中配置短信`smsKey`与`smsSecret`，具体配置方式参考[uni-admin群发短信文档](uniCloud/admin.md#batch-sms)
-
-配置完成后，登录uni-admin控制台，打开用户管理页面，请按照图示步骤上传短信模板（步骤三导出的短信模板）：
-![上传短信模板](https://web-assets.dcloud.net.cn/unidoc/zh/20230107201145.png)
-短信模板上传成功后，短信模板即可显示，如下：
-![短信模板上传成功](https://web-assets.dcloud.net.cn/unidoc/zh/20230107202329.png)
-
-选择要接收短信的用户，如下：
-![群发用户](https://web-assets.dcloud.net.cn/unidoc/zh/20230107202752.png)
-或者如果已经对用户进行了分组，可以在标签管理中选择标签后发送短信，如下：
-![群发用户标签](https://web-assets.dcloud.net.cn/unidoc/zh/20230107203019.png)
-
-目前短信支持固定文本发送与关联数据表字段发送，以下介绍两种方式如何发送
-
-**固定文本发送**
-
-选择短信模板，如果没有出现变量模板配置就是固定文本模式，如下：
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107204518.png)
-可以在发送前点击预览，可以预览发送的第一条短信，用来检查短信内容是否正确，如下：
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107204807.png)
-确认短信内容无误后，点击提交即可发送短信，发送短信之后可以在[DCloud开发者中心](https://dev.dcloud.net.cn/)-查看[短信发送记录](https://dev.dcloud.net.cn/pages/sms/sendLog)
-
-**使用数据表字段作为模板变量发送**
-
-选择短信模板，如果出现变量模板配置就是数据表查询模式，如下：
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107205208.png)
-如上，短信变量字段为”username“，配置替换字段为uni-id-users表中username字段，在发送短信时会替换掉短信变量。
-
-短信变量支持固定值和数据表查询两种方式；固定值如：各位同事，数据表查询如：{uni-id-users.username}；请注意，若使用数据表查询方式，目前仅支持查询 uni-id-users 表；并注意确保数据库中查询字段值不为空，否则短信将发送失败。
-
-在发送之前可以点击预览，查看第一条短信的内容，确保变量模板配置正确，如下，username将替换为“张三”：
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107205823.png)
-
-确认短信内容无误后，点击提交即可发送短信，发送短信之后可以在[DCloud开发者中心](https://dev.dcloud.net.cn/)-查看[短信发送记录](https://dev.dcloud.net.cn/pages/sms/sendLog)
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107210406.png)
-
-如有任何问题可在[论坛发帖](https://ask.dcloud.net.cn)咨询或加uniCloud短信服务交流QQ群(695645208)咨询
-
+如何使用？查看[营销短信群发配置](uniCloud/admin.md#batch-sms)
 
 <style>
 	.join-group-chat{

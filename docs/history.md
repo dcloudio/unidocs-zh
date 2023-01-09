@@ -64,9 +64,7 @@ DCloud的初心是什么？
 What is the original intention of DCloud?
 
 1. **为开发者提供免费、高效的开发工具，让天下没有难做的应用**
-1. **Provide developers with free and efficient development tools, so that there is no difficult application in the world**
-2. **改进应用形态，让用户更方便的获取数字服务**
-2. **Improve the application form to make it easier for users to obtain digital services**
+2. **改进应用形态，让用户更方便地获取数字服务**
 
 DCloud也再次承诺不会对uni-app、HBuilderX等工具收费，感谢数百万开发者的一路陪伴，也请一直监督我们不忘初心！
 DCloud also promises again that it will not charge for uni-app, HBuilderX and other tools. Thanks to millions of developers for their company along the way, please always supervise us and not forget our original intentions!

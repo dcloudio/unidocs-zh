@@ -44,9 +44,7 @@ The description information of the application, which is used to briefly introdu
 <a id="versionname"/>
 
 ### 应用版本名称  
-### App version name
-应用显示的版本名称，可以使用任何字符串，推荐使用“.”分割的数字表示“主版本号.此版本号.编译版本号”，如“1.1.1234”。云端打包后设置为原生工程的应用版本名称：
-The version name displayed by the application can use any string. It is recommended to use a number separated by "." to indicate "major version number. This version number. Compile version number", such as "1.1.1234". Set the application version name of the native project after cloud packaging:
+应用显示的版本名称，可以使用任何字符串，推荐使用“.”分割的数字表示“主版本号.次版本号.编译版本号”，如“1.1.1234”。云端打包后设置为原生工程的应用版本名称：
 - Android平台  
 - Android platform
 应用清单文件（AndroidManifest.xml）中manifest节点的`android:versionName`属性值，安装到手机后可在“设置”->“应用管理”->“应用信息”中查看

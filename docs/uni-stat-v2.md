@@ -2,6 +2,7 @@ uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台
 Uni Statistics 2.0 is an open source, full-end, cloud-integrated statistics platform that is more suitable for uni-app.
 
 > `HBuilderX 3.4.10 +`起支持
+
 > `HBuilderX 3.6.7 +`修复了Android10多个设备deviceId相同导致统计数据减少的bug
 
 ## demo体验

@@ -119,9 +119,7 @@ uni.getLocation({
   - 定位 和 map 是两个东西。通过 `getLocation` 得到位置坐标后，可以在任意map地图上展示，比如定位使用高德，地图使用 google 的 webview 版地图。如果坐标系不同时，注意转换坐标系。
   - Positioning and map are two things. After getting the location coordinates through `getLocation`, it can be displayed on any map map, such as positioning using Gaode, and the map using google's webview version of the map. If the coordinate system is different, pay attention to converting the coordinate system.
   - 如果使用 `web-view` 加载地图，无需在manifest里配地图的sdk配置。
-  - If you use `web-view` to load the map, there is no need to configure the sdk configuration of the map in the manifest.
-  - 持续定位方案：iOS端可以申请持续定位权限，[参考](https://ask.dcloud.net.cn/article/12569)。Android如果进程被杀，代码无法执行。可以使用 [unipush](https://ask.dcloud.net.cn/article/35622) ，通过服务器激活App，执行透传消息，让App启动然后采集位置。Android上，即使自己写原生插件做后台进程，也很容易被杀，unipush是更合适的方案
-  - Continuous positioning solution: iOS can apply for continuous positioning permission, [Reference](https://ask.dcloud.net.cn/article/12569). Android If the process is killed, the code cannot be executed. You can use [unipush](https://ask.dcloud.net.cn/article/35622) to activate the App through the server, perform transparent message transmission, let the App start and collect the location. On Android, even if you write a native plugin as a background process, it is easy to be killed. Unipush is a more suitable solution.
+  - 持续定位方案：iOS端可以申请持续定位权限，[参考](https://ask.dcloud.net.cn/article/12569)。Android如果进程被杀，代码无法执行，可以在插件市场搜索[保活](https://ext.dcloud.net.cn/search?q=%E4%BF%9D%E6%B4%BB&cat1=5)相关原生语言插件避免App被系统杀死。即使使用了原生语言插件保活，也很容易被杀，此时可以使用[unipush](https://uniapp.dcloud.net.cn/unipush-v2.html) ，通过推送消息提示用户激活App
   - `3.3.0 版本以上` 优化系统定位模块，可不使用三方定位SDK的进行高精度定位，具体参考：[系统定位](app/geolocation)。
   - `Version 3.3.0 and above` has optimized the system positioning module, and can perform high-precision positioning without using the three-way positioning SDK. For details, refer to: [System Positioning](app/geolocation).
 - `小程序平台`

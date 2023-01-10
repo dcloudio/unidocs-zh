@@ -341,62 +341,44 @@ App nvue 3.6.9+ 支持
       this.addMarkers();
     },
     methods: {
-
       addMarkers() {
-        const marker = {
-          id: 1,
-          iconPath: img,
-          width: 50,
-          height: 50,
-          joinCluster: true, // 指定了该参数才会参与聚合
-          label: {
-            width: 50,
-            height: 30,
-            borderWidth: 1,
-            borderRadius: 10,
-            bgColor: '#ffffff'
+        const positions = [
+          {
+            latitude: 23.099994,
+            longitude: 113.324520,
+          }, {
+            latitude: 23.099994,
+            longitude: 113.322520,
+          }, {
+            latitude: 23.099994,
+            longitude: 113.326520,
+          }, {
+            latitude: 23.096994,
+            longitude: 113.329520,
           }
-        };
-
-        const positions = [{
-          latitude: 23.099994,
-          longitude: 113.324520,
-        }, {
-          latitude: 23.099994,
-          longitude: 113.322520,
-        }, {
-          latitude: 23.099994,
-          longitude: 113.326520,
-        }, {
-          latitude: 23.096994,
-          longitude: 113.329520,
-        }]
+        ]
 
         const markers = []
 
         positions.forEach((p, i) => {
-           console.log(i)  
-                    markers.push({  
-                        latitude: p.latitude,  
-                        longitude: p.longitude,  
-                        id: i + 1,  
-                        iconPath: img,  
-                        width: 50,  
-                        height: 50,  
-                        joinCluster: true, // 指定了该参数才会参与聚合  
-                        label: {  
-                            width: 50,  
-                            height: 30,  
-                            borderWidth: 1,  
-                            borderRadius: 10,  
-                            bgColor: '#ffffff',  
-                            content: i + ""  
-                        }  
-                    })
-          // const newMarker = Object.assign({},marker, p)
-          // newMarker.id = i + 1
-          // newMarker.label.content = `label ${i + 1}`
-          // markers.push(newMarker)
+          console.log(i)  
+          markers.push(
+            Object.assign({},{
+              id: i + 1,  
+              iconPath: img,  
+              width: 50,  
+              height: 50,  
+              joinCluster: true, // 指定了该参数才会参与聚合  
+              label: {  
+                  width: 50,  
+                  height: 30,  
+                  borderWidth: 1,  
+                  borderRadius: 10,  
+                  bgColor: '#ffffff',  
+                  content: `label ${i + 1}`
+              }  
+            },p)
+          )
         })
         this._mapContext.addMarkers({
             markers,

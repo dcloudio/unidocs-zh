@@ -95,13 +95,13 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 
 用户如果在开发组件的同时，存在一些与组件无关的能力需要对外暴露，可以在index.uts中进行实现
 
-大多数情况下，我们只需要开发一个index.vue 即可，如果存在多个组件，可以新建多个 *.vue文件
+大多数情况下，我们只需要开发一个index.vue 即可，如果存在多个组件，可以新建多个 xxx.vue文件
 
-关于index.vue 的源码规范会在下一个章节介绍
+关于 index.vue 源码如何编写，我们会在下一个章节介绍
 
 
 
-#### UTS组件源码解析
+#### index.vue源码结构
 
 
 下面是一个组件源码 index.vue 完整示例：
@@ -286,7 +286,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 ```
 
 
-index.vue可以分为以下几类：
+index.vue 要素可以分为以下几类：
 
 + 配置：
 
@@ -313,16 +313,16 @@ index.vue可以分为以下几类：
 
 + 生命周期：
 
-	组件需要重点处理 内存创建/销毁，View载体创建/销毁 过程中的资源管理，具体参考3.4章节
+	组件需要重点处理 内存创建/销毁，View载体创建/销毁 过程中的资源管理，具体参考生命周期章节
 	
 + 内置对象：
 	
-	为了方便组件开发者，UTS组件内置了部分变量与函数，具体参考3.5章节
+	为了方便组件开发者，UTS组件内置了部分变量与函数，具体参考内置对象与函数章节
 
 
 #### 生命周期 
 
-组件开发者需要重点关注生命周期
+组件开发者需要重点关注组件的生命周期，以便进行初始化和资源回收
 
 ```mermaid 
 graph TD;
@@ -375,6 +375,10 @@ doMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 ## 简单View的示例
 
+
+本章节以 一个极简的组件开发为例，介绍说明UTS组件开发流程
+
+
 #### 创建插件
 
 在HBuilder X 中选中Uni-App项目下 uni_modules目录  
@@ -414,35 +418,17 @@ todo  目前还没有创建界面
 
 	//原生提供以下属性或方法的实现  
 	export default {
-		/**
-		 * 组件名称，也就是开发者使用的标签
-		 */
 		name: "uts-hello-view",
-		/**
-		 * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
-		 */
-		emits: ['buttonClick'],
-		/**
-		 * 属性声明，组件的使用者会传递这些属性值到组件
-		 */
 		props: {
-			/**
-			 * 字符串类型 属性：buttonText  需要设置默认值
-			 */
 			"buttonText": {
 				type: String,
 				default: "点击触发"
 			}
 		},
 		
-		/**
-		 * 属性变化监听器实现
-		 */
 		watch: {
 			"buttonText": {
-				/**
-				 * 这里监听属性变化，并进行组件内部更新
-				 */
+				
 				handler(newButtonText: string) {
 					if (this.$el != null) {
 						let button = this.$el!.findViewWithTag("centerButton") as Button
@@ -454,18 +440,15 @@ todo  目前还没有创建界面
 			},
 		},
 		
-		
 		NVLoad(): LinearLayout {
 			//必须实现  
 			let contentLayout = new LinearLayout($androidContext)
 			let button = new Button($androidContext)
-			button.setText("点击触发");
 			button.setTag("centerButton");
 			contentLayout.addView(button, LinearLayout.LayoutParams(500, 500));
 			button.setOnClickListener(new ButtonClickListsner())
 			return contentLayout
 		},
-
 		
 		
 	}
@@ -481,15 +464,48 @@ todo  目前还没有创建界面
 
 ```
 
+
+上面的代码，我们自定义了一个  名为<uts-hello-view/>的UTS 组件，该组件对外提供了一个包含按钮的简单UI实现，并且对外暴露了一个名为 `buttonText`字符串属性，用来构建按钮上的文案
+ 
+接下来，我们在下面章节介绍在uni-app项目中如何使用它
+
 #### 使用组件
 
-打开任意 componet.nvue文件
+>> 需要注意的是，UTS组件默认全局注册，无需使用者手动配置
+
+我们在uni-app项目中新建 componet.nvue 页面，
+
+直接使用`uts-hello-view`标签，并且定义`buttonText`文本内容即可看到效果。
+
+点击按钮，可以在控制台看到组件内部实现的日志输出
+
 ```js
-<uts-hello-view buttonText="点击按钮内容" style="width:375px;height: 375px;background-color: aqua;"></uts-hello-view>
+<template>
+	<div>
+		<text>UTS view组件</text>
+		<uts-hello-view buttonText="点击按钮内容" style="width:375px;height: 375px;background-color: aqua;"></uts-hello-view>
+	</div>
+	
+</template>
+
+<script>
+</script>
+
+<style>
+</style>
 ```
 
 
+
+#### 运行和测试
+
+在当前示例中，不涉及第三方依赖，使用标准基座直接运行即可
+
+
+
 ## 包含第三方SDK的示例
+
+本章节以lottie动画组件为例，介绍包含三方SDK的UTS组件开发过程
 
 #### 创建插件
 
@@ -518,70 +534,371 @@ UTS组件建议使用远程依赖的方式集成，如果需要以AAR的形式�
 
 ~/uni_modules/uts-animation-view/utssdk/app-android/libs目录
 
+依赖的配置原则与UTS插件一致 [UTS插件依赖说明](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-4-%E5%A2%9E%E5%8A%A0libs%E4%BE%9D%E8%B5%96%E8%B5%84%E6%BA%90)
+
 #### 编写逻辑
 
+
+打开index.vue，键入下面的组件源码:
+
+```ts
+<template>
+    <view class="defaultStyles">
+
+    </view>
+</template>
+<script lang="uts">
+    import Animator from 'android.animation.Animator'
+    import TextUtils from 'android.text.TextUtils'
+    import View from 'android.view.View'
+    import LottieAnimationView from 'com.airbnb.lottie.LottieAnimationView'
+    import LottieDrawable from 'com.airbnb.lottie.LottieDrawable'
+	import FileInputStream from 'java.io.FileInputStream'
+	import { UTSAndroid } from "io.dcloud.uts";
+
+    class CustomAnimListener extends Animator.AnimatorListener {
+
+        comp: UTSComponent < LottieAnimationView >
+            constructor(com: UTSComponent < LottieAnimationView > ) {
+                super();
+                this.comp = com
+            }
+
+        override onAnimationStart(animation: Animator | null) {}
+
+        override onAnimationEnd(animation: Animator | null, isReverse: Boolean) {
+            this.comp.emit("bindended")
+        }
+
+        override onAnimationEnd(animation: Animator | null) {}
+
+        override onAnimationCancel(animation: Animator | null) {}
+
+        override onAnimationRepeat(animation: Animator | null) {}
+    }
+
+    //原生提供以下属性或方法的实现  
+    export default {
+        name: "uts-animation-view",
+        /**
+         * 当播放到末尾时触发 ended 事件（自然播放结束会触发回调，循环播放结束及手动停止动画不会触发）
+         */
+        emits: ['bindended'],
+        props: {
+            /**
+             * 动画资源地址，目前只支持绝对路径
+             */
+            "path": {
+                type: String,
+                default: ""
+            },
+            /**
+             * 动画是否循环播放
+             */
+            "autoplay": {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * 动画是否自动播放
+             */
+            "loop": {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * 是否隐藏动画
+             */
+            "hidden": {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * 动画操作，可取值 play、pause、stop
+             */
+            "action": {
+                type: String,
+                default: "stop"
+            }
+
+        },
+        data() {
+            return {
+
+            }
+        },
+        watch: {
+            "path": {
+                handler(newPath: string) {
+
+                    
+					if(this.$el != null){
+						let lottieAnimationView = this.$el!
+						if (!TextUtils.isEmpty(newPath)) {
+							
+							
+						    if (newPath.startsWith("http://") || newPath.startsWith("https://")) {
+						        lottieAnimationView.setAnimationFromUrl(newPath)
+						    } else {
+						        // 默认是static了
+								var realJsonPath = UTSAndroid.getResourcePath(newPath)
+						        lottieAnimationView.setAnimation(new FileInputStream(realJsonPath),newPath)
+						    }
+						}
+						if (this.autoplay) {
+						    lottieAnimationView.playAnimation()
+						}
+					}
+                },
+                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+            },
+            "loop": {
+                handler(newLoop: Boolean) {
+					if(this.$el != null){
+						if (newLoop) {
+						    this.$el!.repeatCount = Int.MAX_VALUE
+						} else {
+						    // 不循环则设置成1次
+						    this.$el!.repeatCount = 0
+						}
+						
+						if (this.autoplay) {
+						    this.$el!.playAnimation()
+						}
+					}
+                    
+                },
+                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+            },
+
+            "autoplay": {
+                handler(newValue: boolean) {
+					if(this.$el != null){
+						if (newValue) {
+						    this.$el!.playAnimation()
+						}
+					}
+                    
+                },
+                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+            },
+
+            "action": {
+                handler(newAction: string) {
+
+                    if (newAction == "play" || newAction == "pause" || newAction == "stop") {
+
+						if(this.$el != null){
+							if (this.action == "play") {
+							    this.$el!.playAnimation()
+							} else if (this.action == "pause") {
+							    this.$el!.pauseAnimation()
+							} else if (this.action == "stop") {
+							    this.$el!.cancelAnimation()
+							    this.$el!.clearAnimation()
+							}
+						}
+                        
+
+                    } else {
+                        // 非法入参，不管
+                    }
+                },
+                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+            },
+
+            "hidden": {
+                handler(newValue: boolean) {
+					if(this.$el != null){
+						if (newValue) {
+						    this.$el!.visibility = View.GONE
+						} else {
+						    this.$el!.visibility = View.VISIBLE
+						}
+					}
+                },
+                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+            },
+
+        },
+        methods: {
+            setRepeatMode(repeat: string) {
+				if(this.$el != null){
+					if ("RESTART" == repeat) {
+					    this.$el!.repeatMode = LottieDrawable.RESTART
+					} else if ("REVERSE" == repeat) {
+					    this.$el!.repeatMode = LottieDrawable.RESTART
+					}
+				}
+            },
+            privateMethod() { //如何定义不对外暴露的API？ 暂不支持，需在export外写  
+            }
+        },
+        created() { //创建组件，替换created  
+
+        },
+        NVBeforeLoad() { //组件将要创建，对应前端beforeMount  
+            //可选实现，这里可以提前做一些操作  
+        },
+        NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）  
+            //必须实现  
+            let lottieAnimationView = new LottieAnimationView($androidContext)
+            return lottieAnimationView
+        },
+		
+        NVLoaded() { //原生View已创建  
+			//可选实现，这里可以做后续操作
+			if(this.$el != null){
+				this.$el!.repeatMode = LottieDrawable.RESTART;
+				this.$el!.visibility = View.GONE
+				this.$el!.repeatCount = 0
+				this.$el!.addAnimatorListener(new CustomAnimListener(this))
+			}
+           
+        },
+        NVLayouted() { //原生View布局完成  
+            //可选实现，这里可以做布局后续操作  
+        },
+        NVBeforeUnload() { //原生View将释放  
+            //可选实现，这里可以做释放View之前的操作  
+        },
+        NVUnloaded() { //原生View已释放  
+            //可选实现，这里可以做释放View之后的操作  
+        },
+        unmounted() { //组件销毁  
+            //可选实现  
+        }
+    }
+</script>
+<style>
+    /* 定义默认样式值, 组件使用者没有配置时使用 */
+    .defaultStyles {
+        width: 750rpx;
+        height: 240rpx;
+    }
+</style>
+
+```
+
+上面的代码我们实现了一个支持lottie动画播放的 UTS组件，标签名称为 <uts-animation-view />,
+
+对外提供了下列属性和方法
+
+|属性		|类型	|默认值	|描述	|
+|:---		|:--	|:--	|:---	|
+|`path`		|string	||`lottie`资源路径，支持本地地址和`http`协议下的网络地址|
+|`loop`		|boolean|false	|动画是否循环播放|
+|`autoplay`	|boolean|true	|动画是否自动播放|
+|`action`	|string	|play	|动画操作，可取值 play、pause、stop|
+|`hidden`	|boolean|true	|是否隐藏动画|
+|`bindended`|event	|		|当播放到末尾时触发 ended 事件|
+|`setRepeatMode`|function|		|设置动画的重复方式，RESTART：重新开始播放，REVERSE，反向播放|
 
 
 #### 使用组件
 
-#### 使用组件的注意事项
-
-1. 需要自定义基座方能使用
-
-2 不需要引用，直接使用自定义标签
-
-```js
- <xxx-view  :propA="自定义属性值" ref="当前组件标签">
- </xxx-view>
-```
-
-#### 使用组件属性
-
-
-
-组件的开发者，声明属性
-```
-props: {
-	/**
-	 * 属性A：propA  需要声明属性类型和默认值
-	 */
-	"propA": {
-		type: String,
-		default: ""
-	},
-},
-```
-
-组件使用者，使用属性
-```js
- <xxx-view  :propA="自定义属性值" >
- </xxx-view>
-```
-
-#### 使用组件方法
-
-
-组件的开发者，定义公开方法
+新建 lottie.nvue 页面，引用自定义 uts-animation-view 组件，并编写测试用例
 
 ```
-methods: {
-	publicMethod() {
-		doSth(paramA: string) {
-			// 这是组件的自定义方法
-		}
-	}
-}
-```
-组件使用者，使用方法
+<template>
+    <div>
+        <button @tap="changeUrl">播放本地动画资源</button>
+		<button @tap="changeServerUrl">播放远程动画资源</button>
+		
+        <button @tap="changeAutoPlay">测试AutoPlay</button>
+        <button @tap="changeLoop">测试Loop</button>
+        <button @tap="changeAction(1)">测试action play</button>
+        <button @tap="changeAction(2)">测试action pause</button>
+        <button @tap="changeAction(3)">测试action stop</button>
+        <uts-animation-view ref="animView" :path="animUrl" :autoplay="autoplay" :loop="loop" :action="action"
+            :hidden="hidden" @bindended="testAnimEnd" @click="lottieClickTest" @longpress="lottieLongpressTest"
+            :style="{width:widthNum+'rpx',height:heightNum+'px',background:yanse}">
+        </uts-animation-view>
+        
+    </div>
+</template>
 
-```js
- // 布局代码
- <xxx-view  ref="customTag" >
- </xxx-view>
- // 调用代码
- this.$refs["customTag"].doSth('参数')
+<script>
+  
+    export default {
+        data() {
+            return {
+                hidden: false,
+                autoplay: false,
+                action: "play",
+                loop: false,
+                yanse: "red",
+                widthNum: 750,
+                heightNum: 200,
+                comShow: true,
+                animUrl: "/static/anim_a.json"
+            }
+        },
+        
+        methods: {
+
+            changeAutoPlay: function() {
+                this.autoplay = !this.autoplay
+            },
+            changeUrl: function() {
+                if (this.animUrl == "/static/anim_a.json") {
+                    this.animUrl = "/static/anim_b.json"
+                } else {
+                    this.animUrl = "/static/anim_a.json"
+                }
+            },
+
+			changeServerUrl: function() {
+                this.animUrl = "https://b.bdstatic.com/miniapp/images/lottie_example_one.json"
+            },
+            changeAction: function(type) {
+                if (type == 1) {
+                    this.action = "play"
+                } else if (type == 2) {
+                    this.action = "pause"
+                } else if (type == 3) {
+                    this.action = "stop"
+                }
+            },
+            changeLoop: function() {
+                this.loop = !this.loop
+            },
+            testAnimEnd: function(res) {
+                console.log("testAnimEnd");
+            },
+
+            changeRepeat: function(res) {
+                let repeatConfig = {
+                    count: 3,
+                    mode: "restart"
+                }
+                this.$refs["animView"].updateRepeatConfig(repeatConfig, function(res) {
+                    console.log(res);
+                });
+
+            },
+            lottieClickTest: function(res) {
+                console.log("lottieClickTest");
+                console.log(res);
+            },
+            lottieLongpressTest: function(res) {
+                console.log("lottieClickTest");
+                console.log(res);
+            },
+        }
+    }
+</script>
+
 ```
 
+上面的代码实现了一个名为
+
+
+#### 运行和测试
+
+在当前例子中，需要下载额外的第三方依赖，需要自定义基座方能使用
+
+点击页面中的测试按钮，即可看到
 
 ## 快速体验
 

@@ -1,4 +1,4 @@
-#### input
+### input
 
 输入框。
 
@@ -7,8 +7,8 @@
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |value|String||输入框的初始内容||
-|type|String|text|input 的类型|H5 暂未支持动态切换，详见下方 Tips，请使用 v-if 进行整体切换|
-|text-content-type|String| |文本区域的语义，根据类型自动填充|仅 App-nvue-iOS 支持|
+|type|String|text|input 的类型 [有效值](#type)|H5 暂未支持动态切换，详见下方 Tips，请使用 v-if 进行整体切换|
+|text-content-type|String|[有效值](#text-content-type)|文本区域的语义，根据类型自动填充|仅 App-nvue-iOS 支持|
 |password|Boolean|false|是否是密码类型|H5和App写此属性时，type失效|
 |placeholder|String||输入框为空时占位符||
 |placeholder-style|String||指定 placeholder 的样式||
@@ -17,7 +17,7 @@
 |maxlength|Number|140|最大输入长度，设置为 -1 的时候不限制最大长度||
 |cursor-spacing|Number|0|指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离|App、微信小程序、百度小程序、QQ小程序、京东小程序|
 |focus|Boolean|false|获取焦点。|在 H5 平台能否聚焦以及软键盘是否跟随弹出，取决于当前浏览器本身的实现。nvue 页面不支持，需使用组件的 focus()、blur() 方法控制焦点|
-|confirm-type|String|done|设置键盘右下角按钮的文字，仅在 type="text" 时生效。|微信小程序、App、H5、快手小程序、京东小程序|
+|confirm-type|String|done|设置键盘右下角按钮的文字，仅在 type="text" 时生效。[有效值](#confirm-type)|微信小程序、App、H5、快手小程序、京东小程序|
 |confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|App(3.3.7+)、H5 (3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序|
 |cursor|Number||指定focus时的光标位置||
 |selection-start|Number|-1|光标起始位置，自动聚集时有效，需与selection-end搭配使用||
@@ -36,7 +36,7 @@
 |random-number|Boolean|false|当 type 为 number, digit, idcard 数字键盘是否随机排列|支付宝小程序 1.9.0+|
 |controlled|Boolean|false|是否为受控组件。为 true 时，value 内容会完全受 setData 控制|支付宝小程序 1.9.0+|
 |always-system|Boolean|false|是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效|支付宝小程序 2.7.3+|
-|inputmode|String|"text"|是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。[详情](#inputmode)|H5（3.6.16+）|
+|inputmode|String|"text"|是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。[有效值](#inputmode)|H5（3.6.16+）、App-vue（3.6.16+）|
 |@input|EventHandle||当键盘输入时，触发input事件，event.detail = {value}|差异见下方 Tips|
 |@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（2.2.3+） 、QQ小程序支持 height|
 |@blur|EventHandle||输入框失去焦点时触发，event.detail = {value: value}|快手小程序不支持|
@@ -59,9 +59,7 @@
 	<input v-else  type="number"  placeholder="请输入数字" />
 ```
 
-
-
-**type 有效值**
+#### type 有效值 @type
 
 |值|说明|平台差异说明|
 |:-|:-|:-|
@@ -82,13 +80,13 @@
 - input组件若不想弹出软键盘，可设置为disabled
 - placeholder-style指定样式类font-size单位为rpx时，字节跳动小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。
 
-**text-content-type 有效值**
+#### text-content-type 有效值 @text-content-type
 
 |值|说明|
 |:-|:-|
 |oneTimeCode|一次性验证码|
 
-**confirm-type 有效值**
+#### confirm-type 有效值 @confirm-type
 
 |值|说明|平台差异说明|
 |:-|:-|:-|
@@ -102,7 +100,7 @@
 - App平台的vue页面及 H5平台 的弹出键盘使用的是浏览器控制的键盘，在Chrome81+、Safari13.7+之前，键盘右下角文字只能设置完成和搜索，从Chrome81+、Safari13.7+起支持设置发送、下一个。
 - App平台涉及聊天的建议使用nvue，一方面因为app-vue控制键盘右下角按键文字为“发送”对webview内核有要求，另一方面聊天记录如使用scroll-view，过长的内容在app-vue上会有性能问题。
 
-### inputmode 有效值 @inputmode
+#### inputmode 有效值 @inputmode
 |值|说明|
 |:-|:-|
 |none|无虚拟键盘。在应用程序或者站点需要实现自己的键盘输入控件时很有用。|
@@ -113,6 +111,15 @@
 |search|为搜索输入优化的虚拟键盘，比如，返回键可能被重新标记为“搜索”，也可能还有其他的优化。|
 |email|为邮件地址输入优化的虚拟键盘，通常包含"@"符号和其他优化。表单里面的邮件地址输入应该使用 \<input type="email"\> 。|
 |url|为网址输入优化的虚拟键盘，比如，“/”键会更加明显、历史记录访问等。表单里面的网址输入通常应该使用 \<input type="url"\> 。|
+
+**注意事项**
+- inputmode 兼容性：`Chrome >= 66`、`Edge >= 79`、`Firefox >= 95`、`Chrome Android >= 66`、`Firefox for Android >= 79`、`Safari on iOS >= 12.2`
+- inputmode 和 `type`、`comfirm-tye` 属性的区别：
+  - type：在 uni-app 和小程序中仅仅是输入框，定义 input 的工作方式，此值决定可输入什么值。比如 number 只能输入数字。
+  - comfirm-type：定义键盘返回键的类型
+  - inputmode：inputmode 属性是当使用某些值时会对键盘所作出的优化。
+    - 但同时使用 inputmode 和 comfirm-type 时，如果有返回键，则该键类型由 comfirm-type 决定
+    - type 属性和 inputmode 属性并不冲突
 
 #### App平台iOS端软键盘上方横条去除方案
 
@@ -265,9 +272,7 @@ export default {
 ```
 :::
 
-
-
-**扩展**
+#### 扩展
 - uni ui提供了easyinput组件，提供了常用的封装，可搭配uni-forms组件，支持表单验证、支持各种常用设置。[详见](https://ext.dcloud.net.cn/plugin?id=3455)
 - uni ui提供了combox组件，可选可输入，常用词免输入。[详见](https://ext.dcloud.net.cn/plugin?id=1261)
 - uni ui提供了搜索框ui组件，插件市场还有封装好的页面模板。[详见](https://ext.dcloud.net.cn/search?q=search)。云端一体搜索模板功能完善，推荐使用：[https://ext.dcloud.net.cn/plugin?id=3851](https://ext.dcloud.net.cn/plugin?id=3851)

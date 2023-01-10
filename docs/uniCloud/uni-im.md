@@ -333,7 +333,7 @@ console.log(token);
 /*
 // 验证签名
 try{
-	let decoded = jwt.verify(token, wjtSecret);
+	let decoded = jwt.verify(token, jwtSecret);
 	console.log(decoded)
 }catch{
 	console.error("签名验证失败")

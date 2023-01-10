@@ -1,6 +1,8 @@
 ## input
 
-输入框。
+单行输入框。
+
+html规范中input不仅是输入框，还有radio、checkbox、时间、日期、文件选择功能。在uni-app规范中，input仅仅是输入框。其他功能uni-app有单独的组件或API：[radio组件](https://uniapp.dcloud.io/component/radio)、[checkbox组件](https://uniapp.dcloud.io/component/checkbox)、[时间选择](https://uniapp.dcloud.io/component/picker?id=%e6%97%b6%e9%97%b4%e9%80%89%e6%8b%a9%e5%99%a8)、[日期选择](https://uniapp.dcloud.io/component/picker?id=%e6%97%a5%e6%9c%9f%e9%80%89%e6%8b%a9%e5%99%a8)、[图片选择](https://uniapp.dcloud.io/api/media/image?id=chooseimage)、[视频选择](https://uniapp.dcloud.io/api/media/video?id=choosevideo)、[多媒体文件选择(含图片视频)](https://uniapp.dcloud.io/api/media/video?id=choosemedia)、[通用文件选择](https://uniapp.dcloud.io/api/media/file?id=choosefile)。
 
 ### 属性说明
 
@@ -73,7 +75,6 @@
 
 **注意事项**
 
-- 原html规范中input不仅是输入框，还有radio、checkbox、时间、日期、文件选择功能。在uni-app和小程序规范中，input仅仅是输入框。其他功能uni-app有单独的组件或API：[radio组件](https://uniapp.dcloud.io/component/radio)、[checkbox组件](https://uniapp.dcloud.io/component/checkbox)、[时间选择](https://uniapp.dcloud.io/component/picker?id=%e6%97%b6%e9%97%b4%e9%80%89%e6%8b%a9%e5%99%a8)、[日期选择](https://uniapp.dcloud.io/component/picker?id=%e6%97%a5%e6%9c%9f%e9%80%89%e6%8b%a9%e5%99%a8)、[图片选择](https://uniapp.dcloud.io/api/media/image?id=chooseimage)、[视频选择](https://uniapp.dcloud.io/api/media/video?id=choosevideo)、[多媒体文件选择(含图片视频)](https://uniapp.dcloud.io/api/media/video?id=choosemedia)、[通用文件选择](https://uniapp.dcloud.io/api/media/file?id=choosefile)。
 - 小程序平台，`number` 类型只支持输入整型数字。微信开发者工具上体现不出效果，请使用真机预览。
 - 如果需要在小程序平台输入浮点型数字，请使用 `digit` 类型。
 - 小程序端input在置焦时，会表现为原生控件，此时会层级变高。如需前端组件遮盖input，需让input失焦，或使用cover-view等覆盖原生控件的方案，[参考](https://uniapp.dcloud.io/component/native-component)。具体来讲，阿里小程序的input为text且置焦为原生控件；微信、头条、QQ所有input置焦均为原生控件；百度小程序置焦时仍然是非原生的。也可以参考[原生控件](https://uniapp.dcloud.io/component/native-component)文档
@@ -82,11 +83,15 @@
 
 #### text-content-type 有效值 @text-content-type
 
+> 仅 App-nvue-iOS 支持
+
 |值|说明|
 |:-|:-|
-|oneTimeCode|一次性验证码|
+|oneTimeCode|一次性验证码，常用于短信验证码输入|
 
 #### confirm-type 有效值 @confirm-type
+
+弹出软键盘的右下角按钮的文字。
 
 |值|说明|平台差异说明|
 |:-|:-|:-|
@@ -96,11 +101,16 @@
 |go|右下角按钮为“前往”||
 |done|右下角按钮为“完成”|微信、支付宝、百度小程序、快手小程序、京东小程序、app-nvue、app-vue和h5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)|
 
-- App平台的nvue页面，如果是weex编译模式，需通过weex的api设置（weex模式已被淘汰）
 - App平台的vue页面及 H5平台 的弹出键盘使用的是浏览器控制的键盘，在Chrome81+、Safari13.7+之前，键盘右下角文字只能设置完成和搜索，从Chrome81+、Safari13.7+起支持设置发送、下一个。
 - App平台涉及聊天的建议使用nvue，一方面因为app-vue控制键盘右下角按键文字为“发送”对webview内核有要求，另一方面聊天记录如使用scroll-view，过长的内容在app-vue上会有性能问题。
 
 #### inputmode 有效值 @inputmode
+
+> 新增于 uni-app 3.6.16+
+inputmode是html规范后期更新的内容。各家小程序还未支持此属性。
+
+在符合条件的高版本webview里，uni-app的web和app-vue平台中可使用本属性。
+
 |值|说明|
 |:-|:-|
 |none|无虚拟键盘。在应用程序或者站点需要实现自己的键盘输入控件时很有用。|
@@ -114,18 +124,19 @@
 
 **注意事项**
 - inputmode 兼容性：`Chrome >= 66`、`Edge >= 79`、`Firefox >= 95`、`Chrome Android >= 66`、`Firefox for Android >= 79`、`Safari on iOS >= 12.2`、`WebView Android >= 66`
-- inputmode 和 `type`、`comfirm-tye` 属性的区别：
+- input组件有 `inputmode` 和 `type`、`comfirm-tye` 3个相似的属性，它们的区别详解如下：
   - type：在 uni-app 和小程序中仅仅是输入框，定义 input 的工作方式，此值决定可输入什么值。比如 number 只能输入数字。
-  - comfirm-type：定义键盘右下角返回键的类型
+  - comfirm-type：定义键盘右下角按键的文字
   - inputmode：inputmode 属性是当使用某些值时会对键盘所作出的优化。
-    - 同时使用 inputmode 和 comfirm-type 时，如果有返回键，则该键类型由 comfirm-type 决定
+    - 同时使用 inputmode 和 comfirm-type 时，若设值冲突，键盘右下角按键类型由 comfirm-type 决定
     - type 属性和 inputmode 属性并不冲突
 
 ### App平台iOS端软键盘上方横条去除方案
 
-App平台在iOS上，webview中的软键盘弹出时，默认在软键盘上方有一个横条，显示着：上一项、下一项和完成等按钮。如不想显示这个横条，可以配置softinputNavBar: 'none'
+app-vue在iOS上，webview中的软键盘弹出时，默认在软键盘上方有一个横条，显示着：上一项、下一项和完成等按钮。
+如不想显示这个横条，可以配置softinputNavBar: 'none'
 
-配置方式，在 pages.json 中配置 style
+配置方式，在 pages.json 中某个页面或全局配置 style
 
 ```json
 "app-plus": {

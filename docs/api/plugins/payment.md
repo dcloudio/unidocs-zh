@@ -448,7 +448,7 @@ uni.requestPayment({
 
           // 请求苹果支付
           const transaction = await this._iap.requestPayment({
-            productId: this.productId,
+            productid: this.productId,
             manualFinishTransaction: true,
             // username: username + orderId //根据业务需求透传参数，关联用户和订单关系
           });

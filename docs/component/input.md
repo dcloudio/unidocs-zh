@@ -1,14 +1,14 @@
-### input
+## input
 
 输入框。
 
-**属性说明**
+### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |value|String||输入框的初始内容||
 |type|String|text|input 的类型 [有效值](#type)|H5 暂未支持动态切换，详见下方 Tips，请使用 v-if 进行整体切换|
-|text-content-type|String|[有效值](#text-content-type)|文本区域的语义，根据类型自动填充|仅 App-nvue-iOS 支持|
+|text-content-type|String||文本区域的语义，根据类型自动填充 [有效值](#text-content-type)|仅 App-nvue-iOS 支持|
 |password|Boolean|false|是否是密码类型|H5和App写此属性时，type失效|
 |placeholder|String||输入框为空时占位符||
 |placeholder-style|String||指定 placeholder 的样式||
@@ -113,15 +113,15 @@
 |url|为网址输入优化的虚拟键盘，比如，“/”键会更加明显、历史记录访问等。表单里面的网址输入通常应该使用 \<input type="url"\> 。|
 
 **注意事项**
-- inputmode 兼容性：`Chrome >= 66`、`Edge >= 79`、`Firefox >= 95`、`Chrome Android >= 66`、`Firefox for Android >= 79`、`Safari on iOS >= 12.2`
+- inputmode 兼容性：`Chrome >= 66`、`Edge >= 79`、`Firefox >= 95`、`Chrome Android >= 66`、`Firefox for Android >= 79`、`Safari on iOS >= 12.2`、`WebView Android >= 66`
 - inputmode 和 `type`、`comfirm-tye` 属性的区别：
   - type：在 uni-app 和小程序中仅仅是输入框，定义 input 的工作方式，此值决定可输入什么值。比如 number 只能输入数字。
-  - comfirm-type：定义键盘返回键的类型
+  - comfirm-type：定义键盘右下角返回键的类型
   - inputmode：inputmode 属性是当使用某些值时会对键盘所作出的优化。
-    - 但同时使用 inputmode 和 comfirm-type 时，如果有返回键，则该键类型由 comfirm-type 决定
+    - 同时使用 inputmode 和 comfirm-type 时，如果有返回键，则该键类型由 comfirm-type 决定
     - type 属性和 inputmode 属性并不冲突
 
-#### App平台iOS端软键盘上方横条去除方案
+### App平台iOS端软键盘上方横条去除方案
 
 App平台在iOS上，webview中的软键盘弹出时，默认在软键盘上方有一个横条，显示着：上一项、下一项和完成等按钮。如不想显示这个横条，可以配置softinputNavBar: 'none'
 
@@ -143,7 +143,7 @@ this.$scope.$getAppWebview().setStyle({
 
 如果是nvue页面，iOS默认就没有键盘上方的横条，无需任何设置。
 
-#### 关于软键盘弹出的逻辑说明
+### 关于软键盘弹出的逻辑说明
 
 App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adjustPan 模式，小程序平台只支持 adjustPan 模式，H5平台因不同浏览器而异
 - adjustResize：软键盘弹出时，webview窗体高度挤压。屏幕高度=webview窗体高度+软键盘高度
@@ -166,13 +166,13 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 - 如需禁止点击其他位置收起键盘的默认行为，可以监听`touch`事件并使用`prevent`修饰符（仅支持App、H5，其他平台可以通过设置`focus`来使输入框重新获取焦点），例如在确认按钮上使用：```@touchend.prevent="onTap"```
 
 
-#### 关于软键盘收起的逻辑说明
+### 关于软键盘收起的逻辑说明
 - Android上在软键盘弹出后，点击back或点击非置焦区域可收起软键盘。
 - iOS上如果软键盘上方有带有“完成”的横条，则需要点完成才能收起键盘；如果没有软键盘上方横条，则点击非input/textarea区域即可收起软键盘
 
 以上为默认逻辑，uni-app同时提供了隐藏软键盘的api：[uni.hideKeyboard()](https://uniapp.dcloud.io/api/key?id=hidekeyboard)
 
-#### App平台原生输入框的说明
+### App平台原生输入框的说明
 在app平台，有titleNView配置的[searchinput](/collocation/pages?id=app-titlenview)原生输入框和plus.nativeObj.view的drawinput。这两种方式的输入框都是原生的，不是webview里的。
 - 原生输入框在iOS上不会有软键盘上方的横条
 - 原生输入框一样受配置的`adjustPan|adjustResize`模式影响
@@ -272,7 +272,7 @@ export default {
 ```
 :::
 
-#### 扩展
+### 扩展
 - uni ui提供了easyinput组件，提供了常用的封装，可搭配uni-forms组件，支持表单验证、支持各种常用设置。[详见](https://ext.dcloud.net.cn/plugin?id=3455)
 - uni ui提供了combox组件，可选可输入，常用词免输入。[详见](https://ext.dcloud.net.cn/plugin?id=1261)
 - uni ui提供了搜索框ui组件，插件市场还有封装好的页面模板。[详见](https://ext.dcloud.net.cn/search?q=search)。云端一体搜索模板功能完善，推荐使用：[https://ext.dcloud.net.cn/plugin?id=3851](https://ext.dcloud.net.cn/plugin?id=3851)

@@ -174,3 +174,7 @@ url化访问时不管是默认域名还是自定义域名均和上述转发逻�
 [App一键登录](https://uniapp.dcloud.net.cn/uniCloud/univerify.html#unilogin-fee)
 
 [激励视频服务器回调](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#aliyun-cf-fee)
+
+[uni-push2.0](https://uniapp.dcloud.net.cn/unipush-v2.html#uni-push2-0%E8%B4%B9%E7%94%A8%E8%AF%B4%E6%98%8E)
+
+[iOS通用链接](https://uniapp.dcloud.net.cn/api/plugins/universal-links.html#%E4%BA%91%E8%B5%84%E6%BA%90%E6%B6%88%E8%80%97%E8%AF%B4%E6%98%8E)

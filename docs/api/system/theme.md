@@ -1,4 +1,3 @@
-
 ### uni.onThemeChange(CALLBACK)
 监听系统主题状态变化。
 listen to system theme state changes.
@@ -53,6 +52,5 @@ uni.offThemeChange(callback); // 此时不再触发 callback 方法
 ```
 
 **注意**
-**Notice**
 - 自定义基座生效
-- Custom base takes effect
+- App 端需要开启暗黑模式。[5+ App](https://ask.dcloud.net.cn/article/36995) [uni-app 暗黑模式](https://uniapp.dcloud.net.cn/tutorial/darkmode.html#open-darkmode)

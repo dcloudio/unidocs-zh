@@ -10,9 +10,7 @@ It is recommended that the third step is to read the ["uni-app official course"]
 #### 如果你熟悉h5，但不熟悉vue和小程序 
 #### If you are familiar with h5, but not with vue and MiniApp
 1. 看完这篇[白话uni-app](/vernacular.md)
-1. After reading this [vernacular uni-app](/vernacular.md)
-2. DCloud与vue合作，在[vue.js官网](https://cn.vuejs.org/v2/guide/)提供了免费视频教程，也可以直达教程地址：[https://learning.dcloud.io](https://learning.dcloud.io)
-2. In cooperation with vue, DCloud provides free video tutorials on the [vue.js official website](https://cn.vuejs.org/v2/guide/), and you can also go directly to the tutorial address: [https://learning.dcloud .io](https://learning.dcloud.io)
+2. DCloud与vue合作，在[vue.js官网](https://cn.vuejs.org/)提供了免费视频教程，也可以直达教程地址：[https://learning.dcloud.io](https://learning.dcloud.io)
 3. 不需要专门去学习小程序的语法，uni-app使用的是vue的语法，不是小程序自定义的语法。
 3. There is no need to learn the syntax of the MiniApp. uni-app uses the syntax of Vue, not the syntax of the MiniApp.
 

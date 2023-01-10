@@ -281,11 +281,14 @@ HBuilderX 3.5.3之后的版本，App真机运行 使用Node运行，不再依赖
 - HBuilderX 云打包自定义基座
 - 离线SDK Android Studio制作的自定义基座
 
+> 如果以下解决方法，没有解决问题，请到 [Ask论坛](https://ask.dcloud.net.cn/)详细说明问题（需要包含操作系统、HBuilderX版本、项目信息、基座信息、手机信息、控制台截图等，详细的信息有助于我们排查问题）
+
 **尝试以下解决方法**
 
 - Android手机上，找到应用App，删除，重新运行。
-- 关闭开发者模式，usb调试，重新打开试试
+- 关闭开发者模式，usb调试，重新打开试试。手机USB设置，各个选项尝试一下
 - 如果是`离线SDK Android Studio制作的自定义基座`, 检查下是否缺少`implementation 'com.squareup.okhttp3:okhttp:3.12.12'`, `implementation 'com.squareup.okio:okio:1.15.0'`, 如果缺少请添加它们。
 - 如果是`离线SDK Android Studio制作的自定义基座`, 可以尝试使用HBuilderX 云打包自定义基座，看下是否正常。
-- 手机USB设置，各个选项尝试一下
-- 更多参考下这个帖子 [详情](https://ask.dcloud.net.cn/question/154229), 如上上述方法没有解决问题，请到 [Ask论坛](https://ask.dcloud.net.cn/)详细说明问题（需要包含操作系统、HBuilderX版本、项目信息、基座信息、手机信息等，详细的信息有助于我们排查问题）
+- 手机系统分身的原因。[具体详情参考](https://ask.dcloud.net.cn/question/161130)
+- 如果手机是华为鸿蒙系统，排查下是否是手机自身的原因，换个其它品牌手机试试，如小米、oppo。
+- 更多参考下这个帖子 [详情](https://ask.dcloud.net.cn/question/154229)

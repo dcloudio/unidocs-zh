@@ -50,4 +50,4 @@ uni.offThemeChange(callback); // 此时不再触发 callback 方法
 
 **注意**
 - 自定义基座生效
-- app需要开启暗黑模式才能使用此功能，详情：https://ask.dcloud.net.cn/article/36995
+- App 端需要开启暗黑模式。[5+ App](https://ask.dcloud.net.cn/article/36995) [uni-app 暗黑模式](https://uniapp.dcloud.net.cn/tutorial/darkmode.html#open-darkmode)

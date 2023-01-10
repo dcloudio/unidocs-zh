@@ -44,25 +44,10 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 为了降低前端开发者的开发门槛，UTS组件采用了类Vue组件的语法，[关于Vue组件](https://cn.vuejs.org/guide/essentials/component-basics.html)，但是具体的函数上会有定制，我们会在下一个章节详细介绍
 
 
-## 如何开发UTS组件
-
-
-#### 创建UTS组件
-
-HBuilderX 3.6.16 版本之后，支持一键创建
-
-选中 项目目录/uni_modules 右键 新建组件  
-
-TODO
-
-至此，我们已经得到了一个最基本的UTS插件目录，下个章节我们介绍其中各文件的作用
+## UTS组件结构解析
 
 
 #### UTS组件目录结构
-
-
-![目录结构](https://native-res.dcloud.net.cn/images/uts/component/image1.png)
-
 
 
 <pre v-pre="" data-lang="">
@@ -104,152 +89,180 @@ TODO
 </pre>
 
 
-如上所示，UTS组件的目录结构与UTS插件基本相同。
+如上所示，UTS组件的目录结构与UTS插件基本相同
 
 唯一的差别在于，UTS组件入口文件有两个，一个必选的index.vue 组件入口，和一个可选的index.uts 函数能力入口
 
+用户如果在开发组件的同时，存在一些与组件无关的能力需要对外暴露，可以在index.uts中进行实现
 
-用户如果在开发组件的同时，存在一些与组件无关的能力需要对外暴露，则可以同时开发两个入口。
+大多数情况下，我们只需要开发一个index.vue 即可，如果存在多个组件，可以新建多个 *.vue文件
 
-
-大多数情况下，组件其实我们只需要开发一个index.vue 即可，关于index.vue 的具体规范会在下一个章节介绍
-
-
+关于index.vue 的源码规范会在下一个章节介绍
 
 
-#### UTS组件 代码格式解析
+
+#### UTS组件源码解析
 
 
 下面是一个组件源码 index.vue 完整示例：
 
+**注意**
+
+- 目前UTS组件仅支持`export default {}`的选项式API，vue3的组合式API暂未支持。
+
 ```ts
 
-    export default {
+<template>
+	<view class="defaultStyles">
+
+	</view>
+</template>
+<script lang="uts">
+	import TextUtils from 'android.text.TextUtils'
+	import Button from 'android.widget.Button'
+	import LinearLayout from 'android.widget.LinearLayout'
+	import Color from 'android.graphics.Color'
+	import View from 'android.view.View'
+
+	class ButtonClickListsner extends View.OnClickListener {
+		constructor() {}
+		override onClick(v ? : View) {
+			console.log(v)
+		}
+	}
+
+	//原生提供以下属性或方法的实现  
+	export default {
 		/**
 		 * 组件名称，也就是开发者使用的标签
 		 */
-        name: "xxx-view",
-        /**
-        * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
-          */
-        emits: ['bindended'],
+		name: "uts-hello-view",
+		/**
+		 * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
+		 */
+		emits: ['buttonClick'],
 		/**
 		 * 属性声明，组件的使用者会传递这些属性值到组件
 		 */
-        props: {
-            /**
-             * 字符串类型 属性：path  默认值:""
-             */
-            "path": {
-                type: String,
-                default: ""
-            },
-        },
+		props: {
+			/**
+			 * 字符串类型 属性：buttonText  需要设置默认值
+			 */
+			"buttonText": {
+				type: String,
+				default: "点击触发"
+			}
+		},
 		/**
 		 * 组件内部变量声明
 		 */
-        data() {
-            return {
-            }
-        },
+		data() {
+			return {}
+		},
 		/**
 		 * 属性变化监听器实现
 		 */
-        watch: {
-			
-            "path": {
-                handler(newPath: string) {
-					// 这里处理属性newPath 的更新逻辑
-                },
-				//创建时是否通过此方法更新属性，默认值为false  
-                immediate: false 
-            },
-        },
-		
+		watch: {
+			"buttonText": {
+				/**
+				 * 这里监听属性变化，并进行组件内部更新
+				 */
+				handler(newButtonText: string) {
+					if (this.$el != null) {
+						let button = this.$el!.findViewWithTag("centerButton") as Button
+						if (!TextUtils.isEmpty(newButtonText)) {
+							button.setText(newButtonText)
+						}
+					}
+				},
+				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+			},
+		},
 		/**
 		 * 规则：如果没有配置expose，则methods中的方法均对外暴露，如果配置了expose，则以expose的配置为准向外暴露
 		 * ['publicMethod'] 含义为：只有 `publicMethod` 在实例上可用
 		 */
-		expose: ['publicMethod'],
-        methods: {
+		expose: ['doSth'],
+		methods: {
 			/**
 			 * 对外公开的组件方法
 			 */
-			publicMethod() {
-				doSth(paramA: string) {
-					// 这是组件的自定义方法
-				}
+			doSth(paramA: string) {
+				// 这是组件的自定义方法
+				console.log("paramA")
 			},
 			/**
 			 * 内部使用的组件方法
 			 */
 			privateMethod() {
-				doSthInner(paramA: string) {
-					// 这是组件的自定义方法
-				}
+
 			}
-            
-        },
-		
+		},
+
 		/**
 		 * 组件被创建，组件第一个生命周期，
 		 * 在内存中被占用的时候被调用，开发者可以在这里执行一些需要提前执行的初始化逻辑
 		 * [可选实现]
 		 */
-        created() { 
+		created() {
 
-        },
+		},
 		/**
 		 * 对应平台的view载体即将被创建，对应前端beforeMount  
 		 * [可选实现]
 		 */
-        NVBeforeLoad() {
-			
-        },
+		NVBeforeLoad() {
+
+		},
 		/**
 		 * 创建原生View，必须定义返回值类型
 		 * 开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型
 		 * （Android需要明确知道View类型，需特殊校验） 
 		 * todo 补充IOS平台限制
-		 * [必须实现]
+	  * [必须实现]
 		 */
-        NVLoad(): View {
-            let viewInstance = new View($androidContext)
-            return aView
-        },
+		NVLoad(): LinearLayout {
+			//必须实现  
+			let contentLayout = new LinearLayout($androidContext)
+			let button = new Button($androidContext)
+			button.setText("点击触发");
+			button.setTag("centerButton");
+			contentLayout.addView(button, LinearLayout.LayoutParams(500, 500));
+			button.setOnClickListener(new ButtonClickListsner())
+			return contentLayout
+		},
+
 		/**
 		 * 原生View已创建 
 		 * [可选实现]
 		 */
-        NVLoaded() {
-			
-        },
+		NVLoaded() {
+
+		},
 		/**
 		 * 原生View布局完成  
 		 * [可选实现]
 		 */
-        NVLayouted() {
-            
-        },
+		NVLayouted() {
+
+		},
 		/**
 		 * 原生View将释放  
 		 * [可选实现]
 		 */
-        NVBeforeUnload() {
-        },
+		NVBeforeUnload() {},
 		/**
 		 * 原生View已释放，这里可以做释放View之后的操作  
 		 * [可选实现]
 		 */
-        NVUnloaded() {
-			
-        },
+		NVUnloaded() {
+
+		},
 		/**
 		 * 组件销毁  
 		 * [可选实现]
 		 */
-        unmounted() { 
-        }
+		unmounted() {}
 		/**
 		 * 自定组件布局尺寸 
 		 * [可选实现]
@@ -259,9 +272,19 @@ TODO
 			size.height = 800.0.toFloat()
 			return size
 		}
-    }
+	}
+</script>
+<style>
+	/* 定义默认样式值, 组件使用者没有配置时使用 */
+	.defaultStyles {
+		width: 750rpx;
+		height: 240rpx;
+		background-color: blue;
+	}
+</style>
 
 ```
+
 
 index.vue可以分为以下几类：
 
@@ -301,47 +324,31 @@ index.vue可以分为以下几类：
 
 组件开发者需要重点关注生命周期
 
+```mermaid 
+graph TD;
+		Create-->NVBeforeLoad;
+	subgraph View生命周期
+		NVBeforeLoad-->NVLoad;
+		NVLoad-->NVLoaded;
+		NVLoaded-->NVLayouted;
+		NVLayouted-->NVBeforeUnload;
+	end
+		NVBeforeUnload-->unmounted;
+	
+```
 
-![生命周期](https://native-res.dcloud.net.cn/images/uts/component/image2.png)
-
-+ created：
-
-组件被创建，组件第一个生命周期，在内存中被占用的时候被调用，开发者可以在这里执行一些需要提前执行的初始化逻辑
-
-+ NVBeforeLoad：
-
-组件对应平台的view载体 即将被创建
-
-+ NVLoad：
-
-[必须实现]
-
-组件 view载体的创建实现
-
-开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型
+|函数名			|描述				|建议行为		|是否可选	|
+|:----			|:---				|:---			|:---		|
+|created		|组件在内存中被创建	|开发者可以在这里执行一些需要最早执行的初始化逻辑|可选|
+|NVBeforeLoad	|组件对应平台的view载体，即将被创建|开发者可以在这里执行一些需要在View创建前初始化的逻辑|可选|
+|NVLoad			|组件view载体正在被创建实现|开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型|必须实现|
+|NVLayouted		|组件对应平台的view载体已布局结束	|需要在view布局结束后执行的逻辑	|可选|
+|NVBeforeUnload	|view载体即将被卸载				|View卸载前，需要回收资源的逻辑	|可选|
+|NVUnloaded		|view载体已经被卸载				|View卸载后，需要回收资源的逻辑	|可选|
+|unmounted		|组件在内存被销毁				|资源回收逻辑					|可选|
 
 
-+ NVLayouted：
-
-组件对应平台的view载体，布局完成
-
-+ NVBeforeUnload：
-
-view载体即将被卸载
-
-资源回收
-
-+ NVUnloaded：
-
-view载体已经被卸载
-
-资源回收
-
-+ unmounted：
-
-view载体被回收
-
-资源回收
+除上述生命周期外，还存在下列可选周期函数：
 
 + doMeasure：
 
@@ -357,21 +364,165 @@ doMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 为了方便组件开发者使用，UTS 组件内部内置了下列对象：
 
-|变量名			|类型		|简介					|平台限制	|
-|:-------		|:--------	|:--------				|:---		|
-|$el			|对象		|当前View实例对象		|全部平台	|
-|$androidContext|对象		|当前组件上下文			|仅android	|
-|emit("event")	|函数		|发送已注册的事件		|全部平台	|
+|变量名			|类型		|简介				|平台限制	|方法&属性	|
+|:-------		|:--------	|:--------			|:---		|:---			|
+|$el			|对象		|当前View实例对象	|全部平台	|开发者在NVLoad返回的对象类型|
+|$androidContext|对象		|当前组件上下文		|仅android	|android平台对应Context对象|
+|emit("event")	|函数		|发送已注册的事件	|全部平台	||
 
 
 
 
-## UTS组件开发使用示例
+## 简单View的示例
+
+#### 创建插件
+
+在HBuilder X 中选中Uni-App项目下 uni_modules目录  
+
+todo  目前还没有创建界面
 
 
-## 包含第三方功能的 UTS组件开发使用示例
+这是创建后的目录结构
+
+![目录结构](https://native-res.dcloud.net.cn/images/uts/component/image1.png)
 
 
+#### 编写逻辑
+
+打开index.vue，键入下面的组件源码:
+
+```ts
+<template>
+	<view class="defaultStyles">
+
+	</view>
+</template>
+<script lang="uts">
+
+	import TextUtils from 'android.text.TextUtils'
+	import Button from 'android.widget.Button'
+	import LinearLayout from 'android.widget.LinearLayout'
+	import Color from 'android.graphics.Color'
+	import View from 'android.view.View'
+
+	class ButtonClickListsner extends View.OnClickListener {
+		constructor() {}
+		override onClick(v ? : View) {
+			console.log(v)
+		}
+	}
+
+	//原生提供以下属性或方法的实现  
+	export default {
+		/**
+		 * 组件名称，也就是开发者使用的标签
+		 */
+		name: "uts-hello-view",
+		/**
+		 * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
+		 */
+		emits: ['buttonClick'],
+		/**
+		 * 属性声明，组件的使用者会传递这些属性值到组件
+		 */
+		props: {
+			/**
+			 * 字符串类型 属性：buttonText  需要设置默认值
+			 */
+			"buttonText": {
+				type: String,
+				default: "点击触发"
+			}
+		},
+		
+		/**
+		 * 属性变化监听器实现
+		 */
+		watch: {
+			"buttonText": {
+				/**
+				 * 这里监听属性变化，并进行组件内部更新
+				 */
+				handler(newButtonText: string) {
+					if (this.$el != null) {
+						let button = this.$el!.findViewWithTag("centerButton") as Button
+						if (!TextUtils.isEmpty(newButtonText)) {
+							button.setText(newButtonText)
+						}
+					}
+				}
+			},
+		},
+		
+		
+		NVLoad(): LinearLayout {
+			//必须实现  
+			let contentLayout = new LinearLayout($androidContext)
+			let button = new Button($androidContext)
+			button.setText("点击触发");
+			button.setTag("centerButton");
+			contentLayout.addView(button, LinearLayout.LayoutParams(500, 500));
+			button.setOnClickListener(new ButtonClickListsner())
+			return contentLayout
+		},
+
+		
+		
+	}
+</script>
+<style>
+	/* 定义默认样式值, 组件使用者没有配置时使用 */
+	.defaultStyles {
+		width: 750rpx;
+		height: 240rpx;
+		background-color: blue;
+	}
+</style>
+
+```
+
+#### 使用组件
+
+打开任意 componet.nvue文件
+```js
+<uts-hello-view buttonText="点击按钮内容" style="width:375px;height: 375px;background-color: aqua;"></uts-hello-view>
+```
+
+
+## 包含第三方SDK的示例
+
+#### 创建插件
+
+在HBuilder X 中选中Uni-App项目下 uni_modules目录  
+
+todo  目前还没有创建界面
+
+这是创建后的目录结构
+
+![目录结构](https://native-res.dcloud.net.cn/images/uts/component/image1.png)
+
+
+#### 引入依赖
+
+打开 ~/uni_modules/uts-animation-view/utssdk/app-android/config.json
+
+键入如下代码:
+
+```
+"dependencies": [
+	"com.airbnb.android:lottie:3.4.0"
+]
+```
+
+UTS组件建议使用远程依赖的方式集成，如果需要以AAR的形式添加SDK，可以添加到
+
+~/uni_modules/uts-animation-view/utssdk/app-android/libs目录
+
+#### 编写逻辑
+
+
+
+#### 使用组件
 
 #### 使用组件的注意事项
 

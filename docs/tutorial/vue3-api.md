@@ -266,10 +266,8 @@ In addition, since the `createApp` method returns the application instance itsel
 |Vue 指令		|描述						|H5		|App端|微信小程序  |说明	|
 |Vue Directive |Description |H5 |App |WeChat Mini Program |Description |
 | --				| --						| --	|--		|--			| --	|
-|v-text	| 更新元素的 `textContent`。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-text) 	|√	|√	| √		|		|
-|v-text | Update the element's `textContent`. [Details](https://v3.cn.vuejs.org/api/directives.html#v-text) |√ |√ | √ | |
-|v-html	| 更新元素的 `innerHTML`。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-html) 	|√	| √	| x		|微信小程序会被转成 `rich-text`		|	
-|v-html | Update the `innerHTML` of the element. [Details](https://v3.cn.vuejs.org/api/directives.html#v-html) |√ | √ | x |WeChat applet will be converted into `rich-text` |
+|v-text	| 更新元素的 `textContent`。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-text) 	|√	|√	| x		|		|
+|v-html	| 更新元素的 `innerHTML`。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-html) 	|√	| √	| x		|		|	
 |v-show	| 根据表达式的真假值，切换元素的 `display CSS property`。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-show) 	|√	| √	| √		|		|
 |v-show | Toggles the element's `display CSS property` based on the true or false value of the expression. [Details](https://v3.cn.vuejs.org/api/directives.html#v-show) |√ | √ | √ | |
 |v-if	| 根据表达式的真假值来有条件地渲染元素。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-if) 	|√	| √	| √		|		|

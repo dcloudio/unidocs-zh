@@ -174,7 +174,7 @@ const app = createApp({})
 |Vue 指令		|描述						|H5		|App端|微信小程序  |说明	|
 | --				| --						| --	|--		|--			| --	|
 |v-text	| 更新元素的 `textContent`。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-text) 	|√	|√	| x		|		|
-|v-html	| 更新元素的 `innerHTML`。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-html) 	|√	| √	| x		|		|	
+|v-html	| 更新元素的 `innerHTML`。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-html) 	|√	| √	| √		|微信小程序会被转成 `rich-text`		|
 |v-show	| 根据表达式的真假值，切换元素的 `display CSS property`。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-show) 	|√	| √	| √		|		|
 |v-if	| 根据表达式的真假值来有条件地渲染元素。 [详情](https://v3.cn.vuejs.org/api/directives.html#v-if) 	|√	| √	| √		|		|
 |v-else	| 为 `v-if` 或者 `v-else-if` 添加`“else 块”`。[详情](https://v3.cn.vuejs.org/api/directives.html#v-else) 	|√	| √	| √		|		|

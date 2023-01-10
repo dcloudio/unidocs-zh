@@ -177,12 +177,7 @@ npm i @dcloudio/uni-ui   或   yarn add @dcloudio/uni-ui
 	 module.exports = {
 		transpileDependencies: ['@dcloudio/uni-ui']
 	 }
-	 // 如果是 vue3 + vite, 修改 vite.config.js 或 vite.config.ts
-	 export default defineConfig({
-		optimizeDeps: {
-			entries: ['@dcloudio/uni-ui'],
-		},
-	 })
+	 // 如果是 vue3 + vite, 无需添加配置
 	 ```
  - uni-ui 是uni-app内置组件的扩展。注意与web开发不同，uni-ui不包括基础组件，它是基础组件的补充。web开发中有的开发者习惯用一个ui库完成所有开发，但在uni-app体系中，推荐开发者首先使用性能更高的基础组件，然后按需引入必要的扩展组件。
  - `uni-ui` 不支持使用 `Vue.use()` 的方式安装

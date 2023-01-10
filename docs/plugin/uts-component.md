@@ -106,6 +106,10 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 
 下面是一个组件源码 index.vue 完整示例：
 
+**注意**
+
+- 目前UTS组件仅支持`export default {}`的选项式API，vue3的组合式API暂未支持。
+
 ```ts
 
 <template>

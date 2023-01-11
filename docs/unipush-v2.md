@@ -300,7 +300,7 @@ uni-push的服务端sdk的体积不小，没有内置在云函数中。在需要
 }
 ```
 
-注意：扩展库依赖3张opendb表：`opendb-tempdata`,`opendb-device`,`uni-id-device`。公测版uniCloud，执行扩展库会自动创建。如果你使用的是uniCloud正式版需要自己创建这3张表。
+**注意：扩展库依赖3张opendb表：`opendb-tempdata`,`opendb-device`,`uni-id-device`。公测版uniCloud，执行扩展库会自动创建。如果你使用的是uniCloud正式版需要自己创建这3张表。**
 
 云函数中调用uni-cloud-push扩展库的`sendMessage`方法，向客户端推送消息
 

@@ -1,3 +1,12 @@
+#### 3.6.17.20230111-alpha
+* 【[uni-app plugin]】
+* App平台 修复 3.6.16 版引出的 Vue3 项目 vue 页面内联样式中 rpx 渲染错误的Bug [详情](https://ask.dcloud.net.cn/question/161256)
+* 微信小程序平台 修复 3.6.16 版引出的 Vue2 项目部分情况下模板中使用多个逻辑表达式运行报错的Bug [详情](https://ask.dcloud.net.cn/question/161190)
+* 【App插件(含5+App和uni-app的App端)】
+* Android平台 修复 3.6.11版引出的 使用 record 模块后 wgt 升级提示没有配置 record 模块的Bug [详情](https://ask.dcloud.net.cn/question/161167)
+* Android平台 修复 3.6.16版引出的 部分设备沉浸式状态栏失效的Bug [详情](https://ask.dcloud.net.cn/question/161277)
+* Android平台 修复 隐私政策提示框在未适配 disagreeMode 模式情况下仅显示一次的Bug [详情](https://uniapp.dcloud.net.cn/tutorial/app-disagreemode.html)
+
 #### 3.6.16.20230109-alpha
 * 【uni-app】
 * App平台、Web平台 优化 input 组件支持 inputmode 属性 [详情](https://uniapp.dcloud.net.cn/component/input.html#inputmode)

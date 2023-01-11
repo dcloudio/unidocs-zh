@@ -237,8 +237,8 @@ Design specifications need to pay attention to:
 1. 为什么会变大?  
   原因是推送SDK升级需要支持Swift环境，之前工程如果不包含Swift环境需要添加Swift环境(打包使用Swift语言开发的原生插件同样有类似问题)。
 2. 为什么只有生产包变大?  
-  只有用生产证书+AppStore类型的描述文件打出来的ipa会增大60-70M左右，苹果为了兼容iOS12之前的Swift版本，打包AppStore类型的ipa需要将全部版本的Swift环境添加到ipa的根目录，而测试证书以及adhoc描述文件打的包不会添加多个版本的Swift环境。
-  另：设置支持系统大于iOS12也可解决以上问题 [设置iOS支持的最低版本](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#ios) 
+  只有用生产证书+AppStore类型的描述文件打出来的ipa会增大80M左右，苹果为了兼容iOS12.2之前的Swift版本，打包AppStore类型的ipa需要将全部版本的Swift环境添加到ipa的根目录，而测试证书以及adhoc描述文件打的包不会添加多个版本的Swift环境。
+  另：设置支持系统大于iOS12.2也可解决以上问题 [设置iOS支持的最低版本](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#ios) 
 3. ipa变大会导致用户下载的应用变大吗?    
-  会大一点，但不会特别多。ipa上传的AppStore后苹果会根据用户手机系统最终只会保留一份Swift环境，用户实际下载的安装包不会大特别多。
+  大约只会增到2-3M左右。ipa上传的AppStore后苹果会根据用户手机系统最终只会保留一份Swift环境，用户实际下载的安装包不会大特别多。
 

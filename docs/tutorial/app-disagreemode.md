@@ -58,8 +58,10 @@ Open the project's native privacy policy prompt box configuration file [androidP
 	"buttonAccept": "同意并接受",  
 	"buttonRefuse": "基础功能模式",
 	"disagreeMode": {
-	    "support": true,
-	    "loadNativePlugins": true
+    	"support": false,
+    	"loadNativePlugins": false,
+    	"visitorEntry": true,
+    	"showAlways": false
 	}
 }
 
@@ -72,7 +74,10 @@ Boolean type, true means to open disagreeMode; false means not to open (the user
 Boolean类型，表示在disagreeMode模式是否加载uni原生插件，true表示加载；false表示不加载（此时调用uni.requireNativePlugin加载插件扩展Module返回undefined，插件的扩展组件Component也无法使用）。默认值为true。  
 Boolean type, indicating whether to load the uni native plugin in disagreeMode mode, true means loading; false means not loading (in this case, calling uni.requireNativePlugin to load the plugin extension Module returns undefined, and the extension component Component of the plugin cannot be used). The default value is true.
 使用场景：在disagreeMode模式下如果因为使用uni原生插件不符合“隐私政策”合规检测，无法确定是哪个插件引起的，可以简单配置loadNativePlugins为false不加载所有原生插件。注意：配置为false需要在引导用户同意“隐私政策”后重启应用。
-Usage scenario: In disagreeMode mode, if the use of uni native plugins does not comply with the "Privacy Policy" compliance detection and cannot determine which plugin is causing it, you can simply configure loadNativePlugins to false to not load all native plugins. Note: Configuring to false requires restarting the app after instructing the user to agree to the "Privacy Policy".
+- visitorEntry
+是否增加展示`游客模式`按钮，用于进入无权限模式。 默认为false，即不展示游客模式按钮
+- showAlways
+是否每次启动展示都展示隐私协议，默认为false。  注意此字段只有在配置了 support/visitorEntry 为true，即当前应用支持无权限模式的情况下的才会生效。如果用户没有配置support/visitorEntry 则延续原有的逻辑，每次打开都会展示隐私弹窗
 
 
 <a id="basic-services"></a>

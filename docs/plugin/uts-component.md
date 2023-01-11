@@ -91,7 +91,12 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 
 如上所示，UTS组件的目录结构与UTS插件基本相同
 
-唯一的差别在于，UTS组件入口文件有两个，一个必选的index.vue 组件入口，和一个可选的index.uts 函数能力入口
+唯一的差别在于，UTS组件入口文件有两个:
+
++ 必选的index.vue 组件入口
+
++ 可选的index.uts 函数能力入口
+
 
 用户如果在开发组件的同时，存在一些与组件无关的能力需要对外暴露，可以在index.uts中进行实现
 
@@ -322,7 +327,7 @@ index.vue 要素可以分为以下几类：
 
 #### 生命周期 
 
-组件开发者需要重点关注组件的生命周期，以便进行初始化和资源回收
+组件开发者需要重点关注组件的生命周期，以便进行资源的初始化和回收
 
 ```mermaid 
 graph TD;
@@ -348,6 +353,7 @@ graph TD;
 |unmounted		|组件在内存被销毁				|资源回收逻辑					|可选|
 
 
+
 除上述生命周期外，还存在下列可选周期函数：
 
 + doMeasure：
@@ -358,6 +364,7 @@ doMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
 
+[vue3 生命周期暂不支持](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
 
 
 #### 内置对象和函数
@@ -467,13 +474,15 @@ todo  目前还没有创建界面
 
 上面的代码，我们自定义了一个  名为<uts-hello-view/>的UTS 组件，该组件对外提供了一个包含按钮的简单UI实现，并且对外暴露了一个名为 `buttonText`字符串属性，用来构建按钮上的文案
  
-接下来，我们在下面章节介绍在uni-app项目中如何使用它
+接下来，我们介绍在uni-app项目中如何使用它
 
 #### 使用组件
 
->> 需要注意的是，UTS组件默认全局注册，无需使用者手动配置
+> 注意：UTS组件默认全局注册，无需使用者手动配置
 
-我们在uni-app项目中新建 componet.nvue 页面，
+我们在uni-app项目中新建 helloView.nvue 页面，
+
+![](https://native-res.dcloud.net.cn/images/uts/component/helloview_use_file.jpg)
 
 直接使用`uts-hello-view`标签，并且定义`buttonText`文本内容即可看到效果。
 
@@ -485,7 +494,6 @@ todo  目前还没有创建界面
 		<text>UTS view组件</text>
 		<uts-hello-view buttonText="点击按钮内容" style="width:375px;height: 375px;background-color: aqua;"></uts-hello-view>
 	</div>
-	
 </template>
 
 <script>
@@ -780,7 +788,7 @@ UTS组件建议使用远程依赖的方式集成，如果需要以AAR的形式�
 
 ```
 
-上面的代码我们实现了一个支持lottie动画播放的 UTS组件，标签名称为 <uts-animation-view />,
+上面的代码我们实现了一个支持lottie动画播放的 UTS组件，标签名称为 `uts-animation-view`
 
 对外提供了下列属性和方法
 
@@ -792,12 +800,16 @@ UTS组件建议使用远程依赖的方式集成，如果需要以AAR的形式�
 |`action`	|string	|play	|动画操作，可取值 play、pause、stop|
 |`hidden`	|boolean|true	|是否隐藏动画|
 |`bindended`|event	|		|当播放到末尾时触发 ended 事件|
-|`setRepeatMode`|function|		|设置动画的重复方式，RESTART：重新开始播放，REVERSE，反向播放|
+|`setRepeatMode`|function|	|设置动画的重复方式，RESTART：重新开始播放，REVERSE，反向播放|
 
 
-#### 使用组件
+#### 使用`uts-animation-vie`组件
 
-新建 lottie.nvue 页面，引用自定义 uts-animation-view 组件，并编写测试用例
+在uni-app项目中新建 lottie/index.nvue 页面
+
+![](https://native-res.dcloud.net.cn/images/uts/component/lottie_use_file.jpg)
+
+引用自定义 uts-animation-view 组件，并编写测试用例
 
 ```
 <template>
@@ -891,23 +903,24 @@ UTS组件建议使用远程依赖的方式集成，如果需要以AAR的形式�
 
 ```
 
-上面的代码实现了一个名为
+以上，我们完成了 `uts-animation-view`组件的集成和使用工作
 
 
 #### 运行和测试
 
-在当前例子中，需要下载额外的第三方依赖，需要自定义基座方能使用
+在当前例子中，因为配置了额外的第三方依赖，需要自定义基座方能使用
 
-点击页面中的测试按钮，即可看到
+
 
 ## 快速体验
 
 
 开发者可以使用[Hello UTS](https://gitcode.net/dcloud/hello-uts) 快速体验UTS 组件开发
 
-使用HX 3.6.16 版本 - 选择 Hello UTS - 自定义基座包。
 
-查看：三方SDK-Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
+Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
+
+`uts-animation-view`动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 
 
 

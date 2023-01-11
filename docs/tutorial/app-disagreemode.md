@@ -38,8 +38,10 @@
 	"buttonAccept": "同意并接受",  
 	"buttonRefuse": "基础功能模式",
 	"disagreeMode": {
-	    "support": true,
-	    "loadNativePlugins": true
+    	"support": false,
+    	"loadNativePlugins": false,
+    	"visitorEntry": true,
+    	"showAlways": false
 	}
 }
 
@@ -50,6 +52,10 @@ Boolean类型，true表示开启disagreeMode；false表示不开启（用户不�
 - loadNativePlugins  
 Boolean类型，表示在disagreeMode模式是否加载uni原生插件，true表示加载；false表示不加载（此时调用uni.requireNativePlugin加载插件扩展Module返回undefined，插件的扩展组件Component也无法使用）。默认值为true。  
 使用场景：在disagreeMode模式下如果因为使用uni原生插件不符合“隐私政策”合规检测，无法确定是哪个插件引起的，可以简单配置loadNativePlugins为false不加载所有原生插件。注意：配置为false需要在引导用户同意“隐私政策”后重启应用。
+- visitorEntry
+是否增加展示`游客模式`按钮，用于进入无权限模式。 默认为false，即不展示游客模式按钮
+- showAlways
+是否每次启动展示都展示隐私协议，默认为false。  注意此字段只有在配置了 support/visitorEntry 为true，即当前应用支持无权限模式的情况下的才会生效。如果用户没有配置support/visitorEntry 则延续原有的逻辑，每次打开都会展示隐私弹窗
 
 
 <a id="basic-services"></a>

@@ -498,10 +498,6 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |mergeVirtualHostAttributes|Boolean|合并组件节点外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
 |lazyCodeLoading|String|是否开启代码按需执行。|
 
-**Tips:**
-
-可在项目根目录(cli 项目为 src 目录)下创建 mini.project.json 自定义支付宝小程序 mini.project.json 配置。
-
 ### mp-baidu
 
 |属性|类型|说明|
@@ -598,6 +594,19 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |:-|:-|:-|
 |subPackages|Boolean|是否开启分包优化|
 
+### 自定义小程序项目配置
+
+HBuilderX 3.6.16+ 支持项目根目录(cli 项目为 src 目录)下创建配置文件自定义小程序项目配置。平台对应文件名如下：
+|小程序平台|文件名|
+|:-|:-|
+|微信|project.config.json|
+|QQ|project.config.json|
+|百度|project.swan.json|
+|支付宝|mini.project.json|
+|字节跳动|project.tt.json|
+|飞书|project.lark.json|
+|快手|project.ks.json|
+|京东|project.config.json|
 
 ### 关于分包优化的说明
 

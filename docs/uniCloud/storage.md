@@ -620,6 +620,26 @@ uniCloud.deleteFile(
 );
 ```
 
+### 将图片传到其他服务空间@upload-to-storage-space
+
+某些场景下需要使用客户端未关联的服务空间的云存储，此时可以通过[uniCloud.init](https://uniapp.dcloud.net.cn/uniCloud/concepts/space.html#multi-space)方法获取对应空间的实例用于上传文件
+
+**示例代码**
+
+```js
+const storageSpace = uniCloud.init({
+  provider: 'aliyun',
+  spaceId: 'mp-xxxx',
+  clientSecret: 'xxxx',
+  endpoint: 'https://api.next.bspapp.com'
+})
+
+const uploadRes = await storageSpace.uploadFile({
+  filePath: '',
+  cloudPath: ''
+})
+```
+
 ## 云函数API
 ## Cloud Function API
 

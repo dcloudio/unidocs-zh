@@ -1,48 +1,51 @@
 # UTS 组件开发
 
-本文旨在帮助开发者，使用UTS开发Uni-App平台组件功能。
+> 需HBuilderX 3.6.18 及之后版本
 
+> app平台目前仅支持nvue
+
+UTS组件，是UTS插件的一个分支。UTS插件提供了原生API的扩展，而UTS组件提供了原生UI组件的开发模式。
+
+组件是一种独立，可复用的UI单元，用于单独封装和承担一定的代码逻辑。
+
+组件与插件的区别在于：前者以标签的形式，对外提供UI封装；后者则只提供API，虽然API可能涉及UI，但仍然是API，无法以标签方式在页面模板中引用。
+
+比如`<video>`是组件；`uni.showModal` 或 `uni.chooseVideo` 虽然有UI，但属于API。
+
+组件一般适用于封装非全屏的场景，即在页面中内嵌一个区域。如果需要你需要封装的UI是全屏界面，那没必要使用组件，通过UTS开发原生页面更简单。 [UTS开发原生页面示例](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage)
+
+当然UTS组件是多端的，一个UTS组件作为一个`uni_modules`，可同时支持app-Android、app-iOS、web、以及各家小程序组件。
+
+本文重点在于讲述如何在app-android和app-ios上，将一个原生UI封装为UTS组件，供使用者在页面template中以组件的方式调用。
 
 ## 前置条件
 
 继续阅读文档前，开发者需要了解以下前置条件：
 
-+ HBuilderX 3.6.15 及之后版本
+- 了解 [uts语法](../tutorial/syntax-uts.md) 和 [uts原生插件](uts-plugin.md)
+- 了解 [Vue组件](../tutorial/vue3-components.md)
 
-+ 了解Vue 组件基本概念
-
-+ 目前仅支持nvue
 
 ## UTS组件简介
-
-#### 为什么使用组件
-
-组件是一种独立，可复用的UI单元，用于单独封装和承担一定的代码逻辑，组件化可以降低项目的工程复杂度，提升可维护性
-
-组件与插件的区别在于：前者倾向于以标签的形式 对外提供UI封装，后者倾向于以函数/类 的形式 对外提供功能封装。如果你的需求更倾向于封装能力，请移步 [UTS插件开发](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
-
-组件一般适用于封装非全屏的场景，如果需要你需要封装的UI始终是全屏，那么可以考虑通过UTS开发原生页面来实现。 [UTS开发原生页面示例](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage)
-
 
 #### 为什么使用UTS开发组件
 
 UTS组件，即：使用UTS语言在uni平台进行组件开发的技术。
 
+UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语法，各终端不同的原生产出物。
 
-UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语法，各终端不同的本地产出物。
-
-在Android平台会被编译为会被渲染为Android原生View实例，IOS或其他终端平台也是如此。
-
+在Android平台会被编译渲染为Android原生View实例，IOS或其他终端平台也是如此。
 
 
 |				|uts组件					|uni原生组件				|Vue组件				|
 |:------		|:--------				|:-------- 				|:-------			|
 |开发语言		|uts					|java/object-c			|js/ts				|
-|组件载体		|系统原生View对象		|系统原生View对象		|WebView内部标签		|
+|组件载体		|App平台为系统原生View对象		|系统原生View对象		|WebView内部标签		|
 
 
-为了降低前端开发者的开发门槛，UTS组件采用了类Vue组件的语法，[关于Vue组件](https://cn.vuejs.org/guide/essentials/component-basics.html)，但是具体的函数上会有定制，我们会在下一个章节详细介绍
+为了统一开发规范、降低使用门槛，UTS原生组件采用了Vue组件的语法，但会根据实际情况略有定制。
 
+即，您可以像写vue组件一样，使用uts语言来写一个UTS组件。
 
 ## UTS组件结构解析
 

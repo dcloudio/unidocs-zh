@@ -85,7 +85,6 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 │	├─mp-toutiao                  // 字节跳动小程序平台，可选
 │	├─mp-weixin                   // 微信小程序平台，可选
 │	├─mp-xhs                      // 小红书小程序平台（仅限vue2），可选
-│	├─index.d.ts                  // 插件能力声明，可选
 │	└─index.uts                   // 跨平台插件能力实现，可选
 └─package.json                    // 插件清单文件
 </code>
@@ -275,7 +274,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		 * 自定组件布局尺寸 
 		 * [可选实现]
 		 */
-		doMeasure(size: UTSSize): UTSSize {
+		NVMeasure(size: UTSSize): UTSSize {
 			size.width = 120.0.toFloat()
 			size.height = 800.0.toFloat()
 			return size
@@ -359,9 +358,9 @@ graph TD;
 
 除上述生命周期外，还存在下列可选周期函数：
 
-+ doMeasure：
++ NVMeasure
 
-doMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调用时机由排版系统决定。
+NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调用时机由排版系统决定。
 
 一般情况下，组件的宽高应该是由终端系统的排版引擎决定，组件开发者不需要实现此函数。
 

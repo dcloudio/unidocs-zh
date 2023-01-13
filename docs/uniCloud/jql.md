@@ -3995,11 +3995,17 @@ module.exports = {
 - 如需在before和after内传参，建议直接在state上挂载。但是切勿覆盖上述属性
 - action上传后可能需要一段时间才会在云端生效，通常是3分钟左右
 
-## jql依赖公共模块和扩展库@common-for-jql
+## schema扩展依赖公共模块和扩展库@deps-of-jql
 
-目前JQL依赖了`uni-id`或`uni-id-common`，uni-id 3.0.7及以上版本又依赖了`uni-config-center`，这两个公共模块是可以在action或触发器内直接使用的。
+schema扩展依赖的公共模块和扩展库同样可以被action、validateFunction使用。
 
-自`HBuilderX 3.2.7`起，可配置要jql依赖的公共模块。通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和JQL关联。
+内置依赖：目前schema扩展依赖了`uni-id`或[uni-id-common](uni-id-common.md)，uni-id 3.0.7及以上版本又依赖了[uni-config-center](uni-config-center.md)，这两个公共模块是可以在触发器内直接使用的。如果所在服务空间开通了redis，schema扩展内可直接使用redis扩展。
+
+自`HBuilderX 3.6.20`起，可以在项目的`uniCloud/database`目录上右键管理schema扩展依赖的公共模块和扩展库。同样在此目录右键选择`上传schema扩展Js的配置`将配置的依赖同步到云端
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/deps-of-jql.jpg)
+
+`HBuilderX 3.2.7`到`HBuilderX 3.6.20`之间的版本，可通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和schema扩展关联，`HBuilderX 3.6.20`及之后的版本不推荐使用此用法
 
 一个在JQL内使用的公共模块的package.json示例如下。
 An example package.json for a common module used within JQL is as follows.
@@ -4023,19 +4029,3 @@ An example package.json for a common module used within JQL is as follows.
 **Notice**
 
 - 尽量不要依赖体积过大的公共模块，会延长冷启动时间
-- Try not to rely on oversized public modules, which will prolong the cold start time
-
-**参考：**
-**reference:**
-
-- [uni-id 文档](uni-id-summary.md)
-- [uni-id documentation](uni-id-summary.md)
-- [uni-config-center 文档](uni-config-center.md)
-- [uni-config-center documentation](uni-config-center.md)
-
-扩展库：
-Extension library:
-
-目前jql只能使用redis扩展库，后续会支持其他扩展库配置。
-
-如果所在服务空间开通了redis，jql内可直接使用redis扩展。目前只能云端运行，后续会支持本地运行时在jql内使用redis扩展

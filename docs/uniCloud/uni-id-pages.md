@@ -1551,6 +1551,7 @@ await uniIdCo.createCaptcha({
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
 |errMsg							|string				|错误信息		|
+|captchaBase64  |string| 验证码：base64 格式|
 
 #### 刷新图形验证码@refresh-captcha
 
@@ -1576,6 +1577,7 @@ await uniIdCo.refreshCaptcha({
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
 |errMsg							|string				|错误信息		|
+|captchaBase64  |string| 验证码：base64 格式|
 
 #### 发送短信@send-sms-code
 

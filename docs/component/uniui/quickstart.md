@@ -123,6 +123,7 @@ uni-ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别�
 - 安装 sass-loader
 ```
 npm i sass-loader@10.1.1 -D   或   yarn add sass-loader@10.1.1 -D
+# 如果是 vue3 + vite, 无需安装 sass-loader
 ```
 
 > 如果 `node` 版本小于 16 ，sass-loader 请使用低于 @11.0.0 的版本，[sass-loader@11.0.0 不支持 vue@2.6.12 ](https://stackoverflow.com/questions/66082397/typeerror-this-getoptions-is-not-a-function)

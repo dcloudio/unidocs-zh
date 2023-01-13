@@ -400,16 +400,6 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **大商创：** 全渠道多用户商城解决方案。[官网](https://www.dscmall.cn)
 
-### cms开发商
-
-**崇胜CMS-橙子阅读：** 漫画小说系统，网文内容管理系统。[崇胜CMS-橙子阅读](http://reading.chshcms.net/)
-
-**崇胜CMS-橘子漫书：** 小说漫画APP，专注于数字阅读。[崇胜CMS-橘子漫书](http://reading.chshcms.net/product/juzi.html)
-
-**程式CMS：** 国内知名音乐管理系统，深耕于在线音乐行业，并专注音乐软件领域的开发。[程式CMS](https://www.chshcms.net/)
-
-**漫城CMS：** 国内知名漫画小说管理系统，深耕于数字阅读行业。[漫城CMS](https://www.chshcms.net/)
-
 ### 通信运营商
 
 **中国移动：** 微信小程序搜索“中国移动10086+”
@@ -911,6 +901,8 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **大丰收农资优选：** 优质农资商品购物。[安卓](https://www.dfs168.com/market/viewapp.html?id=503)、[iOS](https://apps.apple.com/cn/app/id1489907205)、[H5](http://wechat.dfs168.com)、微信小程序搜索：大丰收农资优选
 
 **迷上我** 恋爱学习App，[Android及iOS](https://a.app.qq.com/o/simple.jsp?pkgname=com.mishangwo)
+
+**崇胜CMS：** 漫画、小说、音乐管理系统。[官网](https://www.chshcms.net/)
 
 ### 更多小程序案例（可在微信小程序中搜索）@wx-more
 

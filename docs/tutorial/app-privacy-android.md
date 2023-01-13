@@ -57,6 +57,7 @@
   "buttonAccept": "同意并接受",
   "buttonRefuse": "暂不同意",
   "hrefLoader": "system|default",
+  "backToExit":"false",
   "second": {
     "title": "确认提示",
     "message": "　　进入应用前，你需先同意<a href=\"\">《服务协议》</a>和<a href=\"\">《隐私政策》</a>，否则将退出应用。",
@@ -103,6 +104,7 @@
 - hrefLoader  HX 3.4.13之后版本新增，system 使用系统webview 打开隐私协议链接，默认使用uni-app内置web组件
   隐私政策提示框中的链接地址加载方式，可取值：system-表示使用系统浏览器打开；default-表示使用应用内置webview页面打开。默认值为default。  
   **注意：可能有些检测机构认为webview会读取隐私信息，这时可以配置为system来解决此问题**  
+- backToExit  HX 3.6.20之后版本新增。用来设置弹出隐私弹窗时，用户点击系统回退按钮 是否能退出应用。默认为false 不退出。部分应用市场不接受此行为，则开发者可以设置为true，允许用户点击回退按钮时，退出应用。
 - disagreeMode 
   用户不同意隐私协议的响应配置 **具体配置及说明查看**[https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode)  
   + support 用户拒绝隐私协议后，是否直接进入游客模式，默认false关闭 

@@ -142,7 +142,7 @@ With uni-push, developers should no longer use other push schemes. However, we f
 - 常见误解1：“uni-push的专业性，和专业的个推、极光等服务可相比吗？”
 - Common misunderstanding 1: "Is the professionalism of uni-push comparable to professional personal push, Aurora and other services?"
 
-	答：uniPush 是由个推将其本来收费的 push 产品，其中重要VIP部分功能免费提供给了DCloud的开发者。它与个推vip push的只有2个区别：1、免费；2、账户使用的是DCloud开发者账户，而无需再重新注册个推账户。个推是A股上市公司，专业性在推送领域领先。
+	答：uniPush 是由个推将其本来收费的 push 产品，其中部分重要的VIP功能免费提供给了DCloud的开发者。它与个推vip push的只有2个区别：1、免费；2、账户使用的是DCloud开发者账户，而无需再重新注册个推账户。个推是A股上市公司，专业性在推送领域领先。
 
 - 常见误解2：“uni-push好麻烦，我就喜欢个推、极光这种简单sdk，不想去各个rom厂商去申请一圈”
 - Common misunderstanding 2: "uni-push is so troublesome, I like simple sdk like push and aurora, and I don't want to go to various rom manufacturers to apply for a circle"

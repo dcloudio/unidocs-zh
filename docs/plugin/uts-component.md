@@ -377,8 +377,18 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 |:-------		|:--------	|:--------			|:---		|:---			|
 |$el			|对象		|当前View实例对象	|全部平台	|开发者在NVLoad返回的对象类型|
 |$androidContext|对象		|当前组件上下文		|仅android	|android平台对应Context对象|
-|emit("event")	|函数		|发送已注册的事件	|全部平台	||
+|emit("event",Any)|函数		|发送已注册的事件	|全部平台	|emit(事件名称-必选,事件参数可选)|
 
+
+#### 组件的通用事件
+
+对于UTS组件来说，除了通过 emit/emits 函数来自定义事件外，UTS组件还内置了下列标准事件，组件的使用者无需实现，直接使用
+
+
+|事件名称			|简介				
+|:-------			|:--------			
+|click				|组件点击事件响应
+|longpress			|组件长按事件响应
 
 
 
@@ -912,6 +922,88 @@ UTS组件建议使用远程依赖的方式集成，如果需要以AAR的形式�
 
 在当前例子中，因为配置了额外的第三方依赖，需要自定义基座方能使用
 
+
+## UTS开发容器组件
+
+## 简介
+
+组件一般有两种场景，第一种是： 单标签组件
+```
+<uts-view style="xxxx"/>
+```
+
+我们上面介绍的 `uts-hello-view`或者`uts-animation-view`都是这种类型
+
+第二种是 作为容器使用：
+
+```
+<uts-view >
+	<text> 文字子组件</text>
+	<image src="https://xxx">
+<uts-view >
+```
+## 声明
+
+UTS组件作为容器组件与普通View组件遵循完全相同的规范，
+
+唯一的区别在于 当组件布局中包含 <solt>标签时，编译器会自动将其转换为容器组件
+
+```ts
+<template>
+	<view class="defaultStyles">
+		<solt/>
+	</view>
+</template>
+<script lang="uts">
+
+	import LinearLayout from 'android.widget.LinearLayout'
+
+	//原生提供以下属性或方法的实现  
+	export default {
+		name: "uts-hello-container",
+		
+		NVLoad(): LinearLayout {
+			let contentLayout = new LinearLayout($androidContext)
+			return contentLayout
+		}
+		
+	}
+</script>
+<style>
+	/* 定义默认样式值, 组件使用者没有配置时使用 */
+	.defaultStyles {
+		width: 750rpx;
+		height: 240rpx;
+		background-color: blue;
+	}
+</style>
+
+```
+
+如上，我们即可到了一个最简的UTS容器组件
+
+
+## 使用容器组件
+
+UTS容器组件的使用与Vue等常见的前端容器组件一致。唯一要注意的是，目前UTS容器组件还不支持 具名插槽。
+
+如下是一个容器组件的使用示例
+
+
+```js
+<template>
+	<uts-hello-container>
+		<text>UTS contianer组件</text>
+		<button text="点击按钮内容" style="width:375px;height: 375px;background-color: aqua;"></button>
+	</uts-hello-container>
+</template>
+
+<script>
+</script>
+
+<style>
+</style>
+```
 
 
 ## 快速体验

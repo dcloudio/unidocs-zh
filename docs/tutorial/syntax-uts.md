@@ -1562,13 +1562,58 @@ console.log(sumWithInitial);
 
 shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。
 
+```ts
+const array1 = [1, 2, 3];
+
+const firstElement = array1.shift();
+
+console.log(array1);
+// expected output: Array [2, 3]
+
+console.log(firstElement);
+// expected output: 1
+
+```
+
 #### slice
 
 slice() 方法返回一个新的数组对象，这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）。原始数组不会被改变。
 
+```ts
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4));
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5));
+// expected output: Array ["bison", "camel", "duck", "elephant"]
+
+console.log(animals.slice(-2));
+// expected output: Array ["duck", "elephant"]
+
+console.log(animals.slice(2, -1));
+// expected output: Array ["camel", "duck"]
+
+console.log(animals.slice());
+// expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+```
+
 #### some
 
 some() 方法测试数组中是不是至少有 1 个元素通过了被提供的函数测试。它返回的是一个 Boolean 类型的值。
+
+```ts
+const array = [1, 2, 3, 4, 5];
+
+// checks whether an element is even
+const even = (element:number):boolean=> element % 2 == 0;
+
+console.log(array.some(even));
+// expected output: true
+```
 
 #### sort
 
@@ -1584,9 +1629,32 @@ sort() 方法对数组的元素进行排序，并返回数组。
 
 splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容。此方法会改变原数组。
 
+```ts
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, 'May');
+// replaces 1 element at index 4
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+```
+
 #### unshift
 
 unshift() 方法将一个或多个元素添加到数组的开头，并返回该数组的新长度（该方法修改原有数组）。
+
+```ts
+const array1 = [1, 2, 3];
+
+console.log(array1.unshift(4, 5));
+// expected output: 5
+
+console.log(array1);
+// expected output: Array [4, 5, 1, 2, 3]
+```
 
 #### 常见操作
 
@@ -1962,13 +2030,43 @@ console.log(map1.has('bar'));
 
 返回某个 Map 对象中的一个指定元素。
 
+```ts
+const map1 = new Map<string,string>();
+map1.set('bar', 'foo');
+
+console.log(map1.get('bar'));
+// expected output: "foo"
+```
+
 #### has
 
 返回一个布尔值，用来表明 Map 中是否存在指定元素。
 
+```ts
+const map1 = new Map<string,string>();
+map1.set('bar', 'foo');
+
+console.log(map1.has('bar'));
+// expected output: true
+
+console.log(map1.has('baz'));
+// expected output: false
+```
+
 #### set
 
 添加或更新一个指定了键（key）和值（value）的（新）键值对。
+
+```ts
+const map1 = new Map<string,string>();
+map1.set('bar', 'foo');
+
+console.log(map1.get('bar'));
+// expected output: "foo"
+
+console.log(map1.get('baz'));
+// expected output: undefined
+```
 
 ### Math
 
@@ -2965,6 +3063,15 @@ console.log(map1.has('bar'));
 
 forEach 方法会根据集合中元素的插入顺序，依次执行提供的回调函数。
 
+```ts
+const set1 = new Set<number>([42, 13]);
+set1.forEach((item)=>{
+  console.log(item);
+  // expected output: 42
+  // expected output: 13
+})
+```
+
 #### has
 
 has() 方法返回一个布尔值来指示对应的值 value 是否存在 Set 对象中。
@@ -2974,6 +3081,19 @@ has() 方法返回一个布尔值来指示对应的值 value 是否存在 Set �
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
 |√|√|√ `(3.6.11+)`|
+
+```ts
+const set1 = new Set<number>([1, 2, 3, 4, 5]);
+
+console.log(set1.has(1));
+// expected output: true
+
+console.log(set1.has(5));
+// expected output: true
+
+console.log(set1.has(6));
+// expected output: false
+```
 
 ### String
 

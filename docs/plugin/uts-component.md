@@ -570,7 +570,7 @@ todo  目前还没有创建界面
 
 这是创建后的目录结构
 
-![目录结构](https://native-res.dcloud.net.cn/images/uts/component/image1.png)
+![目录结构](https://native-res.dcloud.net.cn/images/uts/component/image1.jpg)
 
 
 #### 编写逻辑

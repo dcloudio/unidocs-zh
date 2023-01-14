@@ -73,19 +73,48 @@ ext.js里引入公共模块的机制：
 
 触发器的入参有以下几个，不同时机的触发器参数略有不同
 
-|参数名				|类型								|默认值	|是否必备				|说明																																												|
-|--						|--									|--			|--							|--																																													|
-|collection		|string							|-			|是							|当前表名																																										|
-|operation		|string							|-			|是							|当前操作类型：`create`、`update`、`delete`、`read`、`count`																|
-|where				|object							|-			|否							|当前请求使用的查询条件（见下方说明）																												|
-|field				|array&lt;string&gt;|-			|read必备				|当前请求访问的字段列表（见下方说明）																												|
-|addDataList	|array&lt;object&gt;|-			|create必备			|新增操作传入的数据列表（见下方说明）																												|
-|updateData		|object							|-			|update必备			|更新操作传入的数据（见下方说明）																														|
-|clientInfo		|object							|-			|是							|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)|
-|userInfo			|object							|-			|是							|用户信息																																										|
-|result				|object							|-			|afterXxx内必备	|本次请求结果																																								|
-|isEqualToJql	|function						|-			|是							|用于判断当前执行的jql语句和执行语句是否相等																								|
-|triggerContext	|object						|-			|是							|用于在before和after内共享数据																								|
+|参数名					|类型								|默认值	|是否必备				|说明																																												|
+|--							|--									|--			|--							|--																																													|
+|collection			|string							|-			|是							|当前表名																																										|
+|operation			|string							|-			|是							|当前操作类型：`create`、`update`、`delete`、`read`、`count`																|
+|where					|object							|-			|否							|当前请求使用的查询条件（见下方说明）																												|
+|field					|array&lt;string&gt;|-			|read必备				|当前请求访问的字段列表（见下方说明）																												|
+|addDataList		|array&lt;object&gt;|-			|create必备			|新增操作传入的数据列表（见下方说明）																												|
+|updateData			|object							|-			|update必备			|更新操作传入的数据（见下方说明）																														|
+|clientInfo			|object							|-			|是							|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)|
+|userInfo				|object							|-			|是							|用户信息																																										|
+|result					|object							|-			|afterXxx内必备	|本次请求结果																																								|
+|isEqualToJql		|function						|-			|是							|用于判断当前执行的jql语句和执行语句是否相等																								|
+|triggerContext	|object							|-			|是							|用于在before和after内共享数据，新增于`3.6.16`																							|
+|subCollection	|array							|-			|否							|获取联表查询的副表列表，新增于`3.7.0`																											|
+|rawWhere				|object&#124;string	|-			|否							|未经转化的原始查询条件，新增于`3.7.0`																											|
+|rawGeoNear			|object							|-			|否							|未经转化的原始geoNear参数，新增于`3.7.0`																									|
+|skip						|number							|-			|否							|跳过记录条数，新增于`3.7.0`																																|
+|limit					|number							|-			|否							|返回的结果集(文档数量)的限制，新增于`3.7.0`																								|
+|sample					|object							|-			|否							|sample（随机选取）方法的参数，新增于`3.7.0`																								|
+|docId					|string							|-			|否							|doc方法的参数，数据库记录的_id，新增于`3.7.0`																								|
+
+
+#### subCollection@sub-collection
+
+> 仅read操作联表有此参数，新增于 3.7.0
+
+联表查询副表组成的列表
+
+```js
+// article.schema.ext.js
+module.exports {
+  trigger: {
+    beforeRead: async function({
+      subCollection
+    } = {}) {
+      if(subCollection && subCollection.length > 1) {
+        throw new Error('仅允许关联一个副表')
+      }
+    }
+  }
+}
+```
 
 #### where@where
 
@@ -93,11 +122,132 @@ ext.js里引入公共模块的机制：
 
 触发器收到的where参数为转化后的查询条件，可以直接作为参数传给db.collection()和dbJql.collection()的where方法。jql语句使用doc方法时也会转成where，形如：{_id: 'xxx'}
 
+#### docId@doc-id
+
+> read、delete、update操作可能有此参数，新增于 3.7.0
+
+触发器收到的doc方法内传递的文档_id
+
+**示例**
+
+```js
+// article.schema.ext.js
+module.exports {
+  trigger: {
+    beforeDelete: async function({
+      docId
+    } = {}) {
+      if(!docId) {
+        throw new Error('仅能指定文档id删除')
+      }
+    }
+  }
+}
+```
+
+#### rawWhere@raw-where
+
+> read、delete、update操作可能有此参数，新增于 3.7.0
+
+where或match方法的原始参数，未经jql转化。如果是字符串或使用了数据库方法，则仅能传递给databaseForJQL返回的数据库实例使用，不能传递给database方法返回的数据库实例使用。
+
+**示例**
+
+```js
+// article.schema.ext.js
+module.exports {
+  trigger: {
+    beforeDelete: async function({
+      rawWhere
+    } = {}) {
+      if(rawWhere && typeof rawWhere !== string) {
+        throw new Error('仅能使用字符串作为查询条件')
+      }
+    }
+  }
+}
+```
+
+#### rawGeoNear@raw-geo-near
+
+> 仅read操作有此参数，新增于 3.7.0
+
+geoNear方法的原始参数，未经jql转化。如果其中query是字符串或使用了数据库方法，则仅能传递给databaseForJQL返回的数据库实例使用，不能传递给database方法返回的数据库实例使用。
+
+#### skip@skip
+
+> 仅read操作有此参数，新增于 3.7.0
+
+跳过的文档数量
+
+**示例**
+
+```js
+// article.schema.ext.js
+module.exports {
+  trigger: {
+    beforeRead: async function({
+      skip
+    } = {}) {
+      if(skip && skip > 10000) {
+        throw new Error('无法访问10000条以后的数据')
+      }
+    }
+  }
+}
+```
+
+#### limit@limit
+
+> 仅read操作有此参数，新增于 3.7.0
+
+返回的结果集(文档数量)的限制
+
+**示例**
+
+```js
+// article.schema.ext.js
+module.exports {
+  trigger: {
+    beforeRead: async function({
+      limit
+    } = {}) {
+      if(limit && limit > 100) {
+        throw new Error('每次最多访问100条数据')
+      }
+    }
+  }
+}
+```
+
+#### sample@sample
+
+> 仅read操作有此参数，新增于 3.7.0
+
+随机筛选方法的参数
+
+**示例**
+
+```js
+// article.schema.ext.js
+module.exports {
+  trigger: {
+    beforeRead: async function({
+      sample
+    } = {}) {
+      if(sample && sample.size > 100) {
+        throw new Error('每次最多随机筛选100条数据')
+      }
+    }
+  }
+}
+```
+
 #### field@field
 
 > 仅read操作有此参数
 
-field为所有被访问的字段的组成的数组，嵌套的字段会被摊平。
+field为所有被访问的字段的组成的数组，嵌套的字段会被摊平。未传递field时会返回所有字段
 
 #### addDataList@add-data-list
 
@@ -506,11 +656,11 @@ schema扩展依赖的公共模块和扩展库同样可以被action、validateFun
 
 内置依赖：目前schema扩展依赖了`uni-id`或[uni-id-common](uni-id-common.md)，uni-id 3.0.7及以上版本又依赖了[uni-config-center](uni-config-center.md)，这两个公共模块是可以在触发器内直接使用的。如果所在服务空间开通了redis，schema扩展内可直接使用redis扩展。
 
-自`HBuilderX 3.6.20`起，可以在项目的`uniCloud/database`目录上右键管理schema扩展依赖的公共模块和扩展库。同样在此目录右键选择`上传schema扩展Js的配置`将配置的依赖同步到云端。
+自`HBuilderX 3.7.0`起，可以在项目的`uniCloud/database`目录上右键管理schema扩展依赖的公共模块和扩展库。同样在此目录右键选择`上传schema扩展Js的配置`将配置的依赖同步到云端。
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/deps-of-jql.jpg)
 
-`HBuilderX 3.2.7`到`HBuilderX 3.6.20`之间的版本，可通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和schema扩展关联，`HBuilderX 3.6.20`及之后的版本不推荐使用此用法
+`HBuilderX 3.2.7`到`HBuilderX 3.7.0`之间的版本，可通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和schema扩展关联，`HBuilderX 3.7.0`及之后的版本不推荐使用此用法
 
 一个在JQL内使用的公共模块的package.json示例如下。
 

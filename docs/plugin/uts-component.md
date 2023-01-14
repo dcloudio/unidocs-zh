@@ -377,12 +377,12 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 |:-------		|:--------	|:--------			|:---		|:---			|
 |$el			|对象		|当前View实例对象	|全部平台	|开发者在NVLoad返回的对象类型|
 |$androidContext|对象		|当前组件上下文		|仅android	|android平台对应Context对象|
-|emit("event",Any)|函数		|发送已注册的事件	|全部平台	|emit(事件名称-必选,事件参数可选)|
+|$emit("event",Any)|函数		|发送已注册的事件	|全部平台	|$emit(事件名称-必选,事件参数可选)|
 
 
-#### 组件的通用事件
+#### 通用事件
 
-对于UTS组件来说，除了通过 emit/emits 函数来自定义事件外，UTS组件还内置了下列标准事件，组件的使用者无需实现，直接使用
+对于UTS组件来说，除了通过 $emit/emits 函数来自定义组件事件外，UTS组件还内置了下列通用事件：
 
 
 |事件名称			|简介				
@@ -390,6 +390,12 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 |click				|组件点击事件响应
 |longpress			|组件长按事件响应
 
+
+通用事件，组件的使用者无需实现，直接使用
+
+```js
+<uts-hello-view buttonClick="自定义事件处理函数" click="通用点击事件处理函数" longpress="通用长按事件处理函数"/>
+```
 
 
 ## 简单View的示例
@@ -587,7 +593,7 @@ UTS组件建议使用远程依赖的方式集成，如果需要以AAR的形式�
         override onAnimationStart(animation: Animator | null) {}
 
         override onAnimationEnd(animation: Animator | null, isReverse: Boolean) {
-            this.comp.emit("bindended")
+            this.comp.$emit("bindended")
         }
 
         override onAnimationEnd(animation: Animator | null) {}

@@ -8,7 +8,7 @@ HBuilderX 3.6.20+，uni-app uts插件，运行到Android，支持Debug调试
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uts-android.gif" style="zoom: 72%;" />
 
-uts调试，依赖uts调试插件，弹窗提示安装依赖插件，请务必点击安装，否则无法进行调试。
+> 注意：uts调试，依赖uts调试插件，弹窗提示安装依赖插件，请务必点击安装，否则无法进行调试。
 
 
 ## 添加/删除断点@add-breakpoint
@@ -23,7 +23,7 @@ uts调试，依赖uts调试插件，弹窗提示安装依赖插件，请务必�
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uts-debug-view.jpg" style="zoom: 60%;" />
 
-**调试视图分为5部分：**
+调试视图分为5部分:
 
 - [调试工具栏](#DebugActions)
 - 变量窗口 (`复制值`、`复制表达式`、`添加到监视`)
@@ -33,9 +33,23 @@ uts调试，依赖uts调试插件，弹窗提示安装依赖插件，请务必�
 
 ## 调试操作@DebugActions
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uts-debug-action.jpg" style="zoom: 60%;" />
-
 - 继续 `F8`
 - 下一步 `F10`
 - 进入 `F11`
 - 返回 `Shift+F11`
+
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uts-debug-action.jpg" style="zoom: 50%;" />
+
+## 数据检查和查看变量@data
+
+### 添加到监视@add-to-watch
+
+在【变量窗口】，选中变量，右键菜单，即可将变量添加到监视窗口。
+
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uts-add_to_monitor.png" style="zoom: 50%;" />
+
+### 悬停显示@hover
+
+断点调试过程中，将鼠标悬停在要查看的变量上，即可打开悬停窗口。
+
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uts-hovering_window.jpg" style="zoom: 60%;" />

@@ -2,7 +2,7 @@
 
 `uni-vue-devtools` 是基于 [vue-devtools](https://devtools.vuejs.org/) 开发的 `uni-app` 项目调试工具。
 
-相当于 chrome 的 dev tools，它提供了2个特色功能：
+相当于 chrome 的 devtools，它提供了2个特色功能：
 - 可以方便的查看 data、修改 data 并在页面上实时查看效果
 - 可以审查自定义的 vue 组件
 
@@ -15,7 +15,7 @@
 **注意事项：**
 
 - `uni-vue-devtools` 只能审查自定义的 vue 组件，不能审查内置基础组件。
-- 目前仅支持 `HBuilderX 3.7.0` 及 `cli 3.0.0-alpha-3061220221207002+` 创建的 `Vue3` 项目。
+- 目前仅支持 `HBuilderX 3.7.0` 及 `cli 3.0.0-alpha-3070020230114001+` 创建的 `Vue3` 项目。
 - App、小程序端暂不支持 `script setup` 语法糖。
 
 ### 使用方法
@@ -28,7 +28,7 @@ HBuilderX 运行菜单下针对每个运行平台有一个 `运行时自动打�
   ![](
 https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/424b3030-b67d-4e74-a7c2-abf0cd7b1d2a.png)
 
-对应平台项目运行后会与该弹窗建立连接\
+对应平台项目运行后会与该弹窗建立连接。
 ![](
 https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2344dba2-7522-4a4c-bf46-c2bf806a31fc.png)
 
@@ -41,7 +41,7 @@ https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-19
 
 **Tips:**
 
-* 如果调试弹窗已打开且未置于前台，可通过点击控制台 vue 图标将弹窗页面激活到前台。
+* 如果调试弹窗已打开且未置于前台，可通过点击控制台 vue 图标将 Devtools 弹窗激活到前台。
 
 #### CLI
 

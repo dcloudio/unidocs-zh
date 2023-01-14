@@ -68,6 +68,12 @@ Responsible for releasing new versions and managing the online and offline of hi
 - App 管理列表及 App 版本记录列表搜索
 - App management list and App version record list search
 
+> 插件市场下载 `uni-admin 1.9.3+`，上传云函数、初始化数据库运行至浏览器则可以在左侧菜单看到 `App 升级中心`
+
+**添加应用**
+
+使用升级中心前需要在应用管理新增应用 [详情](https://uniapp.dcloud.net.cn/uniCloud/admin.html#app-manager)
+
 **版本管理**
 **Version management**
 
@@ -196,9 +202,9 @@ Install it in the plug-in market (uni-admin 1.9.3+ upgrade center has been used 
 Responsible for the front desk to check for upgrades and updates.
 
 <div align="left" style="display:flex;align-items:center;">
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/2.jpg" alt="官方升级弹框样式" width="250"></img>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/upgrade_center_1.jpg" alt="官方升级弹框样式" width="250"></img>
 	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/update_app_store.png" alt="升级支持多商店" width="250"></img>
-	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/4.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
+	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/upgrade_center_3.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
 </div>
 
 提供了如下功能：

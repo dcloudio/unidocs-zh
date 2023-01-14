@@ -117,6 +117,10 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 
 - 目前UTS组件仅支持`export default {}`的选项式API，vue3的组合式API暂未支持。
 
+::: preview
+
+> Android
+
 ```ts
 
 <template>
@@ -289,9 +293,162 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		background-color: blue;
 	}
 </style>
-
 ```
 
+> iOS
+
+```ts
+<template>
+	<view class="defaultStyles">
+	</view>
+</template>
+<script lang="uts">
+	import {
+		UIButton
+	} from "UIKit"
+
+	// 定义按钮点击后触发回调的类
+	class ButtonClickListsner {
+		// 按钮点击回调方法
+		@objc buttonClick() {
+			console.log("按钮被点击")
+		}
+	}
+
+	//原生提供以下属性或方法的实现  
+	export default {
+		/**
+		 * 组件名称，也就是开发者使用的标签
+		 */
+		name: "uts-hello-view",
+		/**
+		 * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
+		 */
+		emits: ['buttonClick'],
+		/**
+		 * 属性声明，组件的使用者会传递这些属性值到组件
+		 */
+		props: {
+			/**
+			 * 字符串类型 属性：buttonText  需要设置默认值
+			 */
+			"buttonText": {
+				type: String,
+				default: "点击触发"
+			}
+		},
+		/**
+		 * 组件内部变量声明
+		 */
+		data() {
+			return {}
+		},
+		/**
+		 * 属性变化监听器实现
+		 */
+		watch: {
+			"buttonText": {
+				/**
+				 * 这里监听属性变化，并进行组件内部更新
+				 */
+				handler(newButtonText: string, oldButtonText) {
+					this.$el.setTitle(newButtonText, for = UIControl.State.normal)
+				},
+				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+			},
+		},
+		/**
+		 * 规则：如果没有配置expose，则methods中的方法均对外暴露，如果配置了expose，则以expose的配置为准向外暴露
+		 * ['publicMethod'] 含义为：只有 `publicMethod` 在实例上可用
+		 */
+		expose: ['doSth'],
+		methods: {
+			/**
+			 * 对外公开的组件方法
+			 */
+			doSth(paramA: string) {
+				// 这是组件的自定义方法
+				console.log("paramA")
+			},
+			/**
+			 * 内部使用的组件方法
+			 */
+		},
+
+
+		/**
+		 * 组件被创建，组件第一个生命周期，
+		 * 在内存中被占用的时候被调用，开发者可以在这里执行一些需要提前执行的初始化逻辑
+		 * [可选实现]
+		 */
+		created() {
+
+		},
+		/**
+		 * 对应平台的view载体即将被创建，对应前端beforeMount  
+		 * [可选实现]
+		 */
+		NVBeforeLoad() {
+
+		},
+		/**
+		 * 创建原生View，必须定义返回值类型
+		 * 开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型
+		 * [必须实现]
+		 */
+		NVLoad(): UIButton {
+			//必须实现  
+			let button = new UIButton()
+			button.setTitle(this.buttonText, for = UIControl.State.normal)
+			const target = new ButtonClickListsner()
+			const method = Selector("buttonClick")
+			button.addTarget(target, action = method, for = UIControl.Event.touchUpInside)
+			return button
+		},
+
+		/**
+		 * 原生View已创建 
+		 * [可选实现]
+		 */
+		NVLoaded() {
+
+		},
+		/**
+		 * 原生View布局完成  
+		 * [可选实现]
+		 */
+		NVLayouted() {
+
+		},
+		/**
+		 * 原生View将释放  
+		 * [可选实现]
+		 */
+		NVBeforeUnload() {},
+		/**
+		 * 原生View已释放，这里可以做释放View之后的操作  
+		 * [可选实现]
+		 */
+		NVUnloaded() {
+
+		},
+		/**
+		 * 组件销毁  
+		 * [可选实现]
+		 */
+		unmounted() {}
+		/**
+		 * 自定组件布局尺寸 
+		 * [可选实现]
+		 */
+		NVMeasure(size: UTSSize): UTSSize {
+			return new UTSSize(120, 45);
+		}
+	}
+</script>
+```
+
+:::
 
 index.vue 要素可以分为以下几类：
 
@@ -420,6 +577,10 @@ todo  目前还没有创建界面
 
 打开index.vue，键入下面的组件源码:
 
+::: preview
+
+> Android
+
 ```ts
 <template>
 	<view class="defaultStyles">
@@ -489,8 +650,76 @@ todo  目前还没有创建界面
 
 ```
 
+> iOS
 
-上面的代码，我们自定义了一个  名为<uts-hello-view/>的UTS 组件，该组件对外提供了一个包含按钮的简单UI实现，并且对外暴露了一个名为 `buttonText`字符串属性，用来构建按钮上的文案
+```ts
+<template>
+	<view class="defaultStyles">
+	</view>
+</template>
+<script lang="uts">
+	import {
+		UIButton
+	} from "UIKit"
+
+	// 定义按钮点击后触发回调的类
+	class ButtonClickListsner {
+		// 按钮点击回调方法
+		@objc buttonClick() {
+			console.log("按钮被点击")
+		}
+	}
+
+	//原生提供以下属性或方法的实现  
+	export default {
+		name: "uts-hello-view",
+		emits: ['buttonClick'],
+		props: {
+			"buttonText": {
+				type: String,
+				default: "点击触发"
+			}
+		},
+		watch: {
+			"buttonText": {
+				/**
+				 * 这里监听属性变化，并进行组件内部更新
+				 */
+				handler(newButtonText: string, oldButtonText) {
+					this.$el.setTitle(newButtonText, for = UIControl.State.normal)
+				},
+				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+			},
+		},
+		expose: ['doSth'],
+		methods: {
+			/**
+			 * 对外公开的组件方法
+			 */
+			doSth(paramA: string) {
+				// 这是组件的自定义方法
+				console.log("paramA")
+			}
+		},
+		/**
+		 * 创建原生View，必须定义返回值类型
+		 */
+		NVLoad(): UIButton {
+			//必须实现  
+			let button = new UIButton()
+			button.setTitle(this.buttonText, for = UIControl.State.normal)
+			const target = new ButtonClickListsner()
+			const method = Selector("buttonClick")
+			button.addTarget(target, action = method, for = UIControl.Event.touchUpInside)
+			return button
+		}
+	}
+</script>
+```
+
+:::
+
+上面的代码，我们自定义了一个  名为 "uts-hello-view" 的UTS 组件，该组件对外提供了一个包含按钮的简单UI实现，并且对外暴露了一个名为 `buttonText`字符串属性，用来构建按钮上的文案
  
 接下来，我们介绍在uni-app项目中如何使用它
 
@@ -541,10 +770,10 @@ todo  目前还没有创建界面
 
 这是创建后的目录结构
 
-![目录结构](https://native-res.dcloud.net.cn/images/uts/component/image1.png)
+![目录结构](https://native-res.dcloud.net.cn/images/uts/component/image3.jpg)
 
 
-#### 引入依赖
+#### Android 平台引入依赖
 
 打开 ~/uni_modules/uts-animation-view/utssdk/app-android/config.json
 
@@ -562,10 +791,18 @@ UTS组件建议使用远程依赖的方式集成，如果需要以AAR的形式�
 
 依赖的配置原则与UTS插件一致 [UTS插件依赖说明](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-4-%E5%A2%9E%E5%8A%A0libs%E4%BE%9D%E8%B5%96%E8%B5%84%E6%BA%90)
 
+#### iOS 平台引入依赖库
+
+iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
+
 #### 编写逻辑
 
 
 打开index.vue，键入下面的组件源码:
+
+::: preview
+
+> Android
 
 ```ts
 <template>
@@ -805,6 +1042,257 @@ UTS组件建议使用远程依赖的方式集成，如果需要以AAR的形式�
 </style>
 
 ```
+
+> iOS
+
+```ts
+<template>
+	<view class="defaultStyles">
+
+	</view>
+</template>
+<script lang="uts">
+	import {
+		LottieAnimationView,
+		LottieAnimation,
+		LottieLoopMode
+	} from 'Lottie'
+	import {
+		URL,
+		Bundle
+	} from 'Foundation'
+	import {
+		UIView
+	} from "UIKit"
+	import {
+		UTSiOS
+	} from "DCloudUTSFoundation"
+
+
+	//原生提供以下属性或方法的实现  
+	export default {
+		/**
+		 * 组件名称，也就是开发者使用的标签
+		 */
+		name: "uts-animation-view",
+		/**
+		 * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
+		 */
+		emits: ['bindended'], // 当播放到末尾时触发 ended 事件（自然播放结束会触发回调，循环播放结束及手动停止动画不会触发）
+		/**
+		 * 属性声明，组件的使用者会传递这些属性值到组件
+		 */
+		props: {
+			/**
+			 * 动画资源地址，支持远程 URL 地址和本地绝对路径
+			 */
+			"path": {
+				type: String,
+				default: ""
+			},
+			/**
+			 * 动画是否循环播放
+			 */
+			"autoplay": {
+				type: Boolean,
+				default: false
+			},
+			/**
+			 * 动画是否自动播放
+			 */
+			"loop": {
+				type: Boolean,
+				default: false
+			},
+			/**
+			 * 是否隐藏动画
+			 */
+			"hidden": {
+				type: Boolean,
+				default: false
+			},
+			/**
+			 * 动画操作，可取值 play、pause、stop
+			 */
+			"action": {
+				type: String,
+				default: "stop"
+			}
+
+		},
+		data() {
+			return {
+
+			}
+		},
+		watch: {
+			"path": {
+				handler(newValue: string, oldValue: string) {
+					this.path = newValue
+					this.playAnimation()
+				},
+				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+			},
+			"loop": {
+				handler(newValue: boolean, oldValue: boolean) {
+					this.loop = newValue
+					if (this.loop) {
+						this.$el.loopMode = LottieLoopMode.loop
+					} else {
+						this.$el.loopMode = LottieLoopMode.playOnce
+					}
+				},
+				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+			},
+			"autoplay": {
+				handler(newValue: boolean, oldValue: boolean) {
+					this.autoplay = newValue
+					if (this.autoplay) {
+						this.playAnimation()
+					}
+				},
+				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+			},
+			"action": {
+				handler(newValue: string, oldValue: string) {
+					const action = newValue
+
+					if (action == "play" || action == "pause" || action == "stop") {
+						this.action = action
+						switch (action) {
+							case "play":
+								this.playAnimation()
+								break;
+							case "pause":
+								this.$el.pause()
+								break;
+							case "stop":
+								this.$el.stop()
+								break;
+							default:
+								break;
+						}
+					} else {
+						// 非法入参，不管
+					}
+				},
+				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+			},
+
+			"hidden": {
+				handler(newValue: boolean, oldValue: boolean) {
+					this.hidden = newValue
+					this.$el.isHidden = this.hidden
+				},
+				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+			},
+
+		},
+		expose: ['setRepeatMode'],
+		methods: {
+			// 需要对外暴露的方法
+			// 设置 RepeatMode 
+			setRepeatMode(repeatMode: string) {
+				if (repeatMode == "RESTART") {
+					if (this.loop) {
+						this.$el.loopMode = LottieLoopMode.loop
+					} else {
+						this.$el.loopMode = LottieLoopMode.playOnce
+					}
+				} else if (repeatMode == "REVERSE") {
+					if (this.loop) {
+						this.$el.loopMode = LottieLoopMode.autoReverse
+					} else {
+						this.$el.loopMode = LottieLoopMode.repeatBackwards(1)
+					}
+				}
+			},
+			// 不对外暴露的方法
+			// 播放动画 
+			playAnimation() {
+				// 构建动画资源 url
+				var animationUrl: URL | null
+
+				if (this.path.hasPrefix("http")) {
+					animationUrl = new URL(string = this.path)
+				} else {
+					const filePath = UTSiOS.getResourcePath(this.path)
+					animationUrl = new URL(fileURLWithPath = filePath)
+				}
+
+				if (animationUrl != null) {
+					// 加载动画 LottieAnimation
+					LottieAnimation.loadedFrom(url = animationUrl!, closure = (animation: LottieAnimation | null):
+						void => {
+							if (animation != null) {
+								// 加载成功开始播放
+								this.$el.animation = animation
+								this.$el.play(completion = (isFinish: boolean): void => {
+									if (isFinish) {
+										// 播放完成回调事件
+										this.fireEvent("bindended")
+									}
+								})
+							}
+						})
+				} else {
+					console.log("url 构建失败，请检查 path 是否正确")
+				}
+			}
+		},
+		created() { //创建组件，替换created  
+
+		},
+		NVBeforeLoad() { //组件将要创建，对应前端beforeMount  
+			//可选实现，这里可以提前做一些操作  
+		},
+		NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）  
+			// 初始化 Lottie$el
+			const animationView = new LottieAnimationView()
+			// 默认只播放一次动画
+			animationView.loopMode = LottieLoopMode.playOnce
+			return animationView
+		},
+		NVLoaded() { //原生View已创建  
+
+			/// 更新 props 中定义的属性值
+
+			if (this.loop) {
+				this.$el.loopMode = LottieLoopMode.loop
+			}
+
+			this.$el.isHidden = this.hidden
+
+			if (this.autoplay) {
+				this.playAnimation()
+			}
+		},
+
+		NVLayouted() { //原生View布局完成  
+			//可选实现，这里可以做布局后续操作  
+		},
+
+		NVBeforeUnload() { //原生View将释放  
+			//可选实现，这里可以做释放View之前的操作  
+		},
+		NVUnloaded() { //原生View已释放  
+			//可选实现，这里可以做释放View之后的操作  
+		},
+		unmounted() { //组件销毁  
+			//可选实现  
+		}
+	}
+</script>
+<style>
+	//定义默认样式值, 组件使用者没有配置时使用  
+	.defaultStyles {
+		width: 750rpx;
+		height: 240rpx;
+	}
+</style>
+```
+
+:::
 
 上面的代码我们实现了一个支持lottie动画播放的 UTS组件，标签名称为 `uts-animation-view`
 

@@ -500,6 +500,40 @@ module.exports = {
 }
 ```
 
+### 在触发器内使用扩展库和公共模块@module-and-extension
+
+schema扩展依赖的公共模块和扩展库同样可以被action、validateFunction使用。
+
+内置依赖：目前schema扩展依赖了`uni-id`或[uni-id-common](uni-id-common.md)，uni-id 3.0.7及以上版本又依赖了[uni-config-center](uni-config-center.md)，这两个公共模块是可以在触发器内直接使用的。如果所在服务空间开通了redis，schema扩展内可直接使用redis扩展。
+
+自`HBuilderX 3.6.20`起，可以在项目的`uniCloud/database`目录上右键管理schema扩展依赖的公共模块和扩展库。同样在此目录右键选择`上传schema扩展Js的配置`将配置的依赖同步到云端。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/deps-of-jql.jpg)
+
+`HBuilderX 3.2.7`到`HBuilderX 3.6.20`之间的版本，可通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和schema扩展关联，`HBuilderX 3.6.20`及之后的版本不推荐使用此用法
+
+一个在JQL内使用的公共模块的package.json示例如下。
+
+```js
+{
+  "name": "test-common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "includeInClientDB": true
+}
+```
+
+通过上述步骤建立起关联关系后，可正常在数据库触发器或action云函数中使用公共模块。
+
+**注意**
+
+- 尽量不要依赖体积过大的公共模块，会延长冷启动时间
+
+
 ### 注意事项
 
 - 非getTemp联表查询（不推荐的用法）在触发器内获取的where为null、field为当前表的所有字段。

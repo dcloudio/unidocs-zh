@@ -1,10 +1,18 @@
 ## uni-vue-devtools
 
+> 新增于`HBuilderX 3.7.0` 及 `cli 3.0.0-alpha-3070020230114001+`
+
+> 仅支持vue3。暂不支持vue2
+
 `uni-vue-devtools` 是基于 [vue-devtools](https://devtools.vuejs.org/) 开发的 `uni-app` 项目调试工具。
 
-相当于 chrome 的 devtools，它提供了2个特色功能：
-- 可以方便的查看 data、修改 data 并在页面上实时查看效果
-- 可以审查自定义的 vue 组件
+在web开发时，开发者可以在 chrome 里安装 vue devtools插件。但app和小程序过去无法使用。
+
+现在HBuilderX集成了该功能，web、app、小程序均可使用。
+
+vue devtools提供了2个特色功能：
+1. 可以方便的查看 data、修改 data 并在页面上实时查看效果
+2. 可以审查自定义的 vue 组件（不含内置组件）
 
 **平台差异说明**
 
@@ -13,14 +21,10 @@
 |√|√|√|√|√|√|√|√|
 
 **注意事项：**
-
 - `uni-vue-devtools` 只能审查自定义的 vue 组件，不能审查内置基础组件。
-- 目前仅支持 `HBuilderX 3.7.0` 及 `cli 3.0.0-alpha-3070020230114001+` 创建的 `Vue3` 项目。
 - App、小程序端暂不支持 `script setup` 语法糖。
 
-### 使用方法
-
-#### HBuilderX
+### HBuilderX中的使用方法
 
 HBuilderX 运行菜单下针对每个运行平台有一个 `运行时自动打开 Vue Devtools` 按钮，\
 ![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ad6b4788-9a66-48ef-a211-e34754fd0917.png)\
@@ -43,15 +47,17 @@ https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-19
 
 * 如果 Devtools 弹窗已打开且未置于前台，可通过点击控制台 vue 图标将 Devtools 弹窗激活到前台。
 
-#### CLI
+### CLI使用方法
 
-##### 1. 安装
+如果您不使用HBuilderX开发uni-app，也可以通过cli方式使用vue devtools。
+
+1. 安装
 
   ```shell
   npm install @dcloudio/uni-vue-devtools --save-dev
   ```
 
-##### 2. 运行项目
+2. 运行项目加上devtools参数
 
   ```shell
   npm run dev:%PLATFORM% --devtools

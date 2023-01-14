@@ -44,6 +44,12 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 - App 管理列表及 App 版本记录列表搜索
 
+> 插件市场下载 `uni-admin 1.9.3+`，上传云函数、初始化数据库运行至浏览器则可以在左侧菜单看到 `App 升级中心`
+
+**添加应用**
+
+使用升级中心前需要在应用管理新增应用 [详情](https://uniapp.dcloud.net.cn/uniCloud/admin.html#app-manager)
+
 **版本管理**
 
 1. 在版本管理list的右上角点击`发布新版`，可以发布`原生App安装包`和`wgt资源包`。在左上角点击`下拉列表`，可以切换展示应用。
@@ -127,9 +133,9 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 负责前台检查升级更新。
 
 <div align="left" style="display:flex;align-items:center;">
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/2.jpg" alt="官方升级弹框样式" width="250"></img>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/upgrade_center_1.jpg" alt="官方升级弹框样式" width="250"></img>
 	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/update_app_store.png" alt="升级支持多商店" width="250"></img>
-	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/4.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
+	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/upgrade_center_3.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
 </div>
 
 提供了如下功能：

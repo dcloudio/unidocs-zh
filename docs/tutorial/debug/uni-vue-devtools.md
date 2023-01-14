@@ -24,7 +24,7 @@
 
 HBuilderX 运行菜单下针对每个运行平台有一个 `运行时自动打开 Vue Devtools` 按钮，\
 ![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ad6b4788-9a66-48ef-a211-e34754fd0917.png)\
-勾选后，运行到对应平台时会自动开启 Vue Devtools。服务启动后，会自动打开一个弹窗，并显示待连接状态\
+勾选后，运行到对应平台时会自动开启 Vue Devtools。服务启动后，会自动打开一个弹窗，并显示待连接状态，\
   ![](
 https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/424b3030-b67d-4e74-a7c2-abf0cd7b1d2a.png)
 
@@ -32,7 +32,7 @@ https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-19
 ![](
 https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/2344dba2-7522-4a4c-bf46-c2bf806a31fc.png)
 
-如果您不需要默认开启 Vue Devtools，但是开发过程中临时需要 Devtools 调试，可点击控制台右上角 Vue 图标按钮，
+如果您不需要默认开启 Vue Devtools，但在开发过程中临时需要 Devtools 调试，可点击控制台右上角 Vue 图标按钮，
 
 ![](
 https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6168453a-e15c-4c4d-8846-6026debce5de.png)
@@ -41,7 +41,7 @@ https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-19
 
 **Tips:**
 
-* 如果调试弹窗已打开且未置于前台，可通过点击控制台 vue 图标将 Devtools 弹窗激活到前台。
+* 如果 Devtools 弹窗已打开且未置于前台，可通过点击控制台 vue 图标将 Devtools 弹窗激活到前台。
 
 #### CLI
 
@@ -57,8 +57,8 @@ https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-19
   npm run dev:%PLATFORM% --devtools
   ```
 
-  服务启动后，会自动在默认浏览器打开一个页面，并显示待连接状态\
+  服务启动后，会自动在默认浏览器打开一个页面，并显示待连接状态，\
   ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-vue-devtools-waiting-connect.png)
 
-  对应平台项目运行后会与该页面建立连接\
+  对应平台项目运行后会与该页面建立连接。\
   ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-vue-devtools-connected.png)

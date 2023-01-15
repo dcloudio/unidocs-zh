@@ -1,6 +1,6 @@
 # UTS 组件开发
 
-> 需HBuilderX 3.6.18 及之后版本
+> 需HBuilderX 3.7.0 及之后版本
 
 > app平台目前仅支持nvue
 

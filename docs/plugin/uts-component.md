@@ -1419,7 +1419,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 
 ## UTS开发容器组件
 
-## 简介
+#### 容器组件简介
 
 组件一般有两种场景，第一种是： 单标签组件
 ```
@@ -1436,7 +1436,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 	<image src="https://xxx">
 <uts-view >
 ```
-## 声明
+#### 容器组件声明
 
 UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 
@@ -1477,7 +1477,7 @@ UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 如上，我们即可到了一个最简的UTS容器组件
 
 
-## 使用容器组件
+#### 使用容器组件
 
 UTS容器组件的使用与Vue等常见的前端容器组件一致。唯一要注意的是，目前UTS容器组件还不支持 具名插槽。
 
@@ -1503,12 +1503,14 @@ UTS容器组件的使用与Vue等常见的前端容器组件一致。唯一要�
 ## 快速体验
 
 
-开发者可以使用[Hello UTS](https://gitcode.net/dcloud/hello-uts) 快速体验UTS 组件开发
+开发者可以使用[Hello UTS](https://gitcode.net/dcloud/hello-uts) 快速体验UTS组件开发
 
+本文档中涉及的示例均可以在其中找到：
+uts-hello-component
 
-Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
+`uts-hello-view`对应的源码实现：~/uni_modules/uts-hello-component
 
-`uts-animation-view`动画示例,对应的源码实现：~/uni_modules/uts-animation-view
+`uts-animation-view`对应的源码实现：~/uni_modules/uts-animation-view
 
 
 

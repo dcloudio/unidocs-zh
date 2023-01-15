@@ -51,21 +51,23 @@ Lottie动画组件，动画资源参考[Lottie官方接](https://airbnb.design/l
 	export default {
 		data() {
 			return {
-				path: "/uni_modules/uni-animation-view/static/lottie.json",
+				path: 'https://b.bdstatic.com/miniapp/images/lottie_example_one.json',
 				loop: false,
 				autoplay: false,
-				action: "play",
+				action: 'play',
 				hidden: false,
-				status: "暂停"
+				status: '暂停'
 			}
 		},
 		methods: {
 			playLottie() {
-				this.action = ('pause' === this.action) ? 'play' : 'pause';
+				this.action = ('play' !== this.action) ? 'play' : 'pause';
 				this.status = ('pause' === this.action) ? '播放' : '暂停';
 			},
 			lottieEnd() {
-				console.log("动画播放结束");
+				this.status = '播放';
+				this.action = 'stop';
+				console.log('动画播放结束');
 			}
 		}
 	}
@@ -73,8 +75,10 @@ Lottie动画组件，动画资源参考[Lottie官方接](https://airbnb.design/l
 
 <style>
 	.animation {
-		width: 750px;
-		height: 300px;
+		width: 750rpx;
+		height: 300rpx;
+		background-color: #FF0000;
+		margin-bottom: 20px;
 	}
 </style>
 ```

@@ -1,16 +1,16 @@
 # 使用Apple证书签名iOS标准基座@iOSAppleCertificateSignature
 
-> 此功能仅支持HBuilderX 3.6.9+
+> mac需HBuilderX 3.6.9+；
 
-因收到苹果公司警告，目前开发者已无法在iOS真机设备使用未签名的标准基座，[更多详情](https://ask.dcloud.net.cn/article/40041)。
+> win需HBuilderX 3.6.20+
 
-HBuilderX 3.6.9+, 开发者可使用自己申请的Apple证书，对标准基座进行本地签名，签名后可运行标准基座到iOS真机设备。
+因苹果公司禁止企业证书用于非企业内部开发者。所以开发者无法再使用DCloud的企业证书签名的标准运行基座。
 
-**注意：**: `HBuilderX每次升级，都需要手动对iOS标准基座进行签名。`
+运行标准基座到iOS真机设备前，需要使用开发者的证书对基座签名后才能运行。（运行到xcode模拟器不受限制）
 
-## 如何使用Apple证书签名对iOS标准基座签名？
+**注意：**: `HBuilderX每次升级，因为标准基座更新，都需要重新对iOS标准基座进行签名。`
 
-> 使用Apple证书，对iOS标准基座进行签名，MacOSX需要安装升级HBuilderX到3.6.9+版本，Windows需要安装升级HBuilderX到3.6.20+版本。
+## 如何用Apple证书对iOS标准基座签名
 
 选择任意App项目，点击工具栏运行图标，选择【运行到iOS App基座】，在弹出的窗口中，点击按钮【使用Apple证书签名】，如下图
 
@@ -20,9 +20,9 @@ HBuilderX 3.6.9+, 开发者可使用自己申请的Apple证书，对标准基座
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios%E6%A0%87%E5%87%86%E5%9F%BA%E5%BA%A7%E7%AD%BE%E5%90%8D2.jpg" style="zoom: 50%" />
 
-## HBuilderX 3.6.20以下版本 Windows iOS标准基座签名
+## 其他签名方案
 
-Windows系统，HBuilderX 3.6.20以下版本，无法像MacOSX那样对标准基座进行签名，开发者可以使用三方工具（如爱思助手）对标准基座签名。
+Windows系统，HBuilderX 3.6.20以下版本，没有内置重签功能，开发者可以使用三方工具（如爱思助手）对标准基座签名。
 
 Windows, iOS标准基座路径：`HBuilderX安装目录\plugins\launcher\base\iPhone_base.ipa`，如下所示：
 

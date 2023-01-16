@@ -1,5 +1,5 @@
 #### animation-view
-Lottie动画组件，动画资源参考[Lottie官方接](https://airbnb.design/lottie/)。
+Lottie动画组件，动画资源参考[Lottie官方链接](https://airbnb.design/lottie/)。
 
 > animation-view组件是[uts组件](https://uniapp.dcloud.net.cn/plugin/uts-component.html)，需下载插件：[animation-view](https://ext.dcloud.net.cn/plugin?name=uni-animation-view)，仅App端nvue页面支持  
 

@@ -51,7 +51,7 @@ Lottie动画组件，动画资源参考[Lottie官方链接](https://airbnb.desig
 	export default {
 		data() {
 			return {
-				path: 'https://b.bdstatic.com/miniapp/images/lottie_example_one.json',
+				path: '/uni_modules/uni-animation-view/static/lottie.json',
 				loop: false,
 				autoplay: false,
 				action: 'play',

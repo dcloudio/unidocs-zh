@@ -521,7 +521,7 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 一般情况下，组件的宽高应该是由终端系统的排版引擎决定，组件开发者不需要实现此函数。
 
-但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
+部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
 
 [vue3 生命周期暂不支持](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
 
@@ -565,8 +565,11 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 在HBuilder X 中选中Uni-App项目下 uni_modules目录  
 
-todo  目前还没有创建界面
+![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create.jpg)
 
+选择`UTS插件-组件插件`
+
+![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create_hello.jpg)
 
 这是创建后的目录结构
 
@@ -766,7 +769,11 @@ todo  目前还没有创建界面
 
 在HBuilder X 中选中Uni-App项目下 uni_modules目录  
 
-todo  目前还没有创建界面
+![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create.jpg)
+
+选择`UTS插件-组件插件`
+
+![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create_anim.jpg)
 
 这是创建后的目录结构
 

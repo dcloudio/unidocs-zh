@@ -94,7 +94,11 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 
 HBuilderX 3.6.17版本，新增 运行App项目到iOS真机，安装基座，App自动打开。
 
-注意：MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。
+如下图所示：
+
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios_start.png" style="zoom: 50%;" />
+
+**注意：** MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。
 
 使用如下命令，可以查看Xcode iOS Platforms数据。
 

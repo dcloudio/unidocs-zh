@@ -92,7 +92,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 
 > 目前仅支持MacOSX，不支持Windows
 
-HBuilderX 3.6.17版本，新增 运行App项目到iOS真机，安装基座，App自动打开。
+HBuilderX 3.7.0+版本，新增 运行App项目到iOS真机，运行成功后，手机上的App会自动打开。
 
 如下图所示：
 

@@ -51,17 +51,12 @@ Source address of Hello uniCloud: [https://ext.dcloud.net.cn/plugin?id=4082](htt
 	- 创建一个服务空间，创建完成后回到向导刷新列表，选择这个服务空间（创建服务空间可能需要几十秒的时间，可以在web控制台查看是否创建完成。）
 	- Create a service space. After the creation is complete, go back to the wizard to refresh the list and select the service space (it may take tens of seconds to create a service space. You can check whether the creation is complete in the web console.)
 	- 按照向导提示，将hello uniCloud项目下的云函数、数据库schema上传部署到服务空间，并执行db_init初始化数据库
-	- Follow the wizard prompts, upload and deploy the cloud function and database schema under the hello uniCloud project to the service space, and execute db_init to initialize the database
-	<!-- 缺图 -->
-	<!-- Missing picture -->
 	
 	**说明**
 	**illustrate**
 	
 	- 第一次创建腾讯云服务空间时会为用户创建腾讯云账号并跳转到腾讯云实名界面，等待实名认证审核之后可以开通服务空间。若腾讯云实名认证提示身份证下已创建过多账户，则需要在腾讯云官网注销不用的账户。
-	- When you create a Tencent Cloud service space for the first time, a Tencent Cloud account will be created for the user and the user will be redirected to the Tencent Cloud real-name interface. The service space can be opened after the real-name verification and verification. If Tencent Cloud real-name authentication indicates that too many accounts have been created under the ID card, you need to cancel the unused accounts on the Tencent Cloud official website.
-	- 每个开发者账户，腾讯云仅提供1个免费服务空间，最多可创建49个收费服务空间。阿里云最多可创建50个免费服务空间。
-	- For each developer account, Tencent Cloud only provides 1 free service space, and a maximum of 49 paid service spaces can be created. Alibaba Cloud can create up to 50 free service spaces.
+	- 阿里云每个账号可以有一个开发者版免费空间，此空间资源较少仅能用于测试开发。腾讯云无免费空间。
 	
 3. 运行 hello uniCloud项目
 3. Run the hello uniCloud project

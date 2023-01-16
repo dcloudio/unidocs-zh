@@ -135,7 +135,7 @@ ls -lh  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/D
 
 生成自定义基座后，在设备选择窗口，可以选择自定义基座，如下图所示：  
 
-<img src="https://img-cdn-tc.dcloud.net.cn/uploads/article/20181228/9a4abc6fc3b72b2ede0393cfaab6a890.png" style="zoom: 50%;" />
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/hx_select_base.jpg" style="zoom: 50%;" />
 
 注意：自定义运行基座是测试版，不可直接商用（使用自定义运行基座覆盖安装apk不会更新应用资源，并且有toast警告）。正式发版时需要按正常打包方式重新打包。
 

@@ -98,7 +98,7 @@ HBuilderX 3.7.0+版本，新增 运行App项目到iOS真机，运行成功后，
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios_start.png" style="zoom: 50%;" />
 
-**注意：** MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。
+**注意：** MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。如果`/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`目录下不存在跟手机系统相匹配的`iOS Platforms`, 那么是无法自启动App的。请在手机端点击运行基座图标手动启动。
 
 使用如下命令，可以查看Xcode iOS Platforms数据。
 

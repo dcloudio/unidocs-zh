@@ -12,7 +12,7 @@ Lottie动画组件，动画资源参考[Lottie官方接](https://airbnb.design/l
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|x|x|x|x|x|x|x|x|
+|√|x|x|x|√|x|x|x|x|x|x|
 
 
 
@@ -33,18 +33,18 @@ Lottie动画组件，动画资源参考[Lottie官方接](https://airbnb.design/l
 * App端实现使用了Lottie三方SDK，开源项目：[Lottie for Android](https://github.com/airbnb/lottie-android)，[Lottie for iOS](https://github.com/airbnb/lottie-ios)  
 * App-Android平台要求Android5（API Leavel 21）及以上系统  
 * App-iOS平台要求iOS11及以上版本系统  
-
+* 百度小程序平台path属性目前不支持远程地址，仅支持本地绝对路径，[查看更多注意事项](https://smartprogram.baidu.com/docs/develop/component/animation-view-Lottie/)
 
 **代码示例**
 
 ```html
 <template>
-	<div>
+	<view>
 		<animation-view class="animation" :path="path" :loop="loop" :autoplay="autoplay" :action="action"
 			:hidden="hidden" @bindended="lottieEnd">
 		</animation-view>
 		<button @click="playLottie" type="primary">{{status}}lottie动画</button>
-	</div>
+	</view>
 </template>
 
 <script>

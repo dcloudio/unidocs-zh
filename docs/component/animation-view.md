@@ -33,7 +33,7 @@ Lottie动画组件，动画资源参考[Lottie官方接](https://airbnb.design/l
 * App端实现使用了Lottie三方SDK，开源项目：[Lottie for Android](https://github.com/airbnb/lottie-android)，[Lottie for iOS](https://github.com/airbnb/lottie-ios)  
 * App-Android平台要求Android5（API Leavel 21）及以上系统  
 * App-iOS平台要求iOS11及以上版本系统  
-* 百度小程序平台path属性目前不支持远程地址，仅支持本地绝对路径，[查看更多注意事项](https://smartprogram.baidu.com/docs/develop/component/animation-view-Lottie/)
+* 百度小程序平台path属性目前不支持远程地址，仅支持本地绝对路径，[详情](https://smartprogram.baidu.com/docs/develop/component/animation-view-Lottie/)
 
 **代码示例**
 

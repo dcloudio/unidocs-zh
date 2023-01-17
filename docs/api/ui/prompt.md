@@ -153,17 +153,11 @@ Display the modal pop-up window with only one OK button or both OK and Cancel bu
 |showCancel|Boolean|否|是否显示取消按钮，默认为 true||
 | showCancel| Boolean| No| Whether to display the Cancel button, with true as default| |
 |cancelText|String|否|取消按钮的文字，默认为"取消"||
-|cancelText|String|No|Cancel button text, default is "Cancel"||
-|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序|
-|cancelColor|HexColor|No|The text color of the cancel button, the default is "#000000"|H5, WeChat applet, Baidu applet|
+|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序、字节小程序（2.62.0+）|
 |confirmText|String|否|确定按钮的文字，默认为"确定"||
-|confirmText|String|No|Confirm button text, the default is "OK"||
-|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序|
-|confirmColor|HexColor|No|Confirm the text color of the button, the default for H5 platform is "#007aff", the default for WeChat applet platform is "#576B95", the default for Baidu applet platform is "#3c76ff"|H5, WeChat applet, Baidu Mini Program |
-|editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)|
-|editable|Boolean|No|Show input box|H5 (3.2.10+), App (3.2.10+), WeChat applet (2.17.1+)|
-|placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)|
-|placeholderText|String|No|Prompt text when the input box is displayed|H5 (3.2.10+), App (3.2.10+), WeChat applet (2.17.1+)|
+|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序、字节小程序（2.62.0+）|
+|editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、字节小程序（2.62.0+）|
+|placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、字节小程序（2.62.0+）|
 |success|Function|否|接口调用成功的回调函数||
 | success| Function| No| Callback function for successful interface calling| |
 |fail|Function|否|接口调用失败的回调函数||
@@ -174,13 +168,11 @@ Display the modal pop-up window with only one OK button or both OK and Cancel bu
 **success返回参数说明**
 **Success return parameter description**
 
-|参数|类型|说明|
-| Parameter| Type| Instruction|
-|:-|:-|:-|
-|confirm|Boolean|为 true 时，表示用户点击了确定按钮|
-| confirm| Boolean| true indicates the user clicking on the OK button|
-|cancel|Boolean|为 true 时，表示用户点击了取消（用于 Android 系统区分点击蒙层关闭还是点击取消按钮关闭）|
-| cancel| Boolean| true indicates the user clicking on the Cancel button (used for Android system to distinguish between clicking the mask to close or clicking the Cancel button to close)|
+|参数|类型|说明|平台差异说明|
+|:-|:-|:-|:-|
+|confirm|Boolean|为 true 时，表示用户点击了确定按钮||
+|cancel|Boolean|为 true 时，表示用户点击了取消（用于 Android 系统区分点击蒙层关闭还是点击取消按钮关闭）||
+|content|String|`editable` 为 true 时，用户输入的文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、字节小程序（2.62.0+）|
 
 
 **示例**
@@ -208,7 +200,7 @@ uni.showModal({
 - 小程序平台，`cancelText`和`confirmText`有长度限制，最多允许 4 个字符；
 - On the Mini Program platform, `cancelText` and `confirmText` have a length limit, up to 4 characters;
 - 钉钉小程序真机与模拟器表现有差异，真机title，content均为必填项
-- The performance of the DingTalk applet is different between the real machine and the simulator. The real machine title and content are required fields
+- 各家小程序平台对于 `confirm`、`cancel` 字段返回规则可能不尽相同，包含两种情况：`{ confirm: true, cancel: false }` 或 `{ confirm: true }`，但并不影响使用 if 去做判断
 
 
 ### uni.showActionSheet(OBJECT)

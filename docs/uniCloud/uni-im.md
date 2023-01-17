@@ -455,6 +455,21 @@ await uniImCo.sendMsg({
 })
 ```
 
+## 服务端配置@uni-im-cloud-config 
+路径：`/uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-im/config.json`
+
+|字段名				|数据类型		|说明													|
+|--					|--				|--														|
+|jwtSecret			|string			|WJT联登录密钥											|
+|admin_uid			|string/boolean	|客服用户id，不限制则填`false`即可；仅conversation_grade的值为100时有效						|
+|conversation_grade	|int			|控制发起会话的条件，详情[会话控制](#conversation_grade)|
+
+### 会话控制@conversation_grade
+|值	|说明								|
+|0	|不限制								|
+|100|仅限当前用户向：客服、好友、群成员发起会话	|
+|200|仅限当前用户向：好友或群成员发起会话		|
+
 
 ## 客户端sdk@clientSkd
 ### Vuex状态管理  
@@ -620,6 +635,26 @@ utils封装了uni-im常用方法的模块，路径：`/uni_modules/uni-im/common
 uni-im遵循uni-app的插件模块化规范，即：[uni_modules](https://uniapp.dcloud.io/uni_modules)。
 
 在项目根目录下的`uni_modules`目录下，以插件ID即`uni-im`为插件文件夹命名，在该目录右键也会看到“从插件市场更新”选项，点击即可更新该插件。也可以用插件市场web界面下载覆盖。
+
+### 升级旧项目为 uni-im 1.4.0（群聊版） 注意事项
+此版本更新了`uni-im-conversation`表的 `user_id` 字段名为 `friend_uid` &&  `owner_uid` 字段名为 `user_id`。
+旧版uni-im，需通过：`uniCloud/database/JQL查询.jql` 执行以下jql语句，修改字段名
+1. 先执行：
+```js
+db.collection('uni-im-conversation').update({
+	"user_id": db.command.rename('friend_uid')
+})
+```
+2. 再执行：（**注意：不要两句一起执行，也别弄反顺序**）
+```js
+db.collection('uni-im-conversation').update({
+	owner_uid: db.command.rename('user_id')
+})
+```
+
+>此版本新增`会话控制`配置，详情查看[会话控制](#conversation_grade) 
+
+
 
 ## 许可协议
 uni-im源码使用许可协议

@@ -109,21 +109,22 @@ setTimeout(function () {
 |content|String|否|提示的内容||
 |showCancel|Boolean|否|是否显示取消按钮，默认为 true||
 |cancelText|String|否|取消按钮的文字，默认为"取消"||
-|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序|
+|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序、字节小程序（2.62.0+）|
 |confirmText|String|否|确定按钮的文字，默认为"确定"||
-|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序|
-|editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)|
-|placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)|
+|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序、字节小程序（2.62.0+）|
+|editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、字节小程序（2.62.0+）|
+|placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、字节小程序（2.62.0+）|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
 **success返回参数说明**
 
-|参数|类型|说明|
-|:-|:-|:-|
-|confirm|Boolean|为 true 时，表示用户点击了确定按钮|
-|cancel|Boolean|为 true 时，表示用户点击了取消（用于 Android 系统区分点击蒙层关闭还是点击取消按钮关闭）|
+|参数|类型|说明|平台差异说明|
+|:-|:-|:-|:-|
+|confirm|Boolean|为 true 时，表示用户点击了确定按钮||
+|cancel|Boolean|为 true 时，表示用户点击了取消（用于 Android 系统区分点击蒙层关闭还是点击取消按钮关闭）||
+|content|String|`editable` 为 true 时，用户输入的文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、字节小程序（2.62.0+）|
 
 
 **示例**
@@ -147,6 +148,7 @@ uni.showModal({
 - showModal不满足需求时，可以自行开发组件弹框。插件市场有很多自定义弹框的组件，需注意在非H5平台，前端组件无法覆盖原生组件（如地图、video），遮罩也无法盖住tabbar和navigationbar。如需覆盖原生组件或遮罩tabbar等，App端推荐使用[subNvue](https://uniapp.dcloud.net.cn/api/window/subNVues)；
 - 小程序平台，`cancelText`和`confirmText`有长度限制，最多允许 4 个字符；
 - 钉钉小程序真机与模拟器表现有差异，真机title，content均为必填项
+- 各家小程序平台对于 `confirm`、`cancel` 字段返回规则可能不尽相同，包含两种情况：`{ confirm: true, cancel: false }` 或 `{ confirm: true }`，但并不影响使用 if 去做判断
 
 
 ### uni.showActionSheet(OBJECT)

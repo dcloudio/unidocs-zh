@@ -53,10 +53,10 @@ Lottie动画组件，动画资源参考[Lottie官方链接](https://airbnb.desig
 			return {
 				path: '/uni_modules/uni-animation-view/static/lottie.json',
 				loop: false,
-				autoplay: false,
-				action: 'play',
+				autoplay: true,
+				action: 'stop',
 				hidden: false,
-				status: '暂停'
+				status: '播放'
 			}
 		},
 		methods: {

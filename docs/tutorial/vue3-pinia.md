@@ -4,8 +4,7 @@
 ## 介绍
 ## introduce
 
-> uni-app 内置了 [Pinia](https://pinia.vuejs.org/) 。
-> uni-app has [Pinia](https://pinia.vuejs.org/) built in.
+> uni-app 内置了 [Pinia](https://pinia.vuejs.org/zh/index.html) 。
 
 > 使用 `HBuilder X` 不需要手动安装，直接使用即可。使用 `CLI` 需要手动安装，执行 `yarn add pinia` 或 `npm install pinia`。
 > Use `HBuilder X` without manual installation, just use it directly. Using the `CLI` requires manual installation, execute `yarn add pinia` or `npm install pinia`.

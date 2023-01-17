@@ -1,3 +1,9 @@
+#### 3.6.18.20230117
+* 【uni-app】
+* Web平台 修复 3.6.17版引出的 Vue3 项目 scroll-view 组件插槽部分情况下渲染异常的Bug [详情](https://ask.dcloud.net.cn/question/149557)
+* 微信小程序平台 修复 3.6.17版引出的企业版微信运行报错的Bug
+* 微信小程序平台 修复 3.6.17版引出的 Vue2 项目部分情况下作用域插槽中访问 length 属性报错的Bug
+
 #### 3.6.17.20230112
 * 【uni-app】
 * App-Vue平台、Web平台 优化 input 组件支持 inputmode 属性 [详情](https://uniapp.dcloud.net.cn/component/input.html#inputmode)

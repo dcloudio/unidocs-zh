@@ -1,5 +1,9 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2023-01-18
+* 新增 schema扩展js支持引入公共模块及扩展库 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#deps-of-jql)
+* 新增 JQL触发器方法新增一些参数 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-param)
+
 #### 2023-01-09
 * JQL语法 修复 使用 setUser 方法未传 permission 参数且使用触发器时报错的Bug
 * JQL语法 修复 add 方法传递的字段值为对象且其中包含null值时报错的Bug

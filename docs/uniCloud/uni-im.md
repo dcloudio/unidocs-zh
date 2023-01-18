@@ -465,6 +465,7 @@ await uniImCo.sendMsg({
 |conversation_grade	|int			|控制发起会话的条件，详情[会话控制](#conversation_grade)|
 
 ### 会话控制@conversation_grade
+
 |值	|说明								|
 |0	|不限制								|
 |100|仅限当前用户向：客服、好友、群成员发起会话	|
@@ -652,7 +653,7 @@ db.collection('uni-im-conversation').update({
 })
 ```
 
->此版本新增`会话控制`配置，详情查看[会话控制](#conversation_grade) 
+>此版本新增`会话控制`配置，[详情查看](#conversation_grade) 
 
 
 

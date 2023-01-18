@@ -126,6 +126,7 @@
   * [App平台：模拟器安装指南](tutorial/run/installSimulator.md)
   * [App平台：debug](tutorial/debug/debug-app.md)
   * [小程序平台：运行调试](tutorial/debug/debug-mp.md)
+  * [uni-vue-devtools 调试](tutorial/debug/uni-vue-devtools.md)
 * [高效开发技巧](/tutorial/snippet.md)
 * [性能优化专题](/tutorial/performance.md)
 * [uni错误规范](/tutorial/err-spec.md)

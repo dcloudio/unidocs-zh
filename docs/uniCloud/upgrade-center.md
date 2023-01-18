@@ -15,6 +15,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 - 云端基于 [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/) 实现。后台管理是 [uni-admin](https://uniapp.dcloud.net.cn/uniCloud/admin.html) 框架的插件。
 
 - 数据库遵循 [opendb](https://uniapp.dcloud.net.cn/uniCloud/opendb.html) 规范
+- **关于应用转让后升级中心（uni-upgrade-center）的使用问题** [详情](https://ask.dcloud.net.cn/article/40112)
 
 ### 为什么需要升级中心？
 
@@ -22,9 +23,9 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 ### 使用
 
-升级中心分为两个部分：`uni-upgrade-center Admin管理后台` 和 `uni-upgrade-center-app前台检测更新`。
+升级中心分为两个部分：[uni-upgrade-center Admin管理后台](https://ext.dcloud.net.cn/plugin?id=4470) 和 [uni-upgrade-center-app前台检测更新](https://ext.dcloud.net.cn/plugin?id=4542)。
 
-#### uni-upgrade-center Admin 管理后台
+#### uni-upgrade-center Admin 管理后台@uni-upgrade-center-admin
 
 > 在 uni-admin 1.9.3+ 中已作为内置插件。在应用管理新增应用后，即可在 `App升级中心` 发布该应用的版本
 
@@ -128,7 +129,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 在插件市场安装（uni-admin 1.9.3+ 升级中心已作为内置插件，内置在uni-admin项目中），根据 readme 部署即可。[插件地址](https://ext.dcloud.net.cn/plugin?id=4470)
 
-#### uni-upgrade-center-app 前台检测更新
+#### uni-upgrade-center-app 前台检测更新@uni-upgrade-center-app
 
 负责前台检查升级更新。
 
@@ -152,9 +153,67 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 - 美观，实用，可自定义扩展
 
-在插件市场安装，根据 readme 部署即可。[插件地址](https://ext.dcloud.net.cn/plugin?id=4542)
+**安装指引**
 
-**关于应用转让后升级中心（uni-upgrade-center）的使用问题** [详情](https://ask.dcloud.net.cn/article/40112)
+1. 依赖数据库`opendb-app-versions`，如果没有此库，请在云服务空间中创建。
+
+2. 使用`HBuilderX 3.1.0+`，因为要使用到`uni_modules`
+
+3. 在插件市场打开本插件页面，在右侧点击`使用 HBuilderX 导入插件`，选择要导入的项目点击确定
+
+4. 绑定服务空间：
+   - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，请和 uni-admin 项目关联同一个服务空间
+   - 插件版本 `<= 0.6.0`，请绑定到一个已有的服务空间或者新建一个服务空间进行绑定
+
+5. 上传云函数：
+   - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，插件不再单独提供云函数，可以跳过此步骤
+   - 插件版本 `<= 0.6.0`，找到`/uni_modules/uni-upgrade-center-app/uniCloud/cloudfunctions/check-version`，右键上传部署
+
+6. 在`pages.json`中添加页面路径。**注：请不要设置为pages.json中第一项**
+  
+	```json
+	"pages": [
+			// ……其他页面配置
+			{
+				"path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup",
+				"style": {
+					"disableScroll": true,
+					"app-plus": {
+						"backgroundColorTop": "transparent",
+						"background": "transparent",
+						"titleNView": false,
+						"scrollIndicator": false,
+						"popGesture": "none",
+						"animationType": "fade-in",
+						"animationDuration": 200
+
+					}
+				}
+			}
+		]
+	```
+7. 将`@/uni_modules/uni-upgrade-center-app/utils/check-update.js` 使用 import 导入到需要用到的地方，调用一下即可：
+   1. `import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update.js'`
+   2. 默认使用当前绑定的服务空间，如果要请求其他服务空间，可以使用其他服务空间的 `callFunction`。[详情](https://uniapp.dcloud.io/uniCloud/cf-functions.html#call-by-function-cross-space)
+8. 升级弹框可自行编写，也可以使用`uni.showModal`，或使用现有的升级弹框样式，如果不满足UI需求请自行替换资源文件。在`utils/check-update.js`中都有实例。
+
+9.  wgt更新时，打包前请务必将manifest.json中的版本修改为更高版本。
+
+**更新下载安装`check-update.js`**
+
+> 该函数在utils目录下
+
+1. 如果是静默更新，则不会打开更新弹框，会在后台下载后安装，下次启动应用生效
+
+2. 如果是 iOS，则会直接打开AppStore的链接
+
+3. 其他情况，会将检查更新云函数返回的结果保存在localStorage中，并跳转进入`upgrade-popup.vue`打开更新弹框
+
+**Tips**
+
+1. 检查更新云函数内部有版本对比函数（compare）。
+	- 使用多段式版本格式（如："3.0.0.0.0.1.0.1", "3.0.0.0.0.1"）。如果不满足对比规则，请自行修改。
+	- 如果修改，请将*pages/upgrade-popup.vue*中*compare*函数一并修改
 
 ### 费用评测@upgrade-center-fee
 

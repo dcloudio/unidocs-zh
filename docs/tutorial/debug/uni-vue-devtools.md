@@ -1,6 +1,6 @@
 ## uni-vue-devtools
 
-> 新增于`HBuilderX 3.7.0` 及 `cli 3.0.0-alpha-3070020230114001+`
+> 新增于`HBuilderX 3.7.0` 及 `cli 3.0.0-alpha-3070020230117001+`
 
 > 仅支持vue3。暂不支持vue2
 
@@ -71,8 +71,8 @@ https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-19
 
 ### 常见问题
 
-1. HBuilderX 项目运行到微信开发者工具，修改页面数据后 Devtools 弹窗组件树丢失？
+1. HBuilderX 项目运行到微信开发者工具，修改页面数据后 Devtools 弹窗组件树丢失？\
 答：微信开发者工具热重载未同步数据问题，关闭热重载。
 
-2. HBuilderX 项目运行到百度开发者工具，修改页面数据后 Devtools 数据未更新？
+2. HBuilderX 项目运行到百度开发者工具，修改页面数据后 Devtools 数据未更新？\
 答：百度开发者工具隔离编译模式热更新未同步数据问题，切换依赖分析编译模式。

@@ -229,7 +229,7 @@
   * [App平台：debug](tutorial/debug/debug-app.md)
   * [App platform: debug](tutorial/debug/debug-app.md)
   * [小程序平台：运行调试](tutorial/debug/debug-mp.md)
-  * [Mini Program Platform: Running and Debugging](tutorial/debug/debug-mp.md)
+  * [uni-vue-devtools 调试](tutorial/debug/uni-vue-devtools.md)
 * [高效开发技巧](/tutorial/snippet.md)
 * [Efficient Development Tips](/tutorial/snippet.md)
 * [性能优化专题](/tutorial/performance.md)

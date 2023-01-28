@@ -180,6 +180,7 @@ easyinput 组件是对原生input组件的增强 ，是专门为配合表单组�
 |@confirm|点击完成按钮时触发| -||
 |@iconClick	|点击图标时触发| prefix/suffix	||
 |@change|仅在输入框失去焦点或用户按下回车时触发||1.1.0新增|
+|@keyboardheightchange|键盘高度发生变化时触发||1.1.6新增|
 
 
 ## 示例

@@ -159,8 +159,7 @@ Right-click on the pages directory of the project, add the `ad-interactive-webvi
 ## 接入步骤
 ## Access steps
 
-1. 开通并[申请](https://uniapp.dcloud.net.cn/)广告位
-1. Open and [apply](https://uniapp.dcloud.net.cn/) advertising space
+1. 开通并[申请](https://uniapp.dcloud.net.cn/uni-ad.html#start)广告位
 3. 在需要展示广告的地方放入 `<ad-interactive></ad-interactive>` 组件代码，此广告可作为悬浮红包使用，设置组件样式 fixed 定位即可
 3. Put the `<ad-interactive></ad-interactive>` component code where the ad needs to be displayed. This ad can be used as a floating red envelope. Set the component style to fixed positioning.
 4. 在项目中新增 [ad-interactive-webview](#openpagepath) 页面
@@ -173,4 +172,6 @@ When running to the WeChat applet, you need to add the request legal domain name
 1. 登陆 [微信公众平台](https://mp.weixin.qq.com/)，左侧栏找到 `开发管理` 并点击 开发设置->服务器域名
 1. Log in to [WeChat Public Platform](https://mp.weixin.qq.com/), find `Development Management` in the left column and click Development Settings->Server Domain Name
 2. 新增 `request合法域名`: `https://wxac1.dcloud.net.cn`
-3. 新增 `业务域名`: `https://engine.dcad01.com` 和 `https://xcx.dcad01.com`
+3. 配置业务域名-> 下载校验文件
+4. 在[uniAD后台](https://uniad.dcloud.net.cn/)，微信小程序广告管理-> 开通微信小程序互动广告 -> 上传校验文件，等待校验成功
+5. 新增 `业务域名`: `https://engine.dcad01.com` 和 `https://xcx.dcad01.com`

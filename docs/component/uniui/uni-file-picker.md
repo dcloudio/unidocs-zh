@@ -1,34 +1,22 @@
 
 ::: tip 组件名：uni-file-picker
-::: tip component name: uni-file-picker
 >  代码块： `uFilePicker`
-> Code block: `uFilePicker`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-file-picker)
-[Click to download & install](https://ext.dcloud.net.cn/plugin?name=uni-file-picker)
 ::: 
 
 文件选择上传组件，可以选择图片、视频等任意文件并上传到当前绑定的服务空间
-File selection upload component, you can select any files such as pictures, videos, etc. and upload them to the currently bound service space
 
 ## 介绍 
-## introduce 
 ::: warning 注意事项
-::: warning Notes
 > 为了避免错误使用，给大家带来不好的开发体验，请在使用组件前仔细阅读下面的注意事项，可以帮你避免一些错误。
-> In order to avoid wrong use and bring you a bad development experience, please read the following precautions carefully before using the component, which can help you avoid some mistakes.
 - 组件需要依赖 `sass` 插件 ，请自行手动安装
-- The component needs to depend on the `sass` plugin, please install it manually
 - 如不绑定服务空间，`autoUpload`默认为`false`且不可更改
-- If the service space is not bound, `autoUpload` defaults to `false` and cannot be changed
 - 选择文件目前只支持 `H5` 和 `微信小程序平台` ，且 `微信小程序平台` 使用 `wx.chooseMessageFile()`
-- The choice file currently only supports `H5` and `WeChat applet platform`, and the `WeChat applet platform` uses `wx.chooseMessageFile()`
 - v-model 值需要自动上传成功后才会绑定值，一般只用来回显数据
-- The v-model value needs to be automatically uploaded before the value is bound. Generally, it is only used to echo data
 :::
 
 ### 基础用法
-### Basic usage
 
 ```html
 <uni-file-picker 
@@ -49,24 +37,20 @@ File selection upload component, you can select any files such as pictures, vide
 		},
 		methods:{
 			// 获取上传状态
-			// Get upload status
 			select(e){
 				console.log('选择文件：',e)
 			},
 			// 获取上传进度
-			// Get upload progress
 			progress(e){
 				console.log('上传进度：',e)
 			},
 			
 			// 上传成功
-			// upload successfully
 			success(e){
 				console.log('上传成功')
 			},
 			
 			// 上传失败
-			// upload failed
 			fail(e){
 				console.log('上传失败：',e)
 			}
@@ -76,19 +60,14 @@ File selection upload component, you can select any files such as pictures, vide
 ```
 
 ### 选择指定后缀图片，且限制选择个数
-### Select the specified suffix picture, and limit the number of choices
 
 配置 `file-mediatype` 属性为 `image`，限定只选择图片
-Configure the `file-mediatype` property to `image` to limit the selection to only images
 
 配置 `file-extname` 属性为 `'png,jpg'`，限定只选择 `png`和`jpg`后缀的图片
-Configure the `file-extname` property to `'png,jpg'`, limit the selection of only pictures with `png` and `jpg` suffixes
 
 配置 `limit` 属性为 1 ，则最多选择一张图片
-Configure the `limit` property to 1 to select at most one image
 
 配置 `mode` 属性为 `grid` ，可以使用九宫格样式选择图片
-Configure the `mode` property to `grid` , you can use the nine-square grid style to select pictures
 
 
 ```html
@@ -106,10 +85,8 @@ Configure the `mode` property to `grid` , you can use the nine-square grid style
 ```
 
 ### 手动上传
-### Manual upload
 
 配置 `auto-upload` 属性为 `false` ，可以停止自动上传，通过`ref`调用`upload`方法自行选择上传时机
-Configure the `auto-upload` property to `false`, you can stop automatic upload, and choose the upload time by calling the `upload` method through `ref`
 
 ```html
 <template>
@@ -132,16 +109,12 @@ Configure the `auto-upload` property to `false`, you can stop automatic upload, 
 ```
 
 ### 单选图片且点击再次选择
-### Radio select image and click to select again
 
 配置 `disable-preview` 属性为 `true`，禁用点击预览图片功能
-Configure the `disable-preview` property to `true` to disable the click preview image function
 
 配置 `del-icon` 属性为 `false`，隐藏删除按钮
-Configure the `del-icon` property to `false` to hide the delete button
 
 配置 `return-type` 属性为 `object`，设置 `value` 类型 ，如需绑定 `array`类型 ，则设置`limit:1`，可达到一样的效果
-Configure the `return-type` attribute to `object`, set the `value` type, if you need to bind the `array` type, set `limit: 1` to achieve the same effect
 
 
 
@@ -154,13 +127,10 @@ Configure the `return-type` attribute to `object`, set the `value` type, if you 
 ```
 
 ### 自定义样式
-### custom style
 
 配置 `image-styles` 属性，可以自定义`mode:image`时的回显样式
-Configure the `image-styles` property to customize the echo style of `mode:image`
 
 配置 `list-styles` 属性，可以自定义`mode:video|| mode:all`时的回显样式
-Configure the `list-styles` property to customize the echo style of `mode:video|| mode:all`
 
 ```html
 <template>
@@ -184,13 +154,10 @@ Configure the `list-styles` property to customize the echo style of `mode:video|
 			},
 			listStyles:{
 				// 是否显示边框
-				// whether to show the border
 				border: true,
 				// 是否显示分隔线
-				// whether to show the divider
 				dividline: true,
 				// 线条样式
-				// line style
 				borderStyle: {
 					width:1,
 					color:'blue',
@@ -206,10 +173,8 @@ Configure the `list-styles` property to customize the echo style of `mode:video|
 
 
 ### 使用插槽 
-### Using slots
 
 使用默认插槽可以自定义选择文件按钮样式
-Use the default slot to customize the select file button style
 
 ```html
 <uni-file-picker 
@@ -223,43 +188,28 @@ Use the default slot to customize the select file button style
 ### FilePicker Props
 
 |属性名|类型|默认值|可选值|说明|
-|property name|type|default value|optional value|description|
 |:-:| :-:| :-:|:-:|:-:|
 |v-model/value|Array\Object|-|-| 组件数据，通常用来回显 ,类型由`return-type`属性决定	，**格式见下文**	|
-|v-model/value|Array\Object|-|-| Component data, usually used for echoing, the type is determined by the `return-type` attribute, **format see below** |
 |disabled|Boolean|false|-| 组件禁用|
-|disabled|Boolean|false|-| component disabled|
 |readonly|Boolean|false|-| 组件只读，不可选择，不显示进度，不显示删除按钮|
-|readonly|Boolean|false|-| The component is read-only, not selectable, no progress, no delete button|
 |return-type|String| array	| array/object| 限制 `value` 格式，当为 `object`	 时	，组件只能单选，且会覆盖|
-|return-type|String| array | array/object| Restricts the `value` format. When it is `object`, the component can only be single-selected, and it will override|
 |disable-preview| Boolean| false	| -| 禁用图片预览，仅	`mode:grid`生效	|
-|disable-preview| Boolean| false | -| Disable image preview, only `mode:grid` works |
 |del-icon|Boolean| true	| -| 是否显示删除按钮	|
-|del-icon|Boolean| true | -| Whether to display the delete button |
 |auto-upload| Boolean| true	| -| 是否自动上传，值为`false`则只触发@select,可自行上传|
-|auto-upload| Boolean| true | -| Whether to upload automatically, if the value is `false`, it will only trigger @select, you can upload by yourself|
 |limit| Number\String| 9	| -| 最大选择个数 ，h5 会自动忽略多选的部分|
-|limit| Number\String| 9 | -| Maximum number of choices, h5 will automatically ignore the part of multiple choices|
-| title| String	| -| -| 组件标题，右侧显示上传计数|
-| title| String | -| -| Component title, upload count displayed on the right|
+|title| String	| -| -| 组件标题，右侧显示上传计数|
 |mode| String	| list	| list/grid| 选择文件后的文件列表样式|
-|mode| String | list | list/grid| File list style after file selection|
 |file-mediatype| String	| image	| image/video/all| 选择文件类型,all 只支持 H5 和微信小程序平台|
-|file-mediatype| String | image | image/video/all| Select the file type, all only supports H5 and WeChat applet platforms|
 |file-extname| Array\String| -| -| 选择文件后缀，字符串的情况下需要用逗号分隔（推荐使用字符串），根据 `file-mediatype` 属性而不同|
-|file-extname| Array\String| -| -| Select the file suffix. In the case of a string, it needs to be separated by commas (strings are recommended), which varies according to the `file-mediatype` attribute|
 |list-styles|Object| -| -| `mode:list` 时的样式|
-|list-styles|Object| -| -| Styles when `mode:list`|
 |image-styles|Object| -| -| `mode:grid` 时的样式	|
-|image-styles|Object| -| -| Styles when `mode:grid` |
+|sizeType|Array| ['original', 'compressed']| 'original', 'compressed'| original 原图，compressed 压缩图，默认二者都有	|
+|sourceType|Array| ['album', 'camera']| 'album', 'camera'| album 从相册选图，camera 使用相机，默认二者都有。如需直接开相机或直接选相册，请只使用一个选项	|
 
 
 ### value 格式 
-### value format
 
 三个属性必填，否则影响组件显示
-Three properties are required, otherwise the component display will be affected
 
 ```json 
 [
@@ -274,7 +224,6 @@ Three properties are required, otherwise the component display will be affected
 ```
 
 ### list-styles 格式 
-### list-styles format
 
 ```json 
 {
@@ -290,7 +239,6 @@ Three properties are required, otherwise the component display will be affected
 ```
 
 ### image-styles 格式 
-### image-styles format
 
 ```json 
 {
@@ -308,24 +256,17 @@ Three properties are required, otherwise the component display will be affected
 ### FilePicker Events
 
 |事件称名|说明|返回值|					
-|Event Name|Description|Return Value|
 |:-:|:-:|	:-:	|
 |@select| 选择文件后触发| 见下文|
-|@select| Fired when a file is selected | see below |
 |@progress|文件上传时触发| 见下文|
-|@progress| Triggered when a file is uploaded| See below|
 |@success|上传成功触发| 见下文|
-|@success|Upload successfully triggered|See below|
 |@fail|上传失败触发| 见下文|
-|@fail|Triggered by upload failure|See below|
 |@delete|文件从列表移除时触发| 见下文|
-|@delete| Fired when a file is removed from the list | see below|
 
 
 #### Callback Params
 
 `**注意**：如果绑定的是腾讯云的服务空间 ，tempFilePaths 将返回 fileID`
-`**Note**: If the service space of Tencent Cloud is bound, tempFilePaths will return fileID`
 
 ```json
 {
@@ -342,37 +283,26 @@ Three properties are required, otherwise the component display will be affected
 ### FilePicker Methods
 
 通过 `$ref` 调用
-Called via `$ref`
 
 | 方法称名| 说明|参数|				
-| method name | description | parameters |
 | :-:| :-:|:-:|				
 | upload()| 手动上传 	，如`autoUpload`为`false`  ，必须调用此方法| - |
-| upload()| Manual upload, if `autoUpload` is `false`, this method must be called | - |
 | clearFiles(index:Number)	| 清除选择结果| 传入 Number　为删除指定下标的文件 ，不传为删除所有|
-| clearFiles(index:Number) | Clear the selection result| Pass in Number to delete the files with the specified index, not to delete all files|
 
 ### FilePicker Slots
 
 插槽可定义上传按钮显示样式 
-Slot to define upload button display style
 
 |插槽名|说明 |
-|Slot Name |Description |
 | :-:| :-:		  |
 |default|默认插槽|
-|default|default slot|
 
 
 ## 示例
-## Example
 ::: warning 注意
-::: warning attention
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
-The example relies on multiple components such as `uni-card` `uni-section` `uni-scss`, copying the example code directly will not work properly.
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-file-picker) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
-Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name=uni-file-picker), select `Import sample project using HBuilderX` on the right side of the page to experience the complete component example.
 :::
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/file-picker/file-picker

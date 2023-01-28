@@ -197,12 +197,14 @@
 |del-icon|Boolean| true	| -| 是否显示删除按钮	|
 |auto-upload| Boolean| true	| -| 是否自动上传，值为`false`则只触发@select,可自行上传|
 |limit| Number\String| 9	| -| 最大选择个数 ，h5 会自动忽略多选的部分|
-| title| String	| -| -| 组件标题，右侧显示上传计数|
+|title| String	| -| -| 组件标题，右侧显示上传计数|
 |mode| String	| list	| list/grid| 选择文件后的文件列表样式|
 |file-mediatype| String	| image	| image/video/all| 选择文件类型,all 只支持 H5 和微信小程序平台|
 |file-extname| Array\String| -| -| 选择文件后缀，字符串的情况下需要用逗号分隔（推荐使用字符串），根据 `file-mediatype` 属性而不同|
 |list-styles|Object| -| -| `mode:list` 时的样式|
 |image-styles|Object| -| -| `mode:grid` 时的样式	|
+|sizeType|Array| ['original', 'compressed']| 'original', 'compressed'| original 原图，compressed 压缩图，默认二者都有	|
+|sourceType|Array| ['album', 'camera']| 'album', 'camera'| album 从相册选图，camera 使用相机，默认二者都有。如需直接开相机或直接选相册，请只使用一个选项	|
 
 
 ### value 格式 

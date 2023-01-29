@@ -31,6 +31,7 @@
     * [路由与页面跳转](component/navigator.md)
       * [navigator](component/navigator.md)
     * [媒体组件](component/audio.md)
+      * [animation-view](component/animation-view.md)
       * [audio](component/audio.md)
       * [camera](component/camera.md)
       * [image](component/image.md)

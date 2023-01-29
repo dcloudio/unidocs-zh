@@ -599,7 +599,7 @@ uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插�
 uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug-in specification provides a plug-in mechanism, and more plug-in authors will provide various statistical plug-ins (such as e-commerce statistics, content statistics, etc.). See [Plugin Market](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
 
-## 营销短信群发@batch-sms <Badge text="uni-admin 2.1.0+" />
+## 群发短信@batch-sms <Badge text="uni-admin 2.1.0+" />
 
 如有客户关怀、会员服务、电商活动、新品上线等场景需要给用户发送短信时，无需开发，在uni-admin控制台选择用户/标签即可向用户群发短信，省时高效。
 同时支持动态替换短信模板变量，使短信更加个性化。

@@ -258,15 +258,16 @@ export default {
 
 返回值 为 string 类型
 
-|值|描述|
-|:-:|:-:|
-|csj|穿山甲|
-|gdt|腾讯优量汇（前称广点通）|
-|ks|快手|
-|sigmob|Sigmob|
+|值			|描述											|
+|:-:		|:-:											|
+|csj		|穿山甲										|
+|gdt		|腾讯优量汇（前称广点通）	|
+|ks			|快手											|
+|sigmob	|Sigmob										|
+|gg			|Google AdMob							|
+|pg			|海外穿山甲								|
 
 示例代码
-
 
 ```html
 <template>
@@ -368,18 +369,13 @@ App平台 3.1.15+ 支持穿山甲/优量汇/快手
 
 相对来讲服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
 
-
 ![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
-
-
 
 如何使用
 1. 申请激励视频广告位时开启服务器回调
 2. 创建激励视频广告时传入回调参数
 
-
 urlCallback示例
-
 
 ```html
 <template>
@@ -410,50 +406,48 @@ export default {
 
 ### 服务器回调说明
 
-服务器回调基于[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)，详细流程如下:
+#### 服务器回调基于 [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)
 
-1. 登陆 [uniCloud](https://unicloud.dcloud.net.cn/) web控制台，新建服务空间或选择已有服务空间，然后在HBuilderX中新建uni-app项目并关联服务空间，新建云函数上传，用于接收广告的回调
-2. 在 [uniAD](https://uniad.dcloud.net.cn/) web控制台开通服务器回调并选择上一步新建的云函数
-3. 开通后将在选择的服务空间下自动部署一个加密云函数 `uniAdCallback`
-4. `uniAdCallback` 接收广告商服务器回调验证签名并抹平穿山甲/优量汇/快手参数差异，然后以 [callFunction](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
-5. 用户在自己的云函数中处理业务
-
-注意：
-1. 新建的云函数名称不能使用 `uniAdCallback`
-2. 服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果
-3. 不建议在 `uniAD` web控制修改回调的服务空间和云函数名称，因为修改后生效需要一段时间
-
-### 微信小程序说明@callbackweixin
-
-3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id-summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
-
-#### 接入流程
-
-1. 项目使用了 [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) 并更新到 1.0.8+
-2. 使用 [uni-open-bridge](/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
-3. 配置 [安全网络](/uniCloud/secure-network.html)
-
-### Q&A
-
-Q: 回调为什么使用[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)，而不是直接配置开发者的服务器
-A：
 1. 由于多家广告商的回调和签名验证逻辑不同，开发者需要写很多逻辑，`uniCloud` 中的云函数 `uniAdCallback` 已抹平了差异，开发者按照统一的参数处理即可
 2. 开发者的服务器有可能响应慢或失去响应造成回调数据丢失, 使用 `uniCloud` 可以帮助开发者保存一份来自广告商服务器的回调数据到开发者的云数据中，以便开发者主动查询
 3. `uniCloud` 可以承载大并发、防DDoS攻击，无需运营人员维护
 
-### 云函数uniAdCallback传递的参数
+#### 详细流程如下:
 
-|字段定义|类型|字段名称|备注|
-|:-:|:-:|:-:|:-:|
-|adpid|String|DCloud广告位id||
-|provider|String|广告服务商|csj、ks、gdt、sigmob|
-|platform|String|平台|iOS、Android|
-|trans_id|String|交易id|完成观看的唯一交易ID|
-|user_id|String|用户id|调用SDK透传，应用对用户的唯一标识|
-|extra|String|自定义数据|调用SDK传入并透传，如无需要则为空|
+1. 登陆 [uniCloud](https://unicloud.dcloud.net.cn/) web控制台
+2. 在应用的广告位项上配置激励视频回调，可选择云函数或传统服务器
+3. 开通后将在选择的服务空间下自动部署一个加密云函数 `uniAdCallback`
+4. `uniAdCallback` 接收广告商服务器回调验证签名并抹平穿山甲/优量汇/快手参数差异，然后以以下方式回调
+- 业务在uniCloud：通过[callFunction](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
+- 业务在传统服务器：以HTTP方式请求开发者配置的回调URL
 
+注意：
+1. 新建的云函数名称不能使用 `uniAdCallback`
+2. 服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果
+3. 不建议在 `uniAD` web控制修改回调的服务空间和云函数名称，因为修改后广告商生效需要一段时间
+4. 看一次广告收到2次回调结果，且 `trans_id` 相同，产生2次的可能原因有
+> 1.1 在云函数里没有向广告商的请求返回 isValid: true
+> 1.2 服务器响应过慢，广告商服务器重试
 
-#### 用户的云函数返回数据约定
+### 服务器回调参数@uniAdCallbackParameters
+
+|字段定义	|类型		|字段名称				|备注															|
+|:-:			|:-:		|:-:						|:-:															|
+|adpid		|String	|DCloud广告位id	|																	|
+|provider	|String	|广告服务商			|csj、ks、gdt、sigmob							|
+|platform	|String	|平台						|iOS、Android											|
+|sign			|String	|签名						|																	|
+|trans_id	|String	|交易id					|完成观看的唯一交易ID							|
+|user_id	|String	|用户id					|调用SDK透传，应用对用户的唯一标识|
+|extra		|String	|自定义数据			|调用SDK传入并透传，如无需要则为空|
+
+#### 签名生成方式@sign
+
+```
+sign = sha256(secret:transid)
+```
+
+#### 开发者返回数据约定
 
 返回json数据，字段如下：
 
@@ -461,30 +455,10 @@ A：
 :-|:-|:-|:-|
 isValid|校验结果|Blean|判定结果，是否发放奖励，具体发放奖励由用户自己的业务系统决定|
 
-示例
-```js
-exports.main = async (event, context) => {
-  //event为客户端上传的参数
-  console.log('event : ', event);
+#### 开发者云函数
 
-  return {
-    "isValid": true // 将结果返给广告商服务器，暂不支持在客户端获取此返回结果，可以先将结果报错到数据，由客户端发送请求到服务器查询确认
-  }
-};
-```
+示例代码
 
-注意事项
-1. 看一次广告收到2次回调结果，且 `trans_id` 相同，产生2次的可能原因有
-> 1.1 在云函数里没有向广告商的请求返回 isValid: true
-> 1.2 服务器响应过慢
-
-
-#### 用户云函数详细说明
-
-1. 如果业务使用了uniCloud，可以直接在云函数内部处理
-2. 没有使用uniCloud，将结果通过http发送给已有服务器
-
-示例代码: 用户业务系统在uniCloud
 ```js
 'use strict';
 
@@ -526,11 +500,11 @@ exports.main = async (event, context) => {
     trans_id: event.trans_id,
     sign: event.sign,
     user_id: event.user_id,
-    extra: event.extra,
+    extra: event.extra
   }
 
   // 注意::必须验签请求来源
-  const secret = "";// uniad 后台开通激励视频回调后生成的 Security key
+  const secret = ""; // uni-AD Web控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 Security key
   const trans_id = event.trans_id;
   const sign2 = crypto.createHash('sha256').update(`${secret}:${trans_id}`).digest('hex');
   if (event.sign !== sign2) {
@@ -546,124 +520,30 @@ exports.main = async (event, context) => {
 
   // 开发者在此处处理自己的回调业务，需要返回值
 
-  return null
+  return {
+    isValid: true
+  }
 };
 ```
 
-示例代码: 用户业务系统不在uniCloud，通过http的方式发送数据到已有服务器
-```js
-'use strict';
+提示：2023/01/29 起，uni-AD Web控制台支持配置传统服务器地址，简化开通流程
 
-const crypto = require('crypto');
+### 老用户升级@upgrade
 
-const db = uniCloud.database();
-
-const DEFAUTL_TIMEOUT = 30000;
-const DEFAUTL_RETRY_COUNT = 3;
-const RETRY_TIMEOUT = 3000;
-
-const ProviderType = {
-  CSJ: "csj",
-  GDT: "gdt",
-  KS: "ks"
-};
-
-const collectionName = "ad-callback-log"; // 如果选择了腾讯云，需要手动预创建表
-
-class DB {
-
-  static save(data) {
-    return new DB().add(data);
-  }
-
-  add(data) {
-    const collection = db.collection(collectionName);
-    const data2 = Object.assign(data, {
-      ad_type: 0,
-      create_date: new Date()
-    })
-    return collection.add(data2);
-  }
-}
-
-class UserServer {
-
-  static send(url, data) {
-    return new UserServer().sendHttpRequest(url, data);
-  }
-
-  async sendHttpRequest(url, data) {
-    let needRetry = data.provider !== ProviderType.GDT;
-    let retryCount = needRetry ? DEFAUTL_RETRY_COUNT : 1;
-    let timeout = needRetry ? RETRY_TIMEOUT : DEFAUTL_TIMEOUT;
-    let result = null;
-
-    while (retryCount > 0) {
-      console.log("sendHttpRequest::count::" + retryCount + "::", url, data);
-
-      try {
-        result = await uniCloud.httpclient.request(url, {
-          data,
-          dataType: 'json',
-          contentType: 'json',
-          timeout
-        });
-
-        if (result.data && result.data.isValid === true) {
-          break;
-        }
-      } catch (e) {
-        console.log(e);
-      }
-
-      retryCount--;
-    }
-
-    return result;
-  }
-}
-
-exports.main = async (event, context) => {
-  //event为客户端上传的参数
-  console.log('event : ', event);
-
-  const {
-    path,
-    queryStringParameters
-  } = event;
-
-  const data = {
-    adpid: event.adpid,
-    platform: event.platform,
-    provider: event.provider,
-    trans_id: event.trans_id,
-    sign: event.sign,
-    user_id: event.user_id,
-    extra: event.extra,
-  }
-
-  // 注意::必须验签请求来源
-  const secret = "";// uniad 后台开通激励视频回调后生成的 Security key
-  const trans_id = event.trans_id;
-  const sign2 = crypto.createHash('sha256').update(`${secret}:${trans_id}`).digest('hex');
-  if (event.sign !== sign2) {
-    return null;
-  }
+1. 在传统服务器增加[签名校验](/component/ad-rewarded-video.html#sign)
+2. 登陆 uni-AD [Web控制台](https://uniad.dcloud.net.cn/)，找到广告位对应的配置激励视频，选择 "业务在传统服务器" 并配置服务器HTTP地址
 
 
-  // 可选将回调记录保存到uniCloud，避免用户服务器没有响应时有日志可查，如果选择了保存记录需要做定时清理日志，避免日志过多影响性能
-  // try {
-  //   await DB.save(data);
-  // } catch (e) {
-  //   console.log(e);
-  // }
+### 微信小程序说明@callbackweixin
 
-  const url = "https://"; // 用户业务服务器地址，为了避免请求被伪造，必须使用签名的方式请求
-  let reuslt = await UserServer.send(url, data);
+3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id-summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
 
-  return reuslt
-};
-```
+
+#### 接入流程
+
+1. 项目使用了 [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) 并更新到 1.0.8+
+2. 使用 [uni-open-bridge](/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
+3. 配置 [安全网络](/uniCloud/secure-network.html)
 
 
 #### 安全注意
@@ -733,8 +613,9 @@ exports.main = async (event, context) => {
 
 #### 云函数介绍
 
-1. uniAdCallback：uni-AD自动部署，用于接收广告商服务器的 HTTP 请求并抹平参数差异，然后调用开发者云函数
-2. userAdCallback: 开发者创建的云函数，用于接收 uniAdCallback。如果业务系统不在uniCloud，可以通过 HTTP 的方式将回调数据发送到已有服务器，将产生出网流量
+1. uniAdCallback：uni-AD自动部署，用于接收广告商服务器的 HTTP 请求并抹平参数差异，然后调用开发者云函数或发送HTTP到开发者配置的服务器。
+2. userAdCallback: 开发者创建的云函数，用于接收 uniAdCallback，适用于业务系统在uniCloud。
+
 
 #### 流量费
 
@@ -746,11 +627,10 @@ exports.main = async (event, context) => {
 其中：
 
 - 资源使用量 = 云函数内存（单位为G） * 云函数平均单次执行时长（单位为秒） * 调用次数
-- 云函数调用次数 = 每次激励视频回调触发2次云函数调用 (uniAdCallback + userAdCallback)
 
 我们假设如下数据模型：
 
-- 云函数内存：512M，即0.5G （云函数内存默认为512M，用户可以自定义设置，最低可设置为128M）
+- 云函数内存：128M，即0.125G （用户可以自定义设置，最低可设置为128M）
 - 云函数平均单次执行时长：200毫秒，即0.2秒
 - 出网流量：单次请求 1KB
 
@@ -763,9 +643,9 @@ exports.main = async (event, context) => {
 ```
 云函数费用 = 资源使用量 * 0.000110592  + 调用次数 * 0.0133 / 10000
           = 云函数内存（单位为G） * 云函数平均单次执行时长（单位为秒） * 调用次数 + 调用次数 * 0.0133 / 10000
-          = 0.5G * 0.2S * 2 * 0.000110592 + 2 * 0.0133/10000
-          = 0.0000221184 + 0.00000266
-          = 0.0000247784（元）
+          = 0.125G * 0.2S * 2 * 0.000110592 + 2 * 0.0133/10000
+          = 0.0000055296 + 0.00000266
+          = 0.0000081896（元）
 ```
 
 2. 业务系统不在uniCloud
@@ -777,12 +657,14 @@ exports.main = async (event, context) => {
 ```
 云函数费用 = 资源使用量 * 0.000110592  + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8
           = 云函数内存（单位为G） * 云函数平均单次执行时长（单位为秒） * 调用次数 + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8
-          = 0.5G * 0.2S * 2 * 0.000110592 + 2 * 0.0133/10000 + 1KB * 0.8 / (1024 * 1024)
-          = 0.0000221184 + 0.00000266 + 7.62939453125e-7
-          = 0.000025541339453125（元）
+          = 0.125G * 0.2S * 0.000110592 + 0.0133/10000 + 1KB * 0.8 / (1024 * 1024)
+          = 0.0000027648 + 0.00000133 + 7.62939453125e-7
+          = 0.000004857739453125（元）
 ```
 
-注意：在实际业务中云函数费用可能会出现稍微偏高，如：开发者的服务器响应过慢时，广告商的服务器会重试，导致调用次数增加
+注意
+1. 在实际业务中云函数费用可能会出现稍微偏高，如：开发者的服务器响应过慢时，广告商的服务器会重试，导致调用次数增加
+2. 业务系统不在uniCloud的费用采用服务器配置升级后的计算方式，[升级参考](/component/ad-rewarded-video.html#upgrade)
 
 #### 总结
 
@@ -790,21 +672,21 @@ exports.main = async (event, context) => {
 
 |广告回调次数	|云函数费用(元)	|
 |:-:					|:-:						|
-|1						|0.0000247784		|
-|10						|0.000247784		|
-|100					|0.00247784			|
-|1000					|0.0247784			|
-|10000				|0.247784				|
+|1						|0.0000081896		|
+|10						|0.000081896		|
+|100					|0.00081896			|
+|1000					|0.0081896			|
+|10000				|0.081896				|
 
 2. 业务系统不在[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)，包含出网流量费用
 
 |广告回调次数	|云函数费用+出网流量费用(元)  |
 |:-:					|:-:												|
-|1						|0.000025541339453125				|
-|10						|0.00025541339453125				|
-|100					|0.0025541339453125003			|
-|1000					|0.025541339453125					|
-|10000				|0.25541339453125						|
+|1						|0.000004857739453125				|
+|10						|0.00004857739453125				|
+|100					|0.0004857739453125					|
+|1000					|0.004857739453125					|
+|10000				|0.04857739453125						|
 
 这个费用非常非常低，相比于广告收益，可以忽略。请开发者放心使用。
 

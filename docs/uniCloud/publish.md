@@ -96,7 +96,7 @@ Before `September 16, 2021`, the cross-domain configuration of Alibaba Cloud wil
 `2021年9月16日`之后阿里云跨域配置可以对前端网页托管生效，**仅对前端网页托管的自定义域名生效，不对默认域名生效，如何绑定自定义域名请参考：[前端网页托管绑定自定义域名](uniCloud/hosting.md?id=domain)**，设置之后可能需要几分钟才会生效。如果你在之前已经设置了跨域域名和前端网页托管的自定义域名，需要重新设置一次跨域域名才能生效。
 After `September 16, 2021`, Alibaba Cloud cross-domain configuration can take effect for front-end web hosting, **only for the custom domain name hosted by the front-end web page, not the default domain name. For how to bind a custom domain name, please refer to: [Front-end Web hosting is bound to a custom domain name](uniCloud/hosting.md?id=domain)**, it may take a few minutes to take effect after setting. If you have previously set up a cross-domain domain name and a custom domain name hosted on a front-end web page, you need to reset the cross-domain domain name to take effect.
 
-`2022年12月2日`阿里云正式版跨域配置支持使用通配符，限制配置10个跨域域名。正式版默认允许localhost跨域
+`2022年12月2日`阿里云正式版跨域配置支持使用通配符，限制配置9个跨域域名。正式版默认允许localhost跨域
 
 ## 客户端资源发行
 ## Client resource distribution

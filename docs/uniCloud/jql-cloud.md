@@ -80,7 +80,7 @@ module.exports = {
 
 如需在云函数/云对象中指定执行其他用户身份，需使用`setUser`方法
 
-setUser方法的参数是一个json对象，可传入uni-id的uid、role、permission，组合生效。
+setUser方法的参数是一个对象，可传入uni-id的uid、role、permission，组合生效。
 
 例：
 

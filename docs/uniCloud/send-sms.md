@@ -258,9 +258,9 @@ exports.main = async (event, context) => {
 
 特别注意：短信成功回执最长延迟为72小时。
 
-## 营销短信群发@batch-sms
+## 群发短信@batch-sms
 如有客户关怀、会员服务、电商活动、新品上线等场景需要给用户发送短信时，通过uni-admin群发短信功能，无需开发，及时送达用户。
-[营销短信群发配置](uniCloud/admin.md#batch-sms)
+[群发短信配置](uniCloud/admin.md#batch-sms)
 
 **功能亮点**
 
@@ -271,7 +271,7 @@ exports.main = async (event, context) => {
 发送前预览短信内容；防止内容错误，提高发送成功率
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/20230109155202.png)
 
-如何使用？查看[营销短信群发配置](uniCloud/admin.md#batch-sms)
+如何使用？查看[群发短信配置](uniCloud/admin.md#batch-sms)
 
 <style>
 	.join-group-chat{

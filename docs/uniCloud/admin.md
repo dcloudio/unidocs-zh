@@ -467,7 +467,7 @@ uni统计深入uni-app和uniCloud框架底层，提供了众多其他统计平�
 uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
 
-## 营销短信群发@batch-sms <Badge text="uni-admin 2.1.0+" />
+## 群发短信@batch-sms <Badge text="uni-admin 2.1.0+" />
 
 如有客户关怀、会员服务、电商活动、新品上线等场景需要给用户发送短信时，无需开发，在uni-admin控制台选择用户/标签即可向用户群发短信，省时高效。
 同时支持动态替换短信模板变量，使短信更加个性化。

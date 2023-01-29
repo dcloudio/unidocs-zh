@@ -103,8 +103,7 @@ In the above example, the jql extension uses the client's identity, to be precis
 如需在云函数/云对象中指定执行其他用户身份，需使用`setUser`方法
 To specify another user identity to execute in the cloud function/cloud object, use the `setUser` method
 
-setUser方法的参数是一个json对象，可传入uni-id的uid、role、permission，组合生效。
-The parameter of the setUser method is a json object, which can be passed in the uid, role, and permission of the uni-id, and the combination takes effect.
+setUser方法的参数是一个对象，可传入uni-id的uid、role、permission，组合生效。
 
 例：
 example:

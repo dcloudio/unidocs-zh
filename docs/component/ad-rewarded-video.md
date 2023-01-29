@@ -448,7 +448,7 @@ The rewarded video advertisement can support the callback from the advertisement
 相对来讲服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
 Relatively speaking, the server callback will be more secure, and you can rely on the anti-cheating mechanism of the advertising platform to prevent users from simulating the completion of watching the advertisement.
 
-![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
+![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback-01-29.png)
 
 如何使用
 how to use

@@ -292,8 +292,8 @@ uni.chooseImage({
 | quality | Number | 80 | 否 | 压缩质量，范围0～100，数值越小，质量越低，压缩率越高（仅对jpg有效） ||
 | width | String | auto | 否 | 缩放图片的宽度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据width与源图宽的缩放比例计算，若未设置width则使用源图宽度）|App 3.0.0+|
 | height | String | auto | 否 | 缩放图片的高度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据height与源图高的缩放比例计算，若未设置height则使用源图高度）|App 3.0.0+|
-| compressedWidth | Number | - | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressedHeight 为准等比缩放 |微信小程序2.26.0 +|
-| compressedHeight | Number | - | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放 |微信小程序2.26.0 +|
+| compressedWidth | Number | - | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressHeight 为准等比缩放 |微信小程序2.26.0 +|
+| compressHeight | Number | - | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放 |微信小程序2.26.0 +|
 | rotate | Number | 0 | 否 | 旋转度数，范围0～360 |App 3.0.0+|
 | success | Function |  | 否 | 接口调用成功的回调函数 ||
 | fail | Function |  | 否 | 接口调用失败的回调函数 ||

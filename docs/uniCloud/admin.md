@@ -95,6 +95,29 @@ The mobile terminal is as follows:
 uni-admin是完整开源的一个uni-app项目，任何熟悉uni-app的工程师都可以自行开发扩展功能。
 uni-admin is a complete open source uni-app project, any engineer familiar with uni-app can develop extended functions by themselves.
 
+6. 换肤功能 <Badge text="uni-admin 2.1.7+" />
+
+- uni-admin 自带两套皮肤：
+  - 默认蓝色皮肤
+
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-default-theme.jpg" width="400">
+
+  - 可切换绿柔皮肤：
+
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-green-theme.jpg" width="400">
+
+- 如果需要修改皮肤颜色，可以在 uni-admin 项目根目录的 `uni.scss` 文件中进行修改：
+
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-theme-config.jpg" height="400">
+
+- 如果需要增加皮肤，以下步骤为示例：
+  1. 在 `uni.scss` 文件的 `$themes` 属性中新增一个键值 **`blue`** 的配置：
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-theme-config-edit.jpg" height="400">
+
+  2. 修改项目根目录的 `admin.config.js` 文件，添加以下内容，**注意：`value` 的值需要与 `$themes` 中新增主题的键值保持一致**：
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-admin-theme-config-edit.jpg" height="400">
+  3. 重新运行到 web 端查看效果
+
 ## 使用说明
 
 ### 一键部署@fast-install
@@ -164,8 +187,10 @@ After the creation is complete, you can follow the `cloud service space initiali
 ## 目录结构
 
 ```bash
-├── cloudfunctions                      # 云函数
+┌── cloudfunctions                      # 云函数
 ├── common        
+│   │── admin-icons.css                 # admin-icons 图标样式
+│   │── theme.scss                      # 换肤功能样式
 │   │── uni.css                         # 公共样式
 │   └── uni-icons.css                   # icon样式
 ├── components                          # 自定义组件

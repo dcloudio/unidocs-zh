@@ -305,8 +305,8 @@ Listed below are some commonly used wheels
 - uni-sec-check：免费的内容安全审查，防止用户提交违法的文字或图片。[详见](https://ext.dcloud.net.cn/plugin?id=5460)
 - uni-sec-check: Free content security review to prevent users from submitting illegal text or images. [See details](https://ext.dcloud.net.cn/plugin?id=5460)
 - uni-upgrade-center：App升级中心。支持整包升级、wgt热更新；支持直接下载安装包或跳转应用商店。[详见](upgrade-center.md)
-- uni-push2：云端一体的推送，大幅简化推送开发。[/unipush-v2.md]
-- uni-im：开源IM。[uni-im.md]
+- uni-push2：云端一体的推送，大幅简化推送开发。[详见](/unipush-v2.md)
+- uni-im：开源IM。[详见](uni-im.md)
 
 **2. 社区的优秀插件**
 **2. Excellent plugins from the community**

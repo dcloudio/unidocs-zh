@@ -126,7 +126,7 @@ If the information you provide is flawed, causing DCloud to be unable to verify 
 
 ## 4. 服务等级
 
-**4.2 阿里云**
+**4.1 阿里云**
 
 阿里云提供了服务等级协议，见[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)。
 

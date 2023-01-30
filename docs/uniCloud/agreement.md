@@ -81,13 +81,32 @@ uniCloud 是 DCloud 联合阿里云、腾讯云等云厂商（以下简称云厂
 
 ## 4. 服务等级
 
+**4.2 阿里云**
+
+阿里云提供了服务等级协议，见[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)。
+
+如果您购买了uniCloud的阿里云服务空间，且阿里云未满足其承诺的服务标准，则可以索赔。
+
+索赔方式：按照如下模版，整理故障信息，发送邮件到service@dcloud.io，
+
+```
+1）客户名称：
+2）客户登录邮箱：
+3）故障SpaceID：
+4）故障起止时间：
+5）故障描述：
+6）故障日志（可以帮助确认故障的相关附件，截屏/日志等）
+```
+
+DCloud收到邮件后，将负责为您协调阿里云的赔偿。赔偿标准和相关规定见上述服务等级协议。
+
+**4.2 腾讯云**
+
 腾讯云提供了服务等级协议，见[https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)。
 
 如果您购买了uniCloud的腾讯云服务空间，且腾讯云未满足其承诺的服务标准，则可以索赔。
 
 DCloud将负责为您协调腾讯云的赔偿。赔偿标准和相关规定见上述服务等级协议。
-
-
 
 ## 5. 责任限制
 

@@ -19,9 +19,7 @@
 |√(2.5.5+, vue only)|√|x|x|x|x|x|
 
 - nvue的视图层是原生的，无法运行js。但提供了bindingx技术来解决通信阻塞。[详见](nvue-api.md#bindingx)
-- The view layer of nvue is native and cannot run js. But provides bindingx technology to solve communication blocking. [See details](nvue-api.md#bindingx)
-- 微信小程序下替代方案是wxs，这是微信提供的一个裁剪版renderjs。[详见](miniprogram-subject.md#wxs) 
-- The alternative under the WeChat applet is wxs, which is a cropped version of renderjs provided by WeChat. [See details](miniprogram-subject.md#wxs)
+- 微信小程序下替代方案是wxs，这是微信提供的一个裁剪版renderjs。[详见](miniprogram-subject.md#wxs)
 - web下不存在逻辑层和视图层的通信阻塞，也可以直接操作dom，所以在web端使用renderjs主要是为了跨端复用代码。如果只开发web端，没有必要使用renderjs。
 - There is no communication block between the logic layer and the view layer under the web, and the DOM can also be directly manipulated, so the use of renderjs on the web side is mainly for cross-end reuse of code. If you only develop the web side, there is no need to use renderjs.
 
@@ -85,9 +83,7 @@ In the same way, libraries such as `f2` and `threejs` can all be used in this wa
 * 目前仅支持内联使用。
 * Currently, only inline use is supported.
 * 不要直接引用大型类库，推荐通过动态创建 script 方式引用。
-* Don not reference large class libraries directly. It is recommended to refer to them by creating script dynamically.
-* 可以使用 vue 组件的生命周期不可以使用 App、Page 的生命周期
-* You can use the life cycle of vue components but not the life cycle of App and Page
+* 可以使用 vue 组件的生命周期(不支持 beforeDestroy、destroyed、beforeUnmount、unmounted)，不可以使用 App、Page 的生命周期
 * 视图层和逻辑层通讯方式与 [WXS](/tutorial/miniprogram-subject.html#wxs) 一致，另外可以通过 this.$ownerInstance 获取当前组件的 ComponentDescriptor 实例。
 * The communication method between the view layer and the logic layer is consistent with [WXS](/tutorial/miniprogram-subject.html#wxs). In addition, the ComponentDescriptor instance of the current component can be obtained through this.$ownerInstance.
 * 注意逻辑层给数据时最好一次性给到渲染层，而不是不停从逻辑层向渲染层发消息，那样还是会产生逻辑层和视图层的多次通信，还是会卡

@@ -1,4 +1,7 @@
 ## 概述
+
+> 实人认证功能自HBuilderX 3.7.1起支持
+
 实人认证源于支付宝的实人认证产品，是一款对用户身份信息真实性进行验证审核的服务套件，提供人脸核身服务。
 
 人脸核身服务搭载真人检测和人脸比对等生物识别技术以及权威数据源，可快速对自然人真实身份进行核验。开发者只需要通过简单的配置，即可在客户端内唤起前置摄像头、调用云端接口做活体检测与核身比对等操作。本产品安全稳定，通过率高，为用户提供便捷的数字身份识别解决方案，满足多种场景下身份核验的业务需求。
@@ -71,3 +74,262 @@
 - 如果验证成功 100000 次，则费用金额 = 100000 次 x 0.85 元/次 = 85000 元
 - 如果验证成功 110000 次，则费用金额 = 100000 次 x 0.85 元/次+10000 次 x 0.8 元/次 = 93000 元
 - 如果验证成功 550000 次，则费用金额 = 100000 次 x 0.85 元/次+100000 次 x 0.8 元/次+300000 次 x 0.7 元/次 + 50000 次 x 0.6 元/次=405000 元
+
+## 开始开发
+
+实人认证服务端接口仅能通过uniCloud云函数进行调用，完整调用流程如下：
+
+```mermaid
+sequenceDiagram
+  actor user as 用户端
+  participant cf as 云函数
+  participant service as 认证服务
+  user->>+cf: 上传姓名、身份证号获取certifyId
+  activate user
+  cf->>+service: 上传姓名、身份证号获取certifyId
+  service-->>-cf: 返回certifyId
+  cf-->>-user: 返回certifyId
+  user->>+service: 进行认证
+  service-->>-user: 返回认证结果
+  user->>+cf: 请求更新认证结果
+  cf->>+service: 请求认证结果
+  service-->-cf: 返回认证结果
+  cf-->-user: 更新用户认证信息返回认证成功
+  deactivate user
+```
+
+上述流程中涉及如下接口：
+
+- 云函数获取实人认证实例：[uniCloud.getFacialRecognitionVerifyManager()]()
+- 云函数上传姓名、身份证号获取certifyId：[frvManager.getCertifyId()]()
+- 云函数使用certifyId获取认证结果：[frvManager.getAuthResult()]()
+- 客户端调起sdk刷脸认证：[uni.startFacialRecognitionVerify()]()
+
+### 云函数接口
+
+实人认证相关接口由uni-cloud-verify扩展库提供，如何使用扩展库请参考：[云函数内使用扩展库](cf-functions.md#extension)
+
+#### 获取实人认证实例@get-frv-manager
+
+**接口形式**
+
+```js
+uniCloud.getFacialRecognitionVerifyManager(Object GetFacialRecognitionVerifyManagerParam)
+```
+
+**参数说明**
+
+|参数名		|类型		|必填	|默认值	|说明																																		|
+|:-:			|:-:		|:-:	|:-:		|:-:																																		|
+|requestId|String	|是		|-			|本次云函数请求的requestId，用于接口内部获取当前应用appId及客户端ip信息	|
+
+**返回值**
+
+此接口返回实人认证实例
+
+**示例代码**
+
+云函数
+
+```js
+exports.main = async (event, context) => {
+  const frvManager = uniCloud.getFacialRecognitionVerifyManager({
+    requestId: context.requestId
+  })
+};
+```
+
+云对象
+
+```js
+'use strict';
+module.exports = {
+  _before() {
+    this.frvManager = uniCloud.getFacialRecognitionVerifyManager({
+      requestId: this.getUniCloudRequestId()
+    })
+  }
+}
+```
+
+#### 获取certifyId@get-certify-id
+
+**接口形式**
+
+```js
+frvManager.getCertifyId(Object GetCertifyIdParam)
+```
+
+**参数说明**
+
+|参数名		|类型		|必填	|默认值	|说明					|
+|:-:			|:-:		|:-:	|:-:		|:-:					|
+|realName	|String	|是		|-			|用户真实姓名	|
+|idCard		|String	|是		|-			|用户身份证号	|
+
+**返回值**
+
+|字段名		|类型		|必备	|说明																								|
+|:-:			|:-:		|:-:	|:-:																								|
+|certifyId|String	|是		|认证id，用于客户端调用认证接口及云函数获取认证结果	|
+
+**示例代码**
+
+云函数
+
+```js
+exports.main = async (event, context) => {
+  const frvManager = uniCloud.getFacialRecognitionVerifyManager({
+    requestId: context.requestId
+  })
+  const result = await frvManager.getCertifyId({
+    realName: '张三',
+    idCard: 'xxxxxx'
+  })
+  return result
+};
+```
+
+云对象
+
+```js
+module.exports = {
+  _before() {
+    this.frvManager = uniCloud.getFacialRecognitionVerifyManager({
+      requestId: this.getUniCloudRequestId()
+    })
+  },
+  async getCertifyId() {
+    const result = await this.frvManager.getCertifyId({
+      realName: '张三',
+      idCard: 'xxxxxx'
+    })
+    return result
+  }
+}
+```
+
+#### 获取认证结果@get-auth-result
+
+**接口形式**
+
+```js
+frvManager.getAuthResult(Object GetAuthResultParam)
+```
+
+**参数说明**
+
+|参数名					|类型		|必填	|默认值	|说明																																			|
+|:-:						|:-:		|:-:	|:-:		|:-:																																			|
+|certifyId			|String	|是		|-			|认证id																																		|
+|needAlivePhoto	|String	|否		|N			|是否获取认证照片，Y_O （原始图片）、Y_M（虚化，背景马赛克）、N（不返图）	|
+
+**返回值**
+
+|字段名			|类型		|必备											|说明																																|
+|:-:				|:-:		|:-:											|:-:																																|
+|authState	|String	|是												|人脸检测状态。PROCESSING：初始化；SUCCESS：检测成功；FAIL：检测失败|
+|score			|Number	|authState为SUCCESS时必备	|活体检测结果分数																										|
+|quality		|Number	|authState为SUCCESS时必备	|人脸图片质量分																											|
+|base64Photo|String	|authState为SUCCESS时必备	|认证图片的base64内容																								|
+
+**示例代码**
+
+云函数
+
+```js
+exports.main = async (event, context) => {
+  const frvManager = uniCloud.getFacialRecognitionVerifyManager({
+    requestId: context.requestId
+  })
+  const result = await frvManager.getAuthResult({
+    certifyId: 'xxxxxx'
+  })
+  return result
+};
+```
+
+云对象
+
+```js
+module.exports = {
+  _before() {
+    this.frvManager = uniCloud.getFacialRecognitionVerifyManager({
+      requestId: this.getUniCloudRequestId()
+    })
+  },
+  async getAuthResult() {
+    const result = await this.frvManager.getAuthResult({
+      certifyId: 'xxxxxx'
+    })
+    return result
+  }
+}
+```
+
+#### 错误处理
+
+可以通过try catch捕获接口抛出的错误，接口抛出的错误为标准的[uni错误对象](../tutorial/err-spec.md)
+
+具体错误码规范见：[错误码](#err-code)
+
+**示例**
+
+```js
+module.exports = {
+  _before() {
+    this.frvManager = uniCloud.getFacialRecognitionVerifyManager({
+      requestId: this.getUniCloudRequestId()
+    })
+  },
+  async getAuthResult() {
+    try {
+      const result = await this.frvManager.getAuthResult({
+        certifyId: 'xxxxxx'
+      })
+      return result
+    } catch (e) {
+      if(e.errCode === 50001 || e.errCode === 50002) {
+        throw new Error('缺少参数或参数不正确')
+      }
+      throw e
+    }
+  }
+}
+```
+
+### 客户端接口
+
+#### 调起实人认证界面@start-frv
+
+
+
+### 错误码@err-code
+
+**云端错误码**
+
+|错误码	|说明																										|
+|:-:		|:-:																										|
+|0			|请求成功																								|
+|50001	|缺少参数																								|
+|50002	|参数类型、取值不正确																		|
+|54003	|appId不存在																						|
+|54004	|服务空间不在白名单中																		|
+|54020	|请求记录不存在，certifyId无效													|
+|54021	|云函数内缺少接口调用凭证，请联系DCloud处理							|
+|54022	|服务空间不存在																					|
+|55000	|服务器错误，请联系DCloud处理														|
+|55001	|Api调用失败，实人认证服务商服务不可用，请联系DCloud处理|
+|60000	|服务不可用，请联系DCloud处理														|
+
+**客户端错误码**
+
+|错误码	|错误信息					|描述																					|
+|---		|---							|---																					|
+|0			|刷脸完成					|实际结果需要通过服务端查询接口								|
+|10001	|certifyId不能为空|参数certifyId为空														|
+|10010	|刷脸异常					|刷脸异常,具体原因详见cause										|
+|10011	|验证中断					|如用户主动退出、验证超时等,具体原因详见cause	|
+|10012	|网络异常					|网络异常																			|
+|10013	|刷脸验证失败			|实际结果需要通过服务端查询结果								|
+|10020	|设备设置时间异常	|设备设置时间异常，仅iOS返回									|

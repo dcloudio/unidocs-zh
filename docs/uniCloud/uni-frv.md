@@ -100,10 +100,10 @@ sequenceDiagram
 
 上述流程中涉及如下接口：
 
-- 云函数获取实人认证实例：[uniCloud.getFacialRecognitionVerifyManager()]()
-- 云函数上传姓名、身份证号获取certifyId：[frvManager.getCertifyId()]()
-- 云函数使用certifyId获取认证结果：[frvManager.getAuthResult()]()
-- 客户端调起sdk刷脸认证：[uni.startFacialRecognitionVerify()]()
+- 云函数获取实人认证实例：[uniCloud.getFacialRecognitionVerifyManager()](#get-frv-manager)
+- 云函数上传姓名、身份证号获取certifyId：[frvManager.getCertifyId()](#get-certify-id)
+- 云函数使用certifyId获取认证结果：[frvManager.getAuthResult()](#get-auth-result)
+- 客户端调起sdk刷脸认证：[uni.startFacialRecognitionVerify()](#start-frv)
 
 ### 云函数接口
 

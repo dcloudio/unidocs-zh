@@ -93,8 +93,8 @@ sequenceDiagram
   service-->>-user: 返回认证结果
   user->>+cf: 请求更新认证结果
   cf->>+service: 请求认证结果
-  service-->-cf: 返回认证结果
-  cf-->-user: 更新用户认证信息返回认证成功
+  service-->>-cf: 返回认证结果
+  cf-->>-user: 更新用户认证信息返回认证成功
   deactivate user
 ```
 

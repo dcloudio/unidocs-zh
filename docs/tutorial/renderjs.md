@@ -12,7 +12,7 @@
 |√(2.5.5+，仅支持vue)|√|x|x|x|x|x|
 
 - nvue的视图层是原生的，无法运行js。但提供了bindingx技术来解决通信阻塞。[详见](nvue-api.md#bindingx)
-- 微信小程序下替代方案是wxs，这是微信提供的一个裁剪版renderjs。[详见](miniprogram-subject.md#wxs) 
+- 微信小程序下替代方案是wxs，这是微信提供的一个裁剪版renderjs。[详见](miniprogram-subject.md#wxs)
 - web下不存在逻辑层和视图层的通信阻塞，也可以直接操作dom，所以在web端使用renderjs主要是为了跨端复用代码。如果只开发web端，没有必要使用renderjs。
 
 ### 使用方式
@@ -59,7 +59,7 @@ uni-app的app端逻辑层和视图层是分离的，这种机制有很多好处�
 
 * 目前仅支持内联使用。
 * 不要直接引用大型类库，推荐通过动态创建 script 方式引用。
-* 可以使用 vue 组件的生命周期不可以使用 App、Page 的生命周期
+* 可以使用 vue 组件的生命周期(不支持 beforeDestroy、destroyed、beforeUnmount、unmounted)，不可以使用 App、Page 的生命周期
 * 视图层和逻辑层通讯方式与 [WXS](/tutorial/miniprogram-subject.html#wxs) 一致，另外可以通过 this.$ownerInstance 获取当前组件的 ComponentDescriptor 实例。
 * 注意逻辑层给数据时最好一次性给到渲染层，而不是不停从逻辑层向渲染层发消息，那样还是会产生逻辑层和视图层的多次通信，还是会卡
 * 观测更新的数据在视图层可以直接访问到。

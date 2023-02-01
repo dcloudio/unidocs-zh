@@ -267,7 +267,7 @@ db.collection('uni-id-users').get()
 |provider		|String	|是		|-							|aliyun、tencent																		|
 |spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
 |clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
-|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云支持															|
+|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云支持。阿里云正式版需将此值设为`https://api.next.bspapp.com`															|
  
 ## 创建集合/表的API@createCollection
 

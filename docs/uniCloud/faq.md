@@ -212,7 +212,7 @@ uniCloud的每个云函数是一个独立进程，不存在云函数级别的多
 港澳台及境外用户需要使用全球加速。uniCloud服务商为阿里云时支持配置全球加速，步骤如下：
 
 1. 参考[阿里云全球加速](https://help.aliyun.com/document_detail/153198.html)文档，开通服务并对`自有域名`进行加速
-2. 将上述域名CNAME到`api.bspapp.com`
+2. 将上述域名CNAME到`api.next.bspapp.com`
 3. [自行初始化uniCloud](uniCloud/init.md)传入endpoint参数，其值为开通全球加速的自有域名
 
 ### 腾讯云提示当前实名主体已经有三个账号怎么办@tencent-exceed-account-limit
@@ -374,7 +374,7 @@ uniCloud客户端callFunction及数据库相关接口会返回Promise类型结�
 
 **长时间未使用的服务空间再次访问时报错**
 
-可能出现的错误信息有：`请求云函数超时`、`Response timeout for 10000ms, POST https://api.bspapp.com/server -1`
+可能出现的错误信息有：`请求云函数超时`、`Response timeout for 10000ms, POST https://api.next.bspapp.com/server -1`
 
 此问题一般是数据库长时间未访问，mongoDB WiredTiger存储引擎在内存中淘汰了表和索引，导致数据库请求超时引发云函数报错。
 

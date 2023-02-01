@@ -382,9 +382,7 @@ db.collection('uni-id-users').get()
 |spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
 |spaceId |String |Yes |- |Service space ID, **Note that it is the service space ID, not the service space name** |
 |clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
-|clientSecret |String |Yes |- |Only supported by Alibaba Cloud, you can view it in the [uniCloud console](https://unicloud.dcloud.net.cn) service space list |
-|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云支持															|
-|endpoint |String |No |`https://api.bspapp.com` |Service space address, only supported by Alibaba Cloud |
+|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云支持。阿里云正式版需将此值设为`https://api.next.bspapp.com`															|
  
 ## 创建集合/表的API@createCollection
 ## Create collection/table API@createCollection

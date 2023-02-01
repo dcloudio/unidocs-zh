@@ -255,13 +255,17 @@ When deploying uni statistics, you can choose to use the Alibaba Cloud version o
 | uniCloud服务提供商 |      request 合法域名       |
 | uniCloud service provider | request legal domain name |
 | :--------: | :-------------------------: |
-|   阿里云   |       api.bspapp.com        |
-| Alibaba Cloud | api.bspapp.com |
+|   阿里云公测版   |       api.bspapp.com        |
+|   阿里云正式版   |       api.next.bspapp.com        |
 |   腾讯云   | tcb-api.tencentcloudapi.com |
 | Tencent Cloud | tcb-api.tencentcloudapi.com |
 
 根据选择的uniCloud云厂商，配置相应的域名到小程序的域名白名单配置里即可。
 According to the selected uniCloud cloud vendor, you can configure the corresponding domain name in the domain name whitelist configuration of the MiniApp.
+
+**注意**
+
+- 阿里云迁移正式版后未重新发布的项目仍会访问公测版地址`api.bspapp.com`
 
 #### 调试模式
 #### debug mode

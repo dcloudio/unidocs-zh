@@ -76,7 +76,7 @@ DCloud与个推深度合作，为uni-app的开发者提供了比传统方案便�
 
 `uni-push`即降低了开发成本，又提高了push送达率，还支持全平台，并且免费，是当前推送的最佳解决方案。
 
-## uni-push2.0费用说明
+## uni-push2.0 使用uniCloud生产的费用说明@cost
 
 uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而uniCloud价格很实惠：  
 - 调用10000次云函数仅需0.0133元

@@ -13,7 +13,7 @@
 | :------:				| :------------------:							| :------------------:																					|
 | uni-id					| uni_id_token											| uniId的Token（由于历史原因，此键名使用了下划线而不是中划线）											|
 | uni-id					| uni_id_token_expired							| uniIdToken的过期时间，时间戳形式（由于历史原因，此键名使用了下划线而不是中划线）|
-| uni-id-pages		| uni-id-pages-userInfo							| 待补充																												|
+| uni-id-pages		| uni-id-pages-userInfo							| 最近一次登录的用户信息														|
 | uni-admin				| uni-admin-theme										| admin当前使用的主题																						|
 | uni-admin				| uni-admin-statTabsData						| 缓存uni-stat-tabs组件内部数据																	|
 | uni-data-select	| uni-data-select-lastSelectedValue	| 记录最后一次选择的值																					|

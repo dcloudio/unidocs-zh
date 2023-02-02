@@ -111,8 +111,7 @@ Just like uni-app can be cross-end, uniCloud can be cross-cloud. Based on uniClo
 ### uniCloud为何可降低云服务租用成本
 ###Why uniCloud can reduce cloud service rental costs
 
-1、传统云服务的租用，按占用的硬件资源的上限值+固定时长来租用。
-1、 The rental of traditional cloud services is based on the upper limit of the occupied hardware resources + fixed duration.
+**1、传统云服务的租用，按占用的硬件资源的上限值+固定时长来租用。**
 
 传统云是按配置买服务器，买了之后不管用不用都要交钱。而serverless是按量计费，如果没有使用，一分钱都不用交。
 
@@ -133,8 +132,7 @@ Because of sharing a large resource pool, the cost of cloud service providers is
 从技术原理上serverless就有明显成本优势，所以租用serverless比租用传统云要便宜的多。
 From a technical point of view, serverless has obvious cost advantages, so renting serverless is much cheaper than renting traditional cloud.
 
-2、没有名目繁多的收费项
-2、 There are no various charges
+**2、没有名目繁多的收费项**
 
 在传统云的世界里，有大量的收费产品。
 In the world of traditional cloud, there are a plethora of premium offerings.
@@ -152,7 +150,7 @@ You must know that a high-defense package for anti-DDoS is at least tens of thou
 展开说下uniCloud为什么不用买高防也不害怕DDoS：由于阿里云和腾讯云的serverless有巨大的资源池，且serverless没有固定ip，云函数使用的是阿里云和腾讯云的自有域名，前端网页托管在cdn上，DDoS攻击者打不起、也打不挂uniCloud。
 Let's talk about why uniCloud does not need to buy high defense and is not afraid of DDoS: Because Alibaba Cloud and Tencent Cloud's serverless have huge resource pools, and serverless does not have a fixed IP, cloud functions use Alibaba Cloud and Tencent Cloud's own domain names, front-end Web pages are hosted on CDNs, and DDoS attackers can't fight or hang up uniCloud.
 
-3、云厂商的补贴优惠
+**3、云厂商的补贴优惠**
 
 uniCloud阿里云版为每个开发者提供1个免费的服务空间。传统云可没有这种优惠。
 
@@ -209,8 +207,7 @@ So, uniCloud is the best opportunity for the front-end to become a full-stack. J
 uniCloud最吸引人的是，它将开发效率提升了10倍以上。
 The most attractive thing about uniCloud is that it improves development efficiency by more than 10 times.
 
-在uniCloud推出的一年时间里，uni-app + uniCloud 已经变成了一个庞大的生态。包括非常多的工具、模块。
-In the one year since uniCloud was launched, uni-app + uniCloud has become a huge ecosystem. Including a lot of tools and modules.
+在uniCloud推出的3年时间里，uni-app + uniCloud 已经变成了一个庞大的生态。包括非常多的工具、模块。
 
 开发效率提升10倍，并非某个杀手功能的功劳，而是庞大的生态共同的作用。本章节篇幅较长，请耐心阅读。
 The 10-fold increase in development efficiency is not due to a certain killer function, but the common effect of a huge ecosystem. This chapter is long, please read it with patience.
@@ -218,7 +215,7 @@ The 10-fold increase in development efficiency is not due to a certain killer fu
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/c50d2741-6a47-4dcd-a02c-fdd683fa4ea4.png)
 
 #### 一个故事
-#### a story
+
 2020年初，uniCloud刚发布，新冠肺炎突然来袭，各地涌现大量抗疫项目需求。
 At the beginning of 2020, uniCloud was just released, the new crown pneumonia suddenly hit, and a large number of anti-epidemic projects emerged in various places.
 
@@ -246,8 +243,7 @@ In one year, the development efficiency has increased by nearly 1000 times!
 uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，以容易理解的方式讲解开发效率是怎么提升的。
 There is too much content in the uni cloud integrated ecology. Let us take a look at it, summarize and classify it, and explain how to improve the development efficiency in an easy-to-understand way.
 
-开发效率提升，分7个层次：
-The improvement of development efficiency is divided into 7 levels:
+开发效率提升，分8个层次：
 1. 提供众多现成轮子，不用自己写代码
 1. Provide many ready-made wheels, no need to write code yourself
 2. 如果没有现成轮子，那么用[schema2code](schema2code.md)代码生成工具，生成数据库的增删改查页面（是直接生成页面，不是生成接口）
@@ -269,7 +265,7 @@ The improvement of development efficiency is divided into 7 levels:
 Let's expand on each layer in turn.
 
 #### 第一层提效：提供众多现成的轮子
-#### First layer of efficiency: Provides many ready-made wheels
+
 这是云端一体生态里最容易理解的价值：大量开源模块。
 This is the most easily understood value in the cloud-integrated ecosystem: a large number of open source modules.
 
@@ -559,5 +555,4 @@ Because of the free operation and maintenance feature of serverless, developers 
 uniCloud是开发界的革命。在HBuilderX、uni-app、uniCloud三位一体的协同下、创新的功能设计下、丰富的生态和轮子支持下，开发者的开发效率，超过传统开发10倍以上。
 uniCloud is a revolution in the development world. With the cooperation of HBuilderX, uni-app, and uniCloud, innovative functional design, rich ecology and wheel support, the development efficiency of developers is more than 10 times that of traditional development.
 
-> 目前uniCloud已发展2年多，活跃服务空间数万，云函数日请求数量过亿。请放心使用。
-> At present, uniCloud has been developed for more than 2 years, with tens of thousands of active service spaces and over 100 million daily requests for cloud functions. Please use it with confidence.
+> 目前uniCloud已发展3年多，活跃服务空间数万，云函数日请求数量过亿。请放心使用。

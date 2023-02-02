@@ -98,6 +98,8 @@ Features of `uni-id-pages` include:
 │        │    │    └─uni-id-pages-avatar.vue
 │        │    ├─uni-id-pages-bind-mobile              通过微信获取手机号码绑定个人资料
 │        │    │    └─uni-id-pages-bind-mobile.vue
+│        │    ├─uni-id-pages-email-form               邮箱验证码组件
+│        │    │    └─uni-id-pages-email-form.vue
 │        │    ├─uni-id-pages-fab-login                悬浮的切换登录方式组件
 │        │    │    └─uni-id-pages-fab-login.vue
 │        │    ├─uni-id-pages-sms-form                 获取短信验证码组件
@@ -114,16 +116,18 @@ Features of `uni-id-pages` include:
 │        │    │    └─login-withpwd.vue                密码登录
 │        │    ├─register                    
 │        │    │    ├─register.vue                     通过用户名密码注册账号
+│        │    │    ├─register-admin.vue               创建超级管理员
 │        │    │    ├─register-by-email.vue            通过邮箱验证码注册账号
 │        │    │    └─validator.js                     注册账号页的表单验证规则文件
 │        │    ├─retrieve                              
 │        │    │    ├─retrieve-by-email.vue            通过邮箱验证码重置密码
-│        │    │    └─retrieve.vue					  通过手机验证码重置密码
+│        │    │    └─retrieve.vue					            通过手机验证码重置密码
 │        │    └─userinfo
 │        │        ├─bind-mobile.vue                   绑定手机号码
 │        │        ├─change_pwd.vue                    修改密码
 │        │        ├─cropImage.vue                     裁剪图片
 │        │        ├─deactivate.vue                    注销账号
+│        │        ├─set-pwd.vue                       设置密码
 │        │        └─userinfo.js                       注册账号页的表单验证规则文件
 │        ├─static                                     静态资源目录
 │        ├─changelog.md                               更新日志

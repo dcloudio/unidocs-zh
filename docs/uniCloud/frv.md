@@ -403,7 +403,68 @@ module.exports = {
 
 #### 调起实人认证界面@start-frv
 
+```js
+uni.startFacialRecognitionVerify({
+    certifyId:"",
+    progressBarColor: "#CC0000", //刷脸圈的颜色
+    progressBarBackgroundColor: "#00CC00", //刷脸圈的背景颜色
+    quitAlertTitle:"刷脸页退出对话框的标题",
+    quitAlertMessage: "刷脸页退出对话框的内容",
+    timeoutAlertTitle: "刷脸页超时对话框的标题",
+    timeoutAlertMessage: "刷脸页超时对话框的内容",
+    failAlertTitle: "刷脸页错误提示对话框的标题",
+    failAlertMessage: "刷脸页错误提示对话框的内容",
+    title: "刷脸框顶部文案",
+    customBundleName: "iOS自定义UI资源文件名称(英文)",
+    success:(e)=>{
+        console.log(JSON.stringify(e))
+    },
+    fail:(e)=>{
+        console.log(JSON.stringify(e))
+    },
+    complete:(e)=>{
+        console.log(JSON.stringify(e))
+    }
+})
+```
 
+**参数说明**
+
+| 参数											| 类型	| 是否必传| 支持平台	|描述																														|
+|---												|---		|---			|---				|---																														|
+| certifyId									| String| 是			| 安卓、iOS	|认证流水号，由服务端根据接入的业务模式调用对应的初始化接口获取	|
+| progressBarColor					| String| 否			| 安卓、iOS	| 刷脸圈的颜色																									|
+| activityIndicatorColor		| String| 否			| iOS				| 网络等待菊花颜色																							|
+| progressBarBackgroundColor| String| 否			| 安卓			| 刷脸圈的背景颜色																							|
+| quitAlertTitle						| String| 否			| 安卓			| 刷脸页退出对话框的标题																				|
+| quitAlertMessage					| String| 否			| 安卓			| 刷脸页退出对话框的内容																				|
+| timeoutAlertTitle					| String| 否			| 安卓			| 刷脸页超时对话框的标题																				|
+| timeoutAlertMessage				| String| 否			| 安卓			| 刷脸页超时对话框的内容																				|
+| failAlertTitle						| String| 否			| 安卓			| 刷脸页错误提示对话框的标题																		|
+| failAlertMessage					| String| 否			| 安卓			| 刷脸页错误提示对话框的内容																		|
+| title											| String| 否			| 安卓			| 刷脸圈的颜色																									|
+| success										| String| 否			| 安卓、iOS	| 成功回调																											|
+| fail											| String| 否			| 安卓、iOS	| 失败回调																											|
+| complete									| String| 否			| 安卓、iOS	| 完成回调																											|
+
+
+注: 颜色值为六位十六进制字符串("#FF0000")
+
+**返回值**
+
+|参数				|类型		|必备	|描述																		|
+|---				|---		|---	|---																		|
+|errSubject	|String	|是		| 模块名称(uni-facialRecognitionVerify)	|
+|errCode		|Number	|是		|错误码，详情见：[错误码](#err-code)		|
+|errMsg			|String	|否		|错误信息，详情见：[错误码](#err-code)	|
+|cause			|Object	|否		|SDK返回的原始数据											|
+
+cause
+
+|参数		|描述					|
+|---		|---					|
+|code		|原始错误码		|
+|message|原始错误信息	|
 
 ### 错误码@err-code
 

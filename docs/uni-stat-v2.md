@@ -191,9 +191,7 @@ Set the `version` property to `"2"` to enable new version statistics
 |version|String|"1"|"1" ， "2"|统计版本 ，如不填写，默认使用版本1.0，推荐使用2.0版本|
 |version|String|"1"|"1" , "2"|Statistical version, if not filled in, the default version 1.0 is used, and the 2.0 version is recommended|
 |debug|Boolean|false|true ， false|开启统计调试模式 ，会产生大量日志，且会在开发阶段上报数据，应用发布请关闭此项|
-|debug|Boolean|false|true , false|Enable the statistical debugging mode, which will generate a lot of logs, and will report data during the development stage, please turn off this item when the application is released|
-|reportInterval|Number|10|true ， false|前端数据上报周期 **HBuilderX 3.5.4+ 支持**|
-|reportInterval|Number|10|true ， false|Front-end data reporting cycle **HBuilderX 3.5.4+ support**|
+|reportInterval|Number|10|-|前端数据上报周期 **HBuilderX 3.5.4+ 支持**|
 |collectItems|Object|-|-|采集项配置 **HBuilderX 3.5.5+ 支持**|
 |collectItems|Object|-|-|collection item configuration **HBuilderX 3.5.5+ support**|
 

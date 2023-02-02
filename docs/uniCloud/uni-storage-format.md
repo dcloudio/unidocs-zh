@@ -19,6 +19,6 @@
 | uni-data-select	| uni-data-select-lastSelectedValue	| 记录最后一次选择的值																					|
 | 待补充					| UNI_LOCALE												| 待补充																												|
 | 待补充					| __DC_STAT_UUID										| 待补充																												|
-| 待补充					| __LAST_DCLOUD_APPID								| 待补充																												|
+| uniCloud客户端sdk| __LAST_DCLOUD_APPID								| 上次运行到此host+port的应用appId，仅开发调试期间生效。用于清理上个应用内存储的可能影响本次运行的内容																												|
 
 

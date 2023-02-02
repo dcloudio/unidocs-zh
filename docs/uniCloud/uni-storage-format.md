@@ -18,7 +18,7 @@
 | uni-admin					| uni-admin-statTabsData						| 缓存uni-stat-tabs组件内部数据																																				|
 | uni-data-select		| uni-data-select-lastSelectedValue	| 记录最后一次选择的值																																								|
 | uni-app客户端sdk	| UNI_LOCALE												| uni.setLocale 记录最后一次设置的语言（由于历史原因，此键名使用了下划线而不是中划线）								|
-| 待补充						| __DC_STAT_UUID										| 待补充																																															|
+| uni统计客户端sdk	| __DC_STAT_UUID										| 用户设备id																																													|
 | uniCloud客户端sdk	| __LAST_DCLOUD_APPID								| 上次运行到此host+port的应用appId，仅开发调试期间生效。用于清理上个应用内存储的可能影响本次运行的内容|
 
 

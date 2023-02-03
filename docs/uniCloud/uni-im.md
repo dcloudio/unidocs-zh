@@ -11,6 +11,14 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 
 下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-im](https://ext.dcloud.net.cn/plugin?name=uni-im)
 
+## 特点优势  
+- 性价比高；前后端代码均免费开源，相比竞品使用uni-im仅需花费极少的托管在uniCloud（serverless服务器）产生的费用[详情查看](#cost)
+- 全端可用
+- App端支持nvue，更好的长列表性能。list组件性能优势[详情参考](https://uniapp.dcloud.net.cn/component/list.html)
+- 智能本地缓存，更快的历史消息加载速度，更小的网络请求压力
+- 中心化响应式数据管理，切换会话不重头加载数据，更流畅的体验
+- App端聚合多个手机厂商推送通道，app不在线也可以收到消息
+
 ## uni-im 使用uniCloud产生的费用说明@cost
 
 uni-im本身并不收费，实际使用中需要依赖uniCloud云服务，会产生费用；而uniCloud的价格很实惠：  
@@ -41,14 +49,7 @@ uni-im本身并不收费，实际使用中需要依赖uniCloud云服务，会产
 
 合计：向500人群发送消息，会产生：1次云函数请求、4次数据库读操作、2次数据库写操作、1次uni-push2推送操作，即 (1 * 0.0133 + 4 * 0.015 + 2 * 0.05 + 1 * 0.0283)/10000 ≈ 0.000020元
 
-相比行业内同类型产品，uni-im仅收取如此便宜的uniCloud（serverless服务器）费用；在价格这块uni-im性价比极高。
-
-## 特点优势  
-- 全端可用
-- App端支持nvue，更好的长列表性能。list组件性能优势[详情参考](https://uniapp.dcloud.net.cn/component/list.html)
-- 智能本地缓存，更快的历史消息加载速度，更小的网络请求压力
-- 中心化响应式数据管理，切换会话不重头加载数据，更流畅的体验
-- App端聚合多个手机厂商推送通道，app不在线也可以收到消息
+相比市面上同类型产品，使用uni-im仅需花费如此便宜的uniCloud（serverless服务器）费用；在价格这块uni-im性价比极高。
 
 ## 版本计划  
 ### 已上线

@@ -37,7 +37,7 @@ HBuilderX有多种发行方式
 
 如果遇到正确配置了合法域名但是依然报`url not in domain list`，请尝试删除手机上的小程序、清理小程序所在的客户端缓存、重启对应的小程序开发工具后重试
 
-如果遇到`invalid ip xxx, not in whitelist`，请检查是否在小程序管理后台开启了域名白名单。如果没用到可以关闭，如果确认需要使用ip白名单，请开通腾讯云收费空间并使用[固定IP](uniCloud/cf-functions.md?id=eip)功能
+如果遇到`invalid ip xxx, not in whitelist`，请检查是否在小程序管理后台开启了域名白名单。如果没用到可以关闭，如果确认需要使用ip白名单，请参考：[固定IP](cf-functions.md#eip)
 
 **关于云函数本地调试服务在小程序中的使用**
 

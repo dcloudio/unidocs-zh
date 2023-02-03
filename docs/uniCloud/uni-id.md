@@ -1,5 +1,5 @@
 > 本文档为uni-id 3.x 版本文档。适用于老用户。
-> HBuilderX 3.5以上版本用户，请另行查阅 [uni-id 4+ 版本文档](uniCloud/uni-id-summary.md)。如何从旧版本升级到uni-id-pages请查看：[升级到uni-id-pages](uniCloud/uni-id-pages.md#m-to-co) -->
+> HBuilderX 3.5以上版本用户，请另行查阅 [uni-id 4+ 版本文档](uniCloud/uni-id-summary.md)。如何从旧版本升级到uni-id-pages请查看：[升级到uni-id-pages](uniCloud/uni-id-pages.md#m-to-co)
 
 # 需求背景
 

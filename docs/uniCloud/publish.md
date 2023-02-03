@@ -101,6 +101,8 @@ After `September 16, 2021`, Alibaba Cloud cross-domain configuration can take ef
 
 `2022年12月2日`阿里云正式版跨域配置支持使用通配符，限制配置9个跨域域名。正式版默认允许localhost跨域
 
+`2023年2月3日`阿里云正式版跨域配置对云存储生效，如果此前已配置跨域配置下次进行修改时会同步设置到云存储
+
 ## 客户端资源发行
 ## Client resource distribution
 

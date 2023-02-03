@@ -1,5 +1,8 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2023-02-03
+* 调整 阿里云跨域配置对云存储生效，如果此前已配置跨域配置下次进行修改时会同步设置到云存储
+
 #### 2023-01-18
 * 新增 schema扩展js支持引入公共模块及扩展库 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#deps-of-jql)
 * 新增 JQL触发器方法新增一些参数 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-param)

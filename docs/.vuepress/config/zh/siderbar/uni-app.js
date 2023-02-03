@@ -106,11 +106,6 @@ export default {
 			"prefix": "群15"
 		},
 		{
-			"number": "719211033",
-			"state": 1,
-			"prefix": "群16"
-		},
-		{
 			"number": "951348804",
 			"state": 1,
 			"prefix": "群17"
@@ -161,6 +156,11 @@ export default {
 			"prefix": "群27"
 		},
 		{
+			"number": "147867597",
+			"state": 1,
+			"prefix": "群26"
+		},
+		{
 			"number": "166188776",
 			"state": 1,
 			"prefix": "群28"
@@ -201,10 +201,10 @@ export default {
 			"prefix": "群35"
 		},
 		{
-			"number": "147867597",
+			"number": "719211033",
 			"state": 0,
-			"prefix": "群26"
+			"prefix": "群16"
 		}
 	],
-	joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=PaMae1UVayRPiAmNeOz29tfw4scHEske&jump_from=webapi&authKey=MwHneGU19nEOgmQ03up15chxicbt/jmQMRVJhJQRjfbuZ1Vd6UgxfPWhi+T0p7EN'
+	joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=NWETRxbA8p8xi02eaYs287feOa16KSIO&jump_from=webapi&authKey=2bZterASBX7NALFnsVaJM5kp86Ev0YVyhEWIEUEQXWeyj1iyjG/vYTGkyFKBxDkb'
 }

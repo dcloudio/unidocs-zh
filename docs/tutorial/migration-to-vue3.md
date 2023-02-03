@@ -44,6 +44,7 @@ export function createApp() {
 :::
 
 ## 环境变量
+## Environment variables
 
 ::: preview
 
@@ -51,10 +52,13 @@ export function createApp() {
 
 ```JS
 // 配置环境变量
+// Configure environment variables
 // 根目录.env文件 必须 VUE_APP_ 开头
+// Root directory .env file must start with VUE_APP_
 VUE_APP_SOME_KEY = 123
 
 // 获取环境变量
+// Get environment variables
 process.env.NODE_ENV         // 应用运行的模式
 process.env.VUE_APP_SOME_KEY // 123
 ```
@@ -63,10 +67,13 @@ process.env.VUE_APP_SOME_KEY // 123
 
 ```JS
 // 配置环境变量
+// Configure environment variables
 // 根目录.env文件 必须 VITE_ 开头
+// Root directory .env file must start with VITE_
 VITE_SOME_KEY = 123
 
 // 获取环境变量
+// Get environment variables
 process.env.NODE_ENV          // 应用运行的模式
 import.meta.env.VITE_SOME_KEY // 123
 ```
@@ -75,7 +82,9 @@ import.meta.env.VITE_SOME_KEY // 123
 
 **Tips**
 - Vue2 更多 [设置环境变量方式](https://uniapp.dcloud.net.cn/tutorial/env.html#env)
+- Vue2 more [How to set environment variables](https://uniapp.dcloud.net.cn/tutorial/env.html#env)
 - Vue3 非H5端，应直接访问 process.env.* 获取环境变量，不支持访问 process
+- Vue3 non-H5 end, should directly access process.env.* to obtain environment variables, does not support access to process
 
 
 ## 全局属性
@@ -247,7 +256,9 @@ This is especially important because the `.native` modifier is removed. `emits` 
 ```
 
 ### Vue3 项目部分小程序端事件延迟或调用失败
+### Some MiniApp terminal events of Vue3 project are delayed or failed to call
 可在执行事件的元素上添加 `data-eventsync="true"` 属性以解决此问题，如：
+This can be resolved by adding the `data-eventsync="true"` attribute on the element that executes the event, such as:
 ```html
 <template>
   <button @click="onClick" data-eventsync="true">OK</button>

@@ -252,6 +252,7 @@ where中指定要查询的条件。比如只查询某个字段的值符合一定
 where specifies the conditions to be queried. For example, only query records whose value of a field meets certain conditions.
 
 组件的where属性，与clientDB的JS API是一致的，且内容较多，所以详见js API中相关`jql`文档：[详情](/uniCloud/jql.html#where)
+The where attribute of the component is consistent with the JS API of clientDB, and has more content, so see the relevant `jql` document in the js API for details: [Details](/uniCloud/jql.html#where)
 
 但组件与js API有一个差别，就是组件的属性中若使用js中的变量，需额外注意。
 However, there is a difference between the component and the js API, that is, if you use the variables in js in the properties of the component, you need to pay extra attention.
@@ -306,8 +307,10 @@ Method 2. Do not write in properties, but concatenate strings in js
 </script>
 ```
 多条件查询示例：
+Example of multi-condition query:
 
 方式1. 使用模板字符串，用${}包裹变量
+Method 1. Use template strings and wrap variables with ${}
 ```html
 <template>
     <view>
@@ -326,6 +329,7 @@ Method 2. Do not write in properties, but concatenate strings in js
 ```
 
 方式2. 使用js拼接字符串
+Method 2. Use js to splice strings
 ```html
 <template>
 	<view>
@@ -342,12 +346,14 @@ export default {
   }
   onLoad() {
     // id = this.tempstr 且 create_time > 1613960340000
+    // id = this.tempstr and create_time > 1613960340000
     this.sWhere = "id=='" + this.tempstr + "' && create_time > 1613960340000"
 
     // id = this.tempstr 或 name != null
     // this.sWhere = "id=='" + this.tempstr + "' || name != null"
     
     // 组件上配置了 loadtime = "manual", 这里需要手动加载数据
+    // Loadtime = "manual" is configured on the component, here the data needs to be loaded manually
     this.$nextTick(() => {
       this.$refs.udb.loadData()
     })
@@ -359,6 +365,7 @@ export default {
 The above example uses the == comparator, and for fuzzy searches, regular expressions are used. The plug-in market provides a complete cloud-integrated search template, and search pages can be used directly without self-development. [See details](https://ext.dcloud.net.cn/plugin?id=3851)
 
 使用正则模糊查询示例：
+Example of using regular fuzzy query:
 ```html
 <template>
 	<view class="content">
@@ -387,6 +394,7 @@ export default {
   methods: {
     onKeyInput(e) {
       // 实际开发中这里应该还有防抖或者节流操作，这里不做演示
+      // In actual development, there should be anti-shake or throttling operations here, no demonstration here
       this.searchVal = e.target.value
     }
   }
@@ -395,6 +403,7 @@ export default {
 ```
 
 再次强调，where条件内容较多，组件和api用法相同，完整的where条件文档在api文档中，另见：[JQL文档](/uniCloud/jql.html#where)
+Again, the where condition has more content, and the usage of components and api is the same. The complete where condition document is in the api document, see also: [JQL document](/uniCloud/jql.html#where)
 
 ## orderby
 
@@ -1117,6 +1126,7 @@ The following sample code does not use the uList component. It is recommended to
       </view>
       <view class="loading" v-if="loading">加载中...</view>
       <!-- 分页组件 -->
+      <!-- Pagination component -->
       <uni-pagination show-icon :page-size="pagination.size" :total="pagination.count" @change="onpagination" />
     </unicloud-db>
   </view>

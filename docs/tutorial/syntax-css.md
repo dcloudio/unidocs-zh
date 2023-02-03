@@ -311,7 +311,9 @@ The height of the following components in `uni-app` is fixed and cannot be modif
 | Components | Description | App | H5 |
 | :------------ | :--------- | :------------------------------------------------------------------------------------- | :--- |
 | NavigationBar | 导航栏     | 44px                                                                                   | 44px |
+| NavigationBar | Navigation Bar | 44px | 44px |
 | TabBar        | 底部选项卡 | HBuilderX 2.3.4 之前为 56px，2.3.4 起和 H5 调为一致，统一为 50px。（但可以自主更改高度） | 50px |
+| TabBar | Bottom Tab | Before HBuilderX 2.3.4, it was 56px. From 2.3.4 onwards, it is adjusted to be consistent with H5, and unified to 50px. (but the height can be changed independently) | 50px |
 
 各小程序平台，包括同小程序平台的 iOS 和 Android 的高度也不一样。
 The heights of various mini-program platforms, including iOS and Android of the same mini-program platform, are also different.

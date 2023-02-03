@@ -5,7 +5,9 @@
 > The Android emulator can be installed on both MacOSX and Windows; the iOS emulator can only be installed on MacOSX.
 
 - [安装iOS模拟器](#ios)
+- [Install iOS Simulator](#ios)
 - [安装Android模拟器](#android)
+- [Install Android Emulator](#android)
 
 ## ios模拟器@ios
 ## ios simulator @ios

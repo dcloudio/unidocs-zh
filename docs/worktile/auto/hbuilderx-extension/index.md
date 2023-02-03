@@ -68,7 +68,9 @@ As shown in the figure below, in the plug-in market, enter the [plug-in details 
 **pay attention:**
 
 - uni-app普通项目，需要通过插件`hbuilderx-for-uniapp-test`来安装测试环境。
+- For common uni-app projects, the test environment needs to be installed through the plug-in `hbuilderx-for-uniapp-test`.
 - uniapp-cli项目，只需在项目下安装相关测试依赖即可。[详情](#cli)
+- uniapp-cli project, just install the relevant test dependencies under the project. [Details](#cli)
 
 ### uni-app普通项目@uni-app
 ### uni-app common project @uni-app
@@ -80,6 +82,7 @@ For uni-app ordinary projects, when `initializing the test environment` or `runn
 As shown in the figure below, the project manager, select the project, right-click menu [initialize the test environment]
 
 注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
+Note: When installing environment dependencies, if it is detected that the test configuration files [env.js](/docs/file/env) and [jest.config.js](auto/quick-start?id=jestconfigjs) do not exist under the project, A test configuration file is automatically created.
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/env_install.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 
@@ -138,6 +141,7 @@ As shown in the figure below, when running the test, you can select the correspo
 ### Select devices @select-devices
 
 > 如果无法获取到设备信息，请[参考](tutorial/run/run-app-faq.md)
+> If the device information cannot be obtained, please [reference](tutorial/run/run-app-faq.md)
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/select_devices.png" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
 
@@ -154,6 +158,7 @@ Click the menu [Settings] [Plugin Configuration], find the hbuilderx-for-uniapp-
 **As pictured above**
 
 - 支持自定义**测试报告**路径。
+- Support custom **Test Report** path.
 - 自动修改jest.config.js文件中的testMatch，默认为`true`。去掉勾选后，将不再自动修改testMatch。
 - Automatically modify testMatch in jest.config.js file, default is `true`. After removing the check, testMatch will no longer be automatically modified.
 - 插件0.0.4+版本，新增配置项 支持自定义设置使用何种node版本进行uni-app编译。即您可以选择使用HBuilderX`内置的Node`、还是使用`操作系统`安装的Node进行uni-app编译。
@@ -234,6 +239,7 @@ describe('test title', () => {
 ```
 
 扩展：如上测试代码中，使用了`beforeAll`函数，它用于在所有测试之前执行。[了解jest更多钩子函数](#SetupTeardown)
+Extension: In the test code above, the `beforeAll` function is used, which is used to execute before all tests. [Learn more hook functions of jest](#SetupTeardown)
 
 ## Setup and Teardown@SetupTeardown
 

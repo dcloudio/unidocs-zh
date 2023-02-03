@@ -1,58 +1,81 @@
 ## uts for Android
 
 本文旨在帮助Android开发者，快速上手UTS。
+This article aims to help Android developers get started with UTS quickly.
 
 需要阅读者具备Android原生应用开发经验。
+Readers are required to have Android native application development experience.
 
 
 ## 1 了解UTS插件是什么
+## 1 Understand what the UTS plugin is
 
 `UTS插件`是`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点。[详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
+`UTS plug-in` is a new plug-in form of `uni-app`, which has the advantages of cross-platform, high efficiency, and easy debugging. [Details](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
 
 对于Android开发者来说，我们需要了解的是：
+For Android developers, what we need to know is:
 
 1. 编译时：当我们在保存`UTS`源码文件时，IDE会同步将其编译为对应的Kotlin代码。
+1. When compiling: When we save the `UTS` source code file, the IDE will synchronously compile it into the corresponding Kotlin code.
 2. 运行时：在真机运行/云打包时，这些编译后的kotlin源码也会成为apk的一部分
+2. Runtime: When the real machine is running/cloud packaging, these compiled kotlin source codes will also become part of the apk
 
 ## 2 掌握UTS语法
+## 2 Master UTS grammar
 
 ### 2.1  对于掌握kotlin语言者
+### 2.1 For those who master the kotlin language
 
 因为UTS语法与kotlin很类似，建议快速阅读后，在实践中掌握这UTS语法。[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/syntax-uts)。
+Because the UTS syntax is very similar to kotlin, it is recommended to master the UTS syntax in practice after a quick reading. [Introduction to uts grammar](https://uniapp.dcloud.net.cn/tutorial/syntax-uts).
 
 ### 2.2  对于仅掌握java语言者
+### 2.2 For those who only master the java language
 
 与js相比，uts的语法和java更加类似。但是依然存在较大的差异，需要详细阅读2.3语法部分。
+Compared with js, the syntax of uts is more similar to java. However, there are still big differences, and you need to read the 2.3 grammar section in detail.
 
 尽管开发UTS插件，并不要求一定掌握kotlin，但是鉴于`UTS`目前在android平台上，会编译为kotlin源码。学会kotlin语言，方便排查问题和复杂功能实现。
+Although the development of UTS plug-ins does not require mastering kotlin, since `UTS` is currently on the android platform, it will be compiled into kotlin source code. Learn the kotlin language to facilitate troubleshooting and implementation of complex functions.
 
 因此建议学习一下kotlin语法。
+Therefore, it is recommended to learn kotlin syntax.
 
 + kotlin [https://kotlinlang.org/](https://kotlinlang.org/)
 
 + kotlin for android [https://developer.android.com/kotlin](https://developer.android.com/kotlin)
 
 ### 2.3 数据类型差异
+### 2.3 Data Type Differences
 
 虽然 UTS 和 koltin 在数据类型上基本保持了一致，但是在部分场景下，还是会有差异，在此特别说明
+Although UTS and koltin are basically consistent in data types, there are still differences in some scenarios, which are specifically explained here
 
 原则上：  
+In principle:  
 
 **数据类型以UTS 内置的类型为准， 各原生平台都会对其自动适配。**
+**The data type is subject to the built-in type of UTS, and each native platform will automatically adapt to it. **
 
 **但是 UTS本身是跨平台语言，当具体平台的api 有明确要求时，需要以对方明确要求的数据类型为准。**
+**But UTS itself is a cross-platform language. When the API of a specific platform has clear requirements, the data type clearly required by the other party shall prevail. **
 
 -------------------------
 
 
 #### 举例一： Int 和Number
+#### Example 1: Int and Number
 
 默认情况下`UTS` 开发者可以使用 `Number` 覆盖`android` 平台上使用 `Int`的场景。
+By default `UTS` developers can use `Number` to override the scenario of using `Int` on the `android` platform.
 
 但是当开发者重写  `Service` 组件`onStartCommand` 方法时，`Android` API要求 明确要求后两个参数 必须为Int
+But when the developer rewrites the `onStartCommand` method of the `Service` component, the `Android` API requires that the last two parameters must be Int
 
  
 原生开发环境中，应该这样写：
+In the native development environment, it should be written like this:
 
  ```kotlin
  override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
@@ -62,8 +85,10 @@
 
 
  标准的TS环境中，只有`Number`类型而没有`Int`类型
+ In the standard TS environment, there is only `Number` type and no `Int` type
 
  为了适应这种情况，UTS 允许开发者使用原生平台的数据类型Int，来满足原生API对数据类型的要求：
+ In order to adapt to this situation, UTS allows developers to use the data type Int of the native platform to meet the data type requirements of the native API:
 
 ```ts
  override onStartCommand(intent:Intent ,flags:Int ,startId:Int):Int {
@@ -75,12 +100,16 @@
 
 
 #### 举例二：`MutableList`
+#### Example 2: `MutableList`
  
 `MutableList`是`android`平台 特有的数据类型，一般场景下，可以使用UTS中内置类型 `Array` 替代
+`MutableList` is a unique data type of the `android` platform. In general scenarios, the built-in type `Array` in UTS can be used instead
 
 但是在 调用`onAppActivityRequestPermissionsResult` 函数监听权限申请结果时，明确要求使用此类型的参数
+However, when calling the `onAppActivityRequestPermissionsResult` function to monitor the result of the permission application, it is explicitly required to use this type of parameter
 
 在原生环境中，应该这样写：
+In the native environment, it should be written like this:
 
 ```kotlin
 
@@ -91,8 +120,10 @@ onAppActivityRequestPermissionsResult(fun(requestCode: Number, permissions: Muta
 
 
 标准的TS环境中，没有`MutableList`类型，与之相近的数据类型是 `Array`
+In the standard TS environment, there is no `MutableList` type, and the similar data type is `Array`
 
 为了适应这种情况，UTS 允许开发者使用原生平台的数据类型`MutableList`，来满足原生平台API对数据类型的要求：
+In order to adapt to this situation, UTS allows developers to use the data type `MutableList` of the native platform to meet the data type requirements of the native platform API:
 
 ```ts
 onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableList<string>,grantResults: MutableList<number>) => {
@@ -102,10 +133,13 @@ onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableL
 ```
 
 ### 2.4 线程环境差异
+### 2.4 Differences in thread environment
 
 UTS环境中，默认是没有线程概念的。 代码默认执行在uts 单独的线程池中。
+In the UTS environment, there is no thread concept by default. The code is executed in a separate thread pool of uts by default.
 
 如果需要执行异步任务，建议通过内置函数`setTimeOut`执行
+If you need to perform asynchronous tasks, it is recommended to execute them through the built-in function `setTimeOut`
 
 ```ts
 console.log("这里是UTS默认线程 :"  + Thread.currentThread().getName())
@@ -115,6 +149,7 @@ setTimeOut(function(){
 ```
 
 如果是android原生api 需要部分代码必须执行在UI线程，则需要通过原生api进行操作：
+If it is an android native api that requires some code to be executed on the UI thread, it needs to be operated through the native api:
 
 ```ts
 class AddUIRunnable extends Runnable {
@@ -129,38 +164,53 @@ getUniActivity()!.runOnUiThread(uiRunable)
 
 
 ## 3 Android原生环境配置
+## 3 Android native environment configuration
 
 对于Android项目来说，除了源码之外，还会涉及依赖，资源，配置等常见问题
+For Android projects, in addition to source code, it also involves common issues such as dependencies, resources, and configurations.
 
 本章节将会介绍，UTS插件开发环境中如何配置这些属性
+This chapter will introduce how to configure these properties in the UTS plug-in development environment
 
 注意：
+Notice:
 
 + 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
++ 1 The example codes in this chapter are taken from Hello UTS [project address](https://gitcode.net/dcloud/hello-uts)
 + 2 本章节设计的配置，均需自定义基座后才能生效
++ 2 The configuration designed in this chapter will only take effect after customizing the base
 + 3 R文件的自动生成，已经在HBuilder X 3.6.9 版本支持，请使用最新版本开发
++ 3 The automatic generation of R files has been supported by HBuilder X 3.6.9, please use the latest version for development
 
 ### 3.1 配置AndroidManifest.xml
+### 3.1 Configure AndroidManifest.xml
 
 以hello UTS中的native-page插件中的配置文件为例:
+Take the configuration file in the native-page plug-in in hello UTS as an example:
 
 示例文件在hello uts中的位置：
+Example file location in hello uts:
 
 ~\uni_modules\uts-nativepage\utssdk\app-android\AndroidManifest.xml
 
 AndroidManifest.xml示例：
+AndroidManifest.xml example:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" 
   // 配置包名
+  // configure package name
   package="io.dcloud.uni_modules.uts_nativepage">
    // 配置权限
+   // configure permissions
    <!--创建前台服务权限-->
+   <!--Create foreground service permissions-->
    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application>
 	   // 配置service / activity
+	   // configure service / activity
 	   <service android:name="uts.sdk.modules.utsNativepage.ForeService"  />
        <activity android:name="uts.sdk.modules.utsNativepage.DemoActivity"></activity>
     </application>
@@ -170,13 +220,17 @@ AndroidManifest.xml示例：
 
 
 AndroidManifest.xml配置规则与android中的规则是一致的。
+AndroidManifest.xml configuration rules are consistent with those in android.
 
 
 特别提示：
+Special Note:
 
 每一个UTS插件对应android项目中的一个 lib module.
+Each UTS plugin corresponds to a lib module in the android project.
 
 与你在android studio中手动输入包名不同的是，如果你没有手动包名，HX会按照下面的规则默认生成一个：
+Unlike you manually enter the package name in android studio, if you do not have a manual package name, HX will generate one by default according to the following rules:
 
 ```
 uts插件默认包名规则：
@@ -193,29 +247,39 @@ uts-nativepage  ->  uts.sdk.modules.utsNativepage
 ```
 
 ### 3.2 配置res资源
+### 3.2 Configuring res resources
 
 ![](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_res_folder.jpg)
 
 示例文件在hello uts中的位置：
+Example file location in hello uts:
 
 ~\uni_modules\uts-nativepage\utssdk\app-android\res 
 
 除了这里列出的layout、values目录外，还支持anim等所有android标准资源目录
+In addition to the layout and values directories listed here, it also supports all android standard resource directories such as anim
 
 ### 3.3 配置asset资源
+### 3.3 Configuring asset resources
 
 以hello UTS中的uts-advance插件为例。
+Take the uts-advance plugin in hello UTS as an example.
 
 ![目录结构](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_assets_folder.jpg)
+![Directory structure](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_assets_folder.jpg)
 
 关键代码:
+key code:
 
 ```ts
 // 获取asset管理器
+// Get the asset manager
 let assetManager = getAppContext()!.getAssets();
 // 加载free.mp3 资源
+// load free.mp3 resource
 let afd = assetManager.openFd("free.mp3");
 // 使用android 自带的媒体组件进行播放
+// Use the media components that come with android to play
 let mediaPlayer = new MediaPlayer();
 mediaPlayer.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(), afd.getLength());
 mediaPlayer.prepare();
@@ -223,28 +287,36 @@ mediaPlayer.start();
 ```
 
 完整的代码在hello uts中的位置：
+The location of the complete code in hello uts:
 
 ~\uni_modules\uts-advance\utssdk\app-android\assets
 
 ### 3.4 增加libs依赖资源
+### 3.4 Add libs dependent resources
 
 以Hello UTS项目下的uts-tencentgeolocation 插件为例
+Take the uts-tencentgeolocation plugin under the Hello UTS project as an example
 
 ![](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_libs_folder.jpg)
 
 
 示例文件在hello uts中的位置：
+Example file location in hello uts:
 
 ~\uni_modules\uts-tencentgeolocation\utssdk\app-android\libs 
 
 ------
 
 HX3.6.7 版本内置了以下依赖
+The HX3.6.7 version has the following built-in dependencies
 
 开发者在使用列表中的依赖时，需要注意两点：
+Developers need to pay attention to two points when using the dependencies in the list:
 
 +  真机运行时，不需要添加列表中的依赖，即可直接引用相关类
++ When the real machine is running, you can directly reference related classes without adding dependencies in the list
 +  请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
++ Do not introduce the same dependencies by manually adding jar/aar, otherwise cloud packaging will fail due to dependency conflicts.
 
 ```gradle
 +--- my-imageloader.jar
@@ -300,14 +372,19 @@ HX3.6.7 版本内置了以下依赖
 
 
 ## 4 Android内置库@iodcloudutsandroid
+## 4 Android built-in library @iodcloudutsandroid
 
 在uts里，Android的所有api都可以访问。
+In uts, all APIs of Android can be accessed.
 
 但Android开发中经常要复写application和activity，uni-app主引擎已经复写了相关类。所以想要操作application和activity，需要调用uni-app引擎封装的API。
+However, application and activity are often rewritten in Android development, and the uni-app main engine has rewritten related classes. So if you want to operate application and activity, you need to call the API encapsulated by uni-app engine.
 
 这些api在`io.dcloud.uts`库下 UTSAndroid对象，具体见下。
+These APIs are UTSAndroid objects under `io.dcloud.uts` library, see below for details.
 
 ### 4.1 application 上下文相关
+### 4.1 application context dependent
 
 #### 4.1.1 getAppContext
 
@@ -319,12 +396,15 @@ import { UTSAndroid } from "io.dcloud.uts";
 ```
 
 用法说明：获取当前应用Application上下文，对应android平台 Context.getApplicationContext 函数实现
+Usage instructions: Get the current application context, corresponding to the android platform Context.getApplicationContext function implementation
 
 Android开发场景中，调用应用级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档](https://developer.android.google.cn/docs)
+In Android development scenarios, this context is required to call application-level resources/capabilities. For more usage, refer to [Android Official Documentation](https://developer.android.google.cn/docs)
 
 
 ```ts
 // [示例]获取asset下的音频，并且播放
+// [Example] Get the audio under asset and play it
 let assetManager = UTSAndroid.getAppContext()!.getAssets();
 let afd = assetManager.openFd("free.mp3");
 let mediaPlayer = new MediaPlayer();
@@ -344,10 +424,13 @@ import { UTSAndroid } from "io.dcloud.uts";
 ```
 
 获取指定插件资源的运行期绝对路径
+Get the runtime absolute path of the specified plugin resource
  
 ```ts
 // [示例]获取指定资源路径
+// [Example] Get the specified resource path
 // 得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
+// Get the runtime path of the file: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
 UTSAndroid.getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 ```
@@ -360,6 +443,7 @@ UTSAndroid.getResourcePath("uni_modules/test-uts-static/static/logo.png")
 
 
 App 内存不足时，系统回调函数 对应原生的API: onTrimMemory
+When the App memory is insufficient, the system callback function corresponds to the native API: onTrimMemory
 
 ```ts
 UTSAndroid.onAppTrimMemory((level:Number) => {
@@ -374,13 +458,17 @@ UTSAndroid.onAppTrimMemory((level:Number) => {
 
 
 onAppTrimMemory 对应的反注册函数
+The anti-registration function corresponding to onAppTrimMemory
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
+If the function passed in can be empty, if it is empty, it will be regarded as removing all listeners
 
 ```ts
 // 移除所有监听
+// remove all monitors
 UTSAndroid.offAppTrimMemory()
 // 移除指定监听
+// Remove the specified listener
 UTSAndroid.offAppTrimMemory((level:Number) => {
 	
 });
@@ -395,6 +483,7 @@ UTSAndroid.offAppTrimMemory((level:Number) => {
 
 
 App 配置发生变化时触发，比如横竖屏切换 对应原生的API: onConfigurationChanged
+Triggered when the App configuration changes, such as switching between horizontal and vertical screens Corresponding to the native API: onConfigurationChanged
 
 ```ts
 UTSAndroid.onAppConfigChange((ret:UTSJSONObject) => {
@@ -407,13 +496,17 @@ UTSAndroid.onAppConfigChange((ret:UTSJSONObject) => {
 
 
 与onAppConfigChange 对应的反注册函数
+Anti-registration function corresponding to onAppConfigChange
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
+If the function passed in can be empty, if it is empty, it will be regarded as removing all listeners
 
 ```ts
 // 移除所有监听
+// remove all monitors
 UTSAndroid.offAppConfigChange();
 // 移除指定监听
+// Remove the specified listener
 UTSAndroid.offAppConfigChange(function(ret){
 
 });
@@ -424,8 +517,10 @@ UTSAndroid.offAppConfigChange(function(ret){
 
 
 特别说明：除了本章节列出的函数外，android环境下 application 其他上下文方法都可以通过 getAppContext()!.xxx()的方式实现
+Special note: In addition to the functions listed in this chapter, other context methods of the application in the android environment can be implemented through getAppContext()!.xxx()
 
 比如获取app缓存目录：
+For example, to get the app cache directory:
 
 ```
 UTSAndroid.getAppContext()!.getExternalCacheDir()!.getPath()
@@ -433,6 +528,7 @@ UTSAndroid.getAppContext()!.getExternalCacheDir()!.getPath()
 
 
 ### 4.2 Activity 上下文
+### 4.2 Activity context
 
 #### 4.2.1 getUniActivity
 
@@ -440,11 +536,14 @@ UTSAndroid.getAppContext()!.getExternalCacheDir()!.getPath()
 
 
 获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
+Get the activity instance to which the current plug-in belongs, corresponding to the android platform getActivity function implementation
 
 Android开发场景中，调用活动的级别的资源/能力，需要使用此上下文。更多用法，参考[Android官方文档](https://developer.android.google.cn/docs)
+In the Android development scenario, this context needs to be used to invoke activity-level resources/capabilities. For more usage, refer to [Android Official Documentation](https://developer.android.google.cn/docs)
 
 ```ts
 // [示例]获取当前activity顶层容器
+// [Example] Get the current activity top-level container
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 
@@ -456,6 +555,7 @@ let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 
 
 App的activity onPause时触发
+Triggered when App's activity onPause
 
 ```ts
 UTSAndroid.onAppActivityPause(() => {
@@ -469,14 +569,18 @@ UTSAndroid.onAppActivityPause(() => {
 > HBuilderX 3.6.9+
 
 onAppActivityPause 对应的反注册函数
+The anti-registration function corresponding to onAppActivityPause
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
+If the function passed in can be empty, if it is empty, it will be regarded as removing all listeners
 
 
 ```ts
 // 移除全部监听
+// remove all monitors
 UTSAndroid.offAppActivityPause();
 // 移除指定监听
+// Remove the specified listener
 UTSAndroid.offAppActivityPause(() => {
 });
 ```
@@ -492,6 +596,7 @@ UTSAndroid.offAppActivityPause(() => {
 
 
 App的activity onResume时触发
+Triggered when App's activity onResume
 
 ```ts
 UTSAndroid.onAppActivityResume(() => {
@@ -505,14 +610,18 @@ UTSAndroid.onAppActivityResume(() => {
 > HBuilderX 3.6.9+
 
 onAppActivityResume 对应的反注册函数
+The anti-registration function corresponding to onAppActivityResume
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
+If the function passed in can be empty, if it is empty, it will be regarded as removing all listeners
 
 
 ```ts
 // 移除全部监听
+// remove all monitors
 UTSAndroid.onAppActivityResume();
 // 移除指定监听
+// Remove the specified listener
 UTSAndroid.onAppActivityResume(() => {
 });
 ```
@@ -527,6 +636,7 @@ UTSAndroid.onAppActivityResume(() => {
 
 
 App 的 activity onDestroy时触发
+Triggered when App's activity onDestroy
 
 ```ts
 UTSAndroid.onAppActivityDestroy(() => {
@@ -540,14 +650,18 @@ UTSAndroid.onAppActivityDestroy(() => {
 > HBuilderX 3.6.9+
 
 onAppActivityDestroy 对应的反注册函数
+Anti-registration function corresponding to onAppActivityDestroy
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
+If the function passed in can be empty, if it is empty, it will be regarded as removing all listeners
 
 
 ```ts
 // 移除全部监听
+// remove all monitors
 UTSAndroid.offAppActivityDestroy();
 // 移除指定监听
+// Remove the specified listener
 UTSAndroid.offAppActivityDestroy(() => {
 });
 ```
@@ -562,6 +676,7 @@ UTSAndroid.offAppActivityDestroy(() => {
 
 
 App 的 activity 回退物理按键点击时触发
+Triggered when the App's activity falls back to a physical button click
 
 ```ts
 UTSAndroid.onAppActivityBack(() => {
@@ -576,14 +691,18 @@ UTSAndroid.onAppActivityBack(() => {
 > HBuilderX 3.6.9+
 
 onAppActivityBack 对应的反注册函数
+The anti-registration function corresponding to onAppActivityBack
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
+If the function passed in can be empty, if it is empty, it will be regarded as removing all listeners
 
 
 ```ts
 // 移除全部监听
+// remove all monitors
 UTSAndroid.offAppActivityBack();
 // 移除指定监听
+// Remove the specified listener
 UTSAndroid.offAppActivityBack(() => {
 });
 ```
@@ -597,6 +716,7 @@ UTSAndroid.offAppActivityBack(() => {
 > HBuilderX 3.6.8+
 
 App 的 activity 启动其他activity的回调结果监听 对应原生的 onActivityResult
+The activity of the app starts the callback result monitoring of other activities, corresponding to the native onActivityResult
 
 ```ts
 UTSAndroid.onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
@@ -610,14 +730,18 @@ UTSAndroid.onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent
 > HBuilderX 3.6.9+
 
 onAppActivityResult 对应的反注册函数
+The anti-registration function corresponding to onAppActivityResult
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
+If the function passed in can be empty, if it is empty, it will be regarded as removing all listeners
 
 
 ```ts
 // 移除全部监听
+// remove all monitors
 UTSAndroid.offAppActivityResult();
 // 移除指定监听
+// Remove the specified listener
 UTSAndroid.offAppActivityResult(() => {
 });
 ```
@@ -631,6 +755,7 @@ UTSAndroid.offAppActivityResult(() => {
 
 
 App 的 activity 获得权限请求结果的回调
+App's activity gets the callback of permission request result
 
 ```ts
 UTSAndroid.onAppActivityRequestPermissionsResult((requestCode: number,
@@ -643,6 +768,7 @@ UTSAndroid.onAppActivityRequestPermissionsResult((requestCode: number,
 	});
 
 //发起定位权限申请
+//Initiate a location permission application
 ActivityCompat.requestPermissions(getUniActivity()!,
 	    arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 1001);
 
@@ -653,14 +779,18 @@ ActivityCompat.requestPermissions(getUniActivity()!,
 > HBuilderX 3.6.9+
 
 onAppActivityRequestPermissionsResult 对应的反注册函数
+The anti-registration function corresponding to onAppActivityRequestPermissionsResult
 
 如果传入的函数可为空，如果为空，则视为移除所有监听
+If the function passed in can be empty, if it is empty, it will be regarded as removing all listeners
 
 
 ```ts
 // 移除全部监听
+// remove all monitors
 UTSAndroid.offAppActivityRequestPermissionsResult();
 // 移除指定监听
+// Remove the specified listener
 UTSAndroid.offAppActivityRequestPermissionsResult(() => {
 });
 
@@ -697,6 +827,7 @@ kotlin中可为空的语法统一为类型后加`?`，以下面的代码为例
 
 ```ts
 // 一个可为空的字符串变量，变量名为user
+// A nullable string variable named user
 var user:String? = null
 ```
 
@@ -733,6 +864,7 @@ uts中，需要区分全局方法、成员方法
 
 ```ts
  // 成员方法
+ // member method
  startListener():void{
 	 
  }
@@ -740,6 +872,7 @@ uts中，需要区分全局方法、成员方法
  
 ```ts
  // 全局方法
+ // global method
  function startListener():void{
 	 
  }
@@ -785,6 +918,7 @@ user!!.sayHello();
 
 ```ts
 //ts 中快速实现super
+//Quickly implement super in ts
 constructor() : super() {
 }
 	
@@ -792,6 +926,7 @@ constructor() : super() {
 
 ```kotlin
 //kotlin 中快速实现super
+//Quick implementation of super in kotlin
 constructor (){
 	super();
 }
@@ -804,6 +939,7 @@ constructor (){
 
 ```kotlin
 // kotlin 新建事件监听
+// kotlin new event listener
 user.setListener(Listener(){
 	//todo
 });
@@ -813,10 +949,12 @@ user.setListener(Listener(){
 
 ```ts
 // 声明一个新的类，实现Listener
+// Declare a new class that implements Listener
 class MyListener extends Listener{
 	// todo
 }
 // 新建实例
+// Create a new instance
 let myListener = new MyListener();
 user.setListener(myListener);
 ```
@@ -866,6 +1004,7 @@ getUniActivity()!.startActivity(intent);
 开发者下意识的写法可能是：
 ```ts
 // 这样是错误的
+// this is wrong
 let a:Int =3
 let b:Int =4
 let c:Double  = a/b
@@ -875,6 +1014,7 @@ let c:Double  = a/b
 
 ```ts
 // 这样才是正确的
+// This is correct
 let a:Int =3
 let b:Int =4
 let c:Double  = a * 1.0 / b
@@ -893,6 +1033,7 @@ let c:Double  = a * 1.0 / b
 
 ```kotlin
 // 获取当前时间戳
+// Get the current timestamp
 System.currentTimeMillis()
 ```
 
@@ -901,9 +1042,11 @@ UTS环境中，lang包没有被特殊对待，需要手动引入。
 
 ```ts
 // 手动引入lang包下的类
+// Manually import the classes under the lang package
 import System from 'java.lang.System';
 
 // 获取当前时间戳
+// Get the current timestamp
 System.currentTimeMillis()
 ```
 
@@ -914,6 +1057,7 @@ System.currentTimeMillis()
 
 ```kotlin
 // 获取当前时间戳
+// Get the current timestamp
 class ScreenReceiver extends BroadcastReceiver(){
   
 }
@@ -936,11 +1080,13 @@ class ScreenReceiver extends BroadcastReceiver{
 
 ```ts
 // IDE会提示 name,status,desc 变量未使用
+// IDE will prompt that name, status, desc variables are not used
 onStatusUpdate(name:string, status:Int, desc:string){
 	
 }
 
 // 不会警告变量未使用
+// don't warn about variable unused
 onStatusUpdate(_name:string, _status:Int, _desc:string){
 	
 }
@@ -1011,8 +1157,10 @@ UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数�
 ```typescript
 
 // 得到一个MutableList
+// get a MutableList
 let permissionArray :String[] = []
 // 得到一个Array
+// get an Array
 console.log(permissionArray.toTypedArray())
 
 ```

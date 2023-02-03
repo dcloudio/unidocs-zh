@@ -233,12 +233,21 @@ Design specifications need to pay attention to:
 - **Please refer to [UniPush User Guide](https://ask.dcloud.net.cn/article/35622) for detailed usage tutorials of 5+ App and Wap2App projects.**
 
 ### 常见问题
+### common problem
 - **iOS勾选推送并且基于HBuilderX 3.6.14+打包ipa变大的问题**  
+- **IOS check push and based on HBuilderX 3.6.14+ package ipa becomes larger**
 1. 为什么会变大?  
+1. Why is it getting bigger?
   原因是推送SDK升级需要支持Swift环境，之前工程如果不包含Swift环境需要添加Swift环境(打包使用Swift语言开发的原生插件同样有类似问题)。
+  The reason is that the push SDK upgrade needs to support the Swift environment. If the previous project did not include the Swift environment, the Swift environment needs to be added (the native plug-ins developed using the Swift language also have similar problems).
 2. 为什么只有生产包变大?  
+2. Why only the production package gets bigger?
   只有用生产证书+AppStore类型的描述文件打出来的ipa会增大80M左右，苹果为了兼容iOS12.2之前的Swift版本，打包AppStore类型的ipa需要将全部版本的Swift环境添加到ipa的根目录，而测试证书以及adhoc描述文件打的包不会添加多个版本的Swift环境。
+  Only the ipa typed with the production certificate + AppStore type description file will increase by about 80M. In order to be compatible with the Swift version before iOS12.2, Apple needs to add all versions of the Swift environment to the root directory of the ipa when packaging the AppStore type ipa. The test certificate and adhoc description file package will not add multiple versions of the Swift environment.
   另：设置支持系统大于iOS12.2也可解决以上问题 [设置iOS支持的最低版本](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#ios) 
+  Another: Setting the support system to be greater than iOS12.2 can also solve the above problems [Set the minimum version supported by iOS](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#ios)
 3. ipa变大会导致用户下载的应用变大吗?    
+3. Will the increase in ipa lead to larger applications downloaded by users?
   大约只会增到2-3M左右。ipa上传的AppStore后苹果会根据用户手机系统最终只会保留一份Swift环境，用户实际下载的安装包不会大特别多。
+  It will only increase to about 2-3M. After the ipa uploaded to the AppStore, Apple will only retain a copy of the Swift environment according to the user's mobile phone system, and the actual installation package downloaded by the user will not be particularly large.
 

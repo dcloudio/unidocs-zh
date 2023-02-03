@@ -20,7 +20,9 @@ Functions (modules) using the so library in HBuilder/HBuilderX
 - Speech（语音输入）：百度，**注意：讯飞不支持64位**
 - Speech (voice input): Baidu, **Note: iFLYTEK does not support 64-bit**
 - Weex（原生渲染）：uni-app（自定义组件模式、nvue页面）， **注意：HBuilderX2.1.5及以上版本支持**
+- Weex (native rendering): uni-app (custom component mode, nvue page), **Note: HBuilderX2.1.5 and above versions support**
 - Android X5 Webview（腾讯TBS）：腾讯X5内核，**注意：不支持x86**
+- Android X5 Webview (Tencent TBS): Tencent X5 kernel, **Note: x86 is not supported**
 
 > HBuilderX2.7.0+ 调整 云端打包默认不再包含 x86 CPU类型库，减少apk包体积[详情](id=nox86)  
 > HBuilderX2.7.0+ adjustment Cloud package no longer includes x86 CPU type library by default, reducing the size of apk package [Details](id=nox86)
@@ -152,13 +154,21 @@ Not all simulations only support x86 instructions, such as Raiden (4.x), MuMu an
 
 
 ### 常见问题  
+### common problem  
 #### CPU类型配置了x86，云端打包后缺没有包含x86
+#### The CPU type is configured with x86, and the cloud package does not include x86
 如果勾选了不支持x86的内置模块或uni原生插件，云端打包后不会包含x86
+If you check the built-in modules that do not support x86 or uni native plug-ins, x86 will not be included after cloud packaging
 - 不支持x86的内置模块  
+- Built-in modules that do not support x86
   + Android X5 Webview（腾讯TBS）
+  + Android X5 Webview (Tencent TBS)
 - uni原生插件  
+- uni native plugin
   + 云端插件可以在插件页面详情页面的“平台兼容性”中查看兼容的CPU类型
+  + For cloud plugins, you can check the compatible CPU types in the "Platform Compatibility" of the plugin details page
   + 内地插件可以在[package.json查看abis属性配置](https://nativesupport.dcloud.net.cn/NativePlugin/course/package?id=abis)
+  + Mainland plug-ins can view the abis attribute configuration in [package.json](https://nativesupport.dcloud.net.cn/NativePlugin/course/package?id=abis)
 
 #### 上架Google Play市场对CPU类型的要求
 #### CPU type requirements for listing on Google Play Market

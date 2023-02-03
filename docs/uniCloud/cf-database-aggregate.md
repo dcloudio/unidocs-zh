@@ -47,6 +47,7 @@ exports.main = async function(){
 ```
 
 将上述两个用法修正为正确用法分别如下：
+Correct the above two usages to the correct usage as follows:
 
 
 ```js
@@ -73,6 +74,7 @@ exports.main = async function(){
 ## Aggregate expression @aggregate-expression
 
 表达式可以是字段路径、常量、或数据库运算方法。表达式可以嵌套表达式。
+Expressions can be field paths, constants, or database operations. Expressions can nest expressions.
 
 **字段路径**
 **Field Path**
@@ -122,8 +124,10 @@ let res = await db.collection('scores').aggregate()
 Constants can be of any type. By default, strings starting with $ are treated as field paths. To avoid this behavior, use `db.command.aggregate.literal` to declare it as a constant.
 
 **数据库运算方法**
+**Database operation method**
 
 参考[数据库运算方法](cf-database-aggregate-operator.md)
+Refer to [Database Operation Method](cf-database-aggregate-operator.md)
 
 ## addFields@aggregate-add-fields
 
@@ -1734,6 +1738,7 @@ match(<query condition>)
 ```
 
 查询条件与普通查询一致，可以用普通查询操作符，注意 match 阶段和其他聚合阶段不同，不可使用数据库运算方法，只能使用查询操作符。
+The query conditions are the same as those of ordinary queries, and ordinary query operators can be used. Note that the match stage is different from other aggregation stages. Database operations cannot be used, and only query operators can be used.
 ```js
 // 直接使用字符串
 // use string directly
@@ -2232,7 +2237,6 @@ sort({
     <fieldname2>: <collation>,
 })
 ```
-<!-- @ignore-translate -->
 `<排序规则>`可以是以下取值：
 `<collation />` can be the following values:
 

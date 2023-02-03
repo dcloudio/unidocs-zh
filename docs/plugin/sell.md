@@ -85,3 +85,4 @@ Since DCloud needs to pay the plug-in author, the plug-in author needs to provid
 In order to better serve plug-in authors and help plug-in authors save tax, the plug-in market has introduced `cloud account`, refer to [Cloud Account Introduction](https://ask.dcloud.net.cn/article/37525).
 
 `Tips：`为了不影响收益打款，请插件作者在月初尽快提供发票，并完善[财务信息](https://dev.dcloud.net.cn/pages/user/finance)
+`Tips:` In order not to affect the income and payment, the plug-in author is requested to provide the invoice as soon as possible at the beginning of the month, and complete the [financial information](https://dev.dcloud.net.cn/pages/user/finance)

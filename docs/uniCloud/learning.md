@@ -15,6 +15,7 @@ Just be familiar with js, then read the documentation of uniCloud, just like lea
 #### Video tutorial by DCloud:
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=1">
     <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg" alt="uniCloud视频教程" style="width: 70%;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg" alt="uniCloud video tutorial" style="width: 70%;">
 </a>
 
 
@@ -23,8 +24,11 @@ Just be familiar with js, then read the documentation of uniCloud, just like lea
 视频教程：
 Video tutorial:
 - [网易云课堂unicloud入门到精通](https://study.163.com/course/introduction.htm?courseId=1209978085#/courseDetail?tab=1)
+- [Netease cloud classroom unicloud entry to mastery](https://study.163.com/course/introduction.htm?courseId=1209978085#/courseDetail?tab=1)
 - [B站uniCloud多用户社区博客实战项目开发教程](https://www.bilibili.com/video/BV1yG4y1h7ck?p=1)
+- [B station uniCloud multi-user community blog practical project development tutorial](https://www.bilibili.com/video/BV1yG4y1h7ck?p=1)
 - [其他B站uniCloud视频教程](https://search.bilibili.com/all?keyword=unicloud)
+- [Other B station uniCloud video tutorials](https://search.bilibili.com/all?keyword=unicloud)
 
 
 uni-app结合云函数开发小程序博客教程：

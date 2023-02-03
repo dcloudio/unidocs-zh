@@ -35,17 +35,23 @@ According to the following table, set the request legal domain name and uploadFi
 |Service Provider |request legal domain name |uploadFile legal domain name |download legal domain name|
 |:-:		|:-:						|:-:								|:-:|
 |阿里云		|api.bspapp.com（公测版）、api.next.bspapp.com（商用版）				|bsppub.oss-cn-shanghai.aliyuncs.com（公测版），商用版每个服务空间都是不同的域名可以先上传一个文件将网络请求里面看到的上传域名添加即可。后续会在uniCloud web控制台展示相关域名信息|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
+| Aliyun | api.bspapp.com (beta version), api.next.bspapp.com (commercial version) | bsppub.oss-cn-shanghai.aliyuncs.com (beta version), each service space of the commercial version is For different domain names, you can first upload a file and add the uploaded domain name seen in the network request. Later, relevant domain name information will be displayed on the uniCloud web console | It needs to be configured only when files need to be downloaded from cloud storage. Different service space domain names are different, and you can see it in the web console to view file details |
 |腾讯云		|tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com		|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
 |Tencent Cloud |tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com |You only need to configure when you need to download files from cloud storage. Different service spaces have different domain names. You can view the file details in the web console. to |
 
 **注意**
+**Notice**
 
 - 如果需要用uni.request请求云存储内的文件，需要将云存储域名（即上表中的download合法域名）配置到request合法域名内
+- If you need to use uni.request to request files in the cloud storage, you need to configure the cloud storage domain name (that is, the download legal domain name in the above table) to the request legal domain name
 - 阿里云迁移正式版后未重新发布的项目仍会请求公测版地址（api.bspapp.com）
+- Projects that have not been republished after Alibaba Cloud has migrated to the official version will still request the public beta address (api.bspapp.com)
 
 **阿里云查看上传、下载安全域名**
+**Alibaba cloud view upload and download security domain name**
 
 ![阿里云查看上传、下载安全域名](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-aliyun-secure-domain.jpg)
+![Aliyun view upload and download secure domain name](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-aliyun-secure-domain.jpg)
 
 小程序开发工具的真机预览功能，必须添加上述域名白名单，否则无法调用云函数。模拟器的PC端预览、真机调试不受此影响。
 For the real machine preview function of the applet development tool, the above-mentioned domain name whitelist must be added, otherwise the cloud function cannot be called. The PC-side preview and real-device debugging of the simulator are not affected by this.
@@ -69,10 +75,13 @@ When you use the run menu in HBuilderX to run to the applet, it will connect to 
 Even if Ignore Domain Name Verification is checked in the development tool, the trial version and the official version will not ignore domain name verification. **If you want to release the 'Trial Version' or 'Release Version', please be sure to use the Release menu within HBuilderX. **
 
 ### Web中使用uniCloud的跨域处理@useinh5
+### Cross-domain processing using uniCloud in the Web @useinh5
 
 云函数的域名是bspapp.com或tencentcloudapi.com。但开发者的web前端肯定是部署在其他域名下（含unicloud的前端网页托管）。那么Web前端js访问云函数就涉及跨域问题，导致前端js无法连接云函数服务器。
+The domain name of the cloud function is bspapp.com or tencentcloudapi.com. But the developer's web front-end must be deployed under other domain names (including unicloud's front-end web page hosting). Then the web front-end js accessing the cloud function involves cross-domain issues, which makes the front-end js unable to connect to the cloud function server.
 
 此时需要在uniCloud后台操作，为云函数绑定安全域名。哪个域名下的前端网页的js想访问云函数，就配置哪个域名。如使用unicloud前端网页托管，不管是自带测试域名还是开发者的域名，只要想访问云函数，都得把域名配在这里。
+At this time, you need to operate in the background of uniCloud to bind a secure domain name to the cloud function. If the js of the front-end web page under which domain name wants to access the cloud function, configure the domain name. If you use unicloud front-end web page hosting, no matter if you have your own test domain name or a developer’s domain name, as long as you want to access cloud functions, you must configure the domain name here.
 
 <div align=center>
   <img src="https://img.cdn.aliyun.dcloud.net.cn/uni-app/uniCloud/uniCloud-add-domain.png"/>
@@ -80,9 +89,12 @@ Even if Ignore Domain Name Verification is checked in the development tool, the 
 
 
 > 注意跨域配置需要带上端口信息。例如：前端页面运行于：www.xxx.com:5001，跨域配置内配置：www.xxx.com不会对此页面生效，需要配置为：www.xxx.com:5001
+> Note that cross-domain configuration needs to bring port information. For example: the front-end page runs at: www.xxx.com:5001, the configuration in the cross-domain configuration: www.xxx.com will not take effect on this page, it needs to be configured as: www.xxx.com:5001
 
 如果是运行时期想突破跨域限制，还有如下方案：
+If you want to break through the cross-domain restrictions during runtime, there are the following solutions:
 - 运行到Web端时，使用HBuilderX内置浏览器，可以忽略跨域问题。
+- When running to the Web side, use the built-in browser of HBuilderX to ignore cross-domain issues.
 - 如果运行时，想使用外部浏览器运行，方案如下：
 - If you want to use an external browser to run when running, the scheme is as follows:
   * 方式1：在uniCloud web控制台绑定测试期的地址为安全域名，如配置：localhost:8080、192.168.0.1:8080（建议直接使用内置浏览器测试）
@@ -100,6 +112,7 @@ Before `September 16, 2021`, the cross-domain configuration of Alibaba Cloud wil
 After `September 16, 2021`, Alibaba Cloud cross-domain configuration can take effect for front-end web hosting, **only for the custom domain name hosted by the front-end web page, not the default domain name. For how to bind a custom domain name, please refer to: [Front-end Web hosting is bound to a custom domain name](uniCloud/hosting.md?id=domain)**, it may take a few minutes to take effect after setting. If you have previously set up a cross-domain domain name and a custom domain name hosted on a front-end web page, you need to reset the cross-domain domain name to take effect.
 
 `2022年12月2日`阿里云正式版跨域配置支持使用通配符，限制配置9个跨域域名。正式版默认允许localhost跨域
+`December 2, 2022` The cross-domain configuration of the official version of Alibaba Cloud supports the use of wildcards, and the configuration is limited to 9 cross-domain domain names. The official version allows localhost cross-domain by default
 
 `2023年2月3日`阿里云正式版跨域配置对云存储生效，如果此前已配置跨域配置下次进行修改时会同步设置到云存储
 
@@ -110,8 +123,10 @@ After `September 16, 2021`, Alibaba Cloud cross-domain configuration can take ef
 ### Front-end web hosting
 
 uniCloud支持前端静态网页托管，在HBuilderX中点发行菜单，生成Web，将生成的前端文件部署在uniCloud的前端网页托管内即可[详情参考](uniCloud/hosting.md)。
+uniCloud supports front-end static web page hosting, click the release menu in HBuilderX, generate Web, and deploy the generated front-end files in the front-end web page hosting of uniCloud [For details, refer to](uniCloud/hosting.md).
 
 需要注意的是你仍需在[uniCloud web控制台](https://unicloud.dcloud.net.cn) 配置绑定安全域名（见上一章节），这样前端网页的js才能访问云函数。
+It should be noted that you still need to configure the binding security domain name in [uniCloud web console](https://unicloud.dcloud.net.cn) (see the previous chapter), so that the js of the front-end web page can access the cloud function.
 
 ### App升级中心
 ### App Upgrade Center
@@ -132,3 +147,4 @@ App, applet, web unified publishing page. [See details](uni-publish.md)
 During large-scale development, it is often necessary to issue through the command line for continuous integration.
 
 HBuilderX提供了cli，[详见](https://hx.dcloud.net.cn/cli/README)
+HBuilderX provides cli, [see details](https://hx.dcloud.net.cn/cli/README)

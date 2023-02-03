@@ -53,9 +53,12 @@ The parameters and return values of the `callFunction` method are as follows:
 |success |bool |Whether the execution is successful |
 
 注意：
+Notice:
 
 - HBuilderX本地运行云函数时不返回`header`，需要在云端运行云函数才会返回
+- HBuilderX does not return `header` when running cloud functions locally, it needs to run cloud functions on the cloud to return
 - callFunction内部会使用uni.request来发送请求，如果有对uni.request写拦截器务必准确区分要拦截的内容
+- CallFunction will use uni.request to send requests internally. If there is an interceptor for uni.request, be sure to accurately distinguish the content to be intercepted
 
 返回格式，下文有详细解读 [详见](?id=returnformat)
 The return format is explained in detail below [see details](?id=returnformat)
@@ -174,7 +177,9 @@ The list of properties of the context object is as follows:
 |&nbsp;&#124;- spaceId		|string	|服务空间id																								|
 |&nbsp;&#124;- spaceId |string |Service space id |
 |&nbsp;&#124;- provider		|string	|服务空间供应商：aliyun&#124;tencent																	|
+|&nbsp;&#124;- provider | string |Service space provider: aliyun&#124;tencent |
 |&nbsp;&#124;- useOldSpaceId		|boolean	|当前获取的服务空间id是否为迁移前的服务空间id，新增于`HBuilderX 3.6.13`															|
+|&nbsp;&#124;- useOldSpaceId | boolean |Whether the currently obtained service space id is the service space id before migration, newly added in `HBuilderX 3.6.13` |
 |SOURCE						|string	|云函数调用来源 [详见](?id=context-source)																|
 |SOURCE |string |Cloud function call source [see details](?id=context-source) |
 |FUNCTION_NAME				|string	|获取云函数名称																							|

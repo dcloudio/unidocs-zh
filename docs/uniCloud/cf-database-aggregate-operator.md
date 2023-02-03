@@ -373,8 +373,10 @@ Calculates the natural logarithm of the given number.
 
       
 ####  API 说明
+#### API Description
 
 语法如下：  
+The syntax is as follows:
 
 ```js
 db.command.aggregate.ln(<number>)
@@ -383,17 +385,21 @@ db.command.aggregate.ln(<number>)
 `<number>` can be any expression that resolves to a non-negative number.
 
 `ln` 等价于 `log([<number>, Math.E])`，其中 `Math.E` 是 `JavaScript` 获取 `e` 的值的方法。  
+`ln` is equivalent to `log([<number>, Math.E])`, where `Math.E` is the `JavaScript` method for getting the value of `e`.
 
  
 ####  示例代码
+#### Sample code
 
 假设集合 curve 有如下记录：
+Suppose the collection curve has the following records:
 ```js
 { _id: 1, x: 1 }
 { _id: 2, x: 2 }
 { _id: 3, x: 3 }
 ```
 计算 ln(x) 的值：
+Compute the value of ln(x):
 ```js
 const $ = db.command.aggregate
 let res = await db.collection('curve').aggregate()
@@ -403,6 +409,7 @@ let res = await db.collection('curve').aggregate()
   .end()
 ```
 返回结果如下：
+The returned results are as follows:
 ```js
 { _id: 1, ln: 0 }
 { _id: 2, ln: 0.6931471805599453 }
@@ -493,8 +500,10 @@ db.command.aggregate.log(<number>)
 ####  db.command.aggregate.log10
 
 计算给定数字在对数底为 10 下的 log 值。  
+Calculates the log value of the given number at log base 10.
 
 语法如下：  
+The syntax is as follows:
 
  
 ```js

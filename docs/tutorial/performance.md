@@ -186,7 +186,9 @@ When some nvue pages are first rendered on Android low-end phones, they will see
 * App-nvue and H5 also support page preloading, [uni.preloadPage](https://uniapp.dcloud.io/api/preload-page), which can provide a better user experience
 
 ##### 优化背景色闪白
+##### Optimize the background color to flash white
 > HBuilder X 3.6.9+ 已支持暗黑模式。[详情](https://uniapp.dcloud.net.cn/tutorial/darkmode.html)
+> HBuilder X 3.6.9+ supports dark mode. [Details](https://uniapp.dcloud.net.cn/tutorial/darkmode.html)
 1. 如果是新页面进入时背景闪白
 1. If the background flashes when a new page enters
   * 如果页面背景是深色，在vue页面中可能会发生新窗体刚开始动画时是灰白色背景，动画结束时才变为深色背景，造成闪屏。这是因为webview的背景生效太慢的问题。此时需将样式写在 ``App.vue`` 里，可以加速页面样式渲染速度。``App.vue`` 里面的样式是全局样式，每次新开页面会优先加载 ``App.vue`` 里面的样式，然后加载普通 vue 页面的样式。

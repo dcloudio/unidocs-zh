@@ -15,5 +15,8 @@ Through the WeChat applet CI, you can upload the code using the upload key witho
 - 自动上传到微信平台，依赖CI插件，如弹窗提示要求安装CI插件，请点击确认安装；
 - Automatically upload to WeChat platform, rely on CI plug-in, if the pop-up window prompts to install CI plug-in, please click to confirm the installation;
 - 自动上传到微信平台，需要配置`上传密钥`，并正确填写`微信小程序appid`和`privatekey`；
+- To automatically upload to the WeChat platform, you need to configure the `upload key`, and fill in the `WeChat MiniApp appid` and `privatekey` correctly;
 - 自动上传到微信平台，如果开启了`IP白名单`，请确保微信平台已正确配置 `IP白名单`。
+- Automatically upload to the WeChat platform, if the `IP Whitelist` is enabled, please make sure that the `IP Whitelist` has been correctly configured on the WeChat platform.
 - 关于微信ci机器人编号，仅支持HBuilderX 3.6.18+
+- Regarding the WeChat ci robot number, only HBuilderX 3.6.18+ is supported

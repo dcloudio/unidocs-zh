@@ -86,7 +86,9 @@ When you delete a page, you need to do two things:
 |onNavigationBarSearchInputClicked|监听原生标题栏搜索输入框点击事件（pages.json 中的 searchInput 配置 disabled 为 true 时才会触发）|App、H5|1.6.0|
 |onNavigationBarSearchInputClicked|Listen to the click event of the native title bar search input box (only triggered when the searchInput configuration in pages.json is disabled to true)|App, H5|1.6.0|
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
+| onShareTimeline|Monitor users click on the upper right corner to forward to Moments|WeChat MiniApp| 2.8.1+|
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
+| onAddToFavorites|Monitor users click on the upper right corner to save|WeChat MiniApp, QQ MiniApp| 2.8.1+|
 
 `onInit`使用注意
 `onInit` use note
@@ -141,6 +143,7 @@ Description of the json object returned by `onTabItemTap`:
 | Attribute| Type| Instruction|
 |---|---|---|
 |index|Number|被点击tabItem的序号，从0开始|
+| index| Number|The serial number of the clicked tabItem, starting from 0|
 |pagePath|String|被点击tabItem的页面路径|
 | pagePath| String| The page path of the clicked tabItem|
 |text|String|被点击tabItem的按钮文字|
@@ -217,13 +220,21 @@ The `uni-app` component supports the same lifecycle as the vue standard componen
 | Function name| Instruction| Platform difference description| Minimum version|
 |:-|:-|:-|:-|
 |beforeCreate|在实例初始化之前被调用。[详见](https://v2.cn.vuejs.org/v2/api/#beforeCreate)|||
+|beforeCreate| is called before the instance is initialized. [See details](https://v2.cn.vuejs.org/v2/api/#beforeCreate)|||
 |created|在实例创建完成后被立即调用。[详见](https://v2.cn.vuejs.org/v2/api/#created)|||
+|created|is called immediately after the instance is created. [See](https://v2.cn.vuejs.org/v2/api/#created)|||
 |beforeMount|在挂载开始之前被调用。[详见](https://v2.cn.vuejs.org/v2/api/#beforeMount)|||
+|beforeMount| is called before the mount starts. [See details](https://v2.cn.vuejs.org/v2/api/#beforeMount)|||
 |mounted|挂载到实例上去之后调用。[详见](https://v2.cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用```$nextTick```[Vue官方文档](https://v2.cn.vuejs.org/v2/api/#vm-nextTick)|||
+| mounted|Called after the instance is mounted. [See details](https://v2.cn.vuejs.org/v2/api/#mounted) Note: It is not sure that all subcomponents are mounted here, if you need to perform operations after subcomponents are fully mounted Use ```$nextTick```[Vue official document](https://v2.cn.vuejs.org/v2/api/#vm-nextTick)|||
 |beforeUpdate|数据更新时调用，发生在虚拟 DOM 打补丁之前。[详见](https://v2.cn.vuejs.org/v2/api/#beforeUpdate)|仅H5平台支持||
+| beforeUpdate| Called when the data is updated, before the virtual DOM is patched. [See details](https://v2.cn.vuejs.org/v2/api/#beforeUpdate)|Only supported by H5 platform||
 |updated|由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。[详见](https://v2.cn.vuejs.org/v2/api/#updated)|仅H5平台支持||
+|updated|This hook is called after the virtual DOM has been re-rendered and patched due to data changes. [See details](https://v2.cn.vuejs.org/v2/api/#updated)|Only supported by H5 platform||
 |beforeDestroy|实例销毁之前调用。在这一步，实例仍然完全可用。[详见](https://v2.cn.vuejs.org/v2/api/#beforeDestroy)|||
+|beforeDestroy|Called before the instance is destroyed. At this step, the instance is still fully available. [See details](https://v2.cn.vuejs.org/v2/api/#beforeDestroy)|||
 |destroyed|Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。[详见](https://v2.cn.vuejs.org/v2/api/#destroyed)|||
+| destroyed| Called when the Vue instance is destroyed. After calling, everything pointed to by the Vue instance will be unbound, all event listeners will be removed, and all child instances will be destroyed. [See details](https://v2.cn.vuejs.org/v2/api/#destroyed)|||
 
 ## 页面调用接口
 ## page call interface
@@ -253,7 +264,6 @@ console.log(app.globalData)
 ### getCurrentPages()
 
 ```getCurrentPages()``` 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
-The ``getCurrentPages()``` function is used to get the current page stack instance, which is given in the order of the stack in the form of an array, the first element is the home page, and the last element is the current page.
 
 **注意：** ``getCurrentPages()``仅用于展示页面栈的情况，请勿修改页面栈，以免造成页面状态错误。
 **Note:** ``getCurrentPages()`` is only used to display the page stack, please do not modify the page stack to avoid page status errors.
@@ -620,3 +630,4 @@ Rendering based on native engines, although it is still a front-end technology s
 20. 目前不支持在 nvue 页面使用 `typescript/ts`。
 20. Currently using `typescript/ts` in nvue pages is not supported.
 21. nvue 页面关闭原生导航栏时，想要模拟状态栏，可以[参考文章](https://ask.dcloud.net.cn/article/35111)。但是，仍然强烈建议在 nvue 页面使用原生导航栏。nvue 的渲染速度再快，也没有原生导航栏快。原生排版引擎解析`json`绘制原生导航栏耗时很少，而解析 nvue 的 js 绘制整个页面的耗时要大的多，尤其在新页面进入动画期间，对于复杂页面，没有原生导航栏会在动画期间产生整个屏幕的白屏或闪屏。
+21. When the nvue page closes the native navigation bar, if you want to simulate the status bar, you can [refer to the article](https://ask.dcloud.net.cn/article/35111). However, it is still strongly recommended to use the native navigation bar in nvue pages. No matter how fast the rendering speed of nvue is, it is not as fast as the native navigation bar. It takes very little time for the native typesetting engine to parse `json` to draw the native navigation bar, but it takes much longer to parse the js of nvue to draw the entire page, especially when the new page enters the animation. For complex pages, there is no native navigation bar. Blank or flicker the entire screen during the animation.

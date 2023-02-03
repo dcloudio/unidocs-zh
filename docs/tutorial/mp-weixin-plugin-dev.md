@@ -119,8 +119,11 @@ plugin
 #### Compilation steps
 
 - 将 CLI 创建的工程编译器依赖更新到 3.2.1 以上，更新编译器依赖参考：[https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion](https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion)。
+- Update the compiler dependency of the project created by CLI to 3.2.1 or above, and update the compiler dependency reference: [https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion](https://uniapp. dcloud.net.cn/quickstart-cli.html#cliversion).
 - 执行命令行：`yarn dev:mp-weixin -- --plugin plugin-name`。
+- Execute the command line: `yarn dev:mp-weixin -- --plugin plugin-name`.
 - 其中 `plugin-name` 为编译出插件包的名字。 `项目根目录\dist\dev\mp-weixin\plugin-name` 中即是可执行小程序插件代码。
+- Where `plugin-name` is the name of the compiled plugin package. The executable MiniApp plug-in code is in `project root directory\dist\dev\mp-weixin\plugin-name`.
 - `mp-alipay` 平台插件编译后续发布，请留意更新日志。
 - The `mp-alipay` platform plugin will be compiled and released later, please pay attention to the update log.
 

@@ -70,9 +70,13 @@ The rewarded video ad component is a native component, the highest level, and wi
 |property name |type |default value |description |platform difference |
 |:-																|:-														|:-				|:-																																										|:-				|
 |adpid														|String&#124;Number&#124;Array|					|广告位id，如果传入的是数组，会从索引0开始请求失败后继续下一个，适用于已配置底价的逻辑|					|
+| adpid | String&#124;Number&#124;Array| |Ad slot id, if the input is an array, it will start from index 0 and continue to the next one after the request fails, which is applicable to the logic of the configured reserve price| |
 |preload													|Boolean											|true			|页面就绪后加载广告数据																																|					|
+| preload | Boolean | true | load ad data when the page is ready | |
 |loadnext													|Boolean											|false		|自动加载下一条广告数据																																|					|
+| loadnext | Boolean | false |Automatically load the next ad data | |
 |disabled													|Boolean											|false		|禁用默认点击行为																																			|					|
+| disabled | Boolean | false | Disable default click behavior | |
 |url-callback											|Object												|					|服务器回调透传数据																																		|					|
 |url-callback |Object | |Server callback data transparently | |
 |v-slot:default="{loading, error}"|															|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息																	|					|
@@ -85,11 +89,15 @@ The rewarded video ad component is a native component, the highest level, and wi
 |@error |EventHandle |Error event | | |
 
 **url-callback说明**
+**url-callback Description**
 
 |字段定义|类型|字段名称|备注|
+|Field Definition|Type|Field Name|Remarks|
 |:-:|:-:|:-:|:-:|
 |userId|String|用户id|调用SDK透传，应用对用户的唯一标识|
+| userId| String|User id|Invoke SDK transparent transmission, the unique identification of the application to the user|
 |extra|String|自定义数据|调用SDK传入并透传，如无需要则为空|
+| extra| String|Custom data|Call the SDK to pass in and transparently transmit, if not required, it will be empty|
 
 
 **方法说明**
@@ -315,13 +323,17 @@ Tip: 3.5.1+ adds ad parallel request logic, optimizes layered logic, and improve
 The return value is of type string
 
 |值			|描述											|
+|value |description|
 |:-:		|:-:											|
 |csj		|穿山甲										|
+| csj | pangolin |
 |gdt		|腾讯优量汇（前称广点通）	|
+| gdt | Tencent Youlianghui (formerly known as Guangdiantong) |
 |ks			|快手											|
 |sigmob	|Sigmob										|
 |gg			|Google AdMob							|
 |pg			|海外穿山甲								|
+| pg |Overseas Pangolin |
 
 示例代码
 sample code
@@ -449,6 +461,7 @@ The rewarded video advertisement can support the callback from the advertisement
 Relatively speaking, the server callback will be more secure, and you can rely on the anti-cheating mechanism of the advertising platform to prevent users from simulating the completion of watching the advertisement.
 
 ![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback-01-29.png)
+![Incentive Video Callback](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback-01-29.png)
 
 如何使用
 how to use
@@ -491,49 +504,76 @@ export default {
 ### Server callback description
 
 #### 服务器回调基于 [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)
+#### Server callback based on [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)
 
 1. 由于多家广告商的回调和签名验证逻辑不同，开发者需要写很多逻辑，`uniCloud` 中的云函数 `uniAdCallback` 已抹平了差异，开发者按照统一的参数处理即可
+1. Due to the different callback and signature verification logic of multiple advertisers, developers need to write a lot of logic. The cloud function `uniAdCallback` in `uniCloud` has smoothed out the differences, and developers can handle it according to the unified parameters
 2. 开发者的服务器有可能响应慢或失去响应造成回调数据丢失, 使用 `uniCloud` 可以帮助开发者保存一份来自广告商服务器的回调数据到开发者的云数据中，以便开发者主动查询
+2. The developer's server may respond slowly or lose response, resulting in loss of callback data. Using `uniCloud` can help developers save a callback data from the advertiser's server to the developer's cloud data, so that the developer can actively query
 3. `uniCloud` 可以承载大并发、防DDoS攻击，无需运营人员维护
+3. `uniCloud` can carry large concurrency, prevent DDoS attacks, and does not require maintenance by operators
 
 #### 详细流程如下:
+#### The detailed process is as follows:
 
 1. 登陆 [uniCloud](https://unicloud.dcloud.net.cn/) web控制台
+1. Log in to [uniCloud](https://unicloud.dcloud.net.cn/) web console
 2. 在应用的广告位项上配置激励视频回调，可选择云函数或传统服务器
+2. Configure the rewarded video callback on the application's ad slot item, and you can choose a cloud function or a traditional server
 3. 开通后将在选择的服务空间下自动部署一个加密云函数 `uniAdCallback`
+3. After activation, an encrypted cloud function `uniAdCallback` will be automatically deployed in the selected service space
 4. `uniAdCallback` 接收广告商服务器回调验证签名并抹平穿山甲/优量汇/快手参数差异，然后以以下方式回调
+4. `Kuaishou receives the callback from the advertiser server to verify the signature and smooth out the parameter differences between Pangolin/Youlianghui/Kaishou, and then calls back in the following way
 - 业务在uniCloud：通过[callFunction](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
+- Business in uniCloud: call user cloud functions via [callFunction](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction)
 - 业务在传统服务器：以HTTP方式请求开发者配置的回调URL
+- Business in the traditional server: request the callback URL configured by the developer in HTTP mode
 
 注意：
 Notice:
 1. 新建的云函数名称不能使用 `uniAdCallback`
 1. The newly created cloud function name cannot use `uniAdCallback`
 2. 服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果
+2. Server communication and front-end events are parallel, and the front-end needs to poll the server to request and verify the results
 3. 不建议在 `uniAD` web控制修改回调的服务空间和云函数名称，因为修改后广告商生效需要一段时间
+3. It is not recommended to modify the service space and cloud function name of the callback in the `uniAD` web control, because it will take a while for the advertiser to take effect after the modification
 4. 看一次广告收到2次回调结果，且 `trans_id` 相同，产生2次的可能原因有
+4. Viewing an ad once and receiving 2 callback results, and the `trans_id` is the same, the possible reasons for the 2 times are
 > 1.1 在云函数里没有向广告商的请求返回 isValid: true
+> 1.1 The cloud function does not return isValid: true to the advertiser's request
 > 1.2 服务器响应过慢，广告商服务器重试
+> 1.2 The server responds too slowly, the advertiser server retries
 
 ### 服务器回调参数@uniAdCallbackParameters
+### Server callback parameters @uniAdCallbackParameters
 
 |字段定义	|类型		|字段名称				|备注															|
+|Field Definition |Type |Field Name |Remarks |
 |:-:			|:-:		|:-:						|:-:															|
 |adpid		|String	|DCloud广告位id	|																	|
+| adpid | String | DCloud ad slot id | |
 |provider	|String	|广告服务商			|csj、ks、gdt、sigmob							|
+| provider | String |Advertising service provider | csj, ks, gdt, sigmob |
 |platform	|String	|平台						|iOS、Android											|
+| platform | String |Platform | iOS, Android |
 |sign			|String	|签名						|																	|
+| sign | String | signature | |
 |trans_id	|String	|交易id					|完成观看的唯一交易ID							|
+| trans_id | String |Transaction id |Unique transaction ID for completed viewing|
 |user_id	|String	|用户id					|调用SDK透传，应用对用户的唯一标识|
+| user_id | String |User id |Invoke SDK transparent transmission, the unique identification of the application to the user|
 |extra		|String	|自定义数据			|调用SDK传入并透传，如无需要则为空|
+| extra | String |Custom data |Call the SDK to pass in and transparently transmit, if not required, it will be empty|
 
 #### 签名生成方式@sign
+#### Signature generation method @sign
 
 ```
 sign = sha256(secret:transid)
 ```
 
 #### 开发者返回数据约定
+#### developer return data contract
 
 返回json数据，字段如下：
 Return json data, the fields are as follows:
@@ -542,10 +582,13 @@ Return json data, the fields are as follows:
 field name|description|field type|remark|
 :-|:-|:-|:-|
 isValid|校验结果|Blean|判定结果，是否发放奖励，具体发放奖励由用户自己的业务系统决定|
+isValid|Verification result|Blean|Determination result, whether to issue rewards, the specific rewards are determined by the user's own business system|
 
 #### 开发者云函数
+#### Developer Cloud Function
 
 示例代码
+sample code
 
 ```js
 'use strict';
@@ -574,6 +617,7 @@ class DB {
 
 exports.main = async (event, context) => {
   //event为客户端上传的参数
+  //event is the parameter uploaded by the client
   console.log('event : ', event);
 
   const {
@@ -592,6 +636,7 @@ exports.main = async (event, context) => {
   }
 
   // 注意::必须验签请求来源
+  // Note:: the source of the signature request must be verified
   const secret = ""; // uni-AD Web控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 Security key
   const trans_id = event.trans_id;
   const sign2 = crypto.createHash('sha256').update(`${secret}:${trans_id}`).digest('hex');
@@ -607,6 +652,7 @@ exports.main = async (event, context) => {
   // }
 
   // 开发者在此处处理自己的回调业务，需要返回值
+  // Developers handle their own callback business here and need to return a value
 
   return {
     isValid: true
@@ -615,23 +661,33 @@ exports.main = async (event, context) => {
 ```
 
 提示：2023/01/29 起，uni-AD Web控制台支持配置传统服务器地址，简化开通流程
+Tip: Starting from 2023/01/29, the uni-AD web console supports configuration of traditional server addresses, simplifying the activation process
 
 ### 老用户升级@upgrade
+### Old users upgrade @upgrade
 
 1. 在传统服务器增加[签名校验](/component/ad-rewarded-video.html#sign)
+1. Add [Signature Verification](/component/ad-rewarded-video.html#sign) to the traditional server
 2. 登陆 uni-AD [Web控制台](https://uniad.dcloud.net.cn/)，找到广告位对应的配置激励视频，选择 "业务在传统服务器" 并配置服务器HTTP地址
+2. Log in to uni-AD [Web console](https://uniad.dcloud.net.cn/), find the configuration rewarded video corresponding to the advertising position, select "Business on traditional server" and configure the server HTTP address
 
 
 ### 微信小程序说明@callbackweixin
+### WeChat MiniApp description @callbackweixin
 
 3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id-summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
+3.6.8+ supports WeChat MiniApp server callback, currently only supports MiniApp using the [uni-id](/uniCloud/uni-id-summary.html) user system, and will support non-uni-id user systems in the future
 
 
 #### 接入流程
+#### Access process
 
 1. 项目使用了 [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) 并更新到 1.0.8+
+1. The project uses [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) and updated to 1.0.8+
 2. 使用 [uni-open-bridge](/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
+2. Use [uni-open-bridge](/uniCloud/uni-open-bridge.html) to host three-party open platform data
 3. 配置 [安全网络](/uniCloud/secure-network.html)
+3. Configure [Secure Network](/uniCloud/secure-network.html)
 
 
 #### 安全注意
@@ -714,37 +770,55 @@ Open the `manifest.json` file, click "Source View", add the following content in
 
 
 ### 阿里云云函数费用说明@aliyun-cf-fee
+### Aliyun cloud function fee description @aliyun-cf-fee
 
 激励视频服务器回调业务涉及费用的部分主要是云函数的使用量、调用次数、出网流量(可选)。 接下来，我们对不同资源，分别进行费用评估。
+The cost involved in the callback service of the incentive video server is mainly the usage amount of the cloud function, the number of calls, and the outbound traffic (optional). Next, we conduct cost assessments for different resources.
 
 #### 云函数介绍
+#### Cloud Function Introduction
 
 1. uniAdCallback：uni-AD自动部署，用于接收广告商服务器的 HTTP 请求并抹平参数差异，然后调用开发者云函数或发送HTTP到开发者配置的服务器。
+1. uniAdCallback: uni-AD is automatically deployed to receive the HTTP request from the advertiser's server and smooth out the parameter differences, and then call the developer's cloud function or send HTTP to the server configured by the developer.
 2. userAdCallback: 开发者创建的云函数，用于接收 uniAdCallback，适用于业务系统在uniCloud。
+2. userAdCallback: A cloud function created by the developer to receive uniAdCallback, applicable to business systems in uniCloud.
 
 
 #### 流量费
+#### traffic fee
 
 我们按照uniCloud官网列出的[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)规则，可以简单得出如下公式：
+According to the [pay-as-you-go](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay) rules listed on the uniCloud official website, we can simply get the following formula:
 
 - 云函数费用(业务系统在uniCloud)   = 资源使用量 * 0.000110592 + 调用次数 * 0.0133 / 10000
+- Cloud function cost (business system in uniCloud) = resource usage * 0.000110592 + number of calls * 0.0133 / 10000
 - 云函数费用(业务系统不在uniCloud) = 资源使用量 * 0.000110592 + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8
+- Cloud function fee (business system is not in uniCloud) = resource usage * 0.000110592 + number of calls * 0.0133 / 10000 + outbound traffic * 0.8
 
 其中：
+in:
 
 - 资源使用量 = 云函数内存（单位为G） * 云函数平均单次执行时长（单位为秒） * 调用次数
+- Resource usage = cloud function memory (in G) * average execution time of a cloud function (in seconds) * number of calls
 
 我们假设如下数据模型：
+We assume the following data model:
 
 - 云函数内存：128M，即0.125G （用户可以自定义设置，最低可设置为128M）
+- Cloud function memory: 128M, or 0.125G (users can customize the settings, the minimum can be set to 128M)
 - 云函数平均单次执行时长：200毫秒，即0.2秒
+- The average execution time of a cloud function: 200 milliseconds, or 0.2 seconds
 - 出网流量：单次请求 1KB
+- Outbound traffic: 1KB for a single request
 
 云函数费用分2种情况
+There are two types of cloud function fees
 
 1. 业务系统在uniCloud
+1. The business system is in uniCloud
 
 `1`次激励视频回调费用为：
+The fee for `1` rewarded video callback is:
 
 ```
 云函数费用 = 资源使用量 * 0.000110592  + 调用次数 * 0.0133 / 10000
@@ -755,10 +829,13 @@ Open the `manifest.json` file, click "Source View", add the following content in
 ```
 
 2. 业务系统不在uniCloud
+2. The business system is not in uniCloud
 
 业务不在 uniCloud 时通过 HTTP 方式将回调数据发送到传统服务器，将产生出网流量费用
+When the business is not in uniCloud, the callback data is sent to the traditional server through HTTP, and the outbound traffic fee will be incurred
 
 `1`次激励视频回调费用为：
+The fee for `1` rewarded video callback is:
 
 ```
 云函数费用 = 资源使用量 * 0.000110592  + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8
@@ -769,14 +846,20 @@ Open the `manifest.json` file, click "Source View", add the following content in
 ```
 
 注意
+Notice
 1. 在实际业务中云函数费用可能会出现稍微偏高，如：开发者的服务器响应过慢时，广告商的服务器会重试，导致调用次数增加
+1. In actual business, the cost of cloud functions may be slightly higher. For example, when the developer's server responds too slowly, the advertiser's server will retry, resulting in an increase in the number of calls
 2. 业务系统不在uniCloud的费用采用服务器配置升级后的计算方式，[升级参考](/component/ad-rewarded-video.html#upgrade)
+2. The cost of the business system not in uniCloud is calculated after the server configuration is upgraded, [upgrade reference](/component/ad-rewarded-video.html#upgrade)
 
 #### 总结
+#### Summarize
 
 1. 业务系统在[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)
+1. The business system is in [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)
 
 |广告回调次数	|云函数费用(元)	|
+|Ad callback times |Cloud function fee (yuan) |
 |:-:					|:-:						|
 |1						|0.0000081896		|
 |10						|0.000081896		|
@@ -785,8 +868,10 @@ Open the `manifest.json` file, click "Source View", add the following content in
 |10000				|0.081896				|
 
 2. 业务系统不在[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)，包含出网流量费用
+2. The business system is not in [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/), including the outbound traffic fee
 
 |广告回调次数	|云函数费用+出网流量费用(元)  |
+|Ad callback times |Cloud function fee + outbound traffic fee (yuan) |
 |:-:					|:-:												|
 |1						|0.000004857739453125				|
 |10						|0.00004857739453125				|
@@ -795,6 +880,7 @@ Open the `manifest.json` file, click "Source View", add the following content in
 |10000				|0.04857739453125						|
 
 这个费用非常非常低，相比于广告收益，可以忽略。请开发者放心使用。
+This fee is very, very low and can be ignored compared to advertising revenue. Please feel free to use it.
 
 
 ### 注意事项

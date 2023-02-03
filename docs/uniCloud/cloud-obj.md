@@ -187,6 +187,7 @@ Summarize the benefits of cloud objects:
 Cloud objects are actually the encapsulation of cloud functions. Like creating a cloud function, right-click in the `uniCloud/cloudfunctions` directory to create a new cloud function, select the cloud object type, and enter the cloud object name to create a cloud object. Here, take the cloud object todo as an example, the created cloud object contains an `index.obj. js`.
 
 ![创建云对象](https://web-assets.dcloud.net.cn/unidoc/zh/uni-cloud-object-new.jpg)
+![Create cloud object](https://web-assets.dcloud.net.cn/unidoc/zh/uni-cloud-object-new.jpg)
 
 一个空的云对象内容如下
 An empty cloud object with the following contents
@@ -272,6 +273,7 @@ todo.add('title demo', 'content demo').then(res => {
 ```
 
 **importObject参数说明**
+**importObject parameter description**
 
 ```js
 interface ImportObjectOptions {
@@ -360,7 +362,9 @@ In addition to the fields returned by `getSystemInfo`, the following information
 |userAgent|string|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua	|
 |userAgent|string|Client ua, note that the client getSystemInfoSync in a non-local operating environment will also get the ua parameter and upload it to the cloud object, but the cloud object will get ua from the http request header instead of ua in clientInfo |
 |source		|string	|调用来源，返回值见下。`HBuilderX 3.5.1+`								|
+| source | string | The source of the call, see the return value below. `HBuilderX 3.5.1+` |
 |requestId|string	|请求id。`HBuilderX 3.5.1+`								|
+| requestId | string | request id. `HBuilderX 3.5.1+` |
 |scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)返回的scene参数，新增于`HBuilderX 3.5.1`	|
 |scene |string |Scene value. The scene parameter returned by the client [uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync), added in `HBuilderX 3.5.1` |
 
@@ -377,7 +381,9 @@ getClientInfo().source, returns the cloud function call source, its value range 
 |http	|云对象URL化后通过http访问调用 `HBuilderX 3.5.2+`		|
 |http | After the cloud object is URLized, call `HBuilderX 3.5.2+` through http access |
 |timing	|定时任务调用云对象 `HBuilderX 3.5.2+`		|
+| timing |Timing task calls cloud object `HBuilderX 3.5.2+` |
 |server	|云函数上传并运行	|
+| server | upload and run the cloud function |
 
 
 **注意事项**
@@ -418,12 +424,18 @@ module.exports = {
 **return value**
 
 |参数名				|类型		|必备	|说明																										|
+|Parameter name |Type |Required |Description |
 |--						|--			|--		|--																											|
 |provider			|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`|
+| provider | string | yes | service space provider, Alibaba Cloud: `aliyun`, Tencent Cloud: `tencent`|
 |spaceId			|string	|是		|服务空间Id																							|
+| spaceId | string | yes | service space Id |
 |useOldSpaceId|boolean|是		|当前获取的服务空间id是否为迁移前的服务空间id，新增于`HBuilderX 3.6.13`																|
+| useOldSpaceId| boolean|Yes |Whether the service space id obtained currently is the service space id before migration, newly added in `HBuilderX 3.6.13` |
 |functionName	|string	|是		|云对象名称，新增于`HBuilderX 3.5.1`										|
+| functionName | string | yes | cloud object name, new in `HBuilderX 3.5.1` |
 |functionType	|string	|是		|云对象此值固定为`cloudobject`，新增于`HBuilderX 3.5.1`	|
+| functionType | string | yes | cloud object This value is fixed as `cloudobject`, newly added in `HBuilderX 3.5.1` |
 
 ### 获取客户端token@get-uni-id-token
 ### Get client token@get-uni-id-token

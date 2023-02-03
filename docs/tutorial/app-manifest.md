@@ -689,41 +689,56 @@
 <a id="android"/>
 
 ### Android平台云端打包配置
+### Android platform cloud packaging configuration
 manifest.json文件的 "app-plus" -> "distribute" -> "android" 节点用于设置Android平台云端打包相关配置，支持以下参数：
+The "app-plus" -> "distribute" -> "android" node of the manifest.json file is used to set the configuration related to cloud packaging of the Android platform, and supports the following parameters:
 - packagename
   字符串类型，Android平台云端打包的包名
+  String type, the package name packaged in the cloud on the Android platform
 - keystore
   字符串类型，Android平台云端打包使用的签名证书文件路径
+  String type, the path of the signature certificate file used for cloud packaging on the Android platform
 - password
   字符串类型，Android平台云端打包使用的签名证书的密码，要求证书存储密码和证书密码相同
+  String type, the password of the signing certificate used in the cloud packaging of the Android platform, requiring the certificate storage password to be the same as the certificate password
 - aliasname
   字符串类型，Android平台遇到你打包使用的证书别名
+  String type, the Android platform encounters the alias of the certificate you packaged and used
 - schemes
   字符串类型，Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[Android平台设置UrlSchemes](https://uniapp.dcloud.io/tutorial/app-android-schemes)
+  String type, the scheme registered by the Android platform App, and multiple schemes are separated by ",". For details, refer to: [Android platform setting UrlSchemes](https://uniapp.dcloud.io/tutorial/app-android-schemes)
 - abiFilters
   字符串数组类型，Android平台App支持的cpu类型，详情参考：[Android平台设置CPU类型](https://uniapp.dcloud.io/tutorial/app-android-abifilters)
+  String array type, the cpu type supported by the Android platform app, for details, refer to: [Android platform setting CPU type](https://uniapp.dcloud.io/tutorial/app-android-abifilters)
 - permissions
   字符串数组类型，Android平台App使用的权限
+  String array type, permission used by Android platform App
 - custompermissions
   Boolean类型，是否自定义Android权限配置
+  Boolean type, whether to customize Android permission configuration
 - permissionExternalStorage
   JSON对象类型，Android平台应用启动时申请读写手机存储权限策略配置，详情参考：[Android平台应用启动时读写手机存储权限策略](https://ask.dcloud.net.cn/article/36549)，支持以下属性
   + request
     字符串类型，申请读取设备信息权限策略，可取值none、once、always
   + prompt
     字符串类型，当request设置为always值用户拒绝时弹出提示框上的内容
+    String type, when the request is set to the value of always, the content on the pop-up prompt box when the user rejects it
 - permissionPhoneState
   JSON对象，Android平台应用启动时申请读取设备信息权限配置，详情参考：[Android平台应用启动时访问设备信息(如IMEI)权限策略](https://ask.dcloud.net.cn/article/36549)，支持以下属性
   + request
     字符串类型，申请读取设备信息权限策略，可取值none、once、always
   + prompt
     字符串类型，当request设置为always值用户拒绝时弹出提示框上的内容
+    String type, when the request is set to the value of always, the content on the pop-up prompt box when the user rejects it
 - minSdkVersion
   数字类型，Android平台最低支持版本，详情参考：[Android平台设置minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)
+  Number type, the minimum supported version of the Android platform, for details, refer to: [Android platform setting minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)
 - targetSdkVersion
   数字类型，Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)
+  Number type, Android platform target version, for details, refer to: [Android platform setting targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)
 - packagingOptions
   字符串数组类型，Android平台云端打包时build.gradle的packagingOptions配置项，如下示例源码
+  String array type, the packagingOptions configuration item of build.gradle when packaging on the Android platform cloud, the source code of the following example
 ```json
 "packagingOptions": [
     "doNotStrip '*/armeabi-v7a/*.so'",   // build.gradle中的源码字符串
@@ -732,14 +747,19 @@ manifest.json文件的 "app-plus" -> "distribute" -> "android" 节点用于设�
 ```
 - jsEngine
   字符串类型，uni-app使用的JS引擎，可取值v8、jsc，**将废弃，后续不再支持jsc引擎**
+  String type, the JS engine used by uni-app, the possible values are v8, jsc, **will be discarded, and the jsc engine will no longer be supported**
 - debuggable
   Boolean类型，是否开启Android调试开关
+  Boolean type, whether to enable the Android debugging switch
 - locale
   字符串类型，应用的语言
+  string type, the language of the application
 - forceDarkAllowed
   Boolean类型，是否强制允许暗黑模式
+  Boolean type, whether to forcibly allow the dark mode
 - resizeableActivity
   Boolean类型，是否支持分屏调整窗口大小
+  Boolean type, whether to support split screen to adjust the window size
 - hasTaskAffinity
   Boolean类型，是否设置android：taskAffinity
   Boolean type, whether to set android:taskAffinity
@@ -747,7 +767,9 @@ manifest.json文件的 "app-plus" -> "distribute" -> "android" 节点用于设�
 <a id="buildFeatures" />
 
 - buildFeatures（HBuilderX 3.5.0+版本支持）
+- buildFeatures (supported by HBuilderX 3.5.0+ version)
   JSON对象，Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：
+  JSON object, the buildFeatures configuration item of build.gradle when the Android platform is packaged in the cloud, the supported attributes refer to: [Android official document](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com /android/build/api/dsl/BuildFeatures?hl=en), the following sample source code:
 ```json
 "buildFeatures": {
     "dataBinding": true,  //开启dataBinding
@@ -759,27 +781,39 @@ manifest.json文件的 "app-plus" -> "distribute" -> "android" 节点用于设�
 <a id="ios"/>
 
 ### iOS平台云端打包配置
+### iOS platform cloud packaging configuration
 manifest.json文件的 "app-plus" -> "distribute" -> "ios" 节点用于设置iOS平台云端打包相关配置，支持以下参数：
+The "app-plus" -> "distribute" -> "ios" node of the manifest.json file is used to set the configuration related to cloud packaging of the iOS platform, and supports the following parameters:
 - appid
   字符串类型，iOS平台云端打包使用的Bundle ID
+  String type, the Bundle ID used for cloud packaging on the iOS platform
 - mobileprovision
   字符串类型，iOS平台云端打包使用的profile文件路径
+  String type, the path of the profile file used for cloud packaging on the iOS platform
 - p12
   字符串类型，iOS平台云端打包使用的证书文件路径
+  String type, the path of the certificate file used for cloud packaging on the iOS platform
 - password
   字符串类型，iOS打包使用的证书密码
+  String type, certificate password used by iOS packaging
 - devices
   字符串类型，iOS支持的设备类型，可取值iphone（仅支持iPhone设备）、ipad（仅支持iPad设备）、universal（同时支持iPhone和iPad设备）
+  String type, device type supported by iOS, possible values iphone (only supports iPhone devices), ipad (only supports iPad devices), universal (supports both iPhone and iPad devices)
 - urlschemewhitelist
   字符串类型，应用访问白名单列表，多个白名单使用“,”分割，详情参考：[iOS设置应用访问白名单](https://uniapp.dcloud.io/tutorial/app-ios-schemewhitelist)
+  String type, application access whitelist list, multiple whitelists are separated by ",", for details, refer to: [iOS settings application access whitelist](https://uniapp.dcloud.io/tutorial/app-ios-schemewhitelist)
 - urltypes
   字符串类型，Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[iOS设置应用UrlSchemes](https://uniapp.dcloud.io/tutorial/app-ios-schemes)
+  String type, the scheme registered by the App on the Android platform. Multiple schemes are separated by ",". For details, refer to: [iOS Settings Application UrlSchemes](https://uniapp.dcloud.io/tutorial/app-ios-schemes)
 - UIBackgroundModes
   字符串类型，应用后台运行模式，详情参考：[iOS设置应用后台运行能力](https://uniapp.dcloud.io/tutorial/app-ios-uibackgroundmodes)
+  String type, application background running mode, for details, please refer to: [iOS Setting Application Background Running Capability](https://uniapp.dcloud.io/tutorial/app-ios-uibackgroundmodes)
 - frameworks
   字符串数组类型，依赖的系统库，**已废弃，推荐使用uni原生插件扩展使用系统依赖库**
+  String array type, dependent system library, **Deprecated, it is recommended to use uni native plug-ins to extend the use of system dependent libraries**
 - deploymentTarget
   字符串类型，iOS支持的最低版本
+  String type, the minimum version supported by iOS
 - privacyDescription
   JSON对象，iOS隐私信息访问的许可描述，支持以下属性
   + NSPhotoLibraryUsageDescription
@@ -830,11 +864,16 @@ manifest.json文件的 "app-plus" -> "distribute" -> "ios" 节点用于设置iOS
     访问本地网络权限描述
   + NSUserTrackingUsageDescription
     跟踪用户活动权限描述
+    Track User Activity Permission Description
 - idfa
   Boolean类型，是否使用广告标识
+  Boolean type, whether to use the advertising logo
 - capabilities
   JSON对象，应用的能力配置（Capabilities）
+  JSON object, application capability configuration (Capabilities)
 - CFBundleName
   字符串类型，CFBundleName名称
+  String type, CFBundleName name
 - validArchitectures
   字符串数组类型，编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64
+  String array type, CPU instructions supported at compile time, possible values arm64, arm64e, armv7, armv7s, x86_64

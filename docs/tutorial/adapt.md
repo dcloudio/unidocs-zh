@@ -1,4 +1,5 @@
 ### 宽屏适配指南
+### Widescreen Adaptation Guide
 
 uni-app是以移动为先的理念诞生的。从uni-app 2.9起，提供了PC等宽屏的适配方案，完成了全端统一。
 uni-app was born with the concept of mobile first. For uni-app 2.9+, the widescreen adaptation scheme for PC and other devices has been provided to achieve all-side unification.

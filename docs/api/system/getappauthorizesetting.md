@@ -53,7 +53,9 @@ Get APP authorization settings
 - `'authorized'`：表示已经获得授权，无需再次请求授权；
 - `'authorized'`: indicates that authorization has been obtained, and there is no need to request authorization again;
 - `'denied'`：表示请求授权被拒绝，无法再次请求授权；（此情况需要引导用户打开系统设置，在设置页中打开权限）
+- `'denied'`: Indicates that the request for authorization has been rejected and cannot be requested for authorization again; (in this case, the user needs to be guided to open the system settings and open the permissions in the settings page)
 - `'not determined'`：表示尚未请求授权，会在App下一次调用系统相应权限时请求；（仅 iOS 会出现。此种情况下引导用户打开系统设置，不展示开关）
+- `'not determined'`: Indicates that authorization has not been requested, and will be requested the next time the App calls the corresponding permission of the system; (only iOS will appear. In this case, guide the user to open the system settings, and do not display the switch)
 - `'config error'`：只有在 App 端时返回
 - `'config error'`: only returned on the App side
   - bluetoothAuthorized：

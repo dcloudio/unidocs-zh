@@ -26,7 +26,9 @@ It is a nosql non-relational database. If you are familiar with sql relational d
 - 一个数据库可以有多个表；
 - A database can have multiple tables;
 - 一个表可以有多个记录；
+- A table can have multiple records;
 - 一个记录可以有多个字段。
+- A record can have multiple fields.
 
 例如，数据库中有一个表，名为user，存放用户信息。表user的数据内容如下：
 For example, there is a table in the database, named user, which stores user information. The data content of table user is as follows:
@@ -81,6 +83,7 @@ uniCloud同时支持阿里云和腾讯云，它们的数据库大体相同，有
 uniCloud supports both Alibaba Cloud and Tencent Cloud, and their databases are roughly the same, with minor differences. Alibaba Cloud's database is mongoDB4.0, while Tencent Cloud uses a self-developed document database (compatible with mongoDB 4.0 version). uniCloud basically smoothes out the differences between different cloud vendors, and the differences will be marked separately in the document.
 
 ## 创建第一个表@create-collection
+## Create the first table @create-collection
 
 1. 打开 uniCloud web控制台 [https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)
 1. Open the uniCloud web console [https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)
@@ -382,7 +385,9 @@ db.collection('uni-id-users').get()
 |spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
 |spaceId |String |Yes |- |Service space ID, **Note that it is the service space ID, not the service space name** |
 |clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
+| clientSecret | String |Yes |- |Only supported by Alibaba Cloud, you can view it in the [uniCloud console](https://unicloud.dcloud.net.cn) service space list |
 |endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云支持。阿里云正式版需将此值设为`https://api.next.bspapp.com`															|
+| endpoint | String |No |`https://api.bspapp.com` |Service space address, only supported by Alibaba Cloud. The official version of Alibaba Cloud needs to set this value to `https://api.next.bspapp.com` |
  
 ## 创建集合/表的API@createCollection
 ## Create collection/table API@createCollection
@@ -1010,3 +1015,4 @@ example:
 ### Migration between cloud providers @cross-provider
 
 文档移至：[在云厂商之间迁移数据库](uniCloud/price.md?id=cross-provider-db)
+Documentation moved to: [Migrating databases between cloud providers](uniCloud/price.md?id=cross-provider-db)

@@ -62,6 +62,7 @@ Responsible for the management of application publishing information.
 
 <div align="left">
 	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-manager-list.png" alt="统一发布门户管理" width="800"></img>
+	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-manager-list.png" alt="Unified Publishing Portal Management" width="800"></img >
 </div>
 
 提供了如下功能：

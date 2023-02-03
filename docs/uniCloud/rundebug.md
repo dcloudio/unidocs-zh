@@ -181,11 +181,13 @@ Whether the cloud function runs directly locally or the client connects to the l
 The difference between the local operating environment and the current uniCloud network:
 
 ### 本地环境只有node运行环境
+### The local environment only has the node operating environment
 
 也就是云函数、DB Schema可以使用本地，但本地没有MongoDB、没有redis、没有云存储，数据内容仍然存放在uniCloud现网服务空间。数据库索引也在云端才生效。
 That is, cloud functions and DB Schema can be used locally, but there is no MongoDB, no redis, and no cloud storage locally, and the data content is still stored in the uniCloud live network service space. The database index also takes effect in the cloud.
 
 ### node版本差异
+### node version difference
 
 本地运行的nodejs版本为node12。
 The nodejs version running locally is node12.
@@ -194,16 +196,19 @@ The nodejs version running locally is node12.
 The nodejs version of the service space can be selected from 8 or 12. If you use the nodejs api, it is recommended to test the compatibility after deploying to the cloud after local testing. If you only use the uniCloud api, there is no need to worry about compatibility.
 
 ### 本地环境的云函数没有超时限制
+### There is no timeout limit for cloud functions in the local environment
 
 云函数超时时间、运行内存配置，在本地调试时不会生效。
 Cloud function timeout and running memory configuration will not take effect during local debugging.
 
 ### return 策略差异
+### return policy difference
 
 [详见](cf-functions.md?id=return)
 [See details](cf-functions.md?id=return)
 
 ### 公用模块使用注意
+### Notes on the use of public modules
 
 - `HBuilderX 3.0.0`之前需要在云函数内执行`npm install ../common/xxx`安装公共模块，详细请参考[云函数公用模块](uniCloud/cf-common.md)
 - Before `HBuilderX 3.0.0`, you need to execute `npm install ../common/xxx` in the cloud function to install the common module. For details, please refer to [Cloud Function Common Module](uniCloud/cf-common.md)
@@ -215,6 +220,7 @@ Cloud function timeout and running memory configuration will not take effect dur
 - When the `HBuilderX 3.0.0` version runs the uniCloud project, the uniCloud local debugging plugin will automatically install cloud function dependencies (including public modules and other dependencies in package.json)
 
 ### 时区问题@timezone
+### Time zone issues @timezone
 
 uniCloud云端的云函数使用的时区是utc+0，本地运行时使用的是本机时间，中国一般是+8。在使用“时间戳”时两者没有差异，但如果要获取年、月、日、小时要注意时区的差异。
 The time zone used by cloud functions in the uniCloud cloud is utc+0, the local time is used when running locally, and China is generally +8. There is no difference between the two when using "timestamp", but if you want to get the year, month, day, and hour, pay attention to the difference in time zones.
@@ -243,13 +249,16 @@ const hour = getOffsetDate(8).getHours()
 It is recommended to use the `<uni-dateformat>` component to format the display date, [details](https://ext.dcloud.net.cn/plugin?id=3279)
 
 ### 云函数内调用其他云函数
+### Call other cloud functions within the cloud function
 
 HBuilderX 3.4.0之前的版本“本地运行云函数”时云函数内callFunction会调用云端已部署的云函数，HBuilderX 3.4.0及之后的版本会调用本地云函数
+When the version before HBuilderX 3.4.0 "run the cloud function locally", the callFunction in the cloud function will call the cloud function deployed on the cloud, and the version of HBuilderX 3.4.0 and later will call the local cloud function
 
 “客户端连接本地云函数时”云函数内callFunction会调用本地云函数
 "When the client connects to the local cloud function" callFunction in the cloud function will call the local cloud function
 
 ### 数据与存储
+### Data and Storage
 
 请务必注意云函数在本地运行时依然是连接的云端数据库与存储
 It is important to note that cloud functions are still connected cloud databases and storages when running locally
@@ -258,6 +267,7 @@ It is important to note that cloud functions are still connected cloud databases
 Cloud function uploading files to cloud storage is only supported by Tencent Cloud. Of course, you can also upload files directly on the front end, which is supported by Alibaba Cloud and Tencent Cloud.
 
 ### 插件市场加密插件
+### Plugin market encryption plugin
 
 插件市场销售的加密云函数或公共模块，在未购买获得源码前，无法在本地运行。本地运行时会自动请求云端已部署的云函数。请留意控制台输出。
 The encrypted cloud functions or public modules sold in the plug-in market cannot be run locally until the source code is purchased. The local runtime automatically requests cloud functions that have been deployed in the cloud. Note the console output.
@@ -266,11 +276,13 @@ The encrypted cloud functions or public modules sold in the plug-in market canno
 When sending a clientDB request, if an encrypted action (sold in the plugin market) is used, the current request will use the cloud-deployed resources instead of local resources (including schema, validateFunction, and action). Please pay attention to the console output.
 
 ### 文件系统
+### File system
 
 云函数在云端运行于一个只读文件系统内（仅`/tmp`目录可以写入文件），本地运行时没有这些限制。如需在云端运行时写入文件请在/tmp目录下操作
 Cloud functions run in a read-only file system in the cloud (only `/tmp` directory can write files), and there are no such restrictions when running locally. To write files when running in the cloud, please operate in the /tmp directory
 
 ### 其他注意事项
+### Other Considerations
 
 - 虽然云函数、数据库schema、validatefunction在本地，但云存储、数据库的数据和索引，仍然在云端。也就是开发机不能完全脱线开发。只是代码可以在本地写，免上传就能联调。
 - Although cloud functions, database schema, and validate functions are local, cloud storage, database data and indexes are still in the cloud. That is, the development machine cannot be completely developed offline. It's just that the code can be written locally, and joint debugging can be done without uploading.
@@ -340,6 +352,7 @@ If you need to simulate the client type, you can add the clientInfo field to the
   "otherParam": "***",
   "clientInfo":{
     // HBuilderX 3.5.1之前的版本需要传全大写的参数才可以在context内使用context.OS、context.LOCALE等
+    // Versions before HBuilderX 3.5.1 need to pass all uppercase parameters to use context.OS, context.LOCALE, etc. in the context
     "OS": "ios", // 系统类型 ios、android
     "PLATFORM": "web", // 客户端类型 app、web、mp-weixin、mp-alipay等
     "DEVICEID": "", // 设备id
@@ -464,15 +477,21 @@ There is a breakpoint step button above the debug panel, and the shortcut key ca
 The published cloud functions also have logs under [uniCloud web console](https://unicloud.dcloud.net.cn/) -> cloud functions.
 
 通过console api打印的日志会在云端记录。
+Logs printed through the console api will be recorded in the cloud.
 
 ### 阿里云
+### Ali Cloud
 
 阿里云云函数日志最长保留7天
+Alibaba Cloud cloud function logs are kept for up to 7 days
 
 ### 腾讯云
+### Tencent Cloud
 
 腾讯云日志服务为[套餐外单独计费项](https://uniapp.dcloud.net.cn/uniCloud/price.html#tencent-advanced)。如果你购买了包月套餐，在使用日志服务时会产生额外费用（日志服务为按量计费，从余额扣除）。为避免因日志服务欠费引发其他按量计费资源不可使用，目前新建腾讯云服务空间默认关闭了日志服务，可在 [uniCloud web控制台](https://unicloud.dcloud.net.cn/) -> 云函数 -> 日志中开启。
+Tencent Cloud Log Service is [a separate billing item outside the package](https://uniapp.dcloud.net.cn/uniCloud/price.html#tencent-advanced). If you have purchased a monthly package, additional fees will be incurred when using the log service (log service is billed by volume and deducted from the balance). In order to avoid other pay-as-you-go resources being unusable due to log service arrears, the log service is disabled by default in the newly created Tencent Cloud service space. ) -> Cloud Functions -> Logging is enabled.
 
 此外日志服务开启的状态下，腾讯云可以设置日志保存时长。
+In addition, when the log service is enabled, Tencent Cloud can set the log storage period.
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/tcb-log-switch.jpg)

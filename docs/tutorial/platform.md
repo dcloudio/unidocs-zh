@@ -45,7 +45,9 @@ Conditional compilation is marked with special comments which are the basic of c
 |VUE3|HBuilderX 3.2.0+ [详情](https://ask.dcloud.net.cn/article/37834)|
 |APP-PLUS|App|
 |APP-PLUS-NVUE或APP-NVUE|App nvue 页面|
+| APP-PLUS-NVUE or APP-NVUE| App nvue page|
 |APP-ANDROID|App Android 平台 仅限 uts文件|
+| APP-ANDROID| App Android platform uts file only|
 |APP-IOS|App iOS 平台 仅限 uts文件|
 |H5|H5|
 |MP-WEIXIN|微信小程序|
@@ -183,21 +185,32 @@ For conditional compilation of json, if the key names of different platforms are
 ### Conditional compilation of static directory
 
 在不同平台，引用的静态资源可能也存在差异，通过 static 的条件编译可以解决此问题，static 目录下新建不同平台的专有目录，
+On different platforms, there may be differences in the referenced static resources. This problem can be solved through static conditional compilation. Create a new proprietary directory for different platforms under the static directory.
 
 |目录名称|说明|
+|Directory Name|Description|
 |:-:|:-:|
 |app-plus|App|
 |h5|H5|
 |mp-weixin|微信小程序|
+| mp-weixin|WeChat MiniApp|
 |mp-alipay|支付宝小程序|
+| mp-alipay|Alipay MiniApp|
 |mp-baidu|百度小程序|
+| mp-baidu|Baidu MiniApp|
 |mp-qq|QQ小程序|
+| mp-qq| QQ MiniApp|
 |mp-toutiao|字节小程序|
+| mp-toutiao|byte MiniApp|
 |mp-lark|飞书小程序|
+| mp-lark|Feishu MiniApp|
 |mp-kuaishou|快手小程序|
+| mp-kuaishou| Kuaishou MiniApp|
 |mp-jd|京东小程序|
+| mp-jd|JD MiniApp|
 
 专有目录下的静态资源只有在特定平台才会编译进去。
+Static resources in a dedicated directory will only be compiled on a specific platform.
 
 如以下目录结构，``a.png`` 只有在微信小程序平台才会编译进去，``b.png`` 在所有平台都会被编译。
 As shown in the following directory structure, ``a.png`` will only be compiled in the WeChat applet platform, and ``b.png`` will be compiled in all platforms.
@@ -225,13 +238,17 @@ If you want to separate the page files of each platform more thoroughly, you can
 **Notice**
 
 - `platforms`目录下只支持放置页面文件（即页面vue文件），如果需要对其他资源条件编译，建议使用[static 目录的条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)。
+- Only page files (that is, page vue files) are supported in the `platforms` directory. If you need to conditionally compile other resources, it is recommended to use [conditional compilation of static directory](https://uniapp.dcloud.net.cn/tutorial/ platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91).
 
 ### uts 的条件编译
+### Conditional compilation of uts
 
 用法与 [API 的条件编译](#api-的条件编译)一致，多出了`APP-ANDROID`和`APP-IOS`两个平台。
+The usage is consistent with [API conditional compilation](#api-%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91), with `APP -ANDROID` and `APP-IOS` two platforms.
 
 <pre v-pre="" data-lang="javascript"><code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  %PLATFORM%</b></span>
 平台特有的API实现
+Platform-specific API implementation
 <span class="token comment">//<span style="color:#859900;"> #endif</span></span></code></pre>
 
 
@@ -246,6 +263,7 @@ HBuilderX provides rich support for conditional compilation of `uni-app`:
 **Code block support**
 
 在 HBuilderX 中开发 ``uni-app`` 时，通过输入 **ifdef** 可快速生成条件编译的代码片段
+When developing ``uni-app`` in HBuilderX, you can quickly generate conditionally compiled code snippets by typing **ifdef**
 
  ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-022402.png)
 

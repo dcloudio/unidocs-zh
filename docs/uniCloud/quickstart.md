@@ -51,12 +51,15 @@ Source address of Hello uniCloud: [https://ext.dcloud.net.cn/plugin?id=4082](htt
 	- 创建一个服务空间，创建完成后回到向导刷新列表，选择这个服务空间（创建服务空间可能需要几十秒的时间，可以在web控制台查看是否创建完成。）
 	- Create a service space. After the creation is complete, go back to the wizard to refresh the list and select the service space (it may take tens of seconds to create a service space. You can check whether the creation is complete in the web console.)
 	- 按照向导提示，将hello uniCloud项目下的云函数、数据库schema上传部署到服务空间，并执行db_init初始化数据库
+	- Follow the wizard prompts to upload and deploy the cloud function and database schema under the hello uniCloud project to the service space, and execute db_init to initialize the database
 	
 	**说明**
 	**illustrate**
 	
 	- 第一次创建腾讯云服务空间时会为用户创建腾讯云账号并跳转到腾讯云实名界面，等待实名认证审核之后可以开通服务空间。若腾讯云实名认证提示身份证下已创建过多账户，则需要在腾讯云官网注销不用的账户。
+	- When creating a Tencent Cloud service space for the first time, a Tencent Cloud account will be created for the user and redirected to the Tencent Cloud real-name interface, and the service space can be opened after waiting for the real-name authentication review. If the Tencent Cloud real-name authentication prompts that too many accounts have been created under the ID card, you need to cancel the unused accounts on the Tencent Cloud official website.
 	- 阿里云每个账号可以有一个开发者版免费空间，此空间资源较少仅能用于测试开发。腾讯云无免费空间。
+	- Each Alibaba Cloud account can have a developer version of free space, and this space has less resources and can only be used for testing and development. Tencent Cloud has no free space.
 	
 3. 运行 hello uniCloud项目
 3. Run the hello uniCloud project
@@ -116,6 +119,7 @@ In this tutorial, we create a cloud object named helloco.
 4. Write methods for cloud objects
 
 打开index.obj.js，我们为它添加一个 sum 方法，逻辑就是接收传入a和b2个参数，返回求和结果。
+Open index.obj.js, we add a sum method to it, the logic is to receive the incoming a and b2 parameters, and return the summation result.
 
 ```js
 module.exports = {
@@ -278,6 +282,8 @@ Note: Timestamps don't need to be so complicated. Timestamps can simply be enter
 ```
 
 #### Web中使用uniCloud的跨域处理@useinh5
+#### Cross-domain processing using uniCloud in the Web @useinh5
 
 文档已移至：[Web中使用uniCloud的跨域处理](publish.md#useinh5)
+Documentation has been moved to: [Cross-domain processing using uniCloud on the Web](publish.md#useinh5)
 

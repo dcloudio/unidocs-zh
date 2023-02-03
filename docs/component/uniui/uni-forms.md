@@ -383,7 +383,9 @@ The `validateFunction` method returns four parameters `validateFunction:function
 - 需要注意，如果需要使用 `validateFunction` 自定义校验规则,则不能采用 `uni-forms` 的 `rules` 属性来配置校验规则，这时候需要通过`ref`，在`onReady`生命周期调用组件的`setRules`方法绑定验证规则
 - It should be noted that if you need to use `validateFunction` to customize the validation rules, you cannot use the `rules` attribute of `uni-forms` to configure the validation rules. In this case, you need to pass `ref` and call it in the `onReady` life cycle Component's `setRules` method binds validation rules
 - 无法通过props传递变量，是因为微信小程序会过滤掉对象中的方法，导致自定义验证规则无效。
+- Variables cannot be passed through props, because the WeChat MiniApp will filter out the methods in the object, resulting in invalid custom validation rules.
 - 如果使用了 `validateFunction` 且 `required` 为 `false`的情况，表现为不填写内容不校验，有内容才校验，所以内容为空时 `validateFunction` 不会执行
+- If `validateFunction` is used and `required` is `false`, it means that the content will not be verified if it is not filled in, and the content will be verified, so `validateFunction` will not be executed when the content is empty
 ::: 
 
 

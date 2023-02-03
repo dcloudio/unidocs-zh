@@ -2,6 +2,7 @@
 ## uni-admin framework (formerly uniCloud admin)
 
 ## 简介
+## Introduction
 
 uni-admin 框架，是基于 uni-app 和 uniCloud 的应用后台管理的开源框架。
 The uni-admin framework is an open source framework for application background management based on uni-app and uniCloud.
@@ -23,13 +24,16 @@ uni-admin 是开源的，遵循 MIT 协议，你可以从[Github](https://github
 uni-admin is open source and follows the MIT license, you can download it from [Github](https://github.com/dcloudio/uni-admin) or [Code Cloud](https://gitee.com/dcloud/uni- admin) to get the source code, or you can quickly download it from [DCloud Plugin Market](https://ext.dcloud.net.cn/plugin?id=3268).
 
 ## 看视频，15分钟掌握uni-admin
+## Watch the video, master uni-admin in 15 minutes
 
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=13">
     <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210826112813.jpg" alt="uni-admin视频教程" style="width: 60%;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210826112813.jpg" alt="uni-admin video tutorial" style="width: 60%;">
 </a>
 
 
 ## uni-admin 功能
+## uni-admin functions
 
 uni-admin有预置功能、插件生态和数据表管理的代码生成工具。
 uni-admin has code generation tools for preset functions, plugin ecology and data table management.
@@ -96,55 +100,74 @@ uni-admin是完整开源的一个uni-app项目，任何熟悉uni-app的工程师
 uni-admin is a complete open source uni-app project, any engineer familiar with uni-app can develop extended functions by themselves.
 
 6. 换肤功能 <Badge text="uni-admin 2.1.7+" />
+6. Skin change function <Badge text="uni-admin 2.1.7+" />
 
 - uni-admin 自带两套皮肤：
+- uni-admin comes with two skins:
   - 默认蓝色皮肤
+  - default blue skin
 
     <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-default-theme.jpg" width="400">
 
   - 可切换绿柔皮肤：
+  - Switchable green soft skin:
 
     <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-green-theme.jpg" width="400">
 
 - 如果需要修改皮肤颜色，可以在 uni-admin 项目根目录的 `uni.scss` 文件中进行修改：
+- If you need to modify the skin color, you can modify it in the `uni.scss` file in the root directory of the uni-admin project:
 
   <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-theme-config.jpg" height="400">
 
 - 如果需要增加皮肤，以下步骤为示例：
+- If you need to add skin, the following steps are examples:
   1. 在 `uni.scss` 文件的 `$themes` 属性中新增一个键值 **`blue`** 的配置：
+  1. Add a configuration with the key value **`blue`** in the `$themes` attribute of the `uni.scss` file:
     <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-theme-config-edit.jpg" height="400">
 
   2. 修改项目根目录的 `admin.config.js` 文件，添加以下内容，**注意：`value` 的值需要与 `$themes` 中新增主题的键值保持一致**：
+  2. Modify the `admin.config.js` file in the root directory of the project, and add the following content, **Note: The value of `value` needs to be consistent with the key value of the newly added theme in `$themes`**:
     <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-admin-theme-config-edit.jpg" height="400">
   3. 重新运行到 web 端查看效果
+  3. Re-run to the web to view the effect
 
 ## 使用说明
+## Instructions for use
 
 ### 一键部署@fast-install
+### One-click deployment @fast-install
 
 uni-admin的`一键部署`，会自动上传云函数、创建数据库，并将前端页面编译上传到前端网页托管中，帮你一键生成网站并自动部署uni统计；如果你需要在HBuilderX中修改定制代码，后续可再选择[手动部署](#install)方式导入项目源码到HBuilderX。
+uni-admin's "one-click deployment" will automatically upload cloud functions, create a database, compile and upload the front-end page to the front-end web hosting, help you generate a website with one click and automatically deploy uni statistics; if you need to modify it in HBuilderX Customize the code, and then you can choose [Manual Deployment](#install) to import the project source code to HBuilderX.
 
 1. 在插件市场点击一键部署插件到uniCloud
+1. In the plug-in market, click one-click to deploy the plug-in to uniCloud
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-0.png)
 
 2. 选择服务空间（目前只支持选择腾讯云服务空间，且不可以是协作者身份，需空间创建者的账号登录）
+2. Select a service space (currently only support the selection of Tencent Cloud service space, and you cannot be a collaborator, you need to log in with the account of the space creator)
 
 如需要部署在阿里云空间，则请使用[手动部署](#install)方式
+If you need to deploy in Alibaba Cloud space, please use the [Manual Deployment](#install) method
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-1.png)
 
 3. 在此页面隔几分钟刷新点击一下刷新，直到提示部署完成。
+3. Refresh this page every few minutes and click Refresh until it prompts that the deployment is complete.
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-2.png)
 
 4. 部署完成后，点击前端网页默认访问链接即可访问uni-admin
+4. After the deployment is complete, click the default access link on the front-end webpage to access uni-admin
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-3.png)
 
 ### 手动部署@install
+### Manual deployment @install
 
 当你需要使用`uni-admin`来开发时，需要使用`手动部署`方式导入源码到HBX中进行开发。
+When you need to use `uni-admin` for development, you need to use `manual deployment` to import the source code into HBX for development.
 
 #### 创建
 #### create
@@ -185,6 +208,7 @@ After the creation is complete, you can follow the `cloud service space initiali
 - If you have never been in contact with uniCloud, you cannot directly get started with uni-admin. It is recommended to read the concept introduction and quick start chapters of the uniCloud documentation first. [See details](https://uniapp.dcloud.net.cn/uniCloud/README)
 
 ## 目录结构
+## Directory Structure
 
 ```bash
 ┌── cloudfunctions                      # 云函数
@@ -283,6 +307,7 @@ After the creation is complete, you can follow the `cloud service space initiali
 ```
 
 ## 登录页
+## login page
 
 首次使用，可以通过登录页面底部链接创建一个超级管理员（仅允许创建一次），该接口会判断系统里如果有 admin 角色的用户，就不再允许添加新的超级管理员。
 For the first use, you can create a super administrator through the link at the bottom of the login page (only one creation is allowed). This interface will determine that if there is a user with the admin role in the system, it is no longer allowed to add a new super administrator.
@@ -293,6 +318,7 @@ For the first use, you can create a super administrator through the link at the 
 ![login](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/uni-admin-1.png)
 
 ## 分栏窗体介绍
+## Column form introduction
 
 登录后我们会看到如下窗体, 窗体分为三个部分，topWindow 顶部窗口（导航栏），leftwindow 左侧窗口（菜单栏），右侧的内容主窗体
 After logging in, we will see the following form, which is divided into three parts, topWindow top window (navigation bar), leftwindow left window (menu bar), and the content main form on the right
@@ -300,6 +326,7 @@ After logging in, we will see the following form, which is divided into three pa
 ![index](https://web-assets.dcloud.net.cn/unidoc/zh/pc-admin%E5%89%AF%E6%9C%AC.png)
 
 ### 顶部窗口（导航栏）
+### Top window (navigation bar)
 
 顶部窗口默认在左侧展示系统 Logo、右侧显示导航链接，效果如上图。展示内容可通过项目根目录下的`admin.config.js`文件进行配置，如下为示例：
 By default, the top window displays the system logo on the left and the navigation links on the right. The effect is as shown above. The display content can be configured through the `admin.config.js` file in the project root directory. The following is an example:
@@ -332,6 +359,7 @@ $top-window-text-color: #999; /* 文字颜色 */
 ```
 
 ### 左侧窗口（菜单栏）
+### Left window (menu bar)
 
 左侧窗口内主要是菜单，菜单包含静态菜单和动态菜单，支持无限层级嵌套，但建议层级不要超过三级
 There are mainly menus in the left window. The menus include static menus and dynamic menus. It supports infinite level nesting, but it is recommended that the level should not exceed three levels.
@@ -345,6 +373,7 @@ There are mainly menus in the left window. The menus include static menus and dy
   > When a user logs in, it will look up the _authority_ that the user has according to the user's _role_, and then look up the corresponding _menu_ according to the _authority_
 
 #### 管理静态菜单
+#### Manage Static Menu
 
 通过 [admin.config.js](https://github.com/dcloudio/uni-admin/blob/master/admin.config.js) 配置侧边栏内容，所有用户都能看到静态菜单。
 Configure the sidebar content via [admin.config.js](https://github.com/dcloudio/uni-admin/blob/master/admin.config.js), and all users can see the static menu.
@@ -380,6 +409,7 @@ export default {
 ```
 
 #### 管理动态菜单
+#### Manage dynamic menus
 
 在左侧导航菜单中，找到`系统管理 -> 菜单管理`，可视化的维护菜单。
 In the left navigation menu, find `System Management -> Menu Management`, a visual maintenance menu.
@@ -425,6 +455,7 @@ Menu items are divided into directory menu and page menu.
 
 
 #### 侧边栏样式管理
+#### Sidebar style management
 
 通过 [uni.scss](https://github.com/dcloudio/uni-admin/blob/master/uni.scss) 配置侧边栏样式
 Configure sidebar styles via [uni.scss](https://github.com/dcloudio/uni-admin/blob/master/uni.scss)
@@ -442,6 +473,7 @@ $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
 ```
 
 ### 右侧窗口（内容主窗体)
+### Right window (content main form)
 
 右侧窗口是内容主窗体，和 uni-app 保持一致，用户登录后看到的第一个页面，默认是 pages 数组中第一项表示应用启动页。
 The right window is the main content form, which is consistent with uni-app. The first page the user sees after logging in, the default is the first item in the pages array, which represents the application startup page.
@@ -451,9 +483,12 @@ If you want to transfer the page developed by yourself to the home page after lo
 
 
 ## 应用管理 <Badge text="uni-admin 1.9.3+" />@app-manager
+## Application Management <Badge text="uni-admin 1.9.3+" />@app-manager
 
 在进入应用管理后可看到如下界面，点击右上角 `新增` 按钮可新增一个应用
+After entering the application management, you can see the following interface, click the `Add` button in the upper right corner to add an application
 ![新增应用](https://web-assets.dcloud.net.cn/unidoc/zh/create_app(1).png)
+![New application](https://web-assets.dcloud.net.cn/unidoc/zh/create_app(1).png)
 
 **整体界面布局**
 **Overall interface layout**
@@ -461,6 +496,7 @@ If you want to transfer the page developed by yourself to the home page after lo
   > The information on this page will be used in association with the app release and app upgrade modules, please fill in carefully
 
   ![新增页面](https://web-assets.dcloud.net.cn/unidoc/zh/create_app_page.jpg)
+  ![New page](https://web-assets.dcloud.net.cn/unidoc/zh/create_app_page.jpg)
 
 **各项信息说明**
 **Information description**
@@ -517,6 +553,7 @@ If you want to transfer the page developed by yourself to the home page after lo
    ```
 
 ## uni-portal：统一发布页 <Badge text="uni-admin 1.9.3+" />@uni-portal
+## uni-portal: unified publishing page <Badge text="uni-admin 1.9.3+" />@uni-portal
 
 自`uni-admin 1.9.3+`版本开始，`uni-portal`作为`uni-admin`的内置插件，内置在`uni-admin`项目中。
 Since `uni-admin 1.9.3+` versions, `uni-portal` is built into the `uni-admin` project as a built-in plugin of `uni-admin`.
@@ -528,6 +565,7 @@ The `uni-admin` administrator can quickly generate an application release page a
 For more uni-portal introduction, see: [uni-portal](uni-portal.md)
 
 ## uni-upgrade-center：App升级中心 <Badge text="uni-admin 1.9.3+" />@uni-upgrade-center
+## uni-upgrade-center: uni-upgrade-center<Badge text="uni-admin 1.9.3+" />@uni-upgrade-center
 
 自`uni-admin 1.9.3+`版本开始，`uni-upgrade-center`作为`uni-admin`的内置插件，内置在`uni-admin`项目中。
 Since `uni-admin 1.9.3+` versions, `uni-upgrade-center` is built into the `uni-admin` project as a built-in plugin of `uni-admin`.
@@ -539,11 +577,13 @@ After the `uni-admin` administrator fills in the application information (such a
 For more uni-portal introduction, see: [uni-upgrade-center](upgrade-center.md)
 
 ## uni统计2.0
+## uni-stats 2.0
 
 uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台，下图为概览图和简介，详见[统计文档](https://uniapp.dcloud.net.cn/uni-stat-v2.html)
 uni Statistics 2.0 is an open source, full-end, cloud-integrated statistical platform that is more suitable for uni-app. stat-v2.html)
 
 ![统计-概况页](https://web-assets.dcloud.net.cn/unidoc/zh/admin3.png)
+![Statistics-Overview Page](https://web-assets.dcloud.net.cn/unidoc/zh/admin3.png)
 
 **1. 全端**
 **1. Full end**
@@ -625,46 +665,72 @@ uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug
 
 
 ## 群发短信@batch-sms <Badge text="uni-admin 2.1.0+" />
+## Group SMS @batch-sms <Badge text="uni-admin 2.1.0+" />
 
 如有客户关怀、会员服务、电商活动、新品上线等场景需要给用户发送短信时，无需开发，在uni-admin控制台选择用户/标签即可向用户群发短信，省时高效。
+If there are scenarios such as customer care, membership services, e-commerce activities, and new product launches that need to send text messages to users, there is no need for development. You can select users/tags in the uni-admin console to send text messages to users in groups, saving time and efficiency.
 同时支持动态替换短信模板变量，使短信更加个性化。
+At the same time, it supports dynamic replacement of SMS template variables to make SMS more personalized.
 
 ### 功能介绍
+### Features
 - 支持 给指定用户、全部用户、指定标签用户群发短信
+- Support group text messages to specified users, all users, and users with specified labels
 - 指定用户：在用户列表中勾选要接收短信的用户（必须有手机号）后，点击“群发信息”创建短信任务。
+- Designated users: After checking the users who want to receive text messages in the user list (must have a mobile phone number), click "Send Messages" to create a text message task.
 - 全部用户：在用户列表界面直接点击“群发短信”创建短信任务。
+- All users: Click "Send SMS" directly on the user list interface to create an SMS task.
 - 指定标签用户：在用户标签列表中勾选标签（如标签关联的用户没有手机号将不会发送短信）后，点击“群发短信”创建短信任务。
+- Designate tagged users: After checking the tag in the user tag list (if the user associated with the tag does not have a mobile phone number, no SMS will be sent), click "Group SMS" to create a SMS task.
 - 支持 短信模板中的变量替换为“固定文本”与“数据库字段”
+- Support variable replacement in SMS templates with "Fixed Text" and "Database Fields"
 - 固定文本：固定字符串，所有用户会接收同样的内容，例如：```DCloud```
+- Fixed text: fixed string, all users will receive the same content, for example: ```DCloud```
 - 数据库字段：可以关联数据库中指定字段，内容较为个性化。格式为 ```{数据库表名.字段}```，例如: ```{uni-id-users.username}``` 目前仅支持```uni-id-users```表
+- Database fields: You can associate specified fields in the database, and the content is more personalized. The format is ```{database table name.field}```, for example: ```{uni-id-users.username}``` currently only supports ```uni-id-users``` table
 - 支持 发送前预览前5人短信内容，用于检测模板变量是否配置正确，提高发送成功率。
+- Support to preview the text messages of the first 5 people before sending, which is used to detect whether the template variables are configured correctly and improve the sending success rate.
 
 ![群发短信](https://web-assets.dcloud.net.cn/unidoc/zh/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
+![Mass SMS](https://web-assets.dcloud.net.cn/unidoc/zh/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
 
 ### 使用方式
+### Usage
 
 **步骤一：开通短信服务**
+**Step 1: Activate SMS service**
 
 如您首次使用请登录[DCloud开发者中心](https://dev.dcloud.net.cn/)开通短信服务
+If you are using it for the first time, please log in to [DCloud Developer Center](https://dev.dcloud.net.cn/) to activate SMS service
 
 **步骤二：添加签名与模板**
+**Step 2: Add signature and template**
 
 在[签名配置页面](https://dev.dcloud.net.cn/pages/sms/sign)添加短信签名
+Add SMS signature on [Signature configuration page](https://dev.dcloud.net.cn/pages/sms/sign)
 
 在[模板配置页面](https://dev.dcloud.net.cn/pages/sms/template)中添加短信模板
+Add SMS template in [Template configuration page](https://dev.dcloud.net.cn/pages/sms/template)
 
 例如：`【测试】亲爱的${username}, 祝您生日快乐！感谢您长期以来对xx商城的信任与支持，会员生日月畅享购物双倍积分，期待您的光临！`
+For example: `[TEST] Dear ${username}, happy birthday to you! Thank you for your long-term trust and support to xx mall. Members can enjoy double shopping points on their birthday month. We look forward to your visit! `
 
 **步骤三：导出短信模板**
+**Step 3: Export SMS Template**
 
 在短信模板页面-点击”导出模板“按钮，导出短信模板。
+On the SMS template page - click the "Export Template" button to export the SMS template.
 ![导出短信模板](https://web-assets.dcloud.net.cn/unidoc/zh/20230107203307.png)
+![Export SMS Template](https://web-assets.dcloud.net.cn/unidoc/zh/20230107203307.png)
 
 **步骤四：通过uni-admin控制台发送短信**
+**Step 4: Send SMS via uni-admin console**
 
 如您未部署过uni-admin，请在插件市场中安装[uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)
+If you have not deployed uni-admin, please install [uni-admin] in the plug-in market (https://ext.dcloud.net.cn/plugin?id=3268)
 
 首次使用，在 ```uni-config-center/uni-sms-co/config.json```中配置短信 API 密钥
+For first use, configure SMS API key in ```uni-config-center/uni-sms-co/config.json```
 ```json
 {
     "smsKey": "your smsKey",
@@ -673,32 +739,46 @@ uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug
 ```
 
 配置完成后，登录uni-admin控制台，打开用户管理页面，请按照图示步骤上传短信模板（步骤三导出的短信模板）：
+After the configuration is complete, log in to the uni-admin console, open the user management page, and follow the steps shown in the figure to upload the SMS template (the SMS template exported in step 3):
 ![上传短信模板](https://web-assets.dcloud.net.cn/unidoc/zh/20230107201145.png)
+![Upload SMS template](https://web-assets.dcloud.net.cn/unidoc/zh/20230107201145.png)
 短信模板上传成功后，短信模板即可显示，如下：
+After the SMS template is uploaded successfully, the SMS template will be displayed, as follows:
 ![短信模板上传成功](https://web-assets.dcloud.net.cn/unidoc/zh/20230107202329.png)
+![SMS template uploaded successfully](https://web-assets.dcloud.net.cn/unidoc/zh/20230107202329.png)
 
 选择要接收短信的用户，如下：
+Select the user to receive SMS, as follows:
 ![群发用户](https://web-assets.dcloud.net.cn/unidoc/zh/20230107202752.png)
+![Mass user](https://web-assets.dcloud.net.cn/unidoc/zh/20230107202752.png)
 或者如果已经对用户进行了分组，可以在标签管理中选择标签后发送短信，如下：
+Or if users have been grouped, you can select a tag in the tag management and send a text message, as follows:
 ![群发用户标签](https://web-assets.dcloud.net.cn/unidoc/zh/20230107203019.png)
+![Mass user label](https://web-assets.dcloud.net.cn/unidoc/zh/20230107203019.png)
 
 目前短信支持固定文本发送与关联数据表字段发送，以下介绍两种方式如何发送
+At present, SMS supports fixed text sending and associated data table field sending. The following describes how to send in two ways
 
 **固定文本发送**
+**fixed text sending**
 
 选择短信模板，如果没有出现变量模板配置就是固定文本模式，如下：
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107204518.png)
 可以在发送前点击预览，可以预览发送的第一条短信，用来检查短信内容是否正确，如下：
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107204807.png)
 确认短信内容无误后，点击提交即可发送短信，发送短信之后可以在[DCloud开发者中心](https://dev.dcloud.net.cn/)-查看[短信发送记录](https://dev.dcloud.net.cn/pages/sms/sendLog)
+After confirming that the content of the message is correct, click Submit to send the message. After sending the message, you can check the [SMS sending record](https:// dev.dcloud.net.cn/pages/sms/sendLog)
 
 **使用数据表字段作为模板变量发送**
+**Use datatable fields to send as template variables**
 
 选择短信模板，如果出现变量模板配置就是数据表查询模式，如下：
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107205208.png)
 如上，短信变量字段为”username“，配置替换字段为uni-id-users表中username字段，在发送短信时会替换掉短信变量。
+As above, the text message variable field is "username", and the configuration replacement field is the username field in the uni-id-users table, and the text message variable will be replaced when sending a text message.
 
 短信变量支持固定值和数据表查询两种方式；固定值如：各位同事，数据表查询如：{uni-id-users.username}；请注意，若使用数据表查询方式，目前仅支持查询 uni-id-users 表；并注意确保数据库中查询字段值不为空，否则短信将发送失败。
+SMS variables support two methods of fixed value and data table query; fixed value such as: colleagues, data table query such as: {uni-id-users.username}; please note that if you use the data table query method, currently only supports query uni -id-users table; and pay attention to ensure that the value of the query field in the database is not empty, otherwise the SMS will fail to be sent.
 
 在发送之前可以点击预览，查看第一条短信的内容，确保变量模板配置正确，如下，username将替换为“张三”：
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107205823.png)
@@ -707,8 +787,10 @@ uni statistics is open source and based on the [uni-admin](/uniCloud/admin) plug
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107210406.png)
 
 如有任何问题可在[论坛发帖](https://ask.dcloud.net.cn)咨询或加uniCloud短信服务交流QQ群(695645208)咨询
+If you have any questions, you can consult in [Forum Post](https://ask.dcloud.net.cn) or add uniCloud SMS service exchange QQ group (695645208) for consultation
 
 ## 用户-角色-权限
+## user-role-permission
 
 uni-admin 框架基于 uni-id，复用 uni-id 的用户、角色、权限系统，详见[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)。
 The uni-admin framework is based on uni-id, and reuses uni-id's user, role, and permission system. For details, see [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary).
@@ -766,30 +848,42 @@ admin provides two built-in methods to facilitate the authentication of login us
 ```
 
 ### 给系统创建多个登录账户并设置不同的权限@mutiladmin
+### Create multiple login accounts for the system and set different permissions @mutiladmin
 下面以增加一个普通成员的角色为例，该角色的用户登录admin系统后只能看用户表数据，不能改动数据。
+The following is an example of adding an ordinary member role. After logging in to the admin system, users of this role can only view the data in the user table and cannot change the data.
 1. 先用admin账户登录admin系统。
+1. First log in to the admin system with the admin account.
 - admin示例项目地址：[https://unicloudadmindemo.dcloud.net.cn/#/pages/login/login](https://unicloudadmindemo.dcloud.net.cn/#/pages/login/login)
 - admin sample project address: [https://unicloudadmindemo.dcloud.net.cn/#/pages/login/login](https://unicloudadmindemo.dcloud.net.cn/#/pages/login/login)
 - 体验账号：admin      密码：123456
 - Experience account: admin Password: 123456
 
 2. 创建权限。在uni-admin左侧菜单的权限管理，新增权限“查询信息”，标识为“read”
+2. Create permissions. In the permission management of the left menu of uni-admin, add permission "query information", marked as "read"
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/admin-permision.jpg)
 3. 创建角色。在左侧菜单的角色管理里，新增角色“普通成员”，标识为“member”，绑定上面的“查询信息”权限
+3. Create a role. In the role management on the left menu, add a new role "ordinary member", identified as "member", and bind the above "query information" permission
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/4mutiladmin.jpg)
 4. 创建账户并赋予角色。在左侧菜单的用户管理里，添加用户“张三”，然后给用户赋予角色“普通成员”
+4. Create an account and assign a role. In the user management on the left menu, add the user "Zhang San", and then give the user the role "ordinary member"
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/16f173a2-e889-404b-b509-346d3b929a0d.jpg)
 5. 如果你退出账户，登录刚刚创建的账户张三。我们发现会提示：该账户没有被赋予登录admin系统的权限, 请联系系统管理员绑定角色赋权限。因为：你登录的账户没有访问任何admin系统菜单的权限，所以不能访问admin系统。
+5. If you log out of your account, log in to the account Zhang San you just created. We found that it will prompt: This account is not authorized to log in to the admin system, please contact the system administrator to bind the role to assign permissions. Because: the account you log in does not have access to any admin system menu, so you cannot access the admin system.
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/9mutiladmin.jpg)
 6. 设置有查询信息权限的人，拥有访问admin系统菜单"用户管理"的权限。在左侧菜单的菜单管理里，找到菜单“用户管理”，点修改，在权限列表里勾选“查询信息”，也就是有查询信息权限的人，可以看到本菜单
+6. The person who has the right to query information has the right to access the "User Management" of the admin system menu. In the menu management of the left menu, find the menu "User Management", click Modify, and check "Query Information" in the permission list, that is, people who have the permission to query information can see this menu
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/11mutiladmin.jpg)
 7. 这时你用账户“张三”登录，就能进入到admin系统。但你会看到如下图提示“权限校验未通过”。因为刚刚仅为该用户赋予了访问菜单的权限。还未赋予访问uni-id-users表的阅读权限
+7. At this time, you can log in with the account "Zhang San" to enter the admin system. But you will see the prompt "Permission verification failed" as shown in the figure below. Because only this user has just been given access to the menu. Read access to the uni-id-users table has not been granted
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/12mutiladmin.jpg)
 8. 需要在hbuilderx中将表uni-id-users的schema文件中设置新角色的权限，将permission下的read节点配置为`"read": "'read' in auth.permission"`，并上传到云端。当然这在示例项目不能实现，需要你自己搭建admin系统，重复以上步骤，[点此下载uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)
+8. It is necessary to set the permission of the new role in the schema file of the table uni-id-users in hbuilderx, configure the read node under permission as `"read": "'read' in auth.permission"`, and upload it to cloud. Of course, this cannot be achieved in the sample project, you need to build the admin system yourself, repeat the above steps, [click here to download uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/d92e3738-f25a-4c46-9ab4-2edbdf92518a.png)
 9. 此时你再刷新页面即可访问用户管理的数据列表
+9. At this point, you can refresh the page to access the data list of user management
 
 ## icon 图标
+## icon icon
 
 admin 框架内置了一套 icon 图标，在`静态功能演示-图标`菜单中，点击图标即可复制图标的 class 定义。
 The admin framework has a built-in set of icon icons. In the `Static Function Demonstration - Icon` menu, click the icon to copy the class definition of the icon.
@@ -811,6 +905,7 @@ Of course, you can also use a third-party icon library. Take the icon using `ele
 Just use the icon's class name on the label: ``el-icon-s-tools``
 
 ## 新增页面
+## Add new page
 
 新增页面可以自己开发页面，也可以从插件市场下载插件。页面如需添加菜单，参见上文的[菜单管理](#静态菜单和动态菜单)。
 To add new pages, you can develop your own pages, or you can download plug-ins from the plug-in market. If you need to add a menu to the page, see [Menu management] above (#%E9%9D%99%E6%80%81%E8%8F%9C%E5%8D%95%E5%92%8C%E5%8A %A8%E6%80%81%E8%8F%9C%E5%8D%95).
@@ -831,11 +926,13 @@ The development page is not limited to the development method:
 > Note: When using uni-cloud-router, the folders and files under the controller should not be named the same. For example, the writing of app/room cannot tell whether `app` is the file `app.js` or the folder `app` `
 
 ### 自己开发页面
+### Develop your own page
 
 admin 中开发页面，和 uni-app 开发 vue 页面是一致的。
 The development page in admin is the same as the uni-app development vue page.
 
 ### 从插件市场下载插件，并注册到 admin 的左侧动态菜单中
+### Download the plug-in from the plug-in market and register it in the dynamic menu on the left of the admin
 
 _使用步骤:_
 _Steps for usage:_
@@ -856,6 +953,7 @@ _Steps for usage:_
 
 
 ## admin 插件开发
+## admin plugin development
 
 我们不仅是插件的使用者，也可以是插件的开发者，那么如何开发一款 uni-admin 插件呢？
 We are not only users of plugins, but also developers of plugins, so how to develop a uni-admin plugin?
@@ -953,8 +1051,10 @@ The following is a list of existing uni-admin plugins, you can refer to: [https:
 **How to upload plugin market after plugin development**
 
 插件上传等更多信息，参考 [DCloud 插件开发指南汇总](https://uniapp.dcloud.io/plugin/publish.html) 及其中的 `admin 插件`部分，插件作者可以按此文档提交插件，在插件市场的上传发布页面选择`uniCloud` 分类的 `Admin 插件` 。
+For more information about plug-in uploads, please refer to [Summary of DCloud Plug-in Development Guide](https://uniapp.dcloud.io/plugin/publish.html) and the `admin plug-in` section. Plug-in authors can submit plug-ins according to this document. On the upload and release page of the plug-in market, select the `Admin plug-in` of the `uniCloud` category.
 
 ## uni-admin中使用三方组件库
+## Use the tripartite component library in uni-admin
 
 uni-admin 支持所有三方的 Vue UI 库，包括 elementUI 等非 uni-app 的 UI 库，但注意这些 for h5 的 ui 库只能在浏览器中使用，无法适配 App 和小程序，按如下操作。
 uni-admin supports all three-party Vue UI libraries, including non-uni-app UI libraries such as elementUI, but note that these for h5 ui libraries can only be used in browsers and cannot be adapted to apps and applets, as follows.
@@ -989,7 +1089,10 @@ The base path where the uni-admin framework runs is `/admin/` by default. After 
 If you want to customize the base path of the project's running, modify the value of `h5 -> router -> base` in the `manifest.json` file.
 
 ## 常见问题
+## common problem
 
 ### 使用uni-admin新建用户无法登录，会提示“该账号暂无权限登录” ？
+### Using uni-admin to create a new user cannot log in, and it will prompt "This account has no permission to log in"?
 
 用户登录逻辑：登录时系统检测没有菜单会提示“暂无权限登录”，需要给新账号绑定角色，角色有菜单方可登录
+User login logic: When the system detects that there is no menu when logging in, it will prompt "no permission to log in". You need to bind a role to the new account, and the role has a menu to log in

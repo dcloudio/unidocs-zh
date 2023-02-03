@@ -12,6 +12,7 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 **Platform Difference Description**
 
 |App				|Web				|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序	|QQ小程序	|快应用	|360小程序|快手小程序	|京东小程序	|
+| App | Web |WeChat MiniApp |Alipay MiniApp |Baidu MiniApp |Byte Beat MiniApp |QQ MiniApp | QuickApp |360 MiniApp| Kuaishou MiniApp MiniApp |
 |:-:				|:-:				|:-:				|:-:					|:-:				|:-:						|:-:			|:-:		|:-:			|:-:				|:-:				|
 |√(3.6.11+)	|√(3.6.11+)	|√(3.5.5+)	|x						|x					|x							|x				|x			|x				|x					|x					|
 
@@ -23,8 +24,11 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 [Details of the steps to activate advertising](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 
 注意
+Notice
 - 3.6.11+ 支持App平台和Web平台。开通方式不是单独开通，而是需要开启 App 基础广告，收益报表在基础广告里看。如未在[uniad后台](https://uniad.dcloud.net.cn/)开通，又在界面上使用了本组件，会显示DCloud公益广告。
+- 3.6.11+ supports App platform and Web platform. The activation method is not a separate activation, but the basic advertisement of the App needs to be activated, and the income report can be viewed in the basic advertisement. If it is not activated in [uniad background](https://uniad.dcloud.net.cn/), and this component is used on the interface, DCloud public service advertisement will be displayed.
 - 在App平台和Web平台不需要设置广告位属性 `adpid`
+- There is no need to set the ad slot attribute `adpid` on the App platform and the Web platform
 
 ## 语法
 ## grammar
@@ -160,6 +164,7 @@ Right-click on the pages directory of the project, add the `ad-interactive-webvi
 ## Access steps
 
 1. 开通并[申请](https://uniapp.dcloud.net.cn/uni-ad.html#start)广告位
+1. Open and [apply](https://uniapp.dcloud.net.cn/uni-ad.html#start) advertising space
 3. 在需要展示广告的地方放入 `<ad-interactive></ad-interactive>` 组件代码，此广告可作为悬浮红包使用，设置组件样式 fixed 定位即可
 3. Put the `<ad-interactive></ad-interactive>` component code where the ad needs to be displayed. This ad can be used as a floating red envelope. Set the component style to fixed positioning.
 4. 在项目中新增 [ad-interactive-webview](#openpagepath) 页面
@@ -172,6 +177,10 @@ When running to the WeChat applet, you need to add the request legal domain name
 1. 登陆 [微信公众平台](https://mp.weixin.qq.com/)，左侧栏找到 `开发管理` 并点击 开发设置->服务器域名
 1. Log in to [WeChat Public Platform](https://mp.weixin.qq.com/), find `Development Management` in the left column and click Development Settings->Server Domain Name
 2. 新增 `request合法域名`: `https://wxac1.dcloud.net.cn`
+2. Add `request legal domain name`: `https://wxac1.dcloud.net.cn`
 3. 配置业务域名-> 下载校验文件
+3. Configure business domain name -> download verification file
 4. 在[uniAD后台](https://uniad.dcloud.net.cn/)，微信小程序广告管理-> 开通微信小程序互动广告 -> 上传校验文件，等待校验成功
+4. In [uniAD background](https://uniad.dcloud.net.cn/),WeChat MiniApp Advertisement Management-> Open WeChat MiniApp Interactive Ads -> Upload the verification file and wait for the verification to succeed
 5. 新增 `业务域名`: `https://engine.dcad01.com` 和 `https://xcx.dcad01.com`
+5. Add `business domain name`: `https://engine.dcad01.com` and `https://xcx.dcad01.com`

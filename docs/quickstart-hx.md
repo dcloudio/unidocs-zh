@@ -49,17 +49,21 @@ If developers are accustomed to projects in node mode and are confused about the
 
 
 1. 浏览器运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到浏览器 -> 选择浏览器，即可体验 uni-app 的 web 版。
+1. Browser operation: Enter the hello-uniapp project, click on the toolbar -> run to browser -> select a browser, and you can experience the web version of uni-app.
   <div align=center>
   	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/menurun.png"/>
   </div>
 
 2. 运行App到手机或模拟器：使用电压足够的usb端口连接手机，设置中开启USB调试，手机上允许电脑设备调试手机，进入hello-uniapp项目，点击工具栏的运行 -> 运行App到手机或模拟器，即可在该设备里面体验uni-app。
+2. Run the App to the mobile phone or emulator: connect the mobile phone with a usb port with sufficient voltage, enable USB debugging in the settings, allow the computer device to debug the mobile phone on the mobile phone, enter the hello-uniapp project, click Run -> Run App to the mobile phone on the toolbar Or emulator, you can experience uni-app in the device.
 	<div align=center>
 		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/menurunapp.png"/>
 	</div>
 	
 	- 如手机或模拟器无法识别，请点击[常见故障排查指南](https://uniapp.dcloud.net.cn/tutorial/run/run-app-faq.html)。
+	- If the mobile phone or emulator cannot be recognized, please click [Common Troubleshooting Guide](https://uniapp.dcloud.net.cn/tutorial/run/run-app-faq.html).
   - 如需运行在苹果手机真机上，注意需使用自定义基座。[详见](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+  - If you want to run on a real Apple phone, please note that you need to use a custom dock. [See details](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
 <!-- @ifdef ZH -->
 3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。

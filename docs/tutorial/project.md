@@ -41,8 +41,12 @@ A uni-app project contains the following directories and files by default:
 
 
 `static目录` 使用注意
+Note on `static directory`
 - 编译到任意平台时，`static` 目录下除不满足[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)的文件，会直接复制到最终的打包目录，不会打包编译。非 `static` 目录下的文件（vue、js、css 等）只有被引用时，才会被打包编译。
+- When compiling to any platform, the `static` directory does not meet the [conditional compilation](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD %95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91) will be copied directly to the final packaging directory without packaging and compiling. Files (vue, js, css, etc.) in non-`static` directories will be packaged and compiled only when they are referenced.
 - `css`、`less/scss` 等资源不要放在 `static` 目录下，建议这些公用的资源放在自建的 `common` 目录下。
+- Resources such as `css` and `less/scss` should not be placed in the `static` directory. It is recommended that these public resources be placed in the self-built `common` directory.
 
 **Tips**
 - HbuilderX 1.9.0+ 支持在根目录创建 `ext.json`、`sitemap.json` 等小程序需要的文件。
+- HbuilderX 1.9.0+ supports creating `ext.json`, `sitemap.json` and other files required by MiniApp in the root directory.

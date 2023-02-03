@@ -270,7 +270,9 @@
 |key	| 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 对比时辨识 VNodes [详情](https://v2.cn.vuejs.org/v2/api/#key) 	|√	| √	| √		| |
 |key | Mainly used in Vue's virtual DOM algorithm to identify VNodes when comparing old and new nodes [Details](https://v2.cn.vuejs.org/v2/api/#key) |√ | √ | √ | |
 |ref	| ref 被用来给元素或子组件注册引用信息 [详情](https://v2.cn.vuejs.org/v2/api/#ref) 	|√	| √	| √		|非 H5 平台只能获取 vue 组件实例不能获取到内置组件实例|
+| ref | ref is used to register reference information for elements or subcomponents [Details](https://v2.cn.vuejs.org/v2/api/#ref) |√ | √ | √ |Only for non-H5 platforms Obtaining a vue component instance cannot obtain a built-in component instance|
 |is	| 用于动态组件且基于 DOM 内模板的限制来工作 [详情](https://v2.cn.vuejs.org/v2/api/#is) 	|√	| √ (需传入 String 类型) | x		|	-	|
+| Yes | is used for dynamic components and works based on the restrictions of templates in the DOM [Details](https://v2.cn.vuejs.org/v2/api/#is) |√ | √ (need to pass in String type) |x|-|
 
 
 

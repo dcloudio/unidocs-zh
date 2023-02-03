@@ -39,6 +39,7 @@ cloudfunctions
 **In `HBuilderX 3.0.0` and above, the above steps 4 and 5 can be implemented by right-clicking on the cloud function and selecting `Manage public module dependencies`, as shown below**
 
 ![管理公共模块依赖](https://web-assets.dcloud.net.cn/unidoc/zh/manage-common.png)
+![Manage common module dependencies](https://web-assets.dcloud.net.cn/unidoc/zh/manage-common.png)
 
 公共模块依赖其他公共模块同理
 Public modules depend on other public modules in the same way

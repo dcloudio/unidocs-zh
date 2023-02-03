@@ -2,6 +2,7 @@
 ##DB Schema overview
 
 `DB Schema`是基于 JSON 格式定义的数据结构的规范。除schema外jql还支持使用js编写schema扩展，详见：[DB schema 扩展](jql-schema-ext.md)
+`DB Schema` is a specification based on data structures defined in the JSON format. In addition to schema, jql also supports using js to write schema extensions, see: [DB schema extension](jql-schema-ext.md)
 
 它有很多重要的作用：
 It has many important functions:
@@ -54,6 +55,7 @@ Therefore, it is recommended that developers write a good schema, regardless of 
 1. 登录 [uniCloud控制台](https://unicloud.dcloud.net.cn)，选中一个数据表
 1. Log in to the [uniCloud console](https://unicloud.dcloud.net.cn), select a data table
 2. 点击表右侧页签 “表结构”，点击 “编辑” 按钮，在编辑区域编写 Schema，编写完毕后点保存按钮即可生效。
+2. Click the tab "Table Structure" on the right side of the table, click the "Edit" button, and write the Schema in the editing area. After writing, click the Save button to take effect.
   ![](https://web-assets.dcloud.net.cn/unidoc/zh/schema2code.png)
 
 **web控制台上编辑`DB Schema`保存后是实时在现网生效的，请注意对现网商用项目的影响。**
@@ -1447,7 +1449,9 @@ how to use
 - 方式一：在uniCloud web控制台创建
 - Method 1: Create in the uniCloud web console
 1. uniCloud 控制台，选择服务空间，切换到数据库视图
+1. On the uniCloud console, select the service space and switch to the database view
 2. 底部 “扩展校验函数” 点击 “+” 增加校验函数 ![](https://web-assets.dcloud.net.cn/unidoc/zh/schema-validate-function.png)
+2. Click "+" at the bottom of the "Extended Validation Function" to add a validation function ![](https://web-assets.dcloud.net.cn/unidoc/zh/schema-validate-function.png)
 3. 给函数起个名字，比如叫“checkabc”
 3. Give the function a name, such as "checkabc"
 
@@ -2075,7 +2079,9 @@ action is a companion function of `clientDB`. Its function is to execute a `uni-
 Some complex services require that an action cloud function must be executed at the same time to allow the front-end to modify specific data.
 
 以user表为例，假使用户在修改自己的name时，必须要触发一个名为changenamelog的action云函数，在该云函数里会记录一条留痕日志，如果没有记录日志则不允许修改name。
+Taking the user table as an example, if the user modifies his name, he must trigger an action cloud function named changenamelog, and a log will be recorded in the cloud function. If no log is recorded, the name cannot be modified.
 那么在`DB Schema`里要配置`'changenamelog' in action`
+Then configure `'changenamelog' in action` in `DB Schema`
 
 ```json
 // user表的schema

@@ -165,12 +165,16 @@ uni-list does not include pull-to-refresh and pull-up page-turning. Pull up and 
 <uni-list>
 	<uni-list :border="true">
 		<!-- 显示圆形头像 -->
+		<!-- Show circular avatar -->
 		<uni-list-chat :avatar-circle="true" title="uni-app" avatar="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" ></uni-list-chat>
 		<!-- 右侧带角标 -->
+		<!-- with corner mark on the right side -->
 		<uni-list-chat title="uni-app" avatar="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" badge-text="12"></uni-list-chat>
 		<!-- 头像显示圆点 -->
+		<!-- Avatar display dots -->
 		<uni-list-chat title="uni-app" avatar="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" badge-positon="left" badge-text="dot"></uni-list-chat>
 		<!-- 头像显示角标 -->
+		<!-- Avatar display corner mark -->
 		<uni-list-chat title="uni-app" avatar="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" badge-positon="left" badge-text="99"></uni-list-chat>
 		<!-- 显示多头像 -->
 		<!-- Show multiple avatars -->
@@ -392,6 +396,7 @@ switchTab|same as uni.switchTab()
 |badgePositon|String|right|	角标位置|
 |badgePositon|String|right| Badge Position|
 |link|String|navigateTo|	是否展示右侧箭头并开启点击反馈，可选值见下表|
+| link| String| navigateTo| whether to display the right arrow and enable click feedback, the optional values are shown in the table below|
 |to|String|-|跳转页面地址，如填写此属性，click 会返回页面是否跳转成功	|
 |to|String|-|Jump page address, if fill in this attribute, click will return whether the page jump is successful |
 |time|String|-|	右侧时间显示|

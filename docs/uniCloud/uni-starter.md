@@ -1,9 +1,13 @@
 > 以下为uni-starter v2的文档，新项目推荐直接使用。如果你的老项目使用的是uni-starter v1版，不想升级请查看：[uni-starter v1 文档](https://gitcode.net/dcloud/uni-starter/-/blob/v1/README.md)
+> The following is the document of uni-starter v2, and it is recommended to use it directly for new projects. If your old project is using uni-starter v1 version, please check: [uni-starter v1 document](https://gitcode.net/dcloud/uni-starter/-/blob/v1/README.md )
 
 ## 简介
+## Introduction
 uni-starter是集成商用项目常见功能的、云端一体应用快速开发项目模版。
+uni-starter is a cloud-integrated application rapid development project template that integrates common functions of commercial projects.
 
 一个应用有很多通用的功能，比如登录注册、个人中心、设置、权限管理、拦截器、banner... uni-starter将这些功能都已经集成好。
+An application has many common functions, such as login registration, personal center, settings, rights management, interceptor, banner... uni-starter has integrated these functions.
 
 直接在`HBuilderx`新建项目选择`uni-starter`模板，即可在此基础上快速开发自己的特色业务。
 Directly create a new project in `HBuilderx` and select the `uni-starter` template, and then you can quickly develop your own characteristic business on this basis.
@@ -12,13 +16,16 @@ Directly create a new project in `HBuilderx` and select the `uni-starter` templa
 With `uni-starter`, coupled with `schema2code` to generate front-end pages, a simple application can be completed quickly.
 
 如果说[uni-admin](https://uniapp.dcloud.io/uniCloud/admin)是管理端项目的基本项目模版，那么uni-starter则是用户端、尤其是移动端的基础项目模板。
+If [uni-admin](https://uniapp.dcloud.io/uniCloud/admin) is the basic project template of the management project, then uni-starter is the basic project template of the user terminal, especially the mobile terminal.
 
 `uni-starter` + `uni-admin` 提供了用户端和管理端的全套模版，开箱即用，应用开发从未如此简单快捷！
+`uni-starter` + `uni-admin` provides a full set of templates for client and admin, out of the box, application development has never been easier and faster!
 
 演示项目：[https://uni-starter.dcloud.net.cn](https://uni-starter.dcloud.net.cn)
 Demo project: [https://uni-starter.dcloud.net.cn](https://uni-starter.dcloud.net.cn)
 
 扫码体验：<img src="https://web-assets.dcloud.net.cn/unidoc/zh/download.png" style="width: 120px;">
+Scan code experience: <img src="https://web-assets.dcloud.net.cn/unidoc/zh/download.png" style="width: 120px;">
 
 下载地址：[https://ext.dcloud.net.cn/plugin?id=5057](https://ext.dcloud.net.cn/plugin?id=5057)
 Download address: [https://ext.dcloud.net.cn/plugin?id=5057](https://ext.dcloud.net.cn/plugin?id=5057)
@@ -29,16 +36,23 @@ GitCode repository: [https://gitcode.net/dcloud/uni-starter](https://gitcode.net
 ## uni-starter集成包括：
 ## uni-starter integration includes:
 1. 用户管理：
+1. User management:
 	uni-starter的用户管理本质是集成了[uni-id-pages](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)，它包括众多功能：
+	The essence of user management of uni-starter is to integrate [uni-id-pages](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html), which includes many functions:
 	- 登录注册（用户名密码登录、手机号验证码登录、APP一键登录、微信登录、Apple登录、微信小程序登录、手机微信扫码登录、微信公众号内登录）
+	- Login and registration (username and password login, mobile phone number verification code login, APP one-click login, WeChat login, Apple login, WeChat MiniApp login, mobile phone WeChat scan code login, WeChat official account login)
 	- 修改密码、忘记密码、头像更换（集成图片裁剪）、昵称修改、积分查看、退出登录、账号注销
+	- Change password, forget password, change avatar (integrated picture cropping), change nickname, view credits, log out, cancel account
 2. 系统设置：
+2. System settings:
 	- 内置[App升级中心](https://uniapp.dcloud.net.cn/uniCloud/upgrade-center.html)（整包升级、wgt升级、强制升级，后台搭配uni-admin的升级中心插件管理）
+	- Built-in [uni-upgrade-center](https://uniapp.dcloud.net.cn/uniCloud/upgrade-center.html)(whole package upgrade, wgt upgrade, forced upgrade, background with uni-admin uni-upgrade-center plug-in management)
 	- 推送开关（app）、清除缓存（app）
 	- Push switch (app), clear cache (app)
 	- 指纹解锁（app）、人脸解锁（app）
 	- Fingerprint unlock (app), face unlock (app)
 	- 多语言切换
+	- Multilingual switching
 3. 隐私权限：内置Android先弹出隐私协议对话框，然后再向用户申请设备权限
 3. Privacy permission: The built-in Android first pops up the privacy agreement dialog box, and then applies to the user for device permission
 4. 权限引导：当应用拒绝授权某些权限，但在后续使用中又需要这个权限；此时实现：引导用户可“一键跳转至系统设置”中开启。
@@ -52,7 +66,9 @@ GitCode repository: [https://gitcode.net/dcloud/uni-starter](https://gitcode.net
 5. 实用功能
 5. Practical functions
 	- 问题与反馈、关于、隐私政策、用户服务协议
+	- Questions and Feedback, About, Privacy Policy, User Service Agreement
 	- banner（后台搭配uni-admin的banner插件管理）
+	- Banner (background with uni-admin banner plug-in management)
 	- 新闻的搜索、列表、详情、分享。通过clientDB实现，开发者直接修改定义的表名等参数，即可轻松改为自己的业务
 	- Search, list, detail and share news. Implemented through clientDB, developers can easily change to their own business by directly modifying the defined table name and other parameters
 	- 可覆盖原生层的分享菜单
@@ -70,7 +86,9 @@ GitCode repository: [https://gitcode.net/dcloud/uni-starter](https://gitcode.net
 	- 调用云函数（callFunction）拦截器，自动携带必要参数、自动处理响应体。详见8.自动完成1-2
 	- Call the cloud function (callFunction) interceptor, automatically carry the necessary parameters, and automatically process the response body. See 8. Autocomplete 1-2 for details
 8. 自动完成：
+8. Autocomplete:
 	- 分析uniCloud.callFunction和clientDB操作的响应体，判断code执行对应的操作如跳转到登录页，自动续期token
+	- Analyze the response body of uniCloud.callFunction and clientDB operations, and judge the code to perform corresponding operations such as jumping to the login page and automatically renewing the token
 	- 操作注册/登录操作自动获取客户端设备：push_clientid、imei、oaid、idfa新增/更新到数据表uni-id-device
 	- Operation registration/login operation to automatically obtain client device: push_clientid, imei, oaid, idfa added/updated to the data table uni-id-device
 	- 异常恢复处理：断网恢复后自动重连“因网络错误导致的”网络请求
@@ -88,21 +106,29 @@ GitCode repository: [https://gitcode.net/dcloud/uni-starter](https://gitcode.net
 - After passing the uniCloud certification, create a service space for this project to use. You can choose Alibaba Cloud or Tencent Cloud, the two service spaces are different [Details](https://uniapp.dcloud.net.cn/uniCloud/price)
 
 #### 2. 运行云服务空间初始化向导
+#### 2. Run the cloud service space initialization wizard
 <img style="width:61.8%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20210809115104.jpg" />
 <img style="width:61.8%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20210809113634.jpg" />
 <img style="width:61.8%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20210809114205.jpg" />
 
 ## 功能模块介绍
+## Function module introduction
 ### 1.账户管理
+### 1. Account Management
 uni-starter 使用 `uni-id-pages`实现：登录注册账户管理相关功能 [详情查看](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
+uni-starter uses `uni-id-pages` to achieve: login registration account management related functions [View details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
 ### 2.路由管理
+### 2. Routing management
 大多数应用，都会指定某些页面需要登录才能访问。以往开发者需要写不少代码。现在，只需在项目的pages.json内配置登录页路径、需要登录才能访问的页面等信息，uni-app框架的路由跳转，会自动在需要登录且客户端登录状态过期或未登录时跳转到登录页面。详情查看：[uniIdRouter文档](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#uni-id-router)
+Most applications specify that certain pages require a login to access. In the past, developers needed to write a lot of code. Now, you only need to configure the login page path, pages that require login to access, etc. in the pages.json of the project, and the routing jump of the uni-app framework will automatically jump when login is required and the client login status expires or is not logged in. Go to the login page. For details, see: [uniIdRouter document](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#uni-id-router)
 ### 3.h5版在页面顶部引导用户`点击下载App`
 ### Version 3.h5 guides users to `click to download the app` at the top of the page
 把h5端用户引流到APP端，是一个非常实用的功能。相对于h5，APP端有更高的用户留存和更好的产品体验。
 It is a very practical function to divert users from the h5 end to the APP end. Compared with h5, APP has higher user retention and better product experience.
 uni-starter集成了这个功能，你只需直接在`项目根目录/uni-starter.config.js`的"h5"->"openApp"中配置相关内容，即可开启全局悬浮的下载引导。
+uni-starter integrates this function, you only need to directly configure the relevant content in "h5"->"openApp" of `project root directory/uni-starter.config.js`, and you can start the global floating download guide.
 这也是一个演示开发者如何在h5端做全局悬浮块的例子。你也可以在`/common/openApp.js`中修改他的样式等代码等，注意它只支持原生js语法。
+This is also an example to demonstrate how developers can make global floating blocks on the h5 side. You can also modify his style and other codes in `/common/openApp.js`, note that it only supports native js syntax.
 
 ### 4.分享模块
 ### 4. Sharing module
@@ -120,9 +146,13 @@ An overridable native layer sharing module
 为了解决开发者维护多个 App 升级繁琐，重复逻辑过多，管理不便的问题，升级中心`uni-upgrade-center`应运而生。
 In order to solve the problem that developers maintain multiple apps to upgrade tediously, too much repetitive logic, and inconvenient management, the upgrade center `uni-upgrade-center` came into being.
 提供了简单、易用、统一的 App 管理、App 版本管理、安装包发布管理，升级检测更新管理。
+Provides simple, easy-to-use, and unified App management, App version management, installation package release management, upgrade detection update management.
 - 升级中心分为两个部分：`uni-upgrade-center` 前台检测更新和`uni-upgrade-center-Admin`后台管理系统。
+- The uni-upgrade-center is divided into two parts: `uni-upgrade-center` foreground detection update and `uni-upgrade-center-Admin` background management system.
 - `uni-upgrade-center`的介绍 [详情](https://ext.dcloud.net.cn/plugin?id=4542)
+- Introduction to `uni-upgrade-center` [Details](https://ext.dcloud.net.cn/plugin?id=4542)
 - `uni-upgrade-center-Admin`的介绍 [详情](https://ext.dcloud.net.cn/plugin?id=4470)
+- Introduction to `uni-upgrade-center-Admin` [Details](https://ext.dcloud.net.cn/plugin?id=4470)
 
 ### 6.意见反馈
 ### 6. Feedback
@@ -148,7 +178,9 @@ According to the Ministry of Industry and Information Technology's special recti
 - 应用启动运行时需弹出隐私政策协议，说明应用采集用户数据
 - When the app starts and runs, a privacy policy agreement should pop up, indicating that the app collects user data
 - 应用不能强制要求用户授予权限，即不能“不给权限不让用”
+- The application cannot force the user to grant permissions, that is, it cannot "not allow use without permission"
 + 如不希望应用启动时申请“读写手机存储”和“访问设备信息”权限，请参考：[https://ask.dcloud.net.cn/article/36549](https://ask.dcloud.net.cn/article/36549)
++ If you do not want to apply for the permissions of "reading and writing mobile phone storage" and "accessing device information" when the application starts, please refer to: [https://ask.dcloud.net.cn/article/36549](https://ask.dcloud .net.cn/article/36549)
 
 配置弹出“隐私协议和政策”打开项目的manifest.json文件，切换到“源码视图”项
 Configure the pop-up "Privacy Agreement and Policy" to open the manifest.json file of the project and switch to the "Source View" item
@@ -216,43 +248,70 @@ Add prompt node under `manifest.json` -> `app-plus` -> `privacy` node
 2. After configuration, submit the cloud package to take effect. In theory, most of the configurations related to the `manifest.json` taking effect need to be submitted to the cloud package to take effect
 
 ### 10.云对象拦截器应用  
+### 10. Cloud object interceptor application
 云对象拦截器文档[详情查看](https://uniapp.dcloud.net.cn/uniCloud/client-sdk.html#add-interceptor)
+Cloud object interceptor document [View details](https://uniapp.dcloud.net.cn/uniCloud/client-sdk.html#add-interceptor)
 
 1. 控制调试模式  
+1. Control debug mode
 配置路径：`uni-starter/uni-starter.config.js`
+Configuration path: `uni-starter/uni-starter.config.js`
 云对象请求fail时，开启调试模式将以`showModal`的模式弹出真实错误信息。关闭调试模式，则以`showToast`的模式模糊提示（弹出系统错误请稍后再试！）
+When the cloud object requests fail, the real error message will pop up in `showModal` mode when the debugging mode is turned on. When debugging mode is turned off, the prompt will be vaguely displayed in the mode of `showToast` (system error pops up, please try again later!)
 
 2. 裂变营销功能原理
+2. Functional principle of fission marketing
 当用户请求云对象`uni-id-co`的任何方式登录（含：注册并登录）功能时，
+When the user requests the cloud object `uni-id-co` any way to log in (including: register and log in) function,
 云对象拦截器逻辑内部：判断用户的剪切板是否包含`uniInvitationCode:`开头的邀请码，如果存在则在请求时带上此邀请码；实现裂变营销功能的用户关系绑定。
+Inside the logic of the cloud object interceptor: determine whether the user's clipboard contains an invitation code starting with `uniInvitationCode:`, if it exists, bring this invitation code when requesting; realize the user relationship binding of the fission marketing function.
 
 ### 12.关于升级
+### 12. About upgrade
 - 项目升级  
+- Item upgrade
 uni-starter遵循uni-app的插件模块化规范，即：[uni_modules](https://uniapp.dcloud.io/uni_modules) 。它是个项目类型的插件。在项目的根目录下有一个符合uni_modules规范的package.json文件，在这个文件右键-从插件市场更新即可更新该插件。
+uni-starter follows the uni-app plug-in modular specification, namely: [uni_modules](https://uniapp.dcloud.io/uni_modules). It is a project type plugin. In the root directory of the project, there is a package.json file that conforms to the uni_modules specification. Right-click on this file - update from the plugin market to update the plugin.
 	
 - 插件升级  
+- Plugin upgrade
 非项目类型的`uni_modules`插件在项目根目录下的`uni_modules`目录下。以插件ID为插件文件夹命名，在该目录右键也会看到“从插件市场更新”选项，点击即可更新该插件。
+Non-project-type `uni_modules` plugins are in the `uni_modules` directory under the project root directory. Name the plug-in folder with the plug-in ID, right click on the directory and you will see the "Update from the plug-in market" option, click to update the plug-in.
 
 uni-starter内集成的uni-id-pages、uni-upgrade-center等插件都可以独立升级。
+Plug-ins such as uni-id-pages and uni-upgrade-center integrated in uni-starter can be upgraded independently.
 
 ### 13.多语言国际化  
+### 13. Multilingual Internationalization
 uni-starter支持多语言国际化，默认关闭，可以在`uni-starter.config.js`->`i18n`->`enable`中配置。
+uni-starter supports multi-language internationalization, which is disabled by default and can be configured in `uni-starter.config.js`->`i18n`->`enable`.
 
 如果你启用了多语言国际化需要先阅读：[uni-app多语言国际化](https://uniapp.dcloud.io/collocation/i18n?id=%e6%a1%86%e6%9e%b6%e5%86%85%e7%bd%ae%e7%bb%84%e4%bb%b6%e5%92%8capi%e5%9b%bd%e9%99%85%e5%8c%96)
+If you have enabled multilingual internationalization, you need to read first: [uni-app multilingual internationalization](https://uniapp.dcloud.io/collocation/i18n?id=%e6%a1%86%e6%9e%b6 %e5%86%85%e7%bd%ae%e7%bb%84%e4%bb%b6%e5%92%8capi%e5%9b%bd%e9%99%85%e5%8c%96)
 
 ### 14.微信登录自动获取头像  
+### 14. Wechat login automatically obtains avatar
 当用户首次在微信小程序中通过微信登录应用。uni-starter将获取用户的微信头像，设置为当前账号头像。
+When the user logs in to the app through WeChat in the WeChat MiniApp for the first time. uni-starter will get the user's WeChat avatar and set it as the current account avatar.
 
 **注意：** 保存头像的过程是：先将微信头像的图片下载，再上传到uniCloud云存储。而小程序平台要求在管理后台配置小程序应用的联网服务器域名，否则无法联网。请确认已正确配置download、uploadFile合法域名[详情查看](https://uniapp.dcloud.io/uniCloud/publish.html#useinmp)
+**Note:** The process of saving the avatar is: first download the picture of the WeChat avatar, and then upload it to uniCloud cloud storage. The MiniApp platform requires the domain name of the networking server of the MiniApp application to be configured in the management background, otherwise it cannot be connected to the Internet. Please confirm that the legal domain name of download and uploadFile has been correctly configured [View details](https://uniapp.dcloud.io/uniCloud/publish.html#useinmp)
 	
 ## initApp()做了什么
+## what initApp() does
 1. 读取uni-starter.config并挂载到globalData的config下
+1. Read uni-starter.config and mount it under the config of globalData
 2. 读取应用版本号，并存到globalData下
+2. Read the application version number and save it under globalData
 3. 检查是否有可更新的应用版本，决定是否启动在线更新版本
+3. Check whether there is an updateable application version, and decide whether to start the online update version
 4. 监听设备的网络变化并以uni.showToast APi的方式提醒用户
+4. Monitor the network changes of the device and remind the user in the form of uni.showToast API
 5. 使用[拦截器](https://uniapp.dcloud.io/api/interceptor?id=addinterceptor) 实现：自动引导打开`选择图片`所需要的权限。当调用`uni.chooseImage`时检测到无权限则自动开启引导。并不是在每次调用接口时处理这类问题，你可以参考该例子做更多该类场景的处理。uni-starter也会持续完善。
+5. Use [Interceptor](https://uniapp.dcloud.io/api/interceptor?id=addinterceptor) to realize: automatically guide to open the permissions required for `Select Image`. When no permission is detected when calling `uni.chooseImage`, the boot will be automatically enabled. Instead of dealing with such problems every time the interface is called, you can refer to this example to do more processing of such scenarios. uni-starter will continue to improve.
 
 ## 配置文件  
+## configuration file
 uni-starter提供了`uni-starter.config.js`，可配置选择登录注册方式及优先级等，可指定该应用是否强制登录才能进入某个页面。配置项内容如下：
 uni-starter provides `uni-starter.config.js`, which can be configured to select the login registration method and priority, etc., and can specify whether the application is forced to log in to enter a certain page. The configuration items are as follows:
 ```js
@@ -296,8 +355,10 @@ module.exports = {
 		// slogan
 		"slogan": "为开发而生",
 		//应用的链接，用于分享到第三方平台和生成关于我们页的二维码
+		//A link to the application, used to share to a third-party platform and generate a QR code about our page
 		"download": "https://m3w.cn/uniapp",
 		//应用版本号，用于非app端显示，app端自动获取
+		//Application version number, used for display on non-app side, automatically obtained by app side
 		"version":"1.0.0"
 	},
 	//用于打开应用市场评分界面
@@ -315,6 +376,7 @@ module.exports = {
 ```
 
 ## 目录结构@catalogue
+## Directory structure @catalogue
 <pre v-pre="" data-lang="">
 <code class="lang-" style="padding:0">
 uni-starter
@@ -431,8 +493,11 @@ uni-starter
 Complete uni-app directory structure [details](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84)
 
 ## 常见API示范
+## Common API Demonstration
 1. 判断当前用户是否拥有某角色`uniIDHasRole` 演示页面：`/pages/grid/grid` [API文档详情](https://uniapp.dcloud.io/api/global?id=uniidhasrole)
+1. Determine whether the current user has a role `uniIDHasRole` Demo page: `/pages/grid/grid` [API document details](https://uniapp.dcloud.io/api/global?id=uniidhasrole)
 2. 指纹解锁、人脸解锁  演示页面：`/pages/ucenter/settings/settings` [API文档详情](https://uniapp.dcloud.io/api/system/authentication)
+2. Fingerprint unlocking, face unlocking Demo page: `/pages/ucenter/settings/settings` [API document details](https://uniapp.dcloud.io/api/system/authentication)
 
 ## 注意事项
 ## Precautions
@@ -441,9 +506,12 @@ Complete uni-app directory structure [details](https://uniapp.dcloud.io/frame?id
 2. 苹果登录的图标，需要满足苹果应用市场的审核规范请勿随便修改；如需修改请先阅读:[Sign in with Apple Button](https://appleid.apple.com/signinwithapple/button)
 2. The icon of Apple login needs to meet the review specifications of the Apple App Market. Please do not modify it casually; if you need to modify it, please read: [Sign in with Apple Button](https://appleid.apple.com/signinwithapple/button)
 3. 应用登录功能，默认不勾选同意隐私权限是响应安卓应用市场的规范；请勿修改该逻辑。
+3. For the application login function, the consent to privacy permissions is unchecked by default in response to the Android application market norms; please do not modify this logic.
 4. uni-id-pages 默认在刷新token（登录、注销、切换用户）后获取push客户端标识同步至uni-id-device表;如果你不使用push模块，请注释或删除，路径：`/uni-starter/uni_modules/uni-id-pages/init.js` 如下代码：
+4. By default, uni-id-pages obtains the push client ID and synchronizes it to the uni-id-device table after refreshing the token (login, logout, and user switching); if you do not use the push module, please comment or delete it, path: `/ uni-starter/uni_modules/uni-id-pages/init.js` is as follows:
 ```js
 //4. 同步客户端push_clientid至uni-id-device表
+//4. Synchronize client push_clientid to uni-id-device table
 if (uniCloud.onRefreshToken) {
  uniCloud.onRefreshToken(() => {
   console.log('onRefreshToken');
@@ -489,3 +557,4 @@ if (uniCloud.onRefreshToken) {
 1. 图片裁剪 [limeClipper](https://ext.dcloud.net.cn/plugin?id=3594) @作者： 陌上华年
 1. Image cropping [limeClipper](https://ext.dcloud.net.cn/plugin?id=3594) @Author: Moshanghuanian
 2. 二维码生成 [Sansnn-uQRCode](https://ext.dcloud.net.cn/plugin?id=1287) @作者： 3snn
+2. QR code generation [Sansnn-uQRCode](https://ext.dcloud.net.cn/plugin?id=1287) @Author: 3snn

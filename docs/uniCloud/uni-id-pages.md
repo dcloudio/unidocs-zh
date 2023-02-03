@@ -68,6 +68,7 @@ Features of `uni-id-pages` include:
 
 
 ## 目录结构  
+## Directory Structure  
 <pre v-pre="" data-lang="">
 <code class="lang-" style="padding:0">
 ├─uni_modules                                         存放[uni_module](/uni_modules)规范的插件。
@@ -138,9 +139,12 @@ Features of `uni-id-pages` include:
 </code>
 </pre>
 **完整的uni-app目录结构[详情查看](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84)
+**Complete uni-app directory structure [View details](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e %84)
 
 ## 前端页面
+## front page
 ### 初始化
+### Initialization
 需要在App.vue中初始化`uni-id-pages`的`init.js`文件  
 The `init.js` file for `uni-id-pages` needs to be initialized in App.vue
 
@@ -165,6 +169,7 @@ The sample code is as follows:
 ```
 
 ### 配置@config
+### Configure @config
 路径：`/uni_modules/uni-id-pages/config.js`
 Path: `/uni_modules/uni-id-pages/config.js`
 
@@ -180,7 +185,9 @@ Path: `/uni_modules/uni-id-pages/config.js`
 |appid		|Object	|接入各类服务（如微信登录服务）的应用id[详情](#appid)	|
 |appid |Object |Application id for accessing various services (such as WeChat login service)[Details](#appid) |
 |passwordStrength	|Object	|密码配置	[详情](#strength)	|
+| passwordStrength | Object | Password configuration [details](#strength) |
 |setPasswordAfterLogin|Boolean/Object|登录后设置密码 [详情](#set-pwd-after-login)|
+| setPasswordAfterLogin| Boolean/Object|Set password after login [details](#set-pwd-after-login)|
 
 完整示例：
 Complete example:
@@ -335,6 +342,7 @@ The above configuration only opens the front-end login entry. To achieve the fun
 |login |String |Login (eg: login with username and password) |
 
 一款规范的小程序或App要上架到国内应用商店必须提供《隐私政策和用户使用协议》，参考模版：[隐私权政策模板.zip](https://web-assets.dcloud.net.cn/unidoc/zh/%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96%E6%A8%A1%E6%9D%BF.zip)
+A standard MiniApp or app must provide the "Privacy Policy and User Agreement" if it is to be put on the domestic app store. Reference template: [Privacy Policy Template.zip](https://web-assets.dcloud.net.cn/unidoc/zh/%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96%E6%A8%A1%E6%9D%BF.zip)
 
 更多合规问题[详情参考](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
 More compliance issues [see details](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9% 97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
@@ -362,17 +370,24 @@ Recommended use: HBuilderX editor, edit the "Privacy Policy and User Agreement" 
 |Field |Type |Description |
 |--			|--		|--															|
 |为空或false| -		|不验证密码强度												|
+|empty or false| - |do not verify password strength|
 |super		|String	|超强：密码必须包含大小写字母、数字和特殊符号，长度范围：8-16位之间	|
+| super | String |Super strong: the password must contain uppercase and lowercase letters, numbers and special symbols, length range: between 8 and 16 characters |
 |strong		|String	|强: 密密码必须包含字母、数字和特殊符号，长度范围：8-16位之间		|
+| strong | String |Strong: password must contain letters, numbers and special symbols, length range: between 8-16 characters |
 |medium		|String	|中：密码必须为字母、数字和特殊符号任意两种的组合，长度范围：8-16位之间|
+| medium | String |Medium: password must be a combination of any two letters, numbers and special symbols, length range: between 8-16 characters|
 |weak		|String	|弱：密码必须包含字母和数字，长度范围：6-16位之间					|
 |weak |String |Weak: Password must contain letters and numbers, length range: between 6-16 characters |
 
 #### 登录后设置密码@set-pwd-after-login
+#### Set password after login @set-pwd-after-login
 
 用户如果没有设置密码，在登录后会跳转设置密码页面
+If the user has not set a password, he will jump to the password setting page after logging in
 
 此功能默认不开启, 开启请将 `setPasswordAfterLogin` 设置为 `true`，如下：
+This function is not enabled by default, please set `setPasswordAfterLogin` to `true` to enable it, as follows:
 ```javascript
 {
 	setPasswordAfterLogin: true,
@@ -383,8 +398,10 @@ Recommended use: HBuilderX editor, edit the "Privacy Policy and User Agreement" 
 ```
 
 如果不需要强制设置密码可以将 `allowSkip` 设置为 `true` 用户可以选择跳过设置密码。
+If you don't need to enforce setting a password, you can set `allowSkip` to `true`, and users can choose to skip setting a password.
 
 ### 页面介绍
+### Page introduction
 `uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[插件地址](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
 `uni-id-pages` includes: account registration, password-free login, avatar replacement, nickname modification, mobile phone number binding, password retrieval, account cancellation and other pages. [Plugin address](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
 
@@ -413,8 +430,10 @@ uni.navigateTo({
 [uniIdRouter](uni-id-summary.md#uni-id-router) can be used together; when the user is not logged in, but visits a page that requires forced login, or the interface prompts that the token is invalid or expired (the response body starts with TOKEN_INVALID) You need to open the login page at all times. You need to define the above two path paths as `loginPage`.
 
 ## 云对象（uni-id-co）
+## Cloud object (uni-id-co)
 
 uni-id-co是uni-id-pages的核心云对象，包含了诸多用户相关的接口。作为uni-id体系的一部分，uni-id-co也使用uni-id的配置文件（`cloudfunctions/common/uni-config-center/uni-id/config.json`）。**目前此云对象依赖了一些客户端信息，不支持被其他云函数/云对象调用。已支持url化调用，参考：[uni-id-co url化](#adapter-http)**
+uni-id-co is the core cloud object of uni-id-pages, including many user-related interfaces. As part of the uni-id system, uni-id-co also uses the uni-id configuration file (`cloudfunctions/common/uni-config-center/uni-id/config.json`). **Currently, this cloud object relies on some client information and does not support being called by other cloud functions/cloud objects. Already supports urlization calls, reference: [uni-id-co urlization](#adapter-http)**
 
 前端调用云对象`uni-id-co`内的方法前应先获取云对象的引用，代码如下
 The front-end should obtain the reference of the cloud object before calling the method in the cloud object `uni-id-co`. The code is as follows
@@ -424,8 +443,10 @@ const uniIdCo = uniCloud.importObject('uni-id-co')
 ```
 
 如调用uni-id-co方法时出现找不到`lodash.merge`模块的错误，请手动在uni-id-co云对象目录执行`npm install`。如果是运行客户端的话uniCloud插件会自动给uni-id-co安装缺失的依赖。
+If there is an error that the `lodash.merge` module cannot be found when calling the uni-id-co method, please manually execute `npm install` in the uni-id-co cloud object directory. If the client is running, the uniCloud plugin will automatically install the missing dependencies for uni-id-co.
 
 ### 目录说明
+### Directory description
 
 ```text
 ├─common 					// 公用逻辑
@@ -440,6 +461,7 @@ const uniIdCo = uniCloud.importObject('uni-id-co')
 ```
 
 ### 公共响应参数@co-public-response
+### Public response parameters @co-public-response
 
 `uni-id-co`所有api返回值均满足[uniCloud响应体规范](cf-functions.md#resformat)
 All api return values of `uni-id-co` satisfy the [uniCloud response body specification](cf-functions.md#resformat)
@@ -467,11 +489,16 @@ Return value example
 - The interface that needs to verify the token will also return newToken when the token is about to expire. The threshold for the token to be expired is configured by the developer.
 
 ### 适配URL化@adapter-http
+### Adapt URL @adapter-http
 自`uni-id-pages@1.0.29`版本起支持URL化 [什么是URL化](uniCloud/http.html#cloudobject)
+URLization is supported since `uni-id-pages@1.0.29` version [What is URLization](uniCloud/http.html#cloudobject)
 
 调用规范：
+Call specification:
 1. HTTP 请求头中的`Content-Type`必须为`application/json`，请求方法必须是`POST`, 如不满足条件将会返回 `uni-id-unsupported-request` 错误码
+1. The `Content-Type` in the HTTP request header must be `application/json`, the request method must be `POST`, if the conditions are not met, the `uni-id-unsupported-request` error code will be returned
 2. 请求体需按照以下格式：
+2. The request body must be in the following format:
 ```json
 {
 	"clientInfo": {},
@@ -480,20 +507,30 @@ Return value example
 }
 ```
 字段说明
+field description
 
 |字段|说明|
+|Field|Description|
 |--|--|
 |clientInfo|客户端信息; [uni.getSystemInfo](/api/system/info.md#getsysteminfo)返回的字段|
+| clientInfo|Client information; fields returned by [uni.getSystemInfo](/api/system/info.md#getsysteminfo)|
 |uniIdToken|用户Token; 用户登录后必填|
+| uniIdToken|User Token; Required after user login|
 |params|API接口参数字段|
+| params| API interface parameter field|
 
 如果是在 uni-app 之外的应用中调用 URL 化接口，请确保clientInfo中存在以下字段:
+If the URLized interface is called in an application other than uni-app, please ensure that the following fields exist in clientInfo:
 |字段|说明|
+|Field|Description|
 |--|--|
 |uniPlatform|应用运行平台，与条件编译平台相同。[详见](/api/system/info.md#uniplatform)|
+| uniPlatform|Application running platform, same as conditional compilation platform. [See details](/api/system/info.md#uniplatform)|
 |appId|manifest 中应用appid，即DCloud appid。如没有请手动指定一个，需确保唯一性。|
+| appId| The application appid in the manifest, that is, the DCloud appid. If not, please specify one manually to ensure uniqueness. |
 
 假设已在uniCloud 控制台已设置URL化域名PATH，以PATH为`/http/uni-id-co`为例，演示登录示例：
+Assuming that the URLized domain name PATH has been set in the uniCloud console, take the PATH as `/http/uni-id-co` as an example to demonstrate the login example:
 
 ```javascript
 uni.request({
@@ -512,15 +549,19 @@ uni.request({
 	},
 	success: (res) => {
 		// 返回值
+		// return value
 	}
 })
 ```
 
 **注意**
+**Notice**
 
 请不要添加 Query 参数，URL化后将忽略 Query 参数
+Please do not add the Query parameter, the Query parameter will be ignored after URLization
 
 ### API列表
+### API list
 
 |API							|描述														|
 |API |Description |
@@ -534,7 +575,9 @@ uni.request({
 |uniIdCo.removeAuthorizedApp()	|移除用户登录授权 [详情](#remove-authorized-app)			|
 |uniIdCo.removeAuthorizedApp() |Remove user login authorization [Details](#remove-authorized-app) |
 |uniIdCo.setAuthorizedApp()		|设置用户允许登录的应用列表 [详情](#set-authorized-app)		|
+| uniIdCo.setAuthorizedApp() | Set the list of apps that the user is allowed to log in [Details](#set-authorized-app) |
 |uniIdCo.registerUser()			|注册普通用户 [详情](#register-user)						|
+| uniIdCo.registerUser() | Register ordinary user [Details](#register-user) |
 |uniIdCo.registerUserByEmail()	|通过邮箱验证码注册普通用户 [详情](#register-user-by-email)	|
 |uniIdCo.registerUserByEmail() |Register ordinary users through email verification code [Details](#register-user-by-email) |
 |uniIdCo.login()				|用户名密码登录 [详情](#login)								|
@@ -568,7 +611,9 @@ uni.request({
 |uniIdCo.bindApple()			|绑定苹果账号 [详情](#bind-apple)							|
 |uniIdCo.bindApple() |Bind Apple Account [Details](#bind-apple) |
 |uniIdCo.updatePwd()			|更新密码 [详情](#update-pwd)								|
+| uniIdCo.updatePwd() |Update password [details](#update-pwd) |
 |uniIdCo.resetPwdBySms()		|通过短信验证码重置密码 [详情](#reset-pwd-by-sms)			|
+| uniIdCo.resetPwdBySms() | Reset password via SMS verification code [Details](#reset-pwd-by-sms) |
 |uniIdCo.resetPwdByEmail()		|通过邮箱验证码重置密码 [详情](#reset-pwd-by-email)			|
 |uniIdCo.resetPwdByEmail() |Reset password by email verification code [Details](#reset-pwd-by-email) |
 |uniIdCo.closeAccount()			|注销账户 [详情](#close-account)							|
@@ -578,7 +623,9 @@ uni.request({
 |uniIdCo.createCaptcha()		|创建图形验证码 [详情](#create-captcha)						|
 |uniIdCo.createCaptcha() |Create a graphic captcha [Details](#create-captcha) |
 |uniIdCo.refreshCaptcha()		|刷新图形验证码 [详情](#refresh-captcha)					|
+| uniIdCo.refreshCaptcha() | Refresh the graphic captcha [details](#refresh-captcha) |
 |uniIdCo.sendSmsCode()			|发送短信验证码 [详情](#send-sms-code)						|
+| uniIdCo.sendSmsCode() |Send SMS verification code [details](#send-sms-code) |
 |uniIdCo.sendEmailCode()		|发送邮箱验证码 [详情](#send-email-code)					|
 |uniIdCo.sendEmailCode() |Send email verification code [Details](#send-email-code) |
 |uniIdCo.refreshToken()			|刷新token [详情](#refresh-token)							|
@@ -599,6 +646,7 @@ uni.request({
 #### Register Super Admin @register-admin
 
 接口名：registerAdmin
+Interface name: registerAdmin
 
 **接口形式**
 **Interface form**
@@ -649,6 +697,7 @@ await uniIdCo.registerAdmin({
 #### username password registered user @register-user
 
 接口名：registerUser
+Interface name: registerUser
 
 **接口形式**
 **Interface form**
@@ -693,11 +742,13 @@ await uniIdCo.registerUser({
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
+|&nbsp;&#124;-&nbsp;tokenExpired| string | token expiration time |
 
 #### 邮箱验证码注册用户@register-user-by-email
 #### Email verification code registered user @register-user-by-email
 
 接口名：registerUserByEmail
+Interface name: registerUserByEmail
 
 **接口形式**
 **Interface form**
@@ -748,6 +799,7 @@ await uniIdCo.registerUserByEmail({
 #### Password login @login
 
 接口名：login
+Interface name: login
 
 **接口形式**
 **Interface form**
@@ -799,6 +851,7 @@ await uniIdCo.login({
 Login if the phone number already exists, otherwise register
 
 接口名：loginBySms
+Interface name: loginBySms
 
 **接口形式**
 **Interface form**
@@ -843,10 +896,13 @@ await uniIdCo.loginBySms({
 |&nbsp;&#124;-&nbsp;tokenExpired|string |token expiration time |
 
 #### 微信授权手机号登录@login-by-weixin-mobile <Badge text="uni-id-co 1.0.25+" />
+#### WeChat authorized mobile number login @login-by-weixin-mobile <Badge text="uni-id-co 1.0.25+" />
 
 接口名：loginByWeixinMobile
+Interface name: loginByWeixinMobile
 
 **接口形式**
+**Interface form**
 
 ```js
 await uniIdCo.loginByWeixinMobile({
@@ -856,25 +912,37 @@ await uniIdCo.loginByWeixinMobile({
 ```
 
 **参数说明**
+**Parameter Description**
 
 |参数名			|类型	|必填	|说明								|
+|Parameter name |Type |Required |Description |
 |--				|--		|--		|--									|
 |phoneCode	|string	|是		|getPhoneNumber 事件回调获取到动态令牌code	|
+| phoneCode | string | yes | getPhoneNumber event callback gets the dynamic token code |
 |inviteCode		|string	|否		|邀请码，仅注册时生效				|
+| inviteCode | string |No |Invitation code, valid only when registering |
 
 **返回值**
+**return value**
 
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+| errCode | string&#124;number | error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
+|&nbsp;&#124;-&nbsp;tokenExpired| string | token expiration time |
 
 **注意**
+**Notice**
 - 此接口会调用微信凭证接口获取access_token，uni-id-pages 1.0.8及以上版本会使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 保存 access_token 信息。
+- This interface will call the WeChat credential interface to obtain the access_token, and uni-id-pages 1.0.8 and above will use [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) to save the access_token information.
 - 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
+- If the developer does not use [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) to manage access_token and other information in other applications, it may cause access_token conflicts.
 #### 一键登录@login-by-univerify
 #### One-click login @login-by-univerify
 
@@ -882,6 +950,7 @@ await uniIdCo.loginByWeixinMobile({
 Login if the phone number already exists, otherwise register
 
 接口名：loginByUniverify
+Interface name: loginByUniverify
 
 **接口形式**
 **Interface form**
@@ -929,6 +998,7 @@ await uniIdCo.loginByUniverify({
 Login if the WeChat account already exists, otherwise register
 
 接口名：loginByWeixin
+Interface name: loginByWeixin
 
 **接口形式**
 **Interface form**
@@ -976,7 +1046,9 @@ await uniIdCo.loginByWeixin({
 - 如果有多个应用同时使用微信小程序登录，且希望用户身份不隔离请确保这些应用在微信小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
 - If there are multiple applications using WeChat applet to log in at the same time, and you want user identities not to be isolated, please ensure that these applications are owned by the same entity on the WeChat applet platform, that is, to ensure that different applications can obtain the same unionid
 - `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存`session_key`（微信小程序登录）、`access_token`（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
+- `uni-id-pages 1.0.8` and above will use uni-open-bridge-common to save `session_key` (WeChat MiniApp login), `access_token` (WeChat official account login, WeChat App login), these information, However, a copy is still stored in the user table for compatibility with legacy logic. Detailed reference: [Automatically save user sessionKey, accessToken and other information](uni-id-summary.md#save-user-token)
 - - 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
+- - If the developer does not use [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) to manage access_token and other information in other applications, it may cause access_token conflicts.
 **关于openid的说明**
 **Note about openid**
 
@@ -1015,6 +1087,7 @@ QQ账号已存在时登录，否则注册
 Log in if the QQ account already exists, otherwise register
 
 接口名：loginByQQ
+Interface name: loginByQQ
 
 **接口形式**
 **Interface form**
@@ -1104,6 +1177,7 @@ It can be seen that if there are multiple QQ applets associated with the same ac
 Login when Alipay account already exists, otherwise register
 
 接口名：loginByAlipay
+Interface name: loginByAlipay
 
 **接口形式**
 **Interface form**
@@ -1148,6 +1222,7 @@ await uniIdCo.loginByAlipay({
 Log in if the Apple account already exists, otherwise register
 
 接口名：loginByApple
+Interface name: loginByApple
 
 **接口形式**
 **Interface form**
@@ -1192,6 +1267,7 @@ await uniIdCo.loginByApple({
 #### Logout @logout
 
 接口名：logout
+Interface name: logout
 
 **接口形式**
 **Interface form**
@@ -1224,6 +1300,7 @@ none
 After calling this interface, the user status will be set to the logout state. It should be noted that the token will not be automatically invalidated at present, and redis will be introduced to solve this problem in the future. If this function is not required, it is recommended to modify the code manually.
 
 接口名：closeAccount
+Interface name: closeAccount
 
 **接口形式**
 **Interface form**
@@ -1254,6 +1331,7 @@ none
 #### Get supported login methods @get-supported-login-type
 
 接口名：getSupportedLoginType
+Interface name: getSupportedLoginType
 
 **接口形式**
 **Interface form**
@@ -1313,6 +1391,7 @@ none
 #### Use SMS verification code to bind mobile phone number @bind-mobile-by-sms
 
 接口名：bindMobileBySms
+Interface name: bindMobileBySms
 
 **接口形式**
 **Interface form**
@@ -1363,6 +1442,7 @@ await uniIdCo.bindMobileBySms({
 #### Use one-click login to bind mobile number @bind-mobile-by-univerify
 
 接口名：bindMobileByUniverify
+Interface name: bindMobileByUniverify
 
 **接口形式**
 **Interface form**
@@ -1410,9 +1490,12 @@ await uniIdCo.bindMobileByUniverify({
 #### Bind mobile phone number via WeChat @bind-mobile-by-mp-weixin
 
 ::: warning 使用此接口时务必注意
+::: warning Be careful when using this interface
 **微信小程序对获取手机号的接口进行了安全升级，自 `uni-id-co@1.0.25` 以上版本开始，支持getPhoneNumber事件回调的动态口令`code`，同时为了向下兼容保留`encryptedData` 与 `iv`参数，建议开发者升级，以增强小程序安全性。**
+**The WeChat MiniApp has upgraded the security of the interface for obtaining the mobile phone number. Starting from `uni-id-co@1.0.25`, the dynamic password `code` for the getPhoneNumber event callback is supported, and it is reserved for backward compatibility` encryptedData` and `iv` parameters, it is recommended that developers upgrade to enhance the security of MiniApp. **
 
 微信小程序的规则是客户端应先使用checkSession接口检测上次获取的sessionKey是否仍有效。
+The rule of the WeChat MiniApp is that the client should first use the checkSession interface to check whether the sessionKey obtained last time is still valid.
 
 如果有效则直接使用上次存储的sessionKey即可，如果无效应重新调用login接口再次刷新sessionKey。
 If it is valid, you can directly use the sessionKey stored last time. If it is invalid, call the login interface again to refresh the sessionKey again.
@@ -1423,6 +1506,7 @@ The user's sessionKey will be automatically updated when the WeChat applet logs 
 :::
 
 接口名：bindMobileByMpWeixin
+Interface name: bindMobileByMpWeixin
 
 **接口形式**
 **Interface form**
@@ -1447,8 +1531,11 @@ await uniIdCo.bindMobileByMpWeixin({
 |Parameter Name |Type |Required |Description |
 |--				|--		|--		|--											|
 |encryptedData	|string	|是		|微信小程序获取手机号返回的encryptedData参数 |
+| encryptedData | string |Yes |The encryptedData parameter returned by the WeChat MiniApp to obtain the mobile phone number|
 |iv				|string	|是		|微信小程序获取手机号返回的iv参数 |
+| iv | string | yes | the iv parameter returned by the WeChat MiniApp to obtain the mobile phone number |
 |code				|string	|是		|微信小程序获取手机号返回的code参数； `uni-id-co >= 1.0.25支持`			|
+| code | string | yes | the code parameter returned by the WeChat MiniApp to obtain the mobile phone number; `uni-id-co >= 1.0.25 support` |
 
 **返回值**
 **return value**
@@ -1475,6 +1562,7 @@ await uniIdCo.bindMobileByMpWeixin({
 #### Bind WeChat @bind-weixin
 
 接口名：bindWeixin
+Interface name: bindWeixin
 
 **接口形式**
 **Interface form**
@@ -1513,11 +1601,14 @@ await uniIdCo.bindWeixin({
 **Notice**
 
 - 仅在用户token即将过期时返回新newToken
+- Only return a new newToken when the user token is about to expire
 - 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
+- If the developer does not use [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) to manage access_token and other information in other applications, it may cause access_token conflicts.
 #### 绑定QQ@bind-qq
 #### Bind QQ@bind-qq
 
 接口名：bindQQ
+Interface name: bindQQ
 
 **接口形式**
 **Interface form**
@@ -1565,6 +1656,7 @@ await uniIdCo.bindQQ({
 #### Bind Alipay account @bind-alipay
 
 接口名：bindAlipay
+Interface name: bindAlipay
 
 **接口形式**
 **Interface form**
@@ -1609,6 +1701,7 @@ await uniIdCo.bindAlipay({
 #### Bind Apple account @bind-apple
 
 接口名：bindApple
+Interface name: bindApple
 
 **接口形式**
 **Interface form**
@@ -1650,69 +1743,102 @@ await uniIdCo.bindApple({
 - only return a new newToken when the user's token is about to expire
 
 ### 解绑第三方账号@unbind-third-account <Badge text="uni-id-co 1.0.25+" />
+### Unbind third-party account @unbind-third-account <Badge text="uni-id-co 1.0.25+" />
 
 > 如账号只有一个第三方登录方式时，需绑定手机号后在解绑。
+> If there is only one third-party login method for the account, it is necessary to bind the mobile phone number and then unbind it.
 
 #### 解绑微信@unbind-weixin
+#### Unbind WeChat @unbind-weixin
 
 接口名：unbindWeixin
+Interface name: unbindWeixin
 
 **接口形式**
+**Interface form**
 
 ```js
 await uniIdCo.unbindWeixin()
 ```
 
 **返回值**
+**return value**
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+| errCode | string&#124;number | error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 
 #### 解绑QQ@unbind-qq
+#### Unbind QQ@unbind-qq
 接口名：unbindQQ
+Interface name: unbindQQ
 **接口形式**
+**Interface form**
 ```js
 await uniIdCo.unbindQQ()
 ```
 **返回值**
+**return value**
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+| errCode | string&#124;number | error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 
 #### 解绑支付宝@unbind-alipay
+#### Unbind Alipay @unbind-alipay
 接口名：unbindAlipay
+Interface name: unbindAlipay
 **接口形式**
+**Interface form**
 ```js
 await uniIdCo.unbindAlipay()
 ```
 **返回值**
+**return value**
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+| errCode | string&#124;number | error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 
 #### 解绑苹果账号@unbind-apple
+#### Unbind Apple account @unbind-apple
 接口名：unbindApple
+Interface name: unbindApple
 **接口形式**
+**Interface form**
 ```js
 await uniIdCo.unbindApple()
 ```
 **返回值**
+**return value**
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+| errCode | string&#124;number | error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 
 ### 用户信息@user-info
 ### User info @user-info
 
 #### 设置密码@set-pwd
+#### set password @set-pwd
 
 接口名：setPwd
+Interface name: setPwd
 
 **接口形式**
+**Interface form**
 ```js
 await uniIdCo.setPwd({
 	code,
@@ -1722,23 +1848,32 @@ await uniIdCo.setPwd({
 ```
 
 **参数说明**
+**Parameter Description**
 
 |参数名		|类型	|必填	|说明	|
+|Parameter name |Type |Required |Description |
 |--			|--		|--		|--		|
 |code|string	|是		|手机验证码	|
+| code| string |Yes |Mobile phone verification code|
 |captcha|string	|否		|图形验证码	|
+| captcha| string | no | graphic verification code |
 |password|string	|是		|密码	|
+| password| string | yes | password |
 
 **返回值**
+**return value**
 
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+| errCode | string&#124;number | error code |
 
 #### 修改密码@update-pwd
 #### Change password @update-pwd
 
 接口名：updatePwd
+Interface name: updatePwd
 
 **接口形式**
 **Interface form**
@@ -1786,6 +1921,7 @@ await uniIdCo.updatePwd({
 #### Password reset via SMS verification code @reset-pwd-by-sms
 
 接口名：resetPwdBySms
+Interface name: resetPwdBySms
 
 **接口形式**
 **Interface form**
@@ -1821,12 +1957,15 @@ await uniIdCo.resetPwdBySms({
 |parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+| errCode | string&#124;number | error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 
 #### 通过邮箱验证码重置密码@reset-pwd-by-email
 #### Reset password via email verification code @reset-pwd-by-email
 
 接口名：resetPwdByEmail
+Interface name: resetPwdByEmail
 
 **接口形式**
 **Interface form**
@@ -1870,6 +2009,7 @@ await uniIdCo.resetPwdByEmail({
 #### Get account brief information @get-account-info
 
 接口名：getAccountInfo
+Interface name: getAccountInfo
 
 **接口形式**
 **Interface form**
@@ -1918,6 +2058,7 @@ none
 #### Accept the invitation @accept-invite
 
 接口名：acceptInvite
+Interface name: acceptInvite
 
 **接口形式**
 **Interface form**
@@ -1962,6 +2103,7 @@ await uniIdCo.acceptInvite({
 #### Get invited user @get-invited-user
 
 接口名：getInvitedUser
+Interface name: getInvitedUser
 
 **接口形式**
 **Interface form**
@@ -2019,6 +2161,7 @@ await uniIdCo.getInvitedUser({
 #### Create graphic captcha @create-captcha
 
 接口名：createCaptcha
+Interface name: createCaptcha
 
 **接口形式**
 **Interface form**
@@ -2036,6 +2179,7 @@ await uniIdCo.createCaptcha({
 |Parameter Name |Type |Required |Description |
 |--		|--		|--		|--															|
 |scene	|string	|是		|图形验证码使用场景，务必确保使用验证码的场景和生成验证码时传的场景参数相匹配，否则会校验不通过，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
+| scene | string |yes | The scene where the graphic verification code is used. Make sure that the scene where the verification code is used matches the scene parameters passed when generating the verification code, otherwise the verification will fail. Refer to: [Graphic verification code scene](uni- id-summary.md#captcha-scene) |
 
 **返回值**
 **return value**
@@ -2046,12 +2190,15 @@ await uniIdCo.createCaptcha({
 |errCode						|string&#124;number	|错误码			|
 |errCode |string&#124;number |Error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 |captchaBase64  |string| 验证码：base64 格式|
+| captchaBase64 | string| Captcha: base64 format|
 
 #### 刷新图形验证码@refresh-captcha
 #### Refresh graphic captcha @refresh-captcha
 
 接口名：refreshCaptcha
+Interface name: refreshCaptcha
 
 **接口形式**
 **Interface form**
@@ -2080,17 +2227,23 @@ await uniIdCo.refreshCaptcha({
 |errCode						|string&#124;number	|错误码			|
 |errCode |string&#124;number |Error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 |captchaBase64  |string| 验证码：base64 格式|
+| captchaBase64 | string| Captcha: base64 format|
 
 #### 发送短信@send-sms-code
 #### Send SMS @send-sms-code
 
 发送短信功能需要以下前置工作
+The function of sending SMS requires the following pre-work
 
 1. 在[开发者中心](https://dev.dcloud.net.cn)开通短信服务，并申请短信模板
+1. Open SMS service in [Developer Center](https://dev.dcloud.net.cn) and apply for SMS template
 2. 在uni-id的配置文件里面添加验证码使用场景对应的短信模板信息，参考：[uni-id配置文件](uni-id-summary.md#config)
+2. Add the SMS template information corresponding to the verification code usage scenario in the uni-id configuration file, refer to: [uni-id configuration file](uni-id-summary.md#config)
 
 接口名：sendSmsCode
+Interface name: sendSmsCode
 
 **接口形式**
 **Interface form**
@@ -2112,7 +2265,9 @@ await uniIdCo.sendSmsCode({
 |mobile	|string	|是		|手机号码								|
 |mobile |string |yes |mobile number |
 |captcha|string	|是		|图形验证码								|
+| captcha| string | yes | graphic verification code |
 |scene	|string	|是		|短信验证码使用场景，务必确保使用验证码的场景和发送验证码时传的场景参数相匹配，否则会校验不通过，参考：[短信验证码使用场景](uni-id-summary.md#sms-scene)	|
+| scene | string |yes | The scene where the SMS verification code is used, make sure that the scene where the verification code is used matches the scene parameters passed when sending the verification code, otherwise the verification will fail, refer to: [SMS verification code usage scene](uni -id-summary.md#sms-scene) |
 
 **返回值**
 **return value**
@@ -2121,12 +2276,15 @@ await uniIdCo.sendSmsCode({
 |parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+| errCode | string&#124;number | error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 
 #### 发送邮箱验证码@send-email-code
 #### Send email verification code@send-email-code
 
 接口名：sendEmailCode
+Interface name: sendEmailCode
 
 **接口形式**
 **Interface form**
@@ -2148,7 +2306,9 @@ await uniIdCo.sendEmailCode({
 |email	|string	|是		|邮箱								|
 |email |string |Yes |Email |
 |captcha|string	|是		|图形验证码								|
+| captcha| string | yes | graphic verification code |
 |scene	|string	|是		|使用场景，参考：[手机、邮箱验证码使用场景](#sms-scene)	|
+| scene | string | yes | use scene, refer to: [mobile phone, email verification code use scene](#sms-scene) |
 
 **返回值**
 **return value**
@@ -2168,6 +2328,7 @@ await uniIdCo.sendEmailCode({
 #### Refresh token@refresh-token
 
 接口名：refreshToken
+Interface name: refreshToken
 
 **接口形式**
 **Interface form**
@@ -2205,6 +2366,7 @@ none
 If you are not using `uni-push 2.0`, you don't need to pay attention to this interface. This interface is used to update the unipush_clientid field of the uni-id-device table, which is used to push messages by client, user and other dimensions
 
 接口名：setPushCid
+Interface name: setPushCid
 
 **接口形式**
 **Interface form**
@@ -2241,12 +2403,16 @@ await uniIdCo.setPushCid({
 
 
 #### 微信安全网络握手@secure-network-handshake-by-weixin
+#### WeChat secure network handshake @secure-network-handshake-by-weixin
 
 此接口用于微信小程序端安全网络的握手，安全网络相关文档请参考：[安全网络](secure-network.md)
+This interface is used for the handshake of the secure network on the WeChat MiniApp side. For related documents on the secure network, please refer to: [secure-network](secure-network.md)
 
 一般无需通过uniCloud.importObject方式调用，在客户端调用`uniCloud.initSecureNetworkByWeixin()`时会通过此接口获取会话相关信息。
+Generally, there is no need to call through uniCloud.importObject. When the client calls `uniCloud.initSecureNetworkByWeixin()`, session-related information will be obtained through this interface.
 
 此接口会将会话信息存储在`opendb-open-data`表内，如果在`initSecureNetworkByWeixin`方法内传递了`callLoginByWeixin: true`会在存储会话信息的同时执行一次uni-id-co的`loginByWeixin`方法
+This interface will store the session information in the `opendb-open-data` table. If `callLoginByWeixin: true` is passed in the `initSecureNetworkByWeixin` method, it will execute a `loginByWeixin` of uni-id-co while storing the session information method
 
 ### 管理接口@admin
 ### Management interface @admin
@@ -2255,6 +2421,7 @@ await uniIdCo.setPushCid({
 #### Admin add user @add-user
 
 接口名：addUser
+Interface name: addUser
 
 **接口形式**
 **Interface form**
@@ -2273,16 +2440,26 @@ await uniIdCo.addUser({
 **Parameter Description**
 
 |参数名				|类型								|必填	|说明																											|
+|Parameter name |Type |Required |Description |
 |--						|--									|--		|--																												|
 |username			|string							|是		|用户名																										|
+| username | string | yes | username |
 |password			|string							|是		|密码																											|
+| password | string | yes | password |
 |authorizedApp|Array&lt;string&gt;|否		|允许登录的app列表																				|
+| authorizedApp| Array&lt;string&gt;|No |A list of apps that allow login |
 |nickname			|string							|否		|昵称																											|
+| nickname | string | no | nickname |
 |role					|Array&lt;string&gt;|否		|用户角色																									|
+| role | Array&lt;string&gt;|No |User role|
 |mobile				|string							|否		|手机号																										|
+| mobile | string |No |Mobile phone number |
 |email				|string							|否		|邮箱																											|
+| email | string |no |email |
 |tags					|array							|否		|用户标签																									|
+| tags | array | no | user tags |
 |status				|number							|否		|用户状态，参考：[用户状态](uni-id-summary.md#user-status)|
+| status | number |No |User status, refer to: [User Status](uni-id-summary.md#user-status)|
 
 **返回值**
 **return value**
@@ -2300,6 +2477,7 @@ await uniIdCo.addUser({
 #### Authorize the user to log in to the specified client @authorize-app-login
 
 接口名：authorizeAppLogin
+Interface name: authorizeAppLogin
 
 **接口形式**
 **Interface form**
@@ -2349,6 +2527,7 @@ await uniIdCo.authorizeAppLogin({
 #### Remove user login authorization @remove-authorized-app
 
 接口名：removeAuthorizedApp
+Interface name: removeAuthorizedApp
 
 **接口形式**
 **Interface form**
@@ -2398,6 +2577,7 @@ await uniIdCo.removeAuthorizedApp({
 #### Set the list of apps allowed to log in @set-authorized-app
 
 接口名：setAuthorizedApp
+Interface name: setAuthorizedApp
 
 **接口形式**
 **Interface form**
@@ -2444,15 +2624,21 @@ await uniIdCo.setAuthorizedApp({
 - only return a new newToken when the user's token is about to expire
 
 ### 外部系统联登@external
+### External system federation @external
 #### 注册用户@external-register
+#### Registered user @external-register
 
 外部用户注册，将自身系统的用户账号导入uniId，为其创建一个对应uniId的账号(unieid)，使得该账号可以使用依赖uniId的系统及功能。
+For external user registration, import the user account of its own system into uniId, and create an account (unieid) corresponding to uniId for it, so that the account can use the system and functions that depend on uniId.
 
 注册成功后，uni-id 返回 unieid 与 用户 token ，请务必在自身系统中维护好 unieid 与 token。
+After successful registration, uni-id returns unieid and user token, please be sure to maintain unieid and token in your own system.
 
 该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
+When this interface is called by URL, it needs to carry the authentication signature value, see [URLized Request Authentication Signature Calculation](uni-id-pages.md#http-reqeust-auth)
 
 **接口形式**
+**Interface form**
 
 ```js
 await uniIdCo.externalRegister({
@@ -2464,32 +2650,48 @@ await uniIdCo.externalRegister({
 ```
 
 **参数说明**
+**Parameter Description**
 
 |参数名		|类型				|必填	|说明									|
+|Parameter name |Type |Required |Description |
 |--			|--					|--		|--										|
 |unieid		|string				|是		|uni-id账号，必须保证唯一性。只允许使用数字、字母、“_”及“-”，但不能为纯数字。									|
+| unieid | string | Yes | uni-id account, uniqueness must be guaranteed. Only numbers, letters, "_" and "-" are allowed, but not pure numbers. |
 |nickname	|string|否		|用户昵称	|
+| nickname | string | no | user nickname |
 |avatar	|string|否		|用户头像	|
+| avatar | string | no | user avatar |
 |gender	|string|否		|用户性别；0 未知 1 男性 2 女性	|
+| gender | string|No | User gender; 0 unknown 1 male 2 female |
 
 **返回值**
+**return value**
 
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+| errCode | string&#124;number | error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
+|&nbsp;&#124;-&nbsp;tokenExpired| string | token expiration time |
 |unieid							|string				|用户id		|
+| unieid | string | user id |
 
 #### 用户登录@external-login
+#### User login @external-login
 
 外部用户登录，用于获取用户token
+External user login, used to obtain user token
 
 该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
+When this interface is called by URL, it needs to carry the authentication signature value, see [URLized Request Authentication Signature Calculation](uni-id-pages.md#http-reqeust-auth)
 
 **接口形式**
+**Interface form**
 
 ```js
 await uniIdCo.externalLogin({
@@ -2498,23 +2700,33 @@ await uniIdCo.externalLogin({
 ```
 
 **参数说明**
+**Parameter Description**
 
 |参数名		|类型				|必填	|说明									|
+|Parameter name |Type |Required |Description |
 |--			|--					|--		|--										|
 |unieid		|string				|是		|uni-id账号，必须保证唯一性。只允许使用数字、字母、“_”及“-”，但不能为纯数字。									|
+| unieid | string | Yes | uni-id account, uniqueness must be guaranteed. Only numbers, letters, "_" and "-" are allowed, but not pure numbers. |
 
 **返回值**
+**return value**
 
 |参数名							|类型				|说明			|
+|parameter name |type |description |
 |--								|--					|--				|
 |errCode						|string&#124;number	|错误码			|
+| errCode | string&#124;number | error code |
 |errMsg							|string				|错误信息		|
+| errMsg | string | error message |
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
+|&nbsp;&#124;-&nbsp;tokenExpired| string | token expiration time |
 |unieid							|string				|用户id		|
+| unieid | string | user id |
 
 ### 其他功能@extra-function
+### Other functions @extra-function
 
 ### 覆盖或新增校验规则@custom-validator
 ### Override or add validation rules @custom-validator
@@ -2579,20 +2791,25 @@ module.exports = {
 ```
 
 ## 登录服务开通与配置
+## Login service activation and configuration
 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`
 The key information of the server `uni-id` is uniformly configured in `uni-config-center`, the path: `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/ config.json`
 以下简称：`uni-id配置文件`，完整的配置信息[详情查看](uni-id-summary.md#config)
 Hereinafter referred to as: `uni-id configuration file`, complete configuration information [see details](uni-id-summary.md#config)
 
 ### 一键登录
+### One-click login
 一键登录是运营商提供的、比短信验证码更方便、更安全、更便宜的方案。[详见](https://uniapp.dcloud.net.cn/univerify)。
+One-click login is a more convenient, safer, and cheaper solution than SMS verification codes provided by operators. [See](https://uniapp.dcloud.net.cn/univerify) for details.
 - 使用本功能需要在[DCloud开发者中心 -> ](https://dev.dcloud.net.cn/pages/uniLogin/index)开通并充值
+- To use this function, you need to activate and recharge in [DCloud Developer Center -> ](https://dev.dcloud.net.cn/pages/uniLogin/index)
 - 模块配置：`manifest.json`-->`App模块配置` -->`OAuth（登录鉴权）`-->` 一键登录`，点击后面的`开通配置`，在随后打开的web界面中，同意协议，并点击充值按钮充值。如只是测试，可以只充值1元钱。如果你已经确定包名，则可以在web界面点击“添加应用”，提交审核。这个是正式打包必须的。真机运行可以跳过此环节。记住页面上展示的`apiKey`和`apiSecret`，下一步需要用到。
 - Module configuration: `manifest.json`-->`App module configuration` -->`OAuth (login authentication)`-->`One-click login`, click on the back of `Activate configuration`, and then open the web In the interface, agree to the agreement, and click the recharge button to recharge. If it is just a test, you can only recharge 1 yuan. If you have determined the package name, you can click "Add Application" on the web interface to submit for review. This is required for official packaging. You can skip this link in real machine operation. Remember the `apiKey` and `apiSecret` shown on the page, which will be used in the next step.
 - uni-id配置：`uni-id配置文件` --> `service` --> `univerify`，填写`appid`、`apiKey`和 `apiSecret`。`appid`就是`manifest`里的`appid`。`apiKey`和`apiSecret`则是从上一步的web界面得来的。
 - uni-id configuration: `uni-id configuration file` --> `service` --> `univerify`, fill in `appid`, `apiKey` and `apiSecret`. `appid` is the `appid` in the `manifest`. `apiKey` and `apiSecret` are obtained from the web interface in the previous step.
 
 ### 微信登录@weixinLogin
+### WeChat login @weixinLogin
 
 uni-id-pages已全面支持：app、小程序、web（uni-id-pages 版本号1.0.8起），三端的微信登录。
 uni-id-pages has fully supported: app, applet, web (from uni-id-pages version 1.0.8), WeChat login on three terminals.
@@ -2722,6 +2939,7 @@ Open the hosts file with HBuilderX, add a line `127.0.0.1 your domain name` at t
 Access the domain name at this time, if you can see the same effect as your project running to the browser, it means that it has been successful.
 	
 ### 苹果登录集成指南
+### Apple Login Integration Guide
 - 模块配置：`manifest.json` --> `App模块配置` --> OAuth（登录鉴权）勾选`苹果登录`，[IOS苹果授权登录参考文档](https://ask.dcloud.net.cn/article/36651)。如不发布到Appstore，不需要配置此项
 - Module configuration: `manifest.json` --> `App module configuration` --> OAuth (login authentication) check `Apple login`, [IOS Apple Authorized Login Reference Document](https://ask.dcloud. net.cn/article/36651). If you do not publish to the Appstore, you do not need to configure this
 - uni-id配置：`uni-id配置文件` --> `app` --> `oauth` --> `apple` 填写`bundleId`。
@@ -2730,14 +2948,18 @@ Access the domain name at this time, if you can see the same effect as your proj
 - Associated domain configuration: `manifest.json` --> `App common other settings` --> `iOS settings` --> `Associated Domains` Fill in the configuration [Reference Tutorial](https://ask. dcloud.net.cn/article/36393). If you do not publish to the Appstore, you do not need to configure this
 
 ### 短信验证码
+### SMS verification code
 为了方便开发调试，`uni-id-pages`未配置短信登录时，自动启动测试模式；直接使用：123456作为短信验证码即可。
+For the convenience of development and debugging, `uni-id-pages` will automatically start the test mode when SMS login is not configured; directly use: 123456 as the SMS verification code.
 - 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/pages/sms/base)开通并充值
+- To use this function, you need to activate and recharge in [DCloud Developer Center -> SMS Verification Code](https://dev.dcloud.net.cn/pages/sms/base)
 - 教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
 - Tutorial reference [SMS Service Activation Guide](https://ask.dcloud.net.cn/article/37534)
 - 密钥配置：`uni-id配置文件` --> `service` --> `sms` 填写相关密钥信息。
 - Key configuration: `uni-id configuration file` --> `service` --> `sms` Fill in the relevant key information.
 
 ## 从老版uni-id公共模块升级到uni-id-pages
+## Upgrade from the old uni-id public module to uni-id-pages
 
 在HBuilderX 3.5之前，DCloud提供了一个公共模块[uni-id](https://ext.dcloud.net.cn/plugin?id=2116)（注意别和uni-id-common混淆）和一个示例性云函数uni-id-cf（集成在uni-starter和uni-admin中）。
 Before HBuilderX 3.5, DCloud provided a common module [uni-id](https://ext.dcloud.net.cn/plugin?id=2116) (not to be confused with uni-id-common) and an example Cloud function uni-id-cf (integrated in uni-starter and uni-admin).
@@ -2815,33 +3037,50 @@ exports.main = async (event, context) => {
 ```
 
 ## URL化请求鉴权签名@http-reqeust-auth
+## URL request authentication signature @http-reqeust-auth
 
 uni-id 在URL化请求时，会对以下 API 进行调用鉴权验证，
+When uni-id requests URLization, the following APIs will be called for authentication verification,
 在调用 API 时，开发者需要使用请求鉴权密钥`requestAuthSecret`按照 uni-id 的约定方式对请求中的关键数据进行签名值计算，
+When calling the API, the developer needs to use the request authentication key `requestAuthSecret` to calculate the signature value of the key data in the request according to the agreed method of uni-id.
 并将签名值添加到Header请求头的 `uni-id-signature` 参数中传给 uni-id 进行签名验证，uni-id 会对接收到数据进行签名值计算，
+And add the signature value to the `uni-id-signature` parameter of the Header request header and pass it to uni-id for signature verification, and uni-id will calculate the signature value for the received data,
 并与接收到的请求签名值进行比对，如果签名值不一致，则视为无效签名，将拒绝本次请求。
+And compare it with the received request signature value, if the signature value is inconsistent, it will be regarded as an invalid signature, and the request will be rejected.
 
 需要进行签名的API列表
+List of APIs that need to be signed
 |API|
 |---|
 |externalRegister|
 |externalLogin|
 
 ### 请求头公共参数
+### Request header public parameters
 
 |参数名称|类型|是否必须|描述|
+|parameter name|type|required|description|
 |---|---|---|---|
 |uni-id-nonce|string|是|随机字符串|
+|uni-id-nonce| string| is a |random string|
 |uni-id-timestamp|string|是|当前时间戳; 单位毫秒|
+|uni-id-timestamp| string|yes|current timestamp; in milliseconds|
 |uni-id-signature|string|是|请求鉴权签名; 签名算法见下|
+| uni-id-signature| string|yes|request authentication signature; signature algorithm see below|
 
 ### 鉴权签名算法
+### Authentication signature algorithm
 1. 将API请求参数（只包括请求body中的params参数，但除去array与object类型的参数），根据参数名称的ASCII码表的顺序排序。如：`foo:1, bar:2, foo_bar:3, foobar:4`排序后的顺序是 `bar:2, foo:1, foo_bar:3, foobar:4`
+1. Sort the API request parameters (including only the params parameters in the request body, but excluding array and object type parameters) according to the order of the ASCII code table of the parameter names. For example: `foo:1, bar:2, foo_bar:3, foobar:4` sorted order is `bar:2, foo:1, foo_bar:3, foobar:4`
 2. 将排序好的参数名和参数值按照 `key1=value1&key2=value2` 格式拼装在一起，根据上面的示例得到的结果为：`bar=2&foo=1&foo_bar=3&foobar=4`
+2. Assemble the sorted parameter name and parameter value according to `key1=value1&key2=value2` format, the result obtained according to the above example is: `bar=2&foo=1&foo_bar=3&foobar=4`
 3. 把拼装好的字符串采用utf-8编码，开发者使用请求鉴权密钥与随机串对时间戳与待签名字符串进行 HmacSHA256 加密处理，计算得出请求签名值,如：`HmacSHA256(timestamp + bar=2&foo=1&foo_bar=3&foobar=4, requestAuthSecret + nonce)`
+3. The assembled string is encoded in utf-8, and the developer uses the request authentication key and random string to perform HmacSHA256 encryption on the timestamp and the string to be signed, and calculate the request signature value, such as: `HmacSHA256( timestamp + bar=2&foo=1&foo_bar=3&foobar=4, requestAuthSecret + nonce)`
 4. 将加密得到的二进制结果使用十六进制表示，值必须为大写，如：`Hex.stringify(Utf8.parse("helloworld")) = "68656C6C6F776F726C64"`
+4. Express the encrypted binary result in hexadecimal, and the value must be uppercase, such as: `Hex.stringify(Utf8.parse("helloworld")) = "68656C6C6F776F726C64"`
 
 ### 签名值计算示例
+### Signature value calculation example
 
 #### Nodejs
 ```javascript

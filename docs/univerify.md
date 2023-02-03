@@ -44,6 +44,7 @@ Through the operator's underlying SDK, the App can directly obtain the mobile ph
 <a id="fullscreen"/>
 
 HBuilderX3.1.6+版本授权登录界面支持全屏模式
+HBuilderX3.1.6+ version authorization login interface supports full screen mode
 
 调用uni.login时设置univerifyStyle中的fullScreen属性值为true即可：
 When calling uni.login, set the fullScreen property value in unverifyStyle to true:
@@ -152,6 +153,7 @@ For details about the server API, see: [Using One-Key Login in UniCloud Cloud Fu
 This article mainly introduces the client calling method of uni-app. For 5+ App (Wap2App), please refer to: [5+ App One-Key Login User Guide](https://ask.dcloud.net.cn/article/38009)
 
 DCloud还提供了更易用的封装。在[uni-id](/uniCloud/uni-id)里已经预置了`uni一键登录`，并基于`uni-id`提供了[云端一体应用快速开发基本项目模版](https://ext.dcloud.net.cn/plugin?id=5057)，该项目模版内置了包括一键登录在内的各种常用登录示例，开发者可以拿去直接用
+DCloud also provides an easier-to-use package. In [uni-id](/uniCloud/uni-id), `uni one-key login` has been preset, and based on `uni-id`, [basic project template for rapid development of cloud integrated application](https:// ext.dcloud.net.cn/plugin?id=5057), the project template has built-in various common login examples including one-click login, developers can use them directly
 
 接下来继续介绍原始API的用法。
 Next, continue to introduce the usage of the original API.
@@ -530,8 +532,11 @@ exports.main = async (event, context) => {
 ```
 
 完整的项目实例源码，可以参考：
+For the complete source code of the project example, please refer to:
 1. uni-starter，云端一体应用快速开发基本项目模版：[https://ext.dcloud.net.cn/plugin?id=5057](https://ext.dcloud.net.cn/plugin?id=5057)
+1. uni-starter, a basic project template for rapid development of cloud-integrated applications: [https://ext.dcloud.net.cn/plugin?id=5057](https://ext.dcloud.net.cn/plugin?id =5057)
 2. hello uni-app，打包后直接体验：[https://m3w.cn/uniapp](https://m3w.cn/uniapp)；源码获取：在HBuilderX中新建uni-app项目，选择hello uni-app模板。一键登录的具体位置在 API - login 栏目中。
+2. hello uni-app, experience it directly after packaging: [https://m3w.cn/uniapp](https://m3w.cn/uniapp); source code acquisition: create a new uni-app project in HBuilderX, select hello uni -app templates. The specific location of one-click login is in the API - login column.
 
 **注意**
 **Notice**
@@ -803,7 +808,9 @@ Dual SIM phones are authenticated with a SIM card with data traffic turned on.
 In most cases, it is because some specific devices do not support dual-card dual-standby network environment.
 
 - **使用有其他疑问**
+- **Other questions about use**
 欢迎扫码加入 一键登录 微信交流群讨论：
+Welcome to scan the code to join the one-click login WeChat exchange group discussion:
     <br/><img src="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E4%B8%80%E9%94%AE%E8%AE%A4%E8%AF%81.png" width="250"/>
 
 

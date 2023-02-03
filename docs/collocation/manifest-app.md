@@ -44,7 +44,9 @@ App-Android platform cloud packaging related configuration
 |hasTaskAffinity|Boolean|是否设置android：taskAffinity|
 |hasTaskAffinity|Boolean| Whether to set android:taskAffinity|
 |buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
+| buildFeatures| Object| The buildFeatures configuration item of build.gradle when the Android platform is packaged in the cloud, [see details](/collocation/manifest?id=buildFeatures)|
 |pushRegisterMode|String|使用“Push(消息推送)”模块时申请系统推送权限模式，设置为manual表示调用push相关API时申请，设置为其它值表示应用启动时自动申请|
+| pushRegisterMode| String|Apply for the system push permission mode when using the "Push (message push)" module, set it to manual to apply when calling the push-related API, set it to other values to automatically apply when the application starts|
 
 
 #### buildFeatures@buildFeatures  

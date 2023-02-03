@@ -13,17 +13,21 @@ Note: Facebook servers may not be accessible within China
 * 打开[Facebook开发者中心](http://developers.facebook.com/)
 * Open [Facebook Developer Center](http://developers.facebook.com/)
 * 点击右上角"我的应用"
+* Click "My Apps" in the upper right corner
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-fb-myApplication.png)
 
 * 进入应用管理界面，点击"创建应用"
+* Enter the application management interface, click "Create Application"
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-fb-createApplication.png)
 
 
 * 根据需要选择应用产品的类型(应用类型详见"详细了解应用类型")，然后点击继续
+* Select the type of application product according to your needs (see "Application Type for details" for details), and then click Continue
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-fb-chooseApplicationType.png)
 
 
 * 填写应用信息
+* Fill in application information
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-fb-fillInAppInfo.png)
 
 
@@ -40,10 +44,12 @@ Note: Facebook servers may not be accessible within China
 #### 设置登录-iOS
 #### Setup Login - iOS
 * 我的应用--设置--基本，选择添加平台，选择iOS
+* My application--Settings--Basic, select Add Platform, select iOS
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-fb-ios-addPlatform.png)
 
 
 * 填写信息保存即可 
+* Just fill in the information and save
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-fb-ios-saveInfo.png)
 
 
@@ -52,10 +58,12 @@ Note: Facebook servers may not be accessible within China
 #### Setup Login - Android
 
 * 我的应用--设置--基本，选择添加平台
+* My application--settings--basic, choose to add platform
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-fb-android-addPlatform.png)
 
 
 * 选择android平台，应用商店选择Google Play
+* Select the android platform, and select Google Play for the app store
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-fb-android-appstore.png)
 
 

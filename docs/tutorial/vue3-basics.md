@@ -28,6 +28,7 @@ The core of `Vue.js` is a system that allows the use of concise template syntax 
 Most of the content of this article comes from [vue3 Chinese document official website](https://v3.cn.vuejs.org/guide/introduction.html#vue-js-%E6%98%AF%E4%BB%80%E4%B9%88), but some adjustments have been made in combination with `uni-app` to make it easier for developers to get started quickly. Thanks to the Vue team!
 
 ## vue的优势
+## Advantages of vue
 
 在传统开发中，用原生的 JavaScript DOM 操作函数对 DOM 进行频繁操作的时候，浏览器要不停的渲染新的 DOM 树，导致页面看起来非常卡顿。
 In traditional development, when the native JavaScript DOM manipulation function is used to frequently manipulate the DOM, the browser must constantly render the new DOM tree, causing the page to look very stuck.
@@ -36,31 +37,48 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 Vue is a single-page application, which makes the page partially refresh, without having to request all the data and DOM every time you jump to the page, which greatly speeds up the access speed and improves the user experience.
 
 **vue的优势：**
+**Advantages of vue:**
 
 - 轻量级：几十K的体积
+- Lightweight: dozens of kilobytes in size
 - 界面与逻辑分离，与html接近的概念和写法
+- The interface and logic are separated, and the concept and writing method are close to html
 - 响应式双向数据绑定，更新数据时无需再写代码更新界面，反之亦然。
+- Responsive two-way data binding, no need to write code to update the interface when updating data, and vice versa.
 - 组件化，可方便协作。方便造轮子，也就自然有大量轮子可用
+- Componentization for easy collaboration. It is convenient to make wheels, so there are naturally a lot of wheels available
 - 虚拟DOM，比大多数手写操作dom的代码都更高效
+- Virtual DOM, more efficient than most handwritten codes that manipulate dom
 - 易于上手，设计直观、文档丰富
+- Easy to use, intuitive design, rich documentation
 
 **vue3相比vue2的优势：**
+**Advantages of vue3 compared to vue2:**
 
 - 响应式系统提升
+- Responsive system improvement
 - 更快，性能比Vue2快1.2~2倍(diff方法优化、静态提升、时间侦听器缓存、[ssr渲染](https://uniapp.dcloud.io/tutorial/ssr))
+- Faster, performance is 1.2~2 times faster than Vue2 (diff method optimization, static boost, time listener cache, [ssr rendering](https://uniapp.dcloud.io/tutorial/ssr))
 - 更小，按需编译，体积比Vue2更小
+- Smaller, compiled on demand, smaller than Vue2
 - 组合式API，提供更灵活的写法，也易于吸引react开发者
+- Combined API, providing more flexible writing methods, and easy to attract react developers
 - 加强TypeScript支持
+- Enhanced TypeScript support
 
 ## 白话uni-app
+## Vernacular uni-app
 
 如果你了解html、js，那么本章节将让你快速了解uni-app和它们的差异。
+If you know html, js, then this chapter will let you quickly understand uni-app and their differences.
 
 ### 文件类型变化
 ### File type changes
 
 - 以前是.html文件，开发也是html，运行也是html。
+- It used to be a .html file, development is also html, and operation is also html.
 - 现在每个页面是一个.vue文件，开发是vue，但经过编译后，运行时已经变成了js文件（如果是uts则可能编译成kotlin、swift）。
+- Now each page is a .vue file, and the development is vue, but after compilation, it has become a js file at runtime (if it is uts, it may be compiled into kotlin, swift).
 - 现代前端开发，很少直接使用HTML，基本都是开发、编译、运行。所以 `uni-app` 有编译器、运行时的概念。
 - Modern front-end development rarely uses HTML directly, but basically develops, compiles, and runs. So 'uni-app' has the concept of compiler, runtime.
 
@@ -88,6 +106,7 @@ Vue is a single-page application, which makes the page partially refresh, withou
 
 
 - 现在 `template` 是一级节点，用于写tag组件， `script` 和 `style` 是并列的一级节点，也就是有3个一级节点。这个叫[vue单文件组件规范sfc](vue3-components.md)。
+- Now `template` is a first-level node, used to write tag components, `script` and `style` are parallel first-level nodes, that is, there are 3 first-level nodes. This is called [vue single file component specification sfc](vue3-components.md).
 
 ```html
 	<template>  
@@ -120,6 +139,7 @@ Vue is a single-page application, which makes the page partially refresh, withou
 - Now it is written in es6, `import`import external js module (note that it is not a file) or css;
 
 **js要require进来，变成了对象**。
+**js needs to require to come in and become an object**.
 
 在hello uni-app的 `common` 目录有一个工具类 `util.js` ，可以在hello uni-app中搜索这个例子查看。hello uni-app示例代码可从 [github](https://github.com/dcloudio/hello-uniapp) 获取。
 There is a tool class `util.js` in the `common` directory of hello uni-app. You can search for this example in hello uni-app. Hello uni-app sample code is available from [github](https://github.com/dcloudio/hello-uniapp).
@@ -133,6 +153,7 @@ There is a tool class `util.js` in the `common` directory of hello uni-app. You 
 ```
 
 而在这个 `util.js` 里，要把之前的 `function` 封装为模块（module）的方法并导出（exports）。只有被导出的方法和属性才能被外部调用，不导出的属于模块内部函数和变量。这是es6的模块规范。
+And in this `util.js`, the previous `function` should be packaged as a module method and exported (exports). Only exported methods and properties can be called externally, and those not exported belong to internal functions and variables of the module. This is the module specification for es6.
 
 ```js
 	function formatTime(time) {  
@@ -145,6 +166,7 @@ There is a tool class `util.js` in the `common` directory of hello uni-app. You 
 
 
 当然还有一些高级的用法，比如在导出时可以重命名
+Of course, there are some advanced usages, such as renaming when exporting
 
 ```js
 	// 直接使用js模块的属性。在hello uni-app有示例 
@@ -170,6 +192,7 @@ There is a tool class `util.js` in the `common` directory of hello uni-app. You 
 
 
 **另外，vue支持组件导入，可以更方便的封装一个包括界面、js、样式的库**。[详见](vue3-components.md)
+**In addition, vue supports component import, which can more conveniently encapsulate a library including interface, js, and styles**. [See details](vue3-components.md)
 
 
 ### 组件/标签的变化
@@ -193,6 +216,7 @@ So what is the difference between a label and a component, isn't it all surround
 ### js changes
 
 - 以前script里随便写js变量和function
+- In the past, just write js variables and functions in the script
 ```html
 <script type="text/javascript">  
 	var a; 
@@ -203,12 +227,18 @@ So what is the difference between a label and a component, isn't it all surround
 ```
 
 - 现在script里默认有export default，在里面写data、事件和method
+- Now the script has export default by default, write data, events and methods in it
 
 	* 写在 `export default {` 前面的变量，是页面内部的全局变量，可以在各种方法里使用。
+	* The variables written in front of `export default {` are global variables inside the page and can be used in various methods.
 	* `export default {}` 里是一个大json，data、生命周期、method都需要用逗号分隔。
+	* `export default {}` is a large json, and data, life cycle, and method need to be separated by commas.
 	* data -> return 里，编写可以绑定在页面template模板里的变量，页面组件的text里绑定data数据使用{{}}，比如下面例子中的`textvalue`。而下面的globalvar就不能在模板里绑定使用。在HBuilderX中，敲vdata代码块，可以快捷生成data的代码结构。
+	* In data -> return, write variables that can be bound in the page template, and use {{}} to bind data data in the text of the page component, such as `textvalue` in the following example. The following globalvar cannot be bound and used in the template. In HBuilderX, typing the vdata code block can quickly generate the code structure of data.
 	* 页面的生命周期/事件，如下面的`onLoad`，和data平级。
+	* Page life cycle/events, such as `onLoad` below, are at the same level as data.
 	* 模板里要调用的方法，都需要写在`methods`下面。每个方法也需要用逗号分隔。不需要再使用`function`声明，只要写在`methods`下的函数，都可以在template里调用。同样，HBuilderX里敲`vmethods`代码块，也可以生成相应结构。
+	* The methods to be called in the template need to be written under `methods`. Each method also needs to be separated by a comma. There is no need to use the `function` statement, as long as the function written under `methods` can be called in the template. Similarly, typing the `vmethods` code block in HBuilderX can also generate the corresponding structure.
 
 ```html
 <template>  
@@ -242,6 +272,7 @@ So what is the difference between a label and a component, isn't it all surround
 ```
 
 在上述例子中，传统写法的定义的变量globalvar和函数globalfun，可以在`export default { }`里使用，但无法在模板里直接绑定和调用。模板里只能绑定data里的变量、调用methods里的方法。
+In the above example, the variable globalvar and function globalfun defined in the traditional way can be used in `export default { }`, but they cannot be directly bound and called in the template. Templates can only bind variables in data and call methods in methods.
 
 - 以前的 DOM 操作，如果你想改变某个 DOM 元素的显示内容，比如一个view的显示文字：给view设id，然后js里通过选择器获取 DOM 元素，进一步通过js进行赋值操作，修改 DOM 元素的属性或值。
 - In the previous DOM operation, if you want to change the display content of a DOM element, such as the display text of a view: set the id to the view, then get the DOM element through the selector in js, and then perform assignment operations through js to modify the DOM element Attribute or value.
@@ -303,9 +334,12 @@ So what is the difference between a label and a component, isn't it all surround
 
 
 - 以前在是html的tag里用一个属性`onclick`来写点击事件
+- In the past, an attribute `onclick` was used in the html tag to write the click event
 - 现在是使用`@click`（其实是`v-on:click`的缩写，在uni-app里基本都使用缩写）调用methods里的方法。
+- Now use `@click` (actually the abbreviation of `v-on:click`, which is basically used in uni-app) to call the method in methods.
 
 ## 在 uni-app 中使用vue的差异
+## Differences of using vue in uni-app
 
 `uni-app` 在发布到H5时支持所有vue的语法；发布到App和小程序时，由于平台限制，无法实现全部vue语法，但 `uni-app` 仍是对vue语法支持度最高的跨端框架。
 `uni-app` supports all vue syntaxes when it is published to H5; when it is published to apps and applets, due to platform limitations, all vue syntaxes cannot be implemented, but `uni-app` is still the cross-platform with the highest support for vue syntax. end frame.
@@ -314,16 +348,22 @@ So what is the difference between a label and a component, isn't it all surround
 Compared with the Web platform, the differences in the use of Vue.js in `uni-app` are mainly concentrated in two aspects:
 
 - 新增：`uni-app` 除了支持Vue实例的生命周期，还支持[应用生命周期](https://uniapp.dcloud.io/collocation/App#应用生命周期)以及[页面生命周期](https://uniapp.dcloud.io/tutorial/page#lifecycle)。
+- Added: `uni-app` In addition to supporting the life cycle of Vue instances, it also supports [application life cycle](https://uniapp.dcloud.io/collocation/App#%E5%BA%94%E7%94% A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F) and [Page Lifecycle](https://uniapp.dcloud.io/tutorial/page#lifecycle).
 - 受限：相比web平台，在小程序和App端部分功能受限，[具体见](/vue3-api)。
+- Restricted: Compared with the web platform, some functions on the MiniApp and app side are limited, [see details](/vue3-api).
 
 [uni-app 项目支持 vue 3.0介绍，及升级指南](https://ask.dcloud.net.cn/article/37834)
 [Introduction and upgrade guide for uni-app project support vue 3.0](https://ask.dcloud.net.cn/article/37834)
 
 `uni-app` 项目对 vue 3.0 的支持版本情况如下：
+The vue 3.0 version supported by `uni-app` project is as follows:
 
 - Web平台：支持。
+- Web platform: support.
 - 小程序平台：`HBuilderX 3.3.3+` 编译器改为 `vite`，之前版本的编译器为`webpack`。
+- MiniApp platform: `HBuilderX 3.3.3+` compiler is changed to `vite`, the compiler of the previous version is `webpack`.
 - App 平台：`uni-app 3.2.5+`支持。`HBuilderX 3.3.13` 起 `nvue`编译器升级为`vite`。
+- App platform: supported by `uni-app 3.2.5+`. From `HBuilderX 3.3.13`, the `nvue` compiler is upgraded to `vite`.
 
 **注意事项**
 **Precautions**
@@ -1364,10 +1404,13 @@ This can be fixed by moving v-for to a wrapping `<template>` tag:
 ### Listening to Events
 
 我们可以使用 `v-on` 指令 (通常缩写为 @ 符号，下文简称为：@事件) 来监听 DOM 事件，并在触发事件时执行一些 `JavaScript`。
+We can use the `v-on` directive (often abbreviated to the @ symbol, hereinafter referred to as: @event) to listen to DOM events and execute some `JavaScript` when the event is triggered.
 
 用法为 `v-on:click="methodName"` 或使用快捷方式 `@click="methodName"` （uni-app里一般都使用@缩写方式）
+The usage is `v-on:click="methodName"` or use the shortcut `@click="methodName"` (the @ abbreviation method is generally used in uni-app)
 
 指令的值，字符串里直接写js。比如下面的`counter += 1`就是一段js。
+The value of the command, directly write js in the string. For example, `counter += 1` below is a piece of js.
 
 ```html
 	<template>
@@ -1392,6 +1435,7 @@ This can be fixed by moving v-for to a wrapping `<template>` tag:
 ### Method Event Handlers
 
 然而许多事件处理逻辑会更为复杂，所以直接把 `JavaScript` 代码写在组件属性值里是不可行的。因此@事件还可以接收一个需要调用的方法名称。
+However, many event handling logic will be more complex, so it is not feasible to directly write `JavaScript` code in component property values. So @event can also receive a method name that needs to be called.
 
 示例：
 Example:
@@ -1575,6 +1619,7 @@ v-on provides event modifiers:
 **there are several benefits in using v-on or @:**
 
 1. 扫一眼 `template` 模板便能轻松定位在 `JavaScript` 代码里对应的方法。
+1. A glance at the `template` template can easily locate the corresponding method in the `JavaScript` code.
 
 2. 因为你无须在 `JavaScript` 里手动绑定事件，你的 `ViewModel` 代码可以是非常纯粹的逻辑，和 `DOM` 完全解耦，更易于测试。
 2. Since you don't have to manually attach event listeners in JS, your `ViewModel` code can be pure logic and DOM-free. This makes it easier to test.
@@ -1629,6 +1674,7 @@ You can use the `v-model` directive to create two-way data bindings on form `inp
 > v-model will ignore the initial `value`, `checked` or `selected` attributes found on any form elements. It will always treat the current active instance data as the source of truth. You should declare the initial value on the JavaScript side, inside the data option of your component.
 
 在下面的示例中，输入框通过`v-model`绑定了`message`，用户在输入框里输入内容时，这个内容会实施赋值给`message`。当然在代码里为`message`赋值也会实时同步到界面上input里。这就是双向绑定。
+In the following example, the input box is bound to `message` through `v-model`, and when the user enters content in the input box, the content will be assigned to `message`. Of course, assigning a value to `message` in the code will also be synchronized to the input on the interface in real time. This is two-way binding.
 
 ```html
 	<template>
@@ -1780,6 +1826,7 @@ In-template expressions are very convenient, but they are meant for simple opera
 
 
 我们想根据 author 是否已经有一些书来显示不同的消息，可以使用模板内的表达式
+We want to display different messages depending on whether the author already has some books, we can use the expression in the template
 
 
 ```html
@@ -1797,6 +1844,7 @@ That's why for complex logic that includes reactive data, you should use a **com
 
 
 **使用计算属性的例子**
+**Example using computed properties**
 
 ```html
 	<template>

@@ -1,4 +1,5 @@
 ## UTS介绍
+## Introduction to UTS
 
 **uts 是什么**
 **what is uts**
@@ -34,14 +35,19 @@ This article is an introduction to the basic syntax of uts. If you want to know 
 ### Declaration
 
 js是无类型的，TypeScript 的 type 就是类型的意思，给js加上了类型。它的类型定义方式是在变量名后面通过加冒号和类型来进行定义。
+js is typeless, TypeScript's type means type, adding a type to js. Its type definition is defined by adding a colon and type after the variable name.
 
 uts 中声明变量可以用 let 或 const，详见下。
+Variables declared in uts can use let or const, see below for details.
 
 #### 变量定义（let）
+#### Variable definition (let)
 
 声明一个可重新赋值的变量。语法 `let [变量名] : [类型] = 值;`。
+Declare a reassignable variable. Syntax `let [variable name] : [type] = value;`.
 
 > 相当于 TypeScript 中的 let，kotlin 中的 var
+> Equivalent to let in TypeScript, var in kotlin
 
 ```ts
 let str :string = "hello"; // 声明一个字符串变量
@@ -49,12 +55,16 @@ str = "hello world"; // 重新赋值
 ```
 
 类型除了 string 之外，更多类型[见下](#基本类型)
+In addition to string, more types [see below](#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B)
 
 #### 常量定义（const）
+#### Constant definition (const)
 
 声明一个只读常量，只能为其赋值一次。语法 `const [变量名] : [类型] = 值;`。
+Declare a read-only constant that can only be assigned a value once. Syntax `const [variable name] : [type] = value;`.
 
 > 相当于 TypeScript 中的 const, kotlin 中的 val
+> Equivalent to const in TypeScript, val in kotlin
 
 ```ts
 const str :string = "hello"; // 声明一个字符串变量
@@ -65,18 +75,26 @@ str = "hello world"; // 报错，不允许重新赋值
 Precautions:
 
 - 当前 uts 并未限制使用 var 来声明变量，但当使用 var 来声明变量时需要注意不同平台差异
+- The current uts does not restrict the use of var to declare variables, but when using var to declare variables, you need to pay attention to the differences between different platforms
 	* 编译至 JavaScript 平台时，等同于 JavaScript 平台的 var （存在变量提升现象）
+	* When compiling to the JavaScript platform, it is equivalent to the var of the JavaScript platform (there is variable promotion phenomenon)
 	* 编译至 Kotlin 平台时，等同于 Kotlin 平台的 var（允许重新赋值）
+	* Equivalent to Kotlin's var (reassignment allowed) when compiling to the Kotlin platform
 - 类型定义的冒号，左右可以有一个空格，也可以没有空格。`let str:string` 和 `let str : string` 和 `let str :string` 和 `let str: string` 都是合法的。
+- The colon of the type definition can have a space on the left or right, or no space. `let str:string` and `let str : string` and `let str :string` and `let str: string` are both valid.
 - 不支持 TypeScript 中的联合类型
+- Union types in TypeScript are not supported
 
 #### 变量命名规则
+#### Variable Naming Rules
 
 在 uts 中，使用变量名需要遵守一定的规则。
 In uts, there are certain rules for using variable names.
 
 -   变量名称可以包含数字和字母。
+- Variable names can contain numbers and letters.
 -   除了下划线 \_ 外，不能包含其他特殊字符，包括空格。
+- Except for the underscore \_, no other special characters, including spaces, are allowed.
 -   变量名不能以数字开头。
 - Variable names cannot start with a number.
 
@@ -84,10 +102,13 @@ In uts, there are certain rules for using variable names.
 > Note: Unlike TypeScript, uts does not allow variables starting with $
 
 #### 类型自动推导
+#### Automatic type deduction
 
 uts具备类型自动推导。在定义变量时如果直接赋值，而不使用冒号定义类型，也可以合法运行。
+uts has automatic type deduction. If you assign a value directly when defining a variable without using a colon to define the type, it can also run legally.
 
 如下2种写法都是合法的，两个变量都是string类型：
+The following two ways of writing are legal, and both variables are of string type:
 
 ```ts
 let s1 :string = "hello"; 
@@ -95,8 +116,10 @@ let s2 = "hello";
 ```
 
 #### any类型
+#### any type
 
 如果定义变量时没有声明类型，也没有赋值。那么这个变量会被视为any类型。虽然可以使用，但uts中非常不建议这样使用。
+If a variable is defined without a declared type, it is not assigned a value. Then this variable will be regarded as any type. Although it can be used, it is highly discouraged in uts.
 
 ```ts
 let s;
@@ -231,10 +254,13 @@ const status = age >= 18 ? "adult" : "minor";
 ```
 
 ### 代码语句的分割
+### Segmentation of code statements
 
 uts的多个代码语句，可以以回车或分号分割。行尾的分号可以省略。如果写在一行，应以分号分割。
+Multiple code statements of uts can be separated by carriage return or semicolon. The semicolon at the end of the line can be omitted. If written on one line, they should be separated by semicolons.
 
 如下的代码都是合法的：
+The following code is legal:
 
 ```ts
 let a:number = 1 //行尾可以不加分号
@@ -243,22 +269,26 @@ let c:number = 3 ; let d:number = 4 // 同行多语句需要用分号分割
 ```
 
 ## 数据类型
+## type of data
 
 ### 布尔值（Boolean）
 ### Boolean
 
 有 2 个值分别是：`true` 和 `false`。
+There are 2 values: `true` and `false`.
 
 ### 数字（Number）
 ### Number
 
 所有数字，包括整数或浮点数，包括正数负数。例如： 正整数 `42` 或者 浮点数 `3.14159` 或者 负数 `-1` 。
+All numbers, integer or floating point, both positive and negative. For example: positive integer `42` or floating point `3.14159` or negative `-1`.
 
 ```ts
 let a:number = 42
 ```
 
 #### Kotlin 特有的数字类型
+#### Kotlin-specific numeric types
 
 - Byte, UByte
 - Short, UShort
@@ -268,18 +298,24 @@ let a:number = 42
 - Double
 
 #### Swift 特有的数字类型
+#### Swift-specific numeric types
 
 - Int, UInt, Int8, UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64
 - Float, Float16, Float32, Float64
 - Double
 
 **注意**
+**Notice**
 
 在 kotlin 和 swift 中，有些系统API或三方SDK的传入和返回强制约定了这些平台数字类型，此时无法使用 number。
+In kotlin and swift, the input and return of some system APIs or third-party SDKs forcefully agree on these platform number types, and number cannot be used at this time.
 这种情况下可以使用下面的方法，虽然可能会被编辑器报语法错误（后续HBuilderX会修复这类误报），但编译到 kotlin 和 swift 时是可用的。
+In this case, the following method can be used. Although the editor may report syntax errors (subsequent HBuilderX will fix such false positives), it is available when compiling to kotlin and swift.
 
 - 声明特定的平台数字类型
+- Declare a platform-specific numeric type
  > 目前这些平台数字类型，声明类型时，与 number 不同的是，均为首字母大写
+ > At present, these platform number types, when declaring the type, are different from number in that the first letter is capitalized
 
 ```ts
 
@@ -289,6 +325,7 @@ let c:Double  = a * 1.0 / b
 ```
 
 - 在 kotlin(app-android) 下转换特定的平台数字类型
+- Convert platform-specific numeric types under kotlin(app-android)
 ```ts
 let a:Int = 3
 a.toFloat() // 转换为 Float 类型，后续也将支持 new Float(a) 方式转换
@@ -296,6 +333,7 @@ a.toDouble() // 转换为 Double 类型，后续也将支持 new Double(a) 方�
 ```
 
 - 在 swift(app-ios) 下转换特定的平台数字类型
+- Convert specific platform number types under swift(app-ios)
 ```ts
 let a:Int = 3
 let b = new Double(a) // 将整型变量 a 转换为 Double 类型
@@ -305,10 +343,13 @@ let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 ### String
 
 字符串是一串表示文本值的字符序列，例如：`"hello world"`。
+A string is a sequence of characters representing a text value, for example: `"hello world"`.
 
 ### 日期（Date）
+### Date (Date)
 
 日期对象表示日期，包括年月日时分秒等各种日期。详[见下](#Date)
+A date object represents a date, including various dates such as year, month, day, hour, minute, and second. Details [see below](#Date)
 
 ### null
 
@@ -316,24 +357,31 @@ let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 A special keyword that indicates a null value.
 
 有时需定义可为null的字符串，可以在类型描述中使用`|`操作符。
+Sometimes you need to define a nullable string, you can use the `|` operator in the type description.
 ```ts
 let user: string | null
 ```
 
 > 注意：uts 编译为kotlin和swift时不支持 undefined。
+> Note: undefined is not supported when compiling uts to kotlin and swift.
 
 ### Object类型
+### Object type
 
 对象（object）是指内存中的可以被标识符引用的一块区域，是一种引用类型。包括Array，Date，Map，Set，JSON等，uts 有一个内置对象的标准库。详[见下](#内置对象和api)。
+Object (object) refers to an area in memory that can be referenced by an identifier, and is a type of reference. Including Array, Date, Map, Set, JSON, etc., uts has a standard library of built-in objects. Details [see below](#%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%E5%92%8Capi).
 
 ### any类型
+### any type
 
 未定义类型，即任意类型。一般不推荐使用。
+Undefined type, i.e. any type. Generally not recommended.
 
 ## 字面量
 ## literal
 
 字面量是由语法表达式定义的常量；或，通过由一定字词组成的语词表达式定义的常量。
+A literal is a constant defined by a grammatical expression; or, a constant defined by a lexical expression consisting of certain words.
 
 在 uts 中，你可以使用各种字面量。这些字面量是按字面意思给出的固定的值，而不是变量
 In uts, you can use various literals. These literals are fixed values given literally, not variables
@@ -765,19 +813,25 @@ try {
 ```
 
 ## 函数（function）
+## function
 
 函数是编程语言常见的功能，它可以封装一批代码，对外接收参数，然后返回值。被封装的逻辑，可以被不同的其他代码调用，达到共同复用逻辑的目的。
+A function is a common function in programming languages. It can encapsulate a batch of code, receive external parameters, and return a value. The encapsulated logic can be called by different other codes to achieve the purpose of common reuse logic.
 
 函数用 function 关键字定义，后面跟着函数名和圆括号。
+Functions are defined with the function keyword, followed by the function name and parentheses.
 
 同时注意，定义函数涉及作用域。
+Also note that defining functions involves scope.
 
 ### 定义函数
 ### define function
 
 #### 普通函数声明
+#### Ordinary function declaration
 
 一个函数定义（也称为函数声明，或函数语句）由一系列在 function 关键字后的内容组成，依次为：
+A function definition (also known as a function declaration, or a function statement) consists of a series of content after the function keyword, in order:
 
 -   函数的名称。
 - The name of the function.
@@ -792,8 +846,10 @@ try {
 > Note: The function must clearly indicate the return value type
 
 例如，以下的代码定义了一个简单的函数。函数名为 add，有2个参数 x 和 y，都是 string类型，函数的返回值类型也是 string。
+For example, the following code defines a simple function. The function name is add, there are two parameters x and y, both of type string, and the return value type of the function is also string.
 
 函数的内容是将入参 x 和 y 相加，赋值给变量z，然后通过 return关键字返回z。
+The content of the function is to add the input parameters x and y, assign it to the variable z, and then return z through the return keyword.
 
 ```ts
 function add(x :string, y :string) :string {
@@ -803,20 +859,25 @@ function add(x :string, y :string) :string {
 ```
 
 #### 无返回值的函数定义（void）
+#### Function definition with no return value (void)
 
 如果这个函数不需要返回值，需要使用void关键字，同时函数内部末尾不需要return来返回内容。
+If this function does not need to return a value, you need to use the void keyword, and at the same time, there is no need to return at the end of the function to return the content.
 
 ```ts
 function add(x :string, y :string) :void {
     let z :string = x + " " + y
 	console.log(z)
 	// 不需要return
+	// no need to return
 }
 ```
 
 #### 函数表达式和匿名函数定义
+#### Function expressions and anonymous function definitions
 
 虽然上面的函数声明在语法上是一个语句，但函数也可以由函数表达式创建。这样的函数可以是匿名的，它不必有一个名称。例如，函数 add 也可这样来定义：
+While the function declaration above is syntactically a statement, functions can also be created from function expressions. Such a function can be anonymous, it doesn't have to have a name. For example, the function add could also be defined like this:
 
 ```ts
 const add = function (x: string, y: string): string {
@@ -825,15 +886,20 @@ const add = function (x: string, y: string): string {
 ```
 
 注意：
+Notice:
 - 通过表达式定义的函数必须使用return关键字返回内容。
+- Functions defined by expressions must use the return keyword to return content.
 - 函数表达式不支持使用函数名，比如`const add = function add(){}`是不允许的。
+- Function expressions do not support the use of function names, such as `const add = function add(){}` is not allowed.
 
 ### 调用函数
 ### Call functions
 
 定义一个函数并不会自动的执行它。定义了函数仅仅是赋予函数以名称并明确函数被调用时该做些什么。调用函数才会以给定的参数真正执行这些动作。
+Defining a function does not automatically execute it. Defining a function is just a matter of giving the function a name and specifying what the function should do when called. Calling the function will actually perform the actions with the given parameters.
 
 定义了函数 add 后，你可以如下这样调用它：
+After defining the function add, you can call it like this:
 
 ```ts
 function add(x :string, y :string) :string {
@@ -844,8 +910,10 @@ add("hello", "world"); // 调用add函数
 ```
 
 上述语句通过提供参数 "hello" 和 "world" 来调用函数。
+The above statement calls the function by providing the parameters "hello" and "world".
 
 虽然调用了add函数，但并没有获取到返回值。如需要获取返回值，需要再赋值：
+Although the add function was called, the return value was not obtained. If you need to get the return value, you need to reassign:
 ```ts
 function add(x :string, y :string) :string {
 	let z :string = x + " " + y
@@ -931,6 +999,7 @@ The naming conflict occurs on return x, the inside parameter x and the outside v
 ### Closure
 
 uts 允许函数嵌套，并且内部函数可以访问定义在外部函数中的所有变量和函数，以及外部函数能访问的所有变量和函数。
+uts allows function nesting, and inner functions can access all variables and functions defined in outer functions, and all variables and functions that outer functions can access.
 
 但是，外部函数却不能够访问定义在内部函数中的变量和函数。这给内部函数的变量提供了一定的安全性。
 However, the outer function cannot access the variables and functions defined in the inner function. This provides some security to the variables of the inner function.
@@ -989,29 +1058,40 @@ console.log(a3); // logs [ 8, 6, 7, 9 ]
 ```
 
 ## 类（class）
+## class
 
 uts 中使用关键字 class 声明类。
+Classes are declared in uts using the keyword class.
 
 类声明由类名以及由花括号包围的类体构成。
+A class declaration consists of a class name followed by a class body surrounded by curly braces.
 
 ```ts
 // 定义Person Class
+// define Person Class
 class Person {
 	
 }
 ```
 
 ### 基本概念
+### basic concept
 
 类是对象化的概念，有属性、方法、构造函数。
+A class is an object-oriented concept with properties, methods, and constructors.
 - 属性：是一个简单的值，可以是字符串、数字、布尔或另一个class。可以用 `对象.属性名` 的访问，也可以通过 `对象.属性名=xxx` 的方式赋值。
+- Property: is a simple value that can be a string, number, boolean or another class. It can be accessed by `object.property name`, or assigned by `object.property name=xxx`.
 - 方法：是一段代码的集合，有入参、有返回值（均可选）。可以用 `对象.方法名(参数)` 的方式访问。
+- Method: It is a collection of a piece of code, with input parameters and return values (both are optional). It can be accessed by `object. method name (parameter)`.
 - 构造函数：用于初始化实例。详[见下](#constructor)
+- Constructor: Used to initialize an instance. Details [see below](#constructor)
 
 下面的示例中，定义了一个 Person 的 class，它有一个属性 name，有一个构造函数 constructor（名称不可改），还有一个方法 getNameLength。
+In the following example, a Person class is defined, which has an attribute name, a constructor function (name cannot be changed), and a method getNameLength.
 
 ```ts
 // 定义Person Class
+// define Person Class
 class Person {
 	name:string = ""; // 属性name
 	constructor(newname:string) { // 构造函数，参数newname
@@ -1025,11 +1105,14 @@ class Person {
 ```
 
 定义了class后，需要实例化（通过new关键字）。定义一个实例后，即可使用该实例对象的属性和方法。
+After the class is defined, it needs to be instantiated (via the new keyword). Once an instance is defined, the properties and methods of the instance object are available.
 
 一个class可以被多次实例化为不同的实例，互不影响。
+A class can be instantiated multiple times as different instances without affecting each other.
 
 ```ts
 //实例化上面定义的class并调用其属性方法
+//Instantiate the class defined above and call its attribute method
 let p = new Person("tom"); // 使用 new 关键字实例化对象时，会自动触发构造函数
 console.log(p.name); // 访问p这个对象的属性name，返回值tom
 console.log(p.getNameLength()); // 调用p这个对象的方法getNameLength，返回值3
@@ -1042,8 +1125,10 @@ console.log(p2.getNameLength()); //5
 ```
 
 ### 构造函数（constructor）@uts-constructor
+### Constructor @uts-constructor
 
 构造函数 constructor ，在创建新对象时（new的时候）会自动执行，用于初始化对象属性。
+The constructor constructor is automatically executed when a new object is created (new), and is used to initialize object properties.
 
 -   语法：
 -   grammar:
@@ -1056,8 +1141,10 @@ constructor([arguments]) { ... }
 -   describe:
 
 你可以不写构造函数。如果没有显式指定构造函数，运行环境会自动添加默认的 constructor 方法。
+You don't have to write a constructor. If no constructor is explicitly specified, the runtime will automatically add a default constructor method.
 
 在一个类中只能有一个名为 “constructor” 的特殊方法。一个类中出现多次构造函数 (constructor)方法将会抛出一个 SyntaxError 错误。
+There can be only one special method named "constructor" in a class. Multiple occurrences of a constructor method in a class will throw a SyntaxError .
 
 -   示例：
 - Example:
@@ -1075,6 +1162,7 @@ console.log(person.name); // tom
 ```
 
 在一个构造函数中可以使用 super 关键字来调用一个父类的构造函数。这涉及继承的概念。如不了解继承可[见下](#extends)
+You can use the super keyword in a constructor to call a superclass constructor. This involves the concept of inheritance. If you don't understand inheritance, you can [see below](#extends)
 ```ts
 class Polygon {
     constructor() {
@@ -1093,6 +1181,7 @@ class Square extends Polygon {
 ### instance properties
 
 class 有实例属性和静态属性。uts 中实例属性存在于类的每一个实例中。
+class has instance attributes and static attributes. Instance attributes in uts exist on every instance of the class.
 
 #### 声明实例属性
 #### Declare instance properties
@@ -1121,8 +1210,10 @@ console.log(person2.city); //beijing
 #### Getter and Setter
 
 uts 支持通过 getters/setters 来截取对对象属性的访问。它可以理解为属性的读取/写入的拦截器。
+uts supports intercepting access to object properties through getters/setters. It can be understood as an interceptor for reading/writing attributes.
 
 下面的例子中，针对 person对象提供了name的get和set的拦截，paascode不正确时无法修改name的值。
+In the following example, the get and set interception of name is provided for the person object, and the value of name cannot be modified when the paascode is incorrect.
 
 ```ts
 const passcode = "secret passcode";
@@ -1149,6 +1240,7 @@ console.log(p.name); // 先打印"start to get person.name"，然后打印"tom"
 #### readonly
 
 uts 可以使用 readonly 关键字将属性设置为只读的。只读属性必须在声明时或构造函数里被初始化。
+uts properties can be made read-only using the readonly keyword. Read-only properties must be initialized at declaration time or in the constructor.
 
 ```ts
 class Person {
@@ -1165,8 +1257,10 @@ p.age = 1 // 错误！ age 是只读的
 ```
 
 但 readonly 更多是一种开发环境的语法校验。在运行时，该值往往可以改变。
+But readonly is more of a syntax check for a development environment. At runtime, this value can often change.
 
 ### 静态属性（static）
+### Static properties (static)
 
 使用关键字 static 来将一个属性声明为静态属性。静态属性不会在实例中被调用，而只会被类本身调用。
 Use the keyword static to declare a property as static. Static properties are not called on the instance, only by the class itself.
@@ -1197,6 +1291,7 @@ uts 可以在类中声明实例方法。
 uts can declare instance methods in a class.
 
 下面定义一个通过高度乘以宽度计算面积的类。
+The following defines a class that calculates the area by multiplying the height by the width.
 
 ```ts
 class Rectangle {
@@ -1221,6 +1316,7 @@ square.calcArea(); // 100
 ```
 
 ### 静态方法（static）
+### Static method (static)
 
 使用关键字 static 来将一个方法声明为静态方法。静态方法不会在实例中被调用，而只会被类本身调用。它们经常是工具函数，比如用来创建或者复制对象。
 Use the keyword static to declare a method as static. Static methods are not called on the instance, but only by the class itself. They are often utility functions, such as to create or copy objects.
@@ -1235,27 +1331,36 @@ ClassWithStaticMethod.staticMethod(); // 不实例化，直接调用class的方�
 ```
 
 ### 继承（extends）@extends
+### Inherit (extends) @extends
 
 uts 允许使用继承来扩展现有的类。扩展的子类继承了父类的属性方法，但又可以添加自己独有的属性方法，以及复写父类定义的属性方法。
+uts allows the use of inheritance to extend existing classes. The extended subclass inherits the attribute methods of the parent class, but can add its own unique attribute methods and override the attribute methods defined by the parent class.
 
 被继承的类称为父类（也称为超类、基类），新扩展的类称为子类（也称为派生类）。
+The inherited class is called the parent class (also called the super class, base class), and the newly extended class is called the subclass (also called the derived class).
 
 比如定义了Person类存储人的基本信息，还可以定义一个Developer子类继承自Person类，在子类里追加Developer的独有信息。
+For example, the Person class is defined to store the basic information of a person, and a Developer subclass can be defined to inherit from the Person class, and Developer's unique information can be added to the subclass.
 
 -   语法：
+-   grammar:
 
 ```ts
 class ChildClass extends ParentClass { ... }
 ```
 
 -   描述：
+-   describe:
 
 extends 关键字用来创建一个类的子类。
+The extends keyword is used to create a subclass of a class.
 
 -   示例：
+- Example:
 
 ```ts
 // 定义父类
+// define the parent class
 class Person {
 	name:string = "";
 	constructor(newname:string) {
@@ -1263,6 +1368,7 @@ class Person {
 	}
 }
 // 定义子类
+// define subclass
 class Developer extends Person{
 	likeLanguage:string = "ts"
 }
@@ -1273,13 +1379,18 @@ console.log(d.likeLanguage); // ts
 ```
 
 - 如果要控制父类中某些属性方法不被子类继承，可使用可见性修饰符（private、protected等），具体[见下](#modifier)
+- If you want to control some attribute methods in the parent class from being inherited by subclasses, you can use visibility modifiers (private, protected, etc.), for details [see below](#modifier)
 - 多重继承：子类还可以被孙类继承
+- Multiple inheritance: subclasses can also be inherited by grandchildren
 
 #### 覆盖方法（override）
+#### override method (override)
 
 覆盖，也称为复写、重写。在继承中，用于在子类中改写父类定义的方法或属性。
+Coverage, also known as duplication, rewriting. In inheritance, it is used to override the methods or properties defined by the parent class in the subclass.
 
 uts 对于可覆盖的成员以及覆盖后的成员需要显式修饰符override。
+uts requires the explicit modifier override for overridable and overridden members.
 
 ```ts
 class Polygon {
@@ -1296,10 +1407,13 @@ class Square extends Polygon {
 ```
 
 Square.name 函数上必须加上 override 修饰符。如果没写，编译器会报错。
+The override modifier must be added to the Square.name function. If not written, the compiler will report an error.
 
 #### 覆盖属性
+#### Overriding properties
 
 属性与方法的覆盖机制相同。父类中已声明的同名属性，在子类中重新声明必须以 override 开头，并且它们必须具有兼容的类型（都是字符串、或数字、布尔值等）。
+Properties have the same overriding mechanism as methods. Properties with the same name that have been declared in the parent class must start with override in the subclass, and they must have compatible types (both are strings, or numbers, Boolean values, etc.).
 
 ```ts
 class Shape {
@@ -1312,8 +1426,10 @@ class Rectangle extends Shape {
 ```
 
 #### 调用父类实现
+#### Call parent class implementation
 
 子类中的代码可以使用 super 关键字调用其父类的方法。不能跨级调用父类的父类（爷爷类）的方法。
+Code in a subclass can call methods of its parent class using the super keyword. The method of the parent class (grandfather class) of the parent class cannot be called across levels.
 
 ```ts
 class Rectangle {
@@ -1329,6 +1445,7 @@ class FilledRectangle extends Rectangle {
 
 
 ### 可见性修饰符@modifier
+### visibility modifier @modifier
 
 类的方法与属性都可以有可见性修饰符。
 Both methods and properties of a class can have visibility modifiers.
@@ -1357,6 +1474,7 @@ new Person().name; // 错误: 'name' 是私有的.
 #### protected
 
 protected 修饰符与 private 修饰符的行为很相似，但有一点不同，protected 成员在继承的派生类中仍然可以访问。比如：
+The protected modifier behaves much like the private modifier, but with one difference, protected members are still accessible in inherited derived classes. for example:
 
 ```ts
 class Person {
@@ -1452,8 +1570,10 @@ test.test()
 ```
 
 ## 内置对象和API
+## Built-in objects and APIs
 
 uts 有一批内置对象。不管将 uts 编译为 js/kotlin/swfit，这些内置对象都可以跨平台使用。
+uts has a collection of built-in objects. Regardless of compiling uts to js/kotlin/swfit, these built-in objects can be used cross-platform.
 
 ### console
 
@@ -1862,8 +1982,10 @@ console.log(array.some(even));
 #### sort
 
 sort() 方法对数组的元素进行排序，并返回数组。
+The sort() method sorts the elements of an array and returns the array.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2033,6 +2155,7 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 Represents the number of milliseconds since the beginning of the UNIX epoch (January 1, 1970 00:00:00 (UTC)) to the current time.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2059,6 +2182,7 @@ setTimeout(() => {
 Returns the day of the month (from 1--31) for a specified date object according to local time.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2070,6 +2194,7 @@ Returns the day of the month (from 1--31) for a specified date object according 
 Returns the day of the week for a specific date, according to local time, with 0 for Sunday. for the day of the month
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2086,6 +2211,7 @@ Returns the year of the specified date according to local time.
 Returns the hour of a specified date object according to local time.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2097,6 +2223,7 @@ Returns the hour of a specified date object according to local time.
 Returns the number of milliseconds for a specified date object according to local time.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2108,6 +2235,7 @@ Returns the number of milliseconds for a specified date object according to loca
 Returns the number of minutes in a specified date object according to local time.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2119,6 +2247,7 @@ Returns the number of minutes in a specified date object according to local time
 The month of the specified date object, as a 0-based value (0 represents the first month of the year).
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2130,6 +2259,7 @@ The month of the specified date object, as a 0-based value (0 represents the fir
 Returns the number of seconds in a specified date object according to local time.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2141,6 +2271,7 @@ Returns the number of seconds in a specified date object according to local time
 Returns the GMT value of a time.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2152,6 +2283,7 @@ Returns the GMT value of a time.
 Specifies the number of days in a date object according to local time.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2163,6 +2295,7 @@ Specifies the number of days in a date object according to local time.
 Sets the year for a date object based on local time.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2199,6 +2332,7 @@ Sets the seconds for a date object according to local time.
 Sets the time for a Date object as a number of milliseconds representing the time since 1970-1-1 00:00:00 UTC.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2375,14 +2509,18 @@ console.log(map1.get('baz'));
 ### Math
 
 Math 是一个内置对象，它拥有一些数学常数属性和数学函数方法。
+Math is a built-in object that has some properties of mathematical constants and methods of mathematical functions.
 
 #### 实例属性
+#### instance attributes
 
 #### E
 
 Math.E 属性表示自然对数的底数（或称为基数），e，约等于 2.718。
+The Math.E property represents the base (or base) of natural logarithms, e, approximately equal to 2.718.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2399,8 +2537,10 @@ console.log(getNapier());
 #### LN10
 
 Math.LN10 属性表示 10 的自然对数，约为 2.302。
+The Math.LN10 property represents the natural logarithm of 10, approximately 2.302.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2417,8 +2557,10 @@ console.log(getNatLog10());
 #### LN2
 
 Math.LN2 属性表示 2 的自然对数，约为 0.693。
+The Math.LN2 property represents the natural logarithm of 2, which is approximately 0.693.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2435,8 +2577,10 @@ console.log(getNatLog2());
 #### LOG10E
 
 Math.LOG10E 属性表示以 10 为底数，e 的对数，约为 0.434。
+The Math.LOG10E property represents the base 10 logarithm of e, approximately 0.434.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2453,8 +2597,10 @@ console.log(getLog10e());
 #### LOG2E
 
 Math.LOG2E 属性表示以 2 为底数，e 的对数，约为 1.442。
+The Math.LOG2E property represents the base 2 logarithm of e, approximately 1.442.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2471,8 +2617,10 @@ console.log(getLog2e());
 #### PI
 
 Math.PI 表示一个圆的周长与直径的比例，约为 3.14159。
+Math.PI represents the ratio of a circle's circumference to its diameter, which is approximately 3.14159.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2489,8 +2637,10 @@ console.log(calculateCircumference(1));
 #### SQRT1_2
 
 Math.SQRT1_2 属性表示 1/2 的平方根，约为 0.707。
+The Math.SQRT1_2 property represents the square root of 1/2, which is approximately 0.707.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2507,8 +2657,10 @@ console.log(getRoot1_2());
 #### SQRT2
 
 Math.SQRT2 属性表示 2 的平方根，约为 1.414。
+The Math.SQRT2 property represents the square root of 2, approximately 1.414.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2522,12 +2674,15 @@ console.log(getRoot2());
 // expected output: 1.4142135623730951
 ```
 #### 实例方法
+#### Instance Methods
 
 #### abs
 
 Math.abs(x) 函数返回一个数字的绝对值。
+The Math.abs(x) function returns the absolute value of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2551,8 +2706,10 @@ console.log(difference(1.23456, 7.89012));
 #### acos
 
 Math.acos() 返回一个数的反余弦值（单位为弧度）。
+Math.acos() Returns the arccosine of a number in radians.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2572,8 +2729,10 @@ console.log(Math.acos(1));
 #### acosh
 
 Math.acosh() 函数返回一个数的反双曲余弦值。
+The Math.acosh() function returns the inverse hyperbolic cosine of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2593,8 +2752,10 @@ console.log(Math.acosh(2.5));
 #### asin
 
 Math.asin() 方法返回一个数值的反正弦（单位为弧度）。
+The Math.asin() method returns the arcsine of a number in radians.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2617,8 +2778,10 @@ console.log(Math.asin(1));
 #### asinh
 
 Math.asinh() 返回一个数值的反双曲正弦值。
+Math.asinh() Returns the inverse hyperbolic sine of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2641,8 +2804,10 @@ console.log(Math.asinh(2));
 #### atan
 
 Math.atan() 函数返回一个数值的反正切（以弧度为单位）。
+The Math.atan() function returns the arctangent of a number in radians.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2659,8 +2824,10 @@ console.log(Math.atan(0));
 #### atan2
 
 Math.atan2() 返回从原点 (0,0) 到 (x,y) 点的线段与 x 轴正方向之间的平面角度 (弧度值)，也就是 Math.atan2(y,x)。
+Math.atan2() returns the plane angle (in radians) between the line segment from the origin (0,0) to the point (x,y) and the positive x-axis, that is, Math.atan2(y,x).
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2677,8 +2844,10 @@ console.log(Math.atan2(15, 90));
 #### atanh
 
 Math.atanh() 函数返回一个数值反双曲正切值。
+The Math.atanh() function returns a numeric inverse hyperbolic tangent.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2695,8 +2864,10 @@ console.log(Math.atanh(0.5));
 #### cbrt
 
 Math.cbrt() 函数返回任意数字的立方根。
+The Math.cbrt() function returns the cube root of any number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2719,8 +2890,10 @@ console.log(Math.atanh(2));
 #### ceil
 
 Math.ceil() 函数总是四舍五入并返回大于等于给定数字的最小整数。
+The Math.ceil() function always rounds up and returns the smallest integer greater than or equal to the given number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2744,8 +2917,10 @@ console.log(Math.ceil(-7.004));
 #### clz32
 
 Math.clz32() 函数返回一个数字在转换成 32 无符号整形数字的二进制形式后，开头的 0 的个数。
+The Math.clz32() function returns the number of leading zeros after a number is converted to the binary form of 32 unsigned integers.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2769,8 +2944,10 @@ console.log(Math.clz32(3.5));
 #### cos
 
 Math.cos() 函数返回一个数值的余弦值。
+The Math.cos() function returns the cosine of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2787,8 +2964,10 @@ console.log(Math.cos(1));
 #### cosh
 
 Math.cosh() 函数返回数值的双曲余弦函数。
+The Math.cosh() function returns the hyperbolic cosine function of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2808,8 +2987,10 @@ console.log(Math.cosh(-1));
 #### exp
 
 Math.exp() 函数返回 e^x，x 表示参数，e 是欧拉常数（Euler's constant），自然对数的底数。
+The Math.exp() function returns e^x, x represents the parameter, and e is Euler's constant (Euler's constant), the base of natural logarithms.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2829,8 +3010,10 @@ console.log(Math.exp(1));
 #### expm1
 
 Math.expm1() 函数返回 E^x - 1, 其中 x 是该函数的参数，E 是自然对数的底数 2.718281828459045。
+The Math.expm1() function returns E^x - 1, where x is the argument to the function and E is the base of the natural logarithm 2.718281828459045.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2847,8 +3030,10 @@ console.log(Math.expm1(-38));
 #### floor
 
 Math.floor() 函数返回 E^x - 1, 其中 x 是该函数的参数，E 是自然对数的底数 2.718281828459045。
+The Math.floor() function returns E^x - 1, where x is the argument to the function and E is the base of the natural logarithm 2.718281828459045.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2871,8 +3056,10 @@ console.log(Math.floor(-5.05));
 #### fround
 
 Math.fround() 可以将任意的数字转换为离它最近的单精度浮点数形式的数字。
+Math.fround() converts any number to its nearest single-precision floating-point number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2889,8 +3076,10 @@ console.log(Math.fround(1.337));
 #### hypot
 
 Math.hypot() 函数返回所有参数的平方和的平方根。
+The Math.hypot() function returns the square root of the sum of squares of all arguments.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2913,8 +3102,10 @@ console.log(Math.hypot(-5));
 #### imul
 
 该函数将两个参数分别转换为 32 位整数，相乘后返回 32 位结果。
+This function converts the two arguments to 32-bit integers and returns the 32-bit result when multiplied.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2931,8 +3122,10 @@ console.log(Math.imul(-5, 12));
 #### log
 
 Math.log() 函数返回一个数的自然对数。
+The Math.log() function returns the natural logarithm of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2949,8 +3142,10 @@ console.log(Math.log(10));
 #### log10
 
 Math.log10() 函数返回一个数字以 10 为底的对数。
+The Math.log10() function returns the base 10 logarithm of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2970,8 +3165,10 @@ console.log(Math.log10(1));
 #### log1p
 
 Math.log1p() 函数返回一个数字加 1 后的自然对数 (底为 E), 既log(x+1)。
+The Math.log1p() function returns the natural logarithm (base E) of a number plus 1, which is log(x+1).
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -2988,8 +3185,10 @@ console.log(Math.log1p(0));
 #### log2
 
 Math.log2() 函数返回一个数字以 2 为底的对数。
+The Math.log2() function returns the base 2 logarithm of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3009,8 +3208,10 @@ console.log(Math.log2(1));
 #### max
 
 Math.max() 函数返回作为输入参数的最大数字。
+The Math.max() function returns the largest number given as an input parameter.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3027,8 +3228,10 @@ console.log(Math.max(-1, -3, -2));
 #### min
 
 Math.min() 函数返回作为输入参数的数字中最小的一个。
+The Math.min() function returns the smallest of the numbers given as input parameters.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3045,8 +3248,10 @@ console.log(Math.min(-2, -3, -1));
 #### pow
 
 Math.pow() 函数返回基数（base）的指数（exponent）次幂，即 base^exponent。
+The Math.pow() function returns the base (base) raised to the power of the exponent (exponent), ie base^exponent.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3063,8 +3268,10 @@ console.log(Math.pow(4, 0.5));
 #### random
 
 Math.random() 函数返回一个浮点数，伪随机数在范围从0 到小于1。
+The Math.random() function returns a floating-point number, a pseudo-random number in the range from 0 to less than 1.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3088,8 +3295,10 @@ console.log(Math.random());
 #### round
 
 Math.round() 函数返回一个数字四舍五入后最接近的整数。
+The Math.round() function returns a number rounded to the nearest integer.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3112,8 +3321,10 @@ console.log(Math.random(-20.51));
 #### sign
 
 Math.sign() 函数返回一个数字的符号，指示数字是正数，负数还是零。
+The Math.sign() function returns the sign of a number, indicating whether the number is positive, negative or zero.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3133,8 +3344,10 @@ console.log(Math.sign(0));
 #### sin
 
 Math.sin() 函数返回一个数值的正弦值。
+The Math.sin() function returns the sine of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3151,8 +3364,10 @@ console.log(Math.sign(1));
 #### sinh
 
 Math.sinh() 函数返回一个数字 (单位为角度) 的双曲正弦值。
+The Math.sinh() function returns the hyperbolic sine of a number (in degrees).
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3169,8 +3384,10 @@ console.log(Math.sinh(1));
 #### sqrt
 
 Math.sqrt() 函数返回一个数的平方根。
+The Math.sqrt() function returns the square root of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3194,8 +3411,10 @@ console.log(calcHypotenuse(0, 0));
 #### tan
 
 Math.tan() 方法返回一个数值的正切值。
+The Math.tan() method returns the tangent of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3212,8 +3431,10 @@ console.log(Math.tan(1));
 #### tanh
 
 Math.tanh() 函数将会返回一个数的双曲正切函数值。
+The Math.tanh() function will return the value of the hyperbolic tangent of a number.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3233,8 +3454,10 @@ console.log(Math.tanh(1));
 #### trunc
 
 Math.trunc() 方法会将数字的小数部分去掉，只保留整数部分。
+The Math.trunc() method will remove the decimal part of the number and keep only the integer part.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3265,6 +3488,7 @@ toFixed() 方法使用定点表示法来格式化一个数值。
 The toFixed() method formats a number using fixed-point notation.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3295,6 +3519,7 @@ A Set object is a collection of values, and you can iterate over its elements in
 Returns the number of elements in the Set object.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3336,6 +3561,7 @@ clear() 方法用来清空一个 Set 对象中的所有元素。
 The clear() method is used to clear all elements in a Set object.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3358,6 +3584,7 @@ delete() 方法可以从一个 Set 对象中删除指定的元素。
 The delete() method deletes the specified element from a Set object.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3393,6 +3620,7 @@ has() 方法返回一个布尔值来指示对应的值 value 是否存在 Set �
 The has() method returns a boolean value indicating whether the corresponding value value exists in the Set object.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3510,6 +3738,7 @@ concat() 方法将一个或多个字符串与原字符串连接合并，形成�
 The concat() method concatenates one or more strings with the original string to form a new string and returns it.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3527,6 +3756,7 @@ endsWith() 方法用来判断当前字符串是否是以另外一个给定的子
 The endsWith() method is used to judge whether the current string "ends" with another given substring, and returns true or false according to the judgment result.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3549,6 +3779,7 @@ includes() 方法用于判断一个字符串是否包含在另一个字符串中
 The includes() method is used to determine whether a string is included in another string, and returns true or false according to the situation.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3569,6 +3800,7 @@ indexOf() 方法返回调用它的 String 对象中第一次出现的指定值�
 The indexOf() method returns the index of the first occurrence of the specified value in the String object on which it was called, searching from fromIndex. Returns -1 if the value is not found.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3593,6 +3825,7 @@ padEnd() 方法会用一个字符串填充当前字符串（如果需要的话�
 The padEnd() method pads the current string with a string (repeatedly if necessary), and returns a string of the specified length after padding. Padding starts from the end (right side) of the current string.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3612,6 +3845,7 @@ padStart() 方法用另一个字符串填充当前字符串 (如果需要的话�
 The padStart() method pads the current string with another string (repeated as many times as necessary) so that the resulting string reaches the given length. Padding starts from the left of the current string.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3628,6 +3862,7 @@ repeat() 构造并返回一个新字符串，该字符串包含被连接在一�
 repeat() constructs and returns a new string containing the specified number of copies of the string concatenated together.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3646,6 +3881,7 @@ replace() 方法返回一个由替换值（replacement）替换部分或所有�
 The replace() method returns a new string with some or all pattern matches replaced by the replacement value. The pattern can be a string or a regular expression, and the replacement value can be a string or a callback function to be called for each match. If pattern is a string, only the first match is replaced. The original string will not be changed.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3667,6 +3903,7 @@ search() 方法执行正则表达式和 String 对象之间的一个搜索匹配
 The search() method performs a search match between the regular expression and the String object.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3687,6 +3924,7 @@ slice() 方法提取某个字符串的一部分，并返回一个新的字符串
 The slice() method extracts part of a string and returns a new string without changing the original string.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3706,6 +3944,7 @@ split() 方法使用指定的分隔符字符串将一个String对象分割成子
 The split() method splits a String object into an array of substrings using the specified delimiter string, and uses a specified split string to determine the position of each split.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3727,6 +3966,7 @@ toLowerCase() 会将调用该方法的字符串值转为小写形式，并返回
 toLowerCase() converts the string value that calls this method to lowercase and returns it.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3745,6 +3985,7 @@ toUpperCase() 方法将调用该方法的字符串转为大写形式并返回（
 The toUpperCase() method converts the string that calls this method to uppercase and returns it (if the method is called with a value other than a string, it will be coerced).
 
 **平台差异说明**
+**Platform Difference Description**
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
@@ -3828,6 +4069,7 @@ clearInterval(timer)
     * Pairs with `switch` to match what to do if it doesn't exist, and can also be used in `export` statements.
 - `delete` 
     * 用于删除对象的某个属性；如果没有指向这个属性的引用，那它最终会被释放。（目前仅支持 `Javascript` 平台）
+    * Used to delete a property of the object; if there is no reference to this property, it will eventually be released. (Currently only supports `Javascript` platform)
 - `do` 
     * 创建一个执行指定语句的循环，直到condition值为 false。在执行statement 后检测condition，所以指定的statement至少执行一次。
     * Create a loop that executes the specified statement until the condition is false. The condition is checked after executing the statement, so the specified statement is executed at least once.
@@ -3884,6 +4126,7 @@ clearInterval(timer)
     * Catch an exception.
 - `typeof` 
     * 返回一个字符串，表示未经计算的操作数的类型。（目前仅支持 `Javascript` 平台）
+    * Returns a string representing the type of the unevaluated operand. (Currently only supports `Javascript` platform)
 - `var` 
     * 声明一个变量，不建议使用。
     * Declare a variable, deprecated.
@@ -3895,8 +4138,10 @@ clearInterval(timer)
     * Under the premise that a conditional expression is true, execute the specified piece of code in a loop, until the expression is not true to end the loop.
 - `with` 
     * 扩展一个语句的作用域链。（目前仅支持 `Javascript` 平台）
+    * Extends the scope chain of a statement. (Currently only supports `Javascript` platform)
 - `yield` 
     * 用来暂停和恢复一个生成器函数。（目前仅支持 `Javascript` 平台）
+    * Used to pause and resume a generator function. (Currently only supports `Javascript` platform)
 - `enum`
 - `implements`
 - `interface`
@@ -4006,6 +4251,7 @@ clearInterval(timer)
 - `??`
 - `?.`
     * 可选链运算符（?.）允许读取位于连接对象链深处的属性的值，而不必明确验证链中的每个引用是否有效。?. 运算符的功能类似于 . 链式运算符，不同之处在于，在引用为空 (nullish ) (null) 的情况下不会引起错误。
+    * The optional chaining operator (?.) allows reading the value of a property located deep in a chain of connection objects without having to explicitly verify that every reference in the chain is valid. The ?. operator functions like the . chaining operator, except that it does not cause an error if the reference is null (nullish).
 - `%`
     * 当一个操作数除以第二个操作数时，取余运算符（％）返回剩余的余数。它与被除数的符号保持一致。
     * The remainder operator (%) returns the remainder remaining when one operand is divided by the second. It is consistent with the sign of the dividend.
@@ -4030,7 +4276,9 @@ clearInterval(timer)
 ## Development Guide
 
 - [使用 uts 开发 uni-app 原生插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
+- [Use uts to develop uni-app native plugin](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 - [Android平台uts开发指南](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)
+- [Android platform uts development guide](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)
 
 
 ## 学习资料

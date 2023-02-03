@@ -17,7 +17,9 @@ The following capabilities are supported:
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/backgroundmodes-manifest.png)
 
 >注意：  
+>Note:
 >"audio"表示后台播放音乐能力，"location"表示后台定位能力，更多后台能力配置参考苹果官网[UIBackgroundModes文档](https://developer.apple.com/documentation/bundleresources/information_property_list/uibackgroundmodes/)；  
+>"audio" indicates the ability to play music in the background, and "location" indicates the ability to locate the background. For more background capability configurations, refer to Apple's official website [UIBackgroundModes document](https://developer.apple.com/documentation/bundleresources/information_property_list/uibackgroundmodes/) ;
 >多个后台能力使用 "," 分割；  
 > Multiple background capabilities are split using ",";
 >如果可视化界面无法编辑，请切换到“源码视图”删除`UIBackgroundModes`节点数据重新操作。  

@@ -99,6 +99,7 @@ The writing of nosql is too complicated. For example, the following three exampl
 These problems put up a wall, making back-end development more difficult and becoming a "professional field". But in fact, this wall can be completely torn down.
 
 `jql`将解决这些问题，让js工程师没有难操作的数据库。
+`jql` will solve these problems, so that js engineers do not have difficult databases to operate.
 
 具体看以下示例
 See the following example for details
@@ -155,8 +156,11 @@ The above scenarios will perform data verification when adding or modifying data
 - 不会校验任何权限，相当于以数据库管理员的身份执行
 - Does not verify any permissions, equivalent to executing as a database administrator
 - 即使是admin不能读写的password类型数据也可以读写
+- Even password type data that admin cannot read and write can be read and written
 - 不会触发数据库触发器
+- will not fire database triggers
 - 不可以执行action云函数
+- Action cloud functions cannot be executed
 
 **客户端clientDB：**
 **Client clientDB:**
@@ -170,7 +174,9 @@ The above scenarios will perform data verification when adding or modifying data
 **Cloud Function JQL:**
 
 - 同clientDB，但是password类型的数据可以配置权限，默认权限是false，可以被admin用户操作。
+- Same as clientDB, but the password type data can be configured with permissions. The default permission is false and can be operated by the admin user.
 - 可以通过setUser指定当前执行数据库操作的用户身份。
+- You can specify the identity of the user currently performing database operations through setUser.
 
 ## JQL的限制@limit
 ## JQL limit @limit
@@ -185,10 +191,13 @@ The above scenarios will perform data verification when adding or modifying data
 - When updating data, the key value cannot be in the form of `{'a.b.c': 1}`, it needs to be written in the form of `{a:{b:{c:1}}}`
 
 ## JQL方法使用限制
+## JQL method usage restrictions
 
 ### 单表查询
+### Single table query
 
 下面这些方法必须严格按照下面的顺序进行调用，其他方法需要在这些方法之后调用（不限制顺序）
+The following methods must be called strictly in the following order, and other methods need to be called after these methods (the order is not limited)
 
 ```
 collection
@@ -202,8 +211,10 @@ groupField
 ```
 
 ### 联表查询
+### Joint Table Query
 
 临时表可以使用以下方法（需按照下面的顺序调用）
+Temporary tables can use the following methods (need to be called in the following order)
 
 ```
 collection
@@ -217,6 +228,7 @@ getTemp
 ```
 
 虚拟联表可以使用以下方法（需按照下面的顺序调用）
+The virtual joint table can use the following methods (need to be called in the following order)
 
 ```
 collection
@@ -233,12 +245,16 @@ get
 ```
 
 ### 新增
+### New
 
 仅允许`collection().add()`这样的形式
+Only `collection().add()` is allowed
 
 ### 修改
+### Revise
 
 仅允许以下两种形式
+Only the following two forms are allowed
 
 ```js
 db.collection('xx').doc('xxx').update({})
@@ -246,8 +262,10 @@ db.collection('xx').where('xxxx').update({})
 ```
 
 ### 删除
+### delete
 
 仅允许以下两种形式
+Only the following two forms are allowed
 
 ```js
 db.collection('xx').doc('xxx').remove()
@@ -1361,6 +1379,7 @@ where内还支持使用云端环境变量，详情参考：[云端环境变量](
 where also supports the use of cloud environment variables. For details, please refer to: [Cloud environment variables](uniCloud/jql.md?id=variable)
 
 在 unicloud-db 组件中使用where查询 [参考](uniCloud/unicloud-db.md?id=where)
+Use where query in unicloud-db component [reference](uniCloud/unicloud-db.md?id=where)
 
 #### 简单查询条件@simple-where
 #### Simple query condition @simple-where
@@ -1369,27 +1388,44 @@ where also supports the use of cloud environment variables. For details, please 
 Simple query conditions include the following, corresponding to various [operators] under db.command (https://uniapp.dcloud.net.cn/uniCloud/cf-database?id=dbcmd) and those that do not use operators Queries such as `where({a:1})`.
 
 |运算符			|说明			|示例								|示例解释(集合查询)																		|
+|Operator |Description |Example |Example Explanation (Collection Query) |
 |:-:			|:-:			|:-:								|:-:																					|
 |==				|等于			|name == 'abc'						|查询name属性为abc的记录，左侧为数据库字段												|
+|== |Equal to | name == 'abc' |Query the records whose name attribute is abc, and the left side is the database field |
 |!=				|不等于			|name != 'abc'						|查询name属性不为abc的记录，左侧为数据库字段											|
+|!= |Not equal to | name != 'abc' |Query the records whose name attribute is not abc, and the left side is the database field |
 |>				|大于			|age>10								|查询条件的 age 属性大于 10，左侧为数据库字段											|
+|> |Greater than | age>10 |The age attribute of the query condition is greater than 10, and the left side is the database field |
 |>=				|大于等于		|age>=10							|查询条件的 age 属性大于等于 10，左侧为数据库字段										|
+|>= |Greater than or equal to | age>=10 |The age attribute of the query condition is greater than or equal to 10, and the left side is the database field |
 |<				|小于			|age<10								|查询条件的 age 属性小于 10，左侧为数据库字段											|
+|< |Less than | age<10 |The age attribute of the query condition is less than 10, and the left side is the database field |
 |<=				|小于等于		|age<=10							|查询条件的 age 属性小于等于 10，左侧为数据库字段										|
+|<= |Less than or equal to | age<=10 |The age attribute of the query condition is less than or equal to 10, and the left side is the database field |
 |in				|存在在数组中	|status in ['a','b']	|查询条件的 status 是['a','b']中的一个，左侧为数据库字段								|
+| in | Exists in the array | status in ['a', 'b'] | The status of the query condition is one of ['a', 'b'], and the left side is the database field |
 |!(xx in [])				|在数组中不存在				|!(status in ['a','b'])				|查询条件的 status 不是['a','b']中的任何一个											|
+|!(xx in []) |Does not exist in the array |!(status in ['a','b']) |The status of the query condition is not any of ['a','b']|
 |&&				|与				|uid == auth.uid && age > 10		|查询记录uid属性 为 当前用户uid 并且查询条件的 age 属性大于 10							|
+|&& |and | uid == auth.uid && age > 10 |query record uid attribute is the current user uid and the age attribute of the query condition is greater than 10 |
 |&#124;&#124;	|或				|uid == auth.uid&#124;&#124;age>10	|查询记录uid属性 为 当前用户uid 或者查询条件的 age 属性大于 10							|
+|&#124;&#124; |or | uid == auth.uid&#124;&#124;age>10 | The uid attribute of the query record is the current user uid or the age attribute of the query condition is greater than 10 |
 |test			|正则校验		|/abc/.test(content)				|查询 content字段内包含 abc 的记录。可用于替代sql中的like。还可以写更多正则实现更复杂的功能	|
+| test |Regular verification |/abc/.test(content) |Query the records containing abc in the content field. Can be used to replace like in sql. You can also write more regular expressions to achieve more complex functions |
 
 这里的test方法比较强大，格式为：`正则规则.test(fieldname)`。
+The test method here is relatively powerful, and the format is: `regular rule.test(fieldname)`.
 
 具体到这个正则 `/abc/.test(content)`，类似于sql中的`content like '%abc%'`，即查询所有字段content包含abc的数据记录。
+Specific to this regularity `/abc/.test(content)`, similar to `content like '%abc%'` in SQL, that is, to query all data records whose field content contains abc.
 
 **注意**
+**Notice**
 
 - 不支持非操作
+- does not support non-operations
 - 编写查询条件时，除test外，均为运算符左侧为数据库字段，右侧为常量
+- When writing query conditions, except for test, the left side of the operator is the database field, and the right side is the constant
 
 
 简单查询条件内要求二元运算符两侧不可均为数据库内的字段
@@ -1405,6 +1441,7 @@ The query statement written above can be compared and verified with the permissi
 > Supported since HBuilderX 3.1.0
 
 复杂查询内可以使用[数据库运算方法](uniCloud/jql-operator-example.md)。需要注意的是，与云函数内使用数据库运算方法不同jql内对数据库运算方法的用法进行了简化。
+[Database operation method](uniCloud/jql-operator-example.md) can be used in complex queries. It should be noted that, unlike the database operation method used in the cloud function, the usage of the database operation method in jql is simplified.
 
 例：数据表test内有以下数据
 Example: The data table test has the following data
@@ -1560,6 +1597,7 @@ field可以指定字符串，也可以指定一个对象。
 field can specify a string or an object.
 
 field中可以使用所有[数据库运算方法](uniCloud/jql-operator-example.md)
+All [database operation methods](uniCloud/jql-operator-example.md) can be used in the field
 
 - 字符串写法：列出字段名称，多个字段以半角逗号做分隔符。比如`db.collection('book').field("title,author")`，查询结果会返回`_id`、`title`、`author`3个字段的数据。字符串写法，`_id`是一定会返回的
 - String writing: List field names, and multiple fields are separated by commas. For example, `db.collection('book').field("title,author")`, the query result will return the data of `_id`, `title`, `author` fields. String writing, `_id` will definitely return
@@ -3053,26 +3091,41 @@ The query returns the result as follows
 - distinct refers to deduplication of identical records in the returned result, and only one duplicate record is retained. Because the `_id` field is necessarily different, the field must be specified at the same time when using distinct, and the `_id` field cannot exist in the field
 
 ### 地理位置查询geoNear@geo-near
+### Geolocation query geoNear@geo-near
 
 > 新增于 HBuilderX 3.6.10
+> Added in HBuilderX 3.6.10
 
 geoNear可用于查询位置在给定点一定距离内的数据库记录。此方法必须紧跟在collection方法或aggregate方法后。
+geoNear can be used to query database records whose location is within a certain distance of a given point. This method must immediately follow the collection method or the aggregate method.
 
 **参数**
+**parameter**
 
 |属性								|类型								|默认值	|必填	|说明																																														|
+|Property |Type |Default Value |Required |Description |
 | ----            	| ------				    | ----	|----	|----	|
 |near								|GeoPoint						|				|是		|GeoJSON Point，用于判断距离的点																																|
+| near | GeoPoint | | Yes | GeoJSON Point, the point used to judge the distance |
 |spherical					|true								|				|是		|必填，值为 true																																								|
+| spherical | true | | Yes | required, the value is true |
 |maxDistance				|number							|				|否		|距离最大值																																											|
+| maxDistance | number | | No | Maximum distance |
 |minDistance				|number							|				|否		|距离最小值																																											|
+| minDistance | number | | No | Minimum distance |
 |query							|object&#124;string	|				|否		|要求记录必须同时满足该条件（语法同 where）																											|
+| query | object&#124;string | |No |The record must meet this condition at the same time (syntax is the same as where) |
 |distanceMultiplier	|number							|				|否		|返回时在距离上乘以该数字																																				|
+| distanceMultiplier | number | |no |multiplies the distance by this number on return |
 |distanceField			|string							|				|是		|存放距离的输出字段名，可以用点表示法表示一个嵌套字段																						|
+|
 |includeLocs				|string							|				|否		|列出要用于距离计算的字段，如果记录中有多个字段都是地理位置时有用																|
+| includeLocs | string | |no |list the fields to be used for distance calculation, useful if there are multiple fields in the record that are all geolocations |
 |key								|string							|				|否		|选择要用的地理位置索引。如果集合由多个地理位置索引，则必须指定一个，指定的方式是指定对应的字段	|
+| key | string | |no |Select the geolocation index to use. If the collection is indexed by multiple geographic locations, one must be specified by specifying the corresponding field |
 
 **示例**
+**example**
 
 ```js
 const res = await db.collection('geo-near').aggregate().geoNear({
@@ -3085,8 +3138,10 @@ const res = await db.collection('geo-near').aggregate().geoNear({
 ```
 
 **注意事项**
+**Precautions**
 
 - 存在geoNear时其query参数将取代where/doc作为权限校验依据，即query匹配到的结果需要满足权限才可以查询
+- When there is geoNear, its query parameter will replace where/doc as the basis for permission verification, that is, the result matched by query needs to meet the permission before it can be queried
 
 ## 新增数据记录@add
 ## Add data record @add
@@ -3825,8 +3880,10 @@ db.collection('goods').where('name == "n1"').get()
 ## action@action
 
 **注意：**
+**Notice:**
 
 > 从HBuilderX 3.6.11开始，推荐使用[数据库触发器](jql-schema-ext.md)替代action云函数。以下内容仅为向下兼容保留
+> Starting from HBuilderX 3.6.11, it is recommended to use [database trigger](jql-schema-ext.md) instead of action cloud function. The following are reserved for backward compatibility only
 
 action的作用是在执行前端发起的数据库操作时，额外触发一段云函数逻辑。它是一个可选模块。action是运行于云函数内的，可以使用云函数内的所有接口。
 The role of action is to trigger an additional piece of cloud function logic when executing a database operation initiated by the front end. It is an optional module. Actions run in cloud functions and can use all interfaces in cloud functions.
@@ -3860,6 +3917,7 @@ Action is a special cloud function that does not occupy the number of cloud func
 **New action**
 
 ![新建action](https://web-assets.dcloud.net.cn/unidoc/zh/create-client-actions.jpg)
+![New action](https://web-assets.dcloud.net.cn/unidoc/zh/create-client-actions.jpg)
 
 每个action在uni-clientDB-actions目录下存放一个以action名称命名的js文件。
 Each action stores a js file named after the action in the uni-clientDB-actions directory.
@@ -3991,10 +4049,15 @@ module.exports = {
 ```
 
 **注意**
+**Notice**
 
 - 如需在before和after内传参，建议直接在state上挂载。但是切勿覆盖上述属性
+- If you need to pass parameters in before and after, it is recommended to mount directly on the state. But do not override the above properties
 - action上传后可能需要一段时间才会在云端生效，通常是3分钟左右
+- It may take a while for the action to take effect on the cloud after it is uploaded, usually about 3 minutes
 
 ## JQL依赖公共模块和扩展库@deps-of-jql
+## JQL depends on public modules and extension libraries @deps-of-jql
 
 相关文档移至：[schema扩展依赖公共模块和扩展库](jql-schema-ext.md#module-and-extension)
+Related documents moved to: [schema extension depends on public modules and extension libraries](jql-schema-ext.md#module-and-extension)

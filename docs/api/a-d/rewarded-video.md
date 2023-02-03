@@ -607,6 +607,7 @@ Relatively speaking, the server callback will be more secure, and you can rely o
 
 
 ![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
+![Incentive Video Callback](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
 
 
 如何使用

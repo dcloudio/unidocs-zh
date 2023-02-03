@@ -61,11 +61,13 @@ Authorization steps:
 3. Enter the collaborator's email and click 'Search', the search results will appear below, and click 'Add member' to add after confirming that it is correct
 
   ![成员管理](https://web-assets.dcloud.net.cn/unidoc/zh/space-actor-search.png)
+  ![Member Management](https://web-assets.dcloud.net.cn/unidoc/zh/space-actor-search.png)
   
 4. 下方`成员列表`中可以查看以及移除已添加的协作者
 4. You can view and remove the added collaborators in the `member list` below
   
   ![成员列表](https://web-assets.dcloud.net.cn/unidoc/zh/space-actor-list.png)
+  ![Member List](https://web-assets.dcloud.net.cn/unidoc/zh/space-actor-list.png)
 
 **注意**
 **Notice**
@@ -203,7 +205,9 @@ The `uniCloud.init` method accepts an `options` parameter and returns an `uniClo
 |spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
 |spaceId |String |Yes |- |Service space ID, **Note that it is the service space ID, not the service space name** |
 |clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
+| clientSecret | String |Yes |- |Only supported by Alibaba Cloud, you can view it in the [uniCloud console](https://unicloud.dcloud.net.cn) service space list |
 |endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云支持。商用版请将此参数设为`https://api.next.bspapp.com`														|
+| endpoint | String |No |`https://api.bspapp.com` |Service space address, only supported by Alibaba Cloud. For the commercial version, please set this parameter to `https://api.next.bspapp.com` |
 
 **示例代码**
 **Sample code**

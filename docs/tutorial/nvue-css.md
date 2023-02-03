@@ -63,6 +63,7 @@ Weex box model based on the CSS box model, all of weex elements can be considere
 The term "box model" is used when talking about design and layout. The box model is essentially a box that wraps around every HTML element. It consists of margins, borders, paddings, and the actual content.
 
 ![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/flexBox.png)
+![Image description text](https://web-assets.dcloud.net.cn/unidoc/zh/flexBox.png)
 
 
 > nvue盒模型的 `box-sizing` 默认为 `border-box`，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。
@@ -321,6 +322,7 @@ The CSS justify-content property defines how Weex distributes space between and 
 
 
 ![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/justify-content.png)
+![Image description text](https://web-assets.dcloud.net.cn/unidoc/zh/justify-content.png)
 
 
 
@@ -343,6 +345,7 @@ The CSS align-items property sets the align-self value on all direct children as
 | center| The flex items' margin boxes are centered within the line on the cross-axis.|
 
 ![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/align-items.png)
+![Image description text](https://web-assets.dcloud.net.cn/unidoc/zh/align-items.png)
 
 ### flex
 	

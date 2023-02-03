@@ -292,6 +292,7 @@ Enable `render-whole` as a component list of `true` by default
 <img style="width:300px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/render-whole.gif"></img>
 
 示例工程[点击下载](https://web-assets.dcloud.net.cn/unidoc/zh/NvueOptimization.zip)
+Example project [click to download](https://web-assets.dcloud.net.cn/unidoc/zh/NvueOptimization.zip)
 
 ## nvue开发与vue开发的常见区别
 ## Common differences between nvue development and vue development

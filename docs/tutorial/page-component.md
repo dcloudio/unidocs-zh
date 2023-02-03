@@ -5,11 +5,13 @@ In traditional vue project development, referencing components requires `import-
 <template>
 	<view>
 		<!-- 3.使用组件 -->
+		<!-- 3. Use components -->
 		<uni-rate text="1"></uni-rate>
 	</view>
 </template>
 <script>
 	// 1. 导入组件
+	// 1. Import component
 	import uniRate from '@/components/uni-rate/uni-rate.vue';
 	export default {
 		components: { uniRate } // 2. 注册组件
@@ -24,11 +26,13 @@ Vue 3.x adds the `script setup` feature, which optimizes three steps into two st
 <template>
 	<view>
 		<!-- 2.使用组件 -->
+		<!-- 2. Use components -->
 		<uni-rate text="1"></uni-rate>
 	</view>
 </template>
 <script setup>
 	// 1. 导入组件
+	// 1. Import component
 	import uniRate from '@/components/uni-rate/uni-rate.vue';
 </script>
 ```
@@ -41,6 +45,7 @@ The `easycom` mechanism of `uni-app` further optimizes the reference of componen
 <template>
 	<view>
 		<!-- 1.使用组件 -->
+		<!-- 1. Use components -->
 		<uni-rate text="1"></uni-rate>
 	</view>
 </template>

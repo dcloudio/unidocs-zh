@@ -30,11 +30,13 @@ If the related field is not set as an index, when the number of records in the d
 2. Switch to the [Cloud Database] tab, and select the collection to be indexed, and enter the index management tab, as shown in the figure below.
 
   ![web控制台添加索引](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index.jpg)  
+  ![Add index in web console](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index.jpg)
   
 3. 添加索引。
 3. Add an index.
   
   ![添加索引](https://web-assets.dcloud.net.cn/unidoc/zh/composed-index.jpg)
+  ![Add Index](https://web-assets.dcloud.net.cn/unidoc/zh/composed-index.jpg)
 
 注意：
 Notice:
@@ -141,6 +143,7 @@ For example, create a geographic index for a collection with a geographic field 
 ```
 
 ![地理位置索引](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index-geo.jpg)
+![Geolocation Index](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index-geo.jpg)
 
 ### TTL索引@ttl
 ### TTL index @ttl

@@ -208,12 +208,15 @@ Example:
 	```
 
 #### 运行与调试@run-debug
+#### Running and debugging @run-debug
 
 HBuilderX创建的项目在运行菜单勾选`启用SSR`再运行到浏览器即可
+For the project created by HBuilderX, check `Enable SSR` in the run menu and run it to the browser.
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/run-ssr-checked.jpg)
 
 cli创建的项目使用`npm run dev:h5:ssr`运行即可
+The project created by cli can be run with `npm run dev:h5:ssr`
 
 #### 发行与部署@distribute
 #### Release and deploy @distribute
@@ -251,6 +254,7 @@ Releasing ssr will get two parts: the cloud part and the static resource part. T
 Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Cloud and Tencent Cloud previously only supported automatic deployment to Alibaba Cloud
 
 1. 配置`vite.config.js`中的`base`为`前端网页托管`地址
+1. Configure `base` in `vite.config.js` to be the address of `front-end web hosting`
 
 	```js
 	import {
@@ -270,10 +274,13 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
 	```
 
 2. 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
+2. Through `HBuilderX` `Issuance Menu -> Website PC-Web or Mobile H5`, check `ssr`, check `Deploy compiled resources on uniCloud front-end web hosting`
 
 	![自动部署](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
+	![Automatic deployment](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
 	
 3. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
+3. Configure the cloud function URL path of `uni-ssr`, please refer to the document: [Cloud function URLization](https://uniapp.dcloud.net.cn/uniCloud/http)
 
 **手动发行部署**
 **Manual release and deployment**
@@ -308,6 +315,7 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
   Non-cli project: by `Release Menu -> website PC-Web or mobile phone H5` of `HBuilderX 3.1.16 and above`, check `ssr`
   
   ![以ssr模式发行](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
+  ![Publish in ssr mode](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
   
 3. 部署静态资源到[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
 3. Deploy static resources to [Front-end web hosting](https://uniapp.dcloud.net.cn/uniCloud/hosting)

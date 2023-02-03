@@ -43,6 +43,7 @@ Similar to the `<list>` component, the sub-components of the `<waterfall>` compo
 - `<refresh>`：用于给列表添加下拉刷新的功能。
 - `<refresh>`: Used to add a pull-down refresh function to the list.
 - `<loading>`：`<loading>` 用法与特性和 `<refresh>` 类似，用于给列表添加上拉加载更多的功能。
+- `<loading>`: `<loading>` usage and features are similar to `<refresh>`, used to add more functions to the list.
   <img src="https://web-assets.dcloud.net.cn/unidoc/zh/app-nvue-component-waterfall-01.png" />
 
 #### 属性
@@ -61,17 +62,24 @@ Similar to the `<list>` component, the sub-components of the `<waterfall>` compo
   - `auto`: 意味着列宽是被其他属性所决定的(比如 column-count)
   - `auto`: means that the column width is determined by other attributes (such as column-count)
   - `<length>`: 最佳列宽，实际的列宽可能会更宽(需要填充剩余的空间)， 或者更窄(如果剩余空间比列宽还要小)。 该值必须大于0
+  - `<length>`: optimal column width, the actual column width may be wider (need to fill the remaining space), or narrower (if the remaining space is smaller than the column width). The value must be greater than 0
 - column-gap: `[可选]`列与列的间隙. 如果指定了 `normal` ，则对应 32.
+- column-gap: `[optional]` the column-to-column gap. Corresponds to 32 if `normal` is specified.
 - left-gap: `[可选]`左边cell和列表的间隙. 如果未指定 ，则对应 `0`
+- left-gap: `[optional]` the gap between the left cell and the list. If not specified, it corresponds to `0`
 - right-gap: `[可选]`右边cell和列表的间隙. 如果未指定，则对应 `0`
+- right-gap: `[optional]` the gap between the right cell and the list. If not specified, corresponds to `0`
   <img src="https://web-assets.dcloud.net.cn/unidoc/zh/app-nvue-component-waterfall-02.png" />
 - always-scrollable-vertical : `[可选]` 可选值为 true/ false，默认值为 false，iOS 平台，内容不满一屏无法触发下拉刷新时需要设置为true，因为默认子视图高度不超过父视图高度的时候 waterfall 不能滑动
 - always-scrollable-vertical : `[Optional]` The optional value is true/false, the default value is false, iOS platform, when the content is less than one screen and cannot trigger the pull-down refresh, it needs to be set to true, because the default subview height does not exceed The waterfall cannot slide when the parent view is high
 
 其他支持的属性参见 `<list>` [组件属性部分](https://uniapp.dcloud.net.cn/component/list.html)
+For other supported attributes, see `<list>` [component attribute section](https://uniapp.dcloud.net.cn/component/list.html)
 
 #### 事件
+#### event
 支持所有[通用事件](https://uniapp.dcloud.net.cn/tutorial/nvue-event.html)：
+All [Universal Events](https://uniapp.dcloud.net.cn/tutorial/nvue-event.html) are supported:
 
 - click：用于监听点击事件。（例如：一般绑定于子组件之上触发跳转）。
 - click: used to listen to click events. (For example: it is generally bound to sub-components to trigger a jump).

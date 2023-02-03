@@ -75,7 +75,9 @@ Cron expressions have seven **required** fields, separated by spaces. Among them
 |third digit| hour | integer 0 - 23 | , - * / |
 |第四位| 日 | 1 - 31的整数（需要考虑月的天数） | , - * / |
 |第五位| 月 | 1 - 12的整数 | , - * / |
+|Fifth digit| month | integer from 1 to 12 | , - * / |
 |第六位| 星期 | 0 - 6的整数，其中0指星期日，1指星期一，以此类推 | , - * / |
+|Sixth digit| Week | An integer of 0 - 6, where 0 means Sunday, 1 means Monday, and so on | , - * / |
 |第七位| 年 | 1970 - 2099的整数（阿里云不支持第七位） | , - * / |
 |7th digit| Year | Integer from 1970 to 2099 (Alibaba Cloud does not support 7th digit) | , - * / |
 
@@ -90,7 +92,9 @@ Cron expressions have seven **required** fields, separated by spaces. Among them
 | - （短横线）| 包含指定范围的所有值。例如：在“日”字段中，1 - 15包含指定月份的1号到15号 |
 | - (dash) | Contains all values in the specified range. Example: In the "Day" field, 1 - 15 contains the 1st to the 15th of the specified month |
 | * （星号） | 表示所有值。在“小时”字段中，* 表示每个小时 |
+| * (asterisk) | means all values. In the Hours field, * means every hour |
 | / （正斜杠） | 指定增量。在“分钟”字段中，输入1/10以指定从第一分钟开始的每隔十分钟重复。例如，第11分钟、第21分钟和第31分钟，以此类推。正斜杠前后均需要有值，不可省略 |
+| / (forward slash) | Specifies an increment. In the Minutes field, enter 1/10 to specify that it repeat every ten minutes starting with the first minute. For example, the 11th minute, the 21st minute, and the 31st minute, and so on. Values are required before and after the forward slash, which cannot be omitted |
 
 
 - 腾讯云：在 Cron 表达式中的“日”和“星期”字段同时指定值时，两者为“或”关系，即两者的条件均生效。

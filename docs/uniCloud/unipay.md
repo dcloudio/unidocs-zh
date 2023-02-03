@@ -1,5 +1,7 @@
 > 本文档为`uni-pay 1.x`版本文档。适用于老项目。
+> This document is `uni-pay 1.x` version document. Good for old projects.
 > 新项目请另行查阅 [uni-pay 2.x 版本文档](uniCloud/uni-pay.md)。
+> For new projects, please refer to [uni-pay 2.x version documentation](uniCloud/uni-pay.md).
 
 ## 简介
 ## Introduction
@@ -70,21 +72,34 @@ const unipay = require('@dcloudio/unipay')
 ## Initialize @init
 
 进行初始化操作返回 unipay 实例
+Perform the initialization operation and return the unipay instance
 ### 微信支付V3
+### WeChat Pay V3
 > 新增于 ```uni-pay 1.1.0```
+> Added in ```uni-pay 1.1.0```
 
 **入参说明**
+**Entry Instructions**
 
 |          参数名	          |  类型		| 必填	 | 默认值												  |        说明											         |
+| parameter name | type | required | default value | description |
 |:----------------------:| :-----:	|:--:|:----------------:|:----------------------------:|
 |        appId		         | String	| 是	 |  -													  |    当前应用在对应支付平台的 appId				    |
+| appId | String | Yes | - | The appId of the current application on the corresponding payment platform |
 |        mchId		         | String	| 是	 |  -													  |        商户号										         |
+| mchId | String | Yes | - | Merchant ID |
 |        v3Key		         | String	| 是	 |  -													  |     API v3 密钥										      |
+| v3Key | String | Yes | - | API v3 key |
 |     appCertPath		      | String	| 是	  |  -													  |     商户 API 证书文件路径（文件路径与字符串二选一）										      |
+| appCertPath | String | Yes | - | Merchant API certificate file path (choose one of file path and string) |
 |    appCertContent		    | String	| 是	 |  -													  |     商户 API 证书字符串（文件路径与字符串二选一）										      |
+| appCertContent | String | Yes | - | Merchant API certificate string (choose one of file path and string) |
 |  appPrivateKeyPath		   | String	| 是	 |  -													  |     商户 API 私钥文件路径（文件路径与字符串二选一）										      |
+| appPrivateKeyPath | String | Yes | - | Merchant API private key file path (choose one of file path and string) |
 | appPrivateKeyContent		 | String	| 是	 |  -													  |     商户 API 私钥字符串（文件路径与字符串二选一）										      |
+| appPrivateKeyContent | String | Yes | - | Merchant API private key string (choose one of file path and string) |
 |        timeout	        | Number	| 否	 | 5000												 |      请求超时时间，单位：毫秒						      |
+| timeout | Number | No | 5000 | Request timeout, unit: millisecond |
 
 ```js
 const path = require('path'); // 引入内置的path模块
@@ -100,37 +115,55 @@ const unipayIns = unipay.initWeixinV3({
 })
 ```
 **说明**
+**illustrate**
 
 证书字符串与私钥字符串格式要求：
+Certificate string and private key string format requirements:
 - 证书字符串不应包含`-----BEGIN CERTIFICATE-----` 与 `-----END CERTIFICATE-----`，并且证书内容不能换行
+- The certificate string should not contain `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----`, and the content of the certificate cannot be wrapped
 - 私钥字符串不应包含`-----BEGIN PRIVATE KEY-----` 与 `-----END PRIVATE KEY-----`，并且私钥内容不能换行
+- The private key string should not contain `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----`, and the content of the private key cannot be wrapped
 
 例：
+example:
 ```
 // 证书内容
+// certificate content
 -----BEGIN CERTIFICATE-----
 your certificate content...
 -----END CERTIFICATE-----
 
 // 证书字符串
+// certificate string
 appCertContent = 'your certificate content...'
 ```
 ### 微信支付v2
+### WeChat Pay v2
 
 **入参说明**
 **Introduction to parameters**
 
 |   参数名	    |  类型		|  必填	|  默认值												  |        说明											         |
+| parameter name | type | required | default value | description |
 |:---------:| :-----:	| :----:|:-----------------:|:----------------------------:|
 |  appId		  | String	|   是	|  -													   |    当前应用在对应支付平台的 appId				    |
+| appId | String | Yes | - | The appId of the current application on the corresponding payment platform |
 |  mchId		  | String	|   是	|  -													   |        商户号										         |
+| mchId | String | Yes | - | Merchant ID |
 | subAppId  | String	|   否	|  -													   |       子商户appId								       |
+| subAppId | String | No | - | Sub-merchant appId |
 | subMchId  | String	|   否	|  -													   |        子商户号									         |
+| subMchId | String | No | - | Sub-merchant ID |
 |   key		   | String	|   是	|  -													   |     支付商户 key （API密钥）				     |
+| key | String | yes | - | payment merchant key (API key) |
 |   pfx		   | String&#124;Buffer|                   使用退款功能必填|    -									     |    微信支付商户 API 证书，主要用于退款	     |
+| pfx | String&#124;Buffer| Required to use the refund function | - | WeChat payment merchant API certificate, mainly used for refund |
 | timeout	  | Number	|   否	| 5000												  |      请求超时时间，单位：毫秒						      |
+| timeout | Number | No | 5000 | Request timeout, unit: millisecond |
 | signType	 | String	|   否	| MD5													  |        签名类型										        |
+| signType | String | No | MD5 | Signature type |
 | sandbox	  | Boolean	|   否	| false												 |       是否启用沙箱环境								       |
+| sandbox | Boolean | No | false | Whether to enable the sandbox environment |
 
 ```js
 const unipayIns = unipay.initWeixin({
@@ -177,6 +210,7 @@ const unipayIns = unipay.initWeixin({
 |    signType						| String	|  否	|                         RSA2												|                签名类型								|
 | signType | String | No | RSA2 | Signature Type |
 |     sandbox						| Boolean	|  否	|                        false												|            是否启用沙箱环境						|
+| sandbox | Boolean | No | false | Whether to enable the sandbox environment |
 |   alipayRootCertPath	| String	|  否	| -																										| `1.0.6+`，支付宝根证书文件路径				|
 | alipayRootCertPath | String | No | - | `1.0.6+`, Alipay root certificate file path |
 |   appCertPath					| String	|  否	| -																										| `1.0.6+`，应用公钥证书文件路径				|
@@ -257,8 +291,11 @@ const unipayIns = unipay.initAppleIapPayment({
 |  totalFee			| Number|必填																					|   -		|订单金额，单位：分																																																	| 支付宝小程序、微信小程序|
 | totalFee | Number|Required | - |Order amount, unit: cents | Alipay applet, WeChat applet|
 | notifyUrl			| String|必填																					|   -		|支付结果通知地址，**需要注意支付宝支付时退款也会通知到此地址，务必处理好自己的业务逻辑**														|													|
+| notifyUrl | String|Required | - |Payment result notification address, **It should be noted that the refund will also be notified to this address when Alipay pays, be sure to handle your own business logic** | |
 | spbillCreateIp| String|必填																					|   -		|客户端IP，云函数内可以通过`context.CLIENTIP`获取																																		|-												|
+| spbillCreateIp| String|Required | - |Client IP, which can be obtained through `context.CLIENTIP` in the cloud function |- |
 |     tradeType	      | String	| 是	  |  -												   | 交易类型；见下方 tradeType 的说明						 |
+| tradeType | String | yes | - | trade type; see the description of tradeType below |
 | sceneInfo			| Object|微信tradeType为MWEB时必填										|   -		|见下方sceneInfo的说明																																															|-												|
 | sceneInfo | Object|Required when WeChat tradeType is MWEB | - |See the description of sceneInfo below |- |
 
@@ -384,15 +421,24 @@ uniCloud.callFunction({
 **Return value description**
 
 |       参数名			|  类型	|说明																																				|  支持平台   |
+| parameter name | type | description | supported platform |
 | :----------------:| :----:| :---------------------------------------------:														|:-------:|
 |       appId				| String|平台分配的应用 ID																													|  微信支付   |
+| appId | String|Application ID assigned by the platform | WeChat payment |
 |       mchId				| String|商户号，（微信支付文档里面叫商户号：mch_id，支付宝支付叫卖家id：seller_id）|  微信支付   |
+| mchId | String| Merchant ID, (WeChat payment document is called merchant ID: mch_id, Alipay payment is called seller id: seller_id) | WeChat payment |
 |     outTradeNo		| String|商户订单号																																	|   -		   |
+| outTradeNo | String|Merchant order number | - |
 |   transactionId		| String|平台订单号																																	|   -	    |
+| transactionId | String|Platform order number | - |
 |     tradeState		| String| 订单状态，见下方订单状态说明																							|  					  |
+| tradeState | String| order status, see the description of order status below | |
 |      totalFee			| Number|标价金额 ，单位：分																												|   -		   |
+| totalFee | Number|Price amount, unit: cent | - |
 | settlementTotalFee| Number|应结订单金额，单位：分																											| 支付宝支付		 |
+| settlementTotalFee| Number|Amount of the order payable, unit: cents | Alipay payment |
 |      cashFee			| Number|现金支付金额，单位：分																											|   -		   |
+| cashFee | Number|Cash payment amount, unit: cent | - |
 
 
 **订单状态**
@@ -466,11 +512,16 @@ exports.main = async function (event) {
 **Return value description**
 
 |    参数名     |  类型  |       说明        |  支持平台  |
+| parameter name | type | description | supported platform |
 | :-----------: | :----: | :---------------: |:------:|
 |     appId     | String | 平台分配的应用 ID | 微信支付V2 |
+| appId | String | Application ID assigned by the platform | WeChat Pay V2 |
 |     mchId     | String |      商户号       | 微信支付V2 |
+| mchId | String | Merchant ID | WeChat Pay V2 |
 |  outTradeNo   | String |    商户订单号     | 支付宝支付  |
+| outTradeNo | String | Merchant order number | Alipay payment |
 | transactionId | String |    平台订单号     | 支付宝支付  |
+| transactionId | String | Platform order number | Alipay payment |
 
 **使用示例**
 **Use example**
@@ -548,15 +599,24 @@ exports.main = async function (event) {
 **Introduction to parameters**
 
 |    参数名		|  类型	|        必填				         | 默认值|     说明											| 支持平台	  |
+| Parameter name | Type | Mandatory | Default value | Description | Supported platforms |
 | :-----------:	| :----:|:---------------------:| :----:| :----------:										|:------:|
 |  outTradeNo	| String| 和 transactionId 二选一		 |   -	|  商户订单号										|  -		   |
+| outTradeNo | String| or transactionId | - | Merchant order number | - |
 | transactionId	| String|  和 outTradeNo 二选一		   |   -	|  平台订单号										|  -		   |
+| transactionId | String| and outTradeNo | - | Platform order number | - |
 |  outRefundNo	| String|    微信支付必填，支付宝支付选填	    |   -	| 商户退款单号										|   -	   |
+| outRefundNo | String| Mandatory for WeChat Pay, optional for Alipay | - | Merchant Refund No. | - |
 |   totalFee	| Number|       微信支付必填			       |   -	|  订单总金额										|  -			  |
+| totalFee | Number| Required for WeChat payment | - | Total order amount | - |
 |   refundFee	| Number|        必填				         |   -	|  退款总金额										| 微信支付	  |
+| refundFee | Number| Mandatory | - | Total Refund Amount | WeChat Pay |
 | refundFeeType	| String|     微信支付V3必填				      |   -	|   货币种类										|   微信支付V3		   |
+| refundFeeType | String| Required for WeChat Pay V3 | - | Currency Type | WeChat Pay V3 |
 |  refundDesc	| String|        选填				         |   -	|   退款原因										|  -		   |
+| refundDesc | String| Optional | - | Reason for refund | - |
 |   notifyUrl	| String|    微信支付选填，支付宝不支持	     |   -	| 退款通知 url，支付宝会通知获取支付参数时的通知地址| 微信支付	  |
+| notifyUrl | String| Optional for WeChat Pay, not supported by Alipay | - | Refund notification url, Alipay will notify you of the notification address when obtaining payment parameters | WeChat Pay |
 
 **返回值说明**
 **Return value description**
@@ -602,12 +662,18 @@ exports.main = async function (event) {
 **Introduction to parameters**
 
 |    参数名     |  类型  |                    必填                     | 默认值 |                                        说明                                        | 支持平台 |
+| Parameter name | Type | Mandatory | Default value | Description | Supported platforms |
 | :-----------: | :----: |:-----------------------------------------:| :----: | :--------------------------------------------------------------------------------: | :------: |
 |  outTradeNo   | String | 微信支付V2四选一，支付宝和 transactionId 二选一 |   -    |                                     商户订单号                                     |     -     |
+| outTradeNo | String | WeChat Pay V2 to choose one of four, Alipay and transactionId to choose one of two | - | Merchant order number | - |
 | transactionId | String |       微信支付V2四选一，支付宝和 outTradeNo 二选一       |   -    |                                     平台订单号                                     |     -     |
+| transactionId | String | WeChat Pay V2 to choose one of four, Alipay and outTradeNo to choose one of two | - | Platform order number | - |
 |  outRefundNo  | String |              微信支付V3必填，微信支付V2四选一，支付宝必填              |   -    |                                    商户退款单号                                    |     -     |
+| outRefundNo | String | Required for WeChat Pay V3, one of four for WeChat Pay V2, required for Alipay | - | Merchant Refund No. | - |
 |   refundId    | String |                 微信支付V2四选一                 |   -    |                                    平台退款单号                                    | 微信支付 |
+| refundId | String | WeChat payment V2 choose one of four | - | platform refund number | WeChat payment |
 |    offset     | Number |                 微信支付V2选填                  |   -    | 偏移量，当部分退款次数超过 10 次时可使用，表示返回的查询结果从这个偏移量开始取记录 |      -    |
+| offset | Number | Optional for WeChat Pay V2 | - | Offset, which can be used when the number of partial refunds exceeds 10, indicating that the returned query results start to fetch records from this offset | - |
 
 **注意**
 **Notice**
@@ -619,15 +685,24 @@ exports.main = async function (event) {
 **Return value description**
 
 |     参数名     |              类型               |          说明          | 支持平台  |
+| parameter name | type | description | supported platform |
 | :------------: | :-----------------------------: |:--------------------:|:-----:|
 |   outTradeNo   |             String              |        商户订单号         |   -   |
+| outTradeNo | String | Merchant order number | - |
 | transactionId  |             String              |        平台订单号         |   -   |
+| transactionId | String | Platform order number | - |
 |    totalFee    |             Number              |         订单金额         |   -   |
+| totalFee | Number | Order Amount | - |
 |    refundId    |             String              | 平台退款单号，仅支付宝、微信支付V3返回 |   -   |
+| refundId | String | Platform refund number, only returned by Alipay and WeChat Pay V3 | - |
 |   refundFee    |             Number              |        退款总金额         |   -   |
+| refundFee | Number | Total Refund Amount | - |
 |   refundDesc   |             String              |         退款理由         |   -   |
+| refundDesc | String | Reason for refund | - |
 |   refundList   |     Array&lt;refundItem&gt;     |   分笔退款信息，仅微信支付V2返回   | 微信支付V2 |
+| refundList | Array&lt;refundItem&gt; | Refund information in installments, only returned by WeChat Pay V2 | WeChat Pay V2 |
 | refundRoyaltys | Array&lt;refundRoyaltysItem&gt; |    退分账明细信息，仅支付宝返回    | 支付宝支付 |
+| refundRoyaltys | Array&lt;refundRoyaltysItem&gt; | Details of refund account, only returned by Alipay | Alipay payment |
 
 **refundItem 说明**
 **refundItem description**
@@ -730,6 +805,7 @@ exports.main = async function (event) {
 | Parameter Name | Type | Required | Default Value | Description |
 | :------: | :----: | :--: | :----: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: |
 | billDate | String | 必填 |   -    |                                                                                下载对账单的日期，格式：2014-06-03                                                                                |     -     |
+| billDate | String | Mandatory | - | The date of downloading the statement, format: 2014-06-03 | - |
 | billType | String | 选填 |  ALL   | ALL（默认值），返回当日所有订单信息（不含充值退款订单）,SUCCESS，返回当日成功支付的订单（不含充值退款订单）,REFUND，返回当日退款订单（不含充值退款订单）,RECHARGE_REFUND，返回当日充值退款订单 |     -     |
 | billType | String | Optional | ALL | ALL (default), returns all order information on the day (excluding recharge and refund orders), SUCCESS, returns orders successfully paid on the day (excluding recharge and refund orders), REFUND, returns Same-day refund order (excluding recharge and refund order), RECHARGE_REFUND, return the same-day recharge and refund order | - |
 
@@ -815,6 +891,7 @@ exports.main = async function (event) {
 | Parameter Name | Type | Required | Default Value | Description |
 | :---------: | :----: | :--: | :----: | :---------------------------------------------------------------------: | :------: |
 |  billDate   | String | 必填 |   -    |                    下载对账单的日期，格式：2014-06-03                     |    -     |
+| billDate | String | Mandatory | - | The date of downloading the statement, format: 2014-06-03 | - |
 | accountType | String | 选填 | Basic  | 账单的资金来源账户：Basic 基本账户，Operation 运营账户，Fees 手续费账户 |     -     |
 | accountType | String | Optional | Basic | Account for the source of funds for the bill: Basic account, Operation account, Fees fee account | - |
 
@@ -920,7 +997,9 @@ exports.main = async function (event) {
   // 处理完毕其他业务
   // Finish other business
   // 注意如果处理成功需要严格按照下面的格式进行返回，否则厂商会持续通知
+  // Note that if the processing is successful, it must be returned in strict accordance with the following format, otherwise the manufacturer will continue to notify
   // 微信支付V3处理成功之后 
+  // After the WeChat payment V3 is processed successfully
   return {
     mpserverlessComposedResponse: true,
     statusCode: 200,
@@ -933,6 +1012,7 @@ exports.main = async function (event) {
     })
   }
   // 微信支付V2处理成功之后 
+  // After the WeChat payment V2 is processed successfully
   return {
     mpserverlessComposedResponse: true, 
     statusCode: 200,
@@ -942,6 +1022,7 @@ exports.main = async function (event) {
     body: `<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>`
   }
   // 支付宝处理成功后  
+  // Alipay processed successfully
   return {
     mpserverlessComposedResponse: true,
     statusCode: 200,
@@ -1009,6 +1090,7 @@ exports.main = async function (event) {
   // 注意如果处理成功需要严格按照下面的格式进行返回，否则厂商会持续通知
   // Note that if the processing is successful, it needs to be returned in strict accordance with the following format, otherwise the manufacturer will continue to notify
   // 微信处理成功之后 
+  // After the WeChat processing is successful
   return {
     mpserverlessComposedResponse: true,
     statusCode: 200,  
@@ -1018,6 +1100,7 @@ exports.main = async function (event) {
     body: `<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>`  
   }
   // 支付宝处理成功后  
+  // Alipay processed successfully
   return {
     mpserverlessComposedResponse: true,
     statusCode: 200,

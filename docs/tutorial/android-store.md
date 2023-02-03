@@ -265,21 +265,32 @@ HX3.6.1+ version You can configure manifest.json to configure checkPermissionDen
 ```
 
 #### 21、APP存在收集传感器行为
+#### 21. The APP has the behavior of collecting sensors
 
 + 如果应用中有以下行为，请根据实际使用传感器的目的方式等补充好隐私政策并使用HX3.6.4+版本重新打包上架。
++ If there are any of the following behaviors in the app, please supplement the privacy policy according to the purpose of using the sensor and repackage it with HX3.6.4+ version.
   1. 使用了传感器相关API
+  1. Using the sensor-related API
   2. 集成了地图定位相关模块
+  2. Integrate map positioning related modules
   3. 使用了[plus.navigator.isSimulator](https://uniapp.dcloud.net.cn/tutorial/app-sec-api.html#issimulator)
+  3. Use [plus.navigator.isSimulator](https://uniapp.dcloud.net.cn/tutorial/app-sec-api.html#issimulator)
 + 如果应用中没有上述行为，但上架应用市场反馈APP存在收集传感器行为，请使用HX3.6.4+版本重新打包上架。
++ If there is no above-mentioned behavior in the app, but the app market reports that the app has sensor collection behavior, please use the HX3.6.4+ version to repackage and put it on the shelf.
 
 #### 22、小米上架，用户同意隐私政策前存在收集OAID的行为
+#### 22. When Xiaomi is on the shelves, there is an act of collecting OAID before the user agrees to the privacy policy
 
 + 如果应用支持未同意模式运行，并且上架应用市场反馈用户同意隐私政策前存在收集OAID的行为，请补充好关于OAID的相关隐私政策并使用HX3.6.8+版本重新打包上架。
++ If the app supports non-consent mode, and the app market reports that the user has collected OAID before agreeing to the privacy policy, please supplement the relevant privacy policy about OAID and use the HX3.6.8+ version to repackage and put it on the shelf.
 
 #### 23、应用启动时弹出权限申请
+#### 23. Permission application pops up when the application starts
 
 + 参考[应用启动会主动申请手机存储权限、访问设备信息权限影响应用上架](https://uniapp.dcloud.net.cn/tutorial/android-store.html#_18%E3%80%81%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E4%BC%9A%E4%B8%BB%E5%8A%A8%E7%94%B3%E8%AF%B7%E6%89%8B%E6%9C%BA%E5%AD%98%E5%82%A8%E6%9D%83%E9%99%90%E3%80%81%E8%AE%BF%E9%97%AE%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF%E6%9D%83%E9%99%90%E5%BD%B1%E5%93%8D%E5%BA%94%E7%94%A8%E4%B8%8A%E6%9E%B6)进行配置。
++ Refer to [Application startup will actively apply for mobile phone storage permissions, access to device information permissions will affect the application store](https://uniapp.dcloud.net.cn/tutorial/android-store.html#_18%E3%80%81%E5 %BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E4%BC%9A%E4%B8%BB%E5%8A%A8%E7%94%B3%E8%AF %B7%E6%89%8B%E6%9C%BA%E5%AD%98%E5%82%A8%E6%9D%83%E9%99%90%E3%80%81%E8%AE%BF %E9%97%AE%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF%E6%9D%83%E9%99%90%E5%BD%B1%E5 %93%8D%E5%BA%94%E7%94%A8%E4%B8%8A%E6%9E%B6) for configuration.
 + 排查业务逻辑中是否有提前调用[plus.device.getInfo](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo)等需要权限的API或主动调用[plus.android.requestPermissions](https://www.html5plus.org/doc/zh_cn/android.html#plus.android.requestPermissions)申请权限的情况，如果有则需要调整相关API的调用时机，触发相关业务场景时再调用，不要提前调用。
++ Check whether there is an API that requires permission such as [plus.device.getInfo](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo) called in advance or actively called [ plus.android.requestPermissions](https://www.html5plus.org/doc/zh_cn/android.html#plus.android.requestPermissions) to apply for permission, if so, you need to adjust the timing of calling the relevant API to trigger the relevant business Call it in the scene, don't call it in advance.
 
 #### 看不懂文档不知道如何修改？
 #### Can't understand the document and don't know how to modify it?

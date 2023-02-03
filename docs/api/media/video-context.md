@@ -1,31 +1,50 @@
 ### uni.createVideoContext(videoId, this)
 创建并返回 video 上下文 videoContext 对象。在自定义组件下，第二个参数传入组件实例this，以操作组件内 ``<video>`` 组件。
+Create and return a video context videoContext object. Under the custom component, the second parameter is passed to the component instance this to operate the ``<video>`` component inside the component.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|基础库版本>=1.10.0|√|√|√|√|√|
+|√|√|√|Basic library version>=1.10.0|√|√|√|√|√|
 
 **videoContext 对象的方法列表**
+**list of methods of videoContext object**
 
 |方法|参数|说明|平台差异说明
+|Method|Parameter|Description|Platform Difference Description
 |:-|:-|:-|:-|
 |play|无|播放||
+| play|none|play||
 |pause|无|暂停||
+|pause|none|pause||
 |seek|position|跳转到指定位置，单位 s||
+| seek| position|Jump to the specified position, unit s||
 |stop||停止视频|微信小程序|
+| stop||stop video|WeChat MiniApp|
 |sendDanmu|danmu|发送弹幕，danmu 包含两个属性 text, color||
+| sendDanmu| danmu|Send bullet chat, danmu contains two attributes text, color||
 |playbackRate|rate|设置倍速播放，支持的倍率有 0.5/0.8/1.0/1.25/1.5。微信基础库2.6.3 起支持 2.0 倍速||
+| playbackRate| rate|Set double speed playback, the supported speed is 0.5/0.8/1.0/1.25/1.5. WeChat basic library supports 2.0 times speed from 2.6.3||
 |requestFullScreen|无|进入全屏，可传入{direction}参数，详见 video 组件文档|H5和字节跳动小程序不支持{direction}参数|
+| requestFullScreen|None|Enter full screen, you can pass in the {direction} parameter, see the video component documentation for details| H5 and ByteDance MiniApp do not support the {direction} parameter|
 |exitFullScreen|无|退出全屏||
+| exitFullScreen|None|Exit Full Screen||
 |showStatusBar|无|显示状态栏，仅在iOS全屏下有效|微信小程序、百度小程序、QQ小程序|
+| showStatusBar|None|Display the status bar, only valid in iOS full screen|WeChat MiniApp, Baidu MiniApp, QQ MiniApp|
 |hideStatusBar|无|隐藏状态栏，仅在iOS全屏下有效|微信小程序、百度小程序、QQ小程序|
+| hideStatusBar|None|Hide status bar, only valid in iOS full screen|WeChat MiniApp, Baidu MiniApp, QQ MiniApp|
 
 **注意：**
+**Notice:**
 - app-nvue 平台 2.2.5以下使用本API，需同时设置组件属性id和ref ``<video id="video1" ref="video1"></video>``，或者直接使用 ref，例如 ``this.$refs.video1``，2.2.5+ 支持直接使用 uni.createVideoContext(videoId, this)
+- To use this API under app-nvue platform 2.2.5, you need to set the component attribute id and ref ``<video id="video1" ref="video1"></video>`` at the same time, or use ref directly, such as` `this.$refs.video1``, 2.2.5+ supports direct use of uni.createVideoContext(videoId, this)
 
 **示例**
+**example**
 
 ```html
 <template>

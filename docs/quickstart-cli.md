@@ -6,6 +6,7 @@ In addition to the HBuilderX visual interface, you can also use `cli` scaffoldin
 ## Environment installation @install-vue-cli
 
 全局安装 vue-cli
+Install vue-cli globally
 
 ```shell
 npm install -g @vue/cli
@@ -49,11 +50,16 @@ At this point, you will be prompted to select a project template (the Vue3/Vite 
 </div>
 
 **注意**
+**Notice**
 
 - Vue3/Vite版要求 node 版本`^14.18.0 || >=16.0.0`
+- Vue3/Vite version requires node version `^14.18.0 || >=16.0.0`
 - 如果使用 HBuilderX（3.6.7以下版本）运行 Vue3/Vite 创建的最新的 cli 工程，需要在 HBuilderX 运行配置最底部设置 node路径 为自己本机高版本 node 路径（注意需要重启 HBuilderX 才可以生效）
+- If you use HBuilderX (below version 3.6.7) to run the latest cli project created by Vue3/Vite, you need to set the node path at the bottom of the HBuilderX running configuration to your local version node path (note that you need to restart HBuilderX to take effect)
     * HBuilderX Mac 版本菜单栏左上角 HBuilderX->偏好设置->运行配置->node路径
+    * HBuilderX Mac version menu bar upper left corner HBuilderX->Preferences->Run Configuration->node path
     * HBuilderX Windows 版本菜单栏 工具->设置->运行配置->node路径
+    * HBuilderX Windows version menu bar Tools->Settings->Run Configuration->node path
 
 #### 自定义模板
 #### Custom templates
@@ -78,6 +84,7 @@ The template project is stored in Github. The download may fail due to network p
 #### Modify the dependency to the specified version @cliversion
 
 可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，此工具仅自动增加或更新 uni-app 编译器主要依赖，对于新增的编译命令（scripts）暂时不会自动处理，需手动参考新工程进行配置。
+You can use [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) to manage the version of the compiler. This tool only automatically adds or updates the main dependencies of the uni-app compiler. For new Compilation commands (scripts) of the command line will not be processed automatically for the time being, and need to be manually configured with reference to the new project.
 
 * 更新到最新正式版
 * Update to the latest official version

@@ -77,7 +77,9 @@ After filling in the domain name certificate in the previous step and the bindin
 - uniCloud提供默认域名供体验和测试该特性
 - uniCloud provides a default domain name for experience and testing of this feature
 - 需要注意的是绑定的域名必须已经备案
+- It should be noted that the bound domain name must have been filed
 - 腾讯云单个服务空间可支持QPS收服务空间QPS限制，参考：[套餐资源](price.md#tencent-package)
+- A single service space of Tencent Cloud can support QPS to receive the QPS limit of the service space, refer to: [Package Resources](price.md#tencent-package)
 - 阿里云单个服务空间可支持被访问的最大 QPS 为1000（具体频次受函数并发限制）
 - The maximum QPS that can be accessed by a single Alibaba Cloud service space is 1000 (the specific frequency is limited by function concurrency)
 - 默认域名可支持被访问的最大 QPS 为200，推荐您绑定自定义域名以获取更大的访问频次
@@ -218,6 +220,7 @@ The cloud object configuration using url still needs to follow the above steps, 
 When invoking a urlified cloud object, access the cloud object's method with a link in the form of `url_path/cloud_object_method_name`. For example, the trigger path of the cloud object configuration is `/todo`, and calling `/todo/addTodo` will trigger the addTodo method of the cloud object. Methods are case-sensitive and cannot contain `/`.
 
 2022年11月11日之前，访问路径只能以方法名结尾，在此时间之后调整为，允许使用多段路径访问云对象方法。仍以上述配置为例，`/todo/addTodo/self`和`/todo/addTodo/group`都会调用云对象的addTodo方法。
+Before November 11, 2022, the access path can only end with the method name. After this time, it will be adjusted to allow the use of multi-segment paths to access cloud object methods. Still taking the above configuration as an example, both `/todo/addTodo/self` and `/todo/addTodo/group` will call the addTodo method of the cloud object.
 
 ### 云对象入参@input
 ### Cloud object input parameter @input
@@ -444,6 +447,7 @@ To redirect or return custom status codes such as 4xx, 5xx, etc., you can use th
 In some scenarios, cookies still play an important role, for example, in the case of URLization of cloud functions, to obtain the status of the client
 
 在云函数中使用cookie需要依赖cookie库[npm页面地址](http://https://www.npmjs.com/package/cookie)，可以通过`npm install cookie` 安装
+Using cookies in cloud functions needs to rely on the cookie library [npm page address](http://https://www.npmjs.com/package/cookie), which can be installed through `npm install cookie`
 
 **普通云函数示例**
 **Example of normal cloud function**

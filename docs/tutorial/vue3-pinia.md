@@ -5,11 +5,13 @@
 ## introduce
 
 > uni-app 内置了 [Pinia](https://pinia.vuejs.org/zh/index.html) 。
+> uni-app has built-in [Pinia](https://pinia.vuejs.org/zh/index.html).
 
 > 使用 `HBuilder X` 不需要手动安装，直接使用即可。使用 `CLI` 需要手动安装，执行 `yarn add pinia` 或 `npm install pinia`。
 > Use `HBuilder X` without manual installation, just use it directly. Using the `CLI` requires manual installation, execute `yarn add pinia` or `npm install pinia`.
 
 > Vue 2 项目暂不支持
+> Vue 2 projects are not supported yet
 
 ### Pinia 是什么？
 ### What is Pinia?

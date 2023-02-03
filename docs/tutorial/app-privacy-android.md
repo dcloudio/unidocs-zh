@@ -143,13 +143,19 @@ After checking, the androidPrivacy.json file will be automatically added to the 
   隐私政策提示框中的链接地址加载方式，可取值：system-表示使用系统浏览器打开；default-表示使用应用内置webview页面打开。默认值为default。  
   The link address loading method in the privacy policy prompt box. Possible values: system- means to use the system browser to open; default- means to use the built-in webview page of the application to open. The default value is default.
   **注意：可能有些检测机构认为webview会读取隐私信息，这时可以配置为system来解决此问题**  
+  **Note: Some detection agencies may think that webview will read private information, and then it can be configured as system to solve this problem**
 - backToExit  HX 3.6.20之后版本新增。用来设置弹出隐私弹窗时，用户点击系统回退按钮 是否能退出应用。默认为false 不退出。部分应用市场不接受此行为，则开发者可以设置为true，允许用户点击回退按钮时，退出应用。
 - disagreeMode 
   用户不同意隐私协议的响应配置 **具体配置及说明查看**[https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode)  
+  The user does not agree to the response configuration of the privacy agreement. **See the specific configuration and instructions**[https://uniapp.dcloud.io/app-disagreemode](https://uniapp.dcloud.io/app-disagreemode)
   + support 用户拒绝隐私协议后，是否直接进入游客模式，默认false关闭 
+  + support After the user rejects the privacy agreement, whether to directly enter the tourist mode, the default is false to close
   + loadNativePlugins 表示在disagreeMode模式是否加载uni原生插件，true表示加载；false表示不加载（此时调用uni.requireNativePlugin加载插件扩展Module返回undefined，扩展组件Component也无法使用）。默认值为true。  
+  + loadNativePlugins indicates whether to load uni native plug-ins in disagreeMode mode, true means loading; false means not loading (at this time, calling uni.requireNativePlugin to load the plug-in extension Module returns undefined, and the extension component Component cannot be used). The default value is true.
   + visitorEntry HBuilderX 3.6.7 版本后支持，默认false,当设置为true，隐私协议弹窗 会出现 游客模式 按钮
+  + visitorEntry Supported after HBuilderX version 3.6.7, the default is false, when set to true, the privacy agreement pop-up window will appear the visitor mode button
   + showAlways HBuilderX 3.6.10 版本后支持，默认false 标记用户拒绝协议后，下次启动是否继续弹出，默认false,拒绝后不弹出
+  + showAlways Supported after HBuilderX version 3.6.10, the default is false to mark whether the user will continue to pop up after the user rejects the agreement, the default is false, no pop-up after rejection
 - second  
   配置二次确认提示框显示内容，message属性值不为空时弹出二次确认提示框  
   Configure the display content of the second confirmation prompt box. When the value of the message attribute is not empty, a second confirmation prompt box will pop up.
@@ -173,7 +179,9 @@ After checking, the androidPrivacy.json file will be automatically added to the 
   + buttonAccept 接受按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
   + buttonAccept accepts the button style, under which only the color attribute is supported to configure the text color, the value is the #RRGGBB format string
   + buttonRefuse 拒绝按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
+  + buttonRefuse rejects the button style, it only supports the color attribute to configure the text color, and the value is the #RRGGBB format string
   + buttonVisitor HX 3.6.7 版本后支持，游客模式按钮样式，其下仅支持color属性配置文本颜色，值为#RRGGBB格式字符串  
+  + buttonVisitor is supported after version 3.6.7 of HX, the button style of visitor mode, under which only the color attribute is supported to configure the text color, and the value is the format string of #RRGGBB
 
 uni-app项目可以使用uni原生插件能支持更多自定义隐私政策提示框样式，可参考：[https://ext.dcloud.net.cn/plugin?id=5581](https://ext.dcloud.net.cn/plugin?id=5581)  
 The uni-app project can use the uni native plugin to support more custom privacy policy prompt box styles, please refer to: [https://ext.dcloud.net.cn/plugin?id=5581](https://ext. dcloud.net.cn/plugin?id=5581)
@@ -316,6 +324,7 @@ This mode can be used if not submitting to the app market.
 ### Offline packaging configuration method
 
 **HBuilderX3.2.1+版本新增androidPrivacy.json配置隐私政策提示框，优先级高于原生环境配置，HBuilderX3.2.1+版本建议使用androidPrivacy.json 替代本章节的离线打包配置**
+**HBuilderX3.2.1+ version adds androidPrivacy.json configuration privacy policy prompt box, the priority is higher than native environment configuration, HBuilderX3.2.1+ version recommends using androidPrivacy.json to replace the offline packaging configuration in this chapter**
 
 ----------------------
 

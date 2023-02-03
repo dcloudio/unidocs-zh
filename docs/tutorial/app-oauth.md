@@ -26,13 +26,21 @@ The basic process of using the login authentication function:
 - Call the API in the App project to log in, and after success, obtain the authorization ID and submit it to the business server to complete the login operation
 
 支持的三方登录平台：
+Supported third-party login platforms:
 - [一键登录（univerify）](univerify.md)
+- [One-click login (univerify)](univerify.md)
 - [苹果登录（Sign in with Apple）](app-oauth-apple.md)
+- [Sign in with Apple](app-oauth-apple.md)
 - [微信登录](app-oauth-weixin.md)
+- [WeChat Login](app-oauth-weixin.md)
 - [QQ登录](app-oauth-qq.md)
+- [QQ Login](app-oauth-qq.md)
 - [新浪微博登录](app-oauth-sina.md)
+- [Sina Weibo Login](app-oauth-sina.md)
 - [Google登录](app-oauth-google.md)
+- [Google Login](app-oauth-google.md)
 - [Facebook登录](app-oauth-facebook.md)
+- [Facebook Login](app-oauth-facebook.md)
 
 
 

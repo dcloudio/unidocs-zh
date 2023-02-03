@@ -95,6 +95,7 @@ In addition, when the cloud function is urlized, the client information cannot b
 ### token verification @checktoken
 
 一个校验客户端发起请求（uniCloud.callFunction）自带的uniIdToken，获得用户的uid、token、token的过期时间、角色、权限的API。
+An API that verifies the uniIdToken that comes with the request initiated by the client (uniCloud.callFunction), and obtains the user's uid, token, token expiration time, role, and permissions.
 
 这是非常高频且重要的API通常用于换取操作当前云函数的用户Id。
 This is a very high frequency and important API that is usually used in exchange for the user ID of the current cloud function.

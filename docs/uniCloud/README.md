@@ -26,12 +26,14 @@
     6. If you do not publish the web version, you will not need to purchase a registered domain name. Mini Programs and Apps can use the server without a domain name;
 
 uniCloud为每个开发者提供一个免费服务空间，让你也可以拥有自己的服务器。
+uniCloud provides a free service space for each developer, so that you can also have your own server.
 
 ### 看视频，只需25分钟，快速入门uniCloud
 ### Watch the video, just 25 minutes, get started quickly with uniCloud
 
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=1">
     <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg" alt="uniCloud视频教程" style="width: 70%;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg" alt="uniCloud video tutorial" style="width: 70%;">
 </a>
 
 ### uniCloud是什么和不是什么
@@ -112,10 +114,13 @@ Just like uni-app can be cross-end, uniCloud can be cross-cloud. Based on uniClo
 ###Why uniCloud can reduce cloud service rental costs
 
 **1、传统云服务的租用，按占用的硬件资源的上限值+固定时长来租用。**
+**1. The lease of traditional cloud services is based on the upper limit of the occupied hardware resources + a fixed duration. **
 
 传统云是按配置买服务器，买了之后不管用不用都要交钱。而serverless是按量计费，如果没有使用，一分钱都不用交。
+The traditional cloud is to buy servers according to the configuration, and after buying, you have to pay whether you use it or not. And serverless is billed by volume, if you don't use it, you don't have to pay a penny.
 
 传统云选择CPU和内存的配置，不到满配时，资源是浪费的，接近满配就需要立即扩容新的配置。
+The traditional cloud chooses the configuration of CPU and memory. When the configuration is less than full, resources are wasted. When it is close to full configuration, a new configuration needs to be expanded immediately.
 
 serverless不是传统云，它不需要开发者选择CPU和内存配置，也没有操作系统的选择。开发者编写云函数代码，上传到uniCloud的阿里云版或腾讯云版。
 Serverless is not a traditional cloud, it does not require developers to choose CPU and memory configuration, and there is no choice of operating system. The developer writes the cloud function code and uploads it to the Alibaba Cloud version or Tencent Cloud version of uniCloud.
@@ -133,13 +138,16 @@ Because of sharing a large resource pool, the cost of cloud service providers is
 From a technical point of view, serverless has obvious cost advantages, so renting serverless is much cheaper than renting traditional cloud.
 
 **2、没有名目繁多的收费项**
+**2. There are no numerous charging items**
 
 在传统云的世界里，有大量的收费产品。
 In the world of traditional cloud, there are a plethora of premium offerings.
 
 在阿里云和腾讯云的官网可以看到长长的收费产品列表，比如负载均衡、高防、cdn回源、安全中心...
+On the official websites of Alibaba Cloud and Tencent Cloud, you can see a long list of paid products, such as load balancing, high defense, CDN back-to-source, security center...
 
 这个计费项又贵又让开发者头晕。在uniCloud的世界，简单清晰，**没有这些收费项**。
+This billing item is expensive and makes developers dizzy. In the world of uniCloud, it is simple and clear, **there are no such fees**.
 
 只需按对计算资源、存储资源的消耗计费，只需关心业务，无需关心其他各种名目的增值产品，也无需为它们付费。
 You only need to pay for the consumption of computing resources and storage resources, you only need to care about the business, and you don't need to care about other value-added products in various names, and you don't need to pay for them.
@@ -151,8 +159,10 @@ You must know that a high-defense package for anti-DDoS is at least tens of thou
 Let's talk about why uniCloud does not need to buy high defense and is not afraid of DDoS: Because Alibaba Cloud and Tencent Cloud's serverless have huge resource pools, and serverless does not have a fixed IP, cloud functions use Alibaba Cloud and Tencent Cloud's own domain names, front-end Web pages are hosted on CDNs, and DDoS attackers can't fight or hang up uniCloud.
 
 **3、云厂商的补贴优惠**
+**3. Subsidy discounts for cloud vendors**
 
 uniCloud阿里云版为每个开发者提供1个免费的服务空间。传统云可没有这种优惠。
+uniCloud Alibaba Cloud Edition provides one free service space for each developer. Traditional clouds don't have this perk.
 
 基于以上3点原因，uniCloud大幅降低了开发者云资源的租用成本。
 Based on the above three reasons, uniCloud greatly reduces the rental cost of developers' cloud resources.
@@ -208,6 +218,7 @@ uniCloud最吸引人的是，它将开发效率提升了10倍以上。
 The most attractive thing about uniCloud is that it improves development efficiency by more than 10 times.
 
 在uniCloud推出的3年时间里，uni-app + uniCloud 已经变成了一个庞大的生态。包括非常多的工具、模块。
+In the three years since uniCloud was launched, uni-app + uniCloud has become a huge ecosystem. Including a lot of tools, modules.
 
 开发效率提升10倍，并非某个杀手功能的功劳，而是庞大的生态共同的作用。本章节篇幅较长，请耐心阅读。
 The 10-fold increase in development efficiency is not due to a certain killer function, but the common effect of a huge ecosystem. This chapter is long, please read it with patience.
@@ -215,6 +226,7 @@ The 10-fold increase in development efficiency is not due to a certain killer fu
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/c50d2741-6a47-4dcd-a02c-fdd683fa4ea4.png)
 
 #### 一个故事
+#### a story
 
 2020年初，uniCloud刚发布，新冠肺炎突然来袭，各地涌现大量抗疫项目需求。
 At the beginning of 2020, uniCloud was just released, the new crown pneumonia suddenly hit, and a large number of anti-epidemic projects emerged in various places.
@@ -244,6 +256,7 @@ uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，�
 There is too much content in the uni cloud integrated ecology. Let us take a look at it, summarize and classify it, and explain how to improve the development efficiency in an easy-to-understand way.
 
 开发效率提升，分8个层次：
+Development efficiency is improved, divided into 8 levels:
 1. 提供众多现成轮子，不用自己写代码
 1. Provide many ready-made wheels, no need to write code yourself
 2. 如果没有现成轮子，那么用[schema2code](schema2code.md)代码生成工具，生成数据库的增删改查页面（是直接生成页面，不是生成接口）
@@ -265,6 +278,7 @@ There is too much content in the uni cloud integrated ecology. Let us take a loo
 Let's expand on each layer in turn.
 
 #### 第一层提效：提供众多现成的轮子
+#### The first layer of efficiency improvement: provide many ready-made wheels
 
 这是云端一体生态里最容易理解的价值：大量开源模块。
 This is the most easily understood value in the cloud-integrated ecosystem: a large number of open source modules.
@@ -301,8 +315,11 @@ Listed below are some commonly used wheels
 - uni-sec-check：免费的内容安全审查，防止用户提交违法的文字或图片。[详见](https://ext.dcloud.net.cn/plugin?id=5460)
 - uni-sec-check: Free content security review to prevent users from submitting illegal text or images. [See details](https://ext.dcloud.net.cn/plugin?id=5460)
 - uni-upgrade-center：App升级中心。支持整包升级、wgt热更新；支持直接下载安装包或跳转应用商店。[详见](upgrade-center.md)
+- uni-upgrade-center: uni-upgrade-center. Support package upgrade, wgt hot update; support direct download of installation package or jump to the app store. [See details](upgrade-center.md)
 - uni-push2：云端一体的推送，大幅简化推送开发。[详见](/unipush-v2.md)
+- uni-push2: Cloud-integrated push, which greatly simplifies push development. [See details](/unipush-v2.md)
 - uni-im：开源IM。[详见](uni-im.md)
+- uni-im: open source IM. [See details](uni-im.md)
 
 **2. 社区的优秀插件**
 **2. Excellent plugins from the community**
@@ -313,6 +330,7 @@ Listed below are some commonly used wheels
 - banner管理
 - banner management
 - 留言反馈
+- feedback
 - 日志管理
 - log management
 - 敏感词过滤
@@ -556,3 +574,4 @@ uniCloud是开发界的革命。在HBuilderX、uni-app、uniCloud三位一体的
 uniCloud is a revolution in the development world. With the cooperation of HBuilderX, uni-app, and uniCloud, innovative functional design, rich ecology and wheel support, the development efficiency of developers is more than 10 times that of traditional development.
 
 > 目前uniCloud已发展3年多，活跃服务空间数万，云函数日请求数量过亿。请放心使用。
+> At present, uniCloud has been developed for more than 3 years, with tens of thousands of active service spaces and over 100 million cloud function requests per day. Please use it with confidence.

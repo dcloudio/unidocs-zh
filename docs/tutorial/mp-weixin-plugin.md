@@ -122,6 +122,7 @@ Take `"hello-component": "plugin://myPlugin/hello-component"` as an example, `ke
 }
 
 // 百度小程序 注意 HBuilder 3.1.0 以下部分插件需使用 usingSwanComponents
+// Baidu MiniApp note that some plug-ins below HBuilder 3.1.0 need to use usingSwanComponents
 {
   "path": "pages/index/index",
   "style": {

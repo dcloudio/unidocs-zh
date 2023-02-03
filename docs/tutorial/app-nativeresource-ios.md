@@ -8,8 +8,10 @@ App packaging provides configuration Info.plist and Bundle Resources in iOS nati
 But manifest.json cannot contain all iOS configuration.
 
 在HBuilderX 3.6.5以前，开发者如需使用manifest未封装的配置、或需自定义资源文件（Bundle Resources）内容，只能离线打包或开发[App原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)。
+Before HBuilderX 3.6.5, developers could only package or develop [App native language plug-ins](https://nativesupport.dcloud .net.cn/NativePlugin/README).
 
 HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plist 和 资源文件（Bundle Resources）。
+Starting from HBuilderX3.6.5, it supports directly configuring the Info.plist and resource files (Bundle Resources) of the iOS platform in the application project.
 
 
 ## 配置文件 Info.plist
@@ -68,11 +70,13 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newdir.png)
 
 输入名称 `nativeResources`（注意大小写敏感），确定并创建目录。
+Enter the name `nativeResources` (note that it is case-sensitive), confirm and create a directory.
 
 继续创建“ios”子目录、创建“Resources”二级子目录，结构如下：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/ios/directory.png)
 
 将需要添加的iOS原生资源文件拷贝到Resources目录，云端打包时将会合并到安装包的.app中。
+Copy the iOS native resource files that need to be added to the Resources directory, and they will be merged into the .app of the installation package when packaging in the cloud.
 
 **注意**
 **Notice**

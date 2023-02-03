@@ -112,14 +112,19 @@ uni.getLocation({
   - `2.9.9 版本以上`，优化 uni.getLocation 支持通过 IP 定位。默认通过 GPS 获取，如果获取失败，备选方案是通过 IP 定位获取，需填写三方地图服务平台的秘钥（key）。key配置：manifest.json ---> H5配置 ---> 定位和地图 ---> key。
   - `Version 2.9.9 and above`, optimize uni.getLocation to support location by IP. By default, it is obtained through GPS. If the acquisition fails, the alternative is to obtain it through IP positioning, and the secret key of the third-party map service platform needs to be filled in. key configuration: manifest.json ---> H5 configuration ---> positioning and map ---> key.
 - `App 平台`
+- `App Platform`
   - Android由于谷歌服务被墙，或者手机上没有GMS，想正常定位就需要向高德等三方服务商申请SDK资质，获取AppKey。否则打包后定位就会不准。云打包时需要在manifest的SDK配置中填写 Appkey。在 manifest 可视化界面有详细申请指南，详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)。离线打包自行在原生工程中配置。注意**包名、appkey、证书信息**必须匹配。真机运行可以正常定位，是因为真机运行基座使用了DCloud向高德申请的sdk配置，打包后必须由开发者自己申请。如果手机自带GMS且网络环境可以正常访问google定位服务器，此时无需在 manifest 填写高德定位的 sdk 配置。
+  - Android is blocked by Google services, or there is no GMS on the mobile phone. If you want to locate normally, you need to apply for an SDK qualification from a third-party service provider such as AutoNavi and obtain an AppKey. Otherwise, the positioning will be inaccurate after packaging. When cloud packaging, you need to fill in the Appkey in the SDK configuration of the manifest. There are detailed application guidelines on the manifest visual interface, see: [https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29). Offline packaging is configured in the native project by itself. Note that **package name, appkey, and certificate information** must match. The real machine running can be positioned normally because the real machine running base uses the sdk configuration that DCloud applied to AutoNavi, which must be applied by the developer after packaging. If the mobile phone comes with GMS and the network environment can access the google positioning server normally, there is no need to fill in the sdk configuration of Gaode positioning in the manifest.
   - 注意手机自身要开启定位、同时要给App赋予定位权限。权限判断可参考：[https://uniapp.dcloud.net.cn/api/system/getappauthorizesetting.html](https://uniapp.dcloud.net.cn/api/system/getappauthorizesetting.html)
+  - Note that the mobile phone itself must enable positioning, and at the same time give the App the positioning permission. Permission judgment can refer to: [https://uniapp.dcloud.net.cn/api/system/getappauthorizesetting.html](https://uniapp.dcloud.net.cn/api/system/getappauthorizesetting.html)
   - `<map>` 组件默认为国测局坐标 gcj02，调用 `uni.getLocation` 返回结果传递给 `<map>` 组件时，需指定 type 为 gcj02。
   - The `<map>` component defaults to the coordinate gcj02 of the National Survey Bureau. When calling `uni.getLocation` to return the result to the `<map>` component, you need to specify the type as gcj02.
   - 定位 和 map 是两个东西。通过 `getLocation` 得到位置坐标后，可以在任意map地图上展示，比如定位使用高德，地图使用 google 的 webview 版地图。如果坐标系不同时，注意转换坐标系。
   - Positioning and map are two things. After getting the location coordinates through `getLocation`, it can be displayed on any map map, such as positioning using Gaode, and the map using google's webview version of the map. If the coordinate system is different, pay attention to converting the coordinate system.
   - 如果使用 `web-view` 加载地图，无需在manifest里配地图的sdk配置。
+  - If you use `web-view` to load the map, there is no need to configure the sdk configuration of the map in the manifest.
   - 持续定位方案：iOS端可以申请持续定位权限，[参考](https://ask.dcloud.net.cn/article/12569)。Android如果进程被杀，代码无法执行，可以在插件市场搜索[保活](https://ext.dcloud.net.cn/search?q=%E4%BF%9D%E6%B4%BB&cat1=5)相关原生语言插件避免App被系统杀死。即使使用了原生语言插件保活，也很容易被杀，此时可以使用[unipush](https://uniapp.dcloud.net.cn/unipush-v2.html) ，通过推送消息提示用户激活App
+  - Continuous positioning solution: iOS can apply for continuous positioning permission, [reference](https://ask.dcloud.net.cn/article/12569). If the Android process is killed and the code cannot be executed, you can search for [keep alive](https://ext.dcloud.net.cn/search?q=%E4%BF%9D%E6%B4%BB&cat1=5 ) related native language plug-ins to prevent the App from being killed by the system. Even if the original language plug-in is used to keep alive, it is easy to be killed. At this time, [unipush](https://uniapp.dcloud.net.cn/unipush-v2.html) can be used to prompt the user to activate the App through a push message
   - `3.3.0 版本以上` 优化系统定位模块，可不使用三方定位SDK的进行高精度定位，具体参考：[系统定位](app/geolocation)。
   - `Version 3.3.0 and above` has optimized the system positioning module, and can perform high-precision positioning without using the three-way positioning SDK. For details, refer to: [System Positioning](app/geolocation).
 - `小程序平台`
@@ -235,5 +240,7 @@ uni.chooseLocation({
   * 谷歌地图：按量收费，每月可获得一些赠送金额。
   * Google Maps: Pay-as-you-go with some monthly credits.
   * 小程序平台内置地图：无需关心地图服务商，免费使用，无配额限制。
+  *The built-in map of the MiniApp platform: no need to care about the map service provider, free to use, no quota limit.
 
 DCloud为开发者争取了福利，可打折获取高德的商业服务，如有需求请发邮件到bd@dcloud.io。
+DCloud strives for benefits for developers, and can obtain Gaode's commercial services at a discount. If you have any needs, please send an email to bd@dcloud.io.

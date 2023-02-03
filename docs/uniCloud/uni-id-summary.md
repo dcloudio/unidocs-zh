@@ -42,6 +42,7 @@ In the plugin market, every type of template plugin can be found, but if they ar
 All uniCloud standard applications are based on `uni-id`. The `uni-id-common` common module is automatically built into each service space.
 
 有了统一的账户规范，并且围绕这套账户规范，有各种各样插件，那么开发者可以随意整合这些插件，让数据互通。
+With a unified account specification and various plug-ins around this set of account specifications, developers can integrate these plug-ins at will to allow data interoperability.
 
 规范，还可以让上下游充分协同。插件市场会出现各种数据迁移插件，比如把从discuz里把用户迁移到`uni-id`中的插件，相信围绕这套规范的产业链会非常活跃。
 Specifications can also allow the upstream and downstream to fully cooperate. There will be various data migration plug-ins in the plug-in market, such as plug-ins that migrate users from discuz to `uni-id`. I believe that the industry chain around this specification will be very active.
@@ -285,7 +286,9 @@ Configuration item:
 + `passwordErrorLimit`密码错误重试次数，分ip记录密码错误次数，达到重试次数之后等待`passwordErrorRetryTime`时间之后才可以重试
 + `passwordErrorLimit` the number of retries for password errors, record the number of password errors by ip, and wait for `passwordErrorRetryTime` time before retrying after reaching the number of retries
 + `passwordErrorRetryTime`单位为秒
++ `passwordErrorRetryTime` in seconds
 + 如果使用`sendSmsCode`接口发送短信需要前往[https://dev.dcloud.net.cn/pages/sms/base](https://dev.dcloud.net.cn/pages/sms/base)充值短信额度，配置`config.json`的`service`字段，字段说明见下方示例
++ If you use the `sendSmsCode` interface to send SMS, you need to go to [https://dev.dcloud.net.cn/pages/sms/base](https://dev.dcloud.net.cn/pages/sms/base) to recharge SMS quota, configure the `service` field of `config.json`, see the example below for field description
 + 另外可以按照客户端平台进行不同的配置，参考下面示例
 + In addition, different configurations can be made according to the client platform, refer to the following example
 
@@ -456,8 +459,11 @@ Front-end pages within uni-id-co and uni-id-pages both support these four built-
 |Login method |Configuration and access method |
 |--												|--																																																																	|
 |用户名、手机号、邮箱+密码|配置`passwordSecret`即可																																																						|
+|Username, mobile phone number, email address + password|configure `passwordSecret` to be |
 |手机号+验证码						|配置`service.sms`，在开发者中心短信服务内获取配置信息：[短信服务](https://dev.dcloud.net.cn/pages/sms/base)											|
+|Mobile phone number + verification code |Configure `service.sms`, and get the configuration information in the developer center SMS service: [SMS service](https://dev.dcloud.net.cn/pages/sms/base) |
 |手机号一键登录						|配置`service.univerify`，在开发者中心一键登录服务内获取：[一键登录](https://dev.dcloud.net.cn/pages/uniLogin/index)							|
+|One-key login with mobile phone number |Configure `service.univerify` and get it in the one-key login service in the developer center: [One-key login](https://dev.dcloud.net.cn/pages/uniLogin/index) |
 |微信小程序登录						|配置`mp-weixin.oauth.weixin`，在微信公众平台获取：[微信公众平台](https://mp.weixin.qq.com/)																				|
 |WeChat applet login |Configure `mp-weixin.oauth.weixin` and obtain it on the WeChat public platform: [WeChat public platform](https://mp.weixin.qq.com/) |
 |微信公众号登录						|配置`web.oauth.weixin-h5`，在微信公众平台获取：[微信公众平台](https://mp.weixin.qq.com/)																						|
@@ -731,6 +737,7 @@ function hasPermission(token, permission) {
 ```
 
 注意： **在uniCloud admin中，封装了可视化的用户、权限、角色的管理，新增删除修改均支持**，无需自己维护。[详见](admin.md#mutiladmin)
+Note: **In uniCloud admin, the visual management of users, permissions, and roles is encapsulated. New additions, deletions, and modifications are all supported**, and there is no need to maintain it yourself. [See details](admin.md#mutiladmin)
 
 ## uni-id数据表@db-schema
 ## uni-id data table @db-schema
@@ -1095,6 +1102,7 @@ Corresponds to the type field of the `uni-id-log` table
 |bind-alipay|Bind Alipay account |
 
 ### 手机、邮箱验证码使用场景@sms-scene
+### Mobile phone, email verification code use scene @sms-scene
 
 对应`opendb-verify-codes`表短信、邮箱验证码相关记录的的scene字段
 Corresponds to the scene field of the `opendb-verify-codes` table SMS, email verification code related records
@@ -1111,7 +1119,9 @@ Corresponds to the scene field of the `opendb-verify-codes` table SMS, email ver
 |login-by-email		|邮箱验证码登录			|
 |login-by-email |Email verification code login |
 |reset-pwd-by-email	|邮箱验证码重置密码		|
+| reset-pwd-by-email | Email verification code reset password |
 |set-pwd-by-sms	|手机验证码设置登录密码		|
+| set-pwd-by-sms | Mobile phone verification code set login password |
 
 
 ### 图形验证码使用场景@captcha-scene
@@ -1124,6 +1134,7 @@ Corresponds to the scene field of the record related to the graphic verification
 |value |description |
 |--					|--							|
 |register    |用户名密码注册  |
+| register |Username and password registration |
 |login-by-pwd		|用户名/手机/邮箱+密码登录	|
 |login-by-pwd |Username/Mobile/Email+Password Login |
 |login-by-sms		|短信验证码登录				|
@@ -1137,7 +1148,9 @@ Corresponds to the scene field of the record related to the graphic verification
 |send-email-code	|发送邮箱验证码				|
 |send-email-code |Send Email Verification Code |
 |bind-mobile-by-sms	|短信验证码绑定手机号		|
+| bind-mobile-by-sms | SMS verification code binding mobile phone number |
 |set-pwd-by-sms	|手机验证码设置登录密码		|
+| set-pwd-by-sms | Mobile phone verification code set login password |
 
 ## uniIdRouter自动路由@uni-id-router
 ## uniIdRouter auto-route @uni-id-router
@@ -1317,38 +1330,70 @@ To determine whether the user is logged in on the page, use API[uniCloud.getCurr
 ## Cloud error code @errcode
 
 |错误码errCode														|错误信息errMsg												|说明																									|
+|Error Code errCode |Error Message errMsg |Description |
 |----																			|----																	|----																									|
 |0（数字）																|成功																	|-																										|
+| 0 (Number) | Success |- |
 |uni-id-token-expired											|登陆状态失效，token已过期						|-																										|
+| uni-id-token-expired | Login status invalid, token has expired |- |
 |uni-id-check-token-failed								|token校验未通过											|-																										|
+| uni-id-check-token-failed | token verification failed |- |
 |uni-id-account-exists										|账户已存在														|-																										|
+| uni-id-account-exists | Account already exists |- |
 |uni-id-account-not-exists								|账户不存在														|-																										|
+| uni-id-account-not-exists | Account does not exist |- |
 |uni-id-account-not-exists-in-current-app| 匹配到的用户不可在当前应用登录											|
+| uni-id-account-not-exists-in-current-app| The matched user cannot log in in the current app |
 |uni-id-account-conflict									|用户账号冲突													|可能会由开发者手动更新数据库导致，正常情况下不应出现	|
+| uni-id-account-conflict |User account conflict |It may be caused by the developer manually updating the database, and it should not appear under normal circumstances |
 |uni-id-account-banned										|此账号已封禁													|-																										|
+| uni-id-account-banned | This account has been banned |- |
 |uni-id-account-auditing									|此账号正在审核中											|-																										|
+| uni-id-account-auditing | This account is being audited |- |
 |uni-id-account-audit-failed							|此账号审核失败												|-																										|
+| uni-id-account-audit-failed | This account audit failed |- |
 |uni-id-account-closed										|此账号已注销													|-																										|
+| uni-id-account-closed | This account has been canceled |- |
 |uni-id-captcha-required									|请输入图形验证码											|-																										|
+| uni-id-captcha-required | Please enter the graphic captcha |- |
 |uni-id-password-error										|用户名或密码错误											|-																										|
+| uni-id-password-error | Incorrect username or password |- |
 |uni-id-invalid-username									|用户名不合法													|-																										|
+| uni-id-invalid-username | Invalid username |- |
 |uni-id-invalid-password									|密码不合法														|-																										|
+| uni-id-invalid-password | Invalid password |- |
 |uni-id-invalid-mobile										|手机号码不合法												|-																										|
+| uni-id-invalid-mobile | Invalid mobile phone number |- |
 |uni-id-invalid-email											|邮箱不合法														|-																										|
+| uni-id-invalid-email | Invalid email address |- |
 |uni-id-invalid-nickname									|昵称不合法														|-																										|
+| uni-id-invalid-nickname | Invalid nickname |- |
 |uni-id-invalid-param											|参数错误															|-																										|
+| uni-id-invalid-param | Parameter error |- |
 |uni-id-param-required										|缺少参数															|-																										|
+| uni-id-param-required | missing parameter |- |
 |uni-id-get-third-party-account-failed		|获取第三方账号失败										|-																										|
+| uni-id-get-third-party-account-failed | Failed to get third party account |- |
 |uni-id-get-third-party-user-info-failed	|获取第三方用户信息失败								|-																										|
+| uni-id-get-third-party-user-info-failed | Failed to get third party user info |- |
 |uni-id-mobile-verify-code-error					|手机验证码错误或已过期								|-																										|
+| uni-id-mobile-verify-code-error | Mobile phone verification code error or expired |- |
 |uni-id-email-verify-code-error						|邮箱验证码错误或已过期								|-																										|
+| uni-id-email-verify-code-error | Email verification code is wrong or expired |- |
 |uni-id-admin-exists											|超级管理员已存在											|-																										|
+| uni-id-admin-exists | Super administrator already exists |- |
 |uni-id-permission-error									|权限错误															|-																										|
+| uni-id-permission-error | permission error |- |
 |uni-id-system-error											|系统错误															|-																										|
+| uni-id-system-error | system error |- |
 |uni-id-set-invite-code-failed						|设置邀请码失败												|-																										|
+| uni-id-set-invite-code-failed | Failed to set invite code |- |
 |uni-id-invalid-invite-code								|邀请码不可用													|-																										|
+| uni-id-invalid-invite-code | Invite code invalid |- |
 |uni-id-change-inviter-forbidden					|禁止修改邀请人												|-																										|
+| uni-id-change-inviter-forbidden | Forbidden to modify the inviter |- |
 |uni-id-bind-conflict											|此账号（微信、QQ、手机号等）已被绑定	|-																										|
+| uni-id-bind-conflict | This account (WeChat, QQ, mobile phone number, etc.) has been bound |- |
 
 ## 多个应用复用相同uni-id-user表
 ## Multiple applications reuse the same uni-id-user table
@@ -1756,10 +1801,13 @@ module.exports = {
 ```
 
 ### 密码安全@password-safe
+### Password Safe @password-safe
 
 uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-id-pages@1.0.28` 版本起新增了 `hmac-sha256` 加密算法，开发者可以自己需求选择不同的算法，推荐使用 `hmac-sha256`算法。
+By default, uni-id uses the `hmac-sha1` encryption algorithm to encrypt the password. Since the `uni-id-pages@1.0.28` version, the `hmac-sha256` encryption algorithm has been added, and developers can choose different ones according to their needs. algorithm, it is recommended to use `hmac-sha256` algorithm.
 
 在 `uni-config-center/uni-id/config.json` 中配置， [uni-id/config.json说明](uni-id-summary.html#config)
+Configure in `uni-config-center/uni-id/config.json`, [uni-id/config.json description](uni-id-summary.html#config)
 
 ```json
 {
@@ -1773,12 +1821,17 @@ uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-
 ```
 
 修改 passwordSecret [参考](uni-id-summary.html#modifysecret)
+Modify passwordSecret [reference](uni-id-summary.html#modifysecret)
 
 #### 升级 hmac-256 加密算法指南
+#### Upgrade hmac-256 encryption algorithm guide
 适用于 `uni-id-pages@1.0.28` 以下版本，
+For versions below `uni-id-pages@1.0.28`,
 首先确认 `uni-config-center/uni-id/config.json` 中 `passwordSecret` 字段类型
+First confirm the `passwordSecret` field type in `uni-config-center/uni-id/config.json`
 
 `passwordSecret` 字段可能是`string`或者`array`类型，示例如下：
+The `passwordSecret` field may be of `string` or `array` type, examples are as follows:
 ```json
 // 1 string
 {
@@ -1797,6 +1850,7 @@ uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-
 ```
 
 如果 `passwordSecret` 是字符串类型，修改为数组类型后，在 `passwordSecret` 中添加 `hmac-256` 算法，同时 `version` 加 1
+If `passwordSecret` is a string type, modify it to an array type, add `hmac-256` algorithm to `passwordSecret`, and add 1 to `version`
 ```json
 {
   "passwordSecret": [
@@ -1812,10 +1866,13 @@ uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-
 ```
 
 #### 自定义加密算法@custom-password-encrypt
+#### Custom encryption algorithm @custom-password-encrypt
 
 如果内置的加密算法无法满足业务需求，可以自定义加密规则。
+If the built-in encryption algorithm cannot meet business requirements, you can customize the encryption rules.
 
 首先在 `uni-config-center/uni-id/config.json` 中增加自定义密码类型 `custom`
+First add custom password type `custom` in `uni-config-center/uni-id/config.json`
 
 ```json
 {
@@ -1837,6 +1894,7 @@ uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-
 ```
 
 在 `uni-config-center/uni-id/custom-password.js`文件（没有请手动创建）中创建加密与验证方法即可。
+Just create encryption and authentication methods in the `uni-config-center/uni-id/custom-password.js` file (if not, please create it manually).
 
 ```javascript
 module.exports = {
@@ -1849,6 +1907,7 @@ module.exports = {
      */
     encryptPassword: function ({password, clientInfo, passwordSecret}) {
         // 必须按照此格式返回
+        // Must return in this format
         return {
             passwordHash: password,
             version: passwordSecret.version
@@ -1869,14 +1928,21 @@ module.exports = {
 ```
 
 ### 将用户迁移至 uni-id@move-users-to-uni-id
+### Move users to uni-id@move-users-to-uni-id
 如果你想将自己系统内的用户导入至 uni-id，请按照以下步骤操作
+If you want to import users in your own system to uni-id, please follow the steps below
 
 #### 1. 准备自定义用户密码函数
+#### 1. Prepare custom user password function
 uni-id 默认使用了 `hmac-256` 密码加密算法，可能与你的加密算法不同，所以在迁移前需要自定义你的密码加密函数。
+uni-id uses the `hmac-256` password encryption algorithm by default, which may be different from your encryption algorithm, so you need to customize your password encryption function before migration.
 当用户第一次在 uni-id 中进行登录时，会先使用自定义验证密码(`verifyPassword`)函数进行验证，这样用户用之前的密码依旧能够登录，不需要用户重置密码。
+When the user logs in in uni-id for the first time, it will first use the custom verification password (`verifyPassword`) function to verify, so that the user can still log in with the previous password, and the user does not need to reset the password.
 在用户第一次登录成功后用户密码的加密算法规则将升级为配置文件中最新的算法规则。
+After the user successfully logs in for the first time, the encryption algorithm rule of the user password will be upgraded to the latest algorithm rule in the configuration file.
 
 首先在`uni-config-center/uni-id/config.json`文件中创建自定义类型的`paswordSecret`，如下：
+First create a custom type of `paswordSecret` in the `uni-config-center/uni-id/config.json` file, as follows:
 ```json
 {
   "passwordSecret": [
@@ -1889,6 +1955,7 @@ uni-id 默认使用了 `hmac-256` 密码加密算法，可能与你的加密算�
 ```
 
 在 `uni-config-center/uni-id/custom-password.js` 文件（不存在请手动创建）中创建 `verifyPassword` 函数验证之前用户密码。
+Create the `verifyPassword` function in the `uni-config-center/uni-id/custom-password.js` file (if it does not exist, please create it manually) to verify the previous user password.
 ```javascript
 module.exports = {
     /**
@@ -1906,12 +1973,16 @@ module.exports = {
 ```
 
 **注意**
+**Notice**
 
 如果配置文件中`passwordSecret`最新版本的 type 是 `custom`，那么所有用户的加密及校验都会使用自定义算法规则。
+If the type of the latest version of `passwordSecret` in the configuration file is `custom`, then the encryption and verification of all users will use custom algorithm rules.
 
 如果仅是为了迁移使用，请另外在 `passwordSecret` 中添加 `hmac-sha256` 类型算法，用于其他用户的加密与校验。
+If it is only for migration, please add `hmac-sha256` type algorithm in `passwordSecret` for encryption and verification of other users.
 
 这样只有之前的用户才会使用 `custom` 自定义规则，其他用户或者迁移后的新注册的用户会使用 `hmac-sha256` 算法规则。
+In this way, only the previous users will use `custom` custom rules, and other users or newly registered users after migration will use `hmac-sha256` algorithm rules.
 
 ```json
 {
@@ -1929,92 +2000,161 @@ module.exports = {
 ```
 
 #### 2. 导出用户数据
+#### 2. Export user data
 > 导出文件大小最大不超过 50MB，超过 50MB 请导出多个json文件
+> The maximum export file size does not exceed 50MB, if it exceeds 50MB, please export multiple json files
 > 
 > 如果存在表A关联表B的字段的场景需要保证关联字段在A、B内是一致的（特别需要注意的是各种与_id关联的字段）
+> If there is a scene where table A is associated with table B fields, it is necessary to ensure that the associated fields are consistent in A and B (special attention should be paid to various fields associated with _id)
 > 
 > [参考从文件中导入数据](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#import)
+> [Refer to importing data from a file](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#import)
 
 请将用户数据导出为json格式文件，注意json文件不是标准的json文件，请按照以下格式每行是一个json格式的用户记录导出：
+Please export the user data as a json file. Note that the json file is not a standard json file. Please follow the format below to export a user record in json format per line:
 ```json
 {"user_id":0,"nickname":"张三","age":25,"password":"123456"}
 {"user_id":1,"nickname":"李四","age":18,"password":"000000"}
 ```
 #### 3. 处理用户数据
+#### 3. Processing user data
 > 在 uni-id 中 userId 是系统自动创建的 _id，如果想保留之前用户的userId，可以将用户的 userId 映射为 _id，如果不保留 userId 建议删除 userId 字段，在数据导入中会创建 _id。
+> In uni-id, userId is the _id automatically created by the system. If you want to keep the userId of the previous user, you can map the userId to _id. If you don’t want to keep the userId, it is recommended to delete the userId field, and _id will be created in the data import .
 > 
 > 注意`password_secret_version`字段，字段值需要修改为自定义密码类型的 `version`
+> Pay attention to the `password_secret_version` field, the field value needs to be changed to the `version` of the custom password type
 
 导入到 uni-id 之前，需要处理用户数据与 uni-id 字段的映射关系，见下方 uni-id 字段及说明：
+Before importing to uni-id, you need to process the mapping relationship between user data and uni-id field, see the uni-id field and description below:
 
 | 字段                      | 类型        | 默认值 | 说明                              |
+| Field | Type | Default | Description |
 |-------------------------|-----------|-----|---------------------------------|
 | _id                     | -         | -   | 存储文档 ID（用户 ID），系统自动生成           |
+| _id | - | - | Storage document ID (user ID), automatically generated by the system |
 | ali_openid              | string    | -   | 支付宝平台openid                     |
+| ali_openid | string | - | Alipay platform openid |
 | apple_openid            | string    | -   | 苹果登录openid                      |
+| apple_openid | string | - | Apple login openid |
 | avatar                  | string    | -   | 头像地址 （完整路径）                     |
+| avatar | string | - | Avatar address (full path) |
 | avatar_file             | file      | -   | 用file类型方便使用uni-file-picker组件    |
+| avatar_file | file | - | Use the file type to facilitate the use of uni-file-picker components |
 | comment                 | string    | -   | 备注                              |
+| comment | string | - | Remarks |
 | dcloud_appid            | array     | -   | 允许登录的客户端的appid列表                |
+| dcloud_appid | array | - | list of client appids allowed to log in |
 | department_id           | array     | -   | 部门ID                            |
+| department_id | array | - | department ID |
 | email                   | string    | -   | 邮箱地址                            |
+| email | string | - | email address |
 | email_confirmed         | int       | 0   | 邮箱验证状态：0 未验证 1 已验证              |
+| email_confirmed | int | 0 | Email verification status: 0 unverified 1 verified |
 | gender                  | int       | 0   | 用户性别：0 未知 1 男性 2 女性             |
+| gender | int | 0 | User gender: 0 unknown 1 male 2 female |
 | invite_time             | timestamp | -   | 受邀时间                            |
+| invite_time | timestamp | - | invitation time |
 | inviter_uid             | array     | -   | 用户全部上级邀请者                       |
+| inviter_uid | array | - | all inviters of the user |
 | last_login_date         | timestamp | -   | 最后登录时间                          |
+| last_login_date | timestamp | - | Last login time |
 | last_login_ip           | string    | -   | 最后登录时 IP 地址                     |
+| last_login_ip | string | - | Last login IP address |
 | mobile                  | string    | -   | 手机号码                            |
+| mobile | string | - | mobile phone number |
 | mobile_confirmed        | int       | 0   | 手机号验证状态：0 未验证 1 已验证             |
+| mobile_confirmed | int | 0 | mobile phone number verification status: 0 unverified 1 verified |
 | my_invite_code          | string    | -   | 用户自身邀请码                         |
+| my_invite_code | string | - | user's own invitation code |
 | nickname                | string    | -   | 用户昵称                            |
+| nickname | string | - | user nickname |
 | password                | password  | -   | 密码，加密存储                         |
+| password | password | - | password, encrypted storage |
 | password_secret_version | int       | -   | 密码使用的passwordSecret版本           |
+| password_secret_version | int | - | passwordSecret version used for password |
 | realname_auth           | object    | -   | 实名认证信息；见下方 realname_auth 结构     |
+| realname_auth | object | - | real name authentication information; see the realname_auth structure below |
 | register_date           | timestamp | -   | 注册时间                            |
+| register_date | timestamp | - | registration time |
 | register_ip             | string    | -   | 注册时 IP 地址                       |
+| register_ip | string | - | IP address when registering |
 | role                    | array     | -   | 用户角色                            |
+| role | array | - | user role |
 | score                   | int       | -   | 用户积分，积分变更记录可参考：uni-id-scores表定义 |
+| score | int | - | User points, point change records can refer to: uni-id-scores table definition |
 | status                  | int       | -   | 用户状态：0 正常 1 禁用 2 审核中 3 审核拒绝     |
+| status | int | - | user status: 0 normal 1 disabled 2 reviewing 3 reviewing rejected |
 | token                   | array     | -   | 用户token                         |
+| token | array | - | user token |
 | username                | string    | -   | 用户名，不允许重复                       |
+| username | string | - | username, duplicates are not allowed |
 | wx_openid               | object    | -   | 微信各个平台openid；见下方 wx_openid 结构   |
+| wx_openid | object | - | WeChat platform openid; see wx_openid structure below |
 | wx_unionid              | string    | -   | 微信unionid                       |
+| wx_unionid | string | - | WeChat unionid |
 | qq_openid               | object    | -   | QQ各个平台openid；见下方 qq_openid 结构   |
 | qq_unionid              | string    | -   | QQ unionid                      |
 | third_party             | object    | -   | 三方平台凭证                          |
+| third_party | object | - | third-party platform credentials |
 
 **realname_auth 结构**
+**realname_auth structure**
 | 字段| 类型| 默认值 | 说明|
+| Field | Type | Default | Description |
 |---|---|---|---|
 |auth_date|timestamp|-|认证通过时间|
+|auth_date| timestamp|-|authentication passed time|
 |auth_status|int|0|认证状态：0 未认证 1 等待认证 2 认证通过 3 认证失败|
+| auth_status| int| 0|authentication status: 0 unauthenticated 1 waiting for authentication 2 authentication passed 3 authentication failed|
 |contact_email|string|-|联系人邮箱|
+| contact_email| string|-|contact email|
 |contact_mobile|string|-|联系人手机号码|
+| contact_mobile| string|-|contact phone number|
 |contact_person|string|-|联系人姓名|
+|contact_person| string|-|contact name|
 |id_card_back|string|-|身份证反面照 URL|
+| id_card_back| string|-| ID card back photo URL|
 |id_card_front|string|-|身份证正面照 URL|
+| id_card_front| string|-|ID card front photo URL|
 |identity|string|-|身份证号码/营业执照号码|
+| identity| string|-|ID card number/business license number|
 |in_hand|string|-|手持身份证照片 URL|
+| in_hand| string|-|hand-held ID photo URL|
 |license|string|-|营业执照 URL|
+| license| string|-|Business license URL|
 |real_name|string|-|真实姓名/企业名称|
+| real_name| string|-|real name/company name|
 |type|int|-|用户类型：0 个人用户 1 企业用户|
+| type| int|-|User type: 0 individual user 1 enterprise user|
 
 **wx_openid 结构**
+**wx_openid structure**
 | 字段                      | 类型        | 默认值 | 说明                              |
+| Field | Type | Default | Description |
 |---|---|---|---|
 |app|string|-|app平台微信openid|
+| app| string|-| app platform WeChat openid|
 |mp|string|-|微信小程序平台openid|
+| mp| string|-|WeChat MiniApp platform openid|
 |h5|string|-|微信公众号登录openid|
+| h5| string|-|WeChat official account login openid|
 |web|string|-|PC页面扫码登录openid|
+| web| string|-| PC page scan code login openid|
 
 **qq_openid 结构**
+**qq_openid structure**
 | 字段                      | 类型        | 默认值 | 说明                              |
+| Field | Type | Default | Description |
 |---|---|---|---|
 |app|string|-|app平台QQ openid|
+| app| string|-| app platform QQ openid|
 |mp|string|-|QQ小程序平台openid|
+| mp| string|-| QQ MiniApp platform openid|
 
 #### 4. 导入数据
+#### 4. Import data
 在 [uniCloud 控制台](https://unicloud.dcloud.net.cn/)，找到 uni-id 所在的服务空间，在云数据库中选中 `uni-id-users` 表，点击导入按钮，上传用户数据json文件即可。
+In [uniCloud console](https://unicloud.dcloud.net.cn/), find the service space where uni-id is located, select the `uni-id-users` table in the cloud database, click the import button, and upload users The data json file is fine.
 
 [从文件中导入数据说明](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#import)
+[Instructions for importing data from a file](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#import)

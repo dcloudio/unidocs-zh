@@ -43,6 +43,7 @@ With unipush, developers should no longer use other push schemes. However, we fo
 - Common Misunderstanding 1: "Is uniPush's professionalism comparable to professional personal push, Aurora and other services?"
 
   答：uniPush 是由个推将其本来收费的 push 产品，其中重要VIP部分功能免费提供给了DCloud的开发者。它与个推 vip push 的只有 2 个区别：
+  Answer: uniPush is a push product that was originally charged by a pusher, and some important VIP functions are provided to DCloud developers for free. There are only 2 differences between it and vip push:
 
   - 免费
   - free
@@ -730,6 +731,7 @@ For detailed tutorials, see: [https://ask.dcloud.net.cn/article/37356](https://a
 If the application can receive push messages online, but cannot receive push messages using the vendor channel when offline, please refer to **UniPush vendor channel FAQ [https://ask.dcloud.net.cn/article/36611](https:/ /ask.dcloud.net.cn/article/36611)**
 
 **最后也可以登录[个推官网](https://www.getui.com/)，或使用微信扫描下面二维码，进行技术咨询**  
+**Finally, you can also log in to [Getui Official Website](https://www.getui.com/), or use WeChat to scan the QR code below for technical consultation**
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/getui-service.jpg)
 
 

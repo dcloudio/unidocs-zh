@@ -33,15 +33,24 @@ Interstitial ad components are composed of client-side native image, text, and v
 **Property description**
 
 |属性名																			|类型													|默认值		|说明																																									|平台差异	|
+|Property Name |Type |Default Value |Description |Platform Differences |
 |:-																					|:-														|:-				|:-																																										|:-				|
 |adpid																			|String&#124;Number&#124;Array|					|广告位id，如果传入的是数组，会从索引0开始请求失败后继续下一个，适用于已配置底价的逻辑|					|
+| adpid | String&#124;Number&#124;Array| |Ad slot id, if the input is an array, it will start from index 0 and continue to the next one after the request fails, which is applicable to the logic of the configured reserve price| |
 |preload																		|Boolean											|true			|页面就绪后加载广告数据																																|					|
+| preload | Boolean | true | load ad data when the page is ready | |
 |loadnext																		|Boolean											|false		|自动加载下一条广告数据																																|					|
+| loadnext | Boolean | false |Automatically load the next ad data | |
 |options																		|Object												|					|透传到作用域插槽																																			|					|
+| options | Object | | Transparently transmitted to the scope slot | |
 |v-slot:default="{loading, error, options}"	|															|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息																	|					|
+| v-slot:default="{loading, error, options}" | | |The scope slot can get the loading status and loading error information inside the component | |
 |@load																			|EventHandle									|加载事件	|微信小程序暂不支持																																		|					|
+|@load | EventHandle | Load event | Wechat MiniApp is not supported | |
 |@close																			|EventHandle									|关闭事件	|微信小程序暂不支持																																		|					|
+|@close | EventHandle |Close event |WeChat MiniApp not supported | |
 |@error																			|EventHandle									|错误事件	|微信小程序暂不支持																																		|					|
+|@error | EventHandle | Error event | Wechat MiniApp is not supported | |
 
 **方法说明**
 **Method Description**
@@ -56,6 +65,7 @@ Interstitial ad components are composed of client-side native image, text, and v
 
 
 HBuilder 基座的测试广告位 `adpid` 为 `1111111113`，微信小程序暂不提供测试广告位
+The test ad slot `adpid` of the HBuilder base is `1111111113`, and the WeChat MiniApp not provide a test ad slot for now
 
 
 简单示例
@@ -110,11 +120,16 @@ export default {
 ```
 
 **注意**
+**Notice**
 
 - 微信小程序插屏广告触发频率限制：
+- WeChat MiniApp Interstitial Ads trigger frequency limit:
   - 小程序启动一定时间内不允许展示插屏广告
+  - Interstitial Ads are not allowed to be displayed within a certain period of time when the MiniApp is started
   - 距离小程序插屏广告或者激励视频广告上次播放时间间隔不足，不允许展示插屏广告
+  - Interstitial ads are not allowed to be displayed Interstitial Ads the time interval between the last playback of the MiniApp Interstitial Ads or rewarded Rewarded Ads is not enough
   - 当前正在播放激励视频广告或者插屏广告，不允许再次展示插屏广告
+  - Rewarded Rewarded Ads or Interstitial Ads are currently playing, and interstitial Interstitial Ads are not allowed to be displayed again
 
 
 

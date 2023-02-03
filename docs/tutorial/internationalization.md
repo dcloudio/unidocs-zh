@@ -18,10 +18,13 @@ Please follow the steps below to complete account registration:
 1. 点击 HBuilderX 左下角的“未登录”文字，打开登录窗口
 1. Click the "Not logged in" text in the lower left corner of HBuilderX to open the login window
 2. 选择“Global”，点击下方的“No account?Sign up”连接
+2. Select "Global" and click the "No account? Sign up" link below
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-01.png)
 3. 在打开的浏览器中，输入用户名、邮箱、密码等信息
+3. In the opened browser, enter the user name, email, password and other information
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-02.png)
 4. 注册成功的话，会提示已发送激活邮箱
+4. If the registration is successful, it will prompt that the activation email has been sent
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-03.png)
 5. 登录你的邮箱，收取激活邮件，并点击其中的链接，完成账号激活
 5. Log in to your email, receive the activation email, and click the link to complete the account activation

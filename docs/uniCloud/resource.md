@@ -25,6 +25,7 @@ Integrate check-in, lottery, gold coin points and a variety of fun incentive gam
 
 
 - [鲸鱼解忧馆](https://web-assets.dcloud.net.cn/unidoc/zh/123.png) 一个通过交流与诉说以消除烦恼的平台。
+- [Whale Worry-Relief Museum](https://web-assets.dcloud.net.cn/unidoc/zh/123.png) A platform for eliminating worries through communication and telling.
 我们的愿望是每个用户在这里写下烦恼后能够得到解答与回应，并且找到与自己拥有同样烦恼的人和群体。
 Our wish is that every user can get answers and responses after writing their troubles here, and find people and groups who have the same troubles as themselves.
 也许回应不会那么迅速，但总归会得到暖心的回复。答案难道不是一种值得期待的事情吗？
@@ -114,8 +115,10 @@ Main functions of the game: Players can directly obtain cash rewards by guessing
 - Liuzhou People's Hospital Epidemiological Survey Form: Small Program for Survey Registration. Wechat applet search "Liuzhou People's Hospital Epidemiological Questionnaire"
 
 - 安心记待办：极简风手机应用。日程管理App，每日心情记录，安心习惯养成。[iOS App](https://apps.apple.com/cn/app/id1641634853)
+- Remember to-do with peace of mind: a minimalist mobile phone application. Schedule management app, daily mood record, and peace of mind to develop habits. [iOS App](https://apps.apple.com/cn/app/id1641634853)
 <a href="https://apps.apple.com/cn/app/id1641634853" target="_blank">
   <img width="600" src="https://web-assets.dcloud.net.cn/unidoc/zh/resource-anxinji-todo.png">
 </a>
 
 更多uniClouid项目和插件，见**插件市场**：[https://ext.dcloud.net.cn/?cat1=7](https://ext.dcloud.net.cn/?cat1=7)
+For more uniClouid projects and plug-ins, see **Plug-in Market**: [https://ext.dcloud.net.cn/?cat1=7](https://ext.dcloud.net.cn/?cat1=7 )

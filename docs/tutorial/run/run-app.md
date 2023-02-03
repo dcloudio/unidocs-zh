@@ -6,21 +6,26 @@ Due to the large differences in mobile phones, HBuilder does not provide an App 
 HBuilder支持adb协议，在HBuilder运行的电脑上，可以使用usb线连接Android设备，也可以使用安装在电脑上的Android模拟器（包括google官方模拟器，三方模拟器如“雷电”、“夜神”等）  
 HBuilder supports the adb protocol. On the computer that HBuilder runs, you can use the usb cable to connect to the Android device, or you can use the Android emulator installed on the computer (including the official Google emulator, and third-party emulators such as "Thunderbolt" and "Night God"). Wait)  
 - iOS平台  
+- iOS platform
 HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接iPhone或iPad；如果是mac电脑，则可以连接XCode自带的iOS模拟器。如果是arm架构cpu，还可以直接启动真机运行基座。   
+HBuilder supports the itunes protocol. On the computer running HBuilder, use a usb cable to connect to iPhone or iPad; if it is a mac computer, you can connect to the iOS simulator that comes with XCode. If it is an arm architecture cpu, you can also directly start the real machine to run the base.
 
 真机运行的目的，是为了实现代码修改的热刷新，避免打包才能看到效果。在HBuilder中编辑代码，在手机上实时看到修改效果，并且可以在HBuilder控制台看到日志。
 The purpose of running the real machine is to realize the hot refresh of code modification and avoid packaging to see the effect. Edit the code in HBuilder, see the modification effect in real time on the mobile phone, and you can see the log in the HBuilder console.
 
 
 ## 运行入口
+## Run entry
 通过HBuilder顶部运行菜单、或工具栏运行按钮、或快捷键，均可激活运行入口。
 The run entry can be activated through the run menu at the top of HBuilder, the run button on the toolbar, or a shortcut key.
 
 1. HBuilder顶部运行菜单  
+1. HBuilder top run menu
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/menurunapp.png" style="zoom: 50%;" />
 
 2. 工具栏运行按钮
+2. Toolbar run button
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/toolbarrunmenuapp.png" style="zoom: 50%;" />
 
@@ -39,6 +44,7 @@ Actually activates the toolbar run button. You can continue to match the number 
 
 
 ## 连接设备
+## connect device
 
 点击运行到iOS或Android设备时，会弹出选择界面，需选择要连接的手机设备或模拟器。  
 When you click Run to iOS or Android device, a selection interface will pop up, and you need to select the mobile device or emulator to be connected.
@@ -52,6 +58,7 @@ But a device can only run one project at the same time, and when different proje
 > If you can't find your phone during the process of connecting the device, you can try to click the "Refresh" button. If you still can't find your phone, please refer to [Real Phone Running FAQs](run-app-faq.md)
 
 ### Android设备选择  
+### Android Device Selection
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/select-android.jpeg" style="zoom: 50%;" />
 
@@ -64,10 +71,14 @@ But a device can only run one project at the same time, and when different proje
 
 
 ### iOS设备选择@ios_device
+### iOS device selection @ios_device
 
 > HBuilderX中自带的标准真机运行基座使用DCloud向苹果申请的企业开发者证书签名，根据[苹果开发者企业计划许可协议](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20220606-Chinese-Simplified.pdf)要求，使用企业开发者证书签名的App只允许企业员工内部使用，不允许企业外部人员安装使用。  
+> The standard real machine running base that comes with HBuilderX is signed with the enterprise developer certificate applied by DCloud to Apple, according to the [Apple Developer Enterprise Program License Agreement](https://developer.apple.com/support/downloads/terms /apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20220606-Chinese-Simplified.pdf) requires that apps signed with enterprise developer certificates are only allowed to be used internally by enterprise employees, not outside the enterprise personnel to install and use.
 > 因收到苹果公司警告，自2022年9月14日起iOS真机设备不再支持使用标准真机运行基座，详情见论坛公告：[https://ask.dcloud.net.cn/article/40041](https://ask.dcloud.net.cn/article/40041)  
+> Due to a warning from Apple, from September 14, 2022, real iOS devices will no longer support the use of a standard real machine running dock. For details, please refer to the forum announcement: [https://ask.dcloud.net.cn/article /40041](https://ask.dcloud.net.cn/article/40041)
 > 在iOS真机设备上运行请向苹果申请证书制作[自定义基座](#customplayground)或者在Mac电脑使用[iOS模拟器](#ios_simulator)
+> To run on a real iOS device, please apply for a certificate from Apple to make [custom dock](#customplayground) or use [iOS simulator](#ios_simulator) on a Mac computer
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/select-ios.jpeg" style="zoom: 50%;" />
 
@@ -90,9 +101,11 @@ But a device can only run one project at the same time, and when different proje
 ![](https://native-res.dcloud.net.cn/images/hx/run/ios-sim-select.png)  
 
 上面的界面会额外显示搜索框，因XCode的iOS模拟器非常多，可通过搜索框过滤快速选择需要使用的模拟器。  
+The above interface will additionally display a search box, because there are many iOS simulators in XCode, you can quickly select the simulator you need to use by filtering through the search box.
 
 
 ## 运行
+## run
 
 初次运行时会提示安装“真机运行插件”。
 When you run it for the first time, you will be prompted to install the "real machine running plug-in".
@@ -112,22 +125,29 @@ Select the mobile device or simulator to run in the run menu, click the run butt
 4. Start the real machine running base on the mobile phone and load the code synchronized to the mobile phone (the iPhone needs to manually click the desktop icon to start it)
 
 运行成功后，HBuilder底部的控制台显示成功日志。此后修改代码会差量同步到手机上，手机程序会动态热刷。同时console.log代码会打印到控制台上，点击打印日志可以跳转到相关代码。  
+After running successfully, the console at the bottom of HBuilder displays the success log. Afterwards, the modified code will be synchronized to the mobile phone, and the mobile phone program will be dynamically refreshed. At the same time, the console.log code will be printed to the console, and you can jump to the relevant code by clicking Print Log.
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/run-app-console.jpg" style="zoom: 50%;" />
 
 ### 运行项目到iOS真机App自启动@ios-app-automatically-open
+### Run the project to the iOS real machine App to start automatically @ios-app-automatically-open
 
 > 目前仅支持MacOSX，不支持Windows
+> Currently only supports MacOSX, not Windows
 
 HBuilderX 3.7.0+版本，新增 运行App项目到iOS真机，运行成功后，手机上的App会自动打开。
+HBuilderX 3.7.0+ version, newly added to run the App project to the real iOS device, after running successfully, the App on the phone will be opened automatically.
 
 **如下图所示：**
+**As shown below:**
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios_start.jpg" style="zoom: 50%;" />
 
 **注意：** MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。如果`/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`目录下不存在跟手机系统相匹配的`iOS Platforms`, 那么是无法自启动App的。请在手机端点击运行基座图标手动启动。
+**Note:** MacOSX needs to install the Xcode version that matches the iOS phone system. For example, if the iPhone system is iOS 16.2, you also need to install an Xcode version that supports iOS 16.2. If there is no `iOS Platforms` that matches the mobile phone system in `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport` directory, then the App cannot be launched automatically. Please click the running dock icon on the mobile phone to start it manually.
 
 使用如下命令，可以查看Xcode iOS Platforms数据。
+Use the following command to view Xcode iOS Platforms data.
 
 ```shell
 ls -lh  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport
@@ -136,11 +156,16 @@ ls -lh  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/D
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios-version.jpg" style="zoom: 45%;border: 1px solid #EEEEEE !important; border-radius: 20px;" />
 
 MacOSX，如果无法自动启动App，请排查以下原因：
+On MacOSX, if the App cannot be started automatically, please check the following reasons:
 - iOS手机系统没有匹配Xcode版本
+- The iOS phone system does not match the Xcode version
 - 手机处于息屏状态
+- The mobile phone is in the off-screen state
 - 项目编译运行失败、或安装基座失败
+- Failed to compile and run the project, or failed to install the base
 
 ## 标准基座和自定义基座@customplayground  
+## Standard and Custom Pedestals @customplayground
 
 标准运行基座，是DCloud为方便开发者低门槛调试而提供的，此基座App使用的是DCloud的包名、证书和三方SDK配置。
 The standard operating base is provided by DCloud to facilitate the low-threshold debugging of developers. This base App uses DCloud's package name, certificate and third-party SDK configuration.
@@ -179,6 +204,7 @@ After packaging the custom runtime base, HBuilder will automatically store the g
 Only one custom pedestal can be generated for a project, and multiple generation only keeps the last result.
 
 生成自定义基座后，在设备选择窗口，可以选择自定义基座，如下图所示：  
+After generating a custom base, in the device selection window, you can select a custom base, as shown in the following figure:
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/hx_select_base.jpg" style="zoom: 50%;" />
 
@@ -186,8 +212,12 @@ Only one custom pedestal can be generated for a project, and multiple generation
 Note: The custom running base is a beta version and cannot be directly commercialized (using the custom running base to overwrite the installation of the apk will not update the application resources, and there is a toast warning). When the official version is released, it needs to be repackaged according to the normal packaging method.
 
 ## 离线打包生成自定义运行基座
+## Offline packaging to generate a custom running base
 
 可使用离线SDK打包生成自定义运行基座(不支持cli方式,将src拖拽到编辑器中，并重新识别项目类型)，生成后将apk和ipa包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk和iOS_debug.ipa。
+You can use the offline SDK package to generate a custom running base (the cli method is not supported, drag and drop the src into the editor, and re-identify the project type), and store the apk and ipa packages in the project directory/unpackage/debug directory after generation , and the file names are android_debug.apk and iOS_debug.ipa respectively.
 
 - [Android平台离线生成自定义调试基座](https://ask.dcloud.net.cn/article/35482)
+- [Android platform generates custom debugging dock offline](https://ask.dcloud.net.cn/article/35482)
 - [iOS平台离线生成自定义调试基座](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94%a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)
+- [iOS platform generates custom debugging base offline](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94% a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c% e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)

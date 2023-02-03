@@ -1,4 +1,5 @@
 JQL语法相关文档已移至：[JQL语法](jql.md)
+Documentation related to JQL syntax has been moved to: [JQL syntax](jql.md)
 
 ## clientDB简介
 ## clientDB introduction
@@ -25,7 +26,9 @@ Of course, using `clientDB` requires reversing the traditional concept of back-e
 In `DB Schema`, configure the permissions of data operations and field value domain validation rules to prevent inappropriate data reading and writing at the front end. See: [DB Schema](https://uniapp.dcloud.net.cn/uniCloud/schema)
 
 如果需要数据库操作之前或之后，云端执行关联逻辑（比如获取文章详情后，文章阅读量+1），`clientDB`提供了[数据库触发器](jql-schema-ext.md)（从HBuilderX 3.6.11开始）。
+If it is necessary to execute association logic on the cloud before or after database operations (for example, after obtaining article details, the number of article readings +1), `clientDB` provides [database trigger](jql-schema-ext.md) (from HBuilderX 3.6. 11 starts).
 在不支持数据库触发器的低版本，使用[action云函数](jql.md#action)
+In the lower version that does not support database triggers, use [action cloud function](jql.md#action)
 
 **注意**
 **Notice**
@@ -89,6 +92,7 @@ Only: 5 lines of code as shown:
 
 
 ## clientDB图解
+## clientDB Diagram
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
 
 `clientDB`的前端，有两种用法，可以用js API操作云数据库，也可以使用`<unicloud-db>`组件。
@@ -147,6 +151,7 @@ db.collection('list')
 	.get()
 	.then((res)=>{
     // res 为数据库查询结果
+    // res is the database query result
 	}).catch((err)=>{
 		console.log(err.code); // 打印错误码
 		console.log(err.message); // 打印错误内容
@@ -169,12 +174,16 @@ The syntax of the front-end operation database is the same as that of cloud func
 - When updating data, the key value cannot be in the form of `{'a.b.c': 1}`, it needs to be written in the form of `{a:{b:{c:1}}}`
 
 clientDB有两种方式获取数据库引用`uniCloud.database()`和`uniCloud.databaseForJQL()`（新增于HBuilderX 3.6.7）。推荐在支持`databaseForJQL`接口的版本使用`databaseForJQL`接口，和云端jql扩展库返回结构一致，方便代码复用
+clientDB has two ways to obtain database reference `uniCloud.database()` and `uniCloud.databaseForJQL()` (newly added in HBuilderX 3.6.7). It is recommended to use the `databaseForJQL` interface in the version that supports the `databaseForJQL` interface, which is consistent with the return structure of the cloud jql extension library, which is convenient for code reuse
 
 database接口和databaseForJQL有以下不同点
+The database interface and databaseForJQL have the following differences
 
 1. database接口返回的数据结构多了一层result
+1. The data structure returned by the database interface has an additional layer of result
 
   在上面的示例中res的结构如下
+  In the above example the structure of res is as follows
   ```js
   {
     result: {
@@ -185,6 +194,7 @@ database接口和databaseForJQL有以下不同点
   }
   ```
   如果使用databaseForJQL接口，res结构如下
+  If you use the databaseForJQL interface, the res structure is as follows
   ```js
   {
     data: [{
@@ -194,6 +204,7 @@ database接口和databaseForJQL有以下不同点
   ```
   
 2. 使用拦截器相关接口拦截或取消拦截 databaseForJQL 接口时需使用，`databaseForJQL`作为接口名，关于拦截器的更多信息，请参考：[uniCloud 拦截器](client-sdk.md#add-interceptor)
+2. When using the interceptor-related interface to intercept or unintercept the databaseForJQL interface, `databaseForJQL` is used as the interface name. For more information about the interceptor, please refer to: [uniCloud Interceptor](client-sdk.md#add-interceptor )
 
 
 ## 客户端事件@event

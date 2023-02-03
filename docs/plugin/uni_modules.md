@@ -114,8 +114,10 @@ Opening a file indicated by a reference icon in HBuilderX will open the original
 1. 在[插件市场](https://ext.dcloud.net.cn/)查找uni_modules插件
 1. Find the uni_modules plugin in [Plugin Market](https://ext.dcloud.net.cn/)
 2. 在插件详情页,右侧会标明该插件是否支持uni_modules，点击`使用 HBuilderX 导入插件`
+2. On the plug-in details page, the right side will indicate whether the plug-in supports uni_modules, click `Use HBuilderX to import plug-in`
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/import_uni_modules.png)
 3. 选择要导入的uni-app项目
+3. Select the uni-app project to import
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/import_uni_modules_dialog.png)
 
 **Tips**
@@ -136,12 +138,15 @@ import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 1. 导入插件时，HBuilderX会自动安装当前插件的所有三方依赖。
 1. When importing a plug-in, HBuilderX will automatically install all third-party dependencies of the current plug-in.
 2. 您还可以在插件目录右键手动执行`安装插件三方依赖`
+2. You can also right click on the plug-in directory to manually execute `Install plug-in three-party dependencies`
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/deps_uni_modules.png)
 #### 更新uni_modules插件
 #### Update uni_modules plug-in
 1. 可以通过插件目录右键`从插件市场更新`，来检查更新当前所使用的插件
+1. You can check and update the currently used plug-in by right-clicking on the plug-in directory and `Update from the plug-in market`
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/check_uni_modules.png)
 2. 对比插件，确认更新内容
+2. Compare the plug-ins and confirm the updated content
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/compare_uni_modules.png)
 #### 卸载uni_modules插件
 #### Uninstall uni_modules plug-in
@@ -154,6 +159,7 @@ The uni_modules plug-in directory is standalone. If you no longer need the plug-
 
 
 ### 配置
+### configuration
 #### package.json@package-json
 
 package.json在每个`uni_modules`插件中都必须存在，包含了插件的基本信息。以下是package.json的详细配置说明
@@ -243,21 +249,35 @@ package.json must exist in every `uni_modules` plug-in and contains the basic in
 ```
 **Tips**
 - 上述配置基于npm [package.json](https://docs.npmjs.com/cli/v6/configuring-npm/package-json)规范扩展，故标准的package.json属性也同样支持，比如可以通过files来控制要上传的插件包内容
+- The above configuration is based on the npm [package.json](https://docs.npmjs.com/cli/v6/configuring-npm/package-json) specification extension, so the standard package.json attributes are also supported, for example, through files to control the content of the plugin package to be uploaded
 - 插件市场分类标识（对应：package.json->dcloudext->type）
+- Plug-in market classification identification (corresponding: package.json->dcloudext->type)
 
 | 一级分类			| 二级分类				| type						|
+| Primary classification | Secondary classification | type |
 | ---				| ---					| ---						|
 | 前端组件			| 通用组件				| component-vue				|
+| Front-end components | Common components | component-vue |
 | 前端组件			| 小程序组件			| component-mp				|
+| front-end components | MiniApp components | component-mp |
 | JS SDK			| 通用 SDK				| sdk-js					|
+| JS SDK | Universal SDK | sdk-js |
 | uts插件			| uts插件				| uts						|
+| uts plugin | uts plugin | uts |
 | uni-app前端模板	| 前端页面模板			| uniapp-template-page		|
+| uni-app front-end template | front-end page template | uniapp-template-page |
 | uni-app前端模板	| uni-app前端项目模板	| uniapp-template-project	|
+| uni-app front-end template | uni-app front-end project template | uniapp-template-project |
 | uniCloud			| 云函数模板			| unicloud-template-function|
+| uniCloud | cloud function template | unicloud-template-function|
 | uniCloud			| 云端一体页面模板		| unicloud-template-page	|
+| uniCloud | Cloud One Page Template | unicloud-template-page |
 | uniCloud			| 云端一体项目模板		| unicloud-template-project	|
+| uniCloud | Cloud-integrated project template | unicloud-template-project |
 | uniCloud			| Admin插件				| unicloud-admin			|
+| uniCloud | Admin plugin | unicloud-admin |
 | uniCloud			| DB Schema及验证函数	| unicloud-database			|
+| uniCloud | DB Schema and validation functions | unicloud-database |
 
 
 
@@ -423,8 +443,10 @@ When your plug-in is developed, you can publish it directly to the [plug-in mark
 Release process:
 
 1. 在HBuilderX中插件目录右键点击`发布到插件市场`
+1. Right-click on the plug-in directory in HBuilderX and `publish to plug-in market`
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/upload_uni_modules.png)
 2. 填写插件信息
+2. Fill in the plug-in information
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/upload_uni_modules_dialog.png)
 **Tips**
 - 如果需要发布为项目模板，请在项目根目录创建package.json，然后右键菜单发布到插件市场。
@@ -437,8 +459,10 @@ Release process:
 When your plug-in is released to the plug-in market, if you need to adjust some basic information in the plug-in market, such as Chinese name, description, keywords, and readme.md, you can right-click the `Modify the plug-in basic information` directly in the plug-in directory.
 
 1. 在HBuilderX中插件目录右键点击`修改插件基本信息`
+1. Right-click on the plug-in directory in HBuilderX to `modify plug-in basic information`
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules.png)
 2. 修改插件基本信息
+2. Modify the basic information of the plug-in
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules_dialog.png)
 
 #### 发布新版本
@@ -478,4 +502,5 @@ When your plug-in has added new functions or fixed bugs, and a new version needs
  - 右键package.json，点击`发布到插件市场`，选择分类，填写插件信息（尽可能与插件市场已有信息保持一致）
  - Right-click package.json and click `Release to plug-in market`, select the classification, and fill in the plug-in information (consistent with the existing information in the plug-in market as much as possible)
  - 发布成功后，您可以在插件市场的插件详情页右侧，查看到您的插件已同时提供了`uni_modules`版本和非`uni_modules`版本（仅保留最后一个非`uni_modules`版本）
+ - After the release is successful, you can check that your plugin has provided both the `uni_modules` version and the non-`uni_modules` version on the right side of the plugin details page in the plugin market (only the last non-`uni_modules` version is kept)
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/ext_uni_modules.png)

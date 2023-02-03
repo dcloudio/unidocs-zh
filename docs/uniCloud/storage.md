@@ -25,11 +25,16 @@ There are 3 ways to upload to cloud storage:
 - In applications that allow users to upload pictures, violation detection is essential. For this reason, uniCloud provides a content security detection module, which can easily implement functions such as image identification. For details, please refer to: [Content Security](https://ext.dcloud.net.cn/plugin?id=5460)
 
 阿里云的云存储有一些限制：
+Alibaba Cloud's cloud storage has some limitations:
 - 不支持目录
+- Directories are not supported
 - 同名文件上传也是按新文件名对待，不会覆盖
+- File uploads with the same name are also treated as new file names and will not be overwritten
 - 文件没有读权限控制，任意人知道路径都可以读。
+- The file has no read permission control, anyone who knows the path can read it.
 
 腾讯云没有上述限制。
+Tencent Cloud does not have the above restrictions.
 
 ### 文件权限
 ### File Permissions
@@ -56,6 +61,7 @@ Tencent Cloud supports configuring cloud storage permissions, which needs to be 
 Alibaba Cloud does not support controlling permissions for front-end access to cloud storage
 
 云存储客户端api内部会使用`uni.request`、`uni.uploadFile`来发送请求，如果有这两个接口写拦截器务必准确区分要拦截的内容
+The cloud storage client API will use `uni.request` and `uni.uploadFile` to send requests internally. If there are these two interfaces, write interceptors to accurately distinguish the content to be intercepted
 
 ### uploadFile(Object object)@uploadfile
 
@@ -66,6 +72,7 @@ Upload files directly to cloud storage.
 The client uploads the file to the cloud function, and the cloud function uploads the file to the cloud storage. This process will result in a large bandwidth consumption of file traffic. Therefore, the uploaded files are generally uploaded directly from the client.
 
 **阿里云公测版单文件大小限制为100M，2023年1月6日阿里云正式版调整单文件大小限制到5GB，腾讯云单文件最大为5G**
+**The size limit of a single file in the public beta version of Alibaba Cloud is 100M. On January 6, 2023, the size limit of a single file in the official version of Alibaba Cloud will be adjusted to 5GB, and the maximum size of a single file in Tencent Cloud will be 5G**
 
 **支付宝小程序开发工具上传文件到腾讯云时可能会返回失败，请以真机为准**
 **Alipay applet development tool may return a failure when uploading files to Tencent Cloud, please refer to the real machine**
@@ -99,12 +106,15 @@ The client uploads the file to the cloud function, and the cloud function upload
 - 腾讯云`cloudPath`为文件标识，相同的`cloudPath`会覆盖，如果没有权限覆盖则会上传失败。阿里云以自动生成的ID为文件标识，不会存在覆盖问题
 - Tencent Cloud `cloudPath` is the file identifier. The same `cloudPath` will be overwritten. If there is no permission to overwrite, the upload will fail. Alibaba Cloud uses the automatically generated ID as the file identifier, so there will be no overwriting problem
 - 阿里云目前由于安全原因暂时禁止云存储内上传html文件
+- Alibaba Cloud temporarily prohibits uploading html files in cloud storage due to security reasons
 - 上传文件超时时间可以在项目manifest.json内进行配置
+- The upload file timeout can be configured in the project manifest.json
 
 **关于腾讯云是否有权限覆盖/删除云端文件**
 **About whether Tencent Cloud has permission to overwrite/delete cloud files**
 
 腾讯云使用[自定义登录](authentication.md)的方式确定用户身份。以下以默认权限”所有用户可读，仅创建者及管理员可写“为例进行讲解
+Tencent Cloud uses [custom login](authentication.md) to determine user identity. The following uses the default permission "readable by all users, writable only by creators and administrators" as an example to explain
 
 默认情况下用户以匿名身份登录（为了方便暂时称此身份为“匿名用户A”）
 By default users log in as anonymous (for convenience we will temporarily call this identity "Anonymous User A")
@@ -120,6 +130,7 @@ By default users log in as anonymous (for convenience we will temporarily call t
 After the identity of anonymous user A expires, the identity obtained again is not "anonymous user A" (which is temporarily referred to as "anonymous user B"). At this time, anonymous user B does not have permission to overwrite the files uploaded by anonymous user A.
 
 如果使用了[自定义登录](authentication.md)，那么云存储就可以确定用户身份，这时候用户可以覆盖自己上传的文件，删除同理。
+If [custom login](authentication.md) is used, then cloud storage can determine the user's identity. At this time, the user can overwrite the files uploaded by himself, and delete them in the same way.
 
 #### 响应参数
 #### Response parameters
@@ -156,8 +167,10 @@ uni.chooseImage({
     if (res.tempFilePaths.length > 0) {
       let filePath = res.tempFilePaths[0]
       //进行上传操作
+      //Perform upload operation
 
       // promise方式
+      // promise method
       const result = await uniCloud.uploadFile({
         filePath: filePath,
         cloudPath: 'a.jpg',
@@ -170,6 +183,7 @@ uni.chooseImage({
       });
 
       // callback方式，与promise方式二选一即可
+      // callback method, you can choose one of the two methods with the promise method
       uniCloud.uploadFile({
         filePath: filePath,
         cloudPath: 'a.jpg',
@@ -199,6 +213,7 @@ uni.chooseImage({
 ### getTempFileURL(Object object)
 
 在云函数中，把文件的fileid转换为临时URL。临时URL有有效期限制，避免其他人获取URL后可以持续访问该文件。
+In the cloud function, the fileid of the file is converted to a temporary URL. Temporary URLs have a limited validity period to prevent others from continuously accessing the file after obtaining the URL.
 
 **平台兼容性**
 **Platform Compatibility**
@@ -209,8 +224,10 @@ uni.chooseImage({
 |HBuilderX 3.1.0+	|√			|
 
 腾讯云获取文件临时下载链接。
+Tencent Cloud obtains the temporary download link of the file.
 
 自HBuilderX 3.1.0起阿里云也支持此接口，但仅为抹平和腾讯云的接口差异。因为阿里云的云存储不支持权限控制。
+Since HBuilderX 3.1.0, Alibaba Cloud also supports this interface, but only to smooth out the interface differences with Tencent Cloud. Because Alibaba Cloud's cloud storage does not support permission control.
 
 #### 请求参数
 #### request parameters
@@ -219,6 +236,7 @@ uni.chooseImage({
 |Field |Type |Required |Default |Description |Platform Difference Description |
 |:-:		|:-:						|:-:	|:-:	|:-:								|:-:			|
 |fileList	|Array&lt;String&gt;|是		|-		|要获取下载链接的文件 ID 组成的数组	|-	|
+| fileList | Array&lt;String&gt;|Yes |- |Array of file IDs to get download links |- |
 
 **请求参数中的fileList**
 **fileList in request parameters**
@@ -236,6 +254,7 @@ uni.chooseImage({
 |Field |Type |Description |
 |:-:		|:-:					|:-:							|
 |fileList	|Array&lt;Object&gt;	|存储下载链接的数组				|
+| fileList | Array&lt;Object&gt; |Array storing download links |
 |requestId	|String					|请求序列号，用于错误排查		|
 |requestId |String |Request serial number, used for troubleshooting |
 
@@ -276,42 +295,64 @@ uniCloud.getTempFileURL({
 ### getFileInfo(Object object)@get-file-info
 
 阿里云迁移服务空间后，旧云存储url需要通过此接口获取新服务空间的cdn链接
+After Alibaba Cloud migrates the service space, the old cloud storage url needs to obtain the CDN link of the new service space through this interface
 
 **平台兼容性**
+**Platform Compatibility**
 
 |阿里云																										|腾讯云	|
+|Alibaba Cloud |Tencent Cloud |
 |----																											|----		|
 |HBuilderX 3.6.10+（alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+| HBuilderX 3.6.10+ (alpha version), HBuilderX 3.6.5+ (official version) | Not supported |
 
 #### 请求参数
+#### Request parameters
 
 |字段		|类型						|必填	|默认值	|说明								|平台差异说明	|
+|Field |Type |Required |Default Value |Description |Platform Difference Description |
 |:-:		|:-:						|:-:	|:-:	|:-:								|:-:			|
 |fileList	|Array&lt;String&gt;|是		|-		|要获取下载链接的文件 ID 组成的数组	|-	|
+| fileList | Array&lt;String&gt;|Yes |- |Array of file IDs to get download links |- |
 
 **请求参数中的fileList**
+**fileList in the request parameter**
 
 |字段	|类型	|必填	|说明					|
+|Field |Type |Required |Description |
 |:-:	|:-:	|:-:	|:-:					|
 |fileID	|String	|是		|旧云存储url			|
+| fileID | String | yes | old cloud storage url |
 
 #### 响应参数
+#### Response parameters
 
 |字段		|类型					|说明							|
+|Field |Type |Description |
 |:-:		|:-:					|:-:							|
 |fileList	|Array&lt;Object&gt;	|存储下载链接的数组				|
+| fileList | Array&lt;Object&gt; |Array storing download links |
 
 **响应参数中的fileList**
+**fileList in the response parameter**
 
 |字段				|类型		|说明															|
+|Field |Type |Description |
 |:-:				|:-:		|:-:															|
 |fileId			|string	|文件 ID（从文件url中解析出的id）	|
+| fileId | string | file ID (id parsed from the file url) |
 |gmtCreate	|number	|文件上传时间（精确到秒的时间戳）	|
+| gmtCreate | number |File upload time (time stamp accurate to seconds) |
 |gmtModified|number	|文件更改时间（精确到秒的时间戳）	|
+| gmtModified| number | File modification time (time stamp accurate to the second) |
 |name				|string	|文件原始名称											|
+| name | string | Original file name |
 |size				|number	|文件大小（Byte）									|
+| size | number | file size (Byte) |
 |type				|string	|文件类型													|
+| type | string | file type |
 |url				|string	|文件cdn链接											|
+| url | string | file cdn link |
 
 ### chooseAndUploadFile(Object object)@chooseanduploadfile
 
@@ -621,10 +662,13 @@ uniCloud.deleteFile(
 ```
 
 ### 将图片传到其他服务空间@upload-to-storage-space
+### Transfer pictures to other service spaces @upload-to-storage-space
 
 某些场景下需要使用客户端未关联的服务空间的云存储，此时可以通过[uniCloud.init](https://uniapp.dcloud.net.cn/uniCloud/concepts/space.html#multi-space)方法获取对应空间的实例用于上传文件
+In some scenarios, it is necessary to use the cloud storage of the service space not associated with the client. At this time, [uniCloud.init](https://uniapp.dcloud.net.cn/uniCloud/concepts/space.html#multi-space ) method to obtain an instance of the corresponding space for uploading files
 
 **示例代码**
+**Example Code**
 
 ```js
 const storageSpace = uniCloud.init({
@@ -884,42 +928,64 @@ let result = await uniCloud.downloadFile({
 ### getFileInfo(Object object)@get-file-info
 
 阿里云迁移服务空间后，旧云存储url需要通过此接口获取新服务空间的cdn链接
+After Alibaba Cloud migrates the service space, the old cloud storage url needs to obtain the CDN link of the new service space through this interface
 
 **平台兼容性**
+**Platform Compatibility**
 
 |阿里云																										|腾讯云	|
+|Alibaba Cloud |Tencent Cloud |
 |----																											|----		|
 |HBuilderX 3.6.10+（alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+| HBuilderX 3.6.10+ (alpha version), HBuilderX 3.6.5+ (official version) | Not supported |
 
 #### 请求参数
+#### Request parameters
 
 |字段		|类型						|必填	|默认值	|说明								|平台差异说明	|
+|Field |Type |Required |Default Value |Description |Platform Difference Description |
 |:-:		|:-:						|:-:	|:-:	|:-:								|:-:			|
 |fileList	|Array&lt;String&gt;|是		|-		|要获取下载链接的文件 ID 组成的数组	|-	|
+| fileList | Array&lt;String&gt;|Yes |- |Array of file IDs to get download links |- |
 
 **请求参数中的fileList**
+**fileList in the request parameter**
 
 |字段	|类型	|必填	|说明					|
+|Field |Type |Required |Description |
 |:-:	|:-:	|:-:	|:-:					|
 |fileID	|String	|是		|旧云存储url			|
+| fileID | String | yes | old cloud storage url |
 
 #### 响应参数
+#### Response parameters
 
 |字段		|类型					|说明							|
+|Field |Type |Description |
 |:-:		|:-:					|:-:							|
 |fileList	|Array&lt;Object&gt;	|存储下载链接的数组				|
+| fileList | Array&lt;Object&gt; |Array storing download links |
 
 **响应参数中的fileList**
+**fileList in the response parameter**
 
 |字段				|类型		|说明															|
+|Field |Type |Description |
 |:-:				|:-:		|:-:															|
 |fileId			|string	|文件 ID（从文件url中解析出的id）	|
+| fileId | string | file ID (id parsed from the file url) |
 |gmtCreate	|number	|文件上传时间（精确到秒的时间戳）	|
+| gmtCreate | number |File upload time (time stamp accurate to seconds) |
 |gmtModified|number	|文件更改时间（精确到秒的时间戳）	|
+| gmtModified| number | File modification time (time stamp accurate to the second) |
 |name				|string	|文件原始名称											|
+| name | string | Original file name |
 |size				|number	|文件大小（Byte）									|
+| size | number | file size (Byte) |
 |type				|string	|文件类型													|
+| type | string | file type |
 |url				|string	|文件cdn链接											|
+| url | string | file cdn link |
 
 ## 数据处理
 ## data processing
@@ -928,6 +994,7 @@ let result = await uniCloud.downloadFile({
 **Ali Cloud**
 
 > 阿里云商用版目前仍可使用此功能，但是未来可能会进行计费
+> Alibaba Cloud Commercial Edition can still use this function, but billing may be performed in the future
 
 使用阿里云作为服务商时，云存储支持直接使用**restful api**对资源进行处理，下表列出支持的操作类型。
 When using Alibaba Cloud as the service provider, cloud storage supports the direct use of **restful api** to process resources. The following table lists the supported operation types.
@@ -1019,8 +1086,10 @@ The data processing functions supported by Tencent Cloud are as follows:
 |Pipe operator| &#124; |[Click to view](https://cloud.tencent.com/document/product/436/44894) |
 
 ## 阿里云公测版云存储CDN独立域名@aliyun-cdn-domain
+## Aliyun public beta cloud storage CDN independent domain name @aliyun-cdn-domain
 
 > 本节仅适用于阿里云公测版。阿里云商用版每个服务空间都是单独的域名，不涉及这个问题
+> This section is only applicable to the public beta version of Alibaba Cloud. Each service space of Alibaba Cloud Commercial Edition is a separate domain name, which does not involve this issue
 
 阿里云公测版本所有服务空间使用了相同CDN域名，因此偶尔会出现部分服务空间云存储内存在违规内容导致此CDN域名被封禁的情况。为解决此问题，阿里云为每个服务空间提供了独立的云存储CDN域名。由于资源限制，需要手动在[uniCloud web 控制台](https://unicloud.dcloud.net.cn/)云存储管理页面申请才可以开启，有一定业务量的服务空间申请会自动通过。
 All service spaces of the Alibaba Cloud beta version use the same CDN domain name. Therefore, there may occasionally be cases where the CDN domain name is banned due to illegal content in the cloud storage of some service spaces. To solve this problem, Alibaba Cloud provides an independent cloud storage CDN domain name for each service space. Due to resource limitations, you need to manually apply on the [uniCloud web console](https://unicloud.dcloud.net.cn/) cloud storage management page to enable it. The application for service space with a certain amount of business will be automatically approved.

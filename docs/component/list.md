@@ -79,7 +79,9 @@ The sub-components of `<list>` can only include the following four components or
 |scrollable|是否允许List滚动|boolean|true/false|
 | scrollable| Whether to allow List scrolling| boolean| true/false|
 |enable-back-to-top|iOS点击顶部状态栏滚动条返回顶部，只支持竖向|boolean|false|
+| enable-back-to-top| iOS clicks the top status bar scroll bar to return to the top, only supports vertical | boolean| false|
 |render-reverse|定义是否从底部渲染，需搭配cell的属性render-reverse-position共同使用，单独配置会导致渲染异常。HBuilderX3.6.9+支持|boolean|false|
+| render-reverse| defines whether to render from the bottom, it needs to be used together with the cell attribute render-reverse-position, separate configuration will cause rendering exception. HBuilderX3.6.9+ support | boolean | false |
 
 `loadmoreoffset` 示意图：
 Schematic diagram of `loadmoreoffset`:
@@ -198,6 +200,7 @@ headerHeight|float|0|Yes|The distance from the top of the header to the top of t
 ```html
 <template>
     <!-- ios 需要配置 fixFreezing="true" -->
+    <!-- ios needs to configure fixFreezing="true" -->
     <view class="uni-swiper-page">
         <list ref="list" fixFreezing="true">
         </list>
@@ -212,6 +215,7 @@ headerHeight|float|0|Yes|The distance from the top of the header to the top of t
     },
     methods: {
       // 重置 loadmore
+      // reset loadmore
       setSpecialEffects() {
         this.$refs["list"].setSpecialEffects({id:"scroller", headerHeight:150});
       },

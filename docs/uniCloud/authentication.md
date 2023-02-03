@@ -144,8 +144,10 @@ auth.signInAnonymously()
 ### auth.signInWithTicket@signinwithticket
 
 使用云函数接口createTicket返回的票据进行登录，详细描述参考[登录流程](#cloudtoken)
+Use the ticket returned by the cloud function interface createTicket to log in. For a detailed description, refer to [login process](#cloudtoken)
 
 **示例代码**
+**Example Code**
 
 ```js
 auth.signInWithTicket('YourTicket').then(() => {
@@ -161,8 +163,10 @@ auth.signInWithTicket('YourTicket').then(() => {
 ### auth.getLoginState@get-login-state
 
 开发者可以通过 `getLoginState()` 来获取当前的登录状态，调用 `getLoginState()` 后，SDK 会识别本地是否有登录状态，如果有，则会尝试刷新登录状态，若刷新登录状态成功，则会返回新的登录状态，否则返回 `undefined`。
+Developers can get the current login status through `getLoginState()`. After calling `getLoginState()`, the SDK will identify whether there is a login status locally. If so, it will try to refresh the login status. If the login status is refreshed successfully, then Will return the new login status, otherwise return `undefined`.
 
 **示例代码**
+**Example Code**
 
 ```js
 auth.getLoginState().then(loginState => {
@@ -179,15 +183,21 @@ auth.getLoginState().then(loginState => {
 ### auth.getUserInfo@get-user-info
 
 任何方式登录成功后，可以调用 `getUserInfo` 获得用户的身份信息。
+After successful login in any way, you can call `getUserInfo` to get the user's identity information.
 
 **响应参数**
+**Response parameters**
 
 |字段			|类型	|是否必备	|说明							|
+|Field |Type |Required |Description |
 |:-:			|:-:	|:-:		|:-:							|
 |uid			|string	|是			|用户在云厂商的唯一ID			|
+| uid | string | Yes | the unique ID of the user in the cloud provider |
 |customUserId	|string	|否			|用户使用自定义登录传入的用户Id	|
+| customUserId | string | No | The user uses a custom login to pass in the user Id |
 
 **示例代码**
+**Example Code**
 
 ```js
 auth.signInWithTicket('YourTicket').then(() => {
@@ -201,26 +211,37 @@ auth.signInWithTicket('YourTicket').then(() => {
 ```
 
 ## 登录流程@cloudtoken
+## Login process @cloudtoken
 
 `uniCloud`允许开发者使用特定的登录凭据`Ticket`对用户进行身份认证。开发者可以使用`服务端 SDK`来创建`Ticket`，并且将`Ticket`传入到应用内，然后调用`signInWithTicket()`获得登录态。
+`uniCloud` allows developers to authenticate users with specific login credentials `Ticket`. Developers can use the `server SDK` to create a `Ticket`, and pass the `Ticket` into the application, and then call `signInWithTicket()` to obtain the login status.
 
 ### 第一步：获取私钥文件
+### Step 1: Obtain the private key file
 
 登录uniCloud控制台[uniCloud控制台](http://unicloud.dcloud.net.cn/)，在`自定义登录`中，点击“生成并下载”
+Log in to the uniCloud console [uniCloud console](http://unicloud.dcloud.net.cn/), in `custom login`, click "generate and download"
 
 **注意：重复生成私钥会使之前生成的私钥失效，并导致用户登录状态失效**
+**Note: Repeatedly generating a private key will invalidate the previously generated private key and cause the user's login status to become invalid**
 
 ![uniCloud下载私钥](https://web-assets.dcloud.net.cn/unidoc/zh/custom-login-secret.jpg)
+![uniCloud download private key](https://web-assets.dcloud.net.cn/unidoc/zh/custom-login-secret.jpg)
 
 ### 第二步：使用云函数创建登录凭据
+### Step 2: Use cloud functions to create login credentials
 
 获取私钥文件（`credentials.json`）之后，放在需要生成`Ticket`的云函数内`index.js`同级即可
+After obtaining the private key file (`credentials.json`), put it at the same level as `index.js` in the cloud function that needs to generate `Ticket`
 
 `服务端 SDK`内置了生成`Ticket`的接口，开发者需要提供一个自定义的`customUserId`作为用户的**唯一身份标识**。`Ticket`有效期为**5分钟**，过期则失效。
+`Server-side SDK` has a built-in interface for generating `Ticket`, and the developer needs to provide a custom `customUserId` as the **unique identity** of the user. `Ticket` is valid for **5 minutes**, and it will be invalid when it expires.
 
 每个用户的`customUserId`不能相同，每次用户重新登录时，原有的登录态将会失效。
+The `customUserId` of each user cannot be the same, and each time the user logs in again, the original login status will become invalid.
 
 **Ticket一般在验证了用户名密码成功之后下发**
+**Ticket is generally issued after the username and password are successfully verified**
 
 ```js
 let customUserId = '123456';
@@ -234,8 +255,10 @@ const ticket = uniCloud.customAuth().createTicket(customUserId, {
 ```
 
 ### 第三步：客户端上使用Ticket登录
+### Step 3: Use Ticket to log in on the client
 
 创建`Ticket`之后，开发者应将`Ticket`发送至客户端，然后使用`客户端SDK`提供的 `signInWithTicket()` 登录`uniCloud`：
+After creating a `Ticket`, the developer should send the `Ticket` to the client, and then use the `signInWithTicket()` provided by the `Client SDK` to log in to `uniCloud`:
 
 ```js
 auth.signInWithTicket(ticket).then(() => {
@@ -246,17 +269,26 @@ auth.signInWithTicket(ticket).then(() => {
 
 
 ## 匿名登录
+## Anonymous login
 uniCloud允许开发者使用匿名登录的方式进行静默授权，可以避免强制登录。在匿名状态下可正常的调用uniCloud的资源，开发者同时可以配合安全规则针对匿名用户制定对应的访问限制。
+uniCloud allows developers to use anonymous login to perform silent authorization, which can avoid forced login. In the anonymous state, uniCloud resources can be called normally, and developers can also cooperate with security rules to formulate corresponding access restrictions for anonymous users.
 
 #### 匿名用户重新登录
+#### Anonymous user re-login
 
 匿名用户如果要重新使用开发者提供的身份登录，可以调用`auth.signInWithTicket`来进行。[参考](#signinwithticket)
+If anonymous users want to log in again using the identity provided by the developer, they can call `auth.signInWithTicket` to do so. [REFERENCE](#signinwithticket)
 
 #### 匿名用户转化为正式用户
+#### Convert anonymous users to official users
 目前uniCloud支持将匿名用户转化为正式用户，此转正用户将会继承匿名用户在云端创建的资源，流程如下：
+Currently uniCloud supports the conversion of anonymous users into official users. This regular user will inherit the resources created by anonymous users in the cloud. The process is as follows:
 1. 首先需要按照[登录流程](#cloudtoken)搭建获取自定义登录凭证`ticket`的服务；
+1. First, you need to build a service to obtain a custom login credential `ticket` according to [login process](#cloudtoken);
 2. 客户端请求接口获取自定义登录凭证`ticket`。**请注意**，此`ticket`必须未注册过uniCloud，换句话说，匿名用户只能转化为新的uniCloud用户；
+2. The client requests the interface to obtain a custom login credential `ticket`. **Please note**, this `ticket` must not have been registered with uniCloud, in other words, anonymous users can only be converted into new uniCloud users;
 3. 客户端调用`auth.linkAndRetrieveDataWithTicket`API，如下：
+3. The client calls `auth.linkAndRetrieveDataWithTicket` API, as follows:
 ```js
 // 调用此API之前需先请求接口获取到ticket
 // Before calling this API, you need to request the interface to get the ticket
@@ -270,10 +302,12 @@ auth.linkAndRetrieveDataWithTicket(ticket).then(res => {
 ```
 
 ## 登录授权相关事件及钩子函数
+## Login authorization related events and hook functions
 
 ### Event: 'loginStateExpire'
 
 当登录态失效时，会触发这个事件，开发者可以在这个事件回调内，尝试重新登录 uniCloud。
+When the login status fails, this event will be triggered, and the developer can try to log in to uniCloud again in the callback of this event.
 
 ```js
 auth.onLoginStateExpire(() => {
@@ -285,8 +319,10 @@ auth.onLoginStateExpire(() => {
 ### Event: 'refreshAccessToken'
 
 JS SDK 会在登录态生效期间，自动刷新和维护短期访问令牌（access token），每次成功刷新时会触发此事件。
+JS SDK will automatically refresh and maintain the short-term access token (access token) while the login status is in effect, and this event will be triggered every time it is successfully refreshed.
 
 对于两种登录态并存（uniCloud、自身业务登录态）的应用，这个事件可以用于同步登录态之间的状态。
+For applications where two login states coexist (uniCloud, self-service login state), this event can be used to synchronize the state between login states.
 
 ```js
 auth.onAccessTokenRefreshed(() => {
@@ -298,8 +334,10 @@ auth.onAccessTokenRefreshed(() => {
 ### Auth.shouldRefreshAccessToken(callback)
 
 `shouldRefreshAccessToken` 接收一个 `callback` 函数，并且会在刷新短期访问令牌前调用此 `callback` 函数，根据返回值决定是否要刷新短期访问令牌。
+`shouldRefreshAccessToken` receives a `callback` function, and will call this `callback` function before refreshing the short-term access token, and decide whether to refresh the short-term access token according to the return value.
 
 对于两种登录态并存（uniCloud、自身业务登录态）的应用，可以在 `callback` 内判断自身业务登录态是否失效，从而决定是否续期 uniCloud 的短期访问令牌。
+For applications where two login states coexist (uniCloud, self-service login state), you can judge whether the self-service login state is invalid in `callback`, so as to decide whether to renew the short-term access token of uniCloud.
 
 ```js
 auth.shouldRefreshAccessToken(() => {

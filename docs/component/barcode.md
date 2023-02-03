@@ -34,7 +34,9 @@ filters|Array[Number] |[0,1,2]|No|Barcode type filter, barcode type constant arr
 - QR: QR二维码，数值为0
 - QR: QR code, with a value of 0
 - EAN13: EAN条形码标准版，数值为1
+- EAN13: EAN barcode standard version, the value is 1
 - EAN8: EAN条形码简版，数值为2
+- EAN8: Short version of EAN barcode, the value is 2
 - AZTEC: Aztec二维码，数值为3
 - AZTEC: Aztec QR code, with a value of 3
 - DATAMATRIX: Data Matrix二维码，数值为4

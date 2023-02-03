@@ -15,7 +15,9 @@
 For more information, please refer to [Operation Guide for Applying to Open Paypal](https://uniapp.dcloud.io/app-payment-paypal-open)
 
 **注意**
+**Notice**
 - iOS系统仅支持iOS11.0及以上版本
+- iOS system only supports iOS11.0 and above
 
 ### 配置  
 ### Configuration

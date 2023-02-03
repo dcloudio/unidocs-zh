@@ -90,9 +90,13 @@ WeChat MiniApp`signType` description
 1. 百度小程序的 orderInfo 为 Object 类型，详细的数据结构，参考：[百度收银台支付](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)。
 1. The orderInfo of Baidu MiniApp is of Object type. For detailed data structure, please refer to: [Baidu Cashier Payment](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/).
 2. 支付宝小程序的 orderInfo(支付宝的规范为 tradeNO) 为 String 类型，表示支付宝交易号。
+2. The orderInfo of the Alipay MiniApp(Alipay's specification is tradeNO) is of String type, indicating the Alipay transaction number.
 3. 字节跳动小程序的 orderInfo 为 Object 类型，详见：[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay/)
+3. The orderInfo of the ByteDance MiniApp is Object type, see: [Initiate Toutiao Payment](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay/)
 4. App端，支付宝支付 orderInfo 为 String 类型。
+4. On the App side, Alipay payment orderInfo is of String type.
 5. App端，微信支付 orderInfo 为 Object 类型。
+5. On the App side, the WeChat payment orderInfo is of type Object.
 6. App端，苹果应用内支付 orderInfo 为Object 类型，{productid: 'productid'}。
 6. On the App side, Apple in-app payment orderInfo is of type Object, {productid: 'productid'}.
 
@@ -132,6 +136,7 @@ Process: Payment platform function application -> configure payment parameters i
 1. 在`manifest.json - App模块权限选择` 中勾选 payment(支付)
 1. Check payment in `manifest.json - App module permission selection`
 2. 在 `manifest.json - App SDK配置` 中，勾选需要的支付平台，目前有微信支付、支付宝支付、苹果应用内支付(IAP)，其中微信支付需要填写从微信开放平台获取的AppID
+2. In `manifest.json - App SDK configuration`, check the required payment platform. Currently, there are WeChat payment, Alipay payment, and Apple in-app payment (IAP). Among them, WeChat payment needs to fill in the AppID obtained from the WeChat open platform
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/manifest-config.png)
 <!-- ![uniapp](https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/pay1.png) -->
 <!-- 临时把老图注掉，替换正式地址时再把老图地址放开 -->
@@ -415,13 +420,19 @@ Precautions
 - 相同订单，重复调用 `restoreCompletedTransactions` 后 `transactionReceipt` 会发生变化，并非唯一值
 - For the same order, `transactionReceipt` will change after calling `restoreCompletedTransactions` repeatedly, not a unique value
 - 调用 `finishTransaction` 关闭订单可能不会立即生效，取决于苹果的服务器
+- Calling `finishTransaction` to close the order may not take effect immediately, depending on Apple's servers
 - 沙盒环境：一个测试账号相同产品仅能购买一次，重复测试需要清除购买记录或重新添加沙盒测试账号
+- Sandbox environment: a test account can only purchase the same product once, repeated tests need to clear the purchase record or re-add the sandbox test account
 - 沙盒环境：调用 `restoreCompletedTransactions` 长时间无反应，检查设备登陆的沙箱账号是否正常
+- Sandbox environment: calling `restoreCompletedTransactions` has no response for a long time, check whether the sandbox account logged in by the device is normal
 
 ### 沙箱账号
+### Sandbox account
 
 1. 登陆苹果开发者中心，添加沙箱账号
+1. Log in to the Apple Developer Center and add a sandbox account
 2. 手机或iPad登陆沙箱账号，在 `系统设置 -> App Store`
+2. Log in to the sandbox account on your phone or iPad, go to `System Settings -> App Store`
 
 
 ### 订单丢失场景

@@ -2,8 +2,10 @@ uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台
 Uni Statistics 2.0 is an open source, full-end, cloud-integrated statistics platform that is more suitable for uni-app.
 
 > `HBuilderX 3.4.10 +`起支持
+> Supported from `HBuilderX 3.4.10+`
 
 > `HBuilderX 3.6.7 +`修复了Android10多个设备deviceId相同导致统计数据减少的bug
+> `HBuilderX 3.6.7 +` fixed the bug that the same deviceId of more than one Android10 device caused the statistics to decrease
 
 ## demo体验
 ## demo experience
@@ -39,6 +41,7 @@ There is no need to connect different SDKs at each end, and there is no need to 
 **2. Open source, free, free to customize**
 
 代码全部开源。采集什么数据可以自定义；跑批频率可以自定义（搞活动时实时统计都可以做到）；展示报表可以自定义。
+All codes are open source. What data to collect can be customized; batch running frequency can be customized (real-time statistics can be done during activities); display reports can be customized.
 
 **3. 私有部署、数据自控**
 **3. Private deployment, data automatic control**
@@ -161,6 +164,7 @@ For developers using uni stats 1.0, it is recommended to upgrade to uni stats 2.
 In the `manifest.json` of the business app project, select the `uni statistics configuration` item, select to enable `uni statistics` as required, and check `2.0` to enable the new version of statistics.
 
 ![开启统计](https://web-assets.dcloud.net.cn/unidoc/zh/iShot2022-05-17%2020.22.52.png)
+![Open Statistics](https://web-assets.dcloud.net.cn/unidoc/zh/iShot2022-05-17%2020.22.52.png)
 
 上述可视化操作，其实对应manifest源码视图的 `uniStatistics` 节点。如下文档对manifest规范进行详述。**如不关心规范细节，可以不阅读本小节，继续看下一节《小程序域名白名单》**。
 The above visualization operations actually correspond to the `uniStatistics` node of the manifest source view. The manifest specification is detailed in the following document. **If you don't care about the specification details, you can skip this section and continue to read the next section "MiniApp Domain Name Whitelist"**.
@@ -191,7 +195,9 @@ Set the `version` property to `"2"` to enable new version statistics
 |version|String|"1"|"1" ， "2"|统计版本 ，如不填写，默认使用版本1.0，推荐使用2.0版本|
 |version|String|"1"|"1" , "2"|Statistical version, if not filled in, the default version 1.0 is used, and the 2.0 version is recommended|
 |debug|Boolean|false|true ， false|开启统计调试模式 ，会产生大量日志，且会在开发阶段上报数据，应用发布请关闭此项|
+| debug| Boolean| false| true , false|Enable statistical debugging mode, a large number of logs will be generated, and data will be reported during the development stage. Please turn off this option when the application is released|
 |reportInterval|Number|10|-|前端数据上报周期 **HBuilderX 3.5.4+ 支持**|
+| reportInterval| Number| 10|-|Front-end data reporting period **HBuilderX 3.5.4+ support**|
 |collectItems|Object|-|-|采集项配置 **HBuilderX 3.5.5+ 支持**|
 |collectItems|Object|-|-|collection item configuration **HBuilderX 3.5.5+ support**|
 
@@ -254,7 +260,9 @@ When deploying uni statistics, you can choose to use the Alibaba Cloud version o
 | uniCloud service provider | request legal domain name |
 | :--------: | :-------------------------: |
 |   阿里云公测版   |       api.bspapp.com        |
+| Alibaba Cloud Public Beta | api.bspapp.com |
 |   阿里云正式版   |       api.next.bspapp.com        |
+| Alibaba Cloud official version | api.next.bspapp.com |
 |   腾讯云   | tcb-api.tencentcloudapi.com |
 | Tencent Cloud | tcb-api.tencentcloudapi.com |
 
@@ -262,8 +270,10 @@ When deploying uni statistics, you can choose to use the Alibaba Cloud version o
 According to the selected uniCloud cloud vendor, you can configure the corresponding domain name in the domain name whitelist configuration of the MiniApp.
 
 **注意**
+**Notice**
 
 - 阿里云迁移正式版后未重新发布的项目仍会访问公测版地址`api.bspapp.com`
+- Projects that have not been republished after Alibaba Cloud migrated to the official version will still access the public beta address `api.bspapp.com`
 
 #### 调试模式
 #### debug mode
@@ -332,11 +342,14 @@ The background statistics report of `uni statistics 2.0` is a built-in plugin of
 [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html) is an open source management background. That is, to use `uni statistics 2.0`, you need to install this background system, find the menu of uni statistics and use it.
 
 目前安装`uni-admin`的方式分为两种：`一键部署` 和 `手动安装`。
+Currently, there are two ways to install `uni-admin`: `one-click deployment` and `manual installation`.
 
 `一键部署uni-admin`仅需要前往[插件市场](https://ext.dcloud.net.cn)搜索找到`uni-admin`插件后，选择进入[uni-admin插件详情页](https://ext.dcloud.net.cn/plugin?id=3268)并点击`一键部署插件到uniCloud`按钮，然后选择需要部署`uni-admin`项目的服务空间后耐心等待系统自动部署完成即可。
+`One-click deployment of uni-admin` only needs to go to the [Plugin Market](https://ext.dcloud.net.cn) to search and find the `uni-admin` plug-in, and choose to enter the [uni-admin plug-in details page](https://ext.dcloud.net.cn) ://ext.dcloud.net.cn/plugin?id=3268) and click the `one-click deployment plug-in to uniCloud` button, then select the service space where the `uni-admin` project needs to be deployed, and wait patiently for the system to automatically deploy. Can.
 
 
 `手动安装uni-admin`则请参考[uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)文档，完成如下操作：
+`Manually install uni-admin`, please refer to [uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-% E5%8E%9F%E5%90%8D-unicloud-admin) document, complete the following operations:
 
 1. 创建新的`uni-admin`项目（HBuilderX新建项目界面选择uni-admin模板）
 1. Create a new `uni-admin` project (select the uni-admin template in the HBuilderX new project interface)
@@ -521,11 +534,13 @@ In order for the data collected by the client app to be correctly received and c
 2. If `uniCloud` has not been enabled before, right click and select `Create uniCloud cloud development environment -> Alibaba Cloud|Tencent Cloud`; otherwise, go to step 3;
 
 ![关联前后台数据](https://web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.11.18.png)
+![Associate front and back data](https://web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.11.18.png)
 
 3. 在`uniCloud`目录右键并选择`关联云服务空间或项目`，在打开的窗口中选择对应`uni-admin`项目关联的服务空间
 3. Right-click on the `uniCloud` directory and select `Associate cloud service space or project`, and select the service space associated with the `uni-admin` project in the opened window
 
 ![关联前后台数据](https://web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.08.51.png)
+![Relate front and back data](https://web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.08.51.png)
 
 ### 错误解析 <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error 
 ### Error parsing <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error
@@ -540,6 +555,7 @@ In order to facilitate developers to use sourceMap files to locate code problems
 #### Using the environment @sourcemap-parse-error-env
 
 1. 使用腾讯云服务空间，不支持阿里云服务空间（原因是因为阿里云存储不支持目录）
+1. Use Tencent Cloud Service Space, not Alibaba Cloud Service Space (the reason is that Alibaba Cloud Storage does not support directories)
 2. HBuiderX 3.5.3+
 3. uni-admin 1.9.4+
 4. 不支持 IE
@@ -549,8 +565,10 @@ In order to facilitate developers to use sourceMap files to locate code problems
 #### Generate sourceMap@create-sourcemap
 
 线上运行端在各种用户环境下可能会有报错，需要开发者统计和分析。但三方统计系统（如友盟、阿拉丁、百度），对运行端的报错采集，提示的是uni-app编译器编译后的代码报错的行数，相当于乱码，无法告知开发者是uni-app的vue或js的哪一行代码报错。
+The online running terminal may report errors in various user environments, which require statistics and analysis by developers. However, the three-party statistical system (such as Youmeng, Aladdin, and Baidu) collects the error reports on the running side, and it prompts the number of error lines in the code compiled by the uni-app compiler, which is equivalent to garbled characters, and cannot tell the developer that it is uni-app Which line of code in vue or js reports an error.
 
 uni统计的sourceMap功能可以解决这一问题，在统计后台可以清晰的看到报错的环境和准确的报错代码，是uni-app编译前的vue或js的具体信息。
+The sourceMap function of uni statistics can solve this problem. In the statistics background, you can clearly see the error reporting environment and accurate error code, which is the specific information of vue or js before uni-app compilation.
 
 - 在 HBuiderX 中生成 sourceMap 文件
 - Generate sourceMap file in HBuiderX
@@ -558,14 +576,17 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 	- For the web platform, check the `Generate sourceMap` option in `Release -> Website`.
 
 		![web 平台生成 sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/create_sourcemap.jpg)
+		![web platform generates sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/create_sourcemap.jpg)
 	- App 平台在`发行 -> 原生App-云打包`时，勾选 `生成 sourceMap` 选项。
 	- When the App platform is `Release -> Native App-Cloud Packaging`, check the `Generate sourceMap` option.
 
 		![app 平台生成 sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/app_sourcemap.jpg)
+		![app platform generates sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/app_sourcemap.jpg)
 	- 微信小程序平台在`发行 -> 小程序-微信`时，勾选 `生成 sourceMap` 选项。
 	- When the WeChat MiniApp platform is `Issue -> MiniApp- WeChat`, check the `Generate sourceMap` option.
 
 		![微信小程序平台生成 sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/wx_sourcemap.jpg)
+		![WeChat MiniApp platform generates sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/wx_sourcemap.jpg)
 
 - cli 项目生成 sourceMap 文件
 - cli project generates sourceMap file
@@ -597,6 +618,7 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 1. After the project is compiled, you can view the generated sourceMap files for each platform in `/unpackage/dist/build/.sourcemap`.
 
 	![生成的 sourceMap 路径](https://web-assets.dcloud.net.cn/unidoc/zh/sourcemap_file.jpg)
+	![Generated sourceMap path](https://web-assets.dcloud.net.cn/unidoc/zh/sourcemap_file.jpg)
 
 3. 由于微信小程序平台上传发布后，会再压缩打包一次，所以需要额外一个步骤：
 3. After the WeChat MiniApp platform is uploaded and released, it will be compressed and packaged again, so an additional step is required:
@@ -606,6 +628,7 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
    2. Unzip the downloaded file into the generated .sourcemap folder: `/unpackage/dist/build/.sourcemap/mp-weixin/__WEIXIN__/` (__WEIXIN__ is the newly created directory, and the parsing error will be based on this name lookup)
 
    ![微信 download sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/mp-weixin-download-sourcemap.png)
+   ![WeChat download sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/mp-weixin-download-sourcemap.png)
 
 	**注意事项**
 	**Precautions**
@@ -631,6 +654,7 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 2. Run the uni-admin project into the browser, and on the `uni statistics / error statistics / js error report` page, there is an `upload sourceMap` button in the upper right corner of the error message list table. After clicking, it will display as follows:
 
 	![上传 sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/%E4%B8%8A%E4%BC%A0%20sourcemap%20%E6%8A%BD%E5%B1%89.png)
+	![Upload sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/%E4%B8%8A%E4%BC%A0%20sourcemap%20%E6%8A%BD%E5%B1 %89.png)
 
 1. 上传请前请填写完整信息：`应用`、`平台`、`版本`
 1. Please fill in the complete information before uploading: `Application`, `Platform`, `Version`
@@ -640,7 +664,9 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 3. The contents of the folder will be uploaded to the `cloud storage/__UNI__/uni-stat/sourcemap/application appId/platform (eg web, mp-weixin, ios)/version/` directory
 
 **注意事项**
+**Precautions**
 1. 云存储需要配置权限：如果使用的腾讯云服务空间不是当前项目绑定，则需要设置为：`所有用户可读`
+1. Cloud storage needs configuration permissions: If the Tencent Cloud service space used is not bound by the current project, it needs to be set to: `All users can read`
 2. 如果出现跨域需要在 `跨域配置` 中绑定安全域名
 2. If there is cross-domain, you need to bind the security domain name in `cross-domain configuration`
 3. 上传失败可能会有如下原因：
@@ -663,11 +689,13 @@ On the `uni statistics / error statistics / js error report` page, in the error 
 Original error message:
 
 ![原始错误：](https://web-assets.dcloud.net.cn/unidoc/zh/originalErrMsg.jpg)
+![Original error:](https://web-assets.dcloud.net.cn/unidoc/zh/originalErrMsg.jpg)
 
 解析后的错误信息：
 Parsed error message:
 
 ![原始错误：](https://web-assets.dcloud.net.cn/unidoc/zh/parse_error.jpg)
+![Original error:](https://web-assets.dcloud.net.cn/unidoc/zh/parse_error.jpg)
 
 - 解析错误是逐行解析，某一行解析失败会返回原错误信息
 - Parsing errors are parsed line by line. If a line fails to parse, the original error message will be returned
@@ -1274,7 +1302,9 @@ The current types of scheduled tasks are (`The content in brackets below indicat
   - Log cleanup, triggered by default `every day at 5:00 am (30 minutes)`, to clean up expired log data
 
 - `pay-result`：支付数据结果统计，统计维度包括：
+- `pay-result`: Payment data result statistics, statistical dimensions include:
 	- 实时统计，默认`每小时（10分钟）`触发，统计上一小时的基础数据（实时统计时，会自动统计小时、天、周、月、季度、年度维度的数据，无需再配置其他维度统计）
+	- Real-time statistics, triggered by `hourly (10 minutes)` by default, statistics of the basic data of the last hour (during real-time statistics, the data of hour, day, week, month, quarter, and year will be automatically counted, no need to configure other dimensions statistics)
 
 #### 错误检测配置说明
 #### Error detection configuration instructions
@@ -1453,69 +1483,112 @@ exports.main = async (event, context) => {
 ```
 
 ## uni统计2.0费用评测@cost
+## uni statistics 2.0 cost evaluation @cost
 
 ### 前言
+### Preface
 
 近期，uniCloud阿里云版开始正式商用，部分开发者对基于uniCloud的`uni统计`等云端一体业务，开始纠结，不清楚这些业务预计会花费多少钱，不清楚相比传统服务器而言，何种方案性价比更好。
+Recently, the uniCloud Alibaba Cloud version has been officially commercialized. Some developers have begun to struggle with cloud-integrated services such as `uni statistics' based on uniCloud. They don't know how much these services are expected to cost. The program is more cost-effective.
 
 本文尝试算细账、算总账，以阿里云[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，详细预测`uni统计`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择，无忧开发。
+This article tries to calculate the detailed accounts and the general ledger. Taking Aliyun [pay-as-you-go](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay) as an example, the detailed prediction of `uni statistics` will be Resource consumption and corresponding costs under different user scales help you choose wisely and develop worry-free.
 
 本文主要分为三个部分：
+This article is mainly divided into three parts:
 
 - `uni统计`消耗的资源费用测算
+- Estimation of resource costs consumed by `uni statistics`
 - `uni统计`给你带来的收益
+- Benefits brought to you by `uni statistics`
 - 综合考虑，你该如何选择
+- Comprehensive consideration, how should you choose
 
 **uni统计 消耗的资源费用测算**
+**Uni Statistics Consumed Resource Cost Calculation**
 
 `uni统计`涉及费用的部分主要分为：
+The parts of `uni statistics` involving expenses are mainly divided into:
 - 云函数：`uni统计`云函数，云函数有2个
+- Cloud function: `uni statistics` cloud function, there are 2 cloud functions
 	+ uni-stat-receiver 客户端数据上报函数（添加统计数据源）
+	+ uni-stat-receiver client data reporting function (add statistical data source)
 	+ uni-stat-cron 数据跑批处理函数（生成统计数据）
+	+ uni-stat-cron data run batch processing function (generate statistical data)
 - 云数据库：`uni-stat-`为前缀的表
+- Cloud database: tables prefixed with `uni-stat-`
 - 前端网站托管：部署`uni-admin`，管理员发布新版本
+- Front-end website hosting: deploy `uni-admin`, the administrator releases a new version
 
 接下来，我们对不同资源，分别进行费用评估。
+Next, we conduct cost assessments for different resources.
 
 ### 云函数@cost-function
+### cloud function @cost-function
 
 #### uni-stat-receiver
 
 启用`uni统计`后，你的每一个在线用户默认每10秒会请求一次`uni-stat-receiver`云函数（如果你的日活在1万以上，可以改成60秒，可以减少费用。时间间隔可在manifest.json内设置，如果用户一直停留在一个页面，那么此时不会重复上报）
+After enabling `uni statistics`, each of your online users will request the `uni-stat-receiver` cloud function every 10 seconds by default (if your DAU is more than 10,000, you can change it to 60 seconds, which can reduce the cost. Time The interval can be set in manifest.json, if the user stays on one page, it will not be reported repeatedly)
 
 我们按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)列出的按量计费规则，计算一下云函数的资源消耗。
+Let's calculate the resource consumption of cloud functions according to the pay-as-you-go rules listed on [uniCloud official website](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay).
 
 |资源分类			|资源细项							|售价（元）	|
+|Resource classification |Resource details |Price (yuan) |
 |:-------:		|:----------------:		|:-------:	|
 |云函数				|资源使用量（GBs）			|0.000110592|
+|Cloud Function |Resource Usage (GBs) | 0.000110592|
 |							|调用次数（万次）				|0.0133			|
+| |Number of calls (10,000 times) | 0.0133 |
 |							|出网流量（GB）					|0.8				|
+| |Outbound traffic (GB) | 0.8 |
 |云数据库			|容量（GB/天）					|0.07				|
+|Cloud Database |Capacity (GB/day) | 0.07 |
 |							|读操作数（万次）				|0.015			|
+| |Number of read operations (10,000 times) | 0.015 |
 |							|写操作数（万次）				|0.05				|
+| |Number of write operations (10,000 times) | 0.05 |
 |云存储				|容量（GB/天）					|0.0043			|
+|Cloud storage |Capacity (GB/day) | 0.0043 |
 |							|下载操作次数（万次）		|0.01				|
+| |Number of download operations (10,000 times) | 0.01 |
 |							|上传操作次数（万次）		|0.01				|
+| |Number of upload operations (10,000 times) | 0.01 |
 |							|CDN 流量（GB）				|0.18				|
+| | CDN Traffic (GB) | 0.18 |
 |前端网站托管		|容量（GB/天）					|0.0043			|
+|Front-end website hosting |Capacity (GB/day) | 0.0043 |
 |							|流量（GB）						|0.18				|
+| |Traffic (GB) | 0.18 |
 
 我们可以简单得出如下公式：
+We can simply derive the following formula:
 
 `云函数/云对象费用 = 资源使用量 * 0.000110592  + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8`
+`Cloud function/cloud object cost = resource usage * 0.000110592 + number of calls * 0.0133 / 10000 + outbound traffic * 0.8`
 
 其中：
+in:
 - 资源使用量 = 云函数内存（单位为G） * 云函数平均单次执行时长（单位为秒） * 调用次数
+- Resource usage = cloud function memory (in G) * average execution time of a cloud function (in seconds) * number of calls
 - 调用次数 = 应用日活 * 每日活用户平均每天上报次数
+- Number of calls = daily activity of the application * average daily number of reports by daily active users
 
 我们假设如下数据模型：
+We assume the following data model:
 
 - 云函数运行内存：128M，即0.125G（云函数内存默认为512M，用户可以自定义设置，最低可设置为128M）
+- Cloud function running memory: 128M, which is 0.125G (cloud function memory is 512M by default, users can customize the settings, the minimum can be set to 128M)
 - 每日活用户平均每天上报次数：10 次
+- Average number of reports per day by active users: 10 times
 - 云函数平均单次执行时长：100毫秒，即0.1秒
+- The average execution time of a cloud function: 100 milliseconds, or 0.1 seconds
 - 单次请求出网流量：0.7 KB
+- Single request outbound traffic: 0.7 KB
 
 按照如上公式，若有100个日活用户，其`uni统计`的`uni-stat-receiver`云函数每天的费用为：
+According to the above formula, if there are 100 daily active users, the daily cost of the `uni-stat-receiver` cloud function of `uni statistics` is:
 
 ```
 云函数费用（天） = 资源使用量 * 0.000110592  + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8
@@ -1526,12 +1599,16 @@ exports.main = async (event, context) => {
 ```
 
 即：你的App日活为100，使用`uni统计`商业版后，`uni-stat-receiver`云函数每天大概消耗0.0032元。
+That is: your App DAU is 100, and after using the commercial version of `uni statistic`, the `uni-stat-receiver` cloud function consumes about 0.0032 yuan per day.
 
 据此，可计算其每月的费用为：0.0032 * 30 ≈ 0.1，即日活为100时，每月`uni-stat-receiver`云函数只需0.1元。
+According to this, the monthly cost can be calculated as: 0.0032 * 30 ≈ 0.1, that is, when the daily activity is 100, the monthly `uni-stat-receiver` cloud function only needs 0.1 yuan.
 
 同理，我们可推导出日活为1000、10000、10万的App，其`uni-stat-receiver`云函数每月费用如下表：
+In the same way, we can deduce that for apps with 1,000, 10,000, and 100,000 daily activities, the monthly cost of the `uni-stat-receiver` cloud function is as follows:
 
 |  日活	| 资源使用量计费（元/日）	|	调用次数计费（元/日）	|  出网流量计费（元/日）	| 日合计（元/日）	|  月合计（元/月）	|	
+| Daily Activity | Resource Usage Billing (Yuan/Day) | Call Times Billing (Yuan/Day) | Outbound Traffic Billing (Yuan/Day) | Daily Total (Yuan/Day) | Monthly Total (Yuan/Month) |
 | :----:| :-----------------:		|:-------------------:|:--------------------:	|:----------:		|:---------:			| 
 |   100 |			0.001382					|			0.00133					|  0.000534							|    0.0032			|    0.10 				|
 |  1000	|			0.01382						|			0.0133					|  0.00534							|    0.0325			|    0.98  				|
@@ -1541,15 +1618,22 @@ exports.main = async (event, context) => {
 #### uni-stat-cron
 
 `uni统计`还有一个云函数`uni-stat-cron`，它是定时数据跑批任务，用来将上报的数据进行统计，生成统计报表。
+`uni statistic` also has a cloud function `uni-stat-cron`, which is a scheduled data running batch task, which is used to count the reported data and generate statistical reports.
 
 我们假设如下数据模型：
+We assume the following data model:
 
 - 云函数内存：512M，即0.5G（跑批云函数建议设置为512M，因为它每天只运行24次，内存越大，性能越强）
+- Cloud function memory: 512M, which is 0.5G (it is recommended to set it to 512M for running batch cloud functions, because it only runs 24 times a day, and the larger the memory, the stronger the performance)
 - 云函数平均单次执行时长：1秒（随着数据源越多，运行时间越长）
+- The average execution time of a cloud function: 1 second (the more data sources, the longer the running time)
 - 每日执行次数：24次（固定每小时运行1次）
+- Daily execution times: 24 times (fixed to run once per hour)
 - 出网流量：没有返回给客户端，固定为0
+- Outbound traffic: not returned to the client, fixed at 0
 
 其`uni统计`的`uni-stat-cron`云函数每天的费用为：
+The daily cost of the `uni-stat-cron` cloud function of `uni statistics` is:
 
 ```
 云函数费用（天） = 资源使用量 * 0.000110592  + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8
@@ -1560,12 +1644,16 @@ exports.main = async (event, context) => {
 ```
 
 即：你的App日活为100，使用`uni统计`商业版后，`uni-stat-receiver`云函数每天大概消耗0.0014元。
+That is: your App DAU is 100, and after using the commercial version of `uni statistic`, the `uni-stat-receiver` cloud function consumes about 0.0014 yuan per day.
 
 据此，可计算其每月的费用为：0.0014 * 30 ≈ 0.04，即日活为100时，每月`uni-stat-receiver`云函数只需0.04元。
+According to this, its monthly cost can be calculated as: 0.0014 * 30 ≈ 0.04, that is, when the daily activity is 100, the monthly `uni-stat-receiver` cloud function only needs 0.04 yuan.
 
 同理，我们可推导出日活为1000、10000、10万的App，其`uni-stat-receiver`云函数每月费用如下表：
+In the same way, we can deduce that for apps with 1,000, 10,000, and 100,000 daily activities, the monthly cost of the `uni-stat-receiver` cloud function is as follows:
 
 |  日活	|  平均耗时（秒）	| 资源使用量计费（元/日）	|  调用次数计费（元/日）	|  出网流量计费（元/日）	|   日合计（元/日）	|  月合计（元/月）	|
+| Daily activity | Average time spent (seconds) | Resource usage billing (yuan/day) | Call times billing (yuan/day) | Outbound traffic billing (yuan/day) | Daily total (yuan/day) | Monthly total (yuan/month) |
 | :----:| :------:			|:-------------------:	|:-------------------:	|:-------------------:	|:---------:			| :--------:			| 
 |   100	|   1						|      0.001327					|       0.00003192			|  0										|   0.0014				|  0.04						|
 |  1000	|   3						|      0.003981					|       0.00003192			|  0										|   0.0040				|  0.12						|
@@ -1573,33 +1661,50 @@ exports.main = async (event, context) => {
 |100000	|  90						|      0.119439					|       0.00003192			|  0										|   0.1195				|  3.59						|
 
 由于`uni-stat-cron`云函数不管多少日活，每日均只运行24次，故日活对其费用的影响很小（只影响了每次运行的时长）。
+Since the `uni-stat-cron` cloud function only runs 24 times a day regardless of the daily activity, the daily activity has little impact on its cost (only the duration of each operation is affected).
 
 ### 云数据库@cost-db
+### cloud database @cost-db
 
 按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，云数据库费用 = `容量费用 + 读操作次数费用 + 写操作次数费用`，其中：
+According to [uniCloud official website](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay), cloud database fee = `capacity fee + read operation fee + write operation fee', where :
 
 - 容量费用：数据库存储容量（单位为G） * 0.07
+- Capacity fee: database storage capacity (in G) * 0.07
 - 读操作次数费用：读操作次数（万次） * 0.015
+- Fee for the number of read operations: number of read operations (10,000 times) * 0.015
 - 写操作次数：写操作次数（万次） * 0.05
+- Number of write operations: number of write operations (thousands) * 0.05
 
 `uni统计`会产生大量的日志数据，但默认会有自动清除历史日志的策略，如：会话日志`31天前`的数据会被删除。
+`uni statistics` will generate a large amount of log data, but by default there will be a strategy for automatically clearing historical logs, for example: session log data `31 days ago` will be deleted.
 
 由于`uni统计`涉及数据库的情况非常复杂，我们通过对官方统计示例项目的实际运行数据得出以下结果：
+Since `uni statistics` involves a very complicated database, we have obtained the following results through the actual operation data of the official statistics sample project:
 
 日活为100的应用，`uni统计`数据库资源用量如下：
+For an application with a DAU of 100, the resource usage of `uni statistics` database is as follows:
 
 - 每日活用户平均每天上报次数：10 次
+- Average number of reports per day by active users: 10 times
 - 平均每次上报，需读取2次数据库，写入2次数据库（平均新增1.1条，修改0.9条），故新增插入1.1条记录，约0.54KB（注意：很多情况下上报可能没有数据新增，仅仅只是修改下会话日志数据。）
+- On average, each report requires 2 database reads and 2 writes (an average of 1.1 new records and 0.9 modified records), so 1.1 new records are added and inserted, about 0.54KB (Note: In many cases, there may be no reports New data is added, just modify the session log data.)
 
 以上数据由官方统计示例项目计算得出。
+The above figures are calculated from the Official Statistics Sample Project.
 
 故可得出以下数据模型：
+Therefore, the following data model can be obtained:
 
 - 日均云数据库容量：0.00052G（= 100 * 10 * 0.54 / 1024 / 1024）
+- Average daily cloud database capacity: 0.00052G (= 100 * 10 * 0.54 / 1024 / 1024)
 - 日均云数据库读取次数：2000次（= 100 * 10 * 2）
+- Daily average cloud database reading times: 2000 (= 100 * 10 * 2)
 - 日均云数据库写入次数：2000次（= 100 * 10 * 2）
+- Average number of daily cloud database writes: 2000 (= 100 * 10 * 2)
 
 因为数据源只保留31天，故稳定运行后，数据量容量一直会保持在31天的量。故下方公式中云数据库容量需要乘31
+Because the data source is only kept for 31 days, the data volume will remain at 31 days after stable operation. Therefore, the cloud database capacity in the formula below needs to be multiplied by 31
 
 ```
 数据库费用（天） = 云数据库容量 * 31 * 0.07   + 读操作次数 * 0.015 / 10000 + 写操作次数 * 0.05/10000
@@ -1609,9 +1714,12 @@ exports.main = async (event, context) => {
 ```
 
 即：如果你的`uni统计`业务日活为100，使用阿里云商业版云服务空间后，对应数据库每天大概消耗0.0141元。
+That is: if your `uni statistics` business DAU is 100, after using the cloud service space of Alibaba Cloud Commercial Edition, the corresponding database will consume about 0.0141 yuan per day.
 据此，可计算其每月的费用为：0.0141 * 30 ≈ 0.42，即日活为100时每月云数据库只需0.42元。
+Based on this, the monthly cost can be calculated as: 0.0141 * 30 ≈ 0.42, that is, when the DAU is 100, the monthly cloud database only needs 0.42 yuan.
 
 |日活				|容量费（G）	|读操作次数费用（元/日）	|写操作次数费用（元/日）	|日合计（元/日）	|月合计（元/月）	|
+|Daily activity |Capacity fee (G) |Read operation fee (yuan/day) |Write operation fee (yuan/day) |Day total (yuan/day) |Month total (yuan/month) |
 | :--------:| :------:	|:---------------:		|:---------------:		|:----------:		|:----------:		|
 |   100			|0.0011284	|		0.003						|		 0.01								| 0.0141				|  0.42					|
 |  1000			|0.011284		|		0.03						|		 0.10								| 0.1413				|  4.24					|
@@ -1619,10 +1727,13 @@ exports.main = async (event, context) => {
 |100000			|1.1284			|		3.00						|		10.00								| 14.1284				|423.85					|
 
 #### 云数据库搭配redis后费用对比
+#### Cloud database with redis cost comparison
 
 redis只影响数据库的读操作，通过官方统计示例项目使用redis的前后对比可知redis大概可以减少2/3的数据库读操作次数（等于减少2/3的数据库读次数费用）。
+Redis only affects the read operation of the database. According to the comparison before and after using redis in the official statistical sample project, it can be seen that redis can reduce the number of database read operations by about 2/3 (equal to reducing the cost of database read times by 2/3).
 
 |日活				|读操作次数费用（元/月）（未开启redis）	|读操作次数费用（元/月）（开启redis）	|开启redis后每月减少的费用（元）	|
+|daily activity |cost of read operations (yuan/month) (redis not enabled) |cost of read operations (yuan/month) (redis enabled) |cost reduction per month after redis is enabled (yuan) |
 | :--------:|:------------------------------:		|:---------------------------:		|:-------------------:				|
 |   100			|	 0.09															|		0.03													|  0.06												|
 |  1000			|	 0.90															|		0.30													|  0.60												|
@@ -1630,99 +1741,152 @@ redis只影响数据库的读操作，通过官方统计示例项目使用redis�
 |100000			|	90.00															|	 30.00													| 60.00												|
 
 由此可见，当日活低于10万时，redis减少的费用还不太明显。但当日活大于10万时，redis的作用越来越明显。
+It can be seen that when the daily activity is lower than 100,000, the cost reduction of redis is not obvious. But when the daily activity is greater than 100,000, the role of redis becomes more and more obvious.
 
 ### 前端网页托管
+### Front-end web hosting
 
 `uni统计`需要和`uni-admin`配合使用，`uni-admin`需要部署在前端网页托管中。`uni-admin`主要是管理员使用，使用频次较少，流量也较低。
+`uni statistics` needs to be used in conjunction with `uni-admin`, and `uni-admin` needs to be deployed in the front-end web hosting. `uni-admin` is mainly used by administrators, with less frequent use and lower traffic.
 
 按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，前端网页托管费用 = `容量费 + 流量费`。
+According to [uniCloud official website](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay), the front-end web hosting fee = `capacity fee + traffic fee`.
 
 #### 容量费
+#### Capacity Fee
 
 `uni-admin`编译后为4.7M，按照官网每GB每天0.0043元的规则，`uni-admin`的月度容量费为：`4.7 / 1024 * 0.0043 * 30 = 0.00059`，不到1分钱，可忽略。
+`uni-admin` is compiled to 4.7M. According to the rule of 0.0043 yuan per GB per day on the official website, the monthly capacity fee of `uni-admin` is: `4.7 / 1024 * 0.0043 * 30 = 0.00059`, which is less than 1 cent. Ignorable.
 
 #### 流量费
+#### traffic fee
 
 管理员登录`uni-admin`，到`uni统计`管理页面浏览统计数据，所需流量不超过3M，即使每月发布2次更新，流量费预估为：`3 / 1024 * 0.18 * 2 = 0.00105`，也不到1分钱，也可忽略。
+The administrator logs in to `uni-admin` and browses the statistical data on the `uni statistics` management page. The traffic required does not exceed 3M. Even if updates are released twice a month, the estimated traffic fee is: `3 / 1024 * 0.18 * 2 = 0.00105`, which is less than 1 cent, can also be ignored.
 
 #### 前端网页托管总结
+#### Summary of front-end web hosting
 
 每月费用不到1分钱，可忽略。
+The monthly fee is less than 1 cent, which can be ignored.
 
 ### 费用合并@cost-total 
+### Cost Consolidation @cost-total
 
 细项对比完了，我们来合并看看，使用`uni统计`，每月到底需要花多少钱。
+After comparing the detailed items, let's combine them to see how much they need to spend per month using `uni statistics`.
 
 |日活		    |云函数（元/月）	|云数据库（元/月）	|前端网页托管	（元/月）	|  月合计（元/月）	|
+|Daily Active |Cloud Function (RMB/month) |Cloud Database (RMB/month) |Front-end Web Hosting (RMB/month) |Monthly Total (RMB/month) |
 | :--------:| :--------:		|:-----------:		|:-----------------:	|:---------------:|
 |   100	    |   0.14	  		|   0.42					|可忽略不计						|   0.56					|
+| 100 | 0.14 | 0.42 | Negligible | 0.56 |
 |  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					| 
+| 1000 | 1.10 | 4.24 | Negligible | 5.34 |
 | 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|  
+| 10000 | 10.93 | 42.38 | Negligible | 53.31 |
 |100000		  | 100.97	 			| 423.85					|可忽略不计						| 524.82					|
+| 100000 | 100.97 | 423.85 | Negligible | 524.82 |
 
 ### uni统计 给你带来的收益
+### uni statistics bring you benefits
 
 使用`uni统计`，免费获取、一键安装，你将获得：
+Using `uni statistics`, free access, one-click installation, you will get:
 
 **1. 全端**
+**1. Full port**
 
 全端流量统计，一张报表可查看所有端（iOS、Android、Web 及各家小程序）的运营数据。
+Full terminal traffic statistics, one report can view the operation data of all terminals (iOS, Android, Web and various MiniApp).
 
 无需在各端接不同的sdk、无需在不同报表看数据。目前市面已知唯一一个一张报表看遍业务全景的方案。
+There is no need to connect different SDKs at each end, and there is no need to view data in different reports. At present, the only solution known in the market is to view the business panorama in one report.
 
 **2. 开源、免费、自由定制**
+**2. Open source, free, free customization**
 
 代码全部开源。采集什么数据可以自定义；跑批频率可以自定义（搞活动时实时统计都可以做到）；展示报表可以自定义。
+All codes are open source. What data to collect can be customized; batch running frequency can be customized (real-time statistics can be done during activities); display reports can be customized.
 
 **3. 私有部署、数据自控**
+**3. Private deployment, data self-control**
 
 使用传统saas类统计产品，所有数据都上报给统计服务厂商。
+Using traditional saas statistical products, all data are reported to statistical service vendors.
 
 `uni统计2.0`基于`uniCloud`实现，云函数、统计数据全部托管在开发者自己的服务空间（阿里云或腾讯云自选）中，开发者对自己的统计数据拥有完整的控制权。
+`uni Statistics 2.0` is implemented based on `uniCloud`. Cloud functions and statistical data are all hosted in the developer's own service space (Alibaba Cloud or Tencent Cloud optional), and developers have complete control over their own statistical data.
 
 **4. 有效的错误分析**
+**4. Effective error analysis**
 
 传统App统计平台，都没有js错误统计。开发者无法了解到自己的js代码在哪些设备上会报错。
+Traditional app statistics platforms do not have js error statistics. Developers cannot know on which devices their js code will report errors.
 
 uni统计的错误信息更全面，包括 js前端错误和 App 原生层的崩溃。
+The error information collected by uni is more comprehensive, including js front-end errors and app native layer crashes.
 
 因为uni-app是编译后运行，传统web和小程序的统计平台，其js报错无法回溯到uni-app的编译前源码，报错看不懂。
+Because uni-app runs after compilation, the traditional web and MiniApp statistics platform, its js error cannot be traced back to the source code of uni-app before compilation, and the error report is incomprehensible.
 
 uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[详见](https://uniapp.dcloud.net.cn/uni-stat-v2.html#sourcemap-parse-error)
+uni statistics support sourcemap, which can intuitively understand which line of code is wrong. [See details](https://uniapp.dcloud.net.cn/uni-stat-v2.html#sourcemap-parse-error)
 
 **真实案例**
+**real case scenario**
 
 > [一个半月全端获客400万的真实例子](https://mp.weixin.qq.com/s?__biz=MzU3NTU5NDc0NA==&mid=2247491214&idx=1&sn=7e334d079146d9e31cea407f45bd8624&chksm=fd219719ca561e0f9a85b30017618eaf9551b46cdd6ecdf856bc4e47aee4ca93767fcf23147f&mpshare=1&scene=1&srcid=0713VwAOIuRllzMB6syoQssb&key=15a2b72b2464b4fe73325967f733ac332583d5db37f1812c63613c083a8f5921bca2ada2140d45e07657b062dc451f27cc48fe4fd298f6456f300895a90bd471480afdc2c8dc5a45254fb1dc48d3b79a&ascene=1&uin=MTkzNjMxMzU%3D&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=xW6dPp%2F565g5S8hl1lz%2F8FLQBEzW6KUHyyqyHPdT2nk%3D)
+> [一个半月全端获客400万的真实例子](https://mp.weixin.qq.com/s?__biz=MzU3NTU5NDc0NA==&mid=2247491214&idx=1&sn=7e334d079146d9e31cea407f45bd8624&chksm=fd219719ca561e0f9a85b30017618eaf9551b46cdd6ecdf856bc4e47aee4ca93767fcf23147f&mpshare=1&scene=1&srcid=0713VwAOIuRllzMB6syoQssb&key= 15a2b72b2464b4fe73325967f733ac332583d5db37f1812c63613c083a8f5921bca2ada2140d45e07657b062dc451f27cc48fe4fd298f6456f300895a90bd471480afdc2c8dc5a45254fb1dc48d3b79a&ascene=1&uin=MTkzNjMxMzU%3D&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=xW6dPp%2F565g5S8hl1lz%2F8FLQBEzW6KUHyyqyHPdT2nk%3D)
 
 ### 总结@cost-summary
+### Summary @cost-summary
 
 再次说回`uni统计`，通过上面的费用测算可得知，以日活1万来说，每个日活产生的一年的费用大概是6分钱到7分钱之间，这个费用已经是比较便宜的了。
+Let’s go back to `uni statistics` again. From the cost calculation above, we can know that for a daily activity of 10,000, the annual cost of each daily activity is about 6 cents to 7 cents. This cost is already relatively It's cheap.
 
 目前市面上的统计如友盟统计也是收费的，在日活达到1万时，每年费用需要3109元/年（且这还只是web统计的费用，APP统计另算费用）。同时它还不是源码版本，代码不开源，无法随意定制。
+At present, statistics on the market, such as Youmeng statistics, are also charged. When the daily activity reaches 10,000, the annual fee needs to be 3109 yuan/year (and this is only the cost of web statistics, and the cost of APP statistics is calculated separately). At the same time, it is not a source code version, the code is not open source, and cannot be customized at will.
 
 而`uni统计`是全平台统计、代码开源、随意定制，这是三方统计平台做不到的。
+And `uni statistics` is full-platform statistics, open-source code, free customization, which cannot be achieved by three-party statistical platforms.
 
 再看回刚才的计算表，以日活1万来说，`uni统计`每年费用只需53.31*12=639.72元/年。
+Looking back at the calculation table just now, assuming that the DAU is 10,000, the annual cost of `uni statistics` is only 53.31*12=639.72 yuan/year.
 
 |日活		    |云函数（元/月）	|云数据库（元/月）	|前端网页托管	（元/月）	|  月合计（元/月）	|
+|Daily Active |Cloud Function (RMB/month) |Cloud Database (RMB/month) |Front-end Web Hosting (RMB/month) |Monthly Total (RMB/month) |
 | :--------:| :--------:		|:-----------:		|:-----------------:	|:---------------:|
 |   100	    |   0.14	  		|   0.42					|可忽略不计						|   0.56					|
+| 100 | 0.14 | 0.42 | Negligible | 0.56 |
 |  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					| 
+| 1000 | 1.10 | 4.24 | Negligible | 5.34 |
 | 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|  
+| 10000 | 10.93 | 42.38 | Negligible | 53.31 |
 |100000		  | 100.97	 			| 423.85					|可忽略不计						| 524.82					|
+| 100000 | 100.97 | 423.85 | Negligible | 524.82 |
 
 不重复制造轮子，聚焦业务，快速验证模式，实现商业增长，才应该是聪明工程师的追求。
+It should be the pursuit of smart engineers not to repeat manufacturing wheels, focus on business, quickly verify models, and achieve business growth.
 
 本篇评测共大家参考。
+This review is for your reference.
 
 ### 如何降低费用@savemoney
+### How to lower your fees @savemoney
 
 - 1.适当增大前端数据上报周期
+- 1. Appropriately increase the front-end data reporting cycle
 因为默认是10秒上报一次。改成60秒一次就可以降低6倍的访问量。具体调整方式可参考上文[数据上报逻辑](#report-time)中有关前端数据上报周期的说明。
+Because the default is to report once every 10 seconds. Changing it to once every 60 seconds can reduce the number of visits by 6 times. For the specific adjustment method, please refer to the description of the front-end data reporting cycle in [Data Reporting Logic](#report-time) above.
 - 2.开启redis缓存
+- 2. Enable redis cache
 这也是目前降低`uni统计2.0`数据库查询次数最有效的方法。因为redis是按容量计费，读写次数再多也不会多花钱。redis开启方法可参上文[开启redis缓存](#开启redis缓存)。
+This is also the most effective way to reduce the number of `unistatistics 2.0` database queries. Because redis is billed according to capacity, no matter how many reads and writes are made, it will not cost more. For how to enable redis, please refer to [Enable redis cache](#%E5%BC%80%E5%90%AFredis%E7%BC%93%E5%AD%98) above.
 - 3.关闭实时统计
+- 3. Turn off real-time statistics
 实时统计指云端实时运算统计报表。但现实中大多数人只关心昨天的统计报表。只有今天要搞促销时才会实时关注数据报表。可以在日常配置为按天统计，在搞活动时再调整配置为实时统计。修改方法：将实时统计的配置项设置为关闭状态，然后重新上传配置中心（`uni-config-center`）到关联的服务空间即可。配置项说明可查看上文[公共模块配置项说明](#公共模块配置项说明)。
+Real-time statistics refer to cloud real-time computing statistical reports. But in reality, most people only care about yesterday's statistical report. Only when there is a promotion today will I pay attention to the data report in real time. It can be configured for daily statistics, and then adjusted for real-time statistics during activities. Modification method: Set the configuration item of real-time statistics to off, and then re-upload the configuration center (`uni-config-center`) to the associated service space. For the configuration item description, please refer to the above [common module configuration item description](#%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97%E9%85%8D%E7%BD %AE%E9%A1%B9%E8%AF%B4%E6%98%8E).
 
 ## 常见问题
 ## common problem
@@ -1771,6 +1935,7 @@ A: Refer to [uni-admin creates multiple login accounts for the system and sets d
 **5. Why is the total device count less than the active device count? **
 
 答：总设备数计算公式为：总设备数 = 原设备数 + 新设备数，而判断一个设备是否为新设备的依据是在客户端SDK中是否已储存该设备上次访问某一应用的时间，未存储则认为是该应用的新设备(即lvts=0时为新设备，lvts>0时为老设备)。 因此如果之前某一设备已经访问过某一应用，就算此时清除数据库中的数据，由于已经在客户端SDK中储存该设备上次访问应用的时间（即此时lvts > 0），所以该设备也不会再被认为是该应用的新设备从而不会再被计算进该应用的总设备数中而只会计算进活跃设备数中，此时可能就会出现总设备数小于活跃设备数的情况。
+Answer: The formula for calculating the total number of devices is: total number of devices = number of original devices + number of new devices, and the basis for judging whether a device is a new device is whether the time when the device last accessed an application has been stored in the client SDK If it is not stored, it is considered as a new device of the application (that is, when lvts=0, it is a new device, and when lvts>0, it is an old device). Therefore, if a device has accessed an application before, even if the data in the database is cleared at this time, since the time when the device accessed the application last time has been stored in the client SDK (that is, lvts > 0 at this time), the device It will no longer be considered as a new device of the application, so it will no longer be counted into the total number of devices of the application, but will only be counted into the number of active devices. At this time, the total number of devices may be less than the number of active devices. Condition.
 
 **6. uni-stat-cron运行日志显示 Not Found the cofnig file** 
 **6. The uni-stat-cron log shows Not Found the cofnig file**

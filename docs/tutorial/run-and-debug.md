@@ -83,7 +83,10 @@ After running the console, there will be a red bug icon or a debugging checkbox 
 ![](https://hx.dcloud.net.cn/static/snapshots/app/h5-debug/open-debug.png)
 
 ### 线上平台排错
+### Online Platform Troubleshooting
 
 应用上线后，各种用户环境下可能会有报错，需要开发者统计和分析。但三方统计系统（如友盟、阿拉丁、百度），对运行端的报错采集，提示的是uni-app编译器编译后的代码报错的行数，相当于乱码，无法告知开发者是uni-app的vue或js的哪一行代码报错。
+After the application is launched, there may be errors reported in various user environments, which require statistics and analysis by developers. However, the three-party statistical system (such as Youmeng, Aladdin, and Baidu) collects the error reports on the running side, and it prompts the number of error lines in the code compiled by the uni-app compiler, which is equivalent to garbled characters, and cannot tell the developer that it is uni-app Which line of code in vue or js reports an error.
 
 为了解决这个问题，DCloud提供了uni统计的sourceMap功能，在uni统计后台可以清晰的看到报错的环境和准确的报错代码，是uni-app编译前的vue或js的具体信息。[详见](https://uniapp.dcloud.net.cn/uni-stat-v2.html#sourcemap-parse-error)
+In order to solve this problem, DCloud provides the sourceMap function of uni statistics. In the background of uni statistics, you can clearly see the error reporting environment and accurate error code. It is the specific information of vue or js before uni-app compilation. [See details](https://uniapp.dcloud.net.cn/uni-stat-v2.html#sourcemap-parse-error)

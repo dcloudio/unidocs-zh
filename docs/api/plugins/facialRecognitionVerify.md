@@ -30,7 +30,7 @@ uni.startFacialRecognitionVerify是客户端API，App端使用实人认证功能
 | timeoutAlertMessage | String | 否  | App-Android | 刷脸页超时对话框的内容 |
 | failAlertTitle | String | 否  | App-Android | 刷脸页错误提示对话框的标题 |
 | failAlertMessage | String | 否  | App-Android | 刷脸页错误提示对话框的内容 |
-| title | String | 否  | App-Android | 刷脸圈的颜色 |
+| title | String | 否  | App-Android | 刷脸圈的标题 |
 | success | Function | 否  | App | 成功回调 |
 | fail | Function | 否  | App | 失败回调 |
 | complete | Function | 否  | App | 完成回调 |

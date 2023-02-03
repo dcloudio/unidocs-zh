@@ -50,7 +50,7 @@ uni-im itself does not charge any fees. In actual use, it needs to rely on uniCl
 6. 以`user_id`为标识通过`uni-push2`向用户发送消息会产生0.00000283元uniCloud使用费用[详情查看](https://uniapp.dcloud.net.cn/unipush-v2.html#cost)
 6. Sending a message to a user through `uni-push2` with `user_id` as the identifier will generate a uniCloud usage fee of 0.00000283 yuan [View details](https://uniapp.dcloud.net.cn/unipush-v2.html#cost)
 
-合计：1次云函数请求、2次数据库读操作、2次数据库写操作、1次uni-push2推送操作，即 (1x0.0133 + 2x0.015 + 2x0.05 + 1x0.0283)/10000 ≈ 0.000017元
+合计：1次云函数请求、2次数据库读操作、2次数据库写操作、1次uni-push2推送操作，即 (1 * 0.0133 + 2 * 0.015 + 2 * 0.05 + 1 * 0.0283)/10000 ≈ 0.000017元
 
 - 群聊场景，向用户发送一条消息的过程：
 - Group chat scenario, the process of sending a message to the user:
@@ -69,7 +69,7 @@ uni-im itself does not charge any fees. In actual use, it needs to rely on uniCl
 7. 以群id为参数，调用uni-im-co云对象的sendMsgToGroup方法，这是一个递归方法每次向500名群成员推送消息（如果群成员数量为0-500只需执行1次，500-1000需执行2次，以此类推），（会产生最少1次数据库读操作，和1次以`user_id`为标识通过`uni-push2`向用户发送消息会产生0.00000283元uniCloud使用费用[详情查看](https://uniapp.dcloud.net.cn/unipush-v2.html#cost)）
 7. With the group id as a parameter, call the sendMsgToGroup method of the uni-im-co cloud object, which is a recursive method to push messages to 500 group members each time (if the number of group members is 0-500, it only needs to be executed once, 500 -1000 needs to be executed 2 times, and so on), (at least 1 database read operation will be generated, and 1 time to send a message to the user through `uni-push2` with `user_id` as the identifier will generate 0.00000283 yuan uniCloud usage fee [details View](https://uniapp.dcloud.net.cn/unipush-v2.html#cost))
 
-合计：向500人群发送消息，会产生：1次云函数请求、4次数据库读操作、2次数据库写操作、1次uni-push2推送操作，即 (1x0.0133 + 4x0.015 + 2x0.05 + 1x0.0283)/10000 ≈ 0.000020元
+合计：向500人群发送消息，会产生：1次云函数请求、4次数据库读操作、2次数据库写操作、1次uni-push2推送操作，即 (1 * 0.0133 + 4 * 0.015 + 2 * 0.05 + 1 * 0.0283)/10000 ≈ 0.000020元
 
 相比行业内同类型产品，uni-im仅收取如此便宜的uniCloud（serverless服务器）费用；在价格这块uni-im性价比极高。
 Compared with the same type of products in the industry, uni-im only charges such a cheap uniCloud (serverless server) fee; in terms of price, uni-im is extremely cost-effective.

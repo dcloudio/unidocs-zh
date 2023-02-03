@@ -59,8 +59,7 @@ For the real machine preview function of the applet development tool, the above-
 如果遇到正确配置了合法域名但是依然报`url not in domain list`，请尝试删除手机上的小程序、清理小程序所在的客户端缓存、重启对应的小程序开发工具后重试
 If you encounter a valid domain name configured correctly but still report `url not in domain list`, please try to delete the applet on the phone, clear the client cache where the applet is located, restart the corresponding applet development tool and try again
 
-如果遇到`invalid ip xxx, not in whitelist`，请检查是否在小程序管理后台开启了域名白名单。如果没用到可以关闭，如果确认需要使用ip白名单，请开通腾讯云收费空间并使用[固定IP](uniCloud/cf-functions.md?id=eip)功能
-If you encounter `invalid ip xxx, not in whitelist`, please check whether the domain name whitelist is enabled in the applet management background. If it is not used, it can be turned off. If it is confirmed that you need to use the ip whitelist, please activate the Tencent Cloud billing space and use the [fixed IP](uniCloud/cf-functions.md?id=eip) function
+如果遇到`invalid ip xxx, not in whitelist`，请检查是否在小程序管理后台开启了域名白名单。如果没用到可以关闭，如果确认需要使用ip白名单，请参考：[固定IP](cf-functions.md#eip)
 
 **关于云函数本地调试服务在小程序中的使用**
 **About the use of the cloud function local debugging service in the applet**

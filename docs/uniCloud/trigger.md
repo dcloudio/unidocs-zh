@@ -139,8 +139,8 @@ Cloud functions receive specific parameters when they are called using timed tri
 
 ```js
 {
-  "timingTriggerConfig": "cron:0 0 * * * *", //触发云函数的定时器配置内容
-  "timestamp": 1585670400006 //触发云函数时的时间戳，可能略晚于cron表达式时间
+  "triggerName": "TIMER_LATEST", //触发云函数的定时器配置内容
+  "triggerTime": "2020-04-08T10:22:31Z" //触发云函数时的时间戳，可能略晚于cron表达式时间
 }
 ```
 

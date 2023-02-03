@@ -1,6 +1,8 @@
 ## 开发指南
 
-实人认证服务端接口仅能通过uniCloud云函数进行调用，完整调用流程如下：
+uni实人认证服务，分前端api和云端api，云端为uniCloud API。如开发者的业务不在uniCloud上，需参考[云函数url化](../http.md)文档编写云函数提供http接口供外部访问，由uniCloud获取到认证结果后转交给开发者的非uniCloud服务器上。
+
+完整认证流程如下：
 
 ```mermaid
 sequenceDiagram

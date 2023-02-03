@@ -56,10 +56,10 @@
   * [费用说明](uniCloud/redis-buy.md)
   * [开发文档](uniCloud/redis.md)
 <!-- * 实人认证
-  * [简介](uniCloud/uni-frv/introduction.md)
-  * [费用说明](uniCloud/uni-frv/price.md)
-  * [开通服务](uniCloud/uni-frv/service.md)
-  * [开发文档](uniCloud/uni-frv/dev.md) -->
+  * [简介](uniCloud/frv/introduction.md)
+  * [费用说明](uniCloud/frv/price.md)
+  * [开通服务](uniCloud/frv/service.md)
+  * [开发文档](uniCloud/frv/dev.md) -->
 * Push扩展库(socket)
   * [业务文档](/unipush-v2.md)
   * 开发文档  

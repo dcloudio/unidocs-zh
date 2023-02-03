@@ -74,9 +74,8 @@ Cron expressions have seven **required** fields, separated by spaces. Among them
 |第三位| 小时 | 0 - 23的整数 | , - * / |
 |third digit| hour | integer 0 - 23 | , - * / |
 |第四位| 日 | 1 - 31的整数（需要考虑月的天数） | , - * / |
-|fourth place|day | integer 1 - 31 (the number of days in the month needs to be considered) | , - * / |
-|第五位| 月 | 1 - 12的整数或 JAN、FEB、MAR、APR、MAY、JUN、JUL、AUG、SEP、OCT、NOV和DEC | , - * / |
-|第六位| 星期 | 0 - 6的整数或 MON、TUE、WED、THU、FRI、SAT和SUN，其中0指星期日，1指星期一，以此类推 | , - * / |
+|第五位| 月 | 1 - 12的整数 | , - * / |
+|第六位| 星期 | 0 - 6的整数，其中0指星期日，1指星期一，以此类推 | , - * / |
 |第七位| 年 | 1970 - 2099的整数（阿里云不支持第七位） | , - * / |
 |7th digit| Year | Integer from 1970 to 2099 (Alibaba Cloud does not support 7th digit) | , - * / |
 

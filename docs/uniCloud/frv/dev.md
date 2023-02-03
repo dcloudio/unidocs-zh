@@ -1,7 +1,9 @@
 ## 开发指南
 ## Development Guide
 
-uni实人认证服务，分前端api和云端api，云端为uniCloud API。如开发者的业务不在uniCloud上，需参考[云函数url化](../http.md)文档编写云函数提供http接口供外部访问，由uniCloud获取到认证结果后转交给开发者的非uniCloud服务器上。
+uni实人认证服务，分前端api和云端api，云端为uniCloud API。
+
+如开发者的业务不在uniCloud上，需参考[云函数url化](../http.md)文档编写云函数提供http接口供外部访问，由uniCloud获取到认证结果后转交给开发者的非uniCloud服务器上。
 
 完整认证流程如下：
 
@@ -10,17 +12,17 @@ sequenceDiagram
   actor user as 用户端
   participant cf as 云函数
   participant service as 认证服务
-  user->>+cf: 上传姓名、身份证号获取certifyId
+  user->>+cf: 1.1 上传姓名、身份证号获取certifyId
   activate user
-  cf->>+service: 上传姓名、身份证号获取certifyId
-  service-->>-cf: 返回certifyId
-  cf-->>-user: 返回certifyId
-  user->>+service: 进行认证
-  service-->>-user: 返回认证结果
-  user->>+cf: 请求更新认证结果
-  cf->>+service: 请求认证结果
-  service-->>-cf: 返回认证结果
-  cf-->>-user: 更新用户认证信息返回认证成功
+  cf->>+service: 2.1 提交姓名、身份证号获取certifyId
+  service-->>-cf: 2.2 返回certifyId
+  cf-->>-user: 1.2 返回certifyId
+  user->>+service: 3.1 调用sdk进行刷脸认证
+  service-->>-user: 3.2 返回认证结果
+  user->>+cf: 4.1 请求更新认证结果
+  cf->>+service: 5.1 请求认证结果
+  service-->>-cf: 5. 返回认证结果
+  cf-->>-user: 4.2 更新用户认证信息返回认证成功
   deactivate user
 ```
 
@@ -28,9 +30,7 @@ sequenceDiagram
 The above process involves the following interfaces:
 
 - 云函数获取实人认证实例：[uniCloud.getFacialRecognitionVerifyManager()](#get-frv-manager)
-- The cloud function obtains a real person authentication instance: [uniCloud.getFacialRecognitionVerifyManager()](#get-frv-manager)
-- 云函数上传姓名、身份证号获取certifyId：[frvManager.getCertifyId()](#get-certify-id)
-- The cloud function uploads the name and ID number to get the certifyId: [frvManager.getCertifyId()](#get-certify-id)
+- 云函数提交姓名、身份证号以获取认证服务的certifyId：[frvManager.getCertifyId()](#get-certify-id)
 - 云函数使用certifyId获取认证结果：[frvManager.getAuthResult()](#get-auth-result)
 - The cloud function uses certifyId to obtain the authentication result: [frvManager.getAuthResult()](#get-auth-result)
 - 客户端调起sdk刷脸认证：[uni.startFacialRecognitionVerify()](#start-frv)
@@ -416,6 +416,4 @@ cause
 |10012	|网络异常					|网络异常																			|
 | 10012 | Network exception | Network exception |
 |10013	|刷脸验证失败			|实际结果需要通过服务端查询结果								|
-| 10013 | Facial verification failed | The actual result needs to be checked by the server |
 |10020	|设备设置时间异常	|设备设置时间异常，仅iOS返回									|
-| 10020 | The device setting time is abnormal | The device setting time is abnormal, only returned by iOS |

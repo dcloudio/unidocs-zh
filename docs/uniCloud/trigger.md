@@ -107,10 +107,10 @@ Here are some Cron expressions and their associated meanings:
 // It should be noted that Alibaba Cloud does not support the seventh position, please remove the position representing the year by yourself
 */5 * * * * * * 表示每5秒触发一次
 0 0 2 1 * * * 表示在每月的1日的凌晨2点触发
-0 15 10 * * MON-FRI * 表示在周一到周五每天上午10:15触发
+0 15 10 * * 1-5 * 表示在周一到周五每天上午10:15触发
 0 0 10,14,16 * * * * 表示在每天上午10点，下午2点，下午4点触发
 0 */30 9-17 * * * * 表示在每天上午9点到下午5点内每半小时触发
-0 0 12 * * WED * 表示在每个星期三中午12点触发
+0 0 12 * * 3 * 表示在每个星期三中午12点触发
 ```
 
 ### 云函数入参说明

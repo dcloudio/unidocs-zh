@@ -1,5 +1,4 @@
-本文档适用于`uni-id 4.0.0`及以上版本，需 HBuilderX 3.5.0 及以上版本。旧版本文档请访问：[uni-id 3.x.x 文档](uni-id-3.md)
-This document applies to `uni-id 4.0.0` and above, and requires HBuilderX 3.5.0 and above. For older versions of documentation, please visit: [uni-id 3.x.x documentation](uni-id-3.md)
+本文档适用于`uni-id 4.0.0`及以上版本，需 HBuilderX 3.5.0 及以上版本。旧版本文档请访问：[uni-id 3.x.x 文档](uni-id.md)
 
 ## 需求背景
 ## Requirements background

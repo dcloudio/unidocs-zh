@@ -41,7 +41,7 @@
   * [vue2 升 3 指南](/tutorial/migration-to-vue3.md)
   * [vue2 liter 3 guide](/tutorial/migration-to-vue3.md)
 * [ts/typescript 专题](/tutorial/typescript-subject.md)
-* [ts/typescript subject](/tutorial/typescript-subject.md)
+* [jsx/tsx 语法](/tutorial/syntax-jsx.md)
 * [uts语法](syntax-uts.md)
 * [uts syntax](syntax-uts.md)
 * 编译器（条件编译）

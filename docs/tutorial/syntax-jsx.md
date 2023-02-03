@@ -12,7 +12,7 @@ uniapp 支持 [JSX](https://facebook.github.io/jsx) 开发，可参考 [Vue.js J
 
 ### 安装插件
 
-```
+```shell
 npm install @vitejs/plugin-vue-jsx --save-dev
 ```
 
@@ -22,7 +22,7 @@ npm install @vitejs/plugin-vue-jsx --save-dev
 
 项目根目录新增 vite.config.js 文件，并增加如下配置：
 
-```
+```js
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -42,7 +42,7 @@ export default defineConfig({
 
 项目根目录 vite.config.js 文件中增加如下配置：
 
-```
+```js
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig({

@@ -113,12 +113,18 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 - 手机处于息屏状态
 - 项目编译运行失败、或安装基座失败
 
-## 标准基座和自定义基座@customplayground  
-
+## 标准基座@playground  
 标准运行基座，是DCloud为方便开发者低门槛调试而提供的，此基座App使用的是DCloud的包名、证书和三方SDK配置。
 
 在原生层不变的情况下，js等动态代码可以在运行基座上动态加载，实现热重载运行。
 
+**HBuilderX3.7.1版本调整标准基座支持的系统版本**  
+- Android平台  
+要求Android5（API Leavel 21）及以上系统，如需在Android4.4设备真机运行，请使用自定义基座。更多App支持的最低版本设置[参考文档](https://uniapp.dcloud.net.cn/tutorial/app-android-minsdkversion.html)
+- iOS平台  
+要求iOS10及以上系统，如需在iOS9.*设备真机运行，请使用自定义基座。更多App支持的最低版本设置参考manifest.json的[deploymentTarget](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#ios)
+
+## 自定义基座@customplayground  
 如果要自定义原生层，则需要走一遍iOS或Android的打包流程，由XCode或Android studio编译打包生成ipa或apk安装包。
 
 但打包后无法方便调试，不能热重载和显示控制台日志。所以HBuilder在打包时提供了一个特殊选项，打包“自定义运行基座”。

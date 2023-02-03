@@ -1,7 +1,7 @@
 ### uni.startFacialRecognitionVerify(OBJECT)  
 实人认证  
 
-uni.startFacialRecognitionVerify是客户端API，App端使用实人认证功能需调用云端API获取certifyId，详情参考[开发指南](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)
+uni.startFacialRecognitionVerify是客户端API，App端使用实人认证功能需调用云端API获取certifyId，参考[开发指南](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)
 
 **平台差异说明**
 
@@ -10,7 +10,8 @@ uni.startFacialRecognitionVerify是客户端API，App端使用实人认证功能
 |√（3.7.1+）|x|x|x|x|x|x|x|x|
 
 **注意**  
-* 需HBuilderX3.7.1+，App端需在“App模块配置”中勾选“FacialRecognitionVerify(实人认证)”  
+* HBuilderX3.7.1+新增支持，App端需在“App模块配置”中勾选“FacialRecognitionVerify(实人认证)”  
+* App端使用蚂蚁金服人脸认证SDK，需在隐私政策的三方SDK中添加实人认证功能描述，参考[详情](https://ask.dcloud.net.cn/article/39484#FacialRecognitionVerify)
 * App-Android平台要求Android5（API Leavel 21）及以上系统  
 * App-iOS平台要求iOS10及以上系统  
 * 微信小程序端请参考[微信人脸核身接口能力](https://developers.weixin.qq.com/community/business/doc/000442d352c1202bd498ecb105c00d)  

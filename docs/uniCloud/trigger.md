@@ -95,9 +95,7 @@ Cron expressions have seven **required** fields, separated by spaces. Among them
 
 
 - 腾讯云：在 Cron 表达式中的“日”和“星期”字段同时指定值时，两者为“或”关系，即两者的条件均生效。
-- Tencent Cloud: When the "day" and "week" fields in the Cron expression are specified at the same time, the two are "or" relationship, that is, both conditions are valid.
-- 阿里云：在 Cron 表达式中的“日”和“星期”字段同时指定值时会报错。
-- Alibaba Cloud: An error will be reported when specifying values for both the "day" and "week" fields in a cron expression.
+- 阿里云：在 Cron 表达式中的“日”和“星期”字段同时指定值时会报错，“秒”不支持特殊字符。
 
 ### 示例
 ### Example
@@ -170,6 +168,4 @@ module.exports = {
 **Notice**
 
 - 定时触发云对象时，`_before`和`_after`均不执行
-- When the cloud object is triggered periodically, neither `_before` nor `_after` will be executed
 - 定时触发云对象时`_timing`方法不会收到任何参数
-- The `_timing` method will not receive any parameters when the cloud object is triggered periodically

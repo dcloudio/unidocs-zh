@@ -24,6 +24,8 @@
 
 > 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=uni-pay](https://ext.dcloud.net.cn/plugin?name=uni-pay)
 
+> 代码仓库：[https://gitcode.net/dcloud/uni-pay.git](https://gitcode.net/dcloud/uni-pay.git)
+
 **线上体验地址**
 
 注意：线上体验地址用的是阿里云免费版，免费版请求次数有限，如请求失败为正常现象，可直接导入示例项目绑定自己的空间体验。

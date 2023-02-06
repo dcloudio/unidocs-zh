@@ -408,11 +408,13 @@ cause
 |54021	|云函数内缺少接口调用凭证，请联系DCloud处理				|
 | 54021 | There is no interface call certificate in the cloud function, please contact DCloud for processing |
 |54022	|服务空间不存在											|
-| 54022 | Service space does not exist |
+|54100	|实人认证账号余额不足						|
+|54101	|费用获取失败，请联系DCloud处理							|
+|54102	|金额冻结失败，请联系DCloud处理											|
 |55000	|服务器错误，请联系DCloud处理							|
 | 55000 | Server error, please contact DCloud |
 |55001	|Api调用失败，实人认证服务商服务不可用，请联系DCloud处理|
-| 55001 | Api call failed, the real person authentication service provider service is unavailable, please contact DCloud for processing|
+|55023	|尚未开通实人认证										|
 |60000	|服务不可用，请联系DCloud处理							|
 | 60000 | The service is unavailable, please contact DCloud for processing |
 

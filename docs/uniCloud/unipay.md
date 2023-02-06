@@ -18,8 +18,7 @@ At present, the payment capabilities of the App terminal (WeChat payment and Ali
 `unipay`是开源 sdk，可放心使用。本插件还包含示例工程，配置自己在微信和支付宝申请的相关配置后即可运行。
 `unipay` is an open source sdk and can be used with confidence. This plug-in also includes example projects, which can be run after configuring the relevant configuration applied for by WeChat and Alipay.
 
-为了更好的体验支付流程可以在插件市场导入`unipay`的示例项目快速体验，[插件市场 unipay](https://ext.dcloud.net.cn/plugin?id=1835)。
-In order to better experience the payment process, you can quickly experience the example project of `unipay` in the plugin market, [Plugin Market unipay](https://ext.dcloud.net.cn/plugin?id=1835).
+为了更好的体验支付流程可以在插件市场导入`unipay`的示例项目快速体验，[插件市场 unipay](https://ext.dcloud.net.cn/plugin?id=1835)。[gitee仓库 unipay公共模块](https://gitee.com/dcloud/uniPay.git)。
 
 插件市场还有基于uniPay再次封装的模板，前端支付、管理端订单管理均已写好，拿去就用，见：[BaseCloud - 统一下单支付业务模块](https://ext.dcloud.net.cn/plugin?id=2668)
 There are also templates repackaged based on uniPay in the plug-in market. Front-end payment and management-side order management have been written and used. See: [BaseCloud - Unified Order Payment Service Module](https://ext.dcloud.net. cn/plugin?id=2668)

@@ -221,9 +221,7 @@ Due to insufficient upstream reserves, there are still some quotas for the uniCl
 |					|最大实例数													|300		|
 | |Maximum number of instances | 300 |
 |					|函数数量限制												|50			|
-| |Function Quantity Limit | 50 |
-|					|客户端请求最大超时时间							|10秒		|
-| |The maximum timeout period for client requests | 10 seconds |
+|					|客户端请求最大超时时间							|20秒		|
 |					|定时任务单次最大运行时间						|600秒	|
 | |The maximum running time of a scheduled task at a time | 600 seconds |
 |数据库		|QPS																|1000		|
@@ -244,6 +242,8 @@ Due to insufficient upstream reserves, there are still some quotas for the uniCl
 | |Delete QPS | 300 |
 |					|查询QPS														|300		|
 | |Query QPS | 300 |
+
+`2023年2月6日`阿里云客户端请求云函数最大超时时间由10秒调整为20秒
 
 #### 其他说明
 #### other instructions

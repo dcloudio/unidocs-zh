@@ -1493,8 +1493,7 @@ The default running memory size of Tencent Cloud and Alibaba Cloud public beta c
 ### 超时时间@timeout
 ### Timeout @timeout
 
-阿里云非定时触发请求云函数最大只支持10秒的超时时间。定时任务触发最大支持600秒的超时时间，一般用于跑批。
-Alibaba Cloud non-scheduled trigger request cloud functions only support a maximum timeout of 10 seconds. Timing task triggering supports a maximum timeout period of 600 seconds, which is generally used for running batches.
+阿里云非定时触发请求云函数最大只支持20秒的超时时间。定时任务触发最大支持600秒的超时时间，一般用于跑批。
 
 腾讯云最大支持900秒超时时间
 Tencent Cloud supports a maximum timeout time of 900 seconds

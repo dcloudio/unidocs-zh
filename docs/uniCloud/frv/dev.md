@@ -4,7 +4,7 @@ uni实人认证服务，分前端api和云端api，云端为uniCloud API。
 
 如开发者的业务不在uniCloud上，需参考[云函数url化](../http.md)文档编写云函数提供http接口供外部访问，由uniCloud获取到认证结果后转交给开发者的非uniCloud服务器上。
 
-首先在uniCloud服务空间新建一个云函数/云对象，用于处理实人认证业务。新建时在[云函数的扩展库](cf-functions.md#extension)中配置uni-cloud-verify扩展库。
+首先在uniCloud服务空间新建一个云函数/云对象，用于处理实人认证业务。新建时在[云函数的扩展库](../cf-functions.md#extension)中配置uni-cloud-verify扩展库。
 
 在uni-app客户端和uniCloud云函数中调用如下api，实现下图流程：
 
@@ -44,7 +44,7 @@ sequenceDiagram
 
 ### 云函数接口
 
-实人认证相关接口由uni-cloud-verify扩展库提供，调用`uniCloud.getFacialRecognitionVerifyManager()`需云函数/云对象中加载对应的扩展库。[参考](cf-functions.md#extension)
+实人认证相关接口由uni-cloud-verify扩展库提供，调用`uniCloud.getFacialRecognitionVerifyManager()`需云函数/云对象中加载对应的扩展库。[参考](../cf-functions.md#extension)
 
 #### 获取实人认证实例@get-frv-manager
 
@@ -207,7 +207,7 @@ module.exports = {
 
 #### 错误处理
 
-可以通过try catch捕获接口抛出的错误，接口抛出的错误为标准的[uni错误对象](../tutorial/err-spec.md)
+可以通过try catch捕获接口抛出的错误，接口抛出的错误为标准的[uni错误对象](../../tutorial/err-spec.md)
 
 具体错误码规范见：[错误码](#err-code)
 

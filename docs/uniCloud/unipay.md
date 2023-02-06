@@ -11,7 +11,7 @@
 
 `unipay`是开源 sdk，可放心使用。本插件还包含示例工程，配置自己在微信和支付宝申请的相关配置后即可运行。
 
-为了更好的体验支付流程可以在插件市场导入`unipay`的示例项目快速体验，[插件市场 unipay](https://ext.dcloud.net.cn/plugin?id=1835)。
+为了更好的体验支付流程可以在插件市场导入`unipay`的示例项目快速体验，[插件市场 unipay](https://ext.dcloud.net.cn/plugin?id=1835)。[gitee仓库 unipay公共模块](https://gitee.com/dcloud/uniPay.git)。
 
 插件市场还有基于uniPay再次封装的模板，前端支付、管理端订单管理均已写好，拿去就用，见：[BaseCloud - 统一下单支付业务模块](https://ext.dcloud.net.cn/plugin?id=2668)
 

@@ -3,41 +3,46 @@
 
     目录
     Table of contents
-        一、华为应用创建配置流程
+        1. 华为应用创建配置流程
         1. Huawei application creation and configuration process
-        1. Huawei App Creation and Configuration Process
             1. 创建应用
-            1. Create an app
-            2. 推送配置
-            2. Push configuration
-        二、魅族应用创建配置流程
-        2. Meizu app creation and configuration process
+            1. Create an application
+            2. Create an app
+            3. 推送配置
+            3. Push configuration
+            4. Push configuration
+        2. 魅族应用创建配置流程
         2. Meizu application creation and configuration process
             1. 创建应用
-            1. Create an app
-            2. 推送配置
-            2. Push configuration
-        三、小米应用创建配置流程
-        3. Xiaomi application creation and configuration process
+            1. Create an application
+            2. Create an app
+            3. 推送配置
+            3. Push configuration
+            4. Push configuration
+        3. 小米应用创建配置流程
         3. Xiaomi application creation and configuration process
             1. 创建应用
-            1. Create an app
-            2. 推送配置
-            2. Push configuration
-        四、OPPO应用创建配置流程
-        4. OPPO application creation and configuration process
+            1. Create an application
+            2. Create an app
+            3. 推送配置
+            3. Push configuration
+            4. Push configuration
+        4. OPPO应用创建配置流程
         4. OPPO application creation and configuration process
             1. 创建应用
-            1. Create an app
-            2. 推送配置
-            2. Push configuration
-        五、VIVO应用创建配置流程
-        5. VIVO application creation and configuration process
+            1. Create an application
+            2. Create an app
+            3. 推送配置
+            3. Push configuration
+            4. Push configuration
+        5. VIVO应用创建配置流程
         5. VIVO application creation configuration process
             1. 创建应用
-            1. Create an app
-            2. 推送配置
-            2. Push configuration
+            1. Create an application
+            2. Create an app
+            3. 推送配置
+            3. Push configuration
+            4. Push configuration
 
 
 ## 一、 华为应用创建配置流程

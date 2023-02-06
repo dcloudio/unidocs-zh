@@ -56,7 +56,7 @@ Note: Safety Network only supports WeChat MiniApp and Apps. And the security lev
 不管使用安全网络的哪个功能，首先要开通安全网络。App和微信小程序略有区别，但大体都要经过如下流程：
 No matter which function of the security network is used, the security network must be activated first. Apps and WeChat MiniApp are slightly different, but they generally go through the following process:
 1. 前端应用配置：在[https://dev.dcloud.net.cn/](https://dev.dcloud.net.cn/)的应用管理中指定要开通的应用，在“各平台信息”中配置app的包名、签名摘要或者微信小程序的appid。
-1. Front-end application configuration: <a href="https://dev.dcloud.net.cn/](https://dev.dcloud.net.cn/)的应用管理中指定要开通的应用，在“各平台信息”中配置app的包名、签名摘要或者微信小程序的appid。">Specify the application to be activated in the application management of [https://dev.dcloud.net.cn/](https://dev.dcloud.net.cn/), and in the "Information of each platform "Configure the app's package name, signature digest or appid of the WeChat MiniApp.</a>
+1. Front-end application configuration: Specify the application to be activated in the application management of [https://dev.dcloud.net.cn/](https://dev.dcloud.net.cn/), and in the "Information of each platform "Configure the app's package name, signature digest or appid of the WeChat applet.
 2. 云端配置：在[uniCloud控制台](https://unicloud.dcloud.net.cn/)选定一个服务空间，在“安全网络”页面，关联在dev配好的某个应用。
 2. Cloud configuration: Select a service space in [uniCloud console](https://unicloud.dcloud.net.cn/), and associate an application configured in dev on the "Safe Network" page.
 

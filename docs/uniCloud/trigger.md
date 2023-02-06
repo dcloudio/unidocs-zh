@@ -74,6 +74,7 @@ Cron expressions have seven **required** fields, separated by spaces. Among them
 |第三位| 小时 | 0 - 23的整数 | , - * / |
 |third digit| hour | integer 0 - 23 | , - * / |
 |第四位| 日 | 1 - 31的整数（需要考虑月的天数） | , - * / |
+|4th digit| day | Integer from 1 to 31 (need to consider the number of days in the month) | , - * / |
 |第五位| 月 | 1 - 12的整数 | , - * / |
 |Fifth digit| month | integer from 1 to 12 | , - * / |
 |第六位| 星期 | 0 - 6的整数，其中0指星期日，1指星期一，以此类推 | , - * / |
@@ -98,7 +99,9 @@ Cron expressions have seven **required** fields, separated by spaces. Among them
 
 
 - 腾讯云：在 Cron 表达式中的“日”和“星期”字段同时指定值时，两者为“或”关系，即两者的条件均生效。
+- Tencent Cloud: When the "day" and "week" fields in the cron expression specify values at the same time, the two are in an "or" relationship, that is, the conditions of both take effect.
 - 阿里云：在 Cron 表达式中的“日”和“星期”字段同时指定值时会报错，“秒”不支持特殊字符。
+- Alibaba Cloud: An error will be reported when the "day" and "week" fields in the cron expression are specified at the same time, and "second" does not support special characters.
 
 ### 示例
 ### Example
@@ -171,4 +174,6 @@ module.exports = {
 **Notice**
 
 - 定时触发云对象时，`_before`和`_after`均不执行
+- When the cloud object is triggered periodically, `_before` and `_after` are not executed
 - 定时触发云对象时`_timing`方法不会收到任何参数
+- The `_timing` method will not receive any parameters when timing the cloud object

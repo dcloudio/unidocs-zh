@@ -3118,7 +3118,6 @@ geoNear can be used to query database records whose location is within a certain
 |distanceMultiplier	|number							|				|否		|返回时在距离上乘以该数字																																				|
 | distanceMultiplier | number | |no |multiplies the distance by this number on return |
 |distanceField			|string							|				|是		|存放距离的输出字段名，可以用点表示法表示一个嵌套字段																						|
-|
 |includeLocs				|string							|				|否		|列出要用于距离计算的字段，如果记录中有多个字段都是地理位置时有用																|
 | includeLocs | string | |no |list the fields to be used for distance calculation, useful if there are multiple fields in the record that are all geolocations |
 |key								|string							|				|否		|选择要用的地理位置索引。如果集合由多个地理位置索引，则必须指定一个，指定的方式是指定对应的字段	|

@@ -165,6 +165,7 @@ On MacOSX, if the App cannot be started automatically, please check the followin
 - Failed to compile and run the project, or failed to install the base
 
 ## 标准基座@playground  
+## Standard Pedestal @playground
 标准运行基座，是DCloud为方便开发者低门槛调试而提供的，此基座App使用的是DCloud的包名、证书和三方SDK配置。
 The standard operating base is provided by DCloud to facilitate the low-threshold debugging of developers. This base App uses DCloud's package name, certificate and third-party SDK configuration.
 
@@ -172,12 +173,18 @@ The standard operating base is provided by DCloud to facilitate the low-threshol
 Under the condition that the native layer remains unchanged, dynamic codes such as js can be dynamically loaded on the running base to realize hot reload operation.
 
 **HBuilderX3.7.1版本调整标准基座支持的系统版本**  
+**HBuilderX3.7.1 version adjusts the system version supported by the standard base**
 - Android平台  
+-Android platform
 要求Android5（API Leavel 21）及以上系统，如需在Android4.4设备真机运行，请使用自定义基座。更多App支持的最低版本设置[参考文档](https://uniapp.dcloud.net.cn/tutorial/app-android-minsdkversion.html)
+Requires Android5 (API Level 21) and above systems, if you want to run on Android4.4 devices, please use a custom dock. More minimum version settings supported by App [reference document](https://uniapp.dcloud.net.cn/tutorial/app-android-minsdkversion.html)
 - iOS平台  
+- iOS platform
 要求iOS10及以上系统，如需在iOS9.*设备真机运行，请使用自定义基座。更多App支持的最低版本设置参考manifest.json的[deploymentTarget](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#ios)
+Requires iOS10 and above. If you need to run on iOS9.* devices, please use a custom dock. For more minimum version settings supported by App, refer to [deploymentTarget] of manifest.json (https://uniapp.dcloud.net.cn/collocation/manifest-app.html#ios)
 
 ## 自定义基座@customplayground  
+## Custom Pedestal @customplayground
 如果要自定义原生层，则需要走一遍iOS或Android的打包流程，由XCode或Android studio编译打包生成ipa或apk安装包。
 If you want to customize the native layer, you need to go through the packaging process of iOS or Android, and compile and package by XCode or Android studio to generate an ipa or apk installation package.
 

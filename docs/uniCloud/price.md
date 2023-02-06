@@ -322,7 +322,7 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 ### Basic Package @tencent-package
 
 | 配额						| 个人版						| 入门版| 初创版	| 商用版	| 团队版	| 单位	|
-Quota | Personal Edition | Starter Edition | Startup Edition | Business Edition | Team Edition |
+|Quota | Personal Edition | Starter Edition | Startup Edition | Business Edition | Team Edition |
 | ---							| ---								| ---		| ---			| ---			|  ---		| ---		|
 | QPS							| 500								| 500		| 500			| 800			| 1000		| -			|
 | 调用次数				| 20								| 500		| 1000		| 2000		| 5000		| 万次	|
@@ -343,19 +343,19 @@ Quota | Personal Edition | Starter Edition | Startup Edition | Business Edition 
 | Price | **~~39.9~~ 19.9** | **99**| **299** | **499** | **999** | Yuan/Month |
 
 1. 个人版5折折扣至少延续至2022年底，后续折扣如有变化将另行通知。
-1. The 50% discount on the personal edition will be extended to at least the end of 2022, and further notices will be notified if the subsequent discount changes.
-2. **调用次数**：包含云存储上传、下载操作；数据库读、写操作；云函数调用次数。
-2. **Number of calls**: including cloud storage upload and download operations; database read and write operations; cloud function calls.
-3. **容量**：包含云存储、数据库容量。
-3. **Capacity**: Including cloud storage and database capacity.
-4. **CDN流量**、**CDN回源流量**：仅包含云存储，不含前端网页托管
-4. **CDN traffic**, **CDN back-to-source traffic**: only includes cloud storage, excluding front-end web hosting
-5. 开通基础套餐时可以选择是否允许超量，开启后如果用量超出套餐配额将按照按量付费定价进行收费
-5. When opening the basic package, you can choose whether to allow overage. After opening, if the usage exceeds the package quota, it will be charged according to the pay-as-you-go pricing
-6. 套餐在有效期内可进行续费、升配，到期当天可降配，到期后只可续费
-6. The package can be renewed and upgraded within the validity period, and can be downgraded on the day of expiration, and can only be renewed after expiration
-7. 前端网页托管开通后即为按量计费，不管服务空间有没有开启允许超量使用，前端网页托管计费参考[高级功能按量计费](#tencent-advanced)
-7. After the front-end web hosting is activated, it will be billed according to the volume. No matter whether the service space is enabled or not, overuse is allowed. For the billing of the front-end web hosting, please refer to [Advanced Function Billing](#tencent-advanced)
+2. The 50% discount on the personal edition will be extended to at least the end of 2022, and further notices will be notified if the subsequent discount changes.
+3. **调用次数**：包含云存储上传、下载操作；数据库读、写操作；云函数调用次数。
+4. **Number of calls**: including cloud storage upload and download operations; database read and write operations; cloud function calls.
+5. **容量**：包含云存储、数据库容量。
+6. **Capacity**: Including cloud storage and database capacity.
+7. **CDN流量**、**CDN回源流量**：仅包含云存储，不含前端网页托管
+8. **CDN traffic**, **CDN back-to-source traffic**: only includes cloud storage, excluding front-end web hosting
+9. 开通基础套餐时可以选择是否允许超量，开启后如果用量超出套餐配额将按照按量付费定价进行收费
+10. When opening the basic package, you can choose whether to allow overage. After opening, if the usage exceeds the package quota, it will be charged according to the pay-as-you-go pricing
+11. 套餐在有效期内可进行续费、升配，到期当天可降配，到期后只可续费
+12. The package can be renewed and upgraded within the validity period, and can be downgraded on the day of expiration, and can only be renewed after expiration
+13. 前端网页托管开通后即为按量计费，不管服务空间有没有开启允许超量使用，前端网页托管计费参考[高级功能按量计费](#tencent-advanced)
+14. After the front-end web hosting is activated, it will be billed according to the volume. No matter whether the service space is enabled or not, overuse is allowed. For the billing of the front-end web hosting, please refer to [Advanced Function Billing](#tencent-advanced)
 
 **关于计费项的额外说明**
 **Additional Notes on Billing Items**
@@ -407,6 +407,7 @@ The consumption of the following items does not belong to the resources in the p
 |前端网页托管	|容量			|0.005元/GB/天		|
 |Front-end web hosting |Capacity | 0.005 yuan/GB/day |
 |				|流量			|0.21元/GB			|
+| Traffic | 0.21 yuan/GB |
 | Traffic | 0.21 yuan/GB |
 |日志服务		|标准索引存储	|0.0115元/GB/日		|
 |Log Service |Standard Index Storage | 0.0115 yuan/GB/day |

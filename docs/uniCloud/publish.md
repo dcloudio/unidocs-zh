@@ -60,6 +60,7 @@ For the real machine preview function of the applet development tool, the above-
 If you encounter a valid domain name configured correctly but still report `url not in domain list`, please try to delete the applet on the phone, clear the client cache where the applet is located, restart the corresponding applet development tool and try again
 
 如果遇到`invalid ip xxx, not in whitelist`，请检查是否在小程序管理后台开启了域名白名单。如果没用到可以关闭，如果确认需要使用ip白名单，请参考：[固定IP](cf-functions.md#eip)
+If you encounter `invalid ip xxx, not in whitelist`, please check whether the domain name whitelist is enabled in the MiniApp management background. If it is not used, it can be closed. If you confirm that you need to use the ip whitelist, please refer to: [Fixed IP](cf-functions.md#eip)
 
 **关于云函数本地调试服务在小程序中的使用**
 **About the use of the cloud function local debugging service in the applet**
@@ -114,6 +115,7 @@ After `September 16, 2021`, Alibaba Cloud cross-domain configuration can take ef
 `December 2, 2022` The cross-domain configuration of the official version of Alibaba Cloud supports the use of wildcards, and the configuration is limited to 9 cross-domain domain names. The official version allows localhost cross-domain by default
 
 `2023年2月3日`阿里云正式版跨域配置对云存储生效，如果此前已配置跨域配置下次进行修改时会同步设置到云存储
+`February 3, 2023` The cross-domain configuration of the official version of Alibaba Cloud will take effect for cloud storage. If the cross-domain configuration has been configured before, it will be synchronized to cloud storage when it is modified next time.
 
 ## 客户端资源发行
 ## Client resource distribution

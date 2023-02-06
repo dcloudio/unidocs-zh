@@ -24,7 +24,7 @@
 
 > 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=uni-pay](https://ext.dcloud.net.cn/plugin?name=uni-pay)
 
-> 代码仓库：[https://gitcode.net/dcloud/uni-pay.git](https://gitcode.net/dcloud/uni-pay.git)
+> 代码仓库地址：[https://gitcode.net/dcloud/uni-pay.git](https://gitcode.net/dcloud/uni-pay.git)
 
 **线上体验地址**
 

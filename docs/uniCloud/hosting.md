@@ -211,17 +211,7 @@ Set the homepage document name of the website
 访问静态网站出错后返回的页面。
 The page returned after an error occurs when accessing a static website.
 
-**history模式路径**
-**history mode path**
-
-> 仅阿里云公测版支持
-> Only supported by Alibaba Cloud public beta version
-
-为指定目录开启`uni-app history`模式支持，此路径下无法访问的文件会被重定向到此路径下的`index.html`, 并返回`200`状态码
-Enable `uni-app history` mode support for the specified directory, files that cannot be accessed under this path will be redirected to `index.html` under this path, and return a `200` status code
-
-阿里云商用版请将单页应用首页html文件配置为404页面
-For the commercial version of Alibaba Cloud, please configure the html file of the homepage of the single-page application as a 404 page
+如需在阿里云正式版支持history模式，请将404页面配置为网站首页。注意正式版404页面不支持目录，即阿里云仅能在根目录下支持history模式
 
 **重定向规则**
 **Redirection Rules**

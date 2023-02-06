@@ -7,8 +7,7 @@ uni real person authentication service is divided into front-end api and cloud a
 如开发者的业务不在uniCloud上，需参考[云函数url化](../http.md)文档编写云函数提供http接口供外部访问，由uniCloud获取到认证结果后转交给开发者的非uniCloud服务器上。
 If the developer's business is not on uniCloud, you need to refer to [Cloud function urlization](../http.md) document to write cloud functions to provide http interface for external access, and uniCloud will transfer the authentication results to the developer's non-uniCloud after obtaining the authentication results on the server.
 
-首先在uniCloud服务空间新建一个云函数/云对象，用于处理实人认证业务。新建时在[云函数的扩展库](cf-functions.md#extension)中配置uni-cloud-verify扩展库。
-First, create a cloud function/cloud object in the uniCloud service space to handle the real person authentication business. Configure the uni-cloud-verify extension library in [Extension Library of Cloud Functions](cf-functions.md#extension) when creating a new one.
+首先在uniCloud服务空间新建一个云函数/云对象，用于处理实人认证业务。新建时在[云函数的扩展库](../cf-functions.md#extension)中配置uni-cloud-verify扩展库。
 
 在uni-app客户端和uniCloud云函数中调用如下api，实现下图流程：
 Call the following api in the uni-app client and uniCloud cloud function to realize the following process:
@@ -59,8 +58,7 @@ Using the uni secure network can effectively prevent forged client requests, [se
 ### 云函数接口
 ### Cloud function interface
 
-实人认证相关接口由uni-cloud-verify扩展库提供，调用`uniCloud.getFacialRecognitionVerifyManager()`需云函数/云对象中加载对应的扩展库。[参考](cf-functions.md#extension)
-The interface related to real person verification is provided by the uni-cloud-verify extension library. Calling `uniCloud.getFacialRecognitionVerifyManager()` needs to load the corresponding extension library in the cloud function/cloud object. [Reference](cf-functions.md#extension)
+实人认证相关接口由uni-cloud-verify扩展库提供，调用`uniCloud.getFacialRecognitionVerifyManager()`需云函数/云对象中加载对应的扩展库。[参考](../cf-functions.md#extension)
 
 #### 获取实人认证实例@get-frv-manager
 #### Get real person authentication instance @get-frv-manager
@@ -262,8 +260,7 @@ module.exports = {
 #### 错误处理
 #### Error Handling
 
-可以通过try catch捕获接口抛出的错误，接口抛出的错误为标准的[uni错误对象](../tutorial/err-spec.md)
-The error thrown by the interface can be caught by try catch, and the error thrown by the interface is the standard [uni error object](../tutorial/err-spec.md)
+可以通过try catch捕获接口抛出的错误，接口抛出的错误为标准的[uni错误对象](../../tutorial/err-spec.md)
 
 具体错误码规范见：[错误码](#err-code)
 For specific error code specifications, see: [Error Code](#err-code)

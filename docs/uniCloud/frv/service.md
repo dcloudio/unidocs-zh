@@ -2,9 +2,7 @@
 ## Business activation
 
 ### 开通流程
-### Activation process
-使用开发者账号登录[uniCloud控制台](#https://unicloud.dcloud.net.cn/) ，选择`实人认证`栏目。在使用此功能前需要完成实名认证，可前往[开发者中心](#https://dev.dcloud.net.cn/)完成实名认证。
-Log in to the [uniCloud console](#https://unicloud.dcloud.net.cn/) with the developer account, and select the `Personal Authentication` column. Real-name authentication needs to be completed before using this function. You can go to [Developer Center](#https://dev.dcloud.net.cn/) to complete real-name authentication.
+使用开发者账号登录[uniCloud控制台](https://unicloud.dcloud.net.cn/) ，选择`实人认证`栏目。在使用此功能前需要完成实名认证，可前往[开发者中心](https://dev.dcloud.net.cn/)完成实名认证。
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa1674035425.png)
 

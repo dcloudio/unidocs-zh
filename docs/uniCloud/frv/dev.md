@@ -46,6 +46,8 @@ sequenceDiagram
 
 实人认证相关接口由uni-cloud-verify扩展库提供，调用`uniCloud.getFacialRecognitionVerifyManager()`需云函数/云对象中加载对应的扩展库。[参考](../cf-functions.md#extension)
 
+![依赖扩展库](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/unicloud-frv-edit-extension.jpg)
+
 #### 获取实人认证实例@get-frv-manager
 
 **接口形式**
@@ -56,9 +58,12 @@ uniCloud.getFacialRecognitionVerifyManager(Object GetFacialRecognitionVerifyMana
 
 **参数说明**
 
-|参数名		|类型	|必填	|默认值	|说明																	|
-|:-:		|:-:	|:-:	|:-:	|:-:																	|
-|requestId	|String	|是		|-		|本次云函数请求的requestId，用于接口内部获取当前应用appId及客户端ip信息	|
+**Object GetFacialRecognitionVerifyManagerParam**
+
+|属性			|类型		|必填	|默认值	|说明																																		|
+|:-:			|:-:		|:-:	|:-:		|:-:																																		|
+|requestId|String	|是		|-			|本次云函数请求的requestId，用于接口内部获取当前应用appId及客户端ip信息	|
+|appId		|String	|否		|-			|用于在url化等无法获取客户端信息的场景下传入客户端appId									|
 
 **返回值**
 
@@ -100,7 +105,9 @@ frvManager.getCertifyId(Object GetCertifyIdParam)
 
 **参数说明**
 
-|参数名		|类型		|必填	|默认值	|说明					|
+**Object GetCertifyIdParam**
+
+|属性			|类型		|必填	|默认值	|说明					|
 |:-:			|:-:		|:-:	|:-:		|:-:					|
 |realName	|String	|是		|-			|用户真实姓名	|
 |idCard		|String	|是		|-			|用户身份证号	|
@@ -157,7 +164,9 @@ frvManager.getAuthResult(Object GetAuthResultParam)
 
 **参数说明**
 
-|参数名			|类型	|必填	|默认值	|说明																		|
+**Object GetAuthResultParam**
+
+|属性			|类型	|必填	|默认值	|说明																		|
 |:-:			|:-:	|:-:	|:-:	|:-:																		|
 |certifyId		|String	|是		|-		|认证id																		|
 |needAlivePhoto	|String	|否		|N		|是否获取认证照片，`Y_O` （原始图片）、`Y_M`（虚化，背景马赛克）、`N`（不返图）	|
@@ -239,6 +248,12 @@ module.exports = {
 ### 客户端接口
 
 #### 调起实人认证界面@start-frv
+
+**接口形式**
+
+```js
+uni.startFacialRecognitionVerify(Object StartFacialRecognitionVerifyParam)
+```
 
 ```js
 uni.startFacialRecognitionVerify({

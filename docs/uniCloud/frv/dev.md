@@ -58,6 +58,8 @@ sequenceDiagram
 
 实人认证相关接口由uni-cloud-verify扩展库提供，调用`uniCloud.getFacialRecognitionVerifyManager()`需云函数/云对象中加载对应的扩展库。[参考](../cf-functions.md#extension)
 
+![依赖扩展库](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/unicloud-frv-edit-extension.jpg)
+
 #### 获取实人认证实例@get-frv-manager
 #### Get real person authentication instance @get-frv-manager
 
@@ -71,11 +73,12 @@ uniCloud.getFacialRecognitionVerifyManager(Object GetFacialRecognitionVerifyMana
 **参数说明**
 **Parameter Description**
 
-|参数名		|类型	|必填	|默认值	|说明																	|
-|Parameter name |Type |Required |Default value |Description |
-|:-:		|:-:	|:-:	|:-:	|:-:																	|
-|requestId	|String	|是		|-		|本次云函数请求的requestId，用于接口内部获取当前应用appId及客户端ip信息	|
-| requestId | String |Yes |- |The requestId of this cloud function request is used to obtain the current application appId and client ip information inside the interface |
+**Object GetFacialRecognitionVerifyManagerParam**
+
+|属性			|类型		|必填	|默认值	|说明																																		|
+|:-:			|:-:		|:-:	|:-:		|:-:																																		|
+|requestId|String	|是		|-			|本次云函数请求的requestId，用于接口内部获取当前应用appId及客户端ip信息	|
+|appId		|String	|否		|-			|用于在url化等无法获取客户端信息的场景下传入客户端appId									|
 
 **返回值**
 **return value**
@@ -126,8 +129,9 @@ frvManager.getCertifyId(Object GetCertifyIdParam)
 **参数说明**
 **Parameter Description**
 
-|参数名		|类型		|必填	|默认值	|说明					|
-|Parameter name |Type |Required |Default value |Description |
+**Object GetCertifyIdParam**
+
+|属性			|类型		|必填	|默认值	|说明					|
 |:-:			|:-:		|:-:	|:-:		|:-:					|
 |realName	|String	|是		|-			|用户真实姓名	|
 | realName | String | Yes |- | User real name |
@@ -195,8 +199,9 @@ frvManager.getAuthResult(Object GetAuthResultParam)
 **参数说明**
 **Parameter Description**
 
-|参数名			|类型	|必填	|默认值	|说明																		|
-|Parameter name |Type |Required |Default value |Description |
+**Object GetAuthResultParam**
+
+|属性			|类型	|必填	|默认值	|说明																		|
 |:-:			|:-:	|:-:	|:-:	|:-:																		|
 |certifyId		|String	|是		|-		|认证id																		|
 | certifyId | String | yes | - | certify id |
@@ -294,6 +299,12 @@ module.exports = {
 
 #### 调起实人认证界面@start-frv
 #### Call up the real person authentication interface @start-frv
+
+**接口形式**
+
+```js
+uni.startFacialRecognitionVerify(Object StartFacialRecognitionVerifyParam)
+```
 
 ```js
 uni.startFacialRecognitionVerify({

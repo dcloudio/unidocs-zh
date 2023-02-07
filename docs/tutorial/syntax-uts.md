@@ -2086,7 +2086,7 @@ Math.E 属性表示自然对数的底数（或称为基数），e，约等于 2.
 |√|x|x|
 
 ```ts
-function getNapier() {
+function getNapier():number {
   return Math.E;
 }
 console.log(getNapier());
@@ -2104,7 +2104,7 @@ Math.LN10 属性表示 10 的自然对数，约为 2.302。
 |√|x|x|
 
 ```ts
-function getNatLog10() {
+function getNatLog10():number {
   return Math.LN10;
 }
 console.log(getNatLog10());
@@ -2122,7 +2122,7 @@ Math.LN2 属性表示 2 的自然对数，约为 0.693。
 |√|x|x|
 
 ```ts
-function getNatLog2() {
+function getNatLog2():number {
   return Math.LN2;
 }
 console.log(getNatLog2());
@@ -2140,7 +2140,7 @@ Math.LOG10E 属性表示以 10 为底数，e 的对数，约为 0.434。
 |√|x|x|
 
 ```ts
-function getLog10e() {
+function getLog10e():number {
   return Math.LOG10E;
 }
 console.log(getLog10e());
@@ -2158,7 +2158,7 @@ Math.LOG2E 属性表示以 2 为底数，e 的对数，约为 1.442。
 |√|x|x|
 
 ```ts
-function getLog2e() {
+function getLog2e():number {
   return Math.LOG2E;
 }
 console.log(getLog2e());
@@ -2194,7 +2194,7 @@ Math.SQRT1_2 属性表示 1/2 的平方根，约为 0.707。
 |√|x|x|
 
 ```ts
-function getRoot1_2() {
+function getRoot1_2():number {
   return Math.SQRT1_2;
 }
 console.log(getRoot1_2());
@@ -2212,7 +2212,7 @@ Math.SQRT2 属性表示 2 的平方根，约为 1.414。
 |√|x|x|
 
 ```ts
-function getRoot2() {
+function getRoot2():number {
   return Math.SQRT2;
 }
 console.log(getRoot2());
@@ -2403,13 +2403,13 @@ Math.cbrt() 函数返回任意数字的立方根。
 console.log(Math.cbrt(-1));
 // expected output: -1
 
-console.log(Math.atanh(0));
+console.log(Math.cbrt(0));
 // expected output: 0
 
-console.log(Math.atanh(1));
+console.log(Math.cbrt(1));
 // expected output: 1
 
-console.log(Math.atanh(2));
+console.log(Math.cbrt(2));
 // expected output: 1.2599210498948732
 ```
 
@@ -2424,7 +2424,7 @@ Math.ceil() 函数总是四舍五入并返回大于等于给定数字的最小�
 |√|x|x|
 
 ```ts
-console.log(Math.ceil(.95));
+console.log(Math.ceil(0.95));
 // expected output: 1
 
 console.log(Math.ceil(4));
@@ -2841,7 +2841,7 @@ Math.sin() 函数返回一个数值的正弦值。
 console.log(Math.sin(0));
 // expected output: 0
 
-console.log(Math.sign(1));
+console.log(Math.sin(1));
 // expected output: 0.8414709848078965
 ```
 

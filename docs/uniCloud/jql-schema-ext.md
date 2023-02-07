@@ -103,45 +103,27 @@ All triggers are executed after data verification and permission verification, b
 触发器的入参有以下几个，不同时机的触发器参数略有不同
 The input parameters of the trigger are as follows, and the trigger parameters at different times are slightly different
 
-|参数名					|类型								|默认值	|是否必备				|说明																																												|
-|Parameter name |Type |Default value |Required |Description |
-|--							|--									|--			|--							|--																																													|
-|collection			|string							|-			|是							|当前表名																																										|
-| collection | string |- | Yes | current table name |
-|operation			|string							|-			|是							|当前操作类型：`create`、`update`、`delete`、`read`、`count`																|
-| operation | string |- |yes |current operation type: `create`, `update`, `delete`, `read`, `count` |
-|where					|object							|-			|否							|当前请求使用的查询条件（见下方说明）																												|
-| where | object |- |No |The query condition used by the current request (see below) |
-|field					|array&lt;string&gt;|-			|read必备				|当前请求访问的字段列表（见下方说明）																												|
-| field | array&lt;string&gt;|- | required for read |list of fields currently requested to be accessed (see description below) |
-|addDataList		|array&lt;object&gt;|-			|create必备			|新增操作传入的数据列表（见下方说明）																												|
-| addDataList | array&lt;object&gt;|- | required for create | the list of data passed in by the new operation (see the description below) |
-|updateData			|object							|-			|update必备			|更新操作传入的数据（见下方说明）																														|
-| updateData | object |- | update required | the data passed in by the update operation (see the description below) |
-|clientInfo			|object							|-			|是							|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)|
-| clientInfo | object |- |Yes |Client information, including device information, user token, etc. For details, see: [clientInfo](cf-functions.md#get-client-infos)|
-|userInfo				|object							|-			|是							|用户信息																																										|
-| userInfo | object |- | Yes | user info |
-|result					|object							|-			|afterXxx内必备	|本次请求结果																																								|
-| result | object |- | required in afterXxx | the result of this request |
-|isEqualToJql		|function						|-			|是							|用于判断当前执行的jql语句和执行语句是否相等																								|
-| isEqualToJql | function |- |Yes | Used to judge whether the currently executed jql statement is equal to the execution statement |
-|triggerContext	|object							|-			|是							|用于在before和after内共享数据，新增于`3.6.16`																							|
-| triggerContext | object |- | yes | used to share data in before and after, new in `3.6.16` |
-|subCollection	|array							|-			|否							|获取联表查询的副表列表，新增于`3.7.0`																											|
-| subCollection | array |- |No | Get the list of sub-tables for joint table query, new in `3.7.0` |
-|rawWhere				|object&#124;string	|-			|否							|未经转化的原始查询条件，新增于`3.7.0`																											|
-| rawWhere | object&#124;string |- |No |The original query condition without transformation, newly added in `3.7.0` |
-|rawGeoNear			|object							|-			|否							|未经转化的原始geoNear参数，新增于`3.7.0`																									|
-| rawGeoNear | object |- |No |The unconverted raw geoNear parameter, new in `3.7.0` |
-|skip						|number							|-			|否							|跳过记录条数，新增于`3.7.0`																																|
-| skip | number |- |No |Number of records to skip, new in `3.7.0` |
-|limit					|number							|-			|否							|返回的结果集(文档数量)的限制，新增于`3.7.0`																								|
-| limit | number |- |no |The limit of the returned result set (number of documents), new in `3.7.0` |
-|sample					|object							|-			|否							|sample（随机选取）方法的参数，新增于`3.7.0`																								|
-| sample | object |- | no | parameter of sample (random selection) method, new in `3.7.0` |
-|docId					|string							|-			|否							|doc方法的参数，数据库记录的_id，新增于`3.7.0`																								|
-| docId | string |- |No | The parameter of the doc method, the _id of the database record, newly added in `3.7.0` |
+|参数名							|类型								|默认值	|是否必备				|说明																																												|
+|--									|--									|--			|--							|--																																													|
+|collection					|string							|-			|是							|当前表名																																										|
+|operation					|string							|-			|是							|当前操作类型：`create`、`update`、`delete`、`read`、`count`																|
+|where							|object							|-			|否							|当前请求使用的查询条件（见下方说明）																												|
+|field							|array&lt;string&gt;|-			|read必备				|当前请求访问的字段列表（见下方说明）																												|
+|addDataList				|array&lt;object&gt;|-			|create必备			|新增操作传入的数据列表（见下方说明）																												|
+|updateData					|object							|-			|update必备			|更新操作传入的数据（见下方说明）																														|
+|clientInfo					|object							|-			|是							|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)|
+|userInfo						|object							|-			|是							|用户信息																																										|
+|result							|object							|-			|afterXxx内必备	|本次请求结果																																								|
+|isEqualToJql				|function						|-			|是							|用于判断当前执行的jql语句和执行语句是否相等																								|
+|triggerContext			|object							|-			|是							|用于在before和after内共享数据，新增于`3.6.16`																							|
+|~~subCollection~~	|array							|-			|否							|请使用secondaryCollection替代此参数，此参数仍可访问只是会给出警告													|
+|secondaryCollection|array							|-			|否							|获取联表查询的副表列表，新增于`3.7.1`																											|
+|rawWhere						|object&#124;string	|-			|否							|未经转化的原始查询条件，新增于`3.7.0`																											|
+|rawGeoNear					|object							|-			|否							|未经转化的原始geoNear参数，新增于`3.7.0`																										|
+|skip								|number							|-			|否							|跳过记录条数，新增于`3.7.0`																																|
+|limit							|number							|-			|否							|返回的结果集(文档数量)的限制，新增于`3.7.0`																								|
+|sample							|object							|-			|否							|sample（随机选取）方法的参数，新增于`3.7.0`																								|
+|docId							|string							|-			|否							|doc方法的参数，数据库记录的_id，新增于`3.7.0`																							|
 
 
 #### subCollection@sub-collection

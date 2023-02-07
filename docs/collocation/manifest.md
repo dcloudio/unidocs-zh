@@ -316,7 +316,7 @@ H5平台是SPA单页应用，普通的SEO信息即加meta字段只能在，自�
 |port|Number|Vue2 8080；Vue3 3000|前端开发服务端口|
 |disableHostCheck|Boolean|false|禁用 Host 检查|
 
-Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` 的 [devServer](https://webpack.js.org/configuration/dev-server/)，鉴于 manifest 为 json 文件，故 `webpack.config.js->devServer` 配置项下的简单类型属性均可在`manifest.json->h5->devServer`节点下配置，funciton 等复杂类型暂不支持。
+Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `webpack` 的 [devServer](https://webpack.js.org/configuration/dev-server/)，`vue3` 实际上对应 `vite` 的 [server](https://cn.vitejs.dev/config/server-options.html#server-options)，鉴于 manifest 为 json 文件，故 `webpack.config.js->devServer` 配置项下的简单类型属性均可在`manifest.json->h5->devServer`节点下配置，funciton 等复杂类型暂不支持。
 
 #### publicPath
 配置 publicPath 为 cdn 资源地址前缀，这样编译出来的 html 文件，引用的 js，css 路径会自动变成 cdn 上的地址。

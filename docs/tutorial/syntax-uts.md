@@ -3029,8 +3029,7 @@ console.log(Math.expm1(-38));
 
 #### floor
 
-Math.floor() 函数返回 E^x - 1, 其中 x 是该函数的参数，E 是自然对数的底数 2.718281828459045。
-The Math.floor() function returns E^x - 1, where x is the argument to the function and E is the base of the natural logarithm 2.718281828459045.
+Math.floor() 函数总是返回小于等于一个给定数字的最大整数。
 
 **平台差异说明**
 **Platform Difference Description**

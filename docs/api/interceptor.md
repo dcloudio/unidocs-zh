@@ -8,8 +8,10 @@ Add interceptor
 需要拦截的`api`名称，如：`uni.addInterceptor('request', OBJECT)` ，将拦截 `uni.request()`
 Name of the `api` that needs to be intercepted, such as `uni.addInterceptor('request', OBJECT)`, which will intercept `uni.request()`
 
-注意：仅支持异步接口，如：`uni.setStorage(OBJECT)`，暂不支持同步接口如：`uni.setStorageSync(KEY,DATA)`
-Note: Only asynchronous interfaces are supported, such as: `uni.setStorage(OBJECT)`, synchronous interfaces such as: `uni.setStorageSync(KEY, DATA)` are not currently supported
+注意：
+
+- 仅支持异步接口，如：`uni.setStorage(OBJECT)`，暂不支持同步接口如：`uni.setStorageSync(KEY,DATA)`
+- uniCloud请求云端接口时（callFunction、uploadFile等）也会使用uni.request发送请求，请确保拦截器内不错误的处理此类请求
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

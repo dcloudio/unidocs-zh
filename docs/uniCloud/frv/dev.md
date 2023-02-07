@@ -318,7 +318,6 @@ uni.startFacialRecognitionVerify({
     failAlertTitle: "刷脸页错误提示对话框的标题",
     failAlertMessage: "刷脸页错误提示对话框的内容",
     title: "刷脸框顶部文案",
-    customBundleName: "iOS自定义UI资源文件名称(英文)",
     success:(e)=>{
         console.log(JSON.stringify(e))
     },

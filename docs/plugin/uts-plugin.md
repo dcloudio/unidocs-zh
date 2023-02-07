@@ -863,7 +863,7 @@ The uts code does not currently support running directly on a standard docking s
 截止到HBuilderX 3.6.9 时遗留事项：
 Remaining items as of HBuilderX 3.6.9:
 - 不能debug断点uts源码   
-- Cannot debug breakpoint uts source code
+- Android平台不支持跨进程调试/日志打印
 - iOS平台uts插件需要提交云端生成自定义基座才能真机运行，修改uts代码后需重新提交云端打包才能生效  
 - The iOS platform uts plug-in needs to be submitted to the cloud to generate a custom base to run on the real machine. After modifying the uts code, it needs to be re-submitted to the cloud for packaging to take effect
 

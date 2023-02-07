@@ -478,8 +478,7 @@ But the era of SEO is changing, and now a more effective way is to use uni-app t
 |disableHostCheck|Boolean|false|禁用 Host 检查|
 | disableHostCheck| Boolean| false|Disable Host Check|
 
-Tips：`uni-app` 中 `manifest.json->h5->devServer` 实际上对应 `webpack` 的 [devServer](https://webpack.js.org/configuration/dev-server/)，鉴于 manifest 为 json 文件，故 `webpack.config.js->devServer` 配置项下的简单类型属性均可在`manifest.json->h5->devServer`节点下配置，funciton 等复杂类型暂不支持。
-Tips: `manifest.json->h5->devServer` in `uni-app` actually corresponds to [devServer](https://webpack.js.org/configuration/dev-server/) of `webpack`, in view of manifest It is a json file, so the simple type attributes under the `webpack.config.js->devServer` configuration item can be configured under the `manifest.json->h5->devServer` node, and the complex types such as funciton are not currently supported.
+Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `webpack` 的 [devServer](https://webpack.js.org/configuration/dev-server/)，`vue3` 实际上对应 `vite` 的 [server](https://cn.vitejs.dev/config/server-options.html#server-options)，鉴于 manifest 为 json 文件，故 `webpack.config.js->devServer` 配置项下的简单类型属性均可在`manifest.json->h5->devServer`节点下配置，funciton 等复杂类型暂不支持。
 
 #### publicPath
 配置 publicPath 为 cdn 资源地址前缀，这样编译出来的 html 文件，引用的 js，css 路径会自动变成 cdn 上的地址。

@@ -13,11 +13,11 @@ Real-person authentication adopts step-by-step billing, and the prices are calcu
 |区间费率	|0.85 元/次			|0.8 元/次				|0.7 元/次					|0.6 元/次				|
 |Interval rate | 0.85 yuan/time | 0.8 yuan/time | 0.7 yuan/time | 0.6 yuan/time |
 
-对比其它主流厂商的同类产品，DCloud 实人认证产品有明显的价格优势，持续给开发者提供最具性价比的服务。下方为同行报价参考。
-Compared with similar products from other mainstream manufacturers, DCloud real person authentication products have obvious price advantages, and continue to provide developers with the most cost-effective services. The following is a reference for peer quotations.
+对比其它主流厂商的同类产品，DCloud 实人认证产品有明显的价格优势，并且不限制有效期。
 
-- 阿里云官方报价
-- Alibaba Cloud Official Quote
+下方为其他同类型产品报价参考。
+
+- [阿里云官方报价](https://help.aliyun.com/document_detail/146875.html)
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa_jg_ali.png)
 

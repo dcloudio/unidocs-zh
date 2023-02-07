@@ -73,26 +73,27 @@ ext.js里引入公共模块的机制：
 
 触发器的入参有以下几个，不同时机的触发器参数略有不同
 
-|参数名					|类型								|默认值	|是否必备				|说明																																												|
-|--							|--									|--			|--							|--																																													|
-|collection			|string							|-			|是							|当前表名																																										|
-|operation			|string							|-			|是							|当前操作类型：`create`、`update`、`delete`、`read`、`count`																|
-|where					|object							|-			|否							|当前请求使用的查询条件（见下方说明）																												|
-|field					|array&lt;string&gt;|-			|read必备				|当前请求访问的字段列表（见下方说明）																												|
-|addDataList		|array&lt;object&gt;|-			|create必备			|新增操作传入的数据列表（见下方说明）																												|
-|updateData			|object							|-			|update必备			|更新操作传入的数据（见下方说明）																														|
-|clientInfo			|object							|-			|是							|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)|
-|userInfo				|object							|-			|是							|用户信息																																										|
-|result					|object							|-			|afterXxx内必备	|本次请求结果																																								|
-|isEqualToJql		|function						|-			|是							|用于判断当前执行的jql语句和执行语句是否相等																								|
-|triggerContext	|object							|-			|是							|用于在before和after内共享数据，新增于`3.6.16`																							|
-|subCollection	|array							|-			|否							|获取联表查询的副表列表，新增于`3.7.0`																											|
-|rawWhere				|object&#124;string	|-			|否							|未经转化的原始查询条件，新增于`3.7.0`																											|
-|rawGeoNear			|object							|-			|否							|未经转化的原始geoNear参数，新增于`3.7.0`																									|
-|skip						|number							|-			|否							|跳过记录条数，新增于`3.7.0`																																|
-|limit					|number							|-			|否							|返回的结果集(文档数量)的限制，新增于`3.7.0`																								|
-|sample					|object							|-			|否							|sample（随机选取）方法的参数，新增于`3.7.0`																								|
-|docId					|string							|-			|否							|doc方法的参数，数据库记录的_id，新增于`3.7.0`																								|
+|参数名							|类型								|默认值	|是否必备				|说明																																												|
+|--									|--									|--			|--							|--																																													|
+|collection					|string							|-			|是							|当前表名																																										|
+|operation					|string							|-			|是							|当前操作类型：`create`、`update`、`delete`、`read`、`count`																|
+|where							|object							|-			|否							|当前请求使用的查询条件（见下方说明）																												|
+|field							|array&lt;string&gt;|-			|read必备				|当前请求访问的字段列表（见下方说明）																												|
+|addDataList				|array&lt;object&gt;|-			|create必备			|新增操作传入的数据列表（见下方说明）																												|
+|updateData					|object							|-			|update必备			|更新操作传入的数据（见下方说明）																														|
+|clientInfo					|object							|-			|是							|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)|
+|userInfo						|object							|-			|是							|用户信息																																										|
+|result							|object							|-			|afterXxx内必备	|本次请求结果																																								|
+|isEqualToJql				|function						|-			|是							|用于判断当前执行的jql语句和执行语句是否相等																								|
+|triggerContext			|object							|-			|是							|用于在before和after内共享数据，新增于`3.6.16`																							|
+|~~subCollection~~	|array							|-			|否							|请使用secondaryCollection替代此参数，此参数仍可访问只是会给出警告													|
+|secondaryCollection|array							|-			|否							|获取联表查询的副表列表，新增于`3.7.1`																											|
+|rawWhere						|object&#124;string	|-			|否							|未经转化的原始查询条件，新增于`3.7.0`																											|
+|rawGeoNear					|object							|-			|否							|未经转化的原始geoNear参数，新增于`3.7.0`																										|
+|skip								|number							|-			|否							|跳过记录条数，新增于`3.7.0`																																|
+|limit							|number							|-			|否							|返回的结果集(文档数量)的限制，新增于`3.7.0`																								|
+|sample							|object							|-			|否							|sample（随机选取）方法的参数，新增于`3.7.0`																								|
+|docId							|string							|-			|否							|doc方法的参数，数据库记录的_id，新增于`3.7.0`																							|
 
 
 #### subCollection@sub-collection

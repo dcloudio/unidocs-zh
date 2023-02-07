@@ -5,7 +5,7 @@ export default {
 		imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/cloud@2x.jpg'
 	},
 	{
-		name: '论坛',
+		name: 'ask问答社区',
 		url: 'https://ask.dcloud.net.cn/explore/',
 		imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/d@2x.png'
 	},

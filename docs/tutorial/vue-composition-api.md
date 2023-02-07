@@ -9,13 +9,10 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
 ### 环境准备
 ### Environment preparation
 
-升级 uni-app 编译器到 3.6.8 alpha
-Upgrade uni-app compiler to 3.6.8 alpha
+升级 uni-app 编译器到 3.6.8+
 
-  * HBuilderX 创建的项目直接升级 HBuilderX 到最新 alpha 版即可
-  * Projects created by HBuilderX can be directly upgraded to the latest alpha version of HBuilderX
-  * CLI 创建的项目参考 [https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion](https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion) 升级依赖到最新 alpha 版
-  * Project reference created by CLI[https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion](https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion) upgrade dependencies to the latest alpha version
+  * HBuilderX 创建的项目直接升级 HBuilderX 到最新版即可
+  * CLI 创建的项目参考 [https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion](https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion) 升级依赖到最新版
   
 ### 使用组合式API
 ### Using the Composition API

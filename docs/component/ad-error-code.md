@@ -25,9 +25,31 @@ code|message|
 -5100|其他错误，聚合广告商内部错误
 -5100|Other errors, Aggregate Advertiser Internal Error
 
+### -5005详细说明@-5005
 
-**广告商详细错误码**
-**Advertiser detailed error code**
+#### 没有广告填充，可能存在的原因
+
+1. 请求过于频繁，过段时间再试
+2. 当天请求次数已达广告商最大上限，明天再试
+3. 设备太旧，广告主不投放
+4. 如果配置了 bidding 分层，无法满足条件的也会抛出此错误
+
+#### 正确解决方案
+
+1. 尽可能开通多个广告渠道以增加填充率
+2. 更新 HBuilderX 3.6.7+ 并发布新版本(需要整包更新)，联系广告运营(uniad@dcloud.io)配置分层和 bidding 策略以提高填充率
+3. 如果一直无法填充，提示用户当前环境不适合展示广告，尝试更换设备
+
+#### 错误解决方案
+
+1. 使用开发测试广告位，仅适用于开发人员调试，没有广告收益
+2. 使用视频模拟广告以满足业务流程，没有广告收益。如：每日任务
+
+
+提示：-5005 时，包含二级错误码，可在下面广告商错误码中找到具体原因
+
+
+### **广告商详细错误码**
 - App端聚合的穿山甲(iOS)：[错误码详情](https://ad.oceanengine.com/union/media/union/download/detail?id=16&docId=5de8d574b1afac00129330d5&osType=ios)
 - App-side aggregated pangolins (iOS): [Error code details](https://ad.oceanengine.com/union/media/union/download/detail?id=16&docId=5de8d574b1afac00129330d5&osType=ios)
 - App端聚合的穿山甲(Android)：[错误码详情](https://ad.oceanengine.com/union/media/union/download/detail?id=4&docId=5de8d9b925b16b00113af0ed&osType=android)

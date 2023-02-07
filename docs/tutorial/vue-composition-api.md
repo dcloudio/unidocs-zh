@@ -5,10 +5,10 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
 
 ### 环境准备
 
-升级 uni-app 编译器到 3.6.8 alpha
+升级 uni-app 编译器到 3.6.8+
 
-  * HBuilderX 创建的项目直接升级 HBuilderX 到最新 alpha 版即可
-  * CLI 创建的项目参考 [https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion](https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion) 升级依赖到最新 alpha 版
+  * HBuilderX 创建的项目直接升级 HBuilderX 到最新版即可
+  * CLI 创建的项目参考 [https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion](https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion) 升级依赖到最新版
   
 ### 使用组合式API
 

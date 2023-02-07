@@ -2527,7 +2527,7 @@ The Math.E property represents the base (or base) of natural logarithms, e, appr
 |√|x|x|
 
 ```ts
-function getNapier() {
+function getNapier():number {
   return Math.E;
 }
 console.log(getNapier());
@@ -2547,7 +2547,7 @@ The Math.LN10 property represents the natural logarithm of 10, approximately 2.3
 |√|x|x|
 
 ```ts
-function getNatLog10() {
+function getNatLog10():number {
   return Math.LN10;
 }
 console.log(getNatLog10());
@@ -2567,7 +2567,7 @@ The Math.LN2 property represents the natural logarithm of 2, which is approximat
 |√|x|x|
 
 ```ts
-function getNatLog2() {
+function getNatLog2():number {
   return Math.LN2;
 }
 console.log(getNatLog2());
@@ -2587,7 +2587,7 @@ The Math.LOG10E property represents the base 10 logarithm of e, approximately 0.
 |√|x|x|
 
 ```ts
-function getLog10e() {
+function getLog10e():number {
   return Math.LOG10E;
 }
 console.log(getLog10e());
@@ -2607,7 +2607,7 @@ The Math.LOG2E property represents the base 2 logarithm of e, approximately 1.44
 |√|x|x|
 
 ```ts
-function getLog2e() {
+function getLog2e():number {
   return Math.LOG2E;
 }
 console.log(getLog2e());
@@ -2647,7 +2647,7 @@ The Math.SQRT1_2 property represents the square root of 1/2, which is approximat
 |√|x|x|
 
 ```ts
-function getRoot1_2() {
+function getRoot1_2():number {
   return Math.SQRT1_2;
 }
 console.log(getRoot1_2());
@@ -2667,7 +2667,7 @@ The Math.SQRT2 property represents the square root of 2, approximately 1.414.
 |√|x|x|
 
 ```ts
-function getRoot2() {
+function getRoot2():number {
   return Math.SQRT2;
 }
 console.log(getRoot2());
@@ -2877,13 +2877,13 @@ The Math.cbrt() function returns the cube root of any number.
 console.log(Math.cbrt(-1));
 // expected output: -1
 
-console.log(Math.atanh(0));
+console.log(Math.cbrt(0));
 // expected output: 0
 
-console.log(Math.atanh(1));
+console.log(Math.cbrt(1));
 // expected output: 1
 
-console.log(Math.atanh(2));
+console.log(Math.cbrt(2));
 // expected output: 1.2599210498948732
 ```
 
@@ -2900,7 +2900,7 @@ The Math.ceil() function always rounds up and returns the smallest integer great
 |√|x|x|
 
 ```ts
-console.log(Math.ceil(.95));
+console.log(Math.ceil(0.95));
 // expected output: 1
 
 console.log(Math.ceil(4));
@@ -3356,7 +3356,7 @@ The Math.sin() function returns the sine of a number.
 console.log(Math.sin(0));
 // expected output: 0
 
-console.log(Math.sign(1));
+console.log(Math.sin(1));
 // expected output: 0.8414709848078965
 ```
 

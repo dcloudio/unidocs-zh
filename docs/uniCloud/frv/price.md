@@ -7,11 +7,9 @@
 实人认证采用阶梯计费，根据不同调用次数区间分别计算价格，相加之和为最终收费总额。具体计费规则详见下。
 Real-person authentication adopts step-by-step billing, and the prices are calculated according to different call frequency intervals, and the sum is the final total fee. See below for specific billing rules.
 
-|调用次数	|0 < 调用量 ≤ 10 万|10 万 < 调用量 ≤ 20 万|20 万 < 调用量 ≤ 50 万	|50 万以上				|
-|Number of Calls | 0 < Calls ≤ 100,000 | 100,000 < Calls ≤ 200,000 | 200,000 < Calls ≤ 500,000 | More than 500,000 |
-|:--------:	|:-----:			|:----:					|:------------------------:	|:-------------------:	|
-|区间费率	|0.85 元/次			|0.8 元/次				|0.7 元/次					|0.6 元/次				|
-|Interval rate | 0.85 yuan/time | 0.8 yuan/time | 0.7 yuan/time | 0.6 yuan/time |
+|调用次数	|0 < 调用量 ≤ 1 万	|1 万 < 调用量 ≤ 10 万	|10 万 < 调用量 ≤ 20 万|20 万 < 调用量 ≤ 50 万|50 万以上	|
+|:----:		|:----:				|:----:					|:----:					|:----:					|:----:		|
+|区间费率	|0.85 元/次			|0.8 元/次				|0.7 元/次				|0.6 元/次				|0.5 元/次	|
 
 对比其它主流厂商的同类产品，DCloud 实人认证产品有明显的价格优势，并且不限制有效期。
 

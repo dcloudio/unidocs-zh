@@ -323,7 +323,7 @@ switchTab|同 uni.switchTab()
 ::: warning 注意
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
 
-请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-link) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-list) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
 :::
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/list/list

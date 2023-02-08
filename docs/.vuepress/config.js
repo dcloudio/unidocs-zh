@@ -24,11 +24,6 @@ module.exports = merge({
     ['script', { src: `/js/redirect.js?${Date.now()}&v=${Date.now()}&version=${Date.now()}` }],
     ['script', { src: 'https://hm.baidu.com/hm.js?fe3b7a223fc08c795f0f4b6350703e6f' }]
   ],
-  locales: {
-    '/': {
-      lang: 'zh-CN',
-    }
-  },
   themeConfig: {
     titleLogo: 'https://web-assets.dcloud.net.cn/unidoc/zh/uni-app.png',
     logo: 'https://web-assets.dcloud.net.cn/unidoc/zh/logo.png',

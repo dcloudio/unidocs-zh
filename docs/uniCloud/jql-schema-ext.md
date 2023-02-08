@@ -103,33 +103,32 @@ All triggers are executed after data verification and permission verification, b
 触发器的入参有以下几个，不同时机的触发器参数略有不同
 The input parameters of the trigger are as follows, and the trigger parameters at different times are slightly different
 
-|参数名							|类型								|默认值	|是否必备				|说明																																												|
-|--									|--									|--			|--							|--																																													|
-|collection					|string							|-			|是							|当前表名																																										|
-|operation					|string							|-			|是							|当前操作类型：`create`、`update`、`delete`、`read`、`count`																|
-|where							|object							|-			|否							|当前请求使用的查询条件（见下方说明）																												|
-|field							|array&lt;string&gt;|-			|read必备				|当前请求访问的字段列表（见下方说明）																												|
-|addDataList				|array&lt;object&gt;|-			|create必备			|新增操作传入的数据列表（见下方说明）																												|
-|updateData					|object							|-			|update必备			|更新操作传入的数据（见下方说明）																														|
-|clientInfo					|object							|-			|是							|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)|
-|userInfo						|object							|-			|是							|用户信息																																										|
-|result							|object							|-			|afterXxx内必备	|本次请求结果																																								|
-|isEqualToJql				|function						|-			|是							|用于判断当前执行的jql语句和执行语句是否相等																								|
-|triggerContext			|object							|-			|是							|用于在before和after内共享数据，新增于`3.6.16`																							|
-|~~subCollection~~	|array							|-			|否							|请使用secondaryCollection替代此参数，此参数仍可访问只是会给出警告													|
-|secondaryCollection|array							|-			|否							|获取联表查询的副表列表，新增于`3.7.1`																											|
-|rawWhere						|object&#124;string	|-			|否							|未经转化的原始查询条件，新增于`3.7.0`																											|
-|rawGeoNear					|object							|-			|否							|未经转化的原始geoNear参数，新增于`3.7.0`																										|
-|skip								|number							|-			|否							|跳过记录条数，新增于`3.7.0`																																|
-|limit							|number							|-			|否							|返回的结果集(文档数量)的限制，新增于`3.7.0`																								|
-|sample							|object							|-			|否							|sample（随机选取）方法的参数，新增于`3.7.0`																								|
-|docId							|string							|-			|否							|doc方法的参数，数据库记录的_id，新增于`3.7.0`																							|
+|参数名							|类型								|默认值	|是否必备															|说明																																												|
+|--									|--									|--			|--																		|--																																													|
+|collection					|string							|-			|是																		|当前表名																																										|
+|operation					|string							|-			|是																		|当前操作类型：`create`、`update`、`delete`、`read`、`count`																|
+|where							|object							|-			|否																		|当前请求使用的查询条件（见下方说明）																												|
+|field							|array&lt;string&gt;|-			|read必备															|当前请求访问的字段列表（见下方说明）																												|
+|addDataList				|array&lt;object&gt;|-			|create必备														|新增操作传入的数据列表（见下方说明）																												|
+|updateData					|object							|-			|update必备														|更新操作传入的数据（见下方说明）																														|
+|clientInfo					|object							|-			|是																		|客户端信息，包括设备信息、用户token等，详见：[clientInfo](cf-functions.md#get-client-infos)|
+|userInfo						|object							|-			|是																		|用户信息																																										|
+|result							|object							|-			|afterXxx内必备												|本次请求结果																																								|
+|isEqualToJql				|function						|-			|是																		|用于判断当前执行的jql语句和执行语句是否相等																								|
+|triggerContext			|object							|-			|是																		|用于在before和after内共享数据，新增于`3.6.16`																							|
+|~~subCollection~~	|array							|-			|否																		|请使用secondaryCollection替代此参数，此参数仍可访问只是会给出警告													|
+|secondaryCollection|array							|-			|否																		|获取联表查询的副表列表，新增于`3.7.1`																											|
+|rawWhere						|object&#124;string	|-			|否																		|未经转化的原始查询条件，新增于`3.7.0`																											|
+|rawGeoNear					|object							|-			|否																		|未经转化的原始geoNear参数，新增于`3.7.0`																										|
+|skip								|number							|-			|否																		|跳过记录条数，新增于`3.7.0`																																|
+|limit							|number							|-			|否																		|返回的结果集(文档数量)的限制，新增于`3.7.0`																								|
+|sample							|object							|-			|否																		|sample（随机选取）方法的参数，新增于`3.7.0`																								|
+|docId							|string							|-			|否																		|doc方法的参数，数据库记录的_id，新增于`3.7.0`																							|
+|isGetTempLookup		|boolean						|-			|联表触发时必备，仅主表触发器有此参数	|联表查询时用于标识，本次查询是否使用了getTemp，新增于`3.7.1`																|
 
+#### secondaryCollection@secondary-collection
 
-#### subCollection@sub-collection
-
-> 仅read操作联表有此参数，新增于 3.7.0
-> Only the read operation has this parameter, which was added in 3.7.0
+> 仅read操作联表有此参数，新增于 3.7.1
 
 联表查询副表组成的列表
 Join table to query a list of sub-tables
@@ -139,9 +138,9 @@ Join table to query a list of sub-tables
 module.exports {
   trigger: {
     beforeRead: async function({
-      subCollection
+      secondaryCollection
     } = {}) {
-      if(subCollection && subCollection.length > 1) {
+      if(secondaryCollection && secondaryCollection.length > 1) {
         throw new Error('仅允许关联一个副表')
       }
     }
@@ -486,35 +485,25 @@ module.exports {
 ### 触发时机@trigger-timing
 ### Trigger timing @trigger-timing
 
-|触发时机			|说明				|
-|Trigger Timing |Description |
-|---					|---				|
-|beforeRead		|读取前触发	|
-| beforeRead | triggers before reading |
-|afterRead		|读取后触发	|
-| afterRead | triggers after reading |
-|beforeCount	|计数前触发	|
-| beforeCount | Triggered before counting |
-|afterCount		|计数后触发	|
-| afterCount | trigger after counting |
-|beforeCreate	|新增前触发	|
-| beforeCreate | trigger before creating |
-|afterCreate	|新增后触发	|
-| afterCreate | Triggered after creation |
-|beforeUpdate	|更新前触发	|
-| beforeUpdate | Triggered before an update |
-|afterUpdate	|更新后触发	|
-| afterUpdate | Triggered after an update |
-|beforeDelete	|删除前触发	|
-| beforeDelete | Triggered before deletion |
-|afterDelete	|删除后触发	|
-| afterDelete | Triggered after deletion |
+|触发时机												|说明																												|
+|---														|---																												|
+|beforeRead											|读取前触发																									|
+|afterRead											|读取后触发																									|
+|beforeCount										|计数前触发																									|
+|afterCount											|计数后触发																									|
+|beforeCreate										|新增前触发																									|
+|afterCreate										|新增后触发																									|
+|beforeUpdate										|更新前触发																									|
+|afterUpdate										|更新后触发																									|
+|beforeDelete										|删除前触发																									|
+|afterDelete										|删除后触发																									|
+|beforeReadAsSecondaryCollection|集合作为副表被读取前触发，仅使用了getTemp的联表查询才会触发|
+|afterReadAsSecondaryCollection	|集合作为副表被读取后触发，仅使用了getTemp的联表查询才会触发|
 
 **注意**
 **Notice**
 
-- count有两种触发情况一种是在数据库指令使用了count方法，另一种是在get方法内传getCount参数。截至HBuilderX 3.6.14版本，get方法内传getCount参数不会触发count触发器，此问题会在后续版本进行修复。
-- There are two trigger situations for count. One is that the count method is used in the database command, and the other is that the getCount parameter is passed in the get method. As of version 3.6.14 of HBuilderX, passing the getCount parameter in the get method will not trigger the count trigger, and this problem will be fixed in subsequent versions.
+- count有两种触发情况一种是在数据库指令使用了count方法，另一种是在get方法内传getCount参数。HBuilderX 3.6.16版本之前，get方法内传getCount参数不会触发count触发器，HBuilderX 3.6.16及后续版本已修复此问题。
 
 ### 示例@demo
 ### Example @demo

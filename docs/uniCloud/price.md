@@ -502,19 +502,20 @@ In order to refund the security deposit, the following conditions must be met:
 2. 退还腾讯云保证金时，需先关闭所有腾讯云`超限按量`功能，并关闭所有腾讯云空间的`前端网页托管`功能；
 2. When refunding the security deposit of Tencent Cloud, it is necessary to turn off all Tencent Cloud's "over-limit and pay-as-you-go" functions, and turn off the "front-end web page hosting" function of all Tencent Cloud spaces;
 
-退还保证金申请方式：发送邮件到 service@dcloud.io，邮件内容：
-How to apply for deposit refund: send an email to service@dcloud.io, email content:
+退还保证金申请方式：使用uniCloud注册邮箱发送邮件到 service@dcloud.io，邮件内容：
 
 ```
 邮件标题：uniCloud保证金退还申请
 
 邮件内容：
 
-客户账号：uniCloud.dcloud.net.cn 登录账号(就是HBuilderX账号)
-申请内容：申请退还阿里云/腾讯云保证金
+客户账号：uniCloud.dcloud.net.cn 登录账号
+申请内容：申请退还uniCloud保证金
 金额：200元
 
 ```
+
+*注意：如果您注册uniCloud账号使用的是`qq号@qq.com`这类邮箱，发送邮件时，请勿使用qq邮箱的域名邮箱，需更换为`qq号@qq.com` 这种邮箱发送邮件。*
 
 
 ## 发生故障时如何判断故障点

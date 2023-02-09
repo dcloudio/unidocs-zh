@@ -34,17 +34,9 @@ This product has the following features:
 每个App开发者都要开发升级功能，这是巨大的社会资料浪费。DCloud推出 uni-upgrade-center，让应用开发更轻松、高效，让开发者专注于自己的业务。
 Every App developer has to develop an upgrade function, which is a huge waste of social data. DCloud launched uni-upgrade-center to make application development easier and more efficient, allowing developers to focus on their own business.
 
-### 使用
-### use
+> 升级中心分为两个部分：[uni-upgrade-center Admin管理后台](https://ext.dcloud.net.cn/plugin?id=4470) 和 [uni-upgrade-center-app前台检测更新](https://ext.dcloud.net.cn/plugin?id=4542)。
 
-升级中心分为两个部分：[uni-upgrade-center Admin管理后台](https://ext.dcloud.net.cn/plugin?id=4470) 和 [uni-upgrade-center-app前台检测更新](https://ext.dcloud.net.cn/plugin?id=4542)。
-The uni-upgrade-center is divided into two parts: [uni-upgrade-center Admin management background](https://ext.dcloud.net.cn/plugin?id=4470) and [uni-upgrade-center-app front-end detection update] ( <a href="https://ext.dcloud.net.cn/plugin?id=4542)。">https://ext.dcloud.net.cn/plugin?id=4542).</a>
-
-#### uni-upgrade-center Admin 管理后台@uni-upgrade-center-admin
-#### uni-upgrade-center Admin management background @uni-upgrade-center-admin
-
-> 在 uni-admin 1.9.3+ 中已作为内置插件。在应用管理新增应用后，即可在 `App升级中心` 发布该应用的版本
-> Already available as a built-in plugin in uni-admin 1.9.3+. After adding an application in the application management, you can publish the version of the application in the `App Upgrade Center`
+### uni-upgrade-center Admin 管理后台@uni-upgrade-center-admin
 
 负责发布新版和管理历史版本的上下线。提供了如下功能：
 Responsible for releasing new versions and managing the online and offline of historical versions. The following functions are provided:
@@ -70,20 +62,30 @@ Responsible for releasing new versions and managing the online and offline of hi
 - App 管理列表及 App 版本记录列表搜索
 - App management list and App version record list search
 
-> 插件市场下载 `uni-admin 1.9.3+`，上传云函数、初始化数据库运行至浏览器则可以在左侧菜单看到 `App 升级中心`
-> Download `uni-admin 1.9.3+` from the plug-in market, upload the cloud function, initialize the database and run it to the browser, you can see the `App uni-upgrade-center Center` on the left menu
+#### 使用教程
+
+**新建 uni-admin 项目**
+
+1. 新建项目：`打开HBuilderX` -> `文件` -> `新建` -> `项目` -> `uni-app` 选择 `uniCloud admin`模板，键入一个名字，确定
+
+2. 鼠标右键 `uniCloud 文件夹` 选择`关联云服务空间`和`运行云服务空间初始化向导`
 
 **添加应用**
 **Add App**
 
-使用升级中心前需要在应用管理新增应用 [详情](https://uniapp.dcloud.net.cn/uniCloud/admin.html#app-manager)
-Before using the uni-upgrade-center, you need to add an application in the application management [Details](https://uniapp.dcloud.net.cn/uniCloud/admin.html#app-manager)
+> 运行 uni-admin 到浏览器，在左侧菜单 `系统管理 -> 应用管理` 中新增应用后，即可在 `App升级中心` 发布该应用的版本 [详情](https://uniapp.dcloud.net.cn/uniCloud/admin.html#app-manager)
+
+
+添加应用后，即可在应用管理列表中跳转至版本管理页面：
+
+<div align="center">
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/upgrade-center-jump.jpg" width="800"></img>
+</div>
 
 **版本管理**
 **Version management**
 
-1. 在版本管理list的右上角点击`发布新版`，可以发布`原生App安装包`和`wgt资源包`。在左上角点击`下拉列表`，可以切换展示应用。
-1. Click `Release new version` in the upper right corner of the version management list to release the `Native App installation package` and `wgt resource package`. Click the `drop-down list` in the upper left corner to switch the display application.
+1. 在版本管理列表页面右上角点击`发布新版`，可以发布`原生App安装包`和`wgt资源包`。在左上角点击`下拉列表`，可以切换展示应用。
 
 <div align="center">
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/version_list_new.png" width="800"></img>
@@ -97,9 +99,10 @@ Before using the uni-upgrade-center, you need to add an application in the appli
 	<div align="center" >
 	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/publish_apk.jpg" width="600"></img>
 	</div>
+	
+	2. `版本号`：请填写以`.`分隔字符串，例如：`0.0.1`。在构建应用安装包时，`manifest.json` 中的 `应用版本名称` 也要是该格式。
 
-  1. `Android应用市场`
-  1. `Android App Market`
+  3. `Android应用市场`
 		- 此处会与 `新增应用` 时填写的 `Android应用市场` 信息保持同步。当在应用管理修改应用信息时，这里也会修改
 		- It will be synchronized with the `Android App Market` information filled in when `Adding an app`. When the application information is modified in the application management, it will also be modified here
 		- 启用商店：当勾选某一商店启用时，在 `upgrade-center-app` 端会检测手机上是否有该应用市场
@@ -111,22 +114,16 @@ Before using the uni-upgrade-center, you need to add an application in the appli
 		- 优先级：检查更新时，按照优先级从大到小依次尝试跳转商店
 		- Priority: When checking for updates, try to jump to the store in descending order of priority
 
-	1. `下载链接/AppStore`
-	1. `Download link/AppStore`
+	4. `下载链接/AppStore`
 		- 可以选择手动上传一个文件到 `云存储`，会自动将地址填入该项
 		- You can choose to manually upload a file to `cloud storage`, and the address will be automatically filled in this item
 		- 也可以手动填写一个地址，就可以不用再上传文件
-		- You can also fill in an address manually, so you don't have to upload files again
-		- 如果是发布`苹果`版本，包地址则为 应用在`AppStore的链接`
-		- If the `Apple` version is released, the package address will be the link of the application in the `AppStore`
+		- 如果是发布 `苹果` 版本，包地址则为应用的 `AppStore 链接`
 		
-	2. `强制更新`
-	2. `Force update`
-		- 如果使用强制更新，App端接收到该字段后，App升级弹出框不可取消
-		- If forced update is used, after the app receives this field, the app update pop-up box cannot be canceled
+	5. `强制更新`
+		- 如果使用强制更新，App端的升级弹框将不可被关闭
 		
-	4. `上线发行`
-	4. `Online Issue`
+	6. `上线发行`
 		- 可设置当前包是否上线发行，只有已上线才会进行更新检测
 		- You can set whether the current package is released online or not, and the update detection will only be performed if it is online
 		- 同时只可有一个线上发行版，线上发行不可更设为下线。未上线可以设为上线发行并自动替换当前线上发行版
@@ -134,8 +131,6 @@ Before using the uni-upgrade-center, you need to add an application in the appli
 		- 修改当前包为上线发行，自动替换当前线上发行版
 		- Modify the current package to be released online, and automatically replace the current online release
 
-	**注：版本号请填写以`.`分隔字符串，例如：`0.0.1`**
-	**Note: Please fill in a string separated by `.` for the version number, for example: `0.0.1`**
 - 发布wgt资源包
 - Publish wgt resource pack
 	1. 大部分配置与发布 `原生App安装包` 一致
@@ -146,14 +141,9 @@ Before using the uni-upgrade-center, you need to add an application in the appli
 	</div>
 
 	2. `原生App最低版本`
-	2. `Minimum version of native app`
-		- 上次使用新Api或打包新模块的App版本
-		- App version that last used the new Api or packaged the new module
-		- 如果此次打包wgt使用了`新的api`或者打包了`新的模块`，则在发布 `wgt资源包` 的时候，将此版本更新为本次版本
-		- If the packaged wgt uses the `new api` or packaged the `new module`, then when the `wgt resource package` is released, update this version to this version
-		
-		- 如果已有正式版`wgt资源包`，则本次新增会自动带出
-		- If there is an official version of `wgt resource pack`, this new addition will automatically bring it out
+		- 上次使用新api或打包新模块的pp版本
+		- 如果此次打包的wgt使用了 `新的 api` 或者打包了 `新的模块` ，则在发布 `wgt资源包` 的时候，要将 `原生App最低版本` 填写为本次版本
+		- 如果已有正式版 `wgt资源包` ，则会自动带出
 
 	3. `静默更新`
 	3. `Silent Update`
@@ -161,9 +151,6 @@ Before using the uni-upgrade-center, you need to add an application in the appli
 		- When the app is upgraded, the wgt package will be downloaded in the background and installed by itself. The new function takes effect the next time the app is launched
 		- **静默更新后不重启应用，可能会导致正在访问的应用的页面数据错乱，请谨慎使用！**
 		- **Do not restart the app after silent update, which may cause the page data of the app you are visiting to be confused, please use it with caution! **
-
-	**注：版本号请填写以`.`分隔字符串，例如：`0.0.1`**
-	**Note: Please fill in a string separated by `.` for the version number, for example: `0.0.1`**
 
 - 发布完成页面
 - Post completion page
@@ -173,8 +160,7 @@ Before using the uni-upgrade-center, you need to add an application in the appli
 	</div>
 
 **Tips**
-- `/uni_modules/uni-upgrade-center/pages/system/upgradecenter/version/add.vue`中有版本对比函数（compare）。
-- There is a version comparison function (compare) in `/uni_modules/uni-upgrade-center/pages/system/upgradecenter/version/add.vue`.
+- `/uni_modules/uni-upgrade-center/pages/version/add.vue`中有版本对比函数（compare）。
 	- 使用多段式版本格式（如："3.0.0.0.0.1.0.1", "3.0.0.0.0.1"）。如果不满足对比规则，请自行修改。
 	- Use multipart version format (eg: "3.0.0.0.0.1.0.1", "3.0.0.0.0.1"). If it does not meet the comparison rules, please modify it yourself.
 - 删除应用会把该应用的所有版本记录同时删除
@@ -196,12 +182,7 @@ Before using the uni-upgrade-center, you need to add an application in the appli
 	> 将 `data` 中的 `enableiOSWgt` 属性设置为 `true` 即可
 	> Set the `enableiOSWgt` property in `data` to `true`
 
-
-在插件市场安装（uni-admin 1.9.3+ 升级中心已作为内置插件，内置在uni-admin项目中），根据 readme 部署即可。[插件地址](https://ext.dcloud.net.cn/plugin?id=4470)
-Install it in the plug-in market (uni-admin 1.9.3+ upgrade center has been used as a built-in plug-in, built in the uni-admin project), and it can be deployed according to the readme. [Plugin address](https://ext.dcloud.net.cn/plugin?id=4470)
-
-#### uni-upgrade-center-app 前台检测更新@uni-upgrade-center-app
-#### uni-upgrade-center-app Foreground detection update @uni-upgrade-center-app
+### uni-upgrade-center-app 前台检测更新@uni-upgrade-center-app
 
 负责前台检查升级更新。
 Responsible for the front desk to check for upgrades and updates.
@@ -239,31 +220,23 @@ The following functions are provided:
 **安装指引**
 **Installation Guide**
 
-1. 依赖数据库`opendb-app-versions`，如果没有此库，请在云服务空间中创建。
-1. Rely on the database `opendb-app-versions`, if there is no such library, please create it in the cloud service space.
+1. 在插件市场打开本插件页面，在右侧点击`使用 HBuilderX 导入插件`，选择要导入的项目点击确定 [插件地址](https://ext.dcloud.net.cn/plugin?id=4542)
 
-2. 使用`HBuilderX 3.1.0+`，因为要使用到`uni_modules`
-2. Use `HBuilderX 3.1.0+`, because you need to use `uni_modules`
+2. 创建 uniCloud 云开发环境
 
-3. 在插件市场打开本插件页面，在右侧点击`使用 HBuilderX 导入插件`，选择要导入的项目点击确定
-3. Open the plug-in page in the plug-in market, click `Import plug-in using HBuilderX` on the right side, select the project to import and click OK
-
-4. 绑定服务空间：
-4. Bind service space:
+3. 绑定服务空间：
    - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，请和 uni-admin 项目关联同一个服务空间
    - Plugin version `>= 0.6.0`, depends on `uni-upgrade-center cloud function` of `uni-admin 1.9.3+`, please associate the same service space with the uni-admin project
    - 插件版本 `<= 0.6.0`，请绑定到一个已有的服务空间或者新建一个服务空间进行绑定
    - Plugin version `<= 0.6.0`, please bind to an existing service space or create a new service space for binding
 
-5. 上传云函数：
-5. Upload the cloud function:
+4. 上传云函数：
    - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，插件不再单独提供云函数，可以跳过此步骤
    - The plug-in version `>= 0.6.0`, depends on the `uni-upgrade-center cloud function` of `uni-admin 1.9.3+`, the plug-in no longer provides cloud functions separately, you can skip this step
    - 插件版本 `<= 0.6.0`，找到`/uni_modules/uni-upgrade-center-app/uniCloud/cloudfunctions/check-version`，右键上传部署
    - Plugin version `<= 0.6.0`, find `/uni_modules/uni-upgrade-center-app/uniCloud/cloudfunctions/check-version`, right click to upload and deploy
 
-6. 在`pages.json`中添加页面路径。**注：请不要设置为pages.json中第一项**
-6. Add the page path in `pages.json`. **Note: Please do not set it as the first item in pages.json**
+5. 在`pages.json`中添加页面路径。**注：请不要设置为pages.json中第一项**
   
 	```json
 	"pages": [
@@ -287,16 +260,13 @@ The following functions are provided:
 			}
 		]
 	```
-7. 将`@/uni_modules/uni-upgrade-center-app/utils/check-update.js` 使用 import 导入到需要用到的地方，调用一下即可：
-7. Import `@/uni_modules/uni-upgrade-center-app/utils/check-update.js` to the place where it needs to be used, and call it:
+6. 将`@/uni_modules/uni-upgrade-center-app/utils/check-update.js` 使用 import 导入到需要用到的地方，调用一下即可：
    1. `import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update.js'`
    2. 默认使用当前绑定的服务空间，如果要请求其他服务空间，可以使用其他服务空间的 `callFunction`。[详情](https://uniapp.dcloud.io/uniCloud/cf-functions.html#call-by-function-cross-space)
-   2. The currently bound service space is used by default. If you want to request other service spaces, you can use the `callFunction` of other service spaces. [Details](https://uniapp.dcloud.io/uniCloud/cf-functions.html#call-by-function-cross-space)
-8. 升级弹框可自行编写，也可以使用`uni.showModal`，或使用现有的升级弹框样式，如果不满足UI需求请自行替换资源文件。在`utils/check-update.js`中都有实例。
-8. The upgrade pop-up box can be written by yourself, you can also use `uni.showModal`, or use the existing upgrade pop-up box style, if it does not meet the UI requirements, please replace the resource file by yourself. There are examples in `utils/check-update.js`.
 
-9.  wgt更新时，打包前请务必将manifest.json中的版本修改为更高版本。
-9. When wgt is updated, be sure to modify the version in manifest.json to a higher version before packaging.
+7. 升级弹框可自行编写，也可以使用`uni.showModal`，或使用现有的升级弹框样式，如果不满足UI需求请自行替换资源文件。在`utils/check-update.js`中都有实例。
+
+8. 使用wgt更新，打包前请务必将 manifest.json 中的版本名称修改为更高版本。
 
 **更新下载安装`check-update.js`**
 **Update download and install `check-update.js`**

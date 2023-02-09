@@ -1,5 +1,4 @@
-uniCloud产品服务协议
-uniCloud Product Service Agreement
+# uniCloud产品服务协议
 
 版本生效日期：2020年9月23日
 Version effective date: September 23, 2020
@@ -8,7 +7,6 @@ Version effective date: September 23, 2020
 Tips clause
 
 欢迎您与数字天堂（北京）网络技术有限公司（以下简称“DCloud”）共同签署本《uniCloud产品服务协议》（下称“本协议”）并使用uniCloud服务！
-You are welcome to sign this "uniCloud Product Service Agreement" (hereinafter referred to as "Agreement") with Digital Paradise (Beijing) Network Technology Co., Ltd. (hereinafter referred to as "DCloud") and use uniCloud services!
 
 您在同意本协议之前，应当认真阅读本协议。请您务必审慎阅读、充分理解各条款的内容，特别是免除或者限制责任的条款、法律适用和争议解决条款，您应重点阅读。
 Before agreeing to this agreement, you should read this agreement carefully. Please be sure to read carefully and fully understand the contents of each clause, especially the clauses on exemption or limitation of liability, applicable laws and dispute resolution clauses, you should focus on reading.
@@ -20,11 +18,13 @@ When you read and click to agree to this agreement or otherwise choose to accept
 ## 1. General
 1.1 **uniCloud**
 
-uniCloud 是 DCloud 联合阿里云、腾讯云等云厂商（以下简称云厂商），为开发者提供的基于 serverless 模式和 js 编程、运行的云平台。包括云数据库、云函数、云存储、前端网页托管等功能模块。
-uniCloud is a cloud platform based on serverless mode and js programming and operation provided by DCloud in conjunction with cloud vendors such as Alibaba Cloud and Tencent Cloud (hereinafter referred to as cloud vendors). Including cloud database, cloud function, cloud storage, front-end web hosting and other functional modules.
+uniCloud 是 DCloud 为开发者提供的基于js进行云端开发和云资源调用的平台。
 
-您通过DCloud提供的工具开发云端代码，并最终部署在您选择的云厂商的服务器上。您的前端应用将直接连接云厂商的服务器，而不经过DCloud服务器中转。
-You develop cloud code through the tools provided by DCloud, and finally deploy it on the server of the cloud vendor of your choice. Your front-end application will directly connect to the cloud vendor's server without going through the DCloud server.
+uniCloud的主体是 serverless 的服务空间，由DCloud联合阿里云、腾讯云等云厂商（以下简称云厂商）提供。包括云数据库、云函数、云存储、前端网页托管等功能模块。
+
+您通过DCloud提供的工具开发云端代码，最终部署在您选择的云厂商的服务器上。在发布后，您的前端应用直接连接云厂商的服务器，不经过DCloud服务器中转。
+
+uniCloud还包括其他云资源，如短信。这些资源的使用方式为云函数/云对象的API。这些资源有独立的使用许可，开通时请注意阅读相关许可协议。
 
 1.2 DCloud是中立的技术服务提供者，依约向您提供各类技术产品和服务；您的网站、应用、软件、平台等任何产品、服务及相关内容等，由您自行运营并承担全部责任。
 1.2 DCloud is a neutral technical service provider, providing you with various technical products and services according to the contract; any products, services and related content of your website, application, software, platform, etc., are operated by you and you are fully responsible.
@@ -38,17 +38,19 @@ You develop cloud code through the tools provided by DCloud, and finally deploy 
 1.3 双方均保证已经依照国家相关规定获得了合法经营资质或政府审批等，有权依法运营其产品及服务。双方进一步保证，在本协议有效期内持续保持具备国家相关规定要求的经营资质或审批手续。
 1.3 Both parties guarantee that they have obtained legal business qualifications or government approvals in accordance with relevant national regulations, and have the right to operate their products and services in accordance with the law. The two parties further guarantee that during the validity period of this agreement, they will continue to maintain the business qualifications or approval procedures required by relevant national regulations.
 
+1.3 双方均保证已经依照国家相关规定获得了合法经营资质或政府审批等，有权依法运营其产品及服务。双方进一步保证，在本协议有效期内持续保持具备国家相关规定要求的经营资质或审批手续。
+
 1.4 当您使用uniCloud的阿里云公测版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/118037.htm](https://help.aliyun.com/document_detail/118037.htm)
 1.4 When you use uniCloud's Alibaba Cloud public beta service, you also need to abide by Alibaba Cloud's service agreement: [https://help.aliyun.com/document_detail/118037.htm](https://help.aliyun.com /document_detail/118037.htm)
 
 1.5 当您使用uniCloud的阿里云正式版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/434218.html](https://help.aliyun.com/document_detail/434218.html)、隐私协议：[https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html)、以及SLA服务等级协议：[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)
 1.5 When you use uniCloud's Alibaba Cloud official version service, you also need to abide by Alibaba Cloud's service agreement: [https://help.aliyun.com/document_detail/434218.html](https://help.aliyun.com /document_detail/434218.html), privacy agreement: [https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html](https://terms.aliyun.com/legal-agreement/terms /suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html), and SLA Service Level Agreement: [https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn. agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)
 
+1.5 当您使用uniCloud的阿里云正式版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/434218.html](https://help.aliyun.com/document_detail/434218.html)、隐私协议：[https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html)、以及SLA服务等级协议：[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)
+
 1.6 当您使用uniCloud的腾讯云服务时，您同时需要遵守腾讯云的服务协议：[https://cloud.tencent.com/document/product/301/1967](https://cloud.tencent.com/document/product/301/1967)、隐私协议：[https://cloud.tencent.com/document/product/301/11470](https://cloud.tencent.com/document/product/301/11470)、以及SLA服务等级协议：[https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)
-1.6 When you use uniCloud's Tencent Cloud service, you also need to abide by Tencent Cloud's service agreement: [https://cloud.tencent.com/document/product/301/1967](https://cloud.tencent.com /document/product/301/1967), privacy agreement: [https://cloud.tencent.com/document/product/301/11470](https://cloud.tencent.com/document/product/301/11470 ), and SLA Service Level Agreement: [https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)
 
 ## 2. 账号
-## 2. Account
 2.1 您应依法具备必要、适当的权利能力和行为能力，按照DCloud的要求完成注册、获得DCloud服务账号（以下简称“账号”）。
 2.1 You shall have the necessary and appropriate rights and capacity in accordance with the law, complete the registration and obtain a DCloud service account (hereinafter referred to as "account") in accordance with DCloud's requirements.
 
@@ -71,24 +73,17 @@ You develop cloud code through the tools provided by DCloud, and finally deploy 
 2.7 According to national legal requirements and cloud vendor policy requirements, real-name authentication is required to use uniCloud. Real-name authentication is the basis for judging account ownership and responsibility. In the event of disputes over account ownership, DCloud has the right to determine that the account belongs to the real-name authentication subject; for accounts with disputed ownership, DCloud has the right to temporarily hold the account Freeze. You must be cautious when performing authentication, pay enough attention and ensure that the authentication subject is consistent with the account user, and avoid authenticating the account used by the enterprise under the personal name, or authenticating the account used by myself under the name of others, etc. Improper authentication behavior.
 
 2.8 若您发现有他人盗用您的账号及密码、或任何其他未经您合法授权的情形时，您应立即以有效方式通知DCloud并提供必要资料（如客户资料、情况说明、证明材料及诉求等，以便DCloud核实身份及事件）。DCloud收到您的有效通知并核实身份后，会依据法律法规及服务规则进行处理。DCloud依据本条进行处理产生的相关责任和后果由您承担。
-2.8 If you find that someone has stolen your account and password, or any other situation without your legal authorization, you should immediately notify DCloud in an effective way and provide necessary information (such as customer information, situation description, proof materials and appeals, etc. , so that DCloud can verify identity and events). After DCloud receives your valid notice and verifies your identity, it will process it in accordance with laws, regulations and service rules. The relevant responsibilities and consequences of DCloud's processing in accordance with this article shall be borne by you.
 若您提供的资料存在瑕疵，导致DCloud无法核实您的身份或无法判断您的需求等，而导致DCloud未能及时处理，给您带来的损失，应由您自行承担。同时，您理解，DCloud对您的请求进行处理需要合理期限，对于DCloud采取措施前您已经产生的损失以及采取措施后因不可归责于DCloud的原因导致的损失，DCloud不承担任何责任。
-If the information you provide is flawed, causing DCloud to be unable to verify your identity or to judge your needs, etc., resulting in DCloud's failure to deal with it in a timely manner, you shall be responsible for the losses caused to you. At the same time, you understand that it takes a reasonable period of time for DCloud to process your request, and DCloud does not assume any responsibility for the losses you have incurred before DCloud takes measures and the losses caused by reasons that are not attributable to DCloud after taking measures.
 
 2.9 您不得提交虚假的实名认证信息。如果您违反本条款，则DCloud有权停用您的账户，由此对您产生的损失由您自行承担。如果您的行为导致DCloud蒙受损失，您需要赔偿DCloud的损失。
-2.9 You shall not submit false real-name authentication information. If you violate these terms, DCloud has the right to deactivate your account, and you shall be solely responsible for any loss incurred to you. If your actions cause DCloud to suffer losses, you need to compensate DCloud for the losses.
 
 2.10 DCloud严格按国家法律要求保护您的认证信息，包括但不限于使用加密存储等手段。并严格按照国家法律要求不泄露您的隐私信息。
-2.10 DCloud protects your authentication information in strict accordance with national legal requirements, including but not limited to the use of encrypted storage and other means. And strictly in accordance with national legal requirements not to disclose your private information.
 
 ## 3. 服务使用费用
-## 3. Service usage fee
 
 3.1 DCloud作为云厂商代理，向您收取uniCloud使用费用。根据您选择的云厂商不同，有不同的收费价格和不同的SLA服务等级协议。价格详见：[https://uniapp.dcloud.io/uniCloud/price](https://uniapp.dcloud.io/uniCloud/price)。SLA服务等级协议见本协议1.4、1.5条。
-3.1 DCloud, as the agent of the cloud manufacturer, charges you uniCloud usage fees. Depending on the cloud vendor you choose, there are different charging prices and different SLA service level agreements. See the price: [https://uniapp.dcloud.io/uniCloud/price](https://uniapp.dcloud.io/uniCloud/price). For the SLA service level agreement, see clauses 1.4 and 1.5 of this agreement.
 
 3.2 uniCloud分为按量计费（也称后付费）、包月包年套餐（也称预付费）两种计费模型。
-3.2 uniCloud is divided into two billing models: pay-as-you-go (also known as postpaid) and monthly and annual packages (also known as prepaid).
 
 3.3 包月包年套餐：您付费购买包月或包年的套餐之后，即可使用相关服务。不同套餐对应不同的资源可用量，如果您的使用量超过了套餐限制，则服务因欠费不再可用。您可以变更套餐。
 3.3 Monthly and annual package: After you pay for a monthly or annual package, you can use related services. Different plans correspond to different resource availability. If your usage exceeds the plan limit, the service will no longer be available due to arrears. You can change the plan.
@@ -132,17 +127,42 @@ If the information you provide is flawed, causing DCloud to be unable to verify 
 ## 4. 服务等级
 ## 4. Service Level
 
+3.4 按量付费：在您缴纳押金、充值余额之后，您可先使用uniCloud，按照实际的使用量计费，费用从充值余额中扣除。余额不足时，服务因欠费不再可用。每日DCloud后台会提供前一日的资源消耗账单，每月初会出具上个月的月度账单。
+
+3.5 在您购买包月包年套餐后，或者按量付费的月度账单生成后，您可以在DCloud后台申请开票，DCloud根据账单金额开具发票。您支付的押金和余额不开具发票，如您需要可开具收据。
+
+3.6 您使用按量付费时，每个按量付费的服务空间需缴纳押金。
+	a) 押金用于欠费的担保。即在每日资源消耗账单出具后，向您的余额扣款失败，余额不足以支付当日账单，此时会产生欠费。
+	b) 您发生欠费的uniCloud服务空间将被立即终止，无论押金金额是否大于欠费金额。如果您由此产生损失，您同意自行承担。
+	c) 按量付费的服务空间发生欠费后，DCloud向云厂商承担连带付款责任，如果您不缴纳欠费，DCloud将使用您缴纳的押金支付云厂商欠费，并不再退还押金。
+	d) 使用押金支付欠费后，您的服务空间仍然处于不可用状态。您需要重新补齐押金和充值余额才能恢复服务空间。
+	e) 欠费发生后有一定时间缓冲的挽回期，挽回期内您主动补齐余额和押金，服务空间可恢复使用。一旦超过挽回期，云厂商将直接清除欠费的服务空间，不再可还原相关数据和代码。挽回期的具体时长见云厂商的服务协议，并且云厂商有权调整挽回期时长并更新在其新版服务协议中。
+	f) 如果您延迟付款，需承担额外违约金，违约金金额按欠费金额的每日千分之五缴纳。
+	g) 如果您频繁发生欠费，DCloud有权拒绝为您提供服务。
+
+3.7 在您终止使用按量付费业务后，可申请退还押金和余额。如发生税金、移动支付通道手续费等其他费用，将从退还金额中扣除。
+
+3.8 不同云厂商的余额并不通用，同一云厂商的不同服务空间的押金也不通用，每个按量付费的服务空间需分别缴纳押金。
+
+3.9. 您在使用按量付费时请务必关注余额，一旦发生欠费：
+
+3.10. DCloud若举行促销或调价，将不提供价格保护。在新促销政策或价格生效后，您的新账单将按新政策执行，老账单不变。
+
+
+## 4. 服务等级
+
 **4.1 阿里云**
 **4.1 Alibaba Cloud**
 
 阿里云提供了服务等级协议，见[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)。
 Alibaba Cloud provides a Service Level Agreement, see [https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla /ali_cloud_sla202206071919_23707.html).
 
+阿里云提供了服务等级协议，见[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)。
+
 如果您购买了uniCloud的阿里云服务空间，且阿里云未满足其承诺的服务标准，则可以索赔。
 If you purchased uniCloud's Alibaba Cloud service space, and Alibaba Cloud fails to meet the service standards it promised, you can claim for compensation.
 
 索赔方式：按照如下模版，整理故障信息，发送邮件到service@dcloud.io，
-Claim method: According to the following template, sort out the fault information and send an email to service@dcloud.io,
 
 ```
 1）客户名称：
@@ -165,6 +185,10 @@ Tencent Cloud provides a service level agreement, see [https://cloud.tencent.com
 如果您购买了uniCloud的腾讯云服务空间，且腾讯云未满足其承诺的服务标准，则可以索赔。
 If you purchased uniCloud's Tencent Cloud service space, and Tencent Cloud fails to meet the service standards it promised, you can claim for compensation.
 
+腾讯云提供了服务等级协议，见[https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)。
+
+如果您购买了uniCloud的腾讯云服务空间，且腾讯云未满足其承诺的服务标准，则可以索赔。
+
 DCloud将负责为您协调腾讯云的赔偿。赔偿标准和相关规定见上述服务等级协议。
 DCloud will be responsible for coordinating Tencent Cloud's compensation for you. See the above service level agreement for compensation standards and related regulations.
 
@@ -172,62 +196,44 @@ DCloud will be responsible for coordinating Tencent Cloud's compensation for you
 ## 5. Limitation of Liability
 
 由以下原因导致的服务不可用，DCloud无须向您承担责任：
-If the service is unavailable due to the following reasons, DCloud shall not be liable to you:
 
 5.1 DCloud预先通知您后进行系统维护所引起的。
-5.1 Caused by system maintenance after DCloud notifies you in advance.
 
 5.2 任何DCloud所属设备以外的网络、设备故障或配置调整引起的。
-5.2 Any network, equipment failure or configuration adjustment other than the equipment to which DCloud belongs.
 
 5.3 您的应用接口或数据受到攻击或其他不当行为引起的。
-5.3 Your application interface or data is attacked or caused by other misconduct.
 
 5.4 您维护不当或保密不当致使数据、口令、密码等丢失或泄漏所引起的。
-5.4 Caused by the loss or leakage of data, passwords, passwords, etc. caused by your improper maintenance or improper confidentiality.
 
 5.5 由于您的疏忽导致的误操作或由您授权的操作所引起的。
-5.5 Misoperation caused by your negligence or operation authorized by you.
 
 5.6 您未遵循DCloud产品使用文档或使用建议引起的。
-5.6 Caused by your failure to follow the DCloud product usage documentation or usage recommendations.
 
 5.7 使用超过当前付费版本标定的服务能力上限而导致的服务不可用。
-5.7 The service is unavailable due to the use of exceeding the service capacity limit of the current paid version.
 
 5.8 非DCloud原因过错、DCloud无法控制或合理预见的情形
-5.8 Circumstances that are not attributable to DCloud, uncontrollable or reasonably foreseeable by DCloud
 
 5.9 不可抗力，包括但不限于自然灾害、政府行为、法律法规颁布调整、罢工（任一方内部劳资纠纷除外）、动乱等不能预见、不能避免并不能克服的客观情况。
-5.9 Force majeure, including but not limited to natural disasters, government actions, promulgation and adjustment of laws and regulations, strikes (except for internal labor disputes of either party), turmoil and other unforeseeable, unavoidable and insurmountable objective situations.
 
 5.10 基础运营商原因，包括但不限于电信部门技术调整、电信/电力线路被他人破坏、电信/电力部门对电信网络/电力资源进行安装、改造、维护。
-5.10 Reasons for basic operators, including but not limited to technical adjustment of the telecommunications department, destruction of telecommunications/power lines by others, installation, transformation, and maintenance of telecommunications network/power resources by the telecommunications/power department.
 
 5.11 网络安全事故，如计算机病毒、木马或其他恶意程序、黑客攻击的破坏。
-5.11 Network security incidents, such as computer viruses, Trojan horses or other malicious programs, and damage from hacker attacks.
 
 5.12 您通过非DCloud授权的方式使用DCloud服务，您的电脑软件、系统、硬件和通信线路出现故障。
-5.12 If you use DCloud services in a way not authorized by DCloud, your computer software, system, hardware and communication lines are faulty.
 
 5.13 属于相关法律法规、相关协议、相关规则或DCloud单独发布的相关规则、说明等中所述的DCloud可以免责、免除赔偿责任等的情况。
-5.13 It is a situation in which DCloud can be exempted from liability, exempted from compensation liability, etc. as stated in relevant laws and regulations, relevant agreements, relevant rules, or relevant rules and instructions issued by DCloud alone.
 
 5.14 因不可抗力、基础运营商原因、网络安全事故或其他超出当事人可合理掌控范围的事件，造成本协议迟延履行或任何一方违约，双方均无需承担违约责任。但是，受影响一方应尽可能及时通知另一方。如前述事件妨碍协议履行达30天以上的，任一方可提前15天书面通知对方终止协议。因本条款终止协议的，任何一方均无须承担违约责任。
-5.14 Due to force majeure, basic operator reasons, network security incidents or other events beyond the reasonable control of the parties, both parties shall not be liable for the breach of contract due to delay in the performance of this agreement or breach of contract by either party. However, the affected party shall notify the other party as promptly as possible. If the aforementioned events prevent the performance of the agreement for more than 30 days, either party may terminate the agreement by notifying the other party in writing 15 days in advance. If the agreement is terminated due to this clause, neither party shall be liable for breach of contract.
 
 5.15 您理解并同意，DCloud的服务是按照现有技术和条件所能达到的现状提供的。DCloud将尽最大努力确保服务的连贯性和安全性，但DCloud不能保证其所提供的服务毫无瑕疵，因此，即使DCloud提供的服务存在瑕疵，但若上述瑕疵是当时行业技术水平所无法避免的，其将不视为DCloud违约，DCloud也无需承担任何责任，双方应友好协作共同解决问题。
-5.15 You understand and agree that DCloud's services are provided in accordance with the status quo that can be achieved by existing technologies and conditions. DCloud will do its best to ensure the continuity and security of the service, but DCloud cannot guarantee that the services it provides are flawless. Therefore, even if the services provided by DCloud are flawed, if the above flaws are unavoidable at the technical level of the industry at that time , it will not be regarded as a breach of contract by DCloud, and DCloud does not need to assume any responsibility. Both parties should cooperate amicably and jointly solve the problem.
 
 5.16 于任何情形下，任一方均不对另一方之任何间接的、偶然的、特殊的或惩罚性的损害和损失（如利润损失、机会损失、向第三方支付的费用、声誉/商誉损失或损害等）承担责任，无论基于合同、保证、侵权或任何其他责任理论，不论任一方是否知道或应当知道上述损失或损害的可能性。
-5.16 In no event shall either party be liable to the other for any indirect, incidental, special or punitive damages and losses (such as lost profits, lost opportunities, fees paid to third parties, loss of reputation/goodwill or damages, etc.), whether based on contract, warranty, tort or any other theory of liability, whether or not either party knew or should have known of the possibility of such loss or damage.
 
 5.17 于任何情形下，DCloud基于本协议及相关订单和DCloud服务向您所承担的赔偿责任（无论基于合同、侵权或任何其他责任理论）的总额，不超过给您造成损失的云服务空间的付费交易中DCloud获取的累积利润；如果造成您损失的相应云服务空间的服务期限超过12个月的，则DCloud的最大赔偿责任不超过损害发生前12个月造成您损失的云服务空间的付费交易中DCloud获取的合计利润。同时如果是因云厂商原因引起的，DCloud将协调云厂商对您进行赔偿。
 5.17 In any case, the total amount of compensation liability (whether based on contract, tort or any other liability theory) borne by DCloud to you based on this Agreement and related orders and DCloud services shall not exceed the payment for the cloud service space caused to you The accumulated profits obtained by DCloud in the transaction; if the service period of the corresponding cloud service space that caused your loss exceeds 12 months, DCloud's maximum liability shall not exceed the paid transaction of the cloud service space that caused your loss in the 12 months before the damage occurred. The total profit obtained by DCloud. At the same time, if it is caused by the cloud vendor, DCloud will coordinate the cloud vendor to compensate you.
 
 
 ## 6. 客户权利义务
-## 6. Customer Rights and Obligations
 
 6.1 您有权依照本协议约定使用DCloud服务并获得DCloud的技术支持和售后服务。
 6.1 You have the right to use DCloud services and obtain DCloud's technical support and after-sales service in accordance with this agreement.
@@ -279,21 +285,16 @@ If the service is unavailable due to the following reasons, DCloud shall not be 
 6.5 You must keep the access log records of your website in accordance with the provisions of the "Network Security Law", "Internet Information Service Management Measures" and other laws and regulations, including the information content and release time, Internet address (IP), domain name, etc. Relevant authorities shall cooperate with them when making inquiries in accordance with the law. You will bear the corresponding legal responsibilities arising from the failure to keep relevant records as required.
 
 6.6 为了数据的安全，您应负责您数据的备份工作。
-6.6 For data security, you shall be responsible for the backup of your data.
 
 6.7 您应对您的用户业务数据的来源及内容负责，DCloud提示您谨慎判断数据来源及内容的合法性。您将承担因您的用户业务数据内容违反法律法规、部门规章或国家政策而造成的相应结果及责任。
-6.7 You are responsible for the source and content of your user business data. DCloud reminds you to carefully judge the legality of the data source and content. You will bear the corresponding results and responsibilities caused by the violation of laws, regulations, departmental rules or national policies by the content of your user business data.
 
 6.8 您不得直接或通过第三方使用破解、反编译、劫持请求、黑客攻击等手段攻击DCloud服务器、破解DCloud产品、传播或再次销售被破解的产品。不得利用DCloud系统漏洞谋利或侵害DCloud的利益。如有相关行为，DCloud将有权停止对您的DCloud所有产品和服务的使用授权，罚没您在DCloud所有产品服务中的预付款项和应收款项，因此造成的损失由您自行承担。如果您的行为产生法律问题，DCloud有权追责您的法律责任。
-6.8 You shall not directly or through a third party to use cracking, decompiling, hijacking requests, hacking and other means to attack DCloud servers, crack DCloud products, spread or re-sell cracked products. Do not take advantage of the loopholes in the DCloud system for profit or infringe the interests of DCloud. If there is any relevant behavior, DCloud will have the right to stop the authorization to use all of your DCloud products and services, and confiscate your prepayments and receivables in all DCloud products and services, and you will be responsible for any loss caused. If your actions cause legal problems, DCloud has the right to pursue your legal responsibilities.
 
 6.9 您还应仔细阅读并遵守DCloud在网站页面上展示的相应服务说明、技术规范、使用流程、操作文档等内容（以上简称“操作指引”），依照相关操作指引进行操作。您将承担违反相关操作指引所引起的后果；同时，DCloud郑重提示您，请把握风险谨慎操作。
-6.9 You should also carefully read and abide by the corresponding service descriptions, technical specifications, usage procedures, operation documents, etc. displayed by DCloud on the website page (the above referred to as "operation guidelines"), and operate in accordance with the relevant operation guidelines. You will bear the consequences of violating the relevant operating guidelines; at the same time, DCloud solemnly reminds you, please grasp the risks and operate with caution.
 
 
 
 ## 7. 知识产权
-## 7. Intellectual Property
 
 7.1 双方各自享有的商标权、著作权或者其他知识产权，均仍归各方单独享有，并不会因为双方签订或者履行本协议而转归对方享有，或者转归双方共同享有。
 7.1 The trademark rights, copyrights or other intellectual property rights enjoyed by both parties are still owned by each party alone, and will not be transferred to the other party or shared by both parties due to the signing or performance of this agreement by both parties.
@@ -302,7 +303,6 @@ If the service is unavailable due to the following reasons, DCloud shall not be 
 7.2 Either party shall respect the intellectual property rights of the other party and the third party. If any third party files a lawsuit against the other party or claims compensation for the reason that one party infringes on its intellectual property rights and other legitimate rights and interests, the responsible party shall independently handle the relevant disputes and compensate for it. direct economic loss to the other party and release the other party from liability.
 
 ## 8. 保密信息
-## 8. Confidential Information
 
 8.1 双方为了本协议目的，已经或将会提供或透露某些保密信息。其中，披露保密信息的一方为“披露方”，而接受保密信息的一方为“接收方”。
 8.1 The parties have provided or will provide or disclose certain confidential information for the purposes of this Agreement. Among them, the party disclosing the confidential information is the "disclosing party", and the party receiving the confidential information is the "receiving party".
@@ -336,6 +336,8 @@ If the service is unavailable due to the following reasons, DCloud shall not be 
 ## 9. 其他
 ## 9. Others
 
+## 9. 其他
+
 9.1 本协议的签订地为北京市海淀区。
 9.1 The place where this agreement is signed is Haidian District, Beijing.
 
@@ -344,6 +346,8 @@ If the service is unavailable due to the following reasons, DCloud shall not be 
 
 9.3 因本协议产生之争议，双方应首先协商解决；双方未能协商解决的，任何一方均应将争议提交本协议签订地有管辖权的人民法院裁决。双方无争议的部分，应当继续履行。
 9.3 Disputes arising from this agreement shall be resolved through negotiation first by both parties; if the parties fail to resolve through negotiation, either party shall submit the dispute to the people's court with jurisdiction in the place where this agreement is signed for adjudication. The undisputed part between the two parties shall continue to be performed.
+
+9.3 因本协议产生之争议，双方应首先协商解决；双方未能协商解决的，任何一方均应将争议提交本协议签订地有管辖权的人民法院裁决。双方无争议的部分，应当继续履行。
 
 9.4 DCloud有权根据变化适时或必要时对本协议条款做出修改，您可以在uniCloud官网的最新版本中查阅相关协议条款。如您不同意DCloud对协议所做的修改，您有权停止使用本服务，如您继续使用本服务，则视为您接受修改后的协议。（完）
 9.4 DCloud reserves the right to revise the terms of this agreement in due course or when necessary according to changes. You can check the relevant terms of the agreement on the latest version of the uniCloud official website. If you do not agree with the changes made by DCloud to the agreement, you have the right to stop using the service, and if you continue to use the service, it is deemed that you accept the revised agreement. (Finish)

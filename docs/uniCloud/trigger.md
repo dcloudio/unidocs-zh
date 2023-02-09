@@ -40,8 +40,7 @@ In the uniCloud web console, click the details of the cloud function that needs 
 **注意**
 **Notice**
 
-- 当前阿里云没有服务空间用量计费，为避免资源浪费，定时触发器限制为最高频率每小时触发一次，要求cron表达式中的秒和分仅支持配置固定的数字，不支持特殊字符。（如需提高调用频率可以发送邮件到service@dcloud.io进行申请，[申请模板](https://uniapp.dcloud.io/uniCloud/price?id=aliyun)）
-- Currently, Alibaba Cloud does not charge for service space usage. To avoid wasting resources, timing triggers are limited to trigger once per hour at the highest frequency. It is required that seconds and minutes in cron expressions only support fixed numbers, and special characters are not supported. (If you need to increase the calling frequency, you can send an email to service@dcloud.io to apply, [application template](https://uniapp.dcloud.io/uniCloud/price?id=aliyun))
+- 阿里云正式版最低触发间隔为1分钟，腾讯云最低触发间隔为1秒
 - 阿里云的cron表达式为6位，腾讯云为7位。相比腾讯云，阿里云缺少代表年份的第7位
 - Alibaba Cloud's cron expression is 6-bit, and Tencent Cloud's is 7-bit. Compared with Tencent Cloud, Alibaba Cloud lacks the 7th place representing the year
 - 定时触发使用的是utc+8的时间

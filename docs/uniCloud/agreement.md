@@ -40,15 +40,9 @@ uniCloud还包括其他云资源，如短信。这些资源的使用方式为云
 
 1.3 双方均保证已经依照国家相关规定获得了合法经营资质或政府审批等，有权依法运营其产品及服务。双方进一步保证，在本协议有效期内持续保持具备国家相关规定要求的经营资质或审批手续。
 
-1.4 当您使用uniCloud的阿里云公测版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/118037.htm](https://help.aliyun.com/document_detail/118037.htm)
-1.4 When you use uniCloud's Alibaba Cloud public beta service, you also need to abide by Alibaba Cloud's service agreement: [https://help.aliyun.com/document_detail/118037.htm](https://help.aliyun.com /document_detail/118037.htm)
+1.4 当您使用uniCloud的阿里云正式版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/434218.html](https://help.aliyun.com/document_detail/434218.html)、隐私协议：[https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html)、以及SLA服务等级协议：[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)
 
-1.5 当您使用uniCloud的阿里云正式版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/434218.html](https://help.aliyun.com/document_detail/434218.html)、隐私协议：[https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html)、以及SLA服务等级协议：[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)
-1.5 When you use uniCloud's Alibaba Cloud official version service, you also need to abide by Alibaba Cloud's service agreement: [https://help.aliyun.com/document_detail/434218.html](https://help.aliyun.com /document_detail/434218.html), privacy agreement: [https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html](https://terms.aliyun.com/legal-agreement/terms /suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html), and SLA Service Level Agreement: [https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn. agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)
-
-1.5 当您使用uniCloud的阿里云正式版服务时，您同时需要遵守阿里云的服务协议：[https://help.aliyun.com/document_detail/434218.html](https://help.aliyun.com/document_detail/434218.html)、隐私协议：[https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html)、以及SLA服务等级协议：[https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html](https://terms.alicdn.com/legal-agreement/terms/ali_cloud_sla/ali_cloud_sla202206071919_23707.html)
-
-1.6 当您使用uniCloud的腾讯云服务时，您同时需要遵守腾讯云的服务协议：[https://cloud.tencent.com/document/product/301/1967](https://cloud.tencent.com/document/product/301/1967)、隐私协议：[https://cloud.tencent.com/document/product/301/11470](https://cloud.tencent.com/document/product/301/11470)、以及SLA服务等级协议：[https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)
+1.5 当您使用uniCloud的腾讯云服务时，您同时需要遵守腾讯云的服务协议：[https://cloud.tencent.com/document/product/301/1967](https://cloud.tencent.com/document/product/301/1967)、隐私协议：[https://cloud.tencent.com/document/product/301/11470](https://cloud.tencent.com/document/product/301/11470)、以及SLA服务等级协议：[https://cloud.tencent.com/document/product/876/35075](https://cloud.tencent.com/document/product/876/35075)
 
 ## 2. 账号
 2.1 您应依法具备必要、适当的权利能力和行为能力，按照DCloud的要求完成注册、获得DCloud服务账号（以下简称“账号”）。
@@ -81,9 +75,9 @@ uniCloud还包括其他云资源，如短信。这些资源的使用方式为云
 
 ## 3. 服务使用费用
 
-3.1 DCloud作为云厂商代理，向您收取uniCloud使用费用。根据您选择的云厂商不同，有不同的收费价格和不同的SLA服务等级协议。价格详见：[https://uniapp.dcloud.io/uniCloud/price](https://uniapp.dcloud.io/uniCloud/price)。SLA服务等级协议见本协议1.4、1.5条。
+3.1 DCloud作为云厂商代理，向您收取uniCloud使用费用。根据您选择的产品不同，有不同的收费价格和不同的SLA服务等级协议。服务空间的价格详见：[https://uniapp.dcloud.io/uniCloud/price](https://uniapp.dcloud.io/uniCloud/price)。SLA服务等级协议见本协议1.4、1.5条。
 
-3.2 uniCloud分为按量计费（也称后付费）、包月包年套餐（也称预付费）两种计费模型。
+3.2 uniCloud服务空间分为按量计费（也称后付费）、包月包年套餐（也称预付费）两种计费模型。
 
 3.3 包月包年套餐：您付费购买包月或包年的套餐之后，即可使用相关服务。不同套餐对应不同的资源可用量，如果您的使用量超过了套餐限制，则服务因欠费不再可用。您可以变更套餐。
 3.3 Monthly and annual package: After you pay for a monthly or annual package, you can use related services. Different plans correspond to different resource availability. If your usage exceeds the plan limit, the service will no longer be available due to arrears. You can change the plan.
@@ -132,21 +126,19 @@ uniCloud还包括其他云资源，如短信。这些资源的使用方式为云
 3.5 在您购买包月包年套餐后，或者按量付费的月度账单生成后，您可以在DCloud后台申请开票，DCloud根据账单金额开具发票。您支付的押金和余额不开具发票，如您需要可开具收据。
 
 3.6 您使用按量付费时，每个按量付费的服务空间需缴纳押金。
-	a) 押金用于欠费的担保。即在每日资源消耗账单出具后，向您的余额扣款失败，余额不足以支付当日账单，此时会产生欠费。
-	b) 您发生欠费的uniCloud服务空间将被立即终止，无论押金金额是否大于欠费金额。如果您由此产生损失，您同意自行承担。
-	c) 按量付费的服务空间发生欠费后，DCloud向云厂商承担连带付款责任，如果您不缴纳欠费，DCloud将使用您缴纳的押金支付云厂商欠费，并不再退还押金。
-	d) 使用押金支付欠费后，您的服务空间仍然处于不可用状态。您需要重新补齐押金和充值余额才能恢复服务空间。
-	e) 欠费发生后有一定时间缓冲的挽回期，挽回期内您主动补齐余额和押金，服务空间可恢复使用。一旦超过挽回期，云厂商将直接清除欠费的服务空间，不再可还原相关数据和代码。挽回期的具体时长见云厂商的服务协议，并且云厂商有权调整挽回期时长并更新在其新版服务协议中。
-	f) 如果您延迟付款，需承担额外违约金，违约金金额按欠费金额的每日千分之五缴纳。
-	g) 如果您频繁发生欠费，DCloud有权拒绝为您提供服务。
+	- a) 押金用于欠费的担保。在每日资源消耗账单出具后，会向您的余额扣款。如余额不足以支付当日账单，此时会产生欠费。
+	- b) 您发生欠费的uniCloud服务空间将被立即终止，无论押金金额是否大于欠费金额。如果您由此产生损失，您同意自行承担。
+	- c) 按量付费的服务空间发生欠费后，DCloud向云厂商承担连带付款责任，如果您不缴纳欠费，DCloud将使用您缴纳的押金支付云厂商欠费，并不再退还押金。
+	- d) 使用押金支付欠费后，您的服务空间仍然处于不可用状态。您需要重新补齐押金和充值余额才能恢复服务空间。
+	- e) 欠费发生后有一定时间缓冲的挽回期，挽回期内您主动补齐余额和押金，服务空间可恢复使用。一旦超过挽回期，云厂商将直接清除欠费的服务空间，不再可还原相关数据和代码。挽回期的具体时长见云厂商的服务协议，并且云厂商有权调整挽回期时长并更新在其新版服务协议中。
+	- f) 如果您延迟付款，需承担额外违约金，违约金金额按欠费金额的每日千分之五缴纳。
+	- g) 如果您频繁发生欠费，DCloud有权拒绝为您提供服务。
 
-3.7 在您终止使用按量付费业务后，可申请退还押金和余额。如发生税金、移动支付通道手续费等其他费用，将从退还金额中扣除。
+3.7 在您终止使用按量付费的服务空间后，可申请退还押金和余额。如发生税金、移动支付通道手续费等其他费用，将从退还金额中扣除。
 
-3.8 不同云厂商的余额并不通用，同一云厂商的不同服务空间的押金也不通用，每个按量付费的服务空间需分别缴纳押金。
+3.8 不同产品、不同云厂商的余额并不通用。
 
-3.9. 您在使用按量付费时请务必关注余额，一旦发生欠费：
-
-3.10. DCloud若举行促销或调价，将不提供价格保护。在新促销政策或价格生效后，您的新账单将按新政策执行，老账单不变。
+3.9 uniCloud相关产品不提供价格保护，包括促销或降价。在新促销政策或价格生效后，您的新账单将按新政策执行，老账单不变。若您在促销期间购买，退款时可能按原价来计算退款差额。
 
 
 ## 4. 服务等级
@@ -239,44 +231,25 @@ DCloud will be responsible for coordinating Tencent Cloud's compensation for you
 6.1 You have the right to use DCloud services and obtain DCloud's technical support and after-sales service in accordance with this agreement.
 
 6.2 您在使用DCloud平台上的服务时须遵守相关法律法规及服务规则，并确保拥有法律法规要求的经营资质和能力，不得实施包括但不限于以下行为，也不得为任何违反法律法规的行为提供便利：
-6.2 When you use the services on the DCloud platform, you must abide by relevant laws, regulations and service rules, and ensure that you have the business qualifications and capabilities required by laws and regulations, and you must not perform activities including but not limited to the following, or provide any violations of laws and regulations. convenient:
-6.2.1 反对宪法所规定的基本原则的。
-6.2.1 Opposition to the fundamental principles laid down in the Constitution.
-6.2.2 危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的。
-6.2.2 Endangering national security, divulging state secrets, subverting state power, and undermining national unity.
-6.2.3 损害国家荣誉和利益的。
-6.2.3 Damage to national honor and interests.
-6.2.4 煽动民族仇恨、民族歧视，破坏民族团结的。
-6.2.4 Those who incite ethnic hatred, ethnic discrimination, and undermine ethnic unity.
-6.2.5 破坏国家宗教政策，宣扬邪教和封建迷信的。
-6.2.5 Those who undermine the national religious policy and promote cults and feudal superstitions.
-6.2.6 散布谣言，扰乱社会秩序，破坏社会稳定的。
-6.2.6 Spreading rumors, disrupting social order and undermining social stability.
-6.2.7 散布淫秽、色情、赌博、暴力、凶杀、恐怖或教唆犯罪的。
-6.2.7 Spreading obscenity, pornography, gambling, violence, murder, terror or instigating crime.
-6.2.8 侮辱或诽谤他人，侵害他人合法权益的。
-6.2.8 Insulting or slandering others and infringing on the legitimate rights and interests of others.
-6.2.9 实施任何违背“七条底线”的行为。
-6.2.9 Implement any behavior that violates the "Seven Bottom Lines".
-6.2.10 含有法律、行政法规禁止的其他内容的。
-6.2.10 Contains other content prohibited by laws and administrative regulations.
+- 6.2.1 反对宪法所规定的基本原则的。
+- 6.2.2 危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的。
+- 6.2.3 损害国家荣誉和利益的。
+- 6.2.4 煽动民族仇恨、民族歧视，破坏民族团结的。
+- 6.2.5 破坏国家宗教政策，宣扬邪教和封建迷信的。
+- 6.2.6 散布谣言，扰乱社会秩序，破坏社会稳定的。
+- 6.2.7 散布淫秽、色情、赌博、暴力、凶杀、恐怖或教唆犯罪的。
+- 6.2.8 侮辱或诽谤他人，侵害他人合法权益的。
+- 6.2.9 实施任何违背“七条底线”的行为。
+- 6.2.10 含有法律、行政法规禁止的其他内容的。
 
 6.3 您在使用DCloud平台上的服务时须维护互联网秩序和安全，不得侵犯任何主体的合法权益，不得实施包括但不限于以下行为，也不得为其提供便利：
-6.3 When you use the services on the DCloud platform, you must maintain the order and security of the Internet, and must not infringe on the legitimate rights and interests of any subject, and must not carry out activities including but not limited to the following, nor provide them with convenience:
-6.3.1 实施诈欺、虚伪不实或误导行为，或实施侵害他人知识产权等任何合法权益的行为，如“私服”、“外挂”等。
-6.3.1 Implement fraudulent, false or misleading behaviors, or implement behaviors that infringe any legitimate rights and interests such as intellectual property rights of others, such as "private servers", "plug-ins", etc.
-6.3.2 发布、传播垃圾邮件（SPAM）或包含危害国家秩序和安全、封建迷信、淫秽、色情、低俗等违法违规信息。
-6.3.2 Posting and disseminating spam (SPAM) or containing information that endangers national order and security, feudal superstition, obscenity, pornography, vulgarity and other illegal information.
-6.3.3 违反与DCloud网络相联通之网络、设备或服务的操作规定；实施违法或未授权之接取、盗用、干扰或监测。
-6.3.3 Violating the operating regulations of the network, equipment or service connected to the DCloud network; implementing illegal or unauthorized access, embezzlement, interference or monitoring.
-6.3.4 实施任何破坏或试图破坏网络安全的行为，包括但不限于以病毒、木马、恶意代码、钓鱼等方式，对网站、服务器进行恶意扫描、非法侵入系统、非法获取数据等。
-6.3.4 Implement any behavior that damages or attempts to damage network security, including but not limited to malicious scanning of websites and servers, illegal intrusion into the system, illegal acquisition of data, etc. by means of viruses, Trojan horses, malicious code, phishing, etc.
-6.3.5 实施任何改变或试图改变DCloud服务提供的系统配置或破坏系统安全的行为；利用技术或其他手段破坏、扰乱DCloud服务的运营或他人对DCloud服务的使用；以任何方式干扰或企图干扰DCloud任何产品或任何部分、功能的正常运行，或者制作、发布、传播上述工具、方法等。
-6.3.5 Implement any behavior that changes or attempts to change the system configuration provided by the DCloud service or damage the security of the system; use technology or other means to destroy, disrupt the operation of the DCloud service or the use of the DCloud service by others; interfere or attempt to interfere with the DCloud service in any way The normal operation of any product or any part, function, or the production, release, dissemination of the above-mentioned tools, methods, etc.
-6.3.6 因从事包括但不限于“DNS 解析”、“安全服务”、“域名代理”、“反向代理”等任何业务，导致您自己频繁遭受攻击（包括但不限于 DDoS 攻击）且未及时更正行为，或未根据DCloud要求消除影响，从而对DCloud服务平台或他人产生影响的。
-6.3.6 As a result of engaging in any business including but not limited to "DNS resolution", "security service", "domain name proxy", "reverse proxy", etc., you are frequently attacked (including but not limited to DDoS attacks) and are not timely Correct the behavior, or fail to eliminate the impact according to DCloud's requirements, thereby affecting the DCloud service platform or others.
-6.3.7 实施其他破坏互联网秩序和安全的行为。
-6.3.7 Implement other behaviors that disrupt the order and security of the Internet.
+- 6.3.1 实施诈欺、虚伪不实或误导行为，或实施侵害他人知识产权等任何合法权益的行为，如“私服”、“外挂”等。
+- 6.3.2 发布、传播垃圾邮件（SPAM）或包含危害国家秩序和安全、封建迷信、淫秽、色情、低俗等违法违规信息。
+- 6.3.3 违反与DCloud网络相联通之网络、设备或服务的操作规定；实施违法或未授权之接取、盗用、干扰或监测。
+- 6.3.4 实施任何破坏或试图破坏网络安全的行为，包括但不限于以病毒、木马、恶意代码、钓鱼等方式，对网站、服务器进行恶意扫描、非法侵入系统、非法获取数据等。
+- 6.3.5 实施任何改变或试图改变DCloud服务提供的系统配置或破坏系统安全的行为；利用技术或其他手段破坏、扰乱DCloud服务的运营或他人对DCloud服务的使用；以任何方式干扰或企图干扰DCloud任何产品或任何部分、功能的正常运行，或者制作、发布、传播上述工具、方法等。
+- 6.3.6 因从事包括但不限于“DNS 解析”、“安全服务”、“域名代理”、“反向代理”等任何业务，导致您自己频繁遭受攻击（包括但不限于 DDoS 攻击）且未及时更正行为，或未根据DCloud要求消除影响，从而对DCloud服务平台或他人产生影响的。
+- 6.3.7 实施其他破坏互联网秩序和安全的行为。
 
 6.4 您对自己存放在uniCloud上的数据以及进入和管理DCloud平台上各类产品与服务的口令、密码的完整性和保密性负责。因您维护不当或保密不当致使上述数据、口令、密码等丢失或泄漏所引起的损失和后果均由您承担。
 6.4 You are responsible for the integrity and confidentiality of the data you store on uniCloud and the passwords and passwords for entering and managing various products and services on the DCloud platform. You shall be responsible for the losses and consequences caused by the loss or leakage of the above-mentioned data, passwords, passwords, etc. due to your improper maintenance or improper confidentiality.
@@ -314,15 +287,10 @@ DCloud will be responsible for coordinating Tencent Cloud's compensation for you
 8.3 If the information learned by the receiving party from the disclosing party is marked or can be reasonably recognized as confidential information of the disclosing party, the receiving party shall keep the confidential information of the disclosing party confidential, and shall not use the information in any way without the written consent of the disclosing party. Disclosure to third parties or for purposes other than this Agreement. The recipient shall treat the disclosing party's Confidential Information with the same degree of care (and no less than a reasonable duty of care) that it treats its own Confidential Information.
 
 8.4 尽管有前述约定，符合下列情形之一的，相关信息不被视为保密信息：
-8.4 Notwithstanding the foregoing agreement, relevant information shall not be regarded as confidential information under one of the following circumstances:
-8.4.1 接收方在披露方向其披露之前已经通过合法的渠道或方式持有的信息。
-8.4.1 Information that the recipient has held through legal channels or methods before the disclosure to it.
-8.4.2 该信息已经属于公知领域，或该信息在非因接收方违反本协议的情况下而被公开。
-8.4.2 The information is already in the public domain, or the information has been made public without the recipient's breach of this agreement.
-8.4.3 接收方合法自其他有权披露资料的第三方处知悉且不负有保密义务的信息。
-8.4.3 Information that the recipient legally knows from other third parties who have the right to disclose the information and is not obligated to keep it confidential.
-8.4.4 由接收方不使用或不参考任何披露方的保密信息而独立获得或开发的。
-8.4.4 Independently obtained or developed by the Receiving Party without use or reference to the Confidential Information of any Disclosing Party.
+- 8.4.1 接收方在披露方向其披露之前已经通过合法的渠道或方式持有的信息。
+- 8.4.2 该信息已经属于公知领域，或该信息在非因接收方违反本协议的情况下而被公开。
+- 8.4.3 接收方合法自其他有权披露资料的第三方处知悉且不负有保密义务的信息。
+- 8.4.4 由接收方不使用或不参考任何披露方的保密信息而独立获得或开发的。
 
 8.5 如果接收方基于法律法规或监管机关的要求，需要依法披露披露方的保密信息的，不视为违反本协议，但接收方应当在法律许可的范围内尽快通知披露方，同时，接收方应当努力帮助披露方有效限制该保密信息的披露范围，保护披露方合法权益。
 8.5 If the receiving party needs to disclose the confidential information of the disclosing party in accordance with the laws and regulations or the requirements of the regulatory authorities, it shall not be regarded as a violation of this agreement, but the receiving party shall notify the disclosing party as soon as possible within the scope permitted by law, and at the same time, the receiving party shall Efforts are made to help the disclosing party effectively limit the disclosure scope of the confidential information and protect the legitimate rights and interests of the disclosing party.

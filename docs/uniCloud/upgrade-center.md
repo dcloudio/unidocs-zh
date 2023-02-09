@@ -21,13 +21,9 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 每个App开发者都要开发升级功能，这是巨大的社会资料浪费。DCloud推出 uni-upgrade-center，让应用开发更轻松、高效，让开发者专注于自己的业务。
 
-### 使用
+> 升级中心分为两个部分：[uni-upgrade-center Admin管理后台](https://ext.dcloud.net.cn/plugin?id=4470) 和 [uni-upgrade-center-app前台检测更新](https://ext.dcloud.net.cn/plugin?id=4542)。
 
-升级中心分为两个部分：[uni-upgrade-center Admin管理后台](https://ext.dcloud.net.cn/plugin?id=4470) 和 [uni-upgrade-center-app前台检测更新](https://ext.dcloud.net.cn/plugin?id=4542)。
-
-#### uni-upgrade-center Admin 管理后台@uni-upgrade-center-admin
-
-> 在 uni-admin 1.9.3+ 中已作为内置插件。在应用管理新增应用后，即可在 `App升级中心` 发布该应用的版本
+### uni-upgrade-center Admin 管理后台@uni-upgrade-center-admin
 
 负责发布新版和管理历史版本的上下线。提供了如下功能：
 
@@ -45,15 +41,28 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 - App 管理列表及 App 版本记录列表搜索
 
-> 插件市场下载 `uni-admin 1.9.3+`，上传云函数、初始化数据库运行至浏览器则可以在左侧菜单看到 `App 升级中心`
+#### 使用教程
+
+**新建 uni-admin 项目**
+
+1. 新建项目：`打开HBuilderX` -> `文件` -> `新建` -> `项目` -> `uni-app` 选择 `uniCloud admin`模板，键入一个名字，确定
+
+2. 鼠标右键 `uniCloud 文件夹` 选择`关联云服务空间`和`运行云服务空间初始化向导`
 
 **添加应用**
 
-使用升级中心前需要在应用管理新增应用 [详情](https://uniapp.dcloud.net.cn/uniCloud/admin.html#app-manager)
+> 运行 uni-admin 到浏览器，在左侧菜单 `系统管理 -> 应用管理` 中新增应用后，即可在 `App升级中心` 发布该应用的版本 [详情](https://uniapp.dcloud.net.cn/uniCloud/admin.html#app-manager)
+
+
+添加应用后，即可在应用管理列表中跳转至版本管理页面：
+
+<div align="center">
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/upgrade-center-jump.jpg" width="800"></img>
+</div>
 
 **版本管理**
 
-1. 在版本管理list的右上角点击`发布新版`，可以发布`原生App安装包`和`wgt资源包`。在左上角点击`下拉列表`，可以切换展示应用。
+1. 在版本管理列表页面右上角点击`发布新版`，可以发布`原生App安装包`和`wgt资源包`。在左上角点击`下拉列表`，可以切换展示应用。
 
 <div align="center">
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/version_list_new.png" width="800"></img>
@@ -65,28 +74,29 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	<div align="center" >
 	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/publish_apk.jpg" width="600"></img>
 	</div>
+	
+	2. `版本号`：请填写以`.`分隔字符串，例如：`0.0.1`。在构建应用安装包时，`manifest.json` 中的 `应用版本名称` 也要是该格式。
 
-  1. `Android应用市场`
+  3. `Android应用市场`
 		- 此处会与 `新增应用` 时填写的 `Android应用市场` 信息保持同步。当在应用管理修改应用信息时，这里也会修改
 		- 启用商店：当勾选某一商店启用时，在 `upgrade-center-app` 端会检测手机上是否有该应用市场
     		- 如果有，则会跳转至该应用商店进行 App 升级
     		- 如果都跳转失败，最后会使用填写的 `下载链接` 下载 apk 安装包升级
 		- 优先级：检查更新时，按照优先级从大到小依次尝试跳转商店
 
-	1. `下载链接/AppStore`
+	4. `下载链接/AppStore`
 		- 可以选择手动上传一个文件到 `云存储`，会自动将地址填入该项
 		- 也可以手动填写一个地址，就可以不用再上传文件
-		- 如果是发布`苹果`版本，包地址则为 应用在`AppStore的链接`
+		- 如果是发布 `苹果` 版本，包地址则为应用的 `AppStore 链接`
 		
-	2. `强制更新`
-		- 如果使用强制更新，App端接收到该字段后，App升级弹出框不可取消
+	5. `强制更新`
+		- 如果使用强制更新，App端的升级弹框将不可被关闭
 		
-	4. `上线发行`
+	6. `上线发行`
 		- 可设置当前包是否上线发行，只有已上线才会进行更新检测
 		- 同时只可有一个线上发行版，线上发行不可更设为下线。未上线可以设为上线发行并自动替换当前线上发行版
 		- 修改当前包为上线发行，自动替换当前线上发行版
 
-	**注：版本号请填写以`.`分隔字符串，例如：`0.0.1`**
 - 发布wgt资源包
 	1. 大部分配置与发布 `原生App安装包` 一致
 
@@ -95,16 +105,13 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	</div>
 
 	2. `原生App最低版本`
-		- 上次使用新Api或打包新模块的App版本
-		- 如果此次打包wgt使用了`新的api`或者打包了`新的模块`，则在发布 `wgt资源包` 的时候，将此版本更新为本次版本
-		
-		- 如果已有正式版`wgt资源包`，则本次新增会自动带出
+		- 上次使用新api或打包新模块的pp版本
+		- 如果此次打包的wgt使用了 `新的 api` 或者打包了 `新的模块` ，则在发布 `wgt资源包` 的时候，要将 `原生App最低版本` 填写为本次版本
+		- 如果已有正式版 `wgt资源包` ，则会自动带出
 
 	3. `静默更新`
 		- App升级时会在后台下载wgt包并自行安装。新功能在下次启动App时生效
 		- **静默更新后不重启应用，可能会导致正在访问的应用的页面数据错乱，请谨慎使用！**
-
-	**注：版本号请填写以`.`分隔字符串，例如：`0.0.1`**
 
 - 发布完成页面
 
@@ -113,7 +120,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	</div>
 
 **Tips**
-- `/uni_modules/uni-upgrade-center/pages/system/upgradecenter/version/add.vue`中有版本对比函数（compare）。
+- `/uni_modules/uni-upgrade-center/pages/version/add.vue`中有版本对比函数（compare）。
 	- 使用多段式版本格式（如："3.0.0.0.0.1.0.1", "3.0.0.0.0.1"）。如果不满足对比规则，请自行修改。
 - 删除应用会把该应用的所有版本记录同时删除
 - 升级中心设计之初就支持iOS的wgt更新
@@ -126,10 +133,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	> 
 	> 将 `data` 中的 `enableiOSWgt` 属性设置为 `true` 即可
 
-
-在插件市场安装（uni-admin 1.9.3+ 升级中心已作为内置插件，内置在uni-admin项目中），根据 readme 部署即可。[插件地址](https://ext.dcloud.net.cn/plugin?id=4470)
-
-#### uni-upgrade-center-app 前台检测更新@uni-upgrade-center-app
+### uni-upgrade-center-app 前台检测更新@uni-upgrade-center-app
 
 负责前台检查升级更新。
 
@@ -155,21 +159,19 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 **安装指引**
 
-1. 依赖数据库`opendb-app-versions`，如果没有此库，请在云服务空间中创建。
+1. 在插件市场打开本插件页面，在右侧点击`使用 HBuilderX 导入插件`，选择要导入的项目点击确定 [插件地址](https://ext.dcloud.net.cn/plugin?id=4542)
 
-2. 使用`HBuilderX 3.1.0+`，因为要使用到`uni_modules`
+2. 创建 uniCloud 云开发环境
 
-3. 在插件市场打开本插件页面，在右侧点击`使用 HBuilderX 导入插件`，选择要导入的项目点击确定
-
-4. 绑定服务空间：
+3. 绑定服务空间：
    - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，请和 uni-admin 项目关联同一个服务空间
    - 插件版本 `<= 0.6.0`，请绑定到一个已有的服务空间或者新建一个服务空间进行绑定
 
-5. 上传云函数：
+4. 上传云函数：
    - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，插件不再单独提供云函数，可以跳过此步骤
    - 插件版本 `<= 0.6.0`，找到`/uni_modules/uni-upgrade-center-app/uniCloud/cloudfunctions/check-version`，右键上传部署
 
-6. 在`pages.json`中添加页面路径。**注：请不要设置为pages.json中第一项**
+5. 在`pages.json`中添加页面路径。**注：请不要设置为pages.json中第一项**
   
 	```json
 	"pages": [
@@ -192,12 +194,13 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 			}
 		]
 	```
-7. 将`@/uni_modules/uni-upgrade-center-app/utils/check-update.js` 使用 import 导入到需要用到的地方，调用一下即可：
+6. 将`@/uni_modules/uni-upgrade-center-app/utils/check-update.js` 使用 import 导入到需要用到的地方，调用一下即可：
    1. `import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update.js'`
    2. 默认使用当前绑定的服务空间，如果要请求其他服务空间，可以使用其他服务空间的 `callFunction`。[详情](https://uniapp.dcloud.io/uniCloud/cf-functions.html#call-by-function-cross-space)
-8. 升级弹框可自行编写，也可以使用`uni.showModal`，或使用现有的升级弹框样式，如果不满足UI需求请自行替换资源文件。在`utils/check-update.js`中都有实例。
 
-9.  wgt更新时，打包前请务必将manifest.json中的版本修改为更高版本。
+7. 升级弹框可自行编写，也可以使用`uni.showModal`，或使用现有的升级弹框样式，如果不满足UI需求请自行替换资源文件。在`utils/check-update.js`中都有实例。
+
+8. 使用wgt更新，打包前请务必将 manifest.json 中的版本名称修改为更高版本。
 
 **更新下载安装`check-update.js`**
 

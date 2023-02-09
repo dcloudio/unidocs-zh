@@ -48,8 +48,8 @@ export default {
 	 {
 	   "number": "806429316",
 	   "state": 0,
-	   "prefix": "群5"
+	   "prefix": "群5",
+     joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=ez84UYIZgPKpTvrXD8GINUr62u8CF96x&jump_from=webapi'
 	 }
-  ],
-	joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=ez84UYIZgPKpTvrXD8GINUr62u8CF96x&jump_from=webapi'
+  ]
 }

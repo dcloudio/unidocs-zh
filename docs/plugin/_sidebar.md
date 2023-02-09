@@ -2,10 +2,11 @@
 * [插件市场介绍](/plugin/plugin-ext-introduction.md)
 * [uni_modules](/plugin/uni_modules.md)
 * uts插件
-  * [uts插件开发入门](/plugin/uts-plugin.md)
-  * [uts组件开发入门](/plugin/uts-component.md)
-  * [Android平台uts开发指南](/plugin/uts-for-android.md)
-  * [iOS平台uts开发指南](/plugin/uts-for-ios.md)
+  * [uts语法...](/tutorial/syntax-uts.md)
+  * [uts插件开发入门](uts-plugin.md)
+  * [uts页面组件开发入门](uts-component.md)
+  * [Android平台uts开发指南](uts-for-android.md)
+  * [iOS平台uts开发指南](uts-for-ios.md)
 * [原生语言插件](/plugin/native-plugin.md)
 * 插件作者专区
   * [发布插件](/plugin/publish.md)

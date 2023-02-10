@@ -67,8 +67,7 @@ Features of `uni-id-pages` include:
 - User Service Agreement and Privacy Policy Terms Authorization
 
 
-## 目录结构  
-## Directory Structure  
+## 目录结构
 <pre v-pre="" data-lang="">
 <code class="lang-" style="padding:0">
 ├─uni_modules                                         存放[uni_module](/uni_modules)规范的插件。
@@ -144,27 +143,25 @@ Features of `uni-id-pages` include:
 ## 前端页面
 ## front page
 ### 初始化
-### Initialization
-需要在App.vue中初始化`uni-id-pages`的`init.js`文件  
-The `init.js` file for `uni-id-pages` needs to be initialized in App.vue
+需要在App.vue中初始化`uni-id-pages`的`init.js`文件
 
 示例代码如下：
 The sample code is as follows:
 ```js
 <script>
-  import uniIdPageInit from '@/uni_modules/uni-id-pages/init.js';
-  export default {
-    onLaunch: async function() {
-      console.log('App Launch')
-      await uniIdPageInit()
-    },
-    onShow: function() {
-      console.log('App Show')
-    },
-    onHide: function() {
-      console.log('App Hide')
-    }
-  }
+	import uniIdPageInit from '@/uni_modules/uni-id-pages/init.js';
+	export default {
+	onLaunch: async function() {
+	console.log('App Launch')
+	await uniIdPageInit()
+},
+	onShow: function() {
+	console.log('App Show')
+},
+	onHide: function() {
+	console.log('App Hide')
+}
+}
 </script>
 ```
 
@@ -201,10 +198,10 @@ export default {
 		如果需要在不同平台有不同的配置，直接用条件编译即可
 	*/
 	"loginTypes": [
-		"univerify", 
-		"weixin", 
+		"univerify",
+		"weixin",
 		"username",
-		"apple", 
+		"apple",
 		"smsCode"
 	],
 	//政策协议
@@ -302,7 +299,7 @@ export default {
 	"loginTypes": [
 		"username","univerify","weixin","apple"
 		// #ifdef APP-PLUS
-			,"smsCode"
+		,"smsCode"
 		// #endif
 	]
 }
@@ -422,7 +419,7 @@ For example `loginTypes`: `["weixin","apple","univerify"]` will use `weixin`, ie
 `uni-id-pages` supports specifying the login method by passing the parameter `type`. For example: to specify Apple login, use the following code
 ```js
 uni.navigateTo({
-  "url":"/uni_modules/uni-id-pages/pages/login/login-withoutpwd?type=apple"
+	"url":"/uni_modules/uni-id-pages/pages/login/login-withoutpwd?type=apple"
 })
 ```
 
@@ -472,10 +469,10 @@ Return value example
 ```js
 {
 	errCode: 0, // 错误码，详见错误码列表
-	errMsg: '', // 错误信息，uni-id-co会自动根据客户端语言对错误信息进行国际化
-	newToken: { // 注册、登录、刷新token等接口会自动返回新token，uniCloud客户端sdk会自动将新token及过期时间存储在storage内（需要HBuilderX 3.4.13及以上版本）
+			errMsg: '', // 错误信息，uni-id-co会自动根据客户端语言对错误信息进行国际化
+			newToken: { // 注册、登录、刷新token等接口会自动返回新token，uniCloud客户端sdk会自动将新token及过期时间存储在storage内（需要HBuilderX 3.4.13及以上版本）
 		token,
-		tokenExpired
+				tokenExpired
 	},
 	// ...其余参数
 	// ... the rest of the parameters
@@ -653,9 +650,9 @@ Interface name: registerAdmin
 
 ```js
 await uniIdCo.registerAdmin({
-  username,
-  password,
-  nickname
+	username,
+	password,
+	nickname
 })
 ```
 
@@ -704,11 +701,11 @@ Interface name: registerUser
 
 ```js
 await uniIdCo.registerUser({
-  username,
-  password,
-  captcha,
-  nickname,
-  inviteCode
+	username,
+	password,
+	captcha,
+	nickname,
+	inviteCode
 })
 ```
 
@@ -755,11 +752,11 @@ Interface name: registerUserByEmail
 
 ```js
 await uniIdCo.registerUserByEmail({
-  email,
-  password,
-  code,
-  nickname,
-  inviteCode
+	email,
+	password,
+	code,
+	nickname,
+	inviteCode
 })
 ```
 
@@ -806,9 +803,9 @@ Interface name: login
 
 ```js
 await uniIdCo.login({
-  username,
-  password,
-  captcha
+	username,
+	password,
+	captcha
 })
 ```
 
@@ -858,10 +855,10 @@ Interface name: loginBySms
 
 ```js
 await uniIdCo.loginBySms({
-  mobile,
-  code,
-  captcha,
-  inviteCode
+	mobile,
+	code,
+	captcha,
+	inviteCode
 })
 ```
 
@@ -906,8 +903,8 @@ Interface name: loginByWeixinMobile
 
 ```js
 await uniIdCo.loginByWeixinMobile({
-  phoneCode,
-  inviteCode
+	phoneCode,
+	inviteCode
 })
 ```
 
@@ -957,9 +954,9 @@ Interface name: loginByUniverify
 
 ```js
 await uniIdCo.loginByUniverify({
-  access_token,
-  openid,
-  inviteCode
+	access_token,
+	openid,
+	inviteCode
 })
 ```
 
@@ -1005,8 +1002,8 @@ Interface name: loginByWeixin
 
 ```js
 await uniIdCo.loginByWeixin({
-  code,
-  inviteCode
+	code,
+	inviteCode
 })
 ```
 
@@ -1048,19 +1045,17 @@ await uniIdCo.loginByWeixin({
 - `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存`session_key`（微信小程序登录）、`access_token`（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
 - `uni-id-pages 1.0.8` and above will use uni-open-bridge-common to save `session_key` (WeChat MiniApp login), `access_token` (WeChat official account login, WeChat App login), these information, However, a copy is still stored in the user table for compatibility with legacy logic. Detailed reference: [Automatically save user sessionKey, accessToken and other information](uni-id-summary.md#save-user-token)
 - - 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
-- - If the developer does not use [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) to manage access_token and other information in other applications, it may cause access_token conflicts.
-**关于openid的说明**
-**Note about openid**
+	**关于openid的说明**
 
 `uni-id-pages 1.0.7`及之前的版本会将微信的openid存为如下格式
 `uni-id-pages 1.0.7` and earlier versions will save WeChat's openid in the following format
 
 ```js
 {
-  "_id": "xx",
-  "wx_openid": {
-    "mp": "weixin-openid-demo"
-  }
+	"_id": "xx",
+			"wx_openid": {
+		"mp": "weixin-openid-demo"
+	}
 }
 ```
 
@@ -1072,11 +1067,11 @@ This has been adjusted and corrected in the `uni-id-pages 1.0.8` version, and mu
 
 ```js
 {
-  "_id": "xx",
-  "wx_openid": {
-    "mp": "weixin-openid-demo",
-    "mp___UNI_123456": "weixin-openid-demo",
-  }
+	"_id": "xx",
+			"wx_openid": {
+		"mp": "weixin-openid-demo",
+				"mp___UNI_123456": "weixin-openid-demo",
+	}
 }
 ```
 
@@ -1094,9 +1089,9 @@ Interface name: loginByQQ
 
 ```js
 await uniIdCo.loginByQQ({
-  code,
-  accessToken,
-  inviteCode
+	code,
+	accessToken,
+	inviteCode
 })
 ```
 
@@ -1150,10 +1145,10 @@ await uniIdCo.loginByQQ({
 
 ```js
 {
-  "_id": "xx",
-  "qq_openid": {
-    "mp": "weixin-openid-demo"
-  }
+	"_id": "xx",
+			"qq_openid": {
+		"mp": "weixin-openid-demo"
+	}
 }
 ```
 
@@ -1162,11 +1157,11 @@ It can be seen that if there are multiple QQ applets associated with the same ac
 
 ```js
 {
-  "_id": "xx",
-  "qq_openid": {
-    "mp": "weixin-openid-demo",
-    "mp___UNI_123456": "weixin-openid-demo",
-  }
+	"_id": "xx",
+			"qq_openid": {
+		"mp": "weixin-openid-demo",
+				"mp___UNI_123456": "weixin-openid-demo",
+	}
 }
 ```
 
@@ -1184,8 +1179,8 @@ Interface name: loginByAlipay
 
 ```js
 await uniIdCo.loginByAlipay({
-  code,
-  inviteCode
+	code,
+	inviteCode
 })
 ```
 
@@ -1229,9 +1224,9 @@ Interface name: loginByApple
 
 ```js
 await uniIdCo.loginByApple({
-  identityToken,
-  nickname,
-  inviteCode
+	identityToken,
+	nickname,
+	inviteCode
 })
 ```
 
@@ -1398,9 +1393,9 @@ Interface name: bindMobileBySms
 
 ```js
 await uniIdCo.bindMobileBySms({
-  mobile,
-  code,
-  captcha
+	mobile,
+	code,
+	captcha
 })
 ```
 
@@ -1449,8 +1444,8 @@ Interface name: bindMobileByUniverify
 
 ```js
 await uniIdCo.bindMobileByUniverify({
-  openid,
-  access_token
+	openid,
+	access_token
 })
 ```
 
@@ -1514,13 +1509,13 @@ Interface name: bindMobileByMpWeixin
 ```js
 // uni-id-co >= 1.0.25
 await uniIdCo.bindMobileByMpWeixin({
-    code
+	code
 })
 
 // uni-id-co < 1.0.25
 await uniIdCo.bindMobileByMpWeixin({
-    encryptedData,
-    iv
+	encryptedData,
+	iv
 })
 ```
 
@@ -1569,7 +1564,7 @@ Interface name: bindWeixin
 
 ```js
 await uniIdCo.bindWeixin({
-  code
+	code
 })
 ```
 
@@ -1615,8 +1610,8 @@ Interface name: bindQQ
 
 ```js
 await uniIdCo.bindQQ({
-  code,
-  accessToken
+	code,
+	accessToken
 })
 ```
 
@@ -1663,7 +1658,7 @@ Interface name: bindAlipay
 
 ```js
 await uniIdCo.bindAlipay({
-  code
+	code
 })
 ```
 
@@ -1708,7 +1703,7 @@ Interface name: bindApple
 
 ```js
 await uniIdCo.bindApple({
-  identityToken
+	identityToken
 })
 ```
 
@@ -1880,8 +1875,8 @@ Interface name: updatePwd
 
 ```js
 await uniIdCo.updatePwd({
-  oldPassword,
-  newPassword
+	oldPassword,
+	newPassword
 })
 ```
 
@@ -1928,10 +1923,10 @@ Interface name: resetPwdBySms
 
 ```js
 await uniIdCo.resetPwdBySms({
-  mobile,
-  code,
-  password,
-  captcha
+	mobile,
+	code,
+	password,
+	captcha
 })
 ```
 
@@ -1972,10 +1967,10 @@ Interface name: resetPwdByEmail
 
 ```js
 await uniIdCo.resetPwdByEmail({
-  email,
-  code,
-  password,
-  captcha
+	email,
+	code,
+	password,
+	captcha
 })
 ```
 
@@ -2065,7 +2060,7 @@ Interface name: acceptInvite
 
 ```js
 await uniIdCo.acceptInvite({
-  inviteCode
+	inviteCode
 })
 ```
 
@@ -2110,10 +2105,10 @@ Interface name: getInvitedUser
 
 ```js
 await uniIdCo.getInvitedUser({
-  level,
-  limit,
-  offset,
-  needTotal
+	level,
+	limit,
+	offset,
+	needTotal
 })
 ```
 
@@ -2153,7 +2148,6 @@ await uniIdCo.getInvitedUser({
 - 仅在用户token即将过期时返回新newToken
 - only return a new newToken when the user's token is about to expire
 
-
 ### 安全验证@verifier
 ### Security Verification @verifier
 
@@ -2168,7 +2162,7 @@ Interface name: createCaptcha
 
 ```js
 await uniIdCo.createCaptcha({
-  scene
+	scene
 })
 ```
 
@@ -2205,7 +2199,7 @@ Interface name: refreshCaptcha
 
 ```js
 await uniIdCo.refreshCaptcha({
-  scene
+	scene
 })
 ```
 
@@ -2250,9 +2244,9 @@ Interface name: sendSmsCode
 
 ```js
 await uniIdCo.sendSmsCode({
-  mobile,
-  captcha,
-  scene
+	mobile,
+	captcha,
+	scene
 })
 ```
 
@@ -2291,9 +2285,9 @@ Interface name: sendEmailCode
 
 ```js
 await uniIdCo.sendEmailCode({
-  email,
-  captcha,
-  scene
+	email,
+	captcha,
+	scene
 })
 ```
 
@@ -2428,11 +2422,11 @@ Interface name: addUser
 
 ```js
 await uniIdCo.addUser({
-  username,
-  password,
-  authorizedApp,
-  nickname,
-  role
+	username,
+	password,
+	authorizedApp,
+	nickname,
+	role
 })
 ```
 
@@ -2473,6 +2467,49 @@ await uniIdCo.addUser({
 |errMsg |string |Error message |
 
 
+#### 管理员修改用户@update-user
+
+接口名：updateUser
+
+**接口形式**
+
+```js
+await uniIdCo.updateUser({
+	uid,
+	username,
+	password,
+	nickname,
+	authorizedApp,
+	role,
+	mobile,
+	email,
+	tags,
+	status
+})
+```
+
+**参数说明**
+
+| 参数名				       | 类型								          | 必填	 | 说明																											                 |
+|---------------|---------------------|-----|-----------------------------------------------|
+| uid			        | string							       | 是		 | 要更新的用户id																										            |
+| username			   | string							       | 是		 | 用户名																										                 |
+| password			   | string							       | 否		 | 密码																											                 |
+| nickname			   | string							       | 否		 | 昵称																											                 |
+| authorizedApp | Array&lt;string&gt; | 否		 | 允许登录的app列表																				                |
+| role					     | Array&lt;string&gt; | 否		 | 用户角色																									                 |
+| mobile				    | string							       | 否		 | 手机号																										                 |
+| email				     | string							       | 否		 | 邮箱																											                 |
+| tags					     | array							        | 否		 | 用户标签																									                 |
+| status				    | number							       | 否		 | 用户状态，参考：[用户状态](uni-id-summary.md#user-status) |
+
+**返回值**
+
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+
 #### 授权用户登录指定客户端@authorize-app-login
 #### Authorize the user to log in to the specified client @authorize-app-login
 
@@ -2484,8 +2521,8 @@ Interface name: authorizeAppLogin
 
 ```js
 await uniIdCo.authorizeAppLogin({
-  uid,
-  appId
+	uid,
+	appId
 })
 ```
 
@@ -2534,8 +2571,8 @@ Interface name: removeAuthorizedApp
 
 ```js
 await uniIdCo.removeAuthorizedApp({
-  uid,
-  appId
+	uid,
+	appId
 })
 ```
 
@@ -2584,8 +2621,8 @@ Interface name: setAuthorizedApp
 
 ```js
 await uniIdCo.setAuthorizedApp({
-  uid,
-  appIdList
+	uid,
+	appIdList
 })
 ```
 
@@ -2624,25 +2661,22 @@ await uniIdCo.setAuthorizedApp({
 - only return a new newToken when the user's token is about to expire
 
 ### 外部系统联登@external
-### External system federation @external
+
+适合自己有用户系统，同时需要使用依赖UniId的业务，将自身系统的用户账号导入uniId，为其创建一个对应uniId的账号，使得该账号可以使用依赖uniId的系统及功能。
+由于此方案的接口不需要密码验证，开发者务必要保证接口只能在服务端调用，同时要求在请求时计算签名来保证安全。
+
+联登相关接口只支持HTTP方式调用，调用时需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
+
 #### 注册用户@external-register
-#### Registered user @external-register
 
-外部用户注册，将自身系统的用户账号导入uniId，为其创建一个对应uniId的账号(unieid)，使得该账号可以使用依赖uniId的系统及功能。
-For external user registration, import the user account of its own system into uniId, and create an account (unieid) corresponding to uniId for it, so that the account can use the system and functions that depend on uniId.
-
-注册成功后，uni-id 返回 unieid 与 用户 token ，请务必在自身系统中维护好 unieid 与 token。
-After successful registration, uni-id returns unieid and user token, please be sure to maintain unieid and token in your own system.
-
-该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
-When this interface is called by URL, it needs to carry the authentication signature value, see [URLized Request Authentication Signature Calculation](uni-id-pages.md#http-reqeust-auth)
+外部用户注册，注册成功后，uni-id 返回 uid 与 用户 token ，请务必在自身系统中维护好 uid 与 token。
 
 **接口形式**
 **Interface form**
 
 ```js
 await uniIdCo.externalRegister({
-	unieid,
+	externalUid,
 	nickname,
 	avatar,
 	gender
@@ -2652,17 +2686,12 @@ await uniIdCo.externalRegister({
 **参数说明**
 **Parameter Description**
 
-|参数名		|类型				|必填	|说明									|
-|Parameter name |Type |Required |Description |
-|--			|--					|--		|--										|
-|unieid		|string				|是		|uni-id账号，必须保证唯一性。只允许使用数字、字母、“_”及“-”，但不能为纯数字。									|
-| unieid | string | Yes | uni-id account, uniqueness must be guaranteed. Only numbers, letters, "_" and "-" are allowed, but not pure numbers. |
-|nickname	|string|否		|用户昵称	|
-| nickname | string | no | user nickname |
-|avatar	|string|否		|用户头像	|
-| avatar | string | no | user avatar |
-|gender	|string|否		|用户性别；0 未知 1 男性 2 女性	|
-| gender | string|No | User gender; 0 unknown 1 male 2 female |
+| 参数名		         | 类型				     | 必填	 | 说明									                |
+|---------------|------------|-----|----------------------------|
+| externalUid		 | string				 | 是		 | 自身系统的用户id，必须保证唯一性。								 |
+| nickname	     | string     | 否		 | 用户昵称	                      |
+| avatar	       | string     | 否		 | 用户头像	                      |
+| gender	       | string     | 否		 | 用户性别；0 未知 1 男性 2 女性	       |
 
 **返回值**
 **return value**
@@ -2677,9 +2706,11 @@ await uniIdCo.externalRegister({
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
-|&nbsp;&#124;-&nbsp;tokenExpired| string | token expiration time |
-|unieid							|string				|用户id		|
-| unieid | string | user id |
+|externalUid							|string				|自身系统的用户id		|
+|uid							|string				|uni-id体系的用户Id		|
+| nickname	                       | string     	        | 用户昵称	                |
+| avatar	                         | string     		       | 用户头像	                |
+| gender	                         | string   	          | 用户性别；0 未知 1 男性 2 女性	 |
 
 #### 用户登录@external-login
 #### User login @external-login
@@ -2695,7 +2726,8 @@ When this interface is called by URL, it needs to carry the authentication signa
 
 ```js
 await uniIdCo.externalLogin({
-	unieid
+	uid,
+	externalUid
 })
 ```
 
@@ -2705,8 +2737,8 @@ await uniIdCo.externalLogin({
 |参数名		|类型				|必填	|说明									|
 |Parameter name |Type |Required |Description |
 |--			|--					|--		|--										|
-|unieid		|string				|是		|uni-id账号，必须保证唯一性。只允许使用数字、字母、“_”及“-”，但不能为纯数字。									|
-| unieid | string | Yes | uni-id account, uniqueness must be guaranteed. Only numbers, letters, "_" and "-" are allowed, but not pure numbers. |
+|uid		|string				|否		|uni-id体系的用户Id；与externalUid 二选一									|
+|externalUid		|string				|否		|自身系统的用户id；与 uid 二选一									|
 
 **返回值**
 **return value**
@@ -2721,9 +2753,54 @@ await uniIdCo.externalLogin({
 |newToken						|object				|token信息		|
 |&nbsp;&#124;-&nbsp;token		|string				|token			|
 |&nbsp;&#124;-&nbsp;tokenExpired|string				|token过期时间	|
-|&nbsp;&#124;-&nbsp;tokenExpired| string | token expiration time |
-|unieid							|string				|用户id		|
-| unieid | string | user id |
+|uid							|string				|uni-id体系的用户Id		|
+
+#### 修改用户信息@external-update-userinfo
+
+外部用户修改账号信息，如用户在自身系统内修改了用户信息后，通过此接口同步修改uni-id中用户信息。
+
+该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
+
+**接口形式**
+
+```js
+await uniIdCo.updateUserInfoByExternal({
+	uid,
+	externalUid,
+	username,
+	password,
+	nickname,
+	authorizedApp,
+	role,
+	mobile,
+	email,
+	tags,
+	status
+})
+```
+
+**参数说明**
+
+|参数名		|类型				|必填	|说明									|
+|--			|--					|--		|--										|
+|uid		|string				|否		|uni-id体系的用户Id；与externalUid 二选一									|
+|externalUid		|string				|否		|自身系统的用户id；与 uid 二选一									|
+| username			   | string							       | 是		 | 用户名																										                 |
+| password			   | string							       | 否		 | 密码																											                 |
+| nickname			   | string							       | 否		 | 昵称																											                 |
+| authorizedApp | Array&lt;string&gt; | 否		 | 允许登录的app列表																				                |
+| role					     | Array&lt;string&gt; | 否		 | 用户角色																									                 |
+| mobile				    | string							       | 否		 | 手机号																										                 |
+| email				     | string							       | 否		 | 邮箱																											                 |
+| tags					     | array							        | 否		 | 用户标签																									                 |
+| status				    | number							       | 否		 | 用户状态，参考：[用户状态](uni-id-summary.md#user-status) |
+
+**返回值**
+
+| 参数名							                      | 类型				              | 说明			                |
+|---------------------------------|---------------------|----------------------|
+| errCode						                   | string&#124;number	 | 错误码			               |
+| errMsg							                   | string				          | 错误信息		               |
 
 ### 其他功能@extra-function
 ### Other functions @extra-function
@@ -2740,53 +2817,50 @@ Interface form: `validator.mixin(String type, Function handler)`. Where type is 
 ```js
 // uni-id-co/index.obj.js
 const {
-  Validator
+	Validator
 } = require('./common/validator.js')
 module.exports = {
-  _before () {
-    this.validator = new Validator()
-    /**
-     * 示例：覆盖密码验证规则
-     */
-    this.validator.mixin('password', function (password) {
-      if (typeof password !== 'string' || password.length < 10) {
-        // 调整为密码长度不能小于10
-        // Adjust the password length to not be less than 10
-        return {
-          errCode: ERROR.INVALID_PASSWORD
-        }
-      }
-    })
-    /**
-     * 示例：新增验证规则
-     */
-    this.validator.mixin('timestamp', function (timestamp) {
-      if (typeof timestamp !== 'number' || timestamp > Date.now()) {
-        return {
-          errCode: ERROR.INVALID_PARAM
-        }
-      }
-    })
-    // // 新增规则同样可以在数组验证规则中使用
-    // // New rules can also be used in array validation rules
-    this.validator.valdate({
-      timestamp: 123456789
-    }, {
-      timestamp: 'timestamp'
-    })
-    this.validator.valdate({
-      timestampList: [123456789, 123123123123]
-    }, {
-      timestampList: 'array<timestamp>'
-    })
-    // // 甚至更复杂的写法
-    // // even more complex
-    this.validator.valdate({
-      timestamp: [123456789, 123123123123]
-    }, {
-      timestamp: 'timestamp|array<timestamp>'
-    })
-  }
+	_before () {
+		this.validator = new Validator()
+		/**
+		 * 示例：覆盖密码验证规则
+		 */
+		this.validator.mixin('password', function (password) {
+			if (typeof password !== 'string' || password.length < 10) {
+				// 调整为密码长度不能小于10
+				return {
+					errCode: ERROR.INVALID_PASSWORD
+				}
+			}
+		})
+		/**
+		 * 示例：新增验证规则
+		 */
+		this.validator.mixin('timestamp', function (timestamp) {
+			if (typeof timestamp !== 'number' || timestamp > Date.now()) {
+				return {
+					errCode: ERROR.INVALID_PARAM
+				}
+			}
+		})
+		// // 新增规则同样可以在数组验证规则中使用
+		this.validator.valdate({
+			timestamp: 123456789
+		}, {
+			timestamp: 'timestamp'
+		})
+		this.validator.valdate({
+			timestampList: [123456789, 123123123123]
+		}, {
+			timestampList: 'array<timestamp>'
+		})
+		// // 甚至更复杂的写法
+		this.validator.valdate({
+			timestamp: [123456789, 123123123123]
+		}, {
+			timestamp: 'timestamp|array<timestamp>'
+		})
+	}
 }
 ```
 
@@ -2860,8 +2934,7 @@ It is necessary to bind the `Mini Program` and `Official Account` to the same `W
 * 绑定方式：登录[微信开放平台](https://open.weixin.qq.com/) -> `管理中心` -> 选择`公众号/小程序` -> 点击`绑定公众号/小程序`
 * Binding method: log in to [WeChat Open Platform](https://open.weixin.qq.com/) -> `Management Center` -> select `Official Account/Mini Program` -> Click `Bind Official Account/ applet
 
-### 客户端配置  
-### Client configuration
+### 客户端配置
 - APP端：
 - APP side:
 	* 打开`manifest.json` ->`App模块配置` -> `OAuth（登录鉴权）` -> `勾选微信登录` -> 填写`appid`、`ios平台通用链接`。
@@ -2873,16 +2946,13 @@ It is necessary to bind the `Mini Program` and `Official Account` to the same `W
 - web端：打开`/uni_modules/uni-id-pages/config.js` -> `appid` -> `weixin` 在`h5`节点配置微信公众号的appid，`web`节点配置微信开放平台创建的网站应用appid
 - On the web side: open `/uni_modules/uni-id-pages/config.js` -> `appid` -> `weixin` Configure the appid of the WeChat public account on the `h5` node, and configure the WeChat open platform creation on the `web` node web application appid
 
-### 服务端配置  
-### Server configuration
+### 服务端配置
 * 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，完整的配置信息[详情查看](uni-id-summary.md#config)
 * The key information of server `uni-id` is uniformly configured in `uni-config-center`, path: `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`, complete Configuration information [details view](uni-id-summary.md#config)
 
 
 ### web端微信登录专题
-### Wechat login topic on web side
-登录的流程为：  
-The login process is:
+登录的流程为：
 1. 应用页面，打开微信登录授权页链接（以get参数的方式传递appid和redirect_uri）
 1. On the application page, open the WeChat login authorization page link (pass the appid and redirect_uri as get parameters)
 2. 进入授权页面，用户同意授权得到code；以get参数的形式携带code，重定向至步骤1填写的redirect_uri
@@ -2890,8 +2960,7 @@ The login process is:
 3. 回到应用页面，拿到code值调用`uni-id-co`云对象的`loginByWeiXin`方法，得到`token`完成登录
 3. Go back to the application page, get the code value and call the `loginByWeiXin` method of the `uni-id-co` cloud object, and get the `token` to complete the login
 
-- `appid`说明：微信app内打开的网页，为公众号的appid。其他场景则为在`微信开放平台`创建的`网站应用`的appid。  
-- `appid` description: the webpage opened in the WeChat app is the appid of the official account. Other scenarios are the appid of the `web application` created on the `WeChat Open Platform`.
+- `appid`说明：微信app内打开的网页，为公众号的appid。其他场景则为在`微信开放平台`创建的`网站应用`的appid。
 - `redirect_uri`说明：进入授权页面后返回的网站链接，此链接的域名需要先在服务后台配置，详情查看:[回调域名的配置](#redirect_uri)
 - `redirect_uri` description: The website link returned after entering the authorization page. The domain name of this link needs to be configured in the service background first. For details, see: [Configuration of the callback domain name](#redirect_uri)
 
@@ -2902,17 +2971,12 @@ Example code is already provided in the uni-id-pages plugin.
 #### Callback domain name configuration @redirect_uri
 
 - 手机微信扫码登录  
-- Mobile WeChat scan code login
-微信开放平台 -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> 开发信息，点击修改 -> 填写授权回调域
-WeChat Open Platform -> Management Center -> Website Application -> Select the corresponding application name, click View -> Development Information, click Modify -> Fill in the Authorization Callback Domain
+  微信开放平台 -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> 开发信息，点击修改 -> 填写授权回调域
 
 - 基于微信公众号auth登录  
-- Login based on WeChat official account auth
-登录微信公众号 -> 设置与开发 -> 公众号设置 -> 设置网页授权域名
-Log in to WeChat Official Account -> Settings and Development -> Official Account Settings -> Set Webpage Authorized Domain Name
+  登录微信公众号 -> 设置与开发 -> 公众号设置 -> 设置网页授权域名
 
-#### 本地调试  
-#### Local debugging
+#### 本地调试
 回调域名，必须接入外网已经备案的URL地址，不然本地没法进行调试，你可以做内网穿透，映射生成一个外网URL地址来进行回调测试。但是那样比较麻烦，这里我们介绍一种基于HBuilderX本地启动一个Web Server进行调试的方法。
 To call back the domain name, you must access the URL address that has been registered on the external network. Otherwise, debugging cannot be performed locally. You can do intranet penetration and map to generate an external network URL address for callback testing. But that is more troublesome, here we introduce a method to start a Web Server locally for debugging based on HBuilderX.
 
@@ -2928,16 +2992,11 @@ To call back the domain name, you must access the URL address that has been regi
 > If port 80 is not enabled but 81, etc., your port is occupied. You have two options: 1. Close the suspicious program, or restart the computer directly. 2. Close the port occupied by the command line [Details](https://www.baidu.com/s?&wd=%E5%91%BD%E4 %BB%A4%E8%A1%8C%20%E8%A7%A3%E5%86%B3%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7 %94%A8)
 
 2. 实现访问域名直接指向你的本地web Server
-2. Realize that the access domain name directly points to your local web server
-	可以通过内网穿透实现，但比较麻烦且可能会影响线上用户。这里推荐直接修改hosts，hosts是一个没有扩展名的系统文件，其基本作用就是将一些常用的网址域名与其对应的 IP 地址建立一个关联“ 数据库 ”。当用户在浏览器中输入一个需要登录的网址时，系统会首先自动从hosts文件中寻找对应的 IP 地址，一旦找到，系统就会立即打开对应网页，如果没有找到，系统才会将网址提交 DNS 域名解析服务器进行 IP 地址的解析。  
-	It can be achieved through intranet penetration, but it is cumbersome and may affect online users. It is recommended to modify hosts directly here. Hosts is a system file without an extension. Its basic function is to establish an association "database" between some commonly used URL domain names and their corresponding IP addresses. When a user enters a URL that needs to be logged in to the browser, the system will first automatically find the corresponding IP address from the hosts file. Once found, the system will immediately open the corresponding web page. If it is not found, the system will submit the URL to DNS. The DNS server performs IP address resolution.
-host文件路径： Windows系统一般为：`C:\Windows\System32\drivers\etc`。mac系统：`/etc/`  
-host file path: Windows system is generally: `C:\Windows\System32\drivers\etc`. Mac system: `/etc/`
-用HBuilderX打开hosts文件，在末尾添加一行 `127.0.0.1	你的域名`保存即可。
-Open the hosts file with HBuilderX, add a line `127.0.0.1 your domain name` at the end and save it.
-此时访问域名，如果就能看到和你的项目运行到浏览器一样的效果，说明已经成功了。
-Access the domain name at this time, if you can see the same effect as your project running to the browser, it means that it has been successful.
-	
+   可以通过内网穿透实现，但比较麻烦且可能会影响线上用户。这里推荐直接修改hosts，hosts是一个没有扩展名的系统文件，其基本作用就是将一些常用的网址域名与其对应的 IP 地址建立一个关联“ 数据库 ”。当用户在浏览器中输入一个需要登录的网址时，系统会首先自动从hosts文件中寻找对应的 IP 地址，一旦找到，系统就会立即打开对应网页，如果没有找到，系统才会将网址提交 DNS 域名解析服务器进行 IP 地址的解析。  
+   host文件路径： Windows系统一般为：`C:\Windows\System32\drivers\etc`。mac系统：`/etc/`  
+   用HBuilderX打开hosts文件，在末尾添加一行 `127.0.0.1	你的域名`保存即可。
+   此时访问域名，如果就能看到和你的项目运行到浏览器一样的效果，说明已经成功了。
+
 ### 苹果登录集成指南
 ### Apple Login Integration Guide
 - 模块配置：`manifest.json` --> `App模块配置` --> OAuth（登录鉴权）勾选`苹果登录`，[IOS苹果授权登录参考文档](https://ask.dcloud.net.cn/article/36651)。如不发布到Appstore，不需要配置此项
@@ -3019,19 +3078,19 @@ When uni-id is upgraded to uni-id-co + uni-id-common, individual fields need to 
 const db = uniCloud.database()
 const dbCmd = db.command
 exports.main = async (event, context) => {
-  await db.collection('uni-id-users').update({
-    wx_openid: {
-      'app-plus': dbCmd.rename('wx_openid.app'), // app端微信openid
-      'mp-weixin': dbCmd.rename('wx_openid.mp'), // 小程序端微信openid
-      'h5-weixin': dbCmd.rename('wx_openid.h5'), // 微信公众号端微信openid
-      'h5-web': dbCmd.rename('wx_openid.web') // web端微信openid
-    },
-    qq_openid: {
-      'app-plus': dbCmd.rename('qq_openid.app'), // app端QQ openid
-      'mp-qq': dbCmd.rename('qq_openid.mp') // 小程序端QQ openid
-    }
-  })
-  return {}
+	await db.collection('uni-id-users').update({
+		wx_openid: {
+			'app-plus': dbCmd.rename('wx_openid.app'), // app端微信openid
+			'mp-weixin': dbCmd.rename('wx_openid.mp'), // 小程序端微信openid
+			'h5-weixin': dbCmd.rename('wx_openid.h5'), // 微信公众号端微信openid
+			'h5-web': dbCmd.rename('wx_openid.web') // web端微信openid
+		},
+		qq_openid: {
+			'app-plus': dbCmd.rename('qq_openid.app'), // app端QQ openid
+			'mp-qq': dbCmd.rename('qq_openid.mp') // 小程序端QQ openid
+		}
+	})
+	return {}
 };
 
 ```
@@ -3054,6 +3113,7 @@ List of APIs that need to be signed
 |---|
 |externalRegister|
 |externalLogin|
+|updateUserInfoByExternal|
 
 ### 请求头公共参数
 ### Request header public parameters
@@ -3093,17 +3153,17 @@ class Sign {
 
 	getSignature (params, nonce, timestamp) {
 		const paramsStr = this.getParamsString(params)
-		const signature = crypto.createHmac('sha256', `${requestAuthSecret}${nonce}`).update(`${timestamp}${paramsStr}`).digest('hex')
+		const signature = crypto.createHmac('sha256', `${this.requestAuthSecret}${nonce}`).update(`${timestamp}${paramsStr}`).digest('hex')
 
 		return signature.toUpperCase()
 	}
 
 	getParamsString (params) {
 		return Object.keys(params)
-			.sort()
-			.filter(item => typeof params[item] !== "object")
-			.map(item => `${item}=${params[item]}`)
-			.join('&')
+				.sort()
+				.filter(item => typeof params[item] !== "object")
+				.map(item => `${item}=${params[item]}`)
+				.join('&')
 	}
 }
 

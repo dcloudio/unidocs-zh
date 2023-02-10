@@ -1,11 +1,4 @@
-## 发送短信
-## send messages
-
-<!--
-/// meta
-keyword: 短信,sms
-keyword: short message, sms
--->
+### 云函数API
 
 > 自`HBuilderX 3.3.0`起，本接口支持传入phoneList参数批量发送短信，其他参数均于发送单条短信相同
 > Since `HBuilderX 3.3.0`, this interface supports passing in the phoneList parameter to send SMS in batches, and other parameters are the same as sending a single SMS
@@ -145,8 +138,7 @@ Limitations of using this template:
 2. Fees will be charged normally for using this template, please ensure that the account has sufficient balance.
 
 
-**返回值**
-**return value**
+#### 返回值
 
 接口调用失败时会直接抛出错误，调用成功时才会有返回值。
 When the interface call fails, an error will be thrown directly, and there will be a return value only when the call is successful.
@@ -162,8 +154,7 @@ Note that the success of the interface call does not mean that the SMS is sent s
 |errMsg|String|错误描述，调用失败时返回	|
 | errMsg| String|Error description, returned when the call fails |
 
-**错误码说明**
-**Error Code Description**
+#### 错误码说明
 
 |错误码	|错误																	|
 |Error Code |Error |
@@ -183,8 +174,7 @@ Note that the success of the interface call does not mean that the SMS is sent s
 |5001		|服务器异常，请重试！									|
 | 5001 | The server is abnormal, please try again! |
 
-**调用示例**
-**call example**
+#### 调用示例
 
 ```js
 // 发送单条短信示例

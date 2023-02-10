@@ -41,6 +41,158 @@ code|message|
 1. 使用开发测试广告位，仅适用于开发人员调试，没有广告收益
 2. 使用视频模拟广告以满足业务流程，没有广告收益。如：每日任务
 
+
+**使用视频模拟广告示例**
+
+```html
+<!-- pages/index/index.nvue -->
+<template>
+	<view class="content">
+		<ad-rewarded-video adpid="1507000689" :loadnext="true" v-slot:default="{loading, error}" @error="onaderror">
+			<button :disabled="loading" :loading="loading">显示广告</button>
+			<view v-if="error">{{error}}</view>
+		</ad-rewarded-video>
+	</view>
+</template>
+<script>
+	export default {
+		data() {
+			return {}
+		},
+		methods: {
+			onaderror(e) {
+				// 广告加载失败
+				console.log("onaderror: ", e.detail);
+				if (e.detail.errCode == -5005) {
+					uni.navigateTo({
+						url: '/pages/adVideo/adVideo',
+						events: {
+							// 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+							onVideoClosed: function(data) {
+								console.log(data);
+							}
+						}
+					})
+				}
+			}
+		}
+	}
+</script>
+
+```
+
+
+```html
+<!-- pages/adVideo/adVideo.nvue -->
+<template>
+	<view class="container">
+		<video id="myVideo" :src="src" :autoplay="true" :controls="false" @ended="onfinish" @click="toLandVideo"
+			@timeupdate="onTimeUpdate" class="video"></video>
+		<view class="close-box">
+			<text v-if="countdown>0" class="close">{{countdown}}s</text>
+			<text v-if="showClose" class="close" @click="closeVideo">X</text>
+		</view>
+		<text class="ad-tip">广告</text>
+	</view>
+</template>
+<script>
+	export default {
+		data() {
+			return {
+				src: "", //视频地址
+				showClose: false,
+				countdown: '',
+			}
+		},
+		onReady() {
+			this.videoContext = uni.createVideoContext('myVideo')
+		},
+		onLoad() {
+			this.isFinish = false
+			this.isPalying = false
+		},
+		onShow() {
+			if (!this.isFinish && this.videoContext) this.videoContext.play()
+		},
+		onBackPress() {
+			return !this.isFinish
+		},
+		methods: {
+			onfinish(e) {
+				// console.log("onfinish:" + JSON.stringify(e));
+				this.showClose = true
+				this.isFinish = true
+			},
+			closeVideo() {
+				const eventChannel = this.getOpenerEventChannel();
+				eventChannel.emit('onVideoClosed', {
+					data: ''
+				});
+				uni.navigateBack()
+			},
+			toLandVideo() {
+				this.videoContext.pause()
+				uni.navigateTo({
+					url: "/pages/landVideo/landVideo"
+				})
+			},
+			onTimeUpdate(e) {
+				this.countdown = parseInt(e.detail.duration - e.detail.currentTime)
+			}
+		}
+	}
+</script>
+<style>
+	.container {
+		flex: 1;
+		position: relative;
+	}
+	.video {
+		flex: 1;
+	}
+	.close-box {
+		top: 10rpx;
+		right: 50rpx;
+		position: absolute;
+		flex-direction: row;
+	}
+	.close {
+		color: #808080;
+		font-size: 50rpx;
+		width: 100rpx;
+		text-align: center;
+	}
+	.ad-tip {
+		bottom: 20rpx;
+		right: 50rpx;
+		position: absolute;
+		color: #666;
+		font-size: 28rpx;
+	}
+</style>
+
+
+```
+
+```html
+<!-- pages/landVideo/landVideo.vue -->
+<template>
+	<view>
+		<web-view src="广告落地页url"></web-view>
+	</view>
+</template>
+<script>
+	export default {
+		data() {
+			return {}
+		},
+		methods: {}
+	}
+</script>
+```
+
+
+
 提示：-5005 时，包含二级错误码，可在下面广告商错误码中找到具体原因
 
 

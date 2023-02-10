@@ -352,8 +352,16 @@ uni.requestPayment({
 |quantity|Number|1|购买数量，至少大于等于 `1`|
 |quantity|Number|1|The purchase quantity, at least `1`|
 |manualFinishTransaction|Boolean|false|3.5.1+ 支持，手动关闭订单，值为 `false` 时支付完成后自动关闭订单，`true`时不关闭订单，需要在合适的时机调用 `finishTransaction` 关闭订单。建议设置为 `true`, 默认值为 `false` 是为了向下兼容|
-|manualFinishTransaction|Boolean|false|3.5.1+ support, close the order manually. When the value is `false`, the order will be closed automatically after payment is completed. When the value is `true`, the order will not be closed. You need to call `finishTransaction` at the right time to close the order. It is recommended to set it to `true`, the default value is `false` for backward compatibility|
+| paymentDiscount | Object | 否 | 促销优惠(HBuilderX 3.7.0+ 手机系统iOS12.2+支持) |
 
+##### 促销优惠参数说明
+| 属性 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| offerIdentifier | String | 是 | 促销id |
+| keyIdentifier | String | 是 | 密钥 |
+| nonce | String | 是 | 唯一id (必须小写 24小时有效) |
+| signature | String | 是 | 签名 |
+| timestamp | Number | 是 | 创建证书的时间戳(毫秒 24小时有效) |
 
 #### Product
 
@@ -369,7 +377,17 @@ uni.requestPayment({
 |price|Number|价格|
 |price|Number|Price|
 |pricelocal|String|币种，例如: `zh_CN@currency=CNY`|
-|pricelocal|String|Currency, for example: `zh_CN@currency=CNY`|
+|discount|Array|折扣信息(HBuilderX 3.7.0+ 手机系统iOS12.2+支持)|
+
+##### Discount
+| 属性 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| price | Number | 促销价格 |
+| periodUnit | String | 周期单位(day: 日,week: 周,month: 月,year: 年) |
+| discountType | String | 优惠类型(introductory: 推介促销  subscription: 订阅促销) |
+| promotionType | String | 促销类型(payAsYouGo: 随用随付,payUpFront: 预先支付,freeTrial:  免费试用) |
+| code | String | 促销代码|
+| units | Number | 促销期数 |
 
 
 #### Transaction

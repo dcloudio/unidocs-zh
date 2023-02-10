@@ -63,8 +63,7 @@ plus.payment.getChannels(function(channels){
 });
 ```
 
-#### 获取订单信息
-#### Get order information
+#### 获取商品信息
 发起支付前需调用[requestOrder](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.PaymentChannel.requestOrder)传入产品ID（productId）获取订单信息：
 Before initiating payment, you need to call [requestOrder](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.PaymentChannel.requestOrder) and pass in the product ID (productId) to obtain order information:
 ```  js
@@ -83,12 +82,35 @@ iap.requestOrder(ids, function(e) {
     console.log('requestOrder failed: ' + JSON.stringify(e));
 });
 ```
+##### 商品信息参数说明 
+Object对象类型
+
+| 属性 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| title | String | 产品标题 |
+| description | String | 产品描述 |
+| productid | String |  产品id |
+| price | Number |  价格 |
+| pricelocal | String |  币种，例如: zh_CN@currency=CNY |
+| discount | Array |  折扣信息(HBuilderX 3.7.0+ 手机系统iOS12.2+支持) |
+
+##### 优惠促销信息参数说明
+| 属性 | 类型 | 说明 |
+| :--- | :--- | :--- |
+| price | Number | 促销价格 |
+| periodUnit | String | 周期单位(day: 日,week: 周,month: 月,year: 年) |
+| discountType | String | 优惠类型(introductory: 推介促销  subscription: 订阅促销) |
+| promotionType | String | 促销类型(payAsYouGo: 随用随付,payUpFront: 预先支付,freeTrial:  免费试用) |
+| code | String | 促销代码|
+| units | Number | 促销期数 |
 
 #### 发起支付
 #### Initiate payment
 调用 [plus.payment.request(channel, orderInfo, successCB, errorCB)](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.request) 发起支付, channel参数为应用内支付对象，orderInfo参数为订单对象
 Call [plus.payment.request(channel, orderInfo, successCB, errorCB)](https://www.html5plus.org/doc/zh_cn/payment.html#plus.payment.request) to initiate payment, the channel parameter is in-app Payment object, the orderInfo parameter is the order object
 
+
+使用订阅促销优惠参考[服务端生成签名](https://developer.apple.com/documentation/storekit/in-app_purchase/original_api_for_in-app_purchase/subscriptions_and_offers/generating_a_signature_for_promotional_offers)
 ##### 订单对象参数说明  
 ##### Order object parameter description
 Object对象类型
@@ -102,9 +124,18 @@ Object object type
 | username | String | 否 | 用户标识 |
 | username | String | No | User ID |
 | manualFinishTransaction | Boolean | 否 |  3.5.1+ 支持，手动关闭订单，值为 false 时支付完成后自动关闭订单，true时不关闭订单，需要在合适的时机调用 finishTransaction 关闭订单。建议设置为 true, 默认值为 false 是为了向下兼容 |
-| manualFinishTransaction | Boolean | No | 3.5.1+ support, close the order manually, if the value is false, the order will be closed automatically after payment is completed, if it is true, the order will not be closed, you need to call finishTransaction at the right time to close the order. It is recommended to set it to true, the default value is false for backward compatibility |
-| password | String | 否 | App专用共享密钥(内购商品为自动续期订阅类时必传) |
-| password | String | No | App-specific shared key (must be passed when in-app purchases are auto-renewing subscriptions) |
+| paymentDiscount | Object | 否 | 促销优惠(HBuilderX 3.7.0+ 手机系统iOS12.2+支持) |
+
+##### 促销优惠参数说明
+| 属性 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| offerIdentifier | String | 是 | 促销id(客户端获取) |
+| keyIdentifier | String | 是 | 密钥(appstore后台获取) |
+| nonce | String | 是 | 服务器生成的UUID(必须小写 24小时有效) |
+| signature | String | 是 | 签名(服务器生成) |
+| timestamp | Number | 是 | 服务器创建证书的时间戳(毫秒 24小时有效) |
+
+
 
 ##### 示例代码
 ##### Sample code
@@ -116,6 +147,13 @@ plus.payment.request(iap, {
     productid: "商品id",
     username: "appusername", // 用户标识  
     manualFinishTransaction: true // 3.5.1+ 支持，设置此参数后需要开发者主动关闭订单，参见下面的关闭订单方法 finishTransaction()
+    paymentDiscount: {
+        offerIdentifier:"",
+        keyIdentifier:"",
+        nonce:"",
+        signature:"",
+        timestamp:0
+    } // 3.7.0+ 支持
   }, function(result){
     restoreFlag = false; // 支付成功清除标记 restoreFlag = false  
     // 支付成功，result 为 IAP商品交易信息对象 IAPTransaction 需将返回的支付凭证传给后端进行二次认证  
@@ -260,5 +298,6 @@ Notice:
 `plus.runtime.openURL("https://apps.apple.com/account/billing"); //跳转AppStore绑定支付方式`
 `plus.runtime.openURL("https://apps.apple.com/account/billing"); //Jump to AppStore to bind payment method`
 - 建议在每个接口调用前后添加打点日志收集，以便快速定位问题
-- It is recommended to add dot log collection before and after each interface call to quickly locate the problem
+- [推介促销优惠参考](https://developer.apple.com/cn/documentation/storekit/in-app_purchase/subscriptions_and_offers/implementing_introductory_offers_in_your_app/)
+- [订阅促销优惠参考](https://developer.apple.com/cn/documentation/storekit/in-app_purchase/subscriptions_and_offers/implementing_subscription_offers_in_your_app/)
 

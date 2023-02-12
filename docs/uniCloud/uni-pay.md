@@ -97,23 +97,16 @@ The functions of `uni-pay` include:
 		+ 获取当前支付用户的openid
 		+ Get the openid of the current paying user
 	+ ios内购支付
-	+ ios in-app purchase payment
-	+ 支付统计
-	+ Payment statistics
-		+ 收款趋势
-		+ Payment trends
-		+ 转换漏斗分析
-		+ Conversion funnel analysis
-		+ 价值用户排行
-		+ Ranking of valued users
-		+ 订单明细
-		+ order details
+- 支付统计（内置于uni-admin的支付统计中）
+	+ 收款趋势
+	+ 转换漏斗分析
+	+ 价值用户排行
+	+ 订单明细
 
 ## uni-pay组成@catalogue
 ## uni-pay composition @catalogue
 
-uni-pay包含前端页面、云对象、云端公共模块、uni-config-center配置、opendb数据表等内容。
-uni-pay includes front-end pages, cloud objects, cloud public modules, uni-config-center configuration, opendb data tables, etc.
+uni-pay云端一体模板，包含前端页面、云对象、云端公共模块、uni-config-center配置、opendb数据表等内容。以及内置于uni-admin的支付统计报表。
 
 ### uni-pay的uni_modules
 ### uni_modules for uni-pay

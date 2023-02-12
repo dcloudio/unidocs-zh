@@ -59,15 +59,15 @@
 		+ 获取当前支持的支付方式
 		+ 获取当前支付用户的openid
 	+ ios内购支付
-	+ 支付统计
-		+ 收款趋势
-		+ 转换漏斗分析
-		+ 价值用户排行
-		+ 订单明细
+- 支付统计（内置于uni-admin的支付统计中）
+	+ 收款趋势
+	+ 转换漏斗分析
+	+ 价值用户排行
+	+ 订单明细
 
 ## uni-pay组成@catalogue
 
-uni-pay包含前端页面、云对象、云端公共模块、uni-config-center配置、opendb数据表等内容。
+uni-pay云端一体模板，包含前端页面、云对象、云端公共模块、uni-config-center配置、opendb数据表等内容。以及内置于uni-admin的支付统计报表。
 
 ### uni-pay的uni_modules
 uni-pay的[uni_modules](../plugin/uni_modules.md)中包含了前端页面、云对象和公共模块，目录结构如下：

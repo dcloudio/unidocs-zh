@@ -297,14 +297,6 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
 }
 ```
 
-### token自动刷新@auto-refresh-token
-
-tokenExpiresThreshold用于指定token还有多长时间过期时自动刷新token。
-
-例：指定`tokenExpiresThreshold:600,tokenExpiresIn:7200`，token过期时间为2小时，在token有效期不足10分钟时自动刷新token
-
-在token还有5分钟过期时调用checkToken接口会返回新的token和新的token的过期时间（新token有效时间也是2小时）。
-
 ### 密码强度@password-strength
 
 > 新增于uni-id-pages 1.0.8
@@ -342,7 +334,11 @@ uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则
 |支付宝小程序端登录				|配置`mp-alipay.oauth.alipay`，在支付宝开放平台获取：[支付宝开放平台](https://openhome.alipay.com/develop/manage)										|
 |Apple APP端登录					|配置`app.oauth.apple`，在Apple开发者中心自行配置：[Apple开发者中心](https://developer.apple.com/account/resources/identifiers/list)|
 
-## token令牌
+## token令牌@token
+
+::: warning 注意
+如需保持活跃客户端的登录状态，请勿将token有效期设置一个很大的值，具体如何实现请参考：[保持客户端登录状态](#keep-client-login-state)
+:::
 
 首先解释下token的概念。token是服务器颁发给客户端的一个令牌。
 
@@ -1051,6 +1047,14 @@ exports.main = async function(event, context){
 ```
 
 ## 其他功能
+
+### token更新及保持客户端登录状态@keep-client-login-state
+
+一般来说token的有效期不会无限长，示例配置内web端token有效期为2小时，微信小程序为3天，app端为30天。你可以回忆一下你所用的软件，只要每天都打开就一直不需要重新登录，这样就牵扯到保持客户端的登录状态的问题。
+
+uni-id使用了判断token剩余有效时间小于一定的阈值（配置文件内的tokenExpiresThreshold）但是大于0时自动下发新token的逻辑来保证活跃客户端一直处于登录状态，返回新token的逻辑由checkToken方法实现。具体该将token有效期和token刷新阈值设置为多少，需要根据多数用户软件使用频率来确定。
+
+举个例子，开发者配置的token有效期（tokenExpiresIn）为1天，token刷新阈值（tokenExpiresThreshold）为8小时。用户在0点0分0秒获取了token，如果用户在16点后（token有效期已小于8小时）调用接口时执行了checkToken方法则会返回新token。
 
 ### 裂变@fission
 

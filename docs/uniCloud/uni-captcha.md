@@ -161,8 +161,8 @@ GitCode 仓库：[https://gitee.com/dcloud/uni-captcha](https://gitee.com/dcloud
 		},
 		methods: {
 			verifyCaptcha(){
-				const uniCaptchaCo = uniCloud.importObject("uni-captcha-demo")
-				uniCaptchaCo.verifyCaptcha(this.formData).then(e=>{
+				const uniCaptchaDemoCo = uniCloud.importObject("uni-captcha-demo")
+				uniCaptchaDemoCo.verify(this.formData).then(e=>{
 					uni.showToast({
 						title: e.errMsg,
 						icon: 'none'

@@ -52,7 +52,7 @@ url化后需要注意以下几点
 - 需要注意的是绑定的域名必须已经备案
 - 腾讯云单个服务空间可支持QPS收服务空间QPS限制，参考：[套餐资源](price.md#tencent-package)
 - 阿里云单个服务空间可支持被访问的最大 QPS 为1000（具体频次受函数并发限制）
-- 默认域名可支持被访问的最大 QPS 为200，推荐您绑定自定义域名以获取更大的访问频次
+- 阿里云默认域名可支持被访问的最大 QPS 为100，推荐您绑定自定义域名以获取更大的访问频次
 - 阿里云绑定自定义域名要求此域名在阿里云保留备案信息，参考：[新增备案信息](https://help.aliyun.com/document_detail/36926.html)
 
 如需要更高的QPS支持，请发邮件到service@dcloud.io申请。若您还没有SSL证书，点此[快速获取](https://cloud.tencent.com/act/cps/redirect?redirect=33848&cps_key=c858f748f10419214b870236b5bb94c6)

@@ -1971,11 +1971,7 @@ For example, query the top 10 best-selling books, or find the book with the high
     .get()
 ```
 
-limit默认值是100，即不设置的情况下，默认返回100条数据。
-The default value of limit is 100, that is, if it is not set, 100 pieces of data are returned by default.
-
-limit有最大值，腾讯云限制为最大1000条，阿里云限制为最大500条。
-The limit has a maximum value, Tencent Cloud is limited to a maximum of 1000, and Alibaba Cloud is limited to a maximum of 500.
+limit默认值是100，即不设置的情况下，默认返回100条数据。limit最大值为1000。
 
 一般情况下不应该给前端一次性返回过多数据，数据库查询也慢、网络返回也慢。可以通过分页的方式分批返回数据。
 In general, too much data should not be returned to the front end at one time, the database query is also slow, and the network return is also slow. Data can be returned in batches by paging.

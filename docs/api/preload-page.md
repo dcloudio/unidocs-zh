@@ -16,11 +16,9 @@ Page pre-loading is a performance optimization technology. The preloaded pages c
 | Attribute| Type| Required| Instruction|
 |:-:|:-:|:-:|:-:|
 |url|string|是|预加载页面url|
-| url| string| Yes| Url of the preload page|
-|complete|Function|否|预加载成功完成回调|
-| complete| Function| No| Preload successfully completed callback|
+|success|Function|否|预加载成功完成回调|
 |fail|Function|否|预加载失败回调|
-| fail| Function| No| Preload failed callback|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
 #### H5 平台

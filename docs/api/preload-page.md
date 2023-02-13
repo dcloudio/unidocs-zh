@@ -12,8 +12,9 @@
 |属性|类型|必填|说明|
 |:-:|:-:|:-:|:-:|
 |url|string|是|预加载页面url|
-|complete|Function|否|预加载成功完成回调|
+|success|Function|否|预加载成功完成回调|
 |fail|Function|否|预加载失败回调|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
 #### H5 平台

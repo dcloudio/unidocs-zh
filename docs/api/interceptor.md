@@ -15,6 +15,7 @@
 |参数名		|类型		|必填	|默认值	|说明		|平台差异说明	|
 |:-			|:-			|:-		|:-		|:-			|:-			|
 |invoke		|Function	|否		|		|拦截前触发	|			|
+|returnValue		|Function	|否		|		|方法调用后触发，处理返回值	|			|
 |success	|Function	|否		|		|成功回调拦截	|			|
 |fail		|Function	|否		|		|失败回调拦截	|			|
 |complete	|Function	|否		|		|完成回调拦截	|			|

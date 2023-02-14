@@ -203,8 +203,7 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 |border-top-right-radius {length}	|非负值, 默认值 0	|
 | border-top-right-radius {length}| non-negative, default value 0|
 
-> ```border-radius```和```border-width```定义了圆心角为90度的椭圆弧的长轴和半长轴的大小。如果邻接两边```border-radius```(或```border-width```不一致，nvue绘制的边框曲线可能不够平滑。
-> ```border-radius``` and ````border-width``` define the size of the major and semi-major axes of an elliptical arc with a central angle of 90 degrees. If the adjacent two sides ```border-radius``` (or ```border-width``` are inconsistent, the border curve drawn by nvue may not be smooth enough.
+> ```border-radius```和```border-width```定义了圆心角为90度的椭圆弧的长轴和半长轴的大小。如果邻接两边```border-radius``` 或 ```border-width```不一致，nvue绘制的边框曲线可能不够平滑。
 
 
 ##### 外边距

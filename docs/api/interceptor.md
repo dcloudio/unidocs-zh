@@ -20,7 +20,7 @@ Name of the `api` that needs to be intercepted, such as `uni.addInterceptor('req
 |Parameter Name |Type |Required |Default Value |Description |Platform Difference Description |
 |:-			|:-			|:-		|:-		|:-			|:-			|
 |invoke		|Function	|否		|		|拦截前触发	|			|
-|invoke |Function |No | |Invoke before interception | |
+|returnValue		|Function	|否		|		|方法调用后触发，处理返回值	|			|
 |success	|Function	|否		|		|成功回调拦截	|			|
 |success |Function |No | |Success callback interception | |
 |fail		|Function	|否		|		|失败回调拦截	|			|

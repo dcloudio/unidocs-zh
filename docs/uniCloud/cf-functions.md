@@ -1493,10 +1493,9 @@ The default running memory size of Tencent Cloud and Alibaba Cloud public beta c
 ### 超时时间@timeout
 ### Timeout @timeout
 
-阿里云非定时触发请求云函数最大只支持20秒的超时时间。定时任务触发最大支持600秒的超时时间，一般用于跑批。
+阿里云定时任务触发最大支持600秒超时时间，非定时触发时客户端在超过20秒时会断开连接，如果配置的超时时间大于20秒，在客户端断开后云函数最大可以执行到60秒。
 
-腾讯云最大支持900秒超时时间
-Tencent Cloud supports a maximum timeout time of 900 seconds
+腾讯云定时任务触发最大支持900秒超时时间。非定时触发时客户端在超过30秒时会断开连接，如果配置的超时时间大于30秒，在客户端断开后云函数最大可以执行到60秒。
 
 如果超时时间仍然不够用，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](uniCloud/cf-functions.md?id=recurrence)
 If the timeout is still not enough, you can refer to the recursive call of cloud functions to execute multiple cloud functions in succession to process a task [View details](uniCloud/cf-functions.md?id=recurrence)

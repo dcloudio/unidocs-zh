@@ -48,8 +48,7 @@ In the uniCloud web console, click the details of the cloud function that needs 
 - 定时执行的时间选在较为常见集中的时刻有极低概率出现执行失败的情况。建议避免整点（特别是0点），错开定时触发高峰期进行执行
 - The timing of scheduled execution is selected at a relatively common and concentrated time, and there is a very low probability of execution failure. It is recommended to avoid the whole hour (especially 0:00), and stagger the timing to trigger the peak period for execution
 
-使用定时触发可以执行一些跑批任务，目前阿里云可以在使用定时触发时将云函数最高超时时间设置为600秒（非定时触发时不支持60秒以上超时时间），腾讯云目前最大超时时间为900秒。
-You can execute some batch running tasks using timed triggering. Currently, Alibaba Cloud can set the maximum timeout time of cloud functions to 600 seconds when using timed triggering. 900 seconds.
+使用定时触发可以执行一些跑批任务，阿里云可以在使用定时触发时将云函数最高超时时间设置为600秒，腾讯云定时触发最大超时时间为900秒。
 
 ### 字段规则
 ### Field Rules

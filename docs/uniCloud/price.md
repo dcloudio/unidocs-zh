@@ -159,33 +159,20 @@ If the pre-stored balance is insufficient, the service space will not be availab
 阿里云按量计费服务空间定价如下：
 Alibaba Cloud pay-as-you-go service spaces are priced as follows:
 
-|资源分类			|资源细项								|售价（元）		|
-|Resource classification |Resource details |Price (yuan) |
-|:-:			|:-:								|:-:				|
-|云函数			|资源使用量（GBs）						|0.000110592		|
-|Cloud Functions |Resource Usage (GBs) | 0.000110592 |
-|				|调用次数（万次）						|0.0133				|
-| |Number of calls (10,000 times) | 0.0133 |
-|				|出网流量（GB）						|0.8				|
-| |Outbound traffic (GB) | 0.8 |
-|云数据库			|容量（GB/天）						|0.07				|
-|Cloud Database |Capacity (GB/day) | 0.07 |
-|				|读操作数（万次）						|0.015				|
-| |Number of read operations (10,000 times) | 0.015 |
-|				|写操作数（万次）						|0.05				|
-| |Number of write operations (10,000 times) | 0.05 |
-|云存储			|容量（GB/天）						|0.0043				|
-|Cloud storage |Capacity (GB/day) | 0.0043 |
-|				|下载操作次数（万次）					|0.01				|
-| |Number of download operations (10,000 times) | 0.01 |
-|				|上传操作次数（万次）					|0.01				|
-| |Number of upload operations (10,000 times) | 0.01 |
-|				|CDN 流量（GB）						|0.18				|
-| | CDN Traffic (GB) | 0.18 |
-|前端网站托管		|容量（GB/天）						|0.0043				|
-|Front-end website hosting |Capacity (GB/day) | 0.0043 |
-|				|流量（GB）							|0.18				|
-| |Traffic (GB) | 0.18 |
+|资源分类			|资源细项							|售价（元）	|
+|:-:					|:-:									|:-:				|
+|云函数				|资源使用量（GBs）		|0.000110592|
+|							|调用次数（万次）			|0.0133			|
+|							|出网流量（GB）				|0.8				|
+|云数据库			|容量（GB/天）				|0.07				|
+|							|读操作数（万次）			|0.015			|
+|							|写操作数（万次）			|0.05				|
+|云存储				|容量（GB/天）				|0.0043			|
+|							|下载操作次数（万次）	|0.01				|
+|							|上传操作次数（万次）	|0.01				|
+|							|CDN 流量（GB）				|0.18				|
+|前端网站托管	|容量（GB/天）				|0.0043			|
+|							|流量（GB）						|0.18				|
 
 **注意**
 **Notice**
@@ -322,26 +309,17 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 ### 基础套餐@tencent-package
 ### Basic Package @tencent-package
 
-| 配额						| 个人版						| 入门版| 初创版	| 商用版	| 团队版	| 单位	|
-|Quota | Personal Edition | Starter Edition | Startup Edition | Business Edition | Team Edition |
-| ---							| ---								| ---		| ---			| ---			|  ---		| ---		|
-| QPS							| 500								| 500		| 500			| 800			| 1000		| -			|
-| 调用次数				| 20								| 500		| 1000		| 2000		| 5000		| 万次	|
-| Number of calls | 20 | 500 | 1000 | 2000 | 5000 | Ten thousand times |
-| 容量						| 2									| 30		| 100			| 200			| 300			| GB		|
-| Capacity | 2 | 30 | 100 | 200 | 300 | GB |
-| 云函数资源使用量| 10								| 30		| 45			| 60			| 100			| 万GBs	|
-| Cloud function resource usage | 10 | 30 | 45 | 60 | 100 | Ten thousand GBs |
-| 云函数出网流量| 2									| 8			| 10			| 15			| 25			| GB		|
-| Cloud function outbound traffic | 2 | 8 | 10 | 15 | 25 | GB |
-| 云函数数量限制	| 150								| 150		| 150			| 150			| 150			| 个		|
-| Cloud function limit | 150 | 150 | 150 | 150 | 150 |
-| CDN流量					| 5									| 80		| 200			| 400			| 600			| GB		|
-| CDN traffic | 5 | 80 | 200 | 400 | 600 | GB |
-| CDN回源流量			| 5									| 40		| 100			| 200			| 300			| GB		|
-| CDN back-to-source traffic | 5 | 40 | 100 | 200 | 300 | GB |
-| 价格						| **~~39.9~~ 19.9**	| **99**| **299**	| **499**	| **999**	| 元/月	|
-| Price | **~~39.9~~ 19.9** | **99**| **299** | **499** | **999** | Yuan/Month |
+| 配额						| 个人版						| 入门版| 初创版	| 商用版	| 团队版	| 单位		|
+| ---							| ---								| ---		| ---			| ---			|  ---		| ---			|
+| QPS							| 500								| 500		| 500			| 800			| 1000		| -				|
+| 调用次数				| 20								| 500		| 1000		| 2000		| 5000		| 万次/月	|
+| 容量						| 2									| 30		| 100			| 200			| 300			| GB			|
+| 云函数资源使用量| 10								| 30		| 45			| 60			| 100			| 万GBs/月|
+| 云函数出网流量	| 2									| 8			| 10			| 15			| 25			| GB/月		|
+| 云函数数量限制	| 150								| 150		| 150			| 150			| 150			| 个			|
+| CDN流量					| 5									| 80		| 200			| 400			| 600			| GB/月		|
+| CDN回源流量			| 5									| 40		| 100			| 200			| 300			| GB/月		|
+| 价格						| **~~39.9~~ 19.9**	| **99**| **299**	| **499**	| **999**	| 元/月		|
 
 1. 个人版5折折扣至少延续至2022年底，后续折扣如有变化将另行通知。
 2. The 50% discount on the personal edition will be extended to at least the end of 2022, and further notices will be notified if the subsequent discount changes.

@@ -92,9 +92,9 @@ exports.main = async (event, context) => {
 		context
 	})
 	dbJQL.setUser({ // 指定后续执行操作的用户信息，此虚拟用户将同时拥有传入的uid、role、permission
-		uid: 'user-id', // 建议此处使用真实uid
-		role: ['admin'], // 指定当前执行用户的角色为admin。如果只希望指定为admin身份，可以删除uid和permission节点
-		permission: []
+		uid: 'user-id', // 用户id
+		role: ['admin'], // 指定当前执行用户的角色为admin。如果只希望指定为admin身份，可以删除uid和permission字段
+		permission: [] // 用户权限
 	})
 	const bookQueryRes = await dbJQL.collection('book').where("name=='三国演义'").get() // 直接执行数据库操作
 	return {
@@ -113,6 +113,6 @@ exports.main = async (event, context) => {
 
 ## 注意事项
 
-- JQL扩展依赖`uni-id`公共模块
+- JQL扩展依赖`uni-id-common`公共模块、redis扩展库
 - 启用了JQL扩展的云函数在本地调试时会自动使用本地schema、action、validateFunction以及uni-id公共模块
 - 由于此扩展会将`schema`、`action`、`validateFunction`带到模块内，如果你的上述文件较多会大幅增大云函数体积，因此启用此扩展的云函数**冷启动**时间会稍长，建议不要为太多云函数启用此扩展

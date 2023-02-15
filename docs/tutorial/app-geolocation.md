@@ -140,7 +140,7 @@ Apps that have not obtained the authorization of the map service provider may en
 为了避免商业授权引起的问题，如仅需获取wgs84坐标的情况下也可以只使用“系统定位”模块，“系统定位”在功能和机型适配上没有高德、百度等商业定位服务完善，需开发者根据实际情况选择。
 In order to avoid problems caused by commercial authorization, if you only need to obtain the coordinates of wgs84, you can only use the "system positioning" module. "System positioning" is not as complete as AutoNavi, Baidu and other commercial positioning services in terms of function and model adaptation. Developers need to choose according to the actual situation.
 
-
+DCloud为开发者争取了福利，可打折获取高德的商业服务，如有需求请发邮件到`bd@dcloud.io`；你也可以直接通过`uni-im`发起在线咨询，DCloud有专人帮你处理商业授权相关问题， 在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
 
 
 

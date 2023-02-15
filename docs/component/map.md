@@ -509,38 +509,21 @@ Nvue map replacement arrow icon format reference: [https://ask.dcloud.net.cn/art
 ##### FAQ
 
 Q：应用中使用了 `<map>` 组件，打包为App时，提示缺少权限模块怎么办？
-Q: The `<map>` component is used in the application. What should I do if it prompts that the permission module is missing when it is packaged as an App?
+
 A：App端原生地图，依赖第三方的 SDK，因此打包移动应用时，需要在manifest中勾选相关的权限并填写 key 信息。详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)
 A: The native map on the App side depends on the third-party SDK. Therefore, when packaging the mobile application, you need to check the relevant permissions in the manifest and fill in the key information. For details, see: [https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)
 
 Q：国外应用想使用谷歌地图/google地图怎么办？
-Q: What should I do if I want to use Google Maps/Google Maps in foreign apps?
+
 A: App 3.4+ 已支持 Google 地图， App 3.4 以下版本使用下面的方案
-A: App 3.4+ already supports Google Maps, and versions below App 3.4 use the following scheme
- 1. 可以在web-view下调用谷歌的web地图
- 1. Can call Google's web map under web-view
- 2. 可以写一个原生插件封装谷歌原生地图，具体参考uni-app插件市场的原生插件开发教程。插件市场已有三方写好的[地图插件](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E5%9C%B0%E5%9B%BE)。
- 2. You can write a native plug-in to encapsulate Google's native map. For details, refer to the native plug-in development tutorial in the uni-app plug-in market. In the plug-in market, [map plug-in](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E5%9C%B0%E5% 9B%BE).
+ 1. 在web-view下调用谷歌的web地图
+ 2. 写一个原生插件封装谷歌原生地图，具体参考uni-app插件市场的原生插件开发教程。插件市场已有三方写好的[地图插件](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E5%9C%B0%E5%9B%BE)。
 
 ### 三方定位和地图服务收费说明
 ### Three-party positioning and map service fee description
 
-* 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请授权或缴纳费用。
-* To use third-party positioning or map services, you need to apply for authorization or pay fees from service providers (such as: AutoNavi Maps, Baidu Maps, Tencent Maps, and Google Maps).
-* 申请三方定位或地图服务秘钥时请详细阅读授权和收费说明，并关注服务条款后期的变更。
-* When applying for a three-party positioning or map service key, please read the authorization and charging instructions in detail, and pay attention to the later changes in the terms of service.
-* 以下是关于部分地图服务商授权和收费的简介，具体以地图服务商官网公布的最新信息为准。
-* The following is a brief introduction to the authorization and charges of some map service providers. The latest information published on the official website of the map service provider shall prevail.
-  * 高德地图：商用授权收费，超出配额收费。
-  * AutoNavi Maps: commercial authorization fee, exceeding the quota fee.
-  * 百度地图：商用授权收费，超出配额收费。
-  * Baidu Maps: commercial authorization fee, exceeding the quota fee.
-  * 腾讯地图：商用授权收费，超出配额收费。
-  * Tencent Maps: Fees for commercial licenses, and fees for exceeding quotas.
-  * 谷歌地图：按量收费，每月赠送一定金额。
-  * Google Maps: Pay as you go, and give a certain amount of money every month.
-  * 小程序平台内置地图：无需关心地图服务商，免费使用，无配额限制。
-  *The built-in map of the MiniApp platform: no need to care about the map service provider, free to use, no quota limit.
+使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
-如开发者需要商业授权折扣，可以联系bd@dcloud.io，提供appid和HBuilder账户。
-If developers need commercial license discounts, they can contact bd@dcloud.io and provide appid and HBuilder account.
+DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
+
+详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

@@ -124,23 +124,34 @@ In foreign countries, Google's GMS is usually used to provide location services.
 
 <a id="business"/>
 
-### 商业授权相关说明
-### Commercial Authorization Instructions
+### 商业授权相关说明@lic
 
-从2021年初开始，高德、百度、腾讯等地图服务商更新了服务协议、开始实施商业授权机制，要求除公益App外所有使用地图相关功能（包括定位SDK、地图SDK、H5地图等）都需要获取地图服务商的商业授权。重点强调一下，免费应用同样需要商业授权，除非你的应用是公益类App，其它类型App都需要商业授权。
-From the beginning of 2021, map service providers such as AutoNavi, Baidu, and Tencent have updated their service agreements and started to implement a commercial authorization mechanism, requiring all map-related functions (including positioning SDK, map SDK, H5 map, etc.) Obtain commercial authorization from map service providers. It is important to emphasize that free applications also require commercial authorization. Unless your application is a public welfare application, other types of applications require commercial authorization.
-- 高德地图参考：[https://lbs.amap.com/upgrade](https://lbs.amap.com/upgrade)
-- Amap map reference: [https://lbs.amap.com/upgrade](https://lbs.amap.com/upgrade)
-- 百度地图参考：[https://lbsyun.baidu.com/cashier/auth](https://lbsyun.baidu.com/cashier/auth)
-- Baidu map reference: [https://lbsyun.baidu.com/cashier/auth](https://lbsyun.baidu.com/cashier/auth)
+2021年起，高德、百度、腾讯等地图服务商开始商业授权。
 
-没有取得地图服务商授权的App可能会遇到定位或地图功能被停用、上架应用市场可能提示存在侵权的问题，因此需要向高德、百度等地图开放平台申请商业授权。
-Apps that have not obtained the authorization of the map service provider may encounter problems of positioning or map functions being disabled, and the application market may prompt the existence of infringement. Therefore, it is necessary to apply for commercial authorization from map open platforms such as AutoNavi and Baidu.
+授权费用：5万元/年。
 
-为了避免商业授权引起的问题，如仅需获取wgs84坐标的情况下也可以只使用“系统定位”模块，“系统定位”在功能和机型适配上没有高德、百度等商业定位服务完善，需开发者根据实际情况选择。
-In order to avoid problems caused by commercial authorization, if you only need to obtain the coordinates of wgs84, you can only use the "system positioning" module. "System positioning" is not as complete as AutoNavi, Baidu and other commercial positioning services in terms of function and model adaptation. Developers need to choose according to the actual situation.
+例外：如果是公益类应用，可以申请豁免商业授权。只要不是公益应用，不管你有多少用户，都需要获取商业授权。
 
-DCloud为开发者争取了福利，可打折获取高德的商业服务，如有需求请发邮件到`bd@dcloud.io`；你也可以直接通过`uni-im`发起在线咨询，DCloud有专人帮你处理商业授权相关问题， 在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
+**未授权面临的问题和风险：**
+1. 法律问题：违反产品使用许可，也就是侵权了
+2. 功能问题：定位、地图、服务器相关接口随时可能被停用
+3. 上架某些应用市场会提示侵权而导致无法上架
+
+**商业授权的范围：**
+1. 凡是要请求地图厂商服务器的，均属于授权范围。不管是使用这3家的定位SDK、地图sdk，不管是app、web、小程序、服务器接口。
+2. 如果你的应用没有配置在3家厂商注册的账户和应用秘钥，则无需付费。比如在小程序里使用自带的定位api和map组件，已经由小程序平台给地图厂商付费了，所以开发者无需再向地图厂商申请appkey和付费。但如果开发者自己调用了高德等服务器接口，比如逆地址解析，仍然要付费。
+
+**如何节省费用：**
+1. 使用定位时，可以优先调用系统定位。
+  - iOS可以直接用。
+  - Android如果在国外可直接用。如果国内，因为google服务被墙，情况较复杂。
+    + 小米、华为的系统定位可以直接用，因为他们已经向地图厂商购买了授权并封装成了系统定位。但其他品牌的手机则需要开发者自行测试，也有的品牌在较新的手机上支持了系统定位。手机webview的定位api背后也是系统定位，如果系统定位支持，就可以直接用，如果不支持，那webview里也用不了。所以无需考虑用webview的定位来绕过。
+    + 微信浏览器、QQ浏览器的定位之所以可以使用，也是因为这些浏览器厂商向地图厂商购买了授权。如果你的web应用跑在这些浏览器里，调用定位api是没问题的。
+  - 系统定位只能拿到坐标，无法获取地址信息，比如城市、街道。如需要根据坐标获取街道信息，需使用地图厂商的逆地址解析，这属于商业授权范围。
+2. 在你的app里通过schema调用，打开地图厂商的app，比如直接交给高德地图来导航，这种情况无需在地图厂商注册账户和获取应用key，也就不需要付费。
+3. 联系DCloud申请折扣优惠。
+
+DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
 
 
 

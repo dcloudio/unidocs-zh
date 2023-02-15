@@ -6,14 +6,12 @@ keyword: 安心打包
 keyword: Pack with peace of mind
 -->
 
-> 本文档仅适用于MacOSX 10.14以下系统，不适用于MacOS 10.14以上系统。同时不适用windows
-> This document is only applicable to systems below MacOSX 10.14, not to systems above MacOS 10.14. Also not suitable for windows
+> 本文档不适用windows
 
 ## 前言
 ## Preface
 
-MacOSX 10.14以下系统, 使用ios安心打包, 需要安装相关证书.
-MacOSX 10.14 and below systems, using ios peace of mind packaging, need to install relevant certificates.
+某些MacOSX系统上, 使用ios安心打包, 需要安装相关证书.
 
 ![](https://hx.dcloud.net.cn/static/snapshots/tutorial/ios-safe-pack-1.png)
 

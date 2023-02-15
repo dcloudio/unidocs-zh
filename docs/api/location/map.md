@@ -748,19 +748,8 @@ poiList|Array.&lt;poiObject&gt;|POI information array
 ### 三方定位和地图服务收费说明
 ### Three-party positioning and map service fee description
 
-* 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请授权或缴纳费用。
-* To use third-party positioning or map services, you need to apply for authorization or pay fees from service providers (such as: AutoNavi Maps, Baidu Maps, Tencent Maps, and Google Maps).
-* 申请三方定位或地图服务秘钥时请详细阅读授权和收费说明，并关注服务条款后期的变更。
-* When applying for a three-party positioning or map service key, please read the authorization and charging instructions in detail, and pay attention to the later changes in the terms of service.
-* 以下是关于部分地图服务商授权和收费的简介，具体以地图服务商官网公布的最新信息为准。
-* The following is a brief introduction to the authorization and charges of some map service providers. The latest information published on the official website of the map service provider shall prevail.
-  * 高德地图：商用授权收费，超出配额收费。
-  * AutoNavi Maps: commercial authorization fee, exceeding the quota fee.
-  * 百度地图：商用授权收费，超出配额收费。
-  * Baidu Maps: commercial authorization fee, exceeding the quota fee.
-  * 腾讯地图：商用授权收费，超出配额收费。
-  * Tencent Maps: Fees for commercial licenses, and fees for exceeding quotas.
-  * 谷歌地图：按量收费，每月可获得一些赠送金额。
-  * Google Maps: Pay as you go, get some monthly credits.
-  * 小程序平台内置地图：无需关心地图服务商，免费使用，无配额限制。
-  *The built-in map of the MiniApp platform: no need to care about the map service provider, free to use, no quota limit.
+使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
+
+DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
+
+详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

@@ -245,6 +245,13 @@ Start monitoring the real-time geographic location information change event, and
 |success|Function|否|接口调用成功的回调函数||
 |success|Function|No|Callback function for successful interface call||
 |fail|Function|否|接口调用失败的回调函数||
-| fail| Function|No|Callback function for interface call failure||
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
-| complete| function|No|The callback function of the end of the interface call (it will be executed when the call succeeds or fails)||
+
+
+### 三方定位和地图服务收费说明
+
+使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
+
+DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
+
+详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

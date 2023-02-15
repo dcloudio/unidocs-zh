@@ -319,22 +319,19 @@ nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/3790
 ##### FAQ
 
 Q：应用中使用了 `<map>` 组件，打包为App时，提示缺少权限模块怎么办？
+
 A：App端原生地图，依赖第三方的 SDK，因此打包移动应用时，需要在manifest中勾选相关的权限并填写 key 信息。详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)
 
 Q：国外应用想使用谷歌地图/google地图怎么办？
+
 A: App 3.4+ 已支持 Google 地图， App 3.4 以下版本使用下面的方案
- 1. 可以在web-view下调用谷歌的web地图
- 2. 可以写一个原生插件封装谷歌原生地图，具体参考uni-app插件市场的原生插件开发教程。插件市场已有三方写好的[地图插件](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E5%9C%B0%E5%9B%BE)。
+ 1. 在web-view下调用谷歌的web地图
+ 2. 写一个原生插件封装谷歌原生地图，具体参考uni-app插件市场的原生插件开发教程。插件市场已有三方写好的[地图插件](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E5%9C%B0%E5%9B%BE)。
 
 ### 三方定位和地图服务收费说明
 
-* 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请授权或缴纳费用。
-* 申请三方定位或地图服务秘钥时请详细阅读授权和收费说明，并关注服务条款后期的变更。
-* 以下是关于部分地图服务商授权和收费的简介，具体以地图服务商官网公布的最新信息为准。
-  * 高德地图：商用授权收费，超出配额收费。
-  * 百度地图：商用授权收费，超出配额收费。
-  * 腾讯地图：商用授权收费，超出配额收费。
-  * 谷歌地图：按量收费，每月赠送一定金额。
-  * 小程序平台内置地图：无需关心地图服务商，免费使用，无配额限制。
+使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
-如开发者需要商业授权折扣，可以联系bd@dcloud.io，提供appid和HBuilder账户。
+DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
+
+详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

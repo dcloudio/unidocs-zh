@@ -451,6 +451,22 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 
 #### 上传 sourceMap@upload-sourcemap
 
+**uni-admin 2.3.4+ 版本**
+
+注意：2.3.4+ 的版本同时支持阿里云和腾讯云空间。
+
+1. 将 uni-admin 项目运行到浏览器中，在 `uni 统计 / 错误统计 / js报错` 页面，错误信息列表表格的右上角有 `上传 sourceMap` 按钮。点击后展示如下：
+
+	![上传 sourceMap](https://web-assets.dcloud.net.cn/unidoc/zh/%E4%B8%8A%E4%BC%A0%20sourcemap%20%E6%8A%BD%E5%B1%89.png)
+
+2. 上传请前请填写完整信息：`应用`、`平台`、`版本`
+3. 点击 `选择文件并上传` 按钮，弹出 `选择文件夹` 框后，请选中编译的对应该平台版本的 sourceMap。如：**项目根目录/unpackage/dist/build/.sourcemap/h5**，选中 `h5` 目录后点击上传。如果中途上传失败，在不刷新页面的情况下，重新选择文件夹上传可以跳过已上传文件。
+4. 上传完成
+
+**uni-admin 2.3.4 之前的版本**
+
+注意：2.3.4 之前的版本只支持腾讯云空间，不支持阿里云空间。
+
 1. 在 `uni-admin 项目/admin.config.js` 中配置 `uni-stat` 相关信息：
    1. 搜索 `uploadSourceMapCloudSpaceId` 补充腾讯云服务空间 SpaceID
    2. 搜索 `cloudSourceMapUrl` 补充腾讯云云存储访问地址（如：https://xx-xx-xx.tcb.qcloud.la/\_\_UNI\_\_/uni-stat/sourcemap）

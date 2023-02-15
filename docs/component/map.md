@@ -467,8 +467,8 @@ export default {
 | arrowIconPath|Replace the arrow icon |Supported | Android does not support iOS support |
 
 
-map 组件相关操作的 JS API：[uni.createMapContext](api/location/map?id=createmapcontext)
-JS API for operations related to the map component: [uni.createMapContext](api/location/map?id=createmapcontext)
+**map 组件相关操作的 JS API**：[uni.createMapContext](api/location/map?id=createmapcontext)
+
 nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/37901](https://ask.dcloud.net.cn/article/37901)
 Nvue map replacement arrow icon format reference: [https://ask.dcloud.net.cn/article/37901](https://ask.dcloud.net.cn/article/37901)
 

@@ -2524,7 +2524,7 @@ The Math.E property represents the base (or base) of natural logarithms, e, appr
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function getNapier():number {
@@ -2544,7 +2544,7 @@ The Math.LN10 property represents the natural logarithm of 10, approximately 2.3
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function getNatLog10():number {
@@ -2564,7 +2564,7 @@ The Math.LN2 property represents the natural logarithm of 2, which is approximat
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function getNatLog2():number {
@@ -2584,7 +2584,7 @@ The Math.LOG10E property represents the base 10 logarithm of e, approximately 0.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function getLog10e():number {
@@ -2604,7 +2604,7 @@ The Math.LOG2E property represents the base 2 logarithm of e, approximately 1.44
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function getLog2e():number {
@@ -2624,7 +2624,7 @@ Math.PI represents the ratio of a circle's circumference to its diameter, which 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function calculateCircumference (radius:number):number {
@@ -2644,7 +2644,7 @@ The Math.SQRT1_2 property represents the square root of 1/2, which is approximat
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function getRoot1_2():number {
@@ -2664,7 +2664,7 @@ The Math.SQRT2 property represents the square root of 2, approximately 1.414.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function getRoot2():number {
@@ -2686,7 +2686,7 @@ The Math.abs(x) function returns the absolute value of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function difference(a:number, b:number):number {
@@ -2713,7 +2713,7 @@ Math.acos() Returns the arccosine of a number in radians.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.acos(-1));
@@ -2736,7 +2736,7 @@ The Math.acosh() function returns the inverse hyperbolic cosine of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.acosh(1));
@@ -2759,7 +2759,7 @@ The Math.asin() method returns the arcsine of a number in radians.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.asin(-1));
@@ -2785,7 +2785,7 @@ Math.asinh() Returns the inverse hyperbolic sine of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.asinh(1));
@@ -2811,7 +2811,7 @@ The Math.atan() function returns the arctangent of a number in radians.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.atan(1));
@@ -2831,7 +2831,7 @@ Math.atan2() returns the plane angle (in radians) between the line segment from 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.atan2(90, 15));
@@ -2851,7 +2851,7 @@ The Math.atanh() function returns a numeric inverse hyperbolic tangent.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.atanh(0));
@@ -2871,7 +2871,7 @@ The Math.cbrt() function returns the cube root of any number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.cbrt(-1));
@@ -2897,7 +2897,7 @@ The Math.ceil() function always rounds up and returns the smallest integer great
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.ceil(0.95));
@@ -2924,7 +2924,7 @@ The Math.clz32() function returns the number of leading zeros after a number is 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.clz32(1));
@@ -2951,7 +2951,7 @@ The Math.cos() function returns the cosine of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.cos(0));
@@ -2971,7 +2971,7 @@ The Math.cosh() function returns the hyperbolic cosine function of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.cosh(0));
@@ -2994,7 +2994,7 @@ The Math.exp() function returns e^x, x represents the parameter, and e is Euler'
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.exp(-1));
@@ -3017,7 +3017,7 @@ The Math.expm1() function returns E^x - 1, where x is the argument to the functi
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.expm1(1));
@@ -3036,7 +3036,7 @@ Math.floor() 函数总是返回小于等于一个给定数字的最大整数。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.floor(5.95));
@@ -3082,7 +3082,7 @@ The Math.hypot() function returns the square root of the sum of squares of all a
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.hypot(3, 4));
@@ -3108,7 +3108,7 @@ This function converts the two arguments to 32-bit integers and returns the 32-b
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.imul(3, 4));
@@ -3128,7 +3128,7 @@ The Math.log() function returns the natural logarithm of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.log(1));
@@ -3148,7 +3148,7 @@ The Math.log10() function returns the base 10 logarithm of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.log10(10));
@@ -3171,7 +3171,7 @@ The Math.log1p() function returns the natural logarithm (base E) of a number plu
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.log1p(Math.E-1));
@@ -3191,7 +3191,7 @@ The Math.log2() function returns the base 2 logarithm of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.log2(2));
@@ -3214,7 +3214,7 @@ The Math.max() function returns the largest number given as an input parameter.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.max(1, 3, 2));
@@ -3234,7 +3234,7 @@ The Math.min() function returns the smallest of the numbers given as input param
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.min(2, 3, 1));
@@ -3254,7 +3254,7 @@ The Math.pow() function returns the base (base) raised to the power of the expon
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.pow(7, 3));
@@ -3274,7 +3274,7 @@ The Math.random() function returns a floating-point number, a pseudo-random numb
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function getRandomInt(max:number):number {
@@ -3301,7 +3301,7 @@ The Math.round() function returns a number rounded to the nearest integer.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.round(20.49));
@@ -3327,7 +3327,7 @@ The Math.sign() function returns the sign of a number, indicating whether the nu
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.sign(3));
@@ -3350,7 +3350,7 @@ The Math.sin() function returns the sine of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.sin(0));
@@ -3370,7 +3370,7 @@ The Math.sinh() function returns the hyperbolic sine of a number (in degrees).
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.sinh(0));
@@ -3390,7 +3390,7 @@ The Math.sqrt() function returns the square root of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 function calcHypotenuse(a:number, b:number):number {
@@ -3417,7 +3417,7 @@ The Math.tan() method returns the tangent of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.tan(0));
@@ -3437,7 +3437,7 @@ The Math.tanh() function will return the value of the hyperbolic tangent of a nu
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.tanh(-1));
@@ -3460,7 +3460,7 @@ The Math.trunc() method will remove the decimal part of the number and keep only
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|x|√|
 
 ```ts
 console.log(Math.trunc(13.37));

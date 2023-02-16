@@ -62,6 +62,13 @@ uni.addInterceptor('request', {
   }
 })
 
+uni.addInterceptor({
+  returnValue(args) {
+    // 只返回 data 字段
+    return args.data
+  }
+})
+
 ```
 
 ### uni.removeInterceptor(STRING)

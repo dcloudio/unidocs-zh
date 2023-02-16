@@ -183,7 +183,7 @@ uni-im本身并不收费，实际使用中需要依赖uniCloud云服务，会产
 	uni-im的服务端代码托管在uniCloud下，账户体系是[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html)的；
 	uni-app生态下绝大部分项目的架构与uni-im相同，所以不需要考虑账号打通问题，用户登录项目后，不需要额外登录uni-im。
 
-	而有些传统项目，服务端的开发语言是php、java、go、.net、python、c#等，是自己设计的账号体系；用户登录所获得的token，与uni-im所需的token不是同一个账号体系；需要通过[uni-id的外部系统联登](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#external)同步你项目的账号数据到uni-im用户体系并获得uni-id的token，客户端再调用uniImUtils的login方法登录uni-im；示例代码如下：
+	而有些传统项目，服务端的开发语言是php、java、go、.net、python、c#等，是自己设计的账号体系；用户登录所获得的token，与uni-im所需的token不是同一个账号体系；需要在传统服务器端，通过[uni-id的外部系统联登](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#external)同步你项目的账号数据到uni-im用户体系并获得uni-id的token，客户端再调用uniImUtils的login方法登录uni-im；示例代码如下：
 
 	```js
 	import uniImUtils from '@/uni_modules/uni-im/common/utils.js';

@@ -249,6 +249,10 @@ module.exports = {
 
 ### 客户端接口
 
+#### 获取设备信息
+调用刷脸前通过客户端先获取设备信息，调用[uni.getFacialRecognitionMetaInfo](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)
+`const metaInfo = uni.getFacialRecognitionMetaInfo();`
+
 #### 调起实人认证界面@start-frv
 
 通过云函数获取certifyId后，在客户端调用[uni.startFacialRecognitionVerify](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)打开认证界面，通过刷脸操作获取认证结果。
@@ -259,22 +263,15 @@ module.exports = {
 * HBuilderX3.7.2+新增支持  
 * App端需在“App模块配置”中勾选“FacialRecognitionVerify(实人认证)”，参考[详情](https://uniapp.dcloud.net.cn/tutorial/app-facialRecognitionVerify.html)  
 * App端使用蚂蚁金服人脸认证SDK，需在隐私政策的三方SDK中添加实人认证功能描述，参考[详情](https://ask.dcloud.net.cn/article/39484#FacialRecognitionVerify)
-* App-Android平台要求Android5（API Leavel 21）及以上系统  
-* App-iOS平台要求iOS10及以上系统  
+* App-Android平台要求Android5（API Leavel 21）及以上系统
+* App-iOS平台要求iOS9及以上系统
 
 **示例**  
 ```js
 uni.startFacialRecognitionVerify({
     certifyId:"",
     progressBarColor: "#CC0000", //刷脸圈的颜色
-    progressBarBackgroundColor: "#00CC00", //刷脸圈的背景颜色
-    quitAlertTitle:"刷脸页退出对话框的标题",
-    quitAlertMessage: "刷脸页退出对话框的内容",
-    timeoutAlertTitle: "刷脸页超时对话框的标题",
-    timeoutAlertMessage: "刷脸页超时对话框的内容",
-    failAlertTitle: "刷脸页错误提示对话框的标题",
-    failAlertMessage: "刷脸页错误提示对话框的内容",
-    title: "刷脸框顶部文案",
+    screenOrientation: "port", //认证界面UI朝向
     success:(e)=>{
         console.log(JSON.stringify(e))
     },
@@ -293,15 +290,7 @@ uni.startFacialRecognitionVerify({
 | ---						| ---		| ---		| ---			| ---															|
 | certifyId					| String	| 是		| App			| 认证流水号，由服务端根据接入的业务模式调用对应的初始化接口获取		|
 | progressBarColor			| String	| 否		| App			| 刷脸圈的颜色													|
-| activityIndicatorColor	| String	| 否		| App-iOS		| 网络等待菊花颜色												|
-| progressBarBackgroundColor| String	| 否		| App-Android	| 刷脸圈的背景颜色												|
-| quitAlertTitle			| String	| 否		| App-Android	| 刷脸页退出对话框的标题											|
-| quitAlertMessage			| String	| 否		| App-Android	| 刷脸页退出对话框的内容											|
-| timeoutAlertTitle			| String	| 否		| App-Android	| 刷脸页超时对话框的标题											|
-| timeoutAlertMessage		| String	| 否		| App-Android	| 刷脸页超时对话框的内容											|
-| failAlertTitle			| String	| 否		| App-Android	| 刷脸页错误提示对话框的标题										|
-| failAlertMessage			| String	| 否		| App-Android	| 刷脸页错误提示对话框的内容										|
-| title						| String	| 否		| App-Android	| 刷脸圈的标题													|
+| screenOrientation      | String  | 否    | App-Android  | 认证界面UI朝向。port 为竖屏，land 为横屏，默认为 port|
 | success					| Function	| 否		| App			| 成功回调														|
 | fail						| Function	| 否		| App			| 失败回调														|
 | complete					| Function	| 否		| App			| 完成回调														|
@@ -386,4 +375,4 @@ iOS平台不支持通过参数的方式修改刷脸页的提示文案，但可�
 
 但如果开发者需要打包或打自定义基座，需在manifest的app模块配置中，勾选实人认证（注意不是faceId）。
 
-因蚂蚁SDK仅支持Android5+和iOS10+，所以Android4、iOS9等低版本手机无法使用实人认证。
+因蚂蚁SDK仅支持Android5+和iOS9，所以Android4、iOS8等低版本手机无法使用实人认证。

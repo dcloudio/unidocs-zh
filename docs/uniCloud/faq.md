@@ -40,8 +40,7 @@ If you have used WeChat MiniApp cloud development and want to learn more about t
 用户终端上的应用在运行时，直连云服务商serverless平台，不会经过DCloud服务器，开发者无需担心因DCloud服务器负载而影响自己业务的问题。
 When the application on the user terminal is running, it is directly connected to the serverless platform of the cloud service provider without going through the DCloud server. Developers do not need to worry about the problem of affecting their business due to the load of the DCloud server.
 
-尤其是腾讯云付费版，享受腾讯云的SLA。如果真出问题，腾讯云会负责赔偿（实际上不太会出现故障）
-Especially the paid version of Tencent Cloud, enjoy Tencent Cloud's SLA. If something goes wrong, Tencent Cloud will be responsible for compensation (in fact, it is unlikely to fail)
+阿里云和腾讯云都有商业级SLA。如果真出问题，他们会负责赔偿。
 
 ### 云函数 和 传统 Node.js 开发有何区别？
 ### What is the difference between Cloud Functions and traditional Node.js development?
@@ -322,8 +321,7 @@ The single-router cloud function framework is not only the official uni-cloud-ro
 ### 港澳台及境外用户访问比较慢怎么办@global-accelerate
 ### What should I do if the access of users from Hong Kong, Macao, Taiwan and overseas is relatively slow @global-accelerate
 
-港澳台及境外用户需要使用全球加速。uniCloud服务商为阿里云时支持配置全球加速，步骤如下：
-Hong Kong, Macao, Taiwan and overseas users need to use global acceleration. When the uniCloud service provider is Alibaba Cloud, global acceleration is supported. The steps are as follows:
+港澳台及海外/国外用户需要使用全球加速（海外加速）。uniCloud服务商为阿里云时支持配置全球加速，步骤如下：
 
 1. 参考[阿里云全球加速](https://help.aliyun.com/document_detail/153198.html)文档，开通服务并对`自有域名`进行加速
 1. Refer to the [Alibaba Cloud Global Acceleration](https://help.aliyun.com/document_detail/153198.html) document, activate the service and accelerate `own domain name`

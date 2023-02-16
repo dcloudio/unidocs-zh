@@ -1,3 +1,6 @@
+### uni.getFacialRecognitionMetaInfo()  
+实人认证获取设备信息
+
 ### uni.startFacialRecognitionVerify(OBJECT)  
 实人认证  
 real person authentication

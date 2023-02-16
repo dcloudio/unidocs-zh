@@ -107,10 +107,11 @@ frvManager.getCertifyId(Object GetCertifyIdParam)
 
 **Object GetCertifyIdParam**
 
-|属性			|类型		|必填	|默认值	|说明					|
-|:-:			|:-:		|:-:	|:-:		|:-:					|
-|realName	|String	|是		|-			|用户真实姓名	|
-|idCard		|String	|是		|-			|用户身份证号	|
+|属性			|类型		|必填	|默认值	|说明													|
+|:-:			|:-:		|:-:	|:-:		|:-:													|
+|realName	|String	|是		|-			|用户真实姓名									|
+|idCard		|String	|是		|-			|用户身份证号									|
+|metaInfo	|String	|是		|-			|客户端初始化时返回的metaInfo	|
 
 **返回值**
 
@@ -129,7 +130,8 @@ exports.main = async (event, context) => {
   })
   const result = await frvManager.getCertifyId({
     realName: '张三',
-    idCard: 'xxxxxx'
+    idCard: 'xxxxxx',
+    metaInfo: '{"xx": "xx"}'
   })
   return result
 };
@@ -147,7 +149,8 @@ module.exports = {
   async getCertifyId() {
     const result = await this.frvManager.getCertifyId({
       realName: '张三',
-      idCard: 'xxxxxx'
+      idCard: 'xxxxxx',
+      metaInfo: '{"xx": "xx"}'
     })
     return result
   }
@@ -169,7 +172,6 @@ frvManager.getAuthResult(Object GetAuthResultParam)
 |属性			|类型	|必填	|默认值	|说明																		|
 |:-:			|:-:	|:-:	|:-:	|:-:																		|
 |certifyId		|String	|是		|-		|认证id																		|
-|needAlivePhoto	|String	|否		|N		|是否获取认证照片，`Y_O` （原始图片）、`Y_M`（虚化，背景马赛克）、`N`（不返图）	|
 
 **返回值**
 

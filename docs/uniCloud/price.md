@@ -126,8 +126,7 @@ If it is difficult for you to estimate how much cloud resources will be consumed
 **关于计费项的额外说明（套餐和按量通用）**
 **Additional instructions on billing items (common for packages and pay-as-you-go)**
 
-- 云函数资源使用量GBs的计算方式为：云函数设置的运行内存*云函数实际执行时间，执行时间以100ms为阶梯向上取整。运行内存默认为512M，可以在云函数package.json中调整。优化代码，降低云函数运行时间，有助于减少GBs的费用。
-- The cloud function resource usage GBs is calculated as: the running memory set by the cloud function * the actual execution time of the cloud function, and the execution time is rounded up in steps of 100ms. The default running memory is 512M, which can be adjusted in the cloud function package.json. Optimize the code and reduce the running time of cloud functions, which helps to reduce the cost of GBs.
+- 云函数资源使用量GBs的计算方式为：云函数设置的运行内存*云函数实际执行时间（精确到ms的执行时间）。运行内存默认为512M，可以在云函数package.json中调整。优化代码，降低云函数运行时间，有助于减少GBs的费用。
 - 数据库单次写入操作每1KB数据计算一次写操作数，向上取整
 - The number of write operations is calculated for every 1KB of data in a single database write operation, rounded up
 - 数据库单次读取操作每4KB数据计算一次读操作数，向上取整
@@ -350,9 +349,7 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 - 云函数出网流量包含请求三方服务器发送的数据和返回给客户端的数据
 - The outbound traffic of the cloud function includes the data sent by the third-party server and the data returned to the client
 - clientDB底层也是基于云函数实现，也会消耗云函数调用次数
-- The bottom layer of clientDB is also implemented based on cloud functions, which will also consume the number of cloud function calls
-- 云函数资源使用量GBs的计算方式为，云函数设置的运行内存*云函数实际执行时间，执行时间以100ms为阶梯向上取整
-- The cloud function resource usage GBs is calculated as the running memory set by the cloud function * the actual execution time of the cloud function, and the execution time is rounded up in steps of 100ms
+- 腾讯云云函数资源使用量GBs的计算方式为，云函数设置的运行内存*云函数实际执行时间，执行时间以100ms为阶梯向上取整
 
 ### 按量付费/超量使用定价@tencent-postpay
 ### Pay-As-You-Go/Overage Pricing @tencent-postpay

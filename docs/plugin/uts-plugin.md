@@ -129,6 +129,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	│	└─index.uts               //Android原生插件能力实现
 │	├─app-ios                     //iOS平台目录
 │	│	├─Frameworks              //iOS原生依赖的第三方 framework 依赖库存放目录，可选
+│	│	├─Libs              	  //iOS原生依赖的第三方 .a 依赖库存放目录，可选
 │	│	├─Resources               //iOS原生所依赖的资源文件存放目录，可选
 │	│	├─info.plist              //iOS原生所需要添加到主 info.plist 文件中的配置文件，可选
 │	│	├─UTS.entitlements        //iOS原生所需要添加到主工程 .entitlements 文件中的配置文件，可选
@@ -288,6 +289,7 @@ app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
 |目录名/文件名		|用途													|
 |:---				|:---													|
 |Frameworks			|iOS平台插件需要引用的三方 framework 依赖库存放目录			|
+|Libs				|iOS平台插件需要引用的三方 .a 依赖库存放目录			    |
 |Resources			|iOS平台插件需要引用的资源文件存放目录						|
 |Info.plist			|iOS平台插件需要添加到原生工程Info.plist中的配置文件			|
 |UTS.entitlements	|iOS平台插件需要添加到原生工程 entitlements 文件中的配置文件		|
@@ -295,12 +297,22 @@ app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
 |index.uts			|主入口，index.d.ts声明的能力在iOS平台下的实现				|
 
 ##### Frameworks 
-iOS平台插件依赖的三方库存放目录，支持以下类型文件：
+iOS平台插件依赖的三方framework存放目录，支持以下类型文件：
 
 - framework  
 - xcframework
 
-注意：目前只支持静态库
+注意：目前支持静态库和动态库
+
+##### Libs 
+> HBuilder X 3.7.2+ 版本支持
+
+iOS平台插件依赖的三方.a库存放目录，支持以下类型的.a库：
+
+- 使用OC语言创建的.a库  
+- 使用Swift语言创建的.a库
+
+备注：有关OC及Swift创建的.a库的区别、.a库的使用方法和注意事项[详见](https://uniapp.dcloud.net.cn/plugin/uts-for-ios)
 
 ##### Resources
 iOS平台原生资源目录，建议只保存uts插件内置的资源文件。云端打包时会将此目录下的所有文件添加到应用 main bundle 中。  

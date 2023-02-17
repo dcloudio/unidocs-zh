@@ -344,11 +344,13 @@ App端有很多插件支持视频压缩，详见[插件市场](https://ext.dclou
 
 **OBJECT 参数说明**
 
-|属性			|类型			|默认值	|必填	|说明																							|
-|:-:			|:-:			|:-:		|:-:	|:-:																							|
-|filePath	|string		|-			|是		|视频源的路径，只支持本地路径											|
-|success	|function	|-			|否		|接口调用成功的回调函数														|
-|fail			|function	|-			|否		|接口调用失败的回调函数														|
+|属性			|类型			|默认值	|必填	|说明			|
+|:-:			|:-:			|:-:		|:-:	|:-:		|
+|filePath	|string		|-			|是		|视频源的路径，只支持本地路径	|
+|minDuration	|string		|-			|是		|视频裁剪的最小长度（2.16.1）	|
+|maxDuration	|string		|-			|是		|视频裁剪的最大长度	（2.16.1）|
+|success	|function	|-			|否		|接口调用成功的回调函数			|
+|fail			|function	|-			|否		|接口调用失败的回调函数		|
 |complete	|function	|-			|否		|接口调用结束的回调函数（调用成功、失败都会执行）	|
 
 **success 返回参数说明**

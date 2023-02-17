@@ -1,3 +1,12 @@
+#### 3.7.2.20230217-alpha
+* 【uni-app】
+* App-Android平台 修复 uni.getSystemInfo 在部分设备获取 deviedId 值可能相同的Bug [详情](https://ask.dcloud.net.cn/question/163174)
+* uts插件 App-Android平台 修复  math.sign 参数为 0 时返回结果异常的Bug
+* uts插件 App-iOS平台 新增 支持调用 .a 静态库 [详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#ios-libs)
+* 【uni小程序SDK】
+* Android平台 新增 适配支持暗黑模式
+* Android平台 修复 3.7.0版引出的 特定场景启动小程序可能失败的Bug
+
 #### 3.7.1.20230210-alpha
 * 【uni-app】
 * 修复 Vue3 项目 uni.scss 中变量条件编译无效的Bug [详情](https://ask.dcloud.net.cn/question/162271)

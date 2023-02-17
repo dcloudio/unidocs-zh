@@ -77,19 +77,17 @@ Even if Ignore Domain Name Verification is checked in the development tool, the 
 ### Web中使用uniCloud的跨域处理@useinh5
 ### Cross-domain processing using uniCloud in the Web @useinh5
 
+
+
 云函数的域名是bspapp.com或tencentcloudapi.com。但开发者的web前端肯定是部署在其他域名下（含unicloud的前端网页托管）。那么Web前端js访问云函数就涉及跨域问题，导致前端js无法连接云函数服务器。
 The domain name of the cloud function is bspapp.com or tencentcloudapi.com. But the developer's web front-end must be deployed under other domain names (including unicloud's front-end web page hosting). Then the web front-end js accessing the cloud function involves cross-domain issues, which makes the front-end js unable to connect to the cloud function server.
 
 此时需要在uniCloud后台操作，为云函数绑定安全域名。哪个域名下的前端网页的js想访问云函数，就配置哪个域名。如使用unicloud前端网页托管，不管是自带测试域名还是开发者的域名，只要想访问云函数，都得把域名配在这里。
 At this time, you need to operate in the background of uniCloud to bind a secure domain name to the cloud function. If the js of the front-end web page under which domain name wants to access the cloud function, configure the domain name. If you use unicloud front-end web page hosting, no matter if you have your own test domain name or a developer’s domain name, as long as you want to access cloud functions, you must configure the domain name here.
 
-<div align=center>
-  <img src="https://img.cdn.aliyun.dcloud.net.cn/uni-app/uniCloud/uniCloud-add-domain.png"/>
-</div>
+![](https://img.cdn.aliyun.dcloud.net.cn/uni-app/uniCloud/uniCloud-add-domain.png)
 
-
-> 注意跨域配置需要带上端口信息。例如：前端页面运行于：www.xxx.com:5001，跨域配置内配置：www.xxx.com不会对此页面生效，需要配置为：www.xxx.com:5001
-> Note that cross-domain configuration needs to bring port information. For example: the front-end page runs at: www.xxx.com:5001, the configuration in the cross-domain configuration: www.xxx.com will not take effect on this page, it needs to be configured as: www.xxx.com:5001
+> 注意跨域配置需要带上端口信息。例如：前端页面运行于：www.xxx.com:5001，跨域配置内配置：www.xxx.com不会对此页面生效，需要配置为：www.xxx.com:5001，端口部分也支持通配符
 
 如果是运行时期想突破跨域限制，还有如下方案：
 If you want to break through the cross-domain restrictions during runtime, there are the following solutions:
@@ -102,20 +100,16 @@ If you want to break through the cross-domain restrictions during runtime, there
   * 方式2：在外部浏览器安装跨域插件，详见：[https://ask.dcloud.net.cn/article/35267](https://ask.dcloud.net.cn/article/35267)。要跨域的地址，详见上述文档中小程序配置安全域名章节。
   * Method 2: Install cross-domain plug-ins in external browsers, see: [https://ask.dcloud.net.cn/article/35267](https://ask.dcloud.net.cn/article/35267) . For cross-domain addresses, see the section on configuring secure domain names for Mini Programs in the above document.
 
+- `2021年9月16日`之前阿里云跨域配置不对云存储及前端网页托管生效，表现为云存储中图片绘制到canvas会[污染画布](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Using_images#Using_other_canvas_elements)，前端网页托管的网页不可在iframe中使用。
+- `2021年9月16日`之后阿里云跨域配置可以对前端网页托管生效，**仅对前端网页托管的自定义域名生效，不对默认域名生效，如何绑定自定义域名请参考：[前端网页托管绑定自定义域名](uniCloud/hosting.md?id=domain)**，设置之后可能需要几分钟才会生效。如果你在之前已经设置了跨域域名和前端网页托管的自定义域名，需要重新设置一次跨域域名才能生效。
+- `2022年12月2日`阿里云正式版跨域配置支持使用通配符，限制配置9个跨域域名。正式版默认允许localhost跨域
+- `2023年2月3日`阿里云正式版跨域配置对云存储生效，如果此前已配置跨域配置下次进行修改时会同步设置到云存储。
+
 **注意**
-**Notice**
 
-`2021年9月16日`之前阿里云跨域配置不对云存储及前端网页托管生效，表现为云存储中图片绘制到canvas会[污染画布](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Using_images#Using_other_canvas_elements)，前端网页托管的网页不可在iframe中使用。
-Before `September 16, 2021`, the cross-domain configuration of Alibaba Cloud will not take effect on cloud storage and front-end web hosting. CN/docs/Web/API/Canvas_API/Tutorial/Using_images#Using_other_canvas_elements), web pages hosted by front-end web pages cannot be used in iframes.
+- 跨域配置同时对云函数、前端网页托管、云存储生效
+- 阿里云云存储默认不支持localhost跨域，如有需求请添加`127.0.0.1:*`到跨域配置内
 
-`2021年9月16日`之后阿里云跨域配置可以对前端网页托管生效，**仅对前端网页托管的自定义域名生效，不对默认域名生效，如何绑定自定义域名请参考：[前端网页托管绑定自定义域名](uniCloud/hosting.md?id=domain)**，设置之后可能需要几分钟才会生效。如果你在之前已经设置了跨域域名和前端网页托管的自定义域名，需要重新设置一次跨域域名才能生效。
-After `September 16, 2021`, Alibaba Cloud cross-domain configuration can take effect for front-end web hosting, **only for the custom domain name hosted by the front-end web page, not the default domain name. For how to bind a custom domain name, please refer to: [Front-end Web hosting is bound to a custom domain name](uniCloud/hosting.md?id=domain)**, it may take a few minutes to take effect after setting. If you have previously set up a cross-domain domain name and a custom domain name hosted on a front-end web page, you need to reset the cross-domain domain name to take effect.
-
-`2022年12月2日`阿里云正式版跨域配置支持使用通配符，限制配置9个跨域域名。正式版默认允许localhost跨域
-`December 2, 2022` The cross-domain configuration of the official version of Alibaba Cloud supports the use of wildcards, and the configuration is limited to 9 cross-domain domain names. The official version allows localhost cross-domain by default
-
-`2023年2月3日`阿里云正式版跨域配置对云存储生效，如果此前已配置跨域配置下次进行修改时会同步设置到云存储
-`February 3, 2023` The cross-domain configuration of the official version of Alibaba Cloud will take effect for cloud storage. If the cross-domain configuration has been configured before, it will be synchronized to cloud storage when it is modified next time.
 
 ## 客户端资源发行
 ## Client resource distribution

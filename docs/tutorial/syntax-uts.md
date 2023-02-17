@@ -2772,7 +2772,7 @@ console.log(Math.asin(0.5));
 // expected output: 0.5235987755982989
 
 console.log(Math.asin(1));
-// expected output: 1.570796326794897
+// expected output: 1.5707963267948966
 ```
 
 #### asinh
@@ -3021,7 +3021,7 @@ The Math.expm1() function returns E^x - 1, where x is the argument to the functi
 
 ```ts
 console.log(Math.expm1(1));
-// expected output: 1.7182818284590453
+// expected output: 1.718281828459045
 
 console.log(Math.expm1(-38));
 // expected output: -1
@@ -3319,8 +3319,7 @@ console.log(Math.random(-20.51));
 
 #### sign
 
-Math.sign() 函数返回一个数字的符号，指示数字是正数，负数还是零。
-The Math.sign() function returns the sign of a number, indicating whether the number is positive, negative or zero.
+Math.sign() 函数返回一个数字的符号，分别是 1、-1、0，代表的各是正数、负数、零。
 
 **平台差异说明**
 **Platform Difference Description**

@@ -292,6 +292,12 @@ HX3.6.1+ version You can configure manifest.json to configure checkPermissionDen
 + 排查业务逻辑中是否有提前调用[plus.device.getInfo](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo)等需要权限的API或主动调用[plus.android.requestPermissions](https://www.html5plus.org/doc/zh_cn/android.html#plus.android.requestPermissions)申请权限的情况，如果有则需要调整相关API的调用时机，触发相关业务场景时再调用，不要提前调用。
 + Check whether there is an API that requires permission such as [plus.device.getInfo](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo) called in advance or actively called [ plus.android.requestPermissions](https://www.html5plus.org/doc/zh_cn/android.html#plus.android.requestPermissions) to apply for permission, if so, you need to adjust the timing of calling the relevant API to trigger the relevant business Call it in the scene, don't call it in advance.
 
+#### 24、应用存在频繁自启动或关联启动的行为
+
++ 如果应用市场反馈的调用栈文件中有此信息`io.dcloud.xx.xx.xx.DownloadReceiver`，使用HBuilderX 3.6.18+ 重新打包提审即可。
++ 目前已知部分原生插件也同样有此隐私合规问题，开发者可根据调用栈文件中提供的信息大致判断出哪个原生插件有问题，这种情况需要联系插件作者进行整改。
++ 如果是非上述情况，可发帖或联系官方进行进一步排查。
+
 #### 看不懂文档不知道如何修改？
 #### Can't understand the document and don't know how to modify it?
 

@@ -8,15 +8,15 @@
 |src|String||要播放视频的资源地址||
 |autoplay|Boolean|false|是否自动播放||
 |loop|Boolean|false|是否循环播放||
-|muted|Boolean|false|是否静音播放|字节跳动小程序与飞书小程序不支持|
-|initial-time|Number||指定视频初始播放位置，单位为秒（s）。|字节跳动小程序与飞书小程序不支持|
+|muted|Boolean|false|是否静音播放|飞书小程序不支持|
+|initial-time|Number||指定视频初始播放位置，单位为秒（s）。|飞书小程序不支持|
 |duration|Number||指定视频时长，单位为秒（s）。|字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
 |controls|Boolean|true|是否显示默认播放控件（播放/暂停按钮、播放进度、时间）|快手小程序不支持|
 |danmu-list|Object Array||弹幕列表|字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
 |danmu-btn|Boolean|false|是否显示弹幕按钮，只在初始化时有效，不能动态变更|字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
 |enable-danmu|Boolean|false|是否展示弹幕，只在初始化时有效，不能动态变更|字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
 |page-gesture|Boolean|false|在非全屏模式下，是否开启亮度与音量调节手势|微信小程序、H5|
-|direction|Number||设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）|H5、字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
+|direction|Number||设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）|H5、飞书小程序、快手小程序、京东小程序不支持|
 |show-progress|Boolean|true|若不设置，宽度大于240时才会显示|字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
 |show-fullscreen-btn|Boolean|true|是否显示全屏按钮|京东小程序不支持|
 |show-play-btn|Boolean|true|是否显示视频底部控制栏的播放按钮|京东小程序不支持|
@@ -25,7 +25,7 @@
 |enable-progress-gesture|Boolean|true|是否开启控制进度的手势|字节跳动小程序、京东小程序不支持|
 |object-fit|String|contain|当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|App、微信小程序、字节跳动小程序、飞书小程序、H5、京东小程序|
 |poster|String||视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效||
-|show-mute-btn|Boolean|false|是否显示静音按钮|微信小程序、App-nvue|
+|show-mute-btn|Boolean|false|是否显示静音按钮|微信小程序、字节跳动小程序、App-nvue|
 |title|String||视频的标题，全屏时在顶部展示|微信小程序、App（3.6.7+）|
 |play-btn-position|String|bottom|播放按钮的位置|微信小程序、字节跳动小程序、飞书小程序|
 |mobilenet-hint-type|number|1|移动网络提醒样式：0是不提醒，1是提醒，默认值为1|京东小程序|
@@ -41,19 +41,19 @@
 |play-strategy|Number|0| 播放策略，0：普通模式，适合绝大部分视频播放场景；1：平滑播放模式（降级），增加缓冲区大小，采用open sl解码音频，避免音视频脱轨的问题，可能会降低首屏展现速度、视频帧率，出现开屏音频延迟等。 适用于高码率视频的极端场景；2： M3U8优化模式，增加缓冲区大小，提升视频加载速度和流畅度，可能会降低首屏展现速度。 适用于M3U8在线播放的场景 |App-Android 3.1.0+|
 |header|Object||HTTP 请求 Header|App 3.1.19+|
 |is-live|Boolean|false|是否为直播源|App 3.7.2+、微信小程序（2.28.1+）|
-|@play|EventHandle||当开始/继续播放时触发play事件|字节跳动小程序与飞书小程序不支持|
-|@pause|EventHandle||当暂停播放时触发 pause 事件|字节跳动小程序与飞书小程序不支持|
-|@ended|EventHandle||当播放到末尾时触发 ended 事件|字节跳动小程序与飞书小程序不支持|
-|@timeupdate|EventHandle||播放进度变化时触发，event.detail = {currentTime, duration} 。触发频率 250ms 一次|字节跳动小程序与飞书小程序不支持|
-|@fullscreenchange|EventHandle||当视频进入和退出全屏时触发，event.detail = {fullScreen, direction}，direction取为 vertical 或 horizontal|字节跳动小程序与飞书小程序不支持|
-|@waiting|EventHandle||视频出现缓冲时触发|字节跳动小程序、飞书小程序、快手小程序不支持|
-|@error|EventHandle||视频播放出错时触发|字节跳动小程序与飞书小程序不支持|
-|@progress|EventHandle||加载进度变化时触发，只支持一段加载。event.detail = {buffered}，百分比|微信小程序、H5|
+|@play|EventHandle||当开始/继续播放时触发play事件|飞书小程序不支持|
+|@pause|EventHandle||当暂停播放时触发 pause 事件|飞书小程序不支持|
+|@ended|EventHandle||当播放到末尾时触发 ended 事件|飞书小程序不支持|
+|@timeupdate|EventHandle||播放进度变化时触发，event.detail = {currentTime, duration} 。触发频率 250ms 一次|飞书小程序不支持|
+|@fullscreenchange|EventHandle||当视频进入和退出全屏时触发，event.detail = {fullScreen, direction}，direction取为 vertical 或 horizontal|飞书小程序不支持|
+|@waiting|EventHandle||视频出现缓冲时触发|飞书小程序、快手小程序不支持|
+|@error|EventHandle||视频播放出错时触发|飞书小程序不支持|
+|@progress|EventHandle||加载进度变化时触发，只支持一段加载。event.detail = {buffered}，百分比|微信小程序、字节跳动小程序、H5|
 |@loadeddata|EventHandle||视频资源开始加载时触发|京东小程序|
 |@loadstart|EventHandle||开始加载数据|京东小程序|
 |@seeked|EventHandle||拖动进度条结束|京东小程序|
 |@seeking|EventHandle||正在拖动进度条|京东小程序|
-|@loadedmetadata|EventHandle||视频元数据加载完成时触发。event.detail = {width, height, duration}|微信小程序、H5、京东小程序|
+|@loadedmetadata|EventHandle||视频元数据加载完成时触发。event.detail = {width, height, duration}|微信小程序、H5、字节跳动小程序、京东小程序|
 |@fullscreenclick|EventHandle||视频播放全屏播放时点击事件。event.detail = { screenX:"Number类型，点击点相对于屏幕左侧边缘的 X 轴坐标", screenY:"Number类型，点击点相对于屏幕顶部边缘的 Y 轴坐标", screenWidth:"Number类型，屏幕总宽度", screenHeight:"Number类型，屏幕总高度"}|App 2.6.3+|
 |@controlstoggle|EventHandle||切换 controls 显示隐藏时触发。event.detail = {show}|微信小程序2.9.5|
 

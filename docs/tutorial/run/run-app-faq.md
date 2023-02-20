@@ -477,6 +477,14 @@ For versions after HBuilderX 3.5.3, the App runs on the real machine using Node 
 - 手机系统分身的原因。[具体详情参考](https://ask.dcloud.net.cn/question/161130)
 - The reason why the mobile phone system is duplicated. [Refer to specific details](https://ask.dcloud.net.cn/question/161130)
 - 如果手机是华为鸿蒙系统，排查下是否是手机自身的原因，换个其它品牌手机试试，如小米、oppo。
-- If the mobile phone is Huawei Hongmeng system, check whether it is the cause of the mobile phone itself, and try another brand mobile phone, such as Xiaomi, oppo.
 - 更多参考下这个帖子 [详情](https://ask.dcloud.net.cn/question/154229)
-- For more information, please refer to this post [Details](https://ask.dcloud.net.cn/question/154229)
+
+### 6.2 连接mumu模拟器，一直卡在正在建立手机连接@mumu
+
+**遇到mumu模拟器问题，请尝试以下解决方法**
+
+- 首先，请确定运行基座是标准基座？还是自定义基座？如果标准基座异常，请使用自定义基座。如果自定义基座异常，标准基座正常，请重新制作自定义基座。
+- 升级mumu模拟器试试。mumu模拟器android版本是6.0, 已经很老了。建议使用mumuX模拟器或其他模拟器。
+- 建议使用Android Studio创建的模拟器，Android Studio可以创建各个版本的模拟器，[下载Android Studio](https://developer.android.google.cn/studio/)。或使用其它模拟器，如夜神模拟器。
+- 运行到Android真机是否正常？如果真机正常，请使用Android真机进行测试。
+- 重试上面的方法后，如果还无法解决，建议到论坛发帖，发帖时，请提供操作系统、HBuilderX版本、控制台错误截图、mumu模拟器信息。如果方便请在Ask帖子上附上QQ，以便我们联系您。[Ask论坛发帖](https://ask.dcloud.net.cn/explore/)

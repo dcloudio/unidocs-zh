@@ -1264,7 +1264,7 @@ package.json是一个标准json文件，不可带注释。下面是一个package
       // config: 触发器配置，在定时触发器下，config 格式为 cron 表达式，规则见https://uniapp.dcloud.net.cn/uniCloud/trigger。使用阿里云时会自动忽略最后一位，即代表年份的一位在阿里云不生效
       "config": "0 0 2 1 * * *"
   }],
-  // 云函数Url化path部分，阿里云需要以/http/开头
+  // 云函数Url化path部分
   "path": "",
   "runtime": "", // nodejs版本，可选Nodejs8、Nodejs12，默认：Nodejs8
   "keepRunningAfterReturn": true // 是否在云函数return之后继续执行，仅腾讯云nodejs12生效，详情见下方说明
@@ -1412,7 +1412,7 @@ cloudfunction-config说明如下
       // config: 触发器配置，在定时触发器下，config 格式为 cron 表达式，规则见https://uniapp.dcloud.net.cn/uniCloud/trigger。使用阿里云时会自动忽略最后一位，即代表年份的一位在阿里云不生效
       "config": "0 0 2 1 * * *"
   }],
-  // 云函数Url化path部分，阿里云需要以/http/开头
+  // 云函数Url化path部分
   "path": ""
 }
 ```
@@ -1439,7 +1439,7 @@ cloudfunction-config说明如下
             // config: 触发器配置，在定时触发器下，config 格式为 cron 表达式，规则见https://uniapp.dcloud.net.cn/uniCloud/trigger。使用阿里云时会自动忽略最后一位，即代表年份的一位在阿里云不生效
             "config": "0 0 2 1 * * *"
         }],
-        // 云函数Url化path部分，阿里云需要以/http/开头
+        // 云函数Url化path部分
         "path": ""
     }
 }

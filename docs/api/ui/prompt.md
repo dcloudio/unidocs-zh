@@ -10,9 +10,7 @@ Displays the message prompt box.
 | Parameter| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的内容，长度与 icon 取值有关。||
-| title| String| Yes| The content and length of the prompt are related to the value of icon.| |
-|icon|String|否|图标，有效值详见下方说明。||
-| icon| String| No| Icon. See the description below for valid values.| |
+|icon|String|否|图标，有效值详见下方说明，默认：success。||
 |image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序|
 |image|String|No|The local path of the custom icon (gif is not supported on the app side)|App, H5, WeChat applet, Baidu applet|
 |mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序|

@@ -77,8 +77,6 @@ Even if Ignore Domain Name Verification is checked in the development tool, the 
 ### Web中使用uniCloud的跨域处理@useinh5
 ### Cross-domain processing using uniCloud in the Web @useinh5
 
-
-
 云函数的域名是bspapp.com或tencentcloudapi.com。但开发者的web前端肯定是部署在其他域名下（含unicloud的前端网页托管）。那么Web前端js访问云函数就涉及跨域问题，导致前端js无法连接云函数服务器。
 The domain name of the cloud function is bspapp.com or tencentcloudapi.com. But the developer's web front-end must be deployed under other domain names (including unicloud's front-end web page hosting). Then the web front-end js accessing the cloud function involves cross-domain issues, which makes the front-end js unable to connect to the cloud function server.
 
@@ -109,7 +107,7 @@ If you want to break through the cross-domain restrictions during runtime, there
 
 - 跨域配置同时对云函数、前端网页托管、云存储生效
 - 阿里云云存储默认不支持localhost跨域，如有需求请添加`127.0.0.1:*`到跨域配置内
-
+- 访问云存储文件时，如果客户端存在缓存，可能会出现已配置跨域域名的情况下仍然跨域的问题。建议这种场景下在请求头内加上`{"cache-control": "no-cache","pragma": "no-cache"}`
 
 ## 客户端资源发行
 ## Client resource distribution

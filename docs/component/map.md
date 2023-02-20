@@ -321,7 +321,7 @@ nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/3790
 
 Q：应用中使用了 `<map>` 组件，打包为App时，提示缺少权限模块怎么办？
 
-A：App端原生地图，依赖第三方的 SDK，因此打包移动应用时，需要在manifest中勾选相关的权限并填写 key 信息。详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)
+A：App端原生地图，依赖第三方的 SDK，因此打包移动应用时，需要在manifest中勾选相关的权限并填写 key 信息，[详见](https://uniapp.dcloud.net.cn/tutorial/app-maps.html#)。
 
 Q：国外应用想使用谷歌地图/google地图怎么办？
 

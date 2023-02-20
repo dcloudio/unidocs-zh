@@ -190,6 +190,12 @@ HX3.6.1+版本 可以配置manifest.json配置checkPermissionDenied = true 校�
 + 参考[应用启动会主动申请手机存储权限、访问设备信息权限影响应用上架](https://uniapp.dcloud.net.cn/tutorial/android-store.html#_18%E3%80%81%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E4%BC%9A%E4%B8%BB%E5%8A%A8%E7%94%B3%E8%AF%B7%E6%89%8B%E6%9C%BA%E5%AD%98%E5%82%A8%E6%9D%83%E9%99%90%E3%80%81%E8%AE%BF%E9%97%AE%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF%E6%9D%83%E9%99%90%E5%BD%B1%E5%93%8D%E5%BA%94%E7%94%A8%E4%B8%8A%E6%9E%B6)进行配置。
 + 排查业务逻辑中是否有提前调用[plus.device.getInfo](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getInfo)等需要权限的API或主动调用[plus.android.requestPermissions](https://www.html5plus.org/doc/zh_cn/android.html#plus.android.requestPermissions)申请权限的情况，如果有则需要调整相关API的调用时机，触发相关业务场景时再调用，不要提前调用。
 
+#### 24、应用存在频繁自启动或关联启动的行为
+
++ 如果应用市场反馈的调用栈文件中有此信息`io.dcloud.xx.xx.xx.DownloadReceiver`，使用HBuilderX 3.6.18+ 重新打包提审即可。
++ 目前已知部分原生插件也同样有此隐私合规问题，开发者可根据调用栈文件中提供的信息大致判断出哪个原生插件有问题，这种情况需要联系插件作者进行整改。
++ 如果是非上述情况，可发帖或联系官方进行进一步排查。
+
 #### 看不懂文档不知道如何修改？
 
 可开通付费技术服务 参考：[https://ask.dcloud.net.cn/article/13015](https://ask.dcloud.net.cn/article/13015)

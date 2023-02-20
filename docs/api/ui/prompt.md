@@ -7,7 +7,7 @@
 |参数|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的内容，长度与 icon 取值有关。||
-|icon|String|否|图标，有效值详见下方说明。||
+|icon|String|否|图标，有效值详见下方说明，默认：success。||
 |image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序|
 |mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序|
 |duration|Number|否|提示的延迟时间，单位毫秒，默认：1500||

@@ -131,11 +131,12 @@ frvManager.getCertifyId(Object GetCertifyIdParam)
 
 **Object GetCertifyIdParam**
 
-|属性			|类型		|必填	|默认值	|说明													|
-|:-:			|:-:		|:-:	|:-:		|:-:													|
-|realName	|String	|是		|-			|用户真实姓名									|
-|idCard		|String	|是		|-			|用户身份证号									|
-|metaInfo	|String	|是		|-			|客户端初始化时返回的metaInfo	|
+|属性				|类型		|必填	|默认值	|说明													|
+|:-:				|:-:		|:-:	|:-:		|:-:													|
+|realName		|String	|是		|-			|用户真实姓名									|
+|idCard			|String	|是		|-			|用户身份证号									|
+|metaInfo		|String	|是		|-			|客户端初始化时返回的metaInfo	|
+|needPicture|Boolean|否		|-			|是否需要采集用户照片					|
 
 **返回值**
 **return value**
@@ -209,17 +210,12 @@ frvManager.getAuthResult(Object GetAuthResultParam)
 **返回值**
 **return value**
 
-|字段名		|类型	|必备						|说明																|
-|Field Name |Type |Required |Description |
-|:-:		|:-:	|:-:						|:-:																|
-|authState	|String	|是							|人脸检测状态。PROCESSING：初始化；SUCCESS：检测成功；FAIL：检测失败|
-| authState | String | Yes | Face detection state. PROCESSING: Initialization; SUCCESS: Detection succeeded; FAIL: Detection failed|
-|score		|Number	|authState为SUCCESS时必备	|活体检测结果分数													|
-| score | Number | Required when authState is SUCCESS | Liveness detection result score |
-|quality	|Number	|authState为SUCCESS时必备	|人脸图片质量分														|
-| quality | Number | Required when authState is SUCCESS |Face image quality score |
-|base64Photo|String	|authState为SUCCESS时必备	|认证图片的base64内容												|
-| base64Photo| String | Mandatory when authState is SUCCESS | base64 content of authentication image |
+|字段名			|类型		|必备											|说明																																								|
+|:-:				|:-:		|:-:											|:-:																																								|
+|authState	|String	|是												|人脸检测状态。SUCCESS：检测成功；FAIL：检测失败								|
+|score			|Number	|authState为SUCCESS时必备	|活体检测结果分数																																		|
+|quality		|Number	|authState为SUCCESS时必备	|人脸图片质量分																																			|
+|pictureUrl	|String	|authState为SUCCESS时必备	|实人认证采集的图片链接，此链接为临时链接请勿直接保存到数据库，应下载后自行保存文件	|
 
 **示例代码**
 **Example Code**

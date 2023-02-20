@@ -1745,8 +1745,7 @@ Among them, the cloudfunction-config field is the cloud function configuration, 
       // config: trigger configuration, under the timing trigger, the config format is a cron expression, see https://uniapp.dcloud.net.cn/uniCloud/trigger for the rules. When using Alibaba Cloud, the last digit will be automatically ignored, that is, the digit representing the year will not take effect in Alibaba Cloud
       "config": "0 0 2 1 * * *"
   }],
-  // 云函数Url化path部分，阿里云需要以/http/开头
-  // Cloud function Url path part, Alibaba Cloud needs to start with /http/
+  // 云函数Url化path部分
   "path": "",
   "runtime": "", // nodejs版本，可选Nodejs8、Nodejs12，默认：Nodejs8
   "keepRunningAfterReturn": true // 是否在云函数return之后继续执行，仅腾讯云nodejs12生效，详情见下方说明
@@ -1943,8 +1942,7 @@ The description of cloudfunction-config is as follows
       // config: trigger configuration, under the timing trigger, the config format is a cron expression, see https://uniapp.dcloud.net.cn/uniCloud/trigger for the rules. When using Alibaba Cloud, the last digit will be automatically ignored, that is, the digit representing the year will not take effect in Alibaba Cloud
       "config": "0 0 2 1 * * *"
   }],
-  // 云函数Url化path部分，阿里云需要以/http/开头
-  // Cloud function Url path part, Alibaba Cloud needs to start with /http/
+  // 云函数Url化path部分
   "path": ""
 }
 ```
@@ -1980,8 +1978,7 @@ The description of cloudfunction-config is as follows
             // config: trigger configuration, under the timing trigger, the config format is a cron expression, see https://uniapp.dcloud.net.cn/uniCloud/trigger for the rules. When using Alibaba Cloud, the last digit will be automatically ignored, that is, the digit representing the year will not take effect in Alibaba Cloud
             "config": "0 0 2 1 * * *"
         }],
-        // 云函数Url化path部分，阿里云需要以/http/开头
-        // Cloud function Url path part, Alibaba Cloud needs to start with /http/
+        // 云函数Url化path部分
         "path": ""
     }
 }

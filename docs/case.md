@@ -346,7 +346,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **太平洋汽车网：** H5，VR看车。需特定入口。
   
-**西祠胡同：** [App官网扫码下载](https://www.xici.net/)、[H5](https://3g.xici.net/)
+<!-- **西祠胡同：** [App官网扫码下载](https://www.xici.net/)、[H5](https://3g.xici.net/) -->
 
 **极米：** [极米官方app](https://sj.qq.com/myapp/detail.htm?apkName=com.xgimi.zhushou&info=FB45015C23ACF368D22855D6C4964312)、[官网H5版](https://m.xgimi.com/)、微信小程序搜索“极米官方商城”、微信小程序搜索“极米care+”售后服务宣传
 
@@ -388,7 +388,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 ### SaaS服务商
 
-**腾讯discuz! Q：** 经典论坛，站长利器。[https://discuz.chat/docs/](https://discuz.chat/docs/)
+**腾讯discuz! Q：** 经典论坛，站长利器。[https://discuz.com/](https://discuz.com/)
 
 **搜狐快站：** 可视化拖拽建站，例：[https://yiguob.kuaizhan.com/#/](https://yiguob.kuaizhan.com/#/)
 
@@ -396,7 +396,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **即速应用：** 微信小程序搜索“即速应用商家版”
 
-**香橙：** 餐馆SaaS服务，为餐馆提供多端的手机点餐、下单、排队叫号、营销推广解决方案。[官网](http://ivcvc.com)
+<!--**香橙：** 餐馆SaaS服务，为餐馆提供多端的手机点餐、下单、排队叫号、营销推广解决方案。[官网](http://ivcvc.com)-->
 
 **大商创：** 全渠道多用户商城解决方案。[官网](https://www.dscmall.cn)
 
@@ -431,6 +431,8 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **招商银行：** App部分页面使用uni-app制作
 
 **建设银行：** App龙支付慧点单 longpay.ccb.com
+
+**兴业银行：** 兴经营 微信小程序
 
 **湖北银行（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.yusys.app.HuBeiBank)、[iOS](https://apps.apple.com/cn/app/%E6%B9%96%E5%8C%97%E9%93%B6%E8%A1%8C%E4%B8%AA%E4%BA%BA%E6%89%8B%E6%9C%BA%E9%93%B6%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF/id718080432)
 

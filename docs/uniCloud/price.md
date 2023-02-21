@@ -88,11 +88,8 @@ Alibaba Cloud provides a service space with a free quota for each account to fac
 |							|出网流量（GB/月）			|1									|1			|20			|40			|160		|500		|
 | |Outbound traffic (GB/month) | 1 | 1 | 20 | 40 | 160 | 500 |
 |云数据库			|容量（GB）							|2									|2			|3			|5			|10			|10			|
-|Cloud Database |Capacity (GB) | 2 | 2 | 3 | 5 | 10 | 10 |
-|							|读操作数（万次/天）		|0.05								|5			|25			|50			|150		|500		|
-| |Number of read operations (10,000 times/day) | 0.05 | 5 | 25 | 50 | 150 | 500 |
-|							|写操作数（万次/天）		|0.03								|3			|15			|30			|100		|300		|
-| |Number of write operations (10,000 times/day) | 0.03 | 3 | 15 | 30 | 100 | 300 |
+|							|读操作使用量（万RU/天）		|0.05								|5			|25			|50			|150		|500		|
+|							|写操作使用量（万WU/天）		|0.03								|3			|15			|30			|100		|300		|
 |							|集合数量		|100								|100			|100			|100			|100		|100		|
 | |Number of collections | 100 | 100 | 100 | 100 | 100 | 100 |
 |							|索引数量		|400								|400			|400			|400			|400		|400		|
@@ -123,25 +120,6 @@ Yearly and monthly packages are suitable for scenarios where the business is sta
 如果你难以预估会消耗多少云资源，或者业务波峰波谷变化较大，或者套餐中某些项目不够用、某些项目又用不完，此时推荐使用下方的按量计费。
 If it is difficult for you to estimate how much cloud resources will be consumed, or the business peaks and troughs vary greatly, or some items in the package are not enough, and some items cannot be used up, then it is recommended to use the pay-as-you-go billing below.
 
-**关于计费项的额外说明（套餐和按量通用）**
-**Additional instructions on billing items (common for packages and pay-as-you-go)**
-
-- 云函数资源使用量GBs的计算方式为：云函数设置的运行内存*云函数实际执行时间（精确到ms的执行时间）。运行内存默认为512M，可以在云函数package.json中调整。优化代码，降低云函数运行时间，有助于减少GBs的费用。
-- 数据库单次写入操作每1KB数据计算一次写操作数，向上取整
-- The number of write operations is calculated for every 1KB of data in a single database write operation, rounded up
-- 数据库单次读取操作每4KB数据计算一次读操作数，向上取整
-- The number of read operations is calculated for every 4KB of data in a single read operation of the database, rounded up
-- 创建表、索引均计算一次写入
-- Creation of tables and indexes counts as one write
-- 导入导出数据功能不计算读写次数，导出db_init.json计算读次数
-- The function of importing and exporting data does not count the number of reads and writes, and exporting db_init.json counts the number of reads
-- updateAndReturn操作只计算写次数，不计算读次数
-- The updateAndReturn operation only counts the number of writes, not the number of reads
-- 云函数出网流量包含请求三方服务器发送的数据和返回给客户端的数据
-- The outbound traffic of the cloud function includes the data sent by the third-party server and the data returned to the client
-- clientDB底层也是基于云函数实现，也会消耗云函数调用次数
-- The bottom layer of clientDB is also implemented based on cloud functions, which will also consume the number of cloud function calls
-
 
 #### 按量计费@aliyun-postpay
 #### Pay as you go @aliyun-postpay
@@ -164,8 +142,8 @@ Alibaba Cloud pay-as-you-go service spaces are priced as follows:
 |							|调用次数（万次）			|0.0133			|
 |							|出网流量（GB）				|0.8				|
 |云数据库			|容量（GB/天）				|0.07				|
-|							|读操作数（万次）			|0.015			|
-|							|写操作数（万次）			|0.05				|
+|							|读操作使用量（万RU）			|0.015			|
+|							|写操作使用量（万RU）			|0.05				|
 |云存储				|容量（GB/天）				|0.0043			|
 |							|下载操作次数（万次）	|0.01				|
 |							|上传操作次数（万次）	|0.01				|
@@ -177,6 +155,59 @@ Alibaba Cloud pay-as-you-go service spaces are priced as follows:
 **Notice**
 - 按量计费是延迟结算，可能存在前一日消耗大于余额导致超支的情况。故创建按量付费服务空间时，需支付一定的**保证金**，用以抵消超支结算的情况。如果您不再使用uniCloud服务，可以申请退还保证金（目前需要发送邮件到service@dcloud.io）。
 - Pay-as-you-go is a delayed settlement, and there may be situations where the consumption on the previous day is greater than the balance, resulting in overspending. Therefore, when creating a pay-as-you-go service space, a certain **deposit** needs to be paid to offset the overspending settlement. If you no longer use the uniCloud service, you can apply for a refund of the security deposit (currently, you need to send an email to service@dcloud.io).
+
+
+#### 按量计费每日资源上限设置@aliyun-postpay-quota
+
+按量计费服务空间提供每日各项资源阈值上限的设置，通过该项设置，可避免用量过多造成无法控制成本。
+
+资源上限可在服务空间详情进行设置，该设置实时生效。每项资源指标的`数据更新延迟时间`不同，当数据更新且某项资源用量超过阈值时，则该项服务便会停服。
+
+资源阈值设置支持以下十二项资源指标：
+
+|资源分类		|资源细项						    |最小值	            |数据更新延迟时间	    |
+|:-:			|:-:								|:-:				|:-:				|
+|云函数			|资源使用量					        |1万GBs				|20分钟				|
+|				|调用次数       						|1万次				|20分钟				|
+|				|出网流量						    |1GB				|20分钟				|
+|云数据库		|容量						        |1GB				|1小时				|
+|				|读操作使用量     				    |1万RU				|20分钟				|
+|				|写操作使用量       					|1万WU				|20分钟				|
+|云存储			|容量     						    |1GB				|6小时				|
+|				|下载操作次数     					|1万次				|6小时				|
+|				|上传操作次数     					|1万次				|6小时				|
+|				|CDN 流量     						|1GB				|6小时				|
+|前端网站托管		|容量     						    |1GB				|6小时				|
+|				|流量         						|1GB				|6小时				|
+
+**注意**
+- 资源上限设置针对的是每日用量，当日用量超设置的上限便会停服，受`数据更新延迟时间`影响，在停服时资源用量可能会超出所设阈值。
+- 资源上限设置实时生效，如果设置的阈值已超当时的用量，则会实时停服。每小时最多可操作三次。
+
+#### 各项资源释义说明@aliyun-quota-description
+
+|资源分类			|资源细项							|说明	|数据更新延迟时间							|
+|:-:					|:-:									|:-:				|:-:				|
+|云函数				|资源使用量（GBs）		|资源使用量GBs = 函数配置内存GB × 运行计费时长s。 例如，配置为256MB的函数，单次运行了1760ms，计费时长为1760ms，则单次运行的资源使用量为(256 / 1024) × (1760 / 1000) = 0.44GBs|20分钟		|
+|							|调用次数			| -			|20分钟		|
+|							|出网流量（GB）				| 在云函数中访问外网时产生的出网流量，包含请求三方服务器发送的数据和返回给客户端的数据。			|20分钟		|
+|云数据库			|容量（GB）				| -				|1小时		|
+|							|读操作使用量（RU）			|读操作使用量（Read Unit）= ceil(查询数据量KB / 4)，即从数据表中读取一条4 KB数据（向上取整）计作1RU，例如读取7.6 KB的数据计作2RU。			|20分钟		|
+|							|写操作使用量（WU）			| 写操作使用量（Write Unit）= ceil(写入数据量KB / 1)，即向数据表中写入一条1 KB数据（向上取整）计作1WU，例如写入1.8 KB的数据计作2WU。				|20分钟		|
+|云存储				|容量（GB）				| -			|6小时		|
+|							|下载操作次数	|   通过CDN加速访问的次数，回源次数暂不收费。				|6小时		|
+|							|上传操作次数	|  -				|6小时		|
+|							|CDN 流量（GB）				|通过CDN加速产生的流量，回源流量暂不收费。				|6小时		|
+|前端网站托管	|容量（GB）				| -			|6小时		|
+|							|CDN 流量（GB）						|通过CDN加速产生的流量，回源流量暂不收费。				|6小时		|
+
+**补充**
+
+- 云函数实际执行时间精确到ms。运行内存默认为512M，可以在云函数package.json中调整。优化代码，降低云函数运行时间，有助于减少GBs的费用。
+- 数据库写操作使用量包含对数据的增、删、改，创建表及索引不计算写操作使用量。
+- 控制台导入导出数据功能不计算读写操作使用量，导出db_init.json计算读操作使用量。
+- updateAndReturn操作只计算写操作使用量，不计算读操作使用量。
+- clientDB底层也是基于云函数实现，也会消耗云函数调用次数。
 
 
 #### 包年包月套餐转按量计费@change-to-postpay

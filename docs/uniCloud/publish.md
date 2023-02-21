@@ -71,8 +71,7 @@ When you use the run menu in HBuilderX to run to the applet, it will connect to 
 **在开发模式下推荐直接忽略域名校验。**
 **It is recommended to ignore domain name verification directly in development mode. **
 
-即使在开发工具勾选了忽略域名校验，体验版与正式版不会忽略域名校验。**如果要发布`体验版`或`正式版`，请务必在HBuilderX内使用发行菜单。**
-Even if Ignore Domain Name Verification is checked in the development tool, the trial version and the official version will not ignore domain name verification. **If you want to release the 'Trial Version' or 'Release Version', please be sure to use the Release menu within HBuilderX. **
+即使在开发工具勾选了忽略域名校验，体验版与正式版不会忽略域名校验。**如果要发布`体验版`或`正式版`，请务必在HBuilderX内使用发行菜单。uni-app项目发行于运行输出的目录不同，请注意不要选错了**
 
 ### Web中使用uniCloud的跨域处理@useinh5
 ### Cross-domain processing using uniCloud in the Web @useinh5

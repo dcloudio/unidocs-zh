@@ -14,7 +14,7 @@ uni-im is a cloud-integrated, full-platform, free and open-source instant messag
 - 支持服务端为非uniCloud（比如：应用服务端的开发语言是php、java、go、.net、python、c#等）或 不基于uni-id-pages 开发的项目接入
 
 
-案例：打开[插件市场](https://ext.dcloud.net.cn/plugin?id=55)，点击咨询作者按钮，即可看到基于uni-im搭建的客服系统
+案例：打开[插件市场](https://ext.dcloud.net.cn/plugin?id=9711)，点击咨询作者按钮，即可看到基于uni-im搭建的客服系统
 
 下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-im](https://ext.dcloud.net.cn/plugin?name=uni-im)
 Download address: [https://ext.dcloud.net.cn/plugin?name=uni-im](https://ext.dcloud.net.cn/plugin?name=uni-im)

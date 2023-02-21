@@ -59,7 +59,8 @@ HBuilderX支持项目类型较多，只有`uni-app`、`5+app`、`wap2app`可以�
 2. 首先确认Xcode（版本必须是6.0及以上版本）已安装并能正常启动模拟器
 3. 如果仍然无法检测到，则打开Xcode，然后打开Xcode的 `Preferences --> Locations`，设置该界面中的 `Command Line Tools` 项，选择正确的`Xcode`版本即可
 
-![](https://hx.dcloud.net.cn/static/snapshots/tutorial/ios_simulator.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/xcode_ios_simulator.png)
+
 
 ### 3.2 Mac: 连接Android手机@mac-android
 
@@ -271,9 +272,9 @@ HBuilderX 3.5.3之后的版本，App真机运行 使用Node运行，不再依赖
 
 > 如果您在HBuilderX 3.5.3及之前的版本，运行项目到手机正常。HBuilderX 3.5.3之后的版本不正常，有可能是bug，请联系我们。
 
-### 6.1 同步资源失败，未得到同步资源的授权，请停止运行后重新运行，并注意手机上的授权提示
+### 6.1 同步资源失败，未得到同步资源的授权，请停止运行后重新运行，并注意手机上的授权提示@failed-to-sync-resource
 
-![](https://ask.dcloud.net.cn/uploads/questions/20220926/5c27261e36d8ca75f1342d98bd666b3a.jpg)
+[](https://web-assets.dcloud.net.cn/unidoc/zh/app_sync_resource_fail.jpeg)
 
 **如果您遇到以下错误，请先查看基座类型：**
 
@@ -302,3 +303,14 @@ HBuilderX 3.5.3之后的版本，App真机运行 使用Node运行，不再依赖
 - 建议使用Android Studio创建的模拟器，Android Studio可以创建各个版本的模拟器，[下载Android Studio](https://developer.android.google.cn/studio/)。或使用其它模拟器，如夜神模拟器。
 - 运行到Android真机是否正常？如果真机正常，请使用Android真机进行测试。
 - 重试上面的方法后，如果还无法解决，建议到论坛发帖，发帖时，请提供操作系统、HBuilderX版本、控制台错误截图、mumu模拟器信息。如果方便请在Ask帖子上附上QQ，以便我们联系您。[Ask论坛发帖](https://ask.dcloud.net.cn/explore/)
+
+### 6.3 点击运行菜单没有反应@Clicking-the-run-menu-not-respond
+
+某些情况下，如下图所示，点击菜单没有反应。
+
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/app_run_menu.jpg" style="zoom: 50%;" />
+
+- 如果替换过HBuilderX安装目录下的Node程序，请还原Node程序或重装HBuilderX。
+- 如果之前`运行菜单点击响应正常`，`操作系统环境变量`更改Node变量后出错，请清除操作系统环境变量中配置的Node变量。
+- 如果修改过`HBuilderX/plugins/launcher`下代码，请点击HBuilderX菜单【工具】【插件安装】，卸载重装App真机运行插件。
+- HBuilderX菜单【帮助】【查看运行日志】，看下日志中相关错误，根据错误进行解决。

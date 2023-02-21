@@ -3198,7 +3198,7 @@ class Sign {
 
     public function getSignature ($params, $nonce, $timestamp) {
         $paramsStr = $this->getParamsString($params);
-        $signature = hash_hmac('sha256', utf8_encode((string)$timestamp . $paramsStr), utf8_encode($this->requestAuthSecret . $nonce));
+        $signature = hash_hmac('sha256', ((string)$timestamp . $paramsStr), ($this->requestAuthSecret . $nonce));
 
         return strtoupper($signature);
     }

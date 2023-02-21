@@ -488,8 +488,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **太平洋汽车网：** H5，VR看车。需特定入口。
 **Pacific Automotive Network:** H5, VR car viewing. Specific entry is required.
   
-**西祠胡同：** [App官网扫码下载](https://www.xici.net/)、[H5](https://3g.xici.net/)
-**Xici Hutong:** [App official website scan code download](https://www.xici.net/), [H5](https://3g.xici.net/)
+<!-- **西祠胡同：** [App官网扫码下载](https://www.xici.net/)、[H5](https://3g.xici.net/) -->
 
 **极米：** [极米官方app](https://sj.qq.com/myapp/detail.htm?apkName=com.xgimi.zhushou&info=FB45015C23ACF368D22855D6C4964312)、[官网H5版](https://m.xgimi.com/)、微信小程序搜索“极米官方商城”、微信小程序搜索“极米care+”售后服务宣传
 **Xgimi:** [Official Xgimi app](https://sj.qq.com/myapp/detail.htm?apkName=com.xgimi.zhushou&info=FB45015C23ACF368D22855D6C4964312),[official website H5 version](https:/ . _
@@ -551,8 +550,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 ### SaaS服务商
 ### SaaS Service Provider
 
-**腾讯discuz! Q：** 经典论坛，站长利器。[https://discuz.chat/docs/](https://discuz.chat/docs/)
-**Tencent discuz! Q:** Classic forum, a powerful tool for webmasters. [https://discuz.chat/docs/](https://discuz.chat/docs/)
+**腾讯discuz! Q：** 经典论坛，站长利器。[https://discuz.com/](https://discuz.com/)
 
 **搜狐快站：** 可视化拖拽建站，例：[https://yiguob.kuaizhan.com/#/](https://yiguob.kuaizhan.com/#/)
 **Sohu Kuaizhan:** Visual drag-and-drop website building, for example: [https://yiguob.kuaizhan.com/#/](https://yiguob.kuaizhan.com/#/)
@@ -563,8 +561,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **即速应用：** 微信小程序搜索“即速应用商家版”
 **Instant App:** Search for "Instant App Merchant Version" in the WeChat MiniApp
 
-**香橙：** 餐馆SaaS服务，为餐馆提供多端的手机点餐、下单、排队叫号、营销推广解决方案。[官网](http://ivcvc.com)
-**Orange:** Restaurant SaaS service, providing restaurants with multi-terminal mobile ordering, ordering, queuing and calling, and marketing promotion solutions. [Official Website](http://ivcvc.com)
+<!--**香橙：** 餐馆SaaS服务，为餐馆提供多端的手机点餐、下单、排队叫号、营销推广解决方案。[官网](http://ivcvc.com)-->
 
 **大商创：** 全渠道多用户商城解决方案。[官网](https://www.dscmall.cn)
 **Dashangchuang:** Omni-channel multi-user mall solution. [Official website](https://www.dscmall.cn)
@@ -616,6 +613,8 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 
 **建设银行：** App龙支付慧点单 longpay.ccb.com
 **CCB:** App Longpay Huidian longpay.ccb.com
+
+**兴业银行：** 兴经营 微信小程序
 
 **湖北银行（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.yusys.app.HuBeiBank)、[iOS](https://apps.apple.com/cn/app/%E6%B9%96%E5%8C%97%E9%93%B6%E8%A1%8C%E4%B8%AA%E4%BA%BA%E6%89%8B%E6%9C%BA%E9%93%B6%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF/id718080432)
 **Hubei Bank (5+App):** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.yusys.app.HuBeiBank), [iOS](https ://apps.apple.com/cn/app/%E6%B9%96%E5%8C%97%E9%93%B6%E8%A1%8C%E4%B8%AA%E4%BA%BA% E6%89%8B%E6%9C%BA%E9%93%B6%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF/id718080432)

@@ -1,5 +1,14 @@
 ### uni.getFacialRecognitionMetaInfo()  
-实人认证获取设备信息
+
+uni.getFacialRecognitionMetaInfo是客户端API，用户获取实人认证设备信息
+
+App端API规范参考：[详情](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html#get-meta-info) 
+
+**平台说明**
+
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√（3.7.4+）|x|x|x|x|x|x|x|x|
 
 ### uni.startFacialRecognitionVerify(OBJECT)  
 实人认证  
@@ -16,5 +25,5 @@ App平台完整业务开发流程，参考[开发指南](https://uniapp.dcloud.n
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√（3.7.2+）|x|√|x|x|x|x|x|x|
+|√（3.7.4+）|x|√|x|x|x|x|x|x|
 

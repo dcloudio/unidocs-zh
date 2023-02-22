@@ -227,11 +227,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	"notifyKey":"5FB2CD73C7B53918728417C50762E6D45FB2CD73C7B53918728417C50762E6D4", // 跨云函数通信时的加密密钥，建议手动改下，不要使用默认的密钥，长度保持在64位以上即可
 	// 微信支付相关
@@ -431,11 +429,9 @@ The node corresponding to the payment configuration is `notifyUrl`
 // Uniform - payment callback address, the format is "service space ID":"URL address"
 "notifyUrl": {
 	// 本地开发环境-支付回调地址
-	// Local development environment - payment callback address
-	"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+	"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 	// 线上正式环境-支付回调地址
-	// Online official environment - payment callback address
-	"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+	"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 },
 ```
 
@@ -483,11 +479,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 微信支付相关
 	// WeChat payment related
@@ -524,11 +518,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 微信支付相关
 	// WeChat payment related
@@ -565,11 +557,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 微信支付相关
 	// WeChat payment related
@@ -606,11 +596,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 微信支付相关
 	// WeChat payment related
@@ -656,11 +644,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 微信支付相关
 	// WeChat payment related
@@ -697,11 +683,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 支付宝相关（证书记得选java版本）
 	// Alipay related (remember to choose the java version of the certificate)
@@ -734,11 +718,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 支付宝相关（证书记得选java版本）
 	// Alipay related (remember to choose the java version of the certificate)
@@ -771,11 +753,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 支付宝相关（证书记得选java版本）
 	// Alipay related (remember to choose the java version of the certificate)
@@ -808,11 +788,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 支付宝相关（证书记得选java版本）
 	// Alipay related (remember to choose the java version of the certificate)
@@ -846,11 +824,9 @@ module.exports = {
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
 		// 本地开发环境-支付回调地址
-		// Local development environment - payment callback address
-		"b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://b267e273-19a7-4288-99c7-f6f27f9c5b77.bspapp.com/uni-pay-co",
+		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
 		// 线上正式环境-支付回调地址
-		// Online official environment - payment callback address
-		"499e2a37-0c77-418a-82aa-3e5820ecb057": "https://499e2a37-0c77-418a-82aa-3e5820ecb057.bspapp.com/uni-pay-co",
+		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// ios内购相关
 	// ios in-app purchase related

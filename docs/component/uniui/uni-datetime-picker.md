@@ -13,12 +13,6 @@
 
 若只是需要单独选择日期和时间，不需要时间戳输入和输出，可使用原生的 picker 组件。
 
-**_点击 picker 默认值规则：_**
-
-- 若设置初始值 value, 会显示在 picker 显示框中
-- 若无初始值 value，则初始值 value 为当前本地时间 Date.now()， 但不会显示在 picker 显示框中
-
-
 ## 介绍
 ### 基本用法
 
@@ -247,7 +241,7 @@
 		</view>
 	</view>
 </template>
-``` 
+```
 > Script
 ``` html
 <script>
@@ -296,7 +290,7 @@
 		}
 	}
 </script>
-``` 
+```
 > Style
 ``` html
 <style lang="scss">

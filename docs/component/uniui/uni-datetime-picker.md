@@ -20,15 +20,6 @@ The advantage of this component is that it supports **timestamp** input and outp
 若只是需要单独选择日期和时间，不需要时间戳输入和输出，可使用原生的 picker 组件。
 If you just need to select the date and time separately, and don't need timestamp input and output, you can use the native picker component.
 
-**_点击 picker 默认值规则：_**
-**_Click picker default value rule: _**
-
-- 若设置初始值 value, 会显示在 picker 显示框中
-- If the initial value is set, it will be displayed in the picker display box
-- 若无初始值 value，则初始值 value 为当前本地时间 Date.now()， 但不会显示在 picker 显示框中
-- If there is no initial value value, the initial value value is the current local time Date.now(), but it will not be displayed in the picker display box
-
-
 ## 介绍
 ## introduce
 ### 基本用法
@@ -286,7 +277,7 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 		</view>
 	</view>
 </template>
-``` 
+```
 > Script
 ``` html
 <script>
@@ -335,7 +326,7 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 		}
 	}
 </script>
-``` 
+```
 > Style
 ``` html
 <style lang="scss">

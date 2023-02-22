@@ -1928,7 +1928,7 @@ await uniIdCo.externalRegister({
 | externalUid		 | string				 | 是		 | 自身系统的用户id，必须保证唯一性。								 |
 | nickname	     | string     | 否		 | 用户昵称	                      |
 | avatar	       | string     | 否		 | 用户头像	                      |
-| gender	       | string     | 否		 | 用户性别；0 未知 1 男性 2 女性	       |
+| gender	       | number     | 否		 | 用户性别；0 未知 1 男性 2 女性	       |
 
 **返回值**
 

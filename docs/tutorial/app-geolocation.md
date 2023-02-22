@@ -1,5 +1,10 @@
-App端定位模块封装系统自带的`系统定位`，及市场上主流的三方定位SDK，如`高德定位`、`百度定位`等，提供JS API统一调用定位功能。
-The `system positioning` that comes with the packaging system of the app-side positioning module, and the mainstream three-party positioning SDKs in the market, such as `Gode positioning`, `Baidu positioning`, etc., provide JS API unified call positioning function.
+# Geolocation定位
+
+定位模块封装了OS自带的`系统定位`，及市场上主流的三方定位SDK，如`高德定位`、`百度定位`等。并提供统一的JS API调用定位能力。
+
+::: warning 注意
+三方定位（高德、百度、谷歌）是商业收费服务，需获取授权，注意避免侵权。[详见](#lic)
+:::
 
 |项目类型|API|
 |Project Type|API|

@@ -12,14 +12,13 @@ If the developer's business is not on uniCloud, you need to refer to [Cloud func
 在uni-app客户端和uniCloud云函数中调用如下api，实现下图流程：
 Call the following api in the uni-app client and uniCloud cloud function to realize the following process:
 
+- 客户端获取metaInfo：[uni.getFacialRecognitionMetaInfo](#get-meta-info)
+- 客户端调起sdk刷脸认证：[uni.startFacialRecognitionVerify()](#start-frv)
 - 云函数获取实人认证实例：[uniCloud.getFacialRecognitionVerifyManager()](#get-frv-manager)
 - The cloud function obtains a real person authentication instance: [uniCloud.getFacialRecognitionVerifyManager()](#get-frv-manager)
 - 云函数提交姓名、身份证号以获取认证服务的certifyId：[frvManager.getCertifyId()](#get-certify-id)
 - The cloud function submits the name and ID number to obtain the certifyId of the certification service: [frvManager.getCertifyId()](#get-certify-id)
 - 云函数使用certifyId获取认证结果：[frvManager.getAuthResult()](#get-auth-result)
-- The cloud function uses certifyId to obtain the authentication result: [frvManager.getAuthResult()](#get-auth-result)
-- 客户端调起sdk刷脸认证：[uni.startFacialRecognitionVerify()](#start-frv)
-- The client invokes the sdk face authentication: [uni.startFacialRecognitionVerify()](#start-frv)
 
 完整认证流程如下：
 The complete certification process is as follows:
@@ -29,17 +28,18 @@ sequenceDiagram
   actor user as 用户端
   participant cf as 云函数/云对象
   participant service as 认证服务
-  user->>+cf: 1.1 上传姓名、身份证号获取certifyId
   activate user
-  cf->>+service: 2.1 提交姓名、身份证号获取certifyId
-  service-->>-cf: 2.2 返回certifyId
-  cf-->>-user: 1.2 返回certifyId
-  user->>+service: 3.1 调用sdk进行刷脸认证
-  service-->>-user: 3.2 返回认证结果
-  user->>+cf: 4.1 请求更新认证结果
-  cf->>+service: 5.1 请求认证结果
-  service-->>-cf: 5. 返回认证结果
-  cf-->>-user: 4.2 入库更新用户认证信息并返回认证成功
+  user->>+user: 获取设备信息metaInfo
+  user->>+cf: 提交姓名、身份证号、metaInfo获取certifyId
+  cf->>+service: 提交姓名、身份证号、metaInfo获取certifyId
+  service-->>-cf: 返回certifyId
+  cf-->>-user: 返回certifyId
+  user->>+service: 调用sdk进行刷脸认证
+  service-->>-user: 返回认证结果
+  user->>+cf: 请求校验认证结果
+  cf->>+service: 请求认证结果
+  service-->>-cf: 返回认证结果
+  cf-->>-user: 返回最终实人认证结果
   deactivate user
 ```
 
@@ -52,6 +52,89 @@ sequenceDiagram
 ### 接口防刷
 
 由于实人认证涉及费用，为避免其他人盗刷您的余额，您应当谨慎编码，防止漏洞。一般可以通过一个用户每天限制实名次数来实现防刷，未登录用户禁止调用认证接口。如果有更高的安全需求可以使用uni安全网络，可以有效防止伪造客户端请求，[详见](../secure-network.md)
+
+### 客户端接口
+
+#### 获取设备信息@get-meta-info
+调用刷脸前通过客户端先获取设备信息，调用[uni.getFacialRecognitionMetaInfo](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)
+`const metaInfo = uni.getFacialRecognitionMetaInfo();`
+
+#### 调起实人认证界面@start-frv
+
+通过云函数获取certifyId后，在客户端调用[uni.startFacialRecognitionVerify](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)打开认证界面，通过刷脸操作获取认证结果。
+
+`uni.startFacialRecognitionVerify(OBJECT)`
+
+**注意**  
+* HBuilderX3.7.2+新增支持  
+* App端需在“App模块配置”中勾选“FacialRecognitionVerify(实人认证)”，参考[详情](https://uniapp.dcloud.net.cn/tutorial/app-facialRecognitionVerify.html)  
+* App端使用蚂蚁金服人脸认证SDK，需在隐私政策的三方SDK中添加实人认证功能描述，参考[详情](https://ask.dcloud.net.cn/article/39484#FacialRecognitionVerify)
+* App-Android平台要求Android5（API Leavel 21）及以上系统
+* App-iOS平台要求iOS9及以上系统
+
+**示例**  
+```js
+uni.startFacialRecognitionVerify({
+    certifyId:"",
+    progressBarColor: "#CC0000", //刷脸圈的颜色
+    screenOrientation: "port", //认证界面UI朝向
+    success:(e)=>{
+        console.log(JSON.stringify(e))
+    },
+    fail:(e)=>{
+        console.log(JSON.stringify(e))
+    },
+    complete:(e)=>{
+        console.log(JSON.stringify(e))
+    }
+})
+```
+
+##### OBJECT参数说明  
+
+| 参数						| 类型		| 是否必传	| 支持平台		| 描述															|
+| ---						| ---		| ---		| ---			| ---															|
+| certifyId					| String	| 是		| App			| 认证流水号，由服务端根据接入的业务模式调用对应的初始化接口获取		|
+| progressBarColor			| String	| 否		| App			| 刷脸圈的颜色													|
+| screenOrientation      | String  | 否    | App-Android  | 认证界面UI朝向。port 为竖屏，land 为横屏，默认为 port|
+| success					| Function	| 否		| App			| 成功回调														|
+| fail						| Function	| 否		| App			| 失败回调														|
+| complete					| Function	| 否		| App			| 完成回调														|
+
+注: 颜色字符串格式为“#RRGGBB”，RRGGBB为十六进制字符串，如红色("#FF0000")  
+
+##### CALLBACK返回值
+
+| 参数			| 描述										|
+| ---			| ---										|
+| errSubject	| 模块名称(uni-facialRecognitionVerify)		|
+| errCode		| 错误码，详情见：[错误码](#err-code)			|
+| errMsg		| 错误信息，详情见：[错误码](#err-code)		|
+| cause			| SDK返回的原始数据 (certifyId不为空时返回)	|
+
+##### cause  
+
+| 参数		| 描述				|
+| ---		| ---				|
+| code		| SDK原始错误码		|
+| message	| SDK原始错误信息		|
+
+#### iOS平台自定义UI  
+iOS平台不支持通过参数的方式修改刷脸页的提示文案，但可以通过自定义bundle文件的方式修改提示内容以及国际化信息
+
+[APBToygerFacade.bundle文件下载](https://native-res.dcloud.net.cn/uni-app/file/APBToygerFacade.zip)
+
+首先需要下载APBToygerFacade.bundle文件，可通过修改APBToygerFacade.bundle中的内容自定义多语言文案，如 zh-Hans.strings 代表中文文案，en.strings 代表英文文案，内容格式为 "APBToygerFacade:xxxA"="xxxB"，xxxA 为目标修改文案，xxxB 为修改后的文案，示例内容如下：
+```
+"APBToygerFacade:xxxA"="xxxB";
+"APBToygerFacade:当前设备不支持刷脸"="当前设备不支持刷脸";
+"APBToygerFacade:拿起手机眨眨眼"="拿起手机，眨眨眼";
+"APBToygerFacade:再试一次"="再试一次";
+"APBToygerFacade:无法启动相机"="无法打开相机";
+"APBToygerFacade:网络不给力"="网络异常";
+```
+
+此处文案修改后需要完整测试回归 UI 以及文案变化影响，以免影响用户体验。修改后的bundle文件配到项目根目录的 nativeResources -> ios -> Resources 路径下后打包即可，详情参照[iOS原生应用配置文件和资源](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html) 
 
 ### 云函数接口
 ### Cloud function interface
@@ -75,10 +158,10 @@ uniCloud.getFacialRecognitionVerifyManager(Object GetFacialRecognitionVerifyMana
 
 **Object GetFacialRecognitionVerifyManagerParam**
 
-|属性			|类型		|必填	|默认值	|说明																																		|
-|:-:			|:-:		|:-:	|:-:		|:-:																																		|
-|requestId|String	|是		|-			|本次云函数请求的requestId，用于接口内部获取当前应用appId及客户端ip信息	|
-|appId		|String	|否		|-			|用于在url化等无法获取客户端信息的场景下传入客户端appId									|
+|属性			|类型		|必填	|默认值	|说明																										|
+|:-:			|:-:		|:-:	|:-:		|:-:																										|
+|requestId|String	|是		|-			|本次云函数请求的requestId															|
+|appId		|String	|否		|-			|用于在url化等无法获取客户端信息的场景下传入客户端appId	|
 
 **返回值**
 **return value**
@@ -135,8 +218,8 @@ frvManager.getCertifyId(Object GetCertifyIdParam)
 |:-:				|:-:		|:-:	|:-:		|:-:													|
 |realName		|String	|是		|-			|用户真实姓名									|
 |idCard			|String	|是		|-			|用户身份证号									|
-|metaInfo		|String	|是		|-			|客户端初始化时返回的metaInfo	|
-|needPicture|Boolean|否		|-			|是否需要采集用户照片					|
+|metaInfo		|String	|是		|-			|客户端获取设备信息返回的metaInfo	|
+|needPicture|Boolean|否		|false	|是否需要采集用户照片					|
 
 **返回值**
 **return value**
@@ -287,91 +370,6 @@ module.exports = {
   }
 }
 ```
-
-### 客户端接口
-### Client interface
-
-#### 获取设备信息
-调用刷脸前通过客户端先获取设备信息，调用[uni.getFacialRecognitionMetaInfo](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)
-`const metaInfo = uni.getFacialRecognitionMetaInfo();`
-
-#### 调起实人认证界面@start-frv
-#### Call up the real person authentication interface @start-frv
-
-通过云函数获取certifyId后，在客户端调用[uni.startFacialRecognitionVerify](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)打开认证界面，通过刷脸操作获取认证结果。
-
-`uni.startFacialRecognitionVerify(OBJECT)`
-
-**注意**  
-* HBuilderX3.7.2+新增支持  
-* App端需在“App模块配置”中勾选“FacialRecognitionVerify(实人认证)”，参考[详情](https://uniapp.dcloud.net.cn/tutorial/app-facialRecognitionVerify.html)  
-* App端使用蚂蚁金服人脸认证SDK，需在隐私政策的三方SDK中添加实人认证功能描述，参考[详情](https://ask.dcloud.net.cn/article/39484#FacialRecognitionVerify)
-* App-Android平台要求Android5（API Leavel 21）及以上系统
-* App-iOS平台要求iOS9及以上系统
-
-**示例**  
-```js
-uni.startFacialRecognitionVerify({
-    certifyId:"",
-    progressBarColor: "#CC0000", //刷脸圈的颜色
-    screenOrientation: "port", //认证界面UI朝向
-    success:(e)=>{
-        console.log(JSON.stringify(e))
-    },
-    fail:(e)=>{
-        console.log(JSON.stringify(e))
-    },
-    complete:(e)=>{
-        console.log(JSON.stringify(e))
-    }
-})
-```
-
-##### OBJECT参数说明  
-
-| 参数						| 类型		| 是否必传	| 支持平台		| 描述															|
-| ---						| ---		| ---		| ---			| ---															|
-| certifyId					| String	| 是		| App			| 认证流水号，由服务端根据接入的业务模式调用对应的初始化接口获取		|
-| progressBarColor			| String	| 否		| App			| 刷脸圈的颜色													|
-| screenOrientation      | String  | 否    | App-Android  | 认证界面UI朝向。port 为竖屏，land 为横屏，默认为 port|
-| success					| Function	| 否		| App			| 成功回调														|
-| fail						| Function	| 否		| App			| 失败回调														|
-| complete					| Function	| 否		| App			| 完成回调														|
-
-注: 颜色字符串格式为“#RRGGBB”，RRGGBB为十六进制字符串，如红色("#FF0000")  
-
-##### CALLBACK返回值
-
-| 参数			| 描述										|
-| ---			| ---										|
-| errSubject	| 模块名称(uni-facialRecognitionVerify)		|
-| errCode		| 错误码，详情见：[错误码](#err-code)			|
-| errMsg		| 错误信息，详情见：[错误码](#err-code)		|
-| cause			| SDK返回的原始数据 (certifyId不为空时返回)	|
-
-##### cause  
-
-| 参数		| 描述				|
-| ---		| ---				|
-| code		| SDK原始错误码		|
-| message	| SDK原始错误信息		|
-
-#### iOS平台自定义UI  
-iOS平台不支持通过参数的方式修改刷脸页的提示文案，但可以通过自定义bundle文件的方式修改提示内容以及国际化信息
-
-[APBToygerFacade.bundle文件下载](https://native-res.dcloud.net.cn/uni-app/file/APBToygerFacade.zip)
-
-首先需要下载APBToygerFacade.bundle文件，可通过修改APBToygerFacade.bundle中的内容自定义多语言文案，如 zh-Hans.strings 代表中文文案，en.strings 代表英文文案，内容格式为 "APBToygerFacade:xxxA"="xxxB"，xxxA 为目标修改文案，xxxB 为修改后的文案，示例内容如下：
-```
-"APBToygerFacade:xxxA"="xxxB";
-"APBToygerFacade:当前设备不支持刷脸"="当前设备不支持刷脸";
-"APBToygerFacade:拿起手机眨眨眼"="拿起手机，眨眨眼";
-"APBToygerFacade:再试一次"="再试一次";
-"APBToygerFacade:无法启动相机"="无法打开相机";
-"APBToygerFacade:网络不给力"="网络异常";
-```
-
-此处文案修改后需要完整测试回归 UI 以及文案变化影响，以免影响用户体验。修改后的bundle文件配到项目根目录的 nativeResources -> ios -> Resources 路径下后打包即可，详情参照[iOS原生应用配置文件和资源](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html) 
 
 ### 错误码@err-code
 ### Error code @err-code

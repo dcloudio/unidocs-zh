@@ -56,7 +56,8 @@ sequenceDiagram
 ### 客户端接口
 
 #### 获取设备信息@get-meta-info
-调用刷脸前通过客户端先获取设备信息，调用[uni.getFacialRecognitionMetaInfo](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)
+调用刷脸前通过客户端先获取设备信息，调用[uni.getFacialRecognitionMetaInfo](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)  
+
 `const metaInfo = uni.getFacialRecognitionMetaInfo();`
 
 #### 调起实人认证界面@start-frv
@@ -64,13 +65,6 @@ sequenceDiagram
 通过云函数获取certifyId后，在客户端调用[uni.startFacialRecognitionVerify](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)打开认证界面，通过刷脸操作获取认证结果。
 
 `uni.startFacialRecognitionVerify(OBJECT)`
-
-**注意**  
-* HBuilderX3.7.2+新增支持  
-* App端需在“App模块配置”中勾选“FacialRecognitionVerify(实人认证)”，参考[详情](https://uniapp.dcloud.net.cn/tutorial/app-facialRecognitionVerify.html)  
-* App端使用蚂蚁金服人脸认证SDK，需在隐私政策的三方SDK中添加实人认证功能描述，参考[详情](https://ask.dcloud.net.cn/article/39484#FacialRecognitionVerify)
-* App-Android平台要求Android5（API Leavel 21）及以上系统
-* App-iOS平台要求iOS9及以上系统
 
 **示例**  
 ```js
@@ -427,18 +421,12 @@ module.exports = {
 | 10020 | The device setting time is abnormal | The device setting time is abnormal, only returned by iOS |
 
 
-**注意**
-**Notice**
+### 注意事项 
 
-- 为对抗攻击，实人认证SDK返回的错误原因比较模糊。
+- 为对抗攻击，实人认证SDK返回的错误原因比较模糊。  
+- HBuilderX3.7.4+新增支持，标准基座可直接真机运行，打包或自定义基座需在“App模块配置”中勾选“FacialRecognitionVerify(实人认证)”（注意不是faceId）参考[详情](https://uniapp.dcloud.net.cn/tutorial/app-facialRecognitionVerify.html)
+- App-Android平台要求**Android5**（API Leavel 21）及以上系统，App-iOS平台要求**iOS9**及以上系统
+- App端使用实人认证SDK，需在隐私政策的三方SDK中添加实人认证功能描述，参考[详情](https://ask.dcloud.net.cn/article/39484#FacialRecognitionVerify)
+ 
 
-### 发行打包
-### Release Packaging
 
-实人认证内置在HBuilderX 3.7.1+ 的标准基座中，所以可真机运行。
-Real person authentication is built into the standard base of HBuilderX 3.7.1+, so it can run on a real machine.
-
-但如果开发者需要打包或打自定义基座，需在manifest的app模块配置中，勾选实人认证（注意不是faceId）。
-However, if the developer needs to package or create a custom base, he needs to check the real person authentication (note that it is not faceId) in the app module configuration of the manifest.
-
-因蚂蚁SDK仅支持Android5+和iOS9，所以Android4、iOS8等低版本手机无法使用实人认证。

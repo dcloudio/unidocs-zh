@@ -1528,6 +1528,40 @@ await uniIdCo.getInvitedUser({
 
 - 仅在用户token即将过期时返回新newToken
 
+
+#### 获取账户实名信息（脱敏）@get-realname-info <Badge text="uni-id-pages 1.1.2+" />
+
+接口名：getRealNameInfo
+
+**接口形式**
+
+```js
+await uniIdCo.getRealNameInfo({
+	decryptData
+})
+```
+
+**参数说明**
+
+|参数名		|类型	|必填	|说明											|
+|--			|--		|--		|--												|
+|decryptData		|boolean	|否		|是否解密数据；默认：true|
+
+**返回值**
+
+| 参数名			      | 类型				              | 说明				                            |
+|-------------|---------------------|-----------------------------------|
+| errCode		   | string&#124;number	 | 错误码				                           |
+| errMsg			   | string				          | 错误信息			                           |
+| type	       | number			           | 用户类型：0 个人用户 1 企业用户		              |
+| authStatus	 | number			           | 认证状态：0 未认证 1 等待认证 2 认证通过 3 认证失败		 |
+| realName	   | string			           | 姓名（脱敏）；用户类型为 0 时返回		              |
+| identity	   | string			           | 身份证号码（脱敏）；用户类型为 0 时返回		           |
+
+**注意**
+
+在uni-id-pages中默认启用敏感数据加解密，如果开发者没有使用uni-id提供的[敏感信息加密](uniCloud/uni-id-summary.md#sensitive-info-encrypt)功能，请将`decryptData`参数改为`false`，返回原始信息
+
 ### 安全验证@verifier
 
 #### 创建图形验证码@create-captcha
@@ -2008,7 +2042,7 @@ await uniIdCo.updateUserInfoByExternal({
 |--			|--					|--		|--										|
 |uid		|string				|否		|uni-id体系的用户Id；与externalUid 二选一									|
 |externalUid		|string				|否		|自身系统的用户id；与 uid 二选一									|
-| username			   | string							       | 否		 | 用户名																										                 |
+| username			   | string							       | 是		 | 用户名																										                 |
 | password			   | string							       | 否		 | 密码																											                 |
 | nickname			   | string							       | 否		 | 昵称																											                 |
 | authorizedApp | Array&lt;string&gt; | 否		 | 允许登录的app列表																				                |
@@ -2024,6 +2058,67 @@ await uniIdCo.updateUserInfoByExternal({
 |---------------------------------|---------------------|----------------------|
 | errCode						                   | string&#124;number	 | 错误码			               |
 | errMsg							                   | string				          | 错误信息		               |
+
+### 实名认证 <Badge text="待发布" />
+
+#### 获取认证ID@get-frv-certify-id
+
+接口名：getFrvCertifyId
+
+**接口形式**
+
+```js
+await uniIdCo.getFrvCertifyId({
+	realName,
+	idCard,
+	metaInfo
+})
+```
+
+**参数说明**
+
+| 参数名		      | 类型				     | 必填	 | 说明									         |
+|------------|------------|-----|---------------------|
+| realName		 | string				 | 是		 | 用户真实姓名									     |
+| idCard	    | string     | 是		 | 用户身份证号码	            |
+| metaInfo	  | String	    | 是		 | 客户端初始化时返回的metaInfo	 |
+
+**返回值**
+
+|参数名							|类型				|说明			|
+|--								|--					|--				|
+|errCode						|string&#124;number	|错误码			|
+|errMsg							|string				|错误信息		|
+|certifyId						|object				|认证Id；用于客户端调用认证接口及云函数获取认证结果		|
+
+
+#### 获取认证结果@get-frv-auth-result
+
+接口名：getFrvAuthResult
+
+**接口形式**
+
+```js
+await uniIdCo.getFrvAuthResult({
+	certifyId
+})
+```
+
+**参数说明**
+
+|参数名		|类型				|必填	|说明									|
+|--			|--					|--		|--										|
+|certifyId		|string				|是		|认证Id									|
+
+**返回值**
+
+| 参数名							    | 类型				              | 说明			                                                                      |
+|---------------|---------------------|----------------------------------------------------------------------------|
+| errCode						 | string&#124;number	 | 错误码			                                                                     |
+| errMsg							 | string				          | 错误信息		                                                                     |
+| authStatus	   | number			           | 认证状态：0 未认证 1 等待认证 2 认证通过 3 认证失败		                                          |
+| realName	     | string			           | 姓名（脱敏）；[敏感信息加密参考](/uniCloud/uni-id-summary.md#sensitive-info-encrypt)		    |
+| identity	     | string			           | 身份证号码（脱敏）；[敏感信息加密参考](/uniCloud/uni-id-summary.md#sensitive-info-encrypt)		 |
 
 ### 其他功能@extra-function
 
@@ -2241,7 +2336,7 @@ exports.main = async (event, context) => {
 ## URL化请求鉴权签名@http-reqeust-auth
 
 uni-id 在URL化请求时，会对以下 API 进行调用鉴权验证，
-在调用 API 时，开发者需要使用请求鉴权密钥`requestAuthSecret`按照 uni-id 的约定方式对请求中的关键数据进行签名值计算，
+在调用 API 时，开发者需要使用请求鉴权密钥（详见[配置文件](/uniCloud/uni-id-summary.md#config)）`requestAuthSecret`按照 uni-id 的约定方式对请求中的关键数据进行签名值计算，
 并将签名值添加到Header请求头的 `uni-id-signature` 参数中传给 uni-id 进行签名验证，uni-id 会对接收到数据进行签名值计算，
 并与接收到的请求签名值进行比对，如果签名值不一致，则视为无效签名，将拒绝本次请求。
 
@@ -2250,7 +2345,6 @@ uni-id 在URL化请求时，会对以下 API 进行调用鉴权验证，
 |---|
 |externalRegister|
 |externalLogin|
-|updateUserInfoByExternal|
 
 ### 请求头公共参数
 
@@ -2279,7 +2373,7 @@ class Sign {
 
 	getSignature (params, nonce, timestamp) {
 		const paramsStr = this.getParamsString(params)
-		const signature = crypto.createHmac('sha256', `${this.requestAuthSecret}${nonce}`).update(`${timestamp}${paramsStr}`).digest('hex')
+		const signature = crypto.createHmac('sha256', `${requestAuthSecret}${nonce}`).update(`${timestamp}${paramsStr}`).digest('hex')
 
 		return signature.toUpperCase()
 	}

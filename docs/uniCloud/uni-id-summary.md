@@ -208,6 +208,10 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
   "passwordErrorRetryTime": 3600, // 密码错误重试次数超限之后的冻结时间
   "autoSetInviteCode": false, // 是否在用户注册时自动设置邀请码，默认不自动设置
   "forceInviteCode": false, // 是否强制用户注册时必填邀请码，默认为false
+  "idCardCertifyLimit": 1, // 实名认证相关; 限制每个身份证可以绑定几个账号
+  "realNameCertifyLimit": 5, // 实名认证相关; 限制用户每日认证次数，防止接口被刷
+  "sensitiveInfoEncryptSecret": "", // 敏感信息加密密钥(长度需要大于32位)，如使用实名认证功能需配置此密钥
+  "frvNeedAlivePhoto": false, // 实名认证相关；是否获取认证照片
   "app": { // 如果你使用旧版本uni-id公共模块而不是uni-id-common这里可能配置的是app-plus，务必注意调整为app
     "tokenExpiresIn": 2592000,
     "tokenExpiresThreshold": 864000,
@@ -1557,3 +1561,69 @@ module.exports = {
 在 [uniCloud 控制台](https://unicloud.dcloud.net.cn/)，找到 uni-id 所在的服务空间，在云数据库中选中 `uni-id-users` 表，点击导入按钮，上传用户数据json文件即可。
 
 [从文件中导入数据说明](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#import)
+
+### 实名认证@frv <Badge text="待发布" />
+
+基于[实人认证](/uniCloud/frv/intro.md)服务实现，可以实现用户刷脸核验真实身份，完成实名认证。
+
+使用此功能前需要先开通实人认证服务，服务开通流程，[详见](/uniCloud/frv/service.md)
+
+uni-id-pages 中内置了实名认证页面`uni-id-pages/pages/userinfo/realname-verify/realname-verify`。
+
+<div style="display: flex; flex-basis: 10px">
+<div style="margin-right: 10px;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302072124001.jpg" width="375" />
+</div>
+<div style="margin-right: 10px;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302071745119.jpg" width="375"/>
+</div>
+<div>
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302222009563.jpg" width="375"/>
+</div>
+</div>
+
+如没有实名认证需求，可以将实名认证相关页面注释：
+
+1. 在`uni-id-pages/pages/userinfo/userinfo`页面中，注释掉实名认证的`uni-list-item`标签。
+2. 在`pages.json`中注释掉实名认证页面`uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify`。
+
+#### 配置项说明
+
+实名认证相关配置项如下，配置文件路径`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，详细的uni-id配置文件[参考](#config)
+
+| 字段                         | 类型      | 默认值   | 说明                                                        |
+|----------------------------|---------|-------|-----------------------------------------------------------|
+| idCardCertifyLimit         | number  | 1     | 限制每个身份证可以绑定几个账号                                           |
+| realNameCertifyLimit       | number  | 5     | 限制用户每日认证次数，防止接口被刷                                         |
+| sensitiveInfoEncryptSecret | string  |       | 敏感信息加密密钥(长度需要大于32位); 见下方[敏感信息加密](#sensitive-info-encrypt) |
+| frvNeedAlivePhoto          | boolean | false | 是否获取认证照片                                                  |
+
+**注意**
+
+- 如果设置了`frvNeedAlivePhoto`参数，用户认证照片会加密后存储至云存储，[敏感信息加密参考](#sensitive-info-encrypt)
+
+#### 接口参考
+
+- 获取认证服务的 certifyId [uniIdCo.getFrvCertifyId](uniCloud/uni-id-pages.md#get-frv-certify-id)
+- 使用 certifyId 获取认证结果 [uniIdCo.getFrvAuthResult](uniCloud/uni-id-pages.md#get-frv-auth-result)
+- 获取用户实名信息（脱敏）[uniIdCo.getRealNameInfo](uniCloud/uni-id-pages.md#get-realname-info)
+
+#### 敏感信息加密@sensitive-info-encrypt
+
+用户的姓名、身份证号、实人认证照片属于用户隐私信息，为了防止隐私信息泄露，在数据存储上使用了对称加密`aes-256-cbc`算法对数据进行加密。
+在前端页面需要使用时，例如”[获取用户实名信息](uniCloud/uni-id-pages.md#get-realname-info)“接口，只会返回脱敏后的数据，减少暴露风险，提高安全性。
+
+由于加密密钥`sensitiveInfoEncryptSecret`来源于`config.json`配置文件，强烈建议更换为自定义的字符串，不要使用默认的密钥。
+密钥长度最少需要32位，密钥越长破解难度越高，但不宜过长，推荐设置为32-128位之间。
+
+实人认证照片将会上传至云存储中，阿里云与腾讯云存储路径如下：
+
+- 阿里云 `/{uid}.b64`
+- 腾讯云 `/user/id-card/{uid}.b64`
+
+注意：文件不是图片不可直接下载打开。
+
+
+
+
+

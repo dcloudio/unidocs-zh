@@ -46,10 +46,16 @@ sequenceDiagram
 
 ### 客户端接口
 
-#### 获取设备信息@get-meta-info
+#### 获取实人认证设备信息@get-meta-info
 调用刷脸前通过客户端先获取设备信息，调用[uni.getFacialRecognitionMetaInfo](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)  
 
 `const metaInfo = uni.getFacialRecognitionMetaInfo();`
+
+**返回值**
+
+|字段名		|类型		| 描述		|
+|:-:			|:-:		|:-:		|
+|metaInfo|String	|云函数获取认证服务的certifyId时，在入参metaInfo中传入该值	|
 
 #### 调起实人认证界面@start-frv
 
@@ -57,7 +63,38 @@ sequenceDiagram
 
 `uni.startFacialRecognitionVerify(OBJECT)`
 
-**示例**  
+
+**参数说明**  
+
+| 参数						| 类型		| 是否必传	| 支持平台		| 描述															|
+| ---						| ---		| ---		| ---			| ---															|
+| certifyId					| String	| 是		| App			| 认证流水号，由服务端根据接入的业务模式调用对应的初始化接口获取		|
+| progressBarColor			| String	| 否		| App			| 刷脸圈的颜色													|
+| screenOrientation      | String  | 否    | App-Android  | 认证界面UI朝向。port 为竖屏，land 为横屏，默认为 port|
+| success					| Function	| 否		| App			| 成功回调														|
+| fail						| Function	| 否		| App			| 失败回调														|
+| complete					| Function	| 否		| App			| 完成回调														|
+
+注: 颜色字符串格式为“#RRGGBB”，RRGGBB为十六进制字符串，如红色("#FF0000")  
+
+**返回值**
+
+| 字段名		|  类型  | 描述				|
+| ---			| --- | ---					|
+| errSubject| String	| 模块名称(uni-facialRecognitionVerify)|
+| errCode	|	Number| 错误码，详情见：[错误码](#err-code)|
+| errMsg		| String | 错误信息，详情见：[错误码](#err-code)|
+| cause		|	Object| SDK返回的原始数据 (certifyId不为空时返回)|
+
+**cause**  
+
+| 字段名	|  类型 | 描述				|
+| ---		| ---		| ---		|
+| code	|	Number| SDK原始错误码		|
+| message	| String | SDK原始错误信息		|
+
+**示例代码**
+
 ```js
 uni.startFacialRecognitionVerify({
     certifyId:"",
@@ -74,35 +111,6 @@ uni.startFacialRecognitionVerify({
     }
 })
 ```
-
-##### OBJECT参数说明  
-
-| 参数						| 类型		| 是否必传	| 支持平台		| 描述															|
-| ---						| ---		| ---		| ---			| ---															|
-| certifyId					| String	| 是		| App			| 认证流水号，由服务端根据接入的业务模式调用对应的初始化接口获取		|
-| progressBarColor			| String	| 否		| App			| 刷脸圈的颜色													|
-| screenOrientation      | String  | 否    | App-Android  | 认证界面UI朝向。port 为竖屏，land 为横屏，默认为 port|
-| success					| Function	| 否		| App			| 成功回调														|
-| fail						| Function	| 否		| App			| 失败回调														|
-| complete					| Function	| 否		| App			| 完成回调														|
-
-注: 颜色字符串格式为“#RRGGBB”，RRGGBB为十六进制字符串，如红色("#FF0000")  
-
-##### CALLBACK返回值
-
-| 参数			| 描述										|
-| ---			| ---										|
-| errSubject	| 模块名称(uni-facialRecognitionVerify)		|
-| errCode		| 错误码，详情见：[错误码](#err-code)			|
-| errMsg		| 错误信息，详情见：[错误码](#err-code)		|
-| cause			| SDK返回的原始数据 (certifyId不为空时返回)	|
-
-##### cause  
-
-| 参数		| 描述				|
-| ---		| ---				|
-| code		| SDK原始错误码		|
-| message	| SDK原始错误信息		|
 
 #### iOS平台自定义UI  
 iOS平台不支持通过参数的方式修改刷脸页的提示文案，但可以通过自定义bundle文件的方式修改提示内容以及国际化信息

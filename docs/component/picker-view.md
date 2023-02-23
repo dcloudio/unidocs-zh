@@ -109,9 +109,7 @@
 		margin-top: 20rpx;
 	}
 	.item {
-		height: 50px;
-		align-items: center;
-		justify-content: center;
+		line-height: 100rpx;
 		text-align: center;
 	}
 </style>

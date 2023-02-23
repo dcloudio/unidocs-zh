@@ -1856,9 +1856,7 @@ If you need to continue execution after return, you need to disconnect the redis
 ### The number, volume, and cold start balance of cloud functions
 
 鉴于：
-Given:
-- 每个服务空间的云函数数量是有限的，阿里云是48个，腾讯云是9~149个，[详见](price.md)
-- The number of cloud functions in each service space is limited, Alibaba Cloud has 48, Tencent Cloud has 9~149, [see details](price.md)
+- 每个服务空间的云函数数量是有限的，阿里云是48个，腾讯云是149个，[详见](price.md)
 - 每个云函数的体积限制是10M（含node_modules）
 - The volume limit of each cloud function is 10M (including node_modules)
 - 云函数有冷启动问题

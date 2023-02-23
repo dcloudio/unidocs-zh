@@ -49,11 +49,8 @@ The compiler compiles the developer's code, and the compiled output is analyzed 
 		+ 在iOS平台，将.uts文件编译为swift代码
 		+ On iOS platform, compile .uts files into swift code
 - 编译器分vue2版和vue3版
-- The compiler is divided into vue2 version and vue3 version
-	* vue2版：基于wepback实现
-	* vue2 version: based on wepback implementation
-	* vue3版：基于Vite实现。性能更快
-	* vue3 version: based on Vite implementation. faster performance
+	* vue2版：基于`webpack`实现
+	* vue3版：基于`Vite`实现，性能更快
 - 编译器支持条件编译，即可以指定某部分代码只编译到特定的终端平台。从而将公用和个性化融合在一个工程中。
 - The compiler supports conditional compilation, that is, you can specify that a certain part of the code is only compiled to a specific terminal platform. Thereby combining public and personalization in one project.
 ```js

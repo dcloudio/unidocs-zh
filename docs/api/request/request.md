@@ -12,7 +12,7 @@
 |header|Object|否||设置请求的 header，header 中不能设置 Referer|App、H5端会自动带上cookie，且H5端不可手动修改|
 |method|String|否|GET|有效值详见下方说明||
 |timeout|Number|否|60000|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)、微信小程序（2.10.0）、支付宝小程序|
-|dataType|String|否|json	|如果设为 json，会尝试对返回的数据做一次 JSON.parse||
+|dataType|String|否|json	|如果设为 json，会对返回的数据进行一次 JSON.parse，非 json 不会进行 JSON.parse||
 |responseType|String|否|text	|设置响应的数据类型。合法值：text、arraybuffer|支付宝小程序不支持|
 |sslVerify|Boolean|否|true|验证 ssl 证书|仅App安卓端支持（HBuilderX 2.3.3+），不支持离线打包|
 |withCredentials|Boolean|否|false|跨域请求时是否携带凭证（cookies）|仅H5支持（HBuilderX 2.6.15+）|

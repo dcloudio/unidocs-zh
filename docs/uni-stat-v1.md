@@ -26,8 +26,7 @@ But since uni-app 2.7, the default is changed to not enabled. It needs to be man
 在HBuilderX中打开manifest，选择 uni统计，如下图：
 Open the manifest in HBuilderX and select uni statistics, as shown below:
 
-![选择 uni统计](https://img-cdn-tc.dcloud.net.cn/uploads/article/20200428/761d2dca6ce34febfc4d43c09c6fd85f.jpg)
-![Select uni statistics](https://img-cdn-tc.dcloud.net.cn/uploads/article/20200428/761d2dca6ce34febfc4d43c09c6fd85f.jpg)
+![选择 uni统计](https://ask.dcloud.net.cn/uploads/article/20200428/761d2dca6ce34febfc4d43c09c6fd85f.jpg)
 
 如果不使用HBuilderX，也可在 `manifest.json` 的源码视图中手动关闭 uni统计
 If you don't use HBuilderX, you can also manually turn off uni statistics in the source view of `manifest.json`

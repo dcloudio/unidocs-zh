@@ -375,12 +375,10 @@ Developers can initiate application registration, modification, and deletion pro
 Complete document reference: [https://ask.dcloud.net.cn/article/38005](https://ask.dcloud.net.cn/article/38005)
 
 ### HBuilderX插件
-### HBuilderX plugin
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20201110/2514e1ec371bdebbb9a4111052939720.png)
+![](https://ask.dcloud.net.cn/uploads/article/20201110/2514e1ec371bdebbb9a4111052939720.png)
 
 ### Web平台
-### Web Platform
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20220914/3bc9cb477832756cc727f3c550b4fcd0.jpg)
+![](https://ask.dcloud.net.cn/uploads/article/20220914/3bc9cb477832756cc727f3c550b4fcd0.jpg)
 
 ## 附录
 ## Appendix

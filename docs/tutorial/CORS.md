@@ -78,7 +78,7 @@ In addition to coordinating the back-end configuration to allow cross-domain, yo
 这个内置浏览器经过官方处理，不存在跨域问题，简单易用，推荐使用。（需HBuilderX 2.6以上）
 This built-in browser has been officially processed, there is no cross-domain problem, it is easy to use, and it is recommended to use. (Requires HBuilderX 2.6 or above)
 在打开页面后，点HBuilderX右上角的预览，即可打开内部浏览器。或者在运行菜单里选择运行到内置浏览器也可以。
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20190721/601e3f94838c1623afe0c42a2355136c.png)
+![](https://ask.dcloud.net.cn/uploads/article/20190721/601e3f94838c1623afe0c42a2355136c.png)
 
 ### 方案2 配置webpack-dev-server代理
 ### Scheme 2 Configure webpack-dev-server proxy
@@ -127,9 +127,9 @@ For local preview only, a Chrome browser plugin can be used to assist with debug
   3. 将下载的扩展插件拖入扩展管理页面
   3. Drag the downloaded extension into the extension management page
 
-  ![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20181120/29a90981041d78630895a124b123254d.png)
+  ![](https://ask.dcloud.net.cn/uploads/article/20181120/29a90981041d78630895a124b123254d.png)
 
-  ![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20181120/c706b1b4247f8e14862c86040348d832.png)
+  ![](https://ask.dcloud.net.cn/uploads/article/20181120/c706b1b4247f8e14862c86040348d832.png)
 
 
 #### 使用方式

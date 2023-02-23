@@ -2,11 +2,9 @@
 > Requires HBuilderX 3.5.1 and above to support
 
 为了更好的服务欢迎：
-For better service welcome:
-<a class="join-group-chat" target="_blank" href="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
+<a class="join-group-chat" target="_blank" href="https://ask.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
 	加入uni-push2.0 交流群
-	Join the uni-push2.0 exchange group
-	<img src="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
+	<img src="https://ask.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
 </a>
 
 <style>

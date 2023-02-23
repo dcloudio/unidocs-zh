@@ -181,8 +181,7 @@ With uni-push, developers should no longer use other push schemes. However, we f
 	A: Not currently supported.
 
 - **使用有其他疑问**，欢迎扫码加入 uni-push2.0 微信交流群讨论：
-- **If you have other questions about usage**, please scan the QR code to join the uni-push2.0 WeChat exchange group discussion:
-    <br/><img src="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG" width="250"/>
+    <br/><img src="https://ask.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG" width="250"/>
 
 # 快速上手
 # Quick start

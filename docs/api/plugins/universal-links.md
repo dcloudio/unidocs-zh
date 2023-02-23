@@ -87,7 +87,7 @@ Open the manifest.json file of the project, in the "iOS Platform Universal Links
 打开微信[开放平台](https://open.weixin.qq.com/)，在“管理中心”页面的“移动应用”下找到已经申请的应用（没有申请应用请点击“创建移动应用”新建应用），点击“查看”打开应用详情页面。
 Open WeChat [Open Platform](https://open.weixin.qq.com/), and find the application that has been applied under "Mobile Application" on the "Management Center" page (if you have not applied for an application, please click "Create Mobile Application" to create a new one) application), click "View" to open the application details page.
 在“开发信息”栏后点击修改，在“iOS应用”下的“Universal Links”项中配置应用的通用链接，如下图所示：
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20191008/e933f7ef8ff078bf05e28a24efee74bd.png)
+![](https://ask.dcloud.net.cn/uploads/article/20191008/e933f7ef8ff078bf05e28a24efee74bd.png)
 
 #### QQ
 

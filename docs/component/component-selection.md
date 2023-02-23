@@ -37,8 +37,7 @@ These components are all supported by uni-app, but due to the technical characte
 下面这张表格，可以清楚的表达不同类型的组件的兼容性。
 The following table can clearly express the compatibility of different types of components.
 
-![扩展组件的选择](https://img-cdn-tc.dcloud.net.cn/uploads/article/20200422/2b0f69a305534929951ef7b1bea847e6.jpg)
-![Selection of extension components](https://img-cdn-tc.dcloud.net.cn/uploads/article/20200422/2b0f69a305534929951ef7b1bea847e6.jpg)
+![扩展组件的选择](https://ask.dcloud.net.cn/uploads/article/20200422/2b0f69a305534929951ef7b1bea847e6.jpg)
 
 从表格中可以很明显看出，更推荐使用的是全端兼容的uni规范组件。
 It is obvious from the table that it is more recommended to use fully end compatible uni specification components.
@@ -111,7 +110,7 @@ uni ui has the following advantages:
 11. Support [uni_module specification](https://uniapp.dcloud.net.cn/uni_modules), which is convenient for plug-in update
 
 推荐在HBuilderX新建项目时，直接选择uni ui项目模板，然后在代码里直接敲u，所有组件都拉出来，不用引用、不用注册，直接就用。
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20200424/dc948a41cd85a418e84cde325c055a75.jpg)
+![](https://ask.dcloud.net.cn/uploads/article/20200424/dc948a41cd85a418e84cde325c055a75.jpg)
 ![](http://img.cdn.aliyun.dcloud.net.cn/uni-app/doc/uni-ui-snippet.jpg)
 
 #### 插件市场更多组件

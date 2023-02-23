@@ -115,7 +115,7 @@ In response to the above problems, a solution of `one cloud with multiple projec
 选中项目下的`uniCloud-aliyun|tcb`目录， 右键菜单，点击 【关联云服务空间或项目... 】 ，可以`关联云服务空间`、`绑定其它项目的服务空间`：
 Select the `uniCloud-aliyun|tcb` directory under the project, right-click the menu, click [Associate cloud service space or project...], you can `Associate cloud service space`, `Bind service space of other projects`:
 
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20201207/3ab467421c154e83077bb96f1497dec1.gif)
+![](https://ask.dcloud.net.cn/uploads/article/20201207/3ab467421c154e83077bb96f1497dec1.gif)
 
 ##### 已关联项目
 ##### Associated Projects
@@ -123,7 +123,7 @@ Select the `uniCloud-aliyun|tcb` directory under the project, right-click the me
 选择关联项目，此时显示的是所有的uniapp项目。用户选择任一uniapp项目进行关联,  关联效果如下图：
 Select the associated project, all uniapp projects are displayed at this time. The user selects any uniapp item to associate, and the association effect is as follows:
 
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20201207/6eab0accfe8fa00b97972b04773df688.png)
+![](https://ask.dcloud.net.cn/uploads/article/20201207/6eab0accfe8fa00b97972b04773df688.png)
 
 
 1. 查看关联项目的服务空间：点击后，会在项目管理器打开关联的项目
@@ -137,7 +137,7 @@ Select the associated project, all uniapp projects are displayed at this time. T
 ##### 插件市场导入插件
 ##### Plugins Market Import Plugins
 
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20201207/0d4ab346f103f0a746801a59b9b51c57.png)
+![](https://ask.dcloud.net.cn/uploads/article/20201207/0d4ab346f103f0a746801a59b9b51c57.png)
 
 
 #### 特别说明

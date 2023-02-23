@@ -20,9 +20,7 @@ Make a network request.
 |method|String|否|GET|有效值详见下方说明||
 | method| String|No| GET|Please refer to the description below for valid values||
 |timeout|Number|否|60000|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)、微信小程序（2.10.0）、支付宝小程序|
-| timeout| Number|No| 60000|Timeout time, unit ms| H5(HBuilderX 2.9.9+), APP(HBuilderX 2.9.9+), WeChat MiniApp(2.10.0), Alipay MiniApp|
-|dataType|String|否|json	|如果设为 json，会尝试对返回的数据做一次 JSON.parse||
-| dataType| String|No| json |If it is set to json, it will try to do a JSON.parse on the returned data||
+|dataType|String|否|json	|如果设为 json，会对返回的数据进行一次 JSON.parse，非 json 不会进行 JSON.parse||
 |responseType|String|否|text	|设置响应的数据类型。合法值：text、arraybuffer|支付宝小程序不支持|
 | responseType | String | No | text | Sets the data type of the response. Legal values: text, arraybuffer|Alipay MiniApp not support|
 |sslVerify|Boolean|否|true|验证 ssl 证书|仅App安卓端支持（HBuilderX 2.3.3+），不支持离线打包|

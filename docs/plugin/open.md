@@ -309,10 +309,10 @@ DSP入驻DCloud开放平台后，需配置希望获取开发者哪些信息，�
 完整文档参考：[https://ask.dcloud.net.cn/article/38005](https://ask.dcloud.net.cn/article/38005)
 
 ### HBuilderX插件
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20201110/2514e1ec371bdebbb9a4111052939720.png)
+![](https://ask.dcloud.net.cn/uploads/article/20201110/2514e1ec371bdebbb9a4111052939720.png)
 
 ### Web平台
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20220914/3bc9cb477832756cc727f3c550b4fcd0.jpg)
+![](https://ask.dcloud.net.cn/uploads/article/20220914/3bc9cb477832756cc727f3c550b4fcd0.jpg)
 
 ## 附录
 

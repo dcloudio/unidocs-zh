@@ -114,7 +114,7 @@ uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而u
 	答：暂不支持。
 
 - **使用有其他疑问**，欢迎扫码加入 uni-push2.0 微信交流群讨论：
-    <br/><img src="https://img-cdn-tc.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG" width="250"/>
+    <br/><img src="https://ask.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG" width="250"/>
 
 # 快速上手
 ## 第一步：开通  

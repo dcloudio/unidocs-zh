@@ -16,7 +16,7 @@ web控制台地址：[https://tongji.dcloud.net.cn](https://tongji.dcloud.net.cn
 
 在HBuilderX中打开manifest，选择 uni统计，如下图：
 
-![选择 uni统计](https://img-cdn-tc.dcloud.net.cn/uploads/article/20200428/761d2dca6ce34febfc4d43c09c6fd85f.jpg)
+![选择 uni统计](https://ask.dcloud.net.cn/uploads/article/20200428/761d2dca6ce34febfc4d43c09c6fd85f.jpg)
 
 如果不使用HBuilderX，也可在 `manifest.json` 的源码视图中手动关闭 uni统计
 

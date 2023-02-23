@@ -55,7 +55,7 @@ config.security = {
 
 这个内置浏览器经过官方处理，不存在跨域问题，简单易用，推荐使用。（需HBuilderX 2.6以上）
 在打开页面后，点HBuilderX右上角的预览，即可打开内部浏览器。或者在运行菜单里选择运行到内置浏览器也可以。
-![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20190721/601e3f94838c1623afe0c42a2355136c.png)
+![](https://ask.dcloud.net.cn/uploads/article/20190721/601e3f94838c1623afe0c42a2355136c.png)
 
 ### 方案2 配置webpack-dev-server代理
 下面是一篇比uni官网文档更详细的配置指南，这里就直接贴地址了：[https://juejin.im/post/5e43b2645188254902765766](https://juejin.im/post/5e43b2645188254902765766)
@@ -85,9 +85,9 @@ config.security = {
   2. 点击浏览器右上角的菜单按钮打开谷歌浏览器的扩展管理页面
   3. 将下载的扩展插件拖入扩展管理页面
 
-  ![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20181120/29a90981041d78630895a124b123254d.png)
+  ![](https://ask.dcloud.net.cn/uploads/article/20181120/29a90981041d78630895a124b123254d.png)
 
-  ![](https://img-cdn-tc.dcloud.net.cn/uploads/article/20181120/c706b1b4247f8e14862c86040348d832.png)
+  ![](https://ask.dcloud.net.cn/uploads/article/20181120/c706b1b4247f8e14862c86040348d832.png)
 
 
 #### 使用方式

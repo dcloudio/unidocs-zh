@@ -28,8 +28,8 @@ uni-app分`编译器`和`运行时（runtime）`。uni-app能实现一套代码�
 		+ 在Android平台，将.uts文件编译为kotlin代码
 		+ 在iOS平台，将.uts文件编译为swift代码
 - 编译器分vue2版和vue3版
-	* vue2版：基于wepback实现
-	* vue3版：基于Vite实现。性能更快
+	* vue2版：基于`webpack`实现
+	* vue3版：基于`Vite`实现，性能更快
 - 编译器支持条件编译，即可以指定某部分代码只编译到特定的终端平台。从而将公用和个性化融合在一个工程中。
 ```js
 // #ifdef  App

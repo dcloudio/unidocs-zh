@@ -208,6 +208,7 @@ uni-im本身并不收费，实际使用中需要依赖uniCloud云服务，会产
 	- 客户端如果不是uni-app的，如果是网页，可iframe内嵌。如果是原生app，可嵌入[uni小程序sdk](https://nativesupport.dcloud.net.cn/README)
 
 	- 不基于`uni-id-pages`的客户端代码，仅基于`uni-id-co`的项目，需要在登录成功和用户信息更新时，同步更新uniId store内的当前用户信息（uni-im显示当前用户头像、昵称时会用到）示例代码：
+
 	```js
 		//导入uniCloud客户端账户体系，用户信息状态管理模块
 		import {mutations as uniIdMutations} from '@/uni_modules/uni-id-pages/common/store.js';
@@ -215,6 +216,7 @@ uni-im本身并不收费，实际使用中需要依赖uniCloud云服务，会产
 	```
 	- 基于老版uni-id(版本号：3.x) 开发的项目，需要如下改造：
 		1. 在登录成功和token续期后，绑定当前账号与设备推送标识的关联关系。示例代码：
+		
 	```js
 		const uniIdCo = uniCloud.importObject("uni-id-co", {customUI: true})
 		uni.getPushClientId({

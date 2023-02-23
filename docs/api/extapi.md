@@ -101,6 +101,8 @@ uni-app的runtime不适合内置很多waiting样式和资源，而使用三方�
 - uts在Android上涉及arr、jar、so库等三方sdk的时候，也需打包自定义基座才能真机运行。
 - wgt升级只对js、css生效，uts代码无法热更新。但这不意味着使用uts的项目就失去热更新能力，只是uts部分不能热更。js、vue、css、图片仍然可以打包成wgt热更。
 
+4. `ext api`在入口文件`export`的API，必须在`package.json`中编写注册声明 
+
 ## 如何开发uni ext api
 
 ### 创建一个符合规则的`uni_modules`插件（通常是`utssdk`类型），如`uni-getbatteryinfo`

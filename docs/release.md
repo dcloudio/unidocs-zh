@@ -1,3 +1,69 @@
+#### 3.7.3.20230223
+* 【uni-app】
+* 【重要】新增 uts 组件。可使用uts语言开发原生扩展组件 [详情](https://uniapp.dcloud.net.cn/plugin/uts-component.html)
+* 新增 uni-vue-devtools 插件，方便查看、修改 data 及审查自定义组件 [详情](https://uniapp.dcloud.net.cn/tutorial/debug/uni-vue-devtools.html)
+* 修复 Vue3 项目 uni.scss 中变量条件编译无效的Bug [详情](https://ask.dcloud.net.cn/question/162271)
+* Web平台、App平台 新增 page-meta 组件支持 scroll-top 属性
+* Web平台 修复 video 组件 show-progress 属性不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3908)
+* Web平台 修复 input 组件 type=digit 时清空输入框后 placeholder 不显示的Bug [详情](https://ask.dcloud.net.cn/question/160726)
+* Web平台 修复 Vue3 项目 onNavigationBarSearchInputConfirmed 无效的Bug [详情](https://ask.dcloud.net.cn/question/154740)
+* Web平台 修复 Vue3 项目切换 tabbar 页面不触发 onTabItemTap 的Bug
+* Web平台 修复 标题栏按钮文字在国际化后显示异常的Bug [详情](https://ask.dcloud.net.cn/question/162369)
+* Web平台 修复 Vue3 项目 picker 打包后卡死的Bug [详情](https://ask.dcloud.net.cn/question/162091)
+* Web平台 修复 Vue2 项目 内置浏览器高德地图 uni.getLocation 报错的Bug [详情](https://ask.dcloud.net.cn/question/156303)
+* App平台 新增 animation-view 组件 即 lottie [详情](https://uniapp.dcloud.net.cn/component/animation-view.html)
+* App平台 修复 Vue3 项目中原生导航栏 type 为 transparent 时，自定义 buttons 在导航栏上滑至顶端时颜色不改变的Bug [详情](https://ask.dcloud.net.cn/question/154074)
+* App平台 修复 Vue3 项目 movable-area 组件改变高度后可移动区域的高度不会更新的Bug [详情](https://ask.dcloud.net.cn/question/159723)
+* App平台 修复 Vue3 项目 preloadPage 生命周期触发异常的Bug [详情](https://ask.dcloud.net.cn/question/160416)
+* App-Android平台 修复 3.6.17版升级fastjson引出的 uni.sendSocketMessage 无法发送 ArrayBuffer 数据的Bug [详情](https://ask.dcloud.net.cn/question/161872)
+* App-Android平台 修复 nvue 页面 cell 组件高度超过 list 自身高度会频繁触发 loadmore 事件的Bug [详情](https://ask.dcloud.net.cn/question/161972)
+* App-Android平台 修复 nvue 页面 input 组件 placeholder 属性改变后 placeholder-style、placeholder-class 属性失效的Bug [详情](https://ask.dcloud.net.cn/question/161678)
+* App-Android平台 修复 nvue 页面 map 组件的 marker 设置 anchor 时气泡显示异常的Bug [详情](https://ask.dcloud.net.cn/question/161180)
+* App-Android平台 修复 nvue 页面 map 组件更新 marker 时 cover-view 不显示的Bug [详情](https://ask.dcloud.net.cn/question/161998)
+* App-Android平台 修复 uni.getSystemInfo 在部分设备获取 deviedId 值可能相同的Bug [详情](https://ask.dcloud.net.cn/question/163174)
+* 小程序平台 新增 pages.json 支持配置 entryPagePath 属性 [详情](https://ask.dcloud.net.cn/question/126216)
+* 小程序平台 修复 Vue3 项目 页面作为组件引用，导航栏标题配置无效的Bug [详情](https://ask.dcloud.net.cn/question/162745)
+* 小程序平台 修复 Vue2 项目部分情况下 v-for 嵌套 v-model 编译后无效的Bug
+* 微信小程序平台 修复 Vue2 项目中使用 uni.env 时返回值不正确的Bug [详情](https://ask.dcloud.net.cn/question/159865)
+* 支付宝小程序平台 修复 钉钉小程序使用 uni.saveImageToPhotosAlbum 报错的Bug [详情](https://ask.dcloud.net.cn/question/159183)
+* 支付宝小程序平台 修复 uni.getSystemInfo 返回的 platform 属性在模拟器中不正确的Bug
+* QQ小程序平台 修复 Vue3 项目 video 组件 ended 事件在真机不触发的Bug [详情](https://ask.dcloud.net.cn/question/155602)
+* 快手小程序平台 修复 Vue3 项目 button getPhoneNumber 触发异常的Bug [详情](https://github.com/dcloudio/uni-app/issues/4113)
+* uts插件 App平台 新增 Math 相关函数支持
+* uts插件 App-Android平台 修复 Array.sort函数不生效的Bug
+* uts插件 App-iOS平台 新增 支持调用 .a 静态库 [详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#ios-libs)
+* uts插件 App-iOS平台 修复 使用多层嵌套复杂对象时格式化不正确的Bug
+* uts插件 App-iOS平台 修复 调用方法时参数大于实际数量时功能可能异常的Bug
+* uts插件 App-iOS平台 修复 组件热刷新后属性初始值不生效的Bug
+* 【uniCloud】
+* 新增 schema扩展js支持引入公共模块及扩展库 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#deps-of-jql)
+* 新增 JQL触发器 方法新增一些参数 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-param)
+* 新增 JQL触发器 支持联表查询时副表的读取触发器，beforeReadAsSecondaryCollection 和 afterReadAsSecondaryCollection [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-timing)
+* 调整 JQL触发器 参数内的 subCollection 改为 secondaryCollection。老参数仍可访问但会给出警告 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-param)
+* 修复 JQL语法字符串格式查询语句内使用数组且其中包含负数时报错的Bug [详情](https://ask.dcloud.net.cn/question/161852)
+* 修复 云对象未返回值时客户端报错的Bug [详情](https://ask.dcloud.net.cn/question/161852)
+* 修复 阿里云正式版删除文件出错未返回错误信息的Bug
+* 本地调试插件 修复 云函数内使用 console.warn 打印日志输出到控制台颜色不正确的Bug
+* 【App插件(含5+App和uni-app的App端)】
+* Android平台 新增 隐私政策提示框支持 backToExit 配置是否响应点击系统返回键退出应用，解决部分应用市场上架审核可能提示`系统返回键失灵`的问题 [详情](https://uniapp.dcloud.net.cn/tutorial/app-privacy-android.html)
+* Android平台 更新 uni-AD 腾讯优量汇广告SDK 为 4.500.1370 版；Sigmob广告联盟SDK 为 4.9.0 版
+* Android平台 更新 云端打包环境 compileSdkVersion 为 32
+* Android平台 修复 隐私合规检测可能报`隐私弹窗中处理超链接的过程中调用到了获取设备sim卡国家信息的api`的Bug [详情](https://ask.dcloud.net.cn/question/161479)
+* Android平台 修复 图片选择在 Android13 设备提示没有权限的Bug [详情](https://ask.dcloud.net.cn/question/160879)
+* Android平台 修复 plus.io.FileReader 的 readAsDataURL 读取数据时未按 slice 分割位置读取的Bug [详情](https://ask.dcloud.net.cn/question/160467)
+* Android平台 修复 视频播放控件 VideoPlayer 在视频缓冲时触发 timeupdate 事件的Bug
+* Android平台 更新 Paypal SDK 为 0.8.8 版，修复无法正常支付的Bug [详情](https://ask.dcloud.net.cn/question/154976)
+* Android平台 修复 3.6.17版引出的 一键登录 全屏模式下配置其他登录按钮可能引起显示异常的Bug
+* Android平台 修复 plus.downloader.clear 无法清除持久化存储的下载任务的Bug [详情](https://ask.dcloud.net.cn/question/162099)
+* Android平台 修复 使用 UniPush 上架应用市场审核可能报`频繁自启动或关联启动第三方App`的Bug [详情](https://ask.dcloud.net.cn/question/162680)
+* Android平台 修复 真机运行时应用沙盒目录 _doc 中的文件会被清除的Bug
+* iOS平台 新增 苹果应用内支付 IAP 支持订阅促销优惠 [详情](https://uniapp.dcloud.net.cn/api/plugins/payment.html#%E4%BF%83%E9%94%80%E4%BC%98%E6%83%A0%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E)
+* iOS平台 更新 一键登录使用的个验SDK为 3.0.3.0 版
+* iOS平台 修复 音频播放 AudioPlayer seekTo 跳转指定位置不支持毫秒的Bug
+* 【uni小程序SDK】
+* Android平台 新增 适配支持暗黑模式
+* Android平台 修复 打开uni小程序切换应用到后台运行一段时间后可能引起崩溃的Bug [详情](https://ask.dcloud.net.cn/question/141868)
+
 #### 3.6.18.20230117
 * 【uni-app】
 * Web平台 修复 3.6.17版引出的 Vue3 项目 scroll-view 组件插槽部分情况下渲染异常的Bug [详情](https://ask.dcloud.net.cn/question/149557)

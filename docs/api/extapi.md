@@ -145,6 +145,8 @@ Only uni's built-in api is upgraded along with HBuilder. Please remember the dif
 - wgt升级只对js、css生效，uts代码无法热更新。但这不意味着使用uts的项目就失去热更新能力，只是uts部分不能热更。js、vue、css、图片仍然可以打包成wgt热更。
 - The wgt upgrade only takes effect for js and css, and the uts code cannot be hot updated. But this does not mean that the project using uts loses the hot update ability, but the uts part cannot be hot updated. js, vue, css, and images can still be packaged into wgt hot updates.
 
+4. `ext api`在入口文件`export`的API，必须在`package.json`中编写注册声明 
+
 ## 如何开发uni ext api
 ## How to develop uni ext api
 

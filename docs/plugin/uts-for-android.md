@@ -1027,4 +1027,4 @@ console.log(permissionArray.toTypedArray())
 
 ### 7.2 目前尚不支持 Math内置
 
-目前尚不支持 Math内置，稍后版本会支持
+HBuilderX 3.7.1 版本已支持

@@ -436,12 +436,12 @@ module.exports = {
 - App端使用实人认证SDK，需在隐私政策的三方SDK中添加实人认证功能描述，参考[详情](https://ask.dcloud.net.cn/article/39484#FacialRecognitionVerify)
 
 
-### 非 uniCloud 业务使用 <Badge text="uni-frv-pages 待发布" />
+### 非 uniCloud 业务使用@uni-frv-external <Badge text="uni-frv-external 待发布" />
 
-如果您的业务没有部署在 uniCloud 上，可以通过 uni-frv-pages 来实现实人认证功能。
-uni-frv-pages 集成了实名认证前端页面和云端云对象，适用于没有使用uniCloud或没有使用uni-id账号体系的项目。
+如果您的业务没有部署在 uniCloud 上，可以通过 uni-frv-external 来实现实人认证功能。
+uni-frv-external 集成了实名认证前端页面和云端云对象，适用于没有使用uniCloud或没有使用uni-id账号体系的项目。
 
-插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-frv-pages](https://ext.dcloud.net.cn/plugin?name=uni-frv-pages)
+插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-frv-external](https://ext.dcloud.net.cn/plugin?name=uni-frv-external)
 
 
 #### 业务流程
@@ -473,15 +473,15 @@ sequenceDiagram
 #### 项目文件说明
 ```text
 ├── uni_modules                                     存放[uni_module](/uni_modules)规范的插件。
-│    ├── uni-frv-pages                              
+│    ├── uni-frv-external                              
 │    │   ├── changelog.md
 │    │   ├── common                                     页面公共逻辑
 │    │   │   ├── check-id-card.js                       校验身份证号合法性
 │    │   │   └── common.scss
 │    │   ├── components                                 公共组件
-│    │   │   └── uni-frv-pages-realname                 实名认证组件
+│    │   │   └── uni-frv-external-realname                 实名认证组件
 │    │   │       ├── face-verify-icon.svg               实名认证错误提示Icon
-│    │   │       └── uni-frv-pages-realname.vue     
+│    │   │       └── uni-frv-external-realname.vue     
 │    │   ├── package.json                               包管理文件
 │    │   ├── pages                                  
 │    │   │   └── common
@@ -516,9 +516,51 @@ sequenceDiagram
 │    │       └── database                               数据库目录
 │    │           └── opendb-frv-logs.schema.json        实人认证记录表
 ```
-#### 配置（uni-frv-co）
 
-实人认证配置文件路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-frv-pages/config.json`
+#### 开通与使用
+
+1. 使用开发者账号登录[uniCloud控制台](https://unicloud.dcloud.net.cn/) ，选择`实人认证`栏目。在使用此功能前需要完成实名认证，可前往[开发者中心](https://dev.dcloud.net.cn/)完成实名认证。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa1674035425.png)
+
+2. 完成实名认证后，阅读uni实名认证服务协议并点击协议下方的“同意协议并开通”按钮，便可开通实人认证服务。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa1674039403.png)
+
+3. 实人认证为预付费业务，使用实人认证服务之前，需要先进行充值。点击页面上的“充值”按钮，并输入充值金额进行充值，充值金额最小为1元。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa1674040001.png)
+
+4. 开通完成后，需要在您的业务系统中提供两个回调接口，来处理用户校验与认证结果回调通知。业务回调接口规范，[详见](#uni-frv-external-callback)
+5. 准备好回调接口后，在插件市场中导入[uni-frv-external](https://ext.dcloud.net.cn/plugin?name=uni-frv-external)至项目中。
+6. 将回调接口配置到实人认证配置文件中，具体配置[详见](#uni-frv-co-config), 实人认证配置文件路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-frv-external/config.json`。
+7. 需要自行准备一个实名认证页面，引入`uni-frv-external-realname`组件，组件详细配置参考[前端使用](#uni-frv-external-feuse)
+8. 在`manifest.json`中找到`App模块设置-打包模块设置`，勾选”实人认证“。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202302231806176.png)
+
+
+9. 建议在 uniCloud 中配置服务空间白名单安全配置，可以提高接口调用安全性，防止被他人盗用。可点击“添加服务空间”按钮，选择相应的服务空间完成添加服务空间白名单，服务空间添加成功后，只有列表中的服务空间才可以调用当前账号下的实人认证接口。此列表为空时，不校验调用方的服务空间。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rap1674040168.png)
+
+10. 运行iOS/Android标准基座即可测试实名认证功能。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202302231812402.png)
+
+11. 在用户完成实名认证后，可以在uniCloud控制台查看实人认证调用记录与统计。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa1674040923.png)
+
+但此业务数据量较大，为了维持服务的稳定性，只能查看30天内的某1天的全部调用记录，默认选择当天。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa1674041037.png)
+
+系统可查看实人认证每日调用汇总数据，包括每日请求次数、每日请求成功次数、每日计费金额等汇总数据。
+
+#### 配置（uni-frv-co）@uni-frv-co-config
+
+实人认证配置文件路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-frv-external/config.json`
 
 ```json
 // 如果拷贝此内容切记去除注释
@@ -535,14 +577,14 @@ sequenceDiagram
 }
 ```
 
-#### 前端使用
+#### 前端使用@uni-frv-external-feuse
 
-将`uni-frv-pages`插件导入至项目中，由于`uni-frv-pages`提供的实名认证入口是组件形式，需要自行准备实名认证页面，将`uni-frv-pages-realname`引入至页面中。
+将`uni-frv-external`插件导入至项目中，由于`uni-frv-external`提供的实名认证入口是组件形式，需要自行准备实名认证页面，将`uni-frv-external-realname`引入至页面中。
 
 **组件用法**
 
 ```vue
-<uni-frv-pages-realname :agreement="{url: '', title: ''}" token="user token" @result="resultCallback"></uni-frv-pages-realname>
+<uni-frv-external-realname :agreement="{url: '', title: ''}" token="user token" @result="resultCallback"></uni-frv-external-realname>
 ```
 
 **组件Props**
@@ -578,7 +620,7 @@ Result说明
 		  </uni-list>
 		</template>
 		<template v-else>
-			<uni-frv-pages-realname :agreement="agreement" :token="token" @result="resultCallback"></uni-frv-pages-realname>
+			<uni-frv-external-realname :agreement="agreement" :token="token" @result="resultCallback"></uni-frv-external-realname>
 		</template>
 	</view>
 </template>
@@ -610,7 +652,7 @@ Result说明
 </script>
 ```
 
-#### 业务回调接口规范
+#### 业务回调接口规范@uni-frv-external-callback
 
 完成整个实名认证流程，需要业务服务器配合提供两个回调接口，用于用户校验与认证结果通知。
 为保证请求在网络上传输安全，在请求回调地址时，`uni-frv-co`会对请求参数进行签名，开发者在服务器需要验证签名是否正确，不正确的签名可以将请求拒绝。
@@ -638,7 +680,7 @@ Result说明
 | uni-frv-timestamp | 当前时间戳; 单位毫秒                                                     |
 | uni-frv-signature | 请求鉴权签名; 了解签名算法[详见](/uniCloud/uni-id-pages.md#http-reqeust-auth) |
 
-**用户校验**
+**用户校验回调接口**
 
 以下示例的请求地址均为示例，在实际使用中将更换为业务服务器的回调地址。
 
@@ -673,8 +715,7 @@ Response Body 说明
 
 - 开发者需要严格按照 ResponseBody 格式返回。
 
-**认证结果通知**
-
+**认证结果通知回调接口**
 
 以下示例的请求地址均为示例，在实际使用中将更换为业务服务器的回调地址。
 

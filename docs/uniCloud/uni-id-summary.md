@@ -321,6 +321,7 @@ Configuration item:
   "realNameCertifyLimit": 5, // 实名认证相关; 限制用户每日认证次数，防止接口被刷
   "sensitiveInfoEncryptSecret": "", // 敏感信息加密密钥(长度需要大于32位)，如使用实名认证功能需配置此密钥
   "frvNeedAlivePhoto": false, // 实名认证相关；是否获取认证照片
+  "userRegisterDefaultRole": [], // 用户注册时的默认角色
   "app": { // 如果你使用旧版本uni-id公共模块而不是uni-id-common这里可能配置的是app-plus，务必注意调整为app
     "tokenExpiresIn": 2592000,
     "tokenExpiresThreshold": 864000,
@@ -472,6 +473,18 @@ Front-end pages within uni-id-co and uni-id-pages both support these four built-
 |Alipay applet login |Configure `mp-alipay.oauth.alipay` and obtain it on the Alipay open platform: [Alipay Open Platform](https://openhome.alipay.com/develop/manage) |
 |Apple APP端登录					|配置`app.oauth.apple`，在Apple开发者中心自行配置：[Apple开发者中心](https://developer.apple.com/account/resources/identifiers/list)|
 |Apple APP login |Configure `app.oauth.apple` and configure it yourself in the Apple Developer Center: [Apple Developer Center](https://developer.apple.com/account/resources/identifiers/list)|
+
+### 用户注册时设置默认角色@config-defult-role
+
+默认情况下，用户注册后不会关联任何角色，如果需要用户在注册后关联角色，可以通过此配置项开启。
+
+配置项`userRegisterDefaultRole`的值类型为`Array`，每个元素为角色ID(role_id)， 例如：
+
+```javascript
+{
+  "userRegisterDefaultRole": ['user']
+}
+```
 
 ## token令牌@token
 

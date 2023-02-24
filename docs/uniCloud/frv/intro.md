@@ -1,36 +1,55 @@
-## 业务介绍
-## Business Introduction
+# uni实人认证
 
-> 实人认证需 HBuilderX 3.7.1+，仅支持App平台。
-> Real person authentication requires HBuilderX 3.7.1+, which only supports the App platform.
+> uni实人认证依赖 HBuilderX 3.7.4+，目前仅支持App平台。
 
-实人认证，即核验终端操作者的真实身份。
-Real person authentication, that is, to verify the real identity of the terminal operator.
+uni实人认证，即核验终端操作者的真实身份，搭载真人检测和人脸比对等生物识别技术，可快速校验自然人的真实身份。
 
-它是金融级实人认证，供应商为蚂蚁金服（即支付宝），背后依托公安部数据库，具备国家认可的权威资质。该产品中应用的活体防攻算法获得了 iBeta 国际安全组织最高等级的 Level2 认证，是目前中国国内少数获得此认证的产品之一，是首批获得国家面向金融行业和移动电子政务行业相关认证资质的产品。
-It is a financial-level real-person certification, and the supplier is Ant Financial (ie Alipay). It is backed by the database of the Ministry of Public Security and has the authoritative qualification recognized by the state. The live defense algorithm used in this product has obtained the highest level of Level 2 certification from the iBeta International Security Organization. It is one of the few products in China that have obtained this certification. The product.
+uni实人认证是金融级实人认证，供应商为阿里云，背后依托公安部数据库，具备国家认可的权威资质。该产品中应用的活体防攻算法获得了 iBeta 国际安全组织最高等级的 Level2 认证，是目前中国国内少数获得此认证的产品之一，是首批获得国家面向金融行业和移动电子政务行业相关认证资质的产品。
 
 与手机号验证不同，实人认证输入姓名+身份证号，进行人脸识别和活体检测，然后返回比对结果：即摄像头前活动的人脸，与姓名和身份证号是否匹配。
 Different from mobile phone number verification, real-person authentication inputs name + ID number, performs face recognition and liveness detection, and then returns the comparison result: that is, whether the face in front of the camera matches the name and ID number.
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa_szcp.png)
 
-### 基本流程
-### Basic process
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa_ts.png)
+## 使用要求
+针对使用对象和认证对象，uni实人认证服务的使用要求如下：
 
-### 典型场景
-### Typical Scenario
+**使用对象**
 
-实人认证，主要用于政务和防刷。
-Real person authentication, mainly used for government affairs and anti-smash.
+在使用前，请确保您已注册DCloud账号，并已完成实名认证。更多信息，请参见[uni实人认证开通指南](service.md)
+
+**认证对象**
+
+目前，uni实人认证服务仅支持对拥有以下证件的居民进行认证：
+- 中国内地居民：第二代居民身份证。
+- 中国香港、中国澳门居民：港澳居民居住证。
+- 中国台湾居民：台湾居民居住证。
+
+## 产品优势
+
+uni实人认证具备便宜、安全、准确、稳定、实时、可靠等优势，提供多样化的产品方案和接入类型，满足您核验用户身份信息真实性的需求。
+- 便宜：对比其它主流厂商的同类产品，DCloud 实人认证产品有明显的价格优势。更多信息，请参见[uni实人认证计费规则](price.md)
+- 准确：十万分之一的低误识率，识别通过率超过99%。
+- 安全：活体检测技术成熟，有效防止照片伪造攻击和视频攻击。
+- 稳定：支持海量并发人脸比对服务，保障业务快速稳定运行。
+- 可靠：海量业务检验，保障超20亿次交易安全。
+- 实时：人脸比对结果1秒内返回，实时响应业务需求。
+- 灵活：多种方案和接入类型，可以根据业务场景的认证需求灵活拆分或组合接入方式。
+
+
+<!-- ## 基本流程
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa_ts.png) -->
+
+## 典型场景
+
+uni实人认证，主要用于政务和防刷。
 
 当开发者提供促销或发放福利时，很容易被黑产褥羊毛。实人认证，搭配uniCloud[安全网络](../secure-network.md)，可以做到万无一失。
 It's easy to get hacked when developers offer promotions or hand out perks. Real person authentication, combined with uniCloud [secure network](../secure-network.md), can be foolproof.
 
-#### 政务行业
-#### Government Affairs
+### 政务行业
 
 典型场景：综合数字政务、疫情防疫、公积金提取、工商企业注册等。
 Typical scenarios: comprehensive digital government affairs, epidemic prevention, provident fund extraction, industrial and commercial enterprise registration, etc.
@@ -38,8 +57,7 @@ Typical scenarios: comprehensive digital government affairs, epidemic prevention
 响应国家号召，各地政府不断推出线上办理服务，用户可以通过政务 App 客户端，调用人脸认证服务进行身份认证，预约或者直接在线办理各项业务。
 In response to the call of the country, local governments continue to launch online processing services. Users can use the government app client to call face authentication services for identity authentication, make appointments or directly handle various businesses online.
 
-#### 互联网行业
-#### Internet industry
+### 互联网行业
 
 典型场景：内容发布、权益兑换风控、在线签约等。
 Typical scenarios: content publishing, equity exchange risk control, online signing, etc.
@@ -51,8 +69,7 @@ Typical scenarios: content publishing, equity exchange risk control, online sign
 - 在线签约场景：在线选房、在线签约购房合同、在线签署员工股权协议等场景，都需要用户进行人脸核身。
 - Online contract signing scenarios: scenarios such as online house selection, online signing of house purchase contracts, and online signing of employee equity agreements require users to perform face verification.
 
-#### 数字藏品业务
-#### Digital collection business
+### 数字藏品业务
 
 典型场景：实名认证、数字藏品抢购、银行卡绑定。
 Typical scenarios: real-name authentication, snap-up of digital collections, bank card binding.
@@ -60,8 +77,7 @@ Typical scenarios: real-name authentication, snap-up of digital collections, ban
 数字藏品业务涉及到在线买卖交易和数字藏品的归属，因此必须要身份核验后才能进行数字藏品收藏购买业务操作。
 The digital collection business involves online buying and selling transactions and the attribution of digital collections, so identity verification must be performed before digital collection purchase business operations can be carried out.
 
-#### 保险行业
-#### insurance industry
+### 保险行业
 
 典型场景：手机绑定、投保、续保等。
 Typical scenarios: mobile phone binding, insurance application, insurance renewal, etc.
@@ -69,8 +85,7 @@ Typical scenarios: mobile phone binding, insurance application, insurance renewa
 新冠疫情发生以来，传统的面签购买保险模式已发生变化，投保人需通过互联网进行投保和续保，从合规方面需要对投保人进行身份核验，为防止身份伪冒造成的虚假保单，该保险公司需要高安全级别的保单身份核验能力。
 Since the outbreak of the new crown epidemic, the traditional face-to-face insurance purchase model has changed. The policyholder needs to apply for and renew the insurance through the Internet. From the aspect of compliance, the identity of the policyholder needs to be verified. In order to prevent false insurance policies caused by identity forgery, the insurance Companies need high-security policy identity verification capabilities.
 
-#### 银行行业
-#### Banking
+### 银行行业
 
 典型场景：转账、视频柜员交易、证件变更、电子合同签约、客户开卡、征信授权、联网核查等。
 Typical scenarios: transfers, video teller transactions, certificate changes, electronic contract signing, customer card opening, credit authorization, online verification, etc.
@@ -78,8 +93,7 @@ Typical scenarios: transfers, video teller transactions, certificate changes, el
 大部分一定规模的银行都已经私有化部署一套实人认证平台，维护成本高，且通过率低。银行接入云端的人脸认证服务后，整体人脸认证通过率提升明显，且风险可控。
 Most banks of a certain size have already privatized and deployed a real-person authentication platform, which has high maintenance costs and a low pass rate. After the bank accesses the face authentication service in the cloud, the overall pass rate of face authentication has increased significantly, and the risks are controllable.
 
-#### 交通出行
-#### Transportation
+### 交通出行
 
 典型场景：司机注册入驻、接单、乘客发布行程、机场安检登机、铁路安检购票、长途客运购票、边检口岸通关。
 Typical scenarios: driver registration, order acceptance, passenger release itinerary, airport security boarding, railway security check ticket purchase, long-distance passenger transport ticket purchase, border inspection port customs clearance.
@@ -89,8 +103,7 @@ Typical scenarios: driver registration, order acceptance, passenger release itin
 - 传统交通出行：智慧停车，核验人车一致；乘客忘记带身份证，可通过调用人脸认证生成临时乘机（车）码。
 -Traditional transportation: smart parking, verify that the passenger and the vehicle are consistent; if the passenger forgets to bring his ID card, he can generate a temporary boarding (vehicle) code by calling face authentication.
 
-#### 直播行业
-#### Live Streaming Industry
+### 直播行业
 
 典型场景：用户首次直播前实名、绑定支付、提现。
 Typical scenario: user’s real name, binding payment, and cash withdrawal before the first live broadcast.
@@ -100,8 +113,7 @@ The live broadcast industry needs to retain the real information of user identit
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa_zb.png)
 
-#### 招聘行业
-#### Recruitment Industry
+### 招聘行业
 
 典型场景：提升信用分、岗位发布、简历投递、面试官身份验证。
 Typical scenarios: credit score improvement, job posting, resume delivery, interviewer identity verification.

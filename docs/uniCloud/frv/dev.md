@@ -301,6 +301,12 @@ frvManager.getAuthResult(Object GetAuthResultParam)
 |quality		|Number	|authState为SUCCESS时必备	|人脸图片质量分																																			|
 |pictureUrl	|String	|authState为SUCCESS时必备	|实人认证采集的图片链接，此链接为临时链接请勿直接保存到数据库，应下载后自行保存文件	|
 
+::: warning 注意
+- 获取 `certifyId` 后，仅在`24`小时内可正常调用`getAuthResult`接口获取认证结果，超过`24`小时后请求该接口将返回`56001 请求记录已过期`错误。
+- `certifyId` 认证后，仅可调用`5`次`getAuthResult`接口获取认证结果，超过`5`次后请求该接口将返回`56002 请求次数已超限`错误。
+- `pictureUrl` 照片地址有效期为`15`分钟，从查询时开始计时，如有存储需求请尽快处理。
+:::
+
 **示例代码**
 **Example Code**
 
@@ -396,13 +402,15 @@ module.exports = {
 |54021	|云函数内缺少接口调用凭证，请联系DCloud处理				|
 | 54021 | There is no interface call certificate in the cloud function, please contact DCloud for processing |
 |54022	|服务空间不存在											|
-|54100	|实人认证账号余额不足						|
+|54100	|实人认证账号余额不足									|
 |54101	|费用获取失败，请联系DCloud处理							|
-|54102	|金额冻结失败，请联系DCloud处理											|
+|54102	|金额冻结失败，请联系DCloud处理							|
 |55000	|服务器错误，请联系DCloud处理							|
 | 55000 | Server error, please contact DCloud |
 |55001	|Api调用失败，实人认证服务商服务不可用，请联系DCloud处理|
 |55023	|尚未开通实人认证										|
+|56001	|请求记录已过期											|
+|56002	|请求次数已超限											|
 |60000	|服务不可用，请联系DCloud处理							|
 | 60000 | The service is unavailable, please contact DCloud for processing |
 

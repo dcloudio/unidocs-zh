@@ -163,8 +163,11 @@ Let's talk about why uniCloud does not need to buy high defense and is not afrai
 uniCloud阿里云版为每个开发者提供1个免费的服务空间。传统云可没有这种优惠。
 uniCloud Alibaba Cloud Edition provides one free service space for each developer. Traditional clouds don't have this perk.
 
-基于以上3点原因，uniCloud大幅降低了开发者云资源的租用成本。
-Based on the above three reasons, uniCloud greatly reduces the rental cost of developers' cloud resources.
+**4、DCloud的议价能力**
+
+DCloud拥有国内广泛的开发者，可以与云厂商谈判拿到非常低的价格。所以不管是服务器计算资源、还是短信、实人认证、一键登陆等云能力，uniCloud里的定价均低于阿里腾讯等云厂商的定价。
+
+基于以上4点原因，uniCloud大幅降低了开发者云资源的租用成本。
 
 除了云资源的成本，uniCloud还可以减少开发商的人工成本、招聘成本、沟通管理成本，这些成本更远大于云资源成本。
 In addition to the cost of cloud resources, uniCloud can also reduce the labor cost, recruitment cost, and communication management cost of developers, which are far greater than the cost of cloud resources.

@@ -190,17 +190,75 @@ All files in this directory will be added to the main bundle of the application 
 ### 3.4 依赖三方库
 ### 3.4 Relying on three-party libraries
 
-uts 插件支持依赖三方库，目前仅支持 framework 和 xcframework 静态库
-The uts plugin supports relying on three-party libraries, currently only supports framework and xcframework static libraries
+uts 插件支持依赖三方库，目前支持 framework、xcframework(仅云打包支持)、.a库
 
-需要将依赖的三方库文件存放到插件目录下  `~/utssdk/app-ios/Framework/`路径中
-The dependent third-party library files need to be stored in the path `~/utssdk/app-ios/Framework/` under the plug-in directory
+#### 3.4.1 framework依赖库说明
+
+需要将依赖的framework或者xcframework文件存放到插件目录下  `~/utssdk/app-ios/Framework/`路径中
 
 云端打包时会将此目录中所有的依赖库添加到工程中，建议只存放与插件相关的依赖库
 When packaging in the cloud, all dependent libraries in this directory will be added to the project. It is recommended to store only dependent libraries related to plug-ins
 
 以 hello uts 中的 uts-tencentgeolocation 腾讯定位插件为例，本插件需要依赖腾讯定位库 `TencentLBS.framework`，则将依赖库存放到 `~/uni_modules/uts-tencentgeolocation/utssdk/app-ios/Framework/TencentLBS.framework` 位置即可
 Take the uts-tencentgeolocation Tencent positioning plug-in in hello uts as an example. This plug-in needs to rely on the Tencent positioning library `TencentLBS.framework`, then put the dependent inventory in `~/uni_modules/uts-tencentgeolocation/utssdk/app-ios/Framework/ TencentLBS.framework` location is enough
+
+#### 3.4.2 .a依赖库相关说明
+##### 3.4.2.1 .a库存放的目录结构
+
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+└─Libs                         				// .a库存放目录
+	├─MyStaticLibA                 			//A静态库（该库所有文件放在此文件夹内,OC库）
+	│	├─libMyStaticLib.a                  //.a文件，必须
+	│	├─MyStaticLib.h                    	//A.a库对应的头文件，必须
+	│	├─MyClassA.h                     	//需要暴露的头文件A，可选
+	│	└─MyClassB.h              		 	//需要暴露的头文件B，可选
+	└─TestSwiftLibrary                      //B静态库（该库所有文件放在此文件夹内,Swift库）
+		├─libTestSwiftLibrary.a             //.a文件，必须
+		└─TestSwiftLibrary.swiftmodule      //.swiftmodule文件夹，必须
+</code>
+</pre>
+
+注意：
+- 将.a库的所有文件存放在一个文件夹内，多个.a库就创建多个文件夹；
+- 未对某个.a库文件夹下的文件做递归查找，请不要将.a或.h文件嵌套在多层文件夹内，以免发生错误；
+
+##### 3.4.2.2 .a库的使用说明
+
+- OC语言创建的.a库在使用时无需import,可直接使用；
+- Swift语言创建的.a库在使用前需要在uts文件中import；
+- HBuilder X目前暂不支持.a库相关代码的语法提示；
+
+##### 3.4.2.3 .a库的使用示例
+
+- OC语言创建的.a库使用示例：
+
+```ts
+// uts
+const aResult = ToolA.toolAMethod();
+const bResult = ToolB.toolBMethod();
+const libResult = TestLib.testLib();
+
+const res = {
+	aResult: aResult,
+	bResult: bResult,
+	libResult: libResult
+};
+options.success?.(res);
+```
+
+- Swift语言创建的.a库使用示例：
+
+```ts
+// uts
+import { Tool, Manager, TestLibraryExa } from 'TestLibraryExa';
+
+Manager.testManager();
+Tool.testTool()
+let lib = TestLibraryExa();
+lib.test()
+console.log(lib.version);
+```
 
 ## 4 iOS 平台内置库 DCloudUTSFoundation
 ## 4 iOS platform built-in library DCloudUTSFoundation
@@ -765,65 +823,7 @@ These issues will be optimized in subsequent versions
 
 - 元组类型目前不支持
 
-### 8 .a依赖库相关说明
-#### 8.1 .a库存放的目录结构
-
-<pre v-pre="" data-lang="">
-	<code class="lang-" style="padding:0">
-└─Libs                         				// .a库存放目录
-	├─MyStaticLibA                 			//A静态库（该库所有文件放在此文件夹内,OC库）
-	│	├─libMyStaticLib.a                  //.a文件，必须
-	│	├─MyStaticLib.h                    	//A.a库对应的头文件，必须
-	│	├─MyClassA.h                     	//需要暴露的头文件A，可选
-	│	└─MyClassB.h              		 	//需要暴露的头文件B，可选
-	└─TestSwiftLibrary                      //B静态库（该库所有文件放在此文件夹内,Swift库）
-		├─libTestSwiftLibrary.a             //.a文件，必须
-		└─TestSwiftLibrary.swiftmodule      //.swiftmodule文件夹，必须
-</code>
-</pre>
-
-注意：
-- 将.a库的所有文件存放在一个文件夹内，多个.a库就创建多个文件夹；
-- 未对某个.a库文件夹下的文件做递归查找，请不要将.a或.h文件嵌套在多层文件夹内，以免发生错误；
-
-#### 8.2 .a库的使用说明
-
-- OC语言创建的.a库在使用时无需import,可直接使用；
-- Swift语言创建的.a库在使用前需要在uts文件中import；
-- HBuilder X目前暂不支持.a库相关代码的语法提示；
-
-#### 8.3 .a库的使用示例
-
-- OC语言创建的.a库使用示例：
-
-```ts
-// uts
-const aResult = ToolA.toolAMethod();
-const bResult = ToolB.toolBMethod();
-const libResult = TestLib.testLib();
-
-const res = {
-	aResult: aResult,
-	bResult: bResult,
-	libResult: libResult
-};
-options.success?.(res);
-```
-
-- Swift语言创建的.a库使用示例：
-
-```ts
-// uts
-import { Tool, Manager, TestLibraryExa } from 'TestLibraryExa';
-
-Manager.testManager();
-Tool.testTool()
-let lib = TestLibraryExa();
-lib.test()
-console.log(lib.version);
-```
-
-### 9 有关Swift语言创建的Framework和.a的Swift版本兼容性问题
+## 8 有关Swift语言创建的Framework和.a的Swift版本兼容性问题
 
 - 由于高版本XCode编译的Swift语言Framework动态库、静态库、.a库在低版本XCode上无法编译通过，因此存在Swift版本兼容性问题;
 - 目前打包机使用的XCode版本号是13.2.1，对应的Swift版本是5.5.2;

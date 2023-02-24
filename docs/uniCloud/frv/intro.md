@@ -8,7 +8,17 @@ uni实人认证是金融级实人认证，供应商为阿里云，背后依托�
 
 与手机号验证不同，实人认证输入姓名+身份证号，进行人脸识别和活体检测，然后返回比对结果：即摄像头前活动的人脸，与姓名和身份证号是否匹配。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa_szcp.png)
+<div style="display: flex; flex-basis: 10px">
+<div style="margin-right: 10px;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302071745119.jpg" width="375"/>
+</div>
+<div style="margin-right: 10px;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302222009563.jpg" width="375"/>
+</div>
+<div>
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302242037107.jpg" width="375" />
+</div>
+</div>
 
 
 ## 使用要求

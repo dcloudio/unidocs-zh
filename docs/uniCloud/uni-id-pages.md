@@ -2032,16 +2032,18 @@ await uniIdCo.updateUserInfoByExternal({
 	mobile,
 	email,
 	tags,
-	status
+	status,
+	gender,
+	avatar
 })
 ```
 
 **参数说明**
 
-|参数名		|类型				|必填	|说明									|
-|--			|--					|--		|--										|
-|uid		|string				|否		|uni-id体系的用户Id；与externalUid 二选一									|
-|externalUid		|string				|否		|自身系统的用户id；与 uid 二选一									|
+| 参数名		         | 类型				              | 必填	 | 说明									                                   |
+|---------------|---------------------|-----|-----------------------------------------------|
+| uid		         | string				          | 否		 | uni-id体系的用户Id；与externalUid 二选一									       |
+| externalUid		 | string				          | 否		 | 自身系统的用户id；与 uid 二选一									                  |
 | username			   | string							       | 是		 | 用户名																										                 |
 | password			   | string							       | 否		 | 密码																											                 |
 | nickname			   | string							       | 否		 | 昵称																											                 |
@@ -2051,6 +2053,8 @@ await uniIdCo.updateUserInfoByExternal({
 | email				     | string							       | 否		 | 邮箱																											                 |
 | tags					     | array							        | 否		 | 用户标签																									                 |
 | status				    | number							       | 否		 | 用户状态，参考：[用户状态](uni-id-summary.md#user-status) |
+| avatar	       | string              | 否		 | 用户头像	                                         |
+| gender	       | number              | 否		 | 用户性别；0 未知 1 男性 2 女性	                          |
 
 **返回值**
 

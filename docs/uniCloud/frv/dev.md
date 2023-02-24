@@ -303,7 +303,7 @@ frvManager.getAuthResult(Object GetAuthResultParam)
 
 ::: warning 注意
 - 获取 `certifyId` 后，仅在`24`小时内可正常调用`getAuthResult`接口获取认证结果，超过`24`小时后请求该接口将返回`56001 请求记录已过期`错误。
-- `certifyId` 认证后，仅可调用`5`次`getAuthResult`接口获取认证结果，超过`5`次后请求该接口将返回`56002 请求次数已超限`错误。
+- `certifyId` 成功调用后，无论认证结果是否匹配，都仅可再调用`5`次`getAuthResult`接口获取认证结果，超过`5`次后请求该接口将返回`56002 请求次数已超限`错误。
 - `pictureUrl` 照片地址有效期为`15`分钟，从查询时开始计时，如有存储需求请尽快处理。
 :::
 

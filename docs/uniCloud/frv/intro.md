@@ -11,7 +11,7 @@ Different from mobile phone number verification, real-person authentication inpu
 
 <div style="display: flex; flex-basis: 10px">
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302071745119.jpg" width="375"/>
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302242042365.jpg" width="375"/>
 </div>
 <div style="margin-right: 10px;">
     <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302222009563.jpg" width="375"/>

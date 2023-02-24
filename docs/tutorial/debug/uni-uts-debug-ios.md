@@ -1,4 +1,4 @@
-# uts Android调试
+# uts ios调试
 
 HBuilderX 3.7.6+，uni-app uts插件，运行到iOS，支持Debug调试
 

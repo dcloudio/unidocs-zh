@@ -110,8 +110,7 @@ At present, more than 600,000 developers in China are using serverless cloud dev
 就像uni-app可跨端一样，uniCloud可跨云。基于uniCloud，无需担心使用云开发被绑定到专用的小程序平台。uni-app + uniCloud 是跨端跨云的开发方案。
 Just like uni-app can be cross-end, uniCloud can be cross-cloud. Based on uniCloud, there is no need to worry about using cloud development to be bound to a dedicated applet platform. uni-app + uniCloud is a cross-end and cross-cloud development solution.
 
-### uniCloud为何可降低云服务租用成本
-###Why uniCloud can reduce cloud service rental costs
+### uniCloud为何可降低云服务租用成本@lowprice
 
 **1、传统云服务的租用，按占用的硬件资源的上限值+固定时长来租用。**
 **1. The lease of traditional cloud services is based on the upper limit of the occupied hardware resources + a fixed duration. **
@@ -170,8 +169,7 @@ Based on the above three reasons, uniCloud greatly reduces the rental cost of de
 除了云资源的成本，uniCloud还可以减少开发商的人工成本、招聘成本、沟通管理成本，这些成本更远大于云资源成本。
 In addition to the cost of cloud resources, uniCloud can also reduce the labor cost, recruitment cost, and communication management cost of developers, which are far greater than the cost of cloud resources.
 
-### uniCloud降低前端掌握后端的门槛
-### uniCloud lowers the threshold for the front-end to master the back-end
+### uniCloud降低前端掌握后端的门槛@onejs
 
 前端工程师想掌握后端开发，有6大门槛：
 Front-end engineers want to master back-end development, there are 6 major barriers:
@@ -211,8 +209,7 @@ This solution also makes it easier for multiple people to collaborate, or for th
 So, uniCloud is the best opportunity for the front-end to become a full-stack. Just spend some time reading the uniCloud documentation, and you can become a full-stack!
 
 
-### uniCloud如何提升10倍开发效率？
-### How does uniCloud improve development efficiency by 10 times?
+### uniCloud如何提升10倍开发效率？@fastdev
 
 uniCloud最吸引人的是，它将开发效率提升了10倍以上。
 The most attractive thing about uniCloud is that it improves development efficiency by more than 10 times.

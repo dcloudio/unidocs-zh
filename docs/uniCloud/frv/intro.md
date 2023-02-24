@@ -10,7 +10,7 @@ uni实人认证是金融级实人认证，供应商为阿里云，背后依托�
 
 <div style="display: flex; flex-basis: 10px">
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302071745119.jpg" width="375"/>
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302242042365.jpg" width="375"/>
 </div>
 <div style="margin-right: 10px;">
     <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302222009563.jpg" width="375"/>

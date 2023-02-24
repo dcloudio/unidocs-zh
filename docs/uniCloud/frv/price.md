@@ -1,19 +1,26 @@
-## 计费模式
-## billing mode
+# 计费模式
 
-### 计费规则
-### Billing rules
+## 计费规则
 
-实人认证采用阶梯计费，根据不同调用次数区间分别计算价格，相加之和为最终收费总额。具体计费规则详见下。
-Real-person authentication adopts step-by-step billing, and the prices are calculated according to different call frequency intervals, and the sum is the final total fee. See below for specific billing rules.
+uni实人认证采用 **阶梯累进** 的方式进行计费，即按照调用次数划分费率区间，根据不同区间费率分别计算价格，相加之和为最终收费总额。具体计费规则详见下。
 
 |调用次数	|0 < 调用量 ≤ 1 万	|1 万 < 调用量 ≤ 10 万	|10 万 < 调用量 ≤ 20 万|20 万 < 调用量 ≤ 30 万|30 万 < 调用量 ≤ 50 万|50 万以上	|
-|:----:		|:----:				|:----:					|:----:					|:----:					|:----:					|:----:		|
-|区间费率	|0.85 元/次			|0.8 元/次				|0.7 元/次				|0.6 元/次				|0.5 元/次				|0.4 元/次	|
+|:----:		|:----:				|:----:					|:----:					|:----:	|:----:				|:----:		|
+|区间费率	|0.85 元/次			|0.8 元/次				|0.7 元/次				|0.6 元/次		|0.5 元/次		|0.4 元/次	|
 
-对比其它主流厂商的同类产品，DCloud 实人认证产品有明显的价格优势，并且不限制有效期。
+对比其它主流厂商的同类产品，uni实人认证有明显的价格优势：
 
-超过100万次，或承诺在短期内消耗完毕，可以联系bd@dcloud.io沟通限时资源包折扣。
+- uni实人认证**比云厂商的按量计费便宜**：
+	* 阿里云金融级实人认证产品的标准价（即按量计费定价，也可以称为后付费）为1元/次，腾讯云为1.2元/次，调用次数多，也没有折扣；uni实人认证从0.85元/次起步，采用阶梯定价，调用越多，价格越便宜。详见：[阿里云金融级实人认证产品定价](https://help.aliyun.com/document_detail/146581.html#section-o3s-rcb-645)、[腾讯云增强版人脸核身价格说明](https://cloud.tencent.com/document/product/1007/84321#.E5.A2.9E.E5.BC.BA.E7.89.88.E4.BA.BA.E8.84.B8.E6.A0.B8.E8.BA.AB.E4.BB.B7.E6.A0.BC.E8.AF.B4.E6.98.8E)
+- uni实人认证**比云厂商的资源包便宜**：
+	* 以1万次调用为例：购买阿里云资源包需1万元，折合1.0元/次；购买腾讯云资源包需11000元，折合1.1元/次；uni实人认证为0.85元/次；
+	* 以10万次调用为例：购买阿里云资源包需要9万元，折算0.9元/次；购买腾讯云资源包需要10万元，折算1.0元/次；使用uni实人阶梯定价，10万次的费用为：`0.85*10000 + 0.8*90000 = 80500`，折算0.805元/次；
+	* 以100万次调用为例：购买阿里云资源包需要70万元（两个50万次资源包），折算0.7元/次；购买腾讯云资源包需要80万元，折算0.8元/次；使用uni实人阶梯定价，100万次的费用为：`0.85*10000 + 0.8*90000 + 0.7*100000 + 0.6*100000 + 0.5*200000 + 0.4*500000 = 510500`，折算0.511元/次；
+	* 可以看到，调用量越大，uni实人认证的阶梯计费越便宜；
+	* 另外，云厂商的资源包都是有有效期的（通常为1年），过期未用完，资源包会自动作废；而uni实人认证不存在有效期的概念；
+- 如果您的App调用uni实人认证超过100万次，或承诺在短期内消耗完毕，可以联系bd@dcloud.io沟通限时资源包折扣。
+- 如果您是外包厂商，或者希望作为渠道商代销uni实人认证产品，也欢迎联系bd@dcloud.io
+
 
 下方为其他同类型产品报价参考。
 
@@ -39,8 +46,7 @@ illustrate:
 - A successful call means that the request has been successfully authenticated by face verification, and it will be billed no matter whether the final verification result matches or not. That is to say, the result is successfully returned, which proves that the ID card entered by the operator does not match the face, and the bill is also charged. This is a common rule in the industry.
 :::
 
-### 结算方式
-### Settlement method
+## 结算方式
 
 开发者完成充值后进行调用，实人认证的充值余额与uniCloud其他产品的余额不互通。
 The developer calls after completing the recharge, and the recharge balance of real-person authentication is not interoperable with the balance of other uniCloud products.
@@ -62,8 +68,7 @@ Due to the time difference in the feedback of the verification results, the bala
 :::
 
 
-### 费用计算示例
-### Fee Calculation Example
+## 费用计算示例
 
 在协议期限内，开发者将用户的身份信息发给实人认证服务，无论发送多少次，收费都按实际成功调用次数（不是成功匹配）扣取。
 During the term of the agreement, the developer sends the user's identity information to the real person authentication service. No matter how many times it is sent, the fee will be deducted according to the actual number of successful calls (not successful matching).
@@ -74,7 +79,7 @@ During the term of the agreement, the developer sends the user's identity inform
 - If 110,000 successful calls are made, the fee amount = 100,000 times x 0.85 yuan/time + 10,000 times x 0.8 yuan/time = 93,000 yuan
 - 如果调用成功 550000 次，则费用金额 = 100000 次 x 0.85 元/次+100000 次 x 0.8 元/次+300000 次 x 0.7 元/次 + 50000 次 x 0.6 元/次=405000 元
 
-### 配套uniCloud成本
+## 配套uniCloud成本
 
 实人认证需要依赖`uniCloud`云服务。如果开发者的业务不在uniCloud上，需中转到开发者自己的业务服务器上，会产生额外的uniCloud云函数费用。但这个成本可以忽略不计，因为每次云函数的调用非常便宜。
 

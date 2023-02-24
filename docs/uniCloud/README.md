@@ -54,8 +54,7 @@ Although account opening and payment are made through the DCloud channel, in fac
 开发时虽使用DCloud的工具，但应用上线时，手机端是直连阿里云或腾讯云的serverless，不经由DCloud的服务器。
 Although DCloud's tools are used during development, when the application is launched, the mobile terminal is directly connected to Alibaba Cloud or Tencent Cloud's serverless, without going through DCloud's server.
 
-### 什么是serverless？
-### What is serverless?
+### 什么是serverless？@serverless
 
 serverless是目前很火的概念，它是下一代云技术，是真正的“云”。
 Serverless is a very popular concept at present. It is the next generation cloud technology and a real "cloud".

@@ -11,124 +11,80 @@
 4. Once the traditional cloud host is attacked, the high defense price is very expensive. And uniCloud does not need to pay high defense fees, and is not afraid of DDoS attacks.
 
 uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。DCloud公司不会加价。uniCloud已经上线近3年，DCloud一直以良心方式服务开发者，努力降低应用的开发门槛、提高应用的开发效率。
-The pricing, package content, and service SLA of uniCloud are directly announced by cloud vendors. DCloud will not increase the price. uniCloud has been online for nearly 3 years. DCloud has been serving developers in a conscientious manner, striving to lower the application development threshold and improve application development efficiency.
-- 选择阿里云作为服务商时，有一个免费服务空间。更多服务空间需要付费。
-- When choosing Alibaba Cloud as a service provider, there is a free service space. Additional service spaces are subject to payment.
-- 选择腾讯云作为服务商时，需付费购买套餐，超出套餐后可开启按量计费，套餐详情参考[腾讯云基础套餐](uniCloud/price?id=tencent-package)。
-- When you choose Tencent Cloud as a service provider, you need to pay for a package. After the package is exceeded, you can enable pay-as-you-go. For package details, refer to [Tencent Cloud Basic Package](uniCloud/price?id=tencent-package).
+- 选择阿里云作为服务商时，有一个免费服务空间。更多服务空间需要付费，付费支持套餐和按量两种模式。
+- 选择腾讯云作为服务商时，需付费购买套餐，用量超出套餐后可开启按量计费，详情参考[腾讯云基础套餐](uniCloud/price?id=tencent-package)。
 
 付费用户享受阿里云和腾讯云提供的服务协议SLA，[详见](https://uniapp.dcloud.net.cn/uniCloud/agreement)
 Paid users enjoy the service agreement SLA provided by Alibaba Cloud and Tencent Cloud, [see details](https://uniapp.dcloud.net.cn/uniCloud/agreement)
 
-uniCloud提供包月、按量计费两种计费方式，具体说明如下：
-uniCloud provides two billing methods: monthly subscription and pay-as-you-go. The details are as follows:
-
-|计费方式	|付费方式					|计费单位																									|
-|Billing method |Payment method |Billing unit |
-|:-:		|:-:						|:-:																										|
-|包月		|预付费						|参考 [腾讯云包月套餐](uniCloud/price?id=price-month)、[阿里云包月套餐](uniCloud/price?id=aliyun-package)	|
-|Monthly |Prepaid |Refer to [Tencent Cloud Monthly Package](uniCloud/price?id=price-month), [Alibaba Cloud Monthly Package](uniCloud/price?id=aliyun-package) |
-|按量计费	|结算时冻结费用，每日结算	|参考 [阿里云按量计费](uniCloud/price?id=aliyun-postpay)													|
-|Pay-as-you-go |Frozen fee at settlement, daily settlement |Refer to [Alibaba Cloud Pay-As-You-Go](uniCloud/price?id=aliyun-postpay) |
-
-
 ## 阿里云@aliyun
 ## Aliyun@aliyun
 
-阿里云分公测版和正式版。正式版于2022年11月21日上线，同时公测版停止新建。
-Alibaba Cloud is divided into public beta version and official version. The official version will be launched on November 21, 2022, and the public beta version will stop creating new ones at the same time.
-对现存的公测版服务空间，阿里云会提供**两个月的过渡期**，在此期间已创建的服务空间仍可继续使用，开发者需在2023年1月21日前完成迁移。
-For the existing public beta service spaces, Alibaba Cloud will provide a **two-month transition period**, during which the created service spaces can still be used, and developers need to complete the migration before January 21, 2023.
-同时uniCloud控制台已增加公测版迁移正式版的功能以便开发者平滑迁移。
-At the same time, the uniCloud console has added the function of migrating from the public beta version to the official version so that developers can migrate smoothly.
+## 阿里云正式版@aliyun-business
 
-相关公告见：[https://ask.dcloud.net.cn/article/40144](https://ask.dcloud.net.cn/article/40144)
-For relevant announcements, see: [https://ask.dcloud.net.cn/article/40144](https://ask.dcloud.net.cn/article/40144)
+> 阿里云正式版版需要使用HBuilderX 3.6.5+（正式版）或3.6.10+（alpha版）或与此版本对应的uni-app cli项目才可正常使用。如果是cli创建的项目，可以通过执行`npx @dcloudio/uvm alpha`升级依赖
 
-### 阿里云正式版@aliyun-business
-### Alibaba Cloud official version @aliyun-business
+阿里云提供1个免费空间，付费空间提供包月、按量计费两种计费方式，具体说明如下：
 
-阿里云正式版支持`包年包月`及`按量计费`两种计费模式，创建`按量计费`服务空间需先充值保证金及阿里云余额。
-The official version of Alibaba Cloud supports two billing modes: `subscription` and `pay-as-you-go`. To create a `pay-as-you-go` service space, you need to recharge the security deposit and Alibaba Cloud balance first.
+|计费方式	|付费方式										|超限策略																							|详情													|
+|:-:		|:-:											|:-:																								|:-:													|
+|包年包月	|购买包年包月套餐，每月金额和可用量上限固定。		|某资源超过套餐额度时会提前停止该资源使用，下个月恢复，亦可及时升配和转按量			|参考 [阿里云包月套餐](uniCloud/price?id=aliyun-package)|
+|按量计费	|先充值，根据使用量扣余额，每日结算。不用的余额可退	|余额不足会停服，充值后恢复。亦可额外设置某资源指标的阈值，超阈值停用该资源 [详见](#aliyun-postpay-quota)	|参考 [阿里云按量计费](uniCloud/price?id=aliyun-postpay)|
 
-目前单个账号可创建20个正式版服务空间，更多额度我们会协调阿里云做调整提高。
-At present, a single account can create 20 official version service spaces, and we will coordinate with Alibaba Cloud to adjust and increase more quotas.
+包年包月套餐，适于业务稳定、套餐资源使用均衡的场景。
 
-**注意:**阿里云正式版版需要使用HBuilderX 3.6.5（正式版）或3.6.10（alpha版）或与此版本对应的uni-app cli项目才可正常使用。如果是cli创建的项目，可以通过执行`npx @dcloudio/uvm alpha`升级依赖
-**Note:** The official version of Alibaba Cloud needs to use HBuilderX 3.6.5 (official version) or 3.6.10 (alpha version) or the uni-app cli project corresponding to this version to work normally. If it is a project created by cli, you can upgrade the dependencies by executing `npx @dcloudio/uvm alpha`
+如果你难以预估会消耗多少云资源，或者业务波峰波谷变化较大，或者套餐中某些项目不够用、某些项目又用不完，此时推荐使用按量计费。
 
-#### 免费额度
-#### Free Quota
+### 免费服务空间
 
-阿里云针对每个账号提供了一个有免费额度的服务空间，以方便产品开发测试及体验。具体额度请阅读下方[包年包月套餐](uniCloud/price.md?id=aliyun-package)中的开发者版。
-Alibaba Cloud provides a service space with a free quota for each account to facilitate product development, testing and experience. Please read the developer version in [Subscription Package](uniCloud/price.md?id=aliyun-package) below for the specific amount.
+阿里云为每个账号提供了1个免费服务空间，以方便产品开发测试及体验。具体额度请阅读下方[包年包月套餐](uniCloud/price.md?id=aliyun-package)中的开发者版。
 
 **免费额度注意事项：**
-**Notes on free quota:**
-- 单个账号只能创建一个阿里云免费服务空间
-- A single account can only create one Alibaba Cloud free service space
-- 阿里云免费服务空间有效期默认一个月，到期时需主动续费（到期前15天可续费，续费时依旧免费），否则将会被停服释放
-- Alibaba Cloud's free service space is valid for one month by default, and it needs to be renewed actively when it expires (it can be renewed 15 days before the expiration, and it is still free when it is renewed), otherwise it will be suspended and released
-- 免费版如需升配，只能针对剩余有效期进行操作，无法自定义升配时间
-- If the free version needs to be upgraded, it can only be operated for the remaining validity period, and the upgrade time cannot be customized
-- 免费版可以转换为按量计费
-- Free version can be converted to pay-as-you-go
-- 免费版升配或转为按量计费后，免费额度会释放，此时仍可再创建一个免费版
-- After the free version is upgraded or converted to pay-as-you-go, the free quota will be released, and another free version can still be created at this time
+- 阿里云免费服务空间有效期默认一个月，到期时需主动续期（到期前15天可续），不续期会被停服释放
+- 免费空间可以升配或转为按量计费。此时免费额度会释放，该账户仍可再创建一个免费空间
+- 免费空间如需升配包月套餐，只能针对剩余有效期进行操作，比如距离有效期结束还有7天，升配时需先为这7天升配套餐，7天后再按整月续费。
 
-#### 包年包月套餐@aliyun-package
-#### Yearly and monthly package @aliyun-package
-|资源分类			|资源细项								|开发者版（免费版）	|基础版	|标准版	|专业版	|企业版	|旗舰版	|
-|Resource Classification |Resource Details |Developer Edition (Free Edition) |Basic Edition |Standard Edition |Professional Edition |Enterprise Edition |Ultimate Edition |
-|:-:					|:-:										|:-:								|:-:		|:-:		|:-:		|:-:		|:-:		|
-|云函数				|资源使用量（GBs/月）		|1000								|1万		|20万		|40万		|150万	|400万	|
-|Cloud Function |Resource Usage (GBs/month) | 1000 | 10,000 | 200,000 | 400,000 | 1.5 million | 4 million |
-|							|调用次数（万次/月）		|1.5								|15			|300		|600		|2400		|6000		|
-| |Number of calls (10,000 times/month) | 1.5 | 15 | 300 | 600 | 2400 | 6000 |
-|							|出网流量（GB/月）			|1									|1			|20			|40			|160		|500		|
-| |Outbound traffic (GB/month) | 1 | 1 | 20 | 40 | 160 | 500 |
-|云数据库			|容量（GB）							|2									|2			|3			|5			|10			|10			|
-|							|读操作使用量（万RU/天）		|0.05								|5			|25			|50			|150		|500		|
-|							|写操作使用量（万WU/天）		|0.03								|3			|15			|30			|100		|300		|
-|							|集合数量		|100								|100			|100			|100			|100		|100		|
-| |Number of collections | 100 | 100 | 100 | 100 | 100 | 100 |
-|							|索引数量		|400								|400			|400			|400			|400		|400		|
-| |number of indexes | 400 | 400 | 400 | 400 | 400 | 400 |
-|云存储				|容量（GB）							|5									|8			|10			|50			|100		|500		|
-|Cloud Storage |Capacity (GB) | 5 | 8 | 10 | 50 | 100 | 500 |
-|							|下载操作次数（万次/月）|0.2								|10			|200		|750		|1500		|3750		|
-| |Number of download operations (10,000 times/month)| 0.2 | 10 | 200 | 750 | 1500 | 3750 |
-|							|上传操作次数（万次/月）|0.1								|5			|100		|300		|600		|1500		|
-| |Number of upload operations (10,000 times/month)| 0.1 | 5 | 100 | 300 | 600 | 1500 |
-|							|CDN流量（GB/月）				|1									|2			|10			|50			|150		|500		|
-| | CDN traffic (GB/month) | 1 | 2 | 10 | 50 | 150 | 500 |
-|前端网页托管	|容量（GB）							|5									|8			|10			|50			|100		|500		|
-|Front-end web hosting |Capacity (GB) | 5 | 8 | 10 | 50 | 100 | 500 |
-|							|CDN流量（GB/月）				|1									|2			|10			|50			|150		|500		|
-| | CDN traffic (GB/month) | 1 | 2 | 10 | 50 | 150 | 500 |
-|售价（元/月）|-											|免费								|5			|24			|82			|316		|688		|
-|Price (yuan/month)|- |Free | 5 | 24 | 82 | 316 | 688 |
+### 包年包月套餐@aliyun-package
+|资源分类		|资源细项				|免费版	|基础版	|标准版	|专业版	|企业版	|旗舰版	|
+|:-:			|:-:					|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+|云函数			|资源使用量（GBs/月）	|1000	|1万	|20万	|40万	|150万	|400万	|
+|				|调用次数（万次/月）	|1.5	|15		|300	|600	|2400	|6000	|
+|				|出网流量（GB/月）		|1		|1		|20		|40		|160	|500	|
+|云数据库		|容量（GB）				|2		|2		|3		|5		|10		|10		|
+|				|读操作使用量（万RU/天）|0.05	|5		|25		|50		|150	|500	|
+|				|写操作使用量（万WU/天）|0.03	|3		|15		|30		|100	|300	|
+|				|集合数量				|100	|100	|100	|100	|100	|100	|
+|				|索引数量				|400	|400	|400	|400	|400	|400	|
+|云存储			|容量（GB）				|5		|8		|10		|50		|100	|500	|
+|				|下载操作次数（万次/月）|0.2	|10		|200	|750	|1500	|3750	|
+|				|上传操作次数（万次/月）|0.1	|5		|100	|300	|600	|1500	|
+|				|CDN流量（GB/月）		|1		|2		|10		|50		|150	|500	|
+|前端网页托管	|容量（GB）				|5		|8		|10		|50		|100	|500	|
+|				|CDN流量（GB/月）		|1		|2		|10		|50		|150	|500	|
+|售价（元/月）	|-						|免费	|5		|24		|82		|316	|688	|
 
-- 套餐在有效期内可随时进行续费、升配，到期后只可续费，暂不支持降配。
-- Packages can be renewed and upgraded at any time during the validity period, and can only be renewed after expiration, and downgrades are not supported for the time being.
+- GBs、RU、WU等单位释义，[见下](#aliyun-quota-description)
 - 套餐中的资源超标后服务空间会停服，需要及时升配或转按量计费才能恢复。
 - After the resources in the package exceed the standard, the service space will be suspended, and it needs to be upgraded in time or converted to pay-as-you-go to recover.
 
-包年包月套餐，适于业务稳定、套餐资源使用均衡的场景。
-Yearly and monthly packages are suitable for scenarios where the business is stable and package resources are used in a balanced manner.
+- 包月套餐的服务空间，有如下可用操作：
+	* 续费：时间到期前继续付费购买更长时间。到期后、销毁释放前，可以续费挽回。
+	* 升配：将低档资源套餐升配为高档套餐。到期后不能操作。暂不支持降配。
+	* 转按量：将包年包月套餐方式转为按量计费方式。见下。
 
-如果你难以预估会消耗多少云资源，或者业务波峰波谷变化较大，或者套餐中某些项目不够用、某些项目又用不完，此时推荐使用下方的按量计费。
-If it is difficult for you to estimate how much cloud resources will be consumed, or the business peaks and troughs vary greatly, or some items in the package are not enough, and some items cannot be used up, then it is recommended to use the pay-as-you-go billing below.
+#### 包年包月套餐转按量计费@change-to-postpay
+
+包年包月套餐支持转换按量计费，如果是付费套餐，转换后会按照剩余有效期核算退费金额并自动退费到uniCloud阿里云账号余额，以用于按量计费账单扣费。
+
+**注意：** 按量计费不支持转换为包年包月，该操作不可逆，请谨慎操作。
 
 
-#### 按量计费@aliyun-postpay
-#### Pay as you go @aliyun-postpay
+### 按量计费@aliyun-postpay
 
 按量计费，意味着不是每个月支付固定费用，而是根据使用量付费。
 Pay-as-you-go means that instead of paying a flat fee every month, you pay for what you use.
 
-按量付费需要预存一定金额（余额），每日根据前一日资源消耗生成账单，从阿里云预存余额中扣除。
-Pay-as-you-go requires a certain amount (balance) to be stored in advance, and a daily bill is generated based on the resource consumption of the previous day, which is deducted from the balance stored in Alibaba Cloud.
+按量付费需要预存余额，每日根据前一日资源消耗生成账单，从阿里云预存余额中扣除。
 
 如果预存余额不足，则服务空间将不可用，需要立即充值。
 If the pre-stored balance is insufficient, the service space will not be available and needs to be recharged immediately.
@@ -136,147 +92,117 @@ If the pre-stored balance is insufficient, the service space will not be availab
 阿里云按量计费服务空间定价如下：
 Alibaba Cloud pay-as-you-go service spaces are priced as follows:
 
-|资源分类			|资源细项							|售价（元）	|
-|:-:					|:-:									|:-:				|
-|云函数				|资源使用量（GBs）		|0.000110592|
-|							|调用次数（万次）			|0.0133			|
-|							|出网流量（GB）				|0.8				|
-|云数据库			|容量（GB/天）				|0.07				|
-|							|读操作使用量（万RU）			|0.015			|
-|							|写操作使用量（万RU）			|0.05				|
-|云存储				|容量（GB/天）				|0.0043			|
-|							|下载操作次数（万次）	|0.01				|
-|							|上传操作次数（万次）	|0.01				|
-|							|CDN 流量（GB）				|0.18				|
-|前端网站托管	|容量（GB/天）				|0.0043			|
-|							|流量（GB）						|0.18				|
+|资源分类		|资源细项				|售价（元）	|
+|:-:			|:-:					|:-:		|
+|云函数			|资源使用量（GBs）		|0.000110592|
+|				|调用次数（万次）		|0.0133		|
+|				|出网流量（GB）			|0.8		|
+|云数据库		|容量（GB/天）			|0.07		|
+|				|读操作使用量（万RU）	|0.015		|
+|				|写操作使用量（万RU）	|0.05		|
+|云存储			|容量（GB/天）			|0.0043		|
+|				|下载操作次数（万次）	|0.01		|
+|				|上传操作次数（万次）	|0.01		|
+|				|CDN 流量（GB）			|0.18		|
+|前端网站托管	|容量（GB/天）			|0.0043		|
+|				|流量（GB）				|0.18		|
 
 **注意**
-**Notice**
-- 按量计费是延迟结算，可能存在前一日消耗大于余额导致超支的情况。故创建按量付费服务空间时，需支付一定的**保证金**，用以抵消超支结算的情况。如果您不再使用uniCloud服务，可以申请退还保证金（目前需要发送邮件到service@dcloud.io）。
-- Pay-as-you-go is a delayed settlement, and there may be situations where the consumption on the previous day is greater than the balance, resulting in overspending. Therefore, when creating a pay-as-you-go service space, a certain **deposit** needs to be paid to offset the overspending settlement. If you no longer use the uniCloud service, you can apply for a refund of the security deposit (currently, you need to send an email to service@dcloud.io).
+- GBs、RU、WU等单位释义，[见下](#aliyun-quota-description)
+- 按量计费是延迟结算，可能存在前一日消耗大于余额导致欠费的情况。故创建按量付费服务空间时，需支付**保证金**，以确保欠费后开发者会缴纳欠费。如果您不再使用uniCloud的按量付费空间，可以申请退还保证金（发送邮件到service@dcloud.io）。
 
+##### 按量计费每日资源上限设置@aliyun-postpay-quota
 
-#### 按量计费每日资源上限设置@aliyun-postpay-quota
+如您担心按量计费会造成不可控的费用上升，也可以为各项资源设置用量上限。
 
-按量计费服务空间提供每日各项资源阈值上限的设置，通过该项设置，可避免用量过多造成无法控制成本。
+资源上限可在[web控制台](https://unicloud.dcloud.net.cn/)服务空间详情进行设置，该设置实时生效。
 
-资源上限可在服务空间详情进行设置，该设置实时生效。每项资源指标的`数据更新延迟时间`不同，当数据更新且某项资源用量超过阈值时，则该项服务便会停服。
+每项资源指标的`数据更新延迟时间`不同，当数据更新且某项资源用量超过阈值时，则该项服务便会**单独停用**。
 
 资源阈值设置支持以下十二项资源指标：
 
-|资源分类		|资源细项						    |最小值	            |数据更新延迟时间	    |
-|:-:			|:-:								|:-:				|:-:				|
-|云函数			|资源使用量					        |1万GBs				|20分钟				|
-|				|调用次数       						|1万次				|20分钟				|
-|				|出网流量						    |1GB				|20分钟				|
-|云数据库		|容量						        |1GB				|1小时				|
-|				|读操作使用量     				    |1万RU				|20分钟				|
-|				|写操作使用量       					|1万WU				|20分钟				|
-|云存储			|容量     						    |1GB				|6小时				|
-|				|下载操作次数     					|1万次				|6小时				|
-|				|上传操作次数     					|1万次				|6小时				|
-|				|CDN 流量     						|1GB				|6小时				|
-|前端网站托管		|容量     						    |1GB				|6小时				|
-|				|流量         						|1GB				|6小时				|
+|资源分类		|资源细项		|最小值		|数据更新延迟时间	|
+|:-:			|:-:			|:-:		|:-:				|
+|云函数			|资源使用量		|1万GBs/日	|20分钟				|
+|				|调用次数		|1万次/日	|20分钟				|
+|				|出网流量		|1GB/日		|20分钟				|
+|云数据库		|容量			|1GB		|1小时				|
+|				|读操作使用量	|1万RU/日	|20分钟				|
+|				|写操作使用量	|1万WU/日	|20分钟				|
+|云存储			|容量			|1GB		|6小时				|
+|				|下载操作次数	|1万次/日	|6小时				|
+|				|上传操作次数	|1万次/日	|6小时				|
+|				|CDN 流量		|1GB/日		|6小时				|
+|前端网站托管	|容量			|1GB		|6小时				|
+|				|流量			|1GB/日		|6小时				|
+
+上述指标，容量是累计的，其他单位则是按日的。
+
+例如，设置了每日云存储下载次数不能超过1万次。如某日该超过该下载次数，则在超过的6小时后停止云存储的下载功能。同时不影响其他资源指标的使用。
 
 **注意**
 - 资源上限设置针对的是每日用量，当日用量超设置的上限便会停服，受`数据更新延迟时间`影响，在停服时资源用量可能会超出所设阈值。
 - 资源上限设置实时生效，如果设置的阈值已超当时的用量，则会实时停服。每小时最多可操作三次。
 
-#### 各项资源释义说明@aliyun-quota-description
+### 各项资源释义说明@aliyun-quota-description
 
-|资源分类			|资源细项							|说明	|数据更新延迟时间							|
-|:-:					|:-:									|:-:				|:-:				|
-|云函数				|资源使用量（GBs）		|资源使用量GBs = 函数配置内存GB × 运行计费时长s。 例如，配置为256MB的函数，单次运行了1760ms，计费时长为1760ms，则单次运行的资源使用量为(256 / 1024) × (1760 / 1000) = 0.44GBs|20分钟		|
-|							|调用次数			| -			|20分钟		|
-|							|出网流量（GB）				| 在云函数中访问外网时产生的出网流量，包含请求三方服务器发送的数据和返回给客户端的数据。			|20分钟		|
-|云数据库			|容量（GB）				| -				|1小时		|
-|							|读操作使用量（RU）			|读操作使用量（Read Unit）= ceil(查询数据量KB / 4)，即从数据表中读取一条4 KB数据（向上取整）计作1RU，例如读取7.6 KB的数据计作2RU。			|20分钟		|
-|							|写操作使用量（WU）			| 写操作使用量（Write Unit）= ceil(写入数据量KB / 1)，即向数据表中写入一条1 KB数据（向上取整）计作1WU，例如写入1.8 KB的数据计作2WU。				|20分钟		|
-|云存储				|容量（GB）				| -			|6小时		|
-|							|下载操作次数	|   通过CDN加速访问的次数，回源次数暂不收费。				|6小时		|
-|							|上传操作次数	|  -				|6小时		|
-|							|CDN 流量（GB）				|通过CDN加速产生的流量，回源流量暂不收费。				|6小时		|
-|前端网站托管	|容量（GB）				| -			|6小时		|
-|							|CDN 流量（GB）						|通过CDN加速产生的流量，回源流量暂不收费。				|6小时		|
+|资源分类		|资源细项			|说明																																											|数据更新延迟时间	|
+|:-:			|:-:				|:-:																																											|:-:				|
+|云函数			|资源使用量（GBs）	|资源使用量GBs = 函数配置内存GB × 运行计费时长s。 例如，配置为256MB的函数，单次运行了1760ms，计费时长为1760ms，则单次运行的资源使用量为(256 / 1024) × (1760 / 1000) = 0.44GBs	|20分钟				|
+|				|调用次数			| -																																												|20分钟				|
+|				|出网流量（GB）		|在云函数中访问外网时产生的出网流量，包含请求三方服务器发送的数据和返回给客户端的数据。																						|20分钟				|
+|云数据库		|容量（GB）			| -																																												|1小时				|
+|				|读操作使用量（RU）	|读操作使用量（Read Unit）= ceil(查询数据量KB / 4)，即从数据表中读取一条4 KB数据（向上取整）计作1RU，例如读取7.6 KB的数据计作2RU。												|20分钟				|
+|				|写操作使用量（WU）	|写操作使用量（Write Unit）= ceil(写入数据量KB / 1)，即向数据表中写入一条1 KB数据（向上取整）计作1WU，例如写入1.8 KB的数据计作2WU。											|20分钟				|
+|云存储			|容量（GB）			| -																																												|6小时				|
+|				|下载操作次数		|通过CDN加速访问的次数，回源次数暂不收费。																																	|6小时				|
+|				|上传操作次数		|  -																																											|6小时				|
+|				|CDN 流量（GB）		|通过CDN加速产生的流量，回源流量暂不收费。																																		|6小时				|
+|前端网站托管	|容量（GB）			| -																																												|6小时				|
+|				|CDN 流量（GB）		|通过CDN加速产生的流量，回源流量暂不收费。																																		|6小时				|
 
 **补充**
 
 - 云函数实际执行时间精确到ms。运行内存默认为512M，可以在云函数package.json中调整。优化代码，降低云函数运行时间，有助于减少GBs的费用。
-- 数据库写操作使用量包含对数据的增、删、改，创建表及索引不计算写操作使用量。
-- 控制台导入导出数据功能不计算读写操作使用量，导出db_init.json计算读操作使用量。
+- 数据库写操作使用量包含对数据的增、删、改。创建表及索引不计算写操作使用量。
+- web控制台导入导出数据功能，不计算读写操作使用量；导出`db_init.json`计算读操作使用量，执行`db_init.json`计算写操作使用量。
 - updateAndReturn操作只计算写操作使用量，不计算读操作使用量。
 - clientDB底层也是基于云函数实现，也会消耗云函数调用次数。
 
-
-#### 包年包月套餐转按量计费@change-to-postpay
-#### Subscription package to pay-as-you-go @change-to-postpay
-
-包年包月套餐支持转换按量计费，如果是付费套餐，转换后会按照剩余有效期核算退费金额并自动退费到uniCloud阿里云账号余额，以用于按量计费账单扣费。
-Subscription packages support conversion to pay-as-you-go. If it is a paid-for package, the refund amount will be calculated according to the remaining validity period after conversion and automatically refunded to the balance of the uniCloud Alibaba Cloud account, which will be used for bill deduction of pay-as-you-go bills.
-
-**注意：** 按量计费不支持转换为包年包月，该操作不可逆，请谨慎操作。
-**Note:** Pay-As-You-Go does not support conversion to Subscription. This operation is irreversible. Please operate with caution.
-
-#### 现阶段系统限制@aliyun-system-limit
-#### Current system limit @aliyun-system-limit
+### 现阶段系统限制@aliyun-system-limit
 
 因上游储备不足，目前uniCloud阿里云版仍有一些限额。DCloud会持续推动限额的解除。目前有需求的开发者需向DCloud人工联系申请提高限额。
 Due to insufficient upstream reserves, there are still some quotas for the uniCloud Alibaba Cloud version. DCloud will continue to promote the lifting of the limit. Developers currently in need need to contact DCloud manually to apply for an increase in the limit.
 
-|资源分类	|限制项															|限额		|
-|Resource Category |Limited Items |Quota |
-|---			|---																|---		|
-|云函数		|callFunction请求QPS								|1000		|
-|cloud function | callFunction request QPS | 1000 |
-|					|url化请求QPS（自定义域名）					|1000		|
-| | urlization request QPS (custom domain name) | 1000 |
-|					|url化请求QPS（默认域名）						|100		|
-| | urlization request QPS (default domain name) | 100 |
-|					|固定IP代理请求QPS									|20			|
-| | Fixed IP proxy request QPS | 20 |
-|					|最大实例数													|300		|
-| |Maximum number of instances | 300 |
-|					|函数数量限制												|50			|
-|					|客户端请求最大超时时间							|20秒		|
-|					|定时任务单次最大运行时间						|600秒	|
-| |The maximum running time of a scheduled task at a time | 600 seconds |
-|数据库		|QPS																|1000		|
-|Database | QPS | 1000 |
-|					|并发执行数													|100		|
-| |Number of concurrent executions | 100 |
-|					|单次请求超时时间										|5秒		|
-| |Single request timeout | 5 seconds |
-|					|集合数量														|100		|
-| |Collection Quantity | 100 |
-|					|索引数量														|400		|
-| |Number of indexes | 400 |
-|					|单次请求获取的最大数据条数（limit）|1000	|
-| |The maximum number of data pieces obtained by a single request (limit) | 1000 |
-|云存储		|上传QPS														|300		|
-|Cloud Storage |Upload QPS | 300 |
-|					|删除QPS														|300		|
-| |Delete QPS | 300 |
-|					|查询QPS														|300		|
-| |Query QPS | 300 |
+|资源分类	|限制项								|限额	|
+|---		|---								|---	|
+|云函数		|callFunction请求QPS				|1000	|
+|			|url化请求QPS（自定义域名）			|1000	|
+|			|url化请求QPS（默认域名）			|100	|
+|			|固定IP代理请求QPS					|20		|
+|			|最大实例数							|300	|
+|			|函数数量限制						|50		|
+|			|客户端请求最大超时时间				|20秒	|
+|			|定时任务单次最大运行时间			|600秒	|
+|数据库		|QPS								|1000	|
+|			|并发执行数							|100	|
+|			|单次请求超时时间					|5秒	|
+|			|集合数量							|100	|
+|			|索引数量							|400	|
+|			|单次请求获取的最大数据条数（limit）|1000	|
+|云存储		|上传QPS							|300	|
+|			|删除QPS							|300	|
+|			|查询QPS							|300	|
+
+目前单个账号可创建20个正式版服务空间，如有更多需求需发邮件到service@dcloud.io申请。
 
 `2023年2月6日`阿里云客户端请求云函数最大超时时间由10秒调整为20秒
 
-#### 其他说明
-#### other instructions
+### 其他说明
 
-**云存储数据处理**：图片裁剪、视频截帧等功能。在阿里云正式版免费，但不排除后续收费可能。
-**Cloud storage data processing**: image cropping, video frame cutting and other functions. The official version of Alibaba Cloud is free, but the possibility of subsequent charges is not ruled out.
+**云存储数据处理**：图片裁剪、视频截帧等功能。现阶段免费，但不排除后续收费可能。
 
-**违规图片检测**：正式版不自动进行云存储违规检测，请开发者自行保证云存储文件合规。
-**Illegal image detection**: The official version does not automatically detect cloud storage violations. Developers are required to ensure that cloud storage files are compliant.
-
-**前端网页托管**：正式版不再自动根据文件修改刷新缓存，提供手动刷新缓存功能。
-**Front-end web page hosting**: The official version no longer automatically refreshes the cache according to file modification, and provides the function of manually refreshing the cache.
-
-#### 欠费停服及资源销毁
-#### Suspension of service due to arrears and destruction of resources
+### 欠费停服及资源销毁说明
 
 - 套餐指标超限：
 - Package index exceeded:
@@ -296,34 +222,13 @@ The pay-as-you-go space has no expiration date, and the service will be suspende
 ### 阿里云公测版@aliyun-public
 ### Alibaba Cloud Public Beta @aliyun-public
 
-阿里云公测版已于2023年1月22日下线。本章节文档仅适用于老用户备忘。
-The public beta version of Alibaba Cloud will be offline on January 22, 2023. This section of the documentation applies only to old user memos.
+阿里云公测版已于2022年11月15日公告，于21日停止新建，于2023年1月22日下线。详见：[https://ask.dcloud.net.cn/article/40144](https://ask.dcloud.net.cn/article/40144)
 
-阿里云公测版的服务空间是免费但有一些限制，见下。
-The service space of the Alibaba Cloud public beta version is free but has some restrictions, see below.
+#### 公测版迁移正式版@aliyun-beta-to-aliyun-biz
 
-|资源类目					|限制												|说明																																															|
-|Resource Category |Restriction |Description |
-|:-:						|:-:												|:-:																																															|
-|云函数并发限制				|1000个实例/服务空间								|实际普通项目很难达到这个并发数，阿里云可以设置单实例多并发单实例最多100，理论最大并发量1000*100=100000 (10万)，关于单实例多并发请参考：[单实例多并发](uniCloud/cf-functions.md?id=concurrency)	|
-|Cloud function concurrency limit | 1000 instances/service space |Actually, it is difficult to achieve this number of concurrency for ordinary projects. Alibaba Cloud can set up to 100 single instances with multiple concurrent instances. The theoretical maximum concurrency is 1000*100=100000 (100,000). Please refer to [Single Instance Multiple Concurrency](uniCloud/cf-functions.md?id=concurrency) |
-|每个服务空间的云函数数量	|48个												|实际项目中由于clientDB和单路由云函数，只会用到几个云函数，达不到限制数字。[详见](https://uniapp.dcloud.net.cn/uniCloud/faq?id=merge-functions)													|
-|Number of cloud functions for each service space | 48 |In actual projects, due to clientDB and single-route cloud functions, only a few cloud functions will be used, which cannot reach the limit number. [See details](https://uniapp.dcloud.net.cn/uniCloud/faq?id=merge-functions) |
-|云函数定时触发最小间隔		|1小时												|-																																																|
-|Minimum interval for cloud function timing trigger | 1 hour |- |
-|云存储容量					|10GB												|-																																																|
-|Cloud storage capacity | 10GB |- |
-|云数据库容量				|100GB												|-																																																|
-|Cloud database capacity | 100GB |- |
-|单次数据库执行时长限制		|5秒												|**不可申请调整**																																												|
-|Single database execution time limit | 5 seconds |**Cannot apply for adjustment** |
-|闲置停服时间										|30天无活跃服务空间会进行停服，在未销毁前可以恢复																																				|
-|Idle service stop time | 30 days without active service space will stop the service, and it can be restored before it is destroyed |
-|停服销毁时间										|自动销毁后15天后销毁服务空间，在未销毁前可以恢复																																				|
-|Destruction time after service shutdown |The service space will be destroyed 15 days after the automatic destruction, and it can be restored before it is destroyed |
+阿里云提供了公测版一键迁移到正式版的功能。执行一键迁移后云存储、云函数、数据库都会被迁移到新服务空间。迁移过程中云函数、数据库均可正常访问，云存储无法写入（删除或上传文件）,
+详见：[阿里云公测版迁移正式版](uniCloud/aliyun-migrate-business.md)
 
-阿里云公测版不允许开发者使用这些免费的存储及CDN资源来开展图床类业务。正式版无此限制。
-The public beta version of Alibaba Cloud does not allow developers to use these free storage and CDN resources to carry out image bed services. The official version has no such limitation.
 
 ## 腾讯云@tencent
 ## Tencent Cloud @tencent
@@ -332,24 +237,24 @@ The public beta version of Alibaba Cloud does not allow developers to use these 
 **Be sure to read this document carefully when using Tencent Cloud Nodejs12 version: [keepRunningAfterReturn](uniCloud/cf-functions.md?id=keep-running)**
 
 腾讯云于2022年8月12日更新了计费方式。
-Tencent Cloud updated the billing method on August 12, 2022.
+
 新计费模式下，统一采用**基础套餐+按量计费**的模式，开发者可先购买带有一定配额的基础套餐，超出套餐配额部分按使用量付费。
 Under the new billing model, the model of **basic package + pay-as-you-go** is uniformly adopted. Developers can purchase a basic package with a certain quota first, and the portion exceeding the quota of the package will be charged according to the usage.
 
 ### 基础套餐@tencent-package
 ### Basic Package @tencent-package
 
-| 配额						| 个人版						| 入门版| 初创版	| 商用版	| 团队版	| 单位		|
-| ---							| ---								| ---		| ---			| ---			|  ---		| ---			|
-| QPS							| 500								| 500		| 500			| 800			| 1000		| -				|
-| 调用次数				| 20								| 500		| 1000		| 2000		| 5000		| 万次/月	|
-| 容量						| 2									| 30		| 100			| 200			| 300			| GB			|
-| 云函数资源使用量| 10								| 30		| 45			| 60			| 100			| 万GBs/月|
-| 云函数出网流量	| 2									| 8			| 10			| 15			| 25			| GB/月		|
-| 云函数数量限制	| 150								| 150		| 150			| 150			| 150			| 个			|
-| CDN流量					| 5									| 80		| 200			| 400			| 600			| GB/月		|
-| CDN回源流量			| 5									| 40		| 100			| 200			| 300			| GB/月		|
-| 价格						| **~~39.9~~ 19.9**	| **99**| **299**	| **499**	| **999**	| 元/月		|
+| 配额				| 个人版			| 入门版| 初创版	| 商用版	| 团队版	| 单位		|
+| ---				| ---				| ---	| ---		| ---		|  ---		| ---		|
+| QPS				| 500				| 500	| 500		| 800		| 1000		| -			|
+| 调用次数			| 20				| 500	| 1000		| 2000		| 5000		| 万次/月	|
+| 容量				| 2					| 30	| 100		| 200		| 300		| GB		|
+| 云函数资源使用量	| 10				| 30	| 45		| 60		| 100		| 万GBs/月	|
+| 云函数出网流量		| 2					| 8		| 10		| 15		| 25		| GB/月		|
+| 云函数数量限制		| 150				| 150	| 150		| 150		| 150		| 个		|
+| CDN流量			| 5					| 80	| 200		| 400		| 600		| GB/月		|
+| CDN回源流量		| 5					| 40	| 100		| 200		| 300		| GB/月		|
+| 价格				| **~~39.9~~ 19.9**	| **99**| **299**	| **499**	| **999**	| 元/月		|
 
 1. 个人版5折折扣至少延续至2022年底，后续折扣如有变化将另行通知。
 2. The 50% discount on the personal edition will be extended to at least the end of 2022, and further notices will be notified if the subsequent discount changes.
@@ -369,10 +274,6 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 **关于计费项的额外说明**
 **Additional Notes on Billing Items**
 
-- 数据库单次写入操作每1KB数据计算一次写操作数，向上取整
-- The number of write operations is calculated for every 1KB of data in a single database write operation, rounded up
-- 数据库单次读取操作每4KB数据计算一次读操作数，向上取整
-- The number of read operations is calculated for every 4KB of data in a single read operation of the database, rounded up
 - 创建表、索引均计算一次写入
 - Creation of tables and indexes counts as one write
 - updateAndReturn操作只计算写次数，不计算读次数
@@ -382,8 +283,7 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 - clientDB底层也是基于云函数实现，也会消耗云函数调用次数
 - 腾讯云云函数资源使用量GBs的计算方式为，云函数设置的运行内存*云函数实际执行时间，执行时间以100ms为阶梯向上取整
 
-### 按量付费/超量使用定价@tencent-postpay
-### Pay-As-You-Go/Overage Pricing @tencent-postpay
+### 超套餐后按量付费/超量使用定价@tencent-postpay
 
 | 计费项			| 定价				|
 | Billing Items | Pricing |
@@ -446,8 +346,21 @@ The service space will enter the isolation state on the second day after the pac
 ## 余额及保证金@balance
 ## Balance and Margin @balance
 
-余额单次充值不低于10元，充值后不支持退款，**余额不支持购买包年包月套餐，请根据业务使用量合理选择充值金额**。
-The balance of a single recharge is not less than 10 yuan, and refunds are not supported after recharge. **The balance does not support the purchase of yearly and monthly packages. Please choose a reasonable recharge amount according to the business usage**.
+按量计费时，涉及余额和保证金的概念。包年包月不涉及这2个概念。
+
+余额指开发者使用按量计费时提前充值的金额，发生资源消耗后，会从余额里扣除。
+
+充值的余额用不完可以退还。
+
+余额分为阿里云余额和腾讯云余额。2个余额不通用，比如腾讯云的余额，在开发者充值后直接转到了腾讯的收款账户里，由腾讯云计费和停服。
+
+因按量扣费不是实时，而是隔天，所以可能出现某天消耗过大、余额不足以支付昨日账单的情况。此时就发生了欠费。
+
+开发者欠费时，DCloud仍需要向云厂商缴纳欠费。所以为了避免开发者不缴纳欠费，DCloud收取了200元保证金。
+
+当开发者不再使用按量计费时，保证金可退还。
+
+腾讯云余额充值后不支持退款，**余额不支持购买包年包月套餐，请根据业务使用量合理选择充值金额**。
 
 腾讯云余额可用于服务空间套餐资源用尽后`超限按量`、前端网页托管等服务产生的费用。
 The balance of Tencent Cloud can be used for the expenses incurred by services such as "over-limit and on-demand", front-end web hosting and other services after the service space package resources are exhausted.
@@ -456,9 +369,6 @@ After Tencent Cloud's package resources are used up, if the current space has th
 
 阿里云服务空间没有`超限按量`功能，但是提供了`按量计费`的服务空间，阿里云余额适用于`按量计费`服务空间产生的费用扣款。
 Alibaba Cloud service space does not have the function of "over-limit pay-as-you-go", but provides "pay-as-you-go" service space, and the balance of Alibaba Cloud is applicable to the deduction of fees generated by the "pay-as-you-go" service space.
-
-由于存在上一日资源消耗大于余额，从而导致超支的情况，故开启`超限按量`设置或创建`按量计费`空间时，需提前缴纳保证金。
-Since the resource consumption of the previous day is greater than the balance, resulting in an overspend, when you enable the "By-As-You-Go" setting or create a "Bill-As-You-Go" space, you need to pay a deposit in advance.
 
 账户保证金在停止使用按量计费服务后可以申请退还，所以账户保证金不能申请开具发票，但可申请开具收据，申请方式：发送邮件到 fapiao@dcloud.io，邮件内容：
 You can apply for a refund of the account deposit after you stop using the pay-as-you-go service, so you cannot apply for an invoice for the account deposit, but you can apply for a receipt. The application method: send an email to fapiao@dcloud.io, and the email content:
@@ -610,10 +520,3 @@ parseCollection()
 
 ```
 
-#### 使用一键迁移功能迁移阿里云公测版到正式版@aliyun-beta-to-aliyun-biz
-#### Use the one-click migration function to migrate the public beta version of Alibaba Cloud to the official version @aliyun-beta-to-aliyun-biz
-
-阿里云提供了公测版一键迁移到正式版的功能。执行一键迁移后云存储、云函数、数据库都会被迁移到新服务空间。迁移过程中云函数、数据库均可正常访问，云存储无法写入（删除或上传文件）,
-Alibaba Cloud provides a one-click migration function from the public beta version to the official version. After performing one-click migration, cloud storage, cloud functions, and databases will all be migrated to the new service space. During the migration process, cloud functions and databases can be accessed normally, but cloud storage cannot be written (deleted or uploaded files),
-详见：[阿里云公测版迁移正式版](uniCloud/aliyun-migrate-business.md)
-For details, see: [Alibaba Cloud Public Beta Migration Official Version](uniCloud/aliyun-migrate-business.md)

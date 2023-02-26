@@ -21,6 +21,14 @@ Lottie animation components, animation resource reference [Lottie official link]
 |√|x|x|x|√|x|x|x|x|x|x|
 
 
+- animation-view 在App端集成的是lottie官方原生sdk，仅nvue页面支持，vue页面不支持。vue页面可使用webview、或renderjs集成lottie的h5版、或使用下方的微信小程序方案。
+- App端实现使用了Lottie官方SDK，开源项目：[Lottie for Android](https://github.com/airbnb/lottie-android)，[Lottie for iOS](https://github.com/airbnb/lottie-ios)  
+	* App-Android平台要求Android5（API Leavel 21）及以上系统  
+	* App-iOS平台要求iOS11及以上版本系统  
+- 微信小程序没有内置该组件，需使用开源项目[https://github.com/wechat-miniprogram/lottie-miniprogram](https://github.com/wechat-miniprogram/lottie-miniprogram)
+- 百度小程序已经由百度官方内置了animation-view，底层基于lottie sdk实现。
+- 微信、百度之外的其他小程序，可考虑webview加载lottie的h5版，或评估上面的lottie-miniprogram是否兼容。
+
 
 **属性说明**
 **Attribute Description**
@@ -41,17 +49,7 @@ Lottie animation components, animation resource reference [Lottie official link]
 | @bindended	| EventHandle	|		| 当播放到末尾时触发 ended 事件（自然播放结束会触发回调，循环播放结束及手动停止动画不会触发）	|
 | @bindended | EventHandle | | The ended event is triggered when the playback reaches the end (the callback will be triggered when the natural playback ends, and the end of the loop playback and manual stop animation will not be triggered) |
 
-
 **注意**
-**Notice**
-* animation-view 仅App端nvue页面支持  
-* animation-view is only supported by App side nvue page
-* App端实现使用了Lottie三方SDK，开源项目：[Lottie for Android](https://github.com/airbnb/lottie-android)，[Lottie for iOS](https://github.com/airbnb/lottie-ios)  
-* Lottie's third-party SDK is used for the app implementation, open source projects: [Lottie for Android](https://github.com/airbnb/lottie-android), [Lottie for iOS](https://github.com/airbnb/ lottie-ios)
-* App-Android平台要求Android5（API Leavel 21）及以上系统  
-* App-Android platform requires Android5 (API Level 21) and above
-* App-iOS平台要求iOS11及以上版本系统  
-* App-iOS platform requires iOS11 and above version system
 * 百度小程序平台path属性目前不支持远程地址，仅支持本地绝对路径，[详情](https://smartprogram.baidu.com/docs/develop/component/animation-view-Lottie/)
 * The path attribute of the Baidu MiniApp platform currently does not support remote addresses, only local absolute paths, [Details](https://smartprogram.baidu.com/docs/develop/component/animation-view-Lottie/)
 

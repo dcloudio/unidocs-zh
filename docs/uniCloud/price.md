@@ -350,8 +350,6 @@ The service space will enter the isolation state on the second day after the pac
 
 余额指开发者使用按量计费时提前充值的金额，发生资源消耗后，会从余额里扣除。
 
-充值的余额用不完可以退还。
-
 余额分为阿里云余额和腾讯云余额。2个余额不通用，比如腾讯云的余额，在开发者充值后直接转到了腾讯的收款账户里，由腾讯云计费和停服。
 
 因按量扣费不是实时，而是隔天，所以可能出现某天消耗过大、余额不足以支付昨日账单的情况。此时就发生了欠费。
@@ -360,7 +358,7 @@ The service space will enter the isolation state on the second day after the pac
 
 当开发者不再使用按量计费时，保证金可退还。
 
-腾讯云余额充值后不支持退款，**余额不支持购买包年包月套餐，请根据业务使用量合理选择充值金额**。
+余额充值后不支持退款，**余额不支持购买包年包月套餐，请根据业务使用量合理选择充值金额**。
 
 腾讯云余额可用于服务空间套餐资源用尽后`超限按量`、前端网页托管等服务产生的费用。
 The balance of Tencent Cloud can be used for the expenses incurred by services such as "over-limit and on-demand", front-end web hosting and other services after the service space package resources are exhausted.

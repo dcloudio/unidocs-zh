@@ -31,7 +31,7 @@
   * [App升级中心](uniCloud/upgrade-center.md)
   * [uni-upgrade-center](uniCloud/upgrade-center.md)
   * [uni一键登录](univerify.md)
-  * [univerify](univerify.md)
+  * [uni实人认证](uniCloud/frv/intro.md)
   * [uni-push统一推送](unipush.md)
   * [uni-push](unipush.md)
 	* [uni-push1.0](unipush-v1.md)

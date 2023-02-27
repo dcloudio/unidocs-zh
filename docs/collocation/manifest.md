@@ -657,6 +657,8 @@ Compile to the project settings under the WeChat MiniApp platform.
 |bigPackageSizeSupport|Boolean|预览及真机调试时包体积上限是否调整为4M，默认为true（HBuilderX 3.5.5+）。|
 | bigPackageSizeSupport| Boolean|Whether to adjust the upper limit of the package size to 4M when previewing and real-device debugging, the default is true (HBuilderX 3.5.5+). |
 
+注意: 使用微信小程序手势组件会强制开启 ES6 转 ES5
+
 #### optimization
 
 对微信小程序的优化配置

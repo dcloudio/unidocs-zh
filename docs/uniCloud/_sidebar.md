@@ -55,11 +55,11 @@
   * [简介](redis-introduction.md)
   * [费用说明](redis-buy.md)
   * [开发文档](redis.md)
-<!-- * 实人认证
-  * [简介](frv/introduction.md)
+* 实人认证
+  * [简介](frv/intro.md)
   * [费用说明](frv/price.md)
   * [开通服务](frv/service.md)
-  * [开发文档](frv/dev.md) -->
+  * [开发文档](frv/dev.md)
 * Push扩展库(socket)
 * Push extension library (socket)
   * [业务文档](/unipush-v2.md)

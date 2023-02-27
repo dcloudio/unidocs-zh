@@ -210,7 +210,7 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
   "forceInviteCode": false, // 是否强制用户注册时必填邀请码，默认为false
   "idCardCertifyLimit": 1, // 实名认证相关; 限制每个身份证可以绑定几个账号
   "realNameCertifyLimit": 5, // 实名认证相关; 限制用户每日认证次数，防止接口被刷
-  "sensitiveInfoEncryptSecret": "", // 敏感信息加密密钥(长度需要大于32位)，如使用实名认证功能需配置此密钥
+  "sensitiveInfoEncryptSecret": "", // 敏感信息加密密钥(长度为32位的字符串)，如使用实名认证功能需配置此密钥
   "frvNeedAlivePhoto": false, // 实名认证相关；是否获取认证照片
   "userRegisterDefaultRole": [], // 用户注册时的默认角色
   "app": { // 如果你使用旧版本uni-id公共模块而不是uni-id-common这里可能配置的是app-plus，务必注意调整为app
@@ -1645,12 +1645,12 @@ uni-id-pages 中内置了实名认证页面`uni-id-pages/pages/userinfo/realname
 
 实名认证相关配置项如下，配置文件路径`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，详细的uni-id配置文件[参考](#config)
 
-| 字段                         | 类型      | 默认值   | 说明                                                        |
-|----------------------------|---------|-------|-----------------------------------------------------------|
-| idCardCertifyLimit         | number  | 1     | 限制每个身份证可以绑定几个账号                                           |
-| realNameCertifyLimit       | number  | 5     | 限制用户每日认证次数，防止接口被刷                                         |
-| sensitiveInfoEncryptSecret | string  |       | 敏感信息加密密钥(长度需要大于32位); 见下方[敏感信息加密](#sensitive-info-encrypt) |
-| frvNeedAlivePhoto          | boolean | false | 是否获取认证照片                                                  |
+| 字段                         | 类型      | 默认值   | 说明                                                      |
+|----------------------------|---------|-------|---------------------------------------------------------|
+| idCardCertifyLimit         | number  | 1     | 限制每个身份证可以绑定几个账号                                         |
+| realNameCertifyLimit       | number  | 5     | 限制用户每日认证次数，防止接口被刷                                       |
+| sensitiveInfoEncryptSecret | string  |       | 敏感信息加密密钥(长度必须32位); 见下方[敏感信息加密](#sensitive-info-encrypt) |
+| frvNeedAlivePhoto          | boolean | false | 是否获取认证照片                                                |
 
 **注意**
 
@@ -1668,7 +1668,7 @@ uni-id-pages 中内置了实名认证页面`uni-id-pages/pages/userinfo/realname
 在前端页面需要使用时，例如”[获取用户实名信息](uniCloud/uni-id-pages.md#get-realname-info)“接口，只会返回脱敏后的数据，减少暴露风险，提高安全性。
 
 由于加密密钥`sensitiveInfoEncryptSecret`来源于`config.json`配置文件，强烈建议更换为自定义的字符串，不要使用默认的密钥。
-密钥长度最少需要32位，密钥越长破解难度越高，但不宜过长，推荐设置为32-128位之间。
+密钥长度需要是32位的字符串。
 
 实人认证照片将会上传至云存储中，阿里云与腾讯云存储路径如下：
 

@@ -217,7 +217,11 @@ The App.vue page needs to add the following code:
   export default {
     onLaunch: async function() {
       // #ifdef MP-WEIXIN
-      await uniCloud.initSecureNetworkByWeixin()
+      const userInfo = uniCloud.getCurrentUserInfo()
+      const userLoginState = userInfo.tokenExpired > Date.now() - 3600 * 1000
+      await uniCloud.initSecureNetworkByWeixin({
+        callLoginByWeixin: !userLoginState // 用户为未登录状态时调用一次微信登录
+      })
       // #endif
     }
   }

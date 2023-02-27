@@ -445,6 +445,8 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |minified|Boolean|上传代码时是否自动压缩|
 |bigPackageSizeSupport|Boolean|预览及真机调试时包体积上限是否调整为4M，默认为true（HBuilderX 3.5.5+）。|
 
+注意: 使用微信小程序手势组件会强制开启 ES6 转 ES5
+
 #### optimization
 
 对微信小程序的优化配置

@@ -15,6 +15,7 @@
   * [前端网页托管](uniCloud/hosting.md)
   * [App升级中心](uniCloud/upgrade-center.md)
   * [uni一键登录](univerify.md)
+  * [uni实人认证](uniCloud/frv/intro.md)
   * [uni-push统一推送](unipush.md)
 	* [uni-push1.0](unipush-v1.md)
 	* [uni-push2.0](unipush-v2.md)

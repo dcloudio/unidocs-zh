@@ -388,13 +388,14 @@ module.exports = {
 - App端使用实人认证SDK，需在隐私政策的三方SDK中添加实人认证功能描述，参考[详情](https://ask.dcloud.net.cn/article/39484#FacialRecognitionVerify)
 
 
-### 非 uniCloud 业务使用@uni-frv-external <Badge text="uni-frv-external 待发布" />
+### 非 uniCloud 业务使用@uni-frv-external
+
+> HBuilderX 版本需大于3.7.6
 
 如果您的业务没有部署在 uniCloud 上，可以通过 uni-frv-external 来实现实人认证功能。
 uni-frv-external 集成了实名认证前端页面和云端云对象，适用于没有使用uniCloud或没有使用uni-id账号体系的项目。
 
 插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-frv-external](https://ext.dcloud.net.cn/plugin?name=uni-frv-external)
-
 
 #### 业务流程
 

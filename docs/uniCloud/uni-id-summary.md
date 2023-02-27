@@ -1575,7 +1575,9 @@ module.exports = {
 
 [从文件中导入数据说明](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#import)
 
-### 实名认证@frv <Badge text="待发布" />
+### 实名认证@frv <Badge text="uni-id-pages 1.1.7+" />
+
+> HBuilderX 版本需大于3.7.6
 
 基于[实人认证](/uniCloud/frv/intro.md)服务实现，可以实现用户刷脸核验真实身份，完成实名认证。
 

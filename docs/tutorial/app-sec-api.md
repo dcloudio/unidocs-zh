@@ -1,4 +1,10 @@
-为了提升App的安全性，推荐对安装包进行加固处理（如腾讯、360等加固平台），对安全性有更高要求的App建议使用商用加固解决方案。同时也可以使用以下安全类API在应用运行期进行检测，加强应用的安全性。
+# 客户端安全API
+
+uni-app和5+App提供了一批API，获取客户端一些与安全有关的信息。
+
+::: warning
+更推荐使用[uni云端一体安全网络](/uniCloud/secure-network.md)，使用安全网络后将无需在使用本章节提供的API。
+:::
 
 ### getSignature  
 [plus.navigator.getSignature](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature)用于获取应用签名标识，可以判断App是否被重新签名。

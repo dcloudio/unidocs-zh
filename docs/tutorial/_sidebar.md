@@ -107,12 +107,6 @@
     * [Google Play上架](/tutorial/android-gp.md)
     * [App Store上架](/tutorial/ios-app-store.md)
   * [App升级](/uniCloud/upgrade-center.md)
-  * App安全问题
-    * [js/nvue文件原生混淆加密](/tutorial/app-sec-confusion.md)
-    * [运行时安全检测API](/tutorial/app-sec-api.md)
-    * [云端一体安全网络](/uniCloud/secure-network.md)
-    * [Android安全漏洞问题解决方案](/tutorial/app-sec-android.md)
-  * [前端安全专题](/tutorial/web-security.md)
 * 小程序专题
   * [组件与WXS](/tutorial/miniprogram-subject.md)
   * [使用小程序插件](/tutorial/mp-weixin-plugin.md)
@@ -129,8 +123,23 @@
   * [小程序平台：运行调试](tutorial/debug/debug-mp.md)
   * [uni-vue-devtools 调试](tutorial/debug/uni-vue-devtools.md)
 * [高效开发技巧](/tutorial/snippet.md)
-* [性能优化专题](/tutorial/performance.md)
 * [uni错误规范](/tutorial/err-spec.md)
+* [性能优化专题](/tutorial/performance.md)
+* 安全专题
+  * [综述](/tutorial/safe.md)
+  * 客户端安全
+    * [app js/nvue文件原生混淆加密](/tutorial/app-sec-confusion.md)
+	* [Android安全漏洞问题解决方案](/tutorial/app-sec-android.md)
+    * [app 安全检测API](/tutorial/app-sec-api.md)
+  * 网络安全
+    * [云端一体安全网络](/uniCloud/secure-network.md)
+  * 身份安全
+    * [app一键登录](/univerify.html)
+    * [app实人认证](/uniCloud/frv/intro.html)
+    * [图形验证码](/uniCloud/uni-captcha.html)
+  * 服务器安全
+    * [ip防刷](/uniCloud/ip-filter.html)
+    * [内容安全审查](https://ext.dcloud.net.cn/plugin?id=5460)
 * [国际化专题](/tutorial/i18n.md)
 	* [国际化开发指南](/tutorial/i18n.md)
 	* [海外开发者使用指南](/tutorial/internationalization.md)

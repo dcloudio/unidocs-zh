@@ -1,4 +1,5 @@
 > 本插件需要HBuilderX 3.6.9 及其以上版本支持。
+
 ![](https://web-assets.dcloud.net.cn/ext/uni-im/ext-im.png)
 # 简介
 uni-im是云端一体的、全平台的、免费的、开源即时通讯系统。

@@ -8,8 +8,11 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 - 基于[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html)，完善的账户体系
 - 支持服务端为非uniCloud（比如：应用服务端的开发语言是php、java、go、.net、python、c#等）或 不基于uni-id-pages 开发的项目接入
 
+案例：
 
-案例：打开[插件市场](https://ext.dcloud.net.cn/plugin?id=9711)，点击咨询作者按钮，即可看到基于uni-im搭建的客服系统
+<img width="600px" src="https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/ext/uni-im/20230228110007.jpg"></img>
+
+如图：在插件市场任意插件详情页面，点击咨询作者按钮，即可看到基于uni-im搭建的客服系统。
 
 下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-im](https://ext.dcloud.net.cn/plugin?name=uni-im)
 
@@ -34,10 +37,7 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 
 优先开发哪些，取决于开发者的反馈。同时也欢迎开发者共建这个开源项目。
 
-> uni-im相关功能建议或问题交流，暂时请加QQ群号:[854520009](https://qm.qq.com/cgi-bin/qm/qr?k=DJNSajXAYHnYcr9pouOfxF9Rwwl1AJHc&jump_from=webapi&authKey=HZ1fG58Eudp3o0GCoyx1/UPMY9Fv1sGT5jdqYqPJlTGT0XVUip3Bk8E+UyToQOMo)。后续uni-im支持群聊后会废除QQ改为uni-im。
-
-### 已知bug
-- Mac端Safari浏览器，消息列表界面滚动到顶部无法自动加载历史消息
+> uni-im相关功能建议或问题，可以加入由uni-im（本插件）搭建的交流群，[点此加入](https://im.dcloud.net.cn/#/?joinUniImGroup=1)，备用QQ群（当系统处于维护中使用）群号:[854520009](https://qm.qq.com/cgi-bin/qm/qr?k=DJNSajXAYHnYcr9pouOfxF9Rwwl1AJHc&jump_from=webapi&authKey=HZ1fG58Eudp3o0GCoyx1/UPMY9Fv1sGT5jdqYqPJlTGT0XVUip3Bk8E+UyToQOMo)
 
 ## 使用uniCloud产生的费用说明@cost
 

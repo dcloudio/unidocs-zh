@@ -650,7 +650,11 @@ let result = await uniCloud.deleteFile({
 
 ### uniCloud.downloadFile(Object downloadFileOptions)@clouddownloadfile
 
-**云函数**下载已上传至云开发的文件至本地（默认本地根目录/root）。
+**云函数**下载已上传至云存储的文件到云函数代码空间内。阿里云直接使用http请求url下载即可，无需使用downloadFile接口。
+
+如需下载到客户端请参考：
+
+- [uni.downloadFile()](../api/request/network-file.md#downloadfile)
 
 **平台兼容性**
 

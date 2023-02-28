@@ -6,7 +6,12 @@ export default {
       imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/cloud@2x.jpg'
     },
     {
-      name: '论坛',
+      name: '插件市场',
+      url: 'https://ext.dcloud.net.cn/',
+      imageUrl: 'https://img-cdn-aliyun.dcloud.net.cn/dev/img/ext/favicon.png'
+    },
+    {
+      name: 'ask问答社区',
       url: 'https://ask.dcloud.net.cn/explore/',
       imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/d@2x.png'
     },

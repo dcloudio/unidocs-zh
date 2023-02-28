@@ -488,10 +488,8 @@ Alibaba Cloud cloud function logs are kept for up to 7 days
 ### 腾讯云
 ### Tencent Cloud
 
-腾讯云日志服务为[套餐外单独计费项](https://uniapp.dcloud.net.cn/uniCloud/price.html#tencent-advanced)。如果你购买了包月套餐，在使用日志服务时会产生额外费用（日志服务为按量计费，从余额扣除）。为避免因日志服务欠费引发其他按量计费资源不可使用，目前新建腾讯云服务空间默认关闭了日志服务，可在 [uniCloud web控制台](https://unicloud.dcloud.net.cn/) -> 云函数 -> 日志中开启。
-Tencent Cloud Log Service is [a separate billing item outside the package](https://uniapp.dcloud.net.cn/uniCloud/price.html#tencent-advanced). If you have purchased a monthly package, additional fees will be incurred when using the log service (log service is billed by volume and deducted from the balance). In order to avoid other pay-as-you-go resources being unusable due to log service arrears, the log service is disabled by default in the newly created Tencent Cloud service space. ) -> Cloud Functions -> Logging is enabled.
+腾讯云日志服务为[套餐外单独计费项](https://uniapp.dcloud.net.cn/uniCloud/price.html#tencent-advanced)。如果你购买了包月套餐，在使用日志服务时会产生额外费用（日志服务为按量计费，从余额扣除）。为避免因日志服务欠费引发其他按量计费资源不可使用，目前新建腾讯云服务空间默认关闭了日志服务（从老的套餐升级到新计费套餐时默认开启），可在 [uniCloud web控制台](https://unicloud.dcloud.net.cn/) -> 云函数 -> 日志中开启。
 
 此外日志服务开启的状态下，腾讯云可以设置日志保存时长。
-In addition, when the log service is enabled, Tencent Cloud can set the log storage period.
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/tcb-log-switch.jpg)

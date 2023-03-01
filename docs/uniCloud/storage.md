@@ -71,8 +71,7 @@ Upload files directly to cloud storage.
 客户端上传文件到云函数、云函数再上传文件到云存储，这样的过程会导致文件流量带宽耗费较大。所以一般上传文件都是客户端直传。
 The client uploads the file to the cloud function, and the cloud function uploads the file to the cloud storage. This process will result in a large bandwidth consumption of file traffic. Therefore, the uploaded files are generally uploaded directly from the client.
 
-**阿里云公测版单文件大小限制为100M，2023年1月6日阿里云正式版调整单文件大小限制到5GB，腾讯云单文件最大为5G**
-**The size limit of a single file in the public beta version of Alibaba Cloud is 100M. On January 6, 2023, the size limit of a single file in the official version of Alibaba Cloud will be adjusted to 5GB, and the maximum size of a single file in Tencent Cloud will be 5G**
+**阿里云和腾讯云的单文件大小限制为5GB**
 
 **支付宝小程序开发工具上传文件到腾讯云时可能会返回失败，请以真机为准**
 **Alipay applet development tool may return a failure when uploading files to Tencent Cloud, please refer to the real machine**
@@ -1088,21 +1087,4 @@ The data processing functions supported by Tencent Cloud are as follows:
 |管道操作符|	&#124;	|[点击查看](https://cloud.tencent.com/document/product/436/44894)	|
 |Pipe operator| &#124; |[Click to view](https://cloud.tencent.com/document/product/436/44894) |
 
-## 阿里云公测版云存储CDN独立域名@aliyun-cdn-domain
-## Aliyun public beta cloud storage CDN independent domain name @aliyun-cdn-domain
 
-> 本节仅适用于阿里云公测版。阿里云商用版每个服务空间都是单独的域名，不涉及这个问题
-> This section is only applicable to the public beta version of Alibaba Cloud. Each service space of Alibaba Cloud Commercial Edition is a separate domain name, which does not involve this issue
-
-阿里云公测版本所有服务空间使用了相同CDN域名，因此偶尔会出现部分服务空间云存储内存在违规内容导致此CDN域名被封禁的情况。为解决此问题，阿里云为每个服务空间提供了独立的云存储CDN域名。由于资源限制，需要手动在[uniCloud web 控制台](https://unicloud.dcloud.net.cn/)云存储管理页面申请才可以开启，有一定业务量的服务空间申请会自动通过。
-All service spaces of the Alibaba Cloud beta version use the same CDN domain name. Therefore, there may occasionally be cases where the CDN domain name is banned due to illegal content in the cloud storage of some service spaces. To solve this problem, Alibaba Cloud provides an independent cloud storage CDN domain name for each service space. Due to resource limitations, you need to manually apply on the [uniCloud web console](https://unicloud.dcloud.net.cn/) cloud storage management page to enable it. The application for service space with a certain amount of business will be automatically approved.
-
-开通云存储CDN独立域名有以下注意事项：
-The following precautions should be taken when opening a cloud storage CDN independent domain name:
-
-- 上传文件会返回新CDN域名对应的URL。如果有小程序端下载文件需求，需要更新小程序安全域名。
-- Uploading a file will return the URL corresponding to the new CDN domain name. If there is a need to download files from the MiniApp, you need to update the MiniApp security domain name.
-- 旧文件也可以通过新CDN域名进行访问
-- Old files can also be accessed through the new CDN domain name
-- 旧文件删除时必须使用旧的共享CDN域名才可以删除
-- When deleting old files, you must use the old shared CDN domain name to delete them

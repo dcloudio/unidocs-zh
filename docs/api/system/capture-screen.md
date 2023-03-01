@@ -73,6 +73,7 @@ The event that the user takes a screenshot. Cancel event listening.
 |√|x|x|x|x|x|x|x|x|
 
 > 在 App 平台本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[uni-usercapturescreen](https://ext.dcloud.net.cn/plugin?name=uni-usercapturescreen)
+> iOS平台需要HBuilder X 3.7.3+版本
 
 **OBJECT 参数说明**
 

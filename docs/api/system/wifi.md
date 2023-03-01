@@ -195,7 +195,7 @@ Connect to Wi-Fi. If the Wi-Fi information is known, you can directly use this i
 
 |App-Android|App-iOS|
 |:-:|:-:|
-|√|x|
+|android10 以下版本支持直连，android 10以上，包括鸿蒙系统仅支持 maunal 手动链接|x|
 
 
 ### uni.onWifiConnected(CALLBACK)

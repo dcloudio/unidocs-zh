@@ -136,7 +136,7 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 
 |App-Android|App-iOS|
 |:-:|:-:|
-|√|x|
+|android10 以下版本支持直连，android 10以上，包括鸿蒙系统仅支持 maunal 手动链接|x|
 
 
 ### uni.onWifiConnected(CALLBACK)

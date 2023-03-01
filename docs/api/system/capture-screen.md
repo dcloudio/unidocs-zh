@@ -79,7 +79,7 @@ The event that the user takes a screenshot. Cancel event listening.
 
 |参数名|类型|必填|说明|
 |:-|:-|:-|:-|
-|open|Boolean|是|是否打开防截屏|
+|enable|Boolean|是|是否允许用户截屏，ture: 允许用户截屏, false: 不允许用户截屏，防止用户截屏到应用页面内容|
 |success|Function|否|接口调用成功的回调|
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
@@ -94,7 +94,7 @@ The event that the user takes a screenshot. Cancel event listening.
 
 **注意**
 
-iOS防截屏功能在iOS 13及以上系统支持。另外，因为系统原因，在iOS 15.1系统上会触发错误，因此该api在iOS 15.1系统上暂不可用。
+iOS平台该API在iOS 13及以上系统支持。另外，因为系统原因，在iOS 15.1系统上会触发错误，因此该API在iOS 15.1系统上暂不可用。
 
 
 **代码示例**

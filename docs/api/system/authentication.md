@@ -1,8 +1,9 @@
 ### 生物认证说明
 ### Biometric authentication instructions
 
-生物认证，又称活体检测。它包含指纹识别、人脸识别这两部分。即通过人体身体特征来进行身份认证识别。
-Biological authentication, also known as in vivo detection. It includes fingerprint recognition and face recognition. That is, carry on the identity authentication recognition  through human body characteristics.
+生物认证，包含手机的指纹识别、faceid两部分。即通过人体身体特征来进行身份认证识别。
+
+如需要专业的活体检测、人脸识别、金融级实人认证，需另见文档[uni实人认证](/uniCloud/frv/intro.md)
 
 ### uni.startSoterAuthentication(OBJECT)
 
@@ -17,8 +18,6 @@ Start the SOTER biometric authentication.
 |:-	|:-	|:-					|:-						|:-					|:-					|:-				|
 |√（2.3.8+）	|x	|√					|x						|x					|x					|x				|
 
-App端在2.3.8版以前，可在插件市场获取[指纹相关插件](https://ext.dcloud.net.cn/plugin?id=358)。
-For APP side 2.3.8-, [Fingerprint related plug-ins](https://ext.dcloud.net.cn/plugin?id=358) can be obtained in the plug-in market.
 
 **OBJECT参数说明**
 **OBJECT parameter description**
@@ -53,9 +52,7 @@ For APP side 2.3.8-, [Fingerprint related plug-ins](https://ext.dcloud.net.cn/pl
 注意：
 Notice:
 - App端指纹识别，Android平台从Android6.0起才提供了官方API，uni-app也是从Android6起支持。对于更低版本的安卓，某些rom私有的指纹识别API，uni-app并不支持。
-- The official API of App side fingerprint recognition was not provided on the Android platform until Android6.0, and so was it on uni-app. For lower versions of Android, some rom has non official fingerprint APIs but they are not supported on uni-App.
-- App端人脸识别，iOS平台使用自带的faceID，而Android平台需要依赖三方SDK方可实现，可在插件市场搜索[人脸识别](https://ext.dcloud.net.cn/search?q=%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB)插件
-- Regarding the face recognition on the App side, the iOS platform uses its own faceID, while the Android platform needs to rely on a third-party SDK to realize face recognition. You can search for the [Face recognition](https://ext.dcloud.net.cn/search?q=%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB) plug-in in the plug-in market.
+- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://uniapp.dcloud.net.cn/uniCloud/frv/intro.html](/uniCloud/frv/intro.md)
 
 
 **OBJECT.success返回值说明**
@@ -316,12 +313,7 @@ Interface for requesting whether biological information such as fingerprints are
 #### 注意事项
 #### Precautions
 
-- App端自2.3.8版本起开始支持生物认证，更低版本或想使用指纹功能，可在插件市场获取[插件](https://ext.dcloud.net.cn/plugin?id=358)
-- From App side 2.3.8+, biometric authentication is supported. For lower versions or if you want to use the fingerprint function, you can obtain the [Plug-in](https://ext.dcloud.net.cn/plugin?id=358) in the plug-in market.
-- App端的人脸识别，仅支持iOS端的faceID。Android端需要依赖三方SDK方可实现，可在插件市场搜索[人脸识别](https://ext.dcloud.net.cn/search?q=%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB)插件
-- Face recognition on the App side only supports faceID on the iOS side. The Android side needs to rely on a third-party SDK to realize face recognition. You can search for the [Face recognition](https://ext.dcloud.net.cn/search?q=%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB) plug-in in the plug-in market.
-- App端打包时，注意需要在manifest的模块中选择指纹和faceID，否则打包后无法运行相关功能。
-- When packaging the App side, select fingerprint and faceID in the manifest module, or otherwise, related functions cannot run after packaging.
+- App端打包时，注意需要在manifest的模块中选择指纹、faceID、实人认证等模块，否则打包后无法运行相关功能。
 - hello uni-app已经集成相关示例，最新版HBuilderX新建新版hello uni-app示例项目真机运行可见，在API-设备-生物认证里。
 - hello uni-app has integrated relevant examples, and the latest version of HBuilderX creates a new version of hello uni-app example project, which can be seen in the mobile App Playground operation, in API- device-biometric authentication.
 - 微信小程序如果使用腾讯云的SDK，可参考[网友分享](https://segmentfault.com/a/1190000020102601)

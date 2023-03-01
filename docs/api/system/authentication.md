@@ -1,6 +1,8 @@
 ### 生物认证说明
 
-生物认证，又称活体检测。它包含指纹识别、人脸识别这两部分。即通过人体身体特征来进行身份认证识别。
+生物认证，包含手机的指纹识别、faceid两部分。即通过人体身体特征来进行身份认证识别。
+
+如需要专业的活体检测、人脸识别、金融级实人认证，需另见文档[uni实人认证](/uniCloud/frv/intro.md)
 
 ### uni.startSoterAuthentication(OBJECT)
 
@@ -12,7 +14,6 @@
 |:-	|:-	|:-					|:-						|:-					|:-					|:-				|
 |√（2.3.8+）	|x	|√					|x						|x					|x					|x				|
 
-App端在2.3.8版以前，可在插件市场获取[指纹相关插件](https://ext.dcloud.net.cn/plugin?id=358)。
 
 **OBJECT参数说明**
 
@@ -34,7 +35,7 @@ App端在2.3.8版以前，可在插件市场获取[指纹相关插件](https://e
 
 注意：
 - App端指纹识别，Android平台从Android6.0起才提供了官方API，uni-app也是从Android6起支持。对于更低版本的安卓，某些rom私有的指纹识别API，uni-app并不支持。
-- App端人脸识别，iOS平台使用自带的faceID，而Android平台需要依赖三方SDK方可实现，可在插件市场搜索[人脸识别](https://ext.dcloud.net.cn/search?q=%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB)插件
+- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://uniapp.dcloud.net.cn/uniCloud/frv/intro.html](/uniCloud/frv/intro.md)
 
 
 **OBJECT.success返回值说明**
@@ -237,9 +238,7 @@ App端在2.3.8版以前，可在插件市场获取[指纹相关插件](https://e
 
 #### 注意事项
 
-- App端自2.3.8版本起开始支持生物认证，更低版本或想使用指纹功能，可在插件市场获取[插件](https://ext.dcloud.net.cn/plugin?id=358)
-- App端的人脸识别，仅支持iOS端的faceID。Android端需要依赖三方SDK方可实现，可在插件市场搜索[人脸识别](https://ext.dcloud.net.cn/search?q=%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB)插件
-- App端打包时，注意需要在manifest的模块中选择指纹和faceID，否则打包后无法运行相关功能。
+- App端打包时，注意需要在manifest的模块中选择指纹、faceID、实人认证等模块，否则打包后无法运行相关功能。
 - hello uni-app已经集成相关示例，最新版HBuilderX新建新版hello uni-app示例项目真机运行可见，在API-设备-生物认证里。
 - 微信小程序如果使用腾讯云的SDK，可参考[网友分享](https://segmentfault.com/a/1190000020102601)
 - 支付宝小程序只支持人脸识别，[规范详情](https://docs.alipay.com/mini/api/facecapture)

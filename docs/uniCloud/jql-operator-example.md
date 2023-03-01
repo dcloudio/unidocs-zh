@@ -738,19 +738,18 @@ The example collection `test` data is as follows:
 { _id: 4, value: -45.34 }
 ```
 
-截断 `value` 到小数点后第一位的信息：
-Truncate `value` to the first decimal place:
+截断 `value` 为整数的信息：
 ```javascript
-db.collection('test').field('trunc(value, 1) as truncatedValue').get()
+db.collection('test').field('trunc(value) as truncatedValue').get()
 ```
 
 执行结果：
 Results of the:
 ```javascript
-{ "_id" : 1, "truncatedValue" : 19.2 }
-{ "_id" : 2, "truncatedValue" : 28.7 }
-{ "_id" : 3, "truncatedValue" : 34.3 }
-{ "_id" : 4, "truncatedValue" : -45.3 }
+{ "_id" : 1, "truncatedValue" : 19 }
+{ "_id" : 2, "truncatedValue" : 28 }
+{ "_id" : 3, "truncatedValue" : 34 }
+{ "_id" : 4, "truncatedValue" : -45 }
 ```
 ### 数组运算方法
 ### Array operation method

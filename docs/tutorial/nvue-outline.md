@@ -254,8 +254,7 @@ If the name is different, only the nvue page, on the non-app side, only the nvue
 ### 3.调试 nvue 页面
 ### 3. Debugging nvue page
 
-HBuilderX 内置了 weex 调试工具的强化版，包括审查界面元素、看 log、debug 打断点，[详见](https://uniapp.dcloud.io/tutorial/snippet#app-debug)
-HBuilderX has built-in an enhanced version of the weex debugging tool, including reviewing interface elements, watching logs, and debug breakpoints, [see details](https://uniapp.dcloud.io/tutorial/snippet#app-debug)
+HBuilderX 内置了 weex 调试工具的强化版，包括审查界面元素、看 log、debug 打断点，[详见](https://uniapp.dcloud.net.cn/tutorial/debug/debug-app.html)
 
 ## render-whole
 

@@ -393,7 +393,7 @@ module.exports = {
 > HBuilderX 版本需大于3.7.6
 
 如果您的业务没有部署在 uniCloud 上，可以通过 uni-frv-external 来实现实人认证功能。
-uni-frv-external 集成了实名认证前端页面和云端云对象，适用于没有使用uniCloud或没有使用uni-id账号体系的项目。
+uni-frv-external 集成了实名认证前端组件和云端云对象，适用于没有使用uniCloud或没有使用uni-id账号体系的项目。
 
 插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-frv-external](https://ext.dcloud.net.cn/plugin?name=uni-frv-external)
 
@@ -405,22 +405,20 @@ sequenceDiagram
   participant cf as 开发者云函数
   participant dev as 开发者服务器
   participant service as 实人认证服务
-  client->>+cf: 携带token请求certifyId
-  cf->>+dev: 请求校验用户id
-  Note over cf,dev: 开发者需实现用户验证接口<br />供云函数调用
-  dev-->>-cf: 返回用户id
+  client->>+dev: 请求certifyId
+  dev->>+cf: 携带用户信息请求certifyId (getCertifyId)
   cf->>+service: 请求certifyId
   service-->>-cf: 返回certifyId
-  Note over client,cf: 云函数存储uid+certifyId+实名信息的关联关系
-  cf-->>-client: 返回certifyId
+  cf-->>-dev: 返回certifyId
+  dev-->>-client: 返回certifyId
   client->>+service: 进行实人认证
   service-->-client: 返回认证结果
-  client->>+cf: 请求绑定实名信息
+  client->>+dev: 请求绑定实名信息
+  dev->>+cf: 请求认证结果 (getAuthResult)
   cf->>+service: 请求认证结果
   service-->>-cf: 返回认证结果
-  cf->>+dev: 将用户实名信息、uid发送给开发者服务器
-  dev-->>-cf: 返回绑定成功或失败
-  cf-->>-client: 返回绑定成功或失败
+  cf->>-dev: 返回用户实名信息
+  dev-->>-client: 返回绑定成功或失败
 ```
 
 #### 项目文件说明
@@ -444,8 +442,8 @@ sequenceDiagram
 │    │   ├── readme.md
 │    │   └── uniCloud
 │    │       ├── cloudfunctions
-│    │       │   └── uni-frv-co                         实名认证云对象
-│    │       │       ├── config.js                      加载uni-config-center/uni-frv-co.json配置文件
+│    │       │   └── uni-frv-external-co                实名认证云对象
+│    │       │       ├── config.js                      加载uni-config-center/uni-frv-external-co.json配置文件
 │    │       │       ├── functions                      云对象方法目录
 │    │       │       │   ├── _after.js                  云对象加载后方法
 │    │       │       │   ├── _before.js                 云对象执行前方法
@@ -460,9 +458,7 @@ sequenceDiagram
 │    │       │       ├── lib                            云对象公共类库
 │    │       │       │   ├── constants.js               变量定义声明文件
 │    │       │       │   ├── error.js                   错误码
-│    │       │       │   ├── request-webhook.js         处理业务服务器回调文件
 │    │       │       │   ├── sensitive-aes-cipher.js    敏感信息加解密
-│    │       │       │   ├── sign.js                    用于给业务服务器回调数据签名
 │    │       │       │   ├── utils.js                   工具类方法
 │    │       │       │   └── validator.js               请求参数校验
 │    │       │       └── package.json                   包管理文件
@@ -476,7 +472,7 @@ sequenceDiagram
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa1674035425.png)
 
-2. 完成实名认证后，阅读uni实名认证服务协议并点击协议下方的“同意协议并开通”按钮，便可开通实人认证服务。
+2. 完成实名认证后，阅读uni实人认证服务协议并点击协议下方的“同意协议并开通”按钮，便可开通实人认证服务。
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa1674039403.png)
 
@@ -484,9 +480,8 @@ sequenceDiagram
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa1674040001.png)
 
-4. 开通完成后，需要在您的业务系统中提供两个回调接口，来处理用户校验与认证结果回调通知。业务回调接口规范，[详见](#uni-frv-external-callback)
-5. 准备好回调接口后，在插件市场中导入[uni-frv-external](https://ext.dcloud.net.cn/plugin?name=uni-frv-external)至项目中。
-6. 将回调接口配置到实人认证配置文件中，具体配置[详见](#uni-frv-co-config), 实人认证配置文件路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-frv-external/config.json`。
+4. 在插件市场中导入[uni-frv-external](https://ext.dcloud.net.cn/plugin?name=uni-frv-external)至项目中。
+5. 按需配置实名认证，具体配置[详见](#uni-frv-co-config), 实名认证配置文件路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-frv-external/config.json`。
 7. 需要自行准备一个实名认证页面，引入`uni-frv-external-realname`组件，组件详细配置参考[前端使用](#uni-frv-external-feuse)
 8. 在`manifest.json`中找到`App模块设置-打包模块设置`，勾选”实人认证“。
 
@@ -518,15 +513,9 @@ sequenceDiagram
 ```json
 // 如果拷贝此内容切记去除注释
 {
-	"callback": { // 配置业务服务器回调
-		"userAuth": "", // 用户校验
-		"verifyResult": "" // 认证完成后结果回调
-	},
-	"requestTimeout": 5000, // 请求业务服务器超时时间
+    "sensitiveInfoEncryptSecret": "", // 敏感信息加密密钥(长度为32位字符串)，敏感信息如：姓名、身份证号、认证照片
 	"realNameCertifyLimit": 5, // 限制每个用户每天实人认证次数
-	"sensitiveInfoEncryptSecret": "", // 敏感信息加密密钥(长度需要大于32位)，敏感信息如：姓名、身份证号、认证照片
-	"needAlivePhoto": true, // 是否需要返回用户人脸照片
-	"requestAuthSecret": "" // 请求业务服务器时计算签名密钥
+	"needAlivePhoto": true // 是否需要返回用户人脸照片
 }
 ```
 
@@ -537,7 +526,7 @@ sequenceDiagram
 **组件用法**
 
 ```vue
-<uni-frv-external-realname :agreement="{url: '', title: ''}" token="user token" @result="resultCallback"></uni-frv-external-realname>
+<uni-frv-external-realname :agreement="{url: '', title: ''}" @start="startFunction" @result="resultFunction"></uni-frv-external-realname>
 ```
 
 **组件Props**
@@ -545,200 +534,275 @@ sequenceDiagram
 | 属性名       | 类型     | 默认值 | 说明                |
 |-----------|--------|-----|-------------------|
 | agreement | Object | -   | 隐私协议展示名称与地址，默认不展示 |
-| token     | String | -   | 业务系统的用户id         |
 
 **组件Event**
 
-| 事件名称   | 事件说明   | 返回参数        |
-|--------|--------|-------------|
-| result | 认证成功事件 | 见下方Result说明 |
+| 事件名称   | 事件说明 | 返回参数         |
+|--------|--|--------------|
+| start  | 开始认证事件 | 见下方Start说明  |
+| finish | 刷脸完成事件 | 见下方Finish说明  |
 
-Result说明
+Start 说明
+> 以下是start事件的返回值，用于开发者向业务服务器获取certifyId时使用。获取后调起人脸识别界面。
 
-| 参数       | 类型     | 说明                              |
-|----------|--------|---------------------------------|
-| status   | number | 认证状态：0 未认证 1 等待认证 2 认证通过 3 认证失败 |
-| idCard   | string | 用户身份证号码                         |
-| realName | string | 用户真实姓名                          |
+| 参数       | 类型     | 说明                   |
+|----------|--------|----------------------|
+| metaInfo | string | 客户端获取设备信息返回的metaInfo |
+| idCard   | string | 用户身份证号码              |
+| realName | string | 用户真实姓名               |
+
+Finish 说明
+> 以下是finish事件的返回值，用于开发者向业务服务器查询认证结果。
+
+| 参数        | 类型     | 说明      |
+|-----------|--------|---------|
+| certifyId | number | 认证Id    |
+| idCard    | string | 用户身份证号码 |
+| realName  | string | 用户真实姓名  |
+
+**startFacialRecognitionVerify(certifyId: string)方法说明**
+
+在 start 事件中获取到 certifyId 之后，通过 startFacialRecognitionVerify 方法调起人脸识别界面。
+详细使用方式，参考下方示例。
 
 **实名认证页面示例**
 
 ```vue
 <template>
-	<view class="content">
-		<template v-if="isCertified">
-			<uni-list>
-			<uni-list-item class="item" title="姓名" :rightText="realName"></uni-list-item>
-			<uni-list-item class="item" title="身份证号码" :rightText="idCard"></uni-list-item>
-		  </uni-list>
-		</template>
-		<template v-else>
-			<uni-frv-external-realname :agreement="agreement" :token="token" @result="resultCallback"></uni-frv-external-realname>
-		</template>
-	</view>
+  <view class="content">
+    <template v-if="isCertified">
+      <uni-list>
+        <uni-list-item class="item" title="姓名" :rightText="realName"></uni-list-item>
+        <uni-list-item class="item" title="身份证号码" :rightText="idCard"></uni-list-item>
+      </uni-list>
+    </template>
+    <template v-else>
+      <uni-frv-external-realname ref="frv" :agreement="agreement" @start="startVerify" @finish="verifyFinish"></uni-frv-external-realname>
+    </template>
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-                token: '',
-				agreement: {
-						title: "实名认证协议",
-						url: "https://www.xxx.com"
-				},
-				isCertified: false,
-				realName: '',
-				idCard: '',
-			}
-		},
-		methods: {
-			resultCallback (result) {
-				if (result.status === 2) {
-					this.isCertified = true
-					this.realName = result.realName
-					this.idCard = result.idCard
-				}
-			}
-		}
-	}
+export default {
+  data() {
+    return {
+      agreement: {
+        title: "实名认证协议",
+        url: "https://www.xxxxx.com"
+      },
+      isCertified: false,
+      realName: '',
+      idCard: ''
+    }
+  },
+  methods: {
+    async startVerify ({realName, idCard, metaInfo}) {
+      uni.showLoading({ title: '加载中...' })
+      uni.request({
+        url: 'YOUR_BACKEND_API/getCertifyId',
+        method: "POST",
+        data: {
+          realName,
+          idCard,
+          metaInfo
+        },
+        success: ({data}) => {
+          if (data.errCode !== 0) {
+            return uni.showModal({
+              title: data.errCode,
+              content: data.errMsg,
+              showCancel: false
+            })
+          }
+          if (data.certifyId) {
+            this.$refs.frv.startFacialRecognitionVerify(data.certifyId)
+          }
+        },
+        fail: (error) => {
+          console.error(error.errMsg)
+          uni.showModal({
+            content: '请求异常，稍后再试',
+            showCancel: false
+          })
+        },
+        complete: () => {
+          uni.hideLoading()
+        }
+      })
+    },
+    async verifyFinish (result) {
+      uni.showLoading({ title: '加载中...' })
+      uni.request({
+        url: 'YOUR_BACKEND_API/getAuthResult',
+        method: "POST",
+        data: {
+          certifyId: result.certifyId
+        },
+        success: ({data}) => {
+          if (data.errCode !== 0) {
+            return uni.showModal({
+              title: data.errCode,
+              content: data.errMsg,
+              showCancel: false
+            })
+          }
+
+          uni.showModal({
+            content: "实名认证成功",
+            showCancel: false,
+            success: () => {
+              this.isCertified = true
+              this.realName = data.realName
+              this.idCard = data.idCard
+            }
+          })
+        },
+        fail: (error) => {
+          uni.showModal({
+            content: '请求异常，稍后再试',
+            showCancel: false
+          })
+          console.error(error.errMsg)
+        },
+        complete: () => {
+          uni.hideLoading()
+        }
+      })
+    },
+  }
+}
 </script>
+
+<style>
+
+</style>
+
 ```
 
-#### 业务回调接口规范@uni-frv-external-callback
+#### 开发者服务器调用说明@uni-frv-external-callback
 
-完成整个实名认证流程，需要业务服务器配合提供两个回调接口，用于用户校验与认证结果通知。
-为保证请求在网络上传输安全，在请求回调地址时，`uni-frv-co`会对请求参数进行签名，开发者在服务器需要验证签名是否正确，不正确的签名可以将请求拒绝。
-验证签名操作为开发者主动行为，需要开发者评估是否需要签名验证，不作为强制要求。但强烈建议验证签名以保证安全性。
+uni-frv-external-co 只支持URL化方式访问，在调用之前需要在uniCloud控制台-云函数中设置 `uni-frv-external-co` 的URL路径。
+为了保证URL化后的网络传输安全，内置了`uni-cloud-s2s` 公共模块的鉴权校验功能，对请求进行安全校验。
 
-**概述**
+**请求结构**
 
-| 请求相关项  | 说明                                                            |
-|--------|---------------------------------------------------------------|
-| 请求协议	  | HTTP/HTTPS，为保证数据安全，建议使用 HTTPS                                 |
-| 请求方式	  | POST                                                          |
-| 请求类型	  | application/json; charset=utf-8                               |
-| 校验方式   | uni-frv-co 请求到业务服务器时，开发者应从请求头中获取签名字段进行安全校验，防止数据篡改；签名见下方请求签名说明 |
-| 请求超时时间 | 默认超时5秒钟，可在配置文件中配置                                             |
+| 请求相关项 | 说明                                    |
+|-------|---------------------------------------|
+| 请求协议	 | 云函数所有接口都使用 HTTPS，提高通信安全性              |
+| 请求方式	 | 只支持 POST                              |
+| 请求类型	 | application/json; charset=utf-8       |
+| 校验方式  | 支持携带connectCode认证与使用签名认证，详见下方**鉴权说明** |
 
-**请求签名说明**
+**鉴权说明**
 
-请在`uni-frv-co`配置文件中配置`requestAuthSecret`请求鉴权密钥，确保业务服务器与配置文件中的请求鉴权密钥一致。
+`uni-frv-external`提供的接口，默认开启了鉴权验证，在调用接口前需要配置`uni-cloud-secure`。
+请求鉴权能力由 `uni-cloud-s2s` 公共模块提供，了解 `uni-cloud-s2s` [详见](/uniCloud/uni-cloud-s2s.md)
 
-发起请求时，将使用请求鉴权密钥计算签名，会在 HTTP 请求头中携带以下信息：
+支持以下两种认证方式，根据业务需求选择不同的认证方式
 
-| Header            | 描述                                                              |
-|-------------------|-----------------------------------------------------------------|
-| uni-frv-nonce     | 随机字符串                                                           |
-| uni-frv-timestamp | 当前时间戳; 单位毫秒                                                     |
-| uni-frv-signature | 请求鉴权签名; 了解签名算法[详见](/uniCloud/uni-id-pages.md#http-reqeust-auth) |
+1. 携带connectCode认证；相比签名认证，省去了复杂的签名计算过程。 调用简单，但安全性较低，适合服务器与服务器之间调用。[详见](/uniCloud/uni-cloud-s2s.md#code)
+2. 使用签名认证；调用接口时需要使用签名密钥对请求内容进行签名计算，并将签名添加至请求头传输给云函数进行签名验证，相比简易鉴权方式，安全性高，可防止接口参数被篡改。[详见](/uniCloud/uni-cloud-s2s.md#sign)
 
-**用户校验回调接口**
+如在您的业务也在uniCloud并且需要签名请求认证，可以使用`uni-cloud-s2s`提供的`getSecureHeaders`方法生成签名请求头 [详见](/uniCloud/uni-cloud-s2s.md#sign-method-of-server)
 
-以下示例的请求地址均为示例，在实际使用中将更换为业务服务器的回调地址。
+如果在uniCloud之外的场景中使用签名认证方式请求，参考[非云函数场景签名方法](/uniCloud/uni-cloud-s2s.md#sign-method-of-server)
+
+**获取认证ID（getCertifyId）**
+
+请求地址：
+```
+POST https://{云函数Url化域名}/{自定义路径}/getCertifyId
+```
+
+以下示例的请求地址均为示例，在实际使用中将更换为云函数URL化地址。
 
 HTTP 示例
 ```javascript
-POST /callback/userAuth HTTP/1.1
+POST /uni-frv-external-co/getCertifyId HTTP/1.1
 Host: xxx.com
-uni-frv-nonce: x9K3829
-uni-frv-timestamp: 1676882808550
-uni-frv-signature: 1C965267A4A02C6978949C7135215B0A75AEA22B2B84ED491E792365C8269EFA
+Unicloud-S2s-Timestamp: 1676882808550
+Unicloud-S2s-Signature: 11c965267a4a02c6978949c7135215b0a75aea22b2b84ed491e792365c8269efa
 Content-Type: application/json
 Cache-Control: no-cache
 
-{"token": "test token"}
+{"uid": "test uid", "appId": "test appId", "realName": "张三", "idCard": "10xxxxxxxxxxx09", "metaInfo": "test metaInfo"}
 ```
 
 Request Body 说明
 
-| 名称    | 类型     | 必须  | 说明            |
-|-------|--------|-----|---------------|
-| token | string | 是   | 业务系统中的用户token |
+| 名称         | 类型      | 必须  | 说明                     |
+|------------|---------|-----|------------------------|
+| uid        | string  | 是   | 业务系统中的用户id             |
+| appId      | string  | 是   | uni-frv-external的appId |
+| realName		 | String	 | 是		 | 用户真实姓名									        |
+| idCard			  | String	 | 是		 | 用户身份证号									        |
+| metaInfo		 | String	 | 是		 | 客户端获取设备信息返回的metaInfo	  |
 
 Response Body 说明
 
-| 名称      | 类型     | 必须  | 说明                  |
-|---------|--------|-----|---------------------|
-| errCode | string | 是   | 错误码；成功返回0，其他错误返回错误码 |
-| errMsg  | string | 否   | 错误信息；成功可以为空         |
-| uid     | string | 是   | 业务系统中的用户id          |
+| 名称        | 类型     | 必须  | 说明                         |
+|-----------|--------|-----|----------------------------|
+| errCode   | string | 是   | 错误码；成功返回0，其他错误返回错误码        |
+| errMsg    | string | 否   | 错误信息；成功为空                  |
+| certifyId | string | 是   | 认证id，用于客户端调用认证接口及云函数获取认证结果 |
 
-**注意**
+**获取认证结果（getAuthResult）**
 
-- 开发者需要严格按照 ResponseBody 格式返回。
+请求地址：
+```
+POST https://{云函数Url化域名}/{自定义路径}/getAuthResult
+```
 
-**认证结果通知回调接口**
-
-以下示例的请求地址均为示例，在实际使用中将更换为业务服务器的回调地址。
+以下示例的请求地址均为示例，在实际使用中将更换为云函数URL化地址。
 
 HTTP 示例
 ```javascript
-POST /callback/verifyResult HTTP/1.1
-Host: xxx.com
-uni-frv-nonce: x9K3829
-uni-frv-timestamp: 1676882808550
-uni-frv-signature: 1C965267A4A02C6978949C7135215B0A75AEA22B2B84ED491E792365C8269EFA
+POST /uni-frv-external-co/getAuthResult HTTP/1.1
+Host: xxxx.com
+Unicloud-S2s-Timestamp: 1676882808550
+Unicloud-S2s-Signature: 11c965267a4a02c6978949c7135215b0a75aea22b2b84ed491e792365c8269efa
 Content-Type: application/json
 Cache-Control: no-cache
 
-{"uid": "test uid", "realName": "张三", "idCard": '10xxxxxxxxxx', "photo": "...", "status": 2}
+{"appId": "test appId", "certifyId": "sha24c5e9c4f6a3b167f26aae66bb20f"}
 ```
 
 Request Body 说明
 
+| 名称        | 类型     | 必须  | 说明                     |
+|-----------|--------|-----|------------------------|
+| appId     | string | 是   | uni-frv-external的appId |
+| certifyId | string | 是   | 认证id                   |
+
+Response Body 说明
+
 | 名称       | 类型     | 必须  | 说明                              |
 |----------|--------|-----|---------------------------------|
+| errCode  | string | 是   | 错误码；成功返回0，其他错误返回错误码             |
+| errMsg   | string | 否   | 错误信息；成功为空                       |
 | uid      | string | 是   | 业务系统中的用户id                      |
 | realName | string | 是   | 真实姓名                            |
 | idCard   | string | 是   | 身份证号码                           |
 | photo    | string | 是   | 用户认证照片；needAlivePhoto为true时返回   |
-| status   | string | 是   | 认证状态：0 未认证 1 等待认证 2 认证通过 3 认证失败 |
+| status   | number | 是   | 认证状态：0 未认证 1 等待认证 2 认证通过 3 认证失败 |
 
-Response Body 说明
+**错误码**
 
-| 名称       | 类型     | 必须  | 说明                  |
-|----------|--------|-----|---------------------|
-| errCode  | string | 是   | 错误码；成功返回0，其他错误返回错误码 |
-| errMsg   | string | 否   | 错误信息；成功可以为空         |
-| realName | string | 否   | 真实姓名                |
-| idCard   | string | 否   | 身份证号                |
-
-**注意**
-
-- 开发者需要严格按照 `ResponseBody` 格式返回。
-- 如果有敏感数据脱敏需求，可以在响应中返回脱敏后的真实姓名和身份证号。
-
-#### 回调接口签名验证
-
-**nodejs示例**
-
-```javascript
-function verify (body, signature, timestamp, nonce) {
-  const timeout = 30 * 1000 // 请求超过30秒不能再请求，防止重放攻击
-  const bodyStr = Object.keys(body)
-    .sort()
-    .filter(item => typeof body[item] !== 'object')
-    .map(item => `${item}=${body[item]}`)
-    .join('&')
-
-  if (isNaN(Number(timestamp)) || (Number(timestamp) + timeout) < Date.now()) {
-    throw {
-      errCode: "ILLEGAL_REQUEST"
-    }
-  }
-
-  const reSignature = crypto.createHmac('sha256', `${requestAuthSecret + nonce}`).update(`${timestamp}${bodyStr}`).digest('hex')
-
-  if (signature !== reSignature.toUpperCase()) {
-    throw {
-      errCode: "ILLEGAL_REQUEST"
-    }
-  }
-
-  return true
-}
-```
-
-其他语言参考[签名算法](/uniCloud/uni-id-pages.md#http-reqeust-auth)自行实现签名验证逻辑
-
+| 错误码                                 | 说明               |
+|-------------------------------------|------------------|
+| uni-frv-invalid-param               | 请求参数错误           |
+| uni-frv-param-required              | 缺少参数: {param}    |
+| uni-frv-fail                        | 人脸识别认证失败         |
+| uni-frv-frv-processing              | 等待人脸识别           |
+| uni-frv-realname-verified           | 该账号已实名认证         |
+| uni-frv-idcard-exists               | 该证件号码已绑定账号       |
+| uni-frv-invalid-idcard              | 身份证号码不合法         |
+| uni-frv-invalid-realname            | 姓名不合法，只能是汉字      |
+| uni-frv-unknown-error               | 未知错误；常见于查询认证结果异常 |
+| uni-frv-realname-verify-upper-limit | 当日实名认证次数已达上限     |
+| uni-frv-config-field-required       | 缺少配置项: {field}   |
+| uni-frv-config-field-invalid        | 配置项: {field}无效   |
+| uni-frv-certify-id-not-exist        | certifyId 不存在    |
+| uni-frv-certify-id-used             | certifyId 已使用    |
+| uni-frv-callback-fail               | 服务异常，请稍后再试       |
+| uni-frv-illegal-request             | 非法请求；签名错误时会返回此错误 |

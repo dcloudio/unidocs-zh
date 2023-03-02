@@ -297,13 +297,7 @@ Examples are as follows:
 8. 点击某个用户，会自动创建与该用户的会话，并打开“聊天对话页”（路径：`/uni_modules/uni-im/pages/chat/chat`），然后就可以开始聊天了。
 9. 还可以导入uni-im的示例项目作为管理员端与用户聊天。
 10. 如果你是2个不同appId的应用相互通讯（比如：淘宝的买家端和卖家端通讯）的场景，请打开聊天对话文件（路径：`/uni_modules/uni-im/pages/chat/chat`）搜索`data.appId = this.systemInfo.appId`修改`this.systemInfo.appId`为相对的appId
-
-
-**补充：**（基于uni-id-pages开发的项目可忽略）
-**Supplement:** (projects developed based on uni-id-pages can be ignored)
-
-为了实现用户退出登录后，不再收到im消息，需要在执行退出登录时同步状态给uni-id-pages。示例代码如下：
-In order to prevent the user from receiving IM messages after logging out, it is necessary to synchronize the status to uni-id-pages when logging out. The sample code is as follows:
+11. 退出登录；不基于uni-id-pages开发的项目，为了防止占线等冲突，需要在执行退出登录/切换账号时，调用uni-id的退出登录接口。示例代码如下：
 ```js
 import {mutations as uniIdMutations} from '@/uni_modules/uni-id-pages/common/store.js'
 uniIdMutations.logout()

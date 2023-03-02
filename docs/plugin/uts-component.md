@@ -1,8 +1,7 @@
 # UTS 组件开发
 # UTS component development
 
-> 需HBuilderX 3.7.0 及之后版本
-> Requires HBuilderX 3.7.0 and later
+> 需HBuilderX 3.6.18 及之后版本
 
 > app平台目前仅支持nvue
 > The app platform currently only supports nvue
@@ -348,17 +347,14 @@ The following is a complete example of component source code index.vue:
 	} from "UIKit"
 
 	// 定义按钮点击后触发回调的类
-	// Define the class that triggers the callback after the button is clicked
 	class ButtonClickListsner {
 		// 按钮点击回调方法
-		// button click callback method
 		@objc buttonClick() {
 			console.log("按钮被点击")
 		}
 	}
 
 	//原生提供以下属性或方法的实现  
-	//natively provide the implementation of the following properties or methods
 	export default {
 		/**
 		 * 组件名称，也就是开发者使用的标签
@@ -411,7 +407,6 @@ The following is a complete example of component source code index.vue:
 			 */
 			doSth(paramA: string) {
 				// 这是组件的自定义方法
-				// This is a custom method for the component
 				console.log("paramA")
 			},
 			/**
@@ -442,7 +437,6 @@ The following is a complete example of component source code index.vue:
 		 */
 		NVLoad(): UIButton {
 			//必须实现  
-			//Must be implemented
 			let button = new UIButton()
 			button.setTitle(this.buttonText, for = UIControl.State.normal)
 			const target = new ButtonClickListsner()
@@ -595,8 +589,7 @@ NVMeasure is used to tell the typesetting system, the width and height required 
 一般情况下，组件的宽高应该是由终端系统的排版引擎决定，组件开发者不需要实现此函数。
 In general, the width and height of a component should be determined by the typesetting engine of the terminal system, and component developers do not need to implement this function.
 
-部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
-In some scenarios, the component developer needs to maintain the width and height by himself, so the developer needs to rewrite this function
+但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
 
 [vue3 生命周期暂不支持](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
 [vue3 life cycle is not currently supported](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E9%80%89%E9%A1%B9-%E7%94%9F%E5 %91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
@@ -657,12 +650,8 @@ This chapter takes a minimalist component development as an example to introduce
 在HBuilder X 中选中Uni-App项目下 uni_modules目录  
 Select the uni_modules directory under the Uni-App project in HBuilder X
 
-![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create.jpg)
+todo  目前还没有创建界面
 
-选择`UTS插件-组件插件`
-Select `UTS Plugins - Component Plugins`
-
-![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create_hello.jpg)
 
 这是创建后的目录结构
 This is the directory structure after creation
@@ -761,7 +750,8 @@ Open index.vue and type the following component source code:
 </template>
 <script lang="uts">
 	import {
-		UIButton
+		UIButton,
+		UIControl
 	} from "UIKit"
 
 	// 定义按钮点击后触发回调的类
@@ -796,6 +786,11 @@ Open index.vue and type the following component source code:
 				immediate: false //创建时是否通过此方法更新属性，默认值为false  
 			},
 		},
+		data() {
+			return {
+				buttonClickListsner : new ButtonClickListsner()
+			}
+		},
 		expose: ['doSth'],
 		methods: {
 			/**
@@ -815,9 +810,8 @@ Open index.vue and type the following component source code:
 			//Must be implemented
 			let button = new UIButton()
 			button.setTitle(this.buttonText, for = UIControl.State.normal)
-			const target = new ButtonClickListsner()
 			const method = Selector("buttonClick")
-			button.addTarget(target, action = method, for = UIControl.Event.touchUpInside)
+			button.addTarget(this.buttonClickListsner, action = method, for = UIControl.Event.touchUpInside)
 			return button
 		}
 	}
@@ -886,12 +880,7 @@ This chapter takes the lottie animation component as an example to introduce the
 在HBuilder X 中选中Uni-App项目下 uni_modules目录  
 Select the uni_modules directory under the Uni-App project in HBuilder X
 
-![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create.jpg)
-
-选择`UTS插件-组件插件`
-Select `UTS Plugins - Component Plugins`
-
-![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create_anim.jpg)
+todo  目前还没有创建界面
 
 这是创建后的目录结构
 This is the directory structure after creation
@@ -1206,19 +1195,14 @@ Open index.vue and type the following component source code:
 		LottieLoopMode
 	} from 'Lottie'
 	import {
-		URL,
-		Bundle
+		URL
 	} from 'Foundation'
-	import {
-		UIView
-	} from "UIKit"
 	import {
 		UTSiOS
 	} from "DCloudUTSFoundation"
 
 
 	//原生提供以下属性或方法的实现  
-	//natively provide the implementation of the following properties or methods
 	export default {
 		/**
 		 * 组件名称，也就是开发者使用的标签
@@ -1277,15 +1261,15 @@ Open index.vue and type the following component source code:
 		watch: {
 			"path": {
 				handler(newValue: string, oldValue: string) {
-					this.path = newValue
-					this.playAnimation()
+					if (this.autoplay) {
+						this.playAnimation()
+					}
 				},
 				immediate: false //创建时是否通过此方法更新属性，默认值为false  
 			},
 			"loop": {
 				handler(newValue: boolean, oldValue: boolean) {
-					this.loop = newValue
-					if (this.loop) {
+					if (newValue) {
 						this.$el.loopMode = LottieLoopMode.loop
 					} else {
 						this.$el.loopMode = LottieLoopMode.playOnce
@@ -1295,8 +1279,7 @@ Open index.vue and type the following component source code:
 			},
 			"autoplay": {
 				handler(newValue: boolean, oldValue: boolean) {
-					this.autoplay = newValue
-					if (this.autoplay) {
+					if (newValue) {
 						this.playAnimation()
 					}
 				},
@@ -1305,9 +1288,7 @@ Open index.vue and type the following component source code:
 			"action": {
 				handler(newValue: string, oldValue: string) {
 					const action = newValue
-
 					if (action == "play" || action == "pause" || action == "stop") {
-						this.action = action
 						switch (action) {
 							case "play":
 								this.playAnimation()
@@ -1323,7 +1304,6 @@ Open index.vue and type the following component source code:
 						}
 					} else {
 						// 非法入参，不管
-						// Illegal input parameters, no matter
 					}
 				},
 				immediate: false //创建时是否通过此方法更新属性，默认值为false  
@@ -1331,7 +1311,6 @@ Open index.vue and type the following component source code:
 
 			"hidden": {
 				handler(newValue: boolean, oldValue: boolean) {
-					this.hidden = newValue
 					this.$el.isHidden = this.hidden
 				},
 				immediate: false //创建时是否通过此方法更新属性，默认值为false  
@@ -1341,9 +1320,7 @@ Open index.vue and type the following component source code:
 		expose: ['setRepeatMode'],
 		methods: {
 			// 需要对外暴露的方法
-			// methods that need to be exposed externally
 			// 设置 RepeatMode 
-			// set RepeatMode
 			setRepeatMode(repeatMode: string) {
 				if (repeatMode == "RESTART") {
 					if (this.loop) {
@@ -1360,12 +1337,9 @@ Open index.vue and type the following component source code:
 				}
 			},
 			// 不对外暴露的方法
-			// Methods that are not exposed externally
 			// 播放动画 
-			// play the animation
 			playAnimation() {
 				// 构建动画资源 url
-				// Build animation resource url
 				var animationUrl: URL | null
 
 				if (this.path.hasPrefix("http")) {
@@ -1377,17 +1351,14 @@ Open index.vue and type the following component source code:
 
 				if (animationUrl != null) {
 					// 加载动画 LottieAnimation
-					// load animation LottieAnimation
 					LottieAnimation.loadedFrom(url = animationUrl!, closure = (animation: LottieAnimation | null):
 						void => {
 							if (animation != null) {
 								// 加载成功开始播放
-								// load successfully and start playing
 								this.$el.animation = animation
 								this.$el.play(completion = (isFinish: boolean): void => {
 									if (isFinish) {
 										// 播放完成回调事件
-										// playback complete callback event
 										this.fireEvent("bindended")
 									}
 								})
@@ -1403,21 +1374,17 @@ Open index.vue and type the following component source code:
 		},
 		NVBeforeLoad() { //组件将要创建，对应前端beforeMount  
 			//可选实现，这里可以提前做一些操作  
-			//Optional implementation, here you can do some operations in advance
 		},
 		NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）  
 			// 初始化 Lottie$el
-			// initialize Lottie$el
 			const animationView = new LottieAnimationView()
 			// 默认只播放一次动画
-			// Only play the animation once by default
 			animationView.loopMode = LottieLoopMode.playOnce
 			return animationView
 		},
 		NVLoaded() { //原生View已创建  
 
 			/// 更新 props 中定义的属性值
-			/// Update the property value defined in props
 
 			if (this.loop) {
 				this.$el.loopMode = LottieLoopMode.loop
@@ -1432,26 +1399,21 @@ Open index.vue and type the following component source code:
 
 		NVLayouted() { //原生View布局完成  
 			//可选实现，这里可以做布局后续操作  
-			//Optional implementation, here you can do follow-up operations on layout
 		},
 
 		NVBeforeUnload() { //原生View将释放  
 			//可选实现，这里可以做释放View之前的操作  
-			//Optional implementation, here you can do the operation before releasing the View
 		},
 		NVUnloaded() { //原生View已释放  
 			//可选实现，这里可以做释放View之后的操作  
-			//Optional implementation, here you can do the operation after releasing the View
 		},
 		unmounted() { //组件销毁  
 			//可选实现  
-			// optional implementation
 		}
 	}
 </script>
 <style>
 	//定义默认样式值, 组件使用者没有配置时使用  
-	//Define the default style value, used when the component user has no configuration
 	.defaultStyles {
 		width: 750rpx;
 		height: 240rpx;
@@ -1603,8 +1565,7 @@ In the current example, because additional third-party dependencies are configur
 ## UTS开发容器组件
 ## UTS development container components
 
-#### 容器组件简介
-#### Introduction to Container Components
+## 简介
 
 组件一般有两种场景，第一种是： 单标签组件
 Components generally have two scenarios, the first one is: single label component
@@ -1624,14 +1585,17 @@ The second is used as a container:
 	<image src="https://xxx">
 <uts-view >
 ```
-#### 容器组件声明
-#### Container Component Declaration
+## 声明
 
 UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 As a container component, UTS components follow exactly the same specifications as ordinary View components.
 
 唯一的区别在于 当组件布局中包含 <solt>标签时，编译器会自动将其转换为容器组件
 The only difference is that when the <solt> tag is included in the component layout, the compiler will automatically convert it into a container component
+
+::: preview
+
+> Android
 
 ```ts
 <template>
@@ -1666,12 +1630,37 @@ The only difference is that when the <solt> tag is included in the component lay
 
 ```
 
+> iOS
+
+```ts
+<template>
+	<view>
+		<slot></slot>
+	</view>
+</template>
+<script lang="uts">
+	import {
+		UIView
+	} from 'UIKit'
+	//原生提供以下属性或方法的实现  
+	export default {
+		name: "uts-hello-container",
+		NVLoad(): UIView {
+			let view = new UIView()
+			return view
+		}
+
+	}
+</script>
+```
+
+:::
+
 如上，我们即可到了一个最简的UTS容器组件
 As above, we can arrive at the simplest UTS container component
 
 
-#### 使用容器组件
-#### Using Container Components
+## 使用容器组件
 
 UTS容器组件的使用与Vue等常见的前端容器组件一致。唯一要注意的是，目前UTS容器组件还不支持 具名插槽。
 The use of UTS container components is consistent with common front-end container components such as Vue. The only thing to note is that currently UTS container components do not yet support named slots.
@@ -1700,17 +1689,12 @@ The following is an example of using a container component
 ## Quick experience
 
 
-开发者可以使用[Hello UTS](https://gitcode.net/dcloud/hello-uts) 快速体验UTS组件开发
-Developers can use [Hello UTS](https://gitcode.net/dcloud/hello-uts) to quickly experience UTS component development
+开发者可以使用[Hello UTS](https://gitcode.net/dcloud/hello-uts) 快速体验UTS 组件开发
 
-本文档中涉及的示例均可以在其中找到：
-uts-hello-component
 
-`uts-hello-view`对应的源码实现：~/uni_modules/uts-hello-component
-The source code implementation corresponding to `uts-hello-view`: ~/uni_modules/uts-hello-component
+Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 
-`uts-animation-view`对应的源码实现：~/uni_modules/uts-animation-view
-The source code implementation corresponding to `uts-animation-view`: ~/uni_modules/uts-animation-view
+`uts-animation-view`动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 
 
 

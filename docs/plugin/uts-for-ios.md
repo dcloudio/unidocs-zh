@@ -445,14 +445,6 @@ var user: String? = nil
 let user: string | null = null
 ```
 
-uts 中也支持在变量名称后面加 ？表示可选类型，这是标准 ts 语法，但是这种写法在 uts 中不推荐使用，因为在 ts 中可选类型默认为 `undefined`类型，uts 中没有 `undefined` 类型
-uts also supports adding ? Represents an optional type, which is the standard ts syntax, but this way of writing is not recommended in uts, because the optional type defaults to `undefined` type in ts, and there is no `undefined` type in uts
-
-```ts
-// uts
-let user?:string = null
-```
-
 #### 5.1.3 调用构造方法
 #### 5.1.3 Call the constructor
 

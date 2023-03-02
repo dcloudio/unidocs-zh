@@ -713,7 +713,7 @@ To improve security, it is recommended that all developers using rewarded videos
 - plus.networkinfo.isSetProxy 判断设备的网络是否设置了代理 [规范](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy)
 - plus.networkinfo.isSetProxy determines whether the device's network has a proxy set [Specification](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy)
 4. 避免使用短信验证码来识别身份，推荐使用可信度更高的 [手机号一键登录](/univerify) 或 [微信登录](/api/plugins/login?id=login)
-5. 必要时可使用[生物认证（指纹和faceid）](/api/system/authentication)、[uni实人认证](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)
+5. 必要时可使用[生物认证（指纹和faceid）](/api/system/authentication)、[uni实人认证（活体检测）](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)
 
 
 ### manifest 配置@manifest

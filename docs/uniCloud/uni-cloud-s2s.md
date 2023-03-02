@@ -11,7 +11,7 @@ uni-cloud-s2s模块就是为了统一校验、生成验证信息方法，减少�
 
 上述两种安全通讯方式在uni-cloud-s2s内均有实现：
 
-- Code验证请参考：[使用connnectCode进行安全通讯](#code)
+- Code验证请参考：[使用connectCode进行安全通讯](#code)
 - 签名验证请参考：[使用签名进行安全通讯](#sign)
 
 ::: warning 注意
@@ -20,7 +20,7 @@ uni-cloud-s2s仅能在云函数内使用，开发者需要按照uni-cloud-s2s的
 请求头的key应忽略大小写进行校验
 :::
 
-## 使用connnectCode进行安全通讯@code
+## 使用connectCode进行安全通讯@code
 
 ### 配置@code-config
 

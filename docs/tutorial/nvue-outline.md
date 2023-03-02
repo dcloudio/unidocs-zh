@@ -1,5 +1,4 @@
-## 介绍
-## Introduction
+## nvue介绍
 
 `uni-app` App 端内置了一个基于 weex 改进的原生渲染引擎，提供了原生渲染能力。
 The `uni-app` App has a built-in native rendering engine based on weex, which provides native rendering capabilities.

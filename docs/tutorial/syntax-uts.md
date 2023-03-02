@@ -989,7 +989,6 @@ class Person {
 }
 console.log(Person.age); //10
 let p = new Person(); //新建一个实例
-console.log(p.age); //undefined
 console.log(p.getAge()); //10
 ```
 
@@ -2066,7 +2065,7 @@ console.log(map1.get('bar'));
 // expected output: "foo"
 
 console.log(map1.get('baz'));
-// expected output: undefined
+// expected output: null
 ```
 
 ### Math

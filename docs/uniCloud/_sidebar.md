@@ -89,6 +89,7 @@
   * [统一发行页面](uni-portal.md)
   * [uni-cloud-router](uni-cloud-router.md)
   * [uni-open-bridge](uni-open-bridge.md)
+  * [uni-cloud-s2s](uni-cloud-s2s.md)
 * [案例](resource.md)
 * [开发者使用反馈](feedback.md)
 * [DCloud行业认证服务商](https://ask.dcloud.net.cn/article/39388)

@@ -79,23 +79,23 @@ Android的截屏监听原理是监听相册中截屏目录的文件新增，需�
 
 **注意**
 
-iOS平台该API在iOS 13及以上系统支持。另外，因为系统原因，在iOS 15.1系统上会触发错误，因此该API在iOS 15.1系统上暂不可用。
++ iOS平台该API在iOS 13及以上系统支持。另外，因为系统原因，在iOS 15.1系统上会触发错误，因此该API在iOS 15.1系统上暂不可用。
++ Android平台暂不支持图片/视频选择、图片/视频预览、一键登录等uni-app内部原生页面以及App原生插件内部原生页面。
 
 
 **代码示例**
 
 ```javascript
-let flag = this.setUserCaptureScreenFlag;
 uni.setUserCaptureScreen({
-    open: flag,
+    enable: false,
     success: (res) => {
-        console.log("setUserCaptureScreen open: " + flag + " success: " + JSON.stringify(res));
+        console.log("setUserCaptureScreen success: " + JSON.stringify(res));
     },
     fail: (res) => {
-        console.log("setUserCaptureScreen open: " + flag + " fail: " + JSON.stringify(res));
+        console.log("setUserCaptureScreen fail: " + JSON.stringify(res));
     },
     complete: (res) => {
-        console.log("setUserCaptureScreen open: " + flag + " complete: " + JSON.stringify(res));
+        console.log("setUserCaptureScreen complete: " + JSON.stringify(res));
     }
 });
 ```

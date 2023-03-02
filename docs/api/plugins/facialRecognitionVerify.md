@@ -1,6 +1,12 @@
+实人认证提供核验终端操作者的真实身份，包含活体检测和人脸对比等生物识别技术，可快速校验自然人的真实身份。
+
+App平台完整业务开发流程，参考[开发指南](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)  
+微信小程序端业务开发流程，请参考[微信人脸核身接口能力](https://developers.weixin.qq.com/community/business/doc/000442d352c1202bd498ecb105c00d)  
+
+
 ### uni.getFacialRecognitionMetaInfo()  
 
-uni.getFacialRecognitionMetaInfo是客户端API，用户获取实人认证设备信息
+uni.getFacialRecognitionMetaInfo是客户端API，获取实人认证设备信息，用于uniCloud云函数[getCertifyId](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html#get-certify-id)获取certifyId。
 
 App端API规范参考：[详情](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html#get-meta-info) 
 
@@ -17,9 +23,6 @@ real person authentication
 uni.startFacialRecognitionVerify是客户端API，在App端打开刷脸认证界面。  
 
 App端API规范参考：[详情](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html#start-frv)  
-
-App平台完整业务开发流程，参考[开发指南](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)  
-微信小程序端业务开发流程，请参考[微信人脸核身接口能力](https://developers.weixin.qq.com/community/business/doc/000442d352c1202bd498ecb105c00d)  
 
 **平台说明**
 

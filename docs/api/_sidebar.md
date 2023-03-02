@@ -140,6 +140,7 @@
   * [支付](api/plugins/payment.md)
   * [推送](api/plugins/push.md)
   * [语音](api/plugins/voice.md)
+  * [实人认证](api/plugins/facialRecognitionVerify.md)
   * [一键生成iOS通用链接](api/plugins/universal-links.md)
 * [uniCloud](api/uniCloud.md)
 * 其他

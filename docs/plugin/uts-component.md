@@ -1,6 +1,6 @@
 # UTS 组件开发
 
-> 需HBuilderX 3.7.0 及之后版本
+> 需HBuilderX 3.6.18 及之后版本
 
 > app平台目前仅支持nvue
 
@@ -521,7 +521,7 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 一般情况下，组件的宽高应该是由终端系统的排版引擎决定，组件开发者不需要实现此函数。
 
-部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
+但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
 
 [vue3 生命周期暂不支持](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
 
@@ -565,11 +565,8 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 在HBuilder X 中选中Uni-App项目下 uni_modules目录  
 
-![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create.jpg)
+todo  目前还没有创建界面
 
-选择`UTS插件-组件插件`
-
-![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create_hello.jpg)
 
 这是创建后的目录结构
 
@@ -662,7 +659,8 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 </template>
 <script lang="uts">
 	import {
-		UIButton
+		UIButton,
+		UIControl
 	} from "UIKit"
 
 	// 定义按钮点击后触发回调的类
@@ -694,6 +692,11 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 				immediate: false //创建时是否通过此方法更新属性，默认值为false  
 			},
 		},
+		data() {
+			return {
+				buttonClickListsner : new ButtonClickListsner()
+			}
+		},
 		expose: ['doSth'],
 		methods: {
 			/**
@@ -711,9 +714,8 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 			//必须实现  
 			let button = new UIButton()
 			button.setTitle(this.buttonText, for = UIControl.State.normal)
-			const target = new ButtonClickListsner()
 			const method = Selector("buttonClick")
-			button.addTarget(target, action = method, for = UIControl.Event.touchUpInside)
+			button.addTarget(this.buttonClickListsner, action = method, for = UIControl.Event.touchUpInside)
 			return button
 		}
 	}
@@ -769,11 +771,7 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 在HBuilder X 中选中Uni-App项目下 uni_modules目录  
 
-![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create.jpg)
-
-选择`UTS插件-组件插件`
-
-![](https://native-res.dcloud.net.cn/images/uts/component/uts_component_create_anim.jpg)
+todo  目前还没有创建界面
 
 这是创建后的目录结构
 
@@ -1065,12 +1063,8 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 		LottieLoopMode
 	} from 'Lottie'
 	import {
-		URL,
-		Bundle
+		URL
 	} from 'Foundation'
-	import {
-		UIView
-	} from "UIKit"
 	import {
 		UTSiOS
 	} from "DCloudUTSFoundation"
@@ -1135,15 +1129,15 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 		watch: {
 			"path": {
 				handler(newValue: string, oldValue: string) {
-					this.path = newValue
-					this.playAnimation()
+					if (this.autoplay) {
+						this.playAnimation()
+					}
 				},
 				immediate: false //创建时是否通过此方法更新属性，默认值为false  
 			},
 			"loop": {
 				handler(newValue: boolean, oldValue: boolean) {
-					this.loop = newValue
-					if (this.loop) {
+					if (newValue) {
 						this.$el.loopMode = LottieLoopMode.loop
 					} else {
 						this.$el.loopMode = LottieLoopMode.playOnce
@@ -1153,8 +1147,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 			},
 			"autoplay": {
 				handler(newValue: boolean, oldValue: boolean) {
-					this.autoplay = newValue
-					if (this.autoplay) {
+					if (newValue) {
 						this.playAnimation()
 					}
 				},
@@ -1163,9 +1156,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 			"action": {
 				handler(newValue: string, oldValue: string) {
 					const action = newValue
-
 					if (action == "play" || action == "pause" || action == "stop") {
-						this.action = action
 						switch (action) {
 							case "play":
 								this.playAnimation()
@@ -1188,7 +1179,6 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 
 			"hidden": {
 				handler(newValue: boolean, oldValue: boolean) {
-					this.hidden = newValue
 					this.$el.isHidden = this.hidden
 				},
 				immediate: false //创建时是否通过此方法更新属性，默认值为false  
@@ -1426,7 +1416,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 
 ## UTS开发容器组件
 
-#### 容器组件简介
+## 简介
 
 组件一般有两种场景，第一种是： 单标签组件
 ```
@@ -1443,11 +1433,15 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 	<image src="https://xxx">
 <uts-view >
 ```
-#### 容器组件声明
+## 声明
 
 UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 
 唯一的区别在于 当组件布局中包含 <solt>标签时，编译器会自动将其转换为容器组件
+
+::: preview
+
+> Android
 
 ```ts
 <template>
@@ -1481,10 +1475,36 @@ UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 
 ```
 
+> iOS
+
+```ts
+<template>
+	<view>
+		<slot></slot>
+	</view>
+</template>
+<script lang="uts">
+	import {
+		UIView
+	} from 'UIKit'
+	//原生提供以下属性或方法的实现  
+	export default {
+		name: "uts-hello-container",
+		NVLoad(): UIView {
+			let view = new UIView()
+			return view
+		}
+
+	}
+</script>
+```
+
+:::
+
 如上，我们即可到了一个最简的UTS容器组件
 
 
-#### 使用容器组件
+## 使用容器组件
 
 UTS容器组件的使用与Vue等常见的前端容器组件一致。唯一要注意的是，目前UTS容器组件还不支持 具名插槽。
 
@@ -1510,14 +1530,12 @@ UTS容器组件的使用与Vue等常见的前端容器组件一致。唯一要�
 ## 快速体验
 
 
-开发者可以使用[Hello UTS](https://gitcode.net/dcloud/hello-uts) 快速体验UTS组件开发
+开发者可以使用[Hello UTS](https://gitcode.net/dcloud/hello-uts) 快速体验UTS 组件开发
 
-本文档中涉及的示例均可以在其中找到：
-uts-hello-component
 
-`uts-hello-view`对应的源码实现：~/uni_modules/uts-hello-component
+Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 
-`uts-animation-view`对应的源码实现：~/uni_modules/uts-animation-view
+`uts-animation-view`动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 
 
 

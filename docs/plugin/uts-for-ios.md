@@ -350,13 +350,6 @@ var user: String? = nil
 let user: string | null = null
 ```
 
-uts 中也支持在变量名称后面加 ？表示可选类型，这是标准 ts 语法，但是这种写法在 uts 中不推荐使用，因为在 ts 中可选类型默认为 `undefined`类型，uts 中没有 `undefined` 类型
-
-```ts
-// uts
-let user?:string = null
-```
-
 #### 5.1.3 调用构造方法
 
 swift 中调用构造方法创建实例对象时不需要使用 `new` 关键字

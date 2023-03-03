@@ -2,9 +2,9 @@
 **激励视频广告**
 **Rewarded Video Ads**
 
-此文档已过时，新文档: [https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)
-This document is outdated, new document: [https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html](https://uniapp.dcloud.net.cn/component/ad-rewarded- video.html)
+# 此文档已过期，新文档: [https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)
 
+===========以下为过期文档=========
 
 [激励视频广告介绍](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)
 [Introduction to Rewarded Video Ads](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)

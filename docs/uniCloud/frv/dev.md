@@ -449,9 +449,13 @@ module.exports = {
 ### 非 uniCloud 业务使用@uni-frv-external
 
 > HBuilderX 版本需大于3.7.6
+> 
+> 非uniCloud的传统服务器，可通过本插件方便调用uni实人认证
 
 如果您的业务没有部署在 uniCloud 上，可以通过 uni-frv-external 来实现实人认证功能。
 uni-frv-external 集成了实名认证前端组件和云端云对象，适用于没有使用uniCloud或没有使用uni-id账号体系的项目。
+
+如果您的业务使用uniCloud开发，不推荐使用此插件，可以通过实人认证[云函数接口](#get-frv-manager)调用或者使用[uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577)插件，[uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577)内同样集成了实名认证前端组件和云端云对象。
 
 插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-frv-external](https://ext.dcloud.net.cn/plugin?name=uni-frv-external)
 

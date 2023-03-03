@@ -4,21 +4,16 @@
 ### 简介
 ### Introduction
 
-激励视频广告，是cpm收益最高的广告形式。
-Rewarded video ads are the most profitable form of advertising in CPM.
+激励视频广告，是cpm收益**最高**的广告形式。
 
 手机用户观看几十秒视频广告，在广告播放完毕后可获得应用开发商提供的奖励，而应用开发商则可以从广告平台获取不菲的广告收入。
 Mobile phone users watch video advertisements for dozens of seconds, and after the advertisements are played, they can get rewards from application developers, and application developers can get a lot of advertising revenue from advertising platforms.
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/rewarded-video.png)
 
-与开屏、信息流等广告变现方式不同，激励视频收益高、但场景设计和编程工作量也较高。
-Different from advertising monetization methods such as screen opening and information flow, incentive videos have high revenue, but the workload of scene design and programming is also high.
+与开屏、信息流等广告变现方式不同，激励视频需设计激励场景，给用户发放激励。
 
-激励视频广告的场景灵活多样：
-The scenarios of rewarded video ads are flexible and diverse:
-- 游戏内看广告复活、看广告拿高级道具
-- Watch ads in the game to revive, watch ads to get advanced props
+常见场景：
 - 合成类游戏，看广告获得道具，比如各种养龙、养凤凰、养牛、养蟹......
 - Synthetic games, watch advertisements to get props, such as raising dragons, raising phoenixes, raising cattle, raising crabs...
 - 走路赚钱、看短视频赚钱、猜歌赚钱等应用也非常多
@@ -28,13 +23,13 @@ The scenarios of rewarded video ads are flexible and diverse:
 - 增值内容消费，比如小说、电影看一半，剩下的需要看广告后才能继续
 - Consumption of value-added content, such as reading half of novels and movies, and the rest need to watch advertisements before continuing
 - 区块链应用融合激励视频，比如看广告提高收益或提高挖矿成功率
-- Blockchain applications integrate rewarded videos, such as watching advertisements to increase revenue or improve mining success rate
+- 游戏内看广告复活、看广告拿高级道具
 
-激励视频还经常和邀请裂变结合在一起，应用开发者为用户设计邀请好友的奖励，让用户有动力邀请更多用户使用这个应用。
-Incentive videos are often combined with invitation fission, and application developers design rewards for users to invite friends, so that users are motivated to invite more users to use the application.
+注意激励不能直接发钱，那会被视为积分墙，而被广告平台禁封。
 
-激励视频是造富神器。行业经常出现几个人的团队，月收入百万的奇迹。均是因为良好的设计了激励场景和裂变模型。
-Incentive videos are an artifact of making money. The industry often has a team of several people with a monthly income of millions of miracles. All because of well-designed excitation scenarios and fission models.
+- 激励视频还经常和邀请裂变结合在一起，应用开发者为用户设计邀请好友的奖励，让用户有动力邀请更多用户使用这个应用，邀请的人越多，获得的奖励越多。
+
+激励视频是造富神器。行业经常出现几个人的团队，月收入百万的奇迹。
 
 
 **平台差异说明**
@@ -45,23 +40,27 @@ Incentive videos are an artifact of making money. The industry often has a team 
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.4.8+）|x|√（3.4.8+）|x|x|x|x|x|x|x|x|
 
+### 流程概述
 
-**开通配置广告**
-**Activate configuration advertisement**
+1. **开通配置广告**
+  使用激励视频，需首先申请开通。开通步骤详见 [https://uniapp.dcloud.net.cn/uni-ad.html#start](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+2. 在页面合适位置引入`<ad-rewarded-video></ad-rewarded-video>`组件
+3. 点击组件后自动开始播放全屏的激励视频，有倒计时。倒计时结束前关闭视频，则无法获得奖励。
+4. 在客户端和云端可以监听用户是否观看完毕。注意客户端监听不可信赖，不能根据客户端通知来给用户发激励。需云端监听，也就是开通激励视频服务器回调。
+5. 服务器通过激励视频回调，拿到用户id、是否播放完毕，然后给用户发放奖励。
+6. 客户端监听到广告播放完毕后，向服务器请求，服务器告知客户端是否发放了奖励。
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
-[Details of the steps to activate advertising](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+为提升激励视频cpm收益，开发者需要在uniad后台同时开通多个广告平台，比如穿山甲、优量汇、快手等。然后uniad会自动竞价、分层，在不同的广告平台选择出价最高的广告来播放。
 
+一个用户每日反复观看激励视频，来领取奖励，会造成广告cpm下降、填充不足等问题。因为广告商不愿意给这个用户再投放广告了。所以一般需要限制用户每日观看激励视频的次数，如15次左右。
 
-激励视频广告组件是原生组件，层级最高，会覆盖在普通前端组件上。
-The rewarded video ad component is a native component, the highest level, and will be overlaid on the common front-end component.
+### 组件语法
 
+在页面中合适位置，引入下面的激励视频启动组件。
 
-### 语法
-### grammar
+该组件是一个容器组件，可以在里面继续包裹`<button>`、`<image>`等组件，但无需为button编写点击事件，点击后会自动启动全屏的激励视频。
 
 `<ad-rewarded-video></ad-rewarded-video>`
-
 
 **属性说明**
 **Property description**
@@ -69,8 +68,7 @@ The rewarded video ad component is a native component, the highest level, and wi
 |属性名														|类型													|默认值		|说明																																									|平台差异	|
 |property name |type |default value |description |platform difference |
 |:-																|:-														|:-				|:-																																										|:-				|
-|adpid														|String&#124;Number&#124;Array|					|广告位id，如果传入的是数组，会从索引0开始请求失败后继续下一个，适用于已配置底价的逻辑|					|
-| adpid | String&#124;Number&#124;Array| |Ad slot id, if the input is an array, it will start from index 0 and continue to the next one after the request fails, which is applicable to the logic of the configured reserve price| |
+|adpid														|String&#124;Number&#124;Array|					|广告位id，到uniad后台申请。如果传入的是数组，会从索引0开始请求失败后继续下一个，适用于已配置底价的逻辑|					|
 |preload													|Boolean											|true			|页面就绪后加载广告数据																																|					|
 | preload | Boolean | true | load ad data when the page is ready | |
 |loadnext													|Boolean											|false		|自动加载下一条广告数据																																|					|
@@ -114,14 +112,9 @@ The rewarded video ad component is a native component, the highest level, and wi
 **注意**
 **Notice**
 
-`load` 和 `show` 不能同时调用，在 `load` 过程中调用 `show` 会被忽略，因为数据还没加载完毕，可以在`@load`完成事件中调用 `show`
-`load` and `show` cannot be called at the same time, calling `show` during the `load` process will be ignored, because the data has not been loaded, you can call `show` in the `@load` completion event
-
-支持重复调用 `show`，调用 `show` 时会判断是否加载过数据，如果没有会自动加载一次，如果组件正在预载数据，调用 `show` 也会被忽略
-Support repeated calls to `show`. When calling `show`, it will determine whether data has been loaded. If not, it will be automatically loaded once. If the component is preloading data, calling `show` will also be ignored.
-
-推荐直接使用组件的自动加载逻辑，完全不需要手动调用 `load` 和 `show`
-It is recommended to use the component's autoloading logic directly, and there is no need to manually call `load` and `show`
+- `load` 和 `show` 不能同时调用，在 `load` 过程中调用 `show` 会被忽略，因为数据还没加载完毕，可以在`@load`完成事件中调用 `show`
+- 支持重复调用 `show`，调用 `show` 时会判断是否加载过数据，如果没有会自动加载一次，如果组件正在预载数据，调用 `show` 也会被忽略
+- 推荐直接使用组件的自动加载逻辑，完全不需要手动调用 `load` 和 `show`
 
 
 #### 简单示例
@@ -188,6 +181,10 @@ export default {
 
 #### API调用示例
 #### API call example
+
+除了使用组件的点击外，也可以使用API来启动激励视频。
+
+比如自定义一个点击位置，然后调用`<ad-rewarded-video>`组件的方法来播放激励视频。如下：
 
 ```html
 <template>
@@ -258,6 +255,10 @@ export default {
 
 #### 瀑布流逻辑广告位@waterfall
 #### Waterfall logical ad slot @waterfall
+
+分层，是一种持续保持最高广告收益的算法。在不同的出价中阶梯向下，遇到高出价则直接播放广告，未遇到则落入下一阶梯询价播放。
+
+此时需要配置多个广告位。
 
 ```html
 <template>
@@ -370,11 +371,9 @@ export default {
 ### 显示/隐藏
 ### show/hide
 
-激励视频广告组件默认是隐藏的，在用户主动触发广告后进行显示。
-The rewarded video ad component is hidden by default and is displayed after the user actively triggers the ad.
+激励视频广告默认是隐藏的，在用户主动触发广告后进行显示。
 
-只有在用户点击激励视频广告组件上的 关闭广告 按钮时，广告才会关闭。开发者不可控制激励视频广告组件的隐藏。
-The ad will only close when the user clicks the Close Ad button on the rewarded video ad component. The developer has no control over the hiding of rewarded video ad components.
+只有在用户点击激励视频广告组件上的 关闭广告 按钮时，广告才会关闭。开发者不可控制激励视频广告的隐藏。
 
 ### 广告拉取成功与失败
 ### Ad pull success and failure
@@ -410,8 +409,7 @@ The callback function of `@close` will pass a parameter e.detail, e.detail.isEnd
 |detail: { isEnded }|boolean|Whether the video was closed when the user watched it completely, true means the user closed the video after the video is finished playing, false means the user closed the video during the video playback
 
 
-开发者需要根据 isEnded 判断是否视频是否播放结束，如果成功播放完毕则应该向用户发放奖励。
-The developer needs to judge whether the video has ended according to isEnded, and if the video is finished successfully, the user should be rewarded.
+开发者需要根据 isEnded 判断是否视频是否播放结束。但 isEnded 作为一个客户端参数，无法确定是完整看完了视频，还是提前结束。需通过服务器回调来判断。在 isEnd 后，客户端应该向服务器请求确认，服务器如确认成功播放完毕则应该向用户发放奖励，
 
 ```html
 <template>
@@ -457,8 +455,7 @@ App platform 3.1.15+ supports Pangolin/Youlianghui/Kuishou
 激励视频广告可以支持广告服务器到业务服务器的回调，用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，广告服务器会访问配置的云函数，通知用户完成观看激励视频。
 The rewarded video advertisement can support the callback from the advertisement server to the service server, which is used by the service system to determine whether to provide rewards to users who watch the advertisement. After the server callback is configured, when the user successfully finishes watching the ad, the ad server will access the configured cloud function and notify the user to finish watching the rewarded video.
 
-相对来讲服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
-Relatively speaking, the server callback will be more secure, and you can rely on the anti-cheating mechanism of the advertising platform to prevent users from simulating the completion of watching the advertisement.
+服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
 
 ![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback-01-29.png)
 ![Incentive Video Callback](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback-01-29.png)
@@ -701,7 +698,7 @@ To improve security, it is recommended that all developers using rewarded videos
 1. 前端代码加密。涉及激励相关的，在manifest中配置好要加密的代码文件，打包后会自动加密相应文件。[详见](https://ask.dcloud.net.cn/article/36437)
 1. Front-end code encryption. In relation to incentives, configure the code files to be encrypted in the manifest, and the corresponding files will be automatically encrypted after packaging. [See details](https://ask.dcloud.net.cn/article/36437)
 2. apk加固。即便前端代码加密，原生层引擎的java代码仍然可能被反编译，需要对apk加固。市面上很多加固服务，比如360加固、爱加密加固均可以自行选择。
-2. APK reinforcement. Even if the front-end code is encrypted, the java code of the native layer engine may still be decompiled, and the apk needs to be strengthened. There are many reinforcement services on the market, such as 360 reinforcement and love encryption reinforcement, which can be selected by yourself.
+3. 使用uni云端一体安全网络，防止伪造客户端攻击。[详见](/uniCloud/secure-network.md)
 3. 使用如下安全类API，防止客户端被篡改
 3. Use the following security APIs to prevent clients from being tampered with
 - plus.navigator.getSignature 获取应用签名标识。结合在服务器端存放证书信息，可比对判断App的证书是否被重签 [规范](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature)
@@ -713,8 +710,9 @@ To improve security, it is recommended that all developers using rewarded videos
 - plus.networkinfo.isSetProxy 判断设备的网络是否设置了代理 [规范](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy)
 - plus.networkinfo.isSetProxy determines whether the device's network has a proxy set [Specification](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy)
 4. 避免使用短信验证码来识别身份，推荐使用可信度更高的 [手机号一键登录](/univerify) 或 [微信登录](/api/plugins/login?id=login)
-5. 必要时可使用[生物认证（指纹和faceid）](/api/system/authentication)、[uni实人认证（活体检测）](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)
+5. 必要时使用[uni实人认证（活体检测）](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)
 
+详细的安全方案，请仔细阅读[uni安全专题](/tutorial/safe.md)
 
 ### manifest 配置@manifest
 ### manifest configuration @manifest

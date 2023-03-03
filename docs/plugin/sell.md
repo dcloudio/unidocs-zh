@@ -79,10 +79,9 @@ After applying for cash withdrawal, if the account is certified as enterprise ce
 由于DCloud要向插件作者支付款项，故需插件作者提供对应金额的发票给DCloud公司，开票信息及付款规则如下：
 Since DCloud needs to pay the plug-in author, the plug-in author needs to provide an invoice of the corresponding amount to DCloud. The invoicing information and payment rules are as follows:
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-pay-rules.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-pay-rules-01.png)
 
 为了更好的服务插件作者，帮助插件作者节税，插件市场引入了`云账户`，参考[云账户介绍](https://ask.dcloud.net.cn/article/37525)。
 In order to better serve plug-in authors and help plug-in authors save tax, the plug-in market has introduced `cloud account`, refer to [Cloud Account Introduction](https://ask.dcloud.net.cn/article/37525).
 
 `Tips：`为了不影响收益打款，请插件作者在月初尽快提供发票，并完善[财务信息](https://dev.dcloud.net.cn/pages/user/finance)
-`Tips:` In order not to affect the income and payment, the plug-in author is requested to provide the invoice as soon as possible at the beginning of the month, and complete the [financial information](https://dev.dcloud.net.cn/pages/user/finance)

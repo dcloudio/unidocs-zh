@@ -2063,7 +2063,10 @@ await uniIdCo.updateUserInfoByExternal({
 | errCode						                   | string&#124;number	 | 错误码			               |
 | errMsg							                   | string				          | 错误信息		               |
 
-### 实名认证 <Badge text="待发布" />
+### 实名认证 <Badge text="uni-id-pages 1.1.7+" />
+
+基于[实人认证](/uniCloud/frv/intro.md)服务实现，实现用户刷脸核验真实身份，完成实名认证。
+`uni-id-pages`已内置实人认证前端页面与云端云对象，[了解](/uniCloud/uni-id-summary.md#frv)如在`uni-id-pages`中使用。
 
 #### 获取认证ID@get-frv-certify-id
 

@@ -81,8 +81,9 @@ let res = await uniSubscribemsg.sendTemplateMessage({
 
 |参数		|说明													|
 |---		|---													|
-|errCode|为0代表发送成功，其他均为失败|
-|errMsg	|失败后的提示									|
+|errCode|为0代表发送成功，其他均为失败，与微信公众号官方返回码一致 [微信公众号全局返回码](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Global_Return_Code.html)|
+|errMsg	|失败后的提示	，与微信公众号官方错误提示一致								|
+
 
 
 ### 发送微信小程序订阅消息@sendSubscribeMessage
@@ -152,8 +153,25 @@ let res = await uniSubscribemsg.sendSubscribeMessage({
 |errCode|为0代表发送成功，其他均为失败|
 |errMsg	|失败后的提示									|
 
+**错误码**
+
+|错误码	|错误码取值																								|解决方案																																																																|
+|---		|---																											|---																																																																		|
+|40003	|invalid openid																						|不合法的 openid ，请开发者确认 openid （该用户）是否已关注公众号，或是否是其他公众号的 openid																					|
+|40014	|invalid access_token																			|不合法的 access_token ，请开发者认真比对 access_token 的有效性（如是否过期），或查看是否正在为恰当的公众号调用接口											|
+|40037	|invalid template_id																			|不合法的 template_id																																																										|
 
 
+## 常见问题
 
+### 如何申请微信公众号模板消息
 
+进入微信公众号后台 - 点击【模板消息】- 点击【从历史模板库中添加】
 
+![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/350.png)
+
+### 如何申请微信小程序订阅消息
+
+进入微信小程序后台 - 点击【订阅消息】- 点击【公共模板库】- 点击【选用】
+
+![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/349.png)

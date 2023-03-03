@@ -2,7 +2,7 @@
 
 开发业务时时常遇到需要向用户发送一些通知，如欠费通知、会员到期通知等等。
 
-uni-subscribemsg模块可以方便开发者快速接入小程序订阅消息和微信公众号模板消息。
+uni-subscribemsg公共模块可以方便开发者快速接入小程序订阅消息和微信公众号模板消息。
 
 目前uni-subscribemsg支持：
 
@@ -10,7 +10,7 @@ uni-subscribemsg模块可以方便开发者快速接入小程序订阅消息和�
 - 微信小程序订阅消息
 
 ::: warning 注意
-uni-subscribemsg仅能在云函数/云对象内使用
+uni-subscribemsg公共模块仅能在云函数/云对象内使用。如果您不了解公共模块，请[参阅](cf-common.md)
 :::
 
 > 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=uni-subscribemsg](https://ext.dcloud.net.cn/plugin?name=uni-subscribemsg)
@@ -26,7 +26,7 @@ uni-subscribemsg仅能在云函数/云对象内使用
 **用法**
 
 ```js
-// 引入uni-subscribemsg
+// 引入uni-subscribemsg公共模块
 const UniSubscribemsg = require('uni-subscribemsg');
 // 初始化实例
 let uniSubscribemsg = new UniSubscribemsg({
@@ -109,7 +109,7 @@ uni.requestSubscribeMessage({
 **云端发送**
 
 ```js
-// 引入uni-subscribemsg
+// 引入uni-subscribemsg公共模块
 const UniSubscribemsg = require('uni-subscribemsg');
 // 初始化实例
 let uniSubscribemsg = new UniSubscribemsg({

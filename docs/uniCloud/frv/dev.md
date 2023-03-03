@@ -142,12 +142,12 @@ iOS平台不支持通过参数的方式修改刷脸页的提示文案，但可�
 **接口形式**
 
 ```js
-uniCloud.getFacialRecognitionVerifyManager(Object GetFacialRecognitionVerifyManagerParam)
+uniCloud.getFacialRecognitionVerifyManager(Object GetFacialRecognitionVerifyManagerOptions)
 ```
 
 **参数说明**
 
-**Object GetFacialRecognitionVerifyManagerParam**
+**Object GetFacialRecognitionVerifyManagerOptions**
 
 |属性			|类型		|必填	|默认值	|说明																										|
 |:-:			|:-:		|:-:	|:-:		|:-:																										|
@@ -189,12 +189,12 @@ module.exports = {
 **接口形式**
 
 ```js
-frvManager.getCertifyId(Object GetCertifyIdParam)
+frvManager.getCertifyId(Object GetCertifyIdOptions)
 ```
 
 **参数说明**
 
-**Object GetCertifyIdParam**
+**Object GetCertifyIdOptions**
 
 |属性				|类型		|必填	|默认值	|说明													|
 |:-:				|:-:		|:-:	|:-:		|:-:													|
@@ -252,12 +252,12 @@ module.exports = {
 **接口形式**
 
 ```js
-frvManager.getAuthResult(Object GetAuthResultParam)
+frvManager.getAuthResult(Object GetAuthResultOptions)
 ```
 
 **参数说明**
 
-**Object GetAuthResultParam**
+**Object GetAuthResultOptions**
 
 |属性			|类型	|必填	|默认值	|说明																		|
 |:-:			|:-:	|:-:	|:-:	|:-:																		|

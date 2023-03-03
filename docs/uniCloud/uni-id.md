@@ -515,9 +515,9 @@ function hasPermission(token, permission) {
 
 > uni-id 3.0.7及以上版本
 
-用法：`uniID.createInstance(Object CreateInstanceParams);`
+用法：`uniID.createInstance(Object CreateInstanceOptions);`
 
-CreateInstanceParams内可以传入云函数context，自`uni-id 3.3.13`起，也可以传入clientInfo参数，作用和context类似。方便在云对象内获取clientInfo后直接传入，[什么是云对象？](uniCloud/cloud-obj.md)。
+CreateInstanceOptions内可以传入云函数context，自`uni-id 3.3.13`起，也可以传入clientInfo参数，作用和context类似。方便在云对象内获取clientInfo后直接传入，[什么是云对象？](uniCloud/cloud-obj.md)。
 
 ```js
 // 云函数代码，传入context
@@ -573,7 +573,7 @@ module.exports = {
 最后将`用户名` `密码` `token`存储到数据库并返回token、uid等响应参数（详见下文“响应参数”表）的过程。
 
 如上操作uni-id的注册api内部会自动完成
-用法`uniID.register(Object RegisterParams)`
+用法`uniID.register(Object RegisterOptions)`
 
 **注意**
 
@@ -589,7 +589,7 @@ module.exports = {
 | myInviteCode	| String	| 否	|自行设置用户的邀请码																														|
 | role	| Array	| 否	|设定用户角色												|
 
-RegisterParams不仅支持如上列举字段，可以根据需要自定义更多字段。比如：直接传入mobile即可设置手机号码，**注意：切勿直接传入客户端传来的参数，否则这是一个极大的安全问题**
+RegisterOptions不仅支持如上列举字段，可以根据需要自定义更多字段。比如：直接传入mobile即可设置手机号码，**注意：切勿直接传入客户端传来的参数，否则这是一个极大的安全问题**
 
 username可以是字符串、可以是email、可以是手机号，本插件不约束，开发者可以自己定。如果使用登录接口时希望可以同时使用username、email、手机号登录，那么切记username不可以和手机号、email拥有相同格式，否则可能出现某一串字符串是一个用户的username同时又是另一个用户的email或者手机号的情况。
 
@@ -682,7 +682,7 @@ uniCloud.callFunction({
 登录就是通过查询数据库验证，客户端传递的“用户名”和“密码”是否匹配并返回token、uid等响应参数（详见下文“响应参数”表）的过程。
 如果你允许用户同时使用多种方式登录，需要注意：必须限制用户注册用户名不为邮箱格式且不为手机号格式，uni-id内部并未做出此类限制。否则用户可以使用他人的手机号码作为用户名注册账号，这就成了一个漏洞。具体做法可以参考[云端一体应用快速开发模版"uniStarter"](https://ext.dcloud.net.cn/plugin?id=5057)
 
-用法：`uniID.login(Object LoginParams)`
+用法：`uniID.login(Object LoginOptions)`
 
 **注意**
 
@@ -841,7 +841,7 @@ uniCloud.callFunction({
 
 > 新增于uni-id 3.3.14
 
-用法：`uniID.refreshToken(Object RefreshTokenParams);`
+用法：`uniID.refreshToken(Object RefreshTokenOptions);`
 
 **参数说明**
 
@@ -903,7 +903,7 @@ exports.main = async function(event,context) {
 
 注意createToken接口不会将生成的token存库，只是生成token而已
 
-用法：`uniID.createToken(Object CreateTokenParams)`
+用法：`uniID.createToken(Object CreateTokenOptions)`
 
 **参数说明**
 
@@ -928,7 +928,7 @@ exports.main = async function(event,context) {
 
 ### 修改密码 @update-password
 
-用法：`uniID.updatePwd(Object UpdatePwdParams)`
+用法：`uniID.updatePwd(Object UpdatePwdOptions)`
 
 **参数说明**
 
@@ -976,7 +976,7 @@ exports.main = async function(event,context) {
 
 ### 重置密码 @reset-password
 
-用法：`uniID.resetPwd(Object ResetPwdParams)`
+用法：`uniID.resetPwd(Object ResetPwdOptions)`
 
 **参数说明**
 
@@ -1017,7 +1017,7 @@ exports.main = async function(event,context) {
 
 > 新增于 uni-id 3.3.14
 
-用法：`uniID.resetPwdBySms(Object ResetPwdBySmsParams)`
+用法：`uniID.resetPwdBySms(Object ResetPwdBySmsOptions)`
 
 **参数说明**
 
@@ -1077,7 +1077,7 @@ exports.main = async function(event,context) {
 
 ### 设置头像
 
-用法：`uniID.setAvatar(Object SetAvatarParams)`
+用法：`uniID.setAvatar(Object SetAvatarOptions)`
 
 **参数说明**
 
@@ -1118,7 +1118,7 @@ exports.main = async function(event,context) {
 
 ### 更新用户信息
 
-用法：`uniID.updateUser(Object UpdateUserParams);`
+用法：`uniID.updateUser(Object UpdateUserOptions);`
 
 此接口用于在其他接口不满足需求时使用
 
@@ -1154,7 +1154,7 @@ exports.main = async function(event,context) {
 
 ### 获取用户信息
 
-用法：`uniID.getUserInfo(Object GetUserInfoParams);`
+用法：`uniID.getUserInfo(Object GetUserInfoOptions);`
 
 此接口用于在其他接口不满足需求时使用
 
@@ -1234,9 +1234,9 @@ exports.main = async function(event,context) {
 
 > 新增于 uni-id 3.3.14
 
-用法：`uniID.addUser(Object AddUserParams);`
+用法：`uniID.addUser(Object AddUserOptions);`
 
-**BanAccountParams参数说明**
+**BanAccountOptions参数说明**
 
 | 字段			| 类型	| 必填								| 说明								|
 | ---			| ---	| ---								| ---								|
@@ -1266,9 +1266,9 @@ exports.main = async function(event,context) {
 
 自`uni-id 3.3.8`起支持
 
-用法：`uniID.banAccount(Object BanAccountParams);`
+用法：`uniID.banAccount(Object BanAccountOptions);`
 
-**BanAccountParams参数说明**
+**BanAccountOptions参数说明**
 
 | 字段| 类型	| 必填| 说明		|
 | ---	| ---		| ---	| ---			|
@@ -1284,9 +1284,9 @@ exports.main = async function(event,context) {
 
 自`uni-id 3.3.8`起支持
 
-用法：`uniID.unbanAccount(Object UnbanAccountParams);`
+用法：`uniID.unbanAccount(Object UnbanAccountOptions);`
 
-**UnbanAccountParams参数说明**
+**UnbanAccountOptions参数说明**
 
 | 字段| 类型	| 必填| 说明		|
 | ---	| ---		| ---	| ---			|
@@ -1307,9 +1307,9 @@ exports.main = async function(event,context) {
 
 自`uni-id 3.3.8`起支持
 
-用法：`uniID.closeAccount(Object CloseAccountParams);`
+用法：`uniID.closeAccount(Object CloseAccountOptions);`
 
-**CloseAccountParams参数说明**
+**CloseAccountOptions参数说明**
 
 | 字段| 类型	| 必填| 说明		|
 | ---	| ---		| ---	| ---			|
@@ -1325,9 +1325,9 @@ exports.main = async function(event,context) {
 
 自`uni-id 3.3.8`起支持
 
-用法：`uniID.openAccount(Object OpenAccountParams);`
+用法：`uniID.openAccount(Object OpenAccountOptions);`
 
-**OpenAccountParams参数说明**
+**OpenAccountOptions参数说明**
 
 | 字段| 类型	| 必填| 说明		|
 | ---	| ---		| ---	| ---			|
@@ -1344,13 +1344,13 @@ exports.main = async function(event,context) {
 
 > 此接口已废弃，如需自行传入配置请使用uniID.createInstance接口创建uniID实例来使用
 
-用法：`uniID.init(Object InitParams);`
+用法：`uniID.init(Object InitOptions);`
 
 此接口仅适用于不希望使用config.json初始化而是希望通过js的方式传入配置的情况，多数情况下不推荐使用。**如果你要使用clientDB，且必须要用这种方式初始化uni-id，必须在uni-id的config.json内也写上同样的配置。**
 
 **参数说明**
 
-InitParams格式与[config.json](https://uniapp.dcloud.io/uniCloud/uni-id?id=configjson%e7%9a%84%e8%af%b4%e6%98%8e)完全相同
+InitOptions格式与[config.json](https://uniapp.dcloud.io/uniCloud/uni-id?id=configjson%e7%9a%84%e8%af%b4%e6%98%8e)完全相同
 
 **响应参数**
 
@@ -1409,7 +1409,7 @@ uni.removeStorageSync('uni_id_token_expired')
 
 ### 发送短信验证码@sendsmscode
 
-用法：`uniID.sendSmsCode(Object SendSmsCodeParams)`
+用法：`uniID.sendSmsCode(Object SendSmsCodeOptions)`
 
 **参数说明**
 
@@ -1457,7 +1457,7 @@ exports.main = async function(event,context) {
 ### 设置验证码@setVerifyCode
 如果使用`uni-id`的sendSmsCode发送短信的话会自动设置验证码（在数据表：`opendb-verify-codes`添加一条记录)，否则你需要使用此接口自行在库中设置验证码。
 
-用法：`uniID.setVerifyCode(Object SetVerifyCodeParams)`
+用法：`uniID.setVerifyCode(Object SetVerifyCodeOptions)`
 
 **参数说明**
 
@@ -1504,7 +1504,7 @@ exports.main = async function(event,context) {
 
 uni-id内置方法`loginBySms`、`bindMobile`、`unbindMobile`均已内置校验验证码方法，如果使用以上方法不需要再调用此接口，如需扩展类型请确保type和发送验证码/设置验证码时对应
 
-用法：`uniID.verifyCode(Object VerifyCodeParams)`
+用法：`uniID.verifyCode(Object VerifyCodeOptions)`
 
 **参数说明**
 
@@ -1544,7 +1544,7 @@ exports.main = async function(event,context) {
 
 ### 手机号验证码直接登录
 
-用法：`uniID.loginBySms(Object LoginBySmsParams)`
+用法：`uniID.loginBySms(Object LoginBySmsOptions)`
 
 **参数说明**
 
@@ -1592,7 +1592,7 @@ exports.main = async function(event,context) {
 
 ### 手机一键登录@univerify
 
-用法：`uniID.loginByUniverify(Object loginByUniverifyParams)`
+用法：`uniID.loginByUniverify(Object loginByUniverifyOptions)`
 
 > 需在[开发者控制台](https://dev.dcloud.net.cn/pages/uniLogin/index)开通一键登录并在config.json内配置univerify相关信息
 
@@ -1642,7 +1642,7 @@ exports.main = async function(event,context) {
 
 ### 绑定手机号@bind-mobile
 
-用法：`uniID.bindMobile(Object BindMobileParams)`
+用法：`uniID.bindMobile(Object BindMobileOptions)`
 
 **参数说明**
 
@@ -1690,7 +1690,7 @@ exports.main = async function(event,context) {
 
 ### 解绑手机
 
-用法：`uniID.unbindMobile(Object UnbindMobileParams)`
+用法：`uniID.unbindMobile(Object UnbindMobileOptions)`
 
 **参数说明**
 
@@ -1735,7 +1735,7 @@ exports.main = async function(event,context) {
 
 ### 邮箱验证码直接登录
 
-用法：`uniID.loginByEmail(Object LoginByEmailParams)`
+用法：`uniID.loginByEmail(Object LoginByEmailOptions)`
 
 **参数说明**
 
@@ -1790,7 +1790,7 @@ exports.main = async function(event,context) {
 
 ### 绑定邮箱
 
-用法：`uniID.bindEmail(Object BindEmailParams)`
+用法：`uniID.bindEmail(Object BindEmailOptions)`
 
 **参数说明**
 
@@ -1834,7 +1834,7 @@ exports.main = async function(event,context) {
 
 ### 解绑邮箱
 
-用法：`uniID.unbindEmail(Object UnbindEmailParams)`
+用法：`uniID.unbindEmail(Object UnbindEmailOptions)`
 
 **参数说明**
 
@@ -1878,7 +1878,7 @@ exports.main = async function(event,context) {
 
 ### 微信登录
 
-用法：`uniID.loginByWeixin(Object LoginByWexinParams);`
+用法：`uniID.loginByWeixin(Object LoginByWexinOptions);`
 
 **注意**
 
@@ -1893,7 +1893,7 @@ exports.main = async function(event,context) {
 2. **打包**并**使用**自定义基座（注意一定要在manifest.json填写微信appid后再制作自定义基座），[自定义基座使用说明](https://ask.dcloud.net.cn/article/35115)
 3. 在uni-id的config.json内app对应的微信登录信息内配置appid和appsecret
 
-**LoginByWexinParams参数说明**
+**LoginByWexinOptions参数说明**
 
 | 字段					| 类型		| 必填| 说明																																												|
 | ---						| ---			| ---	| ---																																													|
@@ -2013,7 +2013,7 @@ export default {
 
 ### 获取微信openid
 
-用法：`uniID.code2SessionWeixin(Object Code2SessionWeixinParams);`
+用法：`uniID.code2SessionWeixin(Object Code2SessionWeixinOptions);`
 
 **参数说明**
 
@@ -2048,7 +2048,7 @@ exports.main = async function(event,context) {
 
 ### 绑定微信
 
-用法：`uniID.bindWeixin(Object BindWeixinParams);`
+用法：`uniID.bindWeixin(Object BindWeixinOptions);`
 
 **参数说明**
 
@@ -2118,7 +2118,7 @@ exports.main = async function(event,context) {
 
 ### 微信数据解密
 
-用法：`uniID.wxBizDataCrypt(Object WxBizDataCryptParams);`
+用法：`uniID.wxBizDataCrypt(Object WxBizDataCryptOptions);`
 
 **参数说明**
 
@@ -2153,7 +2153,7 @@ exports.main = async function(event,context) {
 
 > 新增于 uni-id 3.3.14
 
-用法：`uniID.getWeixinUserInfo(Object GetWeixinUserInfoParams);`
+用法：`uniID.getWeixinUserInfo(Object GetWeixinUserInfoOptions);`
 
 **参数说明**
 
@@ -2178,7 +2178,7 @@ exports.main = async function(event,context) {
 
 **目前仅支持app和小程序的qq登录**
 
-用法：`uniID.loginByQQ(Object LoginByQQParams);`
+用法：`uniID.loginByQQ(Object LoginByQQOptions);`
 
 **注意**
 
@@ -2310,7 +2310,7 @@ export default {
 
 ### 绑定QQ
 
-用法：`uniID.bindQQ(Object BindQQParams);`
+用法：`uniID.bindQQ(Object BindQQOptions);`
 
 **参数说明**
 
@@ -2352,7 +2352,7 @@ export default {
 
 ### 支付宝登录
 
-用法：`uniID.loginByAlipay(Object LoginByAlipayParams);`
+用法：`uniID.loginByAlipay(Object LoginByAlipayOptions);`
 
 **注意**
 
@@ -2360,7 +2360,7 @@ export default {
 - 登录成功之后会返回token、tokenExpired，在获取token之后应进行持久化存储，详情参考：[保存token及其有效期](uniCloud/uni-id.md?id=save-token)
 - uni.login仅支持使用支付宝小程序登录，不支持app使用支付宝登录，`uniID.loginByAlipay`也只支持小程序登录
 
-**LoginByAlipayParams参数说明**
+**LoginByAlipayOptions参数说明**
 
 | 字段					| 类型		| 必填| 说明																																												|
 | ---						| ---			| ---	| ---																																													|
@@ -2403,7 +2403,7 @@ exports.main = async function(event,context) {
 
 ### 获取支付宝用户ID
 
-用法：`uniID.code2SessionAlipay(Object Code2SessionAlipayParams);`
+用法：`uniID.code2SessionAlipay(Object Code2SessionAlipayOptions);`
 
 **参数说明**
 
@@ -2436,7 +2436,7 @@ exports.main = async function(event,context) {
 
 ### 绑定支付宝
 
-用法：`uniID.bindAlipay(Object BindAlipayParams);`
+用法：`uniID.bindAlipay(Object BindAlipayOptions);`
 
 **参数说明**
 
@@ -2502,14 +2502,14 @@ exports.main = async function(event,context) {
 
 ### Apple登录@loginbyapple
 
-用法：`uniID.loginByApple(Object LoginByAppleParams);`
+用法：`uniID.loginByApple(Object LoginByAppleOptions);`
 
 **注意**
 
 - 需要在config.json内的 app > oauth > apple 下配置 bundleId
 - 登录成功之后会返回token、tokenExpired，在获取token之后应进行持久化存储，详情参考：[保存token及其有效期](uniCloud/uni-id.md?id=save-token)
 
-**LoginByAppleParams参数说明**
+**LoginByAppleOptions参数说明**
 
 | 字段				| 类型	| 必填| 说明																																						   						|
 | ---					| ---		| ---	| ---																																     	     			|
@@ -2623,7 +2623,7 @@ export default {
 
 ### Apple登录校验identityToken
 
-用法：`uniID.verifyAppleIdentityToken(Object Code2SessionAppleParams);`
+用法：`uniID.verifyAppleIdentityToken(Object Code2SessionAppleOptions);`
 
 **参数说明**
 
@@ -2664,7 +2664,7 @@ exports.main = async function(event,context) {
 
 根据uid获取用户角色
 
-用法：`uniID.getRoleByUid(Object GetRoleByUidParams)`
+用法：`uniID.getRoleByUid(Object GetRoleByUidOptions)`
 
 **参数说明**
 
@@ -2684,7 +2684,7 @@ exports.main = async function(event,context) {
 
 根据roleID获取角色权限
 
-用法：`uniID.getPermissionByRole(Object GetPermissionByRoleParams)`
+用法：`uniID.getPermissionByRole(Object GetPermissionByRoleOptions)`
 
 **参数说明**
 
@@ -2704,7 +2704,7 @@ exports.main = async function(event,context) {
 
 根据uid获取用户权限
 
-用法：`uniID.getPermissionByUid(Object GetPermissionByUidParams)`
+用法：`uniID.getPermissionByUid(Object GetPermissionByUidOptions)`
 
 **参数说明**
 
@@ -2722,7 +2722,7 @@ exports.main = async function(event,context) {
 
 ### 为用户绑定角色
 
-用法：`uniID.bindRole(Object BindRoleParams)`
+用法：`uniID.bindRole(Object BindRoleOptions)`
 
 **参数说明**
 
@@ -2741,7 +2741,7 @@ exports.main = async function(event,context) {
 
 ### 为角色绑定权限
 
-用法：`uniID.bindPermission(Object BindPermissionParams)`
+用法：`uniID.bindPermission(Object BindPermissionOptions)`
 
 **参数说明**
 
@@ -2760,7 +2760,7 @@ exports.main = async function(event,context) {
 
 ### 为用户解绑角色
 
-用法：`uniID.unbindRole(Object UnbindRoleParams)`
+用法：`uniID.unbindRole(Object UnbindRoleOptions)`
 
 **参数说明**
 
@@ -2778,7 +2778,7 @@ exports.main = async function(event,context) {
 
 ### 为角色解绑权限
 
-用法：`uniID.unbindPermission(Object UnbindPermissionParams)`
+用法：`uniID.unbindPermission(Object UnbindPermissionOptions)`
 
 **参数说明**
 
@@ -2796,7 +2796,7 @@ exports.main = async function(event,context) {
 
 ### 新增角色
 
-用法：`uniID.addRole(Object AddRoleParams)`
+用法：`uniID.addRole(Object AddRoleOptions)`
 
 **参数说明**
 
@@ -2816,7 +2816,7 @@ exports.main = async function(event,context) {
 
 ### 获取角色列表
 
-用法：`uniID.getRoleList(Object GetRoleListParams)`
+用法：`uniID.getRoleList(Object GetRoleListOptions)`
 
 **参数说明**
 
@@ -2860,7 +2860,7 @@ exports.main = async function(event,context) {
 
 **注意不可修改role_id**
 
-用法：`uniID.updateRole(Object UpdateRoleParams)`
+用法：`uniID.updateRole(Object UpdateRoleOptions)`
 
 **参数说明**
 
@@ -2880,7 +2880,7 @@ exports.main = async function(event,context) {
 
 ### 删除角色
 
-用法：`uniID.deleteRole(Object DeleteRoleParams)`
+用法：`uniID.deleteRole(Object DeleteRoleOptions)`
 
 **参数说明**
 
@@ -2897,7 +2897,7 @@ exports.main = async function(event,context) {
 
 ### 新增权限
 
-用法：`uniID.addPermission(Object AddPermissionParams)`
+用法：`uniID.addPermission(Object AddPermissionOptions)`
 
 **参数说明**
 
@@ -2916,7 +2916,7 @@ exports.main = async function(event,context) {
 
 ### 获取权限列表
 
-用法：`uniID.getPermissionList(Object GetPermissionListParams)`
+用法：`uniID.getPermissionList(Object GetPermissionListOptions)`
 
 **参数说明**
 
@@ -2959,7 +2959,7 @@ exports.main = async function(event,context) {
 
 **注意：不可修改permissionID**
 
-用法：`uniID.updatePermission(Object UpdatePermissionParams)`
+用法：`uniID.updatePermission(Object UpdatePermissionOptions)`
 
 **参数说明**
 
@@ -2978,7 +2978,7 @@ exports.main = async function(event,context) {
 
 ### 删除权限
 
-用法：`uniID.deletePermission(Object DeletePermissionParams)`
+用法：`uniID.deletePermission(Object DeletePermissionOptions)`
 
 **参数说明**
 
@@ -2999,7 +2999,7 @@ exports.main = async function(event,context) {
 
 针对未生成邀请码的用户使用此方法生成邀请码
 
-用法：`uniID.setUserInviteCode(Object SetUserInviteCodeParams);`
+用法：`uniID.setUserInviteCode(Object SetUserInviteCodeOptions);`
 
 此接口用于在其他接口不满足需求时使用
 
@@ -3022,7 +3022,7 @@ exports.main = async function(event,context) {
 
 此接口用于在注册之后再填写邀请码的场景，多数情况下不会用到此接口而是在注册时填写邀请码
 
-用法：`uniID.acceptInvite(Object AcceptInviteParams);`
+用法：`uniID.acceptInvite(Object AcceptInviteOptions);`
 
 **参数说明**
 
@@ -3040,7 +3040,7 @@ exports.main = async function(event,context) {
 
 ### 获取接受邀请的用户清单
 
-用法：`uniID.getInvitedUser(Object GetInvitedUserParams);`
+用法：`uniID.getInvitedUser(Object GetInvitedUserOptions);`
 
 此接口用于在其他接口不满足需求时使用
 
@@ -3106,7 +3106,7 @@ exports.main = async function(event, context){
 
 ### 设置允许登录的客户端
 
-用法：`uniID.setAuthorizedAppLogin(Object SetAuthorizedAppLoginParams);`
+用法：`uniID.setAuthorizedAppLogin(Object SetAuthorizedAppLoginOptions);`
 
 覆盖原有dcloud_appid字段，设置指定用户允许登录的客户端
 
@@ -3126,7 +3126,7 @@ const res = await uniID.setAuthorizedAppLogin({
 
 ### 新增允许登录的客户端
 
-用法：`uniID.authorizeAppLogin(Object AuthorizeAppLoginParams);`
+用法：`uniID.authorizeAppLogin(Object AuthorizeAppLoginOptions);`
 
 在已有允许登录的客户端列表中插入新的客户端的DCloud Appid
 
@@ -3146,7 +3146,7 @@ const res = await uniID.authorizeAppLogin({
 
 ### 移除允许登录的客户端
 
-用法：`uniID.forbidAppLogin(Object ForbidAppLoginParams);`
+用法：`uniID.forbidAppLogin(Object ForbidAppLoginOptions);`
 
 从已有允许登录的客户端列表中移除一个客户端的DCloud Appid，禁止后用户不可在特定客户端登录
 

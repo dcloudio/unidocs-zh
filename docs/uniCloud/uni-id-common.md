@@ -24,9 +24,9 @@
 
 **注意：不同于旧版本uni-id公共模块，uni-id-common必须调用此接口创建实例后才可以调用checkToken等接口**
 
-用法：`uniID.createInstance(Object CreateInstanceParams);`
+用法：`uniID.createInstance(Object CreateInstanceOptions);`
 
-CreateInstanceParams内可以传入云函数context，也可以传入clientInfo参数，作用和context类似。方便在云对象内获取clientInfo后直接传入，[什么是云对象？](uniCloud/cloud-obj.md)。
+CreateInstanceOptions内可以传入云函数context，也可以传入clientInfo参数，作用和context类似。方便在云对象内获取clientInfo后直接传入，[什么是云对象？](uniCloud/cloud-obj.md)。
 
 ```js
 // 云函数代码，传入context
@@ -122,7 +122,7 @@ uni-id使用jwt生成token，jwt所生成的token包含三部分，其中存储�
 
 > 新增于uni-id 3.3.14
 
-用法：`uniIDIns.refreshToken(Object RefreshTokenParams);`
+用法：`uniIDIns.refreshToken(Object RefreshTokenOptions);`
 
 **参数说明**
 
@@ -147,7 +147,7 @@ const {
 
 ### 生成token@createtoken
 
-用法：`uniIDIns.createToken(Object CreateTokenParams)`
+用法：`uniIDIns.createToken(Object CreateTokenOptions)`
 
 **参数说明**
 

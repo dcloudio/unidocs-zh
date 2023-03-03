@@ -13,7 +13,9 @@ uni-subcribe-msg模块可以方便开发者快速接入小程序订阅消息和�
 uni-subcribe-msg仅能在云函数/云对象内使用
 :::
 
-### 配置@config
+> 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=uni-subcribe-msg](https://ext.dcloud.net.cn/plugin?name=uni-subcribe-msg)
+
+## 配置@config
 
 `uni-subscribemsg` 自身没有配置文件，Ta依赖 `uni-open-bridge` 的配置，[点击查看uni-open-bridge配置](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html#uni-open-bridge%E7%9A%84%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B)
 

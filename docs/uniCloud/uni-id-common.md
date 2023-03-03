@@ -37,11 +37,9 @@ If you want to understand the internal implementation of the `uni-id-common` com
 **注意：不同于旧版本uni-id公共模块，uni-id-common必须调用此接口创建实例后才可以调用checkToken等接口**
 **Note: Unlike the old version of uni-id common module, uni-id-common must call this interface to create an instance before calling interfaces such as checkToken**
 
-用法：`uniID.createInstance(Object CreateInstanceParams);`
-Usage: `uniID.createInstance(Object CreateInstanceParams);`
+用法：`uniID.createInstance(Object CreateInstanceOptions);`
 
-CreateInstanceParams内可以传入云函数context，也可以传入clientInfo参数，作用和context类似。方便在云对象内获取clientInfo后直接传入，[什么是云对象？](uniCloud/cloud-obj.md)。
-CreateInstanceParams can pass in cloud function context or clientInfo parameter, which is similar to context. It is convenient to directly pass in the clientInfo after obtaining the clientInfo in the cloud object, [What is a cloud object? ](uniCloud/cloud-obj.md).
+CreateInstanceOptions内可以传入云函数context，也可以传入clientInfo参数，作用和context类似。方便在云对象内获取clientInfo后直接传入，[什么是云对象？](uniCloud/cloud-obj.md)。
 
 ```js
 // 云函数代码，传入context
@@ -174,8 +172,7 @@ Role permissions will be cached in the token, which can reduce or eliminate the 
 > 新增于uni-id 3.3.14
 > Added in uni-id 3.3.14
 
-用法：`uniIDIns.refreshToken(Object RefreshTokenParams);`
-Usage: `uniIDIns.refreshToken(Object RefreshTokenParams);`
+用法：`uniIDIns.refreshToken(Object RefreshTokenOptions);`
 
 **参数说明**
 **Parameter Description**
@@ -207,8 +204,7 @@ const {
 ### 生成token@createtoken
 ### Generate token@createtoken
 
-用法：`uniIDIns.createToken(Object CreateTokenParams)`
-Usage: `uniIDIns.createToken(Object CreateTokenParams)`
+用法：`uniIDIns.createToken(Object CreateTokenOptions)`
 
 **参数说明**
 **Parameter Description**

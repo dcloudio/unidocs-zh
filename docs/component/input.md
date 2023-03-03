@@ -246,6 +246,21 @@ App平台软键盘弹出有 adjustResize|adjustPan 两种模式，默认为 adju
 				<view class="title">控制占位符颜色的input</view>
 				<input class="uni-input" placeholder-style="color:#F76260" placeholder="占位符字体是红色的" />
 			</view>
+      <view class="uni-form-item uni-column">
+				<view class="title"><text class="uni-form-item__title">带清除按钮的输入框</text></view>
+				<view class="uni-input-wrapper">
+					<input class="uni-input" placeholder="带清除按钮的输入框" :value="inputClearValue" @input="clearInput" />
+					<text class="uni-icon" v-if="showClearIcon" @click="clearIcon">&#xe434;</text>
+				</view>
+			</view>
+			<view class="uni-form-item uni-column">
+				<view class="title"><text class="uni-form-item__title">可查看密码的输入框</text></view>
+				<view class="uni-input-wrapper">
+					<input class="uni-input" placeholder="请输入密码" :password="showPassword" />
+					<text class="uni-icon" :class="[!showPassword ? 'uni-eye-active' : '']"
+						@click="changePassword">&#xe568;</text>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -259,7 +274,10 @@ export default {
             title: 'input',
             focus: false,
             inputValue: '',
-            changeValue: ''
+            showClearIcon: false,
+            inputClearValue: '',
+            changeValue: '',
+            showPassword: true
         }
     },
     methods: {
@@ -276,6 +294,21 @@ export default {
             if (event.target.value === '123') {
                 uni.hideKeyboard();
             }
+        },
+        clearInput: function(event) {
+            this.inputClearValue = event.detail.value;
+            if (event.detail.value.length > 0) {
+                this.showClearIcon = true;
+            } else {
+                this.showClearIcon = false;
+            }
+        },
+        clearIcon: function() {
+            this.inputClearValue = '';
+            this.showClearIcon = false;
+        },
+        changePassword: function() {
+            this.showPassword = !this.showPassword;
         }
     }
 }

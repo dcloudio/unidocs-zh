@@ -757,7 +757,7 @@ await uniIdCo.loginByWeixin({
 ```js
 {
 	"_id": "xx",
-			"wx_openid": {
+		"wx_openid": {
 		"mp": "weixin-openid-demo"
 	}
 }
@@ -770,9 +770,9 @@ await uniIdCo.loginByWeixin({
 ```js
 {
 	"_id": "xx",
-			"wx_openid": {
+		"wx_openid": {
 		"mp": "weixin-openid-demo",
-				"mp___UNI_123456": "weixin-openid-demo",
+		"mp___UNI_123456": "weixin-openid-demo",
 	}
 }
 ```
@@ -826,7 +826,7 @@ await uniIdCo.loginByQQ({
 ```js
 {
 	"_id": "xx",
-			"qq_openid": {
+		"qq_openid": {
 		"mp": "weixin-openid-demo"
 	}
 }
@@ -837,9 +837,9 @@ await uniIdCo.loginByQQ({
 ```js
 {
 	"_id": "xx",
-			"qq_openid": {
+	"qq_openid": {
 		"mp": "weixin-openid-demo",
-				"mp___UNI_123456": "weixin-openid-demo",
+		"mp___UNI_123456": "weixin-openid-demo",
 	}
 }
 ```

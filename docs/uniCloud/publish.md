@@ -31,13 +31,10 @@ After using uniCloud, developers no longer need to purchase and record domain na
 根据下表，在小程序管理后台设置request合法域名、uploadFile合法域名（如没有上传文件业务，可不设置）。下表的域名均为阿里云或腾讯云自有域名，并非DCloud所属域名。
 According to the following table, set the request legal domain name and uploadFile legal domain name in the applet management background (if there is no file upload business, you can not set it). The domain names in the following table are all owned by Alibaba Cloud or Tencent Cloud, not DCloud.
 
-|服务提供商	|request合法域名			|uploadFile合法域名					|download合法域名|
-|Service Provider |request legal domain name |uploadFile legal domain name |download legal domain name|
-|:-:		|:-:						|:-:								|:-:|
-|阿里云		|api.bspapp.com（公测版）、api.next.bspapp.com（商用版）				|bsppub.oss-cn-shanghai.aliyuncs.com（公测版），商用版每个服务空间都是不同的域名可以先上传一个文件将网络请求里面看到的上传域名添加即可。后续会在uniCloud web控制台展示相关域名信息|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
-| Aliyun | api.bspapp.com (beta version), api.next.bspapp.com (commercial version) | bsppub.oss-cn-shanghai.aliyuncs.com (beta version), each service space of the commercial version is For different domain names, you can first upload a file and add the uploaded domain name seen in the network request. Later, relevant domain name information will be displayed on the uniCloud web console | It needs to be configured only when files need to be downloaded from cloud storage. Different service space domain names are different, and you can see it in the web console to view file details |
-|腾讯云		|tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com		|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
-|Tencent Cloud |tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com |You only need to configure when you need to download files from cloud storage. Different service spaces have different domain names. You can view the file details in the web console. to |
+|服务提供商	|request合法域名						|uploadFile合法域名																															|download合法域名																																								|
+|:-:				|:-:												|:-:																																						|:-:																																														|
+|阿里云			|api.next.bspapp.com				|请在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间的总览页面查看|请在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间的总览页面查看								|
+|腾讯云			|tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com																										|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
 
 **注意**
 **Notice**

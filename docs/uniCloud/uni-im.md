@@ -114,7 +114,7 @@ Compared with similar products on the market, using uni-im only costs such a che
 ## 前提条件
 1. 开通uniCloud并创建服务空间 [控制面板](https://unicloud.dcloud.net.cn/)  
 	传统的IM产品服务端代码托管在服务商名下的服务器内，你只拥有代码和产生的数据的使用权，并非所有权；而uni-im的前后端代码都是开源的，是将代码托管在你名下的unicloud（[serverless](https://uniapp.dcloud.net.cn/uniCloud/#%E4%BB%80%E4%B9%88%E6%98%AFserverless)服务器）内。
-2. 开通`uni-push2.0`（注意：**无论是APP、小程序、web端都需要开通，否则消息将无法实时更新**）[详情参考](https://uniapp.dcloud.net.cn/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
+2. 开通`uni-push2.0`（注意：**无论是APP、小程序、web端都需要开通，否则消息将无法实时更新**）[点此前往开通](https://uniapp.dcloud.net.cn/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
 
 ## 体验步骤
 ## Experience steps

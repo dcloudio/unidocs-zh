@@ -19,10 +19,10 @@ HBuilderX有多种发行方式
 
 根据下表，在小程序管理后台设置request合法域名、uploadFile合法域名（如没有上传文件业务，可不设置）。下表的域名均为阿里云或腾讯云自有域名，并非DCloud所属域名。
 
-|服务提供商	|request合法域名			|uploadFile合法域名					|download合法域名|
-|:-:		|:-:						|:-:								|:-:|
-|阿里云		|api.bspapp.com（公测版）、api.next.bspapp.com（商用版）				|bsppub.oss-cn-shanghai.aliyuncs.com（公测版），商用版每个服务空间都是不同的域名可以先上传一个文件将网络请求里面看到的上传域名添加即可。后续会在uniCloud web控制台展示相关域名信息|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
-|腾讯云		|tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com		|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
+|服务提供商	|request合法域名						|uploadFile合法域名																															|download合法域名																																								|
+|:-:				|:-:												|:-:																																						|:-:																																														|
+|阿里云			|api.next.bspapp.com				|请在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间的总览页面查看|请在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间的总览页面查看								|
+|腾讯云			|tcb-api.tencentcloudapi.com|cos.ap-shanghai.myqcloud.com																										|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
 
 **注意**
 

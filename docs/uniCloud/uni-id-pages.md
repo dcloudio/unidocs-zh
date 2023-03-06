@@ -1053,7 +1053,7 @@ await uniIdCo.loginByWeixin({
 ```js
 {
 	"_id": "xx",
-			"wx_openid": {
+		"wx_openid": {
 		"mp": "weixin-openid-demo"
 	}
 }
@@ -1068,9 +1068,9 @@ This has been adjusted and corrected in the `uni-id-pages 1.0.8` version, and mu
 ```js
 {
 	"_id": "xx",
-			"wx_openid": {
+		"wx_openid": {
 		"mp": "weixin-openid-demo",
-				"mp___UNI_123456": "weixin-openid-demo",
+		"mp___UNI_123456": "weixin-openid-demo",
 	}
 }
 ```
@@ -1146,7 +1146,7 @@ await uniIdCo.loginByQQ({
 ```js
 {
 	"_id": "xx",
-			"qq_openid": {
+		"qq_openid": {
 		"mp": "weixin-openid-demo"
 	}
 }
@@ -1158,9 +1158,9 @@ It can be seen that if there are multiple QQ applets associated with the same ac
 ```js
 {
 	"_id": "xx",
-			"qq_openid": {
+	"qq_openid": {
 		"mp": "weixin-openid-demo",
-				"mp___UNI_123456": "weixin-openid-demo",
+		"mp___UNI_123456": "weixin-openid-demo",
 	}
 }
 ```

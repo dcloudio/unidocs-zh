@@ -104,7 +104,7 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   3. 改用 Script Setup 写法导入 API
   
   ```vue
-  <script setup lang="ts">
+  <script setup>
   import { ref } from '@vue/composition-api'
   import { onReady } from '@dcloudio/uni-app'
   const title = ref('Hello')

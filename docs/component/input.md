@@ -73,13 +73,13 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 |safe-password|密码安全输入键盘|微信小程序|
 |nickname|昵称输入键盘|微信小程序|
 
-**注意事项**
-
+::: warning 注意事项
 - 小程序平台，`number` 类型只支持输入整型数字。微信开发者工具上体现不出效果，请使用真机预览。
 - 如果需要在小程序平台输入浮点型数字，请使用 `digit` 类型。
 - 小程序端input在置焦时，会表现为原生控件，此时会层级变高。如需前端组件遮盖input，需让input失焦，或使用cover-view等覆盖原生控件的方案，[参考](https://uniapp.dcloud.io/component/native-component)。具体来讲，阿里小程序的input为text且置焦为原生控件；微信、头条、QQ所有input置焦均为原生控件；百度小程序置焦时仍然是非原生的。也可以参考[原生控件](https://uniapp.dcloud.io/component/native-component)文档
 - input组件若不想弹出软键盘，可设置为disabled
 - placeholder-style指定样式类font-size单位为rpx时，字节跳动小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。
+:::
 
 #### text-content-type 有效值 @text-content-type
 
@@ -122,7 +122,7 @@ inputmode是html规范后期更新的内容。各家小程序还未支持此属�
 |email|为邮件地址输入优化的虚拟键盘，通常包含"@"符号和其他优化。表单里面的邮件地址输入应该使用 \<input type="email"\> 。|
 |url|为网址输入优化的虚拟键盘，比如，“/”键会更加明显、历史记录访问等。表单里面的网址输入通常应该使用 \<input type="url"\> 。|
 
-**注意事项**
+::: warning 注意事项
 - inputmode 兼容性：`Chrome >= 66`、`Edge >= 79`、`Firefox >= 95`、`Chrome Android >= 66`、`Firefox for Android >= 79`、`Safari on iOS >= 12.2`、`WebView Android >= 66`
 - input组件有 `inputmode` 和 `type`、`comfirm-tye` 3个相似的属性，它们的区别详解如下：
   - type：在 uni-app 和小程序中仅仅是输入框，定义 input 的工作方式，此值决定可输入什么值。比如 number 只能输入数字。
@@ -130,6 +130,7 @@ inputmode是html规范后期更新的内容。各家小程序还未支持此属�
   - inputmode：inputmode 属性是当使用某些值时会对键盘所作出的优化。
     - 同时使用 inputmode 和 comfirm-type 时，若设值冲突，键盘右下角按键类型由 comfirm-type 决定
     - type 属性和 inputmode 属性并不冲突
+:::
 
 ### App平台iOS端软键盘上方横条去除方案
 

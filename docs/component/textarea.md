@@ -28,6 +28,7 @@
 |hold-keyboard|boolean|false|focus时，点击页面的时候不收起键盘|微信小程序2.8.2|
 |auto-blur|boolean|false|键盘收起时，是否自动失去焦点|App-vue 3.0.0+ ，App-nvue不支持|
 |ignoreCompositionEvent|boolean|true|是否忽略组件内对文本合成系统事件的处理。为 `false` 时将触发 `compositionstart、compositionend、compositionupdate` 事件，且在文本合成期间会触发 `input` 事件|App-vue (3.4.4+)、H5 (3.4.4+)、App-nvue不支持|
+|inputmode|String|"text"|是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。[有效值](#inputmode)|H5（3.7.0+）、App-vue（3.7.0+）|
 |@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（HBuilderX 2.0+ [nvue uni-app模式](http://ask.dcloud.net.cn/article/36074)） 、QQ小程序支持 height|
 |@blur|EventHandle||输入框失去焦点时触发，event.detail = {value, cursor}|快手小程序不支持|
 |@linechange|EventHandle||输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0}|字节跳动小程序、飞书小程序、快手小程序不支持|
@@ -151,6 +152,34 @@ nvue下键盘右下角按钮点击仅触发换行；如想监听该按钮事件�
 }
 </style>
 ```
+
+#### inputmode 有效值 @inputmode
+
+> 新增于 uni-app 3.7.0+
+inputmode是html规范后期更新的内容。各家小程序还未支持此属性。
+
+在符合条件的高版本webview里，uni-app的web和app-vue平台中可使用本属性。
+
+|值|说明|
+|:-|:-|
+|none|无虚拟键盘。在应用程序或者站点需要实现自己的键盘输入控件时很有用。|
+|text|使用用户本地区域设置的标准文本输入键盘。|
+|decimal|小数输入键盘，包含数字和分隔符（通常是“ . ”或者“ , ”），设备可能也可能不显示减号键。|
+|numeric|数字输入键盘，所需要的就是 0 到 9 的数字，设备可能也可能不显示减号键。|
+|tel|电话输入键盘，包含 0 到 9 的数字、星号（*）和井号（#）键。表单输入里面的电话输入通常应该使用 \<input type="tel"\> 。|
+|search|为搜索输入优化的虚拟键盘，比如，返回键可能被重新标记为“搜索”，也可能还有其他的优化。|
+|email|为邮件地址输入优化的虚拟键盘，通常包含"@"符号和其他优化。表单里面的邮件地址输入应该使用 \<input type="email"\> 。|
+|url|为网址输入优化的虚拟键盘，比如，“/”键会更加明显、历史记录访问等。表单里面的网址输入通常应该使用 \<input type="url"\> 。|
+
+::: warning 注意事项
+- inputmode 兼容性：`Chrome >= 66`、`Edge >= 79`、`Firefox >= 95`、`Chrome Android >= 66`、`Firefox for Android >= 79`、`Safari on iOS >= 12.2`、`WebView Android >= 66`
+- input组件有 `inputmode` 和 `type`、`comfirm-tye` 3个相似的属性，它们的区别详解如下：
+  - type：在 uni-app 和小程序中仅仅是输入框，定义 input 的工作方式，此值决定可输入什么值。比如 number 只能输入数字。
+  - comfirm-type：定义键盘右下角按键的文字
+  - inputmode：inputmode 属性是当使用某些值时会对键盘所作出的优化。
+    - 同时使用 inputmode 和 comfirm-type 时，若设值冲突，键盘右下角按键类型由 comfirm-type 决定
+    - type 属性和 inputmode 属性并不冲突
+:::
 
 
 **富文本编辑的解决方案**

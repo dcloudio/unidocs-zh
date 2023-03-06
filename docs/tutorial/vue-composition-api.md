@@ -115,7 +115,7 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   3. Use Script Setup to import API
   
   ```vue
-  <script setup lang="ts">
+  <script setup>
   import { ref } from '@vue/composition-api'
   import { onReady } from '@dcloudio/uni-app'
   const title = ref('Hello')

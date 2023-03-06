@@ -128,9 +128,7 @@ The input in the html specification is not only an input box, but also radio, ch
 |nickname|昵称输入键盘|微信小程序|
 | nickname|nickname input keyboard|WeChat MiniApp|
 
-**注意事项**
-**Precautions**
-
+::: warning 注意事项
 - 小程序平台，`number` 类型只支持输入整型数字。微信开发者工具上体现不出效果，请使用真机预览。
 -For the MiniApp platform, the `number` type only supports the input of integer numbers. The effect cannot be reflected on the WeChat developer tools, please use the real device to preview.
 - 如果需要在小程序平台输入浮点型数字，请使用 `digit` 类型。
@@ -140,7 +138,7 @@ The input in the html specification is not only an input box, but also radio, ch
 - input组件若不想弹出软键盘，可设置为disabled
 - If the input component does not want to pop up the soft keyboard, it can be set to disabled
 - placeholder-style指定样式类font-size单位为rpx时，字节跳动小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。
-- When placeholder-style specifies that the font-size unit of the style class is rpx, the ByteDance MiniApp, Feishu MiniApp, and Kuaishou MiniApp do not support it. You can use uni.upx2px() to convert the rpx unit value to px.
+:::
 
 #### text-content-type 有效值 @text-content-type
 #### text-content-type valid values @text-content-type
@@ -210,8 +208,7 @@ In the qualified high-version webview, this attribute can be used in the web and
 |url|为网址输入优化的虚拟键盘，比如，“/”键会更加明显、历史记录访问等。表单里面的网址输入通常应该使用 \<input type="url"\> 。|
 | url| Optimized virtual keyboard for URL input, for example, "/" key will be more visible, history access, etc. URL inputs in forms should generally use \<input type="url"\> . |
 
-**注意事项**
-**Precautions**
+::: warning 注意事项
 - inputmode 兼容性：`Chrome >= 66`、`Edge >= 79`、`Firefox >= 95`、`Chrome Android >= 66`、`Firefox for Android >= 79`、`Safari on iOS >= 12.2`、`WebView Android >= 66`
 - inputmode compatibility: `Chrome >= 66`, `Edge >= 79`, `Firefox >= 95`, `Chrome Android >= 66`, `Firefox for Android >= 79`, `Safari on iOS >= 12.2 `, `WebView Android >= 66`
 - input组件有 `inputmode` 和 `type`、`comfirm-tye` 3个相似的属性，它们的区别详解如下：
@@ -225,7 +222,7 @@ In the qualified high-version webview, this attribute can be used in the web and
     - 同时使用 inputmode 和 comfirm-type 时，若设值冲突，键盘右下角按键类型由 comfirm-type 决定
     - When inputmode and confirm-type are used at the same time, if the settings conflict, the type of the key in the lower right corner of the keyboard is determined by the confirm-type
     - type 属性和 inputmode 属性并不冲突
-    - The type attribute does not conflict with the inputmode attribute
+:::
 
 ### App平台iOS端软键盘上方横条去除方案
 ### App platform iOS side of the top of the horizontal bar to remove the program

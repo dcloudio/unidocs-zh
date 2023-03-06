@@ -198,15 +198,10 @@ uni-push products have 2 entries:
 2. Enter through the developer center
 	
 	使用 HBuilder 账号登录 [开发者中心](https://dev.dcloud.net.cn) ，登录后
-	Log in to [Developer Center](https://dev.dcloud.net.cn) with your HBuilder account, after logging in
-	会进入“我的应用”列表，如下图所示：
-	It will enter the "My Apps" list, as shown below:
-![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/applist.png)
-	点击要操作的应用的应用名称可进入应用管理页面，点击上方选项卡中的“uniPush”-“Uni Push 2.0（支持全端推送）”-“应用信息”
-	Click the application name of the application you want to operate to enter the application management page, click "uniPush" - "Uni Push 2.0 (supports full-end push)" - "Application Information" in the upper tab
+	会进入“uniPush”-“Uni Push 2.0（支持全端推送）”-“应用信息”，点击“当前应用”选择要操作的应用。
 	
 以上两种方式均可进入uniPush 应用开通界面。如下图所示：
-![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/sfdh.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush2-info.jpg)
 
 ### 手机号验证
 ### Phone number verification
@@ -220,7 +215,7 @@ According to national legal requirements, all companies that provide cloud servi
 ### 填写应用信息
 ### Fill in the application information
 应用开通 uni-push 功能时，需要提交应用相关信息，如下图所示：
-![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/unipush.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush2-info.jpg)
 
 关联服务空间说明：uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使用uniCloud，但专业推送服务器在uniCloud上。
 Description of associated service space: uni-push2.0 requires developers to activate uniCloud. It doesn't matter if your business server uses uniCloud or not, but the professional push server is on uniCloud.
@@ -268,6 +263,7 @@ There are many complete processes for opening an app, but the process for openin
 #### 离线推送@offline
 #### Offline push @offline
 <img width="30%" style="margin-left:20px;margin-top:0;float:right;" src="https://web-assets.dcloud.net.cn/unidoc/zh/20220325203150.jpg"/>
+
 仅APP端支持，当应用被用户关闭，或者运行到后台时，手机厂商为了省电或释放内存，会终止App后台联网。
 It is only supported on the APP side. When the application is closed by the user or runs in the background, the mobile phone manufacturer will terminate the APP background networking in order to save power or release memory.
 

@@ -126,12 +126,10 @@ uni-push产品有2个入口：
 2. 通过开发者中心进入
 	
 	使用 HBuilder 账号登录 [开发者中心](https://dev.dcloud.net.cn) ，登录后
-	会进入“我的应用”列表，如下图所示：
-![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/applist.png)
-	点击要操作的应用的应用名称可进入应用管理页面，点击上方选项卡中的“uniPush”-“Uni Push 2.0（支持全端推送）”-“应用信息”
+	会进入“uniPush”-“Uni Push 2.0（支持全端推送）”-“应用信息”，点击“当前应用”选择要操作的应用。
 	
 以上两种方式均可进入uniPush 应用开通界面。如下图所示：
-![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/sfdh.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush2-info.jpg)
 
 ### 手机号验证
 
@@ -142,7 +140,7 @@ uni-push产品有2个入口：
 
 ### 填写应用信息
 应用开通 uni-push 功能时，需要提交应用相关信息，如下图所示：
-![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/unipush.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush2-info.jpg)
 
 关联服务空间说明：uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使用uniCloud，但专业推送服务器在uniCloud上。
 
@@ -173,6 +171,7 @@ uni-push产品有2个入口：
 ### 名词解释
 #### 离线推送@offline
 <img width="30%" style="margin-left:20px;margin-top:0;float:right;" src="https://web-assets.dcloud.net.cn/unidoc/zh/20220325203150.jpg"/>
+
 仅APP端支持，当应用被用户关闭，或者运行到后台时，手机厂商为了省电或释放内存，会终止App后台联网。
 
 消息将通过不会离线的手机厂商通道，下发到手机系统推送服务模块；

@@ -1,11 +1,14 @@
 ## 小程序自定义组件支持
 ## Mini Program Custom Component Support
 
-``uni-app`` 支持在 App 和 小程序 中使用**小程序自定义组件**，从HBuilderX2.4.7起，H5端也可以运行微信小程序组件。
-``uni-app`` supports the use of **Mini Program Custom Components** in App and Mini Programs. From HBuilderX2.4.7, H5 can also run WeChat Mini Program components.
+`uni-app`在支持vue组件之外，也实现了对小程序自定义组件的兼容。
 
 小程序组件不是vue组件，并且每家小程序都有自己的组件规范，比如微信小程序的组件是wxml格式。
 The applet component is not a vue component, and each applet has its own component specification. For example, the component of the WeChat applet is in wxml format.
+
+小程序组件不是全端可用，支持度最广的微信小程序自定义组件，也只能支持微信小程序、app-vue、web，其他平台无法兼容。
+
+如果需求上只需兼容有限平台，也可以使用小程序组件。否则仍然推荐使用vue组件。
 
 **平台差异说明**
 **Platform difference description**
@@ -533,6 +536,4 @@ introduction method
 - 各个`script`标签会分别被打包至对应支持平台，不需要额外写条件编译
 - Each `script` tag will be packaged to the corresponding supported platform, no additional conditional compilation is required
 - 自`HBuilderX 2.2.5`开始，不推荐使用各个小程序自有的引入方式，推荐使用`script`标签引入
-- Since `HBuilderX 2.2.5`, it is not recommended to use the import method of each applet, and it is recommended to use the `script` tag to import
 - App和H5端，提供了wxs的升级版，更加强大，见下面的 [renderjs](/tutorial/renderjs.html) 章节
-- App and H5 side, provide an upgraded version of wxs, more powerful, see the following [renderjs](/tutorial/renderjs.html) chapter

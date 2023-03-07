@@ -54,16 +54,16 @@ uni-app runtime包括3部分：基础框架、组件、API。
 	* App的js引擎：App-Android上，uni-app的js引擎是v8，App-iOS是jscore
 	* App的渲染引擎：同时提供了2套渲染引擎，`.vue`页面文件由webview渲染，原理与小程序相同；`.nvue`页面文件由原生渲染，原理与react native相同。开发者可以根据需要自主选择渲染引擎。
 2. 组件：
-	* runtime中包括的组件只有基础组件，如`<view>`、`<button>`等。扩展组件不包含在uni-app的runtime中，而是下载到用户的项目代码中。
-	* 为了降低开发者的学习成本，uni-app的组件命名规范与小程序基本相同。
+	* runtime中包括的组件只有基础组件，如`<view>`、`<button>`等。扩展组件不包含在uni-app的runtime中，而是下载到用户的项目代码中。（这些组件都是vue组件）
+	* 为了降低开发者的学习成本，uni-app的内置基础组件命名规范与小程序基本相同。
 	* 这几十个组件不管在哪个平台，已被处理为均有一致表现。
-	* 在小程序端，基础组件会直接转义为小程序自己的组件。在小程序的runtime中不占体积。
+	* 在小程序端，uni-app基础组件会直接转义为小程序自己的内置组件。在小程序的runtime中不占体积。
 	* 在web和android、iOS端，这几十个组件都在uni-app的runtime中，会占用一定体积，相当于内置了一套ui库。
 	* 组件的扩展：
 		- 有了几十个基础组件，大多数扩展组件也都是基于这些基础组件封装的。比如官方提供的扩展ui库`uni ui`。
 		- 在web平台，for web的各种ui库（如elementUI）也可以使用，但这些库由于操作了dom，无法跨端在app和小程序中使用。
 		- 在App平台，uni-app也支持使用原生编程语言来自行扩展原生组件，比如原生的地图、ar等。
-		- uni-app同时支持将微信自定义组件运行到微信小程序、web、app这3个平台。
+		- uni-app同时支持将[微信自定义组件](miniprogram-subject.md)运行到微信小程序、web、app这3个平台。注意微信自定义组件不是vue组件。
 3. API：
 	* uni-app runtime内置了大量常见的、跨端的 [API](../api/README.md)，比如联网(uni.request)、读取存储(uni.getStorage)
 	* 同时uni-app不限制各端原生平台的API调用。开发者可以在uni-app框架中无限制的调用该平台所有能使用的API。即，在小程序平台，小程序的所有API都可以使用；在web平台，浏览器的所有API都可使用；在iOS和Android平台，os的所有API都可以使用。

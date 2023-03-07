@@ -189,6 +189,6 @@
 * [ui 设计资源](component/uniui/resource.md)
 * [ui resource](component/uniui/resource.md)
 * [datacom 组件规范](component/datacom.md)
-* [小程序组件](/tutorial/miniprogram-subject.md)
+* [小程序自定义组件](/tutorial/miniprogram-subject.md)
 * [组件库选型指南](component/component-selection.md)
 * [Component Library Selection Guide](component/component-selection.md)

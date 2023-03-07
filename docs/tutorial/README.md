@@ -89,15 +89,10 @@ uni-app runtime includes 3 parts: basic framework, components, and API.
 	* App的渲染引擎：同时提供了2套渲染引擎，`.vue`页面文件由webview渲染，原理与小程序相同；`.nvue`页面文件由原生渲染，原理与react native相同。开发者可以根据需要自主选择渲染引擎。
 	* App rendering engine: 2 sets of rendering engines are provided at the same time. The `.vue` page file is rendered by webview, the principle is the same as that of the MiniApp; the `.nvue` page file is rendered natively, and the principle is the same as react native. Developers can choose the rendering engine independently according to their needs.
 2. 组件：
-2. Components:
-	* runtime中包括的组件只有基础组件，如`<view>`、`<button>`等。扩展组件不包含在uni-app的runtime中，而是下载到用户的项目代码中。
-	* The components included in the runtime are only basic components, such as `<view>`, `<button>`, etc. Extension components are not included in the runtime of uni-app, but are downloaded into the user's project code.
-	* 为了降低开发者的学习成本，uni-app的组件命名规范与小程序基本相同。
-	* In order to reduce the learning cost of developers, the component naming convention of uni-app is basically the same as that of MiniApp.
+	* runtime中包括的组件只有基础组件，如`<view>`、`<button>`等。扩展组件不包含在uni-app的runtime中，而是下载到用户的项目代码中。（这些组件都是vue组件）
+	* 为了降低开发者的学习成本，uni-app的内置基础组件命名规范与小程序基本相同。
 	* 这几十个组件不管在哪个平台，已被处理为均有一致表现。
-	* These dozens of components have been processed to have consistent performance no matter which platform they are on.
-	* 在小程序端，基础组件会直接转义为小程序自己的组件。在小程序的runtime中不占体积。
-	* On the MiniApp side, the basic components will be converted directly to the MiniApp own components. It does not take up any volume in the runtime of the MiniApp.
+	* 在小程序端，uni-app基础组件会直接转义为小程序自己的内置组件。在小程序的runtime中不占体积。
 	* 在web和android、iOS端，这几十个组件都在uni-app的runtime中，会占用一定体积，相当于内置了一套ui库。
 	* On the web, android, and iOS side, these dozens of components are all in the runtime of uni-app, which will occupy a certain volume, which is equivalent to a built-in ui library.
 	* 组件的扩展：
@@ -107,8 +102,7 @@ uni-app runtime includes 3 parts: basic framework, components, and API.
 		- 在web平台，for web的各种ui库（如elementUI）也可以使用，但这些库由于操作了dom，无法跨端在app和小程序中使用。
 		- On the web platform, various ui libraries (such as elementUI) for the web can also be used, but these libraries cannot be used in apps and MiniApp across terminals because they operate on dom.
 		- 在App平台，uni-app也支持使用原生编程语言来自行扩展原生组件，比如原生的地图、ar等。
-		- On the App platform, uni-app also supports the use of native programming languages to expand native components, such as native maps, ar, etc.
-		- uni-app同时支持将微信自定义组件运行到微信小程序、web、app这3个平台。
+		- uni-app同时支持将[微信自定义组件](miniprogram-subject.md)运行到微信小程序、web、app这3个平台。注意微信自定义组件不是vue组件。
 3. API：
 	* uni-app runtime内置了大量常见的、跨端的 [API](../api/README.md)，比如联网(uni.request)、读取存储(uni.getStorage)
 	* uni-app runtime has built-in a lot of common and cross-end [API](../api/README.md), such as networking (uni.request), reading storage (uni.getStorage)

@@ -247,10 +247,10 @@ Examples are as follows:
 		success:async (res) => {
 			console.log(res.data); 
 			// 得到你自己项目的token和uni-id的token
-			// uniImToken 是一个对象：{token,tokenExpired}
-			let {token,uniImToken} = res.data
+			// uniIdToken 是一个对象：{token,tokenExpired}
+			let {token,uniIdToken} = res.data
 			uni.setStorageSync('token',token)
-			await uniImUtils.login(uniImToken)
+			await uniImUtils.login(uniIdToken)
 		}
 	});
 

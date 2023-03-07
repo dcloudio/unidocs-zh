@@ -125,4 +125,5 @@
   * [更多插件市场的组件](https://ext.dcloud.net.cn/?cat1=2)
 * [ui 设计资源](component/uniui/resource.md)
 * [datacom 组件规范](component/datacom.md)
+* [小程序组件](/tutorial/miniprogram-subject.md)
 * [组件库选型指南](component/component-selection.md)

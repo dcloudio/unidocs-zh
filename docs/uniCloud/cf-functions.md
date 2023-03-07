@@ -1493,7 +1493,7 @@ The default running memory size of Tencent Cloud and Alibaba Cloud public beta c
 ### 超时时间@timeout
 ### Timeout @timeout
 
-阿里云定时任务触发最大支持600秒超时时间，非定时触发时超时时间为20秒。
+阿里云定时任务触发最大支持600秒超时时间，非定时触发时超时时间为40秒。
 
 腾讯云定时任务触发最大支持900秒超时时间。非定时触发时超时时间为30秒。
 

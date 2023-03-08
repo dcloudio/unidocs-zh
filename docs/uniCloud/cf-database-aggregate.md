@@ -1072,8 +1072,7 @@ Aggregation stage. Joint query. Do left outer join with a specified collection i
 `lookup` 有两种使用方式
 `lookup` can be used in two ways
 
-### 相等匹配
-### Equal matching
+### 相等匹配@lookup-local-eq-foreign
 将输入记录的一个字段和被连接集合的一个字段进行相等匹配时，采用以下定义：
 When matching a field of an input record for equality with a field of the joined collection, the following definitions are used:
 ```js
@@ -1125,8 +1124,7 @@ WHERE <output array field> IN (SELECT *
 - 组合 mergeObjects 应用相等匹配
 - Combine mergeObjects to apply equality matching
 
-### 自定义连接条件、拼接子查询
-### Custom connection conditions, splicing sub-queries
+### 自定义连接条件、拼接子查询@lookup-pipeline
 
 如果需要指定除相等匹配之外的连接条件，或指定多个相等匹配条件，或需要拼接被连接集合的子查询结果，那可以使用如下定义：
 If you need to specify join conditions other than equality matching, or specify multiple equality matching conditions, or need to concatenate the subquery results of the joined sets, you can use the following definitions:

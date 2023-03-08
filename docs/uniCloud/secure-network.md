@@ -207,20 +207,19 @@ Configure `uni-open-bridge` timing task, regularly get [access_token](uni-open-b
 如果项目之前已经使用过uni-id-pages和uni-open-bridge，则上述步骤可省略。
 If the project has used uni-id-pages and uni-open-bridge before, the above steps can be omitted.
 
-6. 在应用的生命周期 `onLaunch` 调用 `uniCloud.initSecureNetworkByWeixin()`，进行安全网络请求前的握手操作，关于此接口详细描述见：[uniCloud.initSecureNetworkByWeixin](client-sdk.md#init-secure-network-by-weixin)
-6. Call `uniCloud.initSecureNetworkByWeixin()` in the application life cycle `onLaunch` to perform a handshake operation before a secure network request. For a detailed description of this interface, see: [uniCloud.initSecureNetworkByWeixin](client-sdk.md#init-secure -network-by-weixin)
+6. 在应用的生命周期 `onLaunch`（能保证在调用安全网络请求前调用完成的时机均可） 调用 `uniCloud.initSecureNetworkByWeixin()`，进行安全网络请求前的握手操作，关于此接口详细描述见：[uniCloud.initSecureNetworkByWeixin](client-sdk.md#init-secure-network-by-weixin)
 
-App.vue页面需要补充如下代码：
-The App.vue page needs to add the following code:
+对于使用uni-id-pages的项目App.vue页面需要补充如下代码，不使用uni-id-pages的开发者需要按照此文档进行操作：[不使用uni-id-pages时如何使用微信小程序安全网络](#mp-weixin-without-uni-id-pages)
+
 ```js
 <script>
   export default {
     onLaunch: async function() {
       // #ifdef MP-WEIXIN
       const userInfo = uniCloud.getCurrentUserInfo()
-      const userLoginState = userInfo.tokenExpired > Date.now() - 3600 * 1000
+      const callLoginByWeixin = userInfo.tokenExpired < Date.now() // 用户为未登录状态时调用一次微信登录
       await uniCloud.initSecureNetworkByWeixin({
-        callLoginByWeixin: !userLoginState // 用户为未登录状态时调用一次微信登录
+        callLoginByWeixin: callLoginByWeixin
       })
       // #endif
     }
@@ -236,6 +235,70 @@ Note: This method will call the login of the WeChat MiniApp once internally, and
   
   ![微信小程序云端一体安全网络模块](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-wx-manifest.jpg)
   ![WeChat MiniApp cloud integrated security network module](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-wx-manifest.jpg)
+
+#### 不使用uni-id-pages时如何使用微信小程序安全网络@mp-weixin-without-uni-id-pages
+
+> 新增于HBuilderX 3.7.7
+
+对于部分已有用户体系，不希望引入uni-id-pages的开发者，可使用如下方案来使用微信小程序安全网络。
+
+客户端需调整为在调用安全网络请求前使用`uniCloud.initSecureNetworkByWeixin`方法传入用户openid
+
+```js
+// app.js
+<script>
+  export default {
+    onLaunch: async function() {
+      // #ifdef MP-WEIXIN
+      // 调用自有服务、云函数进行微信登录或以其他方式获取openid
+      const openid = 'xxx'
+      await uniCloud.initSecureNetworkByWeixin({
+        openid: openid
+      })
+      // #endif
+    }
+  }
+</script>
+```
+
+云函数内需要调用[uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge-common)将微信应用级access_token及登录用户的session_key同步到uniCloud数据库，以便安全网络云端能从微信获取解密用参数。
+
+::: warning uni-open-bridge-common使用注意事项
+uni-open-bridge-common仍依赖uni-id的配置获取微信小程序appid，如何配置请参考：[uni-id config](uni-id-pages.md#config)
+:::
+
+如果从自有服务器同步access_token和session_key到uniCloud数据库内可以使用uni-open-bridge提供的url化调用方式，请参考：[uni-open-bridge url化调用](uni-open-bridge.md#cloudurl)
+
+如果从云函数内同步access_token和session_key给安全网络按如下文档进行
+
+**云函数存储微信小程序应用级access_token**
+
+开发者应在自己云函数获取access_token，传递给uni-open-bridge-common进行存储，以供安全网络使用。或使用uni-open-bridge云函数的定时任务自动获取access_token，参考：[应用级access_token](uni-open-bridge.md#access_token)
+
+微信access_token有一些特性，处理不好容易出现bug，请务必详读微信公众平台关于access_token的说明（微信小程序、公众号逻辑一样）：[微信公众平台access_token](https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Get_access_token.html)
+
+```js
+await require('uni-open-bridge-common').setAccessToken({
+  dcloudAppid: '__UNI__xxx',
+  platform: 'weixin-mp'
+}, {
+  access_token: accessToken
+}, 7200) // 新获取的accessToken有效期是2小时
+```
+
+**云函数存储微信用户session_key**
+
+开发者应在用户调用微信登录使将openid、session_key传递给uni-open-bridge-common进行存储，以供安全网络使用
+
+```js
+await require('uni-open-bridge-common').setSessionKey({
+  dcloudAppid: '__UNI__xxx',
+  openid,
+  platform: 'weixin-mp'
+}, {
+  session_key: sessionKey
+}, 30 * 24 * 60 * 60) // session_key并没有固定有效期，暂以30天进行存储
+```
 
 ## 客户端强制验证@verify-client
 ## Client mandatory verification @verify-client

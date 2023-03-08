@@ -20,6 +20,7 @@
     * [基础](/tutorial/vue3-basics.md)
     * [组件](/tutorial/vue3-components.md)
     * [API](/tutorial/vue3-api.md)
+    * [组合式 API](/tutorial/vue3-composition-api.md)
     * [vuex](/tutorial/vue3-vuex.md)
     * [pinia](/tutorial/vue3-pinia.md)
   * [vue2 升 3 指南](/tutorial/migration-to-vue3.md)

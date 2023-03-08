@@ -14,6 +14,7 @@
 - nvue 的各组件在安卓端默认是透明的，如果不设置`background-color`，可能会导致出现重影的问题
 - 文字内容，必须只能在`text`组件下，`text`组件不能换行写内容，否则会出现无法去除的周边空白
 - 只有`text`标签可以设置字体大小，字体颜色
+- 不支持 `/deep/`
 
 
 **HBuilderX 3.1.0+ 开始支持更多简写样式**
@@ -179,7 +180,7 @@ nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一�
 
 
 ### flex-direction
-	
+
 定义了 flex 容器中 flex 成员项的排列方向，默认值为 ```column```
 
 |可选值			|描述								|
@@ -192,7 +193,7 @@ nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一�
 
 
 ### flex-wrap
-	
+
 决定了 flex 成员项在一行还是多行分布，默认值为```nowrap```
 
 |可选值			|描述												|
@@ -204,7 +205,7 @@ nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一�
 
 
 ### justify-content
-	
+
 定义了 flex 容器中 flex 成员项在主轴方向上如何排列以处理空白部分。默认值为 ```flex-start```
 
 |可选值			|描述										|
@@ -220,9 +221,9 @@ nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一�
 
 
 
-	
+
 ### align-items
-	
+
 定义了 flex 容器中 flex 成员项在纵轴方向上如何排列以处理空白部分。默认值为 stretch。
 
 |可选值		|描述								|
@@ -235,7 +236,7 @@ nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一�
 ![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/align-items.png)
 
 ### flex
-	
+
 flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。
 flex {number}：值为 number 类型。
 - 如果所有的成员项设置相同的值 flex: 1，它们将平均分配剩余空间。
@@ -243,7 +244,7 @@ flex {number}：值为 number 类型。
 - 如果一个成员项设置的值为 flex: 2，其它的成员项设置的值为 flex: 1，那么这个成员项所占用的剩余空间是其它成员项的 2 倍。
 
 **注意**
-	
+
 **Flex 成员项暂不支持 ```flex-shrink``` 、 ```flex-basis```、```align-content``` 属性**。
 
 **该属性不支持 flex: flex-grow | flex-shrink | flex-basis 的简写。**
@@ -359,7 +360,7 @@ flex {number}：值为 number 类型。
 如果定位元素超过容器边界，在 Android 下，超出部分将不可见，原因在于 Android 端元素 ```overflow``` 默认值为 ```hidden```，但目前 Android 暂不支持设置 ```overflow: visible```。
 
 
-## Transition 
+## Transition
 
 ```transition```允许 CSS 的属性值在一定的时间区间内平滑地过渡。
 #### transition-property
@@ -401,7 +402,7 @@ flex {number}：值为 number 类型。
 |cubic-bezier(x1, y1, x2, y2)	|使用三阶贝塞尔函数中自定义 transition 变化过程，函数的参数值必须处于 0 到 1 之间。更多关于三次贝塞尔的信息请参阅  [cubic-bezier](https://cubic-bezier.com/?spm=a2c7j.-zh-docs-styles-common-styles.0.0.3f952164z39lZD#.17,.67,.83,.67)和 [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve?spm=a2c7j.-zh-docs-styles-common-styles.0.0.3f952164z39lZD)	|
 
 
-	
+
 #### 示例
 
 
@@ -477,7 +478,7 @@ flex {number}：值为 number 类型。
 > 除了```perspective```和```transform-origin```，```transition```支持了```transform```的全部能力。 其中transform的```rotate``` 和```rotatez``` 等效.
 
 
-	
+
 #### 示例
 
 
@@ -629,7 +630,7 @@ flex {number}：值为 number 类型。
 
 > ```background-image``` 优先级高于 ```background-color```，这意味着同时设置 ```background-image``` 和 ```background-color```，```background-color``` 被覆盖。
 > ```background``` 不支持简写。
-> 
+>
 > **目前暂不支持 radial-gradient（径向渐变）。**
 
 
@@ -640,7 +641,7 @@ flex {number}：值为 number 类型。
 
 ### 阴影```box-shadow```@ios-box-shadow
 
-	
+
 	{box-shadow:inset offset-x offset-y blur-radius color}
 	{box-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径  阴影颜色}
 
@@ -669,9 +670,9 @@ flex {number}：值为 number 类型。
 
 #### 阴影```box-shadow```
 
-从HBuilderX3.4.3起，重新支持阴影样式(box-shadow)。修复老版本组件设置```box-shadow```后在不同系统版本出现的显示异常及闪烁问题! 但需要注意设置阴影样式(box-shadow) 的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。	
+从HBuilderX3.4.3起，重新支持阴影样式(box-shadow)。修复老版本组件设置```box-shadow```后在不同系统版本出现的显示异常及闪烁问题! 但需要注意设置阴影样式(box-shadow) 的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
 
-	
+
 示例
 ```JavaScript
 <template>
@@ -703,7 +704,7 @@ flex {number}：值为 number 类型。
 为解决这些问题，从HBuilderX 2.4.7起，新增elevation属性（**组件的属性，不是css样式**）设置组件的层级，Number类型，层级值越大阴影越明显，阴影效果也与组件位置有关，越靠近页面底部阴影效果越明显
 
 
-	
+
 用法
 ``` html
 	<view elevation="5px"></view>
@@ -724,8 +725,8 @@ flex {number}：值为 number 类型。
 
 ### color
 color {color}：文字颜色，支持如下字段：
- * RGB（ rgb(255, 0, 0) ） 
- * RGBA（ rgba(255, 0, 0, 0.5) ） 
+ * RGB（ rgb(255, 0, 0) ）
+ * RGBA（ rgba(255, 0, 0, 0.5) ）
  * 十六进制（ #ff0000 ）；
  * 精简写法的十六进制（ #f00 ）
  * 色值关键字（red）
@@ -757,7 +758,7 @@ font-weight {string}：字体粗细程度。默认值: ```normal```；
 
 
 > 只支持 ```text``` 和 ```richtext```
-> 
+>
 > 不支持 ```text-decoration:overline```
 
 
@@ -806,4 +807,3 @@ line-height {length}: 正整数，每行文字高度。```line-height```是 top 
 
 
 > 在 Android 平台暂不支持
-

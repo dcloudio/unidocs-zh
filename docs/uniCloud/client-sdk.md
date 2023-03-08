@@ -425,9 +425,10 @@ uniCloud.offNeedLogin(log)
 
 **参数**
 
-|参数							|类型		|必填	|默认值	|说明																				|
-|---							|---		|---	|---		|---																				|
-|callLoginByWeixin|boolean|否		|false	|是否在安全网络初始化同时执行一次uni-id-co的微信登录|
+|参数							|类型		|必填	|默认值	|说明																																																																																																																|
+|---							|---		|---	|---		|---																																																																																																																|
+|callLoginByWeixin|boolean|否		|false	|是否在安全网络初始化同时执行一次uni-id-co的微信登录，配置为false时不进行微信登录仅调用uni-id-co的secureNetworkHandshakeByWeixin方法进行握手																																												|
+|openid						|string	|否		|-			|新增于HBuilderX 3.7.7，传入此参数后此方法内部不再调用uni-id-co的任何方法，此时需要由开发者自行实现一些凭据的存储逻辑，详情参考：[不使用uni-id-pages时如何使用微信小程序安全网络](secure-network.md#mp-weixin-without-uni-id-pages)	|
 
 **示例**
 
@@ -440,8 +441,8 @@ uniCloud.offNeedLogin(log)
       const res = await uniCloud.initSecureNetworkByWeixin({
         callLoginByWeixin: true
       })
-      // #endif
       console.log('initSecureNetworkByWeixin', res);
+      // #endif
       console.log('App Launch')
     }
   }

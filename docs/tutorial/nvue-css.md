@@ -25,7 +25,7 @@
 - 文字内容，必须只能在`text`组件下，`text`组件不能换行写内容，否则会出现无法去除的周边空白
 - The text content must only be under the `text` component. In the `text` component, the content cannot be written in a new line, or otherwise there will be irremovable peripheral margins.
 - 只有`text`标签可以设置字体大小，字体颜色
-- Only the `text` tag can set the font size and font color
+- 不支持 `/deep/`
 
 
 **HBuilderX 3.1.0+ 开始支持更多简写样式**
@@ -265,7 +265,7 @@ Weex box style model based on the CSS flexbox, ensures that elements behave pred
 
 
 ### flex-direction
-	
+
 定义了 flex 容器中 flex 成员项的排列方向，默认值为 ```column```
 The flex-direction CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
 
@@ -284,7 +284,7 @@ The flex-direction CSS property sets how flex items are placed in the flex conta
 
 
 ### flex-wrap
-	
+
 决定了 flex 成员项在一行还是多行分布，默认值为```nowrap```
 The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. The default value is nowrap
 
@@ -301,7 +301,7 @@ The flex-wrap CSS property sets whether flex items are forced onto one line or c
 
 
 ### justify-content
-	
+
 定义了 flex 容器中 flex 成员项在主轴方向上如何排列以处理空白部分。默认值为 ```flex-start```
 The CSS justify-content property defines how Weex distributes space between and around content items along the main-axis of a flex container. The default value is `flex-start`.
 
@@ -325,9 +325,9 @@ The CSS justify-content property defines how Weex distributes space between and 
 
 
 
-	
+
 ### align-items
-	
+
 定义了 flex 容器中 flex 成员项在纵轴方向上如何排列以处理空白部分。默认值为 stretch。
 The CSS align-items property sets the align-self value on all direct children as a group. It controls the alignment of items on the cross Axis. The default value is `stretch`.
 
@@ -347,7 +347,7 @@ The CSS align-items property sets the align-self value on all direct children as
 ![Image description text](https://web-assets.dcloud.net.cn/unidoc/zh/align-items.png)
 
 ### flex
-	
+
 flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。
 The flex property specifies the length of the flex item, 
 flex {number}：值为 number 类型。
@@ -360,8 +360,7 @@ relative to the rest of the flex items inside the same container.
 - If all of flex items don't set flex, they will be aligned depending on the container's justify-content property.
 
 **注意**
-**Notes**
-	
+
 **Flex 成员项暂不支持 ```flex-shrink``` 、 ```flex-basis```、```align-content``` 属性**。
 **Flex member item does not support `flex-shrink`, `flex-basis`, `align-content` attributes** temporarily.
 
@@ -492,7 +491,7 @@ Set the positioning type. The default value is `relative`.
 If your component is bigger than its parent, it will be partial invisible as Weex on Android only supports `overflow:hidden`.
 
 
-## Transition 
+## Transition
 
 ```transition```允许 CSS 的属性值在一定的时间区间内平滑地过渡。
 ```transition``` allows CSS property values to transition smoothly within a certain time interval.
@@ -556,7 +555,7 @@ Describes the velocity curve of the transition, which is used to make the transi
 | cubic-bezier(x1, y1, x2, y2)| Using the custom transition in the third-order Bessel function, the parameter values of the function must be between 0 and 1. For more information on three times Bessel, see [cubic-bezier](http://cubic-bezier.com/) and [Bézier curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve).|
 
 
-	
+
 #### 示例
 #### Example
 
@@ -648,7 +647,7 @@ Applied in the 2D or 3D transformation of elements. This attribute allows the ro
 > Consider use `transition` instead, which supports all the style that `transform` supports except for `transform-origin` and `perspective` `rotate` is the same as `rotateZ`.
 
 
-	
+
 #### 示例
 #### Example
 
@@ -824,8 +823,7 @@ Weex currently supports two color gradients. The direction of the gradient is as
 > ```background-image``` 优先级高于 ```background-color```，这意味着同时设置 ```background-image``` 和 ```background-color```，```background-color``` 被覆盖。
 > ```background-image``` takes precedence over ```background-color```, which means setting both ```background-image``` and ```background-color```, ` ``background-color``` is overridden.
 > ```background``` 不支持简写。
-> ```background```` does not support shorthand.
-> 
+>
 > **目前暂不支持 radial-gradient（径向渐变）。**
 > **`radial-gradient` is not currently supported, do not use it.**
 
@@ -839,7 +837,7 @@ Weex currently supports two color gradients. The direction of the gradient is as
 ### 阴影```box-shadow```@ios-box-shadow
 ### Shadow ````box-shadow````@ios-box-shadow
 
-	
+
 	{box-shadow:inset offset-x offset-y blur-radius color}
 	{box-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径  阴影颜色}
 	{box-shadow:inset offset-x offset-y blur-radius color}
@@ -881,10 +879,9 @@ Example
 #### 阴影```box-shadow```
 #### shadow ```box-shadow````
 
-从HBuilderX3.4.3起，重新支持阴影样式(box-shadow)。修复老版本组件设置```box-shadow```后在不同系统版本出现的显示异常及闪烁问题! 但需要注意设置阴影样式(box-shadow) 的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。	
-From HBuilderX3.4.3, the shadow style (box-shadow) is re-supported. Fix the display abnormality and flickering problem in different system versions after the old version of the component is set to ```box-shadow```! However, it should be noted that the component that sets the shadow style (box-shadow) needs to give up the shadow rendering position, otherwise it will appear The problem of incomplete shadow display.
+从HBuilderX3.4.3起，重新支持阴影样式(box-shadow)。修复老版本组件设置```box-shadow```后在不同系统版本出现的显示异常及闪烁问题! 但需要注意设置阴影样式(box-shadow) 的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
 
-	
+
 示例
 Example
 ```JavaScript
@@ -920,7 +917,7 @@ At present, the Android platform's support for the shadow style (box-shadow) is 
 To solve these problems, from HBuilderX 2.4.7+, the elevation attribute ( **attribute of the component, not css style**) is added to set the level of the component and the Number type. The larger the level value, the more obvious the shadow. The shadow effect is also related to the position of the component, the closer to the bottom of the page, the more obvious the shadow effect
 
 
-	
+
 用法
 Usage
 ``` html
@@ -950,9 +947,8 @@ Usage
 
 ### color
 color {color}：文字颜色，支持如下字段：
-`color`: \<colors> this property set the foreground color of an component's text content.. The property color support multiple formats of values.
- * RGB（ rgb(255, 0, 0) ） 
- * RGBA（ rgba(255, 0, 0, 0.5) ） 
+ * RGB（ rgb(255, 0, 0) ）
+ * RGBA（ rgba(255, 0, 0, 0.5) ）
  * 十六进制（ #ff0000 ）；
  * Hexadecimal ( #ff0000 );
  * 精简写法的十六进制（ #f00 ）
@@ -1000,8 +996,7 @@ This property indicate the weight of the text.
 
 
 > 只支持 ```text``` 和 ```richtext```
-> Only ```text``` and ```richtext``` are supported
-> 
+>
 > 不支持 ```text-decoration:overline```
 > `text-decoration:overline` not supported
 
@@ -1074,5 +1069,3 @@ line-height {length}: 正整数，每行文字高度。```line-height```是 top 
 
 
 > 在 Android 平台暂不支持
-> Not currently supported on Android platform
-

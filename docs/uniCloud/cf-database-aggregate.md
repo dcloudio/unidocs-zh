@@ -919,7 +919,7 @@ let res = await db.collection('items').aggregate()
 
 `lookup` 有两种使用方式
 
-### 相等匹配
+### 相等匹配@lookup-local-eq-foreign
 将输入记录的一个字段和被连接集合的一个字段进行相等匹配时，采用以下定义：
 ```js
 lookup({
@@ -955,7 +955,7 @@ WHERE <output array field> IN (SELECT *
 - 对数组字段应用相等匹配
 - 组合 mergeObjects 应用相等匹配
 
-### 自定义连接条件、拼接子查询
+### 自定义连接条件、拼接子查询@lookup-pipeline
 
 如果需要指定除相等匹配之外的连接条件，或指定多个相等匹配条件，或需要拼接被连接集合的子查询结果，那可以使用如下定义：
 ```js

@@ -1,5 +1,4 @@
-## 组合式 API
-## Composition API
+## 组合式 API（Composition API）
 
 目前 uni-app（Vue2） 基于 Vue 2.6，组合式 API 由 [@vue/composition-api](https://github.com/vuejs/composition-api) 支持，script setup 由 [
 Currently uni-app (Vue2) is based on Vue 2.6, the composition API is supported by [@vue/composition-api](https://github.com/vuejs/composition-api), script setup is supported by [
@@ -61,8 +60,7 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   
   :::
 
-  2. 从 @vue/composition-api 包内导入并使用基础的组合式API，具体的兼容性仍需参考：[@vue/composition-api](https://github.com/vuejs/composition-api#browser-compatibility)。从 @dcloudio/uni-app 包内导入 uni-app 其他生命周期API。
-  2. Import and use the basic composition API from the @vue/composition-api package. For specific compatibility, please refer to: [@vue/composition-api](https://github.com/vuejs/composition-api #browser-compatibility). Import uni-app other lifecycle APIs from the @dcloudio/uni-app package.
+  2. 从 @vue/composition-api 包内导入并使用基础的组合式API，具体的兼容性仍需参考：[@vue/composition-api](https://github.com/vuejs/composition-api#browser-compatibility)。从 @dcloudio/uni-app 包内导入 uni-app [应用生命周期](/collocation/App.html#applifecycle)及[页面的生命周期](/tutorial/page.html#lifecycle)。
 
   ```js
   import { defineComponent, ref } from '@vue/composition-api'

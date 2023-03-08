@@ -20,9 +20,7 @@ In order to achieve multi-terminal compatibility, considering factors such as co
 - 组件标签靠近小程序规范，详见[uni-app 组件规范](/component/)
 - The component label is close to the MiniApp specification, see [uni-app component specification](/component/) for details
 - 接口能力（JS API）靠近小程序规范，但需将前缀 `wx`、`my` 等替换为 `uni`，详见[uni-app接口规范](/api/)
-- The interface capability (JS API) is close to the MiniApp specification, but the prefix `wx`, `my`, etc. need to be replaced by `uni`, see [uni-app interface specification](/api/) for details
-- 数据绑定及事件处理同 `Vue.js` 规范，同时补充了App及页面的生命周期
-- Data binding and event processing are the same as the `Vue.js` specification, while supplementing the life cycle of App and page
+- 数据绑定及事件处理同 `Vue.js` 规范，同时补充了[应用生命周期](https://uniapp.dcloud.net.cn/collocation/App.html#applifecycle)及[页面的生命周期](https://uniapp.dcloud.net.cn/tutorial/page.html#lifecycle)
 - 如需兼容app-nvue平台，建议使用flex布局进行开发
 - If you need to be compatible with the app-nvue platform, it is recommended to use flex layout for development
 

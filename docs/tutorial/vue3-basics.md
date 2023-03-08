@@ -347,10 +347,8 @@ In the above example, the variable globalvar and function globalfun defined in t
 相比Web平台， Vue.js 在 `uni-app` 中使用差异主要集中在两个方面：
 Compared with the Web platform, the differences in the use of Vue.js in `uni-app` are mainly concentrated in two aspects:
 
-- 新增：`uni-app` 除了支持Vue实例的生命周期，还支持[应用生命周期](https://uniapp.dcloud.io/collocation/App#应用生命周期)以及[页面生命周期](https://uniapp.dcloud.io/tutorial/page#lifecycle)。
-- Added: `uni-app` In addition to supporting the life cycle of Vue instances, it also supports [application life cycle](https://uniapp.dcloud.io/collocation/App#%E5%BA%94%E7%94% A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F) and [Page Lifecycle](https://uniapp.dcloud.io/tutorial/page#lifecycle).
-- 受限：相比web平台，在小程序和App端部分功能受限，[具体见](/vue3-api)。
-- Restricted: Compared with the web platform, some functions on the MiniApp and app side are limited, [see details](/vue3-api).
+- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.html#applifecycle)及[页面的生命周期](/tutorial/page.html#lifecycle)。
+- 受限：相比 Web 平台，在小程序和 App 端部分功能支持不完善，具体见[兼容性列表](/vue3-api)。
 
 [uni-app 项目支持 vue 3.0介绍，及升级指南](https://ask.dcloud.net.cn/article/37834)
 [Introduction and upgrade guide for uni-app project support vue 3.0](https://ask.dcloud.net.cn/article/37834)

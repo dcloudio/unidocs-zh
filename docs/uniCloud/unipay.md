@@ -191,17 +191,29 @@ const unipayIns = unipay.initAppleIapPayment({
 
 **入参说明**
 
-|   参数名			|  类型	|                必填													| 默认值|                                    说明																																						|         支持平台				|
-| :--------:		| :----:| :--------------------------------:					| :----:| :------------------------------------------------------------------------:																				| :----------------------:|
-|   openid			| String|支付宝小程序、微信小程序必填，App端支付不需要|   -		|通过对应 [uni-id](uni-id-summary.md) 接口进行获取，服务商模式应使用子商户获取的openid															| 支付宝小程序、微信小程序|
-|  subject			| String|支付宝支付必填，微信支付时忽略此项						|   -		|订单标题																																																						|        支付宝支付				|
-|    body				| String|微信支付必填																	|   -		|商品描述																																																						|         微信支付				|
-| outTradeNo		| String|必填																					|   -		|商户订单号,有长度限制（微信支付为32字符以内，支付宝为64字符以内）、只能包含字母、数字、下划线；需保证在商户端不重复|													|
-|  totalFee			| Number|必填																					|   -		|订单金额，单位：分																																																	| 支付宝小程序、微信小程序|
-| notifyUrl			| String|必填																					|   -		|支付结果通知地址，**需要注意支付宝支付时退款也会通知到此地址，务必处理好自己的业务逻辑**														|													|
-| spbillCreateIp| String|必填																					|   -		|客户端IP，云函数内可以通过`context.CLIENTIP`获取																																		|-												|
-|     tradeType	      | String	| 是	  |  -												   | 交易类型；见下方 tradeType 的说明						 |
-| sceneInfo			| Object|微信tradeType为MWEB时必填										|   -		|见下方sceneInfo的说明																																															|-												|
+|   参数名			|  类型					|                必填| 默认值																			|                                    说明|         支持平台																																																	|
+| :--------:		| :----:				| :--------------------------------:| :----:																			| :------------------------------------------------------------------------:| :----------------------:																																													|
+|   openid			| String				|支付宝小程序、微信小程序必填，App端支付不需要|   -																					|通过对应 [uni-id](uni-id-summary.md) 接口进行获取，服务商模式应使用子商户获取的openid| 支付宝小程序、微信小程序																																													|
+|  subject			| String				|支付宝支付必填，微信支付时忽略此项|   -																					|订单标题|        支付宝支付																																																	|
+|    body				| String				|微信支付必填|   -																					|商品描述|         微信支付																																																	|
+| outTradeNo		| String				|必填		|   -																					|商户订单号,有长度限制（微信支付为32字符以内，支付宝为64字符以内）、只能包含字母、数字、下划线；需保证在商户端不重复|																																																										|
+|  totalFee			| Number				|必填		|   -																					|订单金额，单位：分| 支付宝小程序、微信小程序																																													|
+| notifyUrl			| String				|必填		|   -																					|支付结果通知地址，**需要注意支付宝支付时退款也会通知到此地址，务必处理好自己的业务逻辑**|																																																										|
+| spbillCreateIp| String				|必填		|   -																					|客户端IP，云函数内可以通过`context.CLIENTIP`获取|-																																																									|
+| tradeType			| String| 是																					|  -		| 交易类型；见下方 tradeType 的说明																																									|
+| sceneInfo			| Object				|微信tradeType为MWEB时必填|   -																					|见下方sceneInfo的说明|-																																																									|
+
+**注意**
+
+此接口支持直接传微信和支付宝官方文档上的参数，如微信的 `support_fapiao` 参数，转成驼峰 `supportFapiao` 即可
+
+```js
+let	orderInfo = await unipayIns.getOrderInfo({
+	...前面参数省略
+	notifyUrl: 'https://xxx.xx', // 支付结果通知地址
+	supportFapiao: true
+})
+```
 
 **tradeType的说明**
 

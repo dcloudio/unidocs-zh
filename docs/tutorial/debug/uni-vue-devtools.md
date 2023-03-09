@@ -79,3 +79,6 @@ HBuilderX 运行菜单下针对每个运行平台有一个 `运行时自动打�
 
 2. HBuilderX 项目运行到百度开发者工具，修改页面数据后 Devtools 数据未更新？\
 答：百度开发者工具隔离编译模式热更新未同步数据问题，切换依赖分析编译模式。
+
+3. `uni.addInterceptor` 修改 `request url` 导致报错 `未能获取局域网地址，本地调试服务不可用`?\
+答：`uni-vue-devtools` 依赖本地服务通信，故修改 `request url` 应绕开相关服务，特征为 `http:localhost|本机ip:端口`。

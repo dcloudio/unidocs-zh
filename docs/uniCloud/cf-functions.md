@@ -1484,11 +1484,15 @@ In addition to code, cloud functions also have configuration. It can be configur
 ### 运行内存@memory
 ### Running memory @memory
 
-云函数运行内存为单个云函数实例使用的内存，计算云函数GBs资源消耗时会以此内存*运行时间（100ms为阶梯向上取整）得到消耗量。
-The running memory of a cloud function is the memory used by a single cloud function instance. When calculating the GBs resource consumption of a cloud function, the consumption will be obtained from this memory*running time (100ms is rounded up).
+云函数运行内存为单个云函数实例使用的内存。
 
-腾讯云及阿里云公测版云函数默认运行内存大小为256MB，阿里云正式版版调整为默认512MB
-The default running memory size of Tencent Cloud and Alibaba Cloud public beta cloud functions is 256MB, and the official version of Alibaba Cloud is adjusted to 512MB by default.
+腾讯云云函数默认运行内存大小为256MB，阿里云正式版默认512MB
+
+计算云函数GBs资源消耗时腾讯云会以此内存*运行时间（100ms为阶梯向上取整）得到消耗量。阿里云会以实际运行时间计算GBs，不会按100ms阶梯向上取整
+
+::: warning 注意
+阿里云一般场景（比如包含数据库访问时）不建议将内存配置为128MB。如果开发起见遇到数据库响应缓慢，在排除索引等因素的影响后可以检查下是不是云函数内存配置为了128MB，如果是建议调整为256MB
+:::
 
 ### 超时时间@timeout
 ### Timeout @timeout

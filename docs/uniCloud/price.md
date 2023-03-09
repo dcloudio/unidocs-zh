@@ -181,7 +181,7 @@ Due to insufficient upstream reserves, there are still some quotas for the uniCl
 |			|url化请求QPS（默认域名）			|100	|
 |			|固定IP代理请求QPS					|20		|
 |			|最大实例数							|300	|
-|			|函数数量限制						|50		|
+|			|函数数量限制						|48		|
 |			|客户端请求最大超时时间				|40秒	|
 |			|定时任务单次最大运行时间			|600秒	|
 |数据库		|QPS								|1000	|

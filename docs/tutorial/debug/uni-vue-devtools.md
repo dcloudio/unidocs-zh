@@ -107,6 +107,7 @@ If you don't use HBuilderX to develop uni-app, you can also use vue devtools via
 Answer: The hot reload of WeChat developer tools does not synchronize data, and the hot reload is turned off.
 
 2. HBuilderX 项目运行到百度开发者工具，修改页面数据后 Devtools 数据未更新？\
-2. The HBuilderX project runs to Baidu Developer Tools, and the Devtools data is not updated after modifying the page data? \
 答：百度开发者工具隔离编译模式热更新未同步数据问题，切换依赖分析编译模式。
-Answer: Baidu Developer Tools isolate compilation mode hot update unsynchronized data problem, switch to dependency analysis compilation mode.
+
+3. `uni.addInterceptor` 修改 `request url` 导致报错 `未能获取局域网地址，本地调试服务不可用`?\
+答：`uni-vue-devtools` 依赖本地服务通信，故修改 `request url` 应绕开相关服务，特征为 `http:localhost|本机ip:端口`。

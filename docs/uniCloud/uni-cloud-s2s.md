@@ -162,7 +162,7 @@ getSecureHeaders根据配置的安全策略不同返回不同的安全请求头�
 
 ```js
 {
-  "Unicloud-S2s-Authorization": "" // 值为配置文件内的code值
+  "Unicloud-S2s-Authorization": "CONNECTCODE s2uqpb0h958vhhom0hi1ug5bt88r29bcg" // CONNECTCODE后面的值为配置文件内的connectCode值
 }
 ```
 

@@ -121,8 +121,7 @@ After configuring the manufacturer parameters, be sure to submit the cloud packa
 **注意事项：**
 **Precautions:**
 
-- 目前华为、小米、魅族、oppo（beta环境）不需要发布应用市场上就可使用离线离线推送，vivo 需要上架后才能使用。
-- At present, Huawei, Xiaomi, Meizu, and oppo (beta environment) can use offline and offline push without publishing on the app market, and vivo needs to be put on the shelves before they can be used.
+- 目前华为、魅族不需要发布应用市场上就可使用离线推送(注：华为离线推送有条数限制)，其他厂商通道需要上架后才能使用。
 
 
 

@@ -38,7 +38,7 @@ Referer防盗链，是基于HTTP请求头中Referer字段来设置访问控制�
 |:-:	|:-:		|:-:        |
 |Referer类型	|黑名单 |  黑名单内的域名均无法访问资源		|
 |    |  白名单 | 只有白名单内的域名能访问资源，白名单以外的域名均无法访问资源。        |
-|规则    | Referer列表 |  多个使用回车符进行分隔。支持使用星号作为通配符。例如，*.example.com，可以匹配到image.example.com或video.example.com等。        |
+|规则    | Referer列表 |  多个使用回车符进行分隔。支持使用 \* 作为通配符。例如，*.example.com，可以匹配到image.example.com或video.example.com等。        |
 |高级配置    |  允许通过浏览器地址栏直接访问资源URL | 当勾选该选项时，请求Referer字段为空或无Referer字段（例如浏览器请求），都将允许用户访问资源        |
 |    |  精确匹配    |  规则中填写的域名是否为精确匹配        |
 
@@ -49,15 +49,16 @@ Referer防盗链，是基于HTTP请求头中Referer字段来设置访问控制�
 - Referer防盗链规则的总长度最长不超过60KB。
 
 
-#### 各小程序平台默认Referer
+### 各小程序平台默认Referer
 
-如果您的应用是小程序，可将默认Referer添加到白名单规则中，以允许访问资源。
+如果您的应用是小程序，可将小程序平台默认Referer配置到白名单规则中，以允许访问资源。
 
 |平台	|Referer    |
 |:-:	|:-:		|
-|微信    | https://servicewechat.com/{appid}/{version}/page-frame.html | 
+|微信    | https://servicewechat.com | 
+|QQ    | https://appservice.qq.com | 
 |头条抖音    | https://tmaservice.developer.toutiao.com | 
-|百度    | https://smartapps.cn/{appKey}/{version}/page-frame.html | 
+|百度    | https://smartapps.cn | 
 |支付宝    | https://你的appid.hybrid.alipay-eco.com | 
 
 
@@ -111,12 +112,12 @@ User-Agent是HTTP请求头的一部分，包含用户访问时所使用的操作
 ### 注意事项
 
 - 访问控制黑名单和白名单互斥，同一时间您只能选择其中一种方式。如需要切换请先删除配置后重新进行添加。
-- 前端网页托管绑定了需绑定自定义域名后才可配置访问规则及查看报表。
+- 前端网页托管需绑定自定义域名后才可配置访问规则及查看报表。
 
 
 ## 查看报表@report
 
-通过访问报表功能，您可以查询云存储及前端网页托管的访问统计数据；通过分析数据，便于您了解业务运行状况。
+通过访问报表功能，您可以查询云存储及前端网页托管的访问统计数据；通过分析数据，便于了解业务运行状况。
 
 访问报表统计并展示了用户访问最多的Referer、URL和IP三项数据，您可以根据报表数据及业务需求来配置相应的访问控制规则以提高CDN的安全性。
 

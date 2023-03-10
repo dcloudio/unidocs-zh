@@ -1,6 +1,6 @@
 ## CDN安全策略
 
-> 阿里云服务空间支持
+> 本功能仅阿里云服务空间支持
 
 ## 简介
 
@@ -60,6 +60,12 @@ Referer防盗链，是基于HTTP请求头中Referer字段来设置访问控制�
 |头条抖音    | https://tmaservice.developer.toutiao.com | 
 |百度    | https://smartapps.cn | 
 |支付宝    | https://你的appid.hybrid.alipay-eco.com | 
+
+### App中Referer防盗链现状
+
+App中请求资源时的referer为空，目前不支持指定。如果已设置黑/白名单则在App中无法访问资源。
+
+如需支持App访问，需要开启高级配置中的`允许通过浏览器地址栏直接访问资源URL`，即允许空Referer访问CDN资源。此时空Referer及命中黑/白名单规则的请求可正常访问资源，不过CDN安全性会有一定降低。
 
 
 ## IP黑/白名单@ip

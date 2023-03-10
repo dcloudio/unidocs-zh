@@ -44,6 +44,7 @@
   * [云存储API](storage.md)
   * [腾讯云自定义登录](authentication.md)
   * [腾讯云权限管理](policy-tcb.md)
+  * [阿里云CDN安全策略](cdn-security-policy.md)
 * uni-id用户体系
   * [综述](uni-id-summary.md)
   * [uni-id-pages](uni-id-pages.md)

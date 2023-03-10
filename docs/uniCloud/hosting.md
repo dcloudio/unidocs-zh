@@ -415,6 +415,13 @@ That is, the business background is also on the cloud function or cloud object o
 需要在开发者自己的传统服务器上配置跨域，允许A域名跨域访问自己。
 You need to configure cross-domain on the developer's own traditional server to allow A domain name to access itself across domains.
 
+## 缓存问题@cache
+
+如果在更新页面后浏览器访问到的仍是旧页面，可以通过如下流程排查
+
+1. 客户端禁用缓存或无痕模式打开是否正常，如果是就是客户端缓存问题，需要等浏览器缓存失效 
+2. 排除了第一步的影响后，访问页面路径后加参数 比如 /admin#/pages/index/index 改为 /admin?v=1#/pages/index/index，如果正常则是cdn缓存问题，在uniCloud前端网页托管**配置页面**刷新缓存即可
+
 ## 最佳实践
 ## Best Practices
 

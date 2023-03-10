@@ -134,12 +134,13 @@
     * [app 安全检测API](/tutorial/app-sec-api.md)
   * 网络安全
     * [云端一体安全网络](/uniCloud/secure-network.md)
+    * [传统服务器与uniCloud安全通信](/uniCloud/uni-cloud-s2s.md)
   * 身份安全
     * [app一键登录](/univerify.html)
     * [app实人认证](/uniCloud/frv/intro.html)
     * [图形验证码](/uniCloud/uni-captcha.html)
   * 服务器安全
-    * [ip防刷](/uniCloud/ip-filter.html)
+    * [uniCloud ip防刷](/uniCloud/ip-filter.html)
     * [内容安全审查](https://ext.dcloud.net.cn/plugin?id=5460)
 * [国际化专题](/tutorial/i18n.md)
 	* [国际化开发指南](/tutorial/i18n.md)

@@ -11,6 +11,7 @@ uni-subscribemsg公共模块可以方便开发者快速接入小程序订阅消�
 
 ::: warning 注意
 uni-subscribemsg公共模块仅能在云函数/云对象内使用。如果您不了解公共模块，请[参阅](cf-common.md)
+本插件依赖uni-open-bridge-common，且版本需≥1.1.2
 :::
 
 > 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=uni-subscribemsg](https://ext.dcloud.net.cn/plugin?name=uni-subscribemsg)

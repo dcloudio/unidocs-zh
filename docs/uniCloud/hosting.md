@@ -468,3 +468,7 @@ Taking an admin project and a client project as an example, the client project c
 - 单文件最大限制为50MB
 - The maximum limit for a single file is 50MB
 
+
+## 阿里云CDN安全策略
+
+阿里云前端网页托管在绑定自定义域名后，支持配置CDN安全策略：[https://uniapp.dcloud.net.cn/uniCloud/cdn-security-policy.html](uniCloud/cdn-security-policy.md)

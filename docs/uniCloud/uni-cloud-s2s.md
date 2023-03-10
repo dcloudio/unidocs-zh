@@ -177,7 +177,7 @@ getSecureHeaders根据配置的安全策略不同返回不同的安全请求头�
 
 ### 校验http请求是否有效@verify
 
-传入http请求数据，校验本次请求是否合法。请求接收方调用此方法进行验证。校验未通过时，verify方法会抛出错误。详细错误列表见：[错误码](#err-code)
+传入http请求数据，校验本次请求是否合法。请求接收方调用此方法进行验证。校验未通过时，verifyHttpInfo方法会抛出错误。详细错误列表见：[错误码](#err-code)
 
 **用法**
 
@@ -239,13 +239,13 @@ exports.main = async function(event, context) {
 
 ```js
 const {
-  verify
+  verifyHttpInfo
 } = require('uni-cloud-s2s')
 module.exports = {
   _before: async function () {
     const source = this.getClientInfo().source
     if(source === 'http'){ // 使用url请求当前云对象时进行验证
-      verify(this.getHttpInfo())
+      verifyHttpInfo(this.getHttpInfo())
     } else {
       // 非url访问逻辑
     }

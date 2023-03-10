@@ -657,7 +657,7 @@ iOS平台云端打包相关配置
             "style": "light",                                       //可选，字符串类型，系统状态栏样式（前景颜色），可取值dark、light
             "background": "#RRGGBB"                                 //可选，字符串类型，#RRGGBB格式，系统状态栏背景颜色
         },
-        "useragent": {                              //可选，JSON对象，应用UserAgent相关配置
+        "useragent": {                              //可选，JSON对象，应用UserAgent相关配置，默认值为系统UserAgent，并添加 uni-app Html5Plus/1.0 
             "value": "",                                            //可选，字符串类型，设置的默认userAgent值
             "concatenate": false                                    //可选，Boolean类型，是否将value值作为追加值连接到系统默认userAgent值之后
         },

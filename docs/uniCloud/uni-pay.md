@@ -1,7 +1,6 @@
-> 本文档适用于`uni-pay 2.0.0`及以上版本，需 HBuilderX 3.6.5 及以上版本。旧版本文档请访问：[uni-pay 1.x 文档](unipay.md)
-> This document is applicable to `uni-pay 2.0.0` and above, and requires HBuilderX 3.6.5 and above. Please visit the old version documentation: [uni-pay 1.x documentation](unipay.md)
-
 # uni-pay 2
+
+> 本文档适用于`uni-pay 2.0.0`及以上版本，需 HBuilderX 3.6.5 及以上版本。旧版本文档请访问：[uni-pay 1.x 文档](unipay.md)
 
 ## 简介@introduction
 ## Introduction @introduction

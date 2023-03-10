@@ -1,5 +1,6 @@
->本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0详情：[https://ask.dcloud.net.cn/article/35622](https://ask.dcloud.net.cn/article/35622)
->This article is an introduction to uni-push2.0 (requires HBuilderX 3.5.1 and above), if the old project needs to use the old version of uniPush1.0 Details: [https://ask.dcloud.net.cn/article/35622](https://ask.dcloud.net.cn/article/35622)
+# uni-push2统一推送
+
+> 本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0，另见：[https://ask.dcloud.net.cn/article/35622](https://ask.dcloud.net.cn/article/35622)
 
 # 应用场景
 # application scenarios
@@ -31,14 +32,15 @@ In addition, chess and card games and other requirements that require the client
 # Introduction
 
 ## 概述
-## Overview
-`uni-push`是DCloud联合个推公司推出的、全端的、云端一体的统一推送服务。
-`uni-push` is an all-end, cloud-integrated unified push service launched by DCloud and a push company.
+`uni-push`是DCloud推出的、全端的、云端一体的统一推送服务。
 
-1. 客户端方面，`uni-push`支持App、web、小程序。App端还内建了苹果、华为、小米、OPPO、VIVO、魅族、谷歌FCM等手机厂商的系统推送和个推第三方推送。（uni-push 1.0不支持小程序端、web端以及App端仅启用轻量级的在线推送）
-1. On the client side, `uni-push` supports App, web, and applet. The App side also has built-in system push and personal push third-party push from Apple, Huawei, Xiaomi, OPPO, VIVO, Meizu, Google FCM and other mobile phone manufacturers. (uni-push 1.0 does not support applet side, web side and App side, only lightweight online push is enabled)
-2. 服务端方面，uni-push2.0起支持uniCloud云端一体，无需再编写复杂代码轻松完成push。而uni-push1.0仅支持使用传统服务器开发语言如php，未和客户端有效协同，流程比uni-push2.0繁琐。
-2. On the server side, since uni-push 2.0, it supports the integration of uniCloud cloud, and it is easy to complete push without writing complex code. However, uni-push1.0 only supports the use of traditional server development languages such as php, which does not effectively cooperate with the client, and the process is more cumbersome than uni-push2.0.
+1. 客户端方面，`uni-push2`支持App、web、小程序。
+  * App端，内置了苹果、华为、小米、OPPO、VIVO、魅族、谷歌FCM等手机厂商的系统推送和个推第三方推送
+  * 小程序端，内置了socket在线推送。如需模板消息/订阅消息，另见[uni-subscribemsg](uni-subscribemsg.md)
+  * web端，内置了socket在线推送
+  （uni-push1仅支持app，且app必须包含个推原生sdk。uni-push2在app端如不需要厂商推送，只需在线推送，无需集成个推原生sdk）
+2. 服务端方面，`uni-push2`支持uniCloud云端一体，无需再编写复杂代码轻松完成push。
+  （uni-push1.0仅支持使用传统服务器开发语言如php，未和客户端有效协同，流程比uni-push2.0繁琐）
 3. uni-push还自带一个web控制台。不写代码也可以在web页面发推送。uni-push1.0的web控制台在[dev.dcloud.net.cn](https://dev.dcloud.net.cn)。uni-push2.0的web控制台是开源的，属于uni-admin插件[详见](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)。
 3. uni-push also comes with a web console. You can also send pushes on web pages without writing code. The web console of uni-push1.0 is at [dev.dcloud.net.cn](https://dev.dcloud.net.cn). The web console of uni-push2.0 is open source and belongs to the uni-admin plugin [see details](https://ext.dcloud.net.cn/plugin?name=uni-push-admin).
 
@@ -82,8 +84,7 @@ Due to the large number of mobile phone manufacturers, they each have different 
 如果开发者把上述每个平台的客户端和服务器的SDK都对接一遍，还自己处理没有push服务的中小品牌手机，那过于困难了。所以业内有专业的推送服务厂商把各种手机厂商的通道封装成一套统一的API，如个推（属于上市公司每日互动）；同时这些三方专业推送厂商还提供了高速socket通道。当应用在线时，也可以直接通过socket下发消息。否则开发者需要写很多判断代码、搭建socket服务器、处理在线时和离线时各种差异。
 It would be too difficult for developers to connect the client and server SDKs of each of the above platforms and deal with small and medium-sized mobile phones without push services by themselves. Therefore, there are professional push service providers in the industry that encapsulate the channels of various mobile phone manufacturers into a set of unified API, such as Ge Push (which belongs to the daily interaction of listed companies); at the same time, these three-party professional push providers also provide high-speed socket channels. When the application is online, it can also send messages directly through the socket. Otherwise, developers need to write a lot of judgment code, build a socket server, and deal with various differences between online and offline.
 
-DCloud与个推深度合作，为uni-app的开发者提供了比传统方案便利甚多的统一推送方案`uni-push2`，利用云端一体的优势，同时提供基于uniCloud的push服务器和基于uni-app的push客户端，两者高效协同，极大的简化了push的使用。
-DCloud has cooperated deeply with Getui to provide uni-app developers with a unified push solution `uni-push2`, which is much more convenient than traditional solutions, taking advantage of the integration of cloud and providing a push server based on uniCloud and a push server based on uni-app. The push client, the two efficiently work together, which greatly simplifies the use of push.
+DCloud与个推（A股上市公司每日互动）深度合作，为uni-app的开发者提供了比传统方案便利甚多的统一推送方案`uni-push2`，利用云端一体的优势，同时提供基于uniCloud的push服务器和基于uni-app的push客户端，两者高效协同，极大的简化了push的使用。
 
 > 注：`uni-push`的服务器稳定性是由阿里云serverless、腾讯云serverless、个推来保障的，都是日活过亿的上市公司，无需顾虑稳定性。
 > Note: The server stability of `uni-push` is guaranteed by Alibaba Cloud serverless, Tencent Cloud serverless, and Getui, all of which are listed companies with over 100 million daily active users, so there is no need to worry about stability.
@@ -114,8 +115,7 @@ Summarize the functions provided by `uni-push`:
 6. 一个[uni-admin](/uniCloud/admin)插件，开源的web控制台，无需编程，可视化界面发送push消息 [详见](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)
 6. A [uni-admin](/uniCloud/admin) plug-in, an open source web console, no programming required, and a visual interface to send push messages [see details](https://ext.dcloud.net.cn/plugin?name =uni-push-admin)
 
-在[uni-starter](/uniCloud/uni-starter)里，还提供了app push权限判断、申请、开关设置、消息中心（暂未实现），搭配使用可以大量降低开发工作量。
-In [uni-starter](/uniCloud/uni-starter), it also provides app push permission judgment, application, switch settings, message center (not yet implemented), which can greatly reduce the development workload.
+在[uni-starter](/uniCloud/uni-starter)里，还提供了app push权限判断、申请、开关设置，搭配使用可以大量降低开发工作量。
 
 注意：app申请创建通知栏消息、web申请弹出通知，均会由操作系统或浏览器自动弹窗询问用户是否同意。小程序下需要手机用户主动发起订阅行为，才能送达消息。
 Note: The operating system or browser will automatically pop up a window to ask the user whether to agree or not. Under the applet, the mobile phone user needs to actively initiate the subscription behavior before the message can be delivered.
@@ -153,8 +153,7 @@ With uni-push, developers should no longer use other push schemes. However, we f
 - 常见误解1：“uni-push的专业性，和专业的个推、极光等服务可相比吗？”
 - Common misunderstanding 1: "Is the professionalism of uni-push comparable to professional personal push, Aurora and other services?"
 
-	答：uniPush 是由个推将其本来收费的 push 产品，其中部分重要的VIP功能免费提供给了DCloud的开发者。它与个推vip push的只有2个区别：1、免费；2、账户使用的是DCloud开发者账户，而无需再重新注册个推账户。个推是A股上市公司，专业性在推送领域领先。
-	Answer: uniPush is a push product that was originally charged by a pusher, and some important VIP functions are provided to DCloud developers for free. There are only two differences between it and Getui vip push: 1. It is free; 2. The account uses a DCloud developer account, so there is no need to re-register for Getui account. Getui is an A-share listed company, and its professionalism is leading in the field of push.
+	答：uniPush 是由个推将其本来收费的 push 产品，免费提供给了DCloud的开发者。它与个推vip push的只有3个区别：1、免费；2、账户使用的是DCloud开发者账户，而无需再重新注册个推账户；3、开发文档看DCloud的。
 
 - 常见误解2：“uni-push好麻烦，我就喜欢个推、极光这种简单sdk，不想去各个rom厂商去申请一圈”
 - Common misunderstanding 2: "uni-push is so troublesome, I like simple sdk like push and aurora, and I don't want to go to various rom manufacturers to apply for a circle"

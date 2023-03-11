@@ -194,6 +194,8 @@ Before docking your own project, it is recommended to run through the sample pro
 7. 运行启动项目，**在HBuilderX的运行控制台里选择使用云端云函数环境**
 7. Run the startup project, **Choose to use the cloud function environment in the HBuilderX console**
 
+**注意：测试支付回调必须选择云端云函数环境**
+
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-29.png)
 
 8. 前端页面里点击唤起收银台支付，如果可以正常支付，代表示例项目运行成功，可以开始对接自己的项目了。 [对接自己项目](#install)
@@ -225,9 +227,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	"notifyKey":"5FB2CD73C7B53918728417C50762E6D45FB2CD73C7B53918728417C50762E6D4", // 跨云函数通信时的加密密钥，建议手动改下，不要使用默认的密钥，长度保持在64位以上即可
@@ -427,9 +429,9 @@ The node corresponding to the payment configuration is `notifyUrl`
 // 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 // Uniform - payment callback address, the format is "service space ID":"URL address"
 "notifyUrl": {
-	// 本地开发环境-支付回调地址
+	// 测试环境服务空间-支付回调地址
 	"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-	// 线上正式环境-支付回调地址
+	// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 	"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 },
 ```
@@ -477,9 +479,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 微信支付相关
@@ -516,9 +518,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 微信支付相关
@@ -555,9 +557,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 微信支付相关
@@ -594,9 +596,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 微信支付相关
@@ -642,9 +644,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 微信支付相关
@@ -681,9 +683,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 支付宝相关（证书记得选java版本）
@@ -716,9 +718,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 支付宝相关（证书记得选java版本）
@@ -751,9 +753,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 支付宝相关（证书记得选java版本）
@@ -786,9 +788,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// 支付宝相关（证书记得选java版本）
@@ -822,9 +824,9 @@ module.exports = {
 	// 统一 - 支付回调地址,格式为 "服务空间ID":"URL化地址"
 	// Uniform - payment callback address, the format is "service space ID":"URL address"
 	"notifyUrl": {
-		// 本地开发环境-支付回调地址
+		// 测试环境服务空间-支付回调地址
 		"mp-b267e273-19a7-4288-99c7-f6f27f9c5b77": "https://fc-mp-b267e273-19a7-4288-99c7-f6f27f9c5b77.next.bspapp.com/uni-pay-co",
-		// 线上正式环境-支付回调地址
+		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
 	// ios内购相关

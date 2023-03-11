@@ -470,8 +470,7 @@ Here's a list of common selection components and their classification according 
 |tree(树状控件)		|单选、多选	|树			|平铺		|展示		|										|
 | tree (tree control)| Single selection, multiple selection| Tree| Tile| Exhibit| |
 
-欢迎开发者们开发这些`datacom组件`，后续插件市场将单列出datacom组件，给予更高的显示权重。
-Developers are welcome to develop these `datacom component`, and the subsequent plug-in market will list datacom components alone, giving higher display weight.
+欢迎开发者们开发这些`datacom组件`。插件市场提供了[datacom组件专区](https://ext.dcloud.net.cn/search?&q=DataCom&type=UpdatedDate)，给予更高的显示权重。
 
 
 ### 使用mixinDatacom快速开发datacom@mixindatacom

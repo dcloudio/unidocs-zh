@@ -349,7 +349,7 @@ datacom组件规范还要求支持绑定 value，且支持双向绑定，即：�
 |侧边导航			|单选		|数组		|平铺		|展示		|										|
 |tree(树状控件)		|单选、多选	|树			|平铺		|展示		|										|
 
-欢迎开发者们开发这些`datacom组件`，后续插件市场将单列出datacom组件，给予更高的显示权重。
+欢迎开发者们开发这些`datacom组件`。插件市场提供了[datacom组件专区](https://ext.dcloud.net.cn/search?&q=DataCom&type=UpdatedDate)，给予更高的显示权重。
 
 
 ### 使用mixinDatacom快速开发datacom@mixindatacom

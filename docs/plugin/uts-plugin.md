@@ -401,12 +401,11 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 // 引用android api
 import Context from "android.content.Context";
 import BatteryManager from "android.os.BatteryManager";
-// 引用uts环境库
-import { getAppContext } from "io.dcloud.uts.android";
+
 
 export function getBatteryCapacity(): string {
 	// 获取android系统 application上下文
-    const context = getAppContext();
+    const context = UTSAndroid.getAppContext();
     if (context != null) {
         const manager = context.getSystemService(
             Context.BATTERY_SERVICE

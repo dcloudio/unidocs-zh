@@ -532,7 +532,7 @@ In the Android platform directory, edit index.uts and type the following.
 // refer to android api
 import Context from "android.content.Context";
 import BatteryManager from "android.os.BatteryManager";
-
+import { UTSAndroid } from "io.dcloud.uts";
 
 export function getBatteryCapacity(): string {
 	// 获取android系统 application上下文

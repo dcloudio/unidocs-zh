@@ -312,8 +312,7 @@ module.exports = {
 			}
 		},
 	},
-	// 支付宝相关（证书记得选java版本）
-	// Alipay related (remember to choose the java version of the certificate)
+	// 支付宝相关（加签方式选证书模式，加密算法选RSA2）
 	"alipay": {
 		"enable": true, // 是否启用支付宝支付
 		// 支付宝 - 小程序支付配置
@@ -688,8 +687,7 @@ module.exports = {
 		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
-	// 支付宝相关（证书记得选java版本）
-	// Alipay related (remember to choose the java version of the certificate)
+	// 支付宝相关（加签方式选证书模式，加密算法选RSA2）
 	"alipay": {
 		"enable": true, // 是否启用支付宝支付
 		// 支付宝 - APP支付配置
@@ -723,8 +721,7 @@ module.exports = {
 		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
-	// 支付宝相关（证书记得选java版本）
-	// Alipay related (remember to choose the java version of the certificate)
+	// 支付宝相关（加签方式选证书模式，加密算法选RSA2）
 	"alipay": {
 		"enable": true, // 是否启用支付宝支付
 		// 支付宝 - 小程序支付配置
@@ -758,8 +755,7 @@ module.exports = {
 		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
-	// 支付宝相关（证书记得选java版本）
-	// Alipay related (remember to choose the java version of the certificate)
+	// 支付宝相关（加签方式选证书模式，加密算法选RSA2）
 	"alipay": {
 		"enable": true, // 是否启用支付宝支付
 		// 支付宝 - H5支付配置（包含：网站二维码、手机H5，需申请支付宝当面付接口权限）
@@ -793,8 +789,7 @@ module.exports = {
 		// 线上环境服务空间-支付回调地址（如果只有一个服务空间，则只需要配置线上环境服务空间即可）
 		"mp-499e2a37-0c77-418a-82aa-3e5820ecb057": "https://fc-mp-499e2a37-0c77-418a-82aa-3e5820ecb057.next.bspapp.com/uni-pay-co",
 	},
-	// 支付宝相关（证书记得选java版本）
-	// Alipay related (remember to choose the java version of the certificate)
+	// 支付宝相关（加签方式选证书模式，加密算法选RSA2）
 	"alipay": {
 		"enable": true, // 是否启用支付宝支付
 		// 支付宝 - H5支付配置（包含：网站二维码、手机H5，需申请支付宝当面付接口权限）

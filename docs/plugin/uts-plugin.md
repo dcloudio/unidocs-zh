@@ -532,14 +532,11 @@ In the Android platform directory, edit index.uts and type the following.
 // refer to android api
 import Context from "android.content.Context";
 import BatteryManager from "android.os.BatteryManager";
-// 引用uts环境库
-// Refer to the uts environment library
-import { getAppContext } from "io.dcloud.uts.android";
+
 
 export function getBatteryCapacity(): string {
 	// 获取android系统 application上下文
-	// Get the android system application context
-    const context = getAppContext();
+    const context = UTSAndroid.getAppContext();
     if (context != null) {
         const manager = context.getSystemService(
             Context.BATTERY_SERVICE

@@ -45,7 +45,7 @@ When you delete a page, you need to do two things:
 ## 页面生命周期 @lifecycle
 ## Page life cycle @lifecycle
 
-``uni-app`` 页面除支持 Vue 组件生命周期外还支持下方页面生命周期函数，当以组合式 API 使用时，在 Vue2 和 Vue3 中存在一定区别，请分别参考：[Vue2 组合式 API 使用文档](/tutorial/vue-composition-api.html) 和 [Vue2 组合式 API 使用文档](/tutorial/vue3-composition-api.html)。
+``uni-app`` 页面除支持 Vue 组件生命周期外还支持下方页面生命周期函数，当以组合式 API 使用时，在 Vue2 和 Vue3 中存在一定区别，请分别参考：[Vue2 组合式 API 使用文档](/tutorial/vue-composition-api.html) 和 [Vue3 组合式 API 使用文档](/tutorial/vue3-composition-api.html)。
 
 |函数名|说明|平台差异说明|最低版本|
 | Function name| Instruction| Platform difference description| Minimum version|

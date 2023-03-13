@@ -6,8 +6,7 @@
 ## 使用scss变量
 ## Using scss variables
 安装插件后，需要在项目的根目录的`uni.scss`文件引入变量文件，即可使用或修改对应的`scss`变量，变量主要定义的是主题色，后续后加入更多内容。
-After installing the plugin, you need to import the variable file in the `uni.scss` file in the root directory of the project, you can use or modify the corresponding `scss` variable, the variable mainly defines the theme color, and more content will be added later.
- 
+
 ```css
 /* 需要放到文件最上面 */
 @import '@/uni_modules/uni-scss/variables.scss';
@@ -94,7 +93,7 @@ The user needs to decide whether to use , if it is used, the css will increase b
 Use in App.vue ` <style lang='scss'>` to import
 
 ```css
-@import '@/uni_modules/uni-scss';
+@import '@/uni_modules/uni-scss/index.scss';
 ```
 ### 颜色
 ### color
@@ -184,8 +183,7 @@ Based on the rounded dimensions of the `$border-radius-root` variable, which def
 - circle 50% (not valid under nvue)
 
 在 uni.scss 中修改默认值
-Modify default values in uni.scss
-```css 
+```css
 $uni-radius-root:20px;
 $uni-radius: (
 	0: 0,
@@ -210,10 +208,8 @@ example:
 ### Spacing
 
 使用间距辅助类对元素快速应用 `margin` 或 `padding` 样式， 范围是从 0 到 16。
-Quickly apply a `margin` or `padding` style to an element using the spacing helper class, ranging from 0 to 16.
- 
-规则为 `uni-${property}${direction}-${size}` 
-The rule is `uni-${property}${direction}-${size}`
+
+规则为 `uni-${property}${direction}-${size}`
 
 **property** 应用间距类型:
 **property** Application spacing type:
@@ -331,7 +327,7 @@ The rule is `uni-${property}${direction}-${size}`
 在 uni.scss 中修改默认值
 Modify default values in uni.scss
 
-```css 
+```css
 $uni-space-root:2;
 ```
 
@@ -345,5 +341,5 @@ $uni-space-root:2;
 				<view class="uni-ma-5">test</view>
 			</view>
 		<template>
-	
+
 	```

@@ -298,6 +298,11 @@ HX3.6.1+ version You can configure manifest.json to configure checkPermissionDen
 + 目前已知部分原生插件也同样有此隐私合规问题，开发者可根据调用栈文件中提供的信息大致判断出哪个原生插件有问题，这种情况需要联系插件作者进行整改。
 + 如果是非上述情况，可发帖或联系官方进行进一步排查。
 
+#### 25、华为上架被拒，集成XX等SDK但未在隐私政策中明示
++ `com.netease`是由于`移动安全联盟OAID`使用了网易加固SDK导致的误报，3.7.6版本已调整`移动安全联盟OAID`版本以规避此问题，请使用HBuilderX 3.7.6重新打包上架
++ 官方模块中集成的SDK，参照[Android平台各功能模块隐私合规协议](https://ask.dcloud.net.cn/article/39484)补充好相应的隐私政策
++ 原生插件中集成的SDK，参照插件文档补充好相应的隐私政策
+
 #### 看不懂文档不知道如何修改？
 #### Can't understand the document and don't know how to modify it?
 

@@ -44,7 +44,7 @@ uniCloud源码授权版需在用户及插件作者双方签署合同后方可购
 
 ## 账单结算
 
-DCloud插件市场在每月1日出上月的月度账单，待提现的账单累计金额达到100元以上时可提现，如有多笔待提现账单可针对多笔账单进行合并提现。插件作者可登录插件市场后台，查看[月度账单](https://ext.dcloud.net.cn/manage/payment)：
+DCloud插件市场在每月1日出上月的月度账单，月度账单包含上月的用户付费收益（包括插件销售、赞赏收益）及上上月的广告收益，待提现的账单累计金额达到100元以上时可提现，如有多笔待提现账单可针对多笔账单进行合并提现。插件作者可登录插件市场后台，查看[月度账单](https://ext.dcloud.net.cn/manage/payment)：
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-bill-list.png)
 

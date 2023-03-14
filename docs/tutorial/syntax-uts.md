@@ -234,6 +234,12 @@ a.toDouble() // 转换为 Double 类型，后续也将支持 new Double(a) 方�
 let a:Int = 3
 let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 ```
+注意事项：
+
+- 在不同平台上，数值的范围限制不同，超出限制会导致相应的错误或异常
+	* 编译至 JavaScript 平台时，最大值为 1.7976931348623157e+308，最小值为 -1.7976931348623157e+308，超出限制会返回 Infinity 或 -Infinity。
+	* 编译至 Kotlin 平台时，最大值为 9223372036854775807，最小值为 -9223372036854775808，超出限制会报错：`The value is out of range‌`。
+  * 编译至 Swift 平台时，最大值 9223372036854775807，最小值 -9223372036854775808，超出限制会报错：`integer literal overflows when stored into Int`。
 
 ### 字符串（String）
 
@@ -1284,6 +1290,13 @@ const clothing = ['shoes', 'shirts', 'socks', 'sweaters'];
 console.log(clothing.length);
 // expected output: 4
 ```
+
+注意事项：
+
+- 在不同平台上，数组的长度限制不同，超出限制会导致相应的错误或异常
+	* 编译至 JavaScript 平台时，最大长度为 2^32 - 1，超出限制会报错：`Invalid array length`。
+	* 编译至 Kotlin 平台时，最大长度受系统内存的限制，超出限制报错：`java.lang.OutOfMemoryError: Failed to allocate a allocation until OOM`。
+  * 编译至 Swift 平台时，最大长度也受系统内存的限制，目前超出限制没有返回信息。
 
 #### 实例方法
 
@@ -3131,6 +3144,13 @@ console.log("Mozilla is " + x.length + " code units long");
 console.log("The empty string is has a length of " + empty.length);
 /* "The empty string is has a length of 0" */
 ```
+
+注意事项：
+
+- 在不同平台上，字符串的长度限制不同，超出限制会导致相应的错误或异常
+	* 编译至 JavaScript 平台时，最大长度取决于 JavaScript 引擎，例如在 V8 中，最大长度为 2^30 - 25，超出限制会报错：`Invalid string length`。
+	* 编译至 Kotlin 平台时，最大长度受系统内存的限制，超出限制会报错：`java.lang.OutOfMemoryError: char[] of length xxx would overflow`。
+  * 编译至 Swift 平台时，最大长度也受系统内存的限制，超出限制目前没有返回信息。
 
 #### 实例方法
 

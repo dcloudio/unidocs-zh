@@ -143,7 +143,7 @@ As shown in the figure below, when running the test, you can select the correspo
 > 如果无法获取到设备信息，请[参考](tutorial/run/run-app-faq.md)
 > If the device information cannot be obtained, please [reference](tutorial/run/run-app-faq.md)
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/select_devices.png" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-test-select-device.jpg" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
 
 
 ## 插件配置@extension-config

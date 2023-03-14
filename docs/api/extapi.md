@@ -196,6 +196,7 @@ uni-app的runtime不适合内置很多waiting样式和资源，而使用三方�
 - 所有 uni ext api 均需要提供 utssdk/interface.uts 文件
 - 所有对外暴露的方法，类型均需要在 interface.uts 中定义
 - 在具体平台实现中，通过引用 interface.uts 中的定义的方法，类型来约束实现
+- 声明对象字面量时，必须指定具体类型，如：const res:GetBatteryInfoSuccess = { level:10,.. }
 - 命名规范：
     * API入参类型命名为`API名称首字母大写 + 'Options'`，
      > 如 uni.getBatteryInfo(options)，则 options 类型命名为：`type GetBatteryInfoOptions = {}`

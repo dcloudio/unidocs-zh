@@ -38,7 +38,7 @@ app原生插件的销售和客户端appid、包名绑定。购买者购买时绑
 uniCloud源码授权版需在用户及插件作者双方签署合同后方可购买，合同签署采用`e签宝`线上进行签署，具体流程参见[e签宝介绍](https://ask.dcloud.net.cn/article/37878)。
 
 插件收益分为用户付费收益（插件销售、赞赏收益）和广告收益。每天凌晨，系统会自动统计前一天产生的用户付费收益，并于当天下午2：00后统计前一天产生的广告预估收益（可能会有相应的延迟），广告预估收益仅作为参考，实际收益以插件市场后台“付款”栏目提供的月度账单为准。插件作者可登录插件市场后台，查看每天的收益明细。
-![]( https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-report-list-new-2.png)
+![]( https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-report-list-new-1.png)
 
 `Tips：` 好的插件及更好的售后会增加用户打赏的积极性！
 

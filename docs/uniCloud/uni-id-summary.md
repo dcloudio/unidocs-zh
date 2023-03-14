@@ -345,9 +345,9 @@ uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则
 
 配置项`userRegisterDefaultRole`的值类型为`Array`，每个元素为角色ID(role_id)， 例如：
 
-```javascript
+```json
 {
-  "userRegisterDefaultRole": ['user']
+  "userRegisterDefaultRole": ["user"]
 }
 ```
 

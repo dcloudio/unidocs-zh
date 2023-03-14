@@ -241,8 +241,22 @@ Only uni's built-in api is upgraded along with HBuilder. Please remember the dif
 }
 ```
 
-- [示例(获取电量)参考](https://gitcode.net/dcloud/hello-uts/-/tree/dev/uni_modules/uni-getbatteryinfo)
-- [Example (get battery) reference](https://gitcode.net/dcloud/hello-uts/-/tree/dev/uni_modules/uni-getbatteryinfo)
+
+**注意：** 
+
+- 所有 uni ext api 均需要提供 utssdk/interface.uts 文件
+- 所有对外暴露的方法，类型均需要在 interface.uts 中定义
+- 在具体平台实现中，通过引用 interface.uts 中的定义的方法，类型来约束实现
+- 命名规范：
+    * API入参类型命名为`API名称首字母大写 + 'Options'`，
+     > 如 uni.getBatteryInfo(options)，则 options 类型命名为：`type GetBatteryInfoOptions = {}`
+    * 异步API success,fail 回调结果类型命名为`API名称首字母大写 + 'Success'` 和 `API名称首字母大写 + 'Fail'`
+     > 如 uni.getBatteryInfo() 的 success,fail 回调结果类型为：`type GetBatteryInfoSuccess = {}` 和 `type GetBatteryInfoFail = {}`
+    * 事件API 回调结果类型命名为`API名称首字母大写 + 'CallbackResult'`
+     > 如 uni.onUserCaptureScreen 的 callback 回调结果类型为：`type OnUserCaptureScreenCallbackResult = {}`
+
+- [示例(获取电量)参考](https://gitcode.net/dcloud/uni-api/-/tree/dev/uni_modules/uni-getbatteryinfo)
+
 
 ## 如何使用uni ext api
 ## How to use uni ext api

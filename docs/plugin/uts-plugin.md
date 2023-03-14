@@ -696,6 +696,9 @@ uts代码暂不支持直接使用标准基座真机运行。与原生插件一�
 - 文件查找失败：'uts插件路径'
     vue2项目使用 uts 插件的最低版本要求是HBuilderX 3.6.8，低于此版本，编译时将报错。
 
+- UTSCallback 已过时
+	在 uts 代码中，定义函数类型时，应定义具体的函数类型，而不是使用 UTSCallback，如：`const callback:UTSCallback | null` 应调整为`const callback:(()=>void) | null`
+	
 ### Float类型传参
 
 android很多布局参数强制要求Float，但是ts中没有内置这种类型。可以使用下面的代码实现转换

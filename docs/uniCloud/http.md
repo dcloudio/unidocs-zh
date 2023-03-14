@@ -81,7 +81,6 @@ After filling in the domain name certificate in the previous step and the bindin
 - 腾讯云单个服务空间可支持QPS收服务空间QPS限制，参考：[套餐资源](price.md#tencent-package)
 - A single service space of Tencent Cloud can support QPS to receive the QPS limit of the service space, refer to: [Package Resources](price.md#tencent-package)
 - 阿里云单个服务空间可支持被访问的最大 QPS 为1000（具体频次受函数并发限制）
-- 阿里云默认域名可支持被访问的最大 QPS 为100，推荐您绑定自定义域名以获取更大的访问频次
 - 阿里云绑定自定义域名要求此域名在阿里云保留备案信息，参考：[新增备案信息](https://help.aliyun.com/document_detail/36926.html)
 - Alibaba Cloud binds a custom domain name to require the domain name to retain filing information in Alibaba Cloud, refer to: [Add filing information](https://help.aliyun.com/document_detail/36926.html)
 

@@ -178,7 +178,7 @@ Due to insufficient upstream reserves, there are still some quotas for the uniCl
 |---		|---								|---	|
 |云函数		|callFunction请求QPS				|1000	|
 |			|url化请求QPS（自定义域名）			|1000	|
-|			|url化请求QPS（默认域名）			|100	|
+|			|url化请求QPS（默认域名）			|1000	|
 |			|固定IP代理请求QPS					|20		|
 |			|最大实例数							|300	|
 |			|函数数量限制						|48		|

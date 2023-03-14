@@ -83,7 +83,7 @@
   * [Native.js](/tutorial/native-js.md)
   * [renderjs](/tutorial/renderjs.md)
   * [原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)
-  * [Native Plugin](https://nativesupport.dcloud.net.cn/NativePlugin/README)
+  * [App的User Agent](/tutorial/app-useragent.md)
   * [App使用高斯模糊](/tutorial/app-blureffect.md)
   * [App uses Gaussian blur](/tutorial/app-blureffect.md)
   * App 打包配置

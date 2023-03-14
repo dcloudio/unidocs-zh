@@ -3228,9 +3228,24 @@ List of APIs that need to be signed
 | uni-id-signature| string|yes|request authentication signature; signature algorithm see below|
 
 ### 鉴权签名算法
-### Authentication signature algorithm
-1. 将API请求参数（只包括请求body中的params参数，但除去array与object类型的参数），根据参数名称的ASCII码表的顺序排序。如：`foo:1, bar:2, foo_bar:3, foobar:4`排序后的顺序是 `bar:2, foo:1, foo_bar:3, foobar:4`
-1. Sort the API request parameters (including only the params parameters in the request body, but excluding array and object type parameters) according to the order of the ASCII code table of the parameter names. For example: `foo:1, bar:2, foo_bar:3, foobar:4` sorted order is `bar:2, foo:1, foo_bar:3, foobar:4`
+
+如下为某请求体参数，介绍如何进行签名：
+```json
+{
+	"clientInfo": {
+		"appId": "__test__"
+	},
+	"uniIdToken": "xxxxxx",
+	"params": {
+		"foo": 1,
+		"bar": 2,
+		"foo_bar": 3,
+		"foobar": 4
+	}
+}
+```
+
+1. 将API请求参数（只包括请求体(body)中的`params`参数，但除去array与object类型的参数），根据参数名称的ASCII码表的顺序排序。如：`foo:1, bar:2, foo_bar:3, foobar:4`排序后的顺序是 `bar:2, foo:1, foo_bar:3, foobar:4`
 2. 将排序好的参数名和参数值按照 `key1=value1&key2=value2` 格式拼装在一起，根据上面的示例得到的结果为：`bar=2&foo=1&foo_bar=3&foobar=4`
 2. Assemble the sorted parameter name and parameter value according to `key1=value1&key2=value2` format, the result obtained according to the above example is: `bar=2&foo=1&foo_bar=3&foobar=4`
 3. 把拼装好的字符串采用utf-8编码，开发者使用请求鉴权密钥与随机串对时间戳与待签名字符串进行 HmacSHA256 加密处理，计算得出请求签名值,如：`HmacSHA256(timestamp + bar=2&foo=1&foo_bar=3&foobar=4, requestAuthSecret + nonce)`

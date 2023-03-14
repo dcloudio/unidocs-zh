@@ -480,9 +480,9 @@ Front-end pages within uni-id-co and uni-id-pages both support these four built-
 
 配置项`userRegisterDefaultRole`的值类型为`Array`，每个元素为角色ID(role_id)， 例如：
 
-```javascript
+```json
 {
-  "userRegisterDefaultRole": ['user']
+  "userRegisterDefaultRole": ["user"]
 }
 ```
 

@@ -6,18 +6,16 @@ It is used to display the open data of the platform.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Quick app|360 applet|kuaishou applet|JD applet|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|x|√|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|x|√|√|x|√|x|x|x|x|
 
 **Tips**
 
 该功能为各小程序平台提供的开放能力。App端和H5端不涉及此概念。
 This function provides open capabilities for each Mini Program platform. The App side and H5 side do not involve this concept.
 
-支付宝和字节跳动没有open-data组件，但提供了API方式获取相关信息。支付宝[参考](https://docs.alipay.com/mini/api/ch8chh)、字节跳动[参考](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/user-information/getuserinfo)
-Alipay and ByteDance do not have open-data components, but provide API methods to obtain relevant information. Alipay [Reference](https://docs.alipay.com/mini/api/ch8chh), ByteDance [Reference](https://developer.toutiao.com/dev/cn/mini-app/develop/open -capacity/user-information/getuserinfo)
+支付宝没有open-data组件，但提供了API方式获取相关信息。[参考](https://docs.alipay.com/mini/api/ch8chh)
 
 **属性说明**
 **Property description**

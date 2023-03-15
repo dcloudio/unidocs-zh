@@ -731,9 +731,7 @@ exports.main = async(event) => {
 |  4001 |  请求参数异常 |校验异常，联系官方人员|
 | 4001 | The request parameter is abnormal | The verification is abnormal, contact the official staff |
 |  4003 |  开发者账户appid 校验异常，联系官方人员 |校验异常，联系官方人员|
-| 4003 | The developer account appid verification is abnormal, contact the official staff |The verification is abnormal, contact the official staff|
-|  5000 |  服务器未知异常，联系官方人员 | 联系官方人员 |
-| 5000 | Unknown abnormality of server, contact official staff | Contact official staff |
+|  5000 |  取号失败，请检查SIM卡是否停机欠费；token是否过期 | 联系官方人员 |
 | 20202 |  终端未开启SIM流量 | 引导用户手动开启设备流量 |
 | 20202 | Terminal does not enable SIM data | Guide users to manually turn on device data |
 | 30001	|  当前网络环境不适合执行该操作  | 无 |

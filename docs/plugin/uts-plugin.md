@@ -903,7 +903,8 @@ Cloud packaging is normally supported. However, after packaging, uts is compiled
     The minimum version requirement for the vue2 project to use the uts plugin is HBuilderX 3.6.8. If it is lower than this version, an error will be reported when compiling.
 
 - UTSCallback 已过时
-	在 uts 代码中，定义函数类型时，应定义具体的函数类型，而不是使用 UTSCallback，如：`const callback:UTSCallback | null` 应调整为`const callback:(()=>void) | null`
+
+	HBuilderX 3.7.7开始，不再支持直接使用 UTSCallback 定义函数类型，当需要定义函数类型时，应定义为更具体的类型，如：`const callback:UTSCallback` 应调整为`const callback:()=>void`
 	如果您使用的是插件市场三方uts插件，可以检查更新插件最新版本
 	
 ### Float类型传参

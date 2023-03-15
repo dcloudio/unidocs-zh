@@ -8,6 +8,12 @@ API包括[uni.request](https://uniapp.dcloud.net.cn/api/request/request.html#req
 ```
 Mozilla/5.0 (Linux; Android 10; AKA-AL10 Build/HONORAKA-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.93 Mobile Safari/537.36 uni-app Html5Plus/1.0 (Immersed/34.5)
 ```
+
+使用[Android X5 Webview(腾讯TBS)](https://uniapp.dcloud.net.cn/tutorial/app-android-x5.html)，则在X5的User Agent后添加Html5Plus/1.0、uni-app字段：
+```
+Mozilla/5.0 (Linux; Android 10; AKA-AL10 Build/HONORAKA-AL10; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045738 uni-app Html5Plus/1.0 (Immersed/34.5)
+```
+
 - iOS平台，在iPhone 12手机上默认值为：  
 ```
 Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Html5Plus/1.0 (Immersed/20) uni-app

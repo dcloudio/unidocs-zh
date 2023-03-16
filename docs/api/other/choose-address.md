@@ -40,9 +40,9 @@ Get the user's shipping address. Call up the native interface for the user to ed
 | cityName | string | 国标收货地址第二级地址 ||
 | cityName | string | The second-level address of the national standard delivery address ||
 | countyName | string | 国标收货地址第三级地址 ||
-| countyName | string | National standard delivery address third-level address ||
+| streetName | string | 国标收货地址第四级地址 |微信小程序|
 | detailInfo | string | 详细收货地址信息 ||
-| detailInfo | string | Detailed delivery address information ||
+| detailInfoNew | string | 新选择器详细收货地址信息 |微信小程序|
 | nationalCode | string | 收货地址国家码 ||
 | nationalCode | string | Shipping address country code ||
 | telNumber | string | 收货人手机号码 ||

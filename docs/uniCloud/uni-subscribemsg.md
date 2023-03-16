@@ -85,7 +85,38 @@ let res = await uniSubscribemsg.sendTemplateMessage({
 |errCode|为0代表发送成功，其他均为失败，与微信公众号官方返回码一致 [微信公众号全局返回码](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Global_Return_Code.html)|
 |errMsg	|失败后的提示	，与微信公众号官方错误提示一致								|
 
+### 检测用户是否关注了公众号@getSubscribeUserInfo
 
+**用法**
+
+```js
+// 引入uni-subscribemsg公共模块
+const UniSubscribemsg = require('uni-subscribemsg');
+// 初始化实例
+let uniSubscribemsg = new UniSubscribemsg({
+	dcloudAppid: "你项目的dcloudAppid",
+	provider: "weixin-h5",
+});
+// 检测用户是否关注了公众号
+let res = await uniSubscribemsg.getSubscribeUserInfo({
+	openid
+});
+```
+
+**请求参数**
+
+|参数								|类型		|必填	|说明																																																								|
+|---								|---		|---	|---																																																								|
+|openid							|String	|是		|用户openid																																																				|
+
+**返回参数**
+
+|参数			|说明																																																																																				|
+|---			|---																																																																																				|
+|errCode	|为0代表发送成功，其他均为失败，与微信公众号官方返回码一致 [微信公众号全局返回码](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Global_Return_Code.html)	|
+|errMsg		|失败后的提示，与微信公众号官方错误提示一致																																																																	|
+|subscribe| true 已关注公众号 false 未关注公众号																																																																			|
+|result		| [用户基本信息返回值](https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html#UinonId)																		|
 
 ### 发送微信小程序订阅消息@sendSubscribeMessage
 

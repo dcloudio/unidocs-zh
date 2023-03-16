@@ -893,20 +893,19 @@ Cloud packaging is normally supported. However, after packaging, uts is compiled
 ### Common errors
 
 - [plugin:vite:resolve] Failed toresolve entry for package "插件路径"
-- [plugin:vite:resolve] Failed toresolve entry for package "plugin path"
+
 	HBuilderX 的最低要求为3.6.0，低于此版本无法import uts插件，编译时将报错。
 	The minimum requirement of HBuilderX is 3.6.0. The uts plugin cannot be imported below this version, and an error will be reported when compiling.
 
 - 文件查找失败：'uts插件路径'
-- file lookup failed: 'uts plugin path'
-    vue2项目使用 uts 插件的最低版本要求是HBuilderX 3.6.8，低于此版本，编译时将报错。
-    The minimum version requirement for the vue2 project to use the uts plugin is HBuilderX 3.6.8. If it is lower than this version, an error will be reported when compiling.
 
+    vue2项目使用 uts 插件的最低版本要求是HBuilderX 3.6.8，低于此版本，编译时将报错。
+<!-- 
 - UTSCallback 已过时
 
 	HBuilderX 3.7.7开始，不再支持直接使用 UTSCallback 定义函数类型，当需要定义函数类型时，应定义为更具体的类型，如：`const callback:UTSCallback` 应调整为`const callback:()=>void`
 	如果您使用的是插件市场三方uts插件，可以检查更新插件最新版本
-	
+-->	
 ### Float类型传参
 ### Float type parameter
 

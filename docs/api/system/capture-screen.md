@@ -17,8 +17,9 @@ Listen to the user's active screen capture event. This event is triggered when t
 **CALLBACK返回参数：**
 **CALLBACK return parameter:**
 
-无
-none
+| 属性	|	类型		| 说明								|
+| --	| --		| --								|
+| path	| string	| 截屏文件路径，仅App-Android平台支持	|
 
 **代码示例**
 **code example**

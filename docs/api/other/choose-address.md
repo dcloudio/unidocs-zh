@@ -26,7 +26,9 @@
 | provinceName | string | 国标收货地址第一级地址 ||
 | cityName | string | 国标收货地址第二级地址 ||
 | countyName | string | 国标收货地址第三级地址 ||
+| streetName | string | 国标收货地址第四级地址 |微信小程序|
 | detailInfo | string | 详细收货地址信息 ||
+| detailInfoNew | string | 新选择器详细收货地址信息 |微信小程序|
 | nationalCode | string | 收货地址国家码 ||
 | telNumber | string | 收货人手机号码 ||
 | errMsg | string | 错误信息 |微信小程序|

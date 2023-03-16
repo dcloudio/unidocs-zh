@@ -798,7 +798,7 @@ After the association relationship is established through the above steps, the p
 **Notice**
 
 - 尽量不要依赖体积过大的公共模块，会延长冷启动时间
-- Try not to rely on overly large public modules, which will prolong the cold start time
+- 仅能依赖公共模块，不能添加npm包依赖
 
 
 ### 注意事项

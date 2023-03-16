@@ -380,6 +380,10 @@ In order to ensure that the default domain name is not abused, Alibaba Cloud has
 仅支持配置ipv4，可以配置IP或者IP网段，掩码位数取值范围24-31。最多可同时配置三个，多个之间用逗号隔开，如：123.120.5.235/24,123.123.123.123
 Only ipv4 is supported, and IP or IP network segment can be configured, and the mask bit range is 24-31. Up to three can be configured at the same time, separated by commas, such as: 123.120.5.235/24,123.123.123.123
 
+当访问IP超限或不在白名单时，前端网页托管将拒绝访问请求，并在页面输出错误码为`ClientIpNotAllowed`的提示：Your clientIp xxx does not in the whitelist.
+
+您可以通过[配置域名](hosting.md#domain)来解除默认域名的访问限制。
+
 ### IP访问限频配置@ip-freq
 ### IP access frequency limit configuration @ip-freq
 

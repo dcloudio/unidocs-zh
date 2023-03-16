@@ -691,16 +691,18 @@ uts代码暂不支持直接使用标准基座真机运行。与原生插件一�
 ### 常见报错
 
 - [plugin:vite:resolve] Failed toresolve entry for package "插件路径"
+
 	HBuilderX 的最低要求为3.6.0，低于此版本无法import uts插件，编译时将报错。
 
 - 文件查找失败：'uts插件路径'
-    vue2项目使用 uts 插件的最低版本要求是HBuilderX 3.6.8，低于此版本，编译时将报错。
 
+    vue2项目使用 uts 插件的最低版本要求是HBuilderX 3.6.8，低于此版本，编译时将报错。
+<!-- 
 - UTSCallback 已过时
 
 	HBuilderX 3.7.7开始，不再支持直接使用 UTSCallback 定义函数类型，当需要定义函数类型时，应定义为更具体的类型，如：`const callback:UTSCallback` 应调整为`const callback:()=>void`
 	如果您使用的是插件市场三方uts插件，可以检查更新插件最新版本
-	
+-->	
 ### Float类型传参
 
 android很多布局参数强制要求Float，但是ts中没有内置这种类型。可以使用下面的代码实现转换

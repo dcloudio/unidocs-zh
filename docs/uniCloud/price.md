@@ -22,7 +22,7 @@ Paid users enjoy the service agreement SLA provided by Alibaba Cloud and Tencent
 
 ## 阿里云正式版@aliyun-business
 
-> 阿里云正式版版需要使用HBuilderX 3.6.5+（正式版）或3.6.10+（alpha版）或与此版本对应的uni-app cli项目才可正常使用。如果是cli创建的项目，可以通过执行`npx @dcloudio/uvm alpha`升级依赖
+> 阿里云正式版版需要使用HBuilderX 3.6.5+（正式版）或3.6.10+（alpha版）或与此版本对应的uni-app cli项目才可正常使用。如果是cli创建的项目，可以参考：[更新依赖到指定版本](/quickstart-cli.html#cliversion)
 
 阿里云提供1个免费空间，付费空间提供包月、按量计费两种计费方式，具体说明如下：
 

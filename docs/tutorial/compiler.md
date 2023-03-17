@@ -16,9 +16,7 @@ The `uni-app` project has different compiler implementations depending on the ve
 - vue3: The `uni-app` compiler is implemented based on Vite, and the compilation speed is faster. For details, please refer to: [vue3 and vite bidirectional blessing, uni-app performance is improved again](https://ask.dcloud.net.cn/article /39628)
 
 `uni-app`项目根据创建方式的不同，编译器在使用上也有差异：
-The `uni-app` project uses different compilers depending on how it was created:
-- `cli` 方式创建的项目，编译器安装在项目下。编译器不会跟随`HBuilderX`升级。如需升级编译器，可以使用 `@dcloudio/uvm` 管理编译器的版本，如 `npx @dcloudio/uvm`。
-- For projects created in `cli` mode, the compiler is installed under the project. The compiler will not follow `HBuilderX` upgrades. To upgrade the compiler, use `@dcloudio/uvm` to manage the version of the compiler, such as `npx @dcloudio/uvm`.
+- `cli` 方式创建的项目，编译器安装在项目下。编译器不会跟随`HBuilderX`升级。如需升级编译器，可以参考：[更新依赖到指定版本](/quickstart-cli.html#cliversion)。
 - `HBuilderX`可视化界面创建的项目，编译器在`HBuilderX`的安装目录下的`plugin`目录，随着`HBuilderX`的升级会自动升级编译器。
 - For projects created by the `HBuilderX` visual interface, the compiler is located in the `plugin` directory under the `HBuilderX` installation directory, and the compiler will be automatically upgraded with the upgrade of `HBuilderX`.
 - 已经使用`cli`创建的项目，如果想继续在`HBuilderX`里使用，可以把工程拖到`HBuilderX`中。注意如果是把整个项目拖入`HBuilderX`，则编译时走的是项目下的编译器。如果是把src目录拖入到`HBuilderX`中，则走的是`HBuilderX`安装目录下`plugin`目录下的编译器。

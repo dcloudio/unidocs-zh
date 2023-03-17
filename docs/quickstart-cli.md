@@ -80,8 +80,7 @@ The template project is stored in Github. The download may fail due to network p
 * 在设备中增加固定的 hosts（如：140.82.113.4 github.com）
 * Add fixed hosts (e.g.: 140.82.113.4 github.com) to the equipment
 
-#### 修改依赖为指定版本@cliversion
-#### Modify the dependency to the specified version @cliversion
+#### 更新依赖到指定版本@cliversion
 
 可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，此工具仅自动增加或更新 uni-app 编译器主要依赖，对于新增的编译命令（scripts）暂时不会自动处理，需手动参考新工程进行配置。
 You can use [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) to manage the version of the compiler. This tool only automatically adds or updates the main dependencies of the uni-app compiler. For new Compilation commands (scripts) of the command line will not be processed automatically for the time being, and need to be manually configured with reference to the new project.
@@ -101,6 +100,7 @@ You can use [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) to mana
   ```shell
   npx @dcloudio/uvm 3.2.0
   ```
+  或
   ```shell
   npx @dcloudio/uvm 3.2.12.20211029
   ```
@@ -109,6 +109,7 @@ You can use [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) to mana
   ```shell
   npx @dcloudio/uvm 3.2.0-alpha
   ```
+  或
   ```shell
   npx @dcloudio/uvm 3.2.14.20211112-alpha
   ```
@@ -327,8 +328,7 @@ Inside DCloud, uni-app and HBuilderX are different teams.
 ### 其他注意事项
 ### Other Notes
 
-* ``cli`` 创建的项目，编译器安装在项目下。并且不会跟随HBuilderX升级。如需升级编译器，可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，如 ```npx @dcloudio/uvm```。
-* The project created by ``cli``, the compiler is installed under the project. And will not follow the HBuilderX upgrade. To upgrade the compiler, you can use [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) to manage the version of the compiler, such as ```npx @dcloudio/uvm``` .
+* ``cli`` 创建的项目，编译器安装在项目下。并且不会跟随HBuilderX升级。如需升级编译器，可以参考：[更新依赖到指定版本](/quickstart-cli.html#cliversion)。
 * 已经使用``cli``创建的项目，如果想继续在HBuilderX里使用，可以把工程拖到HBuilderX中。注意如果是把整个项目拖入HBuilderX，则编译时走的是项目下的编译器。如果是把src目录拖入到HBuilderX中，则走的是HBuilderX安装目录下plugin目录下的编译器。
 * If you want to continue using the project created by ``cli`` in HBuilderX, you can drag the project to HBuilderX. Note that if the entire project is dragged into HBuilderX, the compiler under the project is used when compiling. If the src directory is dragged into HBuilderX, the compiler in the plugin directory under the HBuilderX installation directory is used.
 * ``cli``创建的项目，内置了d.ts，同其他常规npm库一样，可在[vscode](https://ask.dcloud.net.cn/article/36286)、[webstorm](https://ask.dcloud.net.cn/article/36307)等支持d.ts的开发工具里正常开发并有语法提示。

@@ -57,7 +57,7 @@ npm install -g @vue/cli
 * 在设备或路由器的网络设置中增加 DNS（如：8.8.8.8）
 * 在设备中增加固定的 hosts（如：140.82.113.4 github.com）
 
-#### 修改依赖为指定版本@cliversion
+#### 更新依赖到指定版本@cliversion
 
 可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，此工具仅自动增加或更新 uni-app 编译器主要依赖，对于新增的编译命令（scripts）暂时不会自动处理，需手动参考新工程进行配置。
 
@@ -73,6 +73,7 @@ npm install -g @vue/cli
   ```shell
   npx @dcloudio/uvm 3.2.0
   ```
+  或
   ```shell
   npx @dcloudio/uvm 3.2.12.20211029
   ```
@@ -80,6 +81,7 @@ npm install -g @vue/cli
   ```shell
   npx @dcloudio/uvm 3.2.0-alpha
   ```
+  或
   ```shell
   npx @dcloudio/uvm 3.2.14.20211112-alpha
   ```
@@ -219,7 +221,7 @@ HBuilderX提供的免node开发，除了易用，还更高效。
 
 ### 其他注意事项
 
-* ``cli`` 创建的项目，编译器安装在项目下。并且不会跟随HBuilderX升级。如需升级编译器，可以使用 [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) 管理编译器的版本，如 ```npx @dcloudio/uvm```。
+* ``cli`` 创建的项目，编译器安装在项目下。并且不会跟随HBuilderX升级。如需升级编译器，可以参考：[更新依赖到指定版本](/quickstart-cli.html#cliversion)。
 * 已经使用``cli``创建的项目，如果想继续在HBuilderX里使用，可以把工程拖到HBuilderX中。注意如果是把整个项目拖入HBuilderX，则编译时走的是项目下的编译器。如果是把src目录拖入到HBuilderX中，则走的是HBuilderX安装目录下plugin目录下的编译器。
 * ``cli``创建的项目，内置了d.ts，同其他常规npm库一样，可在[vscode](https://ask.dcloud.net.cn/article/36286)、[webstorm](https://ask.dcloud.net.cn/article/36307)等支持d.ts的开发工具里正常开发并有语法提示。
 * 使用HBuilderX创建的项目不带d.ts，HBuilderX内置了uni-app语法提示库。如需把HBuilderX创建的项目在其他编辑器打开并且补充d.ts，可以在项目下先执行 ``npm init``，然后``npm i @types/uni-app -D``，来补充d.ts。

@@ -170,11 +170,8 @@ console.log(s) // hello world
 | 等于 Equal (==)                     | 如果两边操作数相等时返回 true。             | var1==var2       |
 | Equal to Equal (==) | Returns true if both operands are equal. | var1==var2 |
 | 不等于 Not equal (!=)               | 如果两边操作数不相等时返回 true             | var1!=var2       |
-| Not equal (!=) | Returns true if both operands are not equal | var1!=var2 |
-| 全等 Strict equal (===)             | 两边操作数相等且类型相同时返回 true。       | var1===var2      |
-| Congruent Strict equal (===) | Returns true if both operands are equal and of the same type. | var1===var2 |
-| 不全等 Strict not equal (!==)       | 两边操作数不相等或类型不同时返回 true。     | var1!==var2      |
-| Strict not equal (!==) | Returns true if both operands are not equal or of different types. | var1!==var2 |
+| 引用相等 Reference equal (===)             | 两边操作数指向同一个对象返回 true。       | var1===var2      |
+| 引用不等 Reference not equal (!==)       | 两边操作数不指向同一个对象时返回 true。     | var1!==var2      |
 | 大于 Greater than (>)               | 左边的操作数大于右边的操作数返回 true       | var1>var2        |
 | Greater than (>) | The left operand is greater than the right operand returns true | var1>var2 |
 | 大于等于 Greater than or equal (>=) | 左边的操作数大于或等于右边的操作数返回 true | var1>=var2       |

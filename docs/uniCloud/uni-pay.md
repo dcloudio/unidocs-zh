@@ -893,8 +893,12 @@ module.exports = async (obj) => {
 	// 此处只是简单演示下，实际数据库语句会更复杂一点。
 	const db = uniCloud.database();
 	const _ = db.command;
-	let res = await db.collection("uni-id-users").doc(custom.user_id).update({
-	  balance: _.inc(custom.recharge_balance)
+	// 获取你的业务订单信息
+	let orderRes = await db.collection("你的业务订单表").where({ order_no }).get();
+	let orderInfo = orderRes.data[0];
+	// 给用户充值余额
+	let res = await db.collection("uni-id-users").doc(orderInfo.user_id).update({
+	  balance: _.inc(orderInfo.total_fee)
 	});
 	if (res && res.updated) {
 		user_order_success = true; // 通知插件我的自定义回调逻辑执行成功

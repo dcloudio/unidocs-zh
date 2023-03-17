@@ -237,7 +237,7 @@ uniCloud.onResponse(function(event) {
 
 ```js
 interface OnResponseEvent {
-	type: 'cloudobject' | 'cloudfunctions' | 'clientdb',
+	type: 'cloudobject' | 'cloudfunction' | 'clientdb',
 	content: {} // content同云对象方法、云函数、clientDB请求的返回结果或错误对象
 }
 ```

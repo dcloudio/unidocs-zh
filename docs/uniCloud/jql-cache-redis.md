@@ -26,9 +26,9 @@ uniCloud 提供了 MongoDB 和 Redis 2种数据库。并且提供了联动机制
 		* 2.2.2 如发现 Redis 中无缓存结果或缓存过期，则再次连接 MongoDB 查询，返回查询结果的同时自动将该结果同步给 Redis。下次再访问就可以走 Redis 了。
 3. 如果开发者更新了MongoDB里的数据，需调用 API让 Redis 中指定的缓存失效 [见下](#del-cache)
 
-## 配置方法
+## 配置方法@config
 
-在`uniCloud/cloudfunction/common/uni-config-center`下创建`uni-jql-cache-redis.json`文件（注意此文件是标准json格式，不支持注释）
+在`uniCloud/cloudfunctions/common/uni-config-center`下创建`uni-jql-cache-redis.json`文件（注意此文件是标准json格式，不支持注释）
 
 如未安装`uni-config-center`，请在插件市场导入，插件地址：[uni-config-center](https://ext.dcloud.net.cn/plugin?id=4425)
 

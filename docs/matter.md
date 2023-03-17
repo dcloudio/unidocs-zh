@@ -301,8 +301,7 @@ WeChat (can be configured using [virtualHost](/tutorial/vue-api.html#%E5%85%B6%E
 * 在自定义组件内部设置根元素高度为100%，不能撑满自定义组件父元素。需要同时设置当前自定义组件高度为100%才可以。
 * Set the root element height to 100% inside the custom component, which cannot fill the parent element of the custom component. It is necessary to set the height of the current custom component to 100% at the same time.
 
-支付宝小程序不会插入节点，不存在如上问题。
-The Alipay MiniApp will not insert nodes, so there is no such problem.
+支付宝小程序默认启用了[virtualHost](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)配置不会插入节点，一般不存在如上问题。
 
 #### vendor.js 过大的处理方式
 #### Vendor.js too large processing method

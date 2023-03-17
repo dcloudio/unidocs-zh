@@ -816,7 +816,7 @@ UTS环境中对原生的生命周期进行了封装和简化，用户不需要�
 其中最为常见的场景，要数`onAppActivityDestroy`中释放系统资源了：
 
 
-举个例子，以Hello UTS  [!用户截屏插件](https://ext.dcloud.net.cn/plugin?id=9897)为例。
+举个例子，以Hello UTS  [用户截屏插件](https://ext.dcloud.net.cn/plugin?id=9897)为例。
 
 在注册监听回调时，添加了下列代码。 
 ```

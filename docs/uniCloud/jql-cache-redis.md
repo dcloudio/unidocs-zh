@@ -44,11 +44,9 @@ Using `JQL Cache Redis`, you can easily cache these query results in Redis. It n
 3. 如果开发者更新了MongoDB里的数据，需调用 API让 Redis 中指定的缓存失效 [见下](#del-cache)
 3. If the developer updates the data in MongoDB, the API needs to be called to invalidate the specified cache in Redis [see below](#del-cache)
 
-## 配置方法
-## Configuration method
+## 配置方法@config
 
-在`uniCloud/cloudfunction/common/uni-config-center`下创建`uni-jql-cache-redis.json`文件（注意此文件是标准json格式，不支持注释）
-Create a `uni-jql-cache-redis.json` file under `uniCloud/cloudfunction/common/uni-config-center` (note that this file is in standard json format and does not support comments)
+在`uniCloud/cloudfunctions/common/uni-config-center`下创建`uni-jql-cache-redis.json`文件（注意此文件是标准json格式，不支持注释）
 
 如未安装`uni-config-center`，请在插件市场导入，插件地址：[uni-config-center](https://ext.dcloud.net.cn/plugin?id=4425)
 If `uni-config-center` is not installed, please import it in the plugin market, the plugin address: [uni-config-center](https://ext.dcloud.net.cn/plugin?id=4425)

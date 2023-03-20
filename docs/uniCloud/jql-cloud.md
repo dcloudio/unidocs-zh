@@ -94,8 +94,7 @@ module.exports = {
 ```
 
 
-## setUser指定用户身份
-## setUser specifies the user identity
+## setUser指定用户身份@set-user
 
 上述示例中，jql扩展使用的是客户端的身份，准确的说是客户端的uniIdToken对应的用户作为执行数据库操作的用户。
 In the above example, the jql extension uses the client's identity, to be precise, the user corresponding to the client's uniIdToken as the user performing database operations.
@@ -129,8 +128,7 @@ exports.main = async (event, context) => {
 ```
 
 
-## 与clientDB的差异
-## Differences with clientDB
+## 与clientDB的差异@client-db-diff
 
 虽然都使用 JQL，但云端和客户端还是有一点区别
 Although both use JQL, there is still a little difference between the cloud and the client

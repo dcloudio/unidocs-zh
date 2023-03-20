@@ -234,6 +234,8 @@ let res = await uniSubscribemsg.sendSubscribeMessage({
 
 ### 检测用户是否关注了公众号@getSubscribeUserInfo
 
+> uni-subscribemsg 版本需 ≥ 1.0.1
+
 **用法**
 
 ```js

@@ -32,7 +32,7 @@ const UniSubscribemsg = require('uni-subscribemsg');
 // 初始化实例
 let uniSubscribemsg = new UniSubscribemsg({
 	dcloudAppid: "你项目的dcloudAppid",
-	provider: "weixin-h5",
+	provider: "weixin-h5", // 注意，这里是weixin-h5
 });
 // 发送模板消息
 let res = await uniSubscribemsg.sendTemplateMessage({
@@ -85,6 +85,73 @@ let res = await uniSubscribemsg.sendTemplateMessage({
 |errCode|为0代表发送成功，其他均为失败，与微信公众号官方返回码一致 [微信公众号全局返回码](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Global_Return_Code.html)|
 |errMsg	|失败后的提示	，与微信公众号官方错误提示一致								|
 
+### 微信小程序转发公众号模板消息@sendTemplateMessageForMP
+
+> uni-subscribemsg 版本需 ≥ 1.0.2
+
+**用法**
+
+```js
+// 引入uni-subscribemsg公共模块
+const UniSubscribemsg = require('uni-subscribemsg');
+// 初始化实例
+let uniSubscribemsg = new UniSubscribemsg({
+	dcloudAppid: "你项目的dcloudAppid",
+	provider: "weixin-mp", // 注意，这里是weixin-mp
+});
+// 发送模板消息
+let res = await uniSubscribemsg.sendTemplateMessage({
+	touser: "用户openid",
+	template_id: "消息模板id",
+	appid: "公众号appid",
+	miniprogram: {
+		appid: "小程序appid",
+		pagepath: "pages/index/index", // 小程序页面
+	},
+	data: {
+		first: {
+			value: "您购买的套餐已到期!",
+			color: "#666666"
+		},
+		keyword1: {
+			value: "test@qq.com",
+			color: "#666666"
+		},
+		keyword2: {
+			value: "阿里云空间",
+			color: "#666666"
+		},
+		keyword3: {
+			value: "2023-12-21 15:30:20",
+			color: "#666666"
+		},
+		remark: {
+			value: "请及时续费",
+			color: "#666666"
+		}
+	}
+});
+```
+
+**请求参数**
+
+|参数								|类型		|必填	|说明																																																								|
+|---								|---		|---	|---																																																								|
+|touser							|String	|是		|接收者openid（用户在该小程序下对应的openid）																																																				|
+|appid							|String	|否		|微信公众号appid（不传会自动从uni-id配置中获取）																																		|
+|miniprogram				|Object	|否		|跳小程序所需数据，不需跳小程序可不用传该数据																																				|
+| &#124;-- appid		|String	|是		|所需跳转到的小程序appid（该小程序 appid 必须与发模板消息的公众号是绑定关联关系，暂不支持小游戏）										|
+| &#124;-- pagepath	|String	|否		|所需跳转到小程序的具体页面路径，支持带参数,（示例index?foo=bar），要求该小程序已发布，暂不支持小游戏								|
+|data								|Object	|是		|模板数据																																																						|
+|color							|String	|否		|模板内容字体颜色，不填默认为黑色																																										|
+
+**返回参数**
+
+|参数		|说明																																																																																				|
+|---		|---																																																																																				|
+|errCode|为0代表发送成功，其他均为失败，与微信公众号官方返回码一致 [微信公众号全局返回码](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Global_Return_Code.html)	|
+|errMsg	|失败后的提示，与微信公众号官方错误提示一致|																																																																																						|
+
 ### 发送微信小程序订阅消息@sendSubscribeMessage
 
 订阅消息顾名思义，需要先订阅，才可以发送消息，因此前端需要先让用户订阅。
@@ -104,39 +171,6 @@ uni.requestSubscribeMessage({
 	}
 });
 ```
-
-### 检测用户是否关注了公众号@getSubscribeUserInfo
-
-**用法**
-
-```js
-// 引入uni-subscribemsg公共模块
-const UniSubscribemsg = require('uni-subscribemsg');
-// 初始化实例
-let uniSubscribemsg = new UniSubscribemsg({
-	dcloudAppid: "你项目的dcloudAppid",
-	provider: "weixin-h5",
-});
-// 检测用户是否关注了公众号
-let res = await uniSubscribemsg.getSubscribeUserInfo({
-	openid
-});
-```
-
-**请求参数**
-
-|参数								|类型		|必填	|说明																																																								|
-|---								|---		|---	|---																																																								|
-|openid							|String	|是		|用户openid																																																				|
-
-**返回参数**
-
-|参数			|说明																																																																																				|
-|---			|---																																																																																				|
-|errCode	|为0代表发送成功，其他均为失败，与微信公众号官方返回码一致 [微信公众号全局返回码](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Global_Return_Code.html)	|
-|errMsg		|失败后的提示，与微信公众号官方错误提示一致																																																																	|
-|subscribe| true 已关注公众号 false 未关注公众号																																																																			|
-|result		| [用户基本信息返回值](https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html#UinonId)																		|
 
 **云端发送**
 
@@ -190,8 +224,40 @@ let res = await uniSubscribemsg.sendSubscribeMessage({
 |---		|---																											|---																																																																		|
 |40003	|invalid openid																						|不合法的 openid ，请开发者确认 openid （该用户）是否已关注公众号，或是否是其他公众号的 openid																					|
 |40014	|invalid access_token																			|不合法的 access_token ，请开发者认真比对 access_token 的有效性（如是否过期），或查看是否正在为恰当的公众号调用接口											|
-|40037	|invalid template_id																			|不合法的 template_id																																																										|
+|40037	|invalid template_id																			|不合法的 template_id			
 
+### 检测用户是否关注了公众号@getSubscribeUserInfo
+
+**用法**
+
+```js
+// 引入uni-subscribemsg公共模块
+const UniSubscribemsg = require('uni-subscribemsg');
+// 初始化实例
+let uniSubscribemsg = new UniSubscribemsg({
+	dcloudAppid: "你项目的dcloudAppid",
+	provider: "weixin-h5",
+});
+// 检测用户是否关注了公众号
+let res = await uniSubscribemsg.getSubscribeUserInfo({
+	openid
+});
+```
+
+**请求参数**
+
+|参数								|类型		|必填	|说明																																																								|
+|---								|---		|---	|---																																																								|
+|openid							|String	|是		|用户openid																																																				|
+
+**返回参数**
+
+|参数			|说明																																																																																				|
+|---			|---																																																																																				|
+|errCode	|为0代表发送成功，其他均为失败，与微信公众号官方返回码一致 [微信公众号全局返回码](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Global_Return_Code.html)	|
+|errMsg		|失败后的提示，与微信公众号官方错误提示一致																																																																	|
+|subscribe| true 已关注公众号 false 未关注公众号																																																																			|
+|result		| [用户基本信息返回值](https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html#UinonId)																		|
 
 ## 常见问题
 

@@ -84,8 +84,7 @@ After filling in the domain name certificate in the previous step and the bindin
 - 阿里云绑定自定义域名要求此域名在阿里云保留备案信息，参考：[新增备案信息](https://help.aliyun.com/document_detail/36926.html)
 - Alibaba Cloud binds a custom domain name to require the domain name to retain filing information in Alibaba Cloud, refer to: [Add filing information](https://help.aliyun.com/document_detail/36926.html)
 
-如需要更高的QPS支持，请发邮件到service@dcloud.io申请。若您还没有SSL证书，点此[快速获取](https://cloud.tencent.com/act/cps/redirect?redirect=33848&cps_key=c858f748f10419214b870236b5bb94c6)
-If you need higher QPS support, please send an email to service@dcloud.io to apply. If you don't have an SSL certificate, click here [Quick Get](https://cloud.tencent.com/act/cps/redirect?redirect=33848&cps_key=c858f748f10419214b870236b5bb94c6)
+如需要更高的QPS支持，请发邮件到service@dcloud.io申请，邮件模板参考：[申请解除限制邮件模板](price.md#apply-email-template)。若您还没有SSL证书，点此[快速获取](https://cloud.tencent.com/act/cps/redirect?redirect=33848&cps_key=c858f748f10419214b870236b5bb94c6)
 
 **关于证书内容与私钥**
 **About certificate content and private key**

@@ -1536,8 +1536,7 @@ It is recommended that the redis service space that has been opened should first
 > 新增于 HBuilderX 3.5.5
 > Added in HBuilderX 3.5.5
 
-uniCloud.httpProxyForEip ，其原理是通过代理请求获得固定出口IP的能力。IP为轮转不固定，因此三方服务要求使用白名单时开发者需要将代理服务器可能的IP均加入到白名单中，见下方代理服务器列表。此外对于代理的域名有限制，当前仅持`weixin.qq.com`泛域名。若开发者有其他域名代理需求，发送邮件到service@dcloud.io申请。
-uniCloud.httpProxyForEip , the principle is to obtain a fixed egress IP through a proxy request. The IP is rotated and not fixed, so when the third-party service requires the use of the whitelist, the developer needs to add all possible IPs of the proxy server to the whitelist, see the list of proxy servers below. In addition, there are restrictions on the domain name of the proxy, currently only the generic domain name `weixin.qq.com` is accepted. If the developer has other domain name agency needs, send an email to service@dcloud.io to apply.
+uniCloud.httpProxyForEip ，其原理是通过代理请求获得固定出口IP的能力。IP为轮转不固定，因此三方服务要求使用白名单时开发者需要将代理服务器可能的IP均加入到白名单中，见下方代理服务器列表。此外对于代理的域名有限制，当前仅持`weixin.qq.com`泛域名。若开发者有其他域名代理需求，发送邮件到service@dcloud.io申请，邮件模板参考：[申请解除限制邮件模板](price.md#apply-email-template)。
 
 **代理服务器IP列表**
 

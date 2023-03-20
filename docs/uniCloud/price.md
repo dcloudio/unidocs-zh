@@ -195,7 +195,9 @@ Due to insufficient upstream reserves, there are still some quotas for the uniCl
 |			|删除QPS							|300	|
 |			|查询QPS							|300	|
 
-目前单个账号可创建20个正式版服务空间，如有更多需求需发邮件到service@dcloud.io申请。此外云函数数量限制、集合数量限制也可申请提升。邮件模板如下
+目前单个账号可创建20个正式版服务空间，如有更多需求需发邮件到service@dcloud.io申请。此外云函数数量限制、集合数量限制也可申请提升。邮件模板见下方：[申请解除限制邮件模板](#apply-email-template)
+
+### 申请解除限制邮件模板@apply-email-template
 
 ```text
 邮件标题：云函数数量限制提升申请 | 服务空间数量限制提升申请 | 集合数量限制提升申请

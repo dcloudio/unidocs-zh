@@ -600,8 +600,7 @@ Alibaba Cloud Cloud Storage currently does not have domain name isolation at the
 ### 等级保护认证
 ### Level Protection Authentication
 
-如需云厂商提供等级保护证书，请发送邮件到service@dcloud.io申请
-If you need a cloud vendor to provide a level protection certificate, please send an email to service@dcloud.io to apply
+如需云厂商提供等级保护证书，请发送邮件到service@dcloud.io申请，邮件模板参考：[申请解除限制邮件模板](price.md#apply-email-template)
 
 ### 使用uniCloud.init初始化阿里云正式版服务空间报“InvalidSpaceId.NotFound”
 ### Use uniCloud.init to initialize the Alibaba Cloud official version service space and report "InvalidSpaceId.NotFound"

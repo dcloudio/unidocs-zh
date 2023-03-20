@@ -74,7 +74,7 @@ module.exports = {
 ```
 
 
-## setUser指定用户身份
+## setUser指定用户身份@set-user
 
 上述示例中，jql扩展使用的是客户端的身份，准确的说是客户端的uniIdToken对应的用户作为执行数据库操作的用户。
 
@@ -104,7 +104,7 @@ exports.main = async (event, context) => {
 ```
 
 
-## 与clientDB的差异
+## 与clientDB的差异@client-db-diff
 
 虽然都使用 JQL，但云端和客户端还是有一点区别
 

@@ -150,7 +150,13 @@ let res = await uniSubscribemsg.sendTemplateMessage({
 |参数		|说明																																																																																				|
 |---		|---																																																																																				|
 |errCode|为0代表发送成功，其他均为失败，与微信公众号官方返回码一致 [微信公众号全局返回码](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Global_Return_Code.html)	|
-|errMsg	|失败后的提示，与微信公众号官方错误提示一致|																																																																																						|
+|errMsg	|失败后的提示，与微信公众号官方错误提示一致|				
+																																																																																		
+**注意：公众号和小程序无需绑定在同一个开放平台下，但需要同时满足下面的3个要求。**
+
+1. 公众号必须和小程序是同主体
+2. 小程序关联了公众号
+3. 该用户关注了公众号																																																																																	|
 
 ### 发送微信小程序订阅消息@sendSubscribeMessage
 

@@ -54,7 +54,7 @@ url化后需要注意以下几点
 - 阿里云单个服务空间可支持被访问的最大 QPS 为1000（具体频次受函数并发限制）
 - 阿里云绑定自定义域名要求此域名在阿里云保留备案信息，参考：[新增备案信息](https://help.aliyun.com/document_detail/36926.html)
 
-如需要更高的QPS支持，请发邮件到service@dcloud.io申请。若您还没有SSL证书，点此[快速获取](https://cloud.tencent.com/act/cps/redirect?redirect=33848&cps_key=c858f748f10419214b870236b5bb94c6)
+如需要更高的QPS支持，请发邮件到service@dcloud.io申请，邮件模板参考：[申请解除限制邮件模板](price.md#apply-email-template)。若您还没有SSL证书，点此[快速获取](https://cloud.tencent.com/act/cps/redirect?redirect=33848&cps_key=c858f748f10419214b870236b5bb94c6)
 
 **关于证书内容与私钥**
 

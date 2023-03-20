@@ -1096,7 +1096,7 @@ serverless默认是没有固定的服务器IP的，因为有很多服务器资�
 
 > 新增于 HBuilderX 3.5.5
 
-uniCloud.httpProxyForEip ，其原理是通过代理请求获得固定出口IP的能力。IP为轮转不固定，因此三方服务要求使用白名单时开发者需要将代理服务器可能的IP均加入到白名单中，见下方代理服务器列表。此外对于代理的域名有限制，当前仅持`weixin.qq.com`泛域名。若开发者有其他域名代理需求，发送邮件到service@dcloud.io申请。
+uniCloud.httpProxyForEip ，其原理是通过代理请求获得固定出口IP的能力。IP为轮转不固定，因此三方服务要求使用白名单时开发者需要将代理服务器可能的IP均加入到白名单中，见下方代理服务器列表。此外对于代理的域名有限制，当前仅持`weixin.qq.com`泛域名。若开发者有其他域名代理需求，发送邮件到service@dcloud.io申请，邮件模板参考：[申请解除限制邮件模板](price.md#apply-email-template)。
 
 **代理服务器IP列表**
 

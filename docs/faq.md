@@ -20,9 +20,9 @@
 
 **uni-app 各环节（HBuilderX、cli、自定义基座、本地sdk、云打包引擎）版本兼容性说明：**[https://ask.dcloud.net.cn/article/35845](https://ask.dcloud.net.cn/article/35845)
 
-**uni-app App整包升级检测：** [https://ask.dcloud.net.cn/article/34972](https://ask.dcloud.net.cn/article/34972)
+**uni-app App平台如何进行整包升级检测：** 参考[App升级中心 uni-upgrade-center](https://uniapp.dcloud.net.cn/uniCloud/upgrade-center.html)
 
-**uni-app App资源热更新：** [https://ask.dcloud.net.cn/article/35667](https://ask.dcloud.net.cn/article/35667)
+**uni-app App平台如何进行资源热更新：** 参考[App升级中心 uni-upgrade-center](https://uniapp.dcloud.net.cn/uniCloud/upgrade-center.html)
 
 **App全面屏、安全区、刘海屏适配：**[https://ask.dcloud.net.cn/article/35564](https://ask.dcloud.net.cn/article/35564)
 

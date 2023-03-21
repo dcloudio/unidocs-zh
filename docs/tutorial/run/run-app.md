@@ -162,10 +162,12 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 ### android平台
 
-默认基座或自定义基座崩溃可以去手机存储根目录 `/Android/data/packageName/log/crash/` 查看崩溃日志文件
+**默认标准基座**闪退 可以查看手机存储根目录 `/Android/data/io.dcloud.HBuilder/logs/io.dcloud.HBuilder/crash/` 崩溃日志文件
+
+**自定义基座**闪退 可以查看手机存储根目录 `/Android/data/packageName/logs/packageName/crash/` 崩溃日志文件
 
 **packageName:** apk包名
 
-apk包名是“uni.UNIB89CXX”，目录则为：`/Android/data/uni.UNIB89CXX/log/crash/`
+apk包名是“uni.UNIB89CXX”，目录则为：`/Android/data/uni.UNIB89CXX/logs/uni.UNIB89CXX/crash/`
 
 **注意不是所有崩溃都能捕获到并保存文件**

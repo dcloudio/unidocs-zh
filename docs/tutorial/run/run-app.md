@@ -156,3 +156,16 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 - [Android平台离线生成自定义调试基座](https://ask.dcloud.net.cn/article/35482)
 - [iOS平台离线生成自定义调试基座](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94%a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)
+
+
+## 基座闪退获取日志
+
+### android平台
+
+默认基座或自定义基座崩溃可以去手机存储根目录 `/Android/data/packageName/log/crash/` 查看崩溃日志文件
+
+**packageName:** apk包名
+
+apk包名是“uni.UNIB89CXX”，目录则为：`/Android/data/uni.UNIB89CXX/log/crash/`
+
+**注意不是所有崩溃都能捕获到并保存文件**

@@ -40,6 +40,8 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 
 > uni-im相关功能建议或问题，可以加入由uni-im（本插件）搭建的交流群，[点此加入](https://im.dcloud.net.cn/#/?joinUniImGroup=1)，备用QQ群（当系统处于维护中使用）群号:[854520009](https://qm.qq.com/cgi-bin/qm/qr?k=DJNSajXAYHnYcr9pouOfxF9Rwwl1AJHc&jump_from=webapi&authKey=HZ1fG58Eudp3o0GCoyx1/UPMY9Fv1sGT5jdqYqPJlTGT0XVUip3Bk8E+UyToQOMo)
 
+如何将chatGPT接入uni-im，参考文章：[https://ask.dcloud.net.cn/article/40314](https://ask.dcloud.net.cn/article/40314)
+
 ## 使用uniCloud产生的费用说明@cost
 
 uni-im本身并不收费，实际使用中需要依赖uniCloud云服务，会产生费用；而uniCloud的价格很实惠：  

@@ -66,6 +66,11 @@ export default {
 			"prefix": "群6"
 		},
 		{
+			"number": "942061423",
+			"state": 1,
+			"prefix": "群7",
+		},
+		{
 			"number": "695442854",
 			"state": 1,
 			"prefix": "群8"
@@ -141,11 +146,6 @@ export default {
 			"prefix": "群22"
 		},
 		{
-			"number": "599958679",
-			"state": 1,
-			"prefix": "群23"
-		},
-		{
 			"number": "672494800",
 			"state": 1,
 			"prefix": "群24"
@@ -206,10 +206,10 @@ export default {
 			"prefix": "群35"
 		},
 		{
-			"number": "942061423",
+			"number": "599958679",
 			"state": 0,
-			"prefix": "群7",
-			joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=vu_oO91gWT1-sqp7r8OTvfCcWGRtgqNd&jump_from=webapi&authKey=ziX+bSCHWx4qNem6srgi73u2Rta+6KoAkeMNzGtf0jWpvZAoag4LlZZ9gfghZy6c'
+			"prefix": "群23",
+			joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=f01neI39vPU8u4-s4uz9Umu3fxxOBcIk&jump_from=webapi&authKey=VfN0D58xtiOF5hm0i0HP6C1DAEPTd8HJ5mE99kxXc0hwr8soBxR+WtlIqTyLG5OA'
 		}
 	]
 }

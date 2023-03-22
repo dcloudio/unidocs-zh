@@ -575,8 +575,7 @@ Configure the specific style when compiling to the App platform, and some common
 |属性|类型|默认值|描述|平台兼容|
 |Properties|Type|Default|Description|Platform Compatibility|
 |:-|:-|:-|:-|:-|
-|background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App|
-| background| HexColor|#FFFFFF|Form background color. Regardless of the vue page or the nvue page, there is a parent-level native form on the App, and the background color of the form takes effect faster than the css in the page | App|
+|background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App (vue 页面需要将 body 背景色设为透明)|
 |titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App、H5|
 | titleNView| Object||Navigation Bar, see: [Navigation Bar](/collocation/pages?id=app-titleNView)| App、H5|
 |subNVues|Object||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+|

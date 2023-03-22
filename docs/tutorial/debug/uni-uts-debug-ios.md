@@ -12,10 +12,12 @@ HBuilderX 3.7.6+，uni-app uts插件，运行到iOS，支持Debug调试
 ## uts-ios调试注意事项
 
 - uts调试，依赖uts调试插件，弹窗提示安装依赖插件，请务必点击安装，否则无法进行调试。
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uts-ios-debug-install.jpg" style="zoom: 45%;border-radius: 20px;" />
+
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uts-ios-debug-install.jpg" style="zoom: 45%;border-radius: 20px;" />
 
 - 首次点击【uts调试】，需要重新编译动态库，当遇到下面的确认弹窗时，请点击【确定】按钮。
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uts-ios-debug-firstpromt.jpg" style="zoom: 50%;border-radius: 20px;" />
+
+  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uts-ios-debug-firstpromt.jpg" style="zoom: 50%;border-radius: 20px;" />
 
 - 点击【uts调试】，uts调试开启，可能需要十几秒
 - 调试进程`codelldb`会占用较大的内存。

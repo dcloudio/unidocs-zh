@@ -191,11 +191,8 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
 | h5| Object||Set the specific style compiled to the H5 platform, the configuration items refer to [H5](/collocation/pages?id=h5)| H5|
 |mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
-| mp-alipay| Object||Set the specific style compiled to the mp-alipay platform, the configuration items refer to [MP-ALIPAY](/collocation/pages?id=mp-alipay)|Alipay MiniApp|
-|mp-weixin|Object||设置编译到 mp-weixin 平台的特定样式|微信小程序|
-| mp-weixin| Object||Set the specific style compiled to mp-weixin platform|WeChat MiniApp|
-|mp-baidu|Object||设置编译到 mp-baidu 平台的特定样式|百度小程序|
-| mp-baidu| Object||Set the specific style compiled to mp-baidu platform|Baidu MiniApp|
+|mp-weixin|Object||设置编译到 mp-weixin 平台的特定样式，配置项参考下方 [MP-WEIXIN](/collocation/pages?id=mp-weixin)|微信小程序|
+|mp-baidu|Object||设置编译到 mp-baidu 平台的特定样式，配置项参考下方 [MP-BAIDU](/collocation/pages?id=mp-baidu)|百度小程序|
 |mp-toutiao|Object||设置编译到 mp-toutiao 平台的特定样式|字节跳动小程序|
 | mp-toutiao| Object||Set the specific style compiled to mp-toutiao platform|ByteDance MiniApp|
 |mp-lark|Object||设置编译到 mp-lark 平台的特定样式|飞书小程序|
@@ -1243,6 +1240,26 @@ Configure specific styles when compiling to the MP-ALIPAY platform
 - `backgroundImageUrl` supports network address and local address, try to use absolute address
 - 部分配置可能会只在真机运行的时候生效，支付宝未来应该会改善
 - Some configurations may only take effect when the real machine is running, and Alipay should improve it in the future
+
+### mp-weixin
+配置编译到 MP-WEIXIN 平台时的特定样式
+
+|属性|类型|默认值|描述|
+|:-|:-|:-|:-|
+|homeButton|Boolean|false|在非首页、非页面栈最底层页面或非tabbar内页面中的导航栏展示home键|
+|backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色，仅 iOS 支持|
+|backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色，仅 iOS 支持|
+|restartStrategy|String|homePage|重新启动策略配置。支持 homePage / homePageAndLatestPage|
+|initialRenderingCache|String||页面初始渲染缓存配置。支持 static / dynamic|
+|visualEffectInBackground|String|none|切入系统后台时，隐藏页面内容，保护用户隐私。支持 hidden / none|
+|handleWebviewPreload|String|static|控制预加载下个页面的时机。支持 static / manual / auto|
+
+### mp-baidu
+配置编译到 MP-BAIDU 平台时的特定样式
+
+|属性|类型|默认值|描述|
+|:-|:-|:-|:-|
+|textSizeAdjust|String|auto|小程序页面是否禁止响应字体大小的设。支持 auto 默认响应 / none 不响应|
 
 ## FAQ
 - Q：如何取消原生导航栏？或自定义导航

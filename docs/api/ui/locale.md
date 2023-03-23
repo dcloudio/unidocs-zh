@@ -1,3 +1,7 @@
+
+
+
+
 ### uni.getLocale()
 
 获取当前设置的语言
@@ -13,6 +17,7 @@ Get the currently set language
 
 如果当前应用设置过语言，会获取到之前设置的语言，未设置时会返回根据系统语言类型自动选择的语言。
 If the current application has set the language, it will get the previously set language, and if it is not set, it will return to the language automatically selected according to the system language type.
+
 
 ### uni.setLocale(locale)
 
@@ -61,6 +66,8 @@ Used to listen to the application language switching
 |locale|String|当前语言|
 | locale| String| Current language|
 
+
+
 ### 注意事项
 ### Precautions
 
@@ -85,6 +92,20 @@ Used to listen to the application language switching
 * 在 [manifest.json](/collocation/manifest) -> locale 可以配置应用的默认语言。
 * The default language of the application can be configured in [manifest.json](/collocation/manifest) -> locale.
 * 仅 3.1.5 - 3.2.4 版本会自动使用 vue-i18n 内配置的语言。
-* Only versions 3.1.5 - 3.2.4 will automatically use the language configured in vue-i18n.
 * 在小程序平台仅影响用户业务层（vue-i18n）的语言配置，不能影响小程序原生组件和接口的语言。
-* On the MiniApp platform, it only affects the language configuration of the user's business layer (vue-i18n), and cannot affect the language of the MiniApp's native components and interfaces.
+
+### 语言回退规则
+
+需要注意的是，语言的处理逻辑是建立在应用locale目录 配置了对应资源的前提下。 [资源配置文档](https://uniapp.dcloud.net.cn/tutorial/i18n.html#vue%E7%95%8C%E9%9D%A2%E5%92%8Cjs%E5%86%85%E5%AE%B9%E7%9A%84%E5%9B%BD%E9%99%85%E5%8C%96)
+
+即 
+
++ 如果应用的 locale目录下配置了对应的资源，那么语言的设置和获取是一致的
+
++ 如果应用的 locale目录没有配置对应的资源，则会根据具体的平台规则进行回退。
+
+
+举个例子，应用中仅配置了英文和中文资源，没有配置日语资源，但是通过系统设置修改语言为日文，此时调用 `uni.getLocale()` 在android平台上获取到的返回值不会是jp 而是en
+
+
+

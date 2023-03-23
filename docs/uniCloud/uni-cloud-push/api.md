@@ -250,6 +250,15 @@ await uniPush.sendMessage(OBJECT)
 |VV|Number|否|无| 0代表运营消息，1代表系统消息;vivo消息分类功能将推送消息类型分为运营消息和系统消息，默认下发运营消息。运营消息单用户单应用单日接收条数上限为5条，系统消息不限。系统消息功能不用申请，可以直接使用，如特殊情况需额外提升系统消息量级，请参见（vivo官方文档）[推送消息分类功能说明](https://dev.vivo.com.cn/documentCenter/doc/359)。|
 | VV| Number|No|No| 0 stands for operation news, 1 stands for system news; vivo message classification function divides push message types into operation news and system news, and delivers operation news by default. The maximum number of operational messages received by a single user and single application in a single day is 5, and there is no limit to system messages. There is no need to apply for the system message function, and it can be used directly. If you need to increase the level of system message in special cases, please refer to (vivo official document) [Description of push message classification function](https://dev.vivo.com.cn/documentCenter/ doc/359). |
 
+例如：
+```js
+"channel":{
+	"XM":"xxx",
+	"HW":"NORMAL",
+	"OP":"xxx",
+	"VV":1
+}
+```
 
 ##### 铃声设置注意@sound
 ##### Ringtone Settings Note @sound

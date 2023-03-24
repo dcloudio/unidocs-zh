@@ -213,7 +213,7 @@ try {
     body: 'a=1&b=2&c=3'
   })
 } catch (e) {
-  if(e.subject === 'uni-cloud-s2s' && e.errCode === 51000) {
+  if(e.errSubject === 'uni-cloud-s2s' && e.errCode === 51000) {
     throw new Error('非法请求') // 判断为验证未通过，返回自定义的错误
   }
   throw e

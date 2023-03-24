@@ -132,7 +132,7 @@ await uniPush.sendMessage(OBJECT)
 |名称|类型|必填|默认值|描述|
 |--|--|--|--|--|
 |ttl|Number|否|1小时|消息离线时间设置，单位毫秒，-1表示不设离线，-1 ～ 3 * 24 * 3600 * 1000(3天)之间|
-|strategy|Object|否|{"strategy":{"default":1}}|厂商通道策略，详细内容见strategy|
+|strategy|Object|否|{"default":1}|厂商通道策略，详细内容见strategy|
 |speed|Number|否|0|定速推送，例如100，个推控制下发速度在100条/秒左右，0表示不限速|
 |schedule_time|Number|否|无|设置定时推送时间（仅向所有启动过应用的设备群发时有效），必须是7天内的时间，格式：毫秒时间戳，此功能需要开通VIP，如需开通请点击右侧“技术咨询”了解详情|
 

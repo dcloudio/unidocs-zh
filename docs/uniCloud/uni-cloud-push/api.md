@@ -210,9 +210,7 @@ await uniPush.sendMessage(OBJECT)
 |Name|Type|Required|Default|Description|
 |--|--|--|--|--|
 |ttl|Number|否|1小时|消息离线时间设置，单位毫秒，-1表示不设离线，-1 ～ 3 * 24 * 3600 * 1000(3天)之间|
-|ttl|Number|No|1 hour|Message offline time setting, in milliseconds, -1 means no offline setting, between -1 ~ 3 * 24 * 3600 * 1000 (3 days)|
-|strategy|Object|否|{"strategy":{"default":1}}|厂商通道策略，详细内容见strategy|
-|strategy|Object|No|{"strategy":{"default":1}}|Vendor channel strategy, see strategy|
+|strategy|Object|否|{"default":1}|厂商通道策略，详细内容见strategy|
 |speed|Number|否|0|定速推送，例如100，个推控制下发速度在100条/秒左右，0表示不限速|
 |speed|Number|No|0|Constant speed push, such as 100, the speed of individual push control is about 100 pieces/second, 0 means unlimited speed|
 |schedule_time|Number|否|无|设置定时推送时间（仅向所有启动过应用的设备群发时有效），必须是7天内的时间，格式：毫秒时间戳，此功能需要开通VIP，如需开通请点击右侧“技术咨询”了解详情|

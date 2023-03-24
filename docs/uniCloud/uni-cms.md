@@ -4,7 +4,9 @@
 
 uni-CMS是基于uniCloud开发的uni-admin插件，可用于快速搭建CMS内容管理系统。
 客户端可使用 uni-cms-article 插件进行内容展示，无需开发，即可在多端展示内容。
+
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/202303231717572.png)
+
 ![uni-cms](https://web-assets.dcloud.net.cn/unidoc/zh/202303231541517.png)
 
 <div style="display: flex; flex-basis: 10px">
@@ -178,6 +180,7 @@ uni-cms-article                             // uni-cms-article 插件
         ├── uni-cms-articles.schema.json    // 文章表
         ├── uni-cms-categories.schema.json  // 分类表
         ├── uni-cms-search-logs.schema.json // 搜索日志表
+        ├── uni-cms-search-hot.schema.json  // 搜索热词表
         └── uni-cms-unlock-record.schema.json   // 内容解锁记录表
 ```
 

@@ -32,18 +32,14 @@ Displays the message prompt box.
 |值|说明|平台差异说明|
 | Value| Instruction| Platform difference description|
 |:-|:-|:-|
-|success|显示成功图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度。|支付宝小程序无长度无限制|
-|success|The success icon is displayed. At this time, the title text on the `Mini Program` platform can display up to 7 Chinese characters in length. |Alipay applet unlimited length unlimited |
-|error|显示错误图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度。|支付宝小程序、快手小程序、字节小程序、百度小程序、京东小程序、QQ小程序不支持|
-|error|Display the error icon. At this time, the title text can display up to 7 Chinese characters in length on the `Mini Program` platform. |Alipay applet, Kuaishou applet, byte applet, Baidu applet, Jingdong applet, QQ applet are not supported|
+|success|显示成功图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度，`App`仅支持单行显示。|支付宝小程序无长度无限制|
+|error|显示错误图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度，`App`仅支持单行显示。|支付宝小程序、快手小程序、字节小程序、百度小程序、京东小程序、QQ小程序不支持|
 |fail|显示错误图标，此时 title 文本无长度显示。|支付宝小程序、字节小程序|
 |fail|Display an error icon, and the title text has no length. |Alipay applet, byte applet|
 |exception|显示异常图标。此时 title 文本无长度显示。|支付宝小程序|
 |exception|Display the exception icon. The title text is now displayed without length. |Alipay Mini Program|
 |loading|显示加载图标，此时 title 文本在`小程序`平台最多显示 7 个汉字长度。|支付宝小程序不支持|
-|loading|Display the loading icon. At this time, the title text can display up to 7 Chinese characters in length on the `Mini Program` platform. |Alipay applet does not support|
-|none|不显示图标，此时 title 文本在`小程序`最多可显示两行，`App`仅支持单行显示。|&nbsp;|
-|none|No icon is displayed. At this time, the title text can be displayed on a maximum of two lines in `Applet`, and `App` only supports single-line display. |&nbsp;|
+|none|不显示图标，此时 title 文本在`小程序`最多可显示两行。|&nbsp;|
 
 **示例**
 **Example**

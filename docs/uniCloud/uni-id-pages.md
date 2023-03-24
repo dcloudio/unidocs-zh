@@ -2342,7 +2342,11 @@ exports.main = async (event, context) => {
 
 ## URL化请求鉴权签名@http-reqeust-auth
 
-uni-id 在URL化请求时，会对以下 API 进行调用鉴权验证，
+> `uni-id-co@1.1.10`及以上版本支持使用`uni-cloud-s2s`进行请求签名验证，`uni-cloud-s2s`使用方式[详见](/uniCloud/uni-cloud-s2s.md)
+> 
+> `uni-id-co`请求鉴权签名与`uni-cloud-s2s`不能同时存在，如果存在`uni-cloud-s2s`，则会优先使用`uni-cloud-s2s`进行请求签名验证
+
+uni-id-co 在URL化请求时，会对以下 API 进行调用鉴权验证，
 在调用 API 时，开发者需要使用请求鉴权密钥（详见[配置文件](/uniCloud/uni-id-summary.md#config)）`requestAuthSecret`按照 uni-id 的约定方式对请求中的关键数据进行签名值计算，
 并将签名值添加到Header请求头的 `uni-id-signature` 参数中传给 uni-id 进行签名验证，uni-id 会对接收到数据进行签名值计算，
 并与接收到的请求签名值进行比对，如果签名值不一致，则视为无效签名，将拒绝本次请求。

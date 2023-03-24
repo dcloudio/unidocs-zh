@@ -3138,6 +3138,58 @@ const res = await db.collection('geo-near').aggregate().geoNear({
 - 存在geoNear时其query参数将取代where/doc作为权限校验依据，即query匹配到的结果需要满足权限才可以查询
 - When there is geoNear, its query parameter will replace where/doc as the basis for permission verification, that is, the result matched by query needs to meet the permission before it can be queried
 
+### 查询某字段和另一个表的字段相等的记录@enhanced-in
+
+> 新增于 HBuilderX 3.7.9
+
+用于匹配某字段和另一个表的字段相等的记录，只能在where方法内使用
+
+**示例**
+
+```js
+// company表数据
+const company = [{
+  _id: '1',
+  status: 0
+}, {
+  _id: '2',
+  status: 1
+}]
+
+// employee表数据
+const employee = [{
+  _id: '1',
+  register_date: 1678867175366,
+  company_id: '1'
+}, {
+  _id: '2',
+  register_date: 1670000000000,
+  company_id: '2'
+}]
+```
+
+```js
+const companyFilter = db.collection('company').where('status == 0').field('_id').getTemp() // 过滤company表，取其中status为0的记录的_id组成过滤数组
+const res = await db.collection('employee').where(`register_date > 1670000000000 && company_id in ${JSON.stringify(companyFilter)}`).get() // 获取用户表的company_id在过滤条件内的记录
+```
+
+此查询匹配到的数据库记录为
+
+```js
+[{
+  _id: '1',
+  register_date: 1678867175366,
+  company_id: '1'
+}]
+```
+
+注意in的这种用法底层使用了lookup方法，在数据量很大时效率不高，推荐在使用时尽量在in之外的条件内筛选出尽量小的数据集。上述示例中`register_date > 1670000000000 && company_id in ${JSON.stringify(companyFilter)}`，`register_date > 1670000000000`这部分条件应筛选出尽量小的结果集以便查询能更高效。
+
+**使用限制**
+
+- 仅可以在单表读操作及getTemp的联表查询的where方法内使用，不可用于增删改及非getTemp的联表查询
+- 过滤用的临时表必须指定field
+
 ## 新增数据记录@add
 ## Add data record @add
 

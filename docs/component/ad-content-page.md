@@ -13,7 +13,7 @@
 |✓|x|x|x|x|x|x|x|x|x|x|
 
 
-**仅nvue支持(iOS-hx3.4.2支持、Android-hx3.1.17支持)**
+**`仅nvue支持` (iOS-hx3.4.2支持、Android-hx3.1.17支持)**
 
 
 **开通配置广告**

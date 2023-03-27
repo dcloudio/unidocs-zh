@@ -1,9 +1,15 @@
-# uni-CMS
+# uni-cms
 
 ## 介绍
 
-uni-CMS是基于uniCloud开发的uni-admin插件，可用于快速搭建CMS内容管理系统。
-客户端可使用 uni-cms-article 插件进行内容展示，无需开发，即可在多端展示内容。
+uni-cms是全端的、开源的、云端一体的CMS内容管理系统。
+
+它包括管理端和用户端。
+
+1. uni-cms：CMS管理端。属于uni-admin插件，用于管理文章分类、文档内容编辑等 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms)
+2. uni-cms-article：CMS用户端。包含文章搜索、文章列表详情等页面，还有看广告解锁付费内容的功能 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms-article)
+
+客户端插件之所以起名为 uni-cms-article 。是因为未来可能还会拓展 uni-cms-image、uni-cms-video 等插件。
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/202303231717572.png)
 
@@ -23,16 +29,10 @@ uni-CMS是基于uniCloud开发的uni-admin插件，可用于快速搭建CMS内�
 
 ## 功能亮点
 
-- 基于uniCloud开发，无需搭建服务器，即可快速上线
-- 内容支持多端渲染，如小程序、H5、App等
-- 文章支持观看广告后解锁全文功能，为开发者提供一种新的收益方式 [详见](#watch-ad-unlock-content)
-
-## CMS组成
-
-CMS包含管理端与客户端，以下是CMS的组成部分：
-
-1. uni-cms：CMS管理端; 属于uni-admin插件，用于管理文章、分类等内容 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms)
-2. uni-cms-article：CMS客户端; 包含文章搜索、文章详情页面等页面，用于展示文章内容 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms-article)
+- 开源免费，现成代码，直接上线运营
+- 基于uniCloud，无需搭建服务器，无需关心服务器运维
+- 内容支持多端渲染，包括小程序、H5、App等
+- 支持观看激励视频广告后解锁全文功能，为开发者提供快速变现的高收益方式 [详见](#watch-ad-unlock-content)
 
 ## 如何使用
 

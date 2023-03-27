@@ -731,11 +731,8 @@ uniCloud数据库提供了多种数据导入导出和备份方案。
 The uniCloud database provides a variety of data import, export and backup solutions.
 
 - db\_init.json：常用于插件市场的插件做环境初始化。完整支持数据、索引、schema三部分。不适合处理大量数据，操作可能超时
-- db\_init.json: plugins commonly used in the plugin market for environment initialization. Complete support for data, index, schema three parts. Not suitable for processing large amounts of data, operations may time out
-- 数据库回档备份和恢复。仅腾讯云支持。支持数据和索引，不支持schema
-- Database rollback backup and restore. Only supported by Tencent Cloud. Supports data and indexes, not schema
-- 数据库导入导出。仅阿里云支持，适用于大数据量操作。仅支持数据，不支持索引和schema
-- Database import and export. Only supported by Alibaba Cloud, it is suitable for large data volume operations. Only data is supported, indexes and schemas are not supported
+- 数据库回档备份和恢复，不支持schema
+- 数据库导入导出，[jsonl格式](https://jsonlines.org/)数据，仅数据，无索引及schema
 
 除上述三种方法外，开发者还可以编程处理数据的导入导出。如进行大量数据操作，建议在HBuilderX的本地运行云函数环境中操作，这样可以避免触发云端的云函数超时限制。
 In addition to the above three methods, developers can also programmatically handle the import and export of data. If a large amount of data operations are performed, it is recommended to operate in the local cloud function environment of HBuilderX, which can avoid triggering the cloud function timeout limit in the cloud.
@@ -745,6 +742,10 @@ The following describes the use of the three methods in detail:
 
 ### `db_init.json`初始化数据库@db-init
 ### `db_init.json` initializes the database @db-init
+
+::: warning 注意
+此方式导入导出会消耗数据库读写次数，不适用于大数据量导入导出，仅适用于项目初始化。
+:::
 
 `db_init.json`定义了一个json格式，里面包含了表名、表数据、表索引等表的相关数据。
 `db_init.json` defines a json format, which contains table name, table data, table index and other table related data.
@@ -896,8 +897,14 @@ uniCloud will automatically back up the database once every morning and keep it 
 ### 数据导出为文件@export
 ### Data export to file @export
 
-此功能主要用于导出整个表的数据
-This function is mainly used to export the data of the entire table
+此功能主要用于导出整个表的数据，导出文件为[jsonl格式](https://jsonlines.org/)
+
+jsonl格式示例，形如下面这样每行一个json格式的数据库记录的文件
+
+```json
+{"a":1}
+{"a":2}
+```
 
 **用法**
 **usage**
@@ -937,9 +944,7 @@ The `db_init.json` provided by uniCloud is mainly for initializing the database 
 1. 进入[uniCloud web控制台](https://unicloud.dcloud.net.cn/home)，选择服务空间，或者直接在HBuilderX云函数目录`cloudfunctions`上右键打开uniCloud web控制台
 1. Enter the [uniCloud web console](https://unicloud.dcloud.net.cn/home), select the service space, or directly right-click on the HBuilderX cloud functions directory `cloudfunctions` to open the uniCloud web console
 2. 进入云数据库选择希望导入数据的表
-2. Enter the cloud database and select the table to which you want to import data
-3. 点击导入，选择json文件或csv文件
-3. Click Import, select json file or csv file
+3. 点击导入，选择jsonl文件或csv文件
 4. 选择处理冲突模式（关于处理冲突模式请看下方注意事项）
 4. Select the conflict handling mode (please see the notes below for handling conflict mode)
 5. 点击确定按钮等待导入完成即可
@@ -955,13 +960,7 @@ The `db_init.json` provided by uniCloud is mainly for initializing the database 
 - 导入导出csv时数据类型会丢失，即所有字段均会作为字符串导入
 - Data types are lost when importing and exporting csv, i.e. all fields are imported as strings
 - 冲突处理模式为设定记录_id冲突时的处理方式，`insert`表示冲突时依旧导入记录但是是新插入一条，`upsert`表示冲突时更新已存在的记录
-- Conflict handling mode is to set the handling method when record _id conflicts, `insert` means that the record is still imported but a new one is inserted when there is a conflict, `upsert` means that the existing record is updated when there is a conflict
-- 这里说的json文件并不是标准的json格式，而是形如下面这样每行一个json格式的数据库记录的文件
-- The json file mentioned here is not a standard json format, but a file with one json format database record per line as follows
-  ```json
-  {"a":1}
-  {"a":2}
-  ```
+
 
 > 如果是自己拼接的json格式数据请注意：如果存在表A关联表B的字段的场景需要保证关联字段在A、B内是一致的（特别需要注意的是各种与_id关联的字段）
 > If it is json format data that is spliced by yourself, please note: if there is a scenario where table A is associated with fields in table B, you need to ensure that the associated fields are consistent in A and B (special attention should be paid to various fields associated with _id)

@@ -474,7 +474,7 @@ Front-end pages within uni-id-co and uni-id-pages both support these four built-
 |Apple APP端登录					|配置`app.oauth.apple`，在Apple开发者中心自行配置：[Apple开发者中心](https://developer.apple.com/account/resources/identifiers/list)|
 |Apple APP login |Configure `app.oauth.apple` and configure it yourself in the Apple Developer Center: [Apple Developer Center](https://developer.apple.com/account/resources/identifiers/list)|
 
-### 用户注册时设置默认角色@config-defult-role
+### 用户注册时设置默认角色@config-defult-role <Badge text="uni-id-pages 1.1.6+" />
 
 默认情况下，用户注册后不会关联任何角色，如果需要用户在注册后关联角色，可以通过此配置项开启。
 

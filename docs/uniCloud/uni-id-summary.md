@@ -339,7 +339,7 @@ uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则
 |支付宝小程序端登录				|配置`mp-alipay.oauth.alipay`，在支付宝开放平台获取：[支付宝开放平台](https://openhome.alipay.com/develop/manage)										|
 |Apple APP端登录					|配置`app.oauth.apple`，在Apple开发者中心自行配置：[Apple开发者中心](https://developer.apple.com/account/resources/identifiers/list)|
 
-### 用户注册时设置默认角色@config-defult-role
+### 用户注册时设置默认角色@config-defult-role <Badge text="uni-id-pages 1.1.6+" />
 
 默认情况下，用户注册后不会关联任何角色，如果需要用户在注册后关联角色，可以通过此配置项开启。
 

@@ -249,6 +249,7 @@ Only uni's built-in api is upgraded along with HBuilder. Please remember the dif
     "uni-ext-api": {
       "uni": {
         "request": {
+          "name": "request", // 可选别名配置
           "app": {// 表示在app平台，仅在iOS swift环境下生效
             "js": false,
             "kotlin": false,

@@ -32,6 +32,7 @@ uni-cms是全端的、开源的、云端一体的CMS内容管理系统。
 - 开源免费，现成代码，直接上线运营
 - 基于uniCloud，无需搭建服务器，无需关心服务器运维
 - 内容支持多端渲染，包括小程序、H5、App等
+- 内容支持安全检测，防止内容违规
 - 支持观看激励视频广告后解锁全文功能，为开发者提供快速变现的高收益方式 [详见](#watch-ad-unlock-content)
 
 ## 如何使用
@@ -184,6 +185,25 @@ uni-cms-article                             // uni-cms-article 插件
         └── uni-cms-unlock-record.schema.json   // 内容解锁记录表
 ```
 
+### uni-cms 云对象
+
+#### 配置文件
+
+uni-cms 配置文件为 `uni_modules/uni-config-center/common/uni-cms/config.js`, 用于配置uni-cms相关信息, 完整配置如下:
+```json
+{
+  "contentSecurity": { // 内容安全
+    "allowCheckType": ["content", "image"] // 可选值仅为 content 或 image；content 表示检测文字，image 表示检测图片
+  }
+}
+```
+
+#### 接口
+
+| 接口名称   | 接口地址          | 接口描述                  |
+|--------|---------------|-----------------------|
+| 图片安全检测 | imageCheckSec | 对指定的图片进行安全检测，违规的图片将删除 |
+
 ### 富文本编辑器扩展
 > 目前富文本编辑器支持H5, 微信小程序, App, 基于Quill.js, 详见https://quilljs.com/
 > 
@@ -326,7 +346,38 @@ export default {
 内置的广告为激励视频广告, 用户在观看完广告后将会解锁全文, 如果需要其他类型的广告, 
 可以自行修改`uni_modules/uni-cms/components/render-article-detail/unlock-content.vue`文件中的代码
 
+### 内容安全检测@content-security-check
+
+内容安全功能由[uni-sec-check]()提供，`uni-sec-check`文档[详见]()
+
+uni-cms 会使用 uni-sec-check 检测用户输入的文字与上传的图片，如果检测到违规内容，内容将无法正常发布。
+
+您可以根据自己需求开启或关闭内容安全检测，在 `uni-cms` 配置文件中配置 `contentSecurity` 字段，例如:
+
+```javascript
+// 开启
+{
+  "contentSecurity": {
+    "allowCheckType": ["content", "image"] // 可选值仅为 content 或 image；content 表示检测文字，image 表示检测图片
+  }
+}
+```
+
+```javascript
+// 关闭
+{
+  "contentSecurity": false
+}
+```
+
+**说明**
+
+- `allowCheckType`存在`content`值时；内容安全将会对文章标题、文章内容、文章摘要进行检测。
+- `allowCheckType`存在`image`值时；内容安全将会对上传的封面图片、文章内容中的图片进行检测。
+
 ## 后续计划
+
+<input type="checkbox" checked disabled /> [内容安全](#content-security-check)
 
 <input type="checkbox" disabled /> 内容分享
 

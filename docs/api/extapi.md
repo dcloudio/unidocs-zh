@@ -241,6 +241,25 @@ Only uni's built-in api is upgraded along with HBuilder. Please remember the dif
 }
 ```
 
+- 指定支持的运行环境
+
+```json
+{
+  "uni_modules": {
+    "uni-ext-api": {
+      "uni": {
+        "request": {
+          "app": {// 表示在app平台，仅在iOS swift环境下生效
+            "js": false,
+            "kotlin": false,
+            "swift": true
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 **注意：** 
 

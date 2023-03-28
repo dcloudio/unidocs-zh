@@ -898,7 +898,7 @@ module.exports = async (obj) => {
 	let orderInfo = orderRes.data[0];
 	// 给用户充值余额
 	let res = await db.collection("uni-id-users").doc(orderInfo.user_id).update({
-	  balance: _.inc(orderInfo.total_fee)
+	  balance: _.inc(total_fee)
 	});
 	if (res && res.updated) {
 		user_order_success = true; // 通知插件我的自定义回调逻辑执行成功

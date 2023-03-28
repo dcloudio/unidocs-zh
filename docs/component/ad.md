@@ -1,4 +1,3 @@
-
 ## 信息流广告
 ## In-feed ads
 
@@ -31,6 +30,8 @@ Banner or information flow advertisement display scenarios are very flexible. Co
 |App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|QQ applet|Quick app|360 applet|Kaishou applet|Jingdong applet|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（2.5.2+）|3.4.8+|√|x|√|√|√|x|x|√|x|
+
+**`vue3 H5暂不支持`**
 
 
 **开通配置广告**

@@ -137,11 +137,8 @@ After the custom event is reported:
 In addition to the official uni statistics, if developers also need to call the custom statistics of the applet platform to report data to the background of the applet, they need to use conditional compilation to call their own API on each end.
 
 #### 微信小程序平台：
-#### WeChat Mini Program Platform:
-- 数据上报：[wx.reportMonitor](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/report/wx.reportMonitor.html)
-- Data reporting: [wx.reportMonitor](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/report/wx.reportMonitor.html)
-- 数据分析：[wx.reportAnalytics](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/data-analysis/wx.reportAnalytics.html)
-- Data analysis: [wx.reportAnalytics](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/data-analysis/wx.reportAnalytics.html)
+- 数据上报：[wx.reportMonitor](https://developers.weixin.qq.com/minigame/dev/api/data-analysis/wx.reportMonitor.html)
+- 数据分析：[wx.reportAnalytics](https://developers.weixin.qq.com/miniprogram/dev/api/data-analysis/wx.reportAnalytics.html)
 
 #### 支付宝小程序平台：
 #### Alipay Mini Program Platform:
@@ -154,8 +151,7 @@ In addition to the official uni statistics, if developers also need to call the 
 - Data analysis: [swan.reportAnalytics](https://smartprogram.baidu.com/docs/develop/api/data/#swan-reportAnalytics/)
 
 #### 字节跳动小程序平台：
-#### ByteDance Mini Program Platform:
-- [reportAnalytics](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/data-analysis/reportanalytics)
+- [reportAnalytics](https://developer.open-douyin.com/docs/resource/zh-CN/mini-game/develop/open-capacity/data-analysis/tt-report-analytics/)
 
 #### QQ小程序平台：
 #### QQ Mini Program Platform:

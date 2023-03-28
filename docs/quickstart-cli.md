@@ -328,13 +328,10 @@ Inside DCloud, uni-app and HBuilderX are different teams.
 ### 其他注意事项
 ### Other Notes
 
-* ``cli`` 创建的项目，编译器安装在项目下。并且不会跟随HBuilderX升级。如需升级编译器，可以参考：[更新依赖到指定版本](/quickstart-cli.html#cliversion)。
-* 已经使用``cli``创建的项目，如果想继续在HBuilderX里使用，可以把工程拖到HBuilderX中。注意如果是把整个项目拖入HBuilderX，则编译时走的是项目下的编译器。如果是把src目录拖入到HBuilderX中，则走的是HBuilderX安装目录下plugin目录下的编译器。
-* If you want to continue using the project created by ``cli`` in HBuilderX, you can drag the project to HBuilderX. Note that if the entire project is dragged into HBuilderX, the compiler under the project is used when compiling. If the src directory is dragged into HBuilderX, the compiler in the plugin directory under the HBuilderX installation directory is used.
-* ``cli``创建的项目，内置了d.ts，同其他常规npm库一样，可在[vscode](https://ask.dcloud.net.cn/article/36286)、[webstorm](https://ask.dcloud.net.cn/article/36307)等支持d.ts的开发工具里正常开发并有语法提示。
-* The project created by `cli` has built-in d.ts. Like other regular npm libraries, it can be normally developed in [vscode](https://ask.dcloud.net.cn/article/36286), [webstorm](https://ask.dcloud.net.cn/article/36307) development tools that support d.ts and there are grammar hints.
-* 使用HBuilderX创建的项目不带d.ts，HBuilderX内置了uni-app语法提示库。如需把HBuilderX创建的项目在其他编辑器打开并且补充d.ts，可以在项目下先执行 ``npm init``，然后``npm i @types/uni-app -D``，来补充d.ts。
-* Projects created with HBuilderX do not have d.ts, and HBuilderX has a built-in uni-app syntax hint library. If you want to open the project created by HBuilderX in other editors and add d.ts, you can execute ``npm init`` under the project, then ``npm i @types/uni-app -D``, to supplement d.ts .ts.
+* `cli` 创建的项目，编译器安装在项目下。并且不会跟随HBuilderX升级。如需升级编译器，可以参考：[更新依赖到指定版本](/quickstart-cli.html#cliversion)。
+* 已经使用`cli`创建的项目，如果想继续在HBuilderX里使用，可以把工程拖到HBuilderX中。注意如果是把整个项目拖入HBuilderX，则编译时走的是项目下的编译器。如果是把src目录拖入到HBuilderX中，则走的是HBuilderX安装目录下plugin目录下的编译器。
+* `cli`创建的项目，内置了d.ts，同其他常规npm库一样，可在[vscode](https://ask.dcloud.net.cn/article/36286)、[webstorm](https://ask.dcloud.net.cn/article/36307)等支持d.ts的开发工具里正常开发并有语法提示。
+* 使用HBuilderX创建的项目不带d.ts，HBuilderX内置了uni-app语法提示库。如需把HBuilderX创建的项目在其他编辑器打开并且补充d.ts，可以在项目下先执行 `npm init`，然后`npm i @dcloudio/types -D`，来补充d.ts。
 * HBuilderX创建的项目，一样可以使用npm，参考：[NPM 支持](/tutorial/page-script?id=npm支持)
 * Projects created by HBuilderX can also use npm, reference: [NPM support](/tutorial/page-script?id=npm%E6%94%AF%E6%8C%81)
 * vscode等其他开发工具，在vue或uni-app领域，开发效率比不过HBuilderX。详见：[https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
@@ -346,4 +343,3 @@ Inside DCloud, uni-app and HBuilderX are different teams.
 * 对 `cli` 使用有疑问，欢迎扫码加入 uni-app 微信交流群讨论：
 * If you have any questions about the use of `cli`, please scan the code to join the uni-app WeChat exchange group discussion:
     <br/><img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/wx-barcode.png" width="250"/>
-

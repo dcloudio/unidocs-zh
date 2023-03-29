@@ -476,10 +476,16 @@ App，小程序端源码调试，需要在 vite.config.js 中主动开启 source
   });
   ```
 
-## 小程序平台中监听原生的点击事件
+## 小程序平台
+
+### 监听原生的点击事件
 
 在 vue3 的小程序平台中，监听原生的点击事件可以先使用 tap。
 在 vue3 中，移除了.native 修饰符，所以编译器无法预知 click 是要触发原生事件，还是组件的自定义事件，故并未转换成小程序的 tap 事件。
+
+### style
+
+vue3 出于性能考虑，style 中暂不支持 html 标签选择器，推荐使用 class 选择器，[template 中的 html 标签仍会进行转换](https://uniapp.dcloud.net.cn/vernacular.html#%E7%BB%84%E4%BB%B6-%E6%A0%87%E7%AD%BE%E7%9A%84%E5%8F%98%E5%8C%96)。
 
 ## vue3 支持的手机版本最低到多少？
 

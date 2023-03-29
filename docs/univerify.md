@@ -105,6 +105,8 @@ uni.login({
 
 服务器API详见：[uniCloud云函数中使用一键登录](https://uniapp.dcloud.net.cn/uniCloud/univerify)
 
+uniCloud产生的费用对于一键登陆可以忽略，[详见](/uniCloud/univerify.md#unilogin-fee)
+
 ## 开发
 
 本文主要介绍uni-app的客户端调用方法。5+ App（Wap2App）请另行参考：[5+ App一键登录使用指南](https://ask.dcloud.net.cn/article/38009)
@@ -636,9 +638,11 @@ exports.main = async(event) => {
 不支持同时获取两个手机号，
 双卡手机以开启数据流量的 SIM 卡进行认证。
 
-
 - **提示“非移动网关ip地址”**
 大多数情况 是因为部分特定设备，不支持双卡双待的网络环境。
+
+- **uniCloud费用贵不贵？**
+uniCloud产生的费用对于一键登陆可以忽略，[详见](/uniCloud/univerify.md#unilogin-fee)
 
 - **使用有其他疑问**
 欢迎扫码加入 一键登录 微信交流群讨论：

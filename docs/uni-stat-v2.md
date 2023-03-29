@@ -137,6 +137,7 @@ uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了�
 |字段|类型|默认值|可选值|说明|
 |:-:|:-:|:-:|:-:|:-:|
 |uniPushClientID|Boolean|false|true/false|是否开启推送`PushClientID`的采集|
+|uniStatPageLog|Boolean|true|true/false|是否开启页面数据采集，|
 
 **分平台设置**
 

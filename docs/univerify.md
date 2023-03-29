@@ -146,6 +146,8 @@ Notice:
 服务器API详见：[uniCloud云函数中使用一键登录](https://uniapp.dcloud.net.cn/uniCloud/univerify)
 For details about the server API, see: [Using One-Key Login in UniCloud Cloud Functions](https://uniapp.dcloud.net.cn/uniCloud/univerify)
 
+uniCloud产生的费用对于一键登陆可以忽略，[详见](/uniCloud/univerify.md#unilogin-fee)
+
 ## 开发
 ## development
 
@@ -799,11 +801,13 @@ It is not supported to obtain two mobile phone numbers at the same time.
 双卡手机以开启数据流量的 SIM 卡进行认证。
 Dual SIM phones are authenticated with a SIM card with data traffic turned on.
 
-
 - **提示“非移动网关ip地址”**
 - **Prompt "Non-Mobile Gateway IP Address"**
 大多数情况 是因为部分特定设备，不支持双卡双待的网络环境。
 In most cases, it is because some specific devices do not support dual-card dual-standby network environment.
+
+- **uniCloud费用贵不贵？**
+uniCloud产生的费用对于一键登陆可以忽略，[详见](/uniCloud/univerify.md#unilogin-fee)
 
 - **使用有其他疑问**
 - **Other questions about use**

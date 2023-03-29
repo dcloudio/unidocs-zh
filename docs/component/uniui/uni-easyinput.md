@@ -167,7 +167,7 @@ When you set `:inputBorder="false"`, you can cancel the display of the border of
 |styles|Object|-|-|	样式自定义|
 | styles| Object|-|-| style customization|
 |passwordIcon|Boolean|-| true |	type=password 时，是否显示小眼睛图标|
-| passwordIcon| Boolean|-| true | When type=password, whether to display the small eye icon|
+|cursorSpacing|Number|-| 0 |  指定光标与键盘的距离，单位 px 。取 textarea/input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离。详见[textarea](https://uniapp.dcloud.net.cn/component/textarea.html)/[input](https://uniapp.dcloud.net.cn/component/input.html)|
 
 
 #### Type Options

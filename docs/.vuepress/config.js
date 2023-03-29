@@ -14,7 +14,8 @@ const config = process.env.DOCS_LOCAL === 'en' ? config_en : config_zh
 
 module.exports = merge({
   theme: 'vuepress-theme-uni-app-test',
-  title: 'uni-app',
+  title: 'uni-app官网',
+  description: 'uni-app,uniCloud,serverless',
   head: [
     ['link', {
       rel: 'shortcut icon',
@@ -30,7 +31,6 @@ module.exports = merge({
   themeConfig: {
     titleLogo: 'https://web-assets.dcloud.net.cn/unidoc/zh/uni-app.png',
     logo: 'https://web-assets.dcloud.net.cn/unidoc/zh/logo.png',
-    // TODO use plugin/theme
     sidebar: createSidebar(tabs),
     sidebarDepth: 0,
     nextLinks: false,
@@ -45,7 +45,7 @@ module.exports = merge({
   },
   markdown: {
     // toc: { includeLevel: [1, 2, 3, 4] },
-    slugify(str) {
+    slugify (str) {
       if (typeof str !== 'string') return ''
 
       let slug = str
@@ -58,7 +58,7 @@ module.exports = merge({
       return slugify(slug)
     },
     extractHeaders: ['h1', 'h2', 'h3', 'h4'],
-    chainMarkdown(config) {
+    chainMarkdown (config) {
       config
         .plugin('translate')
         .use(translatePlugin)
@@ -70,7 +70,7 @@ module.exports = merge({
         .use(require('./markdown/normallizeLink'))
     }
   },
-  chainWebpack(config, isServer) {
+  chainWebpack (config, isServer) {
     config.resolve.alias.set(
       '@theme-config',
       path.resolve(process.cwd(), 'docs/.vuepress/config', process.env.DOCS_LOCAL)

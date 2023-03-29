@@ -62,7 +62,8 @@
 
 - `<map>` 组件的宽/高推荐写直接量，比如：750rpx，不要设置百分比值。
 - 谷歌地图使用 `wgs84` 坐标，其他地图使用 `gcj02` 坐标，用错坐标类型会显示偏移。
-- App平台 `layer-style` 属性需要在地图服务商后台创建，值设置为高德后台申请的字符串，[详情](https://developer.amap.com/api/android-sdk/guide/create-map/custom)
+- App平台 `layer-style` 属性需要在地图服务商后台创建，值设置为高德后台申请的字符串，[详情](https://developer.amap.com/api/android-sdk/guide/create-map/custom)。
+- H5 端高德地图 include-points 属性仅支持 2 个坐标点，表示显示范围的西南角和东北角。
 
 ### 近期新增功能
 1. 支持点聚合，适用于marker过多场景。

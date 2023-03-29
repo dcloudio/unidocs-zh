@@ -50,8 +50,6 @@
 |popMenu| Boolean| true| 是否使用弹出菜单|
 |content| Array| -| 展开菜单内容配置项|
 
-
-
 **pattern配置项：**
 
 |参数|类型	| 默认值	|说明|
@@ -60,6 +58,7 @@
 |selectedColor| String	| #007AFF| 文字选中时的颜色|
 |backgroundColor| String| #ffffff| 背景色|
 |buttonColor| String| #3c3e49| 按钮背景色|
+|icon| String| plusempty| 自定义图标，图标来自 [`uni-icons`](./uni-icons.md) |
 
 **content配置项：**
 

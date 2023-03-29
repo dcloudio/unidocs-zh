@@ -209,7 +209,7 @@ Set the `version` property to `"2"` to enable new version statistics
 |Field|Type|Default Value|Optional Value|Description|
 |:-:|:-:|:-:|:-:|:-:|
 |uniPushClientID|Boolean|false|true/false|是否开启推送`PushClientID`的采集|
-|uniPushClientID|Boolean|false|true/false|Whether to enable the collection of push `PushClientID`|
+|uniStatPageLog|Boolean|true|true/false|是否开启页面数据采集，|
 
 **分平台设置**
 **Sub-platform settings**

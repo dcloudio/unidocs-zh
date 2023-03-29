@@ -9,6 +9,7 @@ const copyOptions = require('./config/copy');
 const config = {
   theme: 'vuepress-theme-uni-app-test',
   title: 'uni-app官网',
+  description: 'uni-app,uniCloud,serverless',
   head: [
     ['link', {
       rel: 'shortcut icon',
@@ -29,12 +30,10 @@ const config = {
   themeConfig: {
     titleLogo: 'https://web-assets.dcloud.net.cn/unidoc/zh/uni-app.png',
     logo: 'https://web-assets.dcloud.net.cn/unidoc/zh/logo.png',
-    // TODO use plugin/theme
     sidebar: createSidebar(tabs),
     sidebarDepth: 0,
     nextLinks: false,
     prevLinks: false,
-    // TODO use theme
     repo: 'dcloudio/uni-app',
     docsRepo: 'https://gitcode.net/dcloud/unidocs-zh',
     docsBranch: 'master',
@@ -53,7 +52,7 @@ const config = {
   },
   markdown: {
     // toc: { includeLevel: [1, 2, 3, 4] },
-    slugify(str) {
+    slugify (str) {
       if (typeof str !== 'string') return ''
 
       let slug = str
@@ -66,7 +65,7 @@ const config = {
       return slugify(slug)
     },
     extractHeaders: ['h1', 'h2', 'h3', 'h4'],
-    chainMarkdown(config) {
+    chainMarkdown (config) {
       config
         .plugin('translate')
         .use(translatePlugin)
@@ -78,7 +77,7 @@ const config = {
         .use(require('./markdown/normallizeLink'))
     }
   },
-  chainWebpack(config, isServer) {
+  chainWebpack (config, isServer) {
     config.resolve.alias.set(
       '@theme-config',
       path.resolve(process.cwd(), 'docs/.vuepress/config')

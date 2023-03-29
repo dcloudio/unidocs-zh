@@ -571,7 +571,7 @@ In vue3, the .native modifier is removed, so the compiler cannot predict whether
 
 ### style
 
-vue3 出于性能考虑，style 中暂不支持 html 标签选择器，推荐使用 class 选择器，[template 中的 html 标签仍会进行转换](https://uniapp.dcloud.net.cn/vernacular.html#%E7%BB%84%E4%BB%B6-%E6%A0%87%E7%AD%BE%E7%9A%84%E5%8F%98%E5%8C%96)。
+vue3 出于性能考虑，style 中暂不支持 div、p 等 HTML 标签选择器，推荐使用 class 选择器，[template 中的 HTML 标签仍会进行转换](https://uniapp.dcloud.net.cn/vernacular.html#%E7%BB%84%E4%BB%B6-%E6%A0%87%E7%AD%BE%E7%9A%84%E5%8F%98%E5%8C%96)。
 
 ## vue3 支持的手机版本最低到多少？
 ## What is the minimum mobile phone version supported by vue3?

@@ -107,9 +107,8 @@ The map component is used to display the map, while the positioning API only obt
 - `<map>` 组件的宽/高推荐写直接量，比如：750rpx，不要设置百分比值。
 - The width/height of the `<map>` component is recommended to be written directly, for example: 750rpx, do not set a percentage value.
 - 谷歌地图使用 `wgs84` 坐标，其他地图使用 `gcj02` 坐标，用错坐标类型会显示偏移。
-- Google Maps uses `wgs84` coordinates, other maps use `gcj02` coordinates, if you use the wrong coordinate type, the offset will be displayed.
-- App平台 `layer-style` 属性需要在地图服务商后台创建，值设置为高德后台申请的字符串，[详情](https://developer.amap.com/api/android-sdk/guide/create-map/custom)
-- The `layer-style` attribute of the App platform needs to be created in the background of the map service provider, and the value is set to the string applied by the Gaode background. [Details](https://developer.amap.com/api/android-sdk/guide/ create-map/custom)
+- App平台 `layer-style` 属性需要在地图服务商后台创建，值设置为高德后台申请的字符串，[详情](https://developer.amap.com/api/android-sdk/guide/create-map/custom)。
+- H5 端高德地图 include-points 属性仅支持 2 个坐标点，表示显示范围的西南角和东北角。
 
 ### 近期新增功能
 ### Recently Added Features

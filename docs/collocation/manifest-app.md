@@ -44,10 +44,7 @@ App-Android platform cloud packaging related configuration
 |hasTaskAffinity|Boolean|是否设置android：taskAffinity|
 |hasTaskAffinity|Boolean| Whether to set android:taskAffinity|
 |buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
-| buildFeatures| Object| The buildFeatures configuration item of build.gradle when the Android platform is packaged in the cloud, [see details](/collocation/manifest?id=buildFeatures)|
-|pushRegisterMode|String|使用“Push(消息推送)”模块时申请系统推送权限模式，设置为manual表示调用push相关API时申请，设置为其它值表示应用启动时自动申请|
-| pushRegisterMode| String|Apply for the system push permission mode when using the "Push (message push)" module, set it to manual to apply when calling the push-related API, set it to other values to automatically apply when the application starts|
-
+|pushRegisterMode|String|延迟初始化UniPush的配置，当配置此项值为`manual`后UniPush不会初始化，直到首次调用[getPushClientId](https://uniapp.dcloud.net.cn/api/plugins/push.html#getpushclientid)、getClientInfo、getClientInfoAsync时才会初始化，注:一旦调用获取cid的方法后，下次App启动就不再延迟初始化UniPush了。(manual为延迟，其他值表示不延迟。)|
 
 #### buildFeatures@buildFeatures  
 Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  

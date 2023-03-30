@@ -43,6 +43,22 @@ HBuilderX3.6.0起，支持直接在应用项目中配置应用清单文件 Andro
 - 清单文件配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
 
+### 移除Android权限@removepermissions  
+如果应用使用了三方SDK（[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/)）默认包含了一些Android权限，而实际可能不需要用到，则可以在应用清单文件文件中配置权限并添加tools:node="remove"移除，如下示例是移除"android.permission.INSTALL_PACKAGES"、"android.permission.REQUEST_INSTALL_PACKAGES"权限：  
+```xml
+<?xml version="1.0" encoding="utf-8"?>  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"   
+  package="io.dcloud.nativeresouce">  
+    <!--按下面方式配置需要移除的permissions-->  
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES" tools:node="remove"/>  
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" tools:node="remove"/>  
+
+    <application>  
+        <!--meta-data-->  
+    </application>  
+</manifest>
+```
+
 
 ## 应用资源  
 

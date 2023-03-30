@@ -1206,3 +1206,8 @@ console.log(permissionArray.toTypedArray())
 ### 7.2 目前尚不支持 Math内置
 
 HBuilderX 3.7.1 版本已支持
+
+### 7.3 目前尚不支持 8.x 版本gradle
+
+建议先使用7.X版本，这个问题后续会处理
+

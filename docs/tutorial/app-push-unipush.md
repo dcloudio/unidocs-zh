@@ -175,8 +175,29 @@ UniPush和个推推送模块支持设置自定义推送图标，包括push图标
 - **uni-app项目详细使用教程请参考 [统一推送UniPush](https://uniapp.dcloud.io/unipush)**
 - **5+ App、Wap2App项目详细使用教程请参考 [UniPush使用指南](https://ask.dcloud.net.cn/article/35622)**
 
+
 ### 常见问题
-- **iOS勾选推送并且基于HBuilderX 3.6.14+打包ipa变大的问题**  
+
+#### iOS启动时弹出发送通知授权框的问题@ios_pushregistermode  
+App勾选“Push（消息推送）”模块后，默认应用启动会立即申请推送消息权限，弹出系统发送通知授权框，如下：  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/ios-privacy.png)  
+如果希望应用启动不申请推送消息权限（不弹出系统发送通知授权框），可以在manifest.json文件的源码视图中配置"app-plus" -> "distribute" -> "ios" -> "pushRegisterMode"字段值为"manual"，如下：  
+```json
+{
+	"app-plus": {
+		"distribute": {
+			"ios": {
+				"pushRegisterMode": "manual"
+			}
+		}
+	}
+}
+```
+> 需提交云端打包后生效  
+> 配置为"manual"，需要在App代码中调用[uni.getPushClientId](https://uniapp.dcloud.net.cn/api/plugins/push.html#getpushclientid)触发申请推送消息权限，用户同意返回客户端推送标识  
+
+
+#### iOS勾选推送并且基于HBuilderX 3.6.14+打包ipa变大的问题  
 1. 为什么会变大?  
   原因是推送SDK升级需要支持Swift环境，之前工程如果不包含Swift环境需要添加Swift环境(打包使用Swift语言开发的原生插件同样有类似问题)。
 2. 为什么只有生产包变大?  

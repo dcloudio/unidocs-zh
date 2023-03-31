@@ -1,3 +1,44 @@
+#### 3.7.12.20230331-alpha
+* 【uni-app】
+* App平台、Web平台 优化 socket 连接 onClose 事件信息增加 code、reason 属性
+* App平台 修复 Vue3 项目使用纯 nvue 开发时热重载跳转到首页的Bug [详情](https://ask.dcloud.net.cn/question/164673)
+* App平台 修复 国际化配置新增语言兼容性不佳的Bug [详情](https://ask.dcloud.net.cn/question/165884)
+* App平台 修复 Vue3 项目 nvue 页面配置 flex-direction 默认值无效的Bug [详情](https://ask.dcloud.net.cn/question/165497)
+* App-Android平台 修复 uni.onSocketClose 监听 WebSocket 关闭时 code 值为 1001 可能不触发回调的Bug
+* App-Android平台 修复 实人认证 progressBarColor 设置为非法颜色值导致应用重启的Bug
+* App-Android平台 修复 nvue 页面中存在特殊字符可能引起崩溃的Bug [详情](https://ask.dcloud.net.cn/question/166447)
+* App-Android平台 修复 nvue 页面在App悬浮窗口模式下可能渲染异常的Bug [详情](https://ask.dcloud.net.cn/question/156014)
+* App-Android平台 修复 nvue text 组件中特殊字符不显示Bug [详情](https://ask.dcloud.net.cn/question/166014)
+* App-Android平台 修复 反复进入退出App偶发 js 进程崩溃的Bug
+* Web平台 修复 浏览器启用隐私模式报错的Bug [详情](https://ask.dcloud.net.cn/question/164775)
+* Web平台 修复 Vue3 项目 script setup 中 onError 无效的Bug [详情](https://ask.dcloud.net.cn/question/164798)
+* Web平台 修复 高德导航目的地名称显示异常的Bug [详情](https://ask.dcloud.net.cn/question/165669)
+* Web平台 修复 高德无定位权限未触发 fail 回调的Bug [详情](https://ask.dcloud.net.cn/question/166298)
+* Web平台 修复 高德地图 callout 排版异常的Bug [详情](https://github.com/dcloudio/uni-app/issues/4230)
+* 小程序平台 优化 Vue2 项目增加 slotMultipleInstance 配置，支持作用域插槽渲染多个实例 [详情](https://github.com/dcloudio/uni-app/issues/3503)
+* 小程序平台 优化 Vue2 项目 v-for 遍历对象时支持 index 参数 [详情](https://ask.dcloud.net.cn/question/163685)
+* 小程序平台 修复 Vue2 项目事件表达式包含多个函数语句时编译后无效的Bug [详情](https://ask.dcloud.net.cn/question/147342)
+* 小程序平台 修复 Vue3 项目页面样式文件编译后缺失的Bug [详情](https://ask.dcloud.net.cn/question/163867)
+* 百度小程序平台、支付宝小程序平台 新增 支持运行到指定页面
+* 微信小程序平台 新增 支持企业小程序 onNFCReadMessage 生命周期 [详情](https://ask.dcloud.net.cn/question/166024)
+* 微信小程序平台 修复 Vue3 项目混合分包部分情况下接口调用报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/4175)
+* 支付宝小程序平台 优化 组件 styleIsolation 默认配置为 apply-shared
+* 支付宝小程序平台 修复 Vue3 项目 page-meta 组件 foot-font-size 属性无效的Bug
+* 字节跳动小程序平台 修复 aweme-data 组件渲染不正常的Bug [详情](https://ask.dcloud.net.cn/question/165295)
+* uni统计2 新增 uniStatPageLog 参数，是否开启页面数据采集，默认为开启
+* uts插件 App-Android平台 修复 console.log 无法输出对象中包含的 any 类型字段的Bug
+* 【uniCloud】
+* 新增 jql语法支持查询某字段和另一个表指定字段相等的记录 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#enhanced-in)
+* 【App插件(含5+App和uni-app的App端)】
+* 更新 uni-AD 腾讯优量汇SDK Android为 4.514.1384 版；iOS为 4.14.12 版；快手广告SDK Android为 3.3.40 版，iOS为 3.3.40 版；Sigmob广告联盟SDK Android为 4.10.1 版；百度百青藤广告SDK Android为 9.271 版
+* Android平台 修复 某些情况下可能出现软键盘弹出后立即收起的Bug [详情](https://ask.dcloud.net.cn/question/161957)
+* Android平台 修复 plus.navigator.updateSplashscreen 可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/164023)
+* iOS平台 新增 配置 privacyRegisterMode 应用启动时是否获取 idfv，解决应用合规检测可能报同意隐私政策前读取 idfv 的问题 [详情](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#privacyRegisterMode)
+* iOS平台 更新 一键登录使用的个验SDK为 3.0.4.0 版，解决某些情况下会获取本地网络权限可能导致苹果审核被拒的Bug [详情](https://ask.dcloud.net.cn/question/166587)
+* iOS平台 修复 进入包含视频播放控件 video 页面会打断音乐播放的Bug [详情](https://ask.dcloud.net.cn/question/165329)
+* iOS平台 修复 导航栏 titleNView 设置 splitLine 样式可能显示不正常的Bug [详情](https://ask.dcloud.net.cn/question/164906)
+* iOS平台 修复 从微信中唤起App时 plus.runtime.arguments 获取的参数可能不正确的Bug [详情](https://ask.dcloud.net.cn/question/166211)
+
 #### 3.7.7.20230316-alpha
 * 【uni-app】
 * 微信小程序 修复 share-element 等组件部分属性无效的Bug [详情](https://ask.dcloud.net.cn/question/163926)

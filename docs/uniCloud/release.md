@@ -1,5 +1,8 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2023-03-31
+* 新增 jql语法支持查询某字段和另一个表指定字段相等的记录 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#enhanced-in)
+
 #### 2023-03-16
 * 新增 uni-cloud-s2s公共模块 用于解决uniCloud服务空间与传统服务器通讯时互相信任的问题 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)
 * 优化 安全网络 微信小程序端支持非uni-id的应用 [详情](https://uniapp.dcloud.net.cn/uniCloud/secure-network.html#mp-weixin-without-uni-id-pages)

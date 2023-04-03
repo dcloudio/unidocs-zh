@@ -631,7 +631,7 @@ Tips: For treeshaking optimization (treeShaking) principle and optimization resu
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 | scopedSlotsCompiler| String| Vue2 scoped slots compilation mode, supported from uni-app 3.1.19+, options: legacy, auto, augmented, default: auto|
 |mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
-| mergeVirtualHostAttributes| Boolean|Merge component [virtual node](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE) outer layer attribute ( Currently only style and class attributes are supported), and uni-app 3.5.1+ starts to support|
+|slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |embeddedAppIdList|Array|要半屏跳转的小程序appid。[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
 |requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#requiredPrivateInfos)|
 |lazyCodeLoading|String| 目前仅支持值 requiredComponents，代表开启小程序[按需注入](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|
@@ -723,6 +723,7 @@ After configuring the directory, you need to create a new `vue.config.js` in the
 | uniStatistics | Object |[Whether the Alipay MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
+|slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |lazyCodeLoading|String|是否开启代码按需执行。|
 | lazyCodeLoading| String|Whether to enable code execution on demand. |
 
@@ -742,7 +743,7 @@ After configuring the directory, you need to create a new `vue.config.js` in the
 |uniStatistics|Object|[百度小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 | uniStatistics| Object|[Whether to enable uni statistics in the Baidu MiniApp, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
-| scopedSlotsCompiler| String| Vue2 scoped slots compilation mode, supported from uni-app 3.1.19+, options: legacy, auto, augmented, default: auto|
+|slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |dynamicLib|Object|引入动态库，详情请参考[使用动态库](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)|
 | dynamicLib| Object|Introduce a dynamic library, please refer to [Use a dynamic library](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)|
 
@@ -771,7 +772,7 @@ Optimized configuration for Baidu MiniApp
 |uniStatistics|Object|[字节跳动小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 | uniStatistics| Object|[Whether the ByteDance MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
-| scopedSlotsCompiler| String| Vue2 scoped slots compilation mode, supported from uni-app 3.1.19+, options: legacy, auto, augmented, default: auto|
+|slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 
 #### 字节跳动小程序项目设置@mp-toutiao-setting
 #### ByteDance MiniApp project setting @mp-toutiao-setting
@@ -800,7 +801,7 @@ Optimized configuration for Baidu MiniApp
 |uniStatistics|Object|[飞书小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 | uniStatistics| Object|[Whether the Feishu MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
-| scopedSlotsCompiler| String| Vue2 scoped slots compilation mode, supported from uni-app 3.1.19+, options: legacy, auto, augmented, default: auto|
+|slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 
 #### 飞书小程序项目设置@mp-lark-setting
 #### Feishu MiniApp project setting @mp-lark-setting
@@ -839,7 +840,7 @@ Optimized configuration for Baidu MiniApp
 |uniStatistics|Object|[QQ小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 | uniStatistics| Object|[Whether to enable uni statistics in the QQ MiniApp, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
-| scopedSlotsCompiler| String| Vue2 scoped slots compilation mode, supported from uni-app 3.1.19+, options: legacy, auto, augmented, default: auto|
+|slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 
 #### optimization
 
@@ -864,7 +865,7 @@ Optimized configuration for QQ MiniApp
 |uniStatistics|Object|[快手小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 | uniStatistics| Object|[Whether the Kuaishou MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：augmented|
-| scopedSlotsCompiler| String| Compilation mode of Vue2 scoped slots, supported from uni-app 3.1.19+, options: legacy, auto, augmented, default: augmented|
+|slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 
 #### optimization
 

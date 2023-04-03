@@ -194,7 +194,7 @@
 Vue 组件编译到小程序平台的时候会编译为对应平台的组件，部分小程序平台支持 options 选项（具体选项参考对应小程序平台文档的自定义组件部分），一般情况默认即可，如有特殊需求可在 Vue 组件中增加 options 属性。
 
 |属性|类型|默认值|描述|平台兼容性|
-|--|--|--|--|
+|--|--|--|--|--|
 |multipleSlots|Boolean|true|在组件定义时的选项中启动多slot支持||
 |styleIsolation|String|apply-shared|组件样式隔离方式，具体配置选项参见：[组件样式隔离](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html#%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F%E9%9A%94%E7%A6%BB)|微信小程序|
 |addGlobalClass|Boolean|true|~~这个选项等价于设置 styleIsolation: apply-shared ，但设置了 styleIsolation 选项后这个选项会失效~~|微信小程序|

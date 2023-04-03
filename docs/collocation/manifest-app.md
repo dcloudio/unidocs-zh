@@ -96,7 +96,14 @@ iOS platform cloud packaging related configuration
 |validArchitectures|Array|编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64|
 |validArchitectures|Array|CPU instructions supported at compile time, can take values arm64, arm64e, armv7, armv7s, x86_64|
 |pushRegisterMode|String|使用“Push(消息推送)”模块时申请系统推送权限模式，设置为manual表示调用push相关API时申请，设置为其它值表示应用启动时自动申请|
-|pushRegisterMode|String|Apply for the system push permission mode when using the "Push (message push)" module. If set to manual, it means to apply when the push-related API is called. If set to other values, it means to apply automatically when the application starts|
+|privacyRegisterMode|String|设置为manual表示同意隐私政策后再获取相关隐私信息，设置为其它值表示应用启动时自动获取[详见](/collocation/manifest?id=privacyRegisterMode)|
+
+
+#### privacyRegisterMode@privacyRegisterMode
+为了统计应用的崩溃信息，应用在启动时需要获取idfv，虽然不影响苹果审核但是可能被部分合规检测机构判定为不合规。需要通过隐私合规检测的应用可以将字段配置为manual，并且在用户点击同意隐私政策的方法里执行`plus.runtime.argeePrivacy()`即可。  
+注意：配置后如未调用`plus.runtime.argeePrivacy()`会导致崩溃统计失效。
+
+
 
 
 
@@ -303,7 +310,8 @@ iOS platform cloud packaging related configuration
                 "validArchitectures": [         //可选，字符串数组类型，编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64
                     "arm64"
                 ],
-                "pushRegisterMode": "manual"    //可选，使用“Push(消息推送)”模块时申请系统推送权限模式，manual表示调用push相关API时申请，其它值表示应用启动时自动申请
+                "pushRegisterMode": "manual",    //可选，使用“Push(消息推送)”模块时申请系统推送权限模式，manual表示调用push相关API时申请，其它值表示应用启动时自动申请
+                "privacyRegisterMode": "manual"    //可选，仅iOS有效，设置为manual表示用户同意隐私政策后才获取idfv，设置为其它值表示应用启动时自动获取
             },
             "sdkConfigs": {         //可选，JSON对象，三方SDK相关配置
                 "geolocation": {        //可选，JSON对象，Geolocation(定位)模块三方SDK配置

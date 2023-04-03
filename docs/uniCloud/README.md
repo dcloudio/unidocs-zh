@@ -32,8 +32,7 @@ uniCloud provides a free service space for each developer, so that you can also 
 ### Watch the video, just 25 minutes, get started quickly with uniCloud
 
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=1">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg" alt="uniCloud视频教程" style="width: 70%;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg" alt="uniCloud video tutorial" style="width: 70%;">
+	<div style="height: 32vw;width: 50vw;background-image: url(https://web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg);background-size: 100% 100%;"></div>
 </a>
 
 ### uniCloud是什么和不是什么

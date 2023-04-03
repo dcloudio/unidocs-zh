@@ -94,7 +94,7 @@ ext.js里引入公共模块的机制：
 |limit							|number							|-			|否																		|返回的结果集(文档数量)的限制，新增于`3.7.0`																								|
 |sample							|object							|-			|否																		|sample（随机选取）方法的参数，新增于`3.7.0`																								|
 |docId							|string							|-			|否																		|doc方法的参数，数据库记录的_id，新增于`3.7.0`																							|
-|isGetTempLookup		|boolean						|-			|联表触发时必备，仅主表触发器有此参数	|联表查询时用于标识，本次查询是否使用了getTemp，新增于`3.7.1`																|
+|isGetTempLookup		|boolean						|-			|联表触发时必备                        |联表查询时用于标识，本次查询是否使用了getTemp，新增于`3.7.1`																|
 
 #### secondaryCollection@secondary-collection
 
@@ -475,12 +475,11 @@ module.exports {
     beforeUpdate: async function({
       collection,
       operation,
-      where,
+      docId,
       updateData,
       clientInfo
     } = {}) {
-      const id = where && where._id
-      if(typeof id === 'string' && (updateData.title || updateData.content)) { //如果字段较多，也可以不列举字段，删掉后半个判断
+      if(typeof docId === 'string' && (updateData.title || updateData.content)) { //如果字段较多，也可以不列举字段，删掉后半个判断
         if(updateData.content) {
           // updateData.summary = 'xxxx' // 根据content生成summary
         }
@@ -500,16 +499,15 @@ module.exports {
     afterRead: async function({
       collection,
       operation,
-      where,
+      docId,
       field,
       clientInfo
     } = {}) {
       const db = uniCloud.database()
-      const id = where && where._id
       // clientInfo.uniIdToken可以解出客户端用户信息，再进行判断是否应该加1。为了让示例简单清晰，此处省略相关逻辑
-      if(typeof id === 'string' && field.includes('content')) {
+      if(typeof docId === 'string' && field.includes('content')) {
         // 读取了content字段后view_count加1
-        await db.collection('article').where(where).update({
+        await db.collection('article').doc(docId).update({
           view_count: db.command.inc(1)
         })
       }
@@ -527,15 +525,14 @@ module.exports {
     beforeDelete: async function({
       collection,
       operation,
-      where,
+      docId,
       clientInfo
     } = {}) {
       const db = uniCloud.database()
-      const id = where && where._id
-      if(typeof id !== 'string') { // 此处也可以加入管理员可以批量删除的逻辑
+      if(typeof docId !== 'string') { // 此处也可以加入管理员可以批量删除的逻辑
         throw new Error('禁止批量删除')
       }
-      const res = await db.collection('article').where(where).get()
+      const res = await db.collection('article').doc(docId).get()
       const record = res.data[0]
       if(record) {
         await db.collection('article-archived').add(record)
@@ -632,12 +629,11 @@ uniCloud.databaseForJQL({
 module.exports = {
   trigger: {
     afterRead: async function ({
-      where,
+      docId,
       field,
       clientInfo
     } = {}) {
-      const id = where && where._id
-      if(typeof id !== 'string' || !field.includes('content')) {
+      if(typeof docId !== 'string' || !field.includes('content')) {
         return
       }
       const dbJQL = uniCloud.databaseForJQL({
@@ -646,7 +642,7 @@ module.exports = {
       })
       await dbJQL.collection('article-view-log')
         .add({
-          article_id: id,
+          article_id: docId,
           reader_id: dbJQL.getCloudEnv('$cloudEnv_uid')
         })
     }

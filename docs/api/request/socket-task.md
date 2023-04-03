@@ -72,6 +72,15 @@ WebSocket 连接打开事件的回调函数
 
 WebSocket 连接关闭事件的回调函数
 
+**回调函数中的参数**
+
+`Object`
+
+|属性|类型|说明|平台兼容性|
+|:-|:-|:-|:-|
+|code|number|一个数字值表示关闭连接的状态号，表示连接被关闭的原因。|HBuilderX(3.7.12+)|
+|reason|string|一个可读的字符串，表示连接被关闭的原因。|HBuilderX(3.7.12+)|
+
 ### SocketTask.onError(CALLBACK)
 监听 WebSocket 错误事件
 

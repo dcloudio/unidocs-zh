@@ -1047,6 +1047,20 @@ console.log(permissionArray.toTypedArray())
 
 ```
 
+### 6.7 如何生成byte[]对象
+
+在java平台中，二进制操作一般采用字节数组实现。 
+
+UTS在android平台编译后的语言为Kotlin,对应的语法对象是ByteArray.
+
+使用这个类不需要额外引入包，直接运行即可
+
+下面是一个简单的示例
+
+```
+let byteTest = new ByteArray(5)
+console.log(byteTest)
+```
 
 
 ## 7  已知待解决问题(持续更新)

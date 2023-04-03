@@ -21,7 +21,7 @@ The map component is used to display the map, while the positioning API only obt
 |Map Service Provider| App| H5|WeChat MiniApp|
 |:-:|:-:|:-:|:-:|
 |高德|√|3.6.0+||
-|Goolge|3.4+|3.2.10+||
+|Goolge|3.4+ 仅nvue页面|3.2.10+||
 |腾讯||√|√|
 |Tencent||√|√|
 

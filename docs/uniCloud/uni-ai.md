@@ -4,6 +4,8 @@ ai大潮来袭，如何把ai能力引入自己的应用中？几乎是每个开�
 
 `uni-ai`，定位就是开发者使用ai能力的最佳开发库，更丰富、更易用、更高效。
 
+## 特点
+
 1. 聚合
 `uni-ai`，聚合了国内外各种流行的ai能力。包括
 - 大语言模型LLM：chatGPT、GPT-4、文心一言以及一些优秀创业公司
@@ -59,9 +61,9 @@ ai能力调用，是需要按token数量付费的。token太少会回答不准�
 
 ai都是回答文字内容，但实际场景中经常需要自动化执行一些命令。
 
-`uni-ai`提供了action机制。
+`uni-ai`提供了action机制，让ai变的更加强大。
 
-例如，请ai帮忙写一段代码，其中引入了三方插件，那么action可以通知HBuilder弹出下载这个插件的界面，不但代码生成了，其中的插件也自动下载了。
+例如，请ai帮忙写一段代码，其中涉及了未引用的三方插件，那么action可以通知HBuilder弹出下载这个插件的界面，不但代码生成了，其中的插件也自动下载了。
 
 
 使用简单的js api，快速开始你的ai之旅吧！
@@ -72,6 +74,9 @@ let llm = uniCloud.ai.LLMManage(provider,model) //provider为空时，可自动�
 llm.Prompt("提示词",maxtoken)
 ```
 
+## API
+
+## 内测邀请
 目前`uni-ai`处于内测邀请阶段，可以在需求墙为uni-ai投票（在[需求墙](https://dev.dcloud.net.cn/wish/)选uniCloud分类，对uni-ai投票）。
 DCloud会遴选邀请部分用户参与内测。完善后会正式推出。
 

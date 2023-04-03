@@ -44,3 +44,7 @@ Official website address: [uniapp.dcloud.io](https://uniapp.dcloud.io)
     ![](https://web-assets.dcloud.net.cn/unidoc/zh/docs_bage_component.jpg)
 9. 可使用模板语法 [详情](https://vuepress.vuejs.org/zh/guide/using-vue.html#%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95)
     ![](https://web-assets.dcloud.net.cn/unidoc/zh/docs_temp_code.jpg)
+10. 图片点击放大 `img.class="zooming"`
+    ```html
+    <img class="zooming" src="xxx">
+    ```

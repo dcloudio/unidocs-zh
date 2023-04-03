@@ -35,8 +35,7 @@ Used to wrap text content.
 
 **Tips**
 
-- `<text>` 组件内只支持嵌套 `<text>`，不支持其它组件或自定义组件，否则会引发在不同平台的渲染差异。
-- Only nested `<text>` is supported within the `<text>` component, other components or custom components are not supported, otherwise it will cause rendering differences on different platforms.
+- `<text>` 组件内只支持嵌套 `<text>`(app-nvue 暂不支持)，不支持其它组件或自定义组件，否则会引发在不同平台的渲染差异。
 - 在app-nvue下，只有`<text>`才能包裹文本内容。无法在`<view>`组件包裹文本。
 - Under app-nvue, only `<text>` can wrap text content. Unable to wrap text in `<view>` component.
 - decode 可以解析的有 `&nbsp;` `&lt;` `&gt;` `&amp;` `&apos;` `&ensp;` `&emsp;`。

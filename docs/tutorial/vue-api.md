@@ -316,7 +316,7 @@ Vue 组件编译到小程序平台的时候会编译为对应平台的组件，�
 When Vue components are compiled to the applet platform, they will be compiled into components of the corresponding platform. Some applet platforms support the options option (for specific options, please refer to the custom components section of the corresponding applet platform documentation). Generally, the default can be used, if there are special requirements The options property can be added to the Vue component.
 
 |属性|类型|默认值|描述|平台兼容性|
-|--|--|--|--|
+|--|--|--|--|--|
 |multipleSlots|Boolean|true|在组件定义时的选项中启动多slot支持||
 |styleIsolation|String|apply-shared|组件样式隔离方式，具体配置选项参见：[组件样式隔离](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html#%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F%E9%9A%94%E7%A6%BB)|微信小程序|
 |addGlobalClass|Boolean|true|~~这个选项等价于设置 styleIsolation: apply-shared ，但设置了 styleIsolation 选项后这个选项会失效~~|微信小程序|

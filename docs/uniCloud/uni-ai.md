@@ -68,11 +68,11 @@ ai都是回答文字内容，但实际场景中经常需要自动化执行一些
 
 ```js
 // 因涉及费用，ai能力调用均需在服务器端进行，也就是uniCloud云函数或云对象中
-let llm = uniCloud.ai.LLMManage(provider、model) //provider为空时，可自动分配
+let llm = uniCloud.ai.LLMManage(provider,model) //provider为空时，可自动分配
 llm.Prompt("提示词",maxtoken)
 ```
 
 目前`uni-ai`处于内测邀请阶段，可以在需求墙为uni-ai投票（在[需求墙](https://dev.dcloud.net.cn/wish/)选uniCloud分类，对uni-ai投票）。
 DCloud会遴选邀请部分用户参与内测。完善后会正式推出。
 
-> 服务器业务不在uniCloud上的开发者，可以把uni-ai当做http接口的三方能力调用。
+> 服务器业务不在uniCloud上的开发者，可以把云函数URL化，把uni-ai当做http接口调用。

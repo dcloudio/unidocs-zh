@@ -70,8 +70,16 @@ ai都是回答文字内容，但实际场景中经常需要自动化执行一些
 
 ```js
 // 因涉及费用，ai能力调用均需在服务器端进行，也就是uniCloud云函数或云对象中
-let llm = uniCloud.ai.LLMManage(provider,model) //provider为空时，可自动分配
-llm.Prompt("提示词",maxtoken)
+let llm = uniCloud.ai.getLLMManager({
+  provider,
+  model
+})
+llm.chatCompletion({
+  messages: [{
+    role: 'user',
+    content: '你好'
+  }]
+})
 ```
 
 ## API
@@ -81,3 +89,54 @@ llm.Prompt("提示词",maxtoken)
 DCloud会遴选邀请部分用户参与内测。完善后会正式推出。
 
 > 服务器业务不在uniCloud上的开发者，可以把云函数URL化，把uni-ai当做http接口调用。
+
+### 获取LLM服务商实例@get-llm-manager
+
+用法：`uniCloud.ai.getLLMManager(Object GetLLMManagerOptions);`
+
+**参数说明GetLLMManagerOptions**
+
+|参数			|类型		|必填	|默认值	|说明																					|
+|---			|---		|---	|---		|---																					|
+|provider	|string	|是		|-			|llm服务商，目前支持`minimax`、`openai`				|
+
+**示例**
+
+```js
+const llm = uniCloud.ai.getLLMManager({
+  provider: 'minimax',
+  model
+})
+```
+
+### 对话@chat-completion
+
+用法：`llm.chatCompletion(Object ChatCompletionOptions)`
+
+**参数说明ChatCompletionOptions**
+
+|参数				|类型		|必填	|默认值																							|说明																																																	|
+|---				|---		|---	|---																								|---																																																	|
+|messages		|array	|是		| -																									|对话信息																																															|
+|model			|string	|否		|minimax默认为abab5-chat，openai默认为gpt-3.5-turbo	|模型名称，不同服务商可选模型不同，见下方说明																													|
+|maxTokens	|number	|否		|minimax为128、openai默认不限制											|总token数限制																																												|
+|temperature|number	|否		|minimax默认为0.95，openai默认为1										|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|
+|topP				|number	|否		|minimax默认为0.9，openai默认为1										|采样方法，数值越小结果确定性越强；数值越大，结果越随机																								|
+
+**可用模型**
+
+|服务商	|接口						|模型																																											|
+|---		|---						|---																																											|
+|minimax|chatCompletion	|abab4-chat、abab5-chat（默认值）																													|
+|openai	|chatCompletion	|gpt-4、gpt-4-0314、gpt-4-32k、gpt-4-32k-0314、gpt-3.5-turbo（默认值）、gpt-3.5-turbo-0301|
+
+**示例**
+
+```js
+llm.chatCompletion({
+  messages: [{
+    role: 'user',
+    content: '你好'
+  }]
+})
+```

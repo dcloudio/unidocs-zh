@@ -50,8 +50,7 @@ ai能力非常常见的应用场景，有智能客服和自动生成文稿。
 - uni-cms，内置了智能内容生成。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)
 
 这些完善的项目，包括了前端页面（全端可用）、云对象、云数据库等全套代码，开箱即用。
-
-![](https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/uni-ai/uni-ai-cms-im-3.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai/uni-ai-cms-im-pc.png)
 
 5. 费用优化
 

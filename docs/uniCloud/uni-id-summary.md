@@ -1422,8 +1422,7 @@ For example, the appid of the passenger side is `__uni_111111`, and the appid of
 uni-id 3.3.0版本起用户注册时会自动在用户表的记录内标记为注册应用对应的用户，如果没有单独授权登录其他应用的话则只能登录这个应用。即在乘客端应用注册的，默认只能在乘客端应用登录。
 Since uni-id version 3.3.0, when a user registers, it will be automatically marked as the user corresponding to the registered application in the records of the user table. If there is no separate authorization to log in to other applications, you can only log in to this application. That is, if you register in the passenger terminal application, you can only log in in the passenger terminal application by default.
 
-如何授权登录其他应用请参考：[授权、禁止用户在特定客户端应用登录](#authorize-app)
-For how to authorize login to other applications, please refer to: [Authorize, prohibit users from logging in to specific client applications](#authorize-app)
+如何授权登录其他应用请参考：[授权、禁止用户在特定客户端应用登录](uni-id-pages.md#authorize-app)
 
 需要注意的是客户端APPID信息是由端上传上来的，并非完全可信，尽量在入口处进行校验。例：
 It should be noted that the client APPID information is uploaded from the end, and is not completely trusted. Try to verify it at the entrance. example:

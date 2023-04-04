@@ -100,9 +100,6 @@ Right-click the cloud function directory in the project manager, and select "Upl
 对于云函数，上传并运行时会自动带上配置的运行测试参数。请参考：[配置运行测试参数](?id=runparam)
 For cloud functions, the configured running test parameters are automatically included when uploading and running. Please refer to: [Configure run test parameters](?id=runparam)
 
-注：云对象不支持上传并运行。
-Note: Cloud objects do not support upload and run.
-
 ## 客户端联调云函数@calllocalfunction
 ## Client joint debugging cloud function @calllocalfunction
 

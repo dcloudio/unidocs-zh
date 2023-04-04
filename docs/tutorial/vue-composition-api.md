@@ -66,11 +66,17 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   import { defineComponent, ref } from '@vue/composition-api'
   import { onReady } from '@dcloudio/uni-app'
   export default defineComponent({
-    setup() {
+    setup(_, { expose }) {
       const title = ref('Hello')
       onReady(() => {
         console.log('onReady')
       })
+      // @vue/composition-api 当前版本并无 expose 方法
+      if (expose) {
+        expose({
+          title
+        }) 
+      }
       return {
         title
       }
@@ -120,11 +126,25 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   onReady(() => {
     console.log('onReady')
   })
+  defineExpose({
+    // 注意要在 defineExpose 函数外定义
+    title
+  })
   </script>
   ```
   
 ### 与 TypesSript 一起使用
 ### Working with TypesScript
 
-> 与 Script Setup 一同使用时会禁用默认的类型检查，具体请参考 [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
-> When used with Script Setup, the default type checking will be disabled. For details, please refer to [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
+* 与 Script Setup 一同使用时会禁用默认的类型检查，具体请参考 [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
+* 即使不与 Script Setup 一同使用但项目为 HBuilderX 创建的工程时，由于 HBuilderX 内置TypesSript插件当前版本较低，也需要禁用默认的类型检查
+
+```js
+  // vue.config.js
+  module.exports = {
+    chainWebpack (config) {
+      // disable type check and let `vue-tsc` handles it
+      config.plugins.delete('fork-ts-checker')
+    },
+  }
+```

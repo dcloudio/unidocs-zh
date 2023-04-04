@@ -1943,19 +1943,24 @@ await uniIdCo.setAuthorizedApp({
 #### 注册用户@external-register
 
 外部用户注册，注册成功后，uni-id 返回 uid 与 用户 token ，请务必在自身系统中维护好 uid 与 token。
+|uni-id-nonce|string|是|随机字符串|
+|uni-id-timestamp|string|是|当前时间戳; 单位毫秒|
+|uni-id-signature|string|是|请求鉴权签名; 签名算法见下|
 
-**接口形式**
+**HTTP 示例**
+```javascript
+POST /your-uni-id-co-path/externalRegister HTTP/1.1
+Host: xxx.com
+uni-id-nonce: xxxxxxx
+uni-id-timestamp: 1676882808550
+uni-id-signature: 11c965267a4a02c6978949c7135215b0a75aea22b2b84ed491e792365c8269efa
+Content-Type: application/json
+Cache-Control: no-cache
 
-```js
-await uniIdCo.externalRegister({
-	externalUid,
-	nickname,
-	avatar,
-	gender
-})
+{"externalUid": "test externalUid", "nickname": "张三", "avatar": "xxxxxxx", "gender": 0}
 ```
 
-**参数说明**
+**Request Body 说明**
 
 | 参数名		         | 类型				     | 必填	 | 说明									                |
 |---------------|------------|-----|----------------------------|
@@ -1964,7 +1969,7 @@ await uniIdCo.externalRegister({
 | avatar	       | string     | 否		 | 用户头像	                      |
 | gender	       | number     | 否		 | 用户性别；0 未知 1 男性 2 女性	       |
 
-**返回值**
+**Response Body 说明**
 
 |参数名							|类型				|说明			|
 |--								|--					|--				|
@@ -1985,23 +1990,27 @@ await uniIdCo.externalRegister({
 
 该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
 
-**接口形式**
+**HTTP 示例**
+```javascript
+POST /your-uni-id-co-path/externalLogin HTTP/1.1
+Host: xxx.com
+uni-id-nonce: xxxxxxx
+uni-id-timestamp: 1676882808550
+uni-id-signature: 11c965267a4a02c6978949c7135215b0a75aea22b2b84ed491e792365c8269efa
+Content-Type: application/json
+Cache-Control: no-cache
 
-```js
-await uniIdCo.externalLogin({
-	uid,
-	externalUid
-})
+{"externalUid": "test externalUid"}
 ```
 
-**参数说明**
+**Request Body 说明**
 
 |参数名		|类型				|必填	|说明									|
 |--			|--					|--		|--										|
 |uid		|string				|否		|uni-id体系的用户Id；与externalUid 二选一									|
 |externalUid		|string				|否		|自身系统的用户id；与 uid 二选一									|
 
-**返回值**
+**Response Body 说明**
 
 |参数名							|类型				|说明			|
 |--								|--					|--				|
@@ -2018,27 +2027,20 @@ await uniIdCo.externalLogin({
 
 该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
 
-**接口形式**
+**HTTP 示例**
+```javascript
+POST /your-uni-id-co-path/externalLogin HTTP/1.1
+Host: xxx.com
+uni-id-nonce: xxxxxxx
+uni-id-timestamp: 1676882808550
+uni-id-signature: 11c965267a4a02c6978949c7135215b0a75aea22b2b84ed491e792365c8269efa
+Content-Type: application/json
+Cache-Control: no-cache
 
-```js
-await uniIdCo.updateUserInfoByExternal({
-	uid,
-	externalUid,
-	username,
-	password,
-	nickname,
-	authorizedApp,
-	role,
-	mobile,
-	email,
-	tags,
-	status,
-	gender,
-	avatar
-})
+{"externalUid": "test externalUid", "nickname": "张三"}
 ```
 
-**参数说明**
+**Request Body 说明**
 
 | 参数名		         | 类型				              | 必填	 | 说明									                                   |
 |---------------|---------------------|-----|-----------------------------------------------|
@@ -2056,7 +2058,7 @@ await uniIdCo.updateUserInfoByExternal({
 | avatar	       | string              | 否		 | 用户头像	                                         |
 | gender	       | number              | 否		 | 用户性别；0 未知 1 男性 2 女性	                          |
 
-**返回值**
+**Response Body 说明**
 
 | 参数名							                      | 类型				              | 说明			                |
 |---------------------------------|---------------------|----------------------|

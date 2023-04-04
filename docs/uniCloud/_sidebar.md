@@ -92,6 +92,7 @@
   * [uni-open-bridge](uni-open-bridge.md)
   * [uni-cloud-s2s](uni-cloud-s2s.md)
   * [uni-subscribemsg 公共模块](uni-subscribemsg.md)
+* [uni-ai](uni-ai.md)
 * [案例](resource.md)
 * [开发者使用反馈](feedback.md)
 * [DCloud行业认证服务商](https://ask.dcloud.net.cn/article/39388)

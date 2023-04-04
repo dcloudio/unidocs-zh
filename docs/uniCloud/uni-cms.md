@@ -56,6 +56,16 @@ uni-cms是全端的、开源的、云端一体的CMS内容管理系统。
 **注意**
 - 如果您的项目不是`uni-starter`或者不存在 `uni-id-pages`插件，请将`uni-id-pages`一同导入至项目中，要了解`uni-id-pages` [详见](/uniCloud/uni-id-pages.md)
 
+#### 3. 添加文章作者
+
+在uni-admin管理后台中“系统管理”-“角色管理”中添加文章作者角色，如下图所示：
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202303291731004.png)
+
+**注意**
+
+- 为了保证文章作者的安全，需要为文章作者分配一个专用的角色（唯一ID `author`），而不是使用管理员角色。
+
 ## 二次开发
 
 > 如果目前的 uni-CMS 不能满足你的需求，你可以基于 uni-CMS 进行二次开发。
@@ -187,7 +197,7 @@ uni-cms-article                             // uni-cms-article 插件
 
 ### uni-cms 云对象
 
-#### 配置文件
+#### 配置文件@uni-cms-config
 
 uni-cms 配置文件为 `uni_modules/uni-config-center/common/uni-cms/config.js`, 用于配置uni-cms相关信息, 完整配置如下:
 ```json
@@ -348,11 +358,15 @@ export default {
 
 ### 内容安全检测@content-security-check
 
-内容安全功能由[uni-sec-check]()提供，`uni-sec-check`文档[详见]()
+内容安全功能由[uni-sec-check](https://ext.dcloud.net.cn/plugin?id=5460)提供，默认不开启。
+`uni-sec-check`文档[详见](https://ext.dcloud.net.cn/plugin?id=5460)
+
+注意：`uni-sec-check`模块依赖`uni-open-bridge`, 使用前需要在`uni-config-center`内添加`uni-id`配置，
+具体配置参考[uni-sec-check文档](https://ext.dcloud.net.cn/plugin?id=5460)
 
 uni-cms 会使用 uni-sec-check 检测用户输入的文字与上传的图片，如果检测到违规内容，内容将无法正常发布。
 
-您可以根据自己需求开启或关闭内容安全检测，在 `uni-cms` 配置文件中配置 `contentSecurity` 字段，例如:
+您可以根据自己需求开启或关闭内容安全检测，在 `uni-cms` 云端配置文件中配置 `contentSecurity` 字段，例如:
 
 ```javascript
 // 开启
@@ -374,6 +388,7 @@ uni-cms 会使用 uni-sec-check 检测用户输入的文字与上传的图片，
 
 - `allowCheckType`存在`content`值时；内容安全将会对文章标题、文章内容、文章摘要进行检测。
 - `allowCheckType`存在`image`值时；内容安全将会对上传的封面图片、文章内容中的图片进行检测。
+- 详细的`uni-cms`配置文件参考[uni-cms配置](#uni-cms-config)
 
 ## 后续计划
 

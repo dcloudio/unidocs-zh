@@ -97,16 +97,17 @@ DCloud会遴选邀请部分用户参与内测。完善后会正式推出。
 
 **参数说明GetLLMManagerOptions**
 
-|参数			|类型		|必填	|默认值	|说明																					|
-|---			|---		|---	|---		|---																					|
-|provider	|string	|是		|-			|llm服务商，目前支持`minimax`、`openai`				|
+|参数			|类型		|必填				|默认值	|说明																		|
+|---			|---		|---				|---		|---																		|
+|provider	|string	|是					|-			|llm服务商，目前支持`minimax`、`openai`	|
+|apiKey		|string	|openai必填	|-			|`openai`的apiKey												|
+|proxy		|string	|否					|-			|`openai`代理服务器											|
 
 **示例**
 
 ```js
 const llm = uniCloud.ai.getLLMManager({
-  provider: 'minimax',
-  model
+  provider: 'minimax'
 })
 ```
 
@@ -123,6 +124,38 @@ const llm = uniCloud.ai.getLLMManager({
 |maxTokens	|number	|否		|minimax为128、openai默认不限制											|总token数限制																																												|
 |temperature|number	|否		|minimax默认为0.95，openai默认为1										|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|
 |topP				|number	|否		|minimax默认为0.9，openai默认为1										|采样方法，数值越小结果确定性越强；数值越大，结果越随机																								|
+
+**messages参数说明**
+
+LLM没有记忆能力，messages参数内需要包含前文，LLM才能理解之前聊天的内容。
+
+messages是一个数组，其中每项有消息内容和角色组成
+
+messages示例
+
+```js
+const messages = [{
+    role: 'system',
+    content: '这里是一些对话的背景设定'
+  },{
+    role: 'user',
+    content: '你好'
+  }, {
+    role: 'assistant',
+    content: '你好'
+  }, {
+    role: 'user',
+    content: '请讲解一下勾股定理'
+  }]
+```
+
+role有三个可能的值：
+
+- system 系统，对应的content字段一般用于对话背景设定等功能。**minimax仅能在messages数组第一项放system角色及信息**
+- user 用户，对应的content字段为用户输入的信息
+- assistant ai助手，对应的content字段为ai返回的信息
+
+多数情况下messages内容越多消耗的token越多，所以一般是需要开发者要求ai对上文进行总结，下次对话传递总结及总结之后的对话内容以实现更长的对话。
 
 **可用模型**
 

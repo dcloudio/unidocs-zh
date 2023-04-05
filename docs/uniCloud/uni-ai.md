@@ -78,30 +78,36 @@ let llm = uniCloud.ai.getLLMManager({
 llm.chatCompletion({
   messages: [{
     role: 'user',
-    content: '你好'
+    content: '你好，ai'
   }]
 })
 ```
 
 ## API
 
+ai作为一种云能力，相关调用被整合到uniCloud中。
+
+如您的服务器业务不在uniCloud上，可以把云函数URL化，把uni-ai当做http接口调用。
+
+在实际应用中，大多数场景是直接使用uni-im和uni-cms的ai功能，这些开源项目已经把完整逻辑都实现，无需自己研究API。
+
 ## 内测邀请
 目前`uni-ai`处于内测邀请阶段，可以在需求墙为uni-ai投票（在[需求墙](https://dev.dcloud.net.cn/wish/)选uniCloud分类，对uni-ai投票）。
 DCloud会遴选邀请部分用户参与内测。完善后会正式推出。
 
-> 服务器业务不在uniCloud上的开发者，可以把云函数URL化，把uni-ai当做http接口调用。
-
 ### 获取LLM服务商实例@get-llm-manager
+
+LLM指大语言模型，区别于ai生成图片等其他模型。
 
 用法：`uniCloud.ai.getLLMManager(Object GetLLMManagerOptions);`
 
 **参数说明GetLLMManagerOptions**
 
-|参数			|类型		|必填				|默认值	|说明																		|
-|---			|---		|---				|---		|---																		|
-|provider	|string	|是					|-			|llm服务商，目前支持`minimax`、`openai`	|
-|apiKey		|string	|openai必填	|-			|`openai`的apiKey												|
-|proxy		|string	|否					|-			|`openai`代理服务器											|
+|参数		|类型	|必填		|默认值	|说明															|
+|---		|---	|---		|---	|---															|
+|provider	|string	|是			|-		|llm服务商，目前支持`openai`、`minimax`。不指定时由uni-ai自动分配	|
+|apiKey		|string	|否			|-		|llm服务商的apiKey，如不填则使用uni-ai的key。目前openai是必填		|
+|proxy		|string	|否			|-		|`openai`等国外服务的代理服务器地址								|
 
 **示例**
 
@@ -117,13 +123,13 @@ const llm = uniCloud.ai.getLLMManager({
 
 **参数说明ChatCompletionOptions**
 
-|参数				|类型		|必填	|默认值																							|说明																																																	|
-|---				|---		|---	|---																								|---																																																	|
-|messages		|array	|是		| -																									|对话信息																																															|
-|model			|string	|否		|minimax默认为abab5-chat，openai默认为gpt-3.5-turbo	|模型名称，不同服务商可选模型不同，见下方说明																													|
-|maxTokens	|number	|否		|minimax为128、openai默认不限制											|总token数限制																																												|
-|temperature|number	|否		|minimax默认为0.95，openai默认为1										|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|
-|topP				|number	|否		|minimax默认为0.9，openai默认为1										|采样方法，数值越小结果确定性越强；数值越大，结果越随机																								|
+|参数		|类型	|必填	|默认值								|说明																									|
+|---		|---	|---	|---								|---																									|
+|messages	|array	|是		| -									|提问信息																								|
+|model		|string	|否		|openai默认为gpt-3.5-turbo			|模型名称，不同服务商可选模型不同，见下方说明															|
+|maxTokens	|number	|否		|minimax为128、openai默认不限制		|总token数限制																							|
+|temperature|number	|否		|minimax默认为0.95，openai默认为1	|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|
+|topP		|number	|否		|minimax默认为0.9，openai默认为1	|采样方法，数值越小结果确定性越强；数值越大，结果越随机													|
 
 **messages参数说明**
 
@@ -151,7 +157,7 @@ const messages = [{
 
 role有三个可能的值：
 
-- system 系统，对应的content字段一般用于对话背景设定等功能。**minimax仅能在messages数组第一项放system角色及信息**
+- system 系统，对应的content字段一般用于对话背景设定等功能。system角色及信息只能放在messages数组第一项。
 - user 用户，对应的content字段为用户输入的信息
 - assistant ai助手，对应的content字段为ai返回的信息
 
@@ -161,8 +167,8 @@ role有三个可能的值：
 
 |服务商	|接口						|模型																																											|
 |---		|---						|---																																											|
-|minimax|chatCompletion	|abab4-chat、abab5-chat（默认值）																													|
 |openai	|chatCompletion	|gpt-4、gpt-4-0314、gpt-4-32k、gpt-4-32k-0314、gpt-3.5-turbo（默认值）、gpt-3.5-turbo-0301|
+|minimax|chatCompletion	|abab4-chat、abab5-chat（默认值）																													|
 
 **示例**
 

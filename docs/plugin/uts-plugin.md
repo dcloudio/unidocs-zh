@@ -86,14 +86,6 @@ Equivalent to native language plugins, the advantages of uts plugins:
 4. uts 下前端和原生可以统一在 HBuilderX 中联调。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
 4. The front-end and native under uts can be jointly debugged in HBuilderX. However, traditional native language plug-ins need to switch between multiple development tools, making joint debugging complicated.
 
-当前 uts 插件的完善度还没有达到原生语言插件的水平，虽然会陆续升级解决，但明示如下：
-The perfection of the current uts plug-in has not yet reached the level of the native language plug-in. Although it will be upgraded one after another, it is expressly stated as follows:
-
-1. uts 插件无法封装 nvue 页面组件
-1. The uts plugin cannot encapsulate nvue page components
-2. uts 插件还无法在插件市场计费销售
-2. UTS plug-ins cannot be sold in the plug-in market for billing
-
 ### uts插件和Native.js的区别
 ### Difference between uts plugin and Native.js
 
@@ -833,8 +825,7 @@ If there is no `uts compile and run plugin` in HBuilderX, it will be downloaded 
 #### iOS平台
 #### iOS Platform
 
-- HBuilderX 3.6.9以下版本，uts插件不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)才能生效  
-- For versions below HBuilderX 3.6.9, the uts plug-in does not support hot refresh, and the real machine needs to be submitted to the cloud for packaging and generation [custom base](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html #customplayground) to take effect
+- HBuilderX 3.6.9以下版本，uts插件不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 - HBuilderX 3.6.9+，uts插件，支持本地编译和真机运行 [详情](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
 - HBuilderX 3.6.9+, uts plug-in, supports local compilation and real machine operation [Details](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
 
@@ -867,11 +858,7 @@ The uts code does not currently support running directly on a standard docking s
 ### 5.3 Legacy issues
 
 截止到HBuilderX 3.6.9 时遗留事项：
-Remaining items as of HBuilderX 3.6.9:
-- 不能debug断点uts源码   
 - Android平台不支持跨进程调试/日志打印
-- iOS平台uts插件需要提交云端生成自定义基座才能真机运行，修改uts代码后需重新提交云端打包才能生效  
-- The iOS platform uts plug-in needs to be submitted to the cloud to generate a custom base to run on the real machine. After modifying the uts code, it needs to be re-submitted to the cloud for packaging to take effect
 
 遗留事项后续升级完善。
 Remaining matters will be upgraded and improved later.
@@ -882,7 +869,6 @@ Remaining matters will be upgraded and improved later.
 
 正常支持云端打包。但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。  
 Cloud packaging is normally supported. However, after packaging, uts is compiled into pure native binary code and does not support wgt hot update.
-
 
 
 
@@ -987,14 +973,9 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 ## route map
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-UTS is a huge project, and the products will be released in stages. To be released in the near future:
-1. 原生插件的组件
-1. Components of native plugins
-2. ide debug
-3. 插件市场支持uts插件的加密和计费销售
-3. The plug-in market supports encryption and billing sales of uts plug-ins
-4. uvue页面，纯原生的视图组件构成的页面
-4. uvue page, a page composed of pure native view components
+1. uts插件中可陆续使用uni的各种api，比如uni.request。
+2. 插件市场支持uts插件的加密和计费销售
+3. uvue页面，纯原生的视图组件构成的页面
 
 最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
 Ultimately, uts is no longer a plugin for uni-app, but the body of the app. (Now it is mainly js, uts exists as a plug-in, and the main engine is still in v8 or jscore)

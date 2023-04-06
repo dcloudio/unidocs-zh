@@ -103,11 +103,12 @@ LLM指大语言模型，区别于ai生成图片等其他模型。
 
 **参数说明GetLLMManagerOptions**
 
-|参数		|类型	|必填		|默认值	|说明															|
-|---		|---	|---		|---	|---															|
-|provider	|string	|是			|-		|llm服务商，目前支持`openai`、`minimax`。不指定时由uni-ai自动分配	|
-|apiKey		|string	|否			|-		|llm服务商的apiKey，如不填则使用uni-ai的key。目前openai是必填		|
-|proxy		|string	|否			|-		|`openai`等国外服务的代理服务器地址								|
+|参数				|类型		|必填	|默认值	|说明																															|
+|---				|---		|---	|---		|---																															|
+|provider		|string	|是		|-			|llm服务商，目前支持`openai`、`minimax`、`baidu`。不指定时由uni-ai自动分配	|
+|apiKey			|string	|否		|-			|llm服务商的apiKey，如不填则使用uni-ai的key。目前openai是必填			|
+|accessToken|string	|否		|-			|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)									|
+|proxy			|string	|否		|-			|`openai`等国外服务的代理服务器地址																|
 
 **示例**
 
@@ -123,13 +124,13 @@ const llm = uniCloud.ai.getLLMManager({
 
 **参数说明ChatCompletionOptions**
 
-|参数		|类型	|必填	|默认值								|说明																									|
-|---		|---	|---	|---								|---																									|
-|messages	|array	|是		| -									|提问信息																								|
-|model		|string	|否		|openai默认为gpt-3.5-turbo			|模型名称，不同服务商可选模型不同，见下方说明															|
-|maxTokens	|number	|否		|minimax为128、openai默认不限制		|总token数限制																							|
-|temperature|number	|否		|minimax默认为0.95，openai默认为1	|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|
-|topP		|number	|否		|minimax默认为0.9，openai默认为1	|采样方法，数值越小结果确定性越强；数值越大，结果越随机													|
+|参数				|类型		|必填	|默认值										|说明																																																	|兼容性说明				|
+|---				|---		|---	|---											|---																																																	|---							|
+|messages		|array	|是		| -												|提问信息																																															|									|
+|model			|string	|否		|openai默认为gpt-3.5-turbo|模型名称，不同服务商可选模型不同，见下方说明																													|百度文心一言不支持此参数	|
+|maxTokens	|number	|否		|4096											|总token数限制																																												|百度文心一言不支持此参数	|
+|temperature|number	|否		|1												|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|百度文心一言不支持此参数	|
+|topP				|number	|否		|1												|采样方法，数值越小结果确定性越强；数值越大，结果越随机																								|百度文心一言不支持此参数	|
 
 **messages参数说明**
 
@@ -142,22 +143,22 @@ messages示例
 ```js
 const messages = [{
     role: 'system',
-    content: '这里是一些对话的背景设定'
+    content: '以下对话只需给出结果，不要对结果进行解释。'
   },{
     role: 'user',
-    content: '你好'
+    content: '以数组形式返回nodejs os模块的方法列表，数组的每一项是一个方法名。'
   }, {
     role: 'assistant',
-    content: '你好'
+    content: '以下是 Node.js 的 os 模块的方法列表，以数组形式返回，每一项是一个方法名：["arch","cpus","endianness","freemem","getPriority","homedir","hostname","loadavg","networkInterfaces","platform","release","setPriority","tmpdir","totalmem","type","uptime","userInfo"]'
   }, {
     role: 'user',
-    content: '请讲解一下勾股定理'
+    content: '返回北京市所有市辖区名组成的数组'
   }]
 ```
 
 role有三个可能的值：
 
-- system 系统，对应的content字段一般用于对话背景设定等功能。system角色及信息只能放在messages数组第一项。
+- system 系统，对应的content字段一般用于对话背景设定等功能。system角色及信息只能放在messages数组第一项。文心一言不支持此角色
 - user 用户，对应的content字段为用户输入的信息
 - assistant ai助手，对应的content字段为ai返回的信息
 

@@ -124,11 +124,11 @@ const llm = uniCloud.ai.getLLMManager({
 
 **参数说明ChatCompletionOptions**
 
-|参数				|类型		|必填	|默认值										|说明																																																	|兼容性说明				|
-|---				|---		|---	|---											|---																																																	|---							|
-|messages		|array	|是		| -												|提问信息																																															|									|
+|参数				|类型		|必填	|默认值										|说明																																																	|兼容性说明								|
+|---				|---		|---	|---											|---																																																	|---											|
+|messages		|array	|是		| -												|提问信息																																															|													|
 |model			|string	|否		|openai默认为gpt-3.5-turbo|模型名称，不同服务商可选模型不同，见下方说明																													|百度文心一言不支持此参数	|
-|maxTokens	|number	|否		|4096											|总token数限制																																												|百度文心一言不支持此参数	|
+|maxTokens	|number	|否		|-												|生成的token数量限制，需要注意此数量和传入的message token数量相加不可大于4096													|百度文心一言不支持此参数	|
 |temperature|number	|否		|1												|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|百度文心一言不支持此参数	|
 |topP				|number	|否		|1												|采样方法，数值越小结果确定性越强；数值越大，结果越随机																								|百度文心一言不支持此参数	|
 

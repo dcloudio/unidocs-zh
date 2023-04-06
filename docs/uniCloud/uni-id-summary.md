@@ -516,8 +516,7 @@ The uni-id cloud will automatically return the token after the login method is s
 云函数和云对象都提供了获取和校验token的方法，在uni-id相关业务中，校验token的代码都已经写好。
 Both cloud functions and cloud objects provide methods for obtaining and verifying tokens. In uni-id related services, the code for verifying tokens has been written.
 
-包括token快到期时的自动续期，开发者只需在config.json中配置好临近多久自动续期，续期的代码也无法开发者编写，框架已经内置。
-Including the automatic renewal when the token is about to expire, the developer only needs to configure how long the automatic renewal will be in config.json, and the renewal code cannot be written by the developer, and the framework is already built-in.
+包括token快到期时的自动续期，开发者只需在config.json中配置好临近多久自动续期，续期的代码也无需开发者编写，框架已经内置。
 
 注：不同平台的token有效期一般不一样，app有效期较长，web有效期较短。每个平台的有效期都可以单独在config.json里配置。
 Note: The validity period of tokens on different platforms is generally different, the validity period of the app is longer, and the validity period of the web is shorter. The validity period for each platform can be configured individually in config.json.

@@ -54,11 +54,6 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 3. 插件封装中要理解的概念更少。 传统原生语言插件需要在js和原生层处理通信，使用各种特殊转换，使用特殊语法导入，注意事项很多。**uts统一为纯前端概念，简单清晰。**
 4. uts 下前端和原生可以统一在 HBuilderX 中联调。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
 
-当前 uts 插件的完善度还没有达到原生语言插件的水平，虽然会陆续升级解决，但明示如下：
-
-1. uts 插件无法封装 nvue 页面组件
-2. uts 插件还无法在插件市场计费销售
-
 ### uts插件和Native.js的区别
 
 - [Native.js](../tutorial/native-js.md) 运行在js上，通过反射调用os api。功能和性能都不及真正的原生
@@ -650,7 +645,7 @@ getBatteryCapacity()
 
 #### iOS平台
 
-- HBuilderX 3.6.9以下版本，uts插件不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)才能生效  
+- HBuilderX 3.6.9以下版本，uts插件不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 - HBuilderX 3.6.9+，uts插件，支持本地编译和真机运行 [详情](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
 
 ### 5.2 自定义基座
@@ -672,9 +667,7 @@ uts代码暂不支持直接使用标准基座真机运行。与原生插件一�
 ### 5.3 遗留问题
 
 截止到HBuilderX 3.6.9 时遗留事项：
-- 不能debug断点uts源码   
 - Android平台不支持跨进程调试/日志打印
-- iOS平台uts插件需要提交云端生成自定义基座才能真机运行，修改uts代码后需重新提交云端打包才能生效  
 
 遗留事项后续升级完善。
 
@@ -682,7 +675,6 @@ uts代码暂不支持直接使用标准基座真机运行。与原生插件一�
 ## 6 云端打包
 
 正常支持云端打包。但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。  
-
 
 
 
@@ -770,10 +762,9 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 ## 路线图
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-1. 原生插件的组件
-2. ide debug
-3. 插件市场支持uts插件的加密和计费销售
-4. uvue页面，纯原生的视图组件构成的页面
+1. uts插件中可陆续使用uni的各种api，比如uni.request。
+2. 插件市场支持uts插件的加密和计费销售
+3. uvue页面，纯原生的视图组件构成的页面
 
 最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
 

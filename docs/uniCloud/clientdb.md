@@ -189,7 +189,7 @@ db.off('refreshToken', refreshToken)
 const db = uniCloud.database()
 
 function onDBError({
-  code, // 错误码详见https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=returnvalue
+  code, // 错误码详见https://uniapp.dcloud.net.cn/uniCloud/jql.html#returnvalue
   message
 }) {
   // 处理错误

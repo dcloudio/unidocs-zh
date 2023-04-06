@@ -322,7 +322,7 @@ The developer first selects which client applications can establish a secure net
 1. 由于uni安全网络不支持web，一旦开启客户端强制校验后，web端将无法连接云函数。
 1. Since the uni security network does not support the web, once the client-side mandatory verification is enabled, the web side will not be able to connect to the cloud function.
 2. 由于uni安全网络必须绑定自己的应用，所以不支持标准基座的真机运行，只能使用自定义基座。
-2. Since the uni security network must bind its own application, it does not support the real machine operation of the standard base, and can only use the custom base.
+3. 如果存在旧客户端，但是想在新版本使用安全网络，建议不开启客户端校验，使用请求加密来实现安全通讯。通过判断版本号，旧版本不强制要求使用加密。在旧版本量很小的时候去除这个逻辑。
 
 开启客户端验证功能后，默认对**所有云函数**启用安全验证，仅在安全网络应用列表内配置的应用允许访问云函数。但有时，会有排除某个云函数的需求。比如指定的云函数校验或不校验客户端身份，这个云函数可能要url供外部访问。
 After the client authentication function is enabled, security authentication is enabled for **all cloud functions** by default, and only applications configured in the list of secure network applications are allowed to access cloud functions. But sometimes, there is a need to exclude a certain cloud function. For example, if the specified cloud function verifies or does not verify the client identity, this cloud function may require url for external access.
@@ -647,6 +647,3 @@ If an unexpected 70008 error occurs, please follow the steps below to troublesho
 3. 安全是有代价的，加密的数据越庞大，加密和解密的耗时越长。
 3. Security comes at a price. The larger the encrypted data, the longer it will take to encrypt and decrypt.
 4. 开启安全网络后，如果觉的联网速度变慢，一方面要开启redis，并在云函数中挂载redis扩展库；另一方面控制加密的数据量，没必要加密的数据就别加密。
-4. After enabling the secure network, if the network speed slows down, on the one hand, enable redis and mount the redis extension library in the cloud function; on the other hand, control the amount of encrypted data, and do not encrypt data that does not need to be encrypted.
-5. 如果存在旧客户端，但是想在新版本使用安全网络，建议不开启客户端校验，使用请求加密来实现安全通讯。通过判断版本号，旧版本不强制要求使用加密。在旧版本量很小的时候去除这个逻辑。
-5. If there is an old client, but you want to use a secure network in the new version, it is recommended not to enable client verification, and use request encryption to achieve secure communication. By judging the version number, older versions do not mandate the use of encryption. Remove this logic when the old version is small.

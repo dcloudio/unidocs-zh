@@ -72,8 +72,7 @@ ai都是回答文字内容，但实际场景中经常需要自动化执行一些
 ```js
 // 因涉及费用，ai能力调用均需在服务器端进行，也就是uniCloud云函数或云对象中
 let llm = uniCloud.ai.getLLMManager({
-  provider,
-  model
+  provider
 })
 llm.chatCompletion({
   messages: [{
@@ -103,12 +102,12 @@ LLM指大语言模型，区别于ai生成图片等其他模型。
 
 **参数说明GetLLMManagerOptions**
 
-|参数				|类型		|必填	|默认值	|说明																															|
-|---				|---		|---	|---		|---																															|
-|provider		|string	|是		|-			|llm服务商，目前支持`openai`、`minimax`、`baidu`。不指定时由uni-ai自动分配	|
-|apiKey			|string	|否		|-			|llm服务商的apiKey，如不填则使用uni-ai的key。目前openai是必填			|
-|accessToken|string	|否		|-			|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)									|
-|proxy			|string	|否		|-			|`openai`等国外服务的代理服务器地址																|
+|参数				|类型		|必填	|默认值	|说明																																																																	|
+|---				|---		|---	|---		|---																																																																	|
+|provider		|string	|是		|-			|llm服务商，目前支持`openai`、`minimax`、`baidu`。不指定时由uni-ai自动分配																														|
+|apiKey			|string	|否		|-			|llm服务商的apiKey，如不填则使用uni-ai的key。目前openai是必填																																					|
+|accessToken|string	|否		|-			|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)|
+|proxy			|string	|否		|-			|`openai`等国外服务的代理服务器地址																																																		|
 
 **示例**
 
@@ -124,13 +123,13 @@ const llm = uniCloud.ai.getLLMManager({
 
 **参数说明ChatCompletionOptions**
 
-|参数				|类型		|必填	|默认值										|说明																																																	|兼容性说明								|
-|---				|---		|---	|---											|---																																																	|---											|
-|messages		|array	|是		| -												|提问信息																																															|													|
-|model			|string	|否		|openai默认为gpt-3.5-turbo|模型名称，不同服务商可选模型不同，见下方说明																													|百度文心一言不支持此参数	|
-|maxTokens	|number	|否		|-												|生成的token数量限制，需要注意此数量和传入的message token数量相加不可大于4096													|百度文心一言不支持此参数	|
-|temperature|number	|否		|1												|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|百度文心一言不支持此参数	|
-|topP				|number	|否		|1												|采样方法，数值越小结果确定性越强；数值越大，结果越随机																								|百度文心一言不支持此参数	|
+|参数				|类型		|必填	|默认值						|说明																																																	|兼容性说明								|
+|---				|---		|---	|---							|---																																																	|---											|
+|messages		|array	|是		| -								|提问信息																																															|													|
+|model			|string	|否		|默认值见下方说明	|模型名称，不同服务商可选模型不同，见下方说明																													|百度文心一言不支持此参数	|
+|maxTokens	|number	|否		|-								|生成的token数量限制，需要注意此数量和传入的message token数量相加不可大于4096													|百度文心一言不支持此参数	|
+|temperature|number	|否		|1								|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|百度文心一言不支持此参数	|
+|topP				|number	|否		|1								|采样方法，数值越小结果确定性越强；数值越大，结果越随机																								|百度文心一言不支持此参数	|
 
 **messages参数说明**
 
@@ -152,17 +151,19 @@ const messages = [{
     content: '以下是 Node.js 的 os 模块的方法列表，以数组形式返回，每一项是一个方法名：["arch","cpus","endianness","freemem","getPriority","homedir","hostname","loadavg","networkInterfaces","platform","release","setPriority","tmpdir","totalmem","type","uptime","userInfo"]'
   }, {
     role: 'user',
-    content: '返回北京市所有市辖区名组成的数组'
+    content: '从上述方法名中筛选首字母为元音字母的方法名，以数组形式返回'
   }]
 ```
 
-role有三个可能的值：
-
-- system 系统，对应的content字段一般用于对话背景设定等功能。system角色及信息只能放在messages数组第一项。文心一言不支持此角色
-- user 用户，对应的content字段为用户输入的信息
-- assistant ai助手，对应的content字段为ai返回的信息
+上述对话中第1条system角色的信息为对话背景设定，第2条为用户消息，第3条为ai的回答，第4条是用户最新消息。ai会使用背景设定及前置对话记录对最新消息进行回复。
 
 多数情况下messages内容越多消耗的token越多，所以一般是需要开发者要求ai对上文进行总结，下次对话传递总结及总结之后的对话内容以实现更长的对话。
+
+role有三个可能的值：
+
+- system 系统，对应的content一般用于对话背景设定等功能。system角色及信息只能放在messages数组第一项。文心一言不支持此角色
+- user 用户，对应的content为用户输入的信息
+- assistant ai助手，对应的content为ai返回的信息
 
 **可用模型**
 
@@ -170,6 +171,21 @@ role有三个可能的值：
 |---		|---						|---																																											|
 |openai	|chatCompletion	|gpt-4、gpt-4-0314、gpt-4-32k、gpt-4-32k-0314、gpt-3.5-turbo（默认值）、gpt-3.5-turbo-0301|
 |minimax|chatCompletion	|abab4-chat、abab5-chat（默认值）																													|
+
+**返回值**
+
+|参数												|类型								|必备	|默认值	|说明																											|兼容性说明							|
+|---												|---								|---	|---		|---																											|---										|
+|reply											|string							|是		| -			|ai对本次消息的回复																				|												|
+|choices										|array&lt;object&gt;|否		|-			|所有生成结果																							|百度文心一言不返回此项	|
+|&#124;--finishReason				|string							|否		|-			|截断原因，stop（正常结束）、length（超出maxTokens被截断）|												|
+|&#124;--message						|object							|否		|-			|返回消息																									|												|
+|&nbsp;&nbsp;&#124;--role		|string							|否		|-			|角色																											|												|
+|&nbsp;&nbsp;&#124;--content|string							|否		|-			|消息内容																									|												|
+|usage											|object							|是		|-			|本次对话token消耗详情																		|												|
+|&#124;--promptTokens				|number							|否		|-			|输入的token数量																					|minimax不返回此项			|
+|&#124;--completionTokens		|number							|否		|-			|生成的token数量																					|minimax不返回此项			|
+|&#124;--totalTokens				|number							|是		|-			|总token数量																							|												|
 
 **示例**
 

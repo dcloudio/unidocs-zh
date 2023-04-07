@@ -223,6 +223,8 @@ After generating a custom base, in the device selection window, you can select a
 注意：自定义运行基座是测试版，不可直接商用（使用自定义运行基座覆盖安装apk不会更新应用资源，并且有toast警告）。正式发版时需要按正常打包方式重新打包。
 Note: The custom running base is a beta version and cannot be directly commercialized (using the custom running base to overwrite the installation of the apk will not update the application resources, and there is a toast warning). When the official version is released, it needs to be repackaged according to the normal packaging method.
 
+> HBuilderX 3.7.13起，MacOSX系统，App项目，支持运行自定义基座到iOS模拟器。[参考文档](https://uniapp.dcloud.net.cn/tutorial/run/run-custom-base-ios-simulator.html)
+
 ## 离线打包生成自定义运行基座
 ## Offline packaging to generate a custom running base
 

@@ -606,4 +606,7 @@ Alibaba Cloud Cloud Storage currently does not have domain name isolation at the
 ### Use uniCloud.init to initialize the Alibaba Cloud official version service space and report "InvalidSpaceId.NotFound"
 
 商用版如果使用uniCloud.init需要自行传递endpoint参数，参考：[uniCloud.init](concepts/space.md#multi-space)
-If the commercial version uses uniCloud.init, you need to pass the endpoint parameters yourself, refer to: [uniCloud.init](concepts/space.md#multi-space)
+
+### 使用阿里云访问云函数时出现“unknow system error”
+
+检查云函数运行时间是否超出配置的超时时间，优化代码逻辑或配置更长的超时时间

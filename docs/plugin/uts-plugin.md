@@ -858,7 +858,7 @@ The uts code does not currently support running directly on a standard docking s
 ### 5.3 Legacy issues
 
 截止到HBuilderX 3.6.9 时遗留事项：
-- Android平台不支持跨进程调试/日志打印
+- Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台
 
 遗留事项后续升级完善。
 Remaining matters will be upgraded and improved later.

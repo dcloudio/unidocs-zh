@@ -150,6 +150,8 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 注意：自定义运行基座是测试版，不可直接商用（使用自定义运行基座覆盖安装apk不会更新应用资源，并且有toast警告）。正式发版时需要按正常打包方式重新打包。
 
+> HBuilderX 3.7.13起，MacOSX系统，App项目，支持运行自定义基座到iOS模拟器。[参考文档](https://uniapp.dcloud.net.cn/tutorial/run/run-custom-base-ios-simulator.html)
+
 ## 离线打包生成自定义运行基座
 
 可使用离线SDK打包生成自定义运行基座(不支持cli方式,将src拖拽到编辑器中，并重新识别项目类型)，生成后将apk和ipa包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk和iOS_debug.ipa。

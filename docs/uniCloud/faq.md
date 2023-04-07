@@ -423,3 +423,7 @@ let's encrypt于2021年9月30日根证书过期并切换到新版根证书。详
 ### 使用uniCloud.init初始化阿里云正式版服务空间报“InvalidSpaceId.NotFound”
 
 商用版如果使用uniCloud.init需要自行传递endpoint参数，参考：[uniCloud.init](concepts/space.md#multi-space)
+
+### 使用阿里云访问云函数时出现“unknow system error”
+
+检查云函数运行时间是否超出配置的超时时间，优化代码逻辑或配置更长的超时时间

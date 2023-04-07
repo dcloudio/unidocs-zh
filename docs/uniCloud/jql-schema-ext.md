@@ -95,6 +95,7 @@ ext.js里引入公共模块的机制：
 |sample							|object							|-			|否																		|sample（随机选取）方法的参数，新增于`3.7.0`																								|
 |docId							|string							|-			|否																		|doc方法的参数，数据库记录的_id，新增于`3.7.0`																							|
 |isGetTempLookup		|boolean						|-			|联表触发时必备                        |联表查询时用于标识，本次查询是否使用了getTemp，新增于`3.7.1`																|
+|primaryCollection	|string 						|-			|副表read必备                          |联表查询时主表的表名，新增于`3.7.13`																|
 
 #### secondaryCollection@secondary-collection
 

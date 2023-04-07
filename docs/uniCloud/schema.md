@@ -108,7 +108,7 @@ properties里的字段列表，每个字段都有很多可以设置的属性，�
 |基本|defaultValue|string&#124;Object|默认值|
 |基本|forceDefaultValue|string&#124;Object|强制默认值，不可通过clientDB的代码修改，常用于存放用户id、时间、客户端ip等固定值。具体参考下表的defaultValue|
 |值域校验|required|array|是否必填。支持填写必填的下级字段名称。required可以在表级的描述出现，约定该表有哪些字段必填。也可以在某个字段中出现，如果该字段是一个json对象，可以对这个json中的哪些字段必填进行描述。详见下方示例|
-|值域校验|enum|Array|字段值枚举范围，数组中至少要有一个元素，且数组内的每一个元素都是唯一的。**enum最多只可以枚举500条**|
+|值域校验|enum|Array|字段值枚举范围，数组中至少要有一个元素，且数组内的每一个元素都是唯一的。|
 |值域校验|enumType|String|字段值枚举类型，可选值tree。设为tree时，代表enum里的数据为树形结构。此时schema2code可生成多级级联选择组件|
 |值域校验|fileMediaType|String|文件类型，bsonType="file" 时有效，可选值 all&#124;image&#124;video 默认值为all,表示所有文件，image表示图片类型文件，video表示视频类型文件  HBuilderX 3.1.0+|
 |值域校验|fileExtName|String|文件扩展名过滤，bsonType="file" 时有效，多个文件扩展名用 "," 分割，例如: jpg,png，HBuilderX 3.1.0+ 支持|
@@ -848,7 +848,7 @@ parentKey将数据表不同记录的父子关系描述了出来。一个字段A�
 
 #### enum枚举控制值域@enum
 
-enum，即枚举。一个字段设定了enum后，该字段的合法内容，只能在enum设定的候选数据项中取值。**enum最多只可以枚举500条**。
+enum，即枚举。一个字段设定了enum后，该字段的合法内容，只能在enum设定的候选数据项中取值。**HBuilderX 3.7.13移除校验数据时enum最多只可以枚举500条的限制**。
 
 enum支持3种数据格式来描述候选：
 1. 简单数组
@@ -1005,10 +1005,6 @@ enum支持3种数据格式来描述候选：
 }
 
 ```
-
-**注意**
-
-- enum内对普通的二维数据表枚举时，此表数据不可超过500条。否则违反enum最大500个值域范围的限制。
 
 #### trim去除首尾空白字符@trim
 

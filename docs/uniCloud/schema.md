@@ -158,9 +158,7 @@ The list of fields in properties, each field has many properties that can be set
 |基本|forceDefaultValue|string&#124;Object|强制默认值，不可通过clientDB的代码修改，常用于存放用户id、时间、客户端ip等固定值。具体参考下表的defaultValue|
 |Basic|forceDefaultValue|string&#124;Object|Forced default value, which cannot be modified by the clientDB code, and is often used to store fixed values such as user id, time, and client ip. For details, refer to the defaultValue| of the following table
 |值域校验|required|array|是否必填。支持填写必填的下级字段名称。required可以在表级的描述出现，约定该表有哪些字段必填。也可以在某个字段中出现，如果该字段是一个json对象，可以对这个json中的哪些字段必填进行描述。详见下方示例|
-|value field check|required|array| is required. Supports filling in required subordinate field names. required can appear in the table-level description, specifying which fields are required in the table. It can also appear in a field. If the field is a json object, which fields in the json are required to be described. See the example below|
-|值域校验|enum|Array|字段值枚举范围，数组中至少要有一个元素，且数组内的每一个元素都是唯一的。**enum最多只可以枚举500条**|
-|value range check|enum|Array|The field value enumeration range, there must be at least one element in the array, and each element in the array is unique. **enum can only enumerate up to 500 entries**|
+|值域校验|enum|Array|字段值枚举范围，数组中至少要有一个元素，且数组内的每一个元素都是唯一的。|
 |值域校验|enumType|String|字段值枚举类型，可选值tree。设为tree时，代表enum里的数据为树形结构。此时schema2code可生成多级级联选择组件|
 |value field check|enumType|String|The field value enumeration type, the optional value tree. When set to tree, it means that the data in the enum is a tree structure. At this point schema2code can generate multi-level cascade selection components|
 |值域校验|fileMediaType|String|文件类型，bsonType="file" 时有效，可选值 all&#124;image&#124;video 默认值为all,表示所有文件，image表示图片类型文件，video表示视频类型文件  HBuilderX 3.1.0+|
@@ -1100,8 +1098,7 @@ Example: Verify phone number `"pattern": "^\\+?[0-9-]{3,20}$"`
 #### enum枚举控制值域@enum
 #### enum enumeration control range @enum
 
-enum，即枚举。一个字段设定了enum后，该字段的合法内容，只能在enum设定的候选数据项中取值。**enum最多只可以枚举500条**。
-enum, the enumeration. After a field is set with an enum, the legal content of the field can only take values in the candidate data items set by the enum. **enum can only enumerate up to 500 entries**.
+enum，即枚举。一个字段设定了enum后，该字段的合法内容，只能在enum设定的候选数据项中取值。**HBuilderX 3.7.13移除校验数据时enum最多只可以枚举500条的限制**。
 
 enum支持3种数据格式来描述候选：
 enum supports 3 data formats to describe candidates:
@@ -1289,12 +1286,6 @@ Set `enumType` to "tree", which means that the data in the enum is a tree struct
 }
 
 ```
-
-**注意**
-**Notice**
-
-- enum内对普通的二维数据表枚举时，此表数据不可超过500条。否则违反enum最大500个值域范围的限制。
-- When enumerating a common two-dimensional data table in an enum, the data in this table cannot exceed 500. Otherwise, it violates the limit of the enum's maximum range of 500 values.
 
 #### trim去除首尾空白字符@trim
 #### trim remove leading and trailing whitespace characters @trim

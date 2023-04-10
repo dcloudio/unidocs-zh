@@ -50,7 +50,7 @@
 ```
 
 
-### uni.onPushMessage([callback,eventName])@onPushMessage
+### uni.onPushMessage(callback)@onPushMessage
 启动监听推送消息事件
 代码示例：
 ```js 
@@ -64,21 +64,21 @@ uni.onPushMessage((res)=>{
 |type	|String	| 事件类型，"click"-从系统推送服务点击消息启动应用事件；"receive"-应用从推送服务器接收到推送消息事件。|
 |data	|String、Object|消息内容|
 
-### uni.offPushMessage([eventName])
+### uni.offPushMessage(callback)
 关闭推送消息监听事件
 示例代码：
 ```js
-let eventName = (res)=>{
+let callback = (res)=>{
 	console.log(res)
 }
 //启动推送事件监听
-uni.onPushMessage(eventName);
+uni.onPushMessage(callback);
 //关闭推送事件监听
-uni.offPushMessage(eventName);
+uni.offPushMessage(callback);
 ```
 #### Tips
 - 如果uni.offPushMessage没有传入参数，则移除App级别的所有事件监听器；
-- 如果只提供了事件名（eventName），则移除该事件名对应的所有监听器；
+- 如果只提供了事件名（callback），则移除该事件名对应的所有监听器；
 
 ### uni.createPushMessage(OBJECT)@createPushMessage
 创建本地通知栏消息（HBuilderX 3.5.2起支持）

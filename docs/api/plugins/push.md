@@ -126,7 +126,7 @@ uni.offPushMessage(eventName);
 
 百度模板消息文档：[https://smartprogram.baidu.com/docs/develop/third/api/](https://smartprogram.baidu.com/docs/develop/third/api/)
 
-字节跳动订阅消息文档：[https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/functional-plug-in/subscribemessage/](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/functional-plug-in/subscribemessage/)
+字节跳动订阅消息文档：[https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/open-capacity/operation/subscribe-message/](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/open-capacity/operation/subscribe-message/)
 
 QQ小程序订阅消息文档：[https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_message.html#%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF](https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_message.html#%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF)
 

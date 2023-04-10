@@ -11,7 +11,7 @@
 
 百度智能小程序平台实现参考：[规范详情](https://smartprogram.baidu.com/docs/develop/api/device_sys/wifi_rule/)
 
-字节跳动小程序的wifi API参考：[规范详情](https://developer.toutiao.com/dev/cn/mini-app/develop/api/device/wi-fi/getconnectedwifi)
+字节跳动小程序的wifi API参考：[规范详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/wi-fi/tt-get-connected-wifi/)
 
 
 ### uni.startWifi(OBJECT)

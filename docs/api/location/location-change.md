@@ -33,7 +33,7 @@ altitudeAccuracy|Number|海拔的精确度信息|App|
 **注意**
 - 该方法会持续监听地理位置信息的变化，建议在不需要监听地理位置信息变化后，直接调用 `uni.stopLocationUpdate` 方法取消监听。
 - `微信小程序`若使用该接口，需要在 app.json 中进行声明，否则将无法正常使用该接口，[详情](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html)
-- `字节小程序`调用此 API 需要申请高精度权限，具体信息见[高精度定位运营规范](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/functional-plug-in/gaojingdu/)。
+- `字节小程序`调用此 API 需要申请高精度权限，具体信息见[高精度定位运营规范](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/operation/platform-capabilities/high-progress-targeting/gaojingdu/)。
 
 **示例**
 

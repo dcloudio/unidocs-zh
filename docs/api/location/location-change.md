@@ -57,9 +57,7 @@ altitudeAccuracy|Number|Altitude accuracy information|App|
 - 该方法会持续监听地理位置信息的变化，建议在不需要监听地理位置信息变化后，直接调用 `uni.stopLocationUpdate` 方法取消监听。
 - This method will continuously monitor the changes of the geographic location information. It is recommended to call the `uni.stopLocationUpdate` method to cancel the monitoring after you do not need to monitor the changes of the geographic location information.
 - `微信小程序`若使用该接口，需要在 app.json 中进行声明，否则将无法正常使用该接口，[详情](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html)
-- If `WeChat MiniApp Program` uses this interface, it needs to be declared in app.json, otherwise it will not be able to use this interface normally, [Details](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html)
-- `字节小程序`调用此 API 需要申请高精度权限，具体信息见[高精度定位运营规范](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/functional-plug-in/gaojingdu/)。
-- `MiniApp requires high-precision permission to call this API. For details, see [High-precision positioning operation specification](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/functional-plug-in/gaojingdu/).
+- `字节小程序`调用此 API 需要申请高精度权限，具体信息见[高精度定位运营规范](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/operation/platform-capabilities/high-progress-targeting/gaojingdu/)。
 
 **示例**
 **Example**

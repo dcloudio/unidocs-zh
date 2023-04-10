@@ -81,9 +81,7 @@ WeChat MiniApp`signType` description
 ### 注意事项
 ### Precautions
 - APP端，如果你的应用在用户完成支付后；立即给支付的用户push消息通知。会与前端支付回调相互冲突，请延迟执行推送。
-- On the APP side, if your application completes the payment by the user; immediately send a push message notification to the paying user. It will conflict with the front-end payment callback, please delay the push.
-- 字节跳动小程序支付接口调整使用时请注意[发起头条支付](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/payment/pay)
-- Please pay attention to [Initiate Toutiao Payment] when adjusting and using the ByteDance MiniApp payment interface (https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/payment/pay)
+- 字节跳动小程序支付接口调整使用时请注意[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay)
 
 ### orderInfo 注意事项@orderInfo
 ### orderInfo Notes @orderInfo

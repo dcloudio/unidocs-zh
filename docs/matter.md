@@ -343,9 +343,7 @@ For volume control, refer to the following:
 * [支付宝小程序更新日志](https://opendocs.alipay.com/mini/01iolt)
 * [Alipay MiniApp update log](https://opendocs.alipay.com/mini/01iolt)
 * [百度小程序更新日志](https://smartprogram.baidu.com/docs/develop/swan/swanchangelog/)
-* [Baidu MiniApp Update Log](https://smartprogram.baidu.com/docs/develop/swan/swanchangelog/)
-* [字节跳动小程序更新日志](https://developer.toutiao.com/dev/cn/mini-app/develop/basic-library/update-log)
-* [ByteDance MiniApp update log](https://developer.toutiao.com/dev/cn/mini-app/develop/basic-library/update-log)
+* [字节跳动小程序更新日志](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log)
 * [飞书小程序更新日志](https://open.feishu.cn/document/uYjL24iN/uATM0YjLwEDN24CMxQjN)
 * [Feishu MiniApp update log](https://open.feishu.cn/document/uYjL24iN/uATM0YjLwEDN24CMxQjN)
 

@@ -301,8 +301,7 @@ Note: The version number rules of different roms are different, for example, the
 |AK|阿里健康|
 | AK|Ali Health|
 |YK|优酷|
-| YK|Youku|
-|[字节宿主平台枚举值列表](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|字节跳动系列|
+|[字节宿主平台枚举值列表](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|字节跳动系列|
 |qq|QQ|
 |KUAISHOU|快手|
 | KUAISHOU| Kuaishou|

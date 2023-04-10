@@ -763,12 +763,9 @@ Optimized configuration for Baidu MiniApp
 |属性|类型|说明|
 |Attribute|Type|Description|
 |:-|:-|:-|
-|appid|String|字节跳动小程序的 AppID，登录 [https://developer.toutiao.com/](https://developer.toutiao.com/) 申请|
-| appid| String|AppID of ByteDance MiniApp, log in [https://developer.toutiao.com/](https://developer.toutiao.com/) to apply|
+|appid|String|字节跳动小程序的 AppID，登录 [https://microapp.bytedance.com/](https://microapp.bytedance.com/) 申请|
 |setting|Object|字节跳动小程序项目设置，参考[字节跳动小程序项目设置](/collocation/manifest?id=mp-toutiao-setting)|
-| setting| Object|ByteDance MiniApp project settings, refer to [ByteDance MiniApp Project Settings](/collocation/manifest?id=mp-toutiao-setting)|
-|navigateToMiniProgramAppIdList	|Array|需要跳转的小程序列表，[详见](https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration)	|
-| navigateToMiniProgramAppIdList | Array|A list of MiniApp that need to be redirected, [see details](https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration) |
+|navigateToMiniProgramAppIdList	|Array|需要跳转的小程序列表，[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/framework/basic-reference/general-configuration/)	|
 |uniStatistics|Object|[字节跳动小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 | uniStatistics| Object|[Whether the ByteDance MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|

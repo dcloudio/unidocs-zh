@@ -43,9 +43,7 @@ For most login methods, you need to apply for the activation of related services
 * [支付宝小程序登录](https://docs.alipay.com/mini/introduce/authcode)
 * [Alipay MiniApp login](https://docs.alipay.com/mini/introduce/authcode)
 * [百度小程序登录](https://smartprogram.baidu.com/docs/develop/api/open_log/#%E6%8E%88%E6%9D%83%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/)
-* [Baidu MiniApp login](https://smartprogram.baidu.com/docs/develop/api/open_log/#%E6%8E%88%E6%9D%83%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/)
-* [字节跳动小程序登录](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/log-in/login)
-* [ByteDance MiniApp login](https://developer.toutiao.com/dev/cn/mini-app/develop/open-capacity/log-in/login)
+* [字节跳动小程序登录](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/log-in/tt-login/)
 * [QQ小程序登录](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_login.html)
 * [QQ MiniApp Login](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_login.html)
 * [快手小程序登录](https://mp.kuaishou.com/docs/develop/api-next/open/login/ks.login.html)
@@ -368,8 +366,7 @@ Get user information. An authorization window will pop up for each request, and 
 - 该API仅支持微信小程序端（基础库2.10.4-2.27.0版本），微信小程序调整了相关接口（详见[《小程序登录、用户信息相关接口调整说明》](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)）。每次触发 uni.getUserProfile 均会弹出授权窗口，用户授权后可成功获取用户信息。该API暂不支持在事件中使用异步操作，否则会触发错误：{errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}
 - This API only supports the WeChat MiniApp(basic library version 2.10.4-2.27.0), and the WeChat MiniApp adjusted the relevant interface (see ["MiniApp Login, User Information Related Interface Adjustment Instructions"](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)). Every time uni.getUserProfile is triggered, an authorization window will pop up, and user information can be successfully obtained after user authorization. The API does not currently support asynchronous operations in events, otherwise an error will be triggered: {errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}
 
-抖音从基础库 2.30.0 开始支持本方法，低版本需做兼容处理。[详见](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-profile/)
-Douyin has supported this method since the base library 2.30.0, and the lower version needs to be compatible. [See details](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-profile/)
+抖音从基础库 2.30.0 开始支持本方法，低版本需做兼容处理。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-profile/)
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

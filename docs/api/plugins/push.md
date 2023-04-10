@@ -72,7 +72,7 @@ Sample code:
 ```
 
 
-### uni.onPushMessage([callback,eventName])@onPushMessage
+### uni.onPushMessage(callback)@onPushMessage
 启动监听推送消息事件
 Start listening to push message events
 代码示例：
@@ -92,27 +92,23 @@ uni.onPushMessage((res)=>{
 |data	|String、Object|消息内容|
 | data | String, Object|message content|
 
-### uni.offPushMessage([eventName])
+### uni.offPushMessage(callback)
 关闭推送消息监听事件
 Close the push message listening event
 示例代码：
 Sample code:
 ```js
-let eventName = (res)=>{
+let callback = (res)=>{
 	console.log(res)
 }
 //启动推送事件监听
-//Start push event listening
-uni.onPushMessage(eventName);
+uni.onPushMessage(callback);
 //关闭推送事件监听
-//Close the push event listener
-uni.offPushMessage(eventName);
+uni.offPushMessage(callback);
 ```
 #### Tips
 - 如果uni.offPushMessage没有传入参数，则移除App级别的所有事件监听器；
-- If uni.offPushMessage does not pass in parameters, remove all event listeners at the App level;
-- 如果只提供了事件名（eventName），则移除该事件名对应的所有监听器；
-- If only the event name (eventName) is provided, remove all listeners corresponding to the event name;
+- 如果只提供了事件名（callback），则移除该事件名对应的所有监听器；
 
 ### uni.createPushMessage(OBJECT)@createPushMessage
 创建本地通知栏消息（HBuilderX 3.5.2起支持）

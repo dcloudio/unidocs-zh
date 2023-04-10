@@ -85,7 +85,7 @@ llm.chatCompletion({
 })
 ```
 
-## API
+## API@api
 
 ai作为一种云能力，相关调用被整合到uniCloud中。
 
@@ -93,7 +93,8 @@ ai作为一种云能力，相关调用被整合到uniCloud中。
 
 在实际应用中，大多数场景是直接使用uni-im和uni-cms的ai功能，这些开源项目已经把完整逻辑都实现，无需自己研究API。
 
-## 内测邀请
+### 内测邀请
+
 目前`uni-ai`处于内测邀请阶段，可以在需求墙为uni-ai投票（在[需求墙](https://dev.dcloud.net.cn/wish/)选uniCloud分类，对uni-ai投票）。
 DCloud会遴选邀请部分用户参与内测。完善后会正式推出。
 
@@ -107,7 +108,7 @@ LLM指大语言模型，区别于ai生成图片等其他模型。
 
 |参数				|类型		|必填	|默认值	|说明																																																																	|
 |---				|---		|---	|---		|---																																																																	|
-|provider		|string	|是		|-			|llm服务商，目前支持`openai`、`minimax`、`baidu`。不指定时由uni-ai自动分配																														|
+|provider		|string	|是		|-			|llm服务商，目前支持`openai`、`minimax`（默认值）、`baidu`。不指定时由uni-ai自动分配																											|
 |apiKey			|string	|否		|-			|llm服务商的apiKey，如不填则使用uni-ai的key。目前openai是必填																																					|
 |accessToken|string	|否		|-			|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)|
 |proxy			|string	|否		|-			|`openai`等国外服务的代理服务器地址																																																		|
@@ -193,10 +194,41 @@ role有三个可能的值：
 **示例**
 
 ```js
-llm.chatCompletion({
+await llm.chatCompletion({
   messages: [{
     role: 'user',
     content: '你好'
   }]
 })
 ```
+
+
+### 错误码@err-code
+
+在调用uni-cloud-ai提供的api时，如果出现错误，接口会将错误对象抛出。如需处理此类错误需对错误进行捕获
+
+**示例**
+
+```js
+try {
+  await llm.chatCompletion({
+    messages: [{
+      role: 'user',
+      content: '你好'
+    }]
+  })
+} catch (e) {
+  console.log(e.errCode, e.errMsg)
+  // TODO 处理错误
+}
+```
+
+完整错误码列表如下
+
+|错误码	|错误描述										|
+|--			|--													|
+|50001	|缺少参数										|
+|50002	|参数错误										|
+|60001	|服务商抛出的错误						|
+|60002	|接口调用凭证、key等信息有误|
+|60003	|触发了服务商限流策略				|

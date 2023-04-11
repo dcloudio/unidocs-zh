@@ -19,6 +19,8 @@
 
 ### 微信小程序广告专题
 - `uni-AD`无开通门槛、提前结算、插件丰富。[详见](https://uniapp.dcloud.net.cn/component/ad-weixin.html)
+
+### uniMP激励视频广告@unimp
 - uniMP激励视频广告 [详见](https://uniapp.dcloud.net.cn/uni-ad-unimp.html)
 
 

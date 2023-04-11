@@ -727,9 +727,14 @@ exports.main = async (event, context) => {
 
 [URL化](http.md)，是一种让云函数或云对象暴露为Http接口的方式，[详见](http.md)。可以在 [uniCloud Web控制台](https://unicloud.dcloud.net.cn/) 操作。
 
-请求类型 `POST`, 可以配置IP白名单字段 `ipWhiteList`，参见 `config.json`
+通过以下2种方式验证外部服务器与uniCloud安全通讯
+
+1. [uni-cloud-s2s](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)模块
+2. 配置外部服务器IP白名单字段 `ipWhiteList`，参见 `config.json`
 
 配置URL化后，其他系统可以通过下面的http接口，读写删各种开放平台凭据。
+
+请求类型 `POST`
 
 #### getAccessToken
 

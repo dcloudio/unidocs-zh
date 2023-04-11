@@ -41,4 +41,4 @@ SDK和Scheme的差异
 - HBuilderX 3.7.13+
 - 在项目的 manifest.json 界面配置，App模块配置 -> uniAd -> 勾选 `uniMP激励视频广告`
 
-注意：首日开启此功能需要整包更新，不支持WGT热更新
+注意：首次开启此功能需要整包更新，不支持WGT热更新

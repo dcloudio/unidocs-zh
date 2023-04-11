@@ -10,7 +10,7 @@ uni-cms是全端的、云端一体的开源CMS内容管理系统。
 
 uni-cms包括管理端和用户端。
 
-1. uni-cms：CMS管理端。属于uni-admin插件，用于管理文章分类、文档内容编辑等 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms)
+1. uni-cms：CMS管理端。属于uni-admin插件，用于管理文章分类、文档内容编辑等，提供了广告解锁符和ai生成文章的功能 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms)
 2. uni-cms-article：CMS用户端。包含文章搜索、文章列表详情等页面，还有看广告解锁付费内容的功能 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms-article)
 
 客户端插件之所以起名为 uni-cms-article 。是因为未来可能还会拓展 uni-cms-image、uni-cms-video 等插件，实现对富媒体内容的管理。
@@ -18,11 +18,20 @@ uni-cms包括管理端和用户端。
 ## 功能亮点
 
 - 开源免费，现成代码，直接上线运营
-- 基于uniCloud，无需搭建服务器，无需关心服务器运维
-- 内容支持多端渲染，包括小程序、H5、App等
-- 内容支持安全检测，防止内容违规
-- 支持观看激励视频广告后解锁全文功能，为开发者提供快速变现的高收益方式 [详见](#watch-ad-unlock-content)
+- 基于uniCloud，serverless，无需复杂的服务器部署，无需关心服务器运维
+- 内容支持多端渲染，包括小程序、Web、App等
+- 支持内容安全检测，防止内容违规
+- 支持观看激励视频广告后解锁全文功能，帮助开发者快速变现。并且uni-ad特别提供了高于业内平均水平的cpm，是开发者创富良机。[详见](#watch-ad-unlock-content)
 - 内置AI生成文章等功能，调用`uni-ai`生成、润色、续写文章内容。此功能需HBuilderX 3.7.13+。详见 [uni-ai](uni-ai.md)
+
+总结一下就是：
+- 代码有了
+- 服务器有了
+- 内容有了（uni-ai生成）
+- 变现方式有了
+- 合规满足了
+
+万事俱备，就等你来运营了！
 
 ### 演示与截图
 演示体验系统：
@@ -55,11 +64,11 @@ uni-cms包括管理端和用户端。
 
 #### 1. 安装uni-cms管理端插件
 
-在插件市场中搜索[uni-cms](https://ext.dcloud.net.cn/plugin?name=uni-cms)，将插件导入至[uni-admin](admin.md)项目中。
+在插件市场中找到[uni-cms](https://ext.dcloud.net.cn/plugin?name=uni-cms)，将插件导入至[uni-admin](admin.md)项目中。
 
 如果还未使用过uni-admin，请先在HBuilderX新建项目时选择uni-admin项目。并需要了解[uni-admin](admin.md)的相关知识。
 
-导入uni-cms后，运行启动uni-admin，在web管理后台，点击左侧菜单栏的菜单管理，添加内容管理菜单。
+导入uni-cms后，运行启动uni-admin，在web管理后台，点击左侧菜单栏的菜单管理，添加“内容管理”菜单。
 
 如下图所示：
 
@@ -71,15 +80,15 @@ uni-cms包括管理端和用户端。
 
 管理端编辑的内容，在用户端呈现。注意管理端和用户端是两个项目，但是连接同一个服务空间。
 
-在插件市场中搜索[uni-cms-article](https://ext.dcloud.net.cn/plugin?name=uni-cms-article)，将插件导入至uni-app项目中。
+在插件市场中找到[uni-cms-article](https://ext.dcloud.net.cn/plugin?name=uni-cms-article)，将插件导入至uni-app用户端项目中。
 
 **注意**
--  uni-cms-article使用了[clientDB](clientdb.md)，其权限体系依赖[uni-id](uni-id-summary.md)。
-- 如果您的项目不是[uni-starter](uni-starter.md)项目，或者不存在 `uni-id-pages`插件，请将`uni-id-pages`一同导入至项目中，要了解`uni-id-pages` [详见](/uniCloud/uni-id-pages.md)
+- uni-cms-article使用了[clientDB](clientdb.md)，其权限体系依赖[uni-id](uni-id-summary.md)。
+- 如果您的项目需要账户体系，需将`uni-id-pages`插件导入至项目中，要了解`uni-id-pages` [详见](/uniCloud/uni-id-pages.md)。如果您使用了[uni-starter](uni-starter.md)项目，那么其已经内置了 `uni-id-pages`插件。
 
 #### 3. 多作者登录
 
-如果您的cms内容管理涉及多名作者一起登录。有2种处理方式。
+如果您的cms内容管理涉及多名作者登录。有2种处理方式。
 
 1. 作者属于内部员工或可控兼职人员。
 
@@ -228,12 +237,15 @@ uni-cms-article                             // uni-cms-article 插件
 
 ### uni-cms 配置@uni-cms-config
 
-> 云函数`uni-cms` `uni-cms-unlock-callback` 都使用同一个配置文件
+uni-cms的云端的配置文件统一使用[uni-config-center](uni-config-center.md)。
 
-配置文件路径为 `uni_modules/uni-config-center/common/uni-cms/config.js`, 用于配置uni-cms相关信息, 完整配置如下:
+> 云函数`uni-cms`、`uni-cms-unlock-callback` 都使用同一个配置文件
+
+新建配置文件，路径为 `uni_modules/uni-config-center/common/uni-cms/config.js`，用于配置uni-cms相关信息，完整配置如下:
+
 ```json
 {
-  "clientAppIds": ["__UNI__XXXxx"], // 配置客户端appId
+  "clientAppIds": ["__UNI__XXXxx"], // 配置用户端appId
   "contentSecurity": { // 内容安全配置
     "allowCheckType": ["content", "image"] // 配置可检测的内容；可选值仅为 content 或 image，content 表示检测文字，image 表示检测图片
   },
@@ -245,8 +257,10 @@ uni-cms-article                             // uni-cms-article 插件
 ```
 
 **说明**
-- `watchAdUniqueType` 为 `user` 时，表示同一用户只需观看一次广告，如果该用户观看过广告，则不再观看广告，直接解锁内容
-- `watchAdUniqueType` 为 `device` 时，表示同一设备只需观看一次广告，如果该设备观看过广告，则不再观看广告，直接解锁内容
+- contentSecurity内容安全，即配置uni-cms是否开启、以及对什么内容类型开启安全检测。详[见下](#content-security-check)
+- adConfig为广告配置。如需使用看广告解锁全文，需配置该内容。详[见下](#watch-ad-unlock-content)
+	* `watchAdUniqueType` 为 `device` 时，表示按设备解锁。同一设备只需观看一次广告，如果该设备观看过广告已解锁该文章，再次浏览该文章将无需再观看广告。如果应用的本机缓存被清理，则解锁失效。
+	* `watchAdUniqueType` 为 `user` 时，表示按用户解锁。此用户为uni-id用户，如果该用户已解锁该文章，再次浏览该文章将无需再观看广告。按用户解锁，需应用中加载uni-id-pages插件。
 
 ### uni-cms 云对象
 
@@ -258,13 +272,13 @@ uni-cms-article                             // uni-cms-article 插件
 
 ### 富文本编辑器扩展
 
-> 目前富文本编辑器支持H5, 微信小程序, App, 基于Quill.js, 详见https://quilljs.com/
+> 目前富文本编辑器支持Web、微信小程序、App。不支持其他平台。底层基于Quill.js，详见https://quilljs.com/
 > 
-> 如果编辑器在微信小程序或App使用, 将不支持二次开发, 仅支持基本的富文本编辑功能
+> 如果编辑器在微信小程序或App使用，将不支持二次开发，仅支持基本的富文本编辑功能
 > 
-> 如果需要二次开发, 将不能发布至微信小程序或者App, 否则会出现编辑器无法使用的情况
+> 如果需要二次开发，将不能发布至微信小程序或者App，否则会出现编辑器无法使用的情况
 
-由于自定义了 toolbar 的配置, 所以需要在 `uni_modules/uni-cms/components/editor/web/formats` 目录下添加对应的格式文件, 例如 `image.js` 文件, 用于处理图片标签格式, 代码如下:
+由于自定义了 toolbar 的配置，所以需要在 `uni_modules/uni-cms/components/editor/web/formats` 目录下添加对应的格式文件，例如 `image.js` 文件，用于处理图片标签格式，代码如下:
 ```js
 const ATTRIBUTES = [
   'alt',
@@ -311,7 +325,7 @@ export default function (Quill) {
 }
 ```
 
-每一个格式或者模块都必须导出一个方法, 参数接收 `Quill` 对象, 该方法必须返回一个对象, 对象的 key 为格式或者模块的名称, value 为对应的格式或者模块, 例如:
+每一个格式或者模块都必须导出一个方法, 参数接收 `Quill` 对象，该方法必须返回一个对象，对象的 key 为格式或者模块的名称，value 为对应的格式或者模块，例如:
 ```js
 export default function (Quill) {
   return {
@@ -320,7 +334,7 @@ export default function (Quill) {
 }
 ```
 
-在 `uni_modules/uni-cms/components/editor/web/index.js` 文件中引入`image.js`文件, 例如:
+在 `uni_modules/uni-cms/components/editor/web/index.js` 文件中引入`image.js`文件，例如:
 ```js
 import image from './image'
 
@@ -334,7 +348,7 @@ export function register (Quill) {
 }
 ```
 
-在 `uni_modules/uni-cms/components/editor/editor.vue` 中找到 toolbar H5的条件编译区块, 添加插入图片按钮, 例如:
+在 `uni_modules/uni-cms/components/editor/editor.vue` 中找到 toolbar H5的条件编译区块，添加插入图片按钮，例如:
 ```vue
 <template>
   <view @click="insertImage">
@@ -360,9 +374,7 @@ export default {
 
 > 使用观看广告解锁全文功能需要在uni-ad后台开通[激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)。
  
-> 目前H5端不支持广告, 所以在H5端无法使用观看广告解锁全文功能
-
-激励视频奖励解锁，也是基于uni-id的。
+> 目前H5端不支持广告，所以在H5端无法使用观看广告解锁全文功能
 
 用户端截图如下：
 
@@ -372,10 +384,10 @@ export default {
 </div>
 </div>
 
-1. 在uni-ad后台开通[激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html), 开通步骤[详见](https://uniapp.dcloud.net.cn/uni-ad.html#start)
-2. 在对应的广告位上配置激励视频回调，选择云函数回调，回调云函数为`uni-cms-unlock-callback`
-3. 在 uni-AD Web 控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 `Security key`, 复制 `Security key`
-4. 在 `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center`目录中创建 `uni-cms/config.json` 配置文件, 配置文件如下:
+1. 在uni-ad后台([https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/))开通[激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)，开通步骤[详见](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+2. 新建激励视频广告位，在对应的广告位上配置激励视频云回调，选择同账户下uni-cms部署的uniCloud服务空间，配置回调云函数为`uni-cms-unlock-callback`
+3. 在 uni-AD Web 控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 `Security key`，复制 `Security key`
+4. 在 `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center`目录中创建 `uni-cms/config.json` 配置文件，配置文件如下:
 ```json
 {
   "clientAppIds": ["__UNI__XXXxx"],
@@ -386,40 +398,48 @@ export default {
 }
 ``` 
 **注意**
-- `clientAppIds` 为客户端appId, 用于校验客户端请求, 如不配置可能导致无法使用广告解锁功能, 需要与客户端配置的appId保持一致
-- `securityKey` 为广告位的 `Security key`, 用于校验广告回调的合法性
-- `watchAdUniqueType` 为观看广告的唯一标识类型, 可选值为 `user` 或者 `device`, `user` 表示用户唯一, `device` 表示设备唯一
+- `clientAppIds` 为客户端appId，用于校验客户端请求，如不配置可能导致无法使用广告解锁功能，需要与客户端配置的appId保持一致
+- `securityKey` 为广告位的 `Security key`，用于校验广告回调的合法性
+- `watchAdUniqueType` 为观看广告的唯一标识类型，可选值为 `user` 或者 `device`，`user` 表示用户唯一，`device` 表示设备唯一
+	* `watchAdUniqueType` 为 `device` 时，表示按设备解锁。同一设备只需观看一次广告，如果该设备观看过广告已解锁该文章，再次浏览该文章将无需再观看广告。如果应用的本机缓存被清理，则解锁失效。
+	* `watchAdUniqueType` 为 `user` 时，表示按用户解锁。此用户为uni-id用户，如果该用户已解锁该文章，再次浏览该文章将无需再观看广告。按用户解锁，需应用中加载uni-id-pages插件。
 
-5. 在 `uni_modules/uni-cms-article/pages/detail/detail.vue` 文件中找到 `data.adpId` 与 `data.watchAdUniqueType` 字段, 根据自己的广告位ID进行修改, 例如:
+5. 在 `uni_modules/uni-cms-article/pages/detail/detail.vue` 文件中找到 `data.adpId` 与 `data.watchAdUniqueType` 字段，根据自己的广告位ID进行修改，例如:
 ```js
 {
   adpId: "000000000",
-  watchAdUniqueType: "device"
+  watchAdUniqueType: "device" //注意前端也需要配置解锁方式，是按设备解锁还是按uni-id的用户解锁。
 }
 ```
-6. 将云函数上传至云端, 在uni-admin中创建一篇文章, 并在ToolBar中添加”看广告解锁“功能, 即可运行测试
+6. 对uni-cms管理端项目下的uniCloud目录点右键，将云函数、配置、数据库、数据库扩展js都上传至云端
+7. 运行uni-admin项目，在内容管理中新建一篇文章，在指定内容后，点击ToolBar的”看广告解锁“功能，添加解锁符，保存文章。
+8. 运行uni-cms-article用户端，浏览文章，看广告解锁。
 
 **解锁逻辑说明**
 
-当用户再次浏览文章时, 将会查询文章时在uni-cms-articles schema 扩展库中验证用户是否已解锁, 已解锁的用户将会直接展示全文, 未解锁的用户将会展示解锁全文按钮。
+1. 当用户端浏览文章时，查询文章详情会触发在uni-cms-articles.schema.ext.js（schema扩展库）中定义的数据库读取触发器，在这段js中验证用户/设备是否已解锁，已解锁的用户将会直接展示全文，未解锁的用户将会展示解锁全文按钮。
 
-用户点击解锁全文按钮后, 将会触发广告, 广告观看完毕后, 广告服务器会调用云函数`uni-cms-unlock-callback`,
-云函数`uni-cms-unlock-callback`进行验证, 验证通过后, 为用户解锁内容。
+2. 用户点击解锁全文按钮后，将会弹出激励视频广告，
+- 2.1 广告播放完毕后（界面会显示播放完毕倒计时）
+	广告服务器会通知开发者的uniCloud服务空间的云函数`uni-cms-unlock-callback`，云函数`uni-cms-unlock-callback`进行验证，验证通过后，为用户解锁内容，保存在数据表xxx(TODO)字段中。
+- 2.2 无广告没有播放完毕，被用户提前关闭，则不会回调到云函数。
 
 **其他**
 
-内置的广告为激励视频广告, 用户在观看完广告后将会解锁全文, 如果需要其他类型的广告, 
-可以自行修改`uni_modules/uni-cms/components/render-article-detail/unlock-content.vue`文件中的代码
+内置的广告为激励视频广告，用户在观看完广告后将会解锁全文，如果需要其他类型的广告，可以自行修改`uni_modules/uni-cms/components/render-article-detail/unlock-content.vue`文件中的代码。
 
 ### 内容安全检测@content-security-check
 
-内容安全功能由[uni-sec-check](https://ext.dcloud.net.cn/plugin?id=5460)提供，默认不开启。
-`uni-sec-check`文档[详见](https://ext.dcloud.net.cn/plugin?id=5460)
+文章内容对外发布时，需避免发布内容包含违法内容。否则轻则导致应用下架，重则承担刑事责任。
 
-注意：`uni-sec-check`模块依赖`uni-open-bridge`, 使用前需要在`uni-config-center`内添加`uni-id`配置，
+所以需在发布前调用三方的内容验证接口，如果内容涉及敏感词或者不合规的图片，则接口会提示异常。
+
+内容安全功能由[uni-sec-check](https://ext.dcloud.net.cn/plugin?id=5460)提供，默认未开启。
+
+注意：`uni-sec-check`模块使用了微信的内容安全接口，所以依赖`uni-open-bridge`管理微信凭据，使用前需要在`uni-config-center`内添加`uni-id`配置，
 具体配置参考[uni-sec-check文档](https://ext.dcloud.net.cn/plugin?id=5460)
 
-uni-cms 会使用 uni-sec-check 检测用户输入的文字与上传的图片，如果检测到违规内容，内容将无法正常发布。
+如开启了uni-cms的内容安全校验，会在发布前使用 uni-sec-check 检测用户输入的文字与上传的图片，如果检测到违规内容，内容将无法发布。
 
 您可以根据自己需求开启或关闭内容安全检测，在 `uni-cms` 云端配置文件中配置 `contentSecurity` 字段，例如:
 
@@ -447,9 +467,7 @@ uni-cms 会使用 uni-sec-check 检测用户输入的文字与上传的图片，
 
 ## 后续计划
 
-<input type="checkbox" checked disabled /> [内容安全](#content-security-check)
-
-<input type="checkbox" disabled /> 支持大图、小图、多图排版
+<input type="checkbox" disabled /> 增加更多列表页模板，包括顶部分类、列表大图、小图、多图样式
 
 <input type="checkbox" disabled /> 内容分享
 

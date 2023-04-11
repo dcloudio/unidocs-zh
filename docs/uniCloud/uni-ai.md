@@ -87,36 +87,55 @@ llm.chatCompletion({
 
 ## API@api
 
-> 新增于HBuilderX 3.7.13
+> 新增于HBuilderX 3.7.13+
 
-ai作为一种云能力，相关调用被整合到uniCloud中。相关能力由uni-cloud-ai扩展库提供，如何使用扩展库请参考：[使用扩展库](cf-functions.md#extension)
+ai作为一种云能力，相关调用被整合到uniCloud中。
 
-如您的服务器业务不在uniCloud上，可以把云函数URL化，把uni-ai当做http接口调用。
+如您的服务器业务不在uniCloud上，可以把云函数URL化，把`uni-ai`当做http接口调用。
 
 在实际应用中，大多数场景是直接使用uni-im和uni-cms的ai功能，这些开源项目已经把完整逻辑都实现，无需自己研究API。
 
+ai能力由`uni-cloud-ai`扩展库提供，在云函数或云对象中，对右键或在package.json中配置`uni-cloud-ai`扩展库。
+如何使用扩展库请参考：[使用扩展库](cf-functions.md#extension)
+
 ### 获取LLM服务商实例@get-llm-manager
 
-LLM指大语言模型，区别于ai生成图片等其他模型。
+LLM，全称为Large Language Models，指大语言模型。
+
+LLM的主要特点为输入一段前文，可以推导预测下文。
+
+LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 
 用法：`uniCloud.ai.getLLMManager(Object GetLLMManagerOptions);`
 
+注意需在相关云函数或云对象中加载`uni-cloud-ai`[使用扩展库](cf-functions.md#extension)，否则会报找不到ai对象。
+
 **参数说明GetLLMManagerOptions**
 
-|参数				|类型		|必填	|默认值	|说明																																																																	|
-|---				|---		|---	|---		|---																																																																	|
-|provider		|string	|是		|-			|llm服务商，目前支持`openai`、`minimax`（默认值）、`baidu`。不指定时由uni-ai自动分配																											|
-|apiKey			|string	|否		|-			|llm服务商的apiKey，如不填则使用uni-ai的key。目前openai是必填																																					|
-|accessToken|string	|否		|-			|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)|
-|proxy			|string	|否		|-			|`openai`等国外服务的代理服务器地址																																																		|
+|参数		|类型	|必填	|默认值	|说明																																	|
+|---		|---	|---	|---	|---																																	|
+|provider	|string	|否		|-		|llm服务商，目前支持`openai`、`baidu`、`minimax`。不指定时由uni-ai自动分配																|
+|apiKey		|string	|否		|-		|llm服务商的apiKey，如不填则使用uni-ai的key。如指定openai和baidu则必填																			|
+|accessToken|string	|否		|-		|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)	|
+|proxy		|string	|否		|-		|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填													|
 
 **示例**
 
 ```js
-const llm = uniCloud.ai.getLLMManager({
-  provider: 'minimax'
+// 不指定provider
+const llm = uniCloud.ai.getLLMManager()
+
+// 指定openai，需自行配置相关key，以及中转代理服务器
+const openai = uniCloud.ai.getLLMManager({
+  provider: 'openai',
+  apiKey:'your key',
+  proxy:'www.yourdomain.com' //也可以是ip
 })
 ```
+
+现阶段，不指定provider时，uni-ai分配的ai引擎无需开发者支付费用。同时也不会自动分配到gpt-4等比较昂贵但精准的模型上。如有变化会提前公告。
+
+开发者使用openai等已经商用的ai时，需自行向相关服务商支付费用。
 
 ### 对话@chat-completion
 
@@ -124,21 +143,63 @@ const llm = uniCloud.ai.getLLMManager({
 
 **参数说明ChatCompletionOptions**
 
-|参数				|类型		|必填	|默认值						|说明																																																	|兼容性说明								|
-|---				|---		|---	|---							|---																																																	|---											|
-|messages		|array	|是		| -								|提问信息																																															|													|
-|model			|string	|否		|默认值见下方说明	|模型名称，不同服务商可选模型不同，见下方说明																													|百度文心一言不支持此参数	|
-|maxTokens	|number	|否		|-								|生成的token数量限制，需要注意此数量和传入的message token数量相加不可大于4096													|百度文心一言不支持此参数	|
-|temperature|number	|否		|1								|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|百度文心一言不支持此参数	|
-|topP				|number	|否		|1								|采样方法，数值越小结果确定性越强；数值越大，结果越随机																								|百度文心一言不支持此参数	|
+|参数		|类型	|必填	|默认值				|说明																									|兼容性说明					|
+|---		|---	|---	|---				|---																									|---						|
+|messages	|array	|是		| -					|提问信息																								|							|
+|model		|string	|否		|默认值见下方说明		|模型名称。每个AI Provider有多个model，见下方说明															|百度文心一言不支持此参数	|
+|maxTokens	|number	|否		|-					|生成的token数量限制，需要注意此数量和传入的message token数量相加不可大于4096							|百度文心一言不支持此参数	|
+|temperature|number	|否		|1					|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|百度文心一言不支持此参数	|
+|topP		|number	|否		|1					|采样方法，数值越小结果确定性越强；数值越大，结果越随机													|百度文心一言不支持此参数	|
 
 **messages参数说明**
 
-LLM没有记忆能力，messages参数内需要包含前文，LLM才能理解之前聊天的内容。
+需注意messages末尾有个`s`，它是数组，而不是简单的字符串。其中每项由消息内容content和角色role组成。
 
-messages是一个数组，其中每项有消息内容和角色组成
+一个最简单的示例：
 
-messages示例
+```js
+await llm.chatCompletion({
+  messages: [{
+    role: 'user',
+    content: '你好'
+  }]
+})
+```
+
+role，即角色，有三个值：
+
+- system 系统，对应的content一般用于对话背景设定等功能。system角色及信息如存在时只能放在messages数组第一项。baidu不支持此角色
+- user 用户，对应的content为用户输入的信息
+- assistant ai助手，对应的content为ai返回的信息
+
+当开发者需要为用户的场景设置背景时，则需在云端代码写死system，而用户输入的问题则被放入user中，然后一起提交给LLM。
+
+例如，提供一个法律咨询的ai咨询助手。
+
+开发者可以在system里限制对话背景，防止ai乱答问题。然后给用户提供输入框，假使用户咨询了：“谣言传播多少人可以定罪？”，那么拼接的message就是：
+
+```js
+const messages = [{
+    role: 'system',
+    content: '你是一名律师，回答内容仅限法律范围。'
+  },{
+    role: 'user',
+    content: '谣言传播多少人可以定罪？'
+  }]
+```
+
+对于不支持system的情况，如baidu，只能把system也改为user，也可以达到一定范围内的控制效果。
+
+> 注意：对于法律、医学等专业领域需要准确回答的，需使用gpt-4模型。其他模型更适合闲聊、文章内容生成。
+
+assistant这个角色的内容，是ai返回的。当需要持续聊天、记忆前文时，需使用此角色。
+
+因为LLM没有记忆能力，messages参数内需要包含前文，LLM才能记得之前聊天的内容。
+
+以下的messages示例，是第二轮ai对话时发送的messages的示例。在这个示例中，第一个user和assistant的内容，是第一轮ai对话的聊天记录。
+最后一个user是第二轮对话时用户提的问题。
+
+因为用户提问的内容“从上述方法名中筛选首字母为元音字母的方法名”，其中有代词“上述”，为了让ai知道“上述”是什么，需要把第一轮的对话内容也提交。
 
 ```js
 const messages = [{
@@ -156,48 +217,60 @@ const messages = [{
   }]
 ```
 
-上述对话中第1条system角色的信息为对话背景设定，第2条为用户消息，第3条为ai的回答，第4条是用户最新消息。ai会使用背景设定及前置对话记录对最新消息进行回复。
+在持续对话中需注意，messages内容越多则消耗的token越多，而LLM都是以token计费的。
 
-多数情况下messages内容越多消耗的token越多，所以一般是需要开发者要求ai对上文进行总结，下次对话传递总结及总结之后的对话内容以实现更长的对话。
+token是LLM的术语，ai认知的语言是经过转换的，对于英语，1个token平均是4个字符，大约0.75个单词；对于中文，1个汉字大约是2个token。
 
-role有三个可能的值：
+如何在节省token和保持持续对话的记忆之间平衡，是一个挺复杂的事情。开发者需在适合时机要求ai对上文进行总结压缩，下次对话传递总结及总结之后的对话内容以实现更长的对话。
 
-- system 系统，对应的content一般用于对话背景设定等功能。system角色及信息只能放在messages数组第一项。文心一言不支持此角色
-- user 用户，对应的content为用户输入的信息
-- assistant ai助手，对应的content为ai返回的信息
+DCloud在[uni-im](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)和[uni-cms](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)中，
+已经写好了这些复杂逻辑。开发者直接使用DCloud封装好的开源项目模板即可。
+
+在上述例子中，还可以看到一种有趣的用法，即要求ai以数组方式回答问题。这将有利于开发者格式化数据，并进行后置增强处理。
 
 **可用模型**
 
-|服务商	|接口						|模型																																											|
-|---		|---						|---																																											|
-|openai	|chatCompletion	|gpt-4、gpt-4-0314、gpt-4-32k、gpt-4-32k-0314、gpt-3.5-turbo（默认值）、gpt-3.5-turbo-0301|
-|minimax|chatCompletion	|abab4-chat、abab5-chat（默认值）																													|
+每个AI Provider可以有多个model，比如对于openai，ChatGPT的模型是`gpt-3.5-turbo`，而gpt-4的模型就是`gpt-4`。不同模型的功能、性能、价格都不一样。
 
-**返回值**
+也有一些AI Provider只有一个模型，此时model参数可不填。
 
-|参数												|类型								|必备				|默认值	|说明																											|兼容性说明							|
-|---												|---								|---				|---		|---																											|---										|
-|id													|string							|openai必备	| -			|本次回复的id																							|仅openai返回此项				|
-|reply											|string							|是					| -			|ai对本次消息的回复																				|												|
-|choices										|array&lt;object&gt;|否					|-			|所有生成结果																							|百度文心一言不返回此项	|
-|&#124;--finishReason				|string							|否					|-			|截断原因，stop（正常结束）、length（超出maxTokens被截断）|												|
-|&#124;--message						|object							|否					|-			|返回消息																									|												|
-|&nbsp;&nbsp;&#124;--role		|string							|否					|-			|角色																											|												|
-|&nbsp;&nbsp;&#124;--content|string							|否					|-			|消息内容																									|												|
-|usage											|object							|是					|-			|本次对话token消耗详情																		|												|
-|&#124;--promptTokens				|number							|否					|-			|输入的token数量																					|minimax不返回此项			|
-|&#124;--completionTokens		|number							|否					|-			|生成的token数量																					|minimax不返回此项			|
-|&#124;--totalTokens				|number							|是					|-			|总token数量																							|												|
+如果您需要非常精准的问答，且不在乎成本，推荐使用`gpt-4`。如果是普通的文章内容生成、续写，大多数模型均可胜任。
+
+|服务商	|接口			|模型																						|
+|---	|---			|---																						|
+|openai	|chatCompletion	|gpt-4、gpt-4-0314、gpt-4-32k、gpt-4-32k-0314、gpt-3.5-turbo（默认值）、gpt-3.5-turbo-0301	|
+|minimax|chatCompletion	|abab4-chat、abab5-chat（默认值）															|
+
+
+**chatCompletion方法的返回值**
+
+|参数						|类型				|必备		|默认值	|说明														|兼容性说明				|
+|---						|---				|---		|---	|---														|---					|
+|id							|string				|openai必备	| -		|本次回复的id												|仅openai返回此项		|
+|reply						|string				|是			| -		|ai对本次消息的回复											|						|
+|choices					|array&lt;object&gt;|否			|-		|所有生成结果												|百度文心一言不返回此项	|
+|&#124;--finishReason		|string				|否			|-		|截断原因，stop（正常结束）、length（超出maxTokens被截断）	|						|
+|&#124;--message			|object				|否			|-		|返回消息													|						|
+|&nbsp;&nbsp;&#124;--role	|string				|否			|-		|角色														|						|
+|&nbsp;&nbsp;&#124;--content|string				|否			|-		|消息内容													|						|
+|usage						|object				|是			|-		|本次对话token消耗详情										|						|
+|&#124;--promptTokens		|number				|否			|-		|输入的token数量											|minimax不返回此项		|
+|&#124;--completionTokens	|number				|否			|-		|生成的token数量											|minimax不返回此项		|
+|&#124;--totalTokens		|number				|是			|-		|总token数量												|						|
+
 
 **示例**
 
 ```js
-await llm.chatCompletion({
-  messages: [{
-    role: 'user',
-    content: '你好'
-  }]
-})
+const llmManager = uniCloud.ai.getLLMManager()
+const res = await llmManager.chatCompletion({
+	messages: [{
+		role: 'user',
+		content: 'uni-app是什么，20个字以内进行说明'
+	}]
+	})
+console.log(res);
+
 ```
 
 
@@ -223,10 +296,37 @@ try {
 
 完整错误码列表如下
 
-|错误码	|错误描述										|
-|--			|--													|
-|50001	|缺少参数										|
-|50002	|参数错误										|
-|60001	|服务商接口抛出错误					|
+|错误码	|错误描述					|
+|--		|--							|
+|50001	|缺少参数					|
+|50002	|参数错误					|
+|60001	|服务商接口抛出的错误		|
 |60002	|接口调用凭证、key等信息有误|
-|60003	|触发了服务商限流策略				|
+|60003	|触发了服务商限流策略		|
+
+## 版本计划
+
+uni-ai现阶段还是初版，未来会陆续提供：
+- stream流式输出
+- 聚合更多ai引擎
+- 提供私有数据训练方案
+- 提供prompt辅助和插件市场
+- 后置命令处理
+
+## 常用用途
+
+目前生成式ai的主要用途有：
+- 文章生成、润色、续写：常见于生成文案、文书、宣传资料、营销邮件、笑话、诗词等。[uni-cms](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)中，已经内置了这个功能
+- 闲聊：情感咨询、常识问答：[uni-im](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)中已经内置
+- 翻译：各国各民族语言翻译
+- 代码注释补充和简单代码生成：需使用openai，其他provider在代码领域的能力暂时还不行
+
+如对生成内容有较高的准确性要求，一方面使用gpt-4等高级的模型；另一方面需要追加专业甚至私有的语料训练。目前gpt-4未开放微调，但uni-ai正在开发其他私有数据训练方案，后续会升级提供。
+
+
+## 注意事项
+
+国内使用ai，需注意合规性。
+
+- ai生成的文章，如发布到互联网上，应当调用内容安全审查后再发布。比如[uni内容安全](https://ext.dcloud.net.cn/plugin?id=5460)。[uni-cms](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)已经内置了uni内容安全，只需在配置里开启即可。
+- 如开放给用户聊天使用，也应该通过内容安全来管控，避免出现违法违规内容，导致被下架

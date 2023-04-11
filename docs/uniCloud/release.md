@@ -1,5 +1,10 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2023-04-11
+* 【重要】新增 uni-cloud-ai 扩展库，提供AI对话能力 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)
+* 新增 JQL语法 触发器内副表读取事件增加 primaryCollection 参数，值为本次联表查询的主表表名
+* 调整 JQL语法 schema 内配置的动态 enum 校验数据时移除仅枚举500条的限制
+
 #### 2023-03-31
 * 新增 jql语法支持查询某字段和另一个表指定字段相等的记录 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#enhanced-in)
 

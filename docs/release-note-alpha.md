@@ -1,3 +1,24 @@
+#### 3.7.13.20230411-alpha
+* 【uni-app】
+* 新增 uni.addInterceptor 回调增加第二个参数 params [详情](https://ask.dcloud.net.cn/question/129195)
+* App平台 修复 Vue3 项目 picker-view 组件使用 v-if 切换报错的Bug [详情](https://ask.dcloud.net.cn/question/166884)
+* App-Vue平台 修复 Vue3 项目 text 组件嵌套 text 组件显示异常的Bug [详情](https://github.com/dcloudio/uni-app/issues/4215)
+* Web平台 优化 使用 IP 定位时取消坐标系转换 [详情](https://github.com/dcloudio/uni-app/issues/4248)
+* Web平台 修复 Vue3 项目 input 组件使用 v-model 时输入过快失焦的Bug [详情](https://ask.dcloud.net.cn/question/166821)
+* Web平台 修复 Vue3 项目 longpress 事件对象缺少 touches 字段的Bug [详情](https://ask.dcloud.net.cn/question/166956)
+* 小程序平台 修复 Vue2 项目使用高版本 CopyWebpackPlugin 时 static 目录条件编译无效的Bug [详情](https://github.com/dcloudio/uni-app/issues/4181)
+* 【uniCloud】
+* 【重要】新增 uni-cloud-ai 扩展库，提供AI对话能力 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)
+* 新增 JQL语法 触发器内副表读取事件增加 primaryCollection 参数，值为本次联表查询的主表表名
+* 调整 JQL语法 schema 内配置的动态 enum 校验数据时移除仅枚举500条的限制
+* 【App插件(含5+App和uni-app的App端)】
+* 新增 uni-AD 支持 uniMP激励视频广告
+* 新增 一键登录支持 isCenterHint 参数设置未勾选服务条款时点击登录按钮的提示信息是否垂直居中显示 [详情](https://uniapp.dcloud.net.cn/univerify.html#%E5%AE%A2%E6%88%B7%E7%AB%AF-%E8%AF%B7%E6%B1%82%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83)
+* Android平台 修复 蓝牙设备信息 BluetoothDeviceInfo 的 advertisData 字段可能会丢失数据的Bug [详情](https://ask.dcloud.net.cn/question/165119)
+* Android平台 修复 App切换语言后重启可能出现闪屏的Bug [详情](https://ask.dcloud.net.cn/question/166730)
+* iOS平台 更新 uni-AD Sigmob广告联盟SDK为 4.7.1 版；百度百青藤广告SDK为 5.121 版
+* iOS平台 修复 plus.runtime.restart 后苹果应用内支付 IAP 无响应的Bug
+
 #### 3.7.12.20230331-alpha
 * 【uni-app】
 * App平台、Web平台 优化 socket 连接 onClose 事件信息增加 code、reason 属性

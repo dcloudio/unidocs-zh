@@ -19,6 +19,8 @@
 
 ### 微信小程序广告专题
 - `uni-AD`无开通门槛、提前结算、插件丰富。[详见](https://uniapp.dcloud.net.cn/component/ad-weixin.html)
+- uniMP激励视频广告 [详见](https://uniapp.dcloud.net.cn/uni-ad-unimp.html)
+
 
 ### uni-AD优势总结
 1. 更高收益
@@ -40,6 +42,7 @@
 * 其他小程序平台：在各自的小程序管理后台操作
 2. 在页面合适位置编写代码，放置组件，配上广告位id。
 3. App端打包后生效，打包时必须选择要集成的广告SDK（穿山甲、广点通、360联盟、快手等渠道）。
+
 
 <a id="bidding"/>
 

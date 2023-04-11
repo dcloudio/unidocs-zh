@@ -175,18 +175,19 @@ role有三个可能的值：
 
 **返回值**
 
-|参数												|类型								|必备	|默认值	|说明																											|兼容性说明							|
-|---												|---								|---	|---		|---																											|---										|
-|reply											|string							|是		| -			|ai对本次消息的回复																				|												|
-|choices										|array&lt;object&gt;|否		|-			|所有生成结果																							|百度文心一言不返回此项	|
-|&#124;--finishReason				|string							|否		|-			|截断原因，stop（正常结束）、length（超出maxTokens被截断）|												|
-|&#124;--message						|object							|否		|-			|返回消息																									|												|
-|&nbsp;&nbsp;&#124;--role		|string							|否		|-			|角色																											|												|
-|&nbsp;&nbsp;&#124;--content|string							|否		|-			|消息内容																									|												|
-|usage											|object							|是		|-			|本次对话token消耗详情																		|												|
-|&#124;--promptTokens				|number							|否		|-			|输入的token数量																					|minimax不返回此项			|
-|&#124;--completionTokens		|number							|否		|-			|生成的token数量																					|minimax不返回此项			|
-|&#124;--totalTokens				|number							|是		|-			|总token数量																							|												|
+|参数												|类型								|必备				|默认值	|说明																											|兼容性说明							|
+|---												|---								|---				|---		|---																											|---										|
+|id													|string							|openai必备	| -			|本次回复的id																							|仅openai返回此项				|
+|reply											|string							|是					| -			|ai对本次消息的回复																				|												|
+|choices										|array&lt;object&gt;|否					|-			|所有生成结果																							|百度文心一言不返回此项	|
+|&#124;--finishReason				|string							|否					|-			|截断原因，stop（正常结束）、length（超出maxTokens被截断）|												|
+|&#124;--message						|object							|否					|-			|返回消息																									|												|
+|&nbsp;&nbsp;&#124;--role		|string							|否					|-			|角色																											|												|
+|&nbsp;&nbsp;&#124;--content|string							|否					|-			|消息内容																									|												|
+|usage											|object							|是					|-			|本次对话token消耗详情																		|												|
+|&#124;--promptTokens				|number							|否					|-			|输入的token数量																					|minimax不返回此项			|
+|&#124;--completionTokens		|number							|否					|-			|生成的token数量																					|minimax不返回此项			|
+|&#124;--totalTokens				|number							|是					|-			|总token数量																							|												|
 
 **示例**
 

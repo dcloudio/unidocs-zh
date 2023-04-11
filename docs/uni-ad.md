@@ -30,7 +30,8 @@
 ### 微信小程序广告专题
 ### WeChat Mini Program Advertising Topics
 - `uni-AD`无开通门槛、提前结算、插件丰富。[详见](https://uniapp.dcloud.net.cn/component/ad-weixin.html)
-- `uni-AD` has no threshold for activation, early settlement, and rich plug-ins. [See details](https://uniapp.dcloud.net.cn/component/ad-weixin.html)
+- uniMP激励视频广告 [详见](https://uniapp.dcloud.net.cn/uni-ad-unimp.html)
+
 
 ### uni-AD优势总结
 ### uni-AD Advantage Summary
@@ -68,6 +69,7 @@ It needs to be operated in the background of the advertising platform:
 2. Write the code at the appropriate position on the page, place the component, and match the ad slot id.
 3. App端打包后生效，打包时必须选择要集成的广告SDK（穿山甲、广点通、360联盟、快手等渠道）。
 3. It takes effect after the app is packaged. When packaging, you must select the advertising SDK to be integrated (Pangolin, Guangdiantong, 360 Alliance, Kuaishou, etc.).
+
 
 <a id="bidding"/>
 

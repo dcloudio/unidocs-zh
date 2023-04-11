@@ -239,6 +239,9 @@ uni-cms-article                             // uni-cms-article 插件
 }
 ```
 
+**说明**
+- `watchAdUniqueType` 为 `user` 时，表示同一用户只需观看一次广告，如果该用户观看过广告，则不再观看广告，直接解锁内容
+- `watchAdUniqueType` 为 `device` 时，表示同一设备只需观看一次广告，如果该设备观看过广告，则不再观看广告，直接解锁内容
 
 ### uni-cms 云对象
 
@@ -382,7 +385,7 @@ export default {
 - `securityKey` 为广告位的 `Security key`, 用于校验广告回调的合法性
 - `watchAdUniqueType` 为观看广告的唯一标识类型, 可选值为 `user` 或者 `device`, `user` 表示用户唯一, `device` 表示设备唯一
 
-5. 在 `uni_modules/uni-cms-article/components/pages/detail/detail.vue` 文件中找到 `data.adpId` 与 `data.watchAdUniqueType` 字段, 根据自己的广告位ID进行修改, 例如:
+5. 在 `uni_modules/uni-cms-article/pages/detail/detail.vue` 文件中找到 `data.adpId` 与 `data.watchAdUniqueType` 字段, 根据自己的广告位ID进行修改, 例如:
 ```js
 {
   adpId: "000000000",

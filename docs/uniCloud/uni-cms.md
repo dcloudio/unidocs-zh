@@ -19,7 +19,7 @@ uni-cms包括管理端和用户端。
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/202303231717572.png)
 
-![uni-cms](https://web-assets.dcloud.net.cn/unidoc/zh/202303231541517.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304111812979.png)
 
 用户端截图：
 

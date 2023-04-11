@@ -87,16 +87,13 @@ llm.chatCompletion({
 
 ## API@api
 
-ai作为一种云能力，相关调用被整合到uniCloud中。
+> 新增于HBuilderX 3.7.13
+
+ai作为一种云能力，相关调用被整合到uniCloud中。相关能力由uni-cloud-ai扩展库提供，如何使用扩展库请参考：[使用扩展库](cf-functions.md#extension)
 
 如您的服务器业务不在uniCloud上，可以把云函数URL化，把uni-ai当做http接口调用。
 
 在实际应用中，大多数场景是直接使用uni-im和uni-cms的ai功能，这些开源项目已经把完整逻辑都实现，无需自己研究API。
-
-### 内测邀请
-
-目前`uni-ai`处于内测邀请阶段，可以在需求墙为uni-ai投票（在[需求墙](https://dev.dcloud.net.cn/wish/)选uniCloud分类，对uni-ai投票）。
-DCloud会遴选邀请部分用户参与内测。完善后会正式推出。
 
 ### 获取LLM服务商实例@get-llm-manager
 
@@ -229,6 +226,6 @@ try {
 |--			|--													|
 |50001	|缺少参数										|
 |50002	|参数错误										|
-|60001	|服务商抛出的错误						|
+|60001	|服务商接口抛出错误					|
 |60002	|接口调用凭证、key等信息有误|
 |60003	|触发了服务商限流策略				|

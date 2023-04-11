@@ -547,14 +547,17 @@ uniCloud的api中，有些api对应的实现，其代码体积较大，且这些
 
 注意：未引用扩展库的，使用uniCloud相应api时会报错。
 
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush-glkzk.jpg)
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush-kzk.jpg)
 
 **目前支持的扩展库如下**
 
 - JQL扩展库[uni-cloud-jql]：用于在云函数内使用JQL语法操作数据库，详见：[JQL扩展库](uniCloud/jql-cloud.md)
 - redis扩展库[uni-cloud-redis]：云函数内使用redis，详见：[redis扩展库](uniCloud/redis.md)
 - 发送短信扩展[uni-cloud-sms]：云函数中发送短信，详见：[sms扩展](uniCloud/send-sms?id=extension)
-- 一键登录API扩展[uni-cloud-verify]：手机App调用运营商一键登录服务时，云函数中获取到真实手机号， 详见：[一键登录扩展库](uniCloud/univerify?id=extension)
-- 统一推送服务扩展库[uni-cloud-push]：云函数内使用uni-push，详见：[uniCloud/uni-cloud-push/api]
+- 一键登录与实人认证扩展[uni-cloud-verify]：手机App调用运营商一键登录服务时，云函数中获取到真实手机号， 详见：[一键登录扩展库](uniCloud/univerify?id=extension)。核验终端操作者的真实身份，详见：[uni实人认证](frv/intro.md)
+- 统一推送服务扩展库[uni-cloud-push]：云函数内使用uni-push，详见：[统一推送服务扩展库](uniCloud/uni-cloud-push/api.md)
 
 以下是一个开启了redis扩展库的云函数package.json示例，注意此文件不支持注释，下方示例中的注释仅为演示
 

@@ -17,32 +17,13 @@ Redis常见使用场景：
 - ip黑名单屏蔽。希望较快封杀某些ip请求，缓解MongoDB数据库压力。
 - 其他数据库操作速度不满足需求的场景
 
-## 开通Redis扩展库@buy
+## 开通Redis服务@buy
 
 参考[开通redis](uniCloud/redis-buy.md)
 
 ## 为云函数启用redis扩展库@use-in-function
 
-Redis的sdk体积不小，没有内置在云函数中。在需要Redis的云函数里，开发者需手动配置Redis扩展库。（Redis没有免费试用，需购买才可以使用）
-
-- HBuilderX 3.4起提供了可视化界面，新建云函数/云对象时可选择Redis扩展库，或者在已有的云函数目录点右键选择“管理公共模块或扩展库依赖”
-
-- HBuilderX 3.4以前，没有可视化界面，需要开发者手动在云函数/云对象的package.json内添加云函数的扩展库（如果云函数目录下没有package.json，可以通过在云函数目录下执行`npm init -y`来生成）
-
-下面是一个开启了redis扩展库的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
-
-```js
-{
-	"name": "redis-test",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"extensions": {
-		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容
-	},
-	"author": ""
-}
-```
+Redis的sdk体积不小，没有内置在云函数中。在需要Redis的云函数里，开发者需手动配置Redis扩展库。（Redis没有免费试用，需购买才可以使用）。如何启用扩展库请参考：[使用扩展库](cf-functions.md#extension)
 
 ## 云函数中调用Redis
 

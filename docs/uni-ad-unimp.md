@@ -11,23 +11,18 @@ HBuilderX 3.7.13+支持
 
 ## 开通流程
 
-### 微信开放平台注册应用
-
 1. 登录微信开放平台 [https://open.weixin.qq.com/](https://open.weixin.qq.com/)
 2. 在微信开放平台 `创建移动应用`，按照提示填写相关信息至完成。创建成功后会生成 `AppID`
-3. 确认在微信开放平台创建的应用状态为`已上架`
+3. 确认在微信开放平台创建的应用状态为 `已上架/未设置`
 4. 登录 [uni-AD 广告联盟](https://uniad.dcloud.net.cn)，在App增强广告项下申请
 
 提示
-- 已接入微信分享、登录、支付、任意微信API可跳过上面 `1-3` 步骤
-- iOS 需要配置通用链接，在项目的 manifest.json 界面配置，App模块配置 -> 分享 -> 微信
+- 已上架可跳过上面 `1-3` 步骤
+- iOS 在uni-AD后台配置通用链接后需要重新打包
+- 未上架通过 Scheme 跳转微信小程序，差异点如下
+1. 不支持从微信直接返回App
+2. 无法通过close事件获取用户是否看完广告，需要通过[服务器回调](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)验证
 
-
-### 未在微信开放平台注册应用
-
-未注册通过 Scheme 跳转微信小程序前需要用户确认后打开，不支持从微信直接返回App，需要用户切换应用返回
-
-1. 登录 [uni-AD 广告联盟](https://uniad.dcloud.net.cn)，在App增强广告项下申请
 
 ## 打包注意事项
 

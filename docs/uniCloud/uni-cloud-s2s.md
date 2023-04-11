@@ -151,8 +151,10 @@ const {
   getSecureHeaders
 } = require('uni-cloud-s2s')
 const headers = getSecureHeaders({
-  a: 1,
-  b: 2
+  data: {
+    a: 1,
+    b: 2
+  }
 })
 ```
 
@@ -424,7 +426,9 @@ exports.main = async function(event, context) {
     a: 1,
     b: 2
   }
-  const headers = getSecureHeaders(data)
+  const headers = getSecureHeaders({
+    data
+  })
   const res = await uniCloud.httpclient.request('服务器地址', {
     method: 'POST',
     headers,

@@ -184,6 +184,7 @@ uni-cms                             // uni-cms 插件
 └── uniCloud                // 云函数
     ├── cloudfunctions
     └── database                            // 数据库
+        ├── uni-cms-articles.schema.ext.js  // 文章表schema扩展
         ├── uni-cms-articles.schema.json    // 文章表
         └── uni-cms-categories.schema.json  // 分类表
 ```
@@ -215,26 +216,31 @@ uni-cms-article                             // uni-cms-article 插件
     │   └── uni-cms-unlock-callback         // 内容解锁回调
     │       └── index.js
     └── database                            // 数据库
-        ├── uni-cms-articles.schema.ext.js  // 文章表schema扩展
         ├── uni-cms-articles.schema.json    // 文章表
         ├── uni-cms-categories.schema.json  // 分类表
-        ├── uni-cms-search-logs.schema.json // 搜索日志表
-        ├── uni-cms-search-hot.schema.json  // 搜索热词表
         └── uni-cms-unlock-record.schema.json   // 内容解锁记录表
 ```
 
-### uni-cms 云对象
+### uni-cms 配置@uni-cms-config
 
-#### 配置文件@uni-cms-config
+> 云函数`uni-cms` `uni-cms-unlock-callback` 都使用同一个配置文件
 
-uni-cms 配置文件为 `uni_modules/uni-config-center/common/uni-cms/config.js`, 用于配置uni-cms相关信息, 完整配置如下:
+配置文件路径为 `uni_modules/uni-config-center/common/uni-cms/config.js`, 用于配置uni-cms相关信息, 完整配置如下:
 ```json
 {
-  "contentSecurity": { // 内容安全
-    "allowCheckType": ["content", "image"] // 可选值仅为 content 或 image；content 表示检测文字，image 表示检测图片
+  "clientAppIds": ["__UNI__XXXxx"], // 配置客户端appId
+  "contentSecurity": { // 内容安全配置
+    "allowCheckType": ["content", "image"] // 配置可检测的内容；可选值仅为 content 或 image，content 表示检测文字，image 表示检测图片
+  },
+  "adConfig": { // 广告解锁相关配置
+    "securityKey": "Xxxxxxxxxxxxxxxxxxxxxxxxxx", // 广告位 Security key
+    "watchAdUniqueType": "device" // 观看广告的唯一标识类型，可选值为 user 或者 device，user 表示用户唯一，device 表示设备唯一
   }
 }
 ```
+
+
+### uni-cms 云对象
 
 #### 接口
 
@@ -359,21 +365,31 @@ export default {
 </div>
 
 1. 在uni-ad后台开通[激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html), 开通步骤[详见](https://uniapp.dcloud.net.cn/uni-ad.html#start)
-2. 在对应的广告位上配置激励视频回调，选择云函数回调，回调云函数为`unlock-callback`
+2. 在对应的广告位上配置激励视频回调，选择云函数回调，回调云函数为`uni-cms-unlock-callback`
 3. 在 uni-AD Web 控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 `Security key`, 复制 `Security key`
-4. 在 `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center`目录中创建 `uni-cms-unlock-callback/config.json` 配置文件, 配置文件如下:
+4. 在 `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center`目录中创建 `uni-cms/config.json` 配置文件, 配置文件如下:
 ```json
 {
-  "adSecurityKey": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" // 请将此处替换为自己的 Security key
+  "clientAppIds": ["__UNI__XXXxx"],
+    "adConfig": {
+        "securityKey": "xxxxxxxxxxxxxxxxxxxxx",
+        "watchAdUniqueType": "device"
+    }
 }
 ``` 
-5. 在 `uni_modules/uni-cms/components/render-article-detail/unlock-content.vue` 文件中找到 `data.adpId` 字段, 根据自己的广告位ID进行修改, 例如:
+**注意**
+- `clientAppIds` 为客户端appId, 用于校验客户端请求, 如不配置可能导致无法使用广告解锁功能, 需要与客户端配置的appId保持一致
+- `securityKey` 为广告位的 `Security key`, 用于校验广告回调的合法性
+- `watchAdUniqueType` 为观看广告的唯一标识类型, 可选值为 `user` 或者 `device`, `user` 表示用户唯一, `device` 表示设备唯一
+
+5. 在 `uni_modules/uni-cms-article/components/pages/detail/detail.vue` 文件中找到 `data.adpId` 与 `data.watchAdUniqueType` 字段, 根据自己的广告位ID进行修改, 例如:
 ```js
 {
-  adpId: "000000000"
+  adpId: "000000000",
+  watchAdUniqueType: "device"
 }
 ```
-6. 将云函数上传至云端, 添加一篇文章, 并在文章详情中添加解锁全文, 即可运行测试
+6. 将云函数上传至云端, 在uni-admin中创建一篇文章, 并在ToolBar中添加”看广告解锁“功能, 即可运行测试
 
 **解锁逻辑说明**
 
@@ -424,6 +440,8 @@ uni-cms 会使用 uni-sec-check 检测用户输入的文字与上传的图片，
 ## 后续计划
 
 <input type="checkbox" checked disabled /> [内容安全](#content-security-check)
+
+<input type="checkbox" disabled /> 支持大图、小图、多图排版
 
 <input type="checkbox" disabled /> 内容分享
 

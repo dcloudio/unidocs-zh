@@ -1,3 +1,5 @@
+# uni-config-center 云配置中心
+
 `uni-config-center`插件的下载地址：[https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
 The download address of the `uni-config-center` plugin: [https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
 

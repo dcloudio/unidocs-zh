@@ -783,6 +783,9 @@ Developers can right-click the cloud function directory to manage public modules
 注意：未引用扩展库的，使用uniCloud相应api时会报错。
 Note: If the extension library is not referenced, an error will be reported when using the corresponding API of uniCloud.
 
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush-glkzk.jpg)
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush-kzk.jpg)
 
 **目前支持的扩展库如下**
 **Currently supported extension libraries are as follows**
@@ -792,11 +795,8 @@ Note: If the extension library is not referenced, an error will be reported when
 - redis扩展库[uni-cloud-redis]：云函数内使用redis，详见：[redis扩展库](uniCloud/redis.md)
 - redis extension library [uni-cloud-redis]: use redis in cloud functions, see: [redis extension library](uniCloud/redis.md)
 - 发送短信扩展[uni-cloud-sms]：云函数中发送短信，详见：[sms扩展](uniCloud/send-sms?id=extension)
-- Send SMS extension [uni-cloud-sms]: send SMS in the cloud function, see: [sms extension](uniCloud/send-sms?id=extension)
-- 一键登录API扩展[uni-cloud-verify]：手机App调用运营商一键登录服务时，云函数中获取到真实手机号， 详见：[一键登录扩展库](uniCloud/univerify?id=extension)
-- One-key login API extension [uni-cloud-verify]: When the mobile app calls the operator's one-key login service, the real mobile phone number is obtained in the cloud function. For details, see: [One-key login extension library](uniCloud/univerify?id =extension)
-- 统一推送服务扩展库[uni-cloud-push]：云函数内使用uni-push，详见：[uniCloud/uni-cloud-push/api]
-- Unified push service extension library [uni-cloud-push]: use uni-push in cloud functions, see: [uniCloud/uni-cloud-push/api] for details
+- 一键登录与实人认证扩展[uni-cloud-verify]：手机App调用运营商一键登录服务时，云函数中获取到真实手机号， 详见：[一键登录扩展库](uniCloud/univerify?id=extension)。核验终端操作者的真实身份，详见：[uni实人认证](frv/intro.md)
+- 统一推送服务扩展库[uni-cloud-push]：云函数内使用uni-push，详见：[统一推送服务扩展库](uniCloud/uni-cloud-push/api.md)
 
 以下是一个开启了redis扩展库的云函数package.json示例，注意此文件不支持注释，下方示例中的注释仅为演示
 The following is an example of cloud function package.json with the redis extension library enabled. Note that this file does not support comments, and the comments in the example below are for demonstration only

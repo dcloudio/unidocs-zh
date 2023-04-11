@@ -115,7 +115,7 @@ easyinput 组件是对原生input组件的增强 ，是专门为配合表单组�
 |disabled|Boolean|-|false|是否不可输入|
 |maxlength|Number|-|140|最大输入长度，设置为 -1 的时候不限制最大长度|
 |confirmType|String|-|done|设置键盘右下角按钮的文字，仅在type="text"时生效|
-|clearSize|Number|-|15|清除图标的大小，单位px|
+|clearSize|Number|-|24|清除图标的大小，单位px|
 |prefixIcon|String|-|-|输入框头部图标	|
 |suffixIcon|String|-|-|输入框尾部图标|
 |trim|Boolean/String|见 trim Options	| false |	是否自动去除空格，传入类型为 Boolean 时，自动去除前后空格|

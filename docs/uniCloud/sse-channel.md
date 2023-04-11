@@ -77,6 +77,46 @@ export default {
 
 在收到消息结束事件、错误事件及开发者主动调用close方法后会触发close事件
 
+### 事件监听与移除监听@client-listener
+
+事件监听可以通过`on`或`addListener`方法，事件移除需要使用`off`或`removeListener`方法。另外还有`removeAllListener`方法用于移除指定事件的所有监听器。
+
+
+```js
+function onMessage(message){
+  console.log('收到消息：', message)
+}
+
+channel.on('message', onMessage) // 为message事件增加监听器
+channel.addListener('message', onMessage) // 为message事件增加监听器
+channel.off('message', onMessage) // 移除message事件指定监听器
+channel.removeListener('message', onMessage) // 移除message事件指定监听器
+channel.removeAllListener('message') // 移除message事件的所有监听器
+```
+
+:::warning 注意
+监听事件和移除事件传入的方法必须是同一个才可以移除指定的监听器，以下为一个正确示例和一个错误示例
+:::
+
+```js
+// 可以正常移除监听的示例
+function onMessage(message){
+  console.log('收到消息：', message)
+}
+channel.on('message', onMessage)
+channel.off('message', onMessage)
+```
+
+```js
+// 无法正常移除监听的示例
+channel.on('message', function(message){
+  console.log('收到消息：', message)
+})
+channel.off('message', function(message){
+  console.log('收到消息：', message)
+})
+```
+
 ## 云函数API@cloud-api
 
 ### 反序列化消息通道@cloud-deserialize-channel

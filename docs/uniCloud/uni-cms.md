@@ -15,6 +15,15 @@ uni-cms包括管理端和用户端。
 
 客户端插件之所以起名为 uni-cms-article 。是因为未来可能还会拓展 uni-cms-image、uni-cms-video 等插件，实现对富媒体内容的管理。
 
+## 功能亮点
+
+- 开源免费，现成代码，直接上线运营
+- 基于uniCloud，无需搭建服务器，无需关心服务器运维
+- 内容支持多端渲染，包括小程序、H5、App等
+- 内容支持安全检测，防止内容违规
+- 支持观看激励视频广告后解锁全文功能，为开发者提供快速变现的高收益方式 [详见](#watch-ad-unlock-content)
+- 内置AI生成文章等功能，调用`uni-ai`生成、润色、续写文章内容。此功能需HBuilderX 3.7.13+。详见 [uni-ai](uni-ai.md)
+
 ### 演示与截图
 演示体验系统：
 - 管理端：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)
@@ -39,15 +48,6 @@ uni-cms包括管理端和用户端。
     <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202303231701150.jpg" width="375" />
 </div>
 </div>
-
-## 功能亮点
-
-- 开源免费，现成代码，直接上线运营
-- 基于uniCloud，无需搭建服务器，无需关心服务器运维
-- 内容支持多端渲染，包括小程序、H5、App等
-- 内容支持安全检测，防止内容违规
-- 支持观看激励视频广告后解锁全文功能，为开发者提供快速变现的高收益方式 [详见](#watch-ad-unlock-content)
-- 内置AI生成文章等功能，调用uni-ai生成、润色、续写文章内容。详见 [uni-ai](uni-ai.md)
 
 ## 如何使用
 

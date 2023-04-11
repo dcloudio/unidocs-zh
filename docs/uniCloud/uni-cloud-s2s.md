@@ -278,7 +278,7 @@ const signKey = 'q0etb3cl0s8mrlfdqp33ist1ou0r97pg'
 
 1. 过滤payload内非简单类型数据，以key升序，生成payloadStr。`payloadStr = 'a=1&b=2'`
 2. 拼接签名串，hmac方法对应的签名串为`timestamp+'\n'+payloadStr`，hash方法对应的签名串为`timestamp+'\n'+payloadStr+'\n'+signKey`
-3. 分表调用hmac方法、hash方法获取签名结果
+3. 分别调用hmac方法、hash方法获取签名结果
 
 上述数据使用不同签名方法获取的签名串分别如下
 
@@ -332,6 +332,20 @@ public class Main {
 }
 ```
 
+#### python
+
+```python
+from hashlib import sha256
+
+def get_sign(data):
+    hash = sha256()
+    hash.update(data.encode('utf-8'))
+    sign = hash.hexdigest()
+    return sign
+
+print(get_sign('1677743381925'+'\n'+'a=1&b=2' + '\n' + 'q0etb3cl0s8mrlfdqp33ist1ou0r97pg'))
+```
+
 ### createHmac@create-hmac
 
 #### nodejs
@@ -376,6 +390,21 @@ public class Main {
     }
   }
 }
+```
+
+#### python
+
+```python
+from hashlib import sha256
+import hmac
+
+def get_sign(data, key):
+    key = key.encode('utf-8')
+    message = data.encode('utf-8')
+    sign = hmac.new(key, message, digestmod=sha256).hexdigest()
+    return sign
+    
+get_sign('1677743381925'+'\n'+'a=1&b=2', 'q0etb3cl0s8mrlfdqp33ist1ou0r97pg')
 ```
 
 ## 常见场景示例@scene

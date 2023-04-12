@@ -220,6 +220,7 @@ univerifyStyle 数据结构：
     },  
     "privacyTerms": {  
         "defaultCheckBoxState":true, // 条款勾选框初始状态 默认值： true
+        "isCenterHint":false, //未勾选服务条款时点击登录按钮的提示是否居中显示 默认值: false (3.7.13+ 版本支持)
         "uncheckedImage":"", // 可选 条款勾选框未选中状态图片（仅支持本地图片 建议尺寸 24x24px）(3.2.0+ 版本支持)   
         "checkedImage":"", // 可选 条款勾选框选中状态图片（仅支持本地图片 建议尺寸24x24px）(3.2.0+ 版本支持)   
         "checkBoxSize":12, // 可选 条款勾选框大小，仅android支持

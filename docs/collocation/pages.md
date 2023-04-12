@@ -33,9 +33,7 @@ It is similar to the **page management** part of `app.json` in the WeChat MiniAp
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
 |[rightWindow](/collocation/pages?id=rightwindow)| Object|No|The right window of the big screen| H5|
 |[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0||
-|[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)| Object|No|Automatic jump related configuration, newly added in HBuilderX 3.5.0||
-|entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0||微信小程序、支付宝小程序|
-| entryPagePath| String|No|The home page is started by default, newly added in HBuilderX 3.7.0||WeChat MiniApp, Alipay MiniApp|
+|entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序|
 
 以下是一个包含了所有配置选项的 `pages.json` ：
 Here is a `pages.json` with all configuration options:

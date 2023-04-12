@@ -11,10 +11,8 @@ Displays the message prompt box.
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的内容，长度与 icon 取值有关。||
 |icon|String|否|图标，有效值详见下方说明，默认：success。||
-|image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序|
-|image|String|No|The local path of the custom icon (gif is not supported on the app side)|App, H5, WeChat applet, Baidu applet|
-|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序|
-|mask|Boolean|No|Whether to display a transparent mask to prevent touch penetration, default: false|App, WeChat applet|
+|image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序、字节小程序（2.62.0+）|
+|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序、字节小程序（2.47.0+）|
 |duration|Number|否|提示的延迟时间，单位毫秒，默认：1500||
 |duration|Number|No|Prompt delay time, in milliseconds, default: 1500||
 |position|String|否|纯文本轻提示显示位置，填写有效值后只有 `title` 属性生效，且不支持通过 uni.hideToast 隐藏。有效值详见下方说明。|App|
@@ -94,9 +92,7 @@ If the loading prompt box is displayed, you must actively call [uni.hideLoading]
 | Parameter| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的文字内容，显示在loading的下方||
-| title| String| Yes| Text content of the prompt, displayed under loading| |
-|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|H5、App、微信小程序、百度小程序|
-|mask|Boolean|No|Whether to display a transparent mask to prevent touch penetration, default: false|H5, App, WeChat applet, Baidu applet|
+|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|H5、App、微信小程序、百度小程序、字节小程序（2.47.0+）|
 |success|Function|否|接口调用成功的回调函数||
 | success| Function| No| Callback function for successful interface calling| |
 |fail|Function|否|接口调用失败的回调函数||
@@ -228,9 +224,7 @@ Pop up the operation menu from the bottom up
 |alertText|String|否|警示文案（同菜单标题）|微信小程序（仅真机有效）|
 |alertText|String|No|Alert text (same as menu title)|WeChat applet (only valid on real devices)|
 |itemList|Array&lt;String&gt;|是|按钮的文字数组|微信、百度、字节跳动小程序数组长度最大为6个|
-|itemList|Array&lt;String&gt;|Yes|Button text array|WeChat, Baidu, ByteDance applet array length is up to 6|
-|itemColor|HexColor|否|按钮的文字颜色，字符串格式，默认为"#000000"|App-iOS、字节跳动小程序、飞书小程序不支持|
-|itemColor|HexColor|No|Button text color, string format, default is "#000000"|App-iOS, ByteDance applet, Feishu applet are not supported|
+|itemColor|HexColor|否|按钮的文字颜色，字符串格式，默认为"#000000"|App-iOS、飞书小程序不支持|
 |popover|Object|否|大屏设备弹出原生选择按钮框的指示区域，默认居中显示|App-iPad（2.6.6+）、H5（2.9.2）|
 | popover| Object| No| On large-screen devices, the display area of the native selection button box is popped up and displayed in the center by default| App-iPad(2.6.6+), H5(2.9.2)|
 |success|Function|否|接口调用成功的回调函数，详见返回参数说明||

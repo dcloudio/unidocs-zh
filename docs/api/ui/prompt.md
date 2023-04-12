@@ -8,8 +8,8 @@
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的内容，长度与 icon 取值有关。||
 |icon|String|否|图标，有效值详见下方说明，默认：success。||
-|image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序|
-|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序|
+|image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序、字节小程序（2.62.0+）|
+|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序、字节小程序（2.47.0+）|
 |duration|Number|否|提示的延迟时间，单位毫秒，默认：1500||
 |position|String|否|纯文本轻提示显示位置，填写有效值后只有 `title` 属性生效，且不支持通过 uni.hideToast 隐藏。有效值详见下方说明。|App|
 |success|Function|否|接口调用成功的回调函数||
@@ -68,7 +68,7 @@ uni.hideToast();
 |参数|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的文字内容，显示在loading的下方||
-|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|H5、App、微信小程序、百度小程序|
+|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|H5、App、微信小程序、百度小程序、字节小程序（2.47.0+）|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
@@ -162,7 +162,7 @@ uni.showModal({
 |title|String|否|菜单标题|App、H5、支付宝小程序、钉钉小程序、微信小程序 3.4.5+（仅真机有效）|
 |alertText|String|否|警示文案（同菜单标题）|微信小程序（仅真机有效）|
 |itemList|Array&lt;String&gt;|是|按钮的文字数组|微信、百度、字节跳动小程序数组长度最大为6个|
-|itemColor|HexColor|否|按钮的文字颜色，字符串格式，默认为"#000000"|App-iOS、字节跳动小程序、飞书小程序不支持|
+|itemColor|HexColor|否|按钮的文字颜色，字符串格式，默认为"#000000"|App-iOS、飞书小程序不支持|
 |popover|Object|否|大屏设备弹出原生选择按钮框的指示区域，默认居中显示|App-iPad（2.6.6+）、H5（2.9.2）|
 |success|Function|否|接口调用成功的回调函数，详见返回参数说明||
 |fail|Function|否|接口调用失败的回调函数||

@@ -93,9 +93,67 @@ Conditional compilation is marked with special comments which are the basic of c
 * 条件编译是利用注释实现的，在不同语法里注释写法不一样，js使用 ``// 注释``、css 使用 ``/* 注释 */``、vue/nvue 模板里使用 ``<!-- 注释 -->``；
 * Conditional compilation is realized by annotations. In different grammars, annotations are written differently. js uses `// Comments`, css uses `/* Comments */`, and vue/nvue template uses `<!-- Comments -->`;
 * 条件编译APP-PLUS包含APP-NVUE和APP-VUE，APP-PLUS-NVUE和APP-NVUE没什么区别，为了简写后面出了APP-NVUE ；
-* Conditional compilation APP-PLUS includes APP-NVUE and APP-VUE, APP-PLUS-NVUE and APP-NVUE are no different, in order to abbreviate APP-NVUE later;
-* 使用条件编译请保证`编译前`和`编译后`文件的正确性，比如json文件中不能有多余的逗号；
-* When using conditional compilation, please ensure the correctness of the `Pre-compilation` and `Post-compilation` files, for example, there should be no extra commas in the json file;
+* 使用条件编译请保证`编译前`和`编译后`文件的语法正确性，即要保障无论条件编译是否生效都能通过语法校验。比如：json文件中不能有多余的逗号，js中不能重复导入；
+
+  ::: preview
+  
+  > JSON 错误示例
+  
+  ```json
+  {
+    "key": "a",
+    // #ifdef MP-WEIXIN
+    "key": "b"
+    // #endif
+  }
+  ```
+  
+  > JSON 正确示例
+  
+  ```json
+  {
+    "key": "a"
+    // #ifdef MP-WEIXIN
+    ,"key": "b"
+    // #endif
+  }
+  ```
+  
+  :::
+  
+  ::: preview
+  
+  > JS 错误示例
+  
+  ```js
+  // #ifdef MP-WEIXIN
+  import a from 'a/wx'
+  // #endif
+  // #ifndef MP-WEIXIN
+  import a from 'a/index'
+  // #endif
+  ```
+  
+  > JS 正确示例
+  
+  ```js
+  // #ifdef MP-WEIXIN
+  import a as aWx from 'a/wx'
+  // #endif
+  // #ifndef MP-WEIXIN
+  import a as aIndex from 'a/index'
+  // #endif
+  var a
+  // #ifdef MP-WEIXIN
+  a = aWx
+  // #endif
+  // #ifndef MP-WEIXIN
+  a = aIndex
+  // #endif
+  ```
+  
+  :::
+  
 * `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`
 * `VUE3` needs to configure `"vueVersion" : "3"` at the root node of the project's `manifest.json` file
 

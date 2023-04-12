@@ -292,10 +292,9 @@ uni-cms                             // uni-cms 插件
 - `uni-cms-categories` cms分类表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-categories)
 - `uni-im-conversation` im会话表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-conversation)
 - `uni-im-friend` im好友表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-friend)
-- `uni-im-group-member` im群成员表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-group-member)
-- `uni-im-group` im群表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-group)
+- `uni-im-group-member` im群成员表
+- `uni-im-group` im群表
 - `uni-im-msg` im消息表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-msg)
-- `uni-im-notification` im通知表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-notification)
 
 #### uni-cms-article 用户端插件
 ```text

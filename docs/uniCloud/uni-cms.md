@@ -36,11 +36,13 @@ uni-cms包括管理端和用户端。
 ### 演示与截图
 演示体验系统：
 - 管理端：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)
+- 客户端（小程序）扫码查看
 
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121203155.jpg)
 
 #### 管理端截图：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202303231717572.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304120145412.png)
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/202304111812979.png)
 
@@ -48,13 +50,43 @@ uni-cms包括管理端和用户端。
 
 <div style="display: flex; flex-basis: 10px">
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202303231658499.jpg" width="375"/>
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202304120144625.png" width="375"/>
 </div>
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202303231657737.jpg" width="375" />
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202304120139988.png" width="375" />
 </div>
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202303231701150.jpg" width="375" />
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202304120139209.png" width="375" />
+</div>
+</div>
+
+## 功能介绍
+
+### 文章基础功能
+
+支持文章保存草稿、发布、编辑、下架、删除、阅读量统计等功能。
+
+创建文章时支持保存为草稿或者直接发布，当保存为草稿时，文章可以再次编辑，直到文章发布成功。
+已发布的文章可以编辑，但是编辑后需要更新文章，才能生效。
+当已发布的文章出现侵权或者一些原因需要隐藏时，可在文章列表中对该篇文章进行下架操作，下架后的文章将不会在前端展示，同时文章状态会变为“草稿”状态。
+
+阅读量统计（PV）：每次打开文章详情页，都会向后端发送请求，后端会对文章的阅读量进行加一统计。
+
+### 观看广告解锁全文
+
+> 使用观看广告解锁全文功能需要在uni-ad后台开通[激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)。
+> 
+> 目前H5端不支持广告，所以在H5端无法使用观看广告解锁全文功能
+
+观看广告解锁全文功能，是uni-cms的核心功能之一。它可以帮助开发者快速变现，提高内容生产效率。
+
+如何开通使用广告功能，请[参考](#watch-ad-unlock-content)。
+
+用户端截图如下：
+
+<div style="display: flex; flex-basis: 10px">
+<div style="margin-right: 10px;">
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202304120139209.png" width="375" />
 </div>
 </div>
 
@@ -129,6 +161,41 @@ uni-cms                             // uni-cms 插件
 │       ├── uni-cms-articles.js     // 文章表单验证
 │       └── uni-cms-categories.js   // 分类表单验证
 ├── components                      // 组件
+│   ├── ai                          // uni-ai组件
+│   │   ├── chat.nvue               // 聊天组件
+│   │   ├── common
+│   │   │   ├── appEvent.js
+│   │   │   ├── initIndexDB.js
+│   │   │   ├── md5.js
+│   │   │   ├── sqlite.js
+│   │   │   ├── timestampToString.js
+│   │   │   └── utils.js
+│   │   ├── components
+│   │   │   ├── uni-im-control
+│   │   │   │   └── uni-im-control.vue
+│   │   │   ├── uni-im-icons
+│   │   │   │   ├── uni-im-icons.ttf
+│   │   │   │   └── uni-im-icons.vue
+│   │   │   ├── uni-im-msg
+│   │   │   │   ├── html-parser.js
+│   │   │   │   └── uni-im-msg.vue
+│   │   │   └── uni-im-msg-list
+│   │   │       ├── components
+│   │   │       │   ├── uni-im-list
+│   │   │       │   │   └── uni-im-list.vue
+│   │   │       │   └── uni-im-list-item
+│   │   │       │       └── uni-im-list-item.vue
+│   │   │       └── uni-im-msg-list.vue
+│   │   ├── lib
+│   │   │   ├── MsgManager.js
+│   │   │   ├── createObservable.js
+│   │   │   └── main.js
+│   │   └── static
+│   │       ├── avatarUrl.png
+│   │       ├── iconfont.css
+│   │       ├── iconfont.ttf
+│   │       ├── qrCode.png
+│   │       └── sound-ing.gif
 │   └── editor                      // 富文本编辑器 (兼容H5, 微信小程序, App, 基于Quill, 详见https://quilljs.com/)
 │       ├── app.scss                
 │       ├── editor.vue              // 富文本编辑器组件
@@ -196,12 +263,39 @@ uni-cms                             // uni-cms 插件
 │       └── list            // 分类列表
 │           └── list.vue
 └── uniCloud                // 云函数
-    ├── cloudfunctions
-    └── database                            // 数据库
-        ├── uni-cms-articles.schema.ext.js  // 文章表schema扩展
-        ├── uni-cms-articles.schema.json    // 文章表
-        └── uni-cms-categories.schema.json  // 分类表
+    ├── cloudfunctions       
+    │   ├── uni-cms-co          // uni-cms 云对象
+    │   │   ├── index.obj.js    // 云对象入口
+    │   │   ├── package.json
+    │   │   └── utils.js        // uni-cms云对象工具
+    │   └── uni-im-co           // uni-im 云对象
+    │       ├── index.obj.js    // 云对象入口
+    │       └── package.json    
+    └── database                // 数据库
+        ├── db_init.json        // 数据库初始化配置，初始化uni-ai用户
+        ├── uni-cms-articles.schema.ext.js          // uni-cms-articles 云函数扩展
+        ├── uni-cms-articles.schema.json            // uni-cms-articles 数据库表
+        ├── uni-cms-categories.schema.json          // uni-cms-categories 数据库表
+        ├── uni-im-conversation.schema.ext.js       // uni-im-conversation 云函数扩展
+        ├── uni-im-conversation.schema.json         // uni-im-conversation 数据库表
+        ├── uni-im-friend.schema.json               // uni-im-friend 数据库表
+        ├── uni-im-group-member.schema.json         // uni-im-group-member 数据库表
+        ├── uni-im-group.schema.json                // uni-im-group 数据库表
+        ├── uni-im-msg.schema.ext.js                // uni-im-msg 云函数扩展
+        ├── uni-im-msg.schema.json                  // uni-im-msg 数据库表
+        └── uni-im-notification.schema.json         // uni-im-notification 数据库表
 ```
+
+**数据库表说明**
+
+- `uni-cms-articles` cms文章表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-articles)
+- `uni-cms-categories` cms分类表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-categories)
+- `uni-im-conversation` im会话表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-conversation)
+- `uni-im-friend` im好友表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-friend)
+- `uni-im-group-member` im群成员表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-group-member)
+- `uni-im-group` im群表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-group)
+- `uni-im-msg` im消息表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-msg)
+- `uni-im-notification` im通知表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-im-notification)
 
 #### uni-cms-article 用户端插件
 ```text
@@ -230,10 +324,17 @@ uni-cms-article                             // uni-cms-article 插件
     │   └── uni-cms-unlock-callback         // 内容解锁回调
     │       └── index.js
     └── database                            // 数据库
+        ├── db_init.json                    // 数据库初始化配置
         ├── uni-cms-articles.schema.json    // 文章表
         ├── uni-cms-categories.schema.json  // 分类表
         └── uni-cms-unlock-record.schema.json   // 内容解锁记录表
 ```
+
+**数据表说明**
+
+- `uni-cms-articles` 文章表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-articles)
+- `uni-cms-categories` 分类表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-categories)
+- `uni-cms-unlock-record` 内容解锁记录表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-unlock-record)
 
 ### uni-cms 配置@uni-cms-config
 
@@ -262,13 +363,21 @@ uni-cms的云端的配置文件统一使用[uni-config-center](uni-config-center
 	* `watchAdUniqueType` 为 `device` 时，表示按设备解锁。同一设备只需观看一次广告，如果该设备观看过广告已解锁该文章，再次浏览该文章将无需再观看广告。如果应用的本机缓存被清理，则解锁失效。
 	* `watchAdUniqueType` 为 `user` 时，表示按用户解锁。此用户为uni-id用户，如果该用户已解锁该文章，再次浏览该文章将无需再观看广告。按用户解锁，需应用中加载uni-id-pages插件。
 
-### uni-cms 云对象
+### 相关云函数
 
-#### 接口
+#### uni-cms
+
+> 管理端云对象，提供内容安全检测服务
+
+**接口**
 
 | 接口名称   | 接口地址          | 接口描述                  |
 |--------|---------------|-----------------------|
 | 图片安全检测 | imageCheckSec | 对指定的图片进行安全检测，违规的图片将删除 |
+
+#### uni-cms-unlock-callback
+
+> 客户端云函数，用于看广告解锁内容后的回调
 
 ### 富文本编辑器扩展
 
@@ -277,6 +386,14 @@ uni-cms的云端的配置文件统一使用[uni-config-center](uni-config-center
 > 如果编辑器在微信小程序或App使用，将不支持二次开发，仅支持基本的富文本编辑功能
 > 
 > 如果需要二次开发，将不能发布至微信小程序或者App，否则会出现编辑器无法使用的情况
+
+:::warning 多端不一致表现说明
+
+Web端：支持二次开发，支持所有Quill.js的功能
+
+小程序端/App端：不支持二次开发，仅支持基本的富文本编辑功能，超链接插入将被转换为MarkDown格式，如插入广告解锁ToolBar，将会转会为图片，但不影响前端正常渲染，仅需编辑时注意
+
+:::
 
 由于自定义了 toolbar 的配置，所以需要在 `uni_modules/uni-cms/components/editor/web/formats` 目录下添加对应的格式文件，例如 `image.js` 文件，用于处理图片标签格式，代码如下:
 ```js
@@ -372,21 +489,15 @@ export default {
 
 ### 观看广告解锁全文@watch-ad-unlock-content
 
-> 使用观看广告解锁全文功能需要在uni-ad后台开通[激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)。
- 
-> 目前H5端不支持广告，所以在H5端无法使用观看广告解锁全文功能
-
-用户端截图如下：
-
-<div style="display: flex; flex-basis: 10px">
-<div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202303231701150.jpg" width="375" />
-</div>
-</div>
-
 1. 在uni-ad后台([https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/))开通[激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)，开通步骤[详见](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 2. 新建激励视频广告位，在对应的广告位上配置激励视频云回调，选择同账户下uni-cms部署的uniCloud服务空间，配置回调云函数为`uni-cms-unlock-callback`
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121447261.png)
+
 3. 在 uni-AD Web 控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 `Security key`，复制 `Security key`
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121448549.png)
+
 4. 在 `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center`目录中创建 `uni-cms/config.json` 配置文件，配置文件如下:
 ```json
 {
@@ -397,12 +508,14 @@ export default {
     }
 }
 ``` 
+
 **注意**
+
 - `clientAppIds` 为客户端appId，用于校验客户端请求，如不配置可能导致无法使用广告解锁功能，需要与客户端配置的appId保持一致
 - `securityKey` 为广告位的 `Security key`，用于校验广告回调的合法性
 - `watchAdUniqueType` 为观看广告的唯一标识类型，可选值为 `user` 或者 `device`，`user` 表示用户唯一，`device` 表示设备唯一
-	* `watchAdUniqueType` 为 `device` 时，表示按设备解锁。同一设备只需观看一次广告，如果该设备观看过广告已解锁该文章，再次浏览该文章将无需再观看广告。如果应用的本机缓存被清理，则解锁失效。
-	* `watchAdUniqueType` 为 `user` 时，表示按用户解锁。此用户为uni-id用户，如果该用户已解锁该文章，再次浏览该文章将无需再观看广告。按用户解锁，需应用中加载uni-id-pages插件。
+* `watchAdUniqueType` 为 `device` 时，表示按设备解锁。同一设备只需观看一次广告，如果该设备观看过广告已解锁该文章，再次浏览该文章将无需再观看广告。如果应用的本机缓存被清理，则解锁失效。
+* `watchAdUniqueType` 为 `user` 时，表示按用户解锁。此用户为uni-id用户，如果该用户已解锁该文章，再次浏览该文章将无需再观看广告。按用户解锁，需应用中加载uni-id-pages插件。
 
 5. 在 `uni_modules/uni-cms-article/pages/detail/detail.vue` 文件中找到 `data.adpId` 与 `data.watchAdUniqueType` 字段，根据自己的广告位ID进行修改，例如:
 ```js
@@ -411,17 +524,20 @@ export default {
   watchAdUniqueType: "device" //注意前端也需要配置解锁方式，是按设备解锁还是按uni-id的用户解锁。
 }
 ```
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121449714.png)
+
 6. 对uni-cms管理端项目下的uniCloud目录点右键，将云函数、配置、数据库、数据库扩展js都上传至云端
 7. 运行uni-admin项目，在内容管理中新建一篇文章，在指定内容后，点击ToolBar的”看广告解锁“功能，添加解锁符，保存文章。
 8. 运行uni-cms-article用户端，浏览文章，看广告解锁。
 
 **解锁逻辑说明**
 
-1. 当用户端浏览文章时，查询文章详情会触发在uni-cms-articles.schema.ext.js（schema扩展库）中定义的数据库读取触发器，在这段js中验证用户/设备是否已解锁，已解锁的用户将会直接展示全文，未解锁的用户将会展示解锁全文按钮。
+1. 当用户端浏览文章时，查询文章详情会触发在`uni-cms-articles.schema.ext.js`（schema扩展库）中定义的数据库读取触发器，在这段js中验证用户/设备是否已解锁，已解锁的用户将会直接展示全文，未解锁的用户将会展示解锁全文按钮。
 
 2. 用户点击解锁全文按钮后，将会弹出激励视频广告，
 - 2.1 广告播放完毕后（界面会显示播放完毕倒计时）
-	广告服务器会通知开发者的uniCloud服务空间的云函数`uni-cms-unlock-callback`，云函数`uni-cms-unlock-callback`进行验证，验证通过后，为用户解锁内容，保存在数据表xxx(TODO)字段中。
+	广告服务器会通知开发者的uniCloud服务空间的云函数`uni-cms-unlock-callback`，云函数`uni-cms-unlock-callback`进行验证，验证通过后，为用户解锁内容，保存在`uni-cms-unlock-record`数据表中，使用字段`unique_id`来标记用户已解锁。
 - 2.2 无广告没有播放完毕，被用户提前关闭，则不会回调到云函数。
 
 **其他**

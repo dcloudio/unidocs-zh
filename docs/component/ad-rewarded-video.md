@@ -463,6 +463,9 @@ export default {
 sign = sha256(secret:transid)
 ```
 
+提示：`Security key` 在 [uni-AD 广告联盟](https://uniad.dcloud.net.cn) 对应的广告位，配置激励视频服务器回调后可看到
+
+
 #### 开发者返回数据约定
 
 返回json数据，字段如下：

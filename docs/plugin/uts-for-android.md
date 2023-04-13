@@ -445,6 +445,7 @@ Android开发场景中，调用活动的级别的资源/能力，需要使用此
 
 ```ts
 // [示例]获取当前activity顶层容器
+let decorView = UTSAndroid.getUniActivity()!.window.decorView;
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 

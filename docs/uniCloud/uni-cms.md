@@ -70,7 +70,7 @@ uni-cms包括管理端和用户端。
 已发布的文章可以编辑，但是编辑后需要更新文章，才能生效。
 当已发布的文章出现侵权或者一些原因需要隐藏时，可在文章列表中对该篇文章进行下架操作，下架后的文章将不会在前端展示，同时文章状态会变为“草稿”状态。
 
-阅读量统计（PV）：每次打开文章详情页，都会向后端发送请求，后端会对文章的阅读量进行加一统计。
+阅读量统计（PV）：每次打开文章详情页，都会向后端发送请求，在schema扩展中（uni-cms-articles.schema.ext.js）会对文章的阅读量进行加一统计。
 
 ### 观看广告解锁全文
 
@@ -335,6 +335,28 @@ uni-cms-article                             // uni-cms-article 插件
 - `uni-cms-categories` 分类表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-categories)
 - `uni-cms-unlock-record` 内容解锁记录表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-unlock-record)
 
+### schema 扩展说明
+
+#### uni-cms-articles.ext.js
+
+> 负责处理与创建、更新和读取文章相关的各种逻辑
+
+主要功能如下：
+
+在创建（beforeCreate）和更新（beforeUpdate）文章之前，检测文章的标题、摘要、内容和封面图片是否包含敏感信息。若包含敏感信息，则抛出错误，提示用户修改。
+
+在读取文章（afterRead）时，根据用户的阅读情况更新文章的阅读次数（view_count）。同时处理文章内容的解锁逻辑。如果文章包含解锁内容，根据用户的登录状态和解锁记录返回相应的内容。
+
+代码中还包含一些辅助函数：
+
+`checkContentSec`：检测文本内容是否包含敏感信息。
+
+`checkImageSec`：检测图片是否违规。
+
+`checkContentSecurityEnable`：检查内容安全开关是否启用。
+
+`safeRequire`：安全地引入模块，如果模块不存在，则抛出错误。
+
 ### uni-cms 配置@uni-cms-config
 
 uni-cms的云端的配置文件统一使用[uni-config-center](uni-config-center.md)。
@@ -364,7 +386,7 @@ uni-cms的云端的配置文件统一使用[uni-config-center](uni-config-center
 
 ### 相关云函数
 
-#### uni-cms
+#### uni-cms-co
 
 > 管理端云对象，提供内容安全检测服务
 
@@ -378,23 +400,26 @@ uni-cms的云端的配置文件统一使用[uni-config-center](uni-config-center
 
 > 客户端云函数，用于看广告解锁内容后的回调
 
-### 富文本编辑器扩展
+### 富文本编辑器插件扩展
 
 > 目前富文本编辑器支持Web、微信小程序、App。不支持其他平台。底层基于Quill.js，详见https://quilljs.com/
 > 
-> 如果编辑器在微信小程序或App使用，将不支持二次开发，仅支持基本的富文本编辑功能
+> 如果编辑器在微信小程序或App使用，将不支持插件扩展，仅支持基本的富文本编辑功能
 > 
-> 如果需要二次开发，将不能发布至微信小程序或者App，否则会出现编辑器无法使用的情况
+> 如果需要开发插件，将不能发布至微信小程序或者App，否则会出现编辑器无法使用的情况
 
 :::warning 多端不一致表现说明
 
-Web端：支持二次开发，支持所有Quill.js的功能
+Web端：支持插件开发，支持所有Quill.js的功能
 
-小程序端/App端：不支持二次开发，仅支持基本的富文本编辑功能，超链接插入将被转换为MarkDown格式，如插入广告解锁ToolBar，将会转会为图片，但不影响前端正常渲染，仅需编辑时注意
+小程序端/App端：不支持插件开发，仅支持基本的富文本编辑功能，超链接插入将被转换为MarkDown格式，如插入广告解锁ToolBar，将会转会为图片，但不影响前端正常渲染，仅需编辑时注意
 
 :::
 
+**例子：添加图片格式**
+
 由于自定义了 toolbar 的配置，所以需要在 `uni_modules/uni-cms/components/editor/web/formats` 目录下添加对应的格式文件，例如 `image.js` 文件，用于处理图片标签格式，代码如下:
+
 ```js
 const ATTRIBUTES = [
   'alt',
@@ -493,9 +518,9 @@ export default {
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121447261.png)
 
-3. 在 uni-AD Web 控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 `Security key`，复制 `Security key`
+3. 在 uni-AD Web 控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 `Security key` 与`adp id`，复制 `Security key` 与 `adp id`
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121448549.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121448549.png) 
 
 4. 在 `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center`目录中创建 `uni-cms/config.json` 配置文件，配置文件如下:
 ```json

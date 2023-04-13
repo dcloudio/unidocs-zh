@@ -543,7 +543,7 @@ In the Android development scenario, this context needs to be used to invoke act
 
 ```ts
 // [示例]获取当前activity顶层容器
-// [Example] Get the current activity top-level container
+let decorView = UTSAndroid.getUniActivity()!.window.decorView;
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 

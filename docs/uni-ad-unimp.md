@@ -2,10 +2,13 @@
 
 ## 简介
 
-通过App打开微信小程序播放广告
+通过App打开微信小程序播放激励视频广告
+
+为了给开发者提供更高价格的广告，uniAD 推出了高阶游戏广告预算。目前这种广告主预算只支持激励视频广告位
 
 利用 uni-AD 多层调度策略动态调整渠道，在设备无广告时自动调整为其他广告渠道以增加广告填充率
 
+<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp.mp4" style="max-width: 100%;"></video>
 
 ## 开通流程
 
@@ -37,7 +40,6 @@
 
 提示
 - 通过监听广告组件的`@close`事件返回的 `isEnded` 属性通知服务器用户是否看完广告，这种做法是不安全的，因为可以被攻击者模拟请求发送到服务器，造成没有看广告的假象。uniMP激励视频广告不在支持此方式，仅支持安全的[服务器回调](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)验证
-- 已上架微信开放平台的应用可跳过上面 `1-4` 步骤
 - iOS 在uni-AD后台配置通用链接后需要重新打包
 
 
@@ -50,6 +52,12 @@
   "isValid": true
 }
 ```
+
+## Q&A
+
+Q: 为什么通过uniAD接入跳转微信而不是开发者自行接入
+
+A: uni-AD 多层调度策略动态调整渠道，在检测微信无广告时自动在一定时间整为其他广告渠道，不在跳转到微信，提示用户体验及增加广告填充率
 
 
 ## 打包注意事项

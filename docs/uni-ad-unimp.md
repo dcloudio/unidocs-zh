@@ -8,16 +8,16 @@
 
 利用 uni-AD 多层调度策略动态调整渠道，在设备无广告时自动调整为其他广告渠道以增加广告填充率
 
-<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp.mp4" style="max-width: 100%;"></video>
+<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp.mp4" style="max-width: 100%; max-height: 70vh;"></video>
 
 ## 开通流程
 
 `uniMP激励视频广告` 属于增强广告类型，需要先开启增强广告
 
-`uniMP激励视频广告` 支持已上架微信开放平台的应用和未上架的应用，两者差异点如下
+`uniMP激励视频广告` 支持已上架微信开放平台的应用和未上架的应用，两者差异点如下:
 
 1. 未上架微信开放平台的应用跳转微信打开广告前有微信的二次确认框
-2. 不支持从微信直接返回App，用户需要手动返回
+2. 未上架微信开放平台的应用不支持从微信直接返回App，用户需要手动返回
 
 满足上架微信开放平台的应用通过下面的流程上架微信开放平台
 

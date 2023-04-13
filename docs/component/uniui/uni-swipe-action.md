@@ -101,7 +101,16 @@ export default {
 
 ## API
 
-### SwipeAciton Props
+### SwipeAction Methods
+
+方法通过 ref 调用 
+
+|方法称名	|说明|
+|:-:|:-:|
+|resize()|动态添加数据后，如不能正常滑动，需要主动调用此方法，微信小程序、h5、app-vue 不生效|
+|closeAll()|关闭所有已经打开的组件|
+
+### SwipeAcitonItem Props
 
 |属性名|类型|可选值|默认值|是否必填|说明|
 |:-:|:-:|:-:|:-:|:-:|:-:|
@@ -121,22 +130,14 @@ export default {
 
 
 
-### SwipeAction Events
+### SwipeAcitonItem Events
 
 |事件称名	|说明|返回值|
 |:-:|:-:|:-:|
 |@click|点击选项按钮时触发事件|e = {content,index} ，content（点击内容）、index（下标）、position (位置信息)	|
 |@change|组件打开或关闭时触发|left:左侧 ，right：右侧，none：关闭|
 
-### SwipeAction Methods
-
-方法通过 ref 调用 
-
-|方法称名	|说明|
-|:-:|:-:|
-|resize()|动态添加数据后，如不能正常滑动，需要主动调用此方法，微信小程序、h5、app-vue 不生效|
-|close-all()|关闭所有已经打开的组件|
-### SwipeAction Slots
+### SwipeAcitonItem Slots
 
 |名称|说明|
 |:-:|:-:|

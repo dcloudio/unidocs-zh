@@ -11,6 +11,7 @@
 * [老项目引入uni-app](hybrid.md)
 * 运营服务
   * [uni-ad广告变现](uni-ad.md)
+  * [uniMP激励视频广告](uni-ad-unimp.md)
   * [统一发行页面](/uniCloud/uni-portal.md)
   * [前端网页托管](uniCloud/hosting.md)
   * [App升级中心](uniCloud/upgrade-center.md)

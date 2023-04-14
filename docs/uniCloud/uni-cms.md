@@ -10,8 +10,8 @@ uni-cms是全端的、云端一体的开源CMS内容管理系统。
 
 uni-cms包括管理端和用户端。
 
-1. uni-cms：CMS管理端。属于uni-admin插件，用于管理文章分类、文档内容编辑等，提供了广告解锁符和ai生成文章的功能 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms)
-2. uni-cms-article：CMS用户端。包含文章搜索、文章列表详情等页面，还有看广告解锁付费内容的功能 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms-article)
+1. [uni-cms](https://ext.dcloud.net.cn/plugin?name=uni-cms)：CMS管理端。属于uni-admin插件，用于管理文章分类、文档内容编辑等，提供了广告解锁符和ai生成文章的功能 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms)
+2. [uni-cms-article](https://ext.dcloud.net.cn/plugin?name=uni-cms-article)：CMS用户端。包含文章搜索、文章列表详情等页面，还有看广告解锁付费内容的功能 [插件地址](https://ext.dcloud.net.cn/plugin?name=uni-cms-article)
 
 客户端插件之所以起名为 uni-cms-article 。是因为未来可能还会拓展 uni-cms-image、uni-cms-video 等插件，实现对富媒体内容的管理。
 

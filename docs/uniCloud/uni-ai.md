@@ -9,7 +9,7 @@ ai大潮来袭，如何把ai能力引入自己的应用中？几乎是每个开�
 1. 聚合
 
 `uni-ai`，聚合了国内外各种流行的ai能力。包括
-- 大语言模型LLM：chatGPT、GPT-4、文心一言以及一些优秀创业公司
+- 大语言模型LLM：chatGPT、GPT-4、百度文心一言以及一些优秀创业公司
 - 图形能力：stable diffusion、midjourney等
 
 `uni-ai`支持配置自己在AI厂商处申请的API Key和代理，也支持免配直接使用。
@@ -50,7 +50,7 @@ ai能力非常常见的应用场景，有智能客服和自动生成文稿。
 `uni-ai`把这些常见场景对应的应用均已做好，并且开源。开发者可以直接拿走使用。
 
 - uni-cms，内置了智能内容生成。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)
-- uni-im，内置了智能客服（暂未发布）
+- uni-im，内置了智能客服[详见](https://ext.dcloud.net.cn/plugin?id=11771)
 
 
 这些完善的项目，包括了前端页面（全端可用）、云对象、云数据库等全套代码，开箱即用。
@@ -99,6 +99,8 @@ ai作为一种云能力，相关调用被整合到uniCloud中。
 ai能力由`uni-cloud-ai`扩展库提供，在云函数或云对象中，对右键或在package.json中配置`uni-cloud-ai`扩展库。
 如何使用扩展库请参考：[使用扩展库](cf-functions.md#extension)
 
+注意uni-ai是云函数扩展库，其api是`uniCloud.ai`，不是需要下载的三方插件。而uni-cms、uni-im等开源项目，是需要在插件市场下载的。
+
 ### 获取LLM服务商实例@get-llm-manager
 
 LLM，全称为Large Language Models，指大语言模型。
@@ -121,6 +123,8 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 |proxy		|string	|否		|-		|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填													|
 
 **示例**
+
+在云函数或云对象中编写如下代码：
 
 ```js
 // 不指定provider
@@ -326,7 +330,7 @@ uni-ai会持续快速迭代，未来会陆续提供：
 
 目前生成式ai的主要用途有：
 - 文章生成、润色、续写：常见于生成文案、文书、宣传资料、营销邮件、笑话、诗词等。[uni-cms](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)中，已经内置了这个功能
-- 闲聊：情感咨询、常识问答
+- 闲聊：情感咨询、常识问答。[uni-im](https://ext.dcloud.net.cn/plugin?id=11771)
 - 翻译：各国各民族语言翻译
 - 代码注释补充和简单代码生成：需使用openai，其他provider在代码领域的能力暂时还不行
 

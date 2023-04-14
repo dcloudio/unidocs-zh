@@ -571,6 +571,13 @@ sign = sha256(secret:transid)
 
 提示：`Security key` 在 [uni-AD 广告联盟](https://uniad.dcloud.net.cn) 对应的广告位，配置激励视频服务器回调后可看到
 
+#### 签名验证方式
+
+通过以下2种方式验证外部服务器与uniCloud安全通讯
+
+1. [uni-cloud-s2s](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)模块
+2. 手动获取HTTP请求参数中的 `sign` 验证
+
 
 #### 开发者返回数据约定
 #### developer return data contract

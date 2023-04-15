@@ -125,3 +125,5 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 </style>
 ```
 :::
+
+一个完整的内容管理系统比较复杂，DCloud已提供好了现成的`uni-cms`，开源、免费、全端可用、功能完善，包括管理端和用户端。还内置了ai生成文章和广告变现功能。详见：[https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)

@@ -56,6 +56,8 @@ ai能力非常常见的应用场景，有智能客服和自动生成文稿。
 这些完善的项目，包括了前端页面（全端可用）、云对象、云数据库等全套代码，开箱即用。
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/202304112225875.png)
 
+在线体验：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)
+
 5. 费用优化
 
 ai能力调用，是需要按token数量付费的。token太少会回答不准，太多则费用太高。

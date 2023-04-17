@@ -61,6 +61,11 @@ export default {
 			"prefix": "群5"
 		},
 		{
+			"number": "697264024",
+			"state": 1,
+			"prefix": "群6",
+		},
+		{
 			"number": "942061423",
 			"state": 1,
 			"prefix": "群7",
@@ -156,19 +161,14 @@ export default {
 			"prefix": "群25"
 		},
 		{
-			"number": "811363410",
-			"state": 1,
-			"prefix": "群27"
-		},
-		{
 			"number": "147867597",
 			"state": 1,
 			"prefix": "群26"
 		},
 		{
-			"number": "166188776",
+			"number": "811363410",
 			"state": 1,
-			"prefix": "群28"
+			"prefix": "群27"
 		},
 		{
 			"number": "202965481",
@@ -206,10 +206,10 @@ export default {
 			"prefix": "群35"
 		},
 		{
-			"number": "697264024",
+			"number": "166188776",
 			"state": 0,
-			"prefix": "群6",
-			joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=BWxBTekKAvLgeujlZ5Xgv0B7plgfQ7e8&jump_from=webapi&authKey=wmmuhlITjzR1CfHom8vV0zO2OBRE/X1KCcwBQHo1qdOM+u3PwDjrpZ5wONjpWtIa'
+			"prefix": "群28",
+			joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=ZHjCwfb_jrLu_VxKuQQDRF7XZwNA02Aw&jump_from=webapi&authKey=DgQeYnhoSxtcq9NBhIA8b4hDSqKSyaomkWNo/VH9A7kJwEx/4C0xDgCrg8XQOA6t'
 		}
 	]
 }

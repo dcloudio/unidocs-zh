@@ -19,7 +19,7 @@
 |filePath|String|是（files和filePath选其一）|要上传文件资源的路径。||
 |name|String|是|文件对应的 key , 开发者在服务器端通过这个 key 可以获取到文件二进制内容||
 |header|Object|否|HTTP 请求 Header, header 中不能设置 Referer。||
-|timeout|Number|否|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)、微信小程序、支付宝小程序、字节小程序、快手小程序|
+|timeout|Number|否|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)、微信小程序、支付宝小程序、字节跳动小程序、快手小程序|
 |formData|Object|否|HTTP 请求中其他额外的 form data||
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
@@ -152,8 +152,8 @@ uni.chooseImage({
 |:-|:-|:-|:-|:-|
 |url|String|是|下载资源的 url| |
 |header|Object|否|HTTP 请求 Header, header 中不能设置 Referer。| |
-|timeout|Number|否|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)、微信小程序、支付宝小程序、字节小程序、快手小程序|
-|filePath|string|否|指定文件下载后存储的路径 (本地路径)|小程序支持（IOS小程序保存到相册需要添加此字段才可以正常保存）|
+|timeout|Number|否|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)、微信小程序、支付宝小程序、字节跳动小程序、快手小程序|
+|filePath|string|否|指定文件下载后存储的路径 (本地路径)|小程序端支持（微信IOS小程序保存到相册需要添加此字段才可以正常保存）|
 |success|Function|否|下载成功后以 tempFilePath 的形式传给页面，res = {tempFilePath: '文件的临时路径'}| |
 |fail|Function|否|接口调用失败的回调函数| |
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）| |
@@ -164,10 +164,10 @@ uni.chooseImage({
 
 |参数|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
-|tempFilePath|String|临时文件路径，下载后的文件会存储到一个临时文件|微信小程序、支付宝小程序、百度小程序、字节小程序、飞书小程序|
-|statusCode|Number|开发者服务器返回的 HTTP 状态码|微信小程序、QQ小程序、百度小程序、字节小程序、飞书小程序|
+|tempFilePath|String|临时文件路径，下载后的文件会存储到一个临时文件|微信小程序、支付宝小程序、百度小程序、字节跳动小程序、飞书小程序|
+|statusCode|Number|开发者服务器返回的 HTTP 状态码|微信小程序、QQ小程序、百度小程序、字节跳动小程序、飞书小程序|
 |apFilePath|String|下载文件保存的路径（本地临时文件）。入参未指定 filePath 的情况下可用|支付宝小程序|
-|filePath|String|用户文件路径 (本地路径)。传入 filePath 时会返回，跟传入的 filePath 一致|微信小程序、支付宝小程序、字节小程序、飞书小程序|
+|filePath|String|用户文件路径 (本地路径)。传入 filePath 时会返回，跟传入的 filePath 一致|微信小程序、支付宝小程序、字节跳动小程序、飞书小程序|
 |fileContent|Buffer|文件内容|QQ小程序|
 
 **注意**

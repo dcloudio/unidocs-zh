@@ -98,7 +98,12 @@ The internal test is currently open, please contact uniad@dcloud.io to apply for
 - [沉浸视频流广告](https://uniapp.dcloud.net.cn/component/ad-draw.html)
 - [Immersive Video Streaming Ads](https://uniapp.dcloud.net.cn/component/ad-draw.html)
 - [短视频内容联盟组件](https://uniapp.dcloud.net.cn/component/ad-content-page.html)
-- [Short Video Content Alliance Component](https://uniapp.dcloud.net.cn/component/ad-content-page.html)
+
+### 广告相关API
+
+- [激励视频广告](https://uniapp.dcloud.net.cn/api/ad-rewarded-video.html)
+- [全屏视频广告](https://uniapp.dcloud.net.cn/api/ad-fullscreen-video.html)
+- [插屏广告](https://uniapp.dcloud.net.cn/api/ad-interstitial.html)
 - [互动游戏](https://uniapp.dcloud.net.cn/api/a-d/interactive.html)
 - [Interactive Game](https://uniapp.dcloud.net.cn/api/a-d/interactive.html)
 

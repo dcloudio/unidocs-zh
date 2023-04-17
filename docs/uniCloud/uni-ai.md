@@ -345,3 +345,6 @@ uni-ai会持续快速迭代，未来会陆续提供：
 
 - ai生成的文章，如发布到互联网上，应当调用内容安全审查后再发布。比如[uni内容安全](https://ext.dcloud.net.cn/plugin?id=5460)。[uni-cms](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)已经内置了uni内容安全，只需在配置里开启即可。
 - 如开放给用户聊天使用，也应该通过内容安全来管控，避免出现违法违规内容，导致被下架
+
+
+> 更多问题欢迎添加uni-ai官方交流群 群号:[699680439](https://qm.qq.com/cgi-bin/qm/qr?k=P_JoYXY56vNfb78uNHwwzqpODwl9e89B&jump_from=webapi&authKey=GDp321q9ZYW4V0ZQcejXikwMnNRs4KVBcQXMADs8lvC0hifSH9ORHsyERy6vO4bA)

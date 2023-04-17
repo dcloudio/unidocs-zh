@@ -52,7 +52,7 @@
       * [信息流(Banner)](component/ad.md)
       * [Native Ads](component/ad.md)
       * [激励视频广告](component/ad-rewarded-video.md)
-      * [Rewarded Ads](component/ad-rewarded-video.md)
+      * [uniMP激励视频广告](component/uni-ad-unimp.md)
       * [全屏视频广告](component/ad-fullscreen-video.md)
       * [Fullscreen Ads](component/ad-fullscreen-video.md)
       * [插屏广告](component/ad-interstitial.md)

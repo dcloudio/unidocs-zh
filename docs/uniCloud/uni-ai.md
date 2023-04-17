@@ -56,8 +56,11 @@ ai能力非常常见的应用场景，有智能客服和自动生成文稿。
 这些完善的项目，包括了前端页面（全端可用）、云对象、云数据库等全套代码，开箱即用。
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/202304112225875.png)
 
-在线体验：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)。在uni-admin登录后，左侧内容管理中新建一篇文章，toolbar右上角有ai按钮。注意测试系统的数据会定时清除。
+在线体验：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)。
 
+这是一个集成了uni-cms的uni-admin系统，登录后，左侧内容管理中新建一篇文章，toolbar右上角有ai按钮。注意测试系统的数据会定时清除。
+
+注意这个系统不等于uni-ai，uni-ai是底层的api。uni-cms或uni-im都是开源的应用。
 
 5. 费用优化
 

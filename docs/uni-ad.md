@@ -61,6 +61,12 @@ HBuilderX3.5.0+版本 uni-AD 激励视频广告支持实时竞价功能。
 - [插屏广告](https://uniapp.dcloud.net.cn/component/ad-interstitial.html)
 - [沉浸视频流广告](https://uniapp.dcloud.net.cn/component/ad-draw.html)
 - [短视频内容联盟组件](https://uniapp.dcloud.net.cn/component/ad-content-page.html)
+
+### 广告相关API
+
+- [激励视频广告](https://uniapp.dcloud.net.cn/api/ad-rewarded-video.html)
+- [全屏视频广告](https://uniapp.dcloud.net.cn/api/ad-fullscreen-video.html)
+- [插屏广告](https://uniapp.dcloud.net.cn/api/ad-interstitial.html)
 - [互动游戏](https://uniapp.dcloud.net.cn/api/a-d/interactive.html)
 
 

@@ -74,7 +74,15 @@ export default {
         {
           subTitle: 'uni-im',
           url: 'https://uniapp.dcloud.net.cn/uniCloud/uni-im',
-        }
+        },
+		  {
+		    subTitle: 'uni-ai',
+		    url: 'https://uniapp.dcloud.net.cn/uniCloud/uni-ai',
+		  },
+		  {
+		    subTitle: 'uni-cms',
+		    url: 'https://uniapp.dcloud.net.cn/uniCloud/uni-cms',
+		  }
       ],
     },
   ],

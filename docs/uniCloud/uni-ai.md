@@ -347,4 +347,4 @@ uni-ai会持续快速迭代，未来会陆续提供：
 - 如开放给用户聊天使用，也应该通过内容安全来管控，避免出现违法违规内容，导致被下架
 
 
-> 更多问题欢迎添加uni-ai官方交流群 群号:[699680439](https://qm.qq.com/cgi-bin/qm/qr?k=P_JoYXY56vNfb78uNHwwzqpODwl9e89B&jump_from=webapi&authKey=GDp321q9ZYW4V0ZQcejXikwMnNRs4KVBcQXMADs8lvC0hifSH9ORHsyERy6vO4bA)
+> 更多问题欢迎加入uni-ai官方交流群 群号:[699680439](https://qm.qq.com/cgi-bin/qm/qr?k=P_JoYXY56vNfb78uNHwwzqpODwl9e89B&jump_from=webapi&authKey=GDp321q9ZYW4V0ZQcejXikwMnNRs4KVBcQXMADs8lvC0hifSH9ORHsyERy6vO4bA)

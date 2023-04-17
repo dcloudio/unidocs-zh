@@ -1047,10 +1047,41 @@ let permissionArray :String[] = []
 console.log(permissionArray.toTypedArray())
 ```
 
-另外还存在一种特殊情况，即开发者使用了 `kotlin`编写的依赖，这个时候情况稍微复杂些
+另外还存在一种特殊情况，即开发者 在UTS中使用了 `kotlin`编写的依赖，这个时候情况稍微复杂些
+
+与`UTS`中只有一种 数组结构相比，`kotlin`中的数组结构要多很多，比如 `IntArray`,`Array`,`MutableList`等,
+
+对于情况，开发者需要注意两点：
 
 
-与`UTS`中只有一种 数组结构相比，`kotlin`中的数组结构要多很多，比如 `IntArray`,`Array`,`MutableList`等 
+1  UTS具备类型推导功能，调用第三方依赖是不需要声明类型
+
+```
+// 建议的写法
+let a:IntArray = xxx.getInfo()
+
+// 这样是没必要的，如果一定要这样写，必须要明确了解到kotlin依赖返回的数据结构，否能可能会因为类型错误，导致编译报错
+let a:IntArray = xxx.getInfo()
+
+
+```
+
+2  各种数组类型的转换说明
+
+```
+// IntArray 转 MutableList
+val a = intArrayOf(1,2,3)
+val b = a.toMutableList()
+
+
+// MutableList 转 Array<Int>
+val c = b.toTypedArray()
+
+// Array<Int> 转 IntArray
+val d = c.toIntArray()
+
+
+```
 
 
 

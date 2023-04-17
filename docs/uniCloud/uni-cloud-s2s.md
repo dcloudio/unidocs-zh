@@ -359,7 +359,7 @@ const sign = crypto.createHmac('sha256', signKey).update(timestamp+'\n'+payloadS
 #### php
 
 ```php
-$sign = hash_hmac('sha256', ((string)$timestamp . $payloadStr), $signKey);
+$sign = hash_hmac('sha256', ((string)$timestamp . "\n" . $payloadStr), $signKey);
 ```
 
 #### java

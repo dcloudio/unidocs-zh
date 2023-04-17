@@ -371,9 +371,7 @@ Tip: The vue3 vue page requires the minimum version of the Android system webvie
 |async|Object|参考：[async](/collocation/manifest?id=h5-async)|
 | async| Object|Reference: [async](/collocation/manifest?id=h5-async)|
 |devServer|Object|开发环境 server 配置，参考：[devServer](/collocation/manifest?id=devserver)|
-| devServer| Object|Development environment server configuration, reference: [devServer](/collocation/manifest?id=devserver)|
-|publicPath|String|引用资源的地址前缀，仅发布时生效。参考：[publicPath](/collocation/manifest?id=publicPath)|
-| publicPath| String|The address prefix of the referenced resource, which only takes effect when publishing. Reference: [publicPath](/collocation/manifest?id=publicPath)|
+|publicPath|String|引用资源的地址前缀，仅 Vue2 发布时生效。参考：[publicPath](/collocation/manifest?id=publicPath)|
 |sdkConfigs|String|SDK配置，例如地图...  参考：[sdkConfigs](/collocation/manifest?id=h5sdkconfig)|
 | sdkConfigs| String| SDK configuration, such as map... Reference: [sdkConfigs](/collocation/manifest?id=h5sdkconfig)|
 |optimization|Object|打包优化配置（HBuilderX 2.1.5 以上支持），参考[optimization](/collocation/manifest?id=optimization)|

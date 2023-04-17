@@ -1037,7 +1037,7 @@ UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数�
 
 理论上来说 `MutableList`确实更加灵活强大，但是部分android 平台api 明确要求了 Array格式的数据(比如请求权限)
 
-类似场景下，我们就要使用 toTypedArray() 函数进行转换
+类似场景下，我们就要使用 toTypedArray() 函数进行转换，以便将`MutableList` 转换为对应的`Array`
 
 ```typescript
 
@@ -1045,8 +1045,17 @@ UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数�
 let permissionArray :String[] = []
 // 得到一个Array
 console.log(permissionArray.toTypedArray())
-
 ```
+
+另外还存在一种特殊情况，即开发者使用了 `kotlin`编写的依赖，这个时候情况稍微复杂些
+
+
+与`UTS`中只有一种 数组结构相比，`kotlin`中的数组结构要多很多，比如 `IntArray`,`Array`,`MutableList`等 
+
+
+
+
+
 
 ### 6.7 如何生成byte[]对象
 

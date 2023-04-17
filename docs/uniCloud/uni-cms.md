@@ -128,7 +128,7 @@ uni-cms包括管理端和用户端。
 
 然后系统管理员在uni-admin中新建一个文章作者角色。在 系统管理 - 角色管理 中操作，如下图所示：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202303291731004.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304171157570.png)
 
 然后系统管理员在 系统管理 - 用户管理 中，为已注册用户赋予作者角色。
 
@@ -367,7 +367,7 @@ uni-cms的云端的配置文件统一使用[uni-config-center](uni-config-center
 
 ```json
 {
-  "clientAppIds": ["__UNI__XXXxx"], // 配置用户端appId
+  "clientAppIds": ["__UNI__XXXxx"], // 配置用户端appId，目前用于看广告解锁全文，可配置多个appId。
   "contentSecurity": { // 内容安全配置
     "allowCheckType": ["content", "image"] // 配置可检测的内容；可选值仅为 content 或 image，content 表示检测文字，image 表示检测图片
   },

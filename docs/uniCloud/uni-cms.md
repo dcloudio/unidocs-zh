@@ -140,6 +140,56 @@ uni-cms包括管理端和用户端。
 
 目前uni-cms没有提供独立的作者端。有需求的开发者需自行改造uni-cms插件。
 
+#### 4. AI 功能开通与使用
+
+> AI功能基于 `uni-im` 实现，`uni-im` 文档请参考[uni-im](https://uniapp.dcloud.net.cn/uniCloud/uni-im)。
+> 
+> `uni-im` 消息推送基于 `uni-push2.0` 实现，`uni-push2.0` 文档请参考[uni-push](https://uniapp.dcloud.net.cn/unipush-v2.html)。
+
+**请按照以下步骤开通并使用，否则将会出现异常问题**
+
+1. 在[开发者中心](https://dev.dcloud.net.cn)对当前应用开通 uni-push2.0，并关联服务空间。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304181604585.png)
+
+2. 在项目的 manifest.json 文件中根据您相应平台选择开通 uniPush2.0，以下截图为开通Web平台的uniPush2.0。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304181607019.png)
+
+3. 内置的 un-im 属于精简版IM，使用前需要在 App.vue 文件内对 uni-im 进行初始化操作，具体代码如下：
+
+```html
+<script>
+	//1. 导入统一身份信息管理模块
+	import uniIdPagesInit from '@/uni_modules/uni-id-pages/init.js';
+	//2. 导入uniIm的Utils工具类
+	import uniImUtils from '@/uni_modules/uni-cms/components/ai/common/utils.js';
+	export default {
+		onLaunch: async function() {
+			console.log('App Launch');
+			//3. 初始化uni身份信息管理模块
+			uniIdPagesInit();
+			//4. 初始化uniIm
+			uniImUtils.init();
+		},
+		onShow: function() {
+			console.log('App Show');
+		},
+		onHide: function() {
+			console.log('App Hide');
+		}
+	};
+</script>
+```
+
+4. 运行项目，体验AI功能。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304112225875.png)
+
+**注意**
+
+- 由于 AI 消息需要通过 uni-push 来下发，本地运行的项目可能收不到 AI 的消息，建议上传部署后再进行测试或体验。
+
 ## 二次开发
 
 > 如果目前的 uni-CMS 不能满足你的需求，你可以基于 uni-CMS 进行二次开发。

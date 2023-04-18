@@ -177,14 +177,12 @@ Whether the cloud function runs directly locally or the client connects to the l
 本地运行环境与uniCloud现网的差别：
 The difference between the local operating environment and the current uniCloud network:
 
-### 本地环境只有node运行环境
-### The local environment only has the node operating environment
+### 本地环境只有node运行环境@diff-env-component
 
 也就是云函数、DB Schema可以使用本地，但本地没有MongoDB、没有redis、没有云存储，数据内容仍然存放在uniCloud现网服务空间。数据库索引也在云端才生效。
 That is, cloud functions and DB Schema can be used locally, but there is no MongoDB, no redis, and no cloud storage locally, and the data content is still stored in the uniCloud live network service space. The database index also takes effect in the cloud.
 
-### node版本差异
-### node version difference
+### node版本差异@diff-node-version
 
 本地运行的nodejs版本为node12。
 The nodejs version running locally is node12.
@@ -192,20 +190,21 @@ The nodejs version running locally is node12.
 服务空间的nodejs版本可以选择8或12，如果你使用了nodejs的api，在本地测试之后部署到云端建议测试一下兼容性。如果只使用uniCloud的api，无需顾虑兼容性。
 The nodejs version of the service space can be selected from 8 or 12. If you use the nodejs api, it is recommended to test the compatibility after deploying to the cloud after local testing. If you only use the uniCloud api, there is no need to worry about compatibility.
 
-### 本地环境的云函数没有超时限制
-### There is no timeout limit for cloud functions in the local environment
+### 本地环境的云函数没有超时限制@diff-timeout
 
 云函数超时时间、运行内存配置，在本地调试时不会生效。
 Cloud function timeout and running memory configuration will not take effect during local debugging.
 
-### return 策略差异
-### return policy difference
+### 扩展库功能差异@diff-extension
+
+HBuilderX自带的uniCloud环境内扩展库的能力仅支持到此HBuilderX发布时，需要更新HBuilderX才可以使用扩展库后续增加的能力
+
+### return 策略差异@diff-return
 
 [详见](cf-functions.md?id=return)
 [See details](cf-functions.md?id=return)
 
-### 公用模块使用注意
-### Notes on the use of public modules
+### 公用模块使用注意@diff-common-module
 
 - `HBuilderX 3.0.0`之前需要在云函数内执行`npm install ../common/xxx`安装公共模块，详细请参考[云函数公用模块](uniCloud/cf-common.md)
 - Before `HBuilderX 3.0.0`, you need to execute `npm install ../common/xxx` in the cloud function to install the common module. For details, please refer to [Cloud Function Common Module](uniCloud/cf-common.md)

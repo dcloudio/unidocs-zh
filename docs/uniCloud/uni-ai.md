@@ -149,7 +149,7 @@ const openai = uniCloud.ai.getLLMManager({
 ### 对话@chat-completion
 
 :::warning 注意
-对话接口响应一般比较慢，建议将云函数超时时间配置的长一些，比如30秒（客户端访问云函数最大超时时间：腾讯云为30秒，阿里云为40秒）。阿里云目前在云函数运行时间超出配置的超时时间时提示不准确，可能在云函数日之内看到`unknown system error`字样，如果遇到此类错误请尝试将超时时间调整到40秒。
+对话接口响应一般比较慢，建议将云函数超时时间配置的长一些，比如30秒（客户端访问云函数最大超时时间：腾讯云为30秒，阿里云为40秒）。阿里云目前在云函数运行时间超出配置的超时时间时提示不准确，可能在云函数日志之内看到`unknown system error`字样，如果遇到此类错误请尝试将超时时间调整到40秒。如何配置云函数超时时间请参考：[云函数超时时间](cf-functions.md#timeout)
 :::
 
 用法：`llm.chatCompletion(Object ChatCompletionOptions)`

@@ -134,25 +134,29 @@ HBuilderX 2.8.1+ 支持uniCloud本地运行插件。
 
 本地运行环境与uniCloud现网的差别：
 
-### 本地环境只有node运行环境
+### 本地环境只有node运行环境@diff-env-component
 
 也就是云函数、DB Schema可以使用本地，但本地没有MongoDB、没有redis、没有云存储，数据内容仍然存放在uniCloud现网服务空间。数据库索引也在云端才生效。
 
-### node版本差异
+### node版本差异@diff-node-version
 
 本地运行的nodejs版本为node12。
 
 服务空间的nodejs版本可以选择8或12，如果你使用了nodejs的api，在本地测试之后部署到云端建议测试一下兼容性。如果只使用uniCloud的api，无需顾虑兼容性。
 
-### 本地环境的云函数没有超时限制
+### 本地环境的云函数没有超时限制@diff-timeout
 
 云函数超时时间、运行内存配置，在本地调试时不会生效。
 
-### return 策略差异
+### 扩展库功能差异@diff-extension
+
+HBuilderX自带的uniCloud环境内扩展库的能力仅支持到此HBuilderX发布时，需要更新HBuilderX才可以使用扩展库后续增加的能力
+
+### return 策略差异@diff-return
 
 [详见](cf-functions.md?id=return)
 
-### 公用模块使用注意
+### 公用模块使用注意@diff-common-module
 
 - `HBuilderX 3.0.0`之前需要在云函数内执行`npm install ../common/xxx`安装公共模块，详细请参考[云函数公用模块](uniCloud/cf-common.md)
 - 如果使用`HBuilderX 3.0.0`及以上版本，可以直接在云函数目录右键选择“管理公共模块依赖”进行公共模块的引入

@@ -94,6 +94,10 @@ llm.chatCompletion({
 
 > 新增于HBuilderX 3.7.13+
 
+:::warning 注意
+如需在本地云函数内使用uni-cloud-ai扩展库的最新能力需要更新HBuilderX到最新版。云端扩展库会一直保持最新。云端和本地扩展库差异参考：[云端和本地扩展库差异](rundebug.md#diff-extension)
+:::
+
 ai作为一种云能力，相关调用被整合到uniCloud中。
 
 如您的服务器业务不在uniCloud上，可以把[云函数URL化](http.md)，把`uni-ai`当做http接口调用。

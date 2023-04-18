@@ -372,5 +372,62 @@ uni-ai会持续快速迭代，未来会陆续提供：
 - 在微信小程序等平台，名字或内容涉及ChatGPT，都会被平台封禁。所以上微信小程序时不能提及ChatGPT，也不要使用uni-ai的openai配置功能。可以使用国内ai或让uni-ai自动分配。同时输入和返回的内容都需要做安全审查，具体见上。
 - 如果在企业内部通过openai提升生产力，这不涉及合规问题，可以放心使用。
 
+##  初次使用uniCloud用户指导
+1. 创建uniCloud云函数  
+- 在uniCloud目录右键新建云函数  
+<img width="300px" src="https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/uni-ai/20230418213815.jpg"></img>
+
+- 云函数名称填写：`ai-demo`。此云函数需要扩展调用`uni-ai`的能力，这里我们需要为此云函数添加扩展库，如图：点击`添加公共模块或扩展库依赖`按钮。
+<img width="500px" src="https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/uni-ai/0D7FE184-19BE-43D2-AFA9-FDC1E1CD719E.png"></img>
+
+- 找到`uni-cloud-ai`勾选，点击确认，创建云函数
+<img width="500px" src="https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/uni-ai/CC9889F4-F006-449A-828A-659A31DC2CBD.png"></img>
+
+- 添加如下代码：
+```js
+	//event为客户端上传的参数
+	console.log('event',event)
+	const {messages} = event
+	// 文档地址：https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#uni-ai
+	const LLMManager = uniCloud.ai.getLLMManager()
+	return await LLMManager.chatCompletion({
+		messages,
+		// maxTokens:1000,
+		// model:"",
+		// temperature:"",
+		// topP:""
+	})
+```
+
+2.在客户端通过callFunction调用`ai-demo`云函数
+```js
+	const content = "你能给我提供什么服务"
+	uni.showLoading();
+	uniCloud.callFunction({
+		name: "ai-demo",
+		data: {
+			messages: [{
+				role: 'user',
+				content
+			}]
+		}
+	})
+	.then(res=>{
+		console.log(res);
+		uni.showModal({
+			content: JSON.stringify(res),
+			showCancel: false
+		});
+	})
+	.catch(e=> {
+		uni.showModal({
+			content: JSON.stringify(e),
+			showCancel: false
+		});
+	})
+	.finally(()=>{
+		uni.hideLoading()
+	})
+```
 
 > 更多问题欢迎加入uni-ai官方交流群 群号:[699680439](https://qm.qq.com/cgi-bin/qm/qr?k=P_JoYXY56vNfb78uNHwwzqpODwl9e89B&jump_from=webapi&authKey=GDp321q9ZYW4V0ZQcejXikwMnNRs4KVBcQXMADs8lvC0hifSH9ORHsyERy6vO4bA)

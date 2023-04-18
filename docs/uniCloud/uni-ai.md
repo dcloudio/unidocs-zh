@@ -329,6 +329,8 @@ try {
 |60002	|接口调用凭证、key等信息有误|
 |60003	|触发了服务商限流策略		|
 
+>客户端通过云函数调用uni-ai的示例项目：[https://ext.dcloud.net.cn/plugin?id=11845](https://ext.dcloud.net.cn/plugin?id=11845)
+
 ## 非uniCloud服务器调用
 
 如果您需要在非uniCloud的传统服务器调用uni-ai，需要先在uniCloud上创建一个云函数或云对象，加载uni-cloud-ai扩展库，编写上述uni-ai的调用代码。

@@ -1052,7 +1052,7 @@ node版本可以在云函数的package.json文件的`cloudfunction-config->runti
 
 ## 云函数配置
 
-云函数除了代码，还有配置。在uniCloud web控制台可以配置；在HBuilderX项目中，云函数根目录的`package.json`也是存放配置的地方。
+云函数除了代码，还有配置。在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)可以配置；在HBuilderX项目中，云函数根目录的`package.json`也是存放配置的地方。
 
 ### 运行内存@memory
 

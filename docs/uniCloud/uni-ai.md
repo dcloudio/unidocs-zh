@@ -156,13 +156,21 @@ const openai = uniCloud.ai.getLLMManager({
 
 **参数说明ChatCompletionOptions**
 
-|参数		|类型	|必填	|默认值				|说明																									|兼容性说明					|
-|---		|---	|---	|---				|---																									|---						|
-|messages	|array	|是		| -					|提问信息																								|							|
-|model		|string	|否		|默认值见下方说明		|模型名称。每个AI Provider有多个model，见下方说明															|百度文心一言不支持此参数	|
-|maxTokens	|number	|否		|-					|生成的token数量限制，需要注意此数量和传入的message token数量相加不可大于4096							|百度文心一言不支持此参数	|
-|temperature|number	|否		|1					|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|百度文心一言不支持此参数	|
-|topP		|number	|否		|1					|采样方法，数值越小结果确定性越强；数值越大，结果越随机													|百度文心一言不支持此参数	|
+|参数				|类型		|必填	|默认值						|说明																																																	|兼容性说明								|
+|---				|---		|---	|---							|---																																																	|---											|
+|messages		|array	|是		| -								|提问信息																																															|													|
+|model			|string	|否		|默认值见下方说明	|模型名称。每个AI Provider有多个model，见下方说明																											|百度文心一言不支持此参数	|
+|maxTokens	|number	|否		|默认值见下方说明	|生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096											|百度文心一言不支持此参数	|
+|temperature|number	|否		|1								|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个	|百度文心一言不支持此参数	|
+|topP				|number	|否		|1								|采样方法，数值越小结果确定性越强；数值越大，结果越随机																								|百度文心一言不支持此参数	|
+
+**maxTokens参数说明**
+
+生成的token数量限制，即返回的文本对应的token数量不能超过此值。
+
+另需注意此值和传入的messages对应的token数量相加不可大于4096。如果messages对应的token数为1024，当传递的maxTokens参数大于（4096-1024）时服务商接口会抛出错误。
+
+未指定provider时默认最多生成128个token的结果，此默认值后续可能会调整。
 
 **messages参数说明**
 
@@ -241,7 +249,7 @@ DCloud在[uni-im](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)和[uni-cms]
 
 在上述例子中，还可以看到一种有趣的用法，即要求ai以数组方式回答问题。这将有利于开发者格式化数据，并进行后置增强处理。
 
-**可用模型**
+**model参数说明**
 
 每个AI Provider可以有多个model，比如对于openai，ChatGPT的模型是`gpt-3.5-turbo`，而gpt-4的模型就是`gpt-4`。不同模型的功能、性能、价格都不一样。
 

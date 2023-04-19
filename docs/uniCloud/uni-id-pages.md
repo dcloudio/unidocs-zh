@@ -1947,6 +1947,12 @@ await uniIdCo.setAuthorizedApp({
 |uni-id-timestamp|string|是|当前时间戳; 单位毫秒|
 |uni-id-signature|string|是|请求鉴权签名; 签名算法见下|
 
+**接口地址**
+
+```js
+POST /your-uni-id-co-path/externalRegister
+```
+
 **HTTP 示例**
 ```javascript
 POST /your-uni-id-co-path/externalRegister HTTP/1.1
@@ -1990,6 +1996,12 @@ Cache-Control: no-cache
 
 该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
 
+**接口地址**
+
+```js
+POST /your-uni-id-co-path/externalLogin
+```
+
 **HTTP 示例**
 ```javascript
 POST /your-uni-id-co-path/externalLogin HTTP/1.1
@@ -2027,9 +2039,15 @@ Cache-Control: no-cache
 
 该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
 
+**接口地址**
+
+```js
+POST /your-uni-id-co-path/updateUserInfoByExternal
+```
+
 **HTTP 示例**
 ```javascript
-POST /your-uni-id-co-path/externalLogin HTTP/1.1
+POST /your-uni-id-co-path/updateUserInfoByExternal HTTP/1.1
 Host: xxx.com
 uni-id-nonce: xxxxxxx
 uni-id-timestamp: 1676882808550

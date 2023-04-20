@@ -84,28 +84,16 @@ Support multiple advertisements (Tencent Youlianghui Advertising Alliance, Kuais
 目前已开放内测，请邮件联系 uniad@dcloud.io 申请试用。  
 The internal test is currently open, please contact uniad@dcloud.io to apply for a trial.
 
-### 广告相关组件
-### Advertising related components
+### 广告相关组件/API
 
-- [信息流(Banner)](https://uniapp.dcloud.net.cn/component/ad.html)
-- [Banner](https://uniapp.dcloud.net.cn/component/ad.html)
-- [激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)
-- [Rewarded Video Ads](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)
-- [全屏视频广告](https://uniapp.dcloud.net.cn/component/ad-fullscreen-video.html)
-- [Fullscreen Video Ads](https://uniapp.dcloud.net.cn/component/ad-fullscreen-video.html)
-- [插屏广告](https://uniapp.dcloud.net.cn/component/ad-interstitial.html)
-- [Interstitial Ad](https://uniapp.dcloud.net.cn/component/ad-interstitial.html)
-- [沉浸视频流广告](https://uniapp.dcloud.net.cn/component/ad-draw.html)
-- [Immersive Video Streaming Ads](https://uniapp.dcloud.net.cn/component/ad-draw.html)
-- [短视频内容联盟组件](https://uniapp.dcloud.net.cn/component/ad-content-page.html)
-
-### 广告相关API
-
-- [激励视频广告](https://uniapp.dcloud.net.cn/api/ad-rewarded-video.html)
-- [全屏视频广告](https://uniapp.dcloud.net.cn/api/ad-fullscreen-video.html)
-- [插屏广告](https://uniapp.dcloud.net.cn/api/ad-interstitial.html)
-- [互动游戏](https://uniapp.dcloud.net.cn/api/a-d/interactive.html)
-- [Interactive Game](https://uniapp.dcloud.net.cn/api/a-d/interactive.html)
+- [信息流(Banner)](https://uniapp.dcloud.net.cn/uni-ad/ad.html)
+- [激励视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
+- [全屏视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-fullscreen-video.html)
+- [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
+- [沉浸视频流广告](https://uniapp.dcloud.net.cn/uni-ad/ad-draw.html)
+- [短视频内容联盟组件](https://uniapp.dcloud.net.cn/uni-ad/ad-content-page.html)
+- [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
+- [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.html)
 
 
 更多信息参考 [uni-AD 广告联盟](https://uniad.dcloud.net.cn)

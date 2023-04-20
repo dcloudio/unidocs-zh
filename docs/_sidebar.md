@@ -24,7 +24,7 @@
   * [uni-ad广告变现](uni-ad.md)
     * [信息流(Banner)](uni-ad/ad.md)
     * [激励视频广告](uni-ad/ad-rewarded-video.md)
-    * [uniMP激励视频广告](uni-ad/ad-unimp.md)
+    * [uniMP激励视频广告](uni-ad/unimp.md)
     * [全屏视频广告](uni-ad/ad-fullscreen-video.md)
     * [插屏广告](uni-ad/ad-interstitial.md)
     * [Draw视频信息流广告](uni-ad/ad-draw.md)

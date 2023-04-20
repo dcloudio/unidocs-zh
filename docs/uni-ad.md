@@ -53,21 +53,16 @@ HBuilderX3.5.0+版本 uni-AD 激励视频广告支持实时竞价功能。
 支持多家广告（腾讯优量汇广告联盟、快手广告联盟、百度百青藤广告联盟）参与实时竞价，展示高价格eCPM广告，可有效提升填充，释放运营人力，最大化流量价值。  
 目前已开放内测，请邮件联系 uniad@dcloud.io 申请试用。  
 
-### 广告相关组件
+### 广告相关组件/API
 
-- [信息流(Banner)](https://uniapp.dcloud.net.cn/component/ad.html)
-- [激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)
-- [全屏视频广告](https://uniapp.dcloud.net.cn/component/ad-fullscreen-video.html)
-- [插屏广告](https://uniapp.dcloud.net.cn/component/ad-interstitial.html)
-- [沉浸视频流广告](https://uniapp.dcloud.net.cn/component/ad-draw.html)
-- [短视频内容联盟组件](https://uniapp.dcloud.net.cn/component/ad-content-page.html)
-
-### 广告相关API
-
-- [激励视频广告](https://uniapp.dcloud.net.cn/api/ad-rewarded-video.html)
-- [全屏视频广告](https://uniapp.dcloud.net.cn/api/ad-fullscreen-video.html)
-- [插屏广告](https://uniapp.dcloud.net.cn/api/ad-interstitial.html)
-- [互动游戏](https://uniapp.dcloud.net.cn/api/a-d/interactive.html)
+- [信息流(Banner)](https://uniapp.dcloud.net.cn/uni-ad/ad.html)
+- [激励视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
+- [全屏视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-fullscreen-video.html)
+- [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
+- [沉浸视频流广告](https://uniapp.dcloud.net.cn/uni-ad/ad-draw.html)
+- [短视频内容联盟组件](https://uniapp.dcloud.net.cn/uni-ad/ad-content-page.html)
+- [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
+- [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.html)
 
 
 更多信息参考 [uni-AD 广告联盟](https://uniad.dcloud.net.cn)

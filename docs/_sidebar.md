@@ -10,8 +10,7 @@
 * [其他项目转uni-app](translate.md)
 * [老项目引入uni-app](hybrid.md)
 * 运营服务
-  * uni-ad广告变现
-    * [简介](uni-ad.md)
+  * [uni-ad广告变现](uni-ad.md)
     * [信息流(Banner)](uni-ad/ad.md)
     * [激励视频广告](uni-ad/ad-rewarded-video.md)
     * [uniMP激励视频广告](uni-ad/uni-ad-unimp.md)

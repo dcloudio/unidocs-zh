@@ -4,7 +4,7 @@
 
 开发者可以使用 ad 组件创建视频广告，ad 广告组件在创建后会自动拉取广告数据并显示。
 
-<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/ad-video.mp4" style="max-width: 100%;"></video>
+<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/ad-video.mp4" style="max-width: 100%; max-height: 70vh;"></video>
 
 **平台差异说明**
 

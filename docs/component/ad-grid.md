@@ -22,4 +22,4 @@ Developers can use the ad component to create a Grid ad component. After the Gri
 [Details of the steps to activate advertising](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 
 
-文档已迁移至 [Grid 广告](https://uniapp.dcloud.net.cn/uni-ad/ad-grid.md)
+文档已迁移至 [Grid 广告](https://uniapp.dcloud.net.cn/uni-ad/ad-grid.html)

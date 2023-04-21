@@ -24,4 +24,4 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 [Details of the steps to activate advertising](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 
 
-文档已迁移至 [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.md)
+文档已迁移至 [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.html)

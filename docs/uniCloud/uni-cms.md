@@ -158,6 +158,10 @@ uni-cms包括管理端和用户端。
 
 3. 内置的 un-im 属于精简版IM，使用前需要在 App.vue 文件内对 uni-im 进行初始化操作，具体代码如下：
 
+::: warning 注意
+uni-cms版本大于等于1.0.4时，无需在App.vue内初始化uni-im，uni-cms已经内置了初始化操作。
+:::
+
 ```html
 <script>
 	//1. 导入统一身份信息管理模块

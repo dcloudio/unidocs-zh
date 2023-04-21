@@ -764,7 +764,8 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
 1. uts插件中可陆续使用uni的各种api，比如uni.request。
 2. 插件市场支持uts插件的加密和计费销售
-3. uvue页面，纯原生的视图组件构成的页面
+3. vue页面支持uts原生组件
+4. 全新uvue页面，纯原生的视图组件构成的页面
 
 最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
 

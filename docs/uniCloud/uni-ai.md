@@ -160,15 +160,15 @@ const openai = uniCloud.ai.getLLMManager({
 
 **参数说明ChatCompletionOptions**
 
-|参数							|类型		|必填	|默认值						|说明																																																										|兼容性说明								|
-|---							|---		|---	|---							|---																																																										|---											|
-|messages					|array	|是		| -								|提问信息																																																								|													|
-|model						|string	|否		|默认值见下方说明	|模型名称。每个AI Provider有多个model，见下方说明																																				|百度文心一言不支持此参数	|
-|~~maxTokens~~		|number	|否		|-								|【已废弃，请使用tokensToGenerate替代】生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096	|百度文心一言不支持此参数	|
-|tokensToGenerate	|number	|否		|默认值见下方说明	|生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096																				|百度文心一言不支持此参数	|
-|temperature			|number	|否		|1								|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个										|百度文心一言不支持此参数	|
-|topP							|number	|否		|1								|采样方法，数值越小结果确定性越强；数值越大，结果越随机																																	|百度文心一言不支持此参数	|
-|stream						|boolean|否		|false						|是否使用流式响应，见下方[流式响应](#chat-completion-stream)章节																												|百度文心一言不支持此参数	|
+|参数				|类型	|必填	|默认值				|说明																													|兼容性说明					|
+|---				|---	|---	|---				|---																													|---						|
+|messages			|array	|是		| -					|提问信息																												|							|
+|model				|string	|否		|默认值见下方说明	|模型名称。每个AI Provider有多个model，见下方说明																		|百度文心一言不支持此参数	|
+|~~maxTokens~~		|number	|否		|-					|【已废弃，请使用tokensToGenerate替代】生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096	|百度文心一言不支持此参数	|
+|tokensToGenerate	|number	|否		|默认值见下方说明	|生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096										|百度文心一言不支持此参数	|
+|temperature		|number	|否		|1					|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个					|百度文心一言不支持此参数	|
+|topP				|number	|否		|1					|采样方法，数值越小结果确定性越强；数值越大，结果越随机																	|百度文心一言不支持此参数	|
+|stream				|boolean|否		|false				|是否使用流式响应，见下方[流式响应](#chat-completion-stream)章节														|百度文心一言不支持此参数	|
 
 **messages参数说明**
 
@@ -284,64 +284,7 @@ tokensToGenerate指生成的token数量限制，即返回的文本对应的token
 |&#124;--completionTokens	|number				|否			|-		|生成的token数量											|minimax不返回此项		|
 |&#124;--totalTokens		|number				|是			|-		|总token数量												|						|
 
-#### 流式响应#chat-completion-stream
-
-> 新增于HBuilderX 3.7.14
-
-访问ai聊天接口时如果生成内容过大响应时间会很久，前端用户需要等待很长时间才会收到结果。使用流式响应可以在AI未完全生成结果时将已生成的部分发送给客户端，从而优化端上用户的体验。开发者可以搭配uniCloud[云函数请求中的中间状态通知通道](sse-channel.md)在获取AI响应时将内容发送给客户端。uni-ai-chat内已经对流式响应进行了封装，使用更简单，参考：[uni-ai-chat](uni-ai-chat.md)
-
-在调用`chatCompletion`接口时传递`stream: true`即可开启流式响应，注意开启流式响应后`chatCompletion`接口将返回流对象，而不会返回具体结果。开发者需要使用流获取AI响应的内容。
-
-stream对象有四个事件：
-
-- message: 收到AI响应的事件，回调函数内可以获取AI返回的信息
-- line: AI响应一行文字时触发，回调函数内可以获取这行文字的内容
-- end: AI响应完毕事件
-- error: AI响应错误事件，回调函数内可以获取具体错误信息
-
-**云函数代码示例**
-
-```js
-'use strict';
-exports.main = async (event, context) => {
-  const llmManager = uniCloud.ai.getLLMManager({})
-  let stream
-  try {
-    stream = await llmManager.chatCompletion({
-      messages: [{
-        role: 'user',
-        content: '介绍一下uni-app，400字以内，分为两段'
-      }],
-      tokensToGenerate: 400,
-      stream: true
-    })
-  } catch (e) {
-    console.error(e)
-    throw e
-  }
-  return new Promise((resolve, reject) => {
-    stream.on('line', (line) => {
-      console.log('---line----', line)
-    })
-    stream.on('message', (message) => {
-      console.log('---message----', message)
-    })
-    stream.on('end', () => {
-      console.log('---end----')
-      resolve({
-        errCode: 0
-      })
-    })
-    stream.on('error', (err) => {
-      console.log('---error----', err)
-      reject(err)
-    })
-  })
-};
-```
-
-
-### 示例
+#### 简单示例
 
 在你的云函数中加载`uni-cloud-ai`扩展库，写下如下代码，ctrl+r运行，即可调用ai返回结果。
 
@@ -358,6 +301,76 @@ console.log(res);
 ```
 
 如果你之前未使用过uniCloud，后续有专门的[新手指南](#first)章节。
+
+#### 流式响应@chat-completion-stream
+
+> 新增于HBuilderX 3.7.14
+
+访问AI聊天接口时，如生成内容过大，响应时间会很久，前端用户需要等待很长时间才会收到结果。
+
+实际上AI是逐渐生成下一个token的，所以可使用流式响应，类似不停打字的打字机那样，让前端用户陆续看到AI生成的内容。
+
+以往云函数只有return的时候，才能给客户端返回消息。在流式响应中，需要云函数支持sse，在return前给客户端一直发送通知。
+
+uniCloud的云函数，基于uni-push2，于 HBuilder 3.7.14+ 提供了sse通道，即[云函数请求中的中间状态通知通道](sse-channel.md)。
+
+在调用`chatCompletion`接口时传递参数`stream: true`即可开启流式响应。
+
+注意：需提前为应用开通[uni-push2](/unipush-v2.md)
+
+注意：开启流式响应后`chatCompletion`接口将返回流对象，而不会返回具体结果。开发者需要使用流获取AI响应的内容。
+
+stream对象有四个事件：
+
+- message: 收到AI响应的事件，回调函数内可以获取AI返回的信息
+- line: AI响应一行文字时触发，回调函数内可以获取这行文字的内容
+- end: AI响应完毕事件
+- error: AI响应错误事件，回调函数内可以获取具体错误信息
+
+**stream云函数代码示例**
+
+```js
+'use strict';
+exports.main = async (event, context) => {
+  const llmManager = uniCloud.ai.getLLMManager({})
+  let streamRes
+  try {
+    streamRes = await llmManager.chatCompletion({
+      messages: [{
+        role: 'user',
+        content: '介绍一下uni-app，400字以内，分为两段'
+      }],
+      tokensToGenerate: 400,
+      stream: true // 开启流式返回
+    })
+  } catch (e) {
+    console.error(e)
+    throw e
+  }
+  return new Promise((resolve, reject) => { //流式给客户端返回数据
+    streamRes.on('line', (line) => {
+      console.log('---line----', line) // 返回一行时触发，即\n
+    })
+    streamRes.on('message', (message) => {
+      console.log('---message----', message) // 实时触发
+    })
+    streamRes.on('end', () => {
+      console.log('---end----') // 响应结束
+      resolve({
+        errCode: 0
+      })
+    })
+    streamRes.on('error', (err) => {
+      console.log('---error----', err)
+      reject(err)
+    })
+  })
+};
+```
+
+客户端也需要接收云函数的流式响应。
+
+DCloud提供了开源的`uni-ai-chat`，对流式响应进行了前后端一体的封装，使用更简单，参考：[uni-ai-chat](uni-ai-chat.md)
 
 ### 错误码@err-code
 
@@ -415,7 +428,9 @@ ai会推理出很多下文并打分，选择最高分的下文返回给你。但
 
 ai会使用互联网上的数据进行学习训练，但训练语料不会包含最新的知识和互联网上未公开的知识。比如openai的训练数据是2021年9月以前的数据。
 
-虽然原理是模糊的，但越好的ai，其理解和推理能力越优秀，可以猜的更逼近真实，甚至超过普通人的水平。
+虽然ai学习了互联网的知识，但它不是复读机，它把知识压缩形成自己的理解。你的前文和它的理解碰撞出它的下文（所以合适的前文，也就是prompt很重要）。
+
+越好的ai，其知识储备、理解和推理能力越优秀，预测的下文可以更逼近真实，甚至超过普通人的水平。
 
 目前生成式ai的主要用途有：
 - 文章生成、润色、续写：常见于生成文案、文书、标语、名字、营销邮件、笑话、诗词等。[uni-cms](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)中，已经内置了这个功能
@@ -545,9 +560,9 @@ gpt-4是目前准确性最高的ai，也是最贵的ai。开发者需根据需�
 
 运行客户端项目，比如运行到web浏览器，即可联调客户端和云端。
 
-上述代码只是最简示例，真正的多轮聊天需要的代码较多较复杂，推荐使用现成的`uni-im`或`uni-cms`。
+上述代码只是最简示例，真正的多轮聊天需要的代码较多较复杂，推荐使用现成的[uni-ai-chat](uni-ai-chat.md)、[uni-im](uni-im.md)或[uni-cms](uni-cms.md)。
 
-官方的`uni-im`或`uni-cms`等项目一般不使用云函数，而是使用云对象。想看懂这些项目源码，需要了解[云对象](cloud-obj.md)
+官方的`uni-ai-chat`、`uni-im`、`uni-cms`等项目一般不使用云函数，而是使用云对象。想看懂这些项目源码，需要了解[云对象](cloud-obj.md)
 
 ## 非uniCloud服务器调用
 

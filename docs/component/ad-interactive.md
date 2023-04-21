@@ -17,4 +17,4 @@
 [开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 
 
-文档已迁移至 [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.md)
+文档已迁移至 [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.html)

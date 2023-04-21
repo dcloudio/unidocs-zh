@@ -15,4 +15,4 @@
 [开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 
 
-文档已迁移至 [Grid 广告](https://uniapp.dcloud.net.cn/uni-ad/ad-grid.md)
+文档已迁移至 [Grid 广告](https://uniapp.dcloud.net.cn/uni-ad/ad-grid.html)

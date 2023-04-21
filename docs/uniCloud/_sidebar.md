@@ -14,6 +14,7 @@
   * [云函数URL化](http.md)
   * [IP防刷](ip-filter.md)
   * [安全网络](secure-network.md)
+  * [云函数请求中的中间状态通知通道](sse-channel.md)
 * 云数据库
   * [云数据库入门](hellodb.md)
   * [DB Schema表结构](schema.md)

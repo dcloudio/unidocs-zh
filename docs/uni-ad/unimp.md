@@ -35,12 +35,13 @@
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp-web-console-on.png)
 
+- iOS 平台需要配置通用链接，配置通用链接后需要重新打包, [详情](https://uniapp.dcloud.net.cn/api/plugins/universal-links.html)
+
 2. 必须开启[服务器回调](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)，且响应正确的格式
 
 
 提示
 - 通过监听广告组件的`@close`事件返回的 `isEnded` 属性通知服务器用户是否看完广告，这种做法是不安全的，因为可以被攻击者模拟请求发送到服务器，造成没有看广告的假象。uniMP激励视频广告不在支持此方式，仅支持安全的[服务器回调](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)验证
-- iOS 在uni-AD后台配置通用链接后需要重新打包
 
 
 服务器回调响应数据格式
@@ -65,4 +66,4 @@ A: uni-AD 多层调度策略动态调整渠道，在检测微信无广告时自�
 - HBuilderX 3.7.13+
 - 在项目的 manifest.json 界面配置，App模块配置 -> uniAd -> 勾选 `uniMP激励视频广告`
 
-注意：`3.7.12` 之前的版本开启此功能需要整包更新，后续支持WGT热更新
+注意：`3.7.12` 之前的版本首次开启此功能需要整包更新，`3.7.12`之后版本支持WGT热更新

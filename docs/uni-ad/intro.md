@@ -17,11 +17,33 @@
 - 其他小程序端由小程序平台提供，不在uni-AD后台注册，而在这些小程序自身的平台注册
 
 
-### 微信小程序广告专题
-- `uni-AD`无开通门槛、提前结算、插件丰富。[详见](https://uniapp.dcloud.net.cn/component/ad-weixin.html)
+### uni-AD支持平台
 
-### uniMP激励视频广告@unimp
-- uniMP激励视频广告 [详见](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)
+#### App平台
+
+- [信息流(Banner)](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
+- [激励视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
+- [uniMP激励视频广告](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)
+- [全屏视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-fullscreen-video.html)
+- [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
+- [沉浸视频流广告](https://uniapp.dcloud.net.cn/uni-ad/ad-draw.html)
+- [短视频内容联盟组件](https://uniapp.dcloud.net.cn/uni-ad/ad-content-page.html)
+- [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.html)
+- [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
+
+#### 微信小程序
+
+> `uni-AD`无开通门槛、提前结算、插件丰富。[详见](https://uniapp.dcloud.net.cn/component/ad-weixin.html)
+
+- [信息流(Banner)](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
+- [激励视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
+- [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
+- [视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-video.html)
+- [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
+
+#### Web/H5
+
+- [信息流(Banner)](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
 
 
 ### uni-AD优势总结

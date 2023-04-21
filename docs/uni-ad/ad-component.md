@@ -312,4 +312,4 @@ export default {
 
 **错误码**
 
-[错误码相关问题排查](https://uniapp.dcloud.net.cn/component/ad-error-code.html)
+[错误码相关问题排查](https://uniapp.dcloud.net.cn/uni-ad/ad-error-code.html)

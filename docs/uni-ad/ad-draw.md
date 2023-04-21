@@ -147,3 +147,8 @@
 - App端除了ad组件，ad-draw组件，还支持开屏、激励视频、全屏广告等多种广告形式。详见[uni-AD官网](https://uniad.dcloud.net.cn/)
 - App端uni-AD聚合了腾讯广点通、头条穿山甲、360广告联盟等服务，打包时必须勾选相应的sdk，详见：[https://ask.dcloud.net.cn/article/36718](https://ask.dcloud.net.cn/article/36718)
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/ad.jpg)
+
+
+**错误码**
+
+[错误码相关问题排查](https://uniapp.dcloud.net.cn/uni-ad/ad-error-code.html)

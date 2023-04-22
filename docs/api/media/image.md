@@ -35,6 +35,7 @@ App端如需要更丰富的相机拍照API（如直接调用前置摄像头）�
 - 可以通过用户授权API来判断用户是否给应用授予相册或摄像头的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 - App端如需选择非媒体文件，可在插件市场搜索[文件选择](https://ext.dcloud.net.cn/search?q=文件选择)，其中Android端可以使用Native.js，无需原生插件，而iOS端需要原生插件。
 - 选择照片大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
+- App上有时会遇到图片旋转90度问题，插件市场有解决方案：[图片旋转](https://ext.dcloud.net.cn/search?q=%E5%9B%BE%E7%89%87%E6%97%8B%E8%BD%AC)
 
 
 **注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。**

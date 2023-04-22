@@ -58,7 +58,7 @@ If the App side needs a richer camera camera API (such as directly calling the f
 - App端如需选择非媒体文件，可在插件市场搜索[文件选择](https://ext.dcloud.net.cn/search?q=文件选择)，其中Android端可以使用Native.js，无需原生插件，而iOS端需要原生插件。
 - If you need to select non-media files on the App side, you can search [file selection](https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9 in the plug-in market %80%89%E6%8B%A9), where Native.js can be used on the Android side without native plug-ins, while native plug-ins are required on the iOS side.
 - 选择照片大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
-- Selecting photos is mostly for uploading, uni ui encapsulates a more complete [uni-file-picker component](https://ext.dcloud.net.cn/plugin?id=4079), file selection, uploading to uniCloud is free Storage and CDN, one-stop integration. Highly recommended.
+- App上有时会遇到图片旋转90度问题，插件市场有解决方案：[图片旋转](https://ext.dcloud.net.cn/search?q=%E5%9B%BE%E7%89%87%E6%97%8B%E8%BD%AC)
 
 
 **注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。**

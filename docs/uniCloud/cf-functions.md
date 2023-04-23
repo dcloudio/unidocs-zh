@@ -189,6 +189,11 @@ exports.main = async (event, context) => {
 由于篇幅较长，需另见文档[云函数URL化](http.md)。
 
 
+### 云函数请求中的中间状态通知通道
+
+云函数在执行期间可以将中间状态发送给客户端，详情参考：[云函数请求中的中间状态通知通道](sse-channel.md)
+
+
 ### uniCloud响应体规范@resformat
 
 `uniCloud响应体规范`（uniCloud response format），是DCloud制定的、服务器给客户端返回json数据的一种建议格式。

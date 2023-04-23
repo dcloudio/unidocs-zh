@@ -447,7 +447,7 @@ sequenceDiagram
 │    │   └── uniCloud
 │    │       ├── cloudfunctions
 │    │       │   └── uni-frv-external-co                实名认证云对象
-│    │       │       ├── config.js                      加载uni-config-center/uni-frv-external-co.json配置文件
+│    │       │       ├── config.js                      加载uni-config-center/uni-frv-external-co/config.json配置文件
 │    │       │       ├── functions                      云对象方法目录
 │    │       │       │   ├── _after.js                  云对象加载后方法
 │    │       │       │   ├── _before.js                 云对象执行前方法
@@ -485,7 +485,7 @@ sequenceDiagram
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa1674040001.png)
 
 4. 在插件市场中导入[uni-frv-external](https://ext.dcloud.net.cn/plugin?name=uni-frv-external)至项目中。
-5. 按需配置实名认证，具体配置[详见](#uni-frv-co-config), 实名认证配置文件路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-frv-external/config.json`。
+5. 按需配置实名认证，具体配置[详见](#uni-frv-co-config), 实名认证配置文件路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-frv-external-co/config.json`。
 7. 需要自行准备一个实名认证页面，引入`uni-frv-external-realname`组件，组件详细配置参考[前端使用](#uni-frv-external-feuse)
 8. 在`manifest.json`中找到`App模块设置-打包模块设置`，勾选”实人认证“。
 
@@ -512,7 +512,7 @@ sequenceDiagram
 
 #### 配置（uni-frv-co）@uni-frv-co-config
 
-实人认证配置文件路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-frv-external/config.json`
+实人认证配置文件路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-frv-external-co/config.json`
 
 ```json
 // 如果拷贝此内容切记去除注释

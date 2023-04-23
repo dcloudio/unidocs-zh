@@ -4,7 +4,7 @@ uni-ai-chat是基于[uni-ai](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)�
 视频效果：  
 <video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/uni-ai-stream.mov" style="max-width: 100%; max-height: 70vh;"></video>
 
-包含一个前端页面(路径：`/pages/chat/chat.vue`)和一个云对象(路径：`uniCloud-aliyun/cloudfunctions/uni-ai-chat/index.obj.js`)
+包含一个前端页面(路径：`/pages/chat/chat.vue`)和一个云对象(路径：`uniCloud/cloudfunctions/uni-ai-chat/index.obj.js`)
 
 
 ## 体验步骤  

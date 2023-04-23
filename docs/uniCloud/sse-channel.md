@@ -11,7 +11,7 @@
 ## 客户端API@client-api
 
 :::warning 注意
-云函数向客户端发送消息时会使用push发送如下格式数据，如果项目中有监听push消息请勿错误的处理此类消息
+云函数向客户端发送消息时会使用push发送如下格式数据，如果项目中有监听push消息请勿错误的处理此类消息。相关文档请参考：[客户端监听推送消息](../unipush-v2.md#listener)
 
 ```js
 {
@@ -22,6 +22,22 @@
   message: any
 }
 ```
+
+开发者使用push时可以忽略此类型消息
+
+```js
+function getType(val) {
+  return Object.prototype.toString.call(val).slice(8,-1).toLowerCase()
+}
+uni.onPushMessage((res) => {
+  const payload = res && res.data && res.data.payload
+  if(getType(payload)==='object' && payload.channel === 'UNI_CLOUD_SSE'){
+    // 收到云函数请求中的中间状态通知通道消息，忽略处理此类消息
+    return
+  }
+})
+```
+
 :::
 
 ### 创建通道@create-sse-channel

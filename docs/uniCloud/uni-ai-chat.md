@@ -9,12 +9,12 @@ uni-ai-chat是基于[uni-ai](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)�
 
 ## 体验步骤  
 
-1. 如之前未使用过uni-app，那请重头学起。[uni-app官网](https://uniapp.dcloud.net.cn)
+1. 如之前未使用过uni-app，那请从头学起。[uni-app官网](https://uniapp.dcloud.net.cn)
 2. 如果你还没有开通uniCloud，需要登录[https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)，创建一个服务空间。
 3. 打开`uni-ai-chat`插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-ai-chat](https://ext.dcloud.net.cn/plugin?name=uni-ai-chat)
 4. 点击`使用HBuilderX导入示例项目`
 5. 对项目根目录uniCloud点右键选择“云服务空间初始化向导”界面按提示部署项目
-6. 在uni-app项目点右键创建uniCloud环境，关联之前创建的服务空间。
+6. 在uni-app项目点右键，关联之前创建的服务空间。
 
 ## 注意事项  
 

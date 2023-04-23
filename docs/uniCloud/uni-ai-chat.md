@@ -18,7 +18,7 @@ uni-ai-chat是基于[uni-ai](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)�
 
 ## 注意事项  
 
-uni-ai-chat支持[stream](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#%E6%B5%81%E5%BC%8F%E5%93%8D%E5%BA%94-chat-completion-stream)
-模式，该模式会接收uni-ai的流式响应的数据，再通过[sse-channel](https://uniapp.dcloud.net.cn/uniCloud/sse-channel.html)即：云函数（云对象）请求中的中间状态通知通道向客户端推送消息
+uni-ai-chat支持[流式响应](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#%E6%B5%81%E5%BC%8F%E5%93%8D%E5%BA%94-chat-completion-stream)
+模式，该模式会接收uni-ai的流式响应的数据，通过sse-channel[（云函数（云对象）请求中的中间状态通知通道）](https://uniapp.dcloud.net.cn/uniCloud/sse-channel.html)向客户端推送消息，
 而使用`sse-channel`需要先[开通uni-push](https://uniapp.dcloud.net.cn/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
-，目前uni-push2.0不支持本地调试（后续版本会支持），需要再在HBuilderX控制台，更改`连接本地云函数`为`连接云端云函数`。
+，目前uni-push2.0不支持本地调试（后续版本会支持），需要在HBuilderX控制台，更改`连接本地云函数`为`连接云端云函数`。

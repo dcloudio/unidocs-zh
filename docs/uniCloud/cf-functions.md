@@ -262,6 +262,11 @@ Perform URLization configuration on the uniCloud web console.
 Due to the length of the document, please refer to the document [URLization of cloud functions](http.md).
 
 
+### 云函数请求中的中间状态通知通道
+
+云函数在执行期间可以将中间状态发送给客户端，详情参考：[云函数请求中的中间状态通知通道](sse-channel.md)
+
+
 ### uniCloud响应体规范@resformat
 ### uniCloud response body specification @resformat
 

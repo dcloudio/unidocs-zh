@@ -10,6 +10,20 @@
 
 ## 客户端API@client-api
 
+:::warning 注意
+云函数向客户端发送消息时会使用push发送如下格式数据，如果项目中有监听push消息请勿错误的处理此类消息
+
+```js
+{
+  channel: 'UNI_CLOUD_SSE',
+  action: 'message' | 'end',
+  seqId: number,
+  messageId: number,
+  message: any
+}
+```
+:::
+
 ### 创建通道@create-sse-channel
 
 用法：`const channel = uniCloud.SSEChannel()`

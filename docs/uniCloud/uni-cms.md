@@ -15,7 +15,7 @@ uni-cms包括管理端和用户端。
 
 客户端插件之所以起名为 uni-cms-article 。是因为未来可能还会拓展 uni-cms-image、uni-cms-video 等插件，实现对富媒体内容的管理。
 
-## 功能亮点
+## 产品亮点
 
 - 开源免费，现成代码，直接上线运营
 - 基于uniCloud，serverless，无需复杂的服务器部署，无需关心服务器运维
@@ -33,8 +33,8 @@ uni-cms包括管理端和用户端。
 
 万事俱备，就等你来运营了！
 
-### 演示与截图
 演示体验系统：
+
 - 管理端：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)
 - 客户端（小程序）扫码查看
 
@@ -44,7 +44,7 @@ uni-cms包括管理端和用户端。
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/202304120145412.png)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304111812979.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304231921964.png)
 
 #### 用户端截图：
 
@@ -62,7 +62,7 @@ uni-cms包括管理端和用户端。
 
 ## 功能介绍
 
-### 文章基础功能
+### 文章管理
 
 支持文章保存草稿、发布、编辑、下架、删除、阅读量统计等功能。
 

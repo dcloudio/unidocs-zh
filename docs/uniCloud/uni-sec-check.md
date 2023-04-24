@@ -37,6 +37,10 @@ uni-sec-check公共模块仅能在云函数/云对象内使用。如果您不了
 
 `uni-sec-check` 自身没有配置文件，Ta依赖 `uni-open-bridge` 的配置 [点击查看uni-open-bridge配置](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html#uni-open-bridge%E7%9A%84%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B)
 
+配置如下图所示
+
+![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/387.png)
+
 ## API@api
 
 ### 检测文本@textSecCheck

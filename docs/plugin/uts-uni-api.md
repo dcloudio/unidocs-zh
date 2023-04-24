@@ -1,7 +1,9 @@
 # UTS中使用uni api  
 > 需HBuilderX 3.8.0 及以上版本  
 
-uts插件代码中可以直接调用部分uni api
+uts中经常要调用iOS和Android的api。uni对常用api进行了封装。在uni的api覆盖范围内，开发者可以简单的只调用uni的api实现对iOS、Android的能力调用。
+
+目前uts插件代码中可以直接调用部分uni api，如`uni.request`、`uni.showModel`。未来会陆续实现所有uni api在uts中的完整调用。
 
 ## 示例  
 ```ts

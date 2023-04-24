@@ -1,3 +1,17 @@
+#### 3.8.0.20230425-alpha
+* 【uni-app】
+* App-iOS平台 修复 uni.scanCode 扫码后跳转页面可能引起应用卡死的Bug [详情](https://ask.dcloud.net.cn/question/160090)
+* 【重要】新增 uts插件内可支持部分 uni 的 api，如`uni.showModel` [详情](https://uniapp.dcloud.net.cn/plugin/uts-uni-api.html)
+* uts插件 App-Android平台 修复 函数参数不支持 boolean 类型的Bug
+* 【uniCloud】
+* 新增 基于uni-push构建sse通道，在云函数 return 前也可以给客户端发消息 [详情](https://uniapp.dcloud.net.cn/uniCloud/sse-channel.html)
+* 新增 uni-ai 聊天接口支持steam流式响应 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion-stream)
+* 新增 uni-ai-chat云端一体页面模板，开源的ai聊天示例。比uni-im更简单 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)
+* 新增 HBuilder新建opendb表时，如该表含有schema扩展js，会同时自动创建schema扩展js
+* 【App插件(含5+App和uni-app的App端)】
+* Android平台 修复 安全检测可能报`存在数据库注入漏洞`的问题 [详情](https://ask.dcloud.net.cn/question/152576)
+* iOS平台 更新 uni-AD 今日头条穿山甲 SDK 为 5.1.6.0 版；穿山甲GroMore广告 SDK 为 5.1.6.0 版
+
 #### 3.7.13.20230411-alpha
 * 【uni-app】
 * 新增 uni.addInterceptor 回调增加第二个参数 params [详情](https://ask.dcloud.net.cn/question/129195)

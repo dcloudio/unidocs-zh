@@ -20,10 +20,10 @@ uni-sec-check公共模块仅能在云函数/云对象内使用。如果您不了
 
 ## 使用前必看
 
-微信内容安全监测，分V1和V2版本。
+微信内容安全检测，分V1和V2版本。
 
 - V1版本：
-1. 微信官方于2021年9月1日停止更新V1，虽然可以使用，但监测范围很窄，只有部分涉政可以，鉴黄能力很弱。
+1. 微信官方于2021年9月1日停止更新V1，虽然可以使用，但检测范围很窄，只有部分涉政可以，鉴黄能力很弱。
 2. V1的好处是可以全端使用，即App、web、非微信的小程序也可以使用。
 
 - V2版本：
@@ -55,7 +55,7 @@ const checkRes = await uniSecCheck.textSecCheck({
 	content: '', // 文本内容，不可超过500KB
 	openid: '', // 用户的小程序openid
 	scene: 2, // 场景值
-	version: 2, // 固定为2
+	version: 2, // 接口版本号
 });
 console.log('checkRes: ', checkRes);
 ```
@@ -67,7 +67,7 @@ console.log('checkRes: ', checkRes);
 |content|String	|是		|文本内容，不可超过500KB																						|
 |openid	|String	|否		|用户的小程序openid（用户需在近两小时访问过小程序） version=2时必填	|
 |scene	|Number	|否		|场景值（1 资料；2 评论；3 论坛；4 社交日志）												|
-|version|Number	|是		|接口版本号固定为2																									|
+|version|Number	|是		|接口版本号，可选1或2，但1的检测能力很弱																									|
 
 **返回参数**
 
@@ -112,7 +112,7 @@ console.log('checkRes: ', checkRes);
 |image	|String	|是		|图片url或图片对应的cloudID																	|
 |openid	|String	|否		|用户的openid（用户需在近两小时访问过小程序）version=2时必填|
 |scene	|Number	|否		|场景值（1 资料；2 评论；3 论坛；4 社交日志）								|
-|version|Number	|是		|接口版本号可选1或2，但1的检测能力很弱											|
+|version|Number	|是		|接口版本号，可选1或2，但1的检测能力很弱											|
 
 **返回参数**
 

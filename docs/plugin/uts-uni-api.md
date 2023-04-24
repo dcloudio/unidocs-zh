@@ -1,7 +1,7 @@
 # UTS中使用uni api  
-> 需HBuilderX 3.8.0 及以上版本
+> 需HBuilderX 3.8.0 及以上版本  
 
-uts插件代码中可以直接调用uni api
+uts插件代码中可以直接调用部分uni api
 
 ## 示例  
 ```ts

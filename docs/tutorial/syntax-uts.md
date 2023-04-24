@@ -1979,6 +1979,7 @@ console.log(obj["result"]);
 **注意**
 
 - JSON.parse 解析出来的对象，目前仅支持使用方括号[]访问
+- 如果输入的字符串不是合法的json格式，则会返回 null
 
 #### stringify
 

@@ -266,7 +266,7 @@ tokensToGenerate指生成的token数量限制，即返回的文本对应的token
 
 注意此值和传入messages对应的token数量，两者相加不可大于4096。如果messages对应的token数为1024，当传递的tokensToGenerate参数大于（4096-1024）时接口会抛出错误。
 
-未指定provider时默认最多生成512个token的结果，也就是返回结果不会很长。如有需求请自行调整此值。HBuilderX 3.7.14版本此默认值调整为512，在HBuilderX 3.7.14之前为128
+未指定provider时默认最多生成512个token的结果，也就是返回结果不会很长。如有需求请自行调整此值。HBuilderX 3.8.0版本此默认值调整为512，在HBuilderX 3.8.0之前为128
 
 **chatCompletion方法的返回值**
 
@@ -304,7 +304,7 @@ console.log(res);
 
 #### 流式响应@chat-completion-stream
 
-> 新增于HBuilderX 3.7.14
+> 新增于HBuilderX 3.8.0
 
 访问AI聊天接口时，如生成内容过大，响应时间会很久，前端用户需要等待很长时间才会收到结果。
 
@@ -312,7 +312,7 @@ console.log(res);
 
 以往云函数只有return的时候，才能给客户端返回消息。在流式响应中，需要云函数支持sse，在return前给客户端一直发送通知。
 
-uniCloud的云函数，基于uni-push2，于 HBuilder 3.7.14+ 提供了sse通道，即[云函数请求中的中间状态通知通道](sse-channel.md)。
+uniCloud的云函数，基于uni-push2，于 HBuilder 3.8.0+ 提供了sse通道，即[云函数请求中的中间状态通知通道](sse-channel.md)。
 
 在调用`chatCompletion`接口时传递参数`stream: true`即可开启流式响应。
 

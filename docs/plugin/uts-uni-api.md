@@ -22,12 +22,23 @@ export function myToast() {
 ## 注意事项  
 ### 异步API中complete回调函数中的参数是any类型  
 在uts中，由于不支持联合类型，complete回调函数的参数会当做any类型处理。  
-any类型对象不能直接使用“.”访问其属性，目前暂时可以使用JSON.stringify()转换为字符串处理。
+any类型对象不能直接使用“.”访问其属性，目前暂时可以使用JSON.stringify()转换为字符串处理，或者在success和fail回调中分别处理成功和失败的数据。  
+此问题仅在complete回调函数中存在，success和fail回调函数中可以使用“.”访问参数的属性。  
 如下示例：
 ```ts
 export function myTest() {
 	uni.request({
 		url: 'https://www.invalidserviceaddress.com/',
+		success: (ret) => {
+			//ret为RequestSuccess类型，可以使用.访问其属性  
+			let data = ret.data;
+			console.log('uni.request successed: ', data);
+		},
+		fail: (err) => {
+			//err为RequestFail类型，可以使用.访问其属性  
+			let code = err.errCode;
+			console.log('uni.request failed: ', code);
+		},
 		complete: (res) => {
 			//res为any类型，转换为字符串处理
 			let ret = JSON.stringify(res);
@@ -36,6 +47,22 @@ export function myTest() {
 	});
 }
 ```
+
+如果在complete回调函数中使用“.”访问属性，如下示例：  
+```ts
+	uni.request({
+		url: 'https://www.invalidserviceaddress.com/',
+		complete: (res) => {
+			console.log(res.errCode);
+		}
+	});
+
+```
+编译时会报错：  
+```
+error: Unresolved reference: errCode‌
+```
+
 
 
 ## 支持的API列表  
@@ -57,6 +84,7 @@ export function myTest() {
 
 ### 设备  
 - 系统  
+	+ [uni.getAppBaseInfo()](https://uniapp.dcloud.net.cn/api/system/getAppBaseInfo.html)  
 	+ [uni.getDeviceInfo()](https://uniapp.dcloud.net.cn/api/system/getDeviceInfo.html)  
 	+ [uni.getSystemSetting()](https://uniapp.dcloud.net.cn/api/system/getsystemsetting.html)
 
@@ -68,3 +96,5 @@ export function myTest() {
 	+ [uni.hideLoading()](https://uniapp.dcloud.net.cn/api/ui/prompt.html#hideloading)  
 	+ [uni.showModal(OBJECT)](https://uniapp.dcloud.net.cn/api/ui/prompt.html#showmodal)  
 	+ [uni.showActionSheet(OBJECT)](https://uniapp.dcloud.net.cn/api/ui/prompt.html#showactionsheet)  
+
+**目前仅支持以上列出的部分uni api的调用，[uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)实现的api（如[uni.getBatteryInfo](https://ext.dcloud.net.cn/plugin?id=9295)）暂时还不支持在uts插件中调用**  

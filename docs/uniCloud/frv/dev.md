@@ -1,10 +1,14 @@
 ## 开发指南
 
+> uni实人认证相关功能建议或问题，可以加入uni-im交流群进行讨论，[点此加入](https://im.dcloud.net.cn/#/?joinGroup=6445fc67bc1254655dcbf5f7)
+
 uni实人认证服务，分前端api和云端api，云端为uniCloud API。
 
 如开发者的业务不在uniCloud上，需参考[云函数url化](../http.md)文档编写云函数提供http接口供外部访问，由uniCloud获取到认证结果后转交给开发者的非uniCloud服务器上。
 
 首先在uniCloud服务空间新建一个云函数/云对象，用于处理实人认证业务。新建时在[云函数的扩展库](../cf-functions.md#extension)中配置uni-cloud-verify扩展库。
+
+
 
 在uni-app客户端和uniCloud云函数中调用如下api，实现下图流程：
 

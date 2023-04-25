@@ -15,6 +15,13 @@ uni-ai-chat是基于[uni-ai](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)�
 
 - 流式响应的使用需客户端先通过 `new uniCloud.SSEChannel()` 创建 SSE 通道，并获得 `channel` 值（详情请参考：[https://uniapp.dcloud.net.cn/uniCloud/sse-channel.html#create-sse-channel](https://uniapp.dcloud.net.cn/uniCloud/sse-channel.html#create-sse-channel)）。在客户端向 uniCloud 云对象发起请求时，需要将该 `channel` 值作为参数一同携带；然后 uniCloud 云对象与 uni-ai 建立 流式响应[(stream)](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion-stream) 通讯，云对象监听 uni-ai 返回的分片数据，在接收到数据后再通过 sse-channel ([反序列化消息通道](https://uniapp.dcloud.net.cn/uniCloud/sse-channel.html#cloud-deserialize-channel))向客户端推送消息。
 
+## 配置
+文件路径 `uniCloud/cloudfunctions/common/uni-config-center/uni-ai-chat/config.json`
+
+| 字段        | 类型       | 默认值 | 描述                       |
+| :--------  | :--------  | :--- | :------------------------ |
+| contentSecurity  | Boolean | false   | 开启内容安全识别    |
+
 ### 注意事项 @heed
 - 使用`sse-channel`需要先[开通uni-push](https://uniapp.dcloud.net.cn/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
 - 目前uni-push2.0不支持本地调试（后续版本会支持），需要在HBuilderX控制台，更改`连接本地云函数`为`连接云端云函数`。

@@ -50,7 +50,8 @@ ai能力非常常见的应用场景，有智能客服和自动生成文稿。
 `uni-ai`把这些常见场景对应的应用均已做好，并且开源。开发者可以直接拿走使用。
 
 - uni-cms，内置了智能内容生成。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)
-- uni-im，内置了智能客服。[详见](https://ext.dcloud.net.cn/plugin?id=11771)
+- uni-ai-chat，独立的ai聊天模板。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)
+- uni-im，内置了智能客服。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
 
 这些完善的项目，包括了前端页面（全端可用）、云对象、云数据库等全套代码，开箱即用。
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/202304112225875.png)
@@ -416,7 +417,6 @@ try {
 ## 后续版本计划
 
 uni-ai会持续快速迭代，未来会陆续提供：
-- stream流式输出
 - 聚合更多ai引擎
 - 提供私有数据训练方案
 - 提供prompt辅助和插件市场
@@ -440,7 +440,7 @@ ai会使用互联网上的数据进行学习训练，但训练语料不会包含
 
 目前生成式ai的主要用途有：
 - 文章生成、润色、续写：常见于生成文案、文书、标语、名字、营销邮件、笑话、诗词等。[uni-cms](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)中，已经内置了这个功能
-- 闲聊：情感咨询、常识问答。由于聊天本身有不少代码工作量，推荐使用现成开源的[uni-im](https://ext.dcloud.net.cn/plugin?id=11771)
+- 闲聊：情感咨询、常识问答。由于聊天本身有不少代码工作量，推荐使用现成开源项目。比如单纯的ai聊天模板[uni-ai-chat](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)，或专业的im工具、支持私聊群聊的[uni-im](https://ext.dcloud.net.cn/plugin?id=11771)
 - 翻译：各国各民族语言翻译
 - 代码注释补充和简单代码生成：需使用openai，其他provider在代码领域的能力暂时还不行
 

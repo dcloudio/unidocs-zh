@@ -155,6 +155,9 @@ console.log(s) // hello world
 ```ts
 console.log("my " + "string"); // console logs the string "my string".
 ```
+**注意**
+
+在iOS平台，连接操作符（+）目前仅支持字符串的连接，即+操作符前后都必须是字符串类型。
 
 #### 条件（三元）运算符(Conditional operator)
 

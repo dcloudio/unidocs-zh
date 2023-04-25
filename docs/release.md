@@ -1,3 +1,13 @@
+#### 3.7.10.20230425
+* 【uniCloud】
+* 【重要】新增 uni-ai 聚合多家ai引擎，帮助开发者快速将AI能力应用到自己的应用中 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)
+* 【重要】新增 uni-cms，全端的、云端一体的开源CMS内容管理系统，内置ai生成内容和广告解锁变现 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)
+* 新增 uni-ai-chat云端一体页面模板，开源的ai聊天示例。比uni-im更简单 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)
+* 新增 jql支持in语法，查询某字段和另一个表指定字段匹配的记录 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#enhanced-in)
+* 新增 JQL语法 触发器内副表读取事件增加 primaryCollection 参数，值为本次联表查询的主表表名
+* 调整 JQL语法 schema 内配置的动态 enum 校验数据时移除仅枚举500条的限制
+* 调整 HBuilder新建opendb表时，如该表含有schema扩展js，会同时自动创建schema扩展js
+
 #### 3.7.8.20230323
 * 【uni-app】
 * 【重要】App平台 新增 uni实人认证，uni.startFacialRecognitionVerify，姓名身份证和人脸活体比对，金融级安全保障 [详情](https://uniapp.dcloud.net.cn/uniCloud/frv/intro)

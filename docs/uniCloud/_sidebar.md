@@ -89,6 +89,7 @@
 	* * [uni-pay 云端一体页面模板](uni-pay.md)
 	* * [uni-pay 公共模块](unipay.md)
   * [uni-cms 内容管理](uni-cms.md)
+  * [uni-ai-chat uni-ai的聊天示例项目](uni-ai-chat.md)
   * [uni-im 即时通信](uni-im.md)
   * [uSearch 云端一体搜索](https://ext.dcloud.net.cn/plugin?id=3851)
   * [uni-captcha 图形验证码](uni-captcha.md)

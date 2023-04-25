@@ -1,6 +1,8 @@
 ## 开发指南
 ## Development Guide
 
+> uni实人认证相关功能建议或问题，可以加入uni-im交流群进行讨论，[点此加入](https://im.dcloud.net.cn/#/?joinGroup=6445fc67bc1254655dcbf5f7)
+
 uni实人认证服务，分前端api和云端api，云端为uniCloud API。
 uni real person authentication service is divided into front-end api and cloud api, and the cloud is uniCloud API.
 
@@ -8,6 +10,8 @@ uni real person authentication service is divided into front-end api and cloud a
 If the developer's business is not on uniCloud, you need to refer to [Cloud function urlization](../http.md) document to write cloud functions to provide http interface for external access, and uniCloud will transfer the authentication results to the developer's non-uniCloud after obtaining the authentication results on the server.
 
 首先在uniCloud服务空间新建一个云函数/云对象，用于处理实人认证业务。新建时在[云函数的扩展库](../cf-functions.md#extension)中配置uni-cloud-verify扩展库。
+
+
 
 在uni-app客户端和uniCloud云函数中调用如下api，实现下图流程：
 Call the following api in the uni-app client and uniCloud cloud function to realize the following process:

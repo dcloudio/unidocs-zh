@@ -2172,6 +2172,8 @@ In [uniCloud console](https://unicloud.dcloud.net.cn/), find the service space w
 ### 实名认证@frv <Badge text="uni-id-pages 1.1.7+" />
 
 > HBuilderX 版本需大于3.7.6
+>
+> 实人认证相关功能建议或问题，可以加入uni-im交流群进行讨论，[点此加入](https://im.dcloud.net.cn/#/?joinGroup=6445fc67bc1254655dcbf5f7)
 
 基于[实人认证](/uniCloud/frv/intro.md)服务实现，可以实现用户刷脸核验真实身份，完成实名认证。
 

@@ -5,6 +5,7 @@
   * [uts语法...](/tutorial/syntax-uts.md)
   * [uts插件开发入门](uts-plugin.md)
   * [uts页面组件开发入门](uts-component.md)
+  * [uts中使用uni api](uts-uni-api.md)
   * [Android平台uts开发指南](uts-for-android.md)
   * [iOS平台uts开发指南](uts-for-ios.md)
 * [原生语言插件](/plugin/native-plugin.md)

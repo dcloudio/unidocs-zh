@@ -89,7 +89,7 @@ llm.chatCompletion({
 
 ## API@api
 
-> 新增于HBuilderX 3.7.13+
+> 新增于HBuilderX正式版 3.7.10+， alpha版 3.7.13+
 
 :::warning 注意
 使用低版本HBuilder，只能上传到uniCloud云端联调。因为低版本的uniCloud本地运行插件不支持`uni-ai`。云端和本地扩展库差异参考：[云端和本地扩展库差异](rundebug.md#diff-extension)
@@ -103,7 +103,7 @@ ai作为一种云能力，相关调用被整合到uniCloud中。
 
 ai能力由`uni-cloud-ai`扩展库提供，在云函数或云对象中，对右键配置`uni-cloud-ai`扩展库。如何使用扩展库请参考：[使用扩展库](cf-functions.md#extension)
 
-如果HBuilderX版本低于3.7.13，在云函数的扩展库界面里找不到`uni-ai`。
+如果HBuilderX版本过低，在云函数的扩展库界面里找不到`uni-ai`。
 
 注意`uni-ai`是云函数扩展库，其api是`uniCloud.ai`，不是需要下载的三方插件。而`uni-cms`、`uni-im`等开源项目，是需要在插件市场下载的。
 
@@ -270,7 +270,7 @@ tokensToGenerate指生成的token数量限制，即返回的文本对应的token
 
 注意此值和传入messages对应的token数量，两者相加不可大于4096。如果messages对应的token数为1024，当传递的tokensToGenerate参数大于（4096-1024）时接口会抛出错误。
 
-未指定provider时默认最多生成512个token的结果，也就是返回结果不会很长。如有需求请自行调整此值。HBuilderX 3.8.0版本此默认值调整为512，在HBuilderX 3.8.0之前为128
+未指定provider时默认最多生成512个token的结果，也就是返回结果不会很长。如有需求请自行调整此值。此默认值为512（在HBuilderX alpha 3.7.13版本默认为128）
 
 **chatCompletion方法的返回值**
 
@@ -308,7 +308,7 @@ console.log(res);
 
 #### 流式响应@chat-completion-stream
 
-> 新增于HBuilderX 3.8.0
+> 新增于HBuilderX正式版 3.7.10+， alpha版 HBuilderX 3.8.0
 
 访问AI聊天接口时，如生成内容过大，响应时间会很久，前端用户需要等待很长时间才会收到结果。
 
@@ -316,7 +316,7 @@ console.log(res);
 
 以往云函数只有return的时候，才能给客户端返回消息。在流式响应中，需要云函数支持sse，在return前给客户端一直发送通知。
 
-uniCloud的云函数，基于uni-push2，于 HBuilder 3.8.0+ 提供了sse通道，即[云函数请求中的中间状态通知通道](sse-channel.md)。
+uniCloud的云函数，基于uni-push2，于 HBuilderX 新版提供了sse通道，即[云函数请求中的中间状态通知通道](sse-channel.md)。
 
 在调用`chatCompletion`接口时传递参数`stream: true`即可开启流式响应。
 

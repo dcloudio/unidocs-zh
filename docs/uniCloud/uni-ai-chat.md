@@ -1,4 +1,3 @@
-
 ## 简介
 > 仅支持3.8.0及以上版本的HBuilderX  
 
@@ -10,7 +9,7 @@ uni-ai-chat是基于[uni-ai](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)�
 包含一个前端页面(路径：`/pages/chat/chat.vue`)和一个云对象(路径：`uniCloud/cloudfunctions/uni-ai-chat/index.obj.js`)
 
 ## 响应流程图
-<img width="400px" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/20230424211201.jpg">
+<img width="400px" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/20230425203311.jpg">
 
 - 普通响应的流程较为简单，全流程基于 HTTP 网络请求。其缺陷是，当访问 AI 聊天接口时，如果生成的回复内容过大，响应时间会很长，导致前端用户需要等待很长时间才能收到结果。详情请参考：[stream的优势](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion-stream)。
 

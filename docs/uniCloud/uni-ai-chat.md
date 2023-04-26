@@ -2,7 +2,7 @@
 
 > 支持HBuilder版本，正式版 3.7.10+，alpha版 3.8.0+
 
-`uni-ai-chat`是基于[uni-ai](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)的聊天项目模板。它包含一个前端页面(路径：`/pages/chat/chat.vue`)和一个云对象(路径：`uniCloud/cloudfunctions/uni-ai-chat/index.obj.js`)
+`uni-ai-chat`是基于[uni-ai](uni-ai.md)的聊天项目模板。它包含一个前端页面(路径：`/pages/chat/chat.vue`)和一个云对象(路径：`uniCloud/cloudfunctions/uni-ai-chat/index.obj.js`)
 
 它支持上文总结、流式响应，把众多复杂的ai聊天逻辑都封装好了。
 
@@ -15,10 +15,13 @@
 
 1. 如之前未使用过uni-app，那请从头学起。[uni-app官网](https://uniapp.dcloud.net.cn)
 2. 如果你还没有开通uniCloud，需要登录[https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)，创建一个服务空间。
-3. 打开`uni-ai-chat`插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-ai-chat](https://ext.dcloud.net.cn/plugin?name=uni-ai-chat)
-4. 点击`使用HBuilderX导入示例项目`
-5. 对项目根目录uniCloud点右键选择“云服务空间初始化向导”界面按提示部署项目
-6. 在uni-app项目点右键，关联之前创建的服务空间。
+3. 如果你不了解[uni-ai](uni-ai.md)，请务必阅读相关文档。
+4. 打开本插件`uni-ai-chat`下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-ai-chat](https://ext.dcloud.net.cn/plugin?name=uni-ai-chat)
+5. 点击`使用HBuilderX导入示例项目`
+6. 对项目根目录uniCloud点右键选择“云服务空间初始化向导”界面按提示部署项目
+7. 在uni-app项目点右键，关联之前创建的服务空间。
+8. 运行启动。
+9. 如果需要stream流式响应，需要在[dev.dcloud.net.cn](https://dev.dcloud.net.cn)的uni-push2中开通你的应用，然后把云函数上传到uniCloud服务空间，并且运行时在HBuilderX控制台选择`连接云端云函数`
 
 ## stream流式响应实现解析
 
@@ -64,4 +67,6 @@ DCloud基于`uni-ai`提供了很多开源模板，除了本项目`uni-ai-chat`�
 - [uni-cms](uni-cms.md)，一款集成了ai生成文章内容的开源内容管理系统。
 - [uni-im](uni-cms.md)，一款集成了ai的大型im系统，包括私聊群聊好友等丰富功能。
 
+## 交流群
 
+更多问题欢迎加入uni-ai官方交流群 qq群号:[699680439](https://qm.qq.com/cgi-bin/qm/qr?k=P_JoYXY56vNfb78uNHwwzqpODwl9e89B&jump_from=webapi&authKey=GDp321q9ZYW4V0ZQcejXikwMnNRs4KVBcQXMADs8lvC0hifSH9ORHsyERy6vO4bA)

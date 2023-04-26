@@ -79,6 +79,8 @@ export default {
 
 :::warning 注意
 注意通道一定要在open之后再传给云函数
+
+此方法在vue3版本发行时会报错，可以先使用vue2发行项目，如果需要发行vue3项目时使用请联系QQ 2292434668。后续会发布HBuilderX更新修复此问题
 :::
 
 ### 关闭通道@channel-close

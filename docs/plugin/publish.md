@@ -67,6 +67,41 @@ Tips：
 Tips：
 - 不能包含根目录的 manifest.json、pages.json、App.vue、main.js 等文件
 
+## UTS插件
+
+uts插件开发详见[插件开发文档](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)，这里主要说明uts付费插件发布的注意事项。
+
+uts付费插件分为`普通授权版`及`源码授权版`，两种付费方式区别[详见说明文档](https://uniapp.dcloud.net.cn/plugin/plugin-ext-introduction.html#payment)。
+
+如需发布付费插件，必须选择要配置加密的文件，加密配置的规范与[uni_modulesd package.json](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)统一，需在插件根目录下添加package.json，在uni_modules -> encrypt中配置需要加密的文件，如：
+
+```json
+{
+	"uni_modules": {
+		"encrypt": [
+			"index.d.ts",
+			"utssdk/app-android/index.uts",
+			"utssdk/mp-alipay/index.js"
+		],
+	}
+}
+```
+
+配置要加密的文件必须是插件包中真实存在且相对根目录的文件路径，支持js、ts、uts三种文件加密。
+
+定义好要加密的文件后，上传插件，DCloud插件市场会自动加密这些文件。当插件用户试用插件时，无法查阅这些加密的源码。uts插件试用只能用于打包自定义基座，不能用于正式发布。
+
+如果插件用户购买了`普通授权版`，也看不到这些加密文件的源码，提交云打包时，会在云端验证并解密文件进行打包。
+
+如果插件作者上传插件时，同时提供了源码授权版，且插件使用者购买了源码授权版，才能拿到插件的所有源码。
+
+若插件作者提供了源码授权版，需及时注意合同待签通知。当意向买方在电子合同签名后，DCloud会短信通知插件作者，提醒插件作者也对该电子合同进行签名。
+
+Tips：
+- uts加密插件云打包不支持安心打包，且最低需要HBuilderX 3.7.2及以上版本
+
+
+
 ## 原生SDK
 原生SDK，即uni原生插件，需使用Andorid/iOS原生环境开发实现，请参考以下教程：
 - [uni原生插件开发指南](https://nativesupport.dcloud.net.cn/NativePlugin/README)

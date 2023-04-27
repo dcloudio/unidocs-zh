@@ -100,7 +100,7 @@ Tips：
 - 不能包含根目录的 manifest.json、pages.json、App.vue、main.js 等文件
 - Cannot include manifest.json, pages.json, App.vue, main.js and other files in the root directory
 
-## UTS插件
+## UTS插件@uts
 
 uts插件开发详见[插件开发文档](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)，这里主要说明uts付费插件发布的注意事项。
 
@@ -131,7 +131,7 @@ uts付费插件分为`普通授权版`及`源码授权版`，两种付费方式�
 若插件作者提供了源码授权版，需及时注意合同待签通知。当意向买方在电子合同签名后，DCloud会短信通知插件作者，提醒插件作者也对该电子合同进行签名。
 
 Tips：
-- uts加密插件云打包不支持安心打包，且最低需要HBuilderX 3.7.2及以上版本
+- uts加密插件只支持传统打包，打包最低需要HBuilderX 3.7.2或以上版本
 
 
 

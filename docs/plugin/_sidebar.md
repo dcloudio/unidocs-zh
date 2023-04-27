@@ -15,8 +15,6 @@
 * 插件作者专区
 * Plugin author area
   * [发布插件](/plugin/publish.md)
-  * [publish plugin](/plugin/publish.md)
-  * [支持多语言](/plugin/language.md)
-  * [Multilingual support](/plugin/language.md)
   * [销售变现](/plugin/sell.md)
+  * [支持多语言](/plugin/language.md)
   * [oath开放平台](/plugin/oath.md)

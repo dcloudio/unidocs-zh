@@ -73,23 +73,7 @@ uts插件开发详见[插件开发文档](https://uniapp.dcloud.net.cn/plugin/ut
 
 uts付费插件分为`普通授权版`及`源码授权版`，两种付费方式区别[详见说明文档](https://uniapp.dcloud.net.cn/plugin/plugin-ext-introduction.html#payment)。
 
-如需发布付费插件，必须选择要配置加密的文件，加密配置的规范与[uni_modulesd package.json](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)统一，需在插件根目录下添加package.json，在uni_modules -> encrypt中配置需要加密的文件，如：
-
-```json
-{
-	"uni_modules": {
-		"encrypt": [
-			"index.d.ts",
-			"utssdk/app-android/index.uts",
-			"utssdk/mp-alipay/index.js"
-		],
-	}
-}
-```
-
-配置要加密的文件必须是插件包中真实存在且相对根目录的文件路径，支持js、ts、uts三种文件加密。
-
-定义好要加密的文件后，上传插件，DCloud插件市场会自动加密这些文件。当插件用户试用插件时，无法查阅这些加密的源码。uts插件试用只能用于打包自定义基座，不能用于正式发布。
+如需发布付费插件，在设置价格后上传，DCloud插件市场会自动加密插件中的所有uts文件。当插件用户试用插件时，无法查阅这些加密的源码。uts插件试用只能用于打包自定义基座，不能用于正式发布。
 
 如果插件用户购买了`普通授权版`，也看不到这些加密文件的源码，提交云打包时，会在云端验证并解密文件进行打包。
 

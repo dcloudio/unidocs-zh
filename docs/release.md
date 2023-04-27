@@ -1,3 +1,9 @@
+#### 3.7.11.20230427
+* 【uni-app】
+* 新增 插件市场UTS插件支持发布加密付费类型插件 [详情](https://uniapp.dcloud.net.cn/plugin/publish.html#uts)
+* 【uniCloud】
+* 修复 在vue3项目内使用uniCloud.SSEChannel的open方法发布到web端时报错的Bug
+
 #### 3.7.10.20230425
 * 【uniCloud】
 * 【重要】新增 uni-ai 聚合多家ai引擎，帮助开发者快速将AI能力应用到自己的应用中 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)

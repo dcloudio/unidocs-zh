@@ -1,4 +1,4 @@
-# 插件作者发布插件
+# 制作和发布插件指南
 
 DCloud有活跃的插件市场，[https://ext.dcloud.net.cn/](https://ext.dcloud.net.cn/)，并提供了计价销售、广告解锁、赞助、评价等机制。
 
@@ -9,6 +9,8 @@ DCloud有活跃的插件市场，[https://ext.dcloud.net.cn/](https://ext.dcloud
 - 通过插件下载量、评星、排行，收获荣誉。
 
 很多优秀的插件作者，可以做到每月销售数万元的插件。（只有uniCloud插件和App原生或uts插件支持付费，其他类型插件不能设价格）
+
+了解插件变现的详细信息，另见文档[插件变现](sell.md)
 
 ## 插件制作注意
 

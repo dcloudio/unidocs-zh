@@ -142,11 +142,13 @@ uni-cms包括管理端和用户端。
 
 #### 4. AI 功能开通与使用
 
-> AI功能基于 `uni-im` 实现，`uni-im` 文档请参考[uni-im](https://uniapp.dcloud.net.cn/uniCloud/uni-im)。
+> AI功能基于 `uni-ai-chat` 实现，`uni-ai-chat` 文档请参考[uni-ai-chat](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)。
 > 
-> `uni-im` 消息推送基于 `uni-push2.0` 实现，`uni-push2.0` 文档请参考[uni-push](https://uniapp.dcloud.net.cn/unipush-v2.html)。
+> `uni-ai-chat` 支持 stream 流式响应，stream 流式响应基于 `uni-push2.0` 实现，`uni-push2.0` 文档请参考[uni-push](https://uniapp.dcloud.net.cn/unipush-v2.html)。
 
-**请按照以下步骤开通并使用，否则将会出现异常问题**
+如果开通了 uni-push 后将默认使用 stream 流式响应返回 AI 结果，如果未开通 uni-push 将使用普通响应返回 AI 结果。
+
+**开通 uni-push2.0 步骤**
 
 1. 在[开发者中心](https://dev.dcloud.net.cn)对当前应用开通 uni-push2.0，并关联服务空间。
 
@@ -188,7 +190,7 @@ uni-cms版本大于等于1.0.4时，无需在App.vue内初始化uni-im，uni-cms
 
 4. 运行项目，体验AI功能。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304112225875.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202304271726981.png)
 
 **注意**
 

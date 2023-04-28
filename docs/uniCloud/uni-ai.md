@@ -129,9 +129,9 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 |accessToken|string	|否		|-		|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)	|
 |proxy		|string	|否		|-		|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填													|
 
-**说明**
+**关于proxy参数的说明**
 
-如果使用的代理需要用户名和密码，请在代理地址中加入用户名和密码，例如：`https://username:password@ip:port`。
+如果使用的代理需要用户名和密码，请在代理地址中加入用户名和密码，例如：`username:password@ip:port`。uni-ai在请求openai时会自动将openai的域名替换为配置的代理域名或ip，一般的反向代理服务器均可满足此需求。
 
 **示例**
 

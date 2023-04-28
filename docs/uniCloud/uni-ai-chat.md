@@ -11,7 +11,11 @@
 视频效果：  
 <video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/uni-ai-stream.mov" style="max-width: 100%; max-height: 70vh;"></video>
 
-## 体验步骤  
+在线体验：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)。
+
+这是一个集成了uni-ai-chat的[uni-admin](admin.md)系统。注意入口有点深。登录后，左侧内容管理中新建一篇文章，toolbar右上角有ai按钮，点击后右侧弹出uni-ai-chat。注意测试系统的数据会定时清除。
+
+## 使用步骤  
 
 1. 如之前未使用过uni-app，那请从头学起。[uni-app官网](https://uniapp.dcloud.net.cn)
 2. 如果你还没有开通uniCloud，需要登录[https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)，创建一个服务空间。

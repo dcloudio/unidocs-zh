@@ -1,3 +1,12 @@
+#### 3.8.1.20230428-alpha
+* 【uni-app】
+* App-Android平台 修复 nvue 页面 map 组件在特定场景未自动回收销毁可能导致黑屏的Bug [详情](https://ask.dcloud.net.cn/question/168133)
+* uts插件 App-iOS平台 修复 console.log 输出 json 对象可能不正确的Bug
+* 【uniCloud】
+* 修复 vue3项目 发布到web端后 uniCloud.SSEChannel的open方法报错的Bug
+* 【App插件(含5+App和uni-app的App端)】
+* Android平台 更新 uni-AD 快手广告SDK为 3.3.44 版；快手内容联盟SDK为 3.3.42 版
+
 #### 3.8.0.20230425-alpha
 * 【uni-app】
 * App-iOS平台 修复 uni.scanCode 扫码后跳转页面可能引起应用卡死的Bug [详情](https://ask.dcloud.net.cn/question/160090)

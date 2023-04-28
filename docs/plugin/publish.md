@@ -117,6 +117,8 @@ uts付费插件分为`普通授权版`及`源码授权版`，两种付费方式�
 
 如果插件作者上传插件时，设置了提供源码授权版，且插件使用者购买了源码授权版，才能下载到插件的源码。
 
+若插件作者提供了源码授权版并且价格在100元以上，需签署第三方电子合同。当意向买方在电子合同签名后，DCloud会短信通知插件作者，提醒插件作者也对该电子合同进行签名。请及时留意合同待签通知。
+
 不管是`普通授权版`还是`源码授权版`，都是绑定唯一的appid和包名。如购买者更换了这2个信息中的一个，需要重新购买授权。
 
 Tips：
@@ -195,8 +197,7 @@ Even if the plug-in user purchases the normal authorized version of the plug-in,
 如果插件作者上传插件时，同时提供了源码授权版，且插件使用者购买了源码授权版，才能拿到插件的所有源码。
 If the author of the plug-in uploads the plug-in, and the authorized version of the source code is provided at the same time, and the user of the plug-in has purchased the authorized version of the source code, all the source code of the plug-in can be obtained.
 
-若插件作者提供了源码授权版，需及时注意合同待签通知。当意向买方在电子合同签名后，DCloud会短信通知插件作者，提醒插件作者也对该电子合同进行签名。
-If the plug-in author provides an authorized version of the source code, it is necessary to pay attention to the notice of pending contract signing in time. When the intended buyer signs the electronic contract, DCloud will notify the plug-in author via SMS, reminding the plug-in author to also sign the electronic contract.
+若插件作者提供了源码授权版并且价格在100元以上，需签署第三方电子合同。当意向买方在电子合同签名后，DCloud会短信通知插件作者，提醒插件作者也对该电子合同进行签名。请及时留意合同待签通知。
 
 关于普通授权版和源码授权版的区别，详见：[https://ask.dcloud.net.cn/article/38040](https://ask.dcloud.net.cn/article/38040)
 For the difference between the ordinary authorized version and the source code authorized version, please refer to: [https://ask.dcloud.net.cn/article/38040](https://ask.dcloud.net.cn/article/38040)

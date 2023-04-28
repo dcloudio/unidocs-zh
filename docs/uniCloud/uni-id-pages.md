@@ -171,9 +171,9 @@ export default {
 	"appid":{
 		"weixin":{
 			// 微信公众号的appid，来源:登录微信公众号（https://mp.weixin.qq.com）-> 设置与开发 -> 基本配置 -> 公众号开发信息 -> AppID
-			"h5":"wx32b2580e30ef8555",
+			"h5":"wx111111111111111",
 			// 微信开放平台的appid，来源:登录微信开放平台（https://open.weixin.qq.com） -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> AppID
-			"web":"wx4dcf96ab6af4c5e8"
+			"web":"wx22222222222222"
 		}
 	},
 	/**

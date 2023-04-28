@@ -22,8 +22,8 @@
 
 | 属性 | 类型 | 说明 |
 | --- | --- | --- |
-| mpVersion | string | 小程序 appId |
-| envType| string | 小程序环境 `development`测试版、`preview`预览版、`production`线上版 |
+| mpVersion | string | 小程序版本号 |
+| envType| string | 小程序环境 `development` 测试版、`preview` 预览版、`production` 线上版 |
 | appId| string | 小程序 appId |
 
 

@@ -2596,7 +2596,7 @@ Math.fround() 可以将任意的数字转换为离它最近的单精度浮点数
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|√|x|
 
 ```ts
 console.log(Math.fround(1.5));
@@ -2656,7 +2656,7 @@ Math.log() 函数返回一个数的自然对数。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.log(1));
@@ -2674,7 +2674,7 @@ Math.log10() 函数返回一个数字以 10 为底的对数。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.log10(10));
@@ -2695,7 +2695,7 @@ Math.log1p() 函数返回一个数字加 1 后的自然对数 (底为 E), 既log
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.log1p(Math.E-1));
@@ -2713,7 +2713,7 @@ Math.log2() 函数返回一个数字以 2 为底的对数。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.log2(2));
@@ -2734,7 +2734,7 @@ Math.max() 函数返回作为输入参数的最大数字。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.max(1, 3, 2));
@@ -2752,7 +2752,7 @@ Math.min() 函数返回作为输入参数的数字中最小的一个。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.min(2, 3, 1));
@@ -2770,7 +2770,7 @@ Math.pow() 函数返回基数（base）的指数（exponent）次幂，即 base^
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.pow(7, 3));
@@ -2813,7 +2813,7 @@ Math.round() 函数返回一个数字四舍五入后最接近的整数。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.round(20.49));
@@ -2822,10 +2822,10 @@ console.log(Math.round(20.49));
 console.log(Math.round(20.5));
 // expected output: 21
 
-console.log(Math.random(-20.5));
+console.log(Math.round(-20.5));
 // expected output: -20
 
-console.log(Math.random(-20.51));
+console.log(Math.round(-20.51));
 // expected output: -21
 ```
 
@@ -2837,7 +2837,7 @@ Math.sign() 函数返回一个数字的符号，分别是 1、-1、0，代表的
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.sign(3));
@@ -2858,7 +2858,7 @@ Math.sin() 函数返回一个数值的正弦值。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.sin(0));
@@ -2876,7 +2876,7 @@ Math.sinh() 函数返回一个数字 (单位为角度) 的双曲正弦值。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.sinh(0));
@@ -2894,7 +2894,7 @@ Math.sqrt() 函数返回一个数的平方根。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function calcHypotenuse(a:number, b:number):number {
@@ -2919,7 +2919,7 @@ Math.tan() 方法返回一个数值的正切值。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.tan(0));
@@ -2937,7 +2937,7 @@ Math.tanh() 函数将会返回一个数的双曲正切函数值。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.tanh(-1));
@@ -2958,7 +2958,7 @@ Math.trunc() 方法会将数字的小数部分去掉，只保留整数部分。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.trunc(13.37));

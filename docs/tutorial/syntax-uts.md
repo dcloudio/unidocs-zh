@@ -2543,7 +2543,7 @@ The Math.E property represents the base (or base) of natural logarithms, e, appr
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function getNapier():number {
@@ -2563,7 +2563,7 @@ The Math.LN10 property represents the natural logarithm of 10, approximately 2.3
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function getNatLog10():number {
@@ -2583,7 +2583,7 @@ The Math.LN2 property represents the natural logarithm of 2, which is approximat
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function getNatLog2():number {
@@ -2603,7 +2603,7 @@ The Math.LOG10E property represents the base 10 logarithm of e, approximately 0.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function getLog10e():number {
@@ -2623,7 +2623,7 @@ The Math.LOG2E property represents the base 2 logarithm of e, approximately 1.44
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function getLog2e():number {
@@ -2643,7 +2643,7 @@ Math.PI represents the ratio of a circle's circumference to its diameter, which 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function calculateCircumference (radius:number):number {
@@ -2663,7 +2663,7 @@ The Math.SQRT1_2 property represents the square root of 1/2, which is approximat
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function getRoot1_2():number {
@@ -2683,7 +2683,7 @@ The Math.SQRT2 property represents the square root of 2, approximately 1.414.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function getRoot2():number {
@@ -2705,7 +2705,7 @@ The Math.abs(x) function returns the absolute value of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function difference(a:number, b:number):number {
@@ -2732,7 +2732,7 @@ Math.acos() Returns the arccosine of a number in radians.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.acos(-1));
@@ -2755,7 +2755,7 @@ The Math.acosh() function returns the inverse hyperbolic cosine of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.acosh(1));
@@ -2778,7 +2778,7 @@ The Math.asin() method returns the arcsine of a number in radians.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.asin(-1));
@@ -2804,7 +2804,7 @@ Math.asinh() Returns the inverse hyperbolic sine of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.asinh(1));
@@ -2830,7 +2830,7 @@ The Math.atan() function returns the arctangent of a number in radians.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.atan(1));
@@ -2850,7 +2850,7 @@ Math.atan2() returns the plane angle (in radians) between the line segment from 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.atan2(90, 15));
@@ -2870,7 +2870,7 @@ The Math.atanh() function returns a numeric inverse hyperbolic tangent.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.atanh(0));
@@ -2890,7 +2890,7 @@ The Math.cbrt() function returns the cube root of any number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.cbrt(-1));
@@ -2916,7 +2916,7 @@ The Math.ceil() function always rounds up and returns the smallest integer great
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.ceil(0.95));
@@ -2943,7 +2943,7 @@ The Math.clz32() function returns the number of leading zeros after a number is 
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.clz32(1));
@@ -2970,7 +2970,7 @@ The Math.cos() function returns the cosine of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.cos(0));
@@ -2990,7 +2990,7 @@ The Math.cosh() function returns the hyperbolic cosine function of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.cosh(0));
@@ -3013,7 +3013,7 @@ The Math.exp() function returns e^x, x represents the parameter, and e is Euler'
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.exp(-1));
@@ -3036,7 +3036,7 @@ The Math.expm1() function returns E^x - 1, where x is the argument to the functi
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.expm1(1));

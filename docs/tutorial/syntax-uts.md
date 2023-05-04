@@ -3055,7 +3055,7 @@ Math.floor() 函数总是返回小于等于一个给定数字的最大整数。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.floor(5.95));

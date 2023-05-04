@@ -3081,7 +3081,7 @@ Math.fround() converts any number to its nearest single-precision floating-point
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|√|x|
 
 ```ts
 console.log(Math.fround(1.5));
@@ -3147,7 +3147,7 @@ The Math.log() function returns the natural logarithm of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.log(1));
@@ -3167,7 +3167,7 @@ The Math.log10() function returns the base 10 logarithm of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.log10(10));
@@ -3190,7 +3190,7 @@ The Math.log1p() function returns the natural logarithm (base E) of a number plu
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.log1p(Math.E-1));
@@ -3210,7 +3210,7 @@ The Math.log2() function returns the base 2 logarithm of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.log2(2));
@@ -3233,7 +3233,7 @@ The Math.max() function returns the largest number given as an input parameter.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.max(1, 3, 2));
@@ -3253,7 +3253,7 @@ The Math.min() function returns the smallest of the numbers given as input param
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.min(2, 3, 1));
@@ -3273,7 +3273,7 @@ The Math.pow() function returns the base (base) raised to the power of the expon
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.pow(7, 3));
@@ -3320,7 +3320,7 @@ The Math.round() function returns a number rounded to the nearest integer.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.round(20.49));
@@ -3329,10 +3329,10 @@ console.log(Math.round(20.49));
 console.log(Math.round(20.5));
 // expected output: 21
 
-console.log(Math.random(-20.5));
+console.log(Math.round(-20.5));
 // expected output: -20
 
-console.log(Math.random(-20.51));
+console.log(Math.round(-20.51));
 // expected output: -21
 ```
 
@@ -3345,7 +3345,7 @@ Math.sign() 函数返回一个数字的符号，分别是 1、-1、0，代表的
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.sign(3));
@@ -3368,7 +3368,7 @@ The Math.sin() function returns the sine of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.sin(0));
@@ -3388,7 +3388,7 @@ The Math.sinh() function returns the hyperbolic sine of a number (in degrees).
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.sinh(0));
@@ -3408,7 +3408,7 @@ The Math.sqrt() function returns the square root of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function calcHypotenuse(a:number, b:number):number {
@@ -3435,7 +3435,7 @@ The Math.tan() method returns the tangent of a number.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.tan(0));
@@ -3455,7 +3455,7 @@ The Math.tanh() function will return the value of the hyperbolic tangent of a nu
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.tanh(-1));
@@ -3478,7 +3478,7 @@ The Math.trunc() method will remove the decimal part of the number and keep only
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 console.log(Math.trunc(13.37));

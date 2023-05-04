@@ -134,7 +134,7 @@ easyinput 组件是对原生input组件的增强 ，是专门为配合表单组�
 |password|密码输入键盘|
 |number|数字输入键盘，注意iOS上app-vue弹出的数字键盘并非9宫格方式	|
 |idcard|身份证输入键盘，仅支持微信、支付宝、百度、QQ小程序|
-|digit|带小数点的数字键盘，仅支持微信、支付宝、百度、头条、QQ小程序	|
+|digit|带小数点的数字键盘，均支持，App平台、H5平台 vue 页面在 iOS 平台显示的键盘包含负数（原生键盘不支持负号）	|
 
 #### ConfirmType Options
 

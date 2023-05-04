@@ -3293,7 +3293,7 @@ The Math.random() function returns a floating-point number, a pseudo-random numb
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function getRandomInt(max:number):number {

@@ -2788,7 +2788,7 @@ Math.random() 函数返回一个浮点数，伪随机数在范围从0 到小于1
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|√ `(3.7.1+)`|
+|√|√|√ `(3.7.1+)`|
 
 ```ts
 function getRandomInt(max:number):number {

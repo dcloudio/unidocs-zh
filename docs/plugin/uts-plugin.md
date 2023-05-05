@@ -901,6 +901,12 @@ Float is mandatory for many layout parameters in android, but there is no built-
 ```ts
 let textSize =  30.0.toFloat();
 ```
+### Long类型传参
+
+
+```ts
+let longVal =  1000.0.toLong()
+```
 
 ### 异步任务
 ### Asynchronous tasks

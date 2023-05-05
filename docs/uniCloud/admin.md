@@ -1095,4 +1095,14 @@ If you want to customize the base path of the project's running, modify the valu
 ### Using uni-admin to create a new user cannot log in, and it will prompt "This account has no permission to log in"?
 
 用户登录逻辑：登录时系统检测没有菜单会提示“暂无权限登录”，需要给新账号绑定角色，角色有菜单方可登录
-User login logic: When the system detects that there is no menu when logging in, it will prompt "no permission to log in". You need to bind a role to the new account, and the role has a menu to log in
+
+### admin账号密码忘记了，如何重置admin账号密码？
+
+1. 使用uni-id或uni-id-co注册一个普通的账号，比如账户名：test 密码：123456
+2. 前往uniCloud web控制台 - 云数据库 - 打开uni-id-users表 - 找到刚注册的test账号，复制其password字段的值，修改admin账号的password跟test账号的password一致。
+3. 此时admin账号的密码就已经重置为123456了
+
+
+
+
+

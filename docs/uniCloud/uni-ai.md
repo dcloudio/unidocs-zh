@@ -108,7 +108,7 @@ ai能力由`uni-cloud-ai`扩展库提供，在云函数或云对象中，对右�
 
 注意`uni-ai`是云函数扩展库，其api是`uniCloud.ai`，不是需要下载的三方插件。而`uni-cms`、`uni-im`等开源项目，是需要在插件市场下载的。
 
-### 获取LLM服务商实例@get-llm-manager
+### 获取LLM实例@get-llm-manager
 
 LLM，全称为Large Language Models，指大语言模型。
 
@@ -157,8 +157,6 @@ const openai = uniCloud.ai.getLLMManager({
 
 :::warning 注意
 对话接口响应一般比较慢，建议将云函数超时时间配置的长一些，比如30秒（客户端访问云函数最大超时时间：腾讯云为30秒，阿里云为40秒）。如何配置云函数超时时间请参考：[云函数超时时间](cf-functions.md#timeout)
-
-阿里云目前在云函数运行时间超出配置的超时时间时提示不准确，可能在云函数日志之内看到`unknown system error`字样，如果遇到此类错误请尝试将超时时间调整到40秒。
 :::
 
 用法：`llm.chatCompletion(Object ChatCompletionOptions)`
@@ -300,7 +298,7 @@ const res = await llmManager.chatCompletion({
 		role: 'user',
 		content: 'uni-app是什么，20个字以内进行说明'
 	}]
-	})
+})
 console.log(res);
 
 ```
@@ -401,13 +399,20 @@ try {
 
 完整错误码列表如下
 
-|错误码	|错误描述					|
-|--		|--							|
-|50001	|缺少参数					|
-|50002	|参数错误					|
-|60001	|服务商接口抛出的错误		|
-|60002	|接口调用凭证、key等信息有误|
-|60003	|触发了服务商限流策略		|
+|错误码	|错误描述											|
+|--			|--														|
+|50001	|缺少参数											|
+|50002	|参数错误											|
+|60000	|请求服务商接口时遇到网络错误	|
+|60001	|服务商接口抛出的错误					|
+|60002	|接口调用凭证、key等信息有误	|
+|60003	|触发了服务商限流策略					|
+
+**常见错误信息**
+
+- 错误码：60000，错误信息："A network error occurred while requesting xxx"
+
+  请求服务商接口时遇到网络错误，如果是请求openai接口请注意需要使用代理，如果使用了代理仍遇到此错误，请检查代理连通性是否有问题
 
 ## 费用
 

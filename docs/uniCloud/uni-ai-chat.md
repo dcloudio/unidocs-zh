@@ -1,4 +1,4 @@
-## 简介
+## uni-ai-chat 简介
 
 > 支持HBuilder版本，正式版 3.7.10+，alpha版 3.8.0+
 

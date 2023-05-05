@@ -702,6 +702,12 @@ android很多布局参数强制要求Float，但是ts中没有内置这种类型
 ```ts
 let textSize =  30.0.toFloat();
 ```
+### Long类型传参
+
+
+```ts
+let longVal =  1000.0.toLong()
+```
 
 ### 异步任务
 

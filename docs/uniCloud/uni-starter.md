@@ -380,7 +380,7 @@ module.exports = {
 <pre v-pre="" data-lang="">
 <code class="lang-" style="padding:0">
 uni-starter
-├─uniCloud-aliyun	
+├─uniCloud	
 │	├─cloudfunctions 云函数目录
 │ ├─cloudfunctions Cloud function directory
 │	|	├─common 公共模块

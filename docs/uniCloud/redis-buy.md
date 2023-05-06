@@ -14,7 +14,7 @@ At present, you can purchase redis services in the uniCloud web console. **The p
 3. 选择左侧redis菜单，选择实例并购买即可
 3. Select the redis menu on the left, select the instance and buy it
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-new.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-new-230506.png)
 
 **注意**
 **Notice**
@@ -69,10 +69,9 @@ At present, you can purchase redis services in the uniCloud web console. **The p
 ### 续费@renew
 ### Renewal @renew
 
-在uniCloud web控制台redis详情页面可以对redis实例进行续费操作。
-You can renew the redis instance on the redis details page of the uniCloud web console.
+在uniCloud web控制台redis详情页面点击续费按钮可以对redis实例进行续费操作。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-renew.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-renew-230506.png)
 
 实例到期后的第1~7天，实例状态为被禁用，无法被访问。如需继续使用，您需要及时为实例续费
 From 1 to 7 days after the instance expires, the instance status is disabled and cannot be accessed. To continue using it, you need to renew the instance in time
@@ -83,8 +82,7 @@ After the instance is disabled, the annual and monthly subscription duration is 
 ### 升配@upgrade
 ### Masuhai@upgrade
 
-在uniCloud web控制台redis详情页面可以对redis实例进行升配操作。升级配置需要按照剩余时间补足差额
-You can upgrade the redis instance on the redis details page of the uniCloud web console. The upgrade configuration needs to make up the difference according to the remaining time
+在uniCloud web控制台redis详情页面点击变配按钮可以对redis实例进行升配操作。升级配置需要按照剩余时间补足差额
 
 升级实例配置所需费用 =（升级后实例每天的价格 - 升级前实例每天的价格）× 服务到期的剩余天数，具体费用以web控制台显示为准
 The cost of upgrading the instance configuration = (the price of the instance per day after the upgrade - the price of the instance per day before the upgrade) × the number of days remaining until the service expires. The specific cost is subject to the display on the web console.
@@ -98,20 +96,10 @@ The cost of upgrading the instance configuration = (the price of the instance pe
 ### 降配@downgrade
 ### Downgrade @downgrade
 
-在uniCloud web控制台redis详情页面可以对redis实例进行降配操作。
-On the redis details page of the uniCloud web console, you can downgrade the redis instance.
+在uniCloud web控制台redis详情页面点击变配按钮可以对redis实例进行降配操作。
 
 **目前可以降配但是无法退还费用到您的账号**
 **Currently it is possible to downgrade but the fee cannot be refunded to your account**
-
-降配时可以选择以下两种方式
-When downgrading, you can choose the following two methods
-
-- 立即降配：实时操作降配。
-- Downgrade immediately: Real-time operation downgrade.
-- 自动降配：开启自动降配，系统会在到期当天凌晨进行降配操作。
-- Automatic downgrade: If automatic downgrade is enabled, the system will perform downgrade in the early morning of the expiration day.
-
 
 **注意**
 **Notice**

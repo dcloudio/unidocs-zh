@@ -413,6 +413,11 @@ try {
 - 错误码：60000，错误信息："A network error occurred while requesting xxx"
 
   请求服务商接口时遇到网络错误，如果是请求openai接口请注意需要使用代理，如果使用了代理仍遇到此错误，请检查代理连通性是否有问题
+  
+- 错误信息："certificate has expired"
+  
+  请参考文档：[云函数通过https访问其他服务器时出现“certificate has expired”](faq.md#lets-encrypt-cert)
+
 
 ## 费用
 

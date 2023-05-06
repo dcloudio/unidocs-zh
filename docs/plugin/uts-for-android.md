@@ -335,8 +335,9 @@ mediaPlayer.start();
 
 ** 与Application的转换 **
 
-UTSAndroid.getAppContext() 默认返回是实现了 `Context`抽象类的`Application` 对象
-部分场景，明确需要 Application 对象，那么直接进行转换即可
+UTSAndroid.getAppContext() 默认返回的是 实现了 `Context`抽象类的`Application` 对象
+
+部分场景，明确需要 `Application` 对象，那么直接强制类型转换即可
 
 ```ts
 import Application from 'android.app.Application'

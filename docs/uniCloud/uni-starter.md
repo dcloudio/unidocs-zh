@@ -237,7 +237,7 @@ module.exports = {
 <pre v-pre="" data-lang="">
 <code class="lang-" style="padding:0">
 uni-starter
-├─uniCloud-aliyun	
+├─uniCloud	
 │	├─cloudfunctions 云函数目录
 │	|	├─common 公共模块
 │	│	|	├─uni-config-center			uni-starter的服务端配置中心，项目所有云函数的配置在这里填写 <a target="_blank" href="https://ext.dcloud.net.cn/plugin?id=4425">详情</a>

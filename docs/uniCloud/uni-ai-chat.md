@@ -71,6 +71,14 @@ DCloud基于`uni-ai`提供了很多开源模板，除了本项目`uni-ai-chat`�
 - [uni-cms](uni-cms.md)，一款集成了ai生成文章内容的开源内容管理系统。
 - [uni-im](uni-cms.md)，一款集成了ai的大型im系统，包括私聊群聊好友等丰富功能。
 
+## 常见错误
+
+**uni-ai相关错误请参考：**[uni-ai错误码](uni-ai.md#err-code)
+
+**错误信息："certificate has expired"**
+  
+请参考文档：[云函数通过https访问其他服务器时出现“certificate has expired”](faq.md#lets-encrypt-cert)
+
 ## 交流群
 
 更多问题欢迎加入uni-ai官方交流群 qq群号:[699680439](https://qm.qq.com/cgi-bin/qm/qr?k=P_JoYXY56vNfb78uNHwwzqpODwl9e89B&jump_from=webapi&authKey=GDp321q9ZYW4V0ZQcejXikwMnNRs4KVBcQXMADs8lvC0hifSH9ORHsyERy6vO4bA)

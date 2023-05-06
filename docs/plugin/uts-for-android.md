@@ -413,6 +413,19 @@ mediaPlayer.prepare();
 mediaPlayer.start();
 ```
 
+** 与Application的转换 **
+
+UTSAndroid.getAppContext() 默认返回是实现了 `Context`抽象类的`Application` 对象
+部分场景，明确需要 Application 对象，那么直接进行转换即可
+
+```ts
+import Application from 'android.app.Application'
+
+
+val app = UTSAndroid.getAppContext() as Application
+console.log(app)
+```
+
 
 #### 4.1.2 getResourcePath(resourceName:String)
 

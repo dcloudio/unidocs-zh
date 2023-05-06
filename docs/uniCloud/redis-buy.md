@@ -8,7 +8,7 @@
 2. 选择一个服务空间
 3. 选择左侧redis菜单，选择实例并购买即可
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-new.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-new-230506.png)
 
 **注意**
 
@@ -42,9 +42,9 @@
 
 ### 续费@renew
 
-在uniCloud web控制台redis详情页面可以对redis实例进行续费操作。
+在uniCloud web控制台redis详情页面点击续费按钮可以对redis实例进行续费操作。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-renew.jpg)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-renew-230506.png)
 
 实例到期后的第1~7天，实例状态为被禁用，无法被访问。如需继续使用，您需要及时为实例续费
 
@@ -52,7 +52,7 @@
 
 ### 升配@upgrade
 
-在uniCloud web控制台redis详情页面可以对redis实例进行升配操作。升级配置需要按照剩余时间补足差额
+在uniCloud web控制台redis详情页面点击变配按钮可以对redis实例进行升配操作。升级配置需要按照剩余时间补足差额
 
 升级实例配置所需费用 =（升级后实例每天的价格 - 升级前实例每天的价格）× 服务到期的剩余天数，具体费用以web控制台显示为准
 
@@ -62,15 +62,9 @@
 
 ### 降配@downgrade
 
-在uniCloud web控制台redis详情页面可以对redis实例进行降配操作。
+在uniCloud web控制台redis详情页面点击变配按钮可以对redis实例进行降配操作。
 
 **目前可以降配但是无法退还费用到您的账号**
-
-降配时可以选择以下两种方式
-
-- 立即降配：实时操作降配。
-- 自动降配：开启自动降配，系统会在到期当天凌晨进行降配操作。
-
 
 **注意**
 

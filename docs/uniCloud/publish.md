@@ -11,7 +11,7 @@ HBuilderX有多种发行方式
 - 对uniCloud目录中各种文件点右键上传。快捷键是【Ctrl+u】
 - 对uniCloud目录点右键，启动 uniCloud服务空间初始化向导
 
-### 小程序中使用uniCloud的白名单配置@useinmp
+### 小程序中使用uniCloud@useinmp
 
 各家小程序平台，均要求在小程序管理后台配置小程序应用的联网服务器域名，否则无法联网。
 
@@ -47,7 +47,7 @@ HBuilderX内使用运行菜单运行到小程序时会连接本地调试服务�
 
 即使在开发工具勾选了忽略域名校验，体验版与正式版不会忽略域名校验。**如果要发布`体验版`或`正式版`，请务必在HBuilderX内使用发行菜单。uni-app项目发行与运行输出的目录不同，请注意不要选错了**
 
-### Web中使用uniCloud的跨域处理@useinh5
+### Web端使用uniCloud@useinh5
 
 云函数的域名是bspapp.com或tencentcloudapi.com。但开发者的web前端肯定是部署在其他域名下（含unicloud的前端网页托管）。那么Web前端js访问云函数就涉及跨域问题，导致前端js无法连接云函数服务器。
 

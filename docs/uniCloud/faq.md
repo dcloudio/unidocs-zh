@@ -91,6 +91,11 @@ uniCloud在MongoDB的基础上改良，进一步提供了`DB Schema`和`JQL`。
 曾经DCloud官方也推进过阿里云和腾讯云提供serverless的mysql。但经过对MongoDB的深入研究和改良，DCloud已经放弃了难用的mysql。推荐开发者了解uniCloud的云数据库，用起来更强大和方便。
 
 ### 支持websocket吗？
+
+:::warning 注意
+在云函数请求三方服务器时支持任意方式请求，包括http、websocket（需要使用nodejs原始的写法或三方包，后续uniCloud会支持websocket相关接口）等。下面说明的是针对云函数和客户端之间的通讯的说明
+:::
+
 1. uni-push2.0，全端支持（APP、H5、各端小程序）当应用在线时就是一个免费的websocket服务，详情文档：[https://uniapp.dcloud.io/unipush-v2.html](https://uniapp.dcloud.io/unipush-v2.html)
 2. 如果是im方面的需求，有DCloud基于uni-push2.0开发的云端一体的、全平台的、免费的、开源即时通讯系统，详情查看：[https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
 

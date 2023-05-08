@@ -144,7 +144,11 @@ For example, joint table query and tree query have become very simple. Such as t
 In the past, DCloud officially promoted Alibaba Cloud and Tencent Cloud to provide serverless mysql. However, after in-depth research and improvement of MongoDB, DCloud has given up the difficult-to-use mysql. It is recommended that developers learn about uniCloud's cloud database, which is more powerful and convenient to use.
 
 ### 支持websocket吗？
-### Does it support websocket?
+
+:::warning 注意
+在云函数请求三方服务器时支持任意方式请求，包括http、websocket（需要使用nodejs原始的写法或三方包，后续uniCloud会支持websocket相关接口）等。下面说明的是针对云函数和客户端之间的通讯的说明
+:::
+
 1. uni-push2.0，全端支持（APP、H5、各端小程序）当应用在线时就是一个免费的websocket服务，详情文档：[https://uniapp.dcloud.io/unipush-v2.html](https://uniapp.dcloud.io/unipush-v2.html)
 1. uni-push2.0, full-end support (APP, H5, each end MiniApp) is a free websocket service when the application is online, detailed document: [https://uniapp.dcloud.io/unipush-v2.html](https://uniapp.dcloud.io/unipush-v2.html)
 2. 如果是im方面的需求，有DCloud基于uni-push2.0开发的云端一体的、全平台的、免费的、开源即时通讯系统，详情查看：[https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)

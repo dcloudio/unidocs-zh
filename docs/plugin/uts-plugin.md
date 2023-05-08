@@ -979,10 +979,10 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 ## route map
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-1. uts插件中可陆续使用uni的各种api，比如uni.request。
-2. 插件市场支持uts插件的加密和计费销售
-3. vue页面支持uts原生组件
-4. 全新uvue页面，纯原生的视图组件构成的页面
+1. uts插件中可陆续使用uni的各种api，比如uni.request（已上线部分，还在持续补充）
+2. 插件市场支持uts插件的加密和计费销售（已完成）
+3. 全新uvue页面，纯原生的视图组件构成的页面
+4. vue页面支持uts原生组件
 
 最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
 Ultimately, uts is no longer a plugin for uni-app, but the body of the app. (Now it is mainly js, uts exists as a plug-in, and the main engine is still in v8 or jscore)

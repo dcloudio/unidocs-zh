@@ -599,6 +599,72 @@ async function testAsync(opts: AsyncOptions) {
 
 **需要注意：使用 async 定义异步方法只有 iOS 13+ 版本才支持，低版本调用会报错**
 
+
+#### 5.1.14 try catch
+
+swift中try有以下三种方式:
+
+以JSON反序列化为例
+
+1. 使用try (注意：要和do {} catch {} 一起使用，捕获可能的异常)
+
+```swift
+// swift 
+	do{
+		let dict = try JSONSerialization.jsonObject(with: d, options: [])
+		print(dict)
+	}catch{
+	   // catch 中默认提供error信息, 当序列化不成功是, 返回error
+		print(error)
+	}
+
+```
+
+2. 使用try? 如果能发序列化成功，就返回成功的值，不能成功就返回nil
+
+```swift
+// swift 
+// 注意：dict是个可选值
+	let dict = try? JSONSerialization.jsonObject(with: data, options: [])
+
+```
+
+3. 使用try! 强行try,如果不能反序列化成功，会造成应用闪退, 如果能序列化成功，就返回成功的值，注意该值是个可选值。
+
+```swift
+// swift 
+// 注意：dict是个可选值
+	let dict = try! JSONSerialization.jsonObject(with: data, options: [])
+
+```
+
+为了满足Swift上述语法，UTS使用特殊语法来支持，以上三种写法分别对应为：
+
+1. try
+
+```ts
+// uts
+try {
+	let dict = UTSiOS.try(JSONSerialization.jsonObject(with = data, options = []))
+}catch (e) {
+	consolo.log(e)
+}
+```
+2. try?
+
+```ts
+// uts
+UTSiOS.try(JSONSerialization.jsonObject(with = data, options = []), "?" )
+
+```
+3. try!
+
+```ts
+// uts
+UTSiOS.try(JSONSerialization.jsonObject(with = data, options = []), "!" )
+
+```
+
 ## 6  常见问题(持续更新)
 
 ### 6.1 如何在UTS环境中，获取当前 UIViewController 实例

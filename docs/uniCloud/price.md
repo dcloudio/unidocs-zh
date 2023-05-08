@@ -191,6 +191,7 @@ Due to insufficient upstream reserves, there are still some quotas for the uniCl
 |			|集合数量							|100	|
 |			|索引数量							|400	|
 |			|单次请求获取的最大数据条数（limit）|1000	|
+|			|事务超时时间（从事务开始到事务提交或回滚）|10秒	|
 |云存储		|上传QPS							|300	|
 |			|删除QPS							|300	|
 |			|查询QPS							|300	|

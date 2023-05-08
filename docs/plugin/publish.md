@@ -136,6 +136,8 @@ uts插件和App原生插件在功能上是重叠的，都是原生扩展uni-app�
 - uts插件天然支持多版本，插件作者更新后，使用者可以不更新，可以仍然使用之前下载到本地的老版插件
 - uts插件支持源码版计费，可以卖更高的价格，相关版权由DCloud进行保护，防止盗版和侵权。并且很多使用者确实有源码需求，担心三方SDK有不可控的代码。
 
+注意uts插件目前还不支持离线打包，不过插件市场销售的原生语言插件也不支持离线打包。建议有个性化打包需求的开发者使用HBuilderX的[cli](https://hx.dcloud.net.cn/cli/README)来处理自动化打包。
+
 ## App原生语言插件
 
 App原生语言插件，需使用Andorid/iOS原生环境开发实现，请参考以下教程：
@@ -149,7 +151,7 @@ App原生语言插件，需使用Andorid/iOS原生环境开发实现，请参考
 压缩包格式要求：打开zip后根目录需为插件id目录，二级目录是ios、android子目录及package.json，详情参考[uni原生插件包格式](https://nativesupport.dcloud.net.cn/NativePlugin/course/package)
 Compressed package format requirements: After opening the zip, the root directory must be the plugin id directory, and the secondary directory is the ios, android subdirectory and package.json. For details, refer to [uni native plugin package format](https://nativesupport.dcloud.net. cn/NativePlugin/course/package)
 
-从uts插件发布后，DCloud建议插件作者开发uts插件，替代老的原生插件。原因[见上](#utsdiff)
+从uts插件发布后，DCloud建议插件作者开发uts插件，替代老的原生插件。原因[见上](#utsdiff)。
 
 ## HBuilderX插件
 

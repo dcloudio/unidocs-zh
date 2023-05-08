@@ -19,8 +19,7 @@ HBuilderX has a variety of distribution methods
 - 对uniCloud目录点右键，启动 uniCloud服务空间初始化向导
 - Right-click on the uniCloud directory to start the uniCloud service space initialization wizard
 
-### 小程序中使用uniCloud的白名单配置@useinmp
-### Use uniCloud's whitelist configuration in applet @useinmp
+### 小程序中使用uniCloud@useinmp
 
 各家小程序平台，均要求在小程序管理后台配置小程序应用的联网服务器域名，否则无法联网。
 Each applet platform requires the configuration of the network server domain name of the applet application in the applet management background, otherwise it will not be able to connect to the Internet.
@@ -70,8 +69,7 @@ When you use the run menu in HBuilderX to run to the applet, it will connect to 
 
 即使在开发工具勾选了忽略域名校验，体验版与正式版不会忽略域名校验。**如果要发布`体验版`或`正式版`，请务必在HBuilderX内使用发行菜单。uni-app项目发行与运行输出的目录不同，请注意不要选错了**
 
-### Web中使用uniCloud的跨域处理@useinh5
-### Cross-domain processing using uniCloud in the Web @useinh5
+### Web端使用uniCloud@useinh5
 
 云函数的域名是bspapp.com或tencentcloudapi.com。但开发者的web前端肯定是部署在其他域名下（含unicloud的前端网页托管）。那么Web前端js访问云函数就涉及跨域问题，导致前端js无法连接云函数服务器。
 The domain name of the cloud function is bspapp.com or tencentcloudapi.com. But the developer's web front-end must be deployed under other domain names (including unicloud's front-end web page hosting). Then the web front-end js accessing the cloud function involves cross-domain issues, which makes the front-end js unable to connect to the cloud function server.

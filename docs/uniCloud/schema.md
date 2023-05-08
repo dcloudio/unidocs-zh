@@ -2175,6 +2175,14 @@ db.collection('street').where("shop_id=='123123'").get()
 db.collection('street').where("shop_id=='123123 || shop_id=='456456'").get()
 ```
 
+### 权限错误排查步骤@handler-permission-error
+
+非jql不会走权限校验，jql报了权限校验未通过从以下几点进行检查
+
+- 连的是云端还是本地，如果是云端检查下schema有没有上传到云端
+- 字段级有没有配置权限，有没有在客户端访问password字段
+- 此次访问的数据是不是配置的权限对应的数据的子集
+
 ## schema2code代码生成系统@autocode
 ## schema2code code generation system @autocode
 

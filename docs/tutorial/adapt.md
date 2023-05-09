@@ -24,8 +24,7 @@ Interactive communication among these windows are supported.
 这里有2个例子：
 Here are two examples:
 - hello uni-app：[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
-- 分栏式的新闻模板：[https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/)，这个示例对应的源码在：[https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
-- Column-style news template: [https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp .com/#/), the source code for this example is at: [https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
+- 分栏式的新闻模板：[https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/](https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/)，这个示例对应的源码在：[https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
 
 新闻示例项目，预览地址https://static-7d133019-9a7e-474a-b7c2-c01751f00ca5.bspapp.com/#/显示The requested file was not found on this server.
 News sample project, preview address https://static-7d133019-9a7e-474a-b7c2-c01751f00ca5.bspapp.com/#/ shows The requested file was not found on this server.
@@ -107,8 +106,7 @@ If there is a uni-app designed for small screen at hand and it is intended to us
 如果应用的首页是列表，二级页是详情，此时适合的做法是，将原有的小屏列表作为主window，在右边扩展rightWindow来显示详情。
 If the parent page of the application is a list and the child page is the details, it is appropriate to use the original small-screen list as the main window and extend the rightWindow to display the details on the right.
 
-以新闻示例项目为例，预览地址[https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/)。这个项目的源码已经内置于HBuilderX 2.9中，新建uni-app项目时选择新闻/资讯模板。
-Take the news sample project as an example, the preview address [https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1. bspapp.com/#/). The source code of this project has been built into HBuilderX 2.9, select the news/information template when creating a new uni-app project.
+以新闻示例项目为例，预览地址[https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/](https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/)。这个项目的源码已经内置于HBuilderX 2.9中，新建uni-app项目时选择新闻/资讯模板。
 
 首先在这个项目的`pages.json`文件中，配置[`rightWindow`选项](https://uniapp.dcloud.net.cn/collocation/pages?id=rightwindow)，放置一个新页面`right-window.vue`。
 First, configure [`rightWindow`option](https://uniapp.dcloud.net.cn/collocation/pages?id=rightwindow) in the `pages.json` file of this project, and place a new page `right-window.vue`.

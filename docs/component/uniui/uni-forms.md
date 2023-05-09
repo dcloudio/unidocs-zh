@@ -56,7 +56,7 @@ The `uni-forms` component is often used for form validation and submission. Each
 			<uni-forms-item label="姓名" name="name">
 				<uni-easyinput type="text" v-model="formData.name" placeholder="请输入姓名" />
 			</uni-forms-item>
-			<uni-forms-item label="年龄" name="name">
+			<uni-forms-item label="年龄" name="age">
 				<input type="text" v-model="formData.age" placeholder="请输入年龄" />
 			</uni-forms-item>
 			<uni-forms-item required name="hobby" label="兴趣爱好">
@@ -168,7 +168,7 @@ Form validation can also directly use the `uniCloud web console` to automaticall
 				<uni-easyinput type="text" v-model="formData.name" placeholder="请输入姓名" />
 			</uni-forms-item>
 			<uni-forms-item label="邮箱" name="email">
-				<input class="input" v-model="formData.email" type="text" placeholder="请输入用户名" @input="binddata('email',$event.detail.value)" />
+				<input class="input" v-model="formData.email" type="text" placeholder="请输入邮箱" @input="binddata('email',$event.detail.value)" />
 			</uni-forms-item>
 		</uni-forms>
 		<button @click="submit">Submit</button>
@@ -590,7 +590,7 @@ dynamicFormData: {
 ```html
 <uni-forms ref="dynamicForm" :rules="dynamicRules" :model="dynamicFormData">
 	<uni-forms-item label="邮箱" required name="email">
-		<uni-easyinput v-model="dynamicFormData.email" placeholder="请输入姓名" />
+		<uni-easyinput v-model="dynamicFormData.email" placeholder="请输入邮箱" />
 	</uni-forms-item>
 	<template v-for="(item,index) in dynamicFormData.domains">
 		<uni-forms-item :label="item.label+' '+index" required
@@ -1157,7 +1157,6 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 		data() {
 			return {
 				// 基础表单数据
-				// base form data
 				baseFormData: {
 					name: '',
 					age: '',
@@ -1167,13 +1166,11 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 					datetimesingle: 1627529992399
 				},
 				// 表单数据
-				// form data
 				alignmentFormData: {
 					name: '',
 					age: '',
 				},
 				// 单选数据源
-				// single data source
 				sexs: [{
 					text: '男',
 					value: 0
@@ -1185,7 +1182,6 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 					value: 2
 				}],
 				// 多选数据源
-				// Multiple selection data sources
 				hobbys: [{
 					text: '跑步',
 					value: 0
@@ -1206,18 +1202,15 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 					value: 5
 				}],
 				// 分段器数据
-				// segmenter data
 				current: 0,
 				items: ['左对齐', '顶部对齐'],
 				// 校验表单数据
-				// Validate form data
 				valiFormData: {
 					name: '',
 					age: '',
 					introduction: '',
 				},
 				// 校验规则
-				// check rules
 				rules: {
 					name: {
 						rules: [{
@@ -1236,14 +1229,12 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 					}
 				},
 				// 自定义表单数据
-				// custom form data
 				customFormData: {
 					name: '',
 					age: '',
 					hobby: []
 				},
 				// 自定义表单校验规则
-				// custom form validation rules
 				customRules: {
 					name: {
 						rules: [{
@@ -1293,7 +1284,6 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 		},
 		computed: {
 			// 处理表单排列切换
-			// handle form arrangement switching
 			alignment() {
 				if (this.current === 0) return 'left'
 				if (this.current === 1) return 'top'
@@ -1303,7 +1293,6 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 		onLoad() {},
 		onReady() {
 			// 设置自定义表单校验规则，必须在节点渲染完毕后执行
-			// Set custom form validation rules, which must be executed after the node is rendered
 			this.$refs.customForm.setRules(this.customRules)
 		},
 		methods: {

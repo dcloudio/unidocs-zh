@@ -133,3 +133,23 @@ HBuilderX (3.2.0 版本起) 新增QQ互联和新浪微博开放平台的通用�
 2.如何验证通用链接已经生效，有什么表现或者测试方案
 
 你可以将通用链接输入到iphone自带Safari浏览器中，下拉即可看到通用链接对应到应用名称和一个打开按钮，点击按钮即可直接在浏览器打开对应的APP。详情：[点此查看演示视频](https://web-assets.dcloud.net.cn/unidoc/zh/%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4)
+
+
+3.使用微信登录、分享、支付等功能时，用户非首次调起微信，仍然出现二次跳转app  
+
+微信SDK要求通用链接apple-app-site-association文件中 path不能带query参数，且末尾必须添加通配符*号。如下: 
+
+```
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID":"8ARUHGUQNH.com.AppSample",
+                "paths": [ "/AppSample/*"]
+            }
+        ]
+    }
+}
+
+```

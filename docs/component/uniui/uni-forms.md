@@ -37,7 +37,7 @@ uni-app的内置组件已经有了 `<form>`组件，用于提交表单内容。
 			<uni-forms-item label="姓名" name="name">
 				<uni-easyinput type="text" v-model="formData.name" placeholder="请输入姓名" />
 			</uni-forms-item>
-			<uni-forms-item label="年龄" name="name">
+			<uni-forms-item label="年龄" name="age">
 				<input type="text" v-model="formData.age" placeholder="请输入年龄" />
 			</uni-forms-item>
 			<uni-forms-item required name="hobby" label="兴趣爱好">
@@ -128,7 +128,7 @@ uni-app的内置组件已经有了 `<form>`组件，用于提交表单内容。
 				<uni-easyinput type="text" v-model="formData.name" placeholder="请输入姓名" />
 			</uni-forms-item>
 			<uni-forms-item label="邮箱" name="email">
-				<input class="input" v-model="formData.email" type="text" placeholder="请输入用户名" @input="binddata('email',$event.detail.value)" />
+				<input class="input" v-model="formData.email" type="text" placeholder="请输入邮箱" @input="binddata('email',$event.detail.value)" />
 			</uni-forms-item>
 		</uni-forms>
 		<button @click="submit">Submit</button>
@@ -477,7 +477,7 @@ dynamicFormData: {
 ```html
 <uni-forms ref="dynamicForm" :rules="dynamicRules" :model="dynamicFormData">
 	<uni-forms-item label="邮箱" required name="email">
-		<uni-easyinput v-model="dynamicFormData.email" placeholder="请输入姓名" />
+		<uni-easyinput v-model="dynamicFormData.email" placeholder="请输入邮箱" />
 	</uni-forms-item>
 	<template v-for="(item,index) in dynamicFormData.domains">
 		<uni-forms-item :label="item.label+' '+index" required

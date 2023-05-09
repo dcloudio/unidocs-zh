@@ -15,7 +15,7 @@ uni-app提供的屏幕适配方案，包括3部分：
 
 这里有2个例子：
 - hello uni-app：[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
-- 分栏式的新闻模板：[https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/)，这个示例对应的源码在：[https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
+- 分栏式的新闻模板：[https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/](https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/)，这个示例对应的源码在：[https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
 
 新闻示例项目，预览地址https://static-7d133019-9a7e-474a-b7c2-c01751f00ca5.bspapp.com/#/显示The requested file was not found on this server.
 
@@ -83,7 +83,7 @@ pages.json 配置样例
 
 如果应用的首页是列表，二级页是详情，此时适合的做法是，将原有的小屏列表作为主window，在右边扩展rightWindow来显示详情。
 
-以新闻示例项目为例，预览地址[https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/](https://static-1fdf8972-67c0-42b4-8790-2021eb9134d1.bspapp.com/#/)。这个项目的源码已经内置于HBuilderX 2.9中，新建uni-app项目时选择新闻/资讯模板。
+以新闻示例项目为例，预览地址[https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/](https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/)。这个项目的源码已经内置于HBuilderX 2.9中，新建uni-app项目时选择新闻/资讯模板。
 
 首先在这个项目的`pages.json`文件中，配置[`rightWindow`选项](https://uniapp.dcloud.net.cn/collocation/pages?id=rightwindow)，放置一个新页面`right-window.vue`。
 ```json

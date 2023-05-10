@@ -378,6 +378,133 @@ exports.main = async (event, context) => {
 
 DCloud提供了开源的`uni-ai-chat`，对流式响应进行了前后端一体的封装，使用更简单，参考：[uni-ai-chat](uni-ai-chat.md)
 
+### AI多媒体能力
+
+> 新增于HBuilderX 3.8.2
+
+
+#### 创建AI多媒体实例@get-media-manager
+
+包含AI生成图片等多媒体处理能力
+
+用法：`uniCloud.ai.getMediaManager(Object GetMediaManagerOptions);`
+
+注意需在相关云函数或云对象中加载`uni-cloud-ai`[使用扩展库](cf-functions.md#extension)，否则会报找不到ai对象。
+
+
+**参数说明GetMediaManagerOptions**
+
+|参数				|类型		|必填	|默认值	|说明																																																																	|
+|---				|---		|---	|---		|---																																																																	|
+|provider		|string	|否		|-			|服务商，目前仅支持`baidu`。																																								|
+|accessToken|string	|否		|-			|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)|
+
+
+**示例**
+
+在云函数或云对象中编写如下代码：
+
+```js
+const media = uniCloud.ai.getMediaManager({
+  provider: 'baidu',
+  accessToken:'your baidu access token'
+})
+```
+
+#### 创建图片生成任务@image-generation
+
+用法：`media.imageGeneration(Object ImageGenerationOptions)`
+
+**参数说明ImageGenerationOptions**
+
+|参数					|类型		|必填						|默认值			|说明																									|兼容性说明				|
+|---					|---		|---						|---				|---																									|---							|
+|version			|number	|否							| 1（百度）	|接口版本																							|									|
+|prompt				|string	|是							| -					|图片生成所用的提示词																	|									|
+|resolution		|string	|否							| 1024*1024	|图片分辨率，详见下方说明															|									|
+|imageNum			|number	|否							| -					|生成图片数量																					|									|
+|prompt				|string	|是							| -					|提问信息																							|									|
+|style				|string	|百度v1接口必填	| -					|图片风格，详见下方说明																|仅百度v1接口支持	|
+|imageBase64	|string	|否							| -					|参考图base64，仅能指定一个参考文件										|仅百度v2接口支持	|
+|imageUrl			|string	|否							| -					|参考图url，仅能指定一个参考文件											|仅百度v2接口支持	|
+|pdfBase64		|string	|否							| -					|参考pdf文件base64，仅能指定一个参考文件							|仅百度v2接口支持	|
+|pdfPageNum		|number	|否							| 1					|参考pdf文件页码																			|仅百度v2接口支持	|
+|changeDegree	|number	|否							| -					|参考图影响因子，支持 1-10 ；数值越大参考图影响越大	|仅百度v2接口支持	|
+
+
+**style参数说明**
+
+百度v1接口支持的风格：探索无限、古风、二次元、写实风格、浮世绘、low poly 、未来主义、像素风格、概念艺术、赛博朋克、洛丽塔风格、巴洛克风格、超现实主义、水彩画、蒸汽波艺术、油画、卡通画
+
+百度v2接口不支持传风格，如需指定风格可尝试在提示词内指定
+
+**resolution参数说明**
+
+百度v1接口支持以下分辨率：1024*1024、1024*1536、1536*1024
+
+百度v2接口支持以下分辨率：512*512、640*360、360*640、1024*1024、720*1280、1280*720
+
+
+**返回值**
+
+|参数		|类型		|必备	|说明																								|兼容性说明	|
+|---		|---		|---	|---																								|---				|
+|taskId	|number	|是		|创建的图片生成任务的id，用于查询任务状态及获取结果	|						|
+
+**示例**
+
+在云函数或云对象中编写如下代码：
+
+```js
+const res = await media.imageGeneration({
+  version: 1,
+  prompt: '睡莲',
+  style: '赛博朋克'
+})
+const taskId = res.taskId
+```
+
+#### 获取图片生成结果@get-generated-image
+
+用法：`media.getGeneratedImage(Object GetGeneratedImageOptions)`
+
+**参数说明GetGeneratedImageOptions**
+
+|参数		|类型		|必填	|默认值			|说明											|兼容性说明	|
+|---		|---		|---	|---				|---											|---				|
+|version|number	|否		| 1（百度）	|接口版本									|						|
+|taskId	|number	|是		| -					|创建任务接口返回的taskId	|						|
+
+**返回值**
+
+|字段																		|类型								|必备	|说明						|兼容性说明				|
+|---																		|---								|---	|---						|---							|
+|status																	|string							|是		|任务状态				|见下方说明				|
+|imgList																|array&lt;object&gt;|否		|生成的图片列表	|									|
+|&nbsp;&nbsp;&#124;--url								|string							|否		|生成的图片url	|									|
+|&nbsp;&nbsp;&#124;--securityCheckResult|array							|否		|图片审核状态		|仅百度v2接口支持	|
+
+**参数status说明**
+
+百度v1接口支持的状态为：'RUNNING'（任务执行中）、'SUCCESS'（任务成功）;
+
+百度v2接口支持的状态为：'INIT'（任务创建中）、'WAIT'（任务等待中）、'RUNNING'（任务执行中）、'FAILED'（任务失败）、'SUCCESS'（任务成功）;
+
+**参数securityCheckResult说明**
+
+审核状态有以下几种： 'block'（违规）、'review'（需要人工核查）、'pass'（通过审核）
+
+**示例**
+
+在云函数或云对象中编写如下代码：
+
+```js
+const res = await media.getGeneratedImage({
+  version: 1,
+  taskId: 123456,
+})
+```
+
 ### 错误码@err-code
 
 在调用`uni-cloud-ai`提供的api时，如果出现错误，接口会将错误对象抛出。如需处理此类错误需对错误进行捕获

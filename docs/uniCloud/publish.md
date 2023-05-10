@@ -74,6 +74,8 @@ When you use the run menu in HBuilderX to run to the applet, it will connect to 
 
 请务必在HBuilderX内使用【发行】菜单打包小程序，【运行】菜单打包的代码只能用于本地调试，【发行】菜单打包的代码才能发布体验版和正式版。
 
+如果域名白名单提示 `127.0.0.1` 这个ip没有加入白名单，那代表你点的就是【运行】菜单发布的体验版，请务必点【发行】发布小程序。
+
 ![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/391.png)
 
 ### Web端使用uniCloud@useinh5

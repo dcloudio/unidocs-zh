@@ -602,7 +602,7 @@ export default {
 
 #### 详细流程如下:
 
-1. 登陆 uni-AD [Web控制台](https://uniad.dcloud.net.cn/)
+1. 登陆 uni-ad [Web控制台](https://uniad.dcloud.net.cn/)
 2. 在应用的广告位项上配置激励视频回调，可选择云函数或传统服务器
 3. 开通后将在选择的服务空间下自动部署一个加密云函数 `uniAdCallback`
 4. `uniAdCallback` 接收广告商服务器回调验证签名并抹平穿山甲/优量汇/快手参数差异，然后以以下方式回调
@@ -640,7 +640,7 @@ export default {
 sign = sha256(secret:transid)
 ```
 
-提示：`Security key` 在 [uni-AD 广告联盟](https://uniad.dcloud.net.cn) 对应的广告位，配置激励视频服务器回调后可看到
+提示：`Security key` 在 [uni-ad 广告联盟](https://uniad.dcloud.net.cn) 对应的广告位，配置激励视频服务器回调后可看到
 
 #### 签名验证方式
 
@@ -707,7 +707,7 @@ exports.main = async (event, context) => {
   }
 
   // 注意::必须验签请求来源
-  const secret = ""; // uni-AD Web控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 Security key
+  const secret = ""; // uni-ad Web控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 Security key
   const trans_id = event.trans_id;
   const sign2 = crypto.createHash('sha256').update(`${secret}:${trans_id}`).digest('hex');
   if (event.sign !== sign2) {
@@ -729,12 +729,12 @@ exports.main = async (event, context) => {
 };
 ```
 
-提示：2023/01/29 起，uni-AD Web控制台支持配置传统服务器地址，简化开通流程
+提示：2023/01/29 起，uni-ad Web控制台支持配置传统服务器地址，简化开通流程
 
 ### 老用户升级@upgrade
 
 1. 在传统服务器增加[签名校验](/component/ad-rewarded-video.html#sign)
-2. 登陆 uni-AD [Web控制台](https://uniad.dcloud.net.cn/)，找到广告位对应的配置激励视频，选择 "业务在传统服务器" 并配置服务器HTTP地址
+2. 登陆 uni-ad [Web控制台](https://uniad.dcloud.net.cn/)，找到广告位对应的配置激励视频，选择 "业务在传统服务器" 并配置服务器HTTP地址
 
 
 ### 微信小程序说明@callbackweixin
@@ -818,7 +818,7 @@ exports.main = async (event, context) => {
 
 #### 云函数介绍
 
-1. uniAdCallback：uni-AD自动部署，用于接收广告商服务器的 HTTP 请求并抹平参数差异，然后调用开发者云函数或发送HTTP到开发者配置的服务器。
+1. uniAdCallback：uni-ad自动部署，用于接收广告商服务器的 HTTP 请求并抹平参数差异，然后调用开发者云函数或发送HTTP到开发者配置的服务器。
 2. userAdCallback: 开发者创建的云函数，用于接收 uniAdCallback，适用于业务系统在uniCloud。
 
 

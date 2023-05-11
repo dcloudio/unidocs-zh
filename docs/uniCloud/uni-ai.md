@@ -378,7 +378,7 @@ exports.main = async (event, context) => {
 
 DCloud提供了开源的`uni-ai-chat`，对流式响应进行了前后端一体的封装，使用更简单，参考：[uni-ai-chat](uni-ai-chat.md)
 
-### AI多媒体能力
+### AI多媒体能力@ai-media
 
 > 新增于HBuilderX 3.8.2
 
@@ -535,6 +535,7 @@ try {
 |60001	|服务商接口抛出的错误					|
 |60002	|接口调用凭证、key等信息有误	|
 |60003	|触发了服务商限流策略					|
+|60004	|服务商检测到AI输出了敏感内容|
 
 **常见错误信息**
 

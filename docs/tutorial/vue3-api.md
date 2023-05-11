@@ -37,14 +37,14 @@ const app = createApp({})
 另外，由于 `createApp` 方法返回应用实例本身，因此可以在其后链式调用其它方法，这些方法可以在以下部分中找到。
 
 
-|应用 API|描述	|H5		|App端|微信小程序  |
-|--	|--	|--	|--	|--	|
-|component	|注册或检索全局组件。[详情](https://v3.cn.vuejs.org/api/application-api.html#component)	|√	|√	| √	|
-|config	|包含应用配置的对象。[详情](https://v3.cn.vuejs.org/api/application-api.html#config)	|√	|√	| √	|
-|directive	|注册或检索全局指令。[详情](https://v3.cn.vuejs.org/api/application-api.html#directive)	|√	|√	|x	|
-|mixin	|在整个应用范围内应用混入。[详情](https://v3.cn.vuejs.org/api/application-api.html#mixin)	|√	|√	| √	|
-|provide|设置一个可以被注入到应用范围内所有组件中的值。[详情](https://v3.cn.vuejs.org/api/application-api.html#provide)	|√	|√	| √	|
-|use|安装 `Vue.js` 插件。[详情](https://v3.cn.vuejs.org/api/application-api.html#use)	|√	|√	| √	|
+|应用 API|描述	|H5		|App端|微信小程序  |说明 |
+|--	|--	|--	|--	|--	|-- |
+|component	|注册或检索全局组件。[详情](https://v3.cn.vuejs.org/api/application-api.html#component)	|√	|√	| √	||
+|config	|包含应用配置的对象。[详情](https://v3.cn.vuejs.org/api/application-api.html#config)	|√	|√	| √	||
+|directive	|注册或检索全局指令。[详情](https://v3.cn.vuejs.org/api/application-api.html#directive)	|√	|√	|x	||
+|mixin	|在整个应用范围内应用混入。[详情](https://v3.cn.vuejs.org/api/application-api.html#mixin)	|√	|√	| √	|nvue 页面暂不支持 |
+|provide|设置一个可以被注入到应用范围内所有组件中的值。[详情](https://v3.cn.vuejs.org/api/application-api.html#provide)	|√	|√	| √	||
+|use|安装 `Vue.js` 插件。[详情](https://v3.cn.vuejs.org/api/application-api.html#use)	|√	|√	| √	||
 
 
 

@@ -720,7 +720,35 @@ UTSAndroid.onAppActivityDestroy(function(){
 开发者在开发UTS插件时，如果遇到了类似使用系统组件的情况，也需要特别关注资源释放情况。
 
 
+### 4.4 系统权限管理
 
+需要 HBuilder X 3.8.2版本之后支持
+
+##### requestSystemPermission
+
+请求系统权限
+
+```ts
+let permissionWifi:string[] = mutableListOf("android.permission.ACCESS_FINE_LOCATION","android.permission.ACCESS_FINE_LOCATION");
+UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!,permissionWifi,function(allRight:boolean,grantedList:string[]){
+		if(allRight){
+			// 用户同意了全部权限
+		}else{
+			// 用户仅同意了 grantedList中的权限
+		}
+	},function(doNotAskAgain:boolean,grantedList:string[]){
+		// 用户拒绝了部分权限，仅允许了grantedList中的权限
+		if(doNotAskAgain){
+			// 用户拒绝了权限，并且选择不再询问
+		}
+	})
+```
+
+##### gotoSystemPermissionActivity
+
+##### getSystemPermissionDenied
+
+##### checkSystemPermissionGranted
 
 
 ## 5 Kotlin与UTS差异重点介绍 (持续更新)

@@ -1495,9 +1495,9 @@ When the cloud function is running locally in HBuilderX, the time zone is the ti
 ### 超时时间@timeout
 ### Timeout @timeout
 
-阿里云定时任务触发最大支持600秒超时时间，非定时触发时超时时间为40秒。
+阿里云定时任务触发最大支持600秒超时时间，非定时触发时超时时间为40秒，客户端请求云函数如果超出40秒云函数断开连接后会停止运行。
 
-腾讯云定时任务触发最大支持900秒超时时间。非定时触发时超时时间为30秒。
+腾讯云定时任务触发最大支持900秒超时时间。非定时触发时超时时间为30秒，客户端请求云函数时如果超出30秒云函数断开链接后会继续运行，最大能运行到配置的超时时间。
 
 如果超时时间仍然不够用，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](uniCloud/cf-functions.md?id=recurrence)
 If the timeout is still not enough, you can refer to the recursive call of cloud functions to execute multiple cloud functions in succession to process a task [View details](uniCloud/cf-functions.md?id=recurrence)

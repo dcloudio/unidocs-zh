@@ -29,7 +29,7 @@ HBuilder 基座的测试广告位 `adpid` 为 `1111111112`
 
 |属性名|类型|默认值|说明|平台差异|
 |:-|:-|:-|:-|:-|
-|adpid|String||uni-AD App广告位id，在[uni-AD官网](https://uniad.dcloud.net.cn/)申请广告位|App|
+|adpid|String||uni-ad App广告位id，在[uni-ad官网](https://uniad.dcloud.net.cn/)申请广告位|App|
 |@load|EventHandle||广告加载成功的回调||
 |@error|EventHandle||广告加载失败的回调||
 |@start|EventHandle|开始播放时触发|3.4.3+|

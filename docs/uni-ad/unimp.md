@@ -6,7 +6,7 @@
 
 为了给开发者提供更高价格的广告，uniAD 推出了高阶游戏广告预算。目前这种广告主预算只支持激励视频广告位
 
-利用 uni-AD 多层调度策略动态调整渠道，在设备无广告时自动调整为其他广告渠道以增加广告填充率
+利用 uni-ad 多层调度策略动态调整渠道，在设备无广告时自动调整为其他广告渠道以增加广告填充率
 
 <video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp.mp4" style="max-width: 100%; max-height: 70vh;"></video>
 
@@ -31,7 +31,7 @@
 
 开通步骤
 
-1. 登录 [uni-AD 广告联盟](https://uniad.dcloud.net.cn)，找到广告应用设置并点击 App增强广告(未开通过增强广告的应用开通后可看到此选项) -> 申请开通uniMP激励视频广告
+1. 登录 [uni-ad 广告联盟](https://uniad.dcloud.net.cn)，找到广告应用设置并点击 App增强广告(未开通过增强广告的应用开通后可看到此选项) -> 申请开通uniMP激励视频广告
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp-web-console-on.png)
 
@@ -58,7 +58,7 @@
 
 Q: 为什么通过uniAD接入跳转微信而不是开发者自行接入
 
-A: uni-AD 多层调度策略动态调整渠道，在检测微信无广告时自动在一定时间整为其他广告渠道，不在跳转到微信，提示用户体验及增加广告填充率
+A: uni-ad 多层调度策略动态调整渠道，在检测微信无广告时自动在一定时间整为其他广告渠道，不在跳转到微信，提示用户体验及增加广告填充率
 
 
 ## 打包注意事项

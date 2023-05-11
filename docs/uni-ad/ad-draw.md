@@ -14,7 +14,7 @@
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-draw.png)
 
 
-- app端的广告源由腾讯广点通、头条穿山甲、快手广告联盟以及部分DCloud直投广告聚合提供，在DCloud的uni-AD后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
+- app端的广告源由腾讯广点通、头条穿山甲、快手广告联盟以及部分DCloud直投广告聚合提供，在DCloud的uni-ad后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
 
 **平台差异说明**
 
@@ -33,7 +33,7 @@
 |属性名|类型|默认值|说明|平台差异|
 |:-|:-|:-|:-|:-|
 |data|Object|可选|广告数据，通过 plus.ad.getDrawAds (参考示例代码)，设置后adpid将无效|App|
-|adpid|String||uni-AD App广告位id，在[uni-AD官网](https://uniad.dcloud.net.cn/)申请广告位|App|
+|adpid|String||uni-ad App广告位id，在[uni-ad官网](https://uniad.dcloud.net.cn/)申请广告位|App|
 |@load|EventHandle||广告加载成功的回调||
 |@error|EventHandle||广告加载失败的回调，event.detail = {errCode: }||
 
@@ -144,8 +144,8 @@
 **注意**
 - iOS平台配置应用使用广告标识（IDFA）详见：[https://ask.dcloud.net.cn/article/36107](https://ask.dcloud.net.cn/article/36107)
 - App端广告开通指南和收益相关问题：[https://ask.dcloud.net.cn/article/36769](https://ask.dcloud.net.cn/article/36769)
-- App端除了ad组件，ad-draw组件，还支持开屏、激励视频、全屏广告等多种广告形式。详见[uni-AD官网](https://uniad.dcloud.net.cn/)
-- App端uni-AD聚合了腾讯广点通、头条穿山甲、360广告联盟等服务，打包时必须勾选相应的sdk，详见：[https://ask.dcloud.net.cn/article/36718](https://ask.dcloud.net.cn/article/36718)
+- App端除了ad组件，ad-draw组件，还支持开屏、激励视频、全屏广告等多种广告形式。详见[uni-ad官网](https://uniad.dcloud.net.cn/)
+- App端uni-ad聚合了腾讯广点通、头条穿山甲、360广告联盟等服务，打包时必须勾选相应的sdk，详见：[https://ask.dcloud.net.cn/article/36718](https://ask.dcloud.net.cn/article/36718)
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/ad.jpg)
 
 

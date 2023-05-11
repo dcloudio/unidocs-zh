@@ -21,7 +21,7 @@
 
 |属性名|类型|默认值|说明|
 |:-|:-|:-|:-|
-|adpid|String||uni-AD 广告位id，在[uni-AD官网](https://uniad.dcloud.net.cn/)申请广告位|
+|adpid|String||uni-ad 广告位id，在[uni-ad官网](https://uniad.dcloud.net.cn/)申请广告位|
 |@load|EventHandle||广告加载成功的回调|
 |@error|EventHandle||广告加载失败的回调，event.detail = {errCode: xxx}|
 

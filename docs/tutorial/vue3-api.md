@@ -50,21 +50,14 @@ Calling `createApp` returns an application instance. This instance provides an a
 In addition, since the `createApp` method returns the application instance itself, you can chain other methods after it which can be found in the following sections.
 
 
-|应用 API|描述	|H5		|App端|微信小程序  |
-|Application API|Description |H5 |App Terminal|WeChat Mini Program |
-|--	|--	|--	|--	|--	|
-|component	|注册或检索全局组件。[详情](https://v3.cn.vuejs.org/api/application-api.html#component)	|√	|√	| √	|
-|component | Register or retrieve a global component. [Details](https://v3.cn.vuejs.org/api/application-api.html#component) |√ |√ | √ |
-|config	|包含应用配置的对象。[详情](https://v3.cn.vuejs.org/api/application-api.html#config)	|√	|√	| √	|
-|config | An object containing the application configuration. [Details](https://v3.cn.vuejs.org/api/application-api.html#config) |√ |√ | √ |
-|directive	|注册或检索全局指令。[详情](https://v3.cn.vuejs.org/api/application-api.html#directive)	|√	|√	|x	|
-|directive |Register or retrieve global directives. [Details](https://v3.cn.vuejs.org/api/application-api.html#directive) |√ |√ |x |
-|mixin	|在整个应用范围内应用混入。[详情](https://v3.cn.vuejs.org/api/application-api.html#mixin)	|√	|√	| √	|
-|mixin |Apply mixins across the application scope. [Details](https://v3.cn.vuejs.org/api/application-api.html#mixin) |√ |√ | √ |
-|provide|设置一个可以被注入到应用范围内所有组件中的值。[详情](https://v3.cn.vuejs.org/api/application-api.html#provide)	|√	|√	| √	|
-|provide| Sets a value that can be injected into all components in the application scope. [Details](https://v3.cn.vuejs.org/api/application-api.html#provide) |√ |√ | √ |
-|use|安装 `Vue.js` 插件。[详情](https://v3.cn.vuejs.org/api/application-api.html#use)	|√	|√	| √	|
-|use|Install the `Vue.js` plugin. [Details](https://v3.cn.vuejs.org/api/application-api.html#use) |√ |√ | √ |
+|应用 API|描述	|H5		|App端|微信小程序  |说明 |
+|--	|--	|--	|--	|--	|-- |
+|component	|注册或检索全局组件。[详情](https://v3.cn.vuejs.org/api/application-api.html#component)	|√	|√	| √	||
+|config	|包含应用配置的对象。[详情](https://v3.cn.vuejs.org/api/application-api.html#config)	|√	|√	| √	||
+|directive	|注册或检索全局指令。[详情](https://v3.cn.vuejs.org/api/application-api.html#directive)	|√	|√	|x	||
+|mixin	|在整个应用范围内应用混入。[详情](https://v3.cn.vuejs.org/api/application-api.html#mixin)	|√	|√	| √	|nvue 页面暂不支持 |
+|provide|设置一个可以被注入到应用范围内所有组件中的值。[详情](https://v3.cn.vuejs.org/api/application-api.html#provide)	|√	|√	| √	||
+|use|安装 `Vue.js` 插件。[详情](https://v3.cn.vuejs.org/api/application-api.html#use)	|√	|√	| √	||
 
 
 

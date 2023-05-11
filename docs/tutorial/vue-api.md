@@ -48,9 +48,7 @@
 |Vue.component	| 注册或获取全局组件。注册还会自动使用给定的 id 设置组件的名称 [详情](https://v2.cn.vuejs.org/v2/api/#Vue-component)	|√	| √		| √	| |
 |Vue.component | Register or get a global component. Registration also automatically sets the name of the component with the given id [details](https://v2.cn.vuejs.org/v2/api/#Vue-component) |√ | √ | √ | |
 |Vue.use		| 安装 Vue.js 插件 [详情](https://v2.cn.vuejs.org/v2/api/#Vue-use)	|√	| √		| √		|		|
-|Vue.use | Install Vue.js plugin [Details](https://v2.cn.vuejs.org/v2/api/#Vue-use) |√ | √ | √ | |
-|Vue.mixin		| 全局注册一个混入，影响注册之后所有创建的每个 Vue 实例 [详情](https://v2.cn.vuejs.org/v2/api/#Vue-mixin)	|√	|√		| √		|	|
-|Vue.mixin | Register a mixin globally, affecting every Vue instance created after registration [Details](https://v2.cn.vuejs.org/v2/api/#Vue-mixin) |√ |√ | √ | |
+|Vue.mixin		| 全局注册一个混入，影响注册之后所有创建的每个 Vue 实例 [详情](https://v2.cn.vuejs.org/v2/api/#Vue-mixin)	|√	|√		| √		|nvue 页面暂不支持 |
 |Vue.version	| 提供字符串形式的 Vue 安装版本号 [详情](https://v2.cn.vuejs.org/v2/api/#Vue-version)	|√	| √		| √		|	|
 |Vue.version | Provide the Vue installation version number in string form [Details](https://v2.cn.vuejs.org/v2/api/#Vue-version) |√ | √ | √ | |
 |Vue.compile	| 将一个模板字符串编译成 render 函数。只在完整版时可用。[详情](https://v2.cn.vuejs.org/v2/api/#Vue-compile)	|√	| x	| x	|uni-app使用的vue是只包含运行时的版本	|

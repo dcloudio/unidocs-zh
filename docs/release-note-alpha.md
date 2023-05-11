@@ -1,3 +1,18 @@
+#### 3.8.2.20230511-alpha
+* 【uni-app】
+* uts插件 App-Android平台 新增 UTSAndroid.requestSystemPermission 申请系统权限 [详情](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#requestsystempermission)
+* uts插件 App-Android平台 升级 kotlin-stdlib 为 1.8.10 版
+* uts插件 App-Android平台 修复 Math.random() 返回数据精度不足的Bug
+* uts插件 App-Android平台 修复 UTSAndroid.offAppActivityRequestPermissionsResult 传入参数不生效的Bug
+* 【uniCloud】
+* 新增 uni-ai 新增文字生成图片接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#ai-media)
+* 【App插件(含5+App和uni-app的App端)】
+* Android平台 更新 UniPush 使用的个推核心组件SDK为 3.2.4.0 版；个推SDK为 3.2.17.0 版；适配华为应用市场审核政策调整
+* Android平台 修复 部分场景下真机运行同步文件失败的Bug [详情](https://ask.dcloud.net.cn/question/169374)
+* Android平台 修复 扫码界面拒绝权限提示文字不支持国际化的Bug [详情](https://ask.dcloud.net.cn/question/169217)
+* 【uni小程序SDK】
+* Android平台 修复 releaseWgtToRunPathFromPath 部分场景下可能阻塞的Bug
+
 #### 3.8.1.20230428-alpha
 * 【uni-app】
 * App-Android平台 修复 nvue 页面 map 组件在特定场景未自动回收销毁可能导致黑屏的Bug [详情](https://ask.dcloud.net.cn/question/168133)

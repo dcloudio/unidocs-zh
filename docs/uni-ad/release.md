@@ -51,7 +51,7 @@ app端上线uniMP激励视频后，实际上打破了基础广告和增强广告
 - 开启关闭按钮移动到 `App 广告` 下对应平台的 `广告状态` 处
 - 点击 `修改状态`，对广告平台进行开启与关闭操作
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/5.jpg)
+![](https://web-assets.dcloud.net.cn/uniad/doc/5.png)
 
 ![](https://web-assets.dcloud.net.cn/uniad/doc/6.jpg)
 
@@ -66,7 +66,7 @@ app端上线uniMP激励视频后，实际上打破了基础广告和增强广告
 
 - 将原基础广告类型 `开屏` 移动到 `App 开屏广告管理` 中，广告平台为 `uni-ad自营`
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/9.jpg)
+![](https://web-assets.dcloud.net.cn/uniad/doc/20230511151715.jpg)
 
 - 将原基础广告类型 `悬浮红包` 移动到 `App 三方广告应用内列表` 中，广告位类型为 `悬浮红包`，始终固定在首位，只允许`启用\停用`，无需配置
 

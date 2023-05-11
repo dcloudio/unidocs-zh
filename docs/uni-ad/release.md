@@ -1,8 +1,8 @@
-# uniAD管理后台更新说明
+# uni-ad管理后台更新说明
 
 
 ## 2023-05-10
-### uniAD 管理后台页面调整通知
+### uni-ad 管理后台页面调整通知
 
 app端上线uniMP激励视频后，实际上打破了基础广告和增强广告的分类方式。
 
@@ -56,7 +56,7 @@ app端上线uniMP激励视频后，实际上打破了基础广告和增强广告
 ![](https://web-assets.dcloud.net.cn/uniad/doc/6.jpg)
 
 ### 基础广告调整
-将基础广告重命名为 `uniAD自营广告`，并将广告类型 `开屏`、`悬浮红包` 移动到对应功能下，取消 `PUSH`和`广告源策略`的配置
+将基础广告重命名为 `uni-ad自营广告`，并将广告类型 `开屏`、`悬浮红包` 移动到对应功能下，取消 `PUSH`和`广告源策略`的配置
 
 **优化前页面：**
 
@@ -64,7 +64,7 @@ app端上线uniMP激励视频后，实际上打破了基础广告和增强广告
 
 **优化后页面：**
 
-- 将原基础广告类型 `开屏` 移动到 `App 开屏广告管理` 中，广告平台为 `uniAD自营`
+- 将原基础广告类型 `开屏` 移动到 `App 开屏广告管理` 中，广告平台为 `uni-ad自营`
 
 ![](https://web-assets.dcloud.net.cn/uniad/doc/9.jpg)
 
@@ -72,7 +72,7 @@ app端上线uniMP激励视频后，实际上打破了基础广告和增强广告
 
 ![](https://web-assets.dcloud.net.cn/uniad/doc/8.jpg)
 
-### uniAD自营-uniMP激励视频广告
+### uni-ad自营-uniMP激励视频广告
 
 详见[文档](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)
 

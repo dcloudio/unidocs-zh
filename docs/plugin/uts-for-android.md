@@ -726,7 +726,9 @@ UTSAndroid.onAppActivityDestroy(function(){
 
 ##### requestSystemPermission
 
-请求系统权限
+请求系统权限,对应的两个参数：
+1  请求的权限列表
+2  请求结果回调
 
 ```ts
 let permissionWifi:string[] = mutableListOf("android.permission.ACCESS_FINE_LOCATION","android.permission.ACCESS_FINE_LOCATION");
@@ -746,9 +748,23 @@ UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!,permissionWifi,f
 
 ##### gotoSystemPermissionActivity
 
+跳转至系统设置权限设置界面，一般是用户选择了不再继续询问选项后
+
+```
+var permissionWifi: MutableList<String> = mutableListOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
+UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!!,permissionWifi)
+```
+
+
 ##### getSystemPermissionDenied
 
+判断权限是否已经被用户禁止
+
+
+
 ##### checkSystemPermissionGranted
+
+判断权限是否已经被用户授予
 
 
 ## 5 Kotlin与UTS差异重点介绍 (持续更新)

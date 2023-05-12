@@ -1,10 +1,10 @@
 
-```uni-app``` 积极拥抱社区，创建了开放、兼容的生态系统。
+`uni-app` 积极拥抱社区，创建了开放、兼容的生态系统。
 
 - [uni-app插件市场](https://ext.dcloud.net.cn)，有数千款插件，支持前端组件、js sdk、页面模板、项目模板、原生插件等多种类型。在生态建设上远远领先于竞品。
 
 - 兼容 微信小程序 JS SDK
-丰富的小程序生态内容可直接引入```uni-app```，并且在App侧通用。以前的跨平台开发框架普遍缺少三方SDK，由于大量SDK厂商均原厂维护小程序SDK，使得```uni-app```成为跨平台开发框架里生态最丰富的平台[参考](https://ask.dcloud.net.cn/article/35070)
+丰富的小程序生态内容可直接引入`uni-app`，并且在App侧通用。以前的跨平台开发框架普遍缺少三方SDK，由于大量SDK厂商均原厂维护小程序SDK，使得`uni-app`成为跨平台开发框架里生态最丰富的平台[参考](https://ask.dcloud.net.cn/article/35070)
 
 - 兼容 微信小程序自定义组件
 小程序自定义组件是一种ui组件，uni-app里可以在App、H5、微信小程序、QQ小程序同时兼容微信小程序自定义组件，[参考](https://uniapp.dcloud.io/frame?id=小程序组件支持)
@@ -19,7 +19,7 @@ mpvue同样基于vue语法，但支持完善度不如`uni-app`，是`uni-app`的
 uni-app内置了`weex`，`weex`的原生插件或ui库均可使用。注意`weex`的生态不如`uni-app`丰富，一般情况建议使用`uni-app`的插件市场。
 
 - 兼容 普通 web 库
-```uni-app```的H5端支持所有浏览器API。但众所周知，由于小程序的js不运行在浏览器里，所以小程序里不支持 HTML 和 DOM 的 API。
+`uni-app`的H5端支持所有浏览器API。但众所周知，由于小程序的js不运行在浏览器里，所以小程序里不支持 HTML 和 DOM 的 API。
 
 `uni-app`的App端虽然和小程序是相同的架构，逻辑层也运行在独立jscore而不是浏览器里，但一方面可通过web-view组件加载HTML，引入web相关库；
 另一方面可通过[renderjs](/tutorial/renderjs.html)实现在渲染层执行js，此时完整echart、threejs等web库均可使用。

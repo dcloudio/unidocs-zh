@@ -4,7 +4,7 @@
 ## 2023-05-10
 ### uni-ad 管理后台页面调整通知
 
-app端上线uniMP激励视频后，实际上打破了基础广告和增强广告的分类方式。
+app端上线[uniMP激励视频](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)后，实际上打破了基础广告和增强广告的分类方式。
 
 因为uniMP激励视频不需要打包第三方广告sdk，没有上架和软著的要求，基础广告也可以使用。
 
@@ -53,7 +53,7 @@ app端上线uniMP激励视频后，实际上打破了基础广告和增强广告
 
 ![](https://web-assets.dcloud.net.cn/uniad/doc/5.png)
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/6.jpg)
+<img width="500px" src="https://web-assets.dcloud.net.cn/uniad/doc/6.jpg">
 
 ### 基础广告调整
 将基础广告重命名为 `uni-ad自营广告`，并将广告类型 `开屏`、`悬浮红包` 移动到对应功能下，取消 `PUSH`和`广告源策略`的配置
@@ -76,3 +76,15 @@ app端上线uniMP激励视频后，实际上打破了基础广告和增强广告
 
 详见[文档](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)
 
+### 数据收益调整
+数据收益中，将`基础广告`、`APP增强广告`合并为 `APP广告` ，`APP增强广告`更名为`三方广告`并置于 `App广告`选项下方的筛选项中
+
+**优化前页面：**
+![](https://web-assets.dcloud.net.cn/uniad/doc/data-old.png)
+
+**优化后页面：**
+- `基础广告`、`APP增强广告`合并为 `APP广告`
+- `基础广告`更名为`uni-ad自营广告`， `APP增强广告`更名为`三方广告` 
+- `uni-ad自营广告` 与 `三方广告` 选择放置于`APP广告`选项下方
+
+![](https://web-assets.dcloud.net.cn/uniad/doc/data-new.png)

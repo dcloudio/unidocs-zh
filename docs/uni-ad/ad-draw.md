@@ -139,7 +139,7 @@
 </script>
 ```
 
-沉浸视频流广告不是激励视频广告，激励视频广告另见：[https://uniapp.dcloud.io/api/a-d/rewarded-video](https://uniapp.dcloud.io/api/a-d/rewarded-video)
+沉浸视频流广告不是激励视频广告，激励视频广告另见：[https://uniapp.dcloud.io/uni-ad/ad-rewarded-video](https://uniapp.dcloud.io/uni-ad/ad-rewarded-video)
 
 **注意**
 - iOS平台配置应用使用广告标识（IDFA）详见：[https://ask.dcloud.net.cn/article/36107](https://ask.dcloud.net.cn/article/36107)

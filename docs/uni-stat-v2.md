@@ -141,14 +141,16 @@ uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了�
 
 **分平台设置**
 
-`uniStatistics` 支持分平台设置，比如仅开启微信小程序平台的 `uni统计`，则在`mp-weixin`节点下设置 `uniStatistics ->enable` 即可，如下：
+`uniStatistics` 支持分平台设置，比如仅开启微信小程序平台的 `uni统计`，则在 manifest.json `mp-weixin`节点下设置 `uniStatistics ->enable` 即可，如下：
 
-```js
-//...
-"mp-weixin":{
-    "uniStatistics": {
-        "enable": true //微信平台开启统计
-    }
+```json
+{
+	//...
+	"mp-weixin":{
+			"uniStatistics": {
+					"enable": true //微信平台开启统计
+			}
+	}
 }
 ```
 

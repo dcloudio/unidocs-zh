@@ -19,7 +19,7 @@
   - 跳转微信打开广告前有微信的二次确认框。
   - 不支持从微信直接返回App，用户需要手动返回。
 
-满足上架微信开放平台的应用通过下面的流程上架微信开放平台
+上架微信开放平台的流程如下:
 
 1. 确认应用已上架国内的任意应用市场(上架前需要提供软著), 微信开放平台需要已上架的应用下载地址
 2. 登录微信开放平台 [https://open.weixin.qq.com/](https://open.weixin.qq.com/)
@@ -39,7 +39,7 @@
 
 2. 在广告位列表中点击新建广告位
 
-3. 必须开启[服务器回调](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)，且响应正确的格式
+3. 必须开启[服务器回调](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#callback)，且响应正确的格式
 
 
 提示

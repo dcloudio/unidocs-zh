@@ -41,7 +41,7 @@
 5. 服务器通过激励视频回调，拿到用户id、是否播放完毕，然后给用户发放奖励。
 6. 客户端监听到广告播放完毕后，向服务器请求，服务器告知客户端是否发放了奖励。
 
-为提升激励视频cpm收益，开发者需要在uniad后台同时开通多个广告平台，比如穿山甲、优量汇、快手等。然后uniad会自动竞价、分层，在不同的广告平台选择出价最高的广告来播放。
+为提升激励视频cpm收益，开发者需要在[uni-ad 后台](https://uniad.dcloud.net.cn/)同时开通多个广告平台，比如穿山甲、优量汇、快手等。然后 uni-ad 会自动竞价、分层，在不同的广告平台选择出价最高的广告来播放。
 
 一个用户每日反复观看激励视频，来领取奖励，会造成广告cpm下降、填充不足等问题。因为广告商不愿意给这个用户再投放广告了。所以一般需要限制用户每日观看激励视频的次数，如15次左右。
 
@@ -69,18 +69,18 @@
 
 **url-callback说明**
 
-|字段定义|类型|字段名称|备注|
-|:-:|:-:|:-:|:-:|
-|userId|String|用户id|调用SDK透传，应用对用户的唯一标识|
-|extra|String|自定义数据|调用SDK传入并透传，如无需要则为空|
+|字段定义	|类型		|字段名称		|备注															|
+|:-:			|:-:		|:-:				|:-:															|
+|userId		|String	|用户id			|调用SDK透传，应用对用户的唯一标识|
+|extra		|String	|自定义数据	|调用SDK传入并透传，如无需要则为空|
 
 
 **方法说明**
 
-|方法名|说明|
-|:-|:-|
-|load|加载广告数据|
-|show|显示广告|
+|方法名	|说明					|
+|:-			|:-						|
+|load		|加载广告数据	|
+|show		|显示广告			|
 
 **注意**
 
@@ -276,15 +276,15 @@ export default {
 
 |值			|描述											|
 |:-:		|:-:											|
+|wm			|uniMP激励视频							|
 |csj		|穿山甲										|
-|gdt		|腾讯优量汇（前称广点通）	|
+|gdt		|腾讯优量汇（前称广点通）	  |
 |ks			|快手											|
 |sigmob	|Sigmob										|
 |gg			|Google AdMob							|
 |pg			|海外穿山甲								|
-|wm			|uniMP										|
 
-示例代码
+**示例代码**
 
 ```html
 <template>
@@ -391,10 +391,11 @@ options 为 object 类型，属性如下：
 |urlCallback|object	|否		|服务器回调透传参数	|App 2.5.11+																	|
 
 **urlCallback说明**
-|属性名	|类型		|描述																																|
-|:-:		|:-:		|:-:																																|
-|userId	|string	|透传到服务器端																											|
-|extra	|string	|透传到服务器端，不推荐设置过于复杂的字符串，例如JSON.stringify({})	|
+
+|属性名	|类型		|描述																																	|
+|:-:		|:-:		|:-:																																	|
+|userId	|string	|透传到服务器端																												|
+|extra	|string	|透传到服务器端，不推荐设置过于复杂的字符串，例如`JSON.stringify({})`	|
 
 
 **返回值**
@@ -532,7 +533,7 @@ rewardedVideoAd.load()
 
 |属性|类型|说明|
 |:-:|:-:|:-:|
-|isEnded|boolean|视频是否是在用户完整观看的情况下被关闭的，true 表示用户是在视频播放完以后关闭的视频，false 表示用户在视频播放过程中关闭了视频
+|isEnded|boolean|视频是否是在用户完整观看的情况下被关闭的，true 表示用户是在视频播放完以后关闭的视频，false 表示用户在视频播放过程中关闭了视频|
 
 开发者需要根据 res.isEnded 判断是否视频是否播放结束，如果成功播放完毕则应该向用户发放奖励。
 
@@ -584,8 +585,6 @@ export default {
         extra: 'testdata'
       }
     }
-  },
-  methods: {
   }
 }
 </script>
@@ -612,14 +611,13 @@ export default {
 注意：
 1. 新建的云函数名称不能使用 `uniAdCallback`
 2. 服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果
-3. 不建议在 `uniAD` web控制修改回调的服务空间和云函数名称，因为修改后广告商生效需要一段时间
+3. 不建议在 `uni-ad` web控制台修改回调的服务空间名称，因为修改后广告商生效需要一段时间
 4. 看一次广告收到2次回调结果，且 `trans_id` 相同，产生2次的可能原因有
-> 1.1 在云函数里没有向广告商的请求返回 isValid: true
-> 1.2 服务器响应过慢，广告商服务器重试
+  - 没有正确响应JSON格式数据 `{"isValid": true}`
+  - 服务器响应过慢，广告商服务器重试
 
 提示：
-
-多个uni-app项目支持关联一个服务空间，都会调用同一个云函数uniAdCallbck，通过接收回调参数中的属性广告位adpid区分
+- 多个uni-app项目支持关联一个服务空间，都会调用同一个云函数uniAdCallbck，通过接收回调参数中的属性广告位adpid区分
 
 
 ### 服务器回调参数@uniAdCallbackParameters
@@ -627,7 +625,7 @@ export default {
 |字段定义	|类型		|字段名称				|备注															|
 |:-:			|:-:		|:-:						|:-:															|
 |adpid		|String	|DCloud广告位id	|																	|
-|provider	|String	|广告服务商			|csj、ks、gdt、sigmob							|
+|provider	|String	|广告服务商			|wm、csj、ks、gdt、sigmob					|
 |platform	|String	|平台						|iOS、Android											|
 |sign			|String	|签名						|																	|
 |trans_id	|String	|交易id					|完成观看的唯一交易ID							|
@@ -652,11 +650,11 @@ sign = sha256(secret:transid)
 
 #### 开发者返回数据约定
 
-返回json数据，字段如下：
+返回JSON格式数据，字段如下：
 
-字段名称|说明|字段类型|备注|
-:-|:-|:-|:-|
-isValid|校验结果|Blean|判定结果，是否发放奖励，具体发放奖励由用户自己的业务系统决定|
+|字段名称|说明|字段类型|备注|
+|:-|:-|:-|:-|
+|isValid|校验结果|Blean|判定结果，是否发放奖励，具体发放奖励由用户自己的业务系统决定|
 
 #### 开发者云函数
 
@@ -733,7 +731,7 @@ exports.main = async (event, context) => {
 
 ### 老用户升级@upgrade
 
-1. 在传统服务器增加[签名校验](/component/ad-rewarded-video.html#sign)
+1. 在传统服务器增加[签名校验](/uni-ad/ad-rewarded-video.html#sign)
 2. 登陆 uni-ad [Web控制台](https://uniad.dcloud.net.cn/)，找到广告位对应的配置激励视频，选择 "业务在传统服务器" 并配置服务器HTTP地址
 
 

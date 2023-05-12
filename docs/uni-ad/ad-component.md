@@ -33,7 +33,7 @@ Banner或信息流广告展现场景非常灵活，常见的展现场景为：�
 
 |属性名|类型|默认值|说明|平台差异|
 |:-|:-|:-|:-|:-|
-|adpid|String||uni-ad App广告位id，在[uni-ad官网](https://uniad.dcloud.net.cn/)申请广告位|App，微信小程序3.4.8+|
+|adpid|String||uni-ad 广告位id，在[uni-ad官网](https://uniad.dcloud.net.cn/)申请广告位|App，Web，微信小程序3.4.8+|
 |unit-id|String||广告单元id，可在小程序管理后台的流量主模块新建|微信小程序、字节跳动小程序(最低版本1.19.0+)、QQ小程序、快手小程序|
 |ad-intervals|number||广告自动刷新的间隔时间，单位为秒，参数值必须大于等于30（该参数不传入时 Banner 广告不会自动刷新）|微信小程序(基础库2.3.1+)|
 |data|Object|可选|广告数据，通过 plus.ad.getAds (参考示例代码)，优先级高于adpid|App|
@@ -73,7 +73,7 @@ App和微信小程序的ad组件没有type属性，可以用于banner，也可�
 
 微信小程序平台支持信息流(Banner)广告组件 `<ad unit-id=""></ad>`，由微信提供
 
-uniAD 也支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uniAD提供
+uni-ad 也支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uni-ad提供
 
 3.4.10 之前的版本`ad`组件运行到微信小程序使用微信提供的广告组件
 
@@ -83,11 +83,11 @@ uniAD 也支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uniAD提�
 2. 组件设置了 `adpid` 属性，被编译为 `uniad`，见下文的介绍
 3. 组件设置了 `adpid` 和 `unit-id` 属性，被编译为 `uniad`，见下文的介绍
 
-`uniad`是`uni-app`框架的内置的组件，`uniad`组件同时支持`uniAD`广告和微信原生广告，先请求uniAD，如果已开通直接使用否则切换为微信的广告，这个过程会有3秒的延时
+`uniad`是`uni-app`框架的内置的组件，`uniad`组件同时支持`uni-ad`广告和微信原生广告，先请求`uni-ad`，如果已开通直接使用否则切换为微信的广告，这个过程会有3秒的延时
 
-`uniad`组件依赖uniAD提供的微信小程序插件和腾讯提供的珊瑚广告插件
+`uniad`组件依赖uni-ad提供的微信小程序插件和腾讯提供的珊瑚广告插件
 
-如果想在微信上仅使用微信的广告，App 或 Web 使用 uniAD 可使用条件编译
+如果想在微信上仅使用微信的广告，App 或 Web 使用 uni-ad 可使用条件编译
 
 条件编译示例
 
@@ -110,7 +110,7 @@ uniAD 也支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uniAD提�
 - app-nvue 的 `<recycle-list>` 组件内不支持嵌套 `<ad>`
 - 广点通概率出现重复广告，可根据需求请求广告数据，推荐单次大于1条(plus.ad.getAds) 来降低重复率
 - HBuilderX2.8+版本Android平台更新穿山甲（今日头条）广告SDK后不再支持x86类型CPU，无法运行到x86类型cpu的模拟器。
-- `<ad>` 组件测试广告位是上图下文，uniAD后台申请的广告位默认左图右文
+- `<ad>` 组件测试广告位是上图下文，uni-ad后台申请的广告位默认左图右文
 - HBuilderX标准基座真机运行测试信息流广告位标识（adpid）为：1111111111，微信小程序和H5平台暂不提供测试广告位
 
 
@@ -293,13 +293,13 @@ export default {
 
 
 **激励视频广告**
-文档地址：[https://uniapp.dcloud.io/component/ad-rewarded-video](https://uniapp.dcloud.io/component/ad-rewarded-video)
+文档地址：[https://uniapp.dcloud.io/uni-ad/ad-rewarded-video](https://uniapp.dcloud.io/uni-ad/ad-rewarded-video)
 
 **全屏视频广告**
-文档地址：[https://uniapp.dcloud.io/component/ad-fullscreen-video](https://uniapp.dcloud.io/component/ad-fullscreen-video)
+文档地址：[https://uniapp.dcloud.io/uni-ad/ad-fullscreen-video](https://uniapp.dcloud.io/uni-ad/ad-fullscreen-video)
 
 **插屏广告**
-文档地址：[https://uniapp.dcloud.io/component/ad-interstitial](https://uniapp.dcloud.io/component/ad-interstitial)
+文档地址：[https://uniapp.dcloud.io/uni-ad/ad-interstitial](https://uniapp.dcloud.io/uni-ad/ad-interstitial)
 
 
 **注意**

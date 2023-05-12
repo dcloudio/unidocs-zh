@@ -135,7 +135,7 @@
 |属性|类型|默认值|描述|平台差异说明|
 |:-|:-|:-|:-|:-|
 |navigationBarBackgroundColor|HexColor|#F7F7F7|导航栏背景颜色（同状态栏背景色）|APP与H5为#F7F7F7，小程序平台请参考相应小程序文档|
-|navigationBarTextStyle|String|white|导航栏标题颜色及状态栏前景颜色，仅支持 black/white|支付宝小程序不支持，请使用 [my.setNavigationBar](https://opendocs.alipay.com/mini/api/xwq8e6)|
+|navigationBarTextStyle|String|white|导航栏标题颜色及状态栏前景颜色，仅支持 black/white|APP为black，H5为white，小程序平台请参考相应小程序文档，支付宝小程序不支持，请使用 [my.setNavigationBar](https://opendocs.alipay.com/mini/api/xwq8e6)|
 |navigationBarTitleText|String||导航栏标题文字内容||
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
 |backgroundColor|HexColor|#ffffff|下拉显示出来的窗口的背景色|微信小程序|
@@ -330,8 +330,8 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 
 |属性|类型|默认值|描述|平台差异说明|
 |:-|:-|:-|:-|:-|
-|navigationBarBackgroundColor|HexColor|#000000|导航栏背景颜色（同状态栏背景色），如"#000000"||
-|navigationBarTextStyle|String|white|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
+|navigationBarBackgroundColor|HexColor|#F7F7F7|导航栏背景颜色（同状态栏背景色）|APP与H5为#F7F7F7，小程序平台请参考相应小程序文档|
+|navigationBarTextStyle|String|white|导航栏标题颜色及状态栏前景颜色，仅支持 black/white|APP为black，H5为white，小程序平台请参考相应小程序文档|
 |navigationBarTitleText|String||导航栏标题文字内容||
 |navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)||
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|

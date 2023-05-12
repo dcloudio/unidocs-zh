@@ -11,7 +11,7 @@ Banner或信息流广告展现场景非常灵活，常见的展现场景为：�
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-feed.png)
 
 
-- App端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道以及部分DCloud直投广告组成，在DCloud的uni-AD后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
+- App端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道以及部分DCloud直投广告组成，在DCloud的uni-ad后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
 - H5端、微信小程序端的广告由DCloud直接提供
 - 其他小程序端由小程序平台提供
 

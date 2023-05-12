@@ -104,4 +104,4 @@ uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.
 ### 方案二
 
 登陆微信公众平台 [https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)，点击左侧栏 `设置`，然后找到顶部页签 `第三方设置`，向下滚动屏幕到 `插件管理`,
-点击 `添加插件` 按钮，搜索 `uniAD` 和 `珊瑚运营平台` 并添加
+点击 `添加插件` 按钮，搜索 `uni-ad` 和 `珊瑚运营平台` 并添加

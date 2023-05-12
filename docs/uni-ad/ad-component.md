@@ -33,7 +33,7 @@ Banner或信息流广告展现场景非常灵活，常见的展现场景为：�
 
 |属性名|类型|默认值|说明|平台差异|
 |:-|:-|:-|:-|:-|
-|adpid|String||uni-ad App广告位id，在[uni-ad官网](https://uniad.dcloud.net.cn/)申请广告位|App，微信小程序3.4.8+|
+|adpid|String||uni-ad 广告位id，在[uni-ad官网](https://uniad.dcloud.net.cn/)申请广告位|App，Web，微信小程序3.4.8+|
 |unit-id|String||广告单元id，可在小程序管理后台的流量主模块新建|微信小程序、字节跳动小程序(最低版本1.19.0+)、QQ小程序、快手小程序|
 |ad-intervals|number||广告自动刷新的间隔时间，单位为秒，参数值必须大于等于30（该参数不传入时 Banner 广告不会自动刷新）|微信小程序(基础库2.3.1+)|
 |data|Object|可选|广告数据，通过 plus.ad.getAds (参考示例代码)，优先级高于adpid|App|

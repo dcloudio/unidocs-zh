@@ -156,6 +156,4 @@ Run HBuilderX to the WeChat developer tool, and the link to apply for the plug-i
 ### Option II
 
 登陆微信公众平台 [https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)，点击左侧栏 `设置`，然后找到顶部页签 `第三方设置`，向下滚动屏幕到 `插件管理`,
-Log in to the WeChat public platform [https://mp.weixin.qq.com/](https://mp.weixin.qq.com/), click `Settings` on the left sidebar, and then find the top tab `Third Party Settings` `, scroll down the screen to `Plugin Management`,
-点击 `添加插件` 按钮，搜索 `uniAD` 和 `珊瑚运营平台` 并添加
-Click the `Add Plugin` button, search for `uniAD` and `Coral Operation Platform` and add
+点击 `添加插件` 按钮，搜索 `uni-ad` 和 `珊瑚运营平台` 并添加

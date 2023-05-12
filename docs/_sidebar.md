@@ -35,6 +35,7 @@
     * [微信小程序](uni-ad/ad-weixin.md)
     * [微信小程序格子广告](uni-ad/ad-grid.md)
     * [广告错误码](uni-ad/ad-error-code.md)
+    * [uni-ad管理后台更新说明](uni-ad/release.md)
   * [统一发行页面](/uniCloud/uni-portal.md)
   * [uni-portal](/uniCloud/uni-portal.md)
   * [前端网页托管](uniCloud/hosting.md)

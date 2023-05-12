@@ -20,8 +20,7 @@ Douyin-like vertical video stream, full-screen video such as call show, live roo
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-draw.png)
 
 
-- app端的广告源由腾讯广点通、头条穿山甲、快手广告联盟以及部分DCloud直投广告聚合提供，在DCloud的uni-AD后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
-- The advertising sources on the app side are provided by Tencent Guangdiantong, Toutiao Pangolin, Kuaishou Advertising Alliance and some DCloud direct investment advertising aggregation. Register in DCloud's uni-AD background: [https://uniad.dcloud.net.cn/]( https://uniad.dcloud.net.cn/)
+- app端的广告源由腾讯广点通、头条穿山甲、快手广告联盟以及部分DCloud直投广告聚合提供，在DCloud的uni-ad后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
 
 **平台差异说明**
 **Platform Difference Description**

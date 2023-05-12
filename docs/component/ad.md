@@ -16,8 +16,7 @@ Banner or information flow advertisement display scenarios are very flexible. Co
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-feed.png)
 
 
-- App端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道以及部分DCloud直投广告组成，在DCloud的uni-AD后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
-- The advertising sources on the App side are composed of mainstream advertising channels such as Tencent Youlianghui, Toutiao Pangolin and Kuaishou Advertising Alliance, as well as some DCloud direct advertisements. Register in the uni-AD background of DCloud: [https://uniad.dcloud.net.cn /](https://uniad.dcloud.net.cn/)
+- App端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道以及部分DCloud直投广告组成，在DCloud的uni-ad后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
 - H5端、微信小程序端的广告由DCloud直接提供
 - The advertisements on the H5 terminal and WeChat applet are directly provided by DCloud
 - 其他小程序端由小程序平台提供

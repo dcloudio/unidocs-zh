@@ -760,12 +760,23 @@ UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!!,permission
 
 判断权限是否已经被用户禁止
 
-
+```ts
+var permissionWifi: MutableList<String> = mutableListOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
+val denied = UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!!, permissionWifi)
+// 执行结果
+[android.permission.ACCESS_FINE_LOCATION, android.permission.ACCESS_FINE_LOCATION]
+```
 
 ##### checkSystemPermissionGranted
 
 判断权限是否已经被用户授予
 
+```ts
+var permissionWifi: MutableList<String> = mutableListOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
+val grant = UTSAndroid.checkSystemPermissionGranted (UTSAndroid.getUniActivity()!!, permissionWifi)
+// 执行结果
+false
+```
 
 ## 5 Kotlin与UTS差异重点介绍 (持续更新)
 

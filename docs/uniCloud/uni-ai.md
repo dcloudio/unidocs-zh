@@ -10,7 +10,8 @@ ai大潮来袭，如何把ai能力引入自己的应用中？几乎是每个开�
 
 `uni-ai`，聚合了国内外各种流行的ai能力。包括
 - 大语言模型LLM：chatGPT、GPT-4、百度文心一言、minimax等
-- 图形能力：stable diffusion、文心一格、midjourney等（暂未发布）
+- 图形能力：文心一格
+（未来还会聚合更多）
 
 `uni-ai`支持配置自己在AI厂商处申请的API Key和代理，也支持免配直接使用。
 
@@ -49,8 +50,8 @@ ai能力非常常见的应用场景，有智能客服和自动生成文稿。
 
 `uni-ai`把这些常见场景对应的应用均已做好，并且开源。开发者可以直接拿走使用。
 
-- uni-cms，内置了智能内容生成。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)
 - uni-ai-chat，独立的ai聊天模板。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)
+- uni-cms，内置了智能内容生成。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)
 - uni-im，内置了智能客服。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
 
 这些完善的项目，包括了前端页面（全端可用）、云对象、云数据库等全套代码，开箱即用。

@@ -13,7 +13,11 @@ uni-app提供的屏幕适配方案，包括3部分：
 
 各个window之间可以交互通信。
 
-这里有2个例子：
+这里有若干案例：
+- DCloud开发者web控制台：[http://dev.dcloud.io/](http://dev.dcloud.io/)
+- uniCloud Web控制台：[https://unicloud.dcloud.net.cn/](https://unicloud.dcloud.net.cn/)
+
+还有一批开源示例：
 - hello uni-app：[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
 - 分栏式的新闻模板：[https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/](https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/)，这个示例对应的源码在：[https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
 

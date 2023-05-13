@@ -214,15 +214,16 @@ Set the `version` property to `"2"` to enable new version statistics
 **分平台设置**
 **Sub-platform settings**
 
-`uniStatistics` 支持分平台设置，比如仅开启微信小程序平台的 `uni统计`，则在`mp-weixin`节点下设置 `uniStatistics ->enable` 即可，如下：
-`uniStatistics` supports sub-platform settings. For example, to enable `uni statistics` of the WeChat MiniApp platform, you can set `uniStatistics ->enable` under the `mp-weixin` node, as follows:
+`uniStatistics` 支持分平台设置，比如仅开启微信小程序平台的 `uni统计`，则在 manifest.json `mp-weixin`节点下设置 `uniStatistics ->enable` 即可，如下：
 
-```js
-//...
-"mp-weixin":{
-    "uniStatistics": {
-        "enable": true //微信平台开启统计
-    }
+```json
+{
+	//...
+	"mp-weixin":{
+			"uniStatistics": {
+					"enable": true //微信平台开启统计
+			}
+	}
 }
 ```
 

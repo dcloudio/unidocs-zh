@@ -1,3 +1,4 @@
+# pages.json 页面路由
 `pages.json` 文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等。
 The `pages.json` file is used to configure uni-app globally, to determine the path of the page file, window style, native navigation bar, native tabbar at the bottom, etc.
 

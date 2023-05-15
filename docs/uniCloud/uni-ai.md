@@ -323,7 +323,7 @@ uniCloud的云函数，基于uni-push2，于 HBuilderX 新版提供了sse通道�
 **注意：**
 
 1. 需提前为应用开通[uni-push2](/unipush-v2.md)
-2. 不同provide的流式支持度不同，有的是按字输出、有的是按句输出。考虑到push的频繁调用压力，目前uni-ai自动分配provide时是按句输出。如果您指定provide为openai并配置自己的apikey，可以按字输出。
+2. 不同provider的流式支持度不同，有的message事件是按字输出、有的是按句输出。考虑到push的频繁调用压力，目前uni-ai自动分配provider时是按句输出。如果您指定provider为openai并配置自己的apikey，可以按字输出。
 3. 开启流式响应后`chatCompletion`接口将返回流对象，而不会返回具体结果。开发者需要使用流获取AI响应的内容。
 4. 如使用nginx代理，需要将代理配置为`proxy_buffering off;`，否则可能会遇到`Unexpected end of JSON input`错误
 

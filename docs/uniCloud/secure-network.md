@@ -374,8 +374,7 @@ When matching the custom rule configuration of a cloud function, the configurati
 **注意**
 **Notice**
 
-- 如果修改客户端验证配置需要重新打包做出修改的客户端，如果是正在运行期间修改了配置需要重新运行客户端才会生效。
-- If you modify the client verification configuration, you need to repackage the modified client. If you modify the configuration during running, you need to re-run the client to take effect.
+- 如果修改客户端验证配置需要重新打包做出修改的客户端，如果是正在运行期间修改了配置需要重新运行客户端才会生效。这部分配置会同步到客户端，比如你添加了某个函数作为必须验证才使用的函数，这时候客户端需要新的配置才会在请求新函数是带上客户端验证参数，因此需要重新打包。
 - 如需对clientDB请求进行客户端校验，使用`uni-clientDB`作为云函数名
 - To perform client-side verification on clientDB requests, use `uni-clientDB` as the cloud function name
 

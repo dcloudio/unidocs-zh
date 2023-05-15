@@ -217,13 +217,14 @@ module.exports = async (obj) => {
 	}
 ```
 
-## 常见错误
+## 常见错误  
+- **uni-ai相关错误请参考：**[uni-ai错误码](uni-ai.md#err-code)
 
-**uni-ai相关错误请参考：**[uni-ai错误码](uni-ai.md#err-code)
+- **错误信息："certificate has expired"**  
+  请参考文档：[云函数通过https访问其他服务器时出现“certificate has expired”](faq.md#lets-encrypt-cert)
 
-**错误信息："certificate has expired"**
-  
-请参考文档：[云函数通过https访问其他服务器时出现“certificate has expired”](faq.md#lets-encrypt-cert)
+- **错误信息："Wx0e203209e27b1e66 插件未授权使用 添加插住(env: Windows,mp,1.06.2303060；1ib: 2.31.1)"**  
+  请参考文档：[uniAD微信小程序广告开通指南](https://ask.dcloud.net.cn/article/39928)
 
 ## 其他  
 DCloud基于`uni-ai`提供了很多开源模板，除了本项目`uni-ai-chat`，还有：

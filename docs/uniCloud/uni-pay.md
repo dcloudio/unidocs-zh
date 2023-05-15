@@ -1009,7 +1009,6 @@ module.exports = async (obj) => {
 };
 ```
 
-
 #### 业务不在uniCloud上
 
 如果你的业务不在uniCloud上，如java或php写的后端服务，uni-pay也可以满足你的支付需求，你只需要使用回调方式三的http接口形式调用你自己系统的回调接口即可。
@@ -1022,6 +1021,12 @@ module.exports = async (obj) => {
 
 ```js
 'use strict';
+// 引入配置中心模块
+const configCenter = require("uni-config-center");
+// 获取uniPay配置
+const config = configCenter({ pluginId: 'uni-pay' }).requireFile('config.js');
+// 引入crypto模块
+const crypto = require("crypto");
 /**
  * 此处建议只改下订单状态，保证能及时返回给第三方支付服务器成功状态
  * 限制4秒内必须执行完全部的异步回调逻辑，建议将消息发送、返佣、业绩结算等业务逻辑异步处理（如用定时任务去处理这些异步逻辑）
@@ -1040,9 +1045,7 @@ module.exports = async (obj) => {
 	// 方式三：使用 await uniCloud.httpclient.request 调用http接口地址
 	
 	// 方式三安全模式一（加密）
-	let encrypted = payCrypto.aes.encrypt({
-		data: data, // 待加密的原文
-	});
+	let encrypted = encryptUseAes256Ecb(data); // 获得加密后的内容
 	await uniCloud.httpclient.request("你的服务器接口请求地址", {
 		method: "POST",
 		data: {
@@ -1064,6 +1067,94 @@ module.exports = async (obj) => {
 	// user_order_success =  true 代表你自己的逻辑处理成功 返回 false 代表你自己的处理逻辑失败。
 	return user_order_success;
 };
+
+// aes-256-ecb加密算法
+function encryptUseAes256Ecb(data, key) {
+	if (!key) key = config.notifyKey; // 如果未传密钥，则用配置的密钥（密钥必须是32位的，只能是数字或字母）
+	let paddedData = Buffer.from(JSON.stringify(data));
+	let paddedkey = key;
+	if (paddedkey.length > 32) {
+		paddedkey = paddedkey.substring(0, 32); // 截取前32位密钥
+	}
+	paddedkey = Buffer.from(paddedkey);
+	const cipher = crypto.createCipheriv('aes-256-ecb', paddedkey, '');
+	cipher.setAutoPadding(false);
+	const blockSize = 16; // AES块大小为16字节
+	const paddingSize = blockSize - (paddedData.length % blockSize);
+	const paddingBuffer = Buffer.alloc(paddingSize, paddingSize);
+	paddedData = Buffer.concat([paddedData, paddingBuffer]);
+	let encrypted = cipher.update(paddedData, null, 'base64');
+	encrypted += cipher.final('base64');
+	return encrypted;
+}
+```
+
+#### java解密示例代码
+
+```java
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
+public class CryptoUtil {
+    // 调用示例
+    public static void main(String[] args) {
+        try {
+            String encrypted = "es2aF7DWr169X4fvMnlKNg=="; // 待解密的密文
+            String key = "12345678901234561234567890123456"; // 必须是固定的32位（只支持数字、英文）
+            // 解密
+            String decrypted = decrypt(encrypted, key);
+            System.out.println("decrypted: " + decrypted);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // 解密函数
+    private static String decrypt(String encryptedData, String key) throws Exception {
+        if (key.length() > 32) {
+            key = key.substring(0, 32);
+        }
+        byte[] encryptedBytes = Base64.getDecoder().decode(encryptedData);
+        byte[] keyBytes = key.getBytes(StandardCharsets.UTF_8);
+
+        SecretKeySpec secretKey = new SecretKeySpec(keyBytes, "AES");
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        cipher.init(Cipher.DECRYPT_MODE, secretKey);
+
+        byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
+        return new String(decryptedBytes, StandardCharsets.UTF_8);
+    }
+    // 加密函数
+    private static String encrypt(String data, String key) throws Exception {
+        if (key.length() > 32) {
+            key = key.substring(0, 32);
+        }
+        byte[] dataBytes = data.getBytes(StandardCharsets.UTF_8);
+        byte[] keyBytes = key.getBytes(StandardCharsets.UTF_8);
+
+        SecretKeySpec secretKey = new SecretKeySpec(keyBytes, "AES");
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+
+        byte[] encryptedBytes = cipher.doFinal(dataBytes);
+        return Base64.getEncoder().encodeToString(encryptedBytes);
+    }
+
+}
+```
+
+#### php解密示例代码
+
+```php
+<?php
+	$key = '12345678901234561234567890123456'; // 必须是固定的32位（只支持数字、英文）
+	$encrypt = "es2aF7DWr169X4fvMnlKNg=="; // 待解密的内容
+	// 解密
+	$decrypt = openssl_decrypt(base64_decode($encrypt), 'aes-256-ecb', substr($key, 0, 32), OPENSSL_RAW_DATA);
+	echo $decrypt;
+?>
 ```
 
 ### 运行启动
@@ -2025,7 +2116,7 @@ this.$refs.uniPay.createOrder({
 {"menu_id": "uni-stat-pay","name": "支付统计","icon": "uni-icons-circle","url": "","sort": 2122,"parent_id": "uni-stat","permission": [],"enable": true,"create_date": 1667386977981}
 {"menu_id": "uni-stat-pay-overview","name": "概况","icon": "","url": "/pages/uni-stat/pay-order/overview/overview","sort": 21221,"parent_id": "uni-stat-pay","permission": [],"enable": true,"create_date": 1667387038602}
 {"menu_id": "uni-stat-pay-funnel","name": "漏斗分析","icon": "","url": "/pages/uni-stat/pay-order/funnel/funnel","sort": 21222,"parent_id": "uni-stat-pay","permission": [],"enable": true,"create_date": 1668430092890}
-{"menu_id": "uni-stat-pay-ranking","name": "价值用户排行","icon": "","url": "/pages/uni-stat/pay-order/ranking/ranking","sort": 21223,"parent_id": "uni-stat-pay","permission": [],"enable": true,"create_date": 1668430128302}
+{"menu_id": "uni-stat-pay-ranking","name": "价值用户排行","icon": "","url": "/pages/uni-stat/pay-order/ranking/ranking","sort": 21223,"parent_id": "uni-stat-pay","permission": [],"enable": true,"create_date": 1668430256302}
 ```
 
 ### 收款趋势

@@ -862,7 +862,7 @@ this.$refs.uniPay.open({
 
 **注意：每次修改都需要重新上传云对象`uni-pay-co`**
 
-#### 业务在uniCloud上
+#### 业务在uniCloud上@service-inside
 
 如果你的业务在uniCloud上，那么可以使用方式一或方式二进行编写自定义回调逻辑。
 
@@ -1009,7 +1009,7 @@ module.exports = async (obj) => {
 };
 ```
 
-#### 业务不在uniCloud上
+#### 业务不在uniCloud上@service-outside
 
 如果你的业务不在uniCloud上，如java或php写的后端服务，uni-pay也可以满足你的支付需求，你只需要使用回调方式三的http接口形式调用你自己系统的回调接口即可。
 

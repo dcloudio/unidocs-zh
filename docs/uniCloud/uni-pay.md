@@ -1038,8 +1038,7 @@ this.$refs.uniPay.open({
 **注意：每次修改都需要重新上传云对象`uni-pay-co`**
 **Note: Every modification needs to re-upload the cloud object `uni-pay-co`**
 
-#### 业务在uniCloud上
-#### Business is on uniCloud
+#### 业务在uniCloud上@service-inside
 
 如果你的业务在uniCloud上，那么可以使用方式一或方式二进行编写自定义回调逻辑。
 If your business is on uniCloud, you can use method 1 or method 2 to write custom callback logic.
@@ -1208,8 +1207,7 @@ module.exports = async (obj) => {
 };
 ```
 
-#### 业务不在uniCloud上
-#### Business is not on uniCloud
+#### 业务不在uniCloud上@service-outside
 
 如果你的业务不在uniCloud上，如java或php写的后端服务，uni-pay也可以满足你的支付需求，你只需要使用回调方式三的http接口形式调用你自己系统的回调接口即可。
 If your business is not on uniCloud, such as back-end services written in java or php, uni-pay can also meet your payment needs. You only need to call the callback interface of your own system in the form of the http interface of callback method 3.

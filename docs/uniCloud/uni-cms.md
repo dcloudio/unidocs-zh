@@ -419,7 +419,7 @@ uni-cms的云端的配置文件统一使用[uni-config-center](uni-config-center
 
 > 云函数`uni-cms`、`uni-cms-unlock-callback` 都使用同一个配置文件
 
-新建配置文件，路径为 `uni_modules/uni-config-center/common/uni-cms/config.json`，用于配置uni-cms相关信息，完整配置如下:
+新建配置文件，路径为 `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-cms/config.json`，用于配置uni-cms相关信息，完整配置如下:
 
 ```json
 {

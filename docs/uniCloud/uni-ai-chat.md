@@ -226,9 +226,6 @@ module.exports = async (obj) => {
 - **错误信息："Wx0e203209e27b1e66 插件未授权使用 添加插住(env: Windows,mp,1.06.2303060；1ib: 2.31.1)"**  
   请参考文档：[uniAD微信小程序广告开通指南](https://ask.dcloud.net.cn/article/39928)
 
-- **错误信息："errMsg: "getPushClientId:fail uniPush is not enabled"**  
-  需要在[dev.dcloud.net.cn](https://dev.dcloud.net.cn)的uni-push2中开通你的应用，更多uni-push2的介绍 详情参考[https://uniapp.dcloud.net.cn/unipush-v2.html](https://uniapp.dcloud.net.cn/unipush-v2.html)
-
 ## 其他  
 DCloud基于`uni-ai`提供了很多开源模板，除了本项目`uni-ai-chat`，还有：
 

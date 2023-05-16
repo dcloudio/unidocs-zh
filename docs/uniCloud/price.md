@@ -182,7 +182,7 @@ Due to insufficient upstream reserves, there are still some quotas for the uniCl
 |			|固定IP代理请求QPS					|20		|
 |			|最大实例数							|300	|
 |			|函数数量限制						|48		|
-|			|客户端请求最大超时时间				|40秒	|
+|			|客户端请求最大超时时间				|60秒	|
 |			|定时任务单次最大运行时间			|600秒	|
 |			|定时任务最小执行间隔			|1分钟	|
 |数据库		|QPS								|1000	|

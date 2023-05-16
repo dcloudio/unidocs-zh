@@ -83,7 +83,10 @@ Different names mean that they require developers to write in different language
 3. 插件封装中要理解的概念更少。 传统原生语言插件需要在js和原生层处理通信，使用各种特殊转换，使用特殊语法导入，注意事项很多。**uts统一为纯前端概念，简单清晰。**
 3. Fewer concepts to understand in plug-in packaging. Traditional native language plug-ins need to handle communication between js and the native layer, use various special conversions, and use special syntax imports. There are many things to pay attention to. **uts is unified into a pure front-end concept, which is simple and clear. **
 4. uts 下前端和原生可以统一在 HBuilderX 中联调。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
-4. The front-end and native under uts can be jointly debugged in HBuilderX. However, traditional native language plug-ins need to switch between multiple development tools, making joint debugging complicated.
+5. 插件市场的uts插件支持下载后自己固定版本。而付费的原生语言插件只能使用最新版。
+6. 插件市场的uts付费插件支持源码版销售和源码版权保护机制。而付费的原生语言插件不支持源码版销售。
+
+如果您是插件作者，可以了解更多uts插件和uni原生语言插件对插件作者的区别。[详见](https://uniapp.dcloud.net.cn/plugin/publish.html#utsdiff)
 
 ### uts插件和Native.js的区别
 ### Difference between uts plugin and Native.js

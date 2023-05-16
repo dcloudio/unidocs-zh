@@ -31,7 +31,7 @@
 
 开通步骤
 
-1. 登录 [uni-ad 广告联盟](https://uniad.dcloud.net.cn)，找到广告应用设置并点击 App广告 -> uni-ad自营 -> 申请开通
+1. 登录 [uni-ad 广告联盟](https://uniad.dcloud.net.cn)，找到广告应用设置并点击 App广告 -> DCloud快捷广告 -> 申请开通
 
 ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp-web-console-on.png)
 

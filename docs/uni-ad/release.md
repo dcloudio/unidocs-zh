@@ -18,7 +18,7 @@ app端上线[uniMP激励视频](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)�
 
 一级分类是平台，即App广告、小程序广告、web广告。
 
-然后App广告里，二级分类是广告源提供方，比如uni-ad自营、优量汇、穿山甲...
+然后App广告里，二级分类是广告源提供方，比如DCloud快捷广告、优量汇、穿山甲...
 
 除了分类调整，还优化了其他ui细节，具体见下。
 
@@ -56,7 +56,7 @@ app端上线[uniMP激励视频](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)�
 <img width="500px" src="https://web-assets.dcloud.net.cn/uniad/doc/6.jpg">
 
 ### 基础广告调整
-将基础广告重命名为 `uni-ad自营广告`，并将广告类型 `开屏`、`悬浮红包` 移动到对应功能下，取消 `PUSH`和`广告源策略`的配置
+将基础广告重命名为 `DCloud快捷广告`，并将广告类型 `开屏`、`悬浮红包` 移动到对应功能下，取消 `PUSH`和`广告源策略`的配置
 
 **优化前页面：**
 
@@ -64,7 +64,7 @@ app端上线[uniMP激励视频](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)�
 
 **优化后页面：**
 
-- 将原基础广告类型 `开屏` 移动到 `App 开屏广告管理` 中，广告平台为 `uni-ad自营`
+- 将原基础广告类型 `开屏` 移动到 `App 开屏广告管理` 中，广告平台为 `DCloud快捷广告`
 
 ![](https://web-assets.dcloud.net.cn/uniad/doc/20230511151715.jpg)
 
@@ -72,7 +72,7 @@ app端上线[uniMP激励视频](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)�
 
 ![](https://web-assets.dcloud.net.cn/uniad/doc/8.jpg)
 
-### uni-ad自营-uniMP激励视频广告
+### DCloud快捷广告-uniMP激励视频广告
 
 详见[文档](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)
 
@@ -84,7 +84,7 @@ app端上线[uniMP激励视频](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)�
 
 **优化后页面：**
 - `基础广告`、`APP增强广告`合并为 `APP广告`
-- `基础广告`更名为`uni-ad自营广告`， `APP增强广告`更名为`三方广告` 
-- `uni-ad自营广告` 与 `三方广告` 选择放置于`APP广告`选项下方
+- `基础广告`更名为`DCloud快捷广告`， `APP增强广告`更名为`三方广告`
+- `DCloud快捷广告` 与 `三方广告` 选择放置于`APP广告`选项下方
 
 ![](https://web-assets.dcloud.net.cn/uniad/doc/data-new.png)

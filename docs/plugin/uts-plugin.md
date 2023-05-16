@@ -74,8 +74,7 @@ Different names mean that they require developers to write in different language
 |js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接 import，支持摇树优化|
 | js layer calling method | uni.requireNativePlugin() |Ordinary js functions/objects, can be directly imported, support tree-shaking optimization|
 
-相当于原生语言插件，uts插件的优势：
-Equivalent to native language plugins, the advantages of uts plugins:
+相对原生语言插件，uts插件的优势：
 
 1. 统一了编程语言（uts），一种语言开发所有平台，真正大前端。
 1. Unified programming language (uts), one language to develop all platforms, really big front-end.

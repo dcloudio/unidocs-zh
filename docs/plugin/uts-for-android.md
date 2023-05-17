@@ -1185,17 +1185,26 @@ js引擎除了 string,number,boolean 等基本数据结构外，仅支持JSONObj
 
 ```
 // UTS插件，声明数组参数
-function getBaseInfo(filterArray : Array<string>) : GetDeviceInfoResult {
-	// todo
+export function callWithoutParam(filterArray : Array<string>,success: () => void) {
+	console.log(filterArray)
+	success();
+	return { name: "doSthWithCallback" };
 }
 
 ```
 
 ```js
 // 前端传递数组参数
-console.log(getDeviceInfo({
- 	filter:["system"]
-}));
+UTSHello.callWithoutParam(
+	["system","optionB"]
+	,
+	()=>{
+		uni.showToast({
+			title:'成功调用uts插件uts-helloworld的callWithoutParam',
+			icon:'none'
+		});
+	}
+);
 ```
 
 

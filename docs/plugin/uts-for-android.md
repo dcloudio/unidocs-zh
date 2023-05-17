@@ -1319,6 +1319,32 @@ let byteTest = new ByteArray(5)
 console.log(byteTest)
 ```
 
+### 6.8 如何向UTS环境中传递数组参数
+
+在 uni-app 1.0 平台，js环境与原生环境的交互都是经过js引擎交互的，
+
+js引擎除了 string,number,boolean 等基本数据结构外，仅支持JSONObject,JSONArray两种。 
+
++ JSONObject 非常场景，基本所有的接口参数都会 对应一个uts中定义的 type 类
++ JSONArray 一般在uts中采用Array数组来承接
+
+下面是一个Array的使用示例：
+
+```
+// UTS插件，声明数组参数
+function getBaseInfo(filterArray : Array<string>) : GetDeviceInfoResult {
+	// todo
+}
+
+```
+
+```js
+// 前端传递数组参数
+console.log(getDeviceInfo({
+ 	filter:["system"]
+}));
+```
+
 
 ## 7  已知待解决问题(持续更新)
 

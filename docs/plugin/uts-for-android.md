@@ -1200,7 +1200,7 @@ UTSHello.callWithoutParam(
 	,
 	()=>{
 		uni.showToast({
-			title:'成功调用uts插件uts-helloworld的callWithoutParam',
+			title:'成功调用',
 			icon:'none'
 		});
 	}

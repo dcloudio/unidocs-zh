@@ -239,7 +239,7 @@ mediaPlayer.start();
 
 ------
 
-HX3.6.7 版本内置了以下依赖
+截止 HBuilder 3.8.2 版本内置了以下依赖
 
 开发者在使用列表中的依赖时，需要注意两点：
 
@@ -250,8 +250,7 @@ HX3.6.7 版本内置了以下依赖
 +--- my-imageloader.jar
 +--- my-nineoldandroids-2.4.0.jar
 +--- zip4j-2.8.0.jar
-+--- uts-runtime-jvm-1.0.jar
-+--- com.google.code.gson:gson@2.8.9.jar
++--- com.github.getActivity:XXPermissions:18.0@jar
 +--- android-gif-drawable-release@1.2.23.aar
 +--- msa_mdid_1.0.13.aar
 +--- breakpad-build-release.aar

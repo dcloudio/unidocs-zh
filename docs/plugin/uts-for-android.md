@@ -851,9 +851,15 @@ UTSAndroid.onAppActivityDestroy(function(){
 
 ### 4.4 系统权限管理
 
-需要 HBuilder X 3.8.2版本之后支持
+HBuilder X 3.8.2版本之后支持
 
-##### requestSystemPermission
+系统权限管理使用了 https://github.com/getActivity/XXPermissions 工具库
+
+如果开发者使用了相同依赖，可能打包冲突。需要修改为 complileOnly 或者 修改为本章节内置API
+
+
+
+##### 4.4.1 requestSystemPermission
 
 请求系统权限,对应的两个参数：
 1  请求的权限列表
@@ -875,7 +881,7 @@ UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!,permissionWifi,f
 	})
 ```
 
-##### gotoSystemPermissionActivity
+##### 4.4.2 gotoSystemPermissionActivity
 
 跳转至系统设置权限设置界面，一般是用户选择了不再继续询问选项后
 
@@ -885,7 +891,7 @@ UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!!,permission
 ```
 
 
-##### getSystemPermissionDenied
+##### 4.4.3 getSystemPermissionDenied
 
 判断权限是否已经被用户禁止
 
@@ -896,7 +902,7 @@ val denied = UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!!,
 [android.permission.ACCESS_FINE_LOCATION, android.permission.ACCESS_FINE_LOCATION]
 ```
 
-##### checkSystemPermissionGranted
+##### 4.4.4 checkSystemPermissionGranted
 
 判断权限是否已经被用户授予
 

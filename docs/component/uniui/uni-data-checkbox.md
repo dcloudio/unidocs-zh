@@ -168,7 +168,7 @@
 ```vue
 <template>
 	<view>
-		<uni-data-checkbox　selectedColor＝"red" selectedTextColor="red" multiple v-model="value" :localdata="range" @change="change"></uni-data-checkbox>
+		<uni-data-checkbox　selectedColor="red" selectedTextColor="red" multiple v-model="value" :localdata="range" @change="change"></uni-data-checkbox>
 	</view>
 </template>
 

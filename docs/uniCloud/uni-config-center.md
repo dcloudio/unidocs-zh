@@ -2,7 +2,7 @@
 
 `uni-config-center`插件的下载地址：[https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
 
-# 需求背景
+## 需求背景
 
 实际开发中很多插件/云函数/公共模块需要配置文件才可以正常运行，比如各种appkey、secret。存放在数据库里的话，拖累云函数性能，并且增加数据库请求。如果每个都单独进行配置的话就会产生下面这样的目录结构。
 
@@ -39,7 +39,7 @@ cloudfunctions
 ```
 
 
-# 用法
+## 用法
 
 :::warning 注意
 如果你只是使用别人提供的插件要在uni-config-center内放配置文件，则无需关注下面的内容。只要按照插件作者约定的插件配置目录存放你的配置文件即可

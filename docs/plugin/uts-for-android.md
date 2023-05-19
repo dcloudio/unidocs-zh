@@ -1230,9 +1230,6 @@ import R from 'io.dcloud.uni_modules.uts_nativepage.R';
 
 
 
-在 uni-app 1.0 平台，js环境与原生环境的交互都是经过js引擎桥接
-
-
 ## 7  已知待解决问题(持续更新)
 
 ### 7.1 结构入参 boolean 参数默认为true

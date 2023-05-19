@@ -266,7 +266,7 @@ DCloud在[uni-im](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)和[uni-cms]
 
 **tokensToGenerate参数说明**
 
-tokensToGenerate指生成的token数量限制，即返回的文本对应的token数量不能超过此值。注意这个值不是总token。此参数名称后续可能改名。
+tokensToGenerate指生成的token数量限制，即返回的文本对应的token数量不能超过此值。注意这个值不是总token。
 
 注意此值和传入messages对应的token数量，两者相加不可大于4096。如果messages对应的token数为1024，当传递的tokensToGenerate参数大于（4096-1024）时接口会抛出错误。
 

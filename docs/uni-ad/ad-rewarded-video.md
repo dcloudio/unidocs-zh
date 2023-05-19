@@ -6,7 +6,7 @@
 
 手机用户观看几十秒视频广告，在广告播放完毕后可获得应用开发商提供的奖励，而应用开发商则可以从广告平台获取不菲的广告收入。
 
-<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/ad-rewarded-video.x265.mp4" style="max-width: 100%; max-height: 70vh;"></video>
+<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/ad-rewarded-video.x265.mp4" style="max-width: 100%; max-height: 50vh;"></video>
 
 与开屏、信息流等广告变现方式不同，激励视频需设计激励场景，给用户发放激励。
 

@@ -3,8 +3,7 @@
 `uni-config-center`插件的下载地址：[https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
 The download address of the `uni-config-center` plugin: [https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
 
-# 需求背景
-# Requirement background
+## 需求背景
 
 实际开发中很多插件/云函数/公共模块需要配置文件才可以正常运行，比如各种appkey、secret。存放在数据库里的话，拖累云函数性能，并且增加数据库请求。如果每个都单独进行配置的话就会产生下面这样的目录结构。
 In actual development, many plug-ins/cloud functions/public modules require configuration files to run normally, such as various appkeys and secrets. If it is stored in the database, it will drag down the performance of cloud functions and increase database requests. If each is configured separately, it will produce the following directory structure.
@@ -48,8 +47,11 @@ cloudfunctions
 ```
 
 
-# 用法
-# usage
+## 用法
+
+:::warning 注意
+如果你只是使用别人提供的插件要在uni-config-center内放配置文件，则无需关注下面的内容。只要按照插件作者约定的插件配置目录存放你的配置文件即可
+:::
 
 ## 导入和创建配置
 ## Import and create configuration
@@ -57,24 +59,10 @@ cloudfunctions
 例如，在云函数`cf2`内使用`uni-config-center`，步骤如下：
 For example, to use `uni-config-center` inside the cloud function `cf2`, the steps are as follows:
 
-1. 导入`uni-config-center`公共模块到项目内
-1. Import the `uni-config-center` public module into the project
-> 存放路径是 uniCloud/cloudfunctions/common/uni-config-center。
-> The storage path is uniCloud/cloudfunctions/common/uni-config-center.
-> 一般uniCloud项目创建时会自动导入这个基础插件，如项目没有该插件，请在插件市场下载[https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
-> Generally, this basic plug-in will be automatically imported when the uniCloud project is created. If the project does not have this plug-in, please download it from the plug-in market [https://ext.dcloud.net.cn/plugin?id=4425](https://ext. dcloud.net.cn/plugin?id=4425)
-2. 给云函数添加公共模块依赖
-2. Add public module dependencies to cloud functions
-> 在云函数`cf2`上右键选择`管理公共模块依赖`，弹窗中勾选`uni-config-center`公共模块
-> Right-click on the cloud function `cf2`, select `Manage public module dependencies`, and check the `uni-config-center` public module in the pop-up window
-3. 新建插件配置目录
-3. Create a new plugin configuration directory
-> 在`cloudfunctions/common/uni-config-center`目录新建插件配置目录，在本示例中我们使用`share-config`作为插件配置目录名（uni-config-center下不同的配置，被称为**插件配置**。这个插件的概念容易和插件市场的插件混淆，请注意区分）
-> Create a new plugin configuration directory in the `cloudfunctions/common/uni-config-center` directory. In this example, we use `share-config` as the plugin configuration directory name (different configurations under uni-config-center are called * *Plugin configuration**. The concept of this plugin is easily confused with plugins in the plugin market, please pay attention to the distinction)
-4. 新建插件配置文件
-4. Create a new plugin configuration file
-> 在上一步创建的`share-config`目录下创建配置文件`config.json`（这个文件的名称不能自定义），在`config.json`里编写基于json的配置内容。
-> Create a configuration file `config.json` in the `share-config` directory created in the previous step (the name of this file cannot be customized), and write json-based configuration content in `config.json`.
+1. 导入`uni-config-center`公共模块到项目内，存放路径是 uniCloud/cloudfunctions/common/uni-config-center。一般uniCloud项目创建时会自动导入这个基础插件，如项目没有该插件，请在插件市场下载[https://ext.dcloud.net.cn/plugin?id=4425](https://ext.dcloud.net.cn/plugin?id=4425)
+2. 给云函数添加公共模块依赖，在云函数`cf2`上右键选择`管理公共模块依赖`，弹窗中勾选`uni-config-center`公共模块
+3. 新建插件配置目录，在`cloudfunctions/common/uni-config-center`目录新建插件配置目录，在本示例中我们使用`share-config`作为插件配置目录名（uni-config-center下不同的配置，被称为**插件配置**。这个插件的概念容易和插件市场的插件混淆，请注意区分）
+4. 新建插件配置文件，在上一步创建的`share-config`目录下创建配置文件`config.json`（这个文件的名称不能自定义），在`config.json`里编写基于json的配置内容。
 
 至此多云函数/公共模块共享的配置就创建完成了，目录结构如下
 So far, the shared configuration of multi-cloud functions/public modules has been created, and the directory structure is as follows

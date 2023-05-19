@@ -765,50 +765,6 @@ exports.main = async (event, context) => {
 
 详细的安全方案，请仔细阅读[uni安全专题](/tutorial/safe.md)
 
-### manifest 配置@manifest
-
-注： `Sigmob`属于小型广告联盟，收益偏低。如有条件，还需开通优量汇，快手等广告渠道以便提高收益。
-
-`Sigmob`暂不支持打包界面的勾选，如集成需进行如下的配置变动：
-
-`Sigmob`打包需要将`HBuilderX`升级到`3.2.0`以上版本。
-
-打开 `manifest.json` 文件，点击 “源码视图”，`uni-app` 在 `app-plus->distribute->sdkConfigs` 下添加如下内容，`5+ app` 在 `plus->distribute->plugins` 下添加如下内容：
-
-```json
-{
-	"app-plus": {
-		"distribute": {
-			"sdkConfigs": {
-				"ad" : {
-				  "sigmob" : {}
-				}
-			}
-		}
-	}
-}
-```
-
-**注意：如果已经存在ad节点，只需要在后面追加即可，如下**
-
-```json
-{
-	"app-plus": {
-		"distribute": {
-			"sdkConfigs": {
-				"ad" : {
-				  "gdt" : {},
-				  "csj" : {},
-				  "ks" : {},
-				  "ks-content" : {},
-				  "sigmob" : {}
-				}
-			}
-		}
-	}
-}
-```
-
 
 ### 阿里云云函数费用说明@aliyun-cf-fee
 

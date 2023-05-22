@@ -27,7 +27,7 @@ Get device settings
 |locationError|String|App端：Android平台不返回此属性；iOS平台模块配置错误时返回字符串，否则不返回此属性。详情见下|
 |locationError|String|App: Android platform does not return this property; iOS platform module configuration error returns a string, otherwise this property is not returned. See below for details|
 |wifiEnabled|boolean|Wi-Fi 的系统开关|
-|wifiEnabled|boolean|System switch for Wi-Fi|
+|wifiError|String|App端：Android平台没有权限时返回此属性；iOS平台不返回此属性；。详情见下|
 |deviceOrientation|string|设备方向。`竖屏：portrait`，`横屏：landscape`|
 |deviceOrientation|string|Device orientation. `Portrait: portrait`, `Landscape: landscape`|
 
@@ -41,7 +41,9 @@ Get device settings
   - Android平台不会返回此值；
   - The Android platform does not return this value;
   - iOS平台值为 `"Missing geolocation module in manifest.json"` 表示没有在 `manifest.json -> App模块配置` 中配置 `Geolocation(定位)` 模块
-  - The value of `"Missing geolocation module in manifest.json"` on iOS platform means that the `Geolocation(location)` module is not configured in `manifest.json -> App module configuration`
+- `wifiError`
+  - Android平台值为 `"Missing permissions required by WifiManager.isWifiEnabled: android.permission.ACCESS_WIFI_STATE"` 表示没有 `android.permission.ACCESS_WIFI_STATE` 权限
+  - iOS平台不会返回此值；
 
 **示例**
 **Example**

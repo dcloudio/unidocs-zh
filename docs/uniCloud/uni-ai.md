@@ -125,7 +125,7 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 
 |参数		|类型	|必填	|默认值	|说明																																	|
 |---		|---	|---	|---	|---																																	|
-|provider	|string	|否		|-		|llm服务商，目前支持`openai`、`baidu`、`minimax`。不指定时由uni-ai自动分配																|
+|provider	|string	|否		|-		|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（新增于HBuilderX 3.8.3）。不指定时由uni-ai自动分配																|
 |apiKey		|string	|否		|-		|llm服务商的apiKey，如不填则使用uni-ai的key。如指定openai和baidu则必填																			|
 |accessToken|string	|否		|-		|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)	|
 |proxy		|string	|否		|-		|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填													|
@@ -164,15 +164,16 @@ const openai = uniCloud.ai.getLLMManager({
 
 **参数说明ChatCompletionOptions**
 
-|参数				|类型	|必填	|默认值				|说明																													|兼容性说明					|
-|---				|---	|---	|---				|---																													|---						|
-|messages			|array	|是		| -					|提问信息																												|							|
-|model				|string	|否		|默认值见下方说明	|模型名称。每个AI Provider有多个model，见下方说明																		|百度文心一言不支持此参数	|
-|~~maxTokens~~		|number	|否		|-					|【已废弃，请使用tokensToGenerate替代】生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096	|百度文心一言不支持此参数	|
-|tokensToGenerate	|number	|否		|默认值见下方说明	|生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096										|百度文心一言不支持此参数	|
-|temperature		|number	|否		|1					|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个					|百度文心一言不支持此参数	|
-|topP				|number	|否		|1					|采样方法，数值越小结果确定性越强；数值越大，结果越随机																	|百度文心一言不支持此参数	|
-|stream				|boolean|否		|false				|是否使用流式响应，见下方[流式响应](#chat-completion-stream)章节														|百度文心一言不支持此参数	|
+|参数							|类型		|必填			|默认值						|说明																																																										|兼容性说明								|
+|---							|---		|---			|---							|---																																																										|---											|
+|messages					|array	|是				| -								|提问信息																																																								|													|
+|model						|string	|否				|默认值见下方说明	|模型名称。每个AI Provider有多个model，见下方说明																																				|baidu、azure不支持此参数	|
+|deploymentId			|string	|azure必填|-								|azure模型部署id																																																				|baidu不支持此参数				|
+|~~maxTokens~~		|number	|否				|-								|【已废弃，请使用tokensToGenerate替代】生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096	|baidu不支持此参数				|
+|tokensToGenerate	|number	|否				|默认值见下方说明	|生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096																				|baidu不支持此参数				|
+|temperature			|number	|否				|1								|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个										|baidu不支持此参数				|
+|topP							|number	|否				|1								|采样方法，数值越小结果确定性越强；数值越大，结果越随机																																	|baidu不支持此参数				|
+|stream						|boolean|否				|false						|是否使用流式响应，见下方[流式响应](#chat-completion-stream)章节																												|baidu不支持此参数				|
 
 **messages参数说明**
 
@@ -263,6 +264,8 @@ DCloud在[uni-im](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)和[uni-cms]
 |---	|---			|---																						|
 |openai	|chatCompletion	|gpt-4、gpt-4-0314、gpt-4-32k、gpt-4-32k-0314、gpt-3.5-turbo（默认值）、gpt-3.5-turbo-0301	|
 |minimax|chatCompletion	|abab4-chat、abab5-chat（默认值）															|
+
+azure仅需要填写deploymentId不需要填写模型名称
 
 **tokensToGenerate参数说明**
 

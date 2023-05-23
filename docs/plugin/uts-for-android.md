@@ -101,6 +101,23 @@ onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableL
 
 ```
 
+#### 举例三：`String[]`
+
+部分三方sdk 使用java开发，要求继承/实现的方法参数为 string[]类型，这种情况比较特殊，需要将kotlin.Array先进行别名声明，再继续使用
+
+```uts
+import kotlin.Array as KotlinArray;
+
+
+class XXX{
+ 	override onCaptureFinish(p0: KotlinArray<string>){
+		// do sth
+	};
+}
+
+```
+
+
 ### 2.4 线程环境差异
 
 UTS环境中，默认是没有线程概念的。 代码默认执行在uts 单独的线程池中。

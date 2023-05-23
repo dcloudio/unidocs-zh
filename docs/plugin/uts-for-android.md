@@ -202,6 +202,19 @@ uts-nativepage  ->  uts.sdk.modules.utsNativepage
 
 除了这里列出的layout、values目录外，还支持anim等所有android标准资源目录
 
+
+需要注意的是：如果res资源中使用了 android appcompat库内置的资源，需要在config.json中添加下面的配置：
+
+```json
+{
+	"dependencies": [
+		"androidx.appcompat:appcompat:1.0.0"
+	]
+}
+
+
+```
+
 ### 3.3 配置asset资源
 
 以hello UTS中的uts-advance插件为例。

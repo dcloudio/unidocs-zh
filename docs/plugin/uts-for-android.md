@@ -259,6 +259,19 @@ Example file location in hello uts:
 除了这里列出的layout、values目录外，还支持anim等所有android标准资源目录
 In addition to the layout and values directories listed here, it also supports all android standard resource directories such as anim
 
+
+需要注意的是：如果res资源中使用了 android appcompat库内置的资源，需要在config.json中添加下面的配置：
+
+```json
+{
+	"dependencies": [
+		"androidx.appcompat:appcompat:1.0.0"
+	]
+}
+
+
+```
+
 ### 3.3 配置asset资源
 ### 3.3 Configuring asset resources
 

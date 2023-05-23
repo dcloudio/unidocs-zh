@@ -153,8 +153,8 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 |属性|类型|默认值|描述|平台差异说明|
 |Properties|Type|Default Value|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-|
-|navigationBarBackgroundColor|HexColor|#F7F7F7|导航栏背景颜色（同状态栏背景色）|APP与H5为#F7F7F7，小程序平台请参考相应小程序文档|
-|navigationBarTextStyle|String|white|导航栏标题颜色及状态栏前景颜色，仅支持 black/white|支付宝小程序不支持，请使用 [my.setNavigationBar](https://opendocs.alipay.com/mini/api/xwq8e6)|
+|navigationBarBackgroundColor|HexColor|#F8F8F8|导航栏背景颜色（同状态栏背景色）|APP与H5为#F8F8F8，小程序平台请参考相应小程序文档|
+|navigationBarTextStyle|String|black|导航栏标题颜色及状态栏前景颜色，仅支持 black/white|支付宝小程序不支持，请使用 [my.setNavigationBar](https://opendocs.alipay.com/mini/api/xwq8e6)|
 |navigationBarTitleText|String||导航栏标题文字内容||
 | navigationBarTitleText| String||Navigation bar title text||
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
@@ -417,8 +417,8 @@ The configuration items in the page will override the same configuration items i
 |属性|类型|默认值|描述|平台差异说明|
 |Properties|Type|Default Value|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-|
-|navigationBarBackgroundColor|HexColor|#F7F7F7|导航栏背景颜色（同状态栏背景色）|APP与H5为#F7F7F7，小程序平台请参考相应小程序文档|
-|navigationBarTextStyle|String|white|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
+|navigationBarBackgroundColor|HexColor|#F8F8F8|导航栏背景颜色（同状态栏背景色）|APP与H5为#F8F8F8，小程序平台请参考相应小程序文档|
+|navigationBarTextStyle|String|black|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
 |navigationBarTitleText|String||导航栏标题文字内容||
 | navigationBarTitleText| String||Navigation bar title text||
 |navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)||

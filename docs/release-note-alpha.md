@@ -1,3 +1,17 @@
+#### 3.8.3.20230523-alpha
+* 【uni-app】
+* App平台 修复 nvue 页面 switch 组件配置 type="checkbox" 后点击报错的Bug [详情](https://ask.dcloud.net.cn/question/168894)
+* uni-ad 管理后台页面调整，调整App的基础广告、增强广告的分类概念 [详见](https://uniapp.dcloud.net.cn/uni-ad/release.html)
+* App平台、Web平台 优化 navigationBarBackgroundColor、navigationBarTextStyle 默认值 [详情](https://uniapp.dcloud.net.cn/collocation/pages.html#globalstyle)
+* 【uniCloud】
+* 新增 uni-ai 微软azure openai chatCompletion接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager)
+* 修复 jql语法 部分请求执行缓慢的Bug [详情](https://ask.dcloud.net.cn/question/170035)
+* 【App插件(含5+App和uni-app的App端)】
+* 更新 uni-AD SDK，对接618预算，其中优量汇SDK Android为 4.530.1400 版；iOS为 4.14.30 版；穿山甲SDK iOS为 5.4.0.0 版；穿山甲GroMore广告SDK iOS为 5.1.7.0 版；快手广告SDK iOS为 3.3.44 版；Sigmob广告联盟SDK Android为 4.12.1 版，iOS为 4.9.0 版；百度百青藤广告SDK Android为 9.29 版，iOS为 5.14 版
+* Android平台 更新 友盟统计SDK为 9.6.1 版，适配华为应用市场审核政策调整
+* iOS平台 更新 UniPush 使用的个推SDK为 2.7.4.2 版，解决默认获取定位权限的Bug
+* iOS平台 更新 一键登录使用的个验SDK为 3.0.4.1 版
+
 #### 3.8.2.20230511-alpha
 * 【uni-app】
 * uts插件 App-Android平台 新增 UTSAndroid.requestSystemPermission 申请系统权限 [详情](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#requestsystempermission)

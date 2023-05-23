@@ -81,6 +81,8 @@ iOS平台云端打包相关配置
         "enable": false
     },
     "app-plus": {
+        "allowsInlineMediaPlayback":"true|false",  //可选，是否允许video标签非全屏播放 （仅iOS生效）  
+        "mediaPlaybackRequiresUserAction":"true|false", //可选，可通过此属性配置h5中的音频是否自动播放，注意当设置为false时开启自动播放，默认为true（仅iOS生效 HX3.0.1 + 版本支持）
         "nvueCompiler": "weex",         //可选，字符串类型，nvue页面编译模式，可取值uni-app、weex，参考：https://ask.dcloud.net.cn/article/36074
         "nvueStyleCompiler": "weex",    //可选，字符串类型，nvue页面样式编译模式，可取值uni-app、weex，参考：https://ask.dcloud.net.cn/article/38751
         "renderer": "native",           //可选，字符串类型，可不加载基于 webview 的运行框架，可取值native

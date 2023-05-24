@@ -1634,7 +1634,7 @@ this.$refs.uniPay.createOrder({
 **云对象接口形式**
 
 ```js
-await uniIdCo.createOrder({
+await uniPayCo.createOrder({
   provider: "wxpay", // 支付供应商
   total_fee: 1, // 支付金额，单位分 100 = 1元
 	type: "recharge", // 支付回调类型
@@ -1711,7 +1711,7 @@ await this.$refs.uniPay.getOrder({
 **云对象接口形式**
 
 ```js
-await uniIdCo.getOrder({
+await uniPayCo.getOrder({
   out_trade_no: "2022102701100010100101001", // 插件支付单号
   await_notify: true, // 是否需要等待异步通知执行完成，若为了响应速度，可以设置为false，若需要等待异步回调执行完成，则设置为true
 });
@@ -1763,7 +1763,7 @@ await this.$refs.uniPay.refund({
 **云对象接口形式**
 
 ```js
-await uniIdCo.refund({
+await uniPayCo.refund({
   out_trade_no: "2022102701100010100101001", // 插件支付单号
 });
 ```
@@ -1796,7 +1796,7 @@ await this.$refs.uniPay.getRefund({
 **云对象接口形式**
 
 ```js
-await uniIdCo.getRefund({
+await uniPayCo.getRefund({
   out_trade_no: "2022102701100010100101001", // 插件支付单号
 });
 ```
@@ -1838,7 +1838,7 @@ await this.$refs.uniPay.closeOrder({
 **云对象接口形式**
 
 ```js
-await uniIdCo.closeOrder({
+await uniPayCo.closeOrder({
   out_trade_no: "2022102701100010100101001", // 插件支付单号
 });
 ```
@@ -1868,7 +1868,7 @@ await this.$refs.uniPay.getPayProviderFromCloud();
 **云对象接口形式**
 
 ```js
-await uniIdCo.getPayProviderFromCloud();
+await uniPayCo.getPayProviderFromCloud();
 ```
 
 **参数说明**
@@ -1894,7 +1894,7 @@ await this.$refs.uniPay.getProviderAppId({
 
 **云对象接口形式**
 ```js
-await uniIdCo.getProviderAppId({
+await uniPayCo.getProviderAppId({
   provider: "wxpay",
   provider_pay_type: "jsapi",
 });
@@ -1931,7 +1931,7 @@ await this.$refs.uniPay.getOpenid({
 **云对象接口形式**
 
 ```js
-await uniIdCo.getOpenid({
+await uniPayCo.getOpenid({
   provider: "wxpay",
   code: options.code
 });

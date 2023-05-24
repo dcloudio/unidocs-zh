@@ -35,7 +35,7 @@
 | earnedScore							| object	| -		| 配置积分的获取策略																																																								|
 | &nbsp;&nbsp;&#124;-&nbsp;ad			| Number	| 3		| 观看1次广告可获得的积分数量																																																	|
 | &nbsp;&nbsp;&#124;-&nbsp;price		| Number	| 3		| 支付1元可获得的积分数量(暂未支持)																																																|
-| chatCompletionOptions					| Object	| -		| 支持配置：`model`,`tokensToGenerate`（默认值：512）,`temperature`,`topP` </br> 详情查看：[https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion)|
+| chatCompletionOptions					| Object	| -		| 支持配置：`model`,`deploymentId`,`tokensToGenerate`（默认值：512）,`temperature`,`topP` </br> 详情查看：[https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion)|
 | llm									| Object	| -		| 大语言模型配置，详情查看：[https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager)															|
 
 这里内置的内容安全是基于`uni-sec-check`插件，它是免费的，但有一些限制条件，请务必阅读该插件的文档：[https://uniapp.dcloud.net.cn/uniCloud/uni-sec-check.html](uni-sec-check.md)。

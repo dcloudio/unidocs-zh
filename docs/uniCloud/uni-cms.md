@@ -115,6 +115,8 @@ uni-cms包括管理端和用户端。
 在插件市场中找到[uni-cms-article](https://ext.dcloud.net.cn/plugin?name=uni-cms-article)，将插件导入至uni-app用户端项目中。
 
 **注意**
+
+- 如果您的项目单独使用`uni-cms-article`，需要在`unCloud/database`目录上点击“创建Schema”来创建`uni-cms-articles`与`uni-cms-categories`表后运行项目。
 - uni-cms-article使用了[clientDB](clientdb.md)，其权限体系依赖[uni-id](uni-id-summary.md)。
 - 如果您的项目需要账户体系，需将`uni-id-pages`插件导入至项目中，要了解`uni-id-pages` [详见](/uniCloud/uni-id-pages.md)。如果您使用了[uni-starter](uni-starter.md)项目，那么其已经内置了 `uni-id-pages`插件。
 
@@ -380,15 +382,11 @@ uni-cms-article                             // uni-cms-article 插件
     │       └── index.js
     └── database                            // 数据库
         ├── db_init.json                    // 数据库初始化配置
-        ├── uni-cms-articles.schema.json    // 文章表
-        ├── uni-cms-categories.schema.json  // 分类表
         └── uni-cms-unlock-record.schema.json   // 内容解锁记录表
 ```
 
 **数据表说明**
 
-- `uni-cms-articles` 文章表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-articles)
-- `uni-cms-categories` 分类表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-categories)
 - `uni-cms-unlock-record` 内容解锁记录表，schema 结构[详见](https://gitee.com/dcloud/opendb/tree/master/collection/uni-cms-unlock-record)
 
 ### schema 扩展说明
@@ -622,7 +620,8 @@ export default {
 
 **其他**
 
-内置的广告为激励视频广告，用户在观看完广告后将会解锁全文，如果需要其他类型的广告，可以自行修改`uni_modules/uni-cms/components/render-article-detail/unlock-content.vue`文件中的代码。
+- 内置的广告为激励视频广告，用户在观看完广告后将会解锁全文，如果需要其他类型的广告，可以自行修改`uni_modules/uni-cms/components/render-article-detail/unlock-content.vue`文件中的代码。
+- 如果暂时不需要广告解锁功能，可以在`uni_modules/uni-cms-article/components/render-article-detail/index.vue`文件中注释或者删除`unlockContent`组件。
 
 ### 内容安全检测@content-security-check
 

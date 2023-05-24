@@ -149,7 +149,6 @@ exports.main = async (event, context) => {
   "passwordSecret": "passwordSecret-demo", // 数据库中password字段是加密存储的，这里的passwordSecret即为加密密码所用的密钥，注意修改为自己的密钥，使用一个较长的字符串即可
   "tokenSecret": "tokenSecret-demo", // 生成token所用的密钥，注意修改为自己的，使用一个较长的字符串即可
   "tokenExpiresIn": 7200, // 全平台token过期时间，未指定过期时间的平台会使用此值
-  "maxTokenLength": 10, // 数据库用户记录token数组的最大长度，默认为10。新增于uni-id-common 1.0.16
   "tokenExpiresThreshold": 3600, // 新增于uni-id 1.1.7版本，checkToken时如果token有效期小于此值且在有效期内则自动获取新token，请注意将新token返回给前端保存，如果不配置此参数则不开启自动获取新token功能
   "bindTokenToDevice": false, // 是否将token和设备绑定，设置为true会进行ua校验，uni-id 3.0.12前默认为true，3.0.12及以后版本默认调整为false
   "passwordErrorLimit": 6, // 密码错误最大重试次数

@@ -127,7 +127,7 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 |---		|---	|---	|---	|---																																	|
 |provider	|string	|否		|-		|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（新增于HBuilderX 3.8.3）。不指定时由uni-ai自动分配																|
 |apiKey		|string	|否		|-		|llm服务商的apiKey，如不填则使用uni-ai的key。如指定openai、azure或baidu作为服务商则必填																			|
-|accessToken|string	|否		|-		|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)	|
+|accessToken|string	|否		|-		|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)，需确保已开通相关接口的调用权限	|
 |proxy		|string	|否		|-		|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填													|
 
 **关于proxy参数的说明**
@@ -438,9 +438,9 @@ const media = uniCloud.ai.getMediaManager({
 
 **style参数说明**
 
-百度v1接口支持的风格：探索无限、古风、二次元、写实风格、浮世绘、low poly 、未来主义、像素风格、概念艺术、赛博朋克、洛丽塔风格、巴洛克风格、超现实主义、水彩画、蒸汽波艺术、油画、卡通画
+百度v1接口（AI作画-基础版）支持的风格：探索无限、古风、二次元、写实风格、浮世绘、low poly 、未来主义、像素风格、概念艺术、赛博朋克、洛丽塔风格、巴洛克风格、超现实主义、水彩画、蒸汽波艺术、油画、卡通画
 
-百度v2接口不支持传风格，如需指定风格可尝试在提示词内指定
+百度v2接口（AI作画-高级版）不支持传风格，如需指定风格可尝试在提示词内指定
 
 **resolution参数说明**
 

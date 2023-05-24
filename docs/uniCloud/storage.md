@@ -730,7 +730,7 @@ let result = await uniCloud.downloadFile({
 
 ## 数据处理
 
-**阿里云**
+### 阿里云@aliyun-data-process
 
 > 阿里云商用版目前仍可使用此功能，但是未来可能会进行计费
 
@@ -753,8 +753,7 @@ let result = await uniCloud.downloadFile({
 
 - 阿里云的云存储暂不支持分目录。阿里云的前端网页托管支持分目录。
 
-**腾讯云**
-
+### 腾讯云@tcb-data-process
 
 使用腾讯云作为服务商时，云存储通过`数据万象`提供图片缩放、图片水印等计算功能。
 

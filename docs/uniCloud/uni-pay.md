@@ -978,6 +978,9 @@ code show as below
 /**
  * 此处建议只改下订单状态，保证能及时返回给第三方支付服务器成功状态
  * 限制4秒内必须执行完全部的异步回调逻辑，建议将消息发送、返佣、业绩结算等业务逻辑异步处理（如用定时任务去处理这些异步逻辑）
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
  */
 module.exports = async (obj) => {
 	let user_order_success = true;
@@ -989,7 +992,9 @@ module.exports = async (obj) => {
 	} = data; // uni-pay-orders 表内的数据均可获取到
 
 	// 此处写你自己的支付成功逻辑开始-----------------------------------------------------------
-	// Write your own payment success logic here to start -------------------------------------- ---------------------
+	
+	// 因为金额total_fee是前端传的，因此有被用户篡改的风险，因此需要判断下total_fee的值是否和你业务订单中的金额一致，如果不一致，直接返回 return false;
+	
 	// 有三种方式
 	// There are three ways
 	// 方式一：直接写数据库操作
@@ -1006,6 +1011,10 @@ module.exports = async (obj) => {
 	return user_order_success;
 };
 ```
+
+#### 特别注意
+
+因为金额 `total_fee` 是前端传的，因此有被用户篡改的风险，因此需要 `判断下total_fee的值是否和你业务订单中的金额一致`，如果不一致，直接返回 `return false`
 
 **注意**
 **Notice**
@@ -1057,6 +1066,9 @@ Take recharging the user's balance as an example, the code is as follows
 /**
  * 此处建议只改下订单状态，保证能及时返回给第三方支付服务器成功状态
  * 限制4秒内必须执行完全部的异步回调逻辑，建议将消息发送、返佣、业绩结算等业务逻辑异步处理（如用定时任务去处理这些异步逻辑）
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
  */
 module.exports = async (obj) => {
 	let user_order_success = true;
@@ -1079,7 +1091,7 @@ module.exports = async (obj) => {
 	// 获取你的业务订单信息
 	let orderRes = await db.collection("你的业务订单表").where({ order_no }).get();
 	let orderInfo = orderRes.data[0];
-	// 给用户充值余额
+	// 给用户充值余额（此处没有判断total_fee是否和你业务订单的金额一致，正常需要判断下，不过如果是充值余额，则直接按用户付款的金额充值也没问题）
 	let res = await db.collection("uni-id-users").doc(orderInfo.user_id).update({
 	  balance: _.inc(total_fee)
 	});
@@ -1108,6 +1120,9 @@ The sample code for calling other cloud functions is as follows
 /**
  * 此处建议只改下订单状态，保证能及时返回给第三方支付服务器成功状态
  * 限制4秒内必须执行完全部的异步回调逻辑，建议将消息发送、返佣、业绩结算等业务逻辑异步处理（如用定时任务去处理这些异步逻辑）
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
  */
 const payCrypto = require('../libs/crypto.js'); // 获取加密服务
 module.exports = async (obj) => {
@@ -1165,6 +1180,9 @@ The sample code for calling other cloud objects is as follows
 /**
  * 此处建议只改下订单状态，保证能及时返回给第三方支付服务器成功状态
  * 限制4秒内必须执行完全部的异步回调逻辑，建议将消息发送、返佣、业绩结算等业务逻辑异步处理（如用定时任务去处理这些异步逻辑）
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
  */
 const payCrypto = require('../libs/crypto.js'); // 获取加密服务
 module.exports = async (obj) => {
@@ -1232,6 +1250,9 @@ const crypto = require("crypto");
 /**
  * 此处建议只改下订单状态，保证能及时返回给第三方支付服务器成功状态
  * 限制4秒内必须执行完全部的异步回调逻辑，建议将消息发送、返佣、业绩结算等业务逻辑异步处理（如用定时任务去处理这些异步逻辑）
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
+ * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
  */
 module.exports = async (obj) => {
 	let user_order_success = true;

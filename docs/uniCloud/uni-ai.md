@@ -126,7 +126,7 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 |参数		|类型	|必填	|默认值	|说明																																	|
 |---		|---	|---	|---	|---																																	|
 |provider	|string	|否		|-		|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（新增于HBuilderX 3.8.3）。不指定时由uni-ai自动分配																|
-|apiKey		|string	|否		|-		|llm服务商的apiKey，如不填则使用uni-ai的key。如指定openai和baidu则必填																			|
+|apiKey		|string	|否		|-		|llm服务商的apiKey，如不填则使用uni-ai的key。如指定openai、azure或baidu作为服务商则必填																			|
 |accessToken|string	|否		|-		|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)	|
 |proxy		|string	|否		|-		|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填													|
 

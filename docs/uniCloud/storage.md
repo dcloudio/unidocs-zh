@@ -992,8 +992,7 @@ After Alibaba Cloud migrates the service space, the old cloud storage url needs 
 ## 数据处理
 ## data processing
 
-**阿里云**
-**Ali Cloud**
+### 阿里云@aliyun-data-process
 
 > 阿里云商用版目前仍可使用此功能，但是未来可能会进行计费
 > Alibaba Cloud Commercial Edition can still use this function, but billing may be performed in the future
@@ -1029,9 +1028,7 @@ If your database and cloud functions use Tencent Cloud, you can also use Alibaba
 - 阿里云的云存储暂不支持分目录。阿里云的前端网页托管支持分目录。
 - Alibaba Cloud's cloud storage does not currently support sub-directories. Alibaba Cloud's front-end web hosting supports sub-directory.
 
-**腾讯云**
-**Tencent Cloud**
-
+### 腾讯云@tcb-data-process
 
 使用腾讯云作为服务商时，云存储通过`数据万象`提供图片缩放、图片水印等计算功能。
 When using Tencent Cloud as a service provider, cloud storage provides image scaling, image watermarking and other computing functions through `Data Vientiane`.

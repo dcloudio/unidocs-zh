@@ -647,7 +647,7 @@ swift中try有以下三种方式:
 try {
 	let dict = UTSiOS.try(JSONSerialization.jsonObject(with = data, options = []))
 }catch (e) {
-	consolo.log(e)
+	console.log(e)
 }
 ```
 2. try?

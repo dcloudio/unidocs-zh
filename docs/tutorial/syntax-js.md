@@ -101,5 +101,6 @@ ES6 API 的支持，详见如下表格部分（`x` 表示不支持，无特殊�
 |Promise||||&nbsp;|
 
 **注意**
-- App端Android支持不依赖Android版本号，即便是Android4.4也是上表数据。因为uni-app的js代码运行在自带的独立jscore中，没有js的浏览器兼容性问题。uni-app的vue页面在Android低端机上只有css浏览器兼容性问题，因为vue页面仍然渲染在webview中，受Android版本影响，太新的css语法在低版本不支持。
+- App端Android平台，JS脚本运行在独立的V8引擎，支持语法与Android系统版本无关，即便是Android4.4也支持上表数据。uni-app的vue页面在Android低端机上只有css浏览器兼容性问题，因为vue页面仍然渲染在webview中，受Android版本影响，太新的css语法在低版本不支持。
+- App端iOS平台，JS脚本运行在iOS操作系统提供的JavaScriptCore 引擎，兼容性与Safari on iOS一致。
 - 默认不需要在微信工具里继续开启es6转换。但如果用了微信的wxml自定义组件（wxcomponents目录下），uni-app编译器并不会处理这些文件中的es6代码，需要去微信工具里开启转换。从HBuilderX调起微信工具时，如果发现工程下有wxcomponents目录会自动配置微信工程打开es6转换。

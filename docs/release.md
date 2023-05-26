@@ -1,3 +1,78 @@
+#### 3.8.3.20230526
+* 【uniCloud】
+* 新增 uni-ai 微软azure openai接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager)
+* 新增 uni-ai 新增文字生成图片接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#ai-media)
+* 修复 jql语法 部分请求执行缓慢的Bug [详情](https://ask.dcloud.net.cn/question/170035)
+* 【uni-app】
+* 新增 uni.addInterceptor 回调增加第二个参数 params [详情](https://ask.dcloud.net.cn/question/129195)
+* App平台、Web平台 优化 socket 连接 onClose 事件信息增加 code、reason 属性
+* App平台、Web平台 优化 navigationBarBackgroundColor、navigationBarTextStyle 默认值 [详情](https://uniapp.dcloud.net.cn/collocation/pages.html#globalstyle)
+* App平台 修复 Vue3 项目使用纯 nvue 开发时热重载跳转到首页的Bug [详情](https://ask.dcloud.net.cn/question/164673)
+* App平台 修复 国际化配置新增语言兼容性不佳的Bug [详情](https://ask.dcloud.net.cn/question/165884)
+* App平台 修复 Vue3 项目 nvue 页面配置 flex-direction 默认值无效的Bug [详情](https://ask.dcloud.net.cn/question/165497)
+* App平台 修复 Vue3 项目 picker-view 组件使用 v-if 切换报错的Bug [详情](https://ask.dcloud.net.cn/question/166884)
+* App平台 修复 Vue3 项目 vue 页面 text 组件嵌套 text 组件显示异常的Bug [详情](https://github.com/dcloudio/uni-app/issues/4215)
+* App平台 修复 nvue 页面 switch 组件配置 type="checkbox" 后点击报错的Bug [详情](https://ask.dcloud.net.cn/question/168894)
+* App-Android平台 修复 uni.onSocketClose 监听 WebSocket 关闭时 code 值为 1001 可能不触发回调的Bug
+* App-Android平台 修复 实人认证 progressBarColor 设置为非法颜色值导致应用重启的Bug
+* App-Android平台 修复 nvue 页面中存在特殊字符可能引起崩溃的Bug [详情](https://ask.dcloud.net.cn/question/166447)
+* App-Android平台 修复 nvue 页面在App悬浮窗口模式下可能渲染异常的Bug [详情](https://ask.dcloud.net.cn/question/156014)
+* App-Android平台 修复 nvue text 组件中特殊字符不显示Bug [详情](https://ask.dcloud.net.cn/question/166014)
+* App-Android平台 修复 反复进入退出App偶发 js 进程崩溃的Bug
+* App-Android平台 修复 nvue 页面 map 组件在特定场景未自动回收销毁可能导致黑屏的Bug [详情](https://ask.dcloud.net.cn/question/168133)
+* App-iOS平台 修复 uni.scanCode 扫码后跳转页面可能引起应用卡死的Bug [详情](https://ask.dcloud.net.cn/question/160090)
+* Web平台 修复 浏览器启用隐私模式报错的Bug [详情](https://ask.dcloud.net.cn/question/164775)
+* Web平台 修复 Vue3 项目 script setup 中 onError 无效的Bug [详情](https://ask.dcloud.net.cn/question/164798)
+* Web平台 修复 高德导航目的地名称显示异常的Bug [详情](https://ask.dcloud.net.cn/question/165669)
+* Web平台 修复 高德无定位权限未触发 fail 回调的Bug [详情](https://ask.dcloud.net.cn/question/166298)
+* Web平台 修复 高德地图 callout 排版异常的Bug [详情](https://github.com/dcloudio/uni-app/issues/4230)
+* Web平台 优化 使用 IP 定位时取消坐标系转换 [详情](https://github.com/dcloudio/uni-app/issues/4248)
+* Web平台 修复 Vue3 项目 input 组件使用 v-model 时输入过快失焦的Bug [详情](https://ask.dcloud.net.cn/question/166821)
+* Web平台 修复 Vue3 项目 longpress 事件对象缺少 touches 字段的Bug [详情](https://ask.dcloud.net.cn/question/166956)
+* 小程序平台 优化 Vue2 项目增加 slotMultipleInstance 配置，支持作用域插槽渲染多个实例 [详情](https://github.com/dcloudio/uni-app/issues/3503)
+* 小程序平台 优化 Vue2 项目 v-for 遍历对象时支持 index 参数 [详情](https://ask.dcloud.net.cn/question/163685)
+* 小程序平台 修复 Vue2 项目事件表达式包含多个函数语句时编译后无效的Bug [详情](https://ask.dcloud.net.cn/question/147342)
+* 小程序平台 修复 Vue3 项目页面样式文件编译后缺失的Bug [详情](https://ask.dcloud.net.cn/question/163867)
+* 小程序平台 修复 Vue2 项目使用高版本 CopyWebpackPlugin 时 static 目录条件编译无效的Bug [详情](https://github.com/dcloudio/uni-app/issues/4181)
+* 百度小程序平台、支付宝小程序平台 新增 支持运行到指定页面
+* 微信小程序平台 新增 支持企业小程序 onNFCReadMessage 生命周期 [详情](https://ask.dcloud.net.cn/question/166024)
+* 微信小程序平台 修复 Vue3 项目混合分包部分情况下接口调用报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/4175)
+* 支付宝小程序平台 优化 组件 styleIsolation 默认配置为 apply-shared
+* 支付宝小程序平台 修复 Vue3 项目 page-meta 组件 foot-font-size 属性无效的Bug
+* 字节跳动小程序平台 修复 aweme-data 组件渲染不正常的Bug [详情](https://ask.dcloud.net.cn/question/165295)
+* uni统计2 新增 uniStatPageLog 参数，是否开启页面数据采集，默认为开启
+* uts插件 App-Android平台 修复 console.log 无法输出对象中包含的 any 类型字段的Bug
+* 【重要】新增 uts插件内可支持部分 uni 的 api，如`uni.showModel` [详情](https://uniapp.dcloud.net.cn/plugin/uts-uni-api.html)
+* uts插件 App-Android平台 修复 函数参数不支持 boolean 类型的Bug
+* uts插件 App-iOS平台 修复 console.log 输出 json 对象可能不正确的Bug
+* uts插件 App-Android平台 新增 UTSAndroid.requestSystemPermission 申请系统权限 [详情](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#requestsystempermission)
+* uts插件 App-Android平台 升级 kotlin-stdlib 为 1.8.10 版
+* uts插件 App-Android平台 修复 Math.random() 返回数据精度不足的Bug
+* uts插件 App-Android平台 修复 UTSAndroid.offAppActivityRequestPermissionsResult 传入参数不生效的Bug
+* uni-ad 管理后台页面调整，调整App的基础广告、增强广告的分类概念 [详见](https://uniapp.dcloud.net.cn/uni-ad/release.html)
+* 【App插件(含5+App和uni-app的App端)】
+* 【重要】新增 uni-AD 支持 uniMP激励视频广告，提升CPM、提升填充率 [详情](https://uniapp.dcloud.net.cn/uni-ad.html#unimp)
+* 新增 一键登录支持 isCenterHint 参数设置未勾选服务条款时点击登录按钮的提示信息是否垂直居中显示 [详情](https://uniapp.dcloud.net.cn/univerify.html#%E5%AE%A2%E6%88%B7%E7%AB%AF-%E8%AF%B7%E6%B1%82%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83)
+* 更新 uni-AD SDK，对接618预算，其中优量汇SDK Android为 4.530.1400 版，iOS为 4.14.30 版；穿山甲SDK iOS为 5.4.0.0 版；穿山甲GroMore广告SDK iOS为 5.1.7.0 版；快手广告SDK Andoird为 3.3.44 版，iOS为 3.3.44 版；快手内容联盟SDK Android为 3.3.42 版；Sigmob广告联盟SDK Android为 4.12.1 版，iOS为 4.9.0 版；百度百青藤广告SDK Android为 9.29 版，iOS为 5.14 版
+* Android平台 更新 友盟统计SDK为 9.6.1 版，适配华为应用市场审核政策调整
+* Android平台 更新 UniPush 使用的个推核心组件SDK为 3.2.4.0 版；个推SDK为 3.2.17.0 版；适配华为应用市场审核政策调整
+* Android平台 修复 部分场景下真机运行同步文件失败的Bug [详情](https://ask.dcloud.net.cn/question/169374)
+* Android平台 修复 扫码界面拒绝权限提示文字不支持国际化的Bug [详情](https://ask.dcloud.net.cn/question/169217)
+* Android平台 修复 安全检测可能报`存在数据库注入漏洞`的问题 [详情](https://ask.dcloud.net.cn/question/152576)
+* Android平台 修复 蓝牙设备信息 BluetoothDeviceInfo 的 advertisData 字段可能会丢失数据的Bug [详情](https://ask.dcloud.net.cn/question/165119)
+* Android平台 修复 App切换语言后重启可能出现闪屏的Bug [详情](https://ask.dcloud.net.cn/question/166730)
+* Android平台 修复 某些情况下可能出现软键盘弹出后立即收起的Bug [详情](https://ask.dcloud.net.cn/question/161957)
+* Android平台 修复 plus.navigator.updateSplashscreen 可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/164023)
+* iOS平台 新增 配置 privacyRegisterMode 应用启动时是否获取 idfv，解决应用合规检测可能报同意隐私政策前读取 idfv 的问题 [详情](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#privacyRegisterMode)
+* iOS平台 更新 UniPush 使用的个推SDK为 2.7.4.2 版，解决默认获取定位权限的Bug
+* iOS平台 更新 一键登录使用的个验SDK为 3.0.4.1 版，解决某些情况下会获取本地网络权限可能导致苹果审核被拒的Bug [详情](https://ask.dcloud.net.cn/question/166587)
+* iOS平台 修复 plus.runtime.restart 后苹果应用内支付 IAP 无响应的Bug
+* iOS平台 修复 进入包含视频播放控件 video 页面会打断音乐播放的Bug [详情](https://ask.dcloud.net.cn/question/165329)
+* iOS平台 修复 导航栏 titleNView 设置 splitLine 样式可能显示不正常的Bug [详情](https://ask.dcloud.net.cn/question/164906)
+* iOS平台 修复 从微信中唤起App时 plus.runtime.arguments 获取的参数可能不正确的Bug [详情](https://ask.dcloud.net.cn/question/166211)
+* 【uni小程序SDK】
+* Android平台 修复 releaseWgtToRunPathFromPath 部分场景下可能阻塞的Bug
+
 #### 3.7.11.20230427
 * 【uni-app】
 * 新增 插件市场UTS插件支持发布加密付费类型插件 [详情](https://uniapp.dcloud.net.cn/plugin/publish.html#uts)

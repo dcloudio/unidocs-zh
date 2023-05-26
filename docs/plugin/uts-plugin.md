@@ -496,7 +496,8 @@ getBatteryInfo({
 
 在下一节，我们将更加详细地介绍 前端如何使用这个插件。
 
-注1：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
+注1：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示
+
 注2：`io.dcloud.uts.android`库介绍文档[见下](#iodcloudutsandroid)
 
 特别提示：

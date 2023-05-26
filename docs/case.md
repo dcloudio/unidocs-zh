@@ -290,8 +290,6 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **华为：** 荣耀商城。微信小程序搜索“荣耀亲选商城”、[H5](https://m.qinxuan.honor.cn/)、[App部分栏目使用DCloud SDK](https://appgallery1.huawei.com/#/app/C100382765)
 
-**华为：** [华为大学H5版](https://developer.huaweiuniversity.com/m/)
-
 **字节跳动：** 抖音小游戏中心。
 
 **字节跳动：** 飞书部分页面feishu.cn

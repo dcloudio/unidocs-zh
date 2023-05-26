@@ -407,9 +407,6 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **华为：** 荣耀商城。微信小程序搜索“荣耀亲选商城”、[H5](https://m.qinxuan.honor.cn/)、[App部分栏目使用DCloud SDK](https://appgallery1.huawei.com/#/app/C100382765)
 **Huawei:** Honor Mall. WeChat MiniApp search for "Honor Personal Selection Mall", [H5](https://m.qinxuan.honor.cn/),[Partof the app uses DCloudSDK]( <a href="https://appgallery1.huawei.com/#/app/C100382765">https://appgallery1.huawei.com/#/ app/C100382765</a> )
 
-**华为：** [华为大学H5版](https://developer.huaweiuniversity.com/m/)
-**Huawei:** [Huawei University H5 version](https://developer.huaweiuniversity.com/m/)
-
 **字节跳动：** 抖音小游戏中心。
 **ByteDance:** Douyin mini game center.
 

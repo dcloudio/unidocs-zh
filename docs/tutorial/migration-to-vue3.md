@@ -227,6 +227,14 @@ Component unload lifecycle is renamed in Vue3
 - `beforeDestroy` 修改为 `beforeUnmount`
 - `beforeDestroy` changed to `beforeUnmount`
 
+::: warning created 和 onLoad 生命周期执行顺序
+created为组件生命周期，onLoad为页面生命周期。因此created执行先于onLoad更合理。
+
+Vue3 在实现时 created 先于 onLoad 执行；Vue2 项目由于历史包袱较重不便修改，仅在使用组合式API时与Vue3对齐。
+
+在编写代码时不应依赖 created 和 onLoad 生命周期执行顺序
+:::
+
 ## 事件的适配
 ## Event adaptation
 

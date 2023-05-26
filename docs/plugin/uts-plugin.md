@@ -419,14 +419,85 @@ export function getBatteryCapacity(): string {
 
 ```
 
-`io.dcloud.uts.android`库介绍文档[见下](#iodcloudutsandroid)
 
 至此，我们已经完成一个Android平台上获取电量的原生能力封装。
 
-在下一节，将介绍前端如何使用这个插件。
+我们可以在vue页面中这样使用它：
 
-注：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
+```ts
 
+import getBatteryCapacity from "@/uni_modules/uts-getbatteryinfo";
+console.log(getBatteryCapacity())
+
+```
+
+
+有些场景下，我们期望 将获取电量的能力封装为 异步的接口，我们可以使用下面的代码
+
+```ts
+import Context from "android.content.Context";
+import BatteryManager from "android.os.BatteryManager";
+import { UTSAndroid } from "io.dcloud.uts";
+
+
+type GetBatteryInfoOptions = {
+    success?: (res: object) => void
+    fail?: (res: object) => void
+    complete?: (res: object) => void
+}
+
+export default function getBatteryInfo(options: GetBatteryInfoOptions) {
+    const context = UTSAndroid.getAppContext();
+    if (context != null) {
+        const manager = context.getSystemService(
+            Context.BATTERY_SERVICE
+        ) as BatteryManager;
+        const level = manager.getIntProperty(
+            BatteryManager.BATTERY_PROPERTY_CAPACITY
+        );
+        const res = {
+            errCode: 0,
+            errSubject: "uni-getBatteryInfo",
+            errMsg: "getBatteryInfo:ok",
+            level,
+            isCharging: manager.isCharging()
+        }
+        options.success?.(res)
+        options.complete?.(res)
+    } else {
+        const res = {
+			errCode: 1001,
+			errSubject: "uni-getBatteryInfo",
+            errMsg: 'getBatteryInfo:fail getAppContext is null'
+        }
+        options.fail?.(res)
+        options.complete?.(res)
+    }
+}
+```
+
+
+对应的使用代码需要调整为：
+
+```ts
+import getBatteryInfo from "@/uni_modules/uts-getbatteryinfo";
+
+getBatteryInfo({
+	success(res) {
+		uni.showToast({
+			title: "当前电量：" + res.level + '%',
+			icon: 'none'
+		});
+	}
+})
+
+```
+
+
+在下一节，我们将更加详细地介绍 前端如何使用这个插件。
+
+注1：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示。
+注2：`io.dcloud.uts.android`库介绍文档[见下](#iodcloudutsandroid)
 
 特别提示：
 

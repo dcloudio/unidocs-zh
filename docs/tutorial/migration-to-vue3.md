@@ -188,6 +188,14 @@ export default store;
 - `destroyed` 修改为 `unmounted`
 - `beforeDestroy` 修改为 `beforeUnmount`
 
+::: warning created 和 onLoad 生命周期执行顺序
+created为组件生命周期，onLoad为页面生命周期。因此created执行先于onLoad更合理。
+
+Vue3 在实现时 created 先于 onLoad 执行；Vue2 项目由于历史包袱较重不便修改，仅在使用组合式API时与Vue3对齐。
+
+在编写代码时不应依赖 created 和 onLoad 生命周期执行顺序
+:::
+
 ## 事件的适配
 
 Vue3 现在提供了一个`emits`选项，类似于现有`props`选项。此选项可用于定义组件可以向其父对象发出的事件， [更多](https://v3.cn.vuejs.org/guide/migration/emits-option.html#overview)

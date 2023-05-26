@@ -679,6 +679,26 @@ export default function getBatteryInfo(options: GetBatteryInfoOptions) {
 }
 ```
 
+如果你想以同步接口的方式提供电量信息，代码可调整如下：
+
+```ts
+// index.uts
+
+// 引用 iOS 原生平台 api
+import { UIDevice } from "UIKit";
+
+/**
+ * 导出 获取电量方法 
+ */
+export default function getBatteryLevel():number {
+	// 开启电量检测
+	UIDevice.current.isBatteryMonitoringEnabled = true
+	
+	let level = Number(UIDevice.current.batteryLevel * 100)
+	return level
+}
+```
+
 至此，我们已经完成一个 iOS 平台上获取电量的原生能力封装。
 So far, we have completed a native capability encapsulation for obtaining power on the iOS platform.
 

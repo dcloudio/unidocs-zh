@@ -1241,12 +1241,6 @@ The sample code is as follows
 
 ```js
 'use strict';
-// 引入配置中心模块
-const configCenter = require("uni-config-center");
-// 获取uniPay配置
-const config = configCenter({ pluginId: 'uni-pay' }).requireFile('config.js');
-// 引入crypto模块
-const crypto = require("crypto");
 /**
  * 此处建议只改下订单状态，保证能及时返回给第三方支付服务器成功状态
  * 限制4秒内必须执行完全部的异步回调逻辑，建议将消息发送、返佣、业绩结算等业务逻辑异步处理（如用定时任务去处理这些异步逻辑）
@@ -1254,6 +1248,7 @@ const crypto = require("crypto");
  * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
  * 特别注意：因为金额是前端传的，需要再判断下金额和你业务系统订单中的金额是否一致，如果不一致，直接返回 return false;
  */
+const payCrypto = require('../libs/crypto.js'); // 获取加密服务
 module.exports = async (obj) => {
 	let user_order_success = true;
 	let { data = {} } = obj;
@@ -1270,8 +1265,11 @@ module.exports = async (obj) => {
 	// 方式三：使用 await uniCloud.httpclient.request 调用http接口地址
 	// Method 3: Use await uniCloud.httpclient.request to call the http interface address
 	
-	// 方式三安全模式一（加密）
-	let encrypted = encryptUseAes256Ecb(data); // 获得加密后的内容
+	// 方式三安全模式一（加密）uni-pay的版本需 >= 2.1.0
+	let encrypted = payCrypto.aes.encrypt({
+		mode: "aes-256-ecb",
+		data: data, // 待加密的原文
+	});
 	await uniCloud.httpclient.request("你的服务器接口请求地址", {
 		method: "POST",
 		data: {
@@ -1297,25 +1295,6 @@ module.exports = async (obj) => {
 	return user_order_success;
 };
 
-// aes-256-ecb加密算法
-function encryptUseAes256Ecb(data, key) {
-	if (!key) key = config.notifyKey; // 如果未传密钥，则用配置的密钥（密钥必须是32位的，只能是数字或字母）
-	let paddedData = Buffer.from(JSON.stringify(data));
-	let paddedkey = key;
-	if (paddedkey.length > 32) {
-		paddedkey = paddedkey.substring(0, 32); // 截取前32位密钥
-	}
-	paddedkey = Buffer.from(paddedkey);
-	const cipher = crypto.createCipheriv('aes-256-ecb', paddedkey, '');
-	cipher.setAutoPadding(false);
-	const blockSize = 16; // AES块大小为16字节
-	const paddingSize = blockSize - (paddedData.length % blockSize);
-	const paddingBuffer = Buffer.alloc(paddingSize, paddingSize);
-	paddedData = Buffer.concat([paddedData, paddingBuffer]);
-	let encrypted = cipher.update(paddedData, null, 'base64');
-	encrypted += cipher.final('base64');
-	return encrypted;
-}
 ```
 
 #### java解密示例代码

@@ -1258,6 +1258,12 @@ UTS插件支持使用android的原生资源，比如动画，布局，字符串�
 import R from 'io.dcloud.uni_modules.uts_nativepage.R';
 ```
 
+### 6.10 UTSJSONObject 转 Map 
+
+```
+val extraParam = UTSJSONObject()
+val extraMap = extraParam.toMap()
+```
 
 
 ## 7  已知待解决问题(持续更新)

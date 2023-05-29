@@ -391,10 +391,12 @@ const uniIdCo = uniCloud.importObject('uni-id-co')
 |params|API接口参数字段|
 
 如果是在 uni-app 之外的应用中调用 URL 化接口，请确保clientInfo中存在以下字段:
-|字段|说明|
-|--|--|
-|uniPlatform|应用运行平台，与条件编译平台相同。[详见](/api/system/info.md#uniplatform)|
-|appId|manifest 中应用appid，即DCloud appid。如没有请手动指定一个，需确保唯一性。|
+
+| 字段          | 说明                                                               |
+|-------------|------------------------------------------------------------------|
+| uniPlatform | 应用运行平台，与条件编译平台相同。[详见](/api/system/info.md#uniplatform)           |
+| appId       | manifest 中应用appid，即DCloud appid。如没有请手动指定一个，需确保唯一性。               |
+| deviceId    | 设备 id；通过[uni.getSystemInfo](/api/system/info.md#getsysteminfo)获取 |
 
 假设已在uniCloud 控制台已设置URL化域名PATH，以PATH为`/http/uni-id-co`为例，演示登录示例：
 

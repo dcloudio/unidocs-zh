@@ -15,7 +15,7 @@ uni-cms包括管理端和用户端。
 
 客户端插件之所以起名为 uni-cms-article 。是因为未来可能还会拓展 uni-cms-image、uni-cms-video 等插件，实现对富媒体内容的管理。
 
-需求建议、bug反馈请点击加入[uni-cms交流群]反馈与交流。
+需求建议、bug反馈请点击加入[uni-cms交流群](https://im.dcloud.net.cn/#/?joinGroup=646f00f2ccc1c16acbc002e1)反馈与交流。
 
 ## 产品亮点
 

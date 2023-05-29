@@ -515,14 +515,12 @@ field description
 | params| API interface parameter field|
 
 如果是在 uni-app 之外的应用中调用 URL 化接口，请确保clientInfo中存在以下字段:
-If the URLized interface is called in an application other than uni-app, please ensure that the following fields exist in clientInfo:
-|字段|说明|
-|Field|Description|
-|--|--|
-|uniPlatform|应用运行平台，与条件编译平台相同。[详见](/api/system/info.md#uniplatform)|
-| uniPlatform|Application running platform, same as conditional compilation platform. [See details](/api/system/info.md#uniplatform)|
-|appId|manifest 中应用appid，即DCloud appid。如没有请手动指定一个，需确保唯一性。|
-| appId| The application appid in the manifest, that is, the DCloud appid. If not, please specify one manually to ensure uniqueness. |
+
+| 字段          | 说明                                                               |
+|-------------|------------------------------------------------------------------|
+| uniPlatform | 应用运行平台，与条件编译平台相同。[详见](/api/system/info.md#uniplatform)           |
+| appId       | manifest 中应用appid，即DCloud appid。如没有请手动指定一个，需确保唯一性。               |
+| deviceId    | 设备 id；通过[uni.getSystemInfo](/api/system/info.md#getsysteminfo)获取 |
 
 假设已在uniCloud 控制台已设置URL化域名PATH，以PATH为`/http/uni-id-co`为例，演示登录示例：
 Assuming that the URLized domain name PATH has been set in the uniCloud console, take the PATH as `/http/uni-id-co` as an example to demonstrate the login example:

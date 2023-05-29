@@ -214,55 +214,6 @@ export default {
 </style>
 ```
 
-#### 瀑布流逻辑广告位@waterfall
-
-分层，是一种持续保持最高广告收益的算法。在不同的出价中阶梯向下，遇到高出价则直接播放广告，未遇到则落入下一阶梯询价播放。
-
-此时需要配置多个广告位。
-
-```html
-<template>
-  <view class="content">
-    <ad-rewarded-video :adpid="adpids" :loadnext="true" v-slot:default="{loading, error}" @load="onadload" @close="onadclose" @error="onaderror">
-      <button :disabled="loading" :loading="loading">显示广告</button>
-      <view v-if="error">{{error}}</view>
-    </ad-rewarded-video>
-  </view>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      adpids: ["1507000611", "1507000611", "1507000611", "1507000611"]
-    }
-  },
-  methods: {
-    onadload(e) {
-      console.log('广告数据加载成功');
-    },
-    onadclose(e) {
-      const detail = e.detail
-      // 用户点击了【关闭广告】按钮
-      if (detail && detail.isEnded) {
-        // 正常播放结束
-        console.log("onadclose " + detail.isEnded);
-      } else {
-        // 播放中途退出
-        console.log("onadclose " + detail.isEnded);
-      }
-    },
-    onaderror(e) {
-      // 广告加载失败
-      console.log("onaderror: ", e.detail);
-    }
-  }
-}
-</script>
-```
-
-提示：3.5.1+ 增加了广告并行请求逻辑，优化分层逻辑，提升广告显示速度
-
 
 #### 获取广告商名称
 

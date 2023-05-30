@@ -617,14 +617,14 @@ gpt-4是目前准确性最高的ai，也是最贵的ai。开发者需根据需�
 3. 创建uniCloud云函数  
 
 在项目下uniCloud目录右键，新建云函数  
-<img width="300px" src="https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/uni-ai/20230418213815.jpg"></img>
+<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai/20230418213815.jpg"></img>
 
 - 填写云函数名称，比如`ai-demo`。此云函数需要调用`uni-cloud-ai`扩展库，所以需点击`添加公共模块或扩展库依赖`按钮。
-<img width="500px" src="https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/uni-ai/0D7FE184-19BE-43D2-AFA9-FDC1E1CD719E.png"></img>
+<img width="500px" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai/0D7FE184-19BE-43D2-AFA9-FDC1E1CD719E.png"></img>
 
 - 找到`uni-cloud-ai`勾选，点击确认，创建云函数
 
-<img width="500px" src="https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/uni-ai/CC9889F4-F006-449A-828A-659A31DC2CBD.png"></img>
+<img width="500px" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai/CC9889F4-F006-449A-828A-659A31DC2CBD.png"></img>
 
 4. 云函数中添加如下代码：
 ```js

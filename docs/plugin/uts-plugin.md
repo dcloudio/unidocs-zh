@@ -944,9 +944,13 @@ To sum up, all the capabilities that standard docks do not have, such as new dep
 uts代码暂不支持直接使用标准基座真机运行。与原生插件一样，需要自定义基座才能生效。
 The uts code does not currently support running directly on a standard docking station. Like native plugins, a custom dock is required to work.
 
+### 5.3 debug断点调试
+uts插件支持debug断点调试。
 
-### 5.3 遗留问题
-### 5.3 Legacy issues
+- [Android debug教程](/tutorial/debug/uni-uts-debug.md)
+- [iOS debug教程](/tutorial/debug/uni-uts-debug-ios.md)
+
+### 5.4 遗留问题
 
 截止到HBuilderX 3.6.9 时遗留事项：
 - Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台

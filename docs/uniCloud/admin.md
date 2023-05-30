@@ -76,12 +76,12 @@ uni-admin supports both PC and mobile. The base module is available in full end,
 PC 端如下图：
 The PC side is as shown below:
 
-![pc](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/uni-admin-2.png)
+![pc](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-2.png)
 
 移动端如下图：
 The mobile terminal is as follows:
 
-<img src="http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/uni-admin-3.png" width="375"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-3.png" width="375"/>
 
 
 4. 扩展插件
@@ -315,7 +315,7 @@ For the first use, you can create a super administrator through the link at the 
 > 注意：注册完毕后，建议从登录页面移除该链接
 > Note: After registration, it is recommended to remove this link from the login page
 
-![login](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/uni-admin-1.png)
+![login](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-1.png)
 
 ## 分栏窗体介绍
 ## Column form introduction

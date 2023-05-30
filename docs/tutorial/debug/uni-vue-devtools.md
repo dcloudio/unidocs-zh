@@ -48,12 +48,12 @@ Under the HBuilderX run menu, there is a `Automatically open Vue Devtools` butto
 勾选后，运行到对应平台时会自动开启 Vue Devtools。服务启动后，会自动打开一个弹窗，并显示待连接状态，
 After checking, Vue Devtools will be automatically opened when running to the corresponding platform. After the service starts, it will automatically open a pop-up window and display the pending connection status.
 
-![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/devtools-hx-wait-connecting.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/devtools-hx-wait-connecting.png)
 
 对应平台项目运行后会与该弹窗建立连接。
 After the corresponding platform project runs, a connection will be established with the pop-up window.
 
-![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/devtools-hx-connected.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/devtools-hx-connected.png)
 
 如果您不需要默认开启 Vue Devtools，但在开发过程中临时需要 Devtools 调试，可点击控制台右上角 Vue 图标按钮，
 If you do not need to enable Vue Devtools by default, but temporarily need Devtools debugging during the development process, you can click the Vue icon button in the upper right corner of the console,

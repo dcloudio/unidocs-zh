@@ -274,10 +274,10 @@ let res = await uniSubscribemsg.getSubscribeUserInfo({
 
 进入[微信公众号后台](https://mp.weixin.qq.com) - 点击【模板消息】- 点击【从历史模板库中添加】
 
-![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/350.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/350.png)
 
 ### 如何申请微信小程序订阅消息
 
 进入[微信小程序后台](https://mp.weixin.qq.com) - 点击【订阅消息】- 点击【公共模板库】- 点击【选用】
 
-![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/349.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/349.png)

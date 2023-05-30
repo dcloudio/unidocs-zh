@@ -32,11 +32,11 @@ HBuilderX 运行菜单下针对每个运行平台有一个 `运行时自动打�
 
 勾选后，运行到对应平台时会自动开启 Vue Devtools。服务启动后，会自动打开一个弹窗，并显示待连接状态，
 
-![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/devtools-hx-wait-connecting.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/devtools-hx-wait-connecting.png)
 
 对应平台项目运行后会与该弹窗建立连接。
 
-![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/devtools-hx-connected.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/devtools-hx-connected.png)
 
 如果您不需要默认开启 Vue Devtools，但在开发过程中临时需要 Devtools 调试，可点击控制台右上角 Vue 图标按钮，
 

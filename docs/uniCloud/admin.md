@@ -48,11 +48,11 @@ uni-admin 同时支持 PC 端 和移动端。基础模块是全端可用的，�
 
 PC 端如下图：
 
-![pc](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/uni-admin-2.png)
+![pc](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-2.png)
 
 移动端如下图：
 
-<img src="http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/uni-admin-3.png" width="375"/>
+<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-3.png" width="375"/>
 
 
 4. 扩展插件
@@ -245,7 +245,7 @@ uni-admin的`一键部署`，会自动上传云函数、创建数据库，并将
 
 > 注意：注册完毕后，建议从登录页面移除该链接
 
-![login](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/uni-admin-1.png)
+![login](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-1.png)
 
 ## 分栏窗体介绍
 

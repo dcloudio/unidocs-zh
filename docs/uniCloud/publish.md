@@ -55,7 +55,7 @@ HBuilderX内使用运行菜单运行到小程序时会连接本地调试服务�
 
 如果域名白名单提示 `127.0.0.1` 这个ip没有加入白名单，那代表你点的就是【运行】菜单发布的体验版，请务必点【发行】发布小程序。
 
-![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/wwq/391.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/391.png)
 
 ### Web端使用uniCloud@useinh5
 

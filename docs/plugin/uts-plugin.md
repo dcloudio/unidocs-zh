@@ -757,7 +757,8 @@ getBatteryCapacity()
 总结来说，就是所有 涉及新增依赖/gralde配置/androidManifest.xml/资源 等标准基座不具备的能力时，需要自定义基座
 
 #### iOS平台  
-uts代码暂不支持直接使用标准基座真机运行。与原生插件一样，需要自定义基座才能生效。
+uts插件编译需要XCode环境，因此在mac电脑安装了XCode工具时支持直接使用标准基座真机运行。
+在windows电脑或者mac电脑没有安装XCode工具时，需要提交云端打包生成自定义基座后才能调用uts插件。
 
 ### 5.3 debug断点调试
 uts插件支持debug断点调试。

@@ -940,9 +940,8 @@ Ordinary uts codes can be directly run on a real machine with a standard base. H
 To sum up, all the capabilities that standard docks do not have, such as new dependencies/gralde configuration/androidManifest.xml/resources, require a custom dock
 
 #### iOS平台  
-#### iOS Platform
-uts代码暂不支持直接使用标准基座真机运行。与原生插件一样，需要自定义基座才能生效。
-The uts code does not currently support running directly on a standard docking station. Like native plugins, a custom dock is required to work.
+uts插件编译需要XCode环境，因此在mac电脑安装了XCode工具时支持直接使用标准基座真机运行。
+在windows电脑或者mac电脑没有安装XCode工具时，需要提交云端打包生成自定义基座后才能调用uts插件。
 
 ### 5.3 debug断点调试
 uts插件支持debug断点调试。

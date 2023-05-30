@@ -82,7 +82,7 @@ v1.0.3起提供了商业化能力，与uni-ai对话消耗积分。
 ### 流程概述
 1. 开通广告；在[uni-ad](https://uniad.dcloud.net.cn/)官网点击菜单`广告设置`在应用列表，找到你的应用点击`开通广告`
 2. 创建激励视频广告位；在[应用列表](https://uniad.dcloud.net.cn/list/app)点击`应用详情`再点击`新建广告位`；如下图：广告类型选`激励视频广告`，配置服务器回调，选uni-ai-chat部署的uniCloud服务空间，回调云函数名称选：`reward-video-callback`
-<img width="500px" src="https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/uni-ai-chat/uni-ai-chat-create-adpid.jpg">
+<img width="500px" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/uni-ai-chat-create-adpid.jpg">
 
 	**微信小程序端注意**：
 	- 参考：[uniAD微信小程序广告开通指南](https://ask.dcloud.net.cn/article/39928)开通广告后会自动创建广告位

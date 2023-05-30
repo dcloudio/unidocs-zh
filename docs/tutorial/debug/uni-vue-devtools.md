@@ -43,12 +43,12 @@ Vue devtools provides 2 features:
 HBuilderX 运行菜单下针对每个运行平台有一个 `运行时自动打开 Vue Devtools` 按钮，
 Under the HBuilderX run menu, there is a `Automatically open Vue Devtools` button for each running platform,
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/ad6b4788-9a66-48ef-a211-e34754fd0917.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/devtools-auto-open.png)
 
 勾选后，运行到对应平台时会自动开启 Vue Devtools。服务启动后，会自动打开一个弹窗，并显示待连接状态，
 After checking, Vue Devtools will be automatically opened when running to the corresponding platform. After the service starts, it will automatically open a pop-up window and display the pending connection status.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/devtools-hx-wait-connecting.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/devtools-hx-waiting-connect.png)
 
 对应平台项目运行后会与该弹窗建立连接。
 After the corresponding platform project runs, a connection will be established with the pop-up window.
@@ -58,7 +58,7 @@ After the corresponding platform project runs, a connection will be established 
 如果您不需要默认开启 Vue Devtools，但在开发过程中临时需要 Devtools 调试，可点击控制台右上角 Vue 图标按钮，
 If you do not need to enable Vue Devtools by default, but temporarily need Devtools debugging during the development process, you can click the Vue icon button in the upper right corner of the console,
 
-![](https://f184e7c3-1912-41b2-b81f-435d1b37c7b4.cdn.bspapp.com/VKCEYUGU-f184e7c3-1912-41b2-b81f-435d1b37c7b4/6168453a-e15c-4c4d-8846-6026debce5de.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/devtools-control-panel-icon.png)
 
 此时会以 Devtools 模式重启开发服务。
 This will restart the development service in Devtools mode.
@@ -91,12 +91,12 @@ If you don't use HBuilderX to develop uni-app, you can also use vue devtools via
   服务启动后，会自动在默认浏览器打开一个页面，并显示待连接状态，
   After the service is started, it will automatically open a page in the default browser and display the pending connection status.
 
-  ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-vue-devtools-waiting-connect.png)
+  ![](https://web-assets.dcloud.net.cn/unidoc/zh/devtools-waiting-connect.png)
 
   对应平台项目运行后会与该页面建立连接。
   After the corresponding platform project runs, it will establish a connection with this page.
 
-  ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-vue-devtools-connected.png)
+  ![](https://web-assets.dcloud.net.cn/unidoc/zh/devtools-connected.png)
 
 ### 常见问题
 ### common problem

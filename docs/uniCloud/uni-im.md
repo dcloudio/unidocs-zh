@@ -10,7 +10,7 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 
 案例：
 
-<img width="600px" src="https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/ext/uni-im/20230228110007.jpg"></img>
+<img width="600px" src="https://web-assets.dcloud.net.cn/ext/uni-im/20230228110007.jpg"></img>
 
 如图：在插件市场任意插件详情页面，点击咨询作者按钮，即可看到基于uni-im搭建的客服系统。
 
@@ -84,7 +84,7 @@ uni-im本身并不收费，实际使用中需要依赖uniCloud云服务，会产
 2. 点击`使用HBuilderX导入示例项目`
 3. 对项目根目录uniCloud点右键选择“云服务空间初始化向导”界面按提示部署项目（注意：选择绑定的服务空间，须在uni-push2.0的[web控制台](https://dev.dcloud.net.cn/pages/app/push2/info)关联）
 4. 在HBuilderX控制台，更改`连接本地云函数`为`连接云端云函数`
-<img width="600px" src="https://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/ext/uni-im/20230317211717.jpg"></img>
+<img width="600px" src="https://web-assets.dcloud.net.cn/ext/uni-im/20230317211717.jpg"></img>
 5. `运行项目`到2个不同的浏览器，因为在同一个浏览器打开相同网络地址（ip或者域名）的uni-im项目，socket会相互占线。
 	所以需要使用两个浏览器（或者使用浏览器`打开新的无痕式窗口`功能充当第二个浏览器）分别`注册账号并登录`，
 	到此部署已经结束

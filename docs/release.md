@@ -1,3 +1,11 @@
+#### 3.8.4.20230531
+* 【uni-app】
+* App平台 修复 Vue2 项目在 nvue 页面 style 中使用 border-radius 样式解析不准确的Bug [详情](https://ask.dcloud.net.cn/question/168877)
+* App-Android平台 修复 3.8.3引出的 在部分设备启动可能报`Uncaught SyntaxError: Invalid or unexpected token at __uniappview.html:2`错误引起白屏的Bug [详情](https://ask.dcloud.net.cn/question/170588)
+* 小程序平台 修复 Vue2 项目在模板中使用 JSON.stringify 等全局变量编译报错的Bug [详情](https://ask.dcloud.net.cn/question/170722)
+* 【App插件(含5+App和uni-app的App端)】
+* Android平台 修复 3.8.3引出的 输入框焦点切换可能引起页面显示异常的Bug [详情](https://ask.dcloud.net.cn/question/170689)
+
 #### 3.8.3.20230526
 * 【uniCloud】
 * 新增 uni-ai 微软azure openai接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager)

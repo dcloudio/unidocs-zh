@@ -144,7 +144,7 @@ uts 插件支持依赖三方库，目前支持 framework、xcframework(仅云打
 
 #### 3.4.1 framework依赖库说明
 
-需要将依赖的framework或者xcframework文件存放到插件目录下  `~/utssdk/app-ios/Framework/`路径中
+需要将依赖的framework或者xcframework文件存放到插件目录下  `~/utssdk/app-ios/Frameworks/`路径中
 
 云端打包时会将此目录中所有的依赖库添加到工程中，建议只存放与插件相关的依赖库
 

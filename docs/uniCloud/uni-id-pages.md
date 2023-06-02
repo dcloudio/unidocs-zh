@@ -1945,9 +1945,6 @@ await uniIdCo.setAuthorizedApp({
 #### 注册用户@external-register
 
 外部用户注册，注册成功后，uni-id 返回 uid 与 用户 token ，请务必在自身系统中维护好 uid 与 token。
-|uni-id-nonce|string|是|随机字符串|
-|uni-id-timestamp|string|是|当前时间戳; 单位毫秒|
-|uni-id-signature|string|是|请求鉴权签名; 签名算法见下|
 
 **接口地址**
 
@@ -1967,6 +1964,11 @@ Cache-Control: no-cache
 
 {"externalUid": "test externalUid", "nickname": "张三", "avatar": "xxxxxxx", "gender": 0}
 ```
+
+**注意**
+
+- 使用HTTP方式请求时，请按照[适配URL](#adapter-http)化规范进行请求。
+- 请求时需要携带鉴权签名值，查看[URL化请求鉴权签名计算](#http-reqeust-auth)
 
 **Request Body 说明**
 
@@ -1996,8 +1998,6 @@ Cache-Control: no-cache
 
 外部用户登录，用于获取用户token
 
-该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
-
 **接口地址**
 
 ```js
@@ -2017,12 +2017,18 @@ Cache-Control: no-cache
 {"externalUid": "test externalUid"}
 ```
 
+**注意**
+
+- 使用HTTP方式请求时，请按照[适配URL](#adapter-http)化规范进行请求。
+- 请求时需要携带鉴权签名值，查看[URL化请求鉴权签名计算](#http-reqeust-auth)
+
 **Request Body 说明**
 
 |参数名		|类型				|必填	|说明									|
 |--			|--					|--		|--										|
 |uid		|string				|否		|uni-id体系的用户Id；与externalUid 二选一									|
 |externalUid		|string				|否		|自身系统的用户id；与 uid 二选一									|
+
 
 **Response Body 说明**
 
@@ -2038,8 +2044,6 @@ Cache-Control: no-cache
 #### 修改用户信息@external-update-userinfo
 
 外部用户修改账号信息，如用户在自身系统内修改了用户信息后，通过此接口同步修改uni-id中用户信息。
-
-该接口使用URL方式调用时，需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
 
 **接口地址**
 
@@ -2059,6 +2063,11 @@ Cache-Control: no-cache
 
 {"externalUid": "test externalUid", "nickname": "张三"}
 ```
+
+**注意**
+
+- 使用HTTP方式请求时，请按照[适配URL](#adapter-http)化规范进行请求。
+- 请求时需要携带鉴权签名值，查看[URL化请求鉴权签名计算](#http-reqeust-auth)
 
 **Request Body 说明**
 

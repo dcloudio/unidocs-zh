@@ -1096,7 +1096,7 @@ If you want to customize the base path of the project's running, modify the valu
 
 用户登录逻辑：登录时系统检测没有菜单会提示“暂无权限登录”，需要给新账号绑定角色，角色有菜单方可登录
 
-### admin账号密码忘记了，如何重置admin账号密码？
+### admin账号密码忘记了，如何重置admin账号密码？@resetpassword
 
 有两个方案
 

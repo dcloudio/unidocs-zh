@@ -1906,14 +1906,12 @@ Real-time statistics refer to cloud real-time computing statistical reports. But
 ## 常见问题
 ## common problem
 
-**1. 启动uni统计后，何时可以查看报表数据？**
-**1. After starting uni statistics, when can the report data be viewed? **
+### 1. 启动uni统计后，何时可以查看报表数据？
 
 答：与定时任务配置配置有关，默认`统计首页`、`今日概况`等数据为1小时后可见，其余数据为次日可见。要想详细了解各类型数据统计时间请参考[定时任务配置说明](#定时任务配置说明)。
 A: It is related to the configuration of timed tasks. By default, data such as `Statistics Home` and `Today's Overview` are visible after 1 hour, and the rest of the data are visible the next day. To learn more about the statistical time of various types of data, please refer to [Scheduled Task Configuration Instructions](#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9%85%8D% E7%BD%AE%E8%AF%B4%E6%98%8E).
 
-**2. 已经开启统计，定时任务配置也正常，但是后台还是看不到数据**
-**2. Statistics have been turned on, and the scheduled task configuration is normal, but the data is still not visible in the background**
+### 2. 已经开启统计，定时任务配置也正常，但是后台还是看不到数据
 
 答：
 answer:
@@ -1934,26 +1932,22 @@ answer:
 - 如需看`uni-admin`这个管理端的统计数据，才需要在`uni-admin`工程的`manifest`里配置`uni统计2.0`并再次发行。再次强调不要搞混业务App和admin
 - If you want to see the statistics of the management side of `uni-admin`, you need to configure `uni statistics 2.0` in the `manifest` of the `uni-admin` project and issue it again. Again, don't confuse business App and admin
 
-**3. 如何判断是否需要配置分钟级定时任务？**
-**3. How to determine whether a minute-level scheduled task needs to be configured? **
+### 3. 如何判断是否需要配置分钟级定时任务？
 
 答：一般情况下是不需要自行配置的，但如果`定时任务云函数（uni-stat-cron）`出现运行超时的情况时，就要考虑去开启分钟级定时任务了。
 Answer: Generally, you do not need to configure it yourself, but if the time-out occurs in the `Scheduled Task Cloud Function (uni-stat-cron)`, you should consider enabling the minute-level scheduled task.
 
-**4. 如何创建或授权`uni统计`运营管理员账号**
-**4. How to create or authorize `uni statistics` operation administrator account**
+### 4. 如何创建或授权`uni统计`运营管理员账号
 
 答：参考[uni-admin 给系统创建多个登录账户并设置不同的权限](https://uniapp.dcloud.net.cn/uniCloud/admin.html#mutiladmin)
 A: Refer to [uni-admin creates multiple login accounts for the system and sets different permissions](https://uniapp.dcloud.net.cn/uniCloud/admin.html#mutiladmin)
 
-**5. 为什么总设备数比活跃设备数少？**
-**5. Why is the total device count less than the active device count? **
+### 5. 为什么总设备数比活跃设备数少？
 
 答：总设备数计算公式为：总设备数 = 原设备数 + 新设备数，而判断一个设备是否为新设备的依据是在客户端SDK中是否已储存该设备上次访问某一应用的时间，未存储则认为是该应用的新设备(即lvts=0时为新设备，lvts>0时为老设备)。 因此如果之前某一设备已经访问过某一应用，就算此时清除数据库中的数据，由于已经在客户端SDK中储存该设备上次访问应用的时间（即此时lvts > 0），所以该设备也不会再被认为是该应用的新设备从而不会再被计算进该应用的总设备数中而只会计算进活跃设备数中，此时可能就会出现总设备数小于活跃设备数的情况。
 Answer: The formula for calculating the total number of devices is: total number of devices = number of original devices + number of new devices, and the basis for judging whether a device is a new device is whether the time when the device last accessed an application has been stored in the client SDK If it is not stored, it is considered as a new device of the application (that is, when lvts=0, it is a new device, and when lvts>0, it is an old device). Therefore, if a device has accessed an application before, even if the data in the database is cleared at this time, since the time when the device accessed the application last time has been stored in the client SDK (that is, lvts > 0 at this time), the device It will no longer be considered as a new device of the application, so it will no longer be counted into the total number of devices of the application, but will only be counted into the number of active devices. At this time, the total number of devices may be less than the number of active devices. Condition.
 
-**6. uni-stat-cron运行日志显示 Not Found the cofnig file** 
-**6. The uni-stat-cron log shows Not Found the cofnig file**
+### 6. uni-stat-cron运行日志显示 Not Found the cofnig file
 
 业务App 和 admin 是2个工程。业务App是采集端，admin是报表端；这两个项目均包含`uni-config-center`；如果这两个项目关联（复用）相同的服务空间时，很容易出现`uni-config-center`的互相覆盖问题；此时建议单点维护，方案有2种：
 Business App and admin are 2 projects. The business app is the collection end, and the admin is the report end; both projects contain `uni-config-center`; if these two projects are associated (multiplexed) with the same service space, it is easy to appear `uni-config-center` `The mutual coverage problem; at this time, it is recommended to maintain a single point, there are 2 solutions:
@@ -1961,6 +1955,42 @@ Business App and admin are 2 projects. The business app is the collection end, a
 - Focus on business apps: copy the `uni-stat` folder under `uni-config-center` in the `uni-admin` project to the `uni-config-center` directory under the business app project, and then Just re-upload the `uni-config-center` public module under the business App project.
 - 以`uni-admin`为主：将业务App项目下的`uni-config-center`，手动合并配置项到`uni-admin`项目下的`uni-config-center`中（注意：是手动合并配置项，不要整体覆盖文件），然后重新上传`uni-admin`项目下的`uni-config-center`公共模块即可。
 - Mainly based on `uni-admin`: Manually merge the configuration items under the `uni-config-center` under the business App project into the `uni-config-center` under the `uni-admin` project (Note: manual Merge the configuration items, do not overwrite the file as a whole), and then re-upload the `uni-config-center` public module under the `uni-admin` project.
+
+### 7. 子账号需要赋予哪些表的权限才能正常查看uni统计@permission
+
+首先分三步骤
+
+**第一步：添加用户角色权限**
+
+1. 去权限管理，添加一个权限id为：`READ_UNI_STAT` 的权限
+
+2. 去角色管理，添加一个角色id为：`READ_UNI_STAT` 的角色
+
+3. 去用户管理，赋予子账号角色 `READ_UNI_STAT` 角色
+
+**第二步：给相关的表设置read权限**
+
+涉及表如下：
+
+1. 所有 `uni-stat-` 开头的表
+2. uni-pay-orders
+3. opendb-app-list
+4. opendb-app-versions
+
+需要赋予上面的表的 `read` 权限
+
+将上面的表的 `read` 权限全部设置为
+
+```js
+"permission": {
+	"read": "'READ_UNI_STAT' in auth.permission",
+	"create": false,
+	"update": false,
+	"delete": false
+},
+```
+
+**第三步：前往菜单管理，对每一个uni统计的页面（包含子页面）设置下权限 `READ_UNI_STAT`（菜单只有拥有对应权限才会显示）**
 
 ## 参考资料
 ## References

@@ -1098,6 +1098,16 @@ If you want to customize the base path of the project's running, modify the valu
 
 ### admin账号密码忘记了，如何重置admin账号密码？
 
+有两个方案
+
+**方案一：**
+
+1. 去数据库把原来的admin账号的role角色改成空数组（这样你就可以再次注册admin2账号）
+2. 注册admin2账号，并用admin2账号登录，去用户管理把原先的admin账号的密码重置成123456。
+3. 此时就可以登录原来的admin账号了，最后去数据库把admin2账号删了。
+
+**方案二：**
+
 1. 使用uni-id或uni-id-co注册一个普通的账号，比如账户名：test 密码：123456
 2. 前往uniCloud web控制台 - 云数据库 - 打开uni-id-users表 - 找到刚注册的test账号，复制其password字段的值，修改admin账号的password跟test账号的password一致。
 3. 此时admin账号的密码就已经重置为123456了

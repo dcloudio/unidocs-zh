@@ -1,6 +1,8 @@
 * [pages.json 页面路由](collocation/pages.md)
 * [manifest.json 应用配置](collocation/manifest.md)
   * [App 完整manifest.json](collocation/manifest-app.md)
+* [AndroidManifest.xml](tutorial/app-nativeresource-android.md)
+* [Info.plist](tutorial/app-nativeresource-ios.md)
 * [package.json](collocation/package.md)
 * [vue.config.js](collocation/vue-config.md)
 * [vite.config.js](collocation/vite-config.md)

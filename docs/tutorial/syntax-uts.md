@@ -1253,6 +1253,36 @@ const test = new Test()
 test.test()
 ```
 
+### 数据共享和复用
+
+可以使用 export 语句将变量或函数导出，以便其他模块可以访问和使用它们。导出的变量可以在模块内共享，并在其他模块中导入和复用。
+
+示例
+
+```ts
+/*-----export [global.uts]-----*/
+// 导出变量
+export let count = 1
+// 导出函数
+export function addCount() {
+    count++
+}
+```
+
+```ts
+// module1.uts
+import { count, addCount } from './global.uts'
+console.log(count) // 1
+addCount()
+console.log(count) // 2
+
+// module2.uts
+import { count, addCount } from './global.uts'
+console.log(count) // 2
+```
+
+- 如果只想在不同模块中复用变量而不共享其引用，可以使用函数包装变量来创建独立的作用域。
+
 ## 内置对象和API
 
 uts 有一批内置对象。不管将 uts 编译为 js/kotlin/swfit，这些内置对象都可以跨平台使用。

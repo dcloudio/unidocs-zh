@@ -51,13 +51,9 @@ When you delete a page, you need to do two things:
 | Function name| Instruction| Platform difference description| Minimum version|
 |:-|:-|:-|:-|
 |onInit|监听页面初始化，其参数同 onLoad 参数，为上个页面传递的数据，参数类型为 Object（用于页面传参），触发时机早于 onLoad|百度小程序|3.1.0+|
-|onInit|Monitor page initialization, its parameters are the same as the onLoad parameter, which is the data passed on the previous page, the parameter type is Object (used for page parameter transfer), and the trigger time is earlier than onLoad|Baidu Mini Program|3.1.0+|
-|onLoad|监听页面加载，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参），参考[示例](/api/router?id=navigateto)|||
-| onLoad| listen to the page loading, whose parameter is the data transferred from the previous page, and the parameter type is Object (used for page parameter transmission)), refer to[Example](/api/router?id=navigateto)| | |
-|onShow|监听页面显示。页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面|||
-| onShow| listen to page display. Triggered every time a page appears on the screen, including clicking back from the lower level page to return to the current page| | |
-|onReady|监听页面初次渲染完成。注意如果渲染速度快，会在页面进入动画完成前触发|||
-| onReady| The first rendering of the listening page is completed. Note that if the rendering speed is fast, it will be triggered before the page enters the animation.| | |
+|onLoad|监听页面加载，该钩子被调用时，响应式数据、计算属性、方法、侦听器、props、slots 已设置完成，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参），参考[示例](/api/router?id=navigateto)|||
+|onShow|监听页面显示，页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面|||
+|onReady|监听页面初次渲染完成，此时组件已挂载完成，DOM 树($el)已可用，注意如果渲染速度快，会在页面进入动画完成前触发|||
 |onHide|监听页面隐藏|||
 | onHide| listen to page hiding| | |
 |onUnload|监听页面卸载|||

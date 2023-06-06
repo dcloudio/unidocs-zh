@@ -205,9 +205,6 @@
   * [内容联盟广告](api/a-d/content-page.md)
   * [Content Network Ads](api/a-d/content-page.md)
   * [插屏广告](api/a-d/interstitial.md)
-  * [Interstitial Ads](api/a-d/interstitial.md)
-  * [互动游戏](api/a-d/interactive.md)
-  * [Interactive game Ads](api/a-d/interactive.md)
 * 第三方服务
 * Third party service 
   * [获取服务供应商](api/plugins/provider.md)

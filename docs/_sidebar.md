@@ -30,7 +30,6 @@
     * [插屏广告](uni-ad/ad-interstitial.md)
     * [Draw视频信息流广告](uni-ad/ad-draw.md)
     * [短视频内容联盟广告](uni-ad/ad-content-page.md)
-    * [互动游戏](uni-ad/interactive.md)
     * [互动广告](uni-ad/ad-interactive.md)
     * [微信小程序](uni-ad/ad-weixin.md)
     * [微信小程序格子广告](uni-ad/ad-grid.md)

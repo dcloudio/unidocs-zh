@@ -252,7 +252,7 @@ DCloud在[uni-ai-chat](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)�
 
 在上述例子中，还可以看到一种有趣的用法，即要求ai以数组方式回答问题。这将有利于开发者格式化数据，并进行后置增强处理。
 
-**model参数说明**
+**model参数说明** @chat-completion-model
 
 每个AI Provider可以有多个model，比如对于openai，ChatGPT的模型是`gpt-3.5-turbo`，而gpt-4的模型就是`gpt-4`。不同模型的功能、性能、价格都不一样。
 

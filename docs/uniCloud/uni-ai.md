@@ -50,7 +50,7 @@ ai能力非常常见的应用场景，有智能客服和自动生成文稿。
 
 `uni-ai`把这些常见场景对应的应用均已做好，并且开源。开发者可以直接拿走使用。
 
-- uni-ai-chat，独立的ai聊天模板。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)
+- uni-ai-chat，独立的ai聊天模板。[详见](uni-ai-chat.md)
 - uni-cms，内置了智能内容生成。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)
 - uni-im，内置了智能客服。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
 
@@ -101,13 +101,13 @@ ai作为一种云能力，相关调用被整合到uniCloud中。
 
 如您的服务器业务不在uniCloud上，可以把[云函数URL化](http.md)，把`uni-ai`当做http接口调用。
 
-在实际应用中，大多数场景是直接使用`uni-ai-chat`、`uni-im`和`uni-cms`的ai功能，这些开源项目已经把完整逻辑都实现，无需自己研究API。
+在实际应用中，大多数场景是直接使用[uni-ai-chat](uni-ai-chat.md)、[uni-im](uni-im.md)和[uni-cms](uni-cms.md)的ai功能，这些开源项目已经把完整逻辑都实现，无需自己研究API。
 
 ai能力由`uni-cloud-ai`扩展库提供，在云函数或云对象中，对右键配置`uni-cloud-ai`扩展库。如何使用扩展库请参考：[使用扩展库](cf-functions.md#extension)
 
 如果HBuilderX版本过低，在云函数的扩展库界面里找不到`uni-ai`。
 
-注意`uni-ai`是云函数扩展库，其api是`uniCloud.ai`，不是需要下载的三方插件。而`uni-ai-chat`、`uni-cms`、`uni-im`等开源项目，是需要在插件市场下载的。
+注意`uni-ai`是云函数扩展库，其api是`uniCloud.ai`，不是需要下载的三方插件。而[uni-ai-chat](uni-ai-chat.md)、[uni-im](uni-im.md)和[uni-cms](uni-cms.md)等开源项目，是需要在插件市场下载的。
 
 ### 获取LLM实例@get-llm-manager
 
@@ -125,8 +125,8 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 
 |参数		|类型	|必填	|默认值	|说明																																	|
 |---		|---	|---	|---	|---																																	|
-|provider	|string	|否		|-		|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（新增于HBuilderX 3.8.3）。不指定时由uni-ai自动分配																|
-|apiKey		|string	|否		|-		|llm服务商的apiKey，如不填则使用uni-ai的key。如指定openai、azure或baidu作为服务商则必填																			|
+|provider	|string	|否		|-		|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（azure新增于HBuilderX 3.8.3）。																|
+|apiKey		|string	|否		|-		|llm服务商的apiKey。指定openai、azure或baidu作为服务商则必填																			|
 |accessToken|string	|否		|-		|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)，需确保已开通相关接口的调用权限	|
 |proxy		|string	|否		|-		|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填													|
 
@@ -139,9 +139,6 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 在云函数或云对象中编写如下代码：
 
 ```js
-// 不指定provider
-const llm = uniCloud.ai.getLLMManager()
-
 // 指定openai，需自行配置相关key，以及中转代理服务器
 const openai = uniCloud.ai.getLLMManager({
   provider: 'openai',
@@ -150,7 +147,13 @@ const openai = uniCloud.ai.getLLMManager({
 })
 ```
 
-现阶段，不指定provider时，uni-ai分配的ai引擎无需开发者支付费用。同时也不会自动分配到gpt-4等比较昂贵但精准的模型上。如有变化会提前公告。
+**免费时限注意：**
+
+之前uni-ai不指定provider时会使用minimax提供给DCloud的免费测试key，后minimax决定计费商用。
+从2023年6月9日起上午10点起，该key无法使用。
+也就意味着如果开发者未填provider或没有配置自己的key时，将**无法再调用llm**。
+
+解决方案是开发者需要在云函数中配置自己的key，可以自行向openai、baidu、minimax等支持的llm服务商申请key。
 
 开发者使用openai等已经商用的ai时，需自行向相关服务商支付费用。
 
@@ -296,7 +299,11 @@ tokensToGenerate指生成的token数量限制，即返回的文本对应的token
 在你的云函数中加载`uni-cloud-ai`扩展库，写下如下代码，ctrl+r运行，即可调用ai返回结果。
 
 ```js
-const llmManager = uniCloud.ai.getLLMManager()
+const llmManager = uniCloud.ai.getLLMManager({
+  provider: 'openai',
+  apiKey:'your key',
+  proxy:'www.yourdomain.com' //也可以是ip
+})
 const res = await llmManager.chatCompletion({
 	messages: [{
 		role: 'user',
@@ -342,7 +349,11 @@ stream对象有四个事件：
 ```js
 'use strict';
 exports.main = async (event, context) => {
-  const llmManager = uniCloud.ai.getLLMManager({})
+  const llmManager = uniCloud.ai.getLLMManager({
+  provider: 'openai',
+  apiKey:'your key',
+  proxy:'www.yourdomain.com' //也可以是ip
+})
   let streamRes
   try {
     streamRes = await llmManager.chatCompletion({
@@ -659,7 +670,11 @@ gpt-4是目前准确性最高的ai，也是最贵的ai。开发者需根据需�
 		}
 	}
 
-	const LLMManager = uniCloud.ai.getLLMManager() //创建llm对象
+	const LLMManager = uniCloud.ai.getLLMManager({
+  provider: 'openai',
+  apiKey:'your key',
+  proxy:'www.yourdomain.com' //也可以是ip
+}) //创建llm对象
 	return await LLMManager.chatCompletion({
 		messages // 初次调试时，可注掉本行代码，不从客户端获取数据，直接使用下面写死在云函数里的数据
 		// messages: [{

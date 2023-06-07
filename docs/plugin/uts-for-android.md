@@ -1022,16 +1022,20 @@ uts中，需要区分全局方法、成员方法
 |实现接口|:|implements|
 
 
-```kotlin
-class MediaContentObserver : ContentObserver {
-}
-```
-
-
 ```ts
-class MediaContentObserver extends ContentObserver {
+// 使用UTS 实现 OnClickListener接口
+class StartServiceListener extends OnClickListener{
+	
+    override onClick(v?: View):void{
+		// 执行点击逻辑
+    }
 }
+
 ```
+
+
+
+
 
 #### 5.1.5 非空断言
 

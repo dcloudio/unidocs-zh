@@ -1568,8 +1568,7 @@ In the current example, because additional third-party dependencies are configur
 ## 简介
 
 组件一般有两种场景，第一种是： 单标签组件
-Components generally have two scenarios, the first one is: single label component
-```
+```html
 <uts-view style="xxxx"/>
 ```
 
@@ -1579,7 +1578,7 @@ The `uts-hello-view` or `uts-animation-view` we introduced above are all of this
 第二种是 作为容器使用：
 The second is used as a container:
 
-```
+```html
 <uts-view >
 	<text> 文字子组件</text>
 	<image src="https://xxx">
@@ -1590,8 +1589,7 @@ The second is used as a container:
 UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 As a container component, UTS components follow exactly the same specifications as ordinary View components.
 
-唯一的区别在于 当组件布局中包含 <solt>标签时，编译器会自动将其转换为容器组件
-The only difference is that when the <solt> tag is included in the component layout, the compiler will automatically convert it into a container component
+唯一的区别在于 当组件布局中包含 `<solt>` 标签时，编译器会自动将其转换为容器组件
 
 ::: preview
 

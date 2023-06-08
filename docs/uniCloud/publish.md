@@ -42,7 +42,7 @@ According to the following table, set the request legal domain name and uploadFi
 - 如果需要用uni.request请求云存储内的文件，需要将云存储域名（即上表中的download合法域名）配置到request合法域名内
 - If you need to use uni.request to request files in the cloud storage, you need to configure the cloud storage domain name (that is, the download legal domain name in the above table) to the request legal domain name
 - 阿里云迁移正式版后未重新发布的项目仍会请求公测版地址（api.bspapp.com）
-- 如果项目使用了uni-push，还需要将uni-push的socket域名添加到白名单[详情查看](../unipush-v2.md#useinmp)
+- 如果项目使用了uni-push，还需要将uni-push的socket域名添加到白名单[详情查看](/unipush-v2.md#useinmp)
 
 **阿里云查看上传、下载安全域名**
 **Alibaba cloud view upload and download security domain name**

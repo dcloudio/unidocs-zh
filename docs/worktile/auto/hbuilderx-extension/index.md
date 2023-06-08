@@ -81,8 +81,7 @@ For uni-app ordinary projects, when `initializing the test environment` or `runn
 如下图所示，项目管理器，选中项目，右键菜单【初始化测试环境】
 As shown in the figure below, the project manager, select the project, right-click menu [initialize the test environment]
 
-注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
-Note: When installing environment dependencies, if it is detected that the test configuration files [env.js](/docs/file/env) and [jest.config.js](auto/quick-start?id=jestconfigjs) do not exist under the project, A test configuration file is automatically created.
+注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](../../auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/env_install.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 

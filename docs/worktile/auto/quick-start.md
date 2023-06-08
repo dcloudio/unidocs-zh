@@ -50,8 +50,7 @@ In order to facilitate everyone to perform uni-app automated testing in `HBuilde
 插件支持在HBuilderX内对`uni-app普通项目`、`CLI项目`进行自动化测试。
 The plugin supports automated testing of `uni-app common projects` and `CLI projects` in HBuilderX.
 
-插件简化了测试环境安装、测试用例创建、测试运行、测试设备选择等步骤。[插件使用文档](/collocation/auto/hbuilderx-extension/index)
-Plugins simplify the steps of test environment installation, test case creation, test running, test device selection, etc. [Plugin usage documentation](/collocation/auto/hbuilderx-extension/index)
+插件简化了测试环境安装、测试用例创建、测试运行、测试设备选择等步骤。[插件使用文档](./hbuilderx-extension/index)
 
 
 ### jest.config.js@jestconfigjs

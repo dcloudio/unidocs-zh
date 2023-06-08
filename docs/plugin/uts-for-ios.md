@@ -564,9 +564,9 @@ tencentLBSLocationManager(manager: TencentLBSLocationManager, @argumentLabel("di
 
 #### 5.1.12.1 无参数标签
 
-只写参数名称的参数，编译后会在参数前默认增加 `_` 来忽略参数标签（如上面的示例，第一个参数 manager，这种方式能兼容绝大多数方法，尤其是Swift 调用 OC 方法），但是有些参数没有参数标签，默认添加 `_` 的行为会和原生方法定义不一致，这种情况需要定义一个空的参数标签来解决 `@argumentLabel("didUpdate")` ，示例
+只写参数名称的参数，编译后会在参数前默认增加 `_` 来忽略参数标签（如上面的示例，第一个参数 manager，这种方式能兼容绝大多数方法，尤其是Swift 调用 OC 方法），但是有些参数没有参数标签，默认添加 `_` 的行为会和原生方法定义不一致，这种情况需要定义一个空的参数标签来解决 `@argumentLabel("didUpdate")` 
 
-高德定位 SDK 的代理方法，第三个参数 reGeocode 只有参数名称，没有参数标签
+以高德定位 SDK 的代理方法为例：第三个参数 reGeocode 只有参数名称，没有参数标签
 
 ```swift
 // swift

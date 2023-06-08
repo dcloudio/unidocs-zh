@@ -306,7 +306,7 @@ getClientInfo返回的信息，是在客户端的[uni.getSystemInfo](https://uni
 |userAgent|string|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua	|
 |source		|string	|调用来源，返回值见下。`HBuilderX 3.5.1+`								|
 |requestId|string	|请求id。`HBuilderX 3.5.1+`								|
-|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)返回的scene参数，新增于`HBuilderX 3.5.1`	|
+|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/getLaunchOptionsSync.html#getlaunchoptionssync)返回的scene参数，新增于`HBuilderX 3.5.1`	|
 
 getClientInfo().source，返回云函数调用来源，它的值域为：
 

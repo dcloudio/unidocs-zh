@@ -364,9 +364,7 @@ In addition to the fields returned by `getSystemInfo`, the following information
 |source		|string	|调用来源，返回值见下。`HBuilderX 3.5.1+`								|
 | source | string | The source of the call, see the return value below. `HBuilderX 3.5.1+` |
 |requestId|string	|请求id。`HBuilderX 3.5.1+`								|
-| requestId | string | request id. `HBuilderX 3.5.1+` |
-|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)返回的scene参数，新增于`HBuilderX 3.5.1`	|
-|scene |string |Scene value. The scene parameter returned by the client [uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync), added in `HBuilderX 3.5.1` |
+|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/getLaunchOptionsSync.html#getlaunchoptionssync)返回的scene参数，新增于`HBuilderX 3.5.1`	|
 
 getClientInfo().source，返回云函数调用来源，它的值域为：
 getClientInfo().source, returns the cloud function call source, its value range is:

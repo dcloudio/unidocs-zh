@@ -685,9 +685,7 @@ In addition to the fields returned by `getSystemInfo`, the following information
 |userAgent|string	|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua|
 | userAgent| string |client ua, note that the client getSystemInfoSync in non-local operating environment will also obtain the ua parameter and upload it to the cloud object, but the cloud object will obtain ua from the http request header instead of the ua in clientInfo|
 |source		|string	|调用来源，返回值见下。																																																												|
-| source | string | The source of the call, see the return value below. |
-|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.md#getlaunchoptionssync)返回的scene参数，													|
-| scene | string | Scene value. The scene parameter returned by the client [uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.md#getlaunchoptionssync), |
+|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/getLaunchOptionsSync.md#getlaunchoptionssync)返回的scene参数，													|
 
 云函数调用来源source，它的值域为：
 Cloud function call source source, its value range is:

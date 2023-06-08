@@ -205,8 +205,7 @@ In addition to the above properties, if the uni-app client accesses the cloud fu
 为了保持向下兼容，新版并没有去掉老版那些大写属性的客户端信息，但文档标注为以废弃。对于新版HBuilderX用户而言，请使用 `uni.getSystemInfo` 返回的驼峰属性。
 In order to maintain backward compatibility, the new version does not remove the client information of the uppercase attributes of the old version, but the document is marked as obsolete. For users of newer versions of HBuilderX, please use the camelCase property returned by `uni.getSystemInfo`.
 
-HBuilderX 3.4.9起，context 的属性还可以打印出`channel`和`scene`，即App的渠道包标记和小程序场景值。但这个功能属于未完成功能，开发者暂不使用这2个属性，后续会升级完善。目前如开发者需要这2个属性，请自行在客户端使用[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)上传。
-Since HBuilderX 3.4.9, the properties of context can also print out `channel` and `scene`, that is, the channel package tag of the App and the scene value of the applet. However, this function is an unfinished function. The developer does not use these two attributes for the time being, and will be upgraded and improved in the future. At present, if developers need these two attributes, please use [uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync) to upload on the client side.
+HBuilderX 3.4.9起，context 的属性还可以打印出`channel`和`scene`，即App的渠道包标记和小程序场景值。但这个功能属于未完成功能，开发者暂不使用这2个属性，后续会升级完善。目前如开发者需要这2个属性，请自行在客户端使用[uni.getLaunchOptionsSync](/api/getLaunchOptionsSync.html#getlaunchoptionssync)上传。
 
 示例：
 Example:

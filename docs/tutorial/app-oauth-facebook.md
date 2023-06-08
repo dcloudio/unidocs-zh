@@ -11,8 +11,7 @@
 - 进入应用详情页面，为应用添加登录功能，并配置Android/iOS平台信息  
 - Enter the application details page, add login function to the application, and configure Android/iOS platform information
 
-更多信息详见 [申请开通Facebook登录操作指南](https://uniapp.dcloud.io/app-oauth-facebook-open)  
-For more information, see [Operation Guide for Applying for Facebook Login](https://uniapp.dcloud.io/app-oauth-facebook-open)
+更多信息详见 [申请开通Facebook登录操作指南](https://uniapp.dcloud.io/tutorial/app-oauth-facebook-open)  
 
 
 ### 配置  

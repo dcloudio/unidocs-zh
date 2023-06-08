@@ -1419,7 +1419,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 ## 简介
 
 组件一般有两种场景，第一种是： 单标签组件
-```
+```html
 <uts-view style="xxxx"/>
 ```
 
@@ -1427,7 +1427,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 
 第二种是 作为容器使用：
 
-```
+```html
 <uts-view >
 	<text> 文字子组件</text>
 	<image src="https://xxx">
@@ -1437,7 +1437,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 
 UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 
-唯一的区别在于 当组件布局中包含 <solt>标签时，编译器会自动将其转换为容器组件
+唯一的区别在于 当组件布局中包含 `<solt>` 标签时，编译器会自动将其转换为容器组件
 
 ::: preview
 

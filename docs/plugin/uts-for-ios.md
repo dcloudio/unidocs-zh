@@ -365,9 +365,9 @@ var alert = new UIAlertController()
 ```
 
 
-#### 5.1.4 函数参数标签
+#### 5.1.4 函数参数
 
-在 swift 中方法参数存在标签时使用 `:` 连接在标签和参数值之间，在 uts 中需要使用 `=` 连接
+在 swift 中参数名称使用 `:` 连接参数值，在 uts 中需要使用 `=` 连接
 
 示例
 
@@ -518,7 +518,7 @@ value["name"] = "uts"
 let map: Map<string,any> = new Map()
 map.set("name","uts")
 ```
-#### 5.1.12 覆写方法存在参数标签的兼容问题
+#### 5.1.12 参数标签的兼容问题
 > HBuilder X 3.6.11+ 版本支持
 
 当覆写系统方法，或实现三方SDK的协议方法时，一些方法可能会存在参数标签的情况
@@ -546,6 +546,7 @@ func tencentLBSLocationManager(_ manager: TencentLBSLocationManager, didUpdate l
 uts 中需要用注解语法 @argumentLabel("didUpdate") 来表示参数标签
 
 ```ts
+// uts
 // 实现位置更新的 delegate 方法
 tencentLBSLocationManager(manager: TencentLBSLocationManager, @argumentLabel("didUpdate") location: TencentLBSLocation) {
 		let response = new LocationResponse();
@@ -560,6 +561,26 @@ tencentLBSLocationManager(manager: TencentLBSLocationManager, @argumentLabel("di
 示例文件在 hello uts 中的位置：
 
 `~/uni_modules/uts-tencentgeolocation/utssdk/app-ios/index.uts`
+
+#### 5.1.12.1 无参数标签
+
+只写参数名称的参数，编译后会在参数前默认增加 `_` 来忽略参数标签（如上面的示例，第一个参数 manager，这种方式能兼容绝大多数方法，尤其是Swift 调用 OC 方法），但是有些参数没有参数标签，默认添加 `_` 的行为会和原生方法定义不一致，这种情况需要定义一个空的参数标签来解决 `@argumentLabel("didUpdate")` ，示例
+
+高德定位 SDK 的代理方法，第三个参数 reGeocode 只有参数名称，没有参数标签
+
+```swift
+// swift
+func amapLocationManager(_ manager: AMapLocationManager!, didUpdate location: CLLocation!, reGeocode: AMapLocationReGeocode!)
+```
+
+uts 实现此方法时，需要给 reGeocode 参数添加一个空的参数标签
+
+```ts
+// uts
+amapLocationManager(manager : AMapLocationManager, @argumentLabel("didUpdate") location : CLLocation, @argumentLabel("") reGeocode : AMapLocationReGeocode) {
+
+}
+```
 
 #### 5.1.13 异步方法
 

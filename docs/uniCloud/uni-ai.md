@@ -123,12 +123,13 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 
 **参数说明GetLLMManagerOptions**
 
-|参数		|类型	|必填	|默认值	|说明																																	|
-|---		|---	|---	|---	|---																																	|
-|provider	|string	|否		|-		|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（azure新增于HBuilderX 3.8.3）。																|
-|apiKey		|string	|否		|-		|llm服务商的apiKey。指定openai、azure或baidu作为服务商则必填																			|
-|accessToken|string	|否		|-		|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)，需确保已开通相关接口的调用权限	|
-|proxy		|string	|否		|-		|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填													|
+|参数				|类型		|必填												|默认值	|说明																																																																																	|
+|---				|---		|---												|---		|---																																																																																	|
+|provider		|string	|是													|-			|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（azure新增于HBuilderX 3.8.3）。																																							|
+|apiKey			|string	|openai、azure、minimax必填	|-			|llm服务商的apiKey。指定openai、azure或minimax作为服务商则必填																																																				|
+|accessToken|string	|baidu必填									|-			|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)，需确保已开通相关接口的调用权限|
+|groupId		|string	|minimax必填								|-			|llm服务商的groupId参数。指定minimax作为服务商则必填																																																									|
+|proxy			|string	|否													|-			|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填											|
 
 **关于proxy参数的说明**
 
@@ -154,6 +155,8 @@ const openai = uniCloud.ai.getLLMManager({
 也就意味着如果开发者未填provider或没有配置自己的key时，将**无法再调用llm**。
 
 解决方案是开发者需要在云函数中配置自己的key，可以自行向openai、baidu、minimax等支持的llm服务商申请key。
+
+对于线上有正在使用minimax的应用，可以直接更新云函数为getLLMManager方法配置上minimax的调用凭证（provider、groupId、apiKey）。如果你有使用uni-ai-chat，需要在uni-ai-chat的配置文件的llm字段中配置minimax的调用凭证，参考：[uni-ai-chat配置](uni-ai-chat.md#config)。目前仅更新了云端扩展库，HBuilderX本地调试使用的扩展库会在HBuilderX下次发版时进行更新。
 
 开发者使用openai等已经商用的ai时，需自行向相关服务商支付费用。
 

@@ -140,7 +140,7 @@ context对象的属性清单如下：
 
 为了保持向下兼容，新版并没有去掉老版那些大写属性的客户端信息，但文档标注为以废弃。对于新版HBuilderX用户而言，请使用 `uni.getSystemInfo` 返回的驼峰属性。
 
-HBuilderX 3.4.9起，context 的属性还可以打印出`channel`和`scene`，即App的渠道包标记和小程序场景值。但这个功能属于未完成功能，开发者暂不使用这2个属性，后续会升级完善。目前如开发者需要这2个属性，请自行在客户端使用[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.html#getlaunchoptionssync)上传。
+HBuilderX 3.4.9起，context 的属性还可以打印出`channel`和`scene`，即App的渠道包标记和小程序场景值。但这个功能属于未完成功能，开发者暂不使用这2个属性，后续会升级完善。目前如开发者需要这2个属性，请自行在客户端使用[uni.getLaunchOptionsSync](/api/getLaunchOptionsSync.html#getlaunchoptionssync)上传。
 
 示例：
 

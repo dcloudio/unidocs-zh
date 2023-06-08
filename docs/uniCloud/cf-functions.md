@@ -484,7 +484,7 @@ getClientInfos返回的信息，是在客户端的[uni.getSystemInfo](/api/syste
 |clientIP	|string	|客户端ip																																																																			|
 |userAgent|string	|客户端ua，注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云对象，但是云对象会从http请求头里面获取ua而不是clientInfo里面的ua|
 |source		|string	|调用来源，返回值见下。																																																												|
-|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/plugins/getLaunchOptionsSync.md#getlaunchoptionssync)返回的scene参数，													|
+|scene		|string	|场景值。客户端[uni.getLaunchOptionsSync](/api/getLaunchOptionsSync.md#getlaunchoptionssync)返回的scene参数，													|
 
 云函数调用来源source，它的值域为：
 

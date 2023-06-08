@@ -5,7 +5,7 @@
 - 创建应用完成后即可获得应用编号(AppID)  
 - 进入应用详情页面，为应用添加登录功能，并配置Android/iOS平台信息  
 
-更多信息详见 [申请开通Facebook登录操作指南](https://uniapp.dcloud.io/app-oauth-facebook-open)  
+更多信息详见 [申请开通Facebook登录操作指南](https://uniapp.dcloud.io/tutorial/app-oauth-facebook-open)  
 
 
 ### 配置  

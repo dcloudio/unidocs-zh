@@ -157,7 +157,7 @@ In foreign countries, Google's GMS is usually used to provide location services.
 2. 在你的app里通过schema调用，打开地图厂商的app，比如直接交给高德地图来导航，这种情况无需在地图厂商注册账户和获取应用key，也就不需要付费。
 3. 联系DCloud申请折扣优惠。
 
-DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`shacui@dcloud.io`（注明你的公司名称、应用名称/介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。如您需要快速回复，一定注明你的公司名称、应用名称/介绍、以及HBuilder账户，感谢你的理解与配合，谢谢。
+DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`shacui@dcloud.io`（注明你的公司名称、应用名称/介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。如您需要快速回复，一定注明公司名称、应用名称/介绍、以及HBuilder账户，感谢你的理解与配合，谢谢。
 
 #### 海外用户
 海外用户使用google地图，也需要付费，支持按量付费，具体请参阅google地图官网。

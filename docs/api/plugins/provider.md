@@ -49,8 +49,8 @@
 ||xiaomi|小米登录||
 ||univerify|[一键登录](/univerify)|App 3.0.0+|
 ||apple|[Apple登录](https://ask.dcloud.net.cn/article/36651)| iOS13+支持，App 2.4.7+|
-||google|[谷歌登录](/app-oauth-facebook)|App 3.4.0+|
-||facebook|[Facebook登录](/app-oauth-google)|App 3.4.0+|
+||google|[谷歌登录](/tutorial/app-oauth-facebook)|App 3.4.0+|
+||facebook|[Facebook登录](/tutorial/app-oauth-google)|App 3.4.0+|
 |share|sinaweibo|新浪微博分享||
 ||qq|分享到QQ好友||
 ||weixin|分享微信消息、朋友圈及微信小程序||

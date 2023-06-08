@@ -5,7 +5,7 @@
 - 点击 “创建凭证” -> “OAuth客户端ID”，根据提示选择“应用类型”，按需分别输入Android/iOS平台配置信息
 - 创建凭证后iOS平台可以获取客户端ID（Android平台不需要客户端ID）
 
-更多信息详见 [申请开通Google登录操作指南](https://uniapp.dcloud.io/app-oauth-google-open)  
+更多信息详见 [申请开通Google登录操作指南](https://uniapp.dcloud.io/tutorial/app-oauth-google-open)  
 
 
 ### 配置  

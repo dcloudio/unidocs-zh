@@ -50,7 +50,7 @@ uni-app普通项目，`初始化测试环境`或`运行测试`时，如果未安
 
 如下图所示，项目管理器，选中项目，右键菜单【初始化测试环境】
 
-注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
+注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](../../auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
 
 <img src="https://web-assets.dcloud.net.cn/unidoc/zh/env_install.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 

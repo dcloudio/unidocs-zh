@@ -24,7 +24,7 @@
 
 1. 客户端方面，`uni-push2`支持App、web、小程序。
   * App端，内置了苹果、华为、小米、OPPO、VIVO、魅族、谷歌FCM等手机厂商的系统推送和个推第三方推送
-  * 小程序端，内置了socket在线推送。如需模板消息/订阅消息，另见[uni-subscribemsg](uni-subscribemsg.md)
+  * 小程序端，内置了socket在线推送。如需模板消息/订阅消息，另见[uni-subscribemsg](/uniCloud/uni-subscribemsg.md)
   * web端，内置了socket在线推送
   （uni-push1仅支持app，且app必须包含个推原生sdk。uni-push2在app端如不需要厂商推送，只需在线推送，无需集成个推原生sdk）
 2. 服务端方面，`uni-push2`支持uniCloud云端一体，无需再编写复杂代码轻松完成push。

@@ -6,7 +6,7 @@
 
 在常规web开发时可以使用server sent event将结果分段返回，客户端自行组装最终结果。但是小程序端并不支持server sent event，因此我们基于uni-push实现了这个替代方案。
 
-使用此功能前需要先开通uni-push 2.0，参考文档：[uni-push 2.0](unipush-v2.md)
+使用此功能前需要先开通uni-push 2.0，参考文档：[uni-push 2.0](/unipush-v2.md)
 
 ## 客户端API@client-api
 

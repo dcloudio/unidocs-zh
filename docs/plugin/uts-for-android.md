@@ -1249,7 +1249,7 @@ UTSHello.callWithoutParam(
 
 ### 6.9 编译报错：unresolved reference R （R资源无法识别）
 
-UTS插件支持使用android的原生资源，比如动画，布局，字符串等。 [详细说明](!https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-1-%E9%85%8D%E7%BD%AEandroidmanifest-xml)
+UTS插件支持使用android的原生资源，比如动画，布局，字符串等。 [详细说明](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-1-%E9%85%8D%E7%BD%AEandroidmanifest-xml)
 
 
 如果提示 R资源无法找到:unresolved reference R

@@ -31,7 +31,7 @@ uni-app提供了一批[API](/collocation/auto/api)，这些API可以操控uni-ap
 
 插件支持在HBuilderX内对`uni-app普通项目`、`CLI项目`进行自动化测试。
 
-插件简化了测试环境安装、测试用例创建、测试运行、测试设备选择等步骤。[插件使用文档](/collocation/auto/hbuilderx-extension/index)
+插件简化了测试环境安装、测试用例创建、测试运行、测试设备选择等步骤。[插件使用文档](./hbuilderx-extension/index)
 
 
 ### jest.config.js@jestconfigjs

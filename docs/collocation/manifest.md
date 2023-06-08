@@ -20,9 +20,7 @@ The `manifest.json` file is the configuration file of the application, which is 
 |versionName|String||版本名称，例如：1.0.0。详见下方Tips说明||
 | versionName| String||version name, for example: 1.0.0. See the Tips description below for details||
 |versionCode|Number||版本号，例如：36||
-| versionCode| Number||version number, for example: 36||
-|transformPx|Boolean|true|是否转换项目的px，为true时将px转换为rpx，为false时，px为传统的实际像素。为兼容历史项目默认值为 true，但不推荐新项目启用此配置（新建项目模板一般配置为 false）||
-| transformPx| Boolean| true|Whether to transform the px of the item, when it is true, convert px to rpx, when it is false, px is the traditional actual pixel. The default value is true for compatible historical projects, but it is not recommended to enable this configuration for new projects (new project templates are generally configured with false)||
+|transformPx|Boolean|true|~~是否转换项目的px，为true时将px转换为rpx，为false时，px为传统的实际像素。为兼容历史项目默认值为 true。~~ 此选项已废弃，仅部分平台支持，不推荐新项目启用此配置（新建项目模板一般配置为 false）||
 |networkTimeout|Object||网络超时时间，[详见](/collocation/manifest?id=networktimeout)||
 | networkTimeout| Object||Network timeout, [see details](/collocation/manifest?id=networktimeout)||
 |debug|Boolean|false|是否开启 debug 模式，开启后调试信息以 ``info`` 的形式给出，其信息有页面的注册，页面路由，数据更新，事件触发等||

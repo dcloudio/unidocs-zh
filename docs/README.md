@@ -17,13 +17,13 @@ pageClass: custom-page-class
     <div class="flex-img-group-view">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-android.png" width="160" />
+          <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-android.png" width="160" />
         </div>
         <b>Android版</b>
       </a>
       <a href="https://itunes.apple.com/cn/app/hello-uni-app/id1417078253?mt=8" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ios.png" width="160" />
+          <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ios.png" width="160" />
         </div>
         <b>iOS版</b>
       </a>
@@ -40,11 +40,11 @@ pageClass: custom-page-class
     </div>
     <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/alipay1.png" width="160" /></div>
+        <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/alipay1.png" width="160" /></div>
         <b>支付宝小程序版</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/baidu-uniapp.png" width="160" /></div>
+        <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/baidu-uniapp.png" width="160" /></div>
         <b>百度小程序版</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
@@ -74,36 +74,36 @@ pageClass: custom-page-class
         <b>360小程序</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/mp-kuaishou-new.png" width="160" /></div>
+        <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-kuaishou-new.png" width="160" /></div>
         <b>快手小程序版</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/lark-qr-code.png" width="160" /></div>
+        <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/lark-qr-code.png" width="160" /></div>
         <b>飞书小程序版</b>
       </a>
     </div>
     <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://web-assets.dcloud.net.cn/unidoc/zh/dingding-qr-code.png" width="160" />
+          <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dingding-qr-code.png" width="160" />
         </div>
         <b>钉钉小程序版</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
+          <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
         </div>
         <b>京东小程序版</b>
       </a>
       <a href="javascript:void(0)" οnclick="js_method()"  class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img style="opacity: 0;" src="https://web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
+          <img style="opacity: 0;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
         </div>
         <b></b>
       </a>
       <a href="javascript:void(0)" οnclick="js_method()" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img style="opacity: 0;" src="https://web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
+          <img style="opacity: 0;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
         </div>
         <b></b>
       </a>
@@ -121,7 +121,12 @@ pageClass: custom-page-class
 
 <!-- <video id="video" onplay="videoPlay()" preload="none" controls="controls" width="100%" poster="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/poster.png" src="https://web-assets.dcloud.net.cn/unidoc/zh/DCloud.mp4"></video> -->
 
-<video id="video" onplay="videoPlay()" preload="none" controls="controls" width="100%" poster="https://web-assets.dcloud.net.cn/unidoc/zh/dcloudPoster.jpg" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20200317%20(3).mp4"></video>
+<!-- <video id="video" preload="none" controls="controls" width="100%" poster="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dcloudPoster.jpg" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20200317%20(3).mp4"></video> -->
+
+
+<video id="video" preload="none" controls="controls" width="100%" poster="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dcloudPoster.jpg" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-video-courses.mp4"></video>
+
+
 
 ## 为什么要选择uni-app？
 
@@ -130,7 +135,7 @@ pageClass: custom-page-class
 <div class="uniapp-home-content">
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/12x.png">
+        <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/12x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">开发者/案例数量更多</h5>
@@ -140,7 +145,7 @@ pageClass: custom-page-class
     </div>
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/22x.png">
+        <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/22x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">平台能力不受限</h5>
@@ -150,7 +155,7 @@ pageClass: custom-page-class
     </div>
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/32x.png">
+        <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/32x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">性能体验优秀</h5>
@@ -161,7 +166,7 @@ pageClass: custom-page-class
     </div>
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/42x.png">
+        <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/42x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">周边生态丰富</h5>
@@ -172,7 +177,7 @@ pageClass: custom-page-class
     </div>
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/52x.png">
+        <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/52x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">学习成本低</h5>
@@ -181,7 +186,7 @@ pageClass: custom-page-class
     </div>
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
-        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/62x.png">
+        <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/62x.png">
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">开发成本低</h5>
@@ -210,14 +215,14 @@ pageClass: custom-page-class
 
 从下面`uni-app`功能框架图可看出，`uni-app`在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-function-diagram.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-function-diagram.png)
 
 ## 一套代码，运行到多个平台
 
 `uni-app`实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、web、微信开发者工具、支付宝小程序Studio、百度开发者工具、字节跳动开发者工具、QQ开发者工具（底部每个终端选项卡，代表1个终端模拟器）：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/dev1x8.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dev1x8.jpg)
 
 实际运行效果如下（点击图片可放大）：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)

@@ -279,7 +279,7 @@ tokensToGenerate指生成的token数量限制，即返回的文本对应的token
 
 注意此值和传入messages对应的token数量，两者相加不可大于4096。如果messages对应的token数为1024，当传递的tokensToGenerate参数大于（4096-1024）时接口会抛出错误。
 
-未指定provider时默认最多生成512个token的结果，也就是返回结果不会很长。如有需求请自行调整此值。此默认值为512（在HBuilderX alpha 3.7.13版本默认为128）
+使用minimax时默认最多生成512个token的结果，也就是返回结果不会很长。如有需求请自行调整此值。
 
 **chatCompletion方法的返回值**
 

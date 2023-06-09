@@ -417,10 +417,6 @@ let's encrypt于2021年9月30日根证书过期并切换到新版根证书。详
 
 如使用腾讯云作为服务商，出现此问题时请检查前端是否有执行clearStorage操作。clearStorage会清理掉腾讯云设置的token，导致请求云函数报错。
 
-### 阿里云存储在部分地区、运营商无法访问的问题
-
-阿里云云存储目前没有服务空间级别的域名隔离，因此在有服务空间的云存储因为违法、违规被封禁域名时会影响其他服务空间。阿里云提供了一个备用CDN域名`vkceyugu-backup.cdn.bspapp.com`，替换原CDN域名`vkceyugu.cdn.bspapp.com`。有一定业务量的用户可以在uniCloud web控制台云存储界面申请独立cdn域名。
-
 ### 等级保护认证
 
 如需云厂商提供等级保护证书，请发送邮件到service@dcloud.io申请，邮件模板参考：[申请解除限制邮件模板](price.md#apply-email-template)

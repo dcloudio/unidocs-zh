@@ -527,8 +527,7 @@ interface OnRefreshTokenEvent {
 - 开发者自定监听onNeedLogin事件后，uniIdRouter的自动跳转登录页面功能会禁用，由开发者在`onNeedLogin`内自行处理跳转
 - After the developer monitors the onNeedLogin event, the automatic login page function of uniIdRouter will be disabled, and the developer will handle the jump in `onNeedLogin`
 
-### 移除需要登录事件的监听@off-need-login
-### Remove the listener @off-need-login that requires login events
+### 移除token刷新事件的监听@off-refresh-token
 
 > 新增于HBuilderX 3.5.0
 > Added in HBuilderX 3.5.0
@@ -541,11 +540,10 @@ interface OnRefreshTokenEvent {
 
 ```js
 // 错误用法，无法移除监听
-// Wrong usage, can't remove listener
-uniCloud.onNeedLogin(function(e) {
+uniCloud.onRefreshToken(function(e) {
 	console.log(e)
 })
-uniCloud.offNeedLogin(function(e) {
+uniCloud.offRefreshToken(function(e) {
 	console.log(e)
 })
 
@@ -554,8 +552,8 @@ uniCloud.offNeedLogin(function(e) {
 function log(e) {
 	console.log(e)
 }
-uniCloud.onNeedLogin(log)
-uniCloud.offNeedLogin(log)
+uniCloud.onRefreshToken(log)
+uniCloud.offRefreshToken(log)
 ```
 
 ### 微信小程序安全网络初始化@init-secure-network-by-weixin

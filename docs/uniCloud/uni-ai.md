@@ -150,8 +150,8 @@ const openai = uniCloud.ai.getLLMManager({
 
 **免费时限注意：**
 
-之前uni-ai不指定provider时会使用minimax提供给DCloud的免费测试key，后minimax决定计费商用。
-从2023年6月9日起上午10点起，该key无法使用。
+之前uni-ai不指定provider时会使用minimax提供给DCloud的免费测试key，现在minimax已经计费商用。
+从2023年6月15日起，该key无法使用。
 也就意味着如果开发者未填provider或没有配置自己的key时，将**无法再调用llm**。
 
 解决方案是开发者需要在云函数中配置自己的key，可以自行向openai、baidu、minimax等支持的llm服务商申请key。
@@ -569,7 +569,7 @@ try {
 ## 费用
 
 - 如果您自己去ai厂商申请和缴费，比如openai，则缴费后在uni-ai中配置相关key即可使用。
-- 如果您使用uni-ai自动分配的ai服务，目前也是免费的。未来若计费会提前公告。未来计费原则也必然是市场标准价格，不会出现歧视性、收割性定价。
+- 如果您使用uni-ai自动分配的ai服务，计划于2023年6月15日起开始计费，计费价格与业内主流ai厂商的定价一致。
 
 ## 后续版本计划
 

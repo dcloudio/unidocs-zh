@@ -1270,6 +1270,15 @@ val extraMap = extraParam.toMap()
 ```
 
 
+### 6.11  synchronized / Lock 等线程同步概念，在UTS里怎么写
+
+前端领域里线程安全的解决思路 与java的不同。 他们提供了 async/await 等关键字来实现异步任务处理
+
++ 如果业务代码中有需要多线程、异步任务，建议切换到 async/await 等 uts 语法
+
++ 如果是要翻译原有的java代码到 UTS，可以选择打成AAR来处理。
+
+
 ## 7  已知待解决问题(持续更新)
 
 ### 7.1 结构入参 boolean 参数默认为true

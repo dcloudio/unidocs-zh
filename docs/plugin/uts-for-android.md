@@ -1416,7 +1416,7 @@ val extraMap = extraParam.toMap()
 ```
 
 
-### 6.11  synchronized / Lock 等线程同步概念，在UTS里怎么写
+### 6.11  synchronized / Lock 等线程同步概念，在UTS里怎么写?
 
 前端领域里线程安全的解决思路 与java的不同。 他们提供了 async/await 等关键字来实现异步任务处理
 

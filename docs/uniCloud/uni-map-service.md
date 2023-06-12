@@ -290,7 +290,7 @@ console.log("result", result);
 | &emsp;&#124;-- city			|String	|地址																																																|腾讯地图	|
 | &emsp;&#124;-- address	|String	|地点所在城市名称																																										|腾讯地图	|
 
-### 路线规划（驾车/步行/骑行/电动车/公交）@routePlan
+### 路线规划（驾车/步行/骑行/电动车/公交）@route
 
 **示例**
 
@@ -302,7 +302,7 @@ let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
 });
 // 调用API
-let result = await uniMapService.routePlan({
+let result = await uniMapService.route({
 	mode: "driving",
 	from: "40.034852,116.319820",
 	to: "39.771075,116.351395"

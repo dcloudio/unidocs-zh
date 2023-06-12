@@ -7,6 +7,10 @@
 > uni ext api 需 HBuilderX 3.6.8+
 > uni ext api requires HBuilderX 3.6.8+
 
+> iOS平台获取Wi-Fi信息需要开启“Access WiFi information”能力登录苹果开发者网站，在“Certificates, Identifiers & Profiles”页面选择“Identifiers”中选择对应的App ID，确保开启“Access WiFi information”，保存后重新生成profile文件。
+
+> iOS平台iOS13及以上系统，获取当前连接的Wi-Fi信息需要先获取系统定位权限，因此在iOS13及以上系统使用此接口时，会触发定位权限申请的弹窗。
+
 
 其它平台开发方式暂未统一，使用时需注意用[条件编译](https://uniapp.dcloud.io/platform)调用不同平台的代码。
 The development methods of other platforms are not yet unified. When using it, you should pay attention to using [conditional compilation](https://uniapp.dcloud.io/platform) to call codes of different platforms.

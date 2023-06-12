@@ -55,8 +55,7 @@ Therefore, it is recommended that developers write a good schema, regardless of 
 1. 登录 [uniCloud控制台](https://unicloud.dcloud.net.cn)，选中一个数据表
 1. Log in to the [uniCloud console](https://unicloud.dcloud.net.cn), select a data table
 2. 点击表右侧页签 “表结构”，点击 “编辑” 按钮，在编辑区域编写 Schema，编写完毕后点保存按钮即可生效。
-2. Click the tab "Table Structure" on the right side of the table, click the "Edit" button, and write the Schema in the editing area. After writing, click the Save button to take effect.
-  ![](https://web-assets.dcloud.net.cn/unidoc/zh/schema2code.png)
+  ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/schema2code.png)
 
 **web控制台上编辑`DB Schema`保存后是实时在现网生效的，请注意对现网商用项目的影响。**
 **After editing `DB Schema` on the web console, it will take effect on the live network in real time. Please pay attention to the impact on commercial projects on the live network. **
@@ -76,7 +75,7 @@ Writing schemas in HBuilderX has good syntax hints and syntax verification, and 
 2. Right-click in the database directory and select `New Data Collection Schema`
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/hx%E6%8F%90%E7%A4%BAschema.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/hx%E6%8F%90%E7%A4%BAschema.jpg"/>
 </div>
 
 **HBuilderX内创建的schema新建和保存时不会自动上传**
@@ -1440,9 +1439,7 @@ how to use
 - 方式一：在uniCloud web控制台创建
 - Method 1: Create in the uniCloud web console
 1. uniCloud 控制台，选择服务空间，切换到数据库视图
-1. On the uniCloud console, select the service space and switch to the database view
-2. 底部 “扩展校验函数” 点击 “+” 增加校验函数 ![](https://web-assets.dcloud.net.cn/unidoc/zh/schema-validate-function.png)
-2. Click "+" at the bottom of the "Extended Validation Function" to add a validation function ![](https://web-assets.dcloud.net.cn/unidoc/zh/schema-validate-function.png)
+2. 底部 “扩展校验函数” 点击 “+” 增加校验函数 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/schema-validate-function.png)
 3. 给函数起个名字，比如叫“checkabc”
 3. Give the function a name, such as "checkabc"
 

@@ -202,6 +202,6 @@ export default {
       },
     ],
   },
-  domainImg: 'https://web-assets.dcloud.net.cn/unidoc/zh/jgwab.png',
+  domainImg: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/jgwab.png',
   beian: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802035340'
 }

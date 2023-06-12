@@ -61,8 +61,7 @@ The unified publishing portal is divided into two parts: `uni-publish unified pu
 Responsible for the management of application publishing information.
 
 <div align="left">
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-manager-list.png" alt="统一发布门户管理" width="800"></img>
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-manager-list.png" alt="Unified Publishing Portal Management" width="800"></img >
+	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-manager-list.png" alt="统一发布门户管理" width="800"></img>
 </div>
 
 提供了如下功能：
@@ -90,10 +89,10 @@ Install it in the plugin market and deploy it according to the readme. [Plugin a
 Responsible for displaying the application release information filled in and correctly guiding the download method.
 
 <div align="left" style="display:flex;align-items:center;">
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-pc.png" height="400"></img>
-	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mobile.png" height="400"></img>
-	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-app-desc.png" height="400"></img>
-	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mp.jpg" height="400"></img>
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-pc.png" height="400"></img>
+	<img style="margin-left:20px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mobile.png" height="400"></img>
+	<img style="margin-left:20px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-app-desc.png" height="400"></img>
+	<img style="margin-left:20px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mp.jpg" height="400"></img>
 </div>
 
 

@@ -7,7 +7,7 @@
 MacOSX HBuilderX 3.6.11+，支持选择标准基座签名后的位置。如下图所示：
 MacOSX HBuilderX 3.6.11+, supports selecting the location after the standard base signature. As shown below:
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/ipa_save.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ipa_save.jpg" style="zoom: 50%;" />
 
 **保存在HBuilderX插件目录下**
 **Saved in the HBuilderX plug-in directory**

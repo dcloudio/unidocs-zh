@@ -13,7 +13,7 @@ In-app display advertising component, which can be used for banner or news feed.
 Banner或信息流广告展现场景非常灵活，常见的展现场景为：文章顶部，详情页面顶部，第一屏中部等。建议信息流广告不要放置在底部
 Banner or information flow advertisement display scenarios are very flexible. Common display scenarios are: the top of the article, the top of the details page, the middle of the first screen, etc. It is recommended not to place in-feed ads at the bottom
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-feed.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ad-feed.png)
 
 
 - App端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道以及部分DCloud直投广告组成，在DCloud的uni-ad后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)

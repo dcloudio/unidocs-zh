@@ -62,8 +62,7 @@ Weex box model based on the CSS box model, all of weex elements can be considere
 盒模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界 `margin edge`, 边框边界 `border edge`, 内边距边界 `padding edge` 与内容边界 `content edge`。这四层边界，形成一层层的盒子包裹起来，这就是盒模型大体上的含义。
 The term "box model" is used when talking about design and layout. The box model is essentially a box that wraps around every HTML element. It consists of margins, borders, paddings, and the actual content.
 
-![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/flexBox.png)
-![Image description text](https://web-assets.dcloud.net.cn/unidoc/zh/flexBox.png)
+![图片描述文字](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/flexBox.png)
 
 
 > nvue盒模型的 `box-sizing` 默认为 `border-box`，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。
@@ -83,7 +82,7 @@ The term "box model" is used when talking about design and layout. The box model
 ```html
 	<template>
 		<view>
-			<image style="width: 400rpx; height: 200rpx; margin-left: 20rpx;" src="https://web-assets.dcloud.net.cn/unidoc/zh/loveIcon.png"></image>
+			<image style="width: 400rpx; height: 200rpx; margin-left: 20rpx;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/loveIcon.png"></image>
 		</view>
 	</template>
 ```
@@ -320,8 +319,7 @@ The CSS justify-content property defines how Weex distributes space between and 
 | space-around| It indicates equal intervals on both sides of flex member items, so the interval between member items is twice as large as the interval between member items and borders|
 
 
-![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/justify-content.png)
-![Image description text](https://web-assets.dcloud.net.cn/unidoc/zh/justify-content.png)
+![图片描述文字](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/justify-content.png)
 
 
 
@@ -343,8 +341,7 @@ The CSS align-items property sets the align-self value on all direct children as
 |center		|中间对齐，所有成员项都垂直地居中显示	|
 | center| The flex items' margin boxes are centered within the line on the cross-axis.|
 
-![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/align-items.png)
-![Image description text](https://web-assets.dcloud.net.cn/unidoc/zh/align-items.png)
+![图片描述文字](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/align-items.png)
 
 ### flex
 
@@ -564,7 +561,7 @@ Describes the velocity curve of the transition, which is used to make the transi
 <template>
 	<view class="row">
 		<view class="box" :class="{'active':isActive}" @click="isActive = !isActive">
-			<image class="img" src="https://web-assets.dcloud.net.cn/unidoc/zh/loveIcon.png" mode="aspectFill"></image>
+			<image class="img" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/loveIcon.png" mode="aspectFill"></image>
 		</view>
 	</view>
 </template>
@@ -607,7 +604,7 @@ Describes the velocity curve of the transition, which is used to make the transi
 </style>
 ```
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gitb.gif" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gitb.gif" />
 
 ## Transform
 
@@ -755,7 +752,7 @@ Applied in the 2D or 3D transformation of elements. This attribute allows the ro
 
 
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gifa.gif" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gifa.gif" />
 
 
 ## 伪类
@@ -784,7 +781,7 @@ Applied in the 2D or 3D transformation of elements. This attribute allows the ro
 - 互联规则如下所示
 - the interconnection rule as follow
 
-<img width="400px" src="https://web-assets.dcloud.net.cn/unidoc/zh/active.png" />
+<img width="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/active.png" />
 
 
 ## 线性渐变
@@ -828,7 +825,7 @@ Weex currently supports two color gradients. The direction of the gradient is as
 > **`radial-gradient` is not currently supported, do not use it.**
 
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gradients.PNG" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gradients.PNG" />
 
 
 ## 阴影@boxshadow

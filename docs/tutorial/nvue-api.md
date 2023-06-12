@@ -62,7 +62,7 @@ For those native functions that do not depend on UI interaction, nvue encapsulat
 	
 ```
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/iconfontImg.PNG" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/iconfontImg.PNG" />
 
 
 **addRule(type, contentObject)**
@@ -195,7 +195,7 @@ Let the page scroll to the component corresponding to ref. This API can only be 
 
 
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gite.gif" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gite.gif" />
 
 ### getComponentRect
 
@@ -287,7 +287,7 @@ For example, if you have an `image` component, through animation you can move, r
 ```
 
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gifd.gif" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gifd.gif" />
 
 
 
@@ -597,7 +597,7 @@ BindingX is a rule, fast parsing, but not as flexible as js.
 	</style>
 ```
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gitc.gif" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gitc.gif" />
 
 
 

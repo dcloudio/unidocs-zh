@@ -1370,7 +1370,7 @@ When you want to use data inside a slot, such as in:
 该插槽可以访问与模板其余部分相同的实例 `property` (即相同的“作用域”)。
 That slot has access to the same instance properties (i.e. the same "scope") as the rest of the template.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/slot.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/slot.png)
 
 
 插槽不能访问 `todo-button` 的作用域。例如，尝试访问 `action` 将不起作用：
@@ -1676,7 +1676,7 @@ Attributes bound to a `<slot>` element are called **slot props**. Now, in the pa
 </template>
 ```
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/scoped-slot.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/scoped-slot.png)
 
 在这个例子中，我们选择将包含所有插槽 `prop` 的对象命名为 `slotProps`，但你也可以使用任意你喜欢的名字。
 In this example, we've chosen to name the object containing all our slot props `slotProps`, but you can use any name you like.

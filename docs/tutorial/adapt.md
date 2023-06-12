@@ -383,7 +383,7 @@ If the development of h5 version has been completed but pc adaptation not, you c
 当然还可以在iframe旁边放置二维码，提供手机版扫码地址，例如：
 Of course, you can also place the QR code next to iframe to provide the scanning address of the mobile phone version. For example:
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/hello-uni-pc.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/hello-uni-pc.png)
 
 #### 通过electron打包为windows、mac、linux客户端
 #### Package it as windows, mac and linux clients through electron

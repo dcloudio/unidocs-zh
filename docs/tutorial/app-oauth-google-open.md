@@ -17,17 +17,16 @@ Note: Google servers cannot be accessed within China
 URL: https://developers.google.com/identity/sign-in/android/sign-in?hl=en-us
 
 * 选择项目配置
-* Select project configuration
-![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-google-android-apiConfig.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/oauth-google-android-apiConfig.png)
 点击后出现项目与应用选择界面，如果你有已创建过的Firebase项目，可以直接选择。如果没有，可以选择新建一个Google Api 项目。
-![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-google-android-configureProject.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/oauth-google-android-configureProject.png)
 
 * 选择项目后，在该项目下新建一个应用
 * After selecting a project, create a new application under the project
 选择应用平台  android
-![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-google-android-appType.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/oauth-google-android-appType.png)
 需要填写应用的包名和sha1指纹,指纹的获取方法在界面上有提示。按照提示操作即可。
-![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-google-android-createApp.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/oauth-google-android-createApp.png)
 点击创建，即可完成开通步骤。
 Click Create to complete the activation steps.
 
@@ -38,10 +37,8 @@ Click Create to complete the activation steps.
 * Open [Google Sign in iOS Boot Page](http://developers.google.com/identity/sign-in/ios/start-integrating?hl=zh-cn)
 
 * 点击创建OAuth客户端ID，填写项目名称
-* Click Create OAuth Client ID, fill in the project name
-![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-google-ios-config.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/oauth-google-ios-config.png)
 
 * 选择iOS平台、填写BundleID后，点击CREATE，即可获取Client ID
-* Select the iOS platform, fill in the BundleID, and click CREATE to get the Client ID
-![](https://web-assets.dcloud.net.cn/unidoc/zh/oauth-google-ios-create.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/oauth-google-ios-create.png)
 

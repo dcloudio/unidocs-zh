@@ -43,7 +43,7 @@ There are highs and lows, different small programs have different cpm, and devel
 相比微信自带流量主广告，uni-ad开发者可以申请相对更短的结算周期和垫资服务。具体扫码加企业微信咨询。
 Compared with WeChat's own traffic main advertisement, uni-ad developers can apply for a relatively shorter settlement cycle and advance payment service. Scan the code and add enterprise WeChat consultation.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
 
 5. 安全防护
 5. Safety protection

@@ -13,7 +13,7 @@ In the HBuilderX console, you can directly see the logs printed by the built-in 
 点击日志，可以直接跳转到对应的代码处。
 Click the log to jump directly to the corresponding code.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/consolelogjump.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/consolelogjump.jpg)
 
 注意浏览器控制台打印的日志无法转到代码，只有HBuilder控制台打印的才能转到代码。而运行到外部浏览器是没有这个功能的。只有HBuilder内置浏览器才可以。
 Note that the log printed by the browser console cannot be transferred to the code, only the log printed by the HBuilder console can be transferred to the code. Running to an external browser does not have this feature. Only HBuilder built-in browser can.
@@ -30,7 +30,7 @@ In the HBuilderX built-in browser, the console of the HBuilderX built-in browser
 对源码点右键，可以同步断点到内置浏览器的调试工具，调试方法同chrome通行的用法。
 Right-click on the source code, you can synchronize the breakpoint to the debugging tool of the built-in browser, and the debugging method is the same as the common usage of chrome.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/syncbreakpoint.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/syncbreakpoint.jpg)
 
 关于另一种使用HBuilderX的调试控制台的方案，[另见](h5-debug.md)
 For another solution using HBuilderX's debug console, [see also](h5-debug.md)

@@ -23,7 +23,7 @@ When developing a `uni-app` project through HBuilderX, right-click on the `uni-a
 At the same time, HBuilderX also has built-in common page templates (such as text lists, product lists, etc.). Choosing these templates can greatly improve your development efficiency.
 
 <div>
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/pages-add-02.png" style="max-width:450px"></img>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/pages-add-02.png" style="max-width:450px"></img>
 </div>
 
 ## 删除页面

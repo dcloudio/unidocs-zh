@@ -213,7 +213,7 @@ Example:
 HBuilderX创建的项目在运行菜单勾选`启用SSR`再运行到浏览器即可
 For the project created by HBuilderX, check `Enable SSR` in the run menu and run it to the browser.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/run-ssr-checked.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run-ssr-checked.jpg)
 
 cli创建的项目使用`npm run dev:h5:ssr`运行即可
 The project created by cli can be run with `npm run dev:h5:ssr`
@@ -276,8 +276,7 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
 2. 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
 2. Through `HBuilderX` `Issuance Menu -> Website PC-Web or Mobile H5`, check `ssr`, check `Deploy compiled resources on uniCloud front-end web hosting`
 
-	![自动部署](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
-	![Automatic deployment](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
+	![自动部署](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
 	
 3. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
 3. Configure the cloud function URL path of `uni-ssr`, please refer to the document: [Cloud function URLization](https://uniapp.dcloud.net.cn/uniCloud/http)
@@ -314,8 +313,7 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
   非cli工程：通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
   Non-cli project: by `Release Menu -> website PC-Web or mobile phone H5` of `HBuilderX 3.1.16 and above`, check `ssr`
   
-  ![以ssr模式发行](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
-  ![Publish in ssr mode](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
+  ![以ssr模式发行](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
   
 3. 部署静态资源到[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
 3. Deploy static resources to [Front-end web hosting](https://uniapp.dcloud.net.cn/uniCloud/hosting)

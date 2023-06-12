@@ -11,7 +11,7 @@ On the basis of the conventional `Node API`, uniCloud's cloud function environme
 Each cloud function is a js package. When the cloud function is called, the serverless scheduling system allocates hardware resources to start a node environment to run the cloud function.
 
 在HBuilderX中可以新建云函数（HBuilderX 3.4 同时可以新建云对象）。
-![](https://web-assets.dcloud.net.cn/unidoc/zh/createFun-a.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/createFun-a.jpg)
 
 每个云函数是一个目录，其中普通云函数有`index.js`入口文件，云对象的入口文件则是`index.obj.js`。
 Each cloud function is a directory, in which common cloud functions have an `index.js` entry file, and cloud object entry files are `index.obj.js`.
@@ -786,9 +786,9 @@ Developers can right-click the cloud function directory to manage public modules
 注意：未引用扩展库的，使用uniCloud相应api时会报错。
 Note: If the extension library is not referenced, an error will be reported when using the corresponding API of uniCloud.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush-glkzk.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush-glkzk.jpg)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush-kzk.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush-kzk.jpg)
 
 **目前支持的扩展库如下**
 **Currently supported extension libraries are as follows**

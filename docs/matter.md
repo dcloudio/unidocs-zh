@@ -211,7 +211,7 @@ If you have done WeChat MiniApp development, you should already be familiar with
     1. 配置发行后的路径（发行在网站根目录可不配置），比如发行网站路径是 www.xxx.com/html5，在 `manifest.json` 文件内编辑 h5 节点，router 下增加 base 属性为 html5
     1. Configure the post-publishing path (publishing in the root directory of the website is not required), for example, the path of the posting website is www.xxx.com/html5, edit the h5 node in the `manifest.json` file, and add the base attribute under the router to html5
 <div>
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/html5-a.png" width="500">
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/html5-a.png" width="500">
 </div>
     2. 点击菜单 发行-> H5
     2. Click the menu Release -> H5

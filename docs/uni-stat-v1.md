@@ -100,8 +100,7 @@ At this point, developers can create applications through the two portals of HBu
 在HBluiderX中先登录，然后在项目根目录打开 `manifest.json`，在可视化界面点击获取 `APPID` 获取，无需其他设置，如下图
 Log in first in HBluiderX, then open `manifest.json` in the project root directory, click to get `APPID` in the visual interface, no other settings are required, as shown below
 
-![获取appid](https://web-assets.dcloud.net.cn/unidoc/zh/appid.png)
-![Get appid](https://web-assets.dcloud.net.cn/unidoc/zh/appid.png)
+![获取appid](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/appid.png)
 
 **方式2. 登录DCoud开发者中心获取(即将支持)**
 **Method 2. Log in to DCud Developer Center to get it (coming soon)**

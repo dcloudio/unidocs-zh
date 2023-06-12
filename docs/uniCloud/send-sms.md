@@ -286,8 +286,7 @@ The SMS sent in this example will be displayed on the mobile phone as:
 - App平台的短信验证码需求，建议优先通过App一键登陆来替代，更便捷、更便宜。[详见](univerify.md)
 - For the SMS verification code requirements of the App platform, it is recommended to replace it with one-click login on the App, which is more convenient and cheaper. [See](univerify.md)
 
-更多问题：欢迎加入<a class="join-group-chat" target="_blank" href="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4%BF%A1.png">DCloud短信技术交流群	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4%BF%A1.png">
-More questions: welcome to join <a class="join-group-chat" target="_blank" href="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F% AD%E4%BF%A1.png">DCloud SMS technology exchange group <img src="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4% BF%A1.png">
+更多问题：欢迎加入<a class="join-group-chat" target="_blank" href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4%BF%A1.png">DCloud短信技术交流群	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4%BF%A1.png">
 </a>咨询
 </a> Consulting
 
@@ -368,11 +367,11 @@ If there are scenarios such as customer care, membership services, e-commerce ac
 **Feature Highlights**
 
 支持给用户打标签分组，按照分组群发短信，可以同时给多个分组群发
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230109154350.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230109154350.png)
 短信模板变量支持从数据库表字段中读取
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230109194715.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230109194715.png)
 发送前预览短信内容；防止内容错误，提高发送成功率
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230109155202.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230109155202.png)
 
 如何使用？查看[群发短信配置](uniCloud/admin.md#batch-sms)
 how to use? View [Batch SMS Configuration](uniCloud/admin.md#batch-sms)

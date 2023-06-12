@@ -83,9 +83,9 @@ See the screenshot below for display effect:
 custom-tab-bar 水平布局（horizontal）：
 custom-tab-bar horizontal layout (horizontal):
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/custom-tab-bar.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/custom-tab-bar.png)
 
 custom-tab-bar 竖直布局（vertical）：
 custom-tab-bar vertical layout (vertical):
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/vertical.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/vertical.png)

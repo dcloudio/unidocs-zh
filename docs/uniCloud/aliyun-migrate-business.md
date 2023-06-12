@@ -9,7 +9,7 @@ To make it easier for developers to migrate their business from the public beta 
 公测版迁移正式版，需通过`迁移正式版`操作来下单购买待迁移的正式版空间，该操作会为两个空间增加迁移绑定关系，方便后续迁移配置。
 To migrate from the beta version to the official version, you need to place an order to purchase the official version space to be migrated through the `migrate official version` operation. This operation will add a migration binding relationship for the two spaces to facilitate subsequent migration configurations.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E8%BF%81%E7%A7%BB%E6%AD%A3%E5%BC%8F%E7%89%88%E6%8C%89%E9%92%AE.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E8%BF%81%E7%A7%BB%E6%AD%A3%E5%BC%8F%E7%89%88%E6%8C%89%E9%92%AE.png)
 
 迁移时，可以选择新空间使用**按量计费**或**包月套餐**。
 When migrating, you can choose the new space to use **As you go** or **Monthly package**.
@@ -74,7 +74,7 @@ Since the official version space to be migrated is a brand new and independent s
 为了更好的在云函数/云对象中兼容，购买待迁移正式版空间时， 可选择`是否在云函数/云对象代码中兼容 SpaceID`，如果开启该选项，迁移后在云函数/云对象内获取的`context.SPACEINFO.spaceId` 及 `cloudInfo` 内的 SpaceId 将保持不变，仍为原公测版SpaceId。开发者可以通过`context.SPACEINFO.useOldSpaceId` 或 `cloudInfo.useOldSpaceId`判断当前获取的spaceId是不是迁移前的，true表示当前服务空间在云函数内取到的服务空间id为迁移前的服务空间id，否则为新空间id。如运行本地云函数，此特性于`HBuilderX 3.6.13`起支持，云端默认支持此特性。**迁移后的新服务空间id为旧空间id加`mp-`前缀。**
 In order to be more compatible in cloud functions/cloud objects, when purchasing the official space to be migrated, you can choose `Whether to be compatible with SpaceID in cloud functions/cloud object codes`, if this option is enabled, the cloud functions/cloud objects after migration The `context.SPACEINFO.spaceId` obtained in `context.SPACEINFO.spaceId` and the SpaceId in `cloudInfo` will remain unchanged, and will still be the SpaceId of the original beta version. Developers can use `context.SPACEINFO.useOldSpaceId` or `cloudInfo.useOldSpaceId` to judge whether the currently obtained spaceId is before migration. true means that the service space id obtained by the current service space in the cloud function is the service space id before migration , otherwise it is the new space id. For running local cloud functions, this feature is supported starting from `HBuilderX 3.6.13`, and the cloud supports this feature by default. **The new service space id after migration is prefixed with `mp-` to the old space id. **
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E8%BF%81%E7%A7%BB%E4%B8%8B%E5%8D%95.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E8%BF%81%E7%A7%BB%E4%B8%8B%E5%8D%95.png)
 
 
 **注意**：
@@ -253,7 +253,7 @@ If a custom domain name is bound, the service space of the public beta version w
 由于自定义域名仍绑定在公测版服务空间，正式版空间前端网页托管的域名状态为`需解绑后重新绑定`
 Since the custom domain name is still bound to the service space of the public beta version, the status of the domain name hosted on the front-end webpage of the official version space is `Need to unbind and rebind`
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5%E6%89%98%E7%AE%A1%E5%9F%9F%E5%90%8D%E7%8A%B6%E6%80%81.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5%E6%89%98%E7%AE%A1%E5%9F%9F%E5%90%8D%E7%8A%B6%E6%80%81.png)
 
 需要开发者在[uniCloud控制台](https://unicloud.dcloud.net.cn)将自定义域名删除后重新绑定，通过该操作获取到新的CNAME后，将域名解析更换到新的CNAME以完成域名迁移。 这个期间前端网页托管自定义域名访问会中断，建议在访问量较低的时候处理。
 The developer needs to delete the custom domain name in the [uniCloud console](https://unicloud.dcloud.net.cn) and then bind it again. After obtaining the new CNAME through this operation, replace the domain name resolution to the new CNAME to complete the domain transfer. During this period, access to the custom domain name hosted on the front-end webpage will be interrupted. It is recommended to deal with it when the traffic volume is low.

@@ -7,7 +7,7 @@
 ⼀个视频内容频道，支持上下滑动切换视频内容
 A video content channel that supports sliding up and down to switch video content
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-content-page.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ad-content-page.png)
 
 **平台差异说明**
 **Platform Difference Description**

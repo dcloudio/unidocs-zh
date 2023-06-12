@@ -47,8 +47,7 @@ According to the following table, set the request legal domain name and uploadFi
 **阿里云查看上传、下载安全域名**
 **Alibaba cloud view upload and download security domain name**
 
-![阿里云查看上传、下载安全域名](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-aliyun-secure-domain.jpg)
-![Aliyun view upload and download secure domain name](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-aliyun-secure-domain.jpg)
+![阿里云查看上传、下载安全域名](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloud-aliyun-secure-domain.jpg)
 
 小程序开发工具的真机预览功能，必须添加上述域名白名单，否则无法调用云函数。模拟器的PC端预览、真机调试不受此影响。
 For the real machine preview function of the applet development tool, the above-mentioned domain name whitelist must be added, otherwise the cloud function cannot be called. The PC-side preview and real-device debugging of the simulator are not affected by this.
@@ -76,7 +75,7 @@ When you use the run menu in HBuilderX to run to the applet, it will connect to 
 
 如果域名白名单提示 `127.0.0.1` 这个ip没有加入白名单，那代表你点的就是【运行】菜单发布的体验版，请务必点【发行】发布小程序。**uni-app项目发行与运行输出的目录不同，请注意不要选错了**
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/391.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin/391.png)
 
 ### Web端使用uniCloud@useinh5
 

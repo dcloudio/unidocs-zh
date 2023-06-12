@@ -16,7 +16,7 @@ In order to carry forward the technology, DCloud donated the technical standard 
 360手机助手率先接入，在其3.4版本实现应用的秒开运行。
 360 Mobile Assistant took the lead to access, and realized the application running in seconds in its 3.4 version.
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/pic-3.png" style="max-width:480px;">
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/pic-3.png" style="max-width:480px;">
 
 随后DCloud推动大众点评、携程、京东、有道词典、唯品会等众多开发者为流应用平台提供应用。
 Subsequently, DCloud promoted Dianping, Ctrip, JD.com, Youdao Dictionary, Vipshop and many other developers to provide applications for the streaming application platform.

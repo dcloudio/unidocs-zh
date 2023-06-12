@@ -10,7 +10,7 @@ HBuilderX 3.6.9+, new uts plug-in Android platform real machine operation suppor
 运行带有uts插件的项目到Android设备，如果您遇到以下提示，请配置[运行环境](#Android环境配置)
 Run the project with the uts plug-in to the Android device, if you encounter the following prompts, please configure [running environment](#Android environment configuration)
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/20221111173829.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20221111173829.jpg" style="zoom: 50%;" />
 
 ## uts扩展插件
 ## uts extension
@@ -18,14 +18,14 @@ Run the project with the uts plug-in to the Android device, if you encounter the
 当您运行带有uts插件的项目到Android设备时，会自动安装【uts开发扩展 - Android】插件，请务必安装。具体如下：
 When you run the project with the uts plugin to the Android device, the [uts development extension - Android] plugin will be installed automatically, please be sure to install it. details as follows:
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/20221111171012.jpg" style="zoom: 50%" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20221111171012.jpg" style="zoom: 50%" />
 
 ## 环境配置
 ## Environment configuration
 > 下载插件后打开 HBuilderX到 【设置 - 插件配置】：如图
 > After downloading the plug-in, open HBuilderX to [Settings - Plug-in Configuration]: as shown in the figure
 
-![image](https://web-assets.dcloud.net.cn/unidoc/zh/%E9%85%8D%E7%BD%AE.png)
+![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E9%85%8D%E7%BD%AE.png)
 
 #### 上面的截图展示了以下配置：
 #### The screenshot above shows the following configuration:
@@ -36,7 +36,7 @@ When you run the project with the uts plugin to the Android device, the [uts dev
 1. 点击图标1的下载地址进入下载页面。如图所示，点击红圈部分下载工具包。
 1. Click the download link in icon 1 to enter the download page. As shown in the figure, click the red circled part to download the toolkit.
 
- ![image](https://web-assets.dcloud.net.cn/unidoc/zh/gradle.png)
+ ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gradle.png)
  
 2. 将步骤1下载的内容解压后，找到bin目录下的执行脚本，填入图标3处。
 2. After decompressing the content downloaded in step 1, find the execution script in the bin directory, and fill in icon 3.
@@ -55,7 +55,7 @@ Click the download address of icon 2 to enter the Android official website, whic
 1. 如图所示，根据平台下载Android Studio
 1. As shown in the figure, download Android Studio according to the platform
 
-![image](https://web-assets.dcloud.net.cn/unidoc/zh/sdk-2.png)
+![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/sdk-2.png)
 
 2. 安装后获取Android Studio中sdk的路径地址填入到图标4处。
 2. After installation, obtain the path address of the sdk in Android Studio and fill it in icon 4.
@@ -68,7 +68,7 @@ Click the download address of icon 2 to enter the Android official website, whic
 1. 如图所示，根据平台下载Command line tools only。
 1. As shown in the figure, download Command line tools only according to the platform.
 
-![image](https://web-assets.dcloud.net.cn/unidoc/zh/sdk.png)
+![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/sdk.png)
  
 2. 下载解压后通过`%解压目录%/bin/sdkmanager脚本安装build-tools和platforms
 2. After downloading and decompressing, install build-tools and platforms through `%decompression directory%/bin/sdkmanager script
@@ -92,7 +92,7 @@ sdkmanager --sdk_root=%sdk路径% --install "platforms;android-30"
 配置后如下图（根据本地目录结构有所不同）
 After configuration, as shown below (depending on the local directory structure)
 
- ![image](https://web-assets.dcloud.net.cn/unidoc/zh/%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90.png)
+ ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90.png)
 
 **注意**
 **Notice**

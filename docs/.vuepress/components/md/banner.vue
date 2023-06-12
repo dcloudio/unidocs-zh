@@ -20,11 +20,11 @@
 		data() {
 			return {
 				images: [
-					'https://web-assets.dcloud.net.cn/unidoc/zh/case6.png',
-					'https://web-assets.dcloud.net.cn/unidoc/zh/case2.png',
-					'https://web-assets.dcloud.net.cn/unidoc/zh/case1.png',
-					'https://web-assets.dcloud.net.cn/unidoc/zh/case3.png',
-					'https://web-assets.dcloud.net.cn/unidoc/zh/case4.png',
+					'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case6.png',
+					'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case2.png',
+					'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case1.png',
+					'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case3.png',
+					'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case4.png',
 				],
 			};
 		},
@@ -194,7 +194,7 @@
 		-webkit-transform: translateY(-50%);
 		z-index: 20;
 		display: none;
-		background-image: url(https://web-assets.dcloud.net.cn/unidoc/zh/arrow.png);
+		background-image: url(https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/arrow.png);
 	}
 
 	.banner .slider-btn.slider-btn-left {

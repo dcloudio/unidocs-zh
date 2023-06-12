@@ -10,7 +10,7 @@ HBuilderX 3.6.9+, new uts plug-in iOS platform supports local compilation and re
 安装[uts扩展插件](#uts扩展插件)和[Xcode](#Xcode环境配置)后，您在本地修改uts插件iOS平台代码，即可在本地编译并真机运行到iOS设备，而无需再提交代码到云端制作自定义基座。
 After installing [uts extension plugin](#uts%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6) and [Xcode](#Xcode environment configuration), you modify locally The uts plug-in iOS platform code can be compiled locally and run on the real machine to the iOS device, without submitting the code to the cloud to make a custom dock.
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/20221111172603.jpg" style="zoom: 45%" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20221111172603.jpg" style="zoom: 45%" />
 
 ## uts扩展插件
 ## uts extension
@@ -18,7 +18,7 @@ After installing [uts extension plugin](#uts%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6
 当您运行带有uts插件的项目到`iOS真机设备`时，会自动安装【uts开发扩展 - iOS】插件，请务必安装。具体如下：
 When you run the project with the uts plugin to `iOS real device`, the [uts development extension - iOS] plugin will be installed automatically, please be sure to install it. details as follows:
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios_uts%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6.jpg" style="zoom: 50%" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ios_uts%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6.jpg" style="zoom: 50%" />
 
 ## Xcode环境配置
 ## Xcode environment configuration

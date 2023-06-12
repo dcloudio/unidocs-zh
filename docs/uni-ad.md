@@ -43,7 +43,7 @@
   - 默认每月4日、19日两次结算。扫描联系商务申请更短结算周期
   - By default, it is settled twice on the 4th and 19th of each month. Scan contact business application for shorter billing cycle
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
 
 ### 开通配置广告步骤@start
 ### Activate configuration advertisement steps @start

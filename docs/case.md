@@ -159,12 +159,12 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 <a href="https://m.qinxuan.hihonor.com/" target="_blank" class="clear-style"><b>Huawei Honor Personal Selection Mall:</b></a> Huawei Its Honor brand boutique e-commerce platform.
 <div style="display:flex;justify-content: space-around;">
 	<a href="javascript:;" target="_self" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-case-rongyao.png" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-case-rongyao.png" width="200"/>
 		<span style="margin-top:15px;">微信小程序</span>
 		<span style="margin-top:15px;">WeChat MiniApp</span>
 	</a>
   <a href="https://m.qinxuan.hihonor.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/rongyao.png" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/rongyao.png" width="200"/>
 		<span style="margin-top:15px;">H5</span>
 	</a>
   <a href="https://appgallery1.huawei.com/#/app/C100382765" target="_blank" class="clear-style barcode-view">
@@ -179,7 +179,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 <b>Starbucks:</b> the world's largest coffee chain and the world's leading specialty coffee retailer
 <div style="display:flex;justify-content: space-around;">
 	<a href="javascript:;" target="_self" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-case-xbk.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-case-xbk.jpg" width="200"/>
 		<span style="margin-top:15px;">微信小程序</span>
 		<span style="margin-top:15px;">WeChat MiniApp</span>
 	</a>
@@ -204,7 +204,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 <b>China Education Release:</b> The official app of the Ministry of Education of the People's Republic of China. <a href="https://uniapp.dcloud.io/uniCloud/README">uniCloud cloud development</a> case. [See report for details](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
 <div style="display:flex;justify-content: space-around;">
 	<a href="http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/jiaoyubuapp.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/jiaoyubuapp.jpg" width="200"/>
 		<span style="margin-top:15px;">iOS、Android通用扫码地址</span>
 		<span style="margin-top:15px;">Universal scanning address for iOS and Android</span>
 	</a>
@@ -214,7 +214,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 <b>CSDN:</b> Appstore news category top ten. <a href="https://nativesupport.dcloud.net.cn/ <a href="https://nativesupport.dcloud.net.cn/">"></a> uni MiniApp SDK</a> case. Many columns inside the app are made into MiniApp.
 <div style="display:flex;justify-content: space-around;">
 	<a href="https://www.csdn.net/apps/download" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/csdnappdown.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/csdnappdown.jpg" width="200"/>
 		<span style="margin-top:15px;">App码</span>
 		<span style="margin-top:15px;">App Code</span>
 	</a>
@@ -271,7 +271,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 		<span style="margin-top:15px;">Web and H5 code</span>
 	</a>
   <a href="javascript:;" target="_self" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/miniapp-dengdengduolinguo.png" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/miniapp-dengdengduolinguo.png" width="200"/>
 		<span style="margin-top:15px;">微信小程序码</span>
 		<span style="margin-top:15px;">WeChat MiniApp code</span>
 	</a>
@@ -281,17 +281,17 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 <a href="http://ext.dcloud.net.cn/plugin?id=239" target="_blank" class="clear-style"><b>ColorUI:</b></a>ColorUI Official component library for uni-app, high-quality examples. The plug-in market address of this project: [https://ext.dcloud.net.cn/plugin?id=239](https://ext.dcloud.net.cn/plugin?id=239)
 <div style="display:flex;justify-content: space-around;">
 	<a href="http://demo.color-ui.com" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/color-ui-H5.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/color-ui-H5.jpg" width="200"/>
 		<span style="margin-top:15px;">H5码</span>
 		<span style="margin-top:15px;">H5 code</span>
 	</a>
 	<a href="http://ext.dcloud.net.cn/plugin?id=239" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/color-ui-weapp.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/color-ui-weapp.jpg" width="200"/>
 		<span style="margin-top:15px;">微信小程序码</span>
 		<span style="margin-top:15px;">WeChat MiniApp code</span>
 	</a>
 	<a href="http://ext.dcloud.net.cn/plugin?id=239" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/color-ui-alipay.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/color-ui-alipay.jpg" width="200"/>
 		<span style="margin-top:15px;">支付宝小程序码</span>
 		<span style="margin-top:15px;">Alipay MiniApp code</span>
 	</a>
@@ -306,22 +306,22 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 		<span style="margin-top:15px;">App Code</span>
 	</a>-->
 	<a href="https://www.cyb520.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/cyb-wx.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cyb-wx.jpg" width="200"/>
 		<span style="margin-top:15px;">微信小程序码</span>
 		<span style="margin-top:15px;">WeChat MiniApp code</span>
 	</a>
 	<a href="https://www.cyb520.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/cyb-baidu.png" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cyb-baidu.png" width="200"/>
 		<span style="margin-top:15px;">百度小程序码</span>
 		<span style="margin-top:15px;">Baidu MiniApp Code</span>
 	</a>
 	<a href="https://www.cyb520.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/cyb-qq.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cyb-qq.jpg" width="200"/>
 		<span style="margin-top:15px;">QQ小程序码</span>
 		<span style="margin-top:15px;">QQ MiniApp code</span>
 	</a>
 	<a href="https://www.cyb520.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/cyb-toutiao.png" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cyb-toutiao.png" width="200"/>
 		<span style="margin-top:15px;">头条/抖音小程序码</span>
 		<span style="margin-top:15px;">Toutiao/Douyin MiniApp code</span>
 	</a>
@@ -445,8 +445,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
  <strong>Vivo member official MiniApp:</strong> Search "vivo member" in the WeChat MiniApp, <span class="scan-code-text"> or move the mouse to view [WeChat MiniApp code]</span>
  <div class="scan-code-hover">
     <div class="scan-code-hover-box">
-      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/vivovip.jpg" alt="二维码获取失败" />
-      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/vivovip.jpg" alt="QR code acquisition failed" />
+      <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/vivovip.jpg" alt="二维码获取失败" />
     </div>
  </div>
 </div>
@@ -1007,8 +1006,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
  <strong>Kunming Railway+:</strong> An application provided by China Railway Kunming Bureau for passengers. [App download page](https://media.kunming-railway.cn/),WeChat MiniApp search "Kunming Railway +"
  <div class="scan-code-hover">
     <div class="scan-code-hover-box">
-      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/wxkt.jpg" alt="二维码获取失败" />
-      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/wxkt.jpg" alt="QR code acquisition failed" />
+      <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/wxkt.jpg" alt="二维码获取失败" />
     </div>
  </div>
 </div>
@@ -1282,8 +1280,7 @@ href="https://jy.xiaohulu.com/)、[Android](http://download02.xiaohulu.com/hongr
 **超英预告：** 超级英雄预告，腾讯课堂Next学院的uni-app课程示例，[H5](http://www.imovietrailer.com)、微信小程序搜索“NEXT超英预告”。
 **Superhero Trailer:** Superhero Trailer, an example of the uni-app course of Tencent Classroom Next Academy, [H5](http://www.imovietrailer.com),WeChat MiniApp search "NEXT Superhero Trailer".
 
-**垃圾分类帮帮团：** [微信小程序码地址](https://web-assets.dcloud.net.cn/unidoc/zh/ljfl.png)
-**Garbage Sorting Help Group:** [WeChat MiniApp Code Address](https://web-assets.dcloud.net.cn/unidoc/zh/ljfl.png)
+**垃圾分类帮帮团：** [微信小程序码地址](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ljfl.png)
 
 **FUNSOLE：** Funsole疯收是一个专业的球鞋交易平台。[App和小程序通用链接](https://m3w.cn/funsole)
 **FUNSOLE:** Funsole is a professional sneaker trading platform. [App and MiniApp Universal Link](https://m3w.cn/funsole)
@@ -1341,7 +1338,7 @@ href="https://user-images.githubusercontent.com/29654065/63156422-3cfdfc80-c047-
 ### More MiniApp Cases (can be searched in WeChat MiniApp) @wx-more
 
 <div>
-<link rel="stylesheet" type="text/css" href="https://web-assets.dcloud.net.cn/unidoc/zh/case.css"/>
+<link rel="stylesheet" type="text/css" href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case.css"/>
 <ul class="wx-icon-group">
     <li class="wx-icon-item"><span class="wx-icon wx-icon0"></span><span>BAT全书</span></li>
     <li class="wx-icon-item"><span class="wx-icon wx-icon0"></span><span>The Complete Book of BAT</span></li>

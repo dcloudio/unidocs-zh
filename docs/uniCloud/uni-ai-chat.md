@@ -9,7 +9,7 @@
 **插件下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-ai-chat](https://ext.dcloud.net.cn/plugin?name=uni-ai-chat)**
 
 视频效果：  
-<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/uni-ai-stream.mov" style="max-width: 100%; max-height: 70vh;"></video>
+<video controls src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/uni-ai-stream.mov" style="max-width: 100%; max-height: 70vh;"></video>
 
 ## 体验步骤  
 
@@ -58,7 +58,7 @@
 
 流式响应的流程图
 
-<img width="500px" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/20230425203311.jpg">
+<img width="500px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/20230425203311.jpg">
 
 流式响应的使用需客户端先通过 `new uniCloud.SSEChannel()` 创建 SSE 通道，并获得 `channel` 值（详情请参考：[https://uniapp.dcloud.net.cn/uniCloud/sse-channel.html#create-sse-channel](https://uniapp.dcloud.net.cn/uniCloud/sse-channel.html#create-sse-channel)）。在客户端向 uniCloud 云对象发起请求时，需要将该 `channel` 值作为参数一同携带；然后 uniCloud 云对象与 uni-ai 建立 流式响应[(stream)](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion-stream) 通讯，云对象监听 uni-ai 返回的分片数据，在接收到数据后再通过 sse-channel ([反序列化消息通道](https://uniapp.dcloud.net.cn/uniCloud/sse-channel.html#cloud-deserialize-channel))向客户端推送消息。
 
@@ -82,7 +82,7 @@ v1.0.3起提供了商业化能力，与uni-ai对话消耗积分。
 ### 流程概述
 1. 开通广告；在[uni-ad](https://uniad.dcloud.net.cn/)官网点击菜单`广告设置`在应用列表，找到你的应用点击`开通广告`
 2. 创建激励视频广告位；在[应用列表](https://uniad.dcloud.net.cn/list/app)点击`应用详情`再点击`新建广告位`；如下图：广告类型选`激励视频广告`，配置服务器回调，选uni-ai-chat部署的uniCloud服务空间，回调云函数名称选：`reward-video-callback`
-<img width="500px" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/uni-ai-chat-create-adpid.jpg">
+<img width="500px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/uni-ai-chat-create-adpid.jpg">
 
 	**微信小程序端注意**：
 	- 参考：[uniAD微信小程序广告开通指南](https://ask.dcloud.net.cn/article/39928)开通广告后会自动创建广告位

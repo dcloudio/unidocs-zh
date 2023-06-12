@@ -35,7 +35,7 @@ Referer防盗链，是基于HTTP请求头中Referer字段来设置访问控制�
 
 例如，你的web网站地址为 abc.com，那么可以设定白名单为 abc.com，那么除了这个网站，其他来源请求都会被禁止访问cdn。
 
-![配置Referer防盗链](https://web-assets.dcloud.net.cn/unidoc/zh/cdn-safe-referer.png)
+![配置Referer防盗链](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cdn-safe-referer.png)
 
 
 **配置说明**
@@ -92,7 +92,7 @@ User-Agent是HTTP请求头的一部分，包含用户访问时所使用的操作
 
 访问控制UA黑/白名单页签，点击修改配置来配置规则。
 
-![配置UA黑/白名单](https://web-assets.dcloud.net.cn/unidoc/zh/cdn-safe-ua.png)
+![配置UA黑/白名单](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cdn-safe-ua.png)
 
 |配置项	|参数    |说明	|
 |:-:	|:-:		|:-:        |
@@ -124,7 +124,7 @@ uni-app的app端，有默认UA，也可以自定义UA。
 
 访问控制IP黑/白名单页签，点击修改配置来配置规则。
 
-![配置IP黑/白名单](https://web-assets.dcloud.net.cn/unidoc/zh/cdn-safe-ip.png)
+![配置IP黑/白名单](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cdn-safe-ip.png)
 
 |配置项	|参数    |说明	|
 |:-:	|:-:		|:-:        |

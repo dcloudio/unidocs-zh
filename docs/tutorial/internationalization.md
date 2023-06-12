@@ -18,14 +18,11 @@ Please follow the steps below to complete account registration:
 1. 点击 HBuilderX 左下角的“未登录”文字，打开登录窗口
 1. Click the "Not logged in" text in the lower left corner of HBuilderX to open the login window
 2. 选择“Global”，点击下方的“No account?Sign up”连接
-2. Select "Global" and click the "No account? Sign up" link below
-![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-01.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/intern-01.png)
 3. 在打开的浏览器中，输入用户名、邮箱、密码等信息
-3. In the opened browser, enter the user name, email, password and other information
-![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-02.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/intern-02.png)
 4. 注册成功的话，会提示已发送激活邮箱
-4. If the registration is successful, it will prompt that the activation email has been sent
-![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-03.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/intern-03.png)
 5. 登录你的邮箱，收取激活邮件，并点击其中的链接，完成账号激活
 5. Log in to your email, receive the activation email, and click the link to complete the account activation
 6. 账号激活后，返回 HBuilderX 界面，重新点击左下角的”未登录”文字，打开登录窗口，使用刚才注册的账号、密码，完成登录。
@@ -48,7 +45,7 @@ The basic operation of cloud packaging for accounts in "International Area" is t
 4. “国际区”账号不支持使用公共测试证书（test keystore）和DCloud老版证书（DCloud keystore）
 4. "International zone" accounts do not support the use of public test certificates (test keystore) and DCloud old certificates (DCloud keystore)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/intern-06.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/intern-06.png)
 
 ## 隐私政策
 ## Privacy Policy

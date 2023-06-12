@@ -12,7 +12,7 @@ In order to facilitate developers to debug query statements, `HBuilderX 3.1.5` h
 3. Use the run button on the toolbar to run (shortcut key: Ctrl+R or F5)
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/jql-runner.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/jql-runner.jpg"/>
 </div>
 
 

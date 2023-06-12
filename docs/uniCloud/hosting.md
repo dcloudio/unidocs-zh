@@ -100,7 +100,7 @@ Method 2. Upload through the HBuilderX tool.
   在菜单视图中，或者在左下角状态栏中，点击`前端网页托管`，可在左侧打开前端网页托管管理器。如下图
   In the menu view, or in the status bar in the lower left corner, click `Frontend Webpage Hosting` to open the frontend webpage hosting manager on the left. As shown below
   
-<img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5%E6%89%98%E7%AE%A1%E7%AE%A1%E7%90%86%E5%99%A8.jpg"/>
+<img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E5%89%8D%E7%AB%AF%E7%BD%91%E9%A1%B5%E6%89%98%E7%AE%A1%E7%AE%A1%E7%90%86%E5%99%A8.jpg"/>
 
 
   在前端网页托管管理器中，可以看到当前用户的服务空间列表，置灰表示该服务空间还没有开通前端网页托管，点击后可根据提示开通。（如上图中置灰的ali1服务空间）。

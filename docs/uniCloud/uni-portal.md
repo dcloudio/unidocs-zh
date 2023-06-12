@@ -34,7 +34,7 @@ The `uni-portal` unified publishing page is responsive, compatible with PC wides
 - **PC宽屏**
 - **PC widescreen**
 
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-pc.png" style="max-width:800px !important"></img>
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-pc.png" style="max-width:800px !important"></img>
 
 - **手机窄屏**
 - **Narrow screen for mobile phones**
@@ -42,9 +42,9 @@ The `uni-portal` unified publishing page is responsive, compatible with PC wides
 手机浏览器上，默认展示效果如下：
 On mobile browsers, the default display effect is as follows:
 
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mobile.png" style="max-width:400px !important"></img>
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mobile.png" style="max-width:400px !important"></img>
 
 `uni-portal`统一发布页同时会识别当前浏览器环境，在微信等特殊浏览器上，自动提示“点击右上角菜单，在浏览器中打开”，效果如下：
 The `uni-portal` unified publishing page will also recognize the current browser environment. On special browsers such as WeChat, it will automatically prompt "click the menu in the upper right corner to open in the browser", the effect is as follows:
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mp.jpg" style="max-width:400px !important"></img>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mp.jpg" style="max-width:400px !important"></img>

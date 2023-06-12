@@ -43,7 +43,7 @@ After the developer introduces `uni-pay` into the project, functions such as WeC
 注意：线上体验地址用的是阿里云免费版，免费版请求次数有限，如请求失败为正常现象，可直接导入示例项目绑定自己的空间体验。
 Note: The online experience address uses the free version of Alibaba Cloud, and the number of requests for the free version is limited. If the request fails, it is normal, and you can directly import the sample project to bind your own space experience.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/https___hellounipay.dcloud.net.cn_.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/https___hellounipay.dcloud.net.cn_.png)
 
 `uni-pay` 的功能包括：
 The functions of `uni-pay` include:
@@ -176,7 +176,7 @@ Before docking your own project, it is recommended to run through the sample pro
 1. 从插件市场导入`uni-pay`示例项目。[前往插件市场](https://ext.dcloud.net.cn/plugin?name=uni-pay)
 1. Import the `uni-pay` sample project from the plug-in market. [Go to the plug-in market](https://ext.dcloud.net.cn/plugin?name=uni-pay)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-9.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-9.png)
 
 2. 打开`uni-pay`配置文件，配置文件地址: `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js` [查看支付配置介绍](#config)
 2. Open `uni-pay` configuration file, configuration file address: `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js` [View payment configuration introduction](#config)
@@ -189,19 +189,19 @@ Before docking your own project, it is recommended to run through the sample pro
 6. 数据库初始化
 6. Database initialization
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-28.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-28.png)
 
 7. 运行启动项目，**在HBuilderX的运行控制台里选择使用云端云函数环境**
 7. Run the startup project, **Choose to use the cloud function environment in the HBuilderX console**
 
 **注意：测试支付回调必须选择云端云函数环境**
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-29.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-29.png)
 
 8. 前端页面里点击唤起收银台支付，如果可以正常支付，代表示例项目运行成功，可以开始对接自己的项目了。 [对接自己项目](#install)
 8. Click on the front-end page to invoke the payment at the cashier. If the payment can be made normally, it means that the sample project has run successfully, and you can start docking your own project. [Docking own project](#install)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-30.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-30.png)
 
 ## uni-pay的config-center配置@config
 ## config-center configuration of uni-pay @config
@@ -212,7 +212,7 @@ Developers need to apply to activate payment services in the payment background 
 配置文件在 `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js`
 The configuration file is in `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js`
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-3.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-3.png)
 
 ### 完整支付配置示例@config-demo
 ### Complete payment configuration example @config-demo
@@ -444,7 +444,7 @@ The format is "Service Space ID": "URLized Address"
 [点击此处进入服务空间列表](https://unicloud.dcloud.net.cn/home)，找到你项目用的服务空间，复制其服务空间ID
 [Click here to enter the service space list](https://unicloud.dcloud.net.cn/home), find the service space used by your project, and copy its service space ID
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-4.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-4.png)
 
 **URL化地址如何获取？**
 **How to obtain the URL address? **
@@ -452,12 +452,12 @@ The format is "Service Space ID": "URLized Address"
 [点击此处进入服务空间列表](https://unicloud.dcloud.net.cn/home)，找到你项目用的服务空间，点击服务空间名称进入空间详情页，点击左侧菜单【云函数/云对象】- 点击【uni-pay-co】云对象右侧的【详情】按钮
 [Click here to enter the service space list](https://unicloud.dcloud.net.cn/home), find the service space used by your project, click the service space name to enter the space details page, and click the left menu [Cloud Function/ Cloud Object] - Click the [Details] button on the right side of the [uni-pay-co] cloud object
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-5.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-5.png)
 
 进入详情后，点下面的【复制路径】，复制的内容就是【URL化地址】
 After entering the details, click [Copy Path] below, and the copied content is [URL Address]
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-6.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-6.png)
 
 ### 分渠道支付配置示例@config-part
 ### Sub-channel payment configuration example @config-part
@@ -850,12 +850,12 @@ Before docking your own project, it is recommended to [run through the sample pr
 1. 从插件市场导入`uni-pay`插件到你自己的项目。[前往插件市场](https://ext.dcloud.net.cn/plugin?name=uni-pay)
 1. Import the `uni-pay` plug-in from the plug-in market to your own project. [Go to the plug-in market](https://ext.dcloud.net.cn/plugin?name=uni-pay)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-10.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-10.png)
 
 2. 复制你刚运行的示例项目中的`uni-pay`配置文件，配置文件地址: `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js`到你的项目中 [查看支付配置介绍](#config)
 2. Copy the `uni-pay` configuration file in the sample project you just ran, configuration file address: `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js` to your project[ View payment configuration introduction](#config)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-3.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-3.png)
 
 3. 上传公共模块 `uni-config-center`（右键，上传公共模块，每次修改了支付配置，都需要重新上传此模块才会生效）
 3. Upload the public module `uni-config-center` (right click, upload the public module, every time you modify the payment configuration, you need to re-upload this module to take effect)
@@ -866,7 +866,7 @@ Before docking your own project, it is recommended to [run through the sample pr
 6. 数据库初始化
 6. Database initialization
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-28.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-28.png)
 
 7. 项目根目录`pages.json`添加`subPackages`分包页面配置（如果页面已自动配置，则可无视此步骤）
 7. Add `subPackages` subpackage page configuration to the project root directory `pages.json` (if the page has been automatically configured, you can ignore this step)
@@ -2577,7 +2577,7 @@ At the same time, create an empty json file, copy the following content into the
 ### 收款趋势
 ### Payment trend
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101.png)
 
 **概况**
 **Overview**
@@ -2585,7 +2585,7 @@ At the same time, create an empty json file, copy the following content into the
 在`概况`栏目中可以直观的看到今日、昨日、前日、本周、本月、本季度、本年度、累计数据。
 In the `Overview` column, you can intuitively see the data of today, yesterday, the day before yesterday, this week, this month, this quarter, this year, and the cumulative data.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-01.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-01.png)
 
 **名词解释：**
 **Glossary:**
@@ -2606,7 +2606,7 @@ In the `Overview` column, you can intuitively see the data of today, yesterday, 
 在`今日数据`栏目中可以看到更多今日统计数据。
 You can see more today's statistics in the `Statistics of the day` column.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-02.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-02.png)
 
 **名词解释：**
 **Glossary:**
@@ -2650,7 +2650,7 @@ You can see more today's statistics in the `Statistics of the day` column.
 在`趋势图`栏目中以`天维度`、`月维度`、`季维度`、`年维度`进行趋势统计。可以直观的看到收入的增长趋势。
 In the column of `Trend Chart`, carry out trend statistics by `Day Dimension`, `Month Dimension`, `Quarter Dimension`, `Year Dimension`. You can intuitively see the growth trend of income.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-03.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-03.png)
 
 ### 转换漏斗分析
 ### Conversion Funnel Analysis
@@ -2658,7 +2658,7 @@ In the column of `Trend Chart`, carry out trend statistics by `Day Dimension`, `
 可以为您分析指定时间段的支付转化率，同时展示支付转化率趋势图。
 It can analyze the payment conversion rate of the specified time period for you, and display the payment conversion rate trend graph at the same time.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A102.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A102.png)
 
 **名词解释：**
 **Glossary:**
@@ -2680,7 +2680,7 @@ It can analyze the payment conversion rate of the specified time period for you,
 可以为您快速筛选高价值用户，高复购率用户。
 It can quickly screen high-value users and users with high repurchase rate for you.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A103.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A103.png)
 
 ### 订单明细
 ### Order Details
@@ -2688,7 +2688,7 @@ It can quickly screen high-value users and users with high repurchase rate for y
 可以搜索、查看订单详情
 Can search and view order details
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A104.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A104.png)
 
 
 ## 注意事项@tips
@@ -2741,12 +2741,12 @@ module.exports = {
 微信小程序支付除了配置uni-pay的支付配置外，还需要配置 `manifest.json` 内的 微信小程序appid，如下图所示。
 In addition to configuring the payment configuration of uni-pay for WeChat MiniApp payment, you also need to configure the WeChat MiniApp appid in `manifest.json`, as shown in the figure below.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-7.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-7.png)
 
 如果报如下错误，请点[这里](#question-mp-weixin-domain)
 If the following error is reported, please click [here](#question-mp-weixin-domain)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-32.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-32.png)
 
 ### APP支付@tips-app
 ### APP payment @tips-app
@@ -2754,7 +2754,7 @@ If the following error is reported, please click [here](#question-mp-weixin-doma
 APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付模块，如下图所示。
 In addition to configuring the payment configuration of uni-pay for APP payment, it is also necessary to add a payment module when packaging, as shown in the figure below.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-8.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-8.png)
 
 同时，还需要打自定义基座（包名需要和开放平台下填写的一致），且你在开放平台下的这个应用必须通过审核才可以。（比如微信开放平台下的APP应用显示通过审核才可以）
 At the same time, you also need to create a custom base (the package name needs to be the same as that filled in under the open platform), and your application under the open platform must pass the review. (For example, the APP application under the WeChat open platform only shows that it has passed the review)
@@ -2906,7 +2906,7 @@ The application for a payment account requires enterprise qualifications (indivi
 ### 微信小程序真机报fail url not in domain list错误@question-mp-weixin-domain
 ### Wechat MiniApp real machine reports fail url not in domain list error @question-mp-weixin-domain
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-32.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-32.png)
 
 这是由于云开发的域名没有添加到微信小程序域名白名单导致的，需要去微信小程序后台，添加以下域名到微信小程序域名白名单
 This is because the domain name developed by the cloud has not been added to the domain name whitelist of the WeChat MiniApp. You need to go to the background of the WeChat MiniApp and add the following domain names to the domain name whitelist of the WeChat MiniApp.
@@ -2915,7 +2915,7 @@ This is because the domain name developed by the cloud has not been added to the
 https://api.next.bspapp.com;https://api.bspapp.com;https://tcb-api.tencentcloudapi.com;
 ```
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-31.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-31.png)
 
 **添加完域名后，一定要重启微信开发者工具，然后去手机微信里删除最近使用的小程序（这一步很关键），最后重新扫二维码进入小程序。**
 **After adding the domain name, be sure to restart the WeChat developer tools, then delete the recently used MiniApp in the mobile phone WeChat (this step is critical), and finally scan the QR code to enter the MiniApp. **

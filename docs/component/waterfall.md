@@ -43,8 +43,7 @@ Similar to the `<list>` component, the sub-components of the `<waterfall>` compo
 - `<refresh>`：用于给列表添加下拉刷新的功能。
 - `<refresh>`: Used to add a pull-down refresh function to the list.
 - `<loading>`：`<loading>` 用法与特性和 `<refresh>` 类似，用于给列表添加上拉加载更多的功能。
-- `<loading>`: `<loading>` usage and features are similar to `<refresh>`, used to add more functions to the list.
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/app-nvue-component-waterfall-01.png" />
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-nvue-component-waterfall-01.png" />
 
 #### 属性
 #### Attribute
@@ -68,8 +67,7 @@ Similar to the `<list>` component, the sub-components of the `<waterfall>` compo
 - left-gap: `[可选]`左边cell和列表的间隙. 如果未指定 ，则对应 `0`
 - left-gap: `[optional]` the gap between the left cell and the list. If not specified, it corresponds to `0`
 - right-gap: `[可选]`右边cell和列表的间隙. 如果未指定，则对应 `0`
-- right-gap: `[optional]` the gap between the right cell and the list. If not specified, corresponds to `0`
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/app-nvue-component-waterfall-02.png" />
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-nvue-component-waterfall-02.png" />
 - always-scrollable-vertical : `[可选]` 可选值为 true/ false，默认值为 false，iOS 平台，内容不满一屏无法触发下拉刷新时需要设置为true，因为默认子视图高度不超过父视图高度的时候 waterfall 不能滑动
 - always-scrollable-vertical : `[Optional]` The optional value is true/false, the default value is false, iOS platform, when the content is less than one screen and cannot trigger the pull-down refresh, it needs to be set to true, because the default subview height does not exceed The waterfall cannot slide when the parent view is high
 

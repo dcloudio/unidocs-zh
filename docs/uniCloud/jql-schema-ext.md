@@ -765,7 +765,7 @@ Built-in dependencies: Currently, the schema extension relies on `uni-id` or [un
 自`HBuilderX 3.7.0`起，可以在项目的`uniCloud/database`目录上右键管理schema扩展依赖的公共模块和扩展库。同样在此目录右键选择`上传schema扩展Js的配置`将配置的依赖同步到云端。
 From `HBuilderX 3.7.0`, you can right-click on the `uniCloud/database` directory of the project to manage the public modules and extension libraries that the schema extension depends on. Also right-click on this directory and select `Upload schema extension Js configuration` to synchronize the configuration dependencies to the cloud.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/deps-of-jql.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/deps-of-jql.jpg)
 
 `HBuilderX 3.2.7`到`HBuilderX 3.7.0`之间的版本，可通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和schema扩展关联，`HBuilderX 3.7.0`及之后的版本不推荐使用此用法
 For versions between `HBuilderX 3.2.7` and `HBuilderX 3.7.0`, you can associate public modules with schema extensions by configuring `"includeInClientDB":true` in the package.json of the public modules to be used,` This usage is not recommended for HBuilderX 3.7.0` and later versions

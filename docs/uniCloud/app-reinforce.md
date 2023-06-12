@@ -34,18 +34,18 @@ App 开发完毕直接上线，可能存在代码泄露风险，通过 dex 整�
 
 1. 使用开发者账号登录[开发者中心](https://dev.dcloud.net.cn/) ，选择`应用加固服务`栏目。在使用此功能前需要开通服务。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/no-open.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/no-open.png)
 
 2. 在申请应用加固之前，您需要先进行充值，因为应用加固是一项预付费业务。点击页面上的“充值”按钮，并输入充值金额进行充值。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/recharge_1.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/recharge_1.png)
 
 3. 完成充值后，前往`安全加固记录`栏目，点击"申请加固"按钮后，将打开一个新页面，用于填写加固申请信息。
 ::: warning 注意
 - 需提供已签名的安装包下载地址。
 - 提交后会从账户余额扣除费用，若账户余额不足会提交失败。
 :::
-![](https://web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-add_1.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-add_1.png)
 
 3. 当您成功提交加固申请后，您可以查看安全加固记录来跟踪加固的进展和结果。
  ::: warning 注意
@@ -53,7 +53,7 @@ App 开发完毕直接上线，可能存在代码泄露风险，通过 dex 整�
 - 如果加固成功，可以点击“下载加固包”按钮下载加固包。
 - 如果加固失败，会显示原因。同时，我们将已扣除的费用退回到您的账户余额中。
 :::
-![](https://web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-list_1.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-list_1.png)
 
 
 

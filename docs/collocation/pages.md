@@ -1566,7 +1566,7 @@ The startup mode configuration takes effect only during the development period, 
 **Note:** You can directly open the configuration page when running on the real machine in the app. You need to manually change the compilation mode in the WeChat developer tools, as shown in the figure below:
 
 <div style="text-align:center;">
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/condition.png" />
+	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/condition.png" />
 </div>
 
 **代码示例：**

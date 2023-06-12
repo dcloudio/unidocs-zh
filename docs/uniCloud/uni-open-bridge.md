@@ -86,7 +86,7 @@ After obtaining various credentials from WeChat, when each business code needs t
 流程图如下：
 The flow chart is as follows:
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-open-bridge.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-open-bridge.png)
 
 ## 凭据介绍
 ## Credential introduction

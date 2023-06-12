@@ -56,7 +56,7 @@ In the lower version that does not support database triggers, use [action cloud 
 27 lines of code need to be written, as shown in the figure:
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BC%A0%E7%BB%9Fphp%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BB%A3%E7%A0%812.png"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E4%BC%A0%E7%BB%9Fphp%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BB%A3%E7%A0%812.png"/>
 </div>
 
 2. 前端用ajax携带必要参数请求API，然后将请求结果赋值给data中的变量。最终把变量在视图中渲染出来。
@@ -66,7 +66,7 @@ In the lower version that does not support database triggers, use [action cloud 
 37 lines of code need to be written, as shown in the figure:
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BC%A0%E7%BB%9F%E5%BC%80%E5%8F%91%E6%96%B9%E5%BC%8F%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81.png"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E4%BC%A0%E7%BB%9F%E5%BC%80%E5%8F%91%E6%96%B9%E5%BC%8F%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81.png"/>
 </div>
 
 
@@ -83,7 +83,7 @@ In the lower version that does not support database triggers, use [action cloud 
 Only: 5 lines of code as shown:
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/clientDB%E7%9A%84%E6%96%B9%E5%BC%8F.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/clientDB%E7%9A%84%E6%96%B9%E5%BC%8F.jpg"/>
 </div>
 
 
@@ -92,8 +92,7 @@ Only: 5 lines of code as shown:
 
 
 ## clientDB图解
-## clientDB Diagram
-![](https://web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
 
 `clientDB`的前端，有两种用法，可以用js API操作云数据库，也可以使用`<unicloud-db>`组件。
 The front end of `clientDB` can be used in two ways. You can use the js API to operate cloud database, or you can use the `<unicloud-db>` component.

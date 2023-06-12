@@ -301,7 +301,7 @@ key description
 因此需要在小米平台上新建channel通道，设置自定义铃声前端路径如：android.resource://your packagename/raw/test（路径不需要带音频后缀名）如图
 Therefore, it is necessary to create a new channel channel on the Xiaomi platform, and set the custom ringtone front-end path such as: android.resource://your packagename/raw/test (the path does not need to have an audio suffix name) as shown in the figure
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/custom_sound.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/custom_sound.png)
 
 
 **Rest-v2 示例：**
@@ -1040,7 +1040,7 @@ Notification display style, text + long text style and text + large image style,
 
 <div class="weixin-support">
     <div class="weixin-support-focus">
-        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/weixin.png" alt="" class="weixin-support-icon">
+        <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/weixin.png" alt="" class="weixin-support-icon">
         联系
         connect
         <br>
@@ -1048,7 +1048,7 @@ Notification display style, text + long text style and text + large image style,
         push
     </div>
     <div class="weixin-support-content">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/support.jpg" alt="" class="weixin-support-icon">
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/support.jpg" alt="" class="weixin-support-icon">
        微信扫一扫
        WeChat scan
 		<br>

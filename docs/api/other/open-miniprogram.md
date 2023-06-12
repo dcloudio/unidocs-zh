@@ -104,7 +104,7 @@ WeChat applet jump to applet (half-screen mode) (supported from WeChat base libr
 当小程序需要打开另一个小程序让用户进行快捷操作时，可将要打开的小程序以半屏的形态跳转。
 When the applet needs to open another applet for the user to perform shortcut operations, the applet to be opened can be jumped in the form of a half screen.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/wx-miniprogram.jpeg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/wx-miniprogram.jpeg)
 
 **调用流程**
 **Call process**

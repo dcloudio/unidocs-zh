@@ -8,6 +8,6 @@
 
 利用 uni-ad 多层调度策略动态调整渠道，在设备无广告时自动调整为其他广告渠道以增加广告填充率
 
-<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/ad-unimp.x264.mp4" style="max-width: 100%; max-height: 50vh;"></video>
+<video controls src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ad/ad-unimp.x264.mp4" style="max-width: 100%; max-height: 50vh;"></video>
 
 文档已迁移至 [uniMP激励视频广告](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)

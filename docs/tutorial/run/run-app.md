@@ -22,12 +22,12 @@ The run entry can be activated through the run menu at the top of HBuilder, the 
 1. HBuilder顶部运行菜单  
 1. HBuilder top run menu
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/menurunapp.png" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/menurunapp.png" style="zoom: 50%;" />
 
 2. 工具栏运行按钮
 2. Toolbar run button
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/toolbarrunmenuapp.png" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/toolbarrunmenuapp.png" style="zoom: 50%;" />
 
 可以按数字快速选择菜单项。比如按“4”选择“运行到Android App基座”。也可以按上下键然后回车选择。
 Menu items can be quickly selected by number. For example, press "4" to select "Run to Android App Dock". You can also press the up and down keys and then enter to select.
@@ -60,7 +60,7 @@ But a device can only run one project at the same time, and when different proje
 ### Android设备选择  
 ### Android Device Selection
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/select-android.jpeg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/select-android.jpeg" style="zoom: 50%;" />
 
 **注意事项**  
 **Precautions**  
@@ -80,7 +80,7 @@ But a device can only run one project at the same time, and when different proje
 > 在iOS真机设备上运行请向苹果申请证书制作[自定义基座](#customplayground)或者在Mac电脑使用[iOS模拟器](#ios_simulator)
 > To run on a real iOS device, please apply for a certificate from Apple to make [custom dock](#customplayground) or use [iOS simulator](#ios_simulator) on a Mac computer
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/select-ios.jpeg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/select-ios.jpeg" style="zoom: 50%;" />
 
 **注意事项**  
 **Precautions**  
@@ -127,7 +127,7 @@ Select the mobile device or simulator to run in the run menu, click the run butt
 运行成功后，HBuilder底部的控制台显示成功日志。此后修改代码会差量同步到手机上，手机程序会动态热刷。同时console.log代码会打印到控制台上，点击打印日志可以跳转到相关代码。  
 After running successfully, the console at the bottom of HBuilder displays the success log. Afterwards, the modified code will be synchronized to the mobile phone, and the mobile phone program will be dynamically refreshed. At the same time, the console.log code will be printed to the console, and you can jump to the relevant code by clicking Print Log.
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/run-app-console.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run-app-console.jpg" style="zoom: 50%;" />
 
 ### 运行项目到iOS真机App自启动@ios-app-automatically-open
 ### Run the project to the iOS real machine App to start automatically @ios-app-automatically-open
@@ -141,7 +141,7 @@ HBuilderX 3.7.0+ version, newly added to run the App project to the real iOS dev
 **如下图所示：**
 **As shown below:**
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios_start.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ios_start.jpg" style="zoom: 50%;" />
 
 **注意：** MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。如果`/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`目录下不存在跟手机系统相匹配的`iOS Platforms`, 那么是无法自启动App的。请在手机端点击运行基座图标手动启动。
 **Note:** MacOSX needs to install the Xcode version that matches the iOS phone system. For example, if the iPhone system is iOS 16.2, you also need to install an Xcode version that supports iOS 16.2. If there is no `iOS Platforms` that matches the mobile phone system in `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport` directory, then the App cannot be launched automatically. Please click the running dock icon on the mobile phone to start it manually.
@@ -153,7 +153,7 @@ Use the following command to view Xcode iOS Platforms data.
 ls -lh  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport
 ```
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios-version.jpg" style="zoom: 45%;border: 1px solid #EEEEEE !important; border-radius: 20px;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ios-version.jpg" style="zoom: 45%;border: 1px solid #EEEEEE !important; border-radius: 20px;" />
 
 MacOSX，如果无法自动启动App，请排查以下原因：
 On MacOSX, if the App cannot be started automatically, please check the following reasons:
@@ -191,7 +191,7 @@ If you want to customize the native layer, you need to go through the packaging 
 但打包后无法方便调试，不能热重载和显示控制台日志。所以HBuilder在打包时提供了一个特殊选项，打包“自定义运行基座”。
 However, after packaging, it cannot be easily debugged, and cannot be hot reloaded and console logs displayed. So HBuilder provides a special option when packaging, packaging a "custom run base".
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/build-app-customplayground.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/build-app-customplayground.jpg" style="zoom: 50%;" />
 
 > 打包App的入口在HBuilder顶部发行菜单，或快捷键【Ctrl+u】
 > The entry of the packaged App is in the release menu at the top of HBuilder, or the shortcut key [Ctrl+u]
@@ -218,7 +218,7 @@ Only one custom pedestal can be generated for a project, and multiple generation
 生成自定义基座后，在设备选择窗口，可以选择自定义基座，如下图所示：  
 After generating a custom base, in the device selection window, you can select a custom base, as shown in the following figure:
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/hx_select_base.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/hx_select_base.jpg" style="zoom: 50%;" />
 
 注意：自定义运行基座是测试版，不可直接商用（使用自定义运行基座覆盖安装apk不会更新应用资源，并且有toast警告）。正式发版时需要按正常打包方式重新打包。
 Note: The custom running base is a beta version and cannot be directly commercialized (using the custom running base to overwrite the installation of the apk will not update the application resources, and there is a toast warning). When the official version is released, it needs to be repackaged according to the normal packaging method.

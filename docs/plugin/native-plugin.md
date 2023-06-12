@@ -98,7 +98,7 @@ You can log in to the [uni native plugin market] (https://ext.dcloud.net.cn/?cat
 下载解压后目录结构如下：
 The directory structure after downloading and decompressing is as follows:
 
-<img width="600px" src="https://web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-1.png" />
+<img width="600px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-1.png" />
 
 
 - 方式二：开发者自己开发uni-app原生插件
@@ -117,7 +117,7 @@ Configure them under the "nativeplugins" directory of the uni-app project accord
 在manifest.json -> App原生插件配置 -> 选择本地插件 -> 选择需要打包生效的插件 -> 保存后提交云端打包生效。
 Follow "manifest.json -> App native plug-in configuration -> select local plug-in -> select plug-in to be packaged and taken effect-> save", and submit to the cloud side for packaging and taking effect.
 
-<img width="600px" src="https://web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-2.png" />
+<img width="600px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-2.png" />
 
 ##### 第三步：开发调试本地原生插件
 ##### Step 3: Develop and debug the local native plug-ins.
@@ -161,7 +161,7 @@ Log in to the [uni native plug-in market](https://ext.dcloud.net.cn/?cat1=5&cat2
 在manifest.json -> App原生插件配置 -> 选择云端插件 -> 选择需要打包的插件 -> 保存后提交云端打包生效。
 Follow "manifest.json -> App native plug-in configuration -> select cloud plug-in -> select plug-in to be packaged -> save", and submit to the cloud side for packaging and taking effect.
 
-<img width="600px" src="https://web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-3.png" />
+<img width="600px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-3.png" />
 
 
 ##### 第三步：开发调试uni-app原生插件

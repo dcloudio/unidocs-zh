@@ -24,8 +24,7 @@ If [uni-admin](https://uniapp.dcloud.io/uniCloud/admin) is the basic project tem
 演示项目：[https://uni-starter.dcloud.net.cn](https://uni-starter.dcloud.net.cn)
 Demo project: [https://uni-starter.dcloud.net.cn](https://uni-starter.dcloud.net.cn)
 
-扫码体验：<img src="https://web-assets.dcloud.net.cn/unidoc/zh/download.png" style="width: 120px;">
-Scan code experience: <img src="https://web-assets.dcloud.net.cn/unidoc/zh/download.png" style="width: 120px;">
+扫码体验：<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/download.png" style="width: 120px;">
 
 下载地址：[https://ext.dcloud.net.cn/plugin?id=5057](https://ext.dcloud.net.cn/plugin?id=5057)
 Download address: [https://ext.dcloud.net.cn/plugin?id=5057](https://ext.dcloud.net.cn/plugin?id=5057)
@@ -106,10 +105,9 @@ GitCode repository: [https://gitcode.net/dcloud/uni-starter](https://gitcode.net
 - After passing the uniCloud certification, create a service space for this project to use. You can choose Alibaba Cloud or Tencent Cloud, the two service spaces are different [Details](https://uniapp.dcloud.net.cn/uniCloud/price)
 
 #### 2. 运行云服务空间初始化向导
-#### 2. Run the cloud service space initialization wizard
-<img style="width:61.8%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20210809115104.jpg" />
-<img style="width:61.8%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20210809113634.jpg" />
-<img style="width:61.8%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20210809114205.jpg" />
+<img style="width:61.8%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210809115104.jpg" />
+<img style="width:61.8%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210809113634.jpg" />
+<img style="width:61.8%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210809114205.jpg" />
 
 ## 功能模块介绍
 ## Function module introduction
@@ -546,7 +544,7 @@ if (uniCloud.onRefreshToken) {
 ## 相关案例
 ## related case
 [
-	![](https://web-assets.dcloud.net.cn/unidoc/zh/20211108121525.jpg)
+	![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20211108121525.jpg)
 ](https://ext.dcloud.net.cn/search?q=uni-starter)
 （点击跳转到案例列表）
 (click to jump to the case list)

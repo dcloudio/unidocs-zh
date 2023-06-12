@@ -102,7 +102,7 @@ In HBuilderX, if `uni_modules` contains the contents of the uniCloud directory, 
 如下图，项目中有一个`uni_modules`名为`uni-config-center`，它下面包含了名为`uni-config-center`的公共模块。所以在项目根目录的公共模块目录common下，也会多出一个`uni-config-center`。
 As shown in the figure below, there is a `uni_modules` named `uni-config-center` in the project, which contains a public module named `uni-config-center`. Therefore, under the common module directory common in the project root directory, there will also be an additional `uni-config-center`.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni_modules.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni_modules.jpg)
 
 HBuilderX 中打开配有引用图标指示的文件，会打开原始地址。
 Opening a file indicated by a reference icon in HBuilderX will open the original address.
@@ -114,11 +114,9 @@ Opening a file indicated by a reference icon in HBuilderX will open the original
 1. 在[插件市场](https://ext.dcloud.net.cn/)查找uni_modules插件
 1. Find the uni_modules plugin in [Plugin Market](https://ext.dcloud.net.cn/)
 2. 在插件详情页,右侧会标明该插件是否支持uni_modules，点击`使用 HBuilderX 导入插件`
-2. On the plug-in details page, the right side will indicate whether the plug-in supports uni_modules, click `Use HBuilderX to import plug-in`
-![](https://web-assets.dcloud.net.cn/unidoc/zh/import_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/import_uni_modules.png)
 3. 选择要导入的uni-app项目
-3. Select the uni-app project to import
-![](https://web-assets.dcloud.net.cn/unidoc/zh/import_uni_modules_dialog.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/import_uni_modules_dialog.png)
 
 **Tips**
 - uni_modules支持组件easycom，使用者可以直接使用插件内符合easycom规范的组件
@@ -138,16 +136,13 @@ import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 1. 导入插件时，HBuilderX会自动安装当前插件的所有三方依赖。
 1. When importing a plug-in, HBuilderX will automatically install all third-party dependencies of the current plug-in.
 2. 您还可以在插件目录右键手动执行`安装插件三方依赖`
-2. You can also right click on the plug-in directory to manually execute `Install plug-in three-party dependencies`
-![](https://web-assets.dcloud.net.cn/unidoc/zh/deps_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/deps_uni_modules.png)
 #### 更新uni_modules插件
 #### Update uni_modules plug-in
 1. 可以通过插件目录右键`从插件市场更新`，来检查更新当前所使用的插件
-1. You can check and update the currently used plug-in by right-clicking on the plug-in directory and `Update from the plug-in market`
-![](https://web-assets.dcloud.net.cn/unidoc/zh/check_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/check_uni_modules.png)
 2. 对比插件，确认更新内容
-2. Compare the plug-ins and confirm the updated content
-![](https://web-assets.dcloud.net.cn/unidoc/zh/compare_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/compare_uni_modules.png)
 #### 卸载uni_modules插件
 #### Uninstall uni_modules plug-in
 uni_modules插件目录是独立存在的，如果您不再需要该插件，可以直接删除该插件目录。
@@ -385,7 +380,7 @@ The sample code is as follows:
 Complete pages parameters [details view](https://uniapp.dcloud.io/collocation/pages.html#pages)
 
 HBuilderX中合并路由界面效果图：
-![](https://web-assets.dcloud.net.cn/unidoc/zh/A8353295-395A-41A1-AF20-A012A2101079.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/A8353295-395A-41A1-AF20-A012A2101079.png)
 
 **注意**
 **Notice**
@@ -403,7 +398,7 @@ HBuilderX中合并路由界面效果图：
 在uni-app项目根目录下，创建uni_modules目录，在HBuilderX中可以项目右键菜单中点击`新建uni_modules目录`
 In the root directory of the uni-app project, create the uni_modules directory, and you can click `Create uni_modules directory` on the right-click menu of the project.
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/mkdir_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mkdir_uni_modules.png)
 
 **Tips:**
 - 如果是vue-cli项目，uni_modules目录，位于`src`下，即`src/uni_modules`
@@ -414,12 +409,12 @@ In the root directory of the uni-app project, create the uni_modules directory, 
 1. 在HBuilderX中uni_modules目录右键点击`新建uni_modules插件`
 1. Right-click the uni_modules directory in HBuilderX `Create uni_modules plug-in`
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/create_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create_uni_modules.png)
 
 2. 填写正确的插件ID，选择插件分类
 2. Fill in the correct plug-in ID and select the plug-in classification
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/create_uni_modules_dialog.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create_uni_modules_dialog.png)
 
 插件ID命名规范：
 Plugin ID naming specification:
@@ -443,11 +438,9 @@ When your plug-in is developed, you can publish it directly to the [plug-in mark
 Release process:
 
 1. 在HBuilderX中插件目录右键点击`发布到插件市场`
-1. Right-click on the plug-in directory in HBuilderX and `publish to plug-in market`
-![](https://web-assets.dcloud.net.cn/unidoc/zh/upload_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/upload_uni_modules.png)
 2. 填写插件信息
-2. Fill in the plug-in information
-![](https://web-assets.dcloud.net.cn/unidoc/zh/upload_uni_modules_dialog.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/upload_uni_modules_dialog.png)
 **Tips**
 - 如果需要发布为项目模板，请在项目根目录创建package.json，然后右键菜单发布到插件市场。
 - If you need to release it as a project template, please create package.json in the root directory of the project, and then right-click the menu to release to the plug-in market.
@@ -459,11 +452,9 @@ Release process:
 When your plug-in is released to the plug-in market, if you need to adjust some basic information in the plug-in market, such as Chinese name, description, keywords, and readme.md, you can right-click the `Modify the plug-in basic information` directly in the plug-in directory.
 
 1. 在HBuilderX中插件目录右键点击`修改插件基本信息`
-1. Right-click on the plug-in directory in HBuilderX to `modify plug-in basic information`
-![](https://web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules.png)
 2. 修改插件基本信息
-2. Modify the basic information of the plug-in
-![](https://web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules_dialog.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules_dialog.png)
 
 #### 发布新版本
 #### Release new version
@@ -502,5 +493,4 @@ When your plug-in has added new functions or fixed bugs, and a new version needs
  - 右键package.json，点击`发布到插件市场`，选择分类，填写插件信息（尽可能与插件市场已有信息保持一致）
  - Right-click package.json and click `Release to plug-in market`, select the classification, and fill in the plug-in information (consistent with the existing information in the plug-in market as much as possible)
  - 发布成功后，您可以在插件市场的插件详情页右侧，查看到您的插件已同时提供了`uni_modules`版本和非`uni_modules`版本（仅保留最后一个非`uni_modules`版本）
- - After the release is successful, you can check that your plugin has provided both the `uni_modules` version and the non-`uni_modules` version on the right side of the plugin details page in the plugin market (only the last non-`uni_modules` version is kept)
-![](https://web-assets.dcloud.net.cn/unidoc/zh/ext_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ext_uni_modules.png)

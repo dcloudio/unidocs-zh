@@ -6,7 +6,7 @@
 
 手机用户观看几十秒视频广告，在广告播放完毕后可获得应用开发商提供的奖励，而应用开发商则可以从广告平台获取不菲的广告收入。
 
-<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/ad-rewarded-video.x264.mp4" style="max-width: 100%; max-height: 50vh;"></video>
+<video controls src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ad/ad-rewarded-video.x264.mp4" style="max-width: 100%; max-height: 50vh;"></video>
 
 与开屏、信息流等广告变现方式不同，激励视频需设计激励场景，给用户发放激励。
 
@@ -283,7 +283,7 @@ export default {
 
 #### 监听用户关闭广告
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/rewarded-video-close.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/rewarded-video-close.png)
 
 只有在用户点击激励视频广告组件上的 关闭广告 按钮时，广告才会关闭。这个事件可以通过 `@close` 监听。
 
@@ -475,7 +475,7 @@ rewardedVideoAd.load()
 
 #### 监听用户关闭广告
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/rewarded-video-close.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/rewarded-video-close.png)
 
 只有在用户点击激励视频广告组件上的 关闭广告 按钮时，广告才会关闭。这个事件可以通过 `RewardedVideoAd.onClose()` 监听。
 
@@ -509,7 +509,7 @@ App平台 3.1.15+ 支持穿山甲/优量汇/快手
 
 服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
 
-![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback-01-29.png)
+![激励视频回调](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback-01-29.png)
 
 如何使用
 1. 申请激励视频广告位时开启服务器回调

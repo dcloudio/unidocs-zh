@@ -41,7 +41,7 @@ Source [this.getClientInfo](https://uniapp.dcloud.io/uniCloud/cloud-obj.html#get
 ### 推送接口查库详解：  
 ### Push API to check library details:
 
-<img style="width:80%;max-width:450px;margin:0 10%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20220708235304.jpg">
+<img style="width:80%;max-width:450px;margin:0 10%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220708235304.jpg">
 
 - 推送目标依据为：`push_clientid`直接执行推送。
 - The push target basis is: `push_clientid` directly executes the push.

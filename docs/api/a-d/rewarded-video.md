@@ -556,7 +556,7 @@ rewardedVideoAd.load()
 ### 监听用户关闭广告
 ### Listen for users to close ads
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/rewarded-video-close.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/rewarded-video-close.png)
 
 只有在用户点击激励视频广告组件上的 关闭广告 按钮时，广告才会关闭。这个事件可以通过 `RewardedVideoAd.onClose()` 监听。
 The ad will only close when the user clicks the Close Ad button on the rewarded video ad component. This event can be listened to by `RewardedVideoAd.onClose()`.
@@ -605,8 +605,7 @@ The rewarded video advertisement can support the callback from the advertisement
 Relatively speaking, the server callback will be more secure, and you can rely on the anti-cheating mechanism of the advertising platform to prevent users from simulating the completion of watching the advertisement.
 
 
-![激励视频回调](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
-![Incentive Video Callback](https://web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
+![激励视频回调](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
 
 
 如何使用

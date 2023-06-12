@@ -116,7 +116,7 @@ uni-list does not include pull-to-refresh and pull-up page-turning. Pull up and 
 
 ```html
  <uni-list>
- 	<uni-list-item title="列表左侧带略缩图" note="列表描述信息" thumb="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png"
+ 	<uni-list-item title="列表左侧带略缩图" note="列表描述信息" thumb="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png"
  	 thumb-size="lg" rightText="右侧文字"></uni-list-item>
  	<uni-list-item :show-extra-icon="true" :extra-icon="extraIcon1" title="列表左侧带扩展图标" ></uni-list-item>
 </uni-list>
@@ -165,17 +165,13 @@ uni-list does not include pull-to-refresh and pull-up page-turning. Pull up and 
 <uni-list>
 	<uni-list :border="true">
 		<!-- 显示圆形头像 -->
-		<!-- Show circular avatar -->
-		<uni-list-chat :avatar-circle="true" title="uni-app" avatar="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" ></uni-list-chat>
+		<uni-list-chat :avatar-circle="true" title="uni-app" avatar="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" ></uni-list-chat>
 		<!-- 右侧带角标 -->
-		<!-- with corner mark on the right side -->
-		<uni-list-chat title="uni-app" avatar="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" badge-text="12"></uni-list-chat>
+		<uni-list-chat title="uni-app" avatar="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" badge-text="12"></uni-list-chat>
 		<!-- 头像显示圆点 -->
-		<!-- Avatar display dots -->
-		<uni-list-chat title="uni-app" avatar="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" badge-positon="left" badge-text="dot"></uni-list-chat>
+		<uni-list-chat title="uni-app" avatar="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" badge-positon="left" badge-text="dot"></uni-list-chat>
 		<!-- 头像显示角标 -->
-		<!-- Avatar display corner mark -->
-		<uni-list-chat title="uni-app" avatar="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" badge-positon="left" badge-text="99"></uni-list-chat>
+		<uni-list-chat title="uni-app" avatar="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png" note="您收到一条新的消息" time="2020-02-02 20:20" badge-positon="left" badge-text="99"></uni-list-chat>
 		<!-- 显示多头像 -->
 		<!-- Show multiple avatars -->
 		<uni-list-chat title="uni-app" :avatar-list="avatarList" note="您收到一条新的消息" time="2020-02-02 20:20" badge-positon="left" badge-text="dot"></uni-list-chat>
@@ -201,11 +197,11 @@ export default {
 	data() {
 		return {
 			avatarList: [{
-				url: 'https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png'
+				url: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png'
 			}, {
-				url: 'https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png'
+				url: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png'
 			}, {
-				url: 'https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png'
+				url: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png'
 			}]
 		}
 	}
@@ -516,14 +512,14 @@ The example relies on multiple components such as `uni-card` `uni-section` `uni-
 			<uni-list>
 				<uni-list-item :show-extra-icon="true" showArrow :extra-icon="extraIcon" title="列表左侧带扩展图标" />
 				<uni-list-item title="列表左侧带略缩图" note="列表描述信息" showArrow
-					thumb="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png"
+					thumb="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png"
 					thumb-size="sm" rightText="小图" />
 
 				<uni-list-item title="列表左侧带略缩图" note="列表描述信息" showArrow
-					thumb="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png"
+					thumb="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png"
 					thumb-size="base" rightText="默认" />
 				<uni-list-item title="列表左侧带略缩图" note="列表描述信息" showArrow
-					thumb="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png"
+					thumb="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png"
 					thumb-size="lg" rightText="大图" />
 			</uni-list>
 		</uni-section>
@@ -568,8 +564,8 @@ The example relies on multiple components such as `uni-card` `uni-section` `uni-
 		components: {},
 		data() {
 			return {
-				cover: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
-				avatar: 'https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png',
+				cover: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
+				avatar: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png',
 				extraIcon: {
 					color: '#4cd964',
 					size: '22',

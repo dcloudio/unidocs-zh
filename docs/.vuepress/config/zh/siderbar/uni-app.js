@@ -2,7 +2,7 @@ export default {
 	contactItems: [{
 		name: 'uniCloud Web控制台',
 		url: 'https://unicloud.dcloud.net.cn',
-		imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/cloud@2x.jpg'
+		imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cloud@2x.jpg'
 	},
 	{
 		name: '插件市场',
@@ -12,17 +12,17 @@ export default {
 	{
 		name: 'ask问答社区',
 		url: 'https://ask.dcloud.net.cn/explore/',
-		imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/d@2x.png'
+		imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/d@2x.png'
 	},
 	{
 		name: 'uniAD',
 		url: 'https://uniad.dcloud.net.cn',
-		imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/uniad-520.png'
+		imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniad-520.png'
 	},
 	{
 		name: 'uni统计',
 		url: 'https://tongji.dcloud.net.cn/',
-		imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/uni-tongji-icon.png'
+		imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-tongji-icon.png'
 	}
 	],
 	codeHosting: [{
@@ -131,11 +131,6 @@ export default {
 			"prefix": "群19",
 		},
 		{
-			"number": "165796402",
-			"state": 1,
-			"prefix": "群20"
-		},
-		{
 			"number": "717019120",
 			"state": 1,
 			"prefix": "群21"
@@ -149,6 +144,11 @@ export default {
 			"number": "599958679",
 			"state": 1,
 			"prefix": "群23"
+		},
+		{
+			"number": "672494800",
+			"state": 1,
+			"prefix": "群24"
 		},
 		{
 			"number": "165297000",
@@ -206,10 +206,10 @@ export default {
 			"prefix": "群35"
 		},
 		{
-			"number": "672494800",
+			"number": "165796402",
 			"state": 0,
-			"prefix": "群24",
-			joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=O2sgaZvsQZipcydB6XyITWel21gCEXy-&jump_from=webapi&authKey=n6PRYv4mtlBdW+JcVX9T2f0ITGE7G/kKJZSBndkqUSAtCipmRb2v5SZzMSfAXtaS'
+			"prefix": "群20",
+			joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=whokFf8KnZkyulE5qo5ubuu-187habOq&jump_from=webapi&authKey=r8rfATXON/FFP/cFXxM1vXu3ielFdtBM6thHm1YxWbujIFAoN/vawHVfrl63hYdE'
 		}
 	]
 }

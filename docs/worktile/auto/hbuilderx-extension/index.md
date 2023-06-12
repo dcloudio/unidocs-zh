@@ -46,7 +46,7 @@ The main functions are:
 如下图所示，在插件市场，进入[插件详情页](https://ext.dcloud.net.cn/plugin?id=5708)，点击【导入插件】，会自动拉起本地安装的HBuilderX。
 As shown in the figure below, in the plug-in market, enter the [plug-in details page] (https://ext.dcloud.net.cn/plugin?id=5708), click [Import Plug-in], and the locally installed HBuilderX will be automatically launched.
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/plugins_install_1.jpeg" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/plugins_install_1.jpeg" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
 
 > 特别注意：插件安装，依赖HBuilderX 终端插件。
 > Special Note: Plug-in installation depends on HBuilderX terminal plug-in.
@@ -83,7 +83,7 @@ As shown in the figure below, the project manager, select the project, right-cli
 
 注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](../../auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/env_install.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/env_install.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 
 ### uniapp-cli项目@cli
 ### uniapp-cli project @cli
@@ -103,7 +103,7 @@ npm install --save cross-env puppeteer adbkit node-simctl jest playwright @playw
 uni-app项目，pages页面，右键菜单，创建测试用例
 uni-app project, pages page, right-click menu, create test cases
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/testcase_create.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 15px;"/>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/testcase_create.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 15px;"/>
 
 ## 测试运行@test-run
 ## Test run @test-run
@@ -111,7 +111,7 @@ uni-app project, pages page, right-click menu, create test cases
 创建测试用例之后，选中项目，右键菜单【运行uni-app自动化测试】，选择运行平台，即可开始运行测试。
 After creating a test case, select the project, right-click the menu [Run uni-app automated test], and select the running platform to start running the test.
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/run_test.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 10px;"/>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run_test.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 10px;"/>
 
 **注意**：如果要运行指定的测试用例，请在项目管理器**选中**要运行的用例，右键菜单【运行当前测试用例】
 **Note**: If you want to run the specified test case, please **select** the use case to be run in the project manager, right-click menu [Run current test case]
@@ -134,7 +134,7 @@ After creating a test case, select the project, right-click the menu [Run uni-ap
 如下图所示，运行测试时，支持选择对应平台。
 As shown in the figure below, when running the test, you can select the corresponding platform.
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/test_platforms.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/test_platforms.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
 
 ### 选择设备@select-devices
 ### Select devices @select-devices
@@ -142,7 +142,7 @@ As shown in the figure below, when running the test, you can select the correspo
 > 如果无法获取到设备信息，请[参考](tutorial/run/run-app-faq.md)
 > If the device information cannot be obtained, please [reference](tutorial/run/run-app-faq.md)
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-test-select-device.jpg" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-test-select-device.jpg" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
 
 
 ## 插件配置@extension-config
@@ -151,7 +151,7 @@ As shown in the figure below, when running the test, you can select the correspo
 点击菜单【设置】【插件配置】，找到hbuilderx-for-uniapp-test项，即可看到设置项。
 Click the menu [Settings] [Plugin Configuration], find the hbuilderx-for-uniapp-test item, and you can see the setting items.
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/plugins_settings.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/plugins_settings.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
 
 **如上图**
 **As pictured above**
@@ -219,7 +219,7 @@ Take the uni-app [default template] index page as an example.
 编写测试用例，检查`index.vue`页面，标题是否为`Hello`
 Write a test case that checks the `index.vue` page, if the title is `Hello`
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uniapp-test-example.jpg" style="zoom: 50%;border: 1px solid #eee;border-radius: 20px;"/>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniapp-test-example.jpg" style="zoom: 50%;border: 1px solid #eee;border-radius: 20px;"/>
 
 ```js
 describe('test title', () => {

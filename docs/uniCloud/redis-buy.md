@@ -14,7 +14,7 @@ At present, you can purchase redis services in the uniCloud web console. **The p
 3. 选择左侧redis菜单，选择实例并购买即可
 3. Select the redis menu on the left, select the instance and buy it
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-new-230506.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/redis-new-230506.png)
 
 **注意**
 **Notice**
@@ -71,7 +71,7 @@ At present, you can purchase redis services in the uniCloud web console. **The p
 
 在uniCloud web控制台redis详情页面点击续费按钮可以对redis实例进行续费操作。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/redis-renew-230506.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/redis-renew-230506.png)
 
 实例到期后的第1~7天，实例状态为被禁用，无法被访问。如需继续使用，您需要及时为实例续费
 From 1 to 7 days after the instance expires, the instance status is disabled and cannot be accessed. To continue using it, you need to renew the instance in time

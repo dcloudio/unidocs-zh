@@ -32,7 +32,7 @@
 	<view>
 		<view class="page-body">
 			<view class="page-section">
-				<video id="myVideo" src="https://web-assets.dcloud.net.cn/unidoc/zh/wap2appvsnative.mp4" @error="videoErrorCallback" :danmu-list="danmuList"
+				<video id="myVideo" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/wap2appvsnative.mp4" @error="videoErrorCallback" :danmu-list="danmuList"
 				    enable-danmu danmu-btn controls>
                                 </video>
 

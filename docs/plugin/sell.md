@@ -18,7 +18,7 @@
 
 插件作者在发布uniCloud插件、uts/原生插件时，可自定义售卖价格及形式，见下图：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-publish-set-price.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/marketplace-publish-set-price.png)
 
 如未设置价格，则默认为免费插件，所有用户均可免费下载使用；
 
@@ -45,12 +45,12 @@ DCloud为所有销售插件提供了试用机制，允许购买者先试用后�
 
 用户购买插件后，插件作者可以在[销售订单列表](https://ext.dcloud.net.cn/order?pluginId=0&status=10)中查看订单流水：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-order-list-new.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/marketplace-order-list-new.png)
 
 uniCloud源码授权版需在用户及插件作者双方签署合同后方可购买，合同签署采用`e签宝`线上进行签署，具体流程参见[e签宝介绍](https://ask.dcloud.net.cn/article/37878)。
 
 插件收益分为用户付费收益（插件销售、赞赏收益）和广告收益。每天凌晨，系统会自动统计前一天产生的用户付费收益，并于当天下午2：00后统计前一天产生的广告预估收益（可能会有相应的延迟），广告预估收益仅作为参考，实际收益以插件市场后台“付款”栏目提供的月度账单为准。插件作者可登录插件市场后台，查看每天的收益明细。
-![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-report-list-new-1.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/marketplace-report-list-new-1.png)
 
 `Tips：` 好的插件及更好的售后会增加用户打赏的积极性！
 
@@ -58,17 +58,17 @@ uniCloud源码授权版需在用户及插件作者双方签署合同后方可购
 
 DCloud插件市场在每月1日出上月的月度账单，月度账单包含上月的用户付费收益（包括插件销售、赞赏收益）及上上月的广告收益，待提现的账单累计金额达到100元以上时可提现，如有多笔待提现账单可针对多笔账单进行合并提现。插件作者可登录插件市场后台，查看[月度账单](https://ext.dcloud.net.cn/manage/payment)：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-bill-list.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/marketplace-bill-list.png)
 
 DCloud会收取付费插件和赞赏账单金额的15%做为服务费，然后将剩余款项支付给插件作者，具体参见[插件作者协议](https://ext.dcloud.net.cn/manage/profile)。
 
 申请提现后，如果账号认证为企业认证，提供发票的途径有线下邮寄和电子发票上传功能，插件作者可在[提现记录](https://ext.dcloud.net.cn/manage/payment-detail)中自行上传，电子发票只支持`pdf格式`：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-cash-list.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/marketplace-cash-list.png)
 
 企业级插件作者开票信息及付款规则如下：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/marketplace-pay-rules-01.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/marketplace-pay-rules-01.png)
 
 `Tips：`为了不影响收益打款，请插件作者在月初尽快提供发票，并完善[财务信息](https://dev.dcloud.net.cn/pages/user/finance)
 

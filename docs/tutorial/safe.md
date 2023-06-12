@@ -79,7 +79,7 @@ uni云端一体安全网络文档：[详见](/uniCloud/secure-network.md)
 1. 是活人还是静态照片
 2. 这个人和指定的名字、身份证号，是否匹配
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202302242037107.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202302242037107.jpg)
 
 这样手机墙的操作者，不但需要有众多手机号、身份证照片，还需要众多人站在手机墙面前做活体检测，这他就褥不着多少羊毛了。
 

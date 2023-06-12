@@ -52,7 +52,7 @@ uni-app 内置了 [Vuex](https://vuex.vuejs.org/zh/) 。
 以下是一个表示“单向数据流”理念的简单示意：
 
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/vuex-flow.png" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/vuex-flow.png" />
 
 
 
@@ -69,7 +69,7 @@ uni-app 内置了 [Vuex](https://vuex.vuejs.org/zh/) 。
 Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新。
 
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/vuex-a.png" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/vuex-a.png" />
 
 
 如果你想交互式地学习 Vuex，可以看这个 [Scrimba 上的 Vuex 课程](https://scrimba.com/learn/vuex)，它将录屏和代码试验场混合在了一起，你可以随时暂停并尝试。

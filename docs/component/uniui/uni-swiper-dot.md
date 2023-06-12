@@ -150,17 +150,17 @@ export default {
 			return {
 				info: [{
 						colorClass: 'uni-bg-red',
-						url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
+						url: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
 						content: '内容 A'
 					},
 					{
 						colorClass: 'uni-bg-green',
-						url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
+						url: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
 						content: '内容 B'
 					},
 					{
 						colorClass: 'uni-bg-blue',
-						url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
+						url: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
 						content: '内容 C'
 					}
 				],

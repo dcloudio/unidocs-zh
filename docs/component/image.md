@@ -111,7 +111,7 @@ export default {
                 mode: 'bottom right',
                 text: 'bottom right：不缩放图片，只显示图片的右下边区域'
             }],
-            src: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg'
+            src: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg'
         }
     },
     methods: {
@@ -127,52 +127,52 @@ export default {
 
 原图
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg)
 
 scaleToFill：不保持纵横比缩放图片，使图片完全适应
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-1.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-1.png)
 
 aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-2.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-2.png)
 
 aspectFill：保持纵横比缩放图片，只保证图片的短边能完全显示出来
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-3.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-3.png)
 
 top：不缩放图片，只显示图片的顶部区域
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-4.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-4.png)
 
 bottom：不缩放图片，只显示图片的底部区域
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-5.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-5.png)
 
 center：不缩放图片，只显示图片的中间区域
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-6.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-6.png)
 
 left：不缩放图片，只显示图片的左边区域
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-7.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-7.png)
 
 right：不缩放图片，只显示图片的右边边区域
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-8.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-8.png)
 
 top left：不缩放图片，只显示图片的左上边区域
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-9.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-9.png)
 
 top right：不缩放图片，只显示图片的右上边区域
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-10.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-10.png)
 
 bottom left：不缩放图片，只显示图片的左下边区域
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-11.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-11.png)
 
 bottom right：不缩放图片，只显示图片的右下边区域
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/cat-12.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-12.png)

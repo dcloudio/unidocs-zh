@@ -25,7 +25,7 @@
 
 ### 推送接口查库详解：  
 
-<img style="width:80%;max-width:450px;margin:0 10%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20220708235304.jpg">
+<img style="width:80%;max-width:450px;margin:0 10%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220708235304.jpg">
 
 - 推送目标依据为：`push_clientid`直接执行推送。
 - 推送目标依据为：`device_id`，查`opendb-device`表，获得`push_clientid`执行推送

@@ -15,7 +15,7 @@ uni-starter是集成商用项目常见功能的、云端一体应用快速开发
 
 演示项目：[https://uni-starter.dcloud.net.cn](https://uni-starter.dcloud.net.cn)
 
-扫码体验：<img src="https://web-assets.dcloud.net.cn/unidoc/zh/download.png" style="width: 120px;">
+扫码体验：<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/download.png" style="width: 120px;">
 
 下载地址：[https://ext.dcloud.net.cn/plugin?id=5057](https://ext.dcloud.net.cn/plugin?id=5057)
 
@@ -59,9 +59,9 @@ GitCode 仓库：[https://gitcode.net/dcloud/uni-starter](https://gitcode.net/dc
 - 在uniCloud认证通过后，创建一个服务空间给本项目使用。选择阿里云或腾讯云均可，两种服务空间差异[详情](https://uniapp.dcloud.net.cn/uniCloud/price)
 
 #### 2. 运行云服务空间初始化向导
-<img style="width:61.8%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20210809115104.jpg" />
-<img style="width:61.8%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20210809113634.jpg" />
-<img style="width:61.8%" src="https://web-assets.dcloud.net.cn/unidoc/zh/20210809114205.jpg" />
+<img style="width:61.8%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210809115104.jpg" />
+<img style="width:61.8%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210809113634.jpg" />
+<img style="width:61.8%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210809114205.jpg" />
 
 ## 功能模块介绍
 ### 1.账户管理
@@ -361,7 +361,7 @@ if (uniCloud.onRefreshToken) {
 
 ## 相关案例
 [
-	![](https://web-assets.dcloud.net.cn/unidoc/zh/20211108121525.jpg)
+	![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20211108121525.jpg)
 ](https://ext.dcloud.net.cn/search?q=uni-starter)
 （点击跳转到案例列表）
 

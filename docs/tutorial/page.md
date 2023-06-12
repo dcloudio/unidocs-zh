@@ -15,7 +15,7 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件�
 同时，HBuilderX 还内置了常用的页面模板（如图文列表、商品列表等），选择这些模板，可以大幅提升你的开发效率。
 
 <div>
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/pages-add-02.png" style="max-width:450px"></img>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/pages-add-02.png" style="max-width:450px"></img>
 </div>
 
 ## 删除页面

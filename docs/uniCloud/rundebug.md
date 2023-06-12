@@ -19,14 +19,14 @@
 1. 右键菜单：在项目管理器里右键点击该云函数的目录，在弹出菜单中可选择“本地运行云函数”、“上传并运行云函数”
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/localRun.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/localRun.jpg"/>
 </div>
 
 2. 工具栏：编辑器打开云函数时，点击工具栏`运行`按钮，下拉菜单也有“本地运行云函数”、“上传并运行云函数”
 3. 快捷键：编辑器打开云函数时，按【Ctrl+r】快捷键，会激活上述运行菜单。
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/localCtrlRrun.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/localCtrlRrun.jpg"/>
 </div>
 
 如果没有安装本地运行插件，按照提示安装即可。本地运行云函数需HBuilderX 2.8.1+
@@ -45,20 +45,20 @@
 - 如需配置运行参数请参考：[配置运行测试参数](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#runparam)
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/localRun.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/localRun.jpg"/>
 </div>
 
 
 在云函数编辑器里，按`Ctrl+r`运行快捷键（或点工具栏的运行），可看到运行云函数的若干菜单。`Ctrl+r`然后回车或选`0`执行本地运行，即可立即在控制台看到运行结果和日志输出。如下图所示：
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/localCtrlRrun.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/localCtrlRrun.jpg"/>
 </div>
 
 云函数打印`console.log`看日志。
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/lookLog.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/lookLog.jpg"/>
 </div>
 
 运行云函数时，如需要给云函数传参，又不想启动客户端，那么可以通过配置json文件来传测试参数。
@@ -78,19 +78,19 @@
 运行含有uniCloud的uni-app项目，除了启动客户端控制台外，还会启动uniCloud控制台。
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-debug-dist.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloud-debug-dist.jpg"/>
 </div>
 
 可以在客户端控制台的右上角切换是连接本地云函数还是云端云函数，如下图所示
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/client-to-local.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/client-to-local.jpg"/>
 </div>
 
 uniCloud控制台日志如下图：
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/client-to-local-log.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/client-to-local-log.jpg"/>
 </div>
 
 此时客户端的日志和云函数的日志都可以看到，联调非常方便。
@@ -231,7 +231,7 @@ HBuilderX 3.4.0之前的版本“本地运行云函数”时云函数内callFunc
 可以打开一个json，配置运行参数。配置该json后，运行云函数时会将该json作为云函数调用的上行参数处理，可以在云函数中接收到参数。
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/setRunParam.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/setRunParam.jpg"/>
 </div>
 
 在云函数目录右键运行云函数，也可以在云函数编辑器里，按`Ctrl+r`运行快捷键，或点工具栏的运行
@@ -244,7 +244,7 @@ HBuilderX 3.4.0之前的版本“本地运行云函数”时云函数内callFunc
 此时云函数运行会携带所配置的运行参数
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/setRunParamLog.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/setRunParamLog.jpg"/>
 </div>
 
 
@@ -326,25 +326,25 @@ login('name-demo', 'password-demo') // 调用login方法传入参数'name-demo'�
 开启断点调试方式如下图所示，在uniCloud本地运行环境启动后，在uniCloud控制台右上角选择开启断点调试。
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-serve-debug.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-serve-debug.jpg"/>
 </div>
 
 开启调试后会出现调试界面，如下图所示。和浏览器的调试功能类似，详情可以参考：[JavaScript调试器](https://developer.mozilla.org/zh-CN/docs/Learn/Common_questions/What_are_browser_developer_tools#javascript%E8%B0%83%E8%AF%95%E5%99%A8)
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-debug-overview.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-debug-overview.jpg"/>
 </div>
 
 在调试文件的编辑器界面的行号处双击可以插入断点，也可以右键选择更多操作（添加/删除/禁用断点）
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-debug-break-point.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-debug-break-point.jpg"/>
 </div>
 
 如需从调试界面切换回项目视图，可以在项目管理器底部点击按钮进行切换
 
 <div align=center>
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-debug-switch-project.jpg"/>
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cloudfunction-debug-switch-project.jpg"/>
 </div>
 
 uni-app前端也支持debug调试，注意不要混淆。
@@ -367,4 +367,4 @@ uni-app前端也支持debug调试，注意不要混淆。
 
 此外日志服务开启的状态下，腾讯云可以设置日志保存时长。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/tcb-log-switch.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/tcb-log-switch.jpg)

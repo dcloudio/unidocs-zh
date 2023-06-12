@@ -112,7 +112,7 @@ uni.share({
 	provider: "weixin",
 	scene: "WXSceneSession",
 	type: 2,
-	imageUrl: "https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
+	imageUrl: "https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
 	success: function (res) {
 		console.log("success:" + JSON.stringify(res));
 	},
@@ -135,7 +135,7 @@ uni.share({
 	href: "http://uniapp.dcloud.io/",
 	title: "uni-app分享",
 	summary: "我正在使用HBuilderX开发uni-app，赶紧跟我一起来体验！",
-	imageUrl: "https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
+	imageUrl: "https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
 	success: function (res) {
 		console.log("success:" + JSON.stringify(res));
 	},
@@ -170,7 +170,7 @@ uni.share({
 	provider: "weixin",
 	scene: "WXSceneTimeline",
 	type: 2,
-	imageUrl: "https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
+	imageUrl: "https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
 	success: function (res) {
 		console.log("success:" + JSON.stringify(res));
 	},
@@ -192,7 +192,7 @@ uni.share({
 	href: "http://uniapp.dcloud.io/",
 	title: "uni-app分享",
 	summary: "我正在使用HBuilderX开发uni-app，赶紧跟我一起来体验！",
-	imageUrl: "https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
+	imageUrl: "https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png",
 	success: function (res) {
 		console.log("success:" + JSON.stringify(res));
 	},
@@ -209,7 +209,7 @@ uni.share({
     provider: 'weixin',
     scene: "WXSceneSession",
     type: 5,
-    imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/share-logo@3.png',
+    imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/share-logo@3.png',
     title: '欢迎体验uniapp',
     miniProgram: {
         id: 'gh_abcdefg',
@@ -238,12 +238,12 @@ uni.share({
 - 微信 appid 申请步骤：[https://ask.dcloud.net.cn/article/208](https://ask.dcloud.net.cn/article/208)。
 - iOS平台微信SDK配置通用链接：[https://ask.dcloud.net.cn/article/36445](https://ask.dcloud.net.cn/article/36445)。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/mp-weixin-manifest-share.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-weixin-manifest-share.png)
 
 ##### 新浪微博分享
 在 manifest.json 的 App SDK 配置里，勾选勾选新浪微博，并填写相关appkey，新浪微博 appkey 申请步骤可参考：[https://ask.dcloud.net.cn/article/209](https://ask.dcloud.net.cn/article/209)。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni2019022502.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni2019022502.png)
 
 ##### QQ 分享
 在 manifest.json 的 App SDK 配置里，勾选分享到QQ好友，并填写相关appkey，QQ分享 appkey 申请步骤：
@@ -252,7 +252,7 @@ uni.share({
 2. 完成开发者注册；
 3. 创建应用，选择移动 App，填写相关信息，然后等待审核，审核通过后即可得到AppId。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni2019022503.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni2019022503.png)
 
 这些配置需要打包生效，真机运行仍然是HBuilder基座的设置，可使用[自定义基座包](http://ask.dcloud.net.cn/article/12723)调试。离线打包请参考离线打包文档在原生工程中配置。
 

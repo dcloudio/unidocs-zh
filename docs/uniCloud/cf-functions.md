@@ -7,7 +7,7 @@
 每个云函数是一个js包，在云函数被调用时，由 serverless 调度系统分配硬件资源启动一个 node 环境来运行这个云函数。
 
 在HBuilderX中可以新建云函数（HBuilderX 3.4 同时可以新建云对象）。
-![](https://web-assets.dcloud.net.cn/unidoc/zh/createFun-a.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/createFun-a.jpg)
 
 每个云函数是一个目录，其中普通云函数有`index.js`入口文件，云对象的入口文件则是`index.obj.js`。
 
@@ -552,9 +552,9 @@ uniCloud的api中，有些api对应的实现，其代码体积较大，且这些
 
 注意：未引用扩展库的，使用uniCloud相应api时会报错。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush-glkzk.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush-glkzk.jpg)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uniPush-kzk.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush-kzk.jpg)
 
 **目前支持的扩展库如下**
 

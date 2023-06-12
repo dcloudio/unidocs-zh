@@ -6,7 +6,7 @@
 
 互动游戏是DCloud联合三方服务商为开发者提供新的广告场景增值服务。开发者在App中放置入口，用户点击入口参与权益化、趣味性的活动。通过观看激励视频广告加速获取权益。沉浸的游戏体验能够降低对广告的抵触心理，增加激励视频广告展示的同时有效提高广告收益。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/interactive1.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/interactive1.png)
 
 
 ## 活动场景类型：
@@ -17,7 +17,7 @@
 2. 游戏类活动：通过合成游戏、成语答题、捕鱼等游戏玩法获得金币或红包奖励
 3. 养成类活动：果园、农场、养牛等长期活动，用户通过连续签到、道具收集、任务体系等玩法提升养成对象的等级，升级后可获得红包奖励或兑换奖品
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/interactive2.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/interactive2.jpg)
 
 ### 活动分类表
 <table>

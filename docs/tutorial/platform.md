@@ -130,17 +130,17 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 
 示例，如下代码仅在 App 下出现:
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-7.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/platform-7.png)
 
 示例，如下代码不会在 H5 平台上出现：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-6.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/platform-6.png)
 
 除了支持单个平台的条件编译外，还支持**多平台**同时编译，使用 || 来分隔平台名称。
 
 示例，如下代码会在 App 和 H5 平台上出现：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-5.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/platform-5.png)
 
 ### 组件的条件编译
 <pre v-pre="" data-lang="html"><code class="lang-html code"><span class="token comment">&lt;!-- <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  %PLATFORM%</b> --&gt;</span>
@@ -170,16 +170,16 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 
 正确写法
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-2.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/platform-2.png)
 
 错误写法
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-3.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/platform-3.png)
 
 ### pages.json 的条件编译
 下面的页面，只有运行至 App 时才会编译进去。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/platform-4.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/platform-4.png)
 
 不同平台下的特有功能，以及小程序平台的分包，都可以通过 pages.json 的条件编译来更好地实现。这样，就不会在其它平台产生多余的资源，进而减小包体积。
 
@@ -245,24 +245,24 @@ HBuilderX 为 ``uni-app`` 的条件编译提供了丰富的支持:
 
 在 HBuilderX 中开发 ``uni-app`` 时，通过输入 **ifdef** 可快速生成条件编译的代码片段
 
- ![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-022402.png)
+ ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-022402.png)
 
 **语法高亮**
 
 在 HBuilderX 中对条件编译的代码注释部分提供了语法高亮，可分辨出写法是否正确，使得代码更加清晰（独立js文件需在编辑器右下角切换javascript es6+编辑器，独立css文件暂不支持高亮，但不高亮不影响使用）
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-012403.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-012403.png)
 
 
 **正确注释和快速选中**
 
 在 HBuilderX 中，ctrl+alt+/ 即可生成正确注释（js：``// 注释``、css：``/* 注释 */``、vue/nvue模板： ``<!-- 注释 -->``）。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni2019012801.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni2019012801.png)
 
 点击 **ifdef** 或 **endif** 可快速选中条件编译部分；点击左侧的折叠图标，可折叠条件编译部分代码。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-012501.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-012501.png)
 
 
 

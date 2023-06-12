@@ -57,7 +57,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 添加应用后，即可在应用管理列表中跳转至版本管理页面：
 
 <div align="center">
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/upgrade-center-jump.jpg" width="800"></img>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/upgrade-center-jump.jpg" width="800"></img>
 </div>
 
 **版本管理**
@@ -65,14 +65,14 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 1. 在版本管理列表页面右上角点击`发布新版`，可以发布`原生App安装包`和`wgt资源包`。在左上角点击`下拉列表`，可以切换展示应用。
 
 <div align="center">
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/version_list_new.png" width="800"></img>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/version_list_new.png" width="800"></img>
 </div>
 
 - 发布原生App安装包
 	1. 在上传安装包界面填写此次发版信息
 
 	<div align="center" >
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/publish_apk.jpg" width="600"></img>
+	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/publish_apk.jpg" width="600"></img>
 	</div>
 	
 	2. `版本号`：请填写以`.`分隔字符串，例如：`0.0.1`。在构建应用安装包时，`manifest.json` 中的 `应用版本名称` 也要是该格式。
@@ -101,7 +101,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	1. 大部分配置与发布 `原生App安装包` 一致
 
 	<div align="center">
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/publish_wgt.png" width="400"></img>
+	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/publish_wgt.png" width="400"></img>
 	</div>
 
 	2. `原生App最低版本`
@@ -116,7 +116,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 - 发布完成页面
 
 	<div align="center">
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/version_list_new2.png" width="800"></img>
+	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/version_list_new2.png" width="800"></img>
 	</div>
 
 **Tips**
@@ -138,9 +138,9 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 负责前台检查升级更新。
 
 <div align="left" style="display:flex;align-items:center;">
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/upgrade_center_1.jpg" alt="官方升级弹框样式" width="250"></img>
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/update_app_store.png" alt="升级支持多商店" width="250"></img>
-	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/upgrade_center_3.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
+	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/upgrade_center_1.jpg" alt="官方升级弹框样式" width="250"></img>
+	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/update_app_store.png" alt="升级支持多商店" width="250"></img>
+	<img style="margin-left:20px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/upgrade_center_3.jpg" alt="使用uni.showModal自定义弹框" width="250"></img>
 </div>
 
 提供了如下功能：

@@ -171,7 +171,7 @@ auth.signInWithTicket('YourTicket').then(() => {
 
 **注意：重复生成私钥会使之前生成的私钥失效，并导致用户登录状态失效**
 
-![uniCloud下载私钥](https://web-assets.dcloud.net.cn/unidoc/zh/custom-login-secret.jpg)
+![uniCloud下载私钥](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/custom-login-secret.jpg)
 
 ### 第二步：使用云函数创建登录凭据
 

@@ -8,15 +8,15 @@
 
 在 `HBuilderX` 中，正确运行项目： `运行 --> 运行到手机或模拟器 --> 选择设备`，项目启动后，在下方的控制台选择 `debug` 图标。
 
-![debug](https://web-assets.dcloud.net.cn/unidoc/zh/debug-icon.png)
+![debug](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/debug-icon.png)
 
 正确打开调试窗口后，显示如下：
-![debug](https://web-assets.dcloud.net.cn/unidoc/zh/csdndebug-window.png)
+![debug](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/csdndebug-window.png)
 
 ### Elements
 
 根据上一步，启动完成`debug`窗口后，可以看到`Elements`。`Elements` 主要显示当前页面的组织结构，目前`Elements`只支持`nvue`。
-![debug](https://web-assets.dcloud.net.cn/unidoc/zh/debug-elements.png)
+![debug](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/debug-elements.png)
 
 ### console.log 打日志
 
@@ -28,7 +28,7 @@
 
 `debug`窗口中看`console.log`的方法如下图：
 
-![debug](https://web-assets.dcloud.net.cn/unidoc/zh/debug-console-new.jpg)
+![debug](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/debug-console-new.jpg)
 
 ### 调试页面
 
@@ -36,11 +36,11 @@
 
 在 `uniapp`（图中指示 2）下找到需要调试的页面，单击打开 ，在右侧可以看到我们需要调试的内容（图中指示 3）。在需要调试的代码行号的位置，点击打上断点（图中指示 4）。
 
-![debug](https://web-assets.dcloud.net.cn/unidoc/zh/csdndebug-log.png)
+![debug](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/csdndebug-log.png)
 
 之后，在设备上进行操作，进入断点位置，可以方便我们跟踪调试代码。
 
-![debug](https://web-assets.dcloud.net.cn/unidoc/zh/csdndebug-breakpoint.png)
+![debug](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/csdndebug-breakpoint.png)
 
 ### 同步断点到调试器
 
@@ -48,7 +48,7 @@
 
 操作步骤：在 HBuilderX 编辑器中对目标行的行号处点右键，在右键菜单中选择“同步断点到调试器”，然后调试控制台会自动打开对应的代码并在指定行处标记断点。演示如下：
 
-![debug](https://web-assets.dcloud.net.cn/unidoc/zh/debug-console-light.gif)
+![debug](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/debug-console-light.gif)
 
 ### 注意事项
 

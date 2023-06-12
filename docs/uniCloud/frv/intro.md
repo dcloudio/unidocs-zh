@@ -10,13 +10,13 @@ uni实人认证是金融级实人认证，供应商为阿里云，背后依托�
 
 <div style="display: flex; flex-basis: 10px">
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302242042365.jpg" width="375"/>
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202302242042365.jpg" width="375"/>
 </div>
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302222009563.jpg" width="375"/>
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202302222009563.jpg" width="375"/>
 </div>
 <div>
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202302242037107.jpg" width="375" />
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202302242037107.jpg" width="375" />
 </div>
 </div>
 
@@ -49,7 +49,7 @@ uni实人认证具备便宜、安全、准确、稳定、实时、可靠等优�
 
 <!-- ## 基本流程
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa_ts.png) -->
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa_ts.png) -->
 
 ## 典型场景
 
@@ -102,7 +102,7 @@ uni实人认证，主要用于政务和防刷。
 
 直播行业因国家强监管需要，需要留存用户身份真实信息。传统做法是要求用户提交手持证件、身份证正反面复印件，通过人工审核证明用户是身份证持有者本人，费时费力。通过调用人脸认证服务，可以大幅提升主播入驻、直播、资金交易等流程效率和体验。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa_zb.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/rpa/rpa_zb.png)
 
 ### 招聘行业
 

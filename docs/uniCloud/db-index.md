@@ -18,11 +18,11 @@
 1. 进入 [uniCloud 控制台](https://console.cloud.tencent.com/tcb)。
 2. 切换到【云数据库】标签页，并选择需要添加索引的集合，进入索引管理 tab 页，如下图。
 
-  ![web控制台添加索引](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index.jpg)  
+  ![web控制台添加索引](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index.jpg)  
   
 3. 添加索引。
   
-  ![添加索引](https://web-assets.dcloud.net.cn/unidoc/zh/composed-index.jpg)
+  ![添加索引](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/composed-index.jpg)
 
 注意：
 - 索引是支持多字段组合的，所以不是简单的设某个字段为索引。而是需要先给索引起一个name，然后在该索引下配置1个或多个字段。
@@ -111,7 +111,7 @@
 }
 ```
 
-![地理位置索引](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index-geo.jpg)
+![地理位置索引](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index-geo.jpg)
 
 ### TTL索引@ttl
 
@@ -119,7 +119,7 @@ ttl索引用于设置数据过期时间，并在数据过期后进行删除。**
 
 配置方式如下：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/ttl-index.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ttl-index.jpg)
 
 **注意**
 
@@ -149,7 +149,7 @@ ttl索引用于设置数据过期时间，并在数据过期后进行删除。**
 
 **配置索引为稀疏索引**
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index-sparse.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloud-web-index-sparse.jpg)
 
 ### 字段大小限制
 

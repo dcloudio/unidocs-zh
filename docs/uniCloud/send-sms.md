@@ -204,7 +204,7 @@ exports.main = async (event, context) => {
 - 短信内容超过70个字符时为长短信，需分条发送，每67个字按一条短信计算
 - App平台的短信验证码需求，建议优先通过App一键登陆来替代，更便捷、更便宜。[详见](univerify.md)
 
-更多问题：欢迎加入<a class="join-group-chat" target="_blank" href="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4%BF%A1.png">DCloud短信技术交流群	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4%BF%A1.png">
+更多问题：欢迎加入<a class="join-group-chat" target="_blank" href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4%BF%A1.png">DCloud短信技术交流群	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E7%9F%AD%E4%BF%A1.png">
 </a>咨询
 
 
@@ -260,11 +260,11 @@ exports.main = async (event, context) => {
 **功能亮点**
 
 支持给用户打标签分组，按照分组群发短信，可以同时给多个分组群发
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230109154350.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230109154350.png)
 短信模板变量支持从数据库表字段中读取
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230109194715.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230109194715.png)
 发送前预览短信内容；防止内容错误，提高发送成功率
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230109155202.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230109155202.png)
 
 如何使用？查看[群发短信配置](uniCloud/admin.md#batch-sms)
 

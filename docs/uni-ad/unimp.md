@@ -8,7 +8,7 @@
 
 利用 uni-ad 多层调度策略动态调整渠道，在设备无广告时自动调整为其他广告渠道以增加广告填充率
 
-<video controls src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/ad-unimp.x264.mp4" style="max-width: 100%; max-height: 50vh;"></video>
+<video controls src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ad/ad-unimp.x264.mp4" style="max-width: 100%; max-height: 50vh;"></video>
 
 ## 开通流程
 
@@ -26,14 +26,14 @@
 3. 在微信开放平台 `创建移动应用`，按照提示填写相关信息至完成。创建成功后会生成 `AppID`
 4. 确认在微信开放平台创建的应用状态为 `已上架`
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp-open-weixin-status.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp-open-weixin-status.png)
 
 
 开通步骤
 
 1. 登录 [uni-ad 广告联盟](https://uniad.dcloud.net.cn)，找到广告应用设置并点击 App广告 -> DCloud快捷广告 -> 申请开通
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp-web-console-on.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp-web-console-on.png)
 
 - iOS 平台需要配置通用链接，配置通用链接后需要重新打包, [详情](https://uniapp.dcloud.net.cn/api/plugins/universal-links.html)
 

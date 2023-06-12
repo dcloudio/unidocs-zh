@@ -33,5 +33,5 @@ ctx.fillRect(10, 10, 150, 80)
 ctx.draw()
 ```
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/color-stop.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/color-stop.png)
 

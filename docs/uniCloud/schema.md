@@ -34,7 +34,7 @@
 
 1. 登录 [uniCloud控制台](https://unicloud.dcloud.net.cn)，选中一个数据表
 2. 点击表右侧页签 “表结构”，点击 “编辑” 按钮，在编辑区域编写 Schema，编写完毕后点保存按钮即可生效。
-  ![](https://web-assets.dcloud.net.cn/unidoc/zh/schema2code.png)
+  ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/schema2code.png)
 
 **web控制台上编辑`DB Schema`保存后是实时在现网生效的，请注意对现网商用项目的影响。**
 
@@ -48,7 +48,7 @@
 2. 在 database 目录右键选择`新建数据集合schema`
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/hx%E6%8F%90%E7%A4%BAschema.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/hx%E6%8F%90%E7%A4%BAschema.jpg"/>
 </div>
 
 **HBuilderX内创建的schema新建和保存时不会自动上传**
@@ -1123,7 +1123,7 @@ rule表达式里支持：
 
 - 方式一：在uniCloud web控制台创建
 1. uniCloud 控制台，选择服务空间，切换到数据库视图
-2. 底部 “扩展校验函数” 点击 “+” 增加校验函数 ![](https://web-assets.dcloud.net.cn/unidoc/zh/schema-validate-function.png)
+2. 底部 “扩展校验函数” 点击 “+” 增加校验函数 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/schema-validate-function.png)
 3. 给函数起个名字，比如叫“checkabc”
 
 - 方式二：在HBuilderX中创建

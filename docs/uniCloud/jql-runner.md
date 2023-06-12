@@ -7,7 +7,7 @@
 3. 使用工具栏上的运行按钮运行（快捷键：Ctrl+R 或 F5）即可
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/jql-runner.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/jql-runner.jpg"/>
 </div>
 
 

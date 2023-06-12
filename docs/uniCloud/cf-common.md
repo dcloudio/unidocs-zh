@@ -27,7 +27,7 @@ cloudfunctions
 
 **在`HBuilderX 3.0.0`以上版本上述步骤4、5可以在云函数上右键选择`管理公共模块依赖`来实现，如下图**
 
-![管理公共模块依赖](https://web-assets.dcloud.net.cn/unidoc/zh/manage-common.png)
+![管理公共模块依赖](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/manage-common.png)
 
 公共模块依赖其他公共模块同理
 

@@ -31,17 +31,17 @@ app端上线[uniMP激励视频](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)�
 相对原管理后台，优化后的管理后台将 `App 基础广告`、`App 增强广告` 、`App 广告个性化配置` 菜单合并为 `App 广告` ，将 `App 增强广告开屏管理`选项独立于页面内。
 
 **优化前页面：**
-![](https://web-assets.dcloud.net.cn/uniad/doc/1.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/uniad/doc/1.jpg)
 
 **优化后页面：**
 - 合并`App 基础广告`、`App 增强广告`为 `App 广告`
 - 将 `App 广告个性化配置` 移动到  `App 广告`内，作为配置项
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/4.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/uniad/doc/4.jpg)
 
 - 将 `App 增强广告开屏管理` 选项独立于页面内，与广告管理菜单和广告位列表同级
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/2.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/uniad/doc/2.jpg)
 
 ### 广告平台开启关闭调整
 
@@ -49,32 +49,32 @@ app端上线[uniMP激励视频](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)�
 
 **优化前页面：**
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/3.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/uniad/doc/3.jpg)
 
 **优化后页面：**
 - 开启关闭按钮移动到 `App 广告` 下对应平台的 `广告状态` 处
 - 点击 `修改状态`，对广告平台进行开启与关闭操作
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/5.png)
+![](https://qiniu-web-assets.dcloud.net.cn/uniad/doc/5.png)
 
-<img width="500px" src="https://web-assets.dcloud.net.cn/uniad/doc/6.jpg">
+<img width="500px" src="https://qiniu-web-assets.dcloud.net.cn/uniad/doc/6.jpg">
 
 ### 基础广告调整
 将基础广告重命名为 `DCloud快捷广告`，并将广告类型 `开屏`、`悬浮红包` 移动到对应功能下，取消 `PUSH`和`广告源策略`的配置
 
 **优化前页面：**
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/7.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/uniad/doc/7.jpg)
 
 **优化后页面：**
 
 - 将原基础广告类型 `开屏` 移动到 `App 开屏广告管理` 中，广告平台为 `DCloud快捷广告`
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/20230511151715.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/uniad/doc/20230511151715.jpg)
 
 - 将原基础广告类型 `悬浮红包` 移动到 `App 三方广告应用内列表` 中，广告位类型为 `悬浮红包`，始终固定在首位，只允许`启用\停用`，无需配置
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/8.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/uniad/doc/8.jpg)
 
 ### DCloud快捷广告-uniMP激励视频广告
 
@@ -84,11 +84,11 @@ app端上线[uniMP激励视频](https://uniapp.dcloud.net.cn/uni-ad/unimp.html)�
 数据收益中，将`基础广告`、`APP增强广告`合并为 `APP广告` ，`APP增强广告`更名为`三方广告`并置于 `App广告`选项下方的筛选项中
 
 **优化前页面：**
-![](https://web-assets.dcloud.net.cn/uniad/doc/data-old.png)
+![](https://qiniu-web-assets.dcloud.net.cn/uniad/doc/data-old.png)
 
 **优化后页面：**
 - `基础广告`、`APP增强广告`合并为 `APP广告`
 - `基础广告`更名为`DCloud快捷广告`， `APP增强广告`更名为`三方广告`
 - `DCloud快捷广告` 与 `三方广告` 选择放置于`APP广告`选项下方
 
-![](https://web-assets.dcloud.net.cn/uniad/doc/data-new.png)
+![](https://qiniu-web-assets.dcloud.net.cn/uniad/doc/data-new.png)

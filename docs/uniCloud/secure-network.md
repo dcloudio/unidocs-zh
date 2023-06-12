@@ -45,17 +45,17 @@ App和微信两个平台细化说明如下：
 
 1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 证书管理`内填写安卓应用的包名、签名和iOS应用的bundleId。一个应用只能有一个发行证书配置，但是可以有多个开发证书配置
 
-  ![证书管理](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-dev-cert.jpg)
+  ![证书管理](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/secure-network-dev-cert.jpg)
 
 2. 在[uniCloud控制台](https://unicloud.dcloud.net.cn/)关联允许发送安全网络请求的应用
 
-  ![关联应用到服务空间安全网络](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-unicloud-relate.jpg)
+  ![关联应用到服务空间安全网络](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/secure-network-unicloud-relate.jpg)
   
   本质上安全网络绑定的是应用的appid、包名、证书等信息。只不过这些信息统一配置在dev中，在uniCloud的web控制台来选择。所以务必注意dev配置的正式版、测试版的包名、签名是否正确。
 
 3. 在项目根目录manifest.json文件内为app平台开启安全网络模块
 
-  ![App云端一体安全网络模块](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-app-manifest.jpg)
+  ![App云端一体安全网络模块](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/secure-network-app-manifest.jpg)
 
   **注意：**打包后生效。测试时需打包[自定义基座](../tutorial/run/run-app.md#customplayground)。
 
@@ -84,11 +84,11 @@ App和微信两个平台细化说明如下：
 
 1. 在[开发者中心](https://dev.dcloud.net.cn/)`应用详情 --> 【名称待定】`内填写微信小程序的appId。一个应用只能有一个发行配置，但是可以有多个开发配置
 
-  ![微信小程序AppId绑定](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-dev-wx-appid.jpg)
+  ![微信小程序AppId绑定](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/secure-network-dev-wx-appid.jpg)
   
 2. 在uniCloud控制台关联允许发送安全网络请求的应用
 
-  ![关联应用到服务空间安全网络](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-unicloud-relate.jpg)
+  ![关联应用到服务空间安全网络](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/secure-network-unicloud-relate.jpg)
 
 3. 工程中导入uni-id-pages
 
@@ -170,7 +170,7 @@ App和微信两个平台细化说明如下：
   
 7. 在项目根目录manifest.json文件内为微信小程序平台开启`云端一体安全网络模块`
   
-  ![微信小程序云端一体安全网络模块](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-wx-manifest.jpg)
+  ![微信小程序云端一体安全网络模块](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/secure-network-wx-manifest.jpg)
 
 #### 不使用uni-id-pages时如何使用微信小程序安全网络@mp-weixin-without-uni-id-pages
 
@@ -246,7 +246,7 @@ await require('uni-open-bridge-common').setSessionKey({
 
 开发者首先在[uniCloud控制台](https://unicloud.dcloud.net.cn/)的安全网络页面选择哪些客户端应用可以与uniCloud建立安全网络，然后在页面上单独开启客户端强制校验。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/secure-network-verify-client-config.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/secure-network-verify-client-config.jpg)
 
 **切记**
 1. 由于uni安全网络不支持web，一旦开启客户端强制校验后，web端将无法连接云函数。

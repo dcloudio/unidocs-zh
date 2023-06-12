@@ -35,7 +35,7 @@ IP防刷包含两个子功能：
 
 IP黑名单是用来完全阻止设定的IP或IP网段（cidr规范）访问云函数或clientDB的功能。
 
-![black list](https://web-assets.dcloud.net.cn/unidoc/zh/ip-black-list.jpg)
+![black list](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ip-black-list.jpg)
 
 被封禁IP访问云函数及clientDB时会收到错误响应，错误码为：`ACCESS_DENIED`，错误信息为：`Access denied`
 
@@ -84,7 +84,7 @@ IP访问频率控制用于限制单个IP访问云函数的频率。如图所示�
 - blockTime配置为0时超出限制也不会进行封禁，只是拒绝请求。
 - duration或limit配置为0时将不再限制访问频率，但是已被临时封禁的用户依然需要等到解封后才可以访问
 
-![frequency limit](https://web-assets.dcloud.net.cn/unidoc/zh/ip-freq-limit.jpg)
+![frequency limit](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ip-freq-limit.jpg)
 
 访问频率过高的用户及由于访问频率过高被临时封禁的用户访问云函数及clientDB时会收到错误响应，错误码为：`OPERATION_TOO_FREQUENT`，错误信息为：`Operation is too frequent, please try again later`
 

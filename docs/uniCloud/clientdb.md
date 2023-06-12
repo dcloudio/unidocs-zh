@@ -36,7 +36,7 @@ JQL语法相关文档已移至：[JQL语法](jql.md)
 需写27行代码，如图：
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BC%A0%E7%BB%9Fphp%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BB%A3%E7%A0%812.png"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E4%BC%A0%E7%BB%9Fphp%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BB%A3%E7%A0%812.png"/>
 </div>
 
 2. 前端用ajax携带必要参数请求API，然后将请求结果赋值给data中的变量。最终把变量在视图中渲染出来。
@@ -44,7 +44,7 @@ JQL语法相关文档已移至：[JQL语法](jql.md)
 需写37行代码，如图：
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BC%A0%E7%BB%9F%E5%BC%80%E5%8F%91%E6%96%B9%E5%BC%8F%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81.png"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E4%BC%A0%E7%BB%9F%E5%BC%80%E5%8F%91%E6%96%B9%E5%BC%8F%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81.png"/>
 </div>
 
 
@@ -57,7 +57,7 @@ JQL语法相关文档已移至：[JQL语法](jql.md)
 仅：5行代码如图：
 
 <div align=center>
-  <img style="max-width:750px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/clientDB%E7%9A%84%E6%96%B9%E5%BC%8F.jpg"/>
+  <img style="max-width:750px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/clientDB%E7%9A%84%E6%96%B9%E5%BC%8F.jpg"/>
 </div>
 
 
@@ -65,7 +65,7 @@ JQL语法相关文档已移至：[JQL语法](jql.md)
 
 
 ## clientDB图解
-![](https://web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
 
 `clientDB`的前端，有两种用法，可以用js API操作云数据库，也可以使用`<unicloud-db>`组件。
 

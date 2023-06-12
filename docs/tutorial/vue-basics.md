@@ -461,7 +461,7 @@ v-on 指令，它用于监听 DOM 事件。v-on缩写为‘ @ ’，下文简称
 		export default {
 			data() {
 				return {
-					rawHtml: '<div style="text-align:center;background-color: #007AFF;"><div >我是内容</div><img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png"/></div>'
+					rawHtml: '<div style="text-align:center;background-color: #007AFF;"><div >我是内容</div><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png"/></div>'
 				}
 			}
 		}

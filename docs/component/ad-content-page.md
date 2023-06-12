@@ -4,7 +4,7 @@
 
 ⼀个视频内容频道，支持上下滑动切换视频内容
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-content-page.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ad-content-page.png)
 
 **平台差异说明**
 

@@ -77,7 +77,7 @@ uni.navigateBackMiniProgram({
 
 当小程序需要打开另一个小程序让用户进行快捷操作时，可将要打开的小程序以半屏的形态跳转。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/wx-miniprogram.jpeg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/wx-miniprogram.jpeg)
 
 **调用流程**
 

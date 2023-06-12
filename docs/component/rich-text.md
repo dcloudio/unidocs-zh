@@ -132,7 +132,7 @@ export default {
                     text: 'Hello&nbsp;uni-app!'
                 }]
             }],
-            strings: '<div style="text-align:center;"><img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png"/></div>'
+            strings: '<div style="text-align:center;"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni@2x.png"/></div>'
         }
     }
 }

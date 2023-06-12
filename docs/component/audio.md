@@ -59,7 +59,7 @@ export default {
 	data() {
 		return {
 			current: {
-				poster: 'https://web-assets.dcloud.net.cn/unidoc/zh/music-a.png',
+				poster: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/music-a.png',
 				name: '致爱丽丝',
 				author: '暂无',
 				src: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-hello-uniapp/2cc220e0-c27a-11ea-9dfb-6da8e309e0d8.mp3',
@@ -72,4 +72,4 @@ export default {
 }
 ```
 
-![uniapp](https://web-assets.dcloud.net.cn/unidoc/zh/audio.png)
+![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/audio.png)

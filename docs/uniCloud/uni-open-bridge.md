@@ -54,7 +54,7 @@
 
 流程图如下：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-open-bridge.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-open-bridge.png)
 
 ## 凭据介绍
 

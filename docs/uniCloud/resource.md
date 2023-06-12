@@ -14,54 +14,54 @@
 - [中国教育发布(中国教育部官方App )](http://xwapp.moe.gov.cn/h5/sharepage/download.html)[详见报道](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
 
 <a href="http://xwapp.moe.gov.cn/h5/sharepage/download.html" target="_blank">
-  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/10.png">
+  <img width="400" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/10.png">
 </a>
 
 
-- [鲸鱼解忧馆](https://web-assets.dcloud.net.cn/unidoc/zh/123.png) 一个通过交流与诉说以消除烦恼的平台。
+- [鲸鱼解忧馆](https://qiniu-qiniu-web-assets.dcloud.net.cn/unidoc/zh/123.png) 一个通过交流与诉说以消除烦恼的平台。
 我们的愿望是每个用户在这里写下烦恼后能够得到解答与回应，并且找到与自己拥有同样烦恼的人和群体。
 也许回应不会那么迅速，但总归会得到暖心的回复。答案难道不是一种值得期待的事情吗？
 也许“答案”不是那么“准确”，因为人与人的心理与性格各异。但我们初心的是引导你走出心里的围墙。
 一个无需过多言语便懂你的慢社交轻社区。
 
-<a href="https://web-assets.dcloud.net.cn/unidoc/zh/123.png" target="_blank">
-<img width="800" src="https://web-assets.dcloud.net.cn/unidoc/zh/123.png">
+<a href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/123.png" target="_blank">
+<img width="800" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/123.png">
 </a>
 
 - [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)
 一个集成了大量商用项目常见功能的，云端一体应用快速开发基本项目模版。
 
 <a href="https://ext.dcloud.net.cn/plugin?id=5057" target="_blank">
-  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-starter-img.png">
+  <img width="400" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-starter-img.png">
 </a>
 
 - [合成类网赚游戏](https://ext.dcloud.net.cn/plugin?id=4095) 该款网赚游戏是基于uni-app、uniCloud、uni-AD开发的合成类项目，源码和文档完全开放。
 游戏主要功能：玩家通过签到等方式赚取金币，使用金币购买低等级猫然后合成为更高等级猫。金币不足时，通过观看激励视频广告，获取新的金币。玩家通过邀请好友一起养猫，下线观看激励视频，邀请者可获得激励红包。
 
 <a href="https://ext.dcloud.net.cn/plugin?id=4095">
-  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/cat-ad.png">
+  <img width="400" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-ad.png">
 </a>
 
 - [猜歌类网赚游戏](https://ext.dcloud.net.cn/plugin?id=4826) 该游戏基于uni-app、uniCloud、uni-AD开发的小游戏，通过猜歌曲、观看广告赚取现金奖励。代码开源、文档公开。
 游戏主要功能：玩家可以通过猜歌、做任务等方式直接获取现金奖励。玩家可以通过猜歌、拆红包、做任务等方式获取金币奖励，当金币累积到一定数量可以兑换现金。玩家可以通过做带有抽奖字样的任务获取现金抽奖次数。支持App和微信小程序双平台变现。
 
 <a href="https://ext.dcloud.net.cn/plugin?id=4826">
-  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/song-game.png">
+  <img width="400" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/song-game.png">
 </a>
 
 
 - [猜字谜](https://ext.dcloud.net.cn/plugin?id=7996) 该游戏基于猜歌类网赚游戏改版，代码开源、文档公开，支持App和微信小程序双平台变现。
 
 <a href="https://ext.dcloud.net.cn/plugin?id=7996">
-  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/caizimi.png">
+  <img width="400" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/caizimi.png">
 </a>
 
 
 - 俄钓宝典 (微信小程序)，俄罗斯钓鱼4游戏助手，游戏攻略、实时点位、游戏资料库、游戏圈子等等应有尽有
 
-<a href="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BF%84%E9%92%93%E5%AE%9D%E5%85%B8qrcode.jpg
+<a href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E4%BF%84%E9%92%93%E5%AE%9D%E5%85%B8qrcode.jpg
 ">
-  <img width="400" src="https://web-assets.dcloud.net.cn/unidoc/zh/%E4%BF%84%E9%92%93%E5%AE%9D%E5%85%B8.png">
+  <img width="400" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E4%BF%84%E9%92%93%E5%AE%9D%E5%85%B8.png">
 </a>
 
 
@@ -84,7 +84,7 @@
 
 - 安心记待办：极简风手机应用。日程管理App，每日心情记录，安心习惯养成。[iOS App](https://apps.apple.com/cn/app/id1641634853)
 <a href="https://apps.apple.com/cn/app/id1641634853" target="_blank">
-  <img width="600" src="https://web-assets.dcloud.net.cn/unidoc/zh/resource-anxinji-todo.png">
+  <img width="600" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/resource-anxinji-todo.png">
 </a>
 
 更多uniClouid项目和插件，见**插件市场**：[https://ext.dcloud.net.cn/?cat1=7](https://ext.dcloud.net.cn/?cat1=7)

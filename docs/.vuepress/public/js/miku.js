@@ -1,4 +1,4 @@
-mikuDelivery.initProxy('miku-delivery-sw-1.1.0.js', {
+mikuDelivery.initProxy('/miku-delivery-sw-1.1.0.js', {
 	/** appID 和 appSalt 由七牛配置提供*/
 	app: {
 		appID: 'r5v5l8yhuips0xwv',

@@ -17,7 +17,7 @@ uni-admin 是开源的，遵循 MIT 协议，你可以从[Github](https://github
 ## 看视频，15分钟掌握uni-admin
 
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=13">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/20210826112813.jpg" alt="uni-admin视频教程" style="width: 60%;">
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210826112813.jpg" alt="uni-admin视频教程" style="width: 60%;">
 </a>
 
 
@@ -48,11 +48,11 @@ uni-admin 同时支持 PC 端 和移动端。基础模块是全端可用的，�
 
 PC 端如下图：
 
-![pc](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-2.png)
+![pc](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-2.png)
 
 移动端如下图：
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-3.png" width="375"/>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-3.png" width="375"/>
 
 
 4. 扩展插件
@@ -70,22 +70,22 @@ uni-admin是完整开源的一个uni-app项目，任何熟悉uni-app的工程师
 - uni-admin 自带两套皮肤：
   - 默认蓝色皮肤
 
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-default-theme.jpg" width="400">
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin-default-theme.jpg" width="400">
 
   - 可切换绿柔皮肤：
 
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-green-theme.jpg" width="400">
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin-green-theme.jpg" width="400">
 
 - 如果需要修改皮肤颜色，可以在 uni-admin 项目根目录的 `uni.scss` 文件中进行修改：
 
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-theme-config.jpg" height="400">
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin-theme-config.jpg" height="400">
 
 - 如果需要增加皮肤，以下步骤为示例：
   1. 在 `uni.scss` 文件的 `$themes` 属性中新增一个键值 **`blue`** 的配置：
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-theme-config-edit.jpg" height="400">
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin-theme-config-edit.jpg" height="400">
 
   2. 修改项目根目录的 `admin.config.js` 文件，添加以下内容，**注意：`value` 的值需要与 `$themes` 中新增主题的键值保持一致**：
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin-admin-theme-config-edit.jpg" height="400">
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin-admin-theme-config-edit.jpg" height="400">
   3. 重新运行到 web 端查看效果
 
 ## 使用说明
@@ -96,21 +96,21 @@ uni-admin的`一键部署`，会自动上传云函数、创建数据库，并将
 
 1. 在插件市场点击一键部署插件到uniCloud
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-0.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-0.png)
 
 2. 选择服务空间（目前只支持选择腾讯云服务空间，且不可以是协作者身份，需空间创建者的账号登录）
 
 如需要部署在阿里云空间，则请使用[手动部署](#install)方式
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-1.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-1.png)
 
 3. 在此页面隔几分钟刷新点击一下刷新，直到提示部署完成。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-2.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-2.png)
 
 4. 部署完成后，点击前端网页默认访问链接即可访问uni-admin
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-3.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/admin%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2-3.png)
 
 ### 手动部署@install
 
@@ -120,11 +120,11 @@ uni-admin的`一键部署`，会自动上传云函数、创建数据库，并将
 
 [HBuilderX](https://www.dcloud.io/hbuilderx.html) 3.0+版本新建 uni-app 项目，选择 uni-admin 项目模板，如下图
 
-![download-admin](https://web-assets.dcloud.net.cn/unidoc/zh/create-admin.png)
+![download-admin](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create-admin.png)
 
 创建完成后，可以跟随`云服务空间初始化向导`初始化项目，创建并绑定云服务空间
 
-![download-admin](https://web-assets.dcloud.net.cn/unidoc/zh/cloud-init.png)
+![download-admin](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cloud-init.png)
 
 <!-- 除了可视化向导外，也可以从[https://github.com/dcloudio/uni-admin](https://github.com/dcloudio/uni-admin)获取代码。 -->
 
@@ -245,13 +245,13 @@ uni-admin的`一键部署`，会自动上传云函数、创建数据库，并将
 
 > 注意：注册完毕后，建议从登录页面移除该链接
 
-![login](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-1.png)
+![login](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin/uni-admin-1.png)
 
 ## 分栏窗体介绍
 
 登录后我们会看到如下窗体, 窗体分为三个部分，topWindow 顶部窗口（导航栏），leftwindow 左侧窗口（菜单栏），右侧的内容主窗体
 
-![index](https://web-assets.dcloud.net.cn/unidoc/zh/pc-admin%E5%89%AF%E6%9C%AC.png)
+![index](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/pc-admin%E5%89%AF%E6%9C%AC.png)
 
 ### 顶部窗口（导航栏）
 
@@ -377,12 +377,12 @@ $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
 ## 应用管理 <Badge text="uni-admin 1.9.3+" />@app-manager
 
 在进入应用管理后可看到如下界面，点击右上角 `新增` 按钮可新增一个应用
-![新增应用](https://web-assets.dcloud.net.cn/unidoc/zh/create_app(1).png)
+![新增应用](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create_app(1).png)
 
 **整体界面布局**
   > 本页面信息，在应用发布、app升级模块中，都会关联使用，请认真填写
 
-  ![新增页面](https://web-assets.dcloud.net.cn/unidoc/zh/create_app_page.jpg)
+  ![新增页面](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create_app_page.jpg)
 
 **各项信息说明**
 
@@ -441,7 +441,7 @@ $menu-text-color-actived: #409eff; /* 菜单激活前景色 */
 
 uni统计2.0 是开源、全端、云端一体、更适合uni-app的统计平台，下图为概览图和简介，详见[统计文档](https://uniapp.dcloud.net.cn/uni-stat-v2.html)
 
-![统计-概况页](https://web-assets.dcloud.net.cn/unidoc/zh/admin3.png)
+![统计-概况页](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/admin3.png)
 
 **1. 全端**
 
@@ -507,7 +507,7 @@ uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插�
 - 数据库字段：可以关联数据库中指定字段，内容较为个性化。格式为 ```{数据库表名.字段}```，例如: ```{uni-id-users.username}``` 目前仅支持```uni-id-users```表
 - 支持 发送前预览前5人短信内容，用于检测模板变量是否配置正确，提高发送成功率。
 
-![群发短信](https://web-assets.dcloud.net.cn/unidoc/zh/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
+![群发短信](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/86928cf2-2f69-4c0f-a46f-a617e3fc1c83.png)
 
 ### 使用方式
 
@@ -526,7 +526,7 @@ uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插�
 **步骤三：导出短信模板**
 
 在短信模板页面-点击”导出模板“按钮，导出短信模板。
-![导出短信模板](https://web-assets.dcloud.net.cn/unidoc/zh/20230107203307.png)
+![导出短信模板](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107203307.png)
 
 **步骤四：通过uni-admin控制台发送短信**
 
@@ -541,38 +541,38 @@ uni统计开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插�
 ```
 
 配置完成后，登录uni-admin控制台，打开用户管理页面，请按照图示步骤上传短信模板（步骤三导出的短信模板）：
-![上传短信模板](https://web-assets.dcloud.net.cn/unidoc/zh/20230107201145.png)
+![上传短信模板](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107201145.png)
 短信模板上传成功后，短信模板即可显示，如下：
-![短信模板上传成功](https://web-assets.dcloud.net.cn/unidoc/zh/20230107202329.png)
+![短信模板上传成功](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107202329.png)
 
 选择要接收短信的用户，如下：
-![群发用户](https://web-assets.dcloud.net.cn/unidoc/zh/20230107202752.png)
+![群发用户](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107202752.png)
 或者如果已经对用户进行了分组，可以在标签管理中选择标签后发送短信，如下：
-![群发用户标签](https://web-assets.dcloud.net.cn/unidoc/zh/20230107203019.png)
+![群发用户标签](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107203019.png)
 
 目前短信支持固定文本发送与关联数据表字段发送，以下介绍两种方式如何发送
 
 **固定文本发送**
 
 选择短信模板，如果没有出现变量模板配置就是固定文本模式，如下：
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107204518.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107204518.png)
 可以在发送前点击预览，可以预览发送的第一条短信，用来检查短信内容是否正确，如下：
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107204807.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107204807.png)
 确认短信内容无误后，点击提交即可发送短信，发送短信之后可以在[DCloud开发者中心](https://dev.dcloud.net.cn/)-查看[短信发送记录](https://dev.dcloud.net.cn/pages/sms/sendLog)
 
 **使用数据表字段作为模板变量发送**
 
 选择短信模板，如果出现变量模板配置就是数据表查询模式，如下：
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107205208.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107205208.png)
 如上，短信变量字段为”username“，配置替换字段为uni-id-users表中username字段，在发送短信时会替换掉短信变量。
 
 短信变量支持固定值和数据表查询两种方式；固定值如：各位同事，数据表查询如：{uni-id-users.username}；请注意，若使用数据表查询方式，目前仅支持查询 uni-id-users 表；并注意确保数据库中查询字段值不为空，否则短信将发送失败。
 
 在发送之前可以点击预览，查看第一条短信的内容，确保变量模板配置正确，如下，username将替换为“张三”：
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107205823.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107205823.png)
 
 确认短信内容无误后，点击提交即可发送短信，发送短信之后可以在[DCloud开发者中心](https://dev.dcloud.net.cn/)-查看[短信发送记录](https://dev.dcloud.net.cn/pages/sms/sendLog)
-![](https://web-assets.dcloud.net.cn/unidoc/zh/20230107210406.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107210406.png)
 
 如有任何问题可在[论坛发帖](https://ask.dcloud.net.cn)咨询或加uniCloud短信服务交流QQ群(695645208)咨询
 
@@ -621,19 +621,19 @@ admin 提供了两个内置方法，方便在页面中鉴定登录用户权限�
 - 体验账号：admin      密码：123456
 
 2. 创建权限。在uni-admin左侧菜单的权限管理，新增权限“查询信息”，标识为“read”
-![](https://web-assets.dcloud.net.cn/unidoc/zh/admin-permision.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/admin-permision.jpg)
 3. 创建角色。在左侧菜单的角色管理里，新增角色“普通成员”，标识为“member”，绑定上面的“查询信息”权限
-![](https://web-assets.dcloud.net.cn/unidoc/zh/4mutiladmin.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/4mutiladmin.jpg)
 4. 创建账户并赋予角色。在左侧菜单的用户管理里，添加用户“张三”，然后给用户赋予角色“普通成员”
-![](https://web-assets.dcloud.net.cn/unidoc/zh/16f173a2-e889-404b-b509-346d3b929a0d.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/16f173a2-e889-404b-b509-346d3b929a0d.jpg)
 5. 如果你退出账户，登录刚刚创建的账户张三。我们发现会提示：该账户没有被赋予登录admin系统的权限, 请联系系统管理员绑定角色赋权限。因为：你登录的账户没有访问任何admin系统菜单的权限，所以不能访问admin系统。
-![](https://web-assets.dcloud.net.cn/unidoc/zh/9mutiladmin.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/9mutiladmin.jpg)
 6. 设置有查询信息权限的人，拥有访问admin系统菜单"用户管理"的权限。在左侧菜单的菜单管理里，找到菜单“用户管理”，点修改，在权限列表里勾选“查询信息”，也就是有查询信息权限的人，可以看到本菜单
-![](https://web-assets.dcloud.net.cn/unidoc/zh/11mutiladmin.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/11mutiladmin.jpg)
 7. 这时你用账户“张三”登录，就能进入到admin系统。但你会看到如下图提示“权限校验未通过”。因为刚刚仅为该用户赋予了访问菜单的权限。还未赋予访问uni-id-users表的阅读权限
-![](https://web-assets.dcloud.net.cn/unidoc/zh/12mutiladmin.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/12mutiladmin.jpg)
 8. 需要在hbuilderx中将表uni-id-users的schema文件中设置新角色的权限，将permission下的read节点配置为`"read": "'read' in auth.permission"`，并上传到云端。当然这在示例项目不能实现，需要你自己搭建admin系统，重复以上步骤，[点此下载uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)
-![](https://web-assets.dcloud.net.cn/unidoc/zh/d92e3738-f25a-4c46-9ab4-2edbdf92518a.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/d92e3738-f25a-4c46-9ab4-2edbdf92518a.png)
 9. 此时你再刷新页面即可访问用户管理的数据列表
 
 ## icon 图标

@@ -31,11 +31,11 @@ uni-app可以用cli项目的npm命令运行，但更重要的是，DCloud提供�
 
 1. 顶部运行菜单
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/menurun.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/menurun.png)
 
 2. toolbar工具栏上的运行按钮
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/toolbarrun.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/toolbarrun.png)
 
 	toolbar的运行按钮点击后会展开一个菜单。这个菜单可配置，通过`自定义菜单`将不常用的运行项目折叠起来。
 

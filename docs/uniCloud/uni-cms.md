@@ -40,25 +40,25 @@ uni-cms包括管理端和用户端。
 - 管理端：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)
 - 客户端（小程序）扫码查看
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121203155.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304121203155.jpg)
 
 #### 管理端截图：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304120145412.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304120145412.png)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304231921964.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304231921964.png)
 
 #### 用户端截图：
 
 <div style="display: flex; flex-basis: 10px">
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202304120144625.png" width="375"/>
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304120144625.png" width="375"/>
 </div>
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202304120139988.png" width="375" />
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304120139988.png" width="375" />
 </div>
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202304120139209.png" width="375" />
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304120139209.png" width="375" />
 </div>
 </div>
 
@@ -88,7 +88,7 @@ uni-cms包括管理端和用户端。
 
 <div style="display: flex; flex-basis: 10px">
 <div style="margin-right: 10px;">
-    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202304120139209.png" width="375" />
+    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304120139209.png" width="375" />
 </div>
 </div>
 
@@ -106,7 +106,7 @@ uni-cms包括管理端和用户端。
 
 如下图所示：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202303232139066.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202303232139066.png)
 
 导入后刷新页面，在uni-admin左侧菜单，可看到内容管理的菜单项，点击即可进入相关页面。
 
@@ -132,7 +132,7 @@ uni-cms包括管理端和用户端。
 
 然后系统管理员在uni-admin中新建一个文章作者角色。在 系统管理 - 角色管理 中操作，如下图所示：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304171157570.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304171157570.png)
 
 然后系统管理员在 系统管理 - 用户管理 中，为已注册用户赋予作者角色。
 
@@ -156,11 +156,11 @@ uni-cms包括管理端和用户端。
 
 1. 在[开发者中心](https://dev.dcloud.net.cn)对当前应用开通 uni-push2.0，并关联服务空间。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304181604585.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304181604585.png)
 
 2. 在项目的 manifest.json 文件中根据您相应平台选择开通 uniPush2.0，以下截图为开通Web平台的uniPush2.0。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304181607019.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304181607019.png)
 
 3. 内置的 un-im 属于精简版IM，使用前需要在 App.vue 文件内对 uni-im 进行初始化操作，具体代码如下：
 
@@ -194,7 +194,7 @@ uni-cms版本大于等于1.0.4时，无需在App.vue内初始化uni-im，uni-cms
 
 4. 运行项目，体验AI功能。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304271726981.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304271726981.png)
 
 **注意**
 
@@ -572,11 +572,11 @@ export default {
 1. 在uni-ad后台([https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/))开通[激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)，开通步骤[详见](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 2. 新建激励视频广告位，在对应的广告位上配置激励视频云回调，选择同账户下uni-cms部署的uniCloud服务空间，配置回调云函数为`uni-cms-unlock-callback`
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121447261.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304121447261.png)
 
 3. 在 uni-AD Web 控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 `Security key` 与`adp id`，复制 `Security key` 与 `adp id`
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121448549.png) 
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304121448549.png) 
 
 4. 在 `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center`目录中创建 `uni-cms/config.json` 配置文件，配置文件如下:
 ```json
@@ -605,7 +605,7 @@ export default {
 }
 ```
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/202304121449714.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304121449714.png)
 
 6. 对uni-cms管理端项目下的uniCloud目录点右键，将云函数、配置、数据库、数据库扩展js都上传至云端
 7. 运行uni-admin项目，在内容管理中新建一篇文章，在指定内容后，点击ToolBar的”看广告解锁“功能，添加解锁符，保存文章。

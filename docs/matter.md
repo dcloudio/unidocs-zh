@@ -130,7 +130,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * H5 发布到服务器注意：
     1. 配置发行后的路径（发行在网站根目录可不配置），比如发行网站路径是 www.xxx.com/html5，在 `manifest.json` 文件内编辑 h5 节点，router 下增加 base 属性为 html5
 <div>
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/html5-a.png" width="500">
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/html5-a.png" width="500">
 </div>
     2. 点击菜单 发行-> H5
     3. 在当下项目下的 ``unpackage/dist/build/h5`` 目录找到出的资源，部署服务器（或者使用本地服务器预览），如需部署到相对路径（支持本地file协议打开）参考：https://ask.dcloud.net.cn/article/37432。

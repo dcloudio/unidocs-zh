@@ -38,7 +38,7 @@ App/小程序/网站做好后，如何告知你的用户？
 负责应用发布信息的管理。
 
 <div align="left">
-	<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-manager-list.png" alt="统一发布门户管理" width="800"></img>
+	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-manager-list.png" alt="统一发布门户管理" width="800"></img>
 </div>
 
 提供了如下功能：
@@ -58,10 +58,10 @@ App/小程序/网站做好后，如何告知你的用户？
 负责对所填写应用发布信息的展示与正确引导下载方式。
 
 <div align="left" style="display:flex;align-items:center;">
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-pc.png" height="400"></img>
-	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mobile.png" height="400"></img>
-	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-app-desc.png" height="400"></img>
-	<img style="margin-left:20px;" src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mp.jpg" height="400"></img>
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-pc.png" height="400"></img>
+	<img style="margin-left:20px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mobile.png" height="400"></img>
+	<img style="margin-left:20px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-app-desc.png" height="400"></img>
+	<img style="margin-left:20px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mp.jpg" height="400"></img>
 </div>
 
 

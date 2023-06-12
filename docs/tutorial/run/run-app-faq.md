@@ -59,7 +59,7 @@ HBuilderX支持项目类型较多，只有`uni-app`、`5+app`、`wap2app`可以�
 2. 首先确认Xcode（版本必须是6.0及以上版本）已安装并能正常启动模拟器
 3. 如果仍然无法检测到，则打开Xcode，然后打开Xcode的 `Preferences --> Locations`，设置该界面中的 `Command Line Tools` 项，选择正确的`Xcode`版本即可
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/xcode_ios_simulator.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/xcode_ios_simulator.png)
 
 
 ### 3.2 Mac: 连接Android手机@mac-android
@@ -274,7 +274,7 @@ HBuilderX 3.5.3之后的版本，App真机运行 使用Node运行，不再依赖
 
 ### 6.1 同步资源失败，未得到同步资源的授权，请停止运行后重新运行，并注意手机上的授权提示@failed-to-sync-resource
 
-[](https://web-assets.dcloud.net.cn/unidoc/zh/app_sync_resource_fail.jpeg)
+[](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app_sync_resource_fail.jpeg)
 
 **如果您遇到以下错误，请先查看基座类型：**
 
@@ -308,7 +308,7 @@ HBuilderX 3.5.3之后的版本，App真机运行 使用Node运行，不再依赖
 
 某些情况下，如下图所示，点击菜单没有反应。
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/app_run_menu.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app_run_menu.jpg" style="zoom: 50%;" />
 
 - 如果替换过HBuilderX安装目录下的Node程序，请还原Node程序或重装HBuilderX。
 - 如果之前`运行菜单点击响应正常`，`操作系统环境变量`更改Node变量后出错，请清除操作系统环境变量中配置的Node变量。

@@ -8,7 +8,7 @@
 
 点击日志，可以直接跳转到对应的代码处。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/consolelogjump.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/consolelogjump.jpg)
 
 注意浏览器控制台打印的日志无法转到代码，只有HBuilder控制台打印的才能转到代码。而运行到外部浏览器是没有这个功能的。只有HBuilder内置浏览器才可以。
 
@@ -20,6 +20,6 @@ HBuilder中有2种断点调试方案，一种是使用浏览器自带的调试�
 
 对源码点右键，可以同步断点到内置浏览器的调试工具，调试方法同chrome通行的用法。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/syncbreakpoint.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/syncbreakpoint.jpg)
 
 关于另一种使用HBuilderX的调试控制台的方案，[另见](h5-debug.md)

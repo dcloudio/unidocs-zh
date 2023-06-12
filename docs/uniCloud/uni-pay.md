@@ -30,7 +30,7 @@
 
 注意：线上体验地址用的是阿里云免费版，免费版请求次数有限，如请求失败为正常现象，可直接导入示例项目绑定自己的空间体验。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/https___hellounipay.dcloud.net.cn_.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/https___hellounipay.dcloud.net.cn_.png)
 
 `uni-pay` 的功能包括：
 
@@ -127,7 +127,7 @@ uni-pay的[uni_modules](../plugin/uni_modules.md)中包含了前端页面、云�
 
 1. 从插件市场导入`uni-pay`示例项目。[前往插件市场](https://ext.dcloud.net.cn/plugin?name=uni-pay)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-9.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-9.png)
 
 2. 打开`uni-pay`配置文件，配置文件地址: `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js` [查看支付配置介绍](#config)
 3. 上传公共模块 `uni-config-center`（右键，上传公共模块，每次修改了支付配置，都需要重新上传此模块才会生效）
@@ -135,17 +135,17 @@ uni-pay的[uni_modules](../plugin/uni_modules.md)中包含了前端页面、云�
 5. 上传云对象 `uni-pay-co`（右键，上传部署。当然对uniCloud目录点右键批量上传也可以）
 6. 数据库初始化
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-28.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-28.png)
 
 7. 运行启动项目，**在HBuilderX的运行控制台里选择使用云端云函数环境**
 
 **注意：测试支付回调必须选择云端云函数环境**
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-29.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-29.png)
 
 8. 前端页面里点击唤起收银台支付，如果可以正常支付，代表示例项目运行成功，可以开始对接自己的项目了。 [对接自己项目](#install)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-30.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-30.png)
 
 ## uni-pay的config-center配置@config
 
@@ -153,7 +153,7 @@ uni-pay的[uni_modules](../plugin/uni_modules.md)中包含了前端页面、云�
 
 配置文件在 `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js`
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-3.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-3.png)
 
 ### 完整支付配置示例@config-demo
 
@@ -356,17 +356,17 @@ module.exports = {
 
 [点击此处进入服务空间列表](https://unicloud.dcloud.net.cn/home)，找到你项目用的服务空间，复制其服务空间ID
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-4.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-4.png)
 
 **URL化地址如何获取？**
 
 [点击此处进入服务空间列表](https://unicloud.dcloud.net.cn/home)，找到你项目用的服务空间，点击服务空间名称进入空间详情页，点击左侧菜单【云函数/云对象】- 点击【uni-pay-co】云对象右侧的【详情】按钮
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-5.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-5.png)
 
 进入详情后，点下面的【复制路径】，复制的内容就是【URL化地址】
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-6.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-6.png)
 
 ### 分渠道支付配置示例@config-part
 
@@ -706,18 +706,18 @@ module.exports = {
 
 1. 从插件市场导入`uni-pay`插件到你自己的项目。[前往插件市场](https://ext.dcloud.net.cn/plugin?name=uni-pay)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-10.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-10.png)
 
 2. 复制你刚运行的示例项目中的`uni-pay`配置文件，配置文件地址: `uniCloud/cloudfunctions/common/uni-config-center/uni-pay/config.js`到你的项目中 [查看支付配置介绍](#config)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-3.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-3.png)
 
 3. 上传公共模块 `uni-config-center`（右键，上传公共模块，每次修改了支付配置，都需要重新上传此模块才会生效）
 4. 上传公共模块 `uni-pay`（右键，上传公共模块）
 5. 上传云对象 `uni-pay-co`（右键，上传部署）
 6. 数据库初始化
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-28.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-28.png)
 
 7. 项目根目录`pages.json`添加`subPackages`分包页面配置（如果页面已自动配置，则可无视此步骤）
 ```js
@@ -2122,13 +2122,13 @@ this.$refs.uniPay.createOrder({
 
 ### 收款趋势
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101.png)
 
 **概况**
 
 在`概况`栏目中可以直观的看到今日、昨日、前日、本周、本月、本季度、本年度、累计数据。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-01.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-01.png)
 
 **名词解释：**
 
@@ -2142,7 +2142,7 @@ this.$refs.uniPay.createOrder({
 
 在`今日数据`栏目中可以看到更多今日统计数据。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-02.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-02.png)
 
 **名词解释：**
 
@@ -2167,13 +2167,13 @@ this.$refs.uniPay.createOrder({
 
 在`趋势图`栏目中以`天维度`、`月维度`、`季维度`、`年维度`进行趋势统计。可以直观的看到收入的增长趋势。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-03.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-03.png)
 
 ### 转换漏斗分析
 
 可以为您分析指定时间段的支付转化率，同时展示支付转化率趋势图。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A102.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A102.png)
 
 **名词解释：**
 
@@ -2187,13 +2187,13 @@ this.$refs.uniPay.createOrder({
 
 可以为您快速筛选高价值用户，高复购率用户。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A103.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A103.png)
 
 ### 订单明细
 
 可以搜索、查看订单详情
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A104.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A104.png)
 
 
 ## 注意事项@tips
@@ -2230,17 +2230,17 @@ module.exports = {
 
 微信小程序支付除了配置uni-pay的支付配置外，还需要配置 `manifest.json` 内的 微信小程序appid，如下图所示。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-7.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-7.png)
 
 如果报如下错误，请点[这里](#question-mp-weixin-domain)
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-32.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-32.png)
 
 ### APP支付@tips-app
 
 APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付模块，如下图所示。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-8.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-8.png)
 
 同时，还需要打自定义基座（包名需要和开放平台下填写的一致），且你在开放平台下的这个应用必须通过审核才可以。（比如微信开放平台下的APP应用显示通过审核才可以）
 
@@ -2336,7 +2336,7 @@ APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付�
 
 ### 微信小程序真机报fail url not in domain list错误@question-mp-weixin-domain
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-32.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-32.png)
 
 这是由于云开发的域名没有添加到微信小程序域名白名单导致的，需要去微信小程序后台，添加以下域名到微信小程序域名白名单
 
@@ -2344,6 +2344,6 @@ APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付�
 https://api.next.bspapp.com;https://api.bspapp.com;https://tcb-api.tencentcloudapi.com;
 ```
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-pay-31.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-31.png)
 
 **添加完域名后，一定要重启微信开发者工具，然后去手机微信里删除最近使用的小程序（这一步很关键），最后重新扫二维码进入小程序。**

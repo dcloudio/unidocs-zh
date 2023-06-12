@@ -140,7 +140,7 @@ export default {
 ```html
 <uni-collapse>
 	<uni-collapse-item title="标题文字"
-		thumb="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png">
+		thumb="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png">
 		<view class="content">
 			<text class="text">折叠内容主体，可自定义内容及样式</text>
 		</view>
@@ -361,13 +361,13 @@ export default {
 		<uni-section title="配置图片" type="line">
 			<uni-collapse>
 				<uni-collapse-item title="标题文字"
-					thumb="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png">
+					thumb="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png">
 					<view class="content">
 						<text class="text">折叠内容主体，可自定义内容及样式</text>
 					</view>
 				</uni-collapse-item>
 				<uni-collapse-item title="标题文字"
-					thumb="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png">
+					thumb="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png">
 					<view class="content">
 						<text class="text">折叠内容主体，可自定义内容及样式</text>
 					</view>
@@ -395,7 +395,7 @@ export default {
 						<uni-list-item title="列表右侧显示 switch" :show-switch="true"></uni-list-item>
 						<uni-list-item :show-extra-icon="true" :extra-icon="extraIcon" title="列表左侧带扩展图标"></uni-list-item>
 						<uni-list-item title="列表左侧带略缩图" note="列表描述信息"
-							thumb="https://web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png"
+							thumb="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloudlogo.png"
 							thumb-size="lg" rightText="右侧文字" showArrow></uni-list-item>
 						<uni-list-item title="开启点击反馈" clickable showArrow @click="onClick"></uni-list-item>
 					</uni-list>

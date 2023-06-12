@@ -34,7 +34,7 @@
 3. 更快结算
   - 默认每月4日、19日两次结算。扫描联系商务申请更短结算周期
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
 
 ### 开通配置广告步骤@start
 

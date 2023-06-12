@@ -1556,13 +1556,13 @@ uni-cloud-push 扩展库的errCode码以uni-cloud-push-error-开头，如：uni-
 
 <div class="weixin-support">
     <div class="weixin-support-focus">
-        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/weixin.png" alt="" class="weixin-support-icon">
+        <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/weixin.png" alt="" class="weixin-support-icon">
         联系
         <br>
         个推
     </div>
     <div class="weixin-support-content">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/support.jpg" alt="" class="weixin-support-icon">
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/support.jpg" alt="" class="weixin-support-icon">
        微信扫一扫
 		<br>
         随时联系个推技术支持

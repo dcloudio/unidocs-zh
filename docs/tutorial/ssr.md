@@ -168,7 +168,7 @@ export default {
 
 HBuilderX创建的项目在运行菜单勾选`启用SSR`再运行到浏览器即可
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/run-ssr-checked.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run-ssr-checked.jpg)
 
 cli创建的项目使用`npm run dev:h5:ssr`运行即可
 
@@ -215,7 +215,7 @@ cli创建的项目使用`npm run dev:h5:ssr`运行即可
 
 2. 通过`HBuilderX`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`、勾选`将编译后的资源部署在uniCloud前端网页托管`
 
-	![自动部署](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
+	![自动部署](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
 	
 3. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
 
@@ -246,7 +246,7 @@ cli创建的项目使用`npm run dev:h5:ssr`运行即可
   
   非cli工程：通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
   
-  ![以ssr模式发行](https://web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
+  ![以ssr模式发行](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
   
 3. 部署静态资源到[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
 

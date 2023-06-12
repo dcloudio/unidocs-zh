@@ -39,7 +39,7 @@ uni-sec-check公共模块仅能在云函数/云对象内使用。如果您不了
 
 配置如下图所示
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-admin/387.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin/387.png)
 
 ## API@api
 

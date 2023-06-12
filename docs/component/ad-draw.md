@@ -11,7 +11,7 @@
 
 类抖音的竖版视频流，来电秀、直播间等全屏观看的视频。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/ad-draw.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ad-draw.png)
 
 
 - app端的广告源由腾讯广点通、头条穿山甲、快手广告联盟以及部分DCloud直投广告聚合提供，在DCloud的uni-ad后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)

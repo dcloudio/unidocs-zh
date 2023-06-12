@@ -96,11 +96,11 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 <a href="https://m.qinxuan.hihonor.com/" target="_blank" class="clear-style"><b>华为荣耀亲选商城：</b></a> 华为公司旗下荣耀品牌精品电商平台。
 <div style="display:flex;justify-content: space-around;">
 	<a href="javascript:;" target="_self" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-case-rongyao.png" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-case-rongyao.png" width="200"/>
 		<span style="margin-top:15px;">微信小程序</span>
 	</a>
   <a href="https://m.qinxuan.hihonor.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/rongyao.png" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/rongyao.png" width="200"/>
 		<span style="margin-top:15px;">H5</span>
 	</a>
   <a href="https://appgallery1.huawei.com/#/app/C100382765" target="_blank" class="clear-style barcode-view">
@@ -113,7 +113,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 <b>星巴克：</b>全球最大的咖啡连锁店，世界领先的特种咖啡零售商
 <div style="display:flex;justify-content: space-around;">
 	<a href="javascript:;" target="_self" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-case-xbk.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-case-xbk.jpg" width="200"/>
 		<span style="margin-top:15px;">微信小程序</span>
 	</a>
 </div>
@@ -133,7 +133,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 <b>中国教育发布：</b>中华人民共和国教育部官方App。<a href="https://uniapp.dcloud.io/uniCloud/README">uniCloud云开发</a>案例。[详见报道](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
 <div style="display:flex;justify-content: space-around;">
 	<a href="http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/jiaoyubuapp.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/jiaoyubuapp.jpg" width="200"/>
 		<span style="margin-top:15px;">iOS、Android通用扫码地址</span>
 	</a>
 </div>
@@ -141,7 +141,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 <b>CSDN：</b> Appstore新闻类榜单前十。<a href="https://nativesupport.dcloud.net.cn/">uni小程序SDK</a>案例。App内部众多栏目做成小程序形式。
 <div style="display:flex;justify-content: space-around;">
 	<a href="https://www.csdn.net/apps/download" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/csdnappdown.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/csdnappdown.jpg" width="200"/>
 		<span style="margin-top:15px;">App码</span>
 	</a>
 </div>
@@ -187,7 +187,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 		<span style="margin-top:15px;">Web及H5码</span>
 	</a>
   <a href="javascript:;" target="_self" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/miniapp-dengdengduolinguo.png" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/miniapp-dengdengduolinguo.png" width="200"/>
 		<span style="margin-top:15px;">微信小程序码</span>
 	</a>
 </div> -->
@@ -195,15 +195,15 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 <a href="http://ext.dcloud.net.cn/plugin?id=239" target="_blank" class="clear-style"><b>ColorUI：</b></a>ColorUI官方组件库for uni-app，高颜值示例。本项目插件市场地址：[https://ext.dcloud.net.cn/plugin?id=239](https://ext.dcloud.net.cn/plugin?id=239)
 <div style="display:flex;justify-content: space-around;">
 	<a href="http://demo.color-ui.com" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/color-ui-H5.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/color-ui-H5.jpg" width="200"/>
 		<span style="margin-top:15px;">H5码</span>
 	</a>
 	<a href="http://ext.dcloud.net.cn/plugin?id=239" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/color-ui-weapp.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/color-ui-weapp.jpg" width="200"/>
 		<span style="margin-top:15px;">微信小程序码</span>
 	</a>
 	<a href="http://ext.dcloud.net.cn/plugin?id=239" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/color-ui-alipay.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/color-ui-alipay.jpg" width="200"/>
 		<span style="margin-top:15px;">支付宝小程序码</span>
 	</a>
 </div>
@@ -215,19 +215,19 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 		<span style="margin-top:15px;">App码</span>
 	</a>-->
 	<a href="https://www.cyb520.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/cyb-wx.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cyb-wx.jpg" width="200"/>
 		<span style="margin-top:15px;">微信小程序码</span>
 	</a>
 	<a href="https://www.cyb520.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/cyb-baidu.png" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cyb-baidu.png" width="200"/>
 		<span style="margin-top:15px;">百度小程序码</span>
 	</a>
 	<a href="https://www.cyb520.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/cyb-qq.jpg" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cyb-qq.jpg" width="200"/>
 		<span style="margin-top:15px;">QQ小程序码</span>
 	</a>
 	<a href="https://www.cyb520.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/cyb-toutiao.png" width="200"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cyb-toutiao.png" width="200"/>
 		<span style="margin-top:15px;">头条/抖音小程序码</span>
 	</a>
 </div>
@@ -316,7 +316,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
  <strong>vivo会员官方小程序：</strong> 微信小程序搜索 "vivo会员"，<span class="scan-code-text">或鼠标移此查看[微信小程序码]</span>
  <div class="scan-code-hover">
     <div class="scan-code-hover-box">
-      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/vivovip.jpg" alt="二维码获取失败" />
+      <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/vivovip.jpg" alt="二维码获取失败" />
     </div>
  </div>
 </div>
@@ -697,7 +697,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
  <strong>昆铁+：</strong> 中国铁路昆明局为乘客提供的应用。[App下载页](https://media.kunming-railway.cn/)、微信小程序搜索“昆铁+”
  <div class="scan-code-hover">
     <div class="scan-code-hover-box">
-      <img src="https://web-assets.dcloud.net.cn/unidoc/zh/wxkt.jpg" alt="二维码获取失败" />
+      <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/wxkt.jpg" alt="二维码获取失败" />
     </div>
  </div>
 </div>
@@ -872,7 +872,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **超英预告：** 超级英雄预告，腾讯课堂Next学院的uni-app课程示例，[H5](http://www.imovietrailer.com)、微信小程序搜索“NEXT超英预告”。
 
-**垃圾分类帮帮团：** [微信小程序码地址](https://web-assets.dcloud.net.cn/unidoc/zh/ljfl.png)
+**垃圾分类帮帮团：** [微信小程序码地址](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ljfl.png)
 
 **FUNSOLE：** Funsole疯收是一个专业的球鞋交易平台。[App和小程序通用链接](https://m3w.cn/funsole)
 
@@ -907,7 +907,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 ### 更多小程序案例（可在微信小程序中搜索）@wx-more
 
 <div>
-<link rel="stylesheet" type="text/css" href="https://web-assets.dcloud.net.cn/unidoc/zh/case.css"/>
+<link rel="stylesheet" type="text/css" href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case.css"/>
 <ul class="wx-icon-group">
     <li class="wx-icon-item"><span class="wx-icon wx-icon0"></span><span>BAT全书</span></li>
     <li class="wx-icon-item"><span class="wx-icon wx-icon1"></span><span>逗图圈</span></li>

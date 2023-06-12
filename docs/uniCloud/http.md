@@ -26,7 +26,7 @@ url化后需要注意以下几点
 2. 单击左侧菜单栏【云函数】，进入云函数页面。
 3. 点击需要配置的云函数的【详情】按钮，配置访问路径。
 
-<img style="max-width:800px;height:auto;" src="https://web-assets.dcloud.net.cn/unidoc/zh/funPath.jpg"></img>
+<img style="max-width:800px;height:auto;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/funPath.jpg"></img>
 
 如果配置某云函数路径为`/test`，实际访问`/test`、`/test/a`、`/test/b`都会执行此云函数，在云函数内可以使用`event.path`区分访问来源
 
@@ -41,7 +41,7 @@ url化后需要注意以下几点
 1. 单击左侧菜单栏【云函数】，进入云函数页面。
 2. 单击【云函数域名绑定】，在弹出的配置窗口中进行配置。
 
-<img style="max-width:800px;height:auto;" src="https://web-assets.dcloud.net.cn/unidoc/zh/unicloud-function-http-domain.jpg"></img>
+<img style="max-width:800px;height:auto;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloud-function-http-domain.jpg"></img>
 
 上一步中填写域名证书且绑定成功后会返回一个`CNAME域名`，将绑定的域名配置CNAME记录值为此`CNAME域名`即可
 

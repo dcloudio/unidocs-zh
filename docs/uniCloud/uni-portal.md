@@ -21,14 +21,14 @@ App/小程序/网站做好后，如何告知你的用户？
 
 - **PC宽屏**
 
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-pc.png" style="max-width:800px !important"></img>
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-pc.png" style="max-width:800px !important"></img>
 
 - **手机窄屏**
 
 手机浏览器上，默认展示效果如下：
 
-  <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mobile.png" style="max-width:400px !important"></img>
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mobile.png" style="max-width:400px !important"></img>
 
 `uni-portal`统一发布页同时会识别当前浏览器环境，在微信等特殊浏览器上，自动提示“点击右上角菜单，在浏览器中打开”，效果如下：
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mp.jpg" style="max-width:400px !important"></img>
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-portal-mp.jpg" style="max-width:400px !important"></img>

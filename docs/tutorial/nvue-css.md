@@ -44,7 +44,7 @@ nvue盒模型基于 CSS 盒模型，每个 nvue 元素都可视作一个盒子�
 
 盒模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界 `margin edge`, 边框边界 `border edge`, 内边距边界 `padding edge` 与内容边界 `content edge`。这四层边界，形成一层层的盒子包裹起来，这就是盒模型大体上的含义。
 
-![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/flexBox.png)
+![图片描述文字](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/flexBox.png)
 
 
 > nvue盒模型的 `box-sizing` 默认为 `border-box`，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。
@@ -60,7 +60,7 @@ nvue盒模型基于 CSS 盒模型，每个 nvue 元素都可视作一个盒子�
 ```html
 	<template>
 		<view>
-			<image style="width: 400rpx; height: 200rpx; margin-left: 20rpx;" src="https://web-assets.dcloud.net.cn/unidoc/zh/loveIcon.png"></image>
+			<image style="width: 400rpx; height: 200rpx; margin-left: 20rpx;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/loveIcon.png"></image>
 		</view>
 	</template>
 ```
@@ -217,7 +217,7 @@ nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一�
 |space-around	|表示 flex 成员项两侧的间隔相等，所以，成员项之间的间隔比成员项与边框的间隔大一倍	|
 
 
-![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/justify-content.png)
+![图片描述文字](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/justify-content.png)
 
 
 
@@ -233,7 +233,7 @@ nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一�
 |flex-end	|下对齐，所有的成员项排列在容器底部	|
 |center		|中间对齐，所有成员项都垂直地居中显示	|
 
-![图片描述文字](https://web-assets.dcloud.net.cn/unidoc/zh/align-items.png)
+![图片描述文字](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/align-items.png)
 
 ### flex
 
@@ -410,7 +410,7 @@ flex {number}：值为 number 类型。
 <template>
 	<view class="row">
 		<view class="box" :class="{'active':isActive}" @click="isActive = !isActive">
-			<image class="img" src="https://web-assets.dcloud.net.cn/unidoc/zh/loveIcon.png" mode="aspectFill"></image>
+			<image class="img" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/loveIcon.png" mode="aspectFill"></image>
 		</view>
 	</view>
 </template>
@@ -453,7 +453,7 @@ flex {number}：值为 number 类型。
 </style>
 ```
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gitb.gif" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gitb.gif" />
 
 ## Transform
 
@@ -585,7 +585,7 @@ flex {number}：值为 number 类型。
 
 
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gifa.gif" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gifa.gif" />
 
 
 ## 伪类
@@ -604,7 +604,7 @@ flex {number}：值为 number 类型。
 
 - 互联规则如下所示
 
-<img width="400px" src="https://web-assets.dcloud.net.cn/unidoc/zh/active.png" />
+<img width="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/active.png" />
 
 
 ## 线性渐变
@@ -634,7 +634,7 @@ flex {number}：值为 number 类型。
 > **目前暂不支持 radial-gradient（径向渐变）。**
 
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gradients.PNG" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gradients.PNG" />
 
 
 ## 阴影@boxshadow

@@ -647,7 +647,7 @@ uniCloud产生的费用对于一键登陆可以忽略，[详见](/uniCloud/unive
 
 - **使用有其他疑问**
 欢迎扫码加入 一键登录 微信交流群讨论：
-    <br/><img src="https://web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E4%B8%80%E9%94%AE%E8%AE%A4%E8%AF%81.png" width="250"/>
+    <br/><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E4%B8%80%E9%94%AE%E8%AE%A4%E8%AF%81.png" width="250"/>
 
 
 

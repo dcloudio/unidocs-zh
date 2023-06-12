@@ -380,15 +380,15 @@
 					}
 				},
 				fileLists: [{
-					url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao-small.jpg',
+					url: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao-small.jpg',
 					extname: 'png',
 					name: 'shuijiao.png'
 				}, {
-					url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao-small.jpg',
+					url: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao-small.jpg',
 					extname: 'png',
 					name: 'uniapp-logo.png'
 				}, {
-					url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao-small.jpg',
+					url: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao-small.jpg',
 					extname: 'png',
 					name: 'shuijiao.png'
 				}]

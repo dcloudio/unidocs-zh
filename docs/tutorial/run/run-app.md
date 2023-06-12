@@ -13,11 +13,11 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 
 1. HBuilder顶部运行菜单  
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/menurunapp.png" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/menurunapp.png" style="zoom: 50%;" />
 
 2. 工具栏运行按钮
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/toolbarrunmenuapp.png" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/toolbarrunmenuapp.png" style="zoom: 50%;" />
 
 可以按数字快速选择菜单项。比如按“4”选择“运行到Android App基座”。也可以按上下键然后回车选择。
 
@@ -40,7 +40,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 
 ### Android设备选择  
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/select-android.jpeg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/select-android.jpeg" style="zoom: 50%;" />
 
 **注意事项**  
 - 如果电脑里安装有模拟器（Android模拟器需要先启动），HBuilder会直接检测到设备并显示在候选列表中。可以参考[如何安装模拟器](installSimulator.md)  
@@ -53,7 +53,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 > 因收到苹果公司警告，自2022年9月14日起iOS真机设备不再支持使用标准真机运行基座，详情见论坛公告：[https://ask.dcloud.net.cn/article/40041](https://ask.dcloud.net.cn/article/40041)  
 > 在iOS真机设备上运行请向苹果申请证书制作[自定义基座](#customplayground)或者在Mac电脑使用[iOS模拟器](#ios_simulator)
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/select-ios.jpeg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/select-ios.jpeg" style="zoom: 50%;" />
 
 **注意事项**  
 - 确保usb线的连接通畅（有些数据线质量不佳，需使用高电压usb端口，如果无法识别时候请尝试更换数据线）  
@@ -86,7 +86,7 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 
 运行成功后，HBuilder底部的控制台显示成功日志。此后修改代码会差量同步到手机上，手机程序会动态热刷。同时console.log代码会打印到控制台上，点击打印日志可以跳转到相关代码。  
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/run-app-console.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run-app-console.jpg" style="zoom: 50%;" />
 
 ### 运行项目到iOS真机App自启动@ios-app-automatically-open
 
@@ -96,7 +96,7 @@ HBuilderX 3.7.0+版本，新增 运行App项目到iOS真机，运行成功后，
 
 **如下图所示：**
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios_start.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ios_start.jpg" style="zoom: 50%;" />
 
 **注意：** MacOSX需要安装跟iOS手机系统相匹配的Xcode版本。 比如iPhone手机系统是iOS 16.2，那么也需要安装支持iOS 16.2的Xcode版本。如果`/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport`目录下不存在跟手机系统相匹配的`iOS Platforms`, 那么是无法自启动App的。请在手机端点击运行基座图标手动启动。
 
@@ -106,7 +106,7 @@ HBuilderX 3.7.0+版本，新增 运行App项目到iOS真机，运行成功后，
 ls -lh  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport
 ```
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/ios-version.jpg" style="zoom: 45%;border: 1px solid #EEEEEE !important; border-radius: 20px;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ios-version.jpg" style="zoom: 45%;border: 1px solid #EEEEEE !important; border-radius: 20px;" />
 
 MacOSX，如果无法自动启动App，请排查以下原因：
 - iOS手机系统没有匹配Xcode版本
@@ -129,7 +129,7 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 但打包后无法方便调试，不能热重载和显示控制台日志。所以HBuilder在打包时提供了一个特殊选项，打包“自定义运行基座”。
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/build-app-customplayground.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/build-app-customplayground.jpg" style="zoom: 50%;" />
 
 > 打包App的入口在HBuilder顶部发行菜单，或快捷键【Ctrl+u】
 
@@ -146,7 +146,7 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 生成自定义基座后，在设备选择窗口，可以选择自定义基座，如下图所示：  
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/hx_select_base.jpg" style="zoom: 50%;" />
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/hx_select_base.jpg" style="zoom: 50%;" />
 
 注意：自定义运行基座是测试版，不可直接商用（使用自定义运行基座覆盖安装apk不会更新应用资源，并且有toast警告）。正式发版时需要按正常打包方式重新打包。
 

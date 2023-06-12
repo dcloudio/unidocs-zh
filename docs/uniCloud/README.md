@@ -19,7 +19,7 @@ uniCloud为每个开发者提供一个免费服务空间，让你也可以拥有
 ### 看视频，只需25分钟，快速入门uniCloud
 
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=1">
-	<div style="height: 32vw;width: 50vw;background-image: url(https://web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg);background-size: 100% 100%;"></div>
+	<div style="height: 32vw;width: 50vw;background-image: url(https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg);background-size: 100% 100%;"></div>
 </a>
 
 ### uniCloud是什么和不是什么
@@ -146,7 +146,7 @@ uniCloud最吸引人的是，它将开发效率提升了10倍以上。
 
 开发效率提升10倍，并非某个杀手功能的功劳，而是庞大的生态共同的作用。本章节篇幅较长，请耐心阅读。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/c50d2741-6a47-4dcd-a02c-fdd683fa4ea4.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/c50d2741-6a47-4dcd-a02c-fdd683fa4ea4.png)
 
 #### 一个故事
 
@@ -252,7 +252,7 @@ uniCloud云数据的schema，是一项重要的创新。
 如下是[schema2code](schema2code.md)的操作演示视频：
 
 <video style="width:50vw;height:28vw;" id="video" preload="none" controls="controls"
-	poster="https://web-assets.dcloud.net.cn/unidoc/zh/create-schema2code.jfif" src="https://web-assets.dcloud.net.cn/unidoc/zh/create-schema2code-video.mp4"></video>
+	poster="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create-schema2code.jfif" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create-schema2code-video.mp4"></video>
 
 
 可以实战体验这个[云端一体通讯录](https://ext.dcloud.net.cn/plugin?id=2574)的项目，几乎没有单独写代码。设计好通讯录的表schema，用[schema2code](schema2code.md)即可生成这个项目。
@@ -357,7 +357,7 @@ HBuilderX提升了uni-app的开发效率，自然也将提升uniCloud的开发�
 在传统开发中，item是一个通过request返回的json，ide是不可能知道这个json的数据结构的，也就无法提示。
 
 由于三位一体协同，HBuilderX可以解析本地schema文件，直接提示item后面的数据结构。避免开发者写错代码、减少服务器联调工作。
-![](https://web-assets.dcloud.net.cn/unidoc/zh/hx%E6%8F%90%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/hx%E6%8F%90%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%AD%97%E6%AE%B5.jpg)
 
 云对象的方法，HBuilderX同样可以完美解析，让编写客户端代码时直接提示云对象的方法、参数。
 

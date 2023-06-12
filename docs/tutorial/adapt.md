@@ -300,7 +300,7 @@ uni-app理论上不限定浏览器。在HBuilderX 2.9发版时，就新闻示例
 
 当然还可以在iframe旁边放置二维码，提供手机版扫码地址，例如：
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/hello-uni-pc.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/hello-uni-pc.png)
 
 #### 通过electron打包为windows、mac、linux客户端
 

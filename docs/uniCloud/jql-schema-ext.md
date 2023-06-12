@@ -658,7 +658,7 @@ schema扩展依赖的公共模块和扩展库同样可以被action、validateFun
 
 自`HBuilderX 3.7.0`起，可以在项目的`uniCloud/database`目录上右键管理schema扩展依赖的公共模块和扩展库。同样在此目录右键选择`上传schema扩展Js的配置`将配置的依赖同步到云端。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/deps-of-jql.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/deps-of-jql.jpg)
 
 `HBuilderX 3.2.7`到`HBuilderX 3.7.0`之间的版本，可通过在要使用的公共模块的package.json内配置`"includeInClientDB":true`，可以将公共模块和schema扩展关联，`HBuilderX 3.7.0`及之后的版本不推荐使用此用法
 

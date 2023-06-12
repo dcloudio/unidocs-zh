@@ -53,7 +53,7 @@
 	
 ```
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/iconfontImg.PNG" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/iconfontImg.PNG" />
 
 
 **addRule(type, contentObject)**
@@ -171,7 +171,7 @@
 
 
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gite.gif" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gite.gif" />
 
 ### getComponentRect
 
@@ -255,7 +255,7 @@
 ```
 
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gifd.gif" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gifd.gif" />
 
 
 
@@ -522,7 +522,7 @@ BindingX是一种规则，解析快，但没有js那样足够强的编程灵活�
 	</style>
 ```
 
-<img width="300px" src="https://web-assets.dcloud.net.cn/unidoc/zh/gitc.gif" />
+<img width="300px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gitc.gif" />
 
 
 

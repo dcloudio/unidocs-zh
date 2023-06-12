@@ -71,7 +71,7 @@ uni_modules                                项目根目录下
 
 如下图，项目中有一个`uni_modules`名为`uni-config-center`，它下面包含了名为`uni-config-center`的公共模块。所以在项目根目录的公共模块目录common下，也会多出一个`uni-config-center`。
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni_modules.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni_modules.jpg)
 
 HBuilderX 中打开配有引用图标指示的文件，会打开原始地址。
 
@@ -79,9 +79,9 @@ HBuilderX 中打开配有引用图标指示的文件，会打开原始地址。
 #### 下载uni_modules插件
 1. 在[插件市场](https://ext.dcloud.net.cn/)查找uni_modules插件
 2. 在插件详情页,右侧会标明该插件是否支持uni_modules，点击`使用 HBuilderX 导入插件`
-![](https://web-assets.dcloud.net.cn/unidoc/zh/import_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/import_uni_modules.png)
 3. 选择要导入的uni-app项目
-![](https://web-assets.dcloud.net.cn/unidoc/zh/import_uni_modules_dialog.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/import_uni_modules_dialog.png)
 
 **Tips**
 - uni_modules支持组件easycom，使用者可以直接使用插件内符合easycom规范的组件
@@ -96,12 +96,12 @@ import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 #### 安装uni_modules插件依赖
 1. 导入插件时，HBuilderX会自动安装当前插件的所有三方依赖。
 2. 您还可以在插件目录右键手动执行`安装插件三方依赖`
-![](https://web-assets.dcloud.net.cn/unidoc/zh/deps_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/deps_uni_modules.png)
 #### 更新uni_modules插件
 1. 可以通过插件目录右键`从插件市场更新`，来检查更新当前所使用的插件
-![](https://web-assets.dcloud.net.cn/unidoc/zh/check_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/check_uni_modules.png)
 2. 对比插件，确认更新内容
-![](https://web-assets.dcloud.net.cn/unidoc/zh/compare_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/compare_uni_modules.png)
 #### 卸载uni_modules插件
 uni_modules插件目录是独立存在的，如果您不再需要该插件，可以直接删除该插件目录。
 
@@ -302,7 +302,7 @@ package-lock.json
 完整的pages参数[详情查看](https://uniapp.dcloud.io/collocation/pages.html#pages)
 
 HBuilderX中合并路由界面效果图：
-![](https://web-assets.dcloud.net.cn/unidoc/zh/A8353295-395A-41A1-AF20-A012A2101079.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/A8353295-395A-41A1-AF20-A012A2101079.png)
 
 **注意**
 - `pages_init.json`文件最终不会导入到工程中。
@@ -313,7 +313,7 @@ HBuilderX中合并路由界面效果图：
 #### 新建uni_modules目录
 在uni-app项目根目录下，创建uni_modules目录，在HBuilderX中可以项目右键菜单中点击`新建uni_modules目录`
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/mkdir_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mkdir_uni_modules.png)
 
 **Tips:**
 - 如果是vue-cli项目，uni_modules目录，位于`src`下，即`src/uni_modules`
@@ -321,11 +321,11 @@ HBuilderX中合并路由界面效果图：
 #### 新建uni_modules插件
 1. 在HBuilderX中uni_modules目录右键点击`新建uni_modules插件`
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/create_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create_uni_modules.png)
 
 2. 填写正确的插件ID，选择插件分类
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/create_uni_modules_dialog.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create_uni_modules_dialog.png)
 
 插件ID命名规范：
 - 格式为：'作者ID-插件英文名称'，示例：'xx-yy'，其中作者ID和插件英文名称只能包含英文、数字
@@ -341,9 +341,9 @@ HBuilderX中合并路由界面效果图：
 发布流程：
 
 1. 在HBuilderX中插件目录右键点击`发布到插件市场`
-![](https://web-assets.dcloud.net.cn/unidoc/zh/upload_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/upload_uni_modules.png)
 2. 填写插件信息
-![](https://web-assets.dcloud.net.cn/unidoc/zh/upload_uni_modules_dialog.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/upload_uni_modules_dialog.png)
 **Tips**
 - 如果需要发布为项目模板，请在项目根目录创建package.json，然后右键菜单发布到插件市场。
 - 发布插件时，可以选择上传当前项目作为示例工程，完整的示例工程，可以方便用户快速上手。
@@ -351,9 +351,9 @@ HBuilderX中合并路由界面效果图：
 当您的插件发布到插件市场后，如果需要调整插件市场上的一些基本信息，比如插件中文名称，描述，关键词，readme.md等，可以直接在插件目录右键`修改插件基本信息`
 
 1. 在HBuilderX中插件目录右键点击`修改插件基本信息`
-![](https://web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules.png)
 2. 修改插件基本信息
-![](https://web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules_dialog.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules_dialog.png)
 
 #### 发布新版本
 当您的插件增加了新的功能或修复了Bug，需要发布新版本时，操作与第一次发布一样，可以直接在插件目录右键`发布到插件市场`
@@ -379,4 +379,4 @@ HBuilderX中合并路由界面效果图：
  - 插件文档，迁移至插件根目录的readme.md中
  - 右键package.json，点击`发布到插件市场`，选择分类，填写插件信息（尽可能与插件市场已有信息保持一致）
  - 发布成功后，您可以在插件市场的插件详情页右侧，查看到您的插件已同时提供了`uni_modules`版本和非`uni_modules`版本（仅保留最后一个非`uni_modules`版本）
-![](https://web-assets.dcloud.net.cn/unidoc/zh/ext_uni_modules.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ext_uni_modules.png)

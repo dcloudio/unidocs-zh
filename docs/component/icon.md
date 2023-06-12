@@ -61,6 +61,6 @@ export default {
 **效果展示**
 
 <div style="display:flex;align-items: flex-start;justify-content: center;flex-wrap: wrap;">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/icon1.png" width="375" style="margin-right:20px;"/>
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/icon2.png" width="375"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/icon1.png" width="375" style="margin-right:20px;"/>
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/icon2.png" width="375"/>
 </div>

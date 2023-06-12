@@ -77,7 +77,7 @@ uni-app在App侧的原生扩展插件，支持使用java、object-c等原生语�
 
 下载解压后目录结构如下：
 
-<img width="600px" src="https://web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-1.png" />
+<img width="600px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-1.png" />
 
 
 - 方式二：开发者自己开发uni-app原生插件
@@ -91,7 +91,7 @@ uni-app在App侧的原生扩展插件，支持使用java、object-c等原生语�
 
 在manifest.json -> App原生插件配置 -> 选择本地插件 -> 选择需要打包生效的插件 -> 保存后提交云端打包生效。
 
-<img width="600px" src="https://web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-2.png" />
+<img width="600px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-2.png" />
 
 ##### 第三步：开发调试本地原生插件
 在vue页面或nvue页面引入这个原生插件。
@@ -122,7 +122,7 @@ uni-app在App侧的原生扩展插件，支持使用java、object-c等原生语�
 ##### 第二步：使用自定义基座打包uni原生插件 （注：请使用真机运行自定义基座）
 在manifest.json -> App原生插件配置 -> 选择云端插件 -> 选择需要打包的插件 -> 保存后提交云端打包生效。
 
-<img width="600px" src="https://web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-3.png" />
+<img width="600px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/nativePlugin-3.png" />
 
 
 ##### 第三步：开发调试uni-app原生插件

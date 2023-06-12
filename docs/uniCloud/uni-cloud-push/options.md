@@ -219,7 +219,7 @@ key 说明
 
 因此需要在小米平台上新建channel通道，设置自定义铃声前端路径如：android.resource://your packagename/raw/test（路径不需要带音频后缀名）如图
 
-![](https://web-assets.dcloud.net.cn/unidoc/zh/custom_sound.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/custom_sound.png)
 
 
 **Rest-v2 示例：**
@@ -771,13 +771,13 @@ apn静默推送 可参考<a target="_blank" href="https://developer.apple.com/li
 
 <div class="weixin-support">
     <div class="weixin-support-focus">
-        <img src="https://web-assets.dcloud.net.cn/unidoc/zh/weixin.png" alt="" class="weixin-support-icon">
+        <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/weixin.png" alt="" class="weixin-support-icon">
         联系
         <br>
         个推
     </div>
     <div class="weixin-support-content">
-		<img src="https://web-assets.dcloud.net.cn/unidoc/zh/support.jpg" alt="" class="weixin-support-icon">
+		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/support.jpg" alt="" class="weixin-support-icon">
        微信扫一扫
 		<br>
         随时联系个推技术支持

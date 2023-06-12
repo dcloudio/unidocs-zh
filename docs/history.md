@@ -10,7 +10,7 @@ DCloud于2012年开始研发小程序技术，优化webview的功能和性能，
 
 360手机助手率先接入，在其3.4版本实现应用的秒开运行。
 
-<img src="https://web-assets.dcloud.net.cn/unidoc/zh/pic-3.png" style="max-width:480px;">
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/pic-3.png" style="max-width:480px;">
 
 随后DCloud推动大众点评、携程、京东、有道词典、唯品会等众多开发者为流应用平台提供应用。
 

@@ -439,11 +439,60 @@ console.log("result", result);
 
 [返回参数：公交（transit）](https://lbs.amap.com/api/webservice/guide/api/newroute#t9)
 
-## 全局状态码
-
-[腾讯地图](https://lbs.qq.com/service/webService/webServiceGuide/status)
-
-[高德地图](https://lbs.amap.com/api/webservice/guide/tools/info)
+## 全局错误码@errorcode
+	
+| 错误模块				|    错误码	|             说明																																				|
+|:--							|:--:				|:--																																											|
+| uni-map-service	|    110		| 请求来源未被授权																																				|
+| uni-map-service	|    111		| 签名验证失败																																						|
+| uni-map-service	|    112		| IP未被授权																																							|
+| uni-map-service	|    113		| 此功能未被授权																																					|
+| uni-map-service	|    120		| 此key每秒请求量已达到上限																																|
+| uni-map-service	|    121		| 此key每日调用量已达到上限																																|
+| uni-map-service	|    160		| sig参数不支持此请求类型																																	|
+| uni-map-service	|    161		| sig参数不支持和非object的POST JSON一起使用																							|
+| uni-map-service	|    190		| 无效的KEY																																								|
+| uni-map-service	|    199		| 此key未开启webservice功能																																|
+| uni-map-service	|    301		| 缺少必要字段key																																					|
+| uni-map-service	|    311		| key格式错误																																							|
+| uni-map-service	|    300		| 缺少必要字段																																						|
+| uni-map-service	|    306		| 缺少参数																																								|
+| uni-map-service	|    310		| 参数格式错误																																						|
+| uni-map-service	|320				|参数数据类型错误																																					|
+| uni-map-service	|330				|参数长度错误																																							|
+| uni-map-service	|351				|存在不共存的参数																																					|
+| uni-map-service	|324				|get和post中的同一参数值不相同																														|
+| uni-map-service	|326				|起终点距离过近																																						|
+| uni-map-service	|327				|附近无公交站																																							|
+| uni-map-service	|328				|无可达公交路线																																						|
+| uni-map-service	|329				|无可达火车路线																																						|
+| uni-map-service	|331				|查询条件过长																																							|
+| uni-map-service	|332				|途径点个数超过限制																																				|
+| uni-map-service	|333				|存在无法吸附的坐标点																																			|
+| uni-map-service	|335				|不支持该城市的公交查询																																		|
+| uni-map-service	|341				|缺少keyword（关键词）																																		|
+| uni-map-service	|344				|附近无火车站（公交）																																			|
+| uni-map-service	|347				|查询无结果																																								|
+| uni-map-service	|348				|参数错误																																									|
+| uni-map-service	|364				|是否扩大搜索参数只能为0或1																																|
+| uni-map-service	|365				|纬度不能超过±90																																					|
+| uni-map-service	|366				|经度不能超过±180																																					|
+| uni-map-service	|373				|起终点距离超长																																						|
+| uni-map-service	|374				|起终点坐标错误																																						|
+| uni-map-service	|375				|局域网IP无法定位																																					|
+| uni-map-service	|377				|提供的起终点无法规划出导航线路																														|
+| uni-map-service	|378				|提供的起终点无法规划出步行线路																														|
+| uni-map-service	|379				|提供的起终点无法规划出公交线路																														|
+| uni-map-service	|380				|坐标类型必须在有坐标的情况下使用																													|
+| uni-map-service	|382				|IP无法定位																																								|
+| uni-map-service	|384				|提供的起终点无法规划出骑行线路																														|
+| uni-map-service	|387				|没有对应的POI																																						|
+| uni-map-service	|393				|没有符合条件的数据																																				|
+| uni-map-service	|394				|错误的查询条件																																						|
+| uni-map-service	|395				|传入参数不合法																																						|
+| uni-map-service	|396				|最多支持200个坐标点，且起终点数目乘积最多为625（距离矩阵）																|
+| uni-map-service	|397				|一对多最多支持200个坐标点，多对多最多支持25个坐标点且起终点数目乘积最多为625（距离矩阵）	|
+| uni-map-service	|500				|服务响应失败																																							|
 
 ## 常见问题
 

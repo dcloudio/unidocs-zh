@@ -3,7 +3,7 @@ export default {
     {
       name: 'uniCloud Web控制台',
       url: 'https://unicloud.dcloud.net.cn',
-      imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/cloud@2x.jpg'
+      imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cloud@2x.jpg'
     },
     {
       name: '插件市场',
@@ -13,17 +13,17 @@ export default {
     {
       name: 'ask问答社区',
       url: 'https://ask.dcloud.net.cn/explore/',
-      imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/d@2x.png'
+      imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/d@2x.png'
     },
     {
       name: 'uniAD',
       url: 'https://uniad.dcloud.net.cn',
-      imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/uniad-520.png'
+      imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniad-520.png'
     },
     {
       name: 'uni统计',
       url: 'https://tongji.dcloud.net.cn/',
-      imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/uni-tongji-icon.png'
+      imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-tongji-icon.png'
     }
   ],
   qq_group: [

@@ -48,3 +48,30 @@
     ```html
     <img class="zooming" src="xxx">
     ```
+
+## 文档 Algolia 使用限额
+Included Quota:
+- Records: 1,000,000
+- Operations: 1,000,000
+
+Included Features:
+- Analytics Api
+- Search Analytics
+- Events Analytics
+- 90 Days Analytics Retention
+- AI Synonyms
+- Dynamic Reranking
+
+Advanced Team Management
+- Crawler UI
+- Query Suggestion
+- Facet Display
+- Natural Language Processing (NLP)
+- Synonyms 10,000/index
+
+Size Limits:
+- maxRecordSize 100KB
+- maximum application size 100GB
+- maxNbIndices 1,000
+
+AI Synonyms and Dynamic Reranking：need to send click events (via insights) to leverage Dynamic Reranking.

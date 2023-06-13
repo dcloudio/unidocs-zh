@@ -3,8 +3,7 @@
 获取窗口信息
 Get window information
 
-|App|H5|微信小程序|支付宝小程序|字节跳动小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|
-|App|H5|WeChat applet|Alipay applet|ByteDance applet|Kuishou applet|QQ applet|Baidu applet|Jingdong applet|Dingding applet|Feishu applet|
+|App|H5|微信小程序|支付宝小程序|抖音小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
 |√ `(3.4.13+)`|√ `(3.4.13+)`|√ `(2.20.1+)`|x|x|x|x|x|x|x|x|
 

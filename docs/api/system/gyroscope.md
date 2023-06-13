@@ -9,8 +9,7 @@ The frequency of Alipay applet is 500ms/time, and the frequency of WeChat applet
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|√|x|x|
 
@@ -43,8 +42,7 @@ Start listening for gyroscope data.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|√|x|x|
 
@@ -68,8 +66,7 @@ Stop listening for gyroscope data.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|√|x|x|
 

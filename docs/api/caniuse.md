@@ -6,8 +6,7 @@ Determine whether the application's API, callbacks, parameters, components, etc.
 平台差异说明
 Platform Difference Description
 
-|App|Web|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ程序|
-|App|Web|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ program|
+|App|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√ (uni-app 3.4.13+)|√|√|√|√|√|
 

@@ -55,9 +55,7 @@ Conditional compilation is marked with special comments which are the basic of c
 |MP-ALIPAY|支付宝小程序|
 |MP-ALIPAY|Alipay Mini Program|
 |MP-BAIDU|百度小程序|
-|MP-BAIDU|Baidu Mini Program|
-|MP-TOUTIAO|字节跳动小程序|
-|MP-TOUTIAO|Byte Beat Mini Program|
+|MP-TOUTIAO|抖音小程序|
 |MP-LARK|飞书小程序|
 |MP-LARK|Feishu Mini Program|
 |MP-QQ|QQ小程序|
@@ -67,9 +65,7 @@ Conditional compilation is marked with special comments which are the basic of c
 |MP-JD|京东小程序|
 |MP-JD|JD Mini Program|
 |MP-360|360小程序|
-|MP-360|360 Mini Program|
-|MP|微信小程序/支付宝小程序/百度小程序/字节跳动小程序/飞书小程序/QQ小程序/360小程序|
-|MP|WeChat applet/Alipay applet/Baidu applet/ByteDance applet/Feishu applet/QQ applet/360 applet|
+|MP|微信小程序/支付宝小程序/百度小程序/抖音小程序/飞书小程序/QQ小程序/360小程序|
 |QUICKAPP-WEBVIEW|快应用通用(包含联盟、华为)|
 |QUICKAPP-WEBVIEW|Quick application universal (including alliance, Huawei)|
 |QUICKAPP-WEBVIEW-UNION|快应用联盟|
@@ -257,9 +253,7 @@ On different platforms, there may be differences in the referenced static resour
 |mp-baidu|百度小程序|
 | mp-baidu|Baidu MiniApp|
 |mp-qq|QQ小程序|
-| mp-qq| QQ MiniApp|
-|mp-toutiao|字节小程序|
-| mp-toutiao|byte MiniApp|
+|mp-toutiao|抖音小程序|
 |mp-lark|飞书小程序|
 | mp-lark|Feishu MiniApp|
 |mp-kuaishou|快手小程序|

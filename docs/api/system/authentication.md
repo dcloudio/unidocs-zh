@@ -13,8 +13,7 @@ Start the SOTER biometric authentication.
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
 |:-	|:-	|:-					|:-						|:-					|:-					|:-				|
 |√（2.3.8+）	|x	|√					|x						|x					|x					|x				|
 

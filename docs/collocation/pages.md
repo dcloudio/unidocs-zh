@@ -190,8 +190,7 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 |mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
 |mp-weixin|Object||设置编译到 mp-weixin 平台的特定样式，配置项参考下方 [MP-WEIXIN](/collocation/pages?id=mp-weixin)|微信小程序|
 |mp-baidu|Object||设置编译到 mp-baidu 平台的特定样式，配置项参考下方 [MP-BAIDU](/collocation/pages?id=mp-baidu)|百度小程序|
-|mp-toutiao|Object||设置编译到 mp-toutiao 平台的特定样式|字节跳动小程序|
-| mp-toutiao| Object||Set the specific style compiled to mp-toutiao platform|ByteDance MiniApp|
+|mp-toutiao|Object||设置编译到 mp-toutiao 平台的特定样式|抖音小程序|
 |mp-lark|Object||设置编译到 mp-lark 平台的特定样式|飞书小程序|
 | mp-lark| Object||Set the specific style compiled to the mp-lark platform | Feishu MiniApp|
 |mp-qq|Object||设置编译到 mp-qq 平台的特定样式|QQ小程序|
@@ -426,9 +425,7 @@ The configuration items in the page will override the same configuration items i
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
 | navigationStyle| String| default|Navigation bar style, only default/custom is supported. Custom is to cancel the default native navigation bar, please see [Use Note](/collocation/pages?id=customnav)|WeChat MiniApp 7.0+, Baidu MiniApp, H5, App (2.0.3+)|
 |disableScroll|Boolean|false|设置为 true 则页面整体不能上下滚动（bounce效果），只在页面配置中有效，在globalStyle中设置无效|微信小程序（iOS）、百度小程序（iOS）|
-| disableScroll| Boolean| false|Set to true, the page cannot scroll up and down as a whole (bounce effect), it is only valid in the page configuration, and the setting in globalStyle is invalid|WeChat MiniApp(iOS), Baidu MiniApp(iOS)|
-|backgroundColor|HexColor|#ffffff|窗口的背景色|微信小程序、百度小程序、字节跳动小程序、飞书小程序、京东小程序|
-| backgroundColor| HexColor|#ffffff|The background color of the window|WeChat MiniApp, Baidu MiniApp, ByteDance MiniApp, Feishu MiniApp, Jingdong MiniApp|
+|backgroundColor|HexColor|#ffffff|窗口的背景色|微信小程序、百度小程序、抖音小程序、飞书小程序、京东小程序|
 |backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light||
 | backgroundTextStyle| String| dark|The style of drop-down loading, only dark/light is supported||
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.html#lifecycle)。||
@@ -456,9 +453,7 @@ The configuration items in the page will override the same configuration items i
 |mp-weixin|Object||设置编译到 mp-weixin 平台的特定样式|微信小程序|
 | mp-weixin| Object||Set the specific style compiled to mp-weixin platform|WeChat MiniApp|
 |mp-baidu|Object||设置编译到 mp-baidu 平台的特定样式|百度小程序|
-| mp-baidu| Object||Set the specific style compiled to mp-baidu platform|Baidu MiniApp|
-|mp-toutiao|Object||设置编译到 mp-toutiao 平台的特定样式|字节跳动小程序|
-| mp-toutiao| Object||Set the specific style compiled to mp-toutiao platform|ByteDance MiniApp|
+|mp-toutiao|Object||设置编译到 mp-toutiao 平台的特定样式|抖音小程序|
 |mp-lark|Object||设置编译到 mp-lark 平台的特定样式|飞书小程序|
 | mp-lark| Object||Set the specific style compiled to the mp-lark platform | Feishu MiniApp|
 |mp-qq|Object||设置编译到 mp-qq 平台的特定样式|QQ小程序|
@@ -1628,15 +1623,11 @@ The subPackages node receives an array, each item in the array is a sub-package 
 - 支付宝小程序每个分包的大小是2M，总体积一共不能超过8M。
 - The size of each subpackage of the Alipay MiniApp is 2M, and the total volume cannot exceed 8M.
 - QQ小程序每个分包的大小是2M，总体积一共不能超过24M。
-- The size of each subpackage of the QQ MiniApp is 2M, and the total volume cannot exceed 24M.
-- 字节小程序每个分包的大小是2M，总体积一共不能超过16M（字节小程序基础库 1.88.0 及以上版本开始支持，字节小程序开发者工具请使用大于等于 2.0.6 且小于 3.0.0 的版本）。
-- The size of each subpackage of the byte MiniApp is 2M, and the total volume cannot exceed 16M (the byte MiniApp basic library is supported by version 1.88.0 and above, and the byte MiniApp developer tool should be greater than or equal to 2.0.6 and versions less than 3.0.0).
+- 抖音小程序每个分包的大小是2M，总体积一共不能超过16M（抖音小程序基础库 1.88.0 及以上版本开始支持，抖音小程序开发者工具请使用大于等于 2.0.6 且小于 3.0.0 的版本）。
 - 快手小程序每个分包的大小是2M，总体积一共不能超过24M。
 -The size of each subpackage of the Kuaishou MiniApp is 2M, and the total volume cannot exceed 24M.
 - 分包下支持独立的 ```static``` 目录，用来对静态资源进行分包。
-- Support independent ```static``` directory under subpackage, which is used to subpackage static resources.
-- `uni-app`内支持对`微信小程序`、`QQ小程序`、`百度小程序`、`支付宝小程序`、`字节小程序(HBuilderX 3.0.3+)`、`快手小程序`分包优化，即将静态资源或者js文件放入分包内不占用主包大小。详情请参考：[关于分包优化的说明](/collocation/manifest?id=关于分包优化的说明)
-- `uni-app` supports `WeChat applet`, `QQ MiniApp , `Baidu applet`, `Alipay MiniApp , `MiniApp ( HBuilderX 3.0.3+ )`, ` Kuaishou MiniApp MiniApp`subpackage optimization, that is, putting static resources or js files into subpackages does not occupy the size of the main package. For details, please refer to: [Instructions on Subcontract Optimization](/collocation/manifest?id=%E5%85%B3%E4%BA%8E%E5%88%86%E5%8C%85%E4%BC%98 %E5%8C%96%E7%9A%84%E8%AF%B4%E6%98%8E)
+- `uni-app`内支持对`微信小程序`、`QQ小程序`、`百度小程序`、`支付宝小程序`、`抖音小程序(HBuilderX 3.0.3+)`、`快手小程序`分包优化，即将静态资源或者js文件放入分包内不占用主包大小。详情请参考：[关于分包优化的说明](/collocation/manifest?id=关于分包优化的说明)
 - 针对`vendor.js`过大的情况可以使用运行时压缩代码
 - When `vendor.js` is too large, you can use runtime compression code
   + `HBuilderX`创建的项目勾选`运行-->运行到小程序模拟器-->运行时是否压缩代码`

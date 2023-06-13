@@ -117,8 +117,7 @@ Create a local notification bar message (supported from HBuilderX 3.5.2)
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5	|快应用	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快手小程序	|京东小程序	|
-| App| H5 | QuickApp |WeChat MiniApp |Alipay MiniApp |Baidu MiniApp |Byte Beat MiniApp, Feishu MiniApp |QQ MiniApp | Kuaishou MiniApp |Jingdong MiniApp |
+|App|H5	|快应用	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序	|京东小程序	|
 |:-:|:-:|:-:	|:-:		|:-:			|:-:		|:-:						|:-:		|:-:		|:-:		|
 |√	|x	|x		|x			|x				|x			|x							|x			|x			|x			|
 
@@ -184,7 +183,7 @@ Alipay template message document: [https://docs.alipay.com/mini/introduce/messag
 百度模板消息文档：[https://smartprogram.baidu.com/docs/develop/third/api/](https://smartprogram.baidu.com/docs/develop/third/api/)
 Baidu template message document: [https://smartprogram.baidu.com/docs/develop/third/api/](https://smartprogram.baidu.com/docs/develop/third/api/)
 
-字节跳动订阅消息文档：[https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/open-capacity/operation/subscribe-message/](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/open-capacity/operation/subscribe-message/)
+抖音订阅消息文档：[https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/open-capacity/operation/subscribe-message/](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/open-capacity/operation/subscribe-message/)
 
 QQ小程序订阅消息文档：[https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_message.html#%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF](https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_message.html#%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF)
 QQ MiniApp subscription message document: [https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_message.html#%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF](https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_message.html#%E8%AE%A2%E9%98%85%E6%B6%88 %E6%81%AF)

@@ -373,24 +373,21 @@ The receiving compatibility of this interface is slightly different depending on
 **选择图片，type:'image'**
 **Select image, type:'image'**
 
-|App|H5	|微信小程序	|支付宝小程序	  |百度小程序	|字节小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |Byte applet, Feishu applet |QQ applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序	|支付宝小程序	  |百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:				|:-:					|:-:				|:-:				|:-:			|:-:			|:-:			|
 |√	|√	|√					|√						|√					|√					|√				|√				|√				|
 
 **选择视频，type:'video'**
 **Select video, type:'video'**
 
-|App|H5	|微信小程序	|支付宝小程序	  |百度小程序	|字节小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |Byte applet, Feishu applet |QQ applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序	|支付宝小程序	  |百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:				|:-:					|:-:				|:-:				|:-:			|:-:			|:-:			|
 |√	|√	|√					|√						|√					|√					|√				|√				|√				|
 
 **选择任意文件，type:'all'**
 **Select any file, type:'all'**
 
-|App|H5	|微信小程序								|支付宝小程序	|百度小程序	|字节小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |Byte applet, Feishu applet |QQ applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序								|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:											|:-:					|:-:				|:-:				|:-:			|:-:			|:-:			|
 |×	|√	|√（仅支持选择聊天文件）	|×						|×					|×					|×				|×				|×				|
 |× |√ |√ (Only supports selecting chat files) |× |× |× |× |× |× |

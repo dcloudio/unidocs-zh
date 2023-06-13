@@ -82,9 +82,7 @@ Get system information asynchronously
 |			|hostLanguage		|宿主语言|仅 UniMPSDK 支持	|不支持|小程序宿主语言||uni-app 3.4.10+|
 | | hostLanguage |Host language|Only supported by UniMPSDK |Not supported| MiniApp host language|| uni-app 3.4.10+|
 |			|hostTheme			|宿主主题|`light`、`dark`。仅 UniMPSDK 支持	|不支持|`light`、`dark`。前提是微信小程序全局配置"darkmode":true时才能获取||uni-app 3.4.10+|
-| | hostTheme | Host theme | `light`, `dark`. Only UniMPSDK supports | does not support | `light`, `dark`. The premise is that the WeChat MiniApp can be obtained only when "darkmode": true is configured globally || uni-app 3.4.10+|
-|			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持|微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)||uni-app 3.4.13+|
-| | hostFontSizeSetting | User font size setting. Subject to the settings in "Me-Settings-General-Font Size", unit: px|Not Supported|Not Supported|WeChat MiniApp, Alipay MiniApp, Baidu MiniApp, QQ MiniApp, Byte MiniApp(2.53. 0+)||uni-app 3.4.13+|
+|			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)||uni-app 3.4.13+|
 |			|hostPackageName	|小程序宿主包名|仅 UniMPSDK 支持	|不支持|不支持||uni-app 3.4.10+|
 | | hostPackageName | MiniApp host package name|Only supported by UniMPSDK |Not supported|Not supported|| uni-app 3.4.10+|
 |			|hostSDKVersion	|uni小程序SDK版本、小程序客户端基础库版本|仅 UniMPSDK 支持	|不支持|||uni-app 3.4.13+|
@@ -96,9 +94,7 @@ Get system information asynchronously
 |			|uniRuntimeVersion	|uni 运行时版本。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
 | | uniRuntimeVersion | uni runtime version. [See](#uniplatform)|`3.4.10`, `3.2.9`, etc. |`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.|| uni -app 3.4.10+|
 |app	|appId|`manifest` 中应用appid，即DCloud appid。			|||||uni-app 3.4.10+|
-| app | appId|`manifest` applies the appid, that is, the DCloud appid. |||||uni-app 3.4.10+|
-|			|appName			|`manifest` 中应用名称	||||和`字节跳动小程序`字段冲突，`字节跳动小程序`原字段与`hostName`一致|uni-app 3.4.10+|
-| | appName |The application name in `manifest` |||| conflicts with the `ByteDance MiniApp MiniApp field, and the original field of `ByteDance Mini Program` is consistent with `hostName` | uni-app 3.4.10+|
+|			|appName			|`manifest` 中应用名称	||||和`抖音小程序`字段冲突，`抖音小程序`原字段与`hostName`一致|uni-app 3.4.10+|
 |			|appVersion			|`manifest` 中应用版本名称。		|||||uni-app 3.4.10+|
 | | appVersion | The app version name in `manifest`. |||||uni-app 3.4.10+|
 |			|appVersionCode		|`manifest` 中应用版本名号。		|||||uni-app 3.4.10+|
@@ -122,11 +118,8 @@ Get system information asynchronously
 |			|windowBottom		|可使用窗口的底部位置	|||||		|
 | | windowBottom | The bottom position of the available window ||||| |
 |			|statusBarHeight	|手机状态栏的高度||||||		
-| | statusBarHeight | The height of the phone's status bar ||||||
-|			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、字节跳动、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||	
-| | safeArea |The safe area in the positive direction of the vertical screen. Since this attribute is difficult to understand and use, it is recommended to use the safeAreaInsets attribute. [See for details](#safearea)|||WeChat, Baidu (developer tools not supported yet, real device is valid), ByteDance, Feishu, Alipay (iOS real device), Kuaishou, QQ MiniApp, Huawei QuickApp|||
-|			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。与小程序定义的 safeArea 用途相同，但是规范参考 iOS 平台的 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) 更利于理解和使用。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、字节跳动、飞书、支付宝小程序（iOS真机）、华为快应用||uni-app 2.5.3+|
-| | safeAreaInsets |The inset position of the safe area in the positive direction of the vertical screen. It has the same purpose as the safeArea defined by the MiniApp, but the specification refers to [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) of the iOS platform for better understanding and use. [For details, see](#safearea)|||WeChat, Baidu (developer tools are not supported yet, valid on real devices), ByteDance, Feishu, Alipay MiniApp(iOS real devices), Huawei QuickApp|| uni- app 2.5.3+|
+|			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||	
+|			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。与小程序定义的 safeArea 用途相同，但是规范参考 iOS 平台的 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) 更利于理解和使用。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝小程序（iOS真机）、华为快应用||uni-app 2.5.3+|
 
 #### 某些小程序特殊的返回参数
 #### Special return parameters for some applets
@@ -178,9 +171,7 @@ Get system information asynchronously
 |Parameter|Description|Platform Difference Description|
 |:-|:-|:-|
 |pixelRatio			|设备像素比		||
-| pixelRatio | Device pixel ratio ||
-|brand|设备品牌。uni-app 3.4.10+ 后该字段为全小写，可能要做兼容处理|App、微信小程序、百度小程序、字节跳动小程序、飞书小程序、QQ小程序|
-| brand|Device brand. After uni-app 3.4.10+, this field is all lowercase, and compatibility processing may be required | App, WeChat MiniApp, Baidu MiniApp, ByteDance MiniApp Program, Feishu MiniApp, QQ MiniApp|
+|brand|设备品牌。uni-app 3.4.10+ 后该字段为全小写，可能要做兼容处理|App、微信小程序、百度小程序、抖音小程序、飞书小程序、QQ小程序|
 |model|设备型号|全平台支持。Web 端部分设备无法获取具体型号|
 | model|Device model|All platforms are supported. Specific models cannot be obtained for some devices on the web |
 |system|操作系统名称及版本，如Android 10||
@@ -200,9 +191,7 @@ Get system information asynchronously
 |app|当前运行的客户端|支付宝小程序|
 | app|Currently running client|Alipay MiniApp|
 |AppPlatform|App平台|QQ小程序|
-| AppPlatform| App Platform| QQ MiniApp|
-|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)|
-| fontSizeSetting|User font size setting. Subject to the settings in "Me-Settings-General-Font Size", unit: px|WeChat MiniApp, Alipay MiniApp, Baidu MiniApp, QQ MiniApp, Byte MiniApp(2.53.0+)|
+|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)|
 
 
 #### uniPlatform 返回值说明 @uniplatform
@@ -218,9 +207,7 @@ Get system information asynchronously
 |mp-alipay|支付宝小程序|
 | mp-alipay|Alipay MiniApp|
 |mp-baidu|百度小程序|
-| mp-baidu|Baidu MiniApp|
-|mp-toutiao|字节跳动小程序|
-| mp-toutiao|Byte Beat MiniApp|
+|mp-toutiao|抖音小程序|
 |mp-lark|飞书小程序|
 | mp-lark|Feishu MiniApp|
 |mp-qq|QQ小程序|
@@ -301,7 +288,7 @@ Note: The version number rules of different roms are different, for example, the
 |AK|阿里健康|
 | AK|Ali Health|
 |YK|优酷|
-|[字节宿主平台枚举值列表](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|字节跳动系列|
+|[抖音宿主平台枚举值列表](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|抖音系列|
 |qq|QQ|
 |KUAISHOU|快手|
 | KUAISHOU| Kuaishou|
@@ -430,7 +417,7 @@ Links to the documentation of this API in other MiniApp:
 - [支付宝小程序](https://opendocs.alipay.com/mini/api/system-info)
 - [Alipay MiniApp](https://opendocs.alipay.com/mini/api/system-info)
 - [百度小程序](https://smartprogram.baidu.com/docs/develop/api/device_sys/swan-getSystemInfoSync/)
-- [字节小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info-sync/)
+- [抖音小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info-sync/)
 - [飞书小程序](https://open.feishu.cn/document/uYjL24iN/uQjNx4CN2EjL0YTM)
 - [Feishu MiniApp](https://open.feishu.cn/document/uYjL24iN/uQjNx4CN2EjL0YTM)
 - [QQ小程序](https://q.qq.com/wiki/develop/game/API/basic/system.html#qq-getsysteminfo)

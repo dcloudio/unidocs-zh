@@ -86,13 +86,13 @@ If developers are accustomed to projects in node mode and are confused about the
     	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run-ali.png"/>
     </div>
 
-5. 在百度、字节跳动、QQ、快应用（分联盟和华为）、快手、飞书、360、京东等小程序开发工具里运行：内容同上，不再重复。
+5. 在百度、抖音、QQ、快应用（分联盟和华为）、快手、飞书、360、京东等小程序开发工具里运行：内容同上，不再重复。
 
 **Tips**
 
 * 如果是第一次使用，需要配置开发工具的相关路径。点击工具栏的运行 -> 运行到小程序模拟器 -> 运行设置，配置相应小程序开发者工具的路径。
 * 微信小程序工具需要配置允许权限，不然HBuilder无法调用微信小程序开发工具的命令行
-* 支付宝/百度/字节跳动/360小程序工具，不支持直接指定项目启动并运行。因此开发工具启动后，请将 HBuilderX 控制台中提示的项目路径，在相应小程序开发者工具中打开。
+* 支付宝/百度/抖音/360小程序工具，不支持直接指定项目启动并运行。因此开发工具启动后，请将 HBuilderX 控制台中提示的项目路径，在相应小程序开发者工具中打开。
 * 如果自动启动小程序开发工具失败，请手动启动小程序开发工具并将 HBuilderX 控制台提示的项目路径，打开项目。
 <!-- @endif -->
 
@@ -215,14 +215,13 @@ If `Auto upload to WeChat platform` is checked on the release interface, you do 
 3. In the Alipay applet developer tool, import the generated Alipay applet project, and after the test project code is running normally, click the "Upload" button to upload the code, and in the [Alipay applet background](https://open.alipay. com/platform/mini.htm#/app), select the version just submitted and click Submit for review, see: [Alipay Mini Program Documentation](https://docs.alipay.com/mini/developer/publish).
 
 
-#### 发布为字节跳动小程序：
-   1. 入驻字节跳动小程序，参考：[字节跳动小程序教程](https://developer.open-douyin.com/docs/resource/zh-CN/developer/join/register)。
-   2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-字节跳动"，即可在 ``/unpackage/dist/build/mp-toutiao`` 生成字节跳动小程序项目代码。
-   2. In HBuilderX, click "Release" => "Mini Program-ByteDance" in sequence from the top menu, and you can generate the ByteDance applet project code in ``/unpackage/dist/build/mp-toutiao``.
+#### 发布为抖音小程序：
+   1. 入驻抖音小程序，参考：[抖音小程序教程](https://developer.open-douyin.com/docs/resource/zh-CN/developer/join/register)。
+   2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-抖音"，即可在 ``/unpackage/dist/build/mp-toutiao`` 生成抖音小程序项目代码。
      <div align=center>
        <img style="max-width:300px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/zjdance.jpg"/>
      </div>
-   3. 在字节跳动小程序开发者工具中，导入生成的字节跳动小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，在 [字节跳动小程序后台](https://microapp.bytedance.com/applist)，选择刚提交的版本点击提交审核，详见：[字节跳动小程序文档](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/guide/release/package-audit/)。
+   3. 在抖音小程序开发者工具中，导入生成的抖音小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，在 [抖音小程序后台](https://microapp.bytedance.com/applist)，选择刚提交的版本点击提交审核，详见：[抖音小程序文档](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/guide/release/package-audit/)。
 
 #### 发布为360小程序：
 #### Published as 360 applet:

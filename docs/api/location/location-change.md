@@ -6,8 +6,7 @@ To monitor real-time location change events, it needs to be used in conjunction 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp, Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
@@ -26,13 +25,9 @@ To monitor real-time location change events, it needs to be used in conjunction 
 |accuracy|number|位置的精确度||
 | accuracy| number|accuracy of position||
 |altitude|number|高度 (m)|H5不支持|
-| altitude| number|Height (m)| H5 does not support|
-|verticalAccuracy|number|垂直精度 (m)|字节小程序、快手小程序 Android 无法获取，返回 0|
-|verticalAccuracy|number|Vertical Accuracy (m)|Byte MiniApp, Kuaishou MiniApp Android cannot obtain, return 0|
-|horizontalAccuracy|number|水平精度 (m)|字节小程序不支持|
-|horizontalAccuracy|number|Horizontal Accuracy (m)|Byte MiniApp not supported|
-|city|string|定位到的城市信息|百度小程序、字节小程序（iOS 不支持）|
-|city|string|Located city information|Baidu MiniApp, byte MiniApp(not supported by iOS)|
+|verticalAccuracy|number|垂直精度 (m)|抖音小程序、快手小程序 Android 无法获取，返回 0|
+|horizontalAccuracy|number|水平精度 (m)|抖音小程序不支持|
+|city|string|定位到的城市信息|百度小程序、抖音小程序（iOS 不支持）|
 |cityCode|String|城市编码|百度小程序||street|String|街道名称
 |cityCode|String|City Code|Baidu MiniApp||street|String|Street Name
 |city|String|城市名称|百度小程序|
@@ -57,7 +52,7 @@ altitudeAccuracy|Number|Altitude accuracy information|App|
 - 该方法会持续监听地理位置信息的变化，建议在不需要监听地理位置信息变化后，直接调用 `uni.stopLocationUpdate` 方法取消监听。
 - This method will continuously monitor the changes of the geographic location information. It is recommended to call the `uni.stopLocationUpdate` method to cancel the monitoring after you do not need to monitor the changes of the geographic location information.
 - `微信小程序`若使用该接口，需要在 app.json 中进行声明，否则将无法正常使用该接口，[详情](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html)
-- `字节小程序`调用此 API 需要申请高精度权限，具体信息见[高精度定位运营规范](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/operation/platform-capabilities/high-progress-targeting/gaojingdu/)。
+- `抖音小程序`调用此 API 需要申请高精度权限，具体信息见[高精度定位运营规范](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/operation/platform-capabilities/high-progress-targeting/gaojingdu/)。
 
 **示例**
 **Example**
@@ -76,8 +71,7 @@ Turn off the monitoring of real-time location changes, and both the front and ba
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
@@ -113,8 +107,7 @@ Triggered when the monitoring continuous positioning interface returns failure.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp, Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
@@ -125,9 +118,7 @@ Triggered when the monitoring continuous positioning interface returns failure.
 |Parameter Name|Type|Description|Platform Difference Description|
 |:-|:-|:-|:-|
 |errCode|Number|错误|微信小程序|
-|errCode|Number|Error|WeChat MiniApp|
-|errMsg|String|错误信息|字节小程序|
-|errMsg|String|Error message|Byte MiniApp|
+|errMsg|String|错误信息|抖音小程序|
 
 ### uni.offLocationChangeError(FUNCTION CALLBACK)
 
@@ -137,8 +128,7 @@ Unregister location update error callback.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
@@ -159,8 +149,7 @@ Receive location messages when opening the MiniApp and entering the foreground.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp, Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
@@ -170,8 +159,7 @@ Receive location messages when opening the MiniApp and entering the foreground.
 |参数名|类型|必填|说明|平台差异说明|
 |Parameter Name|Type|Required|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-:|
-|type|String|否|指定坐标系类型，可以是 wgs84 或 gcj02|微信小程序、字节小程序|
-|type|String|No|Specify the coordinate system type, which can be wgs84 or gcj02|WeChat MiniApp, byte MiniApp|
+|type|String|否|指定坐标系类型，可以是 wgs84 或 gcj02|微信小程序、抖音小程序|
 |success|Function|否|接口调用成功的回调函数||
 |success|Function|No|Callback function for successful interface call||
 |fail|Function|否|接口调用失败的回调函数||
@@ -201,8 +189,7 @@ Turn off the monitoring of real-time location changes, and both the front and ba
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp, Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
@@ -227,8 +214,7 @@ Start monitoring the real-time geographic location information change event, and
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp, Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|x|x|x|x|√|x|
 
@@ -238,8 +224,7 @@ Start monitoring the real-time geographic location information change event, and
 |参数名|类型|必填|说明|平台差异说明|
 |Parameter Name|Type|Required|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-:|
-|type|String|否|指定坐标系类型，可以是 wgs84 或 gcj02|微信小程序、字节小程序|
-| type| String|No|Specify the coordinate system type, which can be wgs84 or gcj02|WeChat MiniApp, byte MiniApp|
+|type|String|否|指定坐标系类型，可以是 wgs84 或 gcj02|微信小程序、抖音小程序|
 |success|Function|否|接口调用成功的回调函数||
 |success|Function|No|Callback function for successful interface call||
 |fail|Function|否|接口调用失败的回调函数||

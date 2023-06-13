@@ -6,7 +6,7 @@ Open another applet.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)|[支付宝小程序](https://docs.alipay.com/mini/api/open-miniprogram)|[百度小程序](https://smartprogram.baidu.com/docs/develop/api/open_smartprogram/#swan-navigateToSmartProgram/)|[字节跳动小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/mini-app-forward/tt-navigate-to-mini-program/)|[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_change.html#qq-navigatetominiprogram)|京东小程序|
+|App|H5|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)|[支付宝小程序](https://docs.alipay.com/mini/api/open-miniprogram)|[百度小程序](https://smartprogram.baidu.com/docs/develop/api/open_smartprogram/#swan-navigateToSmartProgram/)|[抖音小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/mini-app-forward/tt-navigate-to-mini-program/)|[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_change.html#qq-navigatetominiprogram)|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x(见下)|x|√|√|√|√(1.15.0+)|√|√|
 |x (see below)|x|√|√|√|√(1.15.0+)|√|√|
@@ -27,7 +27,7 @@ Open another applet.
 |path|string||否|打开的页面路径，如果为空则打开首页||
 |path|string||No|Open page path, if empty, open home page||
 |extraData|object||否|需要传递给目标小程序的数据，目标小程序可在 ``App.vue `` 的 `onLaunch`或`onShow` 中获取到这份数据。||
-|envVersion|string|release|否|要打开的小程序版本，有效值： develop（开发版），trial（体验版），release（正式版）。仅在当前小程序为开发版或体验版时此参数有效。如果当前小程序是正式版，则打开的小程序必定是正式版。|支付宝小程序、微信小程序、字节小程序|
+|envVersion|string|release|否|要打开的小程序版本，有效值： develop（开发版），trial（体验版），release（正式版）。仅在当前小程序为开发版或体验版时此参数有效。如果当前小程序是正式版，则打开的小程序必定是正式版。|支付宝小程序、微信小程序、抖音小程序|
 |success|function||否|接口调用成功的回调函数||
 |success|function||No|Callback function for successful interface call||
 |fail|function||否|接口调用失败的回调函数||
@@ -62,8 +62,7 @@ Jump back to the previous applet, only when another applet jumps to the current 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|√|√|√|x|√|√|√|
 

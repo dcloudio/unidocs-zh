@@ -19,9 +19,7 @@
 
 ## 1.4.5（2021-09-24）
 - uni-icons 新增 支持使用 css 图标库扩展组件（仅 vue 支持）
-- uni-icons added support to use css icon library to extend components (only vue support)
-- uni-badge 修复 在字节小程序上样式不生效的 bug
-- uni-badge fix the bug that styles don't take effect on byte applet
+- uni-badge 修复 在抖音小程序上样式不生效的 bug
 - uni-calendar 修复 startDate、 endDate 属性失效的 bug
 - uni-calendar fix the bug that startDate and endDate properties are invalid
 - uni-data-picker 修复 某些情况下级联未触发的 bug

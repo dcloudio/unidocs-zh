@@ -3,8 +3,7 @@
 获取启动时的参数。返回值与App.onLaunch的回调参数一致
 Get the parameters at startup. The return value is consistent with the callback parameter of App.onLaunch
 
-|App|web|微信小程序|支付宝小程序|字节跳动小程序|QQ小程序|快手小程序|钉钉小程序|飞书小程序|百度小程序|京东小程序|
-|App|web|WeChat applet|Alipay applet|ByteDance applet|QQ applet|Kaishou applet|Dingding applet|Feishu applet|Baidu applet|Jingdong applet|
+|App|web|微信小程序|支付宝小程序|抖音小程序|QQ小程序|快手小程序|钉钉小程序|飞书小程序|百度小程序|京东小程序|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
 |√ `(3.4.10+)`|√ `(见下)`|√|√|√|√|√|√|√|x|x|
 |√ `(3.4.10+)`|√ `(see below)`|√|√|√|√|√|√|√|x|x|
@@ -22,14 +21,10 @@ There are differences in the support of different Vue versions of the web platfo
 |参数名|类型|说明|平台差异说明|
 |Parameter Name|Type|Description|Platform Difference Description|
 |:-|:-|:-|:-|
-|path|String|启动的路径(代码包路径)|其他平台均支持，`字节小程序(1.12.0+)`|
-|path|String|The path to start (code package path)|Other platforms are supported, `Byte applet (1.12.0+)`|
-|scene|Number|启动时的场景值，具体值含义请查看各平台文档说明。App、web端恒为 1001。钉钉小程序在 IDE 恒为0000，真机不支持。|其他平台均支持，`字节小程序(1.12.0+)`|
-|scene|Number| The scene value at startup, please refer to the documentation of each platform for the specific value meaning. App and web terminal are always 1001. The DingTalk applet is always 0000 in the IDE, and the real machine does not support it. |Other platforms are supported, `Byte applet (1.12.0+)`|
-|query|Object|启动时的 query 参数|其他平台均支持，`字节小程序(1.12.0+)`|
-|query|Object|The query parameter at startup|All other platforms are supported, `Byte applet (1.12.0+)`|
-|referrerInfo|Object|来源信息。如果没有则返回 `{}`|其他平台均支持，`字节小程序(1.15.0+)`，`飞书小程序不支持`，`钉钉小程序不支持`|
-|referrerInfo|Object|Source information. If not, return `{}`|Other platforms are supported, `Byte applet (1.15.0+)`, `Feishu applet is not supported`, `Dingding applet is not supported`|
+|path|String|启动的路径(代码包路径)|其他平台均支持，`抖音小程序(1.12.0+)`|
+|scene|Number|启动时的场景值，具体值含义请查看各平台文档说明。App、web端恒为 1001。钉钉小程序在 IDE 恒为0000，真机不支持。|其他平台均支持，`抖音小程序(1.12.0+)`|
+|query|Object|启动时的 query 参数|其他平台均支持，`抖音小程序(1.12.0+)`|
+|referrerInfo|Object|来源信息。如果没有则返回 `{}`|其他平台均支持，`抖音小程序(1.15.0+)`，`飞书小程序不支持`，`钉钉小程序不支持`|
 |channel|String|如果应用没有设置渠道标识，则返回空字符串。取值如下|`仅 App 支持`|
 |channel|String| Returns an empty string if the app does not set a channel ID. The values are as follows |`Only App supports`|
 |launcher|String|应用启动来源。取值如下|`仅 App 支持`|
@@ -41,9 +36,7 @@ There are differences in the support of different Vue versions of the web platfo
 |chatType|number|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`仅微信小程序`|
 |chatType|number|The opened file information array, this parameter is only carried when opened from the chat material scene (scene is 1173)|`Only WeChat applet`|
 |apiCategory|string|API 类别|`仅微信小程序(2.20.0+)`|
-|apiCategory|string|API category|`WeChat applet only (2.20.0+)`|
-|showFrom|number|唤起小程序的方式，目前取值固定为 10，表示通过 schema 唤起|`仅字节小程序(1.90.0+)`|
-|showFrom|number| The way to evoke the applet, the current value is fixed to 10, which means to evoke the applet through schema |`Only byte applet (1.90.0+)`|
+|showFrom|number|唤起小程序的方式，目前取值固定为 10，表示通过 schema 唤起|`仅抖音小程序(1.90.0+)`|
 |mode|'default' \| 'halfPage'|启动小程序的模式|`仅快手小程序`|
 |mode|'default' \| 'halfPage'|Mode to start the applet|`Only Kuaishou applet`|
 |subScene|string|子场景值(定义待补充)|`仅飞书小程序`|
@@ -54,10 +47,8 @@ There are differences in the support of different Vue versions of the web platfo
 |属性|类型|说明|平台差异说明|
 |Properties|Type|Description|Platform Difference Description|
 |:-|:-|:-|:-|
-|appId|String|来源小程序 appId |其他平台均支持，`字节小程序(1.15.0+)`|
-|appId|String|Source applet appId |Other platforms are supported, `Byte applet (1.15.0+)`|
-|extraData|Object|来源小程序传过来的数据|其他平台均支持，`字节小程序(1.15.0+)`|
-|extraData|Object|Data from the source applet|Other platforms are supported, `Byte applet (1.15.0+)`|
+|appId|String|来源小程序 appId |其他平台均支持，`抖音小程序(1.15.0+)`|
+|extraData|Object|来源小程序传过来的数据|其他平台均支持，`抖音小程序(1.15.0+)`|
 
 **channel 取值**
 **channel value**

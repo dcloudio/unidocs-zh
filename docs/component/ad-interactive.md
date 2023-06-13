@@ -11,8 +11,7 @@ Interactive advertising is a value-added service provided by DCloud and three-pa
 **平台差异说明**
 **Platform Difference Description**
 
-|App				|Web				|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序	|QQ小程序	|快应用	|360小程序|快手小程序	|京东小程序	|
-| App | Web |WeChat MiniApp |Alipay MiniApp |Baidu MiniApp |Byte Beat MiniApp |QQ MiniApp | QuickApp |360 MiniApp| Kuaishou MiniApp MiniApp |
+|App				|Web				|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序	|QQ小程序	|快应用	|360小程序|快手小程序	|京东小程序	|
 |:-:				|:-:				|:-:				|:-:					|:-:				|:-:						|:-:			|:-:		|:-:			|:-:				|:-:				|
 |√(3.6.11+)	|√(3.6.11+)	|√(3.5.5+)	|x						|x					|x							|x				|x			|x				|x					|x					|
 

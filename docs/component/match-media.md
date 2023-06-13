@@ -12,14 +12,12 @@ For example, if a sidebar is placed in the match-media component, and the media 
 **平台兼容性**
 **Platform compatibility**
 
-|app|h5|微信小程序|支付宝小程序|qq小程序|百度小程序|字节小程序|飞书小程序|360小程序|快应用|京东小程序|
-|app|h5|WeChat applet|Alipay applet|qq applet|Baidu applet|Byte applet|Feishu applet|360 applet|Quick application|Jingdong applet|
+|app|h5|微信小程序|支付宝小程序|qq小程序|百度小程序|抖音小程序|飞书小程序|360小程序|快应用|京东小程序|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
 |2.8.12+，app-vue|√|基础库 2.11.1+|√|√|√|√|×|√|×|×|
 |2.8.12+, app-vue|√|Basic library 2.11.1+|√|√|√|√|×|√|×|×|
 
-注意：支付宝小程序、qq小程序、百度小程序、字节小程序，暂不支持监听屏幕动态改变，即只执行一次媒体查询。
-Note: Alipay applet, qq applet, Baidu applet, and byte applet do not currently support monitoring dynamic screen changes, that is, only one media query is executed.
+注意：支付宝小程序、qq小程序、百度小程序、抖音小程序，暂不支持监听屏幕动态改变，即只执行一次媒体查询。
 
 **属性说明**
 **Attribute description**

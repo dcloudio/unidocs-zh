@@ -107,7 +107,7 @@ That is, you can use the uts language to write a UTS component just like writing
 │	├─mp-kuaishou                 // 快手小程序平台，可选
 │	├─mp-lark                     // 飞书小程序平台，可选
 │	├─mp-qq                       // QQ小程序平台，可选
-│	├─mp-toutiao                  // 字节跳动小程序平台，可选
+│	├─mp-toutiao                  // 抖音小程序平台，可选
 │	├─mp-weixin                   // 微信小程序平台，可选
 │	├─mp-xhs                      // 小红书小程序平台（仅限vue2），可选
 │	└─index.uts                   // 跨平台插件能力实现，可选

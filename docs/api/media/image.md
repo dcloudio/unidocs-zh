@@ -144,9 +144,7 @@ current is the link/index value of the currently displayed image, if it is left 
 Note, when there are duplicate image links in urls:
 
 - 传链接，预览结果始终显示该链接在 urls 中第一次出现的位置。
-- When passing a link, the preview result will always show the first occurrence of the link in urls.
-- 传索引值，在微信/百度/字节跳动小程序平台，会过滤掉传入的 urls 中该索引值之前与其对应图片链接重复的值。其它平台会保留原始的 urls 不会做去重处理。
-- Pass the index value. On the WeChat/Baidu/ByteDance MiniApp platform, the value that is duplicated with the corresponding image link before the index value in the incoming urls will be filtered out. Other platforms will keep the original urls without deduplication.
+- 传索引值，在微信/百度/抖音小程序平台，会过滤掉传入的 urls 中该索引值之前与其对应图片链接重复的值。其它平台会保留原始的 urls 不会做去重处理。
 
 举例说明：
 for example:
@@ -155,9 +153,7 @@ for example:
 A set of images `[A, B1, C, B2, D]`, where the image links of B1 and B2 are the same.
 
 - 传 B2 的链接，预览的结果是 B1，前一张是 A，下一张是 C。
-- Pass the link of B2, the preview result is B1, the previous one is A, and the next one is C.
-- 传 B2 的索引值 3，预览的结果是 B2，前一张是 C，下一张是 D。此时在微信/百度/字节跳动小程序平台，最终传入的 urls 是 `[A, C, B2, D]`，过滤掉了与 B2 重复的 B1。
-- Pass the index value 3 of B2, the preview result is B2, the previous one is C, and the next one is D. At this time, on the WeChat/Baidu/ByteDance MiniApp platform, the final incoming urls are `[A, C, B2, D]`, and B1 that is duplicated with B2 is filtered out.
+- 传 B2 的索引值 3，预览的结果是 B2，前一张是 C，下一张是 D。此时在微信/百度/抖音小程序平台，最终传入的 urls 是 `[A, C, B2, D]`，过滤掉了与 B2 重复的 B1。
 
 **longPressActions 参数说明**
 **longPressActions parameter description**
@@ -227,8 +223,7 @@ uni.chooseImage({
 关闭预览图片。
 Close the preview image.
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|Byte Beat MiniApp|Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√ `(3.2.15+)`|√ `(3.2.15+)`|x|x|x|x|x|x|x|x|
 
@@ -256,8 +251,7 @@ To obtain network picture information under the MiniApp, you need to configure t
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
@@ -342,8 +336,7 @@ Save the picture to the system album.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
 
@@ -407,8 +400,7 @@ Compressed image interface, optional compression quality
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√(基础库版本>=3.110.3)|√|√|√|√|
 |√| x|√|√|√(base library version>=3.110.3)|√|√|√|√|

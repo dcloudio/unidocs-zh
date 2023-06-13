@@ -11,8 +11,7 @@ In addition to the front-end API, DCloud also provides [uni-id](/uniCloud/uni-id
 **平台差异说明**
 **Platform Difference Description**
 
-|App|Web|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| Web|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
 
@@ -43,7 +42,7 @@ For most login methods, you need to apply for the activation of related services
 * [支付宝小程序登录](https://docs.alipay.com/mini/introduce/authcode)
 * [Alipay MiniApp login](https://docs.alipay.com/mini/introduce/authcode)
 * [百度小程序登录](https://smartprogram.baidu.com/docs/develop/api/open_log/#%E6%8E%88%E6%9D%83%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/)
-* [字节跳动小程序登录](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/log-in/tt-login/)
+* [抖音小程序登录](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/log-in/tt-login/)
 * [QQ小程序登录](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_login.html)
 * [QQ MiniApp Login](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_login.html)
 * [快手小程序登录](https://mp.kuaishou.com/docs/develop/api-next/open/login/ks.login.html)
@@ -131,8 +130,7 @@ Obtain the host App login credentials (Authorization Code)
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|x|x|√|x|x|x|x|
 
@@ -170,8 +168,7 @@ Check if the login status has expired
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|Byte Beat MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|x|√|√|√|√|√|x|
 
@@ -197,8 +194,7 @@ Get user information.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
 
@@ -216,9 +212,7 @@ Get user information.
 |Parameter Name|Type|Required|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-|
 |provider|String|否|登录服务提供商，通过 uni.getProvider 获取||
-| provider| String|No|Login service provider, get it through uni.getProvider||
-|withCredentials|Boolean|否|是否带上登录态信息。|微信小程序、字节跳动小程序、飞书小程序、快手小程序|
-| withCredentials| Boolean|No|Whether to bring login status information. |WeChat MiniApp Program, ByteDance MiniApp Program, Feishu Mini MiniApp, Kuaishou MiniApp|
+|withCredentials|Boolean|否|是否带上登录态信息。|微信小程序、抖音小程序、飞书小程序、快手小程序|
 |lang|String|否|指定返回用户信息的语言，默认为 en。更多值请参考下面的说明。|微信小程序|
 | lang| String|No| Specifies the language for returning user information, the default is en. For more values, please refer to the description below. |WeChat MiniApp|
 |timeout|Number|否|超时时间，单位 ms。|微信小程序|
@@ -255,13 +249,9 @@ Get user information.
 |userInfo|OBJECT|用户信息对象||
 | userInfo| OBJECT|user information object||
 |rawData|String|不包括敏感信息的原始数据字符串，用于计算签名。||
-|rawData| String|The raw data string excluding sensitive information, used to calculate the signature. ||
-|signature|String|使用 sha1( rawData + sessionkey ) 得到字符串，用于校验用户信息。|微信小程序、字节跳动小程序、飞书小程序、快手小程序、京东小程序|
-| signature| String|Use sha1( rawData + sessionkey ) to obtain a string for verifying user information. |WeChat MiniApp Program, ByteDance MiniApp Program, Feishu Mini MiniApp, Kuaishou MiniApp, Jingdong MiniApp|
-|encryptedData|String|包括敏感数据在内的完整用户信息的加密数据，详细见加密数据解密算法。|微信小程序、字节跳动小程序、飞书小程序、快手小程序|
-| encryptedData| String|Encrypted data of complete user information including sensitive data. For details, see Encrypted Data Decryption Algorithm. |WeChat MiniApp Program, ByteDance MiniApp Program, Feishu Mini MiniApp, Kuaishou MiniApp|
-|iv|String|加密算法的初始向量，详细见加密数据解密算法。|微信小程序、字节跳动小程序、飞书小程序、快手小程序|
-|iv| String|Initial vector of encryption algorithm, see Encrypted Data Decryption Algorithm for details. |WeChat MiniApp Program, ByteDance MiniApp Program, Feishu Mini MiniApp, Kuaishou MiniApp|
+|signature|String|使用 sha1( rawData + sessionkey ) 得到字符串，用于校验用户信息。|微信小程序、抖音小程序、飞书小程序、快手小程序、京东小程序|
+|encryptedData|String|包括敏感数据在内的完整用户信息的加密数据，详细见加密数据解密算法。|微信小程序、抖音小程序、飞书小程序、快手小程序|
+|iv|String|加密算法的初始向量，详细见加密数据解密算法。|微信小程序、抖音小程序、飞书小程序、快手小程序|
 |errMsg|String|描述信息|&nbsp;|
 | errMsg| String|Description|&nbsp;|
 
@@ -352,8 +342,7 @@ Get user information. An authorization window will pop up for each request, and 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√（基础库2.10.4）|x|x|x|x|x|x|
 |x|x|√ (base library 2.10.4)|x|x|x|x|x|x|
@@ -477,8 +466,7 @@ pre-login. It is used for one-click login with App phone number.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |3.0.0+|x|x|x|x|x|x|x|x|
 
@@ -508,8 +496,7 @@ According to the requirements of China Mobile, China Unicom, China Telecom and o
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |3.0.0+|x|x|x|x|x|x|x|x|
 
@@ -521,8 +508,7 @@ Get the checkbox status of [one-key login](/univerify) clause.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |3.2.3+|x|x|x|x|x|x|x|x|
 
@@ -557,8 +543,7 @@ Get the globally unique one-click login manager univerifyManager
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√ (3.2.13+)|x|x|x|x|x|x|x|x|
 

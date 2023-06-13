@@ -35,8 +35,7 @@ You can share text, pictures, graphic bars, music, video and other forms. Also n
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|x|x|x|x|x|x|x|
 
@@ -370,8 +369,7 @@ Call the system sharing component to send the sharing message, no need to config
 **平台差异说明**
 **Platform Difference Description**
 
-|App				|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|京东小程序|
-|App |H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |JD applet|
+|App				|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|京东小程序|
 |:-:				|:-:	|:-:		|:-:					|:-:			|:-:				|:-:			|:-:			|
 |√(App 2.6.4+)	|x		|x			|x						|x				|x					|x				|x				|
 
@@ -439,8 +437,7 @@ Compared to `uni.share`, calling system share does not require the integration o
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|x|x|x|x|x|x|x|
 
@@ -509,8 +506,7 @@ The sharing management of WeChat Mini Program platform is relatively strict, ple
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|√|x|√|√|√|√|
 
@@ -538,15 +534,11 @@ This event needs to return an Object, which is used to customize the sharing con
 |imageUrl		|String		|否		|分享图标，路径可以是本地文件路径、代码包文件路径或者网络图片路径。支持PNG及JPG。显示图片长宽比是 5:4	|			|
 |imageUrl |String |No |Share icon, the path can be local file path, code package file path or network image path. Support PNG and JPG. Display image aspect ratio is 5:4 | |
 |content		|String		|否		|百度小程序表现为：分享内容；支付宝小程序表现为：吱口令文案	|百度小程序、支付宝小程序	|
-|content |String |No |Baidu applet: share content; Alipay applet: squeak copy |Baidu applet, Alipay applet |
-|desc				|String		|否		|自定义分享描述				|支付宝小程序、字节跳动小程序、京东小程序	|
-|desc |String |No |Custom share description |Alipay applet, ByteDance applet, JD.com applet |
+|desc				|String		|否		|自定义分享描述				|支付宝小程序、抖音小程序、京东小程序	|
 |bgImgUrl		|String		|否		|自定义分享二维码的背景图，建议大小750*950（网络图片路径）		|支付宝小程序			|
 |bgImgUrl |String |No |Customize the background image of the shared QR code, the recommended size is 750*950 (network image path) |Alipay applet |
 |query			|String		|否		|QQ小程序查询字符串，必须是 key1=val1&key2=val2 的格式。从这条转发消息进入后，可通过 qq.getLaunchOptionSync() 或 qq.onShow() 获取启动参数中的 query。	|QQ小程序									|
-|query |String |No |QQ applet query string must be in the format of key1=val1&key2=val2. After entering from this forwarding message, the query in the launch parameters can be obtained through qq.getLaunchOptionSync() or qq.onShow(). |QQ Mini Program |
-|templateId	|String		|否		|开发者后台设置的分享素材模板 id		|字节跳动小程序|
-|templateId |String |No |The shared material template id set by the developer in the background |ByteDance applet|
+|templateId	|String		|否		|开发者后台设置的分享素材模板 id		|抖音小程序|
 |mpId	|String		|否		|微信小程序id，此场景用于分享到微信后，用户点击分享卡片，进入该appid对应的微信小程序，实现引流到微信小程序		|京东小程序|
 |mpId |String |No |Wechat applet id, this scenario is used for sharing to WeChat, the user clicks the sharing card, enters the WeChat applet corresponding to the appid, and realizes the drainage to the WeChat applet |JD.com applet|
 |type	|Number		|否		|转发形式（0 - 微信小程序正式版 ；1 - 微信小程序开发版；2 - 微信小程序体验版；京东App9.0.0开始不填或者其他值都会先判断是否有url参数，如果有打开分享后显示url对应页面，否则默认生成京东小程序官方的一个分享中间页面，点击可跳到京东app里面的对应小程序。）|京东小程序|
@@ -596,8 +588,7 @@ Display the share button in the native menu of the applet
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:				|:-:			|:-:				|:-:				|:-:			|:-:				|:-:			|
 |x	|x	|√					|√					|√					|√					|√				|√					|√				|
 
@@ -631,8 +622,7 @@ Hide the share button in the native menu of the applet
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:				|:-:					|:-:				|:-:				|:-:			|:-:				|:-:			|
 |x	|x	|√					|√(1.17.0+)	|x					|√					|√				|√					|√				|
 

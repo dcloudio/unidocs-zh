@@ -14,8 +14,5 @@ Advertising capabilities are implemented differently on different applets. When 
 - 百度小程序：有组件但无API
 - Baidu Mini Program: There are components but no API
 - 支付宝小程序：不支持此能力
-- Alipay applet: this capability is not supported
-- 字节跳动小程序：仅小游戏可用，小程序不可用，不适用于uni-app
-- ByteDance Mini Program: Only Mini Games are available, Mini Programs are not available, not applicable to uni-app
+- 抖音小程序：仅小游戏可用，小程序不可用，不适用于uni-app
 - QQ小程序：[规范文档](https://q.qq.com/wiki/develop/miniprogram/API/ad/qq.createRewardedVideoAd.html)
-- QQ Mini Program: [Specification Document](https://q.qq.com/wiki/develop/miniprogram/API/ad/qq.createRewardedVideoAd.html)

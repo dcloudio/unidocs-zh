@@ -29,9 +29,7 @@ How to choose among the many extension components? We must first figure out the 
 组件分2大类：1、vue组件（文件后缀为vue）；2、小程序自定义组件（文件后缀为wxml或其他小程序平台特有后缀名称）
 Components are divided into two categories: 1. Vue components (the file suffix is vue); 2. Mini Program custom components (the file suffix is wxml or other small program platform-specific suffix names)
 - vue组件又分为2个细项：only for web、全端兼容
-- The vue component is divided into 2 sub-items: only for web, full end compatibility
-- 小程序组件又分为：微信/QQ小程序组件、阿里小程序组件、百度小程序组件、字节跳动小程序组件。
-- The applet components are further divided into: WeChat/QQ applet components, Ali applet components, Baidu applet components, and ByteDance applet components.
+- 小程序组件又分为：微信/QQ小程序组件、阿里小程序组件、百度小程序组件、抖音小程序组件。
 这些组件uni-app都支持，但受组件本身技术特点限制，在不同端有不一样的支持度。
 These components are all supported by uni-app, but due to the technical characteristics of the components themselves, there are different degrees of support at different ends.
 下面这张表格，可以清楚的表达不同类型的组件的兼容性。

@@ -9,9 +9,7 @@ Get the current location and speed.
 |Parameter Name|Type|Required|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-:|
 |type|String|否|默认为 wgs84 返回 gps 坐标，gcj02 返回国测局坐标，可用于 ``uni.openLocation`` 和 map 组件坐标，App 和 H5 需配置定位 SDK 信息才可支持 gcj02。||
-|type|String|No|The default is wgs84 to return gps coordinates, gcj02 to return to National Survey Bureau coordinates, which can be used for ``uni.openLocation`` and map component coordinates, App and H5 need to configure positioning SDK information to support gcj02. ||
-|altitude|Boolean|否|传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度|字节跳动小程序、飞书小程序、支付宝小程序不支持|
-|altitude|Boolean|No|Passing in true will return the altitude information. Since the acquisition of altitude requires high precision, it will slow down the return speed of the interface|ByteDance MiniApp, Feishu MiniApp, Alipay MiniApp are not supported|
+|altitude|Boolean|否|传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度|抖音小程序、飞书小程序、支付宝小程序不支持|
 |geocode|Boolean|否|默认false，是否解析地址信息|仅App平台支持（安卓需指定 type 为 gcj02 并配置三方定位SDK）|
 |geocode|Boolean|No |The default is false, whether to resolve the address information|Supported only by the App platform (Android needs to specify the type as gcj02 and configure the three-party positioning SDK)|
 |highAccuracyExpireTime|Number|否|高精度定位超时时间(ms)，指定时间内返回最高精度，该值3000ms以上高精度定位才有效果|App (3.2.11+)、H5 (3.2.11+)、微信小程序 (基础库 2.9.0+)|
@@ -143,8 +141,7 @@ Open the map to select a location.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp, Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|x|x|
 

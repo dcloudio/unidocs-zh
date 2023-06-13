@@ -6,7 +6,7 @@
 |:-|:-|:-|:-|:-|
 |src|String||图片资源地址||
 |mode|String|'scaleToFill'|图片裁剪、缩放的模式|<div style="width:68px;"></div>|
-|lazy-load|Boolean|false|图片懒加载。只针对page与scroll-view下的image有效|微信小程序、百度小程序、字节跳动小程序、飞书小程序|
+|lazy-load|Boolean|false|图片懒加载。只针对page与scroll-view下的image有效|微信小程序、百度小程序、抖音小程序、飞书小程序|
 |fade-show|Boolean|true|图片显示动画效果|仅App-nvue 2.3.4+ Android有效|
 |webp|boolean|false|在系统不支持webp的情况下是否单独启用webp。默认false，只支持网络资源。webp支持详见下面说明|微信小程序2.9.0|
 |show-menu-by-longpress|boolean|false|开启长按图片显示识别小程序码菜单|微信小程序2.7.0|

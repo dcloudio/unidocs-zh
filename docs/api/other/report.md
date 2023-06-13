@@ -1,7 +1,5 @@
 ::: warning 注意 
-::: warning attention
 推荐使用 [uni统计2.0](https://uniapp.dcloud.io/uni-stat-v2.html)
-Recommended to use [uni-stat 2.0](https://uniapp.dcloud.io/uni-stat-v2.html)
 :::
 ## 统计
 ## Statistics
@@ -23,10 +21,8 @@ Custom events are an integral feature in statistics. Developers can customize th
 |eventKey|String|事件名称，最大长度不超过 255 个字符|
 |eventKey|String|Event name, max length 255 characters|
 |param|String 、 Object	|事件参数|
-|param|String , Object |Event parameter|
 
 ::: tip 提示
-::: tip
 - eventKey 为 String 类型，并且字符长度必须小于255 
 - eventKey is of type String and the character length must be less than 255
 - param 为 String 类型时，字符长度必须小于255 
@@ -42,7 +38,6 @@ Custom events are an integral feature in statistics. Developers can customize th
 - 用户在使用 `uni.share()` 或触发 `onShareAppMessage` 会执行分享事件，不携带参数。如果如需上报携带具体参数的数据，需要手动调用 `uni.report('share',{...})`
 - When the user uses `uni.share()` or triggers `onShareAppMessage`, the share event will be executed without parameters. If you need to report data with specific parameters, you need to manually call `uni.report('share',{...})`
 - 用户在使用 `uni.requestPayment()` 会执行支付事件，不携带参数。如果如需上报携带具体参数的数据，需要手动调用 `uni.report('pay_success',{...})` 和 `uni.report('pay_fail',{...})`
-- When the user uses `uni.requestPayment()`, the payment event will be executed without parameters. If you need to report data with specific parameters, you need to manually call `uni.report('pay_success',{...})` and `uni.report('pay_fail',{...})`
 
 :::
 
@@ -107,24 +102,17 @@ uni.report('search',{
 ```
 
 自定义事件上报后：
-After the custom event is reported:
 - 统计1.0在统计后台的`事件和转换`栏目中，可以看到上报的事件情况。
-- Statistics 1.0 In the `Event and Conversion` column of the statistics background, you can see the reported events.
 - 统计2.0在uni-admin后台的`uni 统计 --> 自定义事件`栏目中，可以看到上报的事件情况。
 - Statistics 2.0 In the `uni statistics --> custom events` column in the uni-admin background, you can see the reported events.
 
 ::: tip 提示
-::: tip
 - 小程序平台，需将`tongji.dcloud.net.cn`配入域名白名单，[详见](https://ask.dcloud.net.cn/article/36298)
-- For Mini Program Platform, `tongji.dcloud.net.cn` needs to be added to the domain name whitelist, [see details](https://ask.dcloud.net.cn/article/36298)
 - uni统计使用教程：[uni统计2.0](https://uniapp.dcloud.io/uni-stat-v2.html)、[uni统计1.0](https://uniapp.dcloud.io/uni-stat-v1.html)
-- uni statistics tutorial: [uni statistics 2.0](https://uniapp.dcloud.io/uni-stat-v2.html), [uni statistics 1.0](https://uniapp.dcloud.io/uni-stat -v1.html)
 :::
 
 ### 支持 uni.report 的 uni-ui 组件
-### A uni-ui component that supports uni.report
 `uni-ui` 中内置了一些数据采集相关的组件,用户使用这些组件，并设置属性 `stat:true`，即可在使用相关组件时，自动上报相关自定义数据 
-`uni-ui` has built-in components related to data collection. Users can use these components and set the property `stat:true` to automatically report relevant custom data when using related components
 
 - [uni-nav-bar](https://ext.dcloud.net.cn/plugin?name=uni-nav-bar)
 - [uni-title](https://ext.dcloud.net.cn/plugin?name=uni-title)
@@ -150,7 +138,7 @@ In addition to the official uni statistics, if developers also need to call the 
 - 数据分析：[swan.reportAnalytics](https://smartprogram.baidu.com/docs/develop/api/data/#swan-reportAnalytics/)
 - Data analysis: [swan.reportAnalytics](https://smartprogram.baidu.com/docs/develop/api/data/#swan-reportAnalytics/)
 
-#### 字节跳动小程序平台：
+#### 抖音小程序平台：
 - [reportAnalytics](https://developer.open-douyin.com/docs/resource/zh-CN/mini-game/develop/open-capacity/data-analysis/tt-report-analytics/)
 
 #### QQ小程序平台：

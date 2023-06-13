@@ -5,8 +5,7 @@ Call up the code scanning interface of the client, and return the corresponding 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
 
@@ -16,10 +15,8 @@ Call up the code scanning interface of the client, and return the corresponding 
 |参数名|类型|必填|说明|平台差异说明|
 |Parameter Name|Type|Required|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-:|
-|onlyFromCamera|Boolean|否|是否只能从相机扫码，不允许从相册选择图片|字节跳动小程序、百度小程序、支付宝小程序不支持此参数|
-| onlyFromCamera| Boolean|No|Whether you can only scan codes from the camera, and not allow to select pictures from the album|ByteDance MiniApp, Baidu MiniApp, and Alipay MiniApp do not support this parameter|
-|scanType|Array|否|扫码类型，参考下方`scanType的合法值`|字节跳动小程序不支持此参数|
-| scanType| Array|No|Scan code type, refer to `legal value of scanType` below|The ByteDance MiniApp does not support this parameter|
+|onlyFromCamera|Boolean|否|是否只能从相机扫码，不允许从相册选择图片|抖音小程序、百度小程序、支付宝小程序不支持此参数|
+|scanType|Array|否|扫码类型，参考下方`scanType的合法值`|抖音小程序不支持此参数|
 |autoDecodeCharset|Boolean|否|是否启用自动识别字符编码功能，默认为否|App|
 | autoDecodeCharset| Boolean|No|Whether to enable the automatic character encoding function, the default is No|App|
 |autoZoom|Boolean|否|是否启用自动放大，默认启用|仅 App-Android (3.5.4+) 支持|

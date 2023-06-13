@@ -5,8 +5,7 @@ Get the **globally unique** recording manager ``recorderManager``.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|x|√|√|√|x|√|
 
@@ -29,9 +28,7 @@ Get the **globally unique** recording manager ``recorderManager``.
 |onPause|callback|录音暂停事件||
 | onPause| callback|recording pause event||
 |onStop|callback|录音停止事件，会回调文件地址||
-| onStop| callback|recording stop event, file address will be called back||
-|onResume|callback|监听录音继续事件|微信小程序、百度小程序、QQ小程序、京东小程序、字节小程序|
-| onResume| callback|Monitor recording continuation event|WeChat MiniApp, Baidu MiniApp, QQ MiniApp, Jingdong MiniApp, Byte MiniApp|
+|onResume|callback|监听录音继续事件|微信小程序、百度小程序、QQ小程序、京东小程序、抖音小程序|
 |onInterruptionBegin|callback|监听录音因为受到系统占用而被中断开始事件。以下场景会触发此事件：微信语音聊天、微信视频聊天、QQ语音聊天、QQ视频聊天、电话响铃、接听电话。此事件触发后，录音会被暂停。pause 事件在此事件后触发|微信小程序、百度小程序、QQ小程序|
 | onInterruptionBegin| callback|Monitor recording is interrupted start event due to system occupation. The following scenarios will trigger this event: WeChat voice chat, WeChat video chat, QQ voice chat, QQ video chat, phone ringing, answering a phone call. When this event fires, recording is paused. The pause event is triggered after this event|WeChat MiniApp, Baidu MiniApp, QQ MiniApp|
 |onInterruptionEnd|callback|监听录音中断结束事件。在收到 interruptionBegin 事件之后，小程序内所有录音会暂停，收到此事件之后才可再次录音成功。|微信小程序、百度小程序、QQ小程序|

@@ -32,9 +32,7 @@ Make a network request.
 |enableHttp2|Boolean|否|false|开启 http2|微信小程序|
 | enableHttp2| Boolean|No| false|Enable http2|WeChat MiniApp|
 |enableQuic|Boolean|否|false|开启 quic|微信小程序|
-| enableQuic| Boolean|No| false|Enable quic|WeChat MiniApp|
-|enableCache|Boolean|否|false|开启 cache|微信小程序、字节跳动小程序 2.31.0+|
-| enableCache| Boolean|No| false|Enable cache|WeChat MiniApp, ByteDance MiniApp 2.31.0+|
+|enableCache|Boolean|否|false|开启 cache|微信小程序、抖音小程序 2.31.0+|
 |enableHttpDNS|Boolean|否|false|是否开启 HttpDNS 服务。如开启，需要同时填入 httpDNSServiceId 。 HttpDNS 用法详见 [移动解析HttpDNS](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/HTTPDNS.html)|微信小程序|
 | enableHttpDNS| Boolean|No| false|Whether to enable HttpDNS service. If enabled, you need to fill in httpDNSServiceId at the same time. For details on HttpDNS usage, see [Mobile Resolution HttpDNS](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/HTTPDNS.html)|WeChatMiniApp|
 |httpDNSServiceId|String|否||HttpDNS 服务商 Id。 HttpDNS 用法详见 [移动解析HttpDNS](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/HTTPDNS.html)|微信小程序|
@@ -62,8 +60,7 @@ Make a network request.
 注意：method有效值必须大写，每个平台支持的method有效值不同，详细见下表。
 Note: The effective value of method must be capitalized. The effective value of method supported by each platform is different. See the table below for details.
 
-|method|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|快手小程序|京东小程序|
-| method| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|Byte Beat MiniApp, Feishu Mini MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|method|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |GET|√|√|√|√|√|√|√|√|
 |POST|√|√|√|√|√|√|√|√|
@@ -219,8 +216,7 @@ requestTask.abort();
 https 请求配置自签名证书
 https request configuration self-signed certificate
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-| App| H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp|ByteDance MiniApp, Feishu MiniApp|QQ MiniApp| Kuaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√`(3.2.7+)`|x|x|x|x|x|x|x|x|
 

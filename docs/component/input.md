@@ -23,9 +23,7 @@ The input in the html specification is not only an input box, but also radio, ch
 |placeholder|String||输入框为空时占位符||
 | placeholder| String||The placeholder when the input box is empty||
 |placeholder-style|String||指定 placeholder 的样式||
-| placeholder-style| String||Specify the style of placeholder||
-|placeholder-class|String|"input-placeholder"|指定 placeholder 的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/|字节跳动小程序、飞书小程序、快手小程序不支持|
-| placeholder-class| String|"input-placeholder"|Specify the style class of the placeholder. Note that when scoped is written in the style of the page or component, you need to write /deep/| before the class name , Kuaishou MiniApp not support|
+|placeholder-class|String|"input-placeholder"|指定 placeholder 的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/|抖音小程序、飞书小程序、快手小程序不支持|
 |disabled|Boolean|false|是否禁用||
 | disabled| Boolean| false|whether to disable||
 |maxlength|Number|140|最大输入长度，设置为 -1 的时候不限制最大长度||
@@ -136,8 +134,7 @@ The input in the html specification is not only an input box, but also radio, ch
 - 小程序端input在置焦时，会表现为原生控件，此时会层级变高。如需前端组件遮盖input，需让input失焦，或使用cover-view等覆盖原生控件的方案，[参考](https://uniapp.dcloud.io/component/native-component)。具体来讲，阿里小程序的input为text且置焦为原生控件；微信、头条、QQ所有input置焦均为原生控件；百度小程序置焦时仍然是非原生的。也可以参考[原生控件](https://uniapp.dcloud.io/component/native-component)文档
 -When the input on the MiniApp terminal is focused, it will behave as a native control, and the level will become higher at this time. If you need front-end components to cover the input, you need to make the input out of focus, or use cover-view and other solutions to cover native controls, [reference](https://uniapp.dcloud.io/component/native-component).Specifically, the input of the Ali MiniApp is text and the focus is a native control; all the input focus of WeChat, Toutiao, and QQ are native controls; the focus of the Baidu MiniApp is still non-native. You can also refer to [Native Control](https://uniapp.dcloud.io/component/native-component) document
 - input组件若不想弹出软键盘，可设置为disabled
-- If the input component does not want to pop up the soft keyboard, it can be set to disabled
-- placeholder-style指定样式类font-size单位为rpx时，字节跳动小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。
+- placeholder-style指定样式类font-size单位为rpx时，抖音小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。
 :::
 
 #### text-content-type 有效值 @text-content-type

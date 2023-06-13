@@ -42,9 +42,7 @@ Also note that offline packaging cannot enjoy paid native plugins in the plugin 
     * 开发时需要将资源(图片，css，js等)、页面的绝对路径调整为相对路径，否则打包到原生小程序中时，可能出现路径查找错误。
     * During development, it is necessary to adjust the absolute path of resources (images, css, js, etc.) and pages to relative paths, otherwise, when packaged into the native applet, path search errors may occur.
     * 需要自己把页面或分包配置添加到已有小程序的app.json中。
-    * You need to add the page or subpackage configuration to the app.json of the existing applet.
-    * 目前支持微信小程序、百度小程序、支付宝小程序、字节跳动小程序、飞书小程序、QQ小程序。
-    * Currently supports WeChat applet, Baidu applet, Alipay applet, ByteDance applet, Feishu applet, and QQ applet.
+    * 目前支持微信小程序、百度小程序、支付宝小程序、抖音小程序、飞书小程序、QQ小程序。
 
   * 三方开发者插件，[参考](https://ext.dcloud.net.cn/plugin?id=1560)
   * Third-party developer plugin, [Reference](https://ext.dcloud.net.cn/plugin?id=1560)

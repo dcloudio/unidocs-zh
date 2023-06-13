@@ -8,8 +8,7 @@ Renders a "meta component" as a dynamic component. Depending on the value of `is
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |√ (Vue2 需传入 String 类型) |√	|x			|x				|x			|x				|x			|x		|x			|x			|x			|
 |√ (Vue2 needs to pass String type) |√ | x | x | x | x | x | x | x | x | x |
@@ -33,8 +32,7 @@ Renders a "meta component" as a dynamic component. Depending on the value of `is
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |√	|√	|√			|√				|√			|√				|√			|√		|√			|√			|√			|
 
@@ -88,8 +86,7 @@ The `<transition>` element acts as a transition effect for a single element/comp
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |x	|√	|x			|x				|x			|x				|x			|x		|x			|x			|x			|
 
@@ -106,8 +103,7 @@ The `<transition-group>` element acts as a transition effect for multiple elemen
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |x	|√	|x			|x				|x			|x				|x			|x		|x			|x			|x			|
 
@@ -123,8 +119,7 @@ The `<transition-group>` element acts as a transition effect for multiple elemen
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |x	|√	|x			|x				|x			|x				|x			|x		|x			|x			|x			|
 
@@ -142,8 +137,7 @@ For detailed usage, please refer to the links of the following tutorials. [Distr
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|字节跳动小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
-|App|H5 |WeChat applet |Alipay applet |Baidu applet |ByteDance applet, Feishu applet |QQ applet |Quick app |360 applet |Kuishou applet|Jingdong applet|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
 |:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
 |√	|√	|√			|√				|√			|√				|√			|√		|√			|√			|√			|
 

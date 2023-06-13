@@ -10,8 +10,7 @@ uni-app can not only develop a complete applet, but also compile it into a apple
 **平台差异说明**
 **Platform Difference Description**
 
-| 微信小程序 | 支付宝小程序 | 百度小程序 | 字节跳动小程序、飞书小程序 | QQ 小程序 | 快手小程序 |京东小程序|
-| WeChat applet | Alipay applet | Baidu applet | ByteDance applet, Feishu applet | QQ applet | Kuaishou applet |Jingdong applet|
+| 微信小程序 | 支付宝小程序 | 百度小程序 | 抖音小程序、飞书小程序 | QQ 小程序 | 快手小程序 |京东小程序|
 | :--------: | :----------: | :--------: | :------------: | :-------: | :--------: | :--------: |
 |     √      |       √ ( `3.2.9+` )      |     x      |       x        |     x     |     x      |x|
 

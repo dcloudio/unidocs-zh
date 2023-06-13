@@ -31,8 +31,7 @@ Common css units supported by `uni-app` include px, rpx
 vue 页面支持下面这些普通 H5 单位，但在 nvue 里不支持：
 The vue page supports the following common H5 units, but not in nvue:
 
-- rem 根字体大小可以通过 [page-meta](/component/page-meta?id=page-meta) 配置<span style="display:none">字节跳动小程序和飞书小程序：屏幕宽度/20、百度小程序：16px、支付宝小程序：50px</span>
-- rem root font size can be configured through [page-meta](/component/page-meta?id=page-meta) <span style="display:none">ByteDance applet and Feishu applet: screen width/20, Baidu applet: 16px, Alipay Mini Program: 50px</span>
+- rem 根字体大小可以通过 [page-meta](/component/page-meta?id=page-meta) 配置<span style="display:none">抖音小程序和飞书小程序：屏幕宽度/20、百度小程序：16px、支付宝小程序：50px</span>
 - vh viewpoint height，视窗高度，1vh 等于视窗高度的 1%
 - vh viewpoint height, the height of the viewport, 1vh is equal to 1% of the height of the viewport
 - vw viewpoint width，视窗宽度，1vw 等于视窗宽度的 1%

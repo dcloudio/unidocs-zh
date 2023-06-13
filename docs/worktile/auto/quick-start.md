@@ -30,8 +30,7 @@ Developers can use [API](/collocation/auto/api) to do the following:
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快应用|快手小程序|京东小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Quick application|Kaishou applet|Jingdong applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√(ios仅支持模拟器)|√|√|x|x|x|x|x|x|x|
 |√(ios only supports simulator)|√|√|x|x|x|x|x|x|x|

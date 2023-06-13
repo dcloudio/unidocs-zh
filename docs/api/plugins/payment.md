@@ -23,8 +23,7 @@ The combination of the unified `uni.requestPayment` on the front end and the uni
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat MiniApp|Alipay MiniApp|Baidu MiniApp | Kuaishou MiniApp|Feishu MiniApp|QQ MiniApp |Kaishou MiniApp|Jingdong MiniApp|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|
 |√|[Description](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|
@@ -36,9 +35,7 @@ The combination of the unified `uni.requestPayment` on the front end and the uni
 |Parameter Name|Type|Required|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-|
 |provider|String|是|服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取。||
-|provider|String| is the |service provider, obtained via [uni.getProvider](/api/plugins/provider). ||
-|orderInfo|String/Object|是|订单数据，[注意事项](/api/plugins/payment?id=orderinfo)|App、支付宝小程序、百度小程序、字节跳动小程序|
-|orderInfo|String/Object|Yes|Order data, [Notes](/api/plugins/payment?id=orderinfo)|App, Alipay MiniApp, Baidu MiniApp, ByteDance MiniApp|
+|orderInfo|String/Object|是|订单数据，[注意事项](/api/plugins/payment?id=orderinfo)|App、支付宝小程序、百度小程序、抖音小程序|
 |timeStamp|String|微信小程序必填|时间戳从1970年1月1日至今的秒数，即当前的时间。|微信小程序|
 |timeStamp|String|Required for WeChat MiniApp|Timestamp seconds from January 1, 1970 to the present, that is, the current time. |WeChat MiniApp|
 |nonceStr|String|微信小程序必填|随机字符串，长度为32个字符以下。|微信小程序|
@@ -50,13 +47,9 @@ The combination of the unified `uni.requestPayment` on the front end and the uni
 |paySign|String|微信小程序必填|签名，具体签名方案参见 [微信小程序支付文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=3)|微信小程序|
 |paySign|String|Required for WeChat MiniApp|Signature, please refer to [WeChat MiniApp Payment Document](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=3)|WeChat MiniApp|
 |bannedChannels|Array&lt;String&gt;|否|需要隐藏的支付方式，详见 [百度小程序支付文档](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)|百度小程序|
-|bannedChannels|Array&lt;String&gt;|No|A hidden payment method is required, see [Baidu MiniApp Payment Documentation](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)|BaiduMiniApp|
-|service|Number|字节跳动小程序必填|固定值：5（拉起小程序收银台）开发者如果不希望使用字节跳动小程序收银台，service设置为3/4时，可以直接拉起微信/支付宝进行支付：service=3： 微信API支付，不拉起小程序收银台；service=4： 支付宝API支付，不拉起小程序收银台。其中service=3、4，仅在1.35.0.1+基础库(头条743+)支持|字节跳动小程序|
-|service|Number|Required for the ByteDance MiniApp|Fixed value: 5 (pull up the MiniApp checkout desk) If the developer does not want to use the ByteDance MiniApp checkout desk, when the service is set to 3/4, you can directly pull Start WeChat/Alipay for payment: service=3: WeChat API payment, without opening the MiniApp cashier; service=4: Alipay API payment, without opening the MiniApp cashier. Where service=3, 4, only supported in 1.35.0.1+ basic library (Toutiao 743+)|Byte Beat MiniApp|
-|_debug|Number|否|仅限调试用，上线前去掉该参数。_debug=1时，微信支付期间可以看到中间报错信息，方便调试|字节跳动小程序|
-|_debug|Number|No|For debugging only, remove this parameter before going online. When _debug=1, you can see the intermediate error message during WeChat payment, which is convenient for debugging|Byte Beat MiniApp|
-|getOrderStatus|Function|字节跳动小程序必填|商户前端实现的查询支付订单状态方法（该方法需要返回个Promise对象）。 service=3、4时不需要传。|字节跳动小程序|
-|getOrderStatus|Function|Required for ByteDance MiniApp|The method of querying payment order status implemented by the merchant front-end (this method needs to return a Promise object). No need to pass when service=3 and 4. |ByteDance MiniApp|
+|service|Number|抖音小程序必填|固定值：5（拉起小程序收银台）开发者如果不希望使用抖音小程序收银台，service设置为3/4时，可以直接拉起微信/支付宝进行支付：service=3： 微信API支付，不拉起小程序收银台；service=4： 支付宝API支付，不拉起小程序收银台。其中service=3、4，仅在1.35.0.1+基础库(头条743+)支持|抖音小程序|
+|_debug|Number|否|仅限调试用，上线前去掉该参数。_debug=1时，微信支付期间可以看到中间报错信息，方便调试|抖音小程序|
+|getOrderStatus|Function|抖音小程序必填|商户前端实现的查询支付订单状态方法（该方法需要返回个Promise对象）。 service=3、4时不需要传。|抖音小程序|
 |success|Function|否|接口调用成功的回调||
 |success|Function|No|Callback for successful interface call||
 |fail|Function|否|接口调用失败的回调函数||
@@ -81,16 +74,14 @@ WeChat MiniApp`signType` description
 ### 注意事项
 ### Precautions
 - APP端，如果你的应用在用户完成支付后；立即给支付的用户push消息通知。会与前端支付回调相互冲突，请延迟执行推送。
-- 字节跳动小程序支付接口调整使用时请注意[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay)
+- 抖音小程序支付接口调整使用时请注意[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay)
 
 ### orderInfo 注意事项@orderInfo
 ### orderInfo Notes @orderInfo
 1. 百度小程序的 orderInfo 为 Object 类型，详细的数据结构，参考：[百度收银台支付](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)。
 1. The orderInfo of Baidu MiniApp is of Object type. For detailed data structure, please refer to: [Baidu Cashier Payment](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/).
 2. 支付宝小程序的 orderInfo(支付宝的规范为 tradeNO) 为 String 类型，表示支付宝交易号。
-2. The orderInfo of the Alipay MiniApp(Alipay's specification is tradeNO) is of String type, indicating the Alipay transaction number.
-3. 字节跳动小程序的 orderInfo 为 Object 类型，详见：[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay/)
-3. The orderInfo of the ByteDance MiniApp is Object type, see: [Initiate Toutiao Payment](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay/)
+3. 抖音小程序的 orderInfo 为 Object 类型，详见：[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay/)
 4. App端，支付宝支付 orderInfo 为 String 类型。
 4. On the App side, Alipay payment orderInfo is of String type.
 5. App端，微信支付 orderInfo 为 Object 类型。

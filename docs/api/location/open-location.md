@@ -5,8 +5,7 @@ Use the built-in map to view locations.
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|Kaishou applet|Jingdong applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|x|x|x|
 
@@ -64,9 +63,7 @@ uni.getLocation({
 - App 端使用地图组件需要向高德等三方服务商申请SDK资质，获取AppKey，打包时需要在manifest的SDK配置中填写Appkey。在manifest可视化界面有详细申请指南，详见：[https://ask.dcloud.net.cn/article/29](https://ask.dcloud.net.cn/article/29)。
 - H5 端使用地图和定位相关，需要在 [manifest.json](/collocation/manifest?id=h5sdkconfig) 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。
 - iOS端 如需使用第三方地图进行导航，需要在 manifest.json 文件内增加 ``urlschemewhitelist`` 节点，在线打包即可
-- On the iOS side, if you need to use a third-party map for navigation, you need to add the `urlschemewhitelist` node in the manifest.json file and package it online
-- 不同平台打开的地图不一样，App端是高德地图（不支持百度地图）、H5端是腾讯地图或谷歌地图、微信小程序端是腾讯地图、百度小程序是百度地图、阿里小程序是高德地图、字节跳动小程序是高德地图。
-- The maps opened on different platforms are different. The App side is AutoNavi Map (Baidu Map is not supported), the H5 side is Tencent Map or Google Map, the WeChat applet is Tencent Map, the Baidu applet is Baidu Map, and the Ali applet is Gaode map and ByteDance applet are Gaode maps.
+- 不同平台打开的地图不一样，App端是高德地图（不支持百度地图）、H5端是腾讯地图或谷歌地图、微信小程序端是腾讯地图、百度小程序是百度地图、阿里小程序是高德地图、抖音小程序是高德地图。
 
 ```json
 {

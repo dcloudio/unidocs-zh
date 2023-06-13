@@ -16,15 +16,13 @@ A fluid grid system that divides the screen or viewport into 24 pieces for quick
 ### Platform Difference Description
 
 ### `uni-row`
-| 属性名 | App(nvue) | App(vue) | H5  | 微信小程序 | 支付宝小程序 | 百度小程序 | 字节跳动小程序 | QQ 小程序 |
-| Attribute name | App(nvue) | App(vue) | H5 | WeChat applet | Alipay applet | Baidu applet | ByteDance applet | QQ applet |
+| 属性名 | App(nvue) | App(vue) | H5  | 微信小程序 | 支付宝小程序 | 百度小程序 | 抖音小程序 | QQ 小程序 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | gutter |-|    √|  √  |√ | √  |√ |  √   |√|
 
 ### `uni-col`
 
-| 属性名 | App(nvue) | App(vue) | H5  | 微信小程序 | 支付宝小程序 | 百度小程序 | 字节跳动小程序 | QQ 小程序 |
-| Attribute name | App(nvue) | App(vue) | H5 | WeChat applet | Alipay applet | Baidu applet | ByteDance applet | QQ applet |
+| 属性名 | App(nvue) | App(vue) | H5  | 微信小程序 | 支付宝小程序 | 百度小程序 | 抖音小程序 | QQ 小程序 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |  span  |√|√|√|√|√|√|√|√|
 | offset |√|√|  √  |√ | √  |√ |  √   |√|
@@ -110,7 +108,7 @@ A fluid grid system that divides the screen or viewport into 24 pieces for quick
 ```css
 .demo-uni-row {
 	margin-bottom: 10px;
-	/* QQ、字节小程序文档写有 :host，但实测不生效 */
+	/* QQ、抖音小程序文档写有 :host，但实测不生效 */
 	/* 百度小程序没有 :host，需要设置block */
 	/* #ifdef MP-TOUTIAO || MP-QQ || MP-BAIDU */
 	display: block;
@@ -398,9 +396,7 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 		margin-bottom: 10px;
 
 		// 组件在小程序端display为inline
-		// The component is displayed as inline on the applet side
-		// QQ、字节小程序文档写有 :host，但实测不生效
-		// QQ and byte applet documents have :host, but the actual measurement does not take effect
+		// QQ、抖音小程序文档写有 :host，但实测不生效
 		// 百度小程序没有 :host
 		// Baidu applet does not have :host
 		/* #ifdef MP-TOUTIAO || MP-QQ || MP-BAIDU */

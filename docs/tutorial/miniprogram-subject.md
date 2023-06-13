@@ -25,9 +25,7 @@ The applet component is not a vue component, and each applet has its own compone
 |支付宝小程序|支持支付宝小程序组件|mycomponents|
 |Alipay Mini Program|Support Alipay Mini Program Components|mycomponents|
 |百度小程序|支持百度小程序组件|swancomponents|
-|Baidu applet|Support Baidu applet components|swancomponents|
-|字节跳动小程序、飞书小程序|支持字节跳动小程序、飞书小程序组件|ttcomponents|
-|ByteDance applet, Feishu applet|Support ByteDance applet, Feishu applet components|ttcomponents|
+|抖音小程序、飞书小程序|支持抖音小程序、飞书小程序组件|ttcomponents|
 |QQ小程序|支持QQ小程序组件|wxcomponents|
 |QQ applet|Support QQ applet components|wxcomponents|
 |快手小程序|支持快手小程序组件|kscomponents|
@@ -43,7 +41,7 @@ This document requires developers to have a certain understanding of the **custo
 - [百度小程序自定义组件](https://smartprogram.baidu.com/docs/develop/framework/custom-component/)
 - [Baidu Mini Program Custom Component](https://smartprogram.baidu.com/docs/develop/framework/custom-component/)
 - [支付宝小程序自定义组件](https://docs.alipay.com/mini/framework/custom-component-overview)
-- [字节跳动小程序自定义组件](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/guide/developing-and-testing-miniApp/front-end/mini-app-framework/custom-component/component-constructor)
+- [抖音小程序自定义组件](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/guide/developing-and-testing-miniApp/front-end/mini-app-framework/custom-component/component-constructor)
 - [飞书小程序自定义组件](https://open.feishu.cn/document/uYjL24iN/ugTOugTOugTO)
 - [Feishu Mini Program Custom Components](https://open.feishu.cn/document/uYjL24iN/ugTOugTOugTO)
 - [QQ小程序自定义组件](https://q.qq.com/wiki/develop/miniprogram/frame/diy_components/)
@@ -300,8 +298,7 @@ Similar to wxs, Baidu applet provides Filter, Alibaba applet provides SJS, uni-a
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet, Feishu applet|QQ applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√(不支持nvue)|√|√|SJS|Filter|x|√|
 |√(nvue not supported)|√|√|SJS|Filter|x|√|

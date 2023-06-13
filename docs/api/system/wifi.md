@@ -21,7 +21,7 @@ WeChat Mini Program Platform Implementation Reference: [Specification Details](h
 百度智能小程序平台实现参考：[规范详情](https://smartprogram.baidu.com/docs/develop/api/device_sys/wifi_rule/)
 Baidu Smart Mini Program Platform Implementation Reference: [Specification Details](https://smartprogram.baidu.com/docs/develop/api/device_sys/wifi_rule/)
 
-字节跳动小程序的wifi API参考：[规范详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/wi-fi/tt-get-connected-wifi/)
+抖音小程序的wifi API参考：[规范详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/wi-fi/tt-get-connected-wifi/)
 
 
 ### uni.startWifi(OBJECT)

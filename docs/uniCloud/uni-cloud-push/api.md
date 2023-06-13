@@ -183,9 +183,7 @@ await uniPush.sendMessage(OBJECT)
 |mp-alipay|支付宝小程序|
 |mp-alipay|Alipay Mini Program|
 |mp-baidu|百度小程序|
-|mp-baidu|Baidu Mini Program|
-|mp-toutiao|字节跳动小程序|
-|mp-toutiao|Byte Beat Mini Program|
+|mp-toutiao|抖音小程序|
 |mp-lark|飞书小程序|
 |mp-lark|Feishu Mini Program|
 |mp-qq|QQ小程序|

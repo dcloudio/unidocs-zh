@@ -135,9 +135,7 @@ The possible values of `%PLATFORM%` are as follows:
 |mp-baidu|百度小程序|
 |mp-baidu|Baidu Mini Program|
 |mp-weixin|微信小程序|
-|mp-weixin|WeChat Mini Program|
-|mp-toutiao|字节跳动小程序|
-|mp-toutiao|Byte Beat Mini Program|
+|mp-toutiao|抖音小程序|
 |mp-lark|飞书小程序|
 |mp-lark|Feishu Mini Program|
 |mp-qq|qq 小程序|

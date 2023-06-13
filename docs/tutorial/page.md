@@ -65,9 +65,7 @@ When you delete a page, you need to do two things:
 |onReachBottom|页面滚动到底部的事件（不是scroll-view滚到底），常用于下拉下一页数据。具体见下方注意事项|||
 | onReachBottom| The event that a page scrolls to the bottom (not scroll-view to the bottom) is often used to pull down the data on the next page. See the precautions below for details| | |
 |onTabItemTap|点击 tab 时触发，参数为Object，具体见下方注意事项|微信小程序、QQ小程序、支付宝小程序、百度小程序、H5、App、快手小程序、京东小程序||
-|onTabItemTap| Triggered when the tab is clicked, the parameter is Object, see the following notes for details|WeChat applet, QQ applet, Alipay applet, Baidu applet, H5, App, Kuaishou applet, Jingdong applet||
-|onShareAppMessage|用户点击右上角分享|微信小程序、QQ小程序、支付宝小程序、字节小程序、飞书小程序、快手小程序、京东小程序||
-|onShareAppMessage|Users click on the upper right corner to share|WeChat applet, QQ applet, Alipay applet, byte applet, Feishu applet, Kuaishou applet, Jingdong applet||
+|onShareAppMessage|用户点击右上角分享|微信小程序、QQ小程序、支付宝小程序、抖音小程序、飞书小程序、快手小程序、京东小程序||
 |onPageScroll|监听页面滚动，参数为Object|nvue暂不支持||
 | onPageScroll| Listen to page scrolling with the parameter of Object| not supported by nvue temporarily| |
 |onNavigationBarButtonTap|监听原生标题栏按钮点击事件，参数为Object|App、H5||

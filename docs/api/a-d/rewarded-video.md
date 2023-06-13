@@ -12,8 +12,7 @@
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|App|H5|WeChat applet|Alipay applet|Baidu applet|ByteDance applet|Feishu applet|QQ applet|Kuishou applet|Jingdong applet|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（2.5.11+）|x|√|x|x|√（1.57.0+）|x|√（0.1.26+）|√|x|
 
@@ -43,9 +42,7 @@ options is of type object with the following properties:
 |Property Name |Type |Required |Description |Minimum Supported Version |
 |:-:|:-:|:-:|:-:|:-:|
 |adpid	  |string	|	是|广告位 id |App 2.5.11+|
-|adpid |string | yes|ad slot id |App 2.5.11+|
-|adUnitId	|string	|	是|广告位 id |微信小程序2.6.0+, QQ0.1.26+， 字节跳动1.57.0+|
-|adUnitId |string | Yes|Ad slot id |WeChat applet 2.6.0+, QQ0.1.26+, ByteDance 1.57.0+|
+|adUnitId	|string	|	是|广告位 id |微信小程序2.6.0+, QQ0.1.26+， 抖音1.57.0+|
 
 
 ### 返回值
@@ -57,24 +54,15 @@ The return value is of type RewarededVideoAd with the following properties:
 |属性名|类型|描述|最低支持版本|
 |property name|type|description|minimum supported version|
 |:-:|:-:|:-:|:-:|
-|show|Function|广告创建后默认是隐藏的，可以通过该方法显示广告|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，字节跳动1.57.0+|
-|show|Function|Ads are hidden by default after they are created. You can use this method to display ads|App 2.5.11+, WeChat applet 2.6.0+, QQ0.1.26+, ByteDance 1.57.0+|
-|onLoad|Function|绑定广告 load 事件的监听器|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，字节跳动1.57.0+|
-|onLoad|Function|Binding a listener for ad load event|App 2.5.11+, WeChat applet 2.6.0+, QQ0.1.26+, ByteDance 1.57.0+|
-|offLoad|Function|解除绑定 load 事件的监听器|QQ0.1.26+，字节跳动1.57.0+|
-|offLoad|Function|Unbind the listener for the load event|QQ0.1.26+, ByteDance 1.57.0+|
-|load|Function|当广告素材加载出现错误时，可以通过 load 方法手动加载|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，字节跳动1.57.0+|
-|load|Function|When there is an error in the creative loading, you can manually load it through the load method|App 2.5.11+, WeChat applet 2.6.0+, QQ0.1.26+, ByteDance 1.57.0+|
-|onError|Function|绑定 error 事件的监听器	|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，字节跳动1.57.0+|
-|onError|Function|Binding the listener of the error event |App 2.5.11+, WeChat applet 2.6.0+, QQ0.1.26+, ByteDance 1.57.0+|
+|show|Function|广告创建后默认是隐藏的，可以通过该方法显示广告|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，抖音1.57.0+|
+|onLoad|Function|绑定广告 load 事件的监听器|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，抖音1.57.0+|
+|offLoad|Function|解除绑定 load 事件的监听器|QQ0.1.26+，抖音1.57.0+|
+|load|Function|当广告素材加载出现错误时，可以通过 load 方法手动加载|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，抖音1.57.0+|
+|onError|Function|绑定 error 事件的监听器	|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，抖音1.57.0+|
 |onAdClicked|Function|绑定广告可点击屏幕区域事件的监听器  |App 2.5.11+|
-|onAdClicked|Function|Binding a listener for the clickable screen area event of an ad |App 2.5.11+|
-|offError|Function|解除绑定 error 事件的监听器|QQ0.1.26+，字节跳动1.57.0+|
-|offError|Function|Unbind the listener for the error event|QQ0.1.26+, ByteDance 1.57.0+|
-|onClose|Function|绑定 close 事件的监听器|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，字节跳动1.57.0+|
-|onClose|Function|Bind the listener of the close event|App 2.5.11+, WeChat applet 2.6.0+, QQ0.1.26+, ByteDance 1.57.0+|
-|offClose|Function|解除绑定 close 事件的监听器|QQ0.1.26+，字节跳动1.57.0+|
-|offClose|Function|Unbind the listener for the close event|QQ0.1.26+, ByteDance 1.57.0+|
+|offError|Function|解除绑定 error 事件的监听器|QQ0.1.26+，抖音1.57.0+|
+|onClose|Function|绑定 close 事件的监听器|App 2.5.11+, 微信小程序2.6.0+, QQ0.1.26+，抖音1.57.0+|
+|offClose|Function|解除绑定 close 事件的监听器|QQ0.1.26+，抖音1.57.0+|
 
 
 ### 广告创建

@@ -226,7 +226,7 @@ uni-app的Storage在不同端的实现不同：
 - 各个小程序端为其自带的storage api，数据存储生命周期跟小程序本身一致，即除用户主动删除或超过一定时间被自动清理，否则数据都一直可用。
 - 微信小程序单个 key 允许存储的最大数据长度为 1MB，所有数据存储上限为 10MB。
 - 支付宝小程序单条数据转换成字符串后，字符串长度最大200*1024。同一个支付宝用户，同一个小程序缓存总上限为10MB。
-- 百度小程序策略[详见](https://smartprogram.baidu.com/docs/develop/api/storage/save_process/)、字节跳动小程序策略[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/data-caching/tt-get-storage)
+- 百度小程序策略[详见](https://smartprogram.baidu.com/docs/develop/api/storage/save_process/)、抖音小程序策略[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/data-caching/tt-get-storage)
 - 非App平台清空Storage会导致uni.getSystemInfo获取到的deviceId改变
 
 除此之外，其他数据存储方案：

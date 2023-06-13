@@ -230,7 +230,7 @@ package.json must exist in every `uni_modules` plug-in and contains the basic in
                     "微信": "y",
                     "阿里": "y",
                     "百度": "y",
-                    "字节跳动": "y",
+                    "抖音": "y",
                     "QQ": "y"
                 },
                 "快应用": {

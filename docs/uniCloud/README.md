@@ -99,8 +99,7 @@ The huge serverless resource pool in the cloud has countless node processes on s
 - serverless，让一个学生，也可以享受世界最顶级的IT基础设置。
 - Serverless, so that a student can also enjoy the world's top IT infrastructure.
 
-serverless在国外兴起，但国内的发展速度已经超过了国外。微信、支付宝、百度、字节跳动、快应用联盟都上线了自己的serverless云开发。
-Serverless is emerging in foreign countries, but the domestic development speed has surpassed that of foreign countries. WeChat, Alipay, Baidu, ByteDance, and Kuaishou Alliance have all launched their own serverless cloud development.
+serverless在国外兴起，但国内的发展速度已经超过了国外。微信、支付宝、百度、抖音、快应用联盟都上线了自己的serverless云开发。
 
 目前国内已经有超过60万开发者在使用serverless云开发，包括腾讯、阿里、DCloud的很多自有业务都在使用。
 At present, more than 600,000 developers in China are using serverless cloud development, including many self-owned businesses of Tencent, Alibaba, and DCloud.

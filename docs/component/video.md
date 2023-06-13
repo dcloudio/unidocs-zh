@@ -10,24 +10,24 @@
 |loop|Boolean|false|是否循环播放||
 |muted|Boolean|false|是否静音播放|飞书小程序不支持|
 |initial-time|Number||指定视频初始播放位置，单位为秒（s）。|飞书小程序不支持|
-|duration|Number||指定视频时长，单位为秒（s）。|字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
+|duration|Number||指定视频时长，单位为秒（s）。|抖音小程序、飞书小程序、快手小程序、京东小程序不支持|
 |controls|Boolean|true|是否显示默认播放控件（播放/暂停按钮、播放进度、时间）|快手小程序不支持|
-|danmu-list|Object Array||弹幕列表|字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
-|danmu-btn|Boolean|false|是否显示弹幕按钮，只在初始化时有效，不能动态变更|字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
-|enable-danmu|Boolean|false|是否展示弹幕，只在初始化时有效，不能动态变更|字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
+|danmu-list|Object Array||弹幕列表|抖音小程序、飞书小程序、快手小程序、京东小程序不支持|
+|danmu-btn|Boolean|false|是否显示弹幕按钮，只在初始化时有效，不能动态变更|抖音小程序、飞书小程序、快手小程序、京东小程序不支持|
+|enable-danmu|Boolean|false|是否展示弹幕，只在初始化时有效，不能动态变更|抖音小程序、飞书小程序、快手小程序、京东小程序不支持|
 |page-gesture|Boolean|false|在非全屏模式下，是否开启亮度与音量调节手势|微信小程序、H5|
 |direction|Number||设置全屏时视频的方向，不指定则根据宽高比自动判断。有效值为 0（正常竖向）, 90（屏幕逆时针90度）, -90（屏幕顺时针90度）|H5、飞书小程序、快手小程序、京东小程序不支持|
-|show-progress|Boolean|true|若不设置，宽度大于240时才会显示|字节跳动小程序、飞书小程序、快手小程序、京东小程序不支持|
+|show-progress|Boolean|true|若不设置，宽度大于240时才会显示|抖音小程序、飞书小程序、快手小程序、京东小程序不支持|
 |show-fullscreen-btn|Boolean|true|是否显示全屏按钮|京东小程序不支持|
 |show-play-btn|Boolean|true|是否显示视频底部控制栏的播放按钮|京东小程序不支持|
-|show-center-play-btn|Boolean|true|是否显示视频中间的播放按钮|字节跳动小程序、京东小程序不支持|
+|show-center-play-btn|Boolean|true|是否显示视频中间的播放按钮|抖音小程序、京东小程序不支持|
 |show-loading|Boolean|true|是否显示loading控件|仅app 2.8.12+|
-|enable-progress-gesture|Boolean|true|是否开启控制进度的手势|字节跳动小程序、京东小程序不支持|
-|object-fit|String|contain|当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|App、微信小程序、字节跳动小程序、飞书小程序、H5、京东小程序|
+|enable-progress-gesture|Boolean|true|是否开启控制进度的手势|抖音小程序、京东小程序不支持|
+|object-fit|String|contain|当视频大小与 video 容器大小不一致时，视频的表现形式。contain：包含，fill：填充，cover：覆盖|App、微信小程序、抖音小程序、飞书小程序、H5、京东小程序|
 |poster|String||视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效||
-|show-mute-btn|Boolean|false|是否显示静音按钮|微信小程序、字节跳动小程序、App-nvue|
+|show-mute-btn|Boolean|false|是否显示静音按钮|微信小程序、抖音小程序、App-nvue|
 |title|String||视频的标题，全屏时在顶部展示|微信小程序、App（3.6.7+）|
-|play-btn-position|String|bottom|播放按钮的位置|微信小程序、字节跳动小程序、飞书小程序|
+|play-btn-position|String|bottom|播放按钮的位置|微信小程序、抖音小程序、飞书小程序|
 |mobilenet-hint-type|number|1|移动网络提醒样式：0是不提醒，1是提醒，默认值为1|京东小程序|
 |enable-play-gesture|Boolean|false|是否开启播放手势，即双击切换播放/暂停|微信小程序、快手小程序|
 |auto-pause-if-navigate|Boolean|true|当跳转到其它小程序页面时，是否自动暂停本页面的视频|微信小程序|
@@ -48,12 +48,12 @@
 |@fullscreenchange|EventHandle||当视频进入和退出全屏时触发，event.detail = {fullScreen, direction}，direction取为 vertical 或 horizontal|飞书小程序不支持|
 |@waiting|EventHandle||视频出现缓冲时触发|飞书小程序、快手小程序不支持|
 |@error|EventHandle||视频播放出错时触发|飞书小程序不支持|
-|@progress|EventHandle||加载进度变化时触发，只支持一段加载。event.detail = {buffered}，百分比|微信小程序、字节跳动小程序、H5|
+|@progress|EventHandle||加载进度变化时触发，只支持一段加载。event.detail = {buffered}，百分比|微信小程序、抖音小程序、H5|
 |@loadeddata|EventHandle||视频资源开始加载时触发|京东小程序|
 |@loadstart|EventHandle||开始加载数据|京东小程序|
 |@seeked|EventHandle||拖动进度条结束|京东小程序|
 |@seeking|EventHandle||正在拖动进度条|京东小程序|
-|@loadedmetadata|EventHandle||视频元数据加载完成时触发。event.detail = {width, height, duration}|微信小程序、H5、字节跳动小程序、京东小程序|
+|@loadedmetadata|EventHandle||视频元数据加载完成时触发。event.detail = {width, height, duration}|微信小程序、H5、抖音小程序、京东小程序|
 |@fullscreenclick|EventHandle||视频播放全屏播放时点击事件。event.detail = { screenX:"Number类型，点击点相对于屏幕左侧边缘的 X 轴坐标", screenY:"Number类型，点击点相对于屏幕顶部边缘的 Y 轴坐标", screenWidth:"Number类型，屏幕总宽度", screenHeight:"Number类型，屏幕总高度"}|App 2.6.3+|
 |@controlstoggle|EventHandle||切换 controls 显示隐藏时触发。event.detail = {show}|微信小程序2.9.5|
 
@@ -179,7 +179,7 @@ export default {
 
 - 视频播放格式说明：
 	* H5平台：支持的视频格式视浏览器而定，一般通用的都支持：mp4、webm 和 ogg。（``<video/>`` 组件编译到 H5 时会替换为标准 html 的 video 标签）。H5端也可以自行在条件编译里使用video.js等三方库，这些库可以自动判断环境兼容以决定使用标准video或flash来播放。
-	* 小程序平台：各小程序平台支持程度不同，详见各家文档：[微信小程序视频组件文档](https://developers.weixin.qq.com/miniprogram/dev/component/video.html)、[支付宝小程序video组件](https://docs.alipay.com/mini/component/video)、[百度小程序视频组件文档](https://smartprogram.baidu.com/docs/develop/component/media/#video/)、[字节跳动小程序视频组件文档](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/media-component/video/)、[QQ小程序视频组件文档](https://q.qq.com/wiki/develop/miniprogram/component/media/camera.html)、[华为快应用视频组件文档](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-component-video)
+	* 小程序平台：各小程序平台支持程度不同，详见各家文档：[微信小程序视频组件文档](https://developers.weixin.qq.com/miniprogram/dev/component/video.html)、[支付宝小程序video组件](https://docs.alipay.com/mini/component/video)、[百度小程序视频组件文档](https://smartprogram.baidu.com/docs/develop/component/media/#video/)、[抖音小程序视频组件文档](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/media-component/video/)、[QQ小程序视频组件文档](https://q.qq.com/wiki/develop/miniprogram/component/media/camera.html)、[华为快应用视频组件文档](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-component-video)
 	* App平台： 支持本地视频(mp4/flv)、网络视频地址（mp4/flv/m3u8）及流媒体（rtmp/hls/rtsp）。
 
 - video**全屏**后，如何自行绘制界面？比如加个标题、加个分享按钮
@@ -191,8 +191,8 @@ export default {
 - 如何实现抖音、映客等全屏视频垂直滑动切换效果？
 	* 微信基础库 2.4.0 和 app端nvue 2.1.5 以上，可通过在垂直的swiper中内嵌video来实现。原生导航栏设置为custom，视频长宽设为手机屏幕大小，通过cover-view覆盖视频内容。插件市场有相关[示例](https://ext.dcloud.net.cn/search?q=%E6%8A%96%E9%9F%B3)
 
-- `<video/>` 组件在非H5端是原生组件，层级高于普通前端组件，覆盖其需要使用[cover-view](https://uniapp.dcloud.io/component/cover-view?id=cover-view)组件或plus.nativeObj.view、subNVue。微信基础库 2.4.0+和字节跳动小程序 已支持 video 组件的同层渲染，也就是video在非全屏时，可以被前端元素通过调节z-index来遮挡，但video全屏时，仍需要cover-view覆盖。
-- 除微信基础库 2.4.0+ 和 字节跳动小程序 和 app-nvue 2.1.5+，其他情况下非H5的video不能放入scroll-view和swiper。注意参考 [原生组件使用限制](/component/native-component)。
+- `<video/>` 组件在非H5端是原生组件，层级高于普通前端组件，覆盖其需要使用[cover-view](https://uniapp.dcloud.io/component/cover-view?id=cover-view)组件或plus.nativeObj.view、subNVue。微信基础库 2.4.0+和抖音小程序 已支持 video 组件的同层渲染，也就是video在非全屏时，可以被前端元素通过调节z-index来遮挡，但video全屏时，仍需要cover-view覆盖。
+- 除微信基础库 2.4.0+ 和 抖音小程序 和 app-nvue 2.1.5+，其他情况下非H5的video不能放入scroll-view和swiper。注意参考 [原生组件使用限制](/component/native-component)。
 - 你也可以尝试换个设计思路，如：列表中的视频组件是通过图片与icon模拟的，点击后播放全屏播放视频的方案。详情[【video组件会覆盖页面其他非原生组件的设计替代方案示例】](https://ext.dcloud.net.cn/plugin?id=3549)
 
 - App平台：使用 `<video/>` 组件，打包 App 时必须勾选 manifest.json->App 模块权限配置->VideoPlayer 模块。此模块体积较大，非默认内置。

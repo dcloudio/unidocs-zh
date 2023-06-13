@@ -293,8 +293,7 @@ The browser kernels of various MiniApp are different, which may cause css compat
 2. 自定义组件渲染差异
 2. Custom component rendering differences
 
-微信（可以使用[virtualHost](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)配置）/QQ/百度/字节跳动这四家小程序，自定义组件在渲染时会比App/H5端多一级节点，在写样式时需要注意：
-WeChat (can be configured using [virtualHost](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE))/QQ/Baidu/zi For these four MiniApp, the custom component will have one more node than the App/H5 side when rendering, so you need to pay attention when writing the style:
+微信（可以使用[virtualHost](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)配置）/QQ/百度/抖音这四家小程序，自定义组件在渲染时会比App/H5端多一级节点，在写样式时需要注意：
 
 * 使用`flex`布局时，直接给自定义组件的父元素设置为`display:flex`不能影响到自定义组件内部的根节点，需要设置当前自定义组件为`display:flex`才可以。
 * When using `flex` layout, directly setting the parent element of the custom component to `display:flex` will not affect the root node inside the custom component, you need to set the current custom component to `display:flex`.
@@ -329,9 +328,7 @@ For volume control, refer to the following:
 * [支付宝开发者工具](https://docs.alipay.com/mini/ide/download)
 * [Alipay Developer Tools](https://docs.alipay.com/mini/ide/download)
 * [百度开发者工具](https://smartprogram.baidu.com/docs/introduction/tool/)
-* [Baidu Developer Tools](https://smartprogram.baidu.com/docs/introduction/tool/)
-* [字节跳动开发者工具](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log/)
-* [ByteDance Developer Tools](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log/)
+* [抖音开发者工具](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log/)
 * [飞书开发者工具](https://open.feishu.cn/document/uYjL24iN/ucDOzYjL3gzM24yN4MjN)
 * [Feishu Developer Tools](https://open.feishu.cn/document/uYjL24iN/ucDOzYjL3gzM24yN4MjN)
 
@@ -343,7 +340,7 @@ For volume control, refer to the following:
 * [支付宝小程序更新日志](https://opendocs.alipay.com/mini/01iolt)
 * [Alipay MiniApp update log](https://opendocs.alipay.com/mini/01iolt)
 * [百度小程序更新日志](https://smartprogram.baidu.com/docs/develop/swan/swanchangelog/)
-* [字节跳动小程序更新日志](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log)
+* [抖音小程序更新日志](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log)
 * [飞书小程序更新日志](https://open.feishu.cn/document/uYjL24iN/uATM0YjLwEDN24CMxQjN)
 * [Feishu MiniApp update log](https://open.feishu.cn/document/uYjL24iN/uATM0YjLwEDN24CMxQjN)
 

@@ -3,16 +3,16 @@
 ### 开通流程
 使用开发者账号登录[uniCloud控制台](https://unicloud.dcloud.net.cn/) ，选择`uni-ai`栏目。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniai/ai20230613-200227.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230613-200227.png)
 
 阅读uni-ai服务协议并点击协议下方的“同意协议并开通”按钮，便可开通uni-ai服务。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniai/ai20230613-200536.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230613-200536.png)
 
 ### 购买套餐
-使用uni-ai服务之前，需要先购买套餐。
+付费uni-ai服务按月度套餐购买，您可以根据业务规模，选择合适的套餐下单。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniai/ai20230613-201256.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230613-201256.png)
 
 套餐版本说明
 |版本				|token数|售价	|
@@ -32,7 +32,7 @@
 
 在uni-ai套餐信息页面点击续费按钮可以对套餐进行续费操作。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniai/ai20230613-203339.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230613-203339.png)
 
 套餐到期后的第1天，uni-ai相关功能不可用。如需继续使用，您需要及时为套餐续费或升配。
 当套餐到期后，以您执行续费操作的时间为起点计算包月时长，例如您的套餐在2023年06月10日到期，在2023年06月15日执行手动续费1个月的操作，那么套餐的到期时间即为2023年7月15日。
@@ -62,7 +62,7 @@
 
 系统提供了 uniCloud 服务空间白名单安全配置，可以提高接口调用安全性，防止被他人盗用。可点击“添加服务空间”按钮，选择相应的服务空间完成添加服务空间白名单，服务空间添加成功后，只有列表中的服务空间才可以调用当前账号下的uni-ai接口。此列表为空时，不校验调用方的服务空间。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniai/ai20230613-204745.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230613-204745.png)
 
 
 
@@ -70,4 +70,4 @@
 
 系统可查看uni-api接口每日调用汇总数据，包括每日调用次数、每日调用成功次数、每日消耗token数等汇总数据。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniai/ai20230613-204908.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230613-204908.png)

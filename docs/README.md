@@ -2,14 +2,11 @@
 pageClass: custom-page-class
 ---
 
-`uni-app` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。
-`uni-app` is a framework for developing all front-end applications using [Vue.js](https://vuejs.org/), developers write a set of codes, which can be published to iOS, Android, Web ( Responsive), as well as various small programs (WeChat/Alipay/Baidu/Toutiao/Feishu/QQ/Kuishou/DingTalk/Taobao), Quick Apps and other platforms.
+```uni-app``` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。
 
 `DCloud`公司拥有900万开发者、数百万应用、12亿手机端月活用户、数千款uni-app插件、70+微信/qq群。阿里小程序工具官方内置uni-app（[详见](https://opendocs.alipay.com/mini/ide/overview)），腾讯课堂官方为uni-app录制培训课程（[详见](https://ask.dcloud.net.cn/article/35640)），开发者可以放心选择。
-The `DCloud` company has 9 million developers, millions of applications, 1.2 billion mobile monthly active users, thousands of uni-app plug-ins, and 70+ WeChat/QQ groups. The official Alipay tool has built-in uni-app ([see](https://opendocs.alipay.com/mini/ide/overview)), and Tencent Classroom officially recorded training courses for uni-app ([see](https://ask.dcloud.net.cn/article/35640)), developers can choose with confidence.
 
 `uni-app`在手，做啥都不愁。即使不跨端，```uni-app```也是更好的小程序开发框架（[详见](https://ask.dcloud.net.cn/article/35947)）、更好的App跨平台框架、更方便的H5开发框架。不管领导安排什么样的项目，你都可以快速交付，不需要转换开发思维、不需要更改开发习惯。
-With `uni-app` in hand, you don't have to worry about doing anything. Even if it is not cross-end, ``uni-app`` is a better applet development framework ([see details](https://ask.dcloud.net.cn/article/35947)), a better App Cross-platform framework, more convenient H5 development framework. No matter what kind of project the leader arranges, you can deliver it quickly, without changing the development thinking or changing the development habits.
 
 
 ## 快速体验
@@ -228,4 +225,4 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
 
 实际运行效果如下（点击图片可放大）：
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg" loading="lazy" class="zooming"></img>

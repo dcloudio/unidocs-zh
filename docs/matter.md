@@ -191,7 +191,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 
 2. 自定义组件渲染差异
 
-微信（可以使用[virtualHost](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)配置）/QQ/百度/字节跳动这四家小程序，自定义组件在渲染时会比App/H5端多一级节点，在写样式时需要注意：
+微信（可以使用[virtualHost](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)配置）/QQ/百度/抖音这四家小程序，自定义组件在渲染时会比App/H5端多一级节点，在写样式时需要注意：
 
 * 使用`flex`布局时，直接给自定义组件的父元素设置为`display:flex`不能影响到自定义组件内部的根节点，需要设置当前自定义组件为`display:flex`才可以。
 * 在自定义组件内部设置根元素高度为100%，不能撑满自定义组件父元素。需要同时设置当前自定义组件高度为100%才可以。
@@ -214,7 +214,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html)
 * [支付宝开发者工具](https://docs.alipay.com/mini/ide/download)
 * [百度开发者工具](https://smartprogram.baidu.com/docs/introduction/tool/)
-* [字节跳动开发者工具](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log/)
+* [抖音开发者工具](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log/)
 * [飞书开发者工具](https://open.feishu.cn/document/uYjL24iN/ucDOzYjL3gzM24yN4MjN)
 
 #### 各家小程序更新日志列表
@@ -222,7 +222,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * [微信小程序更新日志](https://developers.weixin.qq.com/miniprogram/dev/framework/release/)
 * [支付宝小程序更新日志](https://opendocs.alipay.com/mini/01iolt)
 * [百度小程序更新日志](https://smartprogram.baidu.com/docs/develop/swan/swanchangelog/)
-* [字节跳动小程序更新日志](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log)
+* [抖音小程序更新日志](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/changelog/update-log)
 * [飞书小程序更新日志](https://open.feishu.cn/document/uYjL24iN/uATM0YjLwEDN24CMxQjN)
 
 #### 微信小程序开发注意

@@ -10,13 +10,13 @@
 ### 平台差异说明
 
 ### `uni-row`
-| 属性名 | App(nvue) | App(vue) | H5  | 微信小程序 | 支付宝小程序 | 百度小程序 | 字节跳动小程序 | QQ 小程序 |
+| 属性名 | App(nvue) | App(vue) | H5  | 微信小程序 | 支付宝小程序 | 百度小程序 | 抖音小程序 | QQ 小程序 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | gutter |-|    √|  √  |√ | √  |√ |  √   |√|
 
 ### `uni-col`
 
-| 属性名 | App(nvue) | App(vue) | H5  | 微信小程序 | 支付宝小程序 | 百度小程序 | 字节跳动小程序 | QQ 小程序 |
+| 属性名 | App(nvue) | App(vue) | H5  | 微信小程序 | 支付宝小程序 | 百度小程序 | 抖音小程序 | QQ 小程序 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 |  span  |√|√|√|√|√|√|√|√|
 | offset |√|√|  √  |√ | √  |√ |  √   |√|
@@ -98,7 +98,7 @@
 ```css
 .demo-uni-row {
 	margin-bottom: 10px;
-	/* QQ、字节小程序文档写有 :host，但实测不生效 */
+	/* QQ、抖音小程序文档写有 :host，但实测不生效 */
 	/* 百度小程序没有 :host，需要设置block */
 	/* #ifdef MP-TOUTIAO || MP-QQ || MP-BAIDU */
 	display: block;
@@ -366,7 +366,7 @@
 		margin-bottom: 10px;
 
 		// 组件在小程序端display为inline
-		// QQ、字节小程序文档写有 :host，但实测不生效
+		// QQ、抖音小程序文档写有 :host，但实测不生效
 		// 百度小程序没有 :host
 		/* #ifdef MP-TOUTIAO || MP-QQ || MP-BAIDU */
 		display: block;

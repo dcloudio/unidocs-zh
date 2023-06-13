@@ -104,7 +104,7 @@ export default {
 
 
 **注意**
-- radio的默认颜色，在不同平台不一样。微信小程序是绿色的，字节跳动小程序为红色，其他平台是蓝色的。更改颜色使用color属性。
+- radio的默认颜色，在不同平台不一样。微信小程序是绿色的，抖音小程序为红色，其他平台是蓝色的。更改颜色使用color属性。
 - 如需调节radio大小，可通过css的scale方法调节，如缩小到70%`style="transform:scale(0.7)"`
 - radio不是checkbox，点击一个已经选中的radio，不会将其取消选中
 

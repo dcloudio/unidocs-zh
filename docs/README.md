@@ -51,7 +51,7 @@ pageClass: custom-page-class
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/mp-toutiao.png" width="160" />
         </div>
-        <b>字节跳动小程序版</b>
+        <b>抖音小程序版</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
@@ -219,7 +219,7 @@ pageClass: custom-page-class
 
 ## 一套代码，运行到多个平台
 
-`uni-app`实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、web、微信开发者工具、支付宝小程序Studio、百度开发者工具、字节跳动开发者工具、QQ开发者工具（底部每个终端选项卡，代表1个终端模拟器）：
+`uni-app`实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、web、微信开发者工具、支付宝小程序Studio、百度开发者工具、抖音开发者工具、QQ开发者工具（底部每个终端选项卡，代表1个终端模拟器）：
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dev1x8.jpg)
 

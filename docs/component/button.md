@@ -27,12 +27,12 @@
 |group-id|String||打开群资料卡时，传递的群号|open-type="openGroupProfile"|QQ小程序|
 |guild-id|String||打开频道页面时，传递的频道号|open-type="openGuildProfile"|QQ小程序|
 |public-id|String||打开公众号资料卡时，传递的号码|open-type="openPublicProfile"|QQ小程序|
-|data-im-id|String||客服的抖音号|open-type="im"|字节小程序2.68.0版本+|
-|data-im-type|String||IM卡片类型|open-type="im"|字节小程序2.80.0版本+|
-|data-goods-id|String||商品的id，仅支持泛知识课程库和生活服务商品库中的商品|open-type="im"|字节小程序2.80.0版本+|
-|data-order-id|String||订单的id，仅支持交易2.0订单|open-type="im"|字节小程序2.80.0版本+|
-|data-biz-line|String||商品类型，“1”代表生活服务，“2”代表泛知识。|open-type="im"|字节小程序2.80.0版本+|
-|@getphonenumber|Handler||获取用户手机号回调|open-type="getPhoneNumber"|微信、支付宝、百度、字节、快手、京东小程序|
+|data-im-id|String||客服的抖音号|open-type="im"|抖音小程序2.68.0版本+|
+|data-im-type|String||IM卡片类型|open-type="im"|抖音小程序2.80.0版本+|
+|data-goods-id|String||商品的id，仅支持泛知识课程库和生活服务商品库中的商品|open-type="im"|抖音小程序2.80.0版本+|
+|data-order-id|String||订单的id，仅支持交易2.0订单|open-type="im"|抖音小程序2.80.0版本+|
+|data-biz-line|String||商品类型，“1”代表生活服务，“2”代表泛知识。|open-type="im"|抖音小程序2.80.0版本+|
+|@getphonenumber|Handler||获取用户手机号回调|open-type="getPhoneNumber"|微信、支付宝、百度、抖音、快手、京东小程序|
 |@getuserinfo|Handler||用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同uni.getUserInfo|open-type="getUserInfo"|微信、QQ、百度、快手、京东小程序|
 |@error|Handler||当使用开放能力时，发生错误的回调|open-type="launchApp"|微信、QQ、快手、京东小程序|
 |@opensetting|Handler||在打开授权设置页并关闭后回调|open-type="openSetting"|微信、QQ、百度、快手、京东小程序|
@@ -44,7 +44,7 @@
 |@chooseinvoicetitle|Handler||用户选择发票抬头的回调|open-type="chooseInvoiceTitle"|百度小程序|
 |@subscribe|Handler||订阅消息授权回调|open-type="subscribe"|百度小程序|
 |@login|Handler||登录回调|open-type="login"|百度小程序|
-|@im|Handler||监听跳转IM的成功回调|open-type="im"|字节小程序2.68.0版本+|
+|@im|Handler||监听跳转IM的成功回调|open-type="im"|抖音小程序2.68.0版本+|
 
 - **注1：``button-hover`` 默认为 ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}``**
 - ```open-type="launchApp"```时需要调起的APP接入微信OpenSDK[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)
@@ -60,7 +60,7 @@
 
 |值|说明|
 |:-|:-|
-|primary|微信小程序、360小程序为绿色，App、H5、百度小程序、支付宝小程序、飞书小程序、快应用为蓝色，字节跳动小程序为红色，QQ小程序为浅蓝色。如想在多端统一颜色，请改用default，然后自行写样式|
+|primary|微信小程序、360小程序为绿色，App、H5、百度小程序、支付宝小程序、飞书小程序、快应用为蓝色，抖音小程序为红色，QQ小程序为浅蓝色。如想在多端统一颜色，请改用default，然后自行写样式|
 |default|白色|
 |warn|红色|
 
@@ -76,15 +76,15 @@
 |值|说明|平台差异说明|
 |:-|:-|:-|
 |feedback|打开“意见反馈”页面，用户可提交反馈内容并上传日志|App、微信小程序、QQ小程序|
-|share|触发用户转发|微信小程序、百度小程序、支付宝小程序、字节跳动小程序、飞书小程序、QQ小程序、快手小程序、京东小程序、360小程序	|
+|share|触发用户转发|微信小程序、百度小程序、支付宝小程序、抖音小程序、飞书小程序、QQ小程序、快手小程序、京东小程序、360小程序	|
 |getUserInfo|获取用户信息，可以从@getuserinfo回调中获取到用户信息|微信小程序、百度小程序、QQ小程序、快手小程序、京东小程序、360小程序	|
-|contact | 打开客服会话，如果用户在会话中点击消息卡片后返回应用，可以从 @contact 回调中获得具体信息 |微信小程序、百度小程序、快手小程序、字节小程序 |
-|getPhoneNumber | 获取用户手机号，可以从@getphonenumber回调中获取到用户信息|微信小程序、百度小程序、字节跳动小程序、支付宝小程序、快手小程序、京东小程序。App平台另见[一键登陆](https://uniapp.dcloud.net.cn/univerify) |
+|contact | 打开客服会话，如果用户在会话中点击消息卡片后返回应用，可以从 @contact 回调中获得具体信息 |微信小程序、百度小程序、快手小程序、抖音小程序 |
+|getPhoneNumber | 获取用户手机号，可以从@getphonenumber回调中获取到用户信息|微信小程序、百度小程序、抖音小程序、支付宝小程序、快手小程序、京东小程序。App平台另见[一键登陆](https://uniapp.dcloud.net.cn/univerify) |
 |launchApp | 小程序中打开APP，可以通过app-parameter属性设定向APP传的参数|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)、[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_app.html)、快手小程序、京东小程序 |
 |openSetting | 打开授权设置页 |微信小程序、QQ小程序、百度小程序、快手小程序、京东小程序、360小程序 |
 |chooseAvatar|获取用户头像，可以从@chooseavatar回调中获取到头像信息|微信小程序2.21.2版本+ |
-|uploadDouyinVideo|发布抖音视频|字节小程序2.65.0版本+ |
-|im|跳转到抖音IM客服|字节小程序2.80.0版本+ |
+|uploadDouyinVideo|发布抖音视频|抖音小程序2.65.0版本+ |
+|im|跳转到抖音IM客服|抖音小程序2.80.0版本+ |
 |getAuthorize | 支持小程序授权 | 支付宝小程序 |
 |lifestyle | 关注生活号 | 支付宝小程序 |
 |contactShare|分享到通讯录好友|支付宝小程序基础库1.11.0版本+ |

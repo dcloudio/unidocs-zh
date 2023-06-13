@@ -11,7 +11,7 @@
 |multiple|Boolean|否|是否多实例。传入 true 时，将返回一个包含 SocketTask 实例。|仅支付宝小程序支持|
 |header|Object|否|HTTP Header , header 中不能设置 Referer|小程序、App 2.9.6+|
 |method|String|否|默认是GET，有效值：OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT|仅微信小程序支持|
-|protocols|Array&lt;String&gt;|否|子协议数组|App、H5、微信小程序、百度小程序、字节跳动小程序、飞书小程序|
+|protocols|Array&lt;String&gt;|否|子协议数组|App、H5、微信小程序、百度小程序、抖音小程序、飞书小程序|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
@@ -63,7 +63,7 @@ var socketTask = uni.connectSocket({
 
 **平台兼容性**
 
-字节小程序不支持
+抖音小程序不支持
 
 **CALLBACK 返回参数**
 
@@ -88,7 +88,7 @@ uni.onSocketOpen(function (res) {
 
 **平台兼容性**
 
-字节小程序不支持
+抖音小程序不支持
 
 **示例代码**
 
@@ -109,7 +109,7 @@ uni.onSocketError(function (res) {
 
 **平台兼容性**
 
-字节小程序不支持
+抖音小程序不支持
 
 **OBJECT 参数说明：**
 
@@ -154,7 +154,7 @@ function sendSocketMessage(msg) {
 
 **平台兼容性**
 
-字节小程序不支持
+抖音小程序不支持
 
 **CALLBACK 返回参数**
 
@@ -179,7 +179,7 @@ uni.onSocketMessage(function (res) {
 
 **平台兼容性**
 
-字节小程序不支持
+抖音小程序不支持
 
 **OBJECT 参数说明**
 
@@ -196,7 +196,7 @@ uni.onSocketMessage(function (res) {
 
 **平台兼容性**
 
-字节小程序不支持
+抖音小程序不支持
 
 ```javascript
 uni.connectSocket({

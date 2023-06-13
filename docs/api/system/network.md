@@ -45,7 +45,7 @@ uni.getNetworkType({
 
 |参数|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
-|isConnected|Boolean|当前是否有网络连接|字节跳动小程序不支持|
+|isConnected|Boolean|当前是否有网络连接|抖音小程序不支持|
 |networkType|String|网络类型|&nbsp;|
 
 **示例**
@@ -62,7 +62,7 @@ uni.onNetworkStatusChange(function (res) {
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 3.0.1+|HBuilderX 3.0.1+|基础库 2.9.3+|x|x|x|x|√|x|
 

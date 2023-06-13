@@ -78,7 +78,7 @@
   + 小程序平台 修复 vue3 项目 manifest.json 部分平台配置不生效的Bug
   + 微信小程序平台、支付宝小程序平台 修复 vue3 项目 引用插件不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3035)
   + 支付宝小程序 修复 vue3 项目 组件自定义事件触发报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3053)
-  + 字节小程序 修复 vue3 项目 page-meta 组件 报错的Bug [详情](https://ask.dcloud.net.cn/question/135769)
+  + 抖音小程序 修复 vue3 项目 page-meta 组件 报错的Bug [详情](https://ask.dcloud.net.cn/question/135769)
 * 【uniCloud】
   + 新增 支持云函数内使用 JQL 语法操作数据库的扩展库 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-cloud)
   + 修复 腾讯云 geoNear 聚合阶段 maxDistance、minDistance 参数无法正常生效的Bug
@@ -271,7 +271,7 @@
   + App-iOS平台 修复 3.2.6 引出的 nvue 页面 css 伪类样式失效的Bug [详情](https://ask.dcloud.net.cn/question/130879)
   + App-iOS平台 修复 tabbar 设置选中项图片为 gif 时动画速度太慢的Bug [详情](https://ask.dcloud.net.cn/question/125824)
   + 支付宝小程序平台 新增 支持在 App.vue 文件内监听 onShareAppMessage 事件 [#2844](https://github.com/dcloudio/uni-app/pull/2844)
-  + 字节小程序平台 修复 差量编译失效的Bug
+  + 抖音小程序平台 修复 差量编译失效的Bug
 * 【uniCloud】
   + 本地调试插件 新增 设置启动调试参数（.hbuilderx/launch.json）关闭系统日志 [详情](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=calllocalfunction)
   + 本地调试插件 优化 公共模块查找逻辑，减少调试错误
@@ -295,7 +295,7 @@
 #### 3.2.6.20210901-alpha
 * 【uni-app】
   + App平台 修复 3.2.1 引出的 uni.chooseImage 无法压缩拍照图像的Bug [详情](https://ask.dcloud.net.cn/question/129238)
-  + 字节小程序平台 修复 部分事件无法触发的Bug [#2774](https://github.com/dcloudio/uni-app/issues/2774)
+  + 抖音小程序平台 修复 部分事件无法触发的Bug [#2774](https://github.com/dcloudio/uni-app/issues/2774)
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 修复 图片选择界面设置 filter 为 video 时仍然显示`原图`按钮的Bug
   + iOS平台 修复 二维码扫码在应用横屏模式时预览画面被旋转了的Bug [详情](https://ask.dcloud.net.cn/question/116187)
@@ -320,8 +320,8 @@
   + H5平台 修复 导航栏 searchInput 输入框出现两个清空 icon 的Bug [详情](https://ask.dcloud.net.cn/question/129225)
   + H5平台 修复 titleNView 配置 type 为 transparent 时，float 为 left 的 button 不居中的Bug [详情](https://ask.dcloud.net.cn/question/129598)
   + 支付宝小程序平台 修复 uni.chooseImage 在模拟器上不返回 tempFiles 的Bug [详情](https://ask.dcloud.net.cn/question/128732)
-  + 字节小程序平台 修复 同名文件内引用同一个组件作用域插槽渲染错误的Bug [详情](https://ask.dcloud.net.cn/question/127962)
-  + 字节小程序平台 修复 使用 .sync 更新父子组件间的值失效的Bug [详情](https://ask.dcloud.net.cn/question/127397)
+  + 抖音小程序平台 修复 同名文件内引用同一个组件作用域插槽渲染错误的Bug [详情](https://ask.dcloud.net.cn/question/127962)
+  + 抖音小程序平台 修复 使用 .sync 更新父子组件间的值失效的Bug [详情](https://ask.dcloud.net.cn/question/127397)
   + QQ小程序平台 修复 真机运行报错的Bug [#2648](https://github.com/dcloudio/uni-app/issues/2648)
 * 【uniCloud】
   + uniCloud本地调试插件 修复 云函数日志 文件路径存在中文时无法点击跳转的Bug
@@ -442,7 +442,7 @@
   + 小程序平台 修复 v-for 中含有复杂表达式时，事件接收的 item 参数错误的Bug
   + 小程序平台 修复 部分数值变更无法更新的Bug [#2696](https://github.com/dcloudio/uni-app/issues/2696)
   + 小程序平台 修复 新版作用域插槽编译模式嵌套自定义组件不显示的Bug [详情](https://ask.dcloud.net.cn/question/126058)
-  + 字节小程序平台 修复 新版开发者工具中 uni.request 发送请求失败的Bug
+  + 抖音小程序平台 修复 新版开发者工具中 uni.request 发送请求失败的Bug
 * 【uniCloud】
   + 【重要】云函数支持创建时选择 nodejs 版本 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=runtime)
   + 新增 内容安全公共模块，包含图片鉴黄、文字内容违规检测，免费且全端可用 [详情](https://ext.dcloud.net.cn/plugin?id=5460)
@@ -508,7 +508,7 @@
   + 百度小程序平台 修复 基础库 3.290.33 以上页面 mounted 执行两次的Bug [#2642](https://github.com/dcloudio/uni-app/issues/2642)
   + 百度小程序平台 修复 使用 usingComponents 后代码上传报错的Bug [#2652](https://github.com/dcloudio/uni-app/issues/2652)
   + 支付宝小程序平台 优化 支持 useDynamicPlugins 配置 [详情](https://ask.dcloud.net.cn/article/39114)
-  + 字节小程序平台 修复 基础库 2.0 以上组件关系错乱的Bug [#2651](https://github.com/dcloudio/uni-app/issues/2651)
+  + 抖音小程序平台 修复 基础库 2.0 以上组件关系错乱的Bug [#2651](https://github.com/dcloudio/uni-app/issues/2651)
 * 【App插件(含5+App和uni-app的App端)】
   + 新增 拍照和本地相册选择 支持设置 crop 裁剪编辑图片 [规范](https://www.html5plus.org/doc/zh_cn/camera.html#plus.camera.CameraOptions)
   + 新增 视频播放控件 VideoPlayer 播放http/https协议视频资源时支持设置请求的 header [规范](https://www.html5plus.org/doc/zh_cn/video.html#plus.video.VideoPlayerStyles)
@@ -1037,7 +1037,7 @@
   + App-iOS平台 修复 nvue video 组件动态更新 src 属性无法播放本地视频的Bug [详情](https://ask.dcloud.net.cn/question/113920)
   + H5平台 修复 unicloud-db 组件 开发环境下 设置属性 :getone="true" 时报错的Bug
   + 微信小程序平台 修复 unicloud-db 组件某些情况下无效的Bug
-  + 字节小程序平台 新增 支持分包加载 [详情](https://uniapp.dcloud.io/collocation/pages?id=subpackages)
+  + 抖音小程序平台 新增 支持分包加载 [详情](https://uniapp.dcloud.io/collocation/pages?id=subpackages)
 * 【uniCloud】
   + clientDB API 新增 树形数据查询 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=gettree)
 * 【App插件(含5+App和uni-app的App端)】
@@ -1492,7 +1492,7 @@
   + 小程序平台 修复 v-for 中属性值为对象表达式报错的Bug [#1450](https://github.com/dcloudio/uni-app/issues/1450)
   + 小程序平台 修复 v-for 遍历数值时模板中有复杂表达式不显示的Bug
   + 小程序平台 修复 v-if="false" 时标签内部的方法和过滤器仍然会执行的Bug [#334](https://github.com/dcloudio/uni-app/issues/334)
-  + 微信小程序平台、QQ小程序平台、字节跳动小程序平台 优化 自定义组件支持 v-show 指令 [#1724](https://github.com/dcloudio/uni-app/issues/1724)
+  + 微信小程序平台、QQ小程序平台、抖音小程序平台 优化 自定义组件支持 v-show 指令 [#1724](https://github.com/dcloudio/uni-app/issues/1724)
   + 支付宝小程序平台 修复 v-for 部分情况 key 不生效的Bug
   + 支付宝小程序平台 修复 支持 uni.getSavedFileList 接口
   + 支付宝小程序平台 修复 sjs 中 callMethod 不能正确调用的Bug
@@ -1949,7 +1949,7 @@
   + 阿里云 新增 支持云函数定时触发
   + 阿里云 新增 HBuilderX内置浏览器运行H5项目时，可在前端控制台直接打印云函数的日志
   + 阿里云 优化 云函数上传并运行时有时不能立即生效的问题
-  + 阿里云 修复 字节跳动小程序iOS端上传文件失败的Bug [详情](https://ask.dcloud.net.cn/question/93130)
+  + 阿里云 修复 抖音小程序iOS端上传文件失败的Bug [详情](https://ask.dcloud.net.cn/question/93130)
 * 【App插件(含5+App和uni-app的App端)】
   + 新增 原生导航标题栏的 titleIcon 支持 base64 图标，方便页面里已经存在的图标在滚动时绘制在原生导航栏上
   + 新增 actionSheet 取消按钮文字国际化（如设置按钮文字，则以设置文字为准，如未设置，则根据手机系统的语言显示）
@@ -2293,7 +2293,7 @@
 * 【uni-app】
   + 【重要】easycom 支持自动扫描组件，符合目录规则的组件，无需在pages.json配置即可直接使用 [详情](https://uniapp.dcloud.io/collocation/pages?id=easycom)
   + 【重要】App平台、H5平台 新增 支持 renderjs，替代 wxs ，以 vue 组件的写法运行在视图层 [详情](https://uniapp.dcloud.io/frame?id=renderjs)
-  + App平台、H5平台、字节跳动小程序平台 新增 swiper 组件支持 disable-touch 属性
+  + App平台、H5平台、抖音小程序平台 新增 swiper 组件支持 disable-touch 属性
   + App平台 修复 自定义组件模式 vue 文件不包含 script 节点时运行报错的Bug [详情](https://ask.dcloud.net.cn/question/87323)
   + APP平台 修复 nvue 页面 picker 组件时间、日期类型使用默认值报错的Bug [详情](https://ask.dcloud.net.cn/question/87203)
   + APP平台 修复 nvue 页面 appear、disappear 事件不返回 direction 的Bug
@@ -2478,7 +2478,7 @@
   + 小程序平台 修复 不能直接在模版内使用 $emit 的 Bug [详情](https://ask.dcloud.net.cn/question/82865)
   + 微信小程序平台 修复在发行模式使用 lodash@4.17.15 ，运行报错的 Bug[#994](https://github.com/dcloudio/uni-app/issues/994)
   + 支付宝小程序平台 修复 for 循环中 ref 生成的多个组件数组长度不准确的Bug [#930](https://github.com/dcloudio/uni-app/issues/930)
-  + 字节跳动小程序平台 修复 当 rpx 后跟着 !important 时，发行模式下 rpx 未被编译成px的Bug [#1014](https://github.com/dcloudio/uni-app/issues/1014)
+  + 抖音小程序平台 修复 当 rpx 后跟着 !important 时，发行模式下 rpx 未被编译成px的Bug [#1014](https://github.com/dcloudio/uni-app/issues/1014)
   + 百度小程序平台 修复 页面 onShow 只能触发一次的Bug
   + uni-ui 新增 uni-transition 过渡动画组件
   + uni-ui 新增 uni-fab 悬浮按钮支持nvue

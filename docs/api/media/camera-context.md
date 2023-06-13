@@ -3,7 +3,7 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|√|√|√|x|√|√|√|
 
@@ -17,7 +17,7 @@
 |setZoom|Object|设置缩放级别。|百度、QQ、快手、京东小程序不支持|
 |startRecord|Object|开始录像|京东小程序不支持|
 |stopRecord|Object|结束录像，成功则返回封面与视频。|京东小程序不支持|
-|onCameraFrame|Function|获取 Camera 实时帧数据。|微信小程序[详情](https://developers.weixin.qq.com/miniprogram/dev/api/CameraContext.onCameraFrame.html)、支付宝小程序[详情](https://opendocs.alipay.com/mini/03qitt)、字节小程序支持[详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/media/camera/camera-context/camera-context-on-camera-frame)|
+|onCameraFrame|Function|获取 Camera 实时帧数据。|微信小程序[详情](https://developers.weixin.qq.com/miniprogram/dev/api/CameraContext.onCameraFrame.html)、支付宝小程序[详情](https://opendocs.alipay.com/mini/03qitt)、抖音小程序支持[详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/media/camera/camera-context/camera-context-on-camera-frame)|
 
 ### cameraContext.takePhoto
 **takePhoto 的 Object 参数列表：**
@@ -57,7 +57,7 @@
 
 |参数|类型|默认值|必填|说明|
 |:-|:-|:-|:-|:-|
-|compressed|Boolean|false|否|启动视频压缩，压缩效果同 `chooseVideo` 。微信2.10.0+ 、字节2.41.0（Android暂不支持）、快手小程序支持|
+|compressed|Boolean|false|否|启动视频压缩，压缩效果同 `chooseVideo` 。微信2.10.0+ 、抖音2.41.0（Android暂不支持）、快手小程序支持|
 |success|Function||否|接口调用成功的回调函数 ，返回封面与视频的临时路径，res = { tempThumbPath, tempVideoPath }。|
 |fail|Function||否|接口调用失败的回调函数|
 |complete|Function||否|接口调用结束的回调函数（调用成功、失败都会执行）|

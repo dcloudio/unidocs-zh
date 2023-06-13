@@ -8,5 +8,5 @@
 - 微信小程序：[规范文档](https://developers.weixin.qq.com/miniprogram/dev/api/wx.createRewardedVideoAd.html)
 - 百度小程序：有组件但无API
 - 支付宝小程序：不支持此能力
-- 字节跳动小程序：仅小游戏可用，小程序不可用，不适用于uni-app
+- 抖音小程序：仅小游戏可用，小程序不可用，不适用于uni-app
 - QQ小程序：[规范文档](https://q.qq.com/wiki/develop/miniprogram/API/ad/qq.createRewardedVideoAd.html)

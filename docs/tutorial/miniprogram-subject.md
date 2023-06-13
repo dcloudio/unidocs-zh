@@ -17,7 +17,7 @@
 |微信小程序|支持微信小程序组件|wxcomponents|
 |支付宝小程序|支持支付宝小程序组件|mycomponents|
 |百度小程序|支持百度小程序组件|swancomponents|
-|字节跳动小程序、飞书小程序|支持字节跳动小程序、飞书小程序组件|ttcomponents|
+|抖音小程序、飞书小程序|支持抖音小程序、飞书小程序组件|ttcomponents|
 |QQ小程序|支持QQ小程序组件|wxcomponents|
 |快手小程序|支持快手小程序组件|kscomponents|
 |京东小程序|支持京东小程序组件|jdcomponents|
@@ -27,7 +27,7 @@
 - [微信小程序自定义组件](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
 - [百度小程序自定义组件](https://smartprogram.baidu.com/docs/develop/framework/custom-component/)
 - [支付宝小程序自定义组件](https://docs.alipay.com/mini/framework/custom-component-overview)
-- [字节跳动小程序自定义组件](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/guide/developing-and-testing-miniApp/front-end/mini-app-framework/custom-component/component-constructor)
+- [抖音小程序自定义组件](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/guide/developing-and-testing-miniApp/front-end/mini-app-framework/custom-component/component-constructor)
 - [飞书小程序自定义组件](https://open.feishu.cn/document/uYjL24iN/ugTOugTOugTO)
 - [QQ小程序自定义组件](https://q.qq.com/wiki/develop/miniprogram/frame/diy_components/)
 - [快手小程序自定义组件](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
@@ -253,7 +253,7 @@ uni-app可以将wxs代码编译到微信小程序、QQ小程序、app-vue、H5�
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√(不支持nvue)|√|√|SJS|Filter|x|√|
 

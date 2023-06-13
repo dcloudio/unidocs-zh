@@ -19,7 +19,7 @@
 |firstIpv4|Boolean|否|false|DNS解析时优先使用ipv4|仅 App-Android 支持 (HBuilderX 2.8.0+)|
 |enableHttp2|Boolean|否|false|开启 http2|微信小程序|
 |enableQuic|Boolean|否|false|开启 quic|微信小程序|
-|enableCache|Boolean|否|false|开启 cache|微信小程序、字节跳动小程序 2.31.0+|
+|enableCache|Boolean|否|false|开启 cache|微信小程序、抖音小程序 2.31.0+|
 |enableHttpDNS|Boolean|否|false|是否开启 HttpDNS 服务。如开启，需要同时填入 httpDNSServiceId 。 HttpDNS 用法详见 [移动解析HttpDNS](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/HTTPDNS.html)|微信小程序|
 |httpDNSServiceId|String|否||HttpDNS 服务商 Id。 HttpDNS 用法详见 [移动解析HttpDNS](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/HTTPDNS.html)|微信小程序|
 |enableChunked|Boolean|否|false|开启 transfer-encoding chunked|微信小程序|
@@ -35,7 +35,7 @@
 
 注意：method有效值必须大写，每个平台支持的method有效值不同，详细见下表。
 
-|method|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|快手小程序|京东小程序|
+|method|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |GET|√|√|√|√|√|√|√|√|
 |POST|√|√|√|√|√|√|√|√|
@@ -149,7 +149,7 @@ requestTask.abort();
 
 https 请求配置自签名证书
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√`(3.2.7+)`|x|x|x|x|x|x|x|x|
 

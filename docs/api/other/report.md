@@ -109,7 +109,7 @@ uni.report('search',{
 #### 百度小程序平台：
 - 数据分析：[swan.reportAnalytics](https://smartprogram.baidu.com/docs/develop/api/data/#swan-reportAnalytics/)
 
-#### 字节跳动小程序平台：
+#### 抖音小程序平台：
 - [reportAnalytics](https://developer.open-douyin.com/docs/resource/zh-CN/mini-game/develop/open-capacity/data-analysis/tt-report-analytics/)
 
 #### QQ小程序平台：

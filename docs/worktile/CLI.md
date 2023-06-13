@@ -109,7 +109,7 @@ yarn build:mp-baidu -watch
 yarn build:mp-baidu -w
 ```
 
-#### 字节跳动小程序
+#### 抖音小程序
 
 
 ```shell

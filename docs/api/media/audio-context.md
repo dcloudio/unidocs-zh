@@ -3,7 +3,7 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|1.23.4+|√|√|√|√|√|
 
@@ -15,14 +15,14 @@
 |startTime|Number|开始播放的位置（单位：s），默认 0|否||
 |autoplay|Boolean|是否自动开始播放，默认 false|否|H5端部分浏览器不支持|
 |loop|Boolean|是否循环播放，默认 false|否||
-|obeyMuteSwitch|Boolean|是否遵循系统静音开关，当此参数为 false 时，即使用户打开了静音开关，也能继续发出声音，默认值 true|否|微信小程序、百度小程序、字节跳动小程序、飞书小程序、京东小程序、快手小程序（仅在 iOS 上生效）|
+|obeyMuteSwitch|Boolean|是否遵循系统静音开关，当此参数为 false 时，即使用户打开了静音开关，也能继续发出声音，默认值 true|否|微信小程序、百度小程序、抖音小程序、飞书小程序、京东小程序、快手小程序（仅在 iOS 上生效）|
 |duration|Number|当前音频的长度（单位：s），只有在当前有合法的 src 时返回，需要在onCanplay中获取|是||
 |currentTime|Number|当前音频的播放位置（单位：s），只有在当前有合法的 src 时返回，时间不取整，保留小数点后 6 位|是||
 |paused|Boolean|当前是是否暂停或停止状态，true 表示暂停或停止，false 表示正在播放|是||
 |buffered|Number|音频缓冲的时间点，仅保证当前播放时间点到此时间点内容已缓冲。|是||
 |volume|Number|音量。范围 0~1。|否|&nbsp;|
 |sessionCategory|String|设置音频播放模式，可取值："ambient" - 不中止其他声音播放，不能后台播放，静音后无声音； "soloAmbient" - 中止其他声音播放，不能后台播放，静音后无声音； "playback" - 中止其他声音，可以后台播放，静音后有声音。 默认值为"playback"。|否|App 3.3.7+|
-|playbackRate|Number|播放的倍率。可取值：0.5/0.8/1.0/1.25/1.5/2.0，默认值为1.0|否|App  3.4.5+（Android 需要 6 及以上版本）、微信小程序 2.11.0、支付宝小程序、字节小程序 2.33.0+、快手小程序、百度小程序 3.120.2+|
+|playbackRate|Number|播放的倍率。可取值：0.5/0.8/1.0/1.25/1.5/2.0，默认值为1.0|否|App  3.4.5+（Android 需要 6 及以上版本）、微信小程序 2.11.0、支付宝小程序、抖音小程序 2.33.0+、快手小程序、百度小程序 3.120.2+|
 
 
 
@@ -45,16 +45,16 @@
 |onWaiting|callback|音频加载中事件，当音频因为数据不足，需要停下来加载时会触发||
 |onSeeking|callback|音频进行 seek 操作事件||
 |onSeeked|callback|音频完成 seek 操作事件||
-|offCanplay|callback|取消监听 onCanplay 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
-|offPlay|callback|取消监听 onPlay 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
-|offPause|callback|取消监听 onPause 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
-|offStop|callback|取消监听 onStop 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
-|offEnded|callback|取消监听 onEnded 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
-|offTimeUpdate|callback|取消监听 onTimeUpdate 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
-|offError|callback|取消监听 onError 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
-|offWaiting|callback|取消监听 onWaiting 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
-|offSeeking|callback|取消监听 onSeeking 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
-|offSeeked|callback|取消监听 onSeeked 事件|微信小程序1.9.0+，支付宝小程序，字节小程序、百度小程序|
+|offCanplay|callback|取消监听 onCanplay 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offPlay|callback|取消监听 onPlay 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offPause|callback|取消监听 onPause 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offStop|callback|取消监听 onStop 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offEnded|callback|取消监听 onEnded 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offTimeUpdate|callback|取消监听 onTimeUpdate 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offError|callback|取消监听 onError 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offWaiting|callback|取消监听 onWaiting 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offSeeking|callback|取消监听 onSeeking 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offSeeked|callback|取消监听 onSeeked 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
 
 errCode 说明
 

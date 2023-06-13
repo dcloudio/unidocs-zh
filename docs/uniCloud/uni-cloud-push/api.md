@@ -117,7 +117,7 @@ await uniPush.sendMessage(OBJECT)
 |mp-weixin|微信小程序|
 |mp-alipay|支付宝小程序|
 |mp-baidu|百度小程序|
-|mp-toutiao|字节跳动小程序|
+|mp-toutiao|抖音小程序|
 |mp-lark|飞书小程序|
 |mp-qq|QQ小程序|
 |mp-kuaishou|快手小程序|

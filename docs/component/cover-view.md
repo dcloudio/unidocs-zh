@@ -6,7 +6,7 @@ app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|x|√|√|x|√|√|
 
@@ -31,7 +31,7 @@ app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，
 - 微信小程序部分原生组件实现了同层渲染，在指定的基础库版本上，某些原生组件可无需使用`cover-view`覆盖，[详见](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)
 - 百度小程序iOS端暂不支持一个页面有多个video时嵌套`cover-view`，[详见](https://smartprogram.baidu.com/docs/develop/component/view_cover-view/)。
 - 支付宝小程序中 `cover-view` 不支持嵌套，[详见](https://opendocs.alipay.com/mini/component/cover-view)。
-- 字节跳动小程序不需要`cover-view`，因其原生组件均实现了同层渲染。
+- 抖音小程序不需要`cover-view`，因其原生组件均实现了同层渲染。
 - 360小程序不存在原生组件，无此概念。
 - cover-view使用注意：京东小程序[详见](https://mp-docs.jd.com/doc/dev/component/548)、快手小程序[详见](https://mp.kuaishou.com/docs/develop/components/view/cover-view.html)、QQ小程序[详见](https://q.qq.com/wiki/develop/miniprogram/component/view-container/cover.html#cover-view) 。
 

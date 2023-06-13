@@ -46,14 +46,14 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |			|hostVersion		|宿主版本。如：微信版本号|仅 UniMPSDK 支持	|不支持|小程序宿主版本||uni-app 3.4.10+|
 |			|hostLanguage		|宿主语言|仅 UniMPSDK 支持	|不支持|小程序宿主语言||uni-app 3.4.10+|
 |			|hostTheme			|宿主主题|`light`、`dark`。仅 UniMPSDK 支持	|不支持|`light`、`dark`。前提是微信小程序全局配置"darkmode":true时才能获取||uni-app 3.4.10+|
-|			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持|微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)||uni-app 3.4.13+|
+|			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)||uni-app 3.4.13+|
 |			|hostPackageName	|小程序宿主包名|仅 UniMPSDK 支持	|不支持|不支持||uni-app 3.4.10+|
 |			|hostSDKVersion	|uni小程序SDK版本、小程序客户端基础库版本|仅 UniMPSDK 支持	|不支持|||uni-app 3.4.13+|
 |uni-app框架	|uniPlatform		|uni-app 运行平台，与条件编译平台相同。[详见](#uniplatform) |app|`web`或`h5`|各家小程序，如`mp-weixin`||uni-app 3.4.10+|
 |			|uniCompileVersion	|uni 编译器版本号。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
 |			|uniRuntimeVersion	|uni 运行时版本。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
 |app	|appId|`manifest` 中应用appid，即DCloud appid。			|||||uni-app 3.4.10+|
-|			|appName			|`manifest` 中应用名称	||||和`字节跳动小程序`字段冲突，`字节跳动小程序`原字段与`hostName`一致|uni-app 3.4.10+|
+|			|appName			|`manifest` 中应用名称	||||和`抖音小程序`字段冲突，`抖音小程序`原字段与`hostName`一致|uni-app 3.4.10+|
 |			|appVersion			|`manifest` 中应用版本名称。		|||||uni-app 3.4.10+|
 |			|appVersionCode		|`manifest` 中应用版本名号。		|||||uni-app 3.4.10+|
 |			|appWgtVersion		|应用资源（wgt）的版本名称。		|||||uni-app 3.4.15+|
@@ -66,8 +66,8 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |			|windowTop			|可使用窗口的顶部位置	|||||		|
 |			|windowBottom		|可使用窗口的底部位置	|||||		|
 |			|statusBarHeight	|手机状态栏的高度||||||		
-|			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、字节跳动、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||	
-|			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。与小程序定义的 safeArea 用途相同，但是规范参考 iOS 平台的 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) 更利于理解和使用。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、字节跳动、飞书、支付宝小程序（iOS真机）、华为快应用||uni-app 2.5.3+|
+|			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||	
+|			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。与小程序定义的 safeArea 用途相同，但是规范参考 iOS 平台的 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) 更利于理解和使用。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝小程序（iOS真机）、华为快应用||uni-app 2.5.3+|
 
 #### 某些小程序特殊的返回参数
 
@@ -97,7 +97,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |参数|说明|平台差异说明|
 |:-|:-|:-|
 |pixelRatio			|设备像素比		||
-|brand|设备品牌。uni-app 3.4.10+ 后该字段为全小写，可能要做兼容处理|App、微信小程序、百度小程序、字节跳动小程序、飞书小程序、QQ小程序|
+|brand|设备品牌。uni-app 3.4.10+ 后该字段为全小写，可能要做兼容处理|App、微信小程序、百度小程序、抖音小程序、飞书小程序、QQ小程序|
 |model|设备型号|全平台支持。Web 端部分设备无法获取具体型号|
 |system|操作系统名称及版本，如Android 10||
 |language|应用设置的语言||
@@ -108,7 +108,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |swanNativeVersion|宿主平台版本号|百度小程序|
 |app|当前运行的客户端|支付宝小程序|
 |AppPlatform|App平台|QQ小程序|
-|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、字节小程序(2.53.0+)|
+|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)|
 
 
 #### uniPlatform 返回值说明 @uniplatform
@@ -120,7 +120,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |mp-weixin|微信小程序|
 |mp-alipay|支付宝小程序|
 |mp-baidu|百度小程序|
-|mp-toutiao|字节跳动小程序|
+|mp-toutiao|抖音小程序|
 |mp-lark|飞书小程序|
 |mp-qq|QQ小程序|
 |mp-kuaishou|快手小程序|
@@ -168,7 +168,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |QUARK|夸克浏览器|
 |AK|阿里健康|
 |YK|优酷|
-|[字节宿主平台枚举值列表](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|字节跳动系列|
+|[抖音宿主平台枚举值列表](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|抖音系列|
 |qq|QQ|
 |KUAISHOU|快手|
 
@@ -249,7 +249,7 @@ uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhon
 - [微信小程序](https://developers.weixin.qq.com/miniprogram/dev/api/base/system/wx.getSystemInfoAsync.html)
 - [支付宝小程序](https://opendocs.alipay.com/mini/api/system-info)
 - [百度小程序](https://smartprogram.baidu.com/docs/develop/api/device_sys/swan-getSystemInfoSync/)
-- [字节小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info-sync/)
+- [抖音小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info-sync/)
 - [飞书小程序](https://open.feishu.cn/document/uYjL24iN/uQjNx4CN2EjL0YTM)
 - [QQ小程序](https://q.qq.com/wiki/develop/game/API/basic/system.html#qq-getsysteminfo)
 - [快手小程序](https://mp.kuaishou.com/docs/develop/api-next/basic/system/ks.getSystemInfoSync.html#systeminfo)

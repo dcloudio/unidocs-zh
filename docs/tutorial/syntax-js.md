@@ -26,7 +26,7 @@ ES6 API 的支持，详见如下表格部分（`x` 表示不支持，无特殊�
     * 微信小程序[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/js-support.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%20ES6%20API%20%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)
     * 阿里小程序[详见](https://docs.alipay.com/mini/framework/implementation-detail)
     * 百度小程序[详见](https://smartprogram.baidu.com/docs/develop/framework/operating-environment/)
-    * 字节跳动小程序[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/guide/developing-and-testing-miniApp/front-end/mini-app-runtime/javascript-support)
+    * 抖音小程序[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/guide/developing-and-testing-miniApp/front-end/mini-app-runtime/javascript-support)
     * QQ小程序[详见](https://q.qq.com/wiki/develop/miniprogram/frame/useful/useful_env.html#es6%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)
 
 |String|iOS8|iOS9|iOS10|Android|

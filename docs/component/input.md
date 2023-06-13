@@ -14,7 +14,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 |password|Boolean|false|是否是密码类型|H5和App写此属性时，type失效|
 |placeholder|String||输入框为空时占位符||
 |placeholder-style|String||指定 placeholder 的样式||
-|placeholder-class|String|"input-placeholder"|指定 placeholder 的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/|字节跳动小程序、飞书小程序、快手小程序不支持|
+|placeholder-class|String|"input-placeholder"|指定 placeholder 的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/|抖音小程序、飞书小程序、快手小程序不支持|
 |disabled|Boolean|false|是否禁用||
 |maxlength|Number|140|最大输入长度，设置为 -1 的时候不限制最大长度||
 |cursor-spacing|Number|0|指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离|App、微信小程序、百度小程序、QQ小程序、京东小程序|
@@ -78,7 +78,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 - 如果需要在小程序平台输入浮点型数字，请使用 `digit` 类型。
 - 小程序端input在置焦时，会表现为原生控件，此时会层级变高。如需前端组件遮盖input，需让input失焦，或使用cover-view等覆盖原生控件的方案，[参考](https://uniapp.dcloud.io/component/native-component)。具体来讲，阿里小程序的input为text且置焦为原生控件；微信、头条、QQ所有input置焦均为原生控件；百度小程序置焦时仍然是非原生的。也可以参考[原生控件](https://uniapp.dcloud.io/component/native-component)文档
 - input组件若不想弹出软键盘，可设置为disabled
-- placeholder-style指定样式类font-size单位为rpx时，字节跳动小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。
+- placeholder-style指定样式类font-size单位为rpx时，抖音小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。
 :::
 
 #### text-content-type 有效值 @text-content-type

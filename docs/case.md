@@ -248,7 +248,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 	</a>
     <a href="#" class="clear-style barcode-view">
 		<img src="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/wastesep-mp-toutiao.png" width="200"/>
-		<span style="margin-top:15px;">字节跳动小程序码</span>
+		<span style="margin-top:15px;">抖音小程序码</span>
 	</a>
 </div> -->
 
@@ -290,9 +290,9 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **华为：** 荣耀商城。微信小程序搜索“荣耀亲选商城”、[H5](https://m.qinxuan.honor.cn/)、[App部分栏目使用DCloud SDK](https://appgallery1.huawei.com/#/app/C100382765)
 
-**字节跳动：** 抖音小游戏中心。
+**抖音：** 抖音小游戏中心。
 
-**字节跳动：** 飞书部分页面feishu.cn
+**抖音：** 飞书部分页面feishu.cn
 
 **美团：** 微信小程序搜索“美团充电宝”，App内充电宝栏目
 

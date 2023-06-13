@@ -691,7 +691,7 @@ iOS平台云端打包相关配置
         "appid": "百度小程序appid"
     },
     "mp-toutiao": {
-        "appid": "字节跳动小程序appid"
+        "appid": "抖音小程序appid"
     },
     "mp-lark": {
         "appid": "飞书小程序appid"

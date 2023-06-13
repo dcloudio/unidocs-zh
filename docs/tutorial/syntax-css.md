@@ -19,7 +19,7 @@ uni-app 有 vue 页面和 nvue 页面。vue 页面是 webview 渲染的、app �
 
 vue 页面支持下面这些普通 H5 单位，但在 nvue 里不支持：
 
-- rem 根字体大小可以通过 [page-meta](/component/page-meta?id=page-meta) 配置<span style="display:none">字节跳动小程序和飞书小程序：屏幕宽度/20、百度小程序：16px、支付宝小程序：50px</span>
+- rem 根字体大小可以通过 [page-meta](/component/page-meta?id=page-meta) 配置<span style="display:none">抖音小程序和飞书小程序：屏幕宽度/20、百度小程序：16px、支付宝小程序：50px</span>
 - vh viewpoint height，视窗高度，1vh 等于视窗高度的 1%
 - vw viewpoint width，视窗宽度，1vw 等于视窗宽度的 1%
 

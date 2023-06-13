@@ -4,7 +4,7 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
@@ -17,9 +17,9 @@
 |speed|Number|速度 (m/s)|H5不支持|
 |accuracy|number|位置的精确度||
 |altitude|number|高度 (m)|H5不支持|
-|verticalAccuracy|number|垂直精度 (m)|字节小程序、快手小程序 Android 无法获取，返回 0|
-|horizontalAccuracy|number|水平精度 (m)|字节小程序不支持|
-|city|string|定位到的城市信息|百度小程序、字节小程序（iOS 不支持）|
+|verticalAccuracy|number|垂直精度 (m)|抖音小程序、快手小程序 Android 无法获取，返回 0|
+|horizontalAccuracy|number|水平精度 (m)|抖音小程序不支持|
+|city|string|定位到的城市信息|百度小程序、抖音小程序（iOS 不支持）|
 |cityCode|String|城市编码|百度小程序||street|String|街道名称
 |city|String|城市名称|百度小程序|
 country|String|国家|百度小程序|
@@ -33,7 +33,7 @@ altitudeAccuracy|Number|海拔的精确度信息|App|
 **注意**
 - 该方法会持续监听地理位置信息的变化，建议在不需要监听地理位置信息变化后，直接调用 `uni.stopLocationUpdate` 方法取消监听。
 - `微信小程序`若使用该接口，需要在 app.json 中进行声明，否则将无法正常使用该接口，[详情](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html)
-- `字节小程序`调用此 API 需要申请高精度权限，具体信息见[高精度定位运营规范](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/operation/platform-capabilities/high-progress-targeting/gaojingdu/)。
+- `抖音小程序`调用此 API 需要申请高精度权限，具体信息见[高精度定位运营规范](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/operation/platform-capabilities/high-progress-targeting/gaojingdu/)。
 
 **示例**
 
@@ -49,7 +49,7 @@ uni.onLocationChange(function (res) {
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
@@ -73,7 +73,7 @@ uni.onLocationChange(function (res) {
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
@@ -82,7 +82,7 @@ uni.onLocationChange(function (res) {
 |参数名|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
 |errCode|Number|错误|微信小程序|
-|errMsg|String|错误信息|字节小程序|
+|errMsg|String|错误信息|抖音小程序|
 
 ### uni.offLocationChangeError(FUNCTION CALLBACK)
 
@@ -90,7 +90,7 @@ uni.onLocationChange(function (res) {
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
@@ -106,7 +106,7 @@ uni.onLocationChange(function (res) {
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
@@ -114,7 +114,7 @@ uni.onLocationChange(function (res) {
 
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-:|
-|type|String|否|指定坐标系类型，可以是 wgs84 或 gcj02|微信小程序、字节小程序|
+|type|String|否|指定坐标系类型，可以是 wgs84 或 gcj02|微信小程序、抖音小程序|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
@@ -137,7 +137,7 @@ uni.startLocationUpdate({
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
@@ -155,7 +155,7 @@ uni.startLocationUpdate({
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|x|x|x|x|√|x|
 
@@ -163,7 +163,7 @@ uni.startLocationUpdate({
 
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-:|
-|type|String|否|指定坐标系类型，可以是 wgs84 或 gcj02|微信小程序、字节小程序|
+|type|String|否|指定坐标系类型，可以是 wgs84 或 gcj02|微信小程序、抖音小程序|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）||

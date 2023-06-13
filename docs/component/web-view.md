@@ -22,7 +22,7 @@
 
 **src**
 
-|来源|App|H5|微信小程序|支付宝小程序|百度小程序|字节跳动小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
+|来源|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |网络|√|√|√|√|√|√|√|√|√|√|√|
 |本地|√|√|x|x|x|x|x|x|x|x|x|
@@ -122,8 +122,8 @@
 |uni.reLaunch|[reLaunch](/api/router?id=relaunch)||
 |uni.switchTab|[switchTab](/api/router?id=switchtab)||
 |uni.navigateBack|[navigateBack](/api/router?id=navigateback)||
-|uni.postMessage|向应用发送消息|字节跳动小程序不支持、H5 暂不支持（可以直接使用 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)）|
-|uni.getEnv|获取当前环境|字节跳动小程序与飞书小程序不支持|
+|uni.postMessage|向应用发送消息|抖音小程序不支持、H5 暂不支持（可以直接使用 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)）|
+|uni.getEnv|获取当前环境|抖音小程序与飞书小程序不支持|
 
 ### uni.postMessage(OBJECT)
 网页向应用发送消息，在 `<web-view>` 的 `message` 事件回调 `event.detail.data` 中接收消息。

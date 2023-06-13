@@ -102,7 +102,7 @@ npm run build:%PLATFORM%
 |mp-alipay|支付宝小程序|
 |mp-baidu|百度小程序|
 |mp-weixin|微信小程序|
-|mp-toutiao|字节跳动小程序|
+|mp-toutiao|抖音小程序|
 |mp-lark|飞书小程序|
 |mp-qq|qq 小程序|
 |mp-360|360 小程序|

@@ -225,4 +225,4 @@ pageClass: custom-page-class
 
 实际运行效果如下（点击图片可放大）：
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg" loading="lazy" class="zooming"></img>

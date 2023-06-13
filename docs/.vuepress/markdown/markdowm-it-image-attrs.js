@@ -5,13 +5,13 @@ module.exports = function (md, opts) {
 				blockToken.children.forEach(function (token) {
 					const type = token.type;
 					if (type === 'image') {
-						const src = token.attrs.find(attr => attr[0] === 'src');
+						const src = token.attrGet('src')
 						if (
+							!token.attrGet('loading') &&
 							src &&
-							src[1].indexOf('qiniu-web-assets.dcloud.net.cn') > -1 &&
-							token.attrs.map(attr => attr[0]).indexOf('loading') < 0
+							src.indexOf('qiniu-web-assets.dcloud.net.cn') > -1
 						) {
-							token.attrs.push(['loading', 'lazy']);
+							token.attrPush(['loading', 'lazy'])
 						}
 					}
 				});

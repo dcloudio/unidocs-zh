@@ -93,7 +93,6 @@ console.log("result", result);
 |street							| String|街道/道路，可能为空字串|all		|
 |street_number			| String|门牌，可能为空字串			|all		|
 |adcode							| String|行政区划代码						|all		|
-|towncode						| String|乡镇街道编码						|all		|
 |pois								| Array	|周边POI								|all		|
 | &emsp;&#124;-- id				|String	|id											|all		|
 | &emsp;&#124;-- title		|String	|地点名称								|all		|
@@ -157,8 +156,11 @@ let uniMapService = new UniMapService({
 });
 // 调用API
 let result = await uniMapService.translate({
-  locations: "39.12,116.83;30.21,115.43",
-  type: 3
+	locations: [
+		{ lat: 39.908815, lng: 116.397507 },
+		{ lat: 39.908815, lng: 116.397107 }
+	],
+	type: 3
 });
 console.log("result", result);
 ```
@@ -237,7 +239,7 @@ let uniMapService = new UniMapService({
 // 调用API
 let result = await uniMapService.inputtips({
 	keyword: "人民医院",
-	region: "北京市"
+	city: "北京市"
 });
 console.log("result", result);
 ```
@@ -249,7 +251,9 @@ console.log("result", result);
 |keyword				|String	|是		| 用户输入的关键词（希望获取后续提示的关键词）																																														|all																																																																				|
 |city						|String	|是		| 限制城市范围																																																														|all																																																																				|
 |citylimit			|Boolean|否		| false：当前城市无结果时，自动扩大范围到全国匹配（默认）<br/>true：固定在当前城市																												| all																																																																				|
-|location				|String	|否		| 定位坐标，传入后，若用户搜索关键词为类别词（如酒店、餐馆时），<br/>与此坐标距离近的地点将靠前显示<br/>格式：location=lat<纬度>,lng<经度>|all																																																																				|
+|location				|Object	|否		| 定位坐标，传入后，若用户搜索关键词为类别词（如酒店、餐馆时），<br/>与此坐标距离近的地点将靠前显示|all			
+| &emsp;&#124;-- lat|Number	|纬度															|all	|
+| &emsp;&#124;-- lng|Number	|经度															|all	|																																																															|
 |get_subpois		|Number	|否		| 是否返回子地点，如大厦停车场、出入口等取值<br/>0：不返回（默认） <br/>1：返回）																													|腾讯地图																																																																		|
 |policy					|Number	|否		| 检索策略																																																																|腾讯地图																																																																		|
 |filter					|String	|否		| 筛选条件																																																																|腾讯地图																																																																		|
@@ -276,7 +280,7 @@ console.log("result", result);
 | &emsp;&#124;-- adcode		|Number	|行政区划代码																																												|all			|
 | &emsp;&#124;-- province	|String	|省																																																	|腾讯地图	|
 | &emsp;&#124;-- city			|String	|市																																																	|腾讯地图	|
-| &emsp;&#124;-- district	|String	|区/县，当type（POI类型）为3（公交线路）时，district由city补全																			|腾讯地图	|
+| &emsp;&#124;-- district	|String	|腾讯地图：区/县，当type（POI类型）为3（公交线路）时，district由city补全<br/>高德地图为:省+市+区（直辖市为“市+区”）				|all	|
 |sub_pois						|String	|子地点列表，仅在输入参数get\_subpois=1时返回																												|腾讯地图	|
 | &emsp;&#124;-- parent_id|String	|主地点ID，对应data中的地点ID																																				|腾讯地图	|
 | &emsp;&#124;-- id				|String	|地点唯一标识																																												|腾讯地图	|

@@ -3420,7 +3420,7 @@ if __name__ == "__main__":
 ```
 
 #### Go
-```golang
+```go
 package main
 
 import (

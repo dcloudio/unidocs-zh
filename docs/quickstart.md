@@ -247,7 +247,7 @@ npm install -g @vue/cli
 vue create -p dcloudio/uni-preset-vue my-project
 ```
 
-**使用alpha版**（对应HBuilderX最新alpha版）
+**使用Alpha版**（对应HBuilderX最新Alpha版）
 
 ```
 vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project

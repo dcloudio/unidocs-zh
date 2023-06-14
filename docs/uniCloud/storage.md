@@ -216,7 +216,7 @@ uniCloud.getTempFileURL({
 
 |阿里云																										|腾讯云	|
 |----																											|----		|
-|HBuilderX 3.6.10+（alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
 
 #### 请求参数
 
@@ -696,7 +696,7 @@ let result = await uniCloud.downloadFile({
 
 |阿里云																										|腾讯云	|
 |----																											|----		|
-|HBuilderX 3.6.10+（alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
 
 #### 请求参数
 

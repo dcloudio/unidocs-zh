@@ -91,7 +91,7 @@ llm.chatCompletion({
 
 ## API@api
 
-> 新增于HBuilderX正式版 3.7.10+， alpha版 3.7.13+
+> 新增于HBuilderX正式版 3.7.10+， Alpha版 3.7.13+
 
 :::warning 注意
 使用低版本HBuilder，只能上传到uniCloud云端联调。因为低版本的uniCloud本地运行插件不支持`uni-ai`。云端和本地扩展库差异参考：[云端和本地扩展库差异](rundebug.md#diff-extension)
@@ -321,7 +321,7 @@ console.log(res);
 
 #### 流式响应@chat-completion-stream
 
-> 新增于HBuilderX正式版 3.7.10+， alpha版 HBuilderX 3.8.0+
+> 新增于HBuilderX正式版 3.7.10+， Alpha版 HBuilderX 3.8.0+
 
 访问AI聊天接口时，如生成内容过大，响应时间会很久，前端用户需要等待很长时间才会收到结果。
 

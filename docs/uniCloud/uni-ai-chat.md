@@ -1,6 +1,6 @@
 ## 简介
 
-> 支持HBuilder版本，正式版 3.7.10+，alpha版 3.8.0+
+> 支持HBuilder版本，正式版 3.7.10+，Alpha版 3.8.0+
 
 `uni-ai-chat`是基于[uni-ai](uni-ai.md)的聊天项目模板。它包含一个前端页面(路径：`/pages/chat/chat.vue`)和一个云对象(路径：`uniCloud/cloudfunctions/uni-ai-chat/index.obj.js`)
 

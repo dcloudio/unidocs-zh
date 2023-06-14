@@ -65,7 +65,7 @@ npm install -g @vue/cli
   ```shell
   npx @dcloudio/uvm
   ```
-* 更新到最新 alpha 版
+* 更新到最新 Alpha 版
   ```shell
   npx @dcloudio/uvm alpha
   ```
@@ -77,7 +77,7 @@ npm install -g @vue/cli
   ```shell
   npx @dcloudio/uvm 3.2.12.20211029
   ```
-* 更新到 alpha 版指定版本
+* 更新到 Alpha 版指定版本
   ```shell
   npx @dcloudio/uvm 3.2.0-alpha
   ```

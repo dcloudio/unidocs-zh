@@ -488,32 +488,14 @@ console.log("result", result);
 
 **请求参数**
 
-|参数											|类型		|必填	|说明																																																																																																																																							|兼容性															|
-|:--											|:-:		|:-:	|:--																																																																																																																																							|:-:																|
-|mode											|String	|是		| 交通方式 固定为：walking																																																																																																																												|all																|
-|from											|String	|是		| 起点位置坐标，格式：lat,lng																																																																																																																											|all																|
-|to												|String	|是		| 终点位置坐标，格式：lat,lng																																																																																																																											|all																|
-|from_poi									|String	|否		| 起点POI ID，传入后，优先级高于from（坐标）																																																																																																																			|all																|
-|to_poi										|String	|否		| 终点POI ID，传入后，优先级高于from（坐标）																																																																																																																			|all																|
-|policy										|String	|否		| 算路策略 [详情](#drivingroutepolicy)																																																																																																																						|all																|
-|waypoints								|Array	|否		| 途经点 <br/>腾讯地图最大支持30个<br/>高德地图最大支持16个																																																																																																												|all																|
-| &emsp;&emsp;&#124;-- lat|Number|纬度																																																																																																																																							|all																|
-| &emsp;&emsp;&#124;-- lng|Number|经度																																																																																																																																							|all																|
-|avoid_polygons						|String	|否		| 避让区域																																																																																																																																				|all																|
-|road_type								|Number	|否		| [from辅助参数] 起点道路类型[详情](#routeroadtype)																																																																																																																|all																|
-|plate_number							|String	|否		| 车牌号，填入后，路线引擎会根据车牌对限行区域进行避让，不填则不不考虑限行问题																																																																																																		|all																|
-|cartype									|Number	|否		| 车辆类型（影响限行规则），<br/>取值：<br/>0：[默认]普通汽车 <br/>1：新能源 <br/>2：插电式混动汽车																																																																																								|腾讯地图：0、1; 高德地图：全部支持	|
-|heading									|Number	|否		| [from辅助参数]在起点位置时的车头方向，数值型，取值范围0至360（0度代表正北，顺时针一周360度）																																																																																										|腾讯地图														|
-|speed										|Number	|否		| [from辅助参数]速度，单位：米/秒，默认3。 当速度低于1.39米/秒时，heading将被忽略																																																																																																	|腾讯地图														|
-|accuracy									|Number	|否		| [from辅助参数]定位精度，单位：米，取>0数值，默认5。 当定位精度>30米时heading参数将被忽略																																																																																												|腾讯地图														|
-|from_track								|Number	|否		| [from辅助参数]起点轨迹																																																																																																																													|腾讯地图														|
-|get_mp										|Number	|否		| 是否返回多方案 <br/>0：[默认]仅返回一条路线方案 <br/>1：返回多方案（最多可返回三条方案供用户备选）																																																																																							|腾讯地图														|
-|get_speed								|Number	|否		| 是否返回路况（道路速度）<br/>0：[默认]不返回路况 1：返回路况																																																																																																										|腾讯地图														|
-|added_fields							|Number	|否		| 返回指定标准附加字段，取值支持 cities 路线途经行政区划信息(按路线A途经顺序排序)																																																																																																	|腾讯地图														|
-|no_step									|Number	|否		| 不返回路线引导信息，可使回包数据量更小，<br/>取值：<br/>0：[默认]返回路线引导信息 <br/>1：不返回																																																																																								|腾讯地图														|
-|avoidroad								|String	|否		| 避让道路名，只支持一条避让道路																																																																																																																									|高德地图														|
-|ferry										|Number	|否		| 是否使用轮渡 <br/>0：使用渡轮 <br/>1：不使用渡轮																																																																																																																|高德地图														|
-|show_fields							|Number	|否		| 返回结果控制，show\_fields用来筛选response结果中可选字段。<br/>show\_fields的使用需要遵循如下规则：<br/>1、具体可指定返回的字段类请见下方返回结果说明中的“show\_fields”内字段类型<br/>2、多个字段间采用“,”进行分割<br/>3、show\_fields未设置时，只返回基础信息类内字段<br/>	|高德地图														|
+|参数							|类型		|必填	|说明																																																								|兼容性		|
+|:--							|:-:		|:-:	|:--																																																								|:-:			|
+|mode							|String	|是		| 交通方式 固定为：walking																																													|all			|
+|from							|String	|是		| 起点位置坐标，格式：lat,lng																																												|all			|
+|to								|String	|是		| 终点位置坐标，格式：lat,lng																																												|all			|
+|to_poi						|String	|否		| 终点POI ID，传入后，优先级高于from（坐标）																																				|腾讯地图			|
+|alternative_route|Number	|否		| 1：多备选路线中第一条路线<br/>2：多备选路线中前两条路线<br/>3：多备选路线中三条路线<br/>不传则默认返回一条路线方案|高德地图	|
+|show_fields			|String	|否		| 返回结果控制，show\_fields用来筛选response结果中可选字段。<br/>show\_fields的使用需要遵循如下规则：<br/>1、具体可指定返回的字段类请见下方返回结果说明中的“show\_fields”内字段类型<br/>2、多个字段间采用“,”进行分割<br/>3、show\_fields未设置时，只返回基础信息类内字段<br/>	|高德地图														|
 
 
 **返回参数**
@@ -522,60 +504,30 @@ console.log("result", result);
 
 **步行（walking）返回参数**
 
-|参数																					|类型		|说明																																																																																					|兼容性															|
-|:--																					|:-:		|:--																																																																																					|:-:																|
-|routes																				|Array	| 路线方案																																																																																		|all																|
-| &emsp;&#124;-- mode													|String	|方案交通方式																																																																																	|all																|
-| &emsp;&#124;-- tags													|Array	|方案标签																																																																																			|腾讯地图														|
-| &emsp;&#124;-- distance											|Number	|方案总距离，单位：米																																																																													|all																|
-| &emsp;&#124;-- traffic\_light\_count				|Number	|方案途经红绿灯个数																																																																														|腾讯地图														|
-| &emsp;&#124;-- restriction_status						|Object	|限行状态码：<br/>0 途经没有限行城市，或路线方案未涉及限行区域<br/>1 途经包含有限行的城市<br/>3 [设置车牌] 已避让限行<br/>4 [设置车牌] 无法避开限行区域（本方案包含限行路段）	|腾讯地图：0、1、3、4 高德地图：0、1|
-| &emsp;&#124;-- polyline											|Array	|方案路线坐标点串																																																																															|腾讯地图														|
-| &emsp;&#124;-- waypoints										|Array	|途经点，顺序与输入waypoints一致 （输入waypoints时才会有此结点返回）																																																					|腾讯地图														|
-| &emsp;&emsp;&#124;-- title									|String	|途经点路名																																																																																		|all																|
-| &emsp;&emsp;&#124;-- location								|Object	|途经点坐标：																																																																																	|all																|
-| &emsp;&emsp;&emsp;&#124;-- lat							|Number	|纬度																																																																																					|all																|
-| &emsp;&emsp;&emsp;&#124;-- lng							|Number	|经度																																																																																					|all																|
-| &emsp;&emsp;&#124;-- polyline_idx						|Number	|该途经点在polyline中的索引位置（数组下标位置）																																																																|all																|
-| &emsp;&emsp;&#124;-- duration								|Number	|预估到达耗时，单位：分钟																																																																											|all																|
-| &emsp;&emsp;&#124;-- distance								|Number	|起点到该途经点的距离，单位：米																																																																								|all																|
-| &emsp;&#124;-- taxi_cost										|Number	|预估打车费用，单位：元																																																																												|all																|
-| &emsp;&#124;-- cities												|Array	|路线途经行政区划（按途经顺序排序），数组中每个对象为一个区划																																																									|腾讯地图														|
-| &emsp;&emsp;&#124;-- adcode									|Number	|途经行政区划的代码，代码对应的省市																																																																						|腾讯地图														|
-| &emsp;&#124;-- steps												|Array	|路线步骤																																																																																			|all																|
-| &emsp;&emsp;&#124;-- instruction						|String	|阶段路线描述																																																																																	|all																|
-| &emsp;&emsp;&#124;-- polyline_idx						|Array	|阶段路线坐标点串在方案路线坐标点串的位置																																																																			|腾讯地图														|
-| &emsp;&emsp;&#124;-- road_name							|String	|阶段路线路名																																																																																	|all																|
-| &emsp;&emsp;&#124;-- dir_desc								|String	|阶段路线方向																																																																																	|all																|
-| &emsp;&emsp;&#124;-- distance								|Number	|阶段路线距离，单位：米																																																																												|all																|
-| &emsp;&emsp;&#124;-- act_desc								|String	|阶段路线末尾动作：如：左转调头																																																																								|腾讯地图														|
-| &emsp;&emsp;&#124;-- accessorial_desc				|String	|末尾辅助动作：如：到达终点																																																																										|腾讯地图														|
-| &emsp;&#124;-- speed												|Array	|路况信息，只有设置get_speed=1才会返回																																																																				|腾讯地图														|
-| &emsp;&emsp;&#124;-- polyline_idx						|String	|阶段路线坐标点串，在路线坐标点串的位置																																																																				|腾讯地图														|
-| &emsp;&emsp;&#124;-- distance								|String	|距离，单位：米																																																																																|腾讯地图														|
-| &emsp;&emsp;&#124;-- level									|String	|路况类型：0:畅通 1:缓行 2:拥堵 3:无路况 4:严重拥堵																																																														|腾讯地图														|
-| &emsp;&#124;-- show\_fields									|Object	|可选差异化结果返回																																																																														|高德地图														|
-| &emsp;&emsp;&#124;-- cost										|Object	|设置后可返回方案所需时间及费用成本																																																																						|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- duration					|String	|线路耗时，分段step中的耗时																																																																										|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- tolls						|String	|此路线道路收费，单位：元，包括分段信息																																																																				|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- toll_distance		|String	|收费路段里程，单位：米，包括分段信息																																																																					|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- toll_road				|String	|主要收费道路																																																																																	|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- traffic_lights		|String	|方案中红绿灯个数，单位：个																																																																										|高德地图														|
-| &emsp;&emsp;&#124;-- tmcs										|Object	|设置后可返回分段路况详情																																																																											|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- tmc_status				|String	|路况信息，包括：未知、畅通、缓行、拥堵、严重拥堵																																																															|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- tmc_distance			|String	|从当前坐标点开始step中路况相同的距离																																																																					|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- tmc_polyline			|String	|此段路况涉及的道路坐标点串，点间用","分隔																																																																		|高德地图														|
-| &emsp;&emsp;&#124;-- navi										|Object	|设置后可返回详细导航动作指令																																																																									|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- action						|String	|导航主要动作指令																																																																															|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- assistant_action	|String	|导航辅助动作指令																																																																															|高德地图														|
-| &emsp;&emsp;&#124;-- cities									|Object	|设置后可返回分段途径城市信息																																																																									|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- adcode						|String	|途径区域编码																																																																																	|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- citycode					|String	|途径城市编码																																																																																	|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- city							|String	|途径城市名称																																																																																	|高德地图														|
-| &emsp;&emsp;&emsp;&#124;-- district					|String	|途径区县信息																																																																																	|高德地图														|
-| &emsp;&emsp;&emsp;&emsp;&#124;-- name				|String	|途径区县名称																																																																																	|高德地图														|
-| &emsp;&emsp;&emsp;&emsp;&#124;-- adcode			|String	|途径区县adcode																																																																																|高德地图														|
-| &emsp;&emsp;&#124;-- polyline								|String	|设置后可返回分路段坐标点串，两点间用“,”分隔																																																																|高德地图														|
+|参数																					|类型		|说明																																																																																																																																																							|兼容性		|
+|:--																					|:-:		|:--																																																																																																																																																							|:-:			|
+|routes																				|Array	| 路线方案																																																																																																																																																				|all			|
+| &emsp;&#124;-- mode													|String	|方案交通方式																																																																																																																																																			|all			|
+| &emsp;&#124;-- distance											|Number	|方案总距离，单位：米																																																																																																																																															|all			|
+| &emsp;&#124;-- direction										|String	|方案整体方向																																																																																																																																																			|腾讯地图	|
+| &emsp;&#124;-- polyline											|Array	|方案路线坐标点串																																																																																																																																																	|腾讯地图	|
+| &emsp;&#124;-- steps												|Array	|路线步骤																																																																																																																																																					|all			|
+| &emsp;&emsp;&#124;-- instruction						|String	|阶段路线描述																																																																																																																																																			|all			|
+| &emsp;&emsp;&#124;-- polyline_idx						|Array	|阶段路线坐标点串在方案路线坐标点串的位置																																																																																																																																					|腾讯地图	|
+| &emsp;&emsp;&#124;-- road_name							|String	|阶段路线路名																																																																																																																																																			|all			|
+| &emsp;&emsp;&#124;-- dir_desc								|String	|阶段路线方向																																																																																																																																																			|all			|
+| &emsp;&emsp;&#124;-- distance								|Number	|阶段路线距离，单位：米																																																																																																																																														|all			|
+| &emsp;&emsp;&#124;-- act_desc								|String	|阶段路线末尾动作：如：左转调头																																																																																																																																										|腾讯地图	|
+| &emsp;&emsp;&#124;-- type										|Number	|阶段路线的步行设施类型（type），包含：<br/>0普通道路，1过街天桥，2地下通道，3人行横道																																																																																																														|腾讯地图	|
+| &emsp;&#124;-- show\_fields									|Object	|可选差异化结果返回																																																																																																																																																|高德地图	|
+| &emsp;&emsp;&#124;-- cost										|Object	|设置后可返回方案所需时间及费用成本																																																																																																																																								|高德地图	|
+| &emsp;&emsp;&emsp;&#124;-- duration					|String	|线路耗时，分段step中的耗时																																																																																																																																												|高德地图	|
+| &emsp;&emsp;&emsp;&#124;-- taxi							|String	|预估打车费用																																																																																																																																																			|高德地图	|
+| &emsp;&emsp;&#124;-- navi										|Object	|设置后可返回详细导航动作指令																																																																																																																																											|高德地图	|
+| &emsp;&emsp;&emsp;&#124;-- action						|String	|导航主要动作指令																																																																																																																																																	|高德地图	|
+| &emsp;&emsp;&emsp;&#124;-- assistant_action	|String	|导航辅助动作指令																																																																																																																																																	|高德地图	|
+| &emsp;&emsp;&emsp;&#124;-- walk_type				|String	|算路结果中存在的道路类型：<br/>0，普通道路 1，人行横道 3，地下通道 4，过街天桥<br/>5，地铁通道 6，公园 7，广场 8，扶梯 9，直梯<br/>10，索道 11，空中通道 12，建筑物穿越通道<br/>13，行人通道 14，游船路线 15，观光车路线 16，滑道<br/>18，扩路 19，道路附属连接线 20，阶梯 21，斜坡<br/>22，桥 23，隧道 30，轮渡	|高德地图	|
+| &emsp;&emsp;&#124;-- polyline								|String	|设置后可返回分路段坐标点串，两点间用“,”分隔																																																																																																																																		|高德地图	|
 
 ### 路线规划（骑行）@bicyclingroute
 
@@ -743,9 +695,7 @@ console.log("result", result);
 |from_poi									|String	|否		| 起点POI ID，传入后，优先级高于from（坐标）																																																																																																																			|all																|
 |to_poi										|String	|否		| 终点POI ID，传入后，优先级高于from（坐标）																																																																																																																			|all																|
 |policy										|String	|否		| 算路策略 [详情](#transitroutepolicy)																																																																																																																						|all																|
-|waypoints								|Array	|否		| 途经点 <br/>腾讯地图最大支持30个<br/>高德地图最大支持16个																																																																																																												|all																|
-| &emsp;&emsp;&#124;-- lat|Number|纬度																																																																																																																																							|all																|
-| &emsp;&emsp;&#124;-- lng|Number|经度																																																																																																																																							|all																|
+|waypoints								|String	|否		| 途经点 <br/>腾讯地图最大支持30个<br/>高德地图最大支持16个	格式：lat1,lng1;lat2,lng2;																																																																																																										|all																|
 |avoid_polygons						|String	|否		| 避让区域																																																																																																																																				|all																|
 |plate_number							|String	|否		| 车牌号，填入后，路线引擎会根据车牌对限行区域进行避让，不填则不不考虑限行问题																																																																																																		|all																|
 |cartype									|Number	|否		| 车辆类型（影响限行规则），<br/>取值：<br/>0：[默认]普通汽车 <br/>1：新能源 <br/>2：插电式混动汽车																																																																																								|腾讯地图：0、1; 高德地图：全部支持	|
@@ -800,6 +750,7 @@ console.log("result", result);
 | &emsp;&#124;-- mode													|String	|方案交通方式																																																																																	|all																|
 | &emsp;&#124;-- tags													|Array	|方案标签																																																																																			|腾讯地图														|
 | &emsp;&#124;-- distance											|Number	|方案总距离，单位：米																																																																													|all																|
+| &emsp;&#124;-- duration											|Number	|方案估算时间，单位：分钟																																																																											|腾讯地图														|
 | &emsp;&#124;-- traffic\_light\_count				|Number	|方案途经红绿灯个数																																																																														|腾讯地图														|
 | &emsp;&#124;-- restriction_status						|Object	|限行状态码：<br/>0 途经没有限行城市，或路线方案未涉及限行区域<br/>1 途经包含有限行的城市<br/>3 [设置车牌] 已避让限行<br/>4 [设置车牌] 无法避开限行区域（本方案包含限行路段）	|腾讯地图：0、1、3、4 高德地图：0、1|
 | &emsp;&#124;-- polyline											|Array	|方案路线坐标点串																																																																															|腾讯地图														|

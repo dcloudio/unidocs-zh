@@ -363,6 +363,8 @@ The consumption of the following items does not belong to the resources in the p
 套餐到期第二天服务空间会进入隔离状态，服务空间不可用，资源会保留7天。7天内操作续费服务恢复正常（续费后大约有10分钟左右延迟），7天后会销毁空间资源且无法找回。
 The service space will enter the isolation state on the second day after the package expires, the service space will be unavailable, and the resources will be reserved for 7 days. The operation renewal service will return to normal within 7 days (there will be a delay of about 10 minutes after the renewal), and the space resource will be destroyed after 7 days and cannot be retrieved.
 
+当腾讯云按量余额欠费时，服务空间的`云函数日志`及`超限按量`将会自动关闭。如果服务空间套餐资源已超上限，则服务将会停服不可用。腾讯云按量余额充正后需手动开启相关服务。
+
 ## 余额及保证金@balance
 ## Balance and Margin @balance
 

@@ -35,20 +35,20 @@
 
 系统提供了 uniCloud 服务空间白名单安全配置，可以提高接口调用安全性，防止被他人盗用。可点击“添加服务空间”按钮，选择相应的服务空间完成添加服务空间白名单，服务空间添加成功后，只有列表中的服务空间才可以调用当前账号下的uni-ai接口。此列表为空时，不校验调用方的服务空间。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230614-203932.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230614-204136.png)
 
 ### 调用记录
 
 系统可查看uni-api接口每日调用汇总数据，包括每日调用次数、每日调用成功次数、每日消耗token数等汇总数据。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230614-203932.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230614-204225.png)
 
 
 ### 调用统计
 
 系统可查看uni-api接口每日调用汇总数据，包括每日调用次数、每日调用成功次数、每日消耗token数等汇总数据。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230614-203932.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230614-204255.png)
 
 
 ## 费用说明
@@ -67,9 +67,9 @@
 
 在uni-ai套餐信息页面点击变配按钮可以对套餐进行升配操作。升级配置需要按照剩余时间补足差额
 
-升配费用 = 按月升配差价 × 升配天数 / (365 / 12) 
-按月升配差价：新老配置原价按月的单价。
-升配的费用按天计算：升配天数 = 资源到期时间 - 当前时间。
+- 升配费用 = 按月升配差价 × 升配天数 / (365 / 12) 
+- 按月升配差价：新老配置原价按月的单价。
+- 升配的费用按天计算：升配天数 = 资源到期时间 - 当前时间。
 
 
 ### 降配

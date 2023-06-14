@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+
+<head>
+	<meta charset=utf-8>
+	<meta http-equiv=X-UA-Compatible content="IE=edge">
+	<meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+	<title>pcguide</title>
+	<script type="text/javascript">
+		var viewPath = location.hash
+		if (viewPath && viewPath.indexOf("index.html") > -1) {
+			viewPath = '/h5/'
+		} else if (viewPath) {
+			viewPath = viewPath.slice(1)
+		} else {
+			viewPath = '/h5/'
+		}
+		function redirectToLaunch() {
+			if (document.documentElement.clientWidth <= 1024) {
+				location.href = viewPath;
+			}
+		};
+		redirectToLaunch();
+
+		var timer = null;
+		window.addEventListener('resize', function () {
+			timer && clearTimeout(timer);
+			timer = setTimeout(function () {
+				redirectToLaunch();
+			}, 500);
+		});
+		function hasClass(ele, cls) {
+			cls = cls || '';
+			if (cls.replace(/\s/g, '').length == 0) return false; //当cls没有参数时，返回false
+			return new RegExp(' ' + cls + ' ').test(' ' + ele.className + ' ');
+		}
+		function addClass(ele, cls) {
+			if (!hasClass(ele, cls)) {
+				ele.className = ele.className == '' ? cls : ele.className + ' ' + cls;
+			}
+		}
+
+		function removeClass(ele, cls) {
+			if (hasClass(ele, cls)) {
+				var newClass = ' ' + ele.className.replace(/[\t\r\n]/g, '') + ' ';
+				while (newClass.indexOf(' ' + cls + ' ') >= 0) {
+					newClass = newClass.replace(' ' + cls + ' ', ' ');
+				}
+				ele.className = newClass.replace(/^\s+|\s+$/g, '');
+			}
+		}
+
+		function copy(id, attr) {
+			var target = null;
+
+			if (attr) {
+				target = document.createElement('div');
+				target.id = 'tempTarget';
+				target.style.opacity = '0';
+				if (id) {
+					var curNode = document.querySelector('#' + id);
+					target.innerText = curNode[attr];
+				} else {
+					target.innerText = attr;
+				}
+				document.body.appendChild(target);
+			} else {
+				target = document.querySelector('#' + id);
+			}
+
+			try {
+				var range = document.createRange();
+				range.selectNode(target);
+				window.getSelection().removeAllRanges();
+				window.getSelection().addRange(range);
+				document.execCommand('copy');
+				window.getSelection().removeAllRanges();
+				document.getElementById("copy-link-tooltip").innerText = '复制成功'
+			} catch (e) {
+				document.getElementById("copy-link-tooltip").innerText = '复制失败'
+			}
+
+			if (attr) {
+				// remove temp target
+				target.parentElement.removeChild(target);
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', function () {
+			document.getElementById("h5-viwer").src = viewPath
+			var tooltip = document.getElementById("copy-link-tooltip"),
+				viewFrame = document.getElementById("h5-viwer")
+			document.getElementById("copy-link-btn").addEventListener("click", function () {
+				copy('', viewFrame.contentWindow.location.href)
+				addClass(tooltip, "show")
+				setTimeout(function () {
+					removeClass(tooltip, "show")
+				}, 1000);
+			})
+		}, false);
+	</script>
+	<style type="text/css">
+		body {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.wrapper {
+			width: 500px;
+			height: 500px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -200px;
+			margin-left: -500px;
+			text-align: center;
+		}
+
+		.barcode-image {
+			display: inline-block;
+			vertical-align: middle;
+			width: 200px;
+			height: 200px;
+		}
+
+		.list {
+			width: 500px;
+		}
+
+		.h5-viwer-box {
+			position: absolute;
+			width: 45vh;
+			height: 80vh;
+			right: 50px;
+			top: 8vh;
+			box-sizing: content-box;
+			border: solid 10px #000000;
+			border-radius: 10px;
+			box-shadow: #DDDDDD 10px 10px 20px;
+		}
+
+		.h5-viwer {
+			width: 45vh;
+			height: 80vh;
+			border: 0;
+			padding: 0;
+		}
+
+		.h5-copy-link {
+			position: absolute;
+			width: 45vh;
+			height: 40px;
+			right: 50px;
+			bottom: 4vh;
+			text-align: center;
+		}
+
+		#copy-link-btn {
+			display: inline-block;
+			width: 100px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			border-radius: 6px;
+			color: white;
+			font-size: 16px;
+			cursor: pointer;
+			user-select: none;
+			-ms-user-select: none;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			background-color: #42b983;
+		}
+
+		#copy-link-btn:active {
+			opacity: 0.7;
+		}
+
+		#copy-link-tooltip {
+			position: absolute;
+			width: 100px;
+			height: 30px;
+			left: 50%;
+			top: 5px;
+			margin-left: 120px;
+			line-height: 30px;
+			color: white;
+			background-color: rgba(0, 0, 0, 0.5);
+			border-radius: 6px;
+			opacity: 0;
+			transition: all 0.3s ease;
+			-ms-transition: all 0.3s ease;
+			-moz-transition: all 0.3s ease;
+			-webkit-transition: all 0.3s ease;
+		}
+
+
+		#copy-link-tooltip:after {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			right: 100%;
+			top: 50%;
+			margin-top: -8px;
+			border: solid 8px transparent;
+			border-right: solid 8px rgba(0, 0, 0, 0.5);
+		}
+
+		#copy-link-tooltip.show {
+			opacity: 1;
+			transform: translateX(-50px);
+			-ms-transform: translateX(-50px);
+			-moz-transform: translateX(-50px);
+			-webkit-transform: translateX(-50px);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<img class="barcode-image"
+			src="data:image/gif;base64,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"
+			alt="二维码">
+		<div class="list">
+			<p class="list-cell">请使用手机浏览器，扫描上方二维码预览。</p>
+			<p class="list-cell">PC浏览器，请打开控制台并切换至手机模式后并再次刷新浏览。</p>
+		</div>
+	</div>
+	<div class="h5-viwer-box">
+		<iframe id="h5-viwer" class="h5-viwer" src="/h5/" width="414" height="736"></iframe>
+	</div>
+	<div class="h5-copy-link">
+		<span id="copy-link-tooltip">复制成功</span>
+		<div id="copy-link-btn">复制链接</div>
+	</div>
+</body>
+
+</html>

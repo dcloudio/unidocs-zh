@@ -9,7 +9,6 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
-    "sitemap": "node ./script/createSiteMap.js",
     "build-lite": "cross-env DOCS_LITE=true node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs-lite --no-cache"
   },
   "repository": {

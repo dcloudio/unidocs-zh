@@ -720,19 +720,17 @@ console.log("result", result);
 
 **公交（transit）返回参数**
 
-|参数															|类型		|说明																																																																															|兼容性		|
-|:--															|:-:		|:--																																																																															|:-:			|
-|routes														|Array	| 路线方案																																																																												|all			|
-| &emsp;&#124;-- mode							|String	|方案交通方式																																																																											|all			|
-| &emsp;&#124;-- distance					|Number	|方案总距离，单位：米																																																																							|all			|
-| &emsp;&#124;-- duration					|Number	|方案估算时间，单位：分钟																																																																					|腾讯地图	|
-| &emsp;&#124;-- bounds						|Number	|整体路线的外接矩形范围，可在地图显示时使用<br/>通过矩形西南+东北两个端点坐标定义而面<br/>示例：“39.901405,116.334023,39.940289,116.451720”														|腾讯地图	|
-| &emsp;&#124;-- cost							|Object	|方案所需时间及费用成本																																																																						|高德地图	|
-| &emsp;&emsp;&#124;-- duration		|String	|线路耗时，方案总耗时，包含等车时间																																																																|高德地图	|
-| &emsp;&emsp;&#124;-- transit_fee|String	|各换乘方案总花费																																																																									|高德地图	|
-| &emsp;&#124;-- steps						|Array	|一条完整公交路线可能会包含多种公共交通工具，<br/>各交通工具的换乘由步行路线串联起来，<br/>形成这样的结构（即 steps数组的结构）：<br/>[步行 , 公交 , 步行 , 公交 , 步行(到终点)]	|all			|
-| &emsp;&emsp;&#124;-- mode				|String	|本段交通方式，取值：<br/>walking：步行<br/>transit：公共交通工具<br/>不同的方式，返回不同的数据结构，须根据该参数值来判断以哪种结构进行解析，各类具体定义见下文	|all			|
-| &emsp;&emsp;&#124;-- 其它字段		|--			|随mode不同有不同字段返回，见下文																																																																	|all			|
+|参数														|类型		|说明																																																																																						|兼容性		|
+|:--														|:-:		|:--																																																																																						|:-:			|
+|routes													|Array	| 路线方案																																																																																			|all			|
+| &emsp;&#124;-- mode						|String	|方案交通方式																																																																																		|all			|
+| &emsp;&#124;-- distance				|Number	|方案总距离，单位：米																																																																														|all			|
+| &emsp;&#124;-- duration				|Number	|方案估算时间，单位：分钟																																																																												|all			|
+| &emsp;&#124;-- bounds					|Number	|整体路线的外接矩形范围，可在地图显示时使用<br/>通过矩形西南+东北两个端点坐标定义而面<br/>示例：“39.901405,116.334023,39.940289,116.451720”																		|腾讯地图	|
+| &emsp;&#124;-- transit_fee		|Number	|各换乘方案总花费，单位：元																																																																											|高德地图	|
+| &emsp;&#124;-- steps					|Array	|一条完整公交路线可能会包含多种公共交通工具，<br/>各交通工具的换乘由步行路线串联起来，<br/>形成这样的结构（即 steps数组的结构）：<br/>[步行 , 公交 , 步行 , 公交 , 步行(到终点)]|all			|
+| &emsp;&emsp;&#124;-- mode			|String	|本段交通方式，取值：<br/>walking：步行<br/>transit：公共交通工具<br/>不同的方式，返回不同的数据结构，须根据该参数值来判断以哪种结构进行解析，各类具体定义见下文								|all			|
+| &emsp;&emsp;&#124;-- 其它字段	|--			|随mode不同有不同字段返回，见下文																																																																								|all			|
 		
 公交方式包含步行+公共交通混合
 
@@ -745,7 +743,7 @@ console.log("result", result);
 | duration										|Number	|估算时间，单位：分钟											|all	|
 | direction										|String	|方案整体方向描述，如：“南”							|腾讯地图	|
 | polyline										|Array	|路线坐标点串，可用于在地图中绘制路线			|腾讯地图	|
-|steps												|Array	| 分路段导航信息													|腾讯地图			|
+|steps												|Array	|分路段导航信息													|腾讯地图			|
 | &emsp;&#124;-- instruction	|String	|阶段路线描述															|all			|
 | &emsp;&#124;-- polyline_idx	|Array	|阶段路线坐标点串在方案路线坐标点串的位置	|腾讯地图	|
 | &emsp;&#124;-- road_name		|String	|阶段路线路名															|all			|
@@ -801,114 +799,114 @@ console.log("result", result);
 2. 交通工具 - 地铁（“vehicle”：“SUBWAY”）：
 本段为公共交通的子对象，vehicle属性值为"SUBWAY"
 
-|参数															|类型		|说明																																																																														|兼容性		|
-|:--															|:-:		|:--																																																																														|:-:			|
-|mode															|String	| 交通方式，固定值：transit																																																																			|腾讯地图			|
-|lines														|Array	| lines线路信息|腾讯地图			|
-| &emsp;&#124;-- vehicle					|String	|交通工具：地铁（SUBWAY）																																																																				|腾讯地图			|
-| &emsp;&#124;-- id								|String	|线路唯一标识																																																																										|腾讯地图	|
-| &emsp;&#124;-- title						|String	|线路名称																																																																												|腾讯地图			|
-| &emsp;&#124;-- station_count		|Number	|经停站数																																																																												|腾讯地图			|
-| &emsp;&#124;-- running_status		|Number	|线路运营状态，取值范围：<br/>300：正常<br/>301：可能错过末班车<br/>302：首班车还未发出<br/>303：停运																														|腾讯地图			|
-| &emsp;&#124;-- price						|Number	|预估费用，单位：分，返回-1时为缺少票价信息																																																											|腾讯地图	|
-| &emsp;&#124;-- distance					|Number	|路线距离，单位：米																																																																							|腾讯地图	|
-| &emsp;&#124;-- duration					|Number	|路线估算时间，单位：分钟																																																																				|腾讯地图	|
-| &emsp;&#124;-- polyline					|Array	|线路坐标点串，可用于在地图中绘制路线																																																														|腾讯地图	|
-| &emsp;&#124;-- destination			|Object	|公交终点站（用于指示方向）																																																																			|腾讯地图	|
-| &emsp;&emsp;&#124;-- id					|String	|站点唯一标识																																																																										|腾讯地图	|
-| &emsp;&emsp;&#124;-- title			|String	|终点站名																																																																												|腾讯地图	|
-| &emsp;&#124;-- start_time				|String	|首班车时间																																																																											|腾讯地图	|
-| &emsp;&#124;-- end_time					|String	|末班车时间																																																																											|腾讯地图	|
-| &emsp;&#124;-- geton						|Object	|上车站																																																																													|腾讯地图	|
-| &emsp;&emsp;&#124;-- id					|String	|站点唯一标识																																																																										|腾讯地图	|
-| &emsp;&emsp;&#124;-- title			|String	|终点站名																																																																												|腾讯地图	|
-| &emsp;&emsp;&#124;-- location		|Object	|站点经纬度坐标																																																																									|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- lat	|Number	|纬度																																																																														|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- lng	|Number	|经度																																																																														|腾讯地图	|
-| &emsp;&emsp;&#124;-- exit				|Object	|站点经纬度坐标																																																																									|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- id		|String	|唯一标识																																																																												|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- title|String	|出入口名称																																																																											|腾讯地图	|
-| &emsp;&#124;-- getoff						|Object	|下车站																																																																													|腾讯地图	|
-| &emsp;&emsp;&#124;-- id					|String	|站点唯一标识																																																																										|腾讯地图	|
-| &emsp;&emsp;&#124;-- title			|String	|终点站名																																																																												|腾讯地图	|
-| &emsp;&emsp;&#124;-- location		|Object	|站点经纬度坐标																																																																									|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- lat	|Number	|纬度																																																																														|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- lng	|Number	|经度																																																																														|腾讯地图	|
-| &emsp;&emsp;&#124;-- exit				|Object	|站点经纬度坐标																																																																									|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- id		|String	|唯一标识																																																																												|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- title|String	|出入口名称																																																																											|腾讯地图	|
-| &emsp;&#124;-- stations					|Array	|经停站列表																																																																											|腾讯地图	|
-| &emsp;&emsp;&#124;-- id					|String	|站点唯一标识																																																																										|腾讯地图	|
-| &emsp;&emsp;&#124;-- title			|String	|终点站名																																																																												|腾讯地图	|
-| &emsp;&emsp;&#124;-- location		|Object	|站点经纬度坐标																																																																									|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- lat	|Number	|纬度																																																																														|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- lng	|Number	|经度																																																																														|腾讯地图	|
+|参数															|类型		|说明																																																	|兼容性		|
+|:--															|:-:		|:--																																																	|:-:			|
+|mode															|String	| 交通方式，固定值：transit																																						|all			|
+|lines														|Array	| lines线路信息																																												|all			|
+| &emsp;&#124;-- vehicle					|String	|交通工具：地铁（SUBWAY）																																							|all			|
+| &emsp;&#124;-- id								|String	|线路唯一标识																																													|all			|
+| &emsp;&#124;-- title						|String	|线路名称																																															|all			|
+| &emsp;&#124;-- station_count		|Number	|经停站数																																															|all			|
+| &emsp;&#124;-- running_status		|Number	|线路运营状态，取值范围：<br/>300：正常<br/>301：可能错过末班车<br/>302：首班车还未发出<br/>303：停运	|腾讯地图	|
+| &emsp;&#124;-- price						|Number	|预估费用，单位：分，返回-1时为缺少票价信息																														|腾讯地图	|
+| &emsp;&#124;-- distance					|Number	|路线距离，单位：米																																										|all			|
+| &emsp;&#124;-- duration					|Number	|路线估算时间，单位：分钟																																							|all			|
+| &emsp;&#124;-- polyline					|Array	|线路坐标点串，可用于在地图中绘制路线																																	|all			|
+| &emsp;&#124;-- destination			|Object	|公交终点站（用于指示方向）																																						|腾讯地图	|
+| &emsp;&emsp;&#124;-- id					|String	|站点唯一标识																																													|腾讯地图	|
+| &emsp;&emsp;&#124;-- title			|String	|终点站名																																															|腾讯地图	|
+| &emsp;&#124;-- start_time				|String	|首班车时间																																														|腾讯地图	|
+| &emsp;&#124;-- end_time					|String	|末班车时间																																														|腾讯地图	|
+| &emsp;&#124;-- geton						|Object	|上车站																																																|all			|
+| &emsp;&emsp;&#124;-- id					|String	|站点唯一标识																																													|all			|
+| &emsp;&emsp;&#124;-- title			|String	|终点站名																																															|all			|
+| &emsp;&emsp;&#124;-- location		|Object	|站点经纬度坐标																																												|all			|
+| &emsp;&emsp;&emsp;&#124;-- lat	|Number	|纬度																																																	|all			|
+| &emsp;&emsp;&emsp;&#124;-- lng	|Number	|经度																																																	|all			|
+| &emsp;&emsp;&#124;-- exit				|Object	|出入口																																																|腾讯地图	|
+| &emsp;&emsp;&emsp;&#124;-- id		|String	|唯一标识																																															|腾讯地图	|
+| &emsp;&emsp;&emsp;&#124;-- title|String	|出入口名称																																														|腾讯地图	|
+| &emsp;&#124;-- getoff						|Object	|下车站																																																|all			|
+| &emsp;&emsp;&#124;-- id					|String	|站点唯一标识																																													|all			|
+| &emsp;&emsp;&#124;-- title			|String	|终点站名																																															|all			|
+| &emsp;&emsp;&#124;-- location		|Object	|站点经纬度坐标																																												|all			|
+| &emsp;&emsp;&emsp;&#124;-- lat	|Number	|纬度																																																	|all			|
+| &emsp;&emsp;&emsp;&#124;-- lng	|Number	|经度																																																	|all			|
+| &emsp;&emsp;&#124;-- exit				|Object	|站点经纬度坐标																																												|腾讯地图	|
+| &emsp;&emsp;&emsp;&#124;-- id		|String	|唯一标识																																															|腾讯地图	|
+| &emsp;&emsp;&emsp;&#124;-- title|String	|出入口名称																																														|腾讯地图	|
+| &emsp;&#124;-- stations					|Array	|经停站列表																																														|all			|
+| &emsp;&emsp;&#124;-- id					|String	|站点唯一标识																																													|all			|
+| &emsp;&emsp;&#124;-- title			|String	|终点站名																																															|all			|
+| &emsp;&emsp;&#124;-- location		|Object	|站点经纬度坐标																																												|all			|
+| &emsp;&emsp;&emsp;&#124;-- lat	|Number	|纬度																																																	|all			|
+| &emsp;&emsp;&emsp;&#124;-- lng	|Number	|经度																																																	|all			|
 
 3. 交通工具 - 火车（“vehicle”：“RAIL”）：
 本段为公共交通的子对象，vehicle属性值为"RAIL"
 
-|参数														|类型		|说明																																																																														|兼容性		|
-|:--														|:-:		|:--																																																																														|:-:			|
-|mode														|String	| 交通方式，固定值：transit																																																																			|all	|
-|lines													|Array	| lines线路信息|all	|
-| &emsp;&#124;-- vehicle				|String	|交通工具：地铁（RAIL）																																																																					|all	|
-| &emsp;&#124;-- title					|String	|车次名称																																																																												|all	|
-| &emsp;&#124;-- station_count	|Number	|经停站数																																																																												|腾讯地图	|
-| &emsp;&#124;-- running_status	|Number	|线路运营状态，取值范围：<br/>300：正常<br/>301：可能错过末班车<br/>302：首班车还未发出<br/>303：停运																														|腾讯地图	|
-| &emsp;&#124;-- price					|Number	|预估费用，单位：分，返回-1时为缺少票价信息																																																											|腾讯地图	|
-| &emsp;&#124;-- distance				|Number	|路线距离，单位：米																																																																							|all	|
-| &emsp;&#124;-- duration				|Number	|路线估算时间，单位：分钟																																																																				|all	|
-| &emsp;&#124;-- departure_time	|String	|发车时间																																																																												|腾讯地图	|
-| &emsp;&#124;-- arrival_time		|String	|到达时间																																																																												|腾讯地图	|
-| &emsp;&#124;-- days_count			|Number	|耗时天数，1为当天到达，2为隔天到达，以此类推																																																										|腾讯地图	|
-| &emsp;&#124;-- polyline				|Array	|线路坐标点串，可用于在地图中绘制路线																																																														|腾讯地图	|
-| &emsp;&#124;-- destination		|Object	|公交终点站（用于指示方向）																																																																			|腾讯地图	|
-| &emsp;&emsp;&#124;-- id				|String	|站点唯一标识																																																																										|腾讯地图	|
-| &emsp;&emsp;&#124;-- title		|String	|终点站名																																																																												|腾讯地图	|
-| &emsp;&#124;-- geton					|Object	|上车站																																																																													|all	|
-| &emsp;&emsp;&#124;-- id				|String	|站点唯一标识																																																																										|all	|
-| &emsp;&emsp;&#124;-- title		|String	|终点站名																																																																												|all	|
-| &emsp;&emsp;&#124;-- location	|Object	|站点经纬度坐标																																																																									|all	|
-| &emsp;&emsp;&emsp;&#124;-- lat|Number	|纬度																																																																														|all	|
-| &emsp;&emsp;&emsp;&#124;-- lng|Number	|经度																																																																														|腾讯地图	|
-| &emsp;&emsp;&#124;-- adcode		|String	|上车站点所在城市的adcode																																																																				|高德地图	|
-| &emsp;&emsp;&#124;-- time			|String	|上车点发车时间																																																																									|高德地图	|
-| &emsp;&emsp;&#124;-- start		|Number	|是否始发站，1表示为始发站，0表示非始发站																																																												|高德地图	|
-| &emsp;&#124;-- getoff					|Object	|下车站																																																																													|all	|
-| &emsp;&emsp;&#124;-- id				|String	|站点唯一标识																																																																										|all	|
-| &emsp;&emsp;&#124;-- title		|String	|终点站名																																																																												|all	|
-| &emsp;&emsp;&#124;-- location	|Object	|站点经纬度坐标																																																																									|all	|
-| &emsp;&emsp;&emsp;&#124;-- lat|Number	|纬度																																																																														|all	|
-| &emsp;&emsp;&emsp;&#124;-- lng|Number	|经度																																																																														|all	|
-| &emsp;&emsp;&#124;-- adcode		|String	|上车站点所在城市的adcode																																																																				|高德地图	|
-| &emsp;&emsp;&#124;-- time			|String	|上车点发车时间																																																																									|高德地图	|
-| &emsp;&emsp;&#124;-- end			|Number	|是否为终点站，1表示为终点站，0表示非终点站																																																											|高德地图	|
-| &emsp;&#124;-- stations				|Array	|经停站列表																																																																											|腾讯地图	|
-| &emsp;&emsp;&#124;-- id				|String	|站点唯一标识																																																																										|腾讯地图	|
-| &emsp;&emsp;&#124;-- title		|String	|终点站名																																																																												|腾讯地图	|
-| &emsp;&emsp;&#124;-- location	|Object	|站点经纬度坐标																																																																									|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- lat|Number	|纬度																																																																														|腾讯地图	|
-| &emsp;&emsp;&emsp;&#124;-- lng|Number	|经度																																																																														|腾讯地图	|
-| &emsp;&#124;-- spaces					|Object	|仓位及价格信息																																																																									|腾讯地图	|
-| &emsp;&emsp;&#124;-- code			|String	|仓位编码																																																																												|高德地图	|
-| &emsp;&emsp;&#124;-- cost			|String	|仓位费用																																																																												|高德地图	|
+|参数														|类型		|说明																																																	|兼容性		|
+|:--														|:-:		|:--																																																	|:-:			|
+|mode														|String	| 交通方式，固定值：transit																																						|all			|
+|lines													|Array	| lines线路信息																																												|all			|
+| &emsp;&#124;-- vehicle				|String	|交通工具：地铁（RAIL）																																								|all			|
+| &emsp;&#124;-- title					|String	|车次名称																																															|all			|
+| &emsp;&#124;-- station_count	|Number	|经停站数																																															|腾讯地图	|
+| &emsp;&#124;-- running_status	|Number	|线路运营状态，取值范围：<br/>300：正常<br/>301：可能错过末班车<br/>302：首班车还未发出<br/>303：停运	|腾讯地图	|
+| &emsp;&#124;-- price					|Number	|预估费用，单位：分，返回-1时为缺少票价信息																														|腾讯地图	|
+| &emsp;&#124;-- distance				|Number	|路线距离，单位：米																																										|all			|
+| &emsp;&#124;-- duration				|Number	|路线估算时间，单位：分钟																																							|all			|
+| &emsp;&#124;-- departure_time	|String	|发车时间																																															|腾讯地图	|
+| &emsp;&#124;-- arrival_time		|String	|到达时间																																															|腾讯地图	|
+| &emsp;&#124;-- days_count			|Number	|耗时天数，1为当天到达，2为隔天到达，以此类推																													|腾讯地图	|
+| &emsp;&#124;-- polyline				|Array	|线路坐标点串，可用于在地图中绘制路线																																	|腾讯地图	|
+| &emsp;&#124;-- destination		|Object	|公交终点站（用于指示方向）																																						|腾讯地图	|
+| &emsp;&emsp;&#124;-- id				|String	|站点唯一标识																																													|腾讯地图	|
+| &emsp;&emsp;&#124;-- title		|String	|终点站名																																															|腾讯地图	|
+| &emsp;&#124;-- geton					|Object	|上车站																																																|all			|
+| &emsp;&emsp;&#124;-- id				|String	|站点唯一标识																																													|all			|
+| &emsp;&emsp;&#124;-- title		|String	|终点站名																																															|all			|
+| &emsp;&emsp;&#124;-- location	|Object	|站点经纬度坐标																																												|all			|
+| &emsp;&emsp;&emsp;&#124;-- lat|Number	|纬度																																																	|all			|
+| &emsp;&emsp;&emsp;&#124;-- lng|Number	|经度																																																	|腾讯地图	|
+| &emsp;&emsp;&#124;-- adcode		|String	|上车站点所在城市的adcode																																							|高德地图	|
+| &emsp;&emsp;&#124;-- time			|String	|上车点发车时间																																												|高德地图	|
+| &emsp;&emsp;&#124;-- start		|Number	|是否始发站，1表示为始发站，0表示非始发站																															|高德地图	|
+| &emsp;&#124;-- getoff					|Object	|下车站																																																|all			|
+| &emsp;&emsp;&#124;-- id				|String	|站点唯一标识																																													|all			|
+| &emsp;&emsp;&#124;-- title		|String	|终点站名																																															|all			|
+| &emsp;&emsp;&#124;-- location	|Object	|站点经纬度坐标																																												|all			|
+| &emsp;&emsp;&emsp;&#124;-- lat|Number	|纬度																																																	|all			|
+| &emsp;&emsp;&emsp;&#124;-- lng|Number	|经度																																																	|all			|
+| &emsp;&emsp;&#124;-- adcode		|String	|上车站点所在城市的adcode																																							|高德地图	|
+| &emsp;&emsp;&#124;-- time			|String	|上车点发车时间																																												|高德地图	|
+| &emsp;&emsp;&#124;-- end			|Number	|是否为终点站，1表示为终点站，0表示非终点站																														|高德地图	|
+| &emsp;&#124;-- stations				|Array	|经停站列表																																														|腾讯地图	|
+| &emsp;&emsp;&#124;-- id				|String	|站点唯一标识																																													|腾讯地图	|
+| &emsp;&emsp;&#124;-- title		|String	|终点站名																																															|腾讯地图	|
+| &emsp;&emsp;&#124;-- location	|Object	|站点经纬度坐标																																												|腾讯地图	|
+| &emsp;&emsp;&emsp;&#124;-- lat|Number	|纬度																																																	|腾讯地图	|
+| &emsp;&emsp;&emsp;&#124;-- lng|Number	|经度																																																	|腾讯地图	|
+| &emsp;&#124;-- spaces					|Object	|仓位及价格信息																																												|高德地图	|
+| &emsp;&emsp;&#124;-- code			|String	|仓位编码																																															|高德地图	|
+| &emsp;&emsp;&#124;-- cost			|String	|仓位费用																																															|高德地图	|
 
 3. 交通工具 - 出租车（“vehicle”：“TAXI”）：
-本段为公共交通的子对象，vehicle属性值为"TAXI"
+本段为公共交通的子对象，vehicle属性值为"TAXI"（仅高德地图支持"TAXI"）
 
-|参数														|类型		|说明																																																																														|兼容性		|
-|:--														|:-:		|:--																																																																														|:-:			|
-|mode														|String	| 交通方式，固定值：transit																																																																			|高德地图	|
-|lines													|Array	| lines线路信息|高德地图	|
-| &emsp;&#124;-- vehicle				|String	|交通工具：地铁（TAXI）																																																																					|高德地图	|
-| &emsp;&#124;-- price					|String	|预估费用，单位：分，返回-1时为缺少票价信息																																																											|高德地图	|
-| &emsp;&#124;-- drivetime				|Number	|打车预计花费时间																																																																				|高德地图	|
-| &emsp;&#124;-- distance				|Number	|打车距离																																																																				|高德地图	|
-| &emsp;&#124;-- polyline				|String	|线路点集合																																																													|高德地图	|
-| &emsp;&#124;-- startpoint				|String	|打车起点经纬度																																																																				|高德地图	|
-| &emsp;&#124;-- startname				|String	|打车起点名称																																																																				|高德地图	|
-| &emsp;&#124;-- endpoint				|String	|打车终点经纬度																																																																				|高德地图	|
-| &emsp;&#124;-- endname				|String	|打车终点名称																																																																				|高德地图	|
+|参数												|类型		|说明																				|兼容性		|
+|:--												|:-:		|:--																				|:-:			|
+|mode												|String	| 交通方式，固定值：transit									|高德地图	|
+|lines											|Array	| lines线路信息															|高德地图	|
+| &emsp;&#124;-- vehicle		|String	|交通工具：地铁（TAXI）											|高德地图	|
+| &emsp;&#124;-- price			|String	|预估费用，单位：元，返回-1时为缺少票价信息	|高德地图	|
+| &emsp;&#124;-- drivetime	|Number	|打车预计花费时间，单位：分									|高德地图	|
+| &emsp;&#124;-- distance		|Number	|打车距离，单位：米													|高德地图	|
+| &emsp;&#124;-- polyline		|String	|线路点集合																	|高德地图	|
+| &emsp;&#124;-- startpoint	|String	|打车起点经纬度															|高德地图	|
+| &emsp;&#124;-- startname	|String	|打车起点名称																|高德地图	|
+| &emsp;&#124;-- endpoint		|String	|打车终点经纬度															|高德地图	|
+| &emsp;&#124;-- endname		|String	|打车终点名称																|高德地图	|
 
 ## 全局错误码@errorcode
 	

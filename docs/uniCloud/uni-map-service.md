@@ -290,7 +290,7 @@ console.log("result", result);
 | &emsp;&#124;-- city			|String	|地址																																																|腾讯地图	|
 | &emsp;&#124;-- address	|String	|地点所在城市名称																																										|腾讯地图	|
 
-### 路线规划（驾车）@drivingroute
+### 路线规划（驾车导航）@drivingroute
 
 **示例**
 
@@ -460,7 +460,7 @@ console.log("result", result);
 | &emsp;&emsp;&emsp;&#124;-- adcode			|String	|途径区县adcode																																																																																|高德地图														|
 | &emsp;&#124;-- polyline								|String	|设置后可返回分路段坐标点串，两点间用“,”分隔																																																																|高德地图														|
 
-### 路线规划（步行）@walkingroute
+### 路线规划（步行导航）@walkingroute
 
 **示例**
 
@@ -524,7 +524,7 @@ console.log("result", result);
 | &emsp;&emsp;&emsp;&#124;-- walk_type				|String	|算路结果中存在的道路类型：<br/>0，普通道路 1，人行横道 3，地下通道 4，过街天桥<br/>5，地铁通道 6，公园 7，广场 8，扶梯 9，直梯<br/>10，索道 11，空中通道 12，建筑物穿越通道<br/>13，行人通道 14，游船路线 15，观光车路线 16，滑道<br/>18，扩路 19，道路附属连接线 20，阶梯 21，斜坡<br/>22，桥 23，隧道 30，轮渡	|高德地图	|
 | &emsp;&emsp;&#124;-- polyline								|String	|设置后可返回分路段坐标点串，两点间用“,”分隔																																																																																																																																		|高德地图	|
 
-### 路线规划（骑行）@bicyclingroute
+### 路线规划（骑行导航）@bicyclingroute
 
 **示例**
 
@@ -586,7 +586,7 @@ console.log("result", result);
 | &emsp;&emsp;&#124;-- polyline								|String	|设置后可返回分路段坐标点串，两点间用“,”分隔																																																																																																																																		|高德地图	|
 
 
-### 路线规划（电动车）@ebicyclingroute
+### 路线规划（电动车导航）@ebicyclingroute
 
 **示例**
 
@@ -648,7 +648,7 @@ console.log("result", result);
 | &emsp;&emsp;&#124;-- polyline								|String	|设置后可返回分路段坐标点串，两点间用“,”分隔																																																																																																																																		|高德地图	|
 		
 
-### 路线规划（公交）@transitroute
+### 路线规划（公交导航）@transitroute
 
 基于公共汽车、地铁、火车等公共交通工具，计算起到终点的路线换乘方案，同时提供少换乘、少步行等偏好设置，支持一次返回多条方案以供用户选择。
 

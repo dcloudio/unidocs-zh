@@ -7,9 +7,15 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
-    "build-lite": "cross-env DOCS_LITE=true node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs-lite --no-cache"
+    "dev": "cross-env DOCS_LOCAL=zh vuepress dev docs",
+    "dev:zh": "cross-env DOCS_LOCAL=zh vuepress dev docs",
+    "dev:en": "cross-env DOCS_LOCAL=en vuepress dev docs",
+    "build": "cross-env DOCS_LOCAL=zh node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
+    "build:zh": "cross-env DOCS_LOCAL=zh node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
+    "build:en": "cross-env DOCS_LOCAL=en node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs --no-cache",
+    "build-lite": "cross-env DOCS_LITE=true DOCS_LOCAL=zh node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs-lite --no-cache",
+    "build-lite:zh": "cross-env DOCS_LITE=true DOCS_LOCAL=zh node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs-lite --no-cache",
+    "build-lite:en": "cross-env DOCS_LITE=true DOCS_LOCAL=en node --max_old_space_size=3072 ./node_modules/vuepress/cli.js build docs-lite --no-cache"
   },
   "repository": {
     "type": "git",

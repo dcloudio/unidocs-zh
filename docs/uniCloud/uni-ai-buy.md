@@ -1,6 +1,7 @@
 ## 业务开通
 
-### 开通流程
+### 开通流程@enable-uni-ai-service
+
 使用开发者账号登录[uniCloud控制台](https://unicloud.dcloud.net.cn/) ，选择`uni-ai`栏目。
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230613-200227.png)

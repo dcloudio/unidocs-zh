@@ -58,7 +58,10 @@
   * [开通服务](frv/service.md)
   * [开发文档](frv/dev.md)
 * [短信sms扩展库](send-sms.md)
-* [uni-ai扩展库](uni-ai.md)
+* uni-ai
+  * [简介](uni-ai-intro.md)
+  * [开发文档](uni-ai.md)
+  * [计费网关](uni-ai-buy.md)
 * Redis扩展库
   * [简介](redis-introduction.md)
   * [费用说明](redis-buy.md)

@@ -2,7 +2,9 @@
 
 ## API@api
 
-> 新增于HBuilderX正式版 3.7.10+， Alpha版 3.7.13+。uni-ai计费网关支持新增于2023年6月15日，HBuilderX会在下次发版时进行支持
+> 新增于HBuilderX正式版 3.7.10+， Alpha版 3.7.13+。
+
+> uni-ai计费网关支持新增于2023年6月15日，HBuilderX会在下次发版时进行支持，需要更新云端依赖uni-ai的云函数才可以使用uni-ai计费网关
 
 :::warning 注意
 使用低版本HBuilder，只能上传到uniCloud云端联调。因为低版本的uniCloud本地运行插件不支持`uni-ai`。云端和本地扩展库差异参考：[云端和本地扩展库差异](rundebug.md#diff-extension)

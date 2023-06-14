@@ -290,7 +290,9 @@ console.log("result", result);
 | &emsp;&#124;-- city			|String	|地址																																																|腾讯地图	|
 | &emsp;&#124;-- address	|String	|地点所在城市名称																																										|腾讯地图	|
 
-### 路线规划（驾车导航）@drivingroute
+### 路线规划（导航）@route
+
+#### 驾车（driving）@drivingroute
 
 **示例**
 
@@ -337,7 +339,7 @@ console.log("result", result);
 |ferry										|Number	|否		| 是否使用轮渡 <br/>0：使用渡轮 <br/>1：不使用渡轮																																																																																																																|高德地图														|
 |show_fields							|Number	|否		| 返回结果控制，show\_fields用来筛选response结果中可选字段。<br/>show\_fields的使用需要遵循如下规则：<br/>1、具体可指定返回的字段类请见下方返回结果说明中的“show\_fields”内字段类型<br/>2、多个字段间采用“,”进行分割<br/>3、show\_fields未设置时，只返回基础信息类内字段<br/>	|高德地图														|
 
-#### 【驾车】方式policy值范围@drivingroutepolicy
+##### 【驾车】方式policy值范围@drivingroutepolicy
 
 0：速度优先（只返回一条路线），此路线不一定距离最短
 
@@ -379,7 +381,7 @@ console.log("result", result);
 
 注意：高德地图支持除101外的所有策略，腾讯地图只支持 0、34、35、36、37、101
 
-#### 【驾车】road_type值范围@routeroadtype
+##### 【驾车】road_type值范围@routeroadtype
 
 0：[默认]不考虑起点道路类型
 
@@ -460,7 +462,7 @@ console.log("result", result);
 | &emsp;&emsp;&emsp;&#124;-- adcode			|String	|途径区县adcode																																																																																|高德地图														|
 | &emsp;&#124;-- polyline								|String	|设置后可返回分路段坐标点串，两点间用“,”分隔																																																																|高德地图														|
 
-### 路线规划（步行导航）@walkingroute
+#### 步行（walking）@walkingroute
 
 **示例**
 
@@ -524,7 +526,7 @@ console.log("result", result);
 | &emsp;&emsp;&emsp;&#124;-- walk_type				|String	|算路结果中存在的道路类型：<br/>0，普通道路 1，人行横道 3，地下通道 4，过街天桥<br/>5，地铁通道 6，公园 7，广场 8，扶梯 9，直梯<br/>10，索道 11，空中通道 12，建筑物穿越通道<br/>13，行人通道 14，游船路线 15，观光车路线 16，滑道<br/>18，扩路 19，道路附属连接线 20，阶梯 21，斜坡<br/>22，桥 23，隧道 30，轮渡	|高德地图	|
 | &emsp;&emsp;&#124;-- polyline								|String	|设置后可返回分路段坐标点串，两点间用“,”分隔																																																																																																																																		|高德地图	|
 
-### 路线规划（骑行导航）@bicyclingroute
+#### 骑行（bicycling）@bicyclingroute
 
 **示例**
 
@@ -585,8 +587,7 @@ console.log("result", result);
 | &emsp;&emsp;&emsp;&#124;-- walk_type				|String	|算路结果中存在的道路类型：<br/>0，普通道路 1，人行横道 3，地下通道 4，过街天桥<br/>5，地铁通道 6，公园 7，广场 8，扶梯 9，直梯<br/>10，索道 11，空中通道 12，建筑物穿越通道<br/>13，行人通道 14，游船路线 15，观光车路线 16，滑道<br/>18，扩路 19，道路附属连接线 20，阶梯 21，斜坡<br/>22，桥 23，隧道 30，轮渡	|高德地图	|
 | &emsp;&emsp;&#124;-- polyline								|String	|设置后可返回分路段坐标点串，两点间用“,”分隔																																																																																																																																		|高德地图	|
 
-
-### 路线规划（电动车导航）@ebicyclingroute
+#### 电动车（ebicycling）@ebicyclingroute
 
 **示例**
 
@@ -647,8 +648,7 @@ console.log("result", result);
 | &emsp;&emsp;&emsp;&#124;-- walk_type				|String	|算路结果中存在的道路类型：<br/>0，普通道路 1，人行横道 3，地下通道 4，过街天桥<br/>5，地铁通道 6，公园 7，广场 8，扶梯 9，直梯<br/>10，索道 11，空中通道 12，建筑物穿越通道<br/>13，行人通道 14，游船路线 15，观光车路线 16，滑道<br/>18，扩路 19，道路附属连接线 20，阶梯 21，斜坡<br/>22，桥 23，隧道 30，轮渡	|高德地图	|
 | &emsp;&emsp;&#124;-- polyline								|String	|设置后可返回分路段坐标点串，两点间用“,”分隔																																																																																																																																		|高德地图	|
 		
-
-### 路线规划（公交导航）@transitroute
+#### 公交（transit）@transitroute
 
 基于公共汽车、地铁、火车等公共交通工具，计算起到终点的路线换乘方案，同时提供少换乘、少步行等偏好设置，支持一次返回多条方案以供用户选择。
 
@@ -692,7 +692,7 @@ console.log("result", result);
 |date							|String	|否		| 请求日期 例如:2013-10-28																																																																																																																												|高德地图	|
 |time							|String	|否		| 请求时间 例如:9-54																																																																																																																															|高德地图	|
 
-#### 【公交】方式policy值范围@transitroutepolicy
+##### 【公交】方式policy值范围@transitroutepolicy
 
 0：默认模式
 

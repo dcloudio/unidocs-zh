@@ -131,7 +131,7 @@ pageClass: custom-page-class
 ## 为什么要选择uni-app？
 
 ```uni-app```在开发者数量、案例、跨端抹平度、扩展灵活性、性能体验、周边生态、学习成本、开发成本等8大关键指标上拥有更强的优势。
-<!-- ![](https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/uni20190418.png) -->
+
 <div class="uniapp-home-content">
     <div class="uniapp-home-content-item">
       <div class="uniapp-home-content-item-image">
@@ -225,4 +225,4 @@ pageClass: custom-page-class
 
 实际运行效果如下（点击图片可放大）：
 
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg" loading="lazy" class="zooming"></img>
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg){.zooming}

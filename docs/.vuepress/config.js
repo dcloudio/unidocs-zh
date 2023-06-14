@@ -74,8 +74,11 @@ module.exports = merge({
         .plugin('normallize-link')
         .use(require('./markdown/normallizeLink'))
         .end()
-				.plugin('img-attrs')
-				.use(require('./markdown/markdowm-it-image-attrs'))
+				.plugin('img-add-attrs')
+				.use(require('./markdown/img-add-attrs'))
+        .end()
+				.plugin('attrs')
+        .use(require('markdown-it-attrs'))
     }
   },
   chainWebpack (config, isServer) {

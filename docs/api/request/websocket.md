@@ -21,12 +21,6 @@
 ```javascript
 uni.connectSocket({
 	url: 'wss://www.example.com/socket',
-	data() {
-		return {
-			x: '',
-			y: ''
-		};
-	},
 	header: {
 		'content-type': 'application/json'
 	},

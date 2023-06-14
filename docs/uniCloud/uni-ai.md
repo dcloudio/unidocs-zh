@@ -647,7 +647,7 @@ try {
 
 ## 从免费版升级到uni-ai计费网关@migrate-to-uni-ai-gateway
 
-uni-ai计费网关支持调用azure、minimax的对话接口，调用getLLMManager时如果不传provider会使用minimax作为服务商。在开始使用前需要购买uni-ai套餐包，购买流程参考：[uni-ai开通流程](uni-ai-buy.md#enable-uni-ai-service)
+uni-ai计费网关支持调用azure、minimax的对话接口，调用getLLMManager时如果不传provider会使用minimax作为服务商。在开始使用前需要购买uni-ai套餐包，购买流程参考：[uni-ai开通流程](uni-ai-buy.md#enable-uni-ai-service)。
 
 如果使用uni-ai-chat直接更新uni-ai-chat到1.2.0版本即可。
 
@@ -656,6 +656,8 @@ uni-ai计费网关支持调用azure、minimax的对话接口，调用getLLMManag
 在使用非流式响应时，`chatCompletion`方法无需调整，和免费版用法一致。
 
 在使用流式响应时，需要将sseChannel对象传给`chatCompletion`方法。详情参考：[使用流式响应](#chat-completion-stream)
+
+调整完毕后上传依赖uni-ai的云函数即可，注意即使没有修改也需要重新上传。
 
 ## 交流群
 

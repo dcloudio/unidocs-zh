@@ -1,7 +1,6 @@
 ## uni-vue-devtools
 
-> 新增于`HBuilderX 3.7.0` 及 `cli 3.0.0-alpha-3070020230117001+`
-> Added in `HBuilderX 3.7.0` and `cli 3.0.0-alpha-3070020230117001+`
+> 新增于`HBuilderX 3.7.0` 及 `cli 3.0.0-Alpha-3070020230117001+`
 
 > 仅支持vue3。暂不支持vue2
 > Only supports vue3. Vue2 is not supported yet

@@ -177,9 +177,7 @@ Migration time-consuming: very short, negligible
 - 云存储在迁移开始后，上传文件的功能不可用，访问不受影响
 - After the cloud storage migration starts, the function of uploading files is unavailable, and the access will not be affected
 - 原云存储链接仍可正常访问，流量费用会计到正式版空间，正式版空间如果是包年包月则从资源用量中扣除，如果是按量计费则会出账并从余额中扣除，出账时间为T+2
-- The original cloud storage link can still be accessed normally, and the traffic fee is accounted to the official version space. If the official version space is a yearly subscription, it will be deducted from the resource usage. If it is billed by volume, it will be billed and deducted from the balance. Account time is T+2
-- 使用HBuilderX 3.6.10-alpha或3.6.5-正式版之前的版本发布的应用，迁移后上传文件会报错（错误信息为：`文件上传失败`，web端上传请求会返回403错误码），需要使用更新的HBuilderX版本重新发布应用（不管是app、小程序、web均需要重新发布，app端可使用wgt更新）。cli创建的项目需要更新项目依赖，参考：[修改依赖为指定版本](../quickstart-cli.md#cliversion)
-- For applications published before HBuilderX 3.6.10-alpha or 3.6.5-official version, an error will be reported when uploading files after migration (the error message is: `File upload failed`, and the web upload request will return a 403 error code), The application needs to be republished with an updated version of HBuilderX (whether it is app, MiniApp, or web, it needs to be republished, and the app side can be updated with wgt). Projects created by cli need to update project dependencies, refer to: [Modify dependencies to specified version](../quickstart-cli.md#cliversion)
+- 使用HBuilderX 3.6.10-Alpha或3.6.5-正式版之前的版本发布的应用，迁移后上传文件会报错（错误信息为：`文件上传失败`，web端上传请求会返回403错误码），需要使用更新的HBuilderX版本重新发布应用（不管是app、小程序、web均需要重新发布，app端可使用wgt更新）。cli创建的项目需要更新项目依赖，参考：[修改依赖为指定版本](../quickstart-cli.md#cliversion)
 - 正式版新上传的视频文件，视频截帧只支持H.264编码格式，不支持H.265编码格式，原公测版上传的视频不受影响
 - For the newly uploaded video files of the official version, the video frame capture only supports the H.264 encoding format, not the H.265 encoding format, and the videos uploaded by the original public beta version will not be affected
 

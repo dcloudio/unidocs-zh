@@ -90,8 +90,7 @@ You can use [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) to mana
   ```shell
   npx @dcloudio/uvm
   ```
-* 更新到最新 alpha 版
-* Updated to latest alpha version
+* 更新到最新 Alpha 版
   ```shell
   npx @dcloudio/uvm alpha
   ```
@@ -104,8 +103,7 @@ You can use [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) to mana
   ```shell
   npx @dcloudio/uvm 3.2.12.20211029
   ```
-* 更新到 alpha 版指定版本
-* Update to alpha specified version
+* 更新到 Alpha 版指定版本
   ```shell
   npx @dcloudio/uvm 3.2.0-alpha
   ```

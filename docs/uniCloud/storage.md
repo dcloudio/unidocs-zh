@@ -302,8 +302,7 @@ After Alibaba Cloud migrates the service space, the old cloud storage url needs 
 |阿里云																										|腾讯云	|
 |Alibaba Cloud |Tencent Cloud |
 |----																											|----		|
-|HBuilderX 3.6.10+（alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
-| HBuilderX 3.6.10+ (alpha version), HBuilderX 3.6.5+ (official version) | Not supported |
+|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
 
 #### 请求参数
 #### Request parameters
@@ -935,8 +934,7 @@ After Alibaba Cloud migrates the service space, the old cloud storage url needs 
 |阿里云																										|腾讯云	|
 |Alibaba Cloud |Tencent Cloud |
 |----																											|----		|
-|HBuilderX 3.6.10+（alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
-| HBuilderX 3.6.10+ (alpha version), HBuilderX 3.6.5+ (official version) | Not supported |
+|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
 
 #### 请求参数
 #### Request parameters

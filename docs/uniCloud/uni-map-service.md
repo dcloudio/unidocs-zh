@@ -37,6 +37,7 @@ let uniMapService = new UniMapService({
 |参数								|类型		|必填	|说明														|兼容性	|
 |:--								|:-:		|:-:	|:--														|:-:		|
 |provider						|String	|是		|指定使用哪家地图供应商					|all		|
+|key								|String	|是		|地图供应商对应的key						|all		|
 |needOriginalResult	|Boolean|否		|是否需要返回原始信息，默认false|all		|
 
 **provider可选项**
@@ -56,6 +57,7 @@ const UniMapService  = require('uni-map-service');
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
 });
 // 调用API
 let result = await uniMapService.location2address({
@@ -109,6 +111,7 @@ const UniMapService  = require('uni-map-service');
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
 });
 // 调用API
 let result = await uniMapService.address2location({
@@ -150,6 +153,7 @@ const UniMapService  = require('uni-map-service');
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
 });
 // 调用API
 let result = await uniMapService.translate({
@@ -191,6 +195,7 @@ const UniMapService  = require('uni-map-service');
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
 });
 // 调用API
 let result = await uniMapService.ip2location({
@@ -232,6 +237,7 @@ const UniMapService  = require('uni-map-service');
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
 });
 // 调用API
 let result = await uniMapService.inputtips({
@@ -303,6 +309,7 @@ const UniMapService  = require('uni-map-service');
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
 });
 // 调用API
 let result = await uniMapService.route({
@@ -466,6 +473,7 @@ const UniMapService  = require('uni-map-service');
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
 });
 // 调用API
 let result = await uniMapService.route({
@@ -523,6 +531,7 @@ const UniMapService  = require('uni-map-service');
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
 });
 // 调用API
 let result = await uniMapService.route({
@@ -577,6 +586,7 @@ const UniMapService  = require('uni-map-service');
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
 });
 // 调用API
 let result = await uniMapService.route({
@@ -633,6 +643,7 @@ const UniMapService  = require('uni-map-service');
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
 });
 // 调用API
 let result = await uniMapService.route({

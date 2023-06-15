@@ -16,8 +16,9 @@ uni-map-service公共模块仅能在云函数/云对象内使用。如果您不�
 |---						|---																																													|
 |errCode				|为0代表成功，其他均为失败																																		|
 |errMsg					|失败后的提示																																									|
+|provider				| 当前数据是哪家地图供应商返回的																															|
+|result					| 插件返回结果（抹平各平台差异后的返回结果）																									|
 |originalResult	| 原始返回结果（供应商接口原始返回结果，需new UniMapService时，设置needOriginalResult: true）	|
-|result					| 插件返回结果（抹平各平台差异后的返回结果）																											|
 
 ## 初始化实例
 

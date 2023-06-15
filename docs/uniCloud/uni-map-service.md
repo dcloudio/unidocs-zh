@@ -28,6 +28,7 @@ uni-map-service公共模块仅能在云函数/云对象内使用。如果您不�
 // 初始化实例
 let uniMapService = new UniMapService({
 	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx",
 	needOriginalResult: false, // 是否需要返回原始信息
 });
 ```

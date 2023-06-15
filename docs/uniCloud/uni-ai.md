@@ -125,7 +125,6 @@ const llmManager = uniCloud.ai.getLLMManager({
 })
 ```
 
-
 ### 对话@chat-completion
 
 :::warning 注意
@@ -291,7 +290,7 @@ console.log(res);
 
 > 新增于HBuilderX正式版 3.7.10+， alpha版 HBuilderX 3.8.0+。
 
-> uni-ai内部处理流式响应云端支持新增于2023年6月15日，HBuilderX会在下次发版时进行支持。使用流式响应时，uni-ai计费网关仅支持uni-ai内部处理流式响应的用法
+> uni-ai chatCompletion接口支持传sseChannel参数的用法云端支持新增于2023年6月15日，HBuilderX会在下次发版时进行支持。使用uni-ai计费网关流式响应时，sseChannel参数必填
 
 访问AI聊天接口时，如生成内容过大，响应时间会很久，前端用户需要等待很长时间才会收到结果。
 
@@ -312,7 +311,7 @@ uniCloud的云函数，基于uni-push2，于 HBuilderX 新版提供了sse通道�
 1. 需提前为应用开通[uni-push2](/unipush-v2.md)
 2. 不同provider的流式支持度不同，有的message事件是按字输出、有的是按句输出。
 3. 开启流式响应后`chatCompletion`接口将返回流对象，而不会返回具体结果。开发者需要使用流获取AI响应的内容。
-4. 如果使用uni-ai内部处理流式响应，`chatCompletion`接口不会返回流对象，只会返回`{errCode: 0}`。
+4. `chatCompletion`接口传`sseChannel`参数时，`chatCompletion`接口不会返回流对象，只会返回`{errCode: 0}`。
 5. 如使用nginx代理，需要将代理配置为`proxy_buffering off;`，否则可能会遇到`Unexpected end of JSON input`错误
 
 stream对象有四个事件：
@@ -325,7 +324,7 @@ stream对象有四个事件：
 **云函数代码示例**
 
 ```js
-// uni-ai内部处理流式响应
+// 将sseChannel传递给chatCompletion接口，由uni-ai自动往客户端发送流式响应
 'use strict';
 exports.main = async (event, context) => {
   const llmManager = uniCloud.ai.getLLMManager({
@@ -341,15 +340,17 @@ exports.main = async (event, context) => {
     sseChannel: event.channel
   })
   return {
-    errCode: 0
+    errCode: 0,
+    errMsg: ''
   }
 };
 ```
 
 ```js
-// 自行处理流式响应
+// 自行处理流式响应，上述将sseChannel传递给chatCompletion接口的等价写法
 'use strict';
 exports.main = async (event, context) => {
+  const sseChannel = uniCloud.deserializeSSEChannel(event.channel)
   const llmManager = uniCloud.ai.getLLMManager({
     provider: 'azure'
   })
@@ -371,16 +372,23 @@ exports.main = async (event, context) => {
     streamRes.on('line', (line) => {
       console.log('---line----', line) // 返回一行时触发，即\n
     })
-    streamRes.on('message', (message) => {
+    streamRes.on('message', async (message) => {
+      await sseChannel.write(message)
       console.log('---message----', message) // 实时触发
     })
-    streamRes.on('end', () => {
+    streamRes.on('end', async () => {
       console.log('---end----') // 响应结束
+      await sseChannel.end({ errCode: 0 })
       resolve({
-        errCode: 0
+        errCode: 0,
+        errMsg: ''
       })
     })
     streamRes.on('error', (err) => {
+      await sseChannel.end({ 
+        errCode: err.errCode || err.code,
+        errMsg: err.errMsg || err.message,
+      })
       console.log('---error----', err)
       reject(err)
     })
@@ -714,6 +722,12 @@ uni-ai计费网关支持调用minimax、微软azure openai ChatGPT3.5的对话�
 	- 在使用流式响应时，需要将sseChannel对象传给`chatCompletion`方法。详情参考：[使用流式响应](#chat-completion-stream)
 
 调整完毕后上传依赖uni-ai的云函数/云对象即可，**注意即使没有修改也需要重新上传**。
+
+**免费版取消后使用免费版可能遇到的错误**
+
+在免费版停用后，如果连接云端云函数时未使用uni-ai计费网关且未自行传递key信息，且未在2023年6月15日0点后更新云函数，则会遇到`token is unusable`错误。如果使用在2023年6月15日0点后更新了云函数，则会提示`尚未购买uni-ai套餐`。
+
+此外使用HBuilderX 3.8.4及之前的版本本地运行时无法使用uni-ai计费网关，因此也会遇到`token is unusable`错误。请使用云端云函数进行调试。
 
 **如何测试是否配置成功**
 

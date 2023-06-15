@@ -3,15 +3,15 @@
 本文旨在帮助uts插件开发者和使用者，快速了解pod依赖库使用过程中常见错误处理及CocoaPods的安装方式
 
 
-## 1 pod依赖库使用过程中常见错误及处理方式说明
+## pod依赖库使用过程中常见错误及处理方式说明
 
-### 1.1 未安装CocoaPods
+### 未安装CocoaPods
 
 错误信息：uni_module [xxxx](iOS)存在pod三方依赖库，请先安装CocoaPods！
 说明：出现此错误是因为当前环境没有安装CocoaPods
 处理方法： 请参照[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods)安装CocoaPods工具。
 
-### 1.2 指定的pod库在本地repo仓库找不到索引
+### 指定的pod库在本地repo仓库找不到索引
 
 错误信息：CocoaPods could not find compatible versions for pod "xxx"
 报错示例：
@@ -36,7 +36,7 @@
 - 请首先确保配置的 pod 库 name 正确，配置的 version 不高于 pod 库发行的最高版本号。
 - 在确保配置的前提下，在终端手动执行 pod repo update 命令。(说明：由于pod repo update 较为耗时，为了保证编译速度，避免无必要的 pod repo update, 插件内部只执行了 pod install)
 
-### 1.3 pod库下载失败
+### pod库下载失败
 
 错误信息示例：
 
@@ -68,7 +68,7 @@
 - 检查您的网络，确保网络顺畅，且可以正常访问github，某些pod库的下载可能需要翻墙。在网络不好时，请多试几次。
 
 
-## 2 CocoaPods install
+## CocoaPods install
 
 CocoaPods安装
 
@@ -78,7 +78,7 @@ CocoaPods安装
 sudo gem install cocoapods
 ```
 
-如果执行之后报下面的错误
+- 如果执行之后报下面的错误
 
 ```
 ERROR:  Error installing cocoapods:
@@ -92,7 +92,7 @@ sudo gem install activesupport -v 6.1.7.3
 ```
 安装成功后再次执行 sudo gem install cocoapods 安装 CocoaPods.
 
-如果执行命令之后报错，说明需要升级 gem 和 ruby
+- 如果执行命令之后报错，说明需要升级 gem 和 ruby
 
 ```
 Building native extensions. This could take a while...
@@ -107,7 +107,9 @@ Gem files will remain installed in /Library/Ruby/Gems/2.6.0/gems/ffi-1.15.5 for 
 Results logged to /Library/Ruby/Gems/2.6.0/extensions/universal-darwin-22/2.6.0/ffi-1.15.5/gem make.out
 ```
 
-### 2.1 升级 Gem
+下面是升级 Gem 和 Ruby 的方法
+
+### 升级 Gem
 
 Gem 是管理 Ruby 标准包,如果 Gem 版本过低可能造成无法安装 CocoaPods,升级 Gem 使用下述命令
 
@@ -116,7 +118,7 @@ gem -v  //查看当前gem版本
 sudo gem update --system　  //升级gem
 ```
 
-### 2.2 升级 Ruby
+### 升级 Ruby
 
 MacOS 会自带 Ruby，但可能系统的Ruby版本过低，导致无法安装 CocoaPods, 可通过以下方式更新 Ruby
 
@@ -128,7 +130,7 @@ MacOS 会自带 Ruby，但可能系统的Ruby版本过低，导致无法安装 C
 
 Ruby 的升级有以下两种常见的方式，可任选其中一种：
 
-#### 2.2.1 通过 RVM 升级 Ruby
+#### 通过 RVM 升级 Ruby
 
 - 安装 RVM：在终端中输入以下命令安装 RVM：
 
@@ -166,7 +168,7 @@ rvm install ruby-3.0.0
 rvm use ruby-3.0.0
 ```
 
-#### 2.2.2 通过 Homebrew 升级 Ruby
+#### 通过 Homebrew 升级 Ruby
 
 在终端执行如下命令
 
@@ -194,7 +196,7 @@ ruby -v
 - 配置完成后重启终端，再次查看 Ruby 版本号，校验是否为安装的 Ruby版本
 
 
-### 2.3 安装 CocoaPods
+### 安装 CocoaPods
 
 升级完 Gem 和 Ruby 后，在终端输入如下命令，
 

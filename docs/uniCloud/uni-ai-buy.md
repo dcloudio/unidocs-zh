@@ -14,13 +14,14 @@
 ### 购买套餐
 付费uni-ai服务按月度套餐购买，您可以根据业务规模，选择合适的套餐下单。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230613-201256.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230615-202854.png)
 
 套餐版本说明：
 
 |版本		|token数	|售价		|
 |--			|--			|--			|
 |体验版		|300K		|4.5元/月	|
+|45元套餐	|3000K		|45元/月	|
 |90元套餐	|6000K		|90元/月	|
 |450元套餐	|30000K		|450元/月	|
 |900元套餐	|60000K		|900元/月	|
@@ -57,7 +58,7 @@
 
 在uni-ai套餐信息页面点击续费按钮可以对套餐进行续费操作。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230613-203339.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai/ai20230615-203121.png)
 
 套餐到期后，套餐状态将被设置为禁用，无法再使用uni-ai相关功能。如需继续使用，您需要及时为套餐续费。
 
@@ -76,7 +77,6 @@
 
 在uni-ai套餐信息页面点击变配按钮可以对套餐进行降配操作。
 
-**目前可以降配但是无法退还费用到您的账号**
 
 **注意**
 

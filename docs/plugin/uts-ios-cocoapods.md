@@ -1,71 +1,5 @@
-## uts iOS CocoaPods 
 
-本文旨在帮助uts插件开发者和使用者，快速了解pod依赖库使用过程中常见错误处理及CocoaPods的安装方式
-
-
-## pod依赖库使用过程中常见错误及处理方式说明
-
-### 未安装CocoaPods
-
-错误信息：uni_module [xxxx](iOS)存在pod三方依赖库，请先安装CocoaPods！
-说明：出现此错误是因为当前环境没有安装CocoaPods
-处理方法： 请参照[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods)安装CocoaPods工具。
-
-### 指定的pod库在本地repo仓库找不到索引
-
-错误信息：CocoaPods could not find compatible versions for pod "xxx"
-报错示例：
-
-```ts
-'Analyzing dependencies\n' +
-    '[!] CocoaPods could not find compatible versions for pod "HandyJSON":\n' +
-    '  In Podfile:\n' +
-    '    HandyJSON (= 2.0.2)\n' +
-    '\n' +
-    'None of your spec sources contain a spec satisfying the dependency: `HandyJSON (= 2.0.2)`.\n' +
-    '\n' +
-    'You have either:\n' +
-    ' * out-of-date source repos which you can update with `pod repo update` or with `pod install --repo-update`.\n' +
-    ' * mistyped the name or version.\n' +
-    ' * not added the source repo that hosts the Podspec to your Podfile.\n',
-```
-
-说明：出现此错误是因为执行 pod install 时在本地 repo 仓库未找到对应的库索引。
-处理方法：
-
-- 请首先确保配置的 pod 库 name 正确，配置的 version 不高于 pod 库发行的最高版本号。
-- 在确保配置的前提下，在终端手动执行 pod repo update 命令。(说明：由于pod repo update 较为耗时，为了保证编译速度，避免无必要的 pod repo update, 插件内部只执行了 pod install)
-
-### pod库下载失败
-
-错误信息示例：
-
-- 示例一
-
-```ts
-'[!] Error installing Alamofire\n' +
-'[!] /usr/bin/git clone https://github.com/Alamofire/Alamofire.git /var/folders/9h/2znqhy813g932mrj_c9f781w0000gn/T/d20230614-22451-49mc32 --template= --single-branch --depth 1 --branch 5.7.1\n' +
-'\n' +
-"Cloning into '/var/folders/9h/2znqhy813g932mrj_c9f781w0000gn/T/d20230614-22451-49mc32'...\n" +
-"fatal: unable to access 'https://github.com/Alamofire/Alamofire.git/': error:02FFF03C:system library:func(4095):Operation timed out\n",
-```
-
-- 示例二
-
-```ts
-"[!] CDN: trunk URL couldn't be downloaded: https://cdn.cocoapods.org/all_pods_versions_8_e_e.txt Response: Couldn't resolve host name\n",
-```
-
-- 示例三
-
-```ts
-'[!] CDN: trunk Repo update failed - 75 error(s):'
-```
-
-说明： 出现此类错误是因为网络超时、不能正常访问 github、或者需要翻墙。
-
-处理方式：
-- 检查您的网络，确保网络顺畅，且可以正常访问github，某些pod库的下载可能需要翻墙。在网络不好时，请多试几次。
+本文旨在帮助 uts 插件开发者和使用者，快速了解在MAC环境真机运行时 CocoaPods 的安装方法，以及 CocoaPods 使用过程中常见错误处理
 
 
 ## CocoaPods install
@@ -91,6 +25,7 @@ ERROR:  Error installing cocoapods:
 sudo gem install activesupport -v 6.1.7.3
 ```
 安装成功后再次执行 sudo gem install cocoapods 安装 CocoaPods.
+
 
 - 如果执行命令之后报错，说明需要升级 gem 和 ruby
 
@@ -226,3 +161,70 @@ pod repo update
 ```
 pod search Alamofire
 ```
+
+
+## pod依赖库使用过程中常见错误及处理方式说明
+
+### MAC 环境真机运行 uts 插件时未安装 CocoaPods
+
+错误信息：uni_module [xxxx](iOS)存在pod三方依赖库，请先安装 CocoaPods！
+说明：出现此错误是因为当前环境没有安装 CocoaPods
+处理方法： 请参照上述章节描述的方式安装 CocoaPods 工具。
+
+### 指定的 pod 库在本地 repo 仓库找不到索引
+
+错误信息：CocoaPods could not find compatible versions for pod "xxx"
+报错示例：
+
+```ts
+'Analyzing dependencies\n' +
+    '[!] CocoaPods could not find compatible versions for pod "HandyJSON":\n' +
+    '  In Podfile:\n' +
+    '    HandyJSON (= 2.0.2)\n' +
+    '\n' +
+    'None of your spec sources contain a spec satisfying the dependency: `HandyJSON (= 2.0.2)`.\n' +
+    '\n' +
+    'You have either:\n' +
+    ' * out-of-date source repos which you can update with `pod repo update` or with `pod install --repo-update`.\n' +
+    ' * mistyped the name or version.\n' +
+    ' * not added the source repo that hosts the Podspec to your Podfile.\n',
+```
+
+说明：出现此错误是因为执行 pod install 时在本地 repo 仓库未找到对应的库索引。
+处理方法：
+
+- 请首先确保配置的 pod 库 name 正确，配置的 version 不高于 pod 库发行的最高版本号， 未使用私有仓库 pod 库。
+- 真机运行时在终端手动执行 pod repo update 命令。(说明：由于pod repo update 较为耗时，为了保证编译速度，避免无必要的 pod repo update, 插件内部只执行了 pod install),
+- 云打包时请重新打包，或者联系管理员。
+
+### pod库下载失败
+
+错误信息示例：
+
+- 示例一
+
+```ts
+'[!] Error installing Alamofire\n' +
+'[!] /usr/bin/git clone https://github.com/Alamofire/Alamofire.git /var/folders/9h/2znqhy813g932mrj_c9f781w0000gn/T/d20230614-22451-49mc32 --template= --single-branch --depth 1 --branch 5.7.1\n' +
+'\n' +
+"Cloning into '/var/folders/9h/2znqhy813g932mrj_c9f781w0000gn/T/d20230614-22451-49mc32'...\n" +
+"fatal: unable to access 'https://github.com/Alamofire/Alamofire.git/': error:02FFF03C:system library:func(4095):Operation timed out\n",
+```
+
+- 示例二
+
+```ts
+"[!] CDN: trunk URL couldn't be downloaded: https://cdn.cocoapods.org/all_pods_versions_8_e_e.txt Response: Couldn't resolve host name\n",
+```
+
+- 示例三
+
+```ts
+'[!] CDN: trunk Repo update failed - 75 error(s):'
+```
+
+说明： 出现此类错误是因为网络超时、不能正常访问 github、或者需要翻墙。
+
+处理方式：
+- 真机运行：检查您的网络，确保网络顺畅，且可以正常访问github，某些pod库的下载可能需要翻墙。在网络不好时，请多试几次。
+- 云打包：请重新打包，或者联系管理员。

@@ -332,8 +332,6 @@ console.log("result", result);
 |accuracy									|Number	|否		| [from辅助参数]定位精度，单位：米，取>0数值，默认5。 当定位精度>30米时heading参数将被忽略																																																																																												|腾讯地图														|
 |from_track								|Number	|否		| [from辅助参数]起点轨迹																																																																																																																													|腾讯地图														|
 |get_mp										|Number	|否		| 是否返回多方案 <br/>0：[默认]仅返回一条路线方案 <br/>1：返回多方案（最多可返回三条方案供用户备选）																																																																																							|腾讯地图														|
-|get_speed								|Number	|否		| 是否返回路况（道路速度）<br/>0：[默认]不返回路况 1：返回路况																																																																																																										|腾讯地图														|
-|added_fields							|Number	|否		| 返回指定标准附加字段，取值支持 cities 路线途经行政区划信息(按路线A途经顺序排序)																																																																																																	|腾讯地图														|
 |no_step									|Number	|否		| 不返回路线引导信息，可使回包数据量更小，<br/>取值：<br/>0：[默认]返回路线引导信息 <br/>1：不返回																																																																																								|腾讯地图														|
 |avoidroad								|String	|否		| 避让道路名，只支持一条避让道路																																																																																																																									|高德地图														|
 |ferry										|Number	|否		| 是否使用轮渡 <br/>0：使用渡轮 <br/>1：不使用渡轮																																																																																																																|高德地图														|
@@ -639,7 +637,9 @@ let uniMapService = new UniMapService({
 let result = await uniMapService.route({
 	mode: "transit",
 	from: "40.034852,116.319820",
-	to: "39.771075,116.351395"
+	to: "29.771075,116.351395",
+	city1: "010",
+	city2: "0792"
 });
 console.log("result", result);
 ```

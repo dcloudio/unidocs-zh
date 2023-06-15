@@ -48,9 +48,9 @@
     ```html
     <img class="zooming" src="xxx">
     ```
-11. md 支持书写属性（花括号 `{` 与 markdown 语法之间不能有空格）
+11. md 支持书写属性（`#{` 与 markdown 语法之间不能有空格）
     ```md
-    ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg){.zooming data=abc width=100 height=100}
+    ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)#{.zooming data=abc width=100 height=100}
     ```
     渲染为：
     

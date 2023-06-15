@@ -2,7 +2,9 @@
 
 ## API@api
 
-> 新增于HBuilderX正式版 3.7.10+， Alpha版 3.7.13+。uni-ai计费网关支持新增于2023年6月15日，HBuilderX会在下次发版时进行支持
+> 新增于HBuilderX正式版 3.7.10+， Alpha版 3.7.13+。
+
+> uni-ai计费网关新增于2023年6月15日，HBuilderX会在下次发版时进行支持，需要更新云端依赖uni-ai的云函数才可以使用uni-ai计费网关
 
 :::warning 注意
 使用低版本HBuilder，只能上传到uniCloud云端联调。因为低版本的uniCloud本地运行插件不支持`uni-ai`。云端和本地扩展库差异参考：[云端和本地扩展库差异](rundebug.md#diff-extension)
@@ -18,7 +20,8 @@ ai能力由`uni-cloud-ai`扩展库提供，在云函数或云对象中，对右�
 
 如果HBuilderX版本过低，在云函数的扩展库界面里找不到`uni-ai`。
 
-注意`uni-ai`是云函数扩展库，其api是`uniCloud.ai`，不是需要下载的三方插件。而[uni-ai-chat](uni-ai-chat.md)、[uni-im](uni-im.md)和[uni-cms](uni-cms.md)等开源项目，是需要在插件市场下载的。
+注意`uni-ai`是云函数扩展库，其api是`uniCloud.ai`，不是需要下载的三方插件，它是一个底层能力。
+而[uni-ai-chat](uni-ai-chat.md)、[uni-im](uni-im.md)和[uni-cms](uni-cms.md)等开源项目，是需要在插件市场下载的。
 
 ### 获取LLM实例@get-llm-manager
 
@@ -34,25 +37,80 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 
 **参数说明GetLLMManagerOptions**
 
-|参数				|类型		|必填																	|默认值	|说明																																																																																	|
-|---				|---		|---																	|---		|---																																																																																	|
-|provider		|string	|是																		|-			|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（azure新增于HBuilderX 3.8.3）。																																							|
-|apiKey			|string	|openai、azure、minimax必填						|-			|llm服务商的apiKey。指定openai、azure或minimax作为服务商则必填																																																				|
-|endpoint		|string	|azure必填														|-			|azure服务端点，在azure创建ai服务时获取																																																																|
-|accessToken|string	|baidu必填														|-			|llm服务商的accessToken。目前百度文心一言是必填，如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)，需确保已开通相关接口的调用权限|
-|groupId		|string	|minimax必填													|-			|llm服务商的groupId参数。指定minimax作为服务商则必填																																																									|
-|proxy			|string	|否																		|-			|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填											|
-|appId			|string	|使用uni-ai计费网关时，部分情况必填	|-			|客户端manifest.json内的appId，部分场景下（云函数url化、定时触发）云函数/云对象无法获取客户端appId，需要通过此参数传递																								|
+|参数		|类型	|必填											|默认值	|说明																																			|
+|---		|---	|---											|---	|---																																			|
+|provider	|string	|否												|minimax|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（azure新增于HBuilderX 3.8.3）。														|
+|apiKey		|string	|使用uni-ai计费网关时不填。使用自己的key时必填	|-		|llm服务商的apiKey。																															|
+|endpoint	|string	|使用uni-ai计费网关时不填。使用自己的azure账户时必填	|-		|azure服务端点，在azure创建ai服务时获取																											|
+|groupId	|string	|使用uni-ai计费网关时不填。使用自己的minimax账户时必填	|-		|minimax的groupId参数。																														|
+|accessToken|string	|baidu必填										|-		|llm服务商的accessToken。如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)，需确保已开通相关接口的调用权限	|
+|proxy		|string	|使用国外openai时必填，其他情况不填				|-		|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填|
+|appId		|string	|使用uni-ai计费网关时，部分情况必填（见后）			|-		|客户端manifest.json内的appId，部分场景下（云函数url化、定时触发）云函数/云对象无法获取客户端appId，需要通过此参数传递							|
+
+大语言模型的推理需要消耗很高的GPU算力，调用大模型需要在模型厂商处注册账户和付费。
+
+您可以自行去大模型厂商处注册并填写相应的apiKey的参数。也可以通过DCloud来购买，即使用`uni-ai计费网关`。
+
+在2023-06-15前，您不填写相关apiKey时可以免费使用uni-ai的LLM能力。但6月15日起需配置自己的apiKey或使用`uni-ai计费网关`，否则无法使用。详见[uni-ai计费老用户升级指南](#migrate-to-uni-ai-gateway)
+
+`uni-ai计费网关`使用门槛低，并且可以一处充值，多模型体验。您无需在多个大模型厂商处申请，只需向DCloud购买token套餐，即可体验各种大模型的效果。
+
+`uni-ai计费网关`的token计费单价与大模型厂商的定价相同，支持开具发票。
+
+uni-ai作为一个国际化业务，支持国内外各种开发者面向国内外各种用户开发应用。
+但开发者务必需注意您的应用是否符合当地政府监管要求、是否满足大模型厂商的限制政策。比如中国的大模型目前只能在大陆地区面向中国国籍用户使用，而国外的模型也有类似的区域限制。在uniCloud web控制台开通uni-ai计费网关时，您需要同意相关许可协议。
 
 **如何使用uni-ai计费网关**
 
-uni-ai计费网关目前已支持付费使用minimax、azure服务，在指定provider为minimax或azure时如果不传apiKey，则会使用uni-ai计费网关，此时无需传递其他服务商凭证（endpoint、groupId等）。如需开通ai服务请参考：[uni-ai开通流程](uni-ai-buy.md#enable-uni-ai-service)
+uni-ai计费网关目前支持付费使用国内大模型厂商minimax，以及微软与openai合作提供的基于azure的ChatGPT3.5（与openai的ChatGPT3.5一致）。
 
-使用uni-ai计费网关时，在云函数url化、定时触发、云函数单实例多并发场景需要传递客户端appId。如果是在HBuilderX内运行云函数（非客户端调用方式）也无法获取appId，此时可参考此文档进行参数模拟：[模拟客户端类型](rundebug.md#mock-client-info)
+1. 开通uni-ai付费服务：[uni-ai计费网关开通流程](uni-ai-buy.md#enable-uni-ai-service)
+2. 云函数中调用LLM时，不传apiKey等您向大模型厂商申请的参数
+	- apiKey、endpoint、groupId、accessToken等参数，是用于您自己向大模型厂商申请后填写的。如果您使用uni-ai计费网关，这些都不填且不能填。一旦您填了，就会走您自己申请的账户，而不是uni-ai计费网关。
+	- 您可以指定provider为minimax或azure，也可以不指定，默认值为minimax。
+
+**示例**
+
+在云函数或云对象中编写如下代码调用LLM服务：
+
+```js
+// 使用uni-ai计费网关，不指定provider，默认会走minimax
+const llmManager = uniCloud.ai.getLLMManager()
+```
+
+```js
+// 使用uni-ai计费网关，指定provider为azure
+const llmManager = uniCloud.ai.getLLMManager({
+  provider: 'azure'
+})
+```
+
+```js
+// 不使用uni-ai计费网关，自行使用openai
+const llmManager = uniCloud.ai.getLLMManager({
+  provider: 'openai',
+  apiKey:'your key',
+  proxy:'www.yourdomain.com' //也可以是ip
+})
+```
+
+**如何测试是否配置成功**
+
+在您使用uni-ai计费网关后，且在云函数代码中做好配置后。您可以：
+1. 运行应用，调用LLM的chatCompletion接口，看看是否返回内容
+2. 在uniCloud web控制台的uni-ai管理界面，查看计费报表，是否产生了对应的计费条目
+
+**appId参数说明**
+
+使用uni-ai计费网关时，在云函数url化、定时触发、云函数单实例多并发，这3个场景需要传递客户端appId，即您应用的manifest.json里的appid。
+
+如果是在HBuilder内直接运行云函数（非客户端联调调用）也无法获取appId，此时可参考此文档进行参数模拟：[模拟客户端类型](rundebug.md#mock-client-info)
 
 **关于proxy参数的说明**
 
-如果使用的代理需要用户名和密码，请在代理地址中加入用户名和密码，例如：`username:password@host:port`。uni-ai在请求openai时会自动将openai的域名替换为配置的代理域名或ip，一般的反向代理服务器均可满足此需求。
+云函数无法直接连同openai的服务器，您需要自行配置代理。如果使用的代理需要用户名和密码，请在代理地址中加入用户名和密码，例如：`username:password@host:port`。
+
+uni-ai在请求openai时会自动将openai的域名替换为配置的代理域名或ip，一般的反向代理服务器均可满足此需求。
 
 **示例**
 
@@ -67,18 +125,6 @@ const llmManager = uniCloud.ai.getLLMManager({
 })
 ```
 
-**免费时限注意：**
-
-之前uni-ai不指定provider时会使用minimax提供给DCloud的免费测试key，现在minimax已经计费商用。
-从2023年6月15日起，该key无法使用。
-也就意味着如果开发者未填provider或没有配置自己的key时，将**无法再调用llm**。
-
-解决方案是开发者需要在云函数中配置自己的key，可以自行向openai、baidu、minimax等支持的llm服务商申请key。
-
-对于线上有正在使用minimax的应用，可以直接更新云函数为getLLMManager方法配置上minimax的调用凭证（provider、groupId、apiKey）。如果你有使用uni-ai-chat，需要在uni-ai-chat的配置文件的llm字段中配置minimax的调用凭证，参考：[uni-ai-chat配置](uni-ai-chat.md#config)。目前仅更新了云端扩展库，HBuilderX本地调试使用的扩展库会在HBuilderX下次发版时进行更新。
-
-开发者使用openai等已经商用的ai时，需自行向相关服务商支付费用。
-
 ### 对话@chat-completion
 
 :::warning 注意
@@ -89,17 +135,17 @@ const llmManager = uniCloud.ai.getLLMManager({
 
 **参数说明ChatCompletionOptions**
 
-|参数							|类型		|必填															|默认值						|说明																																																										|兼容性说明								|
-|---							|---		|---															|---							|---																																																										|---											|
-|messages					|array	|是																| -								|提问信息																																																								|													|
-|model						|string	|否																|默认值见下方说明	|模型名称。每个AI Provider有多个model，见下方说明																																				|baidu、azure不支持此参数	|
-|deploymentId			|string	|azure必填												|-								|azure模型部署id，如使用uni-ai计费网关无需传递此参数、而是要传model，详见下方说明																				|仅azure支持此参数				|
-|~~maxTokens~~		|number	|否																|-								|【已废弃，请使用tokensToGenerate替代】生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096	|baidu不支持此参数				|
-|tokensToGenerate	|number	|否																|默认值见下方说明	|生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096																				|baidu不支持此参数				|
-|temperature			|number	|否																|1								|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个										|baidu不支持此参数				|
-|topP							|number	|否																|1								|采样方法，数值越小结果确定性越强；数值越大，结果越随机																																	|baidu不支持此参数				|
-|stream						|boolean|否																|false						|是否使用流式响应，见下方[流式响应](#chat-completion-stream)章节																												|baidu不支持此参数				|
-|sseChannel				|object	|通过uni-ai计费网关使用流式响应时必填	|-								|见下方[流式响应](#chat-completion-stream)章节。客户端如何获取sseChannel对象，请参考：[云函数请求中的中间状态通知通道](sse-channel.md)																																					|baidu不支持此参数				|
+|参数							|类型		|必填																	|默认值						|说明																																																																	|兼容性说明								|
+|---							|---		|---																	|---							|---																																																																	|---											|
+|messages					|array	|是																		| -								|提问信息																																																															|													|
+|model						|string	|否																		|默认值见下方说明	|模型名称。每个AI Provider有多个model，见下方说明																																											|baidu、azure不支持此参数	|
+|deploymentId			|string	|否																		|-								|azure模型部署id，如使用uni-ai计费网关无需传递此参数、而是要传model，详见下方说明																											|仅azure支持此参数				|
+|~~maxTokens~~		|number	|否																		|-								|【已废弃，请使用tokensToGenerate替代】生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096								|baidu不支持此参数				|
+|tokensToGenerate	|number	|否																		|默认值见下方说明	|生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于4096																											|baidu不支持此参数				|
+|temperature			|number	|否																		|1								|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个																	|baidu不支持此参数				|
+|topP							|number	|否																		|1								|采样方法，数值越小结果确定性越强；数值越大，结果越随机																																								|baidu不支持此参数				|
+|stream						|boolean|否																		|false						|是否使用流式响应，见下方[流式响应](#chat-completion-stream)章节																																			|baidu不支持此参数				|
+|sseChannel				|object	|通过uni-ai计费网关使用流式响应时必填	|-								|见下方[流式响应](#chat-completion-stream)章节。客户端如何获取sseChannel对象，请参考：[云函数请求中的中间状态通知通道](sse-channel.md)|baidu不支持此参数				|
 
 **messages参数说明**
 
@@ -186,12 +232,11 @@ DCloud在[uni-ai-chat](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)�
 
 如果您需要非常精准的问答，且不在乎成本，推荐使用`gpt-4`。如果是普通的文章内容生成、续写，大多数模型均可胜任。
 
-|服务商	|接口			|模型																						|
-|---	|---			|---																						|
-|openai	|chatCompletion	|gpt-4、gpt-4-0314、gpt-4-32k、gpt-4-32k-0314、gpt-3.5-turbo（默认值）、gpt-3.5-turbo-0301	|
-|minimax|chatCompletion	|abab4-chat、abab5-chat（默认值）															|
-
-azure仅需要填写deploymentId不需要填写模型名称
+|服务商							|接口			|模型																						|
+|---							|---			|---																						|
+|openai							|chatCompletion	|gpt-4、gpt-4-0314、gpt-4-32k、gpt-4-32k-0314、gpt-3.5-turbo（默认值）、gpt-3.5-turbo-0301	|
+|minimax						|chatCompletion	|abab4-chat、abab5-chat（默认值）															|
+|azure（通过uni-ai计费网关调用）|chatCompletion	|gpt-3.5-turbo（默认值）																	|
 
 **tokensToGenerate参数说明**
 
@@ -203,7 +248,7 @@ tokensToGenerate指生成的token数量限制，即返回的文本对应的token
 
 **deploymentId参数说明**
 
-使用uni-ai计费网关访问azure服务时需要传递model而不是deploymentId，目前通过uni-ai计费网关调用azure接口仅支持`gpt-3.5-turbo`这一个模型
+自行设置apikey调用azure接口时需要传deploymentId，使用uni-ai计费网关访问azure服务时需要传递model而不是deploymentId。目前通过uni-ai计费网关调用azure接口仅支持`gpt-3.5-turbo`这一个模型。
 
 **chatCompletion方法的返回值**
 
@@ -245,7 +290,7 @@ console.log(res);
 
 > 新增于HBuilderX正式版 3.7.10+， alpha版 HBuilderX 3.8.0+。
 
-> uni-ai内部处理流式响应云端支持新增于2023年6月15日，HBuilderX会在下次发版时进行支持。使用流式响应时，uni-ai计费网关仅支持uni-ai内部处理流式响应的用法
+> uni-ai chatCompletion接口支持传sseChannel参数的用法云端支持新增于2023年6月15日，HBuilderX会在下次发版时进行支持。使用uni-ai计费网关流式响应时，sseChannel参数必填
 
 访问AI聊天接口时，如生成内容过大，响应时间会很久，前端用户需要等待很长时间才会收到结果。
 
@@ -266,7 +311,7 @@ uniCloud的云函数，基于uni-push2，于 HBuilderX 新版提供了sse通道�
 1. 需提前为应用开通[uni-push2](/unipush-v2.md)
 2. 不同provider的流式支持度不同，有的message事件是按字输出、有的是按句输出。
 3. 开启流式响应后`chatCompletion`接口将返回流对象，而不会返回具体结果。开发者需要使用流获取AI响应的内容。
-4. 如果使用uni-ai内部处理流式响应，`chatCompletion`接口不会返回流对象，只会返回`{errCode: 0}`。
+4. `chatCompletion`接口传`sseChannel`参数时，`chatCompletion`接口不会返回流对象，只会返回`{errCode: 0}`。
 5. 如使用nginx代理，需要将代理配置为`proxy_buffering off;`，否则可能会遇到`Unexpected end of JSON input`错误
 
 stream对象有四个事件：
@@ -279,7 +324,7 @@ stream对象有四个事件：
 **云函数代码示例**
 
 ```js
-// uni-ai内部处理流式响应
+// 将sseChannel传递给chatCompletion接口，由uni-ai自动往客户端发送流式响应
 'use strict';
 exports.main = async (event, context) => {
   const llmManager = uniCloud.ai.getLLMManager({
@@ -295,15 +340,17 @@ exports.main = async (event, context) => {
     sseChannel: event.channel
   })
   return {
-    errCode: 0
+    errCode: 0,
+    errMsg: ''
   }
 };
 ```
 
 ```js
-// 自行处理流式响应
+// 自行处理流式响应，上述将sseChannel传递给chatCompletion接口的等价写法
 'use strict';
 exports.main = async (event, context) => {
+  const sseChannel = uniCloud.deserializeSSEChannel(event.channel)
   const llmManager = uniCloud.ai.getLLMManager({
     provider: 'azure'
   })
@@ -325,16 +372,26 @@ exports.main = async (event, context) => {
     streamRes.on('line', (line) => {
       console.log('---line----', line) // 返回一行时触发，即\n
     })
-    streamRes.on('message', (message) => {
+    streamRes.on('message', async (message) => {
+      await sseChannel.write(message)
       console.log('---message----', message) // 实时触发
     })
-    streamRes.on('end', () => {
+    streamRes.on('end', async () => {
       console.log('---end----') // 响应结束
+      await sseChannel.end({ 
+        errCode: 0,
+        errMsg: ''
+      })
       resolve({
-        errCode: 0
+        errCode: 0,
+        errMsg: ''
       })
     })
     streamRes.on('error', (err) => {
+      await sseChannel.end({ 
+        errCode: err.errCode || err.code,
+        errMsg: err.errMsg || err.message,
+      })
       console.log('---error----', err)
       reject(err)
     })
@@ -519,7 +576,7 @@ try {
 ## 费用
 
 - 如果您自己去ai厂商申请和缴费，比如openai，则缴费后在uni-ai中配置相关key即可使用。
-- 如果您使用uni-ai自动分配的ai服务，计划于2023年6月15日起开始计费，计费价格与业内主流ai厂商的定价一致。
+- 如果您使用uni-ai付费服务，[详见](uni-ai-buy.md)。
 
 ## 初次使用uniCloud用户指南@first
 
@@ -643,6 +700,46 @@ try {
 注意如果使用URL化后，将无法使用stream流式输出。
 
 如果在您的传统服务器和uniCloud云函数之间需要建立安全通信机制，可使用s2s公共模块，[详见](uni-cloud-s2s.md)
+
+## 从免费版升级到uni-ai计费网关@migrate-to-uni-ai-gateway
+
+大语言模型的推理需要消耗很高的GPU算力，调用大模型需要在模型厂商处注册账户和付费。
+
+您可以自行去大模型厂商处注册并填写相应的apiKey的参数。也可以通过DCloud来购买，即使用`uni-ai计费网关`。
+
+在2023-06-15前，您不填写相关apiKey时可以免费使用uni-ai的LLM能力。但6月15日起需配置自己的apiKey或使用`uni-ai计费网关`，否则无法使用。
+
+`uni-ai计费网关`使用门槛低，并且可以一处充值，多模型体验。您无需在多个大模型厂商处申请，只需向DCloud购买token套餐，即可体验各种大模型的效果。
+
+`uni-ai计费网关`的token计费单价与大模型厂商的定价相同，支持开具发票。
+
+uni-ai计费网关支持调用minimax、微软azure openai ChatGPT3.5的对话接口，调用getLLMManager时如果不传provider会默认使用minimax作为服务商。
+
+1. 购买uni-ai付费服务，购买流程参考：[uni-ai开通流程](uni-ai-buy.md#enable-uni-ai-service)。
+
+2. 更新云函数
+	- 如果使用uni-ai-chat，更新uni-ai-chat到1.2.0版本，然后上传云对象。如需自定义provider，参考：[uni-ai-chat配置](uni-ai-chat.md#config)。
+	- 如果未使用uni-ai-chat，直接上传云函数/云对象。如需自定义provider。[见上](#get-llm-manager)
+	- 如果客户端通过云函数url化调用云函数/云对象，或开启了uniCloud阿里云的单实例多并发，需要在`getLLMManager`方法内传appId参数。[见上](#get-llm-manager)
+	- 在使用非流式响应时，`chatCompletion`方法无需调整，和免费版用法一致。
+	- 在使用流式响应时，需要将sseChannel对象传给`chatCompletion`方法。详情参考：[使用流式响应](#chat-completion-stream)
+
+调整完毕后上传依赖uni-ai的云函数/云对象即可，**注意即使没有修改也需要重新上传**。
+
+**免费版取消后使用免费版可能遇到的错误**
+
+在免费版停用后，如果连接云端云函数时未使用uni-ai计费网关且未自行传递key信息，且未在2023年6月15日0点后更新云函数，则会遇到`token is unusable`错误。如果使用在2023年6月15日0点后更新了云函数，则会提示`尚未购买uni-ai套餐`。
+
+此外使用HBuilderX 3.8.4及之前的版本本地运行时无法使用uni-ai计费网关，因此也会遇到`token is unusable`错误。请使用云端云函数进行调试。
+
+**如何测试是否配置成功**
+
+在您使用uni-ai计费网关后，且在云函数代码中做好配置后。您可以：
+1. 运行应用，调用LLM的chatCompletion接口，看看是否返回内容
+2. 在uniCloud web控制台的uni-ai管理界面，查看计费报表，是否产生了对应的计费条目
+
+目前仅更新了云端扩展库，HBuilderX本地调试使用的扩展库会在HBuilderX下次发版时进行更新。所以使用uni-ai计费网关时，不要使用本地运行云函数，切到云端运行。
+
 
 ## 交流群
 

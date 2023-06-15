@@ -78,7 +78,10 @@ module.exports = merge({
 				.use(require('./markdown/img-add-attrs'))
         .end()
 				.plugin('attrs')
-        .use(require('markdown-it-attrs'))
+        .use(require('markdown-it-attrs'),[{
+          leftDelimiter: '#{',
+          rightDelimiter: '}'
+        }])
     }
   },
   chainWebpack (config, isServer) {

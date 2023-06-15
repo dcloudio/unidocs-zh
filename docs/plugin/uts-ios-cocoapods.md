@@ -1,6 +1,7 @@
 
 本文旨在帮助 uts 插件开发者和使用者，快速了解在MAC环境真机运行时 CocoaPods 的安装方法，以及 CocoaPods 使用过程中常见错误处理
 
+> 此功能 HBuilder X 3.8.5+ 版本支持
 
 ## CocoaPods install
 

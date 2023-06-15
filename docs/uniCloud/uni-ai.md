@@ -378,7 +378,10 @@ exports.main = async (event, context) => {
     })
     streamRes.on('end', async () => {
       console.log('---end----') // 响应结束
-      await sseChannel.end({ errCode: 0 })
+      await sseChannel.end({ 
+        errCode: 0,
+        errMsg: ''
+      })
       resolve({
         errCode: 0,
         errMsg: ''

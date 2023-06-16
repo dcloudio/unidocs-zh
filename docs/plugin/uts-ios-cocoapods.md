@@ -1,11 +1,13 @@
-
-本文旨在帮助 uts 插件开发者和使用者，快速了解在MAC环境真机运行时 CocoaPods 的安装方法，以及 CocoaPods 使用过程中常见错误处理
+本文旨在帮助 uts 插件开发者和使用者，快速了解 uts 插件中配置使用 CocoaPods 依赖的问题。
+包括在Mac系统真机运行时如何配置 CocoaPods 环境，以及 CocoaPods 使用过程中常见错误处理
 
 > 此功能 HBuilder X 3.8.5+ 版本支持
 
-## CocoaPods install
+## CocoaPods 环境配置
+在Mac系统上使用标准基座真机运行时才需要配置 CocoaPods 环境， 使用自定义调试基座提交云端打包则可以不配置 CocoaPods 环境。
+在Windows系统上不支持 CocoaPods 环境，只能提交云端打包使用自定义调试基座。
 
-CocoaPods安装
+### CocoaPods安装
 
 正常安装 CocoaPods 需要在终端执行下述命令
 

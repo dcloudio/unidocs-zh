@@ -24,7 +24,7 @@ App-Android平台云端打包相关配置
 |hasTaskAffinity|Boolean|是否设置android：taskAffinity|
 |buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
 |pushRegisterMode|String|延迟初始化UniPush的配置，当配置此项值为`manual`后UniPush不会初始化，直到首次调用[getPushClientId](https://uniapp.dcloud.net.cn/api/plugins/push.html#getpushclientid)、getClientInfo、getClientInfoAsync时才会初始化，注:一旦调用获取cid的方法后，下次App启动就不再延迟初始化UniPush了。(manual为延迟，其他值表示不延迟。)|
-|enableOAID|Boolean|是否支持获取OAID，默认值为true|
+|enableOAID|Boolean|是否支持获取OAID，默认值为true，[详见](/collocation/manifest?id=enableOAID)|
 
 #### buildFeatures@buildFeatures  
 Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  

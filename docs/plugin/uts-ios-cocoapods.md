@@ -3,7 +3,32 @@
 
 > 此功能 HBuilder X 3.8.5+ 版本支持
 
-## CocoaPods 环境配置
+## 在 uts 插件中使用 CocoaPods 依赖@useCocoaPods
+
+在 uts 插件中使用 CocoaPods 依赖库，需要在 config.json 中 dependencies-pods 节点做相应配置，下面是配置示例：
+
+```json
+{
+	"deploymentTarget": "9.0",   // 可选，插件支持的最低 iOS 版本  默认：9.0"
+	"dependencies-pods": [ // 可选, 需要依赖的 CocoaPods 库, HBuilderX 3.8.5+ 版本支持
+	{
+		"name": "WechatOpenSDK",  
+		"version": "2.0.2"     
+	}]
+}
+```
+
+**配置说明：**
+- deploymentTarget：插件支持的最低 iOS 版本号，此节点为可选项，默认设置为 9.0.
+	+ 插件支持的最低版本号应该设置为所有依赖的三方库（包含 framework .a pod ）中最低支持版本号中的最高的一个。
+	+ pod 库的最低支持系统版本号可在 pod 库的 spec 文件或者 readme 中查看。
+- dependencies-pods：插件需要依赖的 pod 库,  HBuilderX3.8.5+ 版本新增支持
+	+ 把需要依赖的 pod 库相关信息配置在 dependencies-pods 节点下，需要明确指定每个 pod 库的名字 (name) 和版本号 (version)，可同时配置多个 pod 依赖库。目前不支持通过 podfile 文件直接设置，也不支持 podfile 文件中除了 name 和 version 之外的其他配置项。
+	+ 为了保证插件的稳定性，避免因未指定 pod 库版本，执行 pod install 之后 pod 库最新版本造成的代码不兼容问题，需要明确指定 pod 库的具体版本。version 字段不可省略，不可为空字符串。 建议将 version 配置为 `"9.7.0"` 这种明确的数字版本号，不建议使用 `~>, >, >=, <, <=` 等带符号的配置。
+	+ 使用 CocoaPods 官方默认地址 (source 'https://cdn.cocoapods.org/'), 暂不接受 (source '私有库url') 等存放在私有域名下pod库。
+
+
+## CocoaPods 环境配置@config
 在Mac系统上使用标准基座真机运行时才需要配置 CocoaPods 环境， 使用自定义调试基座提交云端打包则可以不配置 CocoaPods 环境。
 在Windows系统上不支持 CocoaPods 环境，只能提交云端打包使用自定义调试基座。
 
@@ -13,6 +38,30 @@
 
 ```
 sudo gem install cocoapods
+```
+
+这会耗费一段时间，完成后可查看 cocoapods 的版本号
+
+```
+pod --version
+```
+也可以查看 pod 的安装位置
+
+```
+which pod
+```
+
+在 cocoapods 安装完后需要更新一次本地 repo 仓库，在终端执行
+
+```
+pod repo update
+```
+这将耗费较长时间，请耐心等待。
+
+至此 CocoaPods 已经安装完成，可以尝试 Search 下一 pod 库：
+
+```
+pod search Alamofire
 ```
 
 - 如果执行之后报下面的错误
@@ -134,47 +183,24 @@ ruby -v
 - 配置完成后重启终端，再次查看 Ruby 版本号，校验是否为安装的 Ruby版本
 
 
-### 安装 CocoaPods
-
-升级完 Gem 和 Ruby 后，在终端输入如下命令，
+升级完 Gem 和 Ruby 后，在终端重新输入如下命令安装 CocoaPods。
 
 ```
 sudo gem install cocoapods
 ```
-这会耗费一段时间，完成后可查看 cocoapods 的版本号
-
-```
-pod --version
-```
-也可以查看 pod 的安装位置
-
-```
-which pod
-```
-
-在 cocoapods 安装完后需要更新一次本地 repo 仓库，在终端执行
-
-```
-pod repo update
-```
-这将耗费较长时间，请耐心等待。
-
-至此 CocoaPods 已经安装完成，可以尝试 Search 下一 pod 库：
-
-```
-pod search Alamofire
-```
+安装完成后，可如上文所示，查看 CocoaPods 版本号。
 
 
-## pod依赖库使用过程中常见错误及处理方式说明
 
-### MAC 环境真机运行 uts 插件时未安装 CocoaPods
+## 常见问题@questions
+
+### MAC 环境真机运行 uts 插件时未安装 CocoaPods@notInstall
 
 错误信息：uni_module [xxxx](iOS)存在pod三方依赖库，请先安装 CocoaPods！
 说明：出现此错误是因为当前环境没有安装 CocoaPods
 处理方法： 请参照上述章节描述的方式安装 CocoaPods 工具。
 
-### 找不到指定版本的 pod 库，或者找不到指定依赖
+### 找不到指定版本的 pod 库，或者找不到指定依赖@noDependency
 
 错误信息：CocoaPods could not find compatible versions for pod "xxx"  或者 None of your spec sources contain a spec satisfying the dependency:
 报错示例：
@@ -202,7 +228,7 @@ pod search Alamofire
 - 真机运行时在确保配置正确的前提下触发重新编译。
 - 云打包时请重新打包，或者联系管理员。
 
-### 无法访问 github
+### 无法访问 github@timeout
 
 错误信息示例：
 
@@ -219,7 +245,7 @@ pod search Alamofire
 处理方法：
 - 请检查您的网络连接，或者使用翻墙工具，确保当前网络环境可以正常访问 github
 
-### CDN 错误
+### CDN 错误@cnderror
 
 错误信息示例：
 

@@ -45,11 +45,10 @@ Android平台云端打包时build.gradle的buildFeatures配置项，支持的属
 ```
 "enableOAID": false
 ```
-如要使用新版本OAID SDK获取OAID，可以使用[uni原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/)或[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)封装扩展。
 
 **注意**  
 - 需HBuilderX3.8.5+版本支持配置enableOAID  
-- 配置enableOAID为false后，通过plus.device.getOAID获取将返回空字符串，后续将会提供[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)获取，并适配最新版本OAID SDK    
+- 配置enableOAID为false后，通过plus.device.getOAID获取将返回空字符串，如要使用新版本OAID SDK获取OAID，可以通过[uni原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/)或[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)封装扩展    
 - 离线打包如果不使用OAID SDK，直接删除项目使用的base_old_oaid_13.aar即可  
 
 

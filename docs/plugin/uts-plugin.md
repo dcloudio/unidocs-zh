@@ -501,10 +501,7 @@ Other native configuration files of the uts plugin on the iOS platform, where in
 	+ pod 库的最低支持系统版本号可在 pod 库的 spec 文件或者 readme 中查看。
 - validArchitectures：插件支持的 CPU 架构类型，此节点为可选项，默认值为：arm64。
 - dependencies-pods：插件需要依赖的 pod 库,  HBuilderX3.8.5+ 版本新增支持
-	+ 把需要依赖的 pod 库相关信息配置在 dependencies-pods 节点下，需要明确指定每个 pod 库的名字 (name) 和版本号 (version)，可同时配置多个 pod 依赖库。目前不支持通过 podfile 文件直接设置，也不支持 podfile 文件中除了 name 和 version 之外的其他配置项。
-	+ 为了保证插件的稳定性，避免因未指定 pod 库版本，执行 pod install 之后 pod 库最新版本造成的代码不兼容问题，需要明确指定 pod 库的具体版本。version 字段不可省略，不可为空字符串。 建议将 version 配置为 `"9.7.0"` 这种明确的数字版本号，不建议使用 `~>, >, >=, <, <=` 等带符号的配置。
-	+ 使用 CocoaPods 官方默认地址 (source 'https://cdn.cocoapods.org/'), 暂不接受 (source '私有库url') 等存放在私有域名下pod库。
-	+ 有关 CocoaPods 使用过程中常见的错误和处理方式[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html)
+	+ 有关 dependencies-pods 配置和 CocoaPods 使用的更多细节[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html)
 
 
 ## 3 开发uts插件

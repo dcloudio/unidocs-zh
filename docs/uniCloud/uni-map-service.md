@@ -69,38 +69,61 @@ console.log("result", result);
 
 **请求参数**
 
-|参数				|类型		|必填	|说明																																		|兼容性		|
-|:--				|:-:		|:-:	|:--																																		|:-:			|
-|location		|String	|是		|经纬度（GCJ02坐标系），格式：location=lat<纬度>,lng<经度>							|all			|
-|get_poi		|Number	|否		|是否返回周边地点（POI）列表<br/>0：不返回（默认）<br/>1：返回					|all			|
-|poi_options|String	|否		|周边POI（AOI）列表控制参数																							|腾讯地图	|
-|poitype		|String	|否		|返回附近POI类型																												| 高德地图|
-|radius			|String	|否		|搜索半径（radius取值范围在0~3000，默认是1000。单位：米）								| 高德地图|
-|roadlevel	|Number	|否		|道路等级<br/>0：显示所有道路<br/>1：过滤非主干道路，仅输出主干道路数据	|高德地图	|
-|homeorcorp	|String	|否		|是否优化POI返回顺序																										| 高德地图|
+|参数														|类型		|必填	|说明																																																																																																																																																																																																																																																|兼容性		|
+|:--														|:-:		|:-:	|:--																																																																																																																																																																																																																																																|:-:			|
+|location												|String	|是		|经纬度（GCJ02坐标系），格式：location=lat<纬度>,lng<经度>																																																																																																																																																																																																																					|all			|
+|get_poi												|Number	|否		|是否返回周边地点（POI）列表<br/>0：不返回（默认）<br/>1：返回																																																																																																																																																																																																																			|all			|
+|poi_options										|Object	|否		|周边POI（AOI）列表控制参数																																																																																																																																																																																																																																					|all			|
+| &emsp;&#124;-- address_format	|String	|否		|地址格式 <br/>long 长地址（默认）<br/>short 短地址																																																																																																																																																																																																																									|腾讯地图	|
+| &emsp;&#124;-- radius					|Number	|否		|搜索半径，单位：米 <br/>radius取值范围<br/>腾讯地图 1-5000（米）<br/>高德地图 0~3000（米），默认是1000（米）																																																																																																																																																																																												|all			|
+| &emsp;&#124;-- policy					|Number	|否		|控制返回场景 1[默认] 以地标+主要的路+近距离POI为主，着力描述当前位置；<br/>2 到家场景：筛选合适收货的POI，并会细化收货地址，精确到楼栋；<br/>3 出行场景：过滤掉车辆不易到达的POI(如一些景区内POI)，增加道路出入口、交叉口、大区域出入口类POI，排序会根据真实API大用户的用户点击自动优化。<br/>4 社交签到场景，针对用户签到的热门 地点进行优先排序。<br/>5 位置共享场景，用户经常用于发送位置、位置分享等场景的热门地点优先排序<br/>4 注：policy=1/2/3最多返回10条周边POI，policy=4/5最多返回20条，	|all			|
+| &emsp;&#124;-- poitype				|String	|否		|返回附近POI类型																																																																																																																																																																																																																																										| 高德地图|
+| &emsp;&#124;-- roadlevel			|Number	|否		|道路等级<br/>0：显示所有道路<br/>1：过滤非主干道路，仅输出主干道路数据																																																																																																																																																																																																															|高德地图	|
+| &emsp;&#124;-- homeorcorp			|Number	|否		|是否优化POI返回顺序homeorcorp 参数的设置可以影响召回 POI 内容的排序策略，目前提供三个可选参数：<br/>0：不对召回的排序策略进行干扰。<br/>1：综合大数据分析将居家相关的 POI 内容优先返回，即优化返回结果中 pois 字段的poi顺序。<br/>2：综合大数据分析将公司相关的 POI 内容优先返回，即优化返回结果中 pois 字段的poi顺序。																																																																																						| 高德地图|
 
 **返回参数**
 
 仅列出result内的参数，其他参数见 [公共返回参数](#publicresult)
 
-|参数								|类型		|说明										|兼容性	|
-|:--								|:-:		|:--										|:-:		|
-|formatted_addresses| String|详细地址								|all		|
-|country						| String|国家										|all		|
-|province						| String|省											|all		|
-|city								| String|市											|all		|
-|district						| String|区											|all		|
-|street							| String|街道/道路，可能为空字串|all		|
-|street_number			| String|门牌，可能为空字串			|all		|
-|adcode							| String|行政区划代码						|all		|
-|pois								| Array	|周边POI								|all		|
-| &emsp;&#124;-- id				|String	|id											|all		|
-| &emsp;&#124;-- title		|String	|地点名称								|all		|
-| &emsp;&#124;-- address	|String	|地址										|all		|
-| &emsp;&#124;-- location	|Object	|经纬度									|all		|
-| &emsp;&#124;-- distance	|Number	|距离（米）							|all		|
-| &emsp;&#124;-- direction|String	|方位										|all		|
-| &emsp;&#124;-- category	|String	|类别										|all		|
+|参数												|类型		|说明														|兼容性		|
+|:--												|:-:		|:--														|:-:			|
+|formatted_addresses				| String|详细地址												|all			|
+|country										| String|国家														|all			|
+|province										| String|省															|all			|
+|city												| String|市															|all			|
+|district										| String|区															|all			|
+|street											| String|街道/道路，可能为空字串				|all			|
+|street_number							| String|门牌，可能为空字串							|all			|
+|adcode											| String|行政区划代码										|all			|
+|pois												| Array	|周边POI												|all			|
+| &emsp;&#124;-- id					| String|id															|all			|
+| &emsp;&#124;-- title			| String|地点名称												|all			|
+| &emsp;&#124;-- address		| String|地址														|all			|
+| &emsp;&#124;-- location		| Object|经纬度													|all			|
+| &emsp;&#124;-- distance		| Number|距离（米）											|all			|
+| &emsp;&#124;-- direction	| String|方位														|all			|
+| &emsp;&#124;-- category		| String|类别														|all			|
+|roads											| Array	|道路信息列表										|高德地图	|
+| &emsp;&#124;-- id					| String|道路id													|高德地图	|
+| &emsp;&#124;-- title			| String|道路名称												|高德地图	|
+| &emsp;&#124;-- distance		| String|道路到请求坐标的距离（米）			|高德地图	|
+| &emsp;&#124;-- direction	| Object|方位														|高德地图	|
+| &emsp;&#124;-- location		| Object|坐标点													|高德地图	|
+| &emsp;&emsp;&#124;-- lat	| Number|纬度														|高德地图	|
+| &emsp;&emsp;&#124;-- lng	| Number|经度														|高德地图	|
+|roadinters									| Array	|道路交叉口列表									|高德地图	|
+| &emsp;&#124;-- distance		| String|交叉路口到请求坐标的距离（米）	|高德地图	|
+| &emsp;&#124;-- direction	| String|方位（输入点相对路口的方位）		|高德地图	|
+| &emsp;&#124;-- first_id		| String|第一条道路id										|高德地图	|
+| &emsp;&#124;-- first_name	| String|第一条道路名称									|高德地图	|
+| &emsp;&#124;-- second_id	| String|第二条道路id										|高德地图	|
+| &emsp;&#124;-- second_name| String|第二条道路名称									|高德地图	|
+| &emsp;&#124;-- location		| Object|路口经纬度											|高德地图	|
+| &emsp;&emsp;&#124;-- lat	| Number|纬度														|高德地图	|
+| &emsp;&emsp;&#124;-- lng	| Number|经度														|高德地图	|
+
+
+
 
 ### 地址解析（地址转坐标）@address2location
 

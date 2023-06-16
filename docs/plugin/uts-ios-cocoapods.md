@@ -192,6 +192,7 @@ pod search Alamofire
 ```
 
 说明：出现此错误是因为执行 pod install 时找不到指定依赖。
+
 处理方法：
 
 - 请首先确保配置的 pod 库 name 正确，配置的 version 不高于 pod 库发行的最高版本号。
@@ -212,6 +213,7 @@ pod search Alamofire
 ```
 
 说明： 出现此错误是因为当前网络无法正常访问 github
+
 处理方法：
 - 请检查您的网络连接，或者使用翻墙工具，确保当前网络环境可以正常访问 github
 

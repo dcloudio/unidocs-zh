@@ -63,7 +63,7 @@ HBuilderX中敲下`udb`代码块，得到如下代码，然后通过collection�
 |group-field|String|对数据进行分组统计|
 |distinct|Boolean|是否对数据查询结果中重复的记录进行去重，默认值false，HBuilderX 3.1.0+|
 |loadtime|String|加载数据时机，默认auto，可选值 auto&#124;onready&#124;manual,[详情](/uniCloud/unicloud-db?id=loadtime) HBuilderX3.1.10+|
-|ssr-key|String|[详情](/uniCloud/unicloud-db#=ssrkey) HBuilderX 3.4.11+|
+|ssr-key|String|[详情](unicloud-db.md#ssrkey) HBuilderX 3.4.11+|
 |@load|EventHandle|成功回调。联网返回结果后，若希望先修改下数据再渲染界面，则在本方法里对data进行修改|
 |@error|EventHandle|失败回调|
 

@@ -58,8 +58,8 @@ The buildFeatures configuration item of build.gradle when the Android platform i
 ```
 
 #### enableOAID@enableOAID
-获取[OAID](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)需要使用[移动智能设备标识公共服务平台](http://www.msa-alliance.cn/col.jsp?id=120)提供的统一SDK（以下简称OAID SDK），由于OAID SDK从1.0.26版本开始添加了授权证书校验机制（绑定应用包名），要求向“移动智能设备标识公共服务平台”申请授权证书并配置到应用中，因此HBuilderX中使用的无需授权证书的旧版本OAID SDK。  
-旧版本OAID SDK在部分手机设备可能出现一些兼容性问题：
+获取[OAID](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)需要使用[移动智能设备标识公共服务平台](http://www.msa-alliance.cn/col.jsp?id=120)提供的统一SDK（以下简称OAID SDK），由于OAID SDK从1.0.26版本开始添加了授权证书校验机制（绑定应用包名），要求向“移动智能设备标识公共服务平台”申请授权证书并配置到应用中。HBuilderX中暂未支持设置此授权证书，使用无需授权证书的旧版本OAID SDK。  
+旧版本OAID SDK在部分手机设备可能存在兼容性问题：
 - 在部分三星设备获取OAID会引起应用崩溃  
 - 部分安全平台检测可能会报存在窃取用户隐私等风险的问题  
 

@@ -8,6 +8,7 @@
   * [uts中使用uni api](uts-uni-api.md)
   * [Android平台uts开发指南](uts-for-android.md)
   * [iOS平台uts开发指南](uts-for-ios.md)
+	* [使用CocoaPods依赖](uts-ios-cocoapods.md)
 * [原生语言插件](/plugin/native-plugin.md)
 * 插件作者专区
   * [发布插件](/plugin/publish.md)

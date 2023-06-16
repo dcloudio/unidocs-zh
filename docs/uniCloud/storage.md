@@ -25,9 +25,6 @@ There are 3 ways to upload to cloud storage:
 - In applications that allow users to upload pictures, violation detection is essential. For this reason, uniCloud provides a content security detection module, which can easily implement functions such as image identification. For details, please refer to: [Content Security](https://ext.dcloud.net.cn/plugin?id=5460)
 
 阿里云的云存储有一些限制：
-Alibaba Cloud's cloud storage has some limitations:
-- 不支持目录
-- Directories are not supported
 - 同名文件上传也是按新文件名对待，不会覆盖
 - File uploads with the same name are also treated as new file names and will not be overwritten
 - 文件没有读权限控制，任意人知道路径都可以读。
@@ -47,6 +44,14 @@ First of all, in the uniCloud web console, in the service space of Tencent Cloud
 
 在云函数中，通过`uniCloud.getTempFileURL`（[见下](#cloudgettempfileurl)），获取该文件的临时URL。然后将临时URL发给客户端，客户端根据临时URL请求云存储的文件。
 In the cloud function, get the temporary URL of the file through `uniCloud.getTempFileURL` ([see below](#cloudgettempfileurl)). Then the temporary URL is sent to the client, and the client requests the file stored in the cloud according to the temporary URL.
+
+### 目录支持@storage-dir
+
+腾讯云支持以上传时指定的cloudPath作为文件路径进行文件存储。
+
+阿里云在`HBuilderX 3.8.5`及之后版本支持以上传时指定的cloudPath作为文件路径进行文件存储，需要在上传时指定参数`cloudPathAsRealPath: true`来启用目录支持。为兼容旧版阿里云表现`cloudPathAsRealPath`默认为`false`。对于客户端和本地云函数此调整在`HBuilderX 3.8.5`及之后的版本生效，对于云端云函数此调整自2023年6月17日生效。
+
+阿里云在`cloudPathAsRealPath`为`false`时传的文件都存储在`cloudstorage`目录下，2023年6月17日起访问uniCloud web控制台云存储页面可以看到目录结构。
 
 ## 客户端API
 ## Client API
@@ -83,17 +88,13 @@ The client uploads the file to the cloud function, and the cloud function upload
 #### request parameters
 **Object object**
 
-|参数名						|类型			|必填	|默认值	|说明																														|平台差异说明							|
-|Parameter Name |Type |Required |Default Value |Description |Platform Difference Description |
-|:-:							|:-:			|:-:	|:-:		|:-:																														|:-:											|
-|filePath					|String		|是		|-			|要上传的文件对象																								|-												|
-|filePath |String |Yes |- |File object to upload |- |
-|cloudPath				|String		|是		|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名																			|-	|
-|cloudPath |String |Yes |- |When using Tencent Cloud, it indicates the absolute path of the file, including the file name. When using Alibaba Cloud, `cloudPath` is the cloud file name |- |
-|fileType					|String		|-		|-			|文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio|-												|
-|fileType |String |- |- |File type, required for Alipay applet and DingTalk applet, optional image, video, audio|- |
-|onUploadProgress	|Function	|否		|-			|上传进度回调																										|-												|
-|onUploadProgress |Function |No |- |Upload progress callback |- |
+|参数名							|类型			|必填	|默认值	|说明																																																																							|平台差异说明	|
+|:-:								|:-:			|:-:	|:-:		|:-:																																																																							|:-:					|
+|filePath						|String		|是		|-			|要上传的文件对象																																																																	|-						|
+|cloudPath					|String		|是		|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径|-						|
+|cloudPathAsRealPath|Boolean	|否		|false	|是否以`cloudPath`作为云端文件绝对路径																																																						|仅阿里云支持	|
+|fileType						|String		|-		|-			|文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio																																									|-						|
+|onUploadProgress		|Function	|否		|-			|上传进度回调																																																																			|-						|
 
 **注意**
 **Notice**
@@ -710,13 +711,11 @@ If HBuilderX versions before 3.1.0 use Alibaba Cloud, please upload through `uni
 **uploadFileOptions参数说明**
 **uploadFileOptions parameter description**
 
-| 字段				| 类型	| 必填| 说明																															|
-| Fields | Type | Required | Description |
-| ---					| ---		| ---	| ---																																|
-| cloudPath		| string| 是	| 使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名			|
-| cloudPath | string| Yes | When using Tencent Cloud, it indicates the absolute path of the file, including the file name. When using Alibaba Cloud, `cloudPath` is the cloud file name |
-| fileContent	| -			| 是	| 文件内容，请看下方说明																						|
-| fileContent | - | Yes | File content, please see the description below |
+| 字段							| 类型	| 必填|默认值	| 说明																																																																						|平台差异说明	|
+| ---								| ---		| ---	|---		| ---																																																																							|---					|
+| cloudPath					| string| 是	|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径|							|
+| fileContent				| -			| 是	|-			|文件内容，请看下方说明																																																														|							|
+|cloudPathAsRealPath|Boolean|否		|false	|是否以`cloudPath`作为云端文件绝对路径																																																						|仅阿里云支持	|
 
 **说明**
 **illustrate**

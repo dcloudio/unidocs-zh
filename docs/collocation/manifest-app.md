@@ -58,20 +58,21 @@ The buildFeatures configuration item of build.gradle when the Android platform i
 ```
 
 #### enableOAID@enableOAID
-获取[OAID](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)需要使用[移动智能设备标识公共服务平台](http://www.msa-alliance.cn/col.jsp?id=120)提供的统一SDK（以下简称OAID SDK），OAID SDK从1.0.26版本开始添加了授权证书校验机制（绑定应用包名），要求开发者通过邮件向“移动智能设备标识公共服务平台”申请授权证书并配置到App中。HBuilderX中暂未支持设置此授权证书，而是使用无需授权证书的旧版本OAID SDK。  
-旧版本OAID SDK在部分手机设备可能存在兼容性问题：
+获取[OAID](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)需要使用[移动智能设备标识公共服务平台](http://www.msa-alliance.cn/col.jsp?id=120)提供的统一SDK（以下简称OAID SDK），OAID SDK从1.0.26版本开始添加了授权证书校验机制（绑定应用包名），要求开发者通过邮件向“移动智能设备标识公共服务平台”申请授权证书并配置到App中。HBuilderX中暂未支持设置此授权证书，而是使用无需授权证书的1.0.13版本OAID SDK。  
+1.0.13版本OAID SDK在部分手机设备可能存在以下兼容性问题：
 - 在部分三星设备获取OAID会引起应用崩溃  
 - 部分安全平台检测可能会报存在窃取用户隐私等风险的问题  
 
-如果碰到以上问题在manifest.json的android节点下添加enableOAID字段设置云端打包不使用OAID SDK，：
+如果碰到以上问题在manifest.json的android节点下添加enableOAID字段设置云端打包不使用默认OAID SDK：
 ```
 "enableOAID": false
 ```
+如要使用新版本OAID SDK获取OAID，可以使用[uni原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/)或[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)封装扩展。
 
 **注意**  
 - 需HBuilderX3.8.5+版本支持配置enableOAID  
-- 配置enableOAID为false后，获取OAID将返回空字符串，后续将会提供[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)获取，并适配最新版本OAID SDK    
-- 离线打包如果不使用OAID SDK，直接删除项目使用的base_oaid_sdk.aar及base_old_oaid_13.aar即可  
+- 配置enableOAID为false后，通过plus.device.getOAID获取将返回空字符串，后续将会提供[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)获取，并适配最新版本OAID SDK    
+- 离线打包如果不使用OAID SDK，直接删除项目使用的base_old_oaid_13.aar即可  
 
 
 

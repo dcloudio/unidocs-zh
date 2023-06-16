@@ -99,9 +99,7 @@ If you need to use the clientDB component in versions below HBuilderX3.0, you ne
 |distinct|Boolean|是否对数据查询结果中重复的记录进行去重，默认值false，HBuilderX 3.1.0+|
 |distinct|Boolean|Whether to deduplicate the duplicate records in the data query result, the default value is false, HBuilderX 3.1.0+|
 |loadtime|String|加载数据时机，默认auto，可选值 auto&#124;onready&#124;manual,[详情](/uniCloud/unicloud-db?id=loadtime) HBuilderX3.1.10+|
-|loadtime|String|Load data timing, default auto, optional value auto&#124;onready&#124;manual,[Details](/uniCloud/unicloud-db?id=loadtime) HBuilderX3.1.10+|
-|ssr-key|String|[详情](/uniCloud/unicloud-db#=ssrkey) HBuilderX 3.4.11+|
-|ssr-key|String|[Details](/uniCloud/unicloud-db#=ssrkey) HBuilderX 3.4.11+|
+|ssr-key|String|[详情](unicloud-db.md#ssrkey) HBuilderX 3.4.11+|
 |@load|EventHandle|成功回调。联网返回结果后，若希望先修改下数据再渲染界面，则在本方法里对data进行修改|
 |@load|EventHandle|Callback on success. After the network returns the result, if you want to modify the data first and then render the interface, modify the data in this method|
 |@error|EventHandle|失败回调|

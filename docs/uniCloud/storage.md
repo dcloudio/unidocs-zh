@@ -14,7 +14,6 @@
 - 在允许用户上传图片的应用里，违规检测是必不可少的，为此uniCloud提供了内容安全检测模块，可以很方便的实现图片鉴黄等功能。详情参考：[内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
 
 阿里云的云存储有一些限制：
-- 不支持目录
 - 同名文件上传也是按新文件名对待，不会覆盖
 - 文件没有读权限控制，任意人知道路径都可以读。
 
@@ -27,6 +26,14 @@ uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望
 首先在uniCloud web控制台，腾讯云的服务空间中，可以配置云存储的权限。如果是隐私文件，应该配置为仅管理员可访问。
 
 在云函数中，通过`uniCloud.getTempFileURL`（[见下](#cloudgettempfileurl)），获取该文件的临时URL。然后将临时URL发给客户端，客户端根据临时URL请求云存储的文件。
+
+### 目录支持@storage-dir
+
+腾讯云支持以上传时指定的cloudPath作为文件路径进行文件存储。
+
+阿里云在`HBuilderX 3.8.5`及之后版本支持以上传时指定的cloudPath作为文件路径进行文件存储，需要在上传时指定参数`cloudPathAsRealPath: true`来启用目录支持。为兼容旧版阿里云表现`cloudPathAsRealPath`默认为`false`。对于客户端和本地云函数此调整在`HBuilderX 3.8.5`及之后的版本生效，对于云端云函数此调整自2023年6月17日生效。
+
+阿里云在`cloudPathAsRealPath`为`false`时传的文件都存储在`cloudstorage`目录下，2023年6月17日起访问uniCloud web控制台云存储页面可以看到目录结构。
 
 ## 客户端API
 
@@ -53,12 +60,13 @@ uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望
 #### 请求参数
 **Object object**
 
-|参数名						|类型			|必填	|默认值	|说明																														|平台差异说明							|
-|:-:							|:-:			|:-:	|:-:		|:-:																														|:-:											|
-|filePath					|String		|是		|-			|要上传的文件对象																								|-												|
-|cloudPath				|String		|是		|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名																			|-	|
-|fileType					|String		|-		|-			|文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio|-												|
-|onUploadProgress	|Function	|否		|-			|上传进度回调																										|-												|
+|参数名							|类型			|必填	|默认值	|说明																																																																							|平台差异说明	|
+|:-:								|:-:			|:-:	|:-:		|:-:																																																																							|:-:					|
+|filePath						|String		|是		|-			|要上传的文件对象																																																																	|-						|
+|cloudPath					|String		|是		|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径|-						|
+|cloudPathAsRealPath|Boolean	|否		|false	|是否以`cloudPath`作为云端文件绝对路径																																																						|仅阿里云支持	|
+|fileType						|String		|-		|-			|文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio																																									|-						|
+|onUploadProgress		|Function	|否		|-			|上传进度回调																																																																			|-						|
 
 **注意**
 
@@ -534,10 +542,11 @@ HBuilderX 3.1.0之前版本如使用阿里云，请在客户端通过`uniCloud.u
 
 **uploadFileOptions参数说明**
 
-| 字段				| 类型	| 必填| 说明																															|
-| ---					| ---		| ---	| ---																																|
-| cloudPath		| string| 是	| 使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名			|
-| fileContent	| -			| 是	| 文件内容，请看下方说明																						|
+| 字段							| 类型	| 必填|默认值	| 说明																																																																						|平台差异说明	|
+| ---								| ---		| ---	|---		| ---																																																																							|---					|
+| cloudPath					| string| 是	|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径|							|
+| fileContent				| -			| 是	|-			|文件内容，请看下方说明																																																														|							|
+|cloudPathAsRealPath|Boolean|否		|false	|是否以`cloudPath`作为云端文件绝对路径																																																						|仅阿里云支持	|
 
 **说明**
 

@@ -29,6 +29,7 @@
 
 
 ## CocoaPods 环境配置@config
+
 在Mac系统上使用标准基座真机运行时才需要配置 CocoaPods 环境， 使用自定义调试基座提交云端打包则可以不配置 CocoaPods 环境。
 在Windows系统上不支持 CocoaPods 环境，只能提交云端打包使用自定义调试基座。
 
@@ -37,26 +38,24 @@
 正常安装 CocoaPods 需要在终端执行下述命令
 
 ```
-sudo gem install cocoapods
+gem install cocoapods
 ```
+
+#### CocoaPods 安装成功
 
 这会耗费一段时间，完成后可查看 cocoapods 的版本号
 
 ```
 pod --version
 ```
+如： 1.12.1
+
 也可以查看 pod 的安装位置
 
 ```
 which pod
 ```
-
-在 cocoapods 安装完后需要更新一次本地 repo 仓库，在终端执行
-
-```
-pod repo update
-```
-这将耗费较长时间，请耐心等待。
+如：/Users/dcloud/.rvm/rubies/ruby-3.0.0/bin/pod
 
 至此 CocoaPods 已经安装完成，可以尝试 Search 下一 pod 库：
 
@@ -64,7 +63,11 @@ pod repo update
 pod search Alamofire
 ```
 
-- 如果执行之后报下面的错误
+如果执行 pod search 失败，说明当前网络不能正常访问 github 或者 cdn, 更多信息详见[无法访问 github ](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html#timeout), [CDN错误](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html#cnderror)。
+
+#### CocoaPods 安装失败
+
+- 如果执行 gem install cocoapods 之后报下面的错误：
 
 ```
 ERROR:  Error installing cocoapods:
@@ -76,10 +79,10 @@ ERROR:  Error installing cocoapods:
 ```
 sudo gem install activesupport -v 6.1.7.3
 ```
-安装成功后再次执行 sudo gem install cocoapods 安装 CocoaPods.
+插件安装成功后再次执行 sudo gem install cocoapods 安装 CocoaPods.
 
 
-- 如果执行命令之后报错，说明需要升级 gem 和 ruby
+- 如果报错如下，说明需要升级 gem 和 ruby
 
 ```
 Building native extensions. This could take a while...
@@ -115,7 +118,7 @@ MacOS 会自带 Ruby，但可能系统的Ruby版本过低，导致无法安装 C
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Ruby 的升级有以下两种常见的方式，可任选其中一种：
+Ruby 的升级有以下两种常见的方式，可根据自己的需要任选其中一种：
 
 #### 通过 RVM 升级 Ruby
 

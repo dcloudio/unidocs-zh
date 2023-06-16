@@ -38,6 +38,11 @@ Android平台云端打包时build.gradle的buildFeatures配置项，支持的属
 #### enableOAID@enableOAID
 获取[OAID](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)需要使用[移动智能设备标识公共服务平台](http://www.msa-alliance.cn/col.jsp?id=120)提供的统一SDK（以下简称OAID SDK），由于OAID SDK从1.0.26版本开始添加了授权证书校验机制（需绑定应用包名），需要向“移动智能设备标识公共服务平台”申请授权证书并配置到应用中。目前HBuilderX中暂时还不支持授权证书的配置，使用的是无需授权证书的旧版本OAID SDK。
 为了避免旧版本OAID SDK在新设备可能出现的兼容性问题，从HBuilderX3.8.5开是可设置enableOAID为false，配置后提交云端打包将不再包含OAID SDK。
+后续将会提供[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)适配最新版本OAID SDK。
+
+已知旧版本OAID SDK存在以下问题：
+- 在部分三星设备获取OAID会引起应用崩溃
+- 部分安全平台检测可能会报存在窃取用户隐私等风险的问题
 
 
 ### App iOS@ios

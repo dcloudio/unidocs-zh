@@ -24,6 +24,7 @@ App-Android平台云端打包相关配置
 |hasTaskAffinity|Boolean|是否设置android：taskAffinity|
 |buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
 |pushRegisterMode|String|延迟初始化UniPush的配置，当配置此项值为`manual`后UniPush不会初始化，直到首次调用[getPushClientId](https://uniapp.dcloud.net.cn/api/plugins/push.html#getpushclientid)、getClientInfo、getClientInfoAsync时才会初始化，注:一旦调用获取cid的方法后，下次App启动就不再延迟初始化UniPush了。(manual为延迟，其他值表示不延迟。)|
+|enableOAID|Boolean|是否支持获取OAID，默认值为true|
 
 #### buildFeatures@buildFeatures  
 Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
@@ -34,6 +35,9 @@ Android平台云端打包时build.gradle的buildFeatures配置项，支持的属
 }
 ```
 
+#### enableOAID@enableOAID
+获取[OAID](https://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)需要使用[移动智能设备标识公共服务平台](http://www.msa-alliance.cn/col.jsp?id=120)提供的统一SDK（以下简称OAID SDK），由于OAID SDK从1.0.26版本开始添加了授权证书校验机制（需绑定应用包名），需要向“移动智能设备标识公共服务平台”申请授权证书并配置到应用中。目前HBuilderX中暂时还不支持授权证书的配置，使用的是无需授权证书的旧版本OAID SDK。
+为了避免旧版本OAID SDK在新设备可能出现的兼容性问题，从HBuilderX3.8.5开是可设置enableOAID为false，配置后提交云端打包将不再包含OAID SDK。
 
 
 ### App iOS@ios

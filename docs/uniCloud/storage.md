@@ -25,8 +25,6 @@ There are 3 ways to upload to cloud storage:
 - In applications that allow users to upload pictures, violation detection is essential. For this reason, uniCloud provides a content security detection module, which can easily implement functions such as image identification. For details, please refer to: [Content Security](https://ext.dcloud.net.cn/plugin?id=5460)
 
 阿里云的云存储有一些限制：
-- 同名文件上传也是按新文件名对待，不会覆盖
-- File uploads with the same name are also treated as new file names and will not be overwritten
 - 文件没有读权限控制，任意人知道路径都可以读。
 - The file has no read permission control, anyone who knows the path can read it.
 
@@ -51,7 +49,7 @@ In the cloud function, get the temporary URL of the file through `uniCloud.getTe
 
 阿里云在`HBuilderX 3.8.5`及之后版本支持以上传时指定的cloudPath作为文件路径进行文件存储，需要在上传时指定参数`cloudPathAsRealPath: true`来启用目录支持。为兼容旧版阿里云表现`cloudPathAsRealPath`默认为`false`。对于客户端和本地云函数此调整在`HBuilderX 3.8.5`及之后的版本生效，对于云端云函数此调整自2023年6月17日生效。
 
-阿里云在`cloudPathAsRealPath`为`false`时传的文件都存储在`cloudstorage`目录下，2023年6月17日起访问uniCloud web控制台云存储页面可以看到目录结构。
+阿里云在`cloudPathAsRealPath`为`false`时传的文件都存储在`cloudstorage`目录下，2023年6月17日起访问uniCloud web控制台云存储页面可以看到目录结构。需要注意`cloudPathAsRealPath`为`true`时，云函数使用同样的cloudPath上传文件会覆盖旧文件，客户端使用同样的cloudPath则会报`policy_does_not_allow_file_overwrite`。
 
 ## 客户端API
 ## Client API

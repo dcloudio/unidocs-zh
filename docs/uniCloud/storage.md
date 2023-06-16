@@ -14,7 +14,6 @@
 - 在允许用户上传图片的应用里，违规检测是必不可少的，为此uniCloud提供了内容安全检测模块，可以很方便的实现图片鉴黄等功能。详情参考：[内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
 
 阿里云的云存储有一些限制：
-- 同名文件上传也是按新文件名对待，不会覆盖
 - 文件没有读权限控制，任意人知道路径都可以读。
 
 腾讯云没有上述限制。
@@ -33,7 +32,7 @@ uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望
 
 阿里云在`HBuilderX 3.8.5`及之后版本支持以上传时指定的cloudPath作为文件路径进行文件存储，需要在上传时指定参数`cloudPathAsRealPath: true`来启用目录支持。为兼容旧版阿里云表现`cloudPathAsRealPath`默认为`false`。对于客户端和本地云函数此调整在`HBuilderX 3.8.5`及之后的版本生效，对于云端云函数此调整自2023年6月17日生效。
 
-阿里云在`cloudPathAsRealPath`为`false`时传的文件都存储在`cloudstorage`目录下，2023年6月17日起访问uniCloud web控制台云存储页面可以看到目录结构。
+阿里云在`cloudPathAsRealPath`为`false`时传的文件都存储在`cloudstorage`目录下，2023年6月17日起访问uniCloud web控制台云存储页面可以看到目录结构。需要注意`cloudPathAsRealPath`为`true`时，云函数使用同样的cloudPath上传文件会覆盖旧文件，客户端使用同样的cloudPath则会报`policy_does_not_allow_file_overwrite`。
 
 ## 客户端API
 

@@ -172,9 +172,9 @@ pod search Alamofire
 说明：出现此错误是因为当前环境没有安装 CocoaPods
 处理方法： 请参照上述章节描述的方式安装 CocoaPods 工具。
 
-### 指定的 pod 库在本地 repo 仓库找不到索引
+### 找不到指定版本的 pod 库，或者找不到指定依赖
 
-错误信息：CocoaPods could not find compatible versions for pod "xxx"
+错误信息：CocoaPods could not find compatible versions for pod "xxx"  或者 None of your spec sources contain a spec satisfying the dependency:
 报错示例：
 
 ```ts
@@ -191,18 +191,17 @@ pod search Alamofire
     ' * not added the source repo that hosts the Podspec to your Podfile.\n',
 ```
 
-说明：出现此错误是因为执行 pod install 时在本地 repo 仓库未找到对应的库索引。
+说明：出现此错误是因为执行 pod install 时找不到指定依赖。
 处理方法：
 
-- 请首先确保配置的 pod 库 name 正确，配置的 version 不高于 pod 库发行的最高版本号， 未使用私有仓库 pod 库。
-- 真机运行时在终端手动执行 pod repo update 命令。(说明：由于pod repo update 较为耗时，为了保证编译速度，避免无必要的 pod repo update, 插件内部只执行了 pod install),
+- 请首先确保配置的 pod 库 name 正确，配置的 version 不高于 pod 库发行的最高版本号。
+- 确保未使用存放在私有仓库的 pod 库。
+- 真机运行时在确保配置正确的前提下触发重新编译。
 - 云打包时请重新打包，或者联系管理员。
 
-### pod库下载失败
+### 无法访问 github
 
 错误信息示例：
-
-- 示例一
 
 ```ts
 '[!] Error installing Alamofire\n' +
@@ -212,20 +211,39 @@ pod search Alamofire
 "fatal: unable to access 'https://github.com/Alamofire/Alamofire.git/': error:02FFF03C:system library:func(4095):Operation timed out\n",
 ```
 
-- 示例二
+说明： 出现此错误是因为当前网络无法正常访问 github
+处理方法：
+- 请检查您的网络连接，或者使用翻墙工具，确保当前网络环境可以正常访问 github
+
+### CDN 错误
+
+错误信息示例：
+
+- 示例一 无法解析 CDN 主机名
 
 ```ts
 "[!] CDN: trunk URL couldn't be downloaded: https://cdn.cocoapods.org/all_pods_versions_8_e_e.txt Response: Couldn't resolve host name\n",
 ```
 
-- 示例三
+- 示例二 trunk Repo 更新失败
 
 ```ts
 '[!] CDN: trunk Repo update failed - 75 error(s):'
 ```
 
-说明： 出现此类错误是因为网络超时、不能正常访问 github、或者需要翻墙。
+- 示例三 验证失败
+
+```ts
+"[!] CDN: trunk URL couldn't be downloaded: https://cdn.cocoapods.org/deprecated_podspecs.txt Response: SSL peer certificate or SSH remote key was not OK"
+```
+
+- 示例三 连接不到服务器
+
+```ts
+"[!] CDN: trunk URL couldn't be downloaded: https://cdn.cocoapods.org/all_pods_versions_f_2_b.txt Response: Couldn't connect to server"
+```
+
+说明： 出现此类错误是因为网络网络问题无法正常访问 [CDN 服务器](https://cdn.cocoapods.org)
 
 处理方式：
-- 真机运行：检查您的网络，确保网络顺畅，且可以正常访问github，某些pod库的下载可能需要翻墙。在网络不好时，请多试几次。
-- 云打包：请重新打包，或者联系管理员。
+- 真机运行：检查您的网络，确保网络连接正常，或者使用翻墙工具，使当前网络环境可以正常访问 [CDN 服务器](https://cdn.cocoapods.org)。在网络不好时，请多试几次。

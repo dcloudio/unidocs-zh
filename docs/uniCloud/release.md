@@ -1,5 +1,12 @@
 注：本更新日志仅限uniCloud，包括uniCloud web控制台、uniCloud 云端运行环境。这些更新不跟随HBuilderX发版更新。
 
+#### 2023-06-16
+* 【重要】新增 uni-ai 计费网关，可低门槛的采购ai能力 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-buy.html)
+* 新增 阿里云 云存储支持目录 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage.html#storage-dir)
+* 优化 阿里云 云函数调用云函数超时时间由10秒调整为60秒
+* 新增 本地调试支持使用push扩展库
+* 修复 本地调试调用redis服务的multi方法时未正确返回结果的Bug [详情](https://ask.dcloud.net.cn/question/171188)
+
 #### 2023-05-23
 * 新增 uni-ai 微软azure openai chatCompletion接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager)
 * 修复 jql语法 部分请求执行缓慢的Bug [详情](https://ask.dcloud.net.cn/question/170035)

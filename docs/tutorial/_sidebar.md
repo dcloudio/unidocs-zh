@@ -82,7 +82,9 @@
         * [Google统计](/tutorial/app-statistic-google.md)
       * [Android X5 Webview(腾讯TBS)](/tutorial/app-android-x5.md)
       * [iOS UIWebview](/tutorial/app-ios-uiwebview.md)
-    * 其它配置
+    * 权限配置
+      * [Android权限配置](/tutorial/app-permission-android.md)
+	* 其它配置
       * [自定义404错误页面](/tutorial/app-webview-error.md)
       * [Android设置UrlSchemes](/tutorial/app-android-schemes.md)
       * [Android设置minSdkVersion](/tutorial/app-android-minsdkversion.md)

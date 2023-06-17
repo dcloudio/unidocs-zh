@@ -146,8 +146,9 @@
         * [Google Statistics](/tutorial/app-statistic-google.md)
       * [Android X5 Webview(腾讯TBS)](/tutorial/app-android-x5.md)
       * [iOS UIWebview](/tutorial/app-ios-uiwebview.md)
-    * 其它配置
-    * Other configuration
+    * 权限配置
+      * [Android权限配置](/tutorial/app-permission-android.md)
+	* 其它配置
       * [自定义404错误页面](/tutorial/app-webview-error.md)
       * [Custom 404 error page](/tutorial/app-webview-error.md)
       * [Android设置UrlSchemes](/tutorial/app-android-schemes.md)

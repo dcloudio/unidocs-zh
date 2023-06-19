@@ -21,7 +21,7 @@
 6. 对项目根目录uniCloud点右键选择“云服务空间初始化向导”界面按提示部署项目
 7. 在uni-app项目点右键，关联之前创建的服务空间。
 8. 运行启动。
-9. 如果需要stream流式响应，需要在[dev.dcloud.net.cn](https://dev.dcloud.net.cn)的uni-push2中开通你的应用，然后把云函数上传到uniCloud服务空间，并且运行时在HBuilderX控制台选择`连接云端云函数`
+9. 如果需要stream流式响应，需要在[dev.dcloud.net.cn](https://dev.dcloud.net.cn)的uni-push2中开通你的应用
 
 ## 配置 @config
 文件路径 `uniCloud/cloudfunctions/common/uni-config-center/uni-ai-chat/config.json`
@@ -64,8 +64,6 @@
 
 ### 注意事项 @heed
 - 使用`sse-channel`需要先[开通uni-push](https://uniapp.dcloud.net.cn/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
-- 目前uni-push2.0不支持本地调试（后续版本会支持），需要在HBuilderX控制台，更改`连接本地云函数`为`连接云端云函数`。
-
 
 ## 营运专题@ad
 v1.0.3起提供了商业化能力，与uni-ai对话消耗积分。

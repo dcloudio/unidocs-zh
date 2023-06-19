@@ -120,13 +120,11 @@ Compared with similar products on the market, using uni-im only costs such a che
 1. Open `uni-im` plug-in download address: [https://ext.dcloud.net.cn/plugin?name=uni-im](https://ext.dcloud.net.cn/plugin?name= uni-im)
 2. 点击`使用HBuilderX导入示例项目`
 3. 对项目根目录uniCloud点右键选择“云服务空间初始化向导”界面按提示部署项目（注意：选择绑定的服务空间，须在uni-push2.0的[web控制台](https://dev.dcloud.net.cn/pages/app/push2/info)关联）
-4. 在HBuilderX控制台，更改`连接本地云函数`为`连接云端云函数`
-<img width="600px" src="https://qiniu-web-assets.dcloud.net.cn/ext/uni-im/20230317211717.jpg"></img>
-5. `运行项目`到2个不同的浏览器，因为在同一个浏览器打开相同网络地址（ip或者域名）的uni-im项目，socket会相互占线。
+4. `运行项目`到2个不同的浏览器，因为在同一个浏览器打开相同网络地址（ip或者域名）的uni-im项目，socket会相互占线。
 	所以需要使用两个浏览器（或者使用浏览器`打开新的无痕式窗口`功能充当第二个浏览器）分别`注册账号并登录`，
 	So you need to use two browsers (or use the browser's `open a new incognito window` function to act as a second browser) to `register an account and log in` respectively,
 	到此部署已经结束
-6. 向对应的用户发起会话，通过访问路径：`/uni_modules/uni-im/pages/chat/chat?user_id=` + `对应的用户id` 即可
+5. 向对应的用户发起会话，通过访问路径：`/uni_modules/uni-im/pages/chat/chat?user_id=` + `对应的用户id` 即可
 
 ## 部署到自己的项目
 ## Deploy to your own project

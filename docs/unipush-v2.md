@@ -327,6 +327,7 @@ According to the following table, set the socket legal domain name in the applet
 |Domain Name|Port|
 |--	|--	|
 |wshzn.gepush.com |5223|
+|wshzn.getui.net |5223（3.8.5新增）|
 
 
 ### 客户端监听推送消息@listener  

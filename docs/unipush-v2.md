@@ -326,7 +326,7 @@ exports.main = async (event, context) => {
 };
 ```
 
-在云函数文件目录右键（或按快捷键ctrl + r）-> `上传并运行云函数`，此时你的客户端将收到推送消息（应用关闭时为通知栏消息，在线时代码监听到推送消息）
+在云函数文件目录右键（或按快捷键ctrl + r）-> `运行-本地云函数`，此时你的客户端将收到推送消息（应用关闭时为通知栏消息，在线时代码监听到推送消息）
 
 > 先跟着示例代码简单体验一下，详细的uniPush.sendMessage API介绍[详情参考](/uniCloud/uni-cloud-push/api.html#uni-cloud-push)
 

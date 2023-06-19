@@ -226,6 +226,7 @@ uni-push在web和小程序端就是个websocket；各家小程序平台，均要
 |域名|端口|
 |--	|--	|
 |wshzn.gepush.com |5223|
+|wshzn.getui.net |5223（3.8.5新增）|
 
 
 ### 客户端监听推送消息@listener  

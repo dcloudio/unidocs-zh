@@ -166,9 +166,9 @@ export default {
 			"prefix": "群26"
 		},
 		{
-			"number": "166188776",
+			"number": "811363410",
 			"state": 1,
-			"prefix": "群28"
+			"prefix": "群27"
 		},
 		{
 			"number": "202965481",
@@ -206,10 +206,10 @@ export default {
 			"prefix": "群35"
 		},
 		{
-			"number": "811363410",
+			"number": "166188776",
 			"state": 0,
-			"prefix": "群27",
-			joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=FKTTkxKRFrtB1SI9CVYBS-BhO0yjdJD3&jump_from=webapi&authKey=Evp1s2FufXzp+lQmc72+flIUNEVra+flY9Y2hK/qfrR9hBbFgVXt+wi4QN4v05Qq'
+			"prefix": "群28",
+			joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=AGO8YKnZHBqMbOYA4D9rfxghRAScn9A7&jump_from=webapi&authKey=R8obn3ye7NnnqhyXNPhq7Gm+hISARBzRECNNXjkB0Lv6JfyrhgyS2FeRVj66Yj0e'
 		}
 	]
 }

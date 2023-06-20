@@ -462,7 +462,7 @@ uniCloud.chooseAndUploadFile({
 
 |字段		|类型					|必填	|说明						|
 |:-:		|:-:					|----	|:-:						|
-|fileList	|&lt;Array&gt;.String	|是		|要删除的文件 ID 组成的数组，**阿里云只支持一次删除一个文件**|
+|fileList	|&lt;Array&gt;.String	|是		|要删除的文件 ID 组成的数组|
 
 #### 响应参数
 

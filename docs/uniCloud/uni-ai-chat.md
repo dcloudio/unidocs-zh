@@ -11,6 +11,12 @@
 视频效果：  
 <video controls src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ai-chat/uni-ai-stream.mov" style="max-width: 100%; max-height: 70vh;"></video>
 
+### 示例项目
+
+地址：[https://chat.dcloud.net.cn](https://chat.dcloud.net.cn/#/)
+
+注意：需要使用HBuilder账号登录，限制：5条消息/账号/天
+
 ## 体验步骤  
 
 1. 如之前未使用过uni-app，那请从头学起。[uni-app官网](https://uniapp.dcloud.net.cn)

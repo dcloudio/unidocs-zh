@@ -609,8 +609,7 @@ This API is deprecated. Deleting cloud storage files is a high-risk operation, a
 |字段		|类型					|必填	|说明						|
 |Fields |Type |Required |Description |
 |:-:		|:-:					|----	|:-:						|
-|fileList	|&lt;Array&gt;.String	|是		|要删除的文件 ID 组成的数组，**阿里云只支持一次删除一个文件**|
-|fileList |&lt;Array&gt;.String |Yes |An array of file IDs to be deleted, **Alibaba Cloud only supports deleting one file at a time**|
+|fileList	|&lt;Array&gt;.String	|是		|要删除的文件 ID 组成的数组|
 
 #### 响应参数
 #### Response parameters

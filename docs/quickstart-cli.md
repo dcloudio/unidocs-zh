@@ -36,6 +36,9 @@ npm install -g @vue/cli
     ```shell
     npx degit dcloudio/uni-preset-vue#vite my-vue3-project
     ```
+    ```shell
+    npx degit dcloudio/uni-preset-vue#vite-alpha my-vue3-project
+    ```
   * 创建以 typescript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite-ts.zip) 下载模板）
   * Create a project developed with typescript (if the command line fails to create, please visit [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite-ts.zip) directly to download the template)
     ```shell

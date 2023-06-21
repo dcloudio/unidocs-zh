@@ -1,3 +1,10 @@
+#### 3.8.6.20230621-alpha
+* 【uni-app】
+* 修复 3.8.5更新的uni-push2.0的socket合法域名错误的问题
+* uts插件 App-iOS平台 修复 函数参数类型为 UTSJSONObject 时传入的参数值总是为空的Bug
+* 【App插件(含5+App和uni-app的App端)】
+* iOS平台 更新 一键登录使用的个验基础库SDK为 3.0.6.0 版，解决上传 AppStore 可能报 ITMS-90683:Missing purpose string in info.plist 的Bug
+
 #### 3.8.5.20230616-alpha
 * 【uni-app】
 * App平台、Web平台 修复 vue 页面 textarea 组件高度渲染异常的Bug [详情](https://ask.dcloud.net.cn/question/169380)

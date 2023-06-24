@@ -1,20 +1,43 @@
 ## DB Schema概述
 
-`DB Schema`是基于 JSON 格式定义的数据结构的规范。除schema外jql还支持使用js编写schema扩展，详见：[DB schema 扩展](jql-schema-ext.md)
+`DB Schema`是基于 JSON 格式定义的数据结构的规范。
 
-它有很多重要的作用：
+每张表/集合，都有一个表名.schema.json的文件，来描述表的信息、字段的信息。
 
-- 描述现有的数据含义。可以一目了然的阅读每个表、每个字段的用途。
-- 设定数据操作权限(permission)。什么样的角色可以读/写哪些数据，都在这里配置。
-- 设定字段值域能接受的格式(validator)，比如不能为空、需符合指定的正则格式。
+一个表的简单schema.json示例如下
+```json
+{
+	"bsonType": "object", // 固定节点
+	"description": "该表的描述",
+	"required": [], // 必填字段列表
+	"properties": { // 该表的字段清单
+		"_id": { // 字段名称，每个表都会带有_id字段
+			"description": "ID，系统自动生成"
+			// 这里还有很多字段属性可以设置
+		},
+		"field2": { // 字段2，每个表都会带有_id字段
+			"description": ""
+			// 这里还有很多字段属性可以设置
+		}
+	}
+}
+```
+
+`DB Schema`有很多重要的作用：
+
+- 描述数据表结构。一目了然的阅读每个表、每个字段的用途。
+- 设置字段的默认值(defaultValue/forceDefaultValue)，比如服务器当前时间、当前用户id等。
+- 设定字段值域能接受的格式(validator)，比如数字、字符串、布尔值，是否可为空，还可以指定的数据要求的正则格式，不符合的格式无法入库。
 - 设定字段之间的约束关系(fieldRules)，比如字段结束时间需要晚于字段开始时间。
-- 设置数据的默认值(defaultValue/forceDefaultValue)，比如服务器当前时间、当前用户id等。
-- 设定多个表的字段间映射关系(foreignKey)，将多个表按一个虚拟联表直接查询，大幅简化联表查询。
+- 设定多个表的关联关系，字段间映射关系(foreignKey)，将多个表按一个虚拟联表直接查询，大幅简化联表查询。
+- 设定数据操作权限(permission)。什么样的角色可以读/写哪些数据，都可以在这里配置。
 - 根据schema自动生成前端界面（schema2code），包括列表、详情、新建和编辑页面，自动处理校验规则。
+
+除schema外jql还支持使用js编写schema扩展，在数据的增删改查时触发相应的触发器，详见：[DB schema 扩展](jql-schema-ext.md)
 
 > MongoDB支持通过 [$jsonSchema 操作符](https://docs.mongodb.com/manual/reference/operator/query/jsonSchema/index.html)在插入和更新文档时进行结构验证（非空、类型校验等）， $jsonSchema 支持 JSON Schema的草案4，包括[core specification](https://tools.ietf.org/html/draft-zyp-json-schema-04)和[validation specification](https://tools.ietf.org/html/draft-fge-json-schema-validation-00)。uniCloud在MongoDB基础上进行了JSON Schema扩展。
 
-编写`DB Schema`是uniCloud的数据库开发的重要环节。但必须通过JQL操作数据库才能发挥`DB Schema`的价值。
+编写`DB Schema`是uniCloud的数据库开发的重要环节。但**必须通过JQL操作数据库才能发挥`DB Schema`的价值**。
 
 **所以注意，在云函数中使用传统MongoDB API操作数据库时`DB Schema`不生效。不管在客户端还是云端，都必须使用JQL操作数据库。**
 
@@ -30,15 +53,7 @@
 
 ### 如何编写DB Schema
 
-- **方式1，在web控制台编写schema**
-
-1. 登录 [uniCloud控制台](https://unicloud.dcloud.net.cn)，选中一个数据表
-2. 点击表右侧页签 “表结构”，点击 “编辑” 按钮，在编辑区域编写 Schema，编写完毕后点保存按钮即可生效。
-  ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/schema2code.png)
-
-**web控制台上编辑`DB Schema`保存后是实时在现网生效的，请注意对现网商用项目的影响。**
-
-- **方式2，在HBuilderX中编写schema（推荐）**
+- **方式1，在HBuilderX中编写schema（推荐）**
 
 在HBuilderX中编写schema，有良好的语法提示和语法校验，还可以本地调试，是更为推荐的schema编写方案。
 
@@ -63,6 +78,15 @@
 - database目录右键可以下载所有schema及扩展校验函数
 
 HBuilderX中运行前端项目，在控制台选择连接本地云函数，或者本地云函数/云对象直接运行，此时本地编写的schema可直接生效，无需上传。方便编写调试。
+
+- **方式2，在web控制台编写schema**
+
+1. 登录 [uniCloud控制台](https://unicloud.dcloud.net.cn)，选中一个数据表
+2. 点击表右侧页签 “表结构”，点击 “编辑” 按钮，在编辑区域编写 Schema，编写完毕后点保存按钮即可生效。
+  ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/schema2code.png)
+
+**web控制台上编辑`DB Schema`保存后是实时在现网生效的，请注意对现网商用项目的影响。**
+
 
 ## Schema的一级节点@schema-root
 ```json
@@ -1112,11 +1136,11 @@ rule表达式里支持：
 
 扩展校验函数
 
-当属性配置不满足需求，需要写js函数进行校验时，使用本功能。
+当属性配置不满足需求，需要写js函数进行校验时，使用本功能。（当然也可以使用[schema.js](jql-schema-ext.md)来替代）
 
 **注意**
 
-- 扩展校验函数不能有其他依赖
+- 扩展校验函数不能有其他依赖。有相关需求需使用schema.js来替代。
 - 尽量不要在扩展校验函数中使用全局变量，如果一定要用请务必确保自己已经阅读并理解了[云函数的启动模式](uniCloud/cf-functions.md?id=launchtype)
 
 如何使用
@@ -1265,8 +1289,15 @@ if (uni) {
 ```
 
 
+### 4. schema.js
 
-### 4. errorMessage自定义错误提示@errormessage
+[schema.js](jql-schema-ext.md)是schema.json的扩展和补充，它可以以编程的方式对数据的增删改查进行监听，然后执行任意操作。所以同样可以用于字段的值域校验。
+
+schema.js与validator function的区别是，validator function是针对某一个字段的控制，返回布尔值。而schema.js是对整个表的自由编程。
+
+schema.js篇幅较长，另见[schema.js](jql-schema-ext.md)
+
+### 5. errorMessage自定义错误提示@errormessage
 
 数据不符合schema配置的规范时，无法入库，此时会报错。
 
@@ -1510,14 +1541,13 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 |auth.permission|用户权限数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)																																											|
 |doc						|数据库中的目标数据记录，用于匹配记录内容/查询条件																																																|
 |now						|当前服务器时间戳（单位：毫秒），时间戳可以进行额外运算，如doc.publish\_date > now - 60000表示publish\_date在最近一分钟														|
-|action					|数据操作请求同时指定的uni-clientDB-action。用于指定前端的数据操作必须同时附带执行一个action云函数，如未触发该action则权限验证失败								|
+|action					|已废弃，使用[数据库触发器](jql-schema-ext.md)替代action云函数								|
 
 **注意**
 - `auth`表示正在执行操作的用户对象
 - `auth.xxx`均由uni-id提供，依赖于[uni-id公共模块](uni-id-summary.md)
 - `doc.xxx`表示将要查询/修改/删除的每条数据（注意并不包括新增数据，新增数据应通过值域校验进行验证），如果将要访问的数据不满足permission规则将会拒绝执行
 - `uni-id`的角色和权限，也即auth.role和auth.permission是不一样的概念。注意阅读[uni-id 角色权限](uni-id-summary.md#rbac)
-- 如果想支持使用多个`action`的用法，可以通过`"'actionRequired' in action"`的形式配置权限，限制客户端使用的action内必须包含名为`actionRequired`的action
 - doc可以理解为将要访问的数据，因此create权限内不可使用doc变量。create时建议使用forceDefaultValue或自定义校验函数实现插入数据的值域校验。
 
 **权限规则内可以使用的运算符**
@@ -1581,7 +1611,7 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 
 **注意**
 
-要分清 数据权限permission 和 字段值域校验validator 的区别。
+要分清 `数据权限permission` 和 `字段值域校验validator` 的区别。
 
 在权限规则的变量中只有数据库中的数据doc，并没有前端提交的待入库数据data。所以如果要对待入库的数据data做校验，应该在字段值域validator中校验，而不是在权限permission中校验。
 
@@ -1598,70 +1628,6 @@ forceDefaultValue属于数据校验的范畴，在数据写入时生效，但是
 这样用户登录后，uniCloud会自动分析它的permission和role，在schema里编写的关于permission和role的限制也可以一一对应上，进行有效管理。
 
 admin中创建权限、角色和用户授权，另见[文档](/uniCloud/admin?id=mutiladmin)
-
-**变量action的说明**
-
-action是`clientDB`的一个配套功能。它的作用是在前端发起数据操作请求时，附带一个action的name，则会同时执行一个`uni-clientDB-action`的云函数。[详见](jql.md#action)
-
-有些复杂业务，要求必须同时执行一个action云函数，才能允许前端对特定数据的修改。
-
-以user表为例，假使用户在修改自己的name时，必须要触发一个名为changenamelog的action云函数，在该云函数里会记录一条留痕日志，如果没有记录日志则不允许修改name。
-那么在`DB Schema`里要配置`'changenamelog' in action`
-
-```json
-// user表的schema
-{
-  "bsonType": "object",
-  "required": [],
-  "permission": {
-    "read": "doc.status==true", // 任何用户都可以读status字段的值为true的记录，其他记录不可读
-    "create": false, // 禁止新增数据记录（admin权限用户不受限）
-    "update": false, // 禁止更新数据（admin权限用户不受限）
-    "delete": false // 禁止删除数据（admin权限用户不受限）
-  },
-  "properties": {
-    "_id":{
-	},
-	"name":{
-		"bsonType": "string",
-		"title": "名称",
-		"permission": {
-		  "read": true, 
-		  "write": "(doc._id == auth.uid) && ('changenamelog' in action)" // 允许登录的用户修改自己的name字段，但必须同时触发执行action云函数changenamelog
-		}
-	},
-    "pwd": {
-      "bsonType": "string",
-      "title": "密码",
-      "permission": {
-        "read": false, // 禁止读取 pwd 字段的数据（admin权限用户不受限）
-        "write": false // 禁止写入 pwd 字段的数据（admin权限用户不受限）
-      }
-    },
-	"status": {
-		"bsonType": "bool",
-		"title": "用户状态",
-		"description": "true代表用户正常。false代表用户被禁用"
-	}
-  }
-}
-```
-
-前端提交代码，必须带上action参数
-```js
-const db = uniCloud.database();
-db.action("changenamelog").collection("user").doc("xxx").update({
-	name:"newname"
-})
-```
-
-action云函数中记录日志的代码，此处省略。
-
-根据上述配置，如前端应用已经登录，且登录的用户发起修改自己的name的请求，且同时前端的改库请求伴随action云函数changenamelog，则允许修改。其他修改数据请求则会被拒绝。
-
-`action`有很多用途，有的权限规则比较复杂，需要写很多js代码，此时也可以在`action`的before中进行校验。
-
-但注意导出`db_init.json`时不会包含`action`，`action`属于云函数。导出`db_init.json`只会包含schema和validateFunction。
 
 
 ### 权限规则内的数据库查询get方法
@@ -1701,8 +1667,23 @@ db.collection('street').where("shop_id=='123123 || shop_id=='456456'").get()
 - 字段级有没有配置权限，有没有在客户端访问password字段
 - 此次访问的数据是不是配置的权限对应的数据的子集
 
+## schema.js触发器
+
+schema.json是一个json方式的配置，配置的特点是简单易用，但无法编程。
+
+当出现配置难以满足的需求，比如复杂的数据权限校验规则、复杂的字段值域校验规则，此时应当使用编程的方式来解决。
+
+这就是 scheme.js。每个表都有一个schema.json和一个schema.js（可选）。
+
+在schema.js里可以监听数据的增删改查，可自由做前置校验、前置数据加工或后置加工，可引用扩展库和公共模块。
+
+因篇幅较多，请另见[数据库schema.js触发器](jql-schema-ext.md)
+
+再次强调，schema.json和schema.js的生效前提，均是JQL。使用传统MongoDB写法无法执行这些。
+
 ## schema2code代码生成系统@autocode
 
 `DB Schema`里有大量的信息，其实有了这些信息，前端将无需自己开发表单维护界面，uniCloud可以自动生成新增、修改、列表、详情的前端页面，以及admin端的列表、新增、修改、删除全套功能。
 
 因内容较长，请另见文档[schema2code](schema2code.md)
+

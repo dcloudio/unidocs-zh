@@ -1,32 +1,46 @@
 ## DB Schema概述
 ##DB Schema overview
 
-`DB Schema`是基于 JSON 格式定义的数据结构的规范。除schema外jql还支持使用js编写schema扩展，详见：[DB schema 扩展](jql-schema-ext.md)
-`DB Schema` is a specification based on data structures defined in the JSON format. In addition to schema, jql also supports using js to write schema extensions, see: [DB schema extension](jql-schema-ext.md)
+`DB Schema`是基于 JSON 格式定义的数据结构的规范。
 
-它有很多重要的作用：
-It has many important functions:
+每张表/集合，都有一个表名.schema.json的文件，来描述表的信息、字段的信息。
 
-- 描述现有的数据含义。可以一目了然的阅读每个表、每个字段的用途。
-- Describe the meaning of the existing data. You can read the purpose of each table and field at a glance.
-- 设定数据操作权限(permission)。什么样的角色可以读/写哪些数据，都在这里配置。
-- Set data operation permissions (permission). What kind of roles can read/write what data is configured here.
-- 设定字段值域能接受的格式(validator)，比如不能为空、需符合指定的正则格式。
-- Set the acceptable format (validator) of the field value field. For example, it cannot be empty and must conform to the specified regular format.
+一个表的简单schema.json示例如下
+```json
+{
+	"bsonType": "object", // 固定节点
+	"description": "该表的描述",
+	"required": [], // 必填字段列表
+	"properties": { // 该表的字段清单
+		"_id": { // 字段名称，每个表都会带有_id字段
+			"description": "ID，系统自动生成"
+			// 这里还有很多字段属性可以设置
+		},
+		"field2": { // 字段2，每个表都会带有_id字段
+			"description": ""
+			// 这里还有很多字段属性可以设置
+		}
+	}
+}
+```
+
+`DB Schema`有很多重要的作用：
+
+- 描述数据表结构。一目了然的阅读每个表、每个字段的用途。
+- 设置字段的默认值(defaultValue/forceDefaultValue)，比如服务器当前时间、当前用户id等。
+- 设定字段值域能接受的格式(validator)，比如数字、字符串、布尔值，是否可为空，还可以指定的数据要求的正则格式，不符合的格式无法入库。
 - 设定字段之间的约束关系(fieldRules)，比如字段结束时间需要晚于字段开始时间。
-- Set the constraints between fields (fieldRules), for example, the end time of the field needs to be later than the start time of the field.
-- 设置数据的默认值(defaultValue/forceDefaultValue)，比如服务器当前时间、当前用户id等。
-- Set the default value of the data (defaultValue/forceDefaultValue), such as the current server time, current user id, etc.
-- 设定多个表的字段间映射关系(foreignKey)，将多个表按一个虚拟联表直接查询，大幅简化联表查询。
-- Set the mapping relationship (foreignKey) between the fields of multiple tables, and directly query multiple tables as a virtual joint table, which greatly simplifies the joint table query.
+- 设定多个表的关联关系，字段间映射关系(foreignKey)，将多个表按一个虚拟联表直接查询，大幅简化联表查询。
+- 设定数据操作权限(permission)。什么样的角色可以读/写哪些数据，都可以在这里配置。
 - 根据schema自动生成前端界面（schema2code），包括列表、详情、新建和编辑页面，自动处理校验规则。
 - Automatically generate front-end interface (schema2code) based on schema, including list, details, new and edit pages, and automatically process validation rules.
+
+除schema外jql还支持使用js编写schema扩展，在数据的增删改查时触发相应的触发器，详见：[DB schema 扩展](jql-schema-ext.md)
 
 > MongoDB支持通过 [$jsonSchema 操作符](https://docs.mongodb.com/manual/reference/operator/query/jsonSchema/index.html)在插入和更新文档时进行结构验证（非空、类型校验等）， $jsonSchema 支持 JSON Schema的草案4，包括[core specification](https://tools.ietf.org/html/draft-zyp-json-schema-04)和[validation specification](https://tools.ietf.org/html/draft-fge-json-schema-validation-00)。uniCloud在MongoDB基础上进行了JSON Schema扩展。
 > MongoDB supports structure validation (non-null, type-checked) when inserting and updating documents via the [$jsonSchema operator](https://docs.mongodb.com/manual/reference/operator/query/jsonSchema/index.html) Validation, etc.), $jsonSchema supports draft 4 of JSON Schema, including [core specification](https://tools.ietf.org/html/draft-zyp-json-schema-04) and [validation specification](https:/ /tools.ietf.org/html/draft-fge-json-schema-validation-00). uniCloud extends JSON Schema based on MongoDB.
 
-编写`DB Schema`是uniCloud的数据库开发的重要环节。但必须通过JQL操作数据库才能发挥`DB Schema`的价值。
-Writing `DB Schema` is an important part of uniCloud database development. But you must operate the database through JQL to play the value of `DB Schema`.
+编写`DB Schema`是uniCloud的数据库开发的重要环节。但**必须通过JQL操作数据库才能发挥`DB Schema`的价值**。
 
 **所以注意，在云函数中使用传统MongoDB API操作数据库时`DB Schema`不生效。不管在客户端还是云端，都必须使用JQL操作数据库。**
 ** So please note that `DB Schema` does not take effect when using the traditional MongoDB API to operate the database in cloud functions. Whether on the client or in the cloud, you must use JQL to operate the database. **
@@ -49,19 +63,7 @@ Therefore, it is recommended that developers write a good schema, regardless of 
 ### 如何编写DB Schema
 ### How to write DB Schema
 
-- **方式1，在web控制台编写schema**
-- **Method 1, write schema in web console**
-
-1. 登录 [uniCloud控制台](https://unicloud.dcloud.net.cn)，选中一个数据表
-1. Log in to the [uniCloud console](https://unicloud.dcloud.net.cn), select a data table
-2. 点击表右侧页签 “表结构”，点击 “编辑” 按钮，在编辑区域编写 Schema，编写完毕后点保存按钮即可生效。
-  ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/schema2code.png)
-
-**web控制台上编辑`DB Schema`保存后是实时在现网生效的，请注意对现网商用项目的影响。**
-**After editing `DB Schema` on the web console, it will take effect on the live network in real time. Please pay attention to the impact on commercial projects on the live network. **
-
-- **方式2，在HBuilderX中编写schema（推荐）**
-- **Method 2, write schema in HBuilderX (recommended)**
+- **方式1，在HBuilderX中编写schema（推荐）**
 
 在HBuilderX中编写schema，有良好的语法提示和语法校验，还可以本地调试，是更为推荐的schema编写方案。
 Writing schemas in HBuilderX has good syntax hints and syntax verification, and can be debugged locally. It is a more recommended schema writing scheme.
@@ -97,6 +99,15 @@ Writing schemas in HBuilderX has good syntax hints and syntax verification, and 
 
 HBuilderX中运行前端项目，在控制台选择连接本地云函数，或者本地云函数/云对象直接运行，此时本地编写的schema可直接生效，无需上传。方便编写调试。
 Run the front-end project in HBuilderX, choose to connect to the local cloud function in the console, or run the local cloud function/cloud object directly. At this time, the locally written schema can take effect directly without uploading. Easy to write and debug.
+
+- **方式2，在web控制台编写schema**
+
+1. 登录 [uniCloud控制台](https://unicloud.dcloud.net.cn)，选中一个数据表
+2. 点击表右侧页签 “表结构”，点击 “编辑” 按钮，在编辑区域编写 Schema，编写完毕后点保存按钮即可生效。
+  ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/schema2code.png)
+
+**web控制台上编辑`DB Schema`保存后是实时在现网生效的，请注意对现网商用项目的影响。**
+
 
 ## Schema的一级节点@schema-root
 ## Schema's first-level node @schema-root
@@ -1422,14 +1433,12 @@ In the above example, `create_date` is required, just limit `end_date` to be gre
 扩展校验函数
 Extended check function
 
-当属性配置不满足需求，需要写js函数进行校验时，使用本功能。
-Use this function when the attribute configuration does not meet the requirements and you need to write a js function for verification.
+当属性配置不满足需求，需要写js函数进行校验时，使用本功能。（当然也可以使用[schema.js](jql-schema-ext.md)来替代）
 
 **注意**
 **Notice**
 
-- 扩展校验函数不能有其他依赖
-- The extended check function cannot have other dependencies
+- 扩展校验函数不能有其他依赖。有相关需求需使用schema.js来替代。
 - 尽量不要在扩展校验函数中使用全局变量，如果一定要用请务必确保自己已经阅读并理解了[云函数的启动模式](uniCloud/cf-functions.md?id=launchtype)
 - Try not to use global variables in extended validation functions. If you must use them, make sure you have read and understood the [Launch Mode of Cloud Functions](uniCloud/cf-functions.md?id=launchtype)
 
@@ -1623,9 +1632,15 @@ if (uni) {
 ```
 
 
+### 4. schema.js
 
-### 4. errorMessage自定义错误提示@errormessage
-### 4. errorMessage custom error message @errormessage
+[schema.js](jql-schema-ext.md)是schema.json的扩展和补充，它可以以编程的方式对数据的增删改查进行监听，然后执行任意操作。所以同样可以用于字段的值域校验。
+
+schema.js与validator function的区别是，validator function是针对某一个字段的控制，返回布尔值。而schema.js是对整个表的自由编程。
+
+schema.js篇幅较长，另见[schema.js](jql-schema-ext.md)
+
+### 5. errorMessage自定义错误提示@errormessage
 
 数据不符合schema配置的规范时，无法入库，此时会报错。
 When the data does not meet the specifications of the schema configuration, it cannot be stored in the database, and an error will be reported at this time.
@@ -1934,9 +1949,7 @@ In addition to the doc variables mentioned in the above examples, in fact, the p
 |doc						|数据库中的目标数据记录，用于匹配记录内容/查询条件																																																|
 |doc |The target data record in the database to match the record content/query condition|
 |now						|当前服务器时间戳（单位：毫秒），时间戳可以进行额外运算，如doc.publish\_date > now - 60000表示publish\_date在最近一分钟														|
-|now |The current server timestamp (unit: milliseconds), the timestamp can be additionally calculated, such as doc.publish\_date > now - 60000 means publish\_date is in the last minute |
-|action					|数据操作请求同时指定的uni-clientDB-action。用于指定前端的数据操作必须同时附带执行一个action云函数，如未触发该action则权限验证失败								|
-|action |The uni-clientDB-action specified at the same time as the data operation request. The data operation used to specify the front end must be accompanied by an action cloud function. If the action is not triggered, the permission verification fails |
+|action					|已废弃，使用[数据库触发器](jql-schema-ext.md)替代action云函数								|
 
 **注意**
 **Notice**
@@ -1947,9 +1960,6 @@ In addition to the doc variables mentioned in the above examples, in fact, the p
 - `doc.xxx`表示将要查询/修改/删除的每条数据（注意并不包括新增数据，新增数据应通过值域校验进行验证），如果将要访问的数据不满足permission规则将会拒绝执行
 - `doc.xxx` indicates each piece of data to be queried/modified/deleted (note that new data is not included, and the new data should be verified by the value range check), if the data to be accessed does not meet the permission rules, it will be refuse to execute
 - `uni-id`的角色和权限，也即auth.role和auth.permission是不一样的概念。注意阅读[uni-id 角色权限](uni-id-summary.md#rbac)
-- The roles and permissions of `uni-id`, that is, auth.role and auth.permission are different concepts. Note to read [uni-id role permissions](uni-id-summary.md#rbac)
-- 如果想支持使用多个`action`的用法，可以通过`"'actionRequired' in action"`的形式配置权限，限制客户端使用的action内必须包含名为`actionRequired`的action
-- If you want to support the usage of multiple `action`, you can configure permissions in the form of `"'actionRequired' in action"`, restricting the action used by the client must contain an action named `actionRequired`
 - doc可以理解为将要访问的数据，因此create权限内不可使用doc变量。create时建议使用forceDefaultValue或自定义校验函数实现插入数据的值域校验。
 - doc can be understood as the data to be accessed, so the doc variable cannot be used within the create permission. When creating, it is recommended to use forceDefaultValue or a custom validation function to implement range validation of inserted data.
 
@@ -2030,8 +2040,7 @@ According to this configuration, if the front-end application is already logged 
 **注意**
 **Notice**
 
-要分清 数据权限permission 和 字段值域校验validator 的区别。
-To distinguish the difference between the data permission permission and the field value domain validation validator.
+要分清 `数据权限permission` 和 `字段值域校验validator` 的区别。
 
 在权限规则的变量中只有数据库中的数据doc，并没有前端提交的待入库数据data。所以如果要对待入库的数据data做校验，应该在字段值域validator中校验，而不是在权限permission中校验。
 In the variable of the permission rule, there is only the data doc in the database, and there is no data to be stored in the database submitted by the front end. Therefore, if you want to verify the data stored in the database, you should verify it in the field value field validator, not in the permission.
@@ -2056,81 +2065,6 @@ In this way, after the user logs in, uniCloud will automatically analyze its per
 
 admin中创建权限、角色和用户授权，另见[文档](/uniCloud/admin?id=mutiladmin)
 Create permissions, roles and user authorization in admin, see also [documentation](/uniCloud/admin?id=mutiladmin)
-
-**变量action的说明**
-**Description of variable action**
-
-action是`clientDB`的一个配套功能。它的作用是在前端发起数据操作请求时，附带一个action的name，则会同时执行一个`uni-clientDB-action`的云函数。[详见](jql.md#action)
-action is a companion function of `clientDB`. Its function is to execute a `uni-clientDB-action` cloud function at the same time when the front-end initiates a data operation request with an action name. [See details](jql.md#action)
-
-有些复杂业务，要求必须同时执行一个action云函数，才能允许前端对特定数据的修改。
-Some complex services require that an action cloud function must be executed at the same time to allow the front-end to modify specific data.
-
-以user表为例，假使用户在修改自己的name时，必须要触发一个名为changenamelog的action云函数，在该云函数里会记录一条留痕日志，如果没有记录日志则不允许修改name。
-Taking the user table as an example, if the user modifies his name, he must trigger an action cloud function named changenamelog, and a log will be recorded in the cloud function. If no log is recorded, the name cannot be modified.
-那么在`DB Schema`里要配置`'changenamelog' in action`
-Then configure `'changenamelog' in action` in `DB Schema`
-
-```json
-// user表的schema
-// schema of the user table
-{
-  "bsonType": "object",
-  "required": [],
-  "permission": {
-    "read": "doc.status==true", // 任何用户都可以读status字段的值为true的记录，其他记录不可读
-    "create": false, // 禁止新增数据记录（admin权限用户不受限）
-    "update": false, // 禁止更新数据（admin权限用户不受限）
-    "delete": false // 禁止删除数据（admin权限用户不受限）
-  },
-  "properties": {
-    "_id":{
-	},
-	"name":{
-		"bsonType": "string",
-		"title": "名称",
-		"permission": {
-		  "read": true, 
-		  "write": "(doc._id == auth.uid) && ('changenamelog' in action)" // 允许登录的用户修改自己的name字段，但必须同时触发执行action云函数changenamelog
-		}
-	},
-    "pwd": {
-      "bsonType": "string",
-      "title": "密码",
-      "permission": {
-        "read": false, // 禁止读取 pwd 字段的数据（admin权限用户不受限）
-        "write": false // 禁止写入 pwd 字段的数据（admin权限用户不受限）
-      }
-    },
-	"status": {
-		"bsonType": "bool",
-		"title": "用户状态",
-		"description": "true代表用户正常。false代表用户被禁用"
-	}
-  }
-}
-```
-
-前端提交代码，必须带上action参数
-The front end submits the code, must bring the action parameter
-```js
-const db = uniCloud.database();
-db.action("changenamelog").collection("user").doc("xxx").update({
-	name:"newname"
-})
-```
-
-action云函数中记录日志的代码，此处省略。
-The code for logging in the action cloud function is omitted here.
-
-根据上述配置，如前端应用已经登录，且登录的用户发起修改自己的name的请求，且同时前端的改库请求伴随action云函数changenamelog，则允许修改。其他修改数据请求则会被拒绝。
-According to the above configuration, if the front-end application has been logged in, and the logged-in user initiates a request to modify his name, and the front-end database modification request is accompanied by the action cloud function changenamelog, the modification is allowed. Other requests to modify data are rejected.
-
-`action`有很多用途，有的权限规则比较复杂，需要写很多js代码，此时也可以在`action`的before中进行校验。
-`action` has many uses, some permission rules are more complicated, and a lot of js code needs to be written. At this time, it can also be verified in the before of `action`.
-
-但注意导出`db_init.json`时不会包含`action`，`action`属于云函数。导出`db_init.json`只会包含schema和validateFunction。
-But note that `action` is not included when exporting `db_init.json`, `action` belongs to cloud functions. Exporting `db_init.json` will only contain schema and validateFunction.
 
 
 ### 权限规则内的数据库查询get方法
@@ -2180,6 +2114,20 @@ db.collection('street').where("shop_id=='123123 || shop_id=='456456'").get()
 - 字段级有没有配置权限，有没有在客户端访问password字段
 - 此次访问的数据是不是配置的权限对应的数据的子集
 
+## schema.js触发器
+
+schema.json是一个json方式的配置，配置的特点是简单易用，但无法编程。
+
+当出现配置难以满足的需求，比如复杂的数据权限校验规则、复杂的字段值域校验规则，此时应当使用编程的方式来解决。
+
+这就是 scheme.js。每个表都有一个schema.json和一个schema.js（可选）。
+
+在schema.js里可以监听数据的增删改查，可自由做前置校验、前置数据加工或后置加工，可引用扩展库和公共模块。
+
+因篇幅较多，请另见[数据库schema.js触发器](jql-schema-ext.md)
+
+再次强调，schema.json和schema.js的生效前提，均是JQL。使用传统MongoDB写法无法执行这些。
+
 ## schema2code代码生成系统@autocode
 ## schema2code code generation system @autocode
 
@@ -2187,4 +2135,4 @@ db.collection('street').where("shop_id=='123123 || shop_id=='456456'").get()
 There is a lot of information in `DB Schema`. In fact, with this information, the front-end will not need to develop its own form maintenance interface. uniCloud can automatically generate front-end pages for adding, modifying, list, and details, as well as lists, adding, and modifying on the admin side. , delete the full set of functions.
 
 因内容较长，请另见文档[schema2code](schema2code.md)
-Due to the longer content, please also see the document [schema2code](schema2code.md)
+

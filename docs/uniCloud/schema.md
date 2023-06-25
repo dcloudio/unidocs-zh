@@ -1136,11 +1136,11 @@ rule表达式里支持：
 
 扩展校验函数
 
-当属性配置不满足需求，需要写js函数进行校验时，使用本功能。（当然也可以使用[schema.js](jql-schema-ext.md)来替代）
+当属性配置不满足需求，需要写js函数进行校验时，使用本功能。（当然也可以使用[schema.ext.js](jql-schema-ext.md)来替代）
 
 **注意**
 
-- 扩展校验函数不能有其他依赖。有相关需求需使用schema.js来替代。
+- 扩展校验函数不能有其他依赖。有相关需求需使用schema.ext.js来替代。
 - 尽量不要在扩展校验函数中使用全局变量，如果一定要用请务必确保自己已经阅读并理解了[云函数的启动模式](uniCloud/cf-functions.md?id=launchtype)
 
 如何使用
@@ -1289,13 +1289,13 @@ if (uni) {
 ```
 
 
-### 4. schema.js
+### 4. schema.ext.js
 
-[schema.js](jql-schema-ext.md)是schema.json的扩展和补充，它可以以编程的方式对数据的增删改查进行监听，然后执行任意操作。所以同样可以用于字段的值域校验。
+[schema.ext.js](jql-schema-ext.md)是schema.json的扩展和补充，它可以以编程的方式对数据的增删改查进行监听，然后执行任意操作。所以同样可以用于字段的值域校验。
 
-schema.js与validator function的区别是，validator function是针对某一个字段的控制，返回布尔值。而schema.js是对整个表的自由编程。
+schema.ext.js与validator function的区别是，validator function是针对某一个字段的控制，返回布尔值。而schema.ext.js是对整个表的自由编程。
 
-schema.js篇幅较长，另见[schema.js](jql-schema-ext.md)
+schema.ext.js篇幅较长，另见[schema.ext.js](jql-schema-ext.md)
 
 ### 5. errorMessage自定义错误提示@errormessage
 
@@ -1667,19 +1667,19 @@ db.collection('street').where("shop_id=='123123 || shop_id=='456456'").get()
 - 字段级有没有配置权限，有没有在客户端访问password字段
 - 此次访问的数据是不是配置的权限对应的数据的子集
 
-## schema.js触发器
+## schema.ext.js触发器
 
 schema.json是一个json方式的配置，配置的特点是简单易用，但无法编程。
 
 当出现配置难以满足的需求，比如复杂的数据权限校验规则、复杂的字段值域校验规则，此时应当使用编程的方式来解决。
 
-这就是 scheme.js。每个表都有一个schema.json和一个schema.js（可选）。
+这就是 scheme.js。每个表都有一个schema.json和一个schema.ext.js（可选）。
 
-在schema.js里可以监听数据的增删改查，可自由做前置校验、前置数据加工或后置加工，可引用扩展库和公共模块。
+在schema.ext.js里可以监听数据的增删改查，可自由做前置校验、前置数据加工或后置加工，可引用扩展库和公共模块。
 
-因篇幅较多，请另见[数据库schema.js触发器](jql-schema-ext.md)
+因篇幅较多，请另见[数据库schema.ext.js触发器](jql-schema-ext.md)
 
-再次强调，schema.json和schema.js的生效前提，均是JQL。使用传统MongoDB写法无法执行这些。
+再次强调，schema.json和schema.ext.js的生效前提，均是JQL。使用传统MongoDB写法无法执行这些。
 
 ## schema2code代码生成系统@autocode
 

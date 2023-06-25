@@ -279,15 +279,15 @@ console.log("result", result);
 |city						|String	|是		| 限制城市范围																																																														|all																																																																				|
 |citylimit			|Boolean|否		| false：当前城市无结果时，自动扩大范围到全国匹配（默认）<br/>true：固定在当前城市																												| all																																																																				|
 |location				|Object	|否		| 定位坐标，传入后，若用户搜索关键词为类别词（如酒店、餐馆时），<br/>与此坐标距离近的地点将靠前显示|all			
-| &emsp;&#124;-- lat|Number	|纬度															|all	|
-| &emsp;&#124;-- lng|Number	|经度															|all	|																																																															|
-|get_subpois		|Number	|否		| 是否返回子地点，如大厦停车场、出入口等取值<br/>0：不返回（默认） <br/>1：返回）																													|腾讯地图																																																																		|
-|policy					|Number	|否		| 检索策略																																																																|腾讯地图																																																																		|
-|filter					|String	|否		| 筛选条件																																																																|腾讯地图																																																																		|
-|address_format	|String	|否		|可选值：short 返回“不带行政区划的”短地址																																																|腾讯地图																																																																		|
-|page\_index		|Number	|否		| 页码，从1开始，最大页码需通过count进行计算，必须与page_size同时使用																																			|腾讯地图																																																																		|
-|page\_size			|Number	|否		| 每页条数，取值范围1-20，必须与page_index 同时使用																																												|腾讯地图																																																																		|
-|datatype				|Number	|否		| 返回的数据类型，多种数据类型用“\|”分隔 <br/>可选值：<br/>all：返回所有数据类型 <br/>poi：返回POI数据类型 <br/>bus：返回公交站点数据类型 <br/>busline：返回公交线路数据类型|高德地图																																																																		|
+| &emsp;&#124;-- lat|Number|纬度																																						|all																																																																				|
+| &emsp;&#124;-- lng|Number	|经度	|all																																						|																																																																						|
+|get_subpois				|Number	|否		| 是否返回子地点，如大厦停车场、出入口等取值<br/>0：不返回（默认） <br/>1：返回	|腾讯地图																																																																		|
+|policy							|Number	|否		| 检索策略																																			|腾讯地图																																																																		|
+|filter							|String	|否		| 筛选条件																																			|腾讯地图																																																																		|
+|address_format			|String	|否		|可选值：short 返回“不带行政区划的”短地址																			|腾讯地图																																																																		|
+|page\_index				|Number	|否		| 页码，从1开始，最大页码需通过count进行计算，必须与page_size同时使用						|腾讯地图																																																																		|
+|page\_size					|Number	|否		| 每页条数，取值范围1-20，必须与page_index 同时使用															|腾讯地图																																																																		|
+|datatype				|Number							|否			| 返回的数据类型，多种数据类型用“\|”分隔 <br/>可选值：<br/>all：返回所有数据类型 <br/>poi：返回POI数据类型 <br/>bus：返回公交站点数据类型 <br/>busline：返回公交线路数据类型|高德地图																																																																		|
 
 **返回参数**
 
@@ -320,6 +320,82 @@ console.log("result", result);
 | &emsp;&#124;-- adcode		|String	|行政区划代码																																												|腾讯地图	|
 | &emsp;&#124;-- city			|String	|地址																																																|腾讯地图	|
 | &emsp;&#124;-- address	|String	|地点所在城市名称																																										|腾讯地图	|
+
+### 地点搜索@search
+
+**示例**
+
+```js
+// 引入uni-map-service公共模块
+const UniMapService  = require('uni-map-service');
+// 初始化实例
+let uniMapService = new UniMapService({
+	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
+});
+// 调用API
+let result = await uniMapService.search({
+	keyword: "酒店",
+	boundary: "nearby(39.908815,116.397507,1000,1)"
+	city: "北京市"
+});
+console.log("result", result);
+```
+
+**请求参数**
+
+|参数								|类型		|必填	|说明																																																																																																																							|兼容性		|
+|:--								|:-:		|:-:	|:--																																																																																																																							|:-:			|
+|keyword						|String	|是		| 搜索关键字，长度最大80个字节																																																																																																										|all			|
+|location						|Object	|是		| 搜索中心点的经纬度																																																																																																															|all			|
+| &emsp;&#124;-- lat|Number	|是		|纬度																																																																																																																							|all			|
+| &emsp;&#124;-- lng|Number	|是		|经度																																																																																																																							|all			|
+|radius							|Number	|否		| 搜索半径，单位：米，取值范围：<br/>腾讯地图：10到1000<br/>高德地图：取值范围:0-50000																																																																														|all			|
+|auto_extend				|Number	|否		| 当前范围无结果时，是否自动扩大范围<br/>0：不扩大 <br/>1：自动扩大范围（默认）																																																																																		|all			|
+|get_subpois				|Number	|否		| 是否返回子地点，如大厦停车场、出入口等取值<br/>0：不返回（默认） <br/>1：返回																																																																																		|all			|
+|orderby						|String	|否		|排序，支持按距离由近到远排序，取值：<br/>distance：按距离排序<br/>weight：综合排序<br/>说明：<br/>1. 周边搜索默认排序会综合考虑距离、权重等多方面因素<br/>2. 设置按距离排序后则仅考虑距离远近，一些低权重的地点可能因距离近排在前面，导致体验下降|all			|
+|page\_index				|Number	|否		| 页码，从1开始，最大页码需通过count进行计算，必须与page_size同时使用																																																																																							|all			|
+|page\_size					|Number	|否		| 每页条数，取值范围1-20，必须与page_index 同时使用																																																																																																|all			|
+|filter							|String	|否		| 筛选条件																																																																																																																				|腾讯地图	|
+|types							|String	|否		| 指定地点类型																																																																																																																		|高德地图	|
+|city								|String	|否		| 搜索的城市																																																																																																																			|高德地图	|
+
+**返回参数**
+
+仅列出result内的参数，其他参数见 [公共返回参数](#publicresult)
+
+|参数														|类型		|说明																																					|兼容性		|
+|:--														|:-:		|:--																																					|:-:			|
+|data														|Array	| 搜索结果POI（地点）数组，每项为一个POI（地点）对象													|all			|
+| &emsp;&#124;-- id							|String	|POI（地点）唯一标识																													|all			|
+| &emsp;&#124;-- title					|String	|地点名称																																			|all			|
+| &emsp;&#124;-- tel						|String	|电话																																					|all			|
+| &emsp;&#124;-- address				|String	|地址																																					|all			|
+| &emsp;&#124;-- category				|String	|分类																																					|all			|
+| &emsp;&#124;-- type						|String	|POI类型，值说明：0:普通POI / 1:公交车站 / 2:地铁站 / 3:公交线路 / 4:行政区划	|腾讯地图	|
+| &emsp;&#124;-- location				|String	|经纬度																																				|all			|
+| &emsp;&emsp;&#124;-- lat			|Number	|纬度																																					|all			|
+| &emsp;&emsp;&#124;-- lng			|Number	|经度																																					|all			|
+| &emsp;&#124;-- distance				|Number	|距离，单位： 米，根据传入的定位点计算返回																		|all			|
+| &emsp;&#124;-- adcode					|Number	|行政区划代码																																	|all			|
+| &emsp;&#124;-- province				|String	|省																																						|腾讯地图	|
+| &emsp;&#124;-- city						|String	|市																																						|腾讯地图	|
+| &emsp;&#124;-- district				|String	|区/县																																				|腾讯地图	|
+| &emsp;&#124;-- children				|Array	|子地点，当get_subpois=1时返回																								|all			|
+| &emsp;&emsp;&#124;-- parent_id|String	|主地点ID，对应data中的地点ID																									|all			|
+| &emsp;&emsp;&#124;-- id				|String	|地点唯一标识																																	|all			|
+| &emsp;&emsp;&#124;-- title		|String	|地点名称																																			|all			|
+| &emsp;&emsp;&#124;-- tel			|String	|电话																																					|all			|
+| &emsp;&emsp;&#124;-- category	|String	|POI（地点）分类																															|all			|
+| &emsp;&emsp;&#124;-- address	|String	|地址																																					|all			|
+| &emsp;&emsp;&#124;-- location	|Object	|经纬度																																				|all			|
+| &emsp;&emsp;&emsp;&#124;-- lat|Number	|纬度																																					|all			|
+| &emsp;&emsp;&emsp;&#124;-- lng|Number	|经度																																					|all			|
+| &emsp;&emsp;&#124;-- type			|String	|POI类型，值说明：0:普通POI / 1:公交车站 / 2:地铁站 / 3:公交线路 / 4:行政区划	|腾讯地图	|
+| &emsp;&emsp;&#124;-- adcode		|String	|行政区划代码																																	|腾讯地图	|
+| &emsp;&emsp;&#124;-- province	|String	|省																																						|腾讯地图	|
+| &emsp;&emsp;&#124;-- city			|String	|市																																						|腾讯地图	|
+| &emsp;&emsp;&#124;-- district	|String	|区/县																																				|腾讯地图	|
 
 ### 路线规划（导航）@route
 

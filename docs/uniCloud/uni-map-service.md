@@ -293,33 +293,33 @@ console.log("result", result);
 
 仅列出result内的参数，其他参数见 [公共返回参数](#publicresult)
 
-|参数								|类型		|说明																																																|兼容性		|
-|:--								|:-:		|:--																																																|:-:			|
-|data								|Array	| 提示词数组，每项为一个POI对象																																			|all			|
-| &emsp;&#124;-- id				|String	|若数据为POI类型，则返回POI ID;若数据为bus类型，则返回bus id;若数据为busline类型，则返回busline id。|all			|
-| &emsp;&#124;-- title			|String	|地点名称																																																|all			|
-| &emsp;&#124;-- address	|String	|地址																																																|all			|
-| &emsp;&#124;-- category	|String	|分类																																																|腾讯地图	|
-| &emsp;&#124;-- type			|String	|POI类型，值说明：0:普通POI / 1:公交车站 / 2:地铁站 / 3:公交线路 / 4:行政区划												|腾讯地图	|
-| &emsp;&#124;-- location	|String	|经纬度																																															|all			|
-| &emsp;&emsp;&#124;-- lat|Number	|纬度																																																|all			|
-| &emsp;&emsp;&#124;-- lng|Number	|经度																																																|all			|
-| &emsp;&#124;-- adcode		|Number	|行政区划代码																																												|all			|
-| &emsp;&#124;-- province	|String	|省																																																	|腾讯地图	|
-| &emsp;&#124;-- city			|String	|市																																																	|腾讯地图	|
-| &emsp;&#124;-- district	|String	|腾讯地图：区/县，当type（POI类型）为3（公交线路）时，district由city补全<br/>高德地图为:省+市+区（直辖市为“市+区”）				|all	|
-|sub_pois						|String	|子地点列表，仅在输入参数get\_subpois=1时返回																												|腾讯地图	|
-| &emsp;&#124;-- parent_id|String	|主地点ID，对应data中的地点ID																																				|腾讯地图	|
-| &emsp;&#124;-- id				|String	|地点唯一标识																																												|腾讯地图	|
-| &emsp;&#124;-- title		|String	|地点名称																																														|腾讯地图	|
-| &emsp;&#124;-- address	|String	|地址																																																|腾讯地图	|
-| &emsp;&#124;-- category	|String	|POI（地点）分类																																										|腾讯地图	|
-| &emsp;&#124;-- location	|String	|地址																																																|腾讯地图	|
-| &emsp;&emsp;&#124;-- lat|Number	|纬度																																																|all			|
-| &emsp;&emsp;&#124;-- lng|Number	|经度																																																|all			|
-| &emsp;&#124;-- adcode		|String	|行政区划代码																																												|腾讯地图	|
-| &emsp;&#124;-- city			|String	|地址																																																|腾讯地图	|
-| &emsp;&#124;-- address	|String	|地点所在城市名称																																										|腾讯地图	|
+|参数														|类型		|说明																																																									|兼容性		|
+|:--														|:-:		|:--																																																									|:-:			|
+|data														|Array	| 提示词数组，每项为一个POI对象																																												|all			|
+| &emsp;&#124;-- id							|String	|若数据为POI类型，则返回POI ID;若数据为bus类型，则返回bus id;若数据为busline类型，则返回busline id。									|all			|
+| &emsp;&#124;-- title					|String	|地点名称																																																							|all			|
+| &emsp;&#124;-- address				|String	|地址																																																									|all			|
+| &emsp;&#124;-- category				|String	|分类																																																									|腾讯地图	|
+| &emsp;&#124;-- type						|String	|POI类型，值说明：0:普通POI / 1:公交车站 / 2:地铁站 / 3:公交线路 / 4:行政区划																					|腾讯地图	|
+| &emsp;&#124;-- location				|String	|经纬度																																																								|all			|
+| &emsp;&emsp;&#124;-- lat			|Number	|纬度																																																									|all			|
+| &emsp;&emsp;&#124;-- lng			|Number	|经度																																																									|all			|
+| &emsp;&#124;-- adcode					|Number	|行政区划代码																																																					|all			|
+| &emsp;&#124;-- province				|String	|省																																																										|腾讯地图	|
+| &emsp;&#124;-- city						|String	|市																																																										|腾讯地图	|
+| &emsp;&#124;-- district				|String	|腾讯地图：区/县，当type（POI类型）为3（公交线路）时，district由city补全<br/>高德地图为:省+市+区（直辖市为“市+区”）	|all			|
+| &emsp;&#124;-- children				|Array	|子地点，当get_subpois=1时返回																																												|腾讯地图	|
+| &emsp;&emsp;&#124;-- parent_id|String	|主地点ID，对应data中的地点ID																																													|腾讯地图	|
+| &emsp;&emsp;&#124;-- id				|String	|地点唯一标识																																																					|腾讯地图	|
+| &emsp;&emsp;&#124;-- title		|String	|地点名称																																																							|腾讯地图	|
+| &emsp;&emsp;&#124;-- address	|String	|地址																																																									|腾讯地图	|
+| &emsp;&emsp;&#124;-- category	|String	|POI（地点）分类																																																			|腾讯地图	|
+| &emsp;&emsp;&#124;-- location	|String	|地址																																																									|腾讯地图	|
+| &emsp;&emsp;&emsp;&#124;-- lat|Number	|纬度																																																									|腾讯地图	|
+| &emsp;&emsp;&emsp;&#124;-- lng|Number	|经度																																																									|腾讯地图	|
+| &emsp;&emsp;&#124;-- adcode		|String	|行政区划代码																																																					|腾讯地图	|
+| &emsp;&emsp;&#124;-- city			|String	|地址																																																									|腾讯地图	|
+| &emsp;&emsp;&#124;-- address	|String	|地点所在城市名称																																																			|腾讯地图	|
 
 ### 地点搜索@search
 

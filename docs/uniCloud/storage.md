@@ -34,7 +34,7 @@ uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望
 
 阿里云在`cloudPathAsRealPath`为`false`时传的文件都存储在`cloudstorage`目录下，2023年6月17日起访问uniCloud web控制台云存储页面可以看到目录结构。需要注意`cloudPathAsRealPath`为`true`时，云函数使用同样的cloudPath上传文件会覆盖旧文件，客户端使用同样的cloudPath则会报`policy_does_not_allow_file_overwrite`。
 
-阿里云文件列表支持两种模式：
+阿里云文件列表在控制台支持两种模式：
 
 - 文件夹模式：该模式下支持新建及上传指定文件到文件夹，列表按照`名称正序排序`。
 - 文件列表模式：该模式是阿里云未支持文件夹之前的列表模式，所有文件平铺展示，列表按照`更新时间倒序排序`。

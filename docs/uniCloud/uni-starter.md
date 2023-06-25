@@ -1,7 +1,7 @@
 > 以下为uni-starter v2的文档，新项目推荐直接使用。如果你的老项目使用的是uni-starter v1版，不想升级请查看：[uni-starter v1 文档](https://gitcode.net/dcloud/uni-starter/-/blob/v1/README.md)
 > The following is the document of uni-starter v2, and it is recommended to use it directly for new projects. If your old project is using uni-starter v1 version, please check: [uni-starter v1 document](https://gitcode.net/dcloud/uni-starter/-/blob/v1/README.md )
 
-**uni-starter 已开放需求投票与征集** [点此前往](https://vote.dcloud.net.cn/#/?name=uni-starter)
+**uni-starter 已开放需求征集和投票** [点此前往](https://vote.dcloud.net.cn/#/?name=uni-starter)
 
 ## 简介
 ## Introduction

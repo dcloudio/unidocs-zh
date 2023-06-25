@@ -1,5 +1,7 @@
 > 本文为uni-im v2.x 的文档，如果旧项目需要继续使用老版本的uni-im v1.x，另见：[https://gitcode.net/dcloud/hello-uni-im/-/blob/main/README.md](https://gitcode.net/dcloud/hello-uni-im/-/blob/main/README.md)
 
+**uni-im 已开放需求投票与征集** [点此前往](https://vote.dcloud.net.cn/#/?name=uni-im)
+
 # 简介
 # Introduction
 uni-im是云端一体的、全平台的、免费的、开源即时通讯系统。

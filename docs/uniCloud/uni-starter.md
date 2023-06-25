@@ -1,5 +1,7 @@
 > 以下为uni-starter v2的文档，新项目推荐直接使用。如果你的老项目使用的是uni-starter v1版，不想升级请查看：[uni-starter v1 文档](https://gitcode.net/dcloud/uni-starter/-/blob/v1/README.md)
 
+**uni-starter 已开放需求投票与征集** [点此前往](https://vote.dcloud.net.cn/#/?name=uni-starter)
+
 ## 简介
 uni-starter是集成商用项目常见功能的、云端一体应用快速开发项目模版。
 

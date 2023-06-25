@@ -14,14 +14,14 @@ ai作为一种云能力，相关调用被整合到uniCloud中。
 
 如您的服务器业务不在uniCloud上，可以把[云函数URL化](http.md)，把`uni-ai`当做http接口调用。
 
-在实际应用中，大多数场景是直接使用[uni-ai-chat](uni-ai-chat.md)、[uni-im](uni-im.md)和[uni-cms](uni-cms.md)的ai功能，这些开源项目已经把完整逻辑都实现，无需自己研究API。
+在实际应用中，大多数场景是直接使用[uni-ai-chat](uni-ai-chat.md)和[uni-cms](uni-cms.md)的ai功能，这些开源项目已经把完整逻辑都实现，无需自己研究API。
 
 ai能力由`uni-cloud-ai`扩展库提供，在云函数或云对象中，对右键配置`uni-cloud-ai`扩展库。如何使用扩展库请参考：[使用扩展库](cf-functions.md#extension)
 
 如果HBuilderX版本过低，在云函数的扩展库界面里找不到`uni-ai`。
 
 注意`uni-ai`是云函数扩展库，其api是`uniCloud.ai`，不是需要下载的三方插件，它是一个底层能力。
-而[uni-ai-chat](uni-ai-chat.md)、[uni-im](uni-im.md)和[uni-cms](uni-cms.md)等开源项目，是需要在插件市场下载的。
+而[uni-ai-chat](uni-ai-chat.md)和[uni-cms](uni-cms.md)等开源项目，是需要在插件市场下载的。
 
 ### 获取LLM实例@get-llm-manager
 
@@ -220,7 +220,7 @@ token是LLM的术语，ai认知的语言是经过转换的，对于英语，1个
 
 如何在节省token和保持持续对话的记忆之间平衡，是一个挺复杂的事情。开发者需在适合时机要求ai对上文进行总结压缩，下次对话传递总结及总结之后的对话内容以实现更长的对话。
 
-DCloud在[uni-ai-chat](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)、[uni-im](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)和[uni-cms](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)中，
+DCloud在[uni-ai-chat](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)和[uni-cms](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)中，
 已经写好了这些复杂逻辑。开发者直接使用DCloud封装好的开源项目模板即可。
 
 在上述例子中，还可以看到一种有趣的用法，即要求ai以数组方式回答问题。这将有利于开发者格式化数据，并进行后置增强处理。
@@ -695,9 +695,9 @@ try {
 
 运行客户端项目，比如运行到web浏览器，即可联调客户端和云端。
 
-上述代码只是最简示例，真正的多轮聊天需要的代码较多较复杂，推荐使用现成的[uni-ai-chat](uni-ai-chat.md)、[uni-im](uni-im.md)或[uni-cms](uni-cms.md)。
+上述代码只是最简示例，真正的多轮聊天需要的代码较多较复杂，推荐使用现成的[uni-ai-chat](uni-ai-chat.md)或[uni-cms](uni-cms.md)。
 
-官方的`uni-ai-chat`、`uni-im`、`uni-cms`等项目一般不使用云函数，而是使用云对象。想看懂这些项目源码，需要了解[云对象](cloud-obj.md)
+官方的`uni-ai-chat`、`uni-cms`等项目一般不使用云函数，而是使用云对象。想看懂这些项目源码，需要了解[云对象](cloud-obj.md)
 
 ## 非uniCloud服务器调用
 

@@ -57,7 +57,7 @@ uni-cloud-s2s仅能在云函数内使用，开发者需要按照uni-cloud-s2s的
 
 ### 配置@sign-config
 
-本模块相关配置需在[uni-config-center](https://ext.dcloud.net.cn/plugin?id=4425)内进行配置，配置文件位于`uniCloud/cloudfunctions/common/uni-cloud-s2s/config.json`。
+本模块相关配置需在[uni-config-center](https://ext.dcloud.net.cn/plugin?id=4425)内进行配置，配置文件位于`uniCloud/cloudfunctions/common/uni-config-center/uni-cloud-s2s/config.json`。
 
 以下配置示例为标准的json，注释仅为进行说明，如果拷贝示例内容到项目内务必移除注释。
 

@@ -1280,9 +1280,19 @@ val extraMap = extraParam.toMap()
 
 ### 6.12  UTS 如何判断对象数据类型
 
+简单类型判断，返回结果  string/number/object/function 等
 ```
+
 let param = "123"
-UTSAndroid.typeOf(param) // = string
+UTSAndroid.typeOf(param) // string
+
+```
+
+复杂的对象类名判断
+```
+let aa = 12
+// 可以获取到具体的类名
+console.log(aa.javaClass.toString()) // int
 
 ```
 

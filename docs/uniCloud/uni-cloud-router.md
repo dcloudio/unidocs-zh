@@ -353,7 +353,7 @@ module.exports = () => {
 
 示例：
 
-- [云函数URL化 中间件](https://github.com/fxy060608/uni-cloud-router/blob/master/src/middleware/http.ts)
+- [云函数URL化 中间件](https://github.com/fxy060608/uni-cloud-router/blob/master/src/middleware/http/index.ts)
 - [ip拦截中间件](https://ext.dcloud.net.cn/plugin?id=4619)
 
 #### 使用中间件

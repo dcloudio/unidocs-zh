@@ -1278,6 +1278,14 @@ val extraMap = extraParam.toMap()
 
 + 如果是要翻译原有的java代码到 UTS，可以选择打成AAR来处理。
 
+### 6.12  UTS 如何判断对象数据类型
+
+```
+let param = "123"
+UTSAndroid.typeOf(param) // = string
+
+```
+
 
 ## 7  已知待解决问题(持续更新)
 

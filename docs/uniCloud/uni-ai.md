@@ -4,7 +4,7 @@
 
 > 新增于HBuilderX正式版 3.7.10+， Alpha版 3.7.13+。
 
-> uni-ai计费网关新增于2023年6月15日，HBuilderX会在下次发版时进行支持，需要更新云端依赖uni-ai的云函数才可以使用uni-ai计费网关
+> HBuilderX 3.8.5+支持在本地调试云函数时使用uni-ai计费网关
 
 :::warning 注意
 使用低版本HBuilder，只能上传到uniCloud云端联调。因为低版本的uniCloud本地运行插件不支持`uni-ai`。云端和本地扩展库差异参考：[云端和本地扩展库差异](rundebug.md#diff-extension)
@@ -131,7 +131,7 @@ const llmManager = uniCloud.ai.getLLMManager({
 对话接口响应一般比较慢，建议将云函数超时时间配置的长一些，比如30秒（客户端访问云函数最大超时时间：腾讯云为30秒，阿里云为60秒）。如何配置云函数超时时间请参考：[云函数超时时间](cf-functions.md#timeout)
 :::
 
-用法：`llm.chatCompletion(Object ChatCompletionOptions)`
+用法：`llmManager.chatCompletion(Object ChatCompletionOptions)`
 
 **参数说明ChatCompletionOptions**
 
@@ -291,7 +291,7 @@ console.log(res);
 
 > 新增于HBuilderX正式版 3.7.10+， alpha版 HBuilderX 3.8.0+。
 
-> uni-ai chatCompletion接口支持传sseChannel参数的用法云端支持新增于2023年6月15日，HBuilderX会在下次发版时进行支持。使用uni-ai计费网关流式响应时，sseChannel参数必填
+> uni-ai chatCompletion接口支持传sseChannel参数的用法云端支持新增于2023年6月15日，HBuilderX 3.8.5+支持在本地调试云函数时使用此用法。使用uni-ai计费网关流式响应时，sseChannel参数必填
 
 访问AI聊天接口时，如生成内容过大，响应时间会很久，前端用户需要等待很长时间才会收到结果。
 
@@ -299,7 +299,7 @@ console.log(res);
 
 以往云函数只有return的时候，才能给客户端返回消息。在流式响应中，需要云函数支持sse，在return前给客户端一直发送通知。
 
-uniCloud的云函数，基于uni-push2，于 HBuilderX 新版提供了sse通道，即[云函数请求中的中间状态通知通道](sse-channel.md)。
+uniCloud的云函数，基于uni-push2提供了sse通道，即[云函数请求中的中间状态通知通道](sse-channel.md)。
 
 在调用`chatCompletion`接口时传递参数`stream: true`即可开启流式响应。使用uni-ai计费网关时还需要传递`sseChannel`才可以使用流式响应。
 
@@ -380,7 +380,7 @@ exports.main = async (event, context) => {
     //   await sseChannel.write(message)
     //   console.log('---message----', message) // 实时触发
     // })
-    streamRes.on('optimizedMessage', async (message) => { // optimizedMessage事件云端新增于`2023年6月21日`，HBuilderX本地调试将于下次发版支持。
+    streamRes.on('optimizedMessage', async (message) => { // optimizedMessage事件
       await sseChannel.write(message)
       console.log('---message----', message) // 实时触发
     })
@@ -746,7 +746,7 @@ uni-ai计费网关支持调用minimax、微软azure openai ChatGPT3.5的对话�
 1. 运行应用，调用LLM的chatCompletion接口，看看是否返回内容
 2. 在uniCloud web控制台的uni-ai管理界面，查看计费报表，是否产生了对应的计费条目
 
-目前仅更新了云端扩展库，HBuilderX本地调试使用的扩展库会在HBuilderX下次发版时进行更新。所以使用uni-ai计费网关时，不要使用本地运行云函数，切到云端运行。
+使用uni-ai计费网关时，如需本地运行需要使用HBuilderX 3.8.5及以上版本。
 
 
 ## 交流群

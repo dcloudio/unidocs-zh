@@ -83,7 +83,7 @@ ai都是回答文字内容，但实际场景中经常需要自动化执行一些
 let llmManager = uniCloud.ai.getLLMManager({
   provider: 'azure'
 })
-llm.chatCompletion({
+await llm.chatCompletion({
   messages: [{
     role: 'user',
     content: '你好，ai'

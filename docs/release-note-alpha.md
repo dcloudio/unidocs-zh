@@ -1,3 +1,15 @@
+#### 3.8.7.20230628-alpha
+* 【uni-app】
+* App-iOS平台 修复 tabBar 图标宽高不一致时显示会变形的Bug [详情](https://ask.dcloud.net.cn/question/172418)
+* App平台 修复 3.8.5更新的uni-push2.0引出的 仅启用在线推送而不启用离线推送时，调用 `uni.getPushClientId` 会报`getPushClientId:fail init am error: no api impl found`的问题 [详情](https://ask.dcloud.net.cn/question/172659)
+* uts插件 App-iOS平台 修复 Hello UTS 中腾讯定位插件没有网络时调用 getLocation 导致应用闪退的Bug [详情](https://ask.dcloud.net.cn/question/172744)
+* 【uniCloud】
+* 修复 jql语法 geoNear方法不传query参数时返回结果不正确的Bug [详情](https://ask.dcloud.net.cn/question/172404)
+* 新增 uni-ai chatCompletion 接口流式响应支持 optimizedMessage 事件，优化 message 触发频率，减少客户端卡顿 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion-stream)
+* 【App插件(含5+App和uni-app的App端)】
+* Android平台 优化 plus.runtime.install 安装apk功能为独立模块，云端打包勾选 google play 渠道时不包含此功能，解决上架 google play 审核报 DCloud SDK 包含从未知来源下载或安装应用 的问题 [详情](https://ask.dcloud.net.cn/question/172533)
+* iOS平台 修复 setTitleNViewButtonStyle 动态设置标题栏按钮样式可能导致无法正常显示的Bug [详情](https://ask.dcloud.net.cn/question/172191)
+
 #### 3.8.6.20230621-alpha
 * 【uni-app】
 * 修复 3.8.5更新的uni-push2.0的socket合法域名错误的问题

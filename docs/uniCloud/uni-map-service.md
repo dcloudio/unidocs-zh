@@ -50,6 +50,12 @@ let uniMapService = new UniMapService({
 
 ### 逆地址解析（坐标转地址）@location2address
 
+**功能介绍**
+
+主要用于将经纬度坐标识别为详细地址，如：39.908815,116.397507 识别为 北京市东城区西长安街1号
+
+同时还能获取到经纬度所在省、市、区、乡镇、门牌号、行政区划代码，及周边参考位置信息，如道路及交叉口、河流、湖泊、桥等
+
 **示例**
 
 ```js
@@ -122,10 +128,11 @@ console.log("result", result);
 | &emsp;&emsp;&#124;-- lat	| Number|纬度														|高德地图	|
 | &emsp;&emsp;&#124;-- lng	| Number|经度														|高德地图	|
 
-
-
-
 ### 地址解析（地址转坐标）@address2location
+
+**功能介绍**
+
+用于将文字地址转换成对应的经纬度坐标，同时识别文字地址中的行政区域
 
 **示例**
 
@@ -169,6 +176,10 @@ console.log("result", result);
 
 ### 坐标转换@translate
 
+**功能介绍**
+
+实现从其它地图供应商坐标系或标准GPS坐标系，批量转换到指定地图供应商的坐标系。
+
 **示例**
 
 ```js
@@ -211,6 +222,10 @@ console.log("result", result);
 
 ### IP定位@ip2location
 
+**功能介绍**
+
+通过终端设备IP地址获取其当前所在地理位置，常用于显示当前所在城市。
+
 **示例**
 
 ```js
@@ -252,6 +267,12 @@ console.log("result", result);
 |rectangle		|String	| 所在城市矩形区域范围						|高德地图	|
 
 ### 关键词输入提示@inputtips
+
+**功能介绍**
+
+用于获取输入关键字的补完与提示，帮助用户快速输入。需配合前端程序实现Autocomplete（自动完成）的效果。
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin/%E8%85%BE%E8%AE%AF%E5%9C%B0%E5%9B%BE/1.jpg)
 
 **示例**
 
@@ -322,6 +343,10 @@ console.log("result", result);
 | &emsp;&emsp;&#124;-- address	|String	|地点所在城市名称																																																			|腾讯地图	|
 
 ### 地点搜索@search
+
+**功能介绍**
+
+用于搜索周边地点，如，搜索颐和园附近半径500米内的酒店（一个圆形范围）
 
 **示例**
 
@@ -400,6 +425,10 @@ console.log("result", result);
 ### 路线规划（导航）@route
 
 #### 驾车（driving）@drivingroute
+
+**功能介绍**
+
+用于计算从起点到终点驾车导航的路线以及结合实时路况、少收费、不走高速等多种偏好，精准预估到达时间。
 
 **示例**
 
@@ -565,6 +594,10 @@ console.log("result", result);
 
 #### 步行（walking）@walkingroute
 
+**功能介绍**
+
+用于计算从起点到终点基于步行路线规划。
+
 **示例**
 
 ```js
@@ -623,6 +656,10 @@ console.log("result", result);
 
 #### 骑行（bicycling）@bicyclingroute
 
+**功能介绍**
+
+用于计算从起点到终点基于自行车的骑行路线规划
+
 **示例**
 
 ```js
@@ -678,6 +715,10 @@ console.log("result", result);
 
 #### 电动车（ebicycling）@ebicyclingroute
 
+**功能介绍**
+
+用于计算从起点到终点基于电动自行车的骑行路线规划
+
 **示例**
 
 ```js
@@ -732,6 +773,8 @@ console.log("result", result);
 | &emsp;&emsp;&#124;-- duration								|Number	|线路耗时，分段step中的耗时																																																																																																																																												|高德地图	|
 		
 #### 公交（transit）@transitroute
+
+**功能介绍**
 
 基于公共汽车、地铁、火车等公共交通工具，计算起到终点的路线换乘方案，同时提供少换乘、少步行等偏好设置，支持一次返回多条方案以供用户选择。
 

@@ -50,6 +50,12 @@ let uniMapService = new UniMapService({
 
 ### 逆地址解析（坐标转地址）@location2address
 
+**功能介绍**
+
+主要用于将经纬度坐标识别为详细地址，如：39.908815,116.397507 识别为 北京市东城区西长安街1号
+
+同时还能获取到经纬度所在省、市、区、乡镇、门牌号、行政区划代码，及周边参考位置信息，如道路及交叉口、河流、湖泊、桥等
+
 **示例**
 
 ```js
@@ -122,10 +128,11 @@ console.log("result", result);
 | &emsp;&emsp;&#124;-- lat	| Number|纬度														|高德地图	|
 | &emsp;&emsp;&#124;-- lng	| Number|经度														|高德地图	|
 
-
-
-
 ### 地址解析（地址转坐标）@address2location
+
+**功能介绍**
+
+用于将文字地址转换成对应的经纬度坐标，同时识别文字地址中的行政区域
 
 **示例**
 
@@ -169,6 +176,10 @@ console.log("result", result);
 
 ### 坐标转换@translate
 
+**功能介绍**
+
+实现从其它地图供应商坐标系或标准GPS坐标系，批量转换到指定地图供应商的坐标系。
+
 **示例**
 
 ```js
@@ -211,6 +222,10 @@ console.log("result", result);
 
 ### IP定位@ip2location
 
+**功能介绍**
+
+通过终端设备IP地址获取其当前所在地理位置，常用于显示当前所在城市。
+
 **示例**
 
 ```js
@@ -252,6 +267,12 @@ console.log("result", result);
 |rectangle		|String	| 所在城市矩形区域范围						|高德地图	|
 
 ### 关键词输入提示@inputtips
+
+**功能介绍**
+
+用于获取输入关键字的补完与提示，帮助用户快速输入。需配合前端程序实现Autocomplete（自动完成）的效果。
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-admin/%E8%85%BE%E8%AE%AF%E5%9C%B0%E5%9B%BE/1.jpg)
 
 **示例**
 
@@ -322,6 +343,10 @@ console.log("result", result);
 | &emsp;&emsp;&#124;-- address	|String	|地点所在城市名称																																																			|腾讯地图	|
 
 ### 地点搜索@search
+
+**功能介绍**
+
+用于搜索周边地点，如，搜索颐和园附近半径500米内的酒店（一个圆形范围）
 
 **示例**
 
@@ -397,9 +422,68 @@ console.log("result", result);
 | &emsp;&emsp;&#124;-- city			|String	|市																																						|腾讯地图	|
 | &emsp;&emsp;&#124;-- district	|String	|区/县																																				|腾讯地图	|
 
+### 行政区域查询@districtSearch
+
+**功能介绍**
+
+用于获取全部省市区三级行政区划列表。
+
+**示例**
+
+```js
+// 引入uni-map-service公共模块
+const UniMapService  = require('uni-map-service');
+// 初始化实例
+let uniMapService = new UniMapService({
+	provider: "qqmap", // 指定使用哪家地图供应商
+	key: "xxxxxx"
+});
+// 调用API
+let result = await uniMapService.districtSearch({
+	adcode: "110101"
+});
+console.log("result", result);
+```
+
+**请求参数**
+
+|参数					|类型		|必填	|说明																																																																																																	|兼容性														|
+|:--					|:-:		|:-:	|:--																																																																																																	|:-:															|
+|adcode				|String	|否		| 父级行政区划adcode																																																																																									|all															|
+|get\_polygon	|Number	|否		| 返回行政区划轮廓点串（经纬度点串），取值：<br/>0 默认，不返回轮廓<br/>1 包含海域，3公里抽稀粒度<br/>2 纯陆地行政区划，可通过max_offset设置返回轮廓的抽稀级别<br/>注：乡镇/街道（四级）不支持返回轮廓|腾讯地图：0、1、2 高德地图：0、2	|
+|max\_offset	|Number	|否		| 轮廓点串的抽稀精度（仅对get_polygon=2时支持），<br/>单位米，可选值：<br/>100 ：100米（当缺省id返回省级区划时，将按500米返回，其它级别正常生效）<br/>500 ：500米<br/>1000：1000米<br/>3000：3000米		|腾讯地图													|
+|page\_index	|Number	|否		| 页码，从1开始，最大页码需通过count进行计算，必须与page_size同时使用																																																																	|高德地图													|
+|page\_size		|Number	|否		| 每页条数，取值范围1-20，必须与page_index 同时使用																																																																										|高德地图													|
+|filter				|String	|否		|按照指定行政区划进行过滤，填入后则只返回该省/直辖市信息<br/>需填入adcode，为了保证数据的正确，强烈建议填入此参数																																											|高德地图													|
+|subdistrict	|Number	|否		|可选值：<br/>1：返回下一级行政区；<br/>2：返回下两级行政区；<br/>3：返回下三级行政区；																																																								|高德地图													|
+
+
+**返回参数**
+
+仅列出result内的参数，其他参数见 [公共返回参数](#publicresult)
+
+|参数											|类型		|说明																																																																																																									|兼容性		|
+|:--											|:-:		|:--																																																																																																									|:-:			|
+|data											|Array	| 结果数组																																																																																																						|all			|
+| &emsp;&#124;-- adcode		|String	| 行政区划唯一标识																																																																																																		|all			|
+| &emsp;&#124;-- name			|String	|简称，如“内蒙古” 注意：高德地图name = fullname																																																																																			|all			|
+| &emsp;&#124;-- fullname	|String	|全称，如“内蒙古自治区”																																																																																															|all			|
+| &emsp;&#124;-- location	|String	|经纬度																																																																																																								|all			|
+| &emsp;&emsp;&#124;-- lat|Number	|纬度																																																																																																									|all			|
+| &emsp;&emsp;&#124;-- lng|Number	|经度																																																																																																									|all			|
+| &emsp;&#124;-- pinyin		|Array	|行政区划拼音，每一下标为一个字的全拼，如：[“nei”,“meng”,“gu”]																																																																									|腾讯地图	|
+| &emsp;&#124;-- cidx			|Array	|子级行政区划在下级数组中的下标位置																																																																																										|腾讯地图	|
+| &emsp;&#124;-- polygon	|Array	|该行政区划的轮廓经纬度点串（当使用get_polygon=1或2时返回），数组每一项为一个多边形，一个行政区划可以由多块多边形组成<br/>注意：部分城市存在飞地，当两个polygon重叠时，重叠区域隶属其他城市，不重叠时代表此城市的飞地	|腾讯地图			|
+| &emsp;&#124;-- level		|Array	|行政区划级别																																																																																																					|高德地图	|
+| &emsp;&#124;-- children	|Array	|下级行政区列表，需传subdistrict参数才会有此值																																																																																																			|高德地图	|
+
 ### 路线规划（导航）@route
 
 #### 驾车（driving）@drivingroute
+
+**功能介绍**
+
+用于计算从起点到终点驾车导航的路线以及结合实时路况、少收费、不走高速等多种偏好，精准预估到达时间。
 
 **示例**
 
@@ -565,6 +649,10 @@ console.log("result", result);
 
 #### 步行（walking）@walkingroute
 
+**功能介绍**
+
+用于计算从起点到终点基于步行路线规划。
+
 **示例**
 
 ```js
@@ -623,6 +711,10 @@ console.log("result", result);
 
 #### 骑行（bicycling）@bicyclingroute
 
+**功能介绍**
+
+用于计算从起点到终点基于自行车的骑行路线规划
+
 **示例**
 
 ```js
@@ -678,6 +770,10 @@ console.log("result", result);
 
 #### 电动车（ebicycling）@ebicyclingroute
 
+**功能介绍**
+
+用于计算从起点到终点基于电动自行车的骑行路线规划
+
 **示例**
 
 ```js
@@ -732,6 +828,8 @@ console.log("result", result);
 | &emsp;&emsp;&#124;-- duration								|Number	|线路耗时，分段step中的耗时																																																																																																																																												|高德地图	|
 		
 #### 公交（transit）@transitroute
+
+**功能介绍**
 
 基于公共汽车、地铁、火车等公共交通工具，计算起到终点的路线换乘方案，同时提供少换乘、少步行等偏好设置，支持一次返回多条方案以供用户选择。
 

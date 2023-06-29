@@ -563,8 +563,8 @@ if #available(iOS 10.0, *) {
 This syntax is not supported in uts and can be replaced by the following
 
 ```ts
-if (UIDevice.current.systemVersion >= "10.0") {
-  
+if (UTSiOS.available("iOS 10.0, *")) {
+
 }
 ```
 

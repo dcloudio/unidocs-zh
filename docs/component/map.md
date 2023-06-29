@@ -269,11 +269,8 @@ Specify a series of coordinate points, connecting the line from the first item t
 |borderColor|线的边框颜色|String|否||微信小程序、H5、百度小程序、京东小程序|
 | borderColor|The border color of the line| String|No||WeChat MiniApp, H5, Baidu MiniApp, Jingdong MiniApp|
 |borderWidth|线的厚度|Number|否||微信小程序、H5、百度小程序、京东小程序|
-| borderWidth|The thickness of the line| Number|No||WeChat MiniApp, H5, Baidu MiniApp, Jingdong MiniApp|
-|colorList|彩虹线|Array|false|存在时忽略 color 值|App-nvue 3.1.0+、微信小程序|
-| colorList|Rainbow Line| Array| false|Ignore the color value when it exists| App-nvue 3.1.0+, WeChat MiniApp|
-|level|压盖关系，默认为 abovelabels|String|false||微信小程序|
-| level|capping relation, default is abovelabels| String| false||WeChat MiniApp|
+|colorList|彩虹线|Array|否|存在时忽略 color 值|App-nvue 3.1.0+、微信小程序|
+|level|压盖关系<br/>abovelabels 显示在所有 POI 之上（默认）<br/>abovebuildings 显示在楼块之上 POI 之下<br/>aboveroads 显示在所有 POI 之上|String|否||微信小程序|
 
  **注意事项**
  **Precautions**
@@ -297,9 +294,7 @@ Specify a series of coordinate points and generate a closed polygon according to
 |fillColor|填充颜色|String|否|十六进制|
 | fillColor | fill color | String | no | hex |
 |zIndex|设置多边形 Z 轴数值|Number|否||
-| zIndex|Set the Z-axis value of the polygon| Number|No||
-|level|压盖关系，默认为 abovelabels|String|false|微信小程序|
-| level|capping relationship, default is abovelabels| String| false|WeChat MiniApp|
+|level|压盖关系<br/>abovelabels 显示在所有 POI 之上（默认）<br/>abovebuildings 显示在楼块之上 POI 之下<br/>aboveroads 显示在所有 POI 之上|String|false|微信小程序|
 
 **circles**
 
@@ -320,9 +315,7 @@ show circle on map
 |radius|半径|Number|是||
 | radius | Radius | Number | Yes ||
 |strokeWidth|描边的宽度|Number|否|&nbsp;|
-| strokeWidth|Stroke width| Number|No|&nbsp;|
-|level|压盖关系，默认为 abovelabels|String|false|微信小程序|
-| level|capping relationship, default is abovelabels| String| false|WeChat MiniApp|
+|level|压盖关系<br/>abovelabels 显示在所有 POI 之上（默认）<br/>abovebuildings 显示在楼块之上 POI 之下<br/>aboveroads 显示在所有 POI 之上|String|false|微信小程序|
 
 **controls**
 

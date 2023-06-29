@@ -450,8 +450,8 @@ if #available(iOS 10.0, *) {
 在 uts 中不支持这种语法可使用下面方式代替
 
 ```ts
-if (UIDevice.current.systemVersion >= "10.0") {
-  
+if (UTSiOS.available("iOS 10.0, *")) {
+
 }
 ```
 

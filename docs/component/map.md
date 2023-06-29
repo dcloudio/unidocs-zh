@@ -156,8 +156,8 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |arrowIconPath|更换箭头图标|String|否|在arrowLine为true时生效|App-nvue 2.1.5+、微信小程序、百度小程序、京东小程序|
 |borderColor|线的边框颜色|String|否||微信小程序、H5、百度小程序、京东小程序|
 |borderWidth|线的厚度|Number|否||微信小程序、H5、百度小程序、京东小程序|
-|colorList|彩虹线|Array|false|存在时忽略 color 值|App-nvue 3.1.0+、微信小程序|
-|level|压盖关系，默认为 abovelabels|String|false||微信小程序|
+|colorList|彩虹线|Array|否|存在时忽略 color 值|App-nvue 3.1.0+、微信小程序|
+|level|压盖关系<br/>abovelabels 显示在所有 POI 之上（默认）<br/>abovebuildings 显示在楼块之上 POI 之下<br/>aboveroads 显示在所有 POI 之上|String|否||微信小程序|
 
  **注意事项**
 
@@ -173,7 +173,7 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |strokeColor|描边的颜色|String|否|十六进制|
 |fillColor|填充颜色|String|否|十六进制|
 |zIndex|设置多边形 Z 轴数值|Number|否||
-|level|压盖关系，默认为 abovelabels|String|false|微信小程序|
+|level|压盖关系<br/>abovelabels 显示在所有 POI 之上（默认）<br/>abovebuildings 显示在楼块之上 POI 之下<br/>aboveroads 显示在所有 POI 之上|String|false|微信小程序|
 
 **circles**
 
@@ -187,7 +187,7 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |fillColor|填充颜色|String|否|8位十六进制表示，后两位表示alpha值，如：#000000AA；#00000为十六进制|
 |radius|半径|Number|是||
 |strokeWidth|描边的宽度|Number|否|&nbsp;|
-|level|压盖关系，默认为 abovelabels|String|false|微信小程序|
+|level|压盖关系<br/>abovelabels 显示在所有 POI 之上（默认）<br/>abovebuildings 显示在楼块之上 POI 之下<br/>aboveroads 显示在所有 POI 之上|String|false|微信小程序|
 
 **controls**
 

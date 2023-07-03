@@ -59,11 +59,9 @@
 		* [uni-push2.0、uni-id、uni统计的组合](uniCloud/uni-cloud-push/mate.md)
 		* [combination of uni-push2.0, uni-id, uni-stat](uniCloud/uni-cloud-push/mate.md)
   * [uni统计](uni-stat.md)
-  * [uni-stat](uni-stat.md)
-    * [uni统计1.0](uni-stat-v1.md)
-    * [uni-stat 1.0](uni-stat-v1.md)
     * [uni统计2.0](uni-stat-v2.md)
-    * [uni-stat 2.0](uni-stat-v2.md)
+	* [uni统计1.0](uni-stat-v1.md)`
+  * [uni加固](uni-app-security.md)
 * [案例](case.md)
 * [case](case.md)
 * 更新日志

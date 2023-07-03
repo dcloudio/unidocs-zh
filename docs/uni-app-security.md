@@ -39,9 +39,9 @@ uni安全加固（腾讯云版）分为测试版和正式版两种类型：
 
 ## 使用指南
 
-1. 使用开发者账号登录[开发者中心](https://dev.dcloud.net.cn/) ，选择`应用加固服务`栏目。在使用此功能前需要开通服务。
+1. 使用开发者账号登录[开发者中心](https://dev.dcloud.net.cn/) ，选择`应用加固服务`栏目。阅读uni加固服务协议并点击协议下方的“同意协议并开通”按钮，便可开通uni加固服务。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/no-open.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/no-open_1.png)
 
 2. 在申请应用加固之前，您需要先进行充值，因为应用加固是一项预付费业务。点击页面上的“充值”按钮，并输入充值金额进行充值。
 
@@ -49,7 +49,7 @@ uni安全加固（腾讯云版）分为测试版和正式版两种类型：
 
 3. 完成充值后，前往`安全加固记录`栏目，点击"申请加固"按钮后，将打开一个新页面，用于填写加固申请信息。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-add_1.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-add_2.png)
 
 ::: warning 注意
 - 需提供已签名的安装包下载地址。
@@ -62,7 +62,6 @@ uni安全加固（腾讯云版）分为测试版和正式版两种类型：
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-list_1.png)
 
  ::: warning 注意
-- 加固过程可能需要一些时间，一旦加固完成，我们会通过短信或电子邮件的形式通知您。
 - 如果加固成功，点击“下载加固包”按钮可下载加固包。注意：**加固包需要重签名后使用**，重签名的签名证书与加固前要保持一致
 - 如果加固失败，会显示原因。同时，我们将已扣除的费用退回到您的账户余额中。
 :::

@@ -49,7 +49,7 @@ uni安全加固（腾讯云版）分为测试版和正式版两种类型：
 
 3. 完成充值后，前往`安全加固记录`栏目，点击"申请加固"按钮后，将打开一个新页面，用于填写加固申请信息。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-add_2.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-add_3.png)
 
 ::: warning 注意
 - 需提供已签名的安装包下载地址。

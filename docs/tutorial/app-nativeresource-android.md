@@ -76,6 +76,7 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 - android目录下不支持放java/kotlin源码文件，需要开发源码建议使用[UTS插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
 - assets、res目录中的资源不能通过uni API使用，需通过 Android 原生 API 访问，参考[Android应用资源概览](https://developer.android.google.cn/guide/topics/resources/providing-resources)。也就是在uni-app中，访问这些资源需要通过uts代码访问或编写[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
 - assets目录中已经保留使用以下文件，需注意避免冲突
+
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─apps                          //应用资源目录
@@ -98,6 +99,7 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 └─uni-jsframework-vue3-dev.js  //uni-app vue3框架（开发模式）
 	</code>
 </pre>
+
 - res目录资源将合并到主项目中编译，会覆盖其它模块的资源
 - 应用资源目录配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 

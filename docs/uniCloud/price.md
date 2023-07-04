@@ -362,6 +362,8 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 
 *注意：如果您注册uniCloud账号使用的是`qq号@qq.com`这类邮箱，发送邮件时，请勿使用qq邮箱的域名邮箱，需更换为`qq号@qq.com` 这种邮箱发送邮件。*
 
+如果满足上述退还保证金的条件，且保证金支付时间在2023年3月16日之后，未超出第三方支付原路退还时间（微信支付365天内，支付宝90天内）时，可在[uniCloud控制台费用中心](https://unicloud.dcloud.net.cn/uni_modules/uni-trade/pages/cost-center/balance/balance)自助申请退回。
+
 
 ## 发生故障时如何判断故障点
 

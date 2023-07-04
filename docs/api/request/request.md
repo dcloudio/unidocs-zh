@@ -174,7 +174,7 @@ https 请求配置自签名证书
 
 **证书格式说明**
 
-证书支持两种格式，文件格式，和 Base64字符串格式
+证书支持两种格式，文件格式和 Base64字符串格式
 
   1. 文件格式说明：可将证书文件放到工程的 ‘static’ 目录中（当然也可以通过请求下载到本地），然后填写文件路径，示例：`'/static/client.p12'`
   2. `Base64String`格式说明：将证书文件的二进制转换为 `Base64String` 字符串，然后在字符串前面添加`'data:cert/pem;base64,'`前缀，示例：`'data:cert/pem;base64,xxx'` xxx 代表真实的证书 base64String

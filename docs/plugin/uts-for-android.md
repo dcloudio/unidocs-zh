@@ -154,7 +154,7 @@ getUniActivity()!.runOnUiThread(uiRunable)
 注意：
 
 + 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
-+ 2 本章节设计的配置，均需自定义基座后才能生效
++ 2 本章节涉及的配置，均需自定义基座后才能生效
 + 3 R文件的自动生成，已经在HBuilder X 3.6.9 版本支持，请使用最新版本开发
 
 ### 3.1 配置AndroidManifest.xml

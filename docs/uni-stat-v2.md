@@ -439,7 +439,7 @@ You can modify the trigger period of the `Scheduled Task Cloud Function (uni-sta
 		{
 			"name": "uni-stat-cron",
 			"type": "timer",
-			"config": "0 1/10 * * * * *"//每隔10分钟触发1次的cron表达式，如需复制此项请务必删除该注释
+			"config": "0 */10 * * * * *"//每隔10分钟触发1次的cron表达式，如需复制此项请务必删除该注释
 		}
 	]
 }

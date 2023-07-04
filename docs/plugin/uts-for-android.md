@@ -193,9 +193,7 @@ This chapter will introduce how to configure these properties in the UTS plug-in
 Notice:
 
 + 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
-+ 1 The example codes in this chapter are taken from Hello UTS [project address](https://gitcode.net/dcloud/hello-uts)
-+ 2 本章节设计的配置，均需自定义基座后才能生效
-+ 2 The configuration designed in this chapter will only take effect after customizing the base
++ 2 本章节涉及的配置，均需自定义基座后才能生效
 + 3 R文件的自动生成，已经在HBuilder X 3.6.9 版本支持，请使用最新版本开发
 + 3 The automatic generation of R files has been supported by HBuilder X 3.6.9, please use the latest version for development
 

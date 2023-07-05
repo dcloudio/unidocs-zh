@@ -958,8 +958,7 @@ The `db_init.json` provided by uniCloud is mainly for initializing the database 
 - 导入导出文件无法保留索引和schema
 - Import and export files cannot preserve indexes and schemas
 - 导入导出csv时数据类型会丢失，即所有字段均会作为字符串导入
-- Data types are lost when importing and exporting csv, i.e. all fields are imported as strings
-- 冲突处理模式为设定记录_id冲突时的处理方式，`insert`表示冲突时依旧导入记录但是是新插入一条，`upsert`表示冲突时更新已存在的记录
+- 冲突处理模式为设定记录_id冲突时的处理方式，`insert`表示冲突时依旧导入记录，此时会由于_id冲突报错。`upsert`表示冲突时更新已存在的记录。
 
 
 > 如果是自己拼接的json格式数据请注意：如果存在表A关联表B的字段的场景需要保证关联字段在A、B内是一致的（特别需要注意的是各种与_id关联的字段）

@@ -1547,4 +1547,4 @@ Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 <uts-hello-view buttonText="点击按钮内容" style="width:375px;height: 375px;background-color: aqua;"></uts-hello-view>
 ```
 
-不过通过style 指定组件宽高，会导致组件不显示
+如果不通过style 指定组件宽高，会导致组件不显示

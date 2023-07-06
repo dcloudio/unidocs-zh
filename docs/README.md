@@ -13,7 +13,7 @@ pageClass: custom-page-class
 
 <div class="quick">
     <!-- <h3 id="快速体验"><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3> -->
-    <p>一套代码编到14个平台，这不是梦想。眼见为实，扫描14个二维码，亲自体验最全面的跨平台效果！</p>
+    <p>一套代码编到15个平台，这不是梦想。眼见为实，扫描15个二维码，亲自体验最全面的跨平台效果！</p>
     <div class="flex-img-group-view">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
@@ -95,11 +95,11 @@ pageClass: custom-page-class
         </div>
         <b>京东小程序版</b>
       </a>
-      <a href="javascript:void(0)" οnclick="js_method()"  class="clear-style barcode-view">
+      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img style="opacity: 0;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
+          <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-xhs-qrcode.png" width="160" />
         </div>
-        <b></b>
+        <b>小红书小程序版</b>
       </a>
       <a href="javascript:void(0)" οnclick="js_method()" class="clear-style barcode-view">
         <div class="barcode-img-box">

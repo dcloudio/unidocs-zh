@@ -46,7 +46,9 @@ At present, you can purchase redis services in the uniCloud web console. **The p
 |4GB主从版	|2			|10,000							|10,000			|24						|80,000		|
 |4GB master-slave version |2 |10,000 |10,000 |24 |80,000 |
 |8GB主从版	|2			|10,000							|10,000			|24						|80,000		|
-|8GB master-slave version |2 |10,000 |10,000 |24 |80,000 |
+|16GB主从版	|2			|10,000							|10,000			|32						|80,000		|
+|32GB主从版	|2			|10,000							|10,000			|32						|80,000		|
+|64GB主从版	|2			|10,000							|10,000			|48						|80,000		|
 
 ### 腾讯云
 ### Tencent Cloud
@@ -54,14 +56,14 @@ At present, you can purchase redis services in the uniCloud web console. **The p
 |规格			|CPU核数|每秒新建连接数上限	|连接数上限	|带宽（MB/s）	|QPS参考值|
 |Specification |Number of CPU cores|Maximum number of new connections per second |Maximum number of connections |Bandwidth (MB/s) |QPS reference value|
 |--				|--			|--									|--					|--						|--				|
-|1GB主从版|1			|10,000							|10,000			|16						|80,000		|
-|1GB master-slave version|1 |10,000 |10,000 |16 |80,000 |
-|2GB主从版|1			|10,000							|10,000			|24						|80,000		|
-|2GB master-slave version|1 |10,000 |10,000 |24 |80,000 |
-|4GB主从版|1			|10,000							|10,000			|24						|80,000		|
-|4GB Master-Slave Version|1 |10,000 |10,000 |24 |80,000 |
-|8GB主从版|1			|10,000							|10,000			|24						|80,000		|
-|8GB master-slave version|1 |10,000 |10,000 |24 |80,000 |
+|256MB内存版|1		|10,000							|10,000			|10						|80,000		|
+|1GB内存版  |1		|10,000							|10,000			|16						|80,000		|
+|2GB内存版  |1		|10,000							|10,000			|24						|80,000		|
+|4GB内存版  |1		|10,000							|10,000			|24						|80,000		|
+|8GB内存版  |1		|10,000							|10,000			|24						|80,000		|
+|16GB内存版 |1		|10,000							|10,000			|32						|80,000		|
+|32GB内存版 |1		|10,000							|10,000			|32						|80,000		|
+|64GB内存版 |1		|10,000							|10,000			|64						|80,000		|
 
 ## 费用说明@fee
 ## Fee description @fee
@@ -121,4 +123,3 @@ How to use redis in cloud functions, please refer to [Extended Capability Redis]
 - Why does the newly opened redis instance use tens of MB of memory?
 
   redis基础服务会占用一定的内存，大小在32MB-64MB之间
-  The basic redis service will occupy a certain amount of memory, the size is between 32MB-64MB

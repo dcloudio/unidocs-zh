@@ -45,4 +45,12 @@
 * [案例](case.md)
 * 更新日志
   * [正式版](release.md)
+  * [正式版 Vue2 CLI 配置](vue2-cli-release.md)
+  * [正式版 Vue3 CLI 配置](vue3-cli-release.md)
+  * [正式版 Vue2 Ts CLI 配置](vue2-ts-cli-release.md)
+  * [正式版 Vue3 Ts CLI 配置](vue3-ts-cli-release.md)
   * [Alpha版](release-note-alpha.md)
+  * [Alpha版 Vue2 CLI 配置](vue2-cli-alpha-release.md)
+  * [Alpha版 Vue3 CLI 配置](vue3-cli-alpha-release.md)
+  * [Alpha版 Vue2 Ts CLI 配置](vue2-ts-cli-alpha-release.md)
+  * [Alpha版 Vue3 Ts CLI 配置](vue3-ts-cli-alpha-release.md)

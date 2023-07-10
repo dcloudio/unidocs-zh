@@ -581,6 +581,24 @@ In vue3, the .native modifier is removed, so the compiler cannot predict whether
 
 vue3 出于性能考虑，style 中暂不支持 div、p 等 HTML 标签选择器，推荐使用 class 选择器，[template 中的 HTML 标签仍会进行转换](https://uniapp.dcloud.net.cn/vernacular.html#%E7%BB%84%E4%BB%B6-%E6%A0%87%E7%AD%BE%E7%9A%84%E5%8F%98%E5%8C%96)。
 
+### 真机调试
+
+- vue3 微信开发者工具真机调试页面空白，如[帖子](https://ask.dcloud.net.cn/question/162915)
+- vue3 微信小程序真机调试，如[帖子](https://ask.dcloud.net.cn/question/173162)
+
+均可以通过在 manifest.json 的 `mp-weixin` 中配置 `minified` 为 `true` 来解决
+
+```json
+{
+  "mp-weixin": {
+    "setting": {
+      // ...其他配置
+      "minified": true
+    }
+  }
+}
+```
+
 ## vue3 支持的手机版本最低到多少？
 ## What is the minimum mobile phone version supported by vue3?
 

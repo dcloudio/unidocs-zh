@@ -118,9 +118,7 @@ The input in the html specification is not only an input box, but also radio, ch
 |idcard|身份证输入键盘|微信、支付宝、百度、QQ小程序、快手小程序、京东小程序|
 | idcard|ID card input keyboard|WeChat, Alipay, Baidu, QQ MiniApp, Kuaishou MiniApp, Jingdong MiniApp|
 |digit|带小数点的数字键盘|均支持，App平台、H5平台 vue 页面在 iOS 平台显示的键盘包含负数（原生键盘不支持负号）。|
-|digit|numeric keyboard with decimal point|are all supported, and the keyboard displayed on the App platform and H5 platform vue page on the iOS platform contains negative numbers (native keyboards do not support negative signs). |
-|tel|电话输入键盘|仅App的nvue页面支持|
-| tel|Telephone input keyboard|Only App's nvue page supports|
+|tel|电话输入键盘||
 |safe-password|密码安全输入键盘|微信小程序|
 | safe-password|Password safe input keyboard|WeChat MiniApp|
 |nickname|昵称输入键盘|微信小程序|

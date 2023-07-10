@@ -47,8 +47,7 @@ The uni cloud integrated security network provides the following two practical f
 |:-:	|:-:		|:-:|:-:		|
 |3.6.8+	|3.6.8+		|x	|x			|
 
-注意：安全网络只支持微信小程序和App。并且App的安全级别更高。安全网络仅在uni-app客户端连unicloud云函数/云对象生效，云函数url化场景下不生效。
-Note: Safety Network only supports WeChat MiniApp and Apps. And the security level of App is higher. The security network only takes effect when the uni-app client is connected to the unicloud cloud function/cloud object, and it does not take effect in the urlization scenario of the cloud function.
+注意：安全网络只支持微信小程序和App。并且App的安全级别更高。安全网络仅在uni-app客户端连unicloud云函数/云对象生效，云函数url化场景下会直接跳过安全校验。
 
 ## 如何开通
 ## How to activate

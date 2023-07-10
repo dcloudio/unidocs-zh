@@ -4,7 +4,7 @@
 
 该组件类似HTML中的`<a>`组件，但只能跳转本地页面。目标页面必须在pages.json中注册。
 
-该组件的功能有API方式，另见：[https://uniapp.dcloud.io/api/router?id=navigateto](https://uniapp.dcloud.io/api/router?id=navigateto)
+除了组件方式，API方式也可以实现页面跳转，另见：[https://uniapp.dcloud.io/api/router?id=navigateto](https://uniapp.dcloud.io/api/router?id=navigateto)
 
 **属性说明**
 
@@ -32,6 +32,7 @@
 |navigateBack|对应 uni.navigateBack 的功能||
 |exit|退出小程序，target="miniProgram"时生效|微信2.1.0+、百度2.5.2+、QQ1.4.7+|
 
+这些细节可在[页面路由API文档](https://uniapp.dcloud.io/api/router?id=navigateto)查阅。
 
 **注意**
 - 跳转tabbar页面，必须设置open-type="switchTab"

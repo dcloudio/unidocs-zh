@@ -2838,7 +2838,7 @@ Cache-Control: no-cache
 |---------------|---------------------|-----|-----------------------------------------------|
 | uid		         | string				          | 否		 | uni-id体系的用户Id；与externalUid 二选一									       |
 | externalUid		 | string				          | 否		 | 自身系统的用户id；与 uid 二选一									                  |
-| username			   | string							       | 是		 | 用户名																										                 |
+| username			   | string							       | 否		 | 用户名																										                 |
 | password			   | string							       | 否		 | 密码																											                 |
 | nickname			   | string							       | 否		 | 昵称																											                 |
 | authorizedApp | Array&lt;string&gt; | 否		 | 允许登录的app列表																				                |

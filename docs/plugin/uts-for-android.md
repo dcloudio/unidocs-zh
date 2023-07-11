@@ -171,7 +171,7 @@ AndroidManifest.xml示例：
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" 
   // 配置包名
-  package="io.dcloud.uni_modules.uts_nativepage">
+  package="io.dcloud.uni_modules.utsNativepage">
    // 配置权限
    <!--创建前台服务权限-->
    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />

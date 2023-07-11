@@ -215,8 +215,7 @@ AndroidManifest.xml example:
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" 
   // 配置包名
-  // configure package name
-  package="io.dcloud.uni_modules.uts_nativepage">
+  package="io.dcloud.uni_modules.utsNativepage">
    // 配置权限
    // configure permissions
    <!--创建前台服务权限-->

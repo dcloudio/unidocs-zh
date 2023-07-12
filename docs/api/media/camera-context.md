@@ -15,8 +15,8 @@
 |:-|:-|:-|:-|
 |takePhoto|Object|拍照，可指定质量，成功则返回图片路径。||
 |setZoom|Object|设置缩放级别。|百度、QQ、快手、京东小程序不支持|
-|startRecord|Object|开始录像|京东小程序不支持|
-|stopRecord|Object|结束录像，成功则返回封面与视频。|京东小程序不支持|
+|startRecord|Object|开始录像||
+|stopRecord|Object|结束录像，成功则返回封面与视频。||
 |onCameraFrame|Function|获取 Camera 实时帧数据。|微信小程序[详情](https://developers.weixin.qq.com/miniprogram/dev/api/CameraContext.onCameraFrame.html)、支付宝小程序[详情](https://opendocs.alipay.com/mini/03qitt)、抖音小程序支持[详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/media/camera/camera-context/camera-context-on-camera-frame)|
 
 ### cameraContext.takePhoto

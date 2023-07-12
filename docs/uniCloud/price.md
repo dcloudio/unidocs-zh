@@ -204,7 +204,7 @@ Due to insufficient upstream reserves, there are still some quotas for the uniCl
 ### 申请解除限制邮件模板@apply-email-template
 
 ```text
-邮件标题：云函数数量限制提升申请 | 服务空间数量限制提升申请 | 集合数量限制提升申请
+邮件标题：云函数数量限制提升申请 | 服务空间数量限制提升申请 | 集合数量限制提升申请 | 云函数域名代理需求申请
 
 邮件内容：
 
@@ -212,7 +212,7 @@ Due to insufficient upstream reserves, there are still some quotas for the uniCl
 服务空间id：mp-xxxxxxx (注意不是服务空间名称而是id)
 客户名称：当前账号认证的公司名称
 负责人电话：
-申请内容：申请提升 云函数数量限制 | 服务空间数量限制 | 集合数量限制
+申请内容：申请提升 云函数数量限制 | 服务空间数量限制 | 集合数量限制 | 将www.xxx.com纳入云函数的域名代理中
 业务场景：
 业务规模：
 ```

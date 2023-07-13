@@ -1282,20 +1282,20 @@ uni环境与UTS环境交互时，除了基本数据类型之外，涉及function
 
 ### 6.6 如何生成android平台Array对象
 
-UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数据结构是 `MutableList`
+UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数据结构是 `UTSArray`
 
-理论上来说 `MutableList`确实更加灵活强大，但是部分android 平台api 明确要求了 Array格式的数据(比如请求权限)
+理论上来说 `UTSArray`确实更加灵活强大，但是部分android 平台api 明确要求了 Array格式的数据(比如请求权限)
 
 类似场景下，我们就要使用 toTypedArray() 函数进行转换，以便将`MutableList` 转换为对应的`Array`
 
 ```typescript
 
-// 得到一个MutableList
-// get a MutableList
+// 得到一个UTSArray
 let permissionArray :String[] = []
 // 得到一个Array
-// get an Array
-console.log(permissionArray.toTypedArray())
+console.log(permissionArray.toArray())
+// 得到一个MutableList
+console.log(permissionArray.toMutableList())
 ```
 
 另外还存在一种特殊情况，即开发者 在UTS中使用了 `kotlin`编写的依赖，这个时候情况稍微复杂些

@@ -1,3 +1,5 @@
+# 定时触发
+
 如果云函数需要定时/定期执行，即定时触发，您可以使用云函数定时触发器。已配置定时触发器的云函数，会在相应时间点被自动触发，函数的返回结果不会返回给调用方。
 If a cloud function needs to be executed periodically/periodically, that is, a timed trigger, you can use a cloud function timed trigger. Cloud functions configured with timed triggers will be automatically triggered at the corresponding time point, and the return result of the function will not be returned to the caller.
 
@@ -50,15 +52,13 @@ In the uniCloud web console, click the details of the cloud function that needs 
 :::
 
 
-### 字段规则
-### Field Rules
+### 字段规则@config-param
 - 定时触发器名称（name） ：最大支持60个字符，支持 `a-z`, `A-Z`, `0-9`, `-` 和 `_`。必须以字母开头，且一个函数下不支持同名的多个定时触发器。
 - Timing trigger name (name): supports up to 60 characters, supports `a-z`, `A-Z`, `0-9`, `-` and `_`. Must start with a letter, and multiple timing triggers with the same name are not supported under one function.
 - 定时触发器触发周期 （config）：指定的函数触发时间。填写自定义标准的 Cron 表达式来决定何时触发函数。有关 Cron 表达式的更多信息，请参考以下内容。
 - Timing trigger trigger cycle (config): The specified function trigger time. Fill in custom standard Cron expressions to decide when to trigger the function. For more information on Cron expressions, please refer to the following.
 
-### Cron 表达式
-### Cron expressions
+### Cron 表达式@cron
 Cron 表达式有七个**必需**字段，按空格分隔。其中，每个字段都有相应的取值范围：
 Cron expressions have seven **required** fields, separated by spaces. Among them, each field has a corresponding value range:
 
@@ -80,8 +80,7 @@ Cron expressions have seven **required** fields, separated by spaces. Among them
 |第七位| 年 | 1970 - 2099的整数（阿里云不支持第七位） | , - * / |
 |7th digit| Year | Integer from 1970 to 2099 (Alibaba Cloud does not support 7th digit) | , - * / |
 
-### 通配符
-### wildcard
+### 通配符@cron-wildcard
 
 | 通配符 | 含义 |
 | Wildcard | Meaning |
@@ -105,8 +104,7 @@ Cron expressions have seven **required** fields, separated by spaces. Among them
 
 - [Cron表达式在线生成工具](http://cron.ciding.cc/)
 
-### 示例
-### Example
+### 示例@example
 
 下面列举一些 Cron 表达式和相关含义：
 Here are some Cron expressions and their associated meanings:
@@ -127,8 +125,7 @@ Here are some Cron expressions and their associated meanings:
 | 0 15 10 * * 1-5 *				| 周一到周五每天上午10:15触发																							|
 
 
-### 云函数入参说明
-### Cloud function input parameter description
+### 云函数、云对象入参说明@trigger-param
 
 使用定时触发器调用云函数时云函数会收到特定的参数。两个平台的参数如下：
 Cloud functions receive specific parameters when they are called using timed triggers. The parameters for the two platforms are as follows:
@@ -149,16 +146,24 @@ Cloud functions receive specific parameters when they are called using timed tri
 
 ```js
 {
-  "triggerName": "TIMER_LATEST", //触发云函数的定时器配置内容
-  "triggerTime": "2020-04-08T10:22:31Z" //触发云函数时的时间戳，可能略晚于cron表达式时间
+  "triggerName": "TIMER_LATEST", //触发云函数的定时器配置内容，注意阿里云不会使用package.json内配置的触发器名称
+  "triggerTime": "2020-04-08T10:22:31Z", //触发云函数时的时间戳，可能略晚于cron表达式时间
+  // 以下三个属性新增于2023年7月14日
+  "Time":"2020-04-08T10:22:31Z", //调用的云函数的时间
+  "TriggerName":"TIMER_LATEST", //触发器名
+  "Type":"Timer" //触发器类型，目前只有Timer
 }
 ```
+
+`2023年7月14日起`阿里云入参对齐腾讯云，保留上述`triggerName`和`triggerTime`（不再推荐使用这两个属性），增加`Time`、`TriggerName`、`Type`。
 
 ### 云对象使用定时触发@cloudobject
 ### Cloud objects use timing trigger @cloudobject
 
 > 新增于HBuilderX 3.5.2
 > Added in HBuilderX 3.5.2
+
+> 2023年7月14日起_timing方法可以获取定时触发参数
 
 配置方式和云函数一致，请参阅上方章节
 The configuration method is the same as that of cloud functions, please refer to the above chapter
@@ -171,7 +176,8 @@ Cloud object code example:
 
 ```js
 module.exports = {
-	_timing: function () { 
+	_timing: function (param) {
+    console.log('触发时间：', param.Time)
 		console.log('triggered by timing')
 	}
 }
@@ -181,6 +187,3 @@ module.exports = {
 **Notice**
 
 - 定时触发云对象时，`_before`和`_after`均不执行
-- When the cloud object is triggered periodically, `_before` and `_after` are not executed
-- 定时触发云对象时`_timing`方法不会收到任何参数
-- The `_timing` method will not receive any parameters when timing the cloud object

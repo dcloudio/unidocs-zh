@@ -44,21 +44,21 @@ uni-cms包括管理端和用户端。
 
 #### 管理端截图：
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304120145412.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202307142021556.png)
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304231921964.png)
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202307142022418.png)
 
 #### 用户端截图：
 
 <div style="display: flex; flex-basis: 10px">
 <div style="margin-right: 10px;">
-    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304120144625.png" width="375"/>
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202307142029758.png" width="375"/>
 </div>
 <div style="margin-right: 10px;">
-    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304120139988.png" width="375" />
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202307142030245.png" width="375" />
 </div>
 <div style="margin-right: 10px;">
-    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304120139209.png" width="375" />
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202307142030700.png" width="375" />
 </div>
 </div>
 
@@ -88,7 +88,7 @@ uni-cms包括管理端和用户端。
 
 <div style="display: flex; flex-basis: 10px">
 <div style="margin-right: 10px;">
-    <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202304120139209.png" width="375" />
+    <img src="https://web-assets.dcloud.net.cn/unidoc/zh/202307142030738.png" width="375" />
 </div>
 </div>
 
@@ -680,6 +680,8 @@ export default {
 
 ## 后续计划
 
+<input type="checkbox" disabled checked="checked" /> 发布视频
+
 <input type="checkbox" disabled /> 增加更多列表页模板，包括顶部分类、列表大图、小图、多图样式
 
 <input type="checkbox" disabled /> 内容分享
@@ -694,4 +696,3 @@ export default {
 
 <input type="checkbox" disabled /> 支持收藏
 
-<input type="checkbox" disabled /> 发布视频

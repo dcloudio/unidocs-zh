@@ -251,7 +251,9 @@ unverifyStyle data structure:
     "backgroundColor": "#ffffff",  // 授权页面背景颜色，默认值：#ffffff
     "backgroundImage": "", // 全屏显示的背景图片，默认值："" （仅支持本地图片，只有全屏显示时支持）  
     "icon": {  
-        "path": "static/xxx.png" // 自定义显示在授权框中的logo，仅支持本地图片 默认显示App logo   
+        "path": "static/xxx.png", // 自定义显示在授权框中的logo，仅支持本地图片 默认显示App logo
+        "width":  "60px",  //图标宽度 默认值：60px
+        "height": "60px"   //图标高度 默认值：60px
     },  
     "closeIcon": {  
         "path": "static/xxx.png" // 自定义关闭按钮，仅支持本地图片。 HBuilderX3.3.7+版本支持

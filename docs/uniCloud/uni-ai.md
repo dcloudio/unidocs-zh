@@ -37,15 +37,16 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 
 **参数说明GetLLMManagerOptions**
 
-|参数		|类型	|必填											|默认值	|说明																																			|
-|---		|---	|---											|---	|---																																			|
-|provider	|string	|否												|minimax|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（azure新增于HBuilderX 3.8.3）。														|
-|apiKey		|string	|使用uni-ai计费网关时不填。使用自己的key时必填	|-		|llm服务商的apiKey。																															|
-|endpoint	|string	|使用uni-ai计费网关时不填。使用自己的azure账户时必填	|-		|azure服务端点，在azure创建ai服务时获取																											|
-|groupId	|string	|使用uni-ai计费网关时不填。使用自己的minimax账户时必填	|-		|minimax的groupId参数。																														|
-|accessToken|string	|baidu必填										|-		|llm服务商的accessToken。如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)，需确保已开通相关接口的调用权限	|
-|proxy		|string	|使用国外openai时必填，其他情况不填				|-		|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填|
-|appId		|string	|使用uni-ai计费网关时，部分情况必填（见后）			|-		|客户端manifest.json内的appId，部分场景下（云函数url化、定时触发）云函数/云对象无法获取客户端appId，需要通过此参数传递							|
+|参数				|类型		|必填																														|默认值	|说明																																																																						|
+|---				|---		|---																														|---		|---																																																																						|
+|provider		|string	|否																															|minimax|llm服务商，目前支持`openai`、`baidu`、`minimax`、`azure`（azure新增于HBuilderX 3.8.3）、`ifly`（azure新增于HBuilderX 3.8.10）。																												|
+|apiKey			|string	|使用uni-ai计费网关时不填。使用自己的key时必填									|-			|llm服务商的apiKey。																																																														|
+|endpoint		|string	|使用uni-ai计费网关时不填。使用自己的azure账户时必填						|-			|azure服务端点，在azure创建ai服务时获取																																																					|
+|groupId		|string	|使用uni-ai计费网关时不填。使用自己的minimax账户时必填					|-			|minimax的groupId参数。																																																													|
+|accessToken|string	|baidu必填																											|-			|llm服务商的accessToken。如何获取请参考：[百度AI鉴权认证机制](https://ai.baidu.com/ai-doc/REFERENCE/Ck3dwjhhu)，需确保已开通相关接口的调用权限	|
+|proxy			|string	|使用国外openai时必填，其他情况不填															|-			|可有效连接openai服务器的、可被uniCloud云函数连接的代理服务器地址。格式为IP或域名，域名不包含http前缀，协议层面仅支持https。配置为`openai`时必填|
+|appId			|string	|使用uni-ai计费网关时，部分情况必填（见后），使用讯飞账户时必填	|-			|客户端manifest.json内的appId，部分场景下（云函数url化、定时触发）云函数/云对象无法获取客户端appId，需要通过此参数传递													|
+|apiSecret	|string	|讯飞必填																												|-			|llm服务商的apiSecret。																																																													|
 
 大语言模型的推理需要消耗很高的GPU算力，调用大模型需要在模型厂商处注册账户和付费。
 
@@ -135,17 +136,17 @@ const llmManager = uniCloud.ai.getLLMManager({
 
 **参数说明ChatCompletionOptions**
 
-|参数							|类型		|必填																	|默认值						|说明																																																																	|兼容性说明								|
-|---							|---		|---																	|---							|---																																																																	|---											|
-|messages					|array	|是																		| -								|提问信息																																																															|													|
-|model						|string	|否																		|默认值见下方说明	|模型名称。每个AI Provider有多个model，见下方说明																																											|baidu、azure不支持此参数	|
-|deploymentId			|string	|否																		|-								|azure模型部署id，如使用uni-ai计费网关无需传递此参数、而是要传model，详见下方说明																											|仅azure支持此参数				|
-|temperature			|number	|否																		|1								|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个																	|baidu不支持此参数				|
-|topP							|number	|否																		|1								|采样方法，数值越小结果确定性越强；数值越大，结果越随机																																								|baidu不支持此参数				|
-|stream						|boolean|否																		|false						|是否使用流式响应，见下方[流式响应](#chat-completion-stream)章节																																			|baidu不支持此参数				|
-|sseChannel				|object	|通过uni-ai计费网关使用流式响应时必填	|-								|见下方[流式响应](#chat-completion-stream)章节。客户端如何获取sseChannel对象，请参考：[云函数请求中的中间状态通知通道](sse-channel.md)|baidu不支持此参数				|
+|参数							|类型							|必填		|默认值																|说明							|兼容性说明																																																														|
+|---							|---							|---		|---																	|---							|---																																																																	|
+|messages					|array						|是			| -																		|提问信息					|																																																																			|
+|model						|string						|否			|默认值见下方说明											|模型名称。每个AI Provider有多个model，见下方说明|ifly、baidu、azure不支持此参数																																																				|
+|deploymentId			|string						|否			|-																		|azure模型部署id，如使用uni-ai计费网关无需传递此参数、而是要传model，详见下方说明|仅azure支持此参数																																																										|
 |~~maxTokens~~		|number						|否			|-																		|【已废弃，请使用tokensToGenerate替代】生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于模型最大上下文token数|baidu不支持此参数																																																										|
 |tokensToGenerate	|number						|否			|默认值见下方说明											|生成的token数量限制，需要注意此值和传入的messages对应的token数量相加不可大于模型最大上下文token数|baidu不支持此参数																																																										|
+|temperature			|number						|否			|1																		|较高的值将使输出更加随机，而较低的值将使输出更加集中和确定。建议temperature和top_p同时只调整其中一个|baidu不支持此参数																																																										|
+|topP							|number						|否			|1																		|采样方法，数值越小结果确定性越强；数值越大，结果越随机|ifly、baidu不支持此参数																																																							|
+|stream						|boolean					|否			|false																|是否使用流式响应，见下方[流式响应](#chat-completion-stream)章节|baidu不支持此参数																																																										|
+|sseChannel				|object						|通过uni-ai计费网关使用流式响应时必填|-																		|见下方[流式响应](#chat-completion-stream)章节。客户端如何获取sseChannel对象，请参考：[云函数请求中的中间状态通知通道](sse-channel.md)|baidu不支持此参数																																																										|
 |streamEventForSSE|string	|否																		|message					|自动处理流式响应时使用的流式响应回调事件，可选：message、optimizedMessage、line。见下方[流式响应](#chat-completion-stream)章节									|
 
 **messages参数说明**
@@ -165,7 +166,7 @@ await llmManager.chatCompletion({
 
 role，即角色，有三个值：
 
-- system 系统，对应的content一般用于对话背景设定等功能。system角色及信息如存在时只能放在messages数组第一项。baidu不支持此角色
+- system 系统，对应的content一般用于对话背景设定等功能。system角色及信息如存在时只能放在messages数组第一项。ifly、baidu不支持此角色
 - user 用户，对应的content为用户输入的信息
 - assistant ai助手，对应的content为ai返回的信息
 

@@ -319,6 +319,8 @@ return {
 
 ## 访问其他HTTP服务@httpclient
 
+### uniCloud.httpclient.request@unicloud-httpclient-request
+
 云函数中如需要请求其他http服务，则使用`uniCloud.httpclient`。无需额外依赖，就可以请求任何 HTTP 和 HTTPS 协议的 Web 服务。`uniCloud.httpclient`返回的是一个[urllib实例](https://github.com/node-modules/urllib)。
 
 **uniCloud.httpclient.request(URL,requestOptions)**
@@ -403,6 +405,44 @@ console.log(res)
 
 ```
 
+
+### uniCloud.request@unicloud-request
+
+> 新增于HBuilderX 3.8.10
+
+为简化http请求的调用uniCloud新增了`uni.request`调用方法类似的http请求接口`uniCloud.request`。
+
+**参数说明**
+
+|属性					|类型											|必填	|默认值	|说明																																					|
+|:-						|:-												|:-		|:-			|:-																																						|
+|url					|String										|是		|				|服务器接口地址																																|
+|data					|Object/String/ArrayBuffer|否		|				|请求的参数																																		|
+|header				|Object										|否		|				|请求头																																				|
+|method				|String										|否		|GET		|请求方法，GET、POST、DELETE、PUT																							|
+|timeout			|Number										|否		|60000	|超时时间，单位 ms																														|
+|dataType			|String										|否		|json		|如果设为 json，会对返回的数据进行一次 JSON.parse，responseType非text时不生效	|
+|responseType	|String										|否		|text		|设置响应的数据类型。合法值：text、buffer																			|
+|sslVerify		|Boolean									|否		|true		|验证 ssl 证书																																|
+
+**返回值说明**
+
+|属性				|类型											|必备	|说明									|
+|:-					|:-												|:-		|:-										|
+|statusCode	|number										|是		|开发者服务器接口地址	|
+|data				|Object/String/ArrayBuffer|是		|响应结果							|
+|header			|Object										|是		|响应头								|
+
+**代码示例**
+
+```js
+const res = await uniCloud.request({
+  url: 'https://example.com'
+})
+console.log(res.statusCode)
+console.log(res.data)
+```
+
 ### 发送formdata类型数据
 
 实际业务中常有使用云函数发送formdata类型数据的需求，比如微信小程序提供的一些服务端接口（图片内容安全检测、识别图片二维码等），可以参考以下示例进行发送
@@ -429,6 +469,165 @@ exports.main = async (event, context) => {
 };
 
 ```
+
+## 访问其他websocket服务@websocket-client
+
+云函数无法作为websocket服务器使用，如有相关需求可以尝试使用uni-push 2.0实现，参考：[uni-push 2.0](uni-push/introduction.md)。
+
+本章节内容介绍云函数如何作为websocket客户端使用。为简化调用方式uniCloud新增了`uni.connectSocket`方法类似的接口`uniCloud.connectSocket`。
+
+**参数说明**
+
+|参数名		|类型								|必填	|说明						|
+|:-				|:-									|:-		|:-							|
+|url			|String							|是		|服务器接口地址	|
+|header		|Object							|否		|请求头					|
+|protocols|Array&lt;String&gt;|否		|子协议数组			|
+
+**返回值说明**
+
+调用此接口返回SocketTask对象，见下一章节介绍
+
+### SocketTask@socket-task
+
+
+#### SocketTask.onMessage(CALLBACK)
+
+监听 WebSocket 接受到服务器的消息事件
+
+**回调函数**
+
+WebSocket 接受到服务器的消息事件的回调函数
+
+**回调函数中的参数**
+
+|属性	|类型								|说明							|
+|:-		|:-									|:-								|
+|data	|String/Buffer	|服务器返回的消息	|
+
+#### SocketTask.send(OBJECT)
+
+通过 WebSocket 连接发送数据
+
+**参数**
+
+|属性	|类型								|是否必填	|说明						|
+|:-		|:-									|:-				|:-							|
+|data	|String/Buffer	|是				|需要发送的内容	|
+
+#### SocketTask.close(OBJECT)
+
+关闭 WebSocket 连接
+
+**参数**
+
+|属性		|类型		|默认值										|是否必填	|说明																										|
+|:-			|:-			|:-												|:-				|:-																											|
+|code		|Number	|1000（表示正常关闭连接）	|否				|一个数字值表示关闭连接的状态号，表示连接被关闭的原因。	|
+|reason	|String	|													|否				|一个可读的字符串，表示连接被关闭的原因。								|
+
+#### SocketTask.onOpen(CALLBACK)
+
+监听 WebSocket 连接打开事件
+
+**回调函数**
+
+WebSocket 连接打开事件的回调函数
+
+**回调函数中的参数**
+
+|属性	|类型								|说明							|
+|:-		|:-									|:-								|
+|data	|String/ArrayBuffer	|服务器返回的消息	|
+
+#### SocketTask.onClose(CALLBACK)
+
+监听 WebSocket 连接关闭事件
+
+**回调函数**
+
+WebSocket 连接关闭事件的回调函数
+
+**回调函数中的参数**
+
+|属性		|类型		|说明																										|
+|:-			|:-			|:-																											|
+|code		|number	|一个数字值表示关闭连接的状态号，表示连接被关闭的原因。	|
+|reason	|string	|一个可读的字符串，表示连接被关闭的原因。								|
+
+#### SocketTask.onError(CALLBACK)
+
+监听 WebSocket 错误事件
+
+**回调函数**
+
+WebSocket 错误事件的回调函数
+
+**回调函数中的参数**
+
+|属性		|类型		|说明			|
+|:-			|:-			|:-				|
+|errMsg	|String	|错误信息	|
+
+
+### 示例@socket-example
+
+以下云函数示例代码，从websocket服务器获取消息拼接后返回给客户端，如果遇到错误会抛出错误
+
+```js
+'use strict';
+exports.main = async (event, context) => {
+  const socketTask = uniCloud.connectSocket({
+    url: 'wss://xxx.com'
+  })
+  socketTask.onOpen(async () => {
+    await socketTask.send({
+      data: 'send some data to server'
+    })
+    console.log('send data complete')
+  })
+  const SOCKET_TIMEOUT = 10000
+
+  let error
+  let result = ''
+  socketTask.onMessage(({
+    data
+  } = {}) => {
+    console.log('message data: ', data);
+    result += data
+    if (data === '[DONE]') {
+      socketTask.close()
+    }
+  })
+  socketTask.onError(function(err) {
+    console.log('error', err)
+    error = err
+  })
+  let isClosed = false
+  const timeout = setTimeout(() => {
+    if (isClosed) {
+      return
+    }
+    error = new Error('socket timeout')
+    socketTask.close()
+  }, SOCKET_TIMEOUT)
+  return new Promise((resolve, reject) => {
+    socketTask.onClose(function(...args) {
+      isClosed = true
+      clearTimeout(timeout)
+      console.log('close', ...args)
+      if (error) {
+        reject(error)
+      } else {
+        resolve({
+          result
+        })
+      }
+    })
+  })
+};
+```
+
 
 ## 请求和环境API
 

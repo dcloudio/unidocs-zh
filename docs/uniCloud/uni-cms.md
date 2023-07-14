@@ -92,6 +92,22 @@ uni-cms包括管理端和用户端。
 </div>
 </div>
 
+### 文章预览@article-preview
+
+在文章未发布时可以通过文章预览功能，预览文章的渲染效果。
+
+![](https://web-assets.dcloud.net.cn/unidoc/zh/202307141809836.png)
+
+当使用文章预览功能是，需要部署uni-cms-article插件来实现文章预览功能。
+
+**预览密钥：** 用于文章预览时的身份验证，防止文章被恶意预览。每个密钥有效期为2小时，过期后需要重新生成。
+
+**预览页面地址：** 文章预览是访问的页面地址，固定为`uni_modules/uni-cms-article/pages/detail/preview`
+
+**小程序/APP预览：** 打开uni-cms-article列表页面，点击顶部搜索文章，在输入框右侧点击扫一扫按钮，扫描预览二维码，即可在小程序/APP中预览文章。
+
+**网页预览：** 输入部署uni-cms-article插件的网页地址，如果部署的路由是hash模式，需要在地址后面加上`#`，如：`http://localhost:8080/#` 如果部署的路由是history模式，直接写地址，如：`http://localhost:8080/` 。
+
 ## 如何使用
 
 > 使用方式简单，只需导入对应的插件至项目中即可。

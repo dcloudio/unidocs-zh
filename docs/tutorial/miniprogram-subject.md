@@ -115,6 +115,7 @@
 插件市场有一个完整的``vant weapp`` 引用好的示例工程，详见[https://ext.dcloud.net.cn/plugin?id=302](https://ext.dcloud.net.cn/plugin?id=302)。
 
 目录结构
+
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─components

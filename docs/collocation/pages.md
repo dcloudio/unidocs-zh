@@ -372,7 +372,7 @@ Window communication reference: [https://uniapp.dcloud.net.cn/api/window/communi
 **Code sample:**
 
 开发目录为：
-The development directory is:
+
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─pages
@@ -1639,7 +1639,7 @@ The subPackages node receives an array, each item in the array is a sub-package 
 **Instructions:**
 
 假设支持分包的 ```uni-app``` 目录结构如下：
-Assume that the directory structure of ```uni-app``` that supports subpackaging is as follows:
+
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─pages

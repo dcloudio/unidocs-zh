@@ -85,7 +85,7 @@ Copy the iOS native resource files that need to be added to the Resources direct
 - resources目录中的资源文件不能通过uni API使用，需通过 iOS 原生 API 访问，参考[Accessing a Bundle's Contents](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/Introduction/Introduction.html#//apple_ref/doc/uid/10000123i-CH1-SW1)。也就是在uni-app中，访问这些资源需要通过uts代码访问或编写[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
 - The resource files in the resources directory cannot be used through the uni API and must be accessed through the iOS native API, refer to [Accessing a Bundle's Contents](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/ Introduction/Introduction.html#//apple_ref/doc/uid/10000123i-CH1-SW1). That is, in uni-app, accessing these resources requires accessing or writing [uni native language plugin] through uts code (https://nativesupport.dcloud.net.cn/NativePlugin/README)
 - resources目录中已经保留使用以下文件，需注意避免冲突
-- The following files have been reserved in the resources directory, and care should be taken to avoid conflicts
+
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─Pandora                       //uni-app资源目录

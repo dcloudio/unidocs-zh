@@ -143,7 +143,7 @@ See GitHub for other component usage examples: [wxcomponents-template](https://g
 The plugin market has a complete ``vant weapp`` referenced example project, see [https://ext.dcloud.net.cn/plugin?id=302](https://ext.dcloud.net. cn/plugin?id=302).
 
 目录结构
-Directory Structure
+
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─components

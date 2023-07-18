@@ -2040,6 +2040,12 @@ The sort() method sorts the elements of an array and returns the array.
 |:-:|:-:|:-:|
 |√|√|x|
 
+```ts
+const array2 = [5, 1, 4, 2, 3];
+array2.sort((a: number, b: number):number => a - b);
+// expect(array2).toEqual([1, 2, 3, 4, 5]);
+```
+
 #### splice
 
 splice() 方法通过删除或替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容。此方法会改变原数组。

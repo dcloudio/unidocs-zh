@@ -1676,7 +1676,7 @@ sort() 方法对数组的元素进行排序，并返回数组。
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|√|x|
 
 #### splice
 

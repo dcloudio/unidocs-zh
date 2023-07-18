@@ -2038,7 +2038,7 @@ The sort() method sorts the elements of an array and returns the array.
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|x|x|
+|√|√|x|
 
 #### splice
 

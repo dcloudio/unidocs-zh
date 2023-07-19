@@ -744,9 +744,7 @@ exports.main = async(event) => {
 | 30002 |  用户点击了其他登录方式  | 无 |
 | 30002 | User clicked on another login method | None |
 | 30003 |  用户关闭验证界面  | 无 |
-| 30003 | User closed authentication screen | None |
-| 30004 |  其他错误  | 联系官方人员 |
-| 30004 | Other Errors | Contact Official |
+| 30004 |  其他错误  | [30004章节](#30004)自查或联系官方人员 |
 | 30005 |  预登录失败  | 不具备一键登录的使用前提，设备不支持/未开启数据流量/其他原因 |
 | 30005 | Pre-login failed | There is no prerequisite for one-key login, the device does not support / data traffic is not enabled / other reasons |
 | 30006 |  一键登录失败  | 无 |
@@ -768,6 +766,11 @@ exports.main = async(event) => {
 | 40301 |  电信-源IP鉴权失败 |检查一下手机卡类型是否是正常运营商手机卡，关闭飞行模式后重新尝试。|
 | 40301 | Telecom - source IP authentication failed | Check whether the mobile phone card type is a normal carrier mobile phone card, and try again after turning off the airplane mode. |
 
+#### 30004
+- **login:fail -20102其他错误**
+  Android：
+  - 确认开发者中心一键登录已添加应用并审核通过
+  - 检查开通一键登录时使用的签名证书和云打包时使用的签名证书一致
 
 ## 运行基座和打包
 ## Running the dock and packing

@@ -76,9 +76,7 @@ The map component is used to display the map, while the positioning API only obt
 |enable-building|Boolean|false|是否展示建筑物|App-nvue 3.1.0+ 支持 (**废除原enable-3D属性 高德地图默认开启建筑物就是3D无法设置**)|
 | enable-building| Boolean| false|Whether to display buildings| App-nvue 3.1.0+ support (**repeal the original enable-3D attribute, the building is enabled by default on Gaode map, and 3D cannot be set**)|
 |show-location|Boolean||显示带有方向的当前定位点|微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
-| show-location| Boolean||Show the current location point with direction|WeChat MiniApp, H5, Baidu MiniApp, Alipay MiniApp, Jingdong MiniApp|
-|polygons|Array.`<polygon>`||多边形|App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序、支付宝小程序|
-| polygons| Array.`<polygon>`||Polygon| App-nvue 2.1.5+, App-vue 3.4.3+, H5 3.4.3+, WeChat MiniApp, Baidu MiniApp, Alipay MiniApp|
+|polygons（支付宝为: polygon）|Array.`<polygon>`||多边形|App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序、支付宝小程序|
 |enable-indoorMap|Boolean|false|是否展示室内地图|App-nvue 3.1.0+|
 | enable-indoorMap| Boolean| false|Whether to display indoor map| App-nvue 3.1.0+|
 |@markertap|EventHandle||点击标记点时触发，e.detail = {markerId}|App-nvue 2.3.3+、H5、微信小程序、支付宝小程序 （App和H5平台需要指定 marker 对象属性 id）|

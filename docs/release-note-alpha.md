@@ -1,3 +1,7 @@
+#### 3.8.11.20230719-alpha
+* 【App插件(含5+App和uni-app的App端)】
+* iOS平台 更新 uni-AD模块 腾讯优量汇广告联盟SDK 为 4.14.32 版
+
 #### 3.8.10.20230714-alpha
 * 【uni-app】
 * App-Android平台 修复 UniPush1.0 指定格式透传消息不会创建推送消息的Bug [详情](https://ask.dcloud.net.cn/question/173602)

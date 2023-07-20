@@ -1300,6 +1300,8 @@ console.log(aa.javaClass.toString()) // int
 
 ### 6.13  UTS 如何进行遍历操作
 
+相比于for in / 下标计数等写法， UTS 推荐更现代化的foreach语法 实现集合的遍历。 
+
 数组：
 ```
 let arrayObj = utsArrayOf("111","222","333")

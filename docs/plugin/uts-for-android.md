@@ -1298,6 +1298,45 @@ console.log(aa.javaClass.toString()) // int
 
 ```
 
+### 6.13  UTS 如何进行遍历操作
+
+数组：
+```
+let arrayObj = utsArrayOf("111","222","333")
+arrayObj.forEach(function(e:any){
+	console.log(e)
+})
+let arrayObj2 = [10,20,30]
+arrayObj2.forEach(function(e:any){
+	console.log(e)
+})
+```
+
+遍历Map:
+
+```
+let mapObj = new Map<string,any>()
+mapObj.put("name","zhangsan")
+mapObj.put("age",12)
+mapObj.forEach(function(key:string,value:any){
+	console.log(key)
+	console.log(value)
+})
+```
+
+遍历UTSJSONObject:(暂未公开)
+
+```
+let utsJsonObj = {
+	name:"zhangsan",
+	age:"22",
+}
+utsJsonObj['classInfo'] = "三年二班"
+utsJsonObj.forEach(function(perField:any){
+	console.log(perField)
+})
+```
+
 
 ## 7  已知待解决问题(持续更新)
 

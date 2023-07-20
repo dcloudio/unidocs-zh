@@ -46,7 +46,7 @@ export default {
 ```js
 // 在起始页面跳转到test.vue页面，并监听test.vue发送过来的事件数据
 uni.navigateTo({
-  url: 'pages/test?id=1',
+  url: '/pages/test?id=1',
   events: {
     // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
     acceptDataFromOpenedPage: function(data) {

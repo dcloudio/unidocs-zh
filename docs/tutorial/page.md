@@ -157,13 +157,14 @@ export default {
 
 ### getApp()
 
-```getApp()``` 函数用于获取当前应用实例，一般用于获取globalData 。
+```getApp()``` 函数用于获取当前应用实例，一般用于获取globalData。也可通过应用实例调用 `App.vue methods` 中定义的方法。
 
 **实例**
 
 ```javascript
 const app = getApp()
 console.log(app.globalData)
+app.doSomething() // 调用 App.vue methods 中的 doSomething 方法
 ```
 
 **注意：**
@@ -173,9 +174,7 @@ console.log(app.globalData)
 
 ### getCurrentPages()
 
-```getCurrentPages()``` 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
-
-**注意：** ``getCurrentPages()``仅用于展示页面栈的情况，请勿修改页面栈，以免造成页面状态错误。
+```getCurrentPages()``` 函数用于获取当前[页面栈](#页面栈)的实例，以数组形式按栈的顺序给出，数组中的元素为页面实例，第一个元素为首页，最后一个元素为当前页面。
 
 每个页面实例的方法属性列表：
 
@@ -183,6 +182,10 @@ console.log(app.globalData)
 |---|---|---|
 |page.$getAppWebview()|获取当前页面的webview对象实例|App|
 |page.route|获取当前页面的路由|&nbsp;|
+
+**注意：**\
+``getCurrentPages()``仅用于展示页面栈的情况，请勿修改页面栈，以免造成页面状态错误。\
+页面关闭时，对应页面实例会在页面栈中删除。
 
 Tips：
 * ``navigateTo``, ``redirectTo`` 只能打开非 tabBar 页面。

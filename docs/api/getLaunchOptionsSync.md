@@ -21,7 +21,7 @@ There are differences in the support of different Vue versions of the web platfo
 |参数名|类型|说明|平台差异说明|
 |Parameter Name|Type|Description|Platform Difference Description|
 |:-|:-|:-|:-|
-|path|String|启动的路径(代码包路径)|其他平台均支持，`抖音小程序(1.12.0+)`|
+|path|String|启动的路径(代码包路径，注意：App 端开发过程中热更新会直达当前页面，此时启动路径为当前页面路径)|其他平台均支持，`抖音小程序(1.12.0+)`|
 |scene|Number|启动时的场景值，具体值含义请查看各平台文档说明。App、web端恒为 1001。钉钉小程序在 IDE 恒为0000，真机不支持。|其他平台均支持，`抖音小程序(1.12.0+)`|
 |query|Object|启动时的 query 参数|其他平台均支持，`抖音小程序(1.12.0+)`|
 |referrerInfo|Object|来源信息。如果没有则返回 `{}`|其他平台均支持，`抖音小程序(1.15.0+)`，`飞书小程序不支持`，`钉钉小程序不支持`|

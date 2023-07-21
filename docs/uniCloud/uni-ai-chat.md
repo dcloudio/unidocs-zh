@@ -15,7 +15,7 @@
 
 地址：[https://chat.dcloud.net.cn](https://chat.dcloud.net.cn/#/)
 
-注意：需要使用HBuilder账号登录，限制：5条消息/账号/天
+注意：需要使用HBuilder账号登录，限制：5条消息/账号/天（30天内累计不超过20条消息）
 
 ## 体验步骤  
 

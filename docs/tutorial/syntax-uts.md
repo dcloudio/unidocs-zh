@@ -15,6 +15,14 @@ uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
 过去在js引擎下运行支持的语法，大部分在uts的处理下也可以平滑的在kotlin和swift中使用。但有一些无法抹平，需要使用条件编译。和uni-app的条件编译类似，uts也支持条件编译。写在条件编译里的，可以调用平台特有的扩展语法。
 
+### 现状说明 
+
+uts是一门语言，对标的是js。目前DCloud还未发布基于uts的ui开发框架。所以现阶段使用uts开发ui是很不方便的（就像没有组件和css，拿js开发界面，还不能跨端）。
+
+现阶段uts适合的场景是开发uni-app的原生插件。因为uts可以直接调用Android和iOS的原生API或jar等库。
+
+很快DCloud会推出基于uts的跨平台响应式ui框架`uvue`，届时开发者可使用vue语法、uni-app的组件和api，来开发纯原生应用，因为它们都被编译为kotlin和swift，不再有js和webview。未来大概的写法参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x) （此项目还未正式发布，公开版的HBuilderX不能编译此项目，仅供参考写法）
+
 本文是 uts 的基本语法介绍。如想了解 uni-app 下如何开发 uts插件，另见文档[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。
 
 

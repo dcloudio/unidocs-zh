@@ -1530,7 +1530,7 @@ btn_start_screen_listen.setOnClickListener(new StartBroadcastListener());
 其中需要注意的是
 
 + 目前暂不支持匿名声明，需要先定义一个 StartBroadcastListener 声明实现 OnClickListener 后再显性的创建
-+ 实现接口的关键字 是 `extends` 这个要特别注意
+
 
 
 

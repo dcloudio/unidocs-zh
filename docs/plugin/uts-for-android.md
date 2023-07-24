@@ -1480,6 +1480,39 @@ utsJsonObj.forEach(function(perField:any){
 })
 ```
 
+### 6.14  UTS 如何实现一个接口
+
+以HelloUTS nativepage插件 部分代码为例：
+ ```
+ import OnClickListener from 'android.view.View.OnClickListener';
+ // 实现 OnClickListener 接口
+ class StartBroadcastListener extends OnClickListener{
+	
+    override onClick(v?: View):void{
+		
+		let myReceiver = new ScreenReceiver();
+		let filter = new IntentFilter();
+		filter.addAction(Intent.ACTION_SCREEN_OFF);
+		filter.addAction(Intent.ACTION_SCREEN_ON);
+		UTSAndroid.getUniActivity()!.registerReceiver(myReceiver, filter);
+		
+		// 提示屏幕状态监听已经注册
+		Toast.makeText(UTSAndroid.getAppContext(),"屏幕状态监听已注册，注意观察控制台日志",Toast.LENGTH_LONG).show();
+		
+    }
+}
+
+
+// 使用
+let btn_start_screen_listen = this.findViewById<Button>(R.id.btn_start_screen_listen);
+btn_start_screen_listen.setOnClickListener(new StartBroadcastListener());
+ ```
+
+其中需要注意的是
+
++ 目前暂不支持匿名声明，需要先定义一个 StartBroadcastListener 声明实现 OnClickListener 后再显性的创建
++ 实现接口的关键字 是 `extends` 这个要特别注意
+
 
 ## 7  已知待解决问题(持续更新)
 

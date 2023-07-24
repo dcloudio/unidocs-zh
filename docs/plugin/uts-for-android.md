@@ -327,6 +327,21 @@ mediaPlayer.start();
 
 ```
 
+### 3.5 远程依赖仓库说明
+
+目前云打包机支持下面的仓库：
+
+```
+
+jcenter()
+google()
+// huawei
+maven {url 'https://developer.huawei.com/repo/'}
+// JitPack 远程仓库：https://jitpack.io
+maven { url 'https://jitpack.io' }
+
+```
+
 
 ## 4 Android内置库@iodcloudutsandroid
 
@@ -1371,6 +1386,8 @@ btn_start_screen_listen.setOnClickListener(new StartBroadcastListener());
 
 + 目前暂不支持匿名声明，需要先定义一个 StartBroadcastListener 声明实现 OnClickListener 后再显性的创建
 + 实现接口的关键字 是 `extends` 这个要特别注意
+
+
 
 
 ## 7  已知待解决问题(持续更新)

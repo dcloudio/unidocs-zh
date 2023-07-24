@@ -1499,9 +1499,13 @@ utsJsonObj.forEach(function(perField:any){
 
 以HelloUTS nativepage插件 部分代码为例：
  ```
- import OnClickListener from 'android.view.View.OnClickListener';
- // 实现 OnClickListener 接口
- class StartBroadcastListener extends OnClickListener{
+import OnClickListener from 'android.view.View.OnClickListener';
+// 实现 OnClickListener 接口
+class User {
+	name:string = "name"
+}
+
+ class StartBroadcastListener extends User implements OnClickListener{
 	
     override onClick(v?: View):void{
 		

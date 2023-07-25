@@ -773,6 +773,11 @@ let group_id = "xxx"
 uniIm.getConversationId(group_id,'group')
 ```
 
+## 重要更新说明：
+- [V2.0.14,V2.0.13](https://ext.dcloud.net.cn/plugin?id=9711&update_log) 更新解决了：uni-id-users表的触发器`uni-id-users.schema.ext.js`的兼容性问题。
+这个问题可能会和你的项目产生冲突，请升级或者下载最新版的uni-im复制`uni_modules/uni-im/unicloud/database/uni-id-users.schema.ext.js`文件复制到你的项目中以覆盖原文件。
+
+
 ## 项目升级  
 uni-im遵循uni-app的插件模块化规范，即：[uni_modules](https://uniapp.dcloud.io/uni_modules)。
 

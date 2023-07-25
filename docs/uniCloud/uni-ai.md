@@ -36,7 +36,7 @@ LLM不等于ai的全部，除了LLM，还有ai生成图片等其他模型。
 注意需在相关云函数或云对象中加载`uni-cloud-ai`[使用扩展库](cf-functions.md#extension)，否则会报找不到ai对象。
 
 > 在2023年06月15日前，您不填写相关apiKey时可以免费使用uni-ai的LLM能力。但6月15日起需配置自己的apiKey或使用`uni-ai计费网关`，否则无法使用。详见[uni-ai计费老用户升级指南](#migrate-to-uni-ai-gateway)
-> 2023年07月25日非uni-ai计费网关调用百度接口由内测接口调整为[文心千帆大模型接口](https://cloud.baidu.com/doc/WENXINWORKSHOP/s/jlil56u11)，HBuilderX本地调试会在下次HBuilderX发版时生效。
+> 2023年07月25日非uni-ai计费网关调用百度接口由内测接口调整为[文心千帆大模型接口](https://cloud.baidu.com/doc/WENXINWORKSHOP/s/jlil56u11)，HBuilderX本地调试会在下次HBuilderX发版时生效。新接口支持流式响应。
 
 **参数说明GetLLMManagerOptions**
 

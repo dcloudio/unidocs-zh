@@ -1157,4 +1157,4 @@ console.log("result", result);
 
 ### 使用uni-map-common后，我还需要购买5万元的地图商业授权费用吗?
 
-答：使用地图服务需要商业授权，可联系DCloud申请折扣优惠。[详情参考 商业授权相关说明](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
+答：使用地图服务需要商业授权，可联系DCloud申请折扣优惠。详情参考 [商业授权相关说明](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

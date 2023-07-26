@@ -25,7 +25,7 @@ const config = {
     }],
     ['script', { src: `/js/redirect.js?${Date.now()}&v=${Date.now()}&version=${Date.now()}` }],
     ['script', { src: 'https://hm.baidu.com/hm.js?fe3b7a223fc08c795f0f4b6350703e6f' }],
-    ['script', { src: '/miku-delivery-1.1.0.js' }],
+    ['script', { src: '/miku-delivery-1.2.1.js' }],
     ['script', { src: `/js/miku.js?${Date.now()}&v=${Date.now()}&version=${Date.now()}` }]
   ],
   locales: {

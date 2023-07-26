@@ -21,3 +21,10 @@
   * [全局](buildin-object-api/global.md)
 * [关键词](keywords.md)
 * [学习资料](learning.md)
+* uts插件
+  * [uts插件开发入门](/plugin/uts-plugin.md)
+  * [uts页面组件开发入门](/plugin/uts-component.md)
+  * [uts中使用uni api](/plugin/uts-uni-api.md)
+  * [Android平台uts开发指南](/plugin/uts-for-android.md)
+  * [iOS平台uts开发指南](/plugin/uts-for-ios.md)
+	* [使用CocoaPods依赖](/plugin/uts-ios-cocoapods.md)

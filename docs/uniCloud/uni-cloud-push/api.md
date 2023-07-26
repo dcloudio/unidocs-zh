@@ -59,9 +59,7 @@ Sending a push can select the target device based on the following dimensions:
 - getui_alias，个推自定义客户端别名。
 - getui_alias, a push custom client alias.
 - getui_custom_tag，由用户自定义的个推客户端标签。该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情
-- getui_custom_tag, a user-defined personal push client tag. This function needs to apply for related packages, please click "Technical Consultation" on the right for details
-- getui_big_data_tag，个推大数据标签。该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情
-- getui_big_data_tag, a big data tag. This function needs to apply for related packages, please click "Technical Consultation" on the right for details
+- getui_big_data_tag，个推大数据标签。
 
 **注意**：`user_id`、`user_tag`、`device_id`、`push_clientid`、`getui_custom_tag`、`getui_big_data_tag`、`getui_alias`不可多选。全为空表示向所有启动过应用的设备推送。
 **Note**: `user_id`, `user_tag`, `device_id`, `push_clientid`, `getui_custom_tag`, `getui_big_data_tag`, `getui_alias` cannot be selected more than one. All empty means push to all devices that have launched the app.

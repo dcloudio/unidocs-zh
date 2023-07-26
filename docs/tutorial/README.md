@@ -3,7 +3,7 @@
 ## 基本语言和开发规范
 uni-app代码编写，基本语言包括js、vue、css。以及ts、scss等css预编译器。
 
-在app端，还支持原生渲染的[nvue](nvue-outline.md)，以及可以编译为kotlin和swift的[uts](syntax-uts.md)。
+在app端，还支持原生渲染的[nvue](nvue-outline.md)，以及可以编译为kotlin和swift的[uts](/uts/)。
 
 DCloud还提供了使用js编写服务器代码的uniCloud云引擎。所以只需掌握js，你可以开发web、Android、iOS、各家小程序以及服务器等全栈应用。
 

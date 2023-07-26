@@ -7,7 +7,7 @@
 
 ## 1 了解UTS插件是什么
 
-`UTS插件`是`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点。[详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
+`UTS插件`是`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点。[详情](/plugin/uts-plugin)
 
 对于Android开发者来说，我们需要了解的是：
 
@@ -18,7 +18,7 @@
 
 ### 2.1  对于掌握kotlin语言者
 
-因为UTS语法与kotlin很类似，建议快速阅读后，在实践中掌握这UTS语法。[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/syntax-uts)。
+因为UTS语法与kotlin很类似，建议快速阅读后，在实践中掌握这UTS语法。[uts语法介绍](/uts/)。
 
 ### 2.2  对于仅掌握java语言者
 

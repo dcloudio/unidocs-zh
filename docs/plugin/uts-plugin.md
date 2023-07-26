@@ -18,7 +18,7 @@ uts，全称 uni type script，统一、强类型、脚本语言。
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
-如需详细了解uts语法，另见[uts语法介绍](../tutorial/syntax-uts.md)
+如需详细了解uts语法，另见[uts语法介绍](/uts/)
 
 ### 什么是uts插件
 

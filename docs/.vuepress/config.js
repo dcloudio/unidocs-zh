@@ -10,6 +10,7 @@ const config = {
   theme: 'vuepress-theme-uni-app-test',
   title: 'uni-app官网',
   description: 'uni-app,uniCloud,serverless',
+  evergreen: process.env.NODE_ENV === 'development',
   head: [
     ['link', {
       rel: 'shortcut icon',

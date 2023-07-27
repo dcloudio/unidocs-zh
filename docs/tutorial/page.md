@@ -54,48 +54,66 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件�
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
 
-`onInit`使用注意
+### onInit
+
+**注意**
+
 - 仅百度小程序基础库 3.260 以上支持 onInit 生命周期
 - 其他版本或平台可以同时使用 onLoad 生命周期进行兼容，注意避免重复执行相同逻辑
 - 不依赖页面传参的逻辑可以直接使用 created 生命周期替代
 
-`onReachBottom`使用注意
-可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pages#globalstyle)，比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
+### onReachBottom
 
-如使用scroll-view导致页面没有滚动，则触底事件不会被触发。scroll-view滚动到底部的事件请参考scroll-view的文档
-
-
-`onPageScroll` （监听滚动、滚动监听、滚动事件）参数说明：
+**参数说明**
 
 |属性|类型|说明|
 |---|---|---|
 |scrollTop|Number|页面在垂直方向已滚动的距离（单位px）|
-
-**注意**
-- `onPageScroll`里不要写交互复杂的js，比如频繁修改页面。因为这个生命周期是在渲染层触发的，在非h5端，js是在逻辑层执行的，两层之间通信是有损耗的。如果在滚动过程中，频发触发两层之间的数据交换，可能会造成卡顿。
-- 如果想实现滚动时标题栏透明渐变，在App和H5下，可在pages.json中配置titleNView下的type为transparent，[参考](https://uniapp.dcloud.io/collocation/pages?id=app-titlenview)。
-- 如果需要滚动吸顶固定某些元素，推荐使用css的粘性布局，参考[插件市场](https://ext.dcloud.net.cn/plugin?id=715)。插件市场也有其他js实现的吸顶插件，但性能不佳，需要时可自行搜索。
-- 在App、微信小程序、H5中，也可以使用wxs监听滚动，[参考](https://uniapp.dcloud.io/tutorial/miniprogram-subject#wxs)；在app-nvue中，可以使用bindingx监听滚动，[参考](https://uniapp.dcloud.io/tutorial/nvue-api#nvue-里使用-bindingx)。
-- `onBackPress`上不可使用`async`，会导致无法阻止默认返回
-
 ```js
 onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代替
 	console.log("滚动距离为：" + e.scrollTop);
 },
 ```
 
-`onTabItemTap` 返回的json对象说明：
+**注意**
+
+- 可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pages#globalstyle)，比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
+- 如使用scroll-view导致页面没有滚动，则触底事件不会被触发。scroll-view滚动到底部的事件请参考scroll-view的文档
+- `onPageScroll`里不要写交互复杂的js，比如频繁修改页面。因为这个生命周期是在渲染层触发的，在非h5端，js是在逻辑层执行的，两层之间通信是有损耗的。如果在滚动过程中，频发触发两层之间的数据交换，可能会造成卡顿。
+- 如果想实现滚动时标题栏透明渐变，在App和H5下，可在pages.json中配置titleNView下的type为transparent，[参考](https://uniapp.dcloud.io/collocation/pages?id=app-titlenview)。
+- 如果需要滚动吸顶固定某些元素，推荐使用css的粘性布局，参考[插件市场](https://ext.dcloud.net.cn/plugin?id=715)。插件市场也有其他js实现的吸顶插件，但性能不佳，需要时可自行搜索。
+- 在App、微信小程序、H5中，也可以使用wxs监听滚动，[参考](https://uniapp.dcloud.io/tutorial/miniprogram-subject#wxs)；在app-nvue中，可以使用bindingx监听滚动，[参考](https://uniapp.dcloud.io/tutorial/nvue-api#nvue-里使用-bindingx)。
+
+
+### onBackPress
+
+**参数说明**
+
+|属性|类型|说明|
+|---|---|---|
+|from|String|触发返回行为的来源：'backbutton'——左上角导航栏按钮及安卓返回键；'navigateBack'——uni.navigateBack() 方法。**支付宝小程序端不支持返回此字段**|
+```javascript
+export default {
+	onBackPress(options) {
+		console.log('from:' + options.from)
+	}
+}
+```
+
+**注意**
+
+- `onBackPress`上不可使用`async`，会导致无法阻止默认返回
+- 支付宝小程序真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
+
+### onTabItemTap
+
+**参数说明**
 
 |属性|类型|说明|
 |---|---|---|
 |index|Number|被点击tabItem的序号，从0开始|
 |pagePath|String|被点击tabItem的页面路径|
 |text|String|被点击tabItem的按钮文字|
-
-**注意**
-- onTabItemTap常用于点击当前tabitem，滚动或刷新当前页面。如果是点击不同的tabitem，一定会触发页面切换。
-- 如果想在App端实现点击某个tabitem不跳转页面，不能使用onTabItemTap，可以使用[plus.nativeObj.view](http://www.html5plus.org/doc/zh_cn/nativeobj.html)放一个区块盖住原先的tabitem，并拦截点击事件。
-- 支付宝小程序平台onTabItemTap表现为点击非当前tabitem后触发，因此不能用于实现点击返回顶部这种操作
 
 ```js
 onTabItemTap : function(e) {
@@ -104,7 +122,15 @@ onTabItemTap : function(e) {
 },
 ```
 
-`onNavigationBarButtonTap` 参数说明：
+**注意**
+
+- onTabItemTap常用于点击当前tabitem，滚动或刷新当前页面。如果是点击不同的tabitem，一定会触发页面切换。
+- 如果想在App端实现点击某个tabitem不跳转页面，不能使用onTabItemTap，可以使用[plus.nativeObj.view](http://www.html5plus.org/doc/zh_cn/nativeobj.html)放一个区块盖住原先的tabitem，并拦截点击事件。
+- 支付宝小程序平台onTabItemTap表现为点击非当前tabitem后触发，因此不能用于实现点击返回顶部这种操作
+
+### onNavigationBarButtonTap
+
+**参数说明**
 
 |属性|类型|说明|
 |---|---|---|
@@ -117,26 +143,9 @@ onNavigationBarButtonTap : function (e) {
 }
 ```
 
-`onBackPress` 回调参数对象说明：
-
-|属性|类型|说明|
-|---|---|---|
-|from|String|触发返回行为的来源：'backbutton'——左上角导航栏按钮及安卓返回键；'navigateBack'——uni.navigateBack() 方法。**支付宝小程序端不支持返回此字段**|
-```javascript
-export default {
-	data() {
-		return {};
-	},
-	onBackPress(options) {
-		console.log('from:' + options.from)
-	}
-}
-```
-
 **注意**
 
 - nvue 页面weex编译模式支持的生命周期同weex，具体参考：[weex生命周期介绍](https://uniapp.dcloud.io/tutorial/nvue-outline?id=%e7%bc%96%e8%af%91%e6%a8%a1%e5%bc%8f)。
-- 支付宝小程序真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
 
 ## 组件生命周期@componentlifecycle
 
@@ -382,6 +391,11 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 ### 路由跳转
 
 `uni-app` 有两种页面路由跳转方式：使用[navigator](/component/navigator)组件跳转、调用[API](/api/router)跳转。
+
+**注意**：
+
+页面返回时会自动关闭 loading 及 toast, modal 及 actionSheet 不会自动关闭。\
+页面关闭时，只是销毁了页面实例，未完成的网络请求、计时器等副作用需开发者自行处理。
 
 ## 页面栈
 

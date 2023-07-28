@@ -47,7 +47,7 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件�
 |onShareAppMessage|用户点击右上角分享|微信小程序、QQ小程序、支付宝小程序、抖音小程序、飞书小程序、快手小程序、京东小程序||
 |onPageScroll|监听页面滚动，参数为Object|nvue暂不支持||
 |onNavigationBarButtonTap|监听原生标题栏按钮点击事件，参数为Object|App、H5||
-|onBackPress|监听页面返回，返回 event = {from:backbutton、 navigateBack} ，backbutton 表示来源是左上角返回按钮或 android 返回键；navigateBack表示来源是 uni.navigateBack ；详细说明及使用：[onBackPress 详解](http://ask.dcloud.net.cn/article/35120)。支付宝小程序只有真机能触发，只能监听非navigateBack引起的返回，不可阻止默认行为。|app、H5、支付宝小程序||
+|onBackPress|监听页面返回，返回 event = {from:backbutton、 navigateBack} ，backbutton 表示来源是左上角返回按钮或 android 返回键；navigateBack表示来源是 uni.navigateBack；[详见](#onbackpress)|app、H5、支付宝小程序||
 |onNavigationBarSearchInputChanged|监听原生标题栏搜索输入框输入内容变化事件|App、H5|1.6.0|
 |onNavigationBarSearchInputConfirmed|监听原生标题栏搜索输入框搜索事件，用户点击软键盘上的“搜索”按钮时触发。|App、H5|1.6.0|
 |onNavigationBarSearchInputClicked|监听原生标题栏搜索输入框点击事件（pages.json 中的 searchInput 配置 disabled 为 true 时才会触发）|App、H5|1.6.0|
@@ -103,7 +103,9 @@ export default {
 **注意**
 
 - `onBackPress`上不可使用`async`，会导致无法阻止默认返回
-- 支付宝小程序真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
+- 支付宝小程序只有真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
+
+详细说明及使用：[onBackPress 详解](http://ask.dcloud.net.cn/article/35120)
 
 ### onTabItemTap
 

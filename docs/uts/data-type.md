@@ -95,28 +95,28 @@ let user: string | null
 
 在kotlin平台上，Array 会被编译为 UTSArray， UTSArray 同时具备原生/web平台 数组特性和方法，需要特别注意的是数组结构转换的场景，我们会在下面列出：
 
-##### 我有一个UTSArray 我需要一个kotlin.collections.List
+##### 1 我有一个UTSArray 我需要一个kotlin.collections.List
 
 ```
 let utsArr= utsArrayOf("hello","world")
 let kotlinList = utsArr.toKotlinList()
 ```
 
-##### 我有一个UTSArray 我需要一个java.util.Array
+##### 2 我有一个UTSArray 我需要一个java.util.Array
 
 ```
 let utsArr= utsArrayOf("hello","world")
 let kotlinList = utsArr.toArray()
 ```
 
-##### 我有一个kotlin.collections.List 我需要一个UTSArray
+##### 3 我有一个kotlin.collections.List 我需要一个UTSArray
 
 ```
 let utsArr= mutableListOf("hello","world")
 let kotlinList = utsArr.toUTSArray()
 ```
 
-##### 我有一个java.util.Array 我需要一个UTSArray
+##### 4 我有一个java.util.Array 我需要一个UTSArray
 
 ```
 let utsArr= arrayOf("hello","world")

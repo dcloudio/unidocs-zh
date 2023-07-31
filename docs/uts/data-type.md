@@ -102,11 +102,25 @@ let utsArr= utsArrayOf("hello","world")
 let kotlinList = utsArr.toKotlinList()
 ```
 
-##### 我有一个kotlin.collections.List 我需要一个我有一个UTSArray
+##### 我有一个UTSArray 我需要一个java.util.Array
+
+```
+let utsArr= utsArrayOf("hello","world")
+let kotlinList = utsArr.toArray()
+```
+
+##### 我有一个kotlin.collections.List 我需要一个UTSArray
 
 ```
 let utsArr= mutableListOf("hello","world")
 let kotlinList = utsArr.toUTSArray()
+```
+
+##### 我有一个java.util.Array 我需要一个UTSArray
+
+```
+let utsArr= arrayOf("hello","world")
+let kotlinList = utsArr.toMutableList().toUTSArray()
 ```
 
 

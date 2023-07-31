@@ -87,6 +87,9 @@ let user: string | null
 
 > 注意：uts 编译为kotlin和swift时不支持 undefined。
 
+### Array类型 
+  
+
 ### Object类型 @object
 
 对象（object）是指内存中的可以被标识符引用的一块区域，是一种引用类型。包括Array，Date，Map，Set，JSON等，uts 有一个内置对象的标准库。详[见下](#内置对象和api)。

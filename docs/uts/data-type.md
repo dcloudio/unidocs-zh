@@ -89,6 +89,27 @@ let user: string | null
 
 ### Array类型 
   
+与其他编程语言中的数组一样，Array 对象支持在单个变量名下存储多个元素，并具有执行常见数组操作的成员。
+
+#### kotlin 平台的Array
+
+在kotlin平台上，Array 会被编译为 UTSArray， UTSArray 同时具备原生/web平台 数组特性和方法，需要特别注意的是数组结构转换的场景，我们会在下面列出：
+
+##### 我有一个UTSArray 我需要一个kotlin.collections.List
+
+```
+let utsArr= utsArrayOf("hello","world")
+let kotlinList = utsArr.toKotlinList()
+```
+
+##### 我有一个kotlin.collections.List 我需要一个我有一个UTSArray
+
+```
+let utsArr= mutableListOf("hello","world")
+let kotlinList = utsArr.toUTSArray()
+```
+
+
 
 ### Object类型 @object
 

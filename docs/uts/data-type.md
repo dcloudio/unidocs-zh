@@ -109,7 +109,42 @@ let user: string | null
   
 与其他编程语言中的数组一样，Array 对象支持在单个变量名下存储多个元素，并具有执行常见数组操作的成员。
 
-#### kotlin 平台的Array
+
+#### 创建一个数组对象
+
+`UTS`中数组的创建有两种方式：
+
+1 字面量创建
+
+```
+var a = [1,2,3];//支持
+var a = [1,'2',3];//支持
+
+// 需要注意的是，字面量创建的数组，不支持出现空的缺省元素
+var a = [1,,2,3];//不支持
+```
+
+2  创建数组对象
+```
+var a = new Array(1,2,3);//支持
+var a = new Array(1,'2',3);//支持
+var a = Array(1,2,3);//支持
+var a = Array(1,'2','3');//支持
+```
+
+#### 遍历数组对象
+
+在UTS语言中，推荐使用foreach来实现数组的遍历
+
+```
+const array1: string[] = ['a', 'b', 'c'];
+array1.forEach((element:string, index:number) => {
+    console.log(array1[index])
+});
+```
+
+
+#### kotlin 平台的Array 特性
 
 在kotlin平台上，Array 会被编译为 UTSArray， UTSArray 同时具备原生/web平台 数组特性和方法，需要特别注意的是数组结构转换的场景，我们会在下面列出：
 

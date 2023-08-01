@@ -6,12 +6,23 @@
 
 ### 介绍@introduce
 
-unicloud-map是云端一体组件，主要用于显示数据库里的自定义POI，渲染在地图上。具体可以实现如下功能：
+基于地图的位置服务，是移动应用的特色场景，但过去开发一个地图类应用非常麻烦。需要对接地图厂商的客户端API、服务器API，再编写自己的业务逻辑。
 
-1. 显示门店位置、景点位置、个人位置、车辆位置、活动举办地点等各种静态POI
-2. 外卖软件显示外卖员实时配送路线
-3. 打车软件显示司机到乘客上车点的实时路线
-4. 更多基于自定义POI实现的功能
+unicloud的MongoDB数据库，对地理位置查询，提供了比传统数据库更方便的GEO查询方案，比如可以直接查询附近的POI信息。（Point of Interest，地图上的兴趣点）
+
+DCloud之前已推出各种云端一体组件，基于[datacom规范](/component/datacom.md)，组件在客户端可以直接连数据库。
+
+现在进一步封装了地图的datacom组件，将前端地图组件和云端数据库连起来，只需写一个`<unicloud-map>`组件，就可以直接从数据库里拉出附近的POI信息，并显示在地图上。
+
+在uni-admin中，还提供了POI编辑插件，可以在管理端可视化的标记POI。标记的结果存入opendb表，客户端的`<unicloud-map>`组件可以自动直接拉取。
+
+本文是`<unicloud-map>`组件的文档，admin插件文档[另见]()
+
+unicloud-map云端一体组件，主要用于显示数据库里的自定义POI，渲染在地图上。具体可以实现如下功能：
+
+1. 显示静态POI信息。比如门店位置、景点位置、个人位置、车辆位置、活动举办地点等静态POI
+2. 显示动态POI信息和路径。比如外卖软件显示外卖员实时配送路线、打车软件显示司机到乘客上车点的实时路线
+3. 更多基于自定义POI实现的功能
 
 > 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-map](https://ext.dcloud.net.cn/plugin?name=unicloud-map)
 
@@ -531,5 +542,5 @@ unicloud-map需要创建以下表后才能正常运行，可以右键插件datab
 
 ### 三方定位和地图服务收费说明@fee 
 
-[点击查看](https://uniapp.dcloud.net.cn/component/map.html#%E4%B8%89%E6%96%B9%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1%E6%94%B6%E8%B4%B9%E8%AF%B4%E6%98%8E)
+unicloud-map是免费的，但高德、腾讯、百度等地图的使用需向地图厂商采购商业授权。DCloud与地图厂商达成合作，可更优惠的给开发者提供地图服务。[详见](https://uniapp.dcloud.net.cn/component/map.html#%E4%B8%89%E6%96%B9%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1%E6%94%B6%E8%B4%B9%E8%AF%B4%E6%98%8E)
 

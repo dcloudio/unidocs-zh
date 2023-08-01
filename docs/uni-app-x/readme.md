@@ -38,11 +38,11 @@ uvue渲染引擎包括原生版的vue框架（组件、数据绑定...)、跨平
 
 但这些补丁技术都不治根。过去只有flutter解决了dart和ui层的通信问题，但dart和原生层通信也还是有延时。
 
-在uni-app x中，客户端只有1种编程语言（Android里是kotlin），再也没有通信问题。
+在 uni-app x 中，App端只有1种编程语言（Android里是kotlin），再也没有通信问题。
 
 对于原生应用开发者而言，uvue提供了更快捷、更舒服的界面开发方式，并且不降低性能。
 
-在uni-app x中，项目的页面和组件，后缀名都是uvue。而uvue文件里的script，也只能写uts。
+在 uni-app x 中，项目的页面和组件，后缀名都是uvue。而uvue文件里的script，也只能写uts。
 
 一个uvue页面的例子：
 ```html
@@ -87,6 +87,8 @@ uvue渲染引擎包括原生版的vue框架（组件、数据绑定...)、跨平
 uvue支持的vue语法，是按vue3实现的，但一期uvue不支持setup。详见[vue语法]()
 
 uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex布局。但也足以布局出需要的界面。详见[css语法]()
+
+以上约束特指App端的uvue引擎。如果把uvue页面编译到小程序和web平台，它的script仍然会被编译为js、它的样式遵循web的样式定义。
 
 ## 3. uni的组件
 
@@ -267,13 +269,13 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 
 # FAQ
 - uni-app x 支持uvue页面和vue页面混写吗？
-仅支持uvue页面。后期考虑中
-- uni-app x 能离线打包吗？
+仅支持uvue页面。后期考虑中。历史vue页面也可以通过 uni小程序sdk 嵌入到uni-app x中。
+- uni-app x 的app端能离线打包吗？
 初期不能，后期会提供
 - uni-app x 能热更新吗？
 开发期间可以热刷，但打包后不能热更新。开发者可自行封装原生的插件动态加载方案。
 - uni-app x 能使用npm库吗？
-uni-app x 里没有js引擎，所有js库都不能用。除非npm上有uts的库。但把ts的库改造成uts的库，并不难。
+uni-app x 的app端里没有js引擎，所有js库都不能用。除非npm上有uts的库。当然把ts的库改造成uts的库并不难。uni-app x编译到web和小程序时，js库仍然可用。
 - uni-app x 会搞插件大赛吗？
 会。很快启动，鼓励大家做基于uts和uvue的插件。
 - uni-app x 能调用所有原生API吗？

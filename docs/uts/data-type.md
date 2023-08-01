@@ -12,7 +12,25 @@
 let a:number = 42
 ```
 
+需要注意：在UTS语言中，Number 是基本数据类型，开发者书写的字面量如果没有特别指定类型也会编译为Number
+
+  ```
+  // Number
+  let numA = 123.123
+  // Number
+  let numB:Number = 123.123
+  // 特别指定Int
+  let numB:Int = 123
+  // 特别指定Double
+  let numB:Double = 123.123
+  ```
+
 #### Kotlin 特有的数字类型 @Kotlin
+  
+
+  大多数场景下，开发者使用 字面量即Number 类型就可以满足需要，但是部分场景下，开发者需要与kotlin/java 编写的api交互，此时会涉及原生系统number数据类型，我们会在这里介绍：
+
+
 
 - Byte, UByte
 - Short, UShort

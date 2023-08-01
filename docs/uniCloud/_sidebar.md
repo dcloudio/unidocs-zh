@@ -86,8 +86,8 @@
   * [uni-admin](admin.md)
   * [uni-upgrade-center App升级中心](upgrade-center.md)
   * uni-pay 统一支付```{"collapsable": true}```
-	* * [uni-pay 云端一体页面模板](uni-pay.md)
-	* * [uni-pay 公共模块](unipay.md)
+  * * [uni-pay 云端一体页面模板](uni-pay.md)
+  * * [uni-pay 公共模块](unipay.md)
   * [uni-cms 内容管理](uni-cms.md)
   * [uni-ai-chat ai聊天示例](uni-ai-chat.md)
   * [uni-im 即时通信](uni-im.md)
@@ -99,6 +99,10 @@
   * [uni-open-bridge 微信支付宝等三方凭据管理](uni-open-bridge.md)
   * [uni-cloud-s2s 传统服务器与uniCloud安全通信](uni-cloud-s2s.md)
   * [uni-subscribemsg 订阅消息发送](uni-subscribemsg.md)
+  * uni-map 地图```{"collapsable": true}```
+  * * [uni-map-common 公共模块](uni-map-common.md)
+  * * [unicloud-map 云端一体组件](unicloud-map.md)
+<!--  * * [unicloud-city-select 城市选择组件](unicloud-city-select.md) -->
 * [案例](resource.md)
 * [开发者使用反馈](feedback.md)
 * [DCloud行业认证服务商](https://ask.dcloud.net.cn/article/39388)

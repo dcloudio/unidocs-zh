@@ -116,14 +116,14 @@ let user: string | null
 ##### 1 我有一个UTSArray 我需要一个kotlin.collections.List
 
 ```
-let utsArr= utsArrayOf("hello","world")
+let utsArr= ["hello","world"]
 let kotlinList = utsArr.toKotlinList()
 ```
 
 ##### 2 我有一个UTSArray 我需要一个java.util.Array
 
 ```
-let utsArr= utsArrayOf("hello","world")
+let utsArr= ["hello","world"]
 let kotlinList = utsArr.toArray()
 ```
 

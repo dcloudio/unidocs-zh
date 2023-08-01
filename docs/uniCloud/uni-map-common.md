@@ -1,6 +1,12 @@
 ## uni-map-common 公共模块
 
-聚合了多家地图供应商的服务端API
+聚合多家地图供应商的云能力的公共模块。
+
+不管高德还是腾讯地图，都有众多服务端API，比如逆地址解析。uni-map-common对这些API进行了统一封装，抹平了差异。
+
+开发者只需使用uni-map-common，就可以更简单的使用地图的云接口。并且方便在不同地图厂商之间切换。
+
+同时本公共模块也是 [uniCloud-map 云端一体地图](unicloud-map.md) 的基础支撑模块。
 
 ::: warning 注意
 uni-map-common公共模块仅能在云函数/云对象内使用。如果您不了解公共模块，请[参阅](cf-common.md)

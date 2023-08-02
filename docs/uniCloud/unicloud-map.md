@@ -16,7 +16,7 @@ DCloud之前已推出各种云端一体组件，基于[datacom规范](/component
 
 在uni-admin中，还提供了POI编辑插件，可以在管理端可视化的标记POI。标记的结果存入opendb表，客户端的`<unicloud-map>`组件可以自动直接拉取。
 
-本文是`<unicloud-map>`组件的文档，admin插件文档[另见]()
+本文是`<unicloud-map>`组件的文档，admin插件文档[另见](unicloud-map-admin.md)
 
 unicloud-map云端一体组件，主要用于显示数据库里的自定义POI，渲染在地图上。具体可以实现如下功能：
 
@@ -435,6 +435,8 @@ export default {
 | poi-title-format	|自定义poi标题的格式化函数															| function			| -										| -									|-																																												|
 | latitude					|中心纬度																								| number、string| -										| -									|-																																												|
 | longitude					|中心经度																								| number、string| -										| -									|-																																												|
+| defaultLatitude		|默认中心纬度，当latitude无值时使用该值									| number、string| 39.908823						| -									|-																																												|
+| defaultLongitude	|默认中心经度，当longitude无值时使用该值								| number、string| 116.39747						| -									|-																																												|
 | scale							|地图缩放等级，部分情况下会自动设置，此参数会失效				| number				| 16									| -									|高德地图缩放比例与微信小程序不同																													|
 | min-scale					|最小缩放等级																						| number				| 3										| -									|App-nvue 3.1.0+、微信小程序2.13+																													|
 | max-scale					|最大缩放等级																						| number				| 20									| -									|App-nvue 3.1.0+、微信小程序2.13+																													|

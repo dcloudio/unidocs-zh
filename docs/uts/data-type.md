@@ -138,7 +138,7 @@ js的array是可变长的泛型array。
 
 <!-- 补充swift说明 -->
 
-为了拉齐实现，UTS补充了UTSArray，它继承自arrayList，所以可以变长。
+为了拉齐实现，UTS补充了UTSArray，它继承自ArrayList，所以可以变长。
 
 但为了接近web的写法，方便跨端，UTSArray在new的时候仍使用了`new Array`
 
@@ -179,16 +179,35 @@ array1.forEach((element:string, index:number) => {
 
 #### kotlin 平台的Array 特性
 
-在kotlin平台上，Array 会被编译为 UTSArray， UTSArray 同时具备原生/web平台 数组特性和方法，需要特别注意的是数组结构转换的场景，我们会在下面列出：
+在kotlin平台上，Array 的具体实现类为： `io.dcloud.uts.UTSArray`。 
 
-##### 1 我有一个UTSArray 我需要一个kotlin.collections.List
+UTSArray 拉齐了Web平台 Array的功能和定义，可以满足大多数场景需要 ，但是在涉及与 系统API/三方sdk 交互部分会产生类型不一致的错误。
+
+
+
+```uts
+let packageManager = UTSAndroid.getUniActivity()!.getPackageManager();
+let intent = new Intent(Intent.ACTION_MAIN);
+intent.addCategory(Intent.CATEGORY_LAUNCHER);
+// 
+let resolveInfo = packageManager.queryIntentActivities(intent,0);
+```
+
+比如,上面的代码向 系统查询了 有多少应用可以响应 `launcher加载器`，返回的 resolveInfo 是一个 `List<ResolveInfo>`。这种情况下，我们建议的做法是将其先转换为UTSArray对象再进行其他处理和操作
+
+
+
+
+下面汇总了常用的转换场景和代码：
+
+##### 1 我有一个UTSArray 需要转换为其他类型
 
 ```
 let utsArr= ["hello","world"]
 let kotlinList = utsArr.toKotlinList()
 ```
 
-##### 2 我有一个UTSArray 我需要一个java.util.Array
+##### 2 我有一个原生类数组类型 需要转成一个UTSArray
 
 ```
 let utsArr= ["hello","world"]

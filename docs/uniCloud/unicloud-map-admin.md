@@ -16,7 +16,7 @@ unicloud-map-admin是[unicloud-map](unicloud-map.md)组件的admin插件，提�
 
 **安装unicloud-map-admin插件**
 
-在插件市场中找到unicloud-map-admin，将插件导入至[uni-admin](https://uniapp.dcloud.net.cn/uniCloud/admin.html)项目中。
+在插件市场中找到[https://ext.dcloud.net.cn/plugin?name=unicloud-map-admin](https://ext.dcloud.net.cn/plugin?name=unicloud-map-admin)，将插件导入至[uni-admin](https://uniapp.dcloud.net.cn/uniCloud/admin.html)项目中。
 
 如果还未使用过uni-admin，请先在HBuilderX新建项目时选择uni-admin项目。并需要了解[uni-admin](https://uniapp.dcloud.net.cn/uniCloud/admin.html)的相关知识。
 

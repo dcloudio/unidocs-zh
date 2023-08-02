@@ -78,6 +78,13 @@ a.toDouble() // 转换为 Double 类型，后续也将支持 new Double(a) 方�
 
 - 在 swift(app-ios) 下转换特定的平台数字类型
 ```ts
+// number转成特定类型
+let num = 2
+num.toInt() //将number 变量 num 转换为 Int 类型
+num.toFloat() //将number 变量 num 转换为 float 类型
+num.toInt64() // 将number 变量 num 转换为 Int64 类型
+
+// 特定类型转成其他的特定类型
 let a:Int = 3
 let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 ```

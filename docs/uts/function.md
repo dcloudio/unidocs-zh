@@ -179,14 +179,17 @@ multiply(5); // 5
 ```
 ### 箭头函数
 
-箭头函数表达式（也称胖箭头函数）相比函数表达式具有较短的语法。箭头函数总是匿名的。
+箭头函数表达式（也称胖箭头函数）相比函数表达式具有较短的语法。箭头函数总是匿名的，也就是不需要函数名。
 
 ```ts
+// 以下是不使用箭头函数的写法
 const arr = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
 const a2 = arr.map(function (s): number {
     return s.length;
 });
 console.log(a2); // logs [ 8, 6, 7, 9 ]
+
+// 以下是使用箭头函数的写法，逻辑是等价的
 const a3 = arr.map((s): number => s.length);
 console.log(a3); // logs [ 8, 6, 7, 9 ]
 ```

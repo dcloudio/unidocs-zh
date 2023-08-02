@@ -42,7 +42,36 @@ switch (expression) {
 
 ### 三元表达式
 
-uts 支持使用三元表达式。一个条件后面会跟一个问号（?），如果条件为 true ，则问号后面的表达式 A 将会执行；表达式 A 后面跟着一个冒号（:），如果条件为 false ，则冒号后面的表达式 B 将会执行。本运算符经常作为 if 语句的简捷形式来使用。
+uts 支持使用三元表达式（也称三目运算）。它使用一行简短的语句，替代多行的if、else语句。
+
+三元表达式由 condition ? 真返回值 : 假返回值 ，这3部分组成。
+
+第一部分是condition验证条件，返回一个布尔值。与 if 括号里的内容一样。
+
+问号（?）后面是2个候选返回结果，2个候选用冒号（:）分割，形如 A : B。
+
+如果验证条件为 true ，则问号后面的第一个表达式 A 将会执行；如果条件为 false ，则冒号后面的表达式 B 将会执行。
+
+三元表达式最终会返回 A 或 B 中的某一个。
+
+```ts
+// 使用if的写法，要写多行
+let score = 61
+let res : string
+if (score >= 60) {
+	res = "及格"
+}
+else {
+	res = "不及格"
+}
+
+// 使用三元运算符，逻辑与上面的if相同，但简化了代码行数
+let score = 61
+let res = (score>=60) ? "及格" : "不及格"
+
+```
+
+其他例子：
 
 ```ts
 function getFee(isMember: boolean): string {
@@ -114,6 +143,10 @@ for (let i = 0; i < 10; i++) {
     //...
 }
 ```
+
+部分对象，还支持forEach方法，可以更简单的遍历。详见：
+- [数组的forEach](buildin-object-api/array.md#foreach)
+- [set的forEach](buildin-object-api/set.html#foreach)
 
 ### while
 

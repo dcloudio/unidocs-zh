@@ -198,16 +198,23 @@ do {
 
 ### break
 
-使用 break 语句来终止循环，switch。
+使用 break 语句来终止循环。在for、do、while等各种循环中，以及在switch中，都可以使用break跳出循环或switch的选择。
 
 举例：
 
 ```ts
 for (let i = 0; i < 10; i++) {
     if (i > 5) {
+        console.log(i)
         break;
+        // 如果这里有代码的话，也不会执行，因为break执行时已经跳出了for循环。
     }
 }
+// break后，跳出for循环，开始向下执行这里的代码。
+
+// 输出 6
+
+// 下面的示例和上面是类似的。
 let x = 0;
 while (true) {
     x++;
@@ -219,16 +226,21 @@ while (true) {
 
 ### continue
 
-使用 continue 语句来终止当前循环，并在下一次迭代时继续执行循环。
+使用 continue 语句来终止当前循环，但与 break 不同， continue 只是终止了这次循环，还会在下一次迭代时继续执行循环。continue 可以在for、do、while等各种循环中使用。
 
 举例：
 
 ```ts
 for (let i = 0; i < 10; i++) {
     if (i > 5) {
-        continue;
+        console.log(i)
+        continue; // continue 后，本次循环结束，i+1后开始下一次循环。
+        // 这里的代码不会被执行，因为上一行 continue 了
     }
 }
+// 输出 6、7、8、9
+
+// 下面的示例和上面是类似的。
 let x = 0;
 while (true) {
     x++;

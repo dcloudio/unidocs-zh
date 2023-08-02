@@ -210,10 +210,105 @@ let kotlinList = utsArr.toMutableList().toUTSArray()
 
 ### any类型 @any
 
-如果定义变量时没有声明类型，也没有赋值。那么这个变量会被视为any类型。虽然可以使用，但uts中非常不建议这样使用。
+有时候，我们会想要为那些在编程阶段还不清楚类型的变量指定一个类型。 这些值可能来自于动态的内容，比如来自用户输入或第三方代码库。 这种情况下，我们不希望类型检查器对这些值进行检查而是直接让它们通过编译阶段的检查。 那么我们可以使用 any 类型来标记这些变量：
 
 ```ts
-let s;
-s = "123"
-console.log(s) // hello world
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false; // okay, definitely a boolean
+```
+
+当你只知道一部分数据的类型时，any类型也是有用的。 比如，你有一个数组，它包含了不同的类型的数据：
+
+```ts
+let list: any[] = [1, true, "free"];
+list[1] = 100;
+```
+
+### null类型 @null
+
+uts 的类型系统可以消除来自代码空引用的危险。
+许多编程语言中最常见的陷阱之一，就是访问空引用的成员会导致空引用异常。在 Java 中，这等同于 NullPointerException 或简称 NPE。
+在 uts 中，类型系统能够区分一个引用可以容纳 null （可空引用）还是不能容纳（非空引用）。 例如，String 类型的常规变量不能容纳 null：
+
+```ts
+let a: string = "abc" // 默认情况下，常规初始化意味着非空
+a = null // 编译错误
+```
+
+如果要允许为空，可以声明一个变量为可空字符串（写作 string | null）：
+
+```ts
+let b: string | null = "abc" // 可以设置为空
+b = null // ok
+```
+
+现在，如果你调用 a 的方法或者访问它的属性，它保证不会导致 NPE，这样你就可以放心地使用：
+
+```ts
+const l = a.length
+```
+
+但是如果你想访问 b 的同一个属性，那么这是不安全的，并且编译器会报告一个错误：
+
+```ts
+const l = b.length // 错误：变量“b”可能为空
+```
+
+但是，还是需要访问该属性，对吧？有几种方式可以做到。
+
+
+#### 在条件中检测 null
+
+首先，你可以显式检测 b 是否为 null：
+
+```ts
+if (b != null) {
+  console.log(b.length)
+}
+```
+
+编译器会跟踪所执行检测的信息，并允许你在 if 内部调用 length。
+
+#### 安全的调用
+
+访问可空变量的属性的第二种选择是使用安全调用操作符 ?.：
+
+```ts
+const a = "uts"
+const b: string | null = null
+console.log(b?.length)
+console.log(a?.length) // 无需安全调用
+```
+
+如果 b 非空，就返回 b.length，否则返回 null，这个表达式的类型是 number | null。
+
+安全调用在链式调用中很有用。例如，一个员工 Bob 可能会（或者不会）分配给一个部门。 可能有另外一个员工是该部门的负责人。获取 Bob 所在部门负责人（如果有的话）的名字， 写作：
+
+```ts
+bob?.department?.head?.name
+```
+
+如果任意一个属性（环节）为 null，这个链式调用就会返回 null。
+
+#### 空值合并
+
+空值合并运算符（??）是一个逻辑运算符，当左侧的操作数为 null 时，返回其右侧操作数，否则返回左侧操作数。
+
+```ts
+const foo = null ?? 'default string';
+console.log(foo);
+// Expected output: "default string"
+
+const baz = 0 ?? 42;
+console.log(baz);
+// Expected output: 0
+```
+
+#### 非空断言
+
+非空断言运算符（!）将任何值转换为非空类型。可以写 b! ，这会返回一个非空的 b 值（例如：在我们示例中的 String）或者如果 b 为 null，就会抛出一个异常。
+
+```ts
+const l = b!.length
 ```

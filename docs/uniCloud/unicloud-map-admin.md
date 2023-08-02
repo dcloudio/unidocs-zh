@@ -32,11 +32,38 @@ unicloud-map-admin是[unicloud-map](unicloud-map.md)组件的admin插件，提�
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/415.png)
 
+**配置地图key**
+
+打开manifest.json文件，点击Web配置，配置腾讯地图或高德地图任意一个即可
+
 ### unicloud-map-admin的opendb数据表@database
 
-unicloud-map-admin需要创建以下表后才能正常运行，可以右键插件database目录下的opendb-poi.schema.json上传Schema
+unicloud-map-admin需要创建以下表后才能正常运行，可以右键插件database目录下的`opendb-poi.schema.json`上传Schema
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/411.png)
 
 - 地图POI表 [opendb-poi](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-poi/collection.json)
+
+### 常见问题
+
+#### 添加和编辑POI时，点击选择地理位置，不显示地图？
+
+需要配置地图key，打开`manifest.json`文件，点击Web配置，配置腾讯地图或高德地图任意一个即可
+
+#### 添加和编辑POI时，点击选择地理位置，没有确认按钮？
+
+将以下代码添加到uni-admin的`/common/uni.css`文件最后一行
+
+```css
+/* 地图选择top需要大于topWindow的高度 */
+.uni-system-choose-location{
+	display: block;
+	position: fixed;
+	left: 0;
+	top: 60px;
+	width: 100%;
+	height: calc(100% - 60px);
+	background: #f8f8f8;
+}
+```
 

@@ -1,3 +1,14 @@
+#### 3.8.12.20230802-alpha
+* 【uni-app】
+* App-iOS平台 修复 uni.setTabBarItem 动态设置 gif 后再设置普通图片可能不生效的Bug
+* 【uniCloud】
+* 调整 uni-ai 非uni-ai计费网关调用百度接口由内测接口调整为[文心千帆大模型接口](https://cloud.baidu.com/doc/WENXINWORKSHOP/s/jlil56u11)
+* 【App插件(含5+App和uni-app的App端)】
+* 【重要】Android平台 适配 支持 Android14 系统
+* Android平台 更新 云端打包环境 compileSdkVersion 为 33
+* iOS平台 更新 uni-AD模块 快手广告联盟SDK 为 3.3.49 版；穿山甲广告联盟SDK 为 5.5.0.3 版；穿山甲GroMore SDK 为 5.3.6.0 版；百度百青藤广告联盟SDK 为 5.31 版；Sigmob广告联盟SDK 为 4.9.3 版
+* iOS平台 修复 uni-AD模块 穿山甲GroMore激励视频 close 事件返回的 isEnded 属性返回值可能不正确的Bug
+
 #### 3.8.11.20230719-alpha
 * 【App插件(含5+App和uni-app的App端)】
 * iOS平台 更新 uni-AD模块 腾讯优量汇广告联盟SDK 为 4.14.32 版

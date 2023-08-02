@@ -30,7 +30,7 @@ unicloud-map-admin是[unicloud-map](unicloud-map.md)组件的admin插件，提�
 
 注意：如果刷新页面后没有出现菜单，查看此处菜单是否启用，如下图所示：
 
-![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/3707/415.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/415.png)
 
 ### unicloud-map-admin的opendb数据表@database
 

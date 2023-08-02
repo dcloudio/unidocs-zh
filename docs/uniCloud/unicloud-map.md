@@ -28,6 +28,49 @@ unicloud-map云端一体组件，主要用于显示数据库里的自定义POI�
 
 ### 用法示例@example
 
+#### 简易示例
+
+```vue
+<template>
+	<view>
+	
+		<unicloud-map
+			ref="map"
+			:where="where"
+			:width="700"
+			:height="900"
+			:latitude="latitude"
+			:longitude="longitude"
+			:default-icon="defaultIcon"
+			:custom-icons="customIcons"
+		></unicloud-map>
+		
+	</view>
+</template>
+
+<script>
+export default {
+	data() {
+		return {
+			// 查询条件
+			where:{
+				
+			},
+			// 你的经纬度，可通过uni.getLocation获取，注意type需传gcj02，同时在电脑端运行时获取到的经纬度是不准的
+			latitude: 39.908823,
+			longitude: 116.39747,
+			defaultIcon: "/static/icon/default.png", // 默认POI图标
+			// 自定义POI图标
+			customIcons: [
+				{ type: "门店", icon: "/static/icon/shop.png" },
+				{ type: "总部", icon: "/static/icon/headquarters.png" }
+			]
+		}
+	}
+}
+</script>
+```
+
 #### 渲染静态POI@staticpoi
 
 通过从数据库获取POI数据，渲染到地图上
@@ -377,52 +420,60 @@ unicloud-map云端一体组件，主要用于显示数据库里的自定义POI�
 
 ### 组件属性@props
 
-| 属性名						| 说明																									| 类型					| 默认值							| 可选值			|平台差异说明																																							|
-|-----------------	|-------------------------------												|---------			|--------							|-------			|-------																																									|
-| collection				|  表名																									| string				| opendb-poi					| -						|-																																												|
-| loadtime					| 数据加载时机																					| string				| auto								| 见下				|-																																												|
-| where							| 查询条件，注意，只支持对象写法，不支持JQL的字符串语法	| object				| -										| -						|-																																												|
-| poi-maximum				| 最大poi显示数量																				| number				| 100									| -						|-																																												|
-| poi-max-distance	|查询的最大距离																					| number				| -										| -						|-																																												|
-| poi-min-distance	|查询的最小距离																					| number				| -										| -						|-																																												|
-| width							|地图的宽度（不要设置百分比，必须直接写量，比如750rpx）	| number、string| -										| -						|-																																												|
-| height						|地图的高度（不要设置百分比，必须直接写量，比如750rpx）	| number、string| -										| -						|-																																												|
-| default-icon			|默认的POI图标																					| string				| /static/location.png| -						|-																																												|
-| custom-icons			|自定义图标，根据POI的type来区分												| Array					| -										| -						|-																																												|
-| poi-title-format	|自定义poi标题的格式化函数															| function			| -										| -						|-																																												|
-| latitude					|中心纬度																								| number、string| -										| -						|-																																												|
-| longitude					|中心经度																								| number、string| -										| -						|-																																												|
-| scale							|地图缩放等级，部分情况下会自动设置，此参数会失效				| number				| 16									| -						|高德地图缩放比例与微信小程序不同																													|
-| min-scale					|最小缩放等级																						| number				| 3										| -						|App-nvue 3.1.0+、微信小程序2.13+																													|
-| max-scale					|最大缩放等级																						| number				| 20									| -						|App-nvue 3.1.0+、微信小程序2.13+																													|
-| layer-style				|个性化地图																							| number、string| 1										| -						|App-nvue 3.1.0+、微信小程序2.13+																													|
-| show-compass			|是否显示指南针																					| boolean				| true								| true、false	|App-nvue 2.1.5+、微信小程序2.3.0																													|
-| enable-zoom				|是否支持缩放																						| boolean				| true								| true、false	|App-nvue 2.1.5+、微信小程序2.3.0																													|
-| enable-scroll			|是否支持拖动																						| boolean				| true								| true、false	|App-nvue 2.1.5+、微信小程序2.3.0																													|
-| enable-rotate			|是否支持旋转																						| boolean				| false								| true、false	|App-nvue 2.1.5+、微信小程序2.3.0																													|
-| enable-overlooking|是否开启俯视																						| boolean				| false								| true、false	|App-nvue 2.1.5+、微信小程序2.3.0																													|
-| enable-satellite	|是否开启卫星图																					| boolean				| false								| true、false	|App-nvue 2.1.5+、微信小程序2.7.0																													|
-| enable-traffic		|是否开启实时路况																				| boolean				| false								| true、false	|App-nvue 2.1.5+、微信小程序2.7.0																													|
-| enable-poi				|是否展示地图的原生 POI 点（非数据库内的POI点）					| boolean				| true								| true、false	|App-nvue 3.1.0+																																					|
-| enable-building		|是否展示建筑物																					| boolean				| true								| true、false	|App-nvue 3.1.0+ 支持 (**废除原enable-3D属性 高德地图默认开启建筑物就是3D无法设置**)			|
-| show-location			|显示带有方向的当前定位点																| boolean				| true								| true、false	|微信小程序、H5、百度小程序、支付宝小程序、京东小程序																			|
-| polygons					|多边形																									| boolean				| false								| true、false	|App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序												|
-| enable-indoor-map	|是否展示室内地图																				| boolean				| false								| true、false	|App-nvue 3.1.0+																																					|
-| @mounted					|组件挂载完毕触发																				| EventHandle		| -										|-						|-																																												|
-| @poitap						|点击自定义POI点时触发																	| EventHandle		| -										|-						|-																																												|
-| @markertap				|点击标记点时触发																				| EventHandle		| -										|-						|App-nvue 2.3.3+、H5、微信小程序、支付宝小程序 （App和H5平台需要指定 marker 对象属性 id）	|
-| @labeltap					|点击标记点时触发																				| EventHandle		| -										|-						|微信小程序2.9.0																																					|
-| @callouttap				|点击标记点对应的气泡时触发															| EventHandle		| -										|-						|-																																												|
-| @controltap				|点击控件时触发																					| EventHandle		| -										|-						|-																																												|
-| @regionchange			|视野发生变化时触发	| EventHandle																						| -							|-										|视野发生变化时触发|微信小程序、H5、百度小程序、支付宝小程序、京东小程序																			|
-| @tap							|点击地图时触发; App-nvue、微信小程序2.9支持返回经纬度	| EventHandle		| -										|-						|点击地图时触发; App-nvue、微信小程序2.9支持返回经纬度																		|
+| 属性名						| 说明																									| 类型					| 默认值							| 可选值						|平台差异说明																																							|
+|-----------------	|-------------------------------												|---------			|--------							|-------						|-------																																									|
+| collection				|  表名																									| string				| opendb-poi					| -									|-																																												|
+| loadtime					| 数据加载时机																					| string				| auto								| [详情](#loadtime)	|-																																												|
+| where							| 查询条件，注意，只支持对象写法，不支持JQL的字符串语法	| object				| -										| -									|-																																												|
+| poi-maximum				| 最大poi显示数量																				| number				| 100									| -									|-																																												|
+| poi-max-distance	|查询的最大距离																					| number				| -										| -									|-																																												|
+| poi-min-distance	|查询的最小距离																					| number				| -										| -									|-																																												|
+| width							|地图的宽度（不要设置百分比，必须直接写量，比如750rpx）	| number、string| -										| -									|-																																												|
+| height						|地图的高度（不要设置百分比，必须直接写量，比如750rpx）	| number、string| -										| -									|-																																												|
+| default-icon			|默认的POI图标																					| string				| /static/location.png| -									|-																																												|
+| custom-icons			|自定义图标，根据POI的type来区分												| Array					| -										| -									|-																																												|
+| poi-title-format	|自定义poi标题的格式化函数															| function			| -										| -									|-																																												|
+| latitude					|中心纬度																								| number、string| -										| -									|-																																												|
+| longitude					|中心经度																								| number、string| -										| -									|-																																												|
+| scale							|地图缩放等级，部分情况下会自动设置，此参数会失效				| number				| 16									| -									|高德地图缩放比例与微信小程序不同																													|
+| min-scale					|最小缩放等级																						| number				| 3										| -									|App-nvue 3.1.0+、微信小程序2.13+																													|
+| max-scale					|最大缩放等级																						| number				| 20									| -									|App-nvue 3.1.0+、微信小程序2.13+																													|
+| layer-style				|个性化地图																							| number、string| 1										| -									|App-nvue 3.1.0+、微信小程序2.13+																													|
+| show-compass			|是否显示指南针																					| boolean				| true								| true、false				|App-nvue 2.1.5+、微信小程序2.3.0																													|
+| enable-zoom				|是否支持缩放																						| boolean				| true								| true、false				|App-nvue 2.1.5+、微信小程序2.3.0																													|
+| enable-scroll			|是否支持拖动																						| boolean				| true								| true、false				|App-nvue 2.1.5+、微信小程序2.3.0																													|
+| enable-rotate			|是否支持旋转																						| boolean				| false								| true、false				|App-nvue 2.1.5+、微信小程序2.3.0																													|
+| enable-overlooking|是否开启俯视																						| boolean				| false								| true、false				|App-nvue 2.1.5+、微信小程序2.3.0																													|
+| enable-satellite	|是否开启卫星图																					| boolean				| false								| true、false				|App-nvue 2.1.5+、微信小程序2.7.0																													|
+| enable-traffic		|是否开启实时路况																				| boolean				| false								| true、false				|App-nvue 2.1.5+、微信小程序2.7.0																													|
+| enable-poi				|是否展示地图的原生 POI 点（非数据库内的POI点）					| boolean				| true								| true、false				|App-nvue 3.1.0+																																					|
+| enable-building		|是否展示建筑物																					| boolean				| true								| true、false				|App-nvue 3.1.0+ 支持 (**废除原enable-3D属性 高德地图默认开启建筑物就是3D无法设置**)			|
+| show-location			|显示带有方向的当前定位点																| boolean				| true								| true、false				|微信小程序、H5、百度小程序、支付宝小程序、京东小程序																			|
+| polygons					|多边形																									| boolean				| false								| true、false				|App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序												|
+| enable-indoor-map	|是否展示室内地图																				| boolean				| false								| true、false				|App-nvue 3.1.0+																																					|
+| @mounted					|组件挂载完毕触发																				| EventHandle		| -										|-									|-																																												|
+| @poitap						|点击自定义POI点时触发																	| EventHandle		| -										|-									|-																																												|
+| @markertap				|点击标记点时触发																				| EventHandle		| -										|-									|App-nvue 2.3.3+、H5、微信小程序、支付宝小程序 （App和H5平台需要指定 marker 对象属性 id）	|
+| @labeltap					|点击标记点时触发																				| EventHandle		| -										|-									|微信小程序2.9.0																																					|
+| @callouttap				|点击标记点对应的气泡时触发															| EventHandle		| -										|-									|-																																												|
+| @controltap				|点击控件时触发																					| EventHandle		| -										|-									|-																																												|
+| @regionchange			|视野发生变化时触发	| EventHandle																						| -							|-										|视野发生变化时触发	|微信小程序、H5、百度小程序、支付宝小程序、京东小程序																			|
+| @tap							|点击地图时触发; App-nvue、微信小程序2.9支持返回经纬度	| EventHandle		| -										|-									|点击地图时触发; App-nvue、微信小程序2.9支持返回经纬度																		|
 | @updated					|在地图渲染更新完成时触发| EventHandle																						| -							|-										|在地图渲染更新完成时触发|微信小程序、H5、百度小程序																																|
-| @anchorpointtap		|点击定位标时触发																				| EventHandle		| -										|-						|App-nvue 3.1.0+、微信小程序2.13+																													|
-| @native-poitap		|点击地图原生POI点时触发																| EventHandle		| -										|-						|微信小程序2.3.0+																																					|
+| @anchorpointtap		|点击定位标时触发																				| EventHandle		| -										|-									|App-nvue 3.1.0+、微信小程序2.13+																													|
+| @native-poitap		|点击地图原生POI点时触发																| EventHandle		| -										|-									|微信小程序2.3.0+																																					|
 
 **注意**
 
 - 只支持腾讯地图或高德地图，且需使用 `gcj02` 坐标，用错坐标类型会显示偏移。
+
+### loadtime
+
+|值			|类型		|描述																																													|
+|:-			|:-			|:-																																														|
+|auto		|String	|页面就绪后或属性变化后加载数据，默认为auto																										|
+|onready|String	|页面就绪后不自动加载数据，属性变化后加载。适合在onready中接收上个页面的参数作为where条件时。	|
+|manual	|String	|手动模式，不自动加载数据。如果涉及到分页，需要先手动修改当前页，在调用加载数据								|
 
 ### 组件方法@function
 
@@ -437,6 +488,17 @@ unicloud-map云端一体组件，主要用于显示数据库里的自定义POI�
 | setCircles			| 设置组件内的circles						|
 | getControls			| 获取组件内的controls					|
 | setControls			| 设置组件内的controls					|
+
+**注意**
+
+使用这些方法前，需要在组件先声明 `ref="map"`
+
+```vue
+<unicloud-map 
+	ref="map"
+	...其他属性
+</unicloud-map>		
+```
 
 **refresh**
 

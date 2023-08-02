@@ -102,6 +102,7 @@
   * uni-map 地图```{"collapsable": true}```
   * * [uni-map-common 公共模块](uni-map-common.md)
   * * [unicloud-map 云端一体组件](unicloud-map.md)
+  * * [unicloud-map 管理端](unicloud-map-admin.md)
 <!--  * * [unicloud-city-select 城市选择组件](unicloud-city-select.md) -->
 * [案例](resource.md)
 * [开发者使用反馈](feedback.md)

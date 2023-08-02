@@ -28,6 +28,10 @@ unicloud-map-admin是[unicloud-map](unicloud-map.md)组件的admin插件，提�
 
 导入后刷新页面，在uni-admin左侧菜单，可看到地图管理的菜单项，点击即可进入相关页面。
 
+注意：如果刷新页面后没有出现菜单，查看此处菜单是否启用，如下图所示：
+
+![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/3707/415.png)
+
 ### unicloud-map-admin的opendb数据表@database
 
 unicloud-map-admin需要创建以下表后才能正常运行，可以右键插件database目录下的opendb-poi.schema.json上传Schema

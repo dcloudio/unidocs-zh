@@ -179,21 +179,29 @@ array1.forEach((element:string, index:number) => {
 
 #### kotlin 平台的Array 特性
 
-在kotlin平台上，Array 的具体实现类为： `io.dcloud.uts.UTSArray`。 
+在kotlin平台上，Array 的具体实现类为： `io.dcloud.uts.UTSArray` 
 
-UTSArray 拉齐了Web平台 Array的功能和定义，可以满足大多数场景需要 ，但是在涉及与 系统API/三方sdk 交互部分会产生类型不一致的错误。
+UTSArray 拉齐了Web平台 Array的功能和定义，可以满足大多数场景需要 ，但是在涉及与 系统API/三方sdk 交互部分，因为 系统API/三方sdk 是基于 java/kotlin 开发 因此可能会产生类型不一致的错误。
 
 
+举个例子：
 
 ```uts
 let packageManager = UTSAndroid.getUniActivity()!.getPackageManager();
 let intent = new Intent(Intent.ACTION_MAIN);
 intent.addCategory(Intent.CATEGORY_LAUNCHER);
-// 
+// 查询当前设备上安装了几个launcher
 let resolveInfo = packageManager.queryIntentActivities(intent,0);
 ```
 
-比如,上面的代码向 系统查询了 有多少应用可以响应 `launcher加载器`，返回的 resolveInfo 是一个 `List<ResolveInfo>`。这种情况下，我们建议的做法是将其先转换为UTSArray对象再进行其他处理和操作
+上面的代码向 系统查询了有多少应用可以响应 `launcher`行为 ，返回的 resolveInfo 是一个 `List<ResolveInfo>`。
+
+这种情况下，我们建议的做法是将其先转换为UTSArray对象再进行其他处理和操作
+
+```uts
+let launcherList = UTSArray.fromNative(resolveInfo) 
+console.log(clothing.length);
+```
 
 
 
@@ -204,28 +212,29 @@ let resolveInfo = packageManager.queryIntentActivities(intent,0);
 
 ```
 let utsArr= ["hello","world"]
+
+// UTSArray 转换 kotlin.collections.List
 let kotlinList = utsArr.toKotlinList()
+
+// UTSArray 转换 kotlin.Array
+let kotlinArray = utsArr.toTypedArray()
+
 ```
+
+
 
 ##### 2 我有一个原生类数组类型 需要转成一个UTSArray
 
 ```
-let utsArr= ["hello","world"]
-let kotlinList = utsArr.toArray()
-```
-
-##### 3 我有一个kotlin.collections.List 我需要一个UTSArray
-
-```
+// kotlin.collections.List 转换 UTSArray
 let utsArr= mutableListOf("hello","world")
-let kotlinList = utsArr.toUTSArray()
+let kotlinList = UTSArray.fromNative(utsArr) 
 ```
 
-##### 4 我有一个java.util.Array 我需要一个UTSArray
-
 ```
+// kotlin.Array 转换 UTSArray
 let utsArr= arrayOf("hello","world")
-let kotlinList = utsArr.toMutableList().toUTSArray()
+let kotlinList = UTSArray.fromNative(utsArr)
 ```
 
 

@@ -36,7 +36,7 @@ unicloud-map-admin是[unicloud-map](unicloud-map.md)组件的admin插件，提�
 
 打开`manifest.json`文件，点击Web配置，配置腾讯地图或高德地图任意一个即可
 
-![](http://dcloud-chjh-web.oss-cn-hangzhou.aliyuncs.com/unidoc/zh/3707/416.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/416.png)
 
 ### unicloud-map-admin的opendb数据表@database
 

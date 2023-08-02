@@ -1386,6 +1386,45 @@ let btn_start_screen_listen = this.findViewById<Button>(R.id.btn_start_screen_li
 btn_start_screen_listen.setOnClickListener(new StartBroadcastListener());
  ```
 
+如果要同时实现多个接口，采用的也是  implements 和 `,` 分隔来实现
+
+```uts
+class Person{
+	name:string = ""
+}
+class User extends Person implements android.view.View.OnClickListener,Cloneable{
+	constructor(){
+		
+	}
+	
+	override onClick(v?: android.view.View):void{
+		console.log(v)
+	}
+	
+	override equals(other?: any):boolean{
+		return true
+	}
+}
+
+```
+
+编译后的kotlin代码
+
+```
+open class Person {
+    open var name: String = "";
+}
+open class User : Person, android.view.View.OnClickListener, Cloneable {
+    constructor(){}
+    override fun onClick(v: android.view.View?): Unit {
+        console.log(v, " at uni_modules/uts-helloworld/utssdk/index.uts:37");
+    }
+    override fun equals(other: Any?): Boolean {
+        return true;
+    }
+}
+```
+
 其中需要注意的是
 
 + 目前暂不支持匿名声明，需要先定义一个 StartBroadcastListener 声明实现 OnClickListener 后再显性的创建

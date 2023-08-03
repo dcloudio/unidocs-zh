@@ -30,7 +30,7 @@ unicloud-map云端一体组件，主要用于显示数据库里的自定义POI�
 
 #### 简易示例
 
-注意：由于组件是读取数据库表[opendb-poi](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-poi/collection.json)进行查询，若表不存在或表内没有POI数据，则不会显示POI
+注意：由于组件是读取数据库表[opendb-poi](https://gitee.com/dcloud/opendb/blob/master/collection/opendb-poi/collection.json)进行查询，若表不存在或表内没有POI数据，则不会显示POI，可以通过[unicloud-map-admin插件](unicloud-map-admin.md)管理POI信息
 
 ```vue
 <template>

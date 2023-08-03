@@ -28,18 +28,22 @@ const coffees = ["French Roast", "Colombian", "Kona"]
 
 #### 如何创建一个对象字面量
 
-我们在kotlin/swift 语言中使用`UTSJSONObject`作为载体实现了JS的这个规范，开发者可以正常使用字面量创建此对象
+1 我们在kotlin/swift 语言中使用`UTSJSONObject`作为载体实现了JS的这个规范，开发者可以正常使用字面量创建此对象
 
-```
+```uts
 // 创建对象
 let userA = {
 	name: "zhangsan",
 	age: 12
 }
 console.log(user)
+```
 
-// 创建数组TODO
+2 除了字面意思：字面量赋值之外，对象字面量还有一个来源是JSON.parse("xxx")
 
+```uts
+let arrayObj = JSON.parse('["a","b","c"]')
+console.log(arrayObj)
 ```
 
 ### 数字字面量

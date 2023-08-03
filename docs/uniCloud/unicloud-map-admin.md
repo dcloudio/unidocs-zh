@@ -52,6 +52,8 @@ unicloud-map-admin需要创建以下表后才能正常运行，可以右键插�
 
 需要配置地图key，打开`manifest.json`文件，点击Web配置，配置腾讯地图或高德地图任意一个即可
 
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/416.png)
+
 #### 添加和编辑POI时，点击选择地理位置，没有确认按钮？
 
 将以下代码添加到uni-admin的`/common/uni.css`文件最后一行

@@ -251,21 +251,21 @@ let resolveInfo = packageManager.queryIntentActivities(intent,0);
 这种情况下，我们建议的做法是将其先转换为UTS的Array对象再进行其他处理和操作
 
 ```ts
-let launcherList = UTSArray.fromNative(resolveInfo) 
+let launcherList = Array.fromNative(resolveInfo) 
 console.log(clothing.length);
 ```
 
 下面汇总了常用的转换场景和代码：
 
-##### 1 我有一个UTSArray 需要转换为其他类型
+##### 1 我有一个Array 需要转换为其他类型
 
 ```ts
 let utsArr= ["hello","world"]
 
-// UTSArray 转换 kotlin.collections.List
+// Array 转换 kotlin.collections.List
 let kotlinList = utsArr.toKotlinList()
 
-// UTSArray 转换 kotlin.Array
+// Array 转换 kotlin.Array
 let kotlinArray = utsArr.toTypedArray()
 
 ```
@@ -273,15 +273,15 @@ let kotlinArray = utsArr.toTypedArray()
 ##### 2 我有一个原生类数组类型 需要转成成UTS的Array
 
 ```ts
-// kotlin.collections.List 转换 UTSArray
+// kotlin.collections.List 转换 Array
 let utsArr= mutableListOf("hello","world")
-let kotlinList = UTSArray.fromNative(utsArr) 
+let kotlinList = Array.fromNative(utsArr) 
 ```
 
 ```ts
-// kotlin.Array 转换 UTSArray
+// kotlin.Array 转换 Array
 let utsArr= arrayOf("hello","world")
-let kotlinList = UTSArray.fromNative(utsArr)
+let kotlinList = Array.fromNative(utsArr)
 ```
 
 

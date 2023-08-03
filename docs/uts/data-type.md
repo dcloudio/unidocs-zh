@@ -47,7 +47,7 @@ kotlin 本身支持下列数据类型
 |Double  |64bit |4.9E-324     | 1.7976931348623157E308         |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
 
 
-**特有数字类型的使用场景**
+**kotlin平台数字类型使用实践**
 
 1. 在kotlin平台 `Number`是一个抽象类，编译时会自动选择合适的数据类型来填充，因此大多数场景下，开发者都应该使用 字面量（即Number类型），可以降低心智负担
 2. 基本数据类型会有jvm编译魔法加持，在涉及大量科学运算的情况下，计算速度和内存占用会有优化。kotlin 会把  Int / Double 等来非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持  [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm) 如果涉及大量运算，建议开发者不要使用 Number、Int? ，要明确使用 Int等类型

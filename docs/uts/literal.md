@@ -25,7 +25,6 @@ const coffees = ["French Roast", "Colombian", "Kona"]
 在JS中，对象字面值是封闭在花括号对（{}）中的一个对象的零个或多个“属性名—值”对的（元素）列表。
 
 
-
 #### 如何创建一个对象字面量
 
 1 我们在kotlin/swift 语言中使用`UTSJSONObject`作为载体实现了JS的这个规范，开发者可以正常使用字面量创建此对象
@@ -39,12 +38,53 @@ let userA = {
 console.log(user)
 ```
 
-2 除了字面意思：字面量赋值之外，对象字面量还有一个来源是JSON.parse("xxx")
+2 除了字面意思：字面量赋值之外，对象字面量还有一个来源是`JSON.parse("xxx")` 将字符串转换为对象
 
 ```uts
 let arrayObj = JSON.parse('["a","b","c"]')
 console.log(arrayObj)
 ```
+
+这里要介绍一个比较有用的做法，比如我有一个类型对象，可以通过`JSON.stringify`得到序列化后的字符串，再通过`JSON.parse("xxx")`的方式，将其转换为对象
+```
+type User{
+	name:string = ""
+	age:number = 0
+}
+
+let jsonObject = JSON.parse(JSON.stringify(new User()))
+```
+
+
+#### 如何使用对象字面量
+
+在传统JS中，对象字面量的返回结果就是一个通用的object. 但是在 kotlin / swift 它是一个 支持下标访问，成员迭代等特性的看上去像是一个`object`的 `UTSJSONObject`实现。
+
+我们可以使用下标、成员名称直接访问:
+```uts
+let arrayObj = JSON.parse('["a","b","c"]')
+console.log(arrayObj[0])
+
+let userA = {
+	name: "zhangsan",
+	age: 12
+}
+console.log(user['name'])
+```
+
+也可以将其转换为Map对象，再实现遍历
+```
+let userA = {
+	name: "zhangsan",
+	age: 12
+}
+let userMap = userA.toMap()
+userMap.forEach(function(key:string,value:any){
+    console.log(key)
+    console.log(value)
+})
+```
+
 
 ### 数字字面量
 

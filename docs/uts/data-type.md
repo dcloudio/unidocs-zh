@@ -158,6 +158,26 @@ number内置对象还有一些API，[详见](buildin-object-api/number.md)
 
 字符串是一串表示文本值的字符序列，例如：`"hello world"`。
 
+- 在 swift(app-ios) 和 NSString 互转
+
+在app-ios平台上，某些系统API或者三方库API可能使用NSString类型的字符串参数或者返回值。在需要时可以按照下面的方法进行转换：
+
+```ts
+// String 类型字符串转成 NSString 类型字符串
+let str = "abcd"
+// 方式一：
+let str1 = NSString(string=str)
+// 方式二：
+let str2 = str as NSString
+
+// NSString 类型字符串转成 String 类型字符串
+let str3 = NSString(string="123")
+// 方式一：
+let str4 = String(str3)
+// 方式二：
+let str5 = str3 as string
+```
+
 边界情况说明：
 
 - 在不同平台上，字符串的长度限制不同，超出限制会导致相应的错误或异常

@@ -133,6 +133,10 @@ num.toInt() //将number 变量 num 转换为 Int 类型
 num.toFloat() //将number 变量 num 转换为 float 类型
 num.toInt64() // 将number 变量 num 转换为 Int64 类型
 
+// 特定类型转成number
+let f: Float = 5.0
+let n = Number(f)
+
 // 特定类型转成其他的特定类型
 let a:Int = 3
 let b = new Double(a) // 将整型变量 a 转换为 Double 类型

@@ -25,9 +25,11 @@ let c = 42
 let d = 3.14159
 ```
 
-注意：UTS中 number 是默认数字类型，书写的字面量如果没有特别指定类型会自动识别为 number。
+注意：
+目前版本书写的数字字面量没有指定类型会按平台语言自动推导为相应的类型，如 let c = 42，编译为 kotlin 和 swift 时自动推导为 Int 类型。
+新版本将会调整数字字面量默认为 number 类型，即书写的字面量如果没有特别指定类型会自动识别为 number，要声明平台语言的数组类型，需显示指定类型，如 let c:Int = 42。
 
-除了 number，UTS 在Android和iOS设备上，也可以使用kotlin和swift的专用数字类型：
+除了 number 类型，UTS 在 Android 和 iOS 设备上，也可以使用 kotlin 和 swift 的专用数字类型：
 
 #### Kotlin 特有的数字类型 @Kotlin
 

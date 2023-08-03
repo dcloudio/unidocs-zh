@@ -50,12 +50,12 @@ kotlin 本身支持下列数据类型
 **kotlin平台数字类型使用实践**
 
 1. 在kotlin平台 `Number`是一个抽象类，编译时会自动选择合适的数据类型来填充，因此大多数场景下，开发者都应该使用 字面量（即Number类型），可以降低心智负担
-2. 基本数据类型会有jvm编译魔法加持，在涉及大量科学运算的情况下，计算速度和内存占用会有优化。kotlin 会把  Int / Double 等来非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持  [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm) 如果涉及大量运算，建议开发者不要使用 Number、Int? ，要明确使用 Int等类型
+2. 基本数据类型会有jvm编译魔法加持，在涉及大量科学运算的情况下，计算速度和内存占用会有优化。kotlin 会把  Int / Double 等来非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持。如果涉及大量运算，建议开发者不要使用 Number、Int? ，要明确使用 Int等类型 [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
 
 3. 在 kotlin 和 swift 中，有些系统API或三方SDK的入参或返回值的类型，强制约定了平台特有数字类型，此时无法使用number，需要使用下面列出方法进行转换
 
 
-所有的Number 都支持下列方法进行转换
+所有的Number 都支持下列方法进行转换（部分类库API使用java编写，其要求的java类型与下列kotlin类型完全一致，可以直接使用）：
 
 
 ```
@@ -72,8 +72,18 @@ toFloat(): Float
 toDouble(): Double
 ```
 
-部分类库API是使用java编写，要求的java类型与上述kotlin类型 完全一致，可以直接使用
+另外Number还具备下列函数进行整型的无符号转换，这部分API 在jvm上没有对应的原始数据类型，主要的使用场景是 色值处理等专业计算场景的`多平台拉齐`
 
+```
+toUByte(): UByte
+
+toUShort(): UShort
+
+toUInt(): UInt
+
+toULong(): ULong
+
+```
 
 
 #### Swift 特有的数字类型 @Swift

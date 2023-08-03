@@ -51,7 +51,7 @@ let userArrayArray = JSON.parse<Array<Persion>>('[{"name":"zhangsan","age":12},{
  
 我们得到了一个Person数组，甚至我们还可以把Person 扩展到几百条属性，或者在其中嵌套更多层数据结构，
 
-总之，带泛型的 `parse`函数，会大大提高我们反序列数据的效率，和工程健壮度
+总结：带泛型的 `parse`函数，会提高我们反序列数据的开发效率，明确的结构数据可以提升工程健壮度，推荐使用
 
 
 

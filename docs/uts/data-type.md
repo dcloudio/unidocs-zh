@@ -49,11 +49,27 @@ kotlin 本身支持下列数据类型
 
 **特有数字类型的使用场景**
 
-大多数场景下，开发者使用 字面量（即Number类型）就可以满足需要，但是也有需要特有数字类型的场景。
+1. 在kotlin平台 `Number`是一个抽象类，编译时会自动选择合适的数据类型来填充，因此大多数场景下，开发者都应该使用 字面量（即Number类型），可以降低心智负担
+2. 基本数据类型会有jvm编译魔法加持，在涉及大量科学运算的情况下，计算速度和内存占用都会有优化。kotlin 会把  Int / Double 等来非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持  [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
 
-1. 在 kotlin 和 swift 中，有些系统API或三方SDK的入参或返回值的类型，强制约定了平台特有数字类型，此时无法使用number。
-2. number 作为泛数字，性能还是弱于Int。在普通计算中无法体现出差异，但在千万次运算后，累计会产生毫秒级速度差异。
+3. 在 kotlin 和 swift 中，有些系统API或三方SDK的入参或返回值的类型，强制约定了平台特有数字类型，此时无法使用number，需要使用下面列出方法进行转换
 
+
+所有的Number 都支持下列方法进行转换
+
+```
+toByte(): Byte
+
+toShort(): Short
+
+toInt(): Int
+
+toLong(): Long
+
+toFloat(): Float
+
+toDouble(): Double
+```
 
 #### Swift 特有的数字类型 @Swift
 

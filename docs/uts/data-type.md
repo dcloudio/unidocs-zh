@@ -272,7 +272,7 @@ let resolveInfo = packageManager.queryIntentActivities(intent,0);
 
 上面的代码向系统查询了有多少应用可以响应 `launcher`行为 ，返回的 resolveInfo 是一个 `List<ResolveInfo>`。
 
-这种情况下，我们建议的做法是将其先转换为UTS的Array对象再进行其他处理和操作
+这种情况下，我们可以将其先转换为UTS的Array对象再进行其他处理和操作
 
 ```ts
 let launcherList = Array.fromNative(resolveInfo) 

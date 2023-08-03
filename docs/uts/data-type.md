@@ -57,6 +57,7 @@ kotlin 本身支持下列数据类型
 
 所有的Number 都支持下列方法进行转换
 
+
 ```
 toByte(): Byte
 
@@ -70,6 +71,10 @@ toFloat(): Float
 
 toDouble(): Double
 ```
+
+部分类库API是使用java编写，要求的java类型与上述kotlin类型 完全一致，可以直接使用
+
+
 
 #### Swift 特有的数字类型 @Swift
 

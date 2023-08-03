@@ -43,8 +43,8 @@ kotlin 本身支持下列数据类型
 |UInt    |32bit |0            |4294967295     |整型|
 |Long    |64bit |-9223372036854775808 |9223372036854775807     |整型|
 |ULong   |64bit |0            |9223372036854775807 * 2 + 1     |整型|
-|Float   |32bit |1.4E-45F     |3.4028235E38F                   |浮点型|
-|Double  |64bit |4.9E-324     | 1.7976931348623157E308         |浮点型|
+|Float   |32bit |1.4E-45F     |3.4028235E38F                   |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
+|Double  |64bit |4.9E-324     | 1.7976931348623157E308         |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
 
 
 **特有数字类型的使用场景**

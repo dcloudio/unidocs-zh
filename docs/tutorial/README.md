@@ -6,8 +6,7 @@
 uni-app代码编写，基本语言包括js、vue、css。以及ts、scss等css预编译器。
 uni-app code writing, the basic language includes js, vue, css. And css precompilers such as ts and scss.
 
-在app端，还支持原生渲染的[nvue](nvue-outline.md)，以及可以编译为kotlin和swift的[uts](syntax-uts.md)。
-On the app side, it also supports [nvue](nvue-outline.md) for native rendering, and [uts](syntax-uts.md) that can be compiled into kotlin and swift.
+在app端，还支持原生渲染的[nvue](nvue-outline.md)，以及可以编译为kotlin和swift的[uts](/uts/)。
 
 DCloud还提供了使用js编写服务器代码的uniCloud云引擎。所以只需掌握js，你可以开发web、Android、iOS、各家小程序以及服务器等全栈应用。
 DCloud also provides the uniCloud cloud engine that uses js to write server code. So as long as you master js, you can develop full-stack applications such as web, Android, iOS, various MiniApp, and servers.

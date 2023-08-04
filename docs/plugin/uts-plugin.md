@@ -29,8 +29,7 @@ It can be compiled into programming languages for different platforms, such as:
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 uts adopts the same syntax specification as ts and supports most ES6 APIs.
 
-如需详细了解uts语法，另见[uts语法介绍](../tutorial/syntax-uts.md)
-For details on uts syntax, see also [uts syntax introduction](../tutorial/syntax-uts.md)
+如需详细了解uts语法，另见[uts语法介绍](/uts/)
 
 ### 什么是uts插件
 ### What is uts plugin

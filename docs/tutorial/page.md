@@ -69,9 +69,7 @@ When you delete a page, you need to do two things:
 |onPageScroll|监听页面滚动，参数为Object|nvue暂不支持||
 | onPageScroll| Listen to page scrolling with the parameter of Object| not supported by nvue temporarily| |
 |onNavigationBarButtonTap|监听原生标题栏按钮点击事件，参数为Object|App、H5||
-| onNavigationBarButtonTap| Listen to the click event of native title bar button with the parameter of Object| App, H5| |
-|onBackPress|监听页面返回，返回 event = {from:backbutton、 navigateBack} ，backbutton 表示来源是左上角返回按钮或 android 返回键；navigateBack表示来源是 uni.navigateBack ；详细说明及使用：[onBackPress 详解](http://ask.dcloud.net.cn/article/35120)。支付宝小程序只有真机能触发，只能监听非navigateBack引起的返回，不可阻止默认行为。|app、H5、支付宝小程序||
-|onBackPress|Monitor page return, return event = {from:backbutton, navigateBack} , backbutton means the source is the upper left back button or android return key; navigateBack means the source is uni.navigateBack; detailed description and usage: [onBackPress detailed](http ://ask.dcloud.net.cn/article/35120). The Alipay applet can only be triggered by real functions, and can only monitor the return caused by non-navigateBack, and cannot prevent the default behavior. |app, H5, Alipay applet||
+|onBackPress|监听页面返回，返回 event = {from:backbutton、 navigateBack} ，backbutton 表示来源是左上角返回按钮或 android 返回键；navigateBack表示来源是 uni.navigateBack；[详见](#onbackpress)|app、H5、支付宝小程序||
 |onNavigationBarSearchInputChanged|监听原生标题栏搜索输入框输入内容变化事件|App、H5|1.6.0|
 | onNavigationBarSearchInputChanged| Listen to the input content change event of search input box of the native title bar| App, H5| 1.6.0|
 |onNavigationBarSearchInputConfirmed|监听原生标题栏搜索输入框搜索事件，用户点击软键盘上的“搜索”按钮时触发。|App、H5|1.6.0|
@@ -83,8 +81,10 @@ When you delete a page, you need to do two things:
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
 | onAddToFavorites|Monitor users click on the upper right corner to save|WeChat MiniApp, QQ MiniApp| 2.8.1+|
 
-`onInit`使用注意
-`onInit` use note
+### onInit
+
+**注意**
+
 - 仅百度小程序基础库 3.260 以上支持 onInit 生命周期
 - Only Baidu Mini Program base library 3.260 and above supports onInit life cycle
 - 其他版本或平台可以同时使用 onLoad 生命周期进行兼容，注意避免重复执行相同逻辑
@@ -92,26 +92,24 @@ When you delete a page, you need to do two things:
 - 不依赖页面传参的逻辑可以直接使用 created 生命周期替代
 - The logic that does not depend on page parameters can be replaced directly by the created life cycle
 
-`onReachBottom`使用注意
-`onReachBottom` use attention
-可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pages#globalstyle)，比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
-You can define the trigger distance at the bottom of a specific page in pages.json [onReachBottomDistance](/collocation/pages#globalstyle), for example, set it to 50, then when the page is scrolled to a distance of 50px from the bottom, the onReachBottom event will be triggered.
+### onReachBottom
 
-如使用scroll-view导致页面没有滚动，则触底事件不会被触发。scroll-view滚动到底部的事件请参考scroll-view的文档
-If using scroll-view causes no scrolling in the page, the scrolling to the bottom event will not be triggered. Please refer to the documentation of scroll-view for the scrolling to the bottom event of scroll-view
-
-
-`onPageScroll` （监听滚动、滚动监听、滚动事件）参数说明：
-`onPageScroll` (scroll, scroll listener, scroll event) parameter description:
+**参数说明**
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
 |---|---|---|
 |scrollTop|Number|页面在垂直方向已滚动的距离（单位px）|
-| scrollTop| Number| The distance (in px) that the page has scrolled over vertically|
+```js
+onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代替
+	console.log("滚动距离为：" + e.scrollTop);
+},
+```
 
 **注意**
-**Notice**
+
+- 可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pages#globalstyle)，比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
+- 如使用scroll-view导致页面没有滚动，则触底事件不会被触发。scroll-view滚动到底部的事件请参考scroll-view的文档
 - `onPageScroll`里不要写交互复杂的js，比如频繁修改页面。因为这个生命周期是在渲染层触发的，在非h5端，js是在逻辑层执行的，两层之间通信是有损耗的。如果在滚动过程中，频发触发两层之间的数据交换，可能会造成卡顿。
 - Don not write js with complicated interactions in `onPageScroll`, such as frequently modifying pages. Since this life cycle is triggered in the rendering layer and on the non-h5 side, js is executed in the logical layer, and the communication between the two layers is lossy. If the data exchange between the two layers is frequently triggered during the rolling process, it may cause a lag.
 - 如果想实现滚动时标题栏透明渐变，在App和H5下，可在pages.json中配置titleNView下的type为transparent，[参考](https://uniapp.dcloud.io/collocation/pages?id=app-titlenview)。
@@ -119,18 +117,33 @@ If using scroll-view causes no scrolling in the page, the scrolling to the botto
 - 如果需要滚动吸顶固定某些元素，推荐使用css的粘性布局，参考[插件市场](https://ext.dcloud.net.cn/plugin?id=715)。插件市场也有其他js实现的吸顶插件，但性能不佳，需要时可自行搜索。
 - If scrolling sticky is required to secure certain elements, it is recommended to use the sticky layout of css, refer to the [Plug-in market](https://ext.dcloud.net.cn/plugin?id=715). There are also other top-docking plug-ins based on js in the plug-in market but poor in performance. You can search by yourselves if necessary.
 - 在App、微信小程序、H5中，也可以使用wxs监听滚动，[参考](https://uniapp.dcloud.io/tutorial/miniprogram-subject#wxs)；在app-nvue中，可以使用bindingx监听滚动，[参考](https://uniapp.dcloud.io/tutorial/nvue-api#nvue-里使用-bindingx)。
-- In App, WeChat applet, H5, you can also use wxs to monitor scrolling, [Reference](https://uniapp.dcloud.io/tutorial/miniprogram-subject#wxs); in app-nvue, you can use bindingx Monitor scroll, [reference](https://uniapp.dcloud.io/tutorial/nvue-api#nvue-%E9%87%8C%E4%BD%BF%E7%94%A8-bindingx).
-- `onBackPress`上不可使用`async`，会导致无法阻止默认返回
-- `async` is not available on `onBackPress`, which will prevent the default return
 
-```js
-onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代替
-	console.log("滚动距离为：" + e.scrollTop);
-},
+
+### onBackPress
+
+**参数说明**
+
+|属性|类型|说明|
+|---|---|---|
+|from|String|触发返回行为的来源：'backbutton'——左上角导航栏按钮及安卓返回键；'navigateBack'——uni.navigateBack() 方法。**支付宝小程序端不支持返回此字段**|
+```javascript
+export default {
+	onBackPress(options) {
+		console.log('from:' + options.from)
+	}
+}
 ```
 
-`onTabItemTap` 返回的json对象说明：
-Description of the json object returned by `onTabItemTap`:
+**注意**
+
+- `onBackPress`上不可使用`async`，会导致无法阻止默认返回
+- 支付宝小程序只有真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
+
+详细说明及使用：[onBackPress 详解](http://ask.dcloud.net.cn/article/35120)
+
+### onTabItemTap
+
+**参数说明**
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
@@ -142,15 +155,6 @@ Description of the json object returned by `onTabItemTap`:
 |text|String|被点击tabItem的按钮文字|
 | text| String| The buttom text of the clicked tabItem|
 
-**注意**
-**Notice**
-- onTabItemTap常用于点击当前tabitem，滚动或刷新当前页面。如果是点击不同的tabitem，一定会触发页面切换。
-- onTabItemTap is often used to click the current tabitem and scroll or refresh the current page. If you click another tabitem, it will definitely trigger page switching.
-- 如果想在App端实现点击某个tabitem不跳转页面，不能使用onTabItemTap，可以使用[plus.nativeObj.view](http://www.html5plus.org/doc/zh_cn/nativeobj.html)放一个区块盖住原先的tabitem，并拦截点击事件。
-- If you want to click a tabitem on the App side without jumping to the page, you cannot use onTabItemTap, you can use [plus.nativeObj.view](http://www.html5plus.org/doc/zh_cn/nativeobj.html) to put a The block covers the original tabitem and intercepts click events.
-- 支付宝小程序平台onTabItemTap表现为点击非当前tabitem后触发，因此不能用于实现点击返回顶部这种操作
-- The onTabItemTap of the Alipay applet platform appears to be triggered after clicking on a non-current tabitem, so it cannot be used to realize the operation of clicking to return to the top
-
 ```js
 onTabItemTap : function(e) {
 	console.log(e);
@@ -159,8 +163,15 @@ onTabItemTap : function(e) {
 },
 ```
 
-`onNavigationBarButtonTap` 参数说明：
-`onNavigationBarButtonTap` parameter description:
+**注意**
+
+- onTabItemTap常用于点击当前tabitem，滚动或刷新当前页面。如果是点击不同的tabitem，一定会触发页面切换。
+- 如果想在App端实现点击某个tabitem不跳转页面，不能使用onTabItemTap，可以使用[plus.nativeObj.view](http://www.html5plus.org/doc/zh_cn/nativeobj.html)放一个区块盖住原先的tabitem，并拦截点击事件。
+- 支付宝小程序平台onTabItemTap表现为点击非当前tabitem后触发，因此不能用于实现点击返回顶部这种操作
+
+### onNavigationBarButtonTap
+
+**参数说明**
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
@@ -176,32 +187,10 @@ onNavigationBarButtonTap : function (e) {
 }
 ```
 
-`onBackPress` 回调参数对象说明：
-Description of `onBackPress` callback parameter object:
-
-|属性|类型|说明|
-| Attribute| Type| Instruction|
-|---|---|---|
-|from|String|触发返回行为的来源：'backbutton'——左上角导航栏按钮及安卓返回键；'navigateBack'——uni.navigateBack() 方法。**支付宝小程序端不支持返回此字段**|
-|from|String|The source of triggering the return behavior: 'backbutton'——the upper left navigation bar button and Android back button; 'navigateBack'——uni.navigateBack() method. **Alipay applet does not support returning this field**|
-```javascript
-export default {
-	data() {
-		return {};
-	},
-	onBackPress(options) {
-		console.log('from:' + options.from)
-	}
-}
-```
-
 **注意**
 **Notice**
 
 - nvue 页面weex编译模式支持的生命周期同weex，具体参考：[weex生命周期介绍](https://uniapp.dcloud.io/tutorial/nvue-outline?id=%e7%bc%96%e8%af%91%e6%a8%a1%e5%bc%8f)。
-- The life cycle supported by the weex compilation mode of the nvue page is the same as that of weex. For details, please refer to: [Weex Life Cycle Introduction](https://uniapp.dcloud.io/tutorial/nvue-outline?id=%e7%bc%96%e8% af%91%e6%a8%a1%e5%bc%8f).
-- 支付宝小程序真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
-- The real Alipay applet can monitor the return event not triggered by `navigateBack` (`onBackPress` will not be triggered when using the applet development tool), and cannot prevent the default return behavior
 
 ## 组件生命周期@componentlifecycle
 ## Component life cycle@componentlifecycle
@@ -516,6 +505,11 @@ Further reading:
 
 `uni-app` 有两种页面路由跳转方式：使用[navigator](/component/navigator)组件跳转、调用[API](/api/router)跳转。
 `uni-app` has two ways to jump to page routing: use [navigator](/component/navigator) component to jump, and call [API](/api/router) to jump.
+
+**注意**：
+
+页面返回时会自动关闭 loading 及 toast, modal 及 actionSheet 不会自动关闭。\
+页面关闭时，只是销毁了页面实例，未完成的网络请求、计时器等副作用需开发者自行处理。
 
 ## 页面栈
 ## page stack

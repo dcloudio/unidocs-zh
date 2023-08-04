@@ -10,8 +10,7 @@ Readers are required to have Android native application development experience.
 ## 1 了解UTS插件是什么
 ## 1 Understand what the UTS plugin is
 
-`UTS插件`是`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点。[详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
-`UTS plug-in` is a new plug-in form of `uni-app`, which has the advantages of cross-platform, high efficiency, and easy debugging. [Details](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
+`UTS插件`是`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点。[详情](/plugin/uts-plugin)
 
 对于Android开发者来说，我们需要了解的是：
 For Android developers, what we need to know is:
@@ -27,8 +26,7 @@ For Android developers, what we need to know is:
 ### 2.1  对于掌握kotlin语言者
 ### 2.1 For those who master the kotlin language
 
-因为UTS语法与kotlin很类似，建议快速阅读后，在实践中掌握这UTS语法。[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/syntax-uts)。
-Because the UTS syntax is very similar to kotlin, it is recommended to master the UTS syntax in practice after a quick reading. [Introduction to uts grammar](https://uniapp.dcloud.net.cn/tutorial/syntax-uts).
+因为UTS语法与kotlin很类似，建议快速阅读后，在实践中掌握这UTS语法。[uts语法介绍](/uts/)。
 
 ### 2.2  对于仅掌握java语言者
 ### 2.2 For those who only master the java language
@@ -1526,6 +1524,45 @@ class User {
 let btn_start_screen_listen = this.findViewById<Button>(R.id.btn_start_screen_listen);
 btn_start_screen_listen.setOnClickListener(new StartBroadcastListener());
  ```
+
+如果要同时实现多个接口，采用的也是  implements 和 `,` 分隔来实现
+
+```uts
+class Person{
+	name:string = ""
+}
+class User extends Person implements android.view.View.OnClickListener,Cloneable{
+	constructor(){
+		
+	}
+	
+	override onClick(v?: android.view.View):void{
+		console.log(v)
+	}
+	
+	override equals(other?: any):boolean{
+		return true
+	}
+}
+
+```
+
+编译后的kotlin代码
+
+```
+open class Person {
+    open var name: String = "";
+}
+open class User : Person, android.view.View.OnClickListener, Cloneable {
+    constructor(){}
+    override fun onClick(v: android.view.View?): Unit {
+        console.log(v, " at uni_modules/uts-helloworld/utssdk/index.uts:37");
+    }
+    override fun equals(other: Any?): Boolean {
+        return true;
+    }
+}
+```
 
 其中需要注意的是
 

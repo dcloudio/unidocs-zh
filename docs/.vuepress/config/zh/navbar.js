@@ -38,6 +38,11 @@ export const navbar = [
         link: '/api/'
       },
       {
+        text: 'UTS',
+        type: 'link',
+        link: '/uts/'
+      },
+      {
         text: '插件',
         type: 'link',
         link: '/plugin/'

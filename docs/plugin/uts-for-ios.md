@@ -9,8 +9,7 @@ Readers are required to have iOS native application development experience.
 ## 1 了解 UTS 插件是什么
 ## 1 Understanding what the UTS plugin is
 
-UTS 插件是 uni-app 新型插件形式 [详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
-UTS plug-in is a new plug-in form of uni-app [Details](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
+UTS 插件是 uni-app 新型插件形式 [详情](/plugin/uts-plugin)
 
 对于 iOS 开发者来说，我们需要了解的是：
 For iOS developers, what we need to know is:
@@ -26,8 +25,7 @@ For iOS developers, what we need to know is:
 ### 2.1  对于掌握 swift 语言者
 ### 2.1 For those who master the swift language
 
-因为 UTS 语法与 swift 较类似，建议快速阅读后，在实践中掌握 UTS 语法。[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/syntax-uts)。
-Because UTS syntax is similar to swift, it is recommended to master UTS syntax in practice after a quick reading. [Introduction to uts grammar](https://uniapp.dcloud.net.cn/tutorial/syntax-uts).
+因为 UTS 语法与 swift 较类似，建议快速阅读后，在实践中掌握 UTS 语法。[uts语法介绍](/uts/)。
 
 ### 2.2  对于仅掌握`objective-c`语言者
 ### 2.2 For those who only master the `objective-c` language

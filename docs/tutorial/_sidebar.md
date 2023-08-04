@@ -45,9 +45,7 @@
 * [ts/typescript 专题](/tutorial/typescript-subject.md)
 * [ts/typescript subject](/tutorial/typescript-subject.md)
 * [jsx/tsx 语法](/tutorial/syntax-jsx.md)
-* [jsx/tsx syntax](/tutorial/syntax-jsx.md)
-* [uts语法](syntax-uts.md)
-* [uts syntax](syntax-uts.md)
+* [uts语法](/uts/)
 * 编译器（条件编译）
 * Compiler (conditional compilation)
   * [什么是编译器](/tutorial/compiler.md)

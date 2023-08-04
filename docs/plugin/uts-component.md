@@ -33,8 +33,7 @@ This article focuses on how to package a native UI as a UTS component on app-and
 继续阅读文档前，开发者需要了解以下前置条件：
 Before continuing to read the documentation, developers need to understand the following prerequisites:
 
-- 了解 [uts语法](../tutorial/syntax-uts.md) 和 [uts原生插件](uts-plugin.md)
-- Learn about [uts syntax](../tutorial/syntax-uts.md) and [uts native plugin](uts-plugin.md)
+- 了解 [uts语法](/uts/) 和 [uts原生插件](uts-plugin.md)
 - 了解 [Vue组件](../tutorial/vue3-components.md)
 - Learn about [Vue Components](../tutorial/vue3-components.md)
 

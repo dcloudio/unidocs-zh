@@ -860,17 +860,15 @@ await uniIdCo.loginBySms({
 **参数说明**
 **Parameter Description**
 
-|参数名		|类型	|必填	|说明					|
-|Parameter Name |Type |Required |Description |
-|--			|--		|--		|--						|
-|mobile		|string	|是		|手机号					|
-|mobile |string |yes |mobile number |
-|code		|string	|是		|短信验证码				|
-|code |string |Yes |SMS verification code |
-|captcha	|string	|否		|图形验证码				|
-|captcha |string |no |graphic captcha |
+|参数名			|类型		|必填	|说明									|
+|--					|--			|--		|--										|
+|mobile			|string	|是		|手机号								|
+|code				|string	|是		|短信验证码						|
+|captcha		|string	|否		|图形验证码						|
 |inviteCode	|string	|否		|邀请码，仅注册时生效	|
 |inviteCode |string |No |Invite Code, only valid when registering |
+
+两小时内登录失败3次的用户必填图形验证码，如果客户端没有使用uni-id-pages，可以参考uni-id-pages验证码登录页面的相关逻辑。
 
 **返回值**
 **return value**

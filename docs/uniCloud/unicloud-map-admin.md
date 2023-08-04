@@ -8,7 +8,21 @@ unicloud-map-admin是[unicloud-map](unicloud-map.md)组件的admin插件，提�
 
 运行效果图
 
+查看POI列表
+
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/412.png)
+
+可视化编辑POI
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/420.png)
+
+地图选点
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/421.png)
+
+客户端显示效果
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/409.png)
 
 ### 使用教程
 

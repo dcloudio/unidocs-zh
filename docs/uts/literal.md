@@ -1,6 +1,6 @@
 ## 字面量
 
-字面量是js的传统概念，[mdn的字面量文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Grammar_and_types#%E5%AD%97%E9%9D%A2%E9%87%8F)
+字面量是js的传统概念（[MDN的字面量文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Grammar_and_types#%E5%AD%97%E9%9D%A2%E9%87%8F)）
 
 字面量，即按字面意思给出的固定的值，而不是变量。
 

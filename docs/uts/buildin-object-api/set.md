@@ -11,7 +11,7 @@ Set 对象是值的集合，你可以按照插入的顺序迭代它的元素。S
 
 <!-- UTSJSON.Set.size.param -->
 
-<!-- UTSJSON.Set.size.returValue -->
+<!-- UTSJSON.Set.size.returnValue -->
 ```ts
 const set1 = new Set<Any>();
 
@@ -34,7 +34,7 @@ console.log(set1.size);
 
 <!-- UTSJSON.Set.add.param -->
 
-<!-- UTSJSON.Set.add.returValue -->
+<!-- UTSJSON.Set.add.returnValue -->
 
 ```ts
 const set1 = new Set<number>();
@@ -55,7 +55,7 @@ set1.forEach((item)=>{
 
 <!-- UTSJSON.Set.clear.param -->
 
-<!-- UTSJSON.Set.clear.returValue -->
+<!-- UTSJSON.Set.clear.returnValue -->
 ```ts
 const set1 = new Set<any>();
 set1.add(1);
@@ -74,7 +74,7 @@ console.log(set1.size);
 
 <!-- UTSJSON.Set.delete.param -->
 
-<!-- UTSJSON.Set.delete.returValue -->
+<!-- UTSJSON.Set.delete.returnValue -->
 ```ts
 const map1 = new Map<string,string>();
 map1.set('bar', 'foo');
@@ -92,7 +92,7 @@ console.log(map1.has('bar'));
 
 <!-- UTSJSON.Set.forEach.param -->
 
-<!-- UTSJSON.Set.forEach.returValue -->
+<!-- UTSJSON.Set.forEach.returnValue -->
 ```ts
 const set1 = new Set<number>([42, 13]);
 set1.forEach((item)=>{
@@ -109,7 +109,7 @@ set1.forEach((item)=>{
 
 <!-- UTSJSON.Set.has.param -->
 
-<!-- UTSJSON.Set.has.returValue -->
+<!-- UTSJSON.Set.has.returnValue -->
 
 ```ts
 const set1 = new Set<number>([1, 2, 3, 4, 5]);

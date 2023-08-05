@@ -46,7 +46,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.toString.param -->
 
-<!-- UTSJSON.Date.toString.returValue -->
+<!-- UTSJSON.Date.toString.returnValue -->
 
 <!-- UTSJSON.Date.toString.compatibility -->
 
@@ -56,7 +56,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.toDateString.param -->
 
-<!-- UTSJSON.Date.toDateString.returValue -->
+<!-- UTSJSON.Date.toDateString.returnValue -->
 
 <!-- UTSJSON.Date.toDateString.compatibility -->
 
@@ -66,7 +66,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getTime.param -->
 
-<!-- UTSJSON.Date.getTime.returValue -->
+<!-- UTSJSON.Date.getTime.returnValue -->
 
 <!-- UTSJSON.Date.getTime.compatibility -->
 
@@ -76,7 +76,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getFullYear.param -->
 
-<!-- UTSJSON.Date.getFullYear.returValue -->
+<!-- UTSJSON.Date.getFullYear.returnValue -->
 
 <!-- UTSJSON.Date.getFullYear.compatibility -->
 
@@ -86,7 +86,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getMonth.param -->
 
-<!-- UTSJSON.Date.getMonth.returValue -->
+<!-- UTSJSON.Date.getMonth.returnValue -->
 
 <!-- UTSJSON.Date.getMonth.compatibility -->
 
@@ -96,7 +96,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getDate.param -->
 
-<!-- UTSJSON.Date.getDate.returValue -->
+<!-- UTSJSON.Date.getDate.returnValue -->
 
 <!-- UTSJSON.Date.getDate.compatibility -->
 
@@ -106,7 +106,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getDay.param -->
 
-<!-- UTSJSON.Date.getDay.returValue -->
+<!-- UTSJSON.Date.getDay.returnValue -->
 
 <!-- UTSJSON.Date.getDay.compatibility -->
 
@@ -116,7 +116,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getHours.param -->
 
-<!-- UTSJSON.Date.getHours.returValue -->
+<!-- UTSJSON.Date.getHours.returnValue -->
 
 <!-- UTSJSON.Date.getHours.compatibility -->
 
@@ -126,7 +126,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getMinutes.param -->
 
-<!-- UTSJSON.Date.getMinutes.returValue -->
+<!-- UTSJSON.Date.getMinutes.returnValue -->
 
 <!-- UTSJSON.Date.getMinutes.compatibility -->
 
@@ -136,7 +136,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getSeconds.param -->
 
-<!-- UTSJSON.Date.getSeconds.returValue -->
+<!-- UTSJSON.Date.getSeconds.returnValue -->
 
 <!-- UTSJSON.Date.getSeconds.compatibility -->
 
@@ -146,7 +146,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setTime.param -->
 
-<!-- UTSJSON.Date.setTime.returValue -->
+<!-- UTSJSON.Date.setTime.returnValue -->
 
 <!-- UTSJSON.Date.setTime.compatibility -->
 
@@ -156,7 +156,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setMilliseconds.param -->
 
-<!-- UTSJSON.Date.setMilliseconds.returValue -->
+<!-- UTSJSON.Date.setMilliseconds.returnValue -->
 
 <!-- UTSJSON.Date.setMilliseconds.compatibility -->
 
@@ -166,7 +166,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setSeconds.param -->
 
-<!-- UTSJSON.Date.setSeconds.returValue -->
+<!-- UTSJSON.Date.setSeconds.returnValue -->
 
 <!-- UTSJSON.Date.setSeconds.compatibility -->
 
@@ -176,7 +176,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setMinutes.param -->
 
-<!-- UTSJSON.Date.setMinutes.returValue -->
+<!-- UTSJSON.Date.setMinutes.returnValue -->
 
 <!-- UTSJSON.Date.setMinutes.compatibility -->
 
@@ -186,7 +186,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setHours.param -->
 
-<!-- UTSJSON.Date.setHours.returValue -->
+<!-- UTSJSON.Date.setHours.returnValue -->
 
 <!-- UTSJSON.Date.setHours.compatibility -->
 
@@ -196,7 +196,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setDate.param -->
 
-<!-- UTSJSON.Date.setDate.returValue -->
+<!-- UTSJSON.Date.setDate.returnValue -->
 
 <!-- UTSJSON.Date.setDate.compatibility -->
 
@@ -206,7 +206,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setMonth.param -->
 
-<!-- UTSJSON.Date.setMonth.returValue -->
+<!-- UTSJSON.Date.setMonth.returnValue -->
 
 <!-- UTSJSON.Date.setMonth.compatibility -->
 
@@ -216,6 +216,6 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setFullYear.param -->
 
-<!-- UTSJSON.Date.setFullYear.returValue -->
+<!-- UTSJSON.Date.setFullYear.returnValue -->
 
 <!-- UTSJSON.Date.setFullYear.compatibility -->

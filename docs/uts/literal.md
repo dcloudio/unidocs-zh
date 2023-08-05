@@ -14,11 +14,10 @@
 let a = 1 // 这里的 1 ，就是字面量
 
 
-function getNameById(isMember: boolean): string{ 
-    return true
+function test(score): boolean {
+	return (score>=60) 
 }
-
-// 这里的 50，就是字面量
+test(61) // 这里的 61，就是字面量
 
 let name = "zhangsan" // 字符串"zhangsan"是字面量
 
@@ -37,7 +36,7 @@ const re = /ab+c/  // 正则字面量
 
 比如`let a = 1/10`，a会被自动推导成什么类型？是Int、double、还是number？值是0还是0.1？
 
-下面我们来详细介绍。
+下面我们来详细介绍每种字面量。
 
 
 ### 布尔字面量

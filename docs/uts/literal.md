@@ -1,103 +1,50 @@
 ## 字面量
 
-字面量是由语法表达式定义的常量；或通过由一定字词组成的语词表达式定义的常量。
+字面量是js的传统概念，[mdn的字面量文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Grammar_and_types#%E5%AD%97%E9%9D%A2%E9%87%8F)
 
-对于web开发者来说，这是一个传统概念，很好理解。
+字面量，即按字面意思给出的固定的值，而不是变量。
 
-对于原生开发者来说，之前并没有字面量的概念，我们可以理解 字面量就是一种变量赋值方式，只是它更加强大了，除了字符串,数组之外，还支持字面创建对象等复杂类型。
+比如 `5`、`"abc"`、`true`，都是字面量。
 
-```
-// 这是传统的变量赋值，是字面量赋值
-let name = "zhangsan"
-let nameArray = ["zhangsan","lisi"]
+字面量分：布尔字面量、数字字面量、字符串字面量、数组字面量、对象字面量、正则字面量。
 
-// 这也是字面量赋值
+举例：
+
+```js
+let a = 1 // 这里的 1 ，就是字面量
+
+
+function getNameById(isMember: boolean): string{ 
+    return true
+}
+
+// 这里的 50，就是字面量
+
+let name = "zhangsan" // 字符串"zhangsan"是字面量
+
+let nameArray = ["zhangsan","lisi"] // 数组是字面量
+
+// 对象字面量
 let user = {
 	name: "zhangsan",
 	age: 12
 }
+
+const re = /ab+c/  // 正则字面量
 ```
 
-### 数组字面量
+平时js开发者很少会关心字面量的概念，但因为 uts 中涉及字面量自动类型推导，如果不学习，很难搞清楚这些字面量被自动推导成什么类型。
 
-数组字面值是一个封闭在方括号对 (`[]`) 中的包含有零个或多个表达式的列表，其中每个表达式代表数组的一个元素。当你使用数组字面值创建一个数组时，该数组将会以指定的值作为其元素进行初始化，而其长度被设定为元素的个数。
+比如`let a = 1/10`，a会被自动推导成什么类型？是Int、double、还是number？值是0还是0.1？
 
-下面的示例用 3 个元素生成数组coffees，它的长度是 `3`。
+下面我们来详细介绍。
 
-```ts
-const coffees = ["French Roast", "Colombian", "Kona"]
-```
-
-数组字面值同时也是数组对象。
 
 ### 布尔字面量
 
 布尔类型有两种字面量：`true` 和 `false`。
 
-### 对象字面量
-
-在JS中，对象字面值是封闭在花括号对（{}）中的一个对象的零个或多个“属性名—值”对的（元素）列表。
-
-
-#### 如何创建一个对象字面量
-
-1 我们在kotlin/swift 语言中使用`UTSJSONObject`作为载体实现了JS的这个规范，开发者可以正常使用字面量创建此对象
-
-```uts
-// 创建对象
-let userA = {
-	name: "zhangsan",
-	age: 12
-}
-console.log(user)
-```
-
-2 除了字面意思：字面量赋值之外，对象字面量还有一个来源是`JSON.parse("xxx")` 将字符串转换为对象
-
-```uts
-let arrayObj = JSON.parse('["a","b","c"]')
-console.log(arrayObj)
-```
-
-这里要介绍一个比较有用的做法，比如我有一个类型对象，可以通过`JSON.stringify`得到序列化后的字符串，再通过`JSON.parse("xxx")`的方式，将其转换为对象
-```
-type User{
-	name:string = ""
-	age:number = 0
-}
-
-let jsonObject = JSON.parse(JSON.stringify(new User()))
-```
-
-
-#### 如何使用对象字面量
-
-在传统JS中，对象字面量的返回结果就是一个通用的object. 但是在 kotlin / swift 它是一个 支持下标访问，成员迭代等特性的看上去像是一个`object`的 `UTSJSONObject`实现。
-
-我们可以使用下标、成员名称直接访问:
-```uts
-let arrayObj = JSON.parse('["a","b","c"]')
-console.log(arrayObj[0])
-
-let userA = {
-	name: "zhangsan",
-	age: 12
-}
-console.log(user['name'])
-```
-
-也可以将其转换为Map对象，再实现遍历
-```
-let userA = {
-	name: "zhangsan",
-	age: 12
-}
-let userMap = userA.toMap()
-userMap.forEach(function(key:string,value:any){
-    console.log(key)
-    console.log(value)
-})
-```
+Boolean字面量的自动类型推导简单而统一，全平台必然被自动推导为布尔类型。
 
 
 ### 数字字面量
@@ -109,11 +56,11 @@ userMap.forEach(function(key:string,value:any){
 
 整数可以用十进制（基数为 10）、十六进制（基数为 16）、二进制（基数为 2）表示。
 
-- `十进制整数字面量`由一串数字序列组成，且没有前缀 0。如：`0, 117, -345`
+- `十进制整数字面量`由一串数字序列组成，且没有前缀 0。如：`0`, `117`, `-345`
 
-- `十六进制整数`以 0x（或 0X）开头，可以包含数字（0-9）和字母 a~f 或 A~F。如：`0x1123, 0x00111 , -0xF1A7`
+- `十六进制整数`以 0x（或 0X）开头，可以包含数字（0-9）和字母 a~f 或 A~F。如：`0x1123`, `0x00111` , `-0xF1A7`
 
-- `二进制整数`以 0b（或 0B）开头，只能包含数字 0 和 1。如：`0b11, 0b0011 , -0b11`
+- `二进制整数`以 0b（或 0B）开头，只能包含数字 0 和 1。如：`0b11`, `0b0011` , `-0b11`
 
 #### 浮点数字面量
 
@@ -141,13 +88,7 @@ userMap.forEach(function(key:string,value:any){
 .1e-23    // 0.1*10^(-23)=10^(-24)=1e-24
 ```
 
-### RegExp字面量
-
-正则表达式是字符被斜线围成的表达式。下面是一个正则表达式文字的一个例子。
-
-```ts
-const re = /ab+c/;
-```
+数字字面量的类型推导，[详见](data-type.md#@autotypefornumber)
 
 ### 字符串字面量
 
@@ -185,6 +126,7 @@ console.log("John's cat".length)
 var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 ```
+
 #### 转义特殊字符
 
 |字符	|意思		|
@@ -197,3 +139,90 @@ var name = "Bob", time = "today";
 |`\'`	|单引号		|
 |`\"`	|双引号		|
 |`\\`	|反斜杠字符	|
+
+
+### 数组字面量
+
+数组字面值是一个封闭在方括号对 (`[]`) 中的包含有零个或多个表达式的列表，其中每个表达式代表数组的一个元素。当你使用数组字面值创建一个数组时，该数组将会以指定的值作为其元素进行初始化，而其长度被设定为元素的个数。
+
+下面的示例用 3 个元素生成数组coffees，它的长度是 `3`。
+
+```js
+const coffees = ["French Roast", "Colombian", "Kona"]
+```
+
+数组字面值同时也是数组对象。
+
+
+### 对象字面量
+
+在JS中，对象字面值是封闭在花括号对（{}）中的一个对象的零个或多个“属性名—值”对的（元素）列表。
+
+
+#### 如何创建一个对象字面量
+
+1 我们在kotlin/swift 语言中使用`UTSJSONObject`作为载体实现了JS的这个规范，开发者可以正常使用字面量创建此对象
+
+```js
+// 创建对象
+let userA = {
+	name: "zhangsan",
+	age: 12
+}
+console.log(user)
+```
+
+2 除了字面意思：字面量赋值之外，对象字面量还有一个来源是`JSON.parse("xxx")` 将字符串转换为对象
+
+```js
+let arrayObj = JSON.parse('["a","b","c"]')
+console.log(arrayObj)
+```
+
+这里要介绍一个比较有用的做法，比如我有一个类型对象，可以通过`JSON.stringify`得到序列化后的字符串，再通过`JSON.parse("xxx")`的方式，将其转换为对象
+```ts
+type User{
+	name:string = ""
+	age:number = 0
+}
+
+let jsonObject = JSON.parse(JSON.stringify(new User()))
+```
+
+
+#### 如何使用对象字面量
+
+在传统JS中，对象字面量的返回结果就是一个通用的object. 但是在 kotlin / swift 它是一个 支持下标访问，成员迭代等特性的看上去像是一个`object`的 `UTSJSONObject`实现。
+
+我们可以使用下标、成员名称直接访问:
+```js
+let arrayObj = JSON.parse('["a","b","c"]')
+console.log(arrayObj[0])
+
+let userA = {
+	name: "zhangsan",
+	age: 12
+}
+console.log(user['name'])
+```
+
+也可以将其转换为Map对象，再实现遍历
+```js
+let userA = {
+	name: "zhangsan",
+	age: 12
+}
+let userMap = userA.toMap()
+userMap.forEach(function(key:string,value:any){
+    console.log(key)
+    console.log(value)
+})
+```
+
+### RegExp字面量
+
+正则表达式是字符被斜线围成的表达式。下面是一个正则表达式文字的一个例子。
+
+```ts
+const re = /ab+c/
+```

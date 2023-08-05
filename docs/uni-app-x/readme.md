@@ -1,5 +1,3 @@
-uni-app x介绍
-
 # uni-app x 是什么？
 
 uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
@@ -12,9 +10,9 @@ uni-app x 是一个庞大的工程，它包括uts语言、uvue渲染引擎、uni
 
 uts 全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。它在不同平台，会被编译为不同平台的native语言，如：
 
-	* web/小程序平台，编译为JavaScript
-	* Android平台，编译为Kotlin
-	* iOS平台，编译Swift
+> * web/小程序平台，编译为JavaScript
+> * Android平台，编译为Kotlin
+> * iOS平台，编译Swift
 
 uts和ts很相似，但为了跨端，uts进行了一些约束和特定平台的增补。详见 [uts语言介绍](https://uniapp.dcloud.net.cn/uts/)
 
@@ -26,15 +24,15 @@ uts替代的是js，而uvue替代的就是html和css。或者如果你了解flut
 
 uvue是一套基于uts的、兼容vue语法的、跨iOS和Android的、原生渲染引擎。
 
-uvue渲染引擎包括原生版的vue框架（组件、数据绑定...)、跨平台基础ui、css引擎。
+uvue渲染引擎包括原生版的vue框架（组件、数据绑定...）、跨平台基础ui、css引擎。
 
 有了uvue，开发者就可以使用vue语法写一套页面，编译为高性能的纯原生界面。
 
 在过去的跨平台方案中，逻辑层和ui层的通信始终是痛点。
 
-	* 所以在webview渲染时，增加了renderjs、wxs等技术
-	* 所以在nvue渲染时，增加了bindingX技术
-	* 所以在skyline渲染时，增加了worklet技术
+> * 所以在webview渲染时，增加了renderjs、wxs等技术
+> * 所以在nvue渲染时，增加了bindingX技术
+> * 所以在skyline渲染时，增加了worklet技术
 
 但这些补丁技术都不治根。过去只有flutter解决了dart和ui层的通信问题，但dart和原生层通信也还是有延时。
 
@@ -246,7 +244,7 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 - 一期不支持：云开发（已在开发中）、uni-ad。另外包括微信、支付宝、个推等三方sdk封装一期均未启动
 - 一期不支持国际区账户创建和打包uni-app x，仅大陆区开发者账户可用。
 
-欢迎去[需求墙]()投票，告诉我们你的需求优先级。
+欢迎去[需求墙](https://vote.dcloud.net.cn/)投票，告诉我们你的需求优先级。
 
 # 历史老项目兼容指南
 

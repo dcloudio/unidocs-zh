@@ -14,8 +14,7 @@ function simplifySlugText(text) {
   return text;
 }
 
-const tabs_zh = process.env.DOCS_LITE ? [] : ['/uniCloud/', '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/uts/', '/']
-const tabs_en = ['/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/']
+const tabs = ['/uniCloud/', '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/uts/', '/uni-app-x/', '/']
 
 module.exports = {
   isExternal,

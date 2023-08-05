@@ -1,6 +1,6 @@
-## JSON
+# JSON
 
-### 静态方法
+## 静态方法
 
 ### parse
 
@@ -22,14 +22,18 @@ console.log(obj["result"]);
 - JSON.parse 解析出来的对象，目前仅支持使用方括号[]访问
 - 如果输入的字符串不是合法的json格式，则会返回 null
 
-###  带泛型的 parse
+## 实例方法
 
-带泛型的 JSON.parse<T>()  是JSON.parse() 的加强版实现，它可以返回一个指定类型的结构化数据，在很多场景下它非常有用。
 
-先看看他的用法
+### parse(text, reviver?)
 
- ```uts
+<!-- UTSJSON.JSON.parse.description -->
 
+<!-- UTSJSON.JSON.parse.param -->
+
+<!-- UTSJSON.JSON.parse.returValue -->
+
+ ```ts
 class Persion {
     var name =""
     var age = 0
@@ -39,13 +43,13 @@ class Persion {
 let personObj = JSON.parse<Persion>('{"name":"zhangsan","age":12}')
 // 不带泛型的parse，这里的jsonObj类型是通用的`UTSJSONObject`
 let jsonObj = JSON.parse('{"name":"zhangsan","age":12}')
- ```
+```
 
 与不带泛型的JSON.parse 相比，多了一个`<Persion>` 尖括号 用来指定返回类型。
 
 在这个示例中，看上去好像也不是很有用。太简单了。我们可以扩展一下
 
-```
+```ts
 let userArrayArray = JSON.parse<Array<Persion>>('[{"name":"zhangsan","age":12},{"name":"lisi","age":13}]')
 ```
  
@@ -54,10 +58,15 @@ let userArrayArray = JSON.parse<Array<Persion>>('[{"name":"zhangsan","age":12},{
 总结：带泛型的 `parse`函数，会提高我们反序列数据的开发效率，明确的结构数据可以提升工程健壮度，推荐使用
 
 
+<!-- UTSJSON.JSON.parse.compatibility -->
 
-### stringify
+### stringify(value, replacer?, space?)
 
-JSON.stringify() 方法将一个 uts 对象或值转换为 JSON 字符串
+<!-- UTSJSON.JSON.stringify.description -->
+
+<!-- UTSJSON.JSON.stringify.param -->
+
+<!-- UTSJSON.JSON.stringify.returValue -->
 
 ```ts
 console.log(JSON.stringify({ x: 5, y: 6 }));
@@ -70,3 +79,15 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 // expected output: ""2006-01-02T15:04:05.000Z""
 
 ```
+
+<!-- UTSJSON.JSON.stringify.compatibility -->
+
+### stringify(value, replacer?, space?)
+
+<!-- UTSJSON.JSON.stringify_1.description -->
+
+<!-- UTSJSON.JSON.stringify_1.param -->
+
+<!-- UTSJSON.JSON.stringify_1.returValue -->
+
+<!-- UTSJSON.JSON.stringify_1.compatibility -->

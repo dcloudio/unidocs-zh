@@ -1,8 +1,8 @@
-## Date
+# Date
 
 创建一个 Date 实例，该实例呈现时间中的某个时刻。Date 对象则基于 Unix Time Stamp，即自 1970 年 1 月 1 日（UTC）起经过的毫秒数。
 
-### 语法
+## 语法
 
 ```ts
 new Date();
@@ -13,8 +13,8 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 - 如果没有输入任何参数，则 Date 的构造器会依据系统设置的当前时间来创建一个 Date 对象。
 - 如果提供了至少两个参数，其余的参数均会默认设置为 1（如果没有指定 day 参数）或者 0（如果没有指定 day 以外的参数）。
 - uts 的时间由世界标准时间（UTC）1970 年 1 月 1 日开始，用毫秒计时，一天由 86,400,000 毫秒组成。Date 对象的范围是 -100,000,000 天至 100,000,000 天（等效的毫秒值）。
-- 
-### 静态方法
+
+## 静态方法
 ### now
 
 表示自 UNIX 纪元开始（1970 年 1 月 1 日 00:00:00 (UTC)）到当前时间的毫秒数。
@@ -37,138 +37,185 @@ setTimeout(() => {
 }, 2000)
 ```
 
-### 实例方法
+## 实例方法
 
-### getDate
 
-根据本地时间，返回一个指定的日期对象为一个月中的哪一日（从 1--31）。
+### toString()
 
-**平台差异说明**
+<!-- UTSJSON.Date.toString.description -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Date.toString.param -->
 
-### getDay
+<!-- UTSJSON.Date.toString.returValue -->
 
-根据本地时间，返回一个具体日期中一周的第几天，0 表示星期天。对于某个月中的第几天
+<!-- UTSJSON.Date.toString.compatibility -->
 
-**平台差异说明**
+### toDateString()
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Date.toDateString.description -->
 
-### getFullYear
+<!-- UTSJSON.Date.toDateString.param -->
 
-根据本地时间返回指定日期的年份。
+<!-- UTSJSON.Date.toDateString.returValue -->
 
-### getHours
+<!-- UTSJSON.Date.toDateString.compatibility -->
 
-根据本地时间，返回一个指定的日期对象的小时。
+### getTime()
 
-**平台差异说明**
+<!-- UTSJSON.Date.getTime.description -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Date.getTime.param -->
 
-### getMilliseconds
+<!-- UTSJSON.Date.getTime.returValue -->
 
-根据本地时间，返回一个指定的日期对象的毫秒数。
+<!-- UTSJSON.Date.getTime.compatibility -->
 
-**平台差异说明**
+### getFullYear()
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Date.getFullYear.description -->
 
-### getMinutes
+<!-- UTSJSON.Date.getFullYear.param -->
 
-根据本地时间，返回一个指定的日期对象的分钟数。
+<!-- UTSJSON.Date.getFullYear.returValue -->
 
-**平台差异说明**
+<!-- UTSJSON.Date.getFullYear.compatibility -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+### getMonth()
 
-### getMonth
+<!-- UTSJSON.Date.getMonth.description -->
 
-指定的日期对象的月份，为基于 0 的值（0 表示一年中的第一月）。
+<!-- UTSJSON.Date.getMonth.param -->
 
-**平台差异说明**
+<!-- UTSJSON.Date.getMonth.returValue -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Date.getMonth.compatibility -->
 
-### getSeconds
+### getDate()
 
-根据本地时间，返回一个指定的日期对象的秒数。
+<!-- UTSJSON.Date.getDate.description -->
 
-**平台差异说明**
+<!-- UTSJSON.Date.getDate.param -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Date.getDate.returValue -->
 
-### getTime
+<!-- UTSJSON.Date.getDate.compatibility -->
 
-返回一个时间的格林威治时间数值。
+### getDay()
 
-**平台差异说明**
+<!-- UTSJSON.Date.getDay.description -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Date.getDay.param -->
 
-### setDate
+<!-- UTSJSON.Date.getDay.returValue -->
 
-根据本地时间来指定一个日期对象的天数。
+<!-- UTSJSON.Date.getDay.compatibility -->
 
-**平台差异说明**
+### getHours()
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Date.getHours.description -->
 
-### setFullYear
+<!-- UTSJSON.Date.getHours.param -->
 
-根据本地时间为一个日期对象设置年份。
+<!-- UTSJSON.Date.getHours.returValue -->
 
-**平台差异说明**
+<!-- UTSJSON.Date.getHours.compatibility -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+### getMinutes()
 
-### setHours
+<!-- UTSJSON.Date.getMinutes.description -->
 
-根据本地时间为一个日期对象设置小时数，返回从 1970-01-01 00:00:00 UTC 到更新后的 日期 对象实例所表示时间的毫秒数。
+<!-- UTSJSON.Date.getMinutes.param -->
 
-### setMilliseconds
+<!-- UTSJSON.Date.getMinutes.returValue -->
 
-根据本地时间设置一个日期对象的豪秒数。
+<!-- UTSJSON.Date.getMinutes.compatibility -->
 
-### setMinutes
+### getSeconds()
 
-根据本地时间为一个日期对象设置分钟数。
+<!-- UTSJSON.Date.getSeconds.description -->
 
-### setMonth
+<!-- UTSJSON.Date.getSeconds.param -->
 
-根据本地时间为一个日期对象设置月份。
+<!-- UTSJSON.Date.getSeconds.returValue -->
 
-### setSeconds
+<!-- UTSJSON.Date.getSeconds.compatibility -->
 
-根据本地时间设置一个日期对象的秒数。
+### setTime(time)
 
-### setTime
+<!-- UTSJSON.Date.setTime.description -->
 
-以一个表示从 1970-1-1 00:00:00 UTC 计时的毫秒数为来为 Date 对象设置时间。
+<!-- UTSJSON.Date.setTime.param -->
 
-**平台差异说明**
+<!-- UTSJSON.Date.setTime.returValue -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Date.setTime.compatibility -->
+
+### setMilliseconds(ms)
+
+<!-- UTSJSON.Date.setMilliseconds.description -->
+
+<!-- UTSJSON.Date.setMilliseconds.param -->
+
+<!-- UTSJSON.Date.setMilliseconds.returValue -->
+
+<!-- UTSJSON.Date.setMilliseconds.compatibility -->
+
+### setSeconds(sec, ms?)
+
+<!-- UTSJSON.Date.setSeconds.description -->
+
+<!-- UTSJSON.Date.setSeconds.param -->
+
+<!-- UTSJSON.Date.setSeconds.returValue -->
+
+<!-- UTSJSON.Date.setSeconds.compatibility -->
+
+### setMinutes(min, sec?, ms?)
+
+<!-- UTSJSON.Date.setMinutes.description -->
+
+<!-- UTSJSON.Date.setMinutes.param -->
+
+<!-- UTSJSON.Date.setMinutes.returValue -->
+
+<!-- UTSJSON.Date.setMinutes.compatibility -->
+
+### setHours(hours, min?, sec?, ms?)
+
+<!-- UTSJSON.Date.setHours.description -->
+
+<!-- UTSJSON.Date.setHours.param -->
+
+<!-- UTSJSON.Date.setHours.returValue -->
+
+<!-- UTSJSON.Date.setHours.compatibility -->
+
+### setDate(date)
+
+<!-- UTSJSON.Date.setDate.description -->
+
+<!-- UTSJSON.Date.setDate.param -->
+
+<!-- UTSJSON.Date.setDate.returValue -->
+
+<!-- UTSJSON.Date.setDate.compatibility -->
+
+### setMonth(month, date?)
+
+<!-- UTSJSON.Date.setMonth.description -->
+
+<!-- UTSJSON.Date.setMonth.param -->
+
+<!-- UTSJSON.Date.setMonth.returValue -->
+
+<!-- UTSJSON.Date.setMonth.compatibility -->
+
+### setFullYear(year, month?, date?)
+
+<!-- UTSJSON.Date.setFullYear.description -->
+
+<!-- UTSJSON.Date.setFullYear.param -->
+
+<!-- UTSJSON.Date.setFullYear.returValue -->
+
+<!-- UTSJSON.Date.setFullYear.compatibility -->

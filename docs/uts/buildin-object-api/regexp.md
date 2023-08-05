@@ -1,41 +1,17 @@
-## RegExp
+# RegExp
 
 RegExp 对象用于将文本与一个模式匹配。
 
-### 实例属性
+## 实例属性
 
-### dotAll
-
-dotAll 属性表明是否在正则表达式中一起使用"s"修饰符。
-
-**平台差异说明**
-
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|x|x|
-
-```ts
-const regex1 = new RegExp('foo', 's');
-
-console.log(regex1.dotAll);
-// expected output: true
-
-const regex2 = new RegExp('bar');
-
-console.log(regex2.dotAll);
-// expected output: false
-```
 
 ### flags
 
-flags 属性属性返回一个字符串，由当前正则表达式对象的标志组成。
+<!-- UTSJSON.RegExp.flags.description -->
 
-**平台差异说明**
+<!-- UTSJSON.RegExp.flags.param -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|x|x|
-
+<!-- UTSJSON.RegExp.flags.returValue -->
 ```ts
 console.log(/foo/ig.flags);
 // expected output: "gi"
@@ -43,56 +19,74 @@ console.log(/foo/ig.flags);
 console.log(/bar/myu.flags);
 // expected output: "muy"
 ```
+<!-- UTSJSON.RegExp.flags.compatibility -->
+
+### source
+
+<!-- UTSJSON.RegExp.source.description -->
+
+<!-- UTSJSON.RegExp.source.param -->
+
+<!-- UTSJSON.RegExp.source.returValue -->
+```ts
+const regex1 = /fooBar/ig;
+
+console.log(regex1.source);
+// expected output: "fooBar"
+
+console.log(new RegExp().source);
+// expected output: "(?:)"
+```
+<!-- UTSJSON.RegExp.source.compatibility -->
 
 ### global
 
-global 属性表明正则表达式是否使用了 "g" 标志。
+<!-- UTSJSON.RegExp.global.description -->
 
-**平台差异说明**
+<!-- UTSJSON.RegExp.global.param -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|x|x|
-
+<!-- UTSJSON.RegExp.global.returValue -->
 ```ts
 var regex = new RegExp("foo", "g")
 
 console.log(regex.global) // true
 // expected output: "muy"
 ```
+<!-- UTSJSON.RegExp.global.compatibility -->
 
-### hasIndices
+### ignoreCase
 
-hasIndices 属性指示 "d" 标志是否与正则表达式一起使用。
+<!-- UTSJSON.RegExp.ignoreCase.description -->
 
-**平台差异说明**
+<!-- UTSJSON.RegExp.ignoreCase.param -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|x|x|
+<!-- UTSJSON.RegExp.ignoreCase.returValue -->
+
+<!-- UTSJSON.RegExp.ignoreCase.compatibility -->
+
+### multiline
+
+<!-- UTSJSON.RegExp.multiline.description -->
+
+<!-- UTSJSON.RegExp.multiline.param -->
+
+<!-- UTSJSON.RegExp.multiline.returValue -->
 
 ```ts
-const regex1 = new RegExp('foo', 'd');
+var regex = new RegExp("foo", "m");
 
-console.log(regex1.hasIndices);
+console.log(regex.multiline);
 // expected output: true
-
-const regex2 = new RegExp('bar');
-
-console.log(regex2.hasIndices);
-// expected output: false
 ```
+<!-- UTSJSON.RegExp.multiline.compatibility -->
 
 ### lastIndex
 
-lastIndex 是正则表达式的一个可读可写的整型属性，用来指定下一次匹配的起始索引。
+<!-- UTSJSON.RegExp.lastIndex.description -->
 
-**平台差异说明**
+<!-- UTSJSON.RegExp.lastIndex.param -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|x|x|
-
+<!-- UTSJSON.RegExp.lastIndex.returValue -->
 ```ts
 const regex1 = new RegExp('foo', 'g');
 const str1 = 'table football, foosball';
@@ -107,92 +101,19 @@ regex1.test(str1);
 console.log(regex1.lastIndex);
 // expected output: 19
 ```
+<!-- UTSJSON.RegExp.lastIndex.compatibility -->
 
-### multiline
 
-multiline 属性表明正则表达式是否使用了 "m" 标志。
+## 实例方法
 
-**平台差异说明**
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|x|x|
+### exec(string)
 
-```ts
-var regex = new RegExp("foo", "m");
+<!-- UTSJSON.RegExp.exec.description -->
 
-console.log(regex.multiline);
-// expected output: true
-```
+<!-- UTSJSON.RegExp.exec.param -->
 
-### source
-
-source 属性返回一个值为当前正则表达式对象的模式文本的字符串，该字符串不会包含正则字面量两边的斜杠以及任何的标志字符。
-
-**平台差异说明**
-
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|x|x|
-
-```ts
-const regex1 = /fooBar/ig;
-
-console.log(regex1.source);
-// expected output: "fooBar"
-
-console.log(new RegExp().source);
-// expected output: "(?:)"
-```
-
-### sticky
-
-sticky 属性反映了搜索是否具有粘性（仅从正则表达式的 lastIndex 属性表示的索引处搜索）。
-
-**平台差异说明**
-
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|x|x|
-
-```ts
-const str1 = 'table football';
-const regex1 = new RegExp('foo', 'y');
-
-regex1.lastIndex = 6;
-
-console.log(regex1.sticky);
-// expected output: true
-
-console.log(regex1.test(str1));
-// expected output: true
-
-console.log(regex1.test(str1));
-// expected output: false
-```
-
-### unicode
-
-unicode 属性表明正则表达式带有"u" 标志。
-
-**平台差异说明**
-
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|x|x|
-
-```ts
-var regex = new RegExp('\u{61}', 'u');
-
-console.log(regex.unicode);
-// expected output: true
-```
-### 实例方法
-
-### exec
-
-exec() 方法在一个指定字符串中执行一个搜索匹配。返回一个结果数组或 null。
-
+<!-- UTSJSON.RegExp.exec.returValue -->
 ```ts
 const regex1 = RegExp('foo*', 'g');
 const str1 = 'table football, foosball';
@@ -204,11 +125,15 @@ while ((array1 = regex1.exec(str1)) !== null) {
   // expected output: "Found foo. Next starts at 19."
 }
 ```
+<!-- UTSJSON.RegExp.exec.compatibility -->
 
-### test
+### test(string)
 
-test() 方法执行一个检索，用来查看正则表达式与指定的字符串是否匹配。返回 true 或 false。
+<!-- UTSJSON.RegExp.test.description -->
 
+<!-- UTSJSON.RegExp.test.param -->
+
+<!-- UTSJSON.RegExp.test.returValue -->
 ```ts
 const str = 'table football';
 
@@ -230,24 +155,4 @@ console.log(globalRegex.lastIndex);
 console.log(globalRegex.test(str));
 // expected output: false
 ```
-
-### toString
-
-toString() 返回一个表示该正则表达式的字符串。
-
-```ts
-console.log(new RegExp('a+b+c'));
-// expected output: /a+b+c/
-
-console.log(new RegExp('a+b+c').toString());
-// expected output: "/a+b+c/"
-
-console.log(new RegExp('bar', 'g').toString());
-// expected output: "/bar/g"
-
-console.log(new RegExp('\n', 'g').toString());
-// expected output (if your browser supports escaping): "/\n/g"
-
-console.log(new RegExp('\\n', 'g').toString());
-// expected output: "/\n/g"
-```
+<!-- UTSJSON.RegExp.test.compatibility -->

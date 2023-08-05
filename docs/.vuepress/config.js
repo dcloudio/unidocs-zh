@@ -90,6 +90,12 @@ const config = {
           leftDelimiter: '#{',
           rightDelimiter: '}'
         }])
+        .end()
+        .plugin('task-lists')
+        .use(require('markdown-it-task-lists'))
+        .end()
+        .plugin('inject-json-to-md')
+        .use(require('./markdown/inject-json-to-md'))
     }
   },
   chainWebpack (config, isServer) {

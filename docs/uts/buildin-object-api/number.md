@@ -1,18 +1,18 @@
-## Number
+# Number
+
 
 Number 对象是经过封装的能让你处理数字值的对象。
 
-### 实例方法
+## 实例方法
 
-### toFixed
 
-toFixed() 方法使用定点表示法来格式化一个数值。
+### toFixed(fractionDigits?)
 
-**平台差异说明**
+<!-- UTSJSON.Number.toFixed.description -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Number.toFixed.param -->
+
+<!-- UTSJSON.Number.toFixed.returValue -->
 
 ```ts
 function financial(x: Number): String {
@@ -23,6 +23,8 @@ console.log(financial(123.456));
 console.log(financial(0.004));
 // expected output: "0.00"
 ```
+
+<!-- UTSJSON.Number.toFixed.compatibility -->
 
 ### toByte()
 
@@ -76,6 +78,3 @@ let a = 12
 console.log(a.toLong());
 // expected output: 12
 ```
-
-
-

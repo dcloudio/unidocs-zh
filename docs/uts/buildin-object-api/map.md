@@ -1,12 +1,17 @@
-## Map
+# Map
 
 Map 对象保存键值对。任何值（对象或者基本类型）都可以作为一个键或一个值。
 
-### 实例属性
+## 实例属性
+
 
 ### size
 
-返回 Map 对象的成员数量。
+<!-- UTSJSON.Map.size.description -->
+
+<!-- UTSJSON.Map.size.param -->
+
+<!-- UTSJSON.Map.size.returValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -18,11 +23,19 @@ console.log(map1.size);
 
 ```
 
-### 实例方法
+<!-- UTSJSON.Map.size.compatibility -->
 
-### clear
 
-移除 Map 对象中的所有元素。
+## 实例方法
+
+
+### clear()
+
+<!-- UTSJSON.Map.clear.description -->
+
+<!-- UTSJSON.Map.clear.param -->
+
+<!-- UTSJSON.Map.clear.returValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -35,9 +48,15 @@ console.log(map1.size);
 // expected output: 0
 ```
 
-#### delete
+<!-- UTSJSON.Map.clear.compatibility -->
 
-用于移除 Map 对象中指定的元素。
+### delete(key)
+
+<!-- UTSJSON.Map.delete.description -->
+
+<!-- UTSJSON.Map.delete.param -->
+
+<!-- UTSJSON.Map.delete.returValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -49,9 +68,25 @@ console.log(map1.has('bar'));
 // expected result: false
 ```
 
-### get
+<!-- UTSJSON.Map.delete.compatibility -->
 
-返回某个 Map 对象中的一个指定元素。
+### forEach(callbackfn, thisArg?)
+
+<!-- UTSJSON.Map.forEach.description -->
+
+<!-- UTSJSON.Map.forEach.param -->
+
+<!-- UTSJSON.Map.forEach.returValue -->
+
+<!-- UTSJSON.Map.forEach.compatibility -->
+
+### get(key)
+
+<!-- UTSJSON.Map.get.description -->
+
+<!-- UTSJSON.Map.get.param -->
+
+<!-- UTSJSON.Map.get.returValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -61,9 +96,15 @@ console.log(map1.get('bar'));
 // expected output: "foo"
 ```
 
-### has
+<!-- UTSJSON.Map.get.compatibility -->
 
-返回一个布尔值，用来表明 Map 中是否存在指定元素。
+### has(key)
+
+<!-- UTSJSON.Map.has.description -->
+
+<!-- UTSJSON.Map.has.param -->
+
+<!-- UTSJSON.Map.has.returValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -76,9 +117,15 @@ console.log(map1.has('baz'));
 // expected output: false
 ```
 
-### set
+<!-- UTSJSON.Map.has.compatibility -->
 
-添加或更新一个指定了键（key）和值（value）的（新）键值对。
+### set(key, value)
+
+<!-- UTSJSON.Map.set.description -->
+
+<!-- UTSJSON.Map.set.param -->
+
+<!-- UTSJSON.Map.set.returValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -91,7 +138,9 @@ console.log(map1.get('baz'));
 // expected output: null
 ```
 
-### 常见操作
+<!-- UTSJSON.Map.set.compatibility -->
+
+## 常见操作
 
 - 创建map
 ```ts

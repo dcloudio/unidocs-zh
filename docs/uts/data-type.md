@@ -2,20 +2,26 @@
 
 ### 布尔值（Boolean）
 
-布尔是简单的基础类型，只有2个值分别是：`true` 和 `false`。在全平台没有差异。
+布尔是简单的基础类型，只有2个值：`true` 和 `false`。
 
 ```ts
-let a:boolean = true
-let b = false
+let a:boolean = true // 定义类型并赋值字面量
+let b = false // 未显示声明类型，但根据字面量可自动推导为布尔类型
+let c:boolean // 定义类型但定义时未赋值
+c = true // 后续为变量赋值字面量
 ```
+
+注意：
+- 在js里，true == 1、 false == 0。但在其他强类型语言里，`1`和`0`是数字类型，无法和布尔类型相比较。
+- 注意 boolean 不要简写成 bool
 
 ### 数字（Number）
 
-在web中，数字不区分整型和浮点。但在kotlin和swift中，数字需要是一个确定类型，比如Int、Float、Double，没有泛数字。
+在 ts 中，数字不区分整型和浮点，就是一个 number。但在 kotlin 和 swift 中，数字需要是一个确定类型，比如 Int、Float、Double，没有泛数字。
 
-UTS 在iOS和Android平台上新增了 number 类型，拉齐了web端的实现，方便开发者写全端兼容代码。
+UTS 在iOS和Android平台上新增了 number 类型，拉齐了web端的实现，方便开发者写全端兼容代码，也降低web开发者使用 uts 的门槛。
 
-number是一个泛数字类型，包括整数或浮点数，包括正数负数。例如： 正整数 `42` 或者 浮点数 `3.14159` 或者 负数 `-1` 。
+number 是一个泛数字类型，包括整数或浮点数，包括正数负数。例如： 正整数 `42` 或者 浮点数 `3.14159` 或者 负数 `-1` 。
 
 ```ts
 let a:number = 42       //a为number类型
@@ -24,15 +30,20 @@ let c = 42              //注意：目前版本推导c为Int类型，新版本�
 let d = 3.14159         //注意：目前版本推导d为float类型，新版本将调整d为number类型
 ```
 
-注意：  
-目前版本使用数字字面量声明变量时，没有指定类型会按平台语言自动推导为相应的类型，如 let c = 42，编译为 kotlin 和 swift 时自动推导为 Int 类型。  
-新版本使用数字字面量声明变量将会调整，默认数字类型为 number，即书写的字面量如果没有明确指定类型会自动识别为 number，要声明平台语言的数据类型变量，需明确指定类型，如 let c:Int = 42。  
+- 编译到kotlin平台时，`Number`是一个抽象类，编译时会自动选择合适的数据类型来填充
 
-除了 number 类型，UTS 在 Android 和 iOS 设备上，也可以使用 kotlin 和 swift 的专用数字类型：
+<!-- TODO:编译到iOS需补充 -->
 
-#### Kotlin 特有的数字类型 @Kotlin
+#### 平台专有数字类型
 
-kotlin 本身支持下列数据类型 
+除了 number 类型，UTS 在 Android 和 iOS 设备上，也可以使用 kotlin 和 swift 的专有数字类型。
+
+日常开发使用 number 类型就可以。但是也有需要平台专有数字类型的场景。
+
+1. 在 kotlin 和 swift 中，调用系统API或三方SDK的入参或返回值的类型，强制约定了平台专有数字类型。比如入参要求传入 Int，那么传入 number 会报错。比如方法返回了一个 Int，使用 number 类型的变量去接收，也会报错。
+2. number 作为泛数字，性能还是弱于Int。在普通计算中无法体现出差异，但在千万次运算后，累计会产生毫秒级速度差异。
+
+##### Kotlin 专有数字类型 @Kotlin
 
 |类型名称|长度  |最小值       |最大值          |描述|
 |:--     |:---  |:---         |:---           |:-- |
@@ -47,86 +58,106 @@ kotlin 本身支持下列数据类型
 |Float   |32bit |1.4E-45F     |3.4028235E38F                   |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
 |Double  |64bit |4.9E-324     | 1.7976931348623157E308         |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
 
+基本数据类型会有jvm编译魔法加持，kotlin 会把  Int / Double 等非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持。
 
-**kotlin平台数字类型使用实践**
+如果涉及大量运算，建议开发者不要使用 Number、Int? ，要明确使用 Int等类型 [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
 
-1. 在kotlin平台 `Number`是一个抽象类，编译时会自动选择合适的数据类型来填充，因此大多数场景下，开发者都应该使用 字面量（即Number类型），可以降低心智负担
-2. 基本数据类型会有jvm编译魔法加持，在涉及大量科学运算的情况下，计算速度和内存占用会有优化。kotlin 会把  Int / Double 等来非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持。如果涉及大量运算，建议开发者不要使用 Number、Int? ，要明确使用 Int等类型 [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
-
-3. 在 kotlin 和 swift 中，有些系统API或三方SDK的入参或返回值的类型，强制约定了平台特有数字类型，此时无法使用number，需要使用下面列出方法进行转换
-
-
-所有的Number 都支持下列方法进行转换（部分类库API使用java编写，其要求的java类型与下列kotlin类型完全一致，可以直接使用）：
-
-
-```
-toByte(): Byte
-
-toShort(): Short
-
-toInt(): Int
-
-toLong(): Long
-
-toFloat(): Float
-
-toDouble(): Double
-```
-
-另外Number还具备下列函数进行整型的无符号转换，这部分API 在jvm上没有对应的原始数据类型，主要的使用场景是 色值处理等专业计算场景的`多平台拉齐`
-
-```
-toUByte(): UByte
-
-toUShort(): UShort
-
-toUInt(): UInt
-
-toULong(): ULong
-
-```
-
-
-#### Swift 特有的数字类型 @Swift
+##### Swift 专有的数字类型 @Swift
 
 - Int, UInt, Int8, UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64
 - Float, Float16, Float32, Float64
 - Double
 
-**特有数字类型的使用场景**
+##### 专有数字类型的定义方式
 
-大多数场景下，开发者使用 字面量（即Number类型）就可以满足需要，但是也有需要特有数字类型的场景。
-
-1. 在 kotlin 和 swift 中，有些系统API或三方SDK的入参或返回值的类型，强制约定了平台特有数字类型，此时无法使用number。
-2. number 作为泛数字，性能还是弱于Int。在普通计算中无法体现出差异，但在千万次运算后，累计会产生毫秒级速度差异。
-
-当需要特有数字类型时，UTS中可以直接定义<!--，也可以通过number类型转换为特有数字类型。-->
-
-可以使用下面的方法，虽然可能会被编辑器报语法错误（后续HBuilderX会修复这类误报），但编译到 kotlin 和 swift 时是可用的。
+使用下面的方法，虽然可能会被编辑器报语法错误（后续HBuilderX会修复这类误报），但编译到 kotlin 和 swift 运行是正常的。
 
 - 声明特定的平台数字类型
- > 目前这些特有数字类型，声明类型时，与 number 不同的是，均为首字母大写
+ > 目前这些专有数字类型，声明类型时，与 number 不同的是，均为首字母大写
 
 ```ts
-
 let a:Int = 3 //注意 Int 是首字母大写
 let b:Int = 4
 let c:Double  = a * 1.0 / b
 ```
 
-* 注意这些特有数字类型不能在web端和小程序端使用，如工程需兼容非App端，要把这些代码放入条件编译中；
+* 注意这些专有数字类型不能在web端和小程序端使用，如工程需兼容非App端，要把这些代码放入条件编译中；
 * iOS和Android都有的类型，比如Int，编译后可跨2个平台；但如果使用了某平台专有的数字类型，比如swift的Int8，则此代码不能编译到Android，工程如需支持Android，则把这些代码写在条件编译中。
 
-这些特有类型定义后，可以使用kotlin和swift为其提供的各种方法，具体参考kotlin和swift的文档。
+```ts
+// #ifdef APP-IOS
+let d:Int8 // Int8是swift平台专有类型
+// #endif
+```
 
-- 在 kotlin(app-android) 下转换特定的平台数字类型
+这些专有类型定义后，可以使用kotlin和swift为其提供的各种方法，具体参考kotlin和swift的文档。
+
+#### 字面量类型自动推导@autotypefornumber
+
+具体值，比如`42`、`"abc"`，称之为[字面量](literal.md)
+
+字面量可以直接用于赋值、传参，比如 `let a = 42`
+
+不管是 ts 、kotlin 还是 swift，都具备字面量自动推导类型的能力，为 a 自动推导合适的类型。
+
+**目前版本中，在未显示声明类型的情况下使用数字字面量赋值、传参，由平台语言自动推导为相应的类型**
+
+但不同平台，推导结果不一样。
+
+- ts 中，a 被推导为 number
+- kotlin 中，a 被推导为 Int
+- swift 中，a 被推导为 Int
+
+上述只是一个简单的示例，再看一个复杂的例子，`let a = 1/10`。
+
+a会被自动推导成什么类型？是Int、double、还是number？值是0还是0.1？在不同平台的差异更大。
+
+在web端，a的类型是 number，值是0.1，但在 kotlin 中，类型是 Int，值是 0.
+
+**为了统一各平台对字面量的自动推导规则，后续 uts 将接管和统一字面量类型推导。所有字面量默认为 number类型。**
+
+未来如您需要使用平台专有数字类型，需显示声明，如：
+```ts
+let c:Int = 42 //显示声明为Int
+
+function test(score: Int): boolean {
+	return (score>=60) 
+}
+test(61 as Int) //转为Int类型
+```
+
+当您调用系统或三方SDK的方法时，如果这些方法的入参要求Int，您之前直接通过字面量赋值`let a = 42`，就是 Int，但未来会变成 number，
+导致类型不匹配报错。所以强烈建议您现在就更改代码写法，不依赖kotlin和swift的字面量自动推导，直接显示声明类型，改为`let a:Int = 42`
+
+#### 各种数字类型之间的转换
+
+##### kotlin下转换数字类型
+
+所有的Number 都支持下列方法进行转换（部分类库API使用java编写，其要求的java类型与下列kotlin类型完全一致，可以直接使用
+
+- toByte(): Byte
+- toShort(): Short
+- toInt(): Int
+- toLong(): Long
+- toFloat(): Float
+- toDouble(): Double
+
+另外Number还具备下列函数进行整型的无符号转换，这部分API 在jvm上没有对应的原始数据类型，主要的使用场景是 色值处理等专业计算场景的`多平台拉齐`
+
+- toUByte(): UByte
+- toUShort(): UShort
+- toUInt(): UInt
+- toULong(): ULong
+
 ```ts
 let a:Int = 3
 a.toFloat() // 转换为 Float 类型，后续也将支持 new Float(a) 方式转换
 a.toDouble() // 转换为 Double 类型，后续也将支持 new Double(a) 方式转换
 ```
 
-- 在 swift(app-ios) 下转换特定的平台数字类型
+<!-- TODO:缺少如何把专有类型转为number -->
+
+##### swift下转换数字类型
 ```ts
 // number转成特定类型
 let num = 2
@@ -143,9 +174,7 @@ let a:Int = 3
 let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 ```
 
-<!-- #### number和特有数字类型互转 -->
-
-#### 边界情况说明：
+#### number的边界说明
 
 - 在不同平台上，数值的范围限制不同，超出限制会导致相应的错误或异常
   * 编译至 JavaScript 平台时，最大值为 1.7976931348623157e+308，最小值为 -1.7976931348623157e+308，超出限制会返回 `Infinity` 或 `-Infinity`。
@@ -153,7 +182,7 @@ let b = new Double(a) // 将整型变量 a 转换为 Double 类型
   * 编译至 Swift 平台时，最大值 9223372036854775807，最小值 -9223372036854775808，超出限制会报错：`integer literal overflows when stored into Int`。
 
 #### 更多API
-number内置对象还有一些API，[详见](buildin-object-api/number.md)
+number内置对象有不少API，[详见](buildin-object-api/number.md)
 
 ### 字符串（String） @String
 
@@ -190,17 +219,6 @@ let str5 = str3 as string
 
 日期对象表示日期，包括年月日时分秒等各种日期。[详见](buildin-object-api/date.md)
 
-### null
-
-一个表明 null 值的特殊关键字。
-
-有时需定义可为null的字符串，可以在类型描述中使用`|`操作符。
-
-```ts
-let user: string | null
-```
-
-> 注意：uts 编译为kotlin和swift时不支持 undefined。每个有类型的变量都需要初始化或赋值。
 
 ### 数组（Array）
 
@@ -214,7 +232,7 @@ js和swift的array，是可变长的泛型array。
 
 如果开发者需要使用原始的kotlin的不可变长的array，需使用 kotlin.array。
 
-需要使用 kotlin.array 的场景和特有数字类型一样：
+需要使用 kotlin.array 的场景和专有数字类型一样：
 1. 某些系统API或三方原生SDK的入参或返回值强制指定了kotlin的array。
 2. uts新增的可动态变长的array，在性能上不如固定length、不可变长的原始kotlin.array。但也只有在巨大量的运算中才能体现出毫秒级的差异。
 
@@ -329,6 +347,8 @@ list[1] = 100;
 
 ### null类型 @null
 
+一个表明 null 值的特殊关键字。
+
 uts 的类型系统可以消除来自代码空引用的危险。
 
 许多编程语言中最常见的陷阱之一，就是访问空引用的成员会导致空引用异常。在 Java 中，这等同于 NullPointerException 或简称 NPE。
@@ -340,12 +360,14 @@ let a: string = "abc" // 默认情况下，常规初始化意味着非空
 a = null // 编译错误
 ```
 
-如果要允许为空，可以声明一个变量为可空字符串（写作 string | null）：
+如果要允许为空，可以声明一个变量为可空字符串（写作 string | null）
 
 ```ts
 let b: string | null = "abc" // 可以设置为空
 b = null // ok
 ```
+
+但这不代表 uts 支持广泛的联合类型。实际上目前仅有可为空才能这么写。
 
 现在，如果你调用 a 的方法或者访问它的属性，它保证不会导致 NPE，这样你就可以放心地使用：
 
@@ -416,3 +438,12 @@ console.log(baz);
 ```ts
 const l = b!.length
 ```
+
+
+> 关于undefined
+
+js中的 undefined 表示变量被定义，但是未赋值或初始化。
+
+uts 编译为kotlin和swift时不支持 undefined。即不允许变量未赋值。
+
+每个有类型的变量都需要初始化或赋值。

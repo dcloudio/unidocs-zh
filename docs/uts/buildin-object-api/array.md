@@ -11,7 +11,7 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.length.param -->
 
-<!-- UTSJSON.Array.length.returValue -->
+<!-- UTSJSON.Array.length.returnValue -->
 
 ```ts
 const clothing = ['shoes', 'shirts', 'socks', 'sweaters'];
@@ -38,7 +38,7 @@ console.log(clothing.length);
 
 <!-- UTSJSON.Array.find.param -->
 
-<!-- UTSJSON.Array.find.returValue -->
+<!-- UTSJSON.Array.find.returnValue -->
 
 ```ts
 const array1 = [5, 12, 8, 130, 44];
@@ -58,7 +58,7 @@ console.log(found);
 
 <!-- UTSJSON.Array.findIndex.param -->
 
-<!-- UTSJSON.Array.findIndex.returValue -->
+<!-- UTSJSON.Array.findIndex.returnValue -->
 
 ```ts
 const array1 = [5, 12, 8, 130, 44];
@@ -78,7 +78,7 @@ console.log(array1.findIndex(isLargeNumber));
 
 <!-- UTSJSON.Array.fill.param -->
 
-<!-- UTSJSON.Array.fill.returValue -->
+<!-- UTSJSON.Array.fill.returnValue -->
 
 ```ts
 const array1 = [1, 2, 3, 4];
@@ -104,7 +104,7 @@ console.log(array1.fill(6));
 
 <!-- UTSJSON.Array.copyWithin.param -->
 
-<!-- UTSJSON.Array.copyWithin.returValue -->
+<!-- UTSJSON.Array.copyWithin.returnValue -->
 
 ```ts
 const array1 = ['a', 'b', 'c', 'd', 'e'];
@@ -124,7 +124,7 @@ console.log(array1.copyWithin(1, 3));
 
 <!-- UTSJSON.Array.pop.param -->
 
-<!-- UTSJSON.Array.pop.returValue -->
+<!-- UTSJSON.Array.pop.returnValue -->
 
 ```ts
 const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
@@ -150,7 +150,7 @@ console.log(plants);
 
 <!-- UTSJSON.Array.push.param -->
 
-<!-- UTSJSON.Array.push.returValue -->
+<!-- UTSJSON.Array.push.returnValue -->
 
 ```ts
 const animals = ['pigs', 'goats', 'sheep'];
@@ -175,7 +175,7 @@ console.log(animals);
 
 <!-- UTSJSON.Array.concat.param -->
 
-<!-- UTSJSON.Array.concat.returValue -->
+<!-- UTSJSON.Array.concat.returnValue -->
 
 ```ts
 const array1 = ['a', 'b', 'c'];
@@ -193,7 +193,7 @@ console.log(array3);
 
 <!-- UTSJSON.Array.concat_1.param -->
 
-<!-- UTSJSON.Array.concat_1.returValue -->
+<!-- UTSJSON.Array.concat_1.returnValue -->
 
 <!-- UTSJSON.Array.concat_1.compatibility -->
 
@@ -203,7 +203,7 @@ console.log(array3);
 
 <!-- UTSJSON.Array.join.param -->
 
-<!-- UTSJSON.Array.join.returValue -->
+<!-- UTSJSON.Array.join.returnValue -->
 
 ```ts
 const elements = ['Fire', 'Air', 'Water'];
@@ -227,7 +227,7 @@ console.log(elements.join('-'));
 
 <!-- UTSJSON.Array.reverse.param -->
 
-<!-- UTSJSON.Array.reverse.returValue -->
+<!-- UTSJSON.Array.reverse.returnValue -->
 
 <!-- UTSJSON.Array.reverse.compatibility -->
 
@@ -237,7 +237,7 @@ console.log(elements.join('-'));
 
 <!-- UTSJSON.Array.shift.param -->
 
-<!-- UTSJSON.Array.shift.returValue -->
+<!-- UTSJSON.Array.shift.returnValue -->
 
 ```ts
 const array1 = [1, 2, 3];
@@ -260,7 +260,7 @@ console.log(firstElement);
 
 <!-- UTSJSON.Array.slice.param -->
 
-<!-- UTSJSON.Array.slice.returValue -->
+<!-- UTSJSON.Array.slice.returnValue -->
 
 ```ts
 const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
@@ -292,7 +292,7 @@ console.log(animals.slice());
 
 <!-- UTSJSON.Array.sort.param -->
 
-<!-- UTSJSON.Array.sort.returValue -->
+<!-- UTSJSON.Array.sort.returnValue -->
 
 ```ts
 const array2 = [5, 1, 4, 2, 3];
@@ -308,7 +308,7 @@ array2.sort((a: number, b: number):number => a - b);
 
 <!-- UTSJSON.Array.splice.param -->
 
-<!-- UTSJSON.Array.splice.returValue -->
+<!-- UTSJSON.Array.splice.returnValue -->
 
 ```ts
 const months = ['Jan', 'March', 'April', 'June'];
@@ -331,7 +331,7 @@ console.log(months);
 
 <!-- UTSJSON.Array.unshift.param -->
 
-<!-- UTSJSON.Array.unshift.returValue -->
+<!-- UTSJSON.Array.unshift.returnValue -->
 
 ```ts
 const array1 = [1, 2, 3];
@@ -351,7 +351,7 @@ console.log(array1);
 
 <!-- UTSJSON.Array.indexOf.param -->
 
-<!-- UTSJSON.Array.indexOf.returValue -->
+<!-- UTSJSON.Array.indexOf.returnValue -->
 
 ```ts
 const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
@@ -376,7 +376,7 @@ console.log(beasts.indexOf('giraffe'));
 
 <!-- UTSJSON.Array.lastIndexOf.param -->
 
-<!-- UTSJSON.Array.lastIndexOf.returValue -->
+<!-- UTSJSON.Array.lastIndexOf.returnValue -->
 
 ```ts
 const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
@@ -396,7 +396,7 @@ console.log(animals.lastIndexOf('Tiger'));
 
 <!-- UTSJSON.Array.every.param -->
 
-<!-- UTSJSON.Array.every.returValue -->
+<!-- UTSJSON.Array.every.returnValue -->
 
 ```ts
 const isBelowThreshold = (currentValue:number):boolean => currentValue < 40;
@@ -413,7 +413,7 @@ console.log(array1.every(isBelowThreshold));
 
 <!-- UTSJSON.Array.some.param -->
 
-<!-- UTSJSON.Array.some.returValue -->
+<!-- UTSJSON.Array.some.returnValue -->
 
 
 ```ts
@@ -434,7 +434,7 @@ console.log(array.some(even));
 
 <!-- UTSJSON.Array.forEach.param -->
 
-<!-- UTSJSON.Array.forEach.returValue -->
+<!-- UTSJSON.Array.forEach.returnValue -->
 
 ```ts
 const array1 = ['a', 'b', 'c'];
@@ -452,7 +452,7 @@ array1.forEach(element => console.log(element));
 
 <!-- UTSJSON.Array.map.param -->
 
-<!-- UTSJSON.Array.map.returValue -->
+<!-- UTSJSON.Array.map.returnValue -->
 
 ```ts
 const array1 = [1, 4, 9, 16];
@@ -473,7 +473,7 @@ console.log(map1);
 
 <!-- UTSJSON.Array.filter.param -->
 
-<!-- UTSJSON.Array.filter.returValue -->
+<!-- UTSJSON.Array.filter.returnValue -->
 
 ```ts
 const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
@@ -493,7 +493,7 @@ console.log(result);
 
 <!-- UTSJSON.Array.reduce.param -->
 
-<!-- UTSJSON.Array.reduce.returValue -->
+<!-- UTSJSON.Array.reduce.returnValue -->
 
 ```ts
 const array1 = [1, 2, 3, 4];
@@ -518,7 +518,7 @@ console.log(sumWithInitial);
 
 <!-- UTSJSON.Array.reduceRight.param -->
 
-<!-- UTSJSON.Array.reduceRight.returValue -->
+<!-- UTSJSON.Array.reduceRight.returnValue -->
 
 <!-- UTSJSON.Array.reduceRight.compatibility -->
 

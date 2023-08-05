@@ -11,7 +11,7 @@ RegExp 对象用于将文本与一个模式匹配。
 
 <!-- UTSJSON.RegExp.flags.param -->
 
-<!-- UTSJSON.RegExp.flags.returValue -->
+<!-- UTSJSON.RegExp.flags.returnValue -->
 ```ts
 console.log(/foo/ig.flags);
 // expected output: "gi"
@@ -27,7 +27,7 @@ console.log(/bar/myu.flags);
 
 <!-- UTSJSON.RegExp.source.param -->
 
-<!-- UTSJSON.RegExp.source.returValue -->
+<!-- UTSJSON.RegExp.source.returnValue -->
 ```ts
 const regex1 = /fooBar/ig;
 
@@ -45,7 +45,7 @@ console.log(new RegExp().source);
 
 <!-- UTSJSON.RegExp.global.param -->
 
-<!-- UTSJSON.RegExp.global.returValue -->
+<!-- UTSJSON.RegExp.global.returnValue -->
 ```ts
 var regex = new RegExp("foo", "g")
 
@@ -60,7 +60,7 @@ console.log(regex.global) // true
 
 <!-- UTSJSON.RegExp.ignoreCase.param -->
 
-<!-- UTSJSON.RegExp.ignoreCase.returValue -->
+<!-- UTSJSON.RegExp.ignoreCase.returnValue -->
 
 <!-- UTSJSON.RegExp.ignoreCase.compatibility -->
 
@@ -70,7 +70,7 @@ console.log(regex.global) // true
 
 <!-- UTSJSON.RegExp.multiline.param -->
 
-<!-- UTSJSON.RegExp.multiline.returValue -->
+<!-- UTSJSON.RegExp.multiline.returnValue -->
 
 ```ts
 var regex = new RegExp("foo", "m");
@@ -86,7 +86,7 @@ console.log(regex.multiline);
 
 <!-- UTSJSON.RegExp.lastIndex.param -->
 
-<!-- UTSJSON.RegExp.lastIndex.returValue -->
+<!-- UTSJSON.RegExp.lastIndex.returnValue -->
 ```ts
 const regex1 = new RegExp('foo', 'g');
 const str1 = 'table football, foosball';
@@ -113,7 +113,7 @@ console.log(regex1.lastIndex);
 
 <!-- UTSJSON.RegExp.exec.param -->
 
-<!-- UTSJSON.RegExp.exec.returValue -->
+<!-- UTSJSON.RegExp.exec.returnValue -->
 ```ts
 const regex1 = RegExp('foo*', 'g');
 const str1 = 'table football, foosball';
@@ -133,7 +133,7 @@ while ((array1 = regex1.exec(str1)) !== null) {
 
 <!-- UTSJSON.RegExp.test.param -->
 
-<!-- UTSJSON.RegExp.test.returValue -->
+<!-- UTSJSON.RegExp.test.returnValue -->
 ```ts
 const str = 'table football';
 

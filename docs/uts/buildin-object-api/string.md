@@ -29,7 +29,7 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
 
 <!-- UTSJSON.String.length.param -->
 
-<!-- UTSJSON.String.length.returValue -->
+<!-- UTSJSON.String.length.returnValue -->
 
 ```ts
 const x = "Mozilla";
@@ -53,7 +53,7 @@ console.log("The empty string is has a length of " + empty.length);
 
 <!-- UTSJSON.String.includes.param -->
 
-<!-- UTSJSON.String.includes.returValue -->
+<!-- UTSJSON.String.includes.returnValue -->
 
 ```ts
 const str = 'To be, or not to be, that is the question.';
@@ -73,7 +73,7 @@ console.log(str.includes('TO BE'));       // false
 
 <!-- UTSJSON.String.endsWith.param -->
 
-<!-- UTSJSON.String.endsWith.returValue -->
+<!-- UTSJSON.String.endsWith.returnValue -->
 
 ```ts
 const str1 = 'Cats are the best!';
@@ -94,7 +94,7 @@ console.log(str2.endsWith('question'));
 
 <!-- UTSJSON.String.repeat.param -->
 
-<!-- UTSJSON.String.repeat.returValue -->
+<!-- UTSJSON.String.repeat.returnValue -->
 
 ```ts
 "abc".repeat(0)      // ""
@@ -111,7 +111,7 @@ console.log(str2.endsWith('question'));
 
 <!-- UTSJSON.String.startsWith.param -->
 
-<!-- UTSJSON.String.startsWith.returValue -->
+<!-- UTSJSON.String.startsWith.returnValue -->
 
 <!-- UTSJSON.String.startsWith.compatibility -->
 
@@ -121,7 +121,7 @@ console.log(str2.endsWith('question'));
 
 <!-- UTSJSON.String.at.param -->
 
-<!-- UTSJSON.String.at.returValue -->
+<!-- UTSJSON.String.at.returnValue -->
 
 ```ts
 const sentence = 'The quick brown fox jumps over the lazy dog.';
@@ -141,7 +141,7 @@ console.log(`Using an index of ${index} the character returned is ${sentence.at(
 
 <!-- UTSJSON.String.charAt.param -->
 
-<!-- UTSJSON.String.charAt.returValue -->
+<!-- UTSJSON.String.charAt.returnValue -->
 
 ```ts
 const anyString = "Brave new world";
@@ -168,7 +168,7 @@ console.log("The character at index 999 is '" + anyString.charAt(999) + "'");
 
 <!-- UTSJSON.String.charCodeAt.param -->
 
-<!-- UTSJSON.String.charCodeAt.returValue -->
+<!-- UTSJSON.String.charCodeAt.returnValue -->
 
 ```ts
 const sentence = 'The quick brown fox jumps over the lazy dog.';
@@ -185,7 +185,7 @@ console.log(`The character code ${sentence.charCodeAt(index)} is equal to ${sent
 
 <!-- UTSJSON.String.concat.param -->
 
-<!-- UTSJSON.String.concat.returValue -->
+<!-- UTSJSON.String.concat.returnValue -->
 
 ```ts
 let hello = 'Hello, '
@@ -201,7 +201,7 @@ console.log(hello.concat('Kevin', '. Have a nice day.'))
 
 <!-- UTSJSON.String.indexOf.param -->
 
-<!-- UTSJSON.String.indexOf.returValue -->
+<!-- UTSJSON.String.indexOf.returnValue -->
 
 ```ts
 const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
@@ -259,7 +259,7 @@ console.log(str1.padStart(2, '0'));
 
 <!-- UTSJSON.String.lastIndexOf.param -->
 
-<!-- UTSJSON.String.lastIndexOf.returValue -->
+<!-- UTSJSON.String.lastIndexOf.returnValue -->
 
 <!-- UTSJSON.String.lastIndexOf.compatibility -->
 
@@ -269,7 +269,7 @@ console.log(str1.padStart(2, '0'));
 
 <!-- UTSJSON.String.replace.param -->
 
-<!-- UTSJSON.String.replace.returValue -->
+<!-- UTSJSON.String.replace.returnValue -->
 
 ```ts
 const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
@@ -290,7 +290,7 @@ console.log(p.replace(regex, 'ferret'));
 
 <!-- UTSJSON.String.replace_1.param -->
 
-<!-- UTSJSON.String.replace_1.returValue -->
+<!-- UTSJSON.String.replace_1.returnValue -->
 
 <!-- UTSJSON.String.replace_1.compatibility -->
 
@@ -300,7 +300,7 @@ console.log(p.replace(regex, 'ferret'));
 
 <!-- UTSJSON.String.search.param -->
 
-<!-- UTSJSON.String.search.returValue -->
+<!-- UTSJSON.String.search.returnValue -->
 
 ```ts
 const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
@@ -320,7 +320,7 @@ console.log(paragraph[paragraph.search(regex)]);
 
 <!-- UTSJSON.String.slice.param -->
 
-<!-- UTSJSON.String.slice.returValue -->
+<!-- UTSJSON.String.slice.returnValue -->
 
 ```ts
 const str = 'The quick brown fox jumps over the lazy dog.';
@@ -338,7 +338,7 @@ console.log(str.slice(4, 19));
 
 <!-- UTSJSON.String.split.param -->
 
-<!-- UTSJSON.String.split.returValue -->
+<!-- UTSJSON.String.split.returnValue -->
 
 ```ts
 const str = 'The quick brown fox jumps over the lazy dog.';
@@ -359,7 +359,7 @@ console.log(chars[8]);
 
 <!-- UTSJSON.String.substring.param -->
 
-<!-- UTSJSON.String.substring.returValue -->
+<!-- UTSJSON.String.substring.returnValue -->
 
 <!-- UTSJSON.String.substring.compatibility -->
 
@@ -369,7 +369,7 @@ console.log(chars[8]);
 
 <!-- UTSJSON.String.toLowerCase.param -->
 
-<!-- UTSJSON.String.toLowerCase.returValue -->
+<!-- UTSJSON.String.toLowerCase.returnValue -->
 
 ```ts
 console.log('中文简体 zh-CN || zh-Hans'.toLowerCase());
@@ -386,7 +386,7 @@ console.log('中文简体 zh-CN || zh-Hans'.toLowerCase());
 
 <!-- UTSJSON.String.toUpperCase.param -->
 
-<!-- UTSJSON.String.toUpperCase.returValue -->
+<!-- UTSJSON.String.toUpperCase.returnValue -->
 
 ```ts
 const sentence = 'The quick brown fox jumps over the lazy dog.';
@@ -402,6 +402,6 @@ console.log(sentence.toUpperCase());
 
 <!-- UTSJSON.String.trim.param -->
 
-<!-- UTSJSON.String.trim.returValue -->
+<!-- UTSJSON.String.trim.returnValue -->
 
 <!-- UTSJSON.String.trim.compatibility -->

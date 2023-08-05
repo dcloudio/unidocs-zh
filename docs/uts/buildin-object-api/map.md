@@ -11,7 +11,7 @@ Map 对象保存键值对。任何值（对象或者基本类型）都可以作�
 
 <!-- UTSJSON.Map.size.param -->
 
-<!-- UTSJSON.Map.size.returValue -->
+<!-- UTSJSON.Map.size.returnValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -35,7 +35,7 @@ console.log(map1.size);
 
 <!-- UTSJSON.Map.clear.param -->
 
-<!-- UTSJSON.Map.clear.returValue -->
+<!-- UTSJSON.Map.clear.returnValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -56,7 +56,7 @@ console.log(map1.size);
 
 <!-- UTSJSON.Map.delete.param -->
 
-<!-- UTSJSON.Map.delete.returValue -->
+<!-- UTSJSON.Map.delete.returnValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -76,7 +76,7 @@ console.log(map1.has('bar'));
 
 <!-- UTSJSON.Map.forEach.param -->
 
-<!-- UTSJSON.Map.forEach.returValue -->
+<!-- UTSJSON.Map.forEach.returnValue -->
 
 <!-- UTSJSON.Map.forEach.compatibility -->
 
@@ -86,7 +86,7 @@ console.log(map1.has('bar'));
 
 <!-- UTSJSON.Map.get.param -->
 
-<!-- UTSJSON.Map.get.returValue -->
+<!-- UTSJSON.Map.get.returnValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -104,7 +104,7 @@ console.log(map1.get('bar'));
 
 <!-- UTSJSON.Map.has.param -->
 
-<!-- UTSJSON.Map.has.returValue -->
+<!-- UTSJSON.Map.has.returnValue -->
 
 ```ts
 const map1 = new Map<string,string>();
@@ -125,7 +125,7 @@ console.log(map1.has('baz'));
 
 <!-- UTSJSON.Map.set.param -->
 
-<!-- UTSJSON.Map.set.returValue -->
+<!-- UTSJSON.Map.set.returnValue -->
 
 ```ts
 const map1 = new Map<string,string>();

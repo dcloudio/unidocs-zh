@@ -12,7 +12,7 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 <!-- UTSJSON.Number.toFixed.param -->
 
-<!-- UTSJSON.Number.toFixed.returValue -->
+<!-- UTSJSON.Number.toFixed.returnValue -->
 
 ```ts
 function financial(x: Number): String {

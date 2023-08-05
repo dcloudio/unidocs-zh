@@ -31,7 +31,7 @@ console.log(obj["result"]);
 
 <!-- UTSJSON.JSON.parse.param -->
 
-<!-- UTSJSON.JSON.parse.returValue -->
+<!-- UTSJSON.JSON.parse.returnValue -->
 
  ```ts
 class Persion {
@@ -66,7 +66,7 @@ let userArrayArray = JSON.parse<Array<Persion>>('[{"name":"zhangsan","age":12},{
 
 <!-- UTSJSON.JSON.stringify.param -->
 
-<!-- UTSJSON.JSON.stringify.returValue -->
+<!-- UTSJSON.JSON.stringify.returnValue -->
 
 ```ts
 console.log(JSON.stringify({ x: 5, y: 6 }));
@@ -88,6 +88,6 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 
 <!-- UTSJSON.JSON.stringify_1.param -->
 
-<!-- UTSJSON.JSON.stringify_1.returValue -->
+<!-- UTSJSON.JSON.stringify_1.returnValue -->
 
 <!-- UTSJSON.JSON.stringify_1.compatibility -->

@@ -11,7 +11,7 @@ Math 是一个内置对象，它拥有一些数学常数属性和数学函数方
 
 <!-- UTSJSON.Math.E.param -->
 
-<!-- UTSJSON.Math.E.returValue -->
+<!-- UTSJSON.Math.E.returnValue -->
 
 ```ts
 function getNapier():number {
@@ -29,7 +29,7 @@ console.log(getNapier());
 
 <!-- UTSJSON.Math.LN10.param -->
 
-<!-- UTSJSON.Math.LN10.returValue -->
+<!-- UTSJSON.Math.LN10.returnValue -->
 
 
 ```ts
@@ -48,7 +48,7 @@ console.log(getNatLog10());
 
 <!-- UTSJSON.Math.LN2.param -->
 
-<!-- UTSJSON.Math.LN2.returValue -->
+<!-- UTSJSON.Math.LN2.returnValue -->
 
 ```ts
 function getNatLog2():number {
@@ -66,7 +66,7 @@ console.log(getNatLog2());
 
 <!-- UTSJSON.Math.LOG2E.param -->
 
-<!-- UTSJSON.Math.LOG2E.returValue -->
+<!-- UTSJSON.Math.LOG2E.returnValue -->
 
 ```ts
 function getLog2e():number {
@@ -84,7 +84,7 @@ console.log(getLog2e());
 
 <!-- UTSJSON.Math.LOG10E.param -->
 
-<!-- UTSJSON.Math.LOG10E.returValue -->
+<!-- UTSJSON.Math.LOG10E.returnValue -->
 
 ```ts
 function getLog10e():number {
@@ -102,7 +102,7 @@ console.log(getLog10e());
 
 <!-- UTSJSON.Math.PI.param -->
 
-<!-- UTSJSON.Math.PI.returValue -->
+<!-- UTSJSON.Math.PI.returnValue -->
 
 ```ts
 function calculateCircumference (radius:number):number {
@@ -120,7 +120,7 @@ console.log(calculateCircumference(1));
 
 <!-- UTSJSON.Math.SQRT1_2.param -->
 
-<!-- UTSJSON.Math.SQRT1_2.returValue -->
+<!-- UTSJSON.Math.SQRT1_2.returnValue -->
 
 ```ts
 function getRoot1_2():number {
@@ -138,7 +138,7 @@ console.log(getRoot1_2());
 
 <!-- UTSJSON.Math.SQRT2.param -->
 
-<!-- UTSJSON.Math.SQRT2.returValue -->
+<!-- UTSJSON.Math.SQRT2.returnValue -->
 
 ```ts
 function getRoot2():number {
@@ -160,7 +160,7 @@ console.log(getRoot2());
 
 <!-- UTSJSON.Math.clz32.param -->
 
-<!-- UTSJSON.Math.clz32.returValue -->
+<!-- UTSJSON.Math.clz32.returnValue -->
 
 ```ts
 console.log(Math.clz32(1));
@@ -185,7 +185,7 @@ console.log(Math.clz32(3.5));
 
 <!-- UTSJSON.Math.sign.param -->
 
-<!-- UTSJSON.Math.sign.returValue -->
+<!-- UTSJSON.Math.sign.returnValue -->
 
 ```ts
 console.log(Math.sign(3));
@@ -205,7 +205,7 @@ console.log(Math.sign(0));
 
 <!-- UTSJSON.Math.log10.param -->
 
-<!-- UTSJSON.Math.log10.returValue -->
+<!-- UTSJSON.Math.log10.returnValue -->
 
 ```ts
 console.log(Math.log10(10));
@@ -225,7 +225,7 @@ console.log(Math.log10(1));
 
 <!-- UTSJSON.Math.log2.param -->
 
-<!-- UTSJSON.Math.log2.returValue -->
+<!-- UTSJSON.Math.log2.returnValue -->
 ```ts
 console.log(Math.log2(2));
 // expected output: 1
@@ -244,7 +244,7 @@ console.log(Math.log2(1));
 
 <!-- UTSJSON.Math.log1p.param -->
 
-<!-- UTSJSON.Math.log1p.returValue -->
+<!-- UTSJSON.Math.log1p.returnValue -->
 ```ts
 console.log(Math.log1p(Math.E-1));
 // expected output: 1
@@ -260,7 +260,7 @@ console.log(Math.log1p(0));
 
 <!-- UTSJSON.Math.expm1.param -->
 
-<!-- UTSJSON.Math.expm1.returValue -->
+<!-- UTSJSON.Math.expm1.returnValue -->
 ```ts
 console.log(Math.expm1(1));
 // expected output: 1.718281828459045
@@ -276,7 +276,7 @@ console.log(Math.expm1(-38));
 
 <!-- UTSJSON.Math.cosh.param -->
 
-<!-- UTSJSON.Math.cosh.returValue -->
+<!-- UTSJSON.Math.cosh.returnValue -->
 ```ts
 console.log(Math.cosh(0));
 // expected output: 1
@@ -295,7 +295,7 @@ console.log(Math.cosh(-1));
 
 <!-- UTSJSON.Math.sinh.param -->
 
-<!-- UTSJSON.Math.sinh.returValue -->
+<!-- UTSJSON.Math.sinh.returnValue -->
 
 ```ts
 console.log(Math.sinh(0));
@@ -312,7 +312,7 @@ console.log(Math.sinh(1));
 
 <!-- UTSJSON.Math.tanh.param -->
 
-<!-- UTSJSON.Math.tanh.returValue -->
+<!-- UTSJSON.Math.tanh.returnValue -->
 ```ts
 console.log(Math.tanh(-1));
 // Expected output: -0.7615941559557649
@@ -331,7 +331,7 @@ console.log(Math.tanh(1));
 
 <!-- UTSJSON.Math.acosh.param -->
 
-<!-- UTSJSON.Math.acosh.returValue -->
+<!-- UTSJSON.Math.acosh.returnValue -->
 
 ```ts
 console.log(Math.acosh(1));
@@ -352,7 +352,7 @@ console.log(Math.acosh(2.5));
 
 <!-- UTSJSON.Math.asinh.param -->
 
-<!-- UTSJSON.Math.asinh.returValue -->
+<!-- UTSJSON.Math.asinh.returnValue -->
 
 ```ts
 console.log(Math.asinh(1));
@@ -376,7 +376,7 @@ console.log(Math.asinh(2));
 
 <!-- UTSJSON.Math.atanh.param -->
 
-<!-- UTSJSON.Math.atanh.returValue -->
+<!-- UTSJSON.Math.atanh.returnValue -->
 ```ts
 console.log(Math.atanh(0));
 // expected output: 0
@@ -392,7 +392,7 @@ console.log(Math.atanh(0.5));
 
 <!-- UTSJSON.Math.trunc.param -->
 
-<!-- UTSJSON.Math.trunc.returValue -->
+<!-- UTSJSON.Math.trunc.returnValue -->
 ```ts
 console.log(Math.trunc(13.37));
 // Expected output: 13
@@ -411,7 +411,7 @@ console.log(Math.trunc(0.123));
 
 <!-- UTSJSON.Math.fround.param -->
 
-<!-- UTSJSON.Math.fround.returValue -->
+<!-- UTSJSON.Math.fround.returnValue -->
 ```ts
 console.log(Math.fround(1.5));
 // expected output: 1.5
@@ -427,7 +427,7 @@ console.log(Math.fround(1.337));
 
 <!-- UTSJSON.Math.abs.param -->
 
-<!-- UTSJSON.Math.abs.returValue -->
+<!-- UTSJSON.Math.abs.returnValue -->
 
 ```ts
 function difference(a:number, b:number):number {
@@ -452,7 +452,7 @@ console.log(difference(1.23456, 7.89012));
 
 <!-- UTSJSON.Math.acos.param -->
 
-<!-- UTSJSON.Math.acos.returValue -->
+<!-- UTSJSON.Math.acos.returnValue -->
 
 ```ts
 console.log(Math.acos(-1));
@@ -474,7 +474,7 @@ console.log(Math.acos(1));
 
 <!-- UTSJSON.Math.asin.param -->
 
-<!-- UTSJSON.Math.asin.returValue -->
+<!-- UTSJSON.Math.asin.returnValue -->
 
 ```ts
 console.log(Math.asin(-1));
@@ -498,7 +498,7 @@ console.log(Math.asin(1));
 
 <!-- UTSJSON.Math.atan.param -->
 
-<!-- UTSJSON.Math.atan.returValue -->
+<!-- UTSJSON.Math.atan.returnValue -->
 
 ```ts
 console.log(Math.atan(1));
@@ -515,7 +515,7 @@ console.log(Math.atan(0));
 
 <!-- UTSJSON.Math.atan2.param -->
 
-<!-- UTSJSON.Math.atan2.returValue -->
+<!-- UTSJSON.Math.atan2.returnValue -->
 
 ```ts
 console.log(Math.atan2(90, 15));
@@ -532,7 +532,7 @@ console.log(Math.atan2(15, 90));
 
 <!-- UTSJSON.Math.ceil.param -->
 
-<!-- UTSJSON.Math.ceil.returValue -->
+<!-- UTSJSON.Math.ceil.returnValue -->
 
 ```ts
 console.log(Math.ceil(0.95));
@@ -557,7 +557,7 @@ console.log(Math.ceil(-7.004));
 
 <!-- UTSJSON.Math.cos.param -->
 
-<!-- UTSJSON.Math.cos.returValue -->
+<!-- UTSJSON.Math.cos.returnValue -->
 ```ts
 console.log(Math.cos(0));
 // expected output: 1
@@ -573,7 +573,7 @@ console.log(Math.cos(1));
 
 <!-- UTSJSON.Math.exp.param -->
 
-<!-- UTSJSON.Math.exp.returValue -->
+<!-- UTSJSON.Math.exp.returnValue -->
 
 ```ts
 console.log(Math.exp(-1));
@@ -593,7 +593,7 @@ console.log(Math.exp(1));
 
 <!-- UTSJSON.Math.floor.param -->
 
-<!-- UTSJSON.Math.floor.returValue -->
+<!-- UTSJSON.Math.floor.returnValue -->
 ```ts
 console.log(Math.floor(5.95));
 // expected output: 5
@@ -615,7 +615,7 @@ console.log(Math.floor(-5.05));
 
 <!-- UTSJSON.Math.log.param -->
 
-<!-- UTSJSON.Math.log.returValue -->
+<!-- UTSJSON.Math.log.returnValue -->
 
 ```ts
 console.log(Math.log(1));
@@ -632,7 +632,7 @@ console.log(Math.log(10));
 
 <!-- UTSJSON.Math.max.param -->
 
-<!-- UTSJSON.Math.max.returValue -->
+<!-- UTSJSON.Math.max.returnValue -->
 ```ts
 console.log(Math.max(1, 3, 2));
 // expected output: 3
@@ -648,7 +648,7 @@ console.log(Math.max(-1, -3, -2));
 
 <!-- UTSJSON.Math.min.param -->
 
-<!-- UTSJSON.Math.min.returValue -->
+<!-- UTSJSON.Math.min.returnValue -->
 ```ts
 console.log(Math.min(2, 3, 1));
 // expected output: 1
@@ -664,7 +664,7 @@ console.log(Math.min(-2, -3, -1));
 
 <!-- UTSJSON.Math.pow.param -->
 
-<!-- UTSJSON.Math.pow.returValue -->
+<!-- UTSJSON.Math.pow.returnValue -->
 ```ts
 console.log(Math.pow(7, 3));
 // expected output: 343
@@ -680,7 +680,7 @@ console.log(Math.pow(4, 0.5));
 
 <!-- UTSJSON.Math.random.param -->
 
-<!-- UTSJSON.Math.random.returValue -->
+<!-- UTSJSON.Math.random.returnValue -->
 ```ts
 function getRandomInt(max:number):number {
   return Math.floor(Math.random() * max);
@@ -703,7 +703,7 @@ console.log(Math.random());
 
 <!-- UTSJSON.Math.round.param -->
 
-<!-- UTSJSON.Math.round.returValue -->
+<!-- UTSJSON.Math.round.returnValue -->
 ```ts
 console.log(Math.round(20.49));
 // expected output: 20
@@ -726,7 +726,7 @@ console.log(Math.round(-20.51));
 
 <!-- UTSJSON.Math.sin.param -->
 
-<!-- UTSJSON.Math.sin.returValue -->
+<!-- UTSJSON.Math.sin.returnValue -->
 
 ```ts
 console.log(Math.sin(0));
@@ -743,7 +743,7 @@ console.log(Math.sin(1));
 
 <!-- UTSJSON.Math.sqrt.param -->
 
-<!-- UTSJSON.Math.sqrt.returValue -->
+<!-- UTSJSON.Math.sqrt.returnValue -->
 ```ts
 function calcHypotenuse(a:number, b:number):number {
   return (Math.sqrt((a * a) + (b * b)));
@@ -766,7 +766,7 @@ console.log(calcHypotenuse(0, 0));
 
 <!-- UTSJSON.Math.tan.param -->
 
-<!-- UTSJSON.Math.tan.returValue -->
+<!-- UTSJSON.Math.tan.returnValue -->
 ```ts
 console.log(Math.tan(0));
 // expected output: 0

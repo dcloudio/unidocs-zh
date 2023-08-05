@@ -10,7 +10,7 @@
 
 <!-- UTSJSON.Global.parseInt.param -->
 
-<!-- UTSJSON.Global.parseInt.returValue -->
+<!-- UTSJSON.Global.parseInt.returnValue -->
 
 <!-- UTSJSON.Global.parseInt.compatibility -->
 
@@ -20,6 +20,6 @@
 
 <!-- UTSJSON.Global.parseFloat.param -->
 
-<!-- UTSJSON.Global.parseFloat.returValue -->
+<!-- UTSJSON.Global.parseFloat.returnValue -->
 
 <!-- UTSJSON.Global.parseFloat.compatibility -->

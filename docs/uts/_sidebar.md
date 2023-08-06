@@ -1,7 +1,7 @@
 * [UTS 介绍](README.md)
-* [操作符](operator.md)
 * [数据类型](data-type.md)
 * [字面量](literal.md)
+* [操作符](operator.md)
 * [控制流程](control.md)
 * [函数](function.md)
 * [类](class.md)

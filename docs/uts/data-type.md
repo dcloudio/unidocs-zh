@@ -217,61 +217,83 @@ let str5 = str3 as string
 
 ### 日期（Date）@date
 
-日期对象表示日期，包括年月日时分秒等各种日期。[详见](buildin-object-api/date.md)
+日期对象表示日期，包括年月日时分秒等各种日期。
+
+```ts
+const myDate = new Date()
+console.log(myDate instanceof Date) // Date类型用typeof会返回object，需使用instanceof判断
+const year:number = myDate.getFullYear()
+```
+
+[详见](buildin-object-api/date.md)
 
 
 ### 数组（Array）
 
 Array，即数组，支持在单个变量名下存储多个元素，并具有执行常见数组操作的成员。
 
-js和swift的array，是可变长的泛型array。
+`js`和`swift`的array，是可变长的泛型array。
 
-而在kotlin中，其自带的array是不可变长的，length是固定的。只有arrayList是可变长的。
+而在`kotlin`中，其自带的array是不可变长的，length是固定的。只有arrayList是可变长的。
 
 为了拉齐实现，UTS补充了新的Array，替代kotlin的array。它继承自kotlin的ArrayList，所以可以变长。
 
-如果开发者需要使用原始的kotlin的不可变长的array，需使用 kotlin.array。
+如果开发者需要使用原始的kotlin的不可变长的array，需使用 `kotlin.array`。
 
-需要使用 kotlin.array 的场景和专有数字类型一样：
+需要使用 kotlin.array 的场景和平台专有数字类型一样：
 1. 某些系统API或三方原生SDK的入参或返回值强制指定了kotlin的array。
 2. uts新增的可动态变长的array，在性能上不如固定length、不可变长的原始kotlin.array。但也只有在巨大量的运算中才能体现出毫秒级的差异。
 
 #### 创建一个数组对象
 
-`UTS`中数组的创建有两种方式：
+`UTS`中数组的创建有多种方式：
 
 1. 字面量创建
 
 ```ts
-let a = [1,2,3];//支持
-let a = [1,'2',3];//支持
+let a1 = [1,2,3];//支持
+let a2 = [1,'2',3];//支持
 
 // 需要注意的是，字面量创建的数组，不支持出现空的缺省元素
-let a = [1,,2,3];//不支持
+let a3 = [1,,2,3];//不支持
 ```
 
 2. 创建数组对象
 ```ts
-let a = new Array(1,2,3);//支持
-let a = new Array(1,'2',3);//支持
-let a = Array(1,2,3);//支持
-let a = Array(1,'2','3');//支持
+let a1 = new Array(1,2,3);//支持
+let a2 = new Array(1,'2',3);//支持
+let a3 = Array(1,2,3);//支持
+let a4 = Array(1,'2','3');//支持
+```
+
+3. 对数组项的类型进行定义
+
+字面量创建的数组，在uts的老版本上，kotlin自动推导数组类型，可能会推导成intArray，而不是uts的array。建议显示声明类型。
+
+```ts
+const a1:Array<string> = ["uni-app", "uniCloud", "HBuilder"]
+```
+
+使用 Array.isArray 或 instanceof 来判断数组类型。
+
+```ts
+let a1 = [1,2,3]
+console.log(Array.isArray(a1)) // 返回true
+console.log(a1 instanceof Array) // 返回true
 ```
 
 #### 遍历数组对象
 
-在UTS语言中，推荐使用foreach来实现数组的遍历
+使用foreach来实现数组的遍历
 
 ```ts
 const array1: string[] = ['a', 'b', 'c'];
 array1.forEach((element:string, index:number) => {
-    console.log(array1[index])
+	console.log(element)
+    console.log(array1[index]) //与上一行代码等价
 });
+// 打印结果是 a a b b c c
 ```
-
-#### 更多API
-
-更多Array的API，[详见](https://uniapp.dcloud.net.cn/uts/buildin-object-api/array.html)
 
 #### kotlin平台的 Array 特性
 
@@ -313,7 +335,7 @@ let kotlinArray = utsArr.toTypedArray()
 
 ```
 
-##### 2 我有一个原生类数组类型 需要转成成UTS的Array
+##### 2 我有一个原生类数组类型 需要转成UTS的Array
 
 ```ts
 // kotlin.collections.List 转换 Array
@@ -326,6 +348,11 @@ let kotlinList = Array.fromNative(utsArr)
 let utsArr= arrayOf("hello","world")
 let kotlinList = Array.fromNative(utsArr)
 ```
+
+
+#### 更多API
+
+更多Array的API，[详见](https://uniapp.dcloud.net.cn/uts/buildin-object-api/array.html)
 
 
 ### any类型 @any
@@ -442,7 +469,7 @@ const l = b!.length
 
 > 关于undefined
 
-js中的 undefined 表示变量被定义，但是未赋值或初始化。
+js中的 undefined类型表示变量被定义，但是未赋值或初始化。
 
 uts 编译为kotlin和swift时不支持 undefined。即不允许变量未赋值。
 

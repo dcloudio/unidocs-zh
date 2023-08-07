@@ -524,7 +524,7 @@ console.log(sumWithInitial);
 
 ### isArray()
 
-```
+```ts
 console.log(Array.isArray([1, 3, 5]));
 // Expected output: true
 

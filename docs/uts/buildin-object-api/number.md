@@ -34,7 +34,7 @@ toByte() 方法将当前的Number数据转换为Byte表示，如果超出Byte最
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+|√|√|x|
 
 ```ts
 let a = 12
@@ -71,7 +71,7 @@ toLong() 方法将当前的Number数据转换为Long表示，如果超出Long最
 
 |JavaScript|Kotlin|Swift|
 |:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+|√|√|x|
 
 ```ts
 let a = 12

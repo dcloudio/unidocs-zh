@@ -1,5 +1,9 @@
 ## 数据类型@data-type
 
+强类型语言的特点，是数据类型要求严格。它带来2个好处：
+1. 高性能：明确的类型有更大的优化空间，在iOS和Android等os上可以节省内存、提高运算速度；web端由于仍编译为js，不具有类型性能优化。
+2. 安全的代码：强类型代码编写虽然没有弱类型自由，但类型检查、非空检查...各种检查可以提升代码的健壮性。
+
 ### 布尔值（Boolean）
 
 布尔是简单的基础类型，只有2个值：`true` 和 `false`。
@@ -221,7 +225,7 @@ let str5 = str3 as string
 
 ```ts
 const myDate = new Date()
-console.log(myDate instanceof Date) // Date类型用typeof会返回object，需使用instanceof判断
+console.log(myDate instanceof Date) // Date用typeof会返回object，需使用instanceof判断
 const year:number = myDate.getFullYear()
 ```
 
@@ -244,7 +248,7 @@ Array，即数组，支持在单个变量名下存储多个元素，并具有执
 1. 某些系统API或三方原生SDK的入参或返回值强制指定了kotlin的array。
 2. uts新增的可动态变长的array，在性能上不如固定length、不可变长的原始kotlin.array。但也只有在巨大量的运算中才能体现出毫秒级的差异。
 
-#### 创建一个数组对象
+#### 定义数组
 
 `UTS`中数组的创建有多种方式：
 
@@ -266,15 +270,20 @@ let a3 = Array(1,2,3);//支持
 let a4 = Array(1,'2','3');//支持
 ```
 
-3. 对数组项的类型进行定义
+3. 使用[]定义数组项的类型
+```ts
+const a1: string[] = ['a', 'b', 'c'];
+```
 
-字面量创建的数组，在uts的老版本上，kotlin自动推导数组类型，可能会推导成intArray，而不是uts的array。建议显示声明类型。
+4. Array<>定义数组项的类型
 
 ```ts
 const a1:Array<string> = ["uni-app", "uniCloud", "HBuilder"]
 ```
 
-使用 Array.isArray 或 instanceof 来判断数组类型。
+字面量创建的数组，在uts的老版本上，kotlin自动推导数组类型，可能会推导成intArray，而不是uts的array。建议显示声明类型。
+
+typeof 一个 array 得到的是 object。需使用 Array.isArray 或 instanceof 来判断数组类型。
 
 ```ts
 let a1 = [1,2,3]
@@ -430,11 +439,11 @@ if (b != null) {
 ```ts
 const a = "uts"
 const b: string | null = null
-console.log(b?.length)
-console.log(a?.length) // 无需安全调用
+console.log(a.length) // s的属性可以直接调用，无需安全调用
+console.log(b?.length) // b可能为null，null没有length属性，必须加?标记
 ```
 
-如果 b 非空，就返回 b.length，否则返回 null，这个表达式的类型是 number | null。
+如果 b 非空，就返回 b.length，否则返回 null，`b?.length`这个表达式的类型是 number | null。
 
 安全调用在链式调用中很有用。例如，一个员工 Bob 可能会（或者不会）分配给一个部门。 可能有另外一个员工是该部门的负责人。获取 Bob 所在部门负责人（如果有的话）的名字， 写作：
 
@@ -466,11 +475,16 @@ console.log(baz);
 const l = b!.length
 ```
 
+### 其他
 
-> 关于undefined
+- 关于undefined
 
 js中的 undefined类型表示变量被定义，但是未赋值或初始化。
 
 uts 编译为kotlin和swift时不支持 undefined。即不允许变量未赋值。
 
 每个有类型的变量都需要初始化或赋值。
+
+- json
+
+json 在 web 中是一个 object，不存在 json 这个基础类型。在 uts 中提供了内置的 UTSJSONObject 对象，[详见](buildin-object-api/json.md)

@@ -45,7 +45,7 @@
 - push_clientid，个推客户端id（也会存在opendb表中）。
 - getui_alias，个推自定义客户端别名。
 - getui_custom_tag，由用户自定义的个推客户端标签。该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情
-- getui_big_data_tag，个推大数据标签。该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情
+- getui_big_data_tag，个推大数据标签。
 
 **注意**：`user_id`、`user_tag`、`device_id`、`push_clientid`、`getui_custom_tag`、`getui_big_data_tag`、`getui_alias`不可多选。全为空表示向所有启动过应用的设备推送。
 

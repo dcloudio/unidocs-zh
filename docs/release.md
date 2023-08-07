@@ -1,3 +1,59 @@
+#### 3.8.7.20230703
+* 【uni-app】
+* App平台、Web平台 修复 vue 页面 textarea 组件高度渲染异常的Bug [详情](https://ask.dcloud.net.cn/question/169380)
+* App平台 优化 Vue2 项目 nvue 文件事件编译 [详情](https://ask.dcloud.net.cn/question/170516)
+* App平台 修复 Vue3 项目部分情况下 VideoContext 方法失效的Bug [详情](https://ask.dcloud.net.cn/question/168476)
+* App平台 修复 nvue 文件中文本节点无法使用 \n 换行的Bug [详情](https://github.com/dcloudio/uni-app/issues/4215)
+* App平台 修复 指纹认证部分提示语未支持国际化的Bug [详情](https://ask.dcloud.net.cn/question/168473	)
+* App-iOS平台 修复 uni.setTabBarItem 动态设置 gif 图片不生效的Bug [详情](https://ask.dcloud.net.cn/question/171342)
+* App-iOS平台 修复 nvue rich-text 组件循环渲染时文字可能随机出现白色背景的Bug [详情](https://ask.dcloud.net.cn/question/171090)
+* App-iOS平台 修复 nvue video 组件高度设置 rpx 单位时可能导致 controls 不显示的Bug [详情](https://ask.dcloud.net.cn/question/171037)
+* App-iOS平台 修复 uni原生插件Hook系统事件 applicationMain:argv: 获取参数为空的Bug
+* App-iOS平台 修复 tabBar 图标宽高不一致时显示会变形的Bug [详情](https://ask.dcloud.net.cn/question/172418)
+* Web平台 优化 uni.showToast 文本换行样式 [详情](https://github.com/dcloudio/uni-app/pull/4373)
+* Web平台 修复 部分情况下选择位置界面显示异常的Bug [详情](https://ask.dcloud.net.cn/question/167071)
+* Web平台 修复 高德地图地址名称丢失的Bug [详情](https://ask.dcloud.net.cn/question/171013)
+* Web平台 修复 darkmode 配置不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/4317)
+* 小程序平台 修复 嵌套列表部分情况下事件编译报错的Bug [详情](https://ask.dcloud.net.cn/question/171043)
+* 小程序平台 修复 部分情况下 eventChannel 错乱的Bug
+* 小程序平台 修复 自定义属性名称无法使用 name、value 的Bug [详情](https://github.com/dcloudio/uni-app/pull/4257)
+* 微信小程序平台 修复 使用 requirePlugin 报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/4301)
+* 抖音小程序平台 新增 支持 consume-card、pay-button、rate-button、member-button 组件 [详情](https://ask.dcloud.net.cn/question/167927)
+* 抖音小程序平台 新增 showToast 支持 mask 配置 [详情](https://ask.dcloud.net.cn/question/154332)
+* Web平台、小程序平台、App平台在线推送 修复 uni-push2.0 修复 高频调用推送，导致客户端内存不足，从而引起客户端卡住的问题（小程序平台，需添加新的socket合法域名 wshzn.getui.net:5223 进白名单，[详情](https://uniapp.dcloud.net.cn/unipush-v2.html#useinmp)）
+* uts插件 App-Android平台 调整 内置`XXPermissions`库为仓储引用，避免与其它插件产生冲突
+* uts插件 App-Android平台 Math.round 返回结果为浮点数的Bug
+* uts插件 App-Android平台 console.log 修复部分类型打印异常的Bug
+* uts插件 App-iOS平台 新增 CocoaPods 依赖 [文档](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#config-json-2)
+* uts插件 App-iOS平台 修复 uts页面组件调用 $emit 方法无响应的Bug
+* uts插件 App-iOS平台 修复 函数参数类型为 UTSJSONObject 时传入的参数值总是为空的Bug
+* uts插件 App-iOS平台 修复 Hello UTS 中腾讯定位插件没有网络时调用 getLocation 导致应用闪退的Bug [详情](https://ask.dcloud.net.cn/question/172744)
+* 【uniCloud】
+* 【重要】新增 uni-ai 计费网关，可低门槛的采购ai能力 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-buy.html)
+* 新增 阿里云 云存储支持目录 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage.html#storage-dir)
+* 优化 阿里云 云函数调用云函数超时时间由10秒调整为60秒
+* 新增 本地调试支持使用push扩展库
+* 修复 本地调试调用redis服务的multi方法时未正确返回结果的Bug [详情](https://ask.dcloud.net.cn/question/171188)
+* 修复 jql语法 geoNear方法不传query参数时返回结果不正确的Bug [详情](https://ask.dcloud.net.cn/question/172404)
+* 新增 uni-ai chatCompletion 接口流式响应支持 optimizedMessage 事件，优化 message 触发频率，减少客户端卡顿 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion-stream)
+* 【App插件(含5+App和uni-app的App端)】
+* Android平台 新增 enableOAID 配置不使用云端打包机默认版本 OAID SDK，避免通过uts插件或uni原生插件调用自己的 OAID SDK 引起的冲突 [详情](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#enableoaid)
+* Android平台 优化 plus.runtime.install 安装apk功能剥离为独立模块，云端打包勾选 google play 渠道时不包含此模块，解决上架 google play 审核报 DCloud SDK 包含从未知来源下载或安装应用的问题 [详情](https://ask.dcloud.net.cn/question/172533)
+* Android平台 更新 AndroidX依赖库为 1.1.0 版，解决上架 google play 报 androidx.fragment:fragment:1.0.0 SDK 版本已老的问题
+* Android平台 更新 uni-AD 今日头条穿山甲 SDK 为 5.3.4.1 版；穿山甲GroMore广告 SDK 为 5.3.4.1 版
+* Android平台 修复 3.8.4引出的 软键盘弹出时输入框可能被遮挡的Bug [详情](https://ask.dcloud.net.cn/question/172135)
+* Android平台 修复 3.8.4引出的 同时勾选友盟统计模块和个推推送模块打包冲突报错的Bug [详情](https://ask.dcloud.net.cn/question/172844)
+* Android平台 修复 3.8.4引出的 Android 4.4 设备运行崩溃的Bug [详情](https://ask.dcloud.net.cn/question/173032)
+* iOS平台 更新 云端打包环境 XCode 为 14.3.1 版、iOS SDK 为 16.4 版
+* iOS平台 更新 一键登录使用的个验基础库SDK为 3.0.6.0 版，解决上传 AppStore 可能报 ITMS-90683:Missing purpose string in info.plist 的Bug
+* iOS平台 调整 allowsInlineMediaPlayback 默认值为 ture，允许 H5 视频全屏播放 [文档](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#full-manifest)
+* iOS平台 调整 mediaPlaybackRequiresUserAction 默认值为 false，允许 H5 音视频通过 API 控制自动播放 [文档](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#full-manifest)
+* iOS平台 修复 setTitleNViewButtonStyle 动态设置标题栏按钮样式可能导致无法正常显示的Bug [详情](https://ask.dcloud.net.cn/question/172191)
+* iOS平台 修复 视频播放控件 video 画面方向可能不正确的Bug [详情](https://ask.dcloud.net.cn/question/171484)
+* 【uni小程序SDK】
+* Android平台 修复 动态设置胶囊按钮全局项菜单可能不生效的Bug
+* iOS平台 优化 push 方式打开小程序设置 autoControlNavigationBar 为 false 时不接管 navigationController 的 delegate，减少对宿主的影响
+
 #### 3.8.4.20230531
 * 【uni-app】
 * App平台 修复 Vue2 项目在 nvue 页面 style 中使用 border-radius 样式解析不准确的Bug [详情](https://ask.dcloud.net.cn/question/168877)

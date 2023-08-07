@@ -46,7 +46,7 @@
 |enable-poi|Boolean|false|是否展示 POI 点|App-nvue 3.1.0+|
 |enable-building|Boolean|false|是否展示建筑物|App-nvue 3.1.0+ 支持 (**废除原enable-3D属性 高德地图默认开启建筑物就是3D无法设置**)|
 |show-location|Boolean||显示带有方向的当前定位点|微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
-|polygons|Array.`<polygon>`||多边形|App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序、支付宝小程序|
+|polygons（支付宝为: polygon）|Array.`<polygon>`||多边形|App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序、支付宝小程序|
 |enable-indoorMap|Boolean|false|是否展示室内地图|App-nvue 3.1.0+|
 |@markertap|EventHandle||点击标记点时触发，e.detail = {markerId}|App-nvue 2.3.3+、H5、微信小程序、支付宝小程序 （App和H5平台需要指定 marker 对象属性 id）|
 |@labeltap|EventHandle||点击label时触发，e.detail = {markerId} |微信小程序2.9.0|
@@ -337,6 +337,6 @@ A: App 3.4+ 已支持 Google 地图， App 3.4 以下版本使用下面的方案
 DCloud为开发者争取了福利，可优惠获取商业授权。如有需求请发邮件到`shacui@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`企业微信`发起在线咨询，扫描以下二维码获取地图福利。如您需要快速回复，一定注明公司名称、应用名称/介绍、以及HBuilder账户，感谢你的理解与配合。
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ad/sc-weixin.png)
-
+联系电话：17778170760
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

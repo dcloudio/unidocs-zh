@@ -7,7 +7,7 @@
 
 ## 1 了解UTS插件是什么
 
-`UTS插件`是`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点。[详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#)
+`UTS插件`是`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点。[详情](/plugin/uts-plugin)
 
 对于Android开发者来说，我们需要了解的是：
 
@@ -18,7 +18,7 @@
 
 ### 2.1  对于掌握kotlin语言者
 
-因为UTS语法与kotlin很类似，建议快速阅读后，在实践中掌握这UTS语法。[uts语法介绍](https://uniapp.dcloud.net.cn/tutorial/syntax-uts)。
+因为UTS语法与kotlin很类似，建议快速阅读后，在实践中掌握这UTS语法。[uts语法介绍](/uts/)。
 
 ### 2.2  对于仅掌握java语言者
 
@@ -154,7 +154,7 @@ getUniActivity()!.runOnUiThread(uiRunable)
 注意：
 
 + 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
-+ 2 本章节设计的配置，均需自定义基座后才能生效
++ 2 本章节涉及的配置，均需自定义基座后才能生效
 + 3 R文件的自动生成，已经在HBuilder X 3.6.9 版本支持，请使用最新版本开发
 
 ### 3.1 配置AndroidManifest.xml
@@ -171,7 +171,7 @@ AndroidManifest.xml示例：
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" 
   // 配置包名
-  package="io.dcloud.uni_modules.uts_nativepage">
+  package="io.dcloud.uni_modules.utsNativepage">
    // 配置权限
    <!--创建前台服务权限-->
    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -324,6 +324,21 @@ mediaPlayer.start();
 +--- com.github.bumptech.glide:disklrucache:4.9.0@jar
 \--- com.github.bumptech.glide:annotations:4.9.0@jar
 
+
+```
+
+### 3.5 远程依赖仓库说明
+
+目前云打包机支持下面的仓库：
+
+```
+
+jcenter()
+google()
+// huawei
+maven {url 'https://developer.huawei.com/repo/'}
+// JitPack 远程仓库：https://jitpack.io
+maven { url 'https://jitpack.io' }
 
 ```
 
@@ -1141,18 +1156,20 @@ uni环境与UTS环境交互时，除了基本数据类型之外，涉及function
 
 ### 6.6 如何生成android平台Array对象
 
-UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数据结构是 `MutableList`
+UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数据结构是 `UTSArray`
 
-理论上来说 `MutableList`确实更加灵活强大，但是部分android 平台api 明确要求了 Array格式的数据(比如请求权限)
+理论上来说 `UTSArray`确实更加灵活强大，但是部分android 平台api 明确要求了 Array格式的数据(比如请求权限)
 
 类似场景下，我们就要使用 toTypedArray() 函数进行转换，以便将`MutableList` 转换为对应的`Array`
 
 ```typescript
 
-// 得到一个MutableList
+// 得到一个UTSArray
 let permissionArray :String[] = []
 // 得到一个Array
-console.log(permissionArray.toTypedArray())
+console.log(permissionArray.toArray())
+// 得到一个MutableList
+console.log(permissionArray.toMutableList())
 ```
 
 另外还存在一种特殊情况，即开发者 在UTS中使用了 `kotlin`编写的依赖，这个时候情况稍微复杂些
@@ -1295,6 +1312,125 @@ let aa = 12
 console.log(aa.javaClass.toString()) // int
 
 ```
+
+### 6.13  UTS 如何进行遍历操作
+
+相比于for in / 下标计数等写法， UTS 推荐更现代化的foreach语法 实现集合的遍历。 
+
+数组：
+```
+let arrayObj = utsArrayOf("111","222","333")
+arrayObj.forEach(function(e:any){
+	console.log(e)
+})
+let arrayObj2 = [10,20,30]
+arrayObj2.forEach(function(e:any){
+	console.log(e)
+})
+```
+
+遍历Map:
+
+```
+let mapObj = new Map<string,any>()
+mapObj.put("name","zhangsan")
+mapObj.put("age",12)
+mapObj.forEach(function(key:string,value:any){
+	console.log(key)
+	console.log(value)
+})
+```
+
+遍历UTSJSONObject:(暂未公开)
+
+```
+let utsJsonObj = {
+	name:"zhangsan",
+	age:"22",
+}
+utsJsonObj['classInfo'] = "三年二班"
+utsJsonObj.forEach(function(perField:any){
+	console.log(perField)
+})
+```
+
+### 6.14  UTS 如何实现一个接口
+
+以HelloUTS nativepage插件 部分代码为例：
+ ```
+import OnClickListener from 'android.view.View.OnClickListener';
+// 实现 OnClickListener 接口
+class User {
+	name:string = "name"
+}
+
+ class StartBroadcastListener extends User implements OnClickListener{
+	
+    override onClick(v?: View):void{
+		
+		let myReceiver = new ScreenReceiver();
+		let filter = new IntentFilter();
+		filter.addAction(Intent.ACTION_SCREEN_OFF);
+		filter.addAction(Intent.ACTION_SCREEN_ON);
+		UTSAndroid.getUniActivity()!.registerReceiver(myReceiver, filter);
+		
+		// 提示屏幕状态监听已经注册
+		Toast.makeText(UTSAndroid.getAppContext(),"屏幕状态监听已注册，注意观察控制台日志",Toast.LENGTH_LONG).show();
+		
+    }
+}
+
+
+// 使用
+let btn_start_screen_listen = this.findViewById<Button>(R.id.btn_start_screen_listen);
+btn_start_screen_listen.setOnClickListener(new StartBroadcastListener());
+ ```
+
+如果要同时实现多个接口，采用的也是  implements 和 `,` 分隔来实现
+
+```uts
+class Person{
+	name:string = ""
+}
+class User extends Person implements android.view.View.OnClickListener,Cloneable{
+	constructor(){
+		
+	}
+	
+	override onClick(v?: android.view.View):void{
+		console.log(v)
+	}
+	
+	override equals(other?: any):boolean{
+		return true
+	}
+}
+
+```
+
+编译后的kotlin代码
+
+```
+open class Person {
+    open var name: String = "";
+}
+open class User : Person, android.view.View.OnClickListener, Cloneable {
+    constructor(){}
+    override fun onClick(v: android.view.View?): Unit {
+        console.log(v, " at uni_modules/uts-helloworld/utssdk/index.uts:37");
+    }
+    override fun equals(other: Any?): Boolean {
+        return true;
+    }
+}
+```
+
+其中需要注意的是
+
++ 目前暂不支持匿名声明，需要先定义一个 StartBroadcastListener 声明实现 OnClickListener 后再显性的创建
+
+
+
 
 
 ## 7  已知待解决问题(持续更新)

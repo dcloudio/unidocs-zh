@@ -22,7 +22,7 @@ UTS组件，是UTS插件的一个分支。UTS插件提供了原生API的扩展�
 
 继续阅读文档前，开发者需要了解以下前置条件：
 
-- 了解 [uts语法](../tutorial/syntax-uts.md) 和 [uts原生插件](uts-plugin.md)
+- 了解 [uts语法](/uts/) 和 [uts原生插件](uts-plugin.md)
 - 了解 [Vue组件](../tutorial/vue3-components.md)
 
 
@@ -1540,3 +1540,11 @@ Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 
 
 ## 常见问题
+
+#### 1 使用者需要指定 组件宽高
+
+```
+<uts-hello-view buttonText="点击按钮内容" style="width:375px;height: 375px;background-color: aqua;"></uts-hello-view>
+```
+
+如果不通过style 指定组件宽高，会导致组件不显示

@@ -91,6 +91,7 @@ const routerMap = {
   '/nvue-event': '/tutorial/nvue-event.html',
   '/use-html5plus': '/tutorial/use-html5plus.html',
   '/m3w': '/uniCloud/uni-portal.html',
+  '/tutorial/syntax-uts': '/uts/',
 }
 
 export default ({ fullPath, path, hash }) => {

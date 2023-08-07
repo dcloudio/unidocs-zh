@@ -1,12 +1,18 @@
-## uni-map-service 公共模块
+## uni-map-common 公共模块
 
-聚合了多家地图供应商的服务端API
+聚合多家地图供应商的云能力的公共模块。
+
+不管高德还是腾讯地图，都有众多服务端API，比如逆地址解析。uni-map-common对这些API进行了统一封装，抹平了差异。
+
+开发者只需使用uni-map-common，就可以更简单的使用地图的云接口。并且方便在不同地图厂商之间切换。
+
+同时本公共模块也是 [uniCloud-map 云端一体地图](unicloud-map.md) 的基础支撑模块。
 
 ::: warning 注意
-uni-map-service公共模块仅能在云函数/云对象内使用。如果您不了解公共模块，请[参阅](cf-common.md)
+uni-map-common公共模块仅能在云函数/云对象内使用。如果您不了解公共模块，请[参阅](cf-common.md)
 :::
 
-> 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=uni-map-service](https://ext.dcloud.net.cn/plugin?name=uni-map-service)
+> 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=uni-map-common](https://ext.dcloud.net.cn/plugin?name=uni-map-common)
 
 ## 公共返回参数@publicresult
 
@@ -18,15 +24,18 @@ uni-map-service公共模块仅能在云函数/云对象内使用。如果您不�
 |errMsg					|失败后的提示																																									|
 |provider				| 当前数据是哪家地图供应商返回的																															|
 |result					| 插件返回结果（抹平各平台差异后的返回结果）																									|
-|originalResult	| 原始返回结果（供应商接口原始返回结果，需new UniMapService时，设置needOriginalResult: true）	|
+|originalResult	| 原始返回结果（供应商接口原始返回结果，需new UniMap时，设置needOriginalResult: true）	|
 
 ## 初始化实例
 
 在调用API前，需要先初始化实例
 
+
 ```js
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx",
 	needOriginalResult: false, // 是否需要返回原始信息
@@ -59,15 +68,15 @@ let uniMapService = new UniMapService({
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.location2address({
+let result = await uniMap.location2address({
   location: "39.908815,116.397507"
 });
 console.log("result", result);
@@ -137,15 +146,15 @@ console.log("result", result);
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.address2location({
+let result = await uniMap.address2location({
   address: "北京市海淀区彩和坊路海淀西大街74号"
 });
 console.log("result", result);
@@ -183,15 +192,15 @@ console.log("result", result);
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.translate({
+let result = await uniMap.translate({
 	locations: [
 		{ lat: 39.908815, lng: 116.397507 },
 		{ lat: 39.908815, lng: 116.397107 }
@@ -229,15 +238,15 @@ console.log("result", result);
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.ip2location({
+let result = await uniMap.ip2location({
   ip: "111.206.145.41"
 });
 console.log("result", result);
@@ -277,15 +286,15 @@ console.log("result", result);
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.inputtips({
+let result = await uniMap.inputtips({
 	keyword: "人民医院",
 	city: "北京市"
 });
@@ -351,15 +360,15 @@ console.log("result", result);
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.search({
+let result = await uniMap.search({
 	keyword: "酒店",
 	boundary: "nearby(39.908815,116.397507,1000,1)"
 	city: "北京市"
@@ -431,15 +440,15 @@ console.log("result", result);
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.districtSearch({
+let result = await uniMap.districtSearch({
 	adcode: "110101"
 });
 console.log("result", result);
@@ -477,26 +486,26 @@ console.log("result", result);
 | &emsp;&#124;-- level		|Array	|行政区划级别																																																																																																					|高德地图	|
 | &emsp;&#124;-- children	|Array	|下级行政区列表，需传subdistrict参数才会有此值																																																																																																			|高德地图	|
 
-### 路线规划（导航）@route
+### 路线规划@route
 
 #### 驾车（driving）@drivingroute
 
 **功能介绍**
 
-用于计算从起点到终点驾车导航的路线以及结合实时路况、少收费、不走高速等多种偏好，精准预估到达时间。
+用于计算从起点到终点驾车的路线以及结合实时路况、少收费、不走高速等多种偏好，精准预估到达时间。
 
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.route({
+let result = await uniMap.route({
 	mode: "driving",
 	from: "40.034852,116.319820",
 	to: "39.771075,116.351395"
@@ -656,15 +665,15 @@ console.log("result", result);
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.route({
+let result = await uniMap.route({
 	mode: "walking",
 	from: "40.034852,116.319820",
 	to: "39.771075,116.351395"
@@ -718,15 +727,15 @@ console.log("result", result);
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.route({
+let result = await uniMap.route({
 	mode: "bicycling",
 	from: "40.034852,116.319820",
 	to: "39.771075,116.351395"
@@ -777,15 +786,15 @@ console.log("result", result);
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.route({
+let result = await uniMap.route({
 	mode: "ebicycling",
 	from: "40.034852,116.319820",
 	to: "39.771075,116.351395"
@@ -836,15 +845,15 @@ console.log("result", result);
 **示例**
 
 ```js
-// 引入uni-map-service公共模块
-const UniMapService  = require('uni-map-service');
+// 引入uni-map-common公共模块
+const UniMap = require('uni-map-common');
 // 初始化实例
-let uniMapService = new UniMapService({
+let uniMap = new UniMap({
 	provider: "qqmap", // 指定使用哪家地图供应商
 	key: "xxxxxx"
 });
 // 调用API
-let result = await uniMapService.route({
+let result = await uniMap.route({
 	mode: "transit",
 	from: "40.034852,116.319820",
 	to: "29.771075,116.351395",
@@ -1097,61 +1106,61 @@ console.log("result", result);
 	
 | 错误模块				|    错误码	|             说明																																				|
 |:--							|:--:				|:--																																											|
-| uni-map-service	|    110		| 请求来源未被授权																																				|
-| uni-map-service	|    111		| 签名验证失败																																						|
-| uni-map-service	|    112		| IP未被授权																																							|
-| uni-map-service	|    113		| 此功能未被授权																																					|
-| uni-map-service	|    120		| 此key每秒请求量已达到上限																																|
-| uni-map-service	|    121		| 此key每日调用量已达到上限																																|
-| uni-map-service	|    122		| ip访问超限																														|
-| uni-map-service	|    123		| 账号访问限制（如余额不足）																														|
-| uni-map-service	|    160		| sig参数不支持此请求类型																																	|
-| uni-map-service	|    161		| sig参数不支持和非object的POST JSON一起使用																							|
-| uni-map-service	|    190		| 无效的KEY																																								|
-| uni-map-service	|    199		| 此key未开启webservice功能																																|
-| uni-map-service	|    301		| 缺少必要字段key																																					|
-| uni-map-service	|    311		| key格式错误																																							|
-| uni-map-service	|    300		| 缺少必要字段																																						|
-| uni-map-service	|    306		| 缺少参数																																								|
-| uni-map-service	|    311		| 服务不支持https请求																																						|
-| uni-map-service	|320				|参数数据类型错误																																					|
-| uni-map-service	|330				|参数长度错误																																							|
-| uni-map-service	|351				|存在不共存的参数																																					|
-| uni-map-service	|324				|get和post中的同一参数值不相同																														|
-| uni-map-service	|326				|起终点距离过近																																						|
-| uni-map-service	|327				|附近无公交站																																							|
-| uni-map-service	|328				|无可达公交路线																																						|
-| uni-map-service	|329				|无可达火车路线																																						|
-| uni-map-service	|331				|查询条件过长																																							|
-| uni-map-service	|332				|途径点个数超过限制																																				|
-| uni-map-service	|333				|存在无法吸附的坐标点																																			|
-| uni-map-service	|335				|不支持该城市的公交查询																																		|
-| uni-map-service	|341				|缺少keyword（关键词）																																		|
-| uni-map-service	|344				|附近无火车站（公交）																																			|
-| uni-map-service	|347				|查询无结果																																								|
-| uni-map-service	|348				|参数错误																																									|
-| uni-map-service	|364				|是否扩大搜索参数只能为0或1																																|
-| uni-map-service	|365				|纬度不能超过±90																																					|
-| uni-map-service	|366				|经度不能超过±180																																					|
-| uni-map-service	|373				|起终点距离超长																																						|
-| uni-map-service	|374				|起终点坐标错误																																						|
-| uni-map-service	|375				|局域网IP无法定位																																					|
-| uni-map-service	|377				|提供的起终点无法规划出导航线路																														|
-| uni-map-service	|378				|提供的起终点无法规划出步行线路																														|
-| uni-map-service	|379				|提供的起终点无法规划出公交线路																														|
-| uni-map-service	|380				|坐标类型必须在有坐标的情况下使用																													|
-| uni-map-service	|382				|IP无法定位																																								|
-| uni-map-service	|384				|提供的起终点无法规划出骑行线路																														|
-| uni-map-service	|387				|没有对应的POI																																						|
-| uni-map-service	|393				|没有符合条件的数据																																				|
-| uni-map-service	|394				|错误的查询条件																																						|
-| uni-map-service	|395				|传入参数不合法																																						|
-| uni-map-service	|396				|最多支持200个坐标点，且起终点数目乘积最多为625（距离矩阵）																|
-| uni-map-service	|397				|一对多最多支持200个坐标点，多对多最多支持25个坐标点且起终点数目乘积最多为625（距离矩阵）	|
-| uni-map-service	|500				|服务响应失败																																							|
+| uni-map-common	|    110		| 请求来源未被授权																																				|
+| uni-map-common	|    111		| 签名验证失败																																						|
+| uni-map-common	|    112		| IP未被授权																																							|
+| uni-map-common	|    113		| 此功能未被授权																																					|
+| uni-map-common	|    120		| 此key每秒请求量已达到上限																																|
+| uni-map-common	|    121		| 此key每日调用量已达到上限																																|
+| uni-map-common	|    122		| ip访问超限																														|
+| uni-map-common	|    123		| 账号访问限制（如余额不足）																														|
+| uni-map-common	|    160		| sig参数不支持此请求类型																																	|
+| uni-map-common	|    161		| sig参数不支持和非object的POST JSON一起使用																							|
+| uni-map-common	|    190		| 无效的KEY																																								|
+| uni-map-common	|    199		| 此key未开启webservice功能																																|
+| uni-map-common	|    301		| 缺少必要字段key																																					|
+| uni-map-common	|    311		| key格式错误																																							|
+| uni-map-common	|    300		| 缺少必要字段																																						|
+| uni-map-common	|    306		| 缺少参数																																								|
+| uni-map-common	|    311		| 服务不支持https请求																																						|
+| uni-map-common	|320				|参数数据类型错误																																					|
+| uni-map-common	|330				|参数长度错误																																							|
+| uni-map-common	|351				|存在不共存的参数																																					|
+| uni-map-common	|324				|get和post中的同一参数值不相同																														|
+| uni-map-common	|326				|起终点距离过近																																						|
+| uni-map-common	|327				|附近无公交站																																							|
+| uni-map-common	|328				|无可达公交路线																																						|
+| uni-map-common	|329				|无可达火车路线																																						|
+| uni-map-common	|331				|查询条件过长																																							|
+| uni-map-common	|332				|途径点个数超过限制																																				|
+| uni-map-common	|333				|存在无法吸附的坐标点																																			|
+| uni-map-common	|335				|不支持该城市的公交查询																																		|
+| uni-map-common	|341				|缺少keyword（关键词）																																		|
+| uni-map-common	|344				|附近无火车站（公交）																																			|
+| uni-map-common	|347				|查询无结果																																								|
+| uni-map-common	|348				|参数错误																																									|
+| uni-map-common	|364				|是否扩大搜索参数只能为0或1																																|
+| uni-map-common	|365				|纬度不能超过±90																																					|
+| uni-map-common	|366				|经度不能超过±180																																					|
+| uni-map-common	|373				|起终点距离超长																																						|
+| uni-map-common	|374				|起终点坐标错误																																						|
+| uni-map-common	|375				|局域网IP无法定位																																					|
+| uni-map-common	|377				|提供的起终点无法规划出导航线路																														|
+| uni-map-common	|378				|提供的起终点无法规划出步行线路																														|
+| uni-map-common	|379				|提供的起终点无法规划出公交线路																														|
+| uni-map-common	|380				|坐标类型必须在有坐标的情况下使用																													|
+| uni-map-common	|382				|IP无法定位																																								|
+| uni-map-common	|384				|提供的起终点无法规划出骑行线路																														|
+| uni-map-common	|387				|没有对应的POI																																						|
+| uni-map-common	|393				|没有符合条件的数据																																				|
+| uni-map-common	|394				|错误的查询条件																																						|
+| uni-map-common	|395				|传入参数不合法																																						|
+| uni-map-common	|396				|最多支持200个坐标点，且起终点数目乘积最多为625（距离矩阵）																|
+| uni-map-common	|397				|一对多最多支持200个坐标点，多对多最多支持25个坐标点且起终点数目乘积最多为625（距离矩阵）	|
+| uni-map-common	|500				|服务响应失败																																							|
 
 ## 常见问题
 
-### 使用uni-map-service后，我还需要购买5万元的地图商业授权费用吗?
+### 使用uni-map-common后，我还需要购买5万元的地图商业授权费用吗?
 
-答：待补充
+答：使用地图服务需要商业授权，可联系DCloud申请折扣优惠。详情参考 [商业授权相关说明](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

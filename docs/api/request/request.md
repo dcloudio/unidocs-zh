@@ -170,11 +170,14 @@ https 请求配置自签名证书
 | host | String |是| 对应请求的域名（注意：不要协议部分） |
 | client | String |否| 客户端证书（服务器端需要验证客户端证书时需要配置此项，格式要求请参考下面的证书格式说明，注意 `iOS` 平台客户端证书只支持 `.p12` 类型的证书）|
 | clientPassword | String |否| 客户端证书对应的密码（客户端证书存在时必须配置此项）|
-| server |Array&lt;String&gt;|否| 服务器端证书（客户端需要对服务器端证书做校验时需要配置此项，格式要求请参考下面的证书格式说明，注意 `iOS` 平台服务器端证书只支持 `.cer` 类型的证书）|
+| server |Array&lt;String&gt;|否| 服务器端证书（客户端需要对服务器端证书做校验时需要配置此项，通常使用自签名证书时才需要配置，格式要求请参考下面的证书格式说明，注意 `iOS` 平台服务器端证书只支持 `.cer` 类型的证书，并且证书要包含完整的信息）|
 
 **证书格式说明**
-  1. 文件路径形式：可将证书文件放到工程的 ‘static’ 目录中，然后填写文件路径，示例：`'/static/client.p12'`
-  2. `Base64String`：将证书文件的二进制转换为 `Base64String` 字符串，然后在字符串前面添加`'data:cert/pem;base64,'`前缀，示例：`'data:cert/pem;base64,xxx'` xxx 代表真实的证书 base64String
+
+证书支持两种格式，文件格式和 Base64字符串格式
+
+  1. 文件格式说明：可将证书文件放到工程的 ‘static’ 目录中（当然也可以通过请求下载到本地），然后填写文件路径，示例：`'/static/client.p12'`
+  2. `Base64String`格式说明：将证书文件的二进制转换为 `Base64String` 字符串，然后在字符串前面添加`'data:cert/pem;base64,'`前缀，示例：`'data:cert/pem;base64,xxx'` xxx 代表真实的证书 base64String
 
 **callbackObject 参数说明**
 

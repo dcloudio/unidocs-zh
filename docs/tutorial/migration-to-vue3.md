@@ -495,6 +495,24 @@ App，小程序端源码调试，需要在 vite.config.js 中主动开启 source
 
 vue3 出于性能考虑，style 中暂不支持 div、p 等 HTML 标签选择器，推荐使用 class 选择器，[template 中的 HTML 标签仍会进行转换](https://uniapp.dcloud.net.cn/vernacular.html#%E7%BB%84%E4%BB%B6-%E6%A0%87%E7%AD%BE%E7%9A%84%E5%8F%98%E5%8C%96)。
 
+### 真机调试
+
+- vue3 微信开发者工具真机调试页面空白，如[帖子](https://ask.dcloud.net.cn/question/162915)
+- vue3 微信小程序真机调试，如[帖子](https://ask.dcloud.net.cn/question/173162)
+
+均可以通过在 manifest.json 的 `mp-weixin` 中配置 `minified` 为 `true` 来解决
+
+```json
+{
+  "mp-weixin": {
+    "setting": {
+      // ...其他配置
+      "minified": true
+    }
+  }
+}
+```
+
 ## vue3 支持的手机版本最低到多少？
 
   > vue3 支持的范围是：Android > 4.4（具体因系统 webview 版本而异，原生安卓系统升级过系统 webview 一般 5.0 即可，国产安卓系统未使用 x5 内核时一般需 7.0 以上）, ios >= 10

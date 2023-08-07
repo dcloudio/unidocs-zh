@@ -629,12 +629,14 @@ await uniIdCo.loginBySms({
 
 **参数说明**
 
-|参数名		|类型	|必填	|说明					|
-|--			|--		|--		|--						|
-|mobile		|string	|是		|手机号					|
-|code		|string	|是		|短信验证码				|
-|captcha	|string	|否		|图形验证码				|
+|参数名			|类型		|必填	|说明									|
+|--					|--			|--		|--										|
+|mobile			|string	|是		|手机号								|
+|code				|string	|是		|短信验证码						|
+|captcha		|string	|否		|图形验证码						|
 |inviteCode	|string	|否		|邀请码，仅注册时生效	|
+
+两小时内登录失败3次的用户必填图形验证码，如果客户端没有使用uni-id-pages，可以参考uni-id-pages验证码登录页面的相关逻辑。
 
 **返回值**
 
@@ -2075,7 +2077,7 @@ Cache-Control: no-cache
 |---------------|---------------------|-----|-----------------------------------------------|
 | uid		         | string				          | 否		 | uni-id体系的用户Id；与externalUid 二选一									       |
 | externalUid		 | string				          | 否		 | 自身系统的用户id；与 uid 二选一									                  |
-| username			   | string							       | 是		 | 用户名																										                 |
+| username			   | string							       | 否		 | 用户名																										                 |
 | password			   | string							       | 否		 | 密码																											                 |
 | nickname			   | string							       | 否		 | 昵称																											                 |
 | authorizedApp | Array&lt;string&gt; | 否		 | 允许登录的app列表																				                |

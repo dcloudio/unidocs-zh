@@ -38,6 +38,16 @@ export const navbar = [
         link: '/api/'
       },
       {
+        text: 'UTS',
+        type: 'link',
+        link: '/uts/'
+      },
+      /* {
+        text: 'uni-app x',
+        type: 'link',
+        link: '/uni-app-x/'
+      }, */
+      {
         text: '插件',
         type: 'link',
         link: '/plugin/'

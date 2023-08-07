@@ -2,7 +2,6 @@
 * [插件市场介绍](/plugin/plugin-ext-introduction.md)
 * [uni_modules](/plugin/uni_modules.md)
 * uts插件
-  * [uts语法...](/tutorial/syntax-uts.md)
   * [uts插件开发入门](uts-plugin.md)
   * [uts页面组件开发入门](uts-component.md)
   * [uts中使用uni api](uts-uni-api.md)

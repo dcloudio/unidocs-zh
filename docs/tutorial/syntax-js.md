@@ -107,9 +107,9 @@ ES6 API 的支持，详见如下表格部分（`x` 表示不支持，无特殊�
 在App端JS脚本运行在独立的JS引擎中，vue页面使用系统webview渲染，nvue页面使用系统原生View渲染。
 
 ### Android平台
-- JS脚本运行在独立Google V8引擎中，版本与Chrome83一致，因此支持的语法与Android系统版本无法，即便是Android4.4也与Chrome83支持的语法一样。
+- JS脚本运行在独立Google V8引擎中，版本与Chrome83一致，因此支持的语法与Android系统版本无关，即便是Android4.4也与Chrome83支持的语法一样。
 可到[MDN网站](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference)查看浏览器兼容性，Chrome83支持的在Android平台也支持。
-- vue页面渲染在系统Webview中，受Android系统版本影响，在Android低端机上存在css浏览器兼容性问题，太新的css语法在低版本不支持。
+- vue页面渲染在系统Webview中，受Android系统版本影响，在Android低端机上存在css浏览器兼容性问题，太新的css语法在低版本不支持。当然也可以使用x5等三方webview来拉齐实现。
 - nvue页面使用系统原生View渲染，css支持情况参考：[nvue页面样式](https://uniapp.dcloud.net.cn/tutorial/nvue-css.html)。
 
 ### iOS平台

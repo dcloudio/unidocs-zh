@@ -209,7 +209,7 @@ export default {
 			"number": "166188776",
 			"state": 0,
 			"prefix": "群28",
-			joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=v0Q4xKTV1BbdXN6ltg_IJZh8E-eqVtyd&jump_from=webapi&authKey=jmm+S2ssokvx3Qmt6LNQ6hYp1v7RMekUgY2fHnxSSwxfTteutvNhmRKMNgpYxRaU'
+			joinQQGroupHref: 'https://qm.qq.com/cgi-bin/qm/qr?k=6_vk4URwvaKseWAnGlbUz2q4wpZH9Z13&jump_from=webapi&authKey=XxAzBCPajmq8f2tWBxuyVukCmkPk1YoEjYUzRNC7EueNIRIt/d/srZ0ds7+ByW+S'
 		}
 	]
 }

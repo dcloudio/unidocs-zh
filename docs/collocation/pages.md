@@ -292,6 +292,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 **代码示例：**
 
 开发目录为：
+
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─pages
@@ -1156,6 +1157,7 @@ subPackages 节点接收一个数组，数组每一项都是应用的子包，�
 **使用方法：**
 
 假设支持分包的 ```uni-app``` 目录结构如下：
+
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─pages

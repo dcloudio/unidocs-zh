@@ -2312,8 +2312,8 @@ uni-id-pages已全面支持：app、小程序、web（uni-id-pages 版本号1.0.
 
 ### 短信验证码
 为了方便开发调试，`uni-id-pages`未配置短信登录时，自动启动测试模式；直接使用：123456作为短信验证码即可。
-- 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/pages/sms/base)开通并充值
-- 教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
+- 使用本功能需要在[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-sms/sms-account)开通并充值
+- 教程参考[短信服务开通指南](https://uniapp.dcloud.net.cn/uniCloud/sms/intro.html)
 - 密钥配置：`uni-id配置文件` --> `service` --> `sms` 填写相关密钥信息。
 
 ## 从老版uni-id公共模块升级到uni-id-pages

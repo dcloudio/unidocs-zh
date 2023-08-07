@@ -172,7 +172,7 @@ url化访问时不管是默认域名还是自定义域名均和上述转发逻�
 
 [App升级中心](https://uniapp.dcloud.net.cn/uniCloud/upgrade-center.html#upgrade-center-fee)
 
-[短信](https://uniapp.dcloud.net.cn/uniCloud/send-sms.html#sms-fee)
+[短信](https://uniapp.dcloud.net.cn/uniCloud/sms/price)
 
 [App一键登录](https://uniapp.dcloud.net.cn/uniCloud/univerify.html#unilogin-fee)
 

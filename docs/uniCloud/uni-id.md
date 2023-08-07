@@ -135,7 +135,7 @@ exports.main = async (event, context) => {
 + `tokenExpiresIn`token有效期，以秒为单位
 + `passwordErrorLimit`密码错误重试次数，分ip记录密码错误次数，达到重试次数之后等待`passwordErrorRetryTime`时间之后才可以重试
 + `passwordErrorRetryTime`单位为秒
-+ 如果使用`sendSmsCode`接口发送短信需要前往[https://dev.dcloud.net.cn/pages/sms/base](https://dev.dcloud.net.cn/pages/sms/base)充值短信额度，配置`config.json`的`service`字段，字段说明见下方示例
++ 如果使用`sendSmsCode`接口发送短信需要前往[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-sms/sms-account)开通并充值，配置`config.json`的`service`字段，字段说明见下方示例
 + 如果使用其他方式发送短信可以参考`sendSmsCode`接口的实现[uni-id sendSmsCode](https://gitee.com/dcloud/uni-id/blob/master/src/lib/verify/send-sms-code.js)
 + 另外可以按照客户端平台进行不同的配置，参考下面示例
 
@@ -1421,7 +1421,7 @@ uni.removeStorageSync('uni_id_token_expired')
 | type		| String| 是	|类型，用于防止不同功能的验证码混用，目前支持的类型`login`登录、`register`注册、`bind`绑定手机、`unbind`解绑手机|
 
 ```
-// 短信模板示例，请在https://dev.dcloud.net.cn/pages/sms/base申请签名（短信开头中括号内部分）及模板
+// 短信模板示例，请在https://unicloud.dcloud.net.cn/pages/uni-sms/sms-account申请签名（短信开头中括号内部分）及模板
 验证码：${code}，${expMinute}分钟内有效，请勿泄露并尽快验证。
 ```
 

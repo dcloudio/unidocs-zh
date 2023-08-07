@@ -102,9 +102,9 @@ function add(x :string, y :string) :void {
 
 ### vue data类型定义
 
-vue 选项式开发时，无法通过let、const来定义data数据的类型。
+vue 选项式开发时，冒号被用于赋值，无法通过let、const和冒号来定义data数据的类型。
 
-此时可以使用[字面量](literal.md)赋值自动推导；也可以使用 `as` 关键字来显示声明类型。
+此时可以使用[字面量](literal.md)赋值自动推导；也可以使用 `as` 关键字来显式声明类型。
 
 ```html
 <script lang="uts">
@@ -112,12 +112,12 @@ vue 选项式开发时，无法通过let、const来定义data数据的类型。
 		data() {
 			const date = new Date()
 			return {
-				s1 : "abc",
-				year: date.getFullYear() as number,
-				n1 : 0 as number,
+				s1 : "abc", // 根据字面量推导为string
+				n1 : 0 as number, // 这里其实可以根据字面量自动推导，as number写不写都行
 				n2, // 不合法，必须指定类型
 				n3 as number, // 不合法，uts不支持undefined，必须初始化
 				n4 : null as number | null // 合法。定义为可为null的数字，初始值是null，但在使用n4前必须为其赋值数字
+				year: date.getFullYear() as number, // 在data里，目前无法通过变量类型推导data项的类型，需使用 as 显式声明
 			}
 		}
 	}
@@ -130,7 +130,7 @@ vue 选项式开发时，无法通过let、const来定义data数据的类型。
 
 现代语言（ts、kotlin、swift），都具备自动识别[字面量](literal.md)，进行类型推导的功能。
 
-即：如果开发者声明变量的同时，进行了初始化赋值。那么编译器可以根据赋值的[字面量](literal.md)，自动推导出变量类型，不必开发者显示声明。
+即：如果开发者声明变量的同时，进行了初始化赋值。那么编译器可以根据赋值的[字面量](literal.md)，自动推导出变量类型，不必开发者显式声明。
 
 在定义变量时如果直接赋值[字面量](literal.md)，而不使用冒号声明类型，也可以合法运行。
 
@@ -152,10 +152,10 @@ let b2 : boolean = true
 
 目前 uts 未对字面量赋值类型推导做统一处理，编译到 kotlin 和 swift 时，由这2个语言自行做类型推导。
 
-但 kotlin 和 swift 的自动推导，在某些地方有细节差异。尤其是[数字字面量](data-type.md#autotypefornumber)和[数组字面量](data-type.md#autotypeforarray)。在这2个场景下，建议显示声明类型，不使用自动推导。
+但 kotlin 和 swift 的自动推导，在某些地方有细节差异。尤其是[数字字面量](data-type.md#autotypefornumber)和[数组字面量](data-type.md#autotypeforarray)。在这2个场景下，建议显式声明类型，不使用自动推导。
 
 ```ts
-// 显示声明数字和数组类型
+// 显式声明数字和数组类型
 let n1:number = 1
 let n2 = 1 as number
 let n3:Int = 1
@@ -165,7 +165,7 @@ let a1:Array<number> = [1,2,3,4]
 
 后续 uts 将统一字面量自动类型推导。
 
-目前建议开发者，除了boolean和string外，其他包括数字和数组在内的类型，尽量不使用字面量自动类型推导，而是显示声明类型。避免 uts 统一自动类型推导时引发的向下兼容问题。
+目前建议开发者，除了boolean和string外，其他包括数字和数组在内的类型，尽量不使用字面量自动类型推导，而是显式声明类型。避免 uts 统一自动类型推导时引发的向下兼容问题。
 
 ### 类型判断
 判断类型，有好几种方案：typeof、instanceof、isArray。

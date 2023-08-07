@@ -522,7 +522,13 @@ console.log(sumWithInitial);
 
 <!-- UTSJSON.Array.reduceRight.compatibility -->
 
-### isArray()
+### isArray(arg)
+
+<!-- UTSJSON.Array.isArray.description -->
+
+<!-- UTSJSON.Array.isArray.param -->
+
+<!-- UTSJSON.Array.isArray.returnValue -->
 
 ```ts
 console.log(Array.isArray([1, 3, 5]));
@@ -537,6 +543,8 @@ console.log(Array.isArray(new Array(5)));
 console.log(Array.isArray(new Int16Array([15, 33])));
 // Expected output: false
 ```
+
+<!-- UTSJSON.Array.isArray.compatibility -->
 
 ## 常见操作
 

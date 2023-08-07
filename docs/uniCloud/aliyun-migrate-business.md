@@ -272,8 +272,7 @@ After Alibaba Cloud bills, how much do developers care about the costs caused by
 [App升级中心](https://uniapp.dcloud.net.cn/uniCloud/upgrade-center.html#upgrade-center-fee)
 [uni-upgrade-center](https://uniapp.dcloud.net.cn/uniCloud/upgrade-center.html#upgrade-center-fee)
 
-[短信](https://uniapp.dcloud.net.cn/uniCloud/send-sms.html#sms-fee)
-[SMS](https://uniapp.dcloud.net.cn/uniCloud/send-sms.html#sms-fee)
+[短信](https://uniapp.dcloud.net.cn/uniCloud/sms/price)
 
 [App一键登录](https://uniapp.dcloud.net.cn/uniCloud/univerify.html#unilogin-fee)
 [App one-click login](https://uniapp.dcloud.net.cn/uniCloud/univerify.html#unilogin-fee)

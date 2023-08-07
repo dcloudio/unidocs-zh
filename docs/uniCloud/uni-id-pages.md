@@ -3128,11 +3128,8 @@ To call back the domain name, you must access the URL address that has been regi
 ### 短信验证码
 ### SMS verification code
 为了方便开发调试，`uni-id-pages`未配置短信登录时，自动启动测试模式；直接使用：123456作为短信验证码即可。
-For the convenience of development and debugging, `uni-id-pages` will automatically start the test mode when SMS login is not configured; directly use: 123456 as the SMS verification code.
-- 使用本功能需要在[DCloud开发者中心 -> 短信验证码](https://dev.dcloud.net.cn/pages/sms/base)开通并充值
-- To use this function, you need to activate and recharge in [DCloud Developer Center -> SMS Verification Code](https://dev.dcloud.net.cn/pages/sms/base)
-- 教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
-- Tutorial reference [SMS Service Activation Guide](https://ask.dcloud.net.cn/article/37534)
+- 使用本功能需要在[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-sms/sms-account)开通并充值
+- 教程参考[短信服务开通指南](https://uniapp.dcloud.net.cn/uniCloud/sms/intro.html)
 - 密钥配置：`uni-id配置文件` --> `service` --> `sms` 填写相关密钥信息。
 - Key configuration: `uni-id configuration file` --> `service` --> `sms` Fill in the relevant key information.
 

@@ -692,17 +692,14 @@ At the same time, it supports dynamic replacement of SMS template variables to m
 **步骤一：开通短信服务**
 **Step 1: Activate SMS service**
 
-如您首次使用请登录[DCloud开发者中心](https://dev.dcloud.net.cn/)开通短信服务
-If you are using it for the first time, please log in to [DCloud Developer Center](https://dev.dcloud.net.cn/) to activate SMS service
+如您首次使用请登录[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-sms/sms-account)开通并充值
 
 **步骤二：添加签名与模板**
 **Step 2: Add signature and template**
 
-在[签名配置页面](https://dev.dcloud.net.cn/pages/sms/sign)添加短信签名
-Add SMS signature on [Signature configuration page](https://dev.dcloud.net.cn/pages/sms/sign)
+在uniCloud控制台-短信服务-[签名配置](https://unicloud.dcloud.net.cn/pages/uni-sms/sign-config)添加短信签名
 
-在[模板配置页面](https://dev.dcloud.net.cn/pages/sms/template)中添加短信模板
-Add SMS template in [Template configuration page](https://dev.dcloud.net.cn/pages/sms/template)
+在uniCloud控制台-短信服务-[模板配置](https://unicloud.dcloud.net.cn/pages/uni-sms/template-config)内申请自定义模板
 
 例如：`【测试】亲爱的${username}, 祝您生日快乐！感谢您长期以来对xx商城的信任与支持，会员生日月畅享购物双倍积分，期待您的光临！`
 For example: `[TEST] Dear ${username}, happy birthday to you! Thank you for your long-term trust and support to xx mall. Members can enjoy double shopping points on their birthday month. We look forward to your visit! `
@@ -711,7 +708,7 @@ For example: `[TEST] Dear ${username}, happy birthday to you! Thank you for your
 **Step 3: Export SMS Template**
 
 在短信模板页面-点击”导出模板“按钮，导出短信模板。
-![导出短信模板](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107203307.png)
+![导出短信模板](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/sms/sms20230802-011.png)
 
 **步骤四：通过uni-admin控制台发送短信**
 **Step 4: Send SMS via uni-admin console**
@@ -748,8 +745,7 @@ At present, SMS supports fixed text sending and associated data table field send
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107204518.png)
 可以在发送前点击预览，可以预览发送的第一条短信，用来检查短信内容是否正确，如下：
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107204807.png)
-确认短信内容无误后，点击提交即可发送短信，发送短信之后可以在[DCloud开发者中心](https://dev.dcloud.net.cn/)-查看[短信发送记录](https://dev.dcloud.net.cn/pages/sms/sendLog)
-After confirming that the content of the message is correct, click Submit to send the message. After sending the message, you can check the [SMS sending record](https:// dev.dcloud.net.cn/pages/sms/sendLog)
+确认短信内容无误后，点击提交即可发送短信，发送短信之后可以在uniCloud控制台-短信服务-[发送记录](https://unicloud.dcloud.net.cn/pages/uni-sms/send-record)查看发送记录。
 
 **使用数据表字段作为模板变量发送**
 **Use datatable fields to send as template variables**
@@ -765,8 +761,8 @@ SMS variables support two methods of fixed value and data table query; fixed val
 在发送之前可以点击预览，查看第一条短信的内容，确保变量模板配置正确，如下，username将替换为“张三”：
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107205823.png)
 
-确认短信内容无误后，点击提交即可发送短信，发送短信之后可以在[DCloud开发者中心](https://dev.dcloud.net.cn/)-查看[短信发送记录](https://dev.dcloud.net.cn/pages/sms/sendLog)
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20230107210406.png)
+确认短信内容无误后，点击提交即可发送短信，发送短信之后可以在uniCloud控制台-短信服务-[发送记录](https://unicloud.dcloud.net.cn/pages/uni-sms/send-record)查看发送记录。
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/sms/sms20230802-03.png)
 
 如有任何问题可在[论坛发帖](https://ask.dcloud.net.cn)咨询或加uniCloud短信服务交流QQ群(695645208)咨询
 If you have any questions, you can consult in [Forum Post](https://ask.dcloud.net.cn) or add uniCloud SMS service exchange QQ group (695645208) for consultation

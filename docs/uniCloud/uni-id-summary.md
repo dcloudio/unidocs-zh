@@ -183,7 +183,7 @@ uni-id的云端配置文件在`uniCloud/cloudfunctions/common/uni-config-center/
 + `tokenExpiresIn`token有效期，以秒为单位
 + `passwordErrorLimit`密码错误重试次数，分ip记录密码错误次数，达到重试次数之后等待`passwordErrorRetryTime`时间之后才可以重试
 + `passwordErrorRetryTime`单位为秒
-+ 如果使用`sendSmsCode`接口发送短信需要前往[https://dev.dcloud.net.cn/pages/sms/base](https://dev.dcloud.net.cn/pages/sms/base)充值短信额度，配置`config.json`的`service`字段，字段说明见下方示例
++ 如果使用`sendSmsCode`接口发送短信需要前往[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-sms/sms-account)开通并充值，配置`config.json`的`service`字段，字段说明见下方示例
 + 另外可以按照客户端平台进行不同的配置，参考下面示例
 
 **下面的配置文件中所有时间的单位都是秒**
@@ -329,7 +329,7 @@ uni-id-co 与 uni-id-pages 内的前端页面均支持这四个内置规则
 |登录方式									|配置及获取方式																																																											|
 |--												|--																																																																	|
 |用户名、手机号、邮箱+密码|配置`passwordSecret`即可																																																						|
-|手机号+验证码						|配置`service.sms`，在开发者中心短信服务内获取配置信息：[短信服务](https://dev.dcloud.net.cn/pages/sms/base)											|
+|手机号+验证码						|配置`service.sms`，在uniCloud控制台短信服务内获取配置信息：[短信服务](https://unicloud.dcloud.net.cn/pages/uni-sms/sms-account)									|
 |手机号一键登录						|配置`service.univerify`，在开发者中心一键登录服务内获取：[一键登录](https://dev.dcloud.net.cn/pages/uniLogin/index)							|
 |微信小程序登录						|配置`mp-weixin.oauth.weixin`，在微信公众平台获取：[微信公众平台](https://mp.weixin.qq.com/)																				|
 |微信公众号登录						|配置`web.oauth.weixin-h5`，在微信公众平台获取：[微信公众平台](https://mp.weixin.qq.com/)																						|

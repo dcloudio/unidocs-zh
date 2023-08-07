@@ -8,7 +8,7 @@
 
 该服务类似小程序的模板消息，在一个固定模板格式的文字里自定义某些字段，而不是所有文字都可以随便写。
 
-使用本功能需要在[DCloud开发者中心](https://dev.dcloud.net.cn/pages/sms/base)开通并充值，教程参考[短信服务开通指南](https://ask.dcloud.net.cn/article/37534)
+使用本功能需要在[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-sms/sms-account)开通并充值，教程参考[短信服务开通指南](https://uniapp.dcloud.net.cn/uniCloud/sms/intro.html)
 
 因涉及费用，为保障安全，本能力应该在云函数中调用，而不是在前端调用。
 
@@ -63,8 +63,8 @@
 
 报备模板的方式：
 
-1. 如果尚未添加签名，请在在开发者中心-[签名配置](https://dev.dcloud.net.cn/pages/sms/sign)内添加签名
-2. 在开发者中心-[模板配置](https://dev.dcloud.net.cn/pages/sms/template)内申请自定义模板
+1. 如果尚未添加签名，请在uniCloud控制台-短信服务-[签名配置](https://unicloud.dcloud.net.cn/pages/uni-sms/sign-config)内添加签名
+2. 在uniCloud控制台-短信服务-[模板配置](https://unicloud.dcloud.net.cn/pages/uni-sms/template-config)内申请自定义模板
 
 - 短信签名：
 即短信内容开头的【xxx】，可选内容为App或小程序名称、网站名称、企业名称（可使用简称，但需具备辨识度）、商标名称。如`【DCloud】`，即是DCloud官方发送短信的签名。签名的作用是明确告知用户该短信由什么样的主体发送。签名内容只允许包含中文、英文、数字，签名的长度限制为2-8位。
@@ -94,7 +94,7 @@
 
 接口调用失败时会直接抛出错误，调用成功时才会有返回值。
 
-注意接口调用成功不代表短信发送成功，比如目标手机关机会导致短信发送失败。真实的短信发送成功与否请在[https://dev.dcloud.net.cn/pages/sms/base](https://dev.dcloud.net.cn/pages/sms/base)后台查看报表。
+注意接口调用成功不代表短信发送成功，比如目标手机关机会导致短信发送失败。真实的短信发送成功与否请在uniCloud控制台-短信服务-[发送记录](https://unicloud.dcloud.net.cn/pages/uni-sms/send-record)查看发送记录。
 
 |参数名	|类型	|说明			|
 |:-:	|:-:	|:-:			|
@@ -197,7 +197,7 @@ exports.main = async (event, context) => {
 
 **其他注意事项**
 
-- 在[DCloud开发者中心](https://dev.dcloud.net.cn/pages/sms/base)绑定`uniCloud`服务空间后，将会只允许绑定的服务空间调用此接口，绑定列表为空时表示不限制服务空间
+- 在uniCloud控制台-短信服务-[安全配置](https://unicloud.dcloud.net.cn/pages/uni-sms/space-white)绑定`uniCloud`服务空间后，将会只允许绑定的服务空间调用此接口，绑定列表为空时表示不限制服务空间
 - 如果是用于用户注册的短信验证码，那么强烈推荐使用uni-id，这是一套云端一体的、完善的用户管理方案，已经内置封装好的短信验证码功能，详见：[uni-id-pages](uni-id-pages.md)。
 - 发送短信前，如果需要图形验证码来防止机刷，可以使用[uni-captcha图形验证码](https://ext.dcloud.net.cn/plugin?id=4048)。在[uni-id-pages](uni-id-pages.md)模板中已经集成了uni-id、uni-captcha
 - Android手机在App端获取短信验证码，参考：[https://ask.dcloud.net.cn/article/676](https://ask.dcloud.net.cn/article/676)

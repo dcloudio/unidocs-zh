@@ -57,7 +57,10 @@
   * [费用说明](frv/price.md)
   * [开通服务](frv/service.md)
   * [开发文档](frv/dev.md)
-* [短信sms扩展库](send-sms.md)
+* 短信服务
+  * [费用说明](sms/price.md)
+  * [开通服务](sms/service.md)
+  * [开发文档](sms/dev.md)
 * uni-ai
   * [简介](uni-ai-intro.md)
   * [开发文档](uni-ai.md)

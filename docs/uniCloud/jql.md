@@ -248,8 +248,8 @@ db.collection('user').where({
 
 ```js
 {
-	code: 0,
-	message: '',
+	errCode: 0,
+	errMsg: '',
 	data: []
 }
 ```
@@ -260,9 +260,9 @@ db.collection('user').where({
 
 ```js
 {
-	code: 0,
-	message: '',
-	dataList: [] // dataList内每一项都是一个查询数据的响应结果 {code: 0, message: '', data: []}
+	errCode: 0,
+	errMsg: '',
+	dataList: [] // dataList内每一项都是一个查询数据的响应结果 {errCode: 0, errMsg: '', data: []}
 }
 ```
 
@@ -272,8 +272,8 @@ db.collection('user').where({
 
 ```js
 {
-	code: 0,
-	message: '',
+	errCode: 0,
+	errMsg: '',
 	id: '' // 新增数据的id
 }
 ```
@@ -282,8 +282,8 @@ db.collection('user').where({
 
 ```js
 {
-	code: 0,
-	message: '',
+	errCode: 0,
+	errMsg: '',
 	ids: [], // 新增数据的id列表
 	inserted: 3 // 新增成功的条数
 }
@@ -293,8 +293,8 @@ db.collection('user').where({
 
 ```js
 {
-	code: 0,
-	message: '',
+	errCode: 0,
+	errMsg: '',
 	deleted: 1 // 删除的条数
 }
 ```
@@ -303,8 +303,8 @@ db.collection('user').where({
 
 ```js
 {
-	code: 0,
-	message: '',
+	errCode: 0,
+	errMsg: '',
 	updated: 1 // 更新的条数，数据更新前后无变化则更新条数为0
 }
 ```
@@ -313,12 +313,12 @@ db.collection('user').where({
 
 ```js
 {
-  code: "", // 错误码
-  message: "", // 错误信息
+  errCode: "", // 错误码
+  errMsg: "", // 错误信息
 }
 ```
 
-**err.code错误码列表**
+**err.errCode错误码列表**
 
 |错误码													|描述																		|
 |:-:														|:-:																		|
@@ -1732,8 +1732,8 @@ const db = uniCloud.database()
 
 ```json
 result:{
-	affectedDocs: 100,
-	code: "",
+	errCode: 0,
+	errMsg: "",
 	count: 110,
 	data:[...]
 }
@@ -3011,15 +3011,15 @@ const res = await db.multiSend(bannerQuery,noticeQuery)
 ```js
 // 上述请求返回以下结构
 res = {
-  code: 0, // 请求整体执行错误码，注意如果多条查询执行失败，这里的code依然是0，只有出现网络错误等问题时这里才会出现错误
-  message: '', // 错误信息
+  errCode: 0, // 请求整体执行错误码，注意如果多条查询执行失败，这里的code依然是0，只有出现网络错误等问题时这里才会出现错误
+  errMsg: "", // 错误信息
   dataList: [{
-    code: 0, // bannerQuery 对应的错误码
-    message: '', // bannerQuery 对应的错误信息
+    errCode: 0, // bannerQuery 对应的错误码
+    errMsg: '', // bannerQuery 对应的错误信息
     data: [] // bannerQuery 查询到的数据
   }, {
-    code: 0, // noticeQuery 对应的错误码
-    message: '', // noticeQuery 对应的错误信息
+    errCode: 0, // noticeQuery 对应的错误码
+    errMsg: '', // noticeQuery 对应的错误信息
     data: [] // noticeQuery 查询到的数据
   }]
 }

@@ -26,32 +26,13 @@ console.log(financial(0.004));
 
 <!-- UTSJSON.Number.toFixed.compatibility -->
 
-### toByte()
-
-toByte() 方法将当前的Number数据转换为Byte表示，如果超出Byte最大值表示范围，会得到溢出后余数表示
-
-**平台差异说明**
-
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|x|
-
-```ts
-let a = 12
-console.log(a.toByte());
-// expected output: 12
-```
-
-
 ### toInt()
 
-toInt() 方法将当前的Number数据转换为Int表示，如果超出Int最大值表示范围，会得到溢出后余数表示
+<!-- UTSJSON.Number.toInt.description -->
 
-**平台差异说明**
+<!-- UTSJSON.Number.toInt.param -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Number.toInt.returnValue -->
 
 ```ts
 let a = 12
@@ -63,18 +44,96 @@ let b = 2147483648
 // expected output: -2147483648 
 ```
 
+<!-- UTSJSON.Number.toInt.compatibility -->
+
+### toFloat()
+
+<!-- UTSJSON.Number.toFloat.description -->
+
+<!-- UTSJSON.Number.toFloat.param -->
+
+<!-- UTSJSON.Number.toFloat.returnValue -->
+
+<!-- UTSJSON.Number.toFloat.compatibility -->
+
+### toDouble()
+
+<!-- UTSJSON.Number.toDouble.description -->
+
+<!-- UTSJSON.Number.toDouble.param -->
+
+<!-- UTSJSON.Number.toDouble.returnValue -->
+
+<!-- UTSJSON.Number.toDouble.compatibility -->
+
+### toUInt()
+
+<!-- UTSJSON.Number.toUInt.description -->
+
+<!-- UTSJSON.Number.toUInt.param -->
+
+<!-- UTSJSON.Number.toUInt.returnValue -->
+
+<!-- UTSJSON.Number.toUInt.compatibility -->
+
+### toByte()
+
+<!-- UTSJSON.Number.toByte.description -->
+
+<!-- UTSJSON.Number.toByte.param -->
+
+<!-- UTSJSON.Number.toByte.returnValue -->
+
+```ts
+let a = 12
+console.log(a.toByte());
+// expected output: 12
+```
+
+<!-- UTSJSON.Number.toByte.compatibility -->
+
 ### toLong()
 
-toLong() 方法将当前的Number数据转换为Long表示，如果超出Long最大值表示范围，会得到溢出后余数表示
+<!-- UTSJSON.Number.toLong.description -->
 
-**平台差异说明**
+<!-- UTSJSON.Number.toLong.param -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|x|
+<!-- UTSJSON.Number.toLong.returnValue -->
 
 ```ts
 let a = 12
 console.log(a.toLong());
 // expected output: 12
 ```
+
+<!-- UTSJSON.Number.toLong.compatibility -->
+
+### toShort()
+
+<!-- UTSJSON.Number.toShort.description -->
+
+<!-- UTSJSON.Number.toShort.param -->
+
+<!-- UTSJSON.Number.toShort.returnValue -->
+
+<!-- UTSJSON.Number.toShort.compatibility -->
+
+### toUShort()
+
+<!-- UTSJSON.Number.toUShort.description -->
+
+<!-- UTSJSON.Number.toUShort.param -->
+
+<!-- UTSJSON.Number.toUShort.returnValue -->
+
+<!-- UTSJSON.Number.toUShort.compatibility -->
+
+### toULong()
+
+<!-- UTSJSON.Number.toULong.description -->
+
+<!-- UTSJSON.Number.toULong.param -->
+
+<!-- UTSJSON.Number.toULong.returnValue -->
+
+<!-- UTSJSON.Number.toULong.compatibility -->

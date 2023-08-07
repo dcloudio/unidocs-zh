@@ -348,14 +348,14 @@ let kotlinArray = utsArr.toTypedArray()
 
 ```ts
 // kotlin.collections.List 转换 Array
-let utsArr= mutableListOf("hello","world")
-let kotlinList = Array.fromNative(utsArr) 
+let kotlinList= mutableListOf("hello","world")
+let utsArr = Array.fromNative(kotlinList) 
 ```
 
 ```ts
 // kotlin.Array 转换 Array
-let utsArr= arrayOf("hello","world")
-let kotlinList = Array.fromNative(utsArr)
+let kotlinArray = arrayOf("hello","world")
+let utsArr = Array.fromNative(kotlinArray)
 ```
 
 

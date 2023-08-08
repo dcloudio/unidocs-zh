@@ -58,7 +58,7 @@ let d = 3.14159         //注意：目前版本推导d为float类型，新版本
 |UInt    |32bit |0            |4294967295     |整型|
 |Long    |64bit |-9223372036854775808 |9223372036854775807     |整型|
 |ULong   |64bit |0            |9223372036854775807 * 2 + 1     |整型|
-|Float   |32bit |1.4E-45F     |3.4028235E38F                   |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
+|Float   |32bit |1.4E-45F     |3.4028235E38                    |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
 |Double  |64bit |4.9E-324     | 1.7976931348623157E308         |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
 
 基本数据类型会有jvm编译魔法加持，kotlin 会把  Int / Double 等非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持。

@@ -526,114 +526,11 @@ rewardedVideoAd.onClose(res => {
 })
 ```
 
-
-### 服务器回调@callback
-
-App平台 3.1.15+ 支持穿山甲/优量汇/快手
-
-激励视频广告可以支持广告服务器到业务服务器的回调，用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，广告服务器会访问配置的云函数，通知用户完成观看激励视频。
-
-相对来讲服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
-
-
-![激励视频回调](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback.png)
-
-
-如何使用
-1. 申请激励视频广告位时开启服务器回调
-2. 创建激励视频广告时传入回调参数
-
-
-urlCallback示例
-
-```js
-rewardedVideoAd = uni.createRewardedVideoAd({
-  adpid: '',
-  urlCallback: {
-    userId: 'testuser',
-    extra: 'testdata'
-  }
-});
-
-rewardedVideoAd.onClose(e => {
-})
-```
-
 ### 服务器回调
 
-[服务器回调详细说明](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)
+[服务器回调详细说明](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#callback)
 
 
 #### 安全注意
 
-[详细说明](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#%E5%AE%89%E5%85%A8%E6%B3%A8%E6%84%8F)
-
-#### 获取广告商名称
-
-> HBuilderX 2.6.8+
-
-#### 语法
-
-`RewardedVideoAd.getProvider()`
-
-#### 说明
-
-返回值 为 string 类型
-
-|值|描述|
-|:-:|:-:|
-|csj|穿山甲|
-|gdt|腾讯优量汇（前称广点通）|
-|ks|快手|
-|sigmob|Sigmob|
-
-
-```js
-var rewardedVideoAd = uni.createRewardedVideoAd(Options);
-var provider = rewardedVideoAd.getProvider();
-```
-
-
-### manifest 配置@manifest
-
-注： `Sigmob`属于小型广告联盟，收益偏低。如有条件，还需开通优量汇，快手等广告渠道以便提高收益。
-
-`Sigmob`暂不支持打包界面的勾选，如集成需进行如下的配置变动：
-
-`Sigmob`打包需要将`HBuilderX`升级到`3.2.0`以上版本。
-
-打开 `manifest.json` 文件，点击 “源码视图”，`uni-app` 在 `app-plus->distribute->sdkConfigs` 下添加如下内容，`5+ app` 在 `plus->distribute->plugins` 下添加如下内容：
-
-```json
-{
-	"app-plus": {
-		"distribute": {
-			"sdkConfigs": {
-				"ad" : {
-				  "sigmob" : {}
-				}
-			}
-		}
-	}
-}
-```
-
-**注意：如果已经存在ad节点，只需要在后面追加即可，如下**
-
-```json
-{
-	"app-plus": {
-		"distribute": {
-			"sdkConfigs": {
-				"ad" : {
-				  "gdt" : {},
-				  "csj" : {},
-				  "ks" : {},
-				  "ks-content" : {},
-				  "sigmob" : {}
-				}
-			}
-		}
-	}
-}
-```
+[详细说明](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#%E5%AE%89%E5%85%A8%E6%B3%A8%E6%84%8F)

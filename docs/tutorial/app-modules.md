@@ -13,8 +13,7 @@ If the relevant API is used, but the corresponding functional module is not chec
 - When running after packaging
 ![](https://native-res.dcloud.net.cn/images/uniapp/modules/error-release.png)
 
-> 碰到此情况请勾选对应确实的模块，并重新提交云端打包  
-> In this case, please check the corresponding module and resubmit the cloud packaging
+> 碰到此情况请勾选对应缺失的模块，并重新提交云端打包  
 
 
 ### 源码视图  

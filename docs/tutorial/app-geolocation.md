@@ -39,10 +39,9 @@ The positioning service is provided by Apple's iOS system, which can obtain lati
 只可以获取经纬度信息，不支持解析地址信息，即无法返回城市街道信息。
 Only latitude and longitude information can be obtained, and address information cannot be resolved, that is, city street information cannot be returned.
 
-标准Android系统的定位服务是Google提供的，但需要手机内置GMS服务，连接Google服务器。  
-The positioning service of the standard Android system is provided by Google, but it requires the built-in GMS service of the mobile phone to connect to the Google server.
-国内主流手机厂商均自行提供了定位服务，但小众品牌可能不支持，主流品牌中较老的机型也不支持。如下Android手机厂商都支持`系统定位`：
-Domestic mainstream mobile phone manufacturers provide their own positioning services, but niche brands may not support it, nor do older models from mainstream brands. The following Android phone manufacturers support `system positioning`:
+标准Android系统的定位服务是Google的GMS服务，需连接Google服务器。中国大陆地区用户无法翻墙，导致无法使用定位，或者很多国产手机阉割掉了GMS，也导致无法使用定位。
+
+国内手机厂商早期均没有内置替代GMS的位置服务，这些设备上只能使用三方定位。但后期大品牌手机和三方定位合作，内置了替代GMS的版本。如下Android手机厂商的新款手机都支持`系统定位`：
 - 华为
 - Huawei
 - 小米
@@ -59,13 +58,10 @@ Domestic mainstream mobile phone manufacturers provide their own positioning ser
 - 金立
 - Gionee
 
-在国外通常都是使用Google的GMS提供定位服务。
-In foreign countries, Google's GMS is usually used to provide location services.
+其他小众品牌可能不支持，主流品牌中较老的机型也不支持，暂无机型清单，需自行测试。
 
 **注意**
-**Notice**
-- 由于设备厂商适配的原因，在部分Android设备上定位服务可能不稳定，如需提升定位功能的稳定性建议使用`高德定位`或`百度定位`
-- Due to the adaptation of the device manufacturer, the positioning service may be unstable on some Android devices. If you want to improve the stability of the positioning function, it is recommended to use `Guide Positioning` or `Baidu Positioning`
+- 由于设备厂商适配的原因，在部分Android设备上定位服务可能不稳定，如需提升定位功能的稳定性建议使用`高德定位`或`腾讯定位`
 - 本地离线打包参考[Android平台系统定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e7%b3%bb%e7%bb%9f%e5%ae%9a%e4%bd%8d)、[iOS平台百度定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e7%b3%bb%e7%bb%9f%e5%ae%9a%e4%bd%8d)
 - Local offline packaging reference [Android platform system positioning module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e7%b3%bb%e7%bb%9f%e5 %ae%9a%e4%bd%8d), [iOS platform Baidu positioning module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e7%b3%bb% e7%bb%9f%e5%ae%9a%e4%bd%8d)
 

@@ -14,7 +14,7 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 
 条件编译是用特殊的注释作为标记，在编译时根据这些特殊的注释，将注释里面的代码编译到不同平台。
 
-**写法：**以 <span style="color:#859900;"> #ifdef</span> 或 <span style="color:#859900;"> #ifndef</span> 加<b style="color:#268BD2"> %PLATFORM%</b> 开头，以 <span style="color:#859900;">#endif</span> 结尾。
+**写法：** 以 <span style="color:#859900;"> #ifdef</span> 或 <span style="color:#859900;"> #ifndef</span> 加<b style="color:#268BD2"> %PLATFORM%</b> 开头，以 <span style="color:#859900;">#endif</span> 结尾。
 * <span style="color:#859900;"> #ifdef</span>：if defined 仅在某平台存在
 * <span style="color:#859900;"> #ifndef</span>：if not defined 除了某平台均存在
 * <b style="color:#268BD2"> %PLATFORM%</b>：平台名称

@@ -210,9 +210,7 @@ The advantage of storyboard is that it starts fast. Before the real home page of
 ##### Make storyboard file
 
 storyboard有两种制作方式：  
-There are two ways to make storyboards:
-**1.** **直接使用附件提供的相对常用的 storyboard 模板，可在这个文件的基础上进行自定义（不需要 Mac 及 XCode，详情请查看附件中的 readme 教程）**
-**1.** **Use the relatively common storyboard template provided by the attachment directly, which can be customized on the basis of this file (Mac and XCode are not required, please check the readme tutorial in the attachment for details)**
+**1.** **直接使用[模板文件(点击下载)](https://native-res.dcloud.net.cn/uni-app/file/CustomStoryboard.zip)中提供的相对常用的 storyboard 模板，可在这个文件的基础上进行自定义（不需要 Mac 及 XCode，详情请查看附件中的 readme 教程）**
 此 storyboard 文件适用于各种 iPhone 及 iPad 设备的横竖屏，支持自定义界面元素包括
 This storyboard file is suitable for portrait and landscape screens on various iPhone and iPad devices, and supports custom interface elements including:
 

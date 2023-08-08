@@ -9,7 +9,7 @@ App端根据功能划分为不同的模块，项目使用到特定功能时选�
 - 打包后运行时  
 ![](https://native-res.dcloud.net.cn/images/uniapp/modules/error-release.png)
 
-> 碰到此情况请勾选对应确实的模块，并重新提交云端打包  
+> 碰到此情况请勾选对应缺失的模块，并重新提交云端打包  
 
 
 ### 源码视图  

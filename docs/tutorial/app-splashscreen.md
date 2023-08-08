@@ -150,7 +150,7 @@ storyboard的优势是启动速度快。在App的真实首页被渲染完成前�
 ##### 制作storyboard文件
 
 storyboard有两种制作方式：  
-**1.** **直接使用附件提供的相对常用的 storyboard 模板，可在这个文件的基础上进行自定义（不需要 Mac 及 XCode，详情请查看附件中的 readme 教程）**
+**1.** **直接使用[模板文件(点击下载)](https://native-res.dcloud.net.cn/uni-app/file/CustomStoryboard.zip)中提供的相对常用的 storyboard 模板，可在这个文件的基础上进行自定义（不需要 Mac 及 XCode，详情请查看附件中的 readme 教程）**
 此 storyboard 文件适用于各种 iPhone 及 iPad 设备的横竖屏，支持自定义界面元素包括
 
 - 页面背景图片或背景颜色

@@ -310,6 +310,15 @@ console.log(Array.isArray(a1)) // 返回true
 console.log(a1 instanceof Array) // 返回true
 ```
 
+- 注意：uts 不支持以 Array(arrayLength) 指定数组长度的方式创建一个数组。
+
+```ts
+
+// 下面的写法中，a1 将是一个当前 length 为1, 元素是 100 的整型数组。而不是 length 为 100 ，由 100 个空槽组成的数组。
+const a1: Array(100); // [100], 当前数组长度为1
+
+```
+
 #### 遍历数组对象
 
 使用foreach来实现数组的遍历
@@ -418,6 +427,9 @@ let list: any[] = [1, true, "free"];
 list[1] = 100;
 ```
 
+- 注意：在 TS 中可以将 null 赋值给 any 类型的变量，但是在 Swift 和 Kottlin 中，any 类型属于非空类型，也就是不能将 null 赋值给 any 类型的变量。因此 在 UTS 中 也不能将 null 赋值给 any 类型，以免编译失败。
+
+	
 ### null类型 @null
 
 一个表明 null 值的特殊关键字。

@@ -177,6 +177,45 @@ function multiply(a:number, b:number = 1):number {
 }
 multiply(5); // 5
 ```
+
+我们可以在能够使用常规的函数定义的场景下使用默认参数，例如：
+```ts
+function print(msg:string = "") {
+  console.log(msg)
+}
+print(); // ""
+
+
+class Persion {
+	test(msg: string | null = null) {
+		
+	}
+}
+```
+
+但是以下两种场景不支持使用默认参数
+
+1. 通过变量形式定义函数，例如：
+```ts
+// 该变量会被编译成Swift或者Kottlin的闭包表达式，其不支持使用默认参数。
+const test = function(msg: string | null)
+```
+
+2. 对象字面量中定义的属性方法，例如：
+
+```ts
+// 该属性会被编译成Swift或者Kottlin的闭包表达式，其不支持使用默认参数。
+export  {
+	data: {
+		test(msg: string | null) {
+			
+		}
+	}
+}
+
+```
+
+
 ### 箭头函数
 
 箭头函数表达式（也称胖箭头函数）相比函数表达式具有较短的语法。箭头函数总是匿名的，也就是不需要函数名。

@@ -219,7 +219,7 @@ uni自带API，如下为目前支持的清单。
 
 插件市场的uts插件，不管是API插件还是组件，均可同时在 uni-app js引擎版 和 uni-app x 上运行。
 
-即[https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
+这里已经有不少插件：[https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 
 uni-app js版的“App原生语言插件”无法在 uni-app x 中运行。
 
@@ -238,7 +238,7 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 
 除上述文档中声明已经完成的，还有如下需要注意：
 
-- 全端支持：一期只有Android。开发者可将uvue文件后缀改为vue，如果没有写Android专有代码，那么也可以使用uni-app js引擎版编译到其他平台，包括iOS App、web及各家小程序。后期官方会提供更完善的 uni-app x的全端支持。
+- 全端支持：一期只有Android。对于其他平台，开发者可将uvue文件后缀改为vue，如果没有写Android专有代码，那么也可以使用uni-app js引擎版编译到其他平台，包括iOS App、web及各家小程序。后期官方会提供更完善的 uni-app x的全端支持。
 - uvue语法：虽然uvue是按vue3实现的，但一期uvue不支持setup，只支持选项式。
 - 一期不支持：横屏切换、暗黑模式、自定义转场、多语言、无障碍
 - 一期不支持：云开发（已在开发中）、uni-ad。另外包括微信、支付宝、个推等三方sdk封装一期均未启动
@@ -261,7 +261,7 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 
 之前已经有原生/rn/flutter页面，希望渐进式的迁移到uni-app x架构，该怎么搞？
 
-可以把之前的页面封装为[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)，云打包就可以用。
+uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，包括调用其他原生写的界面也可以。把之前的页面封装为[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)，云打包就可以用。
 
 至于把 uni-app x 作为一个sdk内嵌到其他原生应用中，还在评估中。
 

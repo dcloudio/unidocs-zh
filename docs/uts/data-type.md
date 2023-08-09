@@ -4,7 +4,7 @@
 1. 高性能：明确的类型有更大的优化空间，在iOS和Android等os上可以节省内存、提高运算速度；web端由于仍编译为js，不具有类型性能优化。
 2. 安全的代码：强类型代码编写虽然没有弱类型自由，但类型检查、非空检查...各种检查可以提升代码的健壮性。
 
-### 布尔值（Boolean）
+### 布尔值（boolean）
 
 布尔是简单的基础类型，只有2个值：`true` 和 `false`。
 
@@ -19,7 +19,7 @@ c = true // 后续为变量赋值字面量
 - 在js里，true == 1、 false == 0。但在其他强类型语言里，`1`和`0`是数字类型，无法和布尔类型相比较。
 - 注意 boolean 不要简写成 bool
 
-### 数字（Number）
+### 数字（number）
 
 在 ts 中，数字不区分整型和浮点，就是一个 number。但在 kotlin 和 swift 中，数字需要是一个确定类型，比如 Int、Float、Double，没有泛数字。
 
@@ -63,7 +63,7 @@ let d = 3.14159         //注意：目前版本推导d为float类型，新版本
 
 基本数据类型会有jvm编译魔法加持，kotlin 会把  Int / Double 等非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持。
 
-如果涉及大量运算，建议开发者不要使用 Number、Int? ，要明确使用 Int等类型 [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
+如果涉及大量运算，建议开发者不要使用 number、Int? ，要明确使用 Int等类型 [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
 
 ##### Swift 专有的数字类型 @Swift
 
@@ -89,7 +89,7 @@ let c:Double  = a * 1.0 / b
 
 ```ts
 // #ifdef APP-IOS
-let d:Int8 // Int8是swift平台专有类型
+let d:Int8 = 1 // Int8是swift平台专有类型
 // #endif
 ```
 
@@ -136,7 +136,7 @@ test(c)
 
 ##### kotlin下转换数字类型
 
-所有的Number 都支持下列方法进行转换（部分类库API使用java编写，其要求的java类型与下列kotlin类型完全一致，可以直接使用
+所有的 number 都支持下列方法进行转换（部分类库API使用java编写，其要求的java类型与下列kotlin类型完全一致，可以直接使用
 
 - toByte(): Byte
 - toShort(): Short
@@ -145,7 +145,7 @@ test(c)
 - toFloat(): Float
 - toDouble(): Double
 
-另外Number还具备下列函数进行整型的无符号转换，这部分API 在jvm上没有对应的原始数据类型，主要的使用场景是 色值处理等专业计算场景的`多平台拉齐`
+另外 number还具备下列函数进行整型的无符号转换，这部分API 在jvm上没有对应的原始数据类型，主要的使用场景是 色值处理等专业计算场景的`多平台拉齐`
 
 - toUByte(): UByte
 - toUShort(): UShort
@@ -187,7 +187,7 @@ let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 #### 更多API
 number内置对象有不少API，[详见](buildin-object-api/number.md)
 
-### 字符串（String） @string
+### 字符串（string） @string
 
 字符串是一串表示文本值的字符序列，例如：`"hello world"`。
 
@@ -269,7 +269,7 @@ Array，即数组，支持在单个变量名下存储多个元素，并具有执
 
 #### 定义数组
 
-`UTS` 中 Array 有多种创建方式：
+`UTS` 中 Array 有多种创建方式，这些方式是等价的：
 
 1. 字面量创建
 
@@ -426,7 +426,7 @@ uts 的类型系统可以消除来自代码空引用的危险。
 
 许多编程语言中最常见的陷阱之一，就是访问空引用的成员会导致空引用异常。在 Java 中，这等同于 NullPointerException 或简称 NPE。
 
-在 uts 中，类型系统能够区分一个引用可以容纳 null （可空引用）还是不能容纳（非空引用）。 例如，String 类型的常规变量不能容纳 null：
+在 uts 中，类型系统能够区分一个引用可以容纳 null （可空引用）还是不能容纳（非空引用）。 例如，string 类型的常规变量不能容纳 null：
 
 ```ts
 let a: string = "abc" // 默认情况下，常规初始化意味着非空
@@ -506,7 +506,7 @@ console.log(baz);
 
 #### 非空断言
 
-非空断言运算符（!）将任何值转换为非空类型。可以写 b! ，这会返回一个非空的 b 值（例如：在我们示例中的 String）或者如果 b 为 null，就会抛出一个异常。
+非空断言运算符（!）将任何值转换为非空类型。可以写 b! ，这会返回一个非空的 b 值（例如：在我们示例中的 string）或者如果 b 为 null，就会抛出一个异常。
 
 ```ts
 const l = b!.length

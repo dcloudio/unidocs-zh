@@ -396,12 +396,95 @@ let kotlinArray = utsArr.toTypedArray()
 ##### swift专有数组类型
 
 - 专有数组类型清单
+	UTS 中的 Array 对应到 Swift 中就是 Array, 方法是通用的。一般情况下，使用 Array 即可。
+	但是，某些系统或者三方库 API 可能会要求 NSArray、NSMutableArray 类型的数组，这个时候就需要进行转换。
+	* NSArray
+	* NSMutableArray
 	
 - 专有数组类型定义方式
 
+1. 创建 NSArray
+   NSArray 是 OC 中的不可变数组，顾名思义，数组创建完成之后就不可以再添加或者删除元素。因此，创建 NSArray 对象时就应该完成数组的初始化。
+   可以通过以下方式创建 NSArray:
+   
+```ts
+	// 方式一： 创建一个空数组，注意数组创建后就不可改变，不能再添加或者删除元素，应避免使用该方式。
+	let a: NSArray = NSArray()  
+	
+	// 方式二： 用一个数组创建一个 NSArray, 推荐使用。同样，创建完成后数组不可变。
+	let b: NSArray = NSArray(array=[1, 2, 3, 4]) // 等价于 any[]，注意：不是等价于 number[]
+	
+	// 方式三: 用一个元素定义 NSArray, 不推荐使用
+	let c: NSArray = NSArray(object=1)
+	
+	// 方式四：用不定长元素定义 NSArray, 可以使用
+	let d: NSArray = NSArray(objects=1, "2", false, "ok")
+
+```
+
+2. 创建 NSMutableArray
+   NSMutableArray 是 OC 中的可变数组，其是 NSArray 的子类，可变数组创建后可以增加或者删除元素。NSArray 的所有创建方式也都适用于 NSMutableArray
+   
+   ```ts
+   	// 方式一： 创建一个空数组，其类型等价于 any[]
+   	let a: NSMutableArray = NSMutableArray()  
+	a.add(1) 	//添加一个元素
+	a.add("22") //添加一个元素
+	a.add(false) //添加一个元素
+	a.remove(1) //移除一个元素
+	a.removeObject(at=2) //移除一个指定下标的元素
+	a.removeAllObjects() //移除全部元素
+	a.removeLastObject() //移除最后一个元素
+   	
+   	// 方式二： 用一个数组创建一个 NSMutableArray, 推荐使用。
+   	let b: NSMutableArray = NSMutableArray(array=[1, 2, 3, 4]) // 等价于 any[]，注意：不是等价于 number[]
+   	
+   	// 方式三: 用一个元素定义 NSMutableArray
+   	let c: NSMutableArray = NSMutableArray(object=1)
+   	
+   	// 方式四：用不定长元素定义 NSMutableArray
+   	let d: NSMutableArray = NSMutableArray(objects=1, "2", false, "ok")
+   
+   ```
+	
+	
 - 专有数组类型 转 Array
 
+```ts
+
+// 将 NSArray 转成 Array
+let a: NSArray = NSArray(array=[1, 2, 3, 4]) // 等价于 any[]，注意：不是等价于 number[]
+let a1 = Array(a)
+
+// 将 NSMutableArray 转成 Array
+let b: NSMutableArray = NSMutableArray(array=[1, 2, 3, 4]) // 等价于 any[]，注意：不是等价于 number[]
+let b1 = Array(b)
+
+```
+
 - Array 转 专有数组类型
+
+```ts
+// 定义一个 Array
+let a = [1, 2, 3] //类型为number[]
+
+// Array 转换成 NSArray
+// 方式一：
+let a1: NSArray = NSArray(array= a)
+
+// 方式二：
+let a2 = a as NSArray
+
+// Array 转换成 NSMutableArray
+let a3: NSMutableArray = NSMutableArray(array= a)
+
+```
+
+- 注意： 
+	+ 无论是 NSArray 还是 NSMutableArray 对象创建后都等价于 any[] 类型的数组，此时 Swift 不再有类型推导，可以往可变数组中添加任意类型的非空元素。
+	+ NSArray 和 NSMutableArray 类型的数组不接受空值 null, 任何情况下不要往这两种类型中注入 null。 否则，在运行时可能会引起应用闪退。
+	+ Array 类型不能通过 as 方式转换成 NSMutableArray 类型。 但是可以通过 as 方式 转换成 NSArray 类型。
+	+ Swift 中的 Array 是值类型，其和 TS 中 Array 的一点区别是 可以通 == 判断两个数组是否相等，只要两个数组的类型和元素一样，判等的结果就是 true。
 
 
 #### 更多API

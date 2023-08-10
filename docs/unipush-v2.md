@@ -441,7 +441,7 @@ Call the `sendMessage` method of the uni-cloud-push extension library in the clo
 // 简单的使用示例
 // simple usage example
 'use strict';
-const uniPush = uniCloud.getPushManager({appId:"__UNI__XXXXXX"}) //注意这里需要传入你的应用appId
+const uniPush = uniCloud.getPushManager({appId:"__UNI__XXXXXX"}) //注意这里需要传入你的应用appId，用于指定接收消息的客户端
 exports.main = async (event, context) => {
 	return await uniPush.sendMessage({
 		"push_clientid": "xxx", 	//填写上一步在uni-app客户端获取到的客户端推送标识push_clientid

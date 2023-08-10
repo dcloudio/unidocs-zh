@@ -1,10 +1,10 @@
 let cssJson = {};
 let utsJson = {};
 try {
-	cssJson = require('../utils/cssJson.json');
+	cssJson = require(`../utils/${process.env.DOCS_LOCAL}/cssJson.json`);
 } catch (error) {}
 try {
-	utsJson = require('../utils/utsJson.json');
+	utsJson = require(`../utils/${process.env.DOCS_LOCAL}/utsJson.json`);
 } catch (error) {}
 
 const getJSON = text => {

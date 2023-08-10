@@ -165,20 +165,18 @@ const myPet = pet("Vivie");
 myPet(); // 返回结果 "Vivie"
 ```
 
-### 函数参数
+### 函数默认参数
 
-#### 默认参数
-
-函数参数可以有默认值，当省略相应的参数时使用默认值。
+函数参数可以设默认值，当省略相应的参数时使用默认值。此时该参数也就成了可选参数。
 
 ```ts
 function multiply(a:number, b:number = 1):number {
   return a*b;
 }
-multiply(5); // 5
+multiply(5); // a为5，未传b的值，b默认为1，结果为5
 ```
 
-我们可以在能够使用常规的函数定义的场景下使用默认参数，例如：
+可以在常规的函数定义的场景下使用默认参数，例如：
 ```ts
 function print(msg:string = "") {
   console.log(msg)
@@ -187,7 +185,7 @@ print(); // ""
 
 
 class Persion {
-	test(msg: string | null = null) {
+	test(msg: string | null = null) { // 默认值可以为null
 		
 	}
 }

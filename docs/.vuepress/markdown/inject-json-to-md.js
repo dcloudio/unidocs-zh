@@ -46,7 +46,7 @@ module.exports = function (md, opts) {
 					path.forEach(key => {
 						temp = temp[key];
 					});
-					const parseTokens = md.parse(temp);
+					const parseTokens = md.parse(temp, undefined, false);
 					/* parseTokens.forEach(token => {
 						if (token.type === 'heading_open') {
 							const id = token.attrGet('id')

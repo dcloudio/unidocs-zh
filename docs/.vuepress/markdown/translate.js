@@ -22,12 +22,12 @@ module.exports = md => {
     }
   })(md.parse)
   md.render = (function (mdRender) {
-    return function (src, ...array) {
-      if (src) {
+    return function (src, env, insertComponent = true) {
+      /* if (src) {
         src = (insertComponent && ppConfig.EN ? '<md-translatedbygoogle />\n' : '') + translate(src)
       }
-      src = pp.preprocess(src, ppConfig)
-      return mdRender.bind(this)(src, ...array)
+      src = pp.preprocess(src, ppConfig) */
+      return mdRender.bind(this)(src, env)
     }
   })(md.render)
 }

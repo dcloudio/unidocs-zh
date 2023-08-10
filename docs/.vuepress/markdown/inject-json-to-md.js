@@ -44,8 +44,10 @@ module.exports = function (md, opts) {
 					const path = jsonPath.split('.');
 					let temp = json;
 					path.forEach(key => {
+						if (!temp) return false;
 						temp = temp[key];
 					});
+					if (!temp) continue
 					const parseTokens = md.parse(temp, undefined, false);
 					/* parseTokens.forEach(token => {
 						if (token.type === 'heading_open') {

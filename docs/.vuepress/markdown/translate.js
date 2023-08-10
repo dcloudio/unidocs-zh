@@ -23,6 +23,10 @@ module.exports = md => {
   })(md.parse)
   md.render = (function (mdRender) {
     return function (src, ...array) {
+      if (src) {
+        src = (insertComponent && ppConfig.EN ? '<md-translatedbygoogle />\n' : '') + translate(src)
+      }
+      src = pp.preprocess(src, ppConfig)
       return mdRender.bind(this)(src, ...array)
     }
   })(md.render)

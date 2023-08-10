@@ -1263,17 +1263,14 @@ Configure specific styles when compiling to the MP-ALIPAY platform
 > `HBuilderX 2.5.5` supports `easycom` component mode.
 
 传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom`将其精简为一步。
-Traditional vue components need to be installed, referenced, registered, and the components can be used after three steps. `easycom` boils it down to one step.
-只要组件安装在项目根目录或uni_modules的components目录下，并符合`components/组件名称/组件名称.vue`或`uni_modules/插件ID/components/组件名称/组件名称.vue`目录结构。就可以不用引用、注册，直接在页面中使用。
-As long as the component is installed in the root directory of the project or under the components directory of uni_modules, it conforms to the `components/component name/component name.vue` or `uni_modules/plugin ID/components/component name/component name.vue` directory structure. It can be used directly on the page without reference or registration.
-如下：
-as follows:
+
+只要组件路径符合规范（具体见下），就可以不用引用、注册，直接在页面中使用。如下：
+
 ```html
 <template>
 	<view class="container">
+		<comp-a></comp-a>
 		<uni-list>
-			<uni-list-item title="第一行"></uni-list-item>
-			<uni-list-item title="第二行"></uni-list-item>
 		</uni-list>
 	</view>
 </template>
@@ -1282,22 +1279,41 @@ as follows:
 	// There is no need to import here, and there is no need to register the uni-list component in components. It can be used directly in the template
 	export default {
 		data() {
-			return {
-
-			}
+			return {}
 		}
 	}
 </script>
 ```
 
-不管components目录下安装了多少组件，`easycom`打包后会自动剔除没有使用的组件，对组件库的使用尤为友好。
-No matter how many components are installed in the components directory, `easycom` will automatically remove unused components after packaging, which is especially friendly to the use of component libraries.
+`路径规范`指：
+1. 安装在项目根目录的components目录下，并符合`components/组件名称/组件名称.vue`
+2. 安装在uni_modules下，路径为`uni_modules/插件ID/components/组件名称/组件名称.vue`
+
+工程目录：
+
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+┌─components            
+│  └─comp-a
+│    └─comp-a.vue      符合easycom规范的组件
+└─uni_modules          [uni_module](/uni_modules)中符合easycom规范的组件
+   └─uni_modules
+     └─uni-list
+       └─components
+         └─uni-list
+           └─ uni-list.vue
+	</code>
+</pre>
+
+不管components目录下安装了多少组件，`easycom`打包会自动剔除没有使用的组件，对组件库的使用尤为友好。
 
 组件库批量安装，随意使用，自动按需打包。以官方的`uni-ui`为例，在HBuilderX新建项目界面选择`uni-ui`项目模板，只需在页面中敲u，拉出大量组件代码块，直接选择，即可使用。大幅提升开发效率，降低使用门槛。
 The component library is installed in batches, used at will, and automatically packaged on demand. Take the official `uni-ui` as an example, select the `uni-ui` project template on the HBuilderX new project interface, just type u on the page, pull out a large number of component code blocks, select directly, and you can use it. Greatly improve development efficiency and lower the threshold for use.
 
 在[uni-app插件市场](https://ext.dcloud.net.cn/)下载符合`components/组件名称/组件名称.vue`目录结构的组件，均可直接使用。
 In the [uni-app plug-in market](https://ext.dcloud.net.cn/), download components that conform to the `components/component name/component name.vue` directory structure, and you can use them directly.
+
+**自定义easycom配置的示例**
 
 `easycom`是自动开启的，不需要手动开启，有需求时可以在`pages.json`的`easycom`节点进行个性化设置，如关闭自动扫描，或自定义扫描匹配组件的策略。设置参数如下：
 `easycom` is automatically enabled and does not need to be manually enabled. When necessary, you can personalize settings in the `easycom` node of `pages.json`, such as disabling automatic scanning, or customizing the strategy of scanning and matching components. Set the parameters as follows:
@@ -1310,8 +1326,7 @@ In the [uni-app plug-in market](https://ext.dcloud.net.cn/), download components
 |custom		|Object	|-			|以正则方式自定义组件匹配规则。如果`autoscan`不能满足需求，可以使用`custom`自定义匹配规则	|
 | custom | Object |- | Customize component matching rules in a regular way. If `autoscan` does not meet your needs, you can use `custom` to customize the matching rules |
 
-**自定义easycom配置的示例**
-**Example of custom easycom configuration**
+如果你的组件，不符合easycom前述的`路径规范`。可以在pages.json的easycom节点中自行定义路径规范。
 
 如果需要匹配node_modules内的vue文件，需要使用`packageName/path/to/vue-file-$1.vue`形式的匹配规则，其中`packageName`为安装的包名，`/path/to/vue-file-$1.vue`为vue文件在包内的路径。
 If you need to match the vue files in node_modules, you need to use the matching rule in the form of `packageName/path/to/vue-file-$1.vue`, where `packageName` is the installed package name, `/path/to/vue-file -$1.vue` is the path of the vue file in the package.
@@ -1335,9 +1350,7 @@ If you need to match the vue files in node_modules, you need to use the matching
 - 在组件名完全一致的情况下，`easycom`引入的优先级低于手动引入（区分连字符形式与驼峰形式）
 - When the component names are exactly the same, the priority of `easycom` import is lower than that of manual import (distinguish between hyphen form and camel case form)
 - 考虑到编译速度，直接在`pages.json`内修改`easycom`不会触发重新编译，需要改动页面内容触发。
-- Considering the compilation speed, modifying `easycom` directly in `pages.json` will not trigger recompilation, it needs to be triggered by changing the page content.
-- `easycom`只处理vue组件，不处理小程序专用组件（如微信的wxml格式组件）。不处理后缀为.nvue的组件。但vue组件也可以全端运行，包括小程序和app-nvue。可以参考uni ui，使用vue后缀，同时兼容nvue页面。
-- `easycom` only handles vue components, not MiniApp specific components (such as WeChat’s wxml format components). Components with the suffix .nvue are not processed. But vue components can also run full-end, including MiniApp and app-nvue. You can refer to uni ui, use the vue suffix, and be compatible with nvue pages.
+- `easycom`只处理vue组件，不处理小程序专用组件（如微信的wxml格式组件）。不处理后缀为.nvue的组件。因为nvue页面引入的组件也是.vue组件。可以参考uni ui，使用vue后缀，同时兼容nvue页面。
 - `nvue`页面里引用`.vue`后缀的组件，会按照nvue方式使用原生渲染，其中不支持的css会被忽略掉。这种情况同样支持`easycom`
 - Components with `.vue` suffix in the `nvue` page will use native rendering in the nvue way, and unsupported css will be ignored. This case also supports `easycom`
 

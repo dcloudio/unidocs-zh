@@ -1,3 +1,5 @@
+# `uni-app x 并未发布，本文档为内部使用`
+
 # uni-app x 是什么？
 
 uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。

@@ -1,20 +1,23 @@
 ## 页面简介
 ## Page Introduction
 
-uni-app项目中，一个页面就是一个符合`Vue SFC规范`的`.vue`文件或`.nvue`文件。
-In a uni-app project, a page is a `.vue` file or `.nvue` file that conforms to the `Vue SFC specification`.
+uni-app项目中，一个页面就是一个符合`Vue SFC规范`的 vue 文件。
 
-`.vue`页面和`.nvue`页面，均全平台支持，差异在于当uni-app发行到App平台时，`.vue`文件会使用webview进行渲染，`.nvue`会使用原生进行渲染，详见：[nvue原生渲染](/tutorial/nvue-outline)。
-Both `.vue` pages and `.nvue` pages are supported by all platforms. The difference is that when uni-app is released to the App platform, the `.vue` file will be rendered using webview, and the `.nvue` will be rendered natively. See: [nvue native rendering](/tutorial/nvue-outline).
+- 在 uni-app js 引擎版中，后缀名是`.vue`文件或`.nvue`文件。
+- 在 uni-app x 中，后缀名是`.uvue`文件
+
+这些页面均全平台支持，差异在于当 uni-app 发行到App平台时，`.vue`文件会使用webview进行渲染，`.nvue`会使用原生进行渲染，详见：[nvue原生渲染](/tutorial/nvue-outline)。
+
+一个页面可以同时存在vue和nvue，在[pages.json](../collocation/pages.md)的路由注册中不包含页面文件名后缀，同一个页面可以对应2个文件名。重名时优先级如下：
+- 在非app平台，先使用vue，忽略nvue
+- 在app平台，使用nvue，忽略vue
 
 ## 新建页面
 ## New page
 
-`uni-app`中的页面，通常会保存在工程根目录下的`pages`目录下。
-Pages in `uni-app` are usually stored in the `pages` directory in the project root directory.
+`uni-app`中的页面，默认保存在工程根目录下的`pages`目录下。
 
-每次新建页面，均需在`pages.json`中配置`pages`列表；未在`pages.json -> pages` 中配置的页面，`uni-app`会在编译阶段进行忽略。pages.json的完整配置参考：[全局文件](/collocation/pages)。
-Every time you create a new page, you need to configure the `pages` list in `pages.json`; for pages that are not configured in `pages.json -> pages`, `uni-app` will be ignored in the compilation phase. The complete configuration reference of pages.json: [global file](/collocation/pages).
+每次新建页面，均需在`pages.json`中配置`pages`列表；未在`pages.json -> pages` 中注册的页面，`uni-app`会在编译阶段进行忽略。pages.json的完整配置参考：[页面配置](../collocation/pages.md)。
 
 通过HBuilderX开发 `uni-app` 项目时，在 `uni-app` 项目上右键“新建页面”，HBuilderX会自动在`pages.json`中完成页面注册，开发更方便。
 When developing a `uni-app` project through HBuilderX, right-click on the `uni-app` project and "New Page", HBuilderX will automatically complete the page registration in `pages.json`, making development more convenient.
@@ -26,24 +29,209 @@ At the same time, HBuilderX also has built-in common page templates (such as tex
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/pages-add-02.png" style="max-width:450px"></img>
 </div>
 
+新建页面时，可以选择vue或nvue，还可以选择`是否创建同名目录`。创建目录的意义在于，如果你的页面较复杂，需要拆分多个附属的js、css、组件等文件，则使用目录归纳比较合适。如果只有一个页面文件，大可不必多放一层目录。
+
 ## 删除页面
 ## delete page
 
 删除页面时，需做两件工作：
 When you delete a page, you need to do two things:
 - 删除`.vue`文件或`.nvue`文件
-- delete `.vue` file or `.nvue` file
-- 删除`pages.json -> pages`列表项中的配置
-- Remove config in `pages.json -> pages` list item
+- 删除`pages.json -> pages`列表项中的配置 （如使用HBuilderX删除页面，会在状态栏提醒删除pages.json对应内容）
+
+## pages.json
+
+pages.json是工程的页面管理配置文件，包括：页面路由注册、页面参数配置（原生标题栏、下拉刷新...）、首页tabbar等众多功能。
+
+其篇幅较长，另见 [pages.json](../collocation/pages.md)
 
 ## 应用首页
 ## Application Home
 
-`uni-app`会将`pages.json -> pages`配置项中的第一个页面，作为当前工程的首页（启动页）。
-`uni-app` will use the first page in the `pages.json -> pages` configuration item as the home page (startup page) of the current project.
+`pages.json -> pages`配置项中的第一个页面，作为当前工程的首页（启动页）。
 
-## 页面生命周期 @lifecycle
-## Page life cycle @lifecycle
+```json
+{
+	"pages": [
+		{
+			"path": "pages/index/index", //名字叫不叫index无所谓，位置在第一个，就是首页
+			"style": {
+				"navigationBarTitleText": "首页" //页面标题
+			}
+		},
+		{
+			"path": "pages/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+	]
+}
+```
+
+## 页面内容构成
+
+uni-app 页面基于 vue 规范。一个页面内，有3个根节点标签 `<template>`、`<script>`、`<style>`，分别是模板组件区、脚本区、样式区。
+
+```html
+<template>
+	<view class="content">
+		<button @click="buttonClick">{{title}}</button>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				title: "Hello world", // 定义绑定在页面上的data数据
+			}
+		},
+		onLoad() {
+			// 页面启动的生命周期，这里编写页面加载时的逻辑
+		},
+		methods: {
+			buttonClick: function () {
+				console.log("按钮被点了")
+			},
+		}
+	}
+</script>
+
+<style>
+	.content {
+		width: 750rpx;
+		background-color: white;
+	}
+</style>
+```
+
+### template模板区
+
+template中文名为`模板`，它类似html的标签。但有2个区别：
+1. html中script和style是html的二级节点。但在vue文件中，template、script、style这3个是平级关系。
+2. html中写的是web标签，但vue的template中写的全都是vue组件，每个组件支持属性、事件、vue指令，还可以绑定vue的data数据。
+
+在vue2中，template的二级节点只能有一个节点，一般是在一个根view下继续写页面组件（如上示例代码）。
+
+但在vue3中，template可以有多个二级节点，省去一个层级，如下：
+```html
+<template>
+	<view>
+		<text>标题</text>
+	</view>
+	<scroll-view>
+		
+	</scroll-view>
+</template>
+```
+
+可以在manifest中切换使用vue2还是vue3（uni-app x中只支持vue3）
+
+### script脚本区
+
+script中编写脚本，可以通过lang属性指定脚本语言。
+
+- 在vue和nvue中，默认是js，可以指定ts
+- 在uvue中，仅支持uts。
+
+```html
+<script lang="ts">
+</script>
+```
+
+在vue的选项式（option）规范中，script下包含`export default {}`。（除了选项式，还有[组合式](vue3-composition-api.md)）
+
+页面级的代码大多写在`export default {}`中。写在里面的代码，会随着页面关闭而关闭。
+
+#### export default 外的代码
+先来介绍写在`export default {}`外面的代码，一般有几种情况：
+1. import三方js/ts模块
+2. import非easycom的组件（一般组件推荐使用[easycom](../collocation/pages.md#easycom)，无需导入注册）
+3. 在ts/uts中，对data的类型进行type定义
+4. 定义作用域更大的变量，注意外层的静态变量不会跟随页面关闭而回收
+
+```html
+<script lang="ts">
+	const TAB_OFFSET = 1; // 外层静态变量不会跟随页面关闭而回收
+	import charts from 'charts.ts'; // 导入外部js/ts模块
+	import swiperPage from 'swiper-page.vue'; //导入非easycom的组件
+	type GroupType = {
+		id : number,
+		title : string
+	} // 在ts中，为下面data数据的 groupList 定义类型
+	export default {
+		components: {
+		    swiperPage
+		}, // 注册非easycom组件
+		data() {
+			return {
+				groupList: [
+					{ id: 1, title: "第一组" },
+					{ id: 2, title: "第二组" },
+				] as GroupType[], // 为数据groupList定义ts类型
+			}
+		},
+		onLoad() {},
+		methods: {}
+	}
+</script>
+```
+
+#### export default 里的代码
+`export default {}` 里的内容，是页面的主要逻辑代码。包括几部分：
+1. data：template模板中需要使用的数据。具体[另见](vue-basics.md#data)
+2. 页面生命周期：如页面加载、隐藏、关闭，具体[见下](#lifecycle)
+3. methods方法，如按钮点击、屏幕滚动
+
+如下页面代码的逻辑是：
+1. 在data中定义了`title`，初始值是"点我"
+2. 在页面中放置了一个button组件，按钮文字区使用`{{}}`模板写法，里面写`title`，把data里的`title`绑定到按钮的文字区，即按钮的初始文字是"点我"
+3. 按钮的点击事件`@click`，指向了methods里的一个方法`buttonClick`，点击按钮即触发这个方法的执行
+4. buttonClick方法里通过`this.title`的方式，访问data数据，并重新赋值为"被点了"。由于vue中data和界面是双向绑定，修改data中的`title`后，因为按钮文字绑定了`title`，会自动更新按钮的文字。
+
+整体效果就是，刚开始按钮文字是"点我"，点一下后按钮文字变成了"被点了"
+
+```html
+<template>
+	<view>
+		<button @click="buttonClick">{{title}}</button>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				title: "点我", // 定义绑定在页面上的data数据
+				// 多个data在这里继续定义。逗号分隔
+			}
+		},
+		onLoad() {
+			// 页面启动的生命周期，这里编写页面加载时的逻辑
+		},
+		// 多个页面生命周期监听，在这里继续写。逗号分隔
+		methods: {
+			buttonClick: function () {
+				this.title = "被点了"
+			},
+			// 多个方法，在这里继续写。逗号分隔
+		}
+	}
+</script>
+```
+
+本章节为页面代码介绍，并非vue教程，了解data数据需[详见](vue-basics.md#data)
+
+### style样式区
+
+style的写法与web的css基本相同。
+
+如果页面是nvue或uvue，使用原生渲染而不是webview渲染，那么它们支持的css是有限的。
+
+详见[css文档](syntax-css.md)
+
+## 页面生命周期@lifecycle
 
 ``uni-app`` 页面除支持 Vue 组件生命周期外还支持下方页面生命周期函数，当以组合式 API 使用时，在 Vue2 和 Vue3 中存在一定区别，请分别参考：[Vue2 组合式 API 使用文档](/tutorial/vue-composition-api.html) 和 [Vue3 组合式 API 使用文档](/tutorial/vue3-composition-api.html)。
 

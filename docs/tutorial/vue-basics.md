@@ -562,8 +562,7 @@ Cross-end rich text processing scheme can be found in: [https://ask.dcloud.net.c
 
 
 
-## data 属性
-## data attribute
+## data 属性@data
 
 data 必须声明为返回一个初始数据对象的函数（注意函数内返回的数据对象不要直接引用函数外的对象）；否则页面关闭时，数据不会自动销毁，再次打开该页面时，会显示上次数据。
 data must be declared as a function that returns an initial data object (note that the data object returned in the function should not directly reference objects outside the function); otherwise, the data will not be automatically destroyed when the page is closed, and the last data will be displayed when the page is opened again .
@@ -595,8 +594,80 @@ data must be declared as a function that returns an initial data object (note th
 	}
 ```
 
+return 外可以写一些复杂计算：
+```ts
+<script lang="ts">
+	export default {
+		data() {
+			const date = new Date()
+			return {
+				year: date.getFullYear() as number
+			}
+		}
+	}
+</script>
+```
 
+data数据在template中有2种绑定方式：
+1. text区域使用`{{}}`。详见[插值](#插值)
+2. 属性区域通过:属性名称，在属性值里直接写变量。详见[v-bind](#v-bind)
 
+```html
+<template>
+	<view class="content">
+		<button @click="buttonClick" :disabled="buttonEnable">{{title}}</button>
+	</view>
+</template>
+<script>
+	export default {
+		data() {
+			return {
+				title: "点我",
+				buttonEnable: false
+			}
+		},
+		methods: {
+			buttonClick: function () {
+				this.buttonEnable = true
+				this.title = "被点了，不能再点了"
+			},
+		}
+	}
+</script>
+```
+
+data数据在script中引用，通过`this.`的方式。如果在某些methods中this被指向了其他内容，则需要提前把this赋值给另一个变量，比如`let that = this`。
+
+```html
+<script>
+	export default {
+		data() {
+			return {
+				connectedWifi:""
+			}
+		},
+		methods: {
+			buttonClick: function () {
+				const that = this // 下面的this指向会变化，另存一下
+				uni.startWifi({
+					success: function() {
+						uni.getConnectedWifi({
+							success: function(res) {
+								const { wifi } = res
+								that.connectedWifi = JSON.stringify(wifi)
+							},
+							fail: function(res) {
+							}
+						})
+					},
+					fail: function(res) {
+					}
+				})
+			},
+		}
+	}
+</script>
+```
 
 ## Class 与 Style 绑定
 ## Class and Style binding

@@ -22,7 +22,7 @@
 
 如下是三方专业培训机构的视频教程
 * [《uni-app 商业级应用实战》](https://ke.qq.com/course/379043?from=800006421)，出品人：腾讯课堂NEXT学院。亮点：腾讯课堂官方出品；不懂 vue 的工程师也可快速学习；从入门到实战都包括。
-* [《uni-app 小兔鲜儿小程序项目》](https://www.bilibili.com/video/BV1Bp4y1379L?p=1)，出品人：传智教育旗下黑马程序员。亮点： 使用 vue3 加 TS 写的 uni-app 项目。
+* [《2023 uni-app 小兔鲜儿小程序项目》](https://www.bilibili.com/video/BV1Bp4y1379L?p=1)，出品人：黑马程序员。亮点： Vue3+TS+Pinia 最新技术栈课程。
 * [《uni-app 跨平台应用开发教程》](http://www.hcoder.net/course/info_242.html)，出品人：hcoder 刘海君，课时：共25节。亮点：讲师经验丰富，也是graceui框架作者。
 * [《uni-app 实战教程 - “悦读”项目实战》](https://ke.qq.com/course/364262?tuin=4f8da6)，出品人：hcoder 刘海君
 * [《uni-app实战社区交友类app开发》](https://study.163.com/course/introduction.htm?courseId=1209188809&_trace_c_p_k2_=4b765abfb2f946039c8ea6230737f6af)，出品人：帝莎IT学院。适用人群：具备Html+Css+Javascript基础知识。

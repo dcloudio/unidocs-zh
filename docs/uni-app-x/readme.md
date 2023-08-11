@@ -179,7 +179,6 @@ uni自带API，如下为目前支持的清单。
 * [x] uni.closePreviewImage	
 * [x] uni.startPullDownRefresh
 * [x] uni.stopPullDownRefresh
-* [ ] uni.getWindowInfo
 
 ### 组件
 * [x] uni.createVideoContext
@@ -206,8 +205,9 @@ uni自带API，如下为目前支持的清单。
 * [x] uni.getSystemInfo			
 * [x] uni.getSystemInfoSync		
 * [x] uni.getDeviceInfo			
-* [x] uni.getAppBaseInfo		
-* [x] uni.getSystemSetting		
+* [x] uni.getWindowInfo
+* [x] uni.getAppBaseInfo
+* [x] uni.getSystemSetting
 * [x] uni.getAppAuthorizeSetting	
 * [x] uni-getbatteryinfo	//已有uts插件
 * [x] uni-memeorywarning	//已有uts插件
@@ -240,7 +240,7 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 
 除上述文档中声明已经完成的，还有如下需要注意：
 
-- 全端支持：一期只有Android。对于其他平台，开发者可将uvue文件后缀改为vue，如果没有写Android专有代码，那么也可以使用uni-app js引擎版编译到其他平台，包括iOS App、web及各家小程序。后期官方会提供更完善的 uni-app x的全端支持。
+- 全端支持：一期只有Android。对于其他平台，开发者可将uvue文件后缀改为vue或nvue，如果没有写Android专有代码，那么也可以使用uni-app js引擎版编译到其他平台，包括iOS App、web及各家小程序。尤其在app-iOS上，由于设备性能本就优秀，所以nvue的方案的性能也足够满足挑剔的开发者。后期官方会提供更完善的 uni-app x的全端支持。
 - uvue语法：虽然uvue是按vue3实现的，但一期uvue不支持setup，只支持选项式。
 - 一期不支持：横屏切换、暗黑模式、自定义转场、多语言、无障碍
 - 一期不支持：云开发（已在开发中）、uni-ad。另外包括微信、支付宝、个推等三方sdk封装一期均未启动
@@ -257,6 +257,8 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 4. 对于script，如果你之前使用ts，那么改造成本会很低。如果使用js，那需要改造成uts，差别最大的就是补类型，没法再使用弱类型了。
 5. 组件的写法基本没有差别，只需注意uni-app x初期支持的组件不全
 
+您可以先把Android版迁移到uni-app x上，iOS维持原先方案。由于iphone设备性能的优势，uni-app js版的性能应该也可以满足大多数需求。
+
 官方近期会提供把[uni小程序sdk](https://nativesupport.dcloud.net.cn/#)集成到uni-app x的方案。届时你的uni-app js版老项目可以作为uni-app x新项目的一个小程序来使用。
 
 ## 原生/rn/flutter页面兼容指南
@@ -270,21 +272,43 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 # FAQ
 - uni-app x 支持uvue页面和vue页面混写吗？
 仅支持uvue页面。后期考虑中。历史vue页面也可以通过 uni小程序sdk 嵌入到uni-app x中。
+
 - uni-app x 的app端能离线打包吗？
 初期不能，后期会提供
+
 - uni-app x 能热更新吗？
 开发期间可以热刷，但打包后不能热更新。开发者可自行封装原生的插件动态加载方案。
+
 - uni-app x 能使用npm库吗？
-uni-app x 的app端里没有js引擎，所有js库都不能用。除非npm上有uts的库。当然把ts的库改造成uts的库并不难。uni-app x编译到web和小程序时，js库仍然可用。
+uni-app x 的app端里没有js引擎，不能使用js库。除非npm上有uts的库。
+
+当然把ts的库改造成uts的库并不难，如果ts库没有使用uts不支持的web专用语法，那么可以直接使用。
+
+uni-app x编译到web和小程序时，所有js库仍然可用。
+
 - uni-app x 会搞插件大赛吗？
 会。很快启动，鼓励大家做基于uts和uvue的插件。
+
 - uni-app x 能调用所有原生API吗？
 可以。在app端，kotlin和swift能调的，uts就能调。
+
 - uni-app x 能集成原生sdk吗？
 可以，通过uts插件，[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
+
 - uvue页面里的script可以直接调用原生代码吗？还是必须封装成uni_modules方式的uts原生插件？
-uvue的script里写的就是uts，uts就可以直接调原生代码。无所谓它在uni_modules里还是外。
+uvue的script里写的就是uts，uts就可以直接调原生代码。无所谓它在`uni_modules`里还是外。但如果是大段的原生代码调用，还是推荐封装为独立的`uni_modules`。
+
 - uni-app x 的开发只能用HBuilderX吗？
 是的。为三方ide做插件是一个投资大且充满不确定性的事情，官方有限精力会聚焦在自身产品优化上。
+
 - uni-app x 支持最低的Android版本多少？
 Android 5+。Android4.4可能也可以运行，但官方发版前不会对4.4测试。
+
+- 未来 uni-app js引擎版还维护吗？
+维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。
+
+并非所有应用都需要达到微信、抖音的性能，js引擎版如能满足你的性能需求，那继续使用js引擎版。
+
+未来vue页面也会支持uts组件。无论js引擎版还是x版，都支持uts插件生态，未来的原生扩展api和插件会是复用的。
+
+包括官方的组件和API也会复用，比如电量API[uni.getbatteryinfo](https://ext.dcloud.net.cn/plugin?id=9295)，和[lottie组件](https://ext.dcloud.net.cn/plugin?id=10674)，它们使用uts开发，在 uni-app js引擎版和x版上，调用的都是一套代码。

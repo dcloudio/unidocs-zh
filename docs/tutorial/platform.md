@@ -42,8 +42,9 @@ Conditional compilation is marked with special comments which are the basic of c
 |值|生效条件|
 | Value| Effective conditions|
 |:-|:-|
-|VUE3|HBuilderX 3.2.0+ [详情](https://ask.dcloud.net.cn/article/37834)|
-|APP-PLUS|App|
+|VUE3|HBuilderX 3.2.0+ [详情](https://ask.dcloud.net.cn/article/37834) （uni-app js引擎版）|
+|APP|App|
+|APP-PLUS|App（uni-app js引擎版）|
 |APP-PLUS-NVUE或APP-NVUE|App nvue 页面|
 | APP-PLUS-NVUE or APP-NVUE| App nvue page|
 |APP-ANDROID|App Android 平台 仅限 uts文件|

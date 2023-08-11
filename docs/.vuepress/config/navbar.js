@@ -45,7 +45,7 @@ export const navbar = [
       {
         text: 'uni-app x',
         type: 'link',
-        link: '/uni-app-x/css'
+        link: '/uni-app-x/css/'
       },
       {
         text: '插件',

@@ -621,7 +621,7 @@ async function testAsync(opts: AsyncOptions) {
 **需要注意：使用 async 定义异步方法只有 iOS 13+ 版本才支持，低版本调用会报错**
 
 
-#### 5.1.14 try catch
+#### 5.1.14 try catch @try
 
 swift中try有以下三种方式:
 

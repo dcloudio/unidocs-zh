@@ -568,6 +568,8 @@ fruits.forEach(function(item, index, array) {
 // Apple 0
 // Banana 1
 ```
+- 注意：数组遍历不推荐使用 for in 语句，因为在 ts 中 for in 遍历的是数组的下标，而在 Swift 和 Kottlin 中遍历的是数组的元素，存在行为不一致。
+
 - 添加元素到数组的末尾
 ```ts
 const newLength = fruits.push('Orange')

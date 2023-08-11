@@ -42,11 +42,11 @@ export const navbar = [
         type: 'link',
         link: '/uts/'
       },
-      {
-        text: 'uni-app x',
-        type: 'link',
-        link: '/uni-app-x/css/'
-      },
+      // {
+      //   text: 'uni-app x',
+      //   type: 'link',
+      //   link: '/uni-app-x/css/'
+      // },
       {
         text: '插件',
         type: 'link',

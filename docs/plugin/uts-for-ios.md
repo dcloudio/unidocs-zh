@@ -762,7 +762,7 @@ async function testAsync(opts: AsyncOptions) {
 **Note: Using async to define an asynchronous method is only supported by iOS 13+ versions, and errors will be reported when calling in lower versions**
 
 
-#### 5.1.14 try catch
+#### 5.1.14 try catch @try
 
 swift中try有以下三种方式:
 

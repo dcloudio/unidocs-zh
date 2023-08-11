@@ -417,11 +417,12 @@ let kotlinArray = utsArr.toTypedArray()
 ```
 
 
-##### swift专有数组类型
+##### iOS 平台专有数组类型
 
+	UTS 中的 Array 对应到 Swift 中就是 Array, 方法是通用的，无需转换。一般情况下，使用 Array 即可。
+	但是，某些系统或者三方库 API 可能会要求 OC 的 NSArray、NSMutableArray 类型的数组，这个时候就需要进行转换。
+	
 - 专有数组类型清单
-	UTS 中的 Array 对应到 Swift 中就是 Array, 方法是通用的。一般情况下，使用 Array 即可。
-	但是，某些系统或者三方库 API 可能会要求 NSArray、NSMutableArray 类型的数组，这个时候就需要进行转换。
 	* NSArray
 	* NSMutableArray
 	
@@ -514,6 +515,63 @@ let a3: NSMutableArray = NSMutableArray(array= a)
 #### 更多API
 
 更多Array的API，[详见](https://uniapp.dcloud.net.cn/uts/buildin-object-api/array.html)
+
+
+### json类型 @json
+
+json 在 web 中是一个 object，不存在 json 这个基础类型。在 uts 中提供了内置的 UTSJSONObject 对象。
+
+
+#### 定义 UTSJSONObject
+
+可以通过 object 字面量的方式定义一个 UTSJSONObject 对象
+
+```ts
+let rect = {
+	x: 20,
+	y: 12,
+	size: {
+		width: 80,
+		height: 80
+	}
+}
+console.log(rect)
+```
+
+当然，也可以在 object 字面量前指定 UTSJSONObject 类型， 例如：
+
+```ts
+let origin: UTSJSONObject = {
+	x: 20,
+	y: 12,
+}
+```
+
+有关定义 UTSJSONObject 对象的更多信息[详见](uts/literal.md#object)
+
+
+#### 访问 UTSJSONObject 对象中的属性
+
+以上述  rect 为例，我们可以通过下标的方式访问其中的属性：
+
+
+```ts
+let rect = {
+	x: 20,
+	y: 12,
+	size: {
+		width: 80,
+		height: 80
+	}
+}
+
+let x = rect["x"]
+let size = rect["size"]
+ 
+// 如果属性存在嵌套，那么需要先把第一层转成 UTSJSONObject 之后再用下标访问下一层，以此类推。
+let width = (rect["size"] as UTSJSONObject)["width"]
+
+```
 
 
 ### any类型 @any
@@ -641,6 +699,4 @@ uts 编译为kotlin和swift时不支持 undefined。即不允许变量未赋值�
 
 每个有类型的变量都需要初始化或赋值。
 
-- json
 
-json 在 web 中是一个 object，不存在 json 这个基础类型。在 uts 中提供了内置的 UTSJSONObject 对象，[详见](buildin-object-api/json.md)

@@ -148,6 +148,8 @@ for (let i = 0; i < 10; i++) {
 - [数组的forEach](buildin-object-api/array.md#foreach)
 - [set的forEach](buildin-object-api/set.html#foreach)
 
+- 注意：数组遍历不推荐使用 for in 语句，因为在 ts 中 for in 遍历的是数组的下标，而在 Swift 和 Kottlin 中遍历的是数组的元素，存在行为不一致。
+
 ### while
 
 一个 while 语句只要指定的条件求值为真（true）就会一直执行它的语句块。一个 while 语句看起来像这样：
@@ -273,3 +275,5 @@ try {
 }
 
 ```
+
+- 注意：在 iOS 平台由于 Swift 的特殊语法，无法直接使用 try...catch, 在 iOS 平台上使用 try 的语法[详见](https://uniapp.dcloud.net.cn/plugin/uts-for-ios.html#try)

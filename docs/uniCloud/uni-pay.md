@@ -754,11 +754,13 @@ module.exports = {
 
 1. 该页面在 `template` 内放一个 `uni-pay` 组件标签，声明ref，然后调用组件的API。如下
 
+注意：vue3下ref不可以等于组件名，因此这里 `ref="pay"` 而不能是 `ref="uniPay"`
+
 ```html
 <template>
 	<view>
 		<button @click="open">唤起收银台支付</button>
-		<uni-pay ref="uniPay"></uni-pay>
+		<uni-pay ref="pay"></uni-pay>
 	</view>
 </template>
 
@@ -791,7 +793,7 @@ module.exports = {
 				this.order_no = `test`+Date.now(); // 模拟生成订单号
 				this.out_trade_no = `${this.order_no}-1`; // 模拟生成插件支付单号
 				// 打开支付收银台
-				this.$refs.uniPay.open({
+				this.$refs.pay.open({
 					total_fee: this.total_fee, // 支付金额，单位分 100 = 1元
 					order_no: this.order_no, // 业务系统订单号（即你自己业务系统的订单表的订单号）
 					out_trade_no: this.out_trade_no, // 插件支付单号
@@ -865,7 +867,7 @@ module.exports = async (obj) => {
 
 ```js
 // 打开支付收银台
-this.$refs.uniPay.open({
+this.$refs.pay.open({
 	type: "recharge", // 支付回调类型 recharge 代表余额充值（当然你可以自己自定义）
 });
 ```
@@ -1196,7 +1198,7 @@ public class CryptoUtil {
 
 #### 组件方法
 
-通过 `let res = await this.$refs.uniPay.xxx();` 方式调用，详情调用方式参考下方的【前端完整示例代码】
+通过 `let res = await this.$refs.pay.xxx();` 方式调用，详情调用方式参考下方的【前端完整示例代码】
 
 | 方法名                    | 说明                | 
 |---------------------------|---------------------|
@@ -1245,8 +1247,8 @@ public class CryptoUtil {
 		<!-- #ifdef H5 -->
 		<button v-if="h5Env === 'h5-weixin'" @click="getWeiXinJsCode('snsapi_base')">公众号获取openid示例</button>
 		<!-- #endif -->
-		<!-- 统一支付组件 -->
-		<uni-pay ref="uniPay" :adpid="adpid" return-url="/pages/order-detail/order-detail" logo="/static/logo.png" @success="onSuccess" @create="onCreate"></uni-pay>
+		<!-- 统一支付组件，注意：vue3下ref不可以等于组件名，因此这里ref="pay" 而不能是 ref="uniPay" -->
+		<uni-pay ref="pay" :adpid="adpid" return-url="/pages/order-detail/order-detail" logo="/static/logo.png" @success="onSuccess" @create="onCreate"></uni-pay>
 	</view>
 </template>
 
@@ -1288,7 +1290,7 @@ public class CryptoUtil {
 				this.order_no = `test`+Date.now();
 				this.out_trade_no = `${this.order_no}-1`;
 				// 打开支付收银台
-				this.$refs.uniPay.open({
+				this.$refs.pay.open({
 					total_fee: this.total_fee, // 支付金额，单位分 100 = 1元
 					order_no: this.order_no, // 业务系统订单号（即你自己业务系统的订单表的订单号）
 					out_trade_no: this.out_trade_no, // 插件支付单号
@@ -1307,7 +1309,7 @@ public class CryptoUtil {
 				this.order_no = `test`+Date.now();
 				this.out_trade_no = `${this.order_no}-1`;
 				// 发起支付
-				this.$refs.uniPay.createOrder({
+				this.$refs.pay.createOrder({
 					provider: provider, // 支付供应商
 					total_fee: this.total_fee, // 支付金额，单位分 100 = 1元
 					order_no: this.order_no, // 业务系统订单号（即你自己业务系统的订单表的订单号）
@@ -1327,7 +1329,7 @@ public class CryptoUtil {
 				this.order_no = `test`+Date.now();
 				this.out_trade_no = `${this.order_no}-1`;
 				// 发起支付
-				this.$refs.uniPay.createOrder({
+				this.$refs.pay.createOrder({
 					provider: provider, // 支付供应商
 					total_fee: this.total_fee, // 支付金额，单位分 100 = 1元
 					order_no: this.order_no, // 业务系统订单号（即你自己业务系统的订单表的订单号）
@@ -1342,7 +1344,7 @@ public class CryptoUtil {
 			},
 			// 查询支付状态
 			async getOrder() {
-				let res = await this.$refs.uniPay.getOrder({
+				let res = await this.$refs.pay.getOrder({
 					out_trade_no: this.out_trade_no, // 插件支付单号
 					await_notify: true
 				});
@@ -1362,7 +1364,7 @@ public class CryptoUtil {
 			},
 			// 发起退款
 			async refund() {
-				let res = await this.$refs.uniPay.refund({
+				let res = await this.$refs.pay.refund({
 					out_trade_no: this.out_trade_no, // 插件支付单号
 				});
 				if (res) {
@@ -1374,7 +1376,7 @@ public class CryptoUtil {
 			},
 			// 查询退款状态
 			async getRefund() {
-				let res = await this.$refs.uniPay.getRefund({
+				let res = await this.$refs.pay.getRefund({
 					out_trade_no: this.out_trade_no, // 插件支付单号
 				});
 				if (res) {
@@ -1386,7 +1388,7 @@ public class CryptoUtil {
 			},
 			// 关闭订单
 			async closeOrder() {
-				let res = await this.$refs.uniPay.closeOrder({
+				let res = await this.$refs.pay.closeOrder({
 					out_trade_no: this.out_trade_no, // 插件支付单号
 				});
 				if (res) {
@@ -1398,7 +1400,7 @@ public class CryptoUtil {
 			},
 			// 获取公众号code
 			async getWeiXinJsCode(scope="snsapi_base") {
-				let res = await this.$refs.uniPay.getProviderAppId({
+				let res = await this.$refs.pay.getProviderAppId({
 					provider: "wxpay",
 					provider_pay_type: "jsapi"
 				});
@@ -1412,7 +1414,7 @@ public class CryptoUtil {
 			},
 			// 获取公众号openid
 			async getOpenid(data) {
-				let res = await this.$refs.uniPay.getOpenid(data);
+				let res = await this.$refs.pay.getOpenid(data);
 				if (res) {
 					this.openid = res.openid;
 					uni.showToast({
@@ -1551,7 +1553,7 @@ uni-pay前端组件和uni-pay-co云对象的方法是一样的。通常情况下
 `open`如果只有一种支付方式，比如微信小程序内只能用微信支付，则不会弹收银台，而是直接调用支付。
 
 ```js
-this.$refs.uniPay.open({
+this.$refs.pay.open({
 	total_fee: 1, // 支付金额，单位分 100 = 1元
 	type: "recharge", // 支付回调类型
 	order_no: "20221027011000101001010", // 业务系统订单号
@@ -1600,7 +1602,7 @@ uni.navigateTo({
 不带收银台时，provider参数为必传项，代表支付供应商
 
 ```js
-this.$refs.uniPay.createOrder({
+this.$refs.pay.createOrder({
 	provider: "wxpay", // 支付供应商
 	total_fee: 1, // 支付金额，单位分 100 = 1元
 	type: "recharge", // 支付回调类型
@@ -1681,7 +1683,7 @@ await uniPayCo.createOrder({
 **支付组件方法形式（推荐）**
 
 ```js
-await this.$refs.uniPay.getOrder({
+await this.$refs.pay.getOrder({
 	out_trade_no: "2022102701100010100101001", // 插件支付单号
 	await_notify: true, // 是否需要等待异步通知执行完成，若为了响应速度，可以设置为false，若需要等待异步回调执行完成，则设置为true
 });
@@ -1734,7 +1736,7 @@ await uniPayCo.getOrder({
 **支付组件方法形式（推荐）**
 
 ```js
-await this.$refs.uniPay.refund({
+await this.$refs.pay.refund({
 	out_trade_no: "2022102701100010100101001", // 插件支付单号
 });
 ```
@@ -1767,7 +1769,7 @@ await uniPayCo.refund({
 **支付组件方法形式（推荐）**
 
 ```js
-await this.$refs.uniPay.getRefund({
+await this.$refs.pay.getRefund({
 	out_trade_no: "2022102701100010100101001", // 插件支付单号
 });
 ```
@@ -1809,7 +1811,7 @@ await uniPayCo.getRefund({
 **支付组件方法形式（推荐）**
 
 ```js
-await this.$refs.uniPay.closeOrder({
+await this.$refs.pay.closeOrder({
 	out_trade_no: "2022102701100010100101001", // 插件支付单号
 });
 ```
@@ -1841,7 +1843,7 @@ await uniPayCo.closeOrder({
 **支付组件方法形式（推荐）**
 
 ```js
-await this.$refs.uniPay.getPayProviderFromCloud();
+await this.$refs.pay.getPayProviderFromCloud();
 ```
 
 **云对象接口形式**
@@ -1865,7 +1867,7 @@ await uniPayCo.getPayProviderFromCloud();
 ### 获取支付配置内的appid@get-provider-appid
 
 ```js
-await this.$refs.uniPay.getProviderAppId({
+await this.$refs.pay.getProviderAppId({
 	provider: "wxpay",
 	provider_pay_type: "jsapi",
 });
@@ -1901,7 +1903,7 @@ await uniPayCo.getProviderAppId({
 小程序不需要调用此方法，组件内部已自动静默获取openid
 
 ```js
-await this.$refs.uniPay.getOpenid({
+await this.$refs.pay.getOpenid({
 	provider: "wxpay",
 	code: options.code
 });
@@ -1946,7 +1948,7 @@ IAP 全称：In-App Purchase，是指苹果 App Store 的应用内购买，是�
 
 ```js
 // 发起ios内购支付
-this.$refs.uniPay.createOrder({
+this.$refs.pay.createOrder({
 	provider: "appleiap", // 支付供应商（这里固定未appleiap，代表ios内购支付）
 	order_no: "20221027011000101001010", // 业务系统订单号
 	out_trade_no: "2022102701100010100101001", // 插件支付单号
@@ -1976,8 +1978,8 @@ this.$refs.uniPay.createOrder({
 			<button class="btn-pay" @click="createOrder" :loading="loading" :disabled="disabled">立即支付</button>
 		</view>
 		
-		<!-- 统一支付组件 -->
-		<uni-pay ref="uniPay" :debug="true" :adpid="adpid" return-url="/pages/order-detail/order-detail" @mounted="onMounted" @success="onSuccess"></uni-pay>
+		<!-- 统一支付组件，注意：vue3下ref不可以等于组件名，因此这里ref="pay" 而不能是 ref="uniPay" -->
+		<uni-pay ref="pay" :debug="true" :adpid="adpid" return-url="/pages/order-detail/order-detail" @mounted="onMounted" @success="onSuccess"></uni-pay>
 	</view>
 </template>
 
@@ -2013,9 +2015,9 @@ this.$refs.uniPay.createOrder({
 			
 		},
 		onShow() {
-			if (this.$refs.uniPay && this.$refs.uniPay.appleiapRestore) {
+			if (this.$refs.pay && this.$refs.pay.appleiapRestore) {
 				// ios内购支付漏单重试
-				this.$refs.uniPay.appleiapRestore();
+				this.$refs.pay.appleiapRestore();
 			}
 		},
 		onUnload() {},
@@ -2029,9 +2031,9 @@ this.$refs.uniPay.createOrder({
 				this.productList[0].checked = true;
 				this.productid = this.productList[0].productid;
 				this.disabled = false;
-				if (this.$refs.uniPay && this.$refs.uniPay.appleiapRestore) {
+				if (this.$refs.pay && this.$refs.pay.appleiapRestore) {
 					// ios内购支付漏单重试
-					this.$refs.uniPay.appleiapRestore();
+					this.$refs.pay.appleiapRestore();
 				}
 			},
 			/**
@@ -2042,7 +2044,7 @@ this.$refs.uniPay.createOrder({
 				this.order_no = `test`+Date.now();
 				this.out_trade_no = this.order_no;
 				// 发起支付
-				this.$refs.uniPay.createOrder({
+				this.$refs.pay.createOrder({
 					provider: "appleiap", // 支付供应商（这里固定未appleiap，代表ios内购支付）
 					order_no: this.order_no, // 业务系统订单号（即你自己业务系统的订单表的订单号）
 					out_trade_no: this.out_trade_no, // 插件支付单号

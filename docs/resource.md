@@ -38,7 +38,7 @@ At present, major video learning websites have many uni-app learning resources:
 如下是三方专业培训机构的视频教程
 The following is the video tutorial of the tripartite professional training institution
 * [《uni-app 商业级应用实战》](https://ke.qq.com/course/379043?from=800006421)，出品人：腾讯课堂NEXT学院。亮点：腾讯课堂官方出品；不懂 vue 的工程师也可快速学习；从入门到实战都包括。
-* ["uni-app commercial application practice"](https://ke.qq.com/course/379043?from=800006421), Producer: Tencent Classroom NEXT Academy. Highlights: Officially produced by Tencent Classroom; engineers who do not understand vue can also learn quickly; from entry to actual combat.
+* [《uni-app 小兔鲜儿小程序项目》](https://www.bilibili.com/video/BV1Bp4y1379L?p=1)，出品人：传智教育旗下黑马程序员。亮点： 使用 vue3 加 TS 写的 uni-app 项目。
 * [《uni-app 跨平台应用开发教程》](http://www.hcoder.net/course/info_242.html)，出品人：hcoder 刘海君，课时：共25节。亮点：讲师经验丰富，也是graceui框架作者。
 * ["Uni-app Cross-Platform Application Development Course"](http://www.hcoder.net/course/info_242.html), Producer: hcoder Liu Haijun, class hours: 25 lessons in total. Highlights: The lecturer is experienced and is also the author of the graceui framework.
 * [《uni-app 实战教程 - “悦读”项目实战》](https://ke.qq.com/course/364262?tuin=4f8da6)，出品人：hcoder 刘海君

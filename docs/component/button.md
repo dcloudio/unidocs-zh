@@ -56,6 +56,8 @@
 |default|默认大小|
 |mini|小尺寸|
 
+button组件也支持style中通过css定义文字大小。
+
 ### type 有效值
 
 |值|说明|
@@ -63,6 +65,8 @@
 |primary|微信小程序、360小程序为绿色，App、H5、百度小程序、支付宝小程序、飞书小程序、快应用为蓝色，抖音小程序为红色，QQ小程序为浅蓝色。如想在多端统一颜色，请改用default，然后自行写样式|
 |default|白色|
 |warn|红色|
+
+button组件也支持style中通过css定义颜色。
 
 ### form-type 有效值
 
@@ -112,6 +116,9 @@ open-type 为 feedback时：
 - 在 App 中，开发者登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) 后点击应用名称，进入左侧菜单“用户反馈”页面获取反馈内容。
 - 但推荐使用全端的、开源的、云端一体的意见反馈功能，[前端部分](https://ext.dcloud.net.cn/plugin?id=50)、[管理端部分](https://ext.dcloud.net.cn/plugin?id=4992)
 
+**注意**
+
+- button组件支持style中通过css定义文字大小、颜色
 
 ### button点击
 

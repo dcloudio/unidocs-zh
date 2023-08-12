@@ -16,6 +16,12 @@ let a:number = "abc" //报错，无法编译
 
 这是原生开发和web开发非常大的不同。
 
-uvue框架内部做了一些错误拦截，减少崩溃，在export default里的代码相对安全，报错会触发app的onError。但在export外以及main.uts的代码，如果写不对就会崩溃。
+uvue框架内部做了一些错误拦截，减少崩溃，在export default {} 里的代码相对安全，报错会触发app的onError。
 
-开发者还是需要注意，在可能不安全的地方要try。
+但如下代码无法自动拦截：
+
+1. export default {} 外的代码
+2. export default {} 中的异步代码，包括setTimeout里的代码
+3. main.uts的代码
+
+这些地方，如果代码写不对就会崩溃。开发者务必注意，在可能不安全的地方要try。

@@ -1,8 +1,10 @@
-## 数据类型@data-type
+## 类型@data-type
 
 强类型语言的特点，是数据类型要求严格。它带来2个好处：
 1. 高性能：明确的类型有更大的优化空间，在iOS和Android等os上可以节省内存、提高运算速度；web端由于仍编译为js，不具有类型性能优化。
 2. 安全的代码：强类型代码编写虽然没有弱类型自由，但类型检查、非空检查...各种检查可以提升代码的健壮性。
+
+如果您是js开发者，那么需要一定的学习过程来掌握 UTS 的类型系统。总体原则是你将牺牲一些代码的灵活性，来换取代码的健壮性和高性能。
 
 ### 布尔值（boolean）
 
@@ -517,43 +519,118 @@ let a3: NSMutableArray = NSMutableArray(array= a)
 更多Array的API，[详见](https://uniapp.dcloud.net.cn/uts/buildin-object-api/array.html)
 
 
-### json类型 @json
+### JSON@json
 
-json 在 web 中是一个 object，不存在 json 这个基础类型。在 uts 中提供了内置的 UTSJSONObject 对象。
+json 在 js 中是一个 object，它用起来很自由。
 
+但在强类型语言中，不管ts、dart、kotlin、swift...，都没有这么灵活的json。
+
+json对象里的每个属性，都需要定义类型，才能安全读写。
+
+大多数语言都要求把json对象转为class、interface或type。
+
+uts 当然也可以把 json 转 interface/type。有很多转换工具，不管是在线网页还是ide插件。
+
+同时 uts 也提供了内置的 UTSJSONObject 对象，它尽可能的为开发者提供接近js的灵活性。
+
+#### 对象和数组
+
+首先，我们需要区分json对象和json对象构成的数组。
+
+这是一个 UTSJSONObject 对象。jo 对象有2个属性，x和y，都是数字类型
+```ts
+let jo: UTSJSONObject = {
+	"x": 1,
+	"y": 2
+}
+```
+
+这是一个 UTSJSONObject 数组。其数组项里有2个 UTSJSONObject 对象，每个对象都有x和y这2个属性。
+```ts
+let jr: UTSJSONObject[] = [
+	{"x": 1,"y": 2},
+	{"x": 2,"y": 1}
+]
+```
+
+在js中，可以定义一个变量，随意接受json对象或数组。但在 UTS 里不行。如果数据内容是数组，就必须通过`[]`来定义为数组。
+
+也就是下面的代码是错误的，不能把数组赋值给对象。在接收网络传输的json数据时，非常需要注意这个类型匹配问题。类型不匹配会造成代码错误和应用崩溃。
+```ts
+let jo: UTSJSONObject = [{
+	"x": 1,
+	"y": 2
+}] //类型不匹配
+```
 
 #### 定义 UTSJSONObject
 
-可以通过 object 字面量的方式定义一个 UTSJSONObject 对象
+可以通过 object 字面量的方式定义一个 UTSJSONObject 对象，编译器会根据字面量自动推导类型。
+
+```ts
+let jo = {
+	x: 1,
+	y: 2
+}
+```
+
+严谨的json，x和y属性是需要两侧加引号的，uts编译器发现不加会自动补，但建议开发者默认加上引号。
+
+对于纯字面量，jo 后面的 `:UTSJSONObject` 可以省略，这些类型比较简单。包括下面的多层嵌套，类型也不会推导出错。
 
 ```ts
 let rect = {
-	x: 20,
-	y: 12,
-	size: {
-		width: 80,
-		height: 80
+	"x": 20,
+	"y": 12,
+	"size": {
+		"width": 80,
+		"height": 80
 	}
 }
 console.log(rect)
 ```
-
-当然，也可以在 object 字面量前指定 UTSJSONObject 类型， 例如：
+<!-- 
+如果定义时赋值不是纯字面量，包含一些变量，就需要使用 `as` 关键字来声明类型。
 
 ```ts
-let origin: UTSJSONObject = {
-	x: 20,
-	y: 12,
+let i = 1
+let jo = {
+	x: i as number, // 需显式声明属性x的类型为number，不会自动推导类型
+	y: 2
 }
 ```
 
-有关定义 UTSJSONObject 对象的更多信息[详见](uts/literal.md#object)
+对于复杂的json，通常会给它配套定义一个type，来描述这个json的内部数据类型。
 
+此时需要使用`type`关键字，它的作用就是定义类型，在很多场景都可以使用。
+
+```ts
+type personType = {
+	id : number,
+	name : string
+}
+let a1=1,a2=2,b1="张三",b2="李四"
+let personList [] : UTSJSONObject[]
+personList = [
+ 	{ "id": a1, "name": b1 },
+ 	{ "id": a2, "name": b2 },
+] as personType[]
+
+```
+
+很多json对象在构造时，是没有具体数据的。
+
+```ts
+let jo = {}
+jo = JSON.parse({"result":true, "count":42})
+```
+ -->
+
+有关字面量定义 UTSJSONObject 对象的信息，[详见](literal.md#object)
+
+除了字面量定义JSON，经常用到的是通过`JSON.parse()`，把一个字符串转成json。这方面[详见](buildin-object-api/json.md)
 
 #### 访问 UTSJSONObject 对象中的属性
-
-以上述  rect 为例，我们可以通过下标的方式访问其中的属性：
-
 
 ```ts
 let rect = {
@@ -564,13 +641,60 @@ let rect = {
 		height: 80
 	}
 }
+```
 
-let x = rect["x"]
-let size = rect["size"]
- 
-// 如果属性存在嵌套，那么需要先把第一层转成 UTSJSONObject 之后再用下标访问下一层，以此类推。
-let width = (rect["size"] as UTSJSONObject)["width"]
+以上述 rect 为例，访问JSON中的数据，有如下方式：
+1. .操作符
+	即 `rect.x`、`rect.size.width`。
+	
+	这种写法比较简单，但仅限于使用字面量。如果是`JSON.parse()`转换的，则不能使用。
+	
+	因为字面量是uts编译器推导补充类型的，`JSON.parse()`无法在编译时识别类型。
+	
+2. [""]下标属性
+	即 `rect["x"]`。
+	
+	不管通过字面量定义的json，还是通过`JSON.parse()`，都可以使用下标方式访问json属性。
 
+	但下标返回的嵌套的json时，用起来比较麻烦，因为无法判断嵌套节点是对象还是数组，需要再`as`才能继续使用下一层数据。
+
+```ts
+let rect = {
+	x: 20,
+	y: 12,
+	size: {
+		width: 80,
+		height: 80
+	},
+	border: [
+		{color:"red",witdh:1},
+		{color:"white",witdh:1},
+		{color:"red",witdh:1},
+		{color:"white",witdh:1}
+	]
+}
+
+console.log(rect.x) //20
+console.log(rect["x"]) //20
+
+console.log(rect.size.width) //80
+console.log((rect["size"] as UTSJSONObject)["width"]) //80
+
+// 如果存在嵌套，那么需要先把第一层转成 UTSJSONObject对象或数组，之后再用下标访问下一层
+
+console.log(rect.border[0].color); //报错，一旦使用了下标访问数组，后面就无法使用.操作符了
+console.log(rect.border[0]["color"]); // red
+console.log((rect["border"] as UTSJSONObject[])[0]["color"]); // red
+
+```
+
+如果是`JSON.parse`解析的数组，目前只能通过下标访问。
+
+```ts
+let listData = JSON.parse(`{"result":true, "count":42}`) as UTSJSONObject
+let listArr = JSON.parse(`[{ id: 1, title: "第一组" },{ id: 2, title: "第二组" }]`) as UTSJSONObject[]
+console.log(listData["count"]); //42
+console.log(listArr[0]["title"]); //第一组
 ```
 
 

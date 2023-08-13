@@ -36,7 +36,7 @@ HBuilderX真机运行到Android时，每个页面进入时会都打印页面初�
 
 当然耗时数据不能以真机运行为准，调试基座因为热更新和sourcemap追踪等很多调试功能，导致性能比真实打包差。正式打包后性能更优。
 
-国内应用都不会采用google的Material Design组件，大多公司自己做组件。但这些组件库的质量层次不齐。可以说大部分国内原生应用的组件库，没有uni-app x的组件性能高。
+国内应用大都不会采用google的Material Design组件，大多公司自己做组件。但这些组件库的质量层次不齐。可以说大部分国内原生应用的组件库，没有uni-app x的组件性能高。
 
 ## 界面元素动画
 
@@ -49,17 +49,18 @@ HBuilderX真机运行到Android时，每个页面进入时会都打印页面初�
 uni-app x中，没有通信阻塞，可以直接监听touch和滚动事件。不再需要renderjs、bindingx、wxs、worklet动画这些为了解决通信阻塞的补丁技术。
 
 在touch和滚动事件中，移动dom元素时，有2个注意：
-1. 请使用transition方式，而不是给dom的left/top/width/height等position参数重新赋值。这个在web开发也一样，直接改position参数不如使用transition。因为每次修改position参数都要过排版，而transition不用。
-2. 请拿到dom的ref，调用js api操作，而不是通过模板style绑定data操作。因为操作data需要vue框架做diff对比。在touch和滚动中，16毫秒一帧才能达到最平滑的效果，多了几毫秒就可能掉帧。
+1. 请使用transform方式，而不是给dom的left/top/width/height等position参数重新赋值。这个在web开发也一样，直接改position参数不如使用transform。因为每次修改position参数都要过排版，而transform不用。
+2. 请拿到dom的ref，调用js api操作，而不是通过模板style绑定data操作。因为操作data需要vue框架做diff对比，直接API操作则可以跳过vue框架。在touch和滚动中，16毫秒一帧才能达到最平滑的效果，多了几毫秒就可能掉帧。
 
-在大多数开发框架中，吸顶这个行为需要底层封装。uni-app x无需特别封装，直接监听滚动事件，通过dom的transition方式动态修改top值，就能在指定条件下实现固顶。
-源码参考hello uni-app x中的吸顶示例，[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/scroll-sticky/scroll-sticky.uvue)
+在大多数开发框架中，因为通信性能问题，吸顶这个行为需要底层特殊封装。而 uni-app x 无需特别封装，直接监听滚动事件，通过dom的api以transform方式修改top值，就能自己编写逻辑控制在指定条件下实现固顶。
+
+源码参考hello uni-app x中的吸顶示例，这充分体现了 uni-app x 引擎底层的通信性能多么优秀。[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/scroll-sticky/scroll-sticky.uvue)
 
 ## 避免复杂逻辑卡UI
 
 开发者的代码默认是在ui主线程运行的。除非单独写代码调用子进程或协程。
 
-如果在ui繁忙时，比如页面进入动画时，开发者的代码做了很多耗时操作，会卡动画。这个原生开发也如此。
+如果在ui繁忙时，比如页面进入动画时，开发者的代码做了很多耗时操作，会卡动画。原生开发也如此。
 
 页面的onload触发，和进入动画是同时发生的，所以需注意onload生命周期中代码的编写。
 

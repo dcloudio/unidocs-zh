@@ -387,7 +387,7 @@ UTSAndroid.getAppContext() 默认返回的是 实现了 `Context`抽象类的`Ap
 import Application from 'android.app.Application'
 
 
-val app = UTSAndroid.getAppContext() as Application
+let app = UTSAndroid.getAppContext() as Application
 console.log(app)
 ```
 
@@ -801,8 +801,8 @@ UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!,permissionWifi,f
 跳转至系统设置权限设置界面，一般是用户选择了不再继续询问选项后
 
 ```
-var permissionWifi: MutableList<String> = mutableListOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
-UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!!,permissionWifi)
+let permissionWifi = utsArrayOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
+UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionWifi)
 ```
 
 
@@ -811,8 +811,8 @@ UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!!,permission
 判断权限是否已经被用户禁止
 
 ```ts
-var permissionWifi: MutableList<String> = mutableListOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
-val denied = UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!!, permissionWifi)
+let permissionWifi: MutableList<String> = utsArrayOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
+let denied = UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!, permissionWifi)
 // 执行结果
 [android.permission.ACCESS_FINE_LOCATION, android.permission.ACCESS_FINE_LOCATION]
 ```
@@ -822,8 +822,8 @@ val denied = UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!!,
 判断权限是否已经被用户授予
 
 ```ts
-var permissionWifi: MutableList<String> = mutableListOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
-val grant = UTSAndroid.checkSystemPermissionGranted (UTSAndroid.getUniActivity()!!, permissionWifi)
+let permissionWifi: MutableList<String> = utsArrayOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
+let grant = UTSAndroid.checkSystemPermissionGranted (UTSAndroid.getUniActivity()!, permissionWifi)
 // 执行结果
 false
 ```

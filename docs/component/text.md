@@ -1,12 +1,12 @@
-#### text
-文本组件。
-text component.
+# text组件
 
-用于包裹文本内容。
-Used to wrap text content.
+文本组件。用于包裹文本内容。
 
-**属性说明**
-**Attribute Description**
+在app-uvue和app-nvue中，文本只能写在text中，而不能写在view的text区域。
+
+虽然app-uvue中写在view的text区域的文字，也会被编译器自动包裹一层text组件，看起来也可以使用。但这样会造成无法修改该text文字的样式，详见uvue的[样式不继承](../uni-app-x/css/readme.md#stylenoextends)章节
+
+## 属性说明
 
 |属性名		|类型	|默认值	|说明			|平台差异说明				|
 |Property Name |Type |Default Value |Description |Platform Difference Description |
@@ -33,9 +33,15 @@ Used to wrap text content.
 |nbsp|根据字体设置的空格大小|
 |nbsp|Space size set according to font|
 
-**Tips**
+## 子组件
 
-- `<text>` 组件内只支持嵌套 `<text>`(app-nvue 暂不支持)，不支持其它组件或自定义组件，否则会引发在不同平台的渲染差异。
+text组件在web浏览器渲染（含浏览器、小程序webview渲染模式、app-vue）和uvue中，可以并只能嵌套text组件。
+
+在nvue中，text组件不能嵌套。
+
+## Tips
+
+- 支持 `\n` 方式换行。
 - 在app-nvue下，只有`<text>`才能包裹文本内容。无法在`<view>`组件包裹文本。
 - Under app-nvue, only `<text>` can wrap text content. Unable to wrap text in `<view>` component.
 - decode 可以解析的有 `&nbsp;` `&lt;` `&gt;` `&amp;` `&apos;` `&ensp;` `&emsp;`。
@@ -43,14 +49,12 @@ Used to wrap text content.
 - 各个操作系统的空格标准并不一致。
 - Space standards are not consistent across operating systems.
 - 除了文本节点以外的其他节点都无法长按选中。
-- Nodes other than text nodes cannot be long-pressed to select.
-- 支持 `\n` 方式换行。
-- Support `\n` for newline.
 - 如果使用 `<span>` 组件编译时会被转换为 `<text>`。
-- If compiled with a `<span>` component it will be converted to `<text>`.
+- nvue 样式 `word-wrap` 在 Android 平台暂不支持
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/text/text)
-**Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/text/text)
+## 示例
+
+[查看演示](https://hellouniapp.dcloud.net.cn/pages/component/text/text)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp). It is recommended to use HBuilderX to create a new uni-app project and select the hello uni-app template to directly experience the complete example.
@@ -81,13 +85,13 @@ export default {
     data() {
         return {
             texts: [
-                'HBuilder，500万开发者选择的IDE',
+                'HBuilder，900万开发者选择的IDE',
                 'MUI，轻巧、漂亮的前端开源框架',
                 'wap2app，M站快速转换原生体验的App',
                 '5+Runtime，为HTML5插上原生的翅膀',
                 'HBuilderX，轻巧、极速，极客编辑器',
                 'uni-app，终极跨平台方案',
-                'HBuilder，500万开发者选择的IDE',
+                'HBuilder，900万开发者选择的IDE',
                 'MUI，轻巧、漂亮的前端开源框架',
                 'wap2app，M站快速转换原生体验的App',
                 '5+Runtime，为HTML5插上原生的翅膀',
@@ -121,10 +125,3 @@ export default {
 </script>
 ```
 :::
-
-
-**注意事项**
-**Precautions**
-
-- nvue 样式 `word-wrap` 在 Android 平台暂不支持
-- nvue style `word-wrap` is not supported on Android platform

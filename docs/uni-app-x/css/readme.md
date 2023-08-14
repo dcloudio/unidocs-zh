@@ -1,12 +1,19 @@
 # uvue css使用
 
-uni-app x 在 app平台实现了 web css的子集。开发所需的界面均可排布编写出来。
+uni-app x 在 app平台实现了 web css的子集。
 
-uni-app x 推荐使用flex布局。这是一种清晰易用、全平台支持的布局。不管web、Android、iOS、微信skyline、快应用，均支持flex布局。
+这个子集并不影响开发者开发出所需的界面，仅是写法上没有那么丰富。
 
-App端仅支持flex布局。
+App端与web常见的区别是：
+1. 仅支持flex布局
+2. 选择器只能用class，不能用tag、#id、[attr]等选择器
+3. 不支持样式继承，即父元素样式不影响子元素
+
+但以上仅是常见的区别，并非所有，需开发者继续阅读全文。
 
 ## 页面布局
+
+uni-app x 推荐使用flex布局。这是一种清晰易用、全平台支持的布局。不管web、Android、iOS、微信skyline、快应用，均支持flex布局。
 
 页面布局有2个注意事项，flex方向和页面级滚动。
 
@@ -23,7 +30,7 @@ App端仅支持flex布局。
 </view>
 ```
 
-一般在app.uvue的style里编写全局样式，在页面里使用class引用更为方便。
+一般在`app.uvue`的style里编写全局样式，在页面里使用class引用更为方便。
 ```html
 <style>
 .uni-row{
@@ -124,6 +131,57 @@ uvue的策略是，在新建页面时，提供一个选项，让开发者选择�
 在app端，会判断页面根节点是否为scroll-view（不认list-view等其他滚动容器）。
 	* 如果是，页面滚动相关的生命周期和API继续生效，效果如前。
 	* 如果不是scroll-view，全部失效。
+
+## 样式不继承@stylenoextends
+
+如下代码，在web浏览器渲染时，父view的style会影响子text，所以123是红色。
+
+但是在uvue中，样式不继承，123的颜色仍然是默认颜色黑色。
+```html
+<template>
+	<view style="color:red">
+		<text>123</text>
+	</view>
+</template>
+```
+
+所以在uvue中，如需修改123的样式，需写在text组件中
+```html
+<template>
+	<view>
+		<text style="color:red">123</text>
+	</view>
+</template>
+```
+
+uvue中文字都是要使用text组件的。
+
+虽然把文字直接写在view的text区也能运行，其实是因为编译器自动套了一层text组件。
+```html
+<template>
+	<view>123</view>
+</template>
+```
+
+上述代码，在编译后其实变成了：
+```html
+<template>
+	<view>
+		<text>123</text>
+	</view>
+</template>
+```
+
+那么，就意味着直接写在view的text区，虽然可以用，但将无法修改文字的样式。因为被自动套一层的text组件上没有任何样式。
+
+也就是下面的代码是不能改变文字颜色的。
+```html
+<template>
+	<view style="color:red">123</view> <!-- 文字颜色不会变，因为被套了一层text组件后，父view的样式并不能被新套的text组件继承-->
+</template>
+```
+
+
 
 ## css模块
 

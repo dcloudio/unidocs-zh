@@ -697,6 +697,14 @@ console.log(listData["count"]); //42
 console.log(listArr[0]["title"]); //第一组
 ```
 
+多层级下标访问是需要使用 as 转换为UTSJSONObject  
+```ts
+var j = {"test":{
+	"a-b": 1
+}}
+console.log((j['test'] as UTSJSONObject)['a-b']);
+```
+
 3. 通过keyPath访问 类型属性
 
 在`HBuilderX` 3.9.0 之后的版本，UTSJSONObject提供了另外一种属性访问方式

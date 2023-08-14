@@ -198,7 +198,7 @@ bottom right：不缩放图片，只显示图片的右下边区域
 - 默认的图片加载失败，是空白。如需自定义，可监听error事件进行重定义，如下
 ```html
 <template>
-	<image src="xxx" @error="imageErrorEvent"></image><!--当图片加载失败时，会触发error事件-->
+	<image src="xxx" @error="imageErrorEvent"></image> // 当图片加载失败时，会触发error事件
 </template>
 <script lang="uts">
 	export default {

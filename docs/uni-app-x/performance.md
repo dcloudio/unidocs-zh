@@ -32,7 +32,7 @@ uni-app x还提供了工具帮助开发者监控页面的dom数量。
 
 HBuilderX真机运行到Android时，每个页面进入时会都打印页面初始化的数据：dom数量、排版次数、渲染耗时等。
 
-![](/static/uni-app-x/hxconsolepageperformance.png)
+![](./static/hxconsolepageperformance.png)
 
 当然耗时数据不能以真机运行为准，调试基座因为热更新和sourcemap追踪等很多调试功能，导致性能比真实打包差。正式打包后性能更优。
 
@@ -83,7 +83,7 @@ uvue页面模板里，list-view组件使用v-for来循环添加list-item，自�
 
 HBuilderX真机运行到Android时，每个页面进入时会都打印页面初始化的数据：dom数量、排版次数、渲染耗时等。
 
-![](/static/uni-app-x/hxconsolepageperformance.png)
+![](./static/hxconsolepageperformance.png)
 
 dom数量优化前文已经讲了，那么如何优化排版效率？
 

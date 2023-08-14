@@ -39,16 +39,19 @@
         ```
     ![](https://web-assets.dcloud.net.cn/unidoc/zh/doc_mermaid.jpg)
 7. 代码支持行高亮 [详情](https://vuepress.vuejs.org/zh/guide/markdown.html#%E4%BB%A3%E7%A0%81%E5%9D%97%E4%B8%AD%E7%9A%84%E8%A1%8C%E9%AB%98%E4%BA%AE)
+
     ![](https://web-assets.dcloud.net.cn/unidoc/zh/docs_code_color.jpg)
 8. 标题（Badge）组件 [详情](https://vuepress.vuejs.org/zh/guide/using-vue.html#badge)
+
     ![](https://web-assets.dcloud.net.cn/unidoc/zh/docs_bage_component.jpg)
-9. 可使用模板语法 [详情](https://vuepress.vuejs.org/zh/guide/using-vue.html#%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95)
+9.  可使用模板语法 [详情](https://vuepress.vuejs.org/zh/guide/using-vue.html#%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95)
+
     ![](https://web-assets.dcloud.net.cn/unidoc/zh/docs_temp_code.jpg)
 10. 图片点击放大 `img.class="zooming"`
     ```html
     <img class="zooming" src="xxx">
     ```
-11. md 支持书写属性（`#{` 与 markdown 语法之间不能有空格）
+11. md 支持书写属性。`#{`：左定界符，与 markdown 语法之间不能有空格；`}` 右定界符
     ```md
     ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)#{.zooming data=abc width=100 height=100}
     ```

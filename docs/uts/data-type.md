@@ -705,6 +705,7 @@ console.log(listArr[0]["title"]); //第一组
 let utsObj = {
 	"username": "zhangsan",
 	"age": 12,
+	"isStudent":false,
 	"address": {
 		"countyCode": "86",
 		"province": "beijing",
@@ -716,7 +717,7 @@ let utsObj = {
 }
 ```
 
-我们可以通过 getString/getNumber/getBoolean/getJSON 等函数获得指定类型的属性
+我们可以通过 getString/getNumber/getBoolean/getJSON/getAny 等函数获得指定类型的属性，如果属性不存在，则返回null
 
 ```ts
 // 打印结果:zhangsan
@@ -725,6 +726,12 @@ console.log(utsObj.getString("username"))
 console.log(utsObj.getNumber("age"))
 // 打印结果:[object]
 console.log(utsObj.getJSON("address"))
+// 打印结果:false
+console.log(utsObj.getBoolean("isStudent"))
+
+// 打印结果:null
+console.log(utsObj.getString("一个不存在属性"))
+
 ```
 
 这种绑定类型的这对于原生开发者来说比较熟悉。但是需要特别注意的是： 如果属性名正确，但是属性类型不符合，那么不会返回对应的属性结果
@@ -733,9 +740,19 @@ console.log(utsObj.getJSON("address"))
 console.log(utsObj.getNumber("age"))
 // 打印结果:null 
 console.log(utsObj.getString("age"))
+
 ```
 
-在传统的属性访问中，如果UTSJSONObject的嵌套是一种比较复杂的情况，需要我们层层解析才能获取数据：
+在所有的getXXX函数中 `getAny` 是一个特殊的存在，他可以获取属性，而不要求限制类型，他的返回值是Any类型。需要注意的是在 强类型语言中使用Any是一件危险的事情，如果你需要使用`getAny`请确保你一件已经充分了解了可能遇到的问题。
+
+```ts
+// 如果我们不确定属性类型，可以使用`getAny`来进行获取
+console.log(utsObj.getAny("age") as Number)
+// 如果我们不确定属性类型，可以使用`getAny`来进行获取
+console.log(utsObj.getAny("address") as UTSJSONObject)
+```
+
+在传统的属性访问中，UTSJSONObject的嵌套是一种比较复杂的情况，需要我们层层解析才能获取数据：
 
 ```ts
 // 获取 utsObj 中的 address属性

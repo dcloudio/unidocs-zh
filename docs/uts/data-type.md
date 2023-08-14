@@ -697,6 +697,62 @@ console.log(listData["count"]); //42
 console.log(listArr[0]["title"]); //第一组
 ```
 
+3. 通过keyPath访问 类型属性
+
+在`HBuilderX` 3.9.0 之后的版本，UTSJSONObject提供了另外一种属性访问方式
+
+```ts
+let utsObj = {
+	"username": "zhangsan",
+	"age": 12,
+	"address": {
+		"countyCode": "86",
+		"province": "beijing",
+		"detailInfo": {
+			"street": "the wall street",
+			"buildingNo": "5"
+		}
+	}
+}
+```
+
+我们可以通过 getString/getNumber/getBoolean/getJSON 等函数获得指定类型的属性
+
+```ts
+// 打印结果:zhangsan
+console.log(utsObj.getString("username"))
+// 打印结果:12
+console.log(utsObj.getNumber("age"))
+// 打印结果:[object]
+console.log(utsObj.getJSON("address"))
+```
+
+这种绑定类型的这对于原生开发者来说比较熟悉。但是需要特别注意的是： 如果属性名正确，但是属性类型不符合，那么不会返回对应的属性结果
+```ts
+// 打印结果:12
+console.log(utsObj.getNumber("age"))
+// 打印结果:null 
+console.log(utsObj.getString("age"))
+```
+
+在传统的属性访问中，如果UTSJSONObject的嵌套是一种比较复杂的情况，需要我们层层解析才能获取数据：
+
+```ts
+// 获取 utsObj 中的 address属性
+let addressObj = utsObj["address"] as UTSJSONObject
+// 获取 address 中的 detail 属性
+let detailInfoObj = utsObj["detailInfo"] as UTSJSONObject
+// 结果：the wall street
+let street = utsObj["street"] as String
+```
+
+上面的写法，啰嗦且容易出错。因此，我们提供了更高级的keypath写法，帮助开发者摆脱复杂的对象嵌套关系：
+```ts
+// 结果：the wall street
+let street = utsObj.getString("address.detailInfo.street")
+```
+
+
 
 ### any类型 @any
 

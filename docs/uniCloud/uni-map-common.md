@@ -30,7 +30,6 @@ uni-map-common公共模块仅能在云函数/云对象内使用。如果您不�
 
 在调用API前，需要先初始化实例
 
-
 ```js
 // 引入uni-map-common公共模块
 const UniMap = require('uni-map-common');
@@ -370,8 +369,17 @@ let uniMap = new UniMap({
 // 调用API
 let result = await uniMap.search({
 	keyword: "酒店",
-	boundary: "nearby(39.908815,116.397507,1000,1)"
-	city: "北京市"
+	location: {
+		lat: 39.908815,
+		lng: 116.397507
+	},
+	radius: 1000,
+	auto_extend: 1,
+	get_subpois: 0,
+	orderby: "weight",
+	page_index: 1,
+	page_size: 20,
+	city: "北京市",
 });
 console.log("result", result);
 ```

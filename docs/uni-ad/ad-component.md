@@ -112,7 +112,7 @@ uni-ad 也支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uni-ad�
 - HBuilderX2.8+版本Android平台更新穿山甲（今日头条）广告SDK后不再支持x86类型CPU，无法运行到x86类型cpu的模拟器。
 - `<ad>` 组件测试广告位是上图下文，uni-ad后台申请的广告位默认左图右文
 - HBuilderX标准基座真机运行测试信息流广告位标识（adpid）为：1111111111，微信小程序和H5平台暂不提供测试广告位
-
+- Web 平台仅支持 https
 
 **示例：**
 

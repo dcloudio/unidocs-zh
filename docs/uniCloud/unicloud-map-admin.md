@@ -6,6 +6,8 @@ unicloud-map-admin是[unicloud-map](unicloud-map.md)组件的admin插件，提�
 
 > 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-map-admin](https://ext.dcloud.net.cn/plugin?name=unicloud-map-admin)
 
+> bug反馈地址：[uni-map交流群](https://im.dcloud.net.cn/#/?joinGroup=64d62b106823de10406ad72f)
+
 运行效果图
 
 查看POI列表

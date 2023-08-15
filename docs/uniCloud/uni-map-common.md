@@ -14,6 +14,8 @@ uni-map-common公共模块仅能在云函数/云对象内使用。如果您不�
 
 > 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=uni-map-common](https://ext.dcloud.net.cn/plugin?name=uni-map-common)
 
+> bug反馈地址：[uni-map交流群](https://im.dcloud.net.cn/#/?joinGroup=64d62b106823de10406ad72f)
+
 ## 公共返回参数@publicresult
 
 以下所有API均会返回的参数

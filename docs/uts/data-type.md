@@ -519,23 +519,23 @@ let a3: NSMutableArray = NSMutableArray(array= a)
 更多Array的API，[详见](https://uniapp.dcloud.net.cn/uts/buildin-object-api/array.html)
 
 
-### JSON@json
+### 对象（Object）@object
 
-json 在 js 中是一个 object，它用起来很自由。
+对象在 js 中是用起来很自由，使用字面量即可直接定义对象。
 
-但在强类型语言中，不管ts、dart、kotlin、swift...，都没有这么灵活的json。
+但在强类型语言中，不管kotlin、swift...，都没有这么灵活的对象初始化方式。
 
-json对象里的每个属性，都需要定义类型，才能安全读写。
+对象里的每个属性，都需要定义类型，才能安全读写。
 
-大多数语言都要求把json对象转为class、interface或type。
+JSON 是 js 对象的一种表示方法，在 js 中可以直接用作对象表达式来初始化一个对象，而其他大多数语言都要求把json对象转为class、interface或type。
 
 uts 当然也可以把 json 转 interface/type。有很多转换工具，不管是在线网页还是ide插件。
 
-同时 uts 也提供了内置的 UTSJSONObject 对象，它尽可能的为开发者提供接近js的灵活性。
+同时 uts 也提供了内置的 UTSJSONObject 类型，它尽可能的为开发者提供接近js的灵活性。
 
 #### 对象和数组
 
-首先，我们需要区分json对象和json对象构成的数组。
+首先，我们需要区分 UTSJSONObject 和 UTSJSONObject 构成的数组。
 
 这是一个 UTSJSONObject 对象。jo 对象有2个属性，x和y，都是数字类型
 ```ts
@@ -553,7 +553,7 @@ let jr: UTSJSONObject[] = [
 ]
 ```
 
-在js中，可以定义一个变量，随意接受json对象或数组。但在 UTS 里不行。如果数据内容是数组，就必须通过`[]`来定义为数组。
+在 js 中，可以定义一个变量，随意接受对象字面量或数组字面量。但在 UTS 里不行。如果数据内容是数组字面量，就不能定义为 UTSJSONObject。
 
 也就是下面的代码是错误的，不能把数组赋值给对象。在接收网络传输的json数据时，非常需要注意这个类型匹配问题。类型不匹配会造成代码错误和应用崩溃。
 ```ts
@@ -561,6 +561,18 @@ let jo: UTSJSONObject = [{
 	"x": 1,
 	"y": 2
 }] //错误，类型不匹配
+let jo: UTSJSONObject[] = [{
+	"x": 1,
+	"y": 2
+}] //正确
+let jo: Array<UTSJSONObject> = [{
+	"x": 1,
+	"y": 2
+}] //正确
+let jo = [{
+	"x": 1,
+	"y": 2
+}] //正确，自动推断为 UTSJSONObject 数组
 ```
 
 #### 定义 UTSJSONObject
@@ -579,9 +591,9 @@ let jo2 = {
 }
 ```
 
-严谨的json，x和y属性是需要两侧加引号包围的。uts编译器发现不加引号时会自动补，但建议开发者默认加上引号。
+严谨的JSON，x和y属性是需要两侧加引号包围的。对象字面量的属性名可以不加引号，当包含特殊字符时建议开发者加上引号。
 
-如果属性名包括`-`，则必须两侧加引号包围。
+如果属性名包括`-`，则必须两侧加引号包围。尽管在 kotlin 中属性名称包含`$`和`_`等也需要转义，但是 UTS 中是无需特殊处理的，编译器会自动转换。
 
 对于纯字面量，jo 后面的 `:UTSJSONObject` 可以省略，这些类型比较简单。包括下面的多层嵌套，类型也不会推导出错。
 
@@ -635,14 +647,14 @@ jo = JSON.parse({"result":true, "count":42})
 
 有关字面量定义 UTSJSONObject 对象的信息，[详见](literal.md#object)
 
-除了字面量定义JSON，经常用到的是通过`JSON.parse()`，把一个字符串转成json。
+除了字面量定义对象，经常用到的是通过 `JSON.parse()`，把一个 JSON 字符串转成对象。
 
 ```ts
 let s = `{"result":true, "count":42}` // 常见场景中，这个字符串更多来自于网络或其他应用传输。
 let jo = JSON.parse(s) // 这个代码适用于HBuilderX 3.9以前
 ```
 
-在 HBuilderX 3.9以前，`JSON.parse()`返回的`UTSJSONObject`。但因为有时网络或其他应用传入的是json数组，而不是对象，会导致崩溃。
+在 HBuilderX 3.9以前，`JSON.parse()`返回的`UTSJSONObject`。但因为有时网络或其他应用传入的是 JSON 根节点是数组，而不是对象，会导致崩溃。
 所以从 HBuilderX 3.9起，`JSON.parse()`返回的类型改为`any`，即可能返回对象、也可能返回数组。这样就需要开发者自行再`as`一下来指定具体类型了。
 
 新的写法是这样：
@@ -665,7 +677,7 @@ let jr = JSON.parseArray(s)
 
 全局对象JSON，除了parse()、parseObject()、parseArray()外，还有stringify()来把json转为字符串。[详见](buildin-object-api/json.md)
 
-#### 访问 UTSJSONObject 对象中的属性
+#### 访问 UTSJSONObject 中的属性
 
 ```ts
 let rect = {
@@ -678,21 +690,21 @@ let rect = {
 }
 ```
 
-以上述 rect 为例，访问JSON中的数据，有如下3种方式：
+以上述 rect 为例，访问 UTSJSONObject 中的数据，有如下3种方式：
 
 1. `.`操作符
 	即 `rect.x`、`rect.size.width`。
 	
-	这种写法比较简单，和js习惯一致，但在uts中限制较多。它的使用有如下前提：
-	- 通过type声明了JSON的数据结构，也就是需要单独定义一个type再使用。详见type章节。这也是大多数强类型使用json的方式。
+	这种写法比较简单，和js习惯一致，但在 UTS 中限制较多。它的使用有如下前提：
+	- 通过type声明了对象的数据结构，也就是需要单独定义一个type再使用。详见type章节。这也是大多数强类型使用对象字面量初始化的方式。
 	- 如未定义type，则仅限于web和Android，在iOS上，swift不不支持`.`操作符。在Android上也只支持字面量定义json。如果是`JSON.parse()`转换的，则不能使用。
 	
 2. [""]下标属性
 	即 `rect["x"]`。
 	
-	这是一种通用的方式，不管通过字面量定义的json，还是通过`JSON.parse()`，不管是web、Android、iOS哪个平台，都可以使用下标方式访问json属性。
+	这是一种通用的方式，不管通过字面量定义的 UTSJSONObject，还是通过 `JSON.parse()`，不管是 web、Android、iOS 哪个平台，都可以使用下标方式访问 UTSJSONObject 属性。
 
-	但下标返回嵌套的json时，用起来比较麻烦，因为无法判断嵌套节点是对象还是数组，需要再`as`才能继续使用下一层数据。
+	但下标返回嵌套的 UTSJSONObject 时，用起来比较麻烦，因为无法判断嵌套节点是对象还是数组，需要再 `as` 才能继续使用下一层数据。
 
 ```ts
 let rect = {
@@ -716,7 +728,7 @@ console.log(rect["x"]) //20
 console.log(rect.size.width) //80 但iOS无法使用.操作符
 console.log((rect["size"] as UTSJSONObject)["width"]) //80
 
-// 如果存在嵌套，那么需要先把第一层转成 UTSJSONObject对象或数组，之后再用下标访问下一层
+// 如果存在嵌套，那么需要先把第一层转成 UTSJSONObject 或数组，之后再用下标访问下一层
 
 console.log(rect.border[0].color); //报错，一旦使用了下标访问数组，后面就无法使用.操作符了
 console.log(rect.border[0]["color"]); // red 但iOS无法使用.操作符
@@ -724,7 +736,7 @@ console.log((rect["border"] as UTSJSONObject[])[0]["color"]); // red
 
 ```
 
-如果是`JSON.parse`解析的数组，目前只能通过下标访问。
+如果是 `JSON.parse` 解析的数组，目前只能通过下标访问。
 
 ```ts
 let listData = JSON.parse(`{"result":true, "count":42}`) as UTSJSONObject
@@ -733,7 +745,7 @@ console.log(listData["count"]); //42
 console.log(listArr[0]["title"]); //第一组
 ```
 
-多层级下标访问是需要使用 as 转换为UTSJSONObject  
+多层级下标访问是需要使用 as 转换为 UTSJSONObject  
 ```ts
 var j = {"test":{
 	"a-b": 1
@@ -741,11 +753,11 @@ var j = {"test":{
 console.log((j['test'] as UTSJSONObject)['a-b']);
 ```
 
-3. 通过keyPath访问json数据
+3. 通过 keyPath 访问 UTSJSONObject 数据
 
-在`HBuilderX` 3.9.0 之后的版本，UTSJSONObject提供了另外一种属性访问方式，keypath。如果你了解xmlPath的话，这个概念类似。
+在 `HBuilderX` 3.9.0 之后的版本，UTSJSONObject 提供了另外一种属性访问方式，keypath。如果你了解 XPath、JSONPath 的话，这个概念类似。
 
-以下面的json为例
+以下面的 UTSJSONObject 为例
 ```ts
 let utsObj = {
 	"username": "zhangsan",
@@ -788,9 +800,9 @@ console.log(utsObj.getString("age"))
 
 ```
 
-在所有的getXXX函数中 `getAny` 是一个特殊的存在，它可以获取属性，而不要求限制类型，他的返回值是Any类型。
+在所有的getXXX函数中 `getAny` 是一个特殊的存在，它可以获取属性，而不要求限制类型，他的返回值是 any 类型。
 
-需要注意的是在 强类型语言中使用Any是一件危险的事情，如果你需要使用`getAny`请确保你已经充分了解了可能遇到的问题。
+需要注意的是在 强类型语言中使用 any 是一件危险的事情，如果你需要使用`getAny`请确保你已经充分了解了可能遇到的问题。
 
 ```ts
 // 如果我们不确定属性类型，可以使用`getAny`来进行获取
@@ -799,7 +811,7 @@ console.log(utsObj.getAny("age") as Number)
 console.log(utsObj.getAny("address") as UTSJSONObject)
 ```
 
-在传统的属性访问中，UTSJSONObject的嵌套是一种比较复杂的情况，需要我们层层解析才能获取数据：
+在传统的属性访问中，UTSJSONObject 的嵌套是一种比较复杂的情况，需要我们层层解析才能获取数据：
 
 ```ts
 // 获取 utsObj 中的 address属性
@@ -810,7 +822,7 @@ let detailInfoObj = utsObj["detailInfo"] as UTSJSONObject
 let street = utsObj["street"] as String
 ```
 
-上面的写法，啰嗦且容易出错。因此，我们提供了更高级的keypath写法，帮助开发者摆脱复杂的对象嵌套关系：
+上面的写法，啰嗦且容易出错。因此，我们提供了更高级的 keypath 写法，帮助开发者摆脱复杂的对象嵌套关系：
 ```ts
 // 结果：the wall street
 let street = utsObj.getString("address.detailInfo.street")

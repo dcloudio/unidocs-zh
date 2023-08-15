@@ -26,6 +26,8 @@ unicloud-map云端一体组件，主要用于显示数据库里的自定义POI�
 
 > 插件市场地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-map](https://ext.dcloud.net.cn/plugin?name=unicloud-map)
 
+> bug反馈地址：[uni-map交流群](https://im.dcloud.net.cn/#/?joinGroup=64d62b106823de10406ad72f)
+
 ### 用法示例@example
 
 #### 简易示例

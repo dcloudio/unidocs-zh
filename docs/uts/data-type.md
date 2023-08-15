@@ -519,23 +519,21 @@ let a3: NSMutableArray = NSMutableArray(array= a)
 更多Array的API，[详见](https://uniapp.dcloud.net.cn/uts/buildin-object-api/array.html)
 
 
-### 对象（Object）@object
+### JSON@json
 
-对象在 js 中是用起来很自由，使用字面量即可直接定义对象。
+json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、swift、dart...，都没有这么灵活。
 
-但在强类型语言中，不管kotlin、swift...，都没有这么灵活的对象初始化方式。
-
-对象里的每个属性，都需要定义类型，才能安全读写。
+json对象里的每个属性，都需要定义类型，才能安全读写。
 
 JSON 是 js 对象的一种表示方法，在 js 中可以直接用作对象表达式来初始化一个对象，而其他大多数语言都要求把json对象转为class、interface或type。
 
 uts 当然也可以把 json 转 interface/type。有很多转换工具，不管是在线网页还是ide插件。
 
-同时 uts 也提供了内置的 UTSJSONObject 类型，它尽可能的为开发者提供接近js的灵活性。
+同时 uts 也提供了内置的 UTSJSONObject，它尽可能的为开发者提供接近js的灵活性。
 
 #### 对象和数组
 
-首先，我们需要区分 UTSJSONObject 和 UTSJSONObject 构成的数组。
+首先，我们需要区分JSON对象和由JSON对象组成的数组。
 
 这是一个 UTSJSONObject 对象。jo 对象有2个属性，x和y，都是数字类型
 ```ts
@@ -595,7 +593,7 @@ let jo2 = {
 
 如果属性名包括`-`，则必须两侧加引号包围。尽管在 kotlin 中属性名称包含`$`和`_`等也需要转义，但是 UTS 中是无需特殊处理的，编译器会自动转换。
 
-对于纯字面量，jo 后面的 `:UTSJSONObject` 可以省略，这些类型比较简单。包括下面的多层嵌套，类型也不会推导出错。
+对于纯字面量，jo 后面的 `:UTSJSONObject` 可以省略，这些类型比较简单，可以自动推导类型。包括下面的多层嵌套，类型也不会推导出错。
 
 ```ts
 let rect = {
@@ -609,15 +607,6 @@ let rect = {
 console.log(rect)
 ```
 <!-- 
-如果定义时赋值不是纯字面量，包含一些变量，就需要使用 `as` 关键字来声明类型。
-
-```ts
-let i = 1
-let jo = {
-	x: i as number, // 需显式声明属性x的类型为number，不会自动推导类型
-	y: 2
-}
-```
 
 对于复杂的json，通常会给它配套定义一个type，来描述这个json的内部数据类型。
 

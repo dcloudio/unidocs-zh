@@ -14,7 +14,7 @@ dom数量越多，渲染越慢。
 
 那么原生Android开发怎么做的呢？使用Android的开发者模式审查元素边界，可以发现rom自带的日历，并不是每个格子一个view，而是整个月都是一个view。
 
-![]()
+![](./static/calendar.jpg)
 
 Android上为了避免view数量过多，提供了原始的draw api，把线条和文字绘制上去。
 
@@ -40,13 +40,13 @@ HBuilderX真机运行到Android时，每个页面进入时会都打印页面初�
 
 ## 界面元素动画
 
-动画，分不跟随手势的固定动画，和跟随手势的动效两种。
+动画，有2种，不跟随手势的固定动画，和跟随手势的动效。
 
 固定动画使用css transition动画，或者使用 [animation-view组件](https://ext.dcloud.net.cn/plugin?id=10674)，这个组件本质是lottie动画。
 
 跟随手势的动效，需要写逻辑代码。
 
-uni-app x中，没有通信阻塞，可以直接监听touch和滚动事件。不再需要renderjs、bindingx、wxs、worklet动画这些为了解决通信阻塞的补丁技术。
+uni-app x 中，没有通信阻塞，可以直接监听touch和滚动事件。不再需要renderjs、bindingx、wxs、worklet动画这些为了解决通信阻塞的补丁技术。
 
 在touch和滚动事件中，移动dom元素时，有2个注意：
 1. 请使用transform方式，而不是给dom的left/top/width/height等position参数重新赋值。这个在web开发也一样，直接改position参数不如使用transform。因为每次修改position参数都要过排版，而transform不用。

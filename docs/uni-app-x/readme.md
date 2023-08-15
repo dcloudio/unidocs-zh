@@ -92,9 +92,7 @@ uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex�
 
 ## 3. uni的组件
 
-uni-app的丰富的跨平台组件和API，是uni-app提高开发效率的利器。
-
-但 uni-app x 一期，只包括基本的组件和API。
+uni-app x 一期，只包括基本的组件和API。
 
 剩余的组件和API，如开发者急用，可自行开发，或者委托插件作者提供相关插件。
 
@@ -121,16 +119,34 @@ uni-app的丰富的跨平台组件和API，是uni-app提高开发效率的利器
 不支持的组件及替代方案
 - movable-view：没有ui层和逻辑层的通信阻塞，开发者可自己写uts拖动view
 - picker：可改用picker-view
-- canvas：目前没有完整的canvas组件，但每个view，都提供了draw API，可以高性能的画各种形状、贴图、写字。后期会补充完整canvas
+- canvas：目前没有完整的canvas组件，但每个view，都提供了draw API，可以高性能的画各种形状、贴图、写字。关于截图，无需像webview那样通过canvas中转。view会直接提供截图方案。当然后期会补充完整canvas
 - waterfall/grid-view：会补充
-- uniCloud-db：近期会补充
+- uniCloud-db：会补充
 - ad：会补充
-- rich-text：可改用web-view渲染
+- rich-text：可改用web-view渲染；也可以拼接多个text、image组件。
 - editor：只能用web-view来加载
 - map：需开发uts组件。或使用web-view中的地图
 - live-pusher：需开发uts组件
 - form
 - label
+
+需要注意：uts作为强类型语言，组件的事件参数，也必须有类型。这和js不同。例如：
+```html
+<template>
+	<view @touchstart="touchstart"></view>
+<script lang="ts">
+	export default {
+		methods: {
+			touchstart(e : TouchEvent) { // e必须有类型
+				sX = e.touches[0].screenX;
+				sY = e.touches[0].screenY;
+			}
+		}
+	}
+</script>
+```
+
+详细的组件事件类型清单，[详见]()
 
 ## 4. uni的API
 

@@ -811,8 +811,8 @@ App's activity gets the callback of permission request result
 
 ```ts
 UTSAndroid.onAppActivityRequestPermissionsResult((requestCode: number,
-                                                     permissions: MutableList<string>,
-                                                     grantResults: MutableList<number>) => {
+                                                     permissions: Array<string>,
+                                                     grantResults: Array<number>) => {
 		
 		console.log(grantResults);
 		console.log(permissions);   
@@ -820,9 +820,9 @@ UTSAndroid.onAppActivityRequestPermissionsResult((requestCode: number,
 	});
 
 //发起定位权限申请
-//Initiate a location permission application
+let permission = [Manifest.permission.ACCESS_COARSE_LOCATION]
 ActivityCompat.requestPermissions(getUniActivity()!,
-	    arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 1001);
+	    permission, 1001);
 
 ```
 
@@ -904,8 +904,8 @@ HBuilder X 3.8.2版本之后支持
 2  请求结果回调
 
 ```ts
-let permissionWifi:string[] = mutableListOf("android.permission.ACCESS_FINE_LOCATION","android.permission.ACCESS_FINE_LOCATION");
-UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!,permissionWifi,function(allRight:boolean,grantedList:string[]){
+let permission = ["android.permission.ACCESS_FINE_LOCATION","android.permission.ACCESS_FINE_LOCATION"]
+UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!,permission,function(allRight:boolean,grantedList:string[]){
 		if(allRight){
 			// 用户同意了全部权限
 		}else{
@@ -924,7 +924,7 @@ UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!,permissionWifi,f
 跳转至系统设置权限设置界面，一般是用户选择了不再继续询问选项后
 
 ```
-let permissionWifi = utsArrayOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
+let permissionWifi = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"]
 UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionWifi)
 ```
 
@@ -934,8 +934,8 @@ UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionW
 判断权限是否已经被用户禁止
 
 ```ts
-let permissionWifi: MutableList<String> = utsArrayOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
-let denied = UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!, permissionWifi)
+let permission = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"]
+let denied = UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!, permission)
 // 执行结果
 [android.permission.ACCESS_FINE_LOCATION, android.permission.ACCESS_FINE_LOCATION]
 ```
@@ -945,8 +945,8 @@ let denied = UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!, 
 判断权限是否已经被用户授予
 
 ```ts
-let permissionWifi: MutableList<String> = utsArrayOf("android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION");
-let grant = UTSAndroid.checkSystemPermissionGranted (UTSAndroid.getUniActivity()!, permissionWifi)
+let permission = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"]
+let grant = UTSAndroid.checkSystemPermissionGranted (UTSAndroid.getUniActivity()!, permission)
 // 执行结果
 false
 ```

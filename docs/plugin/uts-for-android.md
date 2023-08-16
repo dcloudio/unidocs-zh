@@ -806,7 +806,7 @@ UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionW
 ```
 
 
-##### 4.4.3 getSystemPermissionDenied
+##### 4.4.3 getSystemPermissionDenied@getSystemPermissionDenied
 
 判断权限是否已经被用户禁止
 

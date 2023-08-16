@@ -370,7 +370,10 @@ array1.forEach((element:string, index:number) => {
 - 专有数组类型定义方式
 
 ```ts
-
+// kotlin.collections.List
+let kotlinList= mutableListOf("hello","world")
+// kotlin.Array
+let kotlinArray = arrayOf("hello","world")
 ```
 
 - 专有数组类型 转 Array

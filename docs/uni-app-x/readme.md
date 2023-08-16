@@ -130,23 +130,6 @@ uni-app x 一期，只包括基本的组件和API。
 - form
 - label
 
-需要注意：uts作为强类型语言，组件的事件参数，也必须有类型。这和js不同。例如：
-```html
-<template>
-	<view @touchstart="touchstart"></view>
-<script lang="ts">
-	export default {
-		methods: {
-			touchstart(e : TouchEvent) { // e必须有类型
-				sX = e.touches[0].screenX;
-				sY = e.touches[0].screenY;
-			}
-		}
-	}
-</script>
-```
-
-详细的组件事件类型清单，[详见]()
 
 ## 4. uni的API
 
@@ -233,7 +216,12 @@ uni自带API，如下为目前支持的清单。
 ### 性能
 * [x] uni.getPerformance
 
-## 5. 插件兼容
+## 5. 全局文件
+- manifest.json 仅支持基本的名称图标配置，暂未支持splash
+- AndroidManifest.xml 与原生开发相同
+- pages.json 不支持app-plus的内容
+
+## 6. 插件兼容
 
 插件市场的uts插件，不管是API插件还是组件，均可同时在 uni-app js引擎版 和 uni-app x 上运行。
 

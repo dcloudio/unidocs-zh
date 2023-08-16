@@ -61,9 +61,9 @@ let d = 3.14159         //注意：目前版本推导d为float类型，新版本
 |Long    |64bit |-9223372036854775808 |9223372036854775807     |整型|
 |ULong   |64bit |0            |9223372036854775807 * 2 + 1     |整型|
 |Float   |32bit |1.4E-45F     |3.4028235E38                    |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
-|Double  |64bit |4.9E-324     | 1.7976931348623157E308         |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
+|Double  |64bit |4.9E-324     |1.7976931348623157E308         |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
 
-基本数据类型会有jvm编译魔法加持，kotlin 会把  Int / Double 等非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持。
+基本数据类型会有jvm编译魔法加持，kotlin 会把 Int / Double 等非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持。
 
 如果涉及大量运算，建议开发者不要使用 number、Int? ，要明确使用 Int等类型 [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
 
@@ -268,8 +268,11 @@ let str5 = nstr3 as string  // 类型为string
 
 日期对象表示日期，包括年月日时分秒等各种日期。
 
+它的类型名称是首字母大写`:Date`。但通过new Date()赋值时，可以省略`:Date`。
+
 ```ts
-const myDate = new Date()
+const myDate = new Date() // 通过new Date赋值时，可以省略:Date
+const myDate1:Date = new Date() 
 console.log(myDate instanceof Date) // Date用typeof会返回object，需使用instanceof判断
 const year:number = myDate.getFullYear()
 ```
@@ -307,23 +310,23 @@ let a2 = [1,'2',3];//支持
 let a3 = [1,,2,3];//不支持
 ```
 
-2. 创建数组对象
+2. 使用:Array<>定义数组项的类型
+
+```ts
+const a1:Array<string> = ["uni-app", "uniCloud", "HBuilder"] //表示数组内容都是string。如不能确定可以写Array<any>
+```
+
+3. 使用[]定义数组项的类型
+```ts
+const a1: string[] = ['a', 'b', 'c']; //表示数组内容都是string
+```
+
+4. 创建数组对象
 ```ts
 let a1 = new Array(1,2,3);//支持
 let a2 = new Array(1,'2',3);//支持
 let a3 = Array(1,2,3);//支持
 let a4 = Array(1,'2','3');//支持
-```
-
-3. 使用[]定义数组项的类型
-```ts
-const a1: string[] = ['a', 'b', 'c'];
-```
-
-4. 使用Array<>定义数组项的类型
-
-```ts
-const a1:Array<string> = ["uni-app", "uniCloud", "HBuilder"]
 ```
 
 字面量创建的数组，在uts的老版本上，kotlin自动推导数组类型，可能会推导成intArray，而不是uts的array。建议显式声明类型。
@@ -689,7 +692,7 @@ let rect = {
 	
 	这种写法比较简单，和js习惯一致，但在 UTS 中限制较多。它的使用有如下前提：
 	- 通过type声明了对象的数据结构，也就是需要单独定义一个type再使用。详见type章节。这也是大多数强类型使用对象字面量初始化的方式。
-	- 如未定义type，则仅限于web和Android，在iOS上，swift不不支持`.`操作符。在Android上也只支持字面量定义json。如果是`JSON.parse()`转换的，则不能使用。
+	- 如未定义type，则仅限于web和Android，在iOS上swift不支持`.`操作符。在Android上也只支持字面量定义json。如果是`JSON.parse()`转换的，则不能使用。
 	
 2. [""]下标属性
 	即 `rect["x"]`。
@@ -737,7 +740,7 @@ console.log(listData["count"]); //42
 console.log(listArr[0]["title"]); //第一组
 ```
 
-多层级下标访问是需要使用 as 转换为 UTSJSONObject  
+多层级下标访问时需要使用 as 转换为 UTSJSONObject  
 ```ts
 var j = {"test":{
 	"a-b": 1
@@ -794,7 +797,7 @@ console.log(utsObj.getString("age"))
 
 在所有的getXXX函数中 `getAny` 是一个特殊的存在，它可以获取属性，而不要求限制类型，他的返回值是 any 类型。
 
-需要注意的是在 强类型语言中使用 any 是一件危险的事情，如果你需要使用`getAny`请确保你已经充分了解了可能遇到的问题。
+需要注意的是 在强类型语言中使用 any 是一件危险的事情，如果你需要使用`getAny`请确保你已经充分了解了可能遇到的问题。
 
 ```ts
 // 如果我们不确定属性类型，可以使用`getAny`来进行获取
@@ -814,7 +817,7 @@ let detailInfoObj = utsObj["detailInfo"] as UTSJSONObject
 let street = utsObj["street"] as String
 ```
 
-上面的写法，啰嗦且容易出错。因此，我们提供了更高级的 keypath 写法，帮助开发者摆脱复杂的对象嵌套关系：
+上面的写法，啰嗦且容易出错。因此，我们提供了更易用的 keypath 写法，帮助开发者摆脱复杂的对象嵌套关系：
 ```ts
 // 结果：the wall street
 let street = utsObj.getString("address.detailInfo.street")

@@ -13,7 +13,7 @@ App端与web常见的区别是：
 
 ## 页面布局
 
-uni-app x 推荐使用flex布局。这是一种清晰易用、全平台支持的布局。不管web、Android、iOS、微信skyline、快应用，均支持flex布局。
+uni-app x 使用flex布局。这是一种清晰易用、全平台支持的布局。不管web、Android、iOS、微信skyline、快应用，均支持flex布局。
 
 页面布局有2个注意事项，flex方向和页面级滚动。
 
@@ -99,6 +99,8 @@ uvue的策略是，在新建页面时，提供一个选项，让开发者选择�
 
 尤其在Android webview中，scroll-view其实是可区域滚动的div，滚动区变长后，性能远不如页面的自然滚动。
 
+当然如果你只做app，可以不写条件编译。
+
 上述代码中给scroll-view的style设为`flex:1`，意思是铺满剩余空间。设在顶层节点上，意味着铺满屏幕。
 
 当然，如果页面的pages.json里配置使用了原生导航栏，那么页面区整体是在导航栏下面。
@@ -129,8 +131,12 @@ uvue的策略是，在新建页面时，提供一个选项，让开发者选择�
 在uni-app的规范中，页面滚动有一批相关的生命周期、api，比如：`onPageScroll`、`onReachBottom`、`uni.pageScrollTo()`
 
 在app端，会判断页面根节点是否为scroll-view（不认list-view等其他滚动容器）。
+
 	* 如果是，页面滚动相关的生命周期和API继续生效，效果如前。
+
 	* 如果不是scroll-view，全部失效。
+
+如果根节点使用了list-view，它也有自己的滚动相关的API和监听事件。详见[list-view]()的文档。
 
 ## 样式不继承@stylenoextends
 

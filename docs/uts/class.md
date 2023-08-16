@@ -319,9 +319,79 @@ class FilledRectangle extends Rectangle {
         super.draw();
     }
 }
-
 ```
 
+### 接口（interface）@interface
+
+接口提供了一种约定，用于确保对象的属性和方法遵循特定的模式。接口可以被类所采用，以提供具体的实现。接口可以包含抽象的声明，但不能包含具体的实现。
+
+接口使用关键字 `interface` 声明。
+
+```ts
+interface IPerson {
+  name: string;
+  printName(): void;
+}
+```
+
+#### 接口继承
+
+接口可以继承一个或多个接口：
+
+```ts
+class IPerson1 extends IPerson {}
+```
+
+#### 实现接口
+
+类可以实现一个或多个接口：
+
+```ts
+class Person implements IPerson {
+  constructor(public name: string) {}
+  printName() {
+    console.log(this.name);
+  }
+}
+```
+
+### 抽象类（Abstract Class）@abstract-class
+
+抽象类是一种用于提供基础类和共享实现的特殊类。尚未实现的属性和方法是抽象属性和抽象方法统称为抽象成员，抽象成员必须存在于抽象类中。抽象类本身不能被实例化，它只能作为其他类的基类，被其他类继承并实现其抽象成员。
+
+通过使用 `abstract` 关键字来声明抽象类以及抽象类中的抽象成员。抽象类还可以包含具体实现。
+
+```ts
+abstract class APerson {
+    // 抽象属性
+    abstract name: string
+    // 具体属性
+    age: number = 0
+    // 抽象方法
+    abstract printName(): void
+    // 具体方法
+    printAge() {
+        console.log(this.name)
+    }
+}
+```
+
+#### 继承抽象类
+
+抽象类可以被其他类继承。子类继承抽象类后，需要实现抽象类中的抽象成员。
+
+```ts
+class Person1 extends Person {
+    name: string
+    constructor (name: string) {
+        super()
+        this.name = name
+    }
+    printName(): void {
+        console.log(this.name)
+    }
+}
+```
 
 ### 可见性修饰符@modifier
 
@@ -375,3 +445,39 @@ console.log(howard.name); // 错误
 ```
 
 注意，我们不能在 Person 类外使用 name，但是我们仍然可以通过 Employee 类的实例方法访问，因为 Employee 是由 Person 派生而来的。
+
+### 类型兼容性
+
+由于 UTS 语言最终会转换为 kotlin、swift 等语言，UTS 语言中的接口也更接近 kotlin 中的接口或 swift 中的协议，在类型兼容性判断时与 TS 语言的结构类型系统有着明显的区别：
+
+- TS：如果两个类型的内部结构相似（具有相同的属性和方法），那么它们被认为是兼容的，即使它们的名称不同。
+- UTS：依赖于类型的显式声明，必需是同一个类型或者存在显式的继承/实现关系。
+
+```ts
+interface IPerson {
+  name: string;
+  printName(): void;
+}
+
+class Person implements IPerson {
+  constructor(public name: string) {}
+  printName() {
+    console.log(this.name);
+  }
+}
+
+class Person1 {
+  constructor(public name: string) {}
+  printName() {
+    console.log(this.name);
+  }
+}
+
+class Person2 extends Person {}
+
+const person: IPerson = new Person("Tom"); // 正确，Person 实现自 IPerson
+
+const person1: Person = new Person1("Tom"); // 错误，Person 与 Person1 无任何关系
+
+const person2: Person = new Person2("Tom"); // 正确，Person2 继承自 Person
+```

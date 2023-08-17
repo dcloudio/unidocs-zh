@@ -5,6 +5,8 @@
 * [控制流程](control.md)
 * [函数](function.md)
 * [类](class.md)
+* [对象](object.md)
+* [类型别名](type-aliases.md)
 * [模块](module.md)
 * 内置对象和 API
   * [Number](buildin-object-api/number.md)
@@ -12,6 +14,7 @@
   * [Array](buildin-object-api/array.md)
   * [Set](buildin-object-api/set.md)
   * [Map](buildin-object-api/map.md)
+  * [UTSJSONObject](buildin-object-api/utsjsonobject.md)
   * [JSON](buildin-object-api/json.md)
   * [Date](buildin-object-api/date.md)
   * [Math](buildin-object-api/math.md)

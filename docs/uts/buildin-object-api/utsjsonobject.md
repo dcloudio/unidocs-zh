@@ -11,14 +11,16 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 ```ts
 const person: UTSJSONObject = {
     name: 'Tom',
-    age: 18,
+    printName: () => {
+      // ...
+    }
 }
 ```
 
 * 通过 JSON 字符串
 
 ```ts
-const person: UTSJSONObject = JSON.parse('{"name":"Tom","age":18}')
+const person: UTSJSONObject = JSON.parse('{"name":"Tom"}')
 ```
 
 ## 实例方法
@@ -42,13 +44,13 @@ const name: string = person['name'] as string
 增加或更新指定键对应的值。
 
 ```ts
-person.set('age', 19)
+person.set('name', 'Tom')
 ```
 
 set 方法可以简化为使用下标运算符 `[]` 赋值
 
 ```ts
-person['age'] = 19
+person['name'] = 'Tom'
 ```
 
 ### toMap(): Map<string, any>

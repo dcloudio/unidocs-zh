@@ -899,13 +899,13 @@ if (b != null) {
 
 #### 安全的调用
 
-访问可空变量的属性的第二种选择是使用安全调用操作符 ?.：
+访问可空变量的属性的第二种选择是使用安全调用操作符 `?.`
 
 ```ts
 const a = "uts"
 const b: string | null = null
-console.log(a.length) // s的属性可以直接调用，无需安全调用
-console.log(b?.length) // b可能为null，null没有length属性，必须加?标记
+console.log(a.length) // a是明确的string类型，它的属性可以直接调用，无需安全调用
+console.log(b?.length) // b可能为null，null没有length属性，在没有判空时，.操作符前面必须加?标记
 ```
 
 如果 b 非空，就返回 b.length，否则返回 null，`b?.length`这个表达式的类型是 number | null。

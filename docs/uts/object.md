@@ -102,6 +102,40 @@ const person = {
 } as Person
 ```
 
+## 顺序限制
+
+在函数作用域内定义时需要注意按顺序声明
+
+支持的写法：
+
+```ts
+function test() {
+    type PersonInfo = {
+        age: number
+    }
+
+    type Person = {
+        name: string
+        info: PersonInfo
+    }
+}
+```
+
+不支持的写法：
+
+```ts
+function test() {
+    type Person = {
+        name: string
+        info: PersonInfo
+    }
+
+    type PersonInfo = {
+        age: number
+    }
+}
+```
+
 ## 匿名对象（Anonymous Object）@anonymous-object
 
 UTS 语言虽然不支持匿名对象类型声明，但是支持匿名的对象字面量作为值使用。匿名的对象字面量作为值使用时，编译器会自动将其初始化为 [UTSJSONObject](./buildin-object-api/utsjsonobject.md) 类型的实例。

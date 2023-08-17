@@ -4,9 +4,11 @@
 * [操作符](operator.md)
 * [控制流程](control.md)
 * [函数](function.md)
-* [类](class.md)
-* [对象](object.md)
 * [类型别名](type-aliases.md)
+* [对象](object.md)
+* [类](class.md)
+* [接口](interface.md)
+* [类型兼容性](type-compatibility.md)
 * [模块](module.md)
 * 内置对象和 API
   * [Number](buildin-object-api/number.md)

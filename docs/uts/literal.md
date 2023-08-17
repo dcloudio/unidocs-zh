@@ -156,14 +156,14 @@ const coffees = ["French Roast", "Colombian", "Kona"]
 数组字面值同时也是数组对象。
 
 
-### 对象字面量
+### 对象字面量@object-literal
 
 在JS中，对象字面值是封闭在花括号对（{}）中的一个对象的零个或多个“属性名—值”对的（元素）列表。
 
 
 #### 如何创建一个对象字面量
 
-1 我们在kotlin/swift 语言中使用`UTSJSONObject`作为载体实现了JS的这个规范，开发者可以正常使用字面量创建此对象
+1 我们在kotlin/swift 语言中使用 [UTSJSONObject](./buildin-object-api/utsjsonobject.md) 作为载体实现了JS的这个规范，开发者可以正常使用字面量创建此对象
 
 ```js
 // 创建对象

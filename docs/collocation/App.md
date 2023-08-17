@@ -1,6 +1,10 @@
-`App.vue`是uni-app的主组件，所有页面都是在`App.vue`下进行切换的，是页面入口文件。但`App.vue`本身不是页面，这里不能编写视图元素，也就是没有`<template>`。
+# App.vue/App.uvue
 
-这个文件的作用包括：调用应用生命周期函数、配置全局样式、配置全局的存储globalData
+`App.vue/uvue`是uni-app的主组件。uni-app js引擎版是app.vue。uni-app x是app.uvue。以下出现的`app.vue`一般泛指包含了`app.uvue`
+
+所有页面都是在`App.vue`下进行切换的，是应用入口文件。但`App.vue`本身不是页面，这里不能编写视图元素，也就是没有`<template>`。
+
+这个文件的作用包括：监听应用生命周期、配置全局样式、配置全局的存储globalData
 
 应用生命周期仅可在`App.vue`中监听，在页面监听无效。
 
@@ -18,6 +22,7 @@
 |onUnhandledRejection|对未处理的 Promise 拒绝事件监听函数（2.8.1+）|
 |onPageNotFound|页面不存在监听函数|
 |onThemeChange|监听系统主题变化|
+|onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出。app-uvue-android 3.9+|
 
 **示例代码**
 ```html
@@ -46,7 +51,10 @@
 - onPageNotFound 页面实际上已经打开了（比如通过分享卡片、小程序码）且发现页面不存在，才会触发，api 跳转不存在的页面不会触发（如 uni.navigateTo）
 
 ## globalData
-小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用。
+
+小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用（uni-app x不支持）。
+
+当然vue框架的全局变量，另有其他方式定义。
 
 **以下是 App.vue 中定义globalData的相关配置：**
 
@@ -72,6 +80,7 @@ nvue的weex编译模式中使用globalData的话，由于weex生命周期不支�
 globalData是简单的全局变量，如果使用状态管理，请使用`vuex`（main.js中定义）
 
 ## 全局样式
+
 在`App.vue`中，可以定义一些全局通用样式，例如需要加一个通用的背景色，首屏页面渲染的动画等都可以写在App.vue中。
 
 注意如果工程下同时有vue和nvue文件，全局样式的所有css会应用于所有文件，而nvue支持的css有限，编译器会在控制台报警，提示某些css无法在nvue中支持。此时需要把nvue不支持的css写在单独的条件编译里。如：

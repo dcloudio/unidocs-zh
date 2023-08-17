@@ -1,10 +1,12 @@
-`main.js`是 uni-app 的入口文件，主要作用是初始化`vue`实例、定义全局组件、使用需要的插件如 vuex。
+# main.js/main.uts
+
+`main.js/uts`是 uni-app 的入口文件。uni-app js引擎版是`main.js`，而uni-app x则是`main.uts`。以下一般用`main.js`泛指全部。
+
+`main.js`主要作用是初始化`vue`实例、定义全局组件、使用需要的插件如 i18n、vuex。
 
 首先引入了`Vue`库和`App.vue`，创建了一个`vue`实例，并且挂载`vue`实例。
 
-::: preview
-
-> Vue2
+> uni-app Vue2
 
 ```js
 import Vue from 'vue'
@@ -22,7 +24,7 @@ app.$mount() //挂载 Vue 实例
 
 ```
 
-> Vue3
+> uni-app Vue3
 
 ```JS
 import App from './App'
@@ -35,7 +37,37 @@ export function createApp() {
 }
 ```
 
-:::
+> uni-app x 的 app.uvue
+
+```ts
+import App from './App'
+
+import { createSSRApp } from 'vue'
+export function createApp() {
+  const app = createSSRApp(App)
+
+  return {
+    app
+  }
+}
+```
+
+## 代码时序
+
+开发者写的代码，在应用启动时，按如下时序加载：
+1. main.js/uts 的 `export function createApp() {}` 外的代码、任何页面的script中`export default {}`外的代码
+2. main.js/uts 的 `export function createApp() {}` 中的代码
+3. app.vue/uvue中onLaunch的代码
+4. 首页的onLoad
+5. 首页的onReady
+
+开发者需谨慎在main.js/uts、页面script中`export default {}`外、和onLaunch中编写代码：
+1. 这些的代码都会影响启动速度
+2. 执行太早，很多功能和API无法使用，需trycatch。尤其是与界面相关的都无法使用，此时首页都还没有创建。
+3. main.js/uts、页面script中`export default {}`外的代码，其创建的变量在应用存活时一直占据着内存。
+
+
+## 插件
 
 使用`Vue.use`引用插件，使用`Vue.prototype`添加全局变量，使用`Vue.component`注册全局组件。
 
@@ -46,3 +78,4 @@ export function createApp() {
 
 **注意**
 - nvue 暂不支持在 main.js 注册全局组件
+- uni-app x 暂不支持 i18n、vuex、pinia等插件

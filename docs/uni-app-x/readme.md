@@ -16,7 +16,7 @@ uts 全称 uni type script，是一门跨平台的、高性能的、强类型的
 > * Android平台，编译为Kotlin
 > * iOS平台，编译Swift
 
-uts和ts很相似，但为了跨端，uts进行了一些约束和特定平台的增补。详见 [uts语言介绍](https://uniapp.dcloud.net.cn/uts/)
+uts和ts很相似，但为了跨端，uts进行了一些约束和特定平台的增补。详见 [uts语言介绍](../uts/README.md)
 
 开发者在 uni-app x 中，不能编写js，因为 uni-app x 中不自带js引擎。需使用uts，实现跨端的同时保证最佳性能。
 
@@ -42,7 +42,7 @@ uvue渲染引擎包括原生版的vue框架（组件、数据绑定...）、跨�
 
 对于原生应用开发者而言，uvue提供了更快捷、更舒服的界面开发方式，并且不降低性能。
 
-在 uni-app x 中，项目的页面和组件，后缀名都是uvue。而uvue文件里的script，也只能写uts。
+在 uni-app x 中，项目的页面和组件，后缀名都是uvue。而uvue文件里的script，发布到App时也只能写uts。
 
 一个uvue页面的例子：
 ```html
@@ -86,7 +86,7 @@ uvue渲染引擎包括原生版的vue框架（组件、数据绑定...）、跨�
 
 uvue支持的vue语法，是按vue3实现的，但一期uvue不支持setup。详见[vue语法]()
 
-uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex布局。但也足以布局出需要的界面。详见[css语法]()
+uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex布局。但也足以布局出需要的界面。详见[css语法](css/readme.md)
 
 以上约束特指App端的uvue引擎。如果把uvue页面编译到小程序和web平台，它的script仍然会被编译为js、它的样式遵循web的样式定义。
 
@@ -99,13 +99,13 @@ uni-app x 一期，只包括基本的组件和API。
 目前支持的组件清单：
 - [x] view
 - [x] scroll-view
+- [x] list-view
 - [x] swiper
 - [x] text
 - [x] image
 - [x] button
 - [x] input
 - [x] textarea
-- [x] list
 - [x] checkbox
 - [x] radio
 - [x] switch
@@ -123,7 +123,7 @@ uni-app x 一期，只包括基本的组件和API。
 - waterfall/grid-view：会补充
 - uniCloud-db：会补充
 - ad：会补充
-- rich-text：可改用web-view渲染；也可以拼接多个text、image组件。
+- rich-text：可改用web-view渲染；也可以拼接多个text、image组件；如果仅是文字样式变化，text组件也支持简单的嵌套
 - editor：只能用web-view来加载
 - map：需开发uts组件。或使用web-view中的地图
 - live-pusher：需开发uts组件
@@ -197,7 +197,7 @@ uni自带API，如下为目前支持的清单。
 * [x] uni.getLocation 一期仅支持腾讯定位
 
 ### 媒体
-* [x] uni.chooseImage
+* [x] uni.chooseImage 仅支持相册，不支持相机
 * [x] uni.saveImageToPhotosAlbum
 
 ### 设备
@@ -217,8 +217,8 @@ uni自带API，如下为目前支持的清单。
 * [x] uni.getPerformance
 
 ## 5. 全局文件
-- manifest.json 仅支持基本的名称图标配置，暂未支持splash
-- AndroidManifest.xml 与原生开发相同
+- manifest.json 仅支持基本的名称图标配置，暂未支持splash。支持CPU类型abiFilters、Android版本minSdkVersion、targetSdkVersion。
+- AndroidManifest.xml 与原生开发相同。注意Android权限配置在这里配置，而不是在manifest.json中 [详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
 - pages.json 不支持app-plus的内容
 - uni.scss 正常支持。但注意uvue仅能使用[css子集](css/README.md)
 

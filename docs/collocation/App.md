@@ -1,8 +1,10 @@
-`App.vue`是uni-app的主组件，所有页面都是在`App.vue`下进行切换的，是页面入口文件。但`App.vue`本身不是页面，这里不能编写视图元素，也就是没有`<template>`。
-`App.vue` is the main component of uni-app. All pages are switched under `App.vue`, which is the page entry file. But `App.vue` itself is not a page, you can&#39;t write view elements here, that is, there is no `<template> `.
+# App.vue/App.uvue
 
-这个文件的作用包括：调用应用生命周期函数、配置全局样式、配置全局的存储globalData
-The functions of this file include: calling application life cycle function, configuring global style, and configuring global storage globalData
+`App.vue/uvue`是uni-app的主组件。uni-app js引擎版是app.vue。uni-app x是app.uvue。以下出现的`app.vue`一般泛指包含了`app.uvue`
+
+所有页面都是在`App.vue`下进行切换的，是应用入口文件。但`App.vue`本身不是页面，这里不能编写视图元素，也就是没有`<template>`。
+
+这个文件的作用包括：监听应用生命周期、配置全局样式、配置全局的存储globalData
 
 应用生命周期仅可在`App.vue`中监听，在页面监听无效。
 The application life cycle can only be listened to in `App.vue`, and listening to on the page is invalid.
@@ -31,7 +33,7 @@ The application life cycle can only be listened to in `App.vue`, and listening t
 |onPageNotFound|页面不存在监听函数|
 |onPageNotFound|The listener function does not exist on the page|
 |onThemeChange|监听系统主题变化|
-| onThemeChange| listen to system theme changes|
+|onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出。app-uvue-android 3.9+|
 
 **示例代码**
 **Sample code**
@@ -66,8 +68,10 @@ The application life cycle can only be listened to in `App.vue`, and listening t
 - The onPageNotFound page has actually been opened (for example, by sharing the card, the applet code) and it is found that the page does not exist, and the page will not be triggered if the api jumps to a page that does not exist (such as uni.navigateTo)
 
 ## globalData
-小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用。
-The applet has globalData, which is a simple global variable mechanism. This mechanism can also be used in uni-app and is universal across the board.
+
+小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用（uni-app x不支持）。
+
+当然vue框架的全局变量，另有其他方式定义。
 
 **以下是 App.vue 中定义globalData的相关配置：**
 **The following is the relevant configuration of defining globalData in App.vue:**
@@ -98,7 +102,7 @@ globalData是简单的全局变量，如果使用状态管理，请使用`vuex`�
 globalData is a simple global variable. If you use state management, please use `vuex` (defined in main.js)
 
 ## 全局样式
-## global styles
+
 在`App.vue`中，可以定义一些全局通用样式，例如需要加一个通用的背景色，首屏页面渲染的动画等都可以写在App.vue中。
 In `App.vue`, you can define some global common styles. For example, if you need to add a common background color, the animation rendered on the first page can be written in App.vue.
 

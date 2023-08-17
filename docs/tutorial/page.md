@@ -145,11 +145,12 @@ script中编写脚本，可以通过lang属性指定脚本语言。
 页面级的代码大多写在`export default {}`中。写在里面的代码，会随着页面关闭而关闭。
 
 #### export default 外的代码
+
 先来介绍写在`export default {}`外面的代码，一般有几种情况：
 1. import三方js/ts模块
 2. import非easycom的组件（一般组件推荐使用[easycom](../collocation/pages.md#easycom)，无需导入注册）
 3. 在ts/uts中，对data的类型进行type定义
-4. 定义作用域更大的变量，注意外层的静态变量不会跟随页面关闭而回收
+4. 定义作用域更大的变量
 
 ```html
 <script lang="ts">
@@ -177,6 +178,11 @@ script中编写脚本，可以通过lang属性指定脚本语言。
 	}
 </script>
 ```
+
+开发者应谨慎编写`export default {}`外面的代码，这里的代码有2个注意事项：
+1. 在应用启动时执行。也就是这里的代码执行时机是应用启动、而不是页面加载。如果这里的代码写的太复杂，会影响应用启动速度和内存占用。
+2. 不跟随页面关闭而回收。在外层的静态变量不会跟随页面关闭而回收。
+
 
 #### export default 里的代码
 `export default {}` 里的内容，是页面的主要逻辑代码。包括几部分：
@@ -268,6 +274,87 @@ style的写法与web的css基本相同。
 | onShareTimeline|Monitor users click on the upper right corner to forward to Moments|WeChat MiniApp| 2.8.1+|
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
 | onAddToFavorites|Monitor users click on the upper right corner to save|WeChat MiniApp, QQ MiniApp| 2.8.1+|
+
+### 页面加载时序介绍@timeline
+
+接下来我们介绍onLoad、onReady、onShow的先后关系，页面加载的详细流程。
+
+1. uni-app框架，首先根据pages.json的配置，创建页面
+
+所以原生导航栏是最快显示的。页面背景色也应该在这里配置。
+
+2.根据页面template里的组件，创建dom。
+
+这里的dom创建仅包含第一批处理的静态dom。对于通过js/uts更新data然后通过v-for再创建的列表数据，不在第一批处理。
+
+要注意一个页面静态dom元素过多，会影响页面加载速度。在uni-app x Android版本上，可能会阻碍页面进入的转场动画。
+因为此时，页面转场动画还没有启动。
+
+3. 触发onLoad
+
+此时页面还未显示，没有开始进入的转场动画，页面dom还不存在。
+
+所以这里不能直接操作dom（可以修改data，因为vue框架会等待dom准备后再更新界面）；在 app-uvue 中获取当前的activity拿到的是老页面的activity，只能通过页面栈获取activity。
+
+onLoad比较适合的操作是：接受上页的参数，联网取数据，更新data。
+
+手机都是多核的，uni.request或云开发联网，在子线程运行，不会干扰UI线程的入场动画，并行处理可以更快的拿到数据、渲染界面。
+
+但onLoad里不适合进行大量同步耗时运算，因为此时转场动画还没开始。
+
+尤其uni-app x 在 Android上，onLoad里的代码（除了联网和加载图片）默认是在UI线程运行的，大量同步耗时计算很容易卡住页面动画不启动。除非开发者显式指定在其他线程运行。
+
+4. 转场动画开始
+
+新页面开始进入的转场动画，动画默认耗时300ms，可以在路由API中调节时长。
+
+5. 页面onReady
+
+第2步创建dom是虚拟dom，dom创建后需要经历一段时间，UI层才能完成了页面上真实元素的创建，即触发了onReady。
+
+onReady后，页面元素就可以自由操作了，比如ref获取节点。同时首批界面也渲染了。
+
+注意：onReady和转场动画开始、结束之间，没有必然的先后顺序，完全取决于dom的数量和复杂度。
+
+如果元素排版和渲染够快，转场动画刚开始就渲染好了；
+
+大多情况下，转场动画走几格就看到了首批渲染内容；
+
+如果元素排版和渲染过慢，转场动画结束都没有内容，就会造成白屏。
+
+联网进程从onLoad起就在异步获取数据更新data，如果服务器速度够快，第二批数据也可能在转场动画结束前渲染。
+
+6. 转场动画结束
+
+再次强调，5和6的先后顺序不一定，取决于首批dom渲染的速度。
+
+### 页面加载常见问题@pagefaq
+
+了解了页面加载时序原理，我们就知道如何避免页面加载常见的问题：
+
+- 优化白屏的方法：
+1. 页面dom太多，注意有的组件写的不好，会拖累整体页面。uni-app x 里减少dom数量的策略，[详见](../uni-app-x/performance.md)
+2. 联网不要在onReady里，那样太慢了，在onLoad里早点联网
+3. 在pages.json里配置原生导航栏和背景色
+4. 有的页面template内容非常少，整页就是一个需要联网加载的列表，这会造成虽然首批dom飞快渲染了，但页面其实还是白的，联网后才能显示字和图。
+	此时需要在template里做一些简单占位组件，比如loading组件、骨架屏，让本地先显示一些内容。
+
+- 卡住动画不启动的原因：
+1. 页面dom太多，注意有的组件写的不好，会拖累整体页面。uni-app x 里减少dom数量的策略，[详见](../uni-app-x/performance.md)
+2. onLoad里执行了耗时的同步计算
+
+### onShow和onHide
+
+注意页面显示，是一个会重复触发的事件。
+
+a页面刚进入时，会触发a页面的onShow。
+
+当a跳转到b页面时，a会触发onHide，而b会触发onShow。
+
+但当b被关闭时，b会触发onUnload，此时a再次显示出现，会再次触发onShow。
+
+在tabbar页面（指pages.json里配置的tabbar），不同tab页面互相切换时，会触发各自的onShow和onHide。
+
 
 ### onInit
 

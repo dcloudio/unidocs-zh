@@ -220,6 +220,7 @@ uni自带API，如下为目前支持的清单。
 - manifest.json 仅支持基本的名称图标配置，暂未支持splash
 - AndroidManifest.xml 与原生开发相同
 - pages.json 不支持app-plus的内容
+- uni.scss 正常支持。但注意uvue仅能使用[css子集](css/README.md)
 
 ## 6. 插件兼容
 

@@ -71,7 +71,7 @@ type Person = {
 }
 ```
 
-实例化的时候也需要逐级绑定类型
+ HBuilderX 3.9 版本之前实例化的时候也需要逐级绑定类型
 
 支持的用法：
 
@@ -84,7 +84,7 @@ const person = {
 } as Person
 ```
 
-未支持的用法：
+HBuilderX 3.9 版本之前未支持的用法：
 
 ```ts
 const person = {

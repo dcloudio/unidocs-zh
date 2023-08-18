@@ -277,7 +277,9 @@ console.log(myDate instanceof Date) // Date用typeof会返回object，需使用i
 const year:number = myDate.getFullYear()
 ```
 
-[详见](buildin-object-api/date.md)
+在js中，Date其实是内置对象，typeof一个日期，返回的是`object`。
+
+Date对象还有很多方法属性，[详见](buildin-object-api/date.md)
 
 
 ### 数组（Array）
@@ -329,7 +331,7 @@ let a3 = Array(1,2,3);//支持
 let a4 = Array(1,'2','3');//支持
 ```
 
-字面量创建的数组，在uts的老版本上，kotlin自动推导数组类型，可能会推导成intArray，而不是uts的array。建议显式声明类型。
+字面量创建的数组，在uts的老版本上，kotlin自动推导数组类型时，可能会推导成intArray，而不是uts的array。建议显式声明类型。
 
 typeof 一个 array 得到的是 object。需使用 Array.isArray 或 instanceof 来判断数组类型。
 
@@ -423,7 +425,6 @@ let kotlinList = utsArr.toKotlinList()
 let kotlinArray = utsArr.toTypedArray()
 
 ```
-
 
 ##### iOS 平台专有数组类型
 
@@ -522,26 +523,32 @@ let a3: NSMutableArray = NSMutableArray(array= a)
 
 #### 更多API
 
-更多Array的API，[详见](https://uniapp.dcloud.net.cn/uts/buildin-object-api/array.html)
+Array作为内置对象，还有更多API，[详见](https://uniapp.dcloud.net.cn/uts/buildin-object-api/array.html)
 
 
 ### JSON@json
 
-json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、swift、dart...，都没有这么灵活。
+本章节虽然标题为JSON，但并非 uts 中有一个类型叫`JSON`，本节更多是介绍 uts 中 json 的使用方式，以及介绍内置的 USTJSONObject 对象。
 
-json对象里的每个属性，都需要定义类型，才能安全读写。
+json 在 js 中也并非一个独立的类型，对一个 json 对象 typeof 返回的是 object。
 
-JSON 是 js 对象的一种表示方法，在 js 中可以直接用作对象表达式来初始化一个对象，而其他大多数语言都要求把json对象转为class、interface或type。
+json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、swift、dart...，都没有这么灵活。要求如下：
 
-uts 当然也可以把 json 转 interface/type。有很多转换工具，不管是在线网页还是ide插件。
+1. json对象里的每个属性，都需要定义类型
+2. 每个可为空的属性，都需要加`?.`，才能安全读写
 
-同时 uts 也提供了内置的 UTSJSONObject，它尽可能的为开发者提供接近js的灵活性。
+一般其他强类型语言都要求把json数据转为class、interface或type。
+
+在 uts 中使用 JSON，有2种方式：
+
+1. 把 json数据 转 type，变成一个类型。有很多转换工具，不管是在线网页还是ide插件。
+2. 使用 uts 内置的 UTSJSONObject 对象，不转type的情况下，尽可能的为开发者提供接近js的灵活性。
 
 #### 对象和数组
 
-首先，我们需要区分JSON对象和由JSON对象组成的数组。
+首先，我们需要区分JSON对象，和由JSON对象组成的数组。
 
-这是一个 UTSJSONObject 对象。jo 对象有2个属性，x和y，都是数字类型
+这是一个 UTSJSONObject 对象。jo 对象有2个属性，x和y，都是数字类型（类型没有声明是因为根据字面量自动推导了）
 ```ts
 let jo: UTSJSONObject = {
 	"x": 1,
@@ -549,7 +556,7 @@ let jo: UTSJSONObject = {
 }
 ```
 
-这是一个 UTSJSONObject 数组。其数组项里有2个 UTSJSONObject 对象，每个对象都有x和y这2个属性。
+这是一个 UTSJSONObject 数组。其数组项里有2个 UTSJSONObject 对象，每个对象都有x和y这2个属性。注意`=`左边有`[]`来表示这是一个数组类型。
 ```ts
 let jr: UTSJSONObject[] = [
 	{"x": 1,"y": 2},
@@ -564,15 +571,15 @@ let jr: UTSJSONObject[] = [
 let jo: UTSJSONObject = [{
 	"x": 1,
 	"y": 2
-}] //错误，类型不匹配
+}] //错误，类型不匹配，数组不能赋值给对象
 let jo: UTSJSONObject[] = [{
 	"x": 1,
 	"y": 2
-}] //正确
+}] //正确，数组赋值给数组
 let jo: Array<UTSJSONObject> = [{
 	"x": 1,
 	"y": 2
-}] //正确
+}] //正确，数组赋值给数组
 let jo = [{
 	"x": 1,
 	"y": 2
@@ -644,12 +651,15 @@ jo = JSON.parse({"result":true, "count":42})
 
 除了字面量定义对象，经常用到的是通过 `JSON.parse()`，把一个 JSON 字符串转成对象。
 
+uts 内置了大写的 `JSON` 对象，有parse()、stringify()等方法。注意这和 UTSJSONObject 不是一个对象。大写 `JSON` 内置对象，web端也是存在的。而 UTSJSONObject 是 uts 新增的。
+
 ```ts
 let s = `{"result":true, "count":42}` // 常见场景中，这个字符串更多来自于网络或其他应用传输。
 let jo = JSON.parse(s) // 这个代码适用于HBuilderX 3.9以前
 ```
 
-在 HBuilderX 3.9以前，`JSON.parse()`返回的`UTSJSONObject`。但因为有时网络或其他应用传入的是 JSON 根节点是数组，而不是对象，会导致崩溃。
+在 HBuilderX 3.9以前，`JSON.parse()`返回的`UTSJSONObject`。但因为有时网络或其他应用传入的是 JSON 数据根节点是数组，而不是对象，会导致崩溃。
+
 所以从 HBuilderX 3.9起，`JSON.parse()`返回的类型改为`any`，即可能返回对象、也可能返回数组。这样就需要开发者自行再`as`一下来指定具体类型了。
 
 新的写法是这样：
@@ -661,7 +671,7 @@ let sr = `[{"x":1, "y":2},{"x":3, "y":4}]` // 常见场景中，这个字符串�
 let jr = JSON.parse(s) as UTSJSONObject[]
 ```
 
-当然，还有更简短的写法，使用JSON的parseObject()和parseArray()方法：
+当然，还有更简短的写法，使用HBuilderX 3.9新增的`JSON`的parseObject()和parseArray()方法：
 ```ts
 let s = `{"result":true, "count":42}` // 常见场景中，这个字符串更多来自于网络或其他应用传输。
 let jo = JSON.parseObject(s)
@@ -691,8 +701,8 @@ let rect = {
 	即 `rect.x`、`rect.size.width`。
 	
 	这种写法比较简单，和js习惯一致，但在 UTS 中限制较多。它的使用有如下前提：
-	- 通过type声明了对象的数据结构，也就是需要单独定义一个type再使用。详见type章节。这也是大多数强类型使用对象字面量初始化的方式。
-	- 如未定义type，则仅限于web和Android，在iOS上swift不支持`.`操作符。在Android上也只支持字面量定义json。如果是`JSON.parse()`转换的，则不能使用。
+	- 通过type声明了对象的数据结构，也就是需要单独定义一个type，转为type后再使用。详见type章节。这也是大多数强类型语言使用json的方式。
+	- 如未定义type，则仅限于web和Android，在iOS上swift不支持`.`操作符。在Android上也只支持字面量定义json（因为类型可推导）。如果是`JSON.parse()`转换的，则不能使用。
 	
 2. [""]下标属性
 	即 `rect["x"]`。
@@ -868,36 +878,38 @@ let b: string | null = "abc" // 可以设置为空
 b = null // ok
 ```
 
-但这不代表 uts 支持广泛的联合类型。实际上目前仅有可为空才能这么写。
+但这不代表 uts 在App端支持广泛的联合类型，实际上仅有可为空才能这么写。即 `let b : string | number` 仅能在编译为js时使用，因为kotlin和swift都不支持联合类型。
 
 现在，如果你调用 a 的方法或者访问它的属性，它保证不会导致 NPE，这样你就可以放心地使用：
 
 ```ts
-const l = a.length
+const l = a.length //返回3
 ```
 
-但是如果你想访问 b 的同一个属性，那么这是不安全的，并且编译器会报告一个错误：
+但是如果你想访问 b 的同一个属性，那是不安全的，并且编译器会报告一个错误：
 
 ```ts
 const l = b.length // 错误：变量“b”可能为空
 ```
 
-但是，还是需要访问该属性，对吧？有几种方式可以做到。
+我们要庆幸编译器的报错，因为如果编译器放过后，在线上运行时万一真的为空，那会导致崩溃。
+
+如何正确访问可能为null的对象的属性和方法？有几种方式可以做到。
 
 
-#### 在条件中检测 null
+#### 代码中判空后再使用
 
-首先，你可以显式检测 b 是否为 null：
+如果你的代码已经判空，则编译器不会再告警。你可以显式检测 b 是否为 null，在不为 null 的情况下调用 b 的属性和方法。
 
 ```ts
 if (b != null) {
-  console.log(b.length)
+  console.log(b.length) //返回3
 }
 ```
 
 编译器会跟踪所执行检测的信息，并允许你在 if 内部调用 length。
 
-#### 安全的调用
+#### 不判空，使用`?.`进行安全调用
 
 访问可空变量的属性的第二种选择是使用安全调用操作符 `?.`
 
@@ -910,7 +922,7 @@ console.log(b?.length) // b可能为null，null没有length属性，在没有判
 
 如果 b 非空，就返回 b.length，否则返回 null，`b?.length`这个表达式的类型是 number | null。
 
-安全调用在链式调用中很有用。例如，一个员工 Bob 可能会（或者不会）分配给一个部门。 可能有另外一个员工是该部门的负责人。获取 Bob 所在部门负责人（如果有的话）的名字， 写作：
+安全调用在链式调用中很有用。例如，一个员工 Bob 可能会（或者不会）分配给一个部门。 可能有另外一个员工是该部门的负责人。获取 Bob 所在部门负责人（如果有的话）的名字，写作：
 
 ```ts
 bob?.department?.head?.name

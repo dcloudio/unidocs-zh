@@ -219,6 +219,8 @@ const s: string | null = null // s为一个可为null的字符串
 console.log(s?.length) //除非前面已经给s赋值，否则调用s的方法和属性必须加?
 ```
 
+安全调用有很多细节，详见[null类型](data-type.md#null类型)
+
 ### 代码语句的分割
 
 uts的多个代码语句，以回车或分号分割。

@@ -58,13 +58,6 @@ type Person = {
     name: string
     info: PersonInfo
 }
-
-const person = {
-    name: 'Tom',
-    info: {
-        age: 18
-    } as PersonInfo
-} as Person
 ```
 
 未支持的用法：

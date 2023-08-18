@@ -58,15 +58,42 @@ HBuilderX3.6.0起，支持直接在应用项目中配置应用清单文件 Andro
     <!-- 读取设备标识权限 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />  
-
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 拍照权限 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- 定位权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <!-- 联系人权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <!-- 蓝牙权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- 短信权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <!-- 安装应用权限 -->
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- 快捷方式权限 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>"
     <application>  
         <!--meta-data-->  
     </application>  
 </manifest>
 ```
-**注意**
+
+**注意**  
 uni-app x项目manifest.json中没有提供Android权限的配置，需在此AndroidManifest.xml中添加。
+
+**相关参考**  
+- Android官方权限列表，参考：[https://developer.android.google.cn/reference/android/Manifest.permission](https://developer.android.google.cn/reference/android/Manifest.permission?hl=zh_cn)
 
 
 ### 移除Android权限@removepermissions  

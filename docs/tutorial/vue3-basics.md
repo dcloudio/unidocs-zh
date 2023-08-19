@@ -594,7 +594,12 @@ v-on directive, which listens to DOM events。v-on is abbreviated as '@':
 	<!-- short -->
 	<view @click="doSomething">点击</view>
 ```
+**注意：`uni-app x` 中函数 `event` 参数需要显式指定类型**
 
+```html
+<view @click="(e: any) => foo(e)">event must has type</view>
+<view @click="foo($event as MouseEvent)">event must has type</view>
+```
 
 #### v-once
 
@@ -618,7 +623,7 @@ Unlike front-end framework in understanding the client in order to achieve a log
 		<text>{{msg}}</text>
 	</view>
 ```
-
+**注意：`uni-app x` 暂不支持**
 
 #### v-html
 
@@ -653,7 +658,7 @@ Cross-end rich text processing scheme can be found in: [https://ask.dcloud.net.c
 	</script>
 ```
 
-
+**注意：`uni-app x` 暂不支持**
 
 ## Data 选项
 ## Data options
@@ -1540,8 +1545,7 @@ You can have multiple methods in an event handler separated by a comma operator 
 	<template>
 		<view>
 			<!-- 这两个 one() 和 two() 将执行按钮点击事件 -->
-			<!-- both one() and two() will execute on button click -->
-			<button @click="one($event), two($event)">
+			<button @click="one($event); two($event)">
 			  Submit
 			</button>
 		</view>
@@ -1598,10 +1602,8 @@ v-on provides event modifiers:
 
 
 **注意**
-**Note**
-
-- 为兼容各端，事件需使用 **@** 的方式绑定，请勿使用小程序端的 `bind` 和 `catch` 进行事件绑定；也不能在 JS 中使用`event.preventDefault()`和`event.stopPropagation()`方法；
-- To be compatible with all terminals, events need to be bound by **@**, please do not use `bind` and `catch` on the applet side for event binding; also cannot use `event.preventDefault()` in JS and `event.stopPropagation()` method;
+- `uni-app x` 暂不支持。
+- 为兼容各端，事件需使用 **@** 的方式绑定，请勿使用小程序端的 `bind` 和 `catch` 进行事件绑定；也不能在 JS 中使用`event.preventDefault()`和`event.stopPropagation()`方法。
 - 若需要禁止蒙版下的页面滚动，可使用 `@touchmove.stop.prevent="moveHandle"`，`moveHandle` 可以用来处理 `touchmove` 的事件，也可以是一个空函数。
 - If you need to scroll down the page prohibiting mask, use `@touchmove.stop.prevent="moveHandle"`, `moveHandle`processing can be used to `touchmove`events, but also can be an empty function.
 
@@ -2169,7 +2171,7 @@ To also detect nested value changes inside Objects, you need to pass in `deep: t
 		}
 	</script>
 ```
-
+**注意：`uni-app x` 暂不支持**
 
 #### 监听对象中单个属性
 #### listen to the single attribute in an object
@@ -2197,14 +2199,13 @@ If you don't want to listen to other values in `obj`, just want to listen to the
 	}
 ```
 
-
+**注意：uni-app x 暂不支持**
 
 ### 计算属性 vs 侦听属性
 ### Computed vs Watched Property
 
 `Vue` 提供了一种更通用的方式来观察和响应 `Vue` 实例上的数据变动：**侦听属性**。当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 `watch` 。然而，通常更好的做法是使用计算属性而不是命令式的 `watch` 回调。
 Vue does provide a more generic way to observe and react to data changes on a current active instance: **watch properties**. When you have some data that needs to change based on some other data, it is tempting to overuse watch. However, it is often a better idea to use a computed property rather than an imperative watch callback. Consider this example:
-
 
 ```js
 	export default {

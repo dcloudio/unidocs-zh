@@ -261,13 +261,9 @@ Component is a very important part of the technology in `vue`.Components allow U
 | Options   | Types of   | Description        |
 |--	|--	|--	|
 |type	| `String` 、 `Number` 、 `Boolean` 、 `Array` 、 `Object` 、 `Date` 、 `Function` 、 `Symbol` ，任何自定义构造函数、或上述内容组成的数组	|会检查一个 `prop` 是否是给定的类型，否则抛出警告	|
-| type      | `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`Array, any custom constructor, or the above composition | A checks `prop`whether the given type, otherwise throws a warning |
-|default	|any	|为该 `prop` 指定一个默认值。如果该 `prop` 没有被传入，则换做用这个值。对象或数组的默认值必须从一个工厂函数返回。	|
-| default   | any  | For `prop`a default value specified. If this `prop`is not passed, then the change to do with this value. The default value of the object or array must be returned from a factory function. |
-|required	|Boolean	|定义该 `prop` 是否是必填项|
-| required  | Boolean | The definition of `prop`whether it is required |
-|validator	|Function	|自定义验证函数会将该 `prop` 的值作为唯一的参数代入。在非生产环境下，如果该函数返回一个 `false` 的值 (也就是验证失败)，一个控制台警告将会被抛出|
-| validator | Function | The custom authentication function `prop`value as the only parameter is substituted. In a non-production environment, if the function returns a `falsy`value (that is, authentication fails), a warning will be thrown console |
+|default	|any	|为该 `prop` 指定一个默认值。如果该 `prop` 没有被传入，则换做用这个值。对象或数组的默认值必须从一个工厂函数返回。`uni-app x` 中 必填	|
+|required	|Boolean	|定义该 `prop` 是否是必填项, `uni-app x` 暂不支持|
+|validator	|Function	|自定义验证函数会将该 `prop` 的值作为唯一的参数代入。在非生产环境下，如果该函数返回一个 `false` 的值 (也就是验证失败)，一个控制台警告将会被抛出, `uni-app x` 暂不支持|
 
 
 ##### 示例：
@@ -1446,7 +1442,7 @@ Then the provided content will be rendered instead:
 		Save
 	</button>
 ```
-
+**注意：`uni-app x` 暂不支持**
 
 ### 具名插槽
 ### Named Slots
@@ -1681,6 +1677,17 @@ Attributes bound to a `<slot>` element are called **slot props**. Now, in the pa
 在这个例子中，我们选择将包含所有插槽 `prop` 的对象命名为 `slotProps`，但你也可以使用任意你喜欢的名字。
 In this example, we've chosen to name the object containing all our slot props `slotProps`, but you can use any name you like.
 
+**注意：** `uni-app x` 中需要为作用域插槽指定类型，以 `todo-list` 组件为例，需要补充如下代码：
+
+```js
+	import { SlotsType } from 'vue'
+	export default {
+		slots: Object as SlotsType<{
+			default: { item: string }
+		}>
+	}
+```
+
 
 #### 独占默认插槽的缩写语法
 #### Abbreviated Syntax for Lone Default Slots
@@ -1783,6 +1790,7 @@ You can even define fallbacks, to be used in case a slot prop is undefined:
 	</todo-list>
 ```
 
+**注意：`uni-app x` 暂不支持**
 
 ## 小程序不支持列表
 ## applet does not support list

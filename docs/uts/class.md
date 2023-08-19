@@ -1,4 +1,4 @@
-## 类（class）
+## 类（Class）
 
 uts 中使用关键字 `class` 声明类。
 

@@ -484,7 +484,12 @@ v-on 指令，它用于监听 `DOM` 事件。v-on缩写为‘ @ ’，下文简�
 	<!-- 缩写 -->
 	<view @click="doSomething">点击</view>
 ```
+**注意：`uni-app x` 中函数 `event` 参数需要显式指定类型**
 
+```html
+<view @click="(e: any) => foo(e)">event must has type</view>
+<view @click="foo($event as MouseEvent)">event must has type</view>
+```
 
 #### v-once
 
@@ -503,7 +508,7 @@ v-on 指令，它用于监听 `DOM` 事件。v-on缩写为‘ @ ’，下文简�
 		<text>{{msg}}</text>
 	</view>
 ```
-
+**注意：`uni-app x` 暂不支持**
 
 #### v-html
 
@@ -533,7 +538,7 @@ v-on 指令，它用于监听 `DOM` 事件。v-on缩写为‘ @ ’，下文简�
 	</script>
 ```
 
-
+**注意：`uni-app x` 暂不支持**
 
 ## Data 选项
 
@@ -1300,7 +1305,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 	<template>
 		<view>
 			<!-- 这两个 one() 和 two() 将执行按钮点击事件 -->
-			<button @click="one($event), two($event)">
+			<button @click="one($event); two($event)">
 			  Submit
 			</button>
 		</view>
@@ -1346,8 +1351,8 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 
 
 **注意**
-
-- 为兼容各端，事件需使用 **@** 的方式绑定，请勿使用小程序端的 `bind` 和 `catch` 进行事件绑定；也不能在 JS 中使用`event.preventDefault()`和`event.stopPropagation()`方法；
+- `uni-app x` 暂不支持。
+- 为兼容各端，事件需使用 **@** 的方式绑定，请勿使用小程序端的 `bind` 和 `catch` 进行事件绑定；也不能在 JS 中使用`event.preventDefault()`和`event.stopPropagation()`方法。
 - 若需要禁止蒙版下的页面滚动，可使用 `@touchmove.stop.prevent="moveHandle"`，`moveHandle` 可以用来处理 `touchmove` 的事件，也可以是一个空函数。
 
 ```html
@@ -1856,7 +1861,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 		}
 	</script>
 ```
-
+**注意：`uni-app x` 暂不支持**
 
 #### 监听对象中单个属性
 
@@ -1882,12 +1887,11 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 	}
 ```
 
-
+**注意：uni-app x 暂不支持**
 
 ### 计算属性 vs 侦听属性
 
 `Vue` 提供了一种更通用的方式来观察和响应 `Vue` 实例上的数据变动：**侦听属性**。当你有一些数据需要随着其它数据变动而变动时，你很容易滥用 `watch` 。然而，通常更好的做法是使用计算属性而不是命令式的 `watch` 回调。
-
 
 ```js
 	export default {

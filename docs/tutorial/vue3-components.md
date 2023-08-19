@@ -204,9 +204,9 @@
 |选项	|类型	|说明	|
 |--	|--	|--	|
 |type	| `String` 、 `Number` 、 `Boolean` 、 `Array` 、 `Object` 、 `Date` 、 `Function` 、 `Symbol` ，任何自定义构造函数、或上述内容组成的数组	|会检查一个 `prop` 是否是给定的类型，否则抛出警告	|
-|default	|any	|为该 `prop` 指定一个默认值。如果该 `prop` 没有被传入，则换做用这个值。对象或数组的默认值必须从一个工厂函数返回。	|
-|required	|Boolean	|定义该 `prop` 是否是必填项|
-|validator	|Function	|自定义验证函数会将该 `prop` 的值作为唯一的参数代入。在非生产环境下，如果该函数返回一个 `false` 的值 (也就是验证失败)，一个控制台警告将会被抛出|
+|default	|any	|为该 `prop` 指定一个默认值。如果该 `prop` 没有被传入，则换做用这个值。对象或数组的默认值必须从一个工厂函数返回。`uni-app x` 中 必填	|
+|required	|Boolean	|定义该 `prop` 是否是必填项, `uni-app x` 暂不支持|
+|validator	|Function	|自定义验证函数会将该 `prop` 的值作为唯一的参数代入。在非生产环境下，如果该函数返回一个 `false` 的值 (也就是验证失败)，一个控制台警告将会被抛出, `uni-app x` 暂不支持|
 
 
 ##### 示例：
@@ -1221,7 +1221,7 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 [Web C
 		Save
 	</button>
 ```
-
+**注意：`uni-app x` 暂不支持**
 
 ### 具名插槽
 
@@ -1431,6 +1431,17 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 [Web C
 
 在这个例子中，我们选择将包含所有插槽 `prop` 的对象命名为 `slotProps`，但你也可以使用任意你喜欢的名字。
 
+**注意：** `uni-app x` 中需要为作用域插槽指定类型，以 `todo-list` 组件为例，需要补充如下代码：
+
+```js
+	import { SlotsType } from 'vue'
+	export default {
+		slots: Object as SlotsType<{
+			default: { item: string }
+		}>
+	}
+```
+
 
 #### 独占默认插槽的缩写语法
 
@@ -1521,6 +1532,7 @@ function (slotProps) {
 	</todo-list>
 ```
 
+**注意：`uni-app x` 暂不支持**
 
 ## 小程序不支持列表
 

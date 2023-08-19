@@ -35,6 +35,6 @@ const p: Person = new P('Tom')
 ```ts
 type Person = {
     name: string
-    age: number
+    printName: () => void
 }
 ```

@@ -1,4 +1,5 @@
 * [概述](README.md)
+* [manifest.json](manifest.md)
 * [开发注意](codegap.md)
 * [性能](performance.md)
 * [编译器](compiler/README.md)

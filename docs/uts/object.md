@@ -34,13 +34,13 @@ function greet(person: { name: string, printName: () => void }) {
 正确的用法：
 
 ```ts
-greet({ name: 'Tom', printName: () => { console.log(this.name) } } as Person)
+greet({ name: 'Tom', printName: function () { console.log(this.name) } } as Person)
 ```
 
 类型不匹配：
 
 ```ts
-greet({ name: 'Tom', printName: () => { console.log(this.name) } })
+greet({ name: 'Tom', printName: function () { console.log(this.name) } })
 ```
 
 ## 嵌套限制

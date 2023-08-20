@@ -1,4 +1,4 @@
-# 类型别名（Type Aliases）
+# type（Type Aliases）
 
 使用类型别名可以为任何类型命名。
 

@@ -1000,6 +1000,200 @@ console.log(baz);
 const l = b!.length
 ```
 
+### type自定义类型@type
+
+`type`是关键字，用于给一个类型起别名，方便在其他地方使用。
+
+下面是一个简单的示例，给number类型起个别名`tn`，在定义变量i时，可以用`:tn`。
+
+```ts
+type tn = number
+let i:tn = 0  // 等同于 let i:number = 0
+```
+
+上述简单的例子在实际开发中没有意义。在 ts 中常见的用途是给联合类型命名，方便后续简化使用。但 uts 在app端不支持联合类型。
+
+#### 把json对象转为type
+
+在 uts 中，type最常见的用途是把json数据转为自定义类型。也就是为json数据提供了一个类型描述。这样json数据就可以继续使用`.`操作符了。
+
+```ts
+type PersonType = {
+	id : number,
+	name : string,
+	age : number
+}
+```
+
+上述代码，定义了一个 PersonType 类型。变量一旦被赋予PersonType类型，就意味着变量是一个对象，包含3个属性，number类型的id属性、string类型的name属性、number类型的age属性。
+
+然后我们给变量person赋予上面定义的PersonType类型：
+
+```ts
+let person : PersonType = { id: 1, name: "zhangsan", age: 18 }
+console.log(person.name) //返回zhangsan
+```
+
+可以看到，变量person，和js里使用json没有任何区别了。支持`.`操作符，无需下标，可跨平台。
+
+所以在ts开发中，很多开发者就会把缺少类型的json数据变成一个type，继续像js里那样使用这个json数据。
+
+但是在uts中，由于interface的概念在kotlin和swift有其他用途，所以uts中推荐开发者把json转成一个type，而不是interface。
+
+#### 把json数组转为type
+
+上面的例子中，数据是json对象，下面再来定义一个json数组。
+
+```ts
+let personList = [
+	{ id: 1, name: "zhangsan", age: 18 },
+	{ id: 2, name: "lisi", age: 16 },
+] as PersonType[]
+console.log(personList[0].name); //返回zhangsan
+```
+
+把一个json数组 as 成自定义类型的数组，就可以像在js中那样随便使用json数据了。
+
+#### null的处理
+
+但是需要注意，json数据可能不规范，有些属性缺失，此时就需要在定义type时设可为空：
+```ts
+type PersonType = {
+	id : number,
+	name : string,
+	age : number | null
+}
+
+let personList = [
+	{ id: 1, name: "zhangsan", age: 18 },
+	{ id: 2, name: "lisi" }, // age数据为空
+] as PersonType[]
+
+console.log(personList[1].age); //null
+```
+
+#### 嵌套
+
+json对象往往有嵌套，即子对象。比如
+```json
+{
+	id: 1, 
+	name: "zhangsan", 
+	age: 18，
+	address: {
+		city: "beijing",
+		street: "dazhongsi road"
+	}
+}
+```
+
+如果要给Person类型再加一个子对象 address，下面又有2个属性 city、street，该怎么写呢？ 因为冒号已经用于类型定义，子对象就没有声明类型的地方了。
+
+```ts
+type PersonType = {
+	id: number,
+    name: string,
+	age: number,
+    address: { // 错误，这里的address需要单独声明类型
+		city : string,
+		street : string
+	}
+}
+```
+
+要解决这个问题，需要把 address 作为一个单独的类型来定义。
+
+```ts
+type PersonAddressType = {
+    city: string,
+	street: string
+}
+type PersonType = {
+	id: number,
+    name: string,
+	age: number,
+    address: PersonAddressType // 把address定义为PersonAddress类型
+}
+```
+
+这里还要注意代码的执行顺序，执行 `address: PersonAddress` 时，这个类型必须已经被定义过。所以要被引用的类型必须定义在前面，后面才能使用这个类型。
+
+那么嵌套的完整写法例子：
+```ts
+type PersonAddressType = {
+    city: string,
+	street: string
+}
+type PersonType = {
+	id: number,
+    name: string,
+	age: number,
+    address: PersonAddressType // 把address定义为PersonAddress类型
+}
+let person = {
+	id: 1, 
+	name: "zhangsan", 
+	age: 18,
+	address: {
+		city: "beijing",
+		street: "dazhongsi road"
+	}
+} as PersonType
+console.log(person.address.city) //beijing
+```
+
+注意，在HBuilderX 3.9以前，有子对象的对象字面量或UTSJSONObject，无法直接被 as 为有嵌套的type，也需要对子对象进行 as 。
+```ts
+let person = {
+	id: 1, 
+	name: "zhangsan", 
+	age: 18,
+	address: {
+		city: "beijing",
+		street: "dazhongsi road"
+	} as PersonAddressType // HBuilderX 3.9前需对子对象单独 as
+} as PersonType
+```
+
+#### json转type工具
+
+如果json数据属性较多、嵌套较多，那么为json数据编写type类型定义，也是一件繁琐的事情。
+
+HBuilderX 3.9起内置了一个json转type工具，在json编辑器中右键，选择json转type，即可根据json数据内容自动推导生成type定义。
+
+#### 为vue的data中的json定义类型
+
+uvue文件中data中的json数据也涉及类型定义。此时注意：type定义必须放在`export default {}`前面。
+```ts
+<script>
+	type PersonType = {
+		id: number,
+	    name: string
+	}
+	export default {
+		data() {
+			return {
+				personList: [
+					{ id: 1, name: "zhangsan" },
+					{ id: 2, name: "lisi" },
+				] as PersonType[],
+			}
+		},
+		onLoad() {
+			console.log(this.personList[0].name); //zhangsan
+		}
+	}
+</script>
+```
+<!-- 
+大多数情况下，data里的json数据是空的，联网从服务器取到一段json字符串，然后再赋值并转type。
+
+```html
+
+```
+
+TODO type自定义类型的方法
+ -->
 ### 其他
 
 - 关于undefined

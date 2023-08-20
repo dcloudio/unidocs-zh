@@ -92,7 +92,7 @@ Boolean字面量的自动类型推导简单而统一，全平台必然被自动�
 
 数字字面量的类型推导，[详见](data-type.md#@autotypefornumber)
 
-### 字符串字面量 @object
+### 字符串字面量@string
 
 字符串字面量是由双引号（"）对或单引号（'）括起来的零个或多个字符。字符串被限定在同种引号之间；也即，必须是成对单引号或成对双引号。下面的例子都是字符串字面值：
 
@@ -158,40 +158,39 @@ const coffees = ["French Roast", "Colombian", "Kona"]
 
 ### 对象字面量@object-literal
 
-在JS中，对象字面值是封闭在花括号对（{}）中的一个对象的零个或多个“属性名—值”对的（元素）列表。
+在JS中，对象字面值是封闭在花括号对`{}`中的一个对象的零个或多个“属性名—值”对的（元素）列表。
 
+在uts中，对象字面量赋值给变量，默认会被推导为[UTSJSONObject](data-type.md#USTJSONObject)类型。
 
-#### 如何创建一个对象字面量
-
-1 我们在kotlin/swift 语言中使用 [UTSJSONObject](./buildin-object-api/utsjsonobject.md) 作为载体实现了JS的这个规范，开发者可以正常使用字面量创建此对象
-
-```js
+```ts
 // 创建对象
 let userA = {
 	name: "zhangsan",
 	age: 12
 }
-console.log(user)
+console.log(userA)
 ```
 
-2 除了字面意思：字面量赋值之外，对象字面量还有一个来源是`JSON.parse("xxx")` 将字符串转换为对象
+对上述的userA进行typeof，得到的是object。进行 instanceof UTSJSONObject，得到的是true。也就是等同于：
 
-```js
-let arrayObj = JSON.parse('["a","b","c"]')
-console.log(arrayObj)
+```ts
+// 创建对象
+let userA:UTSJSONObject = {
+	name: "zhangsan",
+	age: 12
+}
+console.log(userA)
 ```
 
-这里要介绍一个比较有用的做法，比如我有一个类型对象，可以通过`JSON.stringify`得到序列化后的字符串，再通过`JSON.parse("xxx")`的方式，将其转换为对象
+注意花括号还有一个使用场景，被用于type时，是定义了一个自定义类型。下面的代码通过type关键字定义了一个 User类型，该自定义类型有2个属性，string类型的name和number类型的age。
 ```ts
 type User{
 	name:string = ""
 	age:number = 0
 }
-
-let jsonObject = JSON.parse(JSON.stringify(new User()))
 ```
 
-
+<!-- 
 #### 如何使用对象字面量
 
 在传统JS中，对象字面量的返回结果就是一个通用的object. 但是在 kotlin / swift 它是一个 支持下标访问，成员迭代等特性的看上去像是一个`object`的 `UTSJSONObject`实现。
@@ -220,7 +219,7 @@ userMap.forEach(function(key:string,value:any){
     console.log(value)
 })
 ```
-
+ -->
 ### RegExp字面量
 
 正则表达式是字符被斜线围成的表达式。下面是一个正则表达式文字的一个例子。

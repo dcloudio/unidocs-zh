@@ -140,6 +140,14 @@ console.log(map1.get('baz'));
 
 <!-- UTSJSON.Map.set.compatibility -->
 
+注意：由于Map的key是唯一的，给同一个key多次set值时，会用新值替换老值。
+```ts
+const map1: Map<string,string> = new Map(); //定义一个map，key为string类型，value也是string类型
+map1.set('key1', "abc");
+map1.set('key1', "def");
+console.log(map1.get('key1')) //返回 def
+```
+
 ## 常见操作
 
 - 创建map

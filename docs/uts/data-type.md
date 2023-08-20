@@ -6,6 +6,19 @@
 
 如果您是js开发者，那么需要一定的学习过程来掌握 UTS 的类型系统。总体原则是你将牺牲一些代码的灵活性，来换取代码的健壮性和高性能。
 
+所谓 类型，即 type，用于对有相同特征的变量或值进行归类。
+
+比如 `"abc"`和`"你好"`，都属于字符串string，所有string类型有相同的方法、属性，比如`.length`属性获取字符串长度。
+
+UTS 的类型有：
+- 基础类型：boolean、number、string、any、null，都是小写，typeof返回类型名称
+- 对象类型：Date、Array、Map、Set、USTJSONObject，首字母大写，typeof返回"object"，判断准确类型需使用 instanceof 
+- 使用 type 来自定义类型
+- 特殊类型：function、class、error。
+- 平台专有类型：Int、Float、Double、NSString、kotlin.Array...，typeof返回"object"，判断准确类型需使用 instanceof 
+<!-- TODO map -->
+除了特殊类型，其他类型都可以在变量后面通过`:`加类型名称来给这个变量声明类型。
+
 ### 布尔值（boolean）
 
 布尔是简单的基础类型，只有2个值：`true` 和 `false`。
@@ -523,26 +536,27 @@ let a3: NSMutableArray = NSMutableArray(array= a)
 
 #### 更多API
 
-Array作为内置对象，还有更多API，[详见](https://uniapp.dcloud.net.cn/uts/buildin-object-api/array.html)
+Array作为内置对象，还有更多API，[详见](buildin-object-api/array.md)
 
 
-### JSON@json
+### USTJSONObject@ustjsonobject
 
-本章节虽然标题为JSON，但并非 uts 中有一个类型叫`JSON`，本节更多是介绍 uts 中 json 的使用方式，以及介绍内置的 USTJSONObject 对象。
+json 在 js 中并非一个独立的类型，对一个 json 对象 typeof 返回的是 object。
 
-json 在 js 中也并非一个独立的类型，对一个 json 对象 typeof 返回的是 object。
-
-json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、swift、dart...，都没有这么灵活。要求如下：
+json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、swift、dart...，都没有这么灵活。：
 
 1. json对象里的每个属性，都需要定义类型
 2. 每个可为空的属性，都需要加`?.`，才能安全读写
 
-一般其他强类型语言都要求把json数据转为class、interface或type。
+一般其他强类型语言的用法，是把json数据内容，转为class、interface或type。然后就可以`.`了。
 
-在 uts 中使用 JSON，有2种方式：
+在 uts 中使用 JSON，有3种方式：
 
-1. 把 json数据 转 type，变成一个类型。有很多转换工具，不管是在线网页还是ide插件。
-2. 使用 uts 内置的 UTSJSONObject 对象，不转type的情况下，尽可能的为开发者提供接近js的灵活性。
+1. 把 json数据转 type，变成一个自定义类型。这不是本章节的内容，详见 [type](type-aliases.md)
+2. uts 新增了 UTSJSONObject 对象，可以把 json数据通过字面量赋值 或 JSON.parse()方式，赋值给 uts 内置的 UTSJSONObject 对象。
+3. 由于 USTJSONObject有toMap()方法，所以也可以转为Map后使用json数据。
+
+UTSJSONObject，是一个类型，可以在变量的冒号后面使用，本节的重点就是介绍UTSJSONObject。
 
 #### 对象和数组
 
@@ -588,7 +602,7 @@ let jo = [{
 
 #### 定义 UTSJSONObject
 
-可以通过 object 字面量的方式定义一个 UTSJSONObject 对象，编译器会根据字面量自动推导类型。
+可以通过对象字面量的方式定义一个 UTSJSONObject 对象，编译器会根据字面量自动推导类型。
 
 ```ts
 let jo = {
@@ -601,8 +615,6 @@ let jo2 = {
 	"y": 2
 }
 ```
-
-严谨的JSON，x和y属性是需要两侧加引号包围的。对象字面量的属性名可以不加引号，当包含特殊字符时建议开发者加上引号。
 
 如果属性名包括`-`，则必须两侧加引号包围。尽管在 kotlin 中属性名称包含`$`和`_`等也需要转义，但是 UTS 中是无需特殊处理的，编译器会自动转换。
 
@@ -619,46 +631,19 @@ let rect = {
 }
 console.log(rect)
 ```
-<!-- 
 
-对于复杂的json，通常会给它配套定义一个type，来描述这个json的内部数据类型。
+也就是对于形如`{x:samething}`的对象字面量，如果赋值时不指定类型，在 uts 中会被自动推导为 UTSJSONObject。如果你需要转 type，则需显式声明。
 
-此时需要使用`type`关键字，它的作用就是定义类型，在很多场景都可以使用。
+除了字面量定义UTSJSONObject对象，经常用到的是通过 `JSON.parse()`，把一个 JSON 字符串转成UTSJSONObject对象。
 
-```ts
-type personType = {
-	id : number,
-	name : string
-}
-let a1=1,a2=2,b1="张三",b2="李四"
-let personList [] : UTSJSONObject[]
-personList = [
- 	{ "id": a1, "name": b1 },
- 	{ "id": a2, "name": b2 },
-] as personType[]
-
-```
-
-很多json对象在构造时，是没有具体数据的。
-
-```ts
-let jo = {}
-jo = JSON.parse({"result":true, "count":42})
-```
- -->
-
-有关字面量定义 UTSJSONObject 对象的信息，[详见](literal.md#object)
-
-除了字面量定义对象，经常用到的是通过 `JSON.parse()`，把一个 JSON 字符串转成对象。
-
-uts 内置了大写的 `JSON` 对象，有parse()、stringify()等方法。注意这和 UTSJSONObject 不是一个对象。大写 `JSON` 内置对象，web端也是存在的。而 UTSJSONObject 是 uts 新增的。
+uts 内置了大写的 `JSON` 对象，有parse()、stringify()等方法。注意`JSON`和`UTSJSONObject`不是一个对象。大写 `JSON` 内置对象，web端也是存在的。而 UTSJSONObject 是 uts 新增的。
 
 ```ts
 let s = `{"result":true, "count":42}` // 常见场景中，这个字符串更多来自于网络或其他应用传输。
 let jo = JSON.parse(s) // 这个代码适用于HBuilderX 3.9以前
 ```
 
-在 HBuilderX 3.9以前，`JSON.parse()`返回的`UTSJSONObject`。但因为有时网络或其他应用传入的是 JSON 数据根节点是数组，而不是对象，会导致崩溃。
+在 HBuilderX 3.9以前，`JSON.parse()`返回的`UTSJSONObject`。但因为有时网络或其他应用传入的 JSON 数据根节点是数组，而不是对象，会导致崩溃。
 
 所以从 HBuilderX 3.9起，`JSON.parse()`返回的类型改为`any`，即可能返回对象、也可能返回数组。这样就需要开发者自行再`as`一下来指定具体类型了。
 
@@ -682,7 +667,13 @@ let jr = JSON.parseArray(s)
 
 全局对象JSON，除了parse()、parseObject()、parseArray()外，还有stringify()来把json转为字符串。[详见](buildin-object-api/json.md)
 
-#### 访问 UTSJSONObject 中的属性
+#### 验证类型
+```ts
+console.log(typeof jo); //返回 object
+console.log(jo instanceof UTSJSONObject); //返回 true
+```
+
+#### 访问 UTSJSONObject 中的属性数据
 
 ```ts
 let rect = {
@@ -701,8 +692,8 @@ let rect = {
 	即 `rect.x`、`rect.size.width`。
 	
 	这种写法比较简单，和js习惯一致，但在 UTS 中限制较多。它的使用有如下前提：
-	- 通过type声明了对象的数据结构，也就是需要单独定义一个type，转为type后再使用。详见type章节。这也是大多数强类型语言使用json的方式。
-	- 如未定义type，则仅限于web和Android，在iOS上swift不支持`.`操作符。在Android上也只支持字面量定义json（因为类型可推导）。如果是`JSON.parse()`转换的，则不能使用。
+	- 仅限于web和Android，在iOS上swift不支持`.`操作符。
+	- 在Android上也只支持字面量定义json（因为类型可推导）。如果是`JSON.parse()`转换的，则不能使用。
 	
 2. [""]下标属性
 	即 `rect["x"]`。
@@ -728,10 +719,10 @@ let rect = {
 }
 
 console.log(rect.x) //20 但iOS无法使用.操作符
-console.log(rect["x"]) //20
+console.log(rect["x"]) //20 但类型其实未知，如果继续操作则需要as
 
 console.log(rect.size.width) //80 但iOS无法使用.操作符
-console.log((rect["size"] as UTSJSONObject)["width"]) //80
+console.log((rect["size"] as UTSJSONObject)["width"]) //80 使用as后需要整体用()括起来再继续使用下标[]
 
 // 如果存在嵌套，那么需要先把第一层转成 UTSJSONObject 或数组，之后再用下标访问下一层
 
@@ -741,7 +732,7 @@ console.log((rect["border"] as UTSJSONObject[])[0]["color"]); // red
 
 ```
 
-如果是 `JSON.parse` 解析的数组，目前只能通过下标访问。
+如果是 `JSON.parse` 解析的数组，目前只能通过下标访问，无法使用`.`操作符。
 
 ```ts
 let listData = JSON.parse(`{"result":true, "count":42}`) as UTSJSONObject
@@ -760,7 +751,11 @@ console.log((j['test'] as UTSJSONObject)['a-b']);
 
 3. 通过 keyPath 访问 UTSJSONObject 数据
 
-在 `HBuilderX` 3.9.0 之后的版本，UTSJSONObject 提供了另外一种属性访问方式，keypath。如果你了解 XPath、JSONPath 的话，这个概念类似。
+在 `HBuilderX` 3.9.0 之后的版本，UTSJSONObject 提供了另外一种属性访问方式，keyPath。如果你了解 XPath、JSONPath 的话，这个概念类似。
+
+kyepath是把`.`操作符作为一个字符串传入了UTSJSONObject的一个方法中，比如`utsObj.getString("address.detailInfo.street")`
+
+相对于受限制`.`和需要经常as的下标，更推荐使用keyPath方式来操作UTSJSONObject。
 
 以下面的 UTSJSONObject 为例
 ```ts
@@ -827,13 +822,66 @@ let detailInfoObj = utsObj["detailInfo"] as UTSJSONObject
 let street = utsObj["street"] as String
 ```
 
-上面的写法，啰嗦且容易出错。因此，我们提供了更易用的 keypath 写法，帮助开发者摆脱复杂的对象嵌套关系：
+上面的写法，啰嗦且容易出错。因此，我们提供了更易用的 keyPath 写法，帮助开发者摆脱复杂的对象嵌套关系：
 ```ts
 // 结果：the wall street
 let street = utsObj.getString("address.detailInfo.street")
 ```
 
+当然，除了直接使用UTSJSONObject外，在 uts 中使用json数据还有2种方式：
+1. UTSJSONObject.toMap() 转为Map对象 [见下](#Map)
+2. 把json字符串或对象字面量通过type转为自定义类型，这是ts里经常使用的方式 [详见](type-aliases.md)
 
+#### 更多API
+
+UTSJSONObject对象还有很多API，[详见](buildin-object-api/utsjsonobject.md)
+
+### Map
+
+Map 是一种 key value 形式的数据类型。
+
+与二维数组相比，Map的key不能重复，并且读写的方式是get()、set()。与UTSJSONObject相比，Map的性能更高，但对数据格式有要求。
+
+#### 定义
+
+```ts
+//定义一个map1，key为string类型，value也是string类型
+const map1: Map<string,string> = new Map(); 
+map1.set('key1', "abc");
+console.log(map1.get('key1') //返回 abc
+
+//定义一个map1，key为number类型，value是Map类型
+const map2: Map<number,Map<string,string>> = new Map(); 
+map2.set(1, map1); //把map1作为value传进来
+console.log(map2.get(1)); //返回map1
+console.log(map2.get(1)?.get("key1")); //返回 abc。因为名为1的key不一定存在，map2.get(1)可能为null，此时需使用 ?. 才能链式调用
+```
+
+注意在HBuilderX中console.log一个Map时，返回内容格式如下：
+
+[Object] Map(3) {"sex":0,"name":"zhangsan","age":12}  at pages/index/index.uvue:60
+
+开头的[Object]代表其typeof的类型，Map代表它的实际类型，(3)是map的size，{...} 是Map的内容。
+
+还可以把一个UTSJSONObject转为Map
+```ts
+let userA = {
+	name: "zhangsan",
+	age: 12,
+	sex: 0
+} // userA 被推导为UTSJSONObject
+let userMap = userA.toMap() //UTSJSONObject有toMap方法
+```
+
+#### 验证类型
+```ts
+console.log(typeof map1); //返回 object
+console.log(map1 instanceof Map); //返回 true
+```
+
+#### 更多API
+
+Map对象还有很多API，delete、clear等，[详见](buildin-object-api/map.md)
 
 ### any类型 @any
 
@@ -952,6 +1000,200 @@ console.log(baz);
 const l = b!.length
 ```
 
+### type自定义类型@type
+
+`type`是关键字，用于给一个类型起别名，方便在其他地方使用。
+
+下面是一个简单的示例，给number类型起个别名`tn`，在定义变量i时，可以用`:tn`。
+
+```ts
+type tn = number
+let i:tn = 0  // 等同于 let i:number = 0
+```
+
+上述简单的例子在实际开发中没有意义。在 ts 中常见的用途是给联合类型命名，方便后续简化使用。但 uts 在app端不支持联合类型。
+
+#### 把json对象转为type
+
+在 uts 中，type最常见的用途是把json数据转为自定义类型。也就是为json数据提供了一个类型描述。这样json数据就可以继续使用`.`操作符了。
+
+```ts
+type PersonType = {
+	id : number,
+	name : string,
+	age : number
+}
+```
+
+上述代码，定义了一个 PersonType 类型。变量一旦被赋予PersonType类型，就意味着变量是一个对象，包含3个属性，number类型的id属性、string类型的name属性、number类型的age属性。
+
+然后我们给变量person赋予上面定义的PersonType类型：
+
+```ts
+let person : PersonType = { id: 1, name: "zhangsan", age: 18 }
+console.log(person.name) //返回zhangsan
+```
+
+可以看到，变量person，和js里使用json没有任何区别了。支持`.`操作符，无需下标，可跨平台。
+
+所以在ts开发中，很多开发者就会把缺少类型的json数据变成一个type，继续像js里那样使用这个json数据。
+
+但是在uts中，由于interface的概念在kotlin和swift有其他用途，所以uts中推荐开发者把json转成一个type，而不是interface。
+
+#### 把json数组转为type
+
+上面的例子中，数据是json对象，下面再来定义一个json数组。
+
+```ts
+let personList = [
+	{ id: 1, name: "zhangsan", age: 18 },
+	{ id: 2, name: "lisi", age: 16 },
+] as PersonType[]
+console.log(personList[0].name); //返回zhangsan
+```
+
+把一个json数组 as 成自定义类型的数组，就可以像在js中那样随便使用json数据了。
+
+#### null的处理
+
+但是需要注意，json数据可能不规范，有些属性缺失，此时就需要在定义type时设可为空：
+```ts
+type PersonType = {
+	id : number,
+	name : string,
+	age : number | null
+}
+
+let personList = [
+	{ id: 1, name: "zhangsan", age: 18 },
+	{ id: 2, name: "lisi" }, // age数据为空
+] as PersonType[]
+
+console.log(personList[1].age); //null
+```
+
+#### 嵌套
+
+json对象往往有嵌套，即子对象。比如
+```json
+{
+	id: 1, 
+	name: "zhangsan", 
+	age: 18，
+	address: {
+		city: "beijing",
+		street: "dazhongsi road"
+	}
+}
+```
+
+如果要给Person类型再加一个子对象 address，下面又有2个属性 city、street，该怎么写呢？ 因为冒号已经用于类型定义，子对象就没有声明类型的地方了。
+
+```ts
+type PersonType = {
+	id: number,
+    name: string,
+	age: number,
+    address: { // 错误，这里的address需要单独声明类型
+		city : string,
+		street : string
+	}
+}
+```
+
+要解决这个问题，需要把 address 作为一个单独的类型来定义。
+
+```ts
+type PersonAddressType = {
+    city: string,
+	street: string
+}
+type PersonType = {
+	id: number,
+    name: string,
+	age: number,
+    address: PersonAddressType // 把address定义为PersonAddress类型
+}
+```
+
+这里还要注意代码的执行顺序，执行 `address: PersonAddress` 时，这个类型必须已经被定义过。所以要被引用的类型必须定义在前面，后面才能使用这个类型。
+
+那么嵌套的完整写法例子：
+```ts
+type PersonAddressType = {
+    city: string,
+	street: string
+}
+type PersonType = {
+	id: number,
+    name: string,
+	age: number,
+    address: PersonAddressType // 把address定义为PersonAddress类型
+}
+let person = {
+	id: 1, 
+	name: "zhangsan", 
+	age: 18,
+	address: {
+		city: "beijing",
+		street: "dazhongsi road"
+	}
+} as PersonType
+console.log(person.address.city) //beijing
+```
+
+注意，在HBuilderX 3.9以前，有子对象的对象字面量或UTSJSONObject，无法直接被 as 为有嵌套的type，也需要对子对象进行 as 。
+```ts
+let person = {
+	id: 1, 
+	name: "zhangsan", 
+	age: 18,
+	address: {
+		city: "beijing",
+		street: "dazhongsi road"
+	} as PersonAddressType // HBuilderX 3.9前需对子对象单独 as
+} as PersonType
+```
+
+#### json转type工具
+
+如果json数据属性较多、嵌套较多，那么为json数据编写type类型定义，也是一件繁琐的事情。
+
+HBuilderX 3.9起内置了一个json转type工具，在json编辑器中右键，选择json转type，即可根据json数据内容自动推导生成type定义。
+
+#### 为vue的data中的json定义类型
+
+uvue文件中data中的json数据也涉及类型定义。此时注意：type定义必须放在`export default {}`前面。
+```ts
+<script>
+	type PersonType = {
+		id: number,
+	    name: string
+	}
+	export default {
+		data() {
+			return {
+				personList: [
+					{ id: 1, name: "zhangsan" },
+					{ id: 2, name: "lisi" },
+				] as PersonType[],
+			}
+		},
+		onLoad() {
+			console.log(this.personList[0].name); //zhangsan
+		}
+	}
+</script>
+```
+<!-- 
+大多数情况下，data里的json数据是空的，联网从服务器取到一段json字符串，然后再赋值并转type。
+
+```html
+
+```
+
+TODO type自定义类型的方法
+ -->
 ### 其他
 
 - 关于undefined

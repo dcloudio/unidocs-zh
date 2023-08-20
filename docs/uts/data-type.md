@@ -277,6 +277,125 @@ let str5 = nstr3 as string  // 类型为string
   * 编译至 Kotlin 平台时，最大长度受系统内存的限制，超出限制会报错：`java.lang.OutOfMemoryError: char[] of length xxx would overflow`。
   * 编译至 Swift 平台时，最大长度也受系统内存的限制，超出限制目前没有返回信息。
 
+
+### any类型 @any
+
+有时会遇到在编程阶段还不清楚类型的变量。这些值可能来自于动态的内容，比如来自用户输入或第三方代码库。
+这种情况下，我们不希望类型检查器对这些值进行检查而是直接让它们通过编译阶段的检查。那么我们可以使用 `any` 类型来标记这些变量：
+
+```ts
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false; // okay, definitely a boolean
+```
+
+当你只知道一部分数据的类型时，any类型也是有用的。 比如，你有一个数组，它包含了不同的类型的数据：
+
+```ts
+let list: any[] = [1, true, "free"];
+list[1] = 100;
+```
+
+- 注意：在 TS 中可以将 null 赋值给 any 类型的变量，但是在 Swift 和 Kottlin 中，any 类型属于非空类型，也就是不能将 null 赋值给 any 类型的变量。因此 在 UTS 中 也不能将 null 赋值给 any 类型，以免编译失败。
+
+	
+### null类型 @null
+
+一个表明 null 值的特殊关键字。
+
+uts 的类型系统可以消除来自代码空引用的危险。
+
+许多编程语言中最常见的陷阱之一，就是访问空引用的成员会导致空引用异常。在 Java 中，这等同于 NullPointerException 或简称 NPE。
+
+在 uts 中，类型系统能够区分一个引用可以容纳 null （可空引用）还是不能容纳（非空引用）。 例如，string 类型的常规变量不能容纳 null：
+
+```ts
+let a: string = "abc" // 默认情况下，常规初始化意味着非空
+a = null // 编译错误
+```
+
+如果要允许为空，可以声明一个变量为可空字符串（写作 string | null）
+
+```ts
+let b: string | null = "abc" // 可以设置为空
+b = null // ok
+```
+
+但这不代表 uts 在App端支持广泛的联合类型，实际上仅有可为空才能这么写。即 `let b : string | number` 仅能在编译为js时使用，因为kotlin和swift都不支持联合类型。
+
+现在，如果你调用 a 的方法或者访问它的属性，它保证不会导致 NPE，这样你就可以放心地使用：
+
+```ts
+const l = a.length //返回3
+```
+
+但是如果你想访问 b 的同一个属性，那是不安全的，并且编译器会报告一个错误：
+
+```ts
+const l = b.length // 错误：变量“b”可能为空
+```
+
+我们要庆幸编译器的报错，因为如果编译器放过后，在线上运行时万一真的为空，那会导致崩溃。
+
+如何正确访问可能为null的对象的属性和方法？有几种方式可以做到。
+
+
+#### 代码中判空后再使用
+
+如果你的代码已经判空，则编译器不会再告警。你可以显式检测 b 是否为 null，在不为 null 的情况下调用 b 的属性和方法。
+
+```ts
+if (b != null) {
+  console.log(b.length) //返回3
+}
+```
+
+编译器会跟踪所执行检测的信息，并允许你在 if 内部调用 length。
+
+#### 不判空，使用`?.`进行安全调用
+
+访问可空变量的属性的第二种选择是使用安全调用操作符 `?.`
+
+```ts
+const a = "uts"
+const b: string | null = null
+console.log(a.length) // a是明确的string类型，它的属性可以直接调用，无需安全调用
+console.log(b?.length) // b可能为null，null没有length属性，在没有判空时，.操作符前面必须加?标记
+```
+
+如果 b 非空，就返回 b.length，否则返回 null，`b?.length`这个表达式的类型是 number | null。
+
+安全调用在链式调用中很有用。例如，一个员工 Bob 可能会（或者不会）分配给一个部门。 可能有另外一个员工是该部门的负责人。获取 Bob 所在部门负责人（如果有的话）的名字，写作：
+
+```ts
+bob?.department?.head?.name
+```
+
+如果任意一个属性（环节）为 null，这个链式调用就会返回 null。
+
+#### 空值合并
+
+空值合并运算符（??）是一个逻辑运算符，当左侧的操作数为 null 时，返回其右侧操作数，否则返回左侧操作数。
+
+```ts
+const foo = null ?? 'default string';
+console.log(foo);
+// Expected output: "default string"
+
+const baz = 0 ?? 42;
+console.log(baz);
+// Expected output: 0
+```
+
+#### 非空断言
+
+非空断言运算符（!）将任何值转换为非空类型。可以写 b! ，这会返回一个非空的 b 值（例如：在我们示例中的 string）或者如果 b 为 null，就会抛出一个异常。
+
+```ts
+const l = b!.length
+```
+
+
 ### 日期（Date）@date
 
 日期对象表示日期，包括年月日时分秒等各种日期。
@@ -538,6 +657,52 @@ let a3: NSMutableArray = NSMutableArray(array= a)
 
 Array作为内置对象，还有更多API，[详见](buildin-object-api/array.md)
 
+### Map
+
+Map 是一种 key value 形式的数据类型。
+
+与二维数组相比，Map的key不能重复，并且读写的方式是get()、set()。与UTSJSONObject相比，Map的性能更高，但对数据格式有要求。
+
+#### 定义
+
+```ts
+//定义一个map1，key为string类型，value也是string类型
+const map1: Map<string,string> = new Map(); 
+map1.set('key1', "abc");
+console.log(map1.get('key1') //返回 abc
+
+//定义一个map1，key为number类型，value是Map类型
+const map2: Map<number,Map<string,string>> = new Map(); 
+map2.set(1, map1); //把map1作为value传进来
+console.log(map2.get(1)); //返回map1
+console.log(map2.get(1)?.get("key1")); //返回 abc。因为名为1的key不一定存在，map2.get(1)可能为null，此时需使用 ?. 才能链式调用
+```
+
+注意在HBuilderX中console.log一个Map时，返回内容格式如下：
+
+[Object] Map(3) {"sex":0,"name":"zhangsan","age":12}  at pages/index/index.uvue:60
+
+开头的[Object]代表其typeof的类型，Map代表它的实际类型，(3)是map的size，{...} 是Map的内容。
+
+还可以把一个UTSJSONObject转为Map
+```ts
+let userA = {
+	name: "zhangsan",
+	age: 12,
+	sex: 0
+} // userA 被推导为UTSJSONObject
+let userMap = userA.toMap() //UTSJSONObject有toMap方法
+```
+
+#### 验证类型
+```ts
+console.log(typeof map1); //返回 object
+console.log(map1 instanceof Map); //返回 true
+```
+
+#### 更多API
+
+Map对象还有很多API，delete、clear等，[详见](buildin-object-api/map.md)
 
 ### USTJSONObject@ustjsonobject
 
@@ -836,182 +1001,23 @@ let street = utsObj.getString("address.detailInfo.street")
 
 UTSJSONObject对象还有很多API，[详见](buildin-object-api/utsjsonobject.md)
 
-### Map
-
-Map 是一种 key value 形式的数据类型。
-
-与二维数组相比，Map的key不能重复，并且读写的方式是get()、set()。与UTSJSONObject相比，Map的性能更高，但对数据格式有要求。
-
-#### 定义
-
-```ts
-//定义一个map1，key为string类型，value也是string类型
-const map1: Map<string,string> = new Map(); 
-map1.set('key1', "abc");
-console.log(map1.get('key1') //返回 abc
-
-//定义一个map1，key为number类型，value是Map类型
-const map2: Map<number,Map<string,string>> = new Map(); 
-map2.set(1, map1); //把map1作为value传进来
-console.log(map2.get(1)); //返回map1
-console.log(map2.get(1)?.get("key1")); //返回 abc。因为名为1的key不一定存在，map2.get(1)可能为null，此时需使用 ?. 才能链式调用
-```
-
-注意在HBuilderX中console.log一个Map时，返回内容格式如下：
-
-[Object] Map(3) {"sex":0,"name":"zhangsan","age":12}  at pages/index/index.uvue:60
-
-开头的[Object]代表其typeof的类型，Map代表它的实际类型，(3)是map的size，{...} 是Map的内容。
-
-还可以把一个UTSJSONObject转为Map
-```ts
-let userA = {
-	name: "zhangsan",
-	age: 12,
-	sex: 0
-} // userA 被推导为UTSJSONObject
-let userMap = userA.toMap() //UTSJSONObject有toMap方法
-```
-
-#### 验证类型
-```ts
-console.log(typeof map1); //返回 object
-console.log(map1 instanceof Map); //返回 true
-```
-
-#### 更多API
-
-Map对象还有很多API，delete、clear等，[详见](buildin-object-api/map.md)
-
-### any类型 @any
-
-有时会遇到在编程阶段还不清楚类型的变量。这些值可能来自于动态的内容，比如来自用户输入或第三方代码库。
-这种情况下，我们不希望类型检查器对这些值进行检查而是直接让它们通过编译阶段的检查。那么我们可以使用 `any` 类型来标记这些变量：
-
-```ts
-let notSure: any = 4;
-notSure = "maybe a string instead";
-notSure = false; // okay, definitely a boolean
-```
-
-当你只知道一部分数据的类型时，any类型也是有用的。 比如，你有一个数组，它包含了不同的类型的数据：
-
-```ts
-let list: any[] = [1, true, "free"];
-list[1] = 100;
-```
-
-- 注意：在 TS 中可以将 null 赋值给 any 类型的变量，但是在 Swift 和 Kottlin 中，any 类型属于非空类型，也就是不能将 null 赋值给 any 类型的变量。因此 在 UTS 中 也不能将 null 赋值给 any 类型，以免编译失败。
-
-	
-### null类型 @null
-
-一个表明 null 值的特殊关键字。
-
-uts 的类型系统可以消除来自代码空引用的危险。
-
-许多编程语言中最常见的陷阱之一，就是访问空引用的成员会导致空引用异常。在 Java 中，这等同于 NullPointerException 或简称 NPE。
-
-在 uts 中，类型系统能够区分一个引用可以容纳 null （可空引用）还是不能容纳（非空引用）。 例如，string 类型的常规变量不能容纳 null：
-
-```ts
-let a: string = "abc" // 默认情况下，常规初始化意味着非空
-a = null // 编译错误
-```
-
-如果要允许为空，可以声明一个变量为可空字符串（写作 string | null）
-
-```ts
-let b: string | null = "abc" // 可以设置为空
-b = null // ok
-```
-
-但这不代表 uts 在App端支持广泛的联合类型，实际上仅有可为空才能这么写。即 `let b : string | number` 仅能在编译为js时使用，因为kotlin和swift都不支持联合类型。
-
-现在，如果你调用 a 的方法或者访问它的属性，它保证不会导致 NPE，这样你就可以放心地使用：
-
-```ts
-const l = a.length //返回3
-```
-
-但是如果你想访问 b 的同一个属性，那是不安全的，并且编译器会报告一个错误：
-
-```ts
-const l = b.length // 错误：变量“b”可能为空
-```
-
-我们要庆幸编译器的报错，因为如果编译器放过后，在线上运行时万一真的为空，那会导致崩溃。
-
-如何正确访问可能为null的对象的属性和方法？有几种方式可以做到。
-
-
-#### 代码中判空后再使用
-
-如果你的代码已经判空，则编译器不会再告警。你可以显式检测 b 是否为 null，在不为 null 的情况下调用 b 的属性和方法。
-
-```ts
-if (b != null) {
-  console.log(b.length) //返回3
-}
-```
-
-编译器会跟踪所执行检测的信息，并允许你在 if 内部调用 length。
-
-#### 不判空，使用`?.`进行安全调用
-
-访问可空变量的属性的第二种选择是使用安全调用操作符 `?.`
-
-```ts
-const a = "uts"
-const b: string | null = null
-console.log(a.length) // a是明确的string类型，它的属性可以直接调用，无需安全调用
-console.log(b?.length) // b可能为null，null没有length属性，在没有判空时，.操作符前面必须加?标记
-```
-
-如果 b 非空，就返回 b.length，否则返回 null，`b?.length`这个表达式的类型是 number | null。
-
-安全调用在链式调用中很有用。例如，一个员工 Bob 可能会（或者不会）分配给一个部门。 可能有另外一个员工是该部门的负责人。获取 Bob 所在部门负责人（如果有的话）的名字，写作：
-
-```ts
-bob?.department?.head?.name
-```
-
-如果任意一个属性（环节）为 null，这个链式调用就会返回 null。
-
-#### 空值合并
-
-空值合并运算符（??）是一个逻辑运算符，当左侧的操作数为 null 时，返回其右侧操作数，否则返回左侧操作数。
-
-```ts
-const foo = null ?? 'default string';
-console.log(foo);
-// Expected output: "default string"
-
-const baz = 0 ?? 42;
-console.log(baz);
-// Expected output: 0
-```
-
-#### 非空断言
-
-非空断言运算符（!）将任何值转换为非空类型。可以写 b! ，这会返回一个非空的 b 值（例如：在我们示例中的 string）或者如果 b 为 null，就会抛出一个异常。
-
-```ts
-const l = b!.length
-```
 
 ### type自定义类型@type
 
 `type`是关键字，用于给一个类型起别名，方便在其他地方使用。
 
-下面是一个简单的示例，给number类型起个别名`tn`，在定义变量i时，可以用`:tn`。
+<!-- 下面是一个简单的示例，给number类型起个别名`tn`，在定义变量i时，可以用`:tn`。
 
 ```ts
 type tn = number
 let i:tn = 0  // 等同于 let i:number = 0
 ```
 
-上述简单的例子在实际开发中没有意义。在 ts 中常见的用途是给联合类型命名，方便后续简化使用。但 uts 在app端不支持联合类型。
+上述简单的例子在实际开发中没有意义。 -->
+
+在 ts 中常见的用途是给联合类型命名，方便后续简化使用。但 uts 在app端不支持联合类型。
+
+uts 中，type一般用于对象的定义，在编译为kotlin和swift时，会编译为class。
 
 #### 把json对象转为type
 
@@ -1200,8 +1206,6 @@ TODO type自定义类型的方法
 
 js中的 undefined类型表示变量被定义，但是未赋值或初始化。
 
-uts 编译为kotlin和swift时不支持 undefined。即不允许变量未赋值。
-
-每个有类型的变量都需要初始化或赋值。
+uts 编译为kotlin和swift时不支持 undefined。即不允许变量未赋值。每个有类型的变量都需要初始化或赋值。
 
 

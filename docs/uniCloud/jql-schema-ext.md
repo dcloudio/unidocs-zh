@@ -105,7 +105,7 @@ ext.js里引入公共模块的机制：
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeRead: async function({
       secondaryCollection
@@ -134,7 +134,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeDelete: async function({
       docId
@@ -157,7 +157,7 @@ where或match方法的原始参数，未经jql转化。如果是字符串或使�
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeDelete: async function({
       rawWhere
@@ -186,7 +186,7 @@ geoNear方法的原始参数，未经jql转化。如果其中query是字符串�
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeRead: async function({
       skip
@@ -209,7 +209,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeRead: async function({
       limit
@@ -232,7 +232,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeRead: async function({
       sample
@@ -359,7 +359,7 @@ isEqualToJql(string JQLString)
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeCount: async function({
       isEqualToJql
@@ -384,7 +384,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeUpdate: async function({
       triggerContext
@@ -471,7 +471,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeUpdate: async function({
       collection,
@@ -495,7 +495,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     afterRead: async function({
       collection,
@@ -521,7 +521,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeDelete: async function({
       collection,
@@ -548,7 +548,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeCreate: async function({
       collection,

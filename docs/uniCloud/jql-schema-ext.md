@@ -136,7 +136,7 @@ Join table to query a list of sub-tables
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeRead: async function({
       secondaryCollection
@@ -170,7 +170,7 @@ The document_id passed in the doc method received by the trigger
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeDelete: async function({
       docId
@@ -196,7 +196,7 @@ The original parameters of the where or match method, without jql conversion. If
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeDelete: async function({
       rawWhere
@@ -230,7 +230,7 @@ Number of documents skipped
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeRead: async function({
       skip
@@ -256,7 +256,7 @@ The limit on the returned result set (number of documents)
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeRead: async function({
       limit
@@ -282,7 +282,7 @@ Parameters for the Random Screening Method
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeRead: async function({
       sample
@@ -439,7 +439,7 @@ This method returns a bool value, true means that the currently executed jql sta
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeCount: async function({
       isEqualToJql
@@ -467,7 +467,7 @@ This parameter is an empty object, which is only used to mount data in before an
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeUpdate: async function({
       triggerContext
@@ -560,7 +560,7 @@ In order not to increase the complexity of the example, all permissions are set 
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeUpdate: async function({
       collection,
@@ -586,7 +586,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     afterRead: async function({
       collection,
@@ -613,7 +613,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeDelete: async function({
       collection,
@@ -641,7 +641,7 @@ module.exports {
 
 ```js
 // article.schema.ext.js
-module.exports {
+module.exports = {
   trigger: {
     beforeCreate: async function({
       collection,

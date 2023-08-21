@@ -38,6 +38,6 @@ const p: Person = new P('Tom')
 ```ts
 type Person = {
     name: string
-    printName: () => void
+    fn: () => void
 }
 ```

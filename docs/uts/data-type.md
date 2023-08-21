@@ -1006,14 +1006,16 @@ UTSJSONObject对象还有很多API，[详见](buildin-object-api/utsjsonobject.m
 
 `type`是关键字，用于给一个类型起别名，方便在其他地方使用。
 
-<!-- 下面是一个简单的示例，给number类型起个别名`tn`，在定义变量i时，可以用`:tn`。
+下面是一个简单的示例，给number类型起个别名`tn`，在定义变量i时，可以用`:tn`。
 
 ```ts
 type tn = number
 let i:tn = 0  // 等同于 let i:number = 0
 ```
 
-上述简单的例子在实际开发中没有意义。 -->
+注意：基本类型的type重命名，在uvue中只支持写在script的`export default {}`外。
+
+上述简单的例子在实际开发中没有意义。
 
 在 ts 中常见的用途是给联合类型命名，方便后续简化使用。但 uts 在app端不支持联合类型。
 

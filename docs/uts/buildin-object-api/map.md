@@ -153,16 +153,16 @@ console.log(map1.get('key1')) //返回 def
 - 创建map
 ```ts
 let map = new Map<string,any>()
-map.put("name","zhangsan")
-map.put("age",12)
+map.set("name","zhangsan")
+map.set("age",12)
 //Map(2) {"name":"zhangsan","age":12} 
 console.log(map)
 ```
 - 通过key访问map元素
 ```ts
 let map = new Map<string,any>()
-map.put("name","zhangsan")
-map.put("age",12)
+map.set("name","zhangsan")
+map.set("age",12)
 let nameVal = map['name']
 //zhangsan
 console.log(nameVal)
@@ -170,8 +170,8 @@ console.log(nameVal)
 - 遍历map
 ```ts
 let map = new Map<string,any>()
-map.put("name","zhangsan")
-map.put("age",12)
+map.set("name","zhangsan")
+map.set("age",12)
 map.forEach(function(key:string,value:any){
     console.log(key)
     console.log(value)

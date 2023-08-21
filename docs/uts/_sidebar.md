@@ -4,7 +4,7 @@
 * [操作符](operator.md)
 * [控制流程](control.md)
 * [函数function](function.md)
-* [类型别名type](type-aliases.md)
+<!-- * [类型别名type](type-aliases.md) -->
 <!-- * [对象类型object](object.md) -->
 * [类class](class.md)
 * [接口interface](interface.md)

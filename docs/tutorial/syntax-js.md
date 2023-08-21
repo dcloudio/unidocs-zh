@@ -136,4 +136,11 @@ For the support of ES6 API, see the following table for details (`x` means no su
 - vue页面渲染在系统WKWebview中，受iOS系统版本影响，兼容性与iOS系统的Safari浏览器一致。
 - nvue页面使用系统原生View渲染，css支持情况参考：[nvue页面样式](https://uniapp.dcloud.net.cn/tutorial/nvue-css.html)。
 
+### 部分兼容性示例
 
+[正则反向预查 ?<= ?<!](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Lookbehind_assertion)，iOS16.4+支持  
+[可选链运算符 ?.](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Optional_chaining)，iOS13.4+支持  
+[空值合并运算符 ??](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)，iOS13.4+支持  
+[逻辑空赋值 ??=](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_assignment)，iOS14+支持  
+[逻辑与赋值 &&=](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Logical_AND_assignment)，iOS14+支持  
+[逻辑或赋值 ||=](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Logical_OR_assignment)，iOS14+支持  

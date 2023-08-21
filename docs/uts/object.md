@@ -11,7 +11,7 @@ UTS 语言支持使用对象字面量（Object Literal）声明类型，但不�
 ```ts
 type Person = {
     name: string
-    printName: () => void
+    fn: () => void
 }
  
 function greet(person: Person) {
@@ -22,7 +22,7 @@ function greet(person: Person) {
 未支持的用法：
 
 ```ts
-function greet(person: { name: string, printName: () => void }) {
+function greet(person: { name: string, fn: () => void }) {
     // ...
 }
 ```
@@ -34,13 +34,13 @@ function greet(person: { name: string, printName: () => void }) {
 正确的用法：
 
 ```ts
-greet({ name: 'Tom', printName: function () { console.log(this.name) } } as Person)
+greet({ name: 'Tom', fn: function () { } } as Person)
 ```
 
 类型不匹配：
 
 ```ts
-greet({ name: 'Tom', printName: function () { console.log(this.name) } })
+greet({ name: 'Tom', fn: function () { } })
 ```
 
 ## 嵌套限制
@@ -136,7 +136,7 @@ UTS 语言虽然不支持匿名对象类型声明，但是支持匿名的对象�
 ```ts
 const person: UTSJSONObject = {
     name: 'Tom',
-    printName: () => {
+    fn: () => {
       // ...
     }
 }

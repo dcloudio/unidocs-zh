@@ -1,14 +1,17 @@
 # type（Type Aliases）
 
-使用类型别名可以为任何类型命名。
+使用类型别名可以为任何类型命名。类型别名不支持在局部作用域内定义。
 
 ## 一般用法
 
 使用 `type` 关键字来定义类型别名。
 
 ```ts
-type str = string
-type num = number
+type Str = string
+type Fn = () => void
+
+const str: Str = 'test'
+const fn: Fn = () => {}
 ```
 
 使用类型别名不会创建类型的副本，他和原始类型保持同一份引用。

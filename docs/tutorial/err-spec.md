@@ -56,7 +56,7 @@ interface UniError {
 	errCode: number,
 	errMsg: string,
 	data?: Object,
-	cause?: SourceError | AggregateError
+	cause?: SourceError | UniAggregateError
 }
 
 //回调函数

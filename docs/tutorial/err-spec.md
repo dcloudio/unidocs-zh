@@ -27,12 +27,12 @@ interface SourceError {
     subject?: string,
     code?: number,
     message?: string,
-    cause?: SourceError | AggregateError
+    cause?: SourceError | UniAggregateError
 }
 
-//聚合源错误信息
-interface AggregateError extends SourceError {
-	errors: Array<SourceError|AggregateError>
+//Uni聚合源错误信息
+interface UniAggregateError extends SourceError {
+	errors: Array<SourceError|UniAggregateError>
 }
 
 //uni错误信息
@@ -64,11 +64,11 @@ function CallBack(err:UniError){
 **注意**  
 源错误可以根据业务情况扩展其它属性，如uni-AD中，可以添加slotId来表示聚合的三方广告位标识
 
-## AggregateError  
-用于保存多个源错误，如app端某个错误可能是由多个三方SDK的错误引起，可将多个源错误组成AggregateError对象。
+## UniAggregateError  
+用于保存多个源错误，如app端某个错误可能是由多个三方SDK的错误引起，可将多个源错误组成UniAggregateError对象。
 包括以下属性：
 - errors  
-	数组，可包含SourceError或AggregateError对象  
+	数组，可包含SourceError或UniAggregateError对象  
 
 ## UniError  
 Uni统一错误信息，用于统一各平台（端）错误信息  

@@ -94,7 +94,7 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 
 <!-- UTSJSON.JSON.parseObject.compatibility -->
 
-### parseObject<T>(text: string)
+### parseObject\<T\>(text: string)
 
 <!-- UTSJSON.JSON.parseObject_1.description -->
 
@@ -114,7 +114,7 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 
 <!-- UTSJSON.JSON.parseArray.compatibility -->
 
-### parseArray<T>(text: string)
+### parseArray\<T\>(text: string)
 
 <!-- UTSJSON.JSON.parseArray_1.description -->
 

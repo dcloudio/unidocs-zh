@@ -38,9 +38,9 @@ The full error types are defined as follows:
 //源错误信息
 // source error message
 interface SourceError {
+    message: string,
     subject?: string,
     code?: number,
-    message?: string,
     cause?: SourceError | UniAggregateError
 }
 
@@ -98,8 +98,7 @@ Includes the following properties:
 Uni统一错误信息，用于统一各平台（端）错误信息  
 Uni unified error information, used to unify the error information of each platform (terminal)
 - errSubject
-	统一错误主题（模块）名称，字符串类型，存在多级模块时使用"::"分割，即"模块名称::二级模块名称"，详情参考[主题（模块）名称](#主题（模块）名称)
-	Unified error theme (module) name, string type, use "::" when there are multi-level modules, that is, "module name::secondary module name", for details, refer to [theme (module) name](#%E4% B8%BB%E9%A2%98 (module) name)
+	统一错误主题（模块）名称，字符串类型，存在多级模块时使用"::"分割，即"模块名称::二级模块名称"，参考[errSubject（模块/主题）名称](#errSubject)
 - errCode  
 	统一错误码，数字类型，通常0表示成功，其它为错误码  
 	Unified error code, numeric type, usually 0 means success, others are error codes
@@ -125,8 +124,7 @@ function CallBack(err:UniError){
 ```
 
 
-## errSubject（模块/主题）名称  
-## errSubject (module/subject) name
+## errSubject（模块/主题）名称@errSubject  
 
 errSubject属性值表示返回错误的调用模块名称。
 The errSubject attribute value indicates the name of the calling module that returned the error.
@@ -161,6 +159,86 @@ The errSubject attribute value indicates the name of the calling module that ret
 	The errSubject attribute value is "uni-Object name-API name", such as SocketTask.onMessage(), and the errSubject attribute value in the error callback is "uni-SocketTask-onMessage"
 - uni插件中返回错误时建议将“插件id”作为errSubject属性值，如果插件的API较多时可将每个API单独定义errSubject，建议使用errSubject属性值格式为“插件id-API名称”。  
 - When an error is returned in the uni plugin, it is recommended to use the "plugin id" as the errSubject attribute value. If there are many APIs in the plugin, each API can be defined separately. The errSubject attribute value format is "plugin id-API name".
+
+
+## uts插件或uvue页面中使用UniError  
+在uni-app、uni-app x中的错误信息建议统一使用UniError对象，以便在发生错误时统一捕获处理，特别是以下情况：
+- 在uts插件中封装API给uni-app使用时，返回的错误信息要求使用UniError对象。  
+- 在uni-app x项目的uvue页面中，抛出错误要求使用UniError对象。  
+
+在App端，UniError和SourceError都是从uts的[Error](https://uniapp.dcloud.net.cn/uts/buildin-object-api/error.html)继承。  
+
+### 构造UniError对象  
+UniError对象必须通过 new 操作符构造  
+
+**语法**  
+```ts  
+new UniError()
+new UniError(errSubject:string, errCode:number, errMsg:string)
+```
+
+**参数**  
+- errSubject  
+统一错误主题（模块）名称，字符串类型，存在多级模块时使用"::"分割，即"模块名称::二级模块名称"，参考[errSubject（模块/主题）名称](#errSubject)  
+- errCode  
+统一错误码，数字类型，通常0表示成功，其它为错误码  
+- errMsg  
+统一错误描述信息，字符串类型，应准确描述引起的错误原因  
+
+**示例**  
+```
+//创建一个UniError  
+let error = new UniError("uni-apidName", 60000, "Custom uni error");
+//设置data数据（可选）  
+error.data = {
+	"dataName": "custom data value"
+};
+```
+
+### 构造SourceError对象  
+当错误信息是有三方SDK或其它模块引起时，可以将三方SDK或其它模块的错误信息封装在SourceError中作为UniError的源错误  
+
+**语法**  
+```ts  
+new SourceError()
+new SourceError(message:string)
+```
+
+**参数**  
+- message  
+源错误描述信息，字符串类型  
+
+**示例**  
+```
+//创建一个SourceError  
+let sourceError = new SourceError("Third SDK error message");
+//创建一个UniError  
+let error = new UniError("uni-apidName", 60000, "Custom uni error");
+//设置源错误  
+error.cause = sourceError;
+```
+
+### 构造UniAggregateError对象  
+当错误是由多个SourceError源错误引起时，可以将多个源错误放到一个UniAggregateError对象中  
+
+**语法**  
+```ts  
+new UniAggregateError(errors:Array<SourceError>)  
+```
+
+**参数**  
+- errors  
+源错误数组，Array<SourceError>类型  
+
+**示例**  
+```ts  
+//创建UniAggregateError  
+let aggregateError = new UniAggregateError([new SourceError("First 3rd SDK error message"), new SourceError("Second 3rd SDK error message")]);
+//创建一个UniError  
+let error = new UniError("uni-apidName", 60000, "Custom uni error");
+//设置源错误  
+error.cause = aggregateError;
+```
 
 
 

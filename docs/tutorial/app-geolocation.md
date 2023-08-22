@@ -16,7 +16,7 @@
 
 
 
-### 系统定位  
+### 系统定位@system  
 
 > HBuilderX3.2.16开始独立出“系统定位”模块
 
@@ -52,7 +52,7 @@
 
 
 
-### 高德定位
+### 高德定位@amap
 
 > 需要向高德申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [高德开放平台](https://lbs.amap.com/) 创建应用申请Key
 
@@ -71,7 +71,7 @@
 - 本地离线打包参考[Android平台高德定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7%e5%ae%9a%e4%bd%8d)、[iOS平台高德定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7%e5%ae%9a%e4%bd%8d)
 
 
-### 百度定位
+### 百度定位@baidu
 
 > 需要向百度申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [百度地图开放平台](https://lbsyun.baidu.com/) 创建应用申请访问应用密钥（AK）
 

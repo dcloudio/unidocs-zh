@@ -1,6 +1,6 @@
 # uni-push2统一推送
 
-> 本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0，另见：[https://ask.dcloud.net.cn/article/35622](https://ask.dcloud.net.cn/article/35622)
+> 本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0，另见：[uni-push1.0](unipush-v1.html)
 
 # 应用场景
 # application scenarios

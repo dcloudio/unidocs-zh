@@ -17,8 +17,7 @@
 
 
 
-### 系统定位  
-### System Location
+### 系统定位@system  
 
 > HBuilderX3.2.16开始独立出“系统定位”模块
 > HBuilderX3.2.16 began to separate out the "system location" module
@@ -67,8 +66,7 @@ Only latitude and longitude information can be obtained, and address information
 
 
 
-### 高德定位
-### Gaode Positioning
+### 高德定位@amap
 
 > 需要向高德申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [高德开放平台](https://lbs.amap.com/) 创建应用申请Key
 > You need to apply for business authorization from AutoNavi, refer to: [Commercial authorization instructions](app-geolocation?id=business), you need to log in to the [AutoNavi Open Platform](https://lbs.amap.com/) to create Application Application Key
@@ -95,8 +93,7 @@ Only latitude and longitude information can be obtained, and address information
 - Local offline packaging reference [Android platform AutoNavi positioning module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7% e5%ae%9a%e4%bd%8d), [iOS Platform Geolocation Module Configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e9%ab% 98%e5%be%b7%e5%ae%9a%e4%bd%8d)
 
 
-### 百度定位
-### Baidu positioning
+### 百度定位@baidu
 
 > 需要向百度申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [百度地图开放平台](https://lbsyun.baidu.com/) 创建应用申请访问应用密钥（AK）
 > You need to apply for business authorization from Baidu, please refer to: [Commercial authorization instructions](app-geolocation?id=business), you need to log in to [Baidu Map Open Platform](https://lbsyun.baidu.com/) to create an application before use Request an Access Application Key (AK)

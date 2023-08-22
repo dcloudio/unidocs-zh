@@ -41,13 +41,12 @@ interface SourceError {
     subject?: string,
     code?: number,
     message?: string,
-    cause?: SourceError | AggregateError
+    cause?: SourceError | UniAggregateError
 }
 
-//聚合源错误信息
-// aggregate source error message
-interface AggregateError extends SourceError {
-	errors: Array<SourceError|AggregateError>
+//Uni聚合源错误信息
+interface UniAggregateError extends SourceError {
+	errors: Array<SourceError|UniAggregateError>
 }
 
 //uni错误信息
@@ -88,14 +87,12 @@ Used to save the source error that caused the error, such as the error informati
 源错误可以根据业务情况扩展其它属性，如uni-AD中，可以添加slotId来表示聚合的三方广告位标识
 The source error can be expanded to other attributes according to the business situation. For example, in uni-AD, slotId can be added to indicate the aggregated three-party advertising slot identifier
 
-## AggregateError  
-用于保存多个源错误，如app端某个错误可能是由多个三方SDK的错误引起，可将多个源错误组成AggregateError对象。
-It is used to save multiple source errors. For example, an error on the app side may be caused by multiple third-party SDK errors, and multiple source errors can be composed into an AggregateError object.
+## UniAggregateError  
+用于保存多个源错误，如app端某个错误可能是由多个三方SDK的错误引起，可将多个源错误组成UniAggregateError对象。
 包括以下属性：
 Includes the following properties:
 - errors  
-	数组，可包含SourceError或AggregateError对象  
-	Array, can contain SourceError or AggregateError objects
+	数组，可包含SourceError或UniAggregateError对象  
 
 ## UniError  
 Uni统一错误信息，用于统一各平台（端）错误信息  

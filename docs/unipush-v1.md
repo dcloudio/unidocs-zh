@@ -121,7 +121,7 @@ After configuring the manufacturer parameters, be sure to submit the cloud packa
 **注意事项：**
 **Precautions:**
 
-- 目前华为、魅族不需要发布应用市场上就可使用离线推送(注：华为离线推送有条数限制)，其他厂商通道需要上架后才能使用。
+- 目前华为、小米、OPPO、魅族不需要发布应用市场上就可使用离线推送(注：华为离线推送有条数限制)，其他厂商通道需要上架后才能使用。
 
 
 

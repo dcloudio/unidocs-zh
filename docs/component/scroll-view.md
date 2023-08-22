@@ -1,10 +1,10 @@
-### scroll-view
+# scroll-view
 
 可滚动视图区域。用于区域滚动。
 
 需注意在webview渲染的页面中，区域滚动的性能不及页面滚动。
 
-**属性说明**
+## 属性说明
 
 |属性名					|类型		|默认值	|说明																							|平台差异说明	|
 |:-						|:-			|:-		|:-																								|:-			|
@@ -35,7 +35,9 @@
 
 使用竖向滚动时，需要给 ``<scroll-view>`` 一个固定高度，通过 css 设置 height；使用横向滚动时，需要给``<scroll-view>``添加``white-space: nowrap;``样式。
  
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/scroll-view/scroll-view)
+## 示例
+
+[查看演示](https://hellouniapp.dcloud.net.cn/pages/component/scroll-view/scroll-view)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
@@ -147,7 +149,7 @@
 
 ### 自定义下拉刷新
 
-注意自定义下拉刷新的性能不及pages.json中配置的原生下拉刷新。
+注意，在webview渲染时，自定义下拉刷新的性能不及pages.json中配置的原生下拉刷新。
 
 ::: preview
 > Template
@@ -202,12 +204,21 @@
 ```
 :::
  
-**Tips**
+## webview中使用scroll-view的注意@webviewtips
 
-- APP-vue和小程序中，请勿在 scroll-view 中使用 map、video 等原生组件。小程序中 scroll-view 中也不要使用 canvas、textarea 原生组件。更新：微信基础库2.4.4起支持了原生组件在 scroll-view、swiper、movable-view 中的使用。app-nvue无此限制。
-- scroll-view 不适合放长列表，有性能问题。长列表滚动和下拉刷新，应该使用原生导航栏搭配页面级的滚动和下拉刷新实现。包括在app-nvue页面，长列表应该使用list而不是scroll-view。
+- 原生组件嵌套问题
+	* APP-vue，scroll-view 中避免使用 map、video 等原生组件。
+	* 微信基础库2.4.4起支持了原生组件在 scroll-view、swiper、movable-view 中的使用。但并非所有小程序都支持，需具体查询各家小程序webview是否实现了同层渲染。
+- 长列表性能问题
+	* scroll-view 不适合放长列表，有性能问题。webview渲染时，建议改用webview的页面滚动；app-nvue需使用list组件；app-uvue需使用list-view组件。
+	* 如果您一定要在webview中实现区域长列表，建议使用三方如better-scroll组件，或者插件市场搜索 [虚拟列表](https://ext.dcloud.net.cn/search?q=%E8%99%9A%E6%8B%9F%E5%88%97%E8%A1%A8)，这些专业组件实现了dom复用，即便列表很长也不会创建很多dom。
+- 下拉刷新问题
+	* webview渲染时，建议使用页面级的原生下拉刷新，性能更好。如一定要在webview中自定义下拉刷新，建议插件市场搜索[虚拟列表](https://ext.dcloud.net.cn/search?q=%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0)，这些专业组件使用wxs、renderjs等技术避免通信阻塞。
+- scroll-view是区域滚动，不会触发页面滚动，无法触发pages.json配置的下拉刷新、页面触底onReachBottomDistance、titleNView的transparent透明渐变。但在app-uvue下，scroll-view如果是页面顶级节点，则等同于页面滚动。[详见](../uni-app-x/css/readme.md#pagescroll)
+- webview渲染时，scroll-view的滚动条设置，可通过css的-webkit-scrollbar自定义，包括隐藏滚动条。
+
+在app-uvue中，其实没有页面级滚动，scroll-view也不存在原生组件层级、下拉刷新性能问题。但app-uvue里使用长列表，请务必使用list-view组件，这个组件内置了recycle-view机制，不管列表多长，都可以通过回收不显示的列表来保证高性能。[详见](list-view.md)
+
+## 其他注意事项
 - scroll-into-view 的优先级高于 scroll-top。
-- scroll-view是区域滚动，不会触发页面滚动，无法触发pages.json配置的下拉刷新、页面触底onReachBottomDistance、titleNView的transparent透明渐变。
-- 若要使用下拉刷新，建议使用页面的滚动，而不是 scroll-view 。插件市场有前端模拟的基于scroll-view的下拉刷新，但性能不佳。如必需使用前端下拉刷新，推荐使用基于wxs的下拉刷新，性能会比基于js监听方式更高。
 - 如果遇到scroll-top、scroll-left、refresher-triggered属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api?id=componentsolutions)
-- scroll-view的滚动条设置，可通过css的-webkit-scrollbar自定义，包括隐藏滚动条。（app-nvue无此css）

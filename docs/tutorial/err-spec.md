@@ -142,7 +142,7 @@ new UniError(errSubject:string, errCode:number, errMsg:string)
 统一错误描述信息，字符串类型，应准确描述引起的错误原因  
 
 **示例**  
-```
+```ts
 //创建一个UniError  
 let error = new UniError("uni-apidName", 60000, "Custom uni error");
 //设置data数据（可选）  
@@ -165,7 +165,7 @@ new SourceError(message:string)
 源错误描述信息，字符串类型  
 
 **示例**  
-```
+```ts
 //创建一个SourceError  
 let sourceError = new SourceError("Third SDK error message");
 //创建一个UniError  

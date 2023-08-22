@@ -83,3 +83,43 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 <!-- UTSJSON.JSON.stringify_1.returnValue -->
 
 <!-- UTSJSON.JSON.stringify_1.compatibility -->
+
+### parseObject(text: string)
+
+<!-- UTSJSON.JSON.parseObject.description -->
+
+<!-- UTSJSON.JSON.parseObject.param -->
+
+<!-- UTSJSON.JSON.parseObject.returnValue -->
+
+<!-- UTSJSON.JSON.parseObject.compatibility -->
+
+### parseObject<T>(text: string)
+
+<!-- UTSJSON.JSON.parseObject_1.description -->
+
+<!-- UTSJSON.JSON.parseObject_1.param -->
+
+<!-- UTSJSON.JSON.parseObject_1.returnValue -->
+
+<!-- UTSJSON.JSON.parseObject_1.compatibility -->
+
+### parseArray(text: string)
+
+<!-- UTSJSON.JSON.parseArray.description -->
+
+<!-- UTSJSON.JSON.parseArray.param -->
+
+<!-- UTSJSON.JSON.parseArray.returnValue -->
+
+<!-- UTSJSON.JSON.parseArray.compatibility -->
+
+### parseArray<T>(text: string)
+
+<!-- UTSJSON.JSON.parseArray_1.description -->
+
+<!-- UTSJSON.JSON.parseArray_1.param -->
+
+<!-- UTSJSON.JSON.parseArray_1.returnValue -->
+
+<!-- UTSJSON.JSON.parseArray_1.compatibility -->

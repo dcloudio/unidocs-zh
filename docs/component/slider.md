@@ -23,7 +23,7 @@
 |selected-color|Color|#1aad19|已选择的颜色（请使用 activeColor）| -->
 **Tips**
 
-- activeColor默认值在不同平台不一样，微信是绿色(#1aad19)，头条是红色，其他平台是蓝色
+- activeColor默认值在不同平台不一样，微信是绿色(#1aad19)，头条是红色，其他平台是 #007aff（蓝色）
 - 如需要区间滑块，即一根横条上使用2个滑块选择一段范围，可见[插件市场](https://ext.dcloud.net.cn/search?q=%E5%8C%BA%E9%97%B4%E6%BB%91%E5%9D%97)
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/slider/slider)

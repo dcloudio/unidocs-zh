@@ -3,6 +3,7 @@
 * [开发注意](codegap.md)
 * [性能](performance.md)
 * [编译器](compiler/README.md)
+* [UVUE DOM](dom.md)
 * CSS
   * [概述](css/README.md)
   * [align-content](css/align-content.md)
@@ -88,6 +89,7 @@
   * [text-decoration-thickness](css/text-decoration-thickness.md)
   * [visibility](css/visibility.md)
   * [lines](css/lines.md)
+* [事件](event.md)
 <!-- * [新建项目]()
   * [1. 通过 HBuilderX 可视化界面](quickstart-hx.md)
 * [运行和调试]()

@@ -11,8 +11,34 @@ UVEU页面在渲染过程中会生成对应的文档对象模型（DOM），DOM 
 ## 获取DOM元素对象@getDomNode  
 在UVUE页面中可以通过 vue 框架中的组件实例对象 [$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。  
 
-以下是完整的操作示例：  
+首先需要为组件设置 ref 属性值：
+```vue
+<!-- ref 属性值为 myNode，后续可以通过此值查找 -->
+<view ref="myNode" class="container">
+</view>
 ```
+在页面生命周期 `onReady` 中通过 $refs 获取，如果长期使用，建议保存在vue的 data 中：
+```ts
+export default {
+	data() {
+		return {
+			myNode: null as INode|null   //保存后可通过this.myNode访问
+		}
+	},
+	onReady() {
+		// 获取组件对象并保存在 this.myNode 中  
+		this.myNode = $refs['myNode'] as INode;  //需要使用 as 转换
+	},
+}
+```
+通过INode对象的 style 属性更新组件的样式：
+```ts
+this.myNode?.style?.setProperty('background-color', 'red');
+```
+
+
+以下是完整的操作示例：  
+```vue  
 <template>
 <!-- #ifdef APP -->
 <scroll-view style="flex:1;align-items: center;">
@@ -62,7 +88,7 @@ UVEU页面在渲染过程中会生成对应的文档对象模型（DOM），DOM 
 
 
 ## DOM接口  
-- INode  
-- CSSStyleDeclaration  
-- DrawableContext  
+- [INode](dom/inode.md)  
+- [CSSStyleDeclaration](dom/cssstyle.md)  
+- [DrawableContext](dom/drawablecontext.md)  
 

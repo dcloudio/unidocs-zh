@@ -210,10 +210,35 @@ num.toInt64() // 将number 变量 num 转换为 Int64 类型
 // 特定类型转成number
 let f: Float = 5.0
 let n = Number(f)
+let i = Number.from(3.14)
+let j = Number.from(f)
 
 // 特定类型转成其他的特定类型
 let a:Int = 3
 let b = new Double(a) // 将整型变量 a 转换为 Double 类型
+```
+
+#### 从平台特有类型便捷创建 Number
+为了将 kottlin 或者 Swift 平台专有的数字类型便捷的转成Number，我们提供了 Number.from() 的静态方法。该方法适用于上一章节中所列出的所有的专有数字类型。
+
+```ts
+let a: Int = 1
+let a1 = Number.from(a)
+
+let b: Float = 3.14
+let b1 = Number.from(b)
+
+let c: Double = 3.1414926
+let c1 = Number.from(c)
+
+// Swift 专有
+let d: Int64 = 12306    
+let d1 = Number.from(d)
+
+// Kottlin 专有
+let e: Long = 2147483649
+let e1 = Number.from(e)
+
 ```
 
 #### number的边界说明
@@ -458,9 +483,9 @@ const a1: string[] = ['a', 'b', 'c']; //表示数组内容都是string
 4. 创建数组对象
 ```ts
 let a1 = new Array(1,2,3);//支持
-let a2 = new Array(1,'2',3);//支持
+let a2 = new Array(1,'2',3);//安卓平台支持, iOS 平台不支持，在 iOS 中创建 Any[] 数组请直接使用数组字面量，如 let a2 = [1. '2', 3]
 let a3 = Array(1,2,3);//支持
-let a4 = Array(1,'2','3');//支持
+let a4 = Array(1,'2','3');//安卓平台支持, iOS 平台不支持，在 iOS 中创建 Any[] 数组请直接使用数组字面量，如 let a4 = [1,'2','3']
 ```
 
 字面量创建的数组，在uts的老版本上，kotlin自动推导数组类型时，可能会推导成intArray，而不是uts的array。建议显式声明类型。

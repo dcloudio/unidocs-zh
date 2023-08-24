@@ -1,4 +1,4 @@
-### map
+## map
 
 地图组件。
 
@@ -256,9 +256,9 @@ export default {
 ```
 :::
 
-## App平台地图服务商差异
+### App平台地图服务商差异
 
-### Map 地图组件
+#### Map 地图组件
 
 |属性								|说明																		|高德是否支持	|google地图是否支持		|
 |:----							|:----																	|:----				|:----								|
@@ -268,25 +268,25 @@ export default {
 |labeltap						|点击label时触发													|已支持				|Android支持iOS不支持	|
 |poitap							|点击地图poi点时触发											|已支持				|Android不支持 iOS支持	|
 
-### marker
+#### marker
 
 |属性					|说明																	|高德是否支持	|google地图是否支持		|
 |:----				|:----																|:----				|:----								|
 |label				|为标记点旁边增加标签										|已支持				|Android支持 iOS不支持	|
 
-### marker 上的气泡 callout
+#### marker 上的气泡 callout
 
 |属性					|说明																			|高德是否支持	|google地图是否支持							|
 |:----				|:----																		|:----				|:----													|
 |display			|'BYCLICK':点击显示; 'ALWAYS':常显					|已支持				|Android支持iOS只支持 'BYCLICK'	|
 
-### marker 上的自定义气泡 customCallout
+#### marker 上的自定义气泡 customCallout
 
 |属性		|说明															|高德是否支持	|google地图是否支持							|
 |:----	|:----														|:----				|:----													|
 |display|'BYCLICK':点击显示; 'ALWAYS':常显	|已支持				|Android支持iOS只支持 'BYCLICK'	|
 
-### polyline
+#### polyline
 
 |属性					|说明					|高德是否支持	|google地图是否支持			|
 |:----				|:----				|:----				|:----									|
@@ -340,3 +340,26 @@ DCloud为开发者争取了福利，可优惠获取商业授权。如有需求�
 联系电话：17778170760
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
+
+### unicloud-map 云端一体组件
+
+若想要在地图上展示自定义的POI信息，试试 `unicloud-map` 云端一体组件，该组件将前端地图组件与云端数据库无缝连接，只需写一个`<unicloud-map>`组件，即可从数据库中获取附近的POI信息并在地图上呈现。无论是静态还是动态的POI，甚至更多自定义功能，都轻松实现。让地图开发变得愉快又高效。
+
+> 下载地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-map](https://ext.dcloud.net.cn/plugin?name=unicloud-map)
+
+> 文档地址：[https://uniapp.dcloud.net.cn/uniCloud/unicloud-map.html](https://uniapp.dcloud.net.cn/uniCloud/unicloud-map.html)
+
+**渲染静态POI运行效果图**
+
+通过从数据库获取POI数据，渲染到地图上
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/409.png)
+
+**渲染动态POI运行效果图**
+
+通过从数据库获取POI数据，并通过 uni-id-common 内的路线规划API，计算路线、距离、时间
+
+**运行效果图**
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/408.png)
+

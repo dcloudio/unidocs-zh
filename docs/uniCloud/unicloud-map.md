@@ -245,7 +245,7 @@ export default {
 </style>
 ```
 
-#### 渲染动态POII@dynamicspoi
+#### 渲染动态POI@dynamicspoi
 
 通过从数据库获取POI数据，并通过 uni-id-common 内的路线规划API，计算路线、距离、时间
 

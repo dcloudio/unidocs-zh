@@ -1749,6 +1749,28 @@ let res = await db.collection('user').where({
 }).get()
 ```
 
+#### unicloud-map 云端一体组件
+
+若想要在地图上展示自定义的POI信息，试试 `unicloud-map` 云端一体组件，该组件将前端地图组件与云端数据库无缝连接，只需写一个`<unicloud-map>`组件，即可从数据库中获取附近的POI信息并在地图上呈现。无论是静态还是动态的POI，甚至更多自定义功能，都轻松实现。让地图开发变得愉快又高效。
+
+> 下载地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-map](https://ext.dcloud.net.cn/plugin?name=unicloud-map)
+
+> 文档地址：[https://uniapp.dcloud.net.cn/uniCloud/unicloud-map.html](https://uniapp.dcloud.net.cn/uniCloud/unicloud-map.html)
+
+**渲染静态POI运行效果图**
+
+通过从数据库获取POI数据，渲染到地图上
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/409.png)
+
+**渲染动态POI运行效果图**
+
+通过从数据库获取POI数据，并通过 uni-id-common 内的路线规划API，计算路线、距离、时间
+
+**运行效果图**
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/408.png)
+
 ## 事务@transaction
 
 事务通常用来在某个数据库操作失败之后进行回滚。

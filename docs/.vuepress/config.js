@@ -106,7 +106,17 @@ const config = {
   },
   plugins: [
     ["vuepress-plugin-juejin-style-copy", copyOptions]
-  ]
+  ],
+  /**
+   * 
+   * @param {string} path path: js 资源文件路径
+   * @param {string} type type: 资源文件类型，取值有 script 等
+   * @returns 
+   */
+  shouldPrefetch: (path, type) => {
+    if (type === 'script' && path.indexOf('/docs/') > -1) return false
+    return true
+  }
 }
 
 module.exports = config

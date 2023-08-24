@@ -36,7 +36,11 @@
 | -------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | 求余(%)  |      | 二元运算符. 返回相除之后的余数.                                                                                                          |
 | 自增(++) |      | 一元运算符. 将操作数的值加一. 如果放在操作数前面 (++x), 则返回加一后的值; 如果放在操作数后面 (x++), 则返回操作数原值,然后再将操作数加一. |
-| 自减(--) |      | 一元运算符. 将操作数的值减一. 前后缀两种用法的返回值类似自增运算符.                                                                      |
+| 自减(--) |      | 一元运算符. 将操作数的值减一. 前后缀两种用法的返回值类似自增运算符.  
+| 加(+)  |      | 二元运算符. 将两个数相加.                                                                                                          |
+| 减(-) |      | 二元运算符. 将两个数相减. |
+| 乘(*) |      | 二元运算符. 将两个数相乘.                                                                    |
+| 除(/) |      | 二元运算符. 将两个数相除.                                                                    |
 
 ### 位运算符(Bitwise operators)@Bitwise-operators
 
@@ -155,3 +159,39 @@ const status = age >= 18 ? "adult" : "minor";
     * 无符号右移运算符（>>>）（零填充右移）将第一个操作数向右移动指定（二进制）位数。
 - `>>>=`
 
+
+### 算数运算符在操作不同数字类型时的差异
+
+uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在有字面量或者是平台专有数字类型参与运算时，不同平台可能会有不同的表现。
+算数运算符 + - * / % 行为一致，下表以 + 和 / 为例列出了各种场景下的详细差异。
+
+- 其中 number 是指 number 类型的变量，字面量是指数字字面量，变量是指平台专有数字类型的变量
+- 运算符 / 在 字面量 / 字面量场景下, 结果为 number.
+
+| 场景                                 | 示例                                           | Kottlin 结果                   |  Swift 结果 							  |
+| ----------------------------------- | -------------------------------------------   | ------------------------------ |------------------------------------------|
+| number + number                      | number + number            				  | 结果为 number                   |结果为 number				              |
+| number + 字面量                       | number + 1                                   | 结果为 number                   |结果为 number 						 	  |
+|           				           | number + 3.14      						  | 结果为 number                   |结果为 number 							  |
+| number + 变量                         | let a: Int = 1; number + a     			  | 结果为 number      			   |结果为 number 						   	  |
+|   								   | let b: Double = 1;  number + b       		  | 结果为 number        		   |结果为 number 						      |
+|   								   | let c: Long = 1; number + c 				  | 结果为 number       			   |结果为 number 							  |
+|                    			       | let d: Int64 = 1; number+ d      			  | 结果为 number      			   |结果为 number							  |
+| 字面量 + number				       | 1 + number 								  | 结果为 number                   |结果为 number 							  |
+|   				      			   | 1 + number 								  | 结果为 number                   |结果为 number 							  |
+| 变量 + number				           | let a: Int = 1; a + number 				  | 结果为 number                   |编译失败，需要用 (a as number) + number 	  |
+|   				      			   | let b: Double = 1; b + number 				  | 结果为 number                   |编译失败，需要用 (b as number) + number	  |
+|   				      			   | let c: Long = 1;  c + number  				  | 结果为 number                   |编译失败，需要用 (c as number) + number 	  |
+|   				      			   | let d: Int64 = 1; d + number 				  | 结果为 number                   |编译失败，需要用 (d as number) + number	  |
+| 字面量 + 字面量   			           | 1 + 1 				  						  | 结果为 2 Int                    |结果为2 Int                          	  |
+|   				      			   | 1 + 3.14 				  					  | 结果为4.14 Double               |结果为4.14 Double	  					  |
+|   				      			   | 1.0 + 3.14  				                  | 结果为4.14 Double               |结果为4.14 Double 	 					  |
+| 字面量 / 字面量   			           | 1 / 10 				  					  | 结果为 0.1 number               |结果为0.1 number                           |
+| 专有类型变量 / 字面量                   | let a: Int = 2; a / 10				  		  | 结果为 0 Int                    |结果为0 Int                          	  |
+|   				      			   | let a: Int = 2; a / 10.0 				  	  | 结果为 0.2 Double               |编译失败，Int / Double 不合法 需使用 a / Int(10.0)	|
+| 专有类型变量 + 字面量                   | let a: Int = 2; a + 10				  		  | 结果为 12 Int                   |结果为12 Int                          	  |
+|   				      			   | let a: Int = 2; a + 3.14 				  	  | 结果为 5.14 Double              |编译失败, 需要 a + Int(3.14) = 5	          |
+| 相同的专有类型变量相加                   | let a: Int = 1； let b: Int = 2; a + b		  | 结果为 3 Int                    |结果为3 Int                          	  |
+|   				      			   | let a: Double = 1.0; let b: Double = 2.0; a + b | 结果为 3.0 Double            |结果为 3.0 Double	          			  |
+| 不同的专有类型变量相加                   | let a: Int = 1； let b: Float = 3.14.toFloat()； a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
+|   				      			   | let a: Float = 1.0.toFloat()； let b: Double = 3.14； a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |

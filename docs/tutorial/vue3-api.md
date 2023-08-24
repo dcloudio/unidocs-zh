@@ -313,8 +313,7 @@ In addition, since the `createApp` method returns the application instance itsel
 |内置组件		|描述						|H5		|App端|微信小程序  |
 |Built-in components |Description |H5 |App |WeChat applet |
 | --				| --						| --	|--		|--			| 
-|component	| 渲染一个“元组件”为动态组件。依 `is` 的值，来决定哪个组件被渲染。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#component) 	|√	| √	| x		|		|
-|component | Renders a "meta-component" as a dynamic component. Depending on the value of `is`, which component is rendered. [Details](https://v3.cn.vuejs.org/api/built-in-components.html#component) |√ | √ | x | |
+|component	| 渲染一个“元组件”为动态组件。依 `is` 的值，来决定哪个组件被渲染。 [详情](https://cn.vuejs.org/api/built-in-special-elements.html#component) 	|√	| √	| x		|		|
 |transition	| 作为单个元素/组件的过渡效果。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 	|√	| x	| x		|		|
 |transition | Transition effect as a single element/component. [Details](https://v3.cn.vuejs.org/api/built-in-components.html#transition) |√ | x | x | |
 |transition-group	| 作为多个元素/组件的过渡效果。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#transition-group) 	|√	| x	| x		|		|

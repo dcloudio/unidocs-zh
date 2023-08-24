@@ -175,14 +175,14 @@ uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在
 |           				           | number + 3.14      						  | 结果为 number                   |结果为 number 							  |
 | number + 变量                         | let a: Int = 1; number + a     			  | 结果为 number      			   |结果为 number 						   	  |
 |   								   | let b: Double = 1;  number + b       		  | 结果为 number        		   |结果为 number 						      |
-|   								   | let c: Long = 1; number + c 				  | 结果为 number       			   |结果为 number 							  |
-|                    			       | let d: Int64 = 1; number+ d      			  | 结果为 number      			   |结果为 number							  |
+|   								   | let c: Long = 1; number + c 				  | 结果为 number       			   |Swift 中无 Long 							  |
+|                    			       | let d: Int64 = 1; number+ d      			  | kottlin 中无 Int64      		   |结果为 number							  |
 | 字面量 + number				       | 1 + number 								  | 结果为 number                   |结果为 number 							  |
 |   				      			   | 3.14 + number 								  | 结果为 number                   |结果为 number 							  |
 | 变量 + number				           | let a: Int = 1; a + number 				  | 结果为 number                   |编译失败，需要用 (a as number) + number 	  |
 |   				      			   | let b: Double = 1; b + number 				  | 结果为 number                   |编译失败，需要用 (b as number) + number	  |
-|   				      			   | let c: Long = 1;  c + number  				  | 结果为 number                   |编译失败，需要用 (c as number) + number 	  |
-|   				      			   | let d: Int64 = 1; d + number 				  | 结果为 number                   |编译失败，需要用 (d as number) + number	  |
+|   				      			   | let c: Long = 1;  c + number  				  | 结果为 number                   |Swift 中无 Long 	  						  |
+|   				      			   | let d: Int64 = 1; d + number 				  | kottlin 中无 Int64              |编译失败，需要用 (d as number) + number	  |
 | 字面量 + 字面量   			           | 1 + 1 				  						  | 结果为 2 Int                    |结果为2 Int                          	  |
 |   				      			   | 1 + 3.14 				  					  | 结果为4.14 Double               |结果为4.14 Double	  					  |
 |   				      			   | 1.0 + 3.14  				                  | 结果为4.14 Double               |结果为4.14 Double 	 					  |
@@ -195,3 +195,50 @@ uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在
 |   				      			   | let a: Double = 1.0; let b: Double = 2.0; a + b | 结果为 3.0 Double            |结果为 3.0 Double	          			  |
 | 不同的专有类型变量相加                   | let a: Int = 1； let b: Float = 3.14.toFloat()； a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
 |   				      			   | let a: Float = 1.0.toFloat()； let b: Double = 3.14； a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |
+
+
+### 比较运算符在操作不同数字类型时的差异
+
+uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在有字面量或者是平台专有数字类型参与比较操作时，不同平台可能会有不同的表现。
+
+#### 比较运算符 > >= < <=
+
+比较运算符 > >= < <= 行为一致，下表以 > 为例列出了各种场景下的详细差异。
+
+- 其中 number 是指 number 类型的变量，字面量是指数字字面量，变量是指平台专有数字类型的变量
+
+| 场景                                 | 示例                                           | Kottlin 结果                   |  Swift 结果 							  |
+| -----------------------------------  | -------------------------------------------   | ------------------------------ |-----------------------------------------|
+| number > number                      | number > number            				  | 结果为 true or false            |结果为 true or false  				      |
+| number > 字面量                       | number > 1                                   | 结果为 true or false            |结果为 true or false 					  |
+| number > 变量                         | let a: Int = 1; number > a     			  | 结果为 true or false      	   |结果为 true or false 					  |
+| 字面量 > number				       | 3.14 > number 								  | 结果为 true or false            |结果为 true or false 					  |
+| 变量 > number				           | let a: Int = 1; a > number 				  | 结果为 true or false            |结果为 true or false  	  				  |
+| 字面量 > 字面量   			           | 3.14 > 1 				  					  | 结果为 true                     |结果为 true                          	  |
+| 专有类型变量 > 字面量                   | let a: Int = 2; a > 3.14				  	  | 结果为 false                    |结果为 false                          	  |
+| 相同的专有类型变量比较                   | let a: Int = 2； let b: Int = 1; a > b		  | 结果为 true                     |结果为 true                         	      |
+| 不同的专有类型变量比较                   | let a: Int = 1； let b: Float = 3.14.toFloat()； a > b	  | 结果为false         |编译失败，不同类型变量不能比较                 |
+
+
+#### 比较运算符 == != === !==
+
+
+| 场景                                  | 示例                                           | Kottlin 结果                   |  Swift 结果 							  |
+| ------------------------------------ | -------------------------------------------   | ------------------------------ |------------------------------------------|
+| number == number (!= === !== 行为相同) | number == number            				  | 值相同就true                     |值相同就true				                  |
+| number == 字面量 (!= === !== 行为相同)  | number == 1                                 | 值相同就true                     |值相同就true 						 	  |
+| number == 变量 (!= === !== 行为相同)   | let a: Int = 1; number == a     			  | 值相同就true      			   |值相同就true 						   	      |
+| 字面量 == number (!= === !== 行为相同) | 1 == number 								  | 值相同就true                     |值相同就true 							  |
+| 变量 == number	 (!= === !== 行为相同)  | let a: Int = 1; a == number 				  | 值相同就true                    |值相同就true 	  							  |
+| 字面量 == 字面量  (!= 行为相同)		   | 1 == 1 	（相同类型）			  		      | 值相同就true                    |值相同就true                          	  |
+|   				      			   | 1 == 3.14 (不同类型)				  			  | 编译失败，不支持比较               |结果为4.14 Double	  					  |
+| 字面量 === 字面量  (!== 行为相同)		   | 1 == 1 	（相同类型）			  			  | 值相同就true                     |编译失败，=== 和 !== 只能用于引用类型比较      |
+|   				      			   | 1 == 3.14 (不同类型)				  			  | 编译失败，不支持比较               |编译失败，=== 和 !== 只能用于引用类型比较	  |
+| 专有类型变量 == 字面量 (!= 行为相同)     | let a: Int = 2; a == 10	 （相同类型）			  | 值相同就true                     |值相同就true                          	  |
+|   				      			   | let a: Int = 2; a == 3.14 （不同类型）		  | 编译失败，不支持比较              |值相同就true	                               |
+| 专有类型变量 === 字面量 (!== 行为相同)     | let a: Int = 2; a === 10	 （相同类型）		  | 值相同就true                     |编译失败，=== 和 !== 只能用于引用类型比较       |
+|   				      			   | let a: Int = 2; a == 3.14 （不同类型）		  | 编译失败，不支持比较              |编译失败，=== 和 !== 只能用于引用类型比较	       |
+| String  == String (!= 行为相同)        | "a" == "a"		 							   | 结果为 true                   |结果为 true                          	  |
+| String  === String (!=== 行为相同)  	| "a" === "a" 									| 结果为 true                  |编译失败，不能比较	          			  |
+| Array  == Array (!= 行为相同)        | [1] == [1]	 							   | 结果为 false                   |结果为 true,数组类型相同，元素相同就为true     |
+| Array  === Array (!=== 行为相同)  	| [1] == [1] 									| 结果为 false                  |编译失败，不能比较	          			  |

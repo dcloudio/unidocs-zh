@@ -60,6 +60,32 @@ Official website address: [uniapp.dcloud.io](https://uniapp.dcloud.io)
     ```html
     <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg" class="zooming" data="abc" width="100" height="100" />
     ```
+
+12. md 表格支持行、列合并，支持无表头表格
+    - 行列合并
+        ```md
+        |Stage | Direct Products | ATP Yields|
+        |----: | --------------: | ---------:|
+        |Glycolysis | 2 ATP ||
+        |^^ | 2 NADH | 3--5 ATP |
+        |Pyruvaye oxidation | 2 NADH | 5 ATP |
+        |Citric acid cycle | 2 ATP ||
+        |^^ | 6 NADH | 15 ATP |
+        |^^ | 2 FADH2 | 3 ATP |
+        |**30--32** ATP |||
+        ```
+    - 无表头表格
+        ```md
+        |--|--|--|--|--|--|--|--|
+        |♜|  |♝|♛|♚|♝|♞|♜|
+        |  |♟|♟|♟|  |♟|♟|♟|
+        |♟|  |♞|  |  |  |  |  |
+        |  |♗|  |  |♟|  |  |  |
+        |  |  |  |  |♙|  |  |  |
+        |  |  |  |  |  |♘|  |  |
+        |♙|♙|♙|♙|  |♙|♙|♙|
+        |♖|♘|♗|♕|♔|  |  |♖|
+        ```
 ## 文档 Algolia 使用限额
 Included Quota:
 - Records: 1,000,000

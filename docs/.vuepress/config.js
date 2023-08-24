@@ -89,6 +89,17 @@ module.exports = merge({
         .end()
         .plugin('inject-json-to-md')
         .use(require('./markdown/inject-json-to-md'))
+        .end()
+        .plugin('multimd-table')
+        .use(require('markdown-it-multimd-table'), [
+					{
+						multiline: false,
+						rowspan: true,
+						headerless: true,
+						multibody: false,
+						aotolabel: false,
+					},
+				])
     }
   },
   chainWebpack (config, isServer) {

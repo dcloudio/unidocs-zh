@@ -178,7 +178,7 @@ uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在
 |   								   | let c: Long = 1; number + c 				  | 结果为 number       			   |结果为 number 							  |
 |                    			       | let d: Int64 = 1; number+ d      			  | 结果为 number      			   |结果为 number							  |
 | 字面量 + number				       | 1 + number 								  | 结果为 number                   |结果为 number 							  |
-|   				      			   | 1 + number 								  | 结果为 number                   |结果为 number 							  |
+|   				      			   | 3.14 + number 								  | 结果为 number                   |结果为 number 							  |
 | 变量 + number				           | let a: Int = 1; a + number 				  | 结果为 number                   |编译失败，需要用 (a as number) + number 	  |
 |   				      			   | let b: Double = 1; b + number 				  | 结果为 number                   |编译失败，需要用 (b as number) + number	  |
 |   				      			   | let c: Long = 1;  c + number  				  | 结果为 number                   |编译失败，需要用 (c as number) + number 	  |

@@ -9,8 +9,8 @@
 |description|String					|-				|应用描述							|					|
 |versionName|String					|-				|版本名称，例如：1.0.0				|					|
 |versionCode|String					|-				|版本号，仅包含数字字符，例如：100		|					|
-|uni-app-x	|[UNI-APP-X配置](#uniappx)	|- 		|uni-app x项目配置					|					|
-|app		|[APP配置](#app)		|- 				|App项目（原生App端）配置				|					|
+|uni-app-x	|[UNI-APP-X配置](#uniappx)	|- 			|uni-app x项目配置					|					|
+|app		|[APP配置](#app)		|- 					|App项目（原生App端）配置				|					|
 
 **注意**  
 - `appid` 由 DCloud 云端分配，主要用于 DCloud 相关的云服务，请勿自行修改。[详见](https://ask.dcloud.net.cn/article/35907)
@@ -31,7 +31,7 @@ App端（原生App）配置
 
 |属性			|类型					|默认值			|描述								|最低版本			|
 |:-				|:-						|:-				|:-									|:-					|
-|distribute		|[DISTRIBUTE配置](#distribute)	|-	|App端发布配置						|					|
+|distribute		|[DISTRIBUTE配置](#distribute)	|-		|App端发布配置						|					|
 
 
 ### DISTRIBUTE配置@distribute  
@@ -40,8 +40,8 @@ App端发布配置
 |属性			|类型					|默认值			|描述								|最低版本			|
 |:-				|:-						|:-				|:-									|:-					|
 |syncDebug		|Boolean				|false			|是否为自定义调试基座					|					|
-|android		|[ANDROID配置](#android)	|-			|App-Android端发布配置				|					|
-|ios			|[IOS配置](#ios)		|-				|App-iOS端发布配置					|					|
+|android		|[ANDROID配置](#android)	|-				|App-Android端发布配置				|					|
+|ios			|[IOS配置](#ios)			|-				|App-iOS端发布配置					|					|
 
 
 ### ANDROID配置@android  
@@ -81,7 +81,7 @@ App-iOS端发布配置
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "uni-app-x":{
-      "enable": true  
+      "flex-direction": "column"  
     },
     "vueVersion" : "3",
 	"app": {

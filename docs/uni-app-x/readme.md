@@ -103,6 +103,7 @@ uni-app x 一期，只包括基本的组件和API。
 - [x] swiper
 - [x] text
 - [x] image
+- [x] rich-text
 - [x] button
 - [x] input
 - [x] textarea
@@ -123,13 +124,11 @@ uni-app x 一期，只包括基本的组件和API。
 - waterfall/grid-view：会补充
 - uniCloud-db：会补充
 - ad：会补充
-- rich-text：可改用web-view渲染；也可以拼接多个text、image组件；如果仅是文字样式变化，text组件也支持简单的嵌套
 - editor：只能用web-view来加载
 - map：需开发uts组件。或使用web-view中的地图
 - live-pusher：需开发uts组件
 - form
 - label
-
 
 ## 4. uni的API
 

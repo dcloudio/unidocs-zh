@@ -419,8 +419,37 @@ console.log(baz);
 ```ts
 const l = b!.length
 ```
+<!-- 
+#### vue data中null的用法
 
+很多时候，data的数据需要通过script获取，而 uts 不支持 undefined，初始化时就只能赋null。
 
+```html
+<script lang=uts>
+	type PersonType = {
+		id: number,
+	    name: string,
+		age: number
+	}
+	export default {
+		data() {
+			return {
+				person: null as PersonType | null,
+			}
+		},
+		onLoad() {
+			this.person = JSON.parse(`{
+				id: 1, 
+				name: "zhangsan", 
+				age: 18,
+				address: {city: "beijing",street: "dazhongsi road"}
+			}`) as PersonType
+			console.log(this.person?.address?.city);
+		}
+	}
+</script>
+```
+ -->
 ### 日期（Date）@date
 
 日期对象表示日期，包括年月日时分秒等各种日期。
@@ -439,7 +468,7 @@ const year:number = myDate.getFullYear()
 Date对象还有很多方法属性，[详见](buildin-object-api/date.md)
 
 
-### 数组（Array）
+### 数组（Array）@array
 
 Array，即数组，支持在单个变量名下存储多个元素，并具有执行常见数组操作的成员。
 
@@ -469,10 +498,13 @@ let a2 = [1,'2',3];//支持
 let a3 = [1,,2,3];//不支持
 ```
 
+如果想定义一个空数组，则不能依赖编译器的自动推导，需显式声明空数组的类型。见下
+
 2. 使用:Array<>定义数组项的类型
 
 ```ts
 const a1:Array<string> = ["uni-app", "uniCloud", "HBuilder"] //表示数组内容都是string。如不能确定可以写Array<any>
+let a2:Array<number> = []; //定义一个数字类型的空数组
 ```
 
 3. 使用[]定义数组项的类型
@@ -486,6 +518,17 @@ let a1 = new Array(1,2,3);//支持
 let a2 = new Array(1,'2',3);//安卓平台支持, iOS 平台不支持，在 iOS 中创建 Any[] 数组请直接使用数组字面量，如 let a2 = [1. '2', 3]
 let a3 = Array(1,2,3);//支持
 let a4 = Array(1,'2','3');//安卓平台支持, iOS 平台不支持，在 iOS 中创建 Any[] 数组请直接使用数组字面量，如 let a4 = [1,'2','3']
+```
+
+5. uvue的data定义数组
+```ts
+export default {
+	data() {
+		return {
+			listdata: [] as Array<UTSJSONObject>,
+		}
+	}
+}
 ```
 
 字面量创建的数组，在uts的老版本上，kotlin自动推导数组类型时，可能会推导成intArray，而不是uts的array。建议显式声明类型。

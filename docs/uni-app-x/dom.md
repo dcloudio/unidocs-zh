@@ -1,23 +1,42 @@
 # UVUE DOM  
-UVEU页面在渲染过程中会生成对应的文档对象模型（DOM），DOM 是页面文档结构和内容的对象的数据表示。DOM 模型用一个逻辑树来表示一个页面文档，树的每个分支的终点都是一个节点，每个节点都对应一个节点对象（INode）。  
-你可以调用 DOM API 操作页面的这个逻辑树，从而改变页面的结构、样式或者内容。  
 
-通常情况下，我们建议使用 vue 框架的数据绑定来操作更新页面组件。但在一些特定场景，如响应触屏事件更新组件的位置实现跟手拖拽效果，可以通过 DOM API 跳过 vue 框架直接操作组件的样式，从而达到更高的效率。
+App-uvue的每个页面，在内存中都有一个 DOM（文档对象模型）。它和浏览器的 [DOM规范](https://www.w3.org/DOM/?spm=a2c7j.-zh-docs-api-weex-variable.0.0.2a5537c6FrgbYp) 类似。
 
-**注意**  
-在 App 端UVUE页面的 DOM 和 [W3C的DOM规范](https://www.w3.org/DOM/?spm=a2c7j.-zh-docs-api-weex-variable.0.0.2a5537c6FrgbYp)有一些差别，暂不支持直接使用 document 对象创建和操作 DOM 树中的元素。请参考[获取DOM元素对象](#getDomNode)中的示例。
+DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示一个页面文档，树的每个分支的终点都是一个节点，每个节点都对应一个节点对象（INode）。
 
+实际上 app-uvue 的template、数据绑定，在底层调用的也是 DOM API。
+
+在浏览器中，开发者一旦跳过vue框架直接操作dom，vue框架将无法管理相应dom，开发者需要注意两端的冲突。
+
+在 App 端，为了减少冲突，目前不支持通过 DOM API 创建和删除 DOM 树中的元素。只支持获取元素INode。
+
+## 使用场景
+通常情况下，使用 uvue 框架的数据绑定来操作更新页面组件就可以。但有2个场景，需要使用 DOM API。
+
+1. 跟手动效
+
+	响应触屏事件更新组件的位置，要想不掉帧，需要保证16毫秒绘制一帧。
+	
+	uvue的data更新，有一套diff机制，每次触发data更新，会多几毫秒的耗时。
+	
+	此时推荐通过 DOM API 跳过 vue 框架直接操作组件的样式。
+
+2. Draw API
+
+	Android和iOS的原生view，有一些底层的高性能绘制能力，这些API的调用，需要先获取到INode对象，然后再调用其方法。
 
 ## 获取DOM元素对象@getDomNode  
-在UVUE页面中可以通过 vue 框架中的组件实例对象 [$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。  
 
-首先需要为组件设置 ref 属性值：
+app-uvue页面中可以通过 vue 框架中的组件实例对象 [$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。  
+
+首先需要为组件设置 ref 属性值，它类似于id：
 ```vue
 <!-- ref 属性值为 myNode，后续可以通过此值查找 -->
 <view ref="myNode" class="container">
 </view>
 ```
-在页面生命周期 `onReady` 中通过 $refs 获取，如果长期使用，建议保存在vue的 data 中：
+
+在页面生命周期 `onReady` 中（太早组件可能没有创建），通过 `$refs` 获取。如果长期使用，可以保存在vue的 data 中。
 ```ts
 export default {
 	data() {
@@ -31,6 +50,7 @@ export default {
 	},
 }
 ```
+
 通过INode对象的 style 属性更新组件的样式：
 ```ts
 this.myNode?.style?.setProperty('background-color', 'red');
@@ -86,6 +106,7 @@ this.myNode?.style?.setProperty('background-color', 'red');
 </style>
 ```
 
+以上例子仅为演示DOM API的使用，实际上点击按钮修改背景色这种简单场景，使用数据绑定更简单，class绑定到一个data上，动态修改data即可。
 
 ## DOM接口  
 - [INode](dom/inode.md)  

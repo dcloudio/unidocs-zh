@@ -110,6 +110,6 @@ this.myNode?.style?.setProperty('background-color', 'red');
 
 ## DOM接口  
 - [INode](dom/inode.md)  
-- [CSSStyleDeclaration](dom/cssstyle.md)  
+- [CSSStyleDeclaration](dom/cssstyledeclaration.md)  
 - [DrawableContext](dom/drawablecontext.md)  
 

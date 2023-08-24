@@ -62,6 +62,7 @@ App-Android端发布配置
 - `minSdkVersion` 用于指定应用运行所需最低 API 级别的整数。如果系统的 API 级别低于该属性中指定的值，Android 系统将阻止用户安装应用。  
 - `targetSdkVersion` 一个用于指定应用的目标 API 级别的整数。如果未设置，其默认值与为 minSdkVersion 指定的值相等。该值用于通知系统，您已针对目标版本进行了测试，并且系统不应通过启用任何兼容性行为，以保持您的应用与目标版本的向前兼容性。  
 - `minSdkVersion` 和 `targetSdkVersion` 设置的值是 API 级别（API Level），完整API级别信息请参考[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)  
+- `keystore`、`storepwd`、`aliasname`、`keypwd`为云端打包证书相关配置，在HBuilderX中提交云端打包时使用，不要手动修改  
 
 
 ### IOS配置@ios  
@@ -89,10 +90,6 @@ App-iOS端发布配置
 			"syncDebug": true,
 			"android": {
 				"packagename": "Android包名",
-				"keystore": "证书库文件路径",
-				"storepwd": "证书库密码",
-				"aliasname": "证书别名",
-				"keypwd": "证书密码",
 				"abiFilters": [
 					"armeabi-v7a","arm64-v8a"
 				],

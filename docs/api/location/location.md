@@ -227,3 +227,15 @@ uni.chooseLocation({
 DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
+
+### unicloud-city-select 城市选择组件
+
+若想要实现城市选择功能，可以使用 `unicloud-city-select` 城市选择组件。
+
+**运行效果图**
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/410.png)
+
+> 下载地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-city-select](https://ext.dcloud.net.cn/plugin?name=unicloud-city-select)
+
+> 文档地址：[https://uniapp.dcloud.net.cn/uniCloud/unicloud-city-select.html](https://uniapp.dcloud.net.cn/uniCloud/unicloud-city-select.html)

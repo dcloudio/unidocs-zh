@@ -1,26 +1,42 @@
 let cssJson = {};
 let utsJson = {};
+let utsApiJson = {};
 try {
 	cssJson = require(`../utils/${process.env.DOCS_LOCAL}/cssJson.json`);
 } catch (error) {}
 try {
 	utsJson = require(`../utils/${process.env.DOCS_LOCAL}/utsJson.json`);
 } catch (error) {}
+try {
+	utsApiJson = require('../utils/utsApiJson.json');
+} catch (error) {}
+
+function getRegExp(key) {
+	return new RegExp(`<!--\\s*${key}.([\\w\\W]+[^\\s])\\s*-->`)
+}
 
 const getJSON = text => {
-	let match = text.match(/<!--\s*CSSJSON.([\w\W]+[^\s])\s*-->/);
+	let match = text.match(getRegExp('CSSJSON'));
 	if (match) {
 		return {
 			match,
 			json: cssJson,
 		};
 	}
-
-	match = text.match(/<!--\s*UTSJSON.([\w\W]+[^\s])\s*-->/);
+	
+	match = text.match(getRegExp('UTSJSON'));
 	if (match) {
 		return {
 			match,
 			json: utsJson,
+		};
+	}
+	
+	match = text.match(getRegExp('UTSAPIJSON'));
+	if (match) {
+		return {
+			match,
+			json: utsApiJson,
 		};
 	}
 
@@ -33,8 +49,8 @@ const getJSON = text => {
 module.exports = function (md, opts) {
 	if (Object.keys(cssJson) === 0) return false;
 	md.core.ruler.after('inline', 'merge-css', function (state) {
-		/* const ids = []
-		let idIdx = 1 */
+		const ids = []
+		let idIdx = 1
 		for (let index = 0; index < state.tokens.length; index++) {
 			const blockToken = state.tokens[index];
 			if (blockToken.type === 'html_block') {
@@ -47,9 +63,9 @@ module.exports = function (md, opts) {
 						if (!temp) return false;
 						temp = temp[key];
 					});
-					if (!temp) continue
-					const parseTokens = md.parse(temp, undefined, false);
-					/* parseTokens.forEach(token => {
+					if (!temp) continue;
+					const parseTokens = md.parse(temp);
+					parseTokens.forEach(token => {
 						if (token.type === 'heading_open') {
 							const id = token.attrGet('id')
 							if(ids.includes(id)) {
@@ -58,7 +74,7 @@ module.exports = function (md, opts) {
 								ids.push(id)
 							}
 						}
-					}) */
+					})
 					state.tokens.splice(index, 1, ...parseTokens);
 					index = index + parseTokens.length - 1;
 					// blockToken.content = temp

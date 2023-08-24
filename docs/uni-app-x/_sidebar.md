@@ -89,6 +89,7 @@
   * [text-decoration-thickness](css/text-decoration-thickness.md)
   * [visibility](css/visibility.md)
   * [lines](css/lines.md)
+* [API](api.md)
 * [事件](event.md)
 <!-- * [新建项目]()
   * [1. 通过 HBuilderX 可视化界面](quickstart-hx.md)

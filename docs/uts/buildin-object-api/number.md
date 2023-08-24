@@ -137,3 +137,14 @@ console.log(a.toLong());
 <!-- UTSJSON.Number.toULong.returnValue -->
 
 <!-- UTSJSON.Number.toULong.compatibility -->
+
+
+### from()
+
+<!-- UTSJSON.Number.from.description -->
+
+<!-- UTSJSON.Number.from.param -->
+
+<!-- UTSJSON.Number.from.returnValue -->
+
+<!-- UTSJSON.Number.from.compatibility -->

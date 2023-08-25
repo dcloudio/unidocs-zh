@@ -11,12 +11,12 @@
 比如 `"abc"`和`"你好"`，都属于字符串string，所有string类型有相同的方法、属性，比如`.length`属性获取字符串长度。
 
 UTS 的类型有：
-- 基础类型：boolean、number、string、any、null，都是小写，typeof返回类型名称
+- 基础类型：boolean、number、string、any、null，都是小写，前3个typeof返回类型名称，null的typeof是object，any的typeof是当时值的类型。
 - 对象类型：Date、Array、Map、Set、USTJSONObject，首字母大写，typeof返回"object"，判断准确类型需使用 instanceof 
 - 使用 type 来自定义类型
 - 特殊类型：function、class、error。
 - 平台专有类型：Int、Float、Double、NSString、kotlin.Array...，typeof返回"object"，判断准确类型需使用 instanceof 
-<!-- TODO map -->
+
 除了特殊类型，其他类型都可以在变量后面通过`:`加类型名称来给这个变量声明类型。
 
 ### 布尔值（boolean）
@@ -142,7 +142,7 @@ let d:Int8 = 1 // Int8是swift平台专有类型
 
 不管是 ts 、kotlin 还是 swift，都具备字面量自动推导类型的能力，为 a 自动推导合适的类型。
 
-**目前版本中，在未显式声明类型的情况下使用数字字面量赋值、传参，由平台语言自动推导为相应的类型**
+**在HBuilderX 3.9版之前，在未显式声明类型的情况下使用数字字面量赋值、传参，由平台语言自动推导为相应的类型**
 
 但不同平台，推导结果不一样。
 
@@ -154,22 +154,46 @@ let d:Int8 = 1 // Int8是swift平台专有类型
 
 a 会被自动推导成什么类型？是Int、double、还是number？值是0还是0.1？在不同平台的差异更大。
 
-在web端，a 的类型是 number，值是0.1，但在 kotlin 中，类型是 Int，值是0.
+在web端，a 的类型是 number，值是0.1，但在 kotlin 中，类型是 Int，值是0。
 
-**为了统一各平台对字面量的自动推导规则，后续 uts 将接管和统一字面量类型推导。所有数字字面量、以及数字字面量组成的运算表达式，均默认推导为 number类型。**
+**HBuilderX 3.9起 uts 提供了新的字面量类型推导规则：**
 
-未来，如您需要使用平台专有数字类型，需显式声明，如：
+**在定义变量时，且没有显式声明变量类型，通过数字字面量以及数字字面量组成的运算表达式来给变量赋值，此时变量类型默认推导为 number类型。**
+
+举例说明：
+- HBuilderX3.9前，运行到App，由kotlin和swift编译器推导
 ```ts
-let c:Int = 42 //显式声明为Int
+let a = 1  // 类型为Int
+let b = 1/10 // 类型为Int，值为0
+```
 
+- HBuilderX3.9起，运行到App，未显式声明类型的变量，需根据数字字面量推导变量类型，此时由 uts 编译器推导，变量类型默认为 number
+```ts
+let a = 1  // 类型为number
+let b = 1/10 // 类型为number，值为0.1
+```
+
+如您已经显式声明变量类型，无需自动推导，则不受上述规则变化影响。不管HBuilderX 3.9之前还是之后，以下代码都是一样的
+```ts
+let a:Int = 1  // 类型为Int
+let b:Int = 1/10 // 类型为Int，值为0
+```
+
+`let a = 1`，a从Int变成number，这是一个**无法向下兼容的更新**，请开发者注意调整。
+
+如果您希望写出同时适配 HBuilder 3.9之前之后版本的代码，只需要显式声明数字的类型。
+
+除了变量类型自动推导，在函数入参的场景，由于参数已经有明确类型，其实无需自动推导类型，入参的数字字面量类型不会变。
+
+```ts
 function test(score: Int): boolean {
 	return (score>=60) 
 }
-test(c)
+test(60) // 这个60可以正常传入
+test(60.0) // 要求是Int，传入了非Int数字字面量，报错
 ```
 
-当您调用系统或三方SDK的方法时，如果这些方法的入参要求Int，您之前直接通过字面量赋值`let a = 42`，就是 Int，但未来会变成 number，
-导致类型不匹配报错。所以强烈建议您现在就更改代码写法，不依赖kotlin和swift的字面量自动推导，直接显式声明类型，改为`let a:Int = 42`
+<!-- TODO 字面量除法 -->
 
 #### 各种数字类型之间的转换
 
@@ -197,8 +221,6 @@ a.toFloat() // 转换为 Float 类型，后续也将支持 new Float(a) 方式�
 a.toDouble() // 转换为 Double 类型，后续也将支持 new Double(a) 方式转换
 ```
 
-<!-- TODO:缺少如何把专有类型转为number @杜庆泉 -->
-
 ##### swift下转换数字类型
 ```ts
 // number转成特定类型
@@ -218,7 +240,7 @@ let a:Int = 3
 let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 ```
 
-#### 从平台特有类型便捷创建 Number
+#### Number.from
 为了将 kottlin 或者 Swift 平台专有的数字类型便捷的转成Number，我们提供了 Number.from() 的静态方法。该方法适用于上一章节中所列出的所有的专有数字类型。
 
 ```ts
@@ -248,8 +270,17 @@ let e1 = Number.from(e)
   * 编译至 Kotlin 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，超出范围会报错：`The value is out of range‌`。浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会返回 `Infinity` 或 `-Infinity`。平台专有数字类型范围 [详见](#Kotlin)。
   * 编译至 Swift 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会报错：`integer literal overflows when stored into 'NSNumber'`。平台专有数字类型范围 [详见](#Swift)
 
+#### 运算和比较
+
+既然数字类型有很多，就涉及跨类型的数字之间的运算和比较的问题。
+
+跨类型数字的运算，比如加减乘除取余，是什么样的？Int+number可以吗？详见 [算数运算符](operator.md#arithmeticdifftype)
+
+跨类型数字的比较，大于小于等于不等于的规则是什么样的？详见 [比较运算符](operator.md#comparisondifftype)
+
 #### 更多API
-number内置对象有不少API，[详见](buildin-object-api/number.md)
+
+Number内置对象还有很多API，[详见](buildin-object-api/number.md)
 
 ### 字符串（string） @string
 
@@ -776,7 +807,7 @@ Map对象还有很多API，delete、clear等，[详见](buildin-object-api/map.m
 
 json 在 js 中并非一个独立的类型，对一个 json 对象 typeof 返回的是 object。
 
-json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、swift、dart...，都没有这么灵活。：
+json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、swift、dart...，都没有这么灵活。
 
 1. json对象里的每个属性，都需要定义类型
 2. 每个可为空的属性，都需要加`?.`，才能安全读写
@@ -785,7 +816,7 @@ json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、sw
 
 在 uts 中使用 JSON，有3种方式：
 
-1. 把 json数据转 type，变成一个自定义类型。这不是本章节的内容，详见 [type](type-aliases.md)
+1. 把 json数据转 type，变成一个自定义类型。这不是本章节的内容，详见 [type](#type)
 2. uts 新增了 UTSJSONObject 对象，可以把 json数据通过字面量赋值 或 JSON.parse()方式，赋值给 uts 内置的 UTSJSONObject 对象。
 3. 由于 USTJSONObject有toMap()方法，所以也可以转为Map后使用json数据。
 
@@ -835,7 +866,7 @@ let jo = [{
 
 #### 定义 UTSJSONObject
 
-可以通过对象字面量的方式定义一个 UTSJSONObject 对象，编译器会根据字面量自动推导类型。
+可以通过对象字面量的方式定义一个 UTSJSONObject 对象，编译器会根据字面量自动推导类型，此时无需显式声明`:UTSJSONObject`。
 
 ```ts
 let jo = {
@@ -849,7 +880,14 @@ let jo2 = {
 }
 ```
 
-如果属性名包括`-`，则必须两侧加引号包围。尽管在 kotlin 中属性名称包含`$`和`_`等也需要转义，但是 UTS 中是无需特殊处理的，编译器会自动转换。
+关于属性名是否需要使用引号包围的规则：
+1. 如果是对象字面量赋值，普通属性名称无需使用引号包围，但使用也没问题
+2. 如果是对象字面量赋值，且属性名包括`-`，则必须两侧加引号包围。
+3. 如果是JSON.parse()方法入参需要的字符串，则属性名必须使用双引号包围（web端规则也是如此）
+
+如果开发者不想搞明白这些细节，可以简单粗暴的都给属性名都加上引号。
+
+尽管在 kotlin 中属性名称包含`$`和`_`等也需要转义，但是 UTS 中是无需特殊处理的，编译器会自动转换。
 
 对于纯字面量，jo 后面的 `:UTSJSONObject` 可以省略，这些类型比较简单，可以自动推导类型。包括下面的多层嵌套，类型也不会推导出错。
 
@@ -865,14 +903,14 @@ let rect = {
 console.log(rect)
 ```
 
-也就是对于形如`{x:samething}`的对象字面量，如果赋值时不指定类型，在 uts 中会被自动推导为 UTSJSONObject。如果你需要转 type，则需显式声明。
+也就是对于形如`{x:something}`的对象字面量，如果赋值时不指定类型，在 uts 中会被自动推导为 UTSJSONObject。如果你需要转 type，则需显式声明。
 
 除了字面量定义UTSJSONObject对象，经常用到的是通过 `JSON.parse()`，把一个 JSON 字符串转成UTSJSONObject对象。
 
 uts 内置了大写的 `JSON` 对象，有parse()、stringify()等方法。注意`JSON`和`UTSJSONObject`不是一个对象。大写 `JSON` 内置对象，web端也是存在的。而 UTSJSONObject 是 uts 新增的。
 
 ```ts
-let s = `{"result":true, "count":42}` // 常见场景中，这个字符串更多来自于网络或其他应用传输。
+let s = `{"result":true, "count":42}` // 常见场景中，这个字符串更多来自于网络或其他应用传输。注意属性名称必须使用引号包围
 let jo = JSON.parse(s) // 这个代码适用于HBuilderX 3.9以前
 ```
 
@@ -1085,10 +1123,12 @@ let i:tn = 0  // 等同于 let i:number = 0
 
 上述简单的例子在实际开发中没有意义。
 
-在 ts 中常见的用途是给联合类型命名，方便后续简化使用。但 uts 在app端不支持联合类型，在 uts 中用的比较多的场景是给[函数类型](./function.md#%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B)定义别名，以便在共享给其他模块使用。
+在 ts 中常见的用途是给联合类型命名，方便后续简化使用。但 uts 在app端不支持联合类型，在 uts 中用的比较多的场景是：
 
+1. 给[函数类型](./function.md#%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B)定义别名，以便在共享给其他模块使用。
+2. 用于json对象的定义，在编译为kotlin和swift时，会编译为class。
 
-uts 中，type一般用于对象的定义，在编译为kotlin和swift时，会编译为class。
+本章节重点讲解如何把json数据转为type。
 
 #### 把json对象转为type
 
@@ -1113,9 +1153,11 @@ console.log(person.name) //返回zhangsan
 
 可以看到，变量person，和js里使用json没有任何区别了。支持`.`操作符，无需下标，可跨平台。
 
-所以在ts开发中，很多开发者就会把缺少类型的json数据变成一个type，继续像js里那样使用这个json数据。
+与UTSJSONObject相比，虽然多了一个type定义的过程，但使用体验更流畅，也可以在ide中自由的`.`，并且得到良好的提示。
 
-但是在uts中，由于interface的概念在kotlin和swift有其他用途，所以uts中推荐开发者把json转成一个type，而不是interface。
+所以在ts开发中，很多开发者就会把缺少类型的json数据变成一个type或interface，继续像js里那样使用这个json数据。
+
+但在uts中，由于interface的概念在kotlin和swift有其他用途，所以uts中推荐开发者把json转成一个type，而不是interface。
 
 #### 把json数组转为type
 
@@ -1138,7 +1180,7 @@ console.log(personList[0].name); //返回zhangsan
 type PersonType = {
 	id : number,
 	name : string,
-	age : number | null
+	age : number | null //属性可为null
 }
 
 let personList = [
@@ -1232,11 +1274,29 @@ let person = {
 } as PersonType
 ```
 
+#### 通过JSON.parse转type
+
+HBuilderX 3.9+，支持JSON.parse传入泛型，把一段字符串解析为type。
+
+```ts
+type PersonType = {
+	id: number,
+	name: string
+}
+let jsonString:string = `{
+	"id": 1, 
+	"name": "zhangsan", 
+}` // 注意属性必须使用引号包围，否则parse会解析失败返回null
+
+let person = JSON.parse<PersonType>(jsonString) //这是一种泛型的写法，在方法名后面使用<>传入PersonType类型，就可以返回传入的类型。
+console.log(person?.name);  // 返回zhangsan。由于person可能为null，parse可能失败，所以需要通过?.来访问属性
+```
+
 #### json转type工具
 
 如果json数据属性较多、嵌套较多，那么为json数据编写type类型定义，也是一件繁琐的事情。
 
-HBuilderX 3.9起内置了一个json转type工具，在json编辑器中右键，选择json转type，即可根据json数据内容自动推导生成type定义。
+HBuilderX 3.9起内置了一个json转type工具，在`json编辑器`中右键，选择`json转type`，即可根据json数据内容自动推导生成type定义。
 
 #### 为vue的data中的json定义类型
 
@@ -1262,15 +1322,40 @@ uvue文件中data中的json数据也涉及类型定义。此时注意：type定�
 	}
 </script>
 ```
-<!-- 
-大多数情况下，data里的json数据是空的，联网从服务器取到一段json字符串，然后再赋值并转type。
+
+大多数情况下，data里的json数据是空的，联网从服务器取到一段json字符串，然后再赋值并转type。下面是一段示例。
 
 ```html
-
+<template>
+	<text>{{person?.name}}</text>
+</template>
+<script>
+	// 注意给data定义type，要写在export default的上面
+	type PersonType = {
+		id: number,
+	    name: string,
+		age: number,
+	}
+	export default {
+		data() {
+			return {
+				person: null as PersonType | null,  // data初始时没有值，只能设为null，然后类型就需要 | null。
+			}
+		},
+		onLoad() {
+			let jsonString:string = `{
+				"id": 1, 
+				"name": "zhangsan", 
+				"age": 18
+			}` // 注意属性必须使用引号包围，否则parse会解析失败返回null
+			// 实际开发中，需写联网代码获取字符内容。
+			this.person = JSON.parse<PersonType>(jsonString) //这是一种泛型的写法，在方法名后面使用<>传入PersonType类型，就可以返回传入的类型。
+			console.log(this.person?.name);  // 返回zhangsan。由于person可能为null，需要通过?.来访问属性
+		}
+	}
+</script>
 ```
 
-TODO type自定义类型的方法
- -->
 ### 其他
 
 - 关于undefined
@@ -1278,5 +1363,3 @@ TODO type自定义类型的方法
 js中的 undefined类型表示变量被定义，但是未赋值或初始化。
 
 uts 编译为kotlin和swift时不支持 undefined。即不允许变量未赋值。每个有类型的变量都需要初始化或赋值。
-
-

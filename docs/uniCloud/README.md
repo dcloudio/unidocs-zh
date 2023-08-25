@@ -32,7 +32,7 @@ uniCloud provides a free service space for each developer, so that you can also 
 ### Watch the video, just 25 minutes, get started quickly with uniCloud
 
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=1">
-	<div style="height: 32vw;width: 50vw;background-image: url(https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg);background-size: 100% 100%;"></div>
+	<img style="max-height: 512px;max-width: 800px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg"></img>
 </a>
 
 ### uniCloud是什么和不是什么
@@ -339,7 +339,6 @@ The wheel above is a general-purpose wheel that has nothing to do with business.
 使用这些现成的项目模板，那开发效率更是极大幅的提升。过去5、6人月的项目，现在几天就能搞定上线！
 Using these ready-made project templates, the development efficiency is greatly improved. Projects that took 5 or 6 person-months in the past can now be launched in a few days!
 
-|				|			|					|
 |--				|--			|--					|
 |电商			|博客		|排班				|
 |E-commerce |Blog |Scheduling |

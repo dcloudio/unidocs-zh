@@ -1,6 +1,7 @@
 let cssJson = {};
 let utsJson = {};
 let utsApiJson = {};
+let utsComJson = {};
 try {
 	cssJson = require('../utils/cssJson.json');
 } catch (error) {}
@@ -9,6 +10,9 @@ try {
 } catch (error) {}
 try {
 	utsApiJson = require('../utils/utsApiJson.json');
+} catch (error) {}
+try {
+	utsComJson = require('../utils/utsComJson.json');
 } catch (error) {}
 
 function getRegExp(key) {
@@ -37,6 +41,14 @@ const getJSON = text => {
 		return {
 			match,
 			json: utsApiJson,
+		};
+	}
+
+	match = text.match(getRegExp('UTSCOMJSON'));
+	if (match) {
+		return {
+			match,
+			json: utsComJson,
 		};
 	}
 

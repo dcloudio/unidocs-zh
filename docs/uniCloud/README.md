@@ -19,7 +19,7 @@ uniCloud为每个开发者提供一个免费服务空间，让你也可以拥有
 ### 看视频，只需25分钟，快速入门uniCloud
 
 <a target="_blank" href="https://www.bilibili.com/video/BV17p4y1a71x?p=1">
-	<div style="height: 32vw;width: 50vw;background-image: url(https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg);background-size: 100% 100%;"></div>
+	<img style="max-height: 512px;max-width: 800px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210512183320.jpg"></img>
 </a>
 
 ### uniCloud是什么和不是什么
@@ -220,7 +220,6 @@ uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，�
 上面的轮子，是与业务无关的通用轮子。除此之外，还有大量的云端一体的项目模板。
 使用这些现成的项目模板，那开发效率更是极大幅的提升。过去5、6人月的项目，现在几天就能搞定上线！
 
-|				|			|					|
 |--				|--			|--					|
 |电商			|博客		|排班				|
 |网赚合成游戏	|社交		|预约预订			|

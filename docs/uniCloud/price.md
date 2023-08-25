@@ -61,7 +61,7 @@ Paid users enjoy the service agreement SLA provided by Alibaba Cloud and Tencent
 |^^		|CDN流量（GB/月）		|1		|2		|10		|50		|150	|500	|
 |前端网页托管	|容量（GB）				|5		|8		|10		|50		|100	|500	|
 |^^		|CDN流量（GB/月）		|1		|2		|10		|50		|150	|500	|
-|售价（元/月）	|						|免费	|5		|24		|82		|316	|688	|
+|售价（元/月）	||免费	|5		|24		|82		|316	|688	|
 
 - GBs、RU、WU等单位释义，[见下](#aliyun-quota-description)
 - 套餐中的资源超标后服务空间会停服，需要及时升配或转按量计费才能恢复。

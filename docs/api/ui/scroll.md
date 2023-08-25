@@ -36,7 +36,7 @@ selector类似于 CSS 的选择器，但仅支持下列语法。
 1. app-uvue支持的选择器较少，不支持ID选择器，[详见](../../uni-app-x/css/readme.md#选择器)
 2. app-uvue的页面滚动，是由页面最外层的scroll-view模拟的，如果页面最外层不是scroll-view，无法使用本api。[详见](../../uni-app-x/css/readme.md#pagescroll)
 3. app-uvue的scroll-view滚动时，如需动画，则需要在scroll-view的属性中配置 `scroll-with-animation="true"`，[详见](../../component/scroll-view.md)
-4. scroll-view的滚动，另见API
+4. scroll-view的滚动，设置其scrollTop即可。[详见](../../component/scroll-view.md)
 
 **示例**
 

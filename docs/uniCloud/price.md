@@ -105,7 +105,7 @@ Alibaba Cloud pay-as-you-go service spaces are priced as follows:
 |^^		|上传操作次数（万次）	|0.01		|
 |^^		|CDN 流量（GB）			|0.18		|
 |前端网站托管	|容量（GB/天）			|0.0043		|
-|流量（GB）||0.18		|
+|^^ |流量（GB）|0.18		|
 
 **注意**
 - GBs、RU、WU等单位释义，[见下](#aliyun-quota-description)
@@ -203,7 +203,7 @@ Due to insufficient upstream reserves, there are still some quotas for the uniCl
 
 ### 申请解除限制邮件模板@apply-email-template
 
-```text
+```md
 邮件标题：云函数数量限制提升申请 | 服务空间数量限制提升申请 | 集合数量限制提升申请 | 云函数域名代理需求申请
 
 邮件内容：

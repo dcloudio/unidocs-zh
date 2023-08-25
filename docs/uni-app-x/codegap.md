@@ -79,7 +79,12 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 </style>
 ```
 
-## 函数 event 参数需显式指定类型
+## 不同的函数定义方式有不同的限制
+
+* 函数声明方式不支持[作为值传递](../uts/function.md#作为值传递)
+* 函数表达式方式不支持[默认参数](../uts/function.md#默认参数)
+
+## 模板函数 event 参数需显式指定类型
 
 ```html
 <view @click="(e: any) => foo(e)">event must has type</view>

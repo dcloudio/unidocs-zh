@@ -1134,78 +1134,78 @@ video 组件必须设置了 id 才能使用。
 
 ### program(全局对象)
 
-|方法							|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明																																|
-|--								|--				|--			|--	|--					|--					|--																																	|
-|pageStack				|√				|√			|√	|√					|√					|获取小程序页面堆栈																									|
-|navigateTo				|√				|√			|√	|√					|√					|保留当前页面，跳转到应用内的某个页面，同`uni.navigateTo`						|
-|redirectTo				|√				|√			|√	|√					|√					|关闭当前页面，跳转到应用内的某个页面，同`uni.redirectTo`						|
-|navigateBack			|√				|√			|√	|√					|√					|关闭当前页面，返回上一页面，同`uni.navigateBack`										|
-|reLaunch					|√				|√			|√	|√					|√					|关闭所有页面，打开到应用内的某个页面，同`uni.reLaunch`							|
-|switchTab				|√				|√			|√	|√					|√					|跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，同`uni.switchTab`|
-|currentPage			|√				|√			|√	|√					|√					|获取当前页面																												|
-|systemInfo				|√				|√			|√	|√					|√					|获取系统信息，同`uni.getSystemInfo`																|
-|pageScrollTo			|x				|√			|√	|√					|√					|将页面滚动到目标位置，同`uni.pageScrollTo`													|
-|callUniMethod		|√				|√			|√	|√					|√					|调用 uni 对象上的指定方法																					|
-|screenshot				|√				|√			|√	|√					|x					|对当前页面截图，目前只有开发者工具模拟器支持，客户端无法使用				|
-|mockUniMethod		|√				|√			|√	|√					|√					|覆盖 uni 对象上指定方法的调用结果																	|
-|restoreUniMethod	|√				|√			|√	|√					|√					|重置 uni 指定方法，消除 mockUniMethod 调用的影响										|
-|testAccounts			|x				|x			|x	|√					|x					|获取多账号调试中已添加的用户列表																		|
-|evaluate					|x				|x			|x	|√					|x					|注入代码片段并返回执行结果																					|
-|exposeFunction		|x				|x			|x	|√					|x					|在全局暴露方法，供小程序侧调用测试脚本中的方法											|
+|方法							|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明																																|
+|--								|--				|--			|--	|--					|--					|--					|--																																	|
+|pageStack				|√				|√			|√	|√					|√					|√					|获取小程序页面堆栈																									|
+|navigateTo				|√				|√			|√	|√					|√					|√					|保留当前页面，跳转到应用内的某个页面，同`uni.navigateTo`						|
+|redirectTo				|√				|√			|√	|√					|√					|√					|关闭当前页面，跳转到应用内的某个页面，同`uni.redirectTo`						|
+|navigateBack			|√				|√			|√	|√					|√					|√					|关闭当前页面，返回上一页面，同`uni.navigateBack`										|
+|reLaunch					|√				|√			|√	|√					|√					|√					|关闭所有页面，打开到应用内的某个页面，同`uni.reLaunch`							|
+|switchTab				|√				|√			|√	|√					|√					|√					|跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，同`uni.switchTab`|
+|currentPage			|√				|√			|√	|√					|√					|√					|获取当前页面																												|
+|systemInfo				|√				|√			|√	|√					|√					|√					|获取系统信息，同`uni.getSystemInfo`																|
+|pageScrollTo			|x				|√			|√	|√					|√					|√					|将页面滚动到目标位置，同`uni.pageScrollTo`													|
+|callUniMethod		|√				|√			|√	|√					|√					|√					|调用 uni 对象上的指定方法																					|
+|screenshot				|√				|√			|√	|√					|x					|√					|对当前页面截图，目前只有开发者工具模拟器支持，客户端无法使用				|
+|mockUniMethod		|√				|√			|√	|√					|√					|x					|覆盖 uni 对象上指定方法的调用结果																	|
+|restoreUniMethod	|√				|√			|√	|√					|√					|x					|重置 uni 指定方法，消除 mockUniMethod 调用的影响										|
+|testAccounts			|x				|x			|x	|√					|x					|x					|获取多账号调试中已添加的用户列表																		|
+|evaluate					|x				|x			|x	|√					|x					|x					|注入代码片段并返回执行结果																					|
+|exposeFunction		|x				|x			|x	|√					|x					|x					|在全局暴露方法，供小程序侧调用测试脚本中的方法											|
 
 ### Page
 
-|属性	|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明			|
-|--		|--				|--			|--	|--					|--					|--				|
-|path	|√				|√			|√	|√					|√					|页面路径	|
-|query|√				|√			|√	|√					|√					|页面参数	|
+|属性	|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明			|
+|--		|--				|--			|--	|--					|--					|--					|--				|
+|path	|√				|√			|√	|√					|√					|√					|页面路径	|
+|query|√				|√			|√	|√					|√					|√					|页面参数	|
 
-|方法				|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明												|
-|--					|--				|--			|--	|--					|--					|--													|
-|$					|√				|√			|√	|√					|√					|获取页面元素								|
-|$$					|√				|√			|√	|√					|√					|获取页面元素数组						|
-|waitFor		|√				|√			|√	|√					|√					|等待直到指定条件成立				|
-|data				|√				|√			|√	|√					|√					|获取页面渲染数据						|
-|setData		|√				|√			|√	|√					|√					|设置页面渲染数据						|
-|size				|√				|√			|√	|√					|√					|获取页面大小(width,height)	|
-|scrollTop	|√				|√			|√	|√					|√					|获取页面滚动位置						|
-|callMethod	|√				|√			|√	|√					|√					|调用页面指定方法						|
+|方法				|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明												|
+|--					|--				|--			|--	|--					|--					|--					|--													|
+|$					|√				|√			|√	|√					|√					|√					|获取页面元素								|
+|$$					|√				|√			|√	|√					|√					|√					|获取页面元素数组						|
+|waitFor		|√				|√			|√	|√					|√					|√					|等待直到指定条件成立				|
+|data				|√				|√			|√	|√					|√					|√					|获取页面渲染数据						|
+|setData		|√				|√			|√	|√					|√					|√					|设置页面渲染数据						|
+|size				|√				|√			|√	|√					|√					|√					|获取页面大小(width,height)	|
+|scrollTop	|√				|√			|√	|√					|√					|√					|获取页面滚动位置						|
+|callMethod	|√				|√			|√	|√					|√					|√					|调用页面指定方法，uni-app x args 仅支持一个参数	|
 
 ### Element
-|属性		|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明					|
-|--			|--				|--			|--	|--					|--					|--						|
-|tagName|√				|√			|√	|√					|√					|标签名，小写	|
+|属性		|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明					|
+|--			|--				|--			|--	|--					|--					|--					|--						|
+|tagName|√				|√			|√	|√					|√					|√					|标签名，小写	|
 
-|方法							|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|说明																								|
-|--								|--				|--			|--	|--					|--					|--																									|
-|$								|√				|√			|√	|√					|√					|在元素范围内获取元素																|
-|$$								|√				|√			|√	|√					|√					|在元素范围内获取元素数组														|
-|size							|√				|√			|√	|√					|√					|获取元素大小(width,height)													|
-|offset						|√				|√			|√	|√					|√					|获取元素绝对位置(left,top)													|
-|text							|√				|√			|√	|√					|√					|获取元素文本																				|
-|attribute				|√				|√			|√	|√					|√					|获取元素特性																				|
-|style						|√				|√			|√	|√					|√					|获取元素样式值																			|
-|tap							|√				|√			|√	|√					|√					|点击元素																						|
-|value						|√				|√			|√	|√					|√					|获取元素值																					|
-|callMethod				|√				|√			|√	|√					|√					|调用组件实例指定方法，仅自定义组件可以使用					|
-|html							|√				|√			|√	|√					|√					|获取元素 HTML																			|
-|outerHtml				|√				|√			|√	|√					|√					|同 html，只是会获取到元素本身											|
-|data							|√				|√			|√	|√					|√					|获取组件实例渲染数据，仅自定义组件可以使用					|
-|setData					|√				|√			|√	|√					|√					|设置组件实例渲染数据，仅自定义组件可以使用					|
-|property					|√				|√			|√	|√					|x					|获取元素属性																				|
-|touchstart				|√				|√			|√	|√					|x					|手指开始触摸元素																		|
-|touchmove				|√				|√			|√	|√					|x					|手指触摸元素后移动																	|
-|touchend					|√				|√			|√	|√					|x					|手指结束触摸元素																		|
-|longpress				|√				|√			|√	|√					|x					|长按																				|
-|trigger					|√				|√			|√	|√					|x					|触发元素事件																				|
-|input						|√				|√			|√	|√					|x					|输入文本，仅 input、textarea 组件可以使用					|
-|callContextMethod|x				|x			|x	|√					|x					|调用上下文 Context 对象方法，仅 video 组件可以使用	|
-|scrollWidth			|x				|√			|√	|√					|x					|获取滚动宽度，仅 scroll-view 组件可以使用					|
-|scrollHeight			|x				|√			|√	|√					|x					|获取滚动高度，仅 scroll-view 组件可以使用					|
-|scrollTo					|x				|√			|√	|√					|x					|滚动到指定位置，仅 scroll-view 组件可以使用				|
-|swipeTo					|√				|√			|√	|√					|x					|滑动到指定滑块，仅 swiper 组件可以使用							|
-|moveTo						|√				|√			|√	|√					|x					|移动视图容器，仅 movable-view 组件可以使用					|
-|slideTo					|√				|√			|√	|√					|x					|滑动到指定数值，仅 slider 组件可以使用							|
+|方法							|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明																								|
+|--								|--				|--			|--	|--					|--					|--					|--																									|
+|$								|√				|√			|√	|√					|√					|√					|在元素范围内获取元素																|
+|$$								|√				|√			|√	|√					|√					|√					|在元素范围内获取元素数组														|
+|size							|√				|√			|√	|√					|√					|√					|获取元素大小(width,height)													|
+|offset						|√				|√			|√	|√					|√					|√					|获取元素绝对位置(left,top)													|
+|text							|√				|√			|√	|√					|√					|√					|获取元素文本																				|
+|attribute				|√				|√			|√	|√					|√					|√					|获取元素特性																				|
+|style						|√				|√			|√	|√					|√					|√					|获取元素样式值																			|
+|tap							|√				|√			|√	|√					|√					|√					|点击元素																						|
+|value						|√				|√			|√	|√					|√					|√					|获取元素值																					|
+|callMethod				|√				|√			|√	|√					|√					|√					|调用组件实例指定方法，仅自定义组件可以使用，uni-app x args 仅支持一个参数|
+|html							|√				|√			|√	|√					|√					|x					|获取元素 HTML																			|
+|outerHtml				|√				|√			|√	|√					|√					|x					|同 html，只是会获取到元素本身											|
+|data							|√				|√			|√	|√					|√					|√					|获取组件实例渲染数据，仅自定义组件可以使用，uni-app x 暂不支持 path|
+|setData					|√				|√			|√	|√					|√					|√					|设置组件实例渲染数据，仅自定义组件可以使用					|
+|property					|√				|√			|√	|√					|x					|√					|获取元素属性																				|
+|touchstart				|√				|√			|√	|√					|x					|√					|手指开始触摸元素																		|
+|touchmove				|√				|√			|√	|√					|x					|√					|手指触摸元素后移动																	|
+|touchend					|√				|√			|√	|√					|x					|√					|手指结束触摸元素																		|
+|longpress				|√				|√			|√	|√					|x					|√					|长按																				|
+|trigger					|√				|√			|√	|√					|x					|x					|触发元素事件																				|
+|input						|√				|√			|√	|√					|x					|√					|输入文本，仅 input、textarea 组件可以使用					|
+|callContextMethod|x				|x			|x	|√					|x					|x					|调用上下文 Context 对象方法，仅 video 组件可以使用	|
+|scrollWidth			|x				|√			|√	|√					|x					|x					|获取滚动宽度，仅 scroll-view 组件可以使用					|
+|scrollHeight			|x				|√			|√	|√					|x					|x					|获取滚动高度，仅 scroll-view 组件可以使用					|
+|scrollTo					|x				|√			|√	|√					|x					|√					|滚动到指定位置，仅 scroll-view 组件可以使用				|
+|swipeTo					|√				|√			|√	|√					|x					|x					|滑动到指定滑块，仅 swiper 组件可以使用							|
+|moveTo						|√				|√			|√	|√					|x					|x					|移动视图容器，仅 movable-view 组件可以使用					|
+|slideTo					|√				|√			|√	|√					|x					|x					|滑动到指定数值，仅 slider 组件可以使用							|
 
 
 ### 测试平台判断

@@ -1,4 +1,4 @@
-## 类型@data-type
+# 类型@data-type
 
 强类型语言的特点，是数据类型要求严格。它带来2个好处：
 1. 高性能：明确的类型有更大的优化空间，在iOS和Android等os上可以节省内存、提高运算速度；web端由于仍编译为js，不具有类型性能优化。
@@ -19,7 +19,7 @@ UTS 的类型有：
 
 除了特殊类型，其他类型都可以在变量后面通过`:`加类型名称来给这个变量声明类型。
 
-### 布尔值（boolean）
+## 布尔值（boolean）
 
 布尔是简单的基础类型，只有2个值：`true` 和 `false`。
 
@@ -34,7 +34,7 @@ c = true // 后续为变量赋值字面量
 - 在js里，true == 1、 false == 0。但在其他强类型语言里，`1`和`0`是数字类型，无法和布尔类型相比较。
 - 注意 boolean 不要简写成 bool
 
-### 数字（number）
+## 数字（number）
 
 在 ts 中，数字不区分整型和浮点，就是一个 number。但在 kotlin 和 swift 中，数字需要是一个确定类型，比如 Int、Float、Double，没有泛数字。
 
@@ -52,7 +52,7 @@ let d = 3.14159         //注意：目前版本推导d为float类型，新版本
 - 编译到kotlin平台时，number 利用 kotlin的 `Number`抽象类实现
 - 编译到swift平台时，number 利用 `NSNumber` 实现
 
-#### 平台专有数字类型
+### 平台专有数字类型
 
 除了 number 类型，UTS 在 Android 和 iOS 设备上，也可以使用 kotlin 和 swift 的专有数字类型。
 
@@ -61,7 +61,7 @@ let d = 3.14159         //注意：目前版本推导d为float类型，新版本
 1. 在 kotlin 和 swift 中，调用系统API或三方SDK的入参或返回值的类型，强制约定了平台专有数字类型。比如入参要求传入 Int，那么传入 number 会报错。比如方法返回了一个 Int，使用 number 类型的变量去接收，也会报错。
 2. number 作为泛数字，性能还是弱于Int。在普通计算中无法体现出差异，但在千万次运算后，累计会产生毫秒级速度差异。
 
-##### Kotlin 专有数字类型 @Kotlin
+#### Kotlin 专有数字类型 @Kotlin
 
 |类型名称|长度  |最小值       |最大值          |描述|
 |:--     |:---  |:---         |:---           |:-- |
@@ -80,7 +80,7 @@ let d = 3.14159         //注意：目前版本推导d为float类型，新版本
 
 如果涉及大量运算，建议开发者不要使用 number、Int? ，要明确使用 Int等类型 [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
 
-##### Swift 专有的数字类型 @Swift
+#### Swift 专有的数字类型 @Swift
 
 |类型名称    |长度   |最小值        				|最大值          					|描述|
 |:--     	|:---  |:---         				|:---           					|:-- |
@@ -110,7 +110,7 @@ let d = 3.14159         //注意：目前版本推导d为float类型，新版本
 	+ Float32 是 Float 的 typealise, 两者等价。
 	+ Float64 是 Double 的 typealise, 两者等价。
 
-##### 专有数字类型的定义方式
+#### 专有数字类型的定义方式
 
 使用下面的方法，虽然可能会被编辑器报语法错误（后续HBuilderX会修复这类误报），但编译到 kotlin 和 swift 运行是正常的。
 
@@ -134,7 +134,7 @@ let d:Int8 = 1 // Int8是swift平台专有类型
 
 这些专有类型定义后，可以使用kotlin和swift为其提供的各种方法，具体参考kotlin和swift的文档。
 
-#### 字面量类型自动推导@autotypefornumber
+### 字面量类型自动推导@autotypefornumber
 
 具体值，比如`42`、`"abc"`，称之为[字面量](literal.md)
 
@@ -195,9 +195,9 @@ test(60.0) // 要求是Int，传入了非Int数字字面量，报错
 
 <!-- TODO 字面量除法 -->
 
-#### 各种数字类型之间的转换
+### 各种数字类型之间的转换
 
-##### kotlin下转换数字类型
+#### kotlin下转换数字类型
 
 所有的 number 都支持下列方法进行转换（部分类库API使用java编写，其要求的java类型与下列kotlin类型完全一致，可以直接使用
 
@@ -221,7 +221,7 @@ a.toFloat() // 转换为 Float 类型，后续也将支持 new Float(a) 方式�
 a.toDouble() // 转换为 Double 类型，后续也将支持 new Double(a) 方式转换
 ```
 
-##### swift下转换数字类型
+#### swift下转换数字类型
 ```ts
 // number转成特定类型
 let num = 2
@@ -240,7 +240,7 @@ let a:Int = 3
 let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 ```
 
-#### Number.from
+### Number.from
 为了将 kottlin 或者 Swift 平台专有的数字类型便捷的转成Number，我们提供了 Number.from() 的静态方法。该方法适用于上一章节中所列出的所有的专有数字类型。
 
 ```ts
@@ -263,14 +263,14 @@ let e1 = Number.from(e)
 
 ```
 
-#### number的边界说明
+### number的边界说明
 
 - 在不同平台上，数值的范围限制不同，超出限制会导致相应的错误或异常
   * 编译至 JavaScript 平台时，数值范围为 ±1.7976931348623157e+308，超出范围会返回 `Infinity` 或 `-Infinity`。
   * 编译至 Kotlin 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，超出范围会报错：`The value is out of range‌`。浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会返回 `Infinity` 或 `-Infinity`。平台专有数字类型范围 [详见](#Kotlin)。
   * 编译至 Swift 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会报错：`integer literal overflows when stored into 'NSNumber'`。平台专有数字类型范围 [详见](#Swift)
 
-#### 运算和比较
+### 运算和比较
 
 既然数字类型有很多，就涉及跨类型的数字之间的运算和比较的问题。
 
@@ -278,11 +278,11 @@ let e1 = Number.from(e)
 
 跨类型数字的比较，大于小于等于不等于的规则是什么样的？详见 [比较运算符](operator.md#comparisondifftype)
 
-#### 更多API
+### 更多API
 
 Number内置对象还有很多API，[详见](buildin-object-api/number.md)
 
-### 字符串（string） @string
+## 字符串（string） @string
 
 字符串是一串表示文本值的字符序列，例如：`"hello world"`。
 
@@ -295,7 +295,7 @@ let s3:string
 s3 = "abc"
 ```
 
-#### 平台专有字符串类型
+### 平台专有字符串类型
 
 - iOS 的 NSString
 
@@ -334,7 +334,7 @@ let str5 = nstr3 as string  // 类型为string
   * 编译至 Swift 平台时，最大长度也受系统内存的限制，超出限制目前没有返回信息。
 
 
-### any类型 @any
+## any类型 @any
 
 有时会遇到在编程阶段还不清楚类型的变量。这些值可能来自于动态的内容，比如来自用户输入或第三方代码库。
 这种情况下，我们不希望类型检查器对这些值进行检查而是直接让它们通过编译阶段的检查。那么我们可以使用 `any` 类型来标记这些变量：
@@ -355,7 +355,7 @@ list[1] = 100;
 - 注意：在 TS 中可以将 null 赋值给 any 类型的变量，但是在 Swift 和 Kottlin 中，any 类型属于非空类型，也就是不能将 null 赋值给 any 类型的变量。因此 在 UTS 中 也不能将 null 赋值给 any 类型，以免编译失败。
 
 	
-### null类型 @null
+## null类型 @null
 
 一个表明 null 值的特殊关键字。
 
@@ -396,7 +396,7 @@ const l = b.length // 错误：变量“b”可能为空
 如何正确访问可能为null的对象的属性和方法？有几种方式可以做到。
 
 
-#### 代码中判空后再使用
+### 代码中判空后再使用
 
 如果你的代码已经判空，则编译器不会再告警。你可以显式检测 b 是否为 null，在不为 null 的情况下调用 b 的属性和方法。
 
@@ -408,7 +408,7 @@ if (b != null) {
 
 编译器会跟踪所执行检测的信息，并允许你在 if 内部调用 length。
 
-#### 不判空，使用`?.`进行安全调用
+### 不判空，使用`?.`进行安全调用
 
 访问可空变量的属性的第二种选择是使用安全调用操作符 `?.`
 
@@ -429,7 +429,7 @@ bob?.department?.head?.name
 
 如果任意一个属性（环节）为 null，这个链式调用就会返回 null。
 
-#### 空值合并
+### 空值合并
 
 空值合并运算符（??）是一个逻辑运算符，当左侧的操作数为 null 时，返回其右侧操作数，否则返回左侧操作数。
 
@@ -443,7 +443,7 @@ console.log(baz);
 // Expected output: 0
 ```
 
-#### 非空断言
+### 非空断言
 
 非空断言运算符（!）将任何值转换为非空类型。可以写 b! ，这会返回一个非空的 b 值（例如：在我们示例中的 string）或者如果 b 为 null，就会抛出一个异常。
 
@@ -451,7 +451,7 @@ console.log(baz);
 const l = b!.length
 ```
 <!-- 
-#### vue data中null的用法
+### vue data中null的用法
 
 很多时候，data的数据需要通过script获取，而 uts 不支持 undefined，初始化时就只能赋null。
 
@@ -481,7 +481,7 @@ const l = b!.length
 </script>
 ```
  -->
-### 日期（Date）@date
+## 日期（Date）@date
 
 日期对象表示日期，包括年月日时分秒等各种日期。
 
@@ -499,7 +499,7 @@ const year:number = myDate.getFullYear()
 Date对象还有很多方法属性，[详见](buildin-object-api/date.md)
 
 
-### 数组（Array）@array
+## 数组（Array）@array
 
 Array，即数组，支持在单个变量名下存储多个元素，并具有执行常见数组操作的成员。
 
@@ -515,7 +515,7 @@ Array，即数组，支持在单个变量名下存储多个元素，并具有执
 1. 某些系统API或三方原生SDK的入参或返回值强制指定了kotlin的原生数组类型。
 2. uts新增的可动态变长的Array，在性能上不如固定length、不可变长的原始kotlin.Array。但也只有在巨大量的运算中才能体现出毫秒级的差异。
 
-#### 定义数组
+### 定义数组
 
 `UTS` 中 Array 有多种创建方式，这些方式是等价的：
 
@@ -581,7 +581,7 @@ const a1: Array(100); // [100], 当前数组长度为1
 
 ```
 
-#### 遍历数组对象
+### 遍历数组对象
 
 使用foreach来实现数组的遍历
 
@@ -594,9 +594,9 @@ array1.forEach((element:string, index:number) => {
 // 打印结果是 a a b b c c
 ```
 
-#### 平台专有数组类型
+### 平台专有数组类型
 
-##### kotlin专有数组类型
+#### kotlin专有数组类型
 
 - 专有数组类型清单
 	* kotlin.collections.List
@@ -657,7 +657,7 @@ let kotlinArray = utsArr.toTypedArray()
 
 ```
 
-##### iOS 平台专有数组类型
+#### iOS 平台专有数组类型
 
 	UTS 中的 Array 对应到 Swift 中就是 Array, 方法是通用的，无需转换。一般情况下，使用 Array 即可。
 	但是，某些系统或者三方库 API 可能会要求 OC 的 NSArray、NSMutableArray 类型的数组，这个时候就需要进行转换。
@@ -752,17 +752,17 @@ let a3: NSMutableArray = NSMutableArray(array= a)
 	+ Swift 中的 Array 是值类型，其和 TS 中 Array 的一点区别是 可以通 == 判断两个数组是否相等，只要两个数组的类型和元素一样，判等的结果就是 true。
 
 
-#### 更多API
+### 更多API
 
 Array作为内置对象，还有更多API，[详见](buildin-object-api/array.md)
 
-### Map
+## Map
 
 Map 是一种 key value 形式的数据类型。
 
 与二维数组相比，Map的key不能重复，并且读写的方式是get()、set()。与UTSJSONObject相比，Map的性能更高，但对数据格式有要求。
 
-#### 定义
+### 定义
 
 ```ts
 //定义一个map1，key为string类型，value也是string类型
@@ -793,17 +793,17 @@ let userA = {
 let userMap = userA.toMap() //UTSJSONObject有toMap方法
 ```
 
-#### 验证类型
+### 验证类型
 ```ts
 console.log(typeof map1); //返回 object
 console.log(map1 instanceof Map); //返回 true
 ```
 
-#### 更多API
+### 更多API
 
 Map对象还有很多API，delete、clear等，[详见](buildin-object-api/map.md)
 
-### USTJSONObject@ustjsonobject
+## USTJSONObject@ustjsonobject
 
 json 在 js 中并非一个独立的类型，对一个 json 对象 typeof 返回的是 object。
 
@@ -822,7 +822,7 @@ json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、sw
 
 UTSJSONObject，是一个类型，可以在变量的冒号后面使用，本节的重点就是介绍UTSJSONObject。
 
-#### 对象和数组
+### 对象和数组
 
 首先，我们需要区分JSON对象，和由JSON对象组成的数组。
 
@@ -864,7 +864,7 @@ let jo = [{
 }] //正确，自动推断为 UTSJSONObject 数组
 ```
 
-#### 定义 UTSJSONObject
+### 定义 UTSJSONObject
 
 可以通过对象字面量的方式定义一个 UTSJSONObject 对象，编译器会根据字面量自动推导类型，此时无需显式声明`:UTSJSONObject`。
 
@@ -938,13 +938,13 @@ let jr = JSON.parseArray(s)
 
 全局对象JSON，除了parse()、parseObject()、parseArray()外，还有stringify()来把json转为字符串。[详见](buildin-object-api/json.md)
 
-#### 验证类型
+### 验证类型
 ```ts
 console.log(typeof jo); //返回 object
 console.log(jo instanceof UTSJSONObject); //返回 true
 ```
 
-#### 访问 UTSJSONObject 中的属性数据
+### 访问 UTSJSONObject 中的属性数据
 
 ```ts
 let rect = {
@@ -1103,12 +1103,12 @@ let street = utsObj.getString("address.detailInfo.street")
 1. UTSJSONObject.toMap() 转为Map对象 [见下](#Map)
 2. 把json字符串或对象字面量通过type转为自定义类型，这是ts里经常使用的方式 [详见](type-aliases.md)
 
-#### 更多API
+### 更多API
 
 UTSJSONObject对象还有很多API，[详见](buildin-object-api/utsjsonobject.md)
 
 
-### type自定义类型@type
+## type自定义类型@type
 
 `type`是关键字，用于给一个类型起别名，方便在其他地方使用。
 
@@ -1130,7 +1130,7 @@ let i:tn = 0  // 等同于 let i:number = 0
 
 本章节重点讲解如何把json数据转为type。
 
-#### 把json对象转为type
+### 把json对象转为type
 
 在 uts 中，type最常见的用途是把json数据转为自定义类型。也就是为json数据提供了一个类型描述。这样json数据就可以继续使用`.`操作符了。
 
@@ -1159,7 +1159,7 @@ console.log(person.name) //返回zhangsan
 
 但在uts中，由于interface的概念在kotlin和swift有其他用途，所以uts中推荐开发者把json转成一个type，而不是interface。
 
-#### 把json数组转为type
+### 把json数组转为type
 
 上面的例子中，数据是json对象，下面再来定义一个json数组。
 
@@ -1173,7 +1173,7 @@ console.log(personList[0].name); //返回zhangsan
 
 把一个json数组 as 成自定义类型的数组，就可以像在js中那样随便使用json数据了。
 
-#### null的处理
+### null的处理
 
 但是需要注意，json数据可能不规范，有些属性缺失，此时就需要在定义type时设可为空：
 ```ts
@@ -1191,7 +1191,7 @@ let personList = [
 console.log(personList[1].age); //null
 ```
 
-#### 嵌套
+### 嵌套
 
 json对象往往有嵌套，即子对象。比如
 ```json
@@ -1274,7 +1274,7 @@ let person = {
 } as PersonType
 ```
 
-#### 通过JSON.parse转type
+### 通过JSON.parse转type
 
 HBuilderX 3.9+，支持JSON.parse传入泛型，把一段字符串解析为type。
 
@@ -1292,13 +1292,13 @@ let person = JSON.parse<PersonType>(jsonString) //这是一种泛型的写法，
 console.log(person?.name);  // 返回zhangsan。由于person可能为null，parse可能失败，所以需要通过?.来访问属性
 ```
 
-#### json转type工具
+### json转type工具
 
 如果json数据属性较多、嵌套较多，那么为json数据编写type类型定义，也是一件繁琐的事情。
 
 HBuilderX 3.9起内置了一个json转type工具，在`json编辑器`中右键，选择`json转type`，即可根据json数据内容自动推导生成type定义。
 
-#### 为vue的data中的json定义类型
+### 为vue的data中的json定义类型
 
 uvue文件中data中的json数据也涉及类型定义。此时注意：type定义必须放在`export default {}`前面。
 ```ts
@@ -1356,7 +1356,7 @@ uvue文件中data中的json数据也涉及类型定义。此时注意：type定�
 </script>
 ```
 
-### 其他
+## 其他
 
 - 关于undefined
 

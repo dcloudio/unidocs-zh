@@ -1,6 +1,6 @@
-## 操作符@operator
+# 操作符@operator
 
-### 赋值运算符(Assignment operators)@Assignment-operators
+## 赋值运算符(Assignment operators)@Assignment-operators
 
 | 名字                                              | 简写的操作符 | 含义        |
 | ------------------------------------------------- | ------------ | ----------- |
@@ -17,7 +17,7 @@
 | 按位异或赋值(Bitwise XOR assignment)              | x ^= y       | x = x ^ y   |
 | 按位或赋值(Bitwise OR assignment)                 | x \|= y      | x = x \| y    |
 
-### 比较运算符(comparison operators)@Comparison-operators
+## 比较运算符(comparison operators)@Comparison-operators
 
 | 运算符                              | 描述                                        | 返回 true 的示例 |
 | ----------------------------------- | ------------------------------------------- | ---------------- |
@@ -30,7 +30,7 @@
 | 小于 Less than (<)                  | 左边的操作数小于右边的操作数返回 true       | var1<var2        |
 | 小于等于 Less than or equal (<=)    | 左边的操作数小于或等于右边的操作数返回 true | var1<=var2       |
 
-### 算数运算符(Arithmetic operators)@Arithmetic-operators
+## 算数运算符(Arithmetic operators)@Arithmetic-operators
 
 | 运算符   | 范例 | 描述                                                                                                                                     |
 | -------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,7 +42,7 @@
 | 乘(*) |      | 二元运算符. 将两个数相乘.                                                                    |
 | 除(/) |      | 二元运算符. 将两个数相除.                                                                    |
 
-### 位运算符(Bitwise operators)@Bitwise-operators
+## 位运算符(Bitwise operators)@Bitwise-operators
 
 | Operator                        | Usage   | Description                                                                                                      |
 | ------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -54,7 +54,7 @@
 | 算术右移                        | a >> b  | 把 a 的二进制表示向右移动 b 位，丢弃被移出的所有位.(译注:算术右移左边空出的位是根据最高位是 0 和 1 来进行填充的) |
 | 无符号右移(左边空出位用 0 填充) | a >>> b | 把 a 的二进制表示向右移动 b 位，丢弃被移出的所有位，并把左边空出的位都填充为 0                                   |
 
-### 逻辑运算符(Logical operators)@Logical-operators
+## 逻辑运算符(Logical operators)@Logical-operators
 
 | 运算符       | 范例             | 描述     |
 | ------------ | ---------------- | -------- |
@@ -62,7 +62,7 @@
 | 逻辑或(\|\|) | expr1 \|\| expr2 | (逻辑或) |
 | 逻辑非(!)    | !expr            | (逻辑非) |
 
-### 字符串运算符(String operators)@String-operators
+## 字符串运算符(String operators)@String-operators
 
 除了比较操作符，它可以在字符串值中使用，连接操作符（+）连接两个字符串值相连接，返回另一个字符串，它是两个操作数串的结合。
 
@@ -73,7 +73,7 @@ console.log("my " + "string"); // console logs the string "my string".
 
 在iOS平台，连接操作符（+）目前仅支持字符串的连接，即+操作符前后都必须是字符串类型。
 
-### 条件（三元）运算符(Conditional operator) @Conditional-operator
+## 条件（三元）运算符(Conditional operator) @Conditional-operator
 
 条件运算符是 uts 中唯一需要三个操作数的运算符。运算的结果根据给定条件在两个值中取其一。语法为：
 
@@ -83,7 +83,7 @@ console.log("my " + "string"); // console logs the string "my string".
 const status = age >= 18 ? "adult" : "minor";
 ```
 
-### 操作符列表
+## 操作符列表
 
 - `+`
     * 相加运算符 (+) 用于对两个操作数进行相加运算。
@@ -160,7 +160,7 @@ const status = age >= 18 ? "adult" : "minor";
 - `>>>=`
 
 
-### 算数运算符的跨数字类型注意@arithmeticdifftype
+## 算数运算符的跨数字类型注意@arithmeticdifftype
 
 uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在有字面量或者是平台专有数字类型参与运算时，不同平台可能会有不同的表现。
 算数运算符 + - * / % 行为一致，下表以 + 和 / 为例列出了各种场景下的详细差异。
@@ -196,11 +196,11 @@ uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在
 | 不同的专有类型变量相加                   | let a: Int = 1； let b: Float = 3.14.toFloat()； a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
 | ^^				      			   | let a: Float = 1.0.toFloat()； let b: Double = 3.14； a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |
 
-### 比较运算符的跨数字类型注意@comparisondifftype
+## 比较运算符的跨数字类型注意@comparisondifftype
 
 uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在有字面量或者是平台专有数字类型参与比较操作时，不同平台可能会有不同的表现。
 
-#### 比较运算符 > >= < <=
+### 比较运算符 > >= < <=
 
 比较运算符 > >= < <= 行为一致，下表以 > 为例列出了各种场景下的详细差异。
 
@@ -219,7 +219,7 @@ uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在
 | 不同的专有类型变量比较                   | let a: Int = 1； let b: Float = 3.14.toFloat()； a > b	  | 结果为false         |编译失败，不同类型变量不能比较                 |
 
 
-#### 比较运算符 == != === !==
+### 比较运算符 == != === !==
 
 
 | 场景                                  | 示例                                           | Kottlin 结果                   |  Swift 结果 							  |
@@ -241,3 +241,20 @@ uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在
 | String  === String (!=== 行为相同)  	| "a" === "a" 									| 结果为 true                  |编译失败，不能比较	          			  |
 | Array  == Array (!= 行为相同)        | [1] == [1]	 							   | 结果为 false                   |结果为 true,数组类型相同，元素相同就为true     |
 | Array  === Array (!=== 行为相同)  	| [1] === [1] 									| 结果为 false                  |编译失败，不能比较	          			  |
+
+## 展开语法
+
+展开语法可以在函数调用/数组构造时，将数组表达式在语法层面展开。展开语法使用 `...` 操作符表示。
+
+### 构造字面量数组
+
+没有展开语法的时候，只能组合使用 push, splice, concat 等方法，来将已有数组元素变成新数组的一部分。有了展开语法，通过字面量方式，构造新数组会变得更简单、更优雅：
+
+```ts
+const array1 = ['a', 'b']
+const array2 = ['c', ...array1, 'd']
+```
+
+### 剩余参数
+
+剩余语法 (Rest syntax) 看起来和展开语法完全相同，不同点在于，剩余参数用于解构数组和对象。从某种意义上说，剩余语法与展开语法是相反的：展开语法将数组展开为其中的各个元素，而剩余语法则是将多个元素收集起来并“凝聚”为单个元素。请参考：[剩余参数](./function.md#剩余参数)。

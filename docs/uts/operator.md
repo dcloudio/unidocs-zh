@@ -258,3 +258,37 @@ const array2 = ['c', ...array1, 'd']
 ### 剩余参数
 
 剩余语法 (Rest syntax) 看起来和展开语法完全相同，不同点在于，剩余参数用于解构数组和对象。从某种意义上说，剩余语法与展开语法是相反的：展开语法将数组展开为其中的各个元素，而剩余语法则是将多个元素收集起来并“凝聚”为单个元素。请参考：[剩余参数](./function.md#剩余参数)。
+
+## 类型断言
+
+可以使用类型断言操作符 `as` 来为值指定类型。
+
+```ts
+const a: any = 'a'
+
+a as string
+```
+
+只允许将类型转换为具体或更不具体的类型，不能强制转换两个不可能兼容的类型：
+
+```ts
+const a: string = 'a'
+
+a as any // 正确
+a as string // 正确
+a as number // 错误
+```
+
+类型断言会在运行时进行，如果无法强制转换，类型断言运算符会引发异常：
+
+```ts
+const a: string | null = 'a'
+
+a as string // 正常
+
+a = null
+
+a as string ｜ null // 正常
+
+a as string // 异常
+```

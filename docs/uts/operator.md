@@ -292,3 +292,35 @@ a as string ｜ null // 正常
 
 a as string // 异常
 ```
+
+## 实例类型判断
+
+使用 `instanceof` 运算符执行运行时检查，以标识对象是否符合给定类型。
+
+```ts
+function fn(obj: any) {
+  if (obj instanceof String) {
+    // ...
+  }
+}
+```
+
+包含泛型的类型，不能缺省泛型信息。如不需要判断具体的泛型类型，可以使用 `*` 表示任意泛型类型：
+
+```ts
+function fn(obj: any) {
+  if (obj instanceof Map<*, *>) {
+    // ...
+  }
+}
+```
+
+已经可以明确判断类型兼容性时无需使用 `instanceof` 在运行时进行判断，编译阶段会检查出这种情况会报错或者警告：
+
+```ts
+function fn(obj: string) {
+  if (obj instanceof String) {
+    // ...
+  }
+}
+```

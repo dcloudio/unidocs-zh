@@ -156,18 +156,18 @@ a 会被自动推导成什么类型？是Int、double、还是number？值是0�
 
 在web端，a 的类型是 number，值是0.1，但在 kotlin 中，类型是 Int，值是0。
 
-**HBuilderX 3.9起 uts 提供了新的字面量类型推导规则：**
+**HBuilderX 3.9起 uts 提供了2条新的字面量类型推导规则：**
 
-**在定义变量时，且没有显式声明变量类型，通过数字字面量以及数字字面量组成的运算表达式来给变量赋值，此时变量类型默认推导为 number类型。**
+- 规则1. 在定义变量时，若没有显式声明变量类型，通过数字字面量以及数字字面量组成的运算表达式来给变量赋值，此时变量类型默认推导为 number类型
 
 举例说明：
-- HBuilderX3.9前，运行到App，由kotlin和swift编译器推导
+* HBuilderX3.9前，运行到App，由kotlin和swift编译器推导
 ```ts
 let a = 1  // 类型为Int
 let b = 1/10 // 类型为Int，值为0
 ```
 
-- HBuilderX3.9起，运行到App，未显式声明类型的变量，需根据数字字面量推导变量类型，此时由 uts 编译器推导，变量类型默认为 number
+* HBuilderX3.9起，运行到App，未显式声明类型的变量，需根据数字字面量推导变量类型，此时由 uts 编译器推导，变量类型默认为 number
 ```ts
 let a = 1  // 类型为number
 let b = 1/10 // 类型为number，值为0.1
@@ -176,76 +176,105 @@ let b = 1/10 // 类型为number，值为0.1
 如您已经显式声明变量类型，无需自动推导，则不受上述规则变化影响。不管HBuilderX 3.9之前还是之后，以下代码都是一样的
 ```ts
 let a:Int = 1  // 类型为Int
-let b:Int = 1/10 // 类型为Int，值为0
 ```
 
 `let a = 1`，a从Int变成number，这是一个**无法向下兼容的更新**，请开发者注意调整。
 
-如果您希望写出同时适配 HBuilder 3.9之前之后版本的代码，只需要显式声明数字的类型。
+但`let b:Int = 1/10` 会在 HBuilderX 3.9+起报错，原因见下面第二条规则。
 
-除了变量类型自动推导，在函数入参的场景，由于参数已经有明确类型，其实无需自动推导类型，入参的数字字面量类型不会变。
+再澄清下规则1：
+	* 如果定义变量时已经显式声明了类型，和规则1无关
+	* 如果不是定义变量，和规则1无关
+
+也就是如下代码中，`60`这个字面量的处理，和规则1无关，不会把这个`60`改为number类型
 
 ```ts
 function test(score: Int): boolean {
 	return (score>=60) 
 }
-test(60) // 这个60可以正常传入
-test(60.0) // 要求是Int，传入了非Int数字字面量，报错
+test(60) // 这个60可以正常传入，无论HBuilderX 3.9之前还是之后
 ```
 
-<!-- TODO 字面量除法 -->
+- 规则2. 纯数字字面量的除法，其结果会变成number
+
+在HBuilderX 3.9以前，字面量除法也由kotlin和swift自动推导，kotlin下存在一个问题，看如下代码：
+```ts
+function test(score: number): boolean {
+	return (score>=60) 
+}
+test(1/10) // 报错，类型不匹配。需要number而传入Int
+```
+
+这个问题看着有点诡异，其实是由于kotlin推导字面量时，把1/10推导成了Int，且值为0。然后把Int类型的数字传给需要number入参的函数test时，就会报类型不匹配。
+
+为了解决这个问题，从HBuilderX 3.9起引入了一条字面量除法规则：**纯数字字面量的除法，结果一定是number**。
+
+引入这个规则后，上述代码就可以正常运行了。
+
+这里的`纯数字字面量的除法`，指除法表达式中除了数字和运算符，不包括任何其他东西：
+- 比如变量：`let a:Int=1;let b:Int= a/1`
+- 比如被as过：`(1 as Int)/10`
+以上除法表达式，都不是“纯数字字面量的除法”，都不会被推导为number。
+
+但是这条规则，也会导致一个**向下兼容问题**。
+
+下面的代码在HBuilderX 3.9之前是可以正常运行的，但在3.9起会报错，因为1.0/10被转为了number类型，传入需要Double的函数时就会类型不匹配。
+```ts
+function test(score: Double): boolean {
+	return (score>=60.0) 
+}
+test(1.0/10)
+```
+
+在HBuilderX 3.9后，为了正确传入Double，要注意跳过规则2。避免纯数字字面量除法，所以正确的写法是：
+```ts
+function test(score: Double): boolean {
+	return (score>=60.0) 
+}
+test((1.0 as Double)/10) //表达式中任意一个数字as一下，都不会走规则2
+```
+
+也就是，在纯字面量除法时，原生和js冲突了。uts选择了遵守js开发者的习惯，而原生开发者使用平台专有类型时则需注意使用`as`来规避。
 
 ### 各种数字类型之间的转换
 
-#### kotlin下转换数字类型
+对number类型的数字，使用to方法转换为平台专有类型。
+
+而Number.from()方法传入一个平台专有类型的数字，则可以转换为number。
+
+#### kotlin
 
 所有的 number 都支持下列方法进行转换（部分类库API使用java编写，其要求的java类型与下列kotlin类型完全一致，可以直接使用
 
-- toByte(): Byte
-- toShort(): Short
-- toInt(): Int
-- toLong(): Long
-- toFloat(): Float
-- toDouble(): Double
+	* toByte(): Byte
+	* toShort(): Short
+	* toInt(): Int
+	* toLong(): Long
+	* toFloat(): Float
+	* toDouble(): Double
 
-另外 number还具备下列函数进行整型的无符号转换，这部分API 在jvm上没有对应的原始数据类型，主要的使用场景是 色值处理等专业计算场景的`多平台拉齐`
+另外 number 还具备下列函数进行整型的无符号转换，这部分API 在jvm上没有对应的原始数据类型，主要的使用场景是 色值处理等专业计算场景的`多平台拉齐`
 
-- toUByte(): UByte
-- toUShort(): UShort
-- toUInt(): UInt
-- toULong(): ULong
+	* toUByte(): UByte
+	* toUShort(): UShort
+	* toUInt(): UInt
+	* toULong(): ULong
 
 ```ts
-let a:Int = 3
+let a:number = 3
+a.toInt() // 转换为 Int 类型
 a.toFloat() // 转换为 Float 类型，后续也将支持 new Float(a) 方式转换
 a.toDouble() // 转换为 Double 类型，后续也将支持 new Double(a) 方式转换
+
+//平台专有类型之间，也可以使用to方法转换
+let i:Int = 1
+i.toDouble() // 转换为 Double 类型
 ```
 
-#### swift下转换数字类型
-```ts
-// number转成特定类型
-let num = 2
-num.toInt() //将number 变量 num 转换为 Int 类型
-num.toFloat() //将number 变量 num 转换为 float 类型
-num.toInt64() // 将number 变量 num 转换为 Int64 类型
-
-// 特定类型转成number
-let f: Float = 5.0
-let n = Number(f)
-let i = Number.from(3.14)
-let j = Number.from(f)
-
-// 特定类型转成其他的特定类型
-let a:Int = 3
-let b = new Double(a) // 将整型变量 a 转换为 Double 类型
-```
-
-### Number.from
-为了将 kottlin 或者 Swift 平台专有的数字类型便捷的转成Number，我们提供了 Number.from() 的静态方法。该方法适用于上一章节中所列出的所有的专有数字类型。
-
+把 kotlin 专有数字类型，转换为number，使用Number.from()方法
 ```ts
 let a: Int = 1
-let a1 = Number.from(a)
+let a1 = Number.from(a) // Int转number
 
 let b: Float = 3.14
 let b1 = Number.from(b)
@@ -253,14 +282,33 @@ let b1 = Number.from(b)
 let c: Double = 3.1414926
 let c1 = Number.from(c)
 
-// Swift 专有
+let e: Long = 2147483649
+let e1 = Number.from(e)
+```
+
+#### swift
+
+swift与kotlin类似。使用to方法和Number.from方法互相转换。
+
+```ts
+// number转成平台特有类型
+let a:number = 3
+a.toInt() // 转换为 Int 类型
+a.toFloat() // 转换为 float 类型
+a.toInt64() // 转换为 Int64 类型
+
+// 平台特有类型转成number
+let f: Float = 5.0
+let n = Number(f)
+let i = Number.from(3.14)
+let j = Number.from(f)
+
 let d: Int64 = 12306    
 let d1 = Number.from(d)
 
-// Kottlin 专有
-let e: Long = 2147483649
-let e1 = Number.from(e)
-
+// 特定类型转成其他的特定类型
+let a:Int = 3
+let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 ```
 
 ### number的边界说明
@@ -337,6 +385,7 @@ let str5 = nstr3 as string  // 类型为string
 ## any类型 @any
 
 有时会遇到在编程阶段还不清楚类型的变量。这些值可能来自于动态的内容，比如来自用户输入或第三方代码库。
+
 这种情况下，我们不希望类型检查器对这些值进行检查而是直接让它们通过编译阶段的检查。那么我们可以使用 `any` 类型来标记这些变量：
 
 ```ts
@@ -354,7 +403,6 @@ list[1] = 100;
 
 - 注意：在 TS 中可以将 null 赋值给 any 类型的变量，但是在 Swift 和 Kottlin 中，any 类型属于非空类型，也就是不能将 null 赋值给 any 类型的变量。因此 在 UTS 中 也不能将 null 赋值给 any 类型，以免编译失败。
 
-	
 ## null类型 @null
 
 一个表明 null 值的特殊关键字。
@@ -394,7 +442,6 @@ const l = b.length // 错误：变量“b”可能为空
 我们要庆幸编译器的报错，因为如果编译器放过后，在线上运行时万一真的为空，那会导致崩溃。
 
 如何正确访问可能为null的对象的属性和方法？有几种方式可以做到。
-
 
 ### 代码中判空后再使用
 
@@ -1285,18 +1332,38 @@ type PersonType = {
 }
 let jsonString:string = `{
 	"id": 1, 
-	"name": "zhangsan", 
+	"name": "zhangsan"
 }` // 注意属性必须使用引号包围，否则parse会解析失败返回null
 
 let person = JSON.parse<PersonType>(jsonString) //这是一种泛型的写法，在方法名后面使用<>传入PersonType类型，就可以返回传入的类型。
 console.log(person?.name);  // 返回zhangsan。由于person可能为null，parse可能失败，所以需要通过?.来访问属性
 ```
 
-### json转type工具
+注意上述代码中，如果`let person`时，想使用冒号定义类型，需要考虑parse失败的情况，要这么写：
+```ts
+let person:PersonType|null = JSON.parse<PersonType>(jsonString)
+console.log(person?.name); // 返回zhangsan
+```
+
+或者如果你确保jsonString的值一定是合法的、parse一定可以成功，那么也可以在定义的末尾!号断言，告诉编译器肯定没有问题，那么此后就可以不使用`?.`了
+```ts
+let person:PersonType = JSON.parse<PersonType>(jsonString)!
+console.log(person.name); // 返回zhangsan
+```
+
+使用!断言，是强制编译器信任开发者的写法，编译器放过后，在运行期一旦person为null，调用`person.name`就会崩溃。而使用`person?.name`则不会崩溃，只会返回null。
+
+#### json转type工具
 
 如果json数据属性较多、嵌套较多，那么为json数据编写type类型定义，也是一件繁琐的事情。
 
-HBuilderX 3.9起内置了一个json转type工具，在`json编辑器`中右键，选择`json转type`，即可根据json数据内容自动推导生成type定义。
+HBuilderX 3.9起内置了一个json转type工具，在`json编辑器`中选择一段内容点右键，选择`json转type`，即可根据json数据内容自动推导生成type定义。
+
+![](../uni-app-x/static/json2type.png)
+
+把右侧生成的type复制到代码里即可，那个IRootType的名字自己按需修改。
+
+注意json数据的属性名称需要引号包围。
 
 ### 为vue的data中的json定义类型
 

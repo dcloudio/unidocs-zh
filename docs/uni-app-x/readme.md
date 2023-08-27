@@ -231,7 +231,7 @@ uni-app js版的“App原生语言插件”无法在 uni-app x 中运行。
 
 前端插件里，可兼容uts前端插件、可兼容uvue组件，即script是uts，style符合uvue的css。
 
-# 自动化测试
+## 自动化测试
 uni-app x 从源头重视产品质量，第一个版本就支持自动化测试。并为uni-app x产品编写了数万行自动化测试例代码。
 
 uni-app x 的自动化测试方案和 uni-app js版相同，自动化测试脚本使用js编写（注意不是uts）。整个自动化测试环境，运行在电脑端。
@@ -240,7 +240,7 @@ uni-app x 的自动化测试方案和 uni-app js版相同，自动化测试脚�
 
 uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html](https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html)
 
-# 一期范围
+## 一期范围
 
 除上述文档中声明已经完成的，还有如下需要注意：
 
@@ -252,9 +252,9 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 
 欢迎去[需求墙](https://vote.dcloud.net.cn/)投票，告诉我们你的需求优先级。
 
-# 历史老项目兼容指南
+## 历史老项目兼容指南
 
-## uni-app js版老项目迁移指南
+### uni-app js版老项目迁移指南
 1. 首先检查你的老项目里使用的uni组件、api、三方插件、三方库，在uni-app x上是否支持。
 2. 对于不支持的，需要自己写uni-app x的插件或去插件市场找替代兼容插件。如果写调用原生的uts代码，需要你了解原生的api。
 3. 对于css，如果你之前使用nvue的css，那边迁移到uni-app x在样式上改动很小。如果之前是vue的css，那么需要改为flex布局，以及仅使用uvue支持的css来布局界面。
@@ -265,7 +265,7 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 
 官方近期会提供把[uni小程序sdk](https://nativesupport.dcloud.net.cn/#)集成到uni-app x的方案。届时你的uni-app js版老项目可以作为uni-app x新项目的一个小程序来使用。
 
-## 原生/rn/flutter页面兼容指南
+### 原生/rn/flutter页面兼容指南
 
 之前已经有原生/rn/flutter页面，希望渐进式的迁移到uni-app x架构，该怎么搞？
 
@@ -273,7 +273,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 至于把 uni-app x 作为一个sdk内嵌到其他原生应用中，还在评估中。
 
-# FAQ
+## FAQ
 - uni-app x 支持uvue页面和vue页面混写吗？
 仅支持uvue页面。后期考虑中。历史vue页面也可以通过 uni小程序sdk 嵌入到uni-app x中。
 

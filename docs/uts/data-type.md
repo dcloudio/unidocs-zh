@@ -11,11 +11,11 @@
 比如 `"abc"`和`"你好"`，都属于字符串string，所有string类型有相同的方法、属性，比如`.length`属性获取字符串长度。
 
 UTS 的类型有：
-- 基础类型：boolean、number、string、any、null，都是小写，前3个typeof返回类型名称，null的typeof是object，any的typeof是当时值的类型。
+- 基础类型：boolean、number、string、any、null，都是小写，前3个typeof返回类型名称，null的typeof是object，any的typeof是运行时值的类型。
 - 对象类型：Date、Array、Map、Set、USTJSONObject，首字母大写，typeof返回"object"，判断准确类型需使用 instanceof 
 - 使用 type 来自定义类型
 - 特殊类型：function、class、error。
-- 平台专有类型：Int、Float、Double、NSString、kotlin.Array...，typeof返回"object"，判断准确类型需使用 instanceof 
+- 平台专有类型：Int、Float、Double、NSString、kotlin.Array...
 
 除了特殊类型，其他类型都可以在变量后面通过`:`加类型名称来给这个变量声明类型。
 
@@ -61,6 +61,11 @@ let d = 3.14159         //注意：目前版本推导d为float类型，新版本
 1. 在 kotlin 和 swift 中，调用系统API或三方SDK的入参或返回值的类型，强制约定了平台专有数字类型。比如入参要求传入 Int，那么传入 number 会报错。比如方法返回了一个 Int，使用 number 类型的变量去接收，也会报错。
 2. number 作为泛数字，性能还是弱于Int。在普通计算中无法体现出差异，但在千万次运算后，累计会产生毫秒级速度差异。
 
+请注意：
+number本身的使用很简单，但混入了平台专有数字类型后，会引出很多细节需要学习。
+- 如果您不调用原生API，初学uts时建议跳过本节，直接往下看string类型。
+- 如果您是插件作者，那请务必仔细阅读本章节。
+
 #### Kotlin 专有数字类型 @Kotlin
 
 |类型名称|长度  |最小值       |最大值          |描述|
@@ -103,12 +108,12 @@ let d = 3.14159         //注意：目前版本推导d为float类型，新版本
 |Double  	|64bit |2.2250738585072014E-308     |1.7976931348623157E308         	|双精度浮点型|
 
 
-- 注意：
-	+ Swift 中 Int 类型是根据平台动态的，在 32 位设备下等同于 Int32, 在64位设备下等同于 Int64。因此建议整型使用 Int, 除非必要，且在保证不会溢出的场景下才使用 Int32、Int64。
-	+ 同样，Swift 中的 UInt 类型也是根据平台动态的，在 32 位设备下等同于 UInt32, 在64位设备下等同于 UInt64。建议使用 UInt，非必要不使用 UInt32、UInt64。
-	+ Float16 在 iOS14.0 及以上系统上才能使用，使用时注意做系统版本号判断。
-	+ Float32 是 Float 的 typealise, 两者等价。
-	+ Float64 是 Double 的 typealise, 两者等价。
+**注意：**
+- Swift 中 Int 类型是根据平台动态的，在 32 位设备下等同于 Int32, 在64位设备下等同于 Int64。因此建议整型使用 Int, 除非必要，且在保证不会溢出的场景下才使用 Int32、Int64。
+- 同样，Swift 中的 UInt 类型也是根据平台动态的，在 32 位设备下等同于 UInt32, 在64位设备下等同于 UInt64。建议使用 UInt，非必要不使用 UInt32、UInt64。
+- Float16 在 iOS14.0 及以上系统上才能使用，使用时注意做系统版本号判断。[参考](../plugin/uts-uni-api.md#设备)
+- Float32 是 Float 的 typealise, 两者等价。
+- Float64 是 Double 的 typealise, 两者等价。
 
 #### 专有数字类型的定义方式
 

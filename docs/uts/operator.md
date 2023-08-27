@@ -242,7 +242,7 @@ uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在
 | Array  == Array (!= 行为相同)        | [1] == [1]	 							   | 结果为 false                   |结果为 true,数组类型相同，元素相同就为true     |
 | Array  === Array (!=== 行为相同)  	| [1] === [1] 									| 结果为 false                  |编译失败，不能比较	          			  |
 
-## 展开语法
+## 展开语法...
 
 > HBuilderX 3.9+
 
@@ -272,17 +272,36 @@ this.dataList.push(...res.data)
 
 从某种意义上说，剩余语法与展开语法是相反的：展开语法将数组展开为其中的各个元素，而剩余语法则是将多个元素收集起来并“凝聚”为单个元素。请参考：[剩余参数](./function.md#剩余参数)。
 
-## 类型断言
+## 类型断言as@as
 
-可以使用类型断言操作符 `as` 来为值指定类型。
+类型可能不明确、不唯一时，可以使用类型断言操作符 `as` 来为值指定类型。
+
+常见于 any 类型的明确、字面量的明确，也可以用于可为空 `|null` 类型的明确。
 
 ```ts
 const a: any = 'a'
+a as string // as之后a就可以当做string直接使用了
 
-a as string
+const a: string | null = 'a'
+a as string // 正常
 ```
 
-只允许将类型转换为具体或更不具体的类型，不能强制转换两个不可能兼容的类型：
+当一个字面量可能成为多种类型时，可以通过as来明确具体类型。
+```ts
+// 数字字面量可以被指定为任何相容的数字类型
+1.0 as Double
+1.0 as number
+
+// 对象字面量也可以as为USTJSONObject或某个type
+{"id":1} as USTJSONObject
+
+type t = {
+	id:number
+}
+{"id":1} as t
+```
+
+只允许将类型as为具体或更不具体的类型，不能强制转换两个不可能兼容的类型：
 
 ```ts
 const a: string = 'a'
@@ -292,19 +311,19 @@ a as string // 正确
 a as number // 错误
 ```
 
-类型断言会在运行时进行，如果无法强制转换，类型断言运算符会引发异常：
+USTJSONObject和type不相容，无法互相as。应该在初始的字面量或JSON.parse环节就决定好类型。
+
+类型断言会在运行时进行，如果无法强制转换，类型断言运算符as会引发异常：
 
 ```ts
 const a: string | null = 'a'
-
 a as string // 正常
 
 a = null
-
 a as string ｜ null // 正常
-
 a as string // 异常
 ```
+
 
 ## 实例类型判断
 

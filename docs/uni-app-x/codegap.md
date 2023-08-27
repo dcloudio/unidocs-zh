@@ -38,15 +38,15 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 	export default {
 		data() {
 			const date = new Date() //自动推导类型为Date
-			const v = 1;
+			const v = 1; //自动推导为number
 			return {
+				buttonEnable: false,
 				s1 : "hello", // 根据字面量推导为string
 				n1 : 0 as number, // 这里其实可以根据字面量自动推导，as number写不写都行
 				n2, // 不合法，必须指定类型。真实运行时请删掉本行
 				n3 as number, // 不合法，uts不支持undefined，必须初始化。真实运行时请删掉本行
 				n4 : null as number | null // 合法。定义为可为null的数字，初始值是null，但在使用n4前必须为其赋值数字
 				year: date.getFullYear() as number, // 在data里，目前无法通过变量类型推导data项的类型，需使用 as 显式声明
-				buttonEnable: false,
 				t: ``, // 模板字面量，推导为 string
 				o: { id: 1, name:"DCloud" }, // 对象字面量，推导为 UTSJSONObject，注意：访问 data 中定义的UTSJSONObject属性时，需要使用索引访问，如 this.o["id"]
 				an: [1, 2], // 数组字面量，如果元素均为纯数字字面量，则推导为 Array<number>
@@ -79,11 +79,6 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 </style>
 ```
 
-## 不同的函数定义方式有不同的限制
-
-* 函数声明方式不支持[作为值传递](../uts/function.md#作为值传递)
-* 函数表达式方式不支持[默认参数](../uts/function.md#默认参数)
-
 ## 模板函数 event 参数需显式指定类型
 
 ```html
@@ -94,6 +89,11 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 ## JSON的类型注意
 
 JSON在强类型语言中使用时，不能像js那样随意。这部分内容较长，[详见](../uts/data-type.md#JSON)
+
+## 不同的函数定义方式有不同的限制
+
+* 函数声明方式不支持[作为值传递](../uts/function.md#作为值传递)
+* 函数表达式方式不支持[默认参数](../uts/function.md#默认参数)
 
 ## 作用域插槽数据类型
 

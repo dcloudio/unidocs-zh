@@ -267,7 +267,9 @@ Component is a very important part of the technology in `vue`.Components allow U
 
 
 ##### 示例：
+
 > uni-app js 引擎版
+
 ```html
 	<template>
 		<view>
@@ -293,7 +295,9 @@ Component is a very important part of the technology in `vue`.Components allow U
 		}
 	</script>
 ```
+
 > uni-app x
+
 ```html
 	<template>
 		<view>
@@ -478,6 +482,7 @@ There are usually two cases where it's tempting to mutate a prop:
 
 
 > uni-app js 引擎版
+
 ```html
 	<template>
 		<view>
@@ -497,7 +502,9 @@ There are usually two cases where it's tempting to mutate a prop:
 		}
 	</script>
 ```
+
 > uni-app x
+
 ```html
 	<template>
 		<view>
@@ -546,6 +553,7 @@ There are usually two cases where it's tempting to mutate a prop:
 2. **The prop is passed in as a raw value that needs to be transformed**. In this case, it's best to define a computed property using the prop's value:
 
 > uni-app js 引擎版
+
 ```html
 	<template>
 		<view>
@@ -565,7 +573,9 @@ There are usually two cases where it's tempting to mutate a prop:
 		}
 	</script>
 ```
+
 > uni-app x
+
 ```html
 	<template>
 		<view>
@@ -626,6 +636,7 @@ Components can specify requirements for their props, such as the types you've al
 To specify prop validations, you can provide an object with validation requirements to the value of props, instead of an array of strings. For example:
 
 > uni-app js 引擎版
+
 ```js
 	props: {
 		// 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)
@@ -677,7 +688,9 @@ To specify prop validations, you can provide an object with validation requireme
 		}
 	}
 ```
+
 > uni-app x
+
 ```js
 	props: {
 		propA: {
@@ -775,6 +788,7 @@ to validate that the value of the author prop was created with new Person
 HTML attribute names are case-insensitive, so browsers will interpret any uppercase characters as lowercase. That means when you're using in-DOM templates, camelCased prop names need to use their kebab-cased (hyphen-delimited) equivalents:
 
 > uni-app js 引擎版
+
 ```html
 	<template>
 		<view>
@@ -790,7 +804,9 @@ HTML attribute names are case-insensitive, so browsers will interpret any upperc
 		}
 	</script>
 ```
+
 > uni-app x
+
 ```html
 	<template>
 		<view>

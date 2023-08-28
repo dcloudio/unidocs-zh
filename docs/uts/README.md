@@ -169,7 +169,7 @@ let a1:Array<number> = [1,2,3,4]
 
 ### 类型判断
 
->> 需要注意：isArray 需要HX 3.9.0之后版本才会支持
+> 注意：isArray 需要HX 3.9.0之后版本才会支持
 
 判断类型，有好几种方案：typeof、instanceof、isArray。
 

@@ -62,7 +62,7 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 * 粘贴时仅纯文本内容会被拷贝进编辑器
 * 插入 html 到编辑器内时，编辑器会删除一些不必要的标签，以保证内容的统一。例如`<p><span>xxx</span></p>`会改写为`<p>xxx</p>`
 * 编辑器聚焦时页面会被上推，系统行为以保证编辑区可见
-* H5端会动态引入依赖 [quill.min.js](https://unpkg.com/quill@1.3.7/dist/quill.min.js)、[image-resize.min.js](https://unpkg.com/quill-image-resize-mp@3.0.1/image-resize.min.js)，依赖从 [unpkg.com](https://unpkg.com) 加载，如过依赖加载较慢，可以下载下来放在自己的服务器或 CDN 服务商，然后在 [自定义模板](/collocation/manifest?id=h5-template) head 内引入。
+* H5端会动态引入依赖 [quill.min.js](https://unpkg.com/quill@1.3.7/dist/quill.min.js)、[image-resize.min.js](https://unpkg.com/quill-image-resize-mp@3.0.1/image-resize.min.js)，依赖从 [unpkg.com](https://unpkg.com) 加载，如过依赖加载较慢或失败，可以从 [github.com](https://github.com/dcloudio/uni-app/tree/dev/src/core/view/components/editor/quill) 或者 [gitee.com](https://gitee.com/dcloud/uni-app/tree/dev/src/core/view/components/editor/quill) 下载下来放在自己的服务器或 CDN 服务商，相比自己的服务器或者其他 CDN 服务商更推荐的做法是开发者将将所有前端资源托管在 [uniCloud 前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting.html) ，然后在 [自定义模板](../collocation/manifest?id=h5-template) 的 `head` 标签内引入。
 * 不能直接插入视频或者其他文件，编辑时可以采用视频封面或者文件缩略图占位，并在图片属性中保存视频信息，预览时读取附加信息再还原为视频或者其他文件操作。
 
 

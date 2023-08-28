@@ -268,6 +268,8 @@ Component is a very important part of the technology in `vue`.Components allow U
 
 ##### 示例：
 
+::: preview
+
 > uni-app js 引擎版
 
 ```html
@@ -480,6 +482,7 @@ There are usually two cases where it's tempting to mutate a prop:
 1. **这个 `prop` 用来传递一个初始值**；这个子组件接下来希望将其作为一个本地的 `prop` 数据来使用。在这种情况下，最好定义一个本地的 `data property `并将这个 `prop` 作为其初始值：
 1. **The prop is used to pass in an initial value; the child component wants to use it as a local data property afterwards**. In this case, it's best to define a local data property that uses the prop as its initial value:
 
+::: preview
 
 > uni-app js 引擎版
 
@@ -551,6 +554,8 @@ There are usually two cases where it's tempting to mutate a prop:
 
 2. **这个 `prop` 以一种原始的值传入且需要进行转换**。在这种情况下，最好使用这个 `prop` 的值来定义一个计算属性：
 2. **The prop is passed in as a raw value that needs to be transformed**. In this case, it's best to define a computed property using the prop's value:
+
+::: preview
 
 > uni-app js 引擎版
 
@@ -634,6 +639,8 @@ Components can specify requirements for their props, such as the types you've al
 
 为了定制 `prop` 的验证方式，你可以为 `props` 中的值提供一个带有验证需求的对象，而不是一个字符串数组。例如：
 To specify prop validations, you can provide an object with validation requirements to the value of props, instead of an array of strings. For example:
+
+::: preview
 
 > uni-app js 引擎版
 
@@ -786,6 +793,8 @@ to validate that the value of the author prop was created with new Person
 
 `HTML` 中的 `attribute` 名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用 `DOM` 中的模板时，`camelCase` (驼峰命名法) 的 `prop` 名需要使用其等价的 `kebab-case` (短横线分隔命名) 命名：
 HTML attribute names are case-insensitive, so browsers will interpret any uppercase characters as lowercase. That means when you're using in-DOM templates, camelCased prop names need to use their kebab-cased (hyphen-delimited) equivalents:
+
+::: preview
 
 > uni-app js 引擎版
 

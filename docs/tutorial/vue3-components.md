@@ -267,8 +267,7 @@ Component is a very important part of the technology in `vue`.Components allow U
 
 
 ##### 示例：
-##### Example
-
+> uni-app js 引擎版
 ```html
 	<template>
 		<view>
@@ -287,6 +286,30 @@ Component is a very important part of the technology in `vue`.Components allow U
 					default: 0,
 					required: true,
 					validator: function(value) {
+						return value >= 0
+					}
+				}
+			}
+		}
+	</script>
+```
+> uni-app x
+```html
+	<template>
+		<view>
+			<!-- 我是子组件componentA -->
+			<view>{{age}}</view>
+		</view>
+	</template>
+	<script>
+		export default {
+			props: {
+				// 检测类型 + 其他验证
+				age: {
+					type: Number,
+					default: 0,
+					required: true,
+					validator: function(value): boolean {
 						return value >= 0
 					}
 				}
@@ -454,7 +477,7 @@ There are usually two cases where it's tempting to mutate a prop:
 1. **The prop is used to pass in an initial value; the child component wants to use it as a local data property afterwards**. In this case, it's best to define a local data property that uses the prop as its initial value:
 
 
-
+> uni-app js 引擎版
 ```html
 	<template>
 		<view>
@@ -469,6 +492,29 @@ There are usually two cases where it's tempting to mutate a prop:
 			data() {
 				return {
 					myTitle:this.title
+				}
+			}
+		}
+	</script>
+```
+> uni-app x
+```html
+	<template>
+		<view>
+			<!-- 我是子组件componentA -->
+			<view>{{myTitle}}</view>
+		</view>
+	</template>
+	<script>
+		export default {
+			props: {
+				title: {
+					type: String
+				}
+			},
+			data() {
+				return {
+					myTitle:this.title as string
 				}
 			}
 		}
@@ -499,7 +545,7 @@ There are usually two cases where it's tempting to mutate a prop:
 2. **这个 `prop` 以一种原始的值传入且需要进行转换**。在这种情况下，最好使用这个 `prop` 的值来定义一个计算属性：
 2. **The prop is passed in as a raw value that needs to be transformed**. In this case, it's best to define a computed property using the prop's value:
 
-
+> uni-app js 引擎版
 ```html
 	<template>
 		<view>
@@ -513,6 +559,29 @@ There are usually two cases where it's tempting to mutate a prop:
 			props: ['size'],
 			computed: {
 				normalizedSize: function () {
+					return this.size.toLowerCase()
+				}
+			}
+		}
+	</script>
+```
+> uni-app x
+```html
+	<template>
+		<view>
+			<!-- 我是子组件componentA -->
+			<view>{{normalizedSize}}</view>
+		</view>
+	</template>
+	<script>
+		export default {
+			props: {
+				size: {
+					type: String
+				}
+			},
+			computed: {
+				normalizedSize: function (): string {
 					return this.size.toLowerCase()
 				}
 			}
@@ -556,7 +625,7 @@ Components can specify requirements for their props, such as the types you've al
 为了定制 `prop` 的验证方式，你可以为 `props` 中的值提供一个带有验证需求的对象，而不是一个字符串数组。例如：
 To specify prop validations, you can provide an object with validation requirements to the value of props, instead of an array of strings. For example:
 
-
+> uni-app js 引擎版
 ```js
 	props: {
 		// 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)
@@ -603,6 +672,47 @@ To specify prop validations, you can provide an object with validation requireme
 			// 与对象或数组默认值不同，这不是一个工厂函数 —— 这是一个用作默认值的函数
 			// Unlike object or array default, this is not a factory function - this is a function to serve as a default value
 			default: function() {
+			  return 'Default function'
+			}
+		}
+	}
+```
+> uni-app x
+```js
+	props: {
+		propA: {
+			type: Number
+		},
+		// 必填的字符串
+		propC: {
+			type: String,
+			required: true
+		},
+		// 带有默认值的数字
+		propD: {
+			type: Number,
+			default: 100
+		},
+		// 带有默认值的对象
+		propE: {
+			type: UTSObject,
+			// 对象或数组默认值必须从一个工厂函数获取
+			default: function(): UTSObject {
+			  return { message: 'hello' }
+			}
+		},
+		// 自定义验证函数
+		propF: {
+			validator: function(value): boolean {
+			  // 这个值必须匹配下列字符串中的一个
+			  return ['success', 'warning', 'danger'].indexOf(value) !== -1
+			}
+		},
+		// 具有默认值的函数
+		propG: {
+			type: Function,
+			// 与对象或数组默认值不同，这不是一个工厂函数 —— 这是一个用作默认值的函数
+			default: function(): string {
 			  return 'Default function'
 			}
 		}
@@ -655,6 +765,7 @@ In addition, `type` can also be a custom constructor function and the assertion 
 用于验证 `author` prop 的值是否是通过 `new Person` 创建的。
 to validate that the value of the author prop was created with new Person
 
+**注意：uni-app x 暂不支持**
 
 ### Prop 的大小写命名
 ### Prop Casing (camelCase vs kebab-case)
@@ -663,6 +774,7 @@ to validate that the value of the author prop was created with new Person
 `HTML` 中的 `attribute` 名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用 `DOM` 中的模板时，`camelCase` (驼峰命名法) 的 `prop` 名需要使用其等价的 `kebab-case` (短横线分隔命名) 命名：
 HTML attribute names are case-insensitive, so browsers will interpret any uppercase characters as lowercase. That means when you're using in-DOM templates, camelCased prop names need to use their kebab-cased (hyphen-delimited) equivalents:
 
+> uni-app js 引擎版
 ```html
 	<template>
 		<view>
@@ -675,6 +787,25 @@ HTML attribute names are case-insensitive, so browsers will interpret any upperc
 	<script>
 		export default {
 			props: ['postTitle']
+		}
+	</script>
+```
+> uni-app x
+```html
+	<template>
+		<view>
+			<!-- 我是子组件componentA -->
+			<view>{{postTitle}}</view>
+		</view>
+	</template>
+
+	<script>
+		export default {
+			props: {
+				postTitle: {
+					type: String
+				}
+			}
 		}
 	</script>
 ```
@@ -1015,9 +1146,7 @@ To add validation, the event is assigned a function that receives the arguments 
 	}
 ```
 
-
-
-
+**注意：uni-app x 暂不支持**
 
 ### v-model 参数
 ### v-model arguments
@@ -1187,7 +1316,7 @@ Notice that when the component's created lifecycle hook triggers, the `modelModi
 	</script>
 ```
 
-
+**注意：uni-app x 暂不支持 capitalize 修饰符**
 
 ```html
 	<!-- 我是 my-component子组件-->
@@ -1228,10 +1357,8 @@ Notice that when the component's created lifecycle hook triggers, the `modelModi
 	</script>
 ```
 
-
 对于带参数的 `v-model` 绑定，生成的 `prop` 名称将为 `arg + "Modifiers"`：
 For `v-model` bindings with arguments, the generated prop name will be `arg + "Modifiers"`:
-
 
 ```html
 	<my-component v-model:foo.capitalize="bar"></my-component>

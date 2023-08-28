@@ -307,7 +307,7 @@ Component is a very important part of the technology in `vue`.Components allow U
 			<view>{{age}}</view>
 		</view>
 	</template>
-	<script>
+	<script lang="uts">
 		export default {
 			props: {
 				// 检测类型 + 其他验证
@@ -324,6 +324,8 @@ Component is a very important part of the technology in `vue`.Components allow U
 	</script>
 ```
 
+:::
+
 ```html
 	<template>
 		<view>
@@ -333,9 +335,6 @@ Component is a very important part of the technology in `vue`.Components allow U
 		</view>
 	</template>
 ```
-
-
-
 
 ### 传递静态或动态的 Prop
 ### Passing Static or Dynamic Props
@@ -515,7 +514,7 @@ There are usually two cases where it's tempting to mutate a prop:
 			<view>{{myTitle}}</view>
 		</view>
 	</template>
-	<script>
+	<script lang="uts">
 		export default {
 			props: {
 				title: {
@@ -530,6 +529,8 @@ There are usually two cases where it's tempting to mutate a prop:
 		}
 	</script>
 ```
+
+:::
 
 ```html
 	<template>
@@ -588,7 +589,7 @@ There are usually two cases where it's tempting to mutate a prop:
 			<view>{{normalizedSize}}</view>
 		</view>
 	</template>
-	<script>
+	<script lang="uts">
 		export default {
 			props: {
 				size: {
@@ -603,6 +604,8 @@ There are usually two cases where it's tempting to mutate a prop:
 		}
 	</script>
 ```
+
+:::
 
 ```html
 	<template>
@@ -739,6 +742,8 @@ To specify prop validations, you can provide an object with validation requireme
 	}
 ```
 
+:::
+
 当 `prop` 验证失败的时候，(开发环境构建版本的) `Vue` 将会产生一个控制台的警告。
 When prop validation fails, Vue will produce a console warning (if using the development build).
 
@@ -824,7 +829,7 @@ HTML attribute names are case-insensitive, so browsers will interpret any upperc
 		</view>
 	</template>
 
-	<script>
+	<script lang="uts">
 		export default {
 			props: {
 				postTitle: {
@@ -834,6 +839,8 @@ HTML attribute names are case-insensitive, so browsers will interpret any upperc
 		}
 	</script>
 ```
+
+:::
 
 ```html
 	<template>

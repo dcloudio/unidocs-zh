@@ -210,7 +210,9 @@
 
 
 ##### 示例：
+
 > uni-app js 引擎版
+
 ```html
 	<template>
 		<view>
@@ -234,7 +236,9 @@
 		}
 	</script>
 ```
+
 > uni-app x
+
 ```html
 	<template>
 		<view>
@@ -386,6 +390,7 @@
 
 
 > uni-app js 引擎版
+
 ```html
 	<template>
 		<view>
@@ -404,7 +409,9 @@
 		}
 	</script>
 ```
+
 > uni-app x
+
 ```html
 	<template>
 		<view>
@@ -451,6 +458,7 @@
 2. **这个 `prop` 以一种原始的值传入且需要进行转换**。在这种情况下，最好使用这个 `prop` 的值来定义一个计算属性：
 
 > uni-app js 引擎版
+
 ```html
 	<template>
 		<view>
@@ -469,7 +477,9 @@
 		}
 	</script>
 ```
+
 > uni-app x
+
 ```html
 	<template>
 		<view>
@@ -525,6 +535,7 @@
 为了定制 `prop` 的验证方式，你可以为 `props` 中的值提供一个带有验证需求的对象，而不是一个字符串数组。例如：
 
 > uni-app js 引擎版
+
 ```js
 	props: {
 		// 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)
@@ -566,7 +577,9 @@
 		}
 	}
 ```
+
 > uni-app x
+
 ```js
 	props: {
 		propA: {
@@ -656,6 +669,7 @@
 `HTML` 中的 `attribute` 名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用 `DOM` 中的模板时，`camelCase` (驼峰命名法) 的 `prop` 名需要使用其等价的 `kebab-case` (短横线分隔命名) 命名：
 
 > uni-app js 引擎版
+
 ```html
 	<template>
 		<view>
@@ -670,7 +684,9 @@
 		}
 	</script>
 ```
+
 > uni-app x
+
 ```html
 	<template>
 		<view>

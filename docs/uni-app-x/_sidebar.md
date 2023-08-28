@@ -108,7 +108,7 @@
   * [visibility](css/visibility.md)
   * [lines](css/lines.md)
 * UVUE DOM
-  * [DOM概述](dom.md)
+  * [DOM概述](dom/)
   * [INode](dom/inode.md)  
   * [CSSStyleDeclaration](dom/cssstyledeclaration.md)  
   * [DrawableContext](dom/drawablecontext.md)  

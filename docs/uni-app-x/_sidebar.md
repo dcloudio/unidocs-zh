@@ -13,8 +13,8 @@
   * [input](component/input.md)
   * [textarea](component/textarea.md)
   * [button](component/button.md)
-  * [checkbox](component/checkbox.md)
-  * [radio](component/radio.md)
+  * [checkbox](component/checkbox-group.md)
+  * [radio](component/radio-group.md)
   * [picker-view](component/picker-view.md)
   * [progress](component/progress.md)
   * [slider](component/slider.md)
@@ -113,8 +113,8 @@
   * [CSSStyleDeclaration](dom/cssstyledeclaration.md)  
   * [DrawableContext](dom/drawablecontext.md)  
 * 事件event
-  * [事件系统概述](event.md)
-  * [通用事件](event-common.md)
+  * [事件系统概述](dom/event.md)
+  <!-- * [通用事件](event-common.md) -->
 * [性能](performance.md)
 <!-- * [新建项目]()
   * [1. 通过 HBuilderX 可视化界面](quickstart-hx.md)

@@ -330,6 +330,8 @@ a as string // 异常
 { name: 'Tom', printName: function () { } } as Person
 ```
 
+另外：当 `as` 用在[模块](./module.md)导入时，它和类型断言无关，其功能为[指定别名](./module.md#指定别名)。
+
 ## 实例类型判断
 
 使用 `instanceof` 运算符执行运行时检查，以标识对象是否符合给定类型。

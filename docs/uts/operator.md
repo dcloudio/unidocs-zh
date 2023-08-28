@@ -324,6 +324,11 @@ a as string ｜ null // 正常
 a as string // 异常
 ```
 
+当 as 操作符的左侧为[对象字面量](./literal.md#object-literal)时，编译器会进行[特殊处理](./object.md#实例化)：自动创建类型对应的实例。
+
+```ts
+{ name: 'Tom', printName: function () { } } as Person
+```
 
 ## 实例类型判断
 

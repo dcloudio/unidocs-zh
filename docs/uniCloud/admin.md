@@ -31,6 +31,9 @@ uni-admin is open source and follows the MIT license, you can download it from [
 </a>
 
 
+> [uni-admin交流群](https://im.dcloud.net.cn/#/?joinGroup=64e84353cf42a22d542b29ea)
+
+
 ## uni-admin 功能
 ## uni-admin functions
 

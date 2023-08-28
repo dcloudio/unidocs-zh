@@ -21,6 +21,9 @@ uni-admin 是开源的，遵循 MIT 协议，你可以从[Github](https://github
 </a>
 
 
+> [uni-admin交流群](https://im.dcloud.net.cn/#/?joinGroup=64e84353cf42a22d542b29ea)
+
+
 ## uni-admin 功能
 
 uni-admin有预置功能、插件生态和数据表管理的代码生成工具。

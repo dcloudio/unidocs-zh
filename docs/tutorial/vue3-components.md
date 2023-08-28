@@ -248,7 +248,7 @@
 			<view>{{age}}</view>
 		</view>
 	</template>
-	<script>
+	<script lang="uts">
 		export default {
 			props: {
 				// 检测类型 + 其他验证
@@ -265,6 +265,8 @@
 	</script>
 ```
 
+:::
+
 ```html
 	<template>
 		<view>
@@ -273,9 +275,6 @@
 		</view>
 	</template>
 ```
-
-
-
 
 ### 传递静态或动态的 Prop
 
@@ -422,7 +421,7 @@
 			<view>{{myTitle}}</view>
 		</view>
 	</template>
-	<script>
+	<script lang="uts">
 		export default {
 			props: {
 				title: {
@@ -437,6 +436,8 @@
 		}
 	</script>
 ```
+
+:::
 
 ```html
 	<template>
@@ -492,7 +493,7 @@
 			<view>{{normalizedSize}}</view>
 		</view>
 	</template>
-	<script>
+	<script lang="uts">
 		export default {
 			props: {
 				size: {
@@ -507,6 +508,8 @@
 		}
 	</script>
 ```
+
+:::
 
 ```html
 	<template>
@@ -628,6 +631,8 @@
 	}
 ```
 
+:::
+
 当 `prop` 验证失败的时候，(开发环境构建版本的) `Vue` 将会产生一个控制台的警告。
 
 **tips**
@@ -704,7 +709,7 @@
 		</view>
 	</template>
 
-	<script>
+	<script lang="uts">
 		export default {
 			props: {
 				postTitle: {
@@ -714,6 +719,8 @@
 		}
 	</script>
 ```
+
+:::
 
 ```html
 	<template>

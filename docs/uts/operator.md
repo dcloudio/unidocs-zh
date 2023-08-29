@@ -371,3 +371,84 @@ function fn(obj: string) {
   }
 }
 ```
+
+对于数字类型，`instanceof` 细化了判断逻辑，除了能判断是否是 number, 还能判断是否是 Int Float Double Int64 Long ... 等所有平台专有数字类型。
+
+```ts
+
+let a = 10.0
+let b: Double = 3.14
+let c: any = a
+let d: any = b
+let e: Int = 2
+
+a instanceof number // true
+b instanceof Double //true
+c instanceof number //true //kottlin 结果为 false
+d instanceof Double // true
+e instanceof Int //true
+
+```
+
+
+
+## 实例类型获取
+
+使用 `typeof` 运算符获取操作数的类型，返回一个表示类型的字符串, 默认值是 "object"。
+
+对于数字类型，除了 number 之外，typeof 还能返回 Int Float Double Int64 Long ... 等所有平台特有数字类型。
+
+基本用法：
+
+```ts
+
+// number
+let a = 10.0
+let b: Double = 3.14
+let c: any = a
+let d: any = b
+let e: Int = 2
+
+typeof a == "number" //true
+typeof b == "Double" //true 
+typeof d == "Double" //true
+typeof e == "Int" //true
+
+// 在 Swift 中
+typeof c == "number" //true
+
+// 但是在 Kottlin 中, typeof c 结果是 Double
+typeof c == "Double"
+
+// string
+let str = "hello uts"
+typeof str == "string" //true
+
+//boolean
+let ret = true 
+typeof ret == "boolean" //true
+
+//function
+function fn(obj: string) {
+  if (obj instanceof String) {
+    // ...
+  }
+}
+
+typeof fn == "function" //true
+typeof Math.sign == "function" //true
+
+//object
+let obj = {
+	"x": 1,
+	"y": 2
+}
+
+typeof obj == "object" // true
+
+// 除了上述类型外，typeof 默认返回的是 "object"
+
+typeof null == "object" //true
+typeof [1, 2, 3] == "object" //true
+
+```

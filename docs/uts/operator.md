@@ -301,7 +301,7 @@ a as string // 正常
 1.0 as number
 
 // 对象字面量也可以as为USTJSONObject或某个type
-{"id":1} as USTJSONObject
+{"id":1} as UTSJSONObject
 
 type t = {
 	id:number

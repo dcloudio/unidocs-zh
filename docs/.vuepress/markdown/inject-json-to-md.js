@@ -2,6 +2,7 @@ let cssJson = {};
 let utsJson = {};
 let utsApiJson = {};
 let utsComJson = {};
+let utsUnicloudApiJson = {};
 try {
 	cssJson = require(`../utils/${process.env.DOCS_LOCAL}/cssJson.json`);
 } catch (error) {}
@@ -14,6 +15,10 @@ try {
 try {
 	utsComJson = require('../utils/utsComJson.json');
 } catch (error) {}
+try {
+	utsUnicloudApiJson = require('../utils/utsUnicloudApiJson.json');
+} catch (error) {}
+
 
 function getRegExp(key) {
 	return new RegExp(`<!--\\s*${key}.([\\w\\W]+[^\\s])\\s*-->`)
@@ -49,6 +54,14 @@ const getJSON = text => {
 		return {
 			match,
 			json: utsComJson,
+		};
+	}
+
+	match = text.match(getRegExp('UTSUNICLOUDAPIJSON'));
+	if (match) {
+		return {
+			match,
+			json: utsUnicloudApiJson,
 		};
 	}
 

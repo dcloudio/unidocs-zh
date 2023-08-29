@@ -766,7 +766,7 @@ uni-frv-external-co 只支持URL化方式访问，在调用之前需要在uniClo
 
 支持以下两种认证方式，根据业务需求选择不同的认证方式
 
-1. 携带connectCode认证；相比签名认证，省去了复杂的签名计算过程。 调用简单，但安全性较低，适合服务器与服务器之间调用。[详见](/uniCloud/uni-cloud-s2s.md#code)
+1. 携带connectCode认证；相比签名认证，省去了复杂的签名计算过程。 调用简单，但安全性较低。[详见](/uniCloud/uni-cloud-s2s.md#code)
 2. 使用签名认证；调用接口时需要使用签名密钥对请求内容进行签名计算，并将签名添加至请求头传输给云函数进行签名验证，相比简易鉴权方式，安全性高，可防止接口参数被篡改。[详见](/uniCloud/uni-cloud-s2s.md#sign)
 
 如在您的业务也在uniCloud并且需要签名请求认证，可以使用`uni-cloud-s2s`提供的`getSecureHeaders`方法生成签名请求头 [详见](/uniCloud/uni-cloud-s2s.md#sign-method-of-server)

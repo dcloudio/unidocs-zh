@@ -191,10 +191,10 @@ uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在
 | ^^				      			   | let a: Int = 2; a / 10.0 				  	  | 结果为 0.2 Double               |编译失败，Int / Double 不合法 需使用 a / Int(10.0)	|
 | 专有类型变量 + 字面量                   | let a: Int = 2; a + 10				  		  | 结果为 12 Int                   |结果为12 Int                          	  |
 | ^^				      			   | let a: Int = 2; a + 3.14 				  	  | 结果为 5.14 Double              |编译失败, 需要 a + Int(3.14) = 5	          |
-| 相同的专有类型变量相加                   | let a: Int = 1； let b: Int = 2; a + b		  | 结果为 3 Int                    |结果为3 Int                          	  |
+| 相同的专有类型变量相加                   | let a: Int = 1; let b: Int = 2; a + b		  | 结果为 3 Int                    |结果为3 Int                          	  |
 | ^^				      			   | let a: Double = 1.0; let b: Double = 2.0; a + b | 结果为 3.0 Double            |结果为 3.0 Double	          			  |
-| 不同的专有类型变量相加                   | let a: Int = 1； let b: Float = 3.14.toFloat()； a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
-| ^^				      			   | let a: Float = 1.0.toFloat()； let b: Double = 3.14； a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |
+| 不同的专有类型变量相加                   | let a: Int = 1; let b: Float = 3.14.toFloat(); a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
+| ^^				      			   | let a: Float = 1.0.toFloat(); let b: Double = 3.14; a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |
 
 ## 比较运算符的跨数字类型注意@comparisondifftype
 
@@ -215,8 +215,8 @@ uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在
 | 变量 > number				           | let a: Int = 1; a > number 				  | 结果为 true or false            |结果为 true or false  	  				  |
 | 字面量 > 字面量   			           | 3.14 > 1 				  					  | 结果为 true                     |结果为 true                          	  |
 | 专有类型变量 > 字面量                   | let a: Int = 2; a > 3.14				  	  | 结果为 false                    |结果为 false                          	  |
-| 相同的专有类型变量比较                   | let a: Int = 2； let b: Int = 1; a > b		  | 结果为 true                     |结果为 true                         	      |
-| 不同的专有类型变量比较                   | let a: Int = 1； let b: Float = 3.14.toFloat()； a > b	  | 结果为false         |编译失败，不同类型变量不能比较                 |
+| 相同的专有类型变量比较                   | let a: Int = 2; let b: Int = 1; a > b		  | 结果为 true                     |结果为 true                         	      |
+| 不同的专有类型变量比较                   | let a: Int = 1; let b: Float = 3.14.toFloat(); a > b	  | 结果为false         |编译失败，不同类型变量不能比较                 |
 
 
 ### 比较运算符 == != === !==
@@ -301,7 +301,7 @@ a as string // 正常
 1.0 as number
 
 // 对象字面量也可以as为USTJSONObject或某个type
-{"id":1} as USTJSONObject
+{"id":1} as UTSJSONObject
 
 type t = {
 	id:number
@@ -344,9 +344,19 @@ a as string // 异常
 
 使用 `instanceof` 运算符执行运行时检查，以标识对象是否符合给定类型。
 
+| 类型                						 			 								| 结果             | 
+| ------------------------------------------------------------------------------------ 	| ---------------- | 
+| Boolean                						 		 								| 编译报错，不支持    | 
+| Number     		  						 			 								| 编译报错，不支持    | 
+| String       		  						 			 								| 编译报错，不支持    | 
+| 平台专有数字类型: Int, Float, Double, Long ... 			 								| true or false    |
+| typeof 结果为 "object" 的类型(包含但不限于：Date, Array, Map, UTSJSONObject, 自定义类型)	| true or false    | 
+
+对于 Boolean, Number, String 类型的实例判断，请使用 `typeof` .
+
 ```ts
 function fn(obj: any) {
-  if (obj instanceof String) {
+  if (obj instanceof Date) {
     // ...
   }
 }
@@ -365,9 +375,105 @@ function fn(obj: any) {
 已经可以明确判断类型兼容性时无需使用 `instanceof` 在运行时进行判断，编译阶段会检查出这种情况会报错或者警告：
 
 ```ts
+function fn(obj: Date) {
+  if (obj instanceof Date) {
+    // ...
+  }
+}
+```
+
+对于数字类型，`instanceof` 细化了判断逻辑，除了能判断是否是 number, 还能判断是否是 Int Float Double Int64 Long ... 等所有平台专有数字类型。
+
+```ts
+
+let a: Double = 3.14
+let b: Int = 2
+
+a instanceof Double //true
+b instanceof Int //true 
+
+```
+
+
+
+## 实例类型获取
+
+使用 `typeof` 运算符获取操作数的类型，返回一个表示类型的字符串。
+
+| 类型                						 			 | 结果             | 
+| ------------------------------------------------------ | ---------------- | 
+| null                						 			 | "object"         | 
+| boolean     		  						 			 | "boolean"        | 
+| number       		  						 			 | "number"         | 
+| string       		  						 			 | "string"         | 
+| function     		  						 			 | "function"       | 
+| 平台专有数字类型: Int, Float, Double, Long ... 			 | "Int","Float","Double","Long" ... |
+| 其他任何对象(包含但不限于：Date, Array, Map, UTSJSONObject) | "object"         | 
+
+
+用法示例：
+
+```ts
+
+// number
+let a = 10.0
+let b: Double = 3.14
+let c: Int = 2
+
+typeof a == "number" //true
+typeof b == "Double" //true 
+typeof c == "Int" //true
+
+// string
+let str = "hello uts"
+typeof str == "string" //true
+
+//boolean
+let ret = true 
+typeof ret == "boolean" //true
+
+//function
 function fn(obj: string) {
   if (obj instanceof String) {
     // ...
   }
 }
+
+typeof fn == "function" //true
+typeof Math.sign == "function" //true
+
+//object
+let obj = {
+	"x": 1,
+	"y": 2
+}
+
+typeof obj == "object" // true
+
+typeof null == "object" //true
+typeof [1, 2, 3] == "object" //true
+
 ```
+
+使用 typeof 获取 any 实例的类型时，在安卓平台上存在一些特殊情况：
+
+```ts
+
+// number
+let a = 10.0
+let b: Double = 3.14
+let c: any = a
+let d: any = b
+
+typeof a == "number" //true
+typeof b == "Double" //true 
+typeof d == "Double" //true
+
+// 在 iOS 平台上
+typeof c == "number" //true
+
+// 在安卓平台上期望返回 "number" 但真实返回的是 "Double"
+typeof c == "number" //false 真实返回的是 "Double"
+
+```
+

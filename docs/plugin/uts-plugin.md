@@ -749,19 +749,7 @@ export function getPluginVersion(): UTSJSONObject{
 }
 ```
 
-3 JSONObject
 
-```ts
-// JSONObject 示例
-// JSONObject example
-export function getPluginVersion(): JSONObject{
-	
-	var retJson = new JSONObject()
-	retJson["version"] = "1.2.0"
-	retJson["versionNum"] = 120
-	return retJson
-}
-```
 
 uni-app向UTS环境传值，支持下列类型：
 uni-app transfers values to the UTS environment, and supports the following types:
@@ -828,6 +816,43 @@ postUserInfo({
 });
 
 ```
+
+遗留问题：
+
+有些场景，我们需要参数对象包含对象数组，比如
+```json
+{
+	"name": "zhangsan",
+	"teacher": [{
+			"id": "1",
+			"name": "kongzi"
+		},
+		{
+			"id": "2",
+			"name": "mengzi"
+		}
+	]
+}
+```
+目前在uni-app 1.0 环境下，复杂参数的传递是存在一定的缺陷。我们不能将teacher 声明为具体的类型数组，需要声明为any数组：
+
+
+```uts
+type Param{
+	name:string,
+	// 不能声明为 Teacher[]
+	teacher: any[];
+}
+```
+访问数组元素时，通过 UTSJSONObjct 包装访问
+```uts
+// 循环遍历
+list1.forEach((item : any) => {
+    const utsItem = new UTSJSONObject(item)
+})
+```
+
+这个问题，我们稍后会改进。
 
 
 ## 4 前端使用插件

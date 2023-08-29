@@ -611,18 +611,7 @@ export function getPluginVersion(): UTSJSONObject{
 }
 ```
 
-3 JSONObject
 
-```ts
-// JSONObject 示例
-export function getPluginVersion(): JSONObject{
-	
-	var retJson = new JSONObject()
-	retJson["version"] = "1.2.0"
-	retJson["versionNum"] = 120
-	return retJson
-}
-```
 
 uni-app向UTS环境传值，支持下列类型：
 

@@ -1,4 +1,4 @@
-# type（Type Aliases）
+# 类型别名（Type Aliases）
 
 使用类型别名可以为任何类型命名。类型别名不支持在局部作用域内定义。
 

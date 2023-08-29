@@ -340,63 +340,7 @@ a as string // 异常
 
 另外：当 `as` 用在[模块](./module.md)导入时，它和类型断言无关，其功能为[指定别名](./module.md#指定别名)。
 
-## 实例类型判断
-
-使用 `instanceof` 运算符执行运行时检查，以标识对象是否符合给定类型。
-
-| 类型                						 			 								| 结果             | 
-| ------------------------------------------------------------------------------------ 	| ---------------- | 
-| Boolean                						 		 								| 编译报错，不支持    | 
-| Number     		  						 			 								| 编译报错，不支持    | 
-| String       		  						 			 								| 编译报错，不支持    | 
-| 平台专有数字类型: Int, Float, Double, Long ... 			 								| true or false    |
-| typeof 结果为 "object" 的类型(包含但不限于：Date, Array, Map, UTSJSONObject, 自定义类型)	| true or false    | 
-
-对于 Boolean, Number, String 类型的实例判断，请使用 `typeof` .
-
-```ts
-function fn(obj: any) {
-  if (obj instanceof Date) {
-    // ...
-  }
-}
-```
-
-包含泛型的类型，不能缺省泛型信息。如不需要判断具体的泛型类型，可以使用 `*` 表示任意泛型类型：
-
-```ts
-function fn(obj: any) {
-  if (obj instanceof Map<*, *>) {
-    // ...
-  }
-}
-```
-
-已经可以明确判断类型兼容性时无需使用 `instanceof` 在运行时进行判断，编译阶段会检查出这种情况会报错或者警告：
-
-```ts
-function fn(obj: Date) {
-  if (obj instanceof Date) {
-    // ...
-  }
-}
-```
-
-对于数字类型，`instanceof` 细化了判断逻辑，除了能判断是否是 number, 还能判断是否是 Int Float Double Int64 Long ... 等所有平台专有数字类型。
-
-```ts
-
-let a: Double = 3.14
-let b: Int = 2
-
-a instanceof Double //true
-b instanceof Int //true 
-
-```
-
-
-
-## 实例类型获取
+## typeof实例类型获取@typeof
 
 使用 `typeof` 运算符获取操作数的类型，返回一个表示类型的字符串。
 
@@ -455,7 +399,7 @@ typeof [1, 2, 3] == "object" //true
 
 ```
 
-使用 typeof 获取 number 类型时，在安卓平台上存在一些特殊，将 number 类型赋值给 any 类型变量时，会根据数值将类型转变为实际平台专有数字类型。
+将 number 类型赋值给 any 类型变量时，在安卓平台上存在一些特殊，会根据数值将类型转变为实际平台专有数字类型，使用 typeof 获取此 any 类型变量将会返回实际平台专有数字类型。
 
 ```ts
 
@@ -476,4 +420,60 @@ typeof c == "number" //true
 typeof c == "number" //false 真实返回的是 "Double"
 
 ```
+
+## instanceof实例类型判断@instanceof
+
+使用 `instanceof` 运算符执行运行时检查，以标识对象是否符合给定类型。
+
+| 类型                						 			 								| 结果             | 
+| ------------------------------------------------------------------------------------ 	| ---------------- | 
+| Boolean                						 		 								| 编译报错，不支持    | 
+| Number     		  						 			 								| 编译报错，不支持    | 
+| String       		  						 			 								| 编译报错，不支持    | 
+| 平台专有数字类型: Int, Float, Double, Long ... 			 								| true or false    |
+| typeof 结果为 "object" 的类型(包含但不限于：Date, Array, Map, UTSJSONObject, 自定义类型)	| true or false    | 
+
+对于 Boolean, Number, String 类型的实例判断，请使用 `typeof` .
+
+```ts
+function fn(obj: any) {
+  if (obj instanceof Date) {
+    // ...
+  }
+}
+```
+
+包含泛型的类型，不能缺省泛型信息。如不需要判断具体的泛型类型，可以使用 `*` 表示任意泛型类型：
+
+```ts
+function fn(obj: any) {
+  if (obj instanceof Map<*, *>) {
+    // ...
+  }
+}
+```
+
+已经可以明确判断类型兼容性时无需使用 `instanceof` 在运行时进行判断，编译阶段会检查出这种情况会报错或者警告：
+
+```ts
+function fn(obj: Date) {
+  if (obj instanceof Date) {
+    // ...
+  }
+}
+```
+
+对于数字类型，`instanceof` 细化了判断逻辑，除了能判断是否是 number, 还能判断是否是 Int Float Double Int64 Long ... 等所有平台专有数字类型。
+
+```ts
+
+let a: Double = 3.14
+let b: Int = 2
+
+a instanceof Double //true
+b instanceof Int //true 
+
+```
+
+
 

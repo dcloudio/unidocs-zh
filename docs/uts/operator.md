@@ -455,7 +455,7 @@ typeof [1, 2, 3] == "object" //true
 
 ```
 
-使用 typeof 获取 any 实例的类型时，在安卓平台上存在一些特殊情况：
+使用 typeof 获取 number 类型时，在安卓平台上存在一些特殊，将 number 类型赋值给 any 类型变量时，会根据数值将类型转变为实际平台专有数字类型。
 
 ```ts
 
@@ -472,7 +472,7 @@ typeof d == "Double" //true
 // 在 iOS 平台上
 typeof c == "number" //true
 
-// 在安卓平台上期望返回 "number" 但真实返回的是 "Double"
+// 在安卓平台上会根据数据实际数值转换为平台专有数字类型Doubel  
 typeof c == "number" //false 真实返回的是 "Double"
 
 ```

@@ -3,6 +3,7 @@
 * [编译器](compiler/README.md)
 * [manifest.json](manifest.md)
 * 组件
+  * [公共属性和事件](component/common.md)
   * [view](component/view.md)
   * [scroll-view](component/scroll-view.md)
   * [list-view](component/list-view.md)
@@ -112,9 +113,6 @@
   * [INode](dom/inode.md)  
   * [CSSStyleDeclaration](dom/cssstyledeclaration.md)  
   * [DrawableContext](dom/drawablecontext.md)  
-* 事件event
-  * [事件系统概述](dom/event.md)
-  <!-- * [通用事件](event-common.md) -->
 * [性能](performance.md)
 <!-- * [新建项目]()
   * [1. 通过 HBuilderX 可视化界面](quickstart-hx.md)

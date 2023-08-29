@@ -276,7 +276,7 @@ const payload = {
 const signKey = 'q0etb3cl0s8mrlfdqp33ist1ou0r97pg'
 ```
 
-1. 过滤payload内非简单类型数据，以key升序，生成payloadStr。`payloadStr = 'a=1&b=2'`
+1. 过滤payload内非简单类型数据，以key升序，生成payloadStr。`payloadStr = 'a=1&b=2'`，**注意：生成payloadStr时无需对其中字符进行encode**
 2. 拼接签名串，hmac方法对应的签名串为`timestamp+'\n'+payloadStr`，hash方法对应的签名串为`timestamp+'\n'+payloadStr+'\n'+signKey`
 3. 分别调用hmac方法、hash方法获取签名结果
 

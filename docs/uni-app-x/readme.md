@@ -112,6 +112,7 @@ uni-app x 一期，只包括基本的组件和API。
 - [x] switch
 - [x] slider
 - [x] picker-view
+- [x] navigator
 - [x] progress
 - [x] webview
 - [x] video 暂不支持全屏后放置子组件

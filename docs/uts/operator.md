@@ -416,7 +416,7 @@ typeof d == "Double" //true
 // 在 iOS 平台上
 typeof c == "number" //true
 
-// 在安卓平台上会根据数据实际数值转换为平台专有数字类型Doubel  
+// 在安卓平台上变量c会根据数据实际数值转换为平台专有数字类型Doubel  
 typeof c == "number" //false 真实返回的是 "Double"
 
 ```

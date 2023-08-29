@@ -191,10 +191,10 @@ uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在
 | ^^				      			   | let a: Int = 2; a / 10.0 				  	  | 结果为 0.2 Double               |编译失败，Int / Double 不合法 需使用 a / Int(10.0)	|
 | 专有类型变量 + 字面量                   | let a: Int = 2; a + 10				  		  | 结果为 12 Int                   |结果为12 Int                          	  |
 | ^^				      			   | let a: Int = 2; a + 3.14 				  	  | 结果为 5.14 Double              |编译失败, 需要 a + Int(3.14) = 5	          |
-| 相同的专有类型变量相加                   | let a: Int = 1； let b: Int = 2; a + b		  | 结果为 3 Int                    |结果为3 Int                          	  |
+| 相同的专有类型变量相加                   | let a: Int = 1; let b: Int = 2; a + b		  | 结果为 3 Int                    |结果为3 Int                          	  |
 | ^^				      			   | let a: Double = 1.0; let b: Double = 2.0; a + b | 结果为 3.0 Double            |结果为 3.0 Double	          			  |
-| 不同的专有类型变量相加                   | let a: Int = 1； let b: Float = 3.14.toFloat()； a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
-| ^^				      			   | let a: Float = 1.0.toFloat()； let b: Double = 3.14； a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |
+| 不同的专有类型变量相加                   | let a: Int = 1; let b: Float = 3.14.toFloat(); a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
+| ^^				      			   | let a: Float = 1.0.toFloat(); let b: Double = 3.14; a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |
 
 ## 比较运算符的跨数字类型注意@comparisondifftype
 
@@ -215,8 +215,8 @@ uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在
 | 变量 > number				           | let a: Int = 1; a > number 				  | 结果为 true or false            |结果为 true or false  	  				  |
 | 字面量 > 字面量   			           | 3.14 > 1 				  					  | 结果为 true                     |结果为 true                          	  |
 | 专有类型变量 > 字面量                   | let a: Int = 2; a > 3.14				  	  | 结果为 false                    |结果为 false                          	  |
-| 相同的专有类型变量比较                   | let a: Int = 2； let b: Int = 1; a > b		  | 结果为 true                     |结果为 true                         	      |
-| 不同的专有类型变量比较                   | let a: Int = 1； let b: Float = 3.14.toFloat()； a > b	  | 结果为false         |编译失败，不同类型变量不能比较                 |
+| 相同的专有类型变量比较                   | let a: Int = 2; let b: Int = 1; a > b		  | 结果为 true                     |结果为 true                         	      |
+| 不同的专有类型变量比较                   | let a: Int = 1; let b: Float = 3.14.toFloat(); a > b	  | 结果为false         |编译失败，不同类型变量不能比较                 |
 
 
 ### 比较运算符 == != === !==

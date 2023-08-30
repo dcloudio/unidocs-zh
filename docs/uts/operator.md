@@ -357,6 +357,7 @@ a as string // 异常
 > 特别说明：  
 > HBuilderX3.9.0统一为以上规范，在HBuilderX3.9.0之前版本平台专有数字类型变量使用typeof操作符获取的值为"number"  
 
+为了与web保持一致，typeof除了布尔、数字、字符串、函数外，全部返回object。如需判断object范围内的具体类型，需另见[instanceof](#instanceof)
 
 用法示例：
 

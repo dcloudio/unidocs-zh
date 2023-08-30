@@ -14,7 +14,9 @@
 
 **注意**  
 - `appid` 由 DCloud 云端分配，主要用于 DCloud 相关的云服务，请勿自行修改。[详见](https://ask.dcloud.net.cn/article/35907)
-- `uni-app-x` 必须存在，没有此节点 HBuilderX 将无法识别为 uni-app x项目
+- `uni-app-x` 节点必须存在，它是一个项目是否是 uni-app x项目的核心标识。
+	* 缺少该节点时，HBuilderX 会把项目识别为 uni-app js引擎版项目（方形项目图标）。
+	* 含有该节点时，HBuilderX中的项目图标是圆形的。
 
 
 ### UNI-APP-X配置@uniappx  

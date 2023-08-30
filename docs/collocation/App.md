@@ -22,7 +22,8 @@
 |onUnhandledRejection|对未处理的 Promise 拒绝事件监听函数（2.8.1+）|
 |onPageNotFound|页面不存在监听函数|
 |onThemeChange|监听系统主题变化|
-|onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出。app-uvue-android 3.9+|
+|onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出（app-uvue-android 3.9+）|
+|onExit|监听应用退出（app-uvue-android 3.9+）|
 
 **示例代码**
 ```html

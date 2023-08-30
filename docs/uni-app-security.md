@@ -6,15 +6,16 @@ uni安全加固对移动App进行安全性增强，旨在防止应用程序被�
 
 uni安全加固目前仅支持Android App，后续会扩展到iOS App及小程序平台。
 
-uni安全加固目前已上线腾讯云版，其它厂商版会尽快上线。
+uni安全加固目前已上线腾讯云版、蚂蚁⼩程序云版，其它厂商版会尽快上线。
 
 ## 功能介绍
 
 uni安全加固在Android平台支持如下加固方案：
+- 腾讯云版
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822005.png)
 
-- 方案一：DEX混合加密，过检需求时选择；
-- 方案二：VMP，定制化保护，适用于对安全性要求高，对过检没有什么需求的场景；
-- 方案三：DEX方案+VMP方案，加固方案可结合使用，对启动时间可能有一定影响，可测试后决定加固方案。
+- 蚂蚁⼩程序云版
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822006.png)
 
 ## 应用场景
 
@@ -32,40 +33,31 @@ App 开发完毕直接上线，可能存在代码泄露风险，通过 dex 整�
 
 ## 计费规则
 
-uni安全加固（腾讯云版）分为测试版和正式版两种类型：
+uni安全加固分为测试版和正式版两种类型：
 
 - 测试版：免费，App有效期15天，15天后不可用；
 - 正式版：600元/次，App长久有效；
 
 ## 使用指南
 
-1. 使用开发者账号登录[开发者中心](https://dev.dcloud.net.cn/) ，选择`应用加固服务`栏目。阅读uni加固服务协议并点击协议下方的“同意协议并开通”按钮，便可开通uni加固服务。
+1. 使用开发者账号登录[开发者中心](https://dev.dcloud.net.cn/) ，选择`uni安全加固`栏目。阅读uni加固服务协议并点击协议下方的“同意协议并开通”按钮，便可开通uni加固服务。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/no-open_1.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822001.png)
 
-2. 在申请应用加固之前，您需要先进行充值，因为应用加固是一项预付费业务。点击页面上的“充值”按钮，并输入充值金额进行充值。
+2. 在提交应用加固之前，您需要先进行充值，因为应用加固是一项预付费业务。点击页面上的“充值”按钮，并输入充值金额进行充值。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/recharge_1.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822002.png)
 
-3. 完成充值后，前往`安全加固记录`栏目，点击"申请加固"按钮后，将打开一个新页面，用于填写加固申请信息。
+3. 完成充值后，前往`加固记录`栏目，点击"新增加固"按钮后，将打开一个新页面，用于填写加固信息。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-add_3.png)
-
-::: warning 注意
-- 需提供已签名的安装包下载地址。
-- 提交后会从账户余额扣除费用，若账户余额不足会提交失败。
-:::
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822003.png)
 
 
-4. 当您成功提交加固申请后，您可以查看安全加固记录来跟踪加固的进展和结果。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/reinforce-list_1.png)
 
- ::: warning 注意
-- 如果加固成功，点击“下载加固包”按钮可下载加固包。注意：**加固包需要重签名后使用**，重签名的签名证书与加固前要保持一致
-- 如果加固失败，会显示原因。同时，我们将已扣除的费用退回到您的账户余额中；
-- App的安全加固耗时较久，目前uni加固(腾讯云版)需要2个工作时响应，即：工作日的 9:30 ~18:30期间提交的apk，正常可在2个小时内获得响应。非工作时提交的加固包，需顺延到第二个工作日内响应。后续我们会积极协调服务商，实现24小时自助加固服务。
-:::
+4. 当您提交成功后，您可以查看应用加固记录来跟踪加固的进展和结果。
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822004.png)
 
 
 ## 常见问题

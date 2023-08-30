@@ -7,6 +7,7 @@
   * [view](component/view.md)
   * [scroll-view](component/scroll-view.md)
   * [list-view](component/list-view.md)
+  * [navigator](component/navigator.md)
   * [swiper](component/swiper.md)
   * [text](component/text.md)
   * [rich-text](component/rich-text.md)
@@ -22,6 +23,7 @@
   * [switch](component/switch.md)
   * [video](component/video.md)
   * [animation-view](component/animation-view.md)
+  * [web-view](component/web-view.md)
 * [API](api.md)
 * CSS
   * [CSS概述](css/README.md)

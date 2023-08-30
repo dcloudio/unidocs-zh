@@ -19,6 +19,8 @@ UTS 的类型有：
 
 除了特殊类型，其他类型都可以在变量后面通过`:`加类型名称来给这个变量声明类型。
 
+详细的类型判断详见操作符文档：[typeof](operator.md#typeof)和[instanceof](operator.md#instanceof)
+
 ## 布尔值（boolean）
 
 布尔是简单的基础类型，只有2个值：`true` 和 `false`。

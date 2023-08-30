@@ -8,14 +8,16 @@
 - ref
 - style
 - class
+- data-
 
 ## 组件公共事件
 
 - @touchstart
 - @touchmove
 - @touchend
+- @touchcancel
 - @tap
-- @click
+- @click //与tap等价
 - @longpress
 
 ### 冒泡事件系统

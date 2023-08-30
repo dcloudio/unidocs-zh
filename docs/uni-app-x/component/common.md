@@ -4,11 +4,19 @@
 
 ## 组件公共属性
 
-<!-- 自动生成 -->
+- id
+- ref
+- style
+- class
 
 ## 组件公共事件
 
-<!-- 自动生成 -->
+- @touchstart
+- @touchmove
+- @touchend
+- @tap
+- @click
+- @longpress
 
 ### 冒泡事件系统
 

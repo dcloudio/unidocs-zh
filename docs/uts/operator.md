@@ -354,16 +354,15 @@ a as string // 异常
 | 平台专有数字类型: Int, Float, Double, Long ... 			 | "Int","Float","Double","Long" ... |
 | 其他任何对象(包含但不限于：Date, Array, Map, UTSJSONObject) | "object"         | 
 
-> 特别说明：
-> HBuilderX3.9.0统一为以上规范，在HBuilderX3.9.0之前版本平台专有数字类型变量使用typeof操作符获取的值为"number"
+> 特别说明：  
+> HBuilderX3.9.0统一为以上规范，在HBuilderX3.9.0之前版本平台专有数字类型变量使用typeof操作符获取的值为"number"  
+>  与TypeScript的差异：   
 
 
 用法示例：
 
 ```ts
-
-// number
-let a = 10.0
+let a = 10.0  //自动推断为number类型
 let b: Double = 3.14
 let c: Int = 2
 
@@ -402,12 +401,29 @@ typeof [1, 2, 3] == "object" //true
 
 ```
 
-将 number 类型赋值给 any 类型变量时，在安卓平台上存在一些特殊，会根据数值将类型转变为实际平台专有数字类型，使用 typeof 获取此 any 类型变量将会返回实际平台专有数字类型。
+**注意**  
+`typeof` 运算符的参数只能是实例对象，不能是类型，如下操作是错误用法：
+```ts
+type MyType = {
+    name:string
+}
+typeof MyType   //报错  
+```
+
+`typeof` 运算返回值一定是字符串，不会返回 TypeScript 类型，这与TypeScript存在差异：
+```ts
+type MyType = {
+    name:string
+}
+let my:MyType = {name:"abc"}
+type NewType = typeof my;   //报错
+```
+
+**特殊情况**  
+在Android平台，将 number 类型赋值给 any 类型变量时，会根据数值将类型转变为实际平台专有数字类型，使用 typeof 获取此 any 类型变量将会返回实际平台专有数字类型。
 
 ```ts
-
-// number
-let a = 10.0
+let a = 10.0    //自动推断为number类型
 let b: Double = 3.14
 let c: any = a
 let d: any = b
@@ -419,10 +435,17 @@ typeof d == "Double" //true
 // 在 iOS 平台上
 typeof c == "number" //true
 
-// 在安卓平台上变量c会根据数据实际数值转换为平台专有数字类型Doubel  
+// 在Android平台上变量c会根据数据实际数值转换为平台专有数字类型Doubel  
 typeof c == "number" //false 真实返回的是 "Double"
 
 ```
+
+在Android平台，如果类型（或class）存在伴生对象（companion object）时，可以使用`typeof`运算符，返回的值为object，但不推荐这么使用
+
+```ts
+typeof Double   //在Android平台Double有伴生对象可以正常运行，实际值为object；在iOS平台报错
+```
+
 
 ## instanceof实例类型判断@instanceof
 

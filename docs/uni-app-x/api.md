@@ -1,3 +1,18 @@
+# 基础
+
+
+## uni.exit(options?) @exit
+
+<!-- UTSAPIJSON.exit.description -->
+
+<!-- UTSAPIJSON.exit.param -->
+
+<!-- UTSAPIJSON.exit.returnValue -->
+
+<!-- UTSAPIJSON.exit.compatibility -->
+
+<!-- UTSAPIJSON.exit.tutorial -->
+
 # 界面
 
 
@@ -111,6 +126,18 @@
 <!-- UTSAPIJSON.getNetworkType.compatibility -->
 
 <!-- UTSAPIJSON.getNetworkType.tutorial -->
+
+## uni.request(param) @request
+
+<!-- UTSAPIJSON.request.description -->
+
+<!-- UTSAPIJSON.request.param -->
+
+<!-- UTSAPIJSON.request.returnValue -->
+
+<!-- UTSAPIJSON.request.compatibility -->
+
+<!-- UTSAPIJSON.request.tutorial -->
 
 ## uni.downloadFile(options) @downloadfile
 
@@ -307,7 +334,7 @@
 
 <!-- UTSAPIJSON.removeStorageSync.tutorial -->
 
-## uni.clearStorage(option?) @clearstorage
+## uni.clearStorage(option) @clearstorage
 
 <!-- UTSAPIJSON.clearStorage.description -->
 
@@ -400,7 +427,7 @@
 
 <!-- UTSAPIJSON.getAppAuthorizeSetting.tutorial -->
 
-## uni.getAppBaseInfo(config?) @getappbaseinfo
+## uni.getAppBaseInfo(config) @getappbaseinfo
 
 <!-- UTSAPIJSON.getAppBaseInfo.description -->
 
@@ -412,7 +439,7 @@
 
 <!-- UTSAPIJSON.getAppBaseInfo.tutorial -->
 
-## uni.getDeviceInfo(config?) @getdeviceinfo
+## uni.getDeviceInfo(config) @getdeviceinfo
 
 <!-- UTSAPIJSON.getDeviceInfo.description -->
 

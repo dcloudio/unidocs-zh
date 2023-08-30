@@ -342,7 +342,7 @@ a as string // 异常
 
 ## typeof实例类型获取@typeof
 
-使用 `typeof` 运算符获取操作数的类型，返回一个表示类型的字符串。
+使用 `typeof` 运算符获取一个实例对象的类型，返回表示类型的字符串。  
 
 | 类型                						 			 | 结果             | 
 | ------------------------------------------------------ | ---------------- | 
@@ -353,6 +353,9 @@ a as string // 异常
 | function     		  						 			 | "function"       | 
 | 平台专有数字类型: Int, Float, Double, Long ... 			 | "Int","Float","Double","Long" ... |
 | 其他任何对象(包含但不限于：Date, Array, Map, UTSJSONObject) | "object"         | 
+
+> 特别说明：
+> HBuilderX3.9.0统一为以上规范，在HBuilderX3.9.0之前版本平台专有数字类型变量使用typeof操作符获取的值为"number"
 
 
 用法示例：

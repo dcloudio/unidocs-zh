@@ -219,7 +219,7 @@ fn = function (x: string, y: string) { } // 错误，参数类型不匹配
 fn = function (x: string): string { return x } // 错误，返回类型不匹配
 ```
 
-## 函数默认参数
+## 默认参数
 
 函数参数可以设默认值，当省略相应的参数时使用默认值。此时该参数也就成了可选参数。
 
@@ -249,7 +249,7 @@ class Persion {
 
 ```ts
 // 该变量会被编译成Swift或者Kottlin的闭包表达式，其不支持使用默认参数。
-const test = function(msg: string | null)
+const test = function(msg: string | null) { }
 ```
 
 因为需要作为值进行传递，对象字面量中定义的方法会自动转换为函数表达式，所以也不支持默认参数
@@ -264,4 +264,29 @@ export  {
 	}
 }
 
+```
+
+## 剩余参数
+
+剩余参数语法允许我们将一个不定数量的参数表示为一个数组。
+
+使用 `...` 操作符定义函数的最后一个参数为剩余参数。
+
+```ts
+function fn(str: string, ...args: string[]) {
+  console.log(str, args)
+}
+```
+
+在这种情况下可以传递可变数量的参数给函数：
+
+```ts
+fn('a') // 'a' []
+fn('a', 'b', 'c') // 'a' ['b', 'c']
+```
+
+也可以使用[展开语法](./operator.md#展开语法)传递一个数组值给函数的剩余参数（转到 swift 时未支持）：
+
+```ts
+fn('a', ...['b', 'c']) // 'a' ['b', 'c']
 ```

@@ -20,6 +20,7 @@ uni-admin 是开源的，遵循 MIT 协议，你可以从[Github](https://github
     <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20210826112813.jpg" alt="uni-admin视频教程" style="width: 60%;">
 </a>
 
+> 问题交流与反馈，请加入：[uni-admin交流群](https://im.dcloud.net.cn/#/?joinGroup=64e84353cf42a22d542b29ea)
 
 ## uni-admin 功能
 

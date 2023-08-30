@@ -211,6 +211,10 @@
 
 ##### 示例：
 
+::: preview
+
+> uni-app js 引擎版
+
 ```html
 	<template>
 		<view>
@@ -235,6 +239,34 @@
 	</script>
 ```
 
+> uni-app x
+
+```html
+	<template>
+		<view>
+			<!-- 我是子组件componentA -->
+			<view>{{age}}</view>
+		</view>
+	</template>
+	<script lang="uts">
+		export default {
+			props: {
+				// 检测类型 + 其他验证
+				age: {
+					type: Number,
+					default: 0,
+					required: true,
+					validator: function(value): boolean {
+						return value >= 0
+					}
+				}
+			}
+		}
+	</script>
+```
+
+:::
+
 ```html
 	<template>
 		<view>
@@ -243,9 +275,6 @@
 		</view>
 	</template>
 ```
-
-
-
 
 ### 传递静态或动态的 Prop
 
@@ -360,7 +389,9 @@
 
 1. **这个 `prop` 用来传递一个初始值**；这个子组件接下来希望将其作为一个本地的 `prop` 数据来使用。在这种情况下，最好定义一个本地的 `data property `并将这个 `prop` 作为其初始值：
 
+::: preview
 
+> uni-app js 引擎版
 
 ```html
 	<template>
@@ -380,6 +411,33 @@
 		}
 	</script>
 ```
+
+> uni-app x
+
+```html
+	<template>
+		<view>
+			<!-- 我是子组件componentA -->
+			<view>{{myTitle}}</view>
+		</view>
+	</template>
+	<script lang="uts">
+		export default {
+			props: {
+				title: {
+					type: String
+				}
+			},
+			data() {
+				return {
+					myTitle:this.title as string
+				}
+			}
+		}
+	</script>
+```
+
+:::
 
 ```html
 	<template>
@@ -403,6 +461,9 @@
 
 2. **这个 `prop` 以一种原始的值传入且需要进行转换**。在这种情况下，最好使用这个 `prop` 的值来定义一个计算属性：
 
+::: preview
+
+> uni-app js 引擎版
 
 ```html
 	<template>
@@ -422,6 +483,33 @@
 		}
 	</script>
 ```
+
+> uni-app x
+
+```html
+	<template>
+		<view>
+			<!-- 我是子组件componentA -->
+			<view>{{normalizedSize}}</view>
+		</view>
+	</template>
+	<script lang="uts">
+		export default {
+			props: {
+				size: {
+					type: String
+				}
+			},
+			computed: {
+				normalizedSize: function (): string {
+					return this.size.toLowerCase()
+				}
+			}
+		}
+	</script>
+```
+
+:::
 
 ```html
 	<template>
@@ -454,6 +542,9 @@
 
 为了定制 `prop` 的验证方式，你可以为 `props` 中的值提供一个带有验证需求的对象，而不是一个字符串数组。例如：
 
+::: preview
+
+> uni-app js 引擎版
 
 ```js
 	props: {
@@ -497,6 +588,51 @@
 	}
 ```
 
+> uni-app x
+
+```js
+	props: {
+		propA: {
+			type: Number
+		},
+		// 必填的字符串
+		propC: {
+			type: String,
+			required: true
+		},
+		// 带有默认值的数字
+		propD: {
+			type: Number,
+			default: 100
+		},
+		// 带有默认值的对象
+		propE: {
+			type: UTSObject,
+			// 对象或数组默认值必须从一个工厂函数获取
+			default: function(): UTSObject {
+			  return { message: 'hello' }
+			}
+		},
+		// 自定义验证函数
+		propF: {
+			validator: function(value): boolean {
+			  // 这个值必须匹配下列字符串中的一个
+			  return ['success', 'warning', 'danger'].indexOf(value) !== -1
+			}
+		},
+		// 具有默认值的函数
+		propG: {
+			type: Function,
+			// 与对象或数组默认值不同，这不是一个工厂函数 —— 这是一个用作默认值的函数
+			default: function(): string {
+			  return 'Default function'
+			}
+		}
+	}
+```
+
+:::
+
 当 `prop` 验证失败的时候，(开发环境构建版本的) `Vue` 将会产生一个控制台的警告。
 
 **tips**
@@ -537,11 +673,16 @@
 
 用于验证 `author` prop 的值是否是通过 `new Person` 创建的。
 
+**注意：uni-app x 暂不支持**
 
 ### Prop 的大小写命名
 
 
 `HTML` 中的 `attribute` 名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用 `DOM` 中的模板时，`camelCase` (驼峰命名法) 的 `prop` 名需要使用其等价的 `kebab-case` (短横线分隔命名) 命名：
+
+::: preview
+
+> uni-app js 引擎版
 
 ```html
 	<template>
@@ -557,6 +698,29 @@
 		}
 	</script>
 ```
+
+> uni-app x
+
+```html
+	<template>
+		<view>
+			<!-- 我是子组件componentA -->
+			<view>{{postTitle}}</view>
+		</view>
+	</template>
+
+	<script lang="uts">
+		export default {
+			props: {
+				postTitle: {
+					type: String
+				}
+			}
+		}
+	</script>
+```
+
+:::
 
 ```html
 	<template>
@@ -844,9 +1008,7 @@
 	}
 ```
 
-
-
-
+**注意：uni-app x 暂不支持**
 
 ### v-model 参数
 
@@ -1001,7 +1163,7 @@
 	</script>
 ```
 
-
+**注意：uni-app x 暂不支持 capitalize 修饰符**
 
 ```html
 	<!-- 我是 my-component子组件-->
@@ -1038,9 +1200,7 @@
 	</script>
 ```
 
-
 对于带参数的 `v-model` 绑定，生成的 `prop` 名称将为 `arg + "Modifiers"`：
-
 
 ```html
 	<my-component v-model:foo.capitalize="bar"></my-component>

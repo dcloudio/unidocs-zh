@@ -1,206 +1,20 @@
-## uni.createInnerAudioContext() @createinneraudiocontext
+# 基础
 
-<!-- UTSAPIJSON.createInnerAudioContext.description -->
 
-<!-- UTSAPIJSON.createInnerAudioContext.param -->
+## uni.exit(options?) @exit
 
-<!-- UTSAPIJSON.createInnerAudioContext.returnValue -->
+<!-- UTSAPIJSON.exit.description -->
 
-<!-- UTSAPIJSON.createInnerAudioContext.compatibility -->
+<!-- UTSAPIJSON.exit.param -->
 
-<!-- UTSAPIJSON.createInnerAudioContext.tutorial -->
+<!-- UTSAPIJSON.exit.returnValue -->
 
-## uni.getBackgroundAudioManager() @getbackgroundaudiomanager
+<!-- UTSAPIJSON.exit.compatibility -->
 
-<!-- UTSAPIJSON.getBackgroundAudioManager.description -->
+<!-- UTSAPIJSON.exit.tutorial -->
 
-<!-- UTSAPIJSON.getBackgroundAudioManager.param -->
+# 界面
 
-<!-- UTSAPIJSON.getBackgroundAudioManager.returnValue -->
-
-<!-- UTSAPIJSON.getBackgroundAudioManager.compatibility -->
-
-<!-- UTSAPIJSON.getBackgroundAudioManager.tutorial -->
-
-## uni.exitApp() @exitapp
-
-<!-- UTSAPIJSON.exitApp.description -->
-
-<!-- UTSAPIJSON.exitApp.param -->
-
-<!-- UTSAPIJSON.exitApp.returnValue -->
-
-<!-- UTSAPIJSON.exitApp.compatibility -->
-
-<!-- UTSAPIJSON.exitApp.tutorial -->
-
-## uni.getFileSystemManager() @getfilesystemmanager
-
-<!-- UTSAPIJSON.getFileSystemManager.description -->
-
-<!-- UTSAPIJSON.getFileSystemManager.param -->
-
-<!-- UTSAPIJSON.getFileSystemManager.returnValue -->
-
-<!-- UTSAPIJSON.getFileSystemManager.compatibility -->
-
-<!-- UTSAPIJSON.getFileSystemManager.tutorial -->
-
-## uni.getAccessibilityInfo() @getaccessibilityinfo
-
-<!-- UTSAPIJSON.getAccessibilityInfo.description -->
-
-<!-- UTSAPIJSON.getAccessibilityInfo.param -->
-
-<!-- UTSAPIJSON.getAccessibilityInfo.returnValue -->
-
-<!-- UTSAPIJSON.getAccessibilityInfo.compatibility -->
-
-<!-- UTSAPIJSON.getAccessibilityInfo.tutorial -->
-
-## uni.getAppAuthorizeSetting() @getappauthorizesetting
-
-<!-- UTSAPIJSON.getAppAuthorizeSetting.description -->
-
-<!-- UTSAPIJSON.getAppAuthorizeSetting.param -->
-
-<!-- UTSAPIJSON.getAppAuthorizeSetting.returnValue -->
-
-<!-- UTSAPIJSON.getAppAuthorizeSetting.compatibility -->
-
-<!-- UTSAPIJSON.getAppAuthorizeSetting.tutorial -->
-
-## uni.getAppBaseInfo(config?) @getappbaseinfo
-
-<!-- UTSAPIJSON.getAppBaseInfo.description -->
-
-<!-- UTSAPIJSON.getAppBaseInfo.param -->
-
-<!-- UTSAPIJSON.getAppBaseInfo.returnValue -->
-
-<!-- UTSAPIJSON.getAppBaseInfo.compatibility -->
-
-<!-- UTSAPIJSON.getAppBaseInfo.tutorial -->
-
-## uni.getDeviceInfo(config?) @getdeviceinfo
-
-<!-- UTSAPIJSON.getDeviceInfo.description -->
-
-<!-- UTSAPIJSON.getDeviceInfo.param -->
-
-<!-- UTSAPIJSON.getDeviceInfo.returnValue -->
-
-<!-- UTSAPIJSON.getDeviceInfo.compatibility -->
-
-<!-- UTSAPIJSON.getDeviceInfo.tutorial -->
-
-## uni.getLocation(options) @getlocation
-
-<!-- UTSAPIJSON.getLocation.description -->
-
-<!-- UTSAPIJSON.getLocation.param -->
-
-<!-- UTSAPIJSON.getLocation.returnValue -->
-
-<!-- UTSAPIJSON.getLocation.compatibility -->
-
-<!-- UTSAPIJSON.getLocation.tutorial -->
-
-## uni.getLocation(options) @getlocation
-
-<!-- UTSAPIJSON.getLocation.description -->
-
-<!-- UTSAPIJSON.getLocation.param -->
-
-<!-- UTSAPIJSON.getLocation.returnValue -->
-
-<!-- UTSAPIJSON.getLocation.compatibility -->
-
-<!-- UTSAPIJSON.getLocation.tutorial -->
-
-## uni.getNetworkType(options) @getnetworktype
-
-<!-- UTSAPIJSON.getNetworkType.description -->
-
-<!-- UTSAPIJSON.getNetworkType.param -->
-
-<!-- UTSAPIJSON.getNetworkType.returnValue -->
-
-<!-- UTSAPIJSON.getNetworkType.compatibility -->
-
-<!-- UTSAPIJSON.getNetworkType.tutorial -->
-
-## uni.getRecorderManager() @getrecordermanager
-
-<!-- UTSAPIJSON.getRecorderManager.description -->
-
-<!-- UTSAPIJSON.getRecorderManager.param -->
-
-<!-- UTSAPIJSON.getRecorderManager.returnValue -->
-
-<!-- UTSAPIJSON.getRecorderManager.compatibility -->
-
-<!-- UTSAPIJSON.getRecorderManager.tutorial -->
-
-## uni.getSystemInfo(options) @getsysteminfo
-
-<!-- UTSAPIJSON.getSystemInfo.description -->
-
-<!-- UTSAPIJSON.getSystemInfo.param -->
-
-<!-- UTSAPIJSON.getSystemInfo.returnValue -->
-
-<!-- UTSAPIJSON.getSystemInfo.compatibility -->
-
-<!-- UTSAPIJSON.getSystemInfo.tutorial -->
-
-## uni.getSystemInfoSync() @getsysteminfosync
-
-<!-- UTSAPIJSON.getSystemInfoSync.description -->
-
-<!-- UTSAPIJSON.getSystemInfoSync.param -->
-
-<!-- UTSAPIJSON.getSystemInfoSync.returnValue -->
-
-<!-- UTSAPIJSON.getSystemInfoSync.compatibility -->
-
-<!-- UTSAPIJSON.getSystemInfoSync.tutorial -->
-
-## uni.getWindowInfo() @getwindowinfo
-
-<!-- UTSAPIJSON.getWindowInfo.description -->
-
-<!-- UTSAPIJSON.getWindowInfo.param -->
-
-<!-- UTSAPIJSON.getWindowInfo.returnValue -->
-
-<!-- UTSAPIJSON.getWindowInfo.compatibility -->
-
-<!-- UTSAPIJSON.getWindowInfo.tutorial -->
-
-## uni.getSystemSetting() @getsystemsetting
-
-<!-- UTSAPIJSON.getSystemSetting.description -->
-
-<!-- UTSAPIJSON.getSystemSetting.param -->
-
-<!-- UTSAPIJSON.getSystemSetting.returnValue -->
-
-<!-- UTSAPIJSON.getSystemSetting.compatibility -->
-
-<!-- UTSAPIJSON.getSystemSetting.tutorial -->
-
-## uni.chooseImage(options) @chooseimage
-
-<!-- UTSAPIJSON.chooseImage.description -->
-
-<!-- UTSAPIJSON.chooseImage.param -->
-
-<!-- UTSAPIJSON.chooseImage.returnValue -->
-
-<!-- UTSAPIJSON.chooseImage.compatibility -->
-
-<!-- UTSAPIJSON.chooseImage.tutorial -->
 
 ## uni.previewImage(options) @previewimage
 
@@ -225,126 +39,6 @@
 <!-- UTSAPIJSON.closePreviewImage.compatibility -->
 
 <!-- UTSAPIJSON.closePreviewImage.tutorial -->
-
-## uni.getImageInfo(options) @getimageinfo
-
-<!-- UTSAPIJSON.getImageInfo.description -->
-
-<!-- UTSAPIJSON.getImageInfo.param -->
-
-<!-- UTSAPIJSON.getImageInfo.returnValue -->
-
-<!-- UTSAPIJSON.getImageInfo.compatibility -->
-
-<!-- UTSAPIJSON.getImageInfo.tutorial -->
-
-## uni.saveImageToPhotosAlbum(options) @saveimagetophotosalbum
-
-<!-- UTSAPIJSON.saveImageToPhotosAlbum.description -->
-
-<!-- UTSAPIJSON.saveImageToPhotosAlbum.param -->
-
-<!-- UTSAPIJSON.saveImageToPhotosAlbum.returnValue -->
-
-<!-- UTSAPIJSON.saveImageToPhotosAlbum.compatibility -->
-
-<!-- UTSAPIJSON.saveImageToPhotosAlbum.tutorial -->
-
-## uni.compressImage(options) @compressimage
-
-<!-- UTSAPIJSON.compressImage.description -->
-
-<!-- UTSAPIJSON.compressImage.param -->
-
-<!-- UTSAPIJSON.compressImage.returnValue -->
-
-<!-- UTSAPIJSON.compressImage.compatibility -->
-
-<!-- UTSAPIJSON.compressImage.tutorial -->
-
-## uni.chooseVideo(options) @choosevideo
-
-<!-- UTSAPIJSON.chooseVideo.description -->
-
-<!-- UTSAPIJSON.chooseVideo.param -->
-
-<!-- UTSAPIJSON.chooseVideo.returnValue -->
-
-<!-- UTSAPIJSON.chooseVideo.compatibility -->
-
-<!-- UTSAPIJSON.chooseVideo.tutorial -->
-
-## uni.getVideoInfo(options) @getvideoinfo
-
-<!-- UTSAPIJSON.getVideoInfo.description -->
-
-<!-- UTSAPIJSON.getVideoInfo.param -->
-
-<!-- UTSAPIJSON.getVideoInfo.returnValue -->
-
-<!-- UTSAPIJSON.getVideoInfo.compatibility -->
-
-<!-- UTSAPIJSON.getVideoInfo.tutorial -->
-
-## uni.saveVideoToPhotosAlbum(options) @savevideotophotosalbum
-
-<!-- UTSAPIJSON.saveVideoToPhotosAlbum.description -->
-
-<!-- UTSAPIJSON.saveVideoToPhotosAlbum.param -->
-
-<!-- UTSAPIJSON.saveVideoToPhotosAlbum.returnValue -->
-
-<!-- UTSAPIJSON.saveVideoToPhotosAlbum.compatibility -->
-
-<!-- UTSAPIJSON.saveVideoToPhotosAlbum.tutorial -->
-
-## uni.compressVideo(options) @compressvideo
-
-<!-- UTSAPIJSON.compressVideo.description -->
-
-<!-- UTSAPIJSON.compressVideo.param -->
-
-<!-- UTSAPIJSON.compressVideo.returnValue -->
-
-<!-- UTSAPIJSON.compressVideo.compatibility -->
-
-<!-- UTSAPIJSON.compressVideo.tutorial -->
-
-## uni.uploadFile(options) @uploadfile
-
-<!-- UTSAPIJSON.uploadFile.description -->
-
-<!-- UTSAPIJSON.uploadFile.param -->
-
-<!-- UTSAPIJSON.uploadFile.returnValue -->
-
-<!-- UTSAPIJSON.uploadFile.compatibility -->
-
-<!-- UTSAPIJSON.uploadFile.tutorial -->
-
-## uni.downloadFile(options) @downloadfile
-
-<!-- UTSAPIJSON.downloadFile.description -->
-
-<!-- UTSAPIJSON.downloadFile.param -->
-
-<!-- UTSAPIJSON.downloadFile.returnValue -->
-
-<!-- UTSAPIJSON.downloadFile.compatibility -->
-
-<!-- UTSAPIJSON.downloadFile.tutorial -->
-
-## uni.openAppAuthorizeSetting(options) @openappauthorizesetting
-
-<!-- UTSAPIJSON.openAppAuthorizeSetting.description -->
-
-<!-- UTSAPIJSON.openAppAuthorizeSetting.param -->
-
-<!-- UTSAPIJSON.openAppAuthorizeSetting.returnValue -->
-
-<!-- UTSAPIJSON.openAppAuthorizeSetting.compatibility -->
-
-<!-- UTSAPIJSON.openAppAuthorizeSetting.tutorial -->
 
 ## uni.showToast(options) @showtoast
 
@@ -417,6 +111,132 @@
 <!-- UTSAPIJSON.showActionSheet.compatibility -->
 
 <!-- UTSAPIJSON.showActionSheet.tutorial -->
+
+# 网络
+
+
+## uni.getNetworkType(options) @getnetworktype
+
+<!-- UTSAPIJSON.getNetworkType.description -->
+
+<!-- UTSAPIJSON.getNetworkType.param -->
+
+<!-- UTSAPIJSON.getNetworkType.returnValue -->
+
+<!-- UTSAPIJSON.getNetworkType.compatibility -->
+
+<!-- UTSAPIJSON.getNetworkType.tutorial -->
+
+## uni.request(param) @request
+
+<!-- UTSAPIJSON.request.description -->
+
+<!-- UTSAPIJSON.request.param -->
+
+<!-- UTSAPIJSON.request.returnValue -->
+
+<!-- UTSAPIJSON.request.compatibility -->
+
+<!-- UTSAPIJSON.request.tutorial -->
+
+## uni.downloadFile(options) @downloadfile
+
+<!-- UTSAPIJSON.downloadFile.description -->
+
+<!-- UTSAPIJSON.downloadFile.param -->
+
+<!-- UTSAPIJSON.downloadFile.returnValue -->
+
+<!-- UTSAPIJSON.downloadFile.compatibility -->
+
+<!-- UTSAPIJSON.downloadFile.tutorial -->
+
+## uni.connectSocket(options) @connectsocket
+
+<!-- UTSAPIJSON.connectSocket.description -->
+
+<!-- UTSAPIJSON.connectSocket.param -->
+
+<!-- UTSAPIJSON.connectSocket.returnValue -->
+
+<!-- UTSAPIJSON.connectSocket.compatibility -->
+
+<!-- UTSAPIJSON.connectSocket.tutorial -->
+
+## uni.onSocketOpen(options) @onsocketopen
+
+<!-- UTSAPIJSON.onSocketOpen.description -->
+
+<!-- UTSAPIJSON.onSocketOpen.param -->
+
+<!-- UTSAPIJSON.onSocketOpen.returnValue -->
+
+<!-- UTSAPIJSON.onSocketOpen.compatibility -->
+
+<!-- UTSAPIJSON.onSocketOpen.tutorial -->
+
+## uni.onSocketError(callback) @onsocketerror
+
+<!-- UTSAPIJSON.onSocketError.description -->
+
+<!-- UTSAPIJSON.onSocketError.param -->
+
+<!-- UTSAPIJSON.onSocketError.returnValue -->
+
+<!-- UTSAPIJSON.onSocketError.compatibility -->
+
+<!-- UTSAPIJSON.onSocketError.tutorial -->
+
+## uni.sendSocketMessage(options) @sendsocketmessage
+
+<!-- UTSAPIJSON.sendSocketMessage.description -->
+
+<!-- UTSAPIJSON.sendSocketMessage.param -->
+
+<!-- UTSAPIJSON.sendSocketMessage.returnValue -->
+
+<!-- UTSAPIJSON.sendSocketMessage.compatibility -->
+
+<!-- UTSAPIJSON.sendSocketMessage.tutorial -->
+
+## uni.onSocketMessage(callback) @onsocketmessage
+
+<!-- UTSAPIJSON.onSocketMessage.description -->
+
+<!-- UTSAPIJSON.onSocketMessage.param -->
+
+<!-- UTSAPIJSON.onSocketMessage.returnValue -->
+
+<!-- UTSAPIJSON.onSocketMessage.compatibility -->
+
+<!-- UTSAPIJSON.onSocketMessage.tutorial -->
+
+## uni.closeSocket(options) @closesocket
+
+<!-- UTSAPIJSON.closeSocket.description -->
+
+<!-- UTSAPIJSON.closeSocket.param -->
+
+<!-- UTSAPIJSON.closeSocket.returnValue -->
+
+<!-- UTSAPIJSON.closeSocket.compatibility -->
+
+<!-- UTSAPIJSON.closeSocket.tutorial -->
+
+## uni.onSocketClose(callback) @onsocketclose
+
+<!-- UTSAPIJSON.onSocketClose.description -->
+
+<!-- UTSAPIJSON.onSocketClose.param -->
+
+<!-- UTSAPIJSON.onSocketClose.returnValue -->
+
+<!-- UTSAPIJSON.onSocketClose.compatibility -->
+
+<!-- UTSAPIJSON.onSocketClose.tutorial -->
+
+# 存储
+
 
 ## uni.setStorage(options) @setstorage
 
@@ -514,7 +334,7 @@
 
 <!-- UTSAPIJSON.removeStorageSync.tutorial -->
 
-## uni.clearStorage(option?) @clearstorage
+## uni.clearStorage(option) @clearstorage
 
 <!-- UTSAPIJSON.clearStorage.description -->
 
@@ -538,89 +358,146 @@
 
 <!-- UTSAPIJSON.clearStorageSync.tutorial -->
 
-## uni.connectSocket(options) @connectsocket
+# 定位
 
-<!-- UTSAPIJSON.connectSocket.description -->
 
-<!-- UTSAPIJSON.connectSocket.param -->
+## uni.getLocation(options) @getlocation
 
-<!-- UTSAPIJSON.connectSocket.returnValue -->
+<!-- UTSAPIJSON.getLocation.description -->
 
-<!-- UTSAPIJSON.connectSocket.compatibility -->
+<!-- UTSAPIJSON.getLocation.param -->
 
-<!-- UTSAPIJSON.connectSocket.tutorial -->
+<!-- UTSAPIJSON.getLocation.returnValue -->
 
-## uni.onSocketOpen(options) @onsocketopen
+<!-- UTSAPIJSON.getLocation.compatibility -->
 
-<!-- UTSAPIJSON.onSocketOpen.description -->
+<!-- UTSAPIJSON.getLocation.tutorial -->
 
-<!-- UTSAPIJSON.onSocketOpen.param -->
+## uni.getLocation(options) @getlocation
 
-<!-- UTSAPIJSON.onSocketOpen.returnValue -->
+<!-- UTSAPIJSON.getLocation.description -->
 
-<!-- UTSAPIJSON.onSocketOpen.compatibility -->
+<!-- UTSAPIJSON.getLocation.param -->
 
-<!-- UTSAPIJSON.onSocketOpen.tutorial -->
+<!-- UTSAPIJSON.getLocation.returnValue -->
 
-## uni.onSocketError(callback) @onsocketerror
+<!-- UTSAPIJSON.getLocation.compatibility -->
 
-<!-- UTSAPIJSON.onSocketError.description -->
+<!-- UTSAPIJSON.getLocation.tutorial -->
 
-<!-- UTSAPIJSON.onSocketError.param -->
+# 媒体
 
-<!-- UTSAPIJSON.onSocketError.returnValue -->
 
-<!-- UTSAPIJSON.onSocketError.compatibility -->
+## uni.chooseImage(options) @chooseimage
 
-<!-- UTSAPIJSON.onSocketError.tutorial -->
+<!-- UTSAPIJSON.chooseImage.description -->
 
-## uni.sendSocketMessage(options) @sendsocketmessage
+<!-- UTSAPIJSON.chooseImage.param -->
 
-<!-- UTSAPIJSON.sendSocketMessage.description -->
+<!-- UTSAPIJSON.chooseImage.returnValue -->
 
-<!-- UTSAPIJSON.sendSocketMessage.param -->
+<!-- UTSAPIJSON.chooseImage.compatibility -->
 
-<!-- UTSAPIJSON.sendSocketMessage.returnValue -->
+<!-- UTSAPIJSON.chooseImage.tutorial -->
 
-<!-- UTSAPIJSON.sendSocketMessage.compatibility -->
+## uni.saveImageToPhotosAlbum(options) @saveimagetophotosalbum
 
-<!-- UTSAPIJSON.sendSocketMessage.tutorial -->
+<!-- UTSAPIJSON.saveImageToPhotosAlbum.description -->
 
-## uni.onSocketMessage(callback) @onsocketmessage
+<!-- UTSAPIJSON.saveImageToPhotosAlbum.param -->
 
-<!-- UTSAPIJSON.onSocketMessage.description -->
+<!-- UTSAPIJSON.saveImageToPhotosAlbum.returnValue -->
 
-<!-- UTSAPIJSON.onSocketMessage.param -->
+<!-- UTSAPIJSON.saveImageToPhotosAlbum.compatibility -->
 
-<!-- UTSAPIJSON.onSocketMessage.returnValue -->
+<!-- UTSAPIJSON.saveImageToPhotosAlbum.tutorial -->
 
-<!-- UTSAPIJSON.onSocketMessage.compatibility -->
+# 设备
 
-<!-- UTSAPIJSON.onSocketMessage.tutorial -->
 
-## uni.closeSocket(options) @closesocket
+## uni.getAppAuthorizeSetting() @getappauthorizesetting
 
-<!-- UTSAPIJSON.closeSocket.description -->
+<!-- UTSAPIJSON.getAppAuthorizeSetting.description -->
 
-<!-- UTSAPIJSON.closeSocket.param -->
+<!-- UTSAPIJSON.getAppAuthorizeSetting.param -->
 
-<!-- UTSAPIJSON.closeSocket.returnValue -->
+<!-- UTSAPIJSON.getAppAuthorizeSetting.returnValue -->
 
-<!-- UTSAPIJSON.closeSocket.compatibility -->
+<!-- UTSAPIJSON.getAppAuthorizeSetting.compatibility -->
 
-<!-- UTSAPIJSON.closeSocket.tutorial -->
+<!-- UTSAPIJSON.getAppAuthorizeSetting.tutorial -->
 
-## uni.onSocketClose(callback) @onsocketclose
+## uni.getAppBaseInfo(config) @getappbaseinfo
 
-<!-- UTSAPIJSON.onSocketClose.description -->
+<!-- UTSAPIJSON.getAppBaseInfo.description -->
 
-<!-- UTSAPIJSON.onSocketClose.param -->
+<!-- UTSAPIJSON.getAppBaseInfo.param -->
 
-<!-- UTSAPIJSON.onSocketClose.returnValue -->
+<!-- UTSAPIJSON.getAppBaseInfo.returnValue -->
 
-<!-- UTSAPIJSON.onSocketClose.compatibility -->
+<!-- UTSAPIJSON.getAppBaseInfo.compatibility -->
 
-<!-- UTSAPIJSON.onSocketClose.tutorial -->
+<!-- UTSAPIJSON.getAppBaseInfo.tutorial -->
+
+## uni.getDeviceInfo(config) @getdeviceinfo
+
+<!-- UTSAPIJSON.getDeviceInfo.description -->
+
+<!-- UTSAPIJSON.getDeviceInfo.param -->
+
+<!-- UTSAPIJSON.getDeviceInfo.returnValue -->
+
+<!-- UTSAPIJSON.getDeviceInfo.compatibility -->
+
+<!-- UTSAPIJSON.getDeviceInfo.tutorial -->
+
+## uni.getSystemInfo(options) @getsysteminfo
+
+<!-- UTSAPIJSON.getSystemInfo.description -->
+
+<!-- UTSAPIJSON.getSystemInfo.param -->
+
+<!-- UTSAPIJSON.getSystemInfo.returnValue -->
+
+<!-- UTSAPIJSON.getSystemInfo.compatibility -->
+
+<!-- UTSAPIJSON.getSystemInfo.tutorial -->
+
+## uni.getSystemInfoSync() @getsysteminfosync
+
+<!-- UTSAPIJSON.getSystemInfoSync.description -->
+
+<!-- UTSAPIJSON.getSystemInfoSync.param -->
+
+<!-- UTSAPIJSON.getSystemInfoSync.returnValue -->
+
+<!-- UTSAPIJSON.getSystemInfoSync.compatibility -->
+
+<!-- UTSAPIJSON.getSystemInfoSync.tutorial -->
+
+## uni.getWindowInfo() @getwindowinfo
+
+<!-- UTSAPIJSON.getWindowInfo.description -->
+
+<!-- UTSAPIJSON.getWindowInfo.param -->
+
+<!-- UTSAPIJSON.getWindowInfo.returnValue -->
+
+<!-- UTSAPIJSON.getWindowInfo.compatibility -->
+
+<!-- UTSAPIJSON.getWindowInfo.tutorial -->
+
+## uni.getSystemSetting() @getsystemsetting
+
+<!-- UTSAPIJSON.getSystemSetting.description -->
+
+<!-- UTSAPIJSON.getSystemSetting.param -->
+
+<!-- UTSAPIJSON.getSystemSetting.returnValue -->
+
+<!-- UTSAPIJSON.getSystemSetting.compatibility -->
+
+<!-- UTSAPIJSON.getSystemSetting.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

@@ -205,7 +205,7 @@ const app = createApp({})
 
 |内置组件		|描述						|H5		|App端|微信小程序  |
 | --				| --						| --	|--		|--			| 
-|component	| 渲染一个“元组件”为动态组件。依 `is` 的值，来决定哪个组件被渲染。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#component) 	|√	| √	| x		|		|
+|component	| 渲染一个“元组件”为动态组件。依 `is` 的值，来决定哪个组件被渲染。 [详情](https://cn.vuejs.org/api/built-in-special-elements.html#component) 	|√	| √	| x		|		|
 |transition	| 作为单个元素/组件的过渡效果。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 	|√	| x	| x		|		|
 |transition-group	| 作为多个元素/组件的过渡效果。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#transition-group) 	|√	| x	| x		|		|
 |keep-alive	| 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们，主要用于保留组件状态或避免重新渲染。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#keep-alive) 	|√	|x	| x		|		|	

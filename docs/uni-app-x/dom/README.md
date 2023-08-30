@@ -25,6 +25,8 @@ DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示
 
 	Android和iOS的原生view，有一些底层的高性能绘制能力，这些API的调用，需要先获取到INode对象，然后再调用其方法。
 
+在[性能](performance.md)章节，对这2个场景有详细的阐述。
+
 ## 获取DOM元素对象@getDomNode  
 
 app-uvue页面中可以通过 vue 框架中的组件实例对象 [$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。  
@@ -36,7 +38,7 @@ app-uvue页面中可以通过 vue 框架中的组件实例对象 [$refs](https:/
 </view>
 ```
 
-在页面生命周期 `onReady` 中（太早组件可能没有创建），通过 `$refs` 获取。如果长期使用，可以保存在vue的 data 中。
+在页面`onReady` 后（太早组件可能没有创建），通过 `$refs` 获取。如果长期使用，可以保存在vue的 data 中。
 ```ts
 export default {
 	data() {
@@ -107,9 +109,4 @@ this.myNode?.style?.setProperty('background-color', 'red');
 ```
 
 以上例子仅为演示DOM API的使用，实际上点击按钮修改背景色这种简单场景，使用数据绑定更简单，class绑定到一个data上，动态修改data即可。
-
-## DOM接口  
-- [INode](dom/inode.md)  
-- [CSSStyleDeclaration](dom/cssstyle.md)  
-- [DrawableContext](dom/drawablecontext.md)  
 

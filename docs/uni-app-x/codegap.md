@@ -34,19 +34,19 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 <script lang="uts">
 	type User = {
 		name:string
-	}
+	} //定义一个User类型
 	export default {
 		data() {
 			const date = new Date() //自动推导类型为Date
-			const v = 1;
+			const v = 1; //自动推导为number
 			return {
+				buttonEnable: false, //自动推导为boolean
 				s1 : "hello", // 根据字面量推导为string
 				n1 : 0 as number, // 这里其实可以根据字面量自动推导，as number写不写都行
 				n2, // 不合法，必须指定类型。真实运行时请删掉本行
 				n3 as number, // 不合法，uts不支持undefined，必须初始化。真实运行时请删掉本行
 				n4 : null as number | null // 合法。定义为可为null的数字，初始值是null，但在使用n4前必须为其赋值数字
 				year: date.getFullYear() as number, // 在data里，目前无法通过变量类型推导data项的类型，需使用 as 显式声明
-				buttonEnable: false,
 				t: ``, // 模板字面量，推导为 string
 				o: { id: 1, name:"DCloud" }, // 对象字面量，推导为 UTSJSONObject，注意：访问 data 中定义的UTSJSONObject属性时，需要使用索引访问，如 this.o["id"]
 				an: [1, 2], // 数组字面量，如果元素均为纯数字字面量，则推导为 Array<number>
@@ -79,18 +79,51 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 </style>
 ```
 
-## 函数 event 参数需显式指定类型
+## 模板函数 event 参数的类型
+
+上面的例子中，touchstart事件中必须对`e`指定类型，才能使用`e.touches[0].screenX`。下面再举一个例子，加深下记忆：
+
+```vue
+<template>
+	<switch @change="switchChange" />
+</template>
+<script lang="uts">
+	export default {
+		methods: {
+			switchChange: function (e : SwitchChangeEvent) { // 这里必须声明e的类型为SwitchChangeEvent
+				console.log('switch 发生 change 事件，携带值为', e.detail.value)
+			}
+		}
+	}
+</script>
+```
+
+那event参数的类型从哪里获取呢？
+1. 组件的文档中有介绍，比如[switch的组件](component/switch.md)
+2. ide中有提示，比如鼠标移到switch组件的`@change`上，悬浮出现hover，会显示：`(property) 'change': (event: SwitchChangeEvent) => void`
 
 ```html
 <view @click="(e: any) => foo(e)">event must has type</view>
 <view @click="foo($event as MouseEvent)">event must has type</view>
 ```
 
-## JSON的类型注意
+## JSON的类型
 
-JSON在强类型语言中使用时，不能像js那样随意。这部分内容较长，[详见](../uts/data-type.md#JSON)
+JSON数据在强类型语言中使用时，不能像js那样随意。
 
-## 作用域插槽数据类型
+js中可以这么写：
+```js
+var p ={"name": "zhangsan","age": 12}
+p.age //12
+```
+
+但是在强类型语言中，如果想要使用`p.age`，那么p必须是一个对象，而age则是这个对象的属性。然后必须为p对象、name属性、age属性，都定义类型，比如name是string，age是number。
+
+uts中有2种方式使用json数据：
+1. 把json数据转为type，自定义一个类型，声明json数据内容中每个属性的类型。然后就可以使用对象属性的方式来使用json数据。[详见](../uts/data-type.md#type)
+2. 使用UTSJSONObject，不为json定义类型，然后通过下标和方法来使用json数据。[详见](../uts/data-type.md#ustjsonobject)
+
+## 组件作用域插槽的类型
 
 作用域插槽需在组件中指定插槽数据类型
 ```ts
@@ -115,9 +148,12 @@ export default {
 </view>
 ```
 
-## uts不支持undefined
+## uts不支持js的一些功能和特性
 
-任何变量被定义后，都需要赋值。
+- 不支持undefined。任何变量被定义后，都需要赋值
+- 不支持promise、async、await，仅支持callback回调
+- 函数声明方式不支持[作为值传递](../uts/function.md#作为值传递)
+- 函数表达式方式不支持[默认参数](../uts/function.md#默认参数)
 
 ## css使用注意
 

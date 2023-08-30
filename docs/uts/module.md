@@ -1,8 +1,8 @@
-## 模块
+# 模块
 
 uts 支持将程序拆分为可按需导入的单独模块，模块中可以导入和导出各种类型的变量，如函数，字符串，数字，布尔值，类等。
 
-### 导出
+## 导出
 
 export 语句可以将一个文件中的函数，类等导出。比如：
 
@@ -17,7 +17,7 @@ export default class Canvas {} // default 关键词支持默认导出
 - 在一个文件中，export、import 可以有多个，export default 仅有一个。
 - 通过 export 方式导出，在导入时要加{ }，export default 则不需要。
 
-### 导入
+## 导入
 
 import 语句可以将另一个文件中的函数，类等导入到当前文件。比如：
 
@@ -52,7 +52,16 @@ const test = new Test()
 test.test()
 ```
 
-### 数据共享和复用
+### 指定别名
+
+使用 `as` 关键字可以为导入的值指定别名
+
+```ts
+import { name as testName } from './test.uts'
+import * as testModule from './test.uts'
+```
+
+## 数据共享和复用
 
 可以使用 export 语句将变量或函数导出，以便其他模块可以访问和使用它们。导出的变量可以在模块内共享，并在其他模块中导入和复用。
 

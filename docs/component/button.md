@@ -1,4 +1,4 @@
-## button
+# button
 
 按钮。
 
@@ -49,16 +49,16 @@
 - **注1：``button-hover`` 默认为 ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}``**
 - ```open-type="launchApp"```时需要调起的APP接入微信OpenSDK[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)
 
-### size 有效值
+## size 有效值
 
 |值|说明|
 |:-|:-|
 |default|默认大小|
 |mini|小尺寸|
 
-button组件也支持style中通过css定义文字大小。
+button组件也支持style中通过css定义文字大小。[见下](#style)
 
-### type 有效值
+## type 有效值
 
 |值|说明|
 |:-|:-|
@@ -66,16 +66,16 @@ button组件也支持style中通过css定义文字大小。
 |default|白色|
 |warn|红色|
 
-button组件也支持style中通过css定义颜色。
+button组件也支持style中通过css定义颜色。[见下](#style)
 
-### form-type 有效值
+## form-type 有效值
 
 |值|说明|
 |:-|:-|
 |submit|提交表单|
 |reset|重置表单|
 
-### open-type 有效值
+## open-type 有效值
 
 |值|说明|平台差异说明|
 |:-|:-|:-|
@@ -108,7 +108,7 @@ button组件也支持style中通过css定义颜色。
 |watchLater|触发用户稍后再看|快手小程序 |
 |openProfile|触发打开用户主页|快手小程序 |
 
-#### feedback
+### feedback
 
 open-type 为 feedback时：
 
@@ -120,7 +120,30 @@ open-type 为 feedback时：
 
 - button组件支持style中通过css定义文字大小、颜色
 
-### button点击
+## button样式修改@style
+
+button组件属性中的size和type，属于预置样式，方便开发者使用。开发者也可以通过style和class来自定义样式。
+
+button虽然可以内嵌text组件，但不建议通过text组件来修改button样式，因为会导致hove-class不生效。尤其是uvue中样式不继承。建议直接在button组件的style或class属性编写样式。
+
+style和class的优先级，高于size和type属性。
+
+```html
+<template>
+	<button size="default" type="default" 
+	style="color:#ffffff;backgroundColor:#1AAD19;borderColor:#1AAD19" 
+	hover-class="is-hover">按钮</button>
+</template>
+<style>
+.is-hover {
+	color: rgba(255, 255, 255, 0.6);
+	background-color: #179b16;
+	border-color: #179b16;
+  }
+</style>
+```
+
+## button点击
 
 button 组件的点击遵循 vue 标准的 @click事件。
 
@@ -153,7 +176,7 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 - 支付宝小程序平台，获取用户手机号时，建议先通过条件编译的方式，调用支付宝原生API，[参考](https://docs.alipay.com/mini/api/getphonenumber)
 
 
-### 示例
+## 示例
 
 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/button/button)
 

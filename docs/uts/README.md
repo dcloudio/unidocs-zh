@@ -115,9 +115,9 @@ vue 选项式开发时，冒号被用于赋值，无法通过let、const和冒�
 				s1 : "abc", // 根据字面量推导为string
 				n1 : 0 as number, // 这里其实可以根据字面量自动推导，as number写不写都行
 				n2, // 不合法，必须指定类型
-				n3 as number, // 不合法，uts不支持undefined，必须初始化
-				n4 : null as number | null // 合法。定义为可为null的数字，初始值是null，但在使用n4前必须为其赋值数字
-				year: date.getFullYear() as number, // 在data里，目前无法通过变量类型推导data项的类型，需使用 as 显式声明
+				n3 as number, // 不合法，uts不支持undefined，必须通过冒号初始化赋值，哪怕赋值为null，见下
+				n4 : null as number | null // 合法。定义为可为null的数字，初始值是null，但在使用n4前必须为其赋值数字。（number | null）是一个或的写法，前后顺序没有关系。uts的联合类型只支持 |null 。
+				year: date.getFullYear() as number, // 在data里，目前无法通过变量类型推导data项的类型，需使用 as 显式声明类型为number
 			}
 		}
 	}
@@ -168,6 +168,9 @@ let a1:Array<number> = [1,2,3,4]
 目前建议开发者，除了boolean和string外，其他包括数字和数组在内的类型，尽量不使用字面量自动类型推导，而是显式声明类型。避免 uts 统一自动类型推导时引发的向下兼容问题。
 
 ### 类型判断
+
+> 注意：isArray 需要HX 3.9.0之后版本才会支持
+
 判断类型，有好几种方案：typeof、instanceof、isArray。
 
 使用 typeof 可以判断布尔值、数字、字符串、函数。

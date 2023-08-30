@@ -19,3 +19,5 @@
 
 <!-- UTSCOMJSON.picker-view-column.reference -->
 
+## tips
+- picker里如放置较长内容，应该使用list-view而不是scroll-view。

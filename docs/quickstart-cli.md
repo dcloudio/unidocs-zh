@@ -91,28 +91,28 @@ You can use [@dcloudio/uvm](https://www.npmjs.com/package/@dcloudio/uvm) to mana
 * 更新到最新正式版
 * Update to the latest official version
   ```shell
-  npx @dcloudio/uvm
+  npx @dcloudio/uvm@latest
   ```
 * 更新到最新 Alpha 版
   ```shell
-  npx @dcloudio/uvm alpha
+  npx @dcloudio/uvm@latest alpha
   ```
 * 更新到正式版指定版本
 * Update to the official version specified version
   ```shell
-  npx @dcloudio/uvm 3.2.0
+  npx @dcloudio/uvm@latest 3.2.0
   ```
   或
   ```shell
-  npx @dcloudio/uvm 3.2.12.20211029
+  npx @dcloudio/uvm@latest 3.2.12.20211029
   ```
 * 更新到 Alpha 版指定版本
   ```shell
-  npx @dcloudio/uvm 3.2.0-alpha
+  npx @dcloudio/uvm@latest 3.2.0-alpha
   ```
   或
   ```shell
-  npx @dcloudio/uvm 3.2.14.20211112-alpha
+  npx @dcloudio/uvm@latest 3.2.14.20211112-alpha
   ```
 
 ## 运行、发布uni-app

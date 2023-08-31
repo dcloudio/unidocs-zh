@@ -18,3 +18,5 @@ text组件在web浏览器渲染（含浏览器、小程序webview渲染模式、
 
 <!-- UTSCOMJSON.text.reference -->
 
+## tips
+- 选择复制，仅支持全选复制，暂未支持自由调整光标选择文字

@@ -194,7 +194,7 @@ uni自带API，如下为目前支持的清单。
 * [x] uni-storage的一系列API
 
 ### 定位
-* [x] uni.getLocation 一期仅支持腾讯定位
+* [x] uni.getLocation 一期仅支持系统定位和腾讯定位
 
 ### 媒体
 * [x] uni.chooseImage 仅支持相册，不支持相机

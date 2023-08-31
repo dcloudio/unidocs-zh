@@ -469,11 +469,11 @@ function fn(obj: any) {
 }
 ```
 
-包含泛型的类型，不能缺省泛型信息。如不需要判断具体的泛型类型，可以使用 `*` 表示任意泛型类型：
+包含[泛型](./generics.md)的类型，不能缺省泛型信息。如不需要判断具体的泛型类型，可以使用 `unknown` 表示任意泛型类型：
 
 ```ts
 function fn(obj: any) {
-  if (obj instanceof Map<*, *>) {
+  if (obj instanceof Map<unknown, unknown>) {
     // ...
   }
 }

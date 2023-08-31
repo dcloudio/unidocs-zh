@@ -9,6 +9,7 @@
 * [类class](class.md)
 * [接口interface](interface.md)
 * [类型兼容性](type-compatibility.md)
+* [泛型](./generics.md)
 * [模块module](module.md)
 * 内置对象和 API
   * [Number](buildin-object-api/number.md)

@@ -176,9 +176,38 @@ foo2(person)
 
 ## 编译器的类型优化
 
-- 生命周期的参数可以省略，参数类型可以省略
-- 模板函数的 event 参数可以省略，但如果参数存在，则必须有类型
-- uni 及 uniCloud API, {} 字面量参数可以省略类型，success, fail, complete 回调函数可以省略，其参数类型也可省略，例如：
+- 生命周期的参数及参数类型均可省略。以 `onLoad` 为例：
+```ts
+// 省略参数
+onLoad() {
+	console.log('onLoad')
+}
+// 省略参数类型
+onLoad(options) {
+	console.log('onLoad')
+}
+```
+- 模板函数的 event 参数可以省略，但如果参数存在，则必须有类型。
+```html
+<template>
+	<view @touchstart="onTouchstart" @click="onClick">
+		<text>text</text>
+	</view>
+</template>
+<script lang="uts">
+	export default {
+		methods: {
+			onTouchstart() { // event 参数可以省略
+				console.log('onTouchstart')
+			},
+			onClick: function (event: MouseEvent) { // event 参数存在，必须指定类型
+				console.log(event)
+			}
+		}
+	}
+</script>
+```
+- uni 及 uniCloud API, {} 字面量参数可以省略类型，success, fail, complete 回调函数可以省略，其参数类型也可省略。以 `uni.navigateTo` 为例：
 ```ts
 // 省略 {} 字面量参数类型
 uni.navigateTo({

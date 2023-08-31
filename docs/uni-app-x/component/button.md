@@ -56,3 +56,5 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 	}
 </script>
 ```
+## tips
+- button 不支持 `\n` 方式换行。

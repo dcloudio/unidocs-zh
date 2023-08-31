@@ -129,20 +129,20 @@ uts中有2种方式使用json数据：
 ```ts
 // components/Foo.uvue
 <view>
-    <slot name="test name" />
+    <slot msg="test msg" />
 </view>
 
 import { SlotsType } from 'vue'
 export default {
   slots: Object as SlotsType<{
-    default: { name: string }
+    default: { msg: string }
   }>
 }
 // page.uvue
 <view>
 	<Foo>
 		<template v-slot="slotProps">
-			<text>{{ slotProps.name }}</text>
+			<text>{{ slotProps.msg }}</text>
 		</template>
 	</Foo>
 </view>

@@ -65,7 +65,7 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 				let sX:number = e.touches[0].screenX;
 				let sY:number = e.touches[0].screenY;
 			},
-			buttonClick: function () {
+			buttonClick: function () { // 如果不需要 event 参数，可以省略
 				this.buttonEnable = true
 				this.s1 = "点过按钮了"
 			},
@@ -148,6 +148,53 @@ export default {
 </view>
 ```
 
+## 函数参数类型
+
+如果函数参数为基础数据类型，函数调用时，参数类型可以省略，编译器会自动推导。\
+如果函数参数为自定义数据类型，则必须指定类型。
+
+```ts
+// 基础数据类型
+function foo1(a: string, b: number) {
+	console.log(a, b)
+}
+foo1('hello', 1)
+
+// 自定义数据类型
+type Person = {
+	name: string
+	age: number
+}
+function foo2(p: Person) {
+	console.log(p.name, p.age)
+}
+foo2({ name: 'name', age: 18 } as Person)
+// 或者
+const person: Person = { name: 'name', age: 18 }
+foo2(person)
+```
+
+## 编译器的类型优化
+
+- 生命周期的参数可以省略，参数类型可以省略
+- 模板函数的 event 参数可以省略，但如果参数存在，则必须有类型
+- uni 及 uniCloud API, {} 字面量参数可以省略类型，success, fail, complete 回调函数可以省略，其参数类型也可省略，例如：
+```ts
+// 省略 {} 字面量参数类型
+uni.navigateTo({
+	url: 'test'
+	// 省略回调函数
+})
+
+uni.navigateTo({
+	url: 'test',
+	// 省略回调函数参数类型
+	success(res){
+		console.log(res)
+	}
+})
+```
+
 ## uts不支持js的一些功能和特性
 
 - 不支持undefined。任何变量被定义后，都需要赋值
@@ -158,3 +205,7 @@ export default {
 ## css使用注意
 
 [详见](css/readme.md)
+
+## 组件监听页面生命周期
+
+目前暂不支持在组件内监听页面生命周期，待后续支持组合式 API 后，可通过组合式 API 实现。

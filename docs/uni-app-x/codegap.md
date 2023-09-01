@@ -207,7 +207,7 @@ onLoad(options) {
 	}
 </script>
 ```
-- uni 及 uniCloud API, {} 字面量参数可以省略类型，success, fail, complete 回调函数可以省略，其参数类型也可省略。以 `uni.navigateTo` 为例：
+- uni 及 uniCloud API, {} 字面量参数可以省略类型，success、fail 和 complete 回调函数及其参数类型也可以省略。以 `uni.navigateTo` 为例：
 ```ts
 // 省略 {} 字面量参数类型
 uni.navigateTo({
@@ -223,6 +223,19 @@ uni.navigateTo({
 	}
 })
 ```
+如需获取 API 的参数类型信息，可通过鼠标悬浮查看，
+
+![](./static/view-API-type-info.png)
+
+比如封装 `uni.request` 时，如果参数从函数外部传入，则需要指定参数类型，否则无法获取参数类型信息。
+```ts
+export function request(options : RequestOptions) {
+	uni.request(options)
+}
+```
+如果需要查看更详细的参数类型信息，可通过鼠标右键点击转到定义，跳转 d.ts 文件进行查看，如下图所示：
+
+![](./static/go-to-definition.png)
 
 ## uts不支持js的一些功能和特性
 

@@ -4,7 +4,7 @@
 
 <!-- UTSCOMJSON.image.attrubute -->
 
-## 图标格式
+## 图片格式
 - [x] bmp
 - [x] gif
 - [x] ico
@@ -17,18 +17,20 @@
 
 ## src路径支持说明
 
-- 支持本地路径相对路径：比如根目录/、上级目录../、子目录subdir/。但不支持页面当前目录。
-- 支持本地绝对路径
+- 本地路径/static方式
+	由于uni-app编译时，只把/static目录下的静态资源copy到app中，所以src均需指向/static目录下。
+	其他目录的图片由于不会被打包进去，所以无法访问。本地路径的大小写不敏感。
+- 本地绝对路径file:///方式
+	形如`file:///storage/emulated/0/Android/data/io.dcloud.uniappx/apps/__UNI__4517034/www/static/test-image/logo.png`。
+	访问本应用内的资源时无需使用本方式，推荐使用/static方式。上述地址受包名、appid影响。
+	file:///方式一般用于download等公共目录。使用前需确保拥有相关权限。
 - 支持网络路径
-- 本地路径的大小写不敏感
-
-## 网络图缓存说明
-
-image组件内部使用facebook的fresco库，自带缓存策略。
+	支持http、https。
+	image组件内部使用facebook的fresco库，自带缓存策略，也会自动清理缓存。
 
 <!-- UTSCOMJSON.image.compatibility -->
 
-<!-- UTSCOMJSON.image.reference -->
+## tips
+在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/image/image-path.uvue)
 
-## bug&tips
-- 目前src不支持页面当前目录的图片。
+<!-- UTSCOMJSON.image.reference -->

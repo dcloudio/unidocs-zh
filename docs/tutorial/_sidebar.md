@@ -116,6 +116,7 @@
   * [使用小程序插件](/tutorial/mp-weixin-plugin.md)
   * [开发小程序插件](/tutorial/mp-weixin-plugin-dev.md)
   * [一键上传微信平台](/tutorial/build/publish-mp-weixin-cli.md)
+  * [小程序隐私协议](/tutorial/mp-weixin-user-privacy.md)
 * 运行和调试
   * [概述](run-and-debug.md)
   * [web平台：内置浏览器运行调试](tutorial/debug/debug-web-via-hx.md)

@@ -39,6 +39,7 @@
 |@launchapp|Handler||从小程序打开 App 成功的回调|open-type="launchApp"|微信、QQ、快手、京东小程序|
 |@contact|Handler||客服消息回调|open-type="contact"|微信、QQ、百度、快手小程序|
 |@chooseavatar|Handler||获取用户头像回调|open-type="chooseAvatar"|微信小程序|
+|@agreeprivacyauthorization|Handler||用户同意隐私协议事件回调，open-type="agreePrivacyAuthorization"时有效|open-type="agreeprivacyauthorization"|微信小程序2.33.0|
 |@addgroupapp|Handler||添加群应用的回调|open-type="addGroupApp"|QQ小程序|
 |@chooseaddress|Handler||调起用户编辑并选择收货地址的回调|open-type="chooseAddress"|百度小程序|
 |@chooseinvoicetitle|Handler||用户选择发票抬头的回调|open-type="chooseInvoiceTitle"|百度小程序|
@@ -87,6 +88,7 @@ button组件也支持style中通过css定义颜色。[见下](#style)
 |launchApp | 小程序中打开APP，可以通过app-parameter属性设定向APP传的参数|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)、[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_app.html)、快手小程序、京东小程序 |
 |openSetting | 打开授权设置页 |微信小程序、QQ小程序、百度小程序、快手小程序、京东小程序、360小程序 |
 |chooseAvatar|获取用户头像，可以从@chooseavatar回调中获取到头像信息|微信小程序2.21.2版本+ |
+|agreePrivacyAuthorization|用户同意隐私协议按钮。用户点击一次此按钮后，所有隐私接口可以正常调用。可通过 @agreeprivacyauthorization 监听用户同意隐私协议事件。隐私合规开发指南详情可见[《小程序隐私协议开发指南》](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)|微信小程序2.33.0版本+ |
 |uploadDouyinVideo|发布抖音视频|抖音小程序2.65.0版本+ |
 |im|跳转到抖音IM客服|抖音小程序2.80.0版本+ |
 |getAuthorize | 支持小程序授权 | 支付宝小程序 |

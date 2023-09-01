@@ -28,7 +28,8 @@ app-nvue不支持本api，而是使用 Weex 提供的 DOM.addRule 加载自定�
 
 1. 微信小程序端只支持网络字体，字体链接必须是https。App支持网络或本地的字体（app-vue本地字体需使用[平台绝对路径](http://www.html5plus.org/doc/zh_cn/io.html#plus.io.convertLocalFileSystemURL)）。
 2. 微信小程序端字体链接必须是同源下的，或开启了cors支持，微信小程序的域名是servicewechat.com
-3. 字体格式支持：
+3. 本地字体请放在/static目录下，否则打包时不会把字体文件打进去
+4. 字体格式支持：
 	* webview渲染时，建议格式为 TTF 和 WOFF，WOFF2 在低版本的iOS上会不兼容。
 	* app-uvue支持的字体为ttf和otf
 

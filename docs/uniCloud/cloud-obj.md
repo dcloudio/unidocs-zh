@@ -122,7 +122,7 @@ exports.main = async (event, context) => {
 // traditional way to call cloud function - client code
 async function addToDo () {
 	try {
-		const res = uniCloud.callFunction({
+		const res = await uniCloud.callFunction({
 			name: 'todo', 
 			data: {
 				method: 'add',

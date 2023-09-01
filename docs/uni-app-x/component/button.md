@@ -56,5 +56,6 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 	}
 </script>
 ```
+
 ## tips
-- button 不支持 `\n` 方式换行。
+- button 的text区域文字，app-uvue下不支持 `\n` 方式换行，会直接显示 `\n` 字符。微信小程序下 `\n` 会变成一个空格

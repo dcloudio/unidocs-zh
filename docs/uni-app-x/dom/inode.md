@@ -2,19 +2,19 @@
 
 | 属性										| 说明										|
 |--------------------------------------		|--------------------------					|
-| [style](#style)							| 组件样式列表对象，参考[CSSStyleDeclaration](cssstyle.md)|
+| [style](#style)							| 组件样式列表对象，参考[CSSStyleDeclaration](cssstyledeclaration.md)|
 
 
 | 方法										| 说明										|
 |--------------------------------------		|--------------------------					|
 | [setAttribute](#setAttribute)				| 设置组件的某个属性值							|
 | [getAttribute](#getAttribute)				| 获取组件指定的属性值							|
-| [getDrawableContext](#getAttribute)		| 获取组件的绘制对象							|
+| [getDrawableContext](#getDrawableContext)		| 获取组件的绘制对象							|
 
 
 ### style@style  
 
-组件的CSS样式列表对象，只读属性。可以通过其 setProperty 方法更新组件的样式。  
+组件的CSS样式列表对象，只读属性。可以通过其 setProperty 方法更新组件的样式。[详见](cssstyledeclaration.md)
 
 ```ts
 node.style;

@@ -1,5 +1,4 @@
 
-
 ::: tip 组件名：uni-easyinput
 > 代码块： `uEasyinput`
 
@@ -39,6 +38,16 @@ easyinput 组件是对原生input组件的增强 ，是专门为配合表单组�
 <!-- 展示输入框尾部图标 -->
 <uni-easyinput suffixIcon="search"  v-model="value" placeholder="请输入内容" @iconClick="onClick"></uni-easyinput>
 ```
+
+### 插槽 
+ 设置 `right` 属性来设置右侧内容 插槽。
+ ```html
+           <uni-easyinput>
+            <template #right>
+              <view>密码</view>
+            </template>
+          </uni-easyinput>
+ ```
 
 ### 输入框禁用
 

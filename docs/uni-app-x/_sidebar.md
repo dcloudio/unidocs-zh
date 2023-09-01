@@ -1,7 +1,13 @@
 * [概述](README.md)
 * [开发注意](codegap.md)
 * [编译器](compiler/README.md)
-* [manifest.json](manifest.md)
+* 全局文件
+  * [main.uts](../collocation/main.md)
+  * [app.uvue](../collocation/app.md)
+  * [manifest.json](manifest.md)
+  * [AndroidManifest.xml](tutorial/app-nativeresource-android.md)
+  * [pages.json](../collocation/pages.md)
+  * [uni.scss](../collocation/uni-scss.md)
 * 组件
   * [公共属性和事件](component/common.md)
   * [view](component/view.md)
@@ -122,10 +128,5 @@
 * [运行和调试]()
 * [打包发行]()
 * [uts]()
-* [uvue框架]()
-* [全局文件]()
-* [组件]()
-* [API]()
-* [编译器]()
 * [质量]()
 -->

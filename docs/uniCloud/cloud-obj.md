@@ -102,7 +102,7 @@ exports.main = async (event, context) => {
 // 传统方式调用云函数-客户端代码
 async function addToDo () {
 	try {
-		const res = uniCloud.callFunction({
+		const res = await uniCloud.callFunction({
 			name: 'todo', 
 			data: {
 				method: 'add',

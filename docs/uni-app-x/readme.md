@@ -232,15 +232,6 @@ uni-app js版的“App原生语言插件”无法在 uni-app x 中运行。
 
 前端插件里，可兼容uts前端插件、可兼容uvue组件，即script是uts，style符合uvue的css。
 
-## 自动化测试
-uni-app x 从源头重视产品质量，第一个版本就支持自动化测试。并为uni-app x产品编写了数万行自动化测试例代码。
-
-uni-app x 的自动化测试方案和 uni-app js版相同，自动化测试脚本使用js编写（注意不是uts）。整个自动化测试环境，运行在电脑端。
-
-开发者可以为自己的app编写好自动化测试，以提升自己的产品质量。
-
-uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html](https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html)
-
 ## 一期范围
 
 除上述文档中声明已经完成的，还有如下需要注意：
@@ -251,7 +242,40 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 - 一期不支持：云开发（已在开发中）、uni-ad。另外包括微信、支付宝、个推等三方sdk封装一期均未启动
 - 一期不支持国际区账户创建和打包uni-app x，仅大陆区开发者账户可用。
 
-欢迎去[需求墙](https://vote.dcloud.net.cn/)投票，告诉我们你的需求优先级。
+欢迎去[需求墙](https://vote.dcloud.net.cn/#/?name=uni-app%20x)投票，告诉我们你的需求优先级。
+
+## 项目标识和区别
+在HBuilder3.9起，新建uni-app项目界面的底部有一个checkbox：uni-app x。勾选后会新建为uni-app x项目。
+
+uni-app x的项目，manifest.json中会多一个节点`"uni-app-x" : {}`。这是HBuilder识别项目类型的标记。
+```json
+{
+    "name" : "hello-uniapp x",
+    "appid" : "__UNI__4517034",
+    "description" : "",
+    "versionName" : "1.0.0",
+    "versionCode" : "100",
+    "uni-app-x" : {
+    }
+}
+```
+
+uni-app x的项目，在左侧项目管理器的图标是圆形的U（之前是方型的U）。
+
+![](static/project-icon.png)
+
+uni-app x的真机运行基座，和uni-app js引擎版不复用，是一个绿色圆形的U（之前是方型H），基座名称默认为`uni-app x`（之前叫HBuilder）。
+
+HBuilder基座可以运行5+App、wap2app和uni-app js引擎版。uni-app x基座只能运行uni-app x项目。
+
+## 自动化测试
+uni-app x 从源头重视产品质量，第一个版本就支持自动化测试。并为uni-app x产品编写了数万行自动化测试例代码。
+
+uni-app x 的自动化测试方案和 uni-app js版相同，自动化测试脚本使用js编写（注意不是uts）。整个自动化测试环境，运行在电脑端。
+
+开发者可以为自己的app编写好自动化测试，以提升自己的产品质量。
+
+uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html](https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html)
 
 ## 历史老项目兼容指南
 

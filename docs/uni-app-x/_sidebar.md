@@ -100,6 +100,7 @@
   * [text-overflow](css/text-overflow.md)
   * [top](css/top.md)
   * [transform](css/transform.md)
+  * [transform-origin](css/transform-origin.md)
   * [transition](css/transition.md)
   * [transition-delay](css/transition-delay.md)
   * [transition-duration](css/transition-duration.md)

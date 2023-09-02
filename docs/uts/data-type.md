@@ -833,6 +833,17 @@ console.log(map2.get(1)); //返回map1
 console.log(map2.get(1)?.get("key1")); //返回 abc。因为名为1的key不一定存在，map2.get(1)可能为null，此时需使用 ?. 才能链式调用
 ```
 
+//通过元素是键值对的数组来创建 Map
+
+```ts
+const myMap = new Map<number,string>([
+  [1, "one"],
+  [2, "two"],
+  [3, "three"],
+]);
+
+```
+
 注意在HBuilderX中console.log一个Map时，返回内容格式如下：
 
 ```sh

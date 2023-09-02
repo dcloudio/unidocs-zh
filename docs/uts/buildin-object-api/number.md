@@ -146,6 +146,8 @@ console.log(a.toLong());
 
 <!-- UTSJSON.Number.toInt64.returnValue -->
 
+<!-- UTSJSON.Number.toInt64.compatibility -->
+
 ### toInt32()
 
 <!-- UTSJSON.Number.toInt32.description -->
@@ -153,6 +155,8 @@ console.log(a.toLong());
 <!-- UTSJSON.Number.toInt32.param -->
 
 <!-- UTSJSON.Number.toInt32.returnValue -->
+
+<!-- UTSJSON.Number.toInt32.compatibility -->
 
 ### toInt16()
 
@@ -162,6 +166,8 @@ console.log(a.toLong());
 
 <!-- UTSJSON.Number.toInt16.returnValue -->
 
+<!-- UTSJSON.Number.toInt16.compatibility -->
+
 ### toInt8()
 
 <!-- UTSJSON.Number.toInt8.description -->
@@ -169,6 +175,8 @@ console.log(a.toLong());
 <!-- UTSJSON.Number.toInt8.param -->
 
 <!-- UTSJSON.Number.toInt8.returnValue -->
+
+<!-- UTSJSON.Number.toInt8.compatibility -->
 
 
 ### toUInt64()
@@ -179,6 +187,8 @@ console.log(a.toLong());
 
 <!-- UTSJSON.Number.toUInt64.returnValue -->
 
+<!-- UTSJSON.Number.toUInt64.compatibility -->
+
 ### toUInt32()
 
 <!-- UTSJSON.Number.toUInt32.description -->
@@ -186,6 +196,8 @@ console.log(a.toLong());
 <!-- UTSJSON.Number.toUInt32.param -->
 
 <!-- UTSJSON.Number.toUInt32.returnValue -->
+
+<!-- UTSJSON.Number.toUInt32.compatibility -->
 
 ### toUInt16()
 
@@ -195,6 +207,8 @@ console.log(a.toLong());
 
 <!-- UTSJSON.Number.toUInt16.returnValue -->
 
+<!-- UTSJSON.Number.toUInt16.compatibility -->
+
 ### toUInt8()
 
 <!-- UTSJSON.Number.toUInt8.description -->
@@ -202,6 +216,8 @@ console.log(a.toLong());
 <!-- UTSJSON.Number.toUInt8.param -->
 
 <!-- UTSJSON.Number.toUInt8.returnValue -->
+
+<!-- UTSJSON.Number.toUInt8.compatibility -->
 
 
 ### from()

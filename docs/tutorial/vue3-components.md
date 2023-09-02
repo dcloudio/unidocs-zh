@@ -1601,7 +1601,6 @@ Then the provided content will be rendered instead:
 		Save
 	</button>
 ```
-**注意：`uni-app x` 暂不支持**
 
 ### 具名插槽
 ### Named Slots

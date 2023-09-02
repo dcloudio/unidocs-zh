@@ -79,7 +79,11 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 </style>
 ```
 
-## 模板函数 event 参数的类型
+## template
+
+- App 端，如需页面级滚动，根节点必须是 `scroll-view` 标签。
+
+### 函数 event 参数的类型
 
 上面的例子中，touchstart事件中必须对`e`指定类型，才能使用`e.touches[0].screenX`。下面再举一个例子，加深下记忆：
 
@@ -107,23 +111,30 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 <view @click="foo($event as MouseEvent)">event must has type</view>
 ```
 
-## JSON的类型
+## script
 
-JSON数据在强类型语言中使用时，不能像js那样随意。
-
-js中可以这么写：
-```js
-var p ={"name": "zhangsan","age": 12}
-p.age //12
+- 仅支持`选项式 API`。
+- `data` 仅支持函数返回对象字面量方式。
+```ts
+<script lang="uts">
+	export default {
+		data() {
+			return {
+			
+			}
+		}
+	}
+</script>
 ```
 
-但是在强类型语言中，如果想要使用`p.age`，那么p必须是一个对象，而age则是这个对象的属性。然后必须为p对象、name属性、age属性，都定义类型，比如name是string，age是number。
+## 组件
 
-uts中有2种方式使用json数据：
-1. 把json数据转为type，自定义一个类型，声明json数据内容中每个属性的类型。然后就可以使用对象属性的方式来使用json数据。[详见](../uts/data-type.md#type)
-2. 使用UTSJSONObject，不为json定义类型，然后通过下标和方法来使用json数据。[详见](../uts/data-type.md#ustjsonobject)
+## props
 
-## 组件作用域插槽的类型
+- 仅支持对象声明方式
+- 暂不支持验证函数
+
+### 作用域插槽的类型
 
 作用域插槽需在组件中指定插槽数据类型
 ```ts
@@ -147,6 +158,22 @@ export default {
 	</Foo>
 </view>
 ```
+
+## JSON的类型
+
+JSON数据在强类型语言中使用时，不能像js那样随意。
+
+js中可以这么写：
+```js
+var p ={"name": "zhangsan","age": 12}
+p.age //12
+```
+
+但是在强类型语言中，如果想要使用`p.age`，那么p必须是一个对象，而age则是这个对象的属性。然后必须为p对象、name属性、age属性，都定义类型，比如name是string，age是number。
+
+uts中有2种方式使用json数据：
+1. 把json数据转为type，自定义一个类型，声明json数据内容中每个属性的类型。然后就可以使用对象属性的方式来使用json数据。[详见](../uts/data-type.md#type)
+2. 使用UTSJSONObject，不为json定义类型，然后通过下标和方法来使用json数据。[详见](../uts/data-type.md#ustjsonobject)
 
 ## 函数参数类型
 

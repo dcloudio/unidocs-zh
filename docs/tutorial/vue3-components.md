@@ -1381,7 +1381,6 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 [Web C
 		Save
 	</button>
 ```
-**注意：`uni-app x` 暂不支持**
 
 ### 具名插槽
 

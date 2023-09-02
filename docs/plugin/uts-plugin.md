@@ -235,7 +235,15 @@ uts插件在Android平台的原生层配置文件，可以在其中配置依赖�
 		}
 	],
     // Android系统版本要求，最低Android 5.0（打包时不要复制注释）
-	"minSdkVersion": 21
+	"minSdkVersion": 21,
+	"project": {
+		"plugins": [
+			"com.huawei.agconnect"
+		],
+		"dependencies": [
+			"com.huawei.agconnect:agcp:1.6.0.300"
+		]
+	}
 }
 ```
 
@@ -261,11 +269,33 @@ dependencies {
 }
 ```
 
-
 - minSdkVersion  
 插件支持的Android最低版本，整数类型，取值范围为Android API Level
 
 默认uni-app最低支持版本为19，即Android4.4.2
+
+- project  
+	云端打包项目相关配置，当使用的三方SDK需要配置gradle插件时可配置此项：  
+	+ plugins  
+		此配置将会添加到云端打包工程app及build.gradle文件的“plugins”中：  
+```
+plugins {
+    id 'com.android.application'
+    // 前面config.json示例配置将会添加如下配置
+    id 'com.huawei.agconnect'
+}
+```
+	+ dependencies  
+		此配置将会添加到云端打包工程项目级build.gradle文件的“buildscript > dependencies”中  
+```
+buildscript {
+    dependencies {
+		classpath 'com.android.tools.build:gradle:7.2.0'
+		// 前面config.json示例配置将会添加如下配置
+        classpath "com.huawei.agconnect:agcp:1.6.0.300"
+	}
+}
+```
 
 
 **注意：**

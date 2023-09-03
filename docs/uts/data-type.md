@@ -425,6 +425,8 @@ let a: string = "abc" // 默认情况下，常规初始化意味着非空
 a = null // 编译错误
 ```
 
+### 定义可为null
+
 如果要允许为空，可以声明一个变量为可空字符串（写作 string | null）
 
 ```ts
@@ -450,7 +452,8 @@ const l = b.length // 错误：变量“b”可能为空
 
 如何正确访问可能为null的对象的属性和方法？有几种方式可以做到。
 
-### 代码中判空后再使用
+### 安全的访问null
+#### 1. 代码中判空后再使用
 
 如果你的代码已经判空，则编译器不会再告警。你可以显式检测 b 是否为 null，在不为 null 的情况下调用 b 的属性和方法。
 
@@ -462,7 +465,7 @@ if (b != null) {
 
 编译器会跟踪所执行检测的信息，并允许你在 if 内部调用 length。
 
-### 不判空，使用`?.`进行安全调用
+### 2. 不判空，使用`?.`进行安全调用
 
 访问可空变量的属性的第二种选择是使用安全调用操作符 `?.`
 
@@ -1251,7 +1254,8 @@ console.log(personList[0].name); //返回zhangsan
 type PersonType = {
 	id : number,
 	name : string,
-	age : number | null //属性可为null
+	age : number | null, //属性可为null
+	enable ?: boolean // 属性可为null
 }
 
 let personList = [
@@ -1423,38 +1427,10 @@ uvue文件中data中的json数据也涉及类型定义。此时注意：type定�
 </script>
 ```
 
-大多数情况下，data里的json数据是空的，联网从服务器取到一段json字符串，然后再赋值并转type。下面是一段示例。
+大多数情况下，data里的json数据是空的，联网从服务器取到一段json字符串，然后再赋值并转type。
 
-```html
-<template>
-	<text>{{person?.name}}</text>
-</template>
-<script>
-	// 注意给data定义type，要写在export default的上面
-	type PersonType = {
-		id: number,
-		name: string,
-		age: number,
-	}
-	export default {
-		data() {
-			return {
-				person: null as PersonType | null,  // data初始时没有值，只能设为null，然后类型就需要 | null。
-			}
-		},
-		onLoad() {
-			let jsonString:string = `{
-				"id": 1, 
-				"name": "zhangsan", 
-				"age": 18
-			}` // 注意属性必须使用引号包围，否则parse会解析失败返回null
-			// 实际开发中，需写联网代码获取字符内容。
-			this.person = JSON.parse<PersonType>(jsonString) //这是一种泛型的写法，在方法名后面使用<>传入PersonType类型，就可以返回传入的类型。
-			console.log(this.person?.name);  // 返回zhangsan。由于person可能为null，需要通过?.来访问属性
-		}
-	}
-</script>
-```
+由于篇幅较长，示例另见：[request](../uni-app-x/tutorial/request.md)
+
 
 ## 其他
 

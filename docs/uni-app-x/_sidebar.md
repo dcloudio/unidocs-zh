@@ -1,5 +1,7 @@
 * [概述](README.md)
-* [开发注意](codegap.md)
+* 教程
+  * [与js开发的差别](tutorial/codegap.md)
+  * [request联网教程](tutorial/request.md.md)
 * [编译器](compiler/README.md)
 * 全局文件
   * [main.uts](/collocation/main.md)

@@ -120,7 +120,7 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 	export default {
 		data() {
 			return {
-			
+				// 必须写这里
 			}
 		}
 	}
@@ -174,6 +174,8 @@ p.age //12
 uts中有2种方式使用json数据：
 1. 把json数据转为type，自定义一个类型，声明json数据内容中每个属性的类型。然后就可以使用对象属性的方式来使用json数据。[详见](../uts/data-type.md#type)
 2. 使用UTSJSONObject，不为json定义类型，然后通过下标和方法来使用json数据。[详见](../uts/data-type.md#ustjsonobject)
+
+如果是联网获取服务器发下的json数据，那么**务必需要读教程**[request](tutorial/request.md)
 
 ## 函数参数类型
 

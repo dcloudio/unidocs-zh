@@ -39,41 +39,29 @@ Conditional compilation is marked with special comments which are the basic of c
 <b style="color:#268BD2"> %PLATFORM%</b> **可取值如下：**
 <b style="color:#268BD2">%PLATFORM%</b> **The possible values are as follows:**
 
-|值|生效条件|
-| Value| Effective conditions|
-|:-|:-|
-|VUE3|HBuilderX 3.2.0+ [详情](https://ask.dcloud.net.cn/article/37834) （uni-app js引擎版）|
-|APP|App|
-|APP-PLUS|App（uni-app js引擎版）|
-|APP-PLUS-NVUE或APP-NVUE|App nvue 页面|
-| APP-PLUS-NVUE or APP-NVUE| App nvue page|
-|APP-ANDROID|App Android 平台 仅限 uts文件|
-| APP-ANDROID| App Android platform uts file only|
-|APP-IOS|App iOS 平台 仅限 uts文件|
-|UNI-APP-X|HBuilderX 3.9.0+ (uni-app x项目)|
-|H5|H5|
-|MP-WEIXIN|微信小程序|
-|MP-WEIXIN|WeChat Mini Program|
-|MP-ALIPAY|支付宝小程序|
-|MP-ALIPAY|Alipay Mini Program|
-|MP-BAIDU|百度小程序|
-|MP-TOUTIAO|抖音小程序|
-|MP-LARK|飞书小程序|
-|MP-LARK|Feishu Mini Program|
-|MP-QQ|QQ小程序|
-|MP-QQ|QQ Mini Program|
-|MP-KUAISHOU|快手小程序|
-|MP-KUAISHOU|Kaishou Mini Program|
-|MP-JD|京东小程序|
-|MP-JD|JD Mini Program|
-|MP-360|360小程序|
-|MP|微信小程序/支付宝小程序/百度小程序/抖音小程序/飞书小程序/QQ小程序/360小程序|
-|QUICKAPP-WEBVIEW|快应用通用(包含联盟、华为)|
-|QUICKAPP-WEBVIEW|Quick application universal (including alliance, Huawei)|
-|QUICKAPP-WEBVIEW-UNION|快应用联盟|
-|QUICKAPP-WEBVIEW-UNION|Quick Application Union|
-|QUICKAPP-WEBVIEW-HUAWEI|快应用华为|
-|QUICKAPP-WEBVIEW-HUAWEI|Quick app HUAWEI|
+|值|生效条件|说明|
+|:-|:-|:-|
+|VUE3|[详情](https://ask.dcloud.net.cn/article/37834) （uni-app js引擎版）|HBuilderX 3.2.0+|
+|APP|App||
+|APP-PLUS|App（uni-app js引擎版）||
+|APP-PLUS-NVUE或APP-NVUE|App nvue 页面||
+|APP-ANDROID|App Android 平台 仅限 uts文件||
+|APP-IOS|App iOS 平台 仅限 uts文件||
+|UNI-APP-X|uni-app x项目|HBuilderX 3.9.0+|
+|H5|H5||
+|MP-WEIXIN|微信小程序||
+|MP-ALIPAY|支付宝小程序||
+|MP-BAIDU|百度小程序||
+|MP-TOUTIAO|抖音小程序||
+|MP-LARK|飞书小程序||
+|MP-QQ|QQ小程序||
+|MP-KUAISHOU|快手小程序||
+|MP-JD|京东小程序||
+|MP-360|360小程序||
+|MP|微信小程序/支付宝小程序/百度小程序/抖音小程序/飞书小程序/QQ小程序/360小程序||
+|QUICKAPP-WEBVIEW|快应用通用(包含联盟、华为)||
+|QUICKAPP-WEBVIEW-UNION|快应用联盟||
+|QUICKAPP-WEBVIEW-HUAWEI|快应用华为||
 
 **支持的文件**
 **Supported files**
@@ -153,7 +141,7 @@ Conditional compilation is marked with special comments which are the basic of c
   :::
   
 * `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`；
-* 对于未定义平台名称的条件编译，里面的代码不会生效；
+* 对于未定义平台名称的条件编译，`#ifdef` 中的代码不会生效，而 `#ifndef` 中的代码会生效；
 
 ### API 的条件编译
 ### Conditional compilation of API

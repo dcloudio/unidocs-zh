@@ -32,6 +32,7 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 |APP-PLUS-NVUE或APP-NVUE|App nvue 页面|
 |APP-ANDROID|App Android 平台 仅限 uts文件|
 |APP-IOS|App iOS 平台 仅限 uts文件|
+|UNI-APP-X|HBuilderX 3.9.0+ (uni-app x项目)|
 |H5|H5|
 |MP-WEIXIN|微信小程序|
 |MP-ALIPAY|支付宝小程序|
@@ -120,7 +121,8 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
   
   :::
   
-* `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`
+* `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`；
+* 对于未定义平台名称的条件编译，里面的代码不会生效；
 
 ### API 的条件编译
 

@@ -45,6 +45,8 @@ let personObj = JSON.parse<Persion>('{"name":"zhangsan","age":12}')
 let jsonObj = JSON.parse('{"name":"zhangsan","age":12}')
 ```
 
+HBuilderX 3.9+，支持JSON.parse传入[泛型](../generics.md)。
+
 与不带泛型的JSON.parse 相比，多了一个`<Persion>` 尖括号 用来指定返回类型。
 
 相比不带泛型的`parse`函数，带泛型的 `parse`函数，会提高反序列数据的开发效率，明确的结构数据可以提升工程健壮度

@@ -14,7 +14,7 @@
 
 **参数说明**  
 - returnURL  
-Android平台使用，格式为"your-app://stripe"(示例 io.dcloud.test://stripe)，'your-app'为应用的bundle id或其它自定义scheme，参考:[配置一个自定义页面内跳转协议 (URL Scheme)](https://ask.dcloud.net.cn/article/64)
+格式为"your-app://stripe"(示例 io.dcloud.test://stripe)，'your-app'为应用的scheme，参考:[配置一个自定义页面内跳转协议 (URL Scheme)](https://ask.dcloud.net.cn/article/64)
 
 
 ### 服务器生成订单

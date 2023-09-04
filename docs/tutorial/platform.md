@@ -24,29 +24,29 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 
 <b style="color:#268BD2"> %PLATFORM%</b> **可取值如下：**
 
-|值|生效条件|
-|:-|:-|
-|VUE3|HBuilderX 3.2.0+ [详情](https://ask.dcloud.net.cn/article/37834) （uni-app js引擎版）|
-|APP|App|
-|APP-PLUS|App（uni-app js引擎版）|
-|APP-PLUS-NVUE或APP-NVUE|App nvue 页面|
-|APP-ANDROID|App Android 平台 仅限 uts文件|
-|APP-IOS|App iOS 平台 仅限 uts文件|
-|UNI-APP-X|HBuilderX 3.9.0+ (uni-app x项目)|
-|H5|H5|
-|MP-WEIXIN|微信小程序|
-|MP-ALIPAY|支付宝小程序|
-|MP-BAIDU|百度小程序|
-|MP-TOUTIAO|抖音小程序|
-|MP-LARK|飞书小程序|
-|MP-QQ|QQ小程序|
-|MP-KUAISHOU|快手小程序|
-|MP-JD|京东小程序|
-|MP-360|360小程序|
-|MP|微信小程序/支付宝小程序/百度小程序/抖音小程序/飞书小程序/QQ小程序/360小程序|
-|QUICKAPP-WEBVIEW|快应用通用(包含联盟、华为)|
-|QUICKAPP-WEBVIEW-UNION|快应用联盟|
-|QUICKAPP-WEBVIEW-HUAWEI|快应用华为|
+|值|生效条件|说明|
+|:-|:-|:-|
+|VUE3|[详情](https://ask.dcloud.net.cn/article/37834) （uni-app js引擎版）|HBuilderX 3.2.0+|
+|APP|App||
+|APP-PLUS|App（uni-app js引擎版）||
+|APP-PLUS-NVUE或APP-NVUE|App nvue 页面||
+|APP-ANDROID|App Android 平台 仅限 uts文件||
+|APP-IOS|App iOS 平台 仅限 uts文件||
+|UNI-APP-X|uni-app x项目|HBuilderX 3.9.0+|
+|H5|H5||
+|MP-WEIXIN|微信小程序||
+|MP-ALIPAY|支付宝小程序||
+|MP-BAIDU|百度小程序||
+|MP-TOUTIAO|抖音小程序||
+|MP-LARK|飞书小程序||
+|MP-QQ|QQ小程序||
+|MP-KUAISHOU|快手小程序||
+|MP-JD|京东小程序||
+|MP-360|360小程序||
+|MP|微信小程序/支付宝小程序/百度小程序/抖音小程序/飞书小程序/QQ小程序/360小程序||
+|QUICKAPP-WEBVIEW|快应用通用(包含联盟、华为)||
+|QUICKAPP-WEBVIEW-UNION|快应用联盟||
+|QUICKAPP-WEBVIEW-HUAWEI|快应用华为||
 
 **支持的文件**
 
@@ -122,7 +122,7 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
   :::
   
 * `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`；
-* 对于未定义平台名称的条件编译，里面的代码不会生效；
+* 对于未定义平台名称的条件编译，`#ifdef` 中的代码不会生效，而 `#ifndef` 中的代码会生效；
 
 ### API 的条件编译
 

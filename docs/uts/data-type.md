@@ -1352,7 +1352,7 @@ let person = {
 
 ### 通过JSON.parse转type
 
-HBuilderX 3.9+，支持JSON.parse传入泛型，把一段字符串解析为type。
+HBuilderX 3.9+，支持JSON.parse传入[泛型](./generics.md)，把一段字符串解析为type。
 
 ```ts
 type PersonType = {

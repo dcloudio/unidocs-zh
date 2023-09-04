@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.switch.name -->
+## switch
 
 <!-- UTSCOMJSON.switch.description -->
 

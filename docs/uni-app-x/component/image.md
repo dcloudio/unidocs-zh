@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.image.name -->
+## image
 
 <!-- UTSCOMJSON.image.description -->
 

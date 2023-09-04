@@ -170,6 +170,17 @@ type IRootType = {
 其实上面的代码，type只需要定义在uni.request方法执行前就可以。但实际开发中，type大多用于data的类型定义，
 而想给data定义类型，那就得写在data的前面，也就是export default{}之前了。
 
+还有一个问题，网络返回的数据，有可能缺少某些属性，该怎么写？ 把类型声明为"或null"，或者使用`?:`
+```ts
+type DataType = {
+	plugin_id : number,
+	plugin_name : string,
+	age : number | null, //属性可为null
+}
+```
+
+如您不了解null的安全使用，[详见](../../uts/data-type.md#null)
+
 再举一个实际中更常见的例子。
 
 联网获取插件市场的插件列表数据，并绑定在模板上，还可以翻页。

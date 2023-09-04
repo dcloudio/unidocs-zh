@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.radio-group.name -->
+## radio-group
 
 <!-- UTSCOMJSON.radio-group.description -->
 
@@ -9,7 +9,7 @@
 <!-- UTSCOMJSON.radio-group.reference -->
 
 
-<!-- UTSCOMJSON.radio.name -->
+## radio
 
 <!-- UTSCOMJSON.radio.description -->
 

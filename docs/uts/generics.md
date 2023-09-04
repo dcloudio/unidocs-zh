@@ -1,6 +1,10 @@
 # 泛型（Generics）
 
+> HBuilderX 3.9.0+
+
 UTS 支持泛型（Generics）特性，允许您编写更通用、可重用的代码，同时提高类型安全性。
+
+给方法通过`<>`的方式传入一个参数类型，方法可以根据传入来动态决定返回类型，也就是方法的返回值具有多种类型的可能。
 
 ## 定义泛型
 
@@ -79,3 +83,6 @@ function testArray<T extends Array<unknown>>(arg: T): T {
   return arg
 }
 ```
+
+
+泛型最常用的是在request api里，[详见](../uni-app-x/tutorial/request.md)

@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.rich-text.name -->
+## rich-text
 
 <!-- UTSCOMJSON.rich-text.description -->
 

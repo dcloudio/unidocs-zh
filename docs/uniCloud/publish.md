@@ -23,7 +23,7 @@ HBuilderX有多种发行方式
 |服务提供商	|request合法域名						|uploadFile合法域名																															|download合法域名																																								|
 |:-:				|:-:												|:-:																																						|:-:																																														|
 |阿里云			|api.next.bspapp.com				|请在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间的总览页面查看|请在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间的总览页面查看								|
-|腾讯云			|tcb-api.tencentcloudapi.com|~~cos.ap-shanghai.myqcloud.com~~	(2023年8月17日腾讯云更新了上传域名，如果遇到小程序因为安全域名无法上传的问题可以把小程序开发工具内提示的不在白名单的域名添加到上传安全域名内，具体细节仍在和腾讯云沟通)																									|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
+|腾讯云			|tcb-api.tencentcloudapi.com|~~cos.ap-shanghai.myqcloud.com~~	(2023年8月17日腾讯云更新了上传域名，如果遇到小程序因为安全域名无法上传的问题可以把小程序开发工具内提示的不在白名单的域名添加到上传安全域名内)																									|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
 
 **注意**
 

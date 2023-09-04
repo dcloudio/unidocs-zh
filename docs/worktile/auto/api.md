@@ -1449,8 +1449,8 @@ Sample code:
 |trigger					|√				|√			|√	|√					|x					|x					|触发元素事件																				|
 |input						|√				|√			|√	|√					|x					|√					|输入文本，仅 input、textarea 组件可以使用					|
 |callContextMethod|x				|x			|x	|√					|x					|x					|调用上下文 Context 对象方法，仅 video 组件可以使用	|
-|scrollWidth			|x				|√			|√	|√					|x					|x					|获取滚动宽度，仅 scroll-view 组件可以使用					|
-|scrollHeight			|x				|√			|√	|√					|x					|x					|获取滚动高度，仅 scroll-view 组件可以使用					|
+|scrollWidth			|x				|√			|√	|√					|x					|√					|获取滚动宽度，仅 scroll-view 组件可以使用					|
+|scrollHeight			|x				|√			|√	|√					|x					|√					|获取滚动高度，仅 scroll-view 组件可以使用					|
 |scrollTo					|x				|√			|√	|√					|x					|√					|滚动到指定位置，仅 scroll-view 组件可以使用				|
 |swipeTo					|√				|√			|√	|√					|x					|x					|滑动到指定滑块，仅 swiper 组件可以使用							|
 |moveTo						|√				|√			|√	|√					|x					|x					|移动视图容器，仅 movable-view 组件可以使用					|

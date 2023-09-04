@@ -254,7 +254,7 @@ uni.navigateTo({
 ```
 如需获取 API 的参数类型信息，可通过鼠标悬浮查看，
 
-![](./static/view-API-type-info.png)
+![](../static/view-API-type-info.png)
 
 比如封装 `uni.request` 时，如果参数从函数外部传入，则需要指定参数类型，否则无法获取参数类型信息。
 ```ts
@@ -267,7 +267,7 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 ```
 如果需要查看更详细的参数类型信息，可通过鼠标右键点击转到定义，跳转 d.ts 文件进行查看，如下图所示：
 
-![](./static/go-to-definition.png)
+![](../static/go-to-definition.png)
 
 ## uts不支持js的一些功能和特性
 

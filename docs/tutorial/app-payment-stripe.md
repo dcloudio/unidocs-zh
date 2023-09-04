@@ -1,39 +1,26 @@
 ### 开通  
-### open
 - [登录Stripe](https://dashboard.stripe.com/login)注册账号
-- [Login to Stripe](https://dashboard.stripe.com/login) to register an account
 * 注册账号后可获取开发测试的API密钥（公钥、私钥），注意：需[激活账户](https://dashboard.stripe.com/account/onboarding)获取正式的API密钥
-* After registering an account, you can get the API key (public key, private key) for development and testing. Note: you need to [activate the account](https://dashboard.stripe.com/account/onboarding) to obtain the official API key
 * 设置[支付方式](https://dashboard.stripe.com/settings/payment_methods)
-* Set [Payment Methods](https://dashboard.stripe.com/settings/payment_methods)
 
 更多信息详见[申请开通Stripe操作指南](https://uniapp.dcloud.io/app-payment-stripe-open)
-For more information, see [Operation Guide for Applying for Stripe](https://uniapp.dcloud.io/app-payment-stripe-open)
 
 **注意**
-**Notice**
 - iOS系统仅支持iOS13.0及以上版本
-- iOS system only supports iOS13.0 and above
 
 ### 配置  
-### configuration
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数
 ![](https://native-res.dcloud.net.cn/images/uniapp/payment/stripe_setup_manifest_info.png)
 
 **参数说明**  
-**Parameter Description**  
 - returnURL  
-Android平台使用，格式为"your-app://stripe"(示例 io.dcloud.test://stripe)，'your-app'为应用的bundle id或其它自定义scheme，参考:[配置一个自定义页面内跳转协议 (URL Scheme)](https://ask.dcloud.net.cn/article/64)
-Used on the Android platform, the format is "your-app://stripe" (example io.dcloud.test://stripe), 'your-app' is the bundle id of the application or other custom schemes, refer to:[Configure a custom Define the page jump protocol (URL Scheme)](https://ask.dcloud.net.cn/article/64)
+格式为"your-app://stripe"(示例 io.dcloud.test://stripe)，'your-app'为应用的scheme，参考:[配置一个自定义页面内跳转协议 (URL Scheme)](https://ask.dcloud.net.cn/article/64)
 
 
 ### 服务器生成订单
-### The server generates the order
 在 App 端调用支付前，需在业务服务器生成[PaymentIntent](https://stripe.com/docs/api/payment_intents)，详情可参考Stripe官方文档：[Add an endpoint](https://stripe.com/docs/payments/accept-a-payment?platform=android&ui=payment-sheet#add-server-endpoint)
-Before invoking payment on the App side, [PaymentIntent](https://stripe.com/docs/api/payment_intents) needs to be generated on the business server. For details, please refer to the official Stripe document: [Add an endpoint](https://stripe. com/docs/payments/accept-a-payment?platform=android&ui=payment-sheet#add-server-endpoint)
 
 激活账户前可通过POST请求Stripe官方沙盒服务器[https://stripe.com/docs/payments/accept-a-payment](https://stripe.com/docs/payments/accept-a-payment)，生成测试PaymentIntent，示例如下：
-Before activating the account, you can request the official Sandbox server of Stripe via POST [https://stripe.com/docs/payments/accept-a-payment](https://stripe.com/docs/payments/accept-a-payment) , generate a test PaymentIntent, the example is as follows:
 
 ```  js
 uni.request({

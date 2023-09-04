@@ -113,7 +113,7 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 
 ## script
 
-- 仅支持`选项式 API`。
+- 仅支持 `export default {}`。
 - `data` 仅支持函数返回对象字面量方式。
 ```ts
 <script lang="uts">

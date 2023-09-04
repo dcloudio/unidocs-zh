@@ -50,6 +50,7 @@ Conditional compilation is marked with special comments which are the basic of c
 |APP-ANDROID|App Android 平台 仅限 uts文件|
 | APP-ANDROID| App Android platform uts file only|
 |APP-IOS|App iOS 平台 仅限 uts文件|
+|UNI-APP-X|HBuilderX 3.9.0+ (uni-app x项目)|
 |H5|H5|
 |MP-WEIXIN|微信小程序|
 |MP-WEIXIN|WeChat Mini Program|
@@ -151,8 +152,8 @@ Conditional compilation is marked with special comments which are the basic of c
   
   :::
   
-* `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`
-* `VUE3` needs to configure `"vueVersion" : "3"` at the root node of the project's `manifest.json` file
+* `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`；
+* 对于未定义平台名称的条件编译，里面的代码不会生效；
 
 ### API 的条件编译
 ### Conditional compilation of API

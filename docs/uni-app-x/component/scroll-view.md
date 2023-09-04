@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.scroll-view.name -->
+## scroll-view
 
 <!-- UTSCOMJSON.scroll-view.description -->
 

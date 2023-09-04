@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.button.name -->
+## button
 
 <!-- UTSCOMJSON.button.description -->
 

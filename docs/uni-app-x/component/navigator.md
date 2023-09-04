@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.navigator.name -->
+## navigator
 
 <!-- UTSCOMJSON.navigator.description -->
 

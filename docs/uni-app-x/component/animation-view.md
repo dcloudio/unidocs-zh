@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.animation-view.name -->
+## animation-view
 
 <!-- UTSCOMJSON.animation-view.description -->
 

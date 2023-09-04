@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.list-view.name -->
+## list-view
 
 <!-- UTSCOMJSON.list-view.description -->
 
@@ -17,7 +17,7 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 <!-- UTSCOMJSON.list-view.reference -->
 
 
-<!-- UTSCOMJSON.list-item.name -->
+## list-item
 
 <!-- UTSCOMJSON.list-item.description -->
 

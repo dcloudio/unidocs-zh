@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.view.name -->
+## view
 
 <!-- UTSCOMJSON.view.description -->
 

@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.swiper.name -->
+## swiper
 
 <!-- UTSCOMJSON.swiper.description -->
 
@@ -9,7 +9,7 @@
 <!-- UTSCOMJSON.swiper.reference -->
 
 
-<!-- UTSCOMJSON.swiper-item.name -->
+## swiper-item
 
 <!-- UTSCOMJSON.swiper-item.description -->
 

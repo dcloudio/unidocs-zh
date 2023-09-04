@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.picker-view.name -->
+## picker-view
 
 <!-- UTSCOMJSON.picker-view.description -->
 
@@ -9,7 +9,7 @@
 <!-- UTSCOMJSON.picker-view.reference -->
 
 
-<!-- UTSCOMJSON.picker-view-column.name -->
+## picker-view-column
 
 <!-- UTSCOMJSON.picker-view-column.description -->
 

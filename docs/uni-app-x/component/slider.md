@@ -1,4 +1,4 @@
-<!-- UTSCOMJSON.slider.name -->
+## slider
 
 <!-- UTSCOMJSON.slider.description -->
 

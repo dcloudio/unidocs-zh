@@ -1,5 +1,4 @@
-<!-- UTSCOMJSON.checkbox-group.name -->
-
+## checkbox-group
 <!-- UTSCOMJSON.checkbox-group.description -->
 
 <!-- UTSCOMJSON.checkbox-group.attrubute -->
@@ -9,7 +8,7 @@
 <!-- UTSCOMJSON.checkbox-group.reference -->
 
 
-<!-- UTSCOMJSON.checkbox.name -->
+## checkbox
 
 <!-- UTSCOMJSON.checkbox.description -->
 

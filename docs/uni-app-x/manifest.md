@@ -40,17 +40,37 @@ App端发布配置
 
 |属性			|类型					|默认值			|描述								|最低版本			|
 |:-				|:-						|:-				|:-									|:-					|
-|syncDebug		|Boolean				|false			|是否为自定义调试基座					|3.9.0				|
-|android		|[ANDROID配置](#android)	|-				|App-Android端发布配置				|3.9.0				|
-|ios			|[IOS配置](#ios)			|-				|App-iOS端发布配置					|3.9.0				|
+|syncDebug		|Boolean				|false			|是否为自定义调试基座				|3.9.0				|
+|icons			|[ICONS配置](#icons)	|-				|App端应用图标配置					|3.9.0				|
+|android		|[ANDROID配置](#android)|-				|App-Android端发布配置				|3.9.0				|
+|ios			|[IOS配置](#ios)		|-				|App-iOS端发布配置					|3.9.0				|
 
+
+### ICONS配置@icons  
+App端图标配置  
+
+|属性			|类型					|默认值			|描述								|最低版本			|
+|:-				|:-						|:-				|:-									|:-					|
+|android		|[Android平台图标配置](#icons-android)|-	|App-Android端图标配置				|3.9.0				|
+
+**注意**  
+- App端图片相关配置，建议在HBuilderX中 manifest.json 的可视化界面操作，不推荐手动在源码视图中修改  
+
+#### Android平台图标配置@icons-android  
+
+|属性			|类型					|默认值			|描述								|最低版本			|
+|:-				|:-						|:-				|:-									|:-					|
+|hdpi			|String					|-				|高分屏设备程序图标，分辨率要求72x72	|3.9.0				|
+|xhdpi			|String					|-				|720P高分屏设备程序图标，分辨率要求96x96	|3.9.0			|
+|xxhdpi			|String					|-				|1080P高分屏设备程序图标，分辨率要求144x144	|3.9.0		|
+|xxxhdpi		|String					|-				|2K屏设备程序图标，分辨率要求192x192	|3.9.0				|
 
 ### ANDROID配置@android  
 App-Android端发布配置  
 
 |属性			|类型					|默认值			|描述								|最低版本			|
 |:-				|:-						|:-				|:-									|:-					|
-|packagename	|String					|-				|Android包名							|3.9.0				|
+|packagename	|String					|-				|Android包名						|3.9.0				|
 |keystore		|String					|-				|证书库文件路径，相对于.manifest目录	|3.9.0				|
 |storepwd		|String					|-				|证书库文件密码						|3.9.0				|
 |aliasname		|String					|-				|证书别名							|3.9.0				|

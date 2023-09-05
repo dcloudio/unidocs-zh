@@ -4,7 +4,7 @@
 
 <!-- UTSCOMJSON.image.attrubute -->
 
-## 图片格式
+### 图片格式
 - [x] bmp
 - [x] gif
 - [x] ico
@@ -15,7 +15,7 @@
 
 如需其他图片格式，可搜索插件市场或自行开发uts组件插件。
 
-## src路径支持说明
+### src路径支持说明
 
 - 本地路径/static方式
 	由于uni-app编译时，只把/static目录下的静态资源copy到app中，所以src均需指向/static目录下。
@@ -30,7 +30,10 @@
 
 <!-- UTSCOMJSON.image.compatibility -->
 
-## tips
+#### App平台  
+- App-Android平台image组件使用Fresco图片库实现：[com.facebook.fresco:fresco:2.5.0](https://github.com/facebook/fresco)  
+
+### tips
 在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/image/image-path.uvue)
 
 <!-- UTSCOMJSON.image.reference -->

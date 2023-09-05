@@ -2,6 +2,7 @@
 * 教程
   * [与js开发的差别](tutorial/codegap.md)
   * [request联网教程](tutorial/request.md)
+  * [全局变量与状态管理](tutorial/store.md)
 * [编译器](compiler/README.md)
 * 全局文件
   * [main.uts](/collocation/main.md)

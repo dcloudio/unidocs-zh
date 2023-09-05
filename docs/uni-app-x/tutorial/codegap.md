@@ -296,7 +296,7 @@ export const setGlobalNum = (num: number) => {
 	<text @click="plus">{{ globalNum }}</text>
 </template>
 
-<script>
+<script lang="uts">
 	import { state, setGlobalNum } from '@/store/index.uts'
 	export default {
 		computed: {

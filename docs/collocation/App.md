@@ -15,26 +15,18 @@ The application life cycle can only be listened to in `App.vue`, and listening t
 ``uni-app`` 支持如下应用生命周期函数：
 `uni-app` supports the following application life cycle functions:
 
-|函数名|说明|
-| Function name| Instruction|
-|:-|:-|
-|onLaunch|当``uni-app`` 初始化完成时触发（全局只触发一次）|
-| onLaunch| Triggerred when the initialization of `uni-app` is completed (only triggered once globally)|
-|onShow|当 ``uni-app`` 启动，或从后台进入前台显示|
-| onShow| Displayed when `uni-app` starts or enters the foreground from the background|
-|onHide|当 ``uni-app`` 从前台进入后台|
-| onHide| When `uni-app` enters the background from the foreground|
-|onError|当 ``uni-app`` 报错时触发|
-| onError| Triggered when `uni-app` reports an error|
-|onUniNViewMessage|对 ``nvue`` 页面发送的数据进行监听，可参考 [nvue 向 vue 通讯](https://uniapp.dcloud.io/tutorial/nvue-api?id=communication)|
-|onUniNViewMessage| To monitor the data sent by the ``nvue`` page, please refer to [nvue to vue communication](https://uniapp.dcloud.io/tutorial/nvue-api?id=communication)|
-|onUnhandledRejection|对未处理的 Promise 拒绝事件监听函数（2.8.1+）|
-| onUnhandledRejection| Listening function for unprocessed Promise reject events (2.8.1+)|
-|onPageNotFound|页面不存在监听函数|
-|onPageNotFound|The listener function does not exist on the page|
-|onThemeChange|监听系统主题变化|
-|onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出（app-uvue-android 3.9+）|
-|onExit|监听应用退出（app-uvue-android 3.9+）|
+|函数名|说明|平台兼容|
+|:-|:-|:-|
+|onLaunch|当``uni-app`` 初始化完成时触发（全局只触发一次）||
+|onShow|当 ``uni-app`` 启动，或从后台进入前台显示||
+|onHide|当 ``uni-app`` 从前台进入后台||
+|onError|当 ``uni-app`` 报错时触发|app-uvue 不支持|
+|onUniNViewMessage|对 ``nvue`` 页面发送的数据进行监听，可参考 [nvue 向 vue 通讯](https://uniapp.dcloud.io/tutorial/nvue-api?id=communication)|app-uvue 不支持|
+|onUnhandledRejection|对未处理的 Promise 拒绝事件监听函数（2.8.1+ app-uvue 暂不支持）|app-uvue 不支持|
+|onPageNotFound|页面不存在监听函数|app-uvue 不支持|
+|onThemeChange|监听系统主题变化|app-uvue 不支持|
+|onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出|app-uvue-android 3.9+|
+|onExit|监听应用退出|app-uvue-android 3.9+|
 
 **示例代码**
 **Sample code**

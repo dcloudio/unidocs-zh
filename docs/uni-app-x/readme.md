@@ -145,9 +145,7 @@ uni自带API，如下为目前支持的清单。
 * [x] uni.$once
 * [x] uni.$off
 
-### 路由
-* [x] getApp                  
-* [x] getCurrentPages         
+### 路由     
 * [x] uni.navigateTo          
 * [x] uni.redirectTo          
 * [x] uni.reLaunch            
@@ -178,6 +176,7 @@ uni自带API，如下为目前支持的清单。
 * [x] uni.closePreviewImage	
 * [x] uni.startPullDownRefresh
 * [x] uni.stopPullDownRefresh
+* [x] uni.onTabBarMidButtonTap
 
 ### 组件
 * [x] uni.createVideoContext
@@ -188,17 +187,26 @@ uni自带API，如下为目前支持的清单。
 * [x] uni.uploadFile		
 * [x] uni.downloadFile		
 * [x] uni.getNetworkType	
-* [x] uni-websocket的一系列API
+* [x] uni.websocket的一系列API
 
 ### 存储
-* [x] uni-storage的一系列API
+* [x] uni.storage的一系列API
 
 ### 定位
 * [x] uni.getLocation 一期仅支持系统定位和腾讯定位
 
 ### 媒体
 * [x] uni.chooseImage 仅支持相册，不支持相机
+* [x] uni.chooseVideo
+* [x] uni.getImageInfo
+* [x] uni.getVideoInfo
+* [x] uni.compressImage
+* [x] uni.compressVideo
 * [x] uni.saveImageToPhotosAlbum
+* [x] uni.saveVideoToPhotosAlbum
+* [x] uni.createInnerAudioContext
+* [x] uni.getBackgroundAudioManager
+* [x] uni.getFileSystemManager
 
 ### 设备
 * [x] uni.getSystemInfo			
@@ -208,10 +216,11 @@ uni自带API，如下为目前支持的清单。
 * [x] uni.getAppBaseInfo
 * [x] uni.getSystemSetting
 * [x] uni.getAppAuthorizeSetting	
-* [x] uni-getbatteryinfo	//已有uts插件
-* [x] uni-memeorywarning	//已有uts插件
-* [x] uni-wifi	//已有uts插件
-* [x] uni-usercapturescreen	//已有uts插件
+* [x] uni.getbatteryinfo	//已有uts插件
+* [x] uni.memeorywarning	//已有uts插件
+* [x] uni.wifi	//已有uts插件
+* [x] uni.usercapturescreen	//已有uts插件
+* [x] uni.openAppAuthorizeSetting
 
 ### 性能
 * [x] uni.getPerformance

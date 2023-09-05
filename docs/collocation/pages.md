@@ -11,14 +11,14 @@
 |[pages](/collocation/pages?id=pages)|Object Array|是|设置页面路径及窗口表现||
 |[easycom](/collocation/pages?id=easycom)|Object|否|组件自动引入规则|2.5.5+|
 |[tabBar](/collocation/pages?id=tabbar)|Object|否|设置底部 tab 的表现||
-|[condition](/collocation/pages?id=condition)|Object|否|启动模式配置||
-|[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置||
+|[condition](/collocation/pages?id=condition)|Object|否|启动模式配置|app-uvue 不支持|
+|[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置|app-uvue 不支持|
 |[preloadRule](/collocation/pages?id=preloadrule)|Object|否|分包预下载规则|微信小程序|
 |[workers](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|String|否|`Worker` 代码放置的目录|微信小程序|
 |[leftWindow](/collocation/pages?id=leftwindow)|Object|否|大屏左侧窗口|H5|
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
-|[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0||
+|[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0|app-uvue 不支持|
 |entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序|
 
 以下是一个包含了所有配置选项的 `pages.json` ：

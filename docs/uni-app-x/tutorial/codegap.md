@@ -273,45 +273,7 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 
 - uni-app x 暂不支持 i18n、Vuex、Pinia 等插件。
 
-## 全局变量
 
-可通过一个专用模块组织和管理全局变量，例如：
-
-```ts
-// store/index.uts
-export type State = {
-  globalNum: number
-}
-
-export const state = reactive({ globalNum: 0 } as State)
-
-export const setGlobalNum = (num: number) => {
-  state.globalNum = num
-}
-```
-
-```ts
-// pages/index/index.uvue
-<template>
-	<text @click="plus">{{ globalNum }}</text>
-</template>
-
-<script lang="uts">
-	import { state, setGlobalNum } from '@/store/index.uts'
-	export default {
-		computed: {
-			globalNum(): number {
-				return state.globalNum
-			}
-		},
-		methods: {
-			plus(){
-				setGlobalNum(state.globalNum + 1)
-			}
-		}
-	}
-</script>
-```
 
 ## uts不支持js的一些功能和特性
 

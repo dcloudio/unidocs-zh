@@ -32,8 +32,9 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
 |APP-PLUS-NVUE或APP-NVUE|App nvue 页面||
 |APP-ANDROID|App Android 平台 仅限 uts文件||
 |APP-IOS|App iOS 平台 仅限 uts文件||
-|UNI-APP-X|uni-app x项目|HBuilderX 3.9.0+|
-|H5|H5||
+|UNI-APP-X|uni-app x项目 [详情](#UNI-APP-X)|HBuilderX 3.9.0+|
+|H5|H5（推荐使用 `WEB`）||
+|WEB|H5|HBuilderX 3.6.3+|
 |MP-WEIXIN|微信小程序||
 |MP-ALIPAY|支付宝小程序||
 |MP-BAIDU|百度小程序||
@@ -123,6 +124,15 @@ uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-
   
 * `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`；
 * 对于未定义平台名称的条件编译，`#ifdef` 中的代码不会生效，而 `#ifndef` 中的代码会生效；
+
+<pre v-pre="" data-lang="javascript">
+<code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  %PLATFORM%</b></span>
+代码不会生效
+<span class="token comment">//<span style="color:#859900;"> #endif</span></span></code>
+<code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifndef</span><b style="color:#268BD2">  %PLATFORM%</b></span>
+代码会生效
+<span class="token comment">//<span style="color:#859900;"> #endif</span></span></code>
+</pre>
 
 ### API 的条件编译
 
@@ -238,6 +248,35 @@ json的条件编译，如不同平台的key名称相同，cli项目下开发者�
 平台特有的API实现
 <span class="token comment">//<span style="color:#859900;"> #endif</span></span></code></pre>
 
+### uni-app x项目的条件编译@UNI-APP-X
+
+使用`UNI-APP-X`条件编译，来区分uni-app x项目和uni-app项目。
+
+::: preview
+  
+  > uni-app x项目
+  
+  ```js
+  // #ifdef UNI-APP-X
+  代码会生效
+  // #endif
+  // #ifndef UNI-APP-X
+  代码不会生效
+  // #endif
+  ```
+  
+  > uni-app项目
+  
+  ```js
+  // #ifdef UNI-APP-X
+  代码不会生效
+  // #endif
+  // #ifndef UNI-APP-X
+  代码会生效
+  // #endif
+  ```
+  
+  :::
 
 
 ### HBuilderX 支持

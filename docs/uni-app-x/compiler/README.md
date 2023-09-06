@@ -8,6 +8,8 @@ uvue编译器是在Vite基础上进行扩展开发的。
 
 它的大部分特性（如条件编译）和配置项（如环境变量）与`uni-app`的vue3编译器一致，[详见](https://uniapp.dcloud.net.cn/tutorial/compiler.html)
 
+支持less、sass、scss等css预编译。
+
 #### 编译缓存 @cache
 
 `uni-app x`编译器引入了编译缓存机制，以优化开发体验。

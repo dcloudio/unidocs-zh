@@ -1,8 +1,7 @@
 ## 跨端兼容
 ## Cross-platform compatibility
 
-uni-app 已将常用的组件、JS API 封装到框架中，开发者按照 uni-app 规范开发即可保证多平台兼容，大部分业务均可直接满足。
-uni-app has encapsulated commonly used components and JS API into the framework. Developers can ensure multi-platform compatibility by developing according to uni-app specification, and most businesses can be directly satisfied.
+uni-app 已将常用的组件、API封装到框架中，开发者按照 uni-app 规范开发即可保证多平台兼容，大部分业务均可直接满足。
 
 但每个平台有自己的一些特性，因此会存在一些无法跨平台的情况。
 Each platform has its own characteristics, so there will be some situations that can not be cross-platform.
@@ -10,7 +9,7 @@ Each platform has its own characteristics, so there will be some situations that
 - 大量写 if else，会造成代码执行性能低下和管理混乱。
 - Writing a lot of if else may cause low performance in code execution and management confusion.
 - 编译到不同的工程后二次修改，会让后续升级变的很麻烦。
-- Second modification after compiling to different projects will make the subsequent upgrade troublesome.
+- 为每个平台重写，明明主业务逻辑又一样
 
 在 C 语言中，通过 #ifdef、#ifndef 的方式，为 windows、mac 等不同 os 编译不同的代码。
 In C language, different codes are compiled for windows , mac and other os, by means of #ifdef and #ifndef.
@@ -23,33 +22,29 @@ In C language, different codes are compiled for windows , mac and other os, by m
 条件编译是用特殊的注释作为标记，在编译时根据这些特殊的注释，将注释里面的代码编译到不同平台。
 Conditional compilation is marked with special comments which are the basic of compiling the code inside these comments to different platforms during compilation.
 
-**写法：**以 <span style="color:#859900;"> #ifdef</span> 或 <span style="color:#859900;"> #ifndef</span> 加<b style="color:#268BD2"> %PLATFORM%</b> 开头，以 <span style="color:#859900;">#endif</span> 结尾。
-**Writing: **Start with <span style="color:#859900;"> #ifdef</span> or <span style="color:#859900;"> #ifndef</span> plus <b style="color:#268BD2"> %PLATFORM%</b> and end with <span style="color:#859900;">#endif</span>.
-* <span style="color:#859900;"> #ifdef</span>：if defined 仅在某平台存在
-* <span style="color:#859900;">#ifdef</span>: if defined only exists on a certain platform.
-* <span style="color:#859900;"> #ifndef</span>：if not defined 除了某平台均存在
-* <span style="color:#859900;">#ifndef</span>: if not defined exists except for a certain platform.
-* <b style="color:#268BD2"> %PLATFORM%</b>：平台名称
-* <b style="color:#268BD2">%PLATFORM%</b>: platform name
+**写法：**
+以 `#ifdef` 或 `#ifndef` 加 `%PLATFORM%`  开头，以 `#endif` 结尾。
+* `#ifdef`：if defined 仅在某平台存在
+* `#ifndef`：if not defined 除了某平台均存在
+* `%PLATFORM%`：平台名称
 
-<table><thead><tr><th>条件编译写法</th><th>说明</th></tr></thead><tbody><tr><td><div class="code"><span class="token comment"><span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> APP-PLUS</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>仅出现在 App 平台下的代码</td></tr><tr><td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifndef</span><b style="color:#268BD2"> H5</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>除了 H5 平台，其它平台均存在的代码</td></tr><tr><td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> H5</b></span><span style="color:#859900;"> || </span><b style="color:#268BD2">MP-WEIXIN</b><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>在 H5 平台或微信小程序平台存在的代码（这里只有||，不可能出现&&，因为没有交集）</td></tr></tbody></table>
-<table><thead><tr><th>conditional compilation</th><th> illustrate</th></tr></thead><tbody><tr><td><div class="code"> <span class="token comment"><span style="color:#859900;">#ifdef</span> <b style="color:#268BD2">APP-PLUS</b></span><br> Conditionally compiled code<br> <span class="token comment"><span style="color:#859900;">#endif</span></span></div></td><td> Code that only appears under the App platform</td></tr><tr><td><div class="code"> <span class="token comment"><span style="color:#859900;">#ifndef</span> <b style="color:#268BD2">H5</b></span><br> Conditionally compiled code<br> <span class="token comment"><span style="color:#859900;">#endif</span></span></div></td><td> Except for the H5 platform, the code that exists on other platforms</td></tr><tr><td><div class="code"> <span class="token comment"><span style="color:#859900;">#ifdef</span> <b style="color:#268BD2">H5</b></span> <span style="color:#859900;">||</span> <b style="color:#268BD2">MP-WEIXIN</b><br> Conditionally compiled code<br> <span class="token comment"><span style="color:#859900;">#endif</span></span></div></td><td> The code that exists on the H5 platform or the WeChat applet platform (there is only || here, and &amp;&amp; cannot appear because there is no intersection)</td></tr></tbody></table>
+<table><thead><tr><th>条件编译写法</th><th>说明</th></tr></thead><tbody><tr><td><div class="code"><span class="token comment"><span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> APP-PLUS</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>仅出现在 App 平台下的代码</td></tr><tr><td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifndef</span><b style="color:#268BD2"> H5</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>除了 H5 平台，其它平台均存在的代码（注意if后面有个n）</td></tr><tr><td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> H5</b></span><span style="color:#859900;"> || </span><b style="color:#268BD2">MP-WEIXIN</b><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>在 H5 平台或微信小程序平台存在的代码（这里只有||，不可能出现&&，因为没有交集）</td></tr></tbody></table>
 
 
 <b style="color:#268BD2"> %PLATFORM%</b> **可取值如下：**
 <b style="color:#268BD2">%PLATFORM%</b> **The possible values are as follows:**
 
-|值|生效条件|说明|
+|值|生效条件|版本支持|
 |:-|:-|:-|
-|VUE3|[详情](https://ask.dcloud.net.cn/article/37834) （uni-app js引擎版）|HBuilderX 3.2.0+|
+|VUE3|uni-app js引擎版用于区分vue2和3，[详情](https://ask.dcloud.net.cn/article/37834) |HBuilderX 3.2.0+|
+|UNI-APP-X|用于区分是否是uni-app x项目 [详情](#UNI-APP-X)|HBuilderX 3.9.0+|
 |APP|App||
-|APP-PLUS|App（uni-app js引擎版）||
+|APP-PLUS|uni-app js引擎版编译为App时||
 |APP-PLUS-NVUE或APP-NVUE|App nvue 页面||
 |APP-ANDROID|App Android 平台 仅限 uts文件||
 |APP-IOS|App iOS 平台 仅限 uts文件||
-|UNI-APP-X|uni-app x项目 [详情](#UNI-APP-X)|HBuilderX 3.9.0+|
 |H5|H5（推荐使用 `WEB`）||
-|WEB|H5|HBuilderX 3.6.3+|
+|WEB|web|HBuilderX 3.6.3+|
 |MP-WEIXIN|微信小程序||
 |MP-ALIPAY|支付宝小程序||
 |MP-BAIDU|百度小程序||
@@ -67,8 +62,8 @@ Conditional compilation is marked with special comments which are the basic of c
 **支持的文件**
 **Supported files**
 
-* .vue
-* .js
+* .vue/.nvue/.uvue
+* .js/.uts
 * .css
 * pages.json
 * 各预编译语言文件，如：.scss、.less、.stylus、.ts、.pug
@@ -76,11 +71,10 @@ Conditional compilation is marked with special comments which are the basic of c
 
 
 **注意：**
-**Notice:**
-* 条件编译是利用注释实现的，在不同语法里注释写法不一样，js使用 ``// 注释``、css 使用 ``/* 注释 */``、vue/nvue 模板里使用 ``<!-- 注释 -->``；
-* Conditional compilation is realized by annotations. In different grammars, annotations are written differently. js uses `// Comments`, css uses `/* Comments */`, and vue/nvue template uses `<!-- Comments -->`;
+* 条件编译是利用注释实现的，在不同语法里注释写法不一样，js/uts使用 ``// 注释``、css 使用 ``/* 注释 */``、vue/nvue/uvue 模板里使用 ``<!-- 注释 -->``；
 * 条件编译APP-PLUS包含APP-NVUE和APP-VUE，APP-PLUS-NVUE和APP-NVUE没什么区别，为了简写后面出了APP-NVUE ；
 * 使用条件编译请保证`编译前`和`编译后`文件的语法正确性，即要保障无论条件编译是否生效都能通过语法校验。比如：json文件中不能有多余的逗号，js中不能重复导入；
+* 对于未定义平台名称，可能是名称写错了，也可能是低版本HBuilderX还不认识这个平台。此时的条件编译，`#ifdef` 中的代码不会生效，而 `#ifndef` 中的代码会生效；
 
   ::: preview
   
@@ -142,7 +136,7 @@ Conditional compilation is marked with special comments which are the basic of c
   :::
   
 * `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`；
-* 对于未定义平台名称的条件编译，`#ifdef` 中的代码不会生效，而 `#ifndef` 中的代码会生效；
+
 
 <pre v-pre="" data-lang="javascript">
 <code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  %PLATFORM%</b></span>

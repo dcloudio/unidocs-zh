@@ -55,16 +55,16 @@ export function createApp() {
 ## 代码时序
 
 开发者写的代码，在应用启动时，按如下时序加载：
-1. main.js/uts 的 `export function createApp() {}` 外的代码、任何页面的script中`export default {}`外的代码
+1. main.js/uts 的 `export function createApp() {}` 外的代码、任何页面/组件的script中`export default {}`外的代码
 2. main.js/uts 的 `export function createApp() {}` 中的代码
 3. app.vue/uvue中onLaunch的代码
 4. 首页的onLoad
 5. 首页的onReady
 
-开发者需谨慎在main.js/uts、页面script中`export default {}`外、和onLaunch中编写代码：
-1. 这些的代码都会影响启动速度
+开发者需谨慎在main.js/uts、页面/组件script中`export default {}`外、和onLaunch中编写代码：
+1. 这些的代码都会影响启动速度（定义type不会，type是使用时才加载）
 2. 执行太早，很多功能和API无法使用，需trycatch。尤其是与界面相关的都无法使用，此时首页都还没有创建。
-3. main.js/uts、页面script中`export default {}`外的代码，其创建的变量在应用存活时一直占据着内存。
+3. main.js/uts、页面script中`export default {}`外的代码，其创建的变量在应用存活时一直占据着内存，不会跟随页面关闭而回收
 
 
 ## 插件

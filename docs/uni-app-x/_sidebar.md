@@ -3,7 +3,7 @@
   * [与js开发的差别](tutorial/codegap.md)
   * [request联网教程](tutorial/request.md)
   * [全局变量与状态管理](tutorial/store.md)
-* 编译器
+* [编译器]
   * [概述](compiler/README.md)
   * [条件编译](/tutorial/platform.md)
 * 全局文件
@@ -42,6 +42,7 @@
   * [web-view](component/web-view.md)
   * [animation-view](component/animation-view.md)
 * API
+  * [概述](api.md)
   * 基础
     * [getApp](api/getApp.md)
     * [getCurrentPages](api/getCurrentPages.md)

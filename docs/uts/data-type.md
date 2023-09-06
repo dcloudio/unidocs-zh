@@ -450,9 +450,23 @@ const l = b.length // 错误：变量“b”可能为空
 
 我们要庆幸编译器的报错，因为如果编译器放过后，在线上运行时万一真的为空，那会导致崩溃。
 
-如何正确访问可能为null的对象的属性和方法？有几种方式可以做到。
+除了变量，类型的属性也可以为null。此时可以和变量一样使用` | null`，还可以用`?:`来代表可选
+
+```ts
+type obj = {
+	id : number,
+	name : string,
+	age : number | null,
+	sex ?: boolean
+}
+```
+
+方法参数的可为空，也就是可选参数，其实意思是该参数有默认值，你可以不填，不填就使用默认值，具体见[function](function.md#默认参数)
 
 ### 安全的访问null
+
+定义可为空后，如何安全访问？
+
 #### 1. 代码中判空后再使用
 
 如果你的代码已经判空，则编译器不会再告警。你可以显式检测 b 是否为 null，在不为 null 的情况下调用 b 的属性和方法。
@@ -507,10 +521,10 @@ console.log(baz);
 ```ts
 const l = b!.length
 ```
-<!-- 
+
 ### vue data中null的用法
 
-很多时候，data的数据需要通过script获取，而 uts 不支持 undefined，初始化时就只能赋null。
+很多时候，data的数据需要通过script获取，而 uts 不支持 undefined，初始化时就只能赋null。一旦定义可为null后，调用时就需要用`?.`操作可选属性。
 
 ```html
 <script lang=uts>
@@ -537,7 +551,7 @@ const l = b!.length
 	}
 </script>
 ```
- -->
+
 ## 日期（Date）@date
 
 日期对象表示日期，包括年月日时分秒等各种日期。

@@ -3,7 +3,9 @@
   * [与js开发的差别](tutorial/codegap.md)
   * [request联网教程](tutorial/request.md)
   * [全局变量与状态管理](tutorial/store.md)
-* [编译器](compiler/README.md)
+* [编译器]
+  * [概述](compiler/README.md)
+  * [条件编译](/tutorial/platform.md)
 * 全局文件
   * [main.uts](/collocation/main.md)
   * [app.uvue](/collocation/App.md)
@@ -11,6 +13,12 @@
   * [AndroidManifest.xml](/tutorial/app-nativeresource-android.md)
   * [pages.json](/collocation/pages.md)
   * [uni.scss](/collocation/uni-scss.md)
+* [页面](/tutorial/page.md)
+* vue语法
+  * [概述](vue/README.md)
+  * [基础](/tutorial/vue3-basics.md)
+  * [组件](/tutorial/vue3-components.md)
+  * [API](/tutorial/vue3-api.md)
 * 组件
   * [公共属性和事件](component/common.md)
   * [view](component/view.md)

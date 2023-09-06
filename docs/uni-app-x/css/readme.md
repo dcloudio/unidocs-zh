@@ -218,6 +218,8 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |CSS Variable		|√			|										|
 |媒体查询			|√			|										|
 
+字体图标[详见](font-family.md)
+
 ## 选择器
 |类别			|示例		|支持情况	|备注												|
 |:-:			|:-:		|:-:	|:-:												|
@@ -260,6 +262,7 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |currentColor		|					|								|
 |hsl				|					|								|
 |hsla				|					|								|
+
 
 ## At-rules
 |类别							|支持情况	|备注	|

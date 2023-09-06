@@ -225,13 +225,23 @@ uni自带API，如下为目前支持的清单。
 ### 性能
 * [x] uni.getPerformance
 
-## 5. 全局文件
-- manifest.json 仅支持基本的名称图标配置，暂未支持splash。支持CPU类型abiFilters、Android版本minSdkVersion、targetSdkVersion。
+### uniCloud
+* [x] uniCloud.callFunction
+
+云对象和clientDB还不支持。
+
+## 5. vue语法
+- uvue是按vue3规范实现的，但一期uvue不支持setup，只支持选项式
+- 目前也不支持vue插件，比如pinia、vuex、i18n、router。简单的状态管理可以参考文档[全局变量和状态管理](tutorial/store.md)
+
+## 6. 全局文件
+- manifest.json 仅支持基本的名称图标配置，暂未支持splash。支持CPU类型abiFilters、Android版本minSdkVersion、targetSdkVersion。[详见](manifest.md)
 - AndroidManifest.xml 与原生开发相同。注意Android权限配置在这里配置，而不是在manifest.json中 [详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
-- pages.json 不支持app-plus的内容
+- app.uvue 不支持globaldata。[详见](/docs/collocation/App.md)
+- pages.json 不支持app-plus的内容。[详见](/docs/collocation/pages.md)
 - uni.scss 正常支持。但注意uvue仅能使用[css子集](css/README.md)
 
-## 6. 插件兼容
+## 7. 插件兼容
 
 插件市场的uts插件，不管是API插件还是组件，均可同时在 uni-app js引擎版 和 uni-app x 上运行。
 
@@ -246,9 +256,8 @@ uni-app js版的“App原生语言插件”无法在 uni-app x 中运行。
 除上述文档中声明已经完成的，还有如下需要注意：
 
 - 全端支持：一期只有Android。虽然uts语言支持swift，可以写原生插件，但iOS版的uvue还未开发完毕。对于iOS或其他小程序、web平台，开发者可将uvue文件后缀改为vue或nvue，如果没有写Android专有代码，那么也可以使用uni-app js引擎版编译到其他平台，包括iOS App、web及各家小程序。尤其在app-iOS上，由于设备性能本就优秀，所以nvue的方案的性能也足够满足挑剔的开发者。后期官方会提供更完善的 uni-app x的全端支持。
-- uvue语法：虽然uvue是按vue3实现的，但一期uvue不支持setup，只支持选项式。
-- 一期不支持：横屏切换、暗黑模式、自定义转场、多语言、无障碍
-- 一期不支持：云开发（已在开发中）、uni-ad。另外包括微信、支付宝、个推等三方sdk封装一期均未启动
+- 一期不支持：横屏切换、暗黑模式、自定义路由、多语言、无障碍
+- 一期不支持：uni-ad。另外包括微信、支付宝、个推、地图等三方sdk封装官方均未启动
 - 一期不支持国际区账户创建和打包uni-app x，仅大陆区开发者账户可用。
 
 欢迎去[需求墙](https://vote.dcloud.net.cn/#/?name=uni-app%20x)投票，告诉我们你的需求优先级。

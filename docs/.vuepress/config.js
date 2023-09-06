@@ -97,16 +97,8 @@ const config = {
         .plugin('inject-json-to-md')
         .use(require('./markdown/inject-json-to-md'))
         .end()
-        .plugin('multimd-table')
-        .use(require('markdown-it-multimd-table'), [
-					{
-						multiline: false,
-						rowspan: true,
-						headerless: true,
-						multibody: false,
-						aotolabel: false,
-					},
-				])
+        .plugin('markdown-it-raw-table')
+        .use(require('@sup39/markdown-it-raw-table'))
     }
   },
   chainWebpack (config, isServer) {

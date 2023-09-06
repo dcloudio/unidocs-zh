@@ -1,31 +1,35 @@
 # 全局变量与状态管理
 
-`uni-app x` 可通过一个专用模块组织和管理全局变量与状态。示例：
+`uni-app x` 不支持globaldata，目前也不支持pinia和vuex。但可通过一个专用模块组织和管理全局变量与状态。
+
+定义一个模块，编写一个单独的uts文件，比如 /store/index.uts，在里面设一个全局变量，比如globalNum。
 
 ```ts
-// store/index.uts
+//定义一个大写的State类型
 export type State = {
   globalNum: number
+  // 如有需要，可增加更多属性
 }
-
+// 实例化为state
 export const state = reactive({ globalNum: 0 } as State)
-
+// 定义修改属性值的方法
 export const setGlobalNum = (num: number) => {
   state.globalNum = num
 }
 ```
 
-```ts
-// pages/index/index.uvue
+在需要的页面和uts文件里，import上面的/store/index.uts，通过如下方式读和写globalNum。
+
+```vue
 <template>
 	<text @click="plus">{{ globalNum }}</text>
 </template>
 
 <script lang="uts">
-	import { state, setGlobalNum } from '@/store/index.uts'
+	import { state, setGlobalNum } from '@/store/index.uts' //导出state和修改其属性值的方法，如不需要修改值，则不需要导出修改方法
 	export default {
 		computed: {
-			globalNum(): number {
+			globalNum(): number { //定义可绑定在界面上的globalNum
 				return state.globalNum
 			}
 		},
@@ -37,3 +41,5 @@ export const setGlobalNum = (num: number) => {
 	}
 </script>
 ```
+
+不管在哪里修改了globalNum的值，界面上都会自动更新。

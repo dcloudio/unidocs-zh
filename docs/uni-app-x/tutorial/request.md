@@ -49,18 +49,21 @@ uni.request({
 
 为json数据定义一个type的自定义类型，明确好对象的属性名称及类型，然后把这个type通过泛型传给request方法，res拿出来的就是转换好的类型，就可以直接`.操作符`获取属性了。。
 
-先不讲原理，先给个使用范例，然后再解读原理。
-
 - 第一步：用HBuilderX自带的工具，给服务器数据定义类型
-把服务器端返回的json数据，复制黏贴到HBuilderX的json编辑器里，点右键，转type。
+把服务器端返回的data里的json数据，复制黏贴到HBuilderX的json编辑器里，点右键，转type。
 ![](../static/json2type.png)
 
 > 转换功能需要HBuilderX 3.9+、安装了uni-app x真机运行插件、且打开的标签卡是json编辑器。（在ctrl+t新建空白md标签卡，粘贴json数据，会自动切换成json编辑器）
 
-上面的截图是复用了其他图片，如果我们使用这个服务器接口，服务器返回的数据内容，也就是res.data的数据是这样：
+上面的截图是复用了其他图片，如果我们使用`https://ext.dcloud.net.cn/plugin/uniappx-plugin-list`这个服务器接口，服务器返回的数据内容，也就是`res.data`的数据是这样：
 ```json
 {code:200,desc:"",data:[{"plugin_name":"插件名称A","plugin_id":123}]}
 ```
+
+**注意：** 不要把res和res.data搞错了，要看`res.data`的数据格式，而不是`res`的格式。`res`的格式是不变的。
+
+观察返回的数据，`res.data`返回一个对象，拥有code、desc、data这3个子属性，code是number类型，desc是string类型，而data的类型又是一个数组。
+该数组内又是若干子对象，子对象有属性`plugin_id`和`plugin_name`等。
 
 那么使用转换工具，生成的类型定义是这样：
 ```ts
@@ -75,7 +78,11 @@ type IRootType = {
 }
 ```
 
+因type不可嵌套，生成了2个type。注意顺序，Data这个type需写在前面，因为后面要引用它。引用代码执行时如未定义该类型，会报错。
+
 - 第二步：把这段类型定义，放在`<script>`根下，也就是export default{}之前。然后给uni.request传入泛型参数`<IRootType>`，返回的res自动转换好了类型，可以直接`.`属性了。
+
+**注意：** 因为`res.data`是对象，所以泛型那里直接使用`<IRootType>`。有的服务器接口返回的`res.data`是数组，就需要在泛型那里写成`<IRootType[]>`
 
 ```vue
 <script>
@@ -94,7 +101,7 @@ type IRootType = {
 				url: "https://ext.dcloud.net.cn/plugin/uniappx-plugin-list",
 				success: (res) => {
 					console.log(res.data)
-					console.log(res.data instanceof IRootType) //true
+					console.log(res.data instanceof IRootType) //true res.data已经被转换为type了
 					console.log(res.data?.data) //因为联网数据不可控，转换可能失败，所以这里需要用?.的方式做安全访问
 					let resData = res.data?.data
 					if(resData!=null && resData.length>0){ //判断一下数组不为空
@@ -107,11 +114,15 @@ type IRootType = {
 </script>
 ```
 
-与UTSJSONObject方式相比，不用使用as做很多转换，虽然需要定义type，但由于有工具可以自动生成type，所以整体使用体验，比UTSJSONObject方式更方便。
+与UTSJSONObject方式相比，不用使用as做很多转换，虽然需要定义type，但由于有工具可以自动生成type，所以整体使用体验，比UTSJSONObject方式方便一点。
 
 type+泛型这个方式，也是ts开发者惯用的方式。
 
 但不熟悉ts的开发者，可能不了解type和泛型。下面讲解下。
+
+### type和泛型详解
+
+- 什么是type和泛型？
 
 type就是自定义一个类型。下面定义了一个数据类型DataType，该类型有2个属性，`plugin_id`和`plugin_name`，这2个属性的类型分别是number和string。
 ```ts
@@ -127,50 +138,22 @@ type DataType = {
 
 而泛型，是一个对方法参数进行通用的类型描述。它告诉一个支持泛型的方法，给方法传入什么类型，方法就会返回什么类型。
 
-详见[泛型](../../uts/generics.md)
+不过uts的泛型支持还没有达到ts的泛型完善度，详见[泛型](../../uts/generics.md)
 
 uni.request方法是支持泛型的，这意味着返回结果可以有很多种类型。
 
-所以可以把你定义的DataType类型通过<T>的方式传给uni.request方法，尖括号要写在方法名和左圆括号中间。
-这个方法就会把返回的res转换为你传入的DataType类型。
+所以可以把你定义的DataType类型通过`<T>`的方式传给uni.request方法，尖括号要写在方法名和左圆括号中间。
+这个方法就会把返回的`res.data`转换为你传入的DataType类型。
 
-下面来举例：
+- 为何type要定义在export default{}之前？
 
-服务器返回的数据内容，也就是res.data的数据是这样：
-```json
-{code:200,desc:"",data:[{"plugin_name":"插件名称A","plugin_id":123}]}
-```
+其实如果type不用于vue data数据的类型，那么type只需要定义在执行前就可以。
 
-观察数据，这是一个对象，拥有code、desc、data这3个子属性，code是number类型，desc是string类型，而data的类型又是一个数组。
-该数组内又是若干子对象，子对象有属性`plugin_id`和`plugin_name`等。
+但实际开发中，type大多用于data的类型定义，而想给data定义类型，那就得写在data的前面，也就是export default{}之前了。
 
-对于这种父子结构，我们需要定义2个类型才能描述，因为每一层都需要一个type。
+- 网络数据缺少一些属性怎么办？
 
-- IRootType是一级的类型，它有3个属性，其中有一个data属性，类型是另一个type data的数组方式。
-- 而Data是二级数组中对象的类型，有2个属性`plugin_id`和`plugin_name`
-
-注意顺序，Data这个type需写在前面，因为后面要引用它。引用代码执行时如未定义该类型，会报错。
-
-```ts
-// uts中为json数据定义类型
-type DataType = {
-	plugin_id : number,
-	plugin_name : string
-} //定义一个DataType类型，含有number类型的plugin_id属性，和string类型的plugin_name属性
-
-type IRootType = {
-	code : number;
-	desc : string;
-	data : Data[];
-}
-```
-
-那为何type一定要定义在export default{}之前？
-
-其实上面的代码，type只需要定义在uni.request方法执行前就可以。但实际开发中，type大多用于data的类型定义，
-而想给data定义类型，那就得写在data的前面，也就是export default{}之前了。
-
-还有一个问题，网络返回的数据，有可能缺少某些属性，该怎么写？ 把类型声明为"或null"，或者使用`?:`
+网络返回的数据，有可能缺少某些属性，导致报错。测试需要把可为空的属性类型声明为"或null"，或者使用`?:`
 ```ts
 type DataType = {
 	plugin_id : number,
@@ -181,9 +164,28 @@ type DataType = {
 
 如您不了解null的安全使用，[详见](../../uts/data-type.md#null)
 
-再举一个实际中更常见的例子。
+- 务必注意res.data返回的是对象还是数组
 
-联网获取插件市场的插件列表数据，并绑定在模板上，还可以翻页。
+如果res.data返回的是对象，那么泛型调用时直接`uni.request<IRootType>(`
+
+如果res.data返回的是数组，那么传泛型时必须传入数组格式`uni.request<IRootType[]>(`
+
+- type的敏感词转义
+
+服务器返回的json数据，其属性键名有可能存在一些type不支持的字符。
+
+比如`{"a:b":"123","a-b":"456"}`，这些键名对于type来讲都是非法的。转换type就会失败。
+
+如果你的服务器数据涉及这类问题且数据格式不可改，那只能改用UTSJSONObject方式。
+
+特殊词清单详见：[type](../../uts/data-type.md#type)
+
+
+### 完整实例
+
+再举一个实际中更常见的例子。联网获取插件市场的插件列表数据，并绑定在模板上，还可以翻页。
+
+翻页需要用到[...展开操作符](../../uts/operator.md#展开语法...)
 
 ```vue
 <template>

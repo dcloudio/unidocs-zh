@@ -171,30 +171,30 @@ uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在
 | 场景                                 | 示例                                           | Kottlin 结果                   |  Swift 结果 							  |
 | ----------------------------------- | -------------------------------------------   | ------------------------------ |------------------------------------------|
 | number + number                      | number + number            				  | 结果为 number                   |结果为 number				              |
-| number + 字面量                       | number + 1                                   | 结果为 number                   |结果为 number 						 	  |
-| ^^        				           | number + 3.14      						  | 结果为 number                   |结果为 number 							  |
-| number + 变量                         | let a: Int = 1; number + a     			  | 结果为 number      			   |结果为 number 						   	  |
-| ^^								   | let b: Double = 1;  number + b       		  | 结果为 number        		   |结果为 number 						      |
-| ^^								   | let c: Long = 1; number + c 				  | 结果为 number       			   |Swift 中无 Long 							  |
-| ^^                 			       | let d: Int64 = 1; number+ d      			  | kottlin 中无 Int64      		   |结果为 number							  |
-| 字面量 + number				       | 1 + number 								  | 结果为 number                   |结果为 number 							  |
-| ^^				      			   | 3.14 + number 								  | 结果为 number                   |结果为 number 							  |
-| 变量 + number				           | let a: Int = 1; a + number 				  | 结果为 number                   |编译失败，需要用 (a as number) + number 	  |
-| ^^				      			   | let b: Double = 1; b + number 				  | 结果为 number                   |编译失败，需要用 (b as number) + number	  |
-| ^^				      			   | let c: Long = 1;  c + number  				  | 结果为 number                   |Swift 中无 Long 	  						  |
-| ^^				      			   | let d: Int64 = 1; d + number 				  | kottlin 中无 Int64              |编译失败，需要用 (d as number) + number	  |
-| 字面量 + 字面量   			           | 1 + 1 				  						  | 结果为 2 Int                    |结果为2 Int                          	  |
-| ^^				      			   | 1 + 3.14 				  					  | 结果为4.14 Double               |结果为4.14 Double	  					  |
-| ^^				      			   | 1.0 + 3.14  				                  | 结果为4.14 Double               |结果为4.14 Double 	 					  |
+| number + 字面量 #{rowspan=2}| number + 1                                   | 结果为 number                   |结果为 number 						 	  |
+| number + 3.14      						  | 结果为 number                   |结果为 number 							  |
+| number + 变量 #{rowspan=4}| let a: Int = 1; number + a     			  | 结果为 number      			   |结果为 number 						   	  |
+| let b: Double = 1;  number + b       		  | 结果为 number        		   |结果为 number 						      |
+| let c: Long = 1; number + c 				  | 结果为 number       			   |Swift 中无 Long 							  |
+| let d: Int64 = 1; number+ d      			  | kottlin 中无 Int64      		   |结果为 number							  |
+| 字面量 + number #{rowspan=2}| 1 + number 								  | 结果为 number                   |结果为 number 							  |
+| 3.14 + number 								  | 结果为 number                   |结果为 number 							  |
+| 变量 + number #{rowspan=4}| let a: Int = 1; a + number 				  | 结果为 number                   |编译失败，需要用 (a as number) + number 	  |
+| let b: Double = 1; b + number 				  | 结果为 number                   |编译失败，需要用 (b as number) + number	  |
+| let c: Long = 1;  c + number  				  | 结果为 number                   |Swift 中无 Long 	  						  |
+| let d: Int64 = 1; d + number 				  | kottlin 中无 Int64              |编译失败，需要用 (d as number) + number	  |
+| 字面量 + 字面量 #{rowspan=3}| 1 + 1 				  						  | 结果为 2 Int                    |结果为2 Int                          	  |
+| 1 + 3.14 				  					  | 结果为4.14 Double               |结果为4.14 Double	  					  |
+| 1.0 + 3.14  				                  | 结果为4.14 Double               |结果为4.14 Double 	 					  |
 | 字面量 / 字面量   			           | 1 / 10 				  					  | 无明确类型时为 0.1 number，有类型时遵守类型约定|无明确类型时为 0.1 number，有类型时遵守类型约定|
-| 专有类型变量 / 字面量                   | let a: Int = 2; a / 10				  		  | 结果为 0 Int                    |结果为0 Int                          	  |
-| ^^				      			   | let a: Int = 2; a / 10.0 				  	  | 结果为 0.2 Double               |编译失败，Int / Double 不合法 需使用 a / Int(10.0)	|
-| 专有类型变量 + 字面量                   | let a: Int = 2; a + 10				  		  | 结果为 12 Int                   |结果为12 Int                          	  |
-| ^^				      			   | let a: Int = 2; a + 3.14 				  	  | 结果为 5.14 Double              |编译失败, 需要 a + Int(3.14) = 5	          |
-| 相同的专有类型变量相加                   | let a: Int = 1; let b: Int = 2; a + b		  | 结果为 3 Int                    |结果为3 Int                          	  |
-| ^^				      			   | let a: Double = 1.0; let b: Double = 2.0; a + b | 结果为 3.0 Double            |结果为 3.0 Double	          			  |
-| 不同的专有类型变量相加                   | let a: Int = 1; let b: Float = 3.14.toFloat(); a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
-| ^^				      			   | let a: Float = 1.0.toFloat(); let b: Double = 3.14; a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |
+| 专有类型变量 / 字面量 #{rowspan=2}| let a: Int = 2; a / 10				  		  | 结果为 0 Int                    |结果为0 Int                          	  |
+| let a: Int = 2; a / 10.0 				  	  | 结果为 0.2 Double               |编译失败，Int / Double 不合法 需使用 a / Int(10.0)	|
+| 专有类型变量 + 字面量 #{rowspan=2}| let a: Int = 2; a + 10				  		  | 结果为 12 Int                   |结果为12 Int                          	  |
+| let a: Int = 2; a + 3.14 				  	  | 结果为 5.14 Double              |编译失败, 需要 a + Int(3.14) = 5	          |
+| 相同的专有类型变量相加 #{rowspan=2}| let a: Int = 1; let b: Int = 2; a + b		  | 结果为 3 Int                    |结果为3 Int                          	  |
+| let a: Double = 1.0; let b: Double = 2.0; a + b | 结果为 3.0 Double            |结果为 3.0 Double	          			  |
+| 不同的专有类型变量相加 #{rowspan=2}| let a: Int = 1; let b: Float = 3.14.toFloat(); a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
+| let a: Float = 1.0.toFloat(); let b: Double = 3.14; a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |
 
 ## 比较运算符的跨数字类型注意@comparisondifftype
 

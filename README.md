@@ -61,30 +61,24 @@ Official website address: [uniapp.dcloud.io](https://uniapp.dcloud.io)
     <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg" class="zooming" data="abc" width="100" height="100" />
     ```
 
-12. md 表格支持行、列合并，支持无表头表格
+12. md 表格支持行、列合并
     - 行列合并
         ```md
-        |Stage | Direct Products | ATP Yields|
-        |----: | --------------: | ---------:|
-        |Glycolysis | 2 ATP ||
-        |^^ | 2 NADH | 3--5 ATP |
-        |Pyruvaye oxidation | 2 NADH | 5 ATP |
-        |Citric acid cycle | 2 ATP ||
-        |^^ | 6 NADH | 15 ATP |
-        |^^ | 2 FADH2 | 3 ATP |
-        |**30--32** ATP |||
-        ```
-    - 无表头表格
-        ```md
-        |--|--|--|--|--|--|--|--|
-        |♜|  |♝|♛|♚|♝|♞|♜|
-        |  |♟|♟|♟|  |♟|♟|♟|
-        |♟|  |♞|  |  |  |  |  |
-        |  |♗|  |  |♟|  |  |  |
-        |  |  |  |  |♙|  |  |  |
-        |  |  |  |  |  |♘|  |  |
-        |♙|♙|♙|♙|  |♙|♙|♙|
-        |♖|♘|♗|♕|♔|  |  |♖|
+        |资源分类		|资源细项				|售价（元）	|
+        |:-:			|:-:					|:-:		|
+        |云函数 #{rowspan=3}|资源使用量（GBs）		|0.000110592|
+        |调用次数（万次）		|0.0133		|
+        |出网流量（GB）			|0.8		|
+        |云数据库 #{rowspan=3}|容量（GB/天）			|0.07		|
+        |读操作使用量（万RU）	|0.015		|
+        |写操作使用量（万RU）	|0.05		|
+        |云存储 #{rowspan=4}|容量（GB/天）			|0.0043		|
+        |下载操作次数（万次）	|0.01		|
+        |上传操作次数（万次）	|0.01		|
+        |CDN 流量（GB）			|0.18		|
+        |前端网站托管 #{rowspan=2}|容量（GB/天）			|0.0043		|
+        |流量（GB）|0.18		|
+        |售价（元/月）#{colspan=2}	|5		|
         ```
 ## 文档 Algolia 使用限额
 Included Quota:

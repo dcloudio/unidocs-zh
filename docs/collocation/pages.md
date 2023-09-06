@@ -404,9 +404,8 @@ The configuration items in the page will override the same configuration items i
 |navigationBarBackgroundColor|HexColor|#F8F8F8|导航栏背景颜色（同状态栏背景色）|APP与H5为#F8F8F8，小程序平台请参考相应小程序文档|
 |navigationBarTextStyle|String|black|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
 |navigationBarTitleText|String||导航栏标题文字内容||
-| navigationBarTitleText| String||Navigation bar title text||
-|navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)||
-|navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+, app-uvue 不支持）|
+|navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)|app-uvue 不支持|
+|navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
 |disableScroll|Boolean|false|设置为 true 则页面整体不能上下滚动（bounce效果），只在页面配置中有效，在globalStyle中设置无效|微信小程序（iOS）、百度小程序（iOS）|
 |backgroundColor|HexColor|#ffffff|窗口的背景色|微信小程序、百度小程序、抖音小程序、飞书小程序、京东小程序|
 |backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light|app-uvue 不支持|
@@ -1355,9 +1354,7 @@ Providing tabBar configuration in pages.json is not only to facilitate rapid dev
 |backgroundColor|HexColor|是||tab 的背景色||
 | backgroundColor| HexColor| is the background color of || tab||
 |borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white，也支持其他颜色值|App 2.3.4+ 、H5 3.0.0+|
-| borderStyle| String|No| black| The color of the upper border of the tabbar, the optional value is black/white, and other color values are also supported| App 2.3.4+, H5 3.0.0+|
-|blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持、H5 3.0.0+（只有最新版浏览器才支持）|
-| blurEffect| String|No| none| iOS Gaussian blur effect, optional value dark/extralight/light/none (Reference: [Instructions for use](https://ask.dcloud.net.cn/article/36617))| App 2.4.0+ support, H5 3.0.0+ (only supported by the latest version of the browser) |
+|blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持(app-uvue 不支持)、H5 3.0.0+（只有最新版浏览器才支持）|
 |list|Array|是||tab 的列表，详见 list 属性说明，最少2个、最多5个 tab||
 | list| Array| is a list of || tabs, see the list property description for details, at least 2 and at most 5 tabs||
 |position|String|否|bottom|可选值 bottom、top|top 值仅微信小程序支持|

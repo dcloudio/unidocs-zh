@@ -18,8 +18,8 @@ It is similar to the **page management** part of `app.json` in the WeChat MiniAp
 |[easycom](/collocation/pages?id=easycom)|Object|否|组件自动引入规则|2.5.5+|
 |[easycom](/collocation/pages?id=easycom)| Object|No|Component automatic import rules|2.5.5+|
 |[tabBar](/collocation/pages?id=tabbar)|Object|否|设置底部 tab 的表现||
-|[condition](/collocation/pages?id=condition)|Object|否|启动模式配置|app-uvue 不支持|
-|[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置|app-uvue 不支持|
+|[condition](/collocation/pages?id=condition)|Object|否|启动模式配置||
+|[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置|H5、app-uvue 不支持|
 |[preloadRule](/collocation/pages?id=preloadrule)|Object|否|分包预下载规则|微信小程序|
 |[preloadRule](/collocation/pages?id=preloadrule)| Object|No|Subcontract preload rule|WeChat MiniApp|
 |[workers](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|String|否|`Worker` 代码放置的目录|微信小程序|
@@ -160,25 +160,16 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 |backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark / light|微信小程序|
 | backgroundTextStyle| String| dark|The style of drop-down loading, only supports dark/light|WeChat MiniApp|
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.html#lifecycle)。||
-| enablePullDownRefresh| Boolean| false|Whether to enable pull-down refresh, see [Page Lifecycle](/tutorial/page.html#lifecycle) for details. ||
-|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)||
-| onReachBottomDistance| Number| 50|The distance from the bottom of the page when the pull-up bottom event is triggered. The unit only supports px. For details, see [Page Lifecycle](/tutorial/page.html#lifecycle)||
+|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)|app-uvue 不支持|
 |backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorTop| HexColor|#ffffff|Background color of the top window (bounce area) | iOS only|
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
-| backgroundColorBottom| HexColor|#ffffff|Background color of the bottom window (bounce area) | iOS only|
-|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、APP|
-| titleImage| String||Navigation bar image address (replace the current text title), Alipay MiniApp must use https image link address|Alipay MiniApp, H5, APP|
-|transparentTitle|String|none|导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP|
-| transparentTitle| String| none|The overall (foreground, background) transparency setting of the navigation bar. Support always always transparent/auto sliding adaptive/none opaque|Alipay MiniApp, H5, APP|
+|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、APP(app-uvue 不支持)|
+|transparentTitle|String|none|导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP(app-uvue 不支持)|
 |titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
-| titlePenetrate| String| NO|Click to penetrate the navigation bar|Alipay MiniApp, H5|
-|pageOrientation|String|portrait|横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)|App 2.4.7+、微信小程序、QQ小程序|
-| pageOrientation| String| portrait|Landscape screen configuration, screen rotation setting, only supports auto / portrait / landscape For details, see [Response to display area changes](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)|App 2.4.7+, WeChat MiniApp, QQ MiniApp|
-|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)|App|
-| animationType| String| pop-in|Animation effect of window display, see: [Window Animation](/api/router?id=animation)| App|
-|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App|
-| animationDuration| Number| 300|Window display animation duration, the unit is ms| App|
+|pageOrientation|String|portrait|横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)|App 2.4.7+(app-uvue 不支持)、微信小程序、QQ小程序|
+|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)|App(app-uvue 不支持)|
+|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App(app-uvue 不支持)|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
 | app-plus| Object||Set the specific style compiled to the App platform, the configuration items refer to the following [app-plus](/collocation/pages?id=app-plus)| App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
@@ -194,9 +185,7 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 |mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
 | mp-kuaishou| Object||Set the specific style compiled to mp-kuaishou platform| Kuaishou MiniApp|
 |mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
-| mp-jd| Object||Set the specific style compiled to mp-jd platform|Jingdong MiniApp|
-|usingComponents|Object| |引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)||
-| usingComponents| Object| |Reference MiniApp components, refer to [MiniApp Components](/tutorial/miniprogram-subject.html# MiniApp Custom Component Support)||
+|usingComponents|Object| |引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)|app-uvue 不支持|
 |renderingMode|String| |同层渲染，webrtc(实时音视频) 无法正常时尝试配置 seperated 强制关掉同层|微信小程序|
 | renderingMode| String| | Same-layer rendering, webrtc (real-time audio and video) cannot work normally, try to configure seperated to forcibly turn off the same layer |WeChat MiniApp|
 |leftWindow|Boolean|true|当存在 leftWindow 时，默认是否显示 leftWindow|H5|
@@ -417,27 +406,19 @@ The configuration items in the page will override the same configuration items i
 |navigationBarTitleText|String||导航栏标题文字内容||
 | navigationBarTitleText| String||Navigation bar title text||
 |navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)||
-| navigationBarShadow| Object||Navigation bar shadow, configuration reference below [navigation bar shadow](/collocation/pages?id=navigationBarShadow)||
-|navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
-| navigationStyle| String| default|Navigation bar style, only default/custom is supported. Custom is to cancel the default native navigation bar, please see [Use Note](/collocation/pages?id=customnav)|WeChat MiniApp 7.0+, Baidu MiniApp, H5, App (2.0.3+)|
+|navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+, app-uvue 不支持）|
 |disableScroll|Boolean|false|设置为 true 则页面整体不能上下滚动（bounce效果），只在页面配置中有效，在globalStyle中设置无效|微信小程序（iOS）、百度小程序（iOS）|
 |backgroundColor|HexColor|#ffffff|窗口的背景色|微信小程序、百度小程序、抖音小程序、飞书小程序、京东小程序|
-|backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light||
-| backgroundTextStyle| String| dark|The style of drop-down loading, only dark/light is supported||
+|backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light|app-uvue 不支持|
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.html#lifecycle)。||
-| enablePullDownRefresh| Boolean| false|Whether to enable pull-down refresh, see [Page Lifecycle](/tutorial/page.html#lifecycle) for details. ||
-|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)||
-| onReachBottomDistance| Number| 50|The distance from the bottom of the page when the pull-up bottom event is triggered. The unit only supports px. For details, see [Page Lifecycle](/tutorial/page.html#lifecycle)||
+|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)|app-uvue 不支持|
 |backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorTop| HexColor|#ffffff|Background color of the top window (bounce area) | iOS only|
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorBottom| HexColor|#ffffff|Background color of the bottom window (bounce area) | iOS only|
 |disableSwipeBack|Boolean|false|是否禁用滑动返回|App-iOS（3.4.0+）|
-| disableSwipeBack| Boolean| false|Whether to disable swipe back|App-iOS (3.4.0+)|
-|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、App|
-| titleImage| String||Navigation bar picture address (replace the current text title), Alipay MiniApp must use https image link address|Alipay MiniApp, H5, App|
-|transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP|
-| transparentTitle| String| none|Navigation bar transparent setting. Support always always transparent/auto sliding adaptive/none opaque|Alipay MiniApp, H5, APP|
+|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、App(app-uvue 不支持)|
+|transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP(app-uvue 不支持)|
 |titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
 | titlePenetrate| String| NO|Click to penetrate the navigation bar|Alipay MiniApp, H5|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
@@ -457,9 +438,7 @@ The configuration items in the page will override the same configuration items i
 |mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
 | mp-kuaishou| Object||Set the specific style compiled to mp-kuaishou platform| Kuaishou MiniApp|
 |mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
-| mp-jd| Object||Set the specific style compiled to mp-jd platform|Jingdong MiniApp|
-|usingComponents|Object||引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)|App、微信小程序、支付宝小程序、百度小程序、京东小程序|
-| usingComponents| Object||Referring to MiniApp components, refer to [MiniApp Components](/tutorial/miniprogram-subject.html# MiniApp Custom Component Support)| App, WeChat MiniApp, Alipay MiniApp, Baidu MiniApp, JD.com MiniApp|
+|usingComponents|Object||引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)|App(app-uvue 不支持)、微信小程序、支付宝小程序、百度小程序、京东小程序|
 |leftWindow|Boolean|true|当存在 leftWindow时，当前页面是否显示 leftWindow|H5|
 | leftWindow| Boolean| true|When leftWindow exists, whether the current page displays leftWindow| H5|
 |topWindow|Boolean|true|当存在 topWindow 时，当前页面是否显示 topWindow|H5|
@@ -558,27 +537,19 @@ Configure the specific style when compiling to the App platform, and some common
 |属性|类型|默认值|描述|平台兼容|
 |Properties|Type|Default|Description|Platform Compatibility|
 |:-|:-|:-|:-|:-|
-|background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App (vue 页面需要将 body 背景色设为透明)|
-|titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App、H5|
-| titleNView| Object||Navigation Bar, see: [Navigation Bar](/collocation/pages?id=app-titleNView)| App、H5|
-|subNVues|Object||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+|
-| subNVues| Object||Native sub-form, see: [Native sub-form](/collocation/pages?id=app-subNVues)| App 1.9.10+|
+|background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App (vue 页面需要将 body 背景色设为透明，app-uvue 不支持)|
+|titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App(app-uvue 不支持)、H5|
+|subNVues|Object||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+(app-uvue 不支持)|
 |bounce|String||页面回弹效果，设置为 "none" 时关闭效果。|App-vue（nvue Android无页面级bounce效果，仅list、recycle-list、waterfall等滚动组件有bounce效果）|
 | bounce| String|| page bounce effect, set to "none" to disable the effect. | App-vue (nvue Android has no page-level bounce effect, only list, recycle-list, waterfall and other scrolling components have bounce effect)|
 |popGesture|String|close|侧滑返回功能，可选值："close"（启用侧滑返回）、"none"（禁用侧滑返回）|App-iOS|
 | popGesture| String| close|Slide back function, optional values: "close" (enable slide back), "none" (disable slide back) | App-iOS|
 |softinputNavBar|String|auto|iOS软键盘上完成工具栏的显示模式，设置为 "none" 时关闭工具栏。|App-iOS|
-| softinputNavBar| String| auto| The display mode of the completion toolbar on the iOS soft keyboard. When set to "none", the toolbar is turned off. | App-iOS|
-|softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App|
-| softinputMode| String| adjustPan|soft keyboard pop-up mode, support adjustResize, adjustPan two modes | App|
-|pullToRefresh|Object||下拉刷新|App|
-| pullToRefresh| Object||pull to refresh| App|
-|scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App|
-| scrollIndicator| String||Scroll bar display policy, when set to "none", no scroll bar will be displayed. | App|
-|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App|
-| animationType| String| pop-in| The animation effect of window display, see: [window animation](/api/router?id=animation) for details. | App|
-|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App|
-| animationDuration| Number| 300|The duration of the window display animation, in ms. | App|
+|softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App(app-uvue 不支持)|
+|pullToRefresh|Object||下拉刷新|App(app-uvue 不支持)|
+|scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App(app-uvue 不支持)|
+|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App(app-uvue 不支持)|
+|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App(app-uvue 不支持)|
 **Tips**
 - `.nvue` 页面仅支持 `titleNView、pullToRefresh、scrollIndicator` 配置，其它配置项暂不支持
 - The `.nvue` page only supports `titleNView, pullToRefresh, scrollIndicator` configuration, other configuration items are not currently supported

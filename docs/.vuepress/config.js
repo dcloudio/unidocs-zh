@@ -98,7 +98,7 @@ const config = {
         .use(require('./markdown/inject-json-to-md'))
         .end()
         .plugin('markdown-it-raw-table')
-        .use(require('@sup39/markdown-it-raw-table'))
+        .use(require('markdown-it-raw-table'))
     }
   },
   chainWebpack (config, isServer) {

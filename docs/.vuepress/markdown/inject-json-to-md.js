@@ -10,13 +10,13 @@ try {
 	utsJson = require(`../utils/${process.env.DOCS_LOCAL}/utsJson.json`);
 } catch (error) {}
 try {
-	utsApiJson = require('../utils/utsApiJson.json');
+	utsApiJson = require(`../utils/${process.env.DOCS_LOCAL}/utsApiJson.json`);
 } catch (error) {}
 try {
-	utsComJson = require('../utils/utsComJson.json');
+	utsComJson = require(`../utils/${process.env.DOCS_LOCAL}/utsComJson.json`);
 } catch (error) {}
 try {
-	utsUnicloudApiJson = require('../utils/utsUnicloudApiJson.json');
+	utsUnicloudApiJson = require(`../utils/${process.env.DOCS_LOCAL}/utsUnicloudApiJson.json`);
 } catch (error) {}
 
 

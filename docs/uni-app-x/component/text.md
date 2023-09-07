@@ -8,6 +8,8 @@
 
 <!-- UTSCOMJSON.text.attrubute -->
 
+<!-- UTSCOMJSON.text.event -->
+
 <!-- UTSCOMJSON.text.compatibility -->
 
 ## 子组件

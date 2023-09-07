@@ -4,6 +4,8 @@
 
 <!-- UTSCOMJSON.button.attrubute -->
 
+<!-- UTSCOMJSON.button.event -->
+
 <!-- UTSCOMJSON.button.compatibility -->
 
 <!-- UTSCOMJSON.button.reference -->

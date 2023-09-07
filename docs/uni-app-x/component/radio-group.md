@@ -4,6 +4,8 @@
 
 <!-- UTSCOMJSON.radio-group.attrubute -->
 
+<!-- UTSCOMJSON.radio-group.event -->
+
 <!-- UTSCOMJSON.radio-group.compatibility -->
 
 <!-- UTSCOMJSON.radio-group.reference -->
@@ -14,6 +16,8 @@
 <!-- UTSCOMJSON.radio.description -->
 
 <!-- UTSCOMJSON.radio.attrubute -->
+
+<!-- UTSCOMJSON.radio.event -->
 
 <!-- UTSCOMJSON.radio.compatibility -->
 

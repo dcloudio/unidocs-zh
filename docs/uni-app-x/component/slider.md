@@ -4,6 +4,8 @@
 
 <!-- UTSCOMJSON.slider.attrubute -->
 
+<!-- UTSCOMJSON.slider.event -->
+
 <!-- UTSCOMJSON.slider.compatibility -->
 
 ## tips

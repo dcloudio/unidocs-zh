@@ -12,6 +12,8 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 
 <!-- UTSCOMJSON.list-view.attrubute -->
 
+<!-- UTSCOMJSON.list-view.event -->
+
 <!-- UTSCOMJSON.list-view.compatibility -->
 
 <!-- UTSCOMJSON.list-view.reference -->
@@ -22,6 +24,8 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 <!-- UTSCOMJSON.list-item.description -->
 
 <!-- UTSCOMJSON.list-item.attrubute -->
+
+<!-- UTSCOMJSON.list-item.event -->
 
 <!-- UTSCOMJSON.list-item.compatibility -->
 

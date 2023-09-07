@@ -24,6 +24,8 @@
 
 <!-- UTSCOMJSON.rich-text.attrubute -->
 
+<!-- UTSCOMJSON.rich-text.event -->
+
 <!-- UTSCOMJSON.rich-text.compatibility -->
 
 <!-- UTSCOMJSON.rich-text.reference -->

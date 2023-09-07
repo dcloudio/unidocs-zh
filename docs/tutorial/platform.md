@@ -41,8 +41,8 @@ Conditional compilation is marked with special comments which are the basic of c
 |APP|App||
 |APP-PLUS|uni-app js引擎版编译为App时||
 |APP-PLUS-NVUE或APP-NVUE|App nvue 页面||
-|APP-ANDROID|App Android 平台 仅限 uts文件||
-|APP-IOS|App iOS 平台 仅限 uts文件||
+|APP-ANDROID|App Android 平台 [详情](#UTS)||
+|APP-IOS|App iOS 平台 [详情](#UTS)||
 |H5|H5（推荐使用 `WEB`）||
 |WEB|web|HBuilderX 3.6.3+|
 |MP-WEIXIN|微信小程序||
@@ -73,8 +73,8 @@ Conditional compilation is marked with special comments which are the basic of c
 **注意：**
 * 条件编译是利用注释实现的，在不同语法里注释写法不一样，js/uts使用 ``// 注释``、css 使用 ``/* 注释 */``、vue/nvue/uvue 模板里使用 ``<!-- 注释 -->``；
 * 条件编译APP-PLUS包含APP-NVUE和APP-VUE，APP-PLUS-NVUE和APP-NVUE没什么区别，为了简写后面出了APP-NVUE ；
-* 使用条件编译请保证`编译前`和`编译后`文件的语法正确性，即要保障无论条件编译是否生效都能通过语法校验。比如：json文件中不能有多余的逗号，js中不能重复导入；
 * 对于未定义平台名称，可能是名称写错了，也可能是低版本HBuilderX还不认识这个平台。此时的条件编译，`#ifdef` 中的代码不会生效，而 `#ifndef` 中的代码会生效；
+* 使用条件编译请保证`编译前`和`编译后`文件的语法正确性，即要保障无论条件编译是否生效都能通过语法校验。比如：json文件中不能有多余的逗号，js中不能重复导入；
 
   ::: preview
   
@@ -136,16 +136,6 @@ Conditional compilation is marked with special comments which are the basic of c
   :::
   
 * `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`；
-
-
-<pre v-pre="" data-lang="javascript">
-<code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  %PLATFORM%</b></span>
-代码不会生效
-<span class="token comment">//<span style="color:#859900;"> #endif</span></span></code>
-<code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifndef</span><b style="color:#268BD2">  %PLATFORM%</b></span>
-代码会生效
-<span class="token comment">//<span style="color:#859900;"> #endif</span></span></code>
-</pre>
 
 ### API 的条件编译
 ### Conditional compilation of API
@@ -286,11 +276,9 @@ If you want to separate the page files of each platform more thoroughly, you can
 - `platforms`目录下只支持放置页面文件（即页面vue文件），如果需要对其他资源条件编译，建议使用[static 目录的条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)。
 - Only page files (that is, page vue files) are supported in the `platforms` directory. If you need to conditionally compile other resources, it is recommended to use [conditional compilation of static directory](https://uniapp.dcloud.net.cn/tutorial/ platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91).
 
-### uts 的条件编译
-### Conditional compilation of uts
+### uts 的条件编译@UTS
 
-用法与 [API 的条件编译](#api-的条件编译)一致，多出了`APP-ANDROID`和`APP-IOS`两个平台。
-The usage is consistent with [API conditional compilation](#api-%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91), with `APP -ANDROID` and `APP-IOS` two platforms.
+对于`APP-ANDROID`和`APP-IOS`两个平台，在uni-app项目中，仅uts文件中支持（通常是uts插件里使用）；在uni-app x项目中，只要是条件编译支持的文件，均可以使用。
 
 <pre v-pre="" data-lang="javascript"><code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  %PLATFORM%</b></span>
 平台特有的API实现

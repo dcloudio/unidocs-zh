@@ -18,7 +18,7 @@
 |[leftWindow](/collocation/pages?id=leftwindow)|Object|否|大屏左侧窗口|H5|
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
-|[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0|app-uvue 不支持|
+|[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0|uni-app x 不支持|
 |entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序|
 
 以下是一个包含了所有配置选项的 `pages.json` ：
@@ -142,15 +142,15 @@
 |backgroundColor|HexColor|#ffffff|下拉显示出来的窗口的背景色|微信小程序|
 |backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark / light|微信小程序|
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.html#lifecycle)。||
-|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)|app-uvue 不支持|
+|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)|uni-app x 不支持|
 |backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
-|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、APP(app-uvue 不支持)|
-|transparentTitle|String|none|导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP(app-uvue 不支持)|
+|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、APP(uni-app x 不支持)|
+|transparentTitle|String|none|导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP(uni-app x 不支持)|
 |titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
-|pageOrientation|String|portrait|横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)|App 2.4.7+(app-uvue 不支持)、微信小程序、QQ小程序|
-|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)|App(app-uvue 不支持)|
-|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App(app-uvue 不支持)|
+|pageOrientation|String|portrait|横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)|App 2.4.7+(uni-app x 不支持)、微信小程序、QQ小程序|
+|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)|App(uni-app x 不支持)|
+|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App(uni-app x 不支持)|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
 |mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
@@ -161,7 +161,7 @@
 |mp-qq|Object||设置编译到 mp-qq 平台的特定样式|QQ小程序|
 |mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
 |mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
-|usingComponents|Object| |引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)|app-uvue 不支持|
+|usingComponents|Object| |引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)|uni-app x 不支持|
 |renderingMode|String| |同层渲染，webrtc(实时音视频) 无法正常时尝试配置 seperated 强制关掉同层|微信小程序|
 |leftWindow|Boolean|true|当存在 leftWindow 时，默认是否显示 leftWindow|H5|
 |topWindow|Boolean|true|当存在 topWindow 时，默认是否显示 topWindow|H5|
@@ -335,18 +335,18 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |navigationBarBackgroundColor|HexColor|#F8F8F8|导航栏背景颜色（同状态栏背景色）|APP与H5为#F8F8F8，小程序平台请参考相应小程序文档|
 |navigationBarTextStyle|String|black|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
 |navigationBarTitleText|String||导航栏标题文字内容||
-|navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)|app-uvue 不支持|
+|navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)|uni-app x 不支持|
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
 |disableScroll|Boolean|false|设置为 true 则页面整体不能上下滚动（bounce效果），只在页面配置中有效，在globalStyle中设置无效|微信小程序（iOS）、百度小程序（iOS）|
 |backgroundColor|HexColor|#ffffff|窗口的背景色|微信小程序、百度小程序、抖音小程序、飞书小程序、京东小程序|
-|backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light|app-uvue 不支持|
+|backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light|uni-app x 不支持|
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.html#lifecycle)。||
-|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)|app-uvue 不支持|
+|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)|uni-app x 不支持|
 |backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 |disableSwipeBack|Boolean|false|是否禁用滑动返回|App-iOS（3.4.0+）|
-|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、App(app-uvue 不支持)|
-|transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP(app-uvue 不支持)|
+|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、App(uni-app x 不支持)|
+|transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP(uni-app x 不支持)|
 |titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
@@ -358,7 +358,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |mp-qq|Object||设置编译到 mp-qq 平台的特定样式|QQ小程序|
 |mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
 |mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
-|usingComponents|Object||引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)|App(app-uvue 不支持)、微信小程序、支付宝小程序、百度小程序、京东小程序|
+|usingComponents|Object||引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)|App(uni-app x 不支持)、微信小程序、支付宝小程序、百度小程序、京东小程序|
 |leftWindow|Boolean|true|当存在 leftWindow时，当前页面是否显示 leftWindow|H5|
 |topWindow|Boolean|true|当存在 topWindow 时，当前页面是否显示 topWindow|H5|
 |rightWindow|Boolean|true|当存在 rightWindow时，当前页面是否显示 rightWindow|H5|
@@ -430,16 +430,16 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |属性|类型|默认值|描述|平台兼容|
 |:-|:-|:-|:-|:-|
 |background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App (vue 页面需要将 body 背景色设为透明，app-uvue 不支持)|
-|titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App(app-uvue 不支持)、H5|
-|subNVues|Object||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+(app-uvue 不支持)|
+|titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App(uni-app x 不支持)、H5|
+|subNVues|Object||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+(uni-app x 不支持)|
 |bounce|String||页面回弹效果，设置为 "none" 时关闭效果。|App-vue（nvue Android无页面级bounce效果，仅list、recycle-list、waterfall等滚动组件有bounce效果）|
 |popGesture|String|close|侧滑返回功能，可选值："close"（启用侧滑返回）、"none"（禁用侧滑返回）|App-iOS|
 |softinputNavBar|String|auto|iOS软键盘上完成工具栏的显示模式，设置为 "none" 时关闭工具栏。|App-iOS|
-|softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App(app-uvue 不支持)|
-|pullToRefresh|Object||下拉刷新|App(app-uvue 不支持)|
-|scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App(app-uvue 不支持)|
-|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App(app-uvue 不支持)|
-|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App(app-uvue 不支持)|
+|softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App(uni-app x 不支持)|
+|pullToRefresh|Object||下拉刷新|App(uni-app x 不支持)|
+|scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App(uni-app x 不支持)|
+|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App(uni-app x 不支持)|
+|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App(uni-app x 不支持)|
 **Tips**
 - `.nvue` 页面仅支持 `titleNView、pullToRefresh、scrollIndicator` 配置，其它配置项暂不支持
 
@@ -998,7 +998,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 |selectedColor|HexColor|是||tab 上的文字选中时的颜色||
 |backgroundColor|HexColor|是||tab 的背景色||
 |borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white，也支持其他颜色值|App 2.3.4+ 、H5 3.0.0+|
-|blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持(app-uvue 不支持)、H5 3.0.0+（只有最新版浏览器才支持）|
+|blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持(uni-app x 不支持)、H5 3.0.0+（只有最新版浏览器才支持）|
 |list|Array|是||tab 的列表，详见 list 属性说明，最少2个、最多5个 tab||
 |position|String|否|bottom|可选值 bottom、top|top 值仅微信小程序支持|
 |fontSize|String|否|10px|文字默认大小|App 2.3.4+、H5 3.0.0+|

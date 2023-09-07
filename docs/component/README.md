@@ -429,6 +429,16 @@ datacom组件是一种数据驱动的、可云端一体的组件。
 
 详见: [uni-ui介绍](/component/uniui/uni-ui.md)
 
+### vue 与 uvue 组件优先级 @priority
+
+组件开发过程中，存在未明确指定组件后缀名的情况，例如：
+1. 使用 [easycom](https://uniapp.dcloud.net.cn/collocation/pages.html#easycom) 时。
+2. 在 `import` 语句中未指定后缀名时，例如： `import PageHead from '@/components/page-head';`。
+
+此时 `vue` 组件和 `uvue` 组件的优先级如下：
+- 在 `uni-app x` 中，优先使用 `uvue` 组件，如果不存在 `uvue` 组件，则使用 `vue` 组件。
+- 在 `uni-app` 中，只支持使用 `vue` 组件。
+
 **更多组件**
 
 除了基础组件、uni-ui，插件市场还有更多扩展组件、模板，包括前端组件和原生扩展组件，具体见[插件市场](https://ext.dcloud.net.cn/)。

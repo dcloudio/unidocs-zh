@@ -129,7 +129,7 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 
 ## 组件
 
-## props
+### props
 
 - 仅支持对象声明方式
 - 暂不支持验证函数
@@ -158,6 +158,10 @@ export default {
 	</Foo>
 </view>
 ```
+
+### 监听页面生命周期
+
+目前暂不支持在组件内监听页面生命周期，待后续支持组合式 API 后，可通过组合式 API 实现。
 
 ## JSON的类型
 
@@ -273,18 +277,12 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 
 - uni-app x 暂不支持 i18n、Vuex、Pinia 等插件。
 
-
-
 ## uts不支持js的一些功能和特性
 
 - 不支持undefined。任何变量被定义后，都需要赋值
 - 不支持promise、async、await，仅支持callback回调
 - 函数声明方式不支持[作为值传递](../uts/function.md#作为值传递)
 - 函数表达式方式不支持[默认参数](../uts/function.md#默认参数)
-
-## 组件监听页面生命周期
-
-目前暂不支持在组件内监听页面生命周期，待后续支持组合式 API 后，可通过组合式 API 实现。
 
 ## 与uni-app js引擎版的其他差异
 - uni-app x 新增了onLastPageBackPress和onExit等应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。

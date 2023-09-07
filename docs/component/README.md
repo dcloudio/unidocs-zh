@@ -19,7 +19,8 @@
 
 下面是一个基本组件的实例，在一个vue页面的根`<view>`组件下插入一个`<button>`组件。给这个组件的内容区写上文字“按钮”，同时给这个组件设置了一个属性“size”，并且“size”属性的值设为了“mini”。
 
-> 注：按照[vue单文件组件规范](https://cn.vuejs.org/v2/guide/single-file-components.html)，每个vue文件的根节点必须为 `<template>`，且这个 `<template>` 下只能且必须有一个根 `<view>` 组件。
+> 注：按照[vue单文件组件规范](https://cn.vuejs.org/v2/guide/single-file-components.html)，每个vue文件的根节点必须为 `<template>`。
+> vue2下，这个 `<template>` 下只能且必须有一个根 `<view>` 组件。vue3不限制。
 
 ```html
 <template>
@@ -71,11 +72,11 @@
 
 除了上述公共属性，还有一类特殊属性以`v-`开头，称之为vue指令，如v-if、v-else、v-for、v-model。详见[vue指令](/tutorial/vue-api?id=%e6%a8%a1%e6%9d%bf%e6%8c%87%e4%bb%a4)
 
-#### 在组件中使用js变量
+#### 在组件中使用script的data变量
 
-组件中可以使用script的data中定义的js变量，但组件的属性中使用和内容区使用的用法不一样。
+组件中可以使用script的data中定义的变量，但组件的属性中使用和内容区使用的用法不一样。
 
-- 在内容区使用时，使用两个花括号来包裹，如下面的`buttonText`
+- 在text内容区使用时，使用两个花括号来包裹，如下面的`buttonText`
 - 在属性值中使用时，属性名的前面要加冒号前缀
 
 下面的button组件示例，等价于上一个的示例。只不过静态内容改成动态js。
@@ -304,7 +305,7 @@ uni-app支持的组件分为vue组件和小程序自定义组件。
 
 接下来一一讲解。
 
-### easycom组件规范
+### easycom组件规范@easycom
 
 > `HBuilderX 2.5.5`起支持
 
@@ -428,19 +429,3 @@ datacom组件是一种数据驱动的、可云端一体的组件。
 ### 扩展组件（uni-ui）@uniui
 
 详见: [uni-ui介绍](/component/uniui/uni-ui.md)
-
-### vue 与 uvue 组件优先级 @priority
-
-组件开发过程中，存在未明确指定组件后缀名的情况，例如：
-1. 使用 [easycom](https://uniapp.dcloud.net.cn/collocation/pages.html#easycom) 时。
-2. 在 `import` 语句中未指定后缀名时，例如： `import PageHead from '@/components/page-head';`。
-
-此时 `vue` 组件和 `uvue` 组件的优先级如下：
-- 在 `uni-app x` 中，优先使用 `uvue` 组件，如果不存在 `uvue` 组件，则使用 `vue` 组件。
-- 在 `uni-app` 中，只支持使用 `vue` 组件。
-
-**更多组件**
-
-除了基础组件、uni-ui，插件市场还有更多扩展组件、模板，包括前端组件和原生扩展组件，具体见[插件市场](https://ext.dcloud.net.cn/)。
-
-关于其他vue的web组件库、小程序组件库是否能在uni-app中使用的问题，参考[https://ask.dcloud.net.cn/article/35489](https://ask.dcloud.net.cn/article/35489)

@@ -1,4 +1,4 @@
-## uni.getApp(opts?) @getapp
+## getApp(opts?) @getapp
 
 <!-- UTSAPIJSON.getApp.description -->
 

@@ -1,4 +1,4 @@
-## uni.getCurrentPages() @getcurrentpages
+## getCurrentPages() @getcurrentpages
 
 <!-- UTSAPIJSON.getCurrentPages.description -->
 

@@ -1404,6 +1404,58 @@ console.log(person.name); // 返回zhangsan
 
 使用!断言，是强制编译器信任开发者的写法，编译器放过后，在运行期一旦person为null，调用`person.name`就会崩溃。而使用`person?.name`则不会崩溃，只会返回null。
 
+**特殊情况**  
+在定义Type时键名必须符合变量命名规则（如第一个字符不能数字，不能包含空格或运算符，不能使用语言保留的关键字等），如果json字符串中的键名不符合变量命名规则，需要添加注释`@JSON_FIELD`定义键名转换规则才能通过JSON.parse解析转type。  
+```ts
+type ExampleType = {
+  /**
+  * @JSON_FIELD "a+b"
+  * JSON.parse时会将json字符中的键名"a+b"转换为type类型的"a_b"属性
+  * JSON.stringify时会将type类型的"a_b"属性转换为json字符串中的"a+b"键名
+  */
+  a_b: string
+}
+```
+以上示例定义的 ExampleType 类型，在 `a_b: string` 声明时添加注释 `@JSON_FIELD "a+b"`，表示 JSON.parse 时会将json字符中的键名"a+b"转换为ExampleType类型的"a_b"属性；JSON.stringify 时会将ExampleType类型的"a_b"属性转换为json字符串中的"a+b"键名。  
+
+推荐的转换规则如下：  
+- 将不合法的字符（如空格、运算符等）转换为下划线“_”，如“a+b”转换为“a_b”  
+- 将保留[关键词](keywords.md)（如class、enum等）转换时，在前面添加下划线，如“class”转换为“_class”  
+- 如果转换后的名称已存在，在后面添加下划线“_”避免冲突，如同时存在“a+b”和“a-b”，分别转换为“a_b”和“a_b_”
+
+
+以下举例json字符串 “{"a+b":"addition value","a-b":"subtraction value","class":"classification value"}”，应该如何定义 type 才能使用 JSON.parse 转换
+```ts
+type SpecialType = {
+  /**
+  * @JSON_FIELD "a+b"
+  */
+  a_b: string
+  /**
+   * @JSON_FIELD "a-b"
+   */
+  a_b_: string
+  /**
+   * @JSON_FIELD "class"
+   */
+  _class: string
+}
+
+//json字符串转换type对象  
+let t:SpecialType = JSON.parse<SpecialType>('{"a+b":"addition value","a-b":"subtraction value","class":"classification value"}');
+console.log(t.a_b)		//输出: addition value
+console.log(t.a_b_)		//输出: subtraction value
+console.log(t._class)	//输出: classification value
+
+//type对象转换json字符串
+let t:SpecialType = {
+	a_b: 'value 1',
+	a_b_: 'value 2',
+	_class: 'value 3'
+}
+console.log(JSON.stringify(t))	//输出: {"a+b":"value 1","a-b":"value 2","class":"value 3"}
+```
+
 #### json转type工具
 
 如果json数据属性较多、嵌套较多，那么为json数据编写type类型定义，也是一件繁琐的事情。

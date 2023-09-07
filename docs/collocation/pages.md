@@ -1308,17 +1308,13 @@ If you need to match the vue files in node_modules, you need to use the matching
 ```
 
 **说明**
-**illustrate**
-- `easycom`方式引入的组件无需在页面内`import`，也不需要在`components`内声明，即可在任意页面使用
-- Components introduced by `easycom` can be used on any page without `import` in the page, or declared in `components`
-- `easycom`方式引入组件不是全局引入，而是局部引入。例如在H5端只有加载相应页面才会加载使用的组件
-- Importing components in the `easycom` method is not a global import, but a local import. For example, on the H5 side, the components used will only be loaded when the corresponding page is loaded.
-- 在组件名完全一致的情况下，`easycom`引入的优先级低于手动引入（区分连字符形式与驼峰形式）
-- When the component names are exactly the same, the priority of `easycom` import is lower than that of manual import (distinguish between hyphen form and camel case form)
+- `easycom`方式引入的组件无需在页面内`import`，也不需要在`components`内声明，即可在任意页面使用。
+- `easycom`方式引入组件不是全局引入，而是局部引入。例如在H5端只有加载相应页面才会加载使用的组件。
+- 在组件名完全一致的情况下，`easycom`引入的优先级低于手动引入（区分连字符形式与驼峰形式）。
 - 考虑到编译速度，直接在`pages.json`内修改`easycom`不会触发重新编译，需要改动页面内容触发。
 - `easycom`只处理vue组件，不处理小程序专用组件（如微信的wxml格式组件）。不处理后缀为.nvue的组件。因为nvue页面引入的组件也是.vue组件。可以参考uni ui，使用vue后缀，同时兼容nvue页面。
-- `nvue`页面里引用`.vue`后缀的组件，会按照nvue方式使用原生渲染，其中不支持的css会被忽略掉。这种情况同样支持`easycom`
-- Components with `.vue` suffix in the `nvue` page will use native rendering in the nvue way, and unsupported css will be ignored. This case also supports `easycom`
+- `nvue`页面里引用`.vue`后缀的组件，会按照nvue方式使用原生渲染，其中不支持的css会被忽略掉。这种情况同样支持`easycom`。
+- `vue` 与 `uvue` 组件优先级，[详见](https://zh.uniapp.dcloud.io/component/#priority)。
 
 ## tabBar
 

@@ -42,6 +42,7 @@
   * [video](component/video.md)
   * [web-view](component/web-view.md)
   * [animation-view](component/animation-view.md)
+  * [vue 与 uvue 组件优先级](/component/README.md#priority)
 * API
   * 全局
     * [getApp](api/getApp.md)

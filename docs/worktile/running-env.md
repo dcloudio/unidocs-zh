@@ -18,6 +18,9 @@ if (process.env.NODE_ENV === 'development') {
 - 假设只需要对单一平台配置，可以 package.json 中配置，在 HBuilderX 的运行和发行菜单里会多一个出来。[https://uniapp.dcloud.io/collocation/package](https://uniapp.dcloud.io/collocation/package)
 - 如果是针对所有平台配置，可以在 vue-config.js 中配置。[https://uniapp.dcloud.io/collocation/vue-config](https://uniapp.dcloud.io/collocation/vue-config)
 
+### 注意
+* uni-app x不支持配置环境变量。
+
 **快捷代码块**
 
 HBuilderX 中敲入代码块 `uEnvDev`、`uEnvProd` 可以快速生成对应 `development`、`production` 的运行环境判定代码。

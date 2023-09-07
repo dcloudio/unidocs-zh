@@ -4,6 +4,8 @@
 
 <!-- UTSCOMJSON.video.attrubute -->
 
+<!-- UTSCOMJSON.video.event -->
+
 <!-- UTSCOMJSON.video.compatibility -->
 
 #### App平台  

@@ -4,6 +4,8 @@
 
 <!-- UTSCOMJSON.swiper.attrubute -->
 
+<!-- UTSCOMJSON.swiper.event -->
+
 <!-- UTSCOMJSON.swiper.compatibility -->
 
 <!-- UTSCOMJSON.swiper.reference -->
@@ -14,6 +16,8 @@
 <!-- UTSCOMJSON.swiper-item.description -->
 
 <!-- UTSCOMJSON.swiper-item.attrubute -->
+
+<!-- UTSCOMJSON.swiper-item.event -->
 
 <!-- UTSCOMJSON.swiper-item.compatibility -->
 

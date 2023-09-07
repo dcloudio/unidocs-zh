@@ -4,6 +4,8 @@
 
 <!-- UTSCOMJSON.view.attrubute -->
 
+<!-- UTSCOMJSON.view.event -->
+
 <!-- UTSCOMJSON.view.compatibility -->
 
 <!-- UTSCOMJSON.view.reference -->

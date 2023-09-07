@@ -41,7 +41,7 @@ export function createApp() {
 }
 ```
 
-> uni-app x 的 app.uvue
+> uni-app x 的 main.uts
 
 ```ts
 import App from './App'
@@ -57,6 +57,8 @@ export function createApp() {
   }
 }
 ```
+
+一般情况下，使用easycom比全局组件更常用，easycom按需应用更节省资源。
 
 ## 代码时序
 

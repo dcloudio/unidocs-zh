@@ -2,7 +2,7 @@
 
 > 需HBuilderX 3.6.18 及之后版本
 
-> app平台目前仅支持nvue
+> app平台目前支持nvue/uvue，暂不支持vue
 
 UTS组件，是UTS插件的一个分支。UTS插件提供了原生API的扩展，而UTS组件提供了原生UI组件的开发模式。
 

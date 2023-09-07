@@ -1456,7 +1456,7 @@ let t:SpecialType = {
 console.log(JSON.stringify(t))	//输出: {"a+b":"value 1","a-b":"value 2","class":"value 3"}
 ```
 
->以上规则需要HBuilderX3.9.0+版本支持  
+>以上`@JSON_FIELD`注释规则需要HBuilderX3.9.0+版本支持  
 
 #### json转type工具
 

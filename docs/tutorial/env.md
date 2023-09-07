@@ -14,4 +14,6 @@ When customizing the conditional compilation platform, you can configure environ
 ### .env
 
 CLI 创建的项目中可以在根目录中放置 ``.env`` 文件来指定环境变量，具体参考：[Vue2](https://cli.vuejs.org/zh/guide/mode-and-env.html#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)，[Vue3](https://cn.vitejs.dev/guide/env-and-mode.html)。
-In projects created by CLI, ``.env`` files can be placed in the root directory to specify environment variables. For details, refer to: [Vue2](https://cli.vuejs.org/zh/guide/mode-and-env. html#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F), [Vue3](https://cn.vitejs.dev/guide/env-and-mode. html).
+
+### 注意
+* uni-app x不支持配置环境变量。

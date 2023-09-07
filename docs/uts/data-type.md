@@ -1456,6 +1456,8 @@ let t:SpecialType = {
 console.log(JSON.stringify(t))	//输出: {"a+b":"value 1","a-b":"value 2","class":"value 3"}
 ```
 
+>以上规则需要HBuilderX3.9.0+版本支持  
+
 #### json转type工具
 
 如果json数据属性较多、嵌套较多，那么为json数据编写type类型定义，也是一件繁琐的事情。

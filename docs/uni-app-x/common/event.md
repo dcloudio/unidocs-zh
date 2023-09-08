@@ -6,5 +6,5 @@
 
 <!-- CUSTOMTYPEJSON.Event.extends -->
 
-<!-- CUSTOMTYPEJSON.Event.event -->
+<!-- CUSTOMTYPEJSON.Event.param -->
 

@@ -6,5 +6,5 @@
 
 <!-- CUSTOMTYPEJSON.UniError.extends -->
 
-<!-- CUSTOMTYPEJSON.UniError.event -->
+<!-- CUSTOMTYPEJSON.UniError.param -->
 

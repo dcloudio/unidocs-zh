@@ -6,5 +6,5 @@
 
 <!-- CUSTOMTYPEJSON.DOMRect.extends -->
 
-<!-- CUSTOMTYPEJSON.DOMRect.event -->
+<!-- CUSTOMTYPEJSON.DOMRect.param -->
 

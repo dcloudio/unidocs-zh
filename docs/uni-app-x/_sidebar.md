@@ -21,7 +21,7 @@
   * [组件](/tutorial/vue3-components.md)
   * [API](/tutorial/vue3-api.md)
 * 组件
-  * [概述](component/readme.md)
+  * [概述](component/)
   * [公共属性和事件](component/common.md)
   * [view](component/view.md)
   * [scroll-view](component/scroll-view.md)
@@ -44,7 +44,7 @@
   * [web-view](component/web-view.md)
   * [animation-view](component/animation-view.md)
 * API
-  * [概述](api/readme.md)
+  * [概述](api/)
   * 全局
     * [getApp](api/getApp.md)
     * [getCurrentPages](api/getCurrentPages.md)

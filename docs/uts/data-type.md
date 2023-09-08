@@ -125,9 +125,13 @@ number本身的使用很简单，但混入了平台专有数字类型后，会�
  > 平台专有数字类型，均为首字母大写，注意与 number 首字母小写是不同的
 
 ```ts
-let a:Int = 3 //注意 Int 是首字母大写
+ //注意 Int 是首字母大写
+let a:Int = 3
 let b:Int = 4
+// Double
 let c:Double  = a * 1.0 / b
+//Float
+let d = (100 as Number).toFloat()
 ```
 
 * 注意专有数字类型不能在web端和小程序端使用，如工程需兼容非App端，要把这些代码放入条件编译中；

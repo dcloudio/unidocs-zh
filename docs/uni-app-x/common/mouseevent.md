@@ -6,5 +6,5 @@
 
 <!-- CUSTOMTYPEJSON.MouseEvent.extends -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.event -->
+<!-- CUSTOMTYPEJSON.MouseEvent.param -->
 

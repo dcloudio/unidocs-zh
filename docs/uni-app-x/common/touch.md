@@ -6,5 +6,5 @@
 
 <!-- CUSTOMTYPEJSON.Touch.extends -->
 
-<!-- CUSTOMTYPEJSON.Touch.event -->
+<!-- CUSTOMTYPEJSON.Touch.param -->
 

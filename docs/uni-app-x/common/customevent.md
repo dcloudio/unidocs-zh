@@ -6,7 +6,7 @@
 
 <!-- CUSTOMTYPEJSON.CustomEvent.extends -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.event -->
+<!-- CUSTOMTYPEJSON.CustomEvent.param -->
 
 ## CustomEventOptions
 
@@ -16,5 +16,5 @@
 
 <!-- CUSTOMTYPEJSON.CustomEventOptions.extends -->
 
-<!-- CUSTOMTYPEJSON.CustomEventOptions.event -->
+<!-- CUSTOMTYPEJSON.CustomEventOptions.param -->
 

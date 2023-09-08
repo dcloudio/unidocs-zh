@@ -6,5 +6,5 @@
 
 <!-- CUSTOMTYPEJSON.Error.extends -->
 
-<!-- CUSTOMTYPEJSON.Error.event -->
+<!-- CUSTOMTYPEJSON.Error.param -->
 

@@ -310,14 +310,11 @@ Component is a very important part of the technology in `vue`.Components allow U
 	<script lang="uts">
 		export default {
 			props: {
-				// 检测类型 + 其他验证
+				// 检测类型 + 其他验证（uni-app x 暂不支持 validator 校验函数）
 				age: {
 					type: Number,
 					default: 0,
-					required: true,
-					validator: function(value): boolean {
-						return value >= 0
-					}
+					required: true
 				}
 			}
 		}
@@ -724,13 +721,8 @@ To specify prop validations, you can provide an object with validation requireme
 			  return { message: 'hello' }
 			}
 		},
-		// 自定义验证函数
-		propF: {
-			validator: function(value): boolean {
-			  // 这个值必须匹配下列字符串中的一个
-			  return ['success', 'warning', 'danger'].indexOf(value) !== -1
-			}
-		},
+		// uni-app x 暂不支持 validator 校验函数
+		
 		// 具有默认值的函数
 		propG: {
 			type: Function,
@@ -1315,8 +1307,7 @@ Each `v-model` will sync to a different prop, without the need for extra options
 ```
 
 
-### 处理 v-model 修饰符
-### Handling v-model modifiers
+### 处理 v-model 修饰符 @v-model-modifiers
 
 
 让我们创建一个示例自定义修饰符 `capitalize`，它将 `v-model` 绑定提供的字符串的第一个字母大写。

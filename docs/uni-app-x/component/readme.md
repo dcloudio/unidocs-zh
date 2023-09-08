@@ -15,6 +15,51 @@ uvue的组件，可以使用前端技术编写，也可以使用原生技术编�
 	
 	uts组件插件的开发教程，[详见](/plugin/uts-component.md)
 
+**兼容性及注意事项：**
+
+## props
+
+- 仅支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。
+- 暂不支持[自定义类型校验函数](https://cn.vuejs.org/guide/components/props.html#prop-validation)。
+
+## 自定义事件
+
+- [v-model](tutorial/vue3-components.html#v-model-modifiers) 暂不支持 `capitalize` 修饰符。
+
+## 计算属性和侦听器
+
+- [watch deep](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E9%80%89%E9%A1%B9-deep) 不支持
+- [监听对象中单个属性](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E7%9B%91%E5%90%AC%E5%AF%B9%E8%B1%A1%E4%B8%AD%E5%8D%95%E4%B8%AA%E5%B1%9E%E6%80%A7) 不支持
+
+## 作用域插槽的类型
+
+作用域插槽需在组件中指定插槽数据类型
+```ts
+// components/Foo.uvue
+<view>
+    <slot msg="test msg" />
+</view>
+
+import { SlotsType } from 'vue'
+export default {
+  slots: Object as SlotsType<{
+    default: { msg: string }
+  }>
+}
+// page.uvue
+<view>
+	<Foo>
+		<template v-slot="slotProps">
+			<text>{{ slotProps.msg }}</text>
+		</template>
+	</Foo>
+</view>
+```
+
+## 监听页面生命周期
+
+目前暂不支持在组件内监听页面生命周期，待后续支持组合式 API 后，可通过组合式 API 实现。
+
 ## vue 与 uvue 不同文件后缀的优先级 @priority
 
 新建组件时，默认组件的后缀名为.vue。而不是.uvue。

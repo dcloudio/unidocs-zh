@@ -4,7 +4,7 @@
 
 ### parse
 
-JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的对象。可能返回值是： UTSJSONObject / UTSArray/ number,boolean 等基本数据类型
+JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的对象。可能返回值是： UTSJSONObject/Array/number/boolean/string 等基本数据类型
 
 
 > 特别说明：  

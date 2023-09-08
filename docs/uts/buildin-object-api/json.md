@@ -4,7 +4,11 @@
 
 ### parse
 
-JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的 UTSJSONObject。
+JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的对象。可能返回值是： UTSJSONObject / UTSArray/ number,boolean 等基本数据类型
+
+
+> 特别说明：  
+> HBuilderX3.9.0统一为以上规范，在HBuilderX3.9.0之前版本 返回值只可能是 UTSJSONObject， 基本数据类型会转换失败
 
 ```ts
 const json = `{"result":true, "count":42}`;

@@ -217,14 +217,16 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 
 ![](../static/go-to-definition.png)
 
-## [vue 注意事项](uni-app-x/vue/readme.md)
-
 ## uts不支持js的一些功能和特性
 
 - 不支持undefined。任何变量被定义后，都需要赋值
 - 不支持promise、async、await，仅支持callback回调
 - 函数声明方式不支持[作为值传递](../uts/function.md#作为值传递)
 - 函数表达式方式不支持[默认参数](../uts/function.md#默认参数)
+
+## vue 注意事项
+
+[详见]((uni-app-x/vue/readme.md))
 
 ## css使用注意
 

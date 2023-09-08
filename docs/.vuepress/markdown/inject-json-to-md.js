@@ -3,6 +3,7 @@ let utsJson = {};
 let utsApiJson = {};
 let utsComJson = {};
 let utsUnicloudApiJson = {};
+let customTypeJson = {};
 try {
 	cssJson = require('../utils/cssJson.json');
 } catch (error) {}
@@ -17,6 +18,9 @@ try {
 } catch (error) {}
 try {
 	utsUnicloudApiJson = require('../utils/utsUnicloudApiJson.json');
+} catch (error) {}
+try {
+	customTypeJson = require('../utils/customTypeJson.json');
 } catch (error) {}
 
 
@@ -62,6 +66,14 @@ const getJSON = text => {
 		return {
 			match,
 			json: utsUnicloudApiJson,
+		};
+	}
+
+	match = text.match(getRegExp('CUSTOMTYPEJSON'));
+	if (match) {
+		return {
+			match,
+			json: customTypeJson,
 		};
 	}
 

@@ -34,13 +34,13 @@ console.log(obj["result"]);
 <!-- UTSJSON.JSON.parse.returnValue -->
 
  ```ts
-class Persion {
-    var name =""
-    var age = 0
+class Person {
+    name:string = ""
+    age:number = 0
 }
 
 // 带泛型的parse，这里的personObj 类型是 我们定义的`Persion`类
-let personObj = JSON.parse<Persion>('{"name":"zhangsan","age":12}')
+let personObj = JSON.parse<Person>('{"name":"zhangsan","age":12}')
 // 不带泛型的parse，这里的jsonObj类型是通用的`UTSJSONObject`
 let jsonObj = JSON.parse('{"name":"zhangsan","age":12}')
 ```

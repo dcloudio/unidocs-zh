@@ -227,11 +227,13 @@ export default {
 
 |值			|描述											|
 |:-:		|:-:											|
-|wm			|uniMP激励视频							|
+|wm			|uniMP激励视频						|
 |csj		|穿山甲										|
-|gdt		|腾讯优量汇（前称广点通）	  |
+|gm			|穿山甲gromore						|
+|gdt		|腾讯优量汇（前称广点通）	|
 |ks			|快手											|
 |sigmob	|Sigmob										|
+|bd			|百度											|
 |gg			|Google AdMob							|
 |pg			|海外穿山甲								|
 

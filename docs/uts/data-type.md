@@ -131,7 +131,8 @@ let b:Int = 4
 // Double
 let c:Double  = a * 1.0 / b
 //Float
-let d = (100 as Number).toFloat()
+let d1 = 100.toFloat()
+let d2 = (a as Number).toFloat()
 ```
 
 * 注意专有数字类型不能在web端和小程序端使用，如工程需兼容非App端，要把这些代码放入条件编译中；

@@ -226,7 +226,7 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 
 ## vue 注意事项
 
-[详见](uni-app-x/vue/README.md)
+[详见](https://uniapp.dcloud.net.cn/uni-app-x/vue/)
 
 ## css使用注意
 

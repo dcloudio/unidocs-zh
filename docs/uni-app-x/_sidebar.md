@@ -20,6 +20,13 @@
   * [基础](/tutorial/vue3-basics.md)
   * [组件](/tutorial/vue3-components.md)
   * [API](/tutorial/vue3-api.md)
+* 通用事件和类型
+  * [Event](common/event.md)
+  * [CustomEvent](common/customevent.md)
+  * [MouseEvent](common/mouseevent.md)
+  * [TouchEvent](common/touchevent.md)
+  * [Touch](common/touch.md)
+  * [UniError](common/unierror.md)
 * 组件
   * [概述](component/)
   * [公共属性和事件](component/common.md)
@@ -212,9 +219,10 @@
   * [lines](css/lines.md)
 * UVUE DOM
   * [DOM概述](dom/)
-  * [INode](dom/inode.md)  
-  * [CSSStyleDeclaration](dom/cssstyledeclaration.md)  
-  * [DrawableContext](dom/drawablecontext.md)  
+  * [INode](dom/inode.md)
+  * [DOMRect](dom/domrect.md)
+  * [CSSStyleDeclaration](dom/cssstyledeclaration.md)
+  * [DrawableContext](dom/drawablecontext.md)
 * [性能](performance.md)
 <!-- * [新建项目]()
   * [1. 通过 HBuilderX 可视化界面](quickstart-hx.md)

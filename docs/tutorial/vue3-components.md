@@ -251,14 +251,11 @@
 	<script lang="uts">
 		export default {
 			props: {
-				// 检测类型 + 其他验证
+				// 检测类型 + 其他验证（uni-app x 暂不支持 validator 校验函数）
 				age: {
 					type: Number,
 					default: 0,
-					required: true,
-					validator: function(value): boolean {
-						return value >= 0
-					}
+					required: true
 				}
 			}
 		}
@@ -613,13 +610,8 @@
 			  return { message: 'hello' }
 			}
 		},
-		// 自定义验证函数
-		propF: {
-			validator: function(value): boolean {
-			  // 这个值必须匹配下列字符串中的一个
-			  return ['success', 'warning', 'danger'].indexOf(value) !== -1
-			}
-		},
+		// uni-app x 暂不支持 validator 校验函数
+		
 		// 具有默认值的函数
 		propG: {
 			type: Function,
@@ -1135,7 +1127,7 @@
 ```
 
 
-### 处理 v-model 修饰符
+### 处理 v-model 修饰符 @v-model-modifiers
 
 
 让我们创建一个示例自定义修饰符 `capitalize`，它将 `v-model` 绑定提供的字符串的第一个字母大写。

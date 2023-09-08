@@ -79,11 +79,7 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 </style>
 ```
 
-## template
-
-- App 端，如需页面级滚动，根节点必须是 `scroll-view` 标签。
-
-### 函数 event 参数的类型
+## 函数 event 参数的类型 @function-event-argument-type
 
 上面的例子中，touchstart事件中必须对`e`指定类型，才能使用`e.touches[0].screenX`。下面再举一个例子，加深下记忆：
 
@@ -111,76 +107,6 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 <view @click="foo($event as MouseEvent)">event must has type</view>
 ```
 
-## script
-
-- 仅支持 `export default {}`。
-- `data` 仅支持函数返回对象字面量方式。
-```ts
-<script lang="uts">
-	export default {
-		data() {
-			return {
-				// 必须写这里
-			}
-		}
-	}
-</script>
-```
-
-## 组件
-
-### props
-
-- 仅支持对象声明方式
-- 暂不支持验证函数
-
-### 作用域插槽的类型
-
-作用域插槽需在组件中指定插槽数据类型
-```ts
-// components/Foo.uvue
-<view>
-    <slot msg="test msg" />
-</view>
-
-import { SlotsType } from 'vue'
-export default {
-  slots: Object as SlotsType<{
-    default: { msg: string }
-  }>
-}
-// page.uvue
-<view>
-	<Foo>
-		<template v-slot="slotProps">
-			<text>{{ slotProps.msg }}</text>
-		</template>
-	</Foo>
-</view>
-```
-
-### 监听页面生命周期
-
-目前暂不支持在组件内监听页面生命周期，待后续支持组合式 API 后，可通过组合式 API 实现。
-
-## JSON的类型
-
-JSON数据在强类型语言中使用时，不能像js那样随意。
-
-js中可以这么写：
-```js
-var p ={"name": "zhangsan","age": 12}
-p.age //12
-```
-
-但是在强类型语言中，如果想要使用`p.age`，那么p必须是一个对象，而age则是这个对象的属性。然后必须为p对象、name属性、age属性，都定义类型，比如name是string，age是number。
-
-uts中有2种方式使用json数据：
-1. 把json数据转为type，自定义一个类型，声明json数据内容中每个属性的类型。然后就可以使用对象属性的方式来使用json数据。[详见](../uts/data-type.md#type)
-2. 使用UTSJSONObject，不为json定义类型，然后通过下标和方法来使用json数据。[详见](../uts/data-type.md#ustjsonobject)
-
-如果是联网获取服务器发下的json数据，那么**务必需要读教程**[request](tutorial/request.md)
-
 ## 函数参数类型
 
 如果函数参数为基础数据类型，函数调用时，参数类型可以省略，编译器会自动推导。\
@@ -206,6 +132,24 @@ foo2({ name: 'name', age: 18 } as Person)
 const person: Person = { name: 'name', age: 18 }
 foo2(person)
 ```
+
+## JSON的类型
+
+JSON数据在强类型语言中使用时，不能像js那样随意。
+
+js中可以这么写：
+```js
+var p ={"name": "zhangsan","age": 12}
+p.age //12
+```
+
+但是在强类型语言中，如果想要使用`p.age`，那么p必须是一个对象，而age则是这个对象的属性。然后必须为p对象、name属性、age属性，都定义类型，比如name是string，age是number。
+
+uts中有2种方式使用json数据：
+1. 把json数据转为type，自定义一个类型，声明json数据内容中每个属性的类型。然后就可以使用对象属性的方式来使用json数据。[详见](../uts/data-type.md#type)
+2. 使用UTSJSONObject，不为json定义类型，然后通过下标和方法来使用json数据。[详见](../uts/data-type.md#ustjsonobject)
+
+如果是联网获取服务器发下的json数据，那么**务必需要读教程**[request](tutorial/request.md)
 
 ## 编译器的类型优化
 
@@ -273,9 +217,7 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 
 ![](../static/go-to-definition.png)
 
-## 插件
-
-- uni-app x 暂不支持 i18n、Vuex、Pinia 等插件。
+## [vue 注意事项](uni-app-x/vue/readme.md)
 
 ## uts不支持js的一些功能和特性
 
@@ -284,9 +226,6 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 - 函数声明方式不支持[作为值传递](../uts/function.md#作为值传递)
 - 函数表达式方式不支持[默认参数](../uts/function.md#默认参数)
 
-## 与uni-app js引擎版的其他差异
-- uni-app x 新增了onLastPageBackPress和onExit等应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
-
 ## css使用注意
 
-[详见](css/readme.md)
+[详见](uni-app-x/css/readme.md)

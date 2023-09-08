@@ -459,7 +459,9 @@ typeof Double   //在Android平台Double有伴生对象可以正常运行，实�
 | 平台专有数字类型: Int, Float, Double, Long ... 			 								| true or false    |
 | typeof 结果为 "object" 的类型(包含但不限于：Date, Array, Map, UTSJSONObject, 自定义类型)	| true or false    | 
 
-对于 Boolean, Number, String 类型的实例判断，请使用 `typeof` .
+> 特别说明：  
+> HBuilderX3.9.0 使用 `instaceof` 对 Boolean, Number, String 类型的实例进行判断会编译报错，请使用 `typeof` 。在HBuilderX3.9.0之前版本可正常使用 `instaceof` 对上述类型的判断。
+
 
 ```ts
 function fn(obj: any) {

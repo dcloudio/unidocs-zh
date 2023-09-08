@@ -975,7 +975,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 - 考虑到编译速度，直接在`pages.json`内修改`easycom`不会触发重新编译，需要改动页面内容触发。
 - `easycom`只处理vue组件，不处理小程序专用组件（如微信的wxml格式组件）。不处理后缀为.nvue的组件。因为nvue页面引入的组件也是.vue组件。可以参考uni ui，使用vue后缀，同时兼容nvue页面。
 - `nvue`页面里引用`.vue`后缀的组件，会按照nvue方式使用原生渲染，其中不支持的css会被忽略掉。这种情况同样支持`easycom`。
-- `vue` 与 `uvue` 组件优先级，[详见](/uni-app-x/component/readme.md#priority)。
+- `vue` 与 `uvue` 组件优先级，[详见](/uni-app-x/component/README.md#priority)。
 
 ## tabBar
 

@@ -86,7 +86,7 @@ uvue渲染引擎包括原生版的vue框架（组件、数据绑定...）、跨�
 
 uvue支持的vue语法，是按vue3实现的，但一期uvue不支持setup。详见[vue语法]()
 
-uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex布局。但也足以布局出需要的界面。详见[css语法](css/readme.md)
+uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex布局。但也足以布局出需要的界面。详见[css语法](uni-app-x/css/README.md)
 
 以上约束特指App端的uvue引擎。如果把uvue页面编译到小程序和web平台，它的script仍然会被编译为js、它的样式遵循web的样式定义。
 

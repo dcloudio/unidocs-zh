@@ -33,12 +33,12 @@
 
 ## 组件
 
-- [props](uni-app-x/component/readme.md#props)
-- [自定义事件](uni-app-x/component/readme.md#自定义事件)
-- [计算属性和侦听器](uni-app-x/component/readme.md#计算属性和侦听器)
-- [作用域插槽的类型](uni-app-x/component/readme.md#作用域插槽的类型)
-- [监听页面生命周期](uni-app-x/component/readme.md#监听页面生命周期)
-- [vue 与 uvue 不同文件后缀的优先级](uni-app-x/component/readme.md#priority)
+- [props](uni-app-x/component/README.md#props)
+- [自定义事件](uni-app-x/component/README.md#自定义事件)
+- [计算属性和侦听器](uni-app-x/component/README.md#计算属性和侦听器)
+- [作用域插槽的类型](uni-app-x/component/README.md#作用域插槽的类型)
+- [监听页面生命周期](uni-app-x/component/README.md#监听页面生命周期)
+- [vue 与 uvue 不同文件后缀的优先级](uni-app-x/component/README.md#priority)
 
 ## 应用生命周期
 uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [onExit](collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。

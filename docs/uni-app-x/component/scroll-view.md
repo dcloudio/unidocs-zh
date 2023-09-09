@@ -10,5 +10,3 @@
 
 <!-- UTSCOMJSON.scroll-view.reference -->
 
-## bug&tips
-- 嵌套滚动暂未发布

@@ -1056,12 +1056,14 @@ let rect = {
 	- 仅限于web和Android，在iOS上swift不支持`.`操作符。
 	- 在Android上也只支持字面量定义json（因为类型可推导）。如果是`JSON.parse()`转换的，则不能使用。
 	
-2. `[""]` 下标属性
+2. `[""]` 下标
 	即 `rect["x"]`。
 	
 	这是一种通用的方式，不管通过字面量定义的 UTSJSONObject，还是通过 `JSON.parse()`，不管是 web、Android、iOS 哪个平台，都可以使用下标方式访问 UTSJSONObject 属性。
 
-	但下标返回嵌套的 UTSJSONObject 时，用起来比较麻烦，因为无法判断嵌套节点是对象还是数组，需要再 `as` 才能继续使用下一层数据。
+	但下标返回的数据，类型是any，想继续使用需要`as`为具体类型。
+	
+	尤其是有子对象时，需要 `as` 后才能继续访问下一层数据。
 
 ```ts
 let rect = {
@@ -1093,7 +1095,7 @@ console.log((rect["border"] as UTSJSONObject[])[0]["color"]); // red
 
 ```
 
-如果是 `JSON.parse` 解析的数组，目前只能通过下标访问，无法使用`.`操作符。
+如果是 `JSON.parse` 解析的数据，只能通过下标访问，无法使用`.`操作符。因为`.`操作符的成立建立在编译器可确定类型的前提，字面量直接赋值可识别类型，`JSON.parse`无法识别类型。
 
 ```ts
 let listData = JSON.parse(`{"result":true, "count":42}`) as UTSJSONObject
@@ -1102,19 +1104,19 @@ console.log(listData["count"]); //42
 console.log(listArr[0]["title"]); //第一组
 ```
 
-多层级下标访问时需要使用 as 转换为 UTSJSONObject  
+多层级下标访问时需要使用 as 转换为 UTSJSONObject 或 UTSJSONObject[]
 ```ts
 var j = {
-	"test":{
-		"a-b": 1
+	"subobj":{
+		"abc": 1
 	}
 }
-console.log((j['test'] as UTSJSONObject)['a-b']);
+console.log((j['subobj'] as UTSJSONObject)['abc']);
 ```
 
-1. 通过 keyPath 访问 UTSJSONObject 数据
+3. 通过 keyPath 访问 UTSJSONObject 数据
 
-在 `HBuilderX` 3.9.0 之后的版本，UTSJSONObject 提供了另外一种属性访问方式，keyPath。如果你了解 XPath、JSONPath 的话，这个概念类似。
+`HBuilderX` 3.9+，UTSJSONObject 提供了另外一种属性访问方式: keyPath。如果你了解 XPath、JSONPath 的话，这个概念类似。
 
 keypath是把`.`操作符作为一个字符串传入了UTSJSONObject的一个方法中，比如`utsObj.getString("address.detailInfo.street")`
 
@@ -1140,24 +1142,29 @@ let utsObj = {
 我们可以通过 getString/getNumber/getBoolean/getJSON/getAny 等函数获得指定类型的属性，如果属性不存在，则返回null
 
 ```ts
-// 打印结果:zhangsan
-console.log(utsObj.getString("username"))
-// 打印结果:12
-console.log(utsObj.getNumber("age"))
-// 打印结果:[object]
-console.log(utsObj.getJSON("address"))
-// 打印结果:false
-console.log(utsObj.getBoolean("isStudent"))
-
-// 打印结果:null
-console.log(utsObj.getString("一个不存在属性"))
-
+console.log(utsObj.getString("username")) // 打印结果:zhangsan
+console.log(utsObj.getNumber("age")) // 打印结果:12
+console.log(utsObj.getJSON("address")) // 打印结果:[object]
+console.log(utsObj.getBoolean("isStudent")) // 打印结果:false
+console.log(utsObj.getString("一个不存在属性")) // 打印结果:null
 ```
 
-为了更方便的访问 UTSJSONObject 中包含的数组中的元素，还可以通过 keyPath 指定数组下标来访问 UTSJSONObject 中的数据, 支持多维数组的访问。
+需要特别注意的是：属性名 和 属性类型，都要正确，否则不会返回对应的属性结果
+```ts
+console.log(utsObj.getNumber("age")) // 打印结果:12
+console.log(utsObj.getNumber("agee")) // 名字不对，打印结果:null 
+console.log(utsObj.getString("age")) // 类型不对，打印结果:null 
+```
+
+keypath的一大优势就是可以深入数据层级，如下：
 
 ```ts
+console.log(utsObj.getString("address.detailInfo.street")) // 结果：the wall street
+```
 
+如果数据里包括数组、多维数组，也可以穿透下去获取数据，如下：
+
+```ts
 let obj = {
 	"data": [{
 			"a": "1"
@@ -1173,28 +1180,12 @@ let obj = {
 	]
 }
 
-// 打印结果:1
-console.log(obj.getString('data[0].a'))
-// 打印结果:2
-console.log(obj.getNumber('data[1].a'))
-// 打印结果:true
-console.log(obj.getBoolean('data[2][0].b'))
-// 打印结果:{"b":"test"}
-console.log(obj.getJSON('data[2][1]'))
-// 打印结果:[1, 2, 3]
-console.log(obj.getArray('data[3]'))
-// 打印结果:2
-console.log(obj.getAny('data[1].a'))
-
-```
-
-
-这种绑定类型的这对于原生开发者来说比较熟悉。但是需要特别注意的是： 如果属性名正确，但是属性类型不符合，那么不会返回对应的属性结果
-```ts
-// 打印结果:12
-console.log(utsObj.getNumber("age"))
-// 打印结果:null 
-console.log(utsObj.getString("age"))
+console.log(obj.getString('data[0].a')) // 打印结果:1
+console.log(obj.getNumber('data[1].a')) // 打印结果:2
+console.log(obj.getBoolean('data[2][0].b')) // 打印结果:true
+console.log(obj.getJSON('data[2][1]')) // 打印结果:{"b":"test"}
+console.log(obj.getArray('data[3]')) // 打印结果:[1, 2, 3]
+console.log(obj.getAny('data[1].a')) // 打印结果:2
 
 ```
 
@@ -1209,26 +1200,9 @@ console.log(utsObj.getAny("age") as Number)
 console.log(utsObj.getAny("address") as UTSJSONObject)
 ```
 
-在传统的属性访问中，UTSJSONObject 的嵌套是一种比较复杂的情况，需要我们层层解析才能获取数据：
-
-```ts
-// 获取 utsObj 中的 address属性
-let addressObj = utsObj["address"] as UTSJSONObject
-// 获取 address 中的 detail 属性
-let detailInfoObj = utsObj["detailInfo"] as UTSJSONObject
-// 结果：the wall street
-let street = utsObj["street"] as String
-```
-
-上面的写法，啰嗦且容易出错。因此，我们提供了更易用的 keyPath 写法，帮助开发者摆脱复杂的对象嵌套关系：
-```ts
-// 结果：the wall street
-let street = utsObj.getString("address.detailInfo.street")
-```
-
-当然，除了直接使用UTSJSONObject外，在 uts 中使用json数据还有2种方式：
-1. UTSJSONObject.toMap() 转为Map对象 [见下](#Map)
-2. 把json字符串或对象字面量通过type转为自定义类型，这是ts里经常使用的方式 [详见](type-aliases.md)
+除了直接使用UTSJSONObject外，在 uts 中使用json数据还有2种方式：
+1. UTSJSONObject.toMap() 转为Map对象 [见上](#Map)
+2. 把json字符串或对象字面量通过type转为自定义类型，这是ts里经常使用的方式 [见下](#type)
 
 ### 更多API
 
@@ -1285,36 +1259,6 @@ console.log(person.name) //返回zhangsan
 所以在ts开发中，很多开发者就会把缺少类型的json数据变成一个type或interface，继续像js里那样使用这个json数据。
 
 但在uts中，由于interface的概念在kotlin和swift有其他用途，所以uts中推荐开发者把json转成一个type，而不是interface。
-
-### type 类型的遍历
-我们为每个自定义 type 类型提供了迭代器，可以使用 for-in 遍历出 type 类型中的所有属性名
-
-```ts
-let person : PersonType = { id: 1, name: "zhangsan", age: 18 }
-
-for (key in person) {
-	console.log(key) // 输出 "id", "name", "age"
-}
-
-```
-
-### type 类型的下标访问
-我们为每个自定义 type 类型提供了下标操作，在适当的时机，可以使用下标的方式来读取或者修改 type 类型的属性值。
-
-- 注意：由于通过下标修改属性值，编译阶段不会对下标操作的key值进行校验，所以可能会存在运行期代码失效的情况。为了代码安全，除非在必要时才进行通过下标修改属性的操作。
-
-```ts
-let person : PersonType = { id: 1, name: "zhangsan", age: 18 }
-
-console.log(person["id"])  //1
-obj["age"] = 25
-console.log(obj["age"]) //25
-console.log(obj.age) //25
-
-```
-
-> 特别说明：  
-> type 类型的遍历和下标访问功能自 HBuilderX3.9.0 开始提供。
 
 ### 把json数组转为type
 
@@ -1473,8 +1417,13 @@ console.log(person.name); // 返回zhangsan
 
 使用!断言，是强制编译器信任开发者的写法，编译器放过后，在运行期一旦person为null，调用`person.name`就会崩溃。而使用`person?.name`则不会崩溃，只会返回null。
 
-**特殊情况**  
-在定义Type时键名必须符合变量命名规则（如第一个字符不能数字，不能包含空格或运算符，不能使用语言保留的关键字等），如果json字符串中的键名不符合变量命名规则，需要添加注释`@JSON_FIELD`定义键名转换规则才能通过JSON.parse解析转type。  
+#### 敏感字和符号@JSON_FIELD
+在定义Type时键名必须符合变量命名规则（如第一个字符不能数字，不能包含空格或运算符，不能使用语言保留的关键字等），
+
+如果json字符串中的键名不符合变量命名规则，比如有个key的名字叫"a+b"，这种json转type会失败。
+
+解决方案是，添加注释`@JSON_FIELD`定义键名转换规则，才能通过JSON.parse解析转type。  
+
 ```ts
 type ExampleType = {
   /**
@@ -1485,15 +1434,17 @@ type ExampleType = {
   a_b: string
 }
 ```
-以上示例定义的 ExampleType 类型，在 `a_b: string` 声明时添加注释 `@JSON_FIELD "a+b"`，表示 JSON.parse 时会将json字符中的键名"a+b"转换为ExampleType类型的"a_b"属性；JSON.stringify 时会将ExampleType类型的"a_b"属性转换为json字符串中的"a+b"键名。  
+以上示例定义的 ExampleType 类型，在 `a_b: string` 声明时添加注释 `@JSON_FIELD "a+b"`，表示：
+- JSON.parse 时会将json字符中的键名"a+b"转换为ExampleType类型的"a_b"属性；
+- JSON.stringify 时会将ExampleType类型的"a_b"属性转换为json字符串中的"a+b"键名。  
 
 推荐的转换规则如下：  
 - 将不合法的字符（如空格、运算符等）转换为下划线“_”，如“a+b”转换为“a_b”  
 - 将保留[关键词](keywords.md)（如class、enum等）转换时，在前面添加下划线，如“class”转换为“_class”  
-- 如果转换后的名称已存在，在后面添加下划线“_”避免冲突，如同时存在“a+b”和“a-b”，分别转换为“a_b”和“a_b_”
+- 如果转换后的名称已存在，在后面添加下划线`_`避免冲突，如同时存在“a+b”和“a-b”，分别转换为`a_b`和`a_b_`
 
 
-以下举例json字符串 “{"a+b":"addition value","a-b":"subtraction value","class":"classification value"}”，应该如何定义 type 才能使用 JSON.parse 转换
+以下举例json字符串 `{"a+b":"addition value","a-b":"subtraction value","class":"classification value"}`，应该如何定义 type 才能使用 JSON.parse 转换
 ```ts
 type SpecialType = {
   /**
@@ -1529,9 +1480,9 @@ console.log(JSON.stringify(t))	//输出: {"a+b":"value 1","a-b":"value 2","class
 
 #### json转type工具
 
-如果json数据属性较多、嵌套较多，那么为json数据编写type类型定义，也是一件繁琐的事情。
+如果json数据属性较多、嵌套较多、还涉及转义，那么为json数据编写type类型定义，也是一件繁琐的事情。
 
-HBuilderX 3.9起内置了一个json转type工具，在`json编辑器`中选择一段内容点右键，选择`json转type`，即可根据json数据内容自动推导生成type定义。
+HBuilderX 3.9起内置了一个json转type工具，在`json编辑器`中选择一段内容点右键，选择`json转type`，即可根据json数据内容自动推导生成type定义，如果json内容涉及转义，工具也会自动转义。
 
 ![](../uni-app-x/static/json2type.png)
 
@@ -1566,7 +1517,39 @@ uvue文件中data中的json数据也涉及类型定义。此时注意：type定�
 
 大多数情况下，data里的json数据是空的，联网从服务器取到一段json字符串，然后再赋值并转type。
 
-由于篇幅较长，示例另见：[request](../uni-app-x/tutorial/request.md)
+由于篇幅较长，示例另见：[request教程](../uni-app-x/tutorial/request.md)
+
+
+### type 类型的遍历
+> HBuilderX3.9+
+
+uts 为自定义 type 类型提供了迭代器，可以使用 for-in 遍历出 type 类型中的所有属性名
+
+```ts
+let person : PersonType = { id: 1, name: "zhangsan", age: 18 }
+
+for (key in person) {
+	console.log(key) // 输出 "id", "name", "age"
+}
+
+```
+
+### type 类型的下标访问
+> HBuilderX3.9+
+
+uts 为自定义 type 类型提供了下标操作，在适当的时机，可以使用下标的方式来读取或者修改 type 类型的属性值。
+
+- 注意：由于通过下标修改属性值，编译阶段不会对下标操作的key值进行校验，所以可能会存在运行期代码失效的情况。为了代码安全，除非在必要时才进行通过下标修改属性的操作。
+
+```ts
+let person : PersonType = { id: 1, name: "zhangsan", age: 18 }
+
+console.log(person["id"])  //1
+obj["age"] = 25
+console.log(obj["age"]) //25
+console.log(obj.age) //25
+
+```
 
 
 ## 其他

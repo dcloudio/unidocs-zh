@@ -18,11 +18,12 @@ uni.request({
 但在uts等强类型语言中无法这样，会报resData[0]无法安全访问、没有plugin_name属性，因为resData是个可为空的any类型，你确实没有为它定义过任何属性。
 
 在uts中，提供了2种方案：
-1. 使用[UTSJSONObject](../../uts/data-type.md#UTSJSONObject)，不需要提前为json数据定义类型，在使用中通过下标访问并动态转换类型
-2. 使用[type](../../uts/data-type.md#type)，提前定义json数据类型，在request时通过泛型传入类型，拿到的就是一个有类型的对象，之后的用法和js一样
+1. 使用[UTSJSONObject](/uts/data-type.md#UTSJSONObject)，不需要提前为json数据定义类型，在使用中通过下标访问并动态转换类型
+2. 使用[type](/uts/data-type.md#type)，提前定义json数据类型，在request时通过泛型传入类型，拿到的就是一个有类型的对象，之后的用法和js一样
 
 ## 方式1：UTSJSONObject
 UTSJSONObject是uts的内置对象，它无法使用`.操作符`，但可以用下标和keypath来访问json数据。
+### UTSJSONObject下标方式
 ```ts
 // uts写法
 // 假使服务器返回的json数据是：{code:0,data:[{"plugin_name":"插件名称A"}]}
@@ -43,7 +44,25 @@ uni.request({
 
 上面代码中打印日志部分是为了方便初学者理解，实际开发时代码行数不会多几行，主要是多几次as做类型转换。
 
-更多详见[UTSJSONObject](../../uts/data-type.md#UTSJSONObject)
+### UTSJSONObject keypath方式
+上面的写法是每层数据都as，通过下标来访问。UTSJSONObject还支持keypath，这是一种可穿透多层数据访问的写法，传入一个path字符串，返回相应数据。
+```ts
+// uts写法
+// 假使服务器返回的json数据是：{code:0,data:[{"plugin_name":"插件名称A"}]}
+uni.request({
+	url: "https://ext.dcloud.net.cn/plugin/uniappx-plugin-list",
+	success: (res) => {
+		let resData = res.data as UTSJSONObject
+		if (resData!=null) {
+			console.log(resData.getString("data[0].plugin_name")) //直接访问data属性的第一个数组项目里的plugin_name属性
+		}
+	}
+})
+```
+
+除了getString，还有getNumber、getBoolean、getJSON、getArray、getAny。只要keypath的路径输入正确、类型正确，就可以取得值。当然path没有代码提示。
+
+更多详见[UTSJSONObject](/uts/data-type.md#UTSJSONObject)
 
 ## 方式2：type和泛型
 
@@ -80,7 +99,7 @@ type IRootType = {
 
 因type不可嵌套，生成了2个type。注意顺序，Data这个type需写在前面，因为后面要引用它。引用代码执行时如未定义该类型，会报错。
 
-- 第二步：把这段类型定义，放在`<script>`根下，也就是export default{}之前。然后给uni.request传入泛型参数`<IRootType>`，返回的res自动转换好了类型，可以直接`.`属性了。
+- 第二步：把这段类型定义，放在`<script>`根下，也就是export default{}之前。然后给uni.request传入泛型参数`<IRootType>`，返回的res.data自动转换好了类型，可以直接`.`属性了。
 
 **注意：** 因为`res.data`是对象，所以泛型那里直接使用`<IRootType>`。有的服务器接口返回的`res.data`是数组，就需要在泛型那里写成`<IRootType[]>`
 
@@ -114,7 +133,7 @@ type IRootType = {
 </script>
 ```
 
-与UTSJSONObject方式相比，不用使用as做很多转换，虽然需要定义type，但由于有工具可以自动生成type，所以整体使用体验，比UTSJSONObject方式方便一点。
+与UTSJSONObject方式相比，type方式在使用数据时可以使用`.操作符`，有代码提示。虽然需要定义type，但由于有工具可以自动生成type，所以整体使用体验，比UTSJSONObject方式方便一点。
 
 type+泛型这个方式，也是ts开发者惯用的方式。
 
@@ -134,11 +153,11 @@ type DataType = {
 
 有了这个类型，再给它json数据进行实例化，就达到了给json数据定义类型的目标。给json数据定义好类型，就可以自由的使用`.操作符`获取属性了。
 
-详见[type](../../uts/data-type.md#type)
+详见[type](/uts/data-type.md#type)
 
 而泛型，是一个对方法参数进行通用的类型描述。它告诉一个支持泛型的方法，给方法传入什么类型，方法就会返回什么类型。
 
-不过uts的泛型支持还没有达到ts的泛型完善度，详见[泛型](../../uts/generics.md)
+不过uts的泛型支持还没有达到ts的泛型完善度，详见[泛型](/uts/generics.md)
 
 uni.request方法是支持泛型的，这意味着返回结果可以有很多种类型。
 
@@ -162,13 +181,13 @@ type DataType = {
 }
 ```
 
-如您不了解null的安全使用，[详见](../../uts/data-type.md#null)
+如您不了解null的安全使用，[详见](/uts/data-type.md#null)
 
 - 务必注意res.data返回的是对象还是数组
 
 如果res.data返回的是对象，那么泛型调用时直接`uni.request<IRootType>(`
 
-如果res.data返回的是数组，那么传泛型时必须传入数组格式`uni.request<IRootType[]>(`
+如果res.data返回的是数组，那么传泛型时必须传入数组格式`uni.request<IRootType[]>(`，注意多了一个`[]`
 
 - type的敏感词转义
 
@@ -176,16 +195,15 @@ type DataType = {
 
 比如`{"a:b":"123","a-b":"456"}`，这些键名对于type来讲都是非法的。转换type就会失败。
 
+hx的json转type工具，会对一些敏感符合和关键字自动转义。但也有无法转移的符号和词，详见：[type](/uts/data-type.md#JSON_FIELD)
+
 如果你的服务器数据涉及这类问题且数据格式不可改，那只能改用UTSJSONObject方式。
-
-特殊词清单详见：[type](../../uts/data-type.md#type)
-
 
 ### 完整实例
 
 再举一个实际中更常见的例子。联网获取插件市场的插件列表数据，并绑定在模板上，还可以翻页。
 
-翻页需要用到[...展开操作符](../../uts/operator.md#展开语法...)
+翻页需要用到[...展开操作符](/uts/operator.md#展开语法...)
 
 ```vue
 <template>

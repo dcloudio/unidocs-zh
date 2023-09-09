@@ -33,11 +33,11 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 
 ## 示例代码
 
-- 联网联表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/list-news/list.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/list-news/list.uvue)
+- 联网联表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue)
 - 可左右滑动的多个列表：[https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list)
 
 ## Bug&Tips
 
-- list触底偶尔不触发
+- 下拉刷新偶发闪退
 - 暂不支持reverse，目前还不能开发im那样的倒叙列表
 - 暂不支持waterfall多列瀑布流

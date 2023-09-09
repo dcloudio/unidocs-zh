@@ -1251,6 +1251,36 @@ console.log(person.name) //返回zhangsan
 
 但在uts中，由于interface的概念在kotlin和swift有其他用途，所以uts中推荐开发者把json转成一个type，而不是interface。
 
+### type 类型的遍历
+我们为每个自定义 type 类型提供了迭代器，可以使用 for-in 遍历出 type 类型中的所有属性名
+
+```ts
+let person : PersonType = { id: 1, name: "zhangsan", age: 18 }
+
+for (key in person) {
+	console.log(key) // 输出 "id", "name", "age"
+}
+
+```
+
+### type 类型的下标访问
+我们为每个自定义 type 类型提供了下标操作，在适当的时机，可以使用下标的方式来读取或者修改 type 类型的属性值。
+
+- 注意：由于通过下标修改属性值，编译阶段不会对下标操作的key值进行校验，所以可能会存在运行期代码失效的情况。为了代码安全，除非在必要时才进行通过下标修改属性的操作。
+
+```ts
+let person : PersonType = { id: 1, name: "zhangsan", age: 18 }
+
+console.log(person["id"])  //1
+obj["age"] = 25
+console.log(obj["age"]) //25
+console.log(obj.age) //25
+
+```
+
+> 特别说明：  
+> type 类型的遍历和下标访问功能自 HBuilderX3.9.0 开始提供。
+
 ### 把json数组转为type
 
 上面的例子中，数据是json对象，下面再来定义一个json数组。

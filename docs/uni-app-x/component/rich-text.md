@@ -3,22 +3,22 @@
 <!-- UTSCOMJSON.rich-text.description -->
 
 ### 支持的HTML标签和属性
-|HTML   |属性    |样式
+|HTML   |属性    |样式   |
 |-------|-------|-------|
-|br     |       |
-|p      |       |text-align color background-color text-decoration
-|ul     |       |
-|li     |       |text-align color background-color text-decoration
-|span   |       |color background-color text-decoration
-|strong |       |
-|i      |       |
-|big    |       |
-|small  |       |
-|a      |href   |
-|u      |       |
-|del    |       |
-|h1-h6  |       |
-|img    |src    |
+|br     |       |       |
+|p      |       |text-align color background-color text-decoration|
+|ul     |       |       |
+|li     |       |text-align color background-color text-decoration|
+|span   |       |color background-color text-decoration|
+|strong |       |       |
+|i      |       |       |
+|big    |       |       |
+|small  |       |       |
+|a      |href   |       |
+|u      |       |       |
+|del    |       |       |
+|h1-h6  |       |       |
+|img    |src    |       |
 
 > text-decoration仅支持line-through
 

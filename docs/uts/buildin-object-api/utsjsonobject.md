@@ -52,10 +52,83 @@ set 方法可以简化为使用下标运算符 `[]` 赋值
 ```ts
 person['name'] = 'Tom'
 ```
+### getAny(key)
 
-### toMap(): Map<string, any>
+<!-- UTSJSON.UTSJSONObject.getAny.description -->
 
-将当前 UTSJSONObject 实例转换为 Map 实例。
+<!-- UTSJSON.UTSJSONObject.getAny.param -->
+
+<!-- UTSJSON.UTSJSONObject.getAny.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getAny.compatibility -->
+
+### getBoolean(key)
+
+<!-- UTSJSON.UTSJSONObject.getBoolean.description -->
+
+<!-- UTSJSON.UTSJSONObject.getBoolean.param -->
+
+<!-- UTSJSON.UTSJSONObject.getBoolean.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getBoolean.compatibility -->
+
+### getNumber(key)
+
+<!-- UTSJSON.UTSJSONObject.getNumber.description -->
+
+<!-- UTSJSON.UTSJSONObject.getNumber.param -->
+
+<!-- UTSJSON.UTSJSONObject.getNumber.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getNumber.compatibility -->
+
+### getString(key)
+
+<!-- UTSJSON.UTSJSONObject.getString.description -->
+
+<!-- UTSJSON.UTSJSONObject.getString.param -->
+
+<!-- UTSJSON.UTSJSONObject.getString.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getString.compatibility -->
+
+### getJSON(key)
+
+<!-- UTSJSON.UTSJSONObject.getJSON.description -->
+
+<!-- UTSJSON.UTSJSONObject.getJSON.param -->
+
+<!-- UTSJSON.UTSJSONObject.getJSON.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getJSON.compatibility -->
+
+### getArray(key)
+
+<!-- UTSJSON.UTSJSONObject.getArray.description -->
+
+<!-- UTSJSON.UTSJSONObject.getArray.param -->
+
+<!-- UTSJSON.UTSJSONObject.getArray.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getArray.compatibility -->
+
+### getArray(key)
+
+<!-- UTSJSON.UTSJSONObject.getArray_1.description -->
+
+<!-- UTSJSON.UTSJSONObject.getArray_1.param -->
+
+<!-- UTSJSON.UTSJSONObject.getArray_1.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getArray_1.compatibility -->
+
+### toMap()
+
+<!-- UTSJSON.UTSJSONObject.toMap.description -->
+
+<!-- UTSJSON.UTSJSONObject.toMap.param -->
+
+<!-- UTSJSON.UTSJSONObject.toMap.returnValue -->
 
 ```ts
 person.toMap().forEach((key: string, value: any) => {
@@ -63,3 +136,5 @@ person.toMap().forEach((key: string, value: any) => {
     console.log(value)
 })
 ```
+
+<!-- UTSJSON.UTSJSONObject.toMap.compatibility -->

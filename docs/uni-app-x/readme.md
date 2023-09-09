@@ -88,7 +88,9 @@ uvue支持的vue语法，是按vue3实现的，但一期uvue不支持setup。详
 
 uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex布局。但也足以布局出需要的界面。详见[css语法](uni-app-x/css/README.md)
 
-以上约束特指App端的uvue引擎。如果把uvue页面编译到小程序和web平台，它的script仍然会被编译为js、它的样式遵循web的样式定义。
+以上约束特指App端的uvue引擎。如果把uvue页面编译到小程序和web平台，它的script仍然会被编译为js、web的样式也都可以使用。
+
+更多示例代码参考：[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x)
 
 ## 3. uni的组件
 
@@ -262,30 +264,6 @@ uni-app js版的“App原生语言插件”无法在 uni-app x 中运行。
 
 欢迎去[需求墙](https://vote.dcloud.net.cn/#/?name=uni-app%20x)投票，告诉我们你的需求优先级。
 
-## 项目标识和区别
-在HBuilder3.9起，新建uni-app项目界面的底部有一个checkbox：uni-app x。勾选后会新建为uni-app x项目。
-
-uni-app x的项目，manifest.json中会多一个节点`"uni-app-x" : {}`。这是HBuilder识别项目类型的标记。
-```json
-{
-    "name" : "hello-uniapp x",
-    "appid" : "__UNI__4517034",
-    "description" : "",
-    "versionName" : "1.0.0",
-    "versionCode" : "100",
-    "uni-app-x" : {
-    }
-}
-```
-
-uni-app x的项目，在左侧项目管理器的图标是圆形的U（之前是方型的U）。
-
-![](static/project-icon.png)
-
-uni-app x的真机运行基座，和uni-app js引擎版不复用，是一个绿色圆形的U（之前是方型H），基座名称默认为`uni-app x`（之前叫HBuilder）。
-
-HBuilder基座可以运行5+App、wap2app和uni-app js引擎版。uni-app x基座只能运行uni-app x项目。
-
 ## 自动化测试
 uni-app x 从源头重视产品质量，第一个版本就支持自动化测试。并为uni-app x产品编写了数万行自动化测试例代码。
 
@@ -349,7 +327,7 @@ uvue的script里写的就是uts，uts就可以直接调原生代码。无所谓�
 是的。为三方ide做插件是一个投资大且充满不确定性的事情，官方有限精力会聚焦在自身产品优化上。
 
 - uni-app x 支持最低的Android版本多少？
-Android 5+。Android4.4可能也可以运行，但官方发版前不会对4.4测试。
+Android 5+
 
 - 未来 uni-app js引擎版还维护吗？
 维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。

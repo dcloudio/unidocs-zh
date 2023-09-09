@@ -196,20 +196,20 @@ json的条件编译，如不同平台的key名称相同，cli项目下开发者�
 
 在不同平台，引用的静态资源可能也存在差异，通过 static 的条件编译可以解决此问题，static 目录下新建不同平台的专有目录，目录名称均为小写，
 
-|目录名称|说明|版本支持|
-|:-:|:-:|:-:|
-|app或app-plus|App||
-|h5|H5（推荐使用`web`）|
-|web|Web(同`H5`，HBuilderX3.9.0+)||
-|web|H5|HBuilderX 3.9.0+|
-|mp-weixin|微信小程序||
-|mp-alipay|支付宝小程序||
-|mp-baidu|百度小程序||
-|mp-qq|QQ小程序||
-|mp-toutiao|抖音小程序||
-|mp-lark|飞书小程序||
-|mp-kuaishou|快手小程序||
-|mp-jd|京东小程序||
+|目录名称	|说明					|版本支持		|
+|:-:		|:-:					|:-:			|
+|app-plus	|app（推荐使用`app`）	|				|
+|app		|app					|uni-app 3.9+	|
+|h5			|H5（推荐使用`web`）		|				|
+|web		|web					|uni-app 3.9+	|
+|mp-weixin	|微信小程序				|				|
+|mp-alipay	|支付宝小程序			|				|
+|mp-baidu	|百度小程序				|				|
+|mp-qq		|QQ小程序				|				|
+|mp-toutiao	|抖音小程序				|				|
+|mp-lark	|飞书小程序				|				|
+|mp-kuaishou|快手小程序				|				|
+|mp-jd		|京东小程序				|				|
 
 专有目录下的静态资源只有在特定平台才会编译进去。
 
@@ -230,7 +230,7 @@ json的条件编译，如不同平台的key名称相同，cli项目下开发者�
 
 **注意**
 
-- 自HBuilderX3.9.0+起，App平台static目录同时支持app、app-plus目录，Web平台static目录同时支持web、h5目录
+- 自HBuilderX3.9+起，App平台static目录同时支持app、app-plus目录，Web平台static目录同时支持web、h5目录
 
 ### 整体目录条件编译
 
@@ -280,11 +280,26 @@ json的条件编译，如不同平台的key名称相同，cli项目下开发者�
   
   :::
 
-### 编译器版本的条件编译@uniVersion
+### 版本的条件编译@uniVersion
+> HBuilderX 3.9+
+
+插件作者的插件，需要适配各种插件使用者，使用者的uni-app版本，可能有很多。
+
+有些问题可以在运行期判断适配，有些则需要在编译器处理，尤其是不处理可能会导致低版本编译失败的情况。
+
+为此，uni-app的条件编译新增了`uniVersion`。在uni-app和uni-app x中均可使用。
 
 <pre v-pre="" data-lang="javascript"><code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  uniVersion > 3.9</b></span>
 编译器版本大于3.9时生效
 <span class="token comment">//<span style="color:#859900;"> #endif</span></span></code></pre>
+
+注意，从HBuilderX 3.9起，版本号将由三段式字符串改为小数。
+
+即HBuilderX 3.9.1，将改为 3.91。
+
+这样条件编译判断时，仅需输入一个数字即可。
+
+注意低于3.9版本的HBuilderX的条件编译不识别`uniVersion`。
 
 ### HBuilderX 支持
 

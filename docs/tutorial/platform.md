@@ -30,6 +30,7 @@ uni-app 已将常用的组件、API封装到框架中，开发者按照 uni-app 
 |:-|:-|:-|
 |VUE3|uni-app js引擎版用于区分vue2和3，[详情](https://ask.dcloud.net.cn/article/37834) |HBuilderX 3.2.0+|
 |UNI-APP-X|用于区分是否是uni-app x项目 [详情](#UNI-APP-X)|HBuilderX 3.9.0+|
+|uniVersion|用于区分编译器的版本 [详情](#uniVersion)|HBuilderX 3.9.0+|
 |APP|App||
 |APP-PLUS|uni-app js引擎版编译为App时||
 |APP-PLUS-NVUE或APP-NVUE|App nvue 页面||
@@ -193,20 +194,21 @@ json的条件编译，如不同平台的key名称相同，cli项目下开发者�
 
 ### static 目录的条件编译@static
 
-在不同平台，引用的静态资源可能也存在差异，通过 static 的条件编译可以解决此问题，static 目录下新建不同平台的专有目录，
+在不同平台，引用的静态资源可能也存在差异，通过 static 的条件编译可以解决此问题，static 目录下新建不同平台的专有目录，目录名称均为小写，
 
-|目录名称|说明|
-|:-:|:-:|
-|app|App|
-|h5|H5|
-|mp-weixin|微信小程序|
-|mp-alipay|支付宝小程序|
-|mp-baidu|百度小程序|
-|mp-qq|QQ小程序|
-|mp-toutiao|抖音小程序|
-|mp-lark|飞书小程序|
-|mp-kuaishou|快手小程序|
-|mp-jd|京东小程序|
+|目录名称|说明|版本支持|
+|:-:|:-:|:-:|
+|app或app-plus|App||
+|h5|H5||
+|web|H5|HBuilderX 3.9.0+|
+|mp-weixin|微信小程序||
+|mp-alipay|支付宝小程序||
+|mp-baidu|百度小程序||
+|mp-qq|QQ小程序||
+|mp-toutiao|抖音小程序||
+|mp-lark|飞书小程序||
+|mp-kuaishou|快手小程序||
+|mp-jd|京东小程序||
 
 专有目录下的静态资源只有在特定平台才会编译进去。
 
@@ -273,6 +275,11 @@ json的条件编译，如不同平台的key名称相同，cli项目下开发者�
   
   :::
 
+### 编译器版本的条件编译@uniVersion
+
+<pre v-pre="" data-lang="javascript"><code class="lang-javascript code"><span class="token comment">//<span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  uniVersion > 3.9</b></span>
+编译器版本大于3.9时生效
+<span class="token comment">//<span style="color:#859900;"> #endif</span></span></code></pre>
 
 ### HBuilderX 支持
 

@@ -1154,6 +1154,41 @@ console.log(utsObj.getString("一个不存在属性"))
 
 ```
 
+为了更方便的访问 UTSJSONObject 中包含的数组中的元素，还可以通过 keyPath 指定数组下标来访问 UTSJSONObject 中的数据, 支持多维数组的访问。
+
+```ts
+
+let obj = {
+	"data": [{
+			"a": "1"
+		}, {
+			"a": 2
+		},
+		[{
+			"b": true
+		}, {
+			"b": "test"
+		}],
+		[1, 2, 3]
+	]
+}
+
+// 打印结果:1
+console.log(obj.getString('data[0].a'))
+// 打印结果:2
+console.log(obj.getNumber('data[1].a'))
+// 打印结果:true
+console.log(obj.getBoolean('data[2][0].b'))
+// 打印结果:{"b":"test"}
+console.log(obj.getJSON('data[2][1]'))
+// 打印结果:[1, 2, 3]
+console.log(obj.getArray('data[3]'))
+// 打印结果:2
+console.log(obj.getAny('data[1].a'))
+
+```
+
+
 这种绑定类型的这对于原生开发者来说比较熟悉。但是需要特别注意的是： 如果属性名正确，但是属性类型不符合，那么不会返回对应的属性结果
 ```ts
 // 打印结果:12

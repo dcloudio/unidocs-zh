@@ -36,7 +36,7 @@ uni-app 已将常用的组件、API封装到框架中，开发者按照 uni-app 
 |APP-ANDROID|App Android 平台 [详情](#UTS)||
 |APP-IOS|App iOS 平台 [详情](#UTS)||
 |H5|H5（推荐使用 `WEB`）||
-|WEB|web|HBuilderX 3.6.3+|
+|WEB|web（同`H5`）|HBuilderX 3.6.3+|
 |MP-WEIXIN|微信小程序||
 |MP-ALIPAY|支付宝小程序||
 |MP-BAIDU|百度小程序||
@@ -198,8 +198,8 @@ json的条件编译，如不同平台的key名称相同，cli项目下开发者�
 |目录名称|说明|
 |:-:|:-:|
 |app|App|
-|h5|H5(推荐使用web)|
-|web|Web(等同于H5，HBuilderX3.9.0+)|
+|h5|H5（推荐使用`web`）|
+|web|Web(同`H5`，HBuilderX3.9.0+)|
 |mp-weixin|微信小程序|
 |mp-alipay|支付宝小程序|
 |mp-baidu|百度小程序|

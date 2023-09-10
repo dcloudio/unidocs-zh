@@ -1104,7 +1104,7 @@ console.log(listData["count"]); //42
 console.log(listArr[0]["title"]); //第一组
 ```
 
-多层级下标访问时需要使用 as 转换为 UTSJSONObject 或 UTSJSONObject[]
+多层级下标访问时需要使用 as 转换为 UTSJSONObject 或 `UTSJSONObject[]`
 ```ts
 var j = {
 	"subobj":{

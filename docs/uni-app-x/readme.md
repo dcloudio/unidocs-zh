@@ -92,7 +92,7 @@ uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex�
 
 更多示例代码参考：[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x)
 
-这里是打包后的[hello uni-app x的apk](https://uniapp.dcloud.net.cn/uni-app-x/static/hello-uniapp-x.apk)
+这里是打包后的[hello uni-app x的apk](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/hello-uniapp-x.apk)
 
 ## 3. uni的组件
 

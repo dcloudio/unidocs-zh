@@ -1,10 +1,10 @@
-# `uni-app x 并未发布，本文档为内部使用`
-
 # uni-app x 是什么？
 
 uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
 
 在App端，uni-app x 在iOS编译为swift、在Android编译为kotlin。没有使用js引擎、webview，完全达到了原生应用的功能、性能。
+
+uni-app x需HBuilderX3.9起支持，该版本处于公测状态，需单独邀请下载。正式版和alpha用户暂时无法升级到3.9。
 
 uni-app x 是一个庞大的工程，它包括uts语言、uvue渲染引擎、uni的组件和API、以及扩展机制。
 
@@ -92,6 +92,8 @@ uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex�
 
 更多示例代码参考：[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x)
 
+这里是打包后的[hello uni-app x的apk](https://uniapp.dcloud.net.cn/uni-app-x/static/hello-uniapp-x.apk)
+
 ## 3. uni的组件
 
 uni-app x 一期，只包括基本的组件和API。
@@ -117,17 +119,17 @@ uni-app x 一期，只包括基本的组件和API。
 - [x] navigator
 - [x] progress
 - [x] webview
-- [x] video 暂不支持全屏后放置子组件
+- [x] video
 - [x] animation-view // 已有uts插件
 
 不支持的组件及替代方案
 - movable-view：没有ui层和逻辑层的通信阻塞，开发者可自己写uts拖动view
 - picker：可改用picker-view
-- canvas：目前没有完整的canvas组件，但每个view，都提供了draw API，可以高性能的画各种形状、贴图、写字。关于截图，无需像webview那样通过canvas中转。view会直接提供截图方案。当然后期会补充完整canvas
+- canvas：目前没有完整的canvas组件，但每个view，都提供了[draw API](dom/drawablecontext.md)，可以高性能的画各种形状、贴图、写字。关于截图，无需像webview那样通过canvas中转。view会直接提供截图方案。当然后期会补充完整canvas
 - waterfall/grid-view：会补充
 - uniCloud-db：会补充
 - ad：会补充
-- editor：只能用web-view来加载
+- editor：用web-view来加载
 - map：需开发uts组件。或使用web-view中的地图
 - live-pusher：需开发uts组件
 - form
@@ -296,7 +298,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 ## FAQ
 - uni-app x 支持uvue页面和vue页面混写吗？
-仅支持uvue页面。后期考虑中。历史vue页面也可以通过 uni小程序sdk 嵌入到uni-app x中。
+仅支持uvue页面。历史vue页面也可以通过 uni小程序sdk 嵌入到uni-app x中。
 
 - uni-app x 的app端能离线打包吗？
 初期不能，后期会提供

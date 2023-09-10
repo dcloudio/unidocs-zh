@@ -1,6 +1,6 @@
 * [Git/SVN](/worktile/git-svn.md)
 * [cli 脚手架](/worktile/CLI.md)
-* [运行环境管理](/worktile/running-env.md)
+* [编译运行环境](/worktile/running-env.md)
 * [自动化测试](/worktile/auto/quick-start.md)
   * [快速开始](/worktile/auto/quick-start.md)
   * [API](/worktile/auto/api.md)

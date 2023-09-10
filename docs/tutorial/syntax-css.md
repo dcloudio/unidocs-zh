@@ -1,21 +1,23 @@
-## CSS 支持
-## CSS support
-- [nvue样式](/tutorial/nvue-css)
-- [nvue-style](/tutorial/nvue-css)
-- [css预处理器](https://developer.mozilla.org/zh-CN/docs/Glossary/CSS_preprocessor)
-- [css preprocessor](https://developer.mozilla.org/zh-CN/docs/Glossary/CSS_preprocessor)
 
 # 页面样式与布局
 # Page style and layout
 
+uni-app 有 vue 页面、nvue 页面、uvue页面。
+- vue 页面是 webview 渲染的
+- app-nvue 页面是原生渲染的，其样式比 web 会限制更多，另见[nvue的css](/tutorial/nvue-css)
+- app-uvue 页面是原生渲染的，是 web 的css子集，另见[uvue的css](../uni-app-x/css/readme.md)
+
 uni-app 的 css 与 web 的 css 基本一致。本文没有讲解 css 的用法。在你了解 web 的 css 的基础之上，本文讲述一些样式相关的注意事项。
 The css of uni-app is basically the same as the css of web. This article does not explain the usage of css. Based on your understanding of css for the web, this article describes some style-related considerations.
 
-uni-app 有 vue 页面和 nvue 页面。vue 页面是 webview 渲染的、app 端的 nvue 页面是原生渲染的。在 nvue 页面里样式比 web 会限制更多，另见[nvue 样式专项文档](/tutorial/nvue-css)
-uni-app has vue page and nvue page. Vue pages are rendered by webview, and nvue pages on the app side are rendered natively. Styles in nvue pages are more restrictive than web, see also [nvue style-specific documentation](/tutorial/nvue-css)
+本文重点介绍 vue 页面，也就是webview中的样式注意事项。
 
-本文重点介绍 vue 页面的样式注意事项。
-This article focuses on styling considerations for vue pages.
+## css预处理器支持
+
+uni-app 支持less、sass、scss、stylus等预处理器。
+
+参考： [css预处理器](https://developer.mozilla.org/zh-CN/docs/Glossary/CSS_preprocessor)
+
 
 ## 尺寸单位
 ## measurement unit

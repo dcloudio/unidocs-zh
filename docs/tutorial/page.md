@@ -4,13 +4,17 @@
 uni-app项目中，一个页面就是一个符合`Vue SFC规范`的 vue 文件。
 
 - 在 uni-app js 引擎版中，后缀名是`.vue`文件或`.nvue`文件。
+	这些页面均全平台支持，差异在于当 uni-app 发行到App平台时，`.vue`文件会使用webview进行渲染，`.nvue`会使用原生进行渲染，详见：[nvue原生渲染](/tutorial/nvue-outline)。
+	
+	一个页面可以同时存在vue和nvue，在[pages.json](../collocation/pages.md)的路由注册中不包含页面文件名后缀，同一个页面可以对应2个文件名。重名时优先级如下：
+	- 在非app平台，先使用vue，忽略nvue
+	- 在app平台，使用nvue，忽略vue
+
 - 在 uni-app x 中，后缀名是`.uvue`文件
 
-这些页面均全平台支持，差异在于当 uni-app 发行到App平台时，`.vue`文件会使用webview进行渲染，`.nvue`会使用原生进行渲染，详见：[nvue原生渲染](/tutorial/nvue-outline)。
-
-一个页面可以同时存在vue和nvue，在[pages.json](../collocation/pages.md)的路由注册中不包含页面文件名后缀，同一个页面可以对应2个文件名。重名时优先级如下：
-- 在非app平台，先使用vue，忽略nvue
-- 在app平台，使用nvue，忽略vue
+	uni-app x 中没有js引擎和webview，不支持和vue页面并存。
+	
+	uni-app x 在app-android上，每个页面都是一个全屏activity，不支持透明。
 
 ## 新建页面
 ## New page
@@ -29,15 +33,18 @@ At the same time, HBuilderX also has built-in common page templates (such as tex
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/pages-add-02.png" style="max-width:450px"></img>
 </div>
 
-新建页面时，可以选择vue或nvue，还可以选择`是否创建同名目录`。创建目录的意义在于，如果你的页面较复杂，需要拆分多个附属的js、css、组件等文件，则使用目录归纳比较合适。如果只有一个页面文件，大可不必多放一层目录。
+新建页面时，可以选择`是否创建同名目录`。创建目录的意义在于，
+- 如果你的页面较复杂，需要拆分多个附属的js、css、组件等文件，则使用目录归纳比较合适。
+- 如果只有一个页面文件，大可不必多放一层目录。
 
 ## 删除页面
 ## delete page
 
 删除页面时，需做两件工作：
-When you delete a page, you need to do two things:
-- 删除`.vue`文件或`.nvue`文件
-- 删除`pages.json -> pages`列表项中的配置 （如使用HBuilderX删除页面，会在状态栏提醒删除pages.json对应内容）
+- 删除`.vue`文件、`.nvue`、`.uvue`文件
+- 删除`pages.json -> pages`列表项中的配置 （如使用HBuilderX删除页面，会在状态栏提醒删除pages.json对应内容，点击后会打开pages.json并定位到相关配置项）
+
+页面改名同理。
 
 ## pages.json
 
@@ -132,8 +139,8 @@ template中文名为`模板`，它类似html的标签。但有2个区别：
 
 script中编写脚本，可以通过lang属性指定脚本语言。
 
-- 在vue和nvue中，默认是js，可以指定ts
-- 在uvue中，仅支持uts。
+- 在vue和nvue中，默认是js，可以指定ts。
+- 在uvue中，仅支持uts，不管script的lang属性写成什么，都按uts编译。
 
 ```html
 <script lang="ts">
@@ -260,8 +267,7 @@ style的写法与web的css基本相同。
 | onReachBottom| The event that a page scrolls to the bottom (not scroll-view to the bottom) is often used to pull down the data on the next page. See the precautions below for details| | |
 |onTabItemTap|点击 tab 时触发，参数为Object，具体见下方注意事项|微信小程序、QQ小程序、支付宝小程序、百度小程序、H5、App、快手小程序、京东小程序||
 |onShareAppMessage|用户点击右上角分享|微信小程序、QQ小程序、支付宝小程序、抖音小程序、飞书小程序、快手小程序、京东小程序||
-|onPageScroll|监听页面滚动，参数为Object|nvue暂不支持||
-| onPageScroll| Listen to page scrolling with the parameter of Object| not supported by nvue temporarily| |
+|onPageScroll|监听页面滚动，参数为Object|nvue不支持||
 |onNavigationBarButtonTap|监听原生标题栏按钮点击事件，参数为Object|App、H5||
 |onBackPress|监听页面返回，返回 event = {from:backbutton、 navigateBack} ，backbutton 表示来源是左上角返回按钮或 android 返回键；navigateBack表示来源是 uni.navigateBack；[详见](#onbackpress)|app、H5、支付宝小程序||
 |onNavigationBarSearchInputChanged|监听原生标题栏搜索输入框输入内容变化事件|App、H5|1.6.0|
@@ -369,6 +375,14 @@ a页面刚进入时，会触发a页面的onShow。
 
 ### onReachBottom
 
+可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pages#globalstyle)，
+
+比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
+
+如使用scroll-view导致页面没有滚动，则触底事件不会被触发。scroll-view滚动到底部的事件请参考scroll-view的文档。
+
+### onPageScroll
+
 **参数说明**
 
 |属性|类型|说明|
@@ -383,15 +397,10 @@ onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代�
 
 **注意**
 
-- 可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pages#globalstyle)，比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
-- 如使用scroll-view导致页面没有滚动，则触底事件不会被触发。scroll-view滚动到底部的事件请参考scroll-view的文档
-- `onPageScroll`里不要写交互复杂的js，比如频繁修改页面。因为这个生命周期是在渲染层触发的，在非h5端，js是在逻辑层执行的，两层之间通信是有损耗的。如果在滚动过程中，频发触发两层之间的数据交换，可能会造成卡顿。
-- Don not write js with complicated interactions in `onPageScroll`, such as frequently modifying pages. Since this life cycle is triggered in the rendering layer and on the non-h5 side, js is executed in the logical layer, and the communication between the two layers is lossy. If the data exchange between the two layers is frequently triggered during the rolling process, it may cause a lag.
-- 如果想实现滚动时标题栏透明渐变，在App和H5下，可在pages.json中配置titleNView下的type为transparent，[参考](https://uniapp.dcloud.io/collocation/pages?id=app-titlenview)。
-- If you want to realize the transparent gradient of title bar when scrolling, you can configure the type under titleNView as transparent in pages.json on App and H5 sides.[Refer to](https://uniapp.dcloud.io/collocation/pages?id=app-titlenview).
-- 如果需要滚动吸顶固定某些元素，推荐使用css的粘性布局，参考[插件市场](https://ext.dcloud.net.cn/plugin?id=715)。插件市场也有其他js实现的吸顶插件，但性能不佳，需要时可自行搜索。
-- If scrolling sticky is required to secure certain elements, it is recommended to use the sticky layout of css, refer to the [Plug-in market](https://ext.dcloud.net.cn/plugin?id=715). There are also other top-docking plug-ins based on js in the plug-in market but poor in performance. You can search by yourselves if necessary.
-- 在App、微信小程序、H5中，也可以使用wxs监听滚动，[参考](https://uniapp.dcloud.io/tutorial/miniprogram-subject#wxs)；在app-nvue中，可以使用bindingx监听滚动，[参考](https://uniapp.dcloud.io/tutorial/nvue-api#nvue-里使用-bindingx)。
+- `onPageScroll`里不要写交互复杂的js，比如频繁修改页面。因为这个生命周期是在渲染层触发的，在非h5端，js是在逻辑层执行的，两层之间通信是有损耗的。如果在滚动过程中，频发触发两层之间的数据交换，可能会造成卡顿。（uvue在app端无此限制）
+- 在webview渲染时，比如app-vue、微信小程序、H5中，也可以使用wxs监听滚动，[参考](https://uniapp.dcloud.io/tutorial/miniprogram-subject#wxs)；在app-nvue中，可以使用bindingx监听滚动，[参考](https://uniapp.dcloud.io/tutorial/nvue-api#nvue-里使用-bindingx)。
+- 如果想实现滚动时标题栏透明渐变，在App和H5下，可在pages.json中配置titleNView下的type为transparent，[参考](https://uniapp.dcloud.io/collocation/pages?id=app-titlenview)。(uni-app x不支持)
+- 如果需要滚动吸顶固定某些元素，推荐使用css的粘性布局，参考[插件市场](https://ext.dcloud.net.cn/plugin?id=715)。插件市场也有其他js实现的吸顶插件，但性能不佳，需要时可自行搜索。（uni-app x可自由在uts中设置固定位置）
 
 
 ### onBackPress

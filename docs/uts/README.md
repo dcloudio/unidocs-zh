@@ -15,13 +15,33 @@ uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
 过去在js引擎下运行支持的语法，大部分在uts的处理下也可以平滑的在kotlin和swift中使用。但有一些无法抹平，需要使用条件编译。和uni-app的条件编译类似，uts也支持条件编译。写在条件编译里的，可以调用平台特有的扩展语法。
 
-### 现状说明 
+### 用途和关系
 
-uts是一门语言。目前DCloud还未发布基于uts的ui开发框架。所以现阶段使用uts开发ui是不方便的（就像没有组件和css，拿js开发界面，还不能跨端）。
+uts是一门语言。也仅是一门语言，不包含ui框架。
 
-现阶段uts适合的场景是开发uni-app的原生插件。因为uts可以直接调用Android和iOS的原生API或jar等库。
+uvue是DCloud提供的跨平台的、基于vue语法的ui框架。
 
-很快DCloud会推出基于uts的跨平台响应式ui框架`uvue`，届时开发者可使用vue语法、uni-app的组件和api，来开发纯原生应用，因为它们都被编译为kotlin和swift，不再有js和webview。未来大概的写法参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x) （此项目还未正式发布，公开版的HBuilderX不能编译此项目，仅供参考写法）
+uts相当于js，uvue相当于html和css。它们类似于v8和webkit的关系、类似于dart和flutter的关系。
+
+uts这门语言，有2个用途：
+
+1. 开发uni-app 和 uni-app x 的原生扩展插件：因为uts可以调用所有原生能力。
+2. uts和uvue一起组合，开发原生级的项目，也就是 uni-app x 项目
+
+从HBuilderX 3.9起，支持uni-app x项目。
+
+uni-app x 开发App时，输出的是纯原生的App（Android上就是kotlin的app），里面没有js引擎和webview。详见[uni-app x](../uni-app-x/)
+
+也就是说，uts可以在uni-app中使用，也可以在uni-app x中使用。
+
+- 在uni-app中，主编程语言是js。uts可以开发原生插件，包括API插件和组件插件。
+- 在uni-app x中，主编程语言是uts。不管是应用逻辑还是扩展插件，均使用uts编程，没有js。
+
+如果插件作者，开发了uts插件，也可以同时在uni-app和uni-app x中使用。比如这2个uts插件：
+- 电量：[https://ext.dcloud.net.cn/plugin?id=9295](https://ext.dcloud.net.cn/plugin?id=9295)
+- lottie组件：[https://ext.dcloud.net.cn/plugin?id=10674](https://ext.dcloud.net.cn/plugin?id=10674)
+
+这2个uts插件，一个是api插件，一个是组件插件，它们同时兼容uni-app和uni-app x。
 
 本文是 uts 的基本语法介绍。如想了解 uni-app 下如何开发 uts插件，另见文档[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。
 
@@ -150,7 +170,7 @@ let b2 : boolean = true
 
 ```
 
-目前 uts 未对字面量赋值类型推导做统一处理，编译到 kotlin 和 swift 时，由这2个语言自行做类型推导。
+在HBuilderX 3.9以前， uts 未对字面量赋值类型推导做统一处理，编译到 kotlin 和 swift 时，由这2个语言自行做类型推导。
 
 但 kotlin 和 swift 的自动推导，在某些地方有细节差异。尤其是[数字字面量](data-type.md#autotypefornumber)和[数组字面量](data-type.md#autotypeforarray)。在这2个场景下，建议显式声明类型，不使用自动推导。
 
@@ -163,15 +183,13 @@ let a1:Array<string> = ["uni-app", "uniCloud", "HBuilder"]
 let a1:Array<number> = [1,2,3,4]
 ```
 
-后续 uts 将统一字面量自动类型推导。
+HBuilderX 3.9+， uts 统一了字面量自动类型推导。
 
-目前建议开发者，除了boolean和string外，其他包括数字和数组在内的类型，尽量不使用字面量自动类型推导，而是显式声明类型。避免 uts 统一自动类型推导时引发的向下兼容问题。
+建议插件作者，除了boolean和string外，其他包括数字和数组在内的类型，尽量不使用字面量自动类型推导，而是显式声明类型。避免 uts 统一自动类型推导时引发的向下兼容问题。
 
 ### 类型判断
 
-> 注意：isArray 需要HX 3.9.0之后版本才会支持
-
-判断类型，有好几种方案：typeof、instanceof、isArray。
+判断类型，有好几种方案：[typeof](operator.md#typeof)、[instanceof](operator.md#instanceof)、[isArray](buildin-object-api/array.md#isarray)。
 
 使用 typeof 可以判断布尔值、数字、字符串、函数。
 ```ts
@@ -210,6 +228,8 @@ uni.request({
 	}
 });
 ```
+
+详见：[typeof](operator.md#typeof)、[instanceof](operator.md#instanceof)
 
 ### 安全调用
 

@@ -24,7 +24,7 @@ uni-app x的项目，在左侧项目管理器的图标是圆形的U（之前是�
 
 ## 项目结构
 
-uni-app x的项目结构与之前基本一致。
+uni-app x的项目结构与[uni-app js引擎版的项目结构](../tutorial/project.md)基本一致。
 
 主要的差别是没有nativeplugins目录和wxcomponents目录。原因是uni-app x不支持uni-app js引擎版的原生语言插件，不支持微信小程序wxml组件。
 

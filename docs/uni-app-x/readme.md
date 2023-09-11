@@ -84,11 +84,11 @@ uvue渲染引擎包括原生版的vue框架（组件、数据绑定...）、跨�
 
 > 上述页面没有涉及uts不允许的动态类型，也没有涉及uvue不支持的css，所以它实际上和uni-app js版的vue页面没有区别。
 
-uvue支持的vue语法，是按vue3实现的，但一期uvue不支持setup。详见[vue语法]()
+uvue支持的vue语法，是按vue3实现的，但一期uvue不支持setup。详见[vue语法](vue/README.md)
 
 uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex布局。但也足以布局出需要的界面。详见[css语法](uni-app-x/css/README.md)
 
-以上约束特指App端的uvue引擎。如果把uvue页面编译到小程序和web平台，它的script仍然会被编译为js、web的样式也都可以使用。
+以上约束特指App端的uvue引擎。如果把uvue页面编译到小程序和web平台，它的script仍然会被编译为js，web的样式也都可以使用。
 
 更多示例代码参考：[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x)
 
@@ -96,7 +96,7 @@ uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex�
 
 ## 3. uni的组件
 
-uni-app x 一期，只包括基本的组件和API。
+uni-app x 一期，只包括常用的组件和API。
 
 剩余的组件和API，如开发者急用，可自行开发，或者委托插件作者提供相关插件。
 
@@ -135,114 +135,57 @@ uni-app x 一期，只包括基本的组件和API。
 - form
 - label
 
-## 4. uni的API
+## 4. API
 
 uni-app js引擎版，支持 plus API 和 weex API。但 uni-app x 中，不再支持这些API。
 
-uni自带API，如下为目前支持的清单。
+uni-app x支持的API包括：
 
-### 基础
-* [x] getApp         
-* [x] getCurrentPages
-* [x] uni.$emit
-* [x] uni.$on
-* [x] uni.$once
-* [x] uni.$off
+- uts的api [详见](/uts/buildin-object-api/global.md)
+- 全局api，前面不需要加`uni.`。如`getApp`
+- uni.xxx的内置api。数量较多，详见左侧列表。
+- uniCloud.xxx的内置api。见左侧。
+- dom的api [详见](dom/README.md)
+- 原生api
+	
+	由于uts可以直接调用Android和iOS的api，所以os和三方sdk的能力都可以在uts中调用。如下：
 
-### 路由     
-* [x] uni.navigateTo          
-* [x] uni.redirectTo          
-* [x] uni.reLaunch            
-* [x] uni.switchTab           
-* [x] uni.navigateBack        
-* [x] uni.getLaunchOptionsSync
-* 不再支持navigationbar和tabbar的很多修改API，如需修改请自定义导航栏。在uni-app x，导航栏仅为方便而存在，没有之前性能优化的意义
-* [x] uni.setNavigationBarColor
-* [x] uni.hideTabBar
-* [x] uni.showTabBar
-* [x] uni.setTabBarBadge
-* [x] uni.removeTabBarBadge
-* [x] uni.showTabBarRedDot
-* [x] uni.hideTabBarRedDot
-* [x] uni.setTabBarItem
-* [x] uni.setTabBarStyle
+```vue
+<script>
+	import Build from 'android.os.Build';
+	export default {
+		onLoad() {
+			console.log(Build.MODEL); //调用原生对象，返回手机型号
+			console.log(uni.getSystemInfoSync().deviceModel); //调用uni API，返回手机型号。与上一行返回值相同
+		}
+	}
+</script>
+```
 
-### 界面
-* [x] uni.showToast
-* [x] uni.hideToast
-* [x] uni.showLoading
-* [x] uni.hideLoading
-* [x] uni.showModal
-* [x] uni.showActionSheet
-* [x] uni.pageScrollTo
-* [x] uni.loadFontFace
-* [x] uni.previewImage		
-* [x] uni.closePreviewImage	
-* [x] uni.startPullDownRefresh
-* [x] uni.stopPullDownRefresh
-* [x] uni.onTabBarMidButtonTap
+上面的示例，在页面启动时打印了2行日志，显示手机型号。
 
-### 组件
-* [x] uni.createVideoContext
-* [x] uni.createSelectorQuery
+- uni.getSystemInfoSync，是uni的api
+- import的Build，是Android os的api
 
-### 网络
-* [x] uni.request			
-* [x] uni.uploadFile		
-* [x] uni.downloadFile		
-* [x] uni.getNetworkType	
-* [x] uni.websocket的一系列API
+在uni-app x里，可以直接调用os的能力，不受限制，语法是uts的语法，但需要了解什么功能在原生里是哪个api。
 
-### 存储
-* [x] uni.storage的一系列API
+使用`uni.getSystemInfoSync`则比较简单，看uni的文档即可，且可跨平台。
 
-### 定位
-* [x] uni.getLocation 一期仅支持系统定位和腾讯定位
+其实，`uni.getSystemInfoSync`的内部实现就是一个uts模块，底层使用了一样的代码。
 
-### 媒体
-* [x] uni.chooseImage 仅支持相册，不支持相机
-* [x] uni.chooseVideo
-* [x] uni.getImageInfo
-* [x] uni.getVideoInfo
-* [x] uni.compressImage
-* [x] uni.compressVideo
-* [x] uni.saveImageToPhotosAlbum
-* [x] uni.saveVideoToPhotosAlbum
-* [x] uni.createInnerAudioContext
-* [x] uni.getBackgroundAudioManager
-* [x] uni.getFileSystemManager
+uni.的api，大多是uts开发的，它们会陆续开源在[uni-api](https://gitcode.net/dcloud/uni-api)。
 
-### 设备
-* [x] uni.getSystemInfo			
-* [x] uni.getSystemInfoSync		
-* [x] uni.getDeviceInfo			
-* [x] uni.getWindowInfo
-* [x] uni.getAppBaseInfo
-* [x] uni.getSystemSetting
-* [x] uni.getAppAuthorizeSetting	
-* [x] uni.getbatteryinfo	//已有uts插件
-* [x] uni.memeorywarning	//已有uts插件
-* [x] uni.wifi	//已有uts插件
-* [x] uni.usercapturescreen	//已有uts插件
-* [x] uni.openAppAuthorizeSetting
-
-### 性能
-* [x] uni.getPerformance
-
-### uniCloud
-* [x] uniCloud.callFunction
-
-云对象和clientDB还不支持。
+插件市场也有很多做好的uts插件，方便开发者拿来即用。[uts插件](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 
 ## 5. vue语法
 - uvue是按vue3规范实现的，但一期uvue不支持setup，只支持选项式
 - 目前也不支持vue插件，比如pinia、vuex、i18n、router。简单的状态管理可以参考文档[全局变量和状态管理](uni-app-x/tutorial/store.md)
 
 ## 6. 全局文件
-- manifest.json 仅支持基本的名称图标配置，暂未支持splash。支持CPU类型abiFilters、Android版本minSdkVersion、targetSdkVersion。[详见](manifest.md)
+- manifest.json 仅支持基本的名称图标配置，暂未支持splash，但uni-app x项目打包后启动速度飞快，没有splash也无所谓。[详见](manifest.md)
 - AndroidManifest.xml 与原生开发相同。注意Android权限配置在这里配置，而不是在manifest.json中 [详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
-- app.uvue 不支持globaldata。[详见](/docs/collocation/App.md)
-- pages.json 不支持app-plus的内容。[详见](/docs/collocation/pages.md)
+- app.uvue 不支持globaldata。[详见](../collocation/App.md)
+- pages.json 不支持app-plus的内容。[详见](../collocation/pages.md)
 - uni.scss 正常支持。但注意uvue仅能使用[css子集](css/README.md)
 
 ## 7. 插件兼容
@@ -259,7 +202,7 @@ uni-app js版的“App原生语言插件”无法在 uni-app x 中运行。
 
 除上述文档中声明已经完成的，还有如下需要注意：
 
-- 全端支持：一期只有Android。虽然uts语言支持swift，可以写原生插件，但iOS版的uvue还未开发完毕。对于iOS或其他小程序、web平台，开发者可将uvue文件后缀改为vue或nvue，如果没有写Android专有代码，那么也可以使用uni-app js引擎版编译到其他平台，包括iOS App、web及各家小程序。尤其在app-iOS上，由于设备性能本就优秀，所以nvue的方案的性能也足够满足挑剔的开发者。后期官方会提供更完善的 uni-app x的全端支持。
+- 全端支持：一期只有Android。虽然uts语言支持swift，可以写原生插件，但iOS版的uvue还未开发完毕。对于iOS或其他小程序、web平台，开发者可将uvue文件后缀改为vue或nvue，如果没有写Android专有代码，那么也可以使用uni-app js引擎版编译到其他平台，包括iOS App、web及各家小程序。尤其在app-iOS上，由于设备性能本就优秀，所以js的方案的性能也足够满足很多开发者。后期官方会提供更完善的 uni-app x的全端支持。
 - 一期不支持：横屏切换、暗黑模式、自定义路由、多语言、无障碍
 - 一期不支持：uni-ad。另外包括微信、支付宝、个推、地图等三方sdk封装官方均未启动
 - 一期不支持国际区账户创建和打包uni-app x，仅大陆区开发者账户可用。
@@ -298,7 +241,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 ## FAQ
 - uni-app x 支持uvue页面和vue页面混写吗？
-仅支持uvue页面。历史vue页面也可以通过 uni小程序sdk 嵌入到uni-app x中。
+仅支持uvue页面。历史vue页面可以通过 uni小程序sdk 嵌入到uni-app x中。
 
 - uni-app x 的app端能离线打包吗？
 初期不能，后期会提供

@@ -1,5 +1,7 @@
 # vue
 
+uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合式写法，仅支持option选项式写法。
+
 ## template
 
 - App 端，如需页面级滚动，根节点必须是 `scroll-view` 标签。

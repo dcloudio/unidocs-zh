@@ -56,6 +56,8 @@
   * 全局
     * [getApp](api/getApp.md)
     * [getCurrentPages](api/getCurrentPages.md)
+  * 组件
+    * [web-view组件上下文对象](api/createWebviewContext.md)
   * 基础
     * 事件总线event-bus
       * [$on](api/$on.md)

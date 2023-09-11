@@ -97,6 +97,7 @@
       * [onSocketMessage](api/onSocketMessage.md)
       * [closeSocket](api/closeSocket.md)
       * [onSocketClose](api/onSocketClose.md)
+  * [uniCloud客户端API](unicloud.md)
   * 界面
     * 节点信息
       * [createSelectorQuery](api/createSelectorQuery.md)

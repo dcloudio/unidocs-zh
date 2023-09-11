@@ -106,6 +106,7 @@
     * [动态加载字体](api/loadFontFace.md)
   * 设备
     * [获取系统信息](api/getSystemInfo.md)
+    * [同步获取系统信息](api/getSystemInfoSync.md)
     * [获取设备信息](api/getDeviceInfo.md)
     * [获取窗口信息](api/getWindowInfo.md)
     * [获取APP基础信息](api/getAppBaseInfo.md)

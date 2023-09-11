@@ -801,6 +801,8 @@ UTSAndroid.offAppActivityResult(() => {
 
 #### 4.2.7 onAppActivityRequestPermissionsResult / offAppActivityRequestPermissionsResult
 
+> 已废弃，请使用 4.4章节系统权限管理替代此api
+
 ##### onAppActivityRequestPermissionsResult
 
 > HBuilderX 3.6.3+

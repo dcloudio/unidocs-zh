@@ -97,7 +97,6 @@
       * [onSocketMessage](api/onSocketMessage.md)
       * [closeSocket](api/closeSocket.md)
       * [onSocketClose](api/onSocketClose.md)
-  * [uniCloud客户端API](unicloud.md)
   * 界面
     * 节点信息
       * [createSelectorQuery](api/createSelectorQuery.md)
@@ -133,6 +132,7 @@
       * [removeStorageSync](api/removeStorageSync.md)
       * [clearStorage](api/clearStorage.md)
       * [clearStorageSync](api/clearStorageSync.md)
+  * [uniCloud客户端API](unicloud.md)
 * CSS
   * [CSS概述](css/README.md)
   * [align-content](css/align-content.md)

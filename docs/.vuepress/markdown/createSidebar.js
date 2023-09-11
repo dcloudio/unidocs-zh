@@ -41,10 +41,7 @@ function parseBar(tab, file, options) {
 
         if (link && !isExternal(link)) {
           if (!link.startsWith('/')) {
-            const linkFirstItem = link.split('/')[0]
-            if (tab.indexOf(linkFirstItem) === -1) {
-              link = `${tab}${link}`
-            }
+            link = path.join(tab, link).replace(/\\/g, '/')
           }
 
           link = path.join('/', link.replace(/\.md\b/, '')

@@ -720,7 +720,7 @@ postUserInfo({
 目前在uni-app 1.0 环境下，复杂参数的传递是存在一定的缺陷。我们不能将teacher 声明为具体的类型数组，需要声明为any数组：
 
 
-```uts
+```ts
 type Param{
 	name:string,
 	// 不能声明为 Teacher[]
@@ -728,7 +728,7 @@ type Param{
 }
 ```
 访问数组元素时，通过 UTSJSONObjct 包装访问
-```uts
+```ts
 // 循环遍历
 list1.forEach((item : any) => {
     const utsItem = new UTSJSONObject(item)

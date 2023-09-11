@@ -82,3 +82,64 @@ handleClick (event : MouseEvent) {
 	}
 </script>
 ```
+
+## Event
+
+<!-- CUSTOMTYPEJSON.Event.description -->
+
+<!-- CUSTOMTYPEJSON.Event.package -->
+
+<!-- CUSTOMTYPEJSON.Event.extends -->
+
+<!-- CUSTOMTYPEJSON.Event.param -->
+
+## CustomEvent
+
+<!-- CUSTOMTYPEJSON.CustomEvent.description -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.package -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.extends -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.param -->
+
+## CustomEventOptions
+
+<!-- CUSTOMTYPEJSON.CustomEventOptions.description -->
+
+<!-- CUSTOMTYPEJSON.CustomEventOptions.package -->
+
+<!-- CUSTOMTYPEJSON.CustomEventOptions.extends -->
+
+<!-- CUSTOMTYPEJSON.CustomEventOptions.param -->
+
+## MouseEvent
+
+<!-- CUSTOMTYPEJSON.MouseEvent.description -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.package -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.extends -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.param -->
+
+## TouchEvent
+
+<!-- CUSTOMTYPEJSON.TouchEvent.description -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.package -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.extends -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.param -->
+
+## Touch
+
+<!-- CUSTOMTYPEJSON.Touch.description -->
+
+<!-- CUSTOMTYPEJSON.Touch.package -->
+
+<!-- CUSTOMTYPEJSON.Touch.extends -->
+
+<!-- CUSTOMTYPEJSON.Touch.param -->
+

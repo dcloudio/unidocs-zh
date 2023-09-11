@@ -651,16 +651,28 @@ UTSAndroid.offAppActivityBack(() => {
 
 #### 4.2.6 onAppActivityResult / offAppActivityResult
 
+
+
 ##### onAppActivityResult
 
 > HBuilderX 3.6.8+
 
-App 的 activity 启动其他activity的回调结果监听 对应原生的 onActivityResult
+App 的 activity 启动其他activity的回调结果监听 对应原生的  [onActivityResult](!https://developer.android.com/training/basics/intents/result)
+
+需要特别注意的是 `requestCode` 参数，这个参数用于区别 不同的请求来源,开发者应该只处理自己发起请求
 
 ```ts
+let customRequestCode = 12000
+
 UTSAndroid.onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
-	let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:"+resultCode + " -data:"+JSON.stringify(data);
-    console.log(eventName);
+	if(requestCode == 12000){
+		// 我们发起的请求
+		let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:"+resultCode + " -data:"+JSON.stringify(data);
+    	console.log(eventName);
+	}else{
+		// 别的代码发起的请求，不要处理
+	}
+	
 });
 ```
 

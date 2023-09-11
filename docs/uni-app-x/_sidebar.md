@@ -21,12 +21,8 @@
   * [基础](/tutorial/vue3-basics.md)
   * [组件](/tutorial/vue3-components.md)
   * [API](/tutorial/vue3-api.md)
-* 通用事件和类型
-  * [Event](common/event.md)
-  * [CustomEvent](common/customevent.md)
-  * [MouseEvent](common/mouseevent.md)
-  * [TouchEvent](common/touchevent.md)
-  * [Touch](common/touch.md)
+* 通用类型
+  * [Error](common/error.md)
   * [UniError](common/unierror.md)
 * 组件
   * [概述](component/)

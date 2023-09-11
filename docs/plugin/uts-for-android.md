@@ -1540,7 +1540,7 @@ btn_start_screen_listen.setOnClickListener(new StartBroadcastListener());
 
 如果要同时实现多个接口，采用的也是  implements 和 `,` 分隔来实现
 
-```uts
+```ts
 class Person{
 	name:string = ""
 }

@@ -57,6 +57,7 @@ App端图标配置
 
 **注意**  
 - App端图片相关配置，建议在HBuilderX中 manifest.json 的可视化界面操作，不推荐手动在源码视图中修改  
+- manifest中只能配置一个icon。如需在应用发布后动态修改icon，可在插件市场搜索相关插件。
 
 #### Android平台图标配置@icons-android  
 

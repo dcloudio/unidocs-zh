@@ -85,6 +85,55 @@ export default {
 </view>
 ```
 
+## refs
+
+在 `uni-app js 引擎版`中，`refs` 的类型是 `Object`，`DOM 节点`的类型是 `Element`，\
+在 `uni-app x` 中，`refs` 的类型是 `Map<string, any>`，`DOM 节点`的类型是 `INode`。
+
+::: preview
+
+> uni-app js 引擎版
+
+```ts
+<template>
+	<view>
+		<text ref="text">text node</text>
+		<Foo ref="foo" />
+	</view>
+</template>
+
+<script lang="ts">
+	export default {
+		onReady() {
+			const text = this.$refs.text as Element
+			const foo = this.$refs.foo as ComponentPublicInstance
+		}
+	}
+</script>
+```
+
+> uni-app x
+
+```ts
+<template>
+	<view>
+		<text ref="text">text node</text>
+		<Foo ref="foo" />
+	</view>
+</template>
+
+<script lang="uts">
+	export default {
+		onReady() {
+			const text = this.$refs.get("text") as INode
+			const foo = this.$refs.get("foo") as ComponentPublicInstance
+		}
+	}
+</script>
+```
+
+:::
+
 ## 监听页面生命周期
 
 目前暂不支持在组件内监听页面生命周期，待后续支持组合式 API 后，可通过组合式 API 实现。

@@ -5,7 +5,9 @@
 
 ![](./static/newproject.png)
 
-uni-app x的项目，manifest.json中会多一个节点`"uni-app-x" : {}`。这是HBuilder识别项目类型的标记。
+uni-app x不支持vue2，所以无法同时勾选vue2。
+
+uni-app x的项目，manifest.json中会多一个节点`"uni-app-x" : {}`。这是HBuilder识别项目类型的标记。如手动增删这个节点，需对项目点右键"重新识别项目类型"
 ```json
 {
     "name" : "hello-uniapp x",

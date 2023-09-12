@@ -21,9 +21,6 @@
   * [基础](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html)
   * [组件](https://uniapp.dcloud.net.cn/tutorial/vue3-components.html)
   * [API](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html)
-<!-- * 通用类型
-  * [Error](common/error.md)
-  * [UniError](common/unierror.md) -->
 * 组件
   * [概述](component/README.md)
   * [公共属性和事件](component/common.md)
@@ -52,9 +49,6 @@
   * 全局
     * [getapp](api/getapp.md)
     * [getcurrentpages](api/getcurrentpages.md)
-  * 组件上下文对象
-    * [web-view组件上下文对象](api/createwebviewcontext.md)
-    * [video组件上下文对象](api/createvideocontext.md)
   * 基础
     * [事件总线event-bus](api/event-bus.md)
     * [获取启动参数](api/getlaunchoptionssync.md)

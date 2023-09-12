@@ -23,4 +23,4 @@ app-nvue中，text组件不能嵌套。
 <!-- UTSCOMJSON.text.reference -->
 
 ## tips
-- app-uvue的选择复制，仅支持全部文字复制，暂未支持自由调整光标选择文字
+- app-uvue的selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。

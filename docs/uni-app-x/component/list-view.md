@@ -38,6 +38,5 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 
 ## Bug&Tips
 
-- 下拉刷新偶发闪退
-- 暂不支持reverse，目前还不能开发im那样的倒叙列表
-- 暂不支持waterfall多列瀑布流
+- 暂不支持reverse，目前还不能开发im那样的倒序列表
+- 多列瀑布流是另外的组件，后续会提供

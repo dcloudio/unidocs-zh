@@ -1,10 +1,8 @@
-# UniCloud
+# uniCloud
 
 uniCloud目前还不支持：
 - clientDB
 - 由于uts暂不支持await，目前仅能通过callback和promise方式使用异步联网api。
-
-## UniCloud
 
 <!-- UTSUNICLOUDAPIJSON.uniCloud_props.description -->
 
@@ -15,18 +13,6 @@ uniCloud目前还不支持：
 <!-- UTSUNICLOUDAPIJSON.uniCloud_props.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.uniCloud_props.tutorial -->
-
-## Constructor(options) @constructor-1
-
-<!-- UTSUNICLOUDAPIJSON.Constructor.description -->
-
-<!-- UTSUNICLOUDAPIJSON.Constructor.param -->
-
-<!-- UTSUNICLOUDAPIJSON.Constructor.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.Constructor.compatibility -->
-
-<!-- UTSUNICLOUDAPIJSON.Constructor.tutorial -->
 
 ## callFunction(options) @callfunction
 
@@ -64,7 +50,7 @@ uniCloud目前还不支持：
 
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.tutorial -->
 
-## importObject(objectName) @importobject
+## importObject(objectName, options?) @importobject
 
 <!-- UTSUNICLOUDAPIJSON.importObject.description -->
 

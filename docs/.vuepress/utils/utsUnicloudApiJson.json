@@ -1,1 +1,74 @@
-{"uniCloud_props":{"name":"## UniCloud","description":"new UniCloud(config)","param":"## 参数 \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| config | [UniCloudInitOptions](#unicloudinitoptions) | 是 | - |\n### UniCloudInitOptions @unicloudinitoptions \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| provider | string | 是 |  服务商，目前支持 aliyun、tencent |\n| spaceName | string | 否 |  服务空间名 |\n| spaceId | string | 是 |  服务空间id |\n| clientSecret | string | 否 |  阿里云clientSecret |\n| endpoint | string | 否 |  阿里云endpoint |\n","returnValue":"","compatibility":"","tutorial":""},"Constructor":{"name":"## Constructor(options) @constructor-1","description":"","param":"### 参数 \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| options | [UniCloudInitOptions](#unicloudinitoptions) | 是 | - |","returnValue":"","compatibility":"","tutorial":""},"callFunction":{"name":"## callFunction(options) @callfunction","description":"请求云函数","param":"### 参数 \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| options | [UniCloudCallFunctionOptions](#unicloudcallfunctionoptions) | 是 | - |\n#### UniCloudCallFunctionOptions @unicloudcallfunctionoptions \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| name | string | 是 |  云函数名 |\n| data | any | 否 |  云函数参数 |\n","returnValue":"### 返回值 \n\n| 类型 |\n| :- |\n| any | \n","compatibility":"### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n","tutorial":""},"uploadFile":{"name":"## uploadFile(options) @uploadfile","description":"上传文件到云存储","param":"### 参数 \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| options | [UniCloudUploadFileOptions](#uniclouduploadfileoptions) | 是 | - |\n#### UniCloudUploadFileOptions @uniclouduploadfileoptions \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| filePath | string | 是 |  文件路径 |\n| cloudPath | string | 是 |  云端路径 |\n| cloudPathAsRealPath | boolean | 否 |  是否以云端路径是否为真实路径保存上传的文件 |\n| onUploadProgress | (UniCloudUploadProgress) => any | 否 |  上传进度回调 |\n\n##### UniCloudUploadProgress @uniclouduploadprogress \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| loaded | number | 是 |  已上传大小 |\n| total | number | 是 |  总大小 |\n","returnValue":"### 返回值 \n\n| 类型 |\n| :- |\n| any | \n","compatibility":"### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n","tutorial":""},"getTempFileURL":{"name":"## getTempFileURL(options) @gettempfileurl","description":"获取文件临时URL","param":"### 参数 \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| options | [UniCloudGetTempFileURLOptions](#unicloudgettempfileurloptions) | 是 | - |\n#### UniCloudGetTempFileURLOptions @unicloudgettempfileurloptions \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| fileList | Array\\<string\\> | 是 |  文件列表 |\n","returnValue":"### 返回值 \n\n| 类型 |\n| :- |\n| any | \n","compatibility":"### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n","tutorial":""},"importObject":{"name":"## importObject(objectName, options?) @importobject","description":"引用云对象","param":"### 参数 \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| objectName | string | 是 | - |\n| options | [UniCloudImportObjectOptions](#unicloudimportobjectoptions) | 否 | - |\n#### UniCloudImportObjectOptions @unicloudimportobjectoptions \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| customUI | boolean | 否 |  是否移除自动展示的ui |\n| loadingOptions | UniCloudImportObjectLoadingOptions | 否 |  loading界面配置 |\n| errorOptions | UniCloudImportObjectErrorOptions | 否 |  错误提示配置 |\n\n##### UniCloudImportObjectLoadingOptions @unicloudimportobjectloadingoptions \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| title | string | 否 |  加载框标题 |\n| mask | boolean | 否 |  加载框是否显示mask |\n\n##### UniCloudImportObjectErrorOptions @unicloudimportobjecterroroptions \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| type | string | 否 |  错误提示类型，可以是modal或者toast |\n| retry | boolean | 否 |  是否显示重试按钮 |\n","returnValue":"### 返回值 \n\n| 类型 |\n| :- |\n| any | \n","compatibility":"### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n","tutorial":""},"onResponse":{"name":"## onResponse(callback) @onresponse","description":"监听响应事件","param":"### 参数 \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| callback | (any) => any | 是 | - |","returnValue":"","compatibility":"### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n","tutorial":""},"offResponse":{"name":"## offResponse(callback) @offresponse","description":"移除响应事件监听","param":"### 参数 \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| callback | (any) => any | 是 | - |","returnValue":"","compatibility":"### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n","tutorial":""},"onRefreshToken":{"name":"## onRefreshToken(callback) @onrefreshtoken","description":"监听token刷新事件","param":"### 参数 \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| callback | (any) => any | 是 | - |","returnValue":"","compatibility":"### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n","tutorial":""},"offRefreshToken":{"name":"## offRefreshToken(callback) @offrefreshtoken","description":"移除token刷新事件监听","param":"### 参数 \n\n| 参数名 | 参数类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| callback | (any) => any | 是 | - |","returnValue":"","compatibility":"### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n","tutorial":""}}
+{
+  "uniCloud_props": {
+    "name": "# uniCloud",
+    "description": "",
+    "param": "## 参数 \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| config | [UniCloudInitOptions](#unicloudinitoptions) | 是 | - |\n### UniCloudInitOptions @unicloudinitoptions \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| provider | string | 是 |  服务商，目前支持 aliyun、tencent |\n| spaceName | string | 否 |  服务空间名 |\n| spaceId | string | 是 |  服务空间id |\n| clientSecret | string | 否 |  阿里云clientSecret |\n| endpoint | string | 否 |  阿里云endpoint |\n",
+    "returnValue": "",
+    "compatibility": "",
+    "tutorial": ""
+  },
+  "callFunction": {
+    "name": "## callFunction(options) @callfunction",
+    "description": "请求云函数",
+    "param": "### 参数 \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| options | [UniCloudCallFunctionOptions](#unicloudcallfunctionoptions) | 是 | - |\n#### UniCloudCallFunctionOptions @unicloudcallfunctionoptions \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| name | string | 是 |  云函数名 |\n| data | [UTSJSONObject](#utsjsonobject) | 否 |  云函数参数 |\n\n##### UTSJSONObject @utsjsonobject \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| getAny | (string) => any | 是 |  获取一个 属性，返回类型是any 或者 null |\n| getBoolean | (string) => boolean | 是 |  获取一个Boolean属性，返回类型是Boolean 或者 null |\n| getNumber | (string) => number | 是 |  获取一个number属性，返回类型是number 或者 null |\n| getString | (string) => string | 是 |  获取一个string属性，返回类型是string 或者 null |\n| getJSON | (string) => [UTSJSONObject](#utsjsonobject) | 是 |  获取一个UTSJSONObject属性，返回类型是UTSJSONObject 或者 null |\n| getArray | (string) => Array\\<any\\> | 是 |  获取一个Array属性，返回类型是Array 或者 null |\n| toMap | () => Map\\<string, any\\> | 是 |  将当前 UTSJSONObject 实例转换为 Map 实例。 |\n",
+    "returnValue": "### 返回值 \n\n| 类型 |\n| :- |\n| Promise<[UniCloudCallFunctionResult](#unicloudcallfunctionresult)> | \n\n#### UniCloudCallFunctionResult @unicloudcallfunctionresult \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| result | [UTSJSONObject](#utsjsonobject) | 是 |  云函数返回结果 |\n| requestId | string | 否 |  云函数请求id |\n",
+    "compatibility": "### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n",
+    "tutorial": ""
+  },
+  "uploadFile": {
+    "name": "## uploadFile(options) @uploadfile",
+    "description": "上传文件到云存储",
+    "param": "### 参数 \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| options | [UniCloudUploadFileOptions](#uniclouduploadfileoptions) | 是 | - |\n#### UniCloudUploadFileOptions @uniclouduploadfileoptions \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| filePath | string | 是 |  文件路径 |\n| cloudPath | string | 是 |  云端路径 |\n| cloudPathAsRealPath | boolean | 否 |  是否以云端路径是否为真实路径保存上传的文件 |\n| onUploadProgress | ([UniCloudUploadProgress](#uniclouduploadprogress)) => any | 否 |  上传进度回调 |\n\n##### UniCloudUploadProgress @uniclouduploadprogress \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| loaded | number | 是 |  已上传大小 |\n| total | number | 是 |  总大小 |\n",
+    "returnValue": "### 返回值 \n\n| 类型 |\n| :- |\n| Promise<[UniCloudUploadFileResult](#uniclouduploadfileresult)> | \n\n#### UniCloudUploadFileResult @uniclouduploadfileresult \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| filePath | string | 是 |  文件路径 |\n| fileID | string | 是 |  文件id |\n",
+    "compatibility": "### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n",
+    "tutorial": ""
+  },
+  "getTempFileURL": {
+    "name": "## getTempFileURL(options) @gettempfileurl",
+    "description": "获取文件临时URL",
+    "param": "### 参数 \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| options | [UniCloudGetTempFileURLOptions](#unicloudgettempfileurloptions) | 是 | - |\n#### UniCloudGetTempFileURLOptions @unicloudgettempfileurloptions \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| fileList | Array\\<string\\> | 是 |  文件列表 |\n",
+    "returnValue": "### 返回值 \n\n| 类型 |\n| :- |\n| Promise<[UniCloudGetTempFileURLResult](#unicloudgettempfileurlresult)> | \n\n#### UniCloudGetTempFileURLResult @unicloudgettempfileurlresult \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| fileList | Array\\<[UniCloudGetTempFileURLResultItem](#unicloudgettempfileurlresultitem)\\> | 是 |  文件列表 |\n\n##### UniCloudGetTempFileURLResultItem @unicloudgettempfileurlresultitem \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| fileID | string | 是 |  文件id |\n| tempFileURL | string | 是 |  文件临时url |\n",
+    "compatibility": "### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n",
+    "tutorial": ""
+  },
+  "importObject": {
+    "name": "## importObject(objectName, options?) @importobject",
+    "description": "引用云对象",
+    "param": "### 参数 \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| objectName | string | 是 | - |\n| options | [UniCloudImportObjectOptions](#unicloudimportobjectoptions) | 否 | - |\n#### UniCloudImportObjectOptions @unicloudimportobjectoptions \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| customUI | boolean | 否 |  是否移除自动展示的ui |\n| loadingOptions | [UniCloudImportObjectLoadingOptions](#unicloudimportobjectloadingoptions) | 否 |  loading界面配置 |\n| errorOptions | [UniCloudImportObjectErrorOptions](#unicloudimportobjecterroroptions) | 否 |  错误提示配置 |\n\n##### UniCloudImportObjectLoadingOptions @unicloudimportobjectloadingoptions \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| title | string | 否 |  加载框标题 |\n| mask | boolean | 否 |  加载框是否显示mask |\n\n##### UniCloudImportObjectErrorOptions @unicloudimportobjecterroroptions \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| type | string | 否 |  错误提示类型，可以是modal或者toast |\n| retry | boolean | 否 |  是否显示重试按钮 |\n",
+    "returnValue": "### 返回值 \n\n| 类型 |\n| :- |\n| any | \n",
+    "compatibility": "### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n",
+    "tutorial": ""
+  },
+  "onResponse": {
+    "name": "## onResponse(callback) @onresponse",
+    "description": "监听响应事件",
+    "param": "### 参数 \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| callback | ([UniCloudResponseEvent](#unicloudresponseevent)) => any | 是 | - |\n#### UniCloudResponseEvent @unicloudresponseevent \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| type | string | 是 |  响应事件类型 |\n| name | string | 是 |  响应事件由哪个云函数触发 |\n| content | any | 是 |  响应结果、错误内容 |\n",
+    "returnValue": "",
+    "compatibility": "### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n",
+    "tutorial": ""
+  },
+  "offResponse": {
+    "name": "## offResponse(callback) @offresponse",
+    "description": "移除响应事件监听",
+    "param": "### 参数 \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| callback | ([UniCloudResponseEvent](#unicloudresponseevent)) => any | 是 | - |",
+    "returnValue": "",
+    "compatibility": "### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n",
+    "tutorial": ""
+  },
+  "onRefreshToken": {
+    "name": "## onRefreshToken(callback) @onrefreshtoken",
+    "description": "监听token刷新事件",
+    "param": "### 参数 \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| callback | ([UniCloudRefreshTokenEvent](#unicloudrefreshtokenevent)) => any | 是 | - |\n#### UniCloudRefreshTokenEvent @unicloudrefreshtokenevent \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| token | string | 是 |  token内容 |\n| tokenExpired | number | 是 |  token过期时间 |\n",
+    "returnValue": "",
+    "compatibility": "### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n",
+    "tutorial": ""
+  },
+  "offRefreshToken": {
+    "name": "## offRefreshToken(callback) @offrefreshtoken",
+    "description": "移除token刷新事件监听",
+    "param": "### 参数 \n\n| 名称 | 类型 | 必填 | 描述 |\n| :- | :- | :- | :- |\n| callback | ([UniCloudRefreshTokenEvent](#unicloudrefreshtokenevent)) => any | 是 | - |",
+    "returnValue": "",
+    "compatibility": "### 兼容性 \n\n| 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- |\n| 5.0 | √ | 3.9.0 仅支持阿里云 | - | √ | x |\n",
+    "tutorial": ""
+  }
+}

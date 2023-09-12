@@ -1,8 +1,10 @@
 # uniCloud
 
 uniCloud目前还不支持：
+
 - clientDB
-- 由于uts暂不支持await，目前仅能通过callback和promise方式使用异步联网api。
+- 由于uts暂不支持await，目前仅能通过promise方式使用异步联网api。
+- 本页面未列举的API均不支持
 
 <!-- UTSUNICLOUDAPIJSON.uniCloud_props.description -->
 

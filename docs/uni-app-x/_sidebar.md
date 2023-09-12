@@ -50,85 +50,47 @@
 * API
   * [概述](api/)
   * 全局
-    * [getApp](api/getApp.md)
-    * [getCurrentPages](api/getCurrentPages.md)
+    * [getapp](api/getapp.md)
+    * [getcurrentpages](api/getcurrentpages.md)
+  * 组件上下文对象
+    * [web-view组件上下文对象](api/createwebviewcontext.md)
+    * [video组件上下文对象](api/createvideocontext.md)
   * 基础
-    * 事件总线event-bus
-      * [$on](api/$on.md)
-      * [$once](api/$once.md)
-      * [$off](api/$off.md)
-      * [$emit](api/$emit.md)
-    * [获取启动参数](api/getLaunchOptionsSync.md)
+    * [事件总线event-bus](api/event-bus.md)
+    * [获取启动参数](api/getlaunchoptionssync.md)
     * [退出应用](api/exit.md)
   * 页面和路由
-    * 页面跳转
-      * [navigateTo](api/navigateTo.md)
-      * [reLaunch](api/reLaunch.md)
-      * [navigateBack](api/navigateBack.md)
-      * [redirectTo](api/redirectTo.md)
-      * [switchTab](api/switchTab.md)
-    * [设置导航条颜色](api/setNavigationBarColor.md)
-    * 设置TabBar
-      * [showTabBar](api/showTabBar.md)
-      * [hideTabBar](api/hideTabBar.md)
-      * [showTabBarRedDot](api/showTabBarRedDot.md)
-      * [hideTabBarRedDot](api/hideTabBarRedDot.md)
-      * [setTabBarBadge](api/setTabBarBadge.md)
-      * [removeTabBarBadge](api/removeTabBarBadge.md)
-      * [setTabBarStyle](api/setTabBarStyle.md)
-      * [setTabBarItem](api/setTabBarItem.md)
-    * 页面下拉刷新
-      * [stopPullDownRefresh](api/stopPullDownRefresh.md)
-    * [将页面滚动到指定位置](api/pageScrollTo.md)
+    * [页面跳转](api/navigator.md)
+    * [设置导航条颜色](api/setnavigationbarcolor.md)
+    * [设置tabbar](api/set-tabbar.md)
+    * [页面下拉刷新](api/pull-down-refresh.md)
+    * [将页面滚动到指定位置](api/pagescrollto.md)
   * 网络
     * [发起请求request](api/request.md)
-    * [上传文件](api/uploadFile.md)
-    * [下载文件](api/downloadFile.md)
-    * [获取设备网络状态](api/getNetworkType.md)
-    * 全局websocket
-      * [connectSocket](api/connectSocket.md)
-      * [onSocketOpen](api/onSocketOpen.md)
-      * [onSocketError](api/onSocketError.md)
-      * [sendSocketMessage](api/sendSocketMessage.md)
-      * [onSocketMessage](api/onSocketMessage.md)
-      * [closeSocket](api/closeSocket.md)
-      * [onSocketClose](api/onSocketClose.md)
+    * [上传文件](api/uploadfile.md)
+    * [下载文件](api/downloadfile.md)
+    * [获取设备网络状态](api/getnetworktype.md)
+    * [全局websocket](api/websocket-global.md)
   * 界面
-    * 节点信息
-      * [createSelectorQuery](api/createSelectorQuery.md)
-    * 显示模态弹窗
-      * [showModal](api/showModal.md)
-    * [显示加载提示框](api/showLoading.md)
-    * 显示消息提示框
-      * [showToast](api/showToast.md)
-    * [动态加载字体](api/loadFontFace.md)
+    * [节点信息](api/nodes-info.md)
+    * [显示模态弹窗](api/modal.md)
+    * [显示加载提示框](api/showloading.md)
+    * [显示消息提示框](api/toast.md)
+    * [动态加载字体](api/loadfontface.md)
   * 设备
-    * [获取系统信息](api/getSystemInfo.md)
-    * [同步获取系统信息](api/getSystemInfoSync.md)
-    * [获取设备信息](api/getDeviceInfo.md)
-    * [获取窗口信息](api/getWindowInfo.md)
-    * [获取APP基础信息](api/getAppBaseInfo.md)
-    * [获取APP授权设置](api/getAppAuthorizeSetting.md)
-    * [获取系统设置](api/getSystemSetting.md)
+    * [获取系统信息](api/getsysteminfo.md)
+    * [同步获取系统信息](api/getsysteminfosync.md)
+    * [获取设备信息](api/getdeviceinfo.md)
+    * [获取窗口信息](api/getwindowinfo.md)
+    * [获取app基础信息](api/getappbaseinfo.md)
+    * [获取app授权设置](api/getappauthorizesetting.md)
+    * [获取系统设置](api/getsystemsetting.md)
   * 媒体
-    * 图片选择和预览
-      * [previewImage](api/previewImage.md)
-      * [closePreviewImage](api/closePreviewImage.md)
-      * [chooseImage](api/chooseImage.md)
+    * [图片选择和预览](api/preview-image.md)
   * 位置
-    * [获取当前位置](api/getLocation.md)
+    * [获取当前位置](api/getlocation.md)
   * 数据存储
-    * storage（key-value存储）
-      * [getStorageInfo](api/getStorageInfo.md)
-      * [getStorageInfoSync](api/getStorageInfoSync.md)
-      * [getStorage](api/getStorage.md)
-      * [getStorageSync](api/getStorageSync.md)
-      * [setStorage](api/setStorage.md)
-      * [setStorageSync](api/setStorageSync.md)
-      * [removeStorage](api/removeStorage.md)
-      * [removeStorageSync](api/removeStorageSync.md)
-      * [clearStorage](api/clearStorage.md)
-      * [clearStorageSync](api/clearStorageSync.md)
+    * [storage（key-value存储）](api/storage.md)
   * 组件上下文对象
     * [web-view组件上下文对象](api/createWebviewContext.md)
     * [video组件上下文对象](api/createVideoContext.md)

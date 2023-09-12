@@ -3,7 +3,7 @@
 ## 新建
 在HBuilder3.9起，新建uni-app项目界面的底部有一个checkbox：uni-app x。勾选后会新建为uni-app x项目。
 
-![](static/newproject.png)
+![](./static/newproject.png)
 
 uni-app x的项目，manifest.json中会多一个节点`"uni-app-x" : {}`。这是HBuilder识别项目类型的标记。
 ```json

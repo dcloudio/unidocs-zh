@@ -321,15 +321,20 @@ a as number // 错误
 
 USTJSONObject和type不相容，无法互相as。应该在初始的字面量或JSON.parse环节就决定好类型。
 
-类型断言会在运行时进行，如果无法强制转换，类型断言运算符as会引发异常：
+类型断言会在运行时进行，如果无法强制转换，类型断言运算符会引发异常：
 
 ```ts
 const a: string | null = 'a'
 a as string // 正常
 
 a = null
-a as string ｜ null // 正常
 a as string // 异常
+```
+
+以上代码中当值为 `null` 的时，强制转换为 `string` 会引发异常。为了让这样的代码用于可空值，请在类型断言的右侧使用可空类型：
+
+```ts
+a as string ｜ null // 正常
 ```
 
 当 as 操作符的左侧为[对象字面量](./literal.md#object-literal)时，编译器会进行[特殊处理](./object.md#实例化)：自动创建类型对应的实例。

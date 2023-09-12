@@ -131,7 +131,7 @@ person['name'] = 'Tom'
 <!-- UTSJSON.UTSJSONObject.toMap.returnValue -->
 
 ```ts
-person.toMap().forEach((key: string, value: any) => {
+person.toMap().forEach((value, key) => {
     console.log(key)
     console.log(value)
 })

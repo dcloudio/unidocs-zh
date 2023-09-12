@@ -60,8 +60,11 @@
     ```html
     <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg" class="zooming" data="abc" width="100" height="100" />
     ```
+12. 路径注意
+    - _sidebar.md是左侧导航，其中路径写https路径，可打开新页签。如左侧导航里引用了本产品目录之外的文档，需写成这种方式
+	- 每个产品目录下均有一个static目录，在其中提交图片视频等静态资源。引用static下的静态资源时，路径可以是"../static"、"./static"，不能写"static/"。
 
-12. md 表格支持行、列合并
+13. md 表格支持行、列合并
     - 行列合并
         ```md
         |资源分类		|资源细项				|售价（元）	|

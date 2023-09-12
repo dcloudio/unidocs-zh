@@ -203,10 +203,10 @@
 
 |选项	|类型	|说明	|
 |--	|--	|--	|
-|type	| `String` 、 `Number` 、 `Boolean` 、 `Array` 、 `Object` 、 `Date` 、 `Function` 、 `Symbol` ，任何自定义构造函数、或上述内容组成的数组	|会检查一个 `prop` 是否是给定的类型，否则抛出警告	|
-|default	|any	|为该 `prop` 指定一个默认值。如果该 `prop` 没有被传入，则换做用这个值。对象或数组的默认值必须从一个工厂函数返回。`uni-app x` 中 必填	|
-|required	|Boolean	|定义该 `prop` 是否是必填项, `uni-app x` 暂不支持|
-|validator	|Function	|自定义验证函数会将该 `prop` 的值作为唯一的参数代入。在非生产环境下，如果该函数返回一个 `false` 的值 (也就是验证失败)，一个控制台警告将会被抛出, `uni-app x` 暂不支持|
+|type	| `String` 、 `Number` 、 `Boolean` 、 `Array` 、 `Object` 、 `Date` 、 `Function` 、 `Symbol(uni-app x 不支持)` ，任何自定义构造函数、或上述内容组成的数组	|会检查一个 `prop` 是否是给定的类型，否则抛出警告，复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。	|
+|default	|any	|为该 `prop` 指定一个默认值。如果该 `prop` 没有被传入，则换做用这个值。对象或数组的默认值必须从一个工厂函数返回。|
+|required	|Boolean	|定义该 `prop` 是否是必填项。|
+|validator	|Function	|自定义验证函数会将该 `prop` 的值作为唯一的参数代入。在非生产环境下，如果该函数返回一个 `false` 的值 (也就是验证失败)，一个控制台警告将会被抛出。|
 
 
 ##### 示例：
@@ -251,11 +251,14 @@
 	<script lang="uts">
 		export default {
 			props: {
-				// 检测类型 + 其他验证（uni-app x 暂不支持 validator 校验函数）
+				// 检测类型 + 其他验证
 				age: {
 					type: Number,
 					default: 0,
-					required: true
+					required: true,
+					validator: function(value: number): boolean {
+						return value >= 0
+					}
 				}
 			}
 		}
@@ -604,14 +607,20 @@
 		},
 		// 带有默认值的对象
 		propE: {
-			type: UTSObject,
+			type: Object,
 			// 对象或数组默认值必须从一个工厂函数获取
-			default: function(): UTSObject {
+			default: function(): Object {
 			  return { message: 'hello' }
 			}
 		},
-		// uni-app x 暂不支持 validator 校验函数
-		
+		// 自定义验证函数
+		propF: {
+			type: String,
+			validator: function(value: string): boolean {
+			  // 这个值必须匹配下列字符串中的一个
+			  return ['success', 'warning', 'danger'].indexOf(value) != -1
+			}
+		},
 		// 具有默认值的函数
 		propG: {
 			type: Function,

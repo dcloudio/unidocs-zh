@@ -20,7 +20,7 @@ uvue的组件，可以使用前端技术编写，也可以使用原生技术编�
 ## props
 
 - 仅支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。
-- 暂不支持[自定义类型校验函数](https://cn.vuejs.org/guide/components/props.html#prop-validation)。
+- 复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。
 
 ## 自定义事件
 

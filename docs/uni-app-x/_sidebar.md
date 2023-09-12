@@ -92,8 +92,8 @@
   * 数据存储
     * [storage（key-value存储）](api/storage.md)
   * 组件上下文对象
-    * [web-view组件上下文对象](api/createWebviewContext.md)
-    * [video组件上下文对象](api/createVideoContext.md)
+    * [web-view组件上下文对象](api/createwebviewcontext.md)
+    * [video组件上下文对象](api/createvideocontext.md)
   * [uniCloud客户端API](unicloud.md)
 * CSS
   * [CSS概述](css/README.md)

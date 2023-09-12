@@ -129,8 +129,9 @@
       * [removeStorageSync](api/removeStorageSync.md)
       * [clearStorage](api/clearStorage.md)
       * [clearStorageSync](api/clearStorageSync.md)
-  * 组件
+  * 组件上下文对象
     * [web-view组件上下文对象](api/createWebviewContext.md)
+    * [video组件上下文对象](api/createVideoContext.md)
   * [uniCloud客户端API](unicloud.md)
 * CSS
   * [CSS概述](css/README.md)

@@ -34,8 +34,6 @@
 
 <!-- UTSAPIJSON.storage.tutorial -->
 
-- 注意： 该 api 数据和 H5 中 storage 数据相兼容，即 uts 插件 和 uni-app-x 中的storage 存储路径和 h5 中 storage 的存储路径一致，存取逻辑一致。  即在 H5 中通过 uni.setStorage(options) 存储的数据可以在 uts 插件 和 uni-app-x 中用相同的 key 取出。
-
 ## uni.getStorageSync(key) @getstoragesync
 
 <!-- UTSAPIJSON.storage.description -->
@@ -47,8 +45,6 @@
 <!-- UTSAPIJSON.storage.compatibility -->
 
 <!-- UTSAPIJSON.storage.tutorial -->
-
-- 注意： 该 api 数据和 H5 中 storage 数据相兼容，即 uts 插件 和 uni-app-x 中的storage 存储路径和 h5 中 storage 的存储路径一致，存取逻辑一致。  即在 H5 中通过 uni.setStorage(options) 存储的数据可以在 uts 插件 和 uni-app-x 中用相同的 key 取出。
 
 ## uni.getStorageInfo(options) @getstorageinfo
 

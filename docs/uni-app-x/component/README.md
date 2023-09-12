@@ -21,6 +21,35 @@ uvue的组件，可以使用前端技术编写，也可以使用原生技术编�
 
 - 仅支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。
 - 复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。
+```ts
+import { type PropType } from 'vue'
+
+type Obj = { a: number }
+
+export default {
+	props: {
+		num: {
+			type: Number,
+			required: true
+		},
+		str: {
+			type: String,
+			default: 'str',
+			validator(value: string): boolean {
+				return value.length > 0
+      }
+		},
+		obj: {
+			type: Object as PropType<Obj>,
+			default: (): Obj => ({ a: 1 } as Obj)
+		},
+		arr: {
+			type: Array as PropType<number[]>,
+			default: (): number[] => [1, 2, 3]
+		}
+	}
+}
+```
 
 ## 自定义事件
 

@@ -20,7 +20,7 @@ uni-app x的项目，manifest.json中会多一个节点`"uni-app-x" : {}`。这�
 
 uni-app x的项目，在左侧项目管理器的图标是圆形的U（之前是方型的U）。
 
-![](static/project-icon.png)
+![](./static/project-icon.png)
 
 ## 项目结构
 
@@ -33,7 +33,7 @@ uni-app x的项目结构与[uni-app js引擎版的项目结构](../tutorial/proj
 ## 运行
 
 uni-app x的真机运行基座，和uni-app js引擎版不同，是一个绿色圆形的U（之前是方型H），基座名称默认为`uni-app x`（之前叫HBuilder）。
-![](static/playground.jpg)
+![](./static/playground.jpg)
 
 - uni-app x基座，只能运行uni-app x项目，包名是io.dcloud.uniappx
 - HBuilder基座，可以运行5+App、wap2app和uni-app js引擎版。包名是io.dcloud.HBuilder

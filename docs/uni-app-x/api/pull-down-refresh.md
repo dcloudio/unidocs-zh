@@ -1,14 +1,14 @@
 ## uni.stopPullDownRefresh() @stoppulldownrefresh
 
-<!-- UTSAPIJSON.pull-down-refresh.description -->
+<!-- UTSAPIJSON.stopPullDownRefresh.description -->
 
-<!-- UTSAPIJSON.pull-down-refresh.param -->
+<!-- UTSAPIJSON.stopPullDownRefresh.param -->
 
-<!-- UTSAPIJSON.pull-down-refresh.returnValue -->
+<!-- UTSAPIJSON.stopPullDownRefresh.returnValue -->
 
-<!-- UTSAPIJSON.pull-down-refresh.compatibility -->
+<!-- UTSAPIJSON.stopPullDownRefresh.compatibility -->
 
-<!-- UTSAPIJSON.pull-down-refresh.tutorial -->
+<!-- UTSAPIJSON.stopPullDownRefresh.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

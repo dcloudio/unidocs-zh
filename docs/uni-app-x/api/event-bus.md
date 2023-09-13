@@ -1,50 +1,50 @@
 ## uni.$on(eventName, callback) @$on
 
-<!-- UTSAPIJSON.event-bus.description -->
+<!-- UTSAPIJSON.$on.description -->
 
-<!-- UTSAPIJSON.event-bus.param -->
+<!-- UTSAPIJSON.$on.param -->
 
-<!-- UTSAPIJSON.event-bus.returnValue -->
+<!-- UTSAPIJSON.$on.returnValue -->
 
-<!-- UTSAPIJSON.event-bus.compatibility -->
+<!-- UTSAPIJSON.$on.compatibility -->
 
-<!-- UTSAPIJSON.event-bus.tutorial -->
+<!-- UTSAPIJSON.$on.tutorial -->
 
 ## uni.$off(eventName, callback) @$off
 
-<!-- UTSAPIJSON.event-bus.description -->
+<!-- UTSAPIJSON.$off.description -->
 
-<!-- UTSAPIJSON.event-bus.param -->
+<!-- UTSAPIJSON.$off.param -->
 
-<!-- UTSAPIJSON.event-bus.returnValue -->
+<!-- UTSAPIJSON.$off.returnValue -->
 
-<!-- UTSAPIJSON.event-bus.compatibility -->
+<!-- UTSAPIJSON.$off.compatibility -->
 
-<!-- UTSAPIJSON.event-bus.tutorial -->
+<!-- UTSAPIJSON.$off.tutorial -->
 
 ## uni.$once(eventName, callback) @$once
 
-<!-- UTSAPIJSON.event-bus.description -->
+<!-- UTSAPIJSON.$once.description -->
 
-<!-- UTSAPIJSON.event-bus.param -->
+<!-- UTSAPIJSON.$once.param -->
 
-<!-- UTSAPIJSON.event-bus.returnValue -->
+<!-- UTSAPIJSON.$once.returnValue -->
 
-<!-- UTSAPIJSON.event-bus.compatibility -->
+<!-- UTSAPIJSON.$once.compatibility -->
 
-<!-- UTSAPIJSON.event-bus.tutorial -->
+<!-- UTSAPIJSON.$once.tutorial -->
 
 ## uni.$emit(eventName, args) @$emit
 
-<!-- UTSAPIJSON.event-bus.description -->
+<!-- UTSAPIJSON.$emit.description -->
 
-<!-- UTSAPIJSON.event-bus.param -->
+<!-- UTSAPIJSON.$emit.param -->
 
-<!-- UTSAPIJSON.event-bus.returnValue -->
+<!-- UTSAPIJSON.$emit.returnValue -->
 
-<!-- UTSAPIJSON.event-bus.compatibility -->
+<!-- UTSAPIJSON.$emit.compatibility -->
 
-<!-- UTSAPIJSON.event-bus.tutorial -->
+<!-- UTSAPIJSON.$emit.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

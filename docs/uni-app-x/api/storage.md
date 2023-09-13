@@ -1,122 +1,122 @@
 ## uni.setStorage(options) @setstorage
 
-<!-- UTSAPIJSON.storage.description -->
+<!-- UTSAPIJSON.setStorage.description -->
 
-<!-- UTSAPIJSON.storage.param -->
+<!-- UTSAPIJSON.setStorage.param -->
 
-<!-- UTSAPIJSON.storage.returnValue -->
+<!-- UTSAPIJSON.setStorage.returnValue -->
 
-<!-- UTSAPIJSON.storage.compatibility -->
+<!-- UTSAPIJSON.setStorage.compatibility -->
 
-<!-- UTSAPIJSON.storage.tutorial -->
+<!-- UTSAPIJSON.setStorage.tutorial -->
 
 ## uni.setStorageSync(key, data) @setstoragesync
 
-<!-- UTSAPIJSON.storage.description -->
+<!-- UTSAPIJSON.setStorageSync.description -->
 
-<!-- UTSAPIJSON.storage.param -->
+<!-- UTSAPIJSON.setStorageSync.param -->
 
-<!-- UTSAPIJSON.storage.returnValue -->
+<!-- UTSAPIJSON.setStorageSync.returnValue -->
 
-<!-- UTSAPIJSON.storage.compatibility -->
+<!-- UTSAPIJSON.setStorageSync.compatibility -->
 
-<!-- UTSAPIJSON.storage.tutorial -->
+<!-- UTSAPIJSON.setStorageSync.tutorial -->
 
 ## uni.getStorage(options) @getstorage
 
-<!-- UTSAPIJSON.storage.description -->
+<!-- UTSAPIJSON.getStorage.description -->
 
-<!-- UTSAPIJSON.storage.param -->
+<!-- UTSAPIJSON.getStorage.param -->
 
-<!-- UTSAPIJSON.storage.returnValue -->
+<!-- UTSAPIJSON.getStorage.returnValue -->
 
-<!-- UTSAPIJSON.storage.compatibility -->
+<!-- UTSAPIJSON.getStorage.compatibility -->
 
-<!-- UTSAPIJSON.storage.tutorial -->
+<!-- UTSAPIJSON.getStorage.tutorial -->
 
 ## uni.getStorageSync(key) @getstoragesync
 
-<!-- UTSAPIJSON.storage.description -->
+<!-- UTSAPIJSON.getStorageSync.description -->
 
-<!-- UTSAPIJSON.storage.param -->
+<!-- UTSAPIJSON.getStorageSync.param -->
 
-<!-- UTSAPIJSON.storage.returnValue -->
+<!-- UTSAPIJSON.getStorageSync.returnValue -->
 
-<!-- UTSAPIJSON.storage.compatibility -->
+<!-- UTSAPIJSON.getStorageSync.compatibility -->
 
-<!-- UTSAPIJSON.storage.tutorial -->
+<!-- UTSAPIJSON.getStorageSync.tutorial -->
 
 ## uni.getStorageInfo(options) @getstorageinfo
 
-<!-- UTSAPIJSON.storage.description -->
+<!-- UTSAPIJSON.getStorageInfo.description -->
 
-<!-- UTSAPIJSON.storage.param -->
+<!-- UTSAPIJSON.getStorageInfo.param -->
 
-<!-- UTSAPIJSON.storage.returnValue -->
+<!-- UTSAPIJSON.getStorageInfo.returnValue -->
 
-<!-- UTSAPIJSON.storage.compatibility -->
+<!-- UTSAPIJSON.getStorageInfo.compatibility -->
 
-<!-- UTSAPIJSON.storage.tutorial -->
+<!-- UTSAPIJSON.getStorageInfo.tutorial -->
 
 ## uni.getStorageInfoSync() @getstorageinfosync
 
-<!-- UTSAPIJSON.storage.description -->
+<!-- UTSAPIJSON.getStorageInfoSync.description -->
 
-<!-- UTSAPIJSON.storage.param -->
+<!-- UTSAPIJSON.getStorageInfoSync.param -->
 
-<!-- UTSAPIJSON.storage.returnValue -->
+<!-- UTSAPIJSON.getStorageInfoSync.returnValue -->
 
-<!-- UTSAPIJSON.storage.compatibility -->
+<!-- UTSAPIJSON.getStorageInfoSync.compatibility -->
 
-<!-- UTSAPIJSON.storage.tutorial -->
+<!-- UTSAPIJSON.getStorageInfoSync.tutorial -->
 
 ## uni.removeStorage(options) @removestorage
 
-<!-- UTSAPIJSON.storage.description -->
+<!-- UTSAPIJSON.removeStorage.description -->
 
-<!-- UTSAPIJSON.storage.param -->
+<!-- UTSAPIJSON.removeStorage.param -->
 
-<!-- UTSAPIJSON.storage.returnValue -->
+<!-- UTSAPIJSON.removeStorage.returnValue -->
 
-<!-- UTSAPIJSON.storage.compatibility -->
+<!-- UTSAPIJSON.removeStorage.compatibility -->
 
-<!-- UTSAPIJSON.storage.tutorial -->
+<!-- UTSAPIJSON.removeStorage.tutorial -->
 
 ## uni.removeStorageSync(key) @removestoragesync
 
-<!-- UTSAPIJSON.storage.description -->
+<!-- UTSAPIJSON.removeStorageSync.description -->
 
-<!-- UTSAPIJSON.storage.param -->
+<!-- UTSAPIJSON.removeStorageSync.param -->
 
-<!-- UTSAPIJSON.storage.returnValue -->
+<!-- UTSAPIJSON.removeStorageSync.returnValue -->
 
-<!-- UTSAPIJSON.storage.compatibility -->
+<!-- UTSAPIJSON.removeStorageSync.compatibility -->
 
-<!-- UTSAPIJSON.storage.tutorial -->
+<!-- UTSAPIJSON.removeStorageSync.tutorial -->
 
 ## uni.clearStorage(option?) @clearstorage
 
-<!-- UTSAPIJSON.storage.description -->
+<!-- UTSAPIJSON.clearStorage.description -->
 
-<!-- UTSAPIJSON.storage.param -->
+<!-- UTSAPIJSON.clearStorage.param -->
 
-<!-- UTSAPIJSON.storage.returnValue -->
+<!-- UTSAPIJSON.clearStorage.returnValue -->
 
-<!-- UTSAPIJSON.storage.compatibility -->
+<!-- UTSAPIJSON.clearStorage.compatibility -->
 
-<!-- UTSAPIJSON.storage.tutorial -->
+<!-- UTSAPIJSON.clearStorage.tutorial -->
 
 ## uni.clearStorageSync() @clearstoragesync
 
-<!-- UTSAPIJSON.storage.description -->
+<!-- UTSAPIJSON.clearStorageSync.description -->
 
-<!-- UTSAPIJSON.storage.param -->
+<!-- UTSAPIJSON.clearStorageSync.param -->
 
-<!-- UTSAPIJSON.storage.returnValue -->
+<!-- UTSAPIJSON.clearStorageSync.returnValue -->
 
-<!-- UTSAPIJSON.storage.compatibility -->
+<!-- UTSAPIJSON.clearStorageSync.compatibility -->
 
-<!-- UTSAPIJSON.storage.tutorial -->
+<!-- UTSAPIJSON.clearStorageSync.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

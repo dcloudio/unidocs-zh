@@ -1,62 +1,62 @@
 ## uni.navigateTo(options) @navigateto
 
-<!-- UTSAPIJSON.navigator.description -->
+<!-- UTSAPIJSON.navigateTo.description -->
 
-<!-- UTSAPIJSON.navigator.param -->
+<!-- UTSAPIJSON.navigateTo.param -->
 
-<!-- UTSAPIJSON.navigator.returnValue -->
+<!-- UTSAPIJSON.navigateTo.returnValue -->
 
-<!-- UTSAPIJSON.navigator.compatibility -->
+<!-- UTSAPIJSON.navigateTo.compatibility -->
 
-<!-- UTSAPIJSON.navigator.tutorial -->
+<!-- UTSAPIJSON.navigateTo.tutorial -->
 
 ## uni.redirectTo(options) @redirectto
 
-<!-- UTSAPIJSON.navigator.description -->
+<!-- UTSAPIJSON.redirectTo.description -->
 
-<!-- UTSAPIJSON.navigator.param -->
+<!-- UTSAPIJSON.redirectTo.param -->
 
-<!-- UTSAPIJSON.navigator.returnValue -->
+<!-- UTSAPIJSON.redirectTo.returnValue -->
 
-<!-- UTSAPIJSON.navigator.compatibility -->
+<!-- UTSAPIJSON.redirectTo.compatibility -->
 
-<!-- UTSAPIJSON.navigator.tutorial -->
+<!-- UTSAPIJSON.redirectTo.tutorial -->
 
 ## uni.reLaunch(options) @relaunch
 
-<!-- UTSAPIJSON.navigator.description -->
+<!-- UTSAPIJSON.reLaunch.description -->
 
-<!-- UTSAPIJSON.navigator.param -->
+<!-- UTSAPIJSON.reLaunch.param -->
 
-<!-- UTSAPIJSON.navigator.returnValue -->
+<!-- UTSAPIJSON.reLaunch.returnValue -->
 
-<!-- UTSAPIJSON.navigator.compatibility -->
+<!-- UTSAPIJSON.reLaunch.compatibility -->
 
-<!-- UTSAPIJSON.navigator.tutorial -->
+<!-- UTSAPIJSON.reLaunch.tutorial -->
 
 ## uni.switchTab(options) @switchtab
 
-<!-- UTSAPIJSON.navigator.description -->
+<!-- UTSAPIJSON.switchTab.description -->
 
-<!-- UTSAPIJSON.navigator.param -->
+<!-- UTSAPIJSON.switchTab.param -->
 
-<!-- UTSAPIJSON.navigator.returnValue -->
+<!-- UTSAPIJSON.switchTab.returnValue -->
 
-<!-- UTSAPIJSON.navigator.compatibility -->
+<!-- UTSAPIJSON.switchTab.compatibility -->
 
-<!-- UTSAPIJSON.navigator.tutorial -->
+<!-- UTSAPIJSON.switchTab.tutorial -->
 
 ## uni.navigateBack(options?) @navigateback
 
-<!-- UTSAPIJSON.navigator.description -->
+<!-- UTSAPIJSON.navigateBack.description -->
 
-<!-- UTSAPIJSON.navigator.param -->
+<!-- UTSAPIJSON.navigateBack.param -->
 
-<!-- UTSAPIJSON.navigator.returnValue -->
+<!-- UTSAPIJSON.navigateBack.returnValue -->
 
-<!-- UTSAPIJSON.navigator.compatibility -->
+<!-- UTSAPIJSON.navigateBack.compatibility -->
 
-<!-- UTSAPIJSON.navigator.tutorial -->
+<!-- UTSAPIJSON.navigateBack.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

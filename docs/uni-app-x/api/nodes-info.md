@@ -1,14 +1,14 @@
 ## uni.createSelectorQuery() @createselectorquery
 
-<!-- UTSAPIJSON.nodes-info.description -->
+<!-- UTSAPIJSON.createSelectorQuery.description -->
 
-<!-- UTSAPIJSON.nodes-info.param -->
+<!-- UTSAPIJSON.createSelectorQuery.param -->
 
-<!-- UTSAPIJSON.nodes-info.returnValue -->
+<!-- UTSAPIJSON.createSelectorQuery.returnValue -->
 
-<!-- UTSAPIJSON.nodes-info.compatibility -->
+<!-- UTSAPIJSON.createSelectorQuery.compatibility -->
 
-<!-- UTSAPIJSON.nodes-info.tutorial -->
+<!-- UTSAPIJSON.createSelectorQuery.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

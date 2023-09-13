@@ -25,16 +25,16 @@ HBuilder 基座的测试广告位 `adpid` 为 `1111111113`
 
 **属性说明**
 
-|属性名																			|类型													|默认值		|说明																																									|平台差异	|
-|:-																					|:-														|:-				|:-																																										|:-				|
-|adpid																			|String&#124;Number&#124;Array|					|广告位id，如果传入的是数组，会从索引0开始请求失败后继续下一个，适用于已配置底价的逻辑|					|
-|preload																		|Boolean											|true			|页面就绪后加载广告数据																																|					|
-|loadnext																		|Boolean											|false		|自动加载下一条广告数据																																|					|
-|options																		|Object												|					|透传到作用域插槽																																			|					|
-|v-slot:default="{loading, error, options}"	|															|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息																	|					|
-|@load																			|EventHandle									|加载事件	|微信小程序暂不支持																																		|					|
-|@close																			|EventHandle									|关闭事件	|微信小程序暂不支持																																		|					|
-|@error																			|EventHandle									|错误事件	|微信小程序暂不支持																																		|					|
+|属性名																			|类型								|默认值		|说明																									|平台差异	|
+|:-																					|:-									|:-				|:-																										|:-				|
+|adpid																			|String&#124;Number	|					|广告位id																							|					|
+|preload																		|Boolean						|true			|页面就绪后加载广告数据																|					|
+|loadnext																		|Boolean						|false		|自动加载下一条广告数据																|					|
+|options																		|Object							|					|透传到作用域插槽																			|					|
+|v-slot:default="{loading, error, options}"	|										|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息	|					|
+|@load																			|EventHandle				|加载事件	|微信小程序暂不支持																		|					|
+|@close																			|EventHandle				|关闭事件	|微信小程序暂不支持																		|					|
+|@error																			|EventHandle				|错误事件	|微信小程序暂不支持																		|					|
 
 **方法说明**
 

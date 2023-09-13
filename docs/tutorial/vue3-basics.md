@@ -1351,7 +1351,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 
 
 **注意**
-- `uni-app x` 暂不支持。
+- `uni-app x` 只支持 `stop` 和 `once`。
 - 为兼容各端，事件需使用 **@** 的方式绑定，请勿使用小程序端的 `bind` 和 `catch` 进行事件绑定；也不能在 JS 中使用`event.preventDefault()`和`event.stopPropagation()`方法。
 - 若需要禁止蒙版下的页面滚动，可使用 `@touchmove.stop.prevent="moveHandle"`，`moveHandle` 可以用来处理 `touchmove` 的事件，也可以是一个空函数。
 

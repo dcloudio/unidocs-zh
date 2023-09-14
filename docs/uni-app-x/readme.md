@@ -237,6 +237,8 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 
 uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，包括调用其他原生写的界面也可以。把之前的页面封装为[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)，云打包就可以用。
 
+插件市场已经有内嵌flutter的uts版本。[详见](https://ext.dcloud.net.cn/search?q=flutter&orderBy=Relevance&cat1=8)
+
 至于把 uni-app x 作为一个sdk内嵌到其他原生应用中，还在评估中。
 
 ## FAQ
@@ -255,6 +257,8 @@ uni-app x 的app端里没有js引擎，不能使用js库。除非npm上有uts的
 当然把ts的库改造成uts的库并不难，如果ts库没有使用uts不支持的web专用语法，那么可以直接使用。
 
 uni-app x编译到web和小程序时，所有js库仍然可用。
+
+常见的加密、md5等库，插件市场已经有uts版本。[详见](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&orderBy=Relevance&cat1=8&cat2=81)
 
 - uni-app x 会搞插件大赛吗？
 会。很快启动，鼓励大家做基于uts和uvue的插件。

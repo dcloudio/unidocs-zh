@@ -102,17 +102,17 @@
         "tutorial": ""
       },
       "appendChild": {
-        "name": "#### appendChild() @appendchild",
+        "name": "#### appendChild(aChild) @appendchild",
         "description": "\r\n将一个节点添加到指定父节点的子节点列表的末尾处。如果将被插入的节点已经存在于当前文档的文档树中，那么将会它从原先的位置移动到新的位置。",
-        "param": "##### 参数 \n\n| 名称 | 类型 | 必填 | 默认值 | 描述 |\n| :- | :- | :- | :- | :- |\n| undefined | [INode](/uni-app-x/dom/inode.md) | 是 | - |  |",
+        "param": "##### 参数 \n\n| 名称 | 类型 | 必填 | 默认值 | 描述 |\n| :- | :- | :- | :- | :- |\n| aChild | [INode](/uni-app-x/dom/inode.md) | 是 | - |  |",
         "returnValue": "",
         "compatibility": "",
         "tutorial": ""
       },
       "insertBefore": {
-        "name": "#### insertBefore(, ) @insertbefore",
+        "name": "#### insertBefore(newChild, refChild) @insertbefore",
         "description": "\r\n在参考节点之前插入一个拥有指定父节点的子节点。如果给定的子节点是对文档中现有节点的引用，insertBefore() 会将其从当前位置移动到新位置。",
-        "param": "##### 参数 \n\n| 名称 | 类型 | 必填 | 默认值 | 描述 |\n| :- | :- | :- | :- | :- |\n| undefined | [INode](/uni-app-x/dom/inode.md) | 是 | - |  |\n| undefined | [INode](/uni-app-x/dom/inode.md) | 是 | - |  |",
+        "param": "##### 参数 \n\n| 名称 | 类型 | 必填 | 默认值 | 描述 |\n| :- | :- | :- | :- | :- |\n| newChild | [INode](/uni-app-x/dom/inode.md) | 是 | - |  |\n| refChild | [INode](/uni-app-x/dom/inode.md) | 是 | - |  |",
         "returnValue": "",
         "compatibility": "",
         "tutorial": ""
@@ -182,9 +182,9 @@
         "tutorial": ""
       },
       "removeChild": {
-        "name": "#### removeChild() @removechild",
+        "name": "#### removeChild(aChild) @removechild",
         "description": "\r\n从节点中删除一个子节点，返回删除的节点。",
-        "param": "##### 参数 \n\n| 名称 | 类型 | 必填 | 默认值 | 描述 |\n| :- | :- | :- | :- | :- |\n| undefined | [INode](/uni-app-x/dom/inode.md) | 是 | - |  |",
+        "param": "##### 参数 \n\n| 名称 | 类型 | 必填 | 默认值 | 描述 |\n| :- | :- | :- | :- | :- |\n| aChild | [INode](/uni-app-x/dom/inode.md) | 是 | - |  |",
         "returnValue": "##### 返回值 \n\n| 类型 |\n| :- |\n| [INode](/uni-app-x/dom/inode.md) | \n",
         "compatibility": "",
         "tutorial": ""
@@ -198,9 +198,9 @@
         "tutorial": ""
       },
       "dispatchEvent": {
-        "name": "#### dispatchEvent(type, Event) @dispatchevent",
+        "name": "#### dispatchEvent(type, value) @dispatchevent",
         "description": "\r\n向一个指定的事件目标派发一个 Event，并以合适的顺序（同步地）调用此事件的监听器回调函数。",
-        "param": "##### 参数 \n\n| 名称 | 类型 | 必填 | 默认值 | 描述 |\n| :- | :- | :- | :- | :- |\n| type | string | 是 | - | - |\n| Event | [Event](/uni-app-x/component/common#event) | 是 | - |  |",
+        "param": "##### 参数 \n\n| 名称 | 类型 | 必填 | 默认值 | 描述 |\n| :- | :- | :- | :- | :- |\n| type | string | 是 | - | - |\n| value | [Event](/uni-app-x/component/common#event) | 是 | - |  |",
         "returnValue": "",
         "compatibility": "",
         "tutorial": ""

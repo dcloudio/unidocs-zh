@@ -12,9 +12,11 @@
 
 ## button样式修改@style
 
+button在元素的text区域直接写文字，和text组件一样。可以这么理解，button是一个特殊的text组件，文字样式可以直接写在button组件的style或class上。
+
 button组件属性中的size和type，属于预置样式，方便开发者使用。开发者也可以通过style和class来自定义样式。
 
-button虽然可以内嵌text组件，但不建议通过text组件来修改button样式，因为会导致hove-class不生效。尤其是uvue中样式不继承。建议直接在button组件的style或class属性编写样式。
+button虽然可以内嵌text组件，但不建议通过text组件来修改button样式，因为会导致hove-class不生效。尤其是uvue中样式不继承。建议button组件text区域直接写文字，然后在button组件的style或class属性编写样式。
 
 style和class的优先级，高于size和type属性。
 

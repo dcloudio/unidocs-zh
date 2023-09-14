@@ -8,7 +8,7 @@
 
 <!-- CSSJSON.background-image.compatibility -->
 
-#### App平台差异  
+#### App平台  
 App平台暂不支持背景图，仅支持linear-gradient设置背景渐变色。  
 linear-gradient仅支持三个参数，格式如下：
 ```

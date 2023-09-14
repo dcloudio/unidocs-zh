@@ -113,3 +113,15 @@ uniCloud目前还不支持：
 <!-- UTSUNICLOUDAPIJSON.offRefreshToken.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.offRefreshToken.tutorial -->
+
+## databaseForJQL(callback) @databaseforjql
+
+<!-- UTSUNICLOUDAPIJSON.databaseForJQL.description -->
+
+<!-- UTSUNICLOUDAPIJSON.databaseForJQL.param -->
+
+<!-- UTSUNICLOUDAPIJSON.databaseForJQL.returnValue -->
+
+<!-- UTSUNICLOUDAPIJSON.databaseForJQL.compatibility -->
+
+<!-- UTSUNICLOUDAPIJSON.databaseForJQL.tutorial -->

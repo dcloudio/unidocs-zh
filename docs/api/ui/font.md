@@ -19,7 +19,7 @@ app-nvue不支持本api，而是使用 Weex 提供的 DOM.addRule 加载自定�
 |global|Boolean|false|否|是否全局生效。微信小程序 `'2.10.0'`起支持全局生效，需在 `app.vue` 中调用。|
 |family|String||是|定义的字体名称|
 |source|String||是|字体资源的地址。见下|
-|desc|Object||否|可选的字体描述符（app-uvue 暂不支持）|
+|desc|Object||否|可选的字体描述符（uni-app x 暂不支持）|
 |success|Function||否|接口调用成功的回调函数|
 |fail|Function||否|接口调用失败的回调函数|
 |complete|Function||否|接口调用结束的回调函数（调用成功、失败都会执行）|

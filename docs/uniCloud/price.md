@@ -295,7 +295,6 @@ Under the new billing model, the model of **basic package + pay-as-you-go** is u
 - 云函数出网流量包含请求三方服务器发送的数据和返回给客户端的数据
 - The outbound traffic of the cloud function includes the data sent by the third-party server and the data returned to the client
 - clientDB底层也是基于云函数实现，也会消耗云函数调用次数
-- 腾讯云云函数资源使用量GBs的计算方式为，云函数设置的运行内存*云函数实际执行时间，执行时间以100ms为阶梯向上取整
 
 ### 超套餐后按量付费/超量使用定价@tencent-postpay
 

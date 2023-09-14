@@ -57,7 +57,7 @@
 
 |属性名														|类型													|默认值		|说明																																									|平台差异	|
 |:-																|:-														|:-				|:-																																										|:-				|
-|adpid														|String&#124;Number&#124;Array|					|广告位id，到uniad后台申请。如果传入的是数组，会从索引0开始请求失败后继续下一个，适用于已配置底价的逻辑|					|
+|adpid														|String&#124;Number|					|广告位id，到uniad后台申请。|					|
 |preload													|Boolean											|true			|页面就绪后加载广告数据																																|					|
 |loadnext													|Boolean											|false		|自动加载下一条广告数据																																|					|
 |disabled													|Boolean											|false		|禁用默认点击行为																																			|					|

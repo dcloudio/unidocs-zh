@@ -1,38 +1,38 @@
 ## uni.chooseImage(options) @chooseimage
 
-<!-- UTSAPIJSON.preview-image.description -->
+<!-- UTSAPIJSON.chooseImage.description -->
 
-<!-- UTSAPIJSON.preview-image.param -->
+<!-- UTSAPIJSON.chooseImage.param -->
 
-<!-- UTSAPIJSON.preview-image.returnValue -->
+<!-- UTSAPIJSON.chooseImage.returnValue -->
 
-<!-- UTSAPIJSON.preview-image.compatibility -->
+<!-- UTSAPIJSON.chooseImage.compatibility -->
 
-<!-- UTSAPIJSON.preview-image.tutorial -->
+<!-- UTSAPIJSON.chooseImage.tutorial -->
 
 ## uni.previewImage(options) @previewimage
 
-<!-- UTSAPIJSON.preview-image.description -->
+<!-- UTSAPIJSON.previewImage.description -->
 
-<!-- UTSAPIJSON.preview-image.param -->
+<!-- UTSAPIJSON.previewImage.param -->
 
-<!-- UTSAPIJSON.preview-image.returnValue -->
+<!-- UTSAPIJSON.previewImage.returnValue -->
 
-<!-- UTSAPIJSON.preview-image.compatibility -->
+<!-- UTSAPIJSON.previewImage.compatibility -->
 
-<!-- UTSAPIJSON.preview-image.tutorial -->
+<!-- UTSAPIJSON.previewImage.tutorial -->
 
 ## uni.closePreviewImage(options) @closepreviewimage
 
-<!-- UTSAPIJSON.preview-image.description -->
+<!-- UTSAPIJSON.closePreviewImage.description -->
 
-<!-- UTSAPIJSON.preview-image.param -->
+<!-- UTSAPIJSON.closePreviewImage.param -->
 
-<!-- UTSAPIJSON.preview-image.returnValue -->
+<!-- UTSAPIJSON.closePreviewImage.returnValue -->
 
-<!-- UTSAPIJSON.preview-image.compatibility -->
+<!-- UTSAPIJSON.closePreviewImage.compatibility -->
 
-<!-- UTSAPIJSON.preview-image.tutorial -->
+<!-- UTSAPIJSON.closePreviewImage.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

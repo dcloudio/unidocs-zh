@@ -1,86 +1,86 @@
 ## uni.connectSocket(options) @connectsocket
 
-<!-- UTSAPIJSON.websocket-global.description -->
+<!-- UTSAPIJSON.connectSocket.description -->
 
-<!-- UTSAPIJSON.websocket-global.param -->
+<!-- UTSAPIJSON.connectSocket.param -->
 
-<!-- UTSAPIJSON.websocket-global.returnValue -->
+<!-- UTSAPIJSON.connectSocket.returnValue -->
 
-<!-- UTSAPIJSON.websocket-global.compatibility -->
+<!-- UTSAPIJSON.connectSocket.compatibility -->
 
-<!-- UTSAPIJSON.websocket-global.tutorial -->
+<!-- UTSAPIJSON.connectSocket.tutorial -->
 
 ## uni.onSocketOpen(options) @onsocketopen
 
-<!-- UTSAPIJSON.websocket-global.description -->
+<!-- UTSAPIJSON.onSocketOpen.description -->
 
-<!-- UTSAPIJSON.websocket-global.param -->
+<!-- UTSAPIJSON.onSocketOpen.param -->
 
-<!-- UTSAPIJSON.websocket-global.returnValue -->
+<!-- UTSAPIJSON.onSocketOpen.returnValue -->
 
-<!-- UTSAPIJSON.websocket-global.compatibility -->
+<!-- UTSAPIJSON.onSocketOpen.compatibility -->
 
-<!-- UTSAPIJSON.websocket-global.tutorial -->
+<!-- UTSAPIJSON.onSocketOpen.tutorial -->
 
 ## uni.onSocketError(callback) @onsocketerror
 
-<!-- UTSAPIJSON.websocket-global.description -->
+<!-- UTSAPIJSON.onSocketError.description -->
 
-<!-- UTSAPIJSON.websocket-global.param -->
+<!-- UTSAPIJSON.onSocketError.param -->
 
-<!-- UTSAPIJSON.websocket-global.returnValue -->
+<!-- UTSAPIJSON.onSocketError.returnValue -->
 
-<!-- UTSAPIJSON.websocket-global.compatibility -->
+<!-- UTSAPIJSON.onSocketError.compatibility -->
 
-<!-- UTSAPIJSON.websocket-global.tutorial -->
+<!-- UTSAPIJSON.onSocketError.tutorial -->
 
 ## uni.sendSocketMessage(options) @sendsocketmessage
 
-<!-- UTSAPIJSON.websocket-global.description -->
+<!-- UTSAPIJSON.sendSocketMessage.description -->
 
-<!-- UTSAPIJSON.websocket-global.param -->
+<!-- UTSAPIJSON.sendSocketMessage.param -->
 
-<!-- UTSAPIJSON.websocket-global.returnValue -->
+<!-- UTSAPIJSON.sendSocketMessage.returnValue -->
 
-<!-- UTSAPIJSON.websocket-global.compatibility -->
+<!-- UTSAPIJSON.sendSocketMessage.compatibility -->
 
-<!-- UTSAPIJSON.websocket-global.tutorial -->
+<!-- UTSAPIJSON.sendSocketMessage.tutorial -->
 
 ## uni.onSocketMessage(callback) @onsocketmessage
 
-<!-- UTSAPIJSON.websocket-global.description -->
+<!-- UTSAPIJSON.onSocketMessage.description -->
 
-<!-- UTSAPIJSON.websocket-global.param -->
+<!-- UTSAPIJSON.onSocketMessage.param -->
 
-<!-- UTSAPIJSON.websocket-global.returnValue -->
+<!-- UTSAPIJSON.onSocketMessage.returnValue -->
 
-<!-- UTSAPIJSON.websocket-global.compatibility -->
+<!-- UTSAPIJSON.onSocketMessage.compatibility -->
 
-<!-- UTSAPIJSON.websocket-global.tutorial -->
+<!-- UTSAPIJSON.onSocketMessage.tutorial -->
 
 ## uni.closeSocket(options) @closesocket
 
-<!-- UTSAPIJSON.websocket-global.description -->
+<!-- UTSAPIJSON.closeSocket.description -->
 
-<!-- UTSAPIJSON.websocket-global.param -->
+<!-- UTSAPIJSON.closeSocket.param -->
 
-<!-- UTSAPIJSON.websocket-global.returnValue -->
+<!-- UTSAPIJSON.closeSocket.returnValue -->
 
-<!-- UTSAPIJSON.websocket-global.compatibility -->
+<!-- UTSAPIJSON.closeSocket.compatibility -->
 
-<!-- UTSAPIJSON.websocket-global.tutorial -->
+<!-- UTSAPIJSON.closeSocket.tutorial -->
 
 ## uni.onSocketClose(callback) @onsocketclose
 
-<!-- UTSAPIJSON.websocket-global.description -->
+<!-- UTSAPIJSON.onSocketClose.description -->
 
-<!-- UTSAPIJSON.websocket-global.param -->
+<!-- UTSAPIJSON.onSocketClose.param -->
 
-<!-- UTSAPIJSON.websocket-global.returnValue -->
+<!-- UTSAPIJSON.onSocketClose.returnValue -->
 
-<!-- UTSAPIJSON.websocket-global.compatibility -->
+<!-- UTSAPIJSON.onSocketClose.compatibility -->
 
-<!-- UTSAPIJSON.websocket-global.tutorial -->
+<!-- UTSAPIJSON.onSocketClose.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

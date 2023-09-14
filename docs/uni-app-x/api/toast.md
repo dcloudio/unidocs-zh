@@ -1,14 +1,14 @@
 ## uni.showToast(options) @showtoast
 
-<!-- UTSAPIJSON.toast.description -->
+<!-- UTSAPIJSON.showToast.description -->
 
-<!-- UTSAPIJSON.toast.param -->
+<!-- UTSAPIJSON.showToast.param -->
 
-<!-- UTSAPIJSON.toast.returnValue -->
+<!-- UTSAPIJSON.showToast.returnValue -->
 
-<!-- UTSAPIJSON.toast.compatibility -->
+<!-- UTSAPIJSON.showToast.compatibility -->
 
-<!-- UTSAPIJSON.toast.tutorial -->
+<!-- UTSAPIJSON.showToast.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

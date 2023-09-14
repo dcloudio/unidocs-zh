@@ -1,98 +1,98 @@
 ## uni.setTabBarBadge(options) @settabbarbadge
 
-<!-- UTSAPIJSON.set-tabbar.description -->
+<!-- UTSAPIJSON.setTabBarBadge.description -->
 
-<!-- UTSAPIJSON.set-tabbar.param -->
+<!-- UTSAPIJSON.setTabBarBadge.param -->
 
-<!-- UTSAPIJSON.set-tabbar.returnValue -->
+<!-- UTSAPIJSON.setTabBarBadge.returnValue -->
 
-<!-- UTSAPIJSON.set-tabbar.compatibility -->
+<!-- UTSAPIJSON.setTabBarBadge.compatibility -->
 
-<!-- UTSAPIJSON.set-tabbar.tutorial -->
+<!-- UTSAPIJSON.setTabBarBadge.tutorial -->
 
 ## uni.removeTabBarBadge(options) @removetabbarbadge
 
-<!-- UTSAPIJSON.set-tabbar.description -->
+<!-- UTSAPIJSON.removeTabBarBadge.description -->
 
-<!-- UTSAPIJSON.set-tabbar.param -->
+<!-- UTSAPIJSON.removeTabBarBadge.param -->
 
-<!-- UTSAPIJSON.set-tabbar.returnValue -->
+<!-- UTSAPIJSON.removeTabBarBadge.returnValue -->
 
-<!-- UTSAPIJSON.set-tabbar.compatibility -->
+<!-- UTSAPIJSON.removeTabBarBadge.compatibility -->
 
-<!-- UTSAPIJSON.set-tabbar.tutorial -->
+<!-- UTSAPIJSON.removeTabBarBadge.tutorial -->
 
 ## uni.setTabBarItem(options) @settabbaritem
 
-<!-- UTSAPIJSON.set-tabbar.description -->
+<!-- UTSAPIJSON.setTabBarItem.description -->
 
-<!-- UTSAPIJSON.set-tabbar.param -->
+<!-- UTSAPIJSON.setTabBarItem.param -->
 
-<!-- UTSAPIJSON.set-tabbar.returnValue -->
+<!-- UTSAPIJSON.setTabBarItem.returnValue -->
 
-<!-- UTSAPIJSON.set-tabbar.compatibility -->
+<!-- UTSAPIJSON.setTabBarItem.compatibility -->
 
-<!-- UTSAPIJSON.set-tabbar.tutorial -->
+<!-- UTSAPIJSON.setTabBarItem.tutorial -->
 
 ## uni.setTabBarStyle(options) @settabbarstyle
 
-<!-- UTSAPIJSON.set-tabbar.description -->
+<!-- UTSAPIJSON.setTabBarStyle.description -->
 
-<!-- UTSAPIJSON.set-tabbar.param -->
+<!-- UTSAPIJSON.setTabBarStyle.param -->
 
-<!-- UTSAPIJSON.set-tabbar.returnValue -->
+<!-- UTSAPIJSON.setTabBarStyle.returnValue -->
 
-<!-- UTSAPIJSON.set-tabbar.compatibility -->
+<!-- UTSAPIJSON.setTabBarStyle.compatibility -->
 
-<!-- UTSAPIJSON.set-tabbar.tutorial -->
+<!-- UTSAPIJSON.setTabBarStyle.tutorial -->
 
 ## uni.hideTabBar(options?) @hidetabbar
 
-<!-- UTSAPIJSON.set-tabbar.description -->
+<!-- UTSAPIJSON.hideTabBar.description -->
 
-<!-- UTSAPIJSON.set-tabbar.param -->
+<!-- UTSAPIJSON.hideTabBar.param -->
 
-<!-- UTSAPIJSON.set-tabbar.returnValue -->
+<!-- UTSAPIJSON.hideTabBar.returnValue -->
 
-<!-- UTSAPIJSON.set-tabbar.compatibility -->
+<!-- UTSAPIJSON.hideTabBar.compatibility -->
 
-<!-- UTSAPIJSON.set-tabbar.tutorial -->
+<!-- UTSAPIJSON.hideTabBar.tutorial -->
 
 ## uni.showTabBar(options?) @showtabbar
 
-<!-- UTSAPIJSON.set-tabbar.description -->
+<!-- UTSAPIJSON.showTabBar.description -->
 
-<!-- UTSAPIJSON.set-tabbar.param -->
+<!-- UTSAPIJSON.showTabBar.param -->
 
-<!-- UTSAPIJSON.set-tabbar.returnValue -->
+<!-- UTSAPIJSON.showTabBar.returnValue -->
 
-<!-- UTSAPIJSON.set-tabbar.compatibility -->
+<!-- UTSAPIJSON.showTabBar.compatibility -->
 
-<!-- UTSAPIJSON.set-tabbar.tutorial -->
+<!-- UTSAPIJSON.showTabBar.tutorial -->
 
 ## uni.showTabBarRedDot(options) @showtabbarreddot
 
-<!-- UTSAPIJSON.set-tabbar.description -->
+<!-- UTSAPIJSON.showTabBarRedDot.description -->
 
-<!-- UTSAPIJSON.set-tabbar.param -->
+<!-- UTSAPIJSON.showTabBarRedDot.param -->
 
-<!-- UTSAPIJSON.set-tabbar.returnValue -->
+<!-- UTSAPIJSON.showTabBarRedDot.returnValue -->
 
-<!-- UTSAPIJSON.set-tabbar.compatibility -->
+<!-- UTSAPIJSON.showTabBarRedDot.compatibility -->
 
-<!-- UTSAPIJSON.set-tabbar.tutorial -->
+<!-- UTSAPIJSON.showTabBarRedDot.tutorial -->
 
 ## uni.hideTabBarRedDot(options) @hidetabbarreddot
 
-<!-- UTSAPIJSON.set-tabbar.description -->
+<!-- UTSAPIJSON.hideTabBarRedDot.description -->
 
-<!-- UTSAPIJSON.set-tabbar.param -->
+<!-- UTSAPIJSON.hideTabBarRedDot.param -->
 
-<!-- UTSAPIJSON.set-tabbar.returnValue -->
+<!-- UTSAPIJSON.hideTabBarRedDot.returnValue -->
 
-<!-- UTSAPIJSON.set-tabbar.compatibility -->
+<!-- UTSAPIJSON.hideTabBarRedDot.compatibility -->
 
-<!-- UTSAPIJSON.set-tabbar.tutorial -->
+<!-- UTSAPIJSON.hideTabBarRedDot.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

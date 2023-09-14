@@ -1,25 +1,35 @@
-# CSSStyleDeclaration  
+## CSSStyleDeclaration
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.description -->
-
-<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.package -->
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.extends -->
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.param -->
 
+### 方法
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.name -->
 
-## setProperty(name, value)@setProperty
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.description -->
 
-```ts
-CSSStyleDeclaration.setProperty(name:string, value:any):void
-```
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.param -->
 
-## getPropertyValue(property)@getPropertyValue
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.returnValue -->
 
-```ts
-CSSStyleDeclaration.getPropertyValue(property:string):any?
-```
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.name -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.description -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.param -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.tutorial -->
 
 ## 示例
 ```html

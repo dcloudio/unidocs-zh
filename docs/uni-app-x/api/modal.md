@@ -1,14 +1,14 @@
 ## uni.showModal(options) @showmodal
 
-<!-- UTSAPIJSON.modal.description -->
+<!-- UTSAPIJSON.showModal.description -->
 
-<!-- UTSAPIJSON.modal.param -->
+<!-- UTSAPIJSON.showModal.param -->
 
-<!-- UTSAPIJSON.modal.returnValue -->
+<!-- UTSAPIJSON.showModal.returnValue -->
 
-<!-- UTSAPIJSON.modal.compatibility -->
+<!-- UTSAPIJSON.showModal.compatibility -->
 
-<!-- UTSAPIJSON.modal.tutorial -->
+<!-- UTSAPIJSON.showModal.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

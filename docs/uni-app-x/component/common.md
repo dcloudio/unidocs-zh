@@ -87,27 +87,75 @@ handleClick (event : MouseEvent) {
 
 <!-- CUSTOMTYPEJSON.Event.description -->
 
-<!-- CUSTOMTYPEJSON.Event.package -->
-
 <!-- CUSTOMTYPEJSON.Event.extends -->
 
 <!-- CUSTOMTYPEJSON.Event.param -->
+
+
+
+### 方法
+<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.name -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.description -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.param -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.returnValue -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.compatibility -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.tutorial -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.name -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.description -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.param -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.returnValue -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.compatibility -->
+
+<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.tutorial -->
 
 ## CustomEvent
 
 <!-- CUSTOMTYPEJSON.CustomEvent.description -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.package -->
-
 <!-- CUSTOMTYPEJSON.CustomEvent.extends -->
 
 <!-- CUSTOMTYPEJSON.CustomEvent.param -->
 
+
+
+### 方法
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.name -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.description -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.param -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.name -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.description -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.param -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.tutorial -->
+
 ## CustomEventOptions
 
 <!-- CUSTOMTYPEJSON.CustomEventOptions.description -->
-
-<!-- CUSTOMTYPEJSON.CustomEventOptions.package -->
 
 <!-- CUSTOMTYPEJSON.CustomEventOptions.extends -->
 
@@ -117,29 +165,72 @@ handleClick (event : MouseEvent) {
 
 <!-- CUSTOMTYPEJSON.MouseEvent.description -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.package -->
-
 <!-- CUSTOMTYPEJSON.MouseEvent.extends -->
 
 <!-- CUSTOMTYPEJSON.MouseEvent.param -->
+
+### 方法
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.name -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.description -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.param -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.returnValue -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.compatibility -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.tutorial -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.name -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.description -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.param -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.returnValue -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.compatibility -->
+
+<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.tutorial -->
 
 ## TouchEvent
 
 <!-- CUSTOMTYPEJSON.TouchEvent.description -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.package -->
-
 <!-- CUSTOMTYPEJSON.TouchEvent.extends -->
 
 <!-- CUSTOMTYPEJSON.TouchEvent.param -->
+
+### 方法
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.name -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.description -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.param -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.returnValue -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.compatibility -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.tutorial -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.name -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.description -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.param -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.returnValue -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.compatibility -->
+
+<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.tutorial -->
 
 ## Touch
 
 <!-- CUSTOMTYPEJSON.Touch.description -->
 
-<!-- CUSTOMTYPEJSON.Touch.package -->
-
 <!-- CUSTOMTYPEJSON.Touch.extends -->
 
 <!-- CUSTOMTYPEJSON.Touch.param -->
-

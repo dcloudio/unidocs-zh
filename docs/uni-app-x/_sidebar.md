@@ -20,7 +20,7 @@
   * [概述](vue/README.md)
   * [基础](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html)
   * [组件](https://uniapp.dcloud.net.cn/tutorial/vue3-components.html)
-  * [API](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html)
+  * [API](vue/api.md)
 * 组件
   * [概述](component/README.md)
   * [公共属性和事件](component/common.md)

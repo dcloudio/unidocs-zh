@@ -43,7 +43,7 @@
 	export default {
 		methods: {
 			showPop: function () {
-				(this.$refs["pop"] as INode).style.setProperty("display","flex")
+				(this.$refs["pop"] as Element).style.setProperty("display","flex")
 			}
 		}
 	}

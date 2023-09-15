@@ -3,6 +3,58 @@
 
 Number 对象是经过封装的能让你处理数字值的对象。
 
+## 实例属性
+
+### MAX_VALUE
+
+<!-- UTSJSON.Number.MAX_VALUE.description -->
+
+<!-- UTSJSON.Number.MAX_VALUE.param -->
+
+<!-- UTSJSON.Number.MAX_VALUE.returnValue -->
+
+<!-- UTSJSON.Number.MAX_VALUE.compatibility -->
+
+### MIN_VALUE
+
+<!-- UTSJSON.Number.MIN_VALUE.description -->
+
+<!-- UTSJSON.Number.MIN_VALUE.param -->
+
+<!-- UTSJSON.Number.MIN_VALUE.returnValue -->
+
+<!-- UTSJSON.Number.MIN_VALUE.compatibility -->
+
+### NaN
+
+<!-- UTSJSON.Number.NaN.description -->
+
+<!-- UTSJSON.Number.NaN.param -->
+
+<!-- UTSJSON.Number.NaN.returnValue -->
+
+<!-- UTSJSON.Number.NaN.compatibility -->
+
+### NEGATIVE_INFINITY
+
+<!-- UTSJSON.Number.NEGATIVE_INFINITY.description -->
+
+<!-- UTSJSON.Number.NEGATIVE_INFINITY.param -->
+
+<!-- UTSJSON.Number.NEGATIVE_INFINITY.returnValue -->
+
+<!-- UTSJSON.Number.NEGATIVE_INFINITY.compatibility -->
+
+### POSITIVE_INFINITY
+
+<!-- UTSJSON.Number.POSITIVE_INFINITY.description -->
+
+<!-- UTSJSON.Number.POSITIVE_INFINITY.param -->
+
+<!-- UTSJSON.Number.POSITIVE_INFINITY.returnValue -->
+
+<!-- UTSJSON.Number.POSITIVE_INFINITY.compatibility -->
+
 ## 实例方法
 
 

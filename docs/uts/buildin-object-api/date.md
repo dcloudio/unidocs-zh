@@ -15,15 +15,14 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 - uts 的时间由世界标准时间（UTC）1970 年 1 月 1 日开始，用毫秒计时，一天由 86,400,000 毫秒组成。Date 对象的范围是 -100,000,000 天至 100,000,000 天（等效的毫秒值）。
 
 ## 静态方法
-### now
 
-表示自 UNIX 纪元开始（1970 年 1 月 1 日 00:00:00 (UTC)）到当前时间的毫秒数。
+### now()
 
-**平台差异说明**
+<!-- UTSJSON.Date.now.description -->
 
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
+<!-- UTSJSON.Date.now.param -->
+
+<!-- UTSJSON.Date.now.returnValue -->
 
 ```ts
 // this example takes 2 seconds to run
@@ -36,6 +35,7 @@ setTimeout(() => {
   // expected output: seconds elapsed = 2
 }, 2000)
 ```
+<!-- UTSJSON.Date.now.compatibility -->
 
 ## 实例方法
 

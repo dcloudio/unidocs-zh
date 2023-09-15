@@ -405,3 +405,73 @@ console.log(sentence.toUpperCase());
 <!-- UTSJSON.String.trim.returnValue -->
 
 <!-- UTSJSON.String.trim.compatibility -->
+
+### padStart(targetLength, padString?)
+
+<!-- UTSJSON.String.padStart.description -->
+
+<!-- UTSJSON.String.padStart.param -->
+
+<!-- UTSJSON.String.padStart.returnValue -->
+
+<!-- UTSJSON.String.padStart.compatibility -->
+
+### padEnd(targetLength, padString?)
+
+<!-- UTSJSON.String.padEnd.description -->
+
+<!-- UTSJSON.String.padEnd.param -->
+
+<!-- UTSJSON.String.padEnd.returnValue -->
+
+<!-- UTSJSON.String.padEnd.compatibility -->
+
+### includes(searchString, position?)
+
+<!-- UTSJSON.String.includes.description -->
+
+<!-- UTSJSON.String.includes.param -->
+
+<!-- UTSJSON.String.includes.returnValue -->
+
+<!-- UTSJSON.String.includes.compatibility -->
+
+### endsWith(searchString, endPosition?)
+
+<!-- UTSJSON.String.endsWith.description -->
+
+<!-- UTSJSON.String.endsWith.param -->
+
+<!-- UTSJSON.String.endsWith.returnValue -->
+
+<!-- UTSJSON.String.endsWith.compatibility -->
+
+### repeat(count)
+
+<!-- UTSJSON.String.repeat.description -->
+
+<!-- UTSJSON.String.repeat.param -->
+
+<!-- UTSJSON.String.repeat.returnValue -->
+
+<!-- UTSJSON.String.repeat.compatibility -->
+
+### startsWith(searchString, position?)
+
+<!-- UTSJSON.String.startsWith.description -->
+
+<!-- UTSJSON.String.startsWith.param -->
+
+<!-- UTSJSON.String.startsWith.returnValue -->
+
+<!-- UTSJSON.String.startsWith.compatibility -->
+
+### at(index)
+
+<!-- UTSJSON.String.at.description -->
+
+<!-- UTSJSON.String.at.param -->
+
+<!-- UTSJSON.String.at.returnValue -->
+
+<!-- UTSJSON.String.at.compatibility -->

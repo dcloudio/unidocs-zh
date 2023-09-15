@@ -178,7 +178,7 @@
   * [lines](css/lines.md)
 * UVUE DOM
   * [DOM概述](dom/)
-  * [INode](dom/inode.md)
+  * [Element](dom/element.md)
   * [DOMRect](dom/domrect.md)
   * [CSSStyleDeclaration](dom/cssstyledeclaration.md)
   * [DrawableContext](dom/drawablecontext.md)

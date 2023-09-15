@@ -595,9 +595,7 @@ Configure the specific style when compiling to the App platform, and some common
 |splitLine|Boolean |false|标题栏的底部分割线([SplitLineStyles](/collocation/pages?id=app-titleNView-splitLineStyles))，设置此属性则在标题栏控件的底部显示分割线，可配置颜色值及高度。 设置此属性值为undefined或null则隐藏分割线。 默认不显示底部分割线|2.6.6|
 | splitLine| Boolean | false|The split line at the bottom of the title bar ([SplitLineStyles](/collocation/pages?id=app-titleNView-splitLineStyles)), setting this property will display the split line at the bottom of the title bar control, and the color can be configured value and height. Setting this property value to undefined or null hides the dividing line. Bottom divider not shown by default | 2.6.6|
 |subtitleColor|String||副标题文字颜色，颜色值格式为"#RRGGBB"和"rgba(R,G,B,A)"，如"#FF0000"表示标题文字颜色为红色。 默认值与主标题文字颜色一致|2.6.6|
-| subtitleColor| String|| Subtitle text color, the color value format is "#RRGGBB" and "rgba(R,G,B,A)", such as "#FF0000" means the title text color is red. The default value is the same as the main title text color|2.6.6|
-|subtitleSize|String|"auto"|副标题文字字体大小，字体大小单位为像素，如"14px"表示字体大小为14像素，默认值为12像素。|2.6.6|
-| subtitleSize| String|"auto"|The subtitle text font size, the font size unit is pixel, such as "14px" means the font size is 14 pixels, and the default value is 12 pixels. |2.6.6|
+|subtitleSize|String|"auto"|副标题文字字体大小，字体大小单位为像素，如"14px"表示字体大小为14像素，auto表示自动计算，约为12像素。|2.6.6|
 |subtitleOverflow|String|"ellipsis"|标题文字超出显示区域时处理方式，可取值： "clip" - 超出显示区域时内容裁剪； "ellipsis" - 超出显示区域时尾部显示省略标记（...）。|2.6.6|
 | subtitleOverflow| String|"ellipsis"|The processing method when the title text exceeds the display area, possible values: "clip" - the content is clipped when it exceeds the display area; "ellipsis" - the ellipsis mark is displayed at the end when it exceeds the display area (...) . |2.6.6|
 |subtitleText|String||副标题文字内容，设置副标后将显示两行标题，副标显示在主标题（titleText）下方。 注意：设置副标题后将居左显示|2.6.6|

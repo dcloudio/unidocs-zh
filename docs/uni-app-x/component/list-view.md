@@ -10,6 +10,8 @@
 
 list-view和scroll-view都是滚动组件，list适用于长列表场景，其他场景适用于scroll-view。
 
+注意: list-view仅识别list-item组件其他组件无法识别不能正常显示
+
 <!-- UTSCOMJSON.list-view.attrubute -->
 
 <!-- UTSCOMJSON.list-view.event -->

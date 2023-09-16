@@ -589,7 +589,8 @@ So far, we have completed the packaging of the native ability to obtain electric
 
 ```ts
 
-import getBatteryCapacity from "@/uni_modules/uni-getbatteryinfo";
+import { getBatteryCapacity } from "@/uni_modules/uni-getbatteryinfo";
+
 console.log(getBatteryCapacity())
 
 ```

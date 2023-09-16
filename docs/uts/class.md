@@ -260,6 +260,9 @@ class Person {
 // 定义子类
 class Developer extends Person{
 	likeLanguage:string = "ts"
+  constructor(newname:string) {
+    supper(newname)
+	}
 }
 
 let d = new Developer("tom"); // 实例化。由于子类没有声明和复写自己的构造函数，所以默认继承了父类的构造函数
@@ -267,6 +270,7 @@ console.log(d.name); // tom
 console.log(d.likeLanguage); // ts
 ```
 
+- 子类必须包含构造函数的实现且必须使用 `supper` 调用父类的构造函数。
 - 如果要控制父类中某些属性方法不被子类继承，可使用可见性修饰符（private、protected等），具体[见下](#modifier)
 - 多重继承：子类还可以被孙类继承
 
@@ -284,6 +288,9 @@ class Polygon {
 }
 
 class Square extends Polygon {
+    constructor() {
+      supper()
+    }
     override name(): string {
         return "Square";
     }
@@ -302,7 +309,10 @@ class Shape {
 }
 
 class Rectangle extends Shape {
-    override  vertexCount = 4
+    constructor() {
+        supper()
+    }
+    override vertexCount = 4
 }
 ```
 
@@ -315,6 +325,9 @@ class Rectangle {
     draw() {}
 }
 class FilledRectangle extends Rectangle {
+    constructor() {
+        supper()
+    }
     override draw() {
         super.draw();
     }

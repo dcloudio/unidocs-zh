@@ -610,7 +610,7 @@ type GetBatteryInfoOptions = {
     complete?: (res: object) => void
 }
 
-export default function getBatteryInfo(options: GetBatteryInfoOptions) {
+export function getBatteryInfo(options: GetBatteryInfoOptions) {
     const context = UTSAndroid.getAppContext();
     if (context != null) {
         const manager = context.getSystemService(
@@ -644,7 +644,7 @@ export default function getBatteryInfo(options: GetBatteryInfoOptions) {
 对应的使用代码需要调整为：
 
 ```ts
-import getBatteryInfo from "@/uni_modules/uni-getbatteryinfo";
+import {getBatteryInfo} from "@/uni_modules/uni-getbatteryinfo";
 
 getBatteryInfo({
 	success(res) {

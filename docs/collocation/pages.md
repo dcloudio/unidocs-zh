@@ -281,7 +281,8 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |属性|类型|默认值|描述|
 |:-|:-|:-|:-|
 |path|String||配置页面路径|
-|style|Object||配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style)||
+|style|Object||配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style)|
+|needLogin|Boolean|false|是否需要登录才可访问|
 
 **Tips：**
 

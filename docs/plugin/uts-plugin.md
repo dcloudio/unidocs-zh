@@ -589,7 +589,7 @@ So far, we have completed the packaging of the native ability to obtain electric
 
 ```ts
 
-import getBatteryCapacity from "@/uni_modules/uts-getbatteryinfo";
+import getBatteryCapacity from "@/uni_modules/uni-getbatteryinfo";
 console.log(getBatteryCapacity())
 
 ```
@@ -643,7 +643,7 @@ export default function getBatteryInfo(options: GetBatteryInfoOptions) {
 对应的使用代码需要调整为：
 
 ```ts
-import getBatteryInfo from "@/uni_modules/uts-getbatteryinfo";
+import getBatteryInfo from "@/uni_modules/uni-getbatteryinfo";
 
 getBatteryInfo({
 	success(res) {

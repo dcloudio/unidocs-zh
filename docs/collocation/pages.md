@@ -1364,7 +1364,9 @@ Providing tabBar configuration in pages.json is not only to facilitate rapid dev
 |midButton|Object|否||中间按钮 仅在 list 项为偶数时有效|App 2.3.4+、H5 3.0.0+|
 | midButton| Object|No||The middle button is only valid when the item in the list is even|App 2.3.4+, H5 3.0.0+|
 |iconfontSrc|String|否||list设置 iconfont 属性时，需要指定字体文件路径 |App 3.4.4+、H5 3.5.3+|
-| iconfontSrc| String|No|| list When setting the iconfont attribute, you need to specify the path of the font file |
+|backgroundImage|String|否||设置背景图片,优先级高于 backgroundColor |App|
+|backgroundRepeat|String|否||设置标题栏的背景图平铺方式，可取值："repeat" - 背景图片在垂直方向和水平方向平铺；"repeat-x" - 背景图片在水平方向平铺，垂直方向拉伸；"repeat-y" - 背景图片在垂直方向平铺，水平方向拉伸；"no-repeat" - 背景图片在垂直方向和水平方向都拉伸。 默认使用 "no-repeat"|App|
+|redDotColor|String|否||tabbar上红点颜色|App|
 
 其中 list 接收一个数组，数组中的每个项都是一个对象，其属性值如下：
 Among them, list receives an array, each item in the array is an object, and its attribute values are as follows:

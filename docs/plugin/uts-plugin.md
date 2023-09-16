@@ -466,7 +466,8 @@ export function getBatteryCapacity(): string {
 
 ```ts
 
-import getBatteryCapacity from "@/uni_modules/uni-getbatteryinfo";
+import { getBatteryCapacity } from "@/uni_modules/uni-getbatteryinfo";
+
 console.log(getBatteryCapacity())
 
 ```

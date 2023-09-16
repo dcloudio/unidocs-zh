@@ -340,9 +340,8 @@ Window communication reference: [https://uniapp.dcloud.net.cn/api/window/communi
 |Attribute|Type|Default|Description|
 |:-|:-|:-|:-|
 |path|String||配置页面路径|
-|path| String||Configuration page path|
-|style|Object||配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style)||
-| style| Object||Configure page window performance, configuration items refer to the following [pageStyle](/collocation/pages?id=style)||
+|style|Object||配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style)|
+|needLogin|Boolean|false|是否需要登录才可访问|
 
 **Tips：**
 

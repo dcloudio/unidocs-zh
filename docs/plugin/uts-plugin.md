@@ -541,8 +541,7 @@ Other native configuration files of the uts plugin on the iOS platform, where in
 以获取电量为例，介绍`uts`插件开发步骤
 Take the battery as an example to introduce the development steps of the `uts` plug-in
 
-**首先在 `uni_modules` 目录下新建名为 uni-getbatteryinfo 的 uts 插件**
-**First create a new uts plugin named uni-getbatteryinfo in the `uni_modules` directory**
+**首先在 `uni_modules` 目录下新建名为 uts-getbatteryinfo 的 uts 插件**
 
 #### Android平台
 #### Android platform
@@ -589,7 +588,7 @@ So far, we have completed the packaging of the native ability to obtain electric
 
 ```ts
 
-import { getBatteryCapacity } from "@/uni_modules/uni-getbatteryinfo";
+import { getBatteryCapacity } from "@/uni_modules/uts-getbatteryinfo";
 
 console.log(getBatteryCapacity())
 
@@ -621,7 +620,7 @@ export function getBatteryInfo(options: GetBatteryInfoOptions) {
         );
         const res = {
             errCode: 0,
-            errSubject: "uni-getBatteryInfo",
+            errSubject: "uts-getbatteryinfo",
             errMsg: "getBatteryInfo:ok",
             level,
             isCharging: manager.isCharging()
@@ -631,7 +630,7 @@ export function getBatteryInfo(options: GetBatteryInfoOptions) {
     } else {
         const res = {
 			errCode: 1001,
-			errSubject: "uni-getBatteryInfo",
+			errSubject: "uts-getbatteryinfo",
             errMsg: 'getBatteryInfo:fail getAppContext is null'
         }
         options.fail?.(res)
@@ -644,7 +643,7 @@ export function getBatteryInfo(options: GetBatteryInfoOptions) {
 对应的使用代码需要调整为：
 
 ```ts
-import {getBatteryInfo} from "@/uni_modules/uni-getbatteryinfo";
+import {getBatteryInfo} from "@/uni_modules/uts-getbatteryinfo";
 
 getBatteryInfo({
 	success(res) {

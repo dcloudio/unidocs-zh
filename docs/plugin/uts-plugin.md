@@ -1,8 +1,7 @@
 # UTS插件介绍
 # UTS plugin introduction
 
-## 1 介绍
-## 1 Introduction
+## 介绍
 
 > HBuilderX 3.6+ 支持uts插件
 > HBuilderX 3.6+ supports uts plugin
@@ -96,8 +95,7 @@ Different names mean that they require developers to write in different language
 - uts does not run in the js engine on the app, it is truly native.
 
 
-## 2 创建uts插件
-## 2 Create uts plugin
+## 创建uts插件
 
 ### uts 插件目录结构
 ### uts plugin directory structure
@@ -532,11 +530,9 @@ Other native configuration files of the uts plugin on the iOS platform, where in
 	+ 有关 dependencies-pods 配置和 CocoaPods 使用的更多细节[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html)
 
 
-## 3 开发uts插件
-## 3 Develop uts plugin
+## 开发uts插件
 
-### 3.1 获取电量插件示例
-### 3.1 Example of getting power plug-in
+### 获取电量插件示例
 
 以获取电量为例，介绍`uts`插件开发步骤
 Take the battery as an example to introduce the development steps of the `uts` plug-in
@@ -739,16 +735,14 @@ export default function getBatteryLevel():number {
 So far, we have completed a native capability encapsulation for obtaining power on the iOS platform.
 
 
-### 3.2 `uts`与`uni-app`环境数据交互说明
-### 3.2 Explanation of interaction between `uts` and `uni-app` environment data
+### `uts`与`uni-app`环境数据交互说明
 
 
 UTS向uni-app传值，支持下列类型：
 UTS transfers values to uni-app, and supports the following types:
 
 
-1 TS基本数据类型： number,string,boolean 等
-1 TS basic data types: number, string, boolean, etc.
+1. TS基本数据类型： number,string,boolean 等
 ```ts
 // 基础类型-Number
 // Basic type - Number
@@ -762,7 +756,7 @@ export function getPluginVersion(): string{
 }
 ```
 
-2 UTSJSONObjct 
+2. UTSJSONObjct 
 
 ```ts
 // UTSJSONObjct 示例
@@ -846,6 +840,8 @@ postUserInfo({
 
 ```
 
+更多UTSJSONObject的用法，[详见](../uts/data-type.md#UTSJSONObject)
+
 遗留问题：
 
 有些场景，我们需要参数对象包含对象数组，比如
@@ -884,8 +880,7 @@ list1.forEach((item : any) => {
 这个问题，我们稍后会改进。
 
 
-## 4 前端使用插件
-## 4 Front-end using plugins
+## 前端使用插件
 
 虽然uts插件由uts语法开发，但前端引用插件并不要求一定需要ts，普通js即可引用uts插件。
 Although the uts plug-in is developed by uts syntax, the front-end reference plug-in does not necessarily require ts, and ordinary js can reference the uts plug-in.
@@ -915,7 +910,7 @@ UTSHello.getBatteryCapacity()
 需要特别注意的是，import UTS插件时，只能到插件的根目录，不能直接引入到最终的文件
 It is important to note that when importing a UTS plug-in, you can only go to the root directory of the plug-in, and cannot directly import it into the final file
 
-```
+```ts
 // 正确的写法
 // Correct spelling
 import * as UTSHello from "../../../uni_modules/uts-osapi";
@@ -956,11 +951,9 @@ Regarding the plug-in of electricity, the plug-in market has already provided re
 更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
 For more development examples, you can refer to [HelloUTS](https://gitcode.net/dcloud/hello-uts).
 
-## 5 真机运行
-## 5 Real machine running
+## 真机运行
 
-### 5.1 UTS支持真机运行
-### 5.1 UTS supports real machine operation
+### UTS支持真机运行
 
 **uts虽然是原生代码，但同样具有真机运行功能**
 **Although uts is a native code, it also has the function of running on a real machine**
@@ -981,8 +974,7 @@ If there is no `uts compile and run plugin` in HBuilderX, it will be downloaded 
 - HBuilderX 3.6.9+，uts插件，支持本地编译和真机运行 [详情](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
 - HBuilderX 3.6.9+, uts plug-in, supports local compilation and real machine operation [Details](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
 
-### 5.2 自定义基座
-### 5.2 Custom Dock
+### 自定义基座
 
 自定义基座支持uts插件。
 Custom dock supports uts plugins.
@@ -1002,15 +994,16 @@ To sum up, all the capabilities that standard docks do not have, such as new dep
 
 #### iOS平台  
 uts插件编译需要XCode环境，因此在mac电脑安装了XCode工具时支持直接使用标准基座真机运行。
+
 在windows电脑或者mac电脑没有安装XCode工具时，需要提交云端打包生成自定义基座后才能调用uts插件。
 
-### 5.3 debug断点调试
+### debug断点调试
 uts插件支持debug断点调试。
 
 - [Android debug教程](/tutorial/debug/uni-uts-debug.md)
 - [iOS debug教程](/tutorial/debug/uni-uts-debug-ios.md)
 
-### 5.4 遗留问题
+### 遗留问题
 
 截止到HBuilderX 3.6.9 时遗留事项：
 - Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台
@@ -1019,12 +1012,10 @@ uts插件支持debug断点调试。
 Remaining matters will be upgraded and improved later.
 
 
-## 6 云端打包
-## 6 Cloud Packaging
+## 云端打包
 
 正常支持云端打包。但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。  
 Cloud packaging is normally supported. However, after packaging, uts is compiled into pure native binary code and does not support wgt hot update.
-
 
 
 ## 常见问题
@@ -1066,8 +1057,7 @@ let longVal =  1000.0.toLong()
 ### 异步任务
 ### Asynchronous tasks
 
-目前UTS 还不支持使用promise执行异步任务，类似场景可以使用setTimeOut
-At present, UTS does not support the use of promises to perform asynchronous tasks. Similar scenarios can use setTimeOut
+目前 UTS 仅Android支持promise执行异步任务，iOS还不支持。类似场景可以使用setTimeOut。
 
 
 ### 匿名内部类
@@ -1119,8 +1109,7 @@ function connectWifi(option: WifiConnectOption,testName :string = "zhangsan")
 ### 访问JSON对象属性
 ### Access JSON object properties
 
-`uts`环境中访问`JSON`对象的属性，不能用`user.age` 而要用 `user['age']`
-To access the properties of the `JSON` object in the `uts` environment, you cannot use `user.age` but use `user['age']`
+`uts`环境中访问`JSON`对象的属性，不能用`user.age` 而要用下标 `user['age']`
 
 ```ts
 
@@ -1130,13 +1119,17 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 
 ```
 
+如果想使用`.操作符`，需要参考uts的[type](../uts/data-type.md#type)
+
+更多UTSJSONObject的用法，[详见](../uts/data-type.md#UTSJSONObject)
+
 ## 路线图
 ## route map
 
 uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
 1. uts插件中可陆续使用uni的各种api，比如uni.request（已上线部分，还在持续补充）
 2. 插件市场支持uts插件的加密和计费销售（已完成）
-3. 全新uvue页面，纯原生的视图组件构成的页面
+3. 全新uvue页面，纯原生的视图组件构成的页面（已公测）
 4. vue页面支持uts原生组件
 
 最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）

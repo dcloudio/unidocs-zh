@@ -432,7 +432,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |:-|:-|:-|:-|:-|
 |background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App (vue 页面需要将 body 背景色设为透明，uni-app x 不支持)|
 |titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App(uni-app x 不支持)、H5|
-|subNVues|Object||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+(uni-app x 不支持)|
+|subNVues|Array||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+(uni-app x 不支持)|
 |bounce|String||页面回弹效果，设置为 "none" 时关闭效果。|App-vue（nvue Android无页面级bounce效果，仅list、recycle-list、waterfall等滚动组件有bounce效果）|
 |popGesture|String|close|侧滑返回功能，可选值："close"（启用侧滑返回）、"none"（禁用侧滑返回）|App-iOS|
 |softinputNavBar|String|auto|iOS软键盘上完成工具栏的显示模式，设置为 "none" 时关闭工具栏。|App-iOS|
@@ -441,6 +441,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App(uni-app x 不支持)|
 |animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App(uni-app x 不支持)|
 |animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App(uni-app x 不支持)|
+
 **Tips**
 - `.nvue` 页面仅支持 `titleNView、pullToRefresh、scrollIndicator` 配置，其它配置项暂不支持
 
@@ -502,7 +503,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |fontWeight|String|normal|按钮上文字的粗细。可取值"normal"-标准字体、"bold"-加粗字体。|
 |fontSize|String||按钮上文字大小|
 |fontSrc|String||按钮上文字使用的字体文件路径。不支持网络地址，请统一使用本地地址。|
-|select|String|false|是否显示选择指示图标（向下箭头），常用于城市选择|
+|select|Boolean|false|是否显示选择指示图标（向下箭头），常用于城市选择|
 |text|String||按钮上显示的文字。使用字体图标时 unicode 字符表示必须 '\u' 开头，如 "\ue123"（注意不能写成"\e123"）。|
 |width|String|44px|按钮的宽度，可取值： "*px" - 逻辑像素值，如"10px"表示10逻辑像素值，不支持rpx。按钮的内容居中显示； "auto" - 自定计算宽度，根据内容自动调整按钮宽度|
 
@@ -855,7 +856,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 |属性|类型|默认值|描述|
 |:-|:-|:-|:-|
 |allowsBounceVertical|String|YES|是否允许向下拉拽。支持 YES / NO|
-|titleImage|String||导航栏图片地址（替换当前文字标题），内必须使用https的图片链接地址|
+|titleImage|String||导航栏图片地址（替换当前文字标题），必须使用https的图片链接地址|
 |transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|
 |titlePenetrate|String|NO|导航栏点击穿透|
 |showTitleLoading|String|NO|是否进入时显示导航栏的 loading。支持 YES / NO|

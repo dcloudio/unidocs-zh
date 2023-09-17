@@ -548,6 +548,7 @@ Configure the specific style when compiling to the App platform, and some common
 |scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App(uni-app x 不支持)|
 |animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App(uni-app x 不支持)|
 |animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App(uni-app x 不支持)|
+
 **Tips**
 - `.nvue` 页面仅支持 `titleNView、pullToRefresh、scrollIndicator` 配置，其它配置项暂不支持
 - The `.nvue` page only supports `titleNView, pullToRefresh, scrollIndicator` configuration, other configuration items are not currently supported
@@ -654,9 +655,7 @@ Configure the specific style when compiling to the App platform, and some common
 |fontSize|String||按钮上文字大小|
 | fontSize| String||The text size on the button|
 |fontSrc|String||按钮上文字使用的字体文件路径。不支持网络地址，请统一使用本地地址。|
-| fontSrc| String|| The font file path used for the text on the button. Network addresses are not supported, please use local addresses uniformly. |
-|select|String|false|是否显示选择指示图标（向下箭头），常用于城市选择|
-| select| String| false|Whether to display the selection indicator icon (down arrow), often used for city selection|
+|select|Boolean|false|是否显示选择指示图标（向下箭头），常用于城市选择|
 |text|String||按钮上显示的文字。使用字体图标时 unicode 字符表示必须 '\u' 开头，如 "\ue123"（注意不能写成"\e123"）。|
 | text| String|| The text to display on the button. When using a font icon, the unicode character representation must start with '\u', such as "\ue123" (note that it cannot be written as "\e123"). |
 |width|String|44px|按钮的宽度，可取值： "*px" - 逻辑像素值，如"10px"表示10逻辑像素值，不支持rpx。按钮的内容居中显示； "auto" - 自定计算宽度，根据内容自动调整按钮宽度|
@@ -1166,9 +1165,7 @@ Configure specific styles when compiling to the MP-ALIPAY platform
 |Attribute|Type|Default|Description|
 |:-|:-|:-|:-|
 |allowsBounceVertical|String|YES|是否允许向下拉拽。支持 YES / NO|
-| allowsBounceVertical| String| YES|Whether to allow BounceVertical. Support YES / NO|
-|titleImage|String||导航栏图片地址（替换当前文字标题），内必须使用https的图片链接地址|
-| titleImage| String||Navigation bar image address (replacing the current text title), must use https image link address|
+|titleImage|String||导航栏图片地址（替换当前文字标题），必须使用https的图片链接地址|
 |transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|
 | transparentTitle| String| none|Navigation bar transparent setting. Support always always transparent / auto sliding adaptive / none opaque|
 |titlePenetrate|String|NO|导航栏点击穿透|

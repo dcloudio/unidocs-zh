@@ -103,6 +103,8 @@ export default {
 </template>
 
 <script lang="ts">
+  import type { ComponentPublicInstance } from 'vue'
+
 	export default {
 		onReady() {
 			const text = this.$refs.text as Element
@@ -123,6 +125,8 @@ export default {
 </template>
 
 <script lang="uts">
+  import type { ComponentPublicInstance } from 'vue'
+
 	export default {
 		onReady() {
 			const text = this.$refs.get("text") as INode

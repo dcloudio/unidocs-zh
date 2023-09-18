@@ -146,10 +146,10 @@ p.age //12
 但是在强类型语言中，如果想要使用`p.age`，那么p必须是一个对象，而age则是这个对象的属性。然后必须为p对象、name属性、age属性，都定义类型，比如name是string，age是number。
 
 uts中有2种方式使用json数据：
-1. 把json数据转为type，自定义一个类型，声明json数据内容中每个属性的类型。然后就可以使用对象属性的方式来使用json数据。[详见](../uts/data-type.md#type)
-2. 使用UTSJSONObject，不为json定义类型，然后通过下标和方法来使用json数据。[详见](../uts/data-type.md#ustjsonobject)
+1. 把json数据转为type，自定义一个类型，声明json数据内容中每个属性的类型。然后就可以使用对象属性的方式来使用json数据。[详见](../../uts/data-type.md#type)
+2. 使用UTSJSONObject，不为json定义类型，然后通过下标和方法来使用json数据。[详见](../../uts/data-type.md#ustjsonobject)
 
-如果是联网获取服务器发下的json数据，那么**务必需要读教程**[request](tutorial/request.md)
+如果是联网获取服务器发下的json数据，那么**务必需要读教程**[request](request.md)
 
 ## 编译器的类型优化
 
@@ -221,8 +221,8 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 
 - 不支持undefined。任何变量被定义后，都需要赋值
 - 暂不支持async、await
-- 函数声明方式不支持[作为值传递](../uts/function.md#作为值传递)
-- 函数表达式方式不支持[默认参数](../uts/function.md#默认参数)
+- 函数声明方式不支持[作为值传递](../../uts/function.md#作为值传递)
+- 函数表达式方式不支持[默认参数](../../uts/function.md#默认参数)
 
 ## vue使用注意
 

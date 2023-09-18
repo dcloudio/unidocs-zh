@@ -749,6 +749,8 @@ list1.forEach((item : any) => {
 
  **泛型引用**
 
+> 在uni-app x上需3.91+
+
 作为一个对象全部import进来，然后通过点运算符调用这个对象的方法或属性。
 
 ```js
@@ -766,14 +768,12 @@ UTSHello.getBatteryCapacity()
 ```ts
 // 正确的写法
 import * as UTSHello from "../../../uni_modules/uts-osapi";
+```
 
-```
-```
+```ts
 // 错误的写法
 import * as UTSHello from "../../../uni_modules/uts-osapi/index.uts";
-
 ```
-
 
 
 **显性引用**

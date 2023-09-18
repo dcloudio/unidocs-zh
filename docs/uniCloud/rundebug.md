@@ -156,7 +156,7 @@ A typical `launch.json` looks like this (no need to manually create this file)
         "h5": {
           "launchtype" : "remote" // h5平台连接云端云函数
         },
-        "provider": "aliyun", // 如果项目仅关联一个服务空间无需此参数
+        "provider": "aliyun", // 如果项目仅关联一个服务空间无需此参数，支持的值：aliyun，tcb
         "type": "uniCloud", // 标识此项配置为uniCloud配置，必填
         "systemLog": false // 设置为false之后关闭云函数控制台的系统日志（主要是云函数入参、返回值，错误信息不会关闭）
       }
@@ -291,9 +291,7 @@ Cloud functions run in a read-only file system in the cloud (only `/tmp` directo
 - 客户端在每次发送云函数请求之前，会发送一条请求到本地调试服务，本地服务会根据当前用户选择来通知客户端该访问本地云函数还是云端云函数
 - Before sending a cloud function request, the client will send a request to the local debugging service, and the local service will notify the client whether to access the local cloud function or the cloud cloud function according to the current user selection.
 - 客户端连接本地云函数时，云函数内的callFunction也会调用本地云函数。除非目标云函数是插件市场售卖的加密云函数，此时不会调用本地，仍会调用云端
-- When the client connects to the local cloud function, the callFunction in the cloud function will also call the local cloud function. Unless the target cloud function is an encrypted cloud function sold in the plug-in market, it will not call the local, but will still call the cloud.
-- 如果项目内关联了两个服务空间，需要在`.hbuilderx/launch.json`内配置provider参数指定哪个服务空间使用本地调试
-- If two service spaces are associated with the project, you need to configure the provider parameter in `.hbuilderx/launch.json` to specify which service space uses local debugging
+- 如果项目内关联了两个服务空间，需要在`.hbuilderx/launch.json`内配置provider参数指定哪个服务空间使用本地调试，注意支持的值为：aliyun，tcb
 - 当前项目运行的所有客户端都停止运行时，对本项目的调试服务会关闭，已经运行到手机的客户端将无法连接本地云函数
 - When all clients running in the current project stop running, the debugging service for this project will be closed, and the clients that have already run on the mobile phone will not be able to connect to the local cloud function
 - 在h5端network面板的会看到一些`Request Method: OPTION`的请求，这些是跨域预检请求，忽略即可。请参考：[HTTP 的 OPTIONS 方法](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/OPTIONS)

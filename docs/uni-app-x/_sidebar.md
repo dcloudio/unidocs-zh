@@ -16,7 +16,7 @@
   * [AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
   * [uni.scss](https://uniapp.dcloud.net.cn/collocation/uni-scss.html)
 * [页面](https://uniapp.dcloud.net.cn/tutorial/page.html)
-* vue语法
+* vue框架
   * [概述](vue/README.md)
   * [基础](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html)
   * [组件](https://uniapp.dcloud.net.cn/tutorial/vue3-components.html)

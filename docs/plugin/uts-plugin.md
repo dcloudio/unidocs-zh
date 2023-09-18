@@ -891,6 +891,8 @@ Two common introduction methods are described below.
  **泛型引用**
  **Generic reference**
 
+> 在uni-app x上需3.91+
+
 作为一个对象全部import进来，然后通过点运算符调用这个对象的方法或属性。
 All imported as an object, and then call the method or property of this object through the dot operator.
 
@@ -914,15 +916,13 @@ It is important to note that when importing a UTS plug-in, you can only go to th
 // 正确的写法
 // Correct spelling
 import * as UTSHello from "../../../uni_modules/uts-osapi";
+```
 
-```
-```
+```ts
 // 错误的写法
 // wrong wording
 import * as UTSHello from "../../../uni_modules/uts-osapi/index.uts";
-
 ```
-
 
 
 **显性引用**

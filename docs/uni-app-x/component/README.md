@@ -108,14 +108,15 @@ export default {
 </view>
 ```
 
-## refs
+## ref
 
-在 `uni-app js 引擎版`中，`refs` 的类型是 `Object`，非 `H5端` 只能用于获取自定义组件，不能用于获取内置组件实例（如：`view`、`text`）。\
-在 `uni-app x` 中，`refs` 的类型是 `Map<string, any>`，内置组件会返回组件根节点的引用，自定义组件会返回组件实例。
+在 `uni-app js 引擎版`中，非 `H5端` 只能用于获取自定义组件，不能用于获取内置组件实例（如：`view`、`text`）。\
+在 `uni-app x` 中，内置组件会返回组件根节点的引用，自定义组件会返回组件实例。
 
 **注意事项：**
 - 如果多个节点或自定义组件绑定相同 `ref` 属性，将获取到最后一个节点或组件实例的引用。
 - 在 `v-for` 循环时，绑定 `ref` 属性会获取到节点或组件实例的集合。
+- 在 `uni-app x` 中，要访问 `$refs` 中的属性，需要使用索引方式。
 
 ::: preview
 
@@ -156,8 +157,8 @@ export default {
 
 	export default {
 		onReady() {
-			const text = this.$refs.get("text") as Element
-			const foo = this.$refs.get("foo") as ComponentPublicInstance
+			const text = this.$refs["text"] as Element
+			const foo = this.$refs["foo"] as ComponentPublicInstance
 		}
 	}
 </script>

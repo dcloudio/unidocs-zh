@@ -188,15 +188,38 @@ uni.的api，大多是uts开发的，它们会陆续开源在[uni-api](https://g
 - pages.json 不支持app-plus的内容。[详见](../collocation/pages.md)
 - uni.scss 正常支持。但注意uvue仅能使用[css子集](css/README.md)
 
-## 7. 插件兼容
+## 7. 插件生态
 
-插件市场的uts插件，不管是API插件还是组件，均可同时在 uni-app js引擎版 和 uni-app x 上运行。
+uni-app x编译到web和小程序时，所有js库仍然可用。但在App平台，由于没有js引擎，所以无法使用js生态，包括npm。
 
-这里已经有不少插件：[https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
+uni-app x App平台的插件生态来源于：
+1. 原生生态。比如上述示例代码中获取手机型号。以及各种原生sdk的直接调用。
+2. ts生态的迁移。很多js库是ts编写的，如果没有使用uts不支持的语法，ts代码就可以使用。如果略有不同，也可以稍加改造ts以适配uts。
+
+[uni插件市场](https://ext.dcloud.net.cn/)是插件的聚集地，这里有2种插件适用于uni-app x。
+1. uts插件
+uts插件封装原生能力，包括os能力或三方sdk。可以做API插件，也可以做组件插件。
+
+uts插件可同时在 uni-app js引擎版 和 uni-app x 的app平台上运行。
+
+uts插件分类直达：[https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 
 uni-app js版的“App原生语言插件”无法在 uni-app x 中运行。
 
-前端插件里，可兼容uts前端插件、可兼容uvue组件，即script是uts，style符合uvue的css。
+2. 前端插件
+
+uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码仍然使用uni-app x的vue、uts、css来开发。
+
+后续DCloud会提供uni-app x编译为web，届时这些插件也可以适配到uni-app js引擎版的全端。
+
+uts插件分类直达：[https://ext.dcloud.net.cn/search?fePlatform=1&fePlatform2=34&type=UpdatedDate](https://ext.dcloud.net.cn/search?fePlatform=1&fePlatform2=34&type=UpdatedDate)
+
+
+一般情况下，原生库的能力是大于js库的。不太可能有一个功能必须使用js库才能使用。比如md5，js有库，原生也有库，调用一个jar也很方便。
+
+实际上，常见的加密、md5等库，插件市场已经有uts版本。[详见](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&orderBy=Relevance&cat1=8&cat2=81)
+
+如果你一定要使用某个js库，还有一个办法是在uni-app x里内嵌quickjs或v8引擎，让其运行js。
 
 ## 一期范围
 
@@ -251,15 +274,6 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 - uni-app x 能热更新吗？
 开发期间可以热刷，但打包后不能热更新。开发者可自行封装原生的插件动态加载方案。
 
-- uni-app x 能使用npm库吗？
-uni-app x 的app端里没有js引擎，不能使用js库。除非npm上有uts的库。
-
-当然把ts的库改造成uts的库并不难，如果ts库没有使用uts不支持的web专用语法，那么可以直接使用。
-
-uni-app x编译到web和小程序时，所有js库仍然可用。
-
-常见的加密、md5等库，插件市场已经有uts版本。[详见](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&orderBy=Relevance&cat1=8&cat2=81)
-
 - uni-app x 会搞插件大赛吗？
 会。很快启动，鼓励大家做基于uts和uvue的插件。
 
@@ -286,3 +300,4 @@ Android 5+
 未来vue页面也会支持uts组件。无论js引擎版还是x版，都支持uts插件生态，未来的原生扩展api和插件会是复用的。
 
 包括官方的组件和API也会复用，比如电量API[uni.getbatteryinfo](https://ext.dcloud.net.cn/plugin?id=9295)，和[lottie组件](https://ext.dcloud.net.cn/plugin?id=10674)，它们使用uts开发，在 uni-app js引擎版和x版上，调用的都是一套代码。
+所以不必担心官方精力不足，顾此失彼。

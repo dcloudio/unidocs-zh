@@ -183,6 +183,6 @@
   * [DOMRect](dom/domrect.md)
   * [CSSStyleDeclaration](dom/cssstyledeclaration.md)
   * [DrawableContext](dom/drawablecontext.md)
-* [性能](performance.md)
+* [性能优化](performance.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
 * [自动化测试](https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html)

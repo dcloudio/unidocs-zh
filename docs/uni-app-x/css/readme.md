@@ -214,13 +214,13 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |Flex 布局			|√			|										|
 |Inline 布局			|×			|										|
 |Inline-Block 布局	|×			|										|
-|Block 布局			|√			|										|
+|Block 布局			|×			|										|
 |字体				|√			|支持ttf、otf，不支持woff和woff2和可变字体	|
 |Positioned 布局		|√			|										|
 |CSS Animation		|√			|										|
 |CSS Transition		|√			|										|
-|CSS Variable		|√			|										|
-|媒体查询			|√			|										|
+|CSS Variable		|×			|										|
+|媒体查询			|×			|										|
 
 字体图标[详见](font-family.md)
 
@@ -234,7 +234,7 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |属性选择器		|[attr] {}	|×		|													|
 |分组选择器		|.a, .b {}	|√		|													|
 |直接子代选择器	|.a > .b {}	|√		|													|
-|后代选择器		|.a .b {}		|√		|													|
+|后代选择器		|.a .b {}	|√		|													|
 |一般兄弟选择器	|.a ~ .b {}	|√		|													|
 |紧邻兄弟选择器	|.a + .b {}	|√		|													|
 |伪类选择器		|:active {}	|×		|													|

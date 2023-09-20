@@ -66,6 +66,7 @@
     * [获取设备网络状态](api/getnetworktype.md)
     * [全局websocket](api/websocket-global.md)
   * 界面
+    * [获取节点](api/get-element-by-id.md)
     * [节点信息](api/nodes-info.md)
     * [显示模态弹窗](api/modal.md)
     * [显示加载提示框](api/showloading.md)

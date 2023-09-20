@@ -228,9 +228,7 @@ In addition, since the `createApp` method returns the application instance itsel
 |$root	|当前组件树的根组件实例。如果当前实例没有父实例，此实例将会是其自己。[详情](https://v3.cn.vuejs.org/api/instance-properties.html#root)	|√	|√	| √	||
 |$root |The root component instance of the current component tree. If the current instance has no parent, this instance will be itself. [Details](https://v3.cn.vuejs.org/api/instance-properties.html#root) |√ |√ | √ ||
 |$slots	|用来访问被插槽分发的内容。每个具名插槽有其相应的 `property` (例如：`v-slot:foo` 中的内容将会在 `this.$slots.foo` 中被找到)。[详情](https://v3.cn.vuejs.org/api/instance-properties.html#slots)	|√	|x	| √	||
-|$slots |Used to access content distributed by slots. Each named slot has its corresponding `property` (eg: the contents of `v-slot:foo` will be found in `this.$slots.foo`). [Details](https://v3.cn.vuejs.org/api/instance-properties.html#slots) |√ |x | √ ||
-|$refs	|一个对象，持有注册过 `ref attribute` 的所有 `DOM` 元素和组件实例。[详情](https://v3.cn.vuejs.org/api/instance-properties.html#refs)	|√	|√	| √|非H5端只能用于获取自定义组件，不能用于获取内置组件实例（如：`view`、`text`）|
-|$refs | An object holding all `DOM` element and component instances that have the `ref attribute` registered. [Details](https://v3.cn.vuejs.org/api/instance-properties.html#refs) |√ |√ | √|Non-H5 terminals can only be used to obtain custom components, not built-in Component instance (eg: `view`, `text`)|
+|$refs	|一个对象，持有注册过 `ref attribute` 的所有 `DOM` 元素和组件实例。[详情](https://v3.cn.vuejs.org/api/instance-properties.html#refs)	|√	|√	| √|非H5端只能用于获取自定义组件，不能用于获取内置组件实例（如：`view`、`text`），`uni-app x` 内置组件绑定 `ref` 会返回组件根节点的引用。|
 |$attrs	|包含了父作用域中不作为组件 `props` 或自定义事件。[详情](https://v3.cn.vuejs.org/api/instance-properties.html#attrs)	|√	|√	| x	|-|
 |$attrs | Contains `props` or custom events that are not part of the parent scope. [Details](https://v3.cn.vuejs.org/api/instance-properties.html#attrs) |√ |√ | x |-|
 

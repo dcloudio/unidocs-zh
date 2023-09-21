@@ -32,7 +32,7 @@ DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示
 
 ## 获取DOM元素对象@getDomNode  
 
-app-uvue页面中可以通过 vue 框架中的组件实例对象 [$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。  
+app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。  
 
 首先需要为组件设置 ref 属性值，它类似于id：
 ```vue
@@ -41,7 +41,7 @@ app-uvue页面中可以通过 vue 框架中的组件实例对象 [$refs](https:/
 </view>
 ```
 
-在页面`onReady` 后（太早组件可能没有创建），通过 `$refs` 获取。如果长期使用，可以保存在vue的 data 中。
+在页面`onReady` 后（太早组件可能没有创建），通过 `this.$refs` 获取。如果长期使用，可以保存在vue的 data 中。
 ```ts
 export default {
 	data() {
@@ -51,7 +51,7 @@ export default {
 	},
 	onReady() {
 		// 获取组件对象并保存在 this.myView 中  
-		this.myView = $refs['myView'] as Element;  //需要使用 as 转换
+		this.myView = this.$refs['myView'] as Element;  //需要使用 as 转换
 	},
 }
 ```
@@ -88,7 +88,7 @@ this.myView?.style?.setProperty('background-color', 'red');
 		onLoad() {
 		},
 		onReady() {
-			this.myView = $refs['myView'] as Element;
+			this.myView = this.$refs['myView'] as Element;
 		},
 		methods: {
 			updateElement() {
@@ -205,5 +205,6 @@ DrawableContext 在调用 API 之后不会主动更新到画布上，需要主�
 			}
 		}
 	}
+</script>
 ```
 

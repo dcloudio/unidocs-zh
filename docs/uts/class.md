@@ -424,3 +424,32 @@ console.log(howard.name); // 错误
 ```
 
 注意，我们不能在 Person 类外使用 name，但是我们仍然可以通过 Employee 类的实例方法访问，因为 Employee 是由 Person 派生而来的。
+
+### this
+
+`this` 只能用在成员函数（类的方法）内部，`this` 引用的是调用该函数的对象实例。`this` 的指向不受函数作用域的影响，也不可以被改变。
+
+```ts
+class Test {
+  test() {
+    console.log(this) // Test 的实例对象
+    function fn() {
+      console.log(this) // 仍然是 Test 的实例对象
+    }
+    fn()
+  }
+}
+```
+
+受目标语言的限制，编译到 kotlin/swift 时，`this` 可以缺省，此特性目前无法屏蔽，但不推荐主动使用。当类的成员命名与外层变量同名时，需注意区分。
+
+```ts
+const a = 1
+
+class Test {
+  a = 0
+  test() {
+    console.log(a) // this.a 0
+  }
+}
+```

@@ -22,7 +22,7 @@ uts和ts很相似，但为了跨端，uts进行了一些约束和特定平台的
 
 ## 2. uvue渲染引擎
 
-uts替代的是js，而uvue替代的就是html和css。或者如果你了解flutter的话，也可以理解为uts对标dart，而uvue对标flutter。
+uts替代的是js，而uvue替代的就是html和css。或者如果你了解flutter的话，也可以理解为uts类似dart，而uvue类似flutter。
 
 uvue是一套基于uts的、兼容vue语法的、跨iOS和Android的、原生渲染引擎。
 
@@ -181,6 +181,8 @@ uni.的api，大多是uts开发的，它们会陆续开源在[uni-api](https://g
 - uvue是按vue3规范实现的，但一期uvue不支持setup，只支持选项式
 - 目前也不支持vue插件，比如pinia、vuex、i18n、router。简单的状态管理可以参考文档[全局变量和状态管理](uni-app-x/tutorial/store.md)
 
+[详情](./vue/README.md)
+
 ## 6. 全局文件
 - manifest.json 仅支持基本的名称图标配置，暂未支持splash，但uni-app x项目打包后启动速度飞快，没有splash也无所谓。[详见](manifest.md)
 - AndroidManifest.xml 与原生开发相同。注意Android权限配置在这里配置，而不是在manifest.json中 [详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
@@ -219,7 +221,7 @@ uts插件分类直达：[https://ext.dcloud.net.cn/search?fePlatform=1&fePlatfor
 
 实际上，常见的加密、md5等库，插件市场已经有uts版本。[详见](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&orderBy=Relevance&cat1=8&cat2=81)
 
-如果你一定要使用某个js库，还有一个办法是在uni-app x里内嵌quickjs或v8引擎，让其运行js。
+如果你一定要使用某个js库，还有一个办法是在uni-app x里的web-view组件，让其运行js并返回值给uts代码。
 
 ## 一期范围
 

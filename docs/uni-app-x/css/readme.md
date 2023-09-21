@@ -257,9 +257,9 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |calc()				|					|								|
 
 ## 颜色
-|类别				|支持情况				|备注							|
+|类别				|支持情况			|备注							|
 |:-:				|:-:				|:-:							|
-|color keywords		|√					|								|
+|color keywords		|√					|red等							|
 |#RRGGBB / #RGB		|√					|								|
 |rgb[a]				|√					|								|
 |transparent		|√					|								|
@@ -267,15 +267,16 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |hsl				|					|								|
 |hsla				|					|								|
 
-## css变量
+## css方法
 
-暂不支持css变量，--status-bar-height、--window-top、--window-bottom。
+目前仅支持url()
 
-有相关需求可使用uni.getWindowInfo()方式获取。
+暂不支持css变量val()。--status-bar-height、--window-top、--window-bottom，也暂时无法使用，有相关需求可使用[uni.getWindowInfo()](../api/getwindowinfo.md)方式获取。
 
 ## At-rules
 |类别							|支持情况	|备注	|
 |:-:							|:-:		|:-:	|
+|@import						|√			|		|
 |@font-face						|√			|		|
 |@charset						|×			|		|
 |@color-profile					|×			|		|
@@ -284,7 +285,6 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |@documentNon-standardDeprecated|×			|		|
 |@font-feature-values			|×			|		|
 |@font-palette-values			|×			|		|
-|@import						|√			|		|
 |@keyframes						|×			|		|
 |@layer							|×			|		|
 |@media							|×			|		|
@@ -294,7 +294,7 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |@supports						|×			|		|
 
 ## 样式清单
-| uni-app-x CSS 支持列表 |
+| uni-app-x App平台 CSS 属性列表 |
 | :-|
 | [width](width.md) |
 | [min-width](min-width.md) |

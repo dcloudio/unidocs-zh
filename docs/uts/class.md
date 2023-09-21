@@ -96,6 +96,24 @@ class Square extends Polygon {
 }
 ```
 
+> 特别说明：  
+> iOS 平台中在实现无参的 constructor() 或者重写父类的某个有参的构造函数时需要在构造函数前加上 `@UTSiOS.override`。 示例如下：
+
+```ts
+class Polygon {
+    @UTSiOS.override constructor() {
+        this.name = "Polygon";
+    }
+}
+
+class Square extends Polygon {
+    @UTSiOS.override constructor() {
+        super();
+    }
+}
+```
+
+
 ### 实例属性
 
 class 有实例属性和静态属性。uts 中实例属性存在于类的每一个实例中。
@@ -315,6 +333,9 @@ class Rectangle extends Shape {
     override vertexCount = 4
 }
 ```
+
+> 特别说明：  
+> iOS 平台中不允许覆盖和父类同名的存储属性，但是可以覆盖和父类同名的计算属性。
 
 #### 调用父类实现
 

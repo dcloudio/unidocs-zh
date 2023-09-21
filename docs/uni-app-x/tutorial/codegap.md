@@ -133,6 +133,47 @@ const person: Person = { name: 'name', age: 18 }
 foo2(person)
 ```
 
+注意：uts文件或uts插件中导入的函数，如果参数为自定义数据类型，也必须指定类型。
+
+::: preview
+
+> index.uvue
+
+```html
+<template>
+  <text>index.uvue</text>
+</template>
+
+<script lang="uts">
+  import type { Person } from './utils.uts'
+  import { logPersonInfo } from './utils.uts'
+  export default {
+    onReady() {
+      logPersonInfo({ name: 'name', age: 18 } as Person)
+      // 或者
+      const person: Person = { name: 'name', age: 18 }
+      logPersonInfo(person)
+    }
+  }
+</script>
+```
+
+> utils.uts
+
+```ts
+export type Person = {
+	name: string,
+	age: number
+}
+
+export function logPersonInfo(person: Person){
+	console.log('name: ' + person.name)
+	console.log('age: ' + person.age)
+}
+```
+
+:::
+
 ## JSON的类型
 
 JSON数据在强类型语言中使用时，不能像js那样随意。

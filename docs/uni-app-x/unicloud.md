@@ -2,13 +2,15 @@
 
 uniCloud目前还不支持：
 
-- clientDB
 - 安全网络
 - 由于uts暂不支持await，目前仅能通过promise方式使用异步联网api。
 - 暂不支持泛型
-- 本页面未列举的API均不支持。
+- 本页面未列举的API均不支持
 - 暂不支持腾讯云
 - uniIdRouter相关功能暂不支持
+- clientDB
+  * getOne
+  * multiSend
 
 <!-- UTSUNICLOUDAPIJSON.uniCloud_props.description -->
 

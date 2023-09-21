@@ -334,7 +334,7 @@ class FilledRectangle extends Rectangle {
 }
 ```
 
-### 抽象类（Abstract Class）@abstract-class
+<!-- ### 抽象类（Abstract Class）@abstract-class
 
 抽象类是一种用于提供基础类和共享实现的特殊类。尚未实现的属性和方法是抽象属性和抽象方法统称为抽象成员，抽象成员必须存在于抽象类中。抽象类本身不能被实例化，它只能作为其他类的基类，被其他类继承并实现其抽象成员。
 
@@ -370,7 +370,7 @@ class Person1 extends Person {
         console.log(this.name)
     }
 }
-```
+``` -->
 
 ### 可见性修饰符@modifier
 

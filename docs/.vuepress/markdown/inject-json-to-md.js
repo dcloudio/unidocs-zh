@@ -4,6 +4,7 @@ let utsApiJson = {};
 let utsComJson = {};
 let utsUnicloudApiJson = {};
 let customTypeJson = {};
+let vueJson = {};
 try {
 	cssJson = require('../utils/cssJson.json');
 } catch (error) {}
@@ -21,6 +22,9 @@ try {
 } catch (error) {}
 try {
 	customTypeJson = require('../utils/customTypeJson.json');
+} catch (error) {}
+try {
+	vueJson = require('../utils/vueJson.json');
 } catch (error) {}
 
 
@@ -74,6 +78,14 @@ const getJSON = text => {
 		return {
 			match,
 			json: customTypeJson,
+		};
+	}
+
+	match = text.match(getRegExp('VUEJSON'));
+	if (match) {
+		return {
+			match,
+			json: vueJson,
 		};
 	}
 

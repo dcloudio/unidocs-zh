@@ -25,6 +25,19 @@ uni-app-x 暂时支持以下选择器
 
 uni-app-x 暂不支持 `context` 属性
 
+##### NodeInfo 属性值
+
+|属性		|类型		|说明							|
+|---		|---		|---							|
+|id			|String	|节点的 ID				|
+|dataset|Object	|节点的 dataset		|
+|left		|Number	|节点的左边界坐标	|
+|right	|Number	|节点的右边界坐标	|
+|top		|Number	|节点的上边界坐标	|
+|bottom	|Number	|节点的下边界坐标	|
+|width	|Number	|节点的宽度				|
+|height	|Number	|节点的高度				|
+
 <!-- UTSAPIJSON.createSelectorQuery.compatibility -->
 
 <!-- UTSAPIJSON.createSelectorQuery.tutorial -->

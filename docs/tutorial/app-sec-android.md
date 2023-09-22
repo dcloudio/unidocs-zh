@@ -256,3 +256,20 @@ Due to a bug in the `android:taskAffinity=""` configuration! So we don't configu
 	}
 }
 ```
+
+#### 未配置网络安全属性漏洞
+**风险描述** 
+从Nougat(Android 7) 一个名为“Network Security Configuration'的新安全功能也随之而来。如果应用程序的 SDK高于或等于24，则只有系统证书才会被信任。Android Network Security Configuration 功能提供了一个简单的层，用来保护应用程序在未加密的明文中意外传输的敏感数据。可以针对特定域和特定应用配置这些设置。如缺少networkSecurityConfig 特性，应用程序将使用系统默认安全配置，致使应用程序在不安全的定制 ROM 上运行时可能遭受恶意网络攻击。
+
+**修复方案** 
+
++ 根据Android平台[网络安全配置文档](https://developer.android.google.cn/training/articles/security-config?hl=zh-cn)生成`network_security_config.xml`配置文件 
++ 通过HBuilderX[Android原生应用清单文件和资源文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)实现networkSecurityConfig配置
+	+ 将`network_security_config.xml`文件拷贝到应用资源`nativeResources\android\res\xml`目录下
+	+ 配置`AndroidManifest.xml`中application节点中！参考如下：
+		```
+		<application android:networkSecurityConfig="@xml/network_security_config"
+		                        ... >
+		            ...
+		</application>
+		```

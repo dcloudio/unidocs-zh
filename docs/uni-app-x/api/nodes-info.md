@@ -23,6 +23,8 @@ uni-app-x 暂时支持以下选择器
 
 <!-- UTSAPIJSON.createSelectorQuery.returnValue -->
 
+uni-app-x 暂不支持 `context` 属性
+
 <!-- UTSAPIJSON.createSelectorQuery.compatibility -->
 
 <!-- UTSAPIJSON.createSelectorQuery.tutorial -->

@@ -12,6 +12,20 @@
 
 
 <!-- VUEJSON.general.compatibility -->
+## 响应式兼容性
+
+### 响应式: 核心
+
+
+<!-- VUEJSON.reactivity_core.compatibility -->
+### 响应式: 工具
+
+
+<!-- VUEJSON.reactivity_utilities.compatibility -->
+### 响应式: 进阶
+
+
+<!-- VUEJSON.reactivity_advanced.compatibility -->
 ## 选项式 API兼容性
 
 ### 状态选项
@@ -38,6 +52,24 @@
 
 
 <!-- VUEJSON.component_instance.compatibility -->
+## 内置内容兼容性
+
+### 指令
+
+
+<!-- VUEJSON.directives.compatibility -->
+### 组件
+
+
+<!-- VUEJSON.components.compatibility -->
+### 特殊元素
+
+
+<!-- VUEJSON.special_elements.compatibility -->
+### 特殊 Attributes
+
+
+<!-- VUEJSON.special_attributes.compatibility -->
 ## 进阶 API兼容性
 
 ### 渲染函数

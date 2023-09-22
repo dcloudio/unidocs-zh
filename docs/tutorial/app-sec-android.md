@@ -266,7 +266,7 @@ Due to a bug in the `android:taskAffinity=""` configuration! So we don't configu
 + 根据Android平台[网络安全配置文档](https://developer.android.google.cn/training/articles/security-config?hl=zh-cn)生成`network_security_config.xml`配置文件 
 + 通过HBuilderX实现networkSecurityConfig配置！参考[Android原生应用清单文件和资源文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
 	+ 将`network_security_config.xml`文件拷贝到应用资源`nativeResources\android\res\xml`目录下
-	+ 配置`AndroidManifest.xml`中application节点中！参考如下：
+	+ 配置`AndroidManifest.xml`中application节点！添加networkSecurityConfig属性配置。配置参考如下：
 		```
 		<application android:networkSecurityConfig="@xml/network_security_config"
 		                        ... >

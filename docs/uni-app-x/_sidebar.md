@@ -68,6 +68,7 @@
   * 界面
     * [获取节点](api/get-element-by-id.md)
     * [节点信息](api/nodes-info.md)
+    * [显示操作菜单](api/showactionsheet.md)
     * [显示模态弹窗](api/modal.md)
     * [显示加载提示框](api/showloading.md)
     * [显示消息提示框](api/toast.md)

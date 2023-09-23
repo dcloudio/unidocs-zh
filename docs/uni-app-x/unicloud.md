@@ -6,11 +6,12 @@ uniCloud目前还不支持：
 - 由于uts暂不支持await，目前仅能通过promise方式使用异步联网api。
 - 暂不支持泛型
 - 本页面未列举的API均不支持
-- 暂不支持腾讯云
 - uniIdRouter相关功能暂不支持
-- clientDB
-  * getOne
-  * multiSend
+
+**兼容说明**
+
+- `HBuilderX 3.91`支持腾讯云
+- `HBuilderX 3.91`支持clientDB，但不支持getOne和multiSend
 
 <!-- UTSUNICLOUDAPIJSON.uniCloud_props.description -->
 

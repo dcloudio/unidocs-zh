@@ -30,8 +30,44 @@ DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示
 
 在[性能](performance.md)章节，对这2个场景有详细的阐述。
 
-## 获取DOM元素对象@getDomNode  
 
+## DOM元素对象@getDomNode  
+
+在操作DOM元素对象前，需要先获取 `Element` 对象，可通过 `uni.getElementById` 或 `this.$refs` 获取。
+
+### 通过uni.getElementById获取DOM元素  
+
+app-uvue 页面中可以为页面元素节点设置 id 属性，然后通过 [uni.getElementById](../api/get-element-by-id.md#getelementbyid) 获取 DOM 元素对象。
+
+首先需要为组件设置 id 属性值：
+```vue
+<!-- id 属性值为 myView，后续可以通过此值查找 -->
+<view id="myView" class="container">
+	<text>Hello World</text>
+</view>
+```
+
+在页面`onReady` 后（太早组件可能没有创建），通过 `uni.getElementById` 获取。如果长期使用，可以保存在vue的 data 中。
+```ts
+export default {
+	data() {
+		return {
+			myView: null as Element|null   //保存后可通过this.myView访问
+		}
+	},
+	onReady() {
+		// 获取组件对象并保存在 this.myView 中  
+		this.myView = uni.getElementById('myView');
+	},
+}
+```
+
+通过Element对象的 style 属性更新组件的样式：
+```ts
+this.myView?.style?.setProperty('background-color', 'red');
+```
+
+### 通过this.$refs获取DOM元素
 app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。  
 
 首先需要为组件设置 ref 属性值，它类似于id：
@@ -56,19 +92,22 @@ export default {
 }
 ```
 
-通过Element对象的 style 属性更新组件的样式：
+### 操作DOM元素对象
+获取DOM元素对象Elment后，可通过其属性或方法操作组件，完整API参考[Element对象文档](element.md)
+
+如通过Element对象的 style 属性更新组件的样式：
 ```ts
 this.myView?.style?.setProperty('background-color', 'red');
 ```
 
-
+### 示例  
 以下是完整的操作示例：  
 ```vue  
 <template>
 <!-- #ifdef APP -->
 <scroll-view style="flex:1;align-items: center;">
 <!-- #endif -->
-	<view ref="myView" class="container">
+	<view id="myView" ref="myView" class="container">
 		<text>Hello World</text>
 	</view>
 	<button @tap="updateElement">操作Element</button>
@@ -88,7 +127,8 @@ this.myView?.style?.setProperty('background-color', 'red');
 		onLoad() {
 		},
 		onReady() {
-			this.myView = this.$refs['myView'] as Element;
+			this.myView = uni.getElementById('myView');				//通过uni.getElementById获取
+			//this.myView = this.$refs['myView'] as Element;  //通过this.$refs获取，需要使用 as 转换
 		},
 		methods: {
 			updateElement() {

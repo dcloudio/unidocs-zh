@@ -227,3 +227,18 @@ userMap.forEach(function(key:string,value:any){
 ```ts
 const re = /ab+c/
 ```
+
+### 字面量类型
+
+HBuilderX 3.91+ 支持使用数值字面量和字符串字面量用作类型注解，也支持联用多个相同类型的字面量以及 null 关键字。这些字面量类型仅用于方便编辑器的提示和校验，编译到目标语言后相当于 Number 或 String 类型。
+
+```ts
+type Str1 = 'a'
+type Str2 = 'a' | null
+type Str3 = 'a' | 'b'
+type Str4 = 'a' | 'b' | null
+type Num1 = 1
+type Num2 = 1 | null
+type Num3 = 1 | 2
+type Num4 = 1 | 2 | null
+```

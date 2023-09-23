@@ -43,28 +43,24 @@ app-uvue 页面中可以为页面元素节点设置 id 属性，然后通过 [un
 ```vue
 <!-- id 属性值为 myView，后续可以通过此值查找 -->
 <view id="myView" class="container">
-	<text>Hello World</text>
+    <text>Hello World</text>
 </view>
 ```
 
 在页面`onReady` 后（太早组件可能没有创建），通过 `uni.getElementById` 获取。如果长期使用，可以保存在vue的 data 中。
 ```ts
-export default {
-	data() {
-		return {
-			myView: null as Element|null   //保存后可通过this.myView访问
-		}
-	},
-	onReady() {
-		// 获取组件对象并保存在 this.myView 中  
-		this.myView = uni.getElementById('myView');
-	},
+  export default {
+    data() {
+      return {
+        color: 'red',
+        myView: null as Element | null
+      }
+    },
+    onReady() {
+        // 获取组件对象并保存在 this.myView 中  
+        this.myView = uni.getElementById('myView');
+    },
 }
-```
-
-通过Element对象的 style 属性更新组件的样式：
-```ts
-this.myView?.style?.setProperty('background-color', 'red');
 ```
 
 ### 通过this.$refs获取DOM元素
@@ -74,21 +70,23 @@ app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](ht
 ```vue
 <!-- ref 属性值为 myView，后续可以通过此值查找 -->
 <view ref="myView" class="container">
+    <text>Hello World</text>
 </view>
 ```
 
 在页面`onReady` 后（太早组件可能没有创建），通过 `this.$refs` 获取。如果长期使用，可以保存在vue的 data 中。
 ```ts
-export default {
-	data() {
-		return {
-			myView: null as Element|null   //保存后可通过this.myView访问
-		}
-	},
-	onReady() {
-		// 获取组件对象并保存在 this.myView 中  
-		this.myView = this.$refs['myView'] as Element;  //需要使用 as 转换
-	},
+  export default {
+    data() {
+      return {
+        color: 'red',
+        myView: null as Element | null
+      }
+    },
+    onReady() {
+        // 获取组件对象并保存在 this.myView 中  
+        this.myView = this.$refs['myView'] as Element;  //需要使用 as 转换
+    },
 }
 ```
 
@@ -104,53 +102,54 @@ this.myView?.style?.setProperty('background-color', 'red');
 以下是完整的操作示例：  
 ```vue  
 <template>
-<!-- #ifdef APP -->
-<scroll-view style="flex:1;align-items: center;">
-<!-- #endif -->
-	<view id="myView" ref="myView" class="container">
-		<text>Hello World</text>
-	</view>
-	<button @tap="updateElement">操作Element</button>
-<!-- #ifdef APP -->
-</scroll-view>
-<!-- #endif -->
+  <!-- #ifdef APP -->
+  <scroll-view style="flex:1;align-items: center;">
+  <!-- #endif -->
+    <view id="myView" ref="myView" class="container">
+      <text>Hello World</text>
+    </view>
+    <button @tap="updateElement">操作Element</button>
+  <!-- #ifdef APP -->
+  </scroll-view>
+  <!-- #endif -->
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				color: 'red',
-				myView: null as Element|null
-			}
-		},
-		onLoad() {
-		},
-		onReady() {
-			this.myView = uni.getElementById('myView');				//通过uni.getElementById获取
-			//this.myView = this.$refs['myView'] as Element;  //通过this.$refs获取，需要使用 as 转换
-		},
-		methods: {
-			updateElement() {
-				this.color = 'red'==this.color?'blue':'red';
-				this.myView?.style?.setProperty('background-color', this.color);
-			}
-		},
-	}
+  export default {
+    data() {
+      return {
+        color: 'red',
+        myView: null as Element | null
+      }
+    },
+    onLoad() {
+    },
+    onReady() {
+      this.myView = uni.getElementById('myView');       //通过uni.getElementById获取
+      //this.myView = this.$refs['myView'] as Element;  //通过this.$refs获取，需要使用 as 转换
+    },
+    methods: {
+      updateElement() {
+        this.color = 'red' == this.color ? 'blue' : 'red';
+        this.myView?.style?.setProperty('background-color', this.color);
+      }
+    },
+  }
 </script>
 
 <style>
-.container {
-	align-items: center;
-	justify-content: center;
-	background-color: aquamarine;
-	width: 100%;
-	height: 200px;
-}
+  .container {
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    width: 100%;
+    height: 200px;
+  }
 </style>
+
 ```
 
-以上例子仅为演示DOM API的使用，实际上点击按钮修改背景色这种简单场景，使用数据绑定更简单，class绑定到一个data上，动态修改data即可。
+>以上例子仅为演示DOM API的使用，实际上点击按钮修改背景色这种简单场景，使用数据绑定更简单，class绑定到一个data上，动态修改data即可。
 
 
 ## 通过DrawableContext绘制View  

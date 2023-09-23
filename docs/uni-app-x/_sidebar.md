@@ -81,6 +81,8 @@
     * [获取app基础信息](api/getappbaseinfo.md)
     * [获取app授权设置](api/getappauthorizesetting.md)
     * [获取系统设置](api/getsystemsetting.md)
+    * [获取电量信息](api/getbatteryinfo.md)
+    * [同步获取电量信息](api/getbatteryinfosync.md)
   * 媒体
     * [图片选择和预览](api/preview-image.md)
     * [保存图片到相册](api/saveimagetophotosalbum.md)

@@ -12,8 +12,6 @@
 
 <!-- UTSAPIJSON.createSelectorQuery.returnValue -->
 
-uni-app-x 暂不支持 `context` 属性
-
 ##### NodeInfo 属性值
 
 |属性		|类型		|说明							|

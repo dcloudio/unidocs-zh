@@ -294,6 +294,10 @@ uvue的script里写的就是uts，uts就可以直接调原生代码。无所谓�
 - uni-app x 支持最低的Android版本多少？
 Android 5+
 
+- uni-app x开源吗？
+uni-app x的组件和API实现都会开源，会陆续发布在项目[uni-component](https://gitcode.net/dcloud/uni-component)和[uni-api](https://gitcode.net/dcloud/uni-api)下。\
+开发者可以了解组件和API的实现，直接修改或优化源码，修改后的代码以[ext api](../api/extapi.md)或组件的方式下载到项目中，即可实现在本项目中替换掉官方组件和API。
+
 - 未来 uni-app js引擎版还维护吗？
 维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。
 

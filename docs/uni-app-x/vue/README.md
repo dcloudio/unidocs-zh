@@ -1,39 +1,31 @@
 # vue
 
 uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合式写法，仅支持option选项式写法。\
-本文 API 暂时只包括兼容性表格，功能详情另见 [Vue API](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html)。
+本文暂时只包括兼容性表格，vue功能详情另见 [vue3概述](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#)、[Vue3 API](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html)。
 
 ## 全局 API兼容性
 
 ### 应用实例
 
-
 <!-- VUEJSON.application.compatibility -->
 ### 通用
-
 
 <!-- VUEJSON.general.compatibility -->
 ## 响应式兼容性
 
 ### 响应式: 核心
 
-
 <!-- VUEJSON.reactivity_core.compatibility -->
 ### 响应式: 工具
 
-
 <!-- VUEJSON.reactivity_utilities.compatibility -->
 ### 响应式: 进阶
-
 
 <!-- VUEJSON.reactivity_advanced.compatibility -->
 
 ### [函数 event 参数的类型](uni-app-x/tutorial/codegap.md#function-event-argument-type)
 
 ### 指令
-
-- [v-once](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#v-once) 不支持
-- [v-html](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#v-html) 不支持
 
 <!-- VUEJSON.directives.compatibility -->
 
@@ -69,13 +61,11 @@ uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合�
 <!-- VUEJSON.components.compatibility -->
 ### 特殊元素
 
-
 <!-- VUEJSON.special_elements.compatibility -->
 
 - App 端，如需页面级滚动，根节点必须是 `scroll-view` 标签。
 
 ### 特殊 Attributes
-
 
 <!-- VUEJSON.special_attributes.compatibility -->
 
@@ -83,7 +73,6 @@ uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合�
 uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [onExit](collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
 
 ### 生命周期选项
-
 
 <!-- VUEJSON.options_lifecycle.compatibility -->
 

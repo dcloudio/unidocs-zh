@@ -16,9 +16,9 @@ DCloud在每次更新发版时，随着HBuilderX的升级，会一起发布uni-a
 
 这个版本号，在uni-app中使用[uni.getSystemInfo](https://uniapp.dcloud.net.cn/api/system/info.html)可以获得。具体属性是`uniRuntimeVersion`和`uniCompileVersion`，类型是字符串。
 
-在HBuilderX界面显示时，还会在末尾再增加一段发版日期，如3.8.12.20230817。上述api不会返回末端日期。
+在HBuilderX界面显示时，还会在末尾再增加一段发版日期，如3.8.12.20230817。上述api不会返回末段日期。
 
-但是这种多段式字符串类型的版本号，不方便做比较。获取到`uniRuntimeVersion`后，需要再分割三端后分别比较。
+但是这种多段式字符串类型的版本号，不方便做比较。获取到`uniRuntimeVersion`后，需要再分割三段后分别比较。
 
 并且字符串3段式中，3.9的下一个版本可以是3.10。这个情况又容易被误解，因为3.10很可能被误解为3.1，它和3.9到底谁大就容易混淆。
 

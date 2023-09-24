@@ -152,3 +152,4 @@
 	* [国际化开发指南](/tutorial/i18n.md)
 	* [海外开发者使用指南](/tutorial/internationalization.md)
 * [暗黑主题](/tutorial/darkmode.md)
+* [版本](/tutorial/version.md)

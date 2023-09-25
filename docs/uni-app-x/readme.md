@@ -10,6 +10,26 @@ uni-app x需HBuilderX3.9起支持，该版本处于公测状态，需单独邀�
 
 uni-app x 是一个庞大的工程，它包括uts语言、uvue渲染引擎、uni的组件和API、以及扩展机制。
 
+<div class="quick">
+  <div style="margin-top: 20px;justify-content: space-around;">
+    <a
+      href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk"
+      target="_blank"
+      style="display: flex; align-items: center;flex-direction: column;margin: 0 5px 20px;width:160px;"
+      one-link-mark="yes"
+    >
+      <div class="barcode-img-box">
+        <img
+          src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-apkqrcode.png"
+          width="160"
+          loading="lazy"
+        />
+      </div>
+      <b>hello uni-app x</b>
+    </a>
+  </div>
+</div>
+
 ## 1. uts语言
 
 uts 全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。它在不同平台，会被编译为不同平台的native语言，如：

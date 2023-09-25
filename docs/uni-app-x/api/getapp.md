@@ -1,4 +1,4 @@
-## getApp(opts?) @getapp
+## getApp() @getapp
 
 <!-- UTSAPIJSON.getApp.description -->
 

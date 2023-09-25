@@ -53,38 +53,35 @@
     * [事件总线event-bus](api/event-bus.md)
     * [获取启动参数](api/getlaunchoptionssync.md)
     * [退出应用](api/exit.md)
-  * 页面和路由
+  * 页面
     * [页面跳转](api/navigator.md)
     * [设置导航条颜色](api/setnavigationbarcolor.md)
     * [设置tabbar](api/set-tabbar.md)
     * [页面下拉刷新](api/pull-down-refresh.md)
     * [将页面滚动到指定位置](api/pagescrollto.md)
+  * 元素节点
+    * [获取element](api/get-element.md)
+    * [获取node](api/nodes-info.md)
+  * 界面
+    * [交互反馈](api/prompt.md)
+    * [动态加载字体](api/loadfontface.md)
   * 网络
     * [发起请求request](api/request.md)
     * [上传文件](api/uploadfile.md)
     * [下载文件](api/downloadfile.md)
     * [获取设备网络状态](api/getnetworktype.md)
-    * [全局websocket](api/websocket-global.md)
-  * 界面
-    * [获取节点](api/get-element-by-id.md)
-    * [节点信息](api/nodes-info.md)
-    * [显示操作菜单](api/showactionsheet.md)
-    * [显示模态弹窗](api/modal.md)
-    * [显示加载提示框](api/showloading.md)
-    * [显示消息提示框](api/toast.md)
-    * [动态加载字体](api/loadfontface.md)
+    * [websocket](api/websocket.md)
   * 设备
-    * [获取系统信息](api/getsysteminfo.md)
-    * [同步获取系统信息](api/getsysteminfosync.md)
+    * [获取系统信息](api/get-system-info.md)
     * [获取设备信息](api/getdeviceinfo.md)
     * [获取窗口信息](api/getwindowinfo.md)
     * [获取app基础信息](api/getappbaseinfo.md)
     * [获取app授权设置](api/getappauthorizesetting.md)
     * [获取系统设置](api/getsystemsetting.md)
-    * [获取电量信息](api/getbatteryinfo.md)
-    * [同步获取电量信息](api/getbatteryinfosync.md)
+    * [获取电量信息](api/get-battery-info.md)
   * 媒体
-    * [图片选择和预览](api/preview-image.md)
+    * [拍照和相册选择](api/chooseimage.md)
+    * [图片预览](api/preview-image.md)
     * [保存图片到相册](api/saveimagetophotosalbum.md)
   * 位置
     * [获取当前位置](api/getlocation.md)

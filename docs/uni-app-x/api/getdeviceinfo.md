@@ -1,4 +1,4 @@
-## uni.getDeviceInfo(config?) @getdeviceinfo
+## uni.getDeviceInfo(options?) @getdeviceinfo
 
 <!-- UTSAPIJSON.getDeviceInfo.description -->
 

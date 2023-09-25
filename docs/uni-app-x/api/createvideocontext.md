@@ -1,4 +1,4 @@
-## uni.createVideoContext(videoId, currentComponent) @createvideocontext
+## uni.createVideoContext(videoId, component?) @createvideocontext
 
 <!-- UTSAPIJSON.createVideoContext.description -->
 

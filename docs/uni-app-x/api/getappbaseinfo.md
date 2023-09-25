@@ -1,4 +1,4 @@
-## uni.getAppBaseInfo(config?) @getappbaseinfo
+## uni.getAppBaseInfo(options?) @getappbaseinfo
 
 <!-- UTSAPIJSON.getAppBaseInfo.description -->
 

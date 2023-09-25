@@ -34,7 +34,7 @@
 
 <!-- UTSAPIJSON.$once.tutorial -->
 
-## uni.$emit(eventName, args) @$emit
+## uni.$emit(eventName, args?) @$emit
 
 <!-- UTSAPIJSON.$emit.description -->
 

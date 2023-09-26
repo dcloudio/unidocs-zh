@@ -8,8 +8,6 @@
 
 <!-- UTSCOMJSON.scroll-view.example -->
 
-<!-- UTSCOMJSON.scroll-view.compatibility -->
-
 ### 自定义下拉刷新样式
 
 1. 设置`refresher-default-style`属性为 none 不使用默认样式
@@ -36,6 +34,8 @@
 ```
 
 **具体代码请参考：**[自定义下拉刷新样式示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/scroll-view/scroll-view-custom-refresher-props.uvue)
+
+<!-- UTSCOMJSON.scroll-view.compatibility -->
 
 <!-- UTSCOMJSON.scroll-view.reference -->
 

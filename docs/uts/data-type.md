@@ -676,6 +676,9 @@ array1.forEach((element:string, index:number) => {
 - 专有数组类型清单
 	* kotlin.collections.List
 	* kotlin.Array
+	* kotlin.IntArray
+	* kotlin.ByteArray
+	* kotlin.LongArray
 	* ...
 
 - 专有数组类型定义方式
@@ -694,13 +697,18 @@ let kotlinArray = arrayOf("hello","world")
 // kotlin.collections.List 转换 Array
 let kotlinList= mutableListOf("hello","world")
 let utsArr = Array.fromNative(kotlinList) 
-```
 
-```ts
+// 字节数组转 UTSArray<Number>
+let kotlinArray = byteArrayOf("hello","world")
+let utsArr = Array.fromNative(kotlinArray)
+
 // kotlin.Array 转换 Array
 let kotlinArray = arrayOf("hello","world")
 let utsArr = Array.fromNative(kotlinArray)
+
 ```
+
+
 
 举个例子。如下代码向系统查询了有多少应用可以响应 `launcher`行为 ，返回的 resolveInfo 是一个 `List<ResolveInfo>`。
 

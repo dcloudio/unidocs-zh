@@ -6,9 +6,13 @@
 
 <!-- UTSAPIJSON.uploadFile.returnValue -->
 
+<!-- UTSAPIJSON.uploadFile.example -->
+
 <!-- UTSAPIJSON.uploadFile.compatibility -->
 
 <!-- UTSAPIJSON.uploadFile.tutorial -->
+
+<!-- UTSAPIJSON.upload-file.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

@@ -6,9 +6,13 @@
 
 <!-- UTSAPIJSON.getAppBaseInfo.returnValue -->
 
+<!-- UTSAPIJSON.getAppBaseInfo.example -->
+
 <!-- UTSAPIJSON.getAppBaseInfo.compatibility -->
 
 <!-- UTSAPIJSON.getAppBaseInfo.tutorial -->
+
+<!-- UTSAPIJSON.get-app-base-info.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

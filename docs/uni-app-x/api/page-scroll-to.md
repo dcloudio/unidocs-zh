@@ -12,6 +12,8 @@ app-uvue下，只有页面的根元素为scroll-view时，本API才生效。[详
 
 <!-- UTSAPIJSON.pageScrollTo.returnValue -->
 
+<!-- UTSAPIJSON.pageScrollTo.example -->
+
 <!-- UTSAPIJSON.pageScrollTo.compatibility -->
 
 <!-- UTSAPIJSON.pageScrollTo.tutorial -->
@@ -42,6 +44,8 @@ uni.pageScrollTo({
 	duration: 300
 });
 ```
+
+<!-- UTSAPIJSON.page-scroll-to.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

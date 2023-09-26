@@ -6,9 +6,13 @@
 
 <!-- UTSAPIJSON.getWindowInfo.returnValue -->
 
+<!-- UTSAPIJSON.getWindowInfo.example -->
+
 <!-- UTSAPIJSON.getWindowInfo.compatibility -->
 
 <!-- UTSAPIJSON.getWindowInfo.tutorial -->
+
+<!-- UTSAPIJSON.get-window-info.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

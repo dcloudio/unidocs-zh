@@ -6,6 +6,8 @@
 
 <!-- UTSAPIJSON.navigateTo.returnValue -->
 
+<!-- UTSAPIJSON.navigateTo.example -->
+
 <!-- UTSAPIJSON.navigateTo.compatibility -->
 
 <!-- UTSAPIJSON.navigateTo.tutorial -->
@@ -17,6 +19,8 @@
 <!-- UTSAPIJSON.redirectTo.param -->
 
 <!-- UTSAPIJSON.redirectTo.returnValue -->
+
+<!-- UTSAPIJSON.redirectTo.example -->
 
 <!-- UTSAPIJSON.redirectTo.compatibility -->
 
@@ -30,6 +34,8 @@
 
 <!-- UTSAPIJSON.reLaunch.returnValue -->
 
+<!-- UTSAPIJSON.reLaunch.example -->
+
 <!-- UTSAPIJSON.reLaunch.compatibility -->
 
 <!-- UTSAPIJSON.reLaunch.tutorial -->
@@ -41,6 +47,8 @@
 <!-- UTSAPIJSON.switchTab.param -->
 
 <!-- UTSAPIJSON.switchTab.returnValue -->
+
+<!-- UTSAPIJSON.switchTab.example -->
 
 <!-- UTSAPIJSON.switchTab.compatibility -->
 
@@ -54,9 +62,13 @@
 
 <!-- UTSAPIJSON.navigateBack.returnValue -->
 
+<!-- UTSAPIJSON.navigateBack.example -->
+
 <!-- UTSAPIJSON.navigateBack.compatibility -->
 
 <!-- UTSAPIJSON.navigateBack.tutorial -->
+
+<!-- UTSAPIJSON.navigator.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

@@ -96,6 +96,8 @@
 
 <!-- UTSAPIJSON.onSocketClose.tutorial -->
 
+<!-- UTSAPIJSON.websocket-global.example -->
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

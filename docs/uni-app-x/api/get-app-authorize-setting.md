@@ -6,9 +6,13 @@
 
 <!-- UTSAPIJSON.getAppAuthorizeSetting.returnValue -->
 
+<!-- UTSAPIJSON.getAppAuthorizeSetting.example -->
+
 <!-- UTSAPIJSON.getAppAuthorizeSetting.compatibility -->
 
 <!-- UTSAPIJSON.getAppAuthorizeSetting.tutorial -->
+
+<!-- UTSAPIJSON.get-app-authorize-setting.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

@@ -6,9 +6,13 @@
 
 <!-- UTSAPIJSON.getCurrentPages.returnValue -->
 
+<!-- UTSAPIJSON.getCurrentPages.example -->
+
 <!-- UTSAPIJSON.getCurrentPages.compatibility -->
 
 <!-- UTSAPIJSON.getCurrentPages.tutorial -->
+
+<!-- UTSAPIJSON.get-current-pages.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

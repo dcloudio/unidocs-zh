@@ -8,9 +8,13 @@
 
 <!-- UTSAPIJSON.setNavigationBarColor.returnValue -->
 
+<!-- UTSAPIJSON.setNavigationBarColor.example -->
+
 <!-- UTSAPIJSON.setNavigationBarColor.compatibility -->
 
 <!-- UTSAPIJSON.setNavigationBarColor.tutorial -->
+
+<!-- UTSAPIJSON.set-navigation-bar-color.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

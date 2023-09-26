@@ -6,6 +6,8 @@
 
 <!-- UTSAPIJSON.showToast.returnValue -->
 
+<!-- UTSAPIJSON.showToast.example -->
+
 <!-- UTSAPIJSON.showToast.compatibility -->
 
 <!-- UTSAPIJSON.showToast.tutorial -->
@@ -17,6 +19,8 @@
 <!-- UTSAPIJSON.showLoading.param -->
 
 <!-- UTSAPIJSON.showLoading.returnValue -->
+
+<!-- UTSAPIJSON.showLoading.example -->
 
 <!-- UTSAPIJSON.showLoading.compatibility -->
 
@@ -30,6 +34,8 @@
 
 <!-- UTSAPIJSON.showModal.returnValue -->
 
+<!-- UTSAPIJSON.showModal.example -->
+
 <!-- UTSAPIJSON.showModal.compatibility -->
 
 <!-- UTSAPIJSON.showModal.tutorial -->
@@ -42,9 +48,13 @@
 
 <!-- UTSAPIJSON.showActionSheet.returnValue -->
 
+<!-- UTSAPIJSON.showActionSheet.example -->
+
 <!-- UTSAPIJSON.showActionSheet.compatibility -->
 
 <!-- UTSAPIJSON.showActionSheet.tutorial -->
+
+<!-- UTSAPIJSON.prompt.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

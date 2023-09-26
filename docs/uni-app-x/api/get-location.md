@@ -6,6 +6,8 @@
 
 <!-- UTSAPIJSON.getLocation.returnValue -->
 
+<!-- UTSAPIJSON.getLocation.example -->
+
 <!-- UTSAPIJSON.getLocation.compatibility -->
 
 ### 注意
@@ -29,6 +31,22 @@ system的定位仅支持wgs84坐标系、不支持逆地址解析、且某些老
 不管系统定位、还是三方sdk定位，都有很多注意事项，包括gms、坐标系、隐私和权限等，请仔细阅读下面的参考链接。
 
 <!-- UTSAPIJSON.getLocation.tutorial -->
+
+## uni.getLocation(options) @getlocation
+
+<!-- UTSAPIJSON.getLocation.description -->
+
+<!-- UTSAPIJSON.getLocation.param -->
+
+<!-- UTSAPIJSON.getLocation.returnValue -->
+
+<!-- UTSAPIJSON.getLocation.example -->
+
+<!-- UTSAPIJSON.getLocation.compatibility -->
+
+<!-- UTSAPIJSON.getLocation.tutorial -->
+
+<!-- UTSAPIJSON.get-location.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

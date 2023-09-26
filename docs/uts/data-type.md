@@ -692,19 +692,34 @@ let kotlinArray = arrayOf("hello","world")
 
 - 专有数组类型 转 Array
 
+统一使用 `Array.fromNative` 将专业数据类型转换为 Array,下面列出了常见的场景：
 
 ```ts
-// kotlin.collections.List 转换 Array
-let kotlinList= mutableListOf("hello","world")
-let utsArr = Array.fromNative(kotlinList) 
 
-// 字节数组转 UTSArray<Number>
-let kotlinArray = byteArrayOf("hello","world")
-let utsArr = Array.fromNative(kotlinArray)
+	// kotlin.collections.List 转换 Array
+	let kotlinList = mutableListOf("hello","world")
+	let utsArr1 = Array.fromNative(kotlinList) 
+	
+	// kotlin.Array 转换 Array
+	let kotlinArray = arrayOf("hello","world")
+	let utsArr2 = Array.fromNative(kotlinArray)
+	
+	//ByteArray 即 java 中的 byte[]
+	let b1 = byteArrayOf(-1,2,0,3,4,5)
+	let c1 = Array.fromNative(b1)
 
-// kotlin.Array 转换 Array
-let kotlinArray = arrayOf("hello","world")
-let utsArr = Array.fromNative(kotlinArray)
+	//LongArray 即 java 中的 long[]
+	let b2 = longArrayOf(-1,2,0,3,4,5)
+	let c2 = Array.fromNative(b2)
+	
+	//ShortArray 即 java 中的 short[]
+	let b3 = shortArrayOf(-1,2,0,3,4,5)
+	let c3 = Array.fromNative(b3)
+	
+	//IntArray 即 java 中的 int[]
+	let b4 = intArrayOf(-1,2,0,3,4,5)
+	let c4 = Array.fromNative(b4)
+
 
 ```
 

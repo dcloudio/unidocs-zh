@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.web-view.event -->
 
+<!-- UTSCOMJSON.web-view.example -->
+
 <!-- UTSCOMJSON.web-view.compatibility -->
 
 <!-- UTSCOMJSON.web-view.reference -->

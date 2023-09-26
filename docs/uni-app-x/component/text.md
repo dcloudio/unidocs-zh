@@ -10,6 +10,8 @@
 
 <!-- UTSCOMJSON.text.event -->
 
+<!-- UTSCOMJSON.text.example -->
+
 <!-- UTSCOMJSON.text.compatibility -->
 
 ## 子组件

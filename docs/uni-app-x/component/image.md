@@ -41,6 +41,8 @@
 	
 	image组件内部使用facebook的[fresco](https://github.com/facebook/fresco)库(2.5.0)，自带缓存策略，也会自动清理缓存。
 
+<!-- UTSCOMJSON.image.example -->
+
 <!-- UTSCOMJSON.image.compatibility -->
 
 ### tips

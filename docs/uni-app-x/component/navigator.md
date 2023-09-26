@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.navigator.event -->
 
+<!-- UTSCOMJSON.navigator.example -->
+
 <!-- UTSCOMJSON.navigator.compatibility -->
 
 <!-- UTSCOMJSON.navigator.reference -->

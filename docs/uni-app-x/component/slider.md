@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.slider.event -->
 
+<!-- UTSCOMJSON.slider.example -->
+
 <!-- UTSCOMJSON.slider.compatibility -->
 
 ## tips

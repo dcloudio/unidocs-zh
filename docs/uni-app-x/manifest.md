@@ -80,9 +80,9 @@ App-Android端发布配置
 |storepwd		|String					|-				|证书库文件密码						|3.9.0				|
 |aliasname		|String					|-				|证书别名							|3.9.0				|
 |keypwd			|String					|-				|证书密码							|3.9.0				|
-|abiFilters		|Array<String>			|-				|支持的CPU类型						|3.9.0				|
-|minSdkVersion	|String					|-				|最低Android版本（Android API Level）|3.9.0				|
-|targetSdkVersion	|String				|-				|目标版本（Android API Level）		|3.9.0				|
+|abiFilters		|Array<String>			|-				|应用支持的CPU类型					|3.9.0				|
+|minSdkVersion	|String					|-				|应用兼容的最低Android版本（Android API Level）|3.9.0				|
+|targetSdkVersion	|String				|-				|应用适配的目标目标版本（Android API Level）	|3.9.0				|
 
 **注意**  
 - `minSdkVersion` 用于指定应用运行所需最低 API 级别的整数。如果系统的 API 级别低于该属性中指定的值，Android 系统将阻止用户安装应用。  

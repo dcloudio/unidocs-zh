@@ -6,6 +6,28 @@ uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
 
 uni-app x需HBuilderX3.9起支持，该版本处于公测状态，需单独邀请下载。正式版和alpha用户暂时无法升级到3.9。
 
+可以下载打包后的[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/hello-uniapp-x.apk)的apk来体验。
+
+<div class="quick">
+  <div style="margin-top: 20px;justify-content: space-around;">
+    <a
+      href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk"
+      target="_blank"
+      style="display: flex; align-items: center;flex-direction: column;margin: 0 5px 20px;width:160px;"
+      one-link-mark="yes"
+    >
+      <div class="barcode-img-box">
+        <img
+          src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-apkqrcode.png"
+          width="160"
+          loading="lazy"
+        />
+      </div>
+      <b>hello uni-app x</b>
+    </a>
+  </div>
+</div>
+
 uni-app x 是一个庞大的工程，它包括uts语言、uvue渲染引擎、uni的组件和API、以及扩展机制。
 
 ## 1. uts语言
@@ -91,8 +113,6 @@ uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex�
 以上约束特指App端的uvue引擎。如果把uvue页面编译到小程序和web平台，它的script仍然会被编译为js，web的样式也都可以使用。
 
 更多示例代码参考：[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x)
-
-这里是打包后的[hello uni-app x的apk](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/hello-uniapp-x.apk)
 
 ## 3. uni的组件
 
@@ -293,6 +313,10 @@ uvue的script里写的就是uts，uts就可以直接调原生代码。无所谓�
 
 - uni-app x 支持最低的Android版本多少？
 Android 5+
+
+- uni-app x开源吗？
+uni-app x的组件和API实现都会开源，会陆续发布在项目[uni-component](https://gitcode.net/dcloud/uni-component)和[uni-api](https://gitcode.net/dcloud/uni-api)下。\
+开发者可以了解组件和API的实现，直接修改或优化源码，修改后的代码以[ext api](../api/extapi.md)或组件的方式下载到项目中，即可实现在本项目中替换掉官方组件和API。
 
 - 未来 uni-app js引擎版还维护吗？
 维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。

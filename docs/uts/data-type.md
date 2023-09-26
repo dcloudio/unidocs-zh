@@ -692,7 +692,7 @@ let kotlinArray = arrayOf("hello","world")
 
 - 专有数组类型 转 Array
 
-统一使用 `Array.fromNative` 将专业数据类型转换为 Array,下面列出了常见的场景：
+统一使用 `Array.fromNative` 将专有数据类型转换为 Array,下面列出了常见的场景：
 
 ```ts
 

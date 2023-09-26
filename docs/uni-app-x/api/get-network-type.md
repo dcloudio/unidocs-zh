@@ -6,9 +6,13 @@
 
 <!-- UTSAPIJSON.getNetworkType.returnValue -->
 
+<!-- UTSAPIJSON.getNetworkType.example -->
+
 <!-- UTSAPIJSON.getNetworkType.compatibility -->
 
 <!-- UTSAPIJSON.getNetworkType.tutorial -->
+
+<!-- UTSAPIJSON.get-network-type.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

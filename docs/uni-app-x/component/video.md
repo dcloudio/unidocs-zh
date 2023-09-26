@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.video.event -->
 
+<!-- UTSCOMJSON.video.example -->
+
 <!-- UTSCOMJSON.video.compatibility -->
 
 #### App平台  

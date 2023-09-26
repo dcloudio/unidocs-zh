@@ -6,9 +6,13 @@
 
 <!-- UTSAPIJSON.getDeviceInfo.returnValue -->
 
+<!-- UTSAPIJSON.getDeviceInfo.example -->
+
 <!-- UTSAPIJSON.getDeviceInfo.compatibility -->
 
 <!-- UTSAPIJSON.getDeviceInfo.tutorial -->
+
+<!-- UTSAPIJSON.get-device-info.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

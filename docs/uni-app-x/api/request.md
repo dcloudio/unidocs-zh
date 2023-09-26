@@ -6,13 +6,13 @@
 
 <!-- UTSAPIJSON.request.returnValue -->
 
+<!-- UTSAPIJSON.request.example -->
+
 <!-- UTSAPIJSON.request.compatibility -->
 
 <!-- UTSAPIJSON.request.tutorial -->
 
-<!-- UTSAPIJSON.general_type.name -->
-
-<!-- UTSAPIJSON.general_type.param -->
+<!-- UTSAPIJSON.request.example -->
 
 ## 注意事项
 
@@ -22,3 +22,7 @@
     const options: RequestOptions<Person> = ...
     uni.request<Person>(options)
     ```
+
+<!-- UTSAPIJSON.general_type.name -->
+
+<!-- UTSAPIJSON.general_type.param -->

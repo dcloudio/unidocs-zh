@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.picker-view.event -->
 
+<!-- UTSCOMJSON.picker-view.example -->
+
 <!-- UTSCOMJSON.picker-view.compatibility -->
 
 <!-- UTSCOMJSON.picker-view.reference -->
@@ -18,6 +20,8 @@
 <!-- UTSCOMJSON.picker-view-column.attrubute -->
 
 <!-- UTSCOMJSON.picker-view-column.event -->
+
+<!-- UTSCOMJSON.picker-view-column.example -->
 
 <!-- UTSCOMJSON.picker-view-column.compatibility -->
 

@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.scroll-view.event -->
 
+<!-- UTSCOMJSON.scroll-view.example -->
+
 <!-- UTSCOMJSON.scroll-view.compatibility -->
 
 ### 自定义下拉刷新样式

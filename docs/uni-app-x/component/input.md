@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.input.event -->
 
+<!-- UTSCOMJSON.input.example -->
+
 <!-- UTSCOMJSON.input.compatibility -->
 
 <!-- UTSCOMJSON.input.reference -->

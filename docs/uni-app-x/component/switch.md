@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.switch.event -->
 
+<!-- UTSCOMJSON.switch.example -->
+
 <!-- UTSCOMJSON.switch.compatibility -->
 
 <!-- UTSCOMJSON.switch.reference -->

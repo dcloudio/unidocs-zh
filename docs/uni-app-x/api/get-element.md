@@ -6,9 +6,13 @@
 
 <!-- UTSAPIJSON.getElementById.returnValue -->
 
+<!-- UTSAPIJSON.getElementById.example -->
+
 <!-- UTSAPIJSON.getElementById.compatibility -->
 
 <!-- UTSAPIJSON.getElementById.tutorial -->
+
+<!-- UTSAPIJSON.get-element.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

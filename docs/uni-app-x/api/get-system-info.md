@@ -18,6 +18,8 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 
 <!-- UTSAPIJSON.getSystemInfo.returnValue -->
 
+<!-- UTSAPIJSON.getSystemInfo.example -->
+
 <!-- UTSAPIJSON.getSystemInfo.compatibility -->
 
 <!-- UTSAPIJSON.getSystemInfo.tutorial -->
@@ -30,9 +32,13 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 
 <!-- UTSAPIJSON.getSystemInfoSync.returnValue -->
 
+<!-- UTSAPIJSON.getSystemInfoSync.example -->
+
 <!-- UTSAPIJSON.getSystemInfoSync.compatibility -->
 
 <!-- UTSAPIJSON.getSystemInfoSync.tutorial -->
+
+<!-- UTSAPIJSON.get-system-info.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

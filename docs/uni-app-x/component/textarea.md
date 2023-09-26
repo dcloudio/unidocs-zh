@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.textarea.event -->
 
+<!-- UTSCOMJSON.textarea.example -->
+
 <!-- UTSCOMJSON.textarea.compatibility -->
 
 <!-- UTSCOMJSON.textarea.reference -->

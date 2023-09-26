@@ -6,6 +6,8 @@
 
 <!-- UTSAPIJSON.$on.returnValue -->
 
+<!-- UTSAPIJSON.$on.example -->
+
 <!-- UTSAPIJSON.$on.compatibility -->
 
 <!-- UTSAPIJSON.$on.tutorial -->
@@ -17,6 +19,8 @@
 <!-- UTSAPIJSON.$off.param -->
 
 <!-- UTSAPIJSON.$off.returnValue -->
+
+<!-- UTSAPIJSON.$off.example -->
 
 <!-- UTSAPIJSON.$off.compatibility -->
 
@@ -30,6 +34,8 @@
 
 <!-- UTSAPIJSON.$once.returnValue -->
 
+<!-- UTSAPIJSON.$once.example -->
+
 <!-- UTSAPIJSON.$once.compatibility -->
 
 <!-- UTSAPIJSON.$once.tutorial -->
@@ -42,9 +48,13 @@
 
 <!-- UTSAPIJSON.$emit.returnValue -->
 
+<!-- UTSAPIJSON.$emit.example -->
+
 <!-- UTSAPIJSON.$emit.compatibility -->
 
 <!-- UTSAPIJSON.$emit.tutorial -->
+
+<!-- UTSAPIJSON.event-bus.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

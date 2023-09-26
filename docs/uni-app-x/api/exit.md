@@ -20,6 +20,8 @@ Android平台的应用退出分热退出和冷退出。
 
 <!-- UTSAPIJSON.exit.tutorial -->
 
+<!-- UTSAPIJSON.exit.example -->
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

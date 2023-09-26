@@ -13,9 +13,13 @@
 
 <!-- UTSAPIJSON.stopPullDownRefresh.returnValue -->
 
+<!-- UTSAPIJSON.stopPullDownRefresh.example -->
+
 <!-- UTSAPIJSON.stopPullDownRefresh.compatibility -->
 
 <!-- UTSAPIJSON.stopPullDownRefresh.tutorial -->
+
+<!-- UTSAPIJSON.pull-down-refresh.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

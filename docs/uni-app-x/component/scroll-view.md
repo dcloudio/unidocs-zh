@@ -16,6 +16,8 @@
 2. 自定义下拉刷新元素必须要声明为 slot="refresher"
 3. 通过组件提供的refresherpulling、refresherrefresh、refresherrestore、refresherabort下拉刷新事件调整自定义下拉刷新元素！实现预期效果
 
+**注意：** 目前自定义下拉刷新元素不支持放在scroll-view的首个子元素位置上。可能无法正常显示
+
 ```uts
 <scroll-view refresher-default-style="none" :refresher-enabled="true" :refresher-triggered="refresherTriggered"
 			 @refresherpulling="onRefresherpulling" @refresherrefresh="onRefresherrefresh" 

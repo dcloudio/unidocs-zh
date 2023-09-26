@@ -47,8 +47,8 @@
 * API
   * [概述](api/README.md)
   * 全局
-    * [getapp](api/get-app.md)
-    * [getcurrentpages](api/get-current-pages.md)
+    * [getApp](api/get-app.md)
+    * [getCurrentPages](api/get-current-pages.md)
   * 基础
     * [事件总线event-bus](api/event-bus.md)
     * [获取启动参数](api/get-launch-options-sync.md)

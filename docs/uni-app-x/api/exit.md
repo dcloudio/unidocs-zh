@@ -6,8 +6,6 @@
 
 <!-- UTSAPIJSON.exit.returnValue -->
 
-<!-- UTSAPIJSON.exit.example -->
-
 <!-- UTSAPIJSON.exit.compatibility -->
 
 本API仅Android App生效。

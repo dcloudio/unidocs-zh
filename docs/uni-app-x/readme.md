@@ -288,38 +288,38 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 ## FAQ
 - uni-app x 支持uvue页面和vue页面混写吗？
-仅支持uvue页面。历史vue页面可以通过 uni小程序sdk 嵌入到uni-app x中。
+  - 仅支持uvue页面。历史vue页面可以通过 uni小程序sdk 嵌入到uni-app x中。
 
 - uni-app x 的app端能离线打包吗？
-初期不能，后期会提供
+  - 初期不能，后期会提供
 
 - uni-app x 能热更新吗？
-开发期间可以热刷，但打包后不能热更新。开发者可自行封装原生的插件动态加载方案。
+  - 开发期间可以热刷，但打包后不能热更新。开发者可自行封装原生的插件动态加载方案。
 
 - uni-app x 会搞插件大赛吗？
-会。很快启动，鼓励大家做基于uts和uvue的插件。
+  - 会。很快启动，鼓励大家做基于uts和uvue的插件。
 
 - uni-app x 能调用所有原生API吗？
-可以。在app端，kotlin和swift能调的，uts就能调。
+  - 可以。在app端，kotlin和swift能调的，uts就能调。
 
 - uni-app x 能集成原生sdk吗？
-可以，通过uts插件，[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
+  - 可以，通过uts插件，[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 - uvue页面里的script可以直接调用原生代码吗？还是必须封装成uni_modules方式的uts原生插件？
-uvue的script里写的就是uts，uts就可以直接调原生代码。无所谓它在`uni_modules`里还是外。但如果是大段的原生代码调用，还是推荐封装为独立的`uni_modules`。
+  - uvue的script里写的就是uts，uts就可以直接调原生代码。无所谓它在`uni_modules`里还是外。但如果是大段的原生代码调用，还是推荐封装为独立的`uni_modules`。
 
 - uni-app x 的开发只能用HBuilderX吗？
-是的。为三方ide做插件是一个投资大且充满不确定性的事情，官方有限精力会聚焦在自身产品优化上。
+  - 是的。为三方ide做插件是一个投资大且充满不确定性的事情，官方有限精力会聚焦在自身产品优化上。
 
 - uni-app x 支持最低的Android版本多少？
-Android 5+
+  - Android 5+
 
 - uni-app x开源吗？
-uni-app x的组件和API实现都会开源，会陆续发布在项目[uni-component](https://gitcode.net/dcloud/uni-component)和[uni-api](https://gitcode.net/dcloud/uni-api)下。\
+  - uni-app x的组件和API实现都会开源，会陆续发布在项目[uni-component](https://gitcode.net/dcloud/uni-component)和[uni-api](https://gitcode.net/dcloud/uni-api)下。\
 开发者可以了解组件和API的实现，直接修改或优化源码，修改后的代码以[ext api](../api/extapi.md)或组件的方式下载到项目中，即可实现在本项目中替换掉官方组件和API。
 
 - 未来 uni-app js引擎版还维护吗？
-维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。
+  - 维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。
 
 并非所有应用都需要达到微信、抖音的性能，js引擎版如能满足你的性能需求，那继续使用js引擎版。
 

@@ -20,6 +20,7 @@ ijkplayer库的功能较多，video组件并非完全封装。有需要的开发
 
 ### bug@tips  
 - 暂不支持横屏全屏后放置子组件
+- 在Android9以下设备兼容性不够完善，反复暂停/播放会引起崩溃
 
 <!-- UTSCOMJSON.video.children -->
 

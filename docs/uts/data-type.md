@@ -704,19 +704,19 @@ let kotlinArray = arrayOf("hello","world")
 	let kotlinArray = arrayOf("hello","world")
 	let utsArr2 = Array.fromNative(kotlinArray)
 	
-	//ByteArray 即 java 中的 byte[]
+	//ByteArray 即 java 中的 byte[]   需要HBuilderX 3.9.0 之后版本
 	let b1 = byteArrayOf(-1,2,0,3,4,5)
 	let c1 = Array.fromNative(b1)
 
-	//LongArray 即 java 中的 long[]
+	//LongArray 即 java 中的 long[]  需要HBuilderX 3.9.0 之后版本
 	let b2 = longArrayOf(-1,2,0,3,4,5)
 	let c2 = Array.fromNative(b2)
 	
-	//ShortArray 即 java 中的 short[]
+	//ShortArray 即 java 中的 short[] 需要HBuilderX 3.9.0 之后版本
 	let b3 = shortArrayOf(-1,2,0,3,4,5)
 	let c3 = Array.fromNative(b3)
 	
-	//IntArray 即 java 中的 int[]
+	//IntArray 即 java 中的 int[]  
 	let b4 = intArrayOf(-1,2,0,3,4,5)
 	let c4 = Array.fromNative(b4)
 

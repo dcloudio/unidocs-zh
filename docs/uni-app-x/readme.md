@@ -1,12 +1,12 @@
 # uni-app x 是什么？
 
+> HBuilderX3.9+
+
 uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
 
 在App端，uni-app x 在iOS编译为swift、在Android编译为kotlin。没有使用js引擎、webview，完全达到了原生应用的功能、性能。
 
-uni-app x需HBuilderX3.9起支持，该版本处于公测状态，需单独邀请下载。正式版和alpha用户暂时无法升级到3.9。
-
-可以下载打包后的[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/hello-uniapp-x.apk)的apk来体验。
+可以下载打包后的[hello uni-app x](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk)的apk来体验。
 
 <div class="quick">
   <div style="margin-top: 20px;justify-content: space-around;">
@@ -27,6 +27,8 @@ uni-app x需HBuilderX3.9起支持，该版本处于公测状态，需单独邀�
     </a>
   </div>
 </div>
+
+hello uni-app x的源码见：[https://gitcode.net/dcloud/hello-uni-app-x](https://gitcode.net/dcloud/hello-uni-app-x)
 
 uni-app x 是一个庞大的工程，它包括uts语言、uvue渲染引擎、uni的组件和API、以及扩展机制。
 

@@ -91,6 +91,7 @@
     * [web-view组件上下文对象](api/create-webview-context.md)
     * [video组件上下文对象](api/create-video-context.md)
   * [uniCloud客户端API](unicloud.md)
+  * [其他EXT API](ext.md)
 * CSS
   * [CSS概述](css/README.md)
   * [align-content](css/align-content.md)

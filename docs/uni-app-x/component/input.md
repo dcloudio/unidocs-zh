@@ -10,5 +10,7 @@
 
 <!-- UTSCOMJSON.input.compatibility -->
 
+<!-- UTSCOMJSON.input.children -->
+
 <!-- UTSCOMJSON.input.reference -->
 

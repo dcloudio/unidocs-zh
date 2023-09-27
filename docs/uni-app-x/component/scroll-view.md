@@ -75,5 +75,7 @@
 
 <!-- UTSCOMJSON.scroll-view.compatibility -->
 
+<!-- UTSCOMJSON.scroll-view.children -->
+
 <!-- UTSCOMJSON.scroll-view.reference -->
 

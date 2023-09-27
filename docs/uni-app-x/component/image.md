@@ -48,5 +48,7 @@
 ### tips
 在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/image/image-path.uvue)
 
+<!-- UTSCOMJSON.image.children -->
+
 <!-- UTSCOMJSON.image.reference -->
 

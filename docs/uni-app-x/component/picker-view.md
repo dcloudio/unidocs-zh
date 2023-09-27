@@ -10,6 +10,8 @@
 
 <!-- UTSCOMJSON.picker-view.compatibility -->
 
+<!-- UTSCOMJSON.picker-view.children -->
+
 <!-- UTSCOMJSON.picker-view.reference -->
 
 
@@ -24,6 +26,8 @@
 <!-- UTSCOMJSON.picker-view-column.example -->
 
 <!-- UTSCOMJSON.picker-view-column.compatibility -->
+
+<!-- UTSCOMJSON.picker-view-column.children -->
 
 <!-- UTSCOMJSON.picker-view-column.reference -->
 

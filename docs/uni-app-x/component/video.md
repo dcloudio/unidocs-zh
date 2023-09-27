@@ -21,6 +21,8 @@ ijkplayer库的功能较多，video组件并非完全封装。有需要的开发
 ### bug@tips  
 - 暂不支持横屏全屏后放置子组件
 
+<!-- UTSCOMJSON.video.children -->
+
 <!-- UTSCOMJSON.video.reference -->
 
 ### 上下文对象API

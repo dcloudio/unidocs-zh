@@ -17,5 +17,7 @@ show-value属性设为true后，会在横条右侧显示一个数字。
 
 如您需要5位或更多数字，请将show-value设为false或不设，自行写一个text组件，绑定value的数值来显示。
 
+<!-- UTSCOMJSON.slider.children -->
+
 <!-- UTSCOMJSON.slider.reference -->
 

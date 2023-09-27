@@ -10,5 +10,7 @@
 
 <!-- UTSCOMJSON.navigator.compatibility -->
 
+<!-- UTSCOMJSON.navigator.children -->
+
 <!-- UTSCOMJSON.navigator.reference -->
 

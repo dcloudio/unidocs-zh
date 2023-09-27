@@ -10,6 +10,8 @@
 - class
 - data-
 
+<!-- CUSTOMTYPEJSON.general-attribute.example -->
+
 ## 组件公共事件
 
 - @touchstart
@@ -234,3 +236,5 @@ handleClick (event : MouseEvent) {
 <!-- CUSTOMTYPEJSON.Touch.extends -->
 
 <!-- CUSTOMTYPEJSON.Touch.param -->
+
+<!-- CUSTOMTYPEJSON.general-event.example -->

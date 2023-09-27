@@ -26,6 +26,9 @@
   * [Error](buildin-object-api/error.md)
   * [Console](buildin-object-api/console.md)
   * [全局](buildin-object-api/global.md)
+* 平台对象和 API
+  * [UTSAndroid](utsandroid.md)
+  * [UTSiOS](utsios.md)
 * [关键词](keywords.md)
 <!-- * [学习资料](learning.md) -->
 * uts插件

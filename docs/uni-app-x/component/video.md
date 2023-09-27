@@ -28,6 +28,6 @@ ijkplayer库的功能较多，video组件并非完全封装。有需要的开发
 
 ### 上下文对象API
 
-video的操作api为[uni.createVideoContext()](../api/createvideocontext.md)。
+video的操作api为[uni.createVideoContext()](../api/create-video-context.md)。
 
 给video组件设一个id属性，将id的值传入uni.createVideoContext()，即可得到video组件的上下文对象，进一步可使用`.play()`、`.stop()`等方法。

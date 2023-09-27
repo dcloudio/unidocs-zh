@@ -54,6 +54,9 @@
 
 <!-- UTSAPIJSON.switchTab.tutorial -->
 
+### bug&tips
+- 首页不是tabbar的情况，暂不支持switchTab
+
 ## uni.navigateBack(options?) @navigateback
 
 <!-- UTSAPIJSON.navigateBack.description -->

@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.letter-spacing.values -->
 
+<!-- CSSJSON.letter-spacing.defaultValue -->
+
+<!-- CSSJSON.letter-spacing.unixTags -->
+
 <!-- CSSJSON.letter-spacing.compatibility -->
 
 <!-- CSSJSON.letter-spacing.reference -->

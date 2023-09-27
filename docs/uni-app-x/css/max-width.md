@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.max-width.values -->
 
+<!-- CSSJSON.max-width.defaultValue -->
+
+<!-- CSSJSON.max-width.unixTags -->
+
 <!-- CSSJSON.max-width.compatibility -->
 
 <!-- CSSJSON.max-width.reference -->

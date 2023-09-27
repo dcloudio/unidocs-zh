@@ -7,9 +7,13 @@
 
 <!-- CSSJSON.text-decoration-color.values -->
 
+<!-- CSSJSON.text-decoration-color.defaultValue -->
+
+<!-- CSSJSON.text-decoration-color.unixTags -->
+
 <!-- CSSJSON.text-decoration-color.compatibility -->
 
 #### App平台差异  
-text-decoration-color 样式不支持继承，仅对 [text](uni-app-x/component/text.md) 组件生效。  
+text-decoration-color 样式不支持继承
 
 <!-- CSSJSON.text-decoration-color.reference -->

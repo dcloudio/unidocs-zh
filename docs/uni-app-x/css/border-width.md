@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.border-width.values -->
 
+<!-- CSSJSON.border-width.defaultValue -->
+
+<!-- CSSJSON.border-width.unixTags -->
+
 <!-- CSSJSON.border-width.compatibility -->
 
 <!-- CSSJSON.border-width.reference -->

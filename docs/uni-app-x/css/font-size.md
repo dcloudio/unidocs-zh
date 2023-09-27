@@ -1,10 +1,15 @@
 ## font-size
 
+
 <!-- CSSJSON.font-size.description -->
 
 <!-- CSSJSON.font-size.syntax -->
 
 <!-- CSSJSON.font-size.values -->
+
+<!-- CSSJSON.font-size.defaultValue -->
+
+<!-- CSSJSON.font-size.unixTags -->
 
 <!-- CSSJSON.font-size.compatibility -->
 

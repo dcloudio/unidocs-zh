@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.border.values -->
 
+<!-- CSSJSON.border.defaultValue -->
+
+<!-- CSSJSON.border.unixTags -->
+
 <!-- CSSJSON.border.compatibility -->
 
 <!-- CSSJSON.border.reference -->

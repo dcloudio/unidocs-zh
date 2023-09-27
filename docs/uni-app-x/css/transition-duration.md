@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.transition-duration.values -->
 
+<!-- CSSJSON.transition-duration.defaultValue -->
+
+<!-- CSSJSON.transition-duration.unixTags -->
+
 <!-- CSSJSON.transition-duration.compatibility -->
 
 <!-- CSSJSON.transition-duration.reference -->

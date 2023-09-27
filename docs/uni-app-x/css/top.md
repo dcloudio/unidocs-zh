@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.top.values -->
 
+<!-- CSSJSON.top.defaultValue -->
+
+<!-- CSSJSON.top.unixTags -->
+
 <!-- CSSJSON.top.compatibility -->
 
 <!-- CSSJSON.top.reference -->

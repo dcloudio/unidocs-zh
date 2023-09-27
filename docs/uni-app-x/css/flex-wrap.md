@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.flex-wrap.values -->
 
+<!-- CSSJSON.flex-wrap.defaultValue -->
+
+<!-- CSSJSON.flex-wrap.unixTags -->
+
 <!-- CSSJSON.flex-wrap.compatibility -->
 
 <!-- CSSJSON.flex-wrap.reference -->

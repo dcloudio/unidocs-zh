@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.height.values -->
 
+<!-- CSSJSON.height.defaultValue -->
+
+<!-- CSSJSON.height.unixTags -->
+
 <!-- CSSJSON.height.compatibility -->
 
 <!-- CSSJSON.height.reference -->

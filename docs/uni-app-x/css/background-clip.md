@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.background-clip.values -->
 
+<!-- CSSJSON.background-clip.defaultValue -->
+
+<!-- CSSJSON.background-clip.unixTags -->
+
 <!-- CSSJSON.background-clip.compatibility -->
 
 <!-- CSSJSON.background-clip.reference -->

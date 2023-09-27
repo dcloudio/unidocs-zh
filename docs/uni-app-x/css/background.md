@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.background.values -->
 
+<!-- CSSJSON.background.defaultValue -->
+
+<!-- CSSJSON.background.unixTags -->
+
 <!-- CSSJSON.background.compatibility -->
 
 <!-- CSSJSON.background.reference -->

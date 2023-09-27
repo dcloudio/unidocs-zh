@@ -245,7 +245,7 @@ style的写法与web的css基本相同。
 |函数名|说明|平台差异说明|最低版本|
 |:-|:-|:-|:-|
 |onInit|监听页面初始化，其参数同 onLoad 参数，为上个页面传递的数据，参数类型为 Object（用于页面传参），触发时机早于 onLoad|百度小程序|3.1.0+|
-|onLoad|监听页面加载，该钩子被调用时，响应式数据、计算属性、方法、侦听器、props、slots 已设置完成，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参），参考[示例](/api/router?id=navigateto)|||
+|onLoad|监听页面加载，该钩子被调用时，响应式数据、计算属性、方法、侦听器、props、slots 已设置完成，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参），参考[示例](/api/router?id=navigateto)。|||
 |onShow|监听页面显示，页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面|||
 |onReady|监听页面初次渲染完成，此时组件已挂载完成，DOM 树($el)已可用，注意如果渲染速度快，会在页面进入动画完成前触发|||
 |onHide|监听页面隐藏|||
@@ -352,6 +352,12 @@ a页面刚进入时，会触发a页面的onShow。
 - 仅百度小程序基础库 3.260 以上支持 onInit 生命周期
 - 其他版本或平台可以同时使用 onLoad 生命周期进行兼容，注意避免重复执行相同逻辑
 - 不依赖页面传参的逻辑可以直接使用 created 生命周期替代
+
+### onLoad
+
+**注意**
+
+- `uni-app x android` 平台，如需获取 [activity 实例](plugin/uts-for-android.md#activity)，此时当前页面的 `activity 实例`并未创建完成，会获取到上一个页面的 `activity 实例`（首页会获取应用默认的 `activity 实例`）。如需获取当前页面的 `activity 实例`，应在 `onShow` 或 `onReady` 生命周期中获取。
 
 ### onReachBottom
 

@@ -7,9 +7,13 @@
 
 <!-- CSSJSON.text-overflow.values -->
 
+<!-- CSSJSON.text-overflow.defaultValue -->
+
+<!-- CSSJSON.text-overflow.unixTags -->
+
 <!-- CSSJSON.text-overflow.compatibility -->
 
 #### App平台差异  
-text-overflow 样式不支持继承，仅对 [text](uni-app-x/component/text.md) 组件生效。  
+text-overflow 样式不支持继承
 
 <!-- CSSJSON.text-overflow.reference -->

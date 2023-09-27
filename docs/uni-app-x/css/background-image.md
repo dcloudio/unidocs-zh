@@ -1,10 +1,15 @@
 ## background-image
 
+
 <!-- CSSJSON.background-image.description -->
 
 <!-- CSSJSON.background-image.syntax -->
 
 <!-- CSSJSON.background-image.values -->
+
+<!-- CSSJSON.background-image.defaultValue -->
+
+<!-- CSSJSON.background-image.unixTags -->
 
 <!-- CSSJSON.background-image.compatibility -->
 
@@ -28,5 +33,6 @@ linear-gradient(<direction>, <color-start>, <color-stop>)
 	渐变终点颜色值，支持RGB（rgb(255, 0, 0)）；RGBA（rgba(255, 0, 0, 0.5)）；十六进制（#ff0000）；精简写法的十六进制（#f00）；色值关键字（red）  
 
 > background-image 优先级高于 background-color，同时设置 background-image 和 background-color 时 background-color 被覆盖。
+
 
 <!-- CSSJSON.background-image.reference -->

@@ -177,6 +177,8 @@
   * [z-index](css/z-index.md)
   * [visibility](css/visibility.md)
   * [lines](css/lines.md)
+  * [align-self](css/align-self.md)
+  * [pointer-events](css/pointer-events.md)
 * UVUE DOM
   * [DOM概述](dom/)
   * [Element](dom/element.md)

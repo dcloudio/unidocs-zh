@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.lines.values -->
 
+<!-- CSSJSON.lines.defaultValue -->
+
+<!-- CSSJSON.lines.unixTags -->
+
 <!-- CSSJSON.lines.compatibility -->
 
 <!-- CSSJSON.lines.reference -->

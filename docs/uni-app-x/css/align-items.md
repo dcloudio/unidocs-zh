@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.align-items.values -->
 
+<!-- CSSJSON.align-items.defaultValue -->
+
+<!-- CSSJSON.align-items.unixTags -->
+
 <!-- CSSJSON.align-items.compatibility -->
 
 <!-- CSSJSON.align-items.reference -->

@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.border-top-right-radius.values -->
 
+<!-- CSSJSON.border-top-right-radius.defaultValue -->
+
+<!-- CSSJSON.border-top-right-radius.unixTags -->
+
 <!-- CSSJSON.border-top-right-radius.compatibility -->
 
 <!-- CSSJSON.border-top-right-radius.reference -->

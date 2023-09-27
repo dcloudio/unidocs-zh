@@ -7,6 +7,10 @@
 
 <!-- CSSJSON.border-bottom-color.values -->
 
+<!-- CSSJSON.border-bottom-color.defaultValue -->
+
+<!-- CSSJSON.border-bottom-color.unixTags -->
+
 <!-- CSSJSON.border-bottom-color.compatibility -->
 
 <!-- CSSJSON.border-bottom-color.reference -->

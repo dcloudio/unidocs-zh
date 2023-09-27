@@ -28,3 +28,18 @@ App原生语言的编译过程耗时较长，因此编译器引入了缓存机�
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/clean-up-the-build-cache.jpg)#{.zooming width="400px"}
 
+#### 注意 @tips
+
+- `uni-app x`编译器会产生kt、class等临时文件。安全软件（如360、微软）会对其进行木马扫描，消耗电脑性能。建议将项目的unpackage目录设置为信任，以提升编译性能。
+
+> 360设置方式
+
+![](https://web-assets.dcloud.net.cn/hbuilderx-doc/360/360_1.png)#{.zooming width="400px"}
+
+![](https://web-assets.dcloud.net.cn/hbuilderx-doc/360/360_2.png)#{.zooming width="400px"}
+
+> 微软设置方式
+
+![](https://web-assets.dcloud.net.cn/hbuilderx-doc/360/win_1.png)#{.zooming width="400px"}
+
+![](https://web-assets.dcloud.net.cn/hbuilderx-doc/360/win_2.png)#{.zooming width="400px"}

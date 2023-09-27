@@ -95,7 +95,7 @@ handleClick (event : MouseEvent) {
 
 
 
-### 方法
+### Event 方法 @event-methods
 <!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.name -->
 
 <!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.description -->
@@ -130,7 +130,7 @@ handleClick (event : MouseEvent) {
 
 
 
-### 方法
+### CustomEvent 方法 @customevent-methods
 <!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.name -->
 
 <!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.description -->
@@ -171,7 +171,8 @@ handleClick (event : MouseEvent) {
 
 <!-- CUSTOMTYPEJSON.MouseEvent.param -->
 
-### 方法
+
+### MouseEvent 方法 @mouseevent-methods
 <!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.name -->
 
 <!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.description -->
@@ -204,7 +205,7 @@ handleClick (event : MouseEvent) {
 
 <!-- CUSTOMTYPEJSON.TouchEvent.param -->
 
-### 方法
+### TouchEvent 方法 @touchevent-methods
 <!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.name -->
 
 <!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.description -->

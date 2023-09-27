@@ -10,5 +10,7 @@
 
 <!-- UTSCOMJSON.textarea.compatibility -->
 
+<!-- UTSCOMJSON.textarea.children -->
+
 <!-- UTSCOMJSON.textarea.reference -->
 

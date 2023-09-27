@@ -10,5 +10,7 @@
 
 <!-- UTSCOMJSON.animation-view.compatibility -->
 
+<!-- UTSCOMJSON.animation-view.children -->
+
 <!-- UTSCOMJSON.animation-view.reference -->
 

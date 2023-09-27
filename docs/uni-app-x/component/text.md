@@ -22,6 +22,8 @@ text组件在web浏览器渲染（含浏览器、小程序webview渲染模式、
 
 app-nvue中，text组件不能嵌套。
 
+<!-- UTSCOMJSON.text.children -->
+
 <!-- UTSCOMJSON.text.reference -->
 
 ## tips

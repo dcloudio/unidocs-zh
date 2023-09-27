@@ -30,6 +30,8 @@
 
 <!-- UTSCOMJSON.rich-text.compatibility -->
 
+<!-- UTSCOMJSON.rich-text.children -->
+
 <!-- UTSCOMJSON.rich-text.reference -->
 
 ## bug&tips

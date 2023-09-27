@@ -10,8 +10,9 @@
 
 <!-- UTSCOMJSON.swiper.compatibility -->
 
-<!-- UTSCOMJSON.swiper.reference -->
+<!-- UTSCOMJSON.swiper.children -->
 
+<!-- UTSCOMJSON.swiper.reference -->
 
 ## swiper-item
 

@@ -10,5 +10,7 @@
 
 <!-- UTSCOMJSON.progress.compatibility -->
 
+<!-- UTSCOMJSON.progress.children -->
+
 <!-- UTSCOMJSON.progress.reference -->
 

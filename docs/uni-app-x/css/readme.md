@@ -240,6 +240,42 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |伪类选择器		|:active {}	|×		|													|
 |伪元素选择器	|::before {}|×		|													|
 
+注意，选择器声明的变化可能会导致元素重新绘制。为了减少选择器变化引起的 DOM 更新数量，**当前只支持：CSS 声明的多个选择器中最后一个规则的变更对 DOM 的更新**。
+
+```ts
+<template>
+  <div class="{{docBody}}">
+    <text class="{{rowDesc}}">描述内容</text>
+  </div>
+</template>
+
+<style>
+  .doc-body1 .row-desc1 {
+    color: #ff0000;
+  }
+  .doc-body1 .row-desc2 {
+    color: #0000ff;
+  }
+  .doc-body2 .row-desc1 {
+    color: #00ff00;
+  }
+</style>
+
+<script lang="uts">
+  export default {
+    data() {
+      return {
+        rowDesc: 'row-desc1',
+        docBody: 'doc-body1'
+      }
+    }
+  }
+</script>
+```
+
+以上代码示例，当我们把 `rowDesc` 变量从 `row-desc1` 变为 `row-desc2` 时，会更新 `text` 节点样式，但是如果把 `docBody` 变量从 `doc-body1` 变为 `doc-body2`，是不会更新 `text` 节点样式的。\
+因为 `doc-body` 不是最后一个选择器，非末尾的选择器变更有可能影响很多 DOM 元素，从而影响到渲染性能。
+
 ## 长度单位
 |类别				|支持情况			|备注							|
 |:-:				|:-:				|:-:							|

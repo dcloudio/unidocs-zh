@@ -16,7 +16,7 @@
 
 **注意：** 目前自定义下拉刷新元素不支持放在scroll-view的首个子元素位置上。可能无法正常显示
 
-```uts
+```vue
 <scroll-view refresher-default-style="none" :refresher-enabled="true" :refresher-triggered="refresherTriggered"
 			 @refresherpulling="onRefresherpulling" @refresherrefresh="onRefresherrefresh" 
 			 @refresherrestore="onRefresherrestore" style="flex:1" >

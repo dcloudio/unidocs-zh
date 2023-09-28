@@ -11,7 +11,7 @@
 ### 自定义下拉刷新样式
 
 1. 设置`refresher-default-style`属性为 none 不使用默认样式
-2. 自定义下拉刷新元素必须要声明为 slot="refresher"
+2. 自定义下拉刷新元素必须要声明为 slot="refresher"，需要设置刷新元素宽高信息否则可能无法正常显示！
 3. 通过组件提供的refresherpulling、refresherrefresh、refresherrestore、refresherabort下拉刷新事件调整自定义下拉刷新元素！实现预期效果
 
 **注意：** 目前自定义下拉刷新元素不支持放在scroll-view的首个子元素位置上。可能无法正常显示

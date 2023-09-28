@@ -80,11 +80,12 @@ App-Android端发布配置
 |storepwd		|String					|-				|证书库文件密码						|3.9.0				|
 |aliasname		|String					|-				|证书别名							|3.9.0				|
 |keypwd			|String					|-				|证书密码							|3.9.0				|
-|abiFilters		|Array<String>			|-				|应用支持的CPU类型					|3.9.0				|
+|abiFilters		|String[]				|-				|应用支持的CPU类型					|3.9.0				|
 |minSdkVersion	|String					|-				|应用兼容的最低Android版本（Android API Level）|3.9.0				|
 |targetSdkVersion	|String				|-				|应用适配的目标目标版本（Android API Level）	|3.9.0				|
 
 **注意**  
+- `abiFilters` 用于指定应用需要支持的CPU类型，字符串数组类型，字符串可取值"armeabi-v7a"、"arm64-v8a"、"x86"、"x86_64"，默认值为["arm64-v8a","x86_64"]。
 - `minSdkVersion` 用于指定应用运行所需最低 API 级别的整数。如果系统的 API 级别低于该属性中指定的值，Android 系统将阻止用户安装应用。  
 - `targetSdkVersion` 一个用于指定应用的目标 API 级别的整数。如果未设置，其默认值与为 minSdkVersion 指定的值相等。该值用于通知系统，您已针对目标版本进行了测试，并且系统不应通过启用任何兼容性行为，以保持您的应用与目标版本的向前兼容性。  
 - `minSdkVersion` 和 `targetSdkVersion` 设置的值是 API 级别（API Level），完整API级别信息请参考[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)  

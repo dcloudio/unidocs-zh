@@ -49,4 +49,5 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 ## Bug&Tips
 
 - 暂不支持reverse，目前还不能开发im那样的倒序列表
+- list的下拉刷新样式暂不支持自定义
 - 多列瀑布流是另外的组件，后续会提供

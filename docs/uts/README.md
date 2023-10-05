@@ -43,7 +43,9 @@ uni-app x 开发App时，输出的是纯原生的App（Android上就是kotlin的
 
 这2个uts插件，一个是api插件，一个是组件插件，它们同时兼容uni-app和uni-app x。
 
-本文是 uts 的基本语法介绍。如想了解 uni-app 下如何开发 uts插件，另见文档[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。
+本文是 uts 的基本语法介绍。
+- 想了解 uni-app 下如何开发 uts插件，另见文档[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
+- 想了解 uni-app x，另见文档[https://uniapp.dcloud.net.cn/uni-app-x/](https://uniapp.dcloud.net.cn/uni-app-x/)
 
 
 ## 类型声明

@@ -272,3 +272,91 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 ## css使用注意
 
 [详见](uni-app-x/css/README.md)
+
+## 如何调用组件方法
+
+使用 `this.$refs` 获取组件实例，通过 `$callMethod` 调用组件方法
+
+`$callMethod` 支持多个参数
+
+页面示例代码 `page1.uvue`
+
+```html
+<template>
+  <view>
+    <component1 ref="component1"></component1>
+  </view>
+</template>
+
+<script>
+  // 导入 vue 组件实例类型
+  import { ComponentPublicInstance } from 'vue'
+
+  // 引用组件 component1.uvue, 如果使用 easycom 可省略此步骤
+  import component1 from './component1.uvue'
+
+  export default {
+    components: {
+      component1
+    },
+    data() {
+      return {
+      }
+    },
+    onReady() {
+      // 获取组件 ref 属性 component1
+      const component1 = this.$refs['component1']! as ComponentPublicInstance;
+
+      // 通过 $callMethod 调用组件的 foo1 方法
+      component1.$callMethod('foo1');
+
+      // 通过 $callMethod 调用组件的 foo2 方法并传递 1个参数
+      component1.$callMethod('foo2', Date.now());
+
+      // 通过 $callMethod 调用组件的 foo3 方法并传递 2个参数
+      component1.$callMethod('foo3', Date.now(), Date.now());
+
+      // 通过 $callMethod 调用组件的 foo4 方法并传递 callback
+      component1.$callMethod('foo4', () => {
+        console.log('callback')
+      });
+
+      // 通过 $callMethod 调用组件的 foo5 方法并接收返回值
+      // 注意： 返回值可能为 null，当前例子一定不为空，所以加了 !
+      const result = component1.$callMethod('foo5', 'string1')! as string;
+      console.log(result); // string1
+    }
+  }
+</script>
+```
+
+组件示例代码 `component1.uvue`
+
+```html
+<template>
+  <view></view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods: {
+      foo1() {
+      },
+      foo2(date1 : number) {
+      },
+      foo3(date1 : number, date2 : number) {
+      },
+      foo4(callback : (() => void)) {
+        callback()
+      },
+      foo5(text1 : string) : any | null {
+        return text1
+      }
+    }
+  }
+</script>
+```

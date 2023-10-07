@@ -304,7 +304,7 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
       }
     },
     onReady() {
-      // 获取组件 ref 属性 component1
+      // 通过组件 ref 属性获取组件实例
       const component1 = this.$refs['component1']! as ComponentPublicInstance;
 
       // 通过 $callMethod 调用组件的 foo1 方法

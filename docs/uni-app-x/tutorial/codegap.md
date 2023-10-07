@@ -265,15 +265,7 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 - 函数声明方式不支持[作为值传递](../../uts/function.md#作为值传递)
 - 函数表达式方式不支持[默认参数](../../uts/function.md#默认参数)
 
-## vue使用注意
-
-[详见](uni-app-x/vue/README.md)
-
-## css使用注意
-
-[详见](uni-app-x/css/README.md)
-
-## 如何调用组件方法
+## 调用vue组件方法
 
 使用 `this.$refs` 获取组件实例，通过 `$callMethod` 调用组件方法
 
@@ -360,3 +352,11 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
   }
 </script>
 ```
+
+## vue使用注意
+
+[详见](uni-app-x/vue/README.md)
+
+## css使用注意
+
+[详见](uni-app-x/css/README.md)

@@ -90,8 +90,7 @@ uni.getLocation({
 });
 ```
 
-#### 注意
-#### Notice
+**注意事项**
 
 - `H5 平台`
 - `H5 Platform`

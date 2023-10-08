@@ -11,9 +11,8 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 
 付费用户享受阿里云和腾讯云提供的服务协议SLA，[详见](https://uniapp.dcloud.net.cn/uniCloud/agreement)
 
-## 阿里云@aliyun
 
-## 阿里云正式版@aliyun-business
+## 阿里云@aliyun-business
 
 > 阿里云正式版版需要使用HBuilderX 3.6.5+（正式版）或3.6.10+（Alpha版）或与此版本对应的uni-app cli项目才可正常使用。如果是cli创建的项目，可以参考：[更新依赖到指定版本](/quickstart-cli.html#cliversion)
 

@@ -125,16 +125,17 @@ DCloud联合业内主流安全厂商，提供[uni安全加固](/uni-app-security
 
 **有uni保驾护航，您可以专注于业务，踏实写代码，安心交付。不用再提心吊胆、担忧各种自己不擅长的事。**
 
-# FAQ常见问题：
-- 老项目服务器不是uniCloud的，怎么办？
-  uni安全网络只能在uni-app客户端和uniCloud服务之间保障安全。如果您的服务器在其他技术上，或者迁移到uniCloud，或者用uniCloud转发。
-  转发的意思就是客户端和uniCloud联网，uniCloud云函数再与您的传统服务器通信。
-  一键登录和实人认证是虽然也是uniCloud服务器，但相对独立。传统服务器可以与uniCloud通信来使用这些能力。详见附录中这些产品单独的文档。
+## FAQ
 
-附录：
+- 老项目服务器不是uniCloud的，怎么办？
+
+uni安全网络只能在uni-app客户端和uniCloud服务之间保障安全。如果您的服务器在其他技术上，或者迁移到uniCloud，或者用uniCloud转发。转发的意思就是客户端和uniCloud联网，uniCloud云函数再与您的传统服务器通信。一键登录和实人认证是虽然也是uniCloud服务器，但相对独立。传统服务器可以与uniCloud通信来使用这些能力。详见附录中这些产品单独的文档。
+
+## 附录
 - uni安全网络文档：[https://uniapp.dcloud.net.cn/uniCloud/secure-network.html](https://uniapp.dcloud.net.cn/uniCloud/secure-network.html)
 - app一键登录文档：[https://uniapp.dcloud.net.cn/univerify.html](https://uniapp.dcloud.net.cn/univerify.html)
 - app实人认证文档：[https://uniapp.dcloud.net.cn/uniCloud/frv/intro.html](https://uniapp.dcloud.net.cn/uniCloud/frv/intro.html)
 - ip防刷：[https://uniapp.dcloud.net.cn/uniCloud/ip-filter.html](https://uniapp.dcloud.net.cn/uniCloud/ip-filter.html)
 - 图形验证码：[https://uniapp.dcloud.net.cn/uniCloud/uni-captcha.html](https://uniapp.dcloud.net.cn/uniCloud/uni-captcha.html)
 - 内容安全审查：[https://ext.dcloud.net.cn/plugin?id=5460](https://ext.dcloud.net.cn/plugin?id=5460)
+- [uni安全加固](/uni-app-security.md)

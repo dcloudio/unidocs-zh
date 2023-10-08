@@ -4,7 +4,7 @@ Recently, we received feedback from developers that the uni-app/5+ App project w
 首先我们需要理解漏洞风险并不代表真实存在安全漏洞，比如[WebView远程代码执行漏洞](#webview_jsinterface)，仅在Android4.2及以下版本系统存在，目前HBuilderX发现App最低要求版本Android4.4；比如[Activity、Service、Receiver等组件导出风险](#export)，有些功能依赖的组件必须设置为导出，实际上并不存在安全问题。而安全平台会把所有可能存在的漏洞或风险都列出来，很多安全问题都可能是误报或夸大了安全漏洞的隐患。
 First of all, we need to understand that the vulnerability risk does not mean that there is a real security vulnerability, such as [WebView remote code execution vulnerability](#webview_jsinterface), which only exists in Android4.2 and below versions. At present, HBuilderX found that the minimum required version of the App is Android4.4; for example [Export risk of Activity, Service, Receiver and other components](#export), some function-dependent components must be set to be exported, in fact, there is no security problem. The security platform will list all possible vulnerabilities or risks, and many security issues may be false positives or exaggerated hidden dangers of security vulnerabilities.
 
-**因此对于存在漏洞风险问题的基本解决方案是使用`APK加固`，推荐[uni安全加固](https://dev.dcloud.net.cn/uni_modules/uni-trade/pages/account/account?pcd=tcb_app_csdn_serv)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云**
+**因此对于存在漏洞风险问题的基本解决方案是使用`APK加固`，推荐[uni安全加固](/uni-app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云**
 
 如果加固还不能解决问题，或者安全平台要求加固前进行检测，请在[官方论坛ask](https://ask.dcloud.net.cn/explore/)发帖反馈，添加话题为“安全漏洞”、“安全检测”，上传完整安全检测报告及检测的apk文件。
 If the hardening still cannot solve the problem, or the security platform requires testing before hardening, please post feedback on the [official forum ask](https://ask.dcloud.net.cn/explore/), and add the topics as "Security Vulnerability", "Security Test", upload the complete security test report and the tested apk file.

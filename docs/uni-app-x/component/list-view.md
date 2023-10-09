@@ -33,7 +33,7 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 
 ### list-item复用机制
 
-type属性定义list-item组件类型。不赋值type属性默认值为0，每一个type类型都会有对应的list-item组件缓存池，如果list-item组件存在子元素不相同的情况。请尽可能的配置不同的type，这样可以很好的规避部分场景下list-item组件复用时子元素创建或删除造成的性能影响，当list-view组件滚动触发加载list-item组件时，会优先查询对应type缓存池是否存在可复用的list-item组件。有则复用没有则创建新的list-item组件。
+type属性定义list-item组件类型。不赋值type属性默认值为0，每一个type类型都会有对应的list-item组件缓存池，当部分list-item组件存在子元素个数差异或排版差异时。请尽可能的配置不同的type，这样可以很好的规避部分场景下list-item组件复用时子元素创建或删除造成的性能影响，当list-view组件滚动触发加载list-item组件时，会优先查询对应type缓存池是否存在可复用的list-item组件。有则复用没有则创建新的list-item组件。
 当list-item组件被滚动出屏幕则会优先添加到对应类型的list-item缓存池，每个类型缓存最大5个（不同平台缓存最大值不固定），如果缓存池已满则进行组件销毁！减少不必要的内存占用。
 
 <!-- UTSCOMJSON.list-item.event -->

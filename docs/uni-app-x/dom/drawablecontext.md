@@ -187,3 +187,14 @@
 
 <!-- CUSTOMTYPEJSON.DrawableContext.methods.setLineDash.tutorial -->
 
+<!-- CUSTOMTYPEJSON.DrawableContext.methods.bezierCurveTo.name -->
+
+<!-- CUSTOMTYPEJSON.DrawableContext.methods.bezierCurveTo.description -->
+
+<!-- CUSTOMTYPEJSON.DrawableContext.methods.bezierCurveTo.param -->
+
+<!-- CUSTOMTYPEJSON.DrawableContext.methods.bezierCurveTo.returnValue -->
+
+<!-- CUSTOMTYPEJSON.DrawableContext.methods.bezierCurveTo.compatibility -->
+
+<!-- CUSTOMTYPEJSON.DrawableContext.methods.bezierCurveTo.tutorial -->

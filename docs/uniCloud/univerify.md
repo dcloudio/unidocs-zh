@@ -100,8 +100,7 @@ exports.main = async function(event, context){
 - [云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
 - [URLization of cloud functions](https://uniapp.dcloud.net.cn/uniCloud/http)
 
-### uni-app项目
-### uni-app project
+### uni-app项目@uni-app
 
 如果开发uni-app项目可以使用callFunction的方式调用云函数
 If you develop a uni-app project, you can use callFunction to call cloud functions

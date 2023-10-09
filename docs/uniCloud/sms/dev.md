@@ -8,7 +8,7 @@
 
 该服务类似小程序的模板消息，在一个固定模板格式的文字里自定义某些字段，而不是所有文字都可以随便写。
 
-使用本功能需要在[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-sms/sms-account)开通并充值，教程参考[短信服务开通指南](https://uniapp.dcloud.net.cn/uniCloud/sms/intro.html)
+使用本功能需要在[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-sms/sms-account)开通并充值，教程参考[短信服务开通指南](https://uniapp.dcloud.net.cn/uniCloud/sms/service)
 
 因涉及费用，为保障安全，本能力应该在云函数中调用，而不是在前端调用。
 

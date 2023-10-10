@@ -122,6 +122,22 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.compatibility -->
 
+这个方法用来获取指定元素类型的数组
+
+```uts
+
+let obj = JSON.parseObject('{"name":"tom","tag":["student","user"]}')
+
+// 这里得到是 Array<*> 
+let noGenericArray = obj!.getArray("tag")
+console.log(noGenericArray)
+
+// 这里得到是 Array<string> 
+let genericArray = obj!.getArray<string>("tag")
+console.log(genericArray)
+
+```
+
 ### toMap()
 
 <!-- UTSJSON.UTSJSONObject.toMap.description -->

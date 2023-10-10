@@ -1,5 +1,5 @@
 * [概述](README.md)
-* [项目](project.md) 
+* [项目](project.md)
 * 教程
   * [与js开发的差别](tutorial/codegap.md)
   * [request联网教程](tutorial/request.md)
@@ -9,7 +9,7 @@
   * [条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html)
   * [编译运行环境](https://uniapp.dcloud.net.cn/worktile/running-env.html)
 * 全局文件
-  * [pages.json](https://uniapp.dcloud.net.cn/collocation/pages.html)
+  * [pages.json](pagesjson.md)
   * [main.uts](https://uniapp.dcloud.net.cn/collocation/main.html)
   * [app.uvue](https://uniapp.dcloud.net.cn/collocation/App.html)
   * [manifest.json](manifest.md)

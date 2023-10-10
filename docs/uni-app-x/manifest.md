@@ -18,28 +18,28 @@
 	* 缺少该节点时，HBuilderX 会把项目识别为 uni-app js引擎版项目（方形项目图标）。
 	* 含有该节点时，HBuilderX中的项目图标是圆形的。
 
-### UNI-APP-X配置 @m-uni-app-x
+### UNI-APP-X配置 @manifest-uni-app-x
 
 <!-- MANIFESTJSON.manifest_uni-app-x.description -->
 
 <!-- MANIFESTJSON.manifest_uni-app-x.table -->
 
 
-### APP配置 @m-app
+### APP配置 @manifest-app
 
 <!-- MANIFESTJSON.manifest_app.description -->
 
 <!-- MANIFESTJSON.manifest_app.table -->
 
 
-#### DISTRIBUTE配置 @manifest-distribute
+#### DISTRIBUTE配置 @app-distribute
 
 <!-- MANIFESTJSON.app_distribute.description -->
 
 <!-- MANIFESTJSON.app_distribute.table -->
 
 
-##### App端图标配置 @app-icons
+##### App端图标配置 @distribute-icons
 
 <!-- MANIFESTJSON.distribute_icons.description -->
 
@@ -49,34 +49,34 @@
 - App端图片相关配置，建议在HBuilderX中 manifest.json 的可视化界面操作，不推荐手动在源码视图中修改
 - manifest中只能配置一个icon。如需在应用发布后动态修改icon，可在插件市场搜索[动态图标插件](https://ext.dcloud.net.cn/search?q=%E5%8A%A8%E6%80%81%E5%9B%BE%E6%A0%87&orderBy=Relevance&cat1=8&cat2=81)。
 
-###### Android图标配置 @distribute-android
+###### Android图标配置 @icons-android
 
 <!-- MANIFESTJSON.icons_android.description -->
 
 <!-- MANIFESTJSON.icons_android.table -->
 
-###### iOS图标配置 @distribute-ios
+###### iOS图标配置 @icons-ios
 
 <!-- MANIFESTJSON.icons_ios.description -->
 
 <!-- MANIFESTJSON.icons_ios.table -->
 
 
-###### iPhone图标配置 @icons-iphone
+###### iPhone图标配置 @ios-iphone
 
 <!-- MANIFESTJSON.ios_iphone.description -->
 
 <!-- MANIFESTJSON.ios_iphone.table -->
 
 
-###### iPad图标配置 @icons-ipad
+###### iPad图标配置 @ios-ipad
 
 <!-- MANIFESTJSON.ios_ipad.description -->
 
 <!-- MANIFESTJSON.ios_ipad.table -->
 
 
-##### ANDROID配置 @app-android
+##### ANDROID配置 @distribute-android
 
 <!-- MANIFESTJSON.distribute_android.description -->
 
@@ -87,9 +87,8 @@
 - `minSdkVersion` 用于指定应用运行所需最低 API 级别的整数。如果系统的 API 级别低于该属性中指定的值，Android 系统将阻止用户安装应用。
 - `targetSdkVersion` 一个用于指定应用的目标 API 级别的整数。如果未设置，其默认值与为 minSdkVersion 指定的值相等。该值用于通知系统，您已针对目标版本进行了测试，并且系统不应通过启用任何兼容性行为，以保持您的应用与目标版本的向前兼容性。
 - `minSdkVersion` 和 `targetSdkVersion` 设置的值是 API 级别（API Level），完整API级别信息请参考[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)
-- `keystore`、`storepwd`、`aliasname`、`keypwd`为云端打包证书相关配置，在HBuilderX中提交云端打包时使用，不要手动修改
 
-##### IOS配置 @app-ios
+##### IOS配置 @distribute-ios
 
 <!-- MANIFESTJSON.distribute_ios.description -->
 

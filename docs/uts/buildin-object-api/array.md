@@ -546,6 +546,16 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 
 <!-- UTSJSON.Array.isArray.compatibility -->
 
+### includes(searchElement, fromIndex?)
+
+<!-- UTSJSON.Array.includes.description -->
+
+<!-- UTSJSON.Array.includes.param -->
+
+<!-- UTSJSON.Array.includes.returnValue -->
+
+<!-- UTSJSON.Array.includes.compatibility -->
+
 ## 常见操作
 
 - 创建数组

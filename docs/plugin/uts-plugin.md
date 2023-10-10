@@ -826,7 +826,9 @@ export function postUserInfo(user:UTSJSONObject){
 }
 ```
 
-需要注意的是，如果声明为any, vue环境中的Object 在UTS环境中也会被 UTSJSONObjct. 也就是说上面的代码同样可以写作
+需要注意的是，在声明为`any`类型的前提下, `uni-app` 环境中的 `Object` 在UTS环境中也会被转换为 `UTSJSONObjct`. 
+
+也就是说上面的代码同样可以写作
 
 ```ts
 // UTSJSONObjct 数据类型示例-2

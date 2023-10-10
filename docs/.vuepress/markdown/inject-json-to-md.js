@@ -6,6 +6,7 @@ let utsUnicloudApiJson = {};
 let customTypeJson = {};
 let vueJson = {};
 let manifestJson = {};
+let pagesJson = {};
 try {
 	cssJson = require('../utils/cssJson.json');
 } catch (error) {}
@@ -29,6 +30,9 @@ try {
 } catch (error) {}
 try {
 	manifestJson = require('../utils/manifestJson.json');
+} catch (error) {}
+try {
+	pagesJson = require('../utils/pagesJson.json');
 } catch (error) {}
 
 
@@ -98,6 +102,14 @@ const getJSON = text => {
 		return {
 			match,
 			json: manifestJson,
+		};
+	}
+
+	match = text.match(getRegExp('PAGESJSON'));
+	if (match) {
+		return {
+			match,
+			json: pagesJson,
 		};
 	}
 

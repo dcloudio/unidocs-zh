@@ -41,7 +41,7 @@ App端地图模块封装了市场上主流的三方地图SDK，提供JS API统�
 - 本地离线打包参考[Android平台高德地图模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/map?id=%e9%ab%98%e5%be%b7%e5%9c%b0%e5%9b%be)、[iOS平台高德地图模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/map?id=%e9%ab%98%e5%be%b7%e5%9c%b0%e5%9b%be)
 
 #### 获取高德开放平台用户名  
-登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：
+登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap_name.png)
 
 

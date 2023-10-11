@@ -43,7 +43,8 @@ Before using it, you need to go to [Amap Open Platform](https://lbs.amap.com/) t
 ![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap.png)
 
 #### 参数说明  
-#### Parameter Description  
+- 高德用户名  
+高德开放平台注册账号的用户名
 - appkey_android  
 高德开放平台申请的Android平台Key
 Android platform Key applied for by AutoNavi Open Platform
@@ -57,6 +58,10 @@ iOS platform Key applied for by AutoNavi Open Platform
 - The HBuilderX standard base uses the AutoNavi Map SDK by default, and you can run the test directly on the real machine. At this time, the configured application package name and signature information will not take effect. Before the official release, please submit the cloud package or use the [custom debugging base](https ://ask.dcloud.net.cn/article/35115) test
 - 本地离线打包参考[Android平台高德地图模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/map?id=%e9%ab%98%e5%be%b7%e5%9c%b0%e5%9b%be)、[iOS平台高德地图模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/map?id=%e9%ab%98%e5%be%b7%e5%9c%b0%e5%9b%be)
 - Local offline packaging reference [Android platform AutoNavi map module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/map?id=%e9%ab%98%e5%be%b7% e5%9c%b0%e5%9b%be), [iOS Platform AutoNavi Map Module Configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/map?id=%e9%ab% 98%e5%be%b7%e5%9c%b0%e5%9b%be)
+
+#### 获取高德开放平台用户名  
+登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：
+![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap_name.png)
 
 
 ### 百度地图  

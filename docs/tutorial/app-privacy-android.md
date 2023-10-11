@@ -7,7 +7,7 @@
 **请使用HBuilderX`3.2.15`+ 版本打包，并使用template配置隐私弹窗否则无法正常上架应用市场**  
 **uni小程序SDK暂时不支持uniapp自己配置隐私弹窗，需要宿主自行实现隐私弹窗**  
 
-DCloud联合业内主流隐私合规检测厂商推出了`uni合规检测服务`，可在线申请获取详细检测报告，详见：[uni合规检测服务](/uni-app-privacy-detect.md)
+DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`服务，可在线申请获取详细检测报告，详见：[uni隐私合规检测](/uni-app-privacy-detect.md)
 
 ### 概述  
 

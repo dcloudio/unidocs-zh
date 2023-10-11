@@ -320,8 +320,6 @@ Paid technical services can be activated. Reference: [https://ask.dcloud.net.cn/
 
 
 #### 相关参考
-#### Related References
-+ Android平台隐私与政策提示框配置方法：[https://ask.dcloud.net.cn/article/36937](https://ask.dcloud.net.cn/article/36937)
-+ Android platform privacy and policy prompt box configuration method: [https://ask.dcloud.net.cn/article/36937](https://ask.dcloud.net.cn/article/36937)
++ Android平台隐私与政策提示框配置方法：[https://uniapp.dcloud.io/tutorial/app-privacy-android](https://uniapp.dcloud.io/tutorial/app-privacy-android)
 + Android平台应用启动时读写手机存储、访问设备信息(如IMEI)等权限策略及提示信息：[https://ask.dcloud.net.cn/article/36549](https://ask.dcloud.net.cn/article/36549)
-+ Android平台配置权限参考：[https://ask.dcloud.net.cn/article/36982](https://ask.dcloud.net.cn/article/36982)
++ Android平台配置权限参考：[https://uniapp.dcloud.io/tutorial/app-permission-android](https://uniapp.dcloud.io/tutorial/app-permission-android)

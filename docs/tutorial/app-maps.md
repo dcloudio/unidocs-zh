@@ -30,7 +30,7 @@ App端地图模块封装了市场上主流的三方地图SDK，提供JS API统�
 
 #### 参数说明  
 - 高德用户名  
-高德开放平台注册账号的用户名
+高德开放平台注册账号的用户名，获取方式参考“[高德开放平台用户名](#amapName)”章节
 - appkey_android  
 高德开放平台申请的Android平台Key
 - appkey_ios  
@@ -40,7 +40,7 @@ App端地图模块封装了市场上主流的三方地图SDK，提供JS API统�
 - HBuilderX标准基座默认使用高德地图SDK，可以直接真机运行测试，此时配置的应用包名、签名信息不生效，正式发布前请提交云端打包或使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)测试
 - 本地离线打包参考[Android平台高德地图模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/map?id=%e9%ab%98%e5%be%b7%e5%9c%b0%e5%9b%be)、[iOS平台高德地图模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/map?id=%e9%ab%98%e5%be%b7%e5%9c%b0%e5%9b%be)
 
-#### 获取高德开放平台用户名  
+#### 高德开放平台用户名@amapName  
 登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap_name.png)
 

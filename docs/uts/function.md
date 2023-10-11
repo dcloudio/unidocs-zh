@@ -42,6 +42,23 @@ const add = function (x: string, y: string): string {
 }
 ```
 
+UTS 中不存在变量提升，在函数表达式中不可以访问未声明的变量（包括自身）。
+
+```ts
+const fn = function () {
+    console.log(fn) // 编译报错，此时 fn 还未声明
+}
+fn()
+```
+
+```ts
+const fn: (() => void) | null = null
+fn = function () {
+    console.log(fn) // 此时 fn 可以正常访问
+}
+fn()
+```
+
 ### 箭头函数
 
 箭头函数表达式（也称胖箭头函数）相比函数表达式具有较短的语法。箭头函数总是匿名的，也就是不需要函数名。

@@ -7,6 +7,8 @@ In order to effectively manage the phenomenon of compulsory authorization of app
 根据以上规范要求，各大应用市场都加强应用的检测，要求应用必须符合相关政策，否则应用将有被通报或下架的风险。
 According to the above specification requirements, all major application markets have strengthened the detection of applications, requiring applications to comply with relevant policies, otherwise the application will be at risk of being notified or removed from the shelves.
 
+DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`服务，可在线申请获取详细检测报告，详见：[uni隐私合规检测](/uni-app-privacy-detect.md)
+
 ### APP因合规问题无法上架
 ### APP cannot be launched due to compliance issues
 
@@ -322,6 +324,4 @@ Paid technical services can be activated. Reference: [https://ask.dcloud.net.cn/
 + Android平台隐私与政策提示框配置方法：[https://ask.dcloud.net.cn/article/36937](https://ask.dcloud.net.cn/article/36937)
 + Android platform privacy and policy prompt box configuration method: [https://ask.dcloud.net.cn/article/36937](https://ask.dcloud.net.cn/article/36937)
 + Android平台应用启动时读写手机存储、访问设备信息(如IMEI)等权限策略及提示信息：[https://ask.dcloud.net.cn/article/36549](https://ask.dcloud.net.cn/article/36549)
-+ Permission policies and prompt information such as reading and writing mobile phone storage and accessing device information (such as IMEI) when the Android platform application starts: [https://ask.dcloud.net.cn/article/36549](https://ask.dcloud .net.cn/article/36549)
 + Android平台配置权限参考：[https://ask.dcloud.net.cn/article/36982](https://ask.dcloud.net.cn/article/36982)
-+ Android platform configuration permission reference: [https://ask.dcloud.net.cn/article/36982](https://ask.dcloud.net.cn/article/36982)

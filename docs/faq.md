@@ -28,7 +28,7 @@
 
 **App权限状态判断及引导：**[https://ext.dcloud.net.cn/plugin?id=594](https://ext.dcloud.net.cn/plugin?id=594)
 
-**Android平台上架要求的隐私政策提示配置方法：**[https://ask.dcloud.net.cn/article/36937](https://ask.dcloud.net.cn/article/36937)
+**Android平台上架要求的隐私政策提示配置方法：**[https://uniapp.dcloud.net.cn/tutorial/app-privacy-android](https://uniapp.dcloud.net.cn/tutorial/app-privacy-android)
 
 **Android平台应用启动时读写手机存储、访问设备信息(如IMEI)等权限策略及提示信息：**[https://ask.dcloud.net.cn/article/36549](https://ask.dcloud.net.cn/article/36549)
 

@@ -14,6 +14,7 @@
 **uni小程序SDK暂时不支持uniapp自己配置隐私弹窗，需要宿主自行实现隐私弹窗**  
 **The uni applet SDK temporarily does not support uniapp to configure its own privacy pop-up window, the host needs to implement its own privacy pop-up window**
 
+DCloud联合业内主流隐私合规检测厂商推出了`uni合规检测服务`，可在线申请获取详细检测报告，详见：[uni合规检测服务](/uni-app-privacy-detect.md)
 
 ### 概述  
 ### Overview

@@ -60,7 +60,7 @@ iOS platform Key applied for by AutoNavi Open Platform
 - Local offline packaging reference [Android platform AutoNavi map module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/map?id=%e9%ab%98%e5%be%b7% e5%9c%b0%e5%9b%be), [iOS Platform AutoNavi Map Module Configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/map?id=%e9%ab% 98%e5%be%b7%e5%9c%b0%e5%9b%be)
 
 #### 获取高德开放平台用户名  
-登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：
+登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap_name.png)
 
 

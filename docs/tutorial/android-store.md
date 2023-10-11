@@ -47,9 +47,7 @@ Please read the following steps carefully to test your APP! Effectively solve li
 ### Privacy Policy Notice
 
 + 必须确保应用存在《隐私政策》，在应用首次启动时弹出提示并取得用户同意。
-+ Must ensure that the app has a "Privacy Policy", pop up a prompt and obtain user consent when the app is first launched.
-+ 一定要配置使用`template`模式隐私与政策提示框 [详情参考](https://ask.dcloud.net.cn/article/36937)
-+ Be sure to configure the privacy and policy prompt box using `template` mode [For details](https://ask.dcloud.net.cn/article/36937)
++ 一定要配置使用`template`模式隐私与政策提示框 [详情参考](https://uniapp.dcloud.io/tutorial/app-privacy-android)
 + 必须在“隐私与政策”非常清楚、全面地说明（不要用可能收集、了解用户信息这种模糊不清晰的词语）收集用户个人信息的目的、方式和范围，用户个人信息包括但不限于mac地址、设备序列号、imei、imsi、软件安装列表、通讯录信息、短信信息等。
 + The purpose, method and scope of collecting user's personal information must be clearly and comprehensively explained in the "Privacy and Policy" (do not use vague and unclear words that may collect and understand user information). User personal information includes but is not limited to mac Address, device serial number, imei, imsi, software installation list, address book information, SMS information, etc.
 + 如果反馈说有违规获取敏感信息行为，请查看[Android平台各功能模块隐私合规协议](https://ask.dcloud.net.cn/article/39484)各功能模块隐私协议。如果你集成了相关模块就一定要写入到app的隐私协议中。

@@ -112,3 +112,7 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 
 
 <!-- VUEJSON.render_function.compatibility -->
+
+## Bug & Tip
+
+- **bug**: [methods 中的方法不支持递归调用](https://ask.dcloud.net.cn/question/179395)，预计 `v3.93` 修复。

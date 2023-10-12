@@ -75,7 +75,8 @@ Only latitude and longitude information can be obtained, and address information
 ![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/amap.png)
 
 #### 参数说明  
-#### Parameter Description  
+- 高德用户名  
+高德开放平台注册账号的用户名，获取方式参考“[高德开放平台用户名](#amapName)”章节
 - appkey_android  
 [高德开放平台](https://lbs.amap.com/)为Android平台申请的Key
 [Amap Open Platform](https://lbs.amap.com/) Key applied for Android platform
@@ -91,6 +92,10 @@ Only latitude and longitude information can be obtained, and address information
 - After configuration, the cloud package must be submitted to take effect. Please use the [custom debugging base] when the real machine is running (https://ask.dcloud.net.cn/article/35115)
 - 本地离线打包参考[Android平台高德定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7%e5%ae%9a%e4%bd%8d)、[iOS平台高德定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7%e5%ae%9a%e4%bd%8d)
 - Local offline packaging reference [Android platform AutoNavi positioning module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7% e5%ae%9a%e4%bd%8d), [iOS Platform Geolocation Module Configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e9%ab% 98%e5%be%b7%e5%ae%9a%e4%bd%8d)
+
+#### 高德开放平台用户名@amapName  
+登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：  
+![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap_name.png)
 
 
 ### 百度定位@baidu

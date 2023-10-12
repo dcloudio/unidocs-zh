@@ -60,6 +60,8 @@
 ![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/amap.png)
 
 #### 参数说明  
+- 高德用户名  
+高德开放平台注册账号的用户名，获取方式参考“[高德开放平台用户名](#amapName)”章节
 - appkey_android  
 [高德开放平台](https://lbs.amap.com/)为Android平台申请的Key
 - appkey_ios  
@@ -69,6 +71,10 @@
 - 调用高德定位SDK提供的定位服务，仅支持gcj02坐标系，支持解析地址信息。
 - 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 - 本地离线打包参考[Android平台高德定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7%e5%ae%9a%e4%bd%8d)、[iOS平台高德定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7%e5%ae%9a%e4%bd%8d)
+
+#### 高德开放平台用户名@amapName  
+登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：  
+![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap_name.png)
 
 
 ### 百度定位@baidu

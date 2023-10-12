@@ -206,7 +206,7 @@ uni.requestPayment({
     "provider": "wxpay", 
     "orderInfo": {
         "appid": "wx499********7c70e",  // 微信开放平台 - 应用 - AppId，注意和微信小程序、公众号 AppId 可能不一致
-        "nonceStr": "c5sEwbaNPiXAF3iv", // 随机字符串
+        "noncestr": "c5sEwbaNPiXAF3iv", // 随机字符串
         "package": "Sign=WXPay",        // 固定值
         "partnerid": "148*****52",      // 微信支付商户号
         "prepayid": "wx202254********************fbe90000", // 统一下单订单号 

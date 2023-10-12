@@ -73,7 +73,7 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 - 联网联表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue)
 - 可左右滑动的多个列表：[https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list)
 
-## Bug&Tips
+### Bug & Tips@tips
 
 - 暂不支持reverse，目前还不能开发im那样的倒序列表
 - list的下拉刷新样式暂不支持自定义

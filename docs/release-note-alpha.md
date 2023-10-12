@@ -1,3 +1,17 @@
+#### 3.92.2023101106-alpha
+* 【uni-app】
+* App平台 修复 云端打包 Storage 相关接口设置和获取内容异常的Bug [详情](https://github.com/dcloudio/uni-app/issues/4556)
+* App-iOS平台 修复 nvue 页面在 iOS17 设备可能引起崩溃的Bug [详情](https://ask.dcloud.net.cn/question/179220)
+* 【uni-app x插件】
+* App-Android平台 修复 uni-app-x 项目 onLoad 生命周期调用 route API 交互异常的Bug
+* App-Android平台 修复 uni-app-x 项目非 tabBar 首页调用 uni.switchTab 应用崩溃的Bug
+* 【uts插件】
+* 修复 App-Android平台 vue 页面调用 API 传参对象中包含`Any`类型字段时可能出现异常的Bug
+* 【App插件(含5+App和uni-app的App端)】
+* Android平台 更新 Google 统计 SDK 为 21.3.0 版；Google 推送 SDK 为 23.2.1 版
+* 【uniCloud】
+* 修复 uni-app-x 项目 android 6.0 下调用 uniCloud 部分接口报错的Bug
+
 #### 3.91.2023092719-alpha
 * 【uni-app】
   + 新增 条件编译 提供 uniVersion 用于区分编译器版本。可用于插件适配不同版本的uni-app [详情](https://uniapp.dcloud.net.cn/tutorial/platform.html#uniVersion)

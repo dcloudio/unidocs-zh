@@ -6,8 +6,6 @@
 
 <!-- UTSAPIJSON.request.returnValue -->
 
-<!-- UTSAPIJSON.request.example -->
-
 <!-- UTSAPIJSON.request.compatibility -->
 
 <!-- UTSAPIJSON.request.tutorial -->

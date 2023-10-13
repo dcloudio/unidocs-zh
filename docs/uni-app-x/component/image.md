@@ -15,7 +15,7 @@
 - [x] webp
 - [x] heic（Android10+支持）
 
-如需其他图片格式，可搜索插件市场或自行开发uts组件插件。
+如需其他图片格式，可搜索插件市场或自行开发uts组件插件。如[svg插件](https://ext.dcloud.net.cn/search?q=svg&orderBy=Relevance&cat1=8&cat2=82)
 
 ### src路径支持说明
 

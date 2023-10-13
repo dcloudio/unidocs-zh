@@ -6,8 +6,6 @@
 
 <!-- UTSAPIJSON.chooseImage.returnValue -->
 
-<!-- UTSAPIJSON.chooseImage.example -->
-
 <!-- UTSAPIJSON.chooseImage.compatibility -->
 
 <!-- UTSAPIJSON.chooseImage.tutorial -->

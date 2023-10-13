@@ -408,6 +408,13 @@ maven { url 'https://jitpack.io' }
 
 ```
 
+部分场景下，开发者可能需要将本地依赖，上传到远程仓库，避免wgt提交资源过大超出打包限制。
+
+这种情况，推荐开发者上传到 JitPack.io
+
+
+
+
 
 ## 4 Android内置库@iodcloudutsandroid
 ## 4 Android built-in library @iodcloudutsandroid

@@ -559,7 +559,7 @@ export default {
 3. 开通后将在选择的服务空间下自动部署一个加密云函数 `uniAdCallback`
 4. `uniAdCallback` 接收广告商服务器回调验证签名并抹平穿山甲/优量汇/快手参数差异，然后以以下方式回调
 - 业务在uniCloud：通过[callFunction](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
-- 业务在传统服务器：以HTTP方式请求开发者配置的回调URL
+- 业务在传统服务器：以HTTP(GET)方式请求开发者配置的回调URL
 
 注意：
 1. 新建的云函数名称不能使用 `uniAdCallback`
@@ -598,7 +598,7 @@ sign = sha256(secret:transid)
 通过以下2种方式验证外部服务器与uniCloud安全通讯
 
 1. [uni-cloud-s2s](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)模块
-2. 手动获取HTTP请求参数中的 `sign` 验证
+2. 手动获取HTTP(GET)请求参数中的 `sign` 验证
 
 
 #### 开发者返回数据约定

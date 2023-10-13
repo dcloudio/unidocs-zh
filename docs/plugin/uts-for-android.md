@@ -403,14 +403,14 @@ jcenter()
 google()
 // huawei
 maven {url 'https://developer.huawei.com/repo/'}
-// JitPack 远程仓库：https://jitpack.io
+// jitpack 远程仓库：https://jitpack.io
 maven { url 'https://jitpack.io' }
 
 ```
 
 部分场景下，开发者可能需要将本地依赖，上传到远程仓库，避免wgt提交资源过大超出打包限制。
 
-这种情况，推荐开发者上传到 JitPack.io  这也是目前android 原生开发主流的远程仓库。 使用文档：https://docs.jitpack.io/
+这种情况，推荐开发者上传到 jitpack.io  这也是目前android 原生开发主流的远程仓库。 使用文档：https://docs.jitpack.io/
 
 
 

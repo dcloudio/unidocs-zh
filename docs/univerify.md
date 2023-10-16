@@ -114,12 +114,9 @@ precondition:
 ## open
 
 ### 开通uni一键登录服务
-### Enable uni one-click login service
-开发者需要登录[DCloud开发者中心](https://dev.dcloud.net.cn/)，申请开通一键登录服务。
-Developers need to log in to [DCloud Developer Center](https://dev.dcloud.net.cn/) to apply for one-click login service.
+开发者需要登录[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-login/login-account)，申请开通一键登录服务。
 
-详细步骤参考：[开通一键登录服务的详细教程](https://ask.dcloud.net.cn/article/37965)
-For detailed steps, please refer to: [Detailed tutorial on opening one-click login service](https://ask.dcloud.net.cn/article/37965)
+详细步骤参考：[一键登录服务开通指南](https://uniapp.dcloud.net.cn/uniCloud/uni-login/service)
 
 开通成功后会得到 apiKey、apiSecret。这2个信息，后续需要配置在uniCloud的云函数里。同时注意保密，这2个信息也是计费凭证。
 After the activation is successful, you will get apiKey and apiSecret. These two pieces of information need to be configured in the cloud function of uniCloud later. At the same time, pay attention to confidentiality. These two pieces of information are also billing vouchers.
@@ -143,10 +140,9 @@ Notice:
 **虽然一键登录需要uniCloud，但并不要求开发者把所有的后台服务都迁移到uniCloud**
 **Although one-click login requires uniCloud, it does not require developers to migrate all background services to uniCloud**
 
-服务器API详见：[uniCloud云函数中使用一键登录](https://uniapp.dcloud.net.cn/uniCloud/univerify)
-For details about the server API, see: [Using One-Key Login in UniCloud Cloud Functions](https://uniapp.dcloud.net.cn/uniCloud/univerify)
+服务器API详见：[uniCloud云函数中使用一键登录](https://uniapp.dcloud.net.cn/uniCloud/uni-login/dev)
 
-uniCloud产生的费用对于一键登陆可以忽略，[详见](/uniCloud/univerify.md#unilogin-fee)
+uniCloud产生的费用对于一键登陆可以忽略，[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-login/price)
 
 ## 开发
 ## development
@@ -516,8 +512,8 @@ exports.main = async (event, context) => {
   const res = await uniCloud.getPhoneNumber({
   	appid: '_UNI_ABCDEFG', // 替换成自己开通一键登录的应用的DCloud appid
   	provider: 'univerify',
-  	apiKey: 'xxx', // 在开发者中心开通服务并获取apiKey
-  	apiSecret: 'xxx', // 在开发者中心开通服务并获取apiSecret
+  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
+  	apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
   	access_token: event.access_token,
   	openid: event.openid
   })
@@ -596,8 +592,8 @@ exports.main = async(event) => {
   const res = await uniCloud.getPhoneNumber({
   	provider: 'univerify',
     appid: 'xxx', // DCloud appid，不同于callFunction方式调用，使用云函数Url化需要传递DCloud appid参数！！！
-  	apiKey: 'xxx', // 在开发者中心开通服务并获取apiKey
-  	apiSecret: 'xxx', // 在开发者中心开通服务并获取apiSecret
+  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
+  	apiSecret: 'xxx', // 在在uniCloud控制台开通一键登录服务并获取apiSecret
   	access_token: access_token,
   	openid: openid
   })
@@ -684,8 +680,8 @@ exports.main = async(event) => {
   const res = await uniCloud.getPhoneNumber({
   	provider: 'univerify',
     appid: 'xxx', // DCloud appid，不同于callFunction方式调用，使用云函数Url化需要传递DCloud appid参数
-  	apiKey: 'xxx', // 在开发者中心开通服务并获取apiKey
-  	apiSecret: 'xxx', // 在开发者中心开通服务并获取apiSecret
+  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
+  	apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
   	access_token: access_token,
   	openid: openid
   })
@@ -791,8 +787,7 @@ exports.main = async(event) => {
   + iOS platform: [One-click login for iOS offline package configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/oauth?id=%e4%b8%80%e9%94%ae%e7 %99%bb%e5%bd%95%ef%bc%88univerify%ef%bc%89h)
 
 
-## 常见问题
-## common problem
+## 常见问题@question
 - **预登录有效期**
 - **Pre-login validity period**
 预登录有效期为10分钟，超过10分钟后预登录失效，此时调用login授权登录相当于之前没有调用过预登录，大概需要等待1-2秒才能弹出授权界面。
@@ -813,7 +808,7 @@ Dual SIM phones are authenticated with a SIM card with data traffic turned on.
 In most cases, it is because some specific devices do not support dual-card dual-standby network environment.
 
 - **uniCloud费用贵不贵？**
-uniCloud产生的费用对于一键登陆可以忽略，[详见](/uniCloud/univerify.md#unilogin-fee)
+uniCloud产生的费用对于一键登陆可以忽略，[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-login/price)
 
 - **使用有其他疑问**
 - **Other questions about use**

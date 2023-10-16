@@ -24,9 +24,9 @@ hello uni-app x 示例中，有一个日历的模板页面，就是通过draw ap
 
 尤其是组件作者，更需要关注dom数量的问题。
 
-再举一个例子，uni-app x 内部开发基础组件时，第一个版本的slider组件，使用了7个view，利用view的移动和不同颜色view的width变化来实现。当页面中有100个slider时，会变成非常卡。
+再举一个例子，uni-app x 内部开发基础组件时，第一个版本的slider组件，使用了7个view，利用view的移动和不同颜色view的width变化来实现。当页面中有slider较多时会变成很卡。
 
-后来 slider组件改为 draw api 实现，只需要一个view。与许多原生应用相比，uni-app x的 slider组件性能更优秀。
+后来 slider组件改为 draw api 实现，只需要一个view。即使一个页面里有100个slider也非常丝滑。与许多原生应用相比，uni-app x的 slider组件性能更优秀。
 
 uni-app x 还提供了工具帮助开发者监控页面的dom数量。
 

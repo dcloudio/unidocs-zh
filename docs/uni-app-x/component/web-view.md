@@ -31,19 +31,19 @@ web-view的操作api为[uni.createWebviewContext()](../api/create-webview-contex
 	
 |方法名|说明|平台差异说明|
 |:-|:-|:-|
-|uni.navigateTo|[navigateTo](../api/navigator.md#uni.navigateto)||
-|uni.redirectTo|[redirectTo](../api/navigator#redirectto)||
-|uni.reLaunch|[reLaunch](../api/navigator#relaunch)||
-|uni.switchTab|[switchTab](../api/navigator#switchtab)||
-|uni.navigateBack|[navigateBack](../api/navigator#navigateback)||
-|uni.postMessage|向应用发送消息||
+|uni.webView.navigateTo|[navigateTo](../api/navigator.md#uni.navigateto)||
+|uni.webView.redirectTo|[redirectTo](../api/navigator#redirectto)||
+|uni.webView.reLaunch|[reLaunch](../api/navigator#relaunch)||
+|uni.webView.switchTab|[switchTab](../api/navigator#switchtab)||
+|uni.webView.navigateBack|[navigateBack](../api/navigator#navigateback)||
+|uni.webView.postMessage|向应用发送消息||
 
 在网页中使用`uni.postMessage()`即可向uts发送消息。
 
 uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中接收消息。
 
 示例代码详见[hello-uni-app-x/hybrid/html/local.html](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/hybrid/html/local.html)
-	
+
 **Tips**
 
 - 传递的消息信息，必须写在 data 对象中。

@@ -52,9 +52,9 @@
   * [uni-id-common](uni-id-common.md)
   * [老版uni-id 3.x文档](uni-id.md)
 * uni手机号一键登录
-  * [费用说明](sms/price.md)
-  * [开通服务](sms/service.md)
-  * [开发文档](sms/dev.md)
+  * [费用说明](uni-login/price.md)
+  * [开通服务](uni-login/service.md)
+  * [开发文档](uni-login/dev.md)
 * uni实人认证
   * [简介](frv/intro.md)
   * [费用说明](frv/price.md)

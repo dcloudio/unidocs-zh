@@ -160,7 +160,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setMilliseconds.compatibility -->
 
-### setSeconds(sec, ms?)
+### setSeconds(sec)
 
 <!-- UTSJSON.Date.setSeconds.description -->
 
@@ -170,7 +170,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setSeconds.compatibility -->
 
-### setMinutes(min, sec?, ms?)
+### setMinutes(min)
 
 <!-- UTSJSON.Date.setMinutes.description -->
 
@@ -180,7 +180,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setMinutes.compatibility -->
 
-### setHours(hours, min?, sec?, ms?)
+### setHours(hours)
 
 <!-- UTSJSON.Date.setHours.description -->
 
@@ -200,7 +200,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setDate.compatibility -->
 
-### setMonth(month, date?)
+### setMonth(month)
 
 <!-- UTSJSON.Date.setMonth.description -->
 
@@ -210,7 +210,7 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setMonth.compatibility -->
 
-### setFullYear(year, month?, date?)
+### setFullYear(year)
 
 <!-- UTSJSON.Date.setFullYear.description -->
 

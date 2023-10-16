@@ -87,6 +87,8 @@ let res = await uniSubscribemsg.sendTemplateMessage({
 
 ### 微信小程序转发公众号模板消息@sendTemplateMessageForMP
 
+**注意：此接口已被微信官方废弃，无法使用，即无法用微信小程序的openid来发送微信公众号的模板消息了**
+
 > uni-subscribemsg 版本需 ≥ 1.0.2
 
 **用法**

@@ -49,6 +49,9 @@ uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合�
 </script>
 ```
 
+## 应用生命周期
+uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [onExit](collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
+
 ## 组件
 
 - [props](uni-app-x/component/README.md#props)
@@ -68,9 +71,6 @@ uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合�
 ### 特殊 Attributes
 
 <!-- VUEJSON.special_attributes.compatibility -->
-
-## 应用生命周期
-uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [onExit](collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
 
 ### 生命周期选项
 

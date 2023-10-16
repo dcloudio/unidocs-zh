@@ -174,7 +174,7 @@ url化访问时不管是默认域名还是自定义域名均和上述转发逻�
 
 [短信](https://uniapp.dcloud.net.cn/uniCloud/sms/price)
 
-[App一键登录](https://uniapp.dcloud.net.cn/uniCloud/univerify.html#unilogin-fee)
+[App一键登录](https://uniapp.dcloud.net.cn/uniCloud/uni-login/price)
 
 [激励视频服务器回调](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#aliyun-cf-fee)
 

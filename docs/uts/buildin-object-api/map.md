@@ -170,7 +170,7 @@ console.log(nameVal)
 - 遍历map
 ```ts
 
-let map = new Map<string,any>()
+let map = new Map<string,any | null>()
 map.set("name","zhangsan")
 map.set("age",12)
 

@@ -31,7 +31,7 @@ const person: UTSJSONObject = JSON.parse<UTSJSONObject>('{"name":"Tom"}')!
 // 写法3  as 操作符 实际类型不匹配 会导致 crash，建议先通过 instanceOf 进行判断再进行转换。
 const parseRet = JSON.parse('{"name":"Tom"}')
 if(parseRet instanceof UTSJSONObject){
-	const person = parseRet as UTSJSONObject
+  const person = parseRet as UTSJSONObject
 }
 
 ```

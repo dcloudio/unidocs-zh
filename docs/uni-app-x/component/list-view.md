@@ -10,13 +10,39 @@
 
 list-view和scroll-view都是滚动组件，list适用于长列表场景，其他场景适用于scroll-view。
 
-注意: list-view仅识别list-item组件其他组件无法识别不能正常显示
+注意: list-view仅识别list-item、sticky-header组件其他组件无法识别不能正常显示
 
 <!-- UTSCOMJSON.list-view.attrubute -->
 
 <!-- UTSCOMJSON.list-view.event -->
 
 <!-- UTSCOMJSON.list-view.example -->
+
+### 自定义下拉刷新样式
+
+1. 设置`refresher-default-style`属性为 none 不使用默认样式
+2. 设置 list-item 定义自定义下拉刷新元素并声明为 `slot="refresher"`，需要设置刷新元素宽高信息否则可能无法正常显示！
+   ```html
+   <template>
+   	<list-view refresher-default-style="none" :refresher-enabled="true" :refresher-triggered="refresherTriggered"
+   			 @refresherpulling="onRefresherpulling" @refresherrefresh="onRefresherrefresh" 
+   			 @refresherrestore="onRefresherrestore" style="flex:1" >
+   
+   		<list-item v-for="i in 10" class="content-item">
+   			<text class="text">item-{{i}}</text>
+   		</list-item>
+   		
+   		<!-- 自定义下拉刷新元素 -->
+   		<list-item slot="refresher" class="refresh-box">
+   			<text class="tip-text">{{text[state]}}</text>
+   		</list-item>
+   	</list-view>
+   </template>
+   ```
+3. 通过组件提供的refresherpulling、refresherrefresh、refresherrestore、refresherabort下拉刷新事件调整自定义下拉刷新元素！实现预期效果
+
+**注意：** 目前自定义下拉刷新元素不支持放在list-view的首个子元素位置上。可能无法正常显示
+
 
 <!-- UTSCOMJSON.list-view.compatibility -->
 

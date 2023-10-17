@@ -49,6 +49,9 @@
 
 <!-- CUSTOMTYPEJSON.Element.methods.setAttribute.description -->
 
+**注意**  
+setAttribute将会调整为只能保存string类型属性值，需要保存其它类型数据请使用dataset属性。    
+
 <!-- CUSTOMTYPEJSON.Element.methods.setAttribute.param -->
 
 <!-- CUSTOMTYPEJSON.Element.methods.setAttribute.returnValue -->
@@ -60,6 +63,9 @@
 <!-- CUSTOMTYPEJSON.Element.methods.getAttribute.name -->
 
 <!-- CUSTOMTYPEJSON.Element.methods.getAttribute.description -->
+
+**注意**  
+getAttribute返回值将会调整为string类型，不要使用此方法获取非string类型的属性值。  
 
 <!-- CUSTOMTYPEJSON.Element.methods.getAttribute.param -->
 

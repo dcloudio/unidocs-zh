@@ -169,12 +169,25 @@ console.log(nameVal)
 ```
 - 遍历map
 ```ts
+
 let map = new Map<string,any>()
 map.set("name","zhangsan")
 map.set("age",12)
+
+// 遍历函数 1
+map.forEach(function(value:any | null){
+    console.log(value)
+})
+// 遍历函数 2
 map.forEach(function(value:any | null,key:string){
     console.log(key)
     console.log(value)
+})
+// 遍历函数 3
+map.forEach(function(value:any | null,key:string,map: Map<string,any | null>){
+    console.log(value)
+    console.log(key)
+    console.log(map)
 })
 	
 ```

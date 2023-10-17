@@ -20,7 +20,7 @@ const person: UTSJSONObject = {
 * 通过 JSON 字符串
 
 ```ts
-const person: UTSJSONObject = JSON.parse('{"name":"Tom"}')
+const person: UTSJSONObject = JSON.parseObject('{"name":"Tom"}')!
 ```
 
 ## 实例方法

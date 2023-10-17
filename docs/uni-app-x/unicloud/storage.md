@@ -10,6 +10,18 @@
 
 <!-- UTSUNICLOUDAPIJSON.uploadFile.tutorial -->
 
+## chooseAndUploadFile(options) @chooseanduploadfile
+
+<!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.description -->
+
+<!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.param -->
+
+<!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.returnValue -->
+
+<!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.compatibility -->
+
+<!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.tutorial -->
+
 ## getTempFileURL(options) @gettempfileurl
 
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.description -->

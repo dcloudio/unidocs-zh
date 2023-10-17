@@ -13,8 +13,3 @@
 <!-- UTSCOMJSON.unicloud-db.children -->
 
 <!-- UTSCOMJSON.unicloud-db.reference -->
-
-
-## unicloud-db 教程
-
-[unicloud-db](../../uniCloud/unicloud-db.md)。

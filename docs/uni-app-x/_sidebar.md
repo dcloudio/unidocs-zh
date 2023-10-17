@@ -90,7 +90,13 @@
   * 组件上下文对象
     * [web-view组件上下文对象](api/create-webview-context.md)
     * [video组件上下文对象](api/create-video-context.md)
-  * [uniCloud客户端API](unicloud.md)
+  * uniCloud客户端API
+    * [概述](unicloud/README.md)
+    * [云函数](unicloud/function.md)
+    * [云对象](unicloud/object.md)
+    * [数据库](unicloud/database.md)
+    * [云存储](unicloud/storage.md)
+    * [其他API](unicloud/utils.md)
   * [其他EXT API](ext.md)
 * CSS
   * [CSS概述](css/README.md)

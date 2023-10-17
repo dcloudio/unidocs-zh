@@ -44,6 +44,7 @@
   * [video](component/video.md)
   * [web-view](component/web-view.md)
   * [animation-view](component/animation-view.md)
+  * [unicloud-db](component/unicloud-db.md)
 * API
   * [概述](api/README.md)
   * 全局

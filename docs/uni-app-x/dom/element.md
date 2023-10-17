@@ -201,3 +201,26 @@
 
 <!-- CUSTOMTYPEJSON.Element.methods.scrollBy.tutorial -->
 
+<!-- CUSTOMTYPEJSON.Element.methods.focus.name -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.focus.description -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.focus.param -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.focus.returnValue -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.focus.compatibility -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.focus.tutorial -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.blur.name -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.blur.description -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.blur.param -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.blur.returnValue -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.blur.compatibility -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.blur.tutorial -->

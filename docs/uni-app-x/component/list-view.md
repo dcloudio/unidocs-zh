@@ -25,6 +25,22 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 <!-- UTSCOMJSON.list-view.reference -->
 
 
+## sticky-header
+
+<!-- UTSCOMJSON.sticky-header.description -->
+
+<!-- UTSCOMJSON.sticky-header.attrubute -->
+
+<!-- UTSCOMJSON.sticky-header.event -->
+
+<!-- UTSCOMJSON.sticky-header.example -->
+
+<!-- UTSCOMJSON.sticky-header.compatibility -->
+
+<!-- UTSCOMJSON.sticky-header.children -->
+
+<!-- UTSCOMJSON.sticky-header.reference -->
+
 ## list-item
 
 <!-- UTSCOMJSON.list-item.description -->

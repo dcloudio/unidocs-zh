@@ -52,7 +52,7 @@ set 方法可以简化为使用下标运算符 `[]` 赋值
 ```ts
 person['name'] = 'Tom'
 ```
-### getAny(key)
+### getAny(key): any | null
 
 <!-- UTSJSON.UTSJSONObject.getAny.description -->
 
@@ -62,7 +62,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getAny.compatibility -->
 
-### getBoolean(key)
+### getBoolean(key): boolean | null
 
 <!-- UTSJSON.UTSJSONObject.getBoolean.description -->
 
@@ -72,7 +72,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getBoolean.compatibility -->
 
-### getNumber(key)
+### getNumber(key): number | null
 
 <!-- UTSJSON.UTSJSONObject.getNumber.description -->
 
@@ -82,7 +82,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getNumber.compatibility -->
 
-### getString(key)
+### getString(key): string | null
 
 <!-- UTSJSON.UTSJSONObject.getString.description -->
 
@@ -92,7 +92,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getString.compatibility -->
 
-### getJSON(key)
+### getJSON(key): UTSJSONObject | null	
 
 <!-- UTSJSON.UTSJSONObject.getJSON.description -->
 
@@ -102,7 +102,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getJSON.compatibility -->
 
-### getArray(key)
+### getArray(key): Array<any> | null	
 
 <!-- UTSJSON.UTSJSONObject.getArray.description -->
 
@@ -112,7 +112,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getArray.compatibility -->
 
-### getArray(key)
+### getArray(key): Array<T> | null	
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.description -->
 
@@ -138,7 +138,7 @@ console.log(genericArray)
 
 ```
 
-### toMap()
+### toMap(): Map<string, any>	
 
 <!-- UTSJSON.UTSJSONObject.toMap.description -->
 

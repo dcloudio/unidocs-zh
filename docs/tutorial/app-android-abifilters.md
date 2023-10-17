@@ -87,7 +87,7 @@ defaultConfig{
 
 ### 默认值@default  
 - HBuilderX3.92及以下版本，默认值为armeabi-v7a  
-- HBuilderX3.93及以上版本，默认值调整为arm64-v8a  
+- HBuilderX3.93及以上版本，为了充分发挥CPU性能，默认值调整为arm64-v8a。解决在华为鸿蒙新设备（如Mate60、Mate X5等）应用启动慢的问题。  
 
 
 ### CPU类型选择建议

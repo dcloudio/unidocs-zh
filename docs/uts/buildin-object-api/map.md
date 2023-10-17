@@ -172,8 +172,9 @@ console.log(nameVal)
 let map = new Map<string,any>()
 map.set("name","zhangsan")
 map.set("age",12)
-map.forEach(function(key:string,value:any){
+map.forEach(function(value:any | null,key:string){
     console.log(key)
     console.log(value)
 })
+	
 ```

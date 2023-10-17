@@ -2,9 +2,9 @@
 > Requires HBuilderX 3.5.1 and above to support
 
 为了更好的服务欢迎：
-<a class="join-group-chat" target="_blank" href="https://ask.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
+<a class="join-group-chat" target="_blank" href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/support.jpg">
 	加入uni-push2.0 交流群
-	<img src="https://ask.dcloud.net.cn/uploads/article/20210219/f0fca7f4ea8b8650386fc20345312105.JPG">
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/support.jpg">
 </a>
 
 <style>

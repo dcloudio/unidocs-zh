@@ -41,7 +41,9 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
    ```
 3. 通过组件提供的refresherpulling、refresherrefresh、refresherrestore、refresherabort下拉刷新事件调整自定义下拉刷新元素！实现预期效果
 
-**注意：** 目前自定义下拉刷新元素不支持放在list-view的首个子元素位置上。可能无法正常显示
+**注意：** 
++ 3.93版本开始支持
++ 目前自定义下拉刷新元素不支持放在list-view的首个子元素位置上。可能无法正常显示
 
 
 <!-- UTSCOMJSON.list-view.compatibility -->

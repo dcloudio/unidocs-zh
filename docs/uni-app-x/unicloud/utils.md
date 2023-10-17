@@ -45,3 +45,15 @@
 <!-- UTSUNICLOUDAPIJSON.offRefreshToken.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.offRefreshToken.tutorial -->
+
+## getCurrentUserInfo(callback) @offrefreshtoken
+
+<!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.description -->
+
+<!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.param -->
+
+<!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.returnValue -->
+
+<!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.compatibility -->
+
+<!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.tutorial -->

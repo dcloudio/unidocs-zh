@@ -130,6 +130,10 @@ defaultConfig{
 **注意：离线打包仅支持arm64-v8a、armeabi-v7a、x86三种类型，建议根据自己需求选择打包的CPU类型**
 **Note: Offline packaging only supports three types: arm64-v8a, armeabi-v7a, and x86. It is recommended to choose the type of CPU packaged according to your needs**
 
+### 默认值  
+- HBuilderX3.92及以下版本，默认值为armeabi-v7a  
+- HBuilderX3.93及以上版本，默认值调整为arm64-v8a  
+
 
 ### CPU类型选择建议
 ### CPU type selection suggestion
@@ -154,7 +158,11 @@ Not all simulations only support x86 instructions, such as Raiden (4.x), MuMu an
 
 
 ### 常见问题  
-### common problem  
+
+#### 在部分华为鸿蒙设备上启动应用慢的问题  
+部分华为新设备（Mate60、Mate X5等）使用的芯片运行32位应用时只能跑在小核上，相当于限制的CPU的性能，如果应用只包含armeabi-v7a会导致应用启动速度非常慢。需要勾选arm64-v8a来解决此问题。
+为了适配更多的新设备，建议开发者尽量勾选arm64-v8a。
+
 #### CPU类型配置了x86，云端打包后缺没有包含x86
 #### The CPU type is configured with x86, and the cloud package does not include x86
 如果勾选了不支持x86的内置模块或uni原生插件，云端打包后不会包含x86

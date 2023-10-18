@@ -95,8 +95,32 @@ function add(x: string, y: string): void {
 在 HBuilderX 3.93 以下的版本或者 iOS 平台，异步函数返回的不是 [Promise](./buildin-object-api/promise.md) 对象，请分别参考：[安卓 异步函数](../plugin/uts-for-android.md#_6-11-synchronized-lock-等线程同步概念-在uts里怎么写)、[iOS 异步函数](../plugin/uts-for-ios.md#_5-1-13-异步方法)。
 
 ```ts
-async function test(): Promise<string> {
-  return 'test'
+async function foo(): Promise<void> {
+  // ...
+}
+
+foo().then(function() {
+  console.log('done')
+})
+```
+
+async 函数可能包含 0 个或者多个 [await](./operator.md#await) [await](./operator.md#await) 表达式会暂停整个 async 函数的执行进程并出让其控制权，只有当其等待的基于 promise 的异步操作被兑现或被拒绝之后才会恢复进程。promise 的解决值会被当作该 await 表达式的返回值。使用 async / await 关键字就可以在异步代码中使用普通的 try / catch 代码块。
+
+```ts
+async function foo(): Promise<void> {
+  try {
+    await aPromise
+  } catch (error) {
+    console.log(error)
+  }
+}
+```
+
+async 函数一定会返回一个 promise 对象。如果一个 async 函数的返回值看起来不是 promise，那么它将会被隐式地包装在一个 promise 中。
+
+```ts
+async function foo(): Promise<number> {
+  return 1
 }
 ```
 

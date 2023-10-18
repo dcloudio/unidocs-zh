@@ -18,7 +18,7 @@ Tips：
 * ``switchTab`` 只能打开 ``tabBar`` 页面。
 * ``reLaunch`` 可以打开任意页面。
 * 页面底部的 ``tabBar`` 由页面决定，即只要是定义为 ``tabBar`` 的页面，底部都有 ``tabBar``。
-* 不能在 ```App.vue``` 里面进行页面跳转。
+* 不能在首页 ```onReady``` 之前进行页面跳转。
 
 ### $getAppWebview()
 

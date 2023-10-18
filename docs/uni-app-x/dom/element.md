@@ -6,7 +6,7 @@
 
 <!-- CUSTOMTYPEJSON.Element.param -->
 
-**注意：** App端Element所有属性仅支持获取不支持设置修改
+**注意：** App端Element所有属性仅支持获取，不支持设置修改
 
 ### 方法
 <!-- CUSTOMTYPEJSON.Element.methods.getNodeId.name -->
@@ -50,7 +50,7 @@
 <!-- CUSTOMTYPEJSON.Element.methods.setAttribute.description -->
 
 **注意**  
-setAttribute将会调整为只能保存string类型属性值，需要保存其它类型数据请使用dataset属性。    
+setAttribute从HBuilderX 3.93起，调整为只能保存string类型属性值，需要保存其它类型数据请使用dataset属性。    
 
 <!-- CUSTOMTYPEJSON.Element.methods.setAttribute.param -->
 
@@ -65,7 +65,7 @@ setAttribute将会调整为只能保存string类型属性值，需要保存其�
 <!-- CUSTOMTYPEJSON.Element.methods.getAttribute.description -->
 
 **注意**  
-getAttribute返回值将会调整为string类型，不要使用此方法获取非string类型的属性值。  
+getAttribute返回值从HBuilderX 3.93起，调整为string类型，不要使用此方法获取非string类型的属性值。如有非string需求，请使用对象的点操作符直接访问dateset属性，不通过getAttribute方法。
 
 <!-- CUSTOMTYPEJSON.Element.methods.getAttribute.param -->
 

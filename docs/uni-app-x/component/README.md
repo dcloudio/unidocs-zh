@@ -188,6 +188,169 @@ export default {
 - 在 `uni-app` 中，只支持使用 `vue` 组件。
 
 
+## 调用组件方法@methods
+
+通过以下3中方法调用组件内部方法或属性
+
+### 调用内置组件方法或设置属性
+
+3.93+ 支持
+
+使用 `this.$refs` 获取组件并转换为组件的类型，通过 `.` 调用组件方法或设置属性
+
+**语法**
+
+```(this.$refs['组件ref属性值'] as Uni[xxx]Element).foo();```
+
+**类型规范**
+
+Uni`组件名(驼峰)`Element
+
+如：
+
+`<button>`: UniButtonElement
+`<picker-view>`: UniPickerViewElement
+
+**示例代码**
+
+```html
+<template>
+  <view>
+    <slider ref="slider1"></slider>
+  </view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    onReady() {
+      // value 为属性
+      (this.$refs["slider1"] as UniSliderElement).value = 10;
+    }
+  }
+</script>
+```
+
+### 调用easycom组件方法或设置属性@method_easycom
+
+3.93+ 支持
+
+使用 `this.$refs` 获取组件并转换为组件的类型，通过 `.` 调用组件方法或设置属性
+
+**语法**
+
+```(this.$refs['组件ref属性值'] as 驼峰ComponentPublicInstance).foo();```
+
+**类型规范**
+
+组件标签名首字母大写，驼峰+ComponentPublicInstance
+
+如：
+
+`<test/>` 类型为：TestComponentPublicInstance
+`<uni-data-checkbox/>` 类型为：UniDataCheckboxComponentPublicInstance
+
+
+### 调用其它vue组件方法@$callMethod
+
+使用 `this.$refs` 获取组件实例，通过 `$callMethod` 调用组件方法
+
+**语法**
+
+```this.$refs['组件ref属性值'].$callMethod('方法名', ...args)```
+
+**类型规范**
+
+ComponentPublicInstance
+
+
+页面示例代码 `page1.uvue`
+
+```html
+<template>
+  <view>
+    <component1 ref="component1"></component1>
+  </view>
+</template>
+
+<script>
+  // 导入 vue 组件实例类型
+  import { ComponentPublicInstance } from 'vue'
+
+  // 引用组件 component1.uvue, 如果使用 easycom 可省略此步骤
+  import component1 from './component1.uvue'
+
+  export default {
+    components: {
+      component1
+    },
+    data() {
+      return {
+      }
+    },
+    onReady() {
+      // 通过组件 ref 属性获取组件实例
+      const component1 = this.$refs['component1'] as ComponentPublicInstance;
+
+      // 通过 $callMethod 调用组件的 foo1 方法
+      component1.$callMethod('foo1');
+
+      // 通过 $callMethod 调用组件的 foo2 方法并传递 1个参数
+      component1.$callMethod('foo2', Date.now());
+
+      // 通过 $callMethod 调用组件的 foo3 方法并传递 2个参数
+      component1.$callMethod('foo3', Date.now(), Date.now());
+
+      // 通过 $callMethod 调用组件的 foo4 方法并传递 callback
+      component1.$callMethod('foo4', () => {
+        console.log('callback')
+      });
+
+      // 通过 $callMethod 调用组件的 foo5 方法并接收返回值
+      // 注意： 返回值可能为 null，当前例子一定不为空，所以加了 !
+      const result = component1.$callMethod('foo5', 'string1')! as string;
+      console.log(result); // string1
+    }
+  }
+</script>
+```
+
+组件示例代码 `component1.uvue`
+
+```html
+<template>
+  <view></view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods: {
+      foo1() {
+      },
+      foo2(date1 : number) {
+      },
+      foo3(date1 : number, date2 : number) {
+      },
+      foo4(callback : (() => void)) {
+        callback()
+      },
+      foo5(text1 : string) : any | null {
+        return text1
+      }
+    }
+  }
+</script>
+```
+
+
+
 ## 如何开发同时兼容 uni-app x 和 uni-app 的组件
 
 目前有两种方案：

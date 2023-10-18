@@ -21,8 +21,45 @@
 - @tap
 - @click //与tap等价
 - @longpress
+- @transitionend
 
 在多点触摸的屏幕上，touch事件返回数组，包含了每个touch点对应的x、y坐标。
+
+### transition 事件
+
+- @transitionend
+
+	transition 效果结束时触发
+	
+```vue
+<template>
+  <image class="transition-transform" id="transition-transform" @transitionend="onEnd" src="/static/uni.png"></image>
+</template>
+<script>
+  export default {
+    data() {
+      return {}
+    },
+    onReady() {
+      var element = uni.getElementById('transition-transform')
+      element!.style.setProperty('transform', 'rotate(360deg)')
+    },
+    methods: {
+      onEnd() {
+        console.log("transition效果结束")
+      }
+    }
+  }
+</script>
+
+<style>
+  .transition-transform {
+    transition-duration: 2000;
+    transition-property: transform;
+    transform: rotate(0deg);
+  }
+</style>
+```
 
 ### 冒泡事件系统
 

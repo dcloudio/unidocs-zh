@@ -9,8 +9,7 @@
 UTS插件开发官方QQ交流群：527828934 [点此加入](https://qm.qq.com/cgi-bin/qm/qr?k=3Z-cQCXGiTyThkrqufUNNw7TaJd2xEPb&jump_from=webapi&authKey=4UQdplol3kPLwlDfuSdYleE8JUHnJChC2+8HcuBavZq2q51iAkLdzT4Bupt4ZJZu)
 Official QQ exchange group for UTS plug-in development: 527828934 [Click here to join](https://qm.qq.com/cgi-bin/qm/qr?k=3Z-cQCXGiTyThkrqufUNNw7TaJd2xEPb&jump_from=webapi&authKey=4UQdplol3kPLwlDfuSdYleE8JUHnJChC2+8HcuBavZiApt4ZqLd5)
 
-### 什么是uts
-### what is uts
+### 什么是uts语言
 
 uts，全称 uni type script，统一、强类型、脚本语言。
 uts, full name uni type script, unified, strong type, scripting language.
@@ -30,26 +29,43 @@ uts adopts the same syntax specification as ts and supports most ES6 APIs.
 
 如需详细了解uts语法，另见[uts语法介绍](/uts/)
 
+uts语言，
+- 可以用来开发独立App，即[uni-app x](https://uniapp.dcloud.net.cn/uni-app-x/)；
+- 也可以用来开发插件，即uts插件。
+
 ### 什么是uts插件
 ### What is uts plugin
 
-现有的 uni-app，仍以js引擎为主。但从HBuilderX 3.6开始，uni-app 支持 uts 插件（3.6支持vue3编译器，3.6.8支持vue2编译器）。
-The existing uni-app is still based on js engine. But starting from HBuilderX 3.6, uni-app supports uts plugin (3.6 supports vue3 compiler, 3.6.8 supports vue2 compiler).
+uts插件，指利用uts语法，操作原生的API（包括手机os的api或三方sdk），并封装成一个[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)插件，供前端调用。
 
-也就是 uts 的第一步不是完整开发一个独立的 app，而是作为 uni-app 的插件。后续 uts 会持续迭代，达到完整开发 app 的水平。
-That is to say, the first step of uts is not to fully develop an independent app, but as a plug-in of uni-app. Subsequent uts will continue to iterate to reach the level of a fully developed app.
+- uni-app中，是js来调用uts插件。（HBuilderX 3.6支持vue3编译器，3.6.8支持vue2编译器）
+- uni-app x中，是uts来调用uts插件。（HBuilderX 3.9支持）
 
-uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 原生插件，也就是 Kotlin 和 Swift 开发的插件。
-When the uts plugin is compiled into the app platform, it is functionally equivalent to the app native plugin before uni-app, that is, the plugin developed by Kotlin and Swift.
+也就是一个uts插件，可以同时支持uni-app和uni-app x。
 
-开发 uts 插件不需要熟悉 Kotlin 和 Swift 的语法，因为使用的是基于 ts 的语法。但需要熟悉 Android 和 iOS 的系统 API，否则无法调用原生能力。
-Developing uts plugins does not require familiarity with Kotlin and Swift syntax, as ts-based syntax is used. But you need to be familiar with the system APIs of Android and iOS, otherwise you cannot call native capabilities.
+为了兼容全端，uts插件可以分目录写所有平台代码，也就是一个uts插件除了支持App的扩展，还可以支持web、小程序。
+
+比如这个uts插件，[电量](https://ext.dcloud.net.cn/plugin?id=9295)，其源码在[https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getbatteryinfo](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getbatteryinfo)，内部有多个目录（app-android、app-ios、web、mp-weixin、mp-alipay...），在非App目录也可以写js。
+
+这个电量插件在uni-app和uni-app x中均可以使用。
+
+uts插件分api和组件。这和uni-app的组件、api的概念是一样的。
+- api插件：uts插件扩展了api能力，在script里调用
+- 组件插件：uts插件扩展了界面组件，在template里调用。它是要内嵌在页面中。
+
+api插件也可以操作界面，但更多是独立的全屏窗口或弹出窗口。而不能嵌入在template中。
+
+比如lottie动画的uts插件，就是一个组件插件。[https://ext.dcloud.net.cn/plugin?id=10674](https://ext.dcloud.net.cn/plugin?id=10674)，其源码在[https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view](https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view)
 
 ![uts插件结构](https://native-res.dcloud.net.cn/images/uts/UTS%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE1.png)
 ![uts plugin structure](https://native-res.dcloud.net.cn/images/uts/UTS%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F %E5%9B%BE1.png)
 
 ### uts插件与uni原生语言插件的区别
 ### The difference between uts plugin and uni native language plugin
+
+uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 原生插件。都是给app扩展原生能力。
+
+开发 uts 插件不需要熟悉 Kotlin 和 Swift 的语法，因为使用的是 uts语法。但需要熟悉 Android 和 iOS 的系统 API，至少需要知道什么原生能力在哪个API里。
 
 在 HBuilderX 3.6 以前，uni-app 在 App 侧只有一种原生插件，即用 java 或 Objective-C 开发的插件。
 Before HBuilderX 3.6, uni-app had only one native plug-in on the App side, that is, a plug-in developed with java or Objective-C.
@@ -70,7 +86,7 @@ Different names mean that they require developers to write in different language
 |打包方式		|外挂aar 等产出物			|编译时生成原生代码|
 |Packaging method |Outputs such as plug-in aar |Generate native code when compiling|
 |js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接 import，支持摇树优化|
-| js layer calling method | uni.requireNativePlugin() |Ordinary js functions/objects, can be directly imported, support tree-shaking optimization|
+|支持项目类型	|uni-app					|uni-app和uni-app x|
 
 相对原生语言插件，uts插件的优势：
 
@@ -83,14 +99,14 @@ Different names mean that they require developers to write in different language
 4. uts 下前端和原生可以统一在 HBuilderX 中联调。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
 5. 插件市场的uts插件支持下载后自己固定版本。而付费的原生语言插件只能使用最新版。
 6. 插件市场的uts付费插件支持源码版销售和源码版权保护机制。而付费的原生语言插件不支持源码版销售。
+7. uts插件可同时支持uni-app和uni-app x。
 
 如果您是插件作者，可以了解更多uts插件和uni原生语言插件对插件作者的区别。[详见](https://uniapp.dcloud.net.cn/plugin/publish.html#utsdiff)
 
 ### uts插件和Native.js的区别
 ### Difference between uts plugin and Native.js
 
-- [Native.js](../tutorial/native-js.md) 运行在js上，通过反射调用os api。功能和性能都不及真正的原生
-- [Native.js](../tutorial/native-js.md) runs on js and calls os api through reflection. The functions and performance are not as good as the real native
+- [Native.js](../tutorial/native-js.md) 运行在js上，通过反射调用os api。功能和性能都不及原生
 - uts 在 app 上不运行在 js 引擎里，是真正的原生。
 - uts does not run in the js engine on the app, it is truly native.
 
@@ -270,15 +286,15 @@ The Android platform's native third-party library directory supports the followi
 - so库
 - so library
 
-如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但因为多个uts插件引用相同三方原生sdk时可能会产生冲突，所以如果sdk支持仓储，建议优先使用仓储配置，而不是直接把jar等文件放在libs目录。仓储配置参考config.json的[dependencies](#dependencies)。  
-If the third-party native SDK is packaged as a uni-app plug-in, you can put the jar/aar file of the SDK in this directory, but because multiple uts plug-ins may conflict when referencing the same third-party native SDK, so if the SDK supports storage, it is recommended to use it first Warehousing configuration, instead of directly placing jar and other files in the libs directory. For storage configuration, refer to [dependencies](#dependencies) of config.json.
+如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但因为多个uts插件引用相同三方原生sdk时可能会产生冲突，所以如果sdk支持仓储，建议优先使用仓储配置，而不是直接把jar等文件放在libs目录。
+
+仓储配置参考config.json的[dependencies](#dependencies)。  
 
 如果使用的三方sdk包含了so库，保存到此目录时，需按Android的abi类型分目录保存。
 If the third-party sdk used contains the so library, when saving to this directory, it needs to be saved in different directories according to the Android abi type.
 
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 For the use of the libs directory, please refer to [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
-
 
 
 ##### res  
@@ -391,8 +407,7 @@ buildscript {
 **注意：**
 **Notice:**
 
-- Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
-- The native configuration of the Android platform needs to be submitted to the cloud for packaging to take effect, and the [custom base](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground) needs to be used when the real device is running
+- Android平台原生配置（包括引入、变更三方sdk）均需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
 - HBuilderX 内置了android常见的依赖：内置依赖清单 ，开发者需要注意两点：
 - HBuilderX has built-in android common dependencies: built-in dependency list, developers need to pay attention to two points:
@@ -402,9 +417,6 @@ buildscript {
 
     2 请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
     2 Do not introduce the same dependencies by manually adding jar/aar, otherwise cloud packaging will fail due to dependency conflicts.
-
-
-
 
 #### iOS 平台原生配置
 #### iOS platform native configuration
@@ -541,7 +553,6 @@ Take the battery as an example to introduce the development steps of the `uts` p
 
 #### Android平台
 #### Android platform
-
 
 ![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 ![OSAPI example](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
@@ -957,9 +968,7 @@ getBatteryCapacity()
 ```
 
 
-
-关于电量这个插件，插件市场已经提供好了现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
-Regarding the plug-in of electricity, the plug-in market has already provided ready-made plug-ins. In addition to Android, it also supports web and MiniApp, which can be downloaded and experienced. [See details](https://ext.dcloud.net.cn/plugin?id=9295)
+关于电量这个插件，插件市场已提供现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
 
 更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
 For more development examples, you can refer to [HelloUTS](https://gitcode.net/dcloud/hello-uts).
@@ -1136,22 +1145,6 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 
 更多UTSJSONObject的用法，[详见](../uts/data-type.md#UTSJSONObject)
 
-## 路线图
-## route map
-
-uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-1. uts插件中可陆续使用uni的各种api，比如uni.request（已上线部分，还在持续补充）
-2. 插件市场支持uts插件的加密和计费销售（已完成）
-3. 全新uvue页面，纯原生的视图组件构成的页面（已公测）
-4. vue页面支持uts原生组件
-
-最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
-Ultimately, uts is no longer a plugin for uni-app, but the body of the app. (Now it is mainly js, uts exists as a plug-in, and the main engine is still in v8 or jscore)
-
-那时，即便是最复杂的应用，比如微信，也可以使用uts来开发，毫无功能和性能的影响。
-At that time, even the most complex applications, such as WeChat, could be developed using uts without any functional or performance impact.
-
-
 ## 示例项目
 ## Example project
 
@@ -1159,11 +1152,9 @@ DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)
 DCloud provides an example of Hello UTS, [see details](https://gitcode.net/dcloud/hello-uts).
 
 插件市场提供了很多uts项目：
-The plug-in market provides many uts projects:
-- 电量获取封装插件，[详见](https://ext.dcloud.net.cn/plugin?id=9295)
-- Power acquisition package plug-in, [see details](https://ext.dcloud.net.cn/plugin?id=9295)
-- 截屏监听插件，[详见](https://ext.dcloud.net.cn/plugin?id=9897)
-- Screenshot monitoring plug-in, [see details](https://ext.dcloud.net.cn/plugin?id=9897)
+- API示例，调用os api，电量插件，[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+- API示例，调用三方sdk，腾讯定位插件，[详见](https://ext.dcloud.net.cn/plugin?id=14569)
+- 组件示例，调用三方sdk，lottie插件，[详见](https://ext.dcloud.net.cn/plugin?id=10674)
 
 更多uts插件见：[https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 For more uts plugins, see: [https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)

@@ -9,3 +9,5 @@
 <!-- UTSUNICLOUDAPIJSON.callFunction.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.callFunction.tutorial -->
+
+<!-- UTSUNICLOUDAPIJSON.unicloud-call-function.example -->

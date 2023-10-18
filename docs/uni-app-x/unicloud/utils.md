@@ -46,7 +46,7 @@
 
 <!-- UTSUNICLOUDAPIJSON.offRefreshToken.tutorial -->
 
-## getCurrentUserInfo(callback) @offrefreshtoken
+## getCurrentUserInfo() @getcurrentuserinfo
 
 <!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.description -->
 

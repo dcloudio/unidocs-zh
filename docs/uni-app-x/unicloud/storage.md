@@ -10,6 +10,8 @@
 
 <!-- UTSUNICLOUDAPIJSON.uploadFile.tutorial -->
 
+<!-- UTSUNICLOUDAPIJSON.uploadFile.example -->
+
 ## chooseAndUploadFile(options) @chooseanduploadfile
 
 <!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.description -->
@@ -22,6 +24,8 @@
 
 <!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.tutorial -->
 
+<!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.example -->
+
 ## getTempFileURL(options) @gettempfileurl
 
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.description -->
@@ -33,3 +37,5 @@
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.tutorial -->
+
+<!-- UTSUNICLOUDAPIJSON.unicloud-file-api.example -->

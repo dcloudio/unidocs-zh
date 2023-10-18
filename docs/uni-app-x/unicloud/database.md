@@ -1,4 +1,4 @@
-## databaseForJQL(callback) @databaseforjql
+## databaseForJQL() @databaseforjql
 
 **和uni-app项目接口差异**
 
@@ -15,3 +15,5 @@
 <!-- UTSUNICLOUDAPIJSON.databaseForJQL.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.databaseForJQL.tutorial -->
+
+<!-- UTSUNICLOUDAPIJSON.unicloud-database.example -->

@@ -859,27 +859,19 @@ Required parameter value
 可选参数 options
 optional parameters options
 
-|属性|类型|默认值|描述|
-|property|type|default value|description|
-|:-|:-|:-|:-|
-|action|string||云端执行数据库查询的前或后，触发某个action函数操作，进行预处理或后处理，详情。HBuilder 3.1.0+|
-|action|string|| Before or after the cloud executes the database query, an action function is triggered to perform preprocessing or postprocessing, details. HBuilder 3.1.0+|
-|showToast|boolean|true|是否显示更新成功后的提示框|
-|showToast|boolean|true|Whether to show the prompt box after successful update|
-|toastTitle|string|修改成功|修改成功后的toast提示|
-|toastTitle|string|Modified successfully|Toast prompt after successful modification|
-|needConfirm|boolean|true|控制是否有弹出框，HBuilderX 3.1.5+|
-|needConfirm|boolean|true|Controls whether there is a popup box, HBuilderX 3.1.5+|
-|needLoading|boolean|true|是否显示Loading，HBuilderX 3.1.5+|
-|needLoading|boolean|true|Whether to display Loading, HBuilderX 3.1.5+|
-|loadingTitle|string|''|显示loading的标题，HBuilderX 3.1.5+|
-|loadingTitle|string|''|Display loading title, HBuilderX 3.1.5+|
-|success|function||更新成功后的回调|
-|success|function||Callback after successful update|
-|fail|function||更新失败后的回调|
-|fail|function||Callback after update failure|
-|complete|function||完成后的回调|
-|complete|function||Callback after completion|
+|属性						|类型			|默认值		|描述																																											|
+|:-							|:-				|:-				|:-																																												|
+|action					|string		|					|云端执行数据库查询的前或后，触发某个action函数操作，进行预处理或后处理，详情。HBuilder 3.1.0+	|
+|showToast			|boolean	|true			|是否显示更新成功后的提示框																																	|
+|toastTitle			|string		|修改成功	|修改成功后的toast提示																																			|
+|needConfirm		|boolean	|true			|控制是否有更新确认弹出框，HBuilderX 3.1.5+																									|
+|confirmTitle		|string		|true			|更新确认弹出框标题，HBuilderX 3.1.5+																												|
+|confirmContent	|string		|true			|更新确认弹出框内容，HBuilderX 3.1.5+																												|
+|needLoading		|boolean	|true			|是否显示Loading，HBuilderX 3.1.5+																													|
+|loadingTitle		|string		|''				|显示loading的标题，HBuilderX 3.1.5+																												|
+|success				|function	|					|更新成功后的回调																																					|
+|fail						|function	|					|更新失败后的回调																																					|
+|complete				|function	|					|完成后的回调																																							|
 
 
 使用unicloud-db组件的update方法，除了更新云数据库中的数据外，也会同时更新当前页面的unicloud-db组件中的data数据，自然也会自动差量更新页面渲染的内容。同时update方法还封装了修改成功的toast提示。

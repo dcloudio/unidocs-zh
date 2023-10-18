@@ -90,7 +90,9 @@ function add(x: string, y: string): void {
 
 ### 异步函数@async
 
-使用 async 关键字来声明一个异步函数，异步函数返回一个 [Promise](./buildin-object-api/promise.md) 对象，在 HBuilderX 3.93 以下的版本或者 iOS 平台，请分别参考：[安卓 异步函数](../plugin/uts-for-android.md#_6-11-synchronized-lock-等线程同步概念-在uts里怎么写)、[iOS 异步函数](../plugin/uts-for-ios.md#_5-1-13-异步方法)。
+使用 async 关键字来声明一个异步函数，异步函数返回一个 [Promise](./buildin-object-api/promise.md) 对象。
+
+在 HBuilderX 3.93 以下的版本或者 iOS 平台，异步函数返回的不是 [Promise](./buildin-object-api/promise.md) 对象，请分别参考：[安卓 异步函数](../plugin/uts-for-android.md#_6-11-synchronized-lock-等线程同步概念-在uts里怎么写)、[iOS 异步函数](../plugin/uts-for-ios.md#_5-1-13-异步方法)。
 
 ```ts
 async function test(): Promise<string> {

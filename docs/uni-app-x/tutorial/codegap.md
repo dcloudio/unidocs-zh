@@ -265,11 +265,67 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 - 函数声明方式不支持[作为值传递](../../uts/function.md#作为值传递)
 - 函数表达式方式不支持[默认参数](../../uts/function.md#默认参数)
 
-## 调用vue组件方法@$callMethod
+## 调用组件方法@methods
+
+### 调用内置组件方法或设置属性
+
+使用 `this.$refs` 获取组件并转换为组件的类型，通过 `.` 调用组件方法或设置属性
+
+**语法**
+
+```(this.$refs['组件ref属性值'] as Uni[xxx]Element).foo();```
+
+**类型规范**
+
+Uni`组件名(驼峰)`Element
+
+如：
+
+`<button>`: UniButtonElement
+`<picker-view>`: UniPickerViewElement
+
+**示例代码**
+
+```html
+<template>
+  <view>
+    <slider ref="slider1"></slider>
+  </view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    onReady() {
+      // value 为属性
+      (this.$refs["slider1"] as UniSliderElement).value = 10;
+    }
+  }
+</script>
+```
+
+### 调用vue组件方法@$callMethod
 
 使用 `this.$refs` 获取组件实例，通过 `$callMethod` 调用组件方法
 
-`$callMethod` 支持多个参数
+**语法**
+
+```this.$refs['组件ref属性值'].$callMethod('方法名', ...args)```
+
+**类型规范**
+
+1.easycom自定义组件类型名称规范：组件标签名首字母大写，驼峰+ComponentPublicInstance
+
+如：
+
+`<test/>` 类型为：TestComponentPublicInstance
+`<uni-data-checkbox/>` 类型为：UniDataCheckboxComponentPublicInstance
+
+2. 其他自定义组件实例类型: `ComponentPublicInstance`
+
 
 页面示例代码 `page1.uvue`
 

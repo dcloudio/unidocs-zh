@@ -97,7 +97,7 @@ handleClick (event : MouseEvent) {
 		<view style="width: 750rpx;height: 1750rpx;background-color: bisque;">
 			滑动框中区域修改进度并阻止滚动，滑动其余空白区域触发滚动
 			<view style="width: 750rpx;height: 40rpx; margin-top: 100rpx;border:5rpx;" @touchmove="slider">
-				<view ref="sliderNode" style="background-color: chocolate;width: 0rpx;height: 30rpx;"></view>
+				<view ref="view1" style="background-color: chocolate;width: 0rpx;height: 30rpx;"></view>
 			</view>
 		</view>
 	</scroll-view>
@@ -106,16 +106,16 @@ handleClick (event : MouseEvent) {
 	export default {
 		data() {
 			return {
-				sliderNode: null as INode | null
+				$view1Element: null as UniElement | null
 			}
 		},
+    onReady() {
+      this.$view1Element = this.$refs['view1'] as UniElement
+    },
 		methods: {
 			slider(e : TouchEvent) {
-				if (this.sliderNode == null) {
-					this.sliderNode = this.$refs["sliderNode"] as INode
-				}
 				e.preventDefault() // 阻止外层scroll-view滚动行为
-				this.sliderNode!!.style?.setProperty('width', e.touches[0].screenX);
+				this.$view1Element!.style?.setProperty('width', e.touches[0].screenX);
 			}
 		}
 	}

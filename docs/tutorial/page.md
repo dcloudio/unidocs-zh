@@ -560,9 +560,7 @@ Tips：
 * ``reLaunch`` 可以打开任意页面。
 * ``reLaunch`` can open any page.
 * 页面底部的 ``tabBar`` 由页面决定，即只要是定义为 ``tabBar`` 的页面，底部都有 ``tabBar``。
-* The ``tabBar`` at the bottom of the page is determined by the page, that is, as long as it is a page defined as ``tabBar``, there is a ``tabBar`` at the bottom.
-* 不能在 ```App.vue``` 里面进行页面跳转。
-* You cannot perform page jumps in ``App.vue````.
+* 不能在首页 ```onReady``` 之前进行页面跳转。
 
 ### $getAppWebview() @getappwebview
 

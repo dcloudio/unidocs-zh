@@ -27,6 +27,7 @@
   * [view](component/view.md)
   * [scroll-view](component/scroll-view.md)
   * [list-view](component/list-view.md)
+  * [sticky-header](component/sticky-header.md)
   * [swiper](component/swiper.md)
   * [navigator](component/navigator.md)
   * [text](component/text.md)

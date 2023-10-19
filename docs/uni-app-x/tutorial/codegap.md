@@ -267,7 +267,7 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 
 ## 调用组件方法@methods
 
-[详见](uni-app-x/component//README.md#methods)
+[详见](uni-app-x/component/README.md#methods)
 
 ## vue使用注意
 

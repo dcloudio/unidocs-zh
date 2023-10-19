@@ -198,3 +198,5 @@
 <!-- CUSTOMTYPEJSON.DrawableContext.methods.bezierCurveTo.compatibility -->
 
 <!-- CUSTOMTYPEJSON.DrawableContext.methods.bezierCurveTo.tutorial -->
+
+<!-- CUSTOMTYPEJSON.DrawableContext.example -->

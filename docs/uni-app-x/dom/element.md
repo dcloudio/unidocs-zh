@@ -49,8 +49,8 @@
 
 <!-- CUSTOMTYPEJSON.Element.methods.setAttribute.description -->
 
-**注意**  
-setAttribute从HBuilderX 3.93起，调整为只能保存string类型属性值，需要保存其它类型数据请使用dataset属性。    
+**注意**
+setAttribute从HBuilderX 3.93起，调整为只能保存string类型属性值，需要保存其它类型数据请使用dataset属性。
 
 <!-- CUSTOMTYPEJSON.Element.methods.setAttribute.param -->
 
@@ -64,7 +64,7 @@ setAttribute从HBuilderX 3.93起，调整为只能保存string类型属性值，
 
 <!-- CUSTOMTYPEJSON.Element.methods.getAttribute.description -->
 
-**注意**  
+**注意**
 getAttribute返回值从HBuilderX 3.93起，调整为string类型，不要使用此方法获取非string类型的属性值。如有非string需求，请使用对象的点操作符直接访问dateset属性，不通过getAttribute方法。
 
 <!-- CUSTOMTYPEJSON.Element.methods.getAttribute.param -->
@@ -230,3 +230,15 @@ getAttribute返回值从HBuilderX 3.93起，调整为string类型，不要使用
 <!-- CUSTOMTYPEJSON.Element.methods.blur.compatibility -->
 
 <!-- CUSTOMTYPEJSON.Element.methods.blur.tutorial -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.takeSnapshot.name -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.takeSnapshot.description -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.takeSnapshot.param -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.takeSnapshot.returnValue -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.takeSnapshot.compatibility -->
+
+<!-- CUSTOMTYPEJSON.Element.methods.takeSnapshot.tutorial -->

@@ -444,6 +444,29 @@ array1.forEach(element => console.log(element));
 // expected output: "c"
 ```
 
+> 特别注意：
+> 不可在 forEach 的 callbackFn 里添加或者删除原数组元素，此行为是危险的，在 Android 平台会造成闪退，在 iOS 平台会造成行为不符合预期。如果想实现该效果，请用 while 循环。
+
+```ts
+
+const array1 = ['a', 'b', 'c'];
+array1.forEach(element => {
+	console.log(element)
+	array1.pop() // 此行为在 Android 平台会造成闪退，在 iOS 平台会输出 'a', 'b', 'c', 而 JS 会输出 'a', 'b'
+});
+
+// 如果想让上述行为正常运行，可以用 while 循环实现：
+
+let array1 = ['a', 'b', 'c'];
+let index = 0;
+while (index < array1.length) {
+  console.log(array1[index]);
+  array1.pop();
+  index += 1;
+}
+
+```
+
 <!-- UTSJSON.Array.forEach.compatibility -->
 
 ### map(callbackfn, thisArg?)

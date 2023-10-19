@@ -31,6 +31,10 @@
 
 	transition 效果结束时触发
 	
+	#### 兼容性
+	
+	安卓 3.93+ 版本开始支持
+	
 ```vue
 <template>
   <image class="transition-transform" id="transition-transform" @transitionend="onEnd" src="/static/uni.png"></image>

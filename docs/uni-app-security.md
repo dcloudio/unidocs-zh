@@ -46,18 +46,18 @@ uni安全加固分为测试版和正式版两种类型：
 
 2. 在提交应用加固之前，您需要先进行充值，因为应用加固是一项预付费业务。点击页面上的“充值”按钮，并输入充值金额进行充值。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822002.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822002_02.png)
 
 3. 完成充值后，前往`加固记录`栏目，点击"新增加固"按钮后，将打开一个新页面，用于填写加固信息。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822003.png)
-
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822003_01.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822003_02.png)
 
 
 
 4. 当您提交成功后，您可以查看应用加固记录来跟踪加固的进展和结果。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822004.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822004_02.png)
 
 
 ## 常见问题@question

@@ -2,17 +2,11 @@
 
 `manifest.json` 是 uni-app x 项目的配置文件，用于设置应用的名称、版本、图标等信息。在 HBuilderX 中创建项目时此文件保存在根目录。
 
-## 内置模块摇树@treeShaking
+uni-app x 目前不支持配置splash图，因uni-app x打包后启动速度非常快，可以自己做一个简单的uvue页面来当做splash。
 
-uni-app x的Android基础库体积是7M，打包后的apk体积是基础库的体积加上开发者的代码及代码引用的模块的体积。有些模块涉及so库，覆盖的cpu指令越多，包体积越大。
+uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)中。
 
-在uni-app js引擎版中，内置模块如video，是开发者在manifest.json中手动勾选配置的。
-
-但在uni-app x中，不需要手动配置。
-
-HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自动引入或剔除不需要的内置模块。
-
-如应用中没有使用video组件相关功能，将不再包含video内置模块，减少安装包体积。
+uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选择内置模块，具体[见下](#treeShaking)。
 
 ## 配置项列表
 
@@ -133,3 +127,15 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 	}
 }
 ```
+
+## 内置模块的摇树@treeShaking
+
+uni-app x的Android基础库体积是7M，打包后的apk体积是基础库的体积加上开发者的代码及代码引用的模块的体积。有些模块涉及so库，覆盖的cpu指令越多，包体积越大。
+
+在uni-app js引擎版中，内置模块如video，是开发者在manifest.json中手动勾选配置的。
+
+但在uni-app x中，不需要手动配置。
+
+HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自动引入或剔除不需要的内置模块。
+
+如应用中没有使用video组件相关功能，将不再包含video内置模块，减少安装包体积。

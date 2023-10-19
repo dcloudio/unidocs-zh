@@ -267,7 +267,7 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 
 ## 调用组件方法@methods
 
-[详见](uni-app-x/component/README.md#methods)
+js中refs拿到一个组件后，可以直接`.`出它的方法。但uts中只有easycom组件可以使用`.`操作符，非easycom组件需要使用callMethod()。[详见](uni-app-x/component/README.md#methods)
 
 ## vue使用注意
 

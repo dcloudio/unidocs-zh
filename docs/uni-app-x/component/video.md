@@ -20,7 +20,6 @@ ijkplayer库的功能较多，video组件并非完全封装。有需要的开发
 
 ### Bug & Tips@tips
 - 暂不支持横屏全屏后放置子组件
-- 在Android9以下设备兼容性不够完善，反复暂停/播放会引起崩溃
 - 标准运行基座默认不包含intel x86 cpu的兼容so库，所以video组件在标准基座运行时无法在x86 cpu的设备上运行（常见于模拟器）。如需支持x86 cpu，请在manifest里配置`abiFilters`，打包或自定义基座后生效 [详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest.html#android)
 
 <!-- UTSCOMJSON.video.children -->

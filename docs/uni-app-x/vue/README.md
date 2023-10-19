@@ -80,8 +80,6 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 
 暂不支持vue插件，比如pinia、vuex、i18n、router。简单的状态管理可以参考文档[全局变量和状态管理](uni-app-x/tutorial/store.md)。
 
-还有一些支持差异，在左侧文档点开后搜索“uni-app x”可见。
-
 ## 选项式 API兼容性
 
 ### 状态选项
@@ -114,5 +112,3 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 <!-- VUEJSON.render_function.compatibility -->
 
 ## Bug & Tips@tips
-
-- **bug**: [methods 中的方法不支持递归调用](https://ask.dcloud.net.cn/question/179395)，预计 `v3.93` 修复。

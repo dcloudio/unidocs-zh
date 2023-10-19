@@ -172,13 +172,11 @@ export default {
 
 ## vue 与 uvue 不同文件后缀的优先级 @priority
 
-新建组件时，默认组件的后缀名为.vue。而不是.uvue。
+新建组件时，默认组件的后缀名为.uvue，但也支持.vue。
 
 .vue里面写uvue的语法，可以正常被.uvue页面引用和编译。
 
 .vue里写条件编译，可以制作同时满足uni-app和uni-app x的组件。
-
-但是uni-app x也支持.uvue文件的组件。
 
 当你手动import或easycom手动配置规则，可以指定文件名后缀。比如`import PageHead from '@/components/page-head.uvue'`
 
@@ -190,19 +188,19 @@ export default {
 
 ## 调用组件方法@methods
 
-支持以下`3`种方法调用组件内部方法或属性
+需要把组件分为 内置组件、easycom组件、非easycom组件，这3种组件有不同的方法调用方式。
 
-### 调用内置组件方法或设置属性
+### 内置组件的方法调用或设置属性
 
-3.93+ 支持
+> 3.93+ 支持
 
-使用 `this.$refs` 获取组件并转换为组件的类型，通过 `.` 调用组件方法或设置属性
+使用 `this.$refs` 获取组件并as转换为组件对应的element类型，通过 `.`操作符 调用组件方法或设置属性。
 
 **语法**
 
 ```(this.$refs['组件ref属性值'] as Uni[xxx]Element).foo();```
 
-**类型规范**
+**内置组件的element类型规范**
 
 Uni`组件名(驼峰)`Element
 
@@ -228,23 +226,23 @@ Uni`组件名(驼峰)`Element
     },
     onReady() {
       // value 为属性
-      (this.$refs["slider1"] as UniSliderElement).value = 10;
+      (this.$refs["slider1"] as UniSliderElement).value = 10; //此处注意slider1必须存在，如不存在，把null as 成 UniSliderElement会引发崩溃
     }
   }
 </script>
 ```
 
-### 调用easycom组件方法或设置属性@method_easycom
+### easycom组件调用方法或设置属性@method_easycom
 
-3.93+ 支持
+> 3.93+ 支持
 
-使用 `this.$refs` 获取组件并转换为组件的类型，通过 `.` 调用组件方法或设置属性
+easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取组件并转换为组件的类型，通过 `.`操作符 调用组件方法或设置属性。
 
 **语法**
 
 ```(this.$refs['组件ref属性值'] as 驼峰ComponentPublicInstance).foo();```
 
-**类型规范**
+**easycom组件的类型规范**
 
 组件标签名首字母大写，驼峰+ComponentPublicInstance
 
@@ -253,16 +251,79 @@ Uni`组件名(驼峰)`Element
 `<test/>` 类型为：TestComponentPublicInstance
 `<uni-data-checkbox/>` 类型为：UniDataCheckboxComponentPublicInstance
 
+**示例代码**
 
-### 调用其它vue组件方法@$callMethod
+假使有一个component1组件，其有若干方法foo1等，如下。
 
-使用 `this.$refs` 获取组件实例，通过 `$callMethod` 调用组件方法
+```html
+<template>
+  <view></view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods: {
+      foo1() {
+		  console.log("foo1");
+      },
+      foo2(date1 : number) {
+		  console.log(date1);
+      },
+      foo3(date1 : number, date2 : number) {
+      },
+      foo4(callback : (() => void)) {
+        callback()
+      },
+      foo5(text1 : string) : any | null {
+        return text1
+      }
+    }
+  }
+</script>
+```
+
+component1组件符合[easycom规范](https://uniapp.dcloud.net.cn/component/#easycom)
+
+那么在页面中调用component1组件的方法如下：
+```html
+<template>
+  <view>
+    <component1 ref="component1"></component1>
+  </view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    onReady() {
+      let c1 = (this.$refs["component1"] as Component1ComponentPublicInstance) //注意组件必须存在，注意类型首字母大写
+      c1.foo1(); 
+      c1.foo2(1); 
+    }
+  }
+</script>
+```
+
+### 其它自定义组件的方法调用使用callMethod@$callMethod
+
+如果不是内置组件，也不是easycom组件，那么无法使用`.`操作符了。
+
+此时需使用 `this.$refs` 获取组件实例，然后通过 `$callMethod` 调用组件的方法。也就是把组件的方法名、参数，当做callMethod的参数来传递。此时也就没有`.`操作符那样的代码提示和校验了。
+
+callMethod可用于所有自定义组件，包括easycom组件也可以使用，只不过easycom组件有更简单的用法。
 
 **语法**
 
 ```this.$refs['组件ref属性值'].$callMethod('方法名', ...args)```
 
-**类型规范**
+**组件类型**
 
 ComponentPublicInstance
 
@@ -280,7 +341,7 @@ ComponentPublicInstance
   // 导入 vue 组件实例类型
   import { ComponentPublicInstance } from 'vue'
 
-  // 引用组件 component1.uvue, 如果使用 easycom 可省略此步骤
+  // 非easycom组件需import引用组件 component1.uvue
   import component1 from './component1.uvue'
 
   export default {

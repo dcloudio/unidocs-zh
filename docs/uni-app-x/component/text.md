@@ -28,5 +28,4 @@ app-nvue中，text组件不能嵌套。
 
 ## Bug & Tips@tips
 - **bug**: `text` 嵌套 `text`时，如果外层 `text` 内没有文本内容，内层 `text` 文本未渲染。
-- **bug**: 通过插槽传入文本时，文本内容未渲染，预计 `v3.93` 修复。
 - **tip**: app-uvue的selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。

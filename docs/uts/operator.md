@@ -196,6 +196,9 @@ uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在
 | 不同的专有类型变量相加 #{rowspan=2}| let a: Int = 1; let b: Float = 3.14.toFloat(); a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
 | let a: Float = 1.0.toFloat(); let b: Double = 3.14; a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |
 
+**已知Bug**  
+- Android平台 uni-app项目的uts插件中，字面量整数相除时真机运行返回类型为number，云端打包返回类型为Int。如let a = 1/10，真机运行时为值为0.1，云端打包后值为0。此问题在uni-app x项目中不存在。  
+
 ## 比较运算符的跨数字类型注意@comparisondifftype
 
 uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在有字面量或者是平台专有数字类型参与比较操作时，不同平台可能会有不同的表现。

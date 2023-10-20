@@ -311,7 +311,7 @@ uni-app支持的组件分为vue组件和小程序自定义组件。
 
 传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom`将其精简为一步。
 
-只要组件安装在项目的components目录下或`uni_modules`目录下，并符合`components/组件名称/组件名称.(vue|uvue)`目录结构（注意：当同时存在vue和uvue时，uni-app 项目优先使用 vue 文件，而uni-app x 项目优先使用 uvue 文件，[详情](https://uniapp.dcloud.net.cn/uni-app-x/component/#%E5%A6%82%E4%BD%95%E5%BC%80%E5%8F%91%E5%90%8C%E6%97%B6%E5%85%BC%E5%AE%B9-uni-app-x-%E5%92%8C-uni-app-%E7%9A%84%E7%BB%84%E4%BB%B6)）。就可以不用引用、注册，直接在页面中使用。
+只要组件安装在项目的components目录下或`uni_modules`目录下，并符合`components/组件名称/组件名称.(vue|uvue)`目录结构（注意：当同时存在vue和uvue时，uni-app 项目优先使用 vue 文件，而uni-app x 项目优先使用 uvue 文件，[详情](/uni-app-x/component/#%E5%A6%82%E4%BD%95%E5%BC%80%E5%8F%91%E5%90%8C%E6%97%B6%E5%85%BC%E5%AE%B9-uni-app-x-%E5%92%8C-uni-app-%E7%9A%84%E7%BB%84%E4%BB%B6)）。就可以不用引用、注册，直接在页面中使用。
 
 比如前述举例的[uni-rate组件](https://ext.dcloud.net.cn/plugin?id=33)，它导入到uni-app项目后，存放在了目录/components/uni-rate/uni-rate.vue
 

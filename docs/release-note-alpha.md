@@ -1,3 +1,43 @@
+#### 3.93.2023101913-alpha
+* 【uni-app】
+  + 微信小程序平台 修复 subscribe 组件属性无效的Bug [详情](https://ask.dcloud.net.cn/question/178893)
+  + 支付宝小程序平台 修复 lottie 组件属性无效的Bug [详情](https://github.com/dcloudio/uni-app/issues/4510)
+  + 抖音小程序平台 修复 Vue2 项目运行到抖音 27.2.0 版本以上 $refs 失效的Bug [详情](https://github.com/dcloudio/uni-app/pull/4555)
+* 【uni-app x插件】
+  + 新增 sticky-header 吸顶组件 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/sticky-header.html)
+  + 新增 unicloud-db 组件 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/unicloud-db.html)
+  + 新增 takeSnapshot 截图api [详情](https://uniapp.dcloud.net.cn/uni-app-x/dom/element.html#takeSnapshot)
+  + 新增 transitionend 动画结束事件 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/common.html#transitionend)
+  + 新增 css border-*-width 属性值支持 thin | medium | thick
+  + 新增 摇树优化 代码中未使用的内置模块（如video）会自动摇掉，减少安装包体积 [详情](https://uniapp.dcloud.net.cn/uni-app-x/manifest.html#treeShaking)
+  + 优化 组件类型，内置组件和自定义组件可更方便的获取类型并调用组件方法 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/#methods)
+  + 优化 uni.getElementById 支持泛型 [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/get-element.html)
+  + 新增 list-view 组件的下拉刷新支持自定义样式
+  + 修复 list-view 组件嵌套 swiper 时 swiper-item 可能重复显示的Bug
+  + 修复 list-view 组件某些情况子节点位置错乱的Bug
+  + 修复 video 组件在 Android8.0 以下设备使用硬解码可能引起崩溃的Bug
+  + 修复 web-view 组件在 Android11 及以上设备可能无法加载本地网页的Bug
+  + 修复 text 组件动态修改 display 属性可能出现渲染异常的Bug
+  + 修复 css position 属性设置为 fixed 时，z-index 属性可能不生效的Bug
+  + 修复 uvue 文件 methods 中定义的方法不能递归访问的Bug [详情](https://ask.dcloud.net.cn/question/179395)
+  + 修复 目录包含特殊字符编译报错的Bug
+  + 修复 ref 绑定节点移除时，$refs 数据未更新的Bug
+* 【uts插件】
+  + 新增 await 支持与 Promise 一同使用 [详情](https://uniapp.dcloud.net.cn/uts/operator.html#await)
+  + 新增 UTSJSONObject 支持 hasOwnProperty [详情](https://uniapp.dcloud.net.cn/uts/buildin-object-api/utsjsonobject.html#hasOwnProperty)
+  + 修复 parseInt 解析超过整型数据范围返回值为 NaN 的Bug
+  + App-Android平台 修复 console 输出对象信息中包含 private 属性和方法的Bug
+  + App-Android平台 修复 number 数据类型在某些情况除法运行结果不正确的Bug
+  + App-iOS平台 修复 vue 页面中调用 API 参数不支持 null 的Bug
+* 【App插件(含5+App和uni-app的App端)】
+  + 更新 uni-AD SDK，对接双11预算，其中腾讯优量汇SDK Android为 4.542.1412 版，iOS为 4.14.45 版；穿山甲&GroMore SDK Android为 5.6.1.6 版，iOS为 5.7.0.4 版；快手广告SDK Android为 3.3.53.3 版，iOS为 3.3.53 版；快手内容联盟SDK Android为 3.3.53 版；Sigmob广告联盟SDK Android为 4.12.7 版，iOS为 4.10.0 版；百度百青藤广告SDK Android为 9.322 版，iOS为 5.322 版；华为广告SDK Android为 13.4.66.300 版
+  + Android平台 调整 默认支持CPU类型为arm64-v8a，解决在华为新设备（如Mate60、X5）应用启动慢的问题 [详情](https://uniapp.dcloud.net.cn/tutorial/app-android-abifilters.html#default)
+  + Android平台 修复 上架 OPPO 应用市场可能提示`含数字天堂(dcloud)广告插件`的Bug [详情](https://ask.dcloud.net.cn/question/174958)
+  + Android平台 修复 uni-AD 红包广告可能不展示的Bug
+* 【uniCloud】
+  + 优化 阿里云 callFunction、url化方式调用云函数最大超时时间由60秒调整为120秒
+  + 新增 uni-app x项目 支持uniCloud调试
+
 #### 3.92.2023101106-alpha
 * 【uni-app】
 * App平台 修复 云端打包 Storage 相关接口设置和获取内容异常的Bug [详情](https://github.com/dcloudio/uni-app/issues/4556)

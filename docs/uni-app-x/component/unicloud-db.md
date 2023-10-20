@@ -6,12 +6,12 @@
 
 <!-- UTSCOMJSON.unicloud-db.event -->
 
+<!-- UTSCOMJSON.unicloud-db.component_type -->
+
 <!-- UTSCOMJSON.unicloud-db.example -->
 
 <!-- UTSCOMJSON.unicloud-db.compatibility -->
 
 <!-- UTSCOMJSON.unicloud-db.children -->
-
-<!-- UTSCOMJSON.unicloud-db.component_type -->
 
 <!-- UTSCOMJSON.unicloud-db.reference -->

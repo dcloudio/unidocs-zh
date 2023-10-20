@@ -111,4 +111,4 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 
 <!-- VUEJSON.render_function.compatibility -->
 
-## Bug & Tips@tips
+<!-- ## Bug & Tips@tips -->

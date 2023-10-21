@@ -415,3 +415,11 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 | [transition-timing-function](transition-timing-function.md) |
 | [transition-delay](transition-delay.md) |
 | [transform](transform.md) |
+
+## 样式作用范围
+
+在 `uni-app x` 中，不支持 `css scoped`，样式的作用范围遵循以下规则：
+
+* `App.uvue` 中的样式作用于全局。
+* 页面的样式作用于当前页面及其子组件。
+* 组件的样式仅作用于当前组件。

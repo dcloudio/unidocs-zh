@@ -240,6 +240,8 @@ content-length: 13
 
 ### 返回集成响应@Integrationresponse
 
+> 支付宝小程序云暂不支持
+
 云函数可以返回如下这样特殊结构的**集成响应**，来自由地控制响应体：
 
 ```json

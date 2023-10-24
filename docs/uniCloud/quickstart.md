@@ -8,14 +8,16 @@ Hello uniCloud，是一个示例，演示了 uniCloud 的各种能力。
 Hello uniCloud部署了2套，分别连接uniCloud的阿里云版和腾讯云版。
 
 - h5版地址（发布在uniCloud的前端网页托管上）
-	* Hello uniCloud 腾讯云版地址：[https://hellounicloud.dcloud.net.cn/tcb/](https://hellounicloud.dcloud.net.cn/tcb/)
+	* Hello uniCloud 支付宝小程序云版地址：暂未提供
 	* Hello uniCloud 阿里云版地址：[https://hellounicloud.dcloud.net.cn/#/](https://hellounicloud.dcloud.net.cn/#/)
+	* Hello uniCloud 腾讯云版地址：[https://hellounicloud.dcloud.net.cn/tcb/](https://hellounicloud.dcloud.net.cn/tcb/)
 	
 	由于该示例未适配pc宽屏，如使用pc浏览器打开地址，建议F12打开控制台，使用手机模式预览。
 	
 - apk地址（发布在uniCloud的云存储上）
-	* Hello uniCloud 腾讯云版地址：[apk下载](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1a10688c-0b30-4aaa-bbc1-7f4948cc562a/bdf452e4-3a0d-49cb-9a97-8e1aa6572758.apk)
+	* Hello uniCloud 支付宝小程序云版地址：暂未提供
 	* Hello uniCloud 阿里云版地址：[apk下载](https://m3w.cn/__uni__5c6d4e4)
+	* Hello uniCloud 腾讯云版地址：[apk下载](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1a10688c-0b30-4aaa-bbc1-7f4948cc562a/bdf452e4-3a0d-49cb-9a97-8e1aa6572758.apk)
 
 ### 运行 Hello uniCloud 源码
 
@@ -25,7 +27,7 @@ Hello uniCloud 的源码地址：[https://ext.dcloud.net.cn/plugin?id=4082](http
 	- 初次体验推荐阿里云，因为腾讯云的开户流程更复杂。
 	- 推荐使用vue3版本，因为编译速度更快。但注意不支持低版本Android。
 	<div align=center>
-	  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create-unicloud.jpg"/>
+	  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202310242120336.png"/>
 	</div>
 2. HBuilderX 会在项目创建后弹出 uniCloud初始化向导，根据向导部署
 	- 按照法律要求，开通云服务器需实名认证，如未认证请根据提示完成
@@ -36,6 +38,7 @@ Hello uniCloud 的源码地址：[https://ext.dcloud.net.cn/plugin?id=4082](http
 	
 	- 第一次创建腾讯云服务空间时会为用户创建腾讯云账号并跳转到腾讯云实名界面，等待实名认证审核之后可以开通服务空间。若腾讯云实名认证提示身份证下已创建过多账户，则需要在腾讯云官网注销不用的账户。
 	- 阿里云每个账号可以有一个开发者版免费空间，此空间资源较少仅能用于测试开发。腾讯云无免费空间。
+    - 首次创建支付宝小程序云时，需前往uniCloud控制台开通支付宝小程序云服务空间，开通服务空间时需使用支付宝扫码授权开通支付宝小程序云服务。
 	
 3. 运行 hello uniCloud项目
 	- 在运行菜单运行项目，浏览器、app、小程序均可。uniCloud项目是云端一体的，运行前端后控制台会同时出现前端和云端的控制台。
@@ -44,7 +47,7 @@ Hello uniCloud 的源码地址：[https://ext.dcloud.net.cn/plugin?id=4082](http
 
 1. 创建uniCloud项目
   
-  HBuilderX中新建项目，选择uni-app项目，并勾选`启用uniCloud`，在右侧选择服务供应商（腾讯云或阿里云）
+  HBuilderX中新建项目，选择uni-app项目，并勾选`启用uniCloud`，在右侧选择服务供应商（支付宝小程序云、阿里云、腾讯云）
   
   项目名称随意，比如 firstunicloud
 

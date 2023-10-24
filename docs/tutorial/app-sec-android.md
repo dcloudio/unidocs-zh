@@ -116,9 +116,6 @@ When using WeChat sharing, login, and payment modules, components such as WXEntr
 UniPush模块用到个推SDK，内部功能涉及到CustomGTService、PushReceiver、GActivity、NotificationServic等组件都要求对外导出
 The UniPush module uses a push SDK, and the internal functions involve components such as CustomGTService, PushReceiver, GActivity, and NotificationServic, which all require external export.
 
-> 提示：如果您的项目因为三方SDK组件存在导出风险而无法通过安全检测则只能不使用相关的模块
-> Tip: If your project fails the security check due to the export risk of the third-party SDK components, you can only use the related modules
-
 
 #### 应用签名未校验风险  
 #### Application signature unverified risk

@@ -232,6 +232,10 @@ Uni`组件名(驼峰)`Element
 </script>
 ```
 
+**bug&tips**
+
+- 目前uts组件，即封装原生ui给uni-app或uni-app x的页面中使用，类型与内置组件的 Uni`组件名(驼峰)`Element 方式相同。目前没有代码提示，未来不排除更换方案的可能。
+
 ### easycom组件调用方法或设置属性@method_easycom
 
 > 3.93+ 支持(暂不支持 uni_modules 目录下的组件)
@@ -310,6 +314,10 @@ component1组件符合[easycom规范](https://uniapp.dcloud.net.cn/component/#ea
   }
 </script>
 ```
+
+**bug&tips**
+
+- 目前uni_modules下的easycom组件还不支持。此时只能使用下一种方式callMethod。
 
 ### 其它自定义组件的方法调用使用callMethod@$callMethod
 

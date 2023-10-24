@@ -67,7 +67,7 @@
   * 界面
     * [交互反馈](api/prompt.md)
     * [动态加载字体](api/load-font-face.md)
-    * [截屏](api/captureScreen.md)
+    * [截屏](api/capturescreen.md)
   * 网络
     * [发起请求request](api/request.md)
     * [上传文件](api/upload-file.md)

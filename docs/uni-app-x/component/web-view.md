@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.web-view.event -->
 
+<!-- UTSCOMJSON.web-view.component_type -->
+
 <!-- UTSCOMJSON.web-view.example -->
 
 <!-- UTSCOMJSON.web-view.compatibility -->
@@ -28,7 +30,7 @@ web-view的操作api为[uni.createWebviewContext()](../api/create-webview-contex
 - web-view里的网页向uts发消息
 
 	在网页中引入[uni.webview.1.5.5.js](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/hybrid/html/uni.webview.1.5.5.js)。即可在网页中调用一批uni的api，包括：
-	
+
 |方法名|说明|平台差异说明|
 |:-|:-|:-|
 |uni.webView.navigateTo|[navigateTo](../api/navigator.md#uni.navigateto)||

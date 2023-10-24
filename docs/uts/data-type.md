@@ -12,7 +12,7 @@
 
 UTS 的类型有：
 - 基础类型：boolean、number、string、any、null，都是小写。前3个typeof返回类型名称，null的typeof是object，any的typeof是运行时值的类型。
-- 对象类型：Date、Array、Map、Set、UTSJSONObject，首字母大写。typeof返回"object"，判断准确类型需使用 instanceof 
+- 对象类型：Date、Array、Map、Set、UTSJSONObject，首字母大写。typeof返回"object"，判断准确类型需使用 instanceof
 - 使用 type 来自定义类型
 - 特殊类型：function、class、error。
 - 平台专有类型：Int、Float、Double、NSString、kotlin.Array...
@@ -201,7 +201,7 @@ let a:Int = 1  // 类型为Int
 
 ```ts
 function test(score: Int): boolean {
-	return (score>=60) 
+	return (score>=60)
 }
 test(60) // 这个60可以正常传入，无论HBuilderX 3.9之前还是之后
 ```
@@ -211,7 +211,7 @@ test(60) // 这个60可以正常传入，无论HBuilderX 3.9之前还是之后
 在HBuilderX 3.9以前，字面量除法也由kotlin和swift自动推导，kotlin下存在一个问题，看如下代码：
 ```ts
 function test(score: number): boolean {
-	return (score>=60) 
+	return (score>=60)
 }
 test(1/10) // 报错，类型不匹配。需要number而传入Int
 ```
@@ -232,7 +232,7 @@ test(1/10) // 报错，类型不匹配。需要number而传入Int
 下面的代码在HBuilderX 3.9之前是可以正常运行的，但在3.9起会报错，因为1.0/10被转为了number类型，传入需要Double的函数时就会类型不匹配。
 ```ts
 function test(score: Double): boolean {
-	return (score>=60.0) 
+	return (score>=60.0)
 }
 test(1.0/10)
 ```
@@ -240,7 +240,7 @@ test(1.0/10)
 在HBuilderX 3.9后，为了正确传入Double，要注意跳过规则2。避免纯数字字面量除法，所以正确的写法是：
 ```ts
 function test(score: Double): boolean {
-	return (score>=60.0) 
+	return (score>=60.0)
 }
 test((1.0 as Double)/10) //表达式中任意一个数字as一下，都不会走规则2
 ```
@@ -314,7 +314,7 @@ let n = Number(f)
 let i = Number.from(3.14)
 let j = Number.from(f)
 
-let d: Int64 = 12306    
+let d: Int64 = 12306
 let d1 = Number.from(d)
 
 // 特定类型转成其他的特定类型
@@ -392,6 +392,7 @@ let str5 = nstr3 as string  // 类型为string
   * 编译至 Kotlin 平台时，最大长度受系统内存的限制，超出限制会报错：`java.lang.OutOfMemoryError: char[] of length xxx would overflow`。
   * 编译至 Swift 平台时，最大长度也受系统内存的限制，超出限制目前没有返回信息。
 
+<!-- SPECIALSTRINGJSON.specialString -->
 
 ## any类型 @any
 
@@ -545,8 +546,8 @@ const l = b!.length
 		},
 		onLoad() {
 			this.person = JSON.parse(`{
-				id: 1, 
-				name: "zhangsan", 
+				id: 1,
+				name: "zhangsan",
 				age: 18,
 				address: {city: "beijing",street: "dazhongsi road"}
 			}`) as PersonType
@@ -564,7 +565,7 @@ const l = b!.length
 
 ```ts
 const myDate = new Date() // 通过new Date赋值时，可以省略:Date
-const myDate1:Date = new Date() 
+const myDate1:Date = new Date()
 console.log(myDate instanceof Date) // Date用typeof会返回object，需使用instanceof判断
 const year:number = myDate.getFullYear()
 ```
@@ -698,12 +699,12 @@ let kotlinArray = arrayOf("hello","world")
 
 	// kotlin.collections.List 转换 Array
 	let kotlinList = mutableListOf("hello","world")
-	let utsArr1 = Array.fromNative(kotlinList) 
-	
+	let utsArr1 = Array.fromNative(kotlinList)
+
 	// kotlin.Array 转换 Array
 	let kotlinArray = arrayOf("hello","world")
 	let utsArr2 = Array.fromNative(kotlinArray)
-	
+
 	//ByteArray 即 java 中的 byte[]   需要HBuilderX 3.9.0 之后版本
 	let b1 = byteArrayOf(-1,2,0,3,4,5)
 	let c1 = Array.fromNative(b1)
@@ -711,12 +712,12 @@ let kotlinArray = arrayOf("hello","world")
 	//LongArray 即 java 中的 long[]  需要HBuilderX 3.9.0 之后版本
 	let b2 = longArrayOf(-1,2,0,3,4,5)
 	let c2 = Array.fromNative(b2)
-	
+
 	//ShortArray 即 java 中的 short[] 需要HBuilderX 3.9.0 之后版本
 	let b3 = shortArrayOf(-1,2,0,3,4,5)
 	let c3 = Array.fromNative(b3)
-	
-	//IntArray 即 java 中的 int[]  
+
+	//IntArray 即 java 中的 int[]
 	let b4 = intArrayOf(-1,2,0,3,4,5)
 	let c4 = Array.fromNative(b4)
 
@@ -738,7 +739,7 @@ let resolveInfo = packageManager.queryIntentActivities(intent,0);
 可以将其先转换为UTS的Array对象再进行其他处理和操作
 
 ```ts
-let launcherList = Array.fromNative(resolveInfo) 
+let launcherList = Array.fromNative(resolveInfo)
 console.log(clothing.length);
 ```
 
@@ -773,14 +774,14 @@ let kotlinArray = utsArr.toTypedArray()
 
 	```ts
 		// 方式一： 创建一个空数组，注意数组创建后就不可改变，不能再添加或者删除元素，应避免使用该方式。
-		let a: NSArray = NSArray()  
-		
+		let a: NSArray = NSArray()
+
 		// 方式二： 用一个数组创建一个 NSArray, 推荐使用。同样，创建完成后数组不可变。
 		let b: NSArray = NSArray(array=[1, 2, 3, 4]) // 等价于 any[]，注意：不是等价于 number[]
-		
+
 		// 方式三: 用一个元素定义 NSArray, 不推荐使用
 		let c: NSArray = NSArray(object=1)
-		
+
 		// 方式四：用不定长元素定义 NSArray, 可以使用
 		let d: NSArray = NSArray(objects=1, "2", false, "ok")
 
@@ -789,10 +790,10 @@ let kotlinArray = utsArr.toTypedArray()
 2. 创建 NSMutableArray
 
    - NSMutableArray 是 OC 中的可变数组，其是 NSArray 的子类，可变数组创建后可以增加或者删除元素。NSArray 的所有创建方式也都适用于 NSMutableArray
-      
+
    		```ts
    		// 方式一： 创建一个空数组，其类型等价于 any[]
-   		let a: NSMutableArray = NSMutableArray()  
+   		let a: NSMutableArray = NSMutableArray()
    		a.add(1) 	//添加一个元素
    		a.add("22") //添加一个元素
    		a.add(false) //添加一个元素
@@ -811,7 +812,7 @@ let kotlinArray = utsArr.toTypedArray()
    		let d: NSMutableArray = NSMutableArray(objects=1, "2", false, "ok")
 
    		```
-	
+
 
 - 专有数组类型 转 Array
 
@@ -845,7 +846,7 @@ let a3: NSMutableArray = NSMutableArray(array= a)
 
 ```
 
-**注意：** 
+**注意：**
   + 无论是 NSArray 还是 NSMutableArray 对象创建后都等价于 any[] 类型的数组，此时 Swift 不再有类型推导，可以往可变数组中添加任意类型的非空元素。
   + NSArray 和 NSMutableArray 类型的数组不接受空值 null, 任何情况下不要往这两种类型中注入 null。 否则，在运行时可能会引起应用闪退。
   + Array 类型不能通过 as 方式转换成 NSMutableArray 类型。 但是可以通过 as 方式 转换成 NSArray 类型。
@@ -866,12 +867,12 @@ Map 是一种 key value 形式的数据类型。
 
 ```ts
 //定义一个map1，key为string类型，value也是string类型
-const map1: Map<string,string> = new Map(); 
+const map1: Map<string,string> = new Map();
 map1.set('key1', "abc");
 console.log(map1.get('key1')) //返回 abc
 
 //定义一个map1，key为number类型，value是Map类型
-const map2: Map<number,Map<string,string>> = new Map(); 
+const map2: Map<number,Map<string,string>> = new Map();
 map2.set(1, map1); //把map1作为value传进来
 console.log(map2.get(1)); //返回map1
 console.log(map2.get(1)?.get("key1")); //返回 abc。因为名为1的key不一定存在，map2.get(1)可能为null，此时需使用 ?. 才能链式调用
@@ -1074,18 +1075,18 @@ let rect = {
 
 1. `.` 操作符
 	即 `rect.x`、`rect.size.width`。
-	
+
 	这种写法比较简单，和js习惯一致，但在 UTS 中限制较多。它的使用有如下前提：
 	- 仅限于web和Android，在iOS上swift不支持`.`操作符。
 	- 在Android上也只支持字面量定义json（因为类型可推导）。如果是`JSON.parse()`转换的，则不能使用。
-	
+
 2. `[""]` 下标
 	即 `rect["x"]`。
-	
+
 	这是一种通用的方式，不管通过字面量定义的 UTSJSONObject，还是通过 `JSON.parse()`，不管是 web、Android、iOS 哪个平台，都可以使用下标方式访问 UTSJSONObject 属性。
 
 	但下标返回的数据，类型是any，想继续使用需要`as`为具体类型。
-	
+
 	尤其是有子对象时，需要 `as` 后才能继续访问下一层数据。
 
 ```ts
@@ -1175,8 +1176,8 @@ console.log(utsObj.getString("一个不存在属性")) // 打印结果:null
 需要特别注意的是：属性名 和 属性类型，都要正确，否则不会返回对应的属性结果
 ```ts
 console.log(utsObj.getNumber("age")) // 打印结果:12
-console.log(utsObj.getNumber("agee")) // 名字不对，打印结果:null 
-console.log(utsObj.getString("age")) // 类型不对，打印结果:null 
+console.log(utsObj.getNumber("agee")) // 名字不对，打印结果:null
+console.log(utsObj.getString("age")) // 类型不对，打印结果:null
 ```
 
 keypath的一大优势就是可以深入数据层级，如下：
@@ -1322,8 +1323,8 @@ json对象往往有嵌套，即子对象。比如
 
 ```json
 {
-	"id": 1, 
-	"name": "zhangsan", 
+	"id": 1,
+	"name": "zhangsan",
 	"age": 18,
 	"address": {
 		"city": "beijing",
@@ -1376,8 +1377,8 @@ type PersonType = {
 	address: PersonAddressType // 把address定义为PersonAddress类型
 }
 let person = {
-	id: 1, 
-	name: "zhangsan", 
+	id: 1,
+	name: "zhangsan",
 	age: 18,
 	address: {
 		city: "beijing",
@@ -1390,8 +1391,8 @@ console.log(person.address.city) //beijing
 注意，在HBuilderX 3.9以前，有子对象的对象字面量或UTSJSONObject，无法直接被 as 为有嵌套的type，也需要对子对象进行 as 。
 ```ts
 let person = {
-	id: 1, 
-	name: "zhangsan", 
+	id: 1,
+	name: "zhangsan",
 	age: 18,
 	address: {
 		city: "beijing",
@@ -1410,7 +1411,7 @@ type PersonType = {
 	name: string
 }
 let jsonString:string = `{
-	"id": 1, 
+	"id": 1,
 	"name": "zhangsan"
 }` // 注意属性必须使用引号包围，否则parse会解析失败返回null
 
@@ -1445,7 +1446,7 @@ console.log(person.name); // 返回zhangsan
 
 如果json字符串中的键名不符合变量命名规则，比如有个key的名字叫"a+b"，这种json转type会失败。
 
-解决方案是，添加注释`@JSON_FIELD`定义键名转换规则，才能通过JSON.parse解析转type。  
+解决方案是，添加注释`@JSON_FIELD`定义键名转换规则，才能通过JSON.parse解析转type。
 
 ```ts
 type ExampleType = {
@@ -1459,11 +1460,11 @@ type ExampleType = {
 ```
 以上示例定义的 ExampleType 类型，在 `a_b: string` 声明时添加注释 `@JSON_FIELD "a+b"`，表示：
 - JSON.parse 时会将json字符中的键名"a+b"转换为ExampleType类型的"a_b"属性；
-- JSON.stringify 时会将ExampleType类型的"a_b"属性转换为json字符串中的"a+b"键名。  
+- JSON.stringify 时会将ExampleType类型的"a_b"属性转换为json字符串中的"a+b"键名。
 
-推荐的转换规则如下：  
-- 将不合法的字符（如空格、运算符等）转换为下划线“_”，如“a+b”转换为“a_b”  
-- 将保留[关键词](keywords.md)（如class、enum等）转换时，在前面添加下划线，如“class”转换为“_class”  
+推荐的转换规则如下：
+- 将不合法的字符（如空格、运算符等）转换为下划线“_”，如“a+b”转换为“a_b”
+- 将保留[关键词](keywords.md)（如class、enum等）转换时，在前面添加下划线，如“class”转换为“_class”
 - 如果转换后的名称已存在，在后面添加下划线`_`避免冲突，如同时存在“a+b”和“a-b”，分别转换为`a_b`和`a_b_`
 
 
@@ -1484,7 +1485,7 @@ type SpecialType = {
   _class: string
 }
 
-//json字符串转换type对象  
+//json字符串转换type对象
 let t:SpecialType = JSON.parse<SpecialType>('{"a+b":"addition value","a-b":"subtraction value","class":"classification value"}');
 console.log(t.a_b)		//输出: addition value
 console.log(t.a_b_)		//输出: subtraction value
@@ -1499,7 +1500,7 @@ let t:SpecialType = {
 console.log(JSON.stringify(t))	//输出: {"a+b":"value 1","a-b":"value 2","class":"value 3"}
 ```
 
->以上`@JSON_FIELD`注释规则需要HBuilderX3.9.0+版本支持  
+>以上`@JSON_FIELD`注释规则需要HBuilderX3.9.0+版本支持
 
 #### json转type工具
 

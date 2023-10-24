@@ -6,15 +6,17 @@
 
 <!-- UTSCOMJSON.video.event -->
 
+<!-- UTSCOMJSON.video.component_type -->
+
 <!-- UTSCOMJSON.video.example -->
 
 <!-- UTSCOMJSON.video.compatibility -->
 
-#### App平台  
+#### App平台
 
 App-Android平台video组件使用ijkplayer库实现：[https://github.com/bilibili/ijkplayer](https://github.com/bilibili/ijkplayer)；
 
-弹幕功能使用DanmakuFlameMaster库实现：[https://github.com/bilibili/DanmakuFlameMaster](https://github.com/bilibili/DanmakuFlameMaster)    
+弹幕功能使用DanmakuFlameMaster库实现：[https://github.com/bilibili/DanmakuFlameMaster](https://github.com/bilibili/DanmakuFlameMaster)
 
 ijkplayer库的功能较多，video组件并非完全封装。有需要的开发者可以使用uts直接操作该库。
 

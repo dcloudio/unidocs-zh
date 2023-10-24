@@ -925,6 +925,8 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **西贝骑手：** 西贝莜面村外卖骑手App
 **Xibei Rider:** Xibei Youmian Village Takeaway Rider App
 
+**库迪咖啡：** 微信小程序搜索 “库迪咖啡”
+
 **书亦烧仙草：** 微信小程序搜同名
 **Book also burns fairy grass:** Wechat MiniApp search for the same name
 

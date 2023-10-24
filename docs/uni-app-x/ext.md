@@ -1,9 +1,6 @@
 # ext api
 
-基于uts实现的、以插件方式存在的、uni-app和uni-app x均兼容支持的api，还有一批：
-- [wifi](https://uniapp.dcloud.net.cn/api/system/wifi.html)
-- 监听内存告警：[uni.onMemoryWarning、uni.offMemoryWarning](https://uniapp.dcloud.net.cn/api/system/memory.html#offmemorywarning)
-- 监听截屏和设置是否允许截屏[uni.onUserCaptureScreen、uni.offUserCaptureScreen、uni.setUserCaptureScreen](https://uniapp.dcloud.net.cn/api/system/capture-screen.html#setusercapturescreen)
+基于uts实现的、以插件方式存在的、uni-app和uni-app x均兼容支持的api：
 - [uni实人认证](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)
 
 插件市场还有一批可替代uni内置api的插件，比如在插件市场搜索：

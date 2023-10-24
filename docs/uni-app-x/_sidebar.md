@@ -67,6 +67,7 @@
   * 界面
     * [交互反馈](api/prompt.md)
     * [动态加载字体](api/load-font-face.md)
+    * [截屏](api/captureScreen.md)
   * 网络
     * [发起请求request](api/request.md)
     * [上传文件](api/upload-file.md)
@@ -81,6 +82,8 @@
     * [获取app授权设置](api/get-app-authorize-setting.md)
     * [获取系统设置](api/get-system-setting.md)
     * [获取电量信息](api/get-battery-info.md)
+    * [wifi](api/wifi.md)
+    * [内存](api/memory.md)
   * 媒体
     * [拍照和相册选择](api/choose-image.md)
     * [图片预览](api/preview-image.md)

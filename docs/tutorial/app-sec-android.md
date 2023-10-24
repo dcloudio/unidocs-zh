@@ -78,8 +78,6 @@ HBuilderX3.1.14+版本已经将DCloud管理的代码中所有不需要被外部�
 - 个推SDK  
 UniPush模块用到个推SDK，内部功能涉及到CustomGTService、PushReceiver、GActivity、NotificationServic等组件都要求对外导出
 
-> 提示：如果您的项目因为三方SDK组件存在导出风险而无法通过安全检测则只能不使用相关的模块
-
 
 #### 应用签名未校验风险  
 **风险描述**  

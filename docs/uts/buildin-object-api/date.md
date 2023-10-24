@@ -212,6 +212,8 @@ setTimeout(() => {
 
 ### setFullYear(year)
 
+各个平台在处理时间戳为负数时会有细节差异，尽量避免 参数小于1970的情况
+
 <!-- UTSJSON.Date.setFullYear.description -->
 
 <!-- UTSJSON.Date.setFullYear.param -->
@@ -219,3 +221,4 @@ setTimeout(() => {
 <!-- UTSJSON.Date.setFullYear.returnValue -->
 
 <!-- UTSJSON.Date.setFullYear.compatibility -->
+

@@ -234,7 +234,7 @@ Uni`组件名(驼峰)`Element
 
 ### easycom组件调用方法或设置属性@method_easycom
 
-> 3.93+ 支持
+> 3.93+ 支持(暂不支持 uni_modules 目录下的组件)
 
 easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取组件并转换为组件的类型，通过 `.`操作符 调用组件方法或设置属性。
 

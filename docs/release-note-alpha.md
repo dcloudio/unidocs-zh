@@ -1,3 +1,16 @@
+#### 3.94.2023102311-alpha
+* 【uni-app x插件】
+* 修复 多根节点时，uni.getElementById 获取失败的Bug
+* 修复 web-view 组件点击网页中的输入框无法弹出软键盘的Bug
+* 修复 scroll-view 组件的子组件滑动松手后惯性滚动时没有触发 nestedprescroll 事件的Bug
+* 【uts插件】
+* App-Android平台 更新 编译使用的 Android SDK 为 33
+* App-Android平台 修复 number 的 toFixed 方法返回结果可能异常的Bug
+* App-Android平台 修复 number 数据类型的位运算操作可能引起崩溃的Bug
+* 【App插件(含5+App和uni-app的App端)】
+* Android平台 修复 targetSdkVersion 设置为 33 在 Android13 设备保存图片到相册失败的Bug
+* iOS平台 更新 uni-AD模块 百度百青藤广告SDK 为 5.324 版，解决信息流广告偶现无法关闭的Bug
+
 #### 3.93.2023101913-alpha
 * 【uni-app】
   + 微信小程序平台 修复 subscribe 组件属性无效的Bug [详情](https://ask.dcloud.net.cn/question/178893)

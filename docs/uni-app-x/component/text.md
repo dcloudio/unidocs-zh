@@ -4,7 +4,9 @@
 
 在app-uvue和app-nvue中，文本只能写在text中，而不能写在view的text区域。文本样式的控制也应该在text组件上写style，而不是在view的样式里写。
 
-虽然app-uvue中写在view的text区域的文字，也会被编译器自动包裹一层text组件，看起来也可以使用。但这样会造成无法修改该text文字的样式，详见uvue的[样式不继承](uni-app-x/css/README.md#stylenoextends)章节
+虽然app-uvue中写在view的text区域的文字，也会被编译器自动包裹一层text组件，看起来也可以使用。但这样会造成无法修改该text文字的样式，详见uvue的[样式不继承](uni-app-x/css/README.md#stylenoextends)章节。
+
+**注意：** 暂不支持[实体字符和实体编码](https://developer.mozilla.org/zh-CN/docs/Glossary/Entity)。
 
 <!-- UTSCOMJSON.text.attrubute -->
 

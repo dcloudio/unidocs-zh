@@ -85,7 +85,6 @@ str = "hello world"; // 报错，不允许重新赋值
 	* 编译至 Kotlin 平台时，等同于 Kotlin 平台的 var（允许重新赋值）
 - swift 中 let 是定义常量，而 uts 和 ts 中，let 是定义变量。注意勿混淆。
 - 类型定义的冒号，左右可以有一个空格，也可以没有空格。`let str:string` 和 `let str : string` 和 `let str :string` 和 `let str: string` 都是合法的。
-- 联合类型仅支持 [|null](data-type.md#null) （即可为空） 和 [字面量联合类型](data-type.md#literal-union-type)。不支持其他方式的联合类型。
 
 ### 变量命名规则
 

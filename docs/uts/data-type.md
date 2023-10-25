@@ -1637,4 +1637,8 @@ HBuilder支持给变量定义特殊值域string类型，这些类型在HBuilder�
 
 ## 联合类型
 
-目前uts支持的
+目前uts支持的联合类型有限：
+- 支持 [|null](#null) （即可为空）
+- [字面量联合类型](#literal-union-type)
+
+不支持其他方式的联合类型。

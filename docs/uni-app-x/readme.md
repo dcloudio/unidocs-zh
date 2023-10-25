@@ -153,7 +153,7 @@ uni-app x 一期，只包括常用的组件和API。
 - picker：可改用picker-view
 - canvas：目前没有完整的canvas组件，但
 	* 每个view，都提供了[draw API](dom/drawablecontext.md)，可以高性能的画各种形状、写字。
-	* 关于截图，无需像webview那样通过canvas中转，view会直接提供截图方案。
+	* 关于截图，无需像webview那样通过canvas中转，view直接提供截图方案，[takesnapshot](dom/element.md#takesnapshot)。
 	* 使用web-view中的canvas也是一种方案，uvue页面里的web-view组件可以和uvue页面里的uts代码双向通信。比如生成二维码，可以由web-view组件来渲染，复用web生态的库
 	* 当然后期uvue中也会补充正式的canvas组件
 - waterfall/grid-view：会补充

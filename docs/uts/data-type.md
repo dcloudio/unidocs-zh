@@ -392,8 +392,6 @@ let str5 = nstr3 as string  // 类型为string
   * 编译至 Kotlin 平台时，最大长度受系统内存的限制，超出限制会报错：`java.lang.OutOfMemoryError: char[] of length xxx would overflow`。
   * 编译至 Swift 平台时，最大长度也受系统内存的限制，超出限制目前没有返回信息。
 
-<!-- SPECIALSTRINGJSON.specialString.name -->
-
 <!-- SPECIALSTRINGJSON.specialString.table -->
 
 ## any类型 @any

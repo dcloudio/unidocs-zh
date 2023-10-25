@@ -242,3 +242,5 @@ getAttribute返回值从HBuilderX 3.93起，调整为string类型，不要使用
 <!-- CUSTOMTYPEJSON.Element.methods.takeSnapshot.compatibility -->
 
 <!-- CUSTOMTYPEJSON.Element.methods.takeSnapshot.tutorial -->
+
+截图的示例代码参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/element-takesnapshot/element-takesnapshot.uvue)

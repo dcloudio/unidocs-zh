@@ -4,6 +4,7 @@
   * [与js开发的差别](tutorial/codegap.md)
   * [request联网教程](tutorial/request.md)
   * [全局变量与状态管理](tutorial/store.md)
+  * [几种组件标记的概念澄清](tutorial/idref.md)
 * 编译器
   * [概述](compiler/README.md)
   * [条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html)

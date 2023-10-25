@@ -6,8 +6,6 @@
 
 虽然app-uvue中写在view的text区域的文字，也会被编译器自动包裹一层text组件，看起来也可以使用。但这样会造成无法修改该text文字的样式，详见uvue的[样式不继承](uni-app-x/css/README.md#stylenoextends)章节。
 
-**注意：** 暂不支持[字符实体](https://developer.mozilla.org/zh-CN/docs/Glossary/Entity)。
-
 <!-- UTSCOMJSON.text.attrubute -->
 
 <!-- UTSCOMJSON.text.event -->
@@ -29,4 +27,5 @@ app-nvue中，text组件不能嵌套。
 <!-- UTSCOMJSON.text.reference -->
 
 ## Bug & Tips@tips
-- **tip**: app-uvue的selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。
+- app-uvue不支持[HTML字符实体](https://developer.mozilla.org/zh-CN/docs/Glossary/Entity)。
+- app-uvue的selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。

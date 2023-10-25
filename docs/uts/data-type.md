@@ -394,8 +394,6 @@ let str5 = nstr3 as string  // 类型为string
   * 编译至 Kotlin 平台时，最大长度受系统内存的限制，超出限制会报错：`java.lang.OutOfMemoryError: char[] of length xxx would overflow`。
   * 编译至 Swift 平台时，最大长度也受系统内存的限制，超出限制目前没有返回信息。
 
-<!-- SPECIALSTRINGJSON.specialString.table -->
-
 ## any类型 @any
 
 有时会遇到在编程阶段还不清楚类型的变量。这些值可能来自于动态的内容，比如来自用户输入或第三方代码库。
@@ -1635,7 +1633,7 @@ HBuilder支持给变量定义特殊值域string类型，这些类型在HBuilder�
 
 另外目前特殊值域string仅支持在d.ts里书写，暂不支持在运行代码中使用。
 
-<!-- SPECIALSTRINGJSON.specialString -->
+<!-- SPECIALSTRINGJSON.specialString.table -->
 
 ## 联合类型
 

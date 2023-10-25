@@ -21,6 +21,8 @@ UTS 的类型有：
 
 详细的类型判断详见操作符文档：[typeof](operator.md#typeof)和[instanceof](operator.md#instanceof)
 
+除了上述`运行时类型`，uts还有`开发时类型`的概念，指为了在开发期间ide可以更好的进行代码提示和校验，但在编译后这些类型会被擦除，变成`运行时类型`。[详见](#devtype)
+
 ## 布尔值（boolean）
 
 布尔是简单的基础类型，只有2个值：`true` 和 `false`。
@@ -392,7 +394,7 @@ let str5 = nstr3 as string  // 类型为string
   * 编译至 Kotlin 平台时，最大长度受系统内存的限制，超出限制会报错：`java.lang.OutOfMemoryError: char[] of length xxx would overflow`。
   * 编译至 Swift 平台时，最大长度也受系统内存的限制，超出限制目前没有返回信息。
 
-<!-- SPECIALSTRINGJSON.specialString -->
+<!-- SPECIALSTRINGJSON.specialString.table -->
 
 ## any类型 @any
 
@@ -439,7 +441,7 @@ let b: string | null = "abc" // 可以设置为空
 b = null // ok
 ```
 
-但这不代表 uts 在App端支持广泛的联合类型，实际上仅有可为空才能这么写。即 `let b : string | number` 仅能在编译为js时使用，因为kotlin和swift都不支持联合类型。
+但这不代表 uts 在App端支持广泛的联合类型，实际上可为空才能这么写。而 `let b : string | number` 仅能在编译为js时使用，因为kotlin和swift都不支持联合类型。
 
 现在，如果你调用 a 的方法或者访问它的属性，它保证不会导致 NPE，这样你就可以放心地使用：
 
@@ -1583,3 +1585,58 @@ console.log(obj.age) //25
 js中的 undefined类型表示变量被定义，但是未赋值或初始化。
 
 uts 编译为kotlin和swift时不支持 undefined。即不允许变量未赋值。每个有类型的变量都需要初始化或赋值。
+
+## 开发时类型@devtype
+
+uts有`运行时类型`和`开发时类型`的概念区别。
+
+开发时类型，指为了在开发期间ide可以更好的进行代码提示和校验，但在编译后这些类型会被擦除，变成`运行时类型`。
+
+目前支持的`开发时类型`有：
+
+### 相同运行时类型的字面量联合类型@literal-union-type
+字面量联合类型，指相同类型的数字或字符串字面量，把多个字面量值以或的方式赋值给一个类型。
+
+它常常用于在开发阶段的值域约束。
+
+比如以下例子里，a1的值域只能是302或404或500，而b1的值域只能是"get"或"post"。
+```ts
+// 注意不要写在uvue页面的export default里面
+type a = 302 | 404 | 500
+let a1 : a = 404 // 运行时类型是number
+console.log(a1);
+
+type b = "get" | "post"
+let b1 : b = "get" // 运行时类型是string
+console.log(b1);
+if (b1=="") {} //光标在双引号中间时，代码助手会提示get和post这2个候选
+b1=="get1" // 当为b1赋值不在值域范围的新值时，ide会报红
+```
+
+相同字面量联合类型，在方法的参数值域定义里很常见。
+
+但有几个注意：
+1. 这些字面量必须是一个类型，或者统一是数字，或者统一是字符串。
+2. 字面量联合类型只是`开发时类型`，在运行时，类型会变为number或string。
+
+### 特殊值域string@ide-string
+
+很多数据，虽然类型是字符串，但其实有特殊的值域范围。
+
+上一节提到的字符串字面量联合类型，其实是一种枚举型的值域范围约束。
+
+但很多值域无法通过枚举表达。\n
+比如ColorString，代表一个合法的颜色字符串，"red"、"#000"，这些是它的合法值域。\n
+再比如IDString代表页面上合法的组件的id属性值清单，ImageURIString则代表工程下合法的图片路径清单。
+
+HBuilder支持给变量定义特殊值域string类型，这些类型在HBuilder里都可以得到更好的代码提示和语法校验。
+
+当然这也是开发时类型，在运行时，这些类型会统一抹平为string类型。
+
+另外目前特殊值域string仅支持在d.ts里书写，暂不支持在运行代码中使用。
+
+<!-- SPECIALSTRINGJSON.specialString -->
+
+## 联合类型
+
+目前uts支持的

@@ -363,6 +363,21 @@ console.log(chars[8]);
 
 <!-- UTSJSON.String.substring.compatibility -->
 
+
+**bug&tips**
+
+当前版本android平台 start 与 end 参数声明为Int, 需要将number 参数转换为int
+
+```uts
+let a = 1
+let b = 2
+// 临时解决办法
+"hello uts".substring(a.toInt(),b.toInt())
+```
+
+这个问题后续会修复
+
+
 ### toLowerCase()
 
 <!-- UTSJSON.String.toLowerCase.description -->

@@ -1,3 +1,15 @@
+## uni.startPullDownRefresh(options?) @startpulldownrefresh
+
+<!-- UTSAPIJSON.startPullDownRefresh.description -->
+
+<!-- UTSAPIJSON.startPullDownRefresh.param -->
+
+<!-- UTSAPIJSON.startPullDownRefresh.returnValue -->
+
+<!-- UTSAPIJSON.startPullDownRefresh.compatibility -->
+
+<!-- UTSAPIJSON.startPullDownRefresh.tutorial -->
+
 ## uni.stopPullDownRefresh() @stoppulldownrefresh
 
 <!-- UTSAPIJSON.stopPullDownRefresh.description -->

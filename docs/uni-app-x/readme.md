@@ -335,3 +335,4 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   包括官方的组件和API也会复用，比如电量API [uni.getbatteryinfo](https://ext.dcloud.net.cn/plugin?id=9295)，和[lottie组件](https://ext.dcloud.net.cn/plugin?id=10674)，它们使用uts开发，在 uni-app js引擎版和x版上，调用的都是一套代码。
 所以不必担心官方精力不足，顾此失彼。
 
+欢迎加入 uni-app x 专用QQ群 485089465 进行交流。

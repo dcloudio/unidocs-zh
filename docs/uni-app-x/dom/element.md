@@ -247,11 +247,11 @@ getAttribute返回值从HBuilderX 3.93起，调整为string类型，不要使用
 ```uts
 // 找到需要截图节点
 const view = uni.getElementById('snapshot-content')!
+// 进行截图
 view.takeSnapshot({
     success: function (res) {
         // 打印截图文件临时路径
         console.log(res.tempFilePath)
-        this.snapImage = res.tempFilePath
         uni.showToast({
             title: '截图成功，路径：' + res.tempFilePath,
             icon: "none"

@@ -167,9 +167,7 @@
 |vm.$root	| 当前组件树的根 Vue 实例 [详情](https://v2.cn.vuejs.org/v2/api/#vm-root) 	|√	| √	| √		|		|
 |vm.$root | The root Vue instance of the current component tree [Details](https://v2.cn.vuejs.org/v2/api/#vm-root) |√ | √ | √ | |
 |vm.$children	| 当前实例的直接子组件 [详情](https://v2.cn.vuejs.org/v2/api/#vm-children) 	|√	| √	| √		|H5端 `view`、`text` 等内置标签是以 Vue 组件方式实现，`$children` 会获取到这些内置组件，导致的问题是 `this.$children` 与其他平台不一致，解决方式是使用 `this.$children.$children` 获取或自定义组件根节点由 `view` 改为 `div`|
-|vm.$children | The direct child component of the current instance [details](https://v2.cn.vuejs.org/v2/api/#vm-children) |√ | √ | √ |H5 side `view`, Built-in tags such as `text` are implemented as Vue components, and `$children` will get these built-in components. The problem is that `this.$children` is inconsistent with other platforms. The solution is to use `this.$children.$ children` Get or customize the component root node from `view` to `div`|
-|vm.$slots	| 用来访问被插槽分发的内容 [详情](https://v2.cn.vuejs.org/v2/api/#vm-slots) 	|√	| x	| √		| |
-|vm.$slots | Used to access content distributed by slots [Details](https://v2.cn.vuejs.org/v2/api/#vm-slots) |√ | x | √ | |
+|vm.$slots	| 用来访问被插槽分发的内容 [详情](https://v2.cn.vuejs.org/v2/api/#vm-slots) 	|√	| √	| √		| |
 |vm.$scopedSlots	| 用来访问作用域插槽 [详情](https://v2.cn.vuejs.org/v2/api/#vm-scopedSlots) 	|√	| √	| √		| |
 |vm.$scopedSlots | Used to access scoped Slots [details](https://v2.cn.vuejs.org/v2/api/#vm-scopedSlots) |√ | √ | √ | |
 |vm.$refs	| 一个对象，持有注册过 ref attribute 的所有 DOM 元素和组件实例[详情](https://v2.cn.vuejs.org/v2/api/#vm-refs) 	|√	| √	| √		|非H5端只能用于获取自定义组件，不能用于获取内置组件实例（如：view、text）		|

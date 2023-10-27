@@ -202,9 +202,9 @@ uni.switchTab({
 |delta|Number|否|1|返回的页面数，如果 delta 大于现有页面数，则返回到首页。||
 |animationType|String|否|pop-out|窗口关闭的动画效果，详见：[窗口动画](api/router?id=animation)|App（uni-app x 不支持）|
 |animationDuration|Number|否|300|窗口关闭动画的持续时间，单位为 ms|App（uni-app x 不支持）|
-|success|Function|否|接口调用成功的回调函数|
-|fail|Function|否|接口调用失败的回调函数|
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+|success|Function|否||接口调用成功的回调函数||
+|fail|Function|否||接口调用失败的回调函数||
+|complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）||
 
 **示例**
 

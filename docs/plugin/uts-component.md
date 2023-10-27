@@ -238,7 +238,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 			let button = new Button($androidContext)
 			button.setText("点击触发");
 			button.setTag("centerButton");
-			contentLayout.addView(button, LinearLayout.LayoutParams(500, 500));
+			contentLayout.addView(button, new LinearLayout.LayoutParams(500, 500));
 			button.setOnClickListener(new ButtonClickListsner())
 			return contentLayout
 		},
@@ -273,7 +273,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		 * 组件销毁  
 		 * [可选实现]
 		 */
-		unmounted() {}
+		unmounted() {},
 		/**
 		 * 自定组件布局尺寸 
 		 * [可选实现]

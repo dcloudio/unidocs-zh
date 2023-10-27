@@ -57,7 +57,7 @@ uni安全加固分为测试版和正式版两种类型：
 
 4. 当您提交成功后，您可以查看应用加固记录来跟踪加固的进展和结果。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822004_02.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822004_03.png)
 
 
 ## 常见问题@question
@@ -76,6 +76,18 @@ uni安全加固分为测试版和正式版两种类型：
 - **应用加固完成后安装应用失败**
 
 应用加固不可避免的会破坏原有签名，加固后必须对加固包重签名。
+
+如何重签名？
+
+支持在重签名页面提交签名和手动执行签名命令两种方式：
+
+1. 在重签名页面提交签名
+
+在`加固记录`栏目，点击"重新签名"按钮后，将打开一个新页面，用于提交签名
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20231027003_01.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20231027003_03.png)
+2. 手动执行签名命令
+
 重签名文档参考：[https://ask.dcloud.net.cn/article/40789](https://ask.dcloud.net.cn/article/40789)
 
 

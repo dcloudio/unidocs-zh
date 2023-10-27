@@ -37,4 +37,4 @@
 ## Bug & Tips@tips
 
 - HTML String支持常用但不是全部web样式。
-- HTML String类型的`<img/>`不支持自定义宽高，默认以rich-text组件宽度为基准等比缩放；节点列表类型的`<img>/`支持自定义宽高。
+- HTML String类型的`<img/>`不支持自定义宽高，默认以rich-text组件宽度为基准等比缩放；节点列表类型的`<img/>`支持自定义宽高。

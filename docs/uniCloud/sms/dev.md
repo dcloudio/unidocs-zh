@@ -122,6 +122,8 @@ exports.main = async (event, context) => {
   try {
     const res = await uniCloud.sendSms({
       appid: '__UNI__xxxxxxx',
+      smsKey: '****************', // `HBuilderX 3.91`及之后的版本可不填此参数
+      smsSecret: '****************', // `HBuilderX 3.91`及之后的版本可不填此参数
       phone: '188********',
       templateId: '100**', // 请替换为自己申请的模板id
       data: {
@@ -149,6 +151,8 @@ exports.main = async (event, context) => {
   try {
     const res = await uniCloud.sendSms({
       appid: '__UNI__xxxxxxx',
+      smsKey: '****************', // `HBuilderX 3.91`及之后的版本可不填此参数
+      smsSecret: '****************', // `HBuilderX 3.91`及之后的版本可不填此参数
       phoneList: ['188********', '138********'],
       templateId: '100**', // 请替换为自己申请的模板id
       data: {

@@ -275,7 +275,7 @@ The following is a complete example of component source code index.vue:
 			let button = new Button($androidContext)
 			button.setText("点击触发");
 			button.setTag("centerButton");
-			contentLayout.addView(button, LinearLayout.LayoutParams(500, 500));
+			contentLayout.addView(button, new LinearLayout.LayoutParams(500, 500));
 			button.setOnClickListener(new ButtonClickListsner())
 			return contentLayout
 		},
@@ -310,7 +310,7 @@ The following is a complete example of component source code index.vue:
 		 * 组件销毁  
 		 * [可选实现]
 		 */
-		unmounted() {}
+		unmounted() {},
 		/**
 		 * 自定组件布局尺寸 
 		 * [可选实现]

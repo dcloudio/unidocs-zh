@@ -1530,12 +1530,12 @@ Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 如果不通过style 指定组件宽高，会导致组件不显示
 
 
-#### 2 UTS-Android 插件涉及的像素单位说明： rpx,px,dpx
+#### 2 UTS-Android 插件涉及的像素单位说明： rpx,逻辑像素px,物理像素px
 
 |单位|说明|使用场景|
 |----|---|---|
-|逻辑像素 px |逻辑像素 对应到 android中的 dp| 组件使用者 在页面css中使用 举例：`width:480px` |
-|物理像素 px |真实的设备像素，与dp 直接的换算关系是 dp * 屏幕密度 = 物理像素 px| android 原生api 传入和返回的单位均为物理像素，比如 设置layoutParam 参数，获取View宽高等 |
+|逻辑像素px |逻辑像素 对应到 android中的 dp| 组件使用者 在页面css中使用 举例：`width:480px` |
+|物理像素px |真实的设备像素，与dp 直接的换算关系是 dp * 屏幕密度 = 物理像素 px| android 原生api 传入和返回的单位均为物理像素，比如 设置layoutParam 参数，获取View宽高等 |
 |rpx |屏幕宽度固定750单位前提下的逻辑像素| 组件使用者 在页面css中使用 举例：`width:750rpx`,可以使用UTSAndroid.rpx2px() 函数进行rpx 和 逻辑像素 px的转换|
 
 

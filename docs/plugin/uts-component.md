@@ -132,11 +132,12 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 	import TextUtils from 'android.text.TextUtils'
 	import Button from 'android.widget.Button'
 	import LinearLayout from 'android.widget.LinearLayout'
-	import Color from 'android.graphics.Color'
 	import View from 'android.view.View'
 
 	class ButtonClickListsner extends View.OnClickListener {
-		constructor() {}
+		constructor() {
+			super()
+		}
 		override onClick(v ? : View) {
 			console.log(v)
 		}
@@ -200,7 +201,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 			 */
 			doSth(paramA: string) {
 				// 这是组件的自定义方法
-				console.log("paramA")
+				console.log("paramA",paramA)
 			},
 			/**
 			 * 内部使用的组件方法
@@ -234,8 +235,8 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		 */
 		NVLoad(): LinearLayout {
 			//必须实现  
-			let contentLayout = new LinearLayout($androidContext)
-			let button = new Button($androidContext)
+			let contentLayout = new LinearLayout(this.$androidContext)
+			let button = new Button(this.$androidContext)
 			button.setText("点击触发");
 			button.setTag("centerButton");
 			contentLayout.addView(button, new LinearLayout.LayoutParams(500, 500));
@@ -293,6 +294,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		background-color: blue;
 	}
 </style>
+
 ```
 
 > iOS

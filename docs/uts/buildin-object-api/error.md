@@ -26,5 +26,6 @@ let otherError = new Error("Connecting to database failed.", { cause: err });
 
 ```
 
+## Bug & Tips@tips
 
-
+* 目前 Error 类型编译到 kotlin 为 io.dcloud.uts.UTSError

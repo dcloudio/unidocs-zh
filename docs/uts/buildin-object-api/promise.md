@@ -214,3 +214,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.allSettled.returnValue -->
 
 <!-- UTSJSON.Promise.allSettled.compatibility -->
+
+## Bug & Tips@tips
+
+* 目前 Promise 类型编译到 kotlin 为 io.dcloud.uts.UTSPromise

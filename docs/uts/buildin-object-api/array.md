@@ -666,3 +666,7 @@ const shallowCopy = fruits.slice() // this is how to make a copy
 ```ts
 console.log(arr.0) // a syntax error
 ```
+
+## Bug & Tips@tips
+
+* 目前 Array 类型编译到 kotlin 为 io.dcloud.uts.UTSArray

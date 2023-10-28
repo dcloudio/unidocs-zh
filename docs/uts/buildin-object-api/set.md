@@ -124,3 +124,7 @@ console.log(set1.has(6));
 // expected output: false
 ```
 <!-- UTSJSON.Set.has.compatibility -->
+
+## Bug & Tips@tips
+
+* 目前 Set 类型编译到 kotlin 为 io.dcloud.uts.UTSSet

@@ -98,6 +98,8 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 
 ### parseObject(text: string)
 
+注意： 此函数需要 HBuilderX 3.9x 以上版本
+
 <!-- UTSJSON.JSON.parseObject.description -->
 
 <!-- UTSJSON.JSON.parseObject.param -->
@@ -107,6 +109,8 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 <!-- UTSJSON.JSON.parseObject.compatibility -->
 
 ### parseObject\<T\>(text: string)
+
+注意： 此函数需要 HBuilderX 3.9x 以上版本
 
 <!-- UTSJSON.JSON.parseObject_1.description -->
 
@@ -118,6 +122,8 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 
 ### parseArray(text: string)
 
+注意： 此函数需要 HBuilderX 3.9x 以上版本
+
 <!-- UTSJSON.JSON.parseArray.description -->
 
 <!-- UTSJSON.JSON.parseArray.param -->
@@ -127,6 +133,8 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 <!-- UTSJSON.JSON.parseArray.compatibility -->
 
 ### parseArray\<T\>(text: string)
+
+注意： 此函数需要 HBuilderX 3.9x 以上版本
 
 <!-- UTSJSON.JSON.parseArray_1.description -->
 

@@ -4,13 +4,11 @@
 
 在App中，基于recycle-view的list，才能实现长列表的资源自动回收，以保障列表加载很多项目时，屏幕外的资源被有效回收。list-view就是基于recycle-view的list组件。
 
-每个list由1个父组件list-view及若干子组件list-item构成。
-
-在list-item上使用v-for指令循环list-item，自动会回收屏幕外的列表项资源。
+每个list由1个父组件list-view及若干子组件list-item构成。仅有有限子组件可识别，[见下](#children-tags)
 
 list-view和scroll-view都是滚动组件，list适用于长列表场景，其他场景适用于scroll-view。
 
-注意: list-view仅识别list-item、sticky-header组件其他组件无法识别不能正常显示
+list-view支持通过子组件sticky-header处理吸顶的场景。
 
 <!-- UTSCOMJSON.list-view.attrubute -->
 
@@ -19,6 +17,8 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 <!-- UTSCOMJSON.list-view.example -->
 
 ### 自定义下拉刷新样式
+
+list-view组件有默认的下拉刷新样式，如果想自定义，则需使用自定义下拉刷新。
 
 1. 设置`refresher-default-style`属性为 none 不使用默认样式
 2. 设置 list-item 定义自定义下拉刷新元素并声明为 `slot="refresher"`，需要设置刷新元素宽高信息否则可能无法正常显示！
@@ -51,23 +51,6 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 <!-- UTSCOMJSON.list-view.children -->
 
 <!-- UTSCOMJSON.list-view.reference -->
-
-
-## sticky-header
-
-<!-- UTSCOMJSON.sticky-header.description -->
-
-<!-- UTSCOMJSON.sticky-header.attrubute -->
-
-<!-- UTSCOMJSON.sticky-header.event -->
-
-<!-- UTSCOMJSON.sticky-header.example -->
-
-<!-- UTSCOMJSON.sticky-header.compatibility -->
-
-<!-- UTSCOMJSON.sticky-header.children -->
-
-<!-- UTSCOMJSON.sticky-header.reference -->
 
 ## list-item
 
@@ -116,6 +99,23 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 
 - 联网联表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue)
 - 可左右滑动的多个列表：[https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list)
+
+## sticky-header
+
+<!-- UTSCOMJSON.sticky-header.description -->
+
+<!-- UTSCOMJSON.sticky-header.attrubute -->
+
+<!-- UTSCOMJSON.sticky-header.event -->
+
+<!-- UTSCOMJSON.sticky-header.example -->
+
+<!-- UTSCOMJSON.sticky-header.compatibility -->
+
+<!-- UTSCOMJSON.sticky-header.children -->
+
+<!-- UTSCOMJSON.sticky-header.reference -->
+
 
 ### Bug & Tips@tips
 

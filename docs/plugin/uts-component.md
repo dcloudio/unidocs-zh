@@ -158,7 +158,7 @@ The following is a complete example of component source code index.vue:
 ```ts
 
 <template>
-	<view class="defaultStyles">
+	<view >
 
 	</view>
 </template>
@@ -322,13 +322,9 @@ The following is a complete example of component source code index.vue:
 	}
 </script>
 <style>
-	/* 定义默认样式值, 组件使用者没有配置时使用 */
-	.defaultStyles {
-		width: 750rpx;
-		height: 240rpx;
-		background-color: blue;
-	}
+	
 </style>
+
 
 ```
 

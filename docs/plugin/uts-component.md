@@ -124,7 +124,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 ```ts
 
 <template>
-	<view class="defaultStyles">
+	<view >
 
 	</view>
 </template>
@@ -287,13 +287,9 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 	}
 </script>
 <style>
-	/* 定义默认样式值, 组件使用者没有配置时使用 */
-	.defaultStyles {
-		width: 750rpx;
-		height: 240rpx;
-		background-color: blue;
-	}
+	
 </style>
+
 
 ```
 

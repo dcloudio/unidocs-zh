@@ -143,7 +143,7 @@ uni-app x 一期，只包括常用的组件和API。
 - [x] webview
 - [x] video
 - [x] animation-view // 已有uts插件
-- [x] uniCloud-db // 3.93+
+- [x] unicloud-db // 3.93+
 - [x] sticky-header // 3.93+
 
 不支持的组件及替代方案

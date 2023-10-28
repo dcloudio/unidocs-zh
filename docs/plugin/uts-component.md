@@ -581,7 +581,7 @@ todo  目前还没有创建界面
 
 ```ts
 <template>
-	<view class="defaultStyles">
+	<view>
 
 	</view>
 </template>
@@ -638,12 +638,7 @@ todo  目前还没有创建界面
 	}
 </script>
 <style>
-	/* 定义默认样式值, 组件使用者没有配置时使用 */
-	.defaultStyles {
-		width: 750rpx;
-		height: 240rpx;
-		background-color: blue;
-	}
+	
 </style>
 
 ```
@@ -809,7 +804,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 
 ```ts
 <template>
-    <view class="defaultStyles">
+    <view>
 
     </view>
 </template>
@@ -1037,11 +1032,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
     }
 </script>
 <style>
-    /* 定义默认样式值, 组件使用者没有配置时使用 */
-    .defaultStyles {
-        width: 750rpx;
-        height: 240rpx;
-    }
+    
 </style>
 
 ```
@@ -1050,7 +1041,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 
 ```ts
 <template>
-	<view class="defaultStyles">
+	<view>
 
 	</view>
 </template>
@@ -1279,11 +1270,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 	}
 </script>
 <style>
-	//定义默认样式值, 组件使用者没有配置时使用  
-	.defaultStyles {
-		width: 750rpx;
-		height: 240rpx;
-	}
+	
 </style>
 ```
 
@@ -1443,7 +1430,7 @@ UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 
 ```ts
 <template>
-	<view class="defaultStyles">
+	<view>
 		<solt/>
 	</view>
 </template>
@@ -1463,12 +1450,7 @@ UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 	}
 </script>
 <style>
-	/* 定义默认样式值, 组件使用者没有配置时使用 */
-	.defaultStyles {
-		width: 750rpx;
-		height: 240rpx;
-		background-color: blue;
-	}
+	
 </style>
 
 ```

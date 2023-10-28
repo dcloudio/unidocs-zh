@@ -666,7 +666,7 @@ Open index.vue and type the following component source code:
 
 ```ts
 <template>
-	<view class="defaultStyles">
+	<view>
 
 	</view>
 </template>
@@ -725,12 +725,7 @@ Open index.vue and type the following component source code:
 	}
 </script>
 <style>
-	/* 定义默认样式值, 组件使用者没有配置时使用 */
-	.defaultStyles {
-		width: 750rpx;
-		height: 240rpx;
-		background-color: blue;
-	}
+	
 </style>
 
 ```
@@ -926,7 +921,7 @@ Open index.vue and type the following component source code:
 
 ```ts
 <template>
-    <view class="defaultStyles">
+    <view>
 
     </view>
 </template>
@@ -1165,11 +1160,7 @@ Open index.vue and type the following component source code:
     }
 </script>
 <style>
-    /* 定义默认样式值, 组件使用者没有配置时使用 */
-    .defaultStyles {
-        width: 750rpx;
-        height: 240rpx;
-    }
+    
 </style>
 
 ```
@@ -1178,7 +1169,7 @@ Open index.vue and type the following component source code:
 
 ```ts
 <template>
-	<view class="defaultStyles">
+	<view>
 
 	</view>
 </template>
@@ -1407,11 +1398,7 @@ Open index.vue and type the following component source code:
 	}
 </script>
 <style>
-	//定义默认样式值, 组件使用者没有配置时使用  
-	.defaultStyles {
-		width: 750rpx;
-		height: 240rpx;
-	}
+	
 </style>
 ```
 
@@ -1591,7 +1578,7 @@ As a container component, UTS components follow exactly the same specifications 
 
 ```ts
 <template>
-	<view class="defaultStyles">
+	<view>
 		<solt/>
 	</view>
 </template>
@@ -1612,12 +1599,7 @@ As a container component, UTS components follow exactly the same specifications 
 	}
 </script>
 <style>
-	/* 定义默认样式值, 组件使用者没有配置时使用 */
-	.defaultStyles {
-		width: 750rpx;
-		height: 240rpx;
-		background-color: blue;
-	}
+	
 </style>
 
 ```

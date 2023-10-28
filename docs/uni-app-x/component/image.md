@@ -47,10 +47,10 @@
 
 <!-- UTSCOMJSON.image.compatibility -->
 
-### tips
-在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/image/image-path.uvue)
-
 <!-- UTSCOMJSON.image.children -->
 
 <!-- UTSCOMJSON.image.reference -->
 
+### tips
+- 在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/image/image-path.uvue)
+- 图片文件需在static目录（项目下或uni_modules下都支持static目录）下，或者import导入文件，否则文件不会被copy到最终的包中，导致无法访问。

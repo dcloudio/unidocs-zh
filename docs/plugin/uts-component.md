@@ -585,6 +585,9 @@ In general, the width and height of a component should be determined by the type
 
 但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
 
+
+**注意：只有非容器组件生效，容器组件不应该重写此函数**
+
 [vue3 生命周期暂不支持](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
 [vue3 life cycle is not currently supported](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E9%80%89%E9%A1%B9-%E7%94%9F%E5 %91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
 

@@ -166,11 +166,12 @@ The following is a complete example of component source code index.vue:
 	import TextUtils from 'android.text.TextUtils'
 	import Button from 'android.widget.Button'
 	import LinearLayout from 'android.widget.LinearLayout'
-	import Color from 'android.graphics.Color'
 	import View from 'android.view.View'
 
 	class ButtonClickListsner extends View.OnClickListener {
-		constructor() {}
+		constructor() {
+			super()
+		}
 		override onClick(v ? : View) {
 			console.log(v)
 		}
@@ -235,8 +236,7 @@ The following is a complete example of component source code index.vue:
 			 */
 			doSth(paramA: string) {
 				// 这是组件的自定义方法
-				// This is a custom method for the component
-				console.log("paramA")
+				console.log("paramA",paramA)
 			},
 			/**
 			 * 内部使用的组件方法
@@ -270,9 +270,8 @@ The following is a complete example of component source code index.vue:
 		 */
 		NVLoad(): LinearLayout {
 			//必须实现  
-			//Must be implemented
-			let contentLayout = new LinearLayout($androidContext)
-			let button = new Button($androidContext)
+			let contentLayout = new LinearLayout(this.$androidContext)
+			let button = new Button(this.$androidContext)
 			button.setText("点击触发");
 			button.setTag("centerButton");
 			contentLayout.addView(button, new LinearLayout.LayoutParams(500, 500));
@@ -330,6 +329,7 @@ The following is a complete example of component source code index.vue:
 		background-color: blue;
 	}
 </style>
+
 ```
 
 > iOS

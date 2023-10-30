@@ -597,7 +597,9 @@ todo  目前还没有创建界面
 	import View from 'android.view.View'
 
 	class ButtonClickListsner extends View.OnClickListener {
-		constructor() {}
+		constructor() {
+
+		}
 		override onClick(v ? : View) {
 			console.log(v)
 		}
@@ -629,10 +631,10 @@ todo  目前还没有创建界面
 		
 		NVLoad(): LinearLayout {
 			//必须实现  
-			let contentLayout = new LinearLayout($androidContext)
-			let button = new Button($androidContext)
+			let contentLayout = new LinearLayout(this.$androidContext)
+			let button = new Button(this.$androidContext)
 			button.setTag("centerButton");
-			contentLayout.addView(button, LinearLayout.LayoutParams(500, 500));
+			contentLayout.addView(button, new LinearLayout.LayoutParams(500, 500));
 			button.setOnClickListener(new ButtonClickListsner())
 			return contentLayout
 		},

@@ -682,7 +682,9 @@ Open index.vue and type the following component source code:
 	import View from 'android.view.View'
 
 	class ButtonClickListsner extends View.OnClickListener {
-		constructor() {}
+		constructor() {
+
+		}
 		override onClick(v ? : View) {
 			console.log(v)
 		}
@@ -715,11 +717,10 @@ Open index.vue and type the following component source code:
 		
 		NVLoad(): LinearLayout {
 			//必须实现  
-			//Must be implemented
-			let contentLayout = new LinearLayout($androidContext)
-			let button = new Button($androidContext)
+			let contentLayout = new LinearLayout(this.$androidContext)
+			let button = new Button(this.$androidContext)
 			button.setTag("centerButton");
-			contentLayout.addView(button, LinearLayout.LayoutParams(500, 500));
+			contentLayout.addView(button, new LinearLayout.LayoutParams(500, 500));
 			button.setOnClickListener(new ButtonClickListsner())
 			return contentLayout
 		},

@@ -831,6 +831,52 @@ export class MyPluginClass implements UTSiOSHookProxy {
 ```
 	
 
+#### Android 平台
+
+Android平台部分三方SDK的初始化依赖Application的onCreate生命周期回调。所以UTS提供了UTSAndroidHookProxy接口。用于支持三方SDK初始化的代码实现。
+
+UTSAndroidHookProxy代码如下：
+
+```uts
+/**
+ * 安卓原应用初始化回调代理
+ * 注意：不支持调用uni api
+ */
+interface UTSAndroidHookProxy {
+    /**
+     * 安卓原生应用初始化
+     * @param application
+     */
+    fun onCreate(application: Application)
+}
+```
+
+开发者需要在插件代码中实现UTSAndroidHookProxy接口 示例如下：
+
+```uts
+import Application from 'android.app.Application';
+
+export class AppHookProxy implements UTSAndroidHookProxy {
+  override onCreate(application: Application) {
+	//当前应用是否 取得用户同意隐私协议
+	if(UTSAndroid.isPrivacyAgree) {
+		//onCreate 初始化三方SDK
+		Log.e("AppHookProxy", "AppHookProxy--onCreate---")
+	}
+  }
+}
+```
+
+以上代码，将会在`Application` 的`OnCreate`函数中被调用
+
+注意：
+
++ 由于UTSAndroidHookProxy初始化要早于uni所以不支持调用uni api
++ 一个插件只允许实现一个UTSAndroidHookProxy接口class！
++ onCreate回调后应尽可能的判断隐私合规是否同意再初始化。否则影响app上架
+
+
+
 
 ### `uts`与`uni-app`环境数据交互说明
 

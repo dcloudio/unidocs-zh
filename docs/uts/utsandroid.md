@@ -1,7 +1,7 @@
 # UTSAndroid
 
 
-## 实例方法
+## 静态方法
 
 
 ### onAppConfigChange(callback)

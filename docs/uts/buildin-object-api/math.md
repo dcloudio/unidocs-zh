@@ -2,7 +2,7 @@
 
 Math 是一个内置对象，它拥有一些数学常数属性和数学函数方法。
 
-## 实例属性
+## 静态属性
 
 
 ### E
@@ -151,7 +151,7 @@ console.log(getRoot2());
 <!-- UTSJSON.Math.SQRT2.compatibility -->
 
 
-## 实例方法
+## 静态方法
 
 
 ### clz32(x)

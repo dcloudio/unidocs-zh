@@ -29,6 +29,7 @@
 * 平台对象和 API
   * [UTSAndroid](utsandroid.md)
   * [UTSiOS](utsios.md)
+  * [UTSiOSHookProxy](utsioshookproxy.md)
 * [关键词](keywords.md)
 <!-- * [学习资料](learning.md) -->
 * uts插件

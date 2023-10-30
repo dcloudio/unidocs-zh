@@ -64,10 +64,15 @@ uni安全加固分为测试版和正式版两种类型：
 
 - **加固失败并提示“应用存在安全风险”**
 
+选择腾讯云版进行加固时，可能会出现因应用有病毒而不能加固，去腾讯自家WeTest平台加固同样也是这样的结果。
+以下是腾讯官方给出的解释：
 1. 加固产品不能有病毒，不能有安全风险，如果有安全风险不能加固。
 2. 去手机管家复查是否存在病毒风险：[https://m.qq.com/security_lab/scans_online.jsp](https://m.qq.com/security_lab/scans_online.jsp)
 若确认应用本身无风险问题，可在官网进行申诉[https://m.qq.com/complaint/](https://m.qq.com/complaint/),此为应用被报毒唯一申诉渠道。
 
+遇到这种情况，可以切换蚂蚁小程序云版进行加固试试。
+
+另外我们自己也写了一篇Android 应用报毒解决方案[https://ask.dcloud.net.cn/article/37501](https://ask.dcloud.net.cn/article/37501)
 - **加固失败并提示“MD5校验失败”**
 
 确保您上传的应用程序文件与用于生成MD5校验值的文件是相同的。MD5校验是一种用于验证文件完整性的方法，如果文件发生了变化，MD5校验会失败。

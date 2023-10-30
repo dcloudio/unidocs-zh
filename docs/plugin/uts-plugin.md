@@ -748,14 +748,14 @@ So far, we have completed a native capability encapsulation for obtaining power 
 
 ### 应用程序生命周期函数监听@hooksClass
 	
-	在插件开发过程中，有时我们需要监听 APP 的生命周期函数来完成一些业务逻辑，比如在应用启动时初始化三方 SDK, 在收到推送消息时做消息的处理，在被 url scheme 唤醒时调用指定功能等等。
-在 UTS 插件里，可以通过下面的方式来完成对应用程序生命周期函数的监听。
-
+	
 > 特别注意：
-> 此功能在 HBuilderX 3.95+ 版本支持，HBuilderX 3.95 之前的版本不支持。
+> 此功能在 HBuilderX 3.96+ 版本支持，HBuilderX 3.96 之前的版本不支持。
 
 #### iOS 平台
-	在 iOS 平台可以通过自定义 class 遵循 `UTSiOSHookProxy` 协议的方式来实现对应用程序生命周期函数的监听。
+    在插件开发过程中，有时我们需要监听 APP 的生命周期函数来完成一些业务逻辑，比如在应用启动时初始化三方 SDK, 在收到推送消息时做消息的处理，在被 url scheme 唤醒时调用指定功能等等。
+在 iOS 平台可以通过自定义 class 遵循 `UTSiOSHookProxy` 协议的方式来实现对应用程序生命周期函数的监听。
+	
 
 > 注意：
 > 该自定义 class 需要 export, 否则不会参与编译。

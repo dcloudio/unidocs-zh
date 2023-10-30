@@ -140,8 +140,36 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 如应用中没有使用video组件相关功能，将不再包含video内置模块，减少安装包体积。
 
-但需要新增一个摇树注意事项：\
+**摇树注意事项：**  
 当你打包自定义基座时，如果你的工程代码没有使用video、定位、相册、摄像头等涉及三方sdk或敏感权限的api，打出的自定义基座包就不会包含这些组件和api的功能，那么在这些自定义基座上运行时，调用相关的组件和api就会报错。\
 此时您需要在工程中写相关的代码，如引用video组件或调用定位api，保存代码后重新打包自定义基座，才会包含相关模块。
 
 您在工程中下载的ext api、三方uts插件也同理，没有引用就不会打进去。
+
+### App端支持摇树的模块
+- uni-cloud-client  
+  调用uniCloud[云函数/云对象](../uniCloud/cf-functions)模块，包括API：[uniCloud.importObject](../uniCloud/cloud-obj.#%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%B0%83%E7%94%A8)、[uniCloud.callFunction](../uniCloud/cf-callfunction#callfunction%E6%96%B9%E6%B3%95)  
+  依赖的模块：uni-media、uni-network  
+
+- uni-facialRecognitionVerify  
+  [uni实人认证](../uniCloud/frv/intro)模块，包括API：[uni.getFacialRecognitionMetaInfo](../uniCloud/frv/dev#get-meta-info)、[uni.startFacialRecognitionVerify](../uniCloud/frv/dev#start-frv)  
+  依赖的模块：无  
+
+- uni-getLocation-system  
+  系统定位模块，包括API：[uni.getLocation](./api/get-location)  
+  依赖的模块：无  
+
+- uni-media  
+  多媒体相关API模块，包括API：[uni.chooseImage](./api/choose-image)、[uni.previewImage](./api/preview-image)、[uni.saveImageToPhotosAlbum](./api/save-image-to-photos-album.html)  
+  依赖的模块：无  
+
+- uni-network  
+  网络请求（文件上传/下载）模块，包括API：[uni.downloadFile](./api/download-file)、[uni.request](./api/request)、[uni.uploadFile](./api/upload-file)  
+  依赖的模块：无  
+
+- uni-push  
+  [uni-push统一推送](../../unipush-v2)模块（`HBuilderX3.95+`），包括API：[uni.createPushMessage](../../api/plugins/push#createpushmessage)、[uni.getPushClientId](../api/plugins/push#getpushclientid)、[uni.offPushMessage](../../api/plugins/push#offpushmessage)、[uni.onPushMessage](../../api/plugins/push#onpushmessage)  
+  依赖的模块：无  
+
+- uni-video  
+  [video视频组件](./component/video)模块，包括内置组件：[video](./component/video)；包括API：[uni.createVideoContext](./api/create-video-context)  

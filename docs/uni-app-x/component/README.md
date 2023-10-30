@@ -74,6 +74,31 @@ export default {
 }
 ```
 
+## 自定义组件 v-model 绑定复杂表达式 @v-model-complex-expression
+
+自定义组件 `v-model` 绑定复杂表达式时，需要通过 `as` 指定类型。
+
+```ts
+<template>
+  <my-input v-model="obj.str as string" />
+</template>
+
+<script lang="uts">
+	type Obj = {
+		str : string
+	}
+	export default {
+		data() {
+			return {
+				obj: {
+					str: "str"
+				} as Obj
+			}
+		},
+	}
+</script>
+```
+
 ## 自定义事件
 
 - [v-model](tutorial/vue3-components.html#v-model-modifiers) 暂不支持 `capitalize` 修饰符。

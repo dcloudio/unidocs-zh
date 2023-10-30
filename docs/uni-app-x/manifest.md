@@ -168,7 +168,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
   依赖的模块：无  
 
 - uni-push  
-  [uni-push统一推送](../../unipush-v2)模块（`HBuilderX3.95+`），包括API：[uni.createPushMessage](../../api/plugins/push#createpushmessage)、[uni.getPushClientId](../api/plugins/push#getpushclientid)、[uni.offPushMessage](../../api/plugins/push#offpushmessage)、[uni.onPushMessage](../../api/plugins/push#onpushmessage)  
+  [uni-push统一推送](../../unipush-v2)模块（`HBuilderX3.96+`），包括API：[uni.createPushMessage](../../api/plugins/push#createpushmessage)、[uni.getPushClientId](../api/plugins/push#getpushclientid)、[uni.offPushMessage](../../api/plugins/push#offpushmessage)、[uni.onPushMessage](../../api/plugins/push#onpushmessage)  
   依赖的模块：无  
 
 - uni-video  

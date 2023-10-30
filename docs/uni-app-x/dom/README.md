@@ -199,7 +199,7 @@ DrawableContext 在调用 API 之后不会主动更新到画布上，需要主�
 <script>
 	export default {
 		onReady() {
-			var ctx = (this.$refs['drawable'] as Element.getDrawableContext()
+			var ctx = (this.$refs['drawable'] as Element).getDrawableContext()
 			ctx.moveTo(50, 40);
 			ctx.lineTo(200, 40);
 			ctx.stroke();

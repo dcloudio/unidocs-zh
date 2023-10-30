@@ -746,6 +746,92 @@ export default function getBatteryLevel():number {
 So far, we have completed a native capability encapsulation for obtaining power on the iOS platform.
 
 
+### 应用程序生命周期函数监听@hooksClass
+	
+	在插件开发过程中，有时我们需要监听 APP 的生命周期函数来完成一些业务逻辑，比如在应用启动时初始化三方 SDK, 在收到推送消息时做消息的处理，在被 url scheme 唤醒时调用指定功能等等。
+在 UTS 插件里，可以通过下面的方式来完成对应用程序生命周期函数的监听。
+
+> 特别注意：
+> 此功能在 HBuilderX 3.95+ 版本支持，HBuilderX 3.95 之前的版本不支持。
+
+#### iOS 平台
+	在 iOS 平台可以通过自定义 class 遵循 `UTSiOSHookProxy` 协议的方式来实现对应用程序生命周期函数的监听。
+
+> 注意：
+> 该自定义 class 需要 export, 否则不会参与编译。
+> 该自定义 class 会自动完成注册, 无需开发者进行额外注册。
+> `UTSiOSHookProxy` 协议中所有的 api 均是可选实现的，可以选择自己关心的 api 进行实现。
+> `UTSiOSHookProxy` 协议的定义[详见](https://uniapp.dcloud.net.cn/uts/UTSiOSHookProxy.html)
+
+
+示例代码：
+
+```ts
+export class MyPluginClass implements UTSiOSHookProxy {
+	// uts 插件创建时的回调。
+	onCreate() {
+	}
+	// 应用正常启动时 (不包括已在后台转到前台的情况)的回调函数。
+	applicationDidFinishLaunchingWithOptions(application: UIApplication | null, launchOptions: Map<UIApplication.LaunchOptionsKey, any> | null = null): boolean {
+	    console.log("applicationDidFinishLaunchingWithOptions")
+	    return false
+	}
+	// 远程通知注册成功时的回调函数。
+	didRegisterForRemoteNotifications(deviceToken: Data | null) {
+	        
+	}
+	// 远程通知注册失败时的回调函数。
+	didFailToRegisterForRemoteNotifications(error: NSError | null) {       
+	        
+	}
+	// 应用收到远程通知时的回调函数。
+	didReceiveRemoteNotification(userInfo: Map<AnyHashable, any> | null) {
+	        
+	}
+	// 应用收到本地通知时的回调函数。
+	didReceiveLocalNotification(notification: UILocalNotification | null) {
+	        
+	}
+	// 通过 url scheme 方式唤起 app 时的回调函数。(iOS9 之前的系统回调此方法，iOS9 之后的系统请使用 applicationOpenURLOptions)
+	applicationHandleOpenURL(application: UIApplication | null, url: URL | null) : boolean {
+	    return true
+	}
+	// 通过 url scheme 方式唤起 app 时的回调函数。
+	applicationOpenURLOptions(app: UIApplication | null, url: URL, options: Map<UIApplication.OpenURLOptionsKey, any> | null = null) : boolean {
+	    return true
+	}
+	// 当应用从活动状态主动变为非活动状态的时的回调函数。
+	applicationWillResignActive(application: UIApplication | null) {
+	    console.log("applicationWillResignActive")
+	}
+	// 应用完全激活时的回调函数。
+	applicationDidBecomeActive(application: UIApplication | null) {
+
+	}   
+	// 应用程序进入后台时的回调函数。
+	applicationDidEnterBackground(application: UIApplication | null) {
+		console.log("did enter background")
+
+	}
+	// 当应用在后台状态，将要进入到前台运行时的回调函数。
+	applicationWillEnterForeground(application: UIApplication | null) {
+	    console.log("applicationWillEnterForeground")
+
+	}
+	// 应用程序的 main 函数。
+	applicationMain(argc: Int32, argv: UnsafeMutablePointer<UnsafeMutablePointer<CChar> | null>) {
+	    console.log("applicationMain")
+	}
+	// 当应用程序接收到与用户活动相关的数据时调用此方法，例如，当用户使用 Universal Link 唤起应用时。
+	applicationContinueUserActivityRestorationHandler(application: UIApplication | null, userActivity: NSUserActivity | null, restorationHandler: ((res: [any] | null) => void) | null = null) : boolean {
+	       
+	    return true
+	}
+}
+```
+	
+
+
 ### `uts`与`uni-app`环境数据交互说明
 
 

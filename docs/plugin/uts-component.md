@@ -1661,6 +1661,9 @@ The following is an example of using a container component
 </style>
 ```
 
+## 应用程序生命周期函数监听
+ UTS 组件同样支持对应用程序生命周期函数的监听，方式和 UTS 插件中的完全一致。具体使用方法[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#hooksClass)
+
 
 ## 快速体验
 ## Quick experience

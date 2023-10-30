@@ -1,7 +1,7 @@
 # Console
 
 
-## 实例方法
+## 静态方法
 
 
 ### debug(data)

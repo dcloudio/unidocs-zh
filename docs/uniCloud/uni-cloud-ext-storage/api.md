@@ -62,7 +62,7 @@ module.exports = {
 		// 可以在此先判断下此路径是否允许上传等逻辑
 		// ...
 		
-		// 然后获取 extStorageManager
+		// 然后获取 extStorageManager 对象实例
 		const extStorageManager = uniCloud.getExtStorageManager({
 			domain: "你的扩展存储域名", // 带http协议头的域名地址
 		});

@@ -148,11 +148,11 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 ### App端支持摇树的模块
 - uni-cloud-client  
-  调用uniCloud[云函数/云对象](../uniCloud/cf-functions)模块，包括API：[uniCloud.importObject](../uniCloud/cloud-obj.#%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%B0%83%E7%94%A8)、[uniCloud.callFunction](../uniCloud/cf-callfunction#callfunction%E6%96%B9%E6%B3%95)  
+  调用uniCloud[云函数/云对象](../uniCloud/cf-functions)模块，包括API：[uniCloud.importObject](../uniCloud/cloud-obj.md#%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%B0%83%E7%94%A8)、[uniCloud.callFunction](../uniCloud/cf-callfunction.md#callfunction%E6%96%B9%E6%B3%95)  
   依赖的模块：uni-media、uni-network  
 
 - uni-facialRecognitionVerify  
-  [uni实人认证](../uniCloud/frv/intro)模块，包括API：[uni.getFacialRecognitionMetaInfo](../uniCloud/frv/dev#get-meta-info)、[uni.startFacialRecognitionVerify](../uniCloud/frv/dev#start-frv)  
+  [uni实人认证](../uniCloud/frv/intro)模块，包括API：[uni.getFacialRecognitionMetaInfo](../api/plugins/facialRecognitionVerify.md#getfacialrecognitionmetainfo)、[uni.startFacialRecognitionVerify](../api/plugins/facialRecognitionVerify.md#startfacialrecognitionverify)  
   依赖的模块：无  
 
 - uni-getLocation-system  

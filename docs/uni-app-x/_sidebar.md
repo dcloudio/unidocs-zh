@@ -54,6 +54,7 @@
     * [getCurrentPages](api/get-current-pages.md)
   * 基础
     * [事件总线event-bus](api/event-bus.md)
+    * [拦截器](api/interceptor.md)
     * [获取启动参数](api/get-launch-options-sync.md)
     * [退出应用](api/exit.md)
   * 页面

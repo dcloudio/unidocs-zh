@@ -108,7 +108,7 @@ uvue渲染引擎包括原生版的vue框架（组件、数据绑定...）、跨�
 
 > 上述页面没有涉及uts不允许的动态类型，也没有涉及uvue不支持的css，所以它实际上和uni-app js版的vue页面没有区别。
 
-uvue支持的vue语法，是按vue3实现的，但一期uvue不支持setup。详见[vue语法](vue/README.md)
+uvue支持的vue语法，是按vue3实现的，但目前不支持setup。详见[vue语法](vue/README.md)
 
 uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex布局。但也足以布局出需要的界面。详见[css语法](uni-app-x/css/README.md)
 
@@ -118,7 +118,7 @@ uvue支持的css语法，是web的子集，类似于nvue的css。仅支持flex�
 
 ## 3. uni的组件
 
-uni-app x 一期，只包括常用的组件和API。
+uni-app x 目前只包括常用的组件和API。
 
 剩余的组件和API，如开发者急用，可自行开发，或者委托插件作者提供相关插件。
 
@@ -198,7 +198,7 @@ uni-app x支持的API包括：
 
 使用`uni.getSystemInfoSync`则比较简单，看uni的文档即可，且可跨平台。
 
-其实，`uni.getSystemInfoSync`的内部实现就是一个uts模块，底层使用了一样的代码，也是import了android.os.Build。
+其实，[uni.getSystemInfoSync](https://gitcode.net/dcloud/uni-api/-/blob/master/uni_modules/uni-getSystemInfo/utssdk/app-android/index.uts) 的内部实现就是一个uts模块，底层使用了一样的代码，也是import了android.os.Build。
 
 uni.的api，大多是uts开发的，它们会陆续开源在[uni-api](https://gitcode.net/dcloud/uni-api)。
 
@@ -295,7 +295,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 ## FAQ
 - uni-app x 支持uvue页面和vue页面混写吗？
-  仅支持uvue页面。历史vue页面可以通过 uni小程序sdk 嵌入到uni-app x中。
+  仅支持uvue页面。没有js引擎，不能运行vue页面。但历史vue页面可以通过 uni小程序sdk 嵌入到uni-app x中。
 
 - uni-app x 的app端能离线打包吗？
   初期不能，后期会提供
@@ -316,7 +316,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   uvue的script里写的就是uts，uts就可以直接调原生代码。无所谓它在`uni_modules`里还是外。但如果是大段的原生代码调用，还是推荐封装为独立的`uni_modules`。
 
 - uni-app x 的开发只能用HBuilderX吗？
-  是的。为三方ide做插件是一个投资大且充满不确定性的事情，官方有限精力会聚焦在自身产品优化上。
+  是的。为三方ide做插件是一个投资大且充满不确定性的事情，官方有限精力会聚焦在自身产品优化上。但DCloud是开放的，不会限制三方ide的插件支持。
 
 - uni-app x 支持最低的Android版本多少？
   Android 5+

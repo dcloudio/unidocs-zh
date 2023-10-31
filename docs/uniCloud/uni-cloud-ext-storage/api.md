@@ -33,6 +33,7 @@
 
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
+	provider: "qiniu", // 扩展存储供应商
 	domain: "你的扩展存储域名", // 带http协议头的域名地址
 });
 ```
@@ -41,6 +42,7 @@ const extStorageManager = uniCloud.getExtStorageManager({
 
 |参数名	|类型		|必填	|默认值	|说明																				|
 |:-:		|:-:		|:-:	|:-:		|:-:																				|
+|provider	|String	|是		|-			|扩展存储供应商，可选<br/>qiniu: 七牛云|
 |domain	|String	|是		|-			|你的扩展存储域名（带http协议头的域名地址）	|
 
 ### 获取前端上传参数
@@ -64,6 +66,7 @@ module.exports = {
 		
 		// 然后获取 extStorageManager 对象实例
 		const extStorageManager = uniCloud.getExtStorageManager({
+			provider: "qiniu",
 			domain: "你的扩展存储域名", // 带http协议头的域名地址
 		});
 		// 最后调用 extStorageManager.getUploadFileOptions
@@ -140,6 +143,7 @@ uni.chooseImage({
 
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
+	provider: "qiniu",
 	domain: "你的扩展存储域名", // 带http协议头的域名地址
 });
 // 文件的base64值
@@ -186,6 +190,7 @@ console.log('uploadFile: ', res);
 
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
+	provider: "qiniu",
 	domain: "你的扩展存储域名", // 带http协议头的域名地址
 });
 let res = extStorageManager.getTempFileURL({
@@ -225,6 +230,7 @@ return res;
 
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
+	provider: "qiniu",
 	domain: "你的扩展存储域名", // 带http协议头的域名地址
 });
 let res = extStorageManager.deleteFile({
@@ -258,6 +264,7 @@ return res;
 
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
+	provider: "qiniu",
 	domain: "你的扩展存储域名", // 带http协议头的域名地址
 });
 let res = extStorageManager.updateFileStatus({

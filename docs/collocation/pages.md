@@ -979,6 +979,9 @@ h5 平台下拉刷新动画，只有 circle 类型。
 - `nvue`页面里引用`.vue`后缀的组件，会按照nvue方式使用原生渲染，其中不支持的css会被忽略掉。这种情况同样支持`easycom`。
 - `vue` 与 `uvue` 组件优先级，[详见](/uni-app-x/component/README.md#priority)。
 
+### Bug & Tips@easycom_tips
++ HBuilderX 3.96 版本以下`uni-app x`项目，当页面文件名与`easycom`的组件名一样时，会渲染异常，可以通过调整页面文件名规避该Bug。
+
 ## tabBar
 
 如果应用是一个多 tab 应用，可以通过 tabBar 配置项指定一级导航栏，以及 tab 切换时显示的对应页。

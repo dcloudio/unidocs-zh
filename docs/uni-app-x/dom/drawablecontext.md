@@ -200,3 +200,6 @@
 <!-- CUSTOMTYPEJSON.DrawableContext.methods.bezierCurveTo.tutorial -->
 
 <!-- CUSTOMTYPEJSON.DrawableContext.example -->
+
+## Bug & Tips@tips
++ 同时使用`border-radius`和`DrawableContext`，可能会出现`DrawableContext`绘制内容超出border区域的情况。

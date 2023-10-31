@@ -59,3 +59,6 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+## Bug & Tips@tips
+- 目前已知在页面生命周期 onLoad 中调用以上弹窗 API 可能无法正常显示，暂时建议在页面生命周期 onReady 及之后再调用，后续版本会优化此问题  

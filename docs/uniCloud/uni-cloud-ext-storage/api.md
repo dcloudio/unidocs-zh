@@ -189,7 +189,7 @@ const extStorageManager = uniCloud.getExtStorageManager({
 	domain: "你的扩展存储域名", // 带http协议头的域名地址
 });
 let res = extStorageManager.getTempFileURL({
-	fileList: ["cloud://a.jpg"], // 私有文件地址列表
+	fileList: ["qiniu://a.jpg"], // 私有文件地址列表
 });
 console.log('getTempFileURL: ', res);
 return res;

@@ -570,8 +570,7 @@ Zoom out the map to see that multiple markers are merged into one and display th
 ```
 
 
-## mapSearch 模块(仅app-nvue支持，Goolge地图不支持)
-## mapSearch module (only app-nvue supports, Google map does not support)
+### mapSearch 模块(仅app-nvue支持，Goolge地图不支持)
 
 #### reverseGeocode(Object,callback);@reverseGeocode
 > 反向地理编码

@@ -170,7 +170,7 @@ AndroidManifest.xml示例：
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" 
-  // 配置包名
+  // 注意：这里是插件的包名而不是应用的包名
   package="io.dcloud.uni_modules.utsNativepage">
    // 配置权限
    <!--创建前台服务权限-->

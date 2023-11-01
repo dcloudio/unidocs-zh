@@ -60,6 +60,7 @@
   * 页面
     * [页面跳转](api/navigator.md)
     * [设置导航条颜色](api/set-navigation-bar-color.md)
+    * [设置导航条标题](api/set-navigation-bar-title.md)
     * [设置tabbar](api/set-tabbar.md)
     * [页面下拉刷新](api/pull-down-refresh.md)
     * [将页面滚动到指定位置](api/page-scroll-to.md)

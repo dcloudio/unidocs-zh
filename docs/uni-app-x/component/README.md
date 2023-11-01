@@ -42,8 +42,9 @@ uni-app x支持的组件包括：
 
 ## props
 
-- 仅支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。
+- 仅支持 `export default` 中使用[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明，不支持外部引入或字符串数组方式声明。
 - 复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。
+- 不支持引入 props, 
 ```ts
 import { type PropType } from 'vue'
 
@@ -94,7 +95,7 @@ export default {
 					str: "str"
 				} as Obj
 			}
-		},
+		}
 	}
 </script>
 ```

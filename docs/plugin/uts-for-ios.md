@@ -231,7 +231,6 @@ console.log(lib.version);
 	- 重新编译 SDK, 编译后可以看到 Modules 已经生成。
 	
 ```ts
-
 framework module TestSDK {
     header "TestA.h"   //需要对外暴露的头文件，需要为 plubic 的文件
 	
@@ -255,7 +254,6 @@ framework module TestSDK {
 > 实践时要将 `TestSDK` 改成你要操作的 SDK 名称，.h 文件也要改成你要暴露的头文件名字。
 
 ```ts
-
 framework module TestSDK {
 	// 下面的.h 文件都要是 TestSDK.framework -> Headers 文件夹下的头文件
     header "AClass.h"  
@@ -268,6 +266,9 @@ framework module TestSDK {
     
     export *
 }
+
+```
+
 
 
 ## 4 iOS 平台内置库 DCloudUTSFoundation

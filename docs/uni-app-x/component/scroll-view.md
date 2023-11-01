@@ -46,11 +46,11 @@
 下面的示例代码，在一个scroll-view中嵌套了一个list-view。在list-view上设置了custom-nested-scroll="true"。
 
 ```html
-<scroll-view style="height: 100%;" scroll-y="true" rebound ="false" @startnestedscroll="onStartNestedScroll" @nestedprescroll="onNestedPreScroll"
+<scroll-view style="height: 100%;" scroll-y="true" rebound ="false" nested-scroll-child="listview" @startnestedscroll="onStartNestedScroll" @nestedprescroll="onNestedPreScroll"
 	@stopnestedscroll="onStopNestedScroll">
 		...
 		<view style="height: 100px;">停靠视图</view>
-		<list-view class="child-scroll" scroll-y="true" custom-nested-scroll="true">
+		<list-view id="listview"  class="child-scroll" scroll-y="true" custom-nested-scroll="true">
 			...
 		</list-view>
 </scroll-view>
@@ -78,8 +78,13 @@ onNestedPreScroll(event: NestedPreScrollEvent) {
 	}
 }
 ```
-+ 滚动行为停止后会触发`stopnestedscroll`事件
+5. 父组件配置`nested-scroll-child`后，父组件惯性滚动时会让`nested-scroll-child`配置的子元素进行滚动。从而触发`nestedprescroll`协商处理滚动事件
+6. 滚动行为停止后会触发`stopnestedscroll`事件
+
+**注意：**
 + 仅Android平台支持嵌套滚动协商
++ 嵌套滚动协商仅支持竖向滚动，横向滚动不支持
++ nested-scroll-child设置的元素必须配置custom-nested-scroll = true，否则配置无效。
 
 **具体代码请参考：**[nested-scroll嵌套滚动示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list/long-list.uvue)
 

@@ -235,8 +235,8 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		 */
 		NVLoad(): LinearLayout {
 			//必须实现  
-			let contentLayout = new LinearLayout(this.$androidContext)
-			let button = new Button(this.$androidContext)
+			let contentLayout = new LinearLayout(this.$androidContext!)
+			let button = new Button(this.$androidContext!)
 			button.setText("点击触发");
 			button.setTag("centerButton");
 			contentLayout.addView(button, new LinearLayout.LayoutParams(500, 500));
@@ -510,7 +510,6 @@ graph TD;
 |unmounted		|组件在内存被销毁				|资源回收逻辑					|可选|
 
 
-
 除上述生命周期外，还存在下列可选周期函数：
 
 + NVMeasure
@@ -520,6 +519,23 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 一般情况下，组件的宽高应该是由终端系统的排版引擎决定，组件开发者不需要实现此函数。
 
 但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
+
+
++ NVUpdateStyles
+
+需要HBuilder X 3.96版本
+
+NVUpdateStyles 用来监听组件的外部style 变化，通常用来写响应外部的css样式变化从而动态更新组件内部状态场景
+
+我们可以在组件内部这样实现:
+
+```uts
+NVUpdateStyles(styles: Map<String, any>){
+	console.log("NVUpdateStyles",styles)
+}
+```
+
+
 
 
 **注意：只有非容器组件生效，容器组件不应该重写此函数**

@@ -278,14 +278,14 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 
 ## 长度单位
 
-长度 `<length>` 是用于表示距离尺寸的 CSS 数据类型。许多 CSS 属性会用到长度，比如 width、margin、padding \
-长度 `<percentage>` 表述一个百分比值。许多 CSS 属性 可以取百分比值，经常用以根据父对象来确定大小。百分比值由一个<number>具体数值后跟着%符号构成。就像其他在 css 里的单位一样，在%和数值之间是不允许有空格的。
+长度 `<length>` 用于表示距离尺寸的 CSS 数据类型。许多 CSS 属性会用到长度，比如 width、margin、padding \
+长度 `<percentage>` 表述一个百分比值。许多 CSS 属性 可以取百分比值，用以根据父对象来确定大小。百分比值由一个<number>具体数值后跟着%符号构成。就像其他在 css 里的单位一样，在%和数值之间是不允许有空格的。
 
 |类别				|支持情况			|备注							|
 |:-:				|:-:				|:-:							|
 |px					|√					|								|
 |rpx				|√					|								|
-|百分比				|√					|支持width、height、padding、margin、top、left、right、bottom|
+|百分比				|√					|支持width、height、padding、margin、top、left、right、bottom、flex-basis|
 |rem				|					|								|
 |em					|√					|仅支持line-height				|
 |vw					|					|								|

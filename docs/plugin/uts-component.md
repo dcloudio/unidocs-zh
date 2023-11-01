@@ -618,9 +618,7 @@ For the convenience of component developers, the following objects are built int
 |Variable Name |Type |Introduction |Platform Restrictions |Methods & Properties |
 |:-------		|:--------	|:--------			|:---		|:---			|
 |$el			|对象		|当前View实例对象	|全部平台	|开发者在NVLoad返回的对象类型|
-|$el |object |current View instance object |all platforms |object type returned by the developer in NVLoad|
-|$androidContext|对象		|当前组件上下文		|仅android	|android平台对应Context对象|
-|$androidContext|object |Current component context |Android only | Context object corresponding to the android platform|
+|$androidContext|对象		|当前组件上下文(可为空)		|仅android	|android平台对应Context对象|
 |$emit("event",Any)|函数		|发送已注册的事件	|全部平台	|$emit(事件名称-必选,事件参数可选)|
 |$emit("event",Any)|function |send registered events |all platforms |$emit(event name-required, event parameters are optional)|
 

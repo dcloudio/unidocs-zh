@@ -11,6 +11,9 @@
 
 <!-- CSSJSON.margin-top.unixTags -->
 
+**注意**  
+当position:fixed|absolute时,margin暂不支auto
+
 <!-- CSSJSON.margin-top.compatibility -->
 
 <!-- CSSJSON.margin-top.reference -->

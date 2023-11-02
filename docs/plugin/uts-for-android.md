@@ -187,8 +187,7 @@ For Android projects, in addition to source code, it also involves common issues
 本章节将会介绍，UTS插件开发环境中如何配置这些属性
 This chapter will introduce how to configure these properties in the UTS plug-in development environment
 
-注意：
-Notice:
+**注意**：
 
 + 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
 + 2 本章节涉及的配置，均需自定义基座后才能生效

@@ -110,16 +110,16 @@ uni.chooseImage({
 		// ext-storage-co 是你自己写的云对象（参考上面的云端代码）
 		const uniCloudStorageExtCo = uniCloud.importObject("ext-storage-co");
 		const uploadFileOptionsRes = await uniCloudStorageExtCo.getUploadFileOptions({
-			cloudPath: "a/test.jpg", // 支持自定义目录
+			cloudPath: `test/${Date.now()}.jpg`, // 支持自定义目录
 		});
 		const uploadTask = uni.uploadFile({
 			...uploadFileOptionsRes.uploadFileOptions, // 上传文件所需参数
 			filePath: filePath, // 本地文件路径
 			success: () => {
 				const res = {
-					cloudPath: uploadFileOptionsRes.cloudPath; // 文件云端路径
-					fileID: uploadFileOptionsRes.fileID; // 文件ID
-					fileURL:  uploadFileOptionsRes.fileURL; // 文件URL（如果是私有权限，则此URL是无法直接访问的）
+					cloudPath: uploadFileOptionsRes.cloudPath, // 文件云端路径
+					fileID: uploadFileOptionsRes.fileID, // 文件ID
+					fileURL:  uploadFileOptionsRes.fileURL, // 文件URL（如果是私有权限，则此URL是无法直接访问的）
 				};
 				// 数据库里可直接保存 fileURL 或 fileID
 				console.log("上传成功", res);

@@ -9,9 +9,22 @@
 3. 支持将文件设置为私有权限
 4. 支持设置未登录用户禁止上传，或指定用户禁止上传
 
-## 开通扩展存储服务@buy
+## 开通扩展存储服务@open
 
-参考[开通扩展存储](uniCloud/uni-cloud-ext-storage/buy.md)
+1. 登录[uniCloud web控制台](https://unicloud.dcloud.net.cn/)
+2. 选择一个服务空间
+3. 选择左侧扩展存储菜单，开通
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-cloud-ext-storage/431.png)
+
+**注意**
+
+- 一个空间只能开通一个扩展存储，实例会自动和当前服务空间绑定
+- 开通前保证金账户余额需≥200元，扩展存储按量余额需>0元
+
+## 费用说明@fee
+
+参考[费用说明](uniCloud/uni-cloud-ext-storage/fee.md)
 
 ## 为云函数启用uni-cloud-ext-storage扩展库@use-in-function
 

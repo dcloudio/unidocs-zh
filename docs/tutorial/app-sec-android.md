@@ -110,7 +110,7 @@ HBuilderX3.0.0+版本新增[plus.navigator.getSignature](https://www.html5plus.o
 说的打包为App的原生APK可以被反编译获取Java源代码。
 
 **修复方案**  
-对APK进行加固，推荐使用腾讯加固平台。
+对APK进行加固，推荐[uni安全加固](/uni-app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
 
 
 <a id="webview_jsinterface"/>
@@ -138,7 +138,7 @@ HBuilderX3.1.14+版本已修复此问题，在内部逻辑中使用的密钥全�
 SO文件为APK中包含的动态链接库文件，Android利用NDK技术将C/C++语言实现的核心代码编译为SO库文件供Java层调用。SO文件被破解可能导致应用的核心功能代码和算法泄露。攻击者利用核心功能与算法可轻易抓取到客户端的敏感数据，并对其解密，导致用户的隐私泄露或直接财产损失
 
 **修复方案**  
-建议使用专业安全加固平台对APK中的SO文件进行加固保护
+对APK中的SO文件进行加固保护,推荐[uni安全加固](/uni-app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
 
 #### Strandhogg漏洞
 **风险描述**  

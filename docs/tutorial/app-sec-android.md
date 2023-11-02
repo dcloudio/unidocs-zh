@@ -160,9 +160,7 @@ It can be checked regularly during the running of the application. The following
 The native APK packaged as an App can be decompiled to obtain the Java source code.
 
 **修复方案**  
-**Repair plan**
-对APK进行加固，推荐使用腾讯加固平台。
-To reinforce the APK, it is recommended to use the Tencent reinforcement platform.
+对APK进行加固，推荐[uni安全加固](/uni-app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
 
 
 <a id="webview_jsinterface"/>
@@ -206,9 +204,7 @@ SO文件为APK中包含的动态链接库文件，Android利用NDK技术将C/C++
 The SO file is the dynamic link library file contained in the APK. Android uses the NDK technology to compile the core code implemented by the C/C++ language into the SO library file for the Java layer to call. The cracked SO file may lead to the disclosure of the core functional codes and algorithms of the application. Using core functions and algorithms, attackers can easily capture sensitive client data and decrypt it, resulting in user privacy leakage or direct property loss
 
 **修复方案**  
-**Repair plan**
-建议使用专业安全加固平台对APK中的SO文件进行加固保护
-It is recommended to use a professional security hardening platform to harden and protect the SO file in the APK
+对APK中的SO文件进行加固保护,推荐[uni安全加固](/uni-app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
 
 #### Strandhogg漏洞
 #### Strandhogg exploit

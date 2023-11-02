@@ -75,3 +75,28 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+
+**exec 示例说明：**
+
+`exec()` 返回所有动作的集合，每一项的数据类型取决于查询动作，结果排序按照调用动作顺序
+
+示例：
+
+```js
+this.createSelectorQuery().select('.rect1').boundingClientRect().exec()
+// 共返回 1 条结果，第一项数据类型为 NodeInfo
+result = [ {} ]
+```
+
+```js
+this.createSelectorQuery().selectAll('.rect1').boundingClientRect().exec()
+// 共返回 1 条结果，第一项数据类型为 NodeInfo[]
+result = [ [{},{}] ]
+```
+
+```js
+this.createSelectorQuery().select('.rect1').selectAll('.rect2').boundingClientRect().exec()
+// 共返回 2 条结果，第一项数据类型为 NodeInfo，第二项数据类型类型为 NodeInfo[]
+result = [ {}, [{},{}] ]
+```

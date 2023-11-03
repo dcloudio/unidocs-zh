@@ -730,10 +730,12 @@ skip
 limit
 ```
 
-  ```js
-  const article = db.collection('article').where('article_id=="1"').field('title').getTemp() // 此处过滤article表，仅保留title字段。会导致下一步查询时找不到关联关系而查询失败
-  const res = await db.collection(article, 'comment').get()
-  ```
+**临时表内如果使用field进行字段过滤需要保留关联字段**
+
+```js
+const article = db.collection('article').where('article_id=="1"').field('title').getTemp() // 此处过滤article表，仅保留title字段。会导致下一步查询时找不到关联关系而查询失败
+const res = await db.collection(article, 'comment').get()
+```
 
 **组合出来的虚拟联表查询时可以使用的方法**
 

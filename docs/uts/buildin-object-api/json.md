@@ -9,6 +9,7 @@ JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的对�
 
 > 特别说明：  
 > HBuilderX3.9.0统一为以上规范，在HBuilderX3.9.0之前版本 返回值只可能是 UTSJSONObject， 基本数据类型会转换失败
+> JSON.parse 目前仅支持第一个参数
 
 ```ts
 const json = `{"result":true, "count":42}`;
@@ -58,6 +59,8 @@ HBuilderX 3.9+，支持JSON.parse传入[泛型](../generics.md)。
 <!-- UTSJSON.JSON.parse.compatibility -->
 
 ### stringify(value, replacer?, space?)
+
+*注意：JSON.stringify 目前仅支持第一个参数*
 
 <!-- UTSJSON.JSON.stringify.description -->
 

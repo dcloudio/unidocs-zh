@@ -10,26 +10,25 @@
 
 <!-- UTSCOMJSON.form.compatibility -->
 
-<!-- UTSCOMJSON.form.children -->
+### submit策略差异
+uni-app 的 form 组件的表单提交，和浏览器W3C的策略略有差异：
 
-<!-- UTSCOMJSON.form.reference -->
+- 多个表单子项如果 name 相同，仅保留第一个/最后一个 表单子项。而浏览器标准form是会合并为数组。
+- 设置 disabled 属性的表单子项，仍然会提交。而浏览器标准form提交时会忽略disabled的表单子项。
 
-## 平台差异
+包括uni-app编译到web平台，也是按uni-app的策略，而不是浏览器的策略。uni-app 的 web平台使用 uni-app 自己的 form 组件，而不是浏览器的 form 标签。
 
-uni-app 的 form 组件的子表单组件和浏览器的表单组件有以下差异：
+### reset策略差异
 
-- 相同 name 属性被覆盖
-- 设置 disabled 属性后不会被忽略
+reset在浏览器W3C的策略是还原、重置。
 
-安卓 uni-app-x 暂不支持自定义组件内的表单组件
+在uni-app中，不同平台的策略不同，有的是`还原`，有的是`清空`。
 
-**@reset事件**
+各平台策略如下：
 
-分 2 种情况，`还原` 和 `清空`
-
-|安卓 uni-app-x	|App	|H5		|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序	|
-|:-:						|:-:	|:-:	|:-:				|:-:				|:-:				|:-:				|
-|还原(3.99+)		|清空	|清空	|清空				|还原				|清空				|清空				|
+|uni-app-x App	|uni-app App|Web	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序	|
+|:-:			|:-:		|:-:	|:-:		|:-:			|:-:		|:-:		|
+|还原(3.97+)	|清空		|清空	|清空		|还原			|清空		|清空		|
 
 
 1. 还原初始值
@@ -77,3 +76,13 @@ uni-app 的 form 组件的子表单组件和浏览器的表单组件有以下差
   </view>
 </checkbox-group>
 ```
+
+
+<!-- UTSCOMJSON.form.children -->
+
+<!-- UTSCOMJSON.form.reference -->
+
+## Bug & Tips
+
+- 安卓 uni-app-x 暂不支持自定义组件内的表单组件
+

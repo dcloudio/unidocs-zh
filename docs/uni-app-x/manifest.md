@@ -4,8 +4,6 @@
 
 uni-app x 目前不支持配置splash图，因uni-app x打包后启动速度非常快，可以自己做一个简单的uvue页面来当做splash。
 
-uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)中。
-
 uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选择内置模块，具体[见下](#treeShaking)。
 
 ## 配置项列表
@@ -32,6 +30,14 @@ uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选�
 <!-- MANIFESTJSON.manifest_app.description -->
 
 <!-- MANIFESTJSON.manifest_app.table -->
+
+#### Android权限配置@permissions
+
+uni-app x 的权限配置，移入了[AndroidManifest.xml](../tutorial/app-nativeresource-android.md#permissions)中。
+
+使用[uni内置模块](#utsmodules)时，云端打包会自动添加模块需要的Android权限，不需要在[AndroidManifest.xml](../tutorial/app-nativeresource-android.md#permissions)中配置。
+
+HBuilderX3.97+版本标准基座已经包含了所有Android权限，在 uvue 页面中直接通过 uts 调用需要权限的 Android 系统 API 时，使用标准基座真机运行可直接通过[UTSAndroid.requestSystemPermission](../uts/utsandroid.md#requestSystemPermission)申请；使用自定义基座则需要在项目的[AndroidManifest.xml](../tutorial/app-nativeresource-android.md#permissions)中配置要使用的权限，重新提交云端打包。
 
 
 #### DISTRIBUTE配置 @app-distribute
@@ -146,7 +152,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 您在工程中下载的ext api、三方uts插件也同理，没有引用就不会打进去。
 
-### App端支持摇树的内置模块列表
+### App端支持摇树的内置模块列表@utsmodules
 
 - uni-network  
   网络请求（文件上传/下载）模块，包括API：[uni.downloadFile](./api/download-file.md)、[uni.request](./api/request.md)、[uni.uploadFile](./api/upload-file.md)  

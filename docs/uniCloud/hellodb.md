@@ -518,7 +518,8 @@ new db.Geo.MultiPolygon([
 
 uniCloud数据库提供了多种数据导入导出和备份方案。
 
-- db\_init.json：常用于插件市场的插件做环境初始化。完整支持数据、索引、schema三部分。不适合处理大量数据，操作可能超时
+- init_data.json、index.json等数据库初始化文件文件：`HBuilderX 3.97起支持`常用于插件市场的插件做环境初始化。完整支持数据、索引、schema三部分。不适合处理大量数据，操作可能超时。目前uniCloud web控制台不支持直接导出这一批初始化文件，后续会提供支持。
+- db\_init.json：常用于插件市场的插件做环境初始化。完整支持数据、索引、schema三部分。不适合处理大量数据，操作可能超时。**HBuilderX 3.97及之后版本需要拆分为上面一种方式对应的文件，可以在项目管理器选中db_init.json右键初始化数据库时自动拆分。**
 - 数据库回档备份和恢复，不支持schema
 - 数据库导入导出，[jsonl格式](https://jsonlines.org/)数据，仅数据，无索引及schema
 
@@ -526,7 +527,63 @@ uniCloud数据库提供了多种数据导入导出和备份方案。
 
 下面对三种方法的使用方式进行详细说明：
 
+### 数据库初始化@init-db
+
+> HBuilderX 3.97起支持
+
+旧规范中的db_init.json废弃，但是仍保留db_init.json上的初始化菜单，对db_init.json文件执行初始化操作时，其中的初始化数据、索引、schema会被拆分成多个文件。
+
+::: warning 注意
+此方式导入导出会消耗数据库读写次数，不适用于大数据量导入导出，仅适用于项目初始化。
+:::
+
+HBuilderX 3.97及以上版本，uniCloud内database目录支持直接右键进行数据库初始化。database目录下支持以下几种文件类型
+
+- 表名.init_data.json：数据表初始化数据
+- 表名.index.json：表的索引配置，内容示例见下方[初始化索引配置示例](#init-db-index-demo)
+- 表名.schema.json：表结构，参考：[DB Schema表结构](schema.md)
+- 表名.schema.ext.json：DB Schema扩展js，参考：[DB Schema扩展js](jql-schema-ext.md)
+- validateFunction/xxx.js：扩展校验函数，参考：[validateFunction扩展校验函数](schema.md#validatefunction)
+- package.json：主要用于配置schema扩展可以使用的公共模块，在database目录右键可以配置这些依赖
+
+在执行数据库初始化操作时，上述文件都会被上传到云端。
+
+#### 初始化数据注意事项
+
+web控制台导出时默认不包括`_id`字段，在导入时，数据库插入新记录时会自动补`_id`字段。如果需要指定`_id`，需要手工补足数据。
+
+在db_init.json内可以使用以下形式定义Date类型的数据：
+
+```js
+{
+  "dateObj": { // dateObj字段就是日期类型的数据
+    "$date": "2020-12-12T00:00:00.000Z" // ISO标准日期字符串
+  }
+}
+```
+
+#### 初始化索引配置示例@init-db-index-demo
+
+注意下面的示例仅为演示，实际配置时不要带注释
+
+```json
+// 表名.index.json
+[{ // 索引列表
+  "IndexName": "index_a", // 索引名称
+  "MgoKeySchema": { // 索引规则
+    "MgoIndexKeys": [{
+      "Name": "index", // 索引字段
+      "Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+    }],
+    "MgoIsUnique": false, // 索引是否唯一
+    "MgoIsSparse": false // 是否为稀疏索引，请参考 https://uniapp.dcloud.net.cn/uniCloud/db-index.md?id=sparse
+  }
+}]
+```
+
 ### `db_init.json`初始化数据库@db-init
+
+> HBuilderX 3.97及之后版本需要拆分为上面一种方式对应的文件，可以在项目管理器选中db_init.json右键初始化数据库时自动拆分。
 
 ::: warning 注意
 此方式导入导出会消耗数据库读写次数，不适用于大数据量导入导出，仅适用于项目初始化。

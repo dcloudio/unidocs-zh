@@ -1,3 +1,43 @@
+#### 3.97.2023110504-alpha
+* 【uni-app】
+* 修复 vue3 项目 vite.config.js 配置 target 未作用到 renderjs 的Bug [详情](https://ask.dcloud.net.cn/question/180135)
+* 修复 使用 uts 开发的 ext-api，升级更新 wgt 后，调用可能报错的Bug [详情](https://ask.dcloud.net.cn/question/180309)
+* 【uni-app x插件】
+* 新增 form 组件 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/form.html)
+* 新增 uni.addInterceptor 拦截器，可拦截部分API [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/interceptor.html)
+* 新增 uni.setNavigationBarTitle [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/set-navigation-bar-title.html)
+* 新增 uni.getAppBaseInfo 获取获取包名、签名信息 [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/get-app-base-info.html)
+* 新增 scroll-view 组件支持 nested-scroll-child，可将嵌套滚动的父滚动视图滚动余量传递给子视图 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/scroll-view.html)
+* 新增 web-view 组件支持 download 事件，以及 loading、loaded 事件回调参数支持 url 属性 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/web-view.html)
+* 新增 image、video 组件 src 支持非 static 目录的静态资源
+* 新增 uvue 文件支持引入 ts 后缀的文件，等同于 uts 后缀
+* 新增 App-Android平台 真机运行标准基座内置所有常用权限
+* 修复 动态创建的根节点 class 样式丢失的Bug
+* 修复 v-model 绑定的表达式包裹 () 运行失败的Bug
+* 修复 在自定义组件中使用 class 定制另一个自定义组件根节点样式不生效的Bug
+* 修复 data 中定义的 UTSJSONObject 修改后，不触发渲染的Bug
+* 修复 uvue 页面文件名与 easycom 组件同名时渲染不正确Bug
+* 修复 text 组件固定宽高时，设置 padding-left 和 padding-right 可能导致文本不居中的Bug
+* 修复 text 组件设置 space 属性时，换行符 \n 有时无法正常显示的Bug
+* 修复 swiper-item 组件 overflow 属性值为 hidden 时子元素未被裁剪的Bug
+* 修复 uni.loadFontFace 多次请求同一网络字体时可能触发错误回调的Bug
+* 修复 Element 的 style 调用 setProperty 更新 transition-duration 属性值不支持单位为s(秒)的Bug
+* 修复 uni.toast、uni.showModal等交互反馈弹窗在onLoad等特定场景可能引起应用崩溃的Bug
+* 修复 App-Android平台 uni.getLocation 使用系统定位获取位置信息慢的Bug
+* 【uts插件】
+* 修复 位移赋值类操作符，当右侧为复杂表达式，计算结果不正确的Bug
+* 修复 相同interface、class定义了不同属性，方法调用失败的Bug
+* 修复 App-Android平台 string 的 indexOf 方法参数类型不正确的Bug
+* 新增 App-Android平台 uni-app x项目开发的uts原生组件定义的对外方法支持返回值
+* 新增 App-iOS平台 真机运行适配支持 XCode15
+* 新增 uts插件支持监听应用的原生生命周期回调函数 [详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#hooksclass)
+* 新增 uts组件插件支持 NVUpdateStyles 生命周期监听组件的样式更新 [详情](https://uniapp.dcloud.net.cn/plugin/uts-component.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
+* 调整 App-Android平台 uts组件插件内置对象 $androidContext 可为空 [详情](https://uniapp.dcloud.net.cn/plugin/uts-component.html#%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%87%BD%E6%95%B0)
+* 修复 uni-app 项目 vue2 下开发uts插件报错可能未指向源码的Bug
+* 【uniCloud】
+* 【重要】新增支持支付宝小程序云，价格更便宜，限制更少，功能更强，支持域名备案
+* 调整 `db_init.json` 按collection拆分，每个collection由schema.json、index.json、init_data.json三个文件描述
+
 #### 3.94.2023102311-alpha
 * 【uni-app x插件】
 * 修复 多根节点时，uni.getElementById 获取失败的Bug

@@ -267,8 +267,7 @@ Example: After you rename the folder from docs/ to documents/, users will genera
 ### 缓存配置@cache
 ### Cache configuration @cache
 
-> 仅腾讯云支持
-> Only supported by Tencent Cloud
+> 仅腾讯云、支付宝小程序云支持
 
 - 文件类型：根据填入的文件后缀进行缓存过期时间设置，格式为.jpg形式，不同后缀之间用;间隔。
 - File type: Set the cache expiration time according to the filled-in file suffix, the format is .jpg, and use ; between different suffixes.
@@ -305,8 +304,7 @@ Tencent Cloud needs to fill in the link to be refreshed, and refresh the filled 
 ### 防盗链配置@referer
 ### Anti-leech configuration @referer
 
-> 仅腾讯云支持
-> Only supported by Tencent Cloud
+> 仅腾讯云、支付宝小程序云支持
 
 **referer 黑名单：**
 **referer blacklist:**
@@ -341,8 +339,7 @@ Anti-leeching supports wildcard matching, that is, if the list is *.qq.com, www.
 ### IP黑白名单配置@ip-filter
 ### IP black and white list configuration @ip-filter
 
-> 仅腾讯云支持
-> Only supported by Tencent Cloud
+> 仅腾讯云、支付宝小程序云支持
 
 **IP 黑名单**
 **IP Blacklist**

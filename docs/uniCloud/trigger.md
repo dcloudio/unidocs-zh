@@ -8,8 +8,7 @@ If a cloud function needs to be executed periodically/periodically, that is, a t
 在uniCloud web控制台点击需要添加触发器的云函数详情，创建云函数触发器，格式如下：
 In the uniCloud web console, click the details of the cloud function that needs to add a trigger to create a cloud function trigger. The format is as follows:
 
-**腾讯云**
-**Tencent Cloud**
+**腾讯云&支付宝小程序云**
 
 ```js
 // 参数是触发器数组，目前仅支持一个触发器，即数组只能填写一个，不可添加多个
@@ -38,8 +37,7 @@ In the uniCloud web console, click the details of the cloud function that needs 
 ["cron:0 0 * * * *"]
 ```
 
-**在package.json内配置定时触发时统一了腾讯阿里的写法，请参考：[云函数package.json](cf-functions.md#packagejson)**
-**When configuring the timing trigger in package.json, the writing method of Tencent Ali is unified, please refer to: [Cloud Functions package.json](cf-functions.md#packagejson)**
+**在package.json内配置定时触发时统一了云厂商的写法，请参考：[云函数package.json](cf-functions.md#packagejson)**
 
 ::: warning 注意
 - 阿里云正式版最低触发间隔为1分钟，腾讯云最低触发间隔为1秒
@@ -76,9 +74,7 @@ Cron expressions have seven **required** fields, separated by spaces. Among them
 |第五位| 月 | 1 - 12的整数 | , - * / |
 |Fifth digit| month | integer from 1 to 12 | , - * / |
 |第六位| 星期 | 0 - 6的整数，其中0指星期日，1指星期一，以此类推 | , - * / |
-|Sixth digit| Week | An integer of 0 - 6, where 0 means Sunday, 1 means Monday, and so on | , - * / |
-|第七位| 年 | 1970 - 2099的整数（阿里云不支持第七位） | , - * / |
-|7th digit| Year | Integer from 1970 to 2099 (Alibaba Cloud does not support 7th digit) | , - * / |
+|第七位| 年 | 1970 - 2099的整数（阿里云和支付宝小程序云不支持第七位） | , - * / |
 
 ### 通配符@cron-wildcard
 

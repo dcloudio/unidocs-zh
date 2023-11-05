@@ -2,7 +2,7 @@
 ## open @open
 
 > 2021年11月18日，已支持腾讯云和阿里云
-> On November 18, 2021, Tencent Cloud and Alibaba Cloud have been supported
+> 2023年10月24日，已支持支付宝小程序云
 
 目前可以在uniCloud web控制台购买redis服务，**所购买的实例由云厂商提供，并非由DCloud提供，DCloud只提供购买入口**
 At present, you can purchase redis services in the uniCloud web console. **The purchased instance is provided by the cloud manufacturer, not by DCloud. DCloud only provides the purchase entry**
@@ -65,8 +65,20 @@ At present, you can purchase redis services in the uniCloud web console. **The p
 |32GB内存版 |1		|10,000							|10,000			|32						|80,000		|
 |64GB内存版 |1		|10,000							|10,000			|64						|80,000		|
 
+### 支付宝小程序云
+
+|规格				|CPU核数|每秒新建连接数上限	|连接数上限	|带宽（MB/s）	|QPS参考值|
+|--					|--			|--									|--					|--						|--				|
+|1GB集群版-单副本|1			|6,000							|6,000			|10						|50,000		|
+|4GB集群版-单副本|1			|6,000							|6,000			|10						|100,000		|
+|1GB集群版-双副本|2			|6,000							|6,000			|10						|50,000		|
+|4GB集群版-双副本|2			|6,000							|6,000			|10						|100,000		|
+
 ## 费用说明@fee
 ## Fee description @fee
+
+- 阿里云及腾讯云为包年包月套餐，需付费开通，支持续费、变配
+- 支付宝小程序云为按量计费，开通不收费，但是需要账号充值保证金及支付宝按量余额，费用在第二天出账并从余额扣除。不支持变配。
 
 ### 续费@renew
 ### Renewal @renew

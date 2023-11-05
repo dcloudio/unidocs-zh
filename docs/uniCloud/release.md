@@ -1,3 +1,7 @@
+#### 4--
+* 【重要】新增支持支付宝小程序云，价格更便宜，限制更少，功能更强，支持域名备案
+* 调整 `db_init.json` 按collection拆分，每个collection由schema.json、index.json、init_data.json三个文件描述
+
 #### 2023-10-19
 * 优化 阿里云 callFunction、url化方式调用云函数最大超时时间由60秒调整为120秒
 * 新增 uni-app x项目 支持uniCloud调试

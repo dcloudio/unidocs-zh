@@ -17,8 +17,7 @@ The app upgrade center uni-upgrade-center provides version update services for a
 本产品具有如下特征：
 This product has the following features:
 
-- 开源、免费。由于uniCloud阿里云版目前免费，包括服务器和cdn均免费。
-- Open source and free. Since uniCloud Alibaba Cloud Edition is currently free, including the server and CDN are free.
+- 开源、免费。uniCloud阿里云版和支付宝云版都有免费空间。
 
 - 云端基于 [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/) 实现。后台管理是 [uni-admin](https://uniapp.dcloud.net.cn/uniCloud/admin.html) 框架的插件。
 - Cloud implementation is based on [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/). Background management is a plugin of the [uni-admin](https://uniapp.dcloud.net.cn/uniCloud/admin.html) framework.

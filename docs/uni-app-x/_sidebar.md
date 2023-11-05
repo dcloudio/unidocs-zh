@@ -201,6 +201,9 @@
   * [DOMRect](dom/domrect.md)
   * [CSSStyleDeclaration](dom/cssstyledeclaration.md)
   * [DrawableContext](dom/drawablecontext.md)
+* 运行和调试
+  * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
+  * [Android审查元素](debug/android-inspector.md)
 * [性能优化](performance.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
 * [自动化测试](https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html)

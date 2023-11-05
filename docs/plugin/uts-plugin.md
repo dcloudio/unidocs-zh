@@ -633,7 +633,7 @@ export default function getBatteryLevel():number {
 	
 	
 > 特别注意：
-> 此功能在 HBuilderX 3.96+ 版本支持，HBuilderX 3.96 之前的版本不支持。
+> 此功能在 HBuilderX 3.97+ 版本支持，HBuilderX 3.97 之前的版本不支持。
 
 #### iOS 平台
 

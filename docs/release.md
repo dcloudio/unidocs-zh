@@ -1,3 +1,9 @@
+#### 3.95.2023102806
+* 【uni-app x插件】
+* 新增 ext api `uni.installApk` 安装apk [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/install-apk.html)
+* App-Android平台 新增 真机运行标准基座支持安装apk权限
+* App-Android平台 修复 使用云对象提交云端打包后可能运行报错的Bug [详情](https://ask.dcloud.net.cn/question/180404)
+
 #### 3.94.2023102613
 * 【uni-app】
 * 新增 条件编译 提供 uniVersion 用于区分编译器版本。可用于插件适配不同版本的uni-app [详情](https://uniapp.dcloud.net.cn/tutorial/platform.html#uniVersion)

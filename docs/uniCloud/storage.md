@@ -28,7 +28,7 @@ uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望
 
 ### 目录支持@storage-dir
 
-腾讯云支持以上传时指定的cloudPath作为文件路径进行文件存储。
+支付宝小程序云和腾讯云支持以上传时指定的cloudPath作为文件路径进行文件存储。
 
 阿里云在`HBuilderX 3.8.5`及之后版本支持以上传时指定的cloudPath作为文件路径进行文件存储，需要在上传时指定参数`cloudPathAsRealPath: true`来启用目录支持。为兼容旧版阿里云表现`cloudPathAsRealPath`默认为`false`。对于客户端和本地云函数此调整在`HBuilderX 3.8.5`及之后的版本生效，对于云端云函数此调整自2023年6月17日生效。
 
@@ -47,7 +47,7 @@ uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望
 
 腾讯云支持配置云存储权限，需搭配腾讯云自定义登录使用，详情：[自定义登录](uniCloud/authentication.md)
 
-阿里云不支持控制前端访问云储存的权限
+支付宝小程序云与阿里云不支持控制前端访问云储存的权限
 
 云存储客户端api内部会使用`uni.request`、`uni.uploadFile`来发送请求，如果有这两个接口写拦截器务必准确区分要拦截的内容
 
@@ -57,7 +57,7 @@ uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望
 
 客户端上传文件到云函数、云函数再上传文件到云存储，这样的过程会导致文件流量带宽耗费较大。所以一般上传文件都是客户端直传。
 
-**阿里云和腾讯云的单文件大小限制为5GB**
+**支付宝小程序云、阿里云、腾讯云的单文件大小限制为5GB**
 
 **支付宝小程序开发工具上传文件到腾讯云时可能会返回失败，请以真机为准**
 
@@ -66,19 +66,19 @@ uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望
 #### 请求参数
 **Object object**
 
-|参数名							|类型			|必填	|默认值	|说明																																																																							|平台差异说明	|
-|:-:								|:-:			|:-:	|:-:		|:-:																																																																							|:-:					|
-|filePath						|String		|是		|-			|要上传的文件对象																																																																	|-						|
-|cloudPath					|String		|是		|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径|-						|
-|cloudPathAsRealPath|Boolean	|否		|false	|是否以`cloudPath`作为云端文件绝对路径																																																						|仅阿里云支持	|
-|fileType						|String		|-		|-			|文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio																																									|-						|
-|onUploadProgress		|Function	|否		|-			|上传进度回调																																																																			|-						|
+|参数名							|类型			|必填	|默认值	|                   说明																																																																							                    |平台差异说明	|
+|:-:								|:-:			|:-:	|:-:		|:--------------------------------------------------------------------------------------------------------------:|:-:					|
+|filePath						|String		|是		|-			|                   要上传的文件对象																																																																	                    |-						|
+|cloudPath					|String		|是		|-			| 使用支付宝小程序云或腾讯云时，表示文件的绝对路径，包含文件名。<br />使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径 |-						|
+|cloudPathAsRealPath|Boolean	|否		|false	|                 是否以`cloudPath`作为云端文件绝对路径																																																						                 |仅阿里云支持	|
+|fileType						|String		|-		|-			|                文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio																																									                |-						|
+|onUploadProgress		|Function	|否		|-			|                   上传进度回调																																																																			                    |-						|
 
 **注意**
 
 - 使用阿里云时，`cloudPath`为云端文件名，请勿使用非法字符
-- 腾讯云`cloudPath` 为文件的绝对路径，包含文件名 foo/bar.jpg、foo/bar/baz.jpg 等，不能包含除[0-9 , a-z , A-Z]、/、!、-、\_、.、、\*和中文以外的字符，使用 / 字符来实现类似传统文件系统的层级结构。
-- 腾讯云`cloudPath`为文件标识，相同的`cloudPath`会覆盖，如果没有权限覆盖则会上传失败。阿里云以自动生成的ID为文件标识，不会存在覆盖问题
+- 支付宝小程序云与腾讯云`cloudPath` 为文件的绝对路径，包含文件名 foo/bar.jpg、foo/bar/baz.jpg 等，不能包含除[0-9 , a-z , A-Z]、/、!、-、\_、.、、\*和中文以外的字符，使用 / 字符来实现类似传统文件系统的层级结构。
+- 支付宝小程序云与腾讯云`cloudPath`为文件标识，相同的`cloudPath`会覆盖，如果没有权限覆盖则会上传失败。阿里云以自动生成的ID为文件标识，不会存在覆盖问题
 - 阿里云目前由于安全原因暂时禁止云存储内上传html文件
 - 上传文件超时时间可以在项目manifest.json内进行配置
 
@@ -160,7 +160,7 @@ uni.chooseImage({
 
 **Tips**
 
-- 阿里云返回的fileID为链接形式可以直接使用，腾讯云返回的为cloud://形式，如需展示需要调用getTempFileURL获取链接
+- 阿里云返回的fileID为链接形式可以直接使用，支付宝小程序云与腾讯云返回的为cloud://形式，如需展示需要调用getTempFileURL获取链接
 - uniCloud.uploadFile 只有上传，没有文件选择。uni ui的封装了[FilePicker组件](https://ext.dcloud.net.cn/plugin?id=4079)，从选择到上传一条龙。
 
 ### getTempFileURL(Object object)
@@ -173,7 +173,7 @@ uni.chooseImage({
 |----							|----		|
 |HBuilderX 3.1.0+	|√			|
 
-腾讯云获取文件临时下载链接。
+支付宝小程序云与腾讯云获取文件临时下载链接。
 
 自HBuilderX 3.1.0起阿里云也支持此接口，但仅为抹平和腾讯云的接口差异。因为阿里云的云存储不支持权限控制。
 
@@ -548,15 +548,15 @@ HBuilderX 3.1.0之前版本如使用阿里云，请在客户端通过`uniCloud.u
 
 **uploadFileOptions参数说明**
 
-| 字段							| 类型	| 必填|默认值	| 说明																																																																						|平台差异说明	|
-| ---								| ---		| ---	|---		| ---																																																																							|---					|
-| cloudPath					| string| 是	|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径|							|
-| fileContent				| -			| 是	|-			|文件内容，请看下方说明																																																														|							|
-|cloudPathAsRealPath|Boolean|否		|false	|是否以`cloudPath`作为云端文件绝对路径																																																						|仅阿里云支持	|
+| 字段							| 类型	| 必填|默认值	| 说明																																																																						                                 |平台差异说明	|
+| ---								| ---		| ---	|---		|----------------------------------------------------------------------------------------------------------|---					|
+| cloudPath					| string| 是	|-			| 使用腾讯云或支付宝小程序云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径 |							|
+| fileContent				| -			| 是	|-			| 文件内容，请看下方说明																																																														                                |							|
+|cloudPathAsRealPath|Boolean|否		|false	| 是否以`cloudPath`作为云端文件绝对路径																																																						                           |仅阿里云支持	|
 
 **说明**
 
-- 腾讯云支持在fileContent内传[可读流](https://nodejs.org/api/stream.html#stream_class_stream_readable) 或buffer
+- 支付宝小程序云与腾讯云支持在fileContent内传[可读流](https://nodejs.org/api/stream.html#stream_class_stream_readable) 或buffer
 - 阿里云支持在fileContent内传文件绝对路径或buffer
 
 #### 响应参数
@@ -584,9 +584,9 @@ let result = await uniCloud.uploadFile({
 
 **平台兼容性**
 
-|阿里云	|腾讯云	|
-|----		|----		|
-|×			|√			|
+| 阿里云	 | 腾讯云	 | 支付宝小程序云 |
+|------|------|---------|
+| ×			 | √			 | √       |
 
 #### 请求参数
 
@@ -673,9 +673,9 @@ let result = await uniCloud.deleteFile({
 
 **平台兼容性**
 
-|阿里云	|腾讯云	|
-|----		|----		|
-|×			|√			|
+| 阿里云	 | 腾讯云	 | 支付宝小程序云 |
+|------|------|---------|
+| ×			 | √			 | √       |
 
 #### 请求参数
 

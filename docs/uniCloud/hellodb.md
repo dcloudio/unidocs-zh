@@ -246,8 +246,8 @@ exports.main = async (event, context) => {
 
 **注意**
 
-- 云函数环境（仅腾讯云支持）仅能通过init返回同账号下其他的腾讯云服务空间的数据库实例。
-- 客户端环境（腾讯云阿里云均支持）可以通过init返回本账号下任意云厂商服务空间的数据库实例
+- 云函数环境（仅支付宝小程序云与腾讯云支持）仅能通过init返回同账号下其他的腾讯云服务空间的数据库实例。
+- 客户端环境（支付宝小程序云腾讯云阿里云均支持）可以通过init返回本账号下任意云厂商服务空间的数据库实例
 
 **示例**
 
@@ -262,12 +262,13 @@ db.collection('uni-id-users').get()
 
 **参数说明**
 
-|参数名			|类型	|必填	|默认值						|说明																					|
-|:-:			|:-:	|:-:	|:-:						|:-:																					|
-|provider		|String	|是		|-							|aliyun、tencent																		|
-|spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
-|clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
-|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云支持。阿里云正式版需将此值设为`https://api.next.bspapp.com`															|
+|    参数名			     |   类型	   |必填	|         默认值						         |                        说明																					                         |
+|:-------------:|:-------:|:-:	|:-------------------------:|:----------------------------------------------------------------------:|
+|  provider		   | String	 |是		|         -							          |                    aliyun、tencent																		                    |
+|   spaceId		   | String	 |是		|         -							          |                服务空间ID，**注意是服务空间ID，不是服务空间名称**										                 |
+| clientSecret	 | String	 |是		|         -							          |   仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	    |
+|  endpoint		   | String	 |否		| `https://api.bspapp.com`	 | 服务空间地址，仅阿里云支持。阿里云正式版需将此值设为`https://api.next.bspapp.com`															 |
+|   timeout		   | Number	 |否		|            5000	             |    仅支付宝小程序云支持，请求超时时间（单位：毫秒），默认为5秒。                 															     |
  
 ## 创建集合/表的API@createCollection
 
@@ -289,10 +290,19 @@ const db = uniCloud.database();
 db.createCollection("table1")
 ```
 
+- 支付宝小程序云
+
+支付宝小程序云提供了专门的创建数据表的API，此API仅支持云函数内运行，不支持clientDB调用。
+
+```js
+const db = uniCloud.database();
+db.createCollection("table1")
+```
+
 **注意**
 
-- 如果数据表已存在，腾讯云调用createCollection方法会报错
-- 腾讯云调用collection的add方法不会自动创建数据表，不存在的数据表会报错
+- 如果数据表已存在，支付宝小程序云与腾讯云调用createCollection方法会报错
+- 支付宝小程序云与腾讯云调用collection的add方法不会自动创建数据表，不存在的数据表会报错
 - 阿里云没有createCollection方法
 - **使用代码方式创建的表没有索引、schema，性能和功能都受影响，不建议使用这种方式**
 
@@ -409,6 +419,8 @@ new db.serverDate({
 
 ### 地理位置类型@geo-data-type
 
+> 支付宝小程序云暂不支持
+
 #### Point@geo-point
 
 用于表示地理位置点，用经纬度唯一标记一个点，这是一个特殊的数据存储类型。
@@ -507,9 +519,9 @@ new db.Geo.MultiPolygon([
 
 不同于传统开发，连接数据库有单次操作时长限制，目前单次操作时间限制如下。超出此时间会报超时错误。一般情况下在设置了合适的索引时不会遇到超时错误，如何优化查询速度请参考：[数据库性能优化](uniCloud/db-performance.md)
 
-|腾讯云	|阿里云	|
-|--	|--	|
-|5秒	|5秒	|
+|腾讯云	|阿里云	| 支付宝小程序云    |
+|--	|--	|------------|
+|5秒	|5秒	| 默认5秒；最大5分钟 |
 
 如果是大数据批处理，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](uniCloud/cf-functions.md?id=recurrence)
 

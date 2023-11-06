@@ -1237,7 +1237,7 @@ exports.main = async function() {
 ### node版本
 云函数运行在 node 环境中。可以使用 node api `process.version` 获取 node 版本。
 
-- uniCloud 支付宝小程序云默认是 nodejs18, 也可以在 package.json 中选择 nodejs16
+- uniCloud 支付宝小程序云默认是 node18, 也可以在 package.json 中选择 node16
 - uniCloud 阿里云默认是 node8.17.0，也可以在 package.json 中选择 node12
 - uniCloud 腾讯云默认是 node8.9.4，也可以在 package.json 中选择 node12
 - HBuilderX 本地运行环境使用的是 HBuilderX 自带的 node 版本，目前为 node16。在 package.json 选择 node版本 只云端生效，且只在第一次上传云函数时生效。
@@ -1476,11 +1476,11 @@ package.json是一个标准json文件，不可带注释。下面是一个package
   }],
   // 云函数Url化path部分
   "path": "",
-  "runtime": "", // nodejs版本，可选Nodejs8、Nodejs12，默认：Nodejs8
+  "runtime": "", // nodejs版本，可选Nodejs8、Nodejs12、Nodejs16、Nodejs18，默认：Nodejs8
   "keepRunningAfterReturn": true // 是否在云函数return之后继续执行，仅腾讯云nodejs12生效，详情见下方说明
 }
 ```
-
+**Nodejs16、Nodejs18 仅支付宝小程序云支持**
 **使用腾讯云Nodejs12版本时，务必仔细阅读此文档：[keepRunningAfterReturn](#keep-running)**
 
 #### 定时任务triggers@triggers

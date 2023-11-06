@@ -263,3 +263,123 @@
 <!-- UTSJSON.UTSAndroid.isUniAppX.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.isUniAppX.compatibility -->
+
+### rpx2px(rpx:number) : number;
+
+<!-- UTSJSON.UTSAndroid.rpx2px.description -->
+
+<!-- UTSJSON.UTSAndroid.rpx2px.param -->
+
+<!-- UTSJSON.UTSAndroid.rpx2px.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.rpx2px.compatibility -->
+
+
+### rpx2px(rpx:number) : number;
+
+<!-- UTSJSON.UTSAndroid.rpx2px.description -->
+
+<!-- UTSJSON.UTSAndroid.rpx2px.param -->
+
+<!-- UTSJSON.UTSAndroid.rpx2px.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.rpx2px.compatibility -->
+
+### devicePX2px(devicePX:number) : number;
+
+<!-- UTSJSON.UTSAndroid.devicePX2px.description -->
+
+<!-- UTSJSON.UTSAndroid.devicePX2px.param -->
+
+<!-- UTSJSON.UTSAndroid.devicePX2px.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.devicePX2px.compatibility -->
+
+
+### isPrivacyAgree() : boolean;
+
+<!-- UTSJSON.UTSAndroid.isPrivacyAgree.description -->
+
+<!-- UTSJSON.UTSAndroid.isPrivacyAgree.param -->
+
+<!-- UTSJSON.UTSAndroid.isPrivacyAgree.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.isPrivacyAgree.compatibility -->
+
+
+### setPrivacyAgree(state:boolean):void;
+
+<!-- UTSJSON.UTSAndroid.setPrivacyAgree.description -->
+
+<!-- UTSJSON.UTSAndroid.setPrivacyAgree.param -->
+
+<!-- UTSJSON.UTSAndroid.setPrivacyAgree.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.setPrivacyAgree.compatibility -->
+
+### resetPrivacyAgree():void;
+
+<!-- UTSJSON.UTSAndroid.resetPrivacyAgree.description -->
+
+<!-- UTSJSON.UTSAndroid.resetPrivacyAgree.param -->
+
+<!-- UTSJSON.UTSAndroid.resetPrivacyAgree.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.resetPrivacyAgree.compatibility -->
+
+### requestSystemPermission
+
+<!-- UTSJSON.UTSAndroid.requestSystemPermission.description -->
+
+<!-- UTSJSON.UTSAndroid.requestSystemPermission.param -->
+
+<!-- UTSJSON.UTSAndroid.requestSystemPermission.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.requestSystemPermission.compatibility -->
+
+
+### checkSystemPermissionGranted
+
+<!-- UTSJSON.UTSAndroid.checkSystemPermissionGranted.description -->
+
+<!-- UTSJSON.UTSAndroid.checkSystemPermissionGranted.param -->
+
+<!-- UTSJSON.UTSAndroid.checkSystemPermissionGranted.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.checkSystemPermissionGranted.compatibility -->
+
+
+
+### gotoSystemPermissionActivity
+
+<!-- UTSJSON.UTSAndroid.gotoSystemPermissionActivity.description -->
+
+<!-- UTSJSON.UTSAndroid.gotoSystemPermissionActivity.param -->
+
+<!-- UTSJSON.UTSAndroid.gotoSystemPermissionActivity.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.gotoSystemPermissionActivity.compatibility -->
+
+
+### getSystemPermissionDenied
+
+<!-- UTSJSON.UTSAndroid.getSystemPermissionDenied.description -->
+
+<!-- UTSJSON.UTSAndroid.getSystemPermissionDenied.param -->
+
+<!-- UTSJSON.UTSAndroid.getSystemPermissionDenied.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getSystemPermissionDenied.compatibility -->
+
+
+### convert2AbsFullPath
+
+<!-- UTSJSON.UTSAndroid.convert2AbsFullPath.description -->
+
+<!-- UTSJSON.UTSAndroid.convert2AbsFullPath.param -->
+
+<!-- UTSJSON.UTSAndroid.convert2AbsFullPath.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.convert2AbsFullPath.compatibility -->
+
+

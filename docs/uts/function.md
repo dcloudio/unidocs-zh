@@ -94,7 +94,7 @@ function add(x: string, y: string): void {
 
 在 HBuilderX 3.93 以下的版本或者 iOS 平台，异步函数返回的不是 [Promise](./buildin-object-api/promise.md) 对象，请分别参考：[安卓 异步函数](../plugin/uts-for-android.md#_6-11-synchronized-lock-等线程同步概念-在uts里怎么写)、[iOS 异步函数](../plugin/uts-for-ios.md#_5-1-13-异步方法)。
 
-异步函数在底层使用使用协程实现，异步函数内与异步函数外同时操作同一个对象时，由于其能并发执行，其操作顺序可能与预期不一致。
+异步函数在底层使用使用协程实现，异步函数内与异步函数外同时操作同一个对象时，由于其能并发执行，其操作顺序可能与预期不一致会产生竞态条件与线程安全性问题。
 
 ```ts
 async function foo(): Promise<void> {

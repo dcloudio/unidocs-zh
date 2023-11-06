@@ -29,6 +29,7 @@
   * [全局](buildin-object-api/global.md)
 * 平台对象和 API
   * [UTSAndroid](utsandroid.md)
+  * [UTSAndroidHookProxy](utsandroidhookproxy.md)
   * [UTSiOS](utsios.md)
   * [UTSiOSHookProxy](utsioshookproxy.md)
 * [关键词](keywords.md)

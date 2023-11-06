@@ -52,3 +52,69 @@ background-image: url(../../static/logo.png);
 - 不支持本地图片的平台，小于 40kb，一定会转 base64。（共四个平台 mp-weixin, mp-qq, mp-toutiao, app v2）
 - h5 平台，小于 4kb 会转 base64，超出 4kb 时不转。
 - 其余平台不会转 base64
+
+### js/uts 引入静态资源
+> js/uts中引入静态资源，多用于静态资源存放在非 `static` 目录中的情况，可以使用 import 引入相对路径或绝对路径
+
+例：有如下目录结构 ，在static 和页面文件夹下分别有静态资源
+
+```base
+
+├── pages                            
+│   └── index
+│       │── index.uvue  
+│       └── icon.png                  
+└── static                             
+    └── logo.png                  
+
+```
+
+正常情况下，如 image 的 src 中直接引入 static 中 logo.png ，可以使用相对路径或绝对路径
+
+``` html
+<!-- /pages/index/index.vue -->
+<template>
+	<view class="content">
+        <image src="../../static/logo.png" />
+        <image src="/static/logo.png" />
+        <image src="@static/logo.png" />
+	</view>
+</template>
+
+```
+
+而引入 index 下的 icons.png 不管是相对还是绝对路径，都无法显示，所以这时候需要在 js/uts 中 使用 import 来引入
+
+``` html
+<!-- /pages/index/index.vue -->
+<template>
+	<view class="content">
+        <image :src="src" />
+	</view>
+</template>
+
+<script>
+// 使用 import 引入静态资源，并在 data 中赋值引用
+import icon_src from './icon.png'
+export default { 
+  data() {
+    return { 
+      src: icon_src
+    }
+  },
+}
+</script>
+
+```
+
+### 静态资源引入注意事项
+
+通常项目中规定根目录下的 static 为静态资源文件夹（目前暂不支持修改），资源存放此处后，可在任意文件直接使用相对或者绝对路径引用,具体参考上述模板 `css/js/uts` 中引入静态资源的说明。
+
+而非 `static` 目录的静态资源，不支持直接引用，需要在 `js/uts` 中使用 `import` 来引入，确保路径正确。
+
+综上所述，我们总结一下静态资源引用的注意事项：
+
+- 在模板或者 `css` 文件使用 `static` 目录中的静态资源，无需特殊处理，可直接通过相对路径或者绝对路径直接引入。
+- 在 `js/uts` 文件使用静态资源，需要使用 `import` 来引入。
+- 不管在任何文件引入非 `static` 目中的静态资源，均需在 `js/uts` 文件使用 `import` 来引入。

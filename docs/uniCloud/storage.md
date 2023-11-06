@@ -600,7 +600,7 @@ This API is deprecated. Deleting cloud storage files is a high-risk operation, a
 - 阿里云不支持此API，前端运行此API会报权限错误
 - Alibaba Cloud does not support this API, and the front-end running this API will report a permission error
 - 腾讯云支持此API，如若使用，需搭配腾讯云提供的自定义登录和权限设置使用
-- Tencent Cloud supports this API, if you want to use it, you need to use it with the custom login and permission settings provided by Tencent Cloud
+- 支付宝小程序云不支持此API
 
 #### 请求参数
 #### request parameters

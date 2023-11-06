@@ -1620,7 +1620,7 @@ exports.main = async function() {
 云函数运行在 node 环境中。可以使用 node api `process.version` 获取 node 版本。
 Cloud functions run in the node environment. The node version can be obtained using the node api `process.version`.
 
-- uniCloud 支付宝小程序云默认是 nodejs18, 也可以在 package.json 中选择 nodejs16
+- uniCloud 支付宝小程序云默认是 node18, 也可以在 package.json 中选择 node16
 - uniCloud 阿里云默认是 node8.17.0，也可以在 package.json 中选择 node12
 - uniCloud Alibaba Cloud is node8.17.0 by default, you can also choose node12 in package.json
 - uniCloud 腾讯云默认是 node8.9.4，也可以在 package.json 中选择 node12
@@ -1918,11 +1918,11 @@ Among them, the cloudfunction-config field is the cloud function configuration, 
   }],
   // 云函数Url化path部分
   "path": "",
-  "runtime": "", // nodejs版本，可选Nodejs8、Nodejs12，默认：Nodejs8
+  "runtime": "", // nodejs版本，可选Nodejs8、Nodejs12、Nodejs16、Nodejs18，默认：Nodejs8
   "keepRunningAfterReturn": true // 是否在云函数return之后继续执行，仅腾讯云nodejs12生效，详情见下方说明
 }
 ```
-
+**Nodejs16、Nodejs18 仅支付宝小程序云支持**
 **使用腾讯云Nodejs12版本时，务必仔细阅读此文档：[keepRunningAfterReturn](#keep-running)**
 **When using Tencent Cloud Nodejs12 version, be sure to read this document carefully: [keepRunningAfterReturn](#keep-running)**
 

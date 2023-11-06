@@ -14,7 +14,8 @@
 
 form 组件的表单提交，微信小程序的实现策略，与浏览器W3C的策略略有差异。目前uni-app在app和web上的实现参考了微信小程序。具体是：
 
-- 多个表单子项如果 name 相同，仅保留最后一个表单子项。而浏览器标准form是会合并为数组。
+- uni-app表单提交的数据是一个对象`{"name": "value"}`。而浏览器标准form是数组，每项为 pair，pair[0] 对应name，pair[1] 对应value 。
+- 多个表单子项如果 name 相同，仅保留最后一个表单子项。而浏览器标准form整体是数组，不存在覆盖的情况。
 - 设置 disabled 属性的表单子项，仍然会提交。而浏览器标准form提交时会忽略disabled的表单子项。
 
 注意uni-app编译到web平台，也是按uni-app的策略，而不是浏览器的策略。uni-app 的 web平台使用 uni-app 自己的 form 组件，而不是浏览器的 form 标签。

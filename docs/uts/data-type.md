@@ -754,6 +754,13 @@ let kotlinList = utsArr.toKotlinList()
 // Array 转换 kotlin.Array
 let kotlinArray = utsArr.toTypedArray()
 
+// 部分java编写的api 要求 FloatArray / IntArray,可以通过下面的方法进行转换
+
+let a:Int[] = [1,2,3,4]
+let b = a.toKotlinList().toIntArray()
+console.log("b",b[2])
+
+
 ```
 
 #### iOS 平台专有数组类型

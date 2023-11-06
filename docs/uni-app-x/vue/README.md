@@ -5,7 +5,7 @@ uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合�
 
 ## 全局 API兼容性
 
-### 应用实例
+### 应用实例 @app-instance
 
 <!-- VUEJSON.application.compatibility -->
 ### 通用

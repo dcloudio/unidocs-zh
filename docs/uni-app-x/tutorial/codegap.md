@@ -79,6 +79,11 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 </style>
 ```
 
+## 全局属性
+
+`uni-app x` 中，`uni` 对象不支持动态绑定自定义属性，[app.config.globalProperties](uni-app-x/vue/README.md#app-instance) 暂时不支持。\
+如有`全局属性`的需求，可通过[全局变量与状态管理](uni-app-x/tutorial/store.md)实现。
+
 ## 函数 event 参数的类型 @function-event-argument-type
 
 上面的例子中，touchstart事件中必须对`e`指定类型，才能使用`e.touches[0].screenX`。下面再举一个例子，加深下记忆：

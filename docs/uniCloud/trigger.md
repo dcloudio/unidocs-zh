@@ -3,7 +3,7 @@
 如果云函数需要定时/定期执行，即定时触发，您可以使用云函数定时触发器。已配置定时触发器的云函数，会在相应时间点被自动触发，函数的返回结果不会返回给调用方。
 If a cloud function needs to be executed periodically/periodically, that is, a timed trigger, you can use a cloud function timed trigger. Cloud functions configured with timed triggers will be automatically triggered at the corresponding time point, and the return result of the function will not be returned to the caller.
 
-使用定时触发可以执行一些跑批任务，阿里云可以在使用定时触发时将云函数最高超时时间设置为600秒，腾讯云定时触发最大超时时间为900秒。
+使用定时触发可以执行一些跑批任务，支付宝小程序定时触发最大超时时间为3小时，阿里云可以在使用定时触发时将云函数最高超时时间设置为600秒，腾讯云定时触发最大超时时间为900秒。
 
 在uniCloud web控制台点击需要添加触发器的云函数详情，创建云函数触发器，格式如下：
 In the uniCloud web console, click the details of the cloud function that needs to add a trigger to create a cloud function trigger. The format is as follows:
@@ -40,9 +40,8 @@ In the uniCloud web console, click the details of the cloud function that needs 
 **在package.json内配置定时触发时统一了云厂商的写法，请参考：[云函数package.json](cf-functions.md#packagejson)**
 
 ::: warning 注意
-- 阿里云正式版最低触发间隔为1分钟，腾讯云最低触发间隔为1秒
-- 阿里云的cron表达式为6位，腾讯云为7位。相比腾讯云，阿里云缺少代表年份的第7位
-- Alibaba Cloud's cron expression is 6-bit, and Tencent Cloud's is 7-bit. Compared with Tencent Cloud, Alibaba Cloud lacks the 7th place representing the year
+- 阿里云正式版最低触发间隔为1分钟，支付宝小程序云与腾讯云最低触发间隔为1秒
+- 支付宝小程序云与阿里云的cron表达式为6位，腾讯云为7位。相比腾讯云，支付宝小程序云与阿里云缺少代表年份的第7位
 - 定时触发使用的是utc+8的时间
 - The timing trigger uses the time of utc+8
 - 定时执行的时间选在较为常见集中的时刻有极低概率出现执行失败的情况。建议避免整点（特别是0点），错开定时触发高峰期进行执行
@@ -150,6 +149,10 @@ Cloud functions receive specific parameters when they are called using timed tri
   "Type":"Timer" //触发器类型，目前只有Timer
 }
 ```
+
+**支付宝小程序云**
+
+暂无入参
 
 `2023年7月14日起`阿里云入参对齐腾讯云，保留上述`triggerName`和`triggerTime`（不再推荐使用这两个属性），增加`Time`、`TriggerName`、`Type`。
 

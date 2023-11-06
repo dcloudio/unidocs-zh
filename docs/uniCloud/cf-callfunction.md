@@ -155,6 +155,7 @@ Therefore, developers should pay attention not to include the uniIdToken attribu
 云函数上行的参数内容不能传太大。
 The parameter content of the cloud function upstream cannot be too large.
 
+- 支付宝小程序云接收参数大小不可超过6MB
 - 阿里云event大小不可超过1MB
 - Alibaba Cloud event size cannot exceed 1MB
 - 腾讯云event大小不可超过5MB
@@ -169,31 +170,19 @@ The parameter content of the cloud function upstream cannot be too large.
 context对象的属性清单如下：
 The list of properties of the context object is as follows:
 
-|属性名称					|类型	|说明																									|
-|property name |type |description |
-|--							|--		|--																										|
-|SPACEINFO					|object	|服务空间信息																							|
-|SPACEINFO |object |Service Space Information |
-|&nbsp;&#124;- spaceId		|string	|服务空间id																								|
-|&nbsp;&#124;- spaceId |string |Service space id |
-|&nbsp;&#124;- provider		|string	|服务空间供应商：aliyun&#124;tencent																	|
-|&nbsp;&#124;- provider | string |Service space provider: aliyun&#124;tencent |
-|&nbsp;&#124;- useOldSpaceId		|boolean	|当前获取的服务空间id是否为迁移前的服务空间id，新增于`HBuilderX 3.6.13`															|
-|&nbsp;&#124;- useOldSpaceId | boolean |Whether the currently obtained service space id is the service space id before migration, newly added in `HBuilderX 3.6.13` |
-|SOURCE						|string	|云函数调用来源 [详见](?id=context-source)																|
-|SOURCE |string |Cloud function call source [see details](?id=context-source) |
-|FUNCTION_NAME				|string	|获取云函数名称																							|
-|FUNCTION_NAME |string |Get cloud function name |
-|FUNCTION_TYPE				|string	|获取云函数类型，对于云函数来说，这里一定会返回`cloudfunction`，新增于HBuilderX 3.5.1。					|
-|FUNCTION_TYPE |string |Get the cloud function type. For cloud functions, `cloudfunction` will be returned here, which is newly added in HBuilderX 3.5.1. |
-|CLIENTIP					|string	|客户端IP。如果调用来源是其他服务器，会返回调用方的ip													|
-|CLIENTIP |string |Client IP. If the source of the call is another server, it will return the ip of the caller |
-|CLIENTUA					|string	|客户端userAgent。注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云函数，但是云函数会从http请求头里面获取ua而不是clientInfo里面的ua				|
-|CLIENTUA |string |Client userAgent. Note that in a non-local operating environment, the client getSystemInfoSync will also obtain the ua parameter and upload it to the cloud function, but the cloud function will obtain ua from the http request header instead of ua in clientInfo |
-|uniIdToken					|string	|客户端uni-id token字符串，新增于HBuilderX 3.5.1。														|
-|uniIdToken |string |Client uni-id token string, added in HBuilderX 3.5.1. |
-|requestId					|string	|当前请求id，新增于HBuilderX 3.5.5。														|
-|requestId |string |Current request id, added in HBuilderX 3.5.5. |
+|属性名称					|类型	| 说明																									                                                                          |
+|--							|--		|------------------------------------------------------------------------------------------------------|
+|SPACEINFO					|object	| 服务空间信息																							                                                                        |
+|&nbsp;&#124;- spaceId		|string	| 服务空间id																								                                                                       |
+|&nbsp;&#124;- provider		|string	| 服务空间供应商：alipay&#124;aliyun&#124;tencent																	                                                   |
+|&nbsp;&#124;- useOldSpaceId		|boolean	| 当前获取的服务空间id是否为迁移前的服务空间id，新增于`HBuilderX 3.6.13`															                                        |
+|SOURCE						|string	| 云函数调用来源 [详见](?id=context-source)																                                                     |
+|FUNCTION_NAME				|string	| 获取云函数名称																							                                                                       |
+|FUNCTION_TYPE				|string	| 获取云函数类型，对于云函数来说，这里一定会返回`cloudfunction`，新增于HBuilderX 3.5.1。					                                      |
+|CLIENTIP					|string	| 客户端IP。如果调用来源是其他服务器，会返回调用方的ip													                                                            |
+|CLIENTUA					|string	| 客户端userAgent。注意非本地运行环境下客户端getSystemInfoSync也会获取ua参数并上传给云函数，但是云函数会从http请求头里面获取ua而不是clientInfo里面的ua				 |
+|uniIdToken					|string	| 客户端uni-id token字符串，新增于HBuilderX 3.5.1。														                                                 |
+|requestId					|string	| 当前请求id，新增于HBuilderX 3.5.5。														                                                             |
 
 除了上述属性，如果是uni-app客户端通过callfunction访问云函数，那么context还会追加一批客户端信息。
 In addition to the above properties, if the uni-app client accesses the cloud function through callfunction, the context will also append a batch of client information.

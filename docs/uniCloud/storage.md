@@ -45,7 +45,7 @@ In the cloud function, get the temporary URL of the file through `uniCloud.getTe
 
 ### 目录支持@storage-dir
 
-腾讯云支持以上传时指定的cloudPath作为文件路径进行文件存储。
+支付宝小程序云和腾讯云支持以上传时指定的cloudPath作为文件路径进行文件存储。
 
 阿里云在`HBuilderX 3.8.5`及之后版本支持以上传时指定的cloudPath作为文件路径进行文件存储，需要在上传时指定参数`cloudPathAsRealPath: true`来启用目录支持。为兼容旧版阿里云表现`cloudPathAsRealPath`默认为`false`。对于客户端和本地云函数此调整在`HBuilderX 3.8.5`及之后的版本生效，对于云端云函数此调整自2023年6月17日生效。
 
@@ -67,8 +67,7 @@ Perform cloud storage operations on the front end of uni-app (not in cloud funct
 腾讯云支持配置云存储权限，需搭配腾讯云自定义登录使用，详情：[自定义登录](uniCloud/authentication.md)
 Tencent Cloud supports configuring cloud storage permissions, which needs to be used with Tencent Cloud custom login. Details: [custom login](uniCloud/authentication.md)
 
-阿里云不支持控制前端访问云储存的权限
-Alibaba Cloud does not support controlling permissions for front-end access to cloud storage
+支付宝小程序云与阿里云不支持控制前端访问云储存的权限
 
 云存储客户端api内部会使用`uni.request`、`uni.uploadFile`来发送请求，如果有这两个接口写拦截器务必准确区分要拦截的内容
 The cloud storage client API will use `uni.request` and `uni.uploadFile` to send requests internally. If there are these two interfaces, write interceptors to accurately distinguish the content to be intercepted
@@ -81,7 +80,7 @@ Upload files directly to cloud storage.
 客户端上传文件到云函数、云函数再上传文件到云存储，这样的过程会导致文件流量带宽耗费较大。所以一般上传文件都是客户端直传。
 The client uploads the file to the cloud function, and the cloud function uploads the file to the cloud storage. This process will result in a large bandwidth consumption of file traffic. Therefore, the uploaded files are generally uploaded directly from the client.
 
-**阿里云和腾讯云的单文件大小限制为5GB**
+**支付宝小程序云、阿里云、腾讯云的单文件大小限制为5GB**
 
 **支付宝小程序开发工具上传文件到腾讯云时可能会返回失败，请以真机为准**
 **Alipay applet development tool may return a failure when uploading files to Tencent Cloud, please refer to the real machine**
@@ -93,23 +92,20 @@ The client uploads the file to the cloud function, and the cloud function upload
 #### request parameters
 **Object object**
 
-|参数名							|类型			|必填	|默认值	|说明																																																																							|平台差异说明	|
-|:-:								|:-:			|:-:	|:-:		|:-:																																																																							|:-:					|
-|filePath						|String		|是		|-			|要上传的文件对象																																																																	|-						|
-|cloudPath					|String		|是		|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径|-						|
-|cloudPathAsRealPath|Boolean	|否		|false	|是否以`cloudPath`作为云端文件绝对路径																																																						|仅阿里云支持	|
-|fileType						|String		|-		|-			|文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio																																									|-						|
-|onUploadProgress		|Function	|否		|-			|上传进度回调																																																																			|-						|
+|参数名							|类型			|必填	|默认值	|                   说明																																																																							                    |平台差异说明	|
+|:-:								|:-:			|:-:	|:-:		|:--------------------------------------------------------------------------------------------------------------:|:-:					|
+|filePath						|String		|是		|-			|                   要上传的文件对象																																																																	                    |-						|
+|cloudPath					|String		|是		|-			| 使用支付宝小程序云或腾讯云时，表示文件的绝对路径，包含文件名。<br />使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径 |-						|
+|cloudPathAsRealPath|Boolean	|否		|false	|                 是否以`cloudPath`作为云端文件绝对路径																																																						                 |仅阿里云支持	|
+|fileType						|String		|-		|-			|                文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio																																									                |-						|
+|onUploadProgress		|Function	|否		|-			|                   上传进度回调																																																																			                    |-						|
 
 **注意**
 **Notice**
 
 - 使用阿里云时，`cloudPath`为云端文件名，请勿使用非法字符
-- When using Alibaba Cloud, `cloudPath` is the cloud file name, please do not use illegal characters
-- 腾讯云`cloudPath` 为文件的绝对路径，包含文件名 foo/bar.jpg、foo/bar/baz.jpg 等，不能包含除[0-9 , a-z , A-Z]、/、!、-、\_、.、、\*和中文以外的字符，使用 / 字符来实现类似传统文件系统的层级结构。
-- Tencent Cloud `cloudPath` is the absolute path of the file, including the file name foo/bar.jpg, foo/bar/baz.jpg, etc. It cannot contain anything except [0-9 , a-z , A-Z], /, !, -, \ _, ., , \* and characters other than Chinese, use the / character to implement a hierarchy similar to a traditional file system.
-- 腾讯云`cloudPath`为文件标识，相同的`cloudPath`会覆盖，如果没有权限覆盖则会上传失败。阿里云以自动生成的ID为文件标识，不会存在覆盖问题
-- Tencent Cloud `cloudPath` is the file identifier. The same `cloudPath` will be overwritten. If there is no permission to overwrite, the upload will fail. Alibaba Cloud uses the automatically generated ID as the file identifier, so there will be no overwriting problem
+- 支付宝小程序云与腾讯云`cloudPath` 为文件的绝对路径，包含文件名 foo/bar.jpg、foo/bar/baz.jpg 等，不能包含除[0-9 , a-z , A-Z]、/、!、-、\_、.、、\*和中文以外的字符，使用 / 字符来实现类似传统文件系统的层级结构。
+- 支付宝小程序云与腾讯云`cloudPath`为文件标识，相同的`cloudPath`会覆盖，如果没有权限覆盖则会上传失败。阿里云以自动生成的ID为文件标识，不会存在覆盖问题
 - 阿里云目前由于安全原因暂时禁止云存储内上传html文件
 - Alibaba Cloud temporarily prohibits uploading html files in cloud storage due to security reasons
 - 上传文件超时时间可以在项目manifest.json内进行配置
@@ -210,8 +206,7 @@ uni.chooseImage({
 
 **Tips**
 
-- 阿里云返回的fileID为链接形式可以直接使用，腾讯云返回的为cloud://形式，如需展示需要调用getTempFileURL获取链接
-- The fileID returned by Alibaba Cloud is in the form of a link and can be used directly, while the one returned by Tencent Cloud is in the form of cloud://. If you want to display it, you need to call getTempFileURL to get the link
+- 阿里云返回的fileID为链接形式可以直接使用，支付宝小程序云与腾讯云返回的为cloud://形式，如需展示需要调用getTempFileURL获取链接
 - uniCloud.uploadFile 只有上传，没有文件选择。uni ui的封装了[FilePicker组件](https://ext.dcloud.net.cn/plugin?id=4079)，从选择到上传一条龙。
 - uniCloud.uploadFile only upload, no file selection. uni ui encapsulates the [FilePicker component](https://ext.dcloud.net.cn/plugin?id=4079), from selection to upload one-stop.
 
@@ -228,8 +223,7 @@ In the cloud function, the fileid of the file is converted to a temporary URL. T
 |----							|----		|
 |HBuilderX 3.1.0+	|√			|
 
-腾讯云获取文件临时下载链接。
-Tencent Cloud obtains the temporary download link of the file.
+支付宝小程序云与腾讯云获取文件临时下载链接。
 
 自HBuilderX 3.1.0起阿里云也支持此接口，但仅为抹平和腾讯云的接口差异。因为阿里云的云存储不支持权限控制。
 Since HBuilderX 3.1.0, Alibaba Cloud also supports this interface, but only to smooth out the interface differences with Tencent Cloud. Because Alibaba Cloud's cloud storage does not support permission control.
@@ -715,17 +709,16 @@ If HBuilderX versions before 3.1.0 use Alibaba Cloud, please upload through `uni
 **uploadFileOptions参数说明**
 **uploadFileOptions parameter description**
 
-| 字段							| 类型	| 必填|默认值	| 说明																																																																						|平台差异说明	|
-| ---								| ---		| ---	|---		| ---																																																																							|---					|
-| cloudPath					| string| 是	|-			|使用腾讯云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径|							|
-| fileContent				| -			| 是	|-			|文件内容，请看下方说明																																																														|							|
-|cloudPathAsRealPath|Boolean|否		|false	|是否以`cloudPath`作为云端文件绝对路径																																																						|仅阿里云支持	|
+| 字段							| 类型	| 必填|默认值	| 说明																																																																						                                 |平台差异说明	|
+| ---								| ---		| ---	|---		|----------------------------------------------------------------------------------------------------------|---					|
+| cloudPath					| string| 是	|-			| 使用腾讯云或支付宝小程序云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径 |							|
+| fileContent				| -			| 是	|-			| 文件内容，请看下方说明																																																														                                |							|
+|cloudPathAsRealPath|Boolean|否		|false	| 是否以`cloudPath`作为云端文件绝对路径																																																						                           |仅阿里云支持	|
 
 **说明**
 **illustrate**
 
-- 腾讯云支持在fileContent内传[可读流](https://nodejs.org/api/stream.html#stream_class_stream_readable) 或buffer
-- Tencent Cloud supports uploading [readable stream](https://nodejs.org/api/stream.html#stream_class_stream_readable) or buffer in fileContent
+- 支付宝小程序云与腾讯云支持在fileContent内传[可读流](https://nodejs.org/api/stream.html#stream_class_stream_readable) 或buffer
 - 阿里云支持在fileContent内传文件绝对路径或buffer
 - Alibaba Cloud supports uploading file absolute path or buffer in fileContent
 
@@ -762,10 +755,9 @@ let result = await uniCloud.uploadFile({
 **平台兼容性**
 **Platform Compatibility**
 
-|阿里云	|腾讯云	|
-|Alibaba Cloud |Tencent Cloud |
-|----		|----		|
-|×			|√			|
+| 阿里云	 | 腾讯云	 | 支付宝小程序云 |
+|------|------|---------|
+| ×			 | √			 | √       |
 
 #### 请求参数
 #### request parameters
@@ -885,10 +877,9 @@ let result = await uniCloud.deleteFile({
 **平台兼容性**
 **Platform Compatibility**
 
-|阿里云	|腾讯云	|
-|Alibaba Cloud |Tencent Cloud |
-|----		|----		|
-|×			|√			|
+| 阿里云	 | 腾讯云	 | 支付宝小程序云 |
+|------|------|---------|
+| ×			 | √			 | √       |
 
 #### 请求参数
 #### request parameters

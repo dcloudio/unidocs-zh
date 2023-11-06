@@ -13,21 +13,17 @@ Hello uniCloud部署了2套，分别连接uniCloud的阿里云版和腾讯云版
 Hello uniCloud has deployed 2 sets, which are connected to the Alibaba Cloud version and Tencent Cloud version of uniCloud respectively.
 
 - h5版地址（发布在uniCloud的前端网页托管上）
-- h5 version address (published on uniCloud's front-end web hosting)
-	* Hello uniCloud 腾讯云版地址：[https://hellounicloud.dcloud.net.cn/tcb/](https://hellounicloud.dcloud.net.cn/tcb/)
-	* Hello uniCloud Tencent Cloud Edition address: [https://hellounicloud.dcloud.net.cn/tcb/](https://hellounicloud.dcloud.net.cn/tcb/)
+	* Hello uniCloud 支付宝小程序云版地址：暂未提供
 	* Hello uniCloud 阿里云版地址：[https://hellounicloud.dcloud.net.cn/#/](https://hellounicloud.dcloud.net.cn/#/)
-	* Hello uniCloud Alibaba Cloud Edition address: [https://hellounicloud.dcloud.net.cn/#/](https://hellounicloud.dcloud.net.cn/#/)
+	* Hello uniCloud 腾讯云版地址：[https://hellounicloud.dcloud.net.cn/tcb/](https://hellounicloud.dcloud.net.cn/tcb/)
 	
 	由于该示例未适配pc宽屏，如使用pc浏览器打开地址，建议F12打开控制台，使用手机模式预览。
 	Since this example is not adapted to the PC wide screen, if you use the PC browser to open the address, it is recommended to open the console with F12 and use the mobile phone mode to preview.
 	
 - apk地址（发布在uniCloud的云存储上）
-- apk address (published on uniCloud's cloud storage)
-	* Hello uniCloud 腾讯云版地址：[apk下载](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1a10688c-0b30-4aaa-bbc1-7f4948cc562a/bdf452e4-3a0d-49cb-9a97-8e1aa6572758.apk)
-	* Hello uniCloud Tencent cloud version address: [apk download](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1a10688c-0b30-4aaa-bbc1-7f4948cc562a/bdf452e4-3a0d-49cb-9a97-8e1aa6572758.apk)
+	* Hello uniCloud 支付宝小程序云版地址：暂未提供
 	* Hello uniCloud 阿里云版地址：[apk下载](https://m3w.cn/__uni__5c6d4e4)
-	* Hello uniCloud Alibaba Cloud Edition address: [apk download](https://m3w.cn/__uni__5c6d4e4)
+	* Hello uniCloud 腾讯云版地址：[apk下载](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1a10688c-0b30-4aaa-bbc1-7f4948cc562a/bdf452e4-3a0d-49cb-9a97-8e1aa6572758.apk)
 
 ### 运行 Hello uniCloud 源码
 ### Run Hello uniCloud source code
@@ -42,7 +38,7 @@ Source address of Hello uniCloud: [https://ext.dcloud.net.cn/plugin?id=4082](htt
 	- 推荐使用vue3版本，因为编译速度更快。但注意不支持低版本Android。
 	- The vue3 version is recommended because the compilation speed is faster. But note that lower versions of Android are not supported.
 	<div align=center>
-	  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/create-unicloud.jpg"/>
+	  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202310242120336.png"/>
 	</div>
 2. HBuilderX 会在项目创建后弹出 uniCloud初始化向导，根据向导部署
 2. HBuilderX will pop up the uniCloud initialization wizard after the project is created, and deploy according to the wizard
@@ -59,7 +55,7 @@ Source address of Hello uniCloud: [https://ext.dcloud.net.cn/plugin?id=4082](htt
 	- 第一次创建腾讯云服务空间时会为用户创建腾讯云账号并跳转到腾讯云实名界面，等待实名认证审核之后可以开通服务空间。若腾讯云实名认证提示身份证下已创建过多账户，则需要在腾讯云官网注销不用的账户。
 	- When creating a Tencent Cloud service space for the first time, a Tencent Cloud account will be created for the user and redirected to the Tencent Cloud real-name interface, and the service space can be opened after waiting for the real-name authentication review. If the Tencent Cloud real-name authentication prompts that too many accounts have been created under the ID card, you need to cancel the unused accounts on the Tencent Cloud official website.
 	- 阿里云每个账号可以有一个开发者版免费空间，此空间资源较少仅能用于测试开发。腾讯云无免费空间。
-	- Each Alibaba Cloud account can have a developer version of free space, and this space has less resources and can only be used for testing and development. Tencent Cloud has no free space.
+    - 首次创建支付宝小程序云时，需前往uniCloud控制台开通支付宝小程序云服务空间，开通服务空间时需使用支付宝扫码授权开通支付宝小程序云服务。
 	
 3. 运行 hello uniCloud项目
 3. Run the hello uniCloud project
@@ -72,8 +68,7 @@ Source address of Hello uniCloud: [https://ext.dcloud.net.cn/plugin?id=4082](htt
 1. 创建uniCloud项目
 1. Create an uniCloud project
   
-  HBuilderX中新建项目，选择uni-app项目，并勾选`启用uniCloud`，在右侧选择服务供应商（腾讯云或阿里云）
-  Create a new project in HBuilderX, select the uni-app project, check `Enable uniCloud`, and select the service provider (Tencent Cloud or Alibaba Cloud) on the right
+  HBuilderX中新建项目，选择uni-app项目，并勾选`启用uniCloud`，在右侧选择服务供应商（支付宝小程序云、阿里云、腾讯云）
   
   项目名称随意，比如 firstunicloud
   The project name is arbitrary, such as firstunicloud

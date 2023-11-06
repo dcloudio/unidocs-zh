@@ -32,11 +32,8 @@ After the cloud function is started, the instance will be retained for a period 
 - 不同项目使用同一个服务空间时，不可使用同名云函数。同名云函数会相互覆盖。
 - When different projects use the same service space, cloud functions with the same name cannot be used. Cloud functions with the same name override each other.
 - 在HBuilderX创建云函数时，如果新云函数与服务器上已存在同名云函数，会用新函数覆盖。所以应先选择从服务空间下载云函数。
-- When creating a cloud function in HBuilderX, if the new cloud function has the same name as the cloud function on the server, it will be overwritten with the new function. Therefore, you should choose to download cloud functions from the service space first.
-- 单个云函数大小限制为10M（包含`node_modules`），过大的云函数影响运行性能，也会增加计费的gbs。同时腾讯云支持在云端安装`node_modules`，此时不占用云函数体积。
-- The size of a single cloud function is limited to 10M (including `node_modules`). Too large a cloud function will affect the running performance and increase the billing gbs. At the same time, Tencent Cloud supports installing `node_modules` on the cloud, which does not occupy the volume of cloud functions.
-- uniCloud的阿里云版，暂不可使用相对路径读取文件（比如`fs.readFileSync('./info.txt')`），可以使用绝对路径`fs.readFileSync(path.resolve(__dirname,'./info.txt'))`
-- For the Aliyun version of uniCloud, you cannot use relative paths to read files (such as `fs.readFileSync('./info.txt')`), you can use absolute paths `fs.readFileSync(path.resolve(__dirname,'. /info.txt'))`
+- 单个云函数大小限制为10M（包含`node_modules`），过大的云函数影响运行性能，也会增加计费的gbs。同时支付宝小程序云与腾讯云支持在云端安装`node_modules`，此时不占用云函数体积。
+- uniCloud的阿里云版与支付宝小程序云版，暂不可使用相对路径读取文件（比如`fs.readFileSync('./info.txt')`），可以使用绝对路径`fs.readFileSync(path.resolve(__dirname,'./info.txt'))`
 
 ## 云函数的分类
 ## Classification of cloud functions
@@ -889,17 +886,13 @@ In addition to the fields returned by `getSystemInfo`, the following information
 云函数调用来源source，它的值域为：
 Cloud function call source source, its value range is:
 
-|取值			|说明													|
-|Value |Description |
-|--				|--														|
-|client		|uni-app客户端导入云对象调用	|
-| client | uni-app client import cloud object call |
-|function	|由其他云函数或云对象调用			|
-| function | called by other cloud functions or cloud objects |
-|http			|云对象URL化后通过http访问调用|
-| http | After the cloud object is URLized, it is called through http access |
-|timing		|定时任务调用云对象						|
-| timing | a scheduled task calls a cloud object |
+| 取值			     | 说明													    |
+|-----------|--------------------|
+| client		  | uni-app客户端导入云对象调用	 |
+| function	 | 由其他云函数或云对象调用			    |
+| http			   | 云对象URL化后通过http访问调用 |
+| timing		  | 定时任务调用云对象						    |
+| server		  | 云函数右键"上传并运行"						   |
 
 **注意事项**
 **Precautions**
@@ -941,19 +934,13 @@ cloudInfos = [{
 **返回值**
 **return value**
 
-|参数名			|类型	|必备	|说明													|
-|Parameter name |Type |Required |Description |
-|--				|--		|--		|--														|
-|provider		|string	|是		|服务空间供应商，阿里云为：`aliyun`，腾讯云为：`tencent`|
-| provider | string | yes | service space provider, Alibaba Cloud: `aliyun`, Tencent Cloud: `tencent`|
-|spaceId		|string	|是		|服务空间Id												|
-| spaceId | string | yes | service space Id |
-|functionName	|string	|是		|云函数名称												|
-| functionName | string | yes | cloud function name |
-|functionType	|string	|是		|云对象为`cloudobject`、云函数为`cloudfunction`			|
-| functionType | string | yes | cloud object is `cloudobject`, cloud function is `cloudfunction` |
-|requestId		|string	|是		|请求Id，可以使用此字段筛选出当前请求的云端信息			|
-| requestId | string |Yes |Request Id, you can use this field to filter out the cloud information currently requested |
+| 参数名			        | 类型	     | 必备	 | 说明													                                       |
+|---------------|---------|-----|-------------------------------------------------------|
+| provider		    | string	 | 是		 | 服务空间供应商，支付宝小程序云：`alipay`，阿里云为：`aliyun`，腾讯云为：`tencent` |
+| spaceId		     | string	 | 是		 | 服务空间Id												                                    |
+| functionName	 | string	 | 是		 | 云函数名称												                                     |
+| functionType	 | string	 | 是		 | 云对象为`cloudobject`、云函数为`cloudfunction`			              |
+| requestId		   | string	 | 是		 | 请求Id，可以使用此字段筛选出当前请求的云端信息			                           |
 
 除了`uniCloud.getCloudInfos()`API，在云函数context和云对象this中，也可以直接获取当前请求的云端信息。
 In addition to `uniCloud.getCloudInfos()` API, in the cloud function context and cloud object this, you can also directly get the cloud information of the current request.
@@ -1200,11 +1187,9 @@ Note: If you accidentally write the recursive cloud function into an infinite lo
 ### 云函数内访问其他服务空间@call-by-function-cross-space
 ### Access other service spaces within the cloud function @call-by-function-cross-space
 
-> 仅腾讯云支持
-> Only supported by Tencent Cloud
+> 仅支付宝小程序云与腾讯云支持
 
-在腾讯云服务空间的云函数内支持获取**同账号**下其他服务空间的uniCloud实例，参考：[一个应用访问多个服务空间](uniCloud/concepts/space.md?id=multi-space)，并使用此实例调用对应服务空间的云函数。
-In the cloud function of Tencent Cloud service space, it is supported to obtain uniCloud instances of other service spaces under **same account**, refer to: [A single application accesses multiple service spaces](uniCloud/concepts/space.md?id=multi-space ), and use this instance to call the cloud function corresponding to the service space.
+在支付宝小程序云与腾讯云服务空间的云函数内支持获取**同账号**下其他服务空间的uniCloud实例，参考：[一个应用访问多个服务空间](uniCloud/concepts/space.md?id=multi-space)，并使用此实例调用对应服务空间的云函数。
 
 ```javascript
 //开发者创建了多个服务空间，则需手动初始化。注意这是前端代码，不是云函数代码
@@ -1264,7 +1249,7 @@ When both the cloud function instance and the execution process are reused, it i
 If a cloud function instance has not been called again for a long time, the computing instance will be **recycled**; when the cloud function is called again later, the **cold start** of the cloud function will be triggered again.
 
 不同云厂商的函数实例回收时间不同：
-The recovery time of function instances of different cloud vendors is different:
+- 支付宝小程序云：60秒
 - 阿里云：15分钟内没有第二次访问的云函数，就会被回收
 - Alibaba Cloud: Cloud functions that are not accessed a second time within 15 minutes will be recycled
 - 腾讯云：30分钟
@@ -1276,14 +1261,12 @@ The intuitive experience is as follows: a cloud function that has not been used 
 注：冷启动虽慢但也不会超过1.5秒，如超过1.5秒应该是云函数写的有问题或网络有问题。
 Note: Although the cold start is slow, it will not exceed 1.5 seconds. If it exceeds 1.5 seconds, there should be a problem with the writing of the cloud function or a problem with the network.
 
-两家云厂商仍然在优化冷启动问题。目前给开发者的建议是：
-The two cloud vendors are still optimizing the cold start problem. The current advice to developers is to:
+三家云厂商仍然在优化冷启动问题。目前给开发者的建议是：
 1. 使用clientDB可以减少遇到冷启动问题的概率
 1. Using clientDB can reduce the probability of encountering cold start problems
 2. 非高频访问的云函数，合并到高频云函数中。也有的开发者使用单路由方式编写云函数，即在一个云函数中通过路由处理实现了整个应用的所有后台逻辑。参考[插件](https://ext.dcloud.net.cn/search?q=%E8%B7%AF%E7%94%B1&cat1=7&orderBy=UpdatedDate)。
 3. 非高频访问的云函数，可以通过定时任务持续运行它（注意阿里云公测版的定时任务最短周期大于资源回收周期）
-3. For non-frequently accessed cloud functions, you can continue to run them through scheduled tasks (note that the shortest period of scheduled tasks in the public beta version of Alibaba Cloud is greater than the resource recovery period)
-4. 阿里云支持配置云函数的单实例多并发，请参考：[单实例多并发](cf-functions.md?id=concurrency)
+4. 支付宝小程序云与阿里云支持配置云函数的单实例多并发，请参考：[单实例多并发](cf-functions.md?id=concurrency)
 
 ### 实例与请求@instance
 ### Instance and request @instance
@@ -1312,8 +1295,7 @@ So be aware that `instance` and `request` are not a one-to-one relationship.
 所以想要获取客户端信息，一定注意不是在实例的全局对象上获取，而是需要在请求的上下文中获取。[详见]()
 Therefore, if you want to obtain client information, you must pay attention not to obtain it on the global object of the instance, but to obtain it in the context of the request. [see details]()
 
-在uniCloud阿里云版，阿里云还提供了1个实例的多并发请求配置，即同一时间多个请求可以并发执行。
-In the uniCloud Alibaba Cloud version, Alibaba Cloud also provides multiple concurrent request configurations for one instance, that is, multiple requests can be executed concurrently at the same time.
+在uniCloud阿里云版与支付宝小程序版中还提供了1个实例的多并发请求配置，即同一时间多个请求可以并发执行。
 也就是同一时间的请求发到云函数时，没有配置单实例多并发会新开一个云函数实例，配置了单实例多并发则不会新开实例，在一个实例中增加并发。
 That is, when a request is sent to the cloud function at the same time, a new cloud function instance will be opened if the single-instance multi-concurrency is not configured, and a new instance will not be opened if the single-instance multi-concurrency is configured, and the concurrency will be increased in an instance.
 详见[单实例多并发](#concurrency)。
@@ -1443,8 +1425,7 @@ The this of cloud objects is similar to event and context, and each request corr
 ### 单实例多并发@concurrency
 ### Single instance with multiple concurrency @concurrency
 
-> 仅阿里云支持
-> Only supported by Alibaba Cloud
+> 仅支付宝小程序云与阿里云支持
 
 默认情况下云函数仅支持单实例单并发，即同一时间一个实例仅可为一个请求服务（不同请求同一时间访问会被分派到不同实例进行处理）。不过在uniCloud web控制台中，阿里云可以通过修改云函数单实例并发度，可以修改云函数同一时间最多能处理多少请求。
 By default, cloud functions only support single-instance single-concurrency, that is, one instance can only serve one request at a time (different requests at the same time will be assigned to different instances for processing). However, in the uniCloud web console, Alibaba Cloud can modify the maximum number of requests that the cloud function can handle at the same time by modifying the concurrency of a single instance of the cloud function.
@@ -1476,8 +1457,7 @@ You only need to configure the concurrency of a single instance on the cloud fun
 **使用注意**
 **Usage Caution**
 
-- 虽然阿里云云函数支持配置多并发，但在高并发下异步请求排队效果未必好于新开一个实例。尤其是并发操作数据库性能不佳。**一般情况下不要设置过大的并发度，可以自己针对业务代码测试比较下是否启用并发或并发数配成多少**
-- Although Alibaba Cloud functions support multiple concurrency configurations, the queuing effect of asynchronous requests under high concurrency may not be better than opening a new instance. Especially the concurrent operation database performance is not good. **Under normal circumstances, do not set too large concurrency, you can test and compare whether concurrency is enabled or how many concurrency numbers are matched against the business code**
+- 虽然支付宝小程序云与阿里云云函数支持配置多并发，但在高并发下异步请求排队效果未必好于新开一个实例。尤其是并发操作数据库性能不佳。**一般情况下不要设置过大的并发度，可以自己针对业务代码测试比较下是否启用并发或并发数配成多少**
 - 云函数内存使用量会随着并发量增大而增加，过大的内存可能导致OOM
 - The memory usage of cloud functions will increase as the concurrency increases, and excessive memory may lead to OOM
 - 注意云函数是有超时时间的。设置过大的单实例多并发可能会导致实例底层网络请求排队从而导致请求超时，
@@ -1640,12 +1620,11 @@ exports.main = async function() {
 云函数运行在 node 环境中。可以使用 node api `process.version` 获取 node 版本。
 Cloud functions run in the node environment. The node version can be obtained using the node api `process.version`.
 
+- uniCloud 支付宝小程序云默认是 nodejs18, 也可以在 package.json 中选择 nodejs16
 - uniCloud 阿里云默认是 node8.17.0，也可以在 package.json 中选择 node12
 - uniCloud Alibaba Cloud is node8.17.0 by default, you can also choose node12 in package.json
 - uniCloud 腾讯云默认是 node8.9.4，也可以在 package.json 中选择 node12
-- uniCloud Tencent Cloud is node8.9.4 by default, you can also choose node12 in package.json
-- HBuilderX 本地运行环境使用的是 HBuilderX 自带的 node 版本，目前为 node12。在 package.json 选择 node版本 只云端生效，且只在第一次上传云函数时生效。
-- The local operating environment of HBuilderX uses the node version that comes with HBuilderX, which is currently node12. The node version selected in package.json will only take effect on the cloud, and it will only take effect when the cloud function is uploaded for the first time.
+- HBuilderX 本地运行环境使用的是 HBuilderX 自带的 node 版本，目前为 node16。在 package.json 选择 node版本 只云端生效，且只在第一次上传云函数时生效。
 
 **注意**
 **Notice**
@@ -1681,7 +1660,7 @@ When the cloud function is running locally in HBuilderX, the time zone is the ti
 
 云函数运行内存为单个云函数实例使用的内存。
 
-腾讯云云函数默认运行内存大小为256MB，阿里云正式版默认512MB
+支付宝小程序云云函数默认运行内存512MB，阿里云正式版默认512MB，腾讯云云函数默认运行内存大小为256MB
 
 计算云函数GBs资源消耗时腾讯云会以此内存*运行时间（100ms为阶梯向上取整）得到消耗量。阿里云会以实际运行时间计算GBs，不会按100ms阶梯向上取整
 
@@ -1692,7 +1671,9 @@ When the cloud function is running locally in HBuilderX, the time zone is the ti
 ### 超时时间@timeout
 ### Timeout @timeout
 
-阿里云定时任务触发最大支持600秒超时时间，非定时触发时超时时间为60秒，客户端请求云函数如果超出60秒云函数断开连接后会停止运行。
+支付宝小程序云定时任务触发最大支持3小时超时时间，非定时触发时超时时间为3分钟，客户端请求云函数如果超出3分钟云函数断开连接后会停止运行。
+
+阿里云定时任务触发最大支持600秒超时时间，非定时触发时超时时间为2分钟，客户端请求云函数如果超出60秒云函数断开连接后会停止运行。
 
 腾讯云定时任务触发最大支持900秒超时时间。非定时触发时超时时间为30秒，客户端请求云函数时如果超出30秒云函数断开链接后会继续运行，最大能运行到配置的超时时间。
 
@@ -1751,6 +1732,10 @@ uniCloud.httpProxyForEip ，其原理是通过代理请求获得固定出口IP�
 
 如需在获取微信公众号access_token场景使用，请将上述ip配置到`微信公众平台 -> 基本配置 -> IP白名单`内，相关链接：[微信公众平台](https://mp.weixin.qq.com/)
 If you want to use it in the scenario of obtaining the access_token of the WeChat public account, please configure the above ip to `WeChat public platform -> Basic configuration -> IP whitelist`, related links: [WeChat public platform](https://mp.weixin. qq.com/)
+
+#### 支付宝小程序云@alipay-eip
+
+> 暂未支持
 
 ##### 发送Get请求@http-proxy-get
 ##### Send Get request @http-proxy-get
@@ -1944,14 +1929,12 @@ Among them, the cloudfunction-config field is the cloud function configuration, 
 #### 定时任务triggers@triggers
 #### Timing task triggers@triggers
 
-阿里云定时触发的cron表达式不支持代表年的第七位，但是在package.json内配置时仍需将第七位设置为*。
-The cron expression triggered periodically by Alibaba Cloud does not support the seventh digit of the year, but the seventh digit must still be set to * when configuring in package.json.
+支付宝小程序云与阿里云定时触发的cron表达式不支持代表年的第七位，但是在package.json内配置时仍需将第七位设置为*。
 
 **在web控制台配置trigger请参考：[定时触发](uniCloud/trigger.md)**
 **Please refer to:[Tiger Trigger](uniCloud/trigger.md)** to configure the trigger on the web console.**
 
-package.json内统一了腾讯阿里的配置，两个平台都需要配置为如下形式
-The configuration of Tencent and Ali is unified in package.json, and both platforms need to be configured as follows
+package.json内统一了支付宝小程序云、腾讯云、阿里云三家厂商的配置，三个平台都需要配置为如下形式
 
 ```js
 {
@@ -2042,7 +2025,7 @@ If you need to continue execution after return, you need to disconnect the redis
 ### The number, volume, and cold start balance of cloud functions
 
 鉴于：
-- 每个服务空间的云函数数量是有限的，阿里云是48个，腾讯云是149个，[详见](price.md)
+- 每个服务空间的云函数数量是有限的，支付宝小程序云是499个，阿里云是48个，腾讯云是149个，[详见](price.md)
 - 每个云函数的体积限制是10M（含node_modules）
 - The volume limit of each cloud function is 10M (including node_modules)
 - 云函数有冷启动问题

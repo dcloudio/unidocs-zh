@@ -357,10 +357,8 @@ When calling `uniCloud.database()`, you can pass in the corresponding service sp
 **注意**
 **Notice**
 
-- 云函数环境（仅腾讯云支持）仅能通过init返回同账号下其他的腾讯云服务空间的数据库实例。
-- The cloud function environment (only supported by Tencent Cloud) can only return database instances of other Tencent Cloud service spaces under the same account through init.
-- 客户端环境（腾讯云阿里云均支持）可以通过init返回本账号下任意云厂商服务空间的数据库实例
-- The client environment (supported by Tencent Cloud and Alibaba Cloud) can return the database instance of any cloud vendor's service space under the account through init
+- 云函数环境（仅支付宝小程序云与腾讯云支持）仅能通过init返回同账号下其他的腾讯云服务空间的数据库实例。
+- 客户端环境（支付宝小程序云腾讯云阿里云均支持）可以通过init返回本账号下任意云厂商服务空间的数据库实例
 
 **示例**
 **Example**
@@ -377,17 +375,13 @@ db.collection('uni-id-users').get()
 **参数说明**
 **Parameter Description**
 
-|参数名			|类型	|必填	|默认值						|说明																					|
-|Parameter Name |Type |Required |Default Value |Description |
-|:-:			|:-:	|:-:	|:-:						|:-:																					|
-|provider		|String	|是		|-							|aliyun、tencent																		|
-|provider		|String	|Yes		|-							|aliyun、tencent																		|
-|spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
-|spaceId |String |Yes |- |Service space ID, **Note that it is the service space ID, not the service space name** |
-|clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
-| clientSecret | String |Yes |- |Only supported by Alibaba Cloud, you can view it in the [uniCloud console](https://unicloud.dcloud.net.cn) service space list |
-|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云支持。阿里云正式版需将此值设为`https://api.next.bspapp.com`															|
-| endpoint | String |No |`https://api.bspapp.com` |Service space address, only supported by Alibaba Cloud. The official version of Alibaba Cloud needs to set this value to `https://api.next.bspapp.com` |
+|    参数名			     |   类型	   |必填	|         默认值						         |                        说明																					                         |
+|:-------------:|:-------:|:-:	|:-------------------------:|:----------------------------------------------------------------------:|
+|  provider		   | String	 |是		|         -							          |                    aliyun、tencent																		                    |
+|   spaceId		   | String	 |是		|         -							          |                服务空间ID，**注意是服务空间ID，不是服务空间名称**										                 |
+| clientSecret	 | String	 |是		|         -							          |   仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	    |
+|  endpoint		   | String	 |否		| `https://api.bspapp.com`	 | 服务空间地址，仅阿里云支持。阿里云正式版需将此值设为`https://api.next.bspapp.com`															 |
+|   timeout		   | Number	 |否		|            5000	             |    仅支付宝小程序云支持，请求超时时间（单位：毫秒），默认为5秒。                 															     |
  
 ## 创建集合/表的API@createCollection
 ## Create collection/table API@createCollection
@@ -414,13 +408,20 @@ const db = uniCloud.database();
 db.createCollection("table1")
 ```
 
+- 支付宝小程序云
+
+支付宝小程序云提供了专门的创建数据表的API，此API仅支持云函数内运行，不支持clientDB调用。
+
+```js
+const db = uniCloud.database();
+db.createCollection("table1")
+```
+
 **注意**
 **Notice**
 
-- 如果数据表已存在，腾讯云调用createCollection方法会报错
-- If the data table already exists, Tencent Cloud will report an error when calling the createCollection method
-- 腾讯云调用collection的add方法不会自动创建数据表，不存在的数据表会报错
-- Tencent Cloud will not automatically create a data table when calling the add method of the collection, and an error will be reported if the data table does not exist
+- 如果数据表已存在，支付宝小程序云与腾讯云调用createCollection方法会报错
+- 支付宝小程序云与腾讯云调用collection的add方法不会自动创建数据表，不存在的数据表会报错
 - 阿里云没有createCollection方法
 - Alibaba Cloud does not have a createCollection method
 - **使用代码方式创建的表没有索引、schema，性能和功能都受影响，不建议使用这种方式**
@@ -595,6 +596,8 @@ new db.serverDate({
 ### 地理位置类型@geo-data-type
 ### Geo type @geo-data-type
 
+> 支付宝小程序云暂不支持
+
 #### Point@geo-point
 
 用于表示地理位置点，用经纬度唯一标记一个点，这是一个特殊的数据存储类型。
@@ -714,11 +717,9 @@ new db.Geo.MultiPolygon([
 不同于传统开发，连接数据库有单次操作时长限制，目前单次操作时间限制如下。超出此时间会报超时错误。一般情况下在设置了合适的索引时不会遇到超时错误，如何优化查询速度请参考：[数据库性能优化](uniCloud/db-performance.md)
 Different from traditional development, there is a time limit for a single operation to connect to the database. Currently, the time limit for a single operation is as follows. If this time is exceeded, a timeout error will be reported. Under normal circumstances, you will not encounter a timeout error when a suitable index is set. How to optimize the query speed, please refer to: [Database Performance Optimization](uniCloud/db-performance.md)
 
-|腾讯云	|阿里云	|
-|Tencent Cloud |Alibaba Cloud |
-|--	|--	|
-|5秒	|5秒	|
-|5 seconds |5 seconds |
+|腾讯云	|阿里云	| 支付宝小程序云    |
+|--	|--	|------------|
+|5秒	|5秒	| 默认5秒；最大5分钟 |
 
 如果是大数据批处理，可以参考云函数递归调用，连续执行多个云函数处理一个任务[详情查看](uniCloud/cf-functions.md?id=recurrence)
 If it is a batch of big data, you can refer to the recursive call of cloud functions to continuously execute multiple cloud functions to process a task [Details](uniCloud/cf-functions.md?id=recurrence)

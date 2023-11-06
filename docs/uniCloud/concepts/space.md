@@ -110,10 +110,9 @@ In response to the above problems, a solution of `one cloud with multiple projec
 ##### 绑定其它项目的服务空间
 ##### Bind the service space of other projects
 
-选中项目下的`uniCloud-aliyun|tcb`目录， 右键菜单，点击 【关联云服务空间或项目... 】 ，可以`关联云服务空间`、`绑定其它项目的服务空间`：
-Select the `uniCloud-aliyun|tcb` directory under the project, right-click the menu, click [Associate cloud service space or project...], you can `Associate cloud service space`, `Bind service space of other projects`:
+选中项目下的`uniCloud-alipay|aliyun|tcb`目录， 右键菜单，点击 【关联云服务空间或项目... 】 ，可以`关联云服务空间`、`绑定其它项目的服务空间`：
 
-![](https://ask.dcloud.net.cn/uploads/article/20201207/3ab467421c154e83077bb96f1497dec1.gif)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202310241639174.png)
 
 ##### 已关联项目
 ##### Associated Projects
@@ -121,8 +120,7 @@ Select the `uniCloud-aliyun|tcb` directory under the project, right-click the me
 选择关联项目，此时显示的是所有的uniapp项目。用户选择任一uniapp项目进行关联,  关联效果如下图：
 Select the associated project, all uniapp projects are displayed at this time. The user selects any uniapp item to associate, and the association effect is as follows:
 
-![](https://ask.dcloud.net.cn/uploads/article/20201207/6eab0accfe8fa00b97972b04773df688.png)
-
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/202310241640206.png)
 
 1. 查看关联项目的服务空间：点击后，会在项目管理器打开关联的项目
 1. View the service space of the associated project: After clicking, the associated project will be opened in the project manager
@@ -195,17 +193,15 @@ The `uniCloud.init` method accepts an `options` parameter and returns an `uniClo
 **options 参数说明**
 **options parameter description**
 
-|参数名			|类型	|必填	|默认值						|说明																					|
-|Parameter Name |Type |Required |Default Value |Description |
-|:-:			|:-:	|:-:	|:-:						|:-:																					|
-|provider		|String	|是		|-							|aliyun、tencent																		|
-|provider		|String	|Yes		|-							|aliyun、tencent																		|
-|spaceId		|String	|是		|-							|服务空间ID，**注意是服务空间ID，不是服务空间名称**										|
-|spaceId |String |Yes |- |Service space ID, **Note that it is the service space ID, not the service space name** |
-|clientSecret	|String	|是		|-							|仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	|
-| clientSecret | String |Yes |- |Only supported by Alibaba Cloud, you can view it in the [uniCloud console](https://unicloud.dcloud.net.cn) service space list |
-|endpoint		|String	|否		|`https://api.bspapp.com`	|服务空间地址，仅阿里云支持。商用版请将此参数设为`https://api.next.bspapp.com`														|
-| endpoint | String |No |`https://api.bspapp.com` |Service space address, only supported by Alibaba Cloud. For the commercial version, please set this parameter to `https://api.next.bspapp.com` |
+|    参数名			     |   类型	   | 必填	 |                                          默认值						                                          |                                说明																					                                |
+|:-------------:|:-------:|:---:|:-------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------:|
+|  provider		   | String	 | 是		 |                                          -							                                           |                        aliyun、tencent、alipay																		                        |
+|   spaceId		   | String	 | 是		 |                                          -							                                           |                        服务空间ID，**注意是服务空间ID，不是服务空间名称**										                        |
+| clientSecret	 | String	 | 是		 |                                          -							                                           |           仅阿里云支持，可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间列表中查看	           |
+|   accessKey   | String  |  是  |                                              -                                              |         仅支付宝小程序云支持, 可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间详情中查看         |
+|   secretKey   | String  |  是  |                                              -                                              |         仅支付宝小程序云支持, 可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间详情中查看         |
+|  spaceAppId   | String  |  是  |                                              -                                              |         仅支付宝小程序云支持, 可以在[uniCloud控制台](https://unicloud.dcloud.net.cn)服务空间详情中查看         |
+|  endpoint		   | String	 | 否		 | 阿里云：`https://api.bspapp.com`；<br/> 支付宝小程序云：`https://{spaceId}.api-hz.cloudbasefunction.cn`	 | 服务空间地址，仅阿里云与支付宝小程序云支持。<br /> 阿里云商用版请将此参数设为`https://api.next.bspapp.com`														 |
 
 **示例代码**
 **Sample code**
@@ -226,4 +222,3 @@ myCloud.uploadFile()
 ```
 
 uniCloud还支持跨服务空间的数据库访问，另见[文档](https://uniapp.dcloud.net.cn/uniCloud/hellodb?id=init-db)
-uniCloud also supports database access across service spaces, see also [documentation](https://uniapp.dcloud.net.cn/uniCloud/hellodb?id=init-db)

@@ -760,6 +760,9 @@ let a:Int[] = [1,2,3,4]
 let b = a.toKotlinList().toIntArray()
 console.log("b",b[2])
 
+// int[][] 二维数组，可以采用下面的写法
+let a = [[2].toKotlinList().toIntArray(),[23].toKotlinList().toIntArray(),[22].toKotlinList().toIntArray()]
+let b = a.toKotlinList().toTypedArray()
 
 ```
 

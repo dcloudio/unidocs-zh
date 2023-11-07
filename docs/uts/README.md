@@ -7,7 +7,7 @@ uts，全称 uni type script，是一门跨平台的、高性能的、强类型�
 它可以被编译为不同平台的编程语言，如：
 - web平台，编译为JavaScript
 - Android平台，编译为Kotlin
-- iOS平台，编译Swift
+- iOS平台，编译为Swift
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 

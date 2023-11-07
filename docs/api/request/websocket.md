@@ -50,6 +50,7 @@ var socketTask = uni.connectSocket({
 - 微信小程序平台1.7.0 及以上版本，最多可以同时存在5个WebSocket 连接。老版本只支持一个socket连接。
 - 百度小程序平台自基础库版本 1.9.4 及以后支持多个socket连接。老版本只支持一个socket连接。
 - QQ小程序、支付宝小程序平台最多支持同时存在5个socket连接。
+- uni-push2.0在web、小程序以及APP的非离线模式下的底层实现都是基于一个socket。如果你的项目需要再次使用socket，请通过[socketTask](/api/request/socket-task)实现。
 
 
 ### uni.onSocketOpen(CALLBACK)

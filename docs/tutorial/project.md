@@ -17,7 +17,7 @@
 │  │  └─index.vue       index页面
 │  └─list
 │     └─list.vue        list页面
-├─static                存放应用引用的本地静态资源（如图片、视频等）的目录，<b>注意：</b>静态资源只能存放于此
+├─static                存放应用引用的本地静态资源（如图片、视频等）的目录，<b>注意：</b>静态资源都应存放于此目录
 ├─uni_modules           存放[uni_module](/uni_modules)。
 ├─platforms             存放各平台专用页面的目录，<a href="/tutorial/platform?id=%E6%95%B4%E4%BD%93%E7%9B%AE%E5%BD%95%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91">详见</a>
 ├─nativeplugins         App原生语言插件 <a href="https://nativesupport.dcloud.net.cn/NativePlugin/README">详见</a>
@@ -37,10 +37,23 @@
 	</code>
 </pre>
 
-
-`static目录` 使用注意
-- 编译到任意平台时，`static` 目录下除不满足[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)的文件，会直接复制到最终的打包目录，不会打包编译。非 `static` 目录下的文件（vue、js、css 等）只有被引用时，才会被打包编译。
-- `css`、`less/scss` 等资源不要放在 `static` 目录下，建议这些公用的资源放在自建的 `common` 目录下。
-
 **Tips**
 - HbuilderX 1.9.0+ 支持在根目录创建 `ext.json`、`sitemap.json` 等小程序需要的文件。
+
+
+### static目录
+为什么需要static这样的目录？
+
+uni-app编译器根据pages.json扫描需要编译的页面，并根据页面引入的js、css合并打包文件。\
+对于本地的图片、字体、视频、文件等资源，如果可以直接识别，那么也会把这些资源文件打包进去，但如果这些资源以变量的方式引用，
+比如：```<image :src="url"></image>```，甚至可能有更复杂的函数计算，此时编译器无法分析。\
+
+那么有了static目录，编译器就会把这个目录整体复制到最终编译包内。这样只要运行时确实能获取到这个图片，就可以显示。
+
+当然这也带来一个注意事项，如果static里有一些没有使用的废文件，也会被打包到编译包里，造成体积变大。
+
+另外注意，static目录支持特殊的平台子目录，比如web、app、mp-weixin等，这些目录存放专有平台的文件，这些平台的文件在打包其他平台时不会被包含。详见[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)
+
+非 `static` 目录下的文件（vue组件、js、css 等）只有被引用时，才会被打包编译。
+
+`css`、`less/scss` 等资源不要放在 `static` 目录下，建议这些公用的资源放在自建的 `common` 目录下。

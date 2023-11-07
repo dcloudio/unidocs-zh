@@ -260,7 +260,7 @@ Uni`组件名(驼峰)`Element
 
 **bug&tips**
 
-- 目前uts组件，即封装原生ui给uni-app或uni-app x的页面中使用，类型与内置组件的 Uni`组件名(驼峰)`Element 方式相同。目前没有代码提示，未来不排除更换方案的可能。
+- 目前uts组件，即封装原生ui给uni-app或uni-app x的页面中使用，类型与内置组件的 Uni`组件名(驼峰)`Element 方式相同。目前没有代码提示。
 
 ### easycom组件调用方法或设置属性@method_easycom
 

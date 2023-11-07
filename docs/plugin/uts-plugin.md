@@ -1090,6 +1090,19 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 function connectWifi(option: WifiConnectOption,testName :string = "zhangsan") 
 ```
 
+### 在uni-app 1.0 上的导出限制
+
+UTS插件环境会被编译为原生语言环境，在android平台是kotlin.
+
+uni-app x 运行时，本身也是原生语言环境，即kotlin。同语言直接的调用是没有限制的，可以任意导出自定义对象/原生对象/类/方法。
+
+但是在uni-app 1.0 环境，*只能导出UTS中声明的自定义对象/类/方法，不能包含原生对象*
+
+这是因为 uni-app 1.0 本质上是类浏览器的js环境中，UTS中声明的对象是经过特殊处理的，每一个对象都有一个在Js中对应的实例，这样才能正常使用。
+
+其他的原生对象没有经过特殊处理，并不能在js环境中使用。
+
+
 ### 访问JSON对象属性
 
 `uts`环境中访问`JSON`对象的属性，不能用`user.age` 而要用下标 `user['age']`

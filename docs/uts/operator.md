@@ -56,28 +56,23 @@
 
 **bug&tips**
 
-暂时不支持 位运算符赋值操作
+位运算符 暂时不支持 小括号运算提级
+
 
 ```uts
 
-let a |= (复杂表达)
-
-let a ^= (复杂表达)
-
-let a ~= (复杂表达)
+let a = 64|(1<<8)
 
 ```
+
+期望的是先进行小括号内的左移操作
+
 
 类似场景，需要拆分一个中间变量来处理
 
 ```uts
-let temp = (复杂表达)
-
-let a |= temp
-
-let a ^= temp
-
-let a ^= temp
+let temp = 1 << 8
+let a = 64 | temp
 
 ```
 

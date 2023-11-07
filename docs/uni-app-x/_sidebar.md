@@ -43,6 +43,7 @@
   * [progress](component/progress.md)
   * [slider](component/slider.md)
   * [switch](component/switch.md)
+  * [form](component/form.md)
   * [video](component/video.md)
   * [web-view](component/web-view.md)
   * [animation-view](component/animation-view.md)

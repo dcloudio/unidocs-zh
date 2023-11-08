@@ -17,6 +17,10 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 - 数据库遵循 [opendb](https://uniapp.dcloud.net.cn/uniCloud/opendb.html) 规范
 - **关于应用转让后升级中心（uni-upgrade-center）的使用问题** [详情](https://ask.dcloud.net.cn/article/40112)
 
+从 uni-upgrade-center xx（```注意别漏了这里！！！！```） 版本起，开始支持uni-app x。
+
+为了一套代码同时兼容uni-app和uni-app x，升级中心改为了ts代码。如果开发者的项目下未使用ts，那么需要增加ts编译。HBuilderX项目会自动加载ts编译器，cli项目则需要自己手动配置。
+
 ### 为什么需要升级中心？
 
 每个App开发者都要开发升级功能，这是巨大的社会资料浪费。DCloud推出 uni-upgrade-center，让应用开发更轻松、高效，让开发者专注于自己的业务。
@@ -37,7 +41,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 - 原生 App 安装包，发布 Apk 更新，用于 App 的整包更新，可设置是否强制更新
 
-- wgt 资源包，发布 wgt 更新，用于 App 的热更新，可设置是否强制更新，静默更新
+- wgt 资源包，发布 wgt 更新，用于 App 的热更新，可设置是否强制更新，静默更新（uni-app x的app-Android由于编译为纯原生，没有wgt包，无法热更新）
 
 - App 管理列表及 App 版本记录列表搜索
 
@@ -123,11 +127,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 - `/uni_modules/uni-upgrade-center/pages/version/add.vue`中有版本对比函数（compare）。
 	- 使用多段式版本格式（如："3.0.0.0.0.1.0.1", "3.0.0.0.0.1"）。如果不满足对比规则，请自行修改。
 - 删除应用会把该应用的所有版本记录同时删除
-- 升级中心设计之初就支持iOS的wgt更新
-- iOS的wgt更新肯定是违反apple政策的，注意事项：
-	- 审核期间请不要弹窗升级
-	- 升级完后尽量不要自行重启
-	- 尽量使用静默更新
+- iOS的Appstore是禁止热更新的。本产品的iOS热更新功能，主要是为企业用户设计的。如果您在Appstore公开市场使用热更新，需要自己承担政策风险。
 - 可以通过以下修改支持iOS的wgt更新：
 	> \uni_modules\uni-upgrade-center\pages\mixin\version_add_detail_mixin.js
 	>
@@ -135,7 +135,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 ### uni-upgrade-center-app 前台检测更新@uni-upgrade-center-app
 
-负责前台检查升级更新。
+除了管理端，升级中心还包括客户端。负责前台检查升级更新，弹出提示框，下载和安装新版。
 
 <div align="left" style="display:flex;align-items:center;">
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/upgrade_center_1.jpg" alt="官方升级弹框样式" width="250"></img>
@@ -145,17 +145,16 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 提供了如下功能：
 
-- 基于`uni-upgrade-center`一键式检查更新，统一整包与 wgt 资源包更新
+- 基于`uni-upgrade-center`一站式检查更新，统一整包与 wgt 资源包更新
 
 - 自行根据传参完成校验，判断此次更新使用哪种方式
 
-- 一键式升级。弹框、下载、安装、是否强制重启等逻辑已集成
+- 弹框、下载、安装、是否强制重启等逻辑已集成
 
-- 下载完成如果取消升级自动缓存安装包，下次进入判断是否符合安装条件，判断不通过则自动清除
+- 下载完成如被用户取消升级，自动缓存安装包，下次进入判断是否符合安装条件，判断通过会复用已下载的包进行安装；判断不通过则自动清除
 
-- 美观，实用，可自定义扩展
+- 弹框美观，可自定义ui
 
-- 美观，实用，可自定义扩展
 
 **安装指引**
 
@@ -171,7 +170,9 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
    - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，插件不再单独提供云函数，可以跳过此步骤
    - 插件版本 `<= 0.6.0`，找到`/uni_modules/uni-upgrade-center-app/uniCloud/cloudfunctions/check-version`，右键上传部署
 
-5. 在`pages.json`中添加页面路径。**注：请不要设置为pages.json中第一项**
+5. 如果是uni-app，需在`pages.json`中添加页面路径。**注：请不要设置为pages.json中第一项**。如果是uni-app x，无需此步骤。
+
+	因为弹出框，在uni-app上，为了盖住tabbar、导航栏以及vue页面上的原生元素，使用了背景透明的独立页面。而uni-app x下使用的是组件。
 
 	```json
 	"pages": [
@@ -268,9 +269,9 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 ### 费用评测@upgrade-center-fee
 
 
-近期，uniCloud阿里云版开始正式商用，部分开发者对基于uniCloud的`uni-upgrade-center`等云端一体业务，开始纠结，不清楚这些业务预计会花费多少钱，不清楚相比传统服务器而言，何种方案性价比更好。
+使用升级中心，涉及uniCloud的付费问题，那么相比于自己搭服务器，使用uniCloud的费用到底合不合适。这里帮开发者算下账。
 
-本文尝试算细账、算总账，以阿里云[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，详细预测`uni-upgrade-center`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择，无忧开发。
+以阿里云[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，预测下`uni-upgrade-center`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择。
 
 本文主要分为三个部分：
 - `uni-upgrade-center`消耗的资源费用测算(云函数、云数据库、云存储、前端网页托管分别测算)

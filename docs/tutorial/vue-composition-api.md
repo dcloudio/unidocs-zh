@@ -1,9 +1,12 @@
 ## 组合式 API（Composition API）
 
 目前 uni-app（Vue2） 基于 Vue 2.6，组合式 API 由 [@vue/composition-api](https://github.com/vuejs/composition-api) 支持，script setup 由 [
+Currently uni-app (Vue2) is based on Vue 2.6, the composition API is supported by [@vue/composition-api](https://github.com/vuejs/composition-api), script setup is supported by [
 unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup) 支持。
+unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup) support.
 
 ### 环境准备
+### Environment preparation
 
 升级 uni-app 编译器到 3.6.8+
 
@@ -11,8 +14,10 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   * CLI 创建的项目参考 [https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion](https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion) 升级依赖到最新版
   
 ### 使用组合式API
+### Using the Composition API
 
   1. 在 main.js/ts 文件内增加安装 @vue/composition-api 插件。如果使用 nvue 页面，也需要在每个 nvue 页面安装，且每个 nvue 页面之间插件状态默认不会共享。
+  1. Add and install the @vue/composition-api plugin in the main.js/ts file. If you use the nvue page, you also need to install it on each nvue page, and the plug-in state will not be shared between each nvue page by default.
   
   ::: preview
   
@@ -80,8 +85,10 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   ```
 
 ### 使用 Script Setup
+### Using Script Setup
 
   1. 使用 npm/yarn 安装 unplugin-vue2-script-setup 插件，此插件暂不支持 nvue 页面。
+  1. Use npm/yarn to install the unplugin-vue2-script-setup plugin. This plugin does not support nvue pages at the moment.
   
   ```shell
   npm install unplugin-vue2-script-setup -D
@@ -90,6 +97,7 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   ```
   
   2. 在 vue.config.js 配置 ScriptSetup 插件，以下为基础配置，其他具体配置请参考 [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
+  2. Configure the ScriptSetup plugin in vue.config.js. The following is the basic configuration. For other specific configurations, please refer to [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   
   ```js
   const ScriptSetup = require('unplugin-vue2-script-setup/webpack').default
@@ -108,6 +116,7 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   ```
   
   3. 改用 Script Setup 写法导入 API
+  3. Use Script Setup to import API
   
   ```vue
   <script setup>
@@ -125,6 +134,7 @@ unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
   ```
   
 ### 与 TypesSript 一起使用
+### Working with TypesScript
 
 * 与 Script Setup 一同使用时会禁用默认的类型检查，具体请参考 [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
 * 即使不与 Script Setup 一同使用但项目为 HBuilderX 创建的工程时，由于 HBuilderX 内置TypesSript插件当前版本较低，也需要禁用默认的类型检查

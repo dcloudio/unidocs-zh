@@ -1,6 +1,8 @@
 ## android内置依赖
+## android built-in dependencies
 
 |依赖名|
+|dependency name|
 |------|
 |com.alibaba:fastjson:1.1.46.android|
 |androidx.core:core-ktx:1.6.0|

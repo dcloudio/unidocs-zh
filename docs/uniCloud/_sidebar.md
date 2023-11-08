@@ -73,7 +73,9 @@
   * [费用说明](redis-buy.md)
   * [开发文档](redis.md)
 * Push扩展库(socket)
+* Push extension library (socket)
   * [业务文档](/unipush-v2.md)
+  * [Business documents](/unipush-v2.md)
   * 开发文档  
     * [服务端api](uni-cloud-push/api.md)  
     * [客户端api](/api/plugins/push.md)
@@ -86,6 +88,7 @@
 * [客户端API](client-sdk.md)
 * [系统错误码](system-error.md)
 * [web控制台](https://unicloud.dcloud.net.cn)
+* [web console](https://unicloud.dcloud.net.cn)
 * 重要开源库```{"collapsable": false}```
   * [uni-config-center 配置中心](uni-config-center.md)
   * [uni-starter](uni-starter.md)

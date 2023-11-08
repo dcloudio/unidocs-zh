@@ -1,10 +1,14 @@
 ## 工程简介
+## G
 
 一个 uni-app 工程，就是一个 Vue 项目，你可以通过 HBuilderX 或 cli 方式快速创建 uni-app 工程，详见：[快速上手](/quickstart-hx.html)。
+A uni-app project is a Vue project. You can quickly create a uni-app project through HBuilderX or cli. For details, see: [Quick Start](/quickstart-hx.html).
 
 ## 目录结构
+## Directory Structure
 
 一个uni-app工程，默认包含如下目录及文件：
+A uni-app project contains the following directories and files by default:
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
@@ -37,23 +41,13 @@
 	</code>
 </pre>
 
+
+`static目录` 使用注意
+Note on `static directory`
+- 编译到任意平台时，`static` 目录下除不满足[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)的文件，会直接复制到最终的打包目录，不会打包编译。非 `static` 目录下的文件（vue、js、css 等）只有被引用时，才会被打包编译。
+- When compiling to any platform, the `static` directory does not meet the [conditional compilation](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD %95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91) will be copied directly to the final packaging directory without packaging and compiling. Files (vue, js, css, etc.) in non-`static` directories will be packaged and compiled only when they are referenced.
+- `css`、`less/scss` 等资源不要放在 `static` 目录下，建议这些公用的资源放在自建的 `common` 目录下。
+- Resources such as `css` and `less/scss` should not be placed in the `static` directory. It is recommended that these public resources be placed in the self-built `common` directory.
+
 **Tips**
 - HbuilderX 1.9.0+ 支持在根目录创建 `ext.json`、`sitemap.json` 等小程序需要的文件。
-
-
-### static目录
-为什么需要static这样的目录？
-
-uni-app编译器根据pages.json扫描需要编译的页面，并根据页面引入的js、css合并打包文件。\
-对于本地的图片、字体、视频、文件等资源，如果可以直接识别，那么也会把这些资源文件打包进去，但如果这些资源以变量的方式引用，
-比如：```<image :src="url"></image>```，甚至可能有更复杂的函数计算，此时编译器无法分析。\
-
-那么有了static目录，编译器就会把这个目录整体复制到最终编译包内。这样只要运行时确实能获取到这个图片，就可以显示。
-
-当然这也带来一个注意事项，如果static里有一些没有使用的废文件，也会被打包到编译包里，造成体积变大。
-
-另外注意，static目录支持特殊的平台子目录，比如web、app、mp-weixin等，这些目录存放专有平台的文件，这些平台的文件在打包其他平台时不会被包含。详见[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#static-%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)
-
-非 `static` 目录下的文件（vue组件、js、css 等）只有被引用时，才会被打包编译。
-
-`css`、`less/scss` 等资源不要放在 `static` 目录下，建议这些公用的资源放在自建的 `common` 目录下。

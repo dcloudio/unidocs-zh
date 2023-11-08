@@ -1,16 +1,23 @@
 
 ::: tip 组件名：uni-tag
+::: tip component name: uni-tag
 > 代码块： `uTag`
+> Code block: `uTag`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-tag)
+[Click to download & install](https://ext.dcloud.net.cn/plugin?name=uni-tag)
 :::
 
 用于展示1个或多个文字标签，可点击切换选中、不选中的状态 。
+It is used to display one or more text labels, which can be clicked to switch between selected and unselected states.
 
 ## 介绍
+## introduce
 ### 基本用法
+### Basic usage
 
 在 ``template`` 中使用组件
+Using components in ``template``
 ```html
 <uni-tag text="标签"></uni-tag>
 <uni-tag text="标签" type="error" :circle="true"></uni-tag>
@@ -22,28 +29,41 @@
 ### Tag Props
 
 |属性名		|类型		|默认值	|说明																											|
+|property name |type |default value |description |
 |:-:			|:-:		|:-:		|:-:																											|
 |text			|String	|-			|标签内容																										|
+|text |String |- |label content |
 |size			|String	|normal	|大小尺寸，可选值：normal、small																				|
+|size |String |normal |Size size, optional values: normal, small |
 |type			|String	|default|颜色类型，可选值：default（灰色）、primary（蓝色）、success（绿色）、warning(黄色)、error(红色)、royal(紫色)	|
+|type |String |default|Color type, optional values: default (gray), primary (blue), success (green), warning (yellow), error (red), royal (purple) |
 |disabled	|Boolean|false	|是否为禁用状态																									|
+|disabled |Boolean|false |Disabled |
 |inverted	|Boolean|false	|是否无需背景颜色（空心标签）																					|
+|inverted |Boolean|false |Doesn't need background color (hollow label) |
 |circle		|Boolean|false	|是否为圆角																										|
+|circle |Boolean|false |Whether it is rounded|
 
 
 ### Tag Events
 
 |事件称名		|说明							|返回值	|
+|Event Name |Description |Return Value |
 |:-:			|:-:							|:-:	|
 |@click		|点击 Tag 触发事件	|-		|
+|@click |Click on Tag to trigger event |- |
 
 
 
 ## 示例
+## example
 ::: warning 注意
+::: warning attention
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
+The example relies on multiple components such as `uni-card` `uni-section` `uni-scss`, copying the example code directly will not work properly.
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-tag) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name=uni-tag), select `Import sample project using HBuilderX` on the right side of the page to experience the complete component example.
 :::
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/tag/tag
@@ -198,3 +218,4 @@
 :::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/tag/tag)
+[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/tag/tag)

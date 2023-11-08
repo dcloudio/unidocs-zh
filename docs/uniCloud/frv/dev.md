@@ -1,24 +1,31 @@
 ## 开发指南
+## Development Guide
 
 > uni实人认证相关功能建议或问题，可以加入uni-im交流群进行讨论，[点此加入](https://im.dcloud.net.cn/#/?joinGroup=6445fc67bc1254655dcbf5f7)
 
 uni实人认证服务，分前端api和云端api，云端为uniCloud API。
+uni real person authentication service is divided into front-end api and cloud api, and the cloud is uniCloud API.
 
 如开发者的业务不在uniCloud上，需参考[云函数url化](../http.md)文档编写云函数提供http接口供外部访问，由uniCloud获取到认证结果后转交给开发者的非uniCloud服务器上。
+If the developer's business is not on uniCloud, you need to refer to [Cloud function urlization](../http.md) document to write cloud functions to provide http interface for external access, and uniCloud will transfer the authentication results to the developer's non-uniCloud after obtaining the authentication results on the server.
 
 首先在uniCloud服务空间新建一个云函数/云对象，用于处理实人认证业务。新建时在[云函数的扩展库](../cf-functions.md#extension)中配置uni-cloud-verify扩展库。
 
 
 
 在uni-app客户端和uniCloud云函数中调用如下api，实现下图流程：
+Call the following api in the uni-app client and uniCloud cloud function to realize the following process:
 
 - 客户端获取metaInfo：[uni.getFacialRecognitionMetaInfo](#get-meta-info)
 - 客户端调起sdk刷脸认证：[uni.startFacialRecognitionVerify()](#start-frv)
 - 云函数获取实人认证实例：[uniCloud.getFacialRecognitionVerifyManager()](#get-frv-manager)
+- The cloud function obtains a real person authentication instance: [uniCloud.getFacialRecognitionVerifyManager()](#get-frv-manager)
 - 云函数提交姓名、身份证号以获取认证服务的certifyId：[frvManager.getCertifyId()](#get-certify-id)
+- The cloud function submits the name and ID number to obtain the certifyId of the certification service: [frvManager.getCertifyId()](#get-certify-id)
 - 云函数使用certifyId获取认证结果：[frvManager.getAuthResult()](#get-auth-result)
 
 完整认证流程如下：
+The complete certification process is as follows:
 
 ```mermaid
 sequenceDiagram
@@ -43,6 +50,7 @@ sequenceDiagram
 
 - 如果您使用uni-id，那么uni-id-pages已经帮您内置好相关功能，前端页面和云端逻辑均已写好，安全、无需开发、拿来就用。[详见](/uniCloud/uni-id-summary.md#frv)
 - 如果您的业务系统不在uniCloud上，那么需要在上述流程图中加一个原业务服务器，由云函数和原业务服务器进行token校验、传递认证结果。
+- If your business system is not on uniCloud, you need to add an original business server to the above flowchart, and the cloud function and the original business server will perform token verification and transfer the authentication result.
 
 ### 接口防刷
 
@@ -136,20 +144,24 @@ iOS平台不支持通过参数的方式修改刷脸页的提示文案，但可�
 **Android平台暂不支持自定义UI**  
 
 ### 云函数接口
+### Cloud function interface
 
 实人认证相关接口由uni-cloud-verify扩展库提供，调用`uniCloud.getFacialRecognitionVerifyManager()`需云函数/云对象中加载对应的扩展库。[参考](../cf-functions.md#extension)
 
 ![依赖扩展库](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/rpa/unicloud-frv-edit-extension.jpg)
 
 #### 获取实人认证实例@get-frv-manager
+#### Get real person authentication instance @get-frv-manager
 
 **接口形式**
+**Interface form**
 
 ```js
 uniCloud.getFacialRecognitionVerifyManager(Object GetFacialRecognitionVerifyManagerOptions)
 ```
 
 **参数说明**
+**Parameter Description**
 
 **Object GetFacialRecognitionVerifyManagerOptions**
 
@@ -159,12 +171,16 @@ uniCloud.getFacialRecognitionVerifyManager(Object GetFacialRecognitionVerifyMana
 |appId		|String	|否		|-			|用于在url化等无法获取客户端信息的场景下传入客户端appId	|
 
 **返回值**
+**return value**
 
 此接口返回实人认证实例对象
+This interface returns the real person authentication instance object
 
 **示例代码**
+**Example Code**
 
 - 云函数
+- cloud function
 
 ```js
 exports.main = async (event, context) => {
@@ -175,12 +191,14 @@ exports.main = async (event, context) => {
 ```
 
 - 云对象
+- cloud object
 
 ```js
 'use strict';
 module.exports = {
   _before() {
     // 本示例写在_before中，可以按需调整到某个方法中
+    // This example is written in _before and can be adjusted to a method as needed
     this.frvManager = uniCloud.getFacialRecognitionVerifyManager({
       requestId: this.getUniCloudRequestId()
     })
@@ -189,14 +207,17 @@ module.exports = {
 ```
 
 #### 获取certifyId@get-certify-id
+#### Get-certifyId@get-certify-id
 
 **接口形式**
+**Interface form**
 
 ```js
 frvManager.getCertifyId(Object GetCertifyIdOptions)
 ```
 
 **参数说明**
+**Parameter Description**
 
 **Object GetCertifyIdOptions**
 
@@ -208,14 +229,19 @@ frvManager.getCertifyId(Object GetCertifyIdOptions)
 |needPicture|Boolean|否		|false	|是否需要采集用户照片					|
 
 **返回值**
+**return value**
 
 |字段名		|类型		|必备	|说明																								|
+|Field Name |Type |Required |Description |
 |:-:			|:-:		|:-:	|:-:																								|
 |certifyId|String	|是		|认证id，用于客户端调用认证接口及云函数获取认证结果	|
+| certifyId| String |Yes |Certification id, used by the client to call the authentication interface and cloud function to obtain the authentication result |
 
 **示例代码**
+**Example Code**
 
 云函数
+cloud function
 
 ```js
 exports.main = async (event, context) => {
@@ -232,6 +258,7 @@ exports.main = async (event, context) => {
 ```
 
 云对象
+cloud object
 
 ```js
 module.exports = {
@@ -252,14 +279,17 @@ module.exports = {
 ```
 
 #### 获取认证结果@get-auth-result
+#### Get the authentication result @get-auth-result
 
 **接口形式**
+**Interface form**
 
 ```js
 frvManager.getAuthResult(Object GetAuthResultOptions)
 ```
 
 **参数说明**
+**Parameter Description**
 
 **Object GetAuthResultOptions**
 
@@ -268,6 +298,7 @@ frvManager.getAuthResult(Object GetAuthResultOptions)
 |certifyId		|String	|是		|-		|认证id																		|
 
 **返回值**
+**return value**
 
 |字段名			|类型		|必备											|说明																																								|
 |:-:				|:-:		|:-:											|:-:																																								|
@@ -283,8 +314,10 @@ frvManager.getAuthResult(Object GetAuthResultOptions)
 :::
 
 **示例代码**
+**Example Code**
 
 云函数
+cloud function
 
 ```js
 exports.main = async (event, context) => {
@@ -299,6 +332,7 @@ exports.main = async (event, context) => {
 ```
 
 云对象
+cloud object
 
 ```js
 module.exports = {
@@ -317,12 +351,15 @@ module.exports = {
 ```
 
 #### 错误处理
+#### Error Handling
 
 可以通过try catch捕获接口抛出的错误，接口抛出的错误为标准的[uni错误对象](../../tutorial/err-spec.md)
 
 具体错误码规范见：[错误码](#err-code)
+For specific error code specifications, see: [Error Code](#err-code)
 
 **示例**
+**example**
 
 ```js
 module.exports = {
@@ -348,40 +385,61 @@ module.exports = {
 ```
 
 ### 错误码@err-code
+### Error code @err-code
 
 **云端错误码**
+**Cloud error code**
 
 |错误码	|说明													|
+|Error code |Description |
 |:-:	|:-:													|
 |0		|请求成功												|
+| 0 | Request succeeded |
 |50001	|缺少参数												|
+| 50001 | Missing parameter |
 |50002	|参数类型、取值不正确									|
+| 50002 | The parameter type and value are incorrect |
 |54003	|appId不存在											|
+| 54003 | appId does not exist |
 |54004	|服务空间不在白名单中									|
+| 54004 | The service space is not in the white list |
 |54020	|请求记录不存在，certifyId无效							|
+| 54020 | Request record does not exist, certifyId is invalid |
 |54021	|云函数内缺少接口调用凭证，请联系DCloud处理				|
+| 54021 | There is no interface call certificate in the cloud function, please contact DCloud for processing |
 |54022	|服务空间不存在											|
 |54100	|实人认证账号余额不足									|
 |54101	|费用获取失败，请联系DCloud处理							|
 |54102	|金额冻结失败，请联系DCloud处理							|
 |55000	|服务器错误，请联系DCloud处理							|
+| 55000 | Server error, please contact DCloud |
 |55001	|Api调用失败，实人认证服务商服务不可用，请联系DCloud处理|
 |55023	|尚未开通实人认证										|
 |56001	|请求记录已过期											|
 |56002	|请求次数已超限											|
 |60000	|服务不可用，请联系DCloud处理							|
+| 60000 | The service is unavailable, please contact DCloud for processing |
 
 **客户端错误码**
+**Client error code**
 
 |错误码	|错误信息			|描述											|
+|Error code |Error message |Description |
 |---	|---				|---											|
 |0		|刷脸完成			|实际结果需要通过服务端查询接口					|
+| 0 |Face swiping completed |Actual results need to query the interface through the server |
 |10001	|certifyId不能为空	|参数certifyId为空								|
+| 10001 | certifyId cannot be empty |The parameter certifyId is empty |
 |10010	|刷脸异常			|刷脸异常,具体原因详见cause						|
+| 10010 | Abnormal facial recognition | Abnormal facial recognition, see cause for details |
 |10011	|验证中断			|如用户主动退出、验证超时等,具体原因详见cause	|
+| 10011 | Verification Interrupted | For example, the user voluntarily logs out, verification timeout, etc., see cause for details |
 |10012	|网络异常			|网络异常										|
+| 10012 | Network exception | Network exception |
 |10013	|刷脸验证失败		|实际结果需要通过服务端查询结果					|
+| 10013 | Facial verification failed | The actual result needs to be checked by the server |
 |10020	|设备设置时间异常	|设备设置时间异常，仅iOS返回					|
+| 10020 | The device setting time is abnormal | The device setting time is abnormal, only returned by iOS |
 
 
 ### 注意事项 

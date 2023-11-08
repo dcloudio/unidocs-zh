@@ -1,14 +1,25 @@
 * [什么是 uni-app](README.md)
+* [What is uni-app?](README.md)
 * 快速上手
+* Quick Start
   * [1. 通过 HBuilderX 可视化界面](quickstart-hx.md)
+  * [1. Via HBuilderX visual interface](quickstart-hx.md)
   * [2. 通过vue-cli命令行](quickstart-cli.md)
-* [uni-app的由来](history.md)
+  * [2. Via vue-cli command line](quickstart-cli.md)
+<!-- * [uni-app的由来](history.md) -->
+<!-- * [Origin of uni-app](history.md) -->
 * [如何学习](resource.md)
+* [How to learn](resource.md)
 * [选型指南](select.md)
+* [Selection Guide](select.md)
 * [跨端注意](matter.md)
+* [Cross-end attention](matter.md)
 * [常见问题](faq.md)
+* [FAQ](faq.md)
 * [其他项目转uni-app](translate.md)
+* [Other projects to uni-app](translate.md)
 * [老项目引入uni-app](hybrid.md)
+* [The old project introduced uni-app](hybrid.md)
 * 运营服务
   * [uni-ad广告变现](uni-ad/intro.md)
     * [业务介绍](uni-ad/intro.md)
@@ -26,18 +37,27 @@
     * [广告错误码](uni-ad/ad-error-code.md)
     * [uni-ad管理后台更新说明](uni-ad/release.md)
   * [统一发行页面](/uniCloud/uni-portal.md)
+  * [uni-portal](/uniCloud/uni-portal.md)
   * [前端网页托管](uniCloud/hosting.md)
+  * [Front-end web hosting](uniCloud/hosting.md)
   * [App升级中心](uniCloud/upgrade-center.md)
+  * [uni-upgrade-center](uniCloud/upgrade-center.md)
   * [uni一键登录](univerify.md)
   * [uni实人认证](uniCloud/frv/intro.md)
   * [uni-push统一推送](unipush.md)
+  * [uni-push](unipush.md)
 	* [uni-push1.0](unipush-v1.md)
 	* [uni-push2.0](unipush-v2.md)
 		* [业务文档](unipush-v2.md)
+		* [Business documents](unipush-v2.md)
 		* 开发文档
-			* [客户端api](api/plugins/push.md)
+		* Development documentation
+      * [客户端api](api/plugins/push.md)
+      * [client api](api/plugins/push.md)
 			* [服务端api](uniCloud/uni-cloud-push/api.md)
+			* [Server API](uniCloud/uni-cloud-push/api.md)
 		* [uni-push2.0、uni-id、uni统计的组合](uniCloud/uni-cloud-push/mate.md)
+		* [combination of uni-push2.0, uni-id, uni-stat](uniCloud/uni-cloud-push/mate.md)
   * [uni统计](uni-stat.md)
     * [uni统计2.0](uni-stat-v2.md)
 	* [uni统计1.0](uni-stat-v1.md)`
@@ -45,7 +65,9 @@
   * [uni隐私合规检测](uni-app-privacy-detect.md)
   * [地图商业授权](/tutorial/app-geolocation.md?id=lic)
 * [案例](case.md)
+* [case](case.md)
 * 更新日志
+* Changelog
   * [正式版](release.md)
   * [正式版 Vue2 CLI 配置](vue2-cli-release.md)
   * [正式版 Vue3 CLI 配置](vue3-cli-release.md)

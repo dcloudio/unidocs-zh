@@ -1,39 +1,58 @@
 ## 小程序自定义组件支持
+## Mini Program Custom Component Support
 
 `uni-app`在支持vue组件之外，也实现了对小程序自定义组件的兼容。
 
 小程序组件不是vue组件，并且每家小程序都有自己的组件规范，比如微信小程序的组件是wxml格式。
+The applet component is not a vue component, and each applet has its own component specification. For example, the component of the WeChat applet is in wxml format.
 
 小程序组件不是全端可用，支持度最广的微信小程序自定义组件，也只能支持微信小程序、app-vue、web，其他平台无法兼容。
 
 如果需求上只需兼容有限平台，也可以使用小程序组件。否则仍然推荐使用vue组件。
 
 **平台差异说明**
+**Platform difference description**
 
 |平台|支持情况|小程序组件存放目录|
+|Platform|Support |Mini Program Components Storage Directory|
 |---|---|---|
 |H5|支持微信小程序组件（2.4.7+）|wxcomponents|
+|H5|Support WeChat Mini Program Components (2.4.7+)|wxcomponents|
 |App（不含nvue）|支持微信小程序组件|wxcomponents|
+|App (excluding nvue)|Support WeChat applet components|wxcomponents|
 |微信小程序|支持微信小程序组件|wxcomponents|
+|WeChat applet|Support WeChat applet components|wxcomponents|
 |支付宝小程序|支持支付宝小程序组件|mycomponents|
+|Alipay Mini Program|Support Alipay Mini Program Components|mycomponents|
 |百度小程序|支持百度小程序组件|swancomponents|
 |抖音小程序、飞书小程序|支持抖音小程序、飞书小程序组件|ttcomponents|
 |QQ小程序|支持QQ小程序组件|wxcomponents|
+|QQ applet|Support QQ applet components|wxcomponents|
 |快手小程序|支持快手小程序组件|kscomponents|
+| Kuaishou applet|Support Kuaishou applet components|kscomponents|
 |京东小程序|支持京东小程序组件|jdcomponents|
+|JD Mini Programs|Support JD Mini Program Components|jdcomponents|
 
 此文档要求开发者对各端小程序的**自定义组件**有一定了解，没接触过小程序**自定义组件**的可以参考：
+This document requires developers to have a certain understanding of the **custom components** of the applet at each end. Those who have not touched the **custom components** of the applet can refer to:
 
 - [微信小程序自定义组件](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
+- [WeChat Mini Program Custom Component](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
 - [百度小程序自定义组件](https://smartprogram.baidu.com/docs/develop/framework/custom-component/)
+- [Baidu Mini Program Custom Component](https://smartprogram.baidu.com/docs/develop/framework/custom-component/)
 - [支付宝小程序自定义组件](https://docs.alipay.com/mini/framework/custom-component-overview)
 - [抖音小程序自定义组件](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/guide/developing-and-testing-miniApp/front-end/mini-app-framework/custom-component/component-constructor)
 - [飞书小程序自定义组件](https://open.feishu.cn/document/uYjL24iN/ugTOugTOugTO)
+- [Feishu Mini Program Custom Components](https://open.feishu.cn/document/uYjL24iN/ugTOugTOugTO)
 - [QQ小程序自定义组件](https://q.qq.com/wiki/develop/miniprogram/frame/diy_components/)
+- [QQ Mini Program Custom Components](https://q.qq.com/wiki/develop/miniprogram/frame/diy_components/)
 - [快手小程序自定义组件](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
+- [Custom Component of Kuaishou Mini Program](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
 - [京东小程序自定义组件](https://mp-docs.jd.com/framework/customcomponent/)
+- [JD Mini Program Custom Component](https://mp-docs.jd.com/framework/customcomponent/)
 
 **目录结构**
+**Directory Structure**
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
@@ -68,8 +87,10 @@
 </pre>
 
 **使用方式**
+**How to use**
 
 在 ``pages.json`` 对应页面的 style -> usingComponents 引入组件：
+Introduce components in the style -> usingComponents of the corresponding page in ``pages.json``:
 
 ```javascript
 {
@@ -99,20 +120,27 @@
 ```
 
 在页面中使用
+use in the page
 
 ```html
 <!-- 页面模板 (index.vue) -->
+<!-- Page Template (index.vue) -->
 <view>
     <!-- 在页面中对自定义组件进行引用 -->
+    <!-- Reference the custom component in the page -->
     <custom name="uni-app"></custom>
 </view>
 ```
 
 **代码示例**
+**CODE EXAMPLE**
 
 下面以微信小程序官方自定义组件示例 [miniprogram-slide-view](https://github.com/wechat-miniprogram/slide-view) 为例演示小程序自定义组件的使用方式。
+The following uses the WeChat Mini Program official custom component example [miniprogram-slide-view](https://github.com/wechat-miniprogram/slide-view) as an example to demonstrate how to use the Mini Program custom component.
 其他组件使用示例见GitHub：[wxcomponents-template](https://github.com/dcloudio/uni-app/tree/master/examples/wxcomponents-template)。
+See GitHub for other component usage examples: [wxcomponents-template](https://github.com/dcloudio/uni-app/tree/master/examples/wxcomponents-template).
 插件市场有一个完整的``vant weapp`` 引用好的示例工程，详见[https://ext.dcloud.net.cn/plugin?id=302](https://ext.dcloud.net.cn/plugin?id=302)。
+The plugin market has a complete ``vant weapp`` referenced example project, see [https://ext.dcloud.net.cn/plugin?id=302](https://ext.dcloud.net. cn/plugin?id=302).
 
 目录结构
 
@@ -229,40 +257,60 @@ slide-view.vue
 ```
 
 **注意事项**
+**Precautions**
 
 * 小程序组件需要放在项目特殊文件夹 ``wxcomponents``（或 mycomponents、swancomponents）。HBuilderX 建立的工程 ``wxcomponents`` 文件夹在 项目根目录下。vue-cli 建立的工程 ``wxcomponents`` 文件夹在 ``src`` 目录下。可以在 vue.config.js 中自定义其他目录
+* The applet components need to be placed in the project special folder ``wxcomponents`` (or mycomponents, swancomponents). The ``wxcomponents`` folder of the project created by HBuilderX is in the project root directory. The ``wxcomponents`` folder of the project created by vue-cli is in the ``src`` directory. Additional directories can be customized in vue.config.js
 * 小程序组件的性能，不如vue组件。使用小程序组件，需要自己手动setData，很难自动管理差量数据更新。而使用vue组件会自动diff更新差量数据。所以如无明显必要，建议使用vue组件而不是小程序组件。比如某些小程序ui组件，完全可以用更高性能的uni ui替代。
+* The performance of the applet component is not as good as that of the vue component. Using the applet component, you need to manually setData yourself, and it is difficult to automatically manage differential data updates. Using the vue component will automatically diff update the difference data. So if there is no obvious need, it is recommended to use the vue component instead of the applet component. For example, some small program ui components can be completely replaced by higher-performance uni ui.
 * 当需要在 `vue` 组件中使用小程序组件时，注意在 `pages.json` 的 `globalStyle` 中配置 `usingComponents`，而不是页面级配置。
+* When you need to use applet components in `vue` components, pay attention to configure `usingComponents` in `globalStyle` of `pages.json`, not page-level configuration.
 * 注意数据和事件绑定的差异，组件使用时应按照 `vue` 的数据和事件绑定方式
+* Pay attention to the difference between data and event binding, components should be used according to the data and event binding method of `vue`
 	- 属性绑定从 `attr="{{ a }}"`，改为 `:attr="a"`；从 `title="复选框{{ item }}"` 改为 `:title="'复选框' + item"`
+	- Attribute binding changed from `attr="{{ a }}"` to `:attr="a"`; from `title="checkbox{{ item }}"` to `:title=" 'checkbox' + item"`
 	- 事件绑定从 `bind:click="toggleActionSheet1"` 改为 `@click="toggleActionSheet1"`，目前支付宝小程序不支持 `vue` 的事件绑定方式，具体参考：[支付宝小程序组件事件监听示例](https://github.com/dcloudio/uni-app/issues/917#issuecomment-653329693)
+	- Changed event binding from `bind:click="toggleActionSheet1"` to `@click="toggleActionSheet1"`. Currently Alipay applet does not support `vue` event binding method, please refer to: [Alipay applet component event monitoring Example](https://github.com/dcloudio/uni-app/issues/917#issuecomment-653329693)
 	- 阻止事件冒泡 从 `catch:tap="xx"` 改为 `@tap.native.stop="xx"`
+	- Stop event bubbling changed from `catch:tap="xx"` to `@tap.native.stop="xx"`
 	- `wx:if` 改为 `v-if`
+	- `wx:if` changed to `v-if`
 	- `wx:for="{{ list }}" wx:key="{{ index }}"` 改为`v-for="(item,index) in list"`
+	- `wx:for="{{ list }}" wx:key="{{ index }}"` was changed to `v-for="(item,index) in list"`
 
 详细的小程序转uni-app语法差异可参考文档[https://ask.dcloud.net.cn/article/35786](https://ask.dcloud.net.cn/article/35786)。
+For details on the syntax differences between Mini Program and uni-app, please refer to the document [https://ask.dcloud.net.cn/article/35786](https://ask.dcloud.net.cn/article/35786).
 
 ## WXS
 
 WXS是一套运行在视图层的脚本语言，[微信端的规范详见](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/)。
+WXS is a scripting language that runs on the view layer. [For details on WeChat, see details](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/).
 
 它的特点是运行在视图层。当需要避免逻辑层和渲染层交互通信折损时，可采用wxs。
+It is characterized by running in the view layer. When it is necessary to avoid the loss of interactive communication between the logic layer and the rendering layer, wxs can be used.
 
 uni-app可以将wxs代码编译到微信小程序、QQ小程序、app-vue、H5上（`uni-app 2.2.5`及以上版本）
+uni-app can compile wxs code to WeChat applet, QQ applet, app-vue, H5 (`uni-app 2.2.5` and above)
 
 与wxs类似，百度小程序提供了Filter、阿里小程序提供了SJS，uni-app也支持使用这些功能，并将它们编译到百度和阿里的小程序端。不过它们的功能还不如wxs强大。此外头条系小程序自身不支持类似功能。
+Similar to wxs, Baidu applet provides Filter, Alibaba applet provides SJS, uni-app also supports these functions, and compiles them into Baidu and Alibaba applet. But they are not as powerful as wxs. In addition, the Toutiao applet itself does not support similar functions.
 
 **平台差异说明**
+**Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√(不支持nvue)|√|√|SJS|Filter|x|√|
+|√(nvue not supported)|√|√|SJS|Filter|x|√|
 
 App端nvue解决此类需求，不应该使用wxs，而是使用bindingx。
+App-side nvue to solve such needs, should not use wxs, but use bindingx.
 
 **wxs示例**
+**wxs example**
 
 以下是一些使用 WXS 的简单示例，要完整了解 WXS 语法，请参考[WXS 语法参考](https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/)。本示例使用wxs响应`touchmove`事件，减少视图层与逻辑层通信，使滑动更加丝滑。
+The following are some simple examples of using WXS. For a complete understanding of WXS syntax, please refer to [WXS Syntax Reference](https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/). This example uses wxs to respond to the `touchmove` event, reducing the communication between the view layer and the logic layer, and making the sliding smoother.
 
 ```html
 <template>
@@ -337,6 +385,7 @@ App端nvue解决此类需求，不应该使用wxs，而是使用bindingx。
 ```
 
 支付宝小程序，百度小程序官方暂未支持事件响应，不过也可以使用对应的SJS、Filter过滤器实现一些数据处理的操作，以下代码展示了一个时间格式化的小功能
+Alipay applet and Baidu applet do not officially support event response, but you can also use the corresponding SJS and Filter filters to implement some data processing operations. The following code shows a small function of time formatting
 
 `index.vue`
 
@@ -372,6 +421,7 @@ App端nvue解决此类需求，不应该使用wxs，而是使用bindingx。
 ```
 
 `utils.sjs` 与 `utils.filter.js` 内容一致
+`utils.sjs` is the same as `utils.filter.js`
 
 ```js
 export default {
@@ -427,11 +477,14 @@ export default {
 ```
 
 **注意**
+**Notice**
 
 引入方式
+introduction method
 
 ```html
 <!-- 内联 -->
+<!-- inline -->
 <script module="test" lang="wxs">
   //...code
 </script>
@@ -441,25 +494,41 @@ export default {
 
 
 <!-- 外部引入 -->
+<!-- External import -->
 <script module="utils" lang="wxs" src="./utils.wxs"></script>
 <script module="utils" lang="filter" src="./utils.filter.js"></script>
 <script module="utils" lang="sjs" src="./utils.sjs"></script>
 ```
 
 - **【重要】** 编写wxs、sjs、filter.js 内容时必须遵循相应语法规范
+- **[Important]** When writing the content of wxs, sjs, filter.js, you must follow the corresponding syntax specifications
 - **【重要】** `module`所指定的模块名不可与`data`、`methods`、`computed`内的属性重名
+- **[Important]** The module name specified by `module` cannot have the same name as the attributes in `data`, `methods`, and `computed`
 - vue3 项目不支持 `setup script` 用法
+- `setup script` usage is not supported in vue3 projects
 - 目前各个小程序正在完善相关规范，可能会有较大改动，请务必仔细阅读相应平台的文档
+- At present, the relevant specifications of each applet are being improved, and there may be major changes. Please read the documentation of the corresponding platform carefully
 - 支付宝小程序请使用sjs规范，[详见](https://docs.alipay.com/mini/framework/sjs)
+- Please use sjs specification for Alipay applet, [see details](https://docs.alipay.com/mini/framework/sjs)
 - 支付宝小程序sjs只能定义在.sjs 文件中，然后使用```<script>```标签引入
+- Alipay applet sjs can only be defined in the .sjs file, and then imported using the ```<script>``` tag
 - 支付宝小程序`script`的标签属性`name`、`from`被统一为了`module`、`src`以便后续实现多平台统一写法
+- The tag attributes `name` and `from` of the Alipay applet `script` have been unified into `module` and `src`, so as to realize the unified writing method on multiple platforms in the future
 - 百度小程序中请使用Filter规范，[详见](https://smartprogram.baidu.com/docs/develop/framework/view_filter/)
+- Please use Filter specification in Baidu applet, [see details](https://smartprogram.baidu.com/docs/develop/framework/view_filter/)
 - 百度小程序Filter只能导出`function`函数
+- Baidu applet Filter can only export `function` function
 - 暂不支持在 wxs、sjs、filter.js 中调用其他同类型文件
+- It is not supported to call other files of the same type in wxs, sjs, filter.js
 - wxs、filter.js既能内联使用又可以外部引入，sjs只能外部引入
+- wxs and filter.js can be used both inline and externally, while sjs can only be imported externally
 - QQ小程序目前对内联的 wxs 支持不好，部分写法可能会导致编译出错，尽量使用外部引入的方式
+- QQ applet currently does not support inline wxs well, some writing methods may lead to compilation errors, try to use externally imported methods
 - 在微信自定义组件中`wxcomponents`也可以使用wxs
+- `wxcomponents` can also use wxs in WeChat custom components
 - `nvue`页面暂不支持wxs、sjs、filter.js
+- `nvue` page does not support wxs, sjs, filter.js
 - 各个`script`标签会分别被打包至对应支持平台，不需要额外写条件编译
+- Each `script` tag will be packaged to the corresponding supported platform, no additional conditional compilation is required
 - 自`HBuilderX 2.2.5`开始，不推荐使用各个小程序自有的引入方式，推荐使用`script`标签引入
 - App和H5端，提供了wxs的升级版，更加强大，见下面的 [renderjs](/tutorial/renderjs.html) 章节

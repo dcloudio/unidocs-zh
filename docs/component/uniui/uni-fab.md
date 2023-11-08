@@ -222,3 +222,4 @@
 
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/fab/fab)
+[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/fab/fab)

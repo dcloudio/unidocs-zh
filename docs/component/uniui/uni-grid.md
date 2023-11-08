@@ -1,23 +1,36 @@
 
 ::: tip 组件名：uni-grid
+::: tip component name: uni-grid
 > 代码块： `uGrid`
+> Code block: `uGrid`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-grid)
+[Click to download & install](https://ext.dcloud.net.cn/plugin?name=uni-grid)
 :::
 
 宫格组件。
+Palace components.
 
 ## 介绍
+## introduce
 ::: warning 注意事项
+::: warning Notes
 > 为了避免错误使用，给大家带来不好的开发体验，请在使用组件前仔细阅读下面的注意事项，可以帮你避免一些错误。
+> In order to avoid wrong use and bring you a bad development experience, please read the following precautions carefully before using the component, which can help you avoid some mistakes.
 - 删除组件自带圆点角标效果，完全交给用户实现，示例有简单角标效果实现
+- Delete the dot corner mark effect of the component, which is completely implemented by the user. The example has a simple corner mark effect.
 - Grid 组件仅在自定义组件模式下支持
+- Grid component is only supported in custom component mode
 - column 属性最大值最好不要超过 5 个，如果超过，需要注意内容显示
+- The maximum value of the column attribute should not exceed 5. If it exceeds, you need to pay attention to the content display
 - 支付宝小程序平台需要在支付宝小程序开发者工具里开启 component2 编译模式，开启方式： `详情 --> 项目配置 --> 启用 component2 编译`
+- The Alipay applet platform needs to enable the component2 compilation mode in the Alipay applet developer tool. The way to enable it: `Details --> Project Configuration --> Enable component2 compilation`
 - 为了避免高度显示错误组件内必须要有内容
+- There must be content inside the component to avoid height display errors
 :::
 
 ### 基本用法
+### Basic usage
 
 ```html
 <uni-grid :column="3">
@@ -33,6 +46,7 @@
 </uni-grid>
 ```
 ### 不带边框并矩形显示
+### Without border and rectangle display
 ```html
 <uni-grid :column="3" :showBorder="false"  :square="false">
 	<uni-grid-item>
@@ -61,36 +75,51 @@
 ### Grid Props
 
 **uni-grid 属性说明：**
+**uni-grid property description:**
 
 |属性名		|类型	|默认值	|说明				|
+|property name |type |default value |description |
 |:-:		|:-:	|:-:	|:-:				|
 |column		|Number	|3		|每列显示个数		|
+|column |Number |3 |Number of each column |
 |borderColor|String	|#d0dee5|边框颜色			|
+|borderColor|String |#d0dee5|border color |
 |showBorder	|Boolean|true	|是否显示边框		|
+|showBorder |Boolean|true |whether to show border |
 |square		|Boolean|true	|是否方形显示		|
+|square |Boolean|true |Whether to display a square |
 |highlight	|Boolean|true	|点击背景是否高亮	|
+|highlight |Boolean|true |Click background to highlight |
 
 ### Grid Events
 |事件名	|说明			|返回值											|
+|Event Name |Description |Return Value |
 |:-:	|:-:			|:-:											|
 |@change|点击 grid 触发	|e={detail:{index:0}}，index 为当前点击 grid下标|
+|@change|Click the grid to trigger |e={detail:{index:0}}, index is the current click grid subscript|
 
 
 ### GridItem Props
 
 |属性名|类型		|默认值	|说明										|
+|property name |type |default value |description |
 |:-:	|:-:		|:-:	|:-:										|
 |index|Number	|-		|子组件的唯一标识 ，点击grid会返回当前的标识|
+|index|Number |- |The unique identifier of the child component, click grid will return the current identifier|
 
 
 
 
 
 ## 示例
+## Example
 ::: warning 注意
+::: warning attention
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
+The example relies on multiple components such as `uni-card` `uni-section` `uni-scss`, copying the example code directly will not work properly.
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-grid) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name=uni-grid) , select `Import sample project using HBuilderX` on the right side of the page to experience the complete component example.
 :::
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/grid/grid
@@ -124,6 +153,7 @@
 
 		<uni-section title="滑动视图" type="line" padding>
 			<!-- 因为swiper特性的关系，请指定swiper的高度 ，swiper的高度并不会被内容撑开-->
+			<!-- Because of the swiper feature, please specify the height of the swiper, the height of the swiper will not be stretched by the content-->
 			<swiper class="swiper" :indicator-dots="true">
 				<swiper-item>
 					<uni-grid :column="3" :highlight="true" @change="change">
@@ -387,3 +417,4 @@
 :::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/grid/grid)
+[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/grid/grid)

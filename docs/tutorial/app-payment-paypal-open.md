@@ -1,5 +1,7 @@
 ## 申请开通Paypal
+## Apply to activate Paypal
 * [登录/注册](https://www.paypal.com/c2/signin)
+* [Login/Signin](https://www.paypal.com/c2/signin)
 * 打开[paypal开发者中心](https://developer.paypal.com/developer/applications)
 选择 **Apps & Credentials** 点击 **Create App**创建应用，创建后点击编辑按钮，如图：
 ![](https://native-res.dcloud.net.cn/images/uniapp/payment/paypal_app_center.png)

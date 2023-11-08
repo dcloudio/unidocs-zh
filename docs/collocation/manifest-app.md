@@ -1,33 +1,55 @@
 ### App Android@android  
 App-Android平台云端打包相关配置  
+App-Android platform cloud packaging related configuration
 
 |属性|类型|描述|  
+|property|type|description|
 |:-|:-|:-|
 |packagename|String|Android平台云端打包的包名|
+|packagename|String|The package name of the Android platform cloud package|
 |keystore|String|Android平台云端打包使用的签名证书文件路径|
+|keystore|String|The path to the signature certificate file used by the Android platform cloud package|
 |password|String|Android平台云端打包使用的签名证书的密码，要求证书存储密码和证书密码相同|
+|password|String|The password of the signing certificate used by the Android platform cloud packaging, the certificate storage password and the certificate password are required to be the same|
 |aliasname|String|Android平台云端打包使用的证书别名|
+|aliasname|String|Certificate alias used by Android platform cloud packaging|
 |schemes|String|Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[Android平台设置UrlSchemes](https://uniapp.dcloud.io/tutorial/app-android-schemes)|
+|schemes|String|The scheme registered by the App on the Android platform. Multiple schemes are separated by ",". For details, please refer to: [Android Platform Settings UrlSchemes](https://uniapp.dcloud.io/tutorial/app-android-schemes)|
 |abiFilters|Array|Android平台App支持的cpu类型，详情参考：[Android平台设置CPU类型](https://uniapp.dcloud.io/tutorial/app-android-abifilters)|
+|abiFilters|Array|The CPU types supported by the Android platform App, please refer to: [Android platform setting CPU type](https://uniapp.dcloud.io/tutorial/app-android-abifilters)|
 |permissions|Array|Android平台App使用的权限|
+|permissions|Array|Permissions used by apps on the Android platform|
 |custompermissions|Boolean|是否自定义Android权限配置|
+|custompermissions|Boolean|Whether to customize Android permission configuration|
 |permissionExternalStorage|Object|Android平台应用启动时申请读写手机存储权限策略配置，详情参考：[Android平台应用启动时读写手机存储权限策略](https://ask.dcloud.net.cn/article/36549)，支持request、prompt属性|
+|permissionExternalStorage|Object|Apply for the read-write mobile phone storage permission policy configuration when the Android platform application is started. For details, please refer to: [Read and write mobile phone storage permission policy when the Android platform application is started](https://ask.dcloud.net.cn/article/ 36549), support request, prompt attributes|
 |permissionPhoneState|Object|Android平台应用启动时申请读取设备信息权限配置，详情参考：[Android平台应用启动时访问设备信息(如IMEI)权限策略](https://ask.dcloud.net.cn/article/36549)，支持request、prompt属性|
+|permissionPhoneState|Object|Apply for the permission configuration of reading device information when the Android platform application is started. For details, please refer to: [Access Device Information (such as IMEI) Permission Policy when Android Platform Application Starts](https://ask.dcloud.net.cn/ article/36549), support request, prompt attributes|
 |minSdkVersion|String|Android平台最低支持版本，详情参考：[Android平台设置minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)|
+|minSdkVersion|String|The minimum supported version of the Android platform, please refer to: [Android platform setting minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)|
 |targetSdkVersion|String|Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)|
+|targetSdkVersion|String|Android platform target version, please refer to: [Android platform setting targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)|
 |packagingOptions|Array|Android平台云端打包时build.gradle的packagingOptions配置项，示例："packagingOptions": ["doNotStrip '*/armeabi-v7a/*.so'","merge '**/LICENSE.txt'"]|
+|packagingOptions|Array|The packagingOptions configuration item of build.gradle when the Android platform is packaged in the cloud, example: "packagingOptions": ["doNotStrip '*/armeabi-v7a/*.so'","merge '**/LICENSE.txt' "]|
 |jsEngine|String|uni-app使用的JS引擎，可取值v8、jsc，**将废弃，后续不再支持jsc引擎**|
+|jsEngine|String|The JS engine used by uni-app can take values v8, jsc, **will be discarded, and the jsc engine will not be supported in the future**|
 |debuggable|Boolean|是否开启Android调试开关|
+|debuggable|Boolean|Enable Android debugging switch|
 |locale|String|应用的默认语言|
+|locale|String|The default language of the application|
 |forceDarkAllowed|Boolean|是否强制允许暗黑模式|
+|forceDarkAllowed|Boolean|Whether dark mode is forced|
 |resizeableActivity|Boolean|是否支持分屏调整窗口大小|
+|resizeableActivity|Boolean|Whether to support split screen resizing|
 |hasTaskAffinity|Boolean|是否设置android：taskAffinity|
+|hasTaskAffinity|Boolean| Whether to set android:taskAffinity|
 |buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
 |pushRegisterMode|String|延迟初始化UniPush的配置，当配置此项值为`manual`后UniPush不会初始化，直到首次调用[getPushClientId](https://uniapp.dcloud.net.cn/api/plugins/push.html#getpushclientid)、getClientInfo、getClientInfoAsync时才会初始化，注:一旦调用获取cid的方法后，下次App启动就不再延迟初始化UniPush了。(manual为延迟，其他值表示不延迟。)|
 |enableOAID|Boolean|是否支持获取OAID，默认值为true，[详见](/collocation/manifest?id=enableOAID)|
 
 #### buildFeatures@buildFeatures  
 Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
+The buildFeatures configuration item of build.gradle when the Android platform is packaged in the cloud, the supported attributes refer to: [Android official documentation](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/ build/api/dsl/BuildFeatures?hl=en), the following sample source code:
 ```json  
 "buildFeatures": {
     "dataBinding": true,  //开启dataBinding
@@ -55,24 +77,41 @@ Android平台云端打包时build.gradle的buildFeatures配置项，支持的属
 
 ### App iOS@ios
 iOS平台云端打包相关配置
+iOS platform cloud packaging related configuration
 
 |属性|类型|描述|  
+|property|type|description|
 |:-|:-|:-|
 |appid|String|iOS平台云端打包使用的Bundle ID|
+|appid|String|Bundle ID used by iOS platform cloud packaging|
 |mobileprovision|String|iOS平台云端打包使用的profile文件路径|
+|mobileprovision|String|The path of the profile file used by the iOS platform cloud package|
 |p12|String|iOS平台云端打包使用的证书文件路径|
+|p12|String|The path to the certificate file used by the iOS platform cloud package|
 |password|String|iOS打包使用的证书密码|
+|password|String|Certificate password used by iOS packaging|
 |devices|String|iOS支持的设备类型，可取值iphone（仅支持iPhone设备）、ipad（仅支持iPad设备）、universal（同时支持iPhone和iPad设备）|
+|devices|String|The device type supported by iOS, which can be iphone (supports only iPhone devices), ipad (supports only iPad devices), universal (supports both iPhone and iPad devices)|
 |urlschemewhitelist|String|应用访问白名单列表，多个白名单使用“,”分割，详情参考：[iOS设置应用访问白名单](https://uniapp.dcloud.io/tutorial/app-ios-schemewhitelist)|
+|urlschemewhitelist|String|App access whitelist list. Multiple whitelists are separated by ",". For details, please refer to: [iOS Setting App Access Whitelist](https://uniapp.dcloud.io/tutorial/app-ios-schemewhitelist )|
 |urltypes|String|Android平台App注册的scheme，多个scheme使用“,”分割，详情参考：[iOS设置应用UrlSchemes](https://uniapp.dcloud.io/tutorial/app-ios-schemes)|
+|urltypes|String|The scheme registered by the App on the Android platform. Multiple schemes are separated by ",". For details, please refer to: [iOS Settings App UrlSchemes](https://uniapp.dcloud.io/tutorial/app-ios-schemes)|
 |UIBackgroundModes|Array|应用后台运行模式，详情参考：[iOS设置应用后台运行能力](https://uniapp.dcloud.io/tutorial/app-ios-uibackgroundmodes)|
+|UIBackgroundModes|Array|App background mode, for details, please refer to: [iOS Setting App Background Modes](https://uniapp.dcloud.io/tutorial/app-ios-uibackgroundmodes)|
 |frameworks|Array|依赖的系统库，**已废弃，推荐使用uni原生插件扩展使用系统依赖库**|
+|frameworks|Array|Dependent system library, **obsolete, it is recommended to use the uni native plug-in extension to use the system dependent library**|
 |deploymentTarget|String|iOS支持的最低版本|
+|deploymentTarget|String|Minimum version supported by iOS|
 |privacyDescription|Object|iOS隐私信息访问的许可描述|
+|privacyDescription|Object|Permission description for iOS privacy information access|
 |idfa|Boolean|是否使用广告标识|
+|idfa|Boolean|Whether to use advertising logo|
 |capabilities|Object|应用的能力配置（Capabilities）|
+|capabilities|Object|Capabilities of the application|
 |CFBundleName|String|应用的CFBundleName名称，默认值为HBuilder|
+|CFBundleName|String|The name of the CFBundleName of the application, the default value is HBuilder|
 |validArchitectures|Array|编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64|
+|validArchitectures|Array|CPU instructions supported at compile time, can take values arm64, arm64e, armv7, armv7s, x86_64|
 |pushRegisterMode|String|使用“Push(消息推送)”模块时申请系统推送权限模式，设置为manual表示调用push相关API时申请，设置为其它值表示应用启动时自动申请|
 |privacyRegisterMode|String|设置为manual表示同意隐私政策后再获取相关隐私信息，设置为其它值表示应用启动时自动获取[详见](/collocation/manifest?id=privacyRegisterMode)|
 
@@ -86,6 +125,7 @@ iOS平台云端打包相关配置
 
 
 ### 完整 manifest.json@full-manifest
+### full manifest.json@full-manifest
 
 ```javascript
 {

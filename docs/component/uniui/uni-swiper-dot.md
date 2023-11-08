@@ -1,23 +1,36 @@
 
 ::: tip 组件名：uni-swiper-dot
+::: tip component name: uni-swiper-dot
 > 代码块： `uSwiperDot`
+> Code block: `uSwiperDot`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-swiper-dot)
+[Click to download & install](https://ext.dcloud.net.cn/plugin?name=uni-swiper-dot)
 :::
 
 自定义轮播图指示点
+Custom carousel indicator points
 
 ## 介绍
+## introduce
 ::: warning 注意事项
+::: warning Notes
 > 为了避免错误使用，给大家带来不好的开发体验，请在使用组件前仔细阅读下面的注意事项，可以帮你避免一些错误。
+> In order to avoid wrong use and bring you a bad development experience, please read the following precautions carefully before using the component, which can help you avoid some mistakes.
 - 本组件依赖 `swiper` 组件,请与`swiper`组件配合使用
+- This component depends on the `swiper` component, please use it with the `swiper` component
 - `width` 与 `height` 如非必要，请勿设置过大，或者过小
+- `width` and `height` should not be set too large or too small unless necessary
 - `swiper-item` 尽量控制在一定数量之内，否则指示点可能会超出屏幕
+- `swiper-item` should be kept within a certain amount as much as possible, otherwise the indicator point may exceed the screen
 - 暂不支持垂直方向的指示点
+- Do not support vertical pointers
 :::
 ### 基本用法
+### Basic usage
 
 在 ``template`` 中的使用
+Use in ``template``
 
 ```html
 <uni-swiper-dot :info="info" :current="current" field="content" :mode="mode">
@@ -59,30 +72,48 @@ export default {
 ### SwiperDot Props 
 
 |属性名|类型|默认值|说明|
+|property name|type|default value|description|
 |:-:|:-:|:-:|:-:|
 |current|Number	|0|当前指示点索引，必须是通过 `swiper` 的 `change` 事件获取到的 `e.detail.current`|
+|current|Number |0|The index of the current index point, which must be `e.detail.current`| obtained through the `change` event of `swiper`
 |mode|String|default|指示点的类型，可选值：default 、round 、nav	 、 indexes|
+|mode|String|default| indicates the type of the point, optional values: default , round , nav , indexes|
 |field|String|-| mode 为 nav 时，显示的内容字段（mode = nav 时必填）|
+|field|String|-| When mode is nav, the displayed content field (required when mode = nav)|
 |info|Array	|-|轮播图的数据，通过数组长度决定指示点个数|
+|info|Array |-|The data of the carousel, the number of indicated points is determined by the length of the array|
 |dotsStyles	|Object	|-|指示点样式|
+|dotsStyles |Object |-|Indicates dot styles|
 
 #### dotsStyles Options
 
 |属性名|类型	|默认值|说明|
+|property name|type |default value|description|
 |:-:|:-:|:-:|:-:|
 |width|Number| 8|指示点宽度 **在 mode = nav、mode = indexes 时不生效**|
+|width|Number| 8|Indicates point width **Not valid when mode = nav, mode = indexes**|
 |bottom|Number	| 10|指示点距 `swiper` 底部的高度|
+|bottom|Number | 10|Indicates the height of the dot from the bottom of the `swiper`|
 |color|Color	| '#fff'|指示点前景色，**只在 mode = nav ，mode = indexes 时生效**	|
+|color|Color | '#fff'| Indicates the point foreground color, **only valid when mode = nav, mode = indexes** |
 |backgroundColor|Color	| 'rgba(0, 0, 0, .3)'|未选择指示点背景色|
+|backgroundColor|Color | 'rgba(0, 0, 0, .3)'|Indicating point background color not selected|
 |border|Border	| '1px rgba(0, 0, 0, .3) solid'	|未选择指示点边框样式|
+|border|Border | '1px rgba(0, 0, 0, .3) solid' |point border style not selected|
 |selectedBackgroundColor|Color	| '#333'|已选择指示点背景色，**在 mode = nav 时不生效**|
+|selectedBackgroundColor|Color | '#333'|The background color of the indicator point has been selected, **not valid when mode = nav**|
 |selectedBorder|Border	| '1px rgba(0, 0, 0, .9) solid'	|已选择指示点边框样式，**在 mode = nav 时不生效**|
+|selectedBorder|Border | '1px rgba(0, 0, 0, .9) solid' |indicated point border style is selected, **does not take effect when mode = nav**|
 
 ## 示例
+## example
 ::: warning 注意
+::: warning attention
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
+The example relies on multiple components such as `uni-card` `uni-section` `uni-scss`, copying the example code directly will not work properly.
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-swiper-dot) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name=uni-swiper-dot), select `Import sample project using HBuilderX` on the right side of the page to experience the complete component example.
 :::
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/swiper-dot/swiper-dot
@@ -339,3 +370,4 @@ export default {
 :::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/swiper-dot/swiper-dot)
+[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/swiper-dot/swiper-dot)

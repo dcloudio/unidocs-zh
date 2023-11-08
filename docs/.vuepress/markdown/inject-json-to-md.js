@@ -9,19 +9,19 @@ let manifestJson = {};
 let pagesJson = {};
 let specialStringJson = {};
 try {
-	cssJson = require('../utils/cssJson.json');
+	cssJson = require(`../utils/${process.env.DOCS_LOCAL}/cssJson.json`);
 } catch (error) {}
 try {
-	utsJson = require('../utils/utsJson.json');
+	utsJson = require(`../utils/${process.env.DOCS_LOCAL}/utsJson.json`);
 } catch (error) {}
 try {
-	utsApiJson = require('../utils/utsApiJson.json');
+	utsApiJson = require(`../utils/${process.env.DOCS_LOCAL}/utsApiJson.json`);
 } catch (error) {}
 try {
-	utsComJson = require('../utils/utsComJson.json');
+	utsComJson = require(`../utils/${process.env.DOCS_LOCAL}/utsComJson.json`);
 } catch (error) {}
 try {
-	utsUnicloudApiJson = require('../utils/utsUnicloudApiJson.json');
+	utsUnicloudApiJson = require(`../utils/${process.env.DOCS_LOCAL}/utsUnicloudApiJson.json`);
 } catch (error) {}
 try {
 	customTypeJson = require('../utils/customTypeJson.json');

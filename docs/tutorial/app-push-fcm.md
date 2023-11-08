@@ -1,30 +1,44 @@
 #### 准备条件  
+#### Preparation conditions
 
 - 可访问Google服务器  
+- Access to Google servers
 注意：中国境内无法访问Google服务器
+Note: Google servers cannot be accessed within China
 - 注册Google账号  
+- Register a Google account
 - 了解什么是 `Firebase Cloud Messaging`,确定你是否需要用它
+- Learn what `Firebase Cloud Messaging` is and decide if you need it
   + [介绍](https://firebase.google.com/docs/cloud-messaging)
+  + [Introduction](https://firebase.google.com/docs/cloud-messaging)
   + [Android设置文档](https://firebase.google.com/docs/cloud-messaging/android/client)
+  + [Android Setup Documentation](https://firebase.google.com/docs/cloud-messaging/android/client)
   + [iOS设置文档](https://firebase.google.com/docs/cloud-messaging/ios/client)
+  + [iOS setup documentation](https://firebase.google.com/docs/cloud-messaging/ios/client)
 
 
 #### 申请开通FCM  
+#### Apply for FCM
 
 1. 打开[Firebase引导页](https://firebase.google.com)  
+1. Open the [Firebase Bootstrap Page](https://firebase.google.com)
 
 2. 创建新项目  
+2. Create a new project
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_project_setup_1.jpg)  
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_project_setup_2.jpg)  
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_project_setup_3.jpg)  
 
 3. 创建`iOS`平台配置  
+3. Create the `iOS` platform configuration
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_project_setup_1.jpg)
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_project_setup_2.jpg)
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_project_setup_3.jpg)
 将 `GoogleService-Info.plist` 下载到本地，HBuilderX中云端打包需要使用此文件  
+Download `GoogleService-Info.plist` to the local, this file is required for cloud packaging in HBuilderX
 
 4. 创建`Android`平台配置 (如已创建项目，无须创建新项目，直接进行Android平台的配置)  
+4. Create `Android` platform configuration (if you have already created a project, you don't need to create a new project, you can directly configure the Android platform)
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_project_setup_1.jpg)  
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_project_setup_2.jpg)  
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_project_setup_3.jpg)  
@@ -33,9 +47,11 @@
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_android_setup_package.png)  
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_android_setup_download_config_file.png)
 将 `google-services.json` 下载到本地，HBuilderX中云端打包需要使用此文件  
+Download `google-services.json` locally, this file is required for cloud packaging in HBuilderX
 
 
 ####  Android平台FCM后台推送消息  
+#### Android platform FCM background push message
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_1.jpg)  
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_2.jpg)  
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_3.jpg)  
@@ -44,11 +60,14 @@
 
 
 #### iOS平台FCM后台推送消息  
+#### iOS platform FCM background push message
 
 1. 上传APNS证书  
+1. Upload APNS certificate
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_ios_upload_profile.jpg)  
 
 2. 网页端实现推送客户端功能  
+2. The web page implements the push client function
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_1.jpg)  
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_2.jpg)  
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_create_notification_3.jpg)  

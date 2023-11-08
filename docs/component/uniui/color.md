@@ -1,7 +1,10 @@
 `uni-ui`为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。
+`uni-ui` To avoid differences in visual communication, use a specific set of color palettes to specify colors to provide a consistent look and feel for the products you build.
 
 ### 主色
+### Main color
 `uni-ui`的主色使用了令人安静并放松的蓝色。
+The main color of `uni-ui` is a calming and relaxing blue.
 
 
 <div class="color-main">
@@ -20,14 +23,17 @@
 </div>
 
 我们通过uni-scss提供了对应的颜色变量名
+We provide the corresponding color variable name through uni-scss
 ```css
 $uni-primary: #2979ff;
 $uni-primary-disable:#94bcff;
 $uni-primary-light: #d4e4ff;
 ```
 ### 辅助色
+### Secondary color
 
 除了主色外的场景色，需要在不同的场景中使用,不同颜色代表不同的场景，如：绿色代表成功、红色代表错误、黄色代表警告。
+Scene colors other than the main color need to be used in different scenes, and different colors represent different scenes, such as: green for success, red for errors, and yellow for warnings.
 
 <div class="color-content">
 	<div class="color-main">
@@ -89,6 +95,7 @@ $uni-primary-light: #d4e4ff;
 </div>
 
 我们通过uni-scss提供了对应的颜色变量名
+We provide the corresponding color variable name through uni-scss
 ```css
 $uni-success: #18bc37;
 $uni-success-disable: #8cde9b;
@@ -108,7 +115,9 @@ $uni-info-light: #e9e9eb;
 ```
 
 ### 中性色
+### Neutral colors
 中性色用于文本、背景和边框颜色。通过运用不同的中性色，来表现层次结构。
+Neutral colors are used for text, background, and border colors. The hierarchy is expressed by using different neutral colors.
 
 <div class="color-content">
 	<div class="color-main">
@@ -138,6 +147,7 @@ $uni-info-light: #e9e9eb;
 </div>
 
 我们通过uni-scss提供了对应的颜色变量名
+We provide the corresponding color variable name through uni-scss
 ```css
 $uni-main-color: #3a3a3a; 			// 主要文字
 $uni-base-color: #6a6a6a;			// 常规文字
@@ -146,8 +156,10 @@ $uni-extra-color: #c7c7c7;			// 辅助说明
 ```
 
 ### 边框颜色
+### border color
 
 主要用于边框、分隔线颜色
+Mainly used for border, divider color
 
 <div class="color-content">
 	<div class="color-main">
@@ -177,6 +189,7 @@ $uni-extra-color: #c7c7c7;			// 辅助说明
 </div>
 
 我们通过uni-scss提供了对应的颜色变量名
+We provide the corresponding color variable name through uni-scss
 
 ```css
 $uni-border-1: #f0f0f0;
@@ -186,7 +199,9 @@ $uni-border-4: #b9b9b9;
 ```
 
 ### 常规色
+### Regular color
 通用颜色，如黑色、白色、常用背景色等
+Common colors, such as black, white, common background colors, etc.
 
 <div class="color-content">
 	<div class="color-main" style="border:1px #eee solid;">
@@ -216,17 +231,21 @@ $uni-border-4: #b9b9b9;
 </div>
 
 我们通过uni-scss提供了对应的颜色变量名
+We provide the corresponding color variable name through uni-scss
 
 ```css
 // 常规色
+// regular color
 $uni-black: #000000;
 $uni-white: #ffffff;
 $uni-transparent: rgba($color: #000000, $alpha: 0);
 // 背景色
+// background color
 $uni-bg-color: #f7f7f7;
 ```
 
 ### 阴影
+### Shadow
 
 <div class="color-content">
 	<div class="color-main shadow" style="border:1px #eee solid;box-shadow: 0 0 5px hsl(0deg 0% 85% / 50%);">
@@ -247,6 +266,7 @@ $uni-bg-color: #f7f7f7;
 </div>
 
 我们通过uni-scss提供了对应的颜色变量名
+We provide the corresponding color variable name through uni-scss
 
 ```css
 $uni-shadow-sm:0 0 5px rgba($color: #d8d8d8, $alpha: 0.5);

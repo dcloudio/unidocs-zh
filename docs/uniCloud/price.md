@@ -1,9 +1,14 @@
 ## 概述
+## Overview
 
 1. uniCloud为每个开发者提供一个免费的服务空间，更低门槛
+1. uniCloud provides each developer with a free service space, lower threshold
 2. 按量付费是serverless的特色，如果没有消耗硬件资源，就完全不用付款
+2. Pay-as-you-go is a feature of serverless. If you don’t consume hardware resources, you don’t need to pay at all.
 3. serverless比传统的云主机更便宜
+3. Serverless is cheaper than traditional cloud hosting
 4. 传统云主机一旦被攻击，高防价格非常昂贵。而uniCloud无需支付高防费用，不惧DDoS攻击。
+4. Once the traditional cloud host is attacked, the high defense price is very expensive. And uniCloud does not need to pay high defense fees, and is not afraid of DDoS attacks.
 
 uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。DCloud公司不会加价。uniCloud已经上线近3年，DCloud一直以良心方式服务开发者，努力降低应用的开发门槛、提高应用的开发效率。
 - 选择支付宝小程序云作为服务商时，有一个免费服务空间。除最高档套餐外，其余套餐可享受一次“0元购”，有效期为3个月。支持超出套餐后按量计费。
@@ -57,6 +62,7 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 
 - GBs、RU、WU等单位释义，[见下](#aliyun-quota-description)
 - 套餐中的资源超标后服务空间会停服，需要及时升配或转按量计费才能恢复。
+- After the resources in the package exceed the standard, the service space will be suspended, and it needs to be upgraded in time or converted to pay-as-you-go to recover.
 
 - 包月套餐的服务空间，有如下可用操作：
 	* 续费：时间到期前继续付费购买更长时间。到期后、销毁释放前，可以续费挽回。
@@ -73,12 +79,15 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 ### 按量计费@aliyun-postpay
 
 按量计费，意味着不是每个月支付固定费用，而是根据使用量付费。
+Pay-as-you-go means that instead of paying a flat fee every month, you pay for what you use.
 
 按量付费需要预存余额，每日根据前一日资源消耗生成账单，从阿里云预存余额中扣除。
 
 如果预存余额不足，则服务空间将不可用，需要立即充值。
+If the pre-stored balance is insufficient, the service space will not be available and needs to be recharged immediately.
 
 阿里云按量计费服务空间定价如下：
+Alibaba Cloud pay-as-you-go service spaces are priced as follows:
 
 |资源分类		|资源细项				|售价（元）	|
 |:-:			|:-:					|:-:		|
@@ -160,6 +169,7 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 ### 现阶段系统限制@aliyun-system-limit
 
 因上游储备不足，目前uniCloud阿里云版仍有一些限额。DCloud会持续推动限额的解除。目前有需求的开发者需向DCloud人工联系申请提高限额。
+Due to insufficient upstream reserves, there are still some quotas for the uniCloud Alibaba Cloud version. DCloud will continue to promote the lifting of the limit. Developers currently in need need to contact DCloud manually to apply for an increase in the limit.
 
 |资源分类	|限制项																			|限额	|
 |---			|---																				|---	|
@@ -211,15 +221,22 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 ### 欠费停服及资源销毁说明
 
 - 套餐指标超限：
+- Package index exceeded:
 包月套餐各项资源用量如有指标超上限时，该项指标服务便会停服，其他服务不受影响。比如云存储CDN流量超套餐上限，则云存储文件无法访问，其他服务正常。如需恢复，可升级套餐来获取更高套餐额度或转换为按量计费，升配或转按量计费后，资源恢复大约有10分钟左右延迟。
+If the usage of various resources of the monthly package exceeds the upper limit, the service of the target will be suspended, and other services will not be affected. For example, if the cloud storage CDN traffic exceeds the upper limit of the plan, the cloud storage files cannot be accessed, and other services are normal. If you need to restore, you can upgrade the package to obtain a higher package quota or switch to pay-as-you-go. After upgrading or switching to pay-as-you-go, resource recovery will be delayed for about 10 minutes.
 
 - 套餐到期停服：
+- Stop service when package expires:
 包月套餐在到期当天的0点10分左右开始停服，停服后服务空间无法正常使用，资源会保留15天。15天内操作续费服务恢复正常（续费后大约有10分钟左右延迟），未续费则会被销毁且无法找回。
+The service of the monthly package will be suspended at around 00:10 on the day of expiration. After the service is suspended, the service space cannot be used normally, and the resources will be reserved for 15 days. The operation renewal service will return to normal within 15 days (there will be a delay of about 10 minutes after the renewal), and the non-renewal will be destroyed and cannot be retrieved.
 
 - 余额欠费停服：
+- Suspension of service due to overdue balance:
 按量计费空间没有到期时间，是在账户欠费时开始停服。阿里云在每天上午9点左右出前一日账单，出账后如果账户发生欠费，按量计费服务空间则会被停服无法正常使用，资源会保留15天。15天内操作余额充正服务恢复正常（续费后大约有10分钟左右延迟），15天后会销毁空间资源且无法找回。
+The pay-as-you-go space has no expiration date, and the service will be suspended when the account is in arrears. Alibaba Cloud issues the previous day's bill at around 9 am every day. If the account is in arrears after the bill is issued, the pay-as-you-go service space will be suspended and cannot be used normally, and the resources will be reserved for 15 days. Within 15 days, the operation balance recharge service will return to normal (there will be a delay of about 10 minutes after the renewal), and the space resource will be destroyed after 15 days and cannot be retrieved.
 
 ### 阿里云公测版@aliyun-public
+### Alibaba Cloud Public Beta @aliyun-public
 
 阿里云公测版已于2022年11月15日公告，于21日停止新建，于2023年1月22日下线。详见：[https://ask.dcloud.net.cn/article/40144](https://ask.dcloud.net.cn/article/40144)
 
@@ -228,14 +245,18 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 
 
 ## 腾讯云@tencent
+## Tencent Cloud @tencent
 
 **使用腾讯云Nodejs12版本时，务必仔细阅读此文档：[keepRunningAfterReturn](uniCloud/cf-functions.md?id=keep-running)**
+**Be sure to read this document carefully when using Tencent Cloud Nodejs12 version: [keepRunningAfterReturn](uniCloud/cf-functions.md?id=keep-running)**
 
 腾讯云于2022年8月12日更新了计费方式。
 
 新计费模式下，统一采用**基础套餐+按量计费**的模式，开发者可先购买带有一定配额的基础套餐，超出套餐配额部分按使用量付费。
+Under the new billing model, the model of **basic package + pay-as-you-go** is uniformly adopted. Developers can purchase a basic package with a certain quota first, and the portion exceeding the quota of the package will be charged according to the usage.
 
 ### 基础套餐@tencent-package
+### Basic Package @tencent-package
 
 | 配额				| 个人版			| 入门版| 初创版	| 商用版	| 团队版	| 单位		|
 | ---				| ---				| ---	| ---		| ---		|  ---		| ---		|
@@ -260,29 +281,43 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 8. 前端网页托管开通后即为按量计费，不管服务空间有没有开启允许超量使用，前端网页托管计费参考[高级功能按量计费](#tencent-advanced)
 
 **关于计费项的额外说明**
+**Additional Notes on Billing Items**
 
 - 创建表、索引均计算一次写入
+- Creation of tables and indexes counts as one write
 - updateAndReturn操作只计算写次数，不计算读次数
+- The updateAndReturn operation only counts the number of writes, not the number of reads
 - 云函数出网流量包含请求三方服务器发送的数据和返回给客户端的数据
+- The outbound traffic of the cloud function includes the data sent by the third-party server and the data returned to the client
 - clientDB底层也是基于云函数实现，也会消耗云函数调用次数
 
 ### 超套餐后按量付费/超量使用定价@tencent-postpay
 
 | 计费项			| 定价				|
+| Billing Items | Pricing |
 | ---				| ---				|
 | 调用次数			| 0.5元/万次		|
+| Number of calls | 0.5 yuan/10,000 times |
 | 容量				| 0.1元/GB/天		|
+| Capacity | 0.1 yuan/GB/day |
 | 云函数资源使用量	| 0.00011108元/GBs	|
+| Cloud function resource usage | 0.00011108 yuan/GBs |
 | 云函数外网出流量	| 0.8元/GB			|
+| Cloud function external network traffic | 0.8 yuan/GB |
 | CDN流量			| 0.21元/GB			|
+| CDN traffic | 0.21 yuan/GB |
 | CDN回源流量		| 0.15元/GB			|
+| CDN back-to-source traffic | 0.15 yuan/GB |
 
 
 ### 高级功能按量计费定价@tencent-advanced
+### Premium Features Pay-As-You-Go Pricing @tencent-advanced
 
 以下条目的消耗不属于套餐内资源，会从账号的腾讯云余额进行扣除。
+The consumption of the following items does not belong to the resources in the package, and will be deducted from the Tencent Cloud balance of the account.
 
 | 计费项		|计费项			|定价				|
+| Billing Items |Billing Items |Pricing |
 | ---			| ---			|---				|
 |前端网页托管 #{rowspan=2}|容量			|0.005元/GB/天		|
 |流量			|0.21元/GB			|
@@ -294,13 +329,18 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 |分区数量		|0.04元/个/日		|
 
 - 在正式进行计费方式切换之日起，用户将不可继续续费或新购旧版套餐或按量计费服务空间。用户可选择是否切换新的计费方式，超时（2022.09.08）切换的服务空间将会停服释放。
+- From the date when the billing method is officially switched, the user will not be able to continue to renew or purchase new packages of the old version or pay-as-you-go service space. Users can choose whether to switch to the new billing method, and the service space switched after timeout (2022.09.08) will be stopped and released.
 - 新计费下腾讯云云函数日志保存时长为7天
+- Under the new billing, Tencent Cloud's cloud function logs will be saved for 7 days
 
 **注：当包年包月服务空间升级新套餐时，如果已开通前端网页托管，则前端网页托管会自动转为按量计费，请确保账号余额充足！**
+**Note: When the annual and monthly service space is upgraded to a new package, if the front-end web hosting has been activated, the front-end web hosting will be automatically converted to metered billing, please ensure that the account balance is sufficient! **
 
 ### 欠费停服及资源销毁
+### Suspension of service due to arrears and destruction of resources
 
 套餐到期第二天服务空间会进入隔离状态，服务空间不可用，资源会保留7天。7天内操作续费服务恢复正常（续费后大约有10分钟左右延迟），7天后会销毁空间资源且无法找回。
+The service space will enter the isolation state on the second day after the package expires, the service space will be unavailable, and the resources will be reserved for 7 days. The operation renewal service will return to normal within 7 days (there will be a delay of about 10 minutes after the renewal), and the space resource will be destroyed after 7 days and cannot be retrieved.
 
 当腾讯云按量余额欠费时，服务空间的`云函数日志`及`超限按量`将会自动关闭。如果服务空间套餐资源已超上限，则服务将会停服不可用。腾讯云按量余额充正后需手动开启相关服务。
 
@@ -438,6 +478,7 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 **注意：** 如果一个支付宝关联了多个DCloud账号（最多可绑定5个），当其中一个DCloud账号的支付宝按量余额欠费时，**该支付宝账号关联的所有DCloud账号服务空间都会停服**。
 
 ## 余额及保证金@balance
+## Balance and Margin @balance
 
 按量计费时，涉及余额和保证金的概念。包年包月不涉及这2个概念。
 
@@ -454,11 +495,15 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 余额充值后不支持退款，**余额不支持购买包年包月套餐，请根据业务使用量合理选择充值金额**。
 
 腾讯云余额可用于服务空间套餐资源用尽后`超限按量`、前端网页托管等服务产生的费用。
+The balance of Tencent Cloud can be used for the expenses incurred by services such as "over-limit and on-demand", front-end web hosting and other services after the service space package resources are exhausted.
 腾讯云的套餐资源用完后，当前空间若开启了`超限按量`功能，则会使用按量计费规则对前一日资源用量进行计费，并并从腾讯云余额中扣除。当前空间若未开启了`超限按量`功能，则会触发停服操作。
+After Tencent Cloud's package resources are used up, if the current space has the function of "over-limit by-use" enabled, the resource usage of the previous day will be billed using the pay-as-you-go rule, and will be deducted from the balance of Tencent Cloud. If the current space has not enabled the function of "over-limit by volume", it will trigger the shutdown operation.
 
 阿里云服务空间没有`超限按量`功能，但是提供了`按量计费`的服务空间，阿里云余额适用于`按量计费`服务空间产生的费用扣款。
+Alibaba Cloud service space does not have the function of "over-limit pay-as-you-go", but provides "pay-as-you-go" service space, and the balance of Alibaba Cloud is applicable to the deduction of fees generated by the "pay-as-you-go" service space.
 
 账户保证金在停止使用按量计费服务后可以申请退还，所以账户保证金不能申请开具发票，但可申请开具收据，申请方式：发送邮件到 fapiao@dcloud.io，邮件内容：
+You can apply for a refund of the account deposit after you stop using the pay-as-you-go service, so you cannot apply for an invoice for the account deposit, but you can apply for a receipt. The application method: send an email to fapiao@dcloud.io, and the email content:
 
 ```
 邮件标题：uniCloud保证金收据申请
@@ -473,8 +518,11 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 ```
 
 若需退还保证金，需满足以下条件：
+In order to refund the security deposit, the following conditions must be met:
 1. 退还阿里云保证金时，需先删除该账号下所有阿里云`按量计费`服务空间
+1. When refunding the Alibaba Cloud security deposit, you need to delete all Alibaba Cloud's "pay-as-you-go" service spaces under the account first.
 2. 退还腾讯云保证金时，需先关闭所有腾讯云`超限按量`功能，并关闭所有腾讯云空间的`前端网页托管`功能；
+2. When refunding the security deposit of Tencent Cloud, it is necessary to turn off all Tencent Cloud's "over-limit and pay-as-you-go" functions, and turn off the "front-end web page hosting" function of all Tencent Cloud spaces;
 
 退还保证金申请方式：使用uniCloud注册邮箱发送邮件到 service@dcloud.io，邮件内容：
 
@@ -495,38 +543,53 @@ uniCloud的定价、套餐内容、服务SLA，是由云厂商直接公布的。
 
 
 ## 发生故障时如何判断故障点
+## How to judge the fault point when a fault occurs
 
 当你的线上系统故障时，可以参考此文档判断责任归属：[如何判断是DCloud或阿里云或腾讯云的问题](https://uniapp.dcloud.io/uniCloud/faq?id=fault)
+When your online system fails, you can refer to this document to determine the attribution of responsibility: [How to determine if it is a DCloud or Alibaba Cloud or Tencent Cloud problem](https://uniapp.dcloud.io/uniCloud/faq?id=fault)
 
 ## 云厂商之间的迁移@cross-provider
+## Migration between cloud providers @cross-provider
 
 ### 数据库迁移@cross-provider-db
+### Database Migration @cross-provider-db
 
 目前可以使用云数据库的导入导出进行迁移，迁移数据库之前可以使用导出db_init.json功能将所有集合及索引导出。再使用数据导入导出功能进行迁移。导入导出请参考：[数据导入导出和备份](uniCloud/hellodb.md?id=dbmigration)
+Currently, you can use the import and export of ApsaraDB for migration. Before migrating the database, you can use the export db_init.json function to export all collections and indexes. Then use the data import and export function to migrate. For import and export, please refer to: [Data import, export and backup](uniCloud/hellodb.md?id=dbmigration)
 
 > 也可以直接使用第三方封装好的插件：[unicloud数据库一键搬家工具，支持阿里云与腾讯云互转。支持跨账号转。](https://ext.dcloud.net.cn/plugin?id=6089)
+> You can also directly use third-party packaged plug-ins: [unicloud database one-click moving tool, which supports the mutual transfer between Alibaba Cloud and Tencent Cloud. Support cross-account transfer. ](https://ext.dcloud.net.cn/plugin?id=6089)
 
 #### 腾讯云迁移到阿里云@tencent-to-aliyun-db
+#### Tencent Cloud to Aliyun @tencent-to-aliyun-db
 
 迁移数据可以通过在腾讯云服务空间导出数据表为json文件，在阿里云服务空间导入json文件到表的方式进行迁移。
+Migrating data can be migrated by exporting the data table as a json file in the Tencent cloud service space and importing the json file into the table in the Alibaba cloud service space.
 
 #### 阿里云迁移到腾讯云@aliyun-to-tencent-db
+#### Aliyun migrated to Tencent Cloud @aliyun-to-tencent-db
 
 由于此前腾讯云并未完全支持ObjectId类型的数据，在阿里云迁移到腾讯云时需要注意处理一下`ObjectId`类型的数据，包括自动生成的_id字段以及关联到其他表的_id的字段。简单来说就是将导出的数据内的ObjectId类型的数据处理成字符串且不满足ObjectId的格式。
+Since Tencent Cloud does not fully support ObjectId type data before, you need to pay attention to handling `ObjectId` type data when Alibaba Cloud migrates to Tencent Cloud, including the automatically generated _id field and the _id field associated with other tables. To put it simply, the data of type ObjectId in the exported data is processed into a string that does not meet the format of ObjectId.
 
 例：
+example:
 
 ```js
 // 原始数据
+// Raw data
 {"_id":{"$oid":"60fa6d25cd84d60001ec38a2"},"uid":{"$oid":"60fa6d1d2e5faa0001ade857"}}
 
 // 调整后的数据
+// adjusted data
 {"_id":"60fa6d25cd84d60001ec38a2a","uid":"60fa6d1d2e5faa0001ade857a"} // 在结尾追加了一个“a”使其不满足ObjectId格式
 ```
 
 以下为一个简单的脚本示例用于处理导出的json文件
+The following is a simple script example for processing the exported json file
 
 如果将此文件存储为`parse.js`，使用`node parse.js 输入文件相对或绝对路径 输出文件相对或绝对路径`即可处理导出的json文件
+If you store this file as `parse.js`, use `node parse.js input file relative or absolute path output file relative or absolute path` to process the exported json file
 
 ```js
 const fs = require('fs')

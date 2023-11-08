@@ -452,4 +452,5 @@
 :::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/data-checkbox/data-checkbox)
+[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/data-checkbox/data-checkbox)
 

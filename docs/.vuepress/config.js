@@ -1,12 +1,18 @@
 const path = require('path');
 const { slugify } = require('@vuepress/shared-utils')
+const merge = require('webpack-merge');
+
 const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')
 const createSidebar = require('./markdown/createSidebar')
-const { simplifySlugText, tabs } = require('./utils')
-const copyOptions = require('./config/copy');
+const { simplifySlugText, tabs_zh, tabs_en } = require('./utils')
+const config_zh = require('./build/config.zh');
+const config_en = require('./build/config.en');
 
-const config = {
+const tabs = process.env.DOCS_LOCAL === 'en' ? tabs_en : tabs_zh
+const config = process.env.DOCS_LOCAL === 'en' ? config_en : config_zh
+
+module.exports = merge({
   theme: 'vuepress-theme-uni-app-test',
   title: 'uni-app官网',
   description: 'uni-app,uniCloud,serverless',
@@ -28,11 +34,6 @@ const config = {
     ['script', { src: '/miku-delivery-1.2.1.js' }],
     ['script', { src: `/js/miku.js?${Date.now()}&v=${Date.now()}&version=${Date.now()}` }]
   ],
-  locales: {
-    '/': {
-      lang: 'zh-CN',
-    }
-  },
   themeConfig: {
     titleLogo: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app.png',
     logo: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/logo.png',
@@ -45,16 +46,8 @@ const config = {
     docsBranch: 'master',
     docsDir: 'docs',
     editLinks: true,
-    editLinkText: '帮助我们改善此页面！',
-    lastUpdated: '上次更新',
-    // smoothScroll: true,
-    algolia: {
-      apiKey: '2fdcc4e76c8e260671ad70065e60b2e7',
-      indexName: 'zh-uniapp',
-      appId: 'PQIR5NL8CZ',
-      searchParameters: { hitsPerPage: 50 }
-    },
-    isDevelopment: process.env.NODE_ENV === 'development'
+    isDevelopment: process.env.NODE_ENV === 'development',
+    isEn: process.env.DOCS_LOCAL === 'en'
   },
   markdown: {
     // toc: { includeLevel: [1, 2, 3, 4] },
@@ -104,22 +97,7 @@ const config = {
   chainWebpack (config, isServer) {
     config.resolve.alias.set(
       '@theme-config',
-      path.resolve(process.cwd(), 'docs/.vuepress/config')
+      path.resolve(process.cwd(), 'docs/.vuepress/config', process.env.DOCS_LOCAL)
     )
-  },
-  plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions]
-  ],
-  /**
-   * 
-   * @param {string} path path: js 资源文件路径
-   * @param {string} type type: 资源文件类型，取值有 script 等
-   * @returns 
-   */
-  shouldPrefetch: (path, type) => {
-    if (type === 'script' && path.indexOf('/docs/') > -1) return false
-    return true
   }
-}
-
-module.exports = config
+}, config)

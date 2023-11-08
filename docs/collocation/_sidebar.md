@@ -1,5 +1,7 @@
 * [pages.json 页面路由](collocation/pages.md)
+* [pages.json page routing](collocation/pages.md)
 * [manifest.json 应用配置](collocation/manifest.md)
+* [manifest.json application configuration](collocation/manifest.md)
   * [App 完整manifest.json](collocation/manifest-app.md)
 * [AndroidManifest.xml（安卓原生配置）](/tutorial/app-nativeresource-android.md)
 * [Info.plist（iOS原生配置）](/tutorial/app-nativeresource-ios.md)

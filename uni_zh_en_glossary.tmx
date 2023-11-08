@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+  <header segtype="sentence" o-tmf="UTF-8"
+  adminlang="en" srclang="zh" datatype="PlainText"/>
+  <body>
+    <tu>
+      <tuv xml:lang="zh">
+        <seg>小程序</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>MiniApp</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="zh">
+        <seg>快应用</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>QuickApp</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="zh">
+        <seg>快手</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Kuaishou</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="zh">
+        <seg>升级中心</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>uni-upgrade-center</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="zh">
+        <seg>App升级中心</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>uni-upgrade-center</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="zh">
+        <seg>开屏广告</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>App Open Ads</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="zh">
+        <seg>信息流广告</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Native Ads</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="zh">
+        <seg>插屏广告</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Interstitial Ads</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="zh">
+        <seg>激励视频广告</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Rewarded Ads</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

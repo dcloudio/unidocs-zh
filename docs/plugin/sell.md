@@ -26,10 +26,13 @@
 ### 版权保护和试用机制
 
 普通前端插件因其源码开放问题，无法支持计费。
+Ordinary front-end plug-ins cannot support billing due to their open source code.
 
 uniCloud插件的云函数部分支持源码保护，未购买源码版的用户无法获取到源码。如果是云端一体插件，其前端部分的js也支持加密混淆。但由于前端js必须运行在前端设备上，仍然存在被破解的可能性，DCloud无法承诺这种前端加密混淆无法破解。
+The cloud function part of the uniCloud plug-in supports source code protection, and users who have not purchased the source code version cannot obtain the source code. If it is a cloud-integrated plug-in, the js in the front-end part also supports encryption and obfuscation. However, since the front-end js must run on the front-end device, there is still the possibility of being cracked. DCloud cannot promise that this front-end encryption confusion cannot be cracked.
 
 uniCloud插件的销售和服务空间绑定。购买者购买时绑定好自己的服务空间spaceid，未经授权的服务空间无法上传加密的云函数。
+The sales and service space of the uniCloud plugin is bound. Buyers must bind their own service space spaceid when purchasing. Unauthorized service spaces cannot upload encrypted cloud functions.
 
 uts/app原生插件，需在使用DCloud的云打包后才能运行（含自定义基座）。所以可以保护版权安全。（也因此，本地打包不支持使用插件市场的付费的uts/原生插件）
 
@@ -42,19 +45,24 @@ DCloud为所有销售插件提供了试用机制，允许购买者先试用后�
 
 
 ## 查看收益
+## View earnings
 
 用户购买插件后，插件作者可以在[销售订单列表](https://ext.dcloud.net.cn/order?pluginId=0&status=10)中查看订单流水：
+After the user purchases the plug-in, the plug-in author can view the order flow in [Sales Order List](https://ext.dcloud.net.cn/order?pluginId=0&status=10):
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/marketplace-order-list-new.png)
 
 uniCloud源码授权版需在用户及插件作者双方签署合同后方可购买，合同签署采用`e签宝`线上进行签署，具体流程参见[e签宝介绍](https://ask.dcloud.net.cn/article/37878)。
+The authorized version of uniCloud source code can only be purchased after the user and the plug-in author have signed the contract. The contract signing is done online using `e-signbao`. For the specific process, see [e-signbao introduction](https://ask.dcloud.net. cn/article/37878).
 
 插件收益分为用户付费收益（插件销售、赞赏收益）和广告收益。每天凌晨，系统会自动统计前一天产生的用户付费收益，并于当天下午2：00后统计前一天产生的广告预估收益（可能会有相应的延迟），广告预估收益仅作为参考，实际收益以插件市场后台“付款”栏目提供的月度账单为准。插件作者可登录插件市场后台，查看每天的收益明细。
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/marketplace-report-list-new-1.png)
 
 `Tips：` 好的插件及更好的售后会增加用户打赏的积极性！
+`Tips:` Good plugins and better after-sales will increase the enthusiasm of users to tip!
 
 ## 账单结算
+## Billing
 
 DCloud插件市场在每月1日出上月的月度账单，月度账单包含上月的用户付费收益（包括插件销售、赞赏收益）及上上月的广告收益，待提现的账单累计金额达到100元以上时可提现，如有多笔待提现账单可针对多笔账单进行合并提现。插件作者可登录插件市场后台，查看[月度账单](https://ext.dcloud.net.cn/manage/payment)：
 

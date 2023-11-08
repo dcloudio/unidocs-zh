@@ -1,14 +1,18 @@
 # 状态管理 Pinia
+# State management Pinia
 
 ## 介绍
+## introduce
 
 > uni-app 内置了 [Pinia](https://pinia.vuejs.org/zh/index.html) 。Vue 2 项目暂不支持
 
 > 使用 `HBuilder X` 不需要手动安装，直接使用即可。使用 `CLI` 需要手动安装，执行 `yarn add pinia@2.0.33` 或 `npm install pinia@2.0.33`。
 
 ### Pinia 是什么？
+### What is Pinia?
 
 Pinia（发音为 `/piːnjʌ/`，如英语中的 `peenya`） 是 Vue 的存储库，它允许您跨组件、页面共享状态。在服务器端以及小型单页应用程序中，您也可以从使用 Pinia 中获得很多好处：
+Pinia (pronounced `/piːnjʌ/`, like `peenya` in English) is a repository for Vue that allows you to share state across components, pages. On the server side as well as in small single page applications, you can also get a lot of benefits from using Pinia:
 
 - Devtools 支持
   - 追踪 actions、mutations 的时间线
@@ -20,6 +24,7 @@ Pinia（发音为 `/piːnjʌ/`，如英语中的 `peenya`） 是 Vue 的存储�
 - 为 JS 开发者提供适当的 TypeScript 支持以及 **自动补全** 功能。
 
 ## 项目结构
+## project structure
 
 ```
 ├── pages
@@ -34,8 +39,10 @@ Pinia（发音为 `/piːnjʌ/`，如英语中的 `peenya`） 是 Vue 的存储�
 ```
 
 ## 基本示例
+## Basic example
 
 在 `main.js` 中编写以下代码：
+Write the following code in `main.js`:
 
 ```js
 import { createSSRApp } from 'vue';
@@ -72,6 +79,7 @@ export const useCounterStore = defineStore('counter', {
 ```
 
 然后在组件中使用它：
+and then use it in the component:
 
 ```html
 <script setup>

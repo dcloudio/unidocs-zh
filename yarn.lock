@@ -7688,6 +7688,13 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
+preprocess@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/preprocess/-/preprocess-3.2.0.tgz#36b3e2c52331fbc6fabb26d4fd5709304b7e3675"
+  integrity sha512-cO+Rf+Ose/eD+ze8Hxd9p9nS1xT8thYqv8owG/V8+IS/Remd7Z17SvaRK/oJxp08yaM8zb+QTckDKJUul2pk7g==
+  dependencies:
+    xregexp "3.1.0"
+
 "prettier@^1.18.2 || ^2.0.0":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
@@ -9697,6 +9704,11 @@ xdg-basedir@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-4.0.0.tgz#4bc8d9984403696225ef83a1573cbbcb4e79db13"
   integrity sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==
+
+xregexp@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-3.1.0.tgz#14d8461e0bdd38224bfee5039a0898fc42fcd336"
+  integrity sha512-4Y1x6DyB8xRoxosooa6PlGWqmmSKatbzhrftZ7Purmm4B8R4qIEJG1A2hZsdz5DhmIqS0msC0I7KEq93GphEVg==
 
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.2"

@@ -18,6 +18,7 @@ App端API规范参考：[详情](/uniCloud/frv/dev.md#get-meta-info)
 
 ### uni.startFacialRecognitionVerify(OBJECT)  
 实人认证  
+real person authentication
 
 uni.startFacialRecognitionVerify是客户端API，在App端打开刷脸认证界面。  
 

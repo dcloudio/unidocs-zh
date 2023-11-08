@@ -12,6 +12,7 @@
 * [泛型](./generics.md)
 * [模块module](module.md)
 * 内置对象和 API
+* Build In Object and API
   * [Number](buildin-object-api/number.md)
   * [String](buildin-object-api/string.md)
   * [Array](buildin-object-api/array.md)

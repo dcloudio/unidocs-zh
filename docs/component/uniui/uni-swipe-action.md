@@ -373,6 +373,7 @@ export default {
 		},
 		onReady() {
 			// 模拟延迟赋值
+			// emulate lazy assignment
 			setTimeout(() => {
 				this.isOpened = 'right';
 			}, 1000);

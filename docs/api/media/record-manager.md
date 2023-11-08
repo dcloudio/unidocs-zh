@@ -1,19 +1,26 @@
 ### uni.getRecorderManager()
 获取**全局唯一**的录音管理器 ``recorderManager``。
+Get the **globally unique** recording manager ``recorderManager``.
 
 **平台差异说明**
+**Platform Difference Description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
 
 **recorderManager 对象的方法列表**
+**List of methods of recorderManager object**
 
 |方法|参数|说明|平台差异说明|
+|Method|Parameter|Description|Platform Difference Description|
 |:-|:-|:-|:-|
 |start|options|开始录音||
+| start| options|Start recording||
 |pause||暂停录音|App 暂不支持|
+| pause||pause recording| App not supported at the moment|
 |resume||继续录音|App 暂不支持|
+| resume||Continue recording| App not supported yet|
 |stop||停止录音||
 |offStop|callback|取消监听录音停止事件|仅支付宝小程序支持|
 |onStart|callback|录音开始事件||
@@ -33,14 +40,21 @@
 |offError|callback|取消监听录音错误事件|仅支付宝小程序支持|
 
 **start(options) 说明**
+**start(options) description**
 
 |属性|类型|必填|说明|平台差异说明|
+|Attribute|Type|Required|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-|
 |duration|Number|否|指定录音的时长，单位 ms ，如果传入了合法的 duration ，在到达指定的 duration 后会自动停止录音，最大值 600000（10 分钟）,默认值 60000（1 分钟）|App、小程序支持|
+|duration|Number|No|Specify the duration of the recording, the unit is ms. If a valid duration is passed in, the recording will stop automatically after reaching the specified duration. The maximum value is 600000 (10 minutes), and the default value is 60000 (1 minute)| App, MiniApp support|
 |sampleRate|Number|否|采样率，有效值 8000/16000/44100|App、小程序支持|
+| sampleRate| Number|No|Sampling rate, effective value 8000/16000/44100| App, MiniApp support|
 |numberOfChannels|Number|否|录音通道数，有效值 1/2|仅小程序支持|
+| numberOfChannels| Number|No|Number of recording channels, valid value 1/2|Only supported by MiniApp|
 |encodeBitRate|Number|否|编码码率，有效值见下表格|仅小程序支持|
+| encodeBitRate| Number|No|Encode bit rate, see the table below for valid values|Only supported by MiniApp|
 |format|String|否|音频格式，有效值 aac/mp3/wav/PCM。App默认值为mp3，小程序默认值aac|App、小程序支持|
+| format| String|No| Audio format, valid values are aac/mp3/wav/PCM. The default value of the app is mp3, and the default value of the MiniApp is aac| App, MiniApp support|
 |frameSize|String|否|指定帧大小，单位 KB。传入 frameSize 后，每录制指定帧大小的内容后，会回调录制的文件内容，不指定则不会回调。暂仅支持 mp3 格式。|App、百度小程序不支持|
 |hideTips|Boolean|否|隐藏录音图标。|支付宝小程序10.1.85+|
 |audioSource|String|否|指定录音的音频输入源。|微信小程序[详见](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.start.html)、支付宝小程序[详见](https://opendocs.alipay.com/mini/api/recordermanager/start?pathHash=4ebf0019)、百度小程序[详见](https://smartprogram.baidu.com/docs/develop/api/media/recorder_RecorderManager-start/)、快手小程序|
@@ -48,8 +62,10 @@
 
 
 其中，采样率和码率有一定要求，具体有效值如下：
+Among them, the sampling rate and code rate have certain requirements, and the specific effective values are as follows:
 
 |采样率|编码码率|
+|Sampling rate|Coding rate|
 |:-|:-|
 |8000|16000 ~ 48000|
 |11025|16000 ~ 48000|
@@ -62,8 +78,10 @@
 |48000|64000 ~ 320000|
 
 **onStop(callback) 回调结果说明**
+**onStop(callback) callback result description**
 
 |属性|类型|说明|
+|Attribute|Type|Description|
 |:-|:-|:-|
 |tempFilePath|String|录音文件的临时路径|
 |duration|Number|录音总时长。单位：s。（仅支付宝10.2.90+支持）|
@@ -71,23 +89,33 @@
 
 
 **onFrameRecorded(callback) 回调结果说明**
+**onFrameRecorded(callback) callback result description**
 
 |属性|类型|说明|
+|Attribute|Type|Description|
 |:-|:-|:-|
 |frameBuffer|ArrayBuffer|录音分片结果数据|
+| frameBuffer| ArrayBuffer|recording fragmentation result data|
 |isLastFrame|Boolean|当前帧是否正常录音结束前的最后一帧|
+| isLastFrame| Boolean|Whether the current frame is the last frame before the end of normal recording|
 
 **onError(callback) 回调结果说明**
+**onError(callback) callback result description**
 
 |属性|类型|说明|
+|Attribute|Type|Description|
 |:-|:-|:-|
 |errMsg|String|错误信息|
+| errMsg| String|error message|
 
 **注意**
+**Notice**
 
 - 可以通过用户授权API来判断用户是否给应用授予麦克风的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
+- You can use the user authorization API to determine whether the user has granted the application access to the microphone [https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize )
 
 **示例**
+**example**
 
 ```html
 <template>

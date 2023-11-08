@@ -1,8 +1,8 @@
-`uni-app` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/QQ/快手/钉钉/淘宝）、快应用等多个平台。
+`uni-app` is a framework for developing all front-end applications using [Vue.js](https://vuejs.org/). Developers write a set of codes that can be published to iOS, Android, Web (responsive), And various MiniApp(WeChat/Alipay/Baidu/Toutiao/QQ/ Kuaishou/DingTalk/Taobao), QuickApp and other platforms.
 
-官网地址：[uniapp.dcloud.io](https://uniapp.dcloud.io)
+Official website address: [uniapp.dcloud.io](https://uniapp.dcloud.io)
 
-## 文档编写注意事项
+## Documentation Notes
 
 1. 右侧导航仅支持二级、三级、四级
 2. 文档如有标题，必须从一级或二级开始，不允许只有三级，没有二级的情况；也不允许先有三级、后有二级的情况；

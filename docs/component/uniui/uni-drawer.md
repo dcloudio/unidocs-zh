@@ -1,19 +1,28 @@
 
 ::: tip 组件名：uni-drawer
+::: tip component name: uni-drawer
 > 代码块： `uDrawer`
+> Code block: `uDrawer`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-drawer)
+[Click to download & install](https://ext.dcloud.net.cn/plugin?name=uni-drawer)
 :::
 
 抽屉侧滑菜单。
+Drawer side sliding menu.
 
 
 ## 介绍
+## introduce
 ::: warning 注意事项
+::: warning Notes
 > 为了避免错误使用，给大家带来不好的开发体验，请在使用组件前仔细阅读下面的注意事项，可以帮你避免一些错误。
+> In order to avoid wrong use and bring you a bad development experience, please read the following precautions carefully before using the component, which can help you avoid some mistakes.
 - `width` 属性仅在 `vue` 页面生效，`nvue` 页面因性能问题，不支持动态设置宽度，如需修改，请下载组件修改源码
+- The `width` property only takes effect on the `vue` page. The `nvue` page does not support dynamic setting of width due to performance issues. If you need to modify it, please download the component modification source code
 :::
 ### 基本用法
+### Basic usage
 
 ```html
 <template>
@@ -48,32 +57,46 @@
 ### Drawer Props
 
 |属性名|类型|默认值|说明|
+|property name|type|default value|description|
 |:-:|:-:|:-:|:-:|
 |mask|Boolean|true|是否显示遮罩|
+|mask|Boolean|true|whether to display the mask|
 |maskClick|Boolean|true	|点击遮罩是否可以关闭抽屉|
+|maskClick|Boolean|true |Does the drawer close by clicking on the mask|
 |mode|String|left|Drawer滑出位置，可选值：left（从左侧滑出）， right（从右侧滑出）|
+|mode|String|left|Drawer slide out position, optional values: left (slide out from the left), right (slide out from the right)|
 |width|Number|220|Drawer 宽度，仅vue页面设置生效|
+|width|Number|220|Drawer width, only the vue page setting takes effect|
 
 
 ### Drawer Events
 
 |事件名|说明|返回值|
+|Event Name|Description|Return Value|
 |:-:|:-:|:-:	|
 |@change|抽屉状态发生变化触发事件|true：抽屉已经打开；false：抽屉已经关闭；	|
+|@change|The state of the drawer changes and triggers the event|true: the drawer has been opened; false: the drawer has been closed; |
 
 ### Drawer Methods
 
 |方法称名	|说明|参数|
+|method name |description|parameters|
 |:-:|:-:|:-:|
 |open|打开抽屉	|-|
+|open|Open the drawer |-|
 |close	|关闭抽屉	|-|
+|close |Close the drawer |-|
 
 
 ## 示例
+## example
 ::: warning 注意
+::: warning attention
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
+The example relies on multiple components such as `uni-card` `uni-section` `uni-scss`, copying the example code directly will not work properly.
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-drawer) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name=uni-drawer) , select `Import sample project using HBuilderX` on the right side of the page to experience the complete component example.
 :::
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/drawer/drawer
@@ -137,14 +160,17 @@
 		methods: {
 			confirm() {},
 			// 打开窗口
+			// open the window
 			showDrawer(e) {
 				this.$refs[e].open()
 			},
 			// 关闭窗口
+			// close the window
 			closeDrawer(e) {
 				this.$refs[e].close()
 			},
 			// 抽屉状态发生变化触发
+			// Triggered when the drawer state changes
 			change(e, type) {
 				console.log((type === 'showLeft' ? '左窗口' : '右窗口') + (e ? '打开' : '关闭'));
 				this[type] = e
@@ -158,6 +184,7 @@
 			}
 		},
 		// app端拦截返回事件 ，仅app端生效
+		// The app side intercepts the return event, only the app side takes effect
 		onBackPress() {
 			if (this.showRight || this.showLeft) {
 				this.$refs.showLeft.close()
@@ -183,6 +210,7 @@
 	flex:1
 }
 // 处理抽屉内容滚动
+// handle scrolling of drawer content
 .scroll-view-box {
 	flex: 1;
 	position: absolute;
@@ -212,3 +240,4 @@
 :::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/drawer/drawer)
+[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/drawer/drawer)

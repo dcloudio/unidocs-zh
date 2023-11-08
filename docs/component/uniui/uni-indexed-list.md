@@ -1,13 +1,19 @@
 ::: tip 组件名：uni-indexed-list
+::: tip component name: uni-indexed-list
 > 代码块： `uIndexedList`
+> Code block: `uIndexedList`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-indexed-list)
+[Click to download & install](https://ext.dcloud.net.cn/plugin?name=uni-indexed-list)
 ::: 
 
 用于展示索引列表。
+Used to display the index list.
 
 ## 介绍
+## introduce
 ### 基本用法
+### Basic usage
 
 ```html
 <uni-indexed-list :options="list" :showSelect="false" @click="bindClick"></uni-indexed-list>
@@ -18,11 +24,15 @@
 ### IndexedList Props
 
 |属性名|类型|默认值|说明|
+|property name|type|default value|description|
 |:-:|:-:|:-:|:-:|
 |options|Object	|-|索引列表需要的数据对象|
+|options|Object |-|Data object required for index list|
 |showSelect	|Boolean|-| 展示模式，true 为展示默认，false 为选择模式，默认为 false	|
+|showSelect |Boolean|-| Display mode, true is the default display, false is the selection mode, the default is false |
 
 **options 数据格式说明**
+**options data format description**
 
 ```json
 [{
@@ -50,15 +60,21 @@
 ### IndexedList Events
 
 |事件名	|说明|返回值|
+|Event Name |Description|Return Value|
 |:-:|:-:|:-:|
 |click	|点击列表事件 ，返回当前选择项的事件对象|-|
+|click |Click list event, return the event object of the currently selected item|-|
 
 
 ## 示例
+## example
 ::: warning 注意
+::: warning attention
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
+The example relies on multiple components such as `uni-card` `uni-section` `uni-scss`, copying the example code directly will not work properly.
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-indexed-list) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
+Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name=uni-indexed-list), select `Import sample project using HBuilderX` on the right side of the page to experience the complete component example.
 :::
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/indexed-list/indexed-list
@@ -358,3 +374,4 @@ export default {
 :::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/indexed-list/indexed-list)
+[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/indexed-list/indexed-list)

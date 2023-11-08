@@ -356,6 +356,10 @@ The service space will enter the isolation state on the second day after the pac
 - 免费空间可以升配。此时免费额度会释放，该账户仍可再创建一个免费空间。
 - 免费空间可以通过设置资源用量上限来实现超限按量，该功能需要充值保证金及支付宝按量余额。
 
+**扫码加入官方钉钉交流群**
+
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloud/1699427250281.png" width="300" />
+
 ### 包年包月套餐@alipay-package
 |资源分类		|资源细项				|免费版	|基础版	|标准版	|专业版	|企业版	|旗舰版	|
 |:-:			|:-:					|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|

@@ -3,3 +3,4 @@ docs/.vuepress/dist
 .DS_Store
 **/sitemap.xml
 docs-lite
+dist

@@ -107,7 +107,7 @@ uni-app客户端还有一批uni-id相关的内置API：
 - uniIDHasPermission：判断当前用户是否拥有某权限。[详情](/api/global.md#uniidhaspermission)
 - uniCloud.getCurrentUserInfo()：客户端获取当前用户信息。[详情](client-sdk.md#client-getcurrentuserinfo)
 
-5. 云端一体页面模板 [uni-id-pages](uniCloud/uni-id-pages)（含uni-id-co）
+5. 云端一体页面模板 [uni-id-pages](uni-id-pages.md)（含uni-id-co）
 
 基于uni-id-common，DCloud还提供了一组完整的前端页面和后端[云对象](cloud-obj.md) ，合称`uni-id-pages`。
 

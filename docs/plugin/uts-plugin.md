@@ -650,7 +650,7 @@ export default function getBatteryLevel():number {
 
 > 监听推送相关回调特别注意：
 > 监听推送和本地通知相关的回调需要证书具备推送功能，正确配置 `aps-environment`，在打自定义基座时需要在 `manifest` 中勾选 `push` 模块，否则相关功能不会被打进基座内，对应回调也就不会触发（可以只勾选 push，而不选择具体 push 版本）。
-> 勾选 `push` 模块后，系统会自动进行推送的注册，如果不需要自动注册，请在 `manifest` 中将 `pushRegisterMode` 字段设置为 `manual`。详细配置见[https://uniapp.dcloud.net.cn/collocation/manifest-app.html]。
+> 勾选 `push` 模块后，系统会自动进行推送的注册，如果不需要自动注册，请在 `manifest` 中将 `pushRegisterMode` 字段设置为 `manual`。详细配置[详见](https://uniapp.dcloud.net.cn/collocation/manifest-app.html)
 
 
 示例代码：

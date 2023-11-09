@@ -15,11 +15,17 @@ pageClass: custom-page-class
     <!-- <h3 id="快速体验"><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3> -->
     <p>一套代码编到15个平台，这不是梦想。眼见为实，扫描15个二维码，亲自体验最全面的跨平台效果！</p>
     <div class="flex-img-group-view">
+      <a href="//uniappx.m3w.cn" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box">
+          <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-qrcode.png" width="160" />
+        </div>
+        <b>Android版(uni-app x)</b>
+      </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-android.png" width="160" />
         </div>
-        <b>Android版</b>
+        <b>Android版(uni-app)</b>
       </a>
       <a href="https://itunes.apple.com/cn/app/hello-uni-app/id1417078253?mt=8" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">

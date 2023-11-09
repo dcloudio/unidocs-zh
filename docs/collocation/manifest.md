@@ -261,8 +261,7 @@ Configure the following nodes in the manifest to start subcontracting on the App
 |属性|类型|说明|
 |Attribute|Type|Description|
 |:-|:-|:-|
-|subPackages|Boolean|是否开启分包优化|
-| subPackages| Boolean|Whether to enable subpackage optimization|
+|subPackages|Boolean|是否开启分包优化，目前仅 uni-app vue2 下生效|
 
 ```
 "app-plus": {

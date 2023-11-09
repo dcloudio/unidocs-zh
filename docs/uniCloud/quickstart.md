@@ -1,4 +1,6 @@
-## 体验 hello uniCloud
+# uniCloud快速上手
+
+## hello uniCloud
 
 Hello uniCloud，是一个示例，演示了 uniCloud 的各种能力。
 

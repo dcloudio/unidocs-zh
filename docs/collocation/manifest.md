@@ -161,7 +161,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 
 |属性|类型|说明|
 |:-|:-|:-|
-|subPackages|Boolean|是否开启分包优化|
+|subPackages|Boolean|是否开启分包优化，目前仅 uni-app vue2 下生效|
 
 ```
 "app-plus": {

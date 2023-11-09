@@ -1,6 +1,6 @@
-> uni-id-pages-x 是 uni-id-pages 的[uni-app x](/docs/uni-app-x/README.md)版，目前 uni-app x仅支持Android 端  
+# uni-id-pages-x
 
-# 概述
+> uni-id-pages-x 是 uni-id-pages 的[uni-app x](/docs/uni-app-x/README.md)版，目前 uni-app x仅支持Android 端  
 
 `uni-id-pages-x`，是`uni-id`体系的一部分。
 

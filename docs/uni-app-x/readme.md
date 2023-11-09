@@ -6,7 +6,7 @@ uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
 
 在App端，uni-app x 在iOS编译为swift、在Android编译为kotlin。没有使用js引擎、webview，完全达到了原生应用的功能、性能。
 
-可以下载打包后的[hello uni-app x](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk)的apk来体验。
+可以下载打包后的[hello uni-app x](https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk)的apk来体验。
 
 <div class="quick">
   <div style="margin-top: 20px;justify-content: space-around;">

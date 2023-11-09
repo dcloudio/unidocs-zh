@@ -4,7 +4,7 @@
 2. 选择一个服务空间
 3. 选择左侧扩展存储菜单，开通
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-cloud-ext-storage/431.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-cloud-ext-storage/435.png)
 
 **注意**
 

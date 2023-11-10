@@ -123,6 +123,22 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/version_list_new2.png" width="800"></img>
 	</div>
 
+- `uni-upgrade-center 云函数` - 检查应用更新：
+	- 根据传参，先检测传参是否完整，appid appVersion wgtVersion 必传，is_uniapp_x 选传，默认 false
+	- 先从数据库取出所有该平台（会从上下文读取平台信息）的所有线上发行更新
+	- 再从所有线上发行更新中取出版本最大的一版。如果可以，尽量先检测wgt的线上发行版更新
+	- 使用上一步取出的版本包的版本号 和传参 appVersion、wgtVersion 来检测是否有更新。必须同时大于这两项，因为上一次可能是wgt热更新，否则返回暂无更新
+	- 如果库中 wgt包 版本大于传参 appVersion，但是不满足 min_uni_version < appVersion，则不会使用wgt更新，会接着判断库中 app包version 是否大于 appVersion
+	- 返回结果：
+
+		|code|message|
+		|:-:|:-:|
+		|0|当前版本已经是最新的，不需要更新|
+		|101|wgt更新|
+		|102|整包更新|
+		|-101|暂无更新或检查appid是否填写正确|
+		|-102|请检查传参是否填写正确|
+
 **Tips**
 - `/uni_modules/uni-upgrade-center/pages/version/add.vue`中有版本对比函数（compare）。
 	- 使用多段式版本格式（如："3.0.0.0.0.1.0.1", "3.0.0.0.0.1"）。如果不满足对比规则，请自行修改。
@@ -155,10 +171,42 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 - 弹框美观，可自定义ui
 
+#### 目录结构
+
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+┌─uniCloud                            云空间目录，在 uni-upgrade-center-app 组件中为空，占位使用
+│─components                          符合 easycom 组件规范的组件目录
+│  └─uni-upgrade-center-app
+│     └─uni-upgrade-center-app.uvue   uni-app x 项目中要使用到的升级中心弹窗组件，如果需要自定义弹窗样式，可以修改此组件
+├─pages                               页面文件存放的目录
+│  └─upgrade-popup.vue                uni-app 项目中要使用到的升级中心页面，如果需要自定义样式，可以修改此页面
+├─static                              存放升级中心引用的静态资源（图片）的目录，如需自定义样式，可以替换此目录下的图片
+├─utils                               存放升级中心引用的工具函数的目录
+│  ├─call-check-version.ts            升级中心请求云端函数方法，调用 uni-upgrade-center 云函数，获取 App 版本信息
+│  ├─check-update.ts                  调用升级中心方法，检查更新，并根据结果判断是否显示更新弹框
+│  └─utils.uts                        uni-app x 项目中要使用到到工具函数，openSchema 为打开应用外部链接方法
+├─changelog.md                        uni-upgrade-center-app 更新日志
+├─package.json                        uni-upgrade-center-app 插件信息日志
+└─readme.md                           uni-upgrade-center-app 说明文档
+	</code>
+</pre>
+
+- `upgrade-popup.vue` - 更新应用：
+	- 如果云函数`uni-upgrade-center`返回的参数表明需要更新，则将参数保存在localStorage中，带着键值跳转该页面
+	- 进入时会先从localStorage中尝试取出之前存的安装包路径（此包不会是强制安装类型的包）
+	- 如果有已经保存的包，则和传进来的 `version` 进行比较，如果相等则安装。大于和小于都不进行安装，因为admin端可能会调整包的版本。不符合更新会将此包删除
+	- 如果本地没有包或者包不符合安装条件，则进行下载安装包
+	- 点击下载会有进度条、已下载大小和下载包的大小
+	- 下载完成会提示安装：
+		- 如果是 wgt 包，安装时则会提示 正在安装…… 和 安装完成。安装完成会提示是否重启
+		- 如果是 原生安装包，则直接跳出去覆盖安装
+	- 下载过程中，如果退出会提示是否取消下载。如果是强制更新，则只会提示正在下载请稍后，此时不可退出
+	- 如果是下载完成了没有安装就退出，则会将下载完成的包保存在本地。将包的本地路径和包version保存在localStorage中
+
+#### 在 uni-app 中使用升级中心 @uni-upgrade-center-app-uni-app
 
 **安装指引**
-
-> 如果是在 uni-app x 中只看到第 4 步即可，具体使用方式请看下面的[使用指引](#uni-upgrade-center-app-uni-app-x)
 
 1. 在插件市场打开本插件页面，在右侧点击`使用 HBuilderX 导入插件`，选择要导入的项目点击确定 [插件地址](https://ext.dcloud.net.cn/plugin?id=4542)
 
@@ -195,37 +243,31 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 			}
 		]
 	```
-6. 将`@/uni_modules/uni-upgrade-center-app/utils/check-update.js` 使用 import 导入到需要用到的地方，调用一下即可：
-   1. `import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update.js'`
+6. 将`@/uni_modules/uni-upgrade-center-app/utils/check-update` 使用 import 导入到需要用到的地方调用一下即可（一般在首页调用或设置页面检查更新按钮调用）：
+   1. 使用方式：`import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update'`，然后在需要的执行的地方调用 `checkUpdate` 方法即可
    2. 默认使用当前绑定的服务空间，如果要请求其他服务空间，可以使用其他服务空间的 `callFunction`。[详情](https://uniapp.dcloud.io/uniCloud/cf-functions.html#call-by-function-cross-space)
 
-7. 升级弹框可自行编写，也可以使用`uni.showModal`，或使用现有的升级弹框样式，如果不满足UI需求请自行替换资源文件。在`utils/check-update.js`中都有实例。
+7. 升级弹框可自行编写，也可以使用`uni.showModal`，或使用现有的升级弹框样式，如果不满足UI需求请自行替换 `static` 目录下的资源文件。在`utils/check-update.ts`中都有实例。
 
-**注意** 使用wgt更新，打包前请务必将 manifest.json 中的版本名称修改为更高版本。
-
-**更新下载安装`check-update.js`**
-
-> 该函数在utils目录下
-
-1. 如果是静默更新，则不会打开更新弹框，会在后台下载后安装，下次启动应用生效
-
-2. 如果是 iOS，则会直接打开AppStore的链接
-
-3. 其他情况，会将检查更新云函数返回的结果保存在localStorage中，并跳转进入`upgrade-popup.vue`打开更新弹框
-
-**Tips**
-
-1. 检查更新云函数内部有版本对比函数（compare）。
-	- 使用多段式版本格式（如："3.0.0.0.0.1.0.1", "3.0.0.0.0.1"）。如果不满足对比规则，请自行修改。
-	- 如果修改，请将*pages/upgrade-popup.vue*中*compare*函数一并修改
+**注意** 使用wgt更新，打包前请务必将 manifest.json 中的版本名称修改为更高版本。（请使用类似 1.0.0 以 `.` 分隔的多段式格式）
 
 #### 在 uni-app x 中使用升级中心 <Badge text="0.7.0+"/> @uni-upgrade-center-app-uni-app-x
 
-> 安装方式接上述 1-4 步
+**安装指引**
 
-**uni-app x 升级中心安装指引**
+1. 在插件市场打开本插件页面，在右侧点击`使用 HBuilderX 导入插件`，选择要导入的项目点击确定 [插件地址](https://ext.dcloud.net.cn/plugin?id=4542)
 
-1. 升级中心在 uni-app x 端是 easycom 弹窗组件，在需要显示升级弹窗的页面直接使用组件即可（升级中心弹出时会调用 api 隐藏 tabbar，在关闭时会调用调用 api 显示 tabbar）
+2. 创建 uniCloud 云开发环境
+
+3. 绑定服务空间：
+   - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，请和 uni-admin 项目关联同一个服务空间
+   - 插件版本 `<= 0.6.0`，请绑定到一个已有的服务空间或者新建一个服务空间进行绑定
+
+4. 上传云函数：
+   - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，插件不再单独提供云函数，可以跳过此步骤
+   - 插件版本 `<= 0.6.0`，找到`/uni_modules/uni-upgrade-center-app/uniCloud/cloudfunctions/check-version`，右键上传部署
+
+5. 升级中心在 uni-app x 端是 `easycom 组件` 可直接使用，无需在页面导入注册。在需要显示升级弹窗的页面直接使用组件即可（升级中心弹出时会调用 api 隐藏 tabbar，在关闭时会调用调用 api 显示 tabbar）
 
 	> 注意组件的 `ref` 属性
 
@@ -234,13 +276,13 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	<uni-upgrade-center-app ref="upgradePopup" @close="upgradePopupClose" />
 	```
 
-2. 在 `script` 标签内顶部引入 `checkVersion` 方法
+6. 在 `script` 标签内顶部引入 `checkVersion` 方法
 
 	```js
 	import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update'
 	```
 
-3. 在需要调用的地方执行 `checkUpdate` 方法，比如在 `onReady` 生命周期中（注：因为是组件所以一定要保证页面加载完毕），以下为完整使用示例：
+7. 在需要调用的 **页面** 中（一般在首页加载完成后调用或设置页面检查更新按钮调用）执行 `checkUpdate` 方法，比如在 `onReady` 生命周期中（ **注：** 因为是组件所以一定要保证组件加载完毕），以下为完整使用示例：
 
 	```html
 	<template>
@@ -264,7 +306,27 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	</script>
 	```
 
-4. 当你打开调用升级中心组件的页面就会检查更新，如有更新就出弹窗。也可以在其他页面或者组件中使用
+8. 当你打开调用升级中心组件的页面就会检查更新，如有更新就出弹窗。也可以在其他页面或者组件中使用
+
+**注意** 在 uni-app x 的 app-Android 端没有 wgt 更新，也不会检测到 wgt 包的更新
+
+**更新下载安装`check-update.ts`**
+
+> 该函数在utils目录下
+
+1. 如果是静默更新（wgt 更新特有），则不会打开更新弹框，只在后台下载后安装，下次启动应用生效
+
+2. 如果是 iOS，则会直接打开AppStore的链接
+
+3. 其他情况：
+   - `uni-app`：会将检查更新云函数返回的结果保存在localStorage中，并跳转进入`upgrade-popup.vue`打开更新弹框
+   - `uni-app x`：会将检查更新云函数返回的结果传递给 `\uni_modules\uni-upgrade-center-app\components\uni-upgrade-center-app\uni-upgrade-center-app.uvue` 组件的 `show` 方法，修改组件的显示状态，显示更新弹框
+
+**Tips**
+
+1. 检查更新云函数内部有版本对比函数（compare）。
+	- 使用多段式版本格式（如："3.0.0.0.0.1.0.1", "3.0.0.0.0.1"）。如果不满足对比规则，请自行修改。
+	- 如果修改，请将*pages/upgrade-popup.vue*中*compare*函数一并修改
 
 ### 费用评测@upgrade-center-fee
 

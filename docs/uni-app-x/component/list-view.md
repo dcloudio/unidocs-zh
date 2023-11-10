@@ -25,13 +25,13 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
    ```html
    <template>
    	<list-view refresher-default-style="none" :refresher-enabled="true" :refresher-triggered="refresherTriggered"
-   			 @refresherpulling="onRefresherpulling" @refresherrefresh="onRefresherrefresh" 
+   			 @refresherpulling="onRefresherpulling" @refresherrefresh="onRefresherrefresh"
    			 @refresherrestore="onRefresherrestore" style="flex:1" >
-   
+
    		<list-item v-for="i in 10" class="content-item">
    			<text class="text">item-{{i}}</text>
    		</list-item>
-   		
+
    		<!-- 自定义下拉刷新元素 -->
    		<list-item slot="refresher" class="refresh-box">
    			<text class="tip-text">{{text[state]}}</text>
@@ -41,7 +41,7 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
    ```
 3. 通过组件提供的refresherpulling、refresherrefresh、refresherrestore、refresherabort下拉刷新事件调整自定义下拉刷新元素！实现预期效果
 
-**注意：** 
+**注意：**
 + 3.93版本开始支持
 + 目前自定义下拉刷新元素不支持放在list-view的首个子元素位置上。可能无法正常显示
 
@@ -116,6 +116,21 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 
 <!-- UTSCOMJSON.sticky-header.reference -->
 
+## sticky-section
+
+<!-- UTSCOMJSON.sticky-section.description -->
+
+<!-- UTSCOMJSON.sticky-section.attrubute -->
+
+<!-- UTSCOMJSON.sticky-section.event -->
+
+<!-- UTSCOMJSON.sticky-section.example -->
+
+<!-- UTSCOMJSON.sticky-section.compatibility -->
+
+<!-- UTSCOMJSON.sticky-section.children -->
+
+<!-- UTSCOMJSON.sticky-section.reference -->
 
 ### Bug & Tips@tips
 

@@ -27,6 +27,10 @@ This product has the following features:
 - **关于应用转让后升级中心（uni-upgrade-center）的使用问题** [详情](https://ask.dcloud.net.cn/article/40112)
 - **About the use of the uni-upgrade- uni-upgrade-center after app transfer** [Details](https://ask.dcloud.net.cn/article/40112)
 
+从 uni-upgrade-center `v0.7.0` 版本起，开始支持uni-app x。
+
+为了一套代码同时兼容uni-app和uni-app x，升级中心原本的 js 文件改为了 ts 文件。如果开发者的项目下未使用ts，那么需要增加ts编译。HBuilderX项目会自动加载ts编译器，cli项目则需要自己手动配置。
+
 ### 为什么需要升级中心？
 ### Why do I need an upgrade center?
 
@@ -55,8 +59,7 @@ Responsible for releasing new versions and managing the online and offline of hi
 - 原生 App 安装包，发布 Apk 更新，用于 App 的整包更新，可设置是否强制更新
 - Native App installation package, release Apk update, for the whole package update of App, can set whether to force the update
 
-- wgt 资源包，发布 wgt 更新，用于 App 的热更新，可设置是否强制更新，静默更新
-- wgt resource package, release wgt update, used for hot update of App, can set whether to force update, silent update
+- wgt 资源包，发布 wgt 更新，用于 App 的热更新，可设置是否强制更新，静默更新（uni-app x的app-Android由于编译为纯原生，没有wgt包，无法热更新）
 
 - App 管理列表及 App 版本记录列表搜索
 - App management list and App version record list search
@@ -98,7 +101,7 @@ Responsible for releasing new versions and managing the online and offline of hi
 	<div align="center" >
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/publish_apk.jpg" width="600"></img>
 	</div>
-	
+
 	2. `版本号`：请填写以`.`分隔字符串，例如：`0.0.1`。在构建应用安装包时，`manifest.json` 中的 `应用版本名称` 也要是该格式。
 
   3. `Android应用市场`
@@ -118,10 +121,10 @@ Responsible for releasing new versions and managing the online and offline of hi
 		- You can choose to manually upload a file to `cloud storage`, and the address will be automatically filled in this item
 		- 也可以手动填写一个地址，就可以不用再上传文件
 		- 如果是发布 `苹果` 版本，包地址则为应用的 `AppStore 链接`
-		
+
 	5. `强制更新`
 		- 如果使用强制更新，App端的升级弹框将不可被关闭
-		
+
 	6. `上线发行`
 		- 可设置当前包是否上线发行，只有已上线才会进行更新检测
 		- You can set whether the current package is released online or not, and the update detection will only be performed if it is online
@@ -158,33 +161,38 @@ Responsible for releasing new versions and managing the online and offline of hi
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/version_list_new2.png" width="800"></img>
 	</div>
 
+- `uni-upgrade-center 云函数` - 检查应用更新：
+	- 根据传参，先检测传参是否完整，appid appVersion wgtVersion 必传，is_uniapp_x 选传，默认 false
+	- 先从数据库取出所有该平台（会从上下文读取平台信息）的所有线上发行更新
+	- 再从所有线上发行更新中取出版本最大的一版。如果可以，尽量先检测wgt的线上发行版更新
+	- 使用上一步取出的版本包的版本号 和传参 appVersion、wgtVersion 来检测是否有更新。必须同时大于这两项，因为上一次可能是wgt热更新，否则返回暂无更新
+	- 如果库中 wgt包 版本大于传参 appVersion，但是不满足 min_uni_version < appVersion，则不会使用wgt更新，会接着判断库中 app包version 是否大于 appVersion
+	- 返回结果：
+
+		|code|message|
+		|:-:|:-:|
+		|0|当前版本已经是最新的，不需要更新|
+		|101|wgt更新|
+		|102|整包更新|
+		|-101|暂无更新或检查appid是否填写正确|
+		|-102|请检查传参是否填写正确|
+
 **Tips**
 - `/uni_modules/uni-upgrade-center/pages/version/add.vue`中有版本对比函数（compare）。
 	- 使用多段式版本格式（如："3.0.0.0.0.1.0.1", "3.0.0.0.0.1"）。如果不满足对比规则，请自行修改。
 	- Use multipart version format (eg: "3.0.0.0.0.1.0.1", "3.0.0.0.0.1"). If it does not meet the comparison rules, please modify it yourself.
 - 删除应用会把该应用的所有版本记录同时删除
-- Deleting an app will delete all version records of the app at the same time
-- 升级中心设计之初就支持iOS的wgt更新
-- The update center is designed to support wgt updates for iOS
-- iOS的wgt更新肯定是违反apple政策的，注意事项：
-- The wgt update of iOS is definitely against apple policy, matters needing attention:
-	- 审核期间请不要弹窗升级
-	- Please do not pop up the upgrade during the review period
-	- 升级完后尽量不要自行重启
-	- Try not to restart by yourself after the upgrade
-	- 尽量使用静默更新
-	- try to use silent updates
+- iOS的Appstore是禁止热更新的。本产品的iOS热更新功能，主要是为企业用户设计的。如果您在Appstore公开市场使用热更新，需要自己承担政策风险。
 - 可以通过以下修改支持iOS的wgt更新：
 - wgt updates for iOS can be supported with the following modifications:
 	> \uni_modules\uni-upgrade-center\pages\mixin\version_add_detail_mixin.js
-	> 
+	>
 	> 将 `data` 中的 `enableiOSWgt` 属性设置为 `true` 即可
 	> Set the `enableiOSWgt` property in `data` to `true`
 
 ### uni-upgrade-center-app 前台检测更新@uni-upgrade-center-app
 
-负责前台检查升级更新。
-Responsible for the front desk to check for upgrades and updates.
+除了管理端，升级中心还包括客户端。负责前台检查升级更新，弹出提示框，下载和安装新版。
 
 <div align="left" style="display:flex;align-items:center;">
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/upgrade_center_1.jpg" alt="官方升级弹框样式" width="250"></img>
@@ -195,23 +203,51 @@ Responsible for the front desk to check for upgrades and updates.
 提供了如下功能：
 The following functions are provided:
 
-- 基于`uni-upgrade-center`一键式检查更新，统一整包与 wgt 资源包更新
-- One-click update check based on `uni-upgrade-center`, unified whole package and wgt resource package update
+- 基于`uni-upgrade-center`一站式检查更新，统一整包与 wgt 资源包更新
 
 - 自行根据传参完成校验，判断此次更新使用哪种方式
 - Complete the verification according to the parameters passed by yourself, and determine which method to use for this update
 
-- 一键式升级。弹框、下载、安装、是否强制重启等逻辑已集成
-- One-click upgrade. The logic of pop-up, download, installation, and whether to force restart has been integrated
+- 弹框、下载、安装、是否强制重启等逻辑已集成
 
-- 下载完成如果取消升级自动缓存安装包，下次进入判断是否符合安装条件，判断不通过则自动清除
-- If the download is complete, if you cancel the upgrade and automatically cache the installation package, the next time you enter it, you will judge whether it meets the installation conditions. If it is not passed, it will be automatically cleared.
+- 下载完成如被用户取消升级，自动缓存安装包，下次进入判断是否符合安装条件，判断通过会复用已下载的包进行安装；判断不通过则自动清除（uni-app x 的 app-Android 端暂不支持安装包缓存功能：下载到临时保存目录，在 App 下次启动时自动清除）
 
-- 美观，实用，可自定义扩展
-- Beautiful, functional, customizable and extensible
+- 弹框美观，可自定义ui
 
-- 美观，实用，可自定义扩展
-- Beautiful, functional, customizable and extensible
+#### 目录结构
+
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+┌─uniCloud                            云空间目录，在 uni-upgrade-center-app 组件中为空，占位使用
+│─components                          符合 easycom 组件规范的组件目录
+│  └─uni-upgrade-center-app
+│     └─uni-upgrade-center-app.uvue   uni-app x 项目中要使用到的升级中心弹窗组件，如果需要自定义弹窗样式，可以修改此组件
+├─pages                               页面文件存放的目录
+│  └─upgrade-popup.vue                uni-app 项目中要使用到的升级中心页面，如果需要自定义样式，可以修改此页面
+├─static                              存放升级中心引用的静态资源（图片）的目录，如需自定义样式，可以替换此目录下的图片
+├─utils                               存放升级中心引用的工具函数的目录
+│  ├─call-check-version.ts            升级中心请求云端函数方法，调用 uni-upgrade-center 云函数，获取 App 版本信息
+│  ├─check-update.ts                  调用升级中心方法，检查更新，并根据结果判断是否显示更新弹框
+│  └─utils.uts                        uni-app x 项目中要使用到到工具函数，openSchema 为打开应用外部链接方法
+├─changelog.md                        uni-upgrade-center-app 更新日志
+├─package.json                        uni-upgrade-center-app 插件信息日志
+└─readme.md                           uni-upgrade-center-app 说明文档
+	</code>
+</pre>
+
+- `upgrade-popup.vue` - 更新应用：
+	- 如果云函数`uni-upgrade-center`返回的参数表明需要更新，则将参数保存在localStorage中，带着键值跳转该页面
+	- 进入时会先从localStorage中尝试取出之前存的安装包路径（此包不会是强制安装类型的包）
+	- 如果有已经保存的包，则和传进来的 `version` 进行比较，如果相等则安装。大于和小于都不进行安装，因为admin端可能会调整包的版本。不符合更新会将此包删除
+	- 如果本地没有包或者包不符合安装条件，则进行下载安装包
+	- 点击下载会有进度条、已下载大小和下载包的大小
+	- 下载完成会提示安装：
+		- 如果是 wgt 包，安装时则会提示 正在安装…… 和 安装完成。安装完成会提示是否重启
+		- 如果是 原生安装包，则直接跳出去覆盖安装
+	- 下载过程中，如果退出会提示是否取消下载。如果是强制更新，则只会提示正在下载请稍后，此时不可退出
+	- 如果是下载完成了没有安装就退出，则会将下载完成的包保存在本地。将包的本地路径和包version保存在localStorage中
+
+#### 在 uni-app 中使用升级中心 @uni-upgrade-center-app-uni-app
 
 **安装指引**
 **Installation Guide**
@@ -232,8 +268,8 @@ The following functions are provided:
    - 插件版本 `<= 0.6.0`，找到`/uni_modules/uni-upgrade-center-app/uniCloud/cloudfunctions/check-version`，右键上传部署
    - Plugin version `<= 0.6.0`, find `/uni_modules/uni-upgrade-center-app/uniCloud/cloudfunctions/check-version`, right click to upload and deploy
 
-5. 在`pages.json`中添加页面路径。**注：请不要设置为pages.json中第一项**
-  
+5. 如果是uni-app，需在`pages.json`中添加页面路径。**注：请不要设置为pages.json中第一项**。(在 uni-app 上，为了盖住 tabbar、导航栏以及 vue 页面上的原生元素，使用了背景透明的独立页面)
+
 	```json
 	"pages": [
 			// ……其他页面配置
@@ -256,28 +292,86 @@ The following functions are provided:
 			}
 		]
 	```
-6. 将`@/uni_modules/uni-upgrade-center-app/utils/check-update.js` 使用 import 导入到需要用到的地方，调用一下即可：
-   1. `import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update.js'`
+6. 将`@/uni_modules/uni-upgrade-center-app/utils/check-update` 使用 import 导入到需要用到的地方调用一下即可（一般在首页调用或设置页面检查更新按钮调用）：
+   1. 使用方式：`import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update'`，然后在需要的执行的地方调用 `checkUpdate` 方法即可
    2. 默认使用当前绑定的服务空间，如果要请求其他服务空间，可以使用其他服务空间的 `callFunction`。[详情](https://uniapp.dcloud.io/uniCloud/cf-functions.html#call-by-function-cross-space)
 
-7. 升级弹框可自行编写，也可以使用`uni.showModal`，或使用现有的升级弹框样式，如果不满足UI需求请自行替换资源文件。在`utils/check-update.js`中都有实例。
+7. 升级弹框可自行编写，也可以使用`uni.showModal`，或使用现有的升级弹框样式，如果不满足UI需求请自行替换 `static` 目录下的资源文件。在`utils/check-update.ts`中都有实例。
 
-8. 使用wgt更新，打包前请务必将 manifest.json 中的版本名称修改为更高版本。
+**注意** 使用wgt更新，打包前请务必将 manifest.json 中的版本名称修改为更高版本。（请使用类似 1.0.0 以 `.` 分隔的多段式格式）
 
-**更新下载安装`check-update.js`**
-**Update download and install `check-update.js`**
+#### 在 uni-app x 中使用升级中心 <Badge text="0.7.0+"/> @uni-upgrade-center-app-uni-app-x
+
+**安装指引**
+
+1. 在插件市场打开本插件页面，在右侧点击`使用 HBuilderX 导入插件`，选择要导入的项目点击确定 [插件地址](https://ext.dcloud.net.cn/plugin?id=4542)
+
+2. 创建 uniCloud 云开发环境
+
+3. 绑定服务空间：
+   - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，请和 uni-admin 项目关联同一个服务空间
+   - 插件版本 `<= 0.6.0`，请绑定到一个已有的服务空间或者新建一个服务空间进行绑定
+
+4. 上传云函数：
+   - 插件版本 `>= 0.6.0`，依赖 `uni-admin 1.9.3+` 的 `uni-upgrade-center 云函数`，插件不再单独提供云函数，可以跳过此步骤
+   - 插件版本 `<= 0.6.0`，找到`/uni_modules/uni-upgrade-center-app/uniCloud/cloudfunctions/check-version`，右键上传部署
+
+5. 升级中心在 uni-app x 端是 `easycom 组件` 可直接使用，无需在页面导入注册。在需要显示升级弹窗的页面直接使用组件即可（升级中心弹出时会调用 api 隐藏 tabbar，在关闭时会调用调用 api 显示 tabbar）
+
+	> 注意组件的 `ref` 属性
+
+	```html
+	<!-- 该组件的 @close 方法，会在关闭弹窗的时候调用 -->
+	<uni-upgrade-center-app ref="upgradePopup" @close="upgradePopupClose" />
+	```
+
+6. 在 `script` 标签内顶部引入 `checkVersion` 方法
+
+	```js
+	import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update'
+	```
+
+7. 在需要调用的 **页面** 中（一般在首页加载完成后调用或设置页面检查更新按钮调用）执行 `checkUpdate` 方法，比如在 `onReady` 生命周期中（ **注：** 因为是组件所以一定要保证组件加载完毕），以下为完整使用示例：
+
+	```html
+	<template>
+		<view>
+			<!-- 页面其他内容 -->
+			<uni-upgrade-center-app ref="upgradePopup" @close="upgradePopupClose" />
+		</view>
+	</template>
+	<script>
+		import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update'
+		// ...
+		export default {
+			// ...
+			onReady() {
+				// 此处的 UniUpgradeCenterAppComponentPublicInstance 类型是 easycom 组件使用约定，详见：https://uniapp.dcloud.net.cn/uni-app-x/component/#method-easycom
+				// 此处的 'upgradePopup' 要和组件的 ref 属性一致
+				checkUpdate(this.$refs['upgradePopup'] as UniUpgradeCenterAppComponentPublicInstance)
+			}
+			// ...
+		}
+	</script>
+	```
+
+8. 当你打开调用升级中心组件的页面就会检查更新，如有更新就出弹窗。也可以在其他页面或者组件中使用
+
+**注意** 在 uni-app x 的 app-Android 端没有 wgt 更新，也不会检测到 wgt 包的更新
+
+**更新下载安装`check-update.ts`**
 
 > 该函数在utils目录下
 > This function is in the utils directory
 
-1. 如果是静默更新，则不会打开更新弹框，会在后台下载后安装，下次启动应用生效
-1. If it is a silent update, the update pop-up box will not be opened, it will be downloaded and installed in the background, and the application will take effect next time you start the application
+1. 如果是静默更新（wgt 更新特有），则不会打开更新弹框，只在后台下载后安装，下次启动应用生效
 
 2. 如果是 iOS，则会直接打开AppStore的链接
 2. If it is iOS, it will directly open the link of AppStore
 
-3. 其他情况，会将检查更新云函数返回的结果保存在localStorage中，并跳转进入`upgrade-popup.vue`打开更新弹框
-3. In other cases, the result returned by the check and update cloud function will be saved in localStorage, and jump to `upgrade-popup.vue` to open the update popup box
+3. 其他情况：
+   - `uni-app`：会将检查更新云函数返回的结果保存在localStorage中，并跳转进入`upgrade-popup.vue`打开更新弹框
+   - `uni-app x`：会将检查更新云函数返回的结果传递给 `\uni_modules\uni-upgrade-center-app\components\uni-upgrade-center-app\uni-upgrade-center-app.uvue` 组件的 `show` 方法，修改组件的显示状态，显示更新弹框
 
 **Tips**
 
@@ -292,11 +386,9 @@ The following functions are provided:
 ### Fee Evaluation @upgrade-center-fee
 
 
-近期，uniCloud阿里云版开始正式商用，部分开发者对基于uniCloud的`uni-upgrade-center`等云端一体业务，开始纠结，不清楚这些业务预计会花费多少钱，不清楚相比传统服务器而言，何种方案性价比更好。
-Recently, the uniCloud Alibaba Cloud version has been officially commercialized. Some developers have begun to struggle with cloud-integrated services such as `uni-upgrade-center` based on uniCloud. , which solution is more cost-effective.
+使用升级中心，涉及uniCloud的付费问题，那么相比于自己搭服务器，使用uniCloud的费用到底合不合适。这里帮开发者算下账。
 
-本文尝试算细账、算总账，以阿里云[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，详细预测`uni-upgrade-center`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择，无忧开发。
-This article tries to calculate the detailed accounts and the general ledger. Taking Alibaba Cloud [pay-as-you-go](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay) as an example, it predicts `uni-upgrade- postpay' in detail. center `The resource consumption and corresponding costs under different user scales help everyone choose wisely and develop without worry.
+以阿里云[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，预测下`uni-upgrade-center`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择。
 
 本文主要分为三个部分：
 This article is mainly divided into three parts:
@@ -358,7 +450,7 @@ According to the above formula, if your app has 100 daily active users, the dail
 ```
 云函数费用（天） = 资源使用量 * 0.000110592  + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8
 			  = 云函数内存（单位为G） * 云函数平均单次执行时长（单位为秒） * 调用次数 + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8
-			  = 0.25G * 0.1S * 100 * 2 * 0.000110592 + 100 * 2 * 0.0133/10000 + 0 
+			  = 0.25G * 0.1S * 100 * 2 * 0.000110592 + 100 * 2 * 0.0133/10000 + 0
 			  = 0.00081896（元）
 ```
 
@@ -448,7 +540,7 @@ The `uni-upgrade-center`uni-upgrade-center has very few database write operation
 Because both the capacity fee and the number of write operations can be ignored as 0, according to the formula:
 
 ```
-云数据库费用 = 容量费（忽略为0） + 读操作费用 + 写操作费用（忽略为0） 
+云数据库费用 = 容量费（忽略为0） + 读操作费用 + 写操作费用（忽略为0）
 		   = 读操作费用
 ```
 

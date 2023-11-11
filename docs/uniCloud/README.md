@@ -1,7 +1,8 @@
-`uniCloud` 是 DCloud 联合阿里云、腾讯云，为开发者提供的基于 serverless 模式和 js 编程的云开发平台。
+# uniCloud概述
+
+`uniCloud` 是 DCloud 联合阿里云、腾讯云、支付宝小程序云，为开发者提供的基于 serverless 模式和 js 编程的云开发平台。
 
 `uniCloud` 的 web控制台地址：[https://unicloud.dcloud.net.cn](https://unicloud.dcloud.net.cn)
-
 
 ### uniCloud 的价值
 
@@ -14,7 +15,7 @@
     5. 除了开发成本，云资源租用成本也将大幅下降
     6. 如果不发布Web版，你将不需要购买备案域名。小程序和App可以免域名使用服务器；
 
-uniCloud为每个开发者提供一个免费服务空间，让你也可以拥有自己的服务器。
+uniCloud为每个开发者提供2个免费服务空间（阿里云和支付宝小程序云各1个），让你也可以拥有自己的服务器。
 
 ### 看视频，只需25分钟，快速入门uniCloud
 
@@ -24,15 +25,15 @@ uniCloud为每个开发者提供一个免费服务空间，让你也可以拥有
 
 ### uniCloud是什么和不是什么
 
-uniCloud是DCloud在阿里云和腾讯云的serverless服务上封装而成的。
+uniCloud是DCloud在阿里云、腾讯云、支付宝小程序云等的serverless服务上封装而成的。
 
-它包含IaaS层（由阿里云和腾讯云提供硬件和网络）和PaaS层（由DCloud提供开发环境）。
+它包含IaaS层（由阿里云、腾讯云、支付宝小程序云提供硬件和网络）和PaaS层（由DCloud提供开发环境）。
 
-开发者可以自主选择uniCloud的硬件和网络资源的供应商，在阿里云版和腾讯云版之间切换。
+开发者可以自主选择uniCloud的硬件和网络资源的供应商，在不同云厂商之间切换。
 
 开户和付费虽然通过DCloud渠道，但实际上开发者自动在云厂商处建立了账户和充值了余额。价格是云厂商的标准定价，DCloud只获取云服务厂商的返佣。
 
-开发时虽使用DCloud的工具，但应用上线时，手机端是直连阿里云或腾讯云的serverless，不经由DCloud的服务器。
+开发时虽使用DCloud的工具，但应用上线时，客户端是直连阿里云或腾讯云的serverless，**不经由DCloud的服务器**。
 
 ### 什么是serverless？@serverless
 
@@ -204,30 +205,24 @@ uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，�
 - uni-sec-check：免费的内容安全审查，防止用户提交违法的文字或图片。[详见](uni-sec-check.md)
 - uni-upgrade-center：App升级中心。支持整包升级、wgt热更新；支持直接下载安装包或跳转应用商店。[详见](upgrade-center.md)
 - uni-push2：云端一体的推送，大幅简化推送开发。[详见](/unipush-v2.md)
-- uni-im：开源IM。[详见](uni-im.md)
+- uni-im：开源、多端IM。[详见](uni-im.md)
+- uni-cms：开源、多端内容管理。[详见](uni-cms.md)
+- uni-ai：聚合ai能力。[详见](uni-ai.md)
+- uni-map：地理位置开发中间件，极大加速地图业务开发效率。[详见](unicloud-map.md)
 
-**2. 社区的优秀插件**
-
-- cms
-- 城市选择
-- banner管理
-- 留言反馈
-- 日志管理
-- 敏感词过滤
-
-**3. 项目模板**
+**2. 项目模板**
 
 上面的轮子，是与业务无关的通用轮子。除此之外，还有大量的云端一体的项目模板。
 使用这些现成的项目模板，那开发效率更是极大幅的提升。过去5、6人月的项目，现在几天就能搞定上线！
 
-||||
-|--				|--			|--					|
-|电商			|博客		|排班				|
-|网赚合成游戏	|社交		|预约预订			|
-|O2O			|短视频		|家谱				|
-|外卖			|音乐		|头像挂件			|
-|影视			|记账		|人像抠图、漫画脸	|
-|新闻			|考勤打卡	|红包封面			|
+|																																									|																																													|																																																|
+|--																																								|--																																												|--																																															|
+|[电商](https://ext.dcloud.net.cn/search?q=电商&orderBy=Relevance&cat1=7&cat2=72)	|[博客](https://ext.dcloud.net.cn/search?q=博客&orderBy=Relevance&cat1=7&cat2=72)					|[社交](https://ext.dcloud.net.cn/search?q=%E7%A4%BE%E4%BA%A4&orderBy=Relevance&cat1=7&cat2=72)	|
+|[网赚](https://ext.dcloud.net.cn/search?q=网赚&orderBy=Relevance&cat1=7&cat2=72)	|[影视](https://ext.dcloud.net.cn/search?q=影视&orderBy=Relevance&cat1=7&cat2=72)	|[壁纸](https://ext.dcloud.net.cn/search?q=壁纸&orderBy=Relevance&cat1=7&cat2=72)								|
+|[游戏](https://ext.dcloud.net.cn/search?q=游戏&orderBy=Relevance&cat1=7&cat2=72)	|[短视频](https://ext.dcloud.net.cn/search?q=短视频&orderBy=Relevance&cat1=7&cat2=72)			|[家谱](https://ext.dcloud.net.cn/search?q=家谱&orderBy=Relevance&cat1=7&cat2=72)								|
+|[外卖](https://ext.dcloud.net.cn/search?q=外卖&orderBy=Relevance&cat1=7&cat2=72)	|[音乐](https://ext.dcloud.net.cn/search?q=音乐&orderBy=Relevance&cat1=7&cat2=72)					|[头像挂件](https://ext.dcloud.net.cn/search?q=头像&orderBy=Relevance&cat1=7&cat2=72)						|
+|[预约](https://ext.dcloud.net.cn/search?q=预约&orderBy=Relevance&cat1=7&cat2=72)	|[记账](https://ext.dcloud.net.cn/search?q=记账&orderBy=Relevance&cat1=7&cat2=72)					|[人像抠图](https://ext.dcloud.net.cn/search?q=人像&orderBy=Relevance&cat1=7&cat2=72)						|
+|[新闻](https://ext.dcloud.net.cn/search?q=新闻&orderBy=Relevance&cat1=7&cat2=72)	|[考勤打卡](https://ext.dcloud.net.cn/search?q=考勤打卡&orderBy=Relevance&cat1=7&cat2=72)	|[红包封面](https://ext.dcloud.net.cn/search?q=红包封面&orderBy=Relevance&cat1=7&cat2=72)						|
 
 
 在这里，我们还必须提到2个新概念：`uni_module`和`datacom`。

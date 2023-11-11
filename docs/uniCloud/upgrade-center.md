@@ -15,6 +15,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 - 云端基于 [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/) 实现。后台管理是 [uni-admin](https://uniapp.dcloud.net.cn/uniCloud/admin.html) 框架的插件。
 
 - 数据库遵循 [opendb](https://uniapp.dcloud.net.cn/uniCloud/opendb.html) 规范
+- **关于应用转让后升级中心（uni-upgrade-center）的使用问题** [详情](https://ask.dcloud.net.cn/article/40112)
 
 从 uni-upgrade-center `v0.7.0` 版本起，开始支持uni-app x。
 
@@ -166,7 +167,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 - 弹框、下载、安装、是否强制重启等逻辑已集成
 
-- 下载完成如被用户取消升级，自动缓存安装包，下次进入判断是否符合安装条件，判断通过会复用已下载的包进行安装；判断不通过则自动清除（uni-app x 的 app-Android 端暂不支持安装包缓存功能。uni-app x 从 3.98 起支持下载文件存放在应用的cache目录下，该目录会由Android系统自动在合适时机清理。）
+- 下载完成如被用户取消升级，自动缓存安装包，下次进入判断是否符合安装条件，判断通过会复用已下载的包进行安装；判断不通过则自动清除（uni-app x 的 app-Android 端暂不支持安装包缓存功能：下载到临时保存目录，在 App 下次启动时自动清除）
 
 - 弹框美观，可自定义ui
 
@@ -191,7 +192,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	</code>
 </pre>
 
-- `upgrade-popup.vue` 介绍：
+- `upgrade-popup.vue` - 更新应用：
 	- 如果云函数`uni-upgrade-center`返回的参数表明需要更新，则将参数保存在localStorage中，带着键值跳转该页面
 	- 进入时会先从localStorage中尝试取出之前存的安装包路径（此包不会是强制安装类型的包）
 	- 如果有已经保存的包，则和传进来的 `version` 进行比较，如果相等则安装。大于和小于都不进行安装，因为admin端可能会调整包的版本。不符合更新会将此包删除
@@ -199,19 +200,9 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 	- 点击下载会有进度条、已下载大小和下载包的大小
 	- 下载完成会提示安装：
 		- 如果是 wgt 包，安装时则会提示 正在安装…… 和 安装完成。安装完成会提示是否重启
-		- 如果是原生安装包，则直接跳出去覆盖安装
-		- 在安卓端如果是配置了在 app 外部打开的 schema 链接，则会逐个尝试打开，直到打开成功或者全部尝试完毕。如果全部打开失败则会继续调用下载链接下载 apk 安装包
+		- 如果是 原生安装包，则直接跳出去覆盖安装
 	- 下载过程中，如果退出会提示是否取消下载。如果是强制更新，则只会提示正在下载请稍后，此时不可退出
 	- 如果是下载完成了没有安装就退出，则会将下载完成的包保存在本地。将包的本地路径和包version保存在localStorage中
-
-- `uni-upgrade-center-app.uvue` 介绍：
-	- 如果云函数`uni-upgrade-center`返回的参数表明需要更新，则带着返回值调用改组件的 `show` 方法进行弹窗显示
-	- 点击下载会有进度条、已下载大小和下载包的大小
-	- 下载完成会提示安装：
-		- 如果是原生安装包，则直接跳出去覆盖安装
-		- 在安卓端如果是配置了在 app 外部打开的 schema 链接，则会逐个尝试打开，直到打开成功或者全部尝试完毕。如果全部打开失败则会继续调用下载链接下载 apk 安装包
-	- 下载过程中，如果退出会提示是否取消下载。如果是强制更新，则只会提示正在下载请稍后，此时不可退出
-	- 如果是下载完成了没有安装就退出，则下次打开仍需重新下载
 
 #### 在 uni-app 中使用升级中心 @uni-upgrade-center-app-uni-app
 

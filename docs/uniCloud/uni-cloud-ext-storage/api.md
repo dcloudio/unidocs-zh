@@ -2,12 +2,23 @@
 
 扩展存储介绍，待补充
 
-**特点**
+## 扩展存储与原生云存储的区别
 
-1. CDN价格更便宜，低至x.xx元/GB
-2. 支持自定义域名
-3. 支持将文件设置为私有权限
-4. 支持设置未登录用户禁止上传，或指定用户禁止上传
+定义：
+
+扩展存储：通过扩展存储创建的云存储
+
+支付宝云存储：支付宝云服务空间自带的云存储
+
+阿里云存储：阿里云服务空间自带的云存储
+
+腾讯云存储：腾讯云服务空间自带的云存储
+
+|功能项			|扩展储存				|支付宝云存储		|阿里云存储	|腾讯云存储	|
+|:-:				|:-:						|:-:					|:-:			|:-:			|
+|自定义域名	|支持						|不支持				|不支持		|不支持		|
+|文件权限		| 可设置私有文件	|可设置私有目录	|不支持		|不支持		|
+|上传权限控制| 可自由控制			|不可控制			|不可控制	|不可控制	|
 
 ## 开通扩展存储服务@open
 
@@ -198,7 +209,7 @@ const extStorageManager = uniCloud.getExtStorageManager({
 	domain: "你的扩展存储域名", // 带http协议头的域名地址
 });
 let res = extStorageManager.getTempFileURL({
-	fileList: ["qiniu://a.jpg"], // 私有文件地址列表
+	fileList: ["qiniu://test.jpg"], // 私有文件地址列表
 });
 console.log('getTempFileURL: ', res);
 return res;
@@ -237,8 +248,8 @@ const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu",
 	domain: "你的扩展存储域名", // 带http协议头的域名地址
 });
-let res = extStorageManager.deleteFile({
-	fileList: fileList, // 私有文件地址列表
+let res = await extStorageManager.deleteFile({
+	fileList: ["qiniu://test.jpg"], // 私有文件地址列表
 });
 console.log('deleteFile: ', res);
 return res;
@@ -271,8 +282,8 @@ const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu",
 	domain: "你的扩展存储域名", // 带http协议头的域名地址
 });
-let res = extStorageManager.updateFileStatus({
-	fileID: fileID, // 私有文件id
+let res = await extStorageManager.updateFileStatus({
+	fileID: "qiniu://test.jpg", // 私有文件id
 	isPrivate: true, // true 私有 false 公共
 });
 console.log('updateFileStatus: ', res);

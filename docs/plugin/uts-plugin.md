@@ -648,6 +648,10 @@ export default function getBatteryLevel():number {
 > `UTSiOSHookProxy` 协议中所有的 api 均是可选实现的，可以选择自己关心的 api 进行实现。
 > `UTSiOSHookProxy` 协议的定义[详见](https://uniapp.dcloud.net.cn/uts/UTSiOSHookProxy.html)
 
+> 监听推送相关回调特别注意：
+> 监听推送和本地通知相关的回调需要证书具备推送功能，正确配置 `aps-environment`，在打自定义基座时需要在 `manifest` 中勾选 `push` 模块，否则相关功能不会被打进基座内，对应回调也就不会触发（可以只勾选 push，而不选择具体 push 版本）。
+> 勾选 `push` 模块后，系统会自动进行推送的注册，如果不需要自动注册，请在 `manifest` 中将 `pushRegisterMode` 字段设置为 `manual`。详细配置[详见](https://uniapp.dcloud.net.cn/collocation/manifest-app.html)
+
 
 示例代码：
 
@@ -661,19 +665,19 @@ export class MyPluginClass implements UTSiOSHookProxy {
 	    console.log("applicationDidFinishLaunchingWithOptions")
 	    return false
 	}
-	// 远程通知注册成功时的回调函数。
+	// 远程通知注册成功时的回调函数。（打自定义基座时需要勾选 push 模块）
 	didRegisterForRemoteNotifications(deviceToken: Data | null) {
 	        
 	}
-	// 远程通知注册失败时的回调函数。
+	// 远程通知注册失败时的回调函数。（打自定义基座时需要勾选 push 模块）
 	didFailToRegisterForRemoteNotifications(error: NSError | null) {       
 	        
 	}
-	// 应用收到远程通知时的回调函数。
+	// 应用收到远程通知时的回调函数。（打自定义基座时需要勾选 push 模块）
 	didReceiveRemoteNotification(userInfo: Map<AnyHashable, any> | null) {
 	        
 	}
-	// 应用收到本地通知时的回调函数。
+	// 应用收到本地通知时的回调函数。（打自定义基座时需要勾选 push 模块）
 	didReceiveLocalNotification(notification: UILocalNotification | null) {
 	        
 	}
@@ -1027,12 +1031,12 @@ uts插件支持debug断点调试。
 - 文件查找失败：'uts插件路径'
 
     vue2项目使用 uts 插件的最低版本要求是HBuilderX 3.6.8，低于此版本，编译时将报错。
-<!-- 
-- UTSCallback 已过时
 
-	HBuilderX 3.7.7开始，不再支持直接使用 UTSCallback 定义函数类型，当需要定义函数类型时，应定义为更具体的类型，如：`const callback:UTSCallback` 应调整为`const callback:()=>void`
+- UTSCallback 
+
+	HBuilderX 3.7.7开始，不推荐使用 UTSCallback 定义函数类型，当需要定义函数类型时，应定义为更具体的类型，如：`const callback:UTSCallback` 应调整为`const callback:()=>void`
 	如果您使用的是插件市场三方uts插件，可以检查更新插件最新版本
--->	
+
 ### Float类型传参
 
 android很多布局参数强制要求Float，但是ts中没有内置这种类型。可以使用下面的代码实现转换

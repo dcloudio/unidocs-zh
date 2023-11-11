@@ -89,6 +89,7 @@
     * [安装 APK](api/install-apk.md)
     * [wifi](api/wifi.md)
     * [内存](api/memory.md)
+    * [实人认证](api/facial-recognition-verify.md)
   * 媒体
     * [拍照和相册选择](api/choose-image.md)
     * [图片预览](api/preview-image.md)

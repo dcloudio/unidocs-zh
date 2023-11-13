@@ -89,7 +89,7 @@
     * [安装 APK](api/install-apk.md)
     * [wifi](api/wifi.md)
     * [内存](api/memory.md)
-    * [截屏事件](api/captureScreen.md)
+    * [截屏事件](api/capturescreen.md)
   * 媒体
     * [拍照和相册选择](api/choose-image.md)
     * [图片预览](api/preview-image.md)

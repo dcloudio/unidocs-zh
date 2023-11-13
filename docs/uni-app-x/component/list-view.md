@@ -100,37 +100,6 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 - 联网联表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue)
 - 可左右滑动的多个列表：[https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list)
 
-## sticky-header
-
-<!-- UTSCOMJSON.sticky-header.description -->
-
-<!-- UTSCOMJSON.sticky-header.attrubute -->
-
-<!-- UTSCOMJSON.sticky-header.event -->
-
-<!-- UTSCOMJSON.sticky-header.example -->
-
-<!-- UTSCOMJSON.sticky-header.compatibility -->
-
-<!-- UTSCOMJSON.sticky-header.children -->
-
-<!-- UTSCOMJSON.sticky-header.reference -->
-
-## sticky-section
-
-<!-- UTSCOMJSON.sticky-section.description -->
-
-<!-- UTSCOMJSON.sticky-section.attrubute -->
-
-<!-- UTSCOMJSON.sticky-section.event -->
-
-<!-- UTSCOMJSON.sticky-section.example -->
-
-<!-- UTSCOMJSON.sticky-section.compatibility -->
-
-<!-- UTSCOMJSON.sticky-section.children -->
-
-<!-- UTSCOMJSON.sticky-section.reference -->
 
 ### Bug & Tips@tips
 

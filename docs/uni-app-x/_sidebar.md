@@ -28,7 +28,7 @@
   * [view](component/view.md)
   * [scroll-view](component/scroll-view.md)
   * [list-view](component/list-view.md)
-  * [sticky-header](component/sticky-header.md)
+  * [sticky](component/sticky.md)
   * [swiper](component/swiper.md)
   * [navigator](component/navigator.md)
   * [text](component/text.md)
@@ -89,7 +89,7 @@
     * [安装 APK](api/install-apk.md)
     * [wifi](api/wifi.md)
     * [内存](api/memory.md)
-    * [实人认证](api/facial-recognition-verify.md)
+    * [截屏事件](api/captureScreen.md)
   * 媒体
     * [拍照和相册选择](api/choose-image.md)
     * [图片预览](api/preview-image.md)
@@ -98,6 +98,8 @@
     * [获取当前位置](api/get-location.md)
   * 数据存储
     * [storage（key-value存储）](api/storage.md)
+  * 登录和验证
+    * [实人认证](api/facial-recognition-verify.md)
   * 组件上下文对象
     * [web-view组件上下文对象](api/create-webview-context.md)
     * [video组件上下文对象](api/create-video-context.md)

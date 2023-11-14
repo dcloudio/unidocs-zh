@@ -748,7 +748,7 @@ import Application from 'android.app.Application';
 export class AppHookProxy implements UTSAndroidHookProxy {
   override onCreate(application: Application) {
 	//当前应用是否 取得用户同意隐私协议
-	if(UTSAndroid.isPrivacyAgree) {
+	if(UTSAndroid.isPrivacyAgree()) {
 		//onCreate 初始化三方SDK
 		Log.e("AppHookProxy", "AppHookProxy--onCreate---")
 	}

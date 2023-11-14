@@ -66,3 +66,4 @@ uni-app的app端逻辑层和视图层是分离的，这种机制有很多好处�
 * APP 端视图层的页面引用资源的路径相对于根目录计算，例如：./static/test.js。
 * APP 端可以使用 dom、bom API，不可直接访问逻辑层数据，不可以使用 uni 相关接口（如：uni.request）
 * H5 端逻辑层和视图层实际运行在同一个环境中，相当于使用 mixin 方式，可以直接访问逻辑层数据。
+* vue3 项目不支持 `setup script` 用法。

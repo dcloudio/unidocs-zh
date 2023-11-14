@@ -3,6 +3,7 @@
 * 教程
   * [与js开发的差别](tutorial/codegap.md)
   * [request联网教程](tutorial/request.md)
+  * [复杂列表开发指南](tutorial/stickynestlist.md)
   * [全局变量与状态管理](tutorial/store.md)
   * [几种组件标记的概念澄清](tutorial/idref.md)
 * 编译器

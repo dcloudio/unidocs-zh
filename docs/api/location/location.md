@@ -217,7 +217,7 @@ uni.chooseLocation({
 - chooseLocation 属于封装型API，开发者若觉得不够灵活，可自行基于原始的 map 组件进行封装。插件市场已经有各种封装样例了。
 - chooseLocation is an encapsulated API. If developers feel that it is not flexible enough, they can encapsulate it based on the original map component. The plugin market already has a variety of packaging examples.
 - 若 `Android App端` 位置不准，见上文 uni.getLocation 的注意事项
-- If the location of `Android App` is not accurate, see the precautions for uni.getLocation above
+- 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
 ### 三方定位和地图服务收费说明
 ### Three-party positioning and map service fee description

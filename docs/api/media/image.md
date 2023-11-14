@@ -59,6 +59,7 @@ If the App side needs a richer camera camera API (such as directly calling the f
 - If you need to select non-media files on the App side, you can search [file selection](https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9 in the plug-in market %80%89%E6%8B%A9), where Native.js can be used on the Android side without native plug-ins, while native plug-ins are required on the iOS side.
 - 选择照片大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
 - App上有时会遇到图片旋转90度问题，插件市场有解决方案：[图片旋转](https://ext.dcloud.net.cn/search?q=%E5%9B%BE%E7%89%87%E6%97%8B%E8%BD%AC)
+- 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
 
 **注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。**
@@ -372,7 +373,7 @@ Save the picture to the system album.
 - 可以通过用户授权API来判断用户是否给应用授予相册的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 - You can use the user authorization API to determine whether the user has granted the app the access to the photo album [https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize )
 - H5没有API可触发保存到相册行为，下载图片时浏览器会询问图片存放地址。
-- H5 does not have an API to trigger the behavior of saving to the album. When downloading pictures, the browser will ask for the storage address of the pictures.
+- 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
 **示例代码：**
 **Example code:**

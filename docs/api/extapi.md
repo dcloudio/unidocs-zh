@@ -277,7 +277,7 @@ Only uni's built-in api is upgraded along with HBuilder. Please remember the dif
      > 如 uni.onUserCaptureScreen 的 callback 回调结果类型为：`type OnUserCaptureScreenCallbackResult = {}`
 
 - [示例(获取电量)参考](https://gitcode.net/dcloud/uni-api/-/tree/dev/uni_modules/uni-getbatteryinfo)
-
+- HBuilderX3.96及以下使用uni ext api后，云打包同时勾选android和iOS会导致打出来的包不能正确包含uni ext api插件，解决方案：升级至3.97+或android和iOS单独打包
 
 ## 如何使用uni ext api
 ## How to use uni ext api

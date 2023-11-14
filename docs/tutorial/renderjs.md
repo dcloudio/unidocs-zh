@@ -96,6 +96,5 @@ In the same way, libraries such as `f2` and `threejs` can all be used in this wa
 * APP 端视图层的页面引用资源的路径相对于根目录计算，例如：./static/test.js。
 * The path of the page reference resource in the APP side view layer is computed relative to the root directory, for example:./static/test.js.
 * APP 端可以使用 dom、bom API，不可直接访问逻辑层数据，不可以使用 uni 相关接口（如：uni.request）
-* On the APP side, dom and bom APIs can be used, but the logic layer data cannot be directly accessed, and uni-related interfaces (such as uni.request) cannot be used
 * H5 端逻辑层和视图层实际运行在同一个环境中，相当于使用 mixin 方式，可以直接访问逻辑层数据。
-* The logic layer and the view layer on the H5 side actually run in the same environment, which is equivalent to using a mixin method to directly access the logic layer data.
+* vue3 项目不支持 `setup script` 用法。

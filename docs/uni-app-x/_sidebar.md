@@ -96,6 +96,8 @@
     * [保存图片到相册](api/save-image-to-photos-album.md)
   * 位置
     * [获取当前位置](api/get-location.md)
+  * 推送
+    * [推送](api/push.md)
   * 数据存储
     * [storage（key-value存储）](api/storage.md)
   * 登录和验证

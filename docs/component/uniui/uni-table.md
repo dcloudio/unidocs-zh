@@ -1,4 +1,3 @@
-
 ::: tip 组件名：uni-table
 > 代码块： `uTable`
 
@@ -12,8 +11,8 @@
 表格是由4个组件： `uni-table`表格组件、`uni-tr`表格行 、`uni-th` 表格头、`uni-td` 单元格组成
 
 需要注意的是：
-- `uni-table` 的根节点一定是 `uni-tr`
-- `uni-tr` 的根节点一定是 `uni-th` 或者 `uni-td`
+- `uni-table` 的叶子节点一定是 `uni-tr`
+- `uni-tr` 的叶子节点一定是 `uni-th` 或者 `uni-td`
 - 一个表格内理论上只能包含表头行
 - 目前只能在 `uni-th` 中设置 width 属性，`uni-td` 的宽度跟随 `uni-th` 宽度变化
 

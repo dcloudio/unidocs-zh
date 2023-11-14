@@ -261,6 +261,7 @@ As shown in the following directory structure, ``a.png`` will only be compiled i
 **注意**
 
 - 自HBuilderX3.9+起，App平台static目录同时支持app、app-plus目录，Web平台static目录同时支持web、h5目录
+- 自HBuilderX3.98+起，编译时增加 static 下被忽略的非当前平台专有目录提示信息，如static下同时存在app、web，运行到web时，会提示static/app已被忽略
 
 ### 整体目录条件编译
 ### Conditional compilation of whole directories

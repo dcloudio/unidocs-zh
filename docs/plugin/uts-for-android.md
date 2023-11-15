@@ -1081,17 +1081,15 @@ user!!.sayHello();
 #### 5.1.6 快速调用父类实现
 
 
-```ts
-//ts 中快速实现super
-//Quickly implement super in ts
+```kotlin
+//kotlin 中快速实现super
 constructor() : super() {
 }
 	
 ```
 
-```kotlin
-//kotlin 中快速实现super
-//Quick implementation of super in kotlin
+```uts
+//uts 中快速实现super
 constructor (){
 	super();
 }

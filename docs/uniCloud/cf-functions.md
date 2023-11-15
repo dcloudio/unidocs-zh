@@ -1017,8 +1017,7 @@ The running environment of cloud functions is `Node.js`, so we can use `npm` to 
 注意：阿里云目前仅支持全量上传云函数（整个`node_modules`文件夹全部上传，会在上传前自动在本地安装依赖，不会直接使用云函数目录下的node_modules），因此提醒开发者精简依赖，否则可能会每次上传时间很慢，影响开发体验。并且太大的npm库影响云函数的运行性能。
 Note: Alibaba Cloud currently only supports full upload of cloud functions (the entire `node_modules` folder is uploaded, and dependencies will be automatically installed locally before uploading, and node_modules in the cloud function directory will not be directly used), so developers are reminded to simplify dependencies. Otherwise, the upload time may be very slow each time, affecting the development experience. And a too large npm library affects the running performance of cloud functions.
 
-腾讯云会在上传云函数后自动安装需要的npm依赖。
-Tencent Cloud will automatically install the required npm dependencies after uploading the cloud function.
+腾讯云、支付宝小程序云会在上传云函数后自动安装需要的npm依赖。
 
 Tips:
 - 目前每个云函数上传包大小限制为10M。如果npm包很大，阿里云的整体上传机制会无法满足需求。此时只能选择腾讯云，交给腾讯云自动安装依赖。

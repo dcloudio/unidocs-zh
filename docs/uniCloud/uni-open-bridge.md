@@ -899,9 +899,14 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/setSessi
   "value": {
     "session_key": ""
   },
-  "expiresIn": 7200
+  "expiresIn": 172800
 }
 ```
+
+由于微信的设计并没有告知开发者最短有效期，且只能通过客户的 `uni.checkSession()` 检查是否过期，过期后通知服务器同步到 uni-open-bridge
+
+所以默认值 `"expiresIn": 172800` 为 2 天，尽可能让时间更长
+
 
 #### removeSessionKey
 
@@ -1040,6 +1045,9 @@ https://xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx.bspapp.com/uni-open-bridge/removeTi
   "platform": "weixin-h5"
 }
 ```
+
+
+提示：上面 Url 中的 `uni-open-bridge` 指云函数 uni-open-bridge 开启 Url 化时配置的 path 名称
 
 
 ## 不使用 `uni-open-bridge` 托管的情况@nouseuniopenbridge

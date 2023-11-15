@@ -860,20 +860,23 @@ interface UTSAndroidHookProxy {
 开发者需要在插件代码中实现UTSAndroidHookProxy接口 示例如下：
 
 ```uts
-import Application from 'android.app.Application';
-
 export class AppHookProxy implements UTSAndroidHookProxy {
   override onCreate(application: Application) {
 	//当前应用是否 取得用户同意隐私协议
+	android.util.Log.d("AppHookProxy", "AppHookProxy--onCreate---")
 	if(UTSAndroid.isPrivacyAgree()) {
 		//onCreate 初始化三方SDK
-		Log.e("AppHookProxy", "AppHookProxy--onCreate---")
+		android.util.Log.d("AppHookProxy", "AppHookProxy--onCreate---isPrivacyAgree")
 	}
   }
 }
 ```
 
 以上代码，将会在`Application` 的`OnCreate`函数中被调用
+
+HelloUTS nativepage 插件增加了UTSAndroidHookProxy [源码示例](https://gitcode.net/dcloud/hello-uts/-/blob/dev/uni_modules/uts-nativepage/utssdk/app-android/index.uts)
+
+开发者使用HBuilder X 3.96 之后版本，提交云端打包自定义基座后，观察日志即可体验
 
 注意：
 

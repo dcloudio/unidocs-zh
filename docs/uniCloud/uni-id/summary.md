@@ -1,5 +1,4 @@
-本文档适用于`uni-id 4.0.0`及以上版本，需 HBuilderX 3.5.0 及以上版本。旧版本文档请访问：[uni-id 3.x.x 文档](uni-id.md)
-This document is applicable to `uni-id 4.0.0` and above, and requires HBuilderX 3.5.0 and above. Please visit the old version documentation: [uni-id 3.x.x documentation](uni-id.md)
+本文档适用于`uni-id 4.0.0`及以上版本，需 HBuilderX 3.5.0 及以上版本。旧版本文档请访问：[uni-id 3.x.x 文档](old.md)
 
 ## 需求背景
 ## Requirements background
@@ -16,8 +15,7 @@ Why can't there be an open source general project to avoid repeated development 
 `uni-id`为`uniCloud`开发者提供了开源、易用、安全、丰富、可扩展的用户管理框架。
 `uni-id` provides an open source, easy-to-use, secure, rich, and extensible user management framework for `uniCloud` developers.
 
-[clientDB](clientDB.md)、[DB Schema](schema.md)、[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)、[uni-admin](admin.md)，这些产品都基于`uni-id`的账户体系。可以说`uni-id`是uniCloud不可或缺的基础能力。
-[clientDB](clientDB.md), [DB Schema](schema.md), [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057), [uni-admin]( admin.md), these products are based on the `uni-id` account system. It can be said that `uni-id` is an indispensable basic capability of uniCloud.
+[clientDB](../clientDB.md)、[DB Schema](../schema.md)、[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)、[uni-admin](../admin.md)，这些产品都基于`uni-id`的账户体系。可以说`uni-id`是uniCloud不可或缺的基础能力。
 
 ## uni-id 的价值
 ## uni-id value
@@ -110,8 +108,7 @@ In other respects, the user-imported plugins of various common open source proje
 1. 云数据库的uni-id相关表
 1. uni-id related table of cloud database
 
-数据库是一个系统的核心，uni-id首先规范化了十几张用户相关的[opendb数据表](opendb.md)，
-The database is the core of a system, uni-id first normalizes more than a dozen user-related [opendb data tables](opendb.md),
+数据库是一个系统的核心，uni-id首先规范化了十几张用户相关的[opendb数据表](../opendb.md)，
 
 其中最为重要的4张opendb表，如下：
 The four most important opendb tables are as follows:
@@ -142,11 +139,9 @@ If developers need to verify the front-end user token in their own cloud functio
 uniCloud众多功能（如`DB Schema`的权限、uni-id-co）也都依赖 uni-id-common。
 Many functions of uniCloud (such as `DB Schema` permissions, uni-id-co) also rely on uni-id-common.
 
-[详见](uni-id-common.md)
-[See details](uni-id-common.md)
+[详见](cloud-common.md)
 
-3. 云端[uni-config-center](uni-config-center.md)下的uni-id配置
-3. uni-id configuration under cloud [uni-config-center](uni-config-center.md)
+3. 云端[uni-config-center](../uni-config-center.md)下的uni-id配置
 
 `uni-id`在云端有很多配置，比如密码加密秘钥、短信和微信登录的appsecret等等。在`uni-config-center`下的`uni-id`目录下的config.json里存放着这些配置。
 `uni-id` has many configurations in the cloud, such as password encryption key, SMS and WeChat login appsecret, etc. These configurations are stored in config.json in the `uni-id` directory under `uni-config-center`.
@@ -167,23 +162,17 @@ The uni-app client also has a number of built-in APIs related to uni-id:
 - uniIDHasRole：判断当前用户是否拥有某角色。[详情](/api/global.md#uniidhasrole)
 - uniIDHasRole: Determines whether the current user has a role. [Details](/api/global.md#uniidhasrole)
 - uniIDHasPermission：判断当前用户是否拥有某权限。[详情](/api/global.md#uniidhaspermission)
-- uniIDHasPermission: Determine whether the current user has a certain permission. [Details](/api/global.md#uniidhaspermission)
-- uniCloud.getCurrentUserInfo()：客户端获取当前用户信息。[详情](client-sdk.md#client-getcurrentuserinfo)
-- uniCloud.getCurrentUserInfo(): The client obtains the current user information. [Details](client-sdk.md#client-getcurrentuserinfo)
+- uniCloud.getCurrentUserInfo()：客户端获取当前用户信息。[详情](../client-sdk.md#client-getcurrentuserinfo)
 
-5. 云端一体页面模板 [uni-id-pages](uniCloud/uni-id-pages)（含uni-id-co）
-5. Cloud integrated page template [uni-id-pages](uniCloud/uni-id-pages) (including uni-id-co)
+5. 云端一体页面模板 [uni-id-pages](redirect.md)（含uni-id-co）
 
-基于uni-id-common，DCloud还提供了一组完整的前端页面和后端[云对象](cloud-obj.md) ，合称`uni-id-pages`。
-Based on uni-id-common, DCloud also provides a complete set of front-end pages and back-end [cloud objects](cloud-obj.md), collectively called `uni-id-pages`.
+基于uni-id-common，DCloud还提供了一组完整的前端页面和后端[云对象](cloud-object.md) ，合称`uni-id-pages`。
 
 uni-id-pages的功能包括：用户注册（含用户协议、隐私协议）、退出、修改密码、忘记密码等各种功能，同时适配PC宽屏和各种手机平台（App、H5、小程序）。
 The functions of uni-id-pages include: user registration (including user agreement, privacy agreement), exit, password modification, forgetting password and other functions, and adapt to PC widescreen and various mobile platforms (App, H5, applet) .
 
 此外，DCloud的其他产品也为uni-id提供了众多支持：
-In addition, other DCloud products also provide numerous support for uni-id:
-- [uni-admin后台管理框架](admin.md)，为uni-id提供了现成的用户、角色、权限的后台管理功能，以及注册用户统计报表。
-- [uni-admin background management framework](admin.md), provides uni-id with ready-made background management functions of users, roles, and permissions, as well as registered user statistical reports.
+- [uni-admin后台管理框架](../admin.md)，为uni-id提供了现成的用户、角色、权限的后台管理功能，以及注册用户统计报表。
 
 以上全部是开源的。
 All of the above are open source.
@@ -197,11 +186,9 @@ Before HBuilderX 3.5, DCloud provided a common module [uni-id](https://ext.dclou
 老的公共模块uni-id是一个大而全的账户管理公共模块，体积太大，不适合被其他云函数引用。比如某个业务云函数需要校验用户token，引用的uni-id公共模块还包含了忘记密码的代码，很浪费资源。
 The old public module uni-id is a large and comprehensive account management public module, which is too bulky to be referenced by other cloud functions. For example, a business cloud function needs to verify the user token, and the referenced uni-id public module also contains the code for forgetting the password, which is a waste of resources.
 
-在云对象发布之前，DCloud基于云函数方式提供了uni-id-cf。但在HBuilderX 3.5 以后，推荐使用基于云对象的[uni-id-pages](uni-id-pages.md)，代码更简单清晰。
-Before the release of cloud objects, DCloud provided uni-id-cf based on cloud functions. But after HBuilderX 3.5, it is recommended to use cloud object-based [uni-id-pages](uni-id-pages.md), the code is simpler and clearer.
+在云对象发布之前，DCloud基于云函数方式提供了uni-id-cf。但在HBuilderX 3.5 以后，推荐使用基于云对象的[uni-id-pages](redirect.md)，代码更简单清晰。
 
-从HBuilder 3.5起，[uni-id](https://ext.dcloud.net.cn/plugin?id=2116)和uni-id-cf都将被淘汰，不再更新。老的公共模块uni-id被拆开，变成了[uni-id-common](uni-id-common.md)公共模块和uni-id-co云对象。
-From HBuilder 3.5 onwards, both [uni-id](https://ext.dcloud.net.cn/plugin?id=2116) and uni-id-cf will be phased out and will no longer be updated. The old common module uni-id was disassembled into [uni-id-common](uni-id-common.md) public module and uni-id-co cloud object.
+从HBuilder 3.5起，[uni-id](https://ext.dcloud.net.cn/plugin?id=2116)和uni-id-cf都将被淘汰，不再更新。老的公共模块uni-id被拆开，变成了[uni-id-common](cloud-common.md)公共模块和uni-id-co云对象。
 
 uni-id-common很精简，只包括token和权限，适合被所有云函数引用。
 uni-id-common is very compact, including only tokens and permissions, and is suitable for being referenced by all cloud functions.
@@ -209,8 +196,7 @@ uni-id-common is very compact, including only tokens and permissions, and is sui
 uni-id-co则是一个更加比uni-id-cf更完善和规范的用户管理的云对象。
 uni-id-co is a more complete and standardized user-managed cloud object than uni-id-cf.
 
-老版升级指南，[详见](uni-id-pages.md#m-to-co)
-Old version upgrade guide, [see details](uni-id-pages.md#m-to-co)
+老版升级指南，[详见](cloud-object.md#m-to-co)
 
 
 
@@ -223,8 +209,7 @@ The plugin market address of uni-id-common is: [uni-id-common plugin](https://ex
 一般推荐直接使用uni-starter项目模板来开始开发，或者在新项目里导入uni-id-pages页面模板来使用。
 It is generally recommended to use the uni-starter project template directly to start development, or import the uni-id-pages page template to use in a new project.
 
-uni-id云端的配置是依赖[uni-config-center](uni-config-center.md)公用模块的，在工程目录uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json。（如未安装uni-config-center需安装，如缺少目录需手动创建）
-The configuration of the uni-id cloud depends on the [uni-config-center](uni-config-center.md) public module, which is in the project directory uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json . (If uni-config-center is not installed, it needs to be installed, and if the directory is missing, it needs to be created manually)
+uni-id云端的配置是依赖[uni-config-center](../uni-config-center.md)公用模块的，在工程目录uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json。（如未安装uni-config-center需安装，如缺少目录需手动创建）
 
 uni-id云端同时依赖了公共模块[uni-captcha](https://ext.dcloud.net.cn/plugin?id=4048)，这个功能模块负责生成和校验验证码，进行人机验证。
 The uni-id cloud also relies on the public module [uni-captcha](https://ext.dcloud.net.cn/plugin?id=4048), which is responsible for generating and verifying verification codes for human-machine verification.
@@ -241,8 +226,7 @@ With uni-id, you first need to determine 2 things:
 你的应用采用什么方式注册登录？比如用户名密码、手机号+短信验证码、或者微信登录。
 How does your app register and log in? Such as username and password, mobile phone number + SMS verification code, or WeChat login.
 
-很多登录方式涉及三方服务，需要开通[短信验证码服务](send-sms.md)、开通[App一键登录](univerify.md)、或者向微信等申请登录的appid和appsecret信息。
-Many login methods involve third-party services, and you need to activate [SMS verification code service](send-sms.md), activate [App one-click login] (univerify.md), or apply for the appid and appsecret information for login to WeChat.
+很多登录方式涉及三方服务，需要开通[短信验证码服务](../send-sms.md)、开通[App一键登录](../univerify.md)、或者向微信等申请登录的appid和appsecret信息。
 
 申请开通相关服务后，需要把配置信息填写在云端配置文件config.json中。
 After applying to activate related services, you need to fill in the configuration information in the cloud configuration file config.json.
@@ -522,11 +506,8 @@ Note: The validity period of tokens on different platforms is generally differen
 ## User role permissions @rbac
 
 为什么需要角色权限管理？
-Why do you need role rights management?
-- 企业管理系统，比如[uni-admin](admin.md)，除了超级管理员，不同账号通常需根据职位、责任设定不同的系统权限。比如部门管理员、Hr。
-- Enterprise management systems, such as [uni-admin](admin.md), except for super administrators, different accounts usually need to set different system permissions according to their positions and responsibilities. Such as department manager, HR.
-- [clientDB](clientdb.md)允许前端直接操作数据库，但部分字段应该是系统计算或管理员设置的，比如文章的阅读数、收藏数及是否加精置顶，这些字段不允许普通用户在前端通过clientDB直接修改，此时也需要通过权限控制来保证系统的安全稳定。 
-- [clientDB](clientdb.md) allows the front-end to directly operate the database, but some fields should be calculated by the system or set by the administrator, such as the number of articles read, the number of favorites, and whether they are added to the top. These fields do not allow ordinary users to use the front-end Modifying directly through clientDB also requires permission control to ensure the security and stability of the system.
+- 企业管理系统，比如[uni-admin](../admin.md)，除了超级管理员，不同账号通常需根据职位、责任设定不同的系统权限。比如部门管理员、Hr。
+- [clientDB](../clientdb.md)允许前端直接操作数据库，但部分字段应该是系统计算或管理员设置的，比如文章的阅读数、收藏数及是否加精置顶，这些字段不允许普通用户在前端通过clientDB直接修改，此时也需要通过权限控制来保证系统的安全稳定。 
 
 `uni-id`基于经典的RBAC模型实现了角色权限系统。
 `uni-id` implements a role permission system based on the classic RBAC model.
@@ -740,14 +721,12 @@ function hasPermission(token, permission) {
 }
 ```
 
-注意： **在uniCloud admin中，封装了可视化的用户、权限、角色的管理，新增删除修改均支持**，无需自己维护。[详见](admin.md#mutiladmin)
-Note: **In uniCloud admin, the visual management of users, permissions, and roles is encapsulated. New additions, deletions, and modifications are all supported**, and there is no need to maintain it yourself. [See details](admin.md#mutiladmin)
+注意： **在uniCloud admin中，封装了可视化的用户、权限、角色的管理，新增删除修改均支持**，无需自己维护。[详见](../admin.md#mutiladmin)
 
 ## uni-id数据表@db-schema
 ## uni-id data table @db-schema
 
-`uni-id`的所有数据表，都在[opendb](opendb.md)规范中。
-All data tables for `uni-id` are in the [opendb](opendb.md) specification.
+`uni-id`的所有数据表，都在[opendb](../opendb.md)规范中。
 
 在unicloud [web控制台](https://unicloud.dcloud.net.cn/) 新建数据表时，可以从`uni-id`的模板分类里找到下面的表，并一键创建这些表。HBuilderX 3.4.11起新建 DB Schema 也有模板可选择。
 When creating a new data table in unicloud [web console](https://unicloud.dcloud.net.cn/), you can find the following tables from the template category of `uni-id`, and create these tables with one click. Since HBuilderX 3.4.11, new DB Schemas also have templates to choose from.
@@ -834,8 +813,7 @@ Table name: `uni-id-users`
 **wx_openid字段定义**
 **wx_openid field definition**
 
-> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](uni-id-pages.md#m-to-co)
-> The uni-id-users table 1.0.0 in opendb is adjusted to the following structure, and uni-id-co uses this standard. How to deal with old data, please refer to: [Upgrade from uni-id to uni-id-co+uni-id-common](uni-id-pages.md#m-to-co)
+> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](cloud-common.md#m-to-co)
 
 | 字段		| 类型	| 必填	| 描述					|
 | Fields | Type | Required | Description |
@@ -852,8 +830,7 @@ Table name: `uni-id-users`
 **qq_openid字段定义**
 **qq_openid field definition**
 
-> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](uni-id-pages.md#m-to-co)
-> The uni-id-users table 1.0.0 in opendb is adjusted to the following structure, and uni-id-co uses this standard. How to deal with old data, please refer to: [Upgrade from uni-id to uni-id-co+uni-id-common](uni-id-pages.md#m-to-co)
+> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](cloud-common.md#m-to-co)
 
 | 字段		| 类型	| 必填	| 描述					|
 | Fields | Type | Required | Description |
@@ -952,8 +929,7 @@ At present, the uni-id-users table provided in opendb contains a complete index.
 例：项目内只使用了微信登录，不使用其他登录方式，可以只保留`wx_unionid、wx_openid.mp`这些账号相关的索引，删除其他登录方式的索引（比如username、mobile）
 Example: Only WeChat login is used in the project, and no other login methods are used. You can only keep the account-related indexes such as `wx_unionid and wx_openid.mp`, and delete the indexes of other login methods (such as username, mobile)
 
-不了解索引请参考：[索引](db-index.md)
-If you don't know about indexes, please refer to: [index](db-index.md)
+不了解索引请参考：[索引](../db-index.md)
 
 ### 验证码表
 ### Verification code table
@@ -1216,8 +1192,7 @@ Combine the following code and comments to learn how to use `uniIdRouter`
 以上代码，指定了登录页为首页`index`，然后将`list`页面和`detail`目录下的所有页面，设为需要登录才能访问。那么访问`list`页面和`detail`目录下的页面时，如果客户端未登录或登录状态过期（也就是uni_id_token失效），那么会自动跳转到`index`页面来登录。
 The above code specifies the login page as the home page `index`, and then sets the `list` page and all pages in the `detail` directory to require login to access. Then when accessing the `list` page and the pages in the `detail` directory, if the client is not logged in or the login status is expired (that is, the uni_id_token is invalid), it will automatically jump to the `index` page to log in.
 
-与此功能对应的有两个uniCloud客户端api，`uniCloud.onNeedLogin()`和`uniCloud.offNeedLogin()`，开发者在监听onNeedLogin事件后，框架就不再自动跳转到登录页面，而是由开发者在onNeedLogin事件内自行处理。详情参考：[uniCloud.onNeedLogin](uniCloud/client-sdk.md?id=on-need-login)
-There are two uniCloud client APIs corresponding to this function, `uniCloud.onNeedLogin()` and `uniCloud.offNeedLogin()`. After the developer listens to the onNeedLogin event, the framework will no longer automatically jump to the login page, but It is handled by the developer in the onNeedLogin event. For details, please refer to: [uniCloud.onNeedLogin](uniCloud/client-sdk.md?id=on-need-login)
+与此功能对应的有两个uniCloud客户端api，`uniCloud.onNeedLogin()`和`uniCloud.offNeedLogin()`，开发者在监听onNeedLogin事件后，框架就不再自动跳转到登录页面，而是由开发者在onNeedLogin事件内自行处理。详情参考：[uniCloud.onNeedLogin](../client-sdk.md?id=on-need-login)
 
 自动跳转到登录页面时会携带uniIdRedirectUrl参数，其值为`encodeURIComponent(${跳转前的页面（包含路径和参数的完整页面地址）})`，如果希望用户登录后跳转回之前的页面，可以使用此参数实现。
 When automatically jumping to the login page, it will carry the uniIdRedirectUrl parameter, whose value is `encodeURIComponent(${page before jumping (full page address including path and parameters)})`, if you want the user to jump back to the previous page after logging in , which can be achieved using this parameter.
@@ -1326,9 +1301,7 @@ Client add-todo.vue
 - uniIdRouter底层使用navigateTo、redirectTo、reLaunch、switchTab的拦截器进行页面跳转拦截，不会拦截进入首页，web端和app端会拦截原生tabbar点击，其他端不会拦截原生tabbar点击。
 - The bottom layer of uniIdRouter uses the interceptors of navigateTo, redirectTo, reLaunch, and switchTab to intercept page jumps. It will not intercept entering the home page. The web and app ends will intercept native tabbar clicks, and other ends will not intercept native tabbar clicks.
 一般tabbar页面都不做自动跳转，而是在页面内再提供登录按钮。比如tabbar上有购物车或个人中心，点击购物车后在购物车页面内部会放一个提示语和按钮，告知用户需要登录。
-Generally, the tabbar page does not automatically jump, but provides a login button in the page. For example, there is a shopping cart or personal center on the tabbar. After clicking the shopping cart, a prompt and a button will be placed inside the shopping cart page to inform the user that they need to log in.
-在页面内判断用户是否登录，使用API[uniCloud.getCurrentUserInfo()](client-sdk.md#client-getcurrentuserinfo)
-To determine whether the user is logged in on the page, use API[uniCloud.getCurrentUserInfo()](client-sdk.md#client-getcurrentuserinfo)
+在页面内判断用户是否登录，使用API[uniCloud.getCurrentUserInfo()](../client-sdk.md#client-getcurrentuserinfo)
 
 ## 云端错误码@errcode
 ## Cloud error code @errcode
@@ -1418,7 +1391,7 @@ For example, the appid of the passenger side is `__uni_111111`, and the appid of
 uni-id 3.3.0版本起用户注册时会自动在用户表的记录内标记为注册应用对应的用户，如果没有单独授权登录其他应用的话则只能登录这个应用。即在乘客端应用注册的，默认只能在乘客端应用登录。
 Since uni-id version 3.3.0, when a user registers, it will be automatically marked as the user corresponding to the registered application in the records of the user table. If there is no separate authorization to log in to other applications, you can only log in to this application. That is, if you register in the passenger terminal application, you can only log in in the passenger terminal application by default.
 
-如何授权登录其他应用请参考：[授权、禁止用户在特定客户端应用登录](uni-id-pages.md#authorize-app)
+如何授权登录其他应用请参考：[授权、禁止用户在特定客户端应用登录](cloud-object.md#authorize-app-login)
 
 需要注意的是客户端APPID信息是由端上传上来的，并非完全可信，尽量在入口处进行校验。例：
 It should be noted that the client APPID information is uploaded from the end, and is not completely trusted. Try to verify it at the entrance. example:
@@ -1710,8 +1683,7 @@ Before `uni-id-pages 1.0.8`, uni-id-co directly stored this information in the t
 }
 ```
 
-此结构无法满足多应用同一平台关联同一服务空间且允许用户跨应用登录的场景。因此在`uni-id-pages 1.0.8`及更高版本对此做出了调整，改为使用[uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge-common)存储用户在三方平台的凭据信息。同时为了兼容旧版本上述third_party字段仍存有这些信息。
-This structure cannot meet the scenario where multiple applications are associated with the same service space on the same platform and users are allowed to log in across applications. So in `uni-id-pages 1.0.8` and later this was adjusted to use [uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge- common) to store the user's credential information on the third-party platform. At the same time, this information still exists in the third_party field above for compatibility with older versions.
+此结构无法满足多应用同一平台关联同一服务空间且允许用户跨应用登录的场景。因此在`uni-id-pages 1.0.8`及更高版本对此做出了调整，改为使用[uni-open-bridge-common](../uni-open-bridge.md#uni-open-bridge-common)存储用户在三方平台的凭据信息。同时为了兼容旧版本上述third_party字段仍存有这些信息。
 
 目前被`uni-id-co`保存的三方凭据有以下几种：
 The three-party credentials currently saved by `uni-id-co` are as follows:
@@ -1778,9 +1750,7 @@ beforeRegister is triggered before the registered user records are stored. The h
 |parameter name |type |description |
 |--					|--			|--																																			|
 |userRecord	|Object	|即将入库的用户记录																											|
-|userRecord |Object |The user record to be stored |
-|clientInfo	|Object	|客户端信息，参考：[云对象 getClientInfo](cloud-obj.md#get-client-info)	|
-|clientInfo |Object |Client information, reference: [cloud object getClientInfo](cloud-obj.md#get-client-info) |
+|clientInfo	|Object	|客户端信息，参考：[云对象 getClientInfo](../cloud-obj.md#get-client-info)	|
 
 以为__UNI_123123这个应用注册的用户添加"teacher"角色为例，beforeRegister钩子示例如下
 For example, adding the "teacher" role for the user registered by the application __UNI_123123, the example of the beforeRegister hook is as follows
@@ -1814,8 +1784,7 @@ module.exports = {
 uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-id-pages@1.0.28` 版本起新增了 `hmac-sha256` 加密算法，开发者可以自己需求选择不同的算法，推荐使用 `hmac-sha256`算法。
 By default, uni-id uses the `hmac-sha1` encryption algorithm to encrypt the password. Since the `uni-id-pages@1.0.28` version, the `hmac-sha256` encryption algorithm has been added, and developers can choose different ones according to their needs. algorithm, it is recommended to use `hmac-sha256` algorithm.
 
-在 `uni-config-center/uni-id/config.json` 中配置， [uni-id/config.json说明](uni-id-summary.html#config)
-Configure in `uni-config-center/uni-id/config.json`, [uni-id/config.json description](uni-id-summary.html#config)
+在 `uni-config-center/uni-id/config.json` 中配置， [uni-id/config.json说明](summary.md#config)
 
 ```json
 {
@@ -1828,8 +1797,7 @@ Configure in `uni-config-center/uni-id/config.json`, [uni-id/config.json descrip
 }
 ```
 
-修改 passwordSecret [参考](uni-id-summary.html#modifysecret)
-Modify passwordSecret [reference](uni-id-summary.html#modifysecret)
+修改 passwordSecret [参考](summary.md#modifysecret)
 
 #### 升级 hmac-256 加密算法指南
 #### Upgrade hmac-256 encryption algorithm guide
@@ -2172,7 +2140,7 @@ In [uniCloud console](https://unicloud.dcloud.net.cn/), find the service space w
 >
 > 实人认证相关功能建议或问题，可以加入uni-im交流群进行讨论，[点此加入](https://im.dcloud.net.cn/#/?joinGroup=6445fc67bc1254655dcbf5f7)
 
-基于[实人认证](/uniCloud/frv/intro.md)服务实现，可以实现用户刷脸核验真实身份，完成实名认证。
+基于[实人认证](../frv/intro.md)服务实现，可以实现用户刷脸核验真实身份，完成实名认证。
 
 目前仅APP端支持实名认证。
 
@@ -2251,14 +2219,14 @@ uni-id-pages 中内置了实名认证页面`uni-id-pages/pages/userinfo/realname
 
 #### 接口参考
 
-- 获取认证服务的 certifyId [uniIdCo.getFrvCertifyId](uniCloud/uni-id-pages.md#get-frv-certify-id)
-- 使用 certifyId 获取认证结果 [uniIdCo.getFrvAuthResult](uniCloud/uni-id-pages.md#get-frv-auth-result)
-- 获取用户实名信息（脱敏）[uniIdCo.getRealNameInfo](uniCloud/uni-id-pages.md#get-realname-info)
+- 获取认证服务的 certifyId [uniIdCo.getFrvCertifyId](cloud-object.md#get-frv-certify-id)
+- 使用 certifyId 获取认证结果 [uniIdCo.getFrvAuthResult](cloud-object.md#get-frv-auth-result)
+- 获取用户实名信息（脱敏）[uniIdCo.getRealNameInfo](cloud-object.md#get-realname-info)
 
 #### 敏感信息加密@sensitive-info-encrypt
 
 用户的姓名、身份证号、实人认证照片属于用户隐私信息，为了防止隐私信息泄露，在数据存储上使用了对称加密`aes-256-cbc`算法对数据进行加密。
-在前端页面需要使用时，例如”[获取用户实名信息](uniCloud/uni-id-pages.md#get-realname-info)“接口，只会返回脱敏后的数据，减少暴露风险，提高安全性。
+在前端页面需要使用时，例如”[获取用户实名信息](cloud-object.md#get-realname-info)“接口，只会返回脱敏后的数据，减少暴露风险，提高安全性。
 
 由于加密密钥`sensitiveInfoEncryptSecret`来源于`config.json`配置文件，强烈建议更换为自定义的字符串，不要使用默认的密钥。
 密钥长度需要是32位的字符串。

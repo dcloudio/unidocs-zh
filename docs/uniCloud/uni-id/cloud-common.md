@@ -4,17 +4,14 @@
 > HBuilderX 3.5.0+ 支持
 > HBuilderX 3.5.0+ support
 
-`云函数公共模块`是不同云函数共享代码的一种方式。如果你不了解什么是`云函数公共模块`，请另读文档[公共模块](cf-common.md)
-`Cloud function common module` is a way for different cloud functions to share code. If you don't know what is `cloud function common module`, please read the document [public module](cf-common.md)
+`云函数公共模块`是不同云函数共享代码的一种方式。如果你不了解什么是`云函数公共模块`，请另读文档[公共模块](../cf-common.md)
 
 `uni-id-common`是`uni-id`体系中用于token管理的公共模块。
 `uni-id-common` is a common module for token management in the `uni-id` system.
 
-[旧版本uni-id公共模块](uniCloud/uni-id.md)是一个大而全的公共模块，不适用被众多云函数引用。
-[Old version uni-id public module](uniCloud/uni-id.md) is a large and comprehensive public module, which is not suitable for being referenced by many cloud functions.
+[旧版本uni-id公共模块](old.md)是一个大而全的公共模块，不适用被众多云函数引用。
 
-新版的`uni-id-common`仅包含token校验、生成及刷新功能。而用户注册、登录、忘记密码等实现都挪到了`uni-id-co`云对象中（该云对象内置于[uni-id-pages](uniCloud/uni-id-pages.md)）。
-The new version of `uni-id-common` only includes token verification, generation and refresh functions. The implementation of user registration, login, forgotten password, etc. are all moved to the `uni-id-co` cloud object (the cloud object is built in [uni-id-pages](uniCloud/uni-id-pages.md)).
+新版的`uni-id-common`仅包含token校验、生成及刷新功能。而用户注册、登录、忘记密码等实现都挪到了[uni-id-co](cloud-object.md)云对象中。
 
 这样不仅减小了公共模块的体积，也简化了学习成本。
 This not only reduces the size of the common module, but also simplifies the learning cost.
@@ -22,8 +19,7 @@ This not only reduces the size of the common module, but also simplifies the lea
 从HBuilderX 3.5起，新建uniCloud项目时，会自动加载 `uni-id-common` 依赖。也就是 `uni-id-common` 默认内置在每个项目中。
 Starting from HBuilderX 3.5, the `uni-id-common` dependency is automatically loaded when creating a new uniCloud project. That is, `uni-id-common` is built into every project by default.
 
-一般开发者无需了解`uni-id-common`公共模块的API，直接使用[uni-id-pages](uniCloud/uni-id-pages.md)云端一体页面模板即可。
-Generally, developers do not need to understand the API of the `uni-id-common` public module, and can directly use the [uni-id-pages](uniCloud/uni-id-pages.md) cloud integrated page template.
+一般开发者无需了解`uni-id-common`公共模块的API，直接使用[uni-id-pages](redirect.md)云端一体页面模板即可。
 
 如果想了解`uni-id-common`公共模块内部实现，可以阅读本章节。
 If you want to understand the internal implementation of the `uni-id-common` common module, you can read this chapter.
@@ -39,7 +35,7 @@ If you want to understand the internal implementation of the `uni-id-common` com
 
 用法：`uniID.createInstance(Object CreateInstanceOptions);`
 
-CreateInstanceOptions内可以传入云函数context，也可以传入clientInfo参数，作用和context类似。方便在云对象内获取clientInfo后直接传入，[什么是云对象？](uniCloud/cloud-obj.md)。
+CreateInstanceOptions内可以传入云函数context，也可以传入clientInfo参数，作用和context类似。方便在云对象内获取clientInfo后直接传入，[什么是云对象？](../cloud-obj.md)。
 
 ```js
 // 云函数代码，传入context
@@ -83,8 +79,7 @@ module.exports = {
 默认情况下`uni-id-common`某些接口会自动从全局context内获取客户端的PLATFORM（平台，如：app、h5、mp-weixin）等信息。
 By default, some interfaces of `uni-id-common` will automatically obtain the client's PLATFORM (platform, such as app, h5, mp-weixin) and other information from the global context.
 
-在云函数[单实例多并发](cf-functions.md?id=concurrency)的场景下可能无法正确获取（全局对象会被后面的请求覆盖，可能会导致前面一次请求使用了后面一次请求的PLATFORM信息）。因此推荐在开启云函数单实例多并发后，自行为uni-id传入context。
-In the scenario of cloud functions [single instance, multiple concurrency](cf-functions.md?id=concurrency), it may not be obtained correctly (the global object will be overwritten by subsequent requests, which may cause the previous request to use the PLATFORM of the subsequent request) information). Therefore, it is recommended to pass in the context for the uni-id after enabling the single-instance multi-concurrency of cloud functions.
+在云函数[单实例多并发](../cf-functions.md?id=concurrency)的场景下可能无法正确获取（全局对象会被后面的请求覆盖，可能会导致前面一次请求使用了后面一次请求的PLATFORM信息）。因此推荐在开启云函数单实例多并发后，自行为uni-id传入context。
 
 此外云函数url化时无法获取客户端信息，也需要使用这种方式将客户端信息传入uni-id。
 In addition, when the cloud function is urlized, the client information cannot be obtained, and it is also necessary to pass the client information into the uni-id in this way.

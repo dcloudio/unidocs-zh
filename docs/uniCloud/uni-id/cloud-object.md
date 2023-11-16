@@ -1,428 +1,3 @@
-# 概述
-# Overview
-
-`uni-id-pages`，是`uni-id`体系的一部分。
-`uni-id-pages`, part of the `uni-id` system.
-
-它基于`uni-id-common`提供了一批现成的、开源的、登录注册账户管理相关的前端页面和云端云对象。
-Based on `uni-id-common`, it provides a batch of ready-made, open-source, front-end pages and cloud objects related to login and account management.
-
-它是一个云端一体页面组的[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)，含前端页面和后端云对象（uni-id-co）。
-It is a [uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html) of a cloud-integrated page group, including front-end pages and back-end cloud objects (uni-id-co).
-
-开发者在项目中引入`uni-id-pages`，账户管理的功能无需自己再开发。由于源码的开放性和层次结构清晰，有二次开发需求也很方便调整。
-Developers introduce `uni-id-pages` into the project, and account management functions do not need to be developed by themselves. Due to the openness of the source code and the clear hierarchical structure, it is also easy to adjust if there are secondary development needs.
-
-下载地址：[https://ext.dcloud.net.cn/plugin?name=uni-id-pages](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
-Download address: [https://ext.dcloud.net.cn/plugin?name=uni-id-pages](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
-
-`uni-id-pages`的功能包括：
-Features of `uni-id-pages` include:
-
-- 注册账号：
-- Register an account:
-	+ 用户名和密码
-	+ username and password
-- 免密登录（首次登录自动注册）：
-- Password-free login (automatic registration for the first login):
-	+ [app一键登录](https://uniapp.dcloud.io/univerify.html)
-	+ [App one-click login](https://uniapp.dcloud.io/univerify.html)
-	+ 短信验证码登录
-	+ SMS verification code login
-	+ 微信登录（自动获取头像和昵称）
-	+ WeChat login (automatically get avatar and nickname)
-	+ 苹果登录
-	+ Apple login
-	+ 支付宝小程序登录（暂未实现）
-	+ Alipay applet login (not implemented yet)
-- 密码登录
-- Password login
-	+ 用户名/手机号和密码登录
-	+ Login with username/mobile number and password
-- 账户管理
-- Account Management
-	+ 个人中心
-	+ Personal Center
-	+ 头像更换
-	+ Avatar replacement
-	+ 修改昵称
-	+ Modify nickname
-	+ 绑定手机号码
-	+ bind mobile number
-		* App端支持：[一键绑定](https://uniapp.dcloud.io/univerify.html)
-		* App-side support: [One-click binding](https://uniapp.dcloud.io/univerify.html)
-		* 微信小程序端支持：[获取微信绑定的手机号](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getPhoneNumber.html)
-		* WeChat mini program support: [Get the phone number bound to WeChat](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/getPhoneNumber.html)
-		* 全端支持：短信验证码校验
-		* Full end support: SMS verification code verification
-	+ 修改密码（仅账号有设置密码时可见）
-	+ Change password (only visible when the account has a set password)
-	+ 找回密码（仅账号有绑定手机号码可见）
-	+ Retrieve the password (only visible if the account has a bound mobile phone number)
-	+ 退出登录
-	+ log out
-	+ 注销账号（上架国内App应用市场必备）
-	+ Cancellation of the account (required for listing in the domestic app market)
-- 用户服务协议和隐私政策条款授权
-- User Service Agreement and Privacy Policy Terms Authorization
-
-
-## 目录结构
-<pre v-pre="" data-lang="">
-<code class="lang-" style="padding:0">
-├─uni_modules                                         存放[uni_module](/uni_modules)规范的插件。
-│    ├─其他module
-│    └─uni-id-pages
-│        ├─uniCloud
-│        │    └─cloudfunctions                        云函数目录
-│        │        └─uni-id-co                         集成调用uni-id方法的云对象
-│        │            ├─common                        公用逻辑
-│        │            ├─config                        配置
-│        │            │  └─permission.js              调用接口所需的权限配置
-│        │            ├─lang                          国际化目录
-│        │            ├─lib                           基础功能，不建议修改此目录下文件
-│        │            │  ├─third-party                三方平台接口
-│        │            │  └─utils                      基础功能
-│        │            ├─middleware                    中间件
-│        │            └─module                        分模块存放的云对象方法
-│        ├─common
-│        │    ├─login-page.scss                       登录页面公共样式
-│        │    ├─login-page.mixin.js                   登录页面公共mixin文件
-│        │    └─loginSuccess.js                       登录成功后执行的文件
-│        ├─components
-│        │    ├─cloud-image                           uniCloud云存储图片解析组件
-│        │    │    └─cloud-image.vue
-│        │    ├─uni-id-pages-agreements               同意用户服务协议&隐私政策条款组件
-│        │    │    └─uni-id-pages-agreements.vue
-│        │    ├─uni-id-pages-avatar                   用户头像组件
-│        │    │    └─uni-id-pages-avatar.vue
-│        │    ├─uni-id-pages-bind-mobile              通过微信获取手机号码绑定个人资料
-│        │    │    └─uni-id-pages-bind-mobile.vue
-│        │    ├─uni-id-pages-email-form               邮箱验证码组件
-│        │    │    └─uni-id-pages-email-form.vue
-│        │    ├─uni-id-pages-fab-login                悬浮的切换登录方式组件
-│        │    │    └─uni-id-pages-fab-login.vue
-│        │    ├─uni-id-pages-sms-form                 获取短信验证码组件
-│        │    │    └─uni-id-pages-sms-form.vue
-│        │    └─uni-id-pages-user-profile             获取用户信息组件
-│        │        └─uni-id-pages-user-profile.vue
-│        ├─pages
-│        │    ├─common
-│        │    │    └─webview                          用于实现应用内浏览或打开《用户协议和隐私协议》URL链接页面
-│        │    │        └─webview.vue
-│        │    ├─login                        
-│        │    │    ├─login-smscode.vue                短信验证码登录
-│        │    │    ├─login-withoutpwd.vue             免密码登录
-│        │    │    └─login-withpwd.vue                密码登录
-│        │    ├─register                    
-│        │    │    ├─register.vue                     通过用户名密码注册账号
-│        │    │    ├─register-admin.vue               创建超级管理员
-│        │    │    ├─register-by-email.vue            通过邮箱验证码注册账号
-│        │    │    └─validator.js                     注册账号页的表单验证规则文件
-│        │    ├─retrieve                              
-│        │    │    ├─retrieve-by-email.vue            通过邮箱验证码重置密码
-│        │    │    └─retrieve.vue					            通过手机验证码重置密码
-│        │    └─userinfo
-│        │        ├─bind-mobile.vue                   绑定手机号码
-│        │        ├─change_pwd.vue                    修改密码
-│        │        ├─cropImage.vue                     裁剪图片
-│        │        ├─deactivate.vue                    注销账号
-│        │        ├─set-pwd.vue                       设置密码
-│        │        └─userinfo.js                       注册账号页的表单验证规则文件
-│        ├─static                                     静态资源目录
-│        ├─changelog.md                               更新日志
-│        ├─config.js                                  uni-id-pages的配置文件
-│        ├─init.js                                    初始化文件
-│        ├─package.json                               包管理文件
-│        └─readme.md                                  插件自述文件
-</code>
-</pre>
-**完整的uni-app目录结构[详情查看](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84)
-**Complete uni-app directory structure [View details](https://uniapp.dcloud.io/frame?id=%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e %84)
-
-## 前端页面
-## front page
-### 初始化
-需要在App.vue中初始化`uni-id-pages`的`init.js`文件
-
-示例代码如下：
-The sample code is as follows:
-```js
-<script>
-	import uniIdPageInit from '@/uni_modules/uni-id-pages/init.js';
-	export default {
-	onLaunch: async function() {
-	console.log('App Launch')
-	await uniIdPageInit()
-},
-	onShow: function() {
-	console.log('App Show')
-},
-	onHide: function() {
-	console.log('App Hide')
-}
-}
-</script>
-```
-
-### 配置@config
-### Configure @config
-路径：`/uni_modules/uni-id-pages/config.js`
-Path: `/uni_modules/uni-id-pages/config.js`
-
-|字段		|类型	|描述											|
-|Field |Type |Description |
-|--			|--		|--												|
-|debug		|Boolean|调试模式[详情](#debug)							|
-|debug |Boolean|Debug mode [details](#debug) |
-|loginTypes	|Array	|登录方式[详情](#loginTypes)						|
-|loginTypes |Array |Login Methods[Details](#loginTypes) |
-|agreements	|Array	|隐私政策[详情](#agreements)						|
-|agreements |Array |Privacy Policy [details](#agreements) |
-|appid		|Object	|接入各类服务（如微信登录服务）的应用id[详情](#appid)	|
-|appid |Object |Application id for accessing various services (such as WeChat login service)[Details](#appid) |
-|passwordStrength	|Object	|密码配置	[详情](#strength)	|
-| passwordStrength | Object | Password configuration [details](#strength) |
-|setPasswordAfterLogin|Boolean/Object|登录后设置密码 [详情](#set-pwd-after-login)|
-| setPasswordAfterLogin| Boolean/Object|Set password after login [details](#set-pwd-after-login)|
-
-完整示例：
-Complete example:
-```js
-export default {
-	//调试模式
-	// debug mode
-	"debug":true,
-	/*
-		登录类型 未列举到的或运行环境不支持的，将被自动隐藏。
-		如果需要在不同平台有不同的配置，直接用条件编译即可
-	*/
-	"loginTypes": [
-		"univerify",
-		"weixin",
-		"username",
-		"apple",
-		"smsCode"
-	],
-	//政策协议
-	// policy agreement
-	"agreements": {
-		"serviceUrl": "https://xxx", //用户服务协议链接
-		"privacyUrl": "https://xxx", //隐私政策条款链接
-		// 哪些场景下显示，1.注册（包括注册并登录，如：微信登录、苹果登录、短信验证码登录）、2.登录（如：用户名密码登录）
-		// Which scenarios are displayed, 1. Registration (including registration and login, such as: WeChat login, Apple login, SMS verification code login), 2. Login (such as: username and password login)
-		"scope": ['register', 'login']
-	},
-	// 提供各类服务接入（如微信登录服务）的应用id
-	// The application id that provides access to various services (such as WeChat login service)
-	"appid":{
-		"weixin":{
-			// 微信公众号的appid，来源:登录微信公众号（https://mp.weixin.qq.com）-> 设置与开发 -> 基本配置 -> 公众号开发信息 -> AppID
-			"h5":"wx111111111111111",
-			// 微信开放平台的appid，来源:登录微信开放平台（https://open.weixin.qq.com） -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> AppID
-			"web":"wx22222222222222"
-		}
-	},
-	/**
-	 * 密码强度
-	 * super（超强：密码必须包含大小写字母、数字和特殊符号，长度范围：8-16位之间）
-	 * strong（强: 密密码必须包含字母、数字和特殊符号，长度范围：8-16位之间）
-	 * medium (中：密码必须为字母、数字和特殊符号任意两种的组合，长度范围：8-16位之间)
-	 * weak（弱：密码必须包含字母和数字，长度范围：6-16位之间）
-	 * 为空或false则不验证密码强度
-	 */
-	"passwordStrength":"medium",
-	/**
-	 * 登录后允许用户设置密码（只针对未设置密码得用户）
-	 * 开启此功能将 setPasswordAfterLogin 设置为 true 即可
-	 * "setPasswordAfterLogin": false
-	 *
-	 * 如果允许用户跳过设置密码 将 allowSkip 设置为 true
-	 * "setPasswordAfterLogin": {
-	 *   "allowSkip": true
-	 * }
-	 * */
-	"setPasswordAfterLogin": false
-}
-```
-
-#### 调试模式@debug
-#### Debug mode @debug
-debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-co`的`getSupportedLoginType`）。
-In debug mode, starting the application will automatically initiate a network request (calling `getSupportedLoginType` of `uni-id-co`).
-
-检查：uni-id-pages客户端配置的登录方式，是否未在uniCloud服务端配置正确，否则抛出异常。
-Check: Whether the login method configured on the uni-id-pages client is not configured correctly on the uniCloud server, otherwise an exception will be thrown.
-
-#### 登录方式@loginTypes
-#### Login method @loginTypes
-|字段		|描述|平台差异|
-|Fields |Description|Platform Differences|
-|--			|--	|--	|
-|univerify	|[一键登录](https://uniapp.dcloud.io/univerify.html)	|App 3.0.0+|
-|univerify |[One-click login](https://uniapp.dcloud.io/univerify.html) |App 3.0.0+|
-|smsCode	|短信验证码登录			||
-|smsCode |SMS verification code login ||
-|weixin		|微信登录	|App，微信小程序，Web（uni-id-pages 版本号1.0.8起支持） |
-|weixin |WeChat login |App, WeChat applet, Web (supported from uni-id-pages version 1.0.8) |
-|apple		|苹果登录[Apple登录](https://uniapp.dcloud.io/tutorial/app-oauth-apple)	| iOS13+支持，App 2.4.7+|
-|apple |Sign in with Apple [Sign in with Apple](https://uniapp.dcloud.io/tutorial/app-oauth-apple) | iOS13+ support, App 2.4.7+|
-|username	|用户名密码登录				||
-|username |Login with username and password ||
-
-##### 配置示例
-##### Configuration example
-```js
-export default {
-	"loginTypes": ["username","smsCode"]
-}
-```
-如上示例配置，表示启用：账号密码登录、验证码登录。
-As shown in the above example configuration, it means to enable: account password login, verification code login.
-
-同理配置为：
-The same configuration is:
-```js
-export default {
-	"loginTypes": ["weixin","username","smsCode"]
-}
-```
-则表示启用：微信登录、验证码登录、账号密码登录。
-It means enable: WeChat login, verification code login, account password login.
-
-平台差异性配置:如果你希望在不同的平台有不同的登录方式，直接使用[条件编译](https://uniapp.dcloud.io/platform?id=%e6%9d%a1%e4%bb%b6%e7%bc%96%e8%af%91)即可。如下配置，即表示仅在APP端启用`短信验证码登录`
-Platform difference configuration: If you want to have different login methods on different platforms, directly use [conditional compilation](https://uniapp.dcloud.io/platform?id=%e6%9d%a1%e4%bb% b6%e7%bc%96%e8%af%91) is enough. The following configuration means that `SMS verification code login` is only enabled on the APP side
-```js
-export default {
-	"loginTypes": [
-		"username","univerify","weixin","apple"
-		// #ifdef APP-PLUS
-		,"smsCode"
-		// #endif
-	]
-}
-```
-
-**注意：** iOS 的 AppStore 规则：应用若支持三方社交登录服务（如:一键登录、微信登录等），则必须同时向用户提供“以苹果账号登录”的选项。即：如果你的应用不支持三方登录，那么可以不带上苹果登录，如果你的应用支持三方登录，那必须同时把苹果登录也带上。
-**Note:** AppStore rules for iOS: If an app supports three-party social login services (such as: one-key login, WeChat login, etc.), it must also provide users with the option of "Login with Apple Account". That is: if your application does not support three-way login, you can not bring Apple login, if your application supports three-way login, you must also bring Apple login.
-
-以上配置仅开启前端登录入口，实现功能还需：
-The above configuration only opens the front-end login entry. To achieve the function, you need to:
-1. 开通对应登录方式服务，获得服务密钥，并在服务端`uni-id`模块的配置文件中完成配置。详情查看：[登录服务开通与配置](#登录服务开通与配置)
-1. Activate the corresponding login service, obtain the service key, and complete the configuration in the configuration file of the `uni-id` module of the server. For details, check: [Login service activation and configuration](#%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%BC%80%E9%80%9A%E4 %B8%8E%E9%85%8D%E7%BD%AE)
-2. 如果是APP端，`一键登录`、`微信登录`、`苹果登录`，需要在`manifest.json`中勾选对应模块（微信登录必须配置：微信开发平台申请应用appID的值），并完成打包后才可用（自定义调试基座包和正式包均可）。
-2. If it is on the APP side, `one-click login`, `WeChat login`, `Apple login`, you need to check the corresponding module in `manifest.json` (WeChat login must be configured: WeChat development platform application appID value) , and is available after the package is completed (custom debugging base package and official package are available).
-
-#### 隐私政策@agreements
-#### Privacy Policy @agreements
-|字段		|类型	|描述					|
-|Field |Type |Description |
-|--			|--		|--						|
-|serviceUrl	|String	| 用户服务协议网络链接	|
-|serviceUrl |String | User service protocol network link |
-|privacyUrl	|String	| 隐私政策网络链接		|
-|privacyUrl |String | Privacy Policy Web Link |
-|scope		|Object	| 作用于哪些场景		|
-|scope |Object | Which scenarios does it apply to |
-
-**scope 说明：**
-**scope description:**
-
-|字段		|类型	|描述													|
-|Field |Type |Description |
-|--			|--		|--														|
-|register	|String	|注册（包括注册并登录，如：微信登录、苹果登录、短信验证码登录）	|
-|register |String |Register (including registration and login, such as: WeChat login, Apple login, SMS verification code login) |
-|login		|String	|登录（如：用户名密码登录）									|
-|login |String |Login (eg: login with username and password) |
-
-一款规范的小程序或App要上架到国内应用商店必须提供《隐私政策和用户使用协议》，参考模版：[隐私权政策模板.zip](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96%E6%A8%A1%E6%9D%BF.zip)
-
-更多合规问题[详情参考](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
-More compliance issues [see details](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9% 97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
-
-推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://hx.dcloud.net.cn/Tutorial/extension/markdown_share)上传到[前端网页托管](hosting.md)获得链接
-Recommended use: HBuilderX editor, edit the "Privacy Policy and User Agreement" in markdown document format, by right-clicking in the document [one-click sharing](https://hx.dcloud.net.cn/Tutorial/extension/markdown_share ) to [front-end web hosting](hosting.md) to get the link
-
-#### 接入各类服务（如微信登录服务）的应用id@appid
-#### Application id@appid for accessing various services (such as WeChat login service)
-
-|字段	|类型	|描述|
-|Field |Type |Description|
-|--		|--		|--	|
-|weixin	|Object	|微信|
-|weixin |Object |WeChat|
-|&nbsp;&#124;-&nbsp;h5	|String	|微信公众号的appid</br>来源：[微信公众号](https://mp.weixin.qq.com)-> 设置与开发 -> 基本配置 -> 公众号开发信息 -> AppID|
-|&nbsp;&#124;-&nbsp;h5 |String |WeChat official account appid</br>Source: [WeChat official account](https://mp.weixin.qq.com)-> Settings and Development-> Basic Configuration -> Official Account Development Information -> AppID|
-|&nbsp;&#124;-&nbsp;web	|String	|微信开放平台的appid</br>来源：[微信开放平台](https://open.weixin.qq.com) -> 管理中心 -> 网站应用 -> 选择对应的应用名称，点击查看 -> AppID|
-|&nbsp;&#124;-&nbsp;web |String |WeChat Open Platform appid</br>Source: [WeChat Open Platform](https://open.weixin.qq.com) -> Management Center -> Website Application -> Select the corresponding application name, click View -> AppID|
-
-#### 密码强度@strength
-#### Password Strength @strength
-
-|字段		|类型	|描述														|
-|Field |Type |Description |
-|--			|--		|--															|
-|为空或false| -		|不验证密码强度												|
-|empty or false| - |do not verify password strength|
-|super		|String	|超强：密码必须包含大小写字母、数字和特殊符号，长度范围：8-16位之间	|
-| super | String |Super strong: the password must contain uppercase and lowercase letters, numbers and special symbols, length range: between 8 and 16 characters |
-|strong		|String	|强: 密密码必须包含字母、数字和特殊符号，长度范围：8-16位之间		|
-| strong | String |Strong: password must contain letters, numbers and special symbols, length range: between 8-16 characters |
-|medium		|String	|中：密码必须为字母、数字和特殊符号任意两种的组合，长度范围：8-16位之间|
-| medium | String |Medium: password must be a combination of any two letters, numbers and special symbols, length range: between 8-16 characters|
-|weak		|String	|弱：密码必须包含字母和数字，长度范围：6-16位之间					|
-|weak |String |Weak: Password must contain letters and numbers, length range: between 6-16 characters |
-
-#### 登录后设置密码@set-pwd-after-login
-#### Set password after login @set-pwd-after-login
-
-用户如果没有设置密码，在登录后会跳转设置密码页面
-If the user has not set a password, he will jump to the password setting page after logging in
-
-此功能默认不开启, 开启请将 `setPasswordAfterLogin` 设置为 `true`，如下：
-This function is not enabled by default, please set `setPasswordAfterLogin` to `true` to enable it, as follows:
-```javascript
-{
-	setPasswordAfterLogin: true,
-	// setPasswordAfterLogin: {
-	// 	allowSkip: false
-	// }
-}
-```
-
-如果不需要强制设置密码可以将 `allowSkip` 设置为 `true` 用户可以选择跳过设置密码。
-If you don't need to enforce setting a password, you can set `allowSkip` to `true`, and users can choose to skip setting a password.
-
-### 页面介绍
-### Page introduction
-`uni-id-pages`包含：账号注册、免密登录、头像更换、修改昵称、绑定手机号码、找回密码、注销账号等页面。[插件地址](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
-`uni-id-pages` includes: account registration, password-free login, avatar replacement, nickname modification, mobile phone number binding, password retrieval, account cancellation and other pages. [Plugin address](https://ext.dcloud.net.cn/plugin?name=uni-id-pages)
-
-项目中常有打开登录页面的需求，这里对登录页面展开介绍；包括两类登录方式：
-There is often a need to open the login page in the project. Here is an introduction to the login page; there are two types of login methods:
-- 密码登录（账号密码登录），页面路径: `/uni_modules/uni-id-pages/pages/login/login-withpwd`
-- Password login (account password login), page path: `/uni_modules/uni-id-pages/pages/login/login-withpwd`
-- 免密登录（一键登录，短信验证码登录，微信登录，苹果登录），页面路径: `/uni_modules/uni-id-pages/pages/login/login-withoutpwd`
-- Password-free login (one-key login, SMS verification code login, WeChat login, Apple login), page path: `/uni_modules/uni-id-pages/pages/login/login-withoutpwd`
-
-执行`uni.navigateTo`打开登录页面，会默认使用配置中`loginTypes`值的第一项为登录方式。
-Execute `uni.navigateTo` to open the login page, the first item of the `loginTypes` value in the configuration will be used as the login method by default.
-
-例如`loginTypes`：`["weixin","apple","univerify"]`会以`weixin`，即`微信登录`为默认登录方式
-For example `loginTypes`: `["weixin","apple","univerify"]` will use `weixin`, ie `WeChat login` as the default login method
-
-`uni-id-pages`支持通过传递参数`type`，指定登录方式。例如：指定苹果登录，使用如下代码即可
-`uni-id-pages` supports specifying the login method by passing the parameter `type`. For example: to specify Apple login, use the following code
-```js
-uni.navigateTo({
-	"url":"/uni_modules/uni-id-pages/pages/login/login-withoutpwd?type=apple"
-})
-```
-
-可以配套使用[uniIdRouter](uni-id-summary.md#uni-id-router)；当用户未登录，但访问了需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时均需要打开登录页面。你需要把以上两个路径路径定义为`loginPage`。
-[uniIdRouter](uni-id-summary.md#uni-id-router) can be used together; when the user is not logged in, but visits a page that requires forced login, or the interface prompts that the token is invalid or expired (the response body starts with TOKEN_INVALID) You need to open the login page at all times. You need to define the above two path paths as `loginPage`.
-
 ## 云对象（uni-id-co）
 ## Cloud object (uni-id-co)
 
@@ -457,8 +32,7 @@ If there is an error that the `lodash.merge` module cannot be found when calling
 ### 公共响应参数@co-public-response
 ### Public response parameters @co-public-response
 
-`uni-id-co`所有api返回值均满足[uniCloud响应体规范](cf-functions.md#resformat)
-All api return values of `uni-id-co` satisfy the [uniCloud response body specification](cf-functions.md#resformat)
+`uni-id-co`所有api返回值均满足[uniCloud响应体规范](../cf-functions.md#resformat)
 
 返回值示例
 Return value example
@@ -483,9 +57,7 @@ Return value example
 - The interface that needs to verify the token will also return newToken when the token is about to expire. The threshold for the token to be expired is configured by the developer.
 
 ### 适配URL化@adapter-http
-### Adapt URL @adapter-http
-自`uni-id-pages@1.0.29`版本起支持URL化 [什么是URL化](uniCloud/http.html#cloudobject)
-URLization is supported since `uni-id-pages@1.0.29` version [What is URLization](uniCloud/http.html#cloudobject)
+自`uni-id-pages@1.0.29`版本起支持URL化 [什么是URL化](../http.md#cloudobject)
 
 调用规范：
 Call specification:
@@ -1034,10 +606,8 @@ await uniIdCo.loginByWeixin({
 - 微信登录会自动保存用户的openid，在`uni-id-pages 1.0.8`及更高版本在存储openid时会同时存储一份以当前应用的Appid（manifest.json内的DCloud AppId）为key的openid，见下方关于openid的说明。
 - WeChat login will automatically save the user's openid. In `uni-id-pages 1.0.8` and later versions, when storing the openid, a copy of the current application's Appid (DCloud AppId in manifest.json) will be stored as the key. openid, see the description of openid below.
 - 如果有多个应用同时使用微信小程序登录，且希望用户身份不隔离请确保这些应用在微信小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
-- If there are multiple applications using WeChat applet to log in at the same time, and you want user identities not to be isolated, please ensure that these applications are owned by the same entity on the WeChat applet platform, that is, to ensure that different applications can obtain the same unionid
-- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存`session_key`（微信小程序登录）、`access_token`（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
-- `uni-id-pages 1.0.8` and above will use uni-open-bridge-common to save `session_key` (WeChat MiniApp login), `access_token` (WeChat official account login, WeChat App login), these information, However, a copy is still stored in the user table for compatibility with legacy logic. Detailed reference: [Automatically save user sessionKey, accessToken and other information](uni-id-summary.md#save-user-token)
-- - 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
+- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存`session_key`（微信小程序登录）、`access_token`（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](summary.md#save-user-token)
+- - 如果开发者在其他应用未使用 [uni-open-bridge-common](../uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
 	**关于openid的说明**
 
 `uni-id-pages 1.0.7`及之前的版本会将微信的openid存为如下格式
@@ -1126,9 +696,7 @@ await uniIdCo.loginByQQ({
 - QQ登录会自动保存用户的openid，在`uni-id-pages 1.0.8`及更高版本在存储openid时会同时存储一份以当前应用的Appid（manifest.json内的DCloud AppId）为key的openid，见下方关于openid的说明。
 - QQ login will automatically save the user's openid. In `uni-id-pages 1.0.8` and later versions, when storing the openid, a copy of the current application's Appid (DCloud AppId in manifest.json) will be stored as the key. openid, see the description of openid below.
 - 如果有多个应用同时使用QQ小程序登录，且希望用户身份不隔离请确保这些应用在QQ小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
-- If there are multiple applications using the QQ applet to log in at the same time, and you want the user identity not to be isolated, please ensure that these applications are owned by the same entity on the QQ applet platform, that is, to ensure that different applications can obtain the same unionid
-- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存session_key（QQ小程序登录）、access_token（QQ App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
-- `uni-id-pages 1.0.8` and above will use uni-open-bridge-common to save session_key (QQ applet login), access_token (QQ App login) information, but for compatibility with the old version logic is still in the user table A copy is stored. For details, please refer to: [Automatically save user sessionKey, accessToken and other information](uni-id-summary.md#save-user-token)
+- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存session_key（QQ小程序登录）、access_token（QQ App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](summary.md#save-user-token)
 
 **关于openid的说明**
 **Note about openid**
@@ -1589,9 +1157,7 @@ await uniIdCo.bindWeixin({
 **Notice**
 
 - 仅在用户token即将过期时返回新newToken
-- Only return a new newToken when the user token is about to expire
-- 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
-- If the developer does not use [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) to manage access_token and other information in other applications, it may cause access_token conflicts.
+- 如果开发者在其他应用未使用 [uni-open-bridge-common](../uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
 #### 绑定QQ@bind-qq
 #### Bind QQ@bind-qq
 
@@ -2173,7 +1739,7 @@ await uniIdCo.getRealNameInfo({
 
 **注意**
 
-在uni-id-pages中默认启用敏感数据加解密，如果开发者没有使用uni-id提供的[敏感信息加密](uniCloud/uni-id-summary.md#sensitive-info-encrypt)功能，请将`decryptData`参数改为`false`，返回原始信息
+在uni-id-pages中默认启用敏感数据加解密，如果开发者没有使用uni-id提供的[敏感信息加密](summary.md#sensitive-info-encrypt)功能，请将`decryptData`参数改为`false`，返回原始信息
 
 ### 安全验证@verifier
 ### Security Verification @verifier
@@ -2199,8 +1765,7 @@ await uniIdCo.createCaptcha({
 |参数名	|类型	|必填	|说明														|
 |Parameter Name |Type |Required |Description |
 |--		|--		|--		|--															|
-|scene	|string	|是		|图形验证码使用场景，务必确保使用验证码的场景和生成验证码时传的场景参数相匹配，否则会校验不通过，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
-| scene | string |yes | The scene where the graphic verification code is used. Make sure that the scene where the verification code is used matches the scene parameters passed when generating the verification code, otherwise the verification will fail. Refer to: [Graphic verification code scene](uni- id-summary.md#captcha-scene) |
+|scene	|string	|是		|图形验证码使用场景，务必确保使用验证码的场景和生成验证码时传的场景参数相匹配，否则会校验不通过，参考：[图形验证码场景](summary.md#captcha-scene)	|
 
 **返回值**
 **return value**
@@ -2236,8 +1801,7 @@ await uniIdCo.refreshCaptcha({
 |参数名	|类型	|必填	|说明														|
 |Parameter Name |Type |Required |Description |
 |--		|--		|--		|--															|
-|scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
-|scene |string |Yes |The usage scenario of the captcha, refer to: [Graphic captcha scene](uni-id-summary.md#captcha-scene) |
+|scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](summary.md#captcha-scene)	|
 
 **返回值**
 **return value**
@@ -2259,9 +1823,7 @@ await uniIdCo.refreshCaptcha({
 The function of sending SMS requires the following pre-work
 
 1. 在[开发者中心](https://dev.dcloud.net.cn)开通短信服务，并申请短信模板
-1. Open SMS service in [Developer Center](https://dev.dcloud.net.cn) and apply for SMS template
-2. 在uni-id的配置文件里面添加验证码使用场景对应的短信模板信息，参考：[uni-id配置文件](uni-id-summary.md#config)
-2. Add the SMS template information corresponding to the verification code usage scenario in the uni-id configuration file, refer to: [uni-id configuration file](uni-id-summary.md#config)
+2. 在uni-id的配置文件里面添加验证码使用场景对应的短信模板信息，参考：[uni-id配置文件](summary.md#config)
 
 接口名：sendSmsCode
 Interface name: sendSmsCode
@@ -2286,9 +1848,7 @@ await uniIdCo.sendSmsCode({
 |mobile	|string	|是		|手机号码								|
 |mobile |string |yes |mobile number |
 |captcha|string	|是		|图形验证码								|
-| captcha| string | yes | graphic verification code |
-|scene	|string	|是		|短信验证码使用场景，务必确保使用验证码的场景和发送验证码时传的场景参数相匹配，否则会校验不通过，参考：[短信验证码使用场景](uni-id-summary.md#sms-scene)	|
-| scene | string |yes | The scene where the SMS verification code is used, make sure that the scene where the verification code is used matches the scene parameters passed when sending the verification code, otherwise the verification will fail, refer to: [SMS verification code usage scene](uni -id-summary.md#sms-scene) |
+|scene	|string	|是		|短信验证码使用场景，务必确保使用验证码的场景和发送验证码时传的场景参数相匹配，否则会校验不通过，参考：[短信验证码使用场景](summary.md#sms-scene)	|
 
 **返回值**
 **return value**
@@ -2426,8 +1986,7 @@ await uniIdCo.setPushCid({
 #### 微信安全网络握手@secure-network-handshake-by-weixin
 #### WeChat secure network handshake @secure-network-handshake-by-weixin
 
-此接口用于微信小程序端安全网络的握手，安全网络相关文档请参考：[安全网络](secure-network.md)
-This interface is used for the handshake of the secure network on the WeChat MiniApp side. For related documents on the secure network, please refer to: [secure-network](secure-network.md)
+此接口用于微信小程序端安全网络的握手，安全网络相关文档请参考：[安全网络](../secure-network.md)
 
 一般无需通过uniCloud.importObject方式调用，在客户端调用`uniCloud.initSecureNetworkByWeixin()`时会通过此接口获取会话相关信息。
 Generally, there is no need to call through uniCloud.importObject. When the client calls `uniCloud.initSecureNetworkByWeixin()`, session-related information will be obtained through this interface.
@@ -2478,9 +2037,7 @@ await uniIdCo.addUser({
 |email				|string							|否		|邮箱																											|
 | email | string |no |email |
 |tags					|array							|否		|用户标签																									|
-| tags | array | no | user tags |
-|status				|number							|否		|用户状态，参考：[用户状态](uni-id-summary.md#user-status)|
-| status | number |No |User status, refer to: [User Status](uni-id-summary.md#user-status)|
+|status				|number							|否		|用户状态，参考：[用户状态](summary.md#user-status)|
 
 **返回值**
 **return value**
@@ -2528,7 +2085,7 @@ await uniIdCo.updateUser({
 | mobile				    | string							       | 否		 | 手机号																										                 |
 | email				     | string							       | 否		 | 邮箱																											                 |
 | tags					     | array							        | 否		 | 用户标签																									                 |
-| status				    | number							       | 否		 | 用户状态，参考：[用户状态](uni-id-summary.md#user-status) |
+| status				    | number							       | 否		 | 用户状态，参考：[用户状态](summary.md#user-status) |
 
 **返回值**
 
@@ -2692,7 +2249,7 @@ await uniIdCo.setAuthorizedApp({
 适合自己有用户系统，同时需要使用依赖UniId的业务，将自身系统的用户账号导入uniId，为其创建一个对应uniId的账号，使得该账号可以使用依赖uniId的系统及功能。
 由于此方案的接口不需要密码验证，开发者务必要保证接口只能在服务端调用，同时要求在请求时计算签名来保证安全。
 
-联登相关接口只支持HTTP方式调用，调用时需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
+联登相关接口只支持HTTP方式调用，调用时需要携带鉴权签名值，查看[URL化请求鉴权签名计算](#http-reqeust-auth)
 
 #### 注册用户@external-register
 
@@ -2844,7 +2401,7 @@ Cache-Control: no-cache
 | mobile				    | string							       | 否		 | 手机号																										                 |
 | email				     | string							       | 否		 | 邮箱																											                 |
 | tags					     | array							        | 否		 | 用户标签																									                 |
-| status				    | number							       | 否		 | 用户状态，参考：[用户状态](uni-id-summary.md#user-status) |
+| status				    | number							       | 否		 | 用户状态，参考：[用户状态](summary.md#user-status) |
 | avatar	       | string              | 否		 | 用户头像	                                         |
 | gender	       | number              | 否		 | 用户性别；0 未知 1 男性 2 女性	                          |
 
@@ -2986,9 +2543,7 @@ module.exports = {
 ## 登录服务开通与配置
 ## Login service activation and configuration
 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`
-The key information of the server `uni-id` is uniformly configured in `uni-config-center`, the path: `uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/ config.json`
-以下简称：`uni-id配置文件`，完整的配置信息[详情查看](uni-id-summary.md#config)
-Hereinafter referred to as: `uni-id configuration file`, complete configuration information [see details](uni-id-summary.md#config)
+以下简称：`uni-id配置文件`，完整的配置信息[详情查看](summary.md#config)
 
 ### 一键登录
 ### One-click login
@@ -3066,8 +2621,7 @@ It is necessary to bind the `Mini Program` and `Official Account` to the same `W
 - On the web side: open `/uni_modules/uni-id-pages/config.js` -> `appid` -> `weixin` Configure the appid of the WeChat public account on the `h5` node, and configure the WeChat open platform creation on the `web` node web application appid
 
 ### 服务端配置
-* 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，完整的配置信息[详情查看](uni-id-summary.md#config)
-* The key information of server `uni-id` is uniformly configured in `uni-config-center`, path: `uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`, complete Configuration information [details view](uni-id-summary.md#config)
+* 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，完整的配置信息[详情查看](summary.md#config)
 
 
 ### web端微信登录专题
@@ -3214,7 +2768,7 @@ exports.main = async (event, context) => {
 ## URL化请求鉴权签名@http-reqeust-auth
 ## URL request authentication signature @http-reqeust-auth
 
-> `uni-id-co@1.1.10`及以上版本支持使用`uni-cloud-s2s`进行请求签名验证，`uni-cloud-s2s`使用方式[详见](/uniCloud/uni-cloud-s2s.md)
+> `uni-id-co@1.1.10`及以上版本支持使用`uni-cloud-s2s`进行请求签名验证，`uni-cloud-s2s`使用方式[详见](../uni-cloud-s2s.md)
 > 
 > `uni-id-co`请求鉴权签名与`uni-cloud-s2s`不能同时存在，如果存在`uni-cloud-s2s`，则会优先使用`uni-cloud-s2s`进行请求签名验证
 

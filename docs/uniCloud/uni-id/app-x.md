@@ -17,7 +17,6 @@
 - 注册账号：
 	+ 用户名和密码
 - 免密登录（首次登录自动注册）：
-	+ [app一键登录](https://uniapp.dcloud.io/univerify.html)
 	+ 短信验证码登录
 - 密码登录
 	+ 用户名/手机号和密码登录
@@ -26,7 +25,6 @@
 	+ 修改昵称
 	+ 绑定手机号码
 		* 短信验证码校验
-		* App端支持：[一键绑定](https://uniapp.dcloud.io/univerify.html)
 	+ 修改密码（仅账号有设置密码时可见）
 	+ 找回密码（仅账号有绑定手机号码可见）
 	+ 退出登录
@@ -59,11 +57,11 @@
 │		     │   └── common.uts                           通用脚本
 │		     ├── components                               组件目录
 │		     │   ├── cloud-image                          uniCloud云存储图片解析组件
-│		     │   ├── my-input                             uni-id-pages x自定义的输入宽组件
+│		     │   ├── uni-id-pages-x-input                 uni-id-pages x自定义的输入宽组件
 │		     │   ├── uni-id-pages-x-agreements            隐私政策协议授权组件
 │		     │   ├── uni-id-pages-x-avatar                头像组件（展示、设置头像）
 │		     │   ├── uni-id-pages-x-fab-login             悬浮的登录组件（固定在页面便于切换登录方式）
-│		     │   ├── uni-id-pages-x-icon                  图标组件
+│		     │   ├── uni-id-pages-x-icons                 图标组件
 │		     │   ├── uni-id-pages-x-loginByPwd            密码登录组件
 │		     │   ├── uni-id-pages-x-loginBySmsCode        短信验证码登录组件
 │		     │   ├── uni-id-pages-x-popup-dialog          弹窗对话框组件
@@ -121,6 +119,7 @@
 |loginTypes						|Array					|登录方式[详情](#loginTypes)											|
 |agreements						|Array					|隐私政策[详情](#agreements)											|
 |passwordStrength			|Object					|密码配置	[详情](#strength)												|
+|needLogin      			|Array					|配置需要登录才可访问的页面列表，可以使用正则语法				|
 
 完整示例：
 ```js
@@ -132,10 +131,7 @@ export default {
 		如果需要在不同平台有不同的配置，直接用条件编译即可
 	*/
 	"loginTypes": [
-		"univerify",
-		"weixin",
 		"username",
-		"apple",
 		"smsCode"
 	],
 	//政策协议
@@ -164,6 +160,9 @@ export default {
 	 *   "allowSkip": true
 	 * }
 	 * */
+   "needLogin":[ //配置需要登录才可访问的页面列表，可以使用正则语法
+     "/uni_modules/uni-id-pages-x/pages/userinfo/*"
+   ]
 }
 ```
 
@@ -175,7 +174,6 @@ debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-c
 #### 登录方式@loginTypes
 |字段			|描述																								|平台差异			|
 |--				|--																									|--					|
-|univerify|[一键登录](https://uniapp.dcloud.io/univerify.html)	|App 3.0.0+	|
 |smsCode	|短信验证码登录																				|						|
 |username	|用户名密码登录																				|						|
 
@@ -190,16 +188,16 @@ export default {
 同理配置为：
 ```js
 export default {
-	"loginTypes": ["univerify","username","smsCode"]
+	"loginTypes": ["smsCode"]
 }
 ```
-则表示启用：一键登录、验证码登录、账号密码登录。
+则表示启用：验证码登录。
 
 平台差异性配置:如果你希望在不同的平台有不同的登录方式，直接使用[条件编译](https://uniapp.dcloud.io/platform?id=%e6%9d%a1%e4%bb%b6%e7%bc%96%e8%af%91)即可。如下配置，即表示仅在APP端启用`短信验证码登录`
 ```js
 export default {
 	"loginTypes": [
-		"username","univerify"
+		"username",
 		// #ifdef APP-PLUS
 		,"smsCode"
 		// #endif
@@ -243,7 +241,7 @@ export default {
 - 路径: `/uni_modules/uni-id-pages-x/pages/login/login`  
 
 - 执行`uni.navigateTo`打开登录页面，会默认使用配置中`loginTypes`值的第一项为登录方式。  
-  例如`loginTypes`：`["smsCode","univerify","username"]`会以`smsCode`，即`短信验证码`为默认登录方式  
+  例如`loginTypes`：`["smsCode","username"]`会以`smsCode`，即`短信验证码`为默认登录方式  
 
 - 支持通过传递参数`type`，指定登录方式。例如：指定用户名密码登录，使用如下代码即可  
 ```js

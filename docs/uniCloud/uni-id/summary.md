@@ -58,7 +58,7 @@
 |模块						|说明															|
 |--							|--																|
 |前端uni-app框架的相关API		|uniIdRouter页面路由、token管理客户端API						|
-|前端页面uni-id-pages		|登录、注册、修改密码、忘记密码、个人中心、修改头像等前端页面	|
+|前端页面uni-id-pages（分uni-app和uni-app x 2个版本）		|登录、注册、修改密码、忘记密码、个人中心、修改头像等前端页面	|
 |网络传输自动管理用户token	|自动保存、续期token、网络自动传输token							|
 |云端云对象uni-id-co			|与uni-id-pages搭配的云对象，相关业务的云端部分					|
 |云端配置uni-config-center	|在uni-config-center下提供各种配置								|
@@ -107,11 +107,13 @@ uni-app客户端还有一批uni-id相关的内置API：
 - uniIDHasPermission：判断当前用户是否拥有某权限。[详情](/api/global.md#uniidhaspermission)
 - uniCloud.getCurrentUserInfo()：客户端获取当前用户信息。[详情](../client-sdk.md#client-getcurrentuserinfo)
 
-5. 云端一体页面模板 [uni-id-pages](redirect.md)（含uni-id-co）
+5. 云端一体页面模板 uni-id-pages（含uni-id-co）
 
 基于uni-id-common，DCloud还提供了一组完整的前端页面和后端[云对象](cloud-object.md) ，合称`uni-id-pages`。
 
 uni-id-pages的功能包括：用户注册（含用户协议、隐私协议）、退出、修改密码、忘记密码等各种功能，同时适配PC宽屏和各种手机平台（App、H5、小程序）。
+
+uni-id-pages的前端页面模板 分 [uni-app](./app.md) 和 [uni-app x](./app-x.md) 2个版本。
 
 此外，DCloud的其他产品也为uni-id提供了众多支持：
 - [uni-admin后台管理框架](../admin.md)，为uni-id提供了现成的用户、角色、权限的后台管理功能，以及注册用户统计报表。

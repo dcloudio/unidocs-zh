@@ -58,6 +58,8 @@ sequenceDiagram
 
 ### 客户端接口
 
+uni-app x的客户端API文档[另见](https://uniapp.dcloud.net.cn/uni-app-x/api/facial-recognition-verify.html)
+
 #### 获取实人认证设备信息@get-meta-info
 调用刷脸前通过客户端先获取设备信息，调用[uni.getFacialRecognitionMetaInfo](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)  
 

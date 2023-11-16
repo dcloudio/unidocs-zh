@@ -1,3 +1,9 @@
+# uni-push
+
+uni-push是DCloud与合作伙伴共同推出的统一推送服务。该业务的完整业务介绍另见：[uni-push](https://uniapp.dcloud.net.cn/unipush-v2.html)
+
+本文是 uni-app x 中涉及该业务的API的介绍。
+
 ## uni.getPushClientId(options) @getpushclientid
 
 <!-- UTSAPIJSON.getPushClientId.description -->

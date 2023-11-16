@@ -1,4 +1,4 @@
-本文档适用于`uni-id 4.0.0`及以上版本，需 HBuilderX 3.5.0 及以上版本。旧版本文档请访问：[uni-id 3.x.x 文档](uni-id.md)
+本文档适用于`uni-id 4.0.0`及以上版本，需 HBuilderX 3.5.0 及以上版本。旧版本文档请访问：[uni-id 3.x.x 文档](old.md)
 
 ## 需求背景
 
@@ -10,7 +10,7 @@
 
 `uni-id`为`uniCloud`开发者提供了开源、易用、安全、丰富、可扩展的用户管理框架。
 
-[clientDB](clientDB.md)、[DB Schema](schema.md)、[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)、[uni-admin](admin.md)，这些产品都基于`uni-id`的账户体系。可以说`uni-id`是uniCloud不可或缺的基础能力。
+[clientDB](../clientDB.md)、[DB Schema](../schema.md)、[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)、[uni-admin](../admin.md)，这些产品都基于`uni-id`的账户体系。可以说`uni-id`是uniCloud不可或缺的基础能力。
 
 ## uni-id 的价值
 
@@ -69,7 +69,7 @@
 
 1. 云数据库的uni-id相关表
 
-数据库是一个系统的核心，uni-id首先规范化了十几张用户相关的[opendb数据表](opendb.md)，
+数据库是一个系统的核心，uni-id首先规范化了十几张用户相关的[opendb数据表](../opendb.md)，
 
 其中最为重要的4张opendb表，如下：
 - 用户表 [uni-id-users](https://gitee.com/dcloud/opendb/blob/master/collection/uni-id-users/collection.json)
@@ -89,9 +89,9 @@ uni-id-common公共模块包含了账户体系服务端的核心权限、token�
 
 uniCloud众多功能（如`DB Schema`的权限、uni-id-co）也都依赖 uni-id-common。
 
-[详见](uni-id-common.md)
+[详见](cloud-common.md)
 
-3. 云端[uni-config-center](uni-config-center.md)下的uni-id配置
+3. 云端[uni-config-center](../uni-config-center.md)下的uni-id配置
 
 `uni-id`在云端有很多配置，比如密码加密秘钥、短信和微信登录的appsecret等等。在`uni-config-center`下的`uni-id`目录下的config.json里存放着这些配置。
 
@@ -105,16 +105,16 @@ uni-app与uniCloud搭配且使用uni-id，登录后自动下发token、网络传
 uni-app客户端还有一批uni-id相关的内置API：
 - uniIDHasRole：判断当前用户是否拥有某角色。[详情](/api/global.md#uniidhasrole)
 - uniIDHasPermission：判断当前用户是否拥有某权限。[详情](/api/global.md#uniidhaspermission)
-- uniCloud.getCurrentUserInfo()：客户端获取当前用户信息。[详情](client-sdk.md#client-getcurrentuserinfo)
+- uniCloud.getCurrentUserInfo()：客户端获取当前用户信息。[详情](../client-sdk.md#client-getcurrentuserinfo)
 
-5. 云端一体页面模板 [uni-id-pages](uni-id-pages.md)（含uni-id-co）
+5. 云端一体页面模板 [uni-id-pages](redirect.md)（含uni-id-co）
 
-基于uni-id-common，DCloud还提供了一组完整的前端页面和后端[云对象](cloud-obj.md) ，合称`uni-id-pages`。
+基于uni-id-common，DCloud还提供了一组完整的前端页面和后端[云对象](cloud-object.md) ，合称`uni-id-pages`。
 
 uni-id-pages的功能包括：用户注册（含用户协议、隐私协议）、退出、修改密码、忘记密码等各种功能，同时适配PC宽屏和各种手机平台（App、H5、小程序）。
 
 此外，DCloud的其他产品也为uni-id提供了众多支持：
-- [uni-admin后台管理框架](admin.md)，为uni-id提供了现成的用户、角色、权限的后台管理功能，以及注册用户统计报表。
+- [uni-admin后台管理框架](../admin.md)，为uni-id提供了现成的用户、角色、权限的后台管理功能，以及注册用户统计报表。
 
 以上全部是开源的。
 
@@ -124,15 +124,15 @@ uni-id-pages的功能包括：用户注册（含用户协议、隐私协议）�
 
 老的公共模块uni-id是一个大而全的账户管理公共模块，体积太大，不适合被其他云函数引用。比如某个业务云函数需要校验用户token，引用的uni-id公共模块还包含了忘记密码的代码，很浪费资源。
 
-在云对象发布之前，DCloud基于云函数方式提供了uni-id-cf。但在HBuilderX 3.5 以后，推荐使用基于云对象的[uni-id-pages](uni-id-pages.md)，代码更简单清晰。
+在云对象发布之前，DCloud基于云函数方式提供了uni-id-cf。但在HBuilderX 3.5 以后，推荐使用基于云对象的[uni-id-pages](redirect.md)，代码更简单清晰。
 
-从HBuilder 3.5起，[uni-id](https://ext.dcloud.net.cn/plugin?id=2116)和uni-id-cf都将被淘汰，不再更新。老的公共模块uni-id被拆开，变成了[uni-id-common](uni-id-common.md)公共模块和uni-id-co云对象。
+从HBuilder 3.5起，[uni-id](https://ext.dcloud.net.cn/plugin?id=2116)和uni-id-cf都将被淘汰，不再更新。老的公共模块uni-id被拆开，变成了[uni-id-common](cloud-common.md)公共模块和uni-id-co云对象。
 
 uni-id-common很精简，只包括token和权限，适合被所有云函数引用。
 
 uni-id-co则是一个更加比uni-id-cf更完善和规范的用户管理的云对象。
 
-老版升级指南，[详见](uni-id-pages.md#m-to-co)
+老版升级指南，[详见](cloud-object.md#m-to-co)
 
 
 
@@ -142,7 +142,7 @@ uni-id-common的插件市场地址为：[uni-id-common插件](https://ext.dcloud
 
 一般推荐直接使用uni-starter项目模板来开始开发，或者在新项目里导入uni-id-pages页面模板来使用。
 
-uni-id云端的配置是依赖[uni-config-center](uni-config-center.md)公用模块的，在工程目录uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json。（如未安装uni-config-center需安装，如缺少目录需手动创建）
+uni-id云端的配置是依赖[uni-config-center](../uni-config-center.md)公用模块的，在工程目录uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json。（如未安装uni-config-center需安装，如缺少目录需手动创建）
 
 uni-id云端同时依赖了公共模块[uni-captcha](https://ext.dcloud.net.cn/plugin?id=4048)，这个功能模块负责生成和校验验证码，进行人机验证。
 
@@ -154,7 +154,7 @@ uni-id云端同时依赖了公共模块[uni-captcha](https://ext.dcloud.net.cn/p
 
 你的应用采用什么方式注册登录？比如用户名密码、手机号+短信验证码、或者微信登录。
 
-很多登录方式涉及三方服务，需要开通[短信验证码服务](send-sms.md)、开通[App一键登录](univerify.md)、或者向微信等申请登录的appid和appsecret信息。
+很多登录方式涉及三方服务，需要开通[短信验证码服务](../send-sms.md)、开通[App一键登录](../univerify.md)、或者向微信等申请登录的appid和appsecret信息。
 
 申请开通相关服务后，需要把配置信息填写在云端配置文件config.json中。
 
@@ -381,8 +381,8 @@ uni-id云端会在login方法成功后自动返回token，uni-app前端框架会
 ## 用户角色权限@rbac
 
 为什么需要角色权限管理？
-- 企业管理系统，比如[uni-admin](admin.md)，除了超级管理员，不同账号通常需根据职位、责任设定不同的系统权限。比如部门管理员、Hr。
-- [clientDB](clientdb.md)允许前端直接操作数据库，但部分字段应该是系统计算或管理员设置的，比如文章的阅读数、收藏数及是否加精置顶，这些字段不允许普通用户在前端通过clientDB直接修改，此时也需要通过权限控制来保证系统的安全稳定。 
+- 企业管理系统，比如[uni-admin](../admin.md)，除了超级管理员，不同账号通常需根据职位、责任设定不同的系统权限。比如部门管理员、Hr。
+- [clientDB](../clientdb.md)允许前端直接操作数据库，但部分字段应该是系统计算或管理员设置的，比如文章的阅读数、收藏数及是否加精置顶，这些字段不允许普通用户在前端通过clientDB直接修改，此时也需要通过权限控制来保证系统的安全稳定。 
 
 `uni-id`基于经典的RBAC模型实现了角色权限系统。
 
@@ -550,11 +550,11 @@ function hasPermission(token, permission) {
 }
 ```
 
-注意： **在uniCloud admin中，封装了可视化的用户、权限、角色的管理，新增删除修改均支持**，无需自己维护。[详见](admin.md#mutiladmin)
+注意： **在uniCloud admin中，封装了可视化的用户、权限、角色的管理，新增删除修改均支持**，无需自己维护。[详见](../admin.md#mutiladmin)
 
 ## uni-id数据表@db-schema
 
-`uni-id`的所有数据表，都在[opendb](opendb.md)规范中。
+`uni-id`的所有数据表，都在[opendb](../opendb.md)规范中。
 
 在unicloud [web控制台](https://unicloud.dcloud.net.cn/) 新建数据表时，可以从`uni-id`的模板分类里找到下面的表，并一键创建这些表。HBuilderX 3.4.11起新建 DB Schema 也有模板可选择。
 
@@ -603,7 +603,7 @@ function hasPermission(token, permission) {
 
 **wx_openid字段定义**
 
-> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](uni-id-pages.md#m-to-co)
+> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](cloud-common.md#m-to-co)
 
 | 字段		| 类型	| 必填	| 描述					|
 | -------	| ------| ----	| --------				|
@@ -614,7 +614,7 @@ function hasPermission(token, permission) {
 
 **qq_openid字段定义**
 
-> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](uni-id-pages.md#m-to-co)
+> opendb中uni-id-users表1.0.0调整为下面的结构，uni-id-co使用此标准。如何处理旧数据请参考：[自uni-id升级为uni-id-co+uni-id-common](cloud-common.md#m-to-co)
 
 | 字段		| 类型	| 必填	| 描述					|
 | -------	| ------| ----	| --------				|
@@ -680,7 +680,7 @@ function hasPermission(token, permission) {
 
 例：项目内只使用了微信登录，不使用其他登录方式，可以只保留`wx_unionid、wx_openid.mp`这些账号相关的索引，删除其他登录方式的索引（比如username、mobile）
 
-不了解索引请参考：[索引](db-index.md)
+不了解索引请参考：[索引](../db-index.md)
 
 ### 验证码表
 
@@ -853,7 +853,7 @@ uniIdRouter 是一个运行在前端的、对前端页面访问权限路由进�
 
 以上代码，指定了登录页为首页`index`，然后将`list`页面和`detail`目录下的所有页面，设为需要登录才能访问。那么访问`list`页面和`detail`目录下的页面时，如果客户端未登录或登录状态过期（也就是uni_id_token失效），那么会自动跳转到`index`页面来登录。
 
-与此功能对应的有两个uniCloud客户端api，`uniCloud.onNeedLogin()`和`uniCloud.offNeedLogin()`，开发者在监听onNeedLogin事件后，框架就不再自动跳转到登录页面，而是由开发者在onNeedLogin事件内自行处理。详情参考：[uniCloud.onNeedLogin](uniCloud/client-sdk.md?id=on-need-login)
+与此功能对应的有两个uniCloud客户端api，`uniCloud.onNeedLogin()`和`uniCloud.offNeedLogin()`，开发者在监听onNeedLogin事件后，框架就不再自动跳转到登录页面，而是由开发者在onNeedLogin事件内自行处理。详情参考：[uniCloud.onNeedLogin](../client-sdk.md?id=on-need-login)
 
 自动跳转到登录页面时会携带uniIdRedirectUrl参数，其值为`encodeURIComponent(${跳转前的页面（包含路径和参数的完整页面地址）})`，如果希望用户登录后跳转回之前的页面，可以使用此参数实现。
 
@@ -951,7 +951,7 @@ module.exports = {
 - pages.json内有`uniIdRouter`节点上述逻辑才会生效，自HBuilderX 3.5.0起创建空项目模板会自动配置空的`uniIdRouter`节点
 - uniIdRouter底层使用navigateTo、redirectTo、reLaunch、switchTab的拦截器进行页面跳转拦截，不会拦截进入首页，web端和app端会拦截原生tabbar点击，其他端不会拦截原生tabbar点击。
 一般tabbar页面都不做自动跳转，而是在页面内再提供登录按钮。比如tabbar上有购物车或个人中心，点击购物车后在购物车页面内部会放一个提示语和按钮，告知用户需要登录。
-在页面内判断用户是否登录，使用API[uniCloud.getCurrentUserInfo()](client-sdk.md#client-getcurrentuserinfo)
+在页面内判断用户是否登录，使用API[uniCloud.getCurrentUserInfo()](../client-sdk.md#client-getcurrentuserinfo)
 
 ## 云端错误码@errcode
 
@@ -1003,7 +1003,7 @@ uni-id-user表中有一个数组型字段`dcloud_appid`，可以存贮这个用�
 
 uni-id 3.3.0版本起用户注册时会自动在用户表的记录内标记为注册应用对应的用户，如果没有单独授权登录其他应用的话则只能登录这个应用。即在乘客端应用注册的，默认只能在乘客端应用登录。
 
-如何授权登录其他应用请参考：[授权、禁止用户在特定客户端应用登录](uni-id-pages.md#authorize-app)
+如何授权登录其他应用请参考：[授权、禁止用户在特定客户端应用登录](cloud-object.md#authorize-app-login)
 
 需要注意的是客户端APPID信息是由端上传上来的，并非完全可信，尽量在入口处进行校验。例：
 
@@ -1234,7 +1234,7 @@ uni-id-co在微信、QQ登录或注册时会自动保存用户的sessionKey、ac
 }
 ```
 
-此结构无法满足多应用同一平台关联同一服务空间且允许用户跨应用登录的场景。因此在`uni-id-pages 1.0.8`及更高版本对此做出了调整，改为使用[uni-open-bridge-common](uni-open-bridge.md#uni-open-bridge-common)存储用户在三方平台的凭据信息。同时为了兼容旧版本上述third_party字段仍存有这些信息。
+此结构无法满足多应用同一平台关联同一服务空间且允许用户跨应用登录的场景。因此在`uni-id-pages 1.0.8`及更高版本对此做出了调整，改为使用[uni-open-bridge-common](../uni-open-bridge.md#uni-open-bridge-common)存储用户在三方平台的凭据信息。同时为了兼容旧版本上述third_party字段仍存有这些信息。
 
 目前被`uni-id-co`保存的三方凭据有以下几种：
 
@@ -1286,7 +1286,7 @@ beforeRegister在注册用户记录入库前触发。钩子会接收到如下参
 |参数名			|类型		|说明																																		|
 |--					|--			|--																																			|
 |userRecord	|Object	|即将入库的用户记录																											|
-|clientInfo	|Object	|客户端信息，参考：[云对象 getClientInfo](cloud-obj.md#get-client-info)	|
+|clientInfo	|Object	|客户端信息，参考：[云对象 getClientInfo](../cloud-obj.md#get-client-info)	|
 
 以为__UNI_123123这个应用注册的用户添加"teacher"角色为例，beforeRegister钩子示例如下
 
@@ -1316,7 +1316,7 @@ module.exports = {
 
 uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-id-pages@1.0.28` 版本起新增了 `hmac-sha256` 加密算法，开发者可以自己需求选择不同的算法，推荐使用 `hmac-sha256`算法。
 
-在 `uni-config-center/uni-id/config.json` 中配置， [uni-id/config.json说明](uni-id-summary.html#config)
+在 `uni-config-center/uni-id/config.json` 中配置， [uni-id/config.json说明](summary.md#config)
 
 ```json
 {
@@ -1329,7 +1329,7 @@ uni-id 默认使用了 `hmac-sha1` 加密算法对密码进行加密，自 `uni-
 }
 ```
 
-修改 passwordSecret [参考](uni-id-summary.html#modifysecret)
+修改 passwordSecret [参考](summary.md#modifysecret)
 
 #### 升级 hmac-256 加密算法指南
 适用于 `uni-id-pages@1.0.28` 以下版本，
@@ -1582,7 +1582,7 @@ module.exports = {
 >
 > 实人认证相关功能建议或问题，可以加入uni-im交流群进行讨论，[点此加入](https://im.dcloud.net.cn/#/?joinGroup=6445fc67bc1254655dcbf5f7)
 
-基于[实人认证](/uniCloud/frv/intro.md)服务实现，可以实现用户刷脸核验真实身份，完成实名认证。
+基于[实人认证](../frv/intro.md)服务实现，可以实现用户刷脸核验真实身份，完成实名认证。
 
 目前仅APP端支持实名认证。
 
@@ -1661,14 +1661,14 @@ uni-id-pages 中内置了实名认证页面`uni-id-pages/pages/userinfo/realname
 
 #### 接口参考
 
-- 获取认证服务的 certifyId [uniIdCo.getFrvCertifyId](uniCloud/uni-id-pages.md#get-frv-certify-id)
-- 使用 certifyId 获取认证结果 [uniIdCo.getFrvAuthResult](uniCloud/uni-id-pages.md#get-frv-auth-result)
-- 获取用户实名信息（脱敏）[uniIdCo.getRealNameInfo](uniCloud/uni-id-pages.md#get-realname-info)
+- 获取认证服务的 certifyId [uniIdCo.getFrvCertifyId](cloud-object.md#get-frv-certify-id)
+- 使用 certifyId 获取认证结果 [uniIdCo.getFrvAuthResult](cloud-object.md#get-frv-auth-result)
+- 获取用户实名信息（脱敏）[uniIdCo.getRealNameInfo](cloud-object.md#get-realname-info)
 
 #### 敏感信息加密@sensitive-info-encrypt
 
 用户的姓名、身份证号、实人认证照片属于用户隐私信息，为了防止隐私信息泄露，在数据存储上使用了对称加密`aes-256-cbc`算法对数据进行加密。
-在前端页面需要使用时，例如”[获取用户实名信息](uniCloud/uni-id-pages.md#get-realname-info)“接口，只会返回脱敏后的数据，减少暴露风险，提高安全性。
+在前端页面需要使用时，例如”[获取用户实名信息](cloud-object.md#get-realname-info)“接口，只会返回脱敏后的数据，减少暴露风险，提高安全性。
 
 由于加密密钥`sensitiveInfoEncryptSecret`来源于`config.json`配置文件，强烈建议更换为自定义的字符串，不要使用默认的密钥。
 密钥长度需要是32位的字符串。

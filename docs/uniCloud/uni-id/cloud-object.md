@@ -26,7 +26,7 @@ const uniIdCo = uniCloud.importObject('uni-id-co')
 
 ### 公共响应参数@co-public-response
 
-`uni-id-co`所有api返回值均满足[uniCloud响应体规范](cf-functions.md#resformat)
+`uni-id-co`所有api返回值均满足[uniCloud响应体规范](../cf-functions.md#resformat)
 
 返回值示例
 
@@ -47,7 +47,7 @@ const uniIdCo = uniCloud.importObject('uni-id-co')
 - 需要校验token的接口在token即将过期时也会返回newToken，token即将过期的阈值由开发者自行配置
 
 ### 适配URL化@adapter-http
-自`uni-id-pages@1.0.29`版本起支持URL化 [什么是URL化](uniCloud/http.html#cloudobject)
+自`uni-id-pages@1.0.29`版本起支持URL化 [什么是URL化](../http.md#cloudobject)
 
 调用规范：
 1. HTTP 请求头中的`Content-Type`必须为`application/json`，请求方法必须是`POST`, 如不满足条件将会返回 `uni-id-unsupported-request` 错误码
@@ -429,8 +429,8 @@ await uniIdCo.loginByWeixin({
 - 支持的登录方式：微信小程序、微信公众号、App、web站微信扫码登录
 - 微信登录会自动保存用户的openid，在`uni-id-pages 1.0.8`及更高版本在存储openid时会同时存储一份以当前应用的Appid（manifest.json内的DCloud AppId）为key的openid，见下方关于openid的说明。
 - 如果有多个应用同时使用微信小程序登录，且希望用户身份不隔离请确保这些应用在微信小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
-- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存`session_key`（微信小程序登录）、`access_token`（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
-- - 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
+- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存`session_key`（微信小程序登录）、`access_token`（微信公众号登录、微信App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](summary.md#save-user-token)
+- - 如果开发者在其他应用未使用 [uni-open-bridge-common](../uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
 	**关于openid的说明**
 
 `uni-id-pages 1.0.7`及之前的版本会将微信的openid存为如下格式
@@ -498,7 +498,7 @@ await uniIdCo.loginByQQ({
 - 支持的登录方式：QQ小程序、QQ App
 - QQ登录会自动保存用户的openid，在`uni-id-pages 1.0.8`及更高版本在存储openid时会同时存储一份以当前应用的Appid（manifest.json内的DCloud AppId）为key的openid，见下方关于openid的说明。
 - 如果有多个应用同时使用QQ小程序登录，且希望用户身份不隔离请确保这些应用在QQ小程序平台为同一主体所有，即保证不同应用可以获取同样的unionid
-- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存session_key（QQ小程序登录）、access_token（QQ App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](uni-id-summary.md#save-user-token)
+- `uni-id-pages 1.0.8`及以上版本会使用uni-open-bridge-common保存session_key（QQ小程序登录）、access_token（QQ App登录）这些信息，但是为了兼容旧版逻辑仍在用户表存储了一份副本。详细说明参考：[自动保存用户sessionKey、accessToken等信息](summary.md#save-user-token)
 
 **关于openid的说明**
 
@@ -828,7 +828,7 @@ await uniIdCo.bindWeixin({
 **注意**
 
 - 仅在用户token即将过期时返回新newToken
-- 如果开发者在其他应用未使用 [uni-open-bridge-common](/uniCloud/uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
+- 如果开发者在其他应用未使用 [uni-open-bridge-common](../uni-open-bridge.md) 管理 access_token 等信息，可能会造成 access_token 冲突。
 #### 绑定QQ@bind-qq
 
 接口名：bindQQ
@@ -1241,7 +1241,7 @@ await uniIdCo.getRealNameInfo({
 
 **注意**
 
-在uni-id-pages中默认启用敏感数据加解密，如果开发者没有使用uni-id提供的[敏感信息加密](uniCloud/uni-id-summary.md#sensitive-info-encrypt)功能，请将`decryptData`参数改为`false`，返回原始信息
+在uni-id-pages中默认启用敏感数据加解密，如果开发者没有使用uni-id提供的[敏感信息加密](summary.md#sensitive-info-encrypt)功能，请将`decryptData`参数改为`false`，返回原始信息
 
 ### 安全验证@verifier
 
@@ -1261,7 +1261,7 @@ await uniIdCo.createCaptcha({
 
 |参数名	|类型	|必填	|说明														|
 |--		|--		|--		|--															|
-|scene	|string	|是		|图形验证码使用场景，务必确保使用验证码的场景和生成验证码时传的场景参数相匹配，否则会校验不通过，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
+|scene	|string	|是		|图形验证码使用场景，务必确保使用验证码的场景和生成验证码时传的场景参数相匹配，否则会校验不通过，参考：[图形验证码场景](summary.md#captcha-scene)	|
 
 **返回值**
 
@@ -1287,7 +1287,7 @@ await uniIdCo.refreshCaptcha({
 
 |参数名	|类型	|必填	|说明														|
 |--		|--		|--		|--															|
-|scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](uni-id-summary.md#captcha-scene)	|
+|scene	|string	|是		|图形验证码使用场景，参考：[图形验证码场景](summary.md#captcha-scene)	|
 
 **返回值**
 
@@ -1302,7 +1302,7 @@ await uniIdCo.refreshCaptcha({
 发送短信功能需要以下前置工作
 
 1. 在[开发者中心](https://dev.dcloud.net.cn)开通短信服务，并申请短信模板
-2. 在uni-id的配置文件里面添加验证码使用场景对应的短信模板信息，参考：[uni-id配置文件](uni-id-summary.md#config)
+2. 在uni-id的配置文件里面添加验证码使用场景对应的短信模板信息，参考：[uni-id配置文件](summary.md#config)
 
 接口名：sendSmsCode
 
@@ -1322,7 +1322,7 @@ await uniIdCo.sendSmsCode({
 |--		|--		|--		|--										|
 |mobile	|string	|是		|手机号码								|
 |captcha|string	|是		|图形验证码								|
-|scene	|string	|是		|短信验证码使用场景，务必确保使用验证码的场景和发送验证码时传的场景参数相匹配，否则会校验不通过，参考：[短信验证码使用场景](uni-id-summary.md#sms-scene)	|
+|scene	|string	|是		|短信验证码使用场景，务必确保使用验证码的场景和发送验证码时传的场景参数相匹配，否则会校验不通过，参考：[短信验证码使用场景](summary.md#sms-scene)	|
 
 **返回值**
 
@@ -1420,7 +1420,7 @@ await uniIdCo.setPushCid({
 
 #### 微信安全网络握手@secure-network-handshake-by-weixin
 
-此接口用于微信小程序端安全网络的握手，安全网络相关文档请参考：[安全网络](secure-network.md)
+此接口用于微信小程序端安全网络的握手，安全网络相关文档请参考：[安全网络](../secure-network.md)
 
 一般无需通过uniCloud.importObject方式调用，在客户端调用`uniCloud.initSecureNetworkByWeixin()`时会通过此接口获取会话相关信息。
 
@@ -1456,7 +1456,7 @@ await uniIdCo.addUser({
 |mobile				|string							|否		|手机号																										|
 |email				|string							|否		|邮箱																											|
 |tags					|array							|否		|用户标签																									|
-|status				|number							|否		|用户状态，参考：[用户状态](uni-id-summary.md#user-status)|
+|status				|number							|否		|用户状态，参考：[用户状态](summary.md#user-status)|
 
 **返回值**
 
@@ -1500,7 +1500,7 @@ await uniIdCo.updateUser({
 | mobile				    | string							       | 否		 | 手机号																										                 |
 | email				     | string							       | 否		 | 邮箱																											                 |
 | tags					     | array							        | 否		 | 用户标签																									                 |
-| status				    | number							       | 否		 | 用户状态，参考：[用户状态](uni-id-summary.md#user-status) |
+| status				    | number							       | 否		 | 用户状态，参考：[用户状态](summary.md#user-status) |
 
 **返回值**
 
@@ -1619,7 +1619,7 @@ await uniIdCo.setAuthorizedApp({
 适合自己有用户系统，同时需要使用依赖UniId的业务，将自身系统的用户账号导入uniId，为其创建一个对应uniId的账号，使得该账号可以使用依赖uniId的系统及功能。
 由于此方案的接口不需要密码验证，开发者务必要保证接口只能在服务端调用，同时要求在请求时计算签名来保证安全。
 
-联登相关接口只支持HTTP方式调用，调用时需要携带鉴权签名值，查看[URL化请求鉴权签名计算](uni-id-pages.md#http-reqeust-auth)
+联登相关接口只支持HTTP方式调用，调用时需要携带鉴权签名值，查看[URL化请求鉴权签名计算](#http-reqeust-auth)
 
 #### 注册用户@external-register
 
@@ -1762,7 +1762,7 @@ Cache-Control: no-cache
 | mobile				    | string							       | 否		 | 手机号																										                 |
 | email				     | string							       | 否		 | 邮箱																											                 |
 | tags					     | array							        | 否		 | 用户标签																									                 |
-| status				    | number							       | 否		 | 用户状态，参考：[用户状态](uni-id-summary.md#user-status) |
+| status				    | number							       | 否		 | 用户状态，参考：[用户状态](summary.md#user-status) |
 | avatar	       | string              | 否		 | 用户头像	                                         |
 | gender	       | number              | 否		 | 用户性别；0 未知 1 男性 2 女性	                          |
 
@@ -1899,7 +1899,7 @@ module.exports = {
 
 ## 登录服务开通与配置
 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`
-以下简称：`uni-id配置文件`，完整的配置信息[详情查看](uni-id-summary.md#config)
+以下简称：`uni-id配置文件`，完整的配置信息[详情查看](summary.md#config)
 
 ### 一键登录
 一键登录是运营商提供的、比短信验证码更方便、更安全、更便宜的方案。[详见](https://uniapp.dcloud.net.cn/univerify)。
@@ -1947,7 +1947,7 @@ uni-id-pages已全面支持：app、小程序、web（uni-id-pages 版本号1.0.
 - web端：打开`/uni_modules/uni-id-pages/config.js` -> `appid` -> `weixin` 在`h5`节点配置微信公众号的appid，`web`节点配置微信开放平台创建的网站应用appid
 
 ### 服务端配置
-* 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，完整的配置信息[详情查看](uni-id-summary.md#config)
+* 服务端`uni-id`的密钥信息统一在`uni-config-center`中配置，路径：`uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，完整的配置信息[详情查看](summary.md#config)
 
 
 ### web端微信登录专题
@@ -2054,7 +2054,7 @@ exports.main = async (event, context) => {
 
 ## URL化请求鉴权签名@http-reqeust-auth
 
-> `uni-id-co@1.1.10`及以上版本支持使用`uni-cloud-s2s`进行请求签名验证，`uni-cloud-s2s`使用方式[详见](/uniCloud/uni-cloud-s2s.md)
+> `uni-id-co@1.1.10`及以上版本支持使用`uni-cloud-s2s`进行请求签名验证，`uni-cloud-s2s`使用方式[详见](../uni-cloud-s2s.md)
 > 
 > `uni-id-co`请求鉴权签名与`uni-cloud-s2s`不能同时存在，如果存在`uni-cloud-s2s`，则会优先使用`uni-cloud-s2s`进行请求签名验证
 

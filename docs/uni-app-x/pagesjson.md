@@ -209,14 +209,3 @@ easycom是uni-app提供的一种简化组件使用的方式。一般情况下组
 <!-- PAGESJSON.pages_easycom.table -->
 
 <!-- PAGESJSON.pages_easycom.compatibility -->
-
-
-### uniIdRouter 配置项列表 @pages-uniidrouter
-
-uniIdRouter是登录相关的路由配置。配置应用的登录页面、哪些页面需要登录才能访问、token过期或无效时是否自动跳转到登陆页。这些配置是依赖于uni-id的。[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#uni-id-router)
-
-<!-- PAGESJSON.pages_uniIdRouter.description -->
-
-<!-- PAGESJSON.pages_uniIdRouter.table -->
-
-<!-- PAGESJSON.pages_uniIdRouter.compatibility -->

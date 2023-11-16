@@ -3822,7 +3822,7 @@ uni-id 3.1.0版本主要有以下两个调整
 
 #### 补齐用户dcloud_appid字段@makeup-dcloud-appid
 
-此调整详情见：[隔离不同端用户](uniCloud/uni-id.md?id=isolate-user)
+此调整详情见：[隔离不同端用户](#isolate-user)
 
 > uni-id3.3.0以下版本升级到3.3.0及以上版本时，需要参照本章节补齐用户数据
 

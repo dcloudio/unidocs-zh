@@ -1,6 +1,6 @@
 # uni-id-pages-x
 
-> uni-id-pages-x 是 uni-id-pages 的[uni-app x](/docs/uni-app-x/README.md)版，目前 uni-app x仅支持Android 端  
+> uni-id-pages-x 是 uni-id-pages 的[uni-app x](uni-app-x/README.md)版，目前 uni-app x仅支持Android 端  
 
 `uni-id-pages-x`，是`uni-id`体系的一部分。
 
@@ -37,7 +37,7 @@
 ## 目录结构
 <pre v-pre="" data-lang="">
 <code class="lang-" style="padding:0">
-├─uni_modules                                         存放[uni_module](/uni_modules)规范的插件。
+├─uni_modules                                         存放uni_module规范的插件。
 │    ├─其他module
 │    └─uni-id-pages-x
 │        ├─uniCloud
@@ -227,7 +227,7 @@ export default {
 
 更多合规问题[详情参考](https://uniapp.dcloud.io/tutorial/android-store.html#app%E5%9B%A0%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98%E6%97%A0%E6%B3%95%E4%B8%8A%E6%9E%B6)
 
-推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://hx.dcloud.net.cn/Tutorial/extension/markdown_share)上传到[前端网页托管](hosting.md)获得链接
+推荐使用：HBuilderX编辑器，以markdown文档格式编辑《隐私政策和用户使用协议》，通过在文档中鼠标右键[一键分享](https://hx.dcloud.net.cn/Tutorial/extension/markdown_share)上传到[前端网页托管](../hosting.md)获得链接
 
 #### 密码强度@strength
 
@@ -252,4 +252,4 @@ uni.navigateTo({
 })
 ```
 
-配套使用[uniIdRouter](uni-id-summary.md#uni-id-router)；当用户未登录，但访问了你配置的需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时 会自动重定向到登录页面。
+配套使用[uniIdRouter](summary.md#uni-id-router)；当用户未登录，但访问了你配置的需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时 会自动重定向到登录页面。

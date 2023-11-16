@@ -92,6 +92,11 @@ const routerMap = {
   '/use-html5plus': '/tutorial/use-html5plus.html',
   '/m3w': '/uniCloud/uni-portal.html',
   '/tutorial/syntax-uts': '/uts/',
+  
+  '/uniCloud/uni-id-summary': '/uniCloud/uni-id/summary.html',
+  '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.md',
+  '/uniCloud/uni-id-common': '/uniCloud/uni-id/cloud-common.html',
+  '/uniCloud/uni-id': '/uniCloud/uni-id/old.html',
 }
 
 export default ({ fullPath, path, hash }) => {

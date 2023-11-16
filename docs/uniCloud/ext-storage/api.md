@@ -24,9 +24,9 @@
 
 参考[开通服务](uniCloud/uni-cloud-ext-storage/open.md)
 
-## 费用说明@fee
+## 费用说明@price
 
-参考[费用说明](uniCloud/uni-cloud-ext-storage/fee.md)
+参考[费用说明](uniCloud/uni-cloud-ext-storage/price.md)
 
 ## 为云函数启用uni-cloud-ext-storage扩展库@use-in-function
 

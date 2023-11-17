@@ -363,8 +363,24 @@ URL请求域名由DSP提供，协议：必须使用HTTPS。本文接口详述中
 |data	|json object|否		|响应数据。此字段加密传输，加密前为json string。接口无需返回数据时，此字段为空。	|
 
 #### 数据加密算法
-所有要求加密的字段均采用AES256加密算法进行加密。在DSP注册账号后，由DCloud开放平台提供加密的密钥`dspSecret`。
+所有要求加密的字段均采用AES256加密算法进行加密，加密后的数据使用base64编码。在DSP注册账号后，由DCloud开放平台提供加密的密钥`dspSecret`。
 
 加密算法：AES256
 加密模式：CBC
 填充方式：Pkcs7 | Pkcs5
+向量（偏移量）：同密钥
+加解密测试网站： [https://www.mklab.cn/utils/aes](https://www.mklab.cn/utils/aes)
+
+#### 加密数据示例
+##### 示例加密密钥
+`gCANeLWoh2CDulqLf0mVAartUFxoPqCn`
+
+##### 加密原文
+```json
+{"pluginId":"1000","appName":"测试应用","appDesc":"测试应用","platforms":{"app-android":{"releasePackageName":"io.dcloud.sample","debugPackageName":"io.dcloud.sample.debug","releaseCertSha1":"E1:EF:48:A5:BE:E7:64:3E:61:A7:19:5C:FA:23:B1:30:83:29:42:7E","debugCertSha1":"83:85:A9:68:D3:C0:99:E3:20:E0:37:75:81:C5:66:F3:F3:CD:98:78"},"app-ios":{"releaseBundleId":"io.dcloud.sample","debugBundleId":"io.dcloud.sample.debug"}}}
+```
+
+##### 加密密文
+```
+GaySFnUw5yrvM3QPbdtqU7jCeozMPpy0vMv4Z7eaUSPjg9YYvXQw66QMOmYIBo4G862uWAX+4f5X1fJlOXWq2tr7S34hH0qftQ9rwLVKWt6mlhqfCh9GVSTsSv4vcV9HNePrmzxmMhEwDXWlWqaC2xXWd/94/Y07HuNPFR63yl3LTyIn8Y/0pACh7+rlwb44yYeQmI9MNymr7aa5d8RSWhGQ9EC3cPKV7qJjJ7fSXvILKpqIHqzeUecF3ydgIXGF4xzYZIqdgztGace4ddNEVnE7RJmz5F33RyyXMb1K1pjJKOjxZY1CMcNwZvpv4woxHzAJzmbtpHFHaXBJrP1kW3meJ9gqqriAn6Y1yNotkl6ffOVHfkR4G/d69wuOBC2l+KdcMqjnQ+6ijG/eDNzLdaSnpQjpo3+VyQunAZvxTJzxLaFV+K4ob9loxf3a/eCXjMbnybqmSMAQ1H+R2LqTHMtzh5B6bO9UInT44ad92EllKsvVgkzSFSjlPh6JfcdYHHXm/zA5bYvvkyJ9PSeH3sP2mgRXMBfGruqMjarhtPt3FIh3kPV2zTGJgs1Z139r
+```

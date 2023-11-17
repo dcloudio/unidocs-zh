@@ -1,4 +1,4 @@
-> 以下为uni-push2.0的api文档，业务介绍[详情参考](/unipush-v2)
+> 以下为uni-app框架的 uni-push api文档， uni-app x框架的 uni-push api文档[详情查看](../../uni-app-x/api/push.md)
 
 `uni-push`有服务器API和客户端API。
 

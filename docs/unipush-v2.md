@@ -1,6 +1,6 @@
 # uni-push2统一推送
 
-> 本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0，另见：[uni-push1.0](unipush-v1.html)
+> 本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uni-push1.0，另见：[uni-push1.0](uni-push-v1.html)
 
 # 应用场景
 以下功能可以用uni-push 实现  
@@ -63,7 +63,7 @@ DCloud与个推（A股上市公司每日互动）深度合作，为uni-app的开
 > 注：`uni-push`的服务器稳定性是由阿里云serverless、腾讯云serverless、个推来保障的，都是日活过亿的上市公司，无需顾虑稳定性。
 
 如下图所示：
-首先开发者的uniCloud应用服务器向uniPush服务器发送push消息，然后
+首先开发者的uniCloud应用服务器向uni-push服务器发送push消息，然后
 - 如果客户端应用在线，客户端通过socket直接收到push在线消息；
 - 客户端应用不联网时，`uni-push`服务器根据客户端类型，把push消息发给某个手机厂商的push服务器或小程序的订阅消息服务器；然后厂商push通道会把这条消息发到手机的通知栏或微信的订阅消息里；手机用户点击通知栏消息或小程序订阅消息后，启动App或小程序，客户端才能收到离线消息。
 	<img width="100%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cd3e676a-6a3b-44ea-9045-5bc058d0d8ae.png"/></br>
@@ -102,7 +102,7 @@ uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而u
 
 - 常见误解1：“uni-push的专业性，和专业的个推、极光等服务可相比吗？”
 
-	答：uniPush 是由个推将其本来收费的 push 产品，免费提供给了DCloud的开发者。它与个推vip push的只有3个区别：1、免费；2、账户使用的是DCloud开发者账户，而无需再重新注册个推账户；3、开发文档看DCloud的。
+	答：uni-push 是由个推将其本来收费的 push 产品，免费提供给了DCloud的开发者。它与个推vip push的只有3个区别：1、免费；2、账户使用的是DCloud开发者账户，而无需再重新注册个推账户；3、开发文档看DCloud的。
 
 - 常见误解2：“uni-push好麻烦，我就喜欢个推、极光这种简单sdk，不想去各个rom厂商去申请一圈”
 
@@ -114,7 +114,7 @@ uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而u
 
 - uni-push可以完整替代socket吗？
 
-	答：能部分替代。uni-push客户端接收消息的通讯协议属于websocket；但业务服务端向uniPush服务发送消息用的是http通讯协议，会有1-2秒的延时。需要超低延迟的应用场景，如多人交互远程画板不合适。但对于普通的im消息、聊天、通知都没有问题。
+	答：能部分替代。uni-push客户端接收消息的通讯协议属于websocket；但业务服务端向uni-push服务发送消息用的是http通讯协议，会有1-2秒的延时。需要超低延迟的应用场景，如多人交互远程画板不合适。但对于普通的im消息、聊天、通知都没有问题。
 
 - 5+app和wap2app支持uni-push2.0吗？  
 	
@@ -125,18 +125,10 @@ uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而u
 
 # 快速上手
 ## 第一步：开通  
-uni-push产品有2个入口：
-1. 通过 HBuilderX(3.5.1及其以上版本)进入
-
-	打开 HBuilderX，双击项目中的 “manifest.json” 文件，选择“App 模块配置”，向下找到“Push(消息推送)”，勾选后，点击 “uniPush” 下面的配置链接。如下图所示：
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220525104554.jpg)
-2. 通过开发者中心进入
-	
-	使用 HBuilder 账号登录 [开发者中心](https://dev.dcloud.net.cn) ，登录后
-	会进入“uniPush”-“Uni Push 2.0（支持全端推送）”-“应用信息”，点击“当前应用”选择要操作的应用。
-	
-以上两种方式均可进入uniPush 应用开通界面。如下图所示：
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush2-info.jpg)
+- 使用 HBuilder 账号登录 [开发者中心](https://dev.dcloud.net.cn) 
+- 在左侧菜单栏找到`uni-push`-`uni-push 2.0（支持全端推送）`-`应用信息`，点击“当前应用”选择要操作的应用。
+	可进入uni-push 应用开通界面。如下图所示：
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-push2-info.jpg)
 
 ### 手机号验证
 
@@ -147,7 +139,7 @@ uni-push产品有2个入口：
 
 ### 填写应用信息
 应用开通 uni-push 功能时，需要提交应用相关信息，如下图所示：
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush2-info.jpg)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-push2-info.jpg)
 
 关联服务空间说明：uni-push2.0需要开发者开通uniCloud。不管您的业务服务器是否使用uniCloud，但专业推送服务器在uniCloud上。
 
@@ -171,8 +163,11 @@ uni-push产品有2个入口：
 ![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/ios.png)
 - APP手机厂商推送参数设置（可选，应用进程离线时推送通道）
 	![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/20220728173149.png)
-	uniPush集成并统一了各个手机厂商的系统级推送，目前支持魅族、OPPO、华为、小米、VIVO。如果需要使用厂商推送，需要先在各厂商开发者平台申请。详见[厂商推送应用创建配置流程](https://www.dcloud.io/docs/a/unipush/manufacturer.pdf)
+	uni-push集成并统一了各个手机厂商的系统级推送，目前支持魅族、OPPO、华为、小米、VIVO。如果需要使用厂商推送，需要先在各厂商开发者平台申请。详见[厂商推送应用创建配置流程](https://www.dcloud.io/docs/a/uni-push/manufacturer.pdf)
+-  应用推送图标配置
+  *  uni-app
 
+  *  uni-app x
 
 ## 第三步：客户端操作
 ### 名词解释
@@ -194,12 +189,41 @@ uni-push产品有2个入口：
 
 以上两种方案各有优劣，方案一更加灵活；比如：客服功能，客户端接收到聊天消息时，应用如果已经打开聊天对话页面，就直接将监听到的推送内容，渲染到页面。如果应用未打开聊天页，则调用api创建“通知栏消息”提醒用户；此时你还可以执行一些其他逻辑，比如将tabBar的消息中心加红点等。方案二比较简便，客户端无需额外编写代码，自动创建通知栏消息；但仅适用于不关心客户端行为就创建“通知栏消息”的场景，如广告营销内容的推送等。
 
-### 客户端启用uniPush2.0
+### 客户端启用uni-push2.0
 
-操作步骤打开`manifest.json` - `App模块配置` - 中勾选`uniPush 2.0` - `重新编译项目`
+- uni-app x 框架的App端  
+  标准基座不包含uni-push模块，如果需要使用此模块，应当在提交云打包时，项目代码中包含uni-push相关客户端api。
+  
+  所以在开发调试时，需要先写一段包含uni-push相关客户端api代码，再打一个自定义基座。  
+  例如：
+  1. 先添加如下代码：
+  ```js
+  uni.getPushClientId({
+    success(res) {
+      console.log(res);
+    },
+    fail(err) {
+      console.log(err)
+    }
+  })
+  ```
+  > 注意：此时由于运行的标准基座中，不包含uni-push模块，如果运行会报错，不用着急继续往下操作  
+  2. 点击菜单栏的【发行】-【原生APP-云打包】然后再弹出的窗口中勾选【制作自定义调试基座】- 点击【打包】  
+  3. 打包成功后，点击菜单栏的【运行】-【运行到手机或模拟器】-【运行到 Android App 基座】然后再弹出的窗口中勾选【使用自定义基座运行】-【运行】  
+  
+  接下来即可使用 uni-push 相关客户端 api
+
+- uni-app 框架App端  
+操作步骤打开`manifest.json` - `App模块配置` - 中勾选`uni-push 2.0` - `重新编译项目`
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220525105852.jpg)
+
+- h5端
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220525105914.jpg)
+
+-  微信小程序端
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/87accaa0-e6a4-4916-9a74-87719142abaa.jpg)
+
+
 其他小程序启用方式参考微信小程序，这里不一一列举
 
 在`manifest.json`中配置完之后，需要重新编译项目，即：点击如图`重新运行`按钮
@@ -234,7 +258,7 @@ uni-push在web和小程序端就是个websocket；各家小程序平台，均要
 
 示例代码：
 ```js 
-//文件路径：项目根目录/App.vue
+// 文件路径：项目根目录App.vue/uvue
 export default {
 	onLaunch: function() {
 		console.log('App Launch')
@@ -255,7 +279,7 @@ export default {
 
 **APP端真机运行注意:** 
 - 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。标准HBuilder运行基座无法使用。
-- 离线推送时，Android手机厂商通道推送[需设置消息渠道id](/uniCloud/uni-cloud-push/api.html#channel)，否则会被限制频次和静默推送(静音且需下拉系统通知栏才可见)
+- 离线推送时，Android手机厂商通道推送[需设置消息渠道id](/uniCloud/uni-cloud-push/api.md#channel)，否则会被限制频次和静默推送(静音且需下拉系统通知栏才可见)
 - 如果Android应用进入后台后（App未销毁），点击通知消息无法拉起App，请检查设备是否有禁止后台弹出界面，路径>>设置-应用管理-测试应用-权限管理-后台弹出界面，(一般是小米、oppo、
 vivo设备)。
 
@@ -277,19 +301,20 @@ uni.getPushClientId({
 	}
 })
 ```
+
 ## 第四步：服务端推送消息  
 消息推送属于敏感操作，只能直接或间接由服务端触发。传统的三方push服务，需要开发者在服务端配置密钥或证书，根据服务器端文档签名获取token，再向相关URL接口发起网络请求......
 
-而UniPush2.0，开发者无需关心证书、签名、服务器端文档，使用简单。云函数通过 uni-push服务端sdk，即`uni-cloud-push`的API即可直接执行uniPush所有操作。
+而uni-push2.0，开发者无需关心证书、签名、服务器端文档，使用简单。云函数通过 uni-push服务端sdk，即`uni-cloud-push`的API即可直接执行uni-push所有操作。
 
 uni-push的服务端sdk的体积不小，没有内置在云函数中。在需要操作uni-push的云函数里，开发者需手动配置`uni-cloud-push`扩展库。
 （uniCloud扩展库，是uniCloud自带API中不常用且包体积较大的部分，被独立为扩展库，可以由开发者自行选择是否使用该扩展库）
 
 - HBuilderX 中新建云函数时可选择uni-cloud-push扩展库，或者如下图所示在已有的云函数目录点右键选择“管理公共模块或扩展库依赖”
 
-<img style="width:80%;max-width:600px;margin:0 10%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush-glkzk.jpg"/>
+<img style="width:80%;max-width:600px;margin:0 10%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-push-glkzk.jpg"/>
 </br>
-<img style="width:80%;max-width:450px;margin:0 10%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush-kzk.jpg"/>
+<img style="width:80%;max-width:450px;margin:0 10%" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-push-kzk.jpg"/>
 </br>
 
 下面是一个开启了`uni-cloud-push`扩展库的云函数的package.json示例，**注意不可有注释，以下文件内容中的注释仅为说明，如果拷贝此文件，切记去除注释**
@@ -314,9 +339,9 @@ uni-push的服务端sdk的体积不小，没有内置在云函数中。在需要
 ```js
 // 简单的使用示例
 'use strict';
-const uniPush = uniCloud.getPushManager({appId:"__UNI__XXXXXX"}) //注意这里需要传入你的应用appId，用于指定接收消息的客户端
+const uni-push = uniCloud.getPushManager({appId:"__UNI__XXXXXX"}) //注意这里需要传入你的应用appId，用于指定接收消息的客户端
 exports.main = async (event, context) => {
-	return await uniPush.sendMessage({
+	return await uni-push.sendMessage({
 		"push_clientid": "xxx", 	//填写上一步在uni-app客户端获取到的客户端推送标识push_clientid
 		"title": "通知栏显示的标题",	
 		"content": "通知栏显示的内容",
@@ -329,7 +354,7 @@ exports.main = async (event, context) => {
 
 在云函数文件目录右键（或按快捷键ctrl + r）-> `运行-本地云函数`，此时你的客户端将收到推送消息（应用关闭时为通知栏消息，在线时代码监听到推送消息）
 
-> 先跟着示例代码简单体验一下，详细的uniPush.sendMessage API介绍[详情参考](/uniCloud/uni-cloud-push/api.html#uni-cloud-push)
+> 先跟着示例代码简单体验一下，详细的uni-push.sendMessage API介绍[详情参考](/uniCloud/uni-cloud-push/api.html#uni-cloud-push)
 
 如果按步骤操作完毕，此时你运行起来的uni-app客户端就会打印出“收到推送消息：xxxx”。如遇异常，可以重新运行一遍。
 

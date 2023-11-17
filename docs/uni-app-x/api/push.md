@@ -69,7 +69,7 @@
 ## 注意事项
 
 * 关于隐私安全问题，由于在调用`getPushClientId`或者`onPushMessage`时，才会初始化个推SDK，所以开发者要确保弹出隐私框之前不调用此两项API。
-* 关于图标的配置，需要创建[nativeResources](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90)目录，放置对应分辨率的图片资源即可 ，目录配置如下
+* 关于图标的配置，需要创建[nativeResources](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90)目录，放置对应分辨率的图片资源即可（云打包后生效） ，目录配置如下
 
     ```
     ├── nativeResources

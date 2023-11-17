@@ -538,6 +538,16 @@ let action = new UIAlertAction(title="确认", style=UIAlertAction.Style.default
 })
 ```
 
+原生中有些方法的闭包参数是逃逸闭包，此时就要在闭包前面添加 `@escaping` 标记：
+
+```ts
+// 在闭包参数前添加@escaping
+function requestLocationPromise(@escaping completion: (res: boolean)=>void) {
+
+}
+```
+
+
 #### 5.1.10 target-action 方法
 
 uts 中调用原生中涉及 target-action 的方法时，比如给`UIButton`添加点击事件方法、注册通知中心事件方法时注意事项，

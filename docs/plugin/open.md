@@ -459,14 +459,11 @@ The response JSON data contains three parts, which are status code, return infor
 
 #### 数据加密算法
 所有要求加密的字段均采用AES256加密算法进行加密，加密后的数据使用base64编码。在DSP注册账号后，由DCloud开放平台提供加密的密钥`dspSecret`。
-
-加密算法：AES256
-Encryption algorithm: AES256
-加密模式：CBC
-Encryption mode: CBC
-填充方式：Pkcs7 | Pkcs5
-向量（偏移量）：同密钥
-加解密测试网站： [https://www.mklab.cn/utils/aes](https://www.mklab.cn/utils/aes)
+- 加密算法：AES256
+- 加密模式：CBC
+- 填充方式：Pkcs7 | Pkcs5
+- 向量（偏移量）：同密钥
+- 加解密测试网站： [https://www.mklab.cn/utils/aes](https://www.mklab.cn/utils/aes)
 
 #### 加密数据示例
 ##### 示例加密密钥

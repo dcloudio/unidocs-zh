@@ -88,6 +88,11 @@ The client uploads the file to the cloud function, and the cloud function upload
 **各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。[参考](https://uniapp.dcloud.io/uniCloud/publish.html#useinmp)**
 **When each Mini Program platform is running, network-related APIs need to be configured with a whitelist of domain names before using them. [Reference](https://uniapp.dcloud.io/uniCloud/publish.html#useinmp)**
 
+**已知问题**
+
+- HBuilderX 3.98之前的版本，微信小程序端上传文件到支付宝小程序云会报错
+- 非web端、微信小程序端上传文件到支付宝小程序云会出现怪异表现或者报错，例如：百度小程序会既不触发失败也不触发成功，最终会上传一个空文件上去。此问题等待支付宝小程序云处理
+
 #### 请求参数
 #### request parameters
 **Object object**

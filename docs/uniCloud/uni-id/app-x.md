@@ -249,5 +249,3 @@ uni.navigateTo({
 	"url":"/uni_modules/uni-id-pages-x/pages/login/login?type=username"
 })
 ```
-
-配套使用[uniIdRouter](summary.md#uni-id-router)；当用户未登录，但访问了你配置的需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时 会自动重定向到登录页面。

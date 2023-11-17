@@ -79,7 +79,7 @@
 │		     │       ├── deactivate                       注销账号页面
 │		     │       └─ setNickname                       设置昵称页面
 │		     ├── static                                   静态资源目录
-│		     │   ├── app-plus                             App专用资源目录
+│		     │   ├── app                                  App专用资源目录
 │		     │   ├── fonts                                字体资源目录
 │		     │   └── login                                登录方式图标资源目录
 │		     ├── store.uts                                状态管理文件
@@ -192,18 +192,6 @@ export default {
 }
 ```
 则表示启用：验证码登录。
-
-平台差异性配置:如果你希望在不同的平台有不同的登录方式，直接使用[条件编译](https://uniapp.dcloud.io/platform?id=%e6%9d%a1%e4%bb%b6%e7%bc%96%e8%af%91)即可。如下配置，即表示仅在APP端启用`短信验证码登录`
-```js
-export default {
-	"loginTypes": [
-		"username",
-		// #ifdef APP-PLUS
-		,"smsCode"
-		// #endif
-	]
-}
-```
 
 以上配置仅开启前端登录入口，实现功能还需：开通对应登录方式服务，获得服务密钥，并在服务端`uni-id`模块的配置文件中完成配置。详情查看：[登录服务开通与配置](#登录服务开通与配置)
 

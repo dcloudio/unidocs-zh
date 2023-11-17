@@ -147,15 +147,6 @@ tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更�
 
 <!-- PAGESJSON.PagesOptionsTabbarList.compatibility -->
 
-
-##### iconfont 配置项列表 @pagesoptionstabbarlist-iconfont
-
-<!-- PAGESJSON.PagesOptionsTabbarList_iconfont.description -->
-
-<!-- PAGESJSON.PagesOptionsTabbarList_iconfont.table -->
-
-<!-- PAGESJSON.PagesOptionsTabbarList_iconfont.compatibility -->
-
 **tabbar示例**
 ```json
 "tabBar": {

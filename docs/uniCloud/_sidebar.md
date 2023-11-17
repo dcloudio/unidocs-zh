@@ -49,7 +49,7 @@
 * uni-id用户体系
   * [综述](./uni-id/summary.md)
   * [客户端-uni-app](./uni-id/app.md)
-  <!-- * [客户端-uni-app x](./uni-id/app-x.md) -->
+  * [客户端-uni-app x](./uni-id/app-x.md)
   * [云对象](./uni-id/cloud-object.md)
   * [uni-id-common](./uni-id/cloud-common.md)
   * [老版uni-id 3.x文档](./uni-id/old.md)

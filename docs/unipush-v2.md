@@ -184,7 +184,7 @@ uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而u
 当应用在线时，不会创建“通知栏消息”，此时客户端会立即监听到消息内容。
 
 如果你希望当应用在线时，也通过“通知栏消息”来提醒用户；可以通过以下两种方式实现：
-1. 监听到消息内容后，根据业务需要自己判断是否要创建“通知栏消息”，需要就调用创建本地消息API [uni.createPushMessage](https://uniapp.dcloud.net.cn/api/plugins/push.html#createpushmessage)手动创建通知栏消息。
+1. 监听到消息内容后，根据业务需要自己判断是否要创建“通知栏消息”，需要就调用创建本地消息API `uni.createPushMessage`(uni-app 框架[详情参考](/api/plugins/push.html#createpushmessage)，uni-app x 框架[详情参考](/uni-app-x/api/plugins/push.html#createpushmessage)) 手动创建通知栏消息。
 2. 服务端执行推送时，传递参数`force_notification:true`，客户端就会自动创建“通知栏消息”（此时你监听不到消息内容），当用户点击通知栏消息后，APP才能监听到消息内容。
 
 以上两种方案各有优劣，方案一更加灵活；比如：客服功能，客户端接收到聊天消息时，应用如果已经打开聊天对话页面，就直接将监听到的推送内容，渲染到页面。如果应用未打开聊天页，则调用api创建“通知栏消息”提醒用户；此时你还可以执行一些其他逻辑，比如将tabBar的消息中心加红点等。方案二比较简便，客户端无需额外编写代码，自动创建通知栏消息；但仅适用于不关心客户端行为就创建“通知栏消息”的场景，如广告营销内容的推送等。
@@ -275,7 +275,7 @@ export default {
 }
 ```
 
-> 先跟着示例代码简单体验，详细的uni.onPushMessage API介绍[详情参考](/api/plugins/push.html#onpushmessage)
+> 先跟着示例代码简单体验，详细的uni.onPushMessage API介绍：uni-app 框架[详情参考](/api/plugins/push.html#onpushmessage)，uni-app x 框架[详情参考](/uni-app-x/api/plugins/push.html#onpushmessage)
 
 **APP端真机运行注意:** 
 - 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。标准HBuilder运行基座无法使用。
@@ -287,7 +287,7 @@ vivo设备)。
 假如我要给“张三”打电话，那就需要知道对方的电话标识，即电话号码是多少。
 同理，要给某个客户端推送消息，也需要知道该设备的客户端推送标识。
 
-> 先跟着示例代码简单体验，详细的uni.getPushClientId API介绍[详情参考](/api/plugins/push.md)
+> 先跟着示例代码简单体验，详细的uni.getPushClientId API介绍：uni-app 框架[详情参考](/api/plugins/push.html#onpushmessage)，uni-app x 框架[详情参考](/uni-app-x/api/plugins/push.html#onpushmessage)
 代码示例：
 ```js
 // uni-app客户端获取push客户端标记

@@ -283,6 +283,8 @@ In addition to the layout and values directories listed here, it also supports a
 
 ```
 
+
+
 ### 3.3 配置asset资源
 ### 3.3 Configuring asset resources
 
@@ -318,16 +320,22 @@ The location of the complete code in hello uts:
 ### 3.4 增加libs依赖资源
 ### 3.4 Add libs dependent resources
 
-以Hello UTS项目下的uts-tencentgeolocation 插件为例
-Take the uts-tencentgeolocation plugin under the Hello UTS project as an example
+下面是一个`config.json`示例
 
-![](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_libs_folder.jpg)
+```json
+{
+	"dependencies": [
+		"androidx.recyclerview:recyclerview:1.0.0",
+		{
+			"id": "com.squareup.leakcanary-debug", 
+			"source": "debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'"
+		}
+	]
+}
 
 
-示例文件在hello uts中的位置：
-Example file location in hello uts:
+```
 
-~\uni_modules\uts-tencentgeolocation\utssdk\app-android\libs 
 
 ------
 
@@ -391,6 +399,8 @@ Developers need to pay attention to two points when using the dependencies in th
 
 
 ```
+
+
 
 ### 3.5 远程依赖仓库说明
 

@@ -10,7 +10,7 @@
 
 <!-- UTSUNICLOUDAPIJSON.importObject.tutorial -->
 
-**uni-app x内使用云对象的特殊说明**
+### uni-app x内使用云对象的特殊说明@strictly-typed-object
 
 由于强类型语言的限制，uni-app-x在编译时需要读取本地云对象导出的方法列表生成客户端对象。
 - 请确保调用的云对象在本地包含导出的方法。

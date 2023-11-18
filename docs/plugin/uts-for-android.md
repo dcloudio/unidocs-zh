@@ -232,6 +232,8 @@ uts-nativepage  ->  uts.sdk.modules.utsNativepage
 
 ```
 
+
+
 ### 3.3 配置asset资源
 
 以hello UTS中的uts-advance插件为例。
@@ -258,14 +260,22 @@ mediaPlayer.start();
 
 ### 3.4 增加libs依赖资源
 
-以Hello UTS项目下的uts-tencentgeolocation 插件为例
+下面是一个`config.json`示例
 
-![](https://native-res.dcloud.net.cn/images/uts/forAndroid/uts_android_libs_folder.jpg)
+```json
+{
+	"dependencies": [
+		"androidx.recyclerview:recyclerview:1.0.0",
+		{
+			"id": "com.squareup.leakcanary-debug", 
+			"source": "debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'"
+		}
+	]
+}
 
 
-示例文件在hello uts中的位置：
+```
 
-~\uni_modules\uts-tencentgeolocation\utssdk\app-android\libs 
 
 ------
 
@@ -326,6 +336,8 @@ mediaPlayer.start();
 
 
 ```
+
+
 
 ### 3.5 远程依赖仓库说明
 

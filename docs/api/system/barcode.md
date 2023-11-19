@@ -109,12 +109,10 @@ uni.scanCode({
 
 **Tip**
 
+- App的扫码引擎，使用业内开源的通用扫码库，识别效率比不过微信、支付宝等商业扫码库。如需更强的扫码效果，支付宝等原生语言扫码插件：[https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=5&cat2=51](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=5&cat2=51)，或uts插件：[https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=8&cat2=81](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=8&cat2=81)
 - App-vue如果想自定义扫码，可参考[uni-app中如何使用5+的原生界面控件](http://ask.dcloud.net.cn/article/35036)和[plus.barcode API](https://www.html5plus.org/doc/zh_cn/barcode.html)
 - If App-vue wants to customize the code scanning, please refer to [How to use 5+ native interface controls in uni-app](http://ask.dcloud.net.cn/article/35036) and [plus.barcode API ](https://www.html5plus.org/doc/zh_cn/barcode.html)
 - App-nvue，支持barcode组件，可自定义扫码界面。[详见](https://uniapp.dcloud.io/component/barcode)。App端自定义扫码界面，建议使用nvue方式。
-- App-nvue, supports barcode components, and can customize the scanning interface. [See](https://uniapp.dcloud.io/component/barcode for details). It is recommended to use the nvue method to customize the code scanning interface on the App side.
-- App的扫码引擎，使用业内开源的通用扫码库，扫码效率比不过微信、支付宝等商业扫码库。如需更强的扫码效果，请使用支付宝提供的扫码插件：[https://ext.dcloud.net.cn/plugin?id=2636](https://ext.dcloud.net.cn/plugin?id=2636)
-- The code scanning engine of the app uses the industry's open-source general code scanning library, which is not as efficient as WeChat, Alipay and other commercial code scanning libraries. If you need a stronger scanning effect, please use the scanning plug-in provided by Alipay: [https://ext.dcloud.net.cn/plugin?id=2636](https://ext.dcloud.net.cn/ plugin?id=2636)
 - 微信小程序自定义扫码界面，可使用camera组件。[详见](https://uniapp.dcloud.io/component/camera)
 - The WeChat MiniApp customize the code scanning interface, and the camera component can be used. [See details](https://uniapp.dcloud.io/component/camera)
 - 微信内嵌浏览器运行H5版时，可通过js sdk实现扫码，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)

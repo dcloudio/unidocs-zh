@@ -1,6 +1,17 @@
-#### 4--
-* 【重要】新增支持支付宝小程序云，价格更便宜，限制更少，功能更强，支持域名备案
-* 调整 `db_init.json` 按collection拆分，每个collection由schema.json、index.json、init_data.json三个文件描述
+#### 2023-11-20
+* 新增 uni-app-x 项目 支持uniCloud支付宝小程序云
+* 新增 支付宝小程序云初始化向导
+* 优化 基于模板新建schema/新建schemajs时，如模板是由多个文件组成的，允许用户选择创建具体的文件
+* 修复 初始化云数据库时，云端已存在集合触发的弹窗提示中第一个集合默认选中的Bug
+* 修复 打开db_init.json文件后，在编辑区域右键“初始化数据库”无法初始化的Bug
+* 修复 对uniCloud文件夹重命名后，不会更新uniCloud文件夹别名的Bug
+* 修复 上传公共模块时项目目录下不存在uni_modules目录导致无法上传的Bug
+* 修复 微信小程序平台上传文件到支付宝小程序云报错的Bug
+* 修复 支付宝小程序云 database update 操作返回值没有返回 updated 参数
+
+#### 2023-11-05
+* 【重要】新增 uni-app 项目 支持uniCloud支付宝小程序云版。价格更优，限制更少，支持域名备案
+* 调整 `db_init.json` 按collection拆分，每个collection由schema.json、index.json、init_data.json三个文件描述 [详情](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#init-db)
 
 #### 2023-10-19
 * 优化 阿里云 callFunction、url化方式调用云函数最大超时时间由60秒调整为120秒

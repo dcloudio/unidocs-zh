@@ -8,6 +8,7 @@ let vueJson = {};
 let manifestJson = {};
 let pagesJson = {};
 let specialStringJson = {};
+let pageInstanceJson = {};
 try {
 	cssJson = require('../utils/cssJson.json');
 } catch (error) {}
@@ -37,6 +38,9 @@ try {
 } catch (error) {}
 try {
 	specialStringJson = require('../utils/specialStringJson.json');
+} catch (error) {}
+try {
+	pageInstanceJson = require('../utils/pageInstanceJson.json');
 } catch (error) {}
 
 
@@ -122,6 +126,14 @@ const getJSON = text => {
 		return {
 			match,
 			json: specialStringJson,
+		};
+	}
+
+	match = text.match(getRegExp('PAGEINSTANCE'));
+	if (match) {
+		return {
+			match,
+			json: pageInstanceJson,
 		};
 	}
 

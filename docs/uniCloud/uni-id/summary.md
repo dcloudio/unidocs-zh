@@ -2144,7 +2144,11 @@ In [uniCloud console](https://unicloud.dcloud.net.cn/), find the service space w
 
 目前仅APP端支持实名认证。
 
-uni-id-pages 中内置了实名认证页面`uni-id-pages/pages/userinfo/realname-verify/realname-verify`。
+uni-id-pages / uni-id-pages-x 中内置了实名认证页面
+
+uni-id-pages: `uni-id-pages/pages/userinfo/realname-verify/realname-verify`。
+
+uni-id-pages-x: `uni-id-pages-x/pages/userinfo/realnameAuth/realnameAuth`。
 
 <div style="display: flex; flex-basis: 10px">
 <div style="margin-right: 10px;">
@@ -2161,7 +2165,7 @@ uni-id-pages 中内置了实名认证页面`uni-id-pages/pages/userinfo/realname
 如没有实名认证需求，可以将实名认证相关页面注释：
 
 1. 在`uni-id-pages/pages/userinfo/userinfo`页面中，注释掉实名认证的`uni-list-item`标签。
-2. 在`pages.json`中注释掉实名认证页面`uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify`。
+2. 在`pages.json`中注释掉实名认证页面
 
 #### 开通与使用
 

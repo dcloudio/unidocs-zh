@@ -28,6 +28,10 @@ uni-push是DCloud与合作伙伴共同推出的统一推送服务。该业务的
 
 <!-- UTSAPIJSON.onPushMessage.tutorial -->
 
+## 注意事项
+
+* 如果多次监听`onPushMessage`，那么事件也会多次触发，所以当不需要监听的时候需要`offPushMessage`。
+
 ## uni.offPushMessage(callback) @offpushmessage
 
 <!-- UTSAPIJSON.offPushMessage.description -->
@@ -54,7 +58,19 @@ uni-push是DCloud与合作伙伴共同推出的统一推送服务。该业务的
 
 ## 注意事项
 
+* 由于各大厂商限制推送频次，当使用厂商离线推送的时，需要在不同品牌手机后台开通自分类权益，[限制数量说明](https://docs.getui.com/getui/mobile/vendor/qps/)
+  - [华为](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/message-classification-0000001149358835)
+  - [小米](https://dev.mi.com/console/doc/detail?pId=2422)
+  - [oppo](https://open.oppomobile.com/new/developmentDoc/info?id=11227)
+  - [vivo](https://dev.vivo.com.cn/documentCenter/doc/359)
+
+  开通自分类权益后，需要客户端创建channel，因此客户端提供了`setPushChannel`来进行channel的创建，通过此Api来创建渠道进行推送。
+  客户端创建渠道成功后，即可通过云函数进行推送，[uni-push2服务端文档](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-push/api.html)。
+
+
 * 由于Android通知渠道的机制问题，一旦通知渠道建立，便不能修改此渠道的配置，即使删除渠道后再次创建同channelId名称的渠道，也不会改变原先渠道的配置（除非删除应用），最明显的现象就是铃声动态修改失败，比如调用`setPushChannel`时，第一次的设置参数是`{"channelId":"test","soundName":"pushsound"}` , 这时你想切换铃音，你的channelId就不能再叫test了，而应该为`{"channelId":"test2","soundName":"ring"}` ，此时会新建一个渠道。
+
+
 
 ## uni.createPushMessage(options) @createpushmessage
 
@@ -115,3 +131,4 @@ uni-push是DCloud与合作伙伴共同推出的统一推送服务。该业务的
 * uni-push是一个独立的模块，在标准基座中并不包含。开发push需要首先编写push相关代码，然后打包自定义基座，根据摇树规则，打出的自定义基座才会包含push模块。详见[摇树](../manifest.md#treeShaking)
 * 创建本地通知栏，理论上可以和个推的服务无关。但目前也都包含在push模块里了。如果您不需要服务器推送，只需要本地创建通知栏，也需要打包push模块才行。
 * hello uni-push是可跑通的参考代码。[https://gitcode.net/dcloud/hello-uni-push](https://gitcode.net/dcloud/hello-uni-push)
+* 部分手机创建本地通知时，App如果在后台状态，点击通知消息并不会拉起App，原因是厂商增加了后台弹窗权限，需要用户手动打开此权限。

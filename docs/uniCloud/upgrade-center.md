@@ -19,7 +19,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 
 从 uni-upgrade-center `v0.7.0` 版本起，开始支持uni-app x。
 
-为了一套代码同时兼容uni-app和uni-app x，升级中心原本的 js 文件改为了 ts 文件（注：uni-app 的 vue2 模式不支持在 nvue 页面中使用 ts）。如果开发者的项目下未使用ts，那么需要增加ts编译。HBuilderX项目会自动加载ts编译器，cli项目则需要自己手动配置。
+为了一套代码同时兼容uni-app和uni-app x，升级中心原本的 js 文件改为了 ts 文件。如果开发者的项目下未使用ts，那么需要增加ts编译。HBuilderX项目会自动加载ts编译器，cli项目则需要自己手动配置。
 
 ### 为什么需要升级中心？
 
@@ -246,6 +246,7 @@ App升级中心 uni-upgrade-center，提供了 App 的版本更新服务。包�
 6. 将`@/uni_modules/uni-upgrade-center-app/utils/check-update` 使用 import 导入到需要用到的地方调用一下即可（一般在首页调用或设置页面检查更新按钮调用）：
    1. 使用方式：`import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update'`，然后在需要的执行的地方调用 `checkUpdate` 方法即可
    2. 默认使用当前绑定的服务空间，如果要请求其他服务空间，可以使用其他服务空间的 `callFunction`。[详情](https://uniapp.dcloud.io/uniCloud/cf-functions.html#call-by-function-cross-space)
+   3. **注：** uni-app 的 vue2 模式不支持在 nvue 页面中使用 ts，请引入用插件根目录 `utils/check-update-nvue.js` 文件
 
 7. 升级弹框可自行编写，也可以使用`uni.showModal`，或使用现有的升级弹框样式，如果不满足UI需求请自行替换 `static` 目录下的资源文件。在`utils/check-update.ts`中都有实例。
 

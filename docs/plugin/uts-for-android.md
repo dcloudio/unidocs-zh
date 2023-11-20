@@ -325,11 +325,7 @@ The location of the complete code in hello uts:
 ```json
 {
 	"dependencies": [
-		"androidx.recyclerview:recyclerview:1.0.0",
-		{
-			"id": "com.squareup.leakcanary-debug", 
-			"source": "debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'"
-		}
+		"androidx.recyclerview:recyclerview:1.0.0"
 	]
 }
 

@@ -29,7 +29,7 @@ This product has the following features:
 
 从 uni-upgrade-center `v0.7.0` 版本起，开始支持uni-app x。
 
-为了一套代码同时兼容uni-app和uni-app x，升级中心原本的 js 文件改为了 ts 文件。如果开发者的项目下未使用ts，那么需要增加ts编译。HBuilderX项目会自动加载ts编译器，cli项目则需要自己手动配置。
+为了一套代码同时兼容uni-app和uni-app x，升级中心原本的 js 文件改为了 ts 文件（注：uni-app 的 vue2 模式不支持在 nvue 页面中使用 ts）。如果开发者的项目下未使用ts，那么需要增加ts编译。HBuilderX项目会自动加载ts编译器，cli项目则需要自己手动配置。
 
 ### 为什么需要升级中心？
 ### Why do I need an upgrade center?

@@ -452,12 +452,16 @@ The format is "Service Space ID": "URLized Address"
 [点击此处进入服务空间列表](https://unicloud.dcloud.net.cn/home)，找到你项目用的服务空间，点击服务空间名称进入空间详情页，点击左侧菜单【云函数/云对象】- 点击【uni-pay-co】云对象右侧的【详情】按钮
 [Click here to enter the service space list](https://unicloud.dcloud.net.cn/home), find the service space used by your project, click the service space name to enter the space details page, and click the left menu [Cloud Function/ Cloud Object] - Click the [Details] button on the right side of the [uni-pay-co] cloud object
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-5.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-5.png"/>
+</div>
 
 进入详情后，点下面的【复制路径】，复制的内容就是【URL化地址】
 After entering the details, click [Copy Path] below, and the copied content is [URL Address]
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-6.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-6.png"/>
+</div>
 
 ### 分渠道支付配置示例@config-part
 ### Sub-channel payment configuration example @config-part
@@ -2567,7 +2571,9 @@ At the same time, create an empty json file, copy the following content into the
 ### 收款趋势
 ### Payment trend
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101.png"/>
+</div>
 
 **概况**
 **Overview**
@@ -2575,7 +2581,9 @@ At the same time, create an empty json file, copy the following content into the
 在`概况`栏目中可以直观的看到今日、昨日、前日、本周、本月、本季度、本年度、累计数据。
 In the `Overview` column, you can intuitively see the data of today, yesterday, the day before yesterday, this week, this month, this quarter, this year, and the cumulative data.
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-01.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-01.png"/>
+</div>
 
 **名词解释：**
 **Glossary:**
@@ -2596,7 +2604,9 @@ In the `Overview` column, you can intuitively see the data of today, yesterday, 
 在`今日数据`栏目中可以看到更多今日统计数据。
 You can see more today's statistics in the `Statistics of the day` column.
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-02.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-02.png"/>
+</div>
 
 **名词解释：**
 **Glossary:**
@@ -2740,7 +2750,9 @@ module.exports = {
 微信小程序支付除了配置uni-pay的支付配置外，还需要配置 `manifest.json` 内的 微信小程序appid，如下图所示。
 In addition to configuring the payment configuration of uni-pay for WeChat MiniApp payment, you also need to configure the WeChat MiniApp appid in `manifest.json`, as shown in the figure below.
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-7.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-7.png"/>
+</div>
 
 如果报如下错误，请点[这里](#question-mp-weixin-domain)
 If the following error is reported, please click [here](#question-mp-weixin-domain)
@@ -2753,7 +2765,10 @@ If the following error is reported, please click [here](#question-mp-weixin-doma
 APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付模块，如下图所示。
 In addition to configuring the payment configuration of uni-pay for APP payment, it is also necessary to add a payment module when packaging, as shown in the figure below.
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-8.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-8.png"/>
+</div>
+
 
 同时，还需要打自定义基座（包名需要和开放平台下填写的一致），且你在开放平台下的这个应用必须通过审核才可以。（比如微信开放平台下的APP应用显示通过审核才可以）
 At the same time, you also need to create a custom base (the package name needs to be the same as that filled in under the open platform), and your application under the open platform must pass the review. (For example, the APP application under the WeChat open platform only shows that it has passed the review)
@@ -2914,7 +2929,9 @@ This is because the domain name developed by the cloud has not been added to the
 https://api.next.bspapp.com;https://api.bspapp.com;https://tcb-api.tencentcloudapi.com;
 ```
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-31.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-31.png"/>
+</div>
 
 **添加完域名后，一定要重启微信开发者工具，然后去手机微信里删除最近使用的小程序（这一步很关键），最后重新扫二维码进入小程序。**
 **After adding the domain name, be sure to restart the WeChat developer tools, then delete the recently used MiniApp in the mobile phone WeChat (this step is critical), and finally scan the QR code to enter the MiniApp. **

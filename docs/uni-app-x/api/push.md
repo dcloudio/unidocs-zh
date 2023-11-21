@@ -145,3 +145,4 @@ hello uni-push是可跑通、同时包含客户端和服务器完整流程的代
 * uni-push是一个独立的模块，在标准基座中并不包含。开发push需要首先编写push相关代码，然后打包自定义基座，根据摇树规则，打出的自定义基座才会包含push模块。详见[摇树](../manifest.md#treeShaking)
 * 创建本地通知栏，理论上可以和个推的服务无关。但目前也都包含在push模块里了。如果您不需要服务器推送，只需要本地创建通知栏，也需要打包push模块才行。
 * 部分手机创建本地通知时，App如果在后台状态，点击通知消息并不会拉起App，原因是厂商增加了后台弹窗权限，需要用户手动打开此权限。
+* 获取手机端app是否拥有push权限，请使用API [uni.getAppAuthorizeSetting](get-app-authorize-setting.md)

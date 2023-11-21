@@ -200,3 +200,5 @@ easycom是uni-app提供的一种简化组件使用的方式。一般情况下组
 <!-- PAGESJSON.pages_easycom.table -->
 
 <!-- PAGESJSON.pages_easycom.compatibility -->
+
+<!-- PAGESJSON.tutorial -->

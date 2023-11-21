@@ -157,6 +157,8 @@ console.log(globalRegex.test(str));
 ```
 <!-- UTSJSON.RegExp.test.compatibility -->
 
+<!-- UTSJSON.RegExp.tutorial -->
+
 ## Bug & Tips@tips
 
 * 目前 RegExp 类型编译到 kotlin 为 io.dcloud.uts.UTSRegExp

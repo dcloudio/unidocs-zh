@@ -25,10 +25,10 @@ const person: UTSJSONObject = {
 
 // 写法1 推荐
 const person: UTSJSONObject = JSON.parseObject('{"name":"Tom"}')!
-	
+
 // 写法2 推荐
 const person: UTSJSONObject = JSON.parse<UTSJSONObject>('{"name":"Tom"}')!
-	
+
 
 // 写法3  如果 as 转换的实际类型不匹配 会导致 crash，建议先通过 `instanceof` 判断类型再进行as转换。
 const parseRet = JSON.parse('{"name":"Tom"}')
@@ -107,7 +107,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getString.compatibility -->
 
-### getJSON(key): UTSJSONObject | null	
+### getJSON(key): UTSJSONObject | null
 
 <!-- UTSJSON.UTSJSONObject.getJSON.description -->
 
@@ -117,7 +117,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getJSON.compatibility -->
 
-### getArray(key): Array<any> | null	
+### getArray(key): Array<any> | null
 
 <!-- UTSJSON.UTSJSONObject.getArray.description -->
 
@@ -127,7 +127,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getArray.compatibility -->
 
-### getArray(key): Array<T> | null	
+### getArray(key): Array<T> | null
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.description -->
 
@@ -143,17 +143,17 @@ person['name'] = 'Tom'
 
 let obj = JSON.parseObject('{"name":"tom","tag":["student","user"]}')
 
-// 这里得到是 Array<*> 
+// 这里得到是 Array<*>
 let noGenericArray = obj!.getArray("tag")
 console.log(noGenericArray)
 
-// 这里得到是 Array<string> 
+// 这里得到是 Array<string>
 let genericArray = obj!.getArray<string>("tag")
 console.log(genericArray)
 
 ```
 
-### toMap(): Map<string, any>	
+### toMap(): Map<string, any>
 
 <!-- UTSJSON.UTSJSONObject.toMap.description -->
 
@@ -169,3 +169,6 @@ person.toMap().forEach((value, key) => {
 ```
 
 <!-- UTSJSON.UTSJSONObject.toMap.compatibility -->
+
+<!-- UTSJSON.UTSJSONObject.tutorial -->
+

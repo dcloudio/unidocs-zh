@@ -13,3 +13,5 @@
 <!-- UTSJSON.UTSAndroidHookProxy.onCreate.returnValue -->
 
 <!-- UTSJSON.UTSAndroidHookProxy.onCreate.compatibility -->
+
+<!-- UTSJSON.UTSAndroidHookProxy.tutorial -->

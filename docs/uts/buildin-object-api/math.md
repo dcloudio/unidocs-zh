@@ -775,3 +775,5 @@ console.log(Math.tan(1));
 // expected output: 1.5574077246549023
 ```
 <!-- UTSJSON.Math.tan.compatibility -->
+
+<!-- UTSJSON.Math.tutorial -->

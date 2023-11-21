@@ -42,7 +42,7 @@ console.log(a.toInt());
 
 // Int最大值2147483647,溢出了
 let b = 2147483648
-// expected output: -2147483648 
+// expected output: -2147483648
 ```
 
 <!-- UTSJSON.Number.toInt.compatibility -->
@@ -239,3 +239,5 @@ console.log(b);
 // expected output: 12
 
 ```
+
+<!-- UTSJSON.Number.tutorial -->

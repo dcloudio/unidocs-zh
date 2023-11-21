@@ -579,6 +579,20 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 
 <!-- UTSJSON.Array.includes.compatibility -->
 
+### toKotlinList()
+
+<!-- UTSJSON.Array.toKotlinList.description -->
+
+<!-- UTSJSON.Array.toKotlinList.param -->
+
+<!-- UTSJSON.Array.toKotlinList.returnValue -->
+
+<!-- UTSJSON.Array.toKotlinList.compatibility -->
+
+<!-- UTSJSON.Array.toKotlinList.tutorial -->
+
+<!-- UTSJSON.Array.tutorial -->
+
 ## 常见操作
 
 - 创建数组

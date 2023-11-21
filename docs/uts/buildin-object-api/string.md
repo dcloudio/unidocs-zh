@@ -490,3 +490,5 @@ console.log(sentence.toUpperCase());
 <!-- UTSJSON.String.at.returnValue -->
 
 <!-- UTSJSON.String.at.compatibility -->
+
+<!-- UTSJSON.String.tutorial -->

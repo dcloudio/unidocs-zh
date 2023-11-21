@@ -53,3 +53,5 @@
 <!-- UTSJSON.Console.warn.returnValue -->
 
 <!-- UTSJSON.Console.warn.compatibility -->
+
+<!-- UTSJSON.Console.tutorial -->

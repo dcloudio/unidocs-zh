@@ -11,7 +11,7 @@ uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
 <div class="quick">
   <div style="margin-top: 20px;justify-content: space-around;">
     <a
-      href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk"
+      href="https://assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk"
       target="_blank"
       style="display: flex; align-items: center;flex-direction: column;margin: 0 5px 20px;width:160px;"
       one-link-mark="yes"

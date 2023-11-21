@@ -2640,7 +2640,9 @@ You can see more today's statistics in the `Statistics of the day` column.
 在`趋势图`栏目中以`天维度`、`月维度`、`季维度`、`年维度`进行趋势统计。可以直观的看到收入的增长趋势。
 In the column of `Trend Chart`, carry out trend statistics by `Day Dimension`, `Month Dimension`, `Quarter Dimension`, `Year Dimension`. You can intuitively see the growth trend of income.
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-03.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-03.png"/>
+</div>
 
 ### 转换漏斗分析
 ### Conversion Funnel Analysis
@@ -2648,7 +2650,9 @@ In the column of `Trend Chart`, carry out trend statistics by `Day Dimension`, `
 可以为您分析指定时间段的支付转化率，同时展示支付转化率趋势图。
 It can analyze the payment conversion rate of the specified time period for you, and display the payment conversion rate trend graph at the same time.
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A102.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A102.png"/>
+</div>
 
 **名词解释：**
 **Glossary:**
@@ -2670,7 +2674,10 @@ It can analyze the payment conversion rate of the specified time period for you,
 可以为您快速筛选高价值用户，高复购率用户。
 It can quickly screen high-value users and users with high repurchase rate for you.
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A103.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A103.png"/>
+</div>
+
 
 ### 订单明细
 ### Order Details
@@ -2678,7 +2685,9 @@ It can quickly screen high-value users and users with high repurchase rate for y
 可以搜索、查看订单详情
 Can search and view order details
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A104.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A104.png"/>
+</div>
 
 
 ## 注意事项@tips

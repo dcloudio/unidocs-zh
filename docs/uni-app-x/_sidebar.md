@@ -1,5 +1,6 @@
 * [概述](README.md)
 * [项目](project.md)
+* [页面](page.md)
 * 教程
   * [与js开发的差别](tutorial/codegap.md)
   * [request联网教程](tutorial/request.md)
@@ -17,7 +18,6 @@
   * [manifest.json](manifest.md)
   * [AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
   * [uni.scss](https://uniapp.dcloud.net.cn/collocation/uni-scss.html)
-* [页面](page.md)
 * vue框架
   * [概述](vue/README.md)
   <!-- * [基础](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html)

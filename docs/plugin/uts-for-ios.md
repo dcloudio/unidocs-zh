@@ -973,6 +973,6 @@ These issues will be optimized in subsequent versions
 ## 8 有关Swift语言创建的Framework和.a的Swift版本兼容性问题
 
 - 由于高版本XCode编译的Swift语言Framework动态库、静态库、.a库在低版本XCode上无法编译通过，因此存在Swift版本兼容性问题;
-- 目前打包机使用的XCode版本号是13.2.1，对应的Swift版本是5.5.2;
+- 目前打包机使用的XCode版本号是14.2，对应的Swift版本是5.7.2;
 - 请在编译Swift相关Framework和.a库时选择和打包机相同或者更低版本的XCode;
 - 选择比打包机更低版本XCode编译Swift库时请在Target->buildSettings设置Buid Libraries for Distribution 为Yes。

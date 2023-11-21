@@ -78,7 +78,8 @@
   * [业务文档](/unipush-v2.md)
   * 开发文档  
     * [服务端api](uni-cloud-push/api.md)  
-    * [客户端api](/api/plugins/push.md)
+    * [uni-app客户端api](/api/plugins/push.md)
+    * [uni-app x客户端api](https://uniapp.dcloud.net.cn/uni-app-x/api/push.html)
   * [uni-push、uni-id、uni统计的协作](uni-cloud-push/mate.md)
   * [扩展参数](uni-cloud-push/options.md)
 * [运行与调试](rundebug.md)

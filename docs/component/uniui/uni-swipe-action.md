@@ -115,7 +115,7 @@ export default {
 |属性名|类型|可选值|默认值|是否必填|说明|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |show|String|left/right/none|none	|否|开启关闭组件，auto-close = false 时生效|
-|threshold|Number|-|20|否|滑动阙值|
+|threshold|Number|-|20|否|滑动阈值|
 |disabled|Boolean|-|false|否|是否禁止滑动|
 |autoClose|Boolean|-|true|否|其他组件开启的时候，当前组件是否自动关闭，**注意：长列表使用会有性能问题**|
 |left-options|Array/Object	|-|-|否|左侧选项内容及样式|

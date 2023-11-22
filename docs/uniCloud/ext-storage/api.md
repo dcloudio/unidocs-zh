@@ -22,11 +22,11 @@
 
 ## 开通扩展存储服务@open
 
-参考[开通服务](uniCloud/uni-cloud-ext-storage/open.md)
+参考[开通服务](uniCloud/ext-storage/open.md)
 
-## 费用说明@fee
+## 费用说明@price
 
-参考[费用说明](uniCloud/uni-cloud-ext-storage/fee.md)
+参考[费用说明](uniCloud/ext-storage/price.md)
 
 ## 为云函数启用uni-cloud-ext-storage扩展库@use-in-function
 
@@ -303,3 +303,18 @@ return res;
 |:-:	|:-:		|:-:								|
 |errCode	|Number	|0 成功 其他均为失败|
 |errMsg	|String	|失败描述|
+
+
+## 常见问题
+
+### 扩展存储可以当前端托管使用吗？
+
+扩展存储不支持当前端托管使用，只适合当云存储使用
+
+### 使用扩展存储一定缴纳保证金吗？
+
+是的，因为扩展存储是延迟计费，可能会出现账户欠费的情况，因此需要缴纳保证金，如果之前开通其他服务已缴纳过保证金，则无需再缴纳保证金
+
+### 为什么在浏览器直接访问图片地址，地址会进行302重定向？
+
+这是正常的，它不会影响图片显示和视频播放以及文件下载

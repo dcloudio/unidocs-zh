@@ -130,7 +130,7 @@ DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授�
 
 - 腾讯地图商业授权现优惠政策：买1年送1个月，买2年送1年。如需购买，请速扫以下二维码咨询与购买！
 
-![]()
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/sc-weixin.png)
 
 **注意骗局**
 

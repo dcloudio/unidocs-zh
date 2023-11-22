@@ -137,6 +137,7 @@ uni.chooseLocation({
 - `微信内置浏览器` 中可使用微信js sdk，[详见](https://ask.dcloud.net.cn/article/35380)
 - chooseLocation 属于封装型API，开发者若觉得不够灵活，可自行基于原始的 map 组件进行封装。插件市场已经有各种封装样例了。
 - 若 `Android App端` 位置不准，见上文 uni.getLocation 的注意事项
+- 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
 ### 三方定位和地图服务收费说明
 

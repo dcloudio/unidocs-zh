@@ -11,7 +11,7 @@ uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
 <div class="quick">
   <div style="margin-top: 20px;justify-content: space-around;">
     <a
-      href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk"
+      href="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk"
       target="_blank"
       style="display: flex; align-items: center;flex-direction: column;margin: 0 5px 20px;width:160px;"
       one-link-mark="yes"
@@ -214,7 +214,7 @@ uni.的api，大多是uts开发的，它们会陆续开源在[uni-api](https://g
 - manifest.json 仅支持基本的名称图标配置，暂未支持splash，但uni-app x项目打包后启动速度飞快，没有splash也无所谓。[详见](manifest.md)
 - AndroidManifest.xml 与原生开发相同。注意Android权限配置在这里配置，而不是在manifest.json中 [详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
 - app.uvue 不支持globaldata。[详见](../collocation/App.md)
-- pages.json 不支持app-plus的内容。[详见](../collocation/pages.md)
+- pages.json 不支持app-plus的内容。[详见](pagesjson.md)
 - uni.scss 正常支持。但注意uvue仅能使用[css子集](css/README.md)
 
 ## 7. 插件生态
@@ -304,7 +304,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   开发期间可以热刷，但打包后不能热更新。开发者可自行封装原生的插件动态加载方案。
 
 - uni-app x 会搞插件大赛吗？
-  会。很快启动，鼓励大家做基于uts和uvue的插件。
+  已经启动。欢迎大家做基于uts和uvue的插件。[详情](https://ask.dcloud.net.cn/article/40812)
 
 - uni-app x 能调用所有原生API吗？
   可以。在app端，kotlin和swift能调的，uts就能调。

@@ -50,6 +50,8 @@ sequenceDiagram
 
 ### 客户端接口
 
+uni-app x的客户端API文档[另见](https://uniapp.dcloud.net.cn/uni-app-x/api/facial-recognition-verify.html)
+
 #### 获取实人认证设备信息@get-meta-info
 调用刷脸前通过客户端先获取设备信息，调用[uni.getFacialRecognitionMetaInfo](https://uniapp.dcloud.net.cn/api/plugins/facialRecognitionVerify.html)  
 
@@ -206,6 +208,7 @@ frvManager.getCertifyId(Object GetCertifyIdOptions)
 |idCard			|String	|是		|-			|用户身份证号									|
 |metaInfo		|String	|是		|-			|客户端获取设备信息返回的metaInfo	|
 |needPicture|Boolean|否		|false	|是否需要采集用户照片					|
+|model      |String |否		|false	|`HBuilderX 3.91及以上版本支持`要进行活体检测的类型：LIVENESS（默认）：眨眼动作活体检测，PHOTINUS_LIVENESS：眨眼动作活体+炫彩活体双重检测，MULTI_ACTION：多动作活体检测。当前为眨眼+任意摇头检测					|
 
 **返回值**
 

@@ -362,11 +362,15 @@ module.exports = {
 
 [点击此处进入服务空间列表](https://unicloud.dcloud.net.cn/home)，找到你项目用的服务空间，点击服务空间名称进入空间详情页，点击左侧菜单【云函数/云对象】- 点击【uni-pay-co】云对象右侧的【详情】按钮
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-5.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-5.png"/>
+</div>
 
 进入详情后，点下面的【复制路径】，复制的内容就是【URL化地址】
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-6.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-6.png"/>
+</div>
 
 ### 分渠道支付配置示例@config-part
 
@@ -2124,13 +2128,17 @@ this.$refs.pay.createOrder({
 
 ### 收款趋势
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101.png"/>
+</div>
 
 **概况**
 
 在`概况`栏目中可以直观的看到今日、昨日、前日、本周、本月、本季度、本年度、累计数据。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-01.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-01.png"/>
+</div>
 
 **名词解释：**
 
@@ -2144,7 +2152,9 @@ this.$refs.pay.createOrder({
 
 在`今日数据`栏目中可以看到更多今日统计数据。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-02.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-02.png"/>
+</div>
 
 **名词解释：**
 
@@ -2169,13 +2179,17 @@ this.$refs.pay.createOrder({
 
 在`趋势图`栏目中以`天维度`、`月维度`、`季维度`、`年维度`进行趋势统计。可以直观的看到收入的增长趋势。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-03.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A101-03.png"/>
+</div>
 
 ### 转换漏斗分析
 
 可以为您分析指定时间段的支付转化率，同时展示支付转化率趋势图。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A102.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A102.png"/>
+</div>
 
 **名词解释：**
 
@@ -2189,13 +2203,18 @@ this.$refs.pay.createOrder({
 
 可以为您快速筛选高价值用户，高复购率用户。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A103.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A103.png"/>
+</div>
+
 
 ### 订单明细
 
 可以搜索、查看订单详情
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A104.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E6%94%AF%E4%BB%98%E7%BB%9F%E8%AE%A104.png"/>
+</div>
 
 
 ## 注意事项@tips
@@ -2232,7 +2251,9 @@ module.exports = {
 
 微信小程序支付除了配置uni-pay的支付配置外，还需要配置 `manifest.json` 内的 微信小程序appid，如下图所示。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-7.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-7.png"/>
+</div>
 
 如果报如下错误，请点[这里](#question-mp-weixin-domain)
 
@@ -2242,7 +2263,10 @@ module.exports = {
 
 APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付模块，如下图所示。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-8.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-8.png"/>
+</div>
+
 
 同时，还需要打自定义基座（包名需要和开放平台下填写的一致），且你在开放平台下的这个应用必须通过审核才可以。（比如微信开放平台下的APP应用显示通过审核才可以）
 
@@ -2346,6 +2370,8 @@ APP支付除了配置uni-pay的支付配置外，还需要打包时添加支付�
 https://api.next.bspapp.com;https://api.bspapp.com;https://tcb-api.tencentcloudapi.com;
 ```
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-31.png)
+<div align=center>
+	<img class="zooming" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-pay-31.png"/>
+</div>
 
 **添加完域名后，一定要重启微信开发者工具，然后去手机微信里删除最近使用的小程序（这一步很关键），最后重新扫二维码进入小程序。**

@@ -1,4 +1,4 @@
-## 开通服务@open
+## 开通服务
 
 1. 登录[uniCloud web控制台](https://unicloud.dcloud.net.cn/)
 2. 选择一个服务空间

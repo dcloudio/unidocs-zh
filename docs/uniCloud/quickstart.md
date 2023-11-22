@@ -10,14 +10,14 @@ Hello uniCloud，是一个示例，演示了 uniCloud 的各种能力。
 Hello uniCloud部署了2套，分别连接uniCloud的阿里云版和腾讯云版。
 
 - h5版地址（发布在uniCloud的前端网页托管上）
-	* Hello uniCloud 支付宝小程序云版地址：暂未提供
+	* Hello uniCloud 支付宝小程序云版地址：[https://hellounicloud.dcloud.net.cn/alipay/](https://hellounicloud.dcloud.net.cn/alipay/#/)
 	* Hello uniCloud 阿里云版地址：[https://hellounicloud.dcloud.net.cn/#/](https://hellounicloud.dcloud.net.cn/#/)
 	* Hello uniCloud 腾讯云版地址：[https://hellounicloud.dcloud.net.cn/tcb/](https://hellounicloud.dcloud.net.cn/tcb/)
 	
 	由于该示例未适配pc宽屏，如使用pc浏览器打开地址，建议F12打开控制台，使用手机模式预览。
 	
 - apk地址（发布在uniCloud的云存储上）
-	* Hello uniCloud 支付宝小程序云版地址：暂未提供
+	* Hello uniCloud 支付宝小程序云版地址：[apk下载](https://env-00jx4sbgbkj5.normal.cloudstatic.cn/apk/__UNI__HelloUniCloud_1113203614.apk)
 	* Hello uniCloud 阿里云版地址：[apk下载](https://m3w.cn/__uni__5c6d4e4)
 	* Hello uniCloud 腾讯云版地址：[apk下载](https://vkceyugu.cdn.bspapp.com/VKCEYUGU-1a10688c-0b30-4aaa-bbc1-7f4948cc562a/bdf452e4-3a0d-49cb-9a97-8e1aa6572758.apk)
 

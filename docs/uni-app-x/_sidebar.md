@@ -1,8 +1,10 @@
 * [概述](README.md)
 * [项目](project.md)
+* [页面](page.md)
 * 教程
   * [与js开发的差别](tutorial/codegap.md)
   * [request联网教程](tutorial/request.md)
+  * [复杂列表开发指南](tutorial/stickynestlist.md)
   * [全局变量与状态管理](tutorial/store.md)
   * [几种组件标记的概念澄清](tutorial/idref.md)
 * 编译器
@@ -16,7 +18,6 @@
   * [manifest.json](manifest.md)
   * [AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
   * [uni.scss](https://uniapp.dcloud.net.cn/collocation/uni-scss.html)
-* [页面](https://uniapp.dcloud.net.cn/tutorial/page.html)
 * vue框架
   * [概述](vue/README.md)
   <!-- * [基础](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html)
@@ -28,7 +29,7 @@
   * [view](component/view.md)
   * [scroll-view](component/scroll-view.md)
   * [list-view](component/list-view.md)
-  * [sticky-header](component/sticky-header.md)
+  * [sticky](component/sticky.md)
   * [swiper](component/swiper.md)
   * [navigator](component/navigator.md)
   * [text](component/text.md)
@@ -89,15 +90,19 @@
     * [安装 APK](api/install-apk.md)
     * [wifi](api/wifi.md)
     * [内存](api/memory.md)
-    * [实人认证](api/facial-recognition-verify.md)
+    * [截屏事件](api/capturescreen.md)
   * 媒体
     * [拍照和相册选择](api/choose-image.md)
     * [图片预览](api/preview-image.md)
     * [保存图片到相册](api/save-image-to-photos-album.md)
   * 位置
     * [获取当前位置](api/get-location.md)
+  * 推送
+    * [推送](api/push.md)
   * 数据存储
     * [storage（key-value存储）](api/storage.md)
+  * 登录和验证
+    * [实人认证](api/facial-recognition-verify.md)
   * 组件上下文对象
     * [web-view组件上下文对象](api/create-webview-context.md)
     * [video组件上下文对象](api/create-video-context.md)

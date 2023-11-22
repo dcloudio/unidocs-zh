@@ -29,6 +29,7 @@
 	+ 找回密码（仅账号有绑定手机号码可见）
 	+ 退出登录
 	+ 注销账号（上架国内App应用市场必备）
+    + 实名认证 ([详见文档](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#frv))
 - 用户服务协议和隐私政策条款授权
 
 
@@ -77,9 +78,10 @@
 │		     │   └── userinfo                             用户信息页面
 │		     │       ├── bindMobile                       绑定手机号码页面
 │		     │       ├── deactivate                       注销账号页面
+│		     │       ├── realNameAuth                     实名认证页面
 │		     │       └─ setNickname                       设置昵称页面
 │		     ├── static                                   静态资源目录
-│		     │   ├── app                                  App专用资源目录
+│		     │   ├── app-plus                             App专用资源目录
 │		     │   ├── fonts                                字体资源目录
 │		     │   └── login                                登录方式图标资源目录
 │		     ├── store.uts                                状态管理文件
@@ -204,10 +206,11 @@ export default {
 
 **scopeList 说明：**
 
-|字段			|类型		|描述																									|
-|--				|--			|--																										|
-|register	|String	|注册（包括注册并登录，如：微信登录、苹果登录、短信验证码登录）	|
-|login		|String	|登录（如：用户名密码登录）																|
+|字段			|类型		| 描述																									      |
+|--				|--			|----------------------------------|
+|register	|String	| 注册（包括注册并登录，如：微信登录、苹果登录、短信验证码登录）	 |
+|login		|String	| 登录（如：用户名密码登录）																    |
+|realNameVerify		|String	| 实人认证																             |
 
 要上架到国内应用商店必须提供《隐私政策和用户使用协议》，参考模版：[隐私权政策模板.zip](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96%E6%A8%A1%E6%9D%BF.zip)
 

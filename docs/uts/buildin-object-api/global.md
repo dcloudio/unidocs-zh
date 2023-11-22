@@ -14,6 +14,8 @@
 
 <!-- UTSJSON.Global.parseInt.compatibility -->
 
+<!-- UTSJSON.Global.parseInt.tutorial -->
+
 **注意**
 
 - 该方法仅支持对 string 类型的解析，传入其他类型会编译报错。字符串开头的空白符将会被忽略。
@@ -47,6 +49,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 
 <!-- UTSJSON.Global.parseFloat.compatibility -->
 
+<!-- UTSJSON.Global.parseFloat.tutorial -->
+
 - 注意： 该方法仅支持对 string 类型的解析，传入其他类型会编译报错。
 
 ### isNaN(number)
@@ -59,6 +63,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 
 <!-- UTSJSON.Global.isNaN.compatibility -->
 
+<!-- UTSJSON.Global.isNaN.tutorial -->
+
 ### isFinite(number)
 
 <!-- UTSJSON.Global.isFinite.description -->
@@ -68,6 +74,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.isFinite.returnValue -->
 
 <!-- UTSJSON.Global.isFinite.compatibility -->
+
+<!-- UTSJSON.Global.isFinite.tutorial -->
 
 ### decodeURI(encodedURI)
 
@@ -79,6 +87,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 
 <!-- UTSJSON.Global.decodeURI.compatibility -->
 
+<!-- UTSJSON.Global.decodeURI.tutorial -->
+
 ### decodeURIComponent(encodedURIComponent)
 
 <!-- UTSJSON.Global.decodeURIComponent.description -->
@@ -88,6 +98,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.decodeURIComponent.returnValue -->
 
 <!-- UTSJSON.Global.decodeURIComponent.compatibility -->
+
+<!-- UTSJSON.Global.decodeURIComponent.tutorial -->
 
 ### encodeURI(uri)
 
@@ -99,6 +111,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 
 <!-- UTSJSON.Global.encodeURI.compatibility -->
 
+<!-- UTSJSON.Global.encodeURI.tutorial -->
+
 ### encodeURIComponent(uriComponent)
 
 <!-- UTSJSON.Global.encodeURIComponent.description -->
@@ -108,3 +122,5 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.encodeURIComponent.returnValue -->
 
 <!-- UTSJSON.Global.encodeURIComponent.compatibility -->
+
+<!-- UTSJSON.Global.encodeURIComponent.tutorial -->

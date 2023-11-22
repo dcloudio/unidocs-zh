@@ -1,3 +1,48 @@
+#### 3.98.2023112011-alpha
+* 【uni-app】
+  + 优化 编译时如 static 目录下存在被忽略的、非当前平台可用的目录，会给出强调提示 [详情](https://uniapp.dcloud.net.cn/tutorial/platform.html#static)
+  + 修复 当项目使用了uni ext api时，且云打包同时勾选Android和iOS，发行后的安装包未能正确包含uni ext api插件的Bug [详情](https://ask.dcloud.net.cn/question/181295)
+  + uni统计2 修复 支付宝小程序云报错 spaceAppId required 的bug [详情](https://ask.dcloud.net.cn/question/181491)
+* 【uni-app x插件】
+  + 优化 编译器 项目存在大量css代码时的编译速度
+  + 新增 组件 sticky-section 分段吸顶 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/sticky.html#sticky-section)
+  + 新增 API uni-push [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/push.html)
+  + 新增 css position 属性设置为 absolute 时，margin 支持取值 auto
+  + 调整 API uni.downloadFile 下载默认目录调整为app的cache目录下的uniDownloads目录，方便被rom的清理工具清理
+  + 修复 组件 video 部分 event 回调没有属性值的Bug[详情](https://ask.dcloud.net.cn/question/180748)
+  + 修复 组件 swiper current 属性可能不生效的Bug[详情](https://ask.dcloud.net.cn/question/181396)
+  + 修复 组件 list-item 执行复用时遇到 text 组件嵌套可能会闪退的Bug
+  + 修复 组件 checkbox-group 动态修改 checkbox 组件的 check 属性时，form 组件提交的 value 不正确的Bug
+  + 修复 组件 radio-group 动态修改 radio 组件的 check 属性时，form 组件提交的 value 不正确的Bug
+  + 修复 组件 slider 当父容器可滚动且显示 value 且当前滑块值为最大值时，无法直接在滑块的右半径上按下拖动的Bug
+  + 修复 组件 scroll-view、list-view 同时设置 scroll-y、scroll-x属性为 false 时，组件的 touch 相关事件不触发的Bug
+  + 修复 easycom组件类型在非uvue页面中使用报错的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=177)
+  + 修复 3.97引出的 首页面 onLoad 生命周期调用 uni.showLoading 可能会崩溃的Bug [详情](https://ask.dcloud.net.cn/question/181567)
+  + 修复 css 代码中引用非 static 目录的静态资源失败的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=231)
+  + 调整 各项目模板的 index.html （web平台专有文件）中引入入口文件从 main.js 改为 main（即main.uts，后缀可省略）
+  + 新增 模板 App升级中心兼容uni-app x [详见](https://ext.dcloud.net.cn/plugin?id=4542)
+  + 新增 模板 uni-id-pages-x [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/app-x.html)
+* 【uts插件】
+  + 优化 异步函数在 uni-app x 中使用时默认与框架运行在同一线程
+  + 修复 部分位运算组合使用时优先级不正确的Bug
+  + 修复 App-Android平台 Array join 返回值与 web 不一致的Bug
+  + 修复 自定义基座真机运行时hooksClass 相关回调重复调用的Bug
+  + 修复 App-iOS平台 使用 uts 插件（含ext api）后因底层依赖 uni-getDeviceInfo 有读取 IDFA 的代码导致可能影响应用上架审核的Bug
+  + 修复 Number 参与的运算结果可能整型溢出的Bug
+  + 修复 Number 参与的除法运算除数不能为0的Bug
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 更新 uni-AD 模块 穿山甲&GroMore SDK为 5.7.0.5 版，解决加载广告可能会崩溃的Bug
+* 【uniCloud】
+  + 新增 uni-app-x 项目 支持uniCloud支付宝小程序云
+  + 新增 支付宝小程序云初始化向导
+  + 优化 基于模板新建schema/新建schemajs时，如模板是由多个文件组成的，允许用户选择创建具体的文件
+  + 修复 初始化云数据库时，云端已存在集合触发的弹窗提示中第一个集合默认选中的Bug
+  + 修复 打开db_init.json文件后，在编辑区域右键“初始化数据库”无法初始化的Bug
+  + 修复 对uniCloud文件夹重命名后，不会更新uniCloud文件夹别名的Bug
+  + 修复 上传公共模块时项目目录下不存在uni_modules目录导致无法上传的Bug
+  + 修复 微信小程序平台上传文件到支付宝小程序云报错的Bug
+  + 修复 支付宝小程序云 database update 操作返回值没有返回 updated 参数
+
 #### 3.97.2023110504-alpha
 * 【uni-app】
 * 修复 vue3 项目 vite.config.js 配置 target 未作用到 renderjs 的Bug [详情](https://ask.dcloud.net.cn/question/180135)

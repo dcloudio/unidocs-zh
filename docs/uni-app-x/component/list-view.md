@@ -85,6 +85,10 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 	```
 	示例中有三种类型的list-item组件。如果都不赋值type，list-item组件滑动出屏幕后都归类到type=0的缓存池。当触发list-item组件重新加载时，获取type=0的缓存池的组件，获取到的list-item组件可能是两个text子组件也可能是一个image子组件或一个text子组件，底层复用判断时则认为该情况异常不复用，重新创建新的list-item组件！复用失败未能优化性能。正确的方式则是不同的类型设置不同的type。加载时则会获取对应type类型缓存池中的list-item组件实现复用。
 
+**注意：**
+
+1. 避免对list-item组件的子元素设置event事件，复用后list-item组件部分子元素可能无法正常响应event，有相关业务需要对子元素设置event事件，可对list-item组件设置独立的type实现不复用。
+
 <!-- UTSCOMJSON.list-item.event -->
 
 <!-- UTSCOMJSON.list-item.example -->
@@ -100,37 +104,6 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 - 联网联表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue)
 - 可左右滑动的多个列表：[https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list)
 
-## sticky-header
-
-<!-- UTSCOMJSON.sticky-header.description -->
-
-<!-- UTSCOMJSON.sticky-header.attrubute -->
-
-<!-- UTSCOMJSON.sticky-header.event -->
-
-<!-- UTSCOMJSON.sticky-header.example -->
-
-<!-- UTSCOMJSON.sticky-header.compatibility -->
-
-<!-- UTSCOMJSON.sticky-header.children -->
-
-<!-- UTSCOMJSON.sticky-header.reference -->
-
-## sticky-section
-
-<!-- UTSCOMJSON.sticky-section.description -->
-
-<!-- UTSCOMJSON.sticky-section.attrubute -->
-
-<!-- UTSCOMJSON.sticky-section.event -->
-
-<!-- UTSCOMJSON.sticky-section.example -->
-
-<!-- UTSCOMJSON.sticky-section.compatibility -->
-
-<!-- UTSCOMJSON.sticky-section.children -->
-
-<!-- UTSCOMJSON.sticky-section.reference -->
 
 ### Bug & Tips@tips
 

@@ -44,7 +44,7 @@ set1.add(13);
 set1.forEach((item)=>{
   console.log(item);
   // expected output: 42
-  // expected output: 13  
+  // expected output: 13
 })
 ```
 <!-- UTSJSON.Set.add.compatibility -->
@@ -123,7 +123,9 @@ console.log(set1.has(5));
 console.log(set1.has(6));
 // expected output: false
 ```
-<!-- UTSJSON.Set.has.compatibility -->
+<!-- UTSJSON.Set.has.compatibility -->.
+
+<!-- UTSJSON.Set.tutorial -->
 
 ## Bug & Tips@tips
 

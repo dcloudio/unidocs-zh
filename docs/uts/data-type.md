@@ -535,7 +535,7 @@ const l = b!.length
 <script lang=uts>
 	type PersonType = {
 		id: number,
-	    name: string,
+	  name: string,
 		age: number
 	}
 	export default {
@@ -545,13 +545,12 @@ const l = b!.length
 			}
 		},
 		onLoad() {
-			this.person = JSON.parse(`{
-				id: 1,
-				name: "zhangsan",
-				age: 18,
-				address: {city: "beijing",street: "dazhongsi road"}
-			}`) as PersonType
-			console.log(this.person?.address?.city);
+			this.person = JSON.parse<PersonType>(`{
+				"id": 1,
+				"name": "zhangsan",
+				"age": 18
+			}`)
+			console.log(this.person?.name);
 		}
 	}
 </script>

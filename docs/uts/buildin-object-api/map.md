@@ -155,7 +155,7 @@ console.log(map1.get('key1')) //返回 def
 let map = new Map<string,any>()
 map.set("name","zhangsan")
 map.set("age",12)
-//Map(2) {"name":"zhangsan","age":12} 
+//Map(2) {"name":"zhangsan","age":12}
 console.log(map)
 ```
 - 通过key访问map元素
@@ -189,5 +189,7 @@ map.forEach(function(value:any | null,key:string,map: Map<string,any | null>){
     console.log(key)
     console.log(map)
 })
-	
+
 ```
+
+<!-- UTSJSON.Map.tutorial -->

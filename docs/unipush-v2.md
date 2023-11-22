@@ -232,6 +232,7 @@ uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而u
 
 <img width="50%" style="max-width:260px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/WechatIMG589.jpeg"/>
 
+uni-app x有摇树机制，需要在代码中编写api调用，然后打包就会包含push模块。[详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest#treeShaking)
 
 #### 小程序中使用uni-push2.0的白名单配置@useinmp
 
@@ -371,7 +372,7 @@ uni-id-pages/uni-id-pages-x 已经内置了：在登录账号、退出账号、�
   以上内置逻辑，在uni-id-pages下，会自动判断是否启用push模块自动执行；但uni-id-pages-x下，需手动在:`/uni_modules/uni-id-pages-x/init.uts`导入 autoReportPushClientId 模块。  
 :::
 
-此外uni-push2.0 还提供了uni-admin中的web控制台[uni-push-admin](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)。如图，包含消息推送、推送统计等功能的，
+此外uni-push2.0 还提供了uni-admin中的web控制台[uni-push-admin](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)。包含消息推送、推送统计等功能，而且是开源的，可自定义。如图：
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/f981f620-f9de-11ec-8412-6b7a68f609ab_0.jpg)
 

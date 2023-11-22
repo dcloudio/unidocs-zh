@@ -22,6 +22,8 @@
 
 系统弹窗在部分系统（比如 MIUI,Google）可能会有应用图标前缀。 
 
+系统弹窗在部分系统（比如 鸿蒙 4.0以上）可能不支持顶部和居中展示。 
+
 
 
 ## uni.showLoading(options) @showloading

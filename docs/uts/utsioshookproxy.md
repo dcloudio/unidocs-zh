@@ -144,3 +144,5 @@
 <!-- UTSJSON.UTSiOSHookProxy.applicationContinueUserActivityRestorationHandler.returnValue -->
 
 <!-- UTSJSON.UTSiOSHookProxy.applicationContinueUserActivityRestorationHandler.compatibility -->
+
+<!-- UTSJSON.UTSiOSHookProxy.tutorial -->

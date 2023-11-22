@@ -5,6 +5,10 @@ export default {
       type: 'algolia',
     },
     {
+      text: 'uni-app x',
+      type: 'algolia',
+    },
+    {
       text: 'uniCloud',
       type: 'algolia',
     },

@@ -1,9 +1,5 @@
 ## 费用说明
 
-因阿里云、腾讯云等serverless厂商未针对uniCloud服务空间提供CDN流量包的销售，uniCloud内置云存储的CDN费用，常被开发者吐槽。
-
-为帮助开发者降低费用，DCloud联合业内其它主流CDN厂商，单独提供了价格更便宜、功能更强大的uniCloud扩展存储。
-
 uniCloud扩展存储费用由存储费用和CDN费用两部分组成，其中CDN费用相比业内价格，有巨大优势。
 
 ### CDN费用

@@ -10,7 +10,7 @@
 **注意：**
 - 前端和云函数端，均有一个相同名称的api：`uniCloud.uploadFile`。请不要混淆。
 - 前端还有一个`uni.uploadFile`的API，那个API用于连接非uniCloud的上传使用。请不要混淆。
-- 在使用腾讯云时如果访问云存储文件提示`The requested URL '/1123.jpg' was not found on this server`这种错误，一般是cdn流量用尽导致的。可以升级配置或转为按量计费（目前仅企业类型认证的账号可以使用按量计费的服务空间）。
+- 在使用腾讯云时如果访问云存储文件提示`The requested URL '/1123.jpg' was not found on this server`这种错误，一般是cdn流量用尽导致的，可以升级套餐或转为按量计费。
 - 在允许用户上传图片的应用里，违规检测是必不可少的，为此uniCloud提供了内容安全检测模块，可以很方便的实现图片鉴黄等功能。详情参考：[内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
 
 阿里云的云存储有一些限制：

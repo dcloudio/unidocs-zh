@@ -5,8 +5,8 @@
 `main.js`主要作用是初始化`vue`实例、定义全局组件、使用需要的插件如 i18n、vuex。
 
 首先引入了`Vue`库和`App.vue`，创建了一个`vue`实例，并且挂载`vue`实例。
-
-> uni-app Vue2
+::: preview
+> uni-app（Vue2）
 
 ```js
 import Vue from 'vue'
@@ -24,9 +24,9 @@ app.$mount() //挂载 Vue 实例
 
 ```
 
-> uni-app Vue3
+> uni-app（Vue3）
 
-```JS
+```js
 import App from './App'
 import { createSSRApp } from 'vue'
 import PageHead from './components/page-head.vue' //全局引用 page-head 组件
@@ -41,7 +41,7 @@ export function createApp() {
 }
 ```
 
-> uni-app x 的 main.uts
+> uni-app x（main.uts）
 
 ```ts
 import App from './App'
@@ -57,6 +57,7 @@ export function createApp() {
   }
 }
 ```
+:::
 
 一般情况下，使用easycom比全局组件更常用，easycom按需应用更节省资源。
 

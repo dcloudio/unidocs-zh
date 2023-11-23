@@ -18,9 +18,7 @@ There are 3 ways to upload to cloud storage:
 - 前端和云函数端，均有一个相同名称的api：`uniCloud.uploadFile`。请不要混淆。
 - Both the front end and the cloud function end have an api with the same name: `uniCloud.uploadFile`. Please don't confuse.
 - 前端还有一个`uni.uploadFile`的API，那个API用于连接非uniCloud的上传使用。请不要混淆。
-- The front end also has a `uni.uploadFile` API, which is used to connect to non-uniCloud uploads. Please don't confuse.
-- 在使用腾讯云时如果访问云存储文件提示`The requested URL '/1123.jpg' was not found on this server`这种错误，一般是cdn流量用尽导致的。可以升级配置或转为按量计费（目前仅企业类型认证的账号可以使用按量计费的服务空间）。
-- When using Tencent Cloud, if you access the cloud storage file, the error `The requested URL '/1123.jpg' was not found on this server` is displayed, which is usually caused by the exhaustion of cdn traffic. You can upgrade the configuration or switch to pay-as-you-go (currently, only enterprise-type certified accounts can use the pay-as-you-go service space).
+- 在使用腾讯云时如果访问云存储文件提示`The requested URL '/1123.jpg' was not found on this server`这种错误，一般是cdn流量用尽导致的，可以升级套餐或转为按量计费。
 - 在允许用户上传图片的应用里，违规检测是必不可少的，为此uniCloud提供了内容安全检测模块，可以很方便的实现图片鉴黄等功能。详情参考：[内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
 - In applications that allow users to upload pictures, violation detection is essential. For this reason, uniCloud provides a content security detection module, which can easily implement functions such as image identification. For details, please refer to: [Content Security](https://ext.dcloud.net.cn/plugin?id=5460)
 

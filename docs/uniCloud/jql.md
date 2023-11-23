@@ -1573,8 +1573,7 @@ db.collection('book')
 **注意**
 **Notice**
 
-- limit不设置的情况下默认返回100条数据；设置limit有最大值，腾讯云限制为最大1000条，阿里云限制为最大500条。
-- If the limit is not set, 100 pieces of data are returned by default; if the limit is set, there is a maximum value, which is limited to a maximum of 1,000 for Tencent Cloud and a maximum of 500 for Alibaba Cloud.
+- limit不设置的情况下默认返回100条数据；设置limit有最大值，腾讯云限制为最大1000条，阿里云限制为最大1000条。
 
 `<unicloud-db>`组件提供了更简单的分页方法，包括两种模式：
 The `<unicloud-db>` component provides an easier way to paginate, including two modes:

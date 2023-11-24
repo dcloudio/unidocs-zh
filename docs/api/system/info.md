@@ -10,9 +10,7 @@ System information returns a lot of content, and each operating system, each Min
 按照运行环境层级排序，从底层向上，uni-app有6个概念：
 Sorted according to the level of the operating environment, from the bottom up, uni-app has 6 concepts:
 - `device`：运行应用的设备，如iphone、huawei
-- `device`: the device running the application, such as iphone, huawei
-- `os`：设备的操作系统，如 ios、andriod、windows、mac、linux
-- `os`: the operating system of the device, such as ios, andriod, windows, mac, linux
+- `os`：设备的操作系统，如 ios、android、windows、mac、linux
 - `rom`：基于操作系统的定制，Android系统特有概念，如miui、鸿蒙
 - `rom`: customization based on the operating system, unique concepts of the Android system, such as miui, Hongmeng
 - `host`：运行应用的宿主程序，即OS和应用之间的运行环境，如浏览器、微信等小程序宿主、集成uniMPSDK的App。uni-app直接开发的app没有host概念
@@ -58,9 +56,7 @@ Get system information asynchronously
 |			|devicePixelRatio		|设备像素比		||	|||uni-app 3.4.13+|
 | | devicePixelRatio | device pixel ratio || ||| uni-app 3.4.13+|
 |os		|osName|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos||uni-app 3.4.10+|
-| os | osName|system name| ios, android| ios, android, windows, macos, linux| ios, android, windows, macos|| uni-app 3.4.10+|
-|			|osVersion			|操作系统版本。如 ios 版本，andriod 版本|||||uni-app 3.4.10+|
-| | osVersion | Operating system version. Such as ios version, andriod version||||| uni-app 3.4.10+|
+|			|osVersion			|操作系统版本。如 ios 版本，android 版本|||||uni-app 3.4.10+|
 |			|osLanguage			|操作系统语言[详见](#tips)|Android仅支持主语言+地区：`zh-CN 中文简体`、iOS支持主语言+次语言+地区`zh-Hans-CN 中文简体` |与浏览器语言一致	|不支持	|	|uni-app 3.4.10+|
 | | osLanguage |Operating system language[See details](#tips)| |Consistent with the browser language |Not supported | | uni-app 3.4.10+|
 |			|osTheme			|操作系统主题			|light、dark。iOS平台只有将应用主题设置为跟随系统时才能获取到系统的主题|不支持	|不支持	||uni-app 3.4.10+|

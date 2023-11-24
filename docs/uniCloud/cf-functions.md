@@ -242,7 +242,7 @@ errMsg用于存放具体错误信息，包括展示给开发者、终端用户�
 
 #### 请求成功的响应
 
-除此之外响应体规范还包含`newToken`字段，用于token的自动续期（云对象接收含有newToken的响应后会自动更新storage内存储的`uni_id_token`及`uni_id_token_expired`，此行为新增于`HBuilderX 3.4.13`）。开发者一般无需关心此数据，uni-app客户端和云端uni-id之间会自动管理token及续期。
+除此之外响应体规范还包含`newToken`字段，用于token的自动续期（云对象接收含有newToken的响应后会自动更新storage内存储的`uni_id_token`及`uni_id_token_expired`，此行为新增于`HBuilderX 3.4.13`）。开发者仅在自行调用uni-id-common的checkToken等会产生新token的接口时才需要返回新token，uni-app客户端和uni-id-co之间会自动管理token及续期。
 
 `uniCloud响应体`示例如下：
 

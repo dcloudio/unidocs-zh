@@ -698,10 +698,9 @@ If the file is uploaded from the client, it is generally not recommended to uplo
 **平台兼容性**
 **Platform Compatibility**
 
-|阿里云						|腾讯云	|
-|Alibaba Cloud |Tencent Cloud |
-|----							|----		|
-|HBuilderX 3.1.0+	|√			|
+| 阿里云						 | 腾讯云	 | 支付宝小程序云 |
+|-----------|------|---------|
+| √	        | √			 | √       |
 
 HBuilderX 3.1.0之前版本如使用阿里云，请在客户端通过`uniCloud.uploadFile`进行上传
 If HBuilderX versions before 3.1.0 use Alibaba Cloud, please upload through `uniCloud.uploadFile` on the client side
@@ -928,10 +927,9 @@ After Alibaba Cloud migrates the service space, the old cloud storage url needs 
 **平台兼容性**
 **Platform Compatibility**
 
-|阿里云																										|腾讯云	|
-|Alibaba Cloud |Tencent Cloud |
-|----																											|----		|
-|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+|阿里云																										|腾讯云	|支付宝小程序云|
+|----																											|----		|----|
+|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|不支持|
 
 #### 请求参数
 #### Request parameters

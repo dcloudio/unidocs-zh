@@ -215,16 +215,14 @@ uni.chooseImage({
 
 ### getTempFileURL(Object object)
 
-在云函数中，把文件的fileid转换为临时URL。临时URL有有效期限制，避免其他人获取URL后可以持续访问该文件。
-In the cloud function, the fileid of the file is converted to a temporary URL. Temporary URLs have a limited validity period to prevent others from continuously accessing the file after obtaining the URL.
+在客户端把文件的fileid转换为临时URL。临时URL有有效期限制，避免其他人获取URL后可以持续访问该文件。
 
 **平台兼容性**
 **Platform Compatibility**
 
-|阿里云						|腾讯云	|
-|Alibaba Cloud |Tencent Cloud |
-|----							|----		|
-|HBuilderX 3.1.0+	|√			|
+|阿里云						|腾讯云	|支付宝小程序云|
+|----							|----		|----|
+|√	|√			|√|
 
 支付宝小程序云与腾讯云获取文件临时下载链接。
 
@@ -302,10 +300,9 @@ After Alibaba Cloud migrates the service space, the old cloud storage url needs 
 **平台兼容性**
 **Platform Compatibility**
 
-|阿里云																										|腾讯云	|
-|Alibaba Cloud |Tencent Cloud |
-|----																											|----		|
-|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+|阿里云																										|腾讯云	|支付宝小程序云|
+|----																											|----		|----|
+|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|不支持|
 
 #### 请求参数
 #### Request parameters

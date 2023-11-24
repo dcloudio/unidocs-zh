@@ -1,7 +1,5 @@
 # 扩展存储API
 
-扩展存储介绍，待补充
-
 ## 扩展存储与原生云存储的区别
 
 定义：
@@ -22,7 +20,7 @@
 
 ## 开通扩展存储服务@open
 
-参考[开通服务](uniCloud/ext-storage/open.md)
+参考[开通服务](uniCloud/ext-storage/service.md)
 
 ## 费用说明@price
 

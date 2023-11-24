@@ -331,8 +331,7 @@ errMsg is used to store specific error messages, including error messages displa
 #### 请求成功的响应
 #### request successful response
 
-除此之外响应体规范还包含`newToken`字段，用于token的自动续期（云对象接收含有newToken的响应后会自动更新storage内存储的`uni_id_token`及`uni_id_token_expired`，此行为新增于`HBuilderX 3.4.13`）。开发者一般无需关心此数据，uni-app客户端和云端uni-id之间会自动管理token及续期。
-In addition, the response body specification also includes the `newToken` field, which is used for the automatic renewal of the token (the cloud object will automatically update the `uni_id_token` and `uni_id_token_expired` stored in the storage after receiving the response containing the newToken, this behavior is added in `HBuilderX 3.4.13`). Developers generally do not need to care about this data, the token and renewal will be automatically managed between the uni-app client and the cloud uni-id.
+除此之外响应体规范还包含`newToken`字段，用于token的自动续期（云对象接收含有newToken的响应后会自动更新storage内存储的`uni_id_token`及`uni_id_token_expired`，此行为新增于`HBuilderX 3.4.13`）。开发者仅在自行调用uni-id-common的checkToken等会产生新token的接口时才需要返回新token，uni-app客户端和uni-id-co之间会自动管理token及续期。
 
 `uniCloud响应体`示例如下：
 An example of `uniCloud response body` is as follows:

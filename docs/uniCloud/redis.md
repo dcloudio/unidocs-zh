@@ -1557,7 +1557,7 @@ Delete a piece of data from the beginning of the List type data and return the d
 **Interface form**
 
 ```js
-await redis.rpop(key: string)
+await redis.lpop(key: string)
 ```
 
 **入参说明**

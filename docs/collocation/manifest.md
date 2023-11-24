@@ -610,9 +610,7 @@ Tips: For treeshaking optimization (treeShaking) principle and optimization resu
 |plugins|Object|使用到的插件，[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)|
 | plugins| Object|The plugin used, [see details](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)|
 |resizable|Boolean|在iPad上小程序是否支持屏幕旋转，默认关闭|
-| resizable| Boolean|Whether the MiniApp supports screen rotation on iPad, it is disabled by default|
-|navigateToMiniProgramAppIdList|Array|需要跳转的小程序列表，[详见](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html)|
-|navigateToMiniProgramAppIdList| Array|A list of MiniApp that need to be redirected, [see details](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html)|
+|navigateToMiniProgramAppIdList|Array|需要跳转的小程序列表，[详见](https://developers.weixin.qq.com/minigame/dev/reference/configuration/app.html#navigateToMiniProgramAppIdList)|
 |permission|Object|微信小程序接口权限相关设置，比如申请位置权限必须填此处[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)|
 | permission| Object|WeChat MiniApp interface permission related settings, such as applying for location permission must be filled here [see details](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)|
 |workers|String|Worker 代码放置的目录。 [详见](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|

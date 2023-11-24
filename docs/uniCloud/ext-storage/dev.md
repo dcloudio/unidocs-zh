@@ -30,7 +30,7 @@ const extStorageManager = uniCloud.getExtStorageManager({
 |参数名	|类型		|必填	|默认值	|说明																				|
 |:-:		|:-:		|:-:	|:-:		|:-:																				|
 |provider	|String	|是		|-			|扩展存储供应商，可选<br/>qiniu: 七牛云|
-|domain	|String	|是		|-			|[](https://example.com)（带https协议头的域名地址）	|
+|domain	|String	|是		|-			|扩展储存域名（带https协议头的域名地址）如：https://example.com	|
 
 ### 获取前端上传参数
 

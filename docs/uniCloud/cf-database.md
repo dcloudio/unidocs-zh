@@ -177,6 +177,28 @@ limit，即返回记录的最大数量，默认值为100，也就是不设置lim
 
 collection.where()
 
+**已知问题**
+
+支付宝小程序云中，使用where查询时，如果传入的参数是一个对象，将按照字段的值进行相等匹配，包含字段顺序。
+
+例如：查询内存是8g的计算机商品
+
+```js
+// 错误示例
+let res = await db.collection('goods').where({
+  category: 'computer',
+  type: {
+    memory: 8,
+  }
+}).get()
+  
+// 正确示例
+let res = await db.collection('goods').where([{
+  category: 'computer',
+  "type.memory": 8
+}]).get()
+```
+
 **在聚合操作中请使用match**
 
 设置过滤条件，where 可接收对象作为参数，表示筛选出拥有和传入对象相同的 key-value 的文档。比如筛选出所有类型为计算机的、内存为 8g 的商品：

@@ -95,13 +95,13 @@ The client uploads the file to the cloud function, and the cloud function upload
 #### request parameters
 **Object object**
 
-|参数名							|类型			|必填	|默认值	|                   说明																																																																							                    |平台差异说明	|
-|:-:								|:-:			|:-:	|:-:		|:--------------------------------------------------------------------------------------------------------------:|:-:					|
-|filePath						|String		|是		|-			|                   要上传的文件对象																																																																	                    |-						|
-|cloudPath					|String		|是		|-			| 使用支付宝小程序云或腾讯云时，表示文件的绝对路径，包含文件名。<br />使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径 |-						|
-|cloudPathAsRealPath|Boolean	|否		|false	|                 是否以`cloudPath`作为云端文件绝对路径																																																						                 |仅阿里云支持	|
-|fileType						|String		|-		|-			|                文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio																																									                |-						|
-|onUploadProgress		|Function	|否		|-			|                   上传进度回调																																																																			                    |-						|
+|参数名				|类型			|必填	|默认值	| 说明		 |平台差异说明	|
+|:-:					|:-:			|:-:	|:-:		|:-|:-:			|
+|filePath			|String		|是		|-			|      要上传的文件对象	|-						|
+|cloudPath			|String		|是		|-			| 使用支付宝小程序云或腾讯云时，表示文件的绝对路径，包含文件名。<br/>使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径|-				|
+|cloudPathAsRealPath|Boolean	|否		|false	| 是否以`cloudPath`作为云端文件绝对路径		 |仅阿里云支持	|
+|fileType			|String		|-			|-			| 文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio|-					|
+|onUploadProgress	|Function	|否		|-			| 上传进度回调	|-						|
 
 **注意**
 **Notice**
@@ -711,11 +711,11 @@ If HBuilderX versions before 3.1.0 use Alibaba Cloud, please upload through `uni
 **uploadFileOptions参数说明**
 **uploadFileOptions parameter description**
 
-| 字段							| 类型	| 必填|默认值	| 说明																																																																						                                 |平台差异说明	|
-| ---								| ---		| ---	|---		|----------------------------------------------------------------------------------------------------------|---					|
-| cloudPath					| string| 是	|-			| 使用腾讯云或支付宝小程序云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径 |							|
-| fileContent				| -			| 是	|-			| 文件内容，请看下方说明																																																														                                |							|
-|cloudPathAsRealPath|Boolean|否		|false	| 是否以`cloudPath`作为云端文件绝对路径																																																						                           |仅阿里云支持	|
+| 字段							| 类型	| 必填|默认值	| 说明		|平台差异说明	|
+| ---					| ---		| ---	|---		|:----|---					|
+| cloudPath					| string| 是	|-			| 使用腾讯云或支付宝小程序云时，表示文件的绝对路径，包含文件名。<br/>使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径 |							|
+| fileContent				| -			| 是	|-			| 文件内容，请看下方说明	|							|
+|cloudPathAsRealPath|Boolean|否		|false	| 是否以`cloudPath`作为云端文件绝对路径	|仅阿里云支持	|
 
 **说明**
 **illustrate**

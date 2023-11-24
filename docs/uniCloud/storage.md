@@ -544,9 +544,9 @@ const uploadRes = await storageSpace.uploadFile({
 
 **平台兼容性**
 
-|阿里云						|腾讯云	|
-|----							|----		|
-|HBuilderX 3.1.0+	|√			|
+| 阿里云						 | 腾讯云	 | 支付宝小程序云 |
+|-----------|------|---------|
+| √	        | √			 | √       |
 
 HBuilderX 3.1.0之前版本如使用阿里云，请在客户端通过`uniCloud.uploadFile`进行上传
 
@@ -715,9 +715,9 @@ let result = await uniCloud.downloadFile({
 
 **平台兼容性**
 
-|阿里云																										|腾讯云	|
-|----																											|----		|
-|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+|阿里云																										|腾讯云	|支付宝小程序云|
+|----																											|----		|----|
+|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|不支持|
 
 #### 请求参数
 

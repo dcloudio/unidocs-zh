@@ -1723,6 +1723,34 @@ The result is as follows
 聚合阶段。根据条件过滤文档，并且把符合条件的文档传递给下一个流水线阶段。
 Aggregation stage. Filter documents based on a condition and pass those documents that match the condition to the next pipeline stage.
 
+**已知问题**
+
+支付宝小程序云中，使用match管道过滤时，如果传入的参数是一个对象，将按照字段的值进行相等匹配，包含字段顺序。
+
+例如：过滤内存是8g的计算机商品
+
+```js
+// 错误示例
+let res = await db.collection('goods')
+  .aggregate()
+  .match({
+    category: 'computer',
+    type: {
+      memory: 8,
+    }
+  })
+  .end()
+  
+// 正确示例
+let res = await db.collection('goods')
+  .aggregate()
+  .match({
+    category: 'computer',
+    "type.memory": 8
+  })
+  .end()
+```
+
 **API 说明**
 **API description**
 

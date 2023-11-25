@@ -152,7 +152,7 @@ uni.chooseImage({
 |:-|:-|:-|:-|:-|
 |url|String|是|下载资源的 url| |
 |header|Object|否|HTTP 请求 Header, header 中不能设置 Referer。| |
-|timeout|Number|否|超时时间，单位 ms|H5(HBuilderX 2.9.9+)、APP(HBuilderX 2.9.9+)、微信小程序、支付宝小程序、抖音小程序、快手小程序|
+|timeout|Number|否|超时时间，单位 ms|H5、APP、微信小程序、支付宝小程序、抖音小程序、快手小程序|
 |filePath|string|否|指定文件下载后存储的路径 (本地路径)|小程序端支持（微信IOS小程序保存到相册需要添加此字段才可以正常保存）|
 |success|Function|否|下载成功后以 tempFilePath 的形式传给页面，res = {tempFilePath: '文件的临时路径'}| |
 |fail|Function|否|接口调用失败的回调函数| |

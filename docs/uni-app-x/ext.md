@@ -1,9 +1,6 @@
-# ext api
+# 其它api
 
-基于uts实现的、以插件方式存在的、uni-app和uni-app x均兼容支持的api：
-- [uni实人认证](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)
-
-插件市场还有一批可替代uni内置api的插件，比如在插件市场搜索：
+插件市场还有一批可替代uni内置api的插件，比如：
 - [剪切板](https://ext.dcloud.net.cn/search?q=%E5%89%AA%E5%88%87%E6%9D%BF&orderBy=Relevance&cat1=8&cat2=81)：uni.setClipboardData、uni.getClipboardData
 - [拨打电话](https://ext.dcloud.net.cn/plugin?id=15235)：uni.makePhoneCall
 - 打开文件：uni.openDocument。[hello uts示例](](https://gitcode.net/dcloud/hello-uts/-/blob/dev/uni_modules/uts-nativepage/utssdk/app-android/index.uts))、[插件市场](https://ext.dcloud.net.cn/plugin?id=12731)

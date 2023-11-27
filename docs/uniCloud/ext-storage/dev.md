@@ -59,7 +59,7 @@ module.exports = {
 		// 最后调用 extStorageManager.getUploadFileOptions
 		let uploadFileOptionsRes = extStorageManager.getUploadFileOptions({
 			cloudPath: cloudPath,
-			cover: false, // 如果返回前端，建议设置false，代表仅新增，不可覆盖
+			allowUpdate: false, // 是否允许覆盖更新，如果返回前端，建议设置false，代表仅新增，不可覆盖
 		});
 		return uploadFileOptionsRes;
 	}
@@ -71,7 +71,7 @@ module.exports = {
 |参数名						|类型			|必填	|默认值	|说明																														|
 |:-:							|:-:			|:-:	|:-:		|:-:																														|
 |cloudPath				|String		|否		|-			|云端文件路径（不填会自动生成）																	|
-|cover						|Boolean	|否		| false	|是否允许覆盖 true：可覆盖 false：仅新增，不可覆盖							|
+|allowUpdate			|Boolean	|否		| false	|是否允许覆盖更新 true：可覆盖 false：仅新增，不可覆盖							|
 
 #### 响应参数
 
@@ -144,7 +144,7 @@ let fileContent = new Buffer(base64, 'base64');
 let res = await extStorageManager.uploadFile({
 	cloudPath: `${Date.now()}.png`, // 云端文件名，不填则自动生成
 	fileContent, // 要上传的文件内容
-	cover: false, // 是否允许覆盖
+	allowUpdate: false, // 是否允许覆盖
 });
 console.log('uploadFile: ', res);
 ```
@@ -155,7 +155,7 @@ console.log('uploadFile: ', res);
 |:-:				|:-:		|:-:	|:-:		|:-:																							|
 |fileContent|Buffer	|是		|-			|文件内容																					|
 |cloudPath	|String	|否		|-			|云端文件路径（不填会自动生成）										|
-|cover			|Boolean|否		| false	|是否允许覆盖 true：可覆盖 false：仅新增，不可覆盖|
+|allowUpdate			|Boolean|否		| false	|是否允许覆盖更新 true：可覆盖 false：仅新增，不可覆盖|
 
 #### 响应参数
 

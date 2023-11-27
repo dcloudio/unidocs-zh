@@ -1,6 +1,6 @@
 * [概述](README.md)
 * [公共属性和事件](common.md)
-* 内置组件
+* 内置组件```{"collapsable": false}```
   * [view](view.md)
   * [scroll-view](scroll-view.md)
   * [list-view](list-view.md)

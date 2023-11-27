@@ -56,59 +56,15 @@ Description of specific permissions:
 
 <a id='sdkpermission' />
 
-### Android自动添加三方SDK（或模块）需要的权限  
-### Android automatically adds the permissions required by the third-party SDK (or module)
+### Android平台三方SDK（或模块）需要的权限  
 提交云端打包时，勾选使用三方SDK相关的功能模块时，默认会自动添加三方SDK需要的所有权限。  
-When submitting the cloud package, if you check the function modules related to the third-party SDK, all the permissions required by the third-party SDK will be automatically added by default.
-为了保证三方SDK（或模块）的功能完整，默认会添加可能需要的所有权限，如果应用只用到三方SDK提供的部分功能，不希望自动添加三方SDK需要的所有权限，可以去掉勾选“Android自动添加第三方SDK需要的权限”。  
-In order to ensure that the functions of the third-party SDK (or module) are complete, all permissions that may be required will be added by default. If the application only uses some functions provided by the third-party SDK and does not want to automatically add all the permissions required by the third-party SDK, you can uncheck the "Android" Automatically add permissions required by third-party SDKs".
-**为了向下兼容，云端打包默认会添加“Geolocation(定位)” -> “系统定位”模块，因此会默认添加定位权限，如果不需要定位权限，请在App权限配置界面去掉勾选“Android自定添加第三方SDK需要的权限”**  
-**In order to be backward compatible, the cloud package will add the "Geolocation (location)" -> "system location" module by default, so the location permission will be added by default. If you don't need the location permission, please uncheck "Android" in the App permission configuration interface. Customize the permissions required to add third-party SDKs"**
+为了保证三方SDK（或模块）的功能完整，默认会添加可能需要的所有权限，如果应用只用到三方SDK提供的部分功能，需通过Android原生应用清单文件配置[移除Android权限](app-nativeresource-android.md#removepermissions)。  
 
-**注意：去掉自动添加第三方SDK需要的权限后，请务必根据需要在“Android权限配置”中勾选三方SDK必需的权限，三方SDK需要的权限详情参考后面《三方SDK（或模块）需要的权限列表》章节**  
-**Note: After removing the permissions required to automatically add the third-party SDK, please be sure to check the permissions required by the third-party SDK in "Android Permission Configuration" as required. For details of the permissions required by the third-party SDK, please refer to "Requirements for the Third-party SDK (or Module)" List of Permissions" chapter**
 保存后提交云端打包生效。
 After saving, submit the cloud package to take effect.
 
-#### 可视化界面配置  
-#### Visual interface configuration
-打开项目的manifest.json文件，在“App权限配置”项中去掉“Android自动添加第三方SDK需要的权限”  
-![](https://native-res.dcloud.net.cn/images/uniapp/permission/android-sdk.png)
+**注意：HBuilderX中manifest.json文件的 “App权限配置” -> “Android自动添加第三方SDK需要的权限” 复选框功能已失效（即不勾选也会添加三方SDK需要的权限），后续版本将会移除此配置项**  
 
-#### 代码视图配置  
-#### Code view configuration
-打开项目的manifest.json文件，切换到“代码视图”。  
-Open your project's manifest.json file and switch to "Code View".
-- uni-app项目  
-- uni-app project
-在 "app-plus" -> "distribute" -> "android" 下添加 autoSdkPermissions 如下：  
-Add autoSdkPermissions under "app-plus" -> "distribute" -> "android" as follows:
-```json
-  "app-plus": {
-    "distribute": {
-      "android": {
-        "autoSdkPermissions": false,    // 不自动添加第三方SDK需要的Android权限
-        //...
-      },
-      //...
-  },
-  //...
-```
-- 5+ APP（WAP2APP）项目  
-- 5+ APP (WAP2APP) project
-在 "plus" -> "distribute" -> "google" 下添加 autoSdkPermissions 如下：
-Add autoSdkPermissions under "plus" -> "distribute" -> "google" as follows:
-```json
-  "plus": {
-    "distribute": {
-      "google": {
-        "autoSdkPermissions": false,    // 不自动添加第三方SDK需要的Android权限
-        //...
-      },
-      //...
-  },
-  //...
-```
 
 ### Android权限配置  
 ### Android permission configuration

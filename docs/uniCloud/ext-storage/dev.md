@@ -21,7 +21,7 @@
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu", // 扩展存储供应商
-	domain: "https://example.com", // 带https协议头的域名地址
+	domain: "example.com", // 域名地址
 });
 ```
 
@@ -30,7 +30,7 @@ const extStorageManager = uniCloud.getExtStorageManager({
 |参数名	|类型		|必填	|默认值	|说明																				|
 |:-:		|:-:		|:-:	|:-:		|:-:																				|
 |provider	|String	|是		|-			|扩展存储供应商，可选<br/>qiniu: 七牛云|
-|domain	|String	|是		|-			|扩展储存域名（带https协议头的域名地址）如：https://example.com	|
+|domain	|String	|是		|-			|扩展储存域名（域名地址）如：example.com	|
 
 ### 获取前端上传参数
 
@@ -54,7 +54,7 @@ module.exports = {
 		// 然后获取 extStorageManager 对象实例
 		const extStorageManager = uniCloud.getExtStorageManager({
 			provider: "qiniu",
-			domain: "https://example.com", // 带https协议头的域名地址
+			domain: "example.com", // 域名地址
 		});
 		// 最后调用 extStorageManager.getUploadFileOptions
 		let uploadFileOptionsRes = extStorageManager.getUploadFileOptions({
@@ -131,7 +131,7 @@ uni.chooseImage({
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu",
-	domain: "https://example.com", // 带https协议头的域名地址
+	domain: "example.com", // 域名地址
 });
 // 文件的base64值
 let base64 =
@@ -178,7 +178,7 @@ console.log('uploadFile: ', res);
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu",
-	domain: "https://example.com", // 带https协议头的域名地址
+	domain: "example.com", // 域名地址
 });
 let res = extStorageManager.getTempFileURL({
 	fileList: ["qiniu://test.jpg"], // 私有文件地址列表
@@ -218,7 +218,7 @@ return res;
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu",
-	domain: "https://example.com", // 带https协议头的域名地址
+	domain: "example.com", // 域名地址
 });
 let res = await extStorageManager.deleteFile({
 	fileList: ["qiniu://test.jpg"], // 私有文件地址列表
@@ -252,7 +252,7 @@ return res;
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu",
-	domain: "https://example.com", // 带https协议头的域名地址
+	domain: "example.com", // 域名地址
 });
 let res = await extStorageManager.updateFileStatus({
 	fileID: "qiniu://test.jpg", // 私有文件id

@@ -10,7 +10,7 @@
 
 **兼容说明**
 
-- `HBuilderX 3.9+`支持阿里云，`3.91+`支持腾讯云
+- `HBuilderX 3.9+`支持阿里云，`3.91+`支持腾讯云，`3.98+`支持支付宝小程序云
 - `HBuilderX 3.91+`支持clientDB，但不支持getOne和multiSend
 
 

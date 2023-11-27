@@ -31,10 +31,11 @@ After using uniCloud, developers no longer need to purchase and record domain na
 根据下表，在小程序管理后台设置request合法域名、uploadFile合法域名（如没有上传文件业务，可不设置）。下表的域名均为阿里云或腾讯云自有域名，并非DCloud所属域名。
 According to the following table, set the request legal domain name and uploadFile legal domain name in the applet management background (if there is no file upload business, you can not set it). The domain names in the following table are all owned by Alibaba Cloud or Tencent Cloud, not DCloud.
 
-|服务提供商	|request合法域名						|uploadFile合法域名																															|download合法域名																																								|
-|:-:				|:-:												|:-:																																						|:-:																																														|
-|阿里云			|api.next.bspapp.com				|请在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间的总览页面查看|请在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间的总览页面查看								|
-|腾讯云			|tcb-api.tencentcloudapi.com|~~cos.ap-shanghai.myqcloud.com~~	(2023年8月17日腾讯云更新了上传域名，如果遇到小程序因为安全域名无法上传的问题可以把小程序开发工具内提示的不在白名单的域名添加到上传安全域名内)																									|需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到|
+|   服务提供商	   |request合法域名						|uploadFile合法域名																															|          download合法域名																																								           |
+|:----------:|:-:												|:-:																																						|:-----------------------------------------------------------------------:|
+|   阿里云			   |api.next.bspapp.com				|请在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间的总览页面查看| 请在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间的总览页面查看								 |
+|   腾讯云			   |tcb-api.tencentcloudapi.com|~~cos.ap-shanghai.myqcloud.com~~	(2023年8月17日腾讯云更新了上传域名，如果遇到小程序因为安全域名无法上传的问题可以把小程序开发工具内提示的不在白名单的域名添加到上传安全域名内)																									|            需要从云存储下载文件的时候才需要配置，不同服务空间域名不同，可以在web控制台查看文件详情里面看到            |
+| 支付宝小程序云			 |{spaceId}.api-hz.cloudbasefunction.cn|https://u.object.cloudrun.cloudbaseapp.cn|                 {spaceId}.normal.cloudstatic.cn                 |
 
 **注意**
 **Notice**
@@ -43,6 +44,7 @@ According to the following table, set the request legal domain name and uploadFi
 - If you need to use uni.request to request files in the cloud storage, you need to configure the cloud storage domain name (that is, the download legal domain name in the above table) to the request legal domain name
 - 阿里云迁移正式版后未重新发布的项目仍会请求公测版地址（api.bspapp.com）
 - 如果项目使用了uni-push，还需要将uni-push的socket域名添加到白名单[详情查看](/unipush-v2.md#useinmp)
+- 支付宝小程序云的域名是动态的，需要在小程序管理后台配置`{spaceId}.api-hz.cloudbasefunction.cn`，其中`{spaceId}`是服务空间的id，可以在uniCloud web控制台的服务空间总览页面查看
 
 **阿里云查看上传、下载安全域名**
 **Alibaba cloud view upload and download security domain name**

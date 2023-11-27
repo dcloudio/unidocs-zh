@@ -91,12 +91,13 @@ const routerMap = {
   '/nvue-event': '/tutorial/nvue-event.html',
   '/use-html5plus': '/tutorial/use-html5plus.html',
   '/m3w': '/uniCloud/uni-portal.html',
-  '/tutorial/syntax-uts': '/uts/',
-  
+  '/tutorial/syntax-uts': '/uni-app-x/uts/',
+
   '/uniCloud/uni-id-summary': '/uniCloud/uni-id/summary.html',
-  '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.md',
+  '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.html',
   '/uniCloud/uni-id-common': '/uniCloud/uni-id/cloud-common.html',
   '/uniCloud/uni-id': '/uniCloud/uni-id/old.html',
+  '/uts/': '/uni-app-x/uts/'
 }
 
 export default ({ fullPath, path, hash }) => {
@@ -125,4 +126,17 @@ export default ({ fullPath, path, hash }) => {
       replace: true
     }
   }
+
+  const routerMapKeys = Object.keys(routerMap)
+  let returnPathConfig = null
+  routerMapKeys.forEach(key => {
+    if (path.indexOf(key) === 0) {
+      return returnPathConfig = {
+        path: path.replace(key, routerMap[key]),
+        hash,
+        replace: true
+      }
+    }
+  })
+  if (returnPathConfig) return returnPathConfig
 }

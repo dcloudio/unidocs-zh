@@ -40,46 +40,14 @@
 
 <a id='sdkpermission' />
 
-### Android自动添加三方SDK（或模块）需要的权限  
+### Android平台三方SDK（或模块）需要的权限  
 提交云端打包时，勾选使用三方SDK相关的功能模块时，默认会自动添加三方SDK需要的所有权限。  
-为了保证三方SDK（或模块）的功能完整，默认会添加可能需要的所有权限，如果应用只用到三方SDK提供的部分功能，不希望自动添加三方SDK需要的所有权限，可以去掉勾选“Android自动添加第三方SDK需要的权限”。  
-**为了向下兼容，云端打包默认会添加“Geolocation(定位)” -> “系统定位”模块，因此会默认添加定位权限，如果不需要定位权限，请在App权限配置界面去掉勾选“Android自定添加第三方SDK需要的权限”**  
+为了保证三方SDK（或模块）的功能完整，默认会添加可能需要的所有权限，如果应用只用到三方SDK提供的部分功能，需通过Android原生应用清单文件配置[移除Android权限](app-nativeresource-android.md#removepermissions)。  
 
-**注意：去掉自动添加第三方SDK需要的权限后，请务必根据需要在“Android权限配置”中勾选三方SDK必需的权限，三方SDK需要的权限详情参考后面《三方SDK（或模块）需要的权限列表》章节**  
 保存后提交云端打包生效。
 
-#### 可视化界面配置  
-打开项目的manifest.json文件，在“App权限配置”项中去掉“Android自动添加第三方SDK需要的权限”  
-![](https://native-res.dcloud.net.cn/images/uniapp/permission/android-sdk.png)
+**注意：HBuilderX中manifest.json文件的 “App权限配置” -> “Android自动添加第三方SDK需要的权限” 复选框功能已失效（即不勾选也会添加三方SDK需要的权限），后续版本将会移除此配置项**  
 
-#### 代码视图配置  
-打开项目的manifest.json文件，切换到“代码视图”。  
-- uni-app项目  
-在 "app-plus" -> "distribute" -> "android" 下添加 autoSdkPermissions 如下：  
-```json
-  "app-plus": {
-    "distribute": {
-      "android": {
-        "autoSdkPermissions": false,    // 不自动添加第三方SDK需要的Android权限
-        //...
-      },
-      //...
-  },
-  //...
-```
-- 5+ APP（WAP2APP）项目  
-在 "plus" -> "distribute" -> "google" 下添加 autoSdkPermissions 如下：
-```json
-  "plus": {
-    "distribute": {
-      "google": {
-        "autoSdkPermissions": false,    // 不自动添加第三方SDK需要的Android权限
-        //...
-      },
-      //...
-  },
-  //...
-```
 
 ### Android权限配置  
 打开项目的manifest.json文件，在“（App）模块权限配置”页的“Android权限配置”项下根据需求勾选需要的权限：  

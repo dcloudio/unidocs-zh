@@ -28,7 +28,7 @@ DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示
 
 	Android和iOS的原生view，有一些底层的高性能绘制能力，这些API的调用，需要先获取到 Element 对象，然后再调用其方法。
 
-在[性能](performance.md)章节，对这2个场景有详细的阐述。
+在[性能](../performance.md)章节，对这2个场景有详细的阐述。
 
 
 ## DOM元素对象@getDomNode  

@@ -12,7 +12,7 @@
 
 ## API
 
-### 获取扩展存储管理对象
+### 获取扩展存储管理对象@getExtStorageManager
 
 云端在操作扩展存储前，需要先获取 extStorageManager 对象实例，然后再通过 extStorageManager.xxx 调用对应的API
 
@@ -32,7 +32,7 @@ const extStorageManager = uniCloud.getExtStorageManager({
 |provider	|String	|是		|-			|扩展存储供应商，可选<br/>qiniu: 七牛云|
 |domain	|String	|是		|-			|扩展储存域名（域名地址）如：example.com	|
 
-### 获取前端上传参数
+### 获取前端上传参数@getUploadFileOptions
 
 接口名：getUploadFileOptions
 
@@ -120,7 +120,7 @@ uni.chooseImage({
 });
 ```
 
-### 云端直传文件
+### 云端直传文件@uploadFile
 
 接口名：uploadFile
 
@@ -165,7 +165,7 @@ console.log('uploadFile: ', res);
 |fileID						|String	|文件ID																										|
 |fileURL					|String	|文件URL（如果是私有权限的文件，则此URL是无法直接访问的）	|
 
-### 获取临时下载链接
+### 获取临时下载链接@getTempFileURL
 
 接口名：getTempFileURL
 
@@ -207,7 +207,7 @@ return res;
 |fileID			|String	|文件ID					|
 |cloudPath	|String	|文件云端路径		|
 
-### 删除文件
+### 删除文件@deleteFile
 
 接口名：deleteFile
 
@@ -239,7 +239,7 @@ return res;
 |:-:			|:-:	|:-:									|
 |fileList	|Array|删除结果组成的数组。	|
 
-### 修改文件状态
+### 修改文件状态@updateFileStatus
 
 接口名：updateFileStatus
 
@@ -277,7 +277,7 @@ return res;
 |errMsg	|String	|失败描述|
 
 
-## 常见问题
+## 常见问题@question
 
 ### 扩展存储可以当前端托管使用吗？
 

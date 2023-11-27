@@ -109,3 +109,4 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 
 - 暂不支持reverse，目前还不能开发im那样的倒序列表
 - 多列瀑布流是另外的组件，后续会提供
+- list-view组件的overflow属性不支持配置visible

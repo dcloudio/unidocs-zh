@@ -15,11 +15,13 @@ function simplifySlugText(text) {
 }
 
 // 顺序有要求，会影响 for 循环匹配侧边栏
-const tabs = [
+
+const tabs_zh = process.env.DOCS_LITE ? [] : [
   '/uni-app-x/compiler/', '/uni-app-x/dom/', '/uni-app-x/uts/', '/uni-app-x/collocation/', '/uni-app-x/plugin/', '/uni-app-x/worktile/', '/uni-app-x/component/', '/uni-app-x/api/', '/uni-app-x/css/', '/uni-app-x/',
   '/uniCloud/',
   '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/',
 ]
+const tabs_en = ['/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/']
 
 module.exports = {
   isExternal,

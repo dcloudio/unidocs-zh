@@ -731,7 +731,7 @@ If it is a batch of big data, you can refer to the recursive call of cloud funct
 uniCloud数据库提供了多种数据导入导出和备份方案。
 The uniCloud database provides a variety of data import, export and backup solutions.
 
-- init_data.json、index.json等数据库初始化文件文件：`HBuilderX 3.97起支持`常用于插件市场的插件做环境初始化。完整支持数据、索引、schema三部分。不适合处理大量数据，操作可能超时。目前uniCloud web控制台不支持直接导出这一批初始化文件，后续会提供支持。
+- init_data.json、index.json等数据库初始化文件文件：`HBuilderX 3.97起支持`常用于插件市场的插件做环境初始化。完整支持数据、索引、schema三部分。不适合处理大量数据，操作可能超时。可从uniCloud web控制台云数据库 => 生成初始化数据 导出。
 - db\_init.json：常用于插件市场的插件做环境初始化。完整支持数据、索引、schema三部分。不适合处理大量数据，操作可能超时。**HBuilderX 3.97及之后版本需要拆分为上面一种方式对应的文件，可以在项目管理器选中db_init.json右键初始化数据库时自动拆分。**
 - 数据库回档备份和恢复，不支持schema
 - 数据库导入导出，[jsonl格式](https://jsonlines.org/)数据，仅数据，无索引及schema

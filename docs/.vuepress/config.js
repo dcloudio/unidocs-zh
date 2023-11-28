@@ -50,13 +50,8 @@ module.exports = merge({
     lastUpdated: '上次更新',
     // smoothScroll: true,
     search: false,
-    algolia: {
-      apiKey: '2fdcc4e76c8e260671ad70065e60b2e7',
-      indexName: 'zh-uniapp',
-      appId: 'PQIR5NL8CZ',
-      searchParameters: { hitsPerPage: 50 }
-    },
-    isDevelopment: process.env.NODE_ENV === 'development'
+    isDevelopment: process.env.NODE_ENV === 'development',
+    isEn: process.env.DOCS_LOCAL === 'en'
   },
   markdown: {
     // toc: { includeLevel: [1, 2, 3, 4] },
@@ -111,7 +106,6 @@ module.exports = merge({
   },
   patterns: ['**/!(_sidebar).md', '**/*.vue'],
   plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions],
     [
       'named-chunks',
       {

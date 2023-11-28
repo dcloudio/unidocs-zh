@@ -130,7 +130,7 @@ export default ({ fullPath, path, hash }) => {
   const routerMapKeys = Object.keys(routerMap)
   let returnPathConfig = null
   routerMapKeys.forEach(key => {
-    if (path.indexOf(key) === 0) {
+    if (path.indexOf(key) === 0 && routerMap[key].indexOf(key) !== 0 && routerMap[key] !== path) {
       return returnPathConfig = {
         path: path.replace(key, routerMap[key]),
         hash,

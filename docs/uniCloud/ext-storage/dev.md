@@ -276,6 +276,21 @@ return res;
 |errCode	|Number	|0 成功 其他均为失败|
 |errMsg	|String	|失败描述|
 
+## 小程序域名白名单
+
+小程序需要添加域名白名单，否则无法正常使用
+
+### 上传域名
+
+将下方域名添加到小程序的uploadFile合法域名列表中
+
+```
+https://upload.qiniup.com
+```
+
+### 下载域名
+
+下载域名就是你开通扩展存储时绑定的自定义域名，将你的自定义域名添加到download合法域名列表中
 
 ## 常见问题@question
 

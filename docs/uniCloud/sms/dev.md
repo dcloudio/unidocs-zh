@@ -21,8 +21,8 @@
 |参数名			|类型		|必填							|说明																																											|
 |:-:				|:-:		|:-:							|:-:																																											|
 |appid			|String	|是								|DCloud appid，可以在项目manifest.json内看到																							|
-|smsKey			|String	|是								|`HBuilderX 3.91`及之后的版本可不填此参数，调用短信接口的密钥key，从 dev.dcloud.net.cn/uniSms 后台获取															|
-|smsSecret	|String	|是								|`HBuilderX 3.91`及之后的版本可不填此参数，调用短信接口的密钥secret，从 dev.dcloud.net.cn/uniSms 后台获取														|
+|smsKey			|String	|是								|`HBuilderX 3.91`及之后的版本可不填此参数，调用短信接口的密钥key，从[uniCloud web控制台](//unicloud.dcloud.net.cn/pages/uni-sms/sms-account)获取															|
+|smsSecret	|String	|是								|`HBuilderX 3.91`及之后的版本可不填此参数，调用短信接口的密钥secret，从[uniCloud web控制台](//unicloud.dcloud.net.cn/pages/uni-sms/sms-account)获取														|
 |phone			|String	|和phoneList二选一|发送目标手机号，暂仅支持中国大陆手机号																										|
 |phoneList	|Array	|和phone二选一		|发送目标手机号，暂仅支持中国大陆手机号，最多50个手机号码，`HBuilderX 3.3.0`起支持				|
 |templateId	|String	|是								|模版Id，短信内容为固定模板，详见下方说明（应用开发阶段，可以使用 DCloud 提供的测试模板）	|

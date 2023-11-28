@@ -113,7 +113,7 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
 ```
 
 
-## 应用资源  
+## 应用资源@nativeResources
 
 HBuilderX中对项目右键菜单 "新建" -> "目录"  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newdir.png)

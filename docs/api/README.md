@@ -12,7 +12,7 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
 请注意不要把浏览器里的 js 等价于标准 js。
 
-所以 uni-app 的web端，一样支持标准 js，支持 if、for 等语法，支持字符串、数字、时间、布尔值、数组、自定义对象等变量类型及各种处理方法。仅仅是不支持 window、document、navigator 等浏览器专用对象。
+所以 uni-app 的非web端，一样支持标准 js，支持 if、for 等语法，支持字符串、数字、时间、布尔值、数组、自定义对象等变量类型及各种处理方法。仅仅是不支持 window、document、navigator 等浏览器专用对象。
 
 ## 各端特色 API 调用
 

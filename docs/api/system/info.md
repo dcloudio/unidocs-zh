@@ -6,7 +6,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 
 按照运行环境层级排序，从底层向上，uni-app有6个概念：
 - `device`：运行应用的设备，如iphone、huawei
-- `os`：设备的操作系统，如 ios、andriod、windows、mac、linux
+- `os`：设备的操作系统，如 ios、android、windows、mac、linux
 - `rom`：基于操作系统的定制，Android系统特有概念，如miui、鸿蒙
 - `host`：运行应用的宿主程序，即OS和应用之间的运行环境，如浏览器、微信等小程序宿主、集成uniMPSDK的App。uni-app直接开发的app没有host概念
 - `uni`：uni-app框架相关的信息，如uni-app框架的编译器版本、运行时版本
@@ -34,7 +34,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |			|deviceOrientation		|设备方向		|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`。仅微信百度小程序支持||uni-app 3.4.13+|
 |			|devicePixelRatio		|设备像素比		||	|||uni-app 3.4.13+|
 |os		|osName|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos||uni-app 3.4.10+|
-|			|osVersion			|操作系统版本。如 ios 版本，andriod 版本|||||uni-app 3.4.10+|
+|			|osVersion			|操作系统版本。如 ios 版本，android 版本|||||uni-app 3.4.10+|
 |			|osLanguage			|操作系统语言[详见](#tips)|Android仅支持主语言+地区：`zh-CN 中文简体`、iOS支持主语言+次语言+地区`zh-Hans-CN 中文简体` |与浏览器语言一致	|不支持	|	|uni-app 3.4.10+|
 |			|osTheme			|操作系统主题			|light、dark。iOS平台只有将应用主题设置为跟随系统时才能获取到系统的主题|不支持	|不支持	||uni-app 3.4.10+|
 |			|osAndroidAPILevel | Android 系统API库的版本。详情参考[Android 官方文档](https://developer.android.google.cn/guide/topics/manifest/uses-sdk-element?hl=en#ApiLevels)|`仅 Android 支持`|不支持|不支持||uni-app 3.4.10+|

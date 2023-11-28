@@ -1,34 +1,6 @@
-# 扩展存储API
+# 开发指南
 
-扩展存储介绍，待补充
-
-## 扩展存储与原生云存储的区别
-
-定义：
-
-扩展存储：通过扩展存储创建的云存储
-
-支付宝云存储：支付宝云服务空间自带的云存储
-
-阿里云存储：阿里云服务空间自带的云存储
-
-腾讯云存储：腾讯云服务空间自带的云存储
-
-|功能项			|扩展储存				|支付宝云存储		|阿里云存储	|腾讯云存储	|
-|:-:				|:-:						|:-:					|:-:			|:-:			|
-|自定义域名	|支持						|不支持				|不支持		|不支持		|
-|文件权限		| 可设置私有文件	|可设置私有目录	|不支持		|不支持		|
-|上传权限控制| 可自由控制			|不可控制			|不可控制	|不可控制	|
-
-## 开通扩展存储服务@open
-
-参考[开通服务](uniCloud/ext-storage/open.md)
-
-## 费用说明@price
-
-参考[费用说明](uniCloud/ext-storage/price.md)
-
-## 为云函数启用uni-cloud-ext-storage扩展库@use-in-function
+## 启用uni-cloud-ext-storage扩展库@use-in-function
 
 扩展存储是单独的扩展库，开发者需手动将uni-cloud-ext-storage扩展库添加到云函数或云对象的依赖中。
 
@@ -40,7 +12,7 @@
 
 ## API
 
-### 获取扩展存储管理对象
+### 获取扩展存储管理对象@getExtStorageManager
 
 云端在操作扩展存储前，需要先获取 extStorageManager 对象实例，然后再通过 extStorageManager.xxx 调用对应的API
 
@@ -49,7 +21,7 @@
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu", // 扩展存储供应商
-	domain: "你的扩展存储域名", // 带http协议头的域名地址
+	domain: "example.com", // 域名地址
 });
 ```
 
@@ -58,9 +30,9 @@ const extStorageManager = uniCloud.getExtStorageManager({
 |参数名	|类型		|必填	|默认值	|说明																				|
 |:-:		|:-:		|:-:	|:-:		|:-:																				|
 |provider	|String	|是		|-			|扩展存储供应商，可选<br/>qiniu: 七牛云|
-|domain	|String	|是		|-			|你的扩展存储域名（带http协议头的域名地址）	|
+|domain	|String	|是		|-			|扩展储存域名（域名地址）如：example.com	|
 
-### 获取前端上传参数
+### 获取前端上传参数@getUploadFileOptions
 
 接口名：getUploadFileOptions
 
@@ -82,12 +54,12 @@ module.exports = {
 		// 然后获取 extStorageManager 对象实例
 		const extStorageManager = uniCloud.getExtStorageManager({
 			provider: "qiniu",
-			domain: "你的扩展存储域名", // 带http协议头的域名地址
+			domain: "example.com", // 域名地址
 		});
 		// 最后调用 extStorageManager.getUploadFileOptions
 		let uploadFileOptionsRes = extStorageManager.getUploadFileOptions({
 			cloudPath: cloudPath,
-			cover: false, // 如果返回前端，建议设置false，代表仅新增，不可覆盖
+			allowUpdate: false, // 是否允许覆盖更新，如果返回前端，建议设置false，代表仅新增，不可覆盖
 		});
 		return uploadFileOptionsRes;
 	}
@@ -99,7 +71,7 @@ module.exports = {
 |参数名						|类型			|必填	|默认值	|说明																														|
 |:-:							|:-:			|:-:	|:-:		|:-:																														|
 |cloudPath				|String		|否		|-			|云端文件路径（不填会自动生成）																	|
-|cover						|Boolean	|否		| false	|是否允许覆盖 true：可覆盖 false：仅新增，不可覆盖							|
+|allowUpdate			|Boolean	|否		| false	|是否允许覆盖更新 true：可覆盖 false：仅新增，不可覆盖							|
 
 #### 响应参数
 
@@ -148,7 +120,7 @@ uni.chooseImage({
 });
 ```
 
-### 云端直传文件
+### 云端直传文件@uploadFile
 
 接口名：uploadFile
 
@@ -159,7 +131,7 @@ uni.chooseImage({
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu",
-	domain: "你的扩展存储域名", // 带http协议头的域名地址
+	domain: "example.com", // 域名地址
 });
 // 文件的base64值
 let base64 =
@@ -172,7 +144,7 @@ let fileContent = new Buffer(base64, 'base64');
 let res = await extStorageManager.uploadFile({
 	cloudPath: `${Date.now()}.png`, // 云端文件名，不填则自动生成
 	fileContent, // 要上传的文件内容
-	cover: false, // 是否允许覆盖
+	allowUpdate: false, // 是否允许覆盖
 });
 console.log('uploadFile: ', res);
 ```
@@ -183,7 +155,7 @@ console.log('uploadFile: ', res);
 |:-:				|:-:		|:-:	|:-:		|:-:																							|
 |fileContent|Buffer	|是		|-			|文件内容																					|
 |cloudPath	|String	|否		|-			|云端文件路径（不填会自动生成）										|
-|cover			|Boolean|否		| false	|是否允许覆盖 true：可覆盖 false：仅新增，不可覆盖|
+|allowUpdate			|Boolean|否		| false	|是否允许覆盖更新 true：可覆盖 false：仅新增，不可覆盖|
 
 #### 响应参数
 
@@ -193,7 +165,7 @@ console.log('uploadFile: ', res);
 |fileID						|String	|文件ID																										|
 |fileURL					|String	|文件URL（如果是私有权限的文件，则此URL是无法直接访问的）	|
 
-### 获取临时下载链接
+### 获取临时下载链接@getTempFileURL
 
 接口名：getTempFileURL
 
@@ -206,7 +178,7 @@ console.log('uploadFile: ', res);
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu",
-	domain: "你的扩展存储域名", // 带http协议头的域名地址
+	domain: "example.com", // 域名地址
 });
 let res = extStorageManager.getTempFileURL({
 	fileList: ["qiniu://test.jpg"], // 私有文件地址列表
@@ -235,7 +207,7 @@ return res;
 |fileID			|String	|文件ID					|
 |cloudPath	|String	|文件云端路径		|
 
-### 删除文件
+### 删除文件@deleteFile
 
 接口名：deleteFile
 
@@ -246,7 +218,7 @@ return res;
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu",
-	domain: "你的扩展存储域名", // 带http协议头的域名地址
+	domain: "example.com", // 域名地址
 });
 let res = await extStorageManager.deleteFile({
 	fileList: ["qiniu://test.jpg"], // 私有文件地址列表
@@ -267,7 +239,7 @@ return res;
 |:-:			|:-:	|:-:									|
 |fileList	|Array|删除结果组成的数组。	|
 
-### 修改文件状态
+### 修改文件状态@updateFileStatus
 
 接口名：updateFileStatus
 
@@ -280,7 +252,7 @@ return res;
 ```js
 const extStorageManager = uniCloud.getExtStorageManager({
 	provider: "qiniu",
-	domain: "你的扩展存储域名", // 带http协议头的域名地址
+	domain: "example.com", // 域名地址
 });
 let res = await extStorageManager.updateFileStatus({
 	fileID: "qiniu://test.jpg", // 私有文件id
@@ -305,7 +277,7 @@ return res;
 |errMsg	|String	|失败描述|
 
 
-## 常见问题
+## 常见问题@question
 
 ### 扩展存储可以当前端托管使用吗？
 

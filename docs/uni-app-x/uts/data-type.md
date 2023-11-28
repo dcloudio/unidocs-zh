@@ -1517,7 +1517,7 @@ console.log(JSON.stringify(t))	//输出: {"a+b":"value 1","a-b":"value 2","class
 
 HBuilderX 3.9起内置了一个json转type工具，在`json编辑器`中选择一段内容点右键，选择`json转type`，即可根据json数据内容自动推导生成type定义，如果json内容涉及转义，工具也会自动转义。
 
-![](../uni-app-x/static/json2type.png)
+![](../static/json2type.png)
 
 把右侧生成的type复制到代码里即可，那个IRootType的名字自己按需修改。
 

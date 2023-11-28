@@ -2192,6 +2192,11 @@ await uniPayCo.getRefund({
 一般情况下，无需调用此方法去主动关闭订单（订单若未支付，则会在一段时间后自动关闭），但你有需要主动关闭订单的场景时，可以使用此api来主动关闭订单。（只有未支付的订单才可以主动关闭）
 Under normal circumstances, there is no need to call this method to actively close the order (if the order is not paid, it will be automatically closed after a period of time), but when you need to actively close the order, you can use this API to actively close the order. (Only unpaid orders can be actively closed)
 
+注意：
+
+1. 微信支付订单生成后不能马上调用关单接口，最短调用时间间隔为5分钟
+2. 支付宝订单生成后需用户进入过输入密码的页面，才能调用关单接口（无需间隔5分钟）
+
 **支付组件方法形式（推荐）**
 **Payment Component Method Form (recommended)**
 

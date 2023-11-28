@@ -203,7 +203,7 @@ Get user information.
 - 微信小程序端，在用户未授权过的情况下调用此接口，不会出现授权弹窗，会直接进入 fail 回调（详见[《微信小程序公告》](https://developers.weixin.qq.com/community/develop/doc/0000a26e1aca6012e896a517556c01)）。在用户已授权的情况下调用此接口，可成功获取用户信息。
 - On the WeChat MiniApp side, if the user calls this interface without authorization, the authorization pop-up window will not appear, and it will directly enter the fail callback (see ["WeChat MiniApp announcement"](https://developers.weixin.qq.com/community/develop/doc/0000a26e1aca6012e896a517556c01)). Calling this interface when the user is authorized can successfully obtain user information.
 - 京东小程序端，在用户未授权，调用该接口将直接报错。用户已经授权过，可使用该接口直接获取用户信息，不会弹二次授权框
-- JD MiniApp, if the user is not authorized, calling this interface will directly report an error. The user has been authorized, you can use this interface to directly obtain user information, and the secondary authorization box will not pop up
+- 抖音小程序此接口将逐步废弃，请切换使用[uni.getUserProfile](#getUserProfile)。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-info)
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -331,7 +331,7 @@ uni.login({
 3. Develop native plug-ins to integrate three-party SDKs, [see details](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 
-### uni.getUserProfile(OBJECT)
+### uni.getUserProfile(OBJECT)@getUserProfile
 
 > 微信小程序端基础库2.27.1及以上版本，**[wx.getUserProfile 接口](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html)被收回**，详见[《小程序用户头像昵称获取规则调整公告》](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)。
 > Wechat MiniApp Basic Library 2.27.1 and above, **[wx.getUserProfile interface](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html) has been withdrawn**, for details, please refer to ["Announcement on the Adjustment of the Rules for Obtaining MiniApp User Avatar Nicknames"](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01).
@@ -344,8 +344,7 @@ Get user information. An authorization window will pop up for each request, and 
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√（基础库2.10.4）|x|x|x|x|x|x|
-|x|x|√ (base library 2.10.4)|x|x|x|x|x|x|
+|x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|
 
 **注意：** 
 **Notice:** 

@@ -181,7 +181,7 @@ const extStorageManager = uniCloud.getExtStorageManager({
 	domain: "example.com", // 域名地址
 });
 let res = extStorageManager.getTempFileURL({
-	fileList: ["qiniu://test.jpg"], // 私有文件地址列表
+	fileList: ["qiniu://test.jpg"], // 文件地址列表
 });
 console.log('getTempFileURL: ', res);
 return res;
@@ -191,7 +191,7 @@ return res;
 
 |参数名		|类型		|必填	|默认值	|说明																														|
 |:-:			|:-:		|:-:	|:-:		|:-:																														|
-|fileList	|Array	|是		|-			|文件地址列表，数组内元素格式支持（cloudPath、fileID、fileURL）	|
+|fileList	|Array	|是		|-			|文件地址列表，数组内元素值类型支持（fileID、cloudPath、fileURL）<br/>如："qiniu://test.jpg" "test.jpg" "https://example.com/test.jpg" 均表示同一个文件		|
 
 #### 响应参数
 
@@ -207,6 +207,41 @@ return res;
 |fileID			|String	|文件ID					|
 |cloudPath	|String	|文件云端路径		|
 
+### 下载文件@downloadFile
+
+接口名：downloadFile
+
+调用此接口获得文件Buffer
+
+你可以在调用 extStorageManager.downloadFile 前执行一些自己的业务逻辑，判断用户是否有下载该文件权限
+
+**云端代码**
+
+```js
+const extStorageManager = uniCloud.getExtStorageManager({
+	provider: "qiniu",
+	domain: "example.com", // 域名地址
+});
+let res = extStorageManager.downloadFile({
+	fileID: "qiniu://test.jpg", // 待下载的文件
+});
+console.log('getTempFileURL: ', res);
+return res;
+```
+
+#### 请求参数
+
+|参数名		|类型		|必填	|默认值	|说明																														|
+|:-:			|:-:		|:-:	|:-:		|:-:																														|
+|fileID		|String	|是		|-			|待下载的文件，该字段支持的值类型：fileID、cloudPath、fileURL <br/>如："qiniu://test.jpg" "test.jpg" "https://example.com/test.jpg" 均表示同一个文件	|
+
+#### 响应参数
+
+|字段							|类型		|说明																											|
+|:-:							|:-:		|:-:																											|
+|fileContent				|Buffer	|下载的文件的内容															|
+
+
 ### 删除文件@deleteFile
 
 接口名：deleteFile
@@ -221,7 +256,7 @@ const extStorageManager = uniCloud.getExtStorageManager({
 	domain: "example.com", // 域名地址
 });
 let res = await extStorageManager.deleteFile({
-	fileList: ["qiniu://test.jpg"], // 私有文件地址列表
+	fileList: ["qiniu://test.jpg"], // 待删除的文件地址列表
 });
 console.log('deleteFile: ', res);
 return res;
@@ -231,7 +266,7 @@ return res;
 
 |参数名		|类型		|必填	|默认值	|说明																														|
 |:-:			|:-:		|:-:	|:-:		|:-:																														|
-|fileList	|Array	|是		|-			|文件地址列表，数组内元素格式支持（cloudPath、fileID、fileURL）	|
+|fileList	|Array	|是		|-			|文件地址列表，数组内元素值类型支持（fileID、cloudPath、fileURL）<br/>如："qiniu://test.jpg" "test.jpg" "https://example.com/test.jpg" 均表示同一个文件	|
 
 #### 响应参数
 
@@ -255,7 +290,7 @@ const extStorageManager = uniCloud.getExtStorageManager({
 	domain: "example.com", // 域名地址
 });
 let res = await extStorageManager.updateFileStatus({
-	fileID: "qiniu://test.jpg", // 私有文件id
+	fileID: "qiniu://test.jpg", // 待修改的文件
 	isPrivate: true, // true 私有 false 公共
 });
 console.log('updateFileStatus: ', res);
@@ -266,8 +301,9 @@ return res;
 
 |参数名		|类型		|必填	|默认值	|说明																							|
 |:-:			|:-:		|:-:	|:-:		|:-:																							|
-|fileID		|String	|是		|-			|待修改的文件，支持（cloudPath、fileID、fileURL）	|
+|fileID		|String	|是		|-			|待修改的文件，该字段支持的值类型：fileID、cloudPath、fileURL <br/>如："qiniu://test.jpg" "test.jpg" "https://example.com/test.jpg" 均表示同一个文件	|
 |isPrivate|Boolean|是		|-			|true 设为私有权限 false 设为公共读权限						|
+
 
 #### 响应参数
 

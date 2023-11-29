@@ -121,7 +121,7 @@ uniCloud还提供了[ip防刷](/uniCloud/ip-filter.md)功能，可以在uniCloud
 
 uni-app或5+App，支持对js文件或nvue文件进行原生加密。让js代码不再明文暴露于客户端。[详见](/tutorial/app-sec-confusion.md)
 
-DCloud联合业内主流安全厂商，提供[uni安全加固](/uni-app-security.md)产品，可实现移动App的安全性增强，防止应用程序被破解、篡改或重打包等各类安全破坏。它的作用是保护应用程序的安全性和用户的隐私，提高应用程序的抗攻击能力和可靠性。
+DCloud联合业内主流安全厂商，提供[uni安全加固](/tutorial/app-security.md)产品，可实现移动App的安全性增强，防止应用程序被破解、篡改或重打包等各类安全破坏。它的作用是保护应用程序的安全性和用户的隐私，提高应用程序的抗攻击能力和可靠性。
 
 **有uni保驾护航，您可以专注于业务，踏实写代码，安心交付。不用再提心吊胆、担忧各种自己不擅长的事。**
 
@@ -138,4 +138,4 @@ uni安全网络只能在uni-app客户端和uniCloud服务之间保障安全。�
 - ip防刷：[https://uniapp.dcloud.net.cn/uniCloud/ip-filter.html](https://uniapp.dcloud.net.cn/uniCloud/ip-filter.html)
 - 图形验证码：[https://uniapp.dcloud.net.cn/uniCloud/uni-captcha.html](https://uniapp.dcloud.net.cn/uniCloud/uni-captcha.html)
 - 内容安全审查：[https://ext.dcloud.net.cn/plugin?id=5460](https://ext.dcloud.net.cn/plugin?id=5460)
-- [uni安全加固](/uni-app-security.md)
+- [uni安全加固](/tutorial/app-security.md)

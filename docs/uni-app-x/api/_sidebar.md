@@ -61,4 +61,4 @@
   * [数据库](unicloud/database.md)
   * [云存储](unicloud/storage.md)
   * [其他API](unicloud/utils.md)
-* [其他EXT API](ext.md)
+* [未支持的API及替代方案](ext.md)

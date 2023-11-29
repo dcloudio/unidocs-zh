@@ -23,10 +23,10 @@ keyword: 手机号
 
 ```js
 {
-	"name": "univerify",
-	"extensions": {
-		"uni-cloud-verify": {} // 启用一键登录扩展，值为空对象即可
-	}
+  "name": "univerify",
+  "extensions": {
+    "uni-cloud-verify": {} // 启用一键登录扩展，值为空对象即可
+  }
 }
 ```
 
@@ -36,7 +36,7 @@ keyword: 手机号
 
 ## 云函数@cloud
 
-> 自`HBuilderX 3.4.0`起云函数需启用uni-cloud-verify之后才可以调用getPhoneNumber接口，详细说明见：[云函数使用一键登录扩展库](#extension)
+> 自`HBuilderX 3.4.0`起云函数需启用uni-cloud-verify扩展之后才可以调用getPhoneNumber接口，详细说明见：[云函数使用一键登录扩展库](#extension)
 
 客户端调用一键登录接口会获取如下结果
 
@@ -62,8 +62,8 @@ exports.main = async function(event, context){
   const res = await uniCloud.getPhoneNumber({
     provider: 'univerify',
     appid: context.APPID, // 客户端callFunction时携带的AppId信息
-    apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-    apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
+    apiKey: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，在uniCloud控制台开通一键登录服务并获取apiKey
+    apiSecret: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，在uniCloud控制台开通一键登录服务并获取apiSecret
     access_token: event.access_token,
     openid: event.openid
   })
@@ -105,11 +105,9 @@ uniCloud.callFunction({
 exports.main = async function (event, context){
   const res = await uniCloud.getPhoneNumber({
     appid: context.APPID, // 客户端callFunction时携带的AppId信息
-  	provider: 'univerify',
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
-  	access_token: event.access_token,
-  	openid: event.openid
+    provider: 'univerify',
+    access_token: event.access_token,
+    openid: event.openid
   })
   // 执行入库等操作，正常情况下不要把完整手机号返回给前端
   return {
@@ -156,8 +154,6 @@ exports.main = async function(event){
   const res = await uniCloud.getPhoneNumber({
     provider: 'univerify',
     appid: 'xxx', // DCloud appid
-    apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-    apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
     access_token: access_token,
     openid: openid
   })
@@ -224,12 +220,10 @@ exports.main = async function (event){
     openid
   } = params
   const res = await uniCloud.getPhoneNumber({
-  	provider: 'univerify',
+    provider: 'univerify',
     appid: 'xxx', // DCloud appid
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
-  	access_token: access_token,
-  	openid: openid
+    access_token: access_token,
+    openid: openid
   })
   // 返回手机号给自己服务器
   return res

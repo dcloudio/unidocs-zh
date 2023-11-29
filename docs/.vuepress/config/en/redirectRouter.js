@@ -97,7 +97,8 @@ const routerMap = {
   '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.html',
   '/uniCloud/uni-id-common': '/uniCloud/uni-id/cloud-common.html',
   '/uniCloud/uni-id': '/uniCloud/uni-id/old.html',
-  '/uts/': '/uni-app-x/uts/'
+  '/uts/': '/uni-app-x/uts/',
+  '/uni-app-x/unicloud/': '/uni-app-x/api/unicloud/'
 }
 
 export default ({ fullPath, path, hash }) => {

@@ -65,7 +65,8 @@ JQL语法相关文档已移至：[JQL语法](jql.md)
 
 
 ## clientDB图解
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
+
+clientDB调用流程参考：[JQL图解](jql.md#flow-chart)
 
 `clientDB`的前端，有两种用法，可以用js API操作云数据库，也可以使用`<unicloud-db>`组件。
 

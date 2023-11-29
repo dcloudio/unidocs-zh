@@ -92,7 +92,8 @@ Only: 5 lines of code as shown:
 
 
 ## clientDB图解
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
+
+clientDB调用流程参考：[JQL图解](jql.md#flow-chart)
 
 `clientDB`的前端，有两种用法，可以用js API操作云数据库，也可以使用`<unicloud-db>`组件。
 The front end of `clientDB` can be used in two ways. You can use the js API to operate cloud database, or you can use the `<unicloud-db>` component.

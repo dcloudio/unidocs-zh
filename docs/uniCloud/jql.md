@@ -123,6 +123,12 @@ See the following example for details
     })
   ```
 
+## JQL流程图解@flow-chart
+
+下图包括clientDB及云函数内使用jql扩展库的调用流程
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
+
 ## JQL包含的模块@module
 ## JQL included modules @module
 

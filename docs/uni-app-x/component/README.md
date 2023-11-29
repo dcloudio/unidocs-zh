@@ -22,11 +22,11 @@ uni-app x支持的组件包括：
 - uts组件插件
 	`uts组件插件`的名称可能有点拗口，这是因为是相对于另一个分类`uts api插件`。
 	
-	它们同属于`uts插件`，是uni_modules。api插件指能力扩展，比如蓝牙api。而组件插件指界面元素扩展，比如video、map、lottie动画等。
+	它们同属于`uts插件`，是[uni_modules](../../plugin/uni_modules.md)。api插件指能力扩展，比如蓝牙api。而组件插件指界面元素扩展，比如video、map、lottie动画等。
 	
 	uts组件插件，指把原生的、需要在界面上显示的、内嵌于页面中整体排版的组件，编写uts代码调用原生sdk，通过uni_modules插件的方式集成到uni-app项目中。比如
 	* lottie组件，使用uts调用原生的lottie sdk来开发组件，再引入页面中。[详见](https://ext.dcloud.net.cn/plugin?name=uni-animation-view)
-	* video组件，其实官方的video，也是用uts组件插件实现的
+	* video组件，其实官方的video，也是用uts组件插件实现的。[详见](https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-video)
 	
 	uts组件插件，主要用于原生sdk涉及界面时，将其封装为界面组件。当然uts组件也是全端支持的。上述lottie组件也支持web端。
 	

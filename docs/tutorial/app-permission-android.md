@@ -1,7 +1,15 @@
 根据工业和信息化部关于开展APP侵害用户权益专项整治要求，应用的隐私政策中需详细描述使用权限的用途。
 为了不避免应用使用过多权限，HBuilderX2.6.3+版本对应用默认要求的权限进行简化，对第三方SDK需要的权限提供方法根据实际需求进行配置。
 
-### 默认使用的权限
+Android平台云端打包使用的权限包括以下几个方面：  
+- 默认使用的权限，不做任何配置都会包含的权限，参考[默认使用的权限](#default)  
+- App使用模块依赖的权限，也包含模块依赖三方SDK需要的权限，参考[App模块需要的权限](#modules)  
+- manifest.json中配置额外添加的权限，参考[App配置添加权限](#app_permissions)  
+- App原生插件依赖的权限  
+
+如果希望去掉以上添加的某个权限，请参考[移除Android权限](app-nativeresource-android.md#removepermissions)操作。  
+
+### 默认使用的权限@default
 提交云端打包后会自动添加以下权限：
 ```js
 <uses-permission android:name="android.permission.INTERNET" />
@@ -40,7 +48,7 @@
 
 <a id='sdkpermission' />
 
-### Android平台三方SDK（或模块）需要的权限  
+### App模块（三方SDK）的权限@modules 
 提交云端打包时，勾选使用三方SDK相关的功能模块时，默认会自动添加三方SDK需要的所有权限。  
 为了保证三方SDK（或模块）的功能完整，默认会添加可能需要的所有权限，如果应用只用到三方SDK提供的部分功能，需通过Android原生应用清单文件配置[移除Android权限](app-nativeresource-android.md#removepermissions)。  
 
@@ -49,7 +57,7 @@
 **注意：HBuilderX中manifest.json文件的 “App权限配置” -> “Android自动添加第三方SDK需要的权限” 复选框功能已失效（即不勾选也会添加三方SDK需要的权限），后续版本将会移除此配置项**  
 
 
-### Android权限配置  
+### App配置添加权限@app_permissions  
 打开项目的manifest.json文件，在“（App）模块权限配置”页的“Android权限配置”项下根据需求勾选需要的权限：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/permission/android.png)
 
@@ -86,7 +94,7 @@
   //...
 ```
 
-### 三方SDK（或模块）需要的权限列表  
+### App模块（三方SDK）的权限列表@modules_permission  
 #### Bluetooth(低功耗蓝牙)  
 ```
 	"<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",

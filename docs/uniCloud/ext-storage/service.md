@@ -1,6 +1,5 @@
-## 开通服务
 
-### 开通操作步骤
+## 业务开通
 
 1. 登录[uniCloud web控制台](https://unicloud.dcloud.net.cn/)
 
@@ -26,7 +25,19 @@
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/ext-storage/444.png)
 
-### 注意事项
+## 业务充值
 
-1. 一个空间只能开通一个扩展存储，实例会自动和当前服务空间绑定
-2. 开通前保证金账户余额需≥200元，扩展存储按量余额需>0元
+### 充值保证金
+
+扩展存储是延迟计费的，使用前需要先充值200元保证金，用于欠费的担保。保证金是账号级的、可在不同业务间复用，若你在使用其他uniCloud服务时 ，已充值保证金，则无需重复充值。
+
+在uniCloud web控制台前往【费用中心】-【按量余额充值】充值保证金（若保证金账户余额≥200元则无需充值）
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/429.png)
+
+### 充值余额
+
+在uniCloud web控制台前往【费用中心】-【按量余额充值】充值扩展存储余额
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/428.png)
+

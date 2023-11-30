@@ -77,4 +77,4 @@ uniCloud扩展存储CDN费用，按从CDN节点流出的下行流量（单位GB�
 
 ## 如何使用？
 
-如何使用扩展存储，请参考[扩展存储API](uniCloud/uni-cloud-ext-storage/api.md)
+如何使用扩展存储，请参考[扩展存储API](api.md)

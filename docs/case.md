@@ -8,7 +8,7 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 ## Official example
 
 <a href="//m3w.cn/uniapp" target="_blank" class="clear-style"><b>Hello uni-app：</b></a>演示uni-app框架的组件、接口、模板。本项目源码可在HBuilderX中新建项目获得，也可从[github](https://github.com/dcloudio/hello-uniapp)上获取。
-<a href="//m3w.cn/uniapp" target="_blank" class="clear-style"><b>Hello uni-app:</b></a> Demonstrate the components of the uni-app framework, interface, template. The source code of this project can be obtained by creating a new project in HBuilderX, or from [github](https://github.com/dcloudio/hello-uniapp).
+
 <div style="display:flex;justify-content: space-around;">
 	<a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case/app-download.png" width="200"/>
@@ -23,7 +23,7 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 </div>
 
 <a href="//m3w.cn/__uni__1e99193" target="_blank" class="clear-style"><b>新闻/资讯类App模板：</b></a>nvue 典型案例，App端纯原生渲染，可左右拖动的复杂长列表，满足苛刻的性能要求。并同时能编译为小程序和H5。本项目源码在HBuilderX中新建项目选新闻模块可获得。
-<a href="//m3w.cn/__uni__1e99193" target="_blank" class="clear-style"><b>News/information app template:</b></a>nvue typical case, App side Pure native rendering, complex and long lists that can be dragged left and right, meeting demanding performance requirements. And it can be compiled into MiniApp and H5 at the same time. The source code of this project can be obtained by creating a new project in HBuilderX and selecting the news module.
+
 <div style="display:flex;justify-content: space-around;">
 	<a href="//m3w.cn/__uni__1e99193" target="_blank" class="clear-style barcode-view">
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case/news.png" width="200"/>
@@ -156,7 +156,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 ### Typical Case
 
 <a href="https://m.qinxuan.hihonor.com/" target="_blank" class="clear-style"><b>华为荣耀亲选商城：</b></a> 华为公司旗下荣耀品牌精品电商平台。
-<a href="https://m.qinxuan.hihonor.com/" target="_blank" class="clear-style"><b>Huawei Honor Personal Selection Mall:</b></a> Huawei Its Honor brand boutique e-commerce platform.
+
 <div style="display:flex;justify-content: space-around;">
 	<a href="javascript:;" target="_self" class="clear-style barcode-view">
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-case-rongyao.png" width="200"/>
@@ -177,7 +177,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 
 
 <b>星巴克：</b>全球最大的咖啡连锁店，世界领先的特种咖啡零售商
-<b>Starbucks:</b> the world's largest coffee chain and the world's leading specialty coffee retailer
+
 <div style="display:flex;justify-content: space-around;">
 	<a href="javascript:;" target="_self" class="clear-style barcode-view">
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-case-xbk.jpg" width="200"/>
@@ -203,7 +203,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 </div>
 
 <b>中国教育发布：</b>中华人民共和国教育部官方App。<a href="https://uniapp.dcloud.io/uniCloud/README">uniCloud云开发</a>案例。[详见报道](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
-<b>China Education Release:</b> The official app of the Ministry of Education of the People's Republic of China. <a href="https://uniapp.dcloud.io/uniCloud/README">uniCloud cloud development</a> case. [See report for details](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
+
 <div style="display:flex;justify-content: space-around;">
 	<a href="http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html" target="_blank" class="clear-style barcode-view">
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/jiaoyubuapp.jpg" width="200"/>
@@ -213,7 +213,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 </div>
 
 <b>CSDN：</b> Appstore新闻类榜单前十。<a href="https://nativesupport.dcloud.net.cn/">uni小程序SDK</a>案例。App内部众多栏目做成小程序形式。
-<b>CSDN:</b> Appstore news category top ten. <a href="https://nativesupport.dcloud.net.cn/ <a href="https://nativesupport.dcloud.net.cn/">"></a> uni MiniApp SDK</a> case. Many columns inside the app are made into MiniApp.
+
 <div style="display:flex;justify-content: space-around;">
 	<a href="https://www.csdn.net/apps/download" target="_blank" class="clear-style barcode-view">
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/csdnappdown.jpg" width="200"/>
@@ -250,7 +250,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 -->
 
 <b>vivo官方商城：</b> vivo公司旗下的官方自营商城。
-<b>vivo official mall:</b> The official self-operated mall of vivo.
+
 <div style="display:flex;justify-content: space-around;">
 	<a href="javascript:;" target="_blank" class="clear-style barcode-view">
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case/vivo-weixin.jpg" width="200"/>
@@ -280,7 +280,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 </div> -->
 
 <a href="http://ext.dcloud.net.cn/plugin?id=239" target="_blank" class="clear-style"><b>ColorUI：</b></a>ColorUI官方组件库for uni-app，高颜值示例。本项目插件市场地址：[https://ext.dcloud.net.cn/plugin?id=239](https://ext.dcloud.net.cn/plugin?id=239)
-<a href="http://ext.dcloud.net.cn/plugin?id=239" target="_blank" class="clear-style"><b>ColorUI:</b></a>ColorUI Official component library for uni-app, high-quality examples. The plug-in market address of this project: [https://ext.dcloud.net.cn/plugin?id=239](https://ext.dcloud.net.cn/plugin?id=239)
+
 <div style="display:flex;justify-content: space-around;">
 	<a href="http://demo.color-ui.com" target="_blank" class="clear-style barcode-view">
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/color-ui-H5.jpg" width="200"/>
@@ -300,7 +300,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 </div>
 
 <a href="https://www.cyb520.com/" target="_blank" class="clear-style"><b>宠友帮：</b></a>多端开发的创业公司案例。
-<a href="https://www.cyb520.com/" target="_blank" class="clear-style"><b>Chongyoubang:</b></a> A case study of a start-up company with multi-terminal development .
+
 <div style="display:flex;justify-content: space-around;">
 	<!-- <a href="https://android.myapp.com/myapp/detail.htm?apkName=com.cyb520.app" target="_blank" class="clear-style barcode-view">
 		<img src="https://a.app.qq.com/o/image/microQr.png?pkgName=com.cyb520.app" width="200"/>

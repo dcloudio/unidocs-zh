@@ -7,6 +7,9 @@
 
 <!-- CSSJSON.transition-timing-function.values -->
 
+#### App平台  
+App平台不支持指定多个过渡效果。
+
 <!-- CSSJSON.transition-timing-function.defaultValue -->
 
 <!-- CSSJSON.transition-timing-function.unixTags -->

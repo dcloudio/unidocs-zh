@@ -47,10 +47,12 @@
   * [腾讯云权限管理](policy-tcb.md)
   * [阿里云CDN安全策略](cdn-security-policy.md)
 * uni-id用户体系
-  * [综述](uni-id-summary.md)
-  * [uni-id-pages](uni-id-pages.md)
-  * [uni-id-common](uni-id-common.md)
-  * [老版uni-id 3.x文档](uni-id.md)
+  * [综述](./uni-id/summary.md)
+  * [客户端-uni-app](./uni-id/app.md)
+  * [客户端-uni-app x](./uni-id/app-x.md)
+  * [云对象](./uni-id/cloud-object.md)
+  * [uni-id-common](./uni-id/cloud-common.md)
+  * [老版uni-id 3.x文档](./uni-id/old.md)
 * uni手机号一键登录
   * [费用说明](uni-login/price.md)
   * [开通服务](uni-login/service.md)
@@ -76,7 +78,8 @@
   * [业务文档](/unipush-v2.md)
   * 开发文档  
     * [服务端api](uni-cloud-push/api.md)  
-    * [客户端api](/api/plugins/push.md)
+    * [uni-app客户端api](/api/plugins/push.md)
+    * [uni-app x客户端api](https://uniapp.dcloud.net.cn/uni-app-x/api/push.html)
   * [uni-push、uni-id、uni统计的协作](uni-cloud-push/mate.md)
   * [扩展参数](uni-cloud-push/options.md)
 * [运行与调试](rundebug.md)

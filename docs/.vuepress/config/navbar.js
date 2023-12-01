@@ -40,12 +40,7 @@ export const navbar = [
       {
         text: 'UTS',
         type: 'link',
-        link: '/uts/'
-      },
-      {
-        text: 'uni-app x',
-        type: 'link',
-        link: '/uni-app-x/'
+        link: '/uni-app-x/uts/'
       },
       {
         text: '插件',
@@ -134,6 +129,62 @@ export const navbar = [
         target: "_blank",
         text: "GitHub",
         type: "link"
+      }
+    ]
+  },
+  {
+    text: 'uni-app x',
+    link: '/uni-app-x/',
+    items: [
+      {
+        text: '介绍',
+        type: 'link',
+        link: '/uni-app-x/'
+      },
+      {
+        text: '编译器',
+        type: 'link',
+        link: '/uni-app-x/compiler/'
+      },
+      {
+        text: 'UTS',
+        type: 'link',
+        link: '/uni-app-x/uts/'
+      },
+      {
+        text: '全局文件',
+        type: 'link',
+        link: '/uni-app-x/collocation/pagesjson'
+      },
+      {
+        text: '组件',
+        type: 'link',
+        link: '/uni-app-x/component/'
+      },
+      {
+        text: 'API',
+        type: 'link',
+        link: '/uni-app-x/api/'
+      },
+      {
+        text: 'CSS',
+        type: 'link',
+        link: '/uni-app-x/css/'
+      },
+      {
+        text: 'DOM',
+        type: 'link',
+        link: '/uni-app-x/dom/'
+      },
+      {
+        text: '插件',
+        type: 'link',
+        link: '/uni-app-x/plugin/'
+      },
+      {
+        text: '工程化',
+        type: 'link',
+        link: '/uni-app-x/worktile/'
       }
     ]
   },

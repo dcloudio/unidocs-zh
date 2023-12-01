@@ -135,6 +135,7 @@ uni.login({
 **注意：**
 - 微信小程序端，在用户未授权过的情况下调用此接口，不会出现授权弹窗，会直接进入 fail 回调（详见[《微信小程序公告》](https://developers.weixin.qq.com/community/develop/doc/0000a26e1aca6012e896a517556c01)）。在用户已授权的情况下调用此接口，可成功获取用户信息。
 - 京东小程序端，在用户未授权，调用该接口将直接报错。用户已经授权过，可使用该接口直接获取用户信息，不会弹二次授权框
+- 抖音小程序此接口将逐步废弃，请切换使用[uni.getUserProfile](#getUserProfile)。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-info)
 
 **OBJECT 参数说明**
 
@@ -221,7 +222,7 @@ uni.login({
 3. 开发原生插件集成三方sdk，[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 
-### uni.getUserProfile(OBJECT)
+### uni.getUserProfile(OBJECT)@getUserProfile
 
 > 微信小程序端基础库2.27.1及以上版本，**[wx.getUserProfile 接口](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html)被收回**，详见[《小程序用户头像昵称获取规则调整公告》](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)。
 
@@ -231,7 +232,7 @@ uni.login({
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√（基础库2.10.4）|x|x|x|x|x|x|
+|x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|
 
 **注意：** 
 

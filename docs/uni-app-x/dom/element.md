@@ -6,8 +6,6 @@
 
 <!-- CUSTOMTYPEJSON.Element.param -->
 
-**注意：** App端Element所有属性仅支持获取，不支持设置修改
-
 ### 方法
 <!-- CUSTOMTYPEJSON.Element.methods.getNodeId.name -->
 

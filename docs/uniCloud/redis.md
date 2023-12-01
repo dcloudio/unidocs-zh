@@ -1167,7 +1167,7 @@ await redis.lpush(key: string, value: string)
 **接口形式**
 
 ```js
-await redis.rpop(key: string)
+await redis.lpop(key: string)
 ```
 
 **入参说明**

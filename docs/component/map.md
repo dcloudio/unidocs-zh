@@ -338,7 +338,7 @@ DCloud为开发者争取了福利，可优惠获取商业授权。如有需求�
 
 - 腾讯地图商业授权现优惠政策：买1年送1个月，买2年送1年。如需购买，请速扫以下二维码咨询与购买！
 
-![]()
+![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/sc-weixin.png)
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
 

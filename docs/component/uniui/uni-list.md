@@ -220,7 +220,7 @@ export default {
 属性名|说明
 :-:|:-:
 navigateTo|同 uni.navigateTo()
-redirectTo|同 uni.reLaunch()
+redirectTo|同 uni.redirectTo()
 reLaunch|同 uni.reLaunch()
 switchTab|同 uni.switchTab()
 

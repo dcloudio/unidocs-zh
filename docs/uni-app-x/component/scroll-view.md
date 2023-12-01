@@ -35,7 +35,7 @@
 
 **具体代码请参考：**[自定义下拉刷新样式示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/scroll-view/scroll-view-custom-refresher-props.uvue)
 
-### nested-scroll嵌套滚动协商
+### nested-scroll嵌套滚动协商@nested
 
 嵌套滚动是原生才有的概念，web没有。
 
@@ -94,3 +94,6 @@ onNestedPreScroll(event: NestedPreScrollEvent) {
 
 <!-- UTSCOMJSON.scroll-view.reference -->
 
+### Bug & Tips@tips
+
+- scroll-view组件的overflow属性不支持配置visible

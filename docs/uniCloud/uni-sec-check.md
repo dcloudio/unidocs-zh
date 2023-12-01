@@ -43,6 +43,26 @@ uni-sec-check公共模块仅能在云函数/云对象内使用。如果您不了
 
 ## API@api
 
+### 创建实例@new-instance
+
+**用法
+
+```js
+const uniSecCheck = new UniSecCheck({
+	provider: 'mp-weixin',
+	requestId: this.getUniCloudRequestId(), // 云函数内则写 context.requestId 云对象内则写 this.getUniCloudRequestId()
+  // appId: '__UNI__XXX'
+});
+```
+
+**参数**
+
+|名称			|类型		|必填	|说明																																																							|
+|--				|--			|--		|--																																																								|
+|provider	|String	|是		|服务供应商																																																					|
+|requestId|String	|否		|当前请求的requestId，用于获取客户端信息																																							|
+|appId		|String	|否		|项目manifest.json内的appId，新增于2.0.2版本。当前请求不是来自客户端时，无法根据requestId获取客户端信息，此时需要传入appId	|
+
 ### 检测文本@textSecCheck
 
 **用法**

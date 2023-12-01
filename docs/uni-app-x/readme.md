@@ -11,7 +11,7 @@ uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
 <div class="quick">
   <div style="margin-top: 20px;justify-content: space-around;">
     <a
-      href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk"
+      href="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk"
       target="_blank"
       style="display: flex; align-items: center;flex-direction: column;margin: 0 5px 20px;width:160px;"
       one-link-mark="yes"
@@ -145,6 +145,7 @@ uni-app x 目前只包括常用的组件和API。
 - [x] animation-view // 已有uts插件
 - [x] unicloud-db // 3.93+
 - [x] sticky-header // 3.93+
+- [x] sticky-section// 3.98+
 - [x] form //3.97+
 
 不支持的组件及替代方案
@@ -219,7 +220,7 @@ uni.的api，大多是uts开发的，它们会陆续开源在[uni-api](https://g
 
 ## 7. 插件生态
 
-uni-app x编译到web和小程序时，所有js库仍然可用。但在App平台，由于没有js引擎，所以无法使用js生态，包括npm。
+uni-app x编译到web和小程序时，所有js库仍然可用。但在App平台，由于没有js引擎，所以无法使用js生态。
 
 uni-app x App平台的插件生态来源于：
 1. 原生生态。比如上述示例代码中获取手机型号。以及各种原生sdk的直接调用。
@@ -241,8 +242,7 @@ uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码�
 
 后续DCloud会提供uni-app x编译为web，届时这些插件也可以适配到uni-app js引擎版的全端。
 
-uts插件分类直达：[https://ext.dcloud.net.cn/search?fePlatform=1&fePlatform2=34&type=UpdatedDate](https://ext.dcloud.net.cn/search?fePlatform=1&fePlatform2=34&type=UpdatedDate)
-
+在插件市场搜索框下方有uni-app x的checkbox，勾选可见到所有适配uni-app x的插件：[https://ext.dcloud.net.cn/?uni-appx=1](https://ext.dcloud.net.cn/?uni-appx=1)
 
 一般情况下，原生库的能力是大于js库的。不太可能有一个功能必须使用js库才能使用。比如md5，js有库，原生也有库，调用一个jar也很方便。
 
@@ -256,13 +256,12 @@ uts插件分类直达：[https://ext.dcloud.net.cn/search?fePlatform=1&fePlatfor
 
 - 全端支持：一期只有Android。虽然uts语言支持swift，可以写原生插件，但iOS版的uvue还未开发完毕。对于iOS或其他小程序、web平台，开发者可将uvue文件后缀改为vue或nvue，如果没有写Android专有代码，那么也可以使用uni-app js引擎版编译到其他平台，包括iOS App、web及各家小程序。尤其在app-iOS上，由于设备性能本就优秀，所以js的方案的性能也足够满足很多开发者。后期官方会提供更完善的 uni-app x的全端支持。
 - 一期不支持：横屏切换、暗黑模式、自定义路由、多语言、无障碍
-- 一期不支持：uni-ad。另外包括微信、支付宝、个推、地图等三方sdk封装官方均未启动
 - 一期不支持国际区账户创建和打包uni-app x，仅大陆区开发者账户可用。
 
 欢迎去[需求墙](https://vote.dcloud.net.cn/#/?name=uni-app%20x)投票，告诉我们你的需求优先级。
 
 ## 自动化测试
-uni-app x 从源头重视产品质量，第一个版本就支持自动化测试。并为uni-app x产品编写了数万行自动化测试例代码。
+uni-app x 从源头重视产品质量，第一个版本就支持自动化测试。并为uni-app x产品编写了数十万行自动化测试例代码。
 
 uni-app x 的自动化测试方案和 uni-app js版相同，自动化测试脚本使用js编写（注意不是uts）。整个自动化测试环境，运行在电脑端。
 

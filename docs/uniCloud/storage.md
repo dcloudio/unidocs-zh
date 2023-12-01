@@ -10,7 +10,7 @@
 **注意：**
 - 前端和云函数端，均有一个相同名称的api：`uniCloud.uploadFile`。请不要混淆。
 - 前端还有一个`uni.uploadFile`的API，那个API用于连接非uniCloud的上传使用。请不要混淆。
-- 在使用腾讯云时如果访问云存储文件提示`The requested URL '/1123.jpg' was not found on this server`这种错误，一般是cdn流量用尽导致的。可以升级配置或转为按量计费（目前仅企业类型认证的账号可以使用按量计费的服务空间）。
+- 在使用腾讯云时如果访问云存储文件提示`The requested URL '/1123.jpg' was not found on this server`这种错误，一般是cdn流量用尽导致的，可以升级套餐或转为按量计费。
 - 在允许用户上传图片的应用里，违规检测是必不可少的，为此uniCloud提供了内容安全检测模块，可以很方便的实现图片鉴黄等功能。详情参考：[内容安全](https://ext.dcloud.net.cn/plugin?id=5460)
 
 阿里云的云存储有一些限制：
@@ -63,16 +63,21 @@ uniCloud腾讯云版支持云存储的文件权限。当上传的文件不希望
 
 **各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。[参考](https://uniapp.dcloud.io/uniCloud/publish.html#useinmp)**
 
+**已知问题**
+
+- HBuilderX 3.98之前的版本，微信小程序端上传文件到支付宝小程序云会报错
+- 非web端、微信小程序端上传文件到支付宝小程序云会出现怪异表现或者报错，例如：百度小程序会既不触发失败也不触发成功，最终会上传一个空文件上去。此问题支付宝小程序云已在2023年11月21日修复。
+
 #### 请求参数
 **Object object**
 
-|参数名							|类型			|必填	|默认值	|                   说明																																																																							                    |平台差异说明	|
-|:-:								|:-:			|:-:	|:-:		|:--------------------------------------------------------------------------------------------------------------:|:-:					|
-|filePath						|String		|是		|-			|                   要上传的文件对象																																																																	                    |-						|
-|cloudPath					|String		|是		|-			| 使用支付宝小程序云或腾讯云时，表示文件的绝对路径，包含文件名。<br />使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径 |-						|
-|cloudPathAsRealPath|Boolean	|否		|false	|                 是否以`cloudPath`作为云端文件绝对路径																																																						                 |仅阿里云支持	|
-|fileType						|String		|-		|-			|                文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio																																									                |-						|
-|onUploadProgress		|Function	|否		|-			|                   上传进度回调																																																																			                    |-						|
+|参数名				|类型			|必填	|默认值	| 说明		 |平台差异说明	|
+|:-:					|:-:			|:-:	|:-:		|:-|:-:			|
+|filePath			|String		|是		|-			|      要上传的文件对象	|-						|
+|cloudPath			|String		|是		|-			| 使用支付宝小程序云或腾讯云时，表示文件的绝对路径，包含文件名。<br/>使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径|-				|
+|cloudPathAsRealPath|Boolean	|否		|false	| 是否以`cloudPath`作为云端文件绝对路径		 |仅阿里云支持	|
+|fileType			|String		|-			|-			| 文件类型，支付宝小程序、钉钉小程序必填，可选image、video、audio|-					|
+|onUploadProgress	|Function	|否		|-			| 上传进度回调	|-						|
 
 **注意**
 
@@ -165,13 +170,13 @@ uni.chooseImage({
 
 ### getTempFileURL(Object object)
 
-在云函数中，把文件的fileid转换为临时URL。临时URL有有效期限制，避免其他人获取URL后可以持续访问该文件。
+在客户端把文件的fileid转换为临时URL。临时URL有有效期限制，避免其他人获取URL后可以持续访问该文件。
 
 **平台兼容性**
 
-|阿里云						|腾讯云	|
-|----							|----		|
-|HBuilderX 3.1.0+	|√			|
+|阿里云						|腾讯云	|支付宝小程序云|
+|----							|----		|----|
+|√	|√			|√|
 
 支付宝小程序云与腾讯云获取文件临时下载链接。
 
@@ -228,9 +233,9 @@ uniCloud.getTempFileURL({
 
 **平台兼容性**
 
-|阿里云																										|腾讯云	|
-|----																											|----		|
-|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+|阿里云																										|腾讯云	|支付宝小程序云|
+|----																											|----		|----|
+|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|不支持|
 
 #### 请求参数
 
@@ -539,9 +544,9 @@ const uploadRes = await storageSpace.uploadFile({
 
 **平台兼容性**
 
-|阿里云						|腾讯云	|
-|----							|----		|
-|HBuilderX 3.1.0+	|√			|
+| 阿里云						 | 腾讯云	 | 支付宝小程序云 |
+|-----------|------|---------|
+| √	        | √			 | √       |
 
 HBuilderX 3.1.0之前版本如使用阿里云，请在客户端通过`uniCloud.uploadFile`进行上传
 
@@ -549,11 +554,11 @@ HBuilderX 3.1.0之前版本如使用阿里云，请在客户端通过`uniCloud.u
 
 **uploadFileOptions参数说明**
 
-| 字段							| 类型	| 必填|默认值	| 说明																																																																						                                 |平台差异说明	|
-| ---								| ---		| ---	|---		|----------------------------------------------------------------------------------------------------------|---					|
-| cloudPath					| string| 是	|-			| 使用腾讯云或支付宝小程序云时，表示文件的绝对路径，包含文件名。使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径 |							|
-| fileContent				| -			| 是	|-			| 文件内容，请看下方说明																																																														                                |							|
-|cloudPathAsRealPath|Boolean|否		|false	| 是否以`cloudPath`作为云端文件绝对路径																																																						                           |仅阿里云支持	|
+| 字段							| 类型	| 必填|默认值	| 说明		|平台差异说明	|
+| ---					| ---		| ---	|---		|:----|---					|
+| cloudPath					| string| 是	|-			| 使用腾讯云或支付宝小程序云时，表示文件的绝对路径，包含文件名。<br/>使用阿里云时，`cloudPath`为云端文件名，传`cloudPathAsRealPath: true`可以让cloudPath作为文件存储路径 |							|
+| fileContent				| -			| 是	|-			| 文件内容，请看下方说明	|							|
+|cloudPathAsRealPath|Boolean|否		|false	| 是否以`cloudPath`作为云端文件绝对路径	|仅阿里云支持	|
 
 **说明**
 
@@ -710,9 +715,9 @@ let result = await uniCloud.downloadFile({
 
 **平台兼容性**
 
-|阿里云																										|腾讯云	|
-|----																											|----		|
-|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|
+|阿里云																										|腾讯云	|支付宝小程序云|
+|----																											|----		|----|
+|HBuilderX 3.6.10+（Alpha版）、HBuilderX 3.6.5+（正式版）	|不支持			|不支持|
 
 #### 请求参数
 

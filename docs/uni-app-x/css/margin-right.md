@@ -12,7 +12,7 @@
 <!-- CSSJSON.margin-right.unixTags -->
 
 **注意**  
-当position:fixed|absolute时,margin暂不支auto
+3.98以下版本当position:fixed|absolute时,margin不支持auto
 
 <!-- CSSJSON.margin-right.compatibility -->
 

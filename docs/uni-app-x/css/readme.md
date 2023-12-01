@@ -333,6 +333,20 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |@property						|×			|		|
 |@supports						|×			|		|
 
+@font-face自定义字体示例：
+```html
+<style>
+@font-face {
+    font-family: AlimamaDaoLiTiOTF;
+    src: url('/static/font/AlimamaDaoLiTi.otf');
+}
+</style>
+```
+
+Tips：
+- 字体路径支持网络和本地，本地字体请注意放在项目或uni_modules的static目录下。
+
+
 ## 样式清单
 | uni-app-x App平台 CSS 属性列表 |
 | :-|

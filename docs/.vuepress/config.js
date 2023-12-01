@@ -1,7 +1,6 @@
 const path = require('path');
 const { slugify } = require('@vuepress/shared-utils')
-const merge = require('webpack-merge');
-
+const highlight = require('@vuepress/markdown/lib/highlight')
 const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')
 const createSidebar = require('./markdown/createSidebar')
@@ -69,6 +68,14 @@ module.exports = merge({
     },
     extractHeaders: ['h1', 'h2', 'h3', 'h4'],
     chainMarkdown (config) {
+      const extensionMap = {
+        uts: 'ts'
+      }
+      config.options.highlight((str, lang) => {
+        const extension = extensionMap[lang]
+        return highlight(str, extension || lang)
+      })
+
       config
         .plugin('translate')
         .use(translatePlugin)

@@ -143,7 +143,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		}
 	}
 
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		/**
 		 * 组件名称，也就是开发者使用的标签
@@ -187,7 +187,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 						}
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 		},
 		/**
@@ -220,7 +220,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 
 		},
 		/**
-		 * 对应平台的view载体即将被创建，对应前端beforeMount  
+		 * 对应平台的view载体即将被创建，对应前端beforeMount
 		 * [可选实现]
 		 */
 		NVBeforeLoad() {
@@ -229,12 +229,12 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		/**
 		 * 创建原生View，必须定义返回值类型
 		 * 开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型
-		 * （Android需要明确知道View类型，需特殊校验） 
+		 * （Android需要明确知道View类型，需特殊校验）
 		 * todo 补充IOS平台限制
 	  * [必须实现]
 		 */
 		NVLoad(): LinearLayout {
-			//必须实现  
+			//必须实现
 			let contentLayout = new LinearLayout(this.$androidContext!)
 			let button = new Button(this.$androidContext!)
 			button.setText("点击触发");
@@ -245,38 +245,38 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		},
 
 		/**
-		 * 原生View已创建 
+		 * 原生View已创建
 		 * [可选实现]
 		 */
 		NVLoaded() {
 
 		},
 		/**
-		 * 原生View布局完成  
+		 * 原生View布局完成
 		 * [可选实现]
 		 */
 		NVLayouted() {
 
 		},
 		/**
-		 * 原生View将释放  
+		 * 原生View将释放
 		 * [可选实现]
 		 */
 		NVBeforeUnload() {},
 		/**
-		 * 原生View已释放，这里可以做释放View之后的操作  
+		 * 原生View已释放，这里可以做释放View之后的操作
 		 * [可选实现]
 		 */
 		NVUnloaded() {
 
 		},
 		/**
-		 * 组件销毁  
+		 * 组件销毁
 		 * [可选实现]
 		 */
 		unmounted() {},
 		/**
-		 * 自定组件布局尺寸 
+		 * 自定组件布局尺寸
 		 * [可选实现]
 		 */
 		NVMeasure(size: UTSSize): UTSSize {
@@ -287,7 +287,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 	}
 </script>
 <style>
-	
+
 </style>
 
 
@@ -313,7 +313,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		}
 	}
 
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		/**
 		 * 组件名称，也就是开发者使用的标签
@@ -352,7 +352,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 				handler(newButtonText: string, oldButtonText) {
 					this.$el.setTitle(newButtonText, for = UIControl.State.normal)
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 		},
 		/**
@@ -383,7 +383,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 
 		},
 		/**
-		 * 对应平台的view载体即将被创建，对应前端beforeMount  
+		 * 对应平台的view载体即将被创建，对应前端beforeMount
 		 * [可选实现]
 		 */
 		NVBeforeLoad() {
@@ -395,7 +395,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		 * [必须实现]
 		 */
 		NVLoad(): UIButton {
-			//必须实现  
+			//必须实现
 			let button = new UIButton()
 			button.setTitle(this.buttonText, for = UIControl.State.normal)
 			const target = new ButtonClickListsner()
@@ -405,38 +405,38 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		},
 
 		/**
-		 * 原生View已创建 
+		 * 原生View已创建
 		 * [可选实现]
 		 */
 		NVLoaded() {
 
 		},
 		/**
-		 * 原生View布局完成  
+		 * 原生View布局完成
 		 * [可选实现]
 		 */
 		NVLayouted() {
 
 		},
 		/**
-		 * 原生View将释放  
+		 * 原生View将释放
 		 * [可选实现]
 		 */
 		NVBeforeUnload() {},
 		/**
-		 * 原生View已释放，这里可以做释放View之后的操作  
+		 * 原生View已释放，这里可以做释放View之后的操作
 		 * [可选实现]
 		 */
 		NVUnloaded() {
 
 		},
 		/**
-		 * 组件销毁  
+		 * 组件销毁
 		 * [可选实现]
 		 */
 		unmounted() {}
 		/**
-		 * 自定组件布局尺寸 
+		 * 自定组件布局尺寸
 		 * [可选实现]
 		 */
 		NVMeasure(size: UTSSize): UTSSize {
@@ -453,40 +453,40 @@ index.vue 要素可以分为以下几类：
 + 配置：
 
 	name：组件的使用标签，可以省略，若省略则默认为组件名称
-	
+
 	emits：组件允许的消息事件名称，如果没有组件消息，不需要配置
 
 + 属性：
-	
+
 	props：需要由组件的使用者提供，比如一个Image组件，会需要一个path属性作为图像路径来源
-	
+
 	watch：属性的监听实现，用来监听属性数据更新。
-	
-+ 数据：	
+
++ 数据：
 
 	data：组件内部数据定义，用于组件内部逻辑处理，不对外暴露
 
 + 方法：
 
 	methods：组件方法定义，可以通过与expose组合使用，区分对内方法和对外方法
-	
+
 	expose：与methods 字段配合使用，用以区分组件对内方法和对外方法
 
 
 + 生命周期：
 
 	组件需要重点处理 内存创建/销毁，View载体创建/销毁 过程中的资源管理，具体参考生命周期章节
-	
+
 + 内置对象：
-	
+
 	为了方便组件开发者，UTS组件内置了部分变量与函数，具体参考内置对象与函数章节
 
 
-#### 生命周期 
+#### 生命周期
 
 组件开发者需要重点关注组件的生命周期，以便进行资源的初始化和回收
 
-```mermaid 
+```mermaid
 graph TD;
 		Create-->NVBeforeLoad;
 	subgraph View生命周期
@@ -496,7 +496,7 @@ graph TD;
 		NVLayouted-->NVBeforeUnload;
 	end
 		NVBeforeUnload-->unmounted;
-	
+
 ```
 
 |函数名			|描述				|建议行为		|是否可选	|
@@ -559,8 +559,8 @@ NVUpdateStyles(styles: Map<String, any>){
 对于UTS组件来说，除了通过 $emit/emits 函数来自定义组件事件外，UTS组件还内置了下列通用事件：
 
 
-|事件名称			|简介				
-|:-------			|:--------			
+|事件名称			|简介
+|:-------			|:--------
 |click				|组件点击事件响应
 |longpress			|组件长按事件响应
 
@@ -580,7 +580,7 @@ NVUpdateStyles(styles: Map<String, any>){
 
 #### 创建插件
 
-在HBuilder X 中选中Uni-App项目下 uni_modules目录  
+在HBuilder X 中选中Uni-App项目下 uni_modules目录
 
 todo  目前还没有创建界面
 
@@ -598,7 +598,7 @@ todo  目前还没有创建界面
 
 > Android
 
-```ts
+```html
 <template>
 	<view>
 
@@ -621,7 +621,7 @@ todo  目前还没有创建界面
 		}
 	}
 
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		name: "uts-hello-view",
 		props: {
@@ -630,10 +630,10 @@ todo  目前还没有创建界面
 				default: "点击触发"
 			}
 		},
-		
+
 		watch: {
 			"buttonText": {
-				
+
 				handler(newButtonText: string) {
 					if (this.$el != null) {
 						let button = this.$el!.findViewWithTag("centerButton") as Button
@@ -644,9 +644,9 @@ todo  目前还没有创建界面
 				}
 			},
 		},
-		
+
 		NVLoad(): LinearLayout {
-			//必须实现  
+			//必须实现
 			let contentLayout = new LinearLayout(this.$androidContext)
 			let button = new Button(this.$androidContext)
 			button.setTag("centerButton");
@@ -654,19 +654,19 @@ todo  目前还没有创建界面
 			button.setOnClickListener(new ButtonClickListsner())
 			return contentLayout
 		},
-		
-		
+
+
 	}
 </script>
 <style>
-	
+
 </style>
 
 ```
 
 > iOS
 
-```ts
+```html
 <template>
 	<view class="defaultStyles">
 	</view>
@@ -685,7 +685,7 @@ todo  目前还没有创建界面
 		}
 	}
 
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		name: "uts-hello-view",
 		emits: ['buttonClick'],
@@ -703,7 +703,7 @@ todo  目前还没有创建界面
 				handler(newButtonText: string, oldButtonText) {
 					this.$el.setTitle(newButtonText, for = UIControl.State.normal)
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 		},
 		data() {
@@ -725,7 +725,7 @@ todo  目前还没有创建界面
 		 * 创建原生View，必须定义返回值类型
 		 */
 		NVLoad(): UIButton {
-			//必须实现  
+			//必须实现
 			let button = new UIButton()
 			button.setTitle(this.buttonText, for = UIControl.State.normal)
 			const method = Selector("buttonClick")
@@ -739,7 +739,7 @@ todo  目前还没有创建界面
 :::
 
 上面的代码，我们自定义了一个  名为 "uts-hello-view" 的UTS 组件，该组件对外提供了一个包含按钮的简单UI实现，并且对外暴露了一个名为 `buttonText`字符串属性，用来构建按钮上的文案
- 
+
 接下来，我们介绍在uni-app项目中如何使用它
 
 #### 使用组件
@@ -783,7 +783,7 @@ todo  目前还没有创建界面
 
 #### 创建插件
 
-在HBuilder X 中选中Uni-App项目下 uni_modules目录  
+在HBuilder X 中选中Uni-App项目下 uni_modules目录
 
 todo  目前还没有创建界面
 
@@ -859,7 +859,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
         override onAnimationRepeat(animation: Animator | null) {}
     }
 
-    //原生提供以下属性或方法的实现  
+    //原生提供以下属性或方法的实现
     export default {
         name: "uts-animation-view",
         /**
@@ -913,12 +913,12 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
             "path": {
                 handler(newPath: string) {
 
-                    
+
 					if(this.$el != null){
 						let lottieAnimationView = this.$el!
 						if (!TextUtils.isEmpty(newPath)) {
-							
-							
+
+
 						    if (newPath.startsWith("http://") || newPath.startsWith("https://")) {
 						        lottieAnimationView.setAnimationFromUrl(newPath)
 						    } else {
@@ -932,7 +932,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						}
 					}
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+                immediate: false //创建时是否通过此方法更新属性，默认值为false
             },
             "loop": {
                 handler(newLoop: Boolean) {
@@ -943,14 +943,14 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						    // 不循环则设置成1次
 						    this.$el!.repeatCount = 0
 						}
-						
+
 						if (this.autoplay) {
 						    this.$el!.playAnimation()
 						}
 					}
-                    
+
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+                immediate: false //创建时是否通过此方法更新属性，默认值为false
             },
 
             "autoplay": {
@@ -960,9 +960,9 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						    this.$el!.playAnimation()
 						}
 					}
-                    
+
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+                immediate: false //创建时是否通过此方法更新属性，默认值为false
             },
 
             "action": {
@@ -980,13 +980,13 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 							    this.$el!.clearAnimation()
 							}
 						}
-                        
+
 
                     } else {
                         // 非法入参，不管
                     }
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+                immediate: false //创建时是否通过此方法更新属性，默认值为false
             },
 
             "hidden": {
@@ -999,7 +999,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						}
 					}
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+                immediate: false //创建时是否通过此方法更新属性，默认值为false
             },
 
         },
@@ -1013,22 +1013,22 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 					}
 				}
             },
-            privateMethod() { //如何定义不对外暴露的API？ 暂不支持，需在export外写  
+            privateMethod() { //如何定义不对外暴露的API？ 暂不支持，需在export外写
             }
         },
-        created() { //创建组件，替换created  
+        created() { //创建组件，替换created
 
         },
-        NVBeforeLoad() { //组件将要创建，对应前端beforeMount  
-            //可选实现，这里可以提前做一些操作  
+        NVBeforeLoad() { //组件将要创建，对应前端beforeMount
+            //可选实现，这里可以提前做一些操作
         },
-        NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）  
-            //必须实现  
+        NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）
+            //必须实现
             let lottieAnimationView = new LottieAnimationView($androidContext)
             return lottieAnimationView
         },
-		
-        NVLoaded() { //原生View已创建  
+
+        NVLoaded() { //原生View已创建
 			//可选实现，这里可以做后续操作
 			if(this.$el != null){
 				this.$el!.repeatMode = LottieDrawable.RESTART;
@@ -1036,24 +1036,24 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 				this.$el!.repeatCount = 0
 				this.$el!.addAnimatorListener(new CustomAnimListener(this))
 			}
-           
+
         },
-        NVLayouted() { //原生View布局完成  
-            //可选实现，这里可以做布局后续操作  
+        NVLayouted() { //原生View布局完成
+            //可选实现，这里可以做布局后续操作
         },
-        NVBeforeUnload() { //原生View将释放  
-            //可选实现，这里可以做释放View之前的操作  
+        NVBeforeUnload() { //原生View将释放
+            //可选实现，这里可以做释放View之前的操作
         },
-        NVUnloaded() { //原生View已释放  
-            //可选实现，这里可以做释放View之后的操作  
+        NVUnloaded() { //原生View已释放
+            //可选实现，这里可以做释放View之后的操作
         },
-        unmounted() { //组件销毁  
-            //可选实现  
+        unmounted() { //组件销毁
+            //可选实现
         }
     }
 </script>
 <style>
-    
+
 </style>
 
 ```
@@ -1080,7 +1080,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 	} from "DCloudUTSFoundation"
 
 
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		/**
 		 * 组件名称，也就是开发者使用的标签
@@ -1143,7 +1143,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						this.playAnimation()
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 			"loop": {
 				handler(newValue: boolean, oldValue: boolean) {
@@ -1153,7 +1153,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						this.$el.loopMode = LottieLoopMode.playOnce
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 			"autoplay": {
 				handler(newValue: boolean, oldValue: boolean) {
@@ -1161,7 +1161,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						this.playAnimation()
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 			"action": {
 				handler(newValue: string, oldValue: string) {
@@ -1184,21 +1184,21 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						// 非法入参，不管
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 
 			"hidden": {
 				handler(newValue: boolean, oldValue: boolean) {
 					this.$el.isHidden = this.hidden
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 
 		},
 		expose: ['setRepeatMode'],
 		methods: {
 			// 需要对外暴露的方法
-			// 设置 RepeatMode 
+			// 设置 RepeatMode
 			setRepeatMode(repeatMode: string) {
 				if (repeatMode == "RESTART") {
 					if (this.loop) {
@@ -1215,7 +1215,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 				}
 			},
 			// 不对外暴露的方法
-			// 播放动画 
+			// 播放动画
 			playAnimation() {
 				// 构建动画资源 url
 				var animationUrl: URL | null
@@ -1247,20 +1247,20 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 				}
 			}
 		},
-		created() { //创建组件，替换created  
+		created() { //创建组件，替换created
 
 		},
-		NVBeforeLoad() { //组件将要创建，对应前端beforeMount  
-			//可选实现，这里可以提前做一些操作  
+		NVBeforeLoad() { //组件将要创建，对应前端beforeMount
+			//可选实现，这里可以提前做一些操作
 		},
-		NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）  
+		NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）
 			// 初始化 Lottie$el
 			const animationView = new LottieAnimationView()
 			// 默认只播放一次动画
 			animationView.loopMode = LottieLoopMode.playOnce
 			return animationView
 		},
-		NVLoaded() { //原生View已创建  
+		NVLoaded() { //原生View已创建
 
 			/// 更新 props 中定义的属性值
 
@@ -1275,23 +1275,23 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 			}
 		},
 
-		NVLayouted() { //原生View布局完成  
-			//可选实现，这里可以做布局后续操作  
+		NVLayouted() { //原生View布局完成
+			//可选实现，这里可以做布局后续操作
 		},
 
-		NVBeforeUnload() { //原生View将释放  
-			//可选实现，这里可以做释放View之前的操作  
+		NVBeforeUnload() { //原生View将释放
+			//可选实现，这里可以做释放View之前的操作
 		},
-		NVUnloaded() { //原生View已释放  
-			//可选实现，这里可以做释放View之后的操作  
+		NVUnloaded() { //原生View已释放
+			//可选实现，这里可以做释放View之后的操作
 		},
-		unmounted() { //组件销毁  
-			//可选实现  
+		unmounted() { //组件销毁
+			//可选实现
 		}
 	}
 </script>
 <style>
-	
+
 </style>
 ```
 
@@ -1325,7 +1325,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
     <div>
         <button @tap="changeUrl">播放本地动画资源</button>
 		<button @tap="changeServerUrl">播放远程动画资源</button>
-		
+
         <button @tap="changeAutoPlay">测试AutoPlay</button>
         <button @tap="changeLoop">测试Loop</button>
         <button @tap="changeAction(1)">测试action play</button>
@@ -1335,12 +1335,12 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
             :hidden="hidden" @bindended="testAnimEnd" @click="lottieClickTest" @longpress="lottieLongpressTest"
             :style="{width:widthNum+'rpx',height:heightNum+'px',background:yanse}">
         </uts-animation-view>
-        
+
     </div>
 </template>
 
 <script>
-  
+
     export default {
         data() {
             return {
@@ -1355,7 +1355,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
                 animUrl: "/static/anim_a.json"
             }
         },
-        
+
         methods: {
 
             changeAutoPlay: function() {
@@ -1459,19 +1459,19 @@ UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 
 	import LinearLayout from 'android.widget.LinearLayout'
 
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		name: "uts-hello-container",
-		
+
 		NVLoad(): LinearLayout {
 			let contentLayout = new LinearLayout($androidContext)
 			return contentLayout
 		}
-		
+
 	}
 </script>
 <style>
-	
+
 </style>
 
 ```
@@ -1488,7 +1488,7 @@ UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 	import {
 		UIView
 	} from 'UIKit'
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		name: "uts-hello-container",
 		NVLoad(): UIView {

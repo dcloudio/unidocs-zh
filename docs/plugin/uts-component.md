@@ -177,8 +177,7 @@ The following is a complete example of component source code index.vue:
 		}
 	}
 
-	//原生提供以下属性或方法的实现  
-	//natively provide the implementation of the following properties or methods
+	//原生提供以下属性或方法的实现
 	export default {
 		/**
 		 * 组件名称，也就是开发者使用的标签
@@ -222,7 +221,7 @@ The following is a complete example of component source code index.vue:
 						}
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 		},
 		/**
@@ -255,7 +254,7 @@ The following is a complete example of component source code index.vue:
 
 		},
 		/**
-		 * 对应平台的view载体即将被创建，对应前端beforeMount  
+		 * 对应平台的view载体即将被创建，对应前端beforeMount
 		 * [可选实现]
 		 */
 		NVBeforeLoad() {
@@ -264,12 +263,12 @@ The following is a complete example of component source code index.vue:
 		/**
 		 * 创建原生View，必须定义返回值类型
 		 * 开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型
-		 * （Android需要明确知道View类型，需特殊校验） 
+		 * （Android需要明确知道View类型，需特殊校验）
 		 * todo 补充IOS平台限制
 	  * [必须实现]
 		 */
 		NVLoad(): LinearLayout {
-			//必须实现  
+			//必须实现
 			let contentLayout = new LinearLayout(this.$androidContext!)
 			let button = new Button(this.$androidContext!)
 			button.setText("点击触发");
@@ -280,38 +279,38 @@ The following is a complete example of component source code index.vue:
 		},
 
 		/**
-		 * 原生View已创建 
+		 * 原生View已创建
 		 * [可选实现]
 		 */
 		NVLoaded() {
 
 		},
 		/**
-		 * 原生View布局完成  
+		 * 原生View布局完成
 		 * [可选实现]
 		 */
 		NVLayouted() {
 
 		},
 		/**
-		 * 原生View将释放  
+		 * 原生View将释放
 		 * [可选实现]
 		 */
 		NVBeforeUnload() {},
 		/**
-		 * 原生View已释放，这里可以做释放View之后的操作  
+		 * 原生View已释放，这里可以做释放View之后的操作
 		 * [可选实现]
 		 */
 		NVUnloaded() {
 
 		},
 		/**
-		 * 组件销毁  
+		 * 组件销毁
 		 * [可选实现]
 		 */
 		unmounted() {},
 		/**
-		 * 自定组件布局尺寸 
+		 * 自定组件布局尺寸
 		 * [可选实现]
 		 */
 		NVMeasure(size: UTSSize): UTSSize {
@@ -322,7 +321,7 @@ The following is a complete example of component source code index.vue:
 	}
 </script>
 <style>
-	
+
 </style>
 
 
@@ -348,7 +347,7 @@ The following is a complete example of component source code index.vue:
 		}
 	}
 
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		/**
 		 * 组件名称，也就是开发者使用的标签
@@ -387,7 +386,7 @@ The following is a complete example of component source code index.vue:
 				handler(newButtonText: string, oldButtonText) {
 					this.$el.setTitle(newButtonText, for = UIControl.State.normal)
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 		},
 		/**
@@ -418,7 +417,7 @@ The following is a complete example of component source code index.vue:
 
 		},
 		/**
-		 * 对应平台的view载体即将被创建，对应前端beforeMount  
+		 * 对应平台的view载体即将被创建，对应前端beforeMount
 		 * [可选实现]
 		 */
 		NVBeforeLoad() {
@@ -430,7 +429,7 @@ The following is a complete example of component source code index.vue:
 		 * [必须实现]
 		 */
 		NVLoad(): UIButton {
-			//必须实现  
+			//必须实现
 			let button = new UIButton()
 			button.setTitle(this.buttonText, for = UIControl.State.normal)
 			const target = new ButtonClickListsner()
@@ -440,38 +439,38 @@ The following is a complete example of component source code index.vue:
 		},
 
 		/**
-		 * 原生View已创建 
+		 * 原生View已创建
 		 * [可选实现]
 		 */
 		NVLoaded() {
 
 		},
 		/**
-		 * 原生View布局完成  
+		 * 原生View布局完成
 		 * [可选实现]
 		 */
 		NVLayouted() {
 
 		},
 		/**
-		 * 原生View将释放  
+		 * 原生View将释放
 		 * [可选实现]
 		 */
 		NVBeforeUnload() {},
 		/**
-		 * 原生View已释放，这里可以做释放View之后的操作  
+		 * 原生View已释放，这里可以做释放View之后的操作
 		 * [可选实现]
 		 */
 		NVUnloaded() {
 
 		},
 		/**
-		 * 组件销毁  
+		 * 组件销毁
 		 * [可选实现]
 		 */
 		unmounted() {}
 		/**
-		 * 自定组件布局尺寸 
+		 * 自定组件布局尺寸
 		 * [可选实现]
 		 */
 		NVMeasure(size: UTSSize): UTSSize {
@@ -490,22 +489,17 @@ index.vue elements can be divided into the following categories:
 + configuration:
 
 	name：组件的使用标签，可以省略，若省略则默认为组件名称
-	name: the usage label of the component, which can be omitted, if omitted, it will default to the component name
-	
+
 	emits：组件允许的消息事件名称，如果没有组件消息，不需要配置
 	emits: The name of the message event allowed by the component. If there is no component message, no configuration is required
 
 + 属性：
-+ attributes:
-	
+
 	props：需要由组件的使用者提供，比如一个Image组件，会需要一个path属性作为图像路径来源
-	props: It needs to be provided by the user of the component. For example, an Image component will need a path attribute as the source of the image path
-	
+
 	watch：属性的监听实现，用来监听属性数据更新。
-	watch: The monitoring implementation of the attribute, which is used to monitor the update of the attribute data.
-	
-+ 数据：	
-+ data:
+
++ 数据：
 
 	data：组件内部数据定义，用于组件内部逻辑处理，不对外暴露
 	data: The internal data definition of the component, which is used for internal logic processing of the component and is not exposed to the outside world
@@ -514,8 +508,7 @@ index.vue elements can be divided into the following categories:
 + method:
 
 	methods：组件方法定义，可以通过与expose组合使用，区分对内方法和对外方法
-	methods: component method definition, which can be used in combination with expose to distinguish internal methods from external methods
-	
+
 	expose：与methods 字段配合使用，用以区分组件对内方法和对外方法
 	expose: Used in conjunction with the methods field to distinguish between internal and external methods of the component
 
@@ -524,22 +517,19 @@ index.vue elements can be divided into the following categories:
 + life cycle:
 
 	组件需要重点处理 内存创建/销毁，View载体创建/销毁 过程中的资源管理，具体参考生命周期章节
-	Components need to focus on memory creation/destruction, resource management in the process of View carrier creation/destruction, refer to the life cycle chapter for details
-	
+
 + 内置对象：
-+ built-in objects:
-	
+
 	为了方便组件开发者，UTS组件内置了部分变量与函数，具体参考内置对象与函数章节
 	For the convenience of component developers, UTS components have built-in variables and functions, please refer to the built-in objects and functions chapter for details
 
 
-#### 生命周期 
-#### life cycle 
+#### 生命周期
 
 组件开发者需要重点关注组件的生命周期，以便进行资源的初始化和回收
 Component developers need to focus on the life cycle of components in order to initialize and recycle resources
 
-```mermaid 
+```mermaid
 graph TD;
 		Create-->NVBeforeLoad;
 	subgraph View生命周期
@@ -549,7 +539,7 @@ graph TD;
 		NVLayouted-->NVBeforeUnload;
 	end
 		NVBeforeUnload-->unmounted;
-	
+
 ```
 
 |函数名			|描述				|建议行为		|是否可选	|
@@ -630,9 +620,8 @@ For the convenience of component developers, the following objects are built int
 For UTS components, in addition to customizing component events through the $emit/emits function, UTS components also have the following built-in general events:
 
 
-|事件名称			|简介				
-|Event Name |Introduction
-|:-------			|:--------			
+|事件名称			|简介
+|:-------			|:--------
 |click				|组件点击事件响应
 | click | Component click event response
 |longpress			|组件长按事件响应
@@ -658,8 +647,7 @@ This chapter takes a minimalist component development as an example to introduce
 #### 创建插件
 #### Create plugin
 
-在HBuilder X 中选中Uni-App项目下 uni_modules目录  
-Select the uni_modules directory under the Uni-App project in HBuilder X
+在HBuilder X 中选中Uni-App项目下 uni_modules目录
 
 todo  目前还没有创建界面
 
@@ -681,7 +669,7 @@ Open index.vue and type the following component source code:
 
 > Android
 
-```ts
+```html
 <template>
 	<view>
 
@@ -704,8 +692,7 @@ Open index.vue and type the following component source code:
 		}
 	}
 
-	//原生提供以下属性或方法的实现  
-	//natively provide the implementation of the following properties or methods
+	//原生提供以下属性或方法的实现
 	export default {
 		name: "uts-hello-view",
 		props: {
@@ -714,10 +701,10 @@ Open index.vue and type the following component source code:
 				default: "点击触发"
 			}
 		},
-		
+
 		watch: {
 			"buttonText": {
-				
+
 				handler(newButtonText: string) {
 					if (this.$el != null) {
 						let button = this.$el!.findViewWithTag("centerButton") as Button
@@ -728,9 +715,9 @@ Open index.vue and type the following component source code:
 				}
 			},
 		},
-		
+
 		NVLoad(): LinearLayout {
-			//必须实现  
+			//必须实现
 			let contentLayout = new LinearLayout(this.$androidContext)
 			let button = new Button(this.$androidContext)
 			button.setTag("centerButton");
@@ -738,19 +725,19 @@ Open index.vue and type the following component source code:
 			button.setOnClickListener(new ButtonClickListsner())
 			return contentLayout
 		},
-		
-		
+
+
 	}
 </script>
 <style>
-	
+
 </style>
 
 ```
 
 > iOS
 
-```ts
+```html
 <template>
 	<view class="defaultStyles">
 	</view>
@@ -771,8 +758,7 @@ Open index.vue and type the following component source code:
 		}
 	}
 
-	//原生提供以下属性或方法的实现  
-	//natively provide the implementation of the following properties or methods
+	//原生提供以下属性或方法的实现
 	export default {
 		name: "uts-hello-view",
 		emits: ['buttonClick'],
@@ -790,7 +776,7 @@ Open index.vue and type the following component source code:
 				handler(newButtonText: string, oldButtonText) {
 					this.$el.setTitle(newButtonText, for = UIControl.State.normal)
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 		},
 		data() {
@@ -813,8 +799,7 @@ Open index.vue and type the following component source code:
 		 * 创建原生View，必须定义返回值类型
 		 */
 		NVLoad(): UIButton {
-			//必须实现  
-			//Must be implemented
+			//必须实现
 			let button = new UIButton()
 			button.setTitle(this.buttonText, for = UIControl.State.normal)
 			const method = Selector("buttonClick")
@@ -828,8 +813,7 @@ Open index.vue and type the following component source code:
 :::
 
 上面的代码，我们自定义了一个  名为 "uts-hello-view" 的UTS 组件，该组件对外提供了一个包含按钮的简单UI实现，并且对外暴露了一个名为 `buttonText`字符串属性，用来构建按钮上的文案
-In the above code, we have customized a UTS component named "uts-hello-view", which provides a simple UI implementation containing buttons, and exposes a string property named `buttonText` to the outside world, using to build the copy on the button
- 
+
 接下来，我们介绍在uni-app项目中如何使用它
 Next, we introduce how to use it in the uni-app project
 
@@ -884,8 +868,7 @@ This chapter takes the lottie animation component as an example to introduce the
 #### 创建插件
 #### Create plugin
 
-在HBuilder X 中选中Uni-App项目下 uni_modules目录  
-Select the uni_modules directory under the Uni-App project in HBuilder X
+在HBuilder X 中选中Uni-App项目下 uni_modules目录
 
 todo  目前还没有创建界面
 
@@ -973,8 +956,7 @@ Open index.vue and type the following component source code:
         override onAnimationRepeat(animation: Animator | null) {}
     }
 
-    //原生提供以下属性或方法的实现  
-    //natively provide the implementation of the following properties or methods
+    //原生提供以下属性或方法的实现
     export default {
         name: "uts-animation-view",
         /**
@@ -1028,12 +1010,12 @@ Open index.vue and type the following component source code:
             "path": {
                 handler(newPath: string) {
 
-                    
+
 					if(this.$el != null){
 						let lottieAnimationView = this.$el!
 						if (!TextUtils.isEmpty(newPath)) {
-							
-							
+
+
 						    if (newPath.startsWith("http://") || newPath.startsWith("https://")) {
 						        lottieAnimationView.setAnimationFromUrl(newPath)
 						    } else {
@@ -1048,7 +1030,7 @@ Open index.vue and type the following component source code:
 						}
 					}
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+                immediate: false //创建时是否通过此方法更新属性，默认值为false
             },
             "loop": {
                 handler(newLoop: Boolean) {
@@ -1060,14 +1042,14 @@ Open index.vue and type the following component source code:
 						    // Set it to 1 time if it does not loop
 						    this.$el!.repeatCount = 0
 						}
-						
+
 						if (this.autoplay) {
 						    this.$el!.playAnimation()
 						}
 					}
-                    
+
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+                immediate: false //创建时是否通过此方法更新属性，默认值为false
             },
 
             "autoplay": {
@@ -1077,9 +1059,9 @@ Open index.vue and type the following component source code:
 						    this.$el!.playAnimation()
 						}
 					}
-                    
+
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+                immediate: false //创建时是否通过此方法更新属性，默认值为false
             },
 
             "action": {
@@ -1097,14 +1079,14 @@ Open index.vue and type the following component source code:
 							    this.$el!.clearAnimation()
 							}
 						}
-                        
+
 
                     } else {
                         // 非法入参，不管
                         // Illegal input parameters, no matter
                     }
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+                immediate: false //创建时是否通过此方法更新属性，默认值为false
             },
 
             "hidden": {
@@ -1117,7 +1099,7 @@ Open index.vue and type the following component source code:
 						}
 					}
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false  
+                immediate: false //创建时是否通过此方法更新属性，默认值为false
             },
 
         },
@@ -1131,24 +1113,22 @@ Open index.vue and type the following component source code:
 					}
 				}
             },
-            privateMethod() { //如何定义不对外暴露的API？ 暂不支持，需在export外写  
+            privateMethod() { //如何定义不对外暴露的API？ 暂不支持，需在export外写
             }
         },
-        created() { //创建组件，替换created  
+        created() { //创建组件，替换created
 
         },
-        NVBeforeLoad() { //组件将要创建，对应前端beforeMount  
-            //可选实现，这里可以提前做一些操作  
-            //Optional implementation, here you can do some operations in advance
+        NVBeforeLoad() { //组件将要创建，对应前端beforeMount
+            //可选实现，这里可以提前做一些操作
         },
-        NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）  
-            //必须实现  
-            //Must be implemented
+        NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）
+            //必须实现
             let lottieAnimationView = new LottieAnimationView($androidContext)
             return lottieAnimationView
         },
-		
-        NVLoaded() { //原生View已创建  
+
+        NVLoaded() { //原生View已创建
 			//可选实现，这里可以做后续操作
 			//Optional implementation, follow-up operations can be done here
 			if(this.$el != null){
@@ -1157,28 +1137,24 @@ Open index.vue and type the following component source code:
 				this.$el!.repeatCount = 0
 				this.$el!.addAnimatorListener(new CustomAnimListener(this))
 			}
-           
+
         },
-        NVLayouted() { //原生View布局完成  
-            //可选实现，这里可以做布局后续操作  
-            //Optional implementation, here you can do follow-up operations on layout
+        NVLayouted() { //原生View布局完成
+            //可选实现，这里可以做布局后续操作
         },
-        NVBeforeUnload() { //原生View将释放  
-            //可选实现，这里可以做释放View之前的操作  
-            //Optional implementation, here you can do the operation before releasing the View
+        NVBeforeUnload() { //原生View将释放
+            //可选实现，这里可以做释放View之前的操作
         },
-        NVUnloaded() { //原生View已释放  
-            //可选实现，这里可以做释放View之后的操作  
-            //Optional implementation, here you can do the operation after releasing the View
+        NVUnloaded() { //原生View已释放
+            //可选实现，这里可以做释放View之后的操作
         },
-        unmounted() { //组件销毁  
-            //可选实现  
-            // optional implementation
+        unmounted() { //组件销毁
+            //可选实现
         }
     }
 </script>
 <style>
-    
+
 </style>
 
 ```
@@ -1205,7 +1181,7 @@ Open index.vue and type the following component source code:
 	} from "DCloudUTSFoundation"
 
 
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		/**
 		 * 组件名称，也就是开发者使用的标签
@@ -1268,7 +1244,7 @@ Open index.vue and type the following component source code:
 						this.playAnimation()
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 			"loop": {
 				handler(newValue: boolean, oldValue: boolean) {
@@ -1278,7 +1254,7 @@ Open index.vue and type the following component source code:
 						this.$el.loopMode = LottieLoopMode.playOnce
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 			"autoplay": {
 				handler(newValue: boolean, oldValue: boolean) {
@@ -1286,7 +1262,7 @@ Open index.vue and type the following component source code:
 						this.playAnimation()
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 			"action": {
 				handler(newValue: string, oldValue: string) {
@@ -1309,21 +1285,21 @@ Open index.vue and type the following component source code:
 						// 非法入参，不管
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 
 			"hidden": {
 				handler(newValue: boolean, oldValue: boolean) {
 					this.$el.isHidden = this.hidden
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 
 		},
 		expose: ['setRepeatMode'],
 		methods: {
 			// 需要对外暴露的方法
-			// 设置 RepeatMode 
+			// 设置 RepeatMode
 			setRepeatMode(repeatMode: string) {
 				if (repeatMode == "RESTART") {
 					if (this.loop) {
@@ -1340,7 +1316,7 @@ Open index.vue and type the following component source code:
 				}
 			},
 			// 不对外暴露的方法
-			// 播放动画 
+			// 播放动画
 			playAnimation() {
 				// 构建动画资源 url
 				var animationUrl: URL | null
@@ -1372,20 +1348,20 @@ Open index.vue and type the following component source code:
 				}
 			}
 		},
-		created() { //创建组件，替换created  
+		created() { //创建组件，替换created
 
 		},
-		NVBeforeLoad() { //组件将要创建，对应前端beforeMount  
-			//可选实现，这里可以提前做一些操作  
+		NVBeforeLoad() { //组件将要创建，对应前端beforeMount
+			//可选实现，这里可以提前做一些操作
 		},
-		NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）  
+		NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）
 			// 初始化 Lottie$el
 			const animationView = new LottieAnimationView()
 			// 默认只播放一次动画
 			animationView.loopMode = LottieLoopMode.playOnce
 			return animationView
 		},
-		NVLoaded() { //原生View已创建  
+		NVLoaded() { //原生View已创建
 
 			/// 更新 props 中定义的属性值
 
@@ -1400,23 +1376,23 @@ Open index.vue and type the following component source code:
 			}
 		},
 
-		NVLayouted() { //原生View布局完成  
-			//可选实现，这里可以做布局后续操作  
+		NVLayouted() { //原生View布局完成
+			//可选实现，这里可以做布局后续操作
 		},
 
-		NVBeforeUnload() { //原生View将释放  
-			//可选实现，这里可以做释放View之前的操作  
+		NVBeforeUnload() { //原生View将释放
+			//可选实现，这里可以做释放View之前的操作
 		},
-		NVUnloaded() { //原生View已释放  
-			//可选实现，这里可以做释放View之后的操作  
+		NVUnloaded() { //原生View已释放
+			//可选实现，这里可以做释放View之后的操作
 		},
-		unmounted() { //组件销毁  
-			//可选实现  
+		unmounted() { //组件销毁
+			//可选实现
 		}
 	}
 </script>
 <style>
-	
+
 </style>
 ```
 
@@ -1463,7 +1439,7 @@ Reference the custom uts-animation-view component and write test cases
     <div>
         <button @tap="changeUrl">播放本地动画资源</button>
 		<button @tap="changeServerUrl">播放远程动画资源</button>
-		
+
         <button @tap="changeAutoPlay">测试AutoPlay</button>
         <button @tap="changeLoop">测试Loop</button>
         <button @tap="changeAction(1)">测试action play</button>
@@ -1473,12 +1449,12 @@ Reference the custom uts-animation-view component and write test cases
             :hidden="hidden" @bindended="testAnimEnd" @click="lottieClickTest" @longpress="lottieLongpressTest"
             :style="{width:widthNum+'rpx',height:heightNum+'px',background:yanse}">
         </uts-animation-view>
-        
+
     </div>
 </template>
 
 <script>
-  
+
     export default {
         data() {
             return {
@@ -1493,7 +1469,7 @@ Reference the custom uts-animation-view component and write test cases
                 animUrl: "/static/anim_a.json"
             }
         },
-        
+
         methods: {
 
             changeAutoPlay: function() {
@@ -1604,20 +1580,19 @@ As a container component, UTS components follow exactly the same specifications 
 
 	import LinearLayout from 'android.widget.LinearLayout'
 
-	//原生提供以下属性或方法的实现  
-	//natively provide the implementation of the following properties or methods
+	//原生提供以下属性或方法的实现
 	export default {
 		name: "uts-hello-container",
-		
+
 		NVLoad(): LinearLayout {
 			let contentLayout = new LinearLayout($androidContext)
 			return contentLayout
 		}
-		
+
 	}
 </script>
 <style>
-	
+
 </style>
 
 ```
@@ -1634,7 +1609,7 @@ As a container component, UTS components follow exactly the same specifications 
 	import {
 		UIView
 	} from 'UIKit'
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		name: "uts-hello-container",
 		NVLoad(): UIView {

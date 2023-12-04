@@ -1,10 +1,8 @@
-根据工业和信息化部关于开展APP侵害用户权益专项整治要求，应用的隐私政策中需详细描述使用权限的用途。
-According to the Ministry of Industry and Information Technology's special rectification requirements for APP infringing user rights and interests, the application's privacy policy needs to describe in detail the purpose of the use permission.
-为了不避免应用使用过多权限，HBuilderX2.6.3+版本对应用默认要求的权限进行简化，对第三方SDK需要的权限提供方法根据实际需求进行配置。
-In order not to prevent the application from using too many permissions, the HBuilderX 2.6.3+ version simplifies the permissions required by the application by default, and configures the permission provision method required by the third-party SDK according to the actual needs.
+根据工业和信息化部关于开展APP侵害用户权益专项整治要求，应用的隐私政策中需详细描述使用权限的用途。  
+应用发布时应该避免使用过多权限，请根据应用实际功能需求配置权限。  
 
 Android平台云端打包使用的权限包括以下几个方面：  
-- 默认使用的权限，不做任何配置都会包含的权限，参考[默认使用的权限](#default)  
+- 默认使用的权限，不做任何配置云端打包自动包含的权限，参考[默认使用的权限](#default)  
 - App使用模块依赖的权限，也包含模块依赖三方SDK需要的权限，参考[App模块需要的权限](#modules)  
 - manifest.json中配置额外添加的权限，参考[App配置添加权限](#app_permissions)  
 - App原生插件依赖的权限  

@@ -63,7 +63,9 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 + type属性定义list-item组件类型。不赋值type属性默认值为0，每一个type类型都会有对应的list-item组件缓存池。
 + list-view组件加载list-item组件时，会优先查询对应type缓存池是否存在可复用的list-item组件。有则复用没有则创建新的list-item组件。
 + list-item组件被滑动出屏幕则会优先添加到对应类型的list-item缓存池，每个类型缓存最大5个（不同平台缓存最大值不固定），如果缓存池已满则进行组件销毁！
-+ 部分list-item组件存在子元素个数差异或排版差异时。请尽可能的配置不同的type，这样可以规避获取相同type类型的list-item组件后。由于子元素差异导致list-item无法正常复用问题。具体可参考示例：
++ 部分list-item组件存在子元素个数差异或排版差异时。请尽可能的配置不同的type，这样可以规避获取相同type类型的list-item组件后。
+	* 很常见的一个错误是在长列表上方的list-item里放置banner图，却没有为这个不可复用的list-item设置单独的type，这会导致图片在复用失败后无法渲染。
+	* 由于子元素差异导致list-item无法正常复用问题。具体可参考示例：
 
 	```html
 	<template>

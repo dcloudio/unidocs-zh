@@ -567,7 +567,7 @@ NVUpdateStyles(styles: Map<String, any>){
 
 通用事件，组件的使用者无需实现，直接使用
 
-```js
+```html
 <uts-hello-view buttonClick="自定义事件处理函数" click="通用点击事件处理函数" longpress="通用长按事件处理函数"/>
 ```
 

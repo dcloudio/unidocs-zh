@@ -1,3 +1,5 @@
+# API 概述
+
 `uni-app`的 js API 由标准 ECMAScript 的 js API 和 uni 扩展 API 这两部分组成。
 
 标准 ECMAScript 的 js 仅是最基础的 js。浏览器基于它扩展了 window、document、navigator 等对象。小程序也基于标准 js 扩展了各种 wx.xx、my.xx、swan.xx 的 API。node 也扩展了 fs 等模块。
@@ -6,9 +8,9 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
 ## 标准 js 和浏览器 js 的区别
 
-`uni-app`的 js 代码，web端运行于浏览器中。非web端（包含小程序和 App），Android 平台运行在 v8 引擎中，iOS 平台运行在 iOS 自带的 jscore 引擎中，都没有运行在浏览器或 webview 里。
+`uni-app`的 js 代码，web 端运行于浏览器中。非 web 端（包含小程序和 App），Android 平台运行在 v8 引擎中，iOS 平台运行在 iOS 自带的 jscore 引擎中，都没有运行在浏览器或 webview 里。
 
-非web端，虽然不支持 window、document、navigator 等浏览器的 js API，但也支持标准 ECMAScript。
+非 web 端，虽然不支持 window、document、navigator 等浏览器的 js API，但也支持标准 ECMAScript。
 
 请注意不要把浏览器里的 js 等价于标准 js。
 
@@ -22,7 +24,7 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
 各平台的 API 新增，不需要 uni-app 升级，开发者就可以直接使用。
 
-## 说明
+## 补充说明
 
 - uni.on 开头的 API 是监听某个事件发生的 API 接口，接受一个 CALLBACK 函数作为参数。当该事件触发时，会调用 CALLBACK 函数。
 - 如未特殊约定，其他 API 接口都接受一个 OBJECT 作为参数。
@@ -58,11 +60,12 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
    - 以 create 开头的方法。例如：`uni.createMapContext()`
    - 以 manager 结束的方法。例如：`uni.getBackgroundAudioManager()`
 
-#### Vue 2 和 Vue 3 的 API `Promise 化`
+### Vue 2 和 Vue 3 的 API `Promise 化`
 
 > Vue 2 和 Vue 3 项目中 `API Promise 化` 返回格式不一致，以下为 `不同点` 和 `返回格式互相转换`
 
 - 不同点
+
   - Vue2 对部分 API 进行了 Promise 封装，返回数据的第一个参数是错误对象，第二个参数是返回数据。此时使用 `catch` 是拿不到报错信息的，因为内部对错误进行了拦截。
   - Vue3 对部分 API 进行了 Promise 封装，调用成功会进入 `then 方法` 回调。调用失败会进入 `catch 方法` 回调
 
@@ -213,15 +216,15 @@ uni.addInterceptor({
       .then(() => returnValue);
   },
 });
-  ```
+```
 
 :::
 
 ## API 列表
 
-#### 基础
+### 基础
 
-##### 日志打印
+日志打印等。
 
 | API                                            | 说明                                  |
 | :--------------------------------------------- | :------------------------------------ |
@@ -233,9 +236,9 @@ uni.addInterceptor({
 | [拦截器](interceptor)                          | 拦截 Api 等调用并执行回调             |
 | [全局 API](global)                             | 可全局调用 Api                        |
 
-#### 网络
+### 网络
 
-##### 发起请求
+#### 发起请求
 
 | API                                       | 说明         |
 | :---------------------------------------- | :----------- |
@@ -271,9 +274,9 @@ uni.addInterceptor({
 | [SocketTask.onError](/api/request/socket-task?id=sockettaskonerror)     | 监听 WebSocket 错误事件               |
 | [SocketTask.onMessage](/api/request/socket-task?id=sockettaskonmessage) | 监听 WebSocket 接受到服务器的消息事件 |
 
-#### 媒体
+### 媒体
 
-##### 图片
+#### 图片
 
 | API                                                                 | 说明                     |
 | :------------------------------------------------------------------ | :----------------------- |
@@ -283,7 +286,7 @@ uni.addInterceptor({
 | [uni.getImageInfo](media/image?id=getimageinfo)                     | 获取图片信息             |
 | [uni.saveImageToPhotosAlbum](media/image?id=saveimagetophotosalbum) | 保存图片到系统相册       |
 
-##### 文件
+#### 文件
 
 | API                                        | 说明           |
 | :----------------------------------------- | :------------- |
@@ -328,7 +331,7 @@ uni.addInterceptor({
 | :---------------------------------------------------------- | :----------- |
 | [uni.createLivePlayerContext](media/live-player-context.md) | 直播组件管理 |
 
-#### 文件
+### 文件
 
 | API                                                   | 说明                 |
 | :---------------------------------------------------- | :------------------- |
@@ -339,7 +342,7 @@ uni.addInterceptor({
 | [uni.getFileInfo](/api/file/file?id=getfileinfo)      | 获取文件信息         |
 | [uni.openDocument](file/file?id=opendocument)         | 打开文件             |
 
-#### 数据缓存
+### 数据缓存
 
 | API                                                             | 说明                   |
 | :-------------------------------------------------------------- | :--------------------- |
@@ -354,30 +357,30 @@ uni.addInterceptor({
 | [uni.clearStorage](storage/storage?id=clearstorage)             | 清理本地数据缓存       |
 | [uni.clearStorageSync](storage/storage?id=clearstoragesync)     | 清理本地数据缓存       |
 
-#### 位置
+### 位置
 
-##### 获取位置
+#### 获取位置
 
 | API                                                       | 说明             |
 | :-------------------------------------------------------- | :--------------- |
 | [uni.getLocation](location/location?id=getlocation)       | 获取当前位置     |
 | [uni.chooseLocation](location/location?id=chooselocation) | 打开地图选择位置 |
 
-##### 查看位置
+#### 查看位置
 
 | API                                                        | 说明         |
 | :--------------------------------------------------------- | :----------- |
 | [uni.openLocation](location/open-location?id=openlocation) | 打开内置地图 |
 
-##### 地图组件控制
+#### 地图组件控制
 
 | API                                                      | 说明         |
 | :------------------------------------------------------- | :----------- |
 | [uni.createMapContext](location/map?id=createmapcontext) | 地图组件控制 |
 
-#### 设备
+### 设备
 
-##### 系统信息
+#### 系统信息
 
 | API                                                       | 说明                                                 |
 | :-------------------------------------------------------- | :--------------------------------------------------- |
@@ -385,13 +388,13 @@ uni.addInterceptor({
 | [uni.getSystemInfoSync](system/info?id=getsysteminfosync) | 获取系统信息                                         |
 | [uni.canIUse](/api/system/info?id=caniuse)                | 判断应用的 API，回调，参数，组件等是否在当前版本可用 |
 
-##### 内存
+#### 内存
 
 | API                                                            | 说明                 |
 | :------------------------------------------------------------- | :------------------- |
 | [uni.onMemoryWarning](/api/system/memory?id=wxonmemorywarning) | 监听内存不足告警事件 |
 
-##### 网络状态
+#### 网络状态
 
 | API                                                                    | 说明                 |
 | :--------------------------------------------------------------------- | :------------------- |
@@ -399,7 +402,7 @@ uni.addInterceptor({
 | [uni.onNetworkStatusChange](system/network?id=onnetworkstatuschange)   | 监听网络状态变化     |
 | [uni.offNetworkStatusChange](system/network?id=offnetworkstatuschange) | 取消监听网络状态变化 |
 
-##### 加速度计
+#### 加速度计
 
 | API                                                                          | 说明               |
 | :--------------------------------------------------------------------------- | :----------------- |
@@ -408,7 +411,7 @@ uni.addInterceptor({
 | [uni.startAccelerometer](system/accelerometer?id=startaccelerometer)         | 开始监听加速度数据 |
 | [uni.stopAccelerometer](system/accelerometer?id=stopaccelerometer)           | 停止监听加速度数据 |
 
-##### 罗盘
+#### 罗盘
 
 | API                                                        | 说明             |
 | :--------------------------------------------------------- | :--------------- |
@@ -417,7 +420,7 @@ uni.addInterceptor({
 | [uni.startCompass](system/compass?id=startcompass)         | 开始监听罗盘数据 |
 | [uni.stopCompass](system/compass?id=stopcompass)           | 停止监听罗盘数据 |
 
-##### 陀螺仪
+#### 陀螺仪
 
 | API                                                                 | 说明               |
 | :------------------------------------------------------------------ | :----------------- |
@@ -425,26 +428,26 @@ uni.addInterceptor({
 | [uni.startGyroscope](/api/system/gyroscope?id=startgyroscope)       | 开始监听陀螺仪数据 |
 | [uni.stopGyroscope](/api/system/gyroscope?id=stopgyroscope)         | 停止监听陀螺仪数据 |
 
-##### 拨打电话
+#### 拨打电话
 
 | API                                                | 说明     |
 | :------------------------------------------------- | :------- |
 | [uni.makePhoneCall](system/phone?id=makephonecall) | 拨打电话 |
 
-##### 扫码
+#### 扫码
 
 | API                                        | 说明 |
 | :----------------------------------------- | :--- |
 | [uni.scanCode](system/barcode?id=scancode) | 扫码 |
 
-##### 剪切板
+#### 剪切板
 
 | API                                                          | 说明           |
 | :----------------------------------------------------------- | :------------- |
 | [uni.setClipboardData](system/clipboard?id=setclipboarddata) | 设置剪贴板内容 |
 | [uni.getClipboardData](system/clipboard?id=getclipboarddata) | 获取剪贴板内容 |
 
-##### 屏幕亮度
+#### 屏幕亮度
 
 | API                                                                 | 说明                 |
 | :------------------------------------------------------------------ | :------------------- |
@@ -452,13 +455,13 @@ uni.addInterceptor({
 | [uni.getScreenBrightness](system/brightness?id=getscreenbrightness) | 获取屏幕亮度         |
 | [uni.setKeepScreenOn](system/brightness?id=setkeepscreenon)         | 设置是否保持常亮状态 |
 
-##### 用户截屏事件
+#### 用户截屏事件
 
 | API                                                   | 说明             |
 | :---------------------------------------------------- | :--------------- |
 | [uni.onUserCaptureScreen](/api/system/capture-screen) | 监听用户截屏事件 |
 
-##### 振动
+#### 振动
 
 | API                                                | 说明                     |
 | :------------------------------------------------- | :----------------------- |
@@ -466,13 +469,13 @@ uni.addInterceptor({
 | [uni.vibrateLong](system/vibrate?id=vibratelong)   | 使手机发生较长时间的振动 |
 | [uni.vibrateShort](system/vibrate?id=vibrateshort) | 使手机发生较短时间的振动 |
 
-##### 手机联系人
+#### 手机联系人
 
 | API                                                      | 说明           |
 | :------------------------------------------------------- | :------------- |
 | [uni.addPhoneContact](system/contact?id=addphonecontact) | 添加手机通讯录 |
 
-##### 蓝牙
+#### 蓝牙
 
 | API                                                                                           | 说明                               |
 | :-------------------------------------------------------------------------------------------- | :--------------------------------- |
@@ -486,7 +489,7 @@ uni.addInterceptor({
 | [uni.getBluetoothAdapterState](/api/system/bluetooth?id=getbluetoothadapterstate)             | 获取本机蓝牙适配器状态             |
 | [uni.closeBluetoothAdapter](/api/system/bluetooth?id=closebluetoothadapter)                   | 关闭蓝牙模块                       |
 
-##### 低耗蓝牙
+#### 低耗蓝牙
 
 | API                                                                                             | 说明                                                   |
 | :---------------------------------------------------------------------------------------------- | :----------------------------------------------------- |
@@ -500,7 +503,7 @@ uni.addInterceptor({
 | [uni.createBLEConnection](/api/system/ble?id=createbleconnection)                               | 连接低功耗蓝牙设备                                     |
 | [uni.closeBLEConnection](/api/system/ble?id=closebleconnection)                                 | 断开与低功耗蓝牙设备的连接                             |
 
-##### iBeacon
+#### iBeacon
 
 | API                                                                       | 说明                            |
 | :------------------------------------------------------------------------ | :------------------------------ |
@@ -510,7 +513,7 @@ uni.addInterceptor({
 | [uni.startBeaconDiscovery](/api/system/ibeacon?id=startbeacondiscovery)   | 停止搜索附近的 iBeacon 设备     |
 | [uni.stopBeaconDiscovery](/api/system/ibeacon?id=stopbeacondiscovery)     | 开始搜索附近的 iBeacon 设备     |
 
-##### 生物认证
+#### 生物认证
 
 | API                                                                                                      | 说明                                     |
 | :------------------------------------------------------------------------------------------------------- | :--------------------------------------- |
@@ -518,9 +521,9 @@ uni.addInterceptor({
 | [uni.checkIsSupportSoterAuthentication](/api/system/authentication?id=checkissupportsoterauthentication) | 获取本机支持的生物认证方式               |
 | [uni.checkIsSoterEnrolledInDevice](/api/system/authentication?id=checkissoterenrolledindevice)           | 获取设备内是否录入如指纹等生物信息的接口 |
 
-#### 界面
+### 界面
 
-##### 交互反馈
+#### 交互反馈
 
 | API                                                 | 说明           |
 | :-------------------------------------------------- | :------------- |
@@ -531,7 +534,7 @@ uni.addInterceptor({
 | [uni.showModal](ui/prompt?id=showmodal)             | 显示模态弹窗   |
 | [uni.showActionSheet](ui/prompt?id=showactionsheet) | 显示菜单列表   |
 
-##### 设置导航条
+#### 设置导航条
 
 | API                                                                          | 说明               |
 | :--------------------------------------------------------------------------- | :----------------- |
@@ -540,7 +543,7 @@ uni.addInterceptor({
 | [uni.showNavigationBarLoading](ui/navigationbar?id=shownavigationbarloading) | 显示导航条加载动画 |
 | [uni.hideNavigationBarLoading](ui/navigationbar?id=hidenavigationbarloading) | 隐藏导航条加载动画 |
 
-##### 设置 TabBar
+#### 设置 TabBar
 
 | API                                                          | 说明                             |
 | :----------------------------------------------------------- | :------------------------------- |
@@ -553,26 +556,26 @@ uni.addInterceptor({
 | [uni.showTabBarRedDot](/api/ui/tabbar?id=showtabbarreddot)   | 显示 tabBar 某一项的右上角的红点 |
 | [uni.hideTabBarRedDot](/api/ui/tabbar?id=hidetabbarreddot)   | 隐藏 tabBar 某一项的右上角的红点 |
 
-##### 背景
+#### 背景
 
 | API                                                                     | 说明                                     |
 | :---------------------------------------------------------------------- | :--------------------------------------- |
 | [uni.setBackgroundColor](/api/ui/bgcolor?id=setbackgroundcolor)         | 动态设置窗口的背景色。                   |
 | [uni.setBackgroundTextStyle](/api/ui/bgcolor?id=setbackgroundtextstyle) | 动态设置下拉背景字体、loading 图的样式。 |
 
-##### 动画
+#### 动画
 
 | API                                                         | 说明                                                                                                                          |
 | :---------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
 | [uni.createAnimation](/api/ui/animation?id=createanimation) | 创建一个动画实例 animation。调用实例的方法来描述动画。最后通过动画实例的 export 方法导出动画数据传递给组件的 animation 属性。 |
 
-##### 滚动
+#### 滚动
 
 | API                                                | 说明                   |
 | :------------------------------------------------- | :--------------------- |
 | [uni.pageScrollTo](/api/ui/scroll?id=pagescrollto) | 将页面滚动到目标位置。 |
 
-##### 绘画
+#### 绘画
 
 | API                                                          | 说明                 |
 | :----------------------------------------------------------- | :------------------- |
@@ -581,7 +584,7 @@ uni.addInterceptor({
 | [uni.canvasGetImageData](/api/canvas/canvasGetImageData)     | 获取画布图像数据     |
 | [uni.canvasPutImageData](/api/canvas/canvasPutImageData)     | 设置画布图像数据     |
 
-##### 下拉刷新
+#### 下拉刷新
 
 | API                                                                  | 说明                       |
 | :------------------------------------------------------------------- | :------------------------- |
@@ -589,7 +592,7 @@ uni.addInterceptor({
 | [uni.startPullDownRefresh](/api/ui/pulldown?id=startpulldownrefresh) | 开始下拉刷新               |
 | [uni.stopPullDownRefresh](/api/ui/pulldown?id=stoppulldownrefresh)   | 停止当前页面下拉刷新       |
 
-##### 节点信息
+#### 节点信息
 
 | API                                                                                | 说明                   |
 | :--------------------------------------------------------------------------------- | :--------------------- |
@@ -602,7 +605,7 @@ uni.addInterceptor({
 | [nodesRef.scrollOffset](/api/ui/nodes-info?id=nodesref-对象的方法列表)             | 获取滚动位置           |
 | [nodesRef.fields](/api/ui/nodes-info?id=nodesref-对象的方法列表)                   | 获取任意字段           |
 
-##### 节点布局相交状态
+#### 节点布局相交状态
 
 | API                                                                                                             | 说明                           |
 | :-------------------------------------------------------------------------------------------------------------- | :----------------------------- |
@@ -612,7 +615,7 @@ uni.addInterceptor({
 | [intersectionObserver.observe](/api/ui/intersection-observer?id=intersectionobserver-对象的方法列表)            | 指定目标节点并开始监听         |
 | [intersectionObserver.disconnect](/api/ui/intersection-observer?id=intersectionobserver-对象的方法列表)         | 停止监听                       |
 
-#### 路由
+### 页面和路由
 
 | API                                             | 说明                                                                         |
 | :---------------------------------------------- | :--------------------------------------------------------------------------- |
@@ -622,16 +625,16 @@ uni.addInterceptor({
 | [uni.switchTab](/api/router?id=switchtab)       | 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面                             |
 | [uni.navigateBack](/api/router?id=navigateback) | 关闭当前页面，返回上一页面或多级页面                                         |
 
-#### 键盘
+### 键盘
 
-| API                                             | 说明                                                                         |
-| :---------------------------------------------- | :--------------------------------------------------------------------------- |
-| [uni.hideKeyboard](/api/key.html#hidekeyboard)     | 隐藏已经显示的软键盘，如果软键盘没有显示则不做任何操作。 |
-| [uni.onKeyboardHeightChange](/api/key.html#onkeyboardheightchange)     | 监听键盘高度变化                                         |
-| [uni.offKeyboardHeightChange](/api/key.html#offkeyboardheightchange)         | 取消监听键盘高度变化事件                                         |
-| [uni.getSelectedTextRange](/api/key?id=getselectedtextrange)       | 在input、textarea等focus之后，获取输入框的光标位置                             |
+| API                                                                  | 说明                                                     |
+| :------------------------------------------------------------------- | :------------------------------------------------------- |
+| [uni.hideKeyboard](/api/key.html#hidekeyboard)                       | 隐藏已经显示的软键盘，如果软键盘没有显示则不做任何操作。 |
+| [uni.onKeyboardHeightChange](/api/key.html#onkeyboardheightchange)   | 监听键盘高度变化                                         |
+| [uni.offKeyboardHeightChange](/api/key.html#offkeyboardheightchange) | 取消监听键盘高度变化事件                                 |
+| [uni.getSelectedTextRange](/api/key?id=getselectedtextrange)         | 在 input、textarea 等 focus 之后，获取输入框的光标位置   |
 
-#### 第三方服务
+### 第三方服务
 
 | API                                                                  | 说明                                                            |
 | :------------------------------------------------------------------- | :-------------------------------------------------------------- |
@@ -652,7 +655,7 @@ uni.addInterceptor({
 | [uni.onPush](/api/plugins/push?id=onpush)                            | 监听透传数据                                                    |
 | [uni.offPush](/api/plugins/push?id=offpush)                          | 移除监听透传数据                                                |
 
-#### 广告
+### 广告
 
 | API                                             | 说明                                                             |
 | :---------------------------------------------- | :--------------------------------------------------------------- |
@@ -662,47 +665,47 @@ uni.addInterceptor({
 | [插屏广告](/api/a-d/interstitial.html)          | 插屏广告                                                         |
 | [互动游戏](/api/a-d/interactive.html)           | 互动游戏是 DCloud 联合三方服务商为开发者提供新的广告场景增值服务 |
 
-#### 平台扩展
+### 平台扩展
 
 | API                                                                         | 说明              |
 | :-------------------------------------------------------------------------- | :---------------- |
 | [uni.requireNativePlugin](/api/extend/native-plugin?id=requirenativeplugin) | 引入 App 原生插件 |
 
-#### 其他
+### 其他
 
-##### 授权
+#### 授权
 
 | API                                                | 说明                   |
 | :------------------------------------------------- | :--------------------- |
 | [uni.authorize](/api/other/authorize?id=authorize) | 提前向用户发起授权请求 |
 
-##### 设置
+#### 设置
 
 | API                                                  | 说明                                               |
 | :--------------------------------------------------- | :------------------------------------------------- |
 | [uni.openSetting](/api/other/setting?id=opensetting) | 调起客户端小程序设置界面，返回用户设置的操作结果。 |
 | [uni.getSetting](/api/other/setting?id=getsetting)   | 获取用户的当前设置。                               |
 
-##### 收货地址
+#### 收货地址
 
 | API                                                             | 说明             |
 | :-------------------------------------------------------------- | :--------------- |
 | [uni.chooseAddress](/api/other/choose-address?id=chooseaddress) | 获取用户收货地址 |
 
-##### 获取发票抬头
+#### 获取发票抬头
 
 | API                                                                      | 说明                                                  |
 | :----------------------------------------------------------------------- | :---------------------------------------------------- |
 | [uni.chooseInvoiceTitle](/api/other/invoice-title?id=chooseinvoicetitle) | 选择用户的发票抬头，需要用户授权 scope.invoiceTitle。 |
 
-##### 小程序跳转
+#### 小程序跳转
 
 | API                                                                                   | 说明                                                                     |
 | :------------------------------------------------------------------------------------ | :----------------------------------------------------------------------- |
 | [uni.navigateToMiniProgram](/api/other/open-miniprogram?id=navigatetominiprogram)     | 打开另一个小程序。                                                       |
 | [uni.navigateBackMiniProgram](/api/other/open-miniprogram?id=navigatebackminiprogram) | 跳转回上一个小程序，只有当另一个小程序跳转到当前小程序时才会能调用成功。 |
 
-##### 模板消息
+#### 模板消息
 
 | API                                                                                                      | 说明                                                                                                              |
 | :------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------- |
@@ -714,23 +717,23 @@ uni.addInterceptor({
 | [sendTemplateMessage](/api/other/template?id=sendtemplatemessage)                                        | 发送模板消息                                                                                                      |
 | [alipay.open.app.mini.templatemessage.send](/api/other/template?id=alipayopenappminitemplatemessagesend) | 支付宝小程序通过 openapi 给用户触达消息，主要为支付后的触达（通过消费 id）和用户提交表单后的触达（通过 formId）。 |
 
-##### 小程序更新
+#### 小程序更新
 
 | API                                                           | 说明                                                                   |
 | :------------------------------------------------------------ | :--------------------------------------------------------------------- |
 | [uni.getUpdateManager](/api/other/update?id=getupdatemanager) | 返回全局唯一的版本更新管理器对象： updateManager，用于管理小程序更新。 |
 
-##### 调试
+#### 调试
 
 | API                                                                 | 说明                                           |
 | :------------------------------------------------------------------ | :--------------------------------------------- |
 | [uni.setEnableDebug](/api/other/set-enable-debug?id=setenabledebug) | 设置是否打开调试开关。此开关对正式版也能生效。 |
 
-##### 获取第三方平台数据
+#### 获取第三方平台数据
 
 | API                                                                  | 说明                             |
 | :------------------------------------------------------------------- | :------------------------------- |
 | [uni.getExtConfig](/api/other/get-extconfig?id=getextconfig)         | 获取第三方平台自定义的数据字段。 |
 | [uni.getExtConfigSync](/api/other/get-extconfig?id=getextconfigsync) | uni.getExtConfig 的同步版本。    |
 
-因文档同步原因，本页面列出的API可能不全。如在本文未找到相关API，可以在左侧树中寻找或使用文档右上角的搜索功能。
+因文档同步原因，本页面列出的 API 可能不全。如在本文未找到相关 API，可以在左侧树中寻找或使用文档右上角的搜索功能。

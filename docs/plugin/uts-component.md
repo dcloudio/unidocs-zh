@@ -754,7 +754,7 @@ todo  目前还没有创建界面
 
 点击按钮，可以在控制台看到组件内部实现的日志输出
 
-```js
+```html
 <template>
 	<div>
 		<text>UTS view组件</text>

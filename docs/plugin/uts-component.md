@@ -834,7 +834,7 @@ Use the `uts-hello-view` tag directly, and define the text content of `buttonTex
 点击按钮，可以在控制台看到组件内部实现的日志输出
 Click the button to see the log output implemented inside the component on the console
 
-```js
+```html
 <template>
 	<div>
 		<text>UTS view组件</text>

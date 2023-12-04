@@ -1,3 +1,5 @@
+# 定时器
+
 ## setTimeout(callback, delay, rest)
 
 设定一个定时器。在定时到期以后执行注册的回调函数
@@ -15,7 +17,6 @@ Set a timer. Execute the registered callback function after the timer timeout
 | delay| Number| No| Delayed time, after which the function call will occur, in ms|
 |rest|Any|否|param1, param2, ..., paramN 等附加参数，它们会作为参数传递给回调函数|
 | rest| Any| No| param1, param2, ..., paramN and other additional parameters will be passed to the callback function as parameters|
-
 
 **返回值**
 **Return value**
@@ -40,8 +41,41 @@ Cancel the timer set by setTimeout.
 |timeoutID|Number|是|要取消的定时器的 ID|
 | timeoutID| Number| Yes| ID of the timer to cancel|
 
+### 最佳实践
+
+定时器应当在组件、页面销毁时候取消，否则该定时器将成为游离定时器，无法被回收销毁。
+
+```html
+<script lang="ts">
+	let timer: ReturnType<typeof setTimeout> | null = null;
+	export default {
+		data() {
+			return {};
+		},
+		methods: {
+			onSetTimeout() {
+				timer = setTimeout(() => {
+					console.log("setTimeout");
+				}, 1000);
+			},
+			clearTimer() {
+				// clearTime
+				if (timer) {
+					clearTimeout(timer);
+					timer = null;
+				}
+			},
+		},
+		beforeUnmount() {
+			// clearTime
+			this.clearTimer();
+		},
+	};
+</script>
+```
 
 ## setInterval(callback, delay, rest)
+
 设定一个定时器。按照指定的周期（以毫秒计）来执行注册的回调函数
 Set a timer. Executes the registered callback function at the specified period (in ms)
 
@@ -58,7 +92,6 @@ Set a timer. Executes the registered callback function at the specified period (
 |rest|Any|否|param1, param2, ..., paramN 等附加参数，它们会作为参数传递给回调函数|
 | rest| Any| No| param1, param2, ..., paramN and other additional parameters will be passed to the callback function as parameters|
 
-
 **返回值**
 **Return value**
 
@@ -69,10 +102,10 @@ Set a timer. Executes the registered callback function at the specified period (
 | intervalID| Number| The number of the timer, which can be passed to [clearInterval](/api/timer?id=clearinterval) to cancel the timing|
 
 **代码示例**
-**CODE EXAMPLE**
-```
+
+```js
 this.timer = setInterval(() => {
-    //TODO 
+	//TODO
 }, 1000);
 ```
 
@@ -90,7 +123,38 @@ Cancel the timer set by setInterval.
 |intervalID|Number|是|要取消的定时器的 ID|
 | intervalID| Number| Yes| ID of the timer to cancel|
 
+### 最佳实践
+
+```html
+<script lang="ts">
+	let timer: ReturnType<typeof setTimeout> | null = null;
+	export default {
+		data() {
+			return {};
+		},
+		methods: {
+			onSetTimeout() {
+				timer = setInterval(() => {
+					console.log("setInterval");
+				}, 1000);
+			},
+			clearTimer() {
+				// clearTime
+				if (timer) {
+					clearInterval(timer);
+					timer = null;
+				}
+			},
+		},
+		beforeUnmount() {
+			// clearTime
+			this.clearTimer();
+		},
+	};
+</script>
+```
+
 ## 注意事项
-## Precautions
-* App 端返回的定时器编号可能为 String 类型，使用时无需主动转换为 Number 类型
-* The timer number returned by the App side may be of String type, so it is not necessary to actively convert to Number type when using it
+
+- App 端返回的定时器编号可能为 String 类型，使用时无需主动转换为 Number 类型
+- 定时器执行间隔并不等于定时器间隔，受很多因素影响，这属于 JS 执行问题，详见 [MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/API/setInterval)

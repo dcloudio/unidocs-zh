@@ -42,8 +42,8 @@
   * [uni统计](uni-stat.md)
     * [uni统计2.0](uni-stat-v2.md)
 	* [uni统计1.0](uni-stat-v1.md)`
-  * [uni加固](uni-app-security.md)
-  * [uni隐私合规检测](uni-app-privacy-detect.md)
+  * [uni加固](/tutorial/app-security.md)
+  * [uni隐私合规检测](/tutorial/app-privacy-detect.md)
   * [地图商业授权](/tutorial/app-geolocation.md?id=lic)
 * [案例](case.md)
 * 更新日志

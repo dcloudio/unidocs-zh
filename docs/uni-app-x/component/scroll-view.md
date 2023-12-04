@@ -94,3 +94,6 @@ onNestedPreScroll(event: NestedPreScrollEvent) {
 
 <!-- UTSCOMJSON.scroll-view.reference -->
 
+### Bug & Tips@tips
+
+- scroll-view组件的overflow属性不支持配置visible

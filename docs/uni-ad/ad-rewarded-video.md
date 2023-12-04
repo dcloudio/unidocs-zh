@@ -561,6 +561,8 @@ export default {
 - 业务在uniCloud：通过[callFunction](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
 - 业务在传统服务器：以HTTP(GET)方式请求开发者配置的回调URL
 
+**提示**：2023/01/29 起，uni-ad Web控制台支持配置传统服务器地址，简化开通流程
+
 注意：
 1. 新建的云函数名称不能使用 `uniAdCallback`
 2. 服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果
@@ -608,79 +610,6 @@ sign = sha256(secret:transid)
 |字段名称|说明|字段类型|备注|
 |:-|:-|:-|:-|
 |isValid|校验结果|Blean|判定结果，是否发放奖励，具体发放奖励由用户自己的业务系统决定|
-
-#### 开发者云函数
-
-示例代码
-
-```js
-'use strict';
-
-const crypto = require('crypto');
-
-const db = uniCloud.database();
-
-const collectionName = "ad-callback-log"; // 如果选择了腾讯云，需要手动预创建表
-
-class DB {
-
-  static save(data) {
-    return new DB().add(data);
-  }
-
-  add(data) {
-    const collection = db.collection(collectionName);
-    const data2 = Object.assign(data, {
-      ad_type: 0,
-      create_date: new Date()
-    })
-    return collection.add(data2);
-  }
-}
-
-exports.main = async (event, context) => {
-  //event为客户端上传的参数
-  console.log('event : ', event);
-
-  const {
-    path,
-    queryStringParameters
-  } = event;
-
-  const data = {
-    adpid: event.adpid,
-    platform: event.platform,
-    provider: event.provider,
-    trans_id: event.trans_id,
-    sign: event.sign,
-    user_id: event.user_id,
-    extra: event.extra
-  }
-
-  // 注意::必须验签请求来源
-  const secret = ""; // uni-ad Web控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 Security key
-  const trans_id = event.trans_id;
-  const sign2 = crypto.createHash('sha256').update(`${secret}:${trans_id}`).digest('hex');
-  if (event.sign !== sign2) {
-    return null;
-  }
-
-  // 可选将回调记录保存到uniCloud，避免用户服务器没有响应时有日志可查，如果选择了保存记录需要做定时清理日志，避免日志过多影响性能
-  // try {
-  //   await DB.save(data);
-  // } catch (e) {
-  //   console.log(e);
-  // }
-
-  // 开发者在此处处理自己的回调业务，需要返回值
-
-  return {
-    isValid: true
-  }
-};
-```
-
-提示：2023/01/29 起，uni-ad Web控制台支持配置传统服务器地址，简化开通流程
 
 ### 老用户升级@upgrade
 

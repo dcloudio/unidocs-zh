@@ -1,5 +1,6 @@
 const path = require('path');
 const { slugify } = require('@vuepress/shared-utils')
+const highlight = require('@vuepress/markdown/lib/highlight')
 const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')
 const createSidebar = require('./markdown/createSidebar')
@@ -48,6 +49,7 @@ const config = {
     editLinkText: '帮助我们改善此页面！',
     lastUpdated: '上次更新',
     // smoothScroll: true,
+    search: false,
     algolia: {
       apiKey: '2fdcc4e76c8e260671ad70065e60b2e7',
       indexName: 'zh-uniapp',
@@ -72,6 +74,14 @@ const config = {
     },
     extractHeaders: ['h1', 'h2', 'h3', 'h4'],
     chainMarkdown (config) {
+      const extensionMap = {
+        uts: 'ts'
+      }
+      config.options.highlight((str, lang) => {
+        const extension = extensionMap[lang]
+        return highlight(str, extension || lang)
+      })
+
       config
         .plugin('translate')
         .use(translatePlugin)
@@ -107,18 +117,39 @@ const config = {
       path.resolve(process.cwd(), 'docs/.vuepress/config')
     )
   },
+  patterns: ['**/!(_sidebar).md', '**/*.vue'],
   plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions]
+    ["vuepress-plugin-juejin-style-copy", copyOptions],
+    [
+      'named-chunks',
+      {
+        layoutChunkName: (layout) => 'layout-' + layout.componentName,
+        pageChunkName: page => {
+          const _context = page._context
+          const pageHeaders = (page.headers || []).map(item => item.title).join(',')
+          if (pageHeaders) {
+            const originDescription = page.frontmatter.description || ''
+            page.frontmatter = {
+              ...page.frontmatter,
+              description: `${_context.siteConfig.description ? `${_context.siteConfig.description},` : ''}${pageHeaders}${originDescription ? `,${originDescription}` : ''}`.slice(0, 150),
+            }
+          }
+          const pagePath = page.path.indexOf('.html') === -1 ? page.path + 'index' : page.path
+          const curPath = 'docs/' + pagePath.replace('docs/', '').substring(1).replace(/\.html/g, "")
+          return curPath
+        }
+      }
+    ]
   ],
   /**
-   * 
+   *
    * @param {string} path path: js 资源文件路径
    * @param {string} type type: 资源文件类型，取值有 script 等
-   * @returns 
+   * @returns
    */
   shouldPrefetch: (path, type) => {
-    if (type === 'script' && path.indexOf('/docs/') > -1) return false
-    return true
+    if (type === 'script') return path.includes('vendors~') || path.includes('layout-') || path.includes('index.')
+    return false
   }
 }
 

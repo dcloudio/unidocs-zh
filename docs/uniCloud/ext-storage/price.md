@@ -1,9 +1,5 @@
 ## 费用说明
 
-因阿里云、腾讯云等serverless厂商未针对uniCloud服务空间提供CDN流量包的销售，uniCloud内置云存储的CDN费用，常被开发者吐槽。
-
-为帮助开发者降低费用，DCloud联合业内其它主流CDN厂商，单独提供了价格更便宜、功能更强大的uniCloud扩展存储。
-
 uniCloud扩展存储费用由存储费用和CDN费用两部分组成，其中CDN费用相比业内价格，有巨大优势。
 
 ### CDN费用
@@ -65,20 +61,3 @@ uniCloud扩展存储CDN费用，按从CDN节点流出的下行流量（单位GB�
 - 请求次数维度：uniCloud扩展存储比阿里云便宜20%，比腾讯云便宜98%！
 - 虽然阿里云没有回源流量，但一般业务场景下，回源流量之于CDN流量，占比通常在5%以内，而uniCloud扩展存储的CDN流量相比阿里云是有大幅优势的，至少便宜33%，故从总账来看，uniCloud扩展存储的总体性价比是极佳的。
 
-### 充值保证金
-
-扩展存储是按量计费的，使用需要先充值200元保证金
-
-在uniCloud web控制台前往【费用中心】-【按量余额充值】充值保证金（若保证金账户余额≥200元则无需充值）
-
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/429.png)
-
-### 充值余额
-
-在uniCloud web控制台前往【费用中心】-【按量余额充值】充值扩展存储余额
-
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/428.png)
-
-## 如何使用？
-
-如何使用扩展存储，请参考[扩展存储API](uniCloud/uni-cloud-ext-storage/api.md)

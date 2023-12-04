@@ -6,8 +6,6 @@
 
 <!-- CUSTOMTYPEJSON.Element.param -->
 
-**注意：** App端Element所有属性仅支持获取，不支持设置修改
-
 ### 方法
 <!-- CUSTOMTYPEJSON.Element.methods.getNodeId.name -->
 
@@ -244,7 +242,7 @@ getAttribute返回值从HBuilderX 3.93起，调整为string类型，不要使用
 <!-- CUSTOMTYPEJSON.Element.methods.takeSnapshot.tutorial -->
 
 
-```uts
+```ts
 // 找到需要截图节点
 const view = uni.getElementById('snapshot-content')!
 // 进行截图

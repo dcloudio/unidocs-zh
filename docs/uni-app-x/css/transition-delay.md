@@ -7,6 +7,9 @@
 
 <!-- CSSJSON.transition-delay.values -->
 
+#### App平台  
+App平台不支持指定多个时长。
+
 <!-- CSSJSON.transition-delay.defaultValue -->
 
 <!-- CSSJSON.transition-delay.unixTags -->

@@ -100,6 +100,12 @@ sql写法，对js工程师而言有学习成本，而且无法处理非关系型
     })
   ```
 
+## JQL流程图解@flow-chart
+
+下图包括clientDB及云函数内使用jql扩展库的调用流程
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/clientdb.jpg)
+
 ## JQL包含的模块@module
 
 这里选择以使用了JQL完整功能clientDB为例，JQL操作数据库的流程如下。不同使用场景的区别请参考： [JQL的使用场景](uniCloud/jql.md?id=scene)
@@ -1333,7 +1339,7 @@ db.collection('book')
 
 **注意**
 
-- limit不设置的情况下默认返回100条数据；设置limit有最大值，腾讯云限制为最大1000条，阿里云限制为最大500条。
+- limit不设置的情况下默认返回100条数据；设置limit有最大值，腾讯云限制为最大1000条，阿里云限制为最大1000条。
 
 `<unicloud-db>`组件提供了更简单的分页方法，包括两种模式：
 

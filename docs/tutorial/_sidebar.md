@@ -26,7 +26,7 @@
   * [vue2 升 3 指南](/tutorial/migration-to-vue3.md)
 * [ts/typescript 专题](/tutorial/typescript-subject.md)
 * [jsx/tsx 语法](/tutorial/syntax-jsx.md)
-* [uts语法](/uts/)
+* [uts语法](/uni-app-x/uts/)
 * 编译器（条件编译）
   * [什么是编译器](/tutorial/compiler.md)
   * [条件编译处理多端差异](/tutorial/platform.md)
@@ -138,6 +138,8 @@
     * [app js/nvue文件原生混淆加密](/tutorial/app-sec-confusion.md)
 	* [Android安全漏洞问题解决方案](/tutorial/app-sec-android.md)
     * [app 安全检测API](/tutorial/app-sec-api.md)
+	* [app 加固](/tutorial/app-security.md)
+	* [app 隐私合规检测](/tutorial/app-privacy-detect.md)
   * 网络安全
     * [云端一体安全网络](/uniCloud/secure-network.md)
     * [传统服务器与uniCloud安全通信](/uniCloud/uni-cloud-s2s.md)

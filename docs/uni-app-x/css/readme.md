@@ -90,7 +90,7 @@ uvue的策略是：在新建页面时，提供一个选项，让开发者选择�
 	<!-- #ifdef APP -->
 	<scroll-view style="flex:1">
 	<!-- #endif -->
-		
+
 	<!-- #ifdef APP -->
 	</scroll-view>
 	<!-- #endif -->
@@ -112,7 +112,7 @@ uvue的策略是：在新建页面时，提供一个选项，让开发者选择�
 - 自定义导航栏
 
 如果开发者想要自定义导航栏，首先在pages.json里对应页面的style里设置`"navigationStyle": "custom"`，关闭原生导航栏。
-然后编写自定义的导航栏组件[<uni-navbar-lite>](https://ext.dcloud.net.cn/plugin?id=14618)，那么推荐的页面代码结构为：
+然后编写自定义的导航栏组件[\<uni-navbar-lite>](https://ext.dcloud.net.cn/plugin?id=14618)，那么推荐的页面代码结构为：
 
 ```html
 <template>
@@ -121,7 +121,7 @@ uvue的策略是：在新建页面时，提供一个选项，让开发者选择�
 	<!-- #ifdef APP -->
 	<scroll-view style="flex:1">
 	<!-- #endif -->
-		
+
 	<!-- #ifdef APP -->
 	</scroll-view>
 	<!-- #endif -->

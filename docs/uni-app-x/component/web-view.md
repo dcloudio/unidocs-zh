@@ -52,4 +52,5 @@ uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中�
 - `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）
 
 ## 注意
-- web-view组件为系统web-view，内核版本号不由uni-app x框架控制。如需x5等webview，需另行开发插件。
+- web-view组件为系统web-view，内核版本号不由uni-app x框架控制。如需x5等webview，需另行开发插件。  
+- web-view组件默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。  

@@ -1,0 +1,64 @@
+* [概述](README.md)
+* 全局
+  * [getApp](get-app.md)
+  * [getCurrentPages](get-current-pages.md)
+* 基础
+  * [事件总线event-bus](event-bus.md)
+  * [拦截器](interceptor.md)
+  * [获取启动参数](get-launch-options-sync.md)
+  * [退出应用](exit.md)
+* 页面
+  * [页面跳转](navigator.md)
+  * [设置导航条颜色](set-navigation-bar-color.md)
+  * [设置导航条标题](set-navigation-bar-title.md)
+  * [设置tabbar](set-tabbar.md)
+  * [页面下拉刷新](pull-down-refresh.md)
+  * [将页面滚动到指定位置](page-scroll-to.md)
+* 元素节点
+  * [获取element](get-element.md)
+  * [获取node](nodes-info.md)
+* 界面
+  * [交互反馈](prompt.md)
+  * [动态加载字体](load-font-face.md)
+  * [截屏事件](capturescreen.md)
+* 网络
+  * [发起请求request](request.md)
+  * [上传文件](upload-file.md)
+  * [下载文件](download-file.md)
+  * [获取设备网络状态](get-network-type.md)
+  * [websocket](websocket-global.md)
+* 设备
+  * [获取系统信息](get-system-info.md)
+  * [获取设备信息](get-device-info.md)
+  * [获取窗口信息](get-window-info.md)
+  * [获取app基础信息](get-app-base-info.md)
+  * [获取app授权设置](get-app-authorize-setting.md)
+  * [获取系统设置](get-system-setting.md)
+  * [获取电量信息](get-battery-info.md)
+  * [安装 APK](install-apk.md)
+  * [wifi](wifi.md)
+  * [内存](memory.md)
+  * [截屏事件](capturescreen.md)
+* 媒体
+  * [拍照和相册选择](choose-image.md)
+  * [图片预览](preview-image.md)
+  * [保存图片到相册](save-image-to-photos-album.md)
+* 位置
+  * [获取当前位置](get-location.md)
+* 推送
+  * [推送](push.md)
+* 数据存储
+  * [storage（key-value存储）](storage.md)
+* 登录和验证
+  * [实人认证](facial-recognition-verify.md)
+* 组件上下文对象
+  * [web-view组件上下文对象](create-webview-context.md)
+  * [video组件上下文对象](create-video-context.md)
+* uniCloud客户端API
+  * [概述](unicloud/README.md)
+  * [云函数](unicloud/function.md)
+  * [云对象](unicloud/object.md)
+  * [数据库](unicloud/database.md)
+  * [云存储](unicloud/storage.md)
+  * [其他API](unicloud/utils.md)
+* [未支持的API及替代方案](ext.md)

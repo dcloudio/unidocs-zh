@@ -91,12 +91,16 @@ const routerMap = {
   '/nvue-event': '/tutorial/nvue-event.html',
   '/use-html5plus': '/tutorial/use-html5plus.html',
   '/m3w': '/uniCloud/uni-portal.html',
-  '/tutorial/syntax-uts': '/uts/',
-  
-  '/uniCloud/uni-id-summary': '/uniCloud/uni-id/summary.html',
-  '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.html',
-  '/uniCloud/uni-id-common': '/uniCloud/uni-id/cloud-common.html',
-  '/uniCloud/uni-id': '/uniCloud/uni-id/old.html',
+  '/tutorial/syntax-uts': '/uni-app-x/uts/',
+
+  '/uniCloud/uni-id-summary.html': '/uniCloud/uni-id/summary.html',
+  '/uniCloud/uni-id-pages.html': '/uniCloud/uni-id/redirect.html',
+  '/uniCloud/uni-id-common.html': '/uniCloud/uni-id/cloud-common.html',
+  '/uniCloud/uni-id.html': '/uniCloud/uni-id/old.html',
+  '/uts/': '/uni-app-x/uts/',
+  '/uni-app-x/ext.html': '/uni-app-x/api/ext.html',
+  '/uni-app-x/pagesjson.html': '/uni-app-x/collocation/pagesjson.html',
+  '/uni-app-x/manifest.html': '/uni-app-x/collocation/manifest.html'
 }
 
 export default ({ fullPath, path, hash }) => {
@@ -109,7 +113,7 @@ export default ({ fullPath, path, hash }) => {
     }
   }
 
-  const matchPath = routerMap[path]
+  const matchPath = routerMap[path] || routerMap[path.replace('.html', '')]
   if (matchPath) {
     return {
       path: matchPath,
@@ -125,4 +129,17 @@ export default ({ fullPath, path, hash }) => {
       replace: true
     }
   }
+
+  const routerMapKeys = Object.keys(routerMap)
+  let returnPathConfig = null
+  routerMapKeys.forEach(key => {
+    if (path.indexOf(key) === 0 && routerMap[key].indexOf(key) !== 0 && routerMap[key] !== path) {
+      return returnPathConfig = {
+        path: path.replace(key, routerMap[key]),
+        hash,
+        replace: true
+      }
+    }
+  })
+  if (returnPathConfig) return returnPathConfig
 }

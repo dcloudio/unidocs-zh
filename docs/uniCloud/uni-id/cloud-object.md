@@ -389,9 +389,7 @@ await uniIdCo.login({
 |email		|string	|和username、mobile三选一	|邮箱		|
 |email |string |and username, mobile choose one of three |email |
 |password	|string	|是							|密码		|
-|password |string |yes |password|
-|captcha	|string	|否							|图形验证码	|
-|captcha |string |no |graphic captcha |
+|captcha	|string	|否（此操作错误3次以上为必填）|图形验证码	|
 
 **返回值**
 **return value**
@@ -436,7 +434,7 @@ await uniIdCo.loginBySms({
 |--					|--			|--		|--										|
 |mobile			|string	|是		|手机号								|
 |code				|string	|是		|短信验证码						|
-|captcha		|string	|否		|图形验证码						|
+|captcha		|string	|否（此操作错误3次以上为必填）		|图形验证码						|
 |inviteCode	|string	|否		|邀请码，仅注册时生效	|
 |inviteCode |string |No |Invite Code, only valid when registering |
 
@@ -969,9 +967,7 @@ await uniIdCo.bindMobileBySms({
 |mobile	|string	|是		|手机号码	|
 |mobile |string |yes |mobile number |
 |code	|string	|是		|短信验证码	|
-|code |string |Yes |SMS verification code |
-|captcha|string	|否		|图形验证码	|
-|captcha|string |No |Captcha |
+|captcha|string	|否（此操作错误3次以上为必填）		|图形验证码	|
 
 **返回值**
 **return value**
@@ -1408,9 +1404,7 @@ await uniIdCo.setPwd({
 |Parameter name |Type |Required |Description |
 |--			|--		|--		|--		|
 |code|string	|是		|手机验证码	|
-| code| string |Yes |Mobile phone verification code|
-|captcha|string	|否		|图形验证码	|
-| captcha| string | no | graphic verification code |
+|captcha|string	|否（此操作错误3次以上为必填）		|图形验证码	|
 |password|string	|是		|密码	|
 | password| string | yes | password |
 
@@ -1500,9 +1494,7 @@ await uniIdCo.resetPwdBySms({
 |code		|string	|是		|短信验证码	|
 |code |string |Yes |SMS verification code |
 |password	|string	|是		|密码		|
-|password |string |yes |password|
-|captcha	|string	|否		|图形验证码	|
-|captcha |string |no |graphic captcha |
+|captcha	|string	|否（此操作错误3次以上为必填）		|图形验证码	|
 
 **返回值**
 **return value**
@@ -1544,9 +1536,7 @@ await uniIdCo.resetPwdByEmail({
 |code		|string	|是		|邮箱验证码	|
 |code |string |Yes |Email Verification Code |
 |password	|string	|是		|密码		|
-|password |string |yes |password|
-|captcha	|string	|否		|图形验证码	|
-|captcha |string |no |graphic captcha |
+|captcha	|string	|否（此操作错误3次以上为必填）		|图形验证码	|
 
 **返回值**
 **return value**

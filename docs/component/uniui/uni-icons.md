@@ -41,9 +41,8 @@ Used to display the icon icon .
 |type	|String		|-		|图标图案，参考示例	|
 |type |String |- |Icon pattern, reference example |
 |color	|String		|-		|图标颜色			|
-|color |String |- |icon color |
-|customPrefix	|String		|-		|自定义图标|
-|customPrefix |String |- |custom icon|
+|customPrefix`[即将废弃]`|String		|-	|自定义图标 |
+|fontFamily	|String		|-		|自定义图标 `2.0.0+支持`|
 
 
 
@@ -55,8 +54,68 @@ Used to display the icon icon .
 |@click|点击 Icon 触发事件|-    |
 |@click|Click Icon to trigger event|- |
 
-## 自定义图标 
-## custom icon
+## 通过 fontFamily 自定义图标 
+1. 引入字体图标
+2. 页面 `style` 中定义 `font-family` 属性，并正确引入字体
+```css
+@font-face {
+	font-family: CustomFont;
+	src: url('./iconfont.ttf');
+}
+```
+3. 组件声明 `fontFamily` 属性，值为 步骤2 的 `font-family`  ,此时组件的 `type` 属性将不生效
+4. 组件内需要使用字体的 `unicode` 码作为图标显示内容
+```html
+<uni-icons fontFamily="CustomFont" :size="26">{{'\uebc6'}}</uni-icons>
+
+```
+5. 方便使用扩展，推荐将 `unicode` 与显示内容做一个map映射
+
+```html
+<template>
+<view class="icon-content">
+	<view v-for="(item,index) in customIcons" :key="index">
+		<uni-icons fontFamily="CustomFont" >{{item.unicode}}</uni-icons>
+		<text>{{item.name}}</text>
+	</view>
+</view>
+</template>
+<script>
+export default {
+	data() {
+		return {
+			icons: [],
+			customIcons: [
+				{
+					name: "home",
+					unicode: "\ue601",
+				},
+				{
+					name: "my",
+					unicode: "\ue6ba",
+				},
+				{
+					name: "back",
+					unicode: "\ue634",
+				}
+			]
+		}
+	},
+	created() {},
+}
+</script>
+<style>
+@font-face {
+	font-family: CustomFont;
+	src: url('./iconfont.ttf');
+}
+</style>
+
+```
+
+
+
+## 通过 customPrefix 自定义图标 （即将废弃）
 ::: warning 注意
 ::: warning attention
 nvue 页面暂时不支持自定义图标，如需在 nvue 中使用 ，请自行引入字体文件

@@ -275,7 +275,7 @@ await uniIdCo.login({
 |mobile		|string	|和username、email三选一	|手机号		|
 |email		|string	|和username、mobile三选一	|邮箱		|
 |password	|string	|是							|密码		|
-|captcha	|string	|否							|图形验证码	|
+|captcha	|string	|否（此操作错误3次以上为必填）|图形验证码	|
 
 **返回值**
 
@@ -310,7 +310,7 @@ await uniIdCo.loginBySms({
 |--					|--			|--		|--										|
 |mobile			|string	|是		|手机号								|
 |code				|string	|是		|短信验证码						|
-|captcha		|string	|否		|图形验证码						|
+|captcha		|string	|否（此操作错误3次以上为必填）		|图形验证码						|
 |inviteCode	|string	|否		|邀请码，仅注册时生效	|
 
 两小时内登录失败3次的用户必填图形验证码，如果客户端没有使用uni-id-pages，可以参考uni-id-pages验证码登录页面的相关逻辑。
@@ -695,7 +695,7 @@ await uniIdCo.bindMobileBySms({
 |--		|--		|--		|--			|
 |mobile	|string	|是		|手机号码	|
 |code	|string	|是		|短信验证码	|
-|captcha|string	|否		|图形验证码	|
+|captcha|string	|否（此操作错误3次以上为必填）		|图形验证码	|
 
 **返回值**
 
@@ -1003,7 +1003,7 @@ await uniIdCo.setPwd({
 |参数名		|类型	|必填	|说明	|
 |--			|--		|--		|--		|
 |code|string	|是		|手机验证码	|
-|captcha|string	|否		|图形验证码	|
+|captcha|string	|否（此操作错误3次以上为必填）		|图形验证码	|
 |password|string	|是		|密码	|
 
 **返回值**
@@ -1068,7 +1068,7 @@ await uniIdCo.resetPwdBySms({
 |mobile		|string	|是		|手机号		|
 |code		|string	|是		|短信验证码	|
 |password	|string	|是		|密码		|
-|captcha	|string	|否		|图形验证码	|
+|captcha	|string	|否（此操作错误3次以上为必填）		|图形验证码	|
 
 **返回值**
 
@@ -1099,7 +1099,7 @@ await uniIdCo.resetPwdByEmail({
 |email		|string	|是		|邮箱		|
 |code		|string	|是		|邮箱验证码	|
 |password	|string	|是		|密码		|
-|captcha	|string	|否		|图形验证码	|
+|captcha	|string	|否（此操作错误3次以上为必填）		|图形验证码	|
 
 **返回值**
 

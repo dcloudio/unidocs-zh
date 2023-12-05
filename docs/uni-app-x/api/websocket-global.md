@@ -54,6 +54,10 @@
 
 <!-- UTSAPIJSON.sendSocketMessage.tutorial -->
 
+## 注意事项
+
+* 出于性能的权衡，在底层实现上发送队列占用的内存不能超过16M，一旦超过将导致连接被关闭。
+
 ## uni.onSocketMessage(callback) @onsocketmessage
 
 <!-- UTSAPIJSON.onSocketMessage.description -->

@@ -144,6 +144,10 @@ function sendSocketMessage(msg) {
 }
 ```
 
+## 注意事项
+
+* 出于性能的权衡，在Android端底层实现上发送队列占用的内存不能超过16M，一旦超过将导致连接被关闭。
+
 ### uni.onSocketMessage(CALLBACK)
 监听WebSocket接受到服务器的消息事件。
 

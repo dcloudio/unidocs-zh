@@ -12,9 +12,7 @@ In short, uniCloud is as stable and robust as WeChat MiniApp Cloud Development a
 - 跨平台。不管你在uniCloud里选择了阿里还是腾讯的serverless，均可以跨uni-app的全端使用。从pc到h5，从Android到iOS，以及各家小程序快应用，十几个平台全端支持
 - Cross-platform. Regardless of whether you choose Ali or Tencent's serverless in uniCloud, you can use it across the entire uni-app. From pc to h5, from Android to iOS, and various MiniApp and QuickApp, more than a dozen platforms are fully supported
 - uniCloud提供了`clientDB`神器，减少90%的服务器开发工作量，且保障数据安全。[详见](/uniCloud/database)
-- uniCloud provides the `clientDB` artifact, which reduces 90% of the server development workload and ensures data security. [See details](/uniCloud/database)
-- uniCloud提供了[uni-id](uni-id-summary.md)、[uniPay](/uniCloud/unipay)等重要框架，大幅减少开发者的相应功能开发量。
-- uniCloud provides important frameworks such as [uni-id](uni-id-summary.md), [uniPay](/uniCloud/unipay), which greatly reduces the amount of corresponding function development for developers.
+- uniCloud提供了[uni-id](uni-id/summary.md)、[uniPay](/uniCloud/unipay)等重要框架，大幅减少开发者的相应功能开发量。
 - uniCloud提供了[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)，客户端开发工作量大幅减少。
 - uniCloud provides [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057), which greatly reduces the workload of client development.
 - uniCloud提供了[uniCloud admin](/uniCloud/admin)，管理端开发工作量大幅减少。
@@ -303,9 +301,7 @@ Because the framework will be used in actual development instead of developing c
 2. Use [uni-cloud-router single-route cloud function framework](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-router), this method has only one cloud function, and all interfaces are this Different parameters of the cloud function, it has a unified routing management.
 
 以免费空间的48个云函数举例，一般情况下：
-Take the 48 cloud functions in free space as an example, in general:
-- [uni-id](uni-id-summary.md)会有一个云对象（uni-id-co）或老版的云函数（uni-id-cf），这是必备的一个云函数
-- [uni-id](uni-id-summary.md) will have a cloud object (uni-id-co) or an old cloud function (uni-id-cf), which is a necessary cloud function
+- [uni-id](uni-id/summary.md)会有一个云对象（uni-id-co）或老版的云函数（uni-id-cf），这是必备的一个云函数
 - 如果使用uni统计、app升级中心、uni发布平台、uniPush2、[uni-search热搜词统计跑批](https://ext.dcloud.net.cn/plugin?id=3851)，这些会自带云函数
 - If you use uni statistics, app uni-upgrade-center, uni publishing platform, uniPush2, [uni-search hot search word statistics running batch](https://ext.dcloud.net.cn/plugin?id=3851),these will automatically with cloud function
 

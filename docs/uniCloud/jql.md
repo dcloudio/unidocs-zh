@@ -5,9 +5,7 @@
 `JQL`, the full name of javascript query language, is a specification for operating databases in js mode.
 
 - `JQL`大幅降低了js工程师操作数据库的难度，比SQL和传统MongoDB API更清晰、易掌握。
-- `JQL` greatly reduces the difficulty for js engineers to operate the database, and is clearer and easier to master than SQL and traditional MongoDB API.
-- `JQL`支持强大的[DB Schema](schema.md)，内置数据规则和权限。DB Schema 支持[uni-id](uni-id-summary.md)，可直接使用其角色和权限。无需再开发各种数据合法性校验和鉴权代码。
-- `JQL` supports powerful [DB Schema](schema.md), built-in data rules and permissions. DB Schema supports [uni-id](uni-id-summary.md), and its roles and permissions can be used directly. There is no need to develop various data validity check and authentication codes.
+- `JQL`支持强大的[DB Schema](schema.md)，内置数据规则和权限。DB Schema 支持[uni-id](uni-id/summary.md)，可直接使用其角色和权限。无需再开发各种数据合法性校验和鉴权代码。
 - `JQL`利用json数据库的嵌套特点，极大的简化了联表查询和树查询的复杂度，并支持更加灵活的虚拟表。
 - `JQL` utilizes the nested feature of json database, which greatly simplifies the complexity of join table query and tree query, and supports more flexible virtual tables.
 

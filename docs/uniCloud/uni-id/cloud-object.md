@@ -2407,7 +2407,7 @@ Cache-Control: no-cache
 > 实人认证相关功能建议或问题，可以加入uni-im交流群进行讨论，[点此加入](https://im.dcloud.net.cn/#/?joinGroup=6445fc67bc1254655dcbf5f7)
 
 基于[实人认证](/uniCloud/frv/intro.md)服务实现，实现用户刷脸核验真实身份，完成实名认证。
-`uni-id-pages`已内置实人认证前端页面与云端云对象，[了解](/uniCloud/uni-id-summary.md#frv)如在`uni-id-pages`中使用。
+`uni-id-pages`已内置实人认证前端页面与云端云对象，[了解](/uniCloud/uni-id/summary.md#frv)如在`uni-id-pages`中使用。
 
 #### 获取认证ID@get-frv-certify-id
 
@@ -2465,8 +2465,8 @@ await uniIdCo.getFrvAuthResult({
 | errCode						 | string&#124;number	 | 错误码			                                                                     |
 | errMsg							 | string				          | 错误信息		                                                                     |
 | authStatus	   | number			           | 认证状态：0 未认证 1 等待认证 2 认证通过 3 认证失败		                                          |
-| realName	     | string			           | 姓名（脱敏）；[敏感信息加密参考](/uniCloud/uni-id-summary.md#sensitive-info-encrypt)		    |
-| identity	     | string			           | 身份证号码（脱敏）；[敏感信息加密参考](/uniCloud/uni-id-summary.md#sensitive-info-encrypt)		 |
+| realName	     | string			           | 姓名（脱敏）；[敏感信息加密参考](/uniCloud/uni-id/summary.md#sensitive-info-encrypt)		    |
+| identity	     | string			           | 身份证号码（脱敏）；[敏感信息加密参考](/uniCloud/uni-id/summary.md#sensitive-info-encrypt)		 |
 
 ### 其他功能@extra-function
 ### Other functions @extra-function
@@ -2763,7 +2763,7 @@ exports.main = async (event, context) => {
 > `uni-id-co`请求鉴权签名与`uni-cloud-s2s`不能同时存在，如果存在`uni-cloud-s2s`，则会优先使用`uni-cloud-s2s`进行请求签名验证
 
 uni-id-co 在URL化请求时，会对以下 API 进行调用鉴权验证，
-在调用 API 时，开发者需要使用请求鉴权密钥（详见[配置文件](/uniCloud/uni-id-summary.md#config)）`requestAuthSecret`按照 uni-id 的约定方式对请求中的关键数据进行签名值计算，
+在调用 API 时，开发者需要使用请求鉴权密钥（详见[配置文件](/uniCloud/uni-id/summary.md#config)）`requestAuthSecret`按照 uni-id 的约定方式对请求中的关键数据进行签名值计算，
 并将签名值添加到Header请求头的 `uni-id-signature` 参数中传给 uni-id 进行签名验证，uni-id 会对接收到数据进行签名值计算，
 And add the signature value to the `uni-id-signature` parameter of the Header request header and pass it to uni-id for signature verification, and uni-id will calculate the signature value for the received data,
 并与接收到的请求签名值进行比对，如果签名值不一致，则视为无效签名，将拒绝本次请求。

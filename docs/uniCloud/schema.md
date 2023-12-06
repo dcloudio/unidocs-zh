@@ -1744,9 +1744,7 @@ The permission rule of `DB Schema` is divided into two parts, one is the specifi
 - 当前已登录用户（auth.uid）
 - Currently logged in user (auth.uid)
 - `uni-id`定义的其他角色
-- other roles defined by `uni-id`
-	* 开发者可以在`uni-id`中自定义各种角色，比如部门管理员，然后在`DB Schema`的permission中配置其可操作的数据。详见[uni-id的角色权限](uni-id-summary.md#rbac)
-	* Developers can customize various roles in `uni-id`, such as department administrators, and then configure their operable data in the permission of `DB Schema`. For details, see [uni-id role permissions](uni-id-summary.md#rbac)
+	* 开发者可以在`uni-id`中自定义各种角色，比如部门管理员，然后在`DB Schema`的permission中配置其可操作的数据。详见[uni-id的角色权限](uni-id/summary.md#rbac)
 
 **注意**：如果登录用户是`uni-id`的admin角色，即超级管理员，则不受`DB Schema`的配置限制的，admin角色拥有对所有数据的读写权限。
 **Note**: If the login user is the admin role of `uni-id`, that is, the super administrator, it is not restricted by the configuration of `DB Schema`, and the admin role has read and write permissions to all data.
@@ -1941,11 +1939,8 @@ In addition to the doc variables mentioned in the above examples, in fact, the p
 |variable name |description |
 |:-:						|:-:																																																																							|
 |auth.uid				|用户id																																																																						|
-|auth.uid |userid |
-|auth.role			|用户角色数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)，注意`admin`为内置的角色，如果用户角色列表里包含`admin`则认为此用户有完全数据访问权限|
-|auth.role |User role array, refer to [uni-id role permissions](uni-id-summary.md#rbac), note that `admin` is a built-in role, if the user role list contains `admin`, it is considered this User has full data access |
-|auth.permission|用户权限数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)																																											|
-|auth.permission|User permission array, refer to [uni-id role permission](uni-id-summary.md#rbac) |
+|auth.role			|用户角色数组，参考[uni-id 角色权限](uni-id/summary.md#rbac)，注意`admin`为内置的角色，如果用户角色列表里包含`admin`则认为此用户有完全数据访问权限|
+|auth.permission|用户权限数组，参考[uni-id 角色权限](uni-id/summary.md#rbac)																																											|
 |doc						|数据库中的目标数据记录，用于匹配记录内容/查询条件																																																|
 |doc |The target data record in the database to match the record content/query condition|
 |now						|当前服务器时间戳（单位：毫秒），时间戳可以进行额外运算，如doc.publish\_date > now - 60000表示publish\_date在最近一分钟														|
@@ -1954,12 +1949,9 @@ In addition to the doc variables mentioned in the above examples, in fact, the p
 **注意**
 **Notice**
 - `auth`表示正在执行操作的用户对象
-- `auth` represents the user object that is performing the action
-- `auth.xxx`均由uni-id提供，依赖于[uni-id公共模块](uni-id-summary.md)
-- `auth.xxx` are provided by uni-id and depend on [uni-id public module](uni-id-summary.md)
+- `auth.xxx`均由uni-id提供，依赖于[uni-id公共模块](uni-id/summary.md)
 - `doc.xxx`表示将要查询/修改/删除的每条数据（注意并不包括新增数据，新增数据应通过值域校验进行验证），如果将要访问的数据不满足permission规则将会拒绝执行
-- `doc.xxx` indicates each piece of data to be queried/modified/deleted (note that new data is not included, and the new data should be verified by the value range check), if the data to be accessed does not meet the permission rules, it will be refuse to execute
-- `uni-id`的角色和权限，也即auth.role和auth.permission是不一样的概念。注意阅读[uni-id 角色权限](uni-id-summary.md#rbac)
+- `uni-id`的角色和权限，也即auth.role和auth.permission是不一样的概念。注意阅读[uni-id 角色权限](uni-id/summary.md#rbac)
 - doc可以理解为将要访问的数据，因此create权限内不可使用doc变量。create时建议使用forceDefaultValue或自定义校验函数实现插入数据的值域校验。
 - doc can be understood as the data to be accessed, so the doc variable cannot be used within the create permission. When creating, it is recommended to use forceDefaultValue or a custom validation function to implement range validation of inserted data.
 

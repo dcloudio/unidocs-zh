@@ -135,8 +135,7 @@ The implementation of the secure network on the WeChat MiniApp relies on some us
 3. 工程中导入uni-id-pages
 3. Import uni-id-pages into the project
 
-- `uni-id` [文档](uni-id-summary.md#save-user-token)
-- `uni-id` [documentation](uni-id-summary.md#save-user-token)
+- `uni-id` [文档](uni-id/summary.md#save-user-token)
 - `uni-id-pages` [插件下载地址](https://ext.dcloud.net.cn/plugin?id=8577)，需要`uni-id-pages 1.0.27`及以上版本
 - `uni-id-pages` [plugin download address](https://ext.dcloud.net.cn/plugin?id=8577), requires `uni-id-pages 1.0.27` and above
 
@@ -615,8 +614,7 @@ Since HBuilderX 3.6.9, the safety network uses the following error specification
 |70010	|模拟器或root设备禁止访问																				|
 | 70010 | Access forbidden by emulator or rooted device |
 
-微信小程序加解密时还会使用uni-id-common的checkToken方法，相关错误码参考：[uni-id错误码](uni-id-summary.md#errcode)
-The WeChat MiniApp will also use the checkToken method of uni-id-common when encrypting and decrypting. For related error codes, please refer to: [uni-id error code](uni-id-summary.md#errcode)
+微信小程序加解密时还会使用uni-id-common的checkToken方法，相关错误码参考：[uni-id错误码](uni-id/summary.md#errcode)
 
 #### 70008错误的详细说明@err-70008
 #### 70008 Error detailed description @err-70008

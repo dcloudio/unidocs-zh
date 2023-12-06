@@ -39,9 +39,7 @@ uniCloud removes some functions developed by WeChat Cloud and adds more function
 |前端数据库watch	|支持。权限按微信账户体系执行 |有更强大的免费的websocket服务[详情查看](https://uniapp.dcloud.io/unipush-v2.html)|
 |Frontend database watch |Supported. Permissions are implemented according to the WeChat account system | There is a more powerful free websocket service [View details](https://uniapp.dcloud.io/unipush-v2.html)|
 |opendb			|无																			|开放的数据库规范，众多价值，[详情](opendb.md)																																	|
-|opendb |none |open database specification, many values, [details](opendb.md) |
-|账户服务		|仅微信登录，但鉴权更简单														|[uni-id](uni-id-summary.md)支持应用自己的账户体系，手机号或email，内置短信验证码和app端一键登录，支持微信、支付宝等三方登录，支持权限、角色、社交裂变等众多功能					|
-|Account Service |Only WeChat login, but the authentication is simpler |[uni-id](uni-id-summary.md) supports the application of its own account system, mobile phone number or email, built-in SMS verification code and one-click login on the app side , support WeChat, Alipay and other three-party login, support permissions, roles, social fission and many other functions |
+|账户服务		|仅微信登录，但鉴权更简单														|[uni-id](uni-id/summary.md)支持应用自己的账户体系，手机号或email，内置短信验证码和app端一键登录，支持微信、支付宝等三方登录，支持权限、角色、社交裂变等众多功能					|
 |admin系统		|不自带																		|自带开源[uniCloud admin](https://uniapp.dcloud.io/uniCloud/admin)系统，大小屏自适配，自带用户、角色、权限功能，还有更多[插件](https://ext.dcloud.net.cn/?cat1=7&cat2=74&orderBy=UpdatedDate)拿来即用	|
 |admin system |Does not come with |With open source [uniCloud admin](https://uniapp.dcloud.io/uniCloud/admin) system, self-adaptive to large and small screens, comes with user, role, permission functions, and more Multiple [plugins](https://ext.dcloud.net.cn/?cat1=7&cat2=74&orderBy=UpdatedDate) ready to use |
 |支付			|仅微信支付，但鉴权更简单														|[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)，跨端统一支付																																		|
@@ -69,8 +67,7 @@ If you have already developed WeChat Mini Programs and want to migrate to uniClo
 #### 对接微信登录
 #### Docking WeChat login
 
-uniCloud可以使用uni-id更简单的接入微信小程序登录。参考[uni-id](uni-id-summary.md)
-uniCloud can use uni-id to log in to WeChat applet more easily. Reference[uni-id](uni-id-summary.md)
+uniCloud可以使用uni-id更简单的接入微信小程序登录。参考[uni-id](uni-id/summary.md)
 
 不同于微信云开发中的直接获取openid，uni-id提供的登录接口会在数据库的uni-id-users表内添加用户记录。
 Different from directly obtaining openid in WeChat cloud development, the login interface provided by uni-id will add user records in the uni-id-users table of the database.

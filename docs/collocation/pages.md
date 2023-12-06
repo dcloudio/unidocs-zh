@@ -29,7 +29,7 @@ It is similar to the **page management** part of `app.json` in the WeChat MiniAp
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
 |[topWindow](/collocation/pages?id=topwindow)| Object|No|The top window of the large screen| H5|
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
-|[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0|uni-app x 不支持|
+|[uniIdRouter](/uniCloud/uni-id/summary.md#uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0|uni-app x 不支持|
 |entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序|
 
 以下是一个包含了所有配置选项的 `pages.json` ：

@@ -107,7 +107,7 @@ v1.0.3起提供了商业化能力，与uni-ai对话消耗积分。
 	"resToLogin": true
 }
 ```
-> 更多uniIdRouter自动路由详情参考：[https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#uni-id-router](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#uni-id-router)
+> 更多uniIdRouter自动路由详情参考：[https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)
 
 ## 二次开发  
 **主要文件目录结构**

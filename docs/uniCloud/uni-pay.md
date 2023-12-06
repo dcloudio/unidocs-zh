@@ -2082,8 +2082,7 @@ When the data displayed on your next page does not need to be displayed after th
 **注意**
 **Notice**
 
-发起退款默认需要admin权限（基于uni-id用户体系登录），否则会报权限不足或缺少token。[查看uni-id介绍](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html)
-Initiating a refund requires admin authority by default (login based on the uni-id user system), otherwise it will report insufficient authority or lack of token. [View uni-id introduction](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html)
+发起退款默认需要admin权限（基于uni-id用户体系登录），否则会报权限不足或缺少token。[查看uni-id介绍](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html)
 
 当然，你也可以修改`uni-pay-co/config/permission.js`这个文件内的权限规则。
 Of course, you can also modify the permission rules in the `uni-pay-co/config/permission.js` file.

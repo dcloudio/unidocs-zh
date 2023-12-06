@@ -118,9 +118,7 @@ GitCode repository: [https://gitcode.net/dcloud/uni-starter](https://gitcode.net
 uni-starter 使用 `uni-id-pages`实现：登录注册账户管理相关功能 [详情查看](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
 uni-starter uses `uni-id-pages` to achieve: login registration account management related functions [View details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
 ### 2.路由管理
-### 2. Routing management
-大多数应用，都会指定某些页面需要登录才能访问。以往开发者需要写不少代码。现在，只需在项目的pages.json内配置登录页路径、需要登录才能访问的页面等信息，uni-app框架的路由跳转，会自动在需要登录且客户端登录状态过期或未登录时跳转到登录页面。详情查看：[uniIdRouter文档](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#uni-id-router)
-Most applications specify that certain pages require a login to access. In the past, developers needed to write a lot of code. Now, you only need to configure the login page path, pages that require login to access, etc. in the pages.json of the project, and the routing jump of the uni-app framework will automatically jump when login is required and the client login status expires or is not logged in. Go to the login page. For details, see: [uniIdRouter document](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#uni-id-router)
+大多数应用，都会指定某些页面需要登录才能访问。以往开发者需要写不少代码。现在，只需在项目的pages.json内配置登录页路径、需要登录才能访问的页面等信息，uni-app框架的路由跳转，会自动在需要登录且客户端登录状态过期或未登录时跳转到登录页面。详情查看：[uniIdRouter文档](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)
 ### 3.h5版在页面顶部引导用户`点击下载App`
 ### Version 3.h5 guides users to `click to download the app` at the top of the page
 把h5端用户引流到APP端，是一个非常实用的功能。相对于h5，APP端有更高的用户留存和更好的产品体验。
@@ -389,7 +387,7 @@ uni-starter
 │	│	|	|	└─uni-id				uni-id模块配置目录
 │	│	|	|		├─config.json		uni-id对应的配置数据：微信登录、一键登录、短信验证码登录等key都在这里填写<a target="_blank" href="https://ext.dcloud.net.cn/plugin?id=4425">详情</a>
 │	│	|	|		└─file.cert			uni-id依赖的配置文件,假如你使用微信发红包功能，需要的证书文件就是放到这里
-│	|	|	└───uni-id					uni-id用户体系 <a target="_blank" href="https://uniapp.dcloud.io/uniCloud/uni-id-summary">详情</a>
+│	|	|	└───uni-id					uni-id用户体系 <a target="_blank" href="https://uniapp.dcloud.io/uniCloud/uni-id/summary">详情</a>
 │	|	├─check-version					检查更新云函数 <a target="_blank" href="https://ext.dcloud.net.cn/plugin?name=uni-upgrade-center-app">详情</a>
 │	|	├─rewarded-video-ad-notify-url	签到插件广告回调 <a target="_blank" href="https://ext.dcloud.net.cn/plugin?name=uni-sign-in">详情</a>
 │	|	├─uni-analyse-searchhot			云端一体搜索模板依赖的云函数 <a target="_blank" href="https://ext.dcloud.net.cn/plugin?id=3851">详情</a>
@@ -397,7 +395,7 @@ uni-starter
 │	|	├─uni-clientDB-actions			客户端直接操作数据库拦截逻辑 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/jql.html#action">详情</a>
 │	|	├─uni-open-bridge				统一接管微信等三方平台认证的开源库 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/jql.html#action">详情</a>
 │	|	├─upgrade-center				云端一体uni升级中心的云函数 <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/jql.html#action">详情</a>
-│	|	└─uni-id-co						用户中心云函数，实现用户注册、修改密码、发送验证码、快捷登录（微信、短信、账户、一键登录） <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html">详情</a>
+│	|	└─uni-id-co						用户中心云函数，实现用户注册、修改密码、发送验证码、快捷登录（微信、短信、账户、一键登录） <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html">详情</a>
 │	└──database							云数据目录
 │		├─db_init.json					db_init.json初始化数据库文件，其中不再包含schema <a target="_blank" href="https://uniapp.dcloud.net.cn/uniCloud/hellodb?id=db-init">详情</a>
 │		├─opendb-app-versions.schema.json		应用版本，表结构文件

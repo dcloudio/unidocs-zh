@@ -34,11 +34,8 @@ In the lower version that does not support database triggers, use [action cloud 
 **Notice**
 
 - `clientDB`依赖uni-id（`1.1.10+版本`）提供用户身份和权限校验，存在uni-id-common时clientDB会优先依赖uni-id-common，如果你不了解uni-id，请参考：[uni-id文档](uniCloud/uni-id.md)，[uni-id-common文档](uniCloud/uni-id-common.md)
-- `clientDB` relies on uni-id (`1.1.10+ version`) to provide user identity and permission verification. When uni-id-common exists, clientDB will rely on uni-id-common first. If you do not know uni-id, Please refer to: [uni-id documentation](uniCloud/uni-id.md), [uni-id-common documentation](uniCloud/uni-id-common.md)
-- `clientDB`依赖的uni-id需要在uni-id的config.json内添加uni-id相关配置，通过uni-id的init方法传递的参数不会对clientDB生效，参考：[uni-id 配置](uniCloud/uni-id.md?id=config)，[uni-id新版配置(uni-id-co + uni-id-common)](uniCloud/uni-id-summary.md?id=config)
-- The uni-id that `clientDB` depends on needs to add uni-id related configuration in uni-id's config.json. The parameters passed through uni-id's init method will not take effect on clientDB. Refer to: [uni-id configuration](uniCloud/uni-id.md?id=config), [uni-id new config (uni-id-co + uni-id-common)](uniCloud/uni-id-summary.md?id=config)
-- 通常在管理控制台使用`clientDB`，需要获取不同角色用户拥有的权限（在权限规则内使用auth.permission），请先查阅：[uni-id 角色权限](uniCloud/uni-id.md?id=rbac)，[uni-id新版角色权限(uni-id-co + uni-id-common)](uniCloud/uni-id-summary.md?id=rbac)
-- Usually use `clientDB` in the management console, you need to obtain the permissions of users with different roles (use auth.permission in the permission rules), please refer to: [uni-id role permissions](uniCloud/uni-id.md? id=rbac), [uni-id new role permissions (uni-id-co + uni-id-common)](uniCloud/uni-id-summary.md?id=rbac)
+- `clientDB`依赖的uni-id需要在uni-id的config.json内添加uni-id相关配置，通过uni-id的init方法传递的参数不会对clientDB生效，参考：[uni-id 配置](uniCloud/uni-id.md?id=config)，[uni-id新版配置(uni-id-co + uni-id-common)](uniCloud/uni-id/summary.md?id=config)
+- 通常在管理控制台使用`clientDB`，需要获取不同角色用户拥有的权限（在权限规则内使用auth.permission），请先查阅：[uni-id 角色权限](uniCloud/uni-id.md?id=rbac)，[uni-id新版角色权限(uni-id-co + uni-id-common)](uniCloud/uni-id/summary.md?id=rbac)
 
 
 

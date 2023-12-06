@@ -13,9 +13,7 @@ For developers of uniCloud, their background management system should use this f
 - 它基于 uni-app 的宽屏适配，可自动适配 PC 宽屏和手机各端。了解[宽屏适配](https://uniapp.dcloud.io/adapt)
 - It is based on uni-app's widescreen adaptation, which can automatically adapt to PC widescreen and mobile terminals. Learn about [Widescreen Adaptation](https://uniapp.dcloud.io/adapt)
 - 它基于 uniCloud，是 serverless 的云开发。了解[uniCloud](https://uniapp.dcloud.io/uniCloud/README)
-- It is based on uniCloud and is serverless cloud development. Learn about [uniCloud](https://uniapp.dcloud.io/uniCloud/README)
-- 它基于 uni-id，使用 uni-id 的用户账户、角色、权限系统。了解[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)
-- It is based on uni-id and uses uni-id's user account, role, permission system. Learn about [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)
+- 它基于 uni-id，使用 uni-id 的用户账户、角色、权限系统。了解[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id/summary)
 
 官方搭建了[uni-admin演示站点](http://hellouniadmin.dcloud.net.cn/admin/)，你登录后即可快速体验uni-admin。
 The official build [uni-admin demo site](http://hellouniadmin.dcloud.net.cn/admin/), you can quickly experience uni-admin after logging in.
@@ -45,9 +43,7 @@ With this combination, the development of the management system has become unpre
 1. Preset function
 
 - 管理员账户初始化、登录、修改密码
-- Administrator account initialization, login, password modification
-- 基于[uni-id](uni-id-summary.md)的用户管理（注册、修改信息、停用启用、删除）、角色管理、权限管理
-- User management based on [uni-id](uni-id-summary.md) (register, modify information, disable enable, delete), role management, permission management
+- 基于[uni-id](uni-id/summary.md)的用户管理（注册、修改信息、停用启用、删除）、角色管理、权限管理
 - 顶部 topWindow 的设置：比如 logo 更换、右上角部分链接更换。详见项目根目录的`admin.config.js`文件
 - Settings of the top topWindow: such as logo replacement, and some links in the upper right corner are replaced. See the `admin.config.js` file in the project root directory for details
 - 左侧 leftWindow 的菜单设置：菜单包括两类，一类是动态菜单，具备业务和权限功能；另一类是静态菜单，不会根据登录用户角色变化
@@ -610,9 +606,7 @@ Using traditional saas statistical products, all data are reported to statistica
 **4. The default function is rich**
 
 - 设备统计
-- Device Statistics
-- 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)）
-- Registered user statistics (based on [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary))
+- 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id/summary)）
 - 页面统计
 - Page Statistics
 - 新增、活跃、留存、跳出率分析
@@ -771,8 +765,7 @@ If you have any questions, you can consult in [Forum Post](https://ask.dcloud.ne
 ## 用户-角色-权限
 ## user-role-permission
 
-uni-admin 框架基于 uni-id，复用 uni-id 的用户、角色、权限系统，详见[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary)。
-The uni-admin framework is based on uni-id, and reuses uni-id's user, role, and permission system. For details, see [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id-summary).
+uni-admin 框架基于 uni-id，复用 uni-id 的用户、角色、权限系统，详见[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id/summary)。
 
 需要注意的是，admin 框架的动态菜单同样依赖 uni-id 的权限表（uni-id-permissions）。
 It should be noted that the dynamic menu of the admin framework also relies on the uni-id permission table (uni-id-permissions).

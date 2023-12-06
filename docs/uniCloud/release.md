@@ -148,7 +148,7 @@
   + 【重要】uni-id-co 新增 外部系统联登接口，可为外部系统创建与uni-id相对应的账号，使该账号可以使用依赖uniId的系统及功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#external)
   + uni-id-co 新增 设置密码接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#set-pwd)
   + uni-id-co 新增 URL化请求时鉴权签名验证 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#http-reqeust-auth)
-  + uni-id-co 新增匹配到的用户不可在当前应用登录时的错误码 `uni-id-account-not-exists-in-current-app` [错误码说明](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#errcode)
+  + uni-id-co 新增匹配到的用户不可在当前应用登录时的错误码 `uni-id-account-not-exists-in-current-app` [错误码说明](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#errcode)
   + uni-id-co 修复 微信登录时用户未设置头像的报错问题
   + uni-id-co 修复 无法从 clientInfo 中获取 uniIdToken
   + uni-id-pages 新增 登录后跳转设置密码页面配置项`setPasswordAfterLogin` [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#set-pwd-after-login)
@@ -167,9 +167,9 @@
   + 云对象 新增 url 化支持通过多段 path 路径调用方法，以第一段作为云对象方法名 [详情](https://uniapp.dcloud.net.cn/uniCloud/http.html#request-co-url)
   + 本地调试插件 修复 HBuilderX 3.6.7 引出的断点进入nodejs内置模块的Bug
   + 安全网络 调整 统一错误码规范 [详情](https://uniapp.dcloud.net.cn/uniCloud/secure-network.html#err-code)
-  + uni-id 升级密码加密算法，支持hmac-sha256加密 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#password-safe)
-  + uni-id 新增 开发者可以自定义密码加密规则 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#custom-password-encrypt)
-  + uni-id 新增 支持将其他系统用户迁移至uni-id [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#move-users-to-uni-id)
+  + uni-id 升级密码加密算法，支持hmac-sha256加密 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#password-safe)
+  + uni-id 新增 开发者可以自定义密码加密规则 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#custom-password-encrypt)
+  + uni-id 新增 支持将其他系统用户迁移至uni-id [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#move-users-to-uni-id)
   + uni-id 支持URL化方式请求 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#adapter-http)
 
 #### 2022-10-27
@@ -231,15 +231,10 @@
   + 优化 本地调试插件 持续调试会导致内存占用过高并且响应缓慢的Bug
   + Optimization Local debugging plugin Continuous debugging will lead to high memory usage and slow response bugs
   + 优化 uniIdRouter 支持对首页、直达页面进行拦截并跳转到登录页面
-  + Optimized uniIdRouter to support intercepting the home page and direct page and jumping to the login page
-  + 优化 uni-id-co 密码规则调整，废除之前的简单校验，允许配置密码强度 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#password-strength)
-  + Optimize the adjustment of uni-id-co password rules, abolish the previous simple verification, and allow to configure the password strength [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#password- strength)
+  + 优化 uni-id-co 密码规则调整，废除之前的简单校验，允许配置密码强度 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#password-strength)
   + 调整 uni-id-co 存储用户 openid（`wx_openid.${mp|h5|app|web}`）时同时在`wx_openid.${mp|h5|app|web}_${DCloudAppId}`存储了一份副本，参考：[微信登录](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-weixin)、[QQ登录](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-qq)
-  + Adjust uni-id-co to store user openid (`wx_openid.${mp|h5|app|web}`) also in `wx_openid.${mp|h5|app|web}_${DCloudAppId}` A copy, reference: [WeChat login](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-weixin), [QQ login](https://uniapp .dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-qq)
-  + 调整 uni-id-co 依赖 uni-open-bridge-common 存储用户 `session_key`、`access_token` 等凭据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
-  + Adjust uni-id-co to rely on uni-open-bridge-common to store user credentials such as `session_key`, `access_token` [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary. html#save-user-token)
-  + 新增 uni-id-co 增加 beforeRegister 钩子用户在注册前向用户记录内添加一些数据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#before-register)
-  + Added uni-id-co Added beforeRegister hook to add some data to user records before registration [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#before- register)
+  + 调整 uni-id-co 依赖 uni-open-bridge-common 存储用户 `session_key`、`access_token` 等凭据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token)
+  + 新增 uni-id-co 增加 beforeRegister 钩子用户在注册前向用户记录内添加一些数据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#before-register)
   + 【重要】新增 uni-id-pages Web端支持微信登录（包括微信公众号内H5登录 和 普通浏览器内手机微信扫码登录）[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#weixinlogin)
   + [Important] Added uni-id-pages web terminal to support WeChat login (including H5 login in WeChat official account and mobile phone WeChat scan code login in ordinary browsers) [Details](https://uniapp.dcloud.net.cn /uniCloud/uni-id-pages.html#weixinlogin)
   + 新增 uni-id-pages 支持密码强度（是否必须包含大小写字母、数字和特殊符号以及长度）配置 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#config)
@@ -341,9 +336,7 @@
     - 新增 uni-id-common公共模块。更小巧的公共模块，负责 uni-id 的 token 管理和权限校验 [详情](https://uniapp.dcloud.io/uniCloud/uni-id-common.html)
     - Added uni-id-common public module. A smaller public module, responsible for uni-id token management and permission verification [Details](https://uniapp.dcloud.io/uniCloud/uni-id-common.html)
     - 新增 uni-id-pages云端一体页面模板。包括一组前端页面 + uni-id-co云对象。包括用户注册、登录、忘记密码、个人中心等功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
-    - Added uni-id-pages cloud integrated page template. Includes a set of frontend pages + uni-id-co cloud objects. Including user registration, login, forgotten password, personal center and other functions [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
-  + 新增 uniIdRouter路由管理。在 pages.json 里直接定义哪些页面需要登录后才能访问 [详情](https://uniapp.dcloud.io/uniCloud/uni-id-summary.html#uni-id-router)
-  + Added uniIdRouter routing management. Define which pages need to be logged in directly in pages.json [Details](https://uniapp.dcloud.io/uniCloud/uni-id-summary.html#uni-id-router)
+  + 新增 uniIdRouter路由管理。在 pages.json 里直接定义哪些页面需要登录后才能访问 [详情](https://uniapp.dcloud.io/uniCloud/uni-id/summary.html#uni-id-router)
   + 新增 uniCloud.onNeedLogin/offNeedLogin 用于监听/移除监听需要登录事件，需搭配 `uniIdRouter` 使用 [详情](https://uniapp.dcloud.io/uniCloud/client-sdk.html#on-need-login)
   + Added uniCloud.onNeedLogin/offNeedLogin for monitoring/removing monitoring of required login events, it needs to be used with `uniIdRouter` [Details](https://uniapp.dcloud.io/uniCloud/client-sdk.html#on-need -login)
   + 新增 uniCloud.onRefreshToken/offRefreshToken 用于监听/移除监听 token 更新事件 [详情](https://uniapp.dcloud.io/uniCloud/client-sdk.html#on-refresh-token)

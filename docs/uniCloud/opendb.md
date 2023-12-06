@@ -33,8 +33,7 @@ Taking the user table as an example, it stipulates the table name and field defi
 - 统一的初始数据。比如地区表等数据，在openDB中有初始化数据，开发者们共享一个相同数据源即可。
 - Unified initial data. For example, data such as regional tables, there is initialized data in openDB, and developers can share the same data source.
 
-[uni-id](uni-id-summary.md)的账户统一，是`openDB`的成功实践。基于uni-id规范，有电商插件、有IM插件、有PC管理插件，开发者可以方便的把这些插件整合到自己的同一应用中。
-The unified account of [uni-id](uni-id-summary.md) is a successful practice of `openDB`. Based on the uni-id specification, there are e-commerce plug-ins, IM plug-ins, and PC management plug-ins. Developers can easily integrate these plug-ins into their own same application.
+[uni-id](uni-id/summary.md)的账户统一，是`openDB`的成功实践。基于uni-id规范，有电商插件、有IM插件、有PC管理插件，开发者可以方便的把这些插件整合到自己的同一应用中。
 
 
 ## openDB中的已有规范

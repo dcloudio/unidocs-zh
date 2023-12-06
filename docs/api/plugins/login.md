@@ -5,8 +5,7 @@ Log in
 uni.login是一个客户端API，统一封装了各个平台的各种常见的登录方式，包括App手机号一键登陆、三方登录（微信、微博、QQ、Apple、google、facebook）、各家小程序内置登录。
 uni.login is a client API that unifies and encapsulates various common login methods of various platforms, including one-click login with App mobile number, three-party login (WeChat, Weibo, QQ, Apple, Google, Facebook), various MiniApp built-in login.
 
-除了前端API，DCloud还提供了[uni-id](/uniCloud/uni-id-summary.md)，这是一个云端一体的、完整的、账户开源框架。不仅包括客户端API，还包括前端页面、服务器代码、管理后台等所有与登录账户有关的服务，包括短信验证码、密码加密存储、忘记密码、头像更新等所有常见账户相关功能。
-In addition to the front-end API, DCloud also provides [uni-id](/uniCloud/uni-id-summary.md), which is a cloud-integrated, complete, account open source framework. It includes not only the client API, but also all services related to login accounts such as front-end pages, server code, and management background, including all common account-related functions such as SMS verification codes, password encrypted storage, forgotten passwords, and avatar updates.
+除了前端API，DCloud还提供了[uni-id](/uniCloud/uni-id/summary.md)，这是一个云端一体的、完整的、账户开源框架。不仅包括客户端API，还包括前端页面、服务器代码、管理后台等所有与登录账户有关的服务，包括短信验证码、密码加密存储、忘记密码、头像更新等所有常见账户相关功能。
 
 **平台差异说明**
 **Platform Difference Description**
@@ -51,9 +50,7 @@ For most login methods, you need to apply for the activation of related services
 * [Jingdong MiniApp login](https://mp-docs.jd.com/api/openInterface/login.html)
 
 #### web平台支持的登录方式
-#### Login methods supported by the web platform
-Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](/uniCloud/uni-id-summary.md)
-Common logins on the web platform include user name and password, SMS verification code, WeChat scanning on PC, and WeChat official account login. These are not encapsulated in the uni.login API, but are encapsulated in uni-id. Please refer to [uni-id](/uniCloud/uni-id-summary.md)
+Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](/uniCloud/uni-id/summary.md)
 
 如不使用uni-id，微信内嵌浏览器运行H5版时，可通过js sdk实现微信登录，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
 If you don’t use uni-id, when the WeChat embedded browser runs the H5 version, you can log in to WeChat through js sdk, you need to introduce a separate js, [see details](https://ask.dcloud.net.cn/article /35380)

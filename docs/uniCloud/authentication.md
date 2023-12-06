@@ -13,8 +13,7 @@ In the Tencent Cloud concept, all users access cloud storage through anonymous l
 在微信小程序云的开发中，自定义登录还可以用于前端操作数据库。
 In the development of WeChat applet cloud, custom login can also be used for front-end operation database.
 
-但因为腾讯云提供的这套方案不够灵活和完善，uniCloud单独做了[uni-id](uni-id-summary.md)用于完善的账户体系，单独做了[clientDB](clientdb.md)，用于完善快捷的前端操作数据库。
-However, because the solution provided by Tencent Cloud is not flexible and perfect, uniCloud has separately made [uni-id](uni-id-summary.md) for a complete account system, and made [clientDB](clientdb.md) separately. , which is used to improve the fast front-end operation database.
+但因为腾讯云提供的这套方案不够灵活和完善，uniCloud单独做了[uni-id](uni-id/summary.md)用于完善的账户体系，单独做了[clientDB](clientdb.md)，用于完善快捷的前端操作数据库。
 
 所以目前腾讯云的自定义登录功能，在uniCloud中的价值只剩下前端删除云存储。DCloud不建议开发者这么用，前端直传云存储不需要腾讯云自定义登录，而删除云存储，还是应该在云端进行。
 Therefore, the value of Tencent Cloud's custom login function in uniCloud is only left to delete cloud storage at the front end. DCloud does not recommend developers to use it this way. Front-end direct cloud storage does not require Tencent Cloud custom login, and deletion of cloud storage should still be done in the cloud.

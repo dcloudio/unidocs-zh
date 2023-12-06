@@ -91,7 +91,7 @@ uni的`一键登录`和`实人认证`不但和uni产品完美结合、快捷开�
 
 这些价格都极具优势。如果您有非常大的量，还可以再联系bd@dcloud.io沟通。
 
-不管是一键登录还是实人认证，在[uni-id](/uniCloud/uni-id-summary.md)里都已经内置集成好。
+不管是一键登录还是实人认证，在[uni-id](/uniCloud/uni-id/summary.md)里都已经内置集成好。
 
 无需自己写代码。账户的注册、实人认证，这些代码都已经写好并开源在[uni-id-pages](/uniCloud/uni-id-pages.md)项目中。
 

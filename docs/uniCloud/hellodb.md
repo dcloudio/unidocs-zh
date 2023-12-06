@@ -266,8 +266,7 @@ There are several options for operating the database:
 	传统开发中，其实大多数服务器接口开发，就是检验下前端数据和身份的合法性，然后写个SQL操作下数据库，返回JSON给前端。其实很无聊。
 	In traditional development, in fact, most server interface development is to verify the legitimacy of front-end data and identity, and then write SQL to operate the database and return JSON to the front-end. It's actually quite boring.
 	
-	clientDB最大的好处就是不用写服务端代码，客户端直接操作数据库。因为uniCloud提供了[DB Schema](schema.md)和[uni-id](uni-id-summary.md)，可以直接控制数据库的内容和权限校验。
-	The biggest advantage of clientDB is that the client directly operates the database without writing server-side code. Because uniCloud provides [DB Schema](schema.md) and [uni-id](uni-id-summary.md), you can directly control the content of the database and check permissions.
+	clientDB最大的好处就是不用写服务端代码，客户端直接操作数据库。因为uniCloud提供了[DB Schema](schema.md)和[uni-id](uni-id/summary.md)，可以直接控制数据库的内容和权限校验。
 	
 	clientDB同时支持`action云函数`作为补充，当发起一个客户端操作云数据库的请求时，可以同时触发一个`action云函数`，在云端对数据库操作进行前置或后置处理。
 	clientDB also supports `action cloud function` as a supplement. When a client request to operate the cloud database is initiated, an `action cloud function` can be triggered at the same time to pre- or post-process the database operation in the cloud.

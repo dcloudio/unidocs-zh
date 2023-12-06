@@ -1733,7 +1733,7 @@ await uniPayCo.getOrder({
 
 **注意**
 
-发起退款默认需要admin权限（基于uni-id用户体系登录），否则会报权限不足或缺少token。[查看uni-id介绍](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html)
+发起退款默认需要admin权限（基于uni-id用户体系登录），否则会报权限不足或缺少token。[查看uni-id介绍](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html)
 
 当然，你也可以修改`uni-pay-co/config/permission.js`这个文件内的权限规则。
 

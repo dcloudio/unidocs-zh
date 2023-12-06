@@ -131,8 +131,8 @@ DCloud拥有国内广泛的开发者，可以与云厂商谈判拿到非常低�
 2. uniCloud基于serverless，开发者无需了解linux、nginx，无需熟悉负载均衡、大并发处理，不用关心系统补丁和DDoS攻击，只需要用js写好云端业务代码，上传到uniCloud即可。
 3. uniCloud推出了[opendb](opendb.md)，包含了大量的开源数据库模板，常见数据表无需自己设计。通过opendb模板，开发者可以快速掌握数据库设计。
 4. SQL在过去也需要单独学习，尤其是复杂的联表查询、Tree查询，掌握很不容易。uniCloud推出了JQL（Javascript Query Language），会js即可掌握数据库查询，更对联表查询、Tree查询提供了非常简便的操作封装。
-5. uniCloud提供了[uni-id](uni-id-summary.md)，无需自己开发账户体系，登录、注册、修改密码、角色权限体系、token管理一应俱全。
-6. uniCloud在[DB Schema](schema.md)中提供了与[uni-id](uni-id-summary.md)的角色权限体系配套的数据权限控制方案。这套方案让初学者也不会在权限控制中犯错。
+5. uniCloud提供了[uni-id](uni-id/summary.md)，无需自己开发账户体系，登录、注册、修改密码、角色权限体系、token管理一应俱全。
+6. uniCloud在[DB Schema](schema.md)中提供了与[uni-id](uni-id/summary.md)的角色权限体系配套的数据权限控制方案。这套方案让初学者也不会在权限控制中犯错。
 在一目了然的权限配置清单中可以轻松发现漏做的事情，比以往在大坨php代码中分析是否存在权限漏洞要简单的多。
 这套方案还能让多人协作、或项目二次开发变的更容易，因为规范的存在，新人可以轻易读懂老代码的权限体系逻辑。
 
@@ -195,7 +195,7 @@ uni云端一体生态的内容太多，让我们抽丝剥茧、归纳分类，�
 
 **1. 官方维护的插件**
 
-- uni-id：不用再开发用户系统。用户注册、登录（含社交登录、短信验证码登录、App一键登录）、修改或重置密码、token管理、图形验证码、RBAC权限角色系统...所有与用户相关的，不管前端还是云端，代码都是现成的。[详见](/uniCloud/uni-id-summary)
+- uni-id：不用再开发用户系统。用户注册、登录（含社交登录、短信验证码登录、App一键登录）、修改或重置密码、token管理、图形验证码、RBAC权限角色系统...所有与用户相关的，不管前端还是云端，代码都是现成的。[详见](/uniCloud/uni-id/summary)
 - uni-pay：不管微信还是支付宝，不管App、微信小程序、还是支付宝小程序，不管前端还是服务端，一切都现成的，拿来即用。[详见](unipay.md)
 - uni-starter：云端一体应用快速开发基本项目模版，实现快速搭建一款应用。它集成了很多通用的功能，比如登录注册、头像、设置、拦截器、banner...[详见](https://ext.dcloud.net.cn/plugin?id=5057)
 - uni-admin：全端可用的admin后台。自带用户管理、权限管理、角色管理、菜单管理、业务图表统计。更有众多admin插件，比如cms插件、push、banner管理插件、App升级管理插件...[详见](admin.md)

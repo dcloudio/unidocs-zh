@@ -182,7 +182,7 @@ uniCloud 默认推荐使用 JQL 语法操作数据库，它是一种更简单易
 	
 	传统开发中，其实大多数服务器接口开发，就是检验下前端数据和身份的合法性，然后写个SQL操作下数据库，返回JSON给前端。其实很无聊。
 	
-	clientDB最大的好处就是不用写服务端代码，客户端直接操作数据库。因为uniCloud提供了[DB Schema](schema.md)和[uni-id](uni-id-summary.md)，可以直接控制数据库的内容和权限校验。
+	clientDB最大的好处就是不用写服务端代码，客户端直接操作数据库。因为uniCloud提供了[DB Schema](schema.md)和[uni-id](uni-id/summary.md)，可以直接控制数据库的内容和权限校验。
 	
 	clientDB同时支持`action云函数`作为补充，当发起一个客户端操作云数据库的请求时，可以同时触发一个`action云函数`，在云端对数据库操作进行前置或后置处理。
 	

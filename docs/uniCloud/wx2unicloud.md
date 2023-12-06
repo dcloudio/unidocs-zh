@@ -23,7 +23,7 @@ uniCloud去掉了微信云开发的一些功能，添加了更多功能。以及
 |开发工具		|微信小程序工具，编码体验欠佳												|通用编程工具HBuilderX，高效操作完善，插件体系开放																																						|
 |前端数据库watch	|支持。权限按微信账户体系执行 |有更强大的免费的websocket服务[详情查看](https://uniapp.dcloud.io/unipush-v2.html)|
 |opendb			|无																			|开放的数据库规范，众多价值，[详情](opendb.md)																																	|
-|账户服务		|仅微信登录，但鉴权更简单														|[uni-id](uni-id-summary.md)支持应用自己的账户体系，手机号或email，内置短信验证码和app端一键登录，支持微信、支付宝等三方登录，支持权限、角色、社交裂变等众多功能					|
+|账户服务		|仅微信登录，但鉴权更简单														|[uni-id](uni-id/summary.md)支持应用自己的账户体系，手机号或email，内置短信验证码和app端一键登录，支持微信、支付宝等三方登录，支持权限、角色、社交裂变等众多功能					|
 |admin系统		|不自带																		|自带开源[uniCloud admin](https://uniapp.dcloud.io/uniCloud/admin)系统，大小屏自适配，自带用户、角色、权限功能，还有更多[插件](https://ext.dcloud.net.cn/?cat1=7&cat2=74&orderBy=UpdatedDate)拿来即用	|
 |支付			|仅微信支付，但鉴权更简单														|[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)，跨端统一支付																																		|
 |cms			|支持。但前端部分跨端不足													|支持。前端跨端、[管理端](https://ext.dcloud.net.cn/plugin?id=3543)开源																																	|
@@ -41,7 +41,7 @@ uniCloud去掉了微信云开发的一些功能，添加了更多功能。以及
 
 #### 对接微信登录
 
-uniCloud可以使用uni-id更简单的接入微信小程序登录。参考[uni-id](uni-id-summary.md)
+uniCloud可以使用uni-id更简单的接入微信小程序登录。参考[uni-id](uni-id/summary.md)
 
 不同于微信云开发中的直接获取openid，uni-id提供的登录接口会在数据库的uni-id-users表内添加用户记录。
 

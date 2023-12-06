@@ -7,7 +7,7 @@ uni-im是云端一体的、全平台的、免费的、开源即时通讯系统�
 - 基于uni-app，App、小程序、web全端兼容
 - 基于uniCloud，前后端都使用js开发
 - 基于[uni-push2](https://uniapp.dcloud.net.cn/unipush-v2.html)，专业稳定的全端推送系统
-- 基于[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html)，完善的账户体系
+- 基于[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html)，完善的账户体系
 - 支持服务端为非uniCloud（比如：应用服务端的开发语言是php、java、go、.net、python、c#等）或 不基于uni-id-pages 开发的项目接入
 
 案例：
@@ -125,7 +125,7 @@ uni-im本身并不收费，实际使用中需要依赖uniCloud云服务，会产
 
 5. 登录uni-im  
 
-	uni-im的服务端代码托管在uniCloud下，账户体系是[uni-id 4.0+](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html)的；
+	uni-im的服务端代码托管在uniCloud下，账户体系是[uni-id 4.0+](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html)的；
 	uni-app生态下绝大部分项目的架构与uni-im相同，所以不需要考虑账号打通问题，用户登录项目后，不需要额外登录uni-im。
 
 	而有些传统项目，服务端的开发语言是php、java、go、.net、python、c#等，是自己设计的账号体系；用户登录所获得的token，与uni-im所需的token不是同一个账号体系；需要在传统服务器端，通过[uni-id的外部系统联登](./uni-id/cloud-object.md#external)同步你项目的账号数据到uni-im用户体系并获得uni-id的token，客户端再调用uniImUtils的login方法登录uni-im；示例代码如下：
@@ -200,7 +200,7 @@ import {mutations as uniIdMutations} from '@/uni_modules/uni-id-pages/common/sto
 uniIdMutations.logout()
 ```
 2. token有效期问题，保证你的项目token有效期和uni-id的token有效期保持一致。这涉及两个操作：
-- 配置uni-id的token过期时间与你的项目token有效期一致。配置路径：`/uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，关于配置说明[详情查看](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#config)
+- 配置uni-id的token过期时间与你的项目token有效期一致。配置路径：`/uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-id/config.json`，关于配置说明[详情查看](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#config)
 - 如果你的项目有token续期逻辑，需要在续期后调用uni-id的token续期接口，示例代码：
 ```js
 const uniIdCo = uniCloud.importObject("uni-id-co", {customUI: true})

@@ -41,7 +41,7 @@ sequenceDiagram
 ```
 
 
-- 如果您使用uni-id，那么uni-id-pages已经帮您内置好相关功能，前端页面和云端逻辑均已写好，安全、无需开发、拿来就用。[详见](/uniCloud/uni-id-summary.md#frv)
+- 如果您使用uni-id，那么uni-id-pages已经帮您内置好相关功能，前端页面和云端逻辑均已写好，安全、无需开发、拿来就用。[详见](/uniCloud/uni-id/summary.md#frv)
 - 如果您的业务系统不在uniCloud上，那么需要在上述流程图中加一个原业务服务器，由云函数和原业务服务器进行token校验、传递认证结果。
 
 ### 接口防刷

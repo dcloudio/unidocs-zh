@@ -7,7 +7,7 @@
 简单来说，uniCloud和微信小程序云开发、支付宝小程序云开发一样稳定健壮，但有更多优势：
 - 跨平台。不管你在uniCloud里选择了阿里还是腾讯的serverless，均可以跨uni-app的全端使用。从pc到h5，从Android到iOS，以及各家小程序快应用，十几个平台全端支持
 - uniCloud提供了`clientDB`神器，减少90%的服务器开发工作量，且保障数据安全。[详见](/uniCloud/database)
-- uniCloud提供了[uni-id](uni-id-summary.md)、[uniPay](/uniCloud/unipay)等重要框架，大幅减少开发者的相应功能开发量。
+- uniCloud提供了[uni-id](uni-id/summary.md)、[uniPay](/uniCloud/unipay)等重要框架，大幅减少开发者的相应功能开发量。
 - uniCloud提供了[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)，客户端开发工作量大幅减少。
 - uniCloud提供了[uniCloud admin](/uniCloud/admin)，管理端开发工作量大幅减少。
 - uniCloud提供了[schema2code](schema2code.md)，只需编制数据库schema文件，用户端和管理端的数据列表、分页、搜索、详情查看、修改、删除，全套代码均能自动生成。
@@ -200,7 +200,7 @@ uniCloud.httpclient.request('https://example.com',{
 2. 使用[uni-cloud-router单路由云函数框架](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-router)，这种方式只有一个云函数，所有接口都是这个云函数的不同参数，它有统一的路由管理。
 
 以免费空间的48个云函数举例，一般情况下：
-- [uni-id](uni-id-summary.md)会有一个云对象（uni-id-co）或老版的云函数（uni-id-cf），这是必备的一个云函数
+- [uni-id](uni-id/summary.md)会有一个云对象（uni-id-co）或老版的云函数（uni-id-cf），这是必备的一个云函数
 - 如果使用uni统计、app升级中心、uni发布平台、uniPush2、[uni-search热搜词统计跑批](https://ext.dcloud.net.cn/plugin?id=3851)，这些会自带云函数
 
 上述几个是官方推荐的几个常用框架所带的云函数，然后开发者自己的代码里，大多数业务使用clientDB开发，不写云函数，或者写了配套的action云函数也不占用云函数数量；如果还需要自己写一些云函数，再加上uni-cloud-router，用这个单路由云函数搞定剩余需求；另外如果有跑批数据的需求可以再来一个云函数。所以无论如何48个云函数都占不满。

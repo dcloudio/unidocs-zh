@@ -1374,7 +1374,7 @@ errorMessage支持字符串，也支持json object。类型为object时，可定
 - 未登录，即游客都可以操作数据
 - 当前已登录用户（auth.uid）
 - `uni-id`定义的其他角色
-	* 开发者可以在`uni-id`中自定义各种角色，比如部门管理员，然后在`DB Schema`的permission中配置其可操作的数据。详见[uni-id的角色权限](uni-id-summary.md#rbac)
+	* 开发者可以在`uni-id`中自定义各种角色，比如部门管理员，然后在`DB Schema`的permission中配置其可操作的数据。详见[uni-id的角色权限](uni-id/summary.md#rbac)
 
 **注意**：如果登录用户是`uni-id`的admin角色，即超级管理员，则不受`DB Schema`的配置限制的，admin角色拥有对所有数据的读写权限。
 
@@ -1537,17 +1537,17 @@ permission的字段级控制，包括读写两种权限，分别称为：read、
 |变量名					|说明																																																																							|
 |:-:						|:-:																																																																							|
 |auth.uid				|用户id																																																																						|
-|auth.role			|用户角色数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)，注意`admin`为内置的角色，如果用户角色列表里包含`admin`则认为此用户有完全数据访问权限|
-|auth.permission|用户权限数组，参考[uni-id 角色权限](uni-id-summary.md#rbac)																																											|
+|auth.role			|用户角色数组，参考[uni-id 角色权限](uni-id/summary.md#rbac)，注意`admin`为内置的角色，如果用户角色列表里包含`admin`则认为此用户有完全数据访问权限|
+|auth.permission|用户权限数组，参考[uni-id 角色权限](uni-id/summary.md#rbac)																																											|
 |doc						|数据库中的目标数据记录，用于匹配记录内容/查询条件																																																|
 |now						|当前服务器时间戳（单位：毫秒），时间戳可以进行额外运算，如doc.publish\_date > now - 60000表示publish\_date在最近一分钟														|
 |action					|已废弃，使用[数据库触发器](jql-schema-ext.md)替代action云函数								|
 
 **注意**
 - `auth`表示正在执行操作的用户对象
-- `auth.xxx`均由uni-id提供，依赖于[uni-id公共模块](uni-id-summary.md)
+- `auth.xxx`均由uni-id提供，依赖于[uni-id公共模块](uni-id/summary.md)
 - `doc.xxx`表示将要查询/修改/删除的每条数据（注意并不包括新增数据，新增数据应通过值域校验进行验证），如果将要访问的数据不满足permission规则将会拒绝执行
-- `uni-id`的角色和权限，也即auth.role和auth.permission是不一样的概念。注意阅读[uni-id 角色权限](uni-id-summary.md#rbac)
+- `uni-id`的角色和权限，也即auth.role和auth.permission是不一样的概念。注意阅读[uni-id 角色权限](uni-id/summary.md#rbac)
 - doc可以理解为将要访问的数据，因此create权限内不可使用doc变量。create时建议使用forceDefaultValue或自定义校验函数实现插入数据的值域校验。
 
 **权限规则内可以使用的运算符**

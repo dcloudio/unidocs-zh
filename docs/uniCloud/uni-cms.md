@@ -135,7 +135,7 @@ uni-cms包括管理端和用户端。
 **注意**
 
 - 如果您的项目单独使用`uni-cms-article`，需要在`unCloud/database`目录上点击“创建Schema”来创建`uni-cms-articles`与`uni-cms-categories`表后运行项目。
-- uni-cms-article使用了[clientDB](clientdb.md)，其权限体系依赖[uni-id](uni-id-summary.md)。
+- uni-cms-article使用了[clientDB](clientdb.md)，其权限体系依赖[uni-id](uni-id/summary.md)。
 - 如果您的项目需要账户体系，需将`uni-id-pages`插件导入至项目中，要了解`uni-id-pages` [详见](/uniCloud/uni-id-pages.md)。如果您使用了[uni-starter](uni-starter.md)项目，那么其已经内置了 `uni-id-pages`插件。
 
 #### 3. 多作者登录

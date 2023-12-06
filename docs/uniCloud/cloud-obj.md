@@ -358,7 +358,7 @@ module.exports = {
 
 ### 获取客户端token@get-uni-id-token
 
-云对象自动管理`uni-id`的token。开发者无需手动管理。如果不了解`uni-id`，请[参考](/uniCloud/uni-id-summary)
+云对象自动管理`uni-id`的token。开发者无需手动管理。如果不了解`uni-id`，请[参考](/uniCloud/uni-id/summary)
 
 **接口形式**
 

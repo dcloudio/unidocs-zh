@@ -315,7 +315,7 @@ uniCloud.offResponse(logResponse)
 
 > 新增于HBuilderX 3.5.0
 
-用于监听客户端需要登录事件，此接口需要搭配uniIdRouter使用，参考：[uniIdRouter](uni-id-summary.md#uni-id-router)
+用于监听客户端需要登录事件，此接口需要搭配uniIdRouter使用，参考：[uniIdRouter](uni-id/summary.md#uni-id-router)
 
 代码示例：
 

@@ -619,12 +619,12 @@ sign = sha256(secret:transid)
 
 ### 微信小程序说明@callbackweixin
 
-3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id-summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
+3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id/summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
 
 
 #### 接入流程
 
-1. 项目使用了 [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) 并更新到 1.0.8+
+1. 项目使用了 [uni-id-co](/uniCloud/uni-id/summary.md#save-user-token) 并更新到 1.0.8+
 2. 使用 [uni-open-bridge](/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
 3. 配置 [安全网络](/uniCloud/secure-network.html)
 

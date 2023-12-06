@@ -166,7 +166,7 @@
 
 `uni-open-bridge`中并没有持续化存储openid，相关读写和保存是交由另一个插件`uni-id`来负责的。
 
-可通过 `uni-id-co` 获取，[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-summary.html#save-user-token)
+可通过 `uni-id-co` 获取，[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token)
 
 ### session_key(用户级)@session_key
 

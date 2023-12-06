@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 - 如果是针对所有平台配置，可以在 vue-config.js 中配置。[https://uniapp.dcloud.io/collocation/vue-config](https://uniapp.dcloud.io/collocation/vue-config)
 
 ### 注意
-* uni-app x不支持通过``.env`` 文件配置环境变量。
+* uni-app x不支持自定义环境变量。
 
 **快捷代码块**
 

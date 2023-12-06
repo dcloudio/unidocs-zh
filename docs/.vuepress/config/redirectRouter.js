@@ -93,14 +93,14 @@ const routerMap = {
   '/m3w': '/uniCloud/uni-portal.html',
   '/tutorial/syntax-uts': '/uni-app-x/uts/',
 
-  '/uniCloud/uni-id-summary.html': '/uniCloud/uni-id/summary.html',
-  '/uniCloud/uni-id-pages.html': '/uniCloud/uni-id/redirect.html',
-  '/uniCloud/uni-id-common.html': '/uniCloud/uni-id/cloud-common.html',
-  '/uniCloud/uni-id.html': '/uniCloud/uni-id/old.html',
+  '/uniCloud/uni-id-summary': '/uniCloud/uni-id/summary.html',
+  '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.html',
+  '/uniCloud/uni-id-common': '/uniCloud/uni-id/cloud-common.html',
+  '/uniCloud/uni-id': '/uniCloud/uni-id/old.html',
   '/uts/': '/uni-app-x/uts/',
-  '/uni-app-x/ext.html': '/uni-app-x/api/ext.html',
-  '/uni-app-x/pagesjson.html': '/uni-app-x/collocation/pagesjson.html',
-  '/uni-app-x/manifest.html': '/uni-app-x/collocation/manifest.html'
+  '/uni-app-x/ext': '/uni-app-x/api/ext.html',
+  '/uni-app-x/pagesjson': '/uni-app-x/collocation/pagesjson.html',
+  '/uni-app-x/manifest': '/uni-app-x/collocation/manifest.html'
 }
 
 export default ({ fullPath, path, hash }) => {

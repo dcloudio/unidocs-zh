@@ -766,9 +766,14 @@ let b = a.toKotlinList().toTypedArray()
 
 // Array<Number> 转 java float[]的示例
 let a = new Array<Number>(10)
+// b是 List<Float>
 let b = a.toKotlinList().map(function(it):Float{
 	return it.toFloat()
 })
+// c是 float[]
+let c = b.toTypedArray()
+// d 是 FloatArray
+let d = b.toFloatArray()
 
 
 ```

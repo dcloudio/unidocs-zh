@@ -64,7 +64,7 @@ The application life cycle can only be listened to in `App.vue`, and listening t
 
 ## globalData
 
-小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用（uni-app x不支持）。
+小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用。
 
 当然vue框架的全局变量，另有其他方式定义。
 

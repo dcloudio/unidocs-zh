@@ -1,7 +1,43 @@
 # 全局变量与状态管理
 
-`uni-app x` 不支持globaldata，目前也不支持pinia和vuex。但可通过一个专用模块组织和管理全局变量与状态。
+`uni-app x` 目前不支持 `pinia` 和 `vuex`。可通过 `globalData(3.99+)` 或一个专用模块组织和管理全局变量与状态。
 
+## globalData
+
+`App.uvue` 中定义 `globalData`。
+
+```ts
+<script lang="uts">
+  export default {  
+    globalData: {  
+      str: 'global data str',
+      num: 123,
+      bool: true 
+    }
+  }  
+</script>  
+```
+
+页面或组件中通过 `getApp().globalData` 访问。
+
+```ts
+<script lang="uts">
+  export default {  
+    methods: {
+      getGlobalData() {
+        const app = getApp()
+        this.globalDataStr = app.globalData.str
+        this.globalDataNum = app.globalData.num
+        this.globalDataBool = app.globalData.bool
+      }
+    }
+  }
+</script>
+```
+
+**注意：** `uni-app x` 中 `globalData` 的数据结构与类型通过 `App.uvue` 中的 `globalData` 初始值定义，后续只能读取或修改，不能新增或删除。
+
+## 专用模块
 定义一个模块，编写一个单独的uts文件，比如 /store/index.uts，在里面设一个全局变量，比如globalNum。
 
 ```ts

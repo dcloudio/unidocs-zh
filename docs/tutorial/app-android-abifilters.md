@@ -47,6 +47,8 @@ The 8th generation, 64-bit ARM processor (ARM64-bit), the newly released devices
 少部分平板使用x86，AS模拟器中选了intel x86时使用x86处理器，以及其它常用三方模拟器通常使用x86
 A small number of tablets use x86, when intel x86 is selected in the AS simulator, the x86 processor is used, and other commonly used third-party simulators usually use x86
 
+>不支持64位x86指令cpu，即不支持x86_64  
+
 **注意：不勾选x86在模拟器上可能无法正常运行，以下是常见模拟器是否需要包含x86的情况**
 **Note: If x86 is not checked, it may not work properly on the emulator. The following are common emulators that need to include x86**
 - 雷电模拟器：

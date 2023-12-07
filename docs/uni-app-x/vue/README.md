@@ -25,7 +25,7 @@ uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合�
 
 ### [函数 event 参数的类型](uni-app-x/tutorial/codegap.md#function-event-argument-type)
 
-### 指令
+### 指令 @directives
 
 <!-- VUEJSON.directives.compatibility -->
 
@@ -62,17 +62,17 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 - [vue 与 uvue 不同文件后缀的优先级](uni-app-x/component/README.md#priority)
 
 <!-- VUEJSON.components.compatibility -->
-### 特殊元素
+### 特殊元素 @special-elements
 
 <!-- VUEJSON.special_elements.compatibility -->
 
 - App 端，如需页面级滚动，根节点必须是 `scroll-view` 标签。
 
-### 特殊 Attributes
+### 特殊 Attributes @special-attributes
 
 <!-- VUEJSON.special_attributes.compatibility -->
 
-### 生命周期选项
+### 生命周期选项 @lifecycle-options
 
 <!-- VUEJSON.options_lifecycle.compatibility -->
 
@@ -86,7 +86,7 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 
 
 <!-- VUEJSON.options_state.compatibility -->
-### 渲染选项
+### 渲染选项 @rendering-options
 
 
 <!-- VUEJSON.options_rendering.compatibility -->
@@ -99,7 +99,7 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 
 
 <!-- VUEJSON.options_misc.compatibility -->
-### 组件实例
+### 组件实例 @component-instance
 
 
 <!-- VUEJSON.component_instance.compatibility -->

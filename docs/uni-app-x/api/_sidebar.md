@@ -49,7 +49,10 @@
   * [推送](push.md)
 * 数据存储
   * [storage（key-value存储）](storage.md)
+* 文件
+  * [FileManager](filemanager.md)
 * 登录和验证
+  * [一键登录](uni-verify.md)
   * [实人认证](facial-recognition-verify.md)
 * 组件上下文对象
   * [web-view组件上下文对象](create-webview-context.md)

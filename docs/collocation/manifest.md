@@ -553,11 +553,17 @@ Map service provider SDK configuration, this item needs to be configured when us
                 // 高德地图安全密钥代理服务器地址（HBuilderX 3.6.0+）https://lbs.amap.com/api/jsapi-v2/guide/abc/prepare
                 // Amap security key proxy server address (HBuilderX 3.6.0+) https://lbs.amap.com/api/jsapi-v2/guide/abc/prepare
                 "serviceHost": "",
+            },
+            "bmap": {
+                // 百度地图秘钥（HBuilderX 3.99+）http://lbsyun.baidu.com/apiconsole/key#/home
+                "key": ""
             }
 		}
 	}
 }
 ```
+**注意**
+- 百度地图 vue2 项目暂不支持
 
 #### optimization
 

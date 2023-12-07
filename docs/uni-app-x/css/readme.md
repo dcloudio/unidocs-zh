@@ -199,7 +199,7 @@ uvue中文字都是要使用text组件的。
 
 uni-app x的css的样式不继承规则，虽然与web有差异，其实只是更严谨。
 
-开发者遵循仅在text组件下写文字有关的样式，就可以编译到全端而保持界面正常。
+一般情况下，开发者遵循仅在text组件下写文字有关的样式，就可以编译到全端而保持界面正常。
 
 ## 层级
 
@@ -217,7 +217,7 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 |Block 布局			|×			|										|
 |字体				|√			|支持ttf、otf，不支持woff和woff2和可变字体	|
 |Positioned 布局		|√			|										|
-|CSS Animation		|√			|										|
+|CSS Animation		|x			|										|
 |CSS Transition		|√			|										|
 |CSS Variable		|×			|										|
 |媒体查询			|×			|										|
@@ -309,7 +309,7 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 
 ## css方法
 
-目前仅支持url()
+目前仅支持url()、rgb()、rgba()。
 
 暂不支持css变量val()。--status-bar-height、--window-top、--window-bottom，也暂时无法使用，有相关需求可使用[uni.getWindowInfo()](../api/getwindowinfo.md)方式获取。
 
@@ -442,6 +442,6 @@ Tips：
 * 页面的样式作用于当前页面及其子组件。
 * 组件的样式仅作用于当前组件。
 
-## Bug & Tips
+## Bug
 
-- 动态创建的根组件，`class` 样式不生效，暂时可通过外层包裹 `view` 解决。此bug已于HBuilderX 3.97+修复
+css相关bug[详见](https://issues.dcloud.net.cn/?mid=css)

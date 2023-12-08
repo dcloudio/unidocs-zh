@@ -53,7 +53,7 @@ export function createApp() {
   }, "arg1", "arg2");
 }
 ```
-- **globalProperties:** 请注意，`globalProperties` 是一个保留关键字，因此在项目中请勿声明名为 `globalProperties` 的变量。\
+- **app.config.globalProperties:** 请注意，`globalProperties` 是一个保留关键字，因此在项目中请勿声明名为 `globalProperties` 的变量。\
 在向 `globalProperties` 注册方法时，请使用直接函数表达式方式进行赋值。不支持先声明函数，再将其注册到 `globalProperties` 上的方式。同时，注册的函数一旦被赋值，不允许进行修改。
 
 ### 通用

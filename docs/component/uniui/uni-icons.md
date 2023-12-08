@@ -1,5 +1,6 @@
+# uni-icons 图标
 
-::: tip 组件名：uni-icons
+::: tip 组件名：uni-icons（已支持 uni-app x）
 > 代码块： `uIcons`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-icons)

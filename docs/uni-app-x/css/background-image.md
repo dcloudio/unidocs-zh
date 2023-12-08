@@ -25,8 +25,10 @@ linear-gradient(<direction>, <color-start>, <color-stop>)
 	+ to left：从右向左渐变  
 	+ to bottom：从上到下渐变  
 	+ to top：从下到上渐变  
-	+ to bottom right：从左上角到右下角  
-	+ to top left：从右下角到左上角  
+	+ to bottom left：从右上角到左下角（3.40开始支持）
+	+ to bottom right：从左上角到右下角
+	+ to top left：从右下角到左上角
+	+ to top right: 从左下角到右上角（3.40开始支持）
 - color-start  
 	渐变起始点颜色值，支持RGB（rgb(255, 0, 0)）；RGBA（rgba(255, 0, 0, 0.5)）；十六进制（#ff0000）；精简写法的十六进制（#f00）；色值关键字（red）  
 - color-stop  

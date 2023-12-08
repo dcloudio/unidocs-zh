@@ -144,7 +144,7 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 
 <!-- VUEJSON.options_rendering.compatibility -->
 
-### 组合选项
+### 组合选项 @composition-options
 
 
 <!-- VUEJSON.options_composition.compatibility -->

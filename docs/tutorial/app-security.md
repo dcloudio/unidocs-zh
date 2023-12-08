@@ -50,8 +50,8 @@ uni安全加固分为测试版和正式版两种类型：
 
 3. 完成充值后，前往`加固记录`栏目，点击"新增加固"按钮后，将打开一个新页面，用于填写加固信息。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822003_01.png)
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20230822003_02.png)
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20231208_01.png)
+
 
 
 
@@ -73,27 +73,25 @@ uni安全加固分为测试版和正式版两种类型：
 遇到这种情况，可以切换蚂蚁小程序云版进行加固试试。
 
 另外我们自己也写了一篇Android 应用报毒解决方案[https://ask.dcloud.net.cn/article/37501](https://ask.dcloud.net.cn/article/37501)
-- **加固失败并提示“MD5校验失败”**
+- **加固失败并提示“加固工具执行vmp加固过程出错”**
 
-确保您上传的应用程序文件与用于生成MD5校验值的文件是相同的。MD5校验是一种用于验证文件完整性的方法，如果文件发生了变化，MD5校验会失败。
+选择腾讯云版方案二进行加固时填写profile.txt类文件内容错误导致，请按照页面提示重新填写
 
+- **加固失败并提示“加固过程出错”**
+
+选择蚂蚁小程序云版加固时填写So文件、Assets资源文件、Java2C这几项内容错误导致，请按照页面提示重新填写
 
 - **应用加固完成后安装应用失败**
 
 应用加固不可避免的会破坏原有签名，加固后必须对加固包重签名。
 
-如何重签名？
+- **应用加固完成后应用无法运行**
 
-支持在重签名页面提交签名和手动执行签名命令两种方式：
+情况一：请务必确保重签名选择的证书与之前应用打包签名所使用的证书一致,如果不保持一致，则会触发加固的防二次打包功能，无法正常运行
 
-1. 在重签名页面提交签名
+情况二：选择腾讯云版对libweexcore.so、libweexjsb.so 、libweexjss.so三个文件加固会导致APP无法运行，请删除后重新加固，选择蚂蚁小程序云版如果有So文件加固需求请切换到腾讯云版加固
 
-在`加固记录`栏目，点击"重新签名"按钮后，将打开一个新页面，用于提交签名
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20231027003_01.png)
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/app-reinforce/20231027003_03.png)
-2. 手动执行签名命令
 
-重签名文档参考：[https://ask.dcloud.net.cn/article/40789](https://ask.dcloud.net.cn/article/40789)
 
 
 

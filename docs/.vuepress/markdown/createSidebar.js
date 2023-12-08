@@ -47,7 +47,7 @@ function parseBar(tab, file, options) {
             }
           }
 
-          link = path.join('/', link.replace(/\.md\b/, '')
+          link = path.join('/', link.replace(/\.md\b/, '.html')
             .replace(/\bREADME\b/, '')
             .replace(/\/index/, '/')
             .replace(/\?id=/, '#'))

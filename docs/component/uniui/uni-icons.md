@@ -1,6 +1,6 @@
+# uni-icons 图标
 
-::: tip 组件名：uni-icons
-::: tip component name: uni-icons
+::: tip 组件名：uni-icons（已支持 uni-app x）
 > 代码块： `uIcons`
 > Code block: `uIcons`
 

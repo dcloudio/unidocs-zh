@@ -10,6 +10,8 @@
 2. 点击-管理公共模块或扩展库依赖
 3. 勾选uni-cloud-ext-storage扩展库
 
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/ext-storage/445.png)
+
 ## API
 
 ### 获取扩展存储管理对象@getExtStorageManager

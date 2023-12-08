@@ -1135,8 +1135,10 @@ Corresponds to the scene field of the record related to the graphic verification
 ## uniIdRouter自动路由@uni-id-router
 ## uniIdRouter auto-route @uni-id-router
 
-> 新增于 HBuilderX 3.5.0
-> Added in HBuilderX 3.5.0
+**支持的HBuilderX版本**  
+|uni-app|uni-app x|
+|:-			|:-				|
+| 3.5.0+|3.99+		|
 
 uniIdRouter 是一个运行在前端的、对前端页面访问权限路由进行控制的方案。
 uniIdRouter is a solution that runs on the front-end and controls the routing of front-end page access rights.

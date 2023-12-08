@@ -123,6 +123,7 @@
 |loginTypes						|Array					|登录方式[详情](#loginTypes)											|
 |agreements						|Array					|隐私政策[详情](#agreements)											|
 |passwordStrength			|Object					|密码配置	[详情](#strength)												|
+|needLogin      			|Array					|配置需要登录才可访问的页面列表，支持正则语法。注意：此配置项不再维护，HBuilderX3.99+ 已支持使用更强大[uni-id-router](./summary.md#uni-id-router)替代。|
 
 完整示例：
 ```js
@@ -166,6 +167,13 @@ export default {
 	 *   "allowSkip": true
 	 * }
 	 * */
+   "needLogin":[ 
+     /*
+      配置需要登录才可访问的页面列表，可以使用正则语法。
+      注意：此配置项不再维护，HBuilderX3.99+ 已支持使用更强大的uni-id-router替代。
+    */
+     "/uni_modules/uni-id-pages-x/pages/userinfo/*"
+   ]
 }
 ```
 
@@ -255,4 +263,4 @@ uni.navigateTo({
 })
 ```
 
-配套使用[uniIdRouter](summary.md#uni-id-router)；当用户未登录，但访问了你配置的需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时 会自动重定向到登录页面。
+HBuilderX3.99+ 可以配套使用[uniIdRouter](summary.md#uni-id-router)；当用户未登录，但访问了需强制登录的页面，或接口提示token无效或过期（响应体以TOKEN_INVALID开头）时均需要打开登录页面。

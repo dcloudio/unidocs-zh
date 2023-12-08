@@ -39,12 +39,12 @@
     "compatibility": "|  | 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- | :- |\n| \\<Transition> | 5.0 | x | x | 10.0 | x | x |\n| \\<TransitionGroup> | 5.0 | x | x | 10.0 | x | x |\n| \\<KeepAlive> | 5.0 | x | x | 10.0 | x | x |\n| \\<Teleport> | 5.0 | x | x | 10.0 | x | x |"
   },
   "special_elements": {
-    "compatibility": "|  | 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- | :- |\n| \\<component> | 5.0 | √ | x | 10.0 | √ | x |\n| \\<slot> | 5.0 | √ | √ | 10.0 | √ | x |\n| \\<template> | 5.0 | √ | √ | 10.0 | √ | x |"
+    "compatibility": "|  | 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- | :- |\n| \\<component> | 5.0 | √ | 3.99 | 10.0 | √ | x |\n| \\<slot> | 5.0 | √ | √ | 10.0 | √ | x |\n| \\<template> | 5.0 | √ | √ | 10.0 | √ | x |"
   },
   "special_attributes": {
-    "compatibility": "|  | 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- | :- |\n| key | 5.0 | √ | √ | 10.0 | √ | x |\n| ref | 5.0 | √ | √ | 10.0 | √ | x |\n| is | 5.0 | √ | x | 10.0 | √ | x |"
+    "compatibility": "|  | 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- | :- |\n| key | 5.0 | √ | √ | 10.0 | √ | x |\n| ref | 5.0 | √ | √ | 10.0 | √ | x |\n| is | 5.0 | √ | 3.99 | 10.0 | √ | x |"
   },
   "render_function": {
-    "compatibility": "|  | 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- | :- |\n| h() | 5.0 | x | x | 10.0 | x | x |\n| resolveComponent() | 5.0 | x | √ | 10.0 | x | x |\n| resolveDirective() | 5.0 | x | x | 10.0 | x | x |\n| withDirectives() | 5.0 | x | √ | 10.0 | x | x |"
+    "compatibility": "|  | 安卓系统版本 | 安卓 uni-app | 安卓 uni-app-x | iOS 系统版本 | iOS uni-app | iOS uni-app-x |\n| :- | :- | :- | :- | :- | :- | :- |\n| h() | 5.0 | x | 3.99 | 10.0 | x | x |\n| resolveComponent() | 5.0 | x | √ | 10.0 | x | x |\n| resolveDirective() | 5.0 | x | x | 10.0 | x | x |\n| withDirectives() | 5.0 | x | √ | 10.0 | x | x |"
   }
 }

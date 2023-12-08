@@ -19,8 +19,6 @@
 ```
 
 页面或组件中通过 `getApp().globalData` 访问。
-**注意：** `globalData` 的类型通过 `App.uvue` 中定义的初始值类型确定，后续不可修改。\
-即不可通过 `getApp().globalData.xxx` 动态增加属性，也不可通过 `getApp().globalData.string = number` 给属性赋值类型不相等的新值。
 
 ```ts
 <script lang="uts">

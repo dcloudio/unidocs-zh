@@ -804,7 +804,10 @@ function hasPermission(token, permission) {
 
 ## uniIdRouter自动路由@uni-id-router
 
-> 新增于 HBuilderX 3.5.0
+**支持的HBuilderX版本**  
+|uni-app|uni-app x|
+|:-			|:-				|
+| 3.5.0+|3.99+		|
 
 uniIdRouter 是一个运行在前端的、对前端页面访问权限路由进行控制的方案。
 

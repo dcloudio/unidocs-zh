@@ -8,6 +8,15 @@
 
 <!-- UTSCOMJSON.video.component_type -->
 
+### 视频格式
+- [x] mp4
+- [x] m4v
+- [x] mov
+- [x] webm
+- [x] 3gp
+- [x] flv
+- [x] m3u8
+
 <!-- UTSCOMJSON.video.example -->
 
 <!-- UTSCOMJSON.video.compatibility -->

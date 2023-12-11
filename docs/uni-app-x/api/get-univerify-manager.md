@@ -19,7 +19,7 @@ App一键登陆是替代短信验证码登录的更优选择：对开发者而�
 
 <!-- UTSAPIJSON.getUniverifyManager.tutorial -->
 
-<!-- UTSAPIJSON.uni-verify.example -->
+<!-- UTSAPIJSON.getUniverifyManager.example -->
 
 ## Tips
 - 运营商对一键登陆给用户呈现的ui有强制要求。（需补充细节）

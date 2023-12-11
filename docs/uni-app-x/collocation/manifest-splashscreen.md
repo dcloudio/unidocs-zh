@@ -2,7 +2,9 @@ App启动时，系统加载应用渲染首页需要一定的时间，为了避�
 
 这个界面，即被称为启动界面，也成称为 splash 或 lauch screen。
 
-### Android启动图设置
+>HBuilderX3.99+版本支持App启动界面配置  
+
+### Android平台启动界面配置
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下配置各设备分辨率启动图：
 

@@ -89,31 +89,29 @@ Please refer to this document to adjust and optimize, [Use getTemp for joint tab
 ## 慢查询日志@slow
 ## Slow query log @slow
 
-如果遇到终端用户反馈接口响应慢/超时，请查看[uniCloud web控制台](https://unicloud.dcloud.net.cn/)上是否有慢查询日志。如果有慢查询日志请参考本文档进行优化。
-If you encounter slow response/timeout feedback from end users, please check the [uniCloud web console](https://unicloud.dcloud.net.cn/) for slow query logs. If there is a slow query log, please refer to this document for optimization.
+> 仅阿里云支持
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/db-slow.jpg)
+慢查询的定义：单条查询语句耗时超100毫秒。符合条件的查询会被统计进来。
+
+在慢查询日志到一定量级时，我们会发送邮件通知到服务空间所属账号邮箱，请及时关注并前往[uniCloud web控制台](https://unicloud.dcloud.net.cn/)查看慢查询日志统计和详细信息，参考本文档进行优化。
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloud/db-slow-log-detail.png)
+
+慢查询日志支持查看统计及详细数据，可查询具体某个集合的慢查询日志记录。
 
 一个典型的慢查询日志包含以下信息
 A typical slow query log contains the following information
 
-|指标名称			|说明																																																			|
-|Indicator Name |Description |
-|--						|--																																																				|
-|集合名称			|数据库请求操作的集合的名称																																								|
-|collection name |name of the collection the database is requesting to operate on |
-|命令					|执行的操作类型，例：find表示查询																																					|
-|Command |The type of operation performed, for example: find means query |
-|执行次数			|此慢查询在开始时间结束时间之间出现的次数																																	|
-|Number of Executions |The number of times this slow query occurred between start time and end time |
-|检索文档总数	|该慢查询检索了数据库内多少条数据，如果索引设置的合适此数值会尽可能的小																		|
-|Total number of retrieved documents |How many pieces of data are retrieved in the database by this slow query, if the index setting is appropriate, this value will be as small as possible |
-|命中文档总数	|该慢查询命中数据库内多少条数据，如果索引设置的合适此数值会尽可能的接近检索文档总数												|
-|Total number of hit documents | How many pieces of data are hit in the database by this slow query, if the index is set appropriately, this value will be as close as possible to the total number of retrieved documents |
-|查询语句			|详细的查询指令模板，例：{"filter":{"invite_code":"?"}}，表示以 invite_code: "xxx" 作为查询条件进行的查询	|
-|Query Statement |Detailed query instruction template, for example: {"filter":{"invite_code":"?"}}, which means the query with invite_code: "xxx" as the query condition |
-|最大执行时间	|该慢查询最慢多久执行完毕																																									|
-|Maximum execution time |The slowest time to complete the execution of the slow query |
+| 指标名称			     | 说明																																																			                           |
+|-------------|---------------------------------------------------------------------------------|
+| 集合名称			     | 数据库请求操作的集合的名称				                                                               |
+| 查询语句					   | 详细的查询指令模板，例：{"filter":{"invite_code":"?"}}，表示以 invite_code: "xxx" 作为查询条件进行的查询		 |
+| 执行开始时间					 | 该慢查询执行开始的时间			                                                                  |
+| 执行时长					 | 该慢查询执行的时长（毫秒）						                                                             |
+| 文档扫描行数	     | 该慢查询命中数据库内多少条数据，如果索引设置的合适此数值会尽可能的接近索引扫描行数			                                    |
+| 索引扫描行数	     | 该慢查询命中索引扫描数据库内的数据					                                         |
+| 返回行数	     | 该慢查询结果最终匹配数据库内多少条数据，即查询返回的条数				                                                |
+
 
 ## 分表和冗余表
 ## Partition table and redundant table

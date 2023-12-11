@@ -214,6 +214,7 @@ uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码�
 目前插件市场适配uni-app x的插件已有数百款，包括ui组件库：
 - [t-uvue-ui](https://ext.dcloud.net.cn/plugin?id=15571)：丰富的组件库
 - [uxui](https://ext.dcloud.net.cn/plugin?id=15726)：graceui作者的免费开源组件库
+- [ux-front-ui](https://ext.dcloud.net.cn/plugin?id=15774)：持续更新的组件库
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
 
 ## 一期范围及路线图
@@ -274,7 +275,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   初期不能，后期会提供
 
 - uni-app x 能热更新吗？
-  开发期间可以热刷，但打包后不能热更新。开发者可自行封装原生的插件动态加载方案。
+  开发期间可以热刷，但打包后不能热更新。开发者可自行封装原生的插件动态加载方案或使用uni小程序sdk。
 
 - uni-app x 会搞插件大赛吗？
   已经启动。欢迎大家做基于uts和uvue的插件。[详情](https://ask.dcloud.net.cn/article/40812)
@@ -308,4 +309,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   包括官方的组件和API也会复用，比如电量API [uni.getbatteryinfo](https://ext.dcloud.net.cn/plugin?id=9295)，和[lottie组件](https://ext.dcloud.net.cn/plugin?id=10674)，它们使用uts开发，在 uni-app js引擎版和x版上，调用的都是一套代码。
 所以不必担心官方精力不足，顾此失彼。
 
-欢迎加入 uni-app x 专用QQ群 485089465 进行交流。
+欢迎加入 uni-app x 专用群交流
+- QQ群485089465（已满）
+- 钉钉群二维码
+![](static/uaxding.png)

@@ -27,9 +27,9 @@ const fs = uni.getFileSystemManager()
 **真机运行**  
 App端真机运行期间HBuilderX会做特殊处理，将项目资源文件同步到`应用沙盒目录`下的特定目录：  
 - Android平台  
-	保存在应用专属存储空间的外置存储空间根目录下的apps目录，通常为“/sdcard/Android/data/{{应用包名}}/apps/{{应用AppID}}/www/”  
+	保存在应用专属存储空间的外置存储空间根目录下的apps目录，通常为“/sdcard/Android/data/%应用包名%}}/apps/%应用AppID%/www/”  
 - iOS平台  
-	保存在应用沙盒目录下的Documents/uni-app-x目录，通常为“/{{应用沙盒目录}}/Documents/uni-app-x/apps/{{应用AppID}}/www/”  
+	保存在应用沙盒目录下的Documents/uni-app-x目录，通常为“/%应用沙盒目录%/Documents/uni-app-x/apps/%应用AppID%/www/”  
 
 
 ### 本地文件  
@@ -60,7 +60,7 @@ App端本地缓存文件目录保存应用运行过程中产生的缓存文件�
 
 实际保存的目录在不同平台存在差异：  
 - Android平台  
-	应用专属存储空间的外置存储空间根目录下的cache目录，通常为“/sdcard/Android/data/{{应用包名}}/cache/”  
+	应用专属存储空间的外置存储空间根目录下的cache目录，通常为“/sdcard/Android/data/%应用包名%/cache/”  
 - iOS平台  
 	应用沙盒目录下的Library/Caches目录  
 
@@ -72,7 +72,7 @@ App端用户文件目录提供给开发者在应用运行期保存业务逻辑�
 
 实际保存的目录在不同平台存在差异：  
 - Android平台  
-	应用专属存储空间的外置存储空间根目录下的files目录，通常为“/sdcard/Android/data/{{应用包名}}/files/”  
+	应用专属存储空间的外置存储空间根目录下的files目录，通常为“/sdcard/Android/data/%应用包名%/files/”  
 - iOS平台  
 	应用沙盒目录下的Document目录  
 
@@ -84,7 +84,7 @@ App端专有目录，为应用沙盒根目录，其下包含了`缓存文件目�
 
 实际保存的目录在不同平台存在差异：  
 - Android平台  
-	应用专属存储空间的外置存储空间根目录，通常为“/sdcard/Android/data/{{应用包名}}/”，其下的cache目录为`缓存文件目录`，其下的files目录为`用户文件目录`  
+	应用专属存储空间的外置存储空间根目录，通常为“/sdcard/Android/data/%应用包名%/”，其下的cache目录为`缓存文件目录`，其下的files目录为`用户文件目录`  
 - iOS平台  
 	应用沙盒虚拟目录，其下包括Document、Library、tmp目录，此目录只可读，不可创建其它目录  
 

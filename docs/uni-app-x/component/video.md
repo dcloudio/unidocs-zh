@@ -15,7 +15,7 @@
 - [x] webm
 - [x] 3gp
 - [x] flv
-- [x] m3u8
+- [x] m3u8 (本地m3u8文件需3.99+)
 
 <!-- UTSCOMJSON.video.example -->
 

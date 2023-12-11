@@ -228,8 +228,7 @@ Log in to [DCloud Developer Center](https://dev.dcloud.net.cn/), select an app i
 
 
 
-### 2.2 个推服务端 api 推送
-### 2.2 push server api push
+### 2.2 个推服务端 api 推送@request_getui
 
 #### 2.2.1 服务端消息下发流程（必读）
 #### 2.2.1 Server message delivery process (must read)

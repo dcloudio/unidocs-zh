@@ -50,9 +50,9 @@
 * 数据存储
   * [storage（key-value存储）](storage.md)
 <!-- * 文件
-  * [FileManager](filemanager.md) -->
+  * [FileManager](get-file-system-manager) -->
 * 登录和验证
-  <!-- * [一键登录](uni-verify.md) -->
+  <!-- * [一键登录](get-univerify-manager.md) -->
   * [实人认证](facial-recognition-verify.md)
 * 组件上下文对象
   * [web-view组件上下文对象](create-webview-context.md)

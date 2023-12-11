@@ -14,7 +14,7 @@
 
 <!-- UTSAPIJSON.getFileSystemManager.tutorial -->
 
-<!-- UTSAPIJSON.filemanager.example -->
+<!-- UTSAPIJSON.getFileSystemManager.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

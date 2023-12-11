@@ -294,6 +294,32 @@ console.log(p.replace(regex, 'ferret'));
 
 <!-- UTSJSON.String.replace_1.compatibility -->
 
+
+```ts
+// 不包含捕捉组的示例
+let a = "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?"
+let b = a.replace(RegExp("fox"),function(match: string, offset: number, string: string):string{
+    console.log("match",match)
+    console.log("offset",offset)
+    console.log("string",string)
+    return "cat"
+})
+console.log("b:",b)
+
+// 包含一个捕获组的示例。注意，目前android仅支持最多五个捕获组
+let a1 = "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?"
+let b1 = a1.replace(RegExp("(fox)"),function(match: string,p1: string, offset: number, string: string):string{
+    console.log("match",match)
+    console.log("p1",p1)
+    console.log("offset",offset)
+    console.log("string",string)
+    return "cat"
+})
+console.log("b1",b1)
+```
+
+
+
 ### search(regexp)
 
 <!-- UTSJSON.String.search.description -->

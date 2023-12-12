@@ -1,6 +1,6 @@
 * [pages.json](pagesjson.md)
 * [main.uts](https://uniapp.dcloud.net.cn/collocation/main.html)
-* [app.uvue](https://uniapp.dcloud.net.cn/collocation/App.html)
+* [app.uvue](app.md)
 * manifest.json
   * [概述](manifest.md)
   * [模块配置](manifest-modules.md)

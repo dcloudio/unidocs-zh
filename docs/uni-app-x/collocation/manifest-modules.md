@@ -48,3 +48,23 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
   依赖的模块：无
 
 再次强调，以上模块不属于ext组件或api，是内置模块。但如果你的代码中没有使用这些组件和api，打正式包或自定义基座时会被摇掉。
+
+## uni-AD广告模块
+
+  HBuilderX3.99版本起，uni-app x 支持 uni-AD 开屏广告。
+
+  uni-AD 开屏广告作为一个独立的模块，不需要额外的API，应用启动时会自动拉取并展示开屏广告。由于开屏广告的特殊性，也导致uni-AD广告模块无法参与摇树。需要开发者打包时手动在 manifest.json 中添加广告配置。
+
+  uni-AD 开屏广告打包时需要在 manifest.json 中的 app->distribute->modules 节点下添加 uni-ad 节点。目前支持的广告平台有：腾讯优量汇广告联盟(gdt)、穿山甲GroMore(gm)、百度百青藤广告联盟(bd)、Sigmob广告联盟(sgm)、快手广告联盟(ks)。具体配置可参考下面配置：
+  ```
+modules:{
+  "uni-ad":{
+    "ks":{},
+    "gdt":{},
+    "bd":{},
+    "sgm":{},
+    "gm":{}
+  }
+}
+  ```
+

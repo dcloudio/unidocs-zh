@@ -41,7 +41,7 @@ HBuilderX3.1.6+版本授权登录界面支持全屏模式
 ```js
 uni.login({
 	provider: 'univerify',
-	univerifyStyle: { 
+	univerifyStyle: {
     fullScreen: true
   }
 })
@@ -111,7 +111,7 @@ uniCloud产生的费用对于一键登陆可以忽略，[详见](https://uniapp.
 
 本文主要介绍uni-app的客户端调用方法。5+ App（Wap2App）请另行参考：[5+ App一键登录使用指南](https://ask.dcloud.net.cn/article/38009)
 
-DCloud还提供了更易用的封装。在[uni-id](/uniCloud/uni-id)里已经预置了`uni一键登录`，并基于`uni-id`提供了[云端一体应用快速开发基本项目模版](https://ext.dcloud.net.cn/plugin?id=5057)，该项目模版内置了包括一键登录在内的各种常用登录示例，开发者可以拿去直接用
+DCloud还提供了更易用的封装。在[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id)里已经预置了`uni一键登录`，并基于`uni-id`提供了[云端一体应用快速开发基本项目模版](https://ext.dcloud.net.cn/plugin?id=5057)，该项目模版内置了包括一键登录在内的各种常用登录示例，开发者可以拿去直接用
 
 接下来继续介绍原始API的用法。
 
@@ -185,57 +185,57 @@ uni.login({
 univerifyStyle 数据结构：
 
 ```json
-{  
+{
     "fullScreen": false, // 是否全屏显示，默认值： false
     "backgroundColor": "#ffffff",  // 授权页面背景颜色，默认值：#ffffff
-    "backgroundImage": "", // 全屏显示的背景图片，默认值："" （仅支持本地图片，只有全屏显示时支持）  
-    "icon": {  
+    "backgroundImage": "", // 全屏显示的背景图片，默认值："" （仅支持本地图片，只有全屏显示时支持）
+    "icon": {
         "path": "static/xxx.png", // 自定义显示在授权框中的logo，仅支持本地图片 默认显示App logo
         "width":  "60px",  //图标宽度 默认值：60px
         "height": "60px"   //图标高度 默认值：60px
-    },  
-    "closeIcon": {  
+    },
+    "closeIcon": {
         "path": "static/xxx.png" // 自定义关闭按钮，仅支持本地图片。 HBuilderX3.3.7+版本支持
-    },  
-    "phoneNum": {  
-        "color": "#202020"  // 手机号文字颜色 默认值：#202020  
-    },  
-    "slogan": {  
-        "color": "#BBBBBB"  //  slogan 字体颜色 默认值：#BBBBBB  
-    },  
-    "authButton": {  
-        "normalColor": "#3479f5", // 授权按钮正常状态背景颜色 默认值：#3479f5  
-        "highlightColor": "#2861c5",  // 授权按钮按下状态背景颜色 默认值：#2861c5（仅ios支持）  
-        "disabledColor": "#73aaf5",  // 授权按钮不可点击时背景颜色 默认值：#73aaf5（仅ios支持）  
-        "textColor": "#ffffff",  // 授权按钮文字颜色 默认值：#ffffff  
-        "title": "本机号码一键登录", // 授权按钮文案 默认值：“本机号码一键登录”  
+    },
+    "phoneNum": {
+        "color": "#202020"  // 手机号文字颜色 默认值：#202020
+    },
+    "slogan": {
+        "color": "#BBBBBB"  //  slogan 字体颜色 默认值：#BBBBBB
+    },
+    "authButton": {
+        "normalColor": "#3479f5", // 授权按钮正常状态背景颜色 默认值：#3479f5
+        "highlightColor": "#2861c5",  // 授权按钮按下状态背景颜色 默认值：#2861c5（仅ios支持）
+        "disabledColor": "#73aaf5",  // 授权按钮不可点击时背景颜色 默认值：#73aaf5（仅ios支持）
+        "textColor": "#ffffff",  // 授权按钮文字颜色 默认值：#ffffff
+        "title": "本机号码一键登录", // 授权按钮文案 默认值：“本机号码一键登录”
         "borderRadius": "24px"	// 授权按钮圆角 默认值："24px" （按钮高度的一半）
-    },  
-    "otherLoginButton": {  
-        "visible": true, // 是否显示其他登录按钮，默认值：true  
-        "normalColor": "", // 其他登录按钮正常状态背景颜色 默认值：透明 
-        "highlightColor": "", // 其他登录按钮按下状态背景颜色 默认值：透明 
-        "textColor": "#656565", // 其他登录按钮文字颜色 默认值：#656565  
-        "title": "其他登录方式", // 其他登录方式按钮文字 默认值：“其他登录方式”  
-        "borderColor": "",  //边框颜色 默认值：透明（仅iOS支持）  
+    },
+    "otherLoginButton": {
+        "visible": true, // 是否显示其他登录按钮，默认值：true
+        "normalColor": "", // 其他登录按钮正常状态背景颜色 默认值：透明
+        "highlightColor": "", // 其他登录按钮按下状态背景颜色 默认值：透明
+        "textColor": "#656565", // 其他登录按钮文字颜色 默认值：#656565
+        "title": "其他登录方式", // 其他登录方式按钮文字 默认值：“其他登录方式”
+        "borderColor": "",  //边框颜色 默认值：透明（仅iOS支持）
         "borderRadius": "0px" // 其他登录按钮圆角 默认值："24px" （按钮高度的一半）
-    },  
-    "privacyTerms": {  
+    },
+    "privacyTerms": {
         "defaultCheckBoxState":true, // 条款勾选框初始状态 默认值： true
         "isCenterHint":false, //未勾选服务条款时点击登录按钮的提示是否居中显示 默认值: false (3.7.13+ 版本支持)
-        "uncheckedImage":"", // 可选 条款勾选框未选中状态图片（仅支持本地图片 建议尺寸 24x24px）(3.2.0+ 版本支持)   
-        "checkedImage":"", // 可选 条款勾选框选中状态图片（仅支持本地图片 建议尺寸24x24px）(3.2.0+ 版本支持)   
+        "uncheckedImage":"", // 可选 条款勾选框未选中状态图片（仅支持本地图片 建议尺寸 24x24px）(3.2.0+ 版本支持)
+        "checkedImage":"", // 可选 条款勾选框选中状态图片（仅支持本地图片 建议尺寸24x24px）(3.2.0+ 版本支持)
         "checkBoxSize":12, // 可选 条款勾选框大小
-        "textColor": "#BBBBBB", // 文字颜色 默认值：#BBBBBB  
-        "termsColor": "#5496E3", //  协议文字颜色 默认值： #5496E3  
-        "prefix": "我已阅读并同意", // 条款前的文案 默认值：“我已阅读并同意”  
-        "suffix": "并使用本机号码登录", // 条款后的文案 默认值：“并使用本机号码登录”  
-        "privacyItems": [  // 自定义协议条款，最大支持2个，需要同时设置url和title. 否则不生效  
-            {  
-                "url": "https://", // 点击跳转的协议详情页面  
-                "title": "用户服务协议" // 协议名称  
-            }  
-        ]  
+        "textColor": "#BBBBBB", // 文字颜色 默认值：#BBBBBB
+        "termsColor": "#5496E3", //  协议文字颜色 默认值： #5496E3
+        "prefix": "我已阅读并同意", // 条款前的文案 默认值：“我已阅读并同意”
+        "suffix": "并使用本机号码登录", // 条款后的文案 默认值：“并使用本机号码登录”
+        "privacyItems": [  // 自定义协议条款，最大支持2个，需要同时设置url和title. 否则不生效
+            {
+                "url": "https://", // 点击跳转的协议详情页面
+                "title": "用户服务协议" // 协议名称
+            }
+        ]
     },
     "buttons": {  // 自定义页面下方按钮仅全屏模式生效（3.1.14+ 版本支持）
         "iconWidth": "45px", // 图标宽度（高度等比例缩放） 默认值：45px
@@ -243,7 +243,7 @@ univerifyStyle 数据结构：
             {
                 "provider": "apple",
                 "iconPath": "/static/apple.png" // 图标路径仅支持本地图片
-            }, 
+            },
             {
                 "provider": "weixin",
                 "iconPath": "/static/wechat.png" // 图标路径仅支持本地图片
@@ -337,7 +337,7 @@ univerifyManager.login({
             {
                 "provider": "apple",
                 "iconPath": "/static/apple.png"
-            }, 
+            },
             {
                 "provider": "weixin",
                 "iconPath": "/static/wechat.png"
@@ -422,7 +422,7 @@ exports.main = async (event, context) => {
   	access_token: event.access_token,
   	openid: event.openid
   })
-  
+
   console.log(res); // res里包含手机号
   // 执行用户信息入库等操作，正常情况下不要把完整手机号返回给前端
   // 如果数据库在uniCloud上，可以直接入库
@@ -489,7 +489,7 @@ exports.main = async(event) => {
   })
   console.log(res); // res里包含手机号
   // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
-  
+
   return {  // 不建议把完整手机号返回给前端
     code: 0,
     message: '获取手机号成功'
@@ -534,23 +534,23 @@ const sign = hmac.digest('hex')
 // 云函数验证签名，此示例中以接受GET请求为例作演示
 const crypto = require('crypto')
 exports.main = async(event) => {
-  
+
   const secret = 'your-secret-string' // 自己的密钥不要直接使用示例值，且注意不要泄露
   const hmac = crypto.createHmac('sha256', secret);
-  
+
   let params = event.queryStringParameters
   const sign = params.sign
   delete params.sign
   const signStr = Object.keys(params).sort().map(key => {
     return `${key}=${params[key]}`
   }).join('&')
-  
+
   hmac.update(signStr);
-  
+
   if(sign!==hmac.digest('hex')){
     throw new Error('非法访问')
   }
-  
+
   const {
     access_token,
     openid

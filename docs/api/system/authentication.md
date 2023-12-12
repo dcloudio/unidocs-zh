@@ -2,7 +2,7 @@
 
 生物认证，包含手机的指纹识别、faceid两部分。即通过人体身体特征来进行身份认证识别。
 
-如需要专业的活体检测、人脸识别、金融级实人认证，需另见文档[uni实人认证](/uniCloud/frv/intro.md)
+如需要专业的活体检测、人脸识别、金融级实人认证，需另见文档[uni实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
 
 ### uni.startSoterAuthentication(OBJECT)
 
@@ -35,7 +35,7 @@
 
 注意：
 - App端指纹识别，Android平台从Android6.0起才提供了官方API，uni-app也是从Android6起支持。对于更低版本的安卓，某些rom私有的指纹识别API，uni-app并不支持。
-- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://uniapp.dcloud.net.cn/uniCloud/frv/intro.html](/uniCloud/frv/intro.md)
+- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://uniapp.dcloud.net.cn/uniCloud/frv/intro.html](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
 
 
 **OBJECT.success返回值说明**

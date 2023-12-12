@@ -269,7 +269,7 @@ localdata的示例上文已经举例，下面来看下直接指定uniCloud云数
 	  export default {
 		data() {
 		  return {
-			
+
 		  };
 		},
 	  };
@@ -354,7 +354,7 @@ datacom组件规范还要求支持绑定 value，且支持双向绑定，即：�
 
 ### 使用mixinDatacom快速开发datacom@mixindatacom
 
-> 版本要求：HBuilderX 3.1.0+ 
+> 版本要求：HBuilderX 3.1.0+
 
 开发一个支持localdata的datacom组件相对容易，但要开发支持云端数据的datacom组件，实现对collection、field、where等属性的解析，工作量还是不小的。
 
@@ -371,7 +371,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 |属性名						| 类型			| 	默认值		| 说明|
 |:-:						| :-:			| :-:			| :-:	|
 |localdata					|Array			|				|本地数据，[详情](https://uniapp.dcloud.net.cn/component/datacom)|
-|spaceInfo					|Object     |				|服务空间信息，新增于`HBuilderX 3.2.11`。同uniCloud.init参数，参考：[uniCloud.init](uniCloud/init.md?id=init-unicloud)|
+|spaceInfo					|Object     |				|服务空间信息，新增于`HBuilderX 3.2.11`。同uniCloud.init参数，参考：[uniCloud.init](https://doc.dcloud.net.cn/uniCloud/init.html?id=init-unicloud)|
 |collection					|String			|				|表名。支持输入多个表名，用 `,` 分割|
 |field						|String			|				|查询字段，多个字段用 `,` 分割|
 |where						|String			|				|查询条件，内容较多，另见jql文档：[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
@@ -388,7 +388,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 |gettree					|Boolean		|	false		|是否查询树状数据，默认 `false`|
 |startwith					|String			|	''			|`gettree`的第一层级条件，此初始条件可以省略，不传startWith时默认从最顶级开始查询|
 |limitlevel					|Number			|	10			|`gettree`查询返回的树的最大层级。超过设定层级的节点不会返回。默认10级，最大15，最小1|
-|foreign-key				|String			|	''			|手动指定使用的关联关系，HBuilderX 3.1.10+ [详情](/uniCloud/clientdb?id=lookup-foreign-key)|
+|foreign-key				|String			|	''			|手动指定使用的关联关系，HBuilderX 3.1.10+ [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=lookup-foreign-key)|
 
 
 `uniCloud.mixinDatacom` 的data
@@ -479,7 +479,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 ```
 
 
-- 方法2，使用 `mixinDatacomGet()` 
+- 方法2，使用 `mixinDatacomGet()`
 
 需要多写些代码处理各种状态。如果`mixinDatacomEasyGet`的封装无法灵活满足你的需求，可以使用这种方式。
 

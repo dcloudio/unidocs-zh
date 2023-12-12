@@ -3,7 +3,7 @@
 
 uni.login是一个客户端API，统一封装了各个平台的各种常见的登录方式，包括App手机号一键登陆、三方登录（微信、微博、QQ、Apple、google、facebook）、各家小程序内置登录。
 
-除了前端API，DCloud还提供了[uni-id](/uniCloud/uni-id/summary.md)，这是一个云端一体的、完整的、账户开源框架。不仅包括客户端API，还包括前端页面、服务器代码、管理后台等所有与登录账户有关的服务，包括短信验证码、密码加密存储、忘记密码、头像更新等所有常见账户相关功能。
+除了前端API，DCloud还提供了[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)，这是一个云端一体的、完整的、账户开源框架。不仅包括客户端API，还包括前端页面、服务器代码、管理后台等所有与登录账户有关的服务，包括短信验证码、密码加密存储、忘记密码、头像更新等所有常见账户相关功能。
 
 **平台差异说明**
 
@@ -32,7 +32,7 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 * [京东小程序登录](https://mp-docs.jd.com/api/openInterface/login.html)
 
 #### web平台支持的登录方式
-Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](/uniCloud/uni-id/summary.md)
+Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)
 
 如不使用uni-id，微信内嵌浏览器运行H5版时，可通过js sdk实现微信登录，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
 
@@ -234,7 +234,7 @@ uni.login({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|
 
-**注意：** 
+**注意：**
 
 - 如业务需获取用户头像昵称，可以使用[「头像昵称填写能力」](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/userProfile.html)（基础库 2.21.2 版本开始支持，覆盖iOS与安卓微信 8.0.16 以上版本）。
 - 该API仅支持微信小程序端（基础库2.10.4-2.27.0版本），微信小程序调整了相关接口（详见[《小程序登录、用户信息相关接口调整说明》](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)）。每次触发 uni.getUserProfile 均会弹出授权窗口，用户授权后可成功获取用户信息。该API暂不支持在事件中使用异步操作，否则会触发错误：{errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}

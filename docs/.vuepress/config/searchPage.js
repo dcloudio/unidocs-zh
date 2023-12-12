@@ -4,14 +4,14 @@ export default {
       text: 'uni-app',
       type: 'algolia',
     },
-    {
+    /* {
       text: 'uni-app x',
       type: 'algolia',
     },
     {
       text: 'uniCloud',
       type: 'algolia',
-    },
+    }, */
     {
       text: '问答社区',
       tag: 'ask',

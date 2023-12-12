@@ -1,9 +1,0 @@
-* [pages.json](pagesjson.md)
-* [main.uts](https://uniapp.dcloud.net.cn/collocation/main.html)
-* [app.uvue](app.md)
-* manifest.json
-  * [概述](manifest.md)
-  * [模块配置](manifest-modules.md)
-  * [启动界面](manifest-splashscreen.md)
-* [AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
-* [uni.scss](https://uniapp.dcloud.net.cn/collocation/uni-scss.html)

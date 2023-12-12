@@ -61,13 +61,13 @@ uni安全网络需要开发者在uniCloud上开通，但并不收费。
 
 如此高安全的保障，在商业项目中都需要花掉不少银子来采购。但DCloud**免费**给uniCloud开发者提供。
 
-uni云端一体安全网络文档：[详见](/uniCloud/secure-network.md)
+uni云端一体安全网络文档：[详见](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 
 ## 人机验证
 
 还有一类攻击，攻击者没有破解掉客户端和网络协议，但是用一排排手机墙。
 
-这时，您就需要uni的[一键登录](/univerify.md)和[实人认证](/uniCloud/frv/intro.md)。
+这时，您就需要uni的[一键登录](/univerify.md)和[实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)。
 
 `一键登录`是运营商提供的安全方案，它要求手机中必须插sim卡，并且从sim中精准读取手机号，防止手机短信验证码被打码池伪造返回。
 
@@ -87,13 +87,13 @@ uni的`一键登录`和`实人认证`不但和uni产品完美结合、快捷开�
 
 - 一键登录仅需0.02元/次，比发短信验证码都便宜。
 
-- 实人认证是阶梯价格，[详见](/uniCloud/frv/price.md)
+- 实人认证是阶梯价格，[详见](https://doc.dcloud.net.cn/uniCloud/frv/price.html)
 
 这些价格都极具优势。如果您有非常大的量，还可以再联系bd@dcloud.io沟通。
 
-不管是一键登录还是实人认证，在[uni-id](/uniCloud/uni-id/summary.md)里都已经内置集成好。
+不管是一键登录还是实人认证，在[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)里都已经内置集成好。
 
-无需自己写代码。账户的注册、实人认证，这些代码都已经写好并开源在[uni-id-pages](/uniCloud/uni-id-pages.md)项目中。
+无需自己写代码。账户的注册、实人认证，这些代码都已经写好并开源在[uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html)项目中。
 
 但是注意
 ::: warning
@@ -101,7 +101,7 @@ uni的`一键登录`和`实人认证`不但和uni产品完美结合、快捷开�
 因为这些认证都是收费的，如果没有安全防护，攻击者可以刷你的服务器接口，盗用你的余额来给他提供认证服务，或者干脆就是刷的让你破财。
 :::
 
-在人机验证领域，uni还提供了免费的[图形验证码](/uniCloud/uni-captcha.md)。
+在人机验证领域，uni还提供了免费的[图形验证码](https://doc.dcloud.net.cn/uniCloud/uni-captcha.html)。
 
 ## 服务器安全
 
@@ -111,7 +111,7 @@ uni的`一键登录`和`实人认证`不但和uni产品完美结合、快捷开�
 
 如果让攻击者攻击整个阿里云或腾讯云的serverless资源池，那这个池子太大了，那些攻击者根本无法打垮uniCloud服务。
 
-uniCloud还提供了[ip防刷](/uniCloud/ip-filter.md)功能，可以在uniCloud web控制台设置，拉黑某些ip，或者自动屏蔽指定时间内访问次数过高的ip。
+uniCloud还提供了[ip防刷](https://doc.dcloud.net.cn/uniCloud/ip-filter.html)功能，可以在uniCloud web控制台设置，拉黑某些ip，或者自动屏蔽指定时间内访问次数过高的ip。
 
 如果您的应用涉及用户提交内容，那么有一个很大的风险就是用户提交非法内容，导致您的应用被公安或运营商禁封。
 

@@ -30,15 +30,15 @@
 |:-|:-|:-|
 |errMsg|String| 错误描述|
 
-常见报错：   
-`getPushClientId:fail register fail: {\"errorCode\":1,\"errorMsg\":\"\"}`  
-请检查：  
+常见报错：
+`getPushClientId:fail register fail: {\"errorCode\":1,\"errorMsg\":\"\"}`
+请检查：
 1. 当前应用是否已开通uni-push2.0 [详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
 2. 客户端对应平台是否已启用uni-push2.0[详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%90%AF%E7%94%A8unipush2-0)
 3. HBuilderX3.5.1 App平台vue3项目首次启动调用uni.getPushClientId 存在可能获取不到cid的问题，HBuilderX3.5.2修复了此问题，请升级。
 
 示例代码：
-```js 
+```js
 	uni.getPushClientId({
 		success: (res) => {
 			console.log(res.cid);
@@ -53,7 +53,7 @@
 ### uni.onPushMessage(callback)@onPushMessage
 启动监听推送消息事件
 代码示例：
-```js 
+```js
 uni.onPushMessage((res)=>{
 	console.log(res)
 })
@@ -103,7 +103,7 @@ uni.offPushMessage(callback);
 |when		|Date			|否		|消息上显示的提示时间</br>默认为当前时间，如果延迟显示则使用延时后显示消息的时间。</br>Android - ALL (支持)</br>iOS - 5.0+ (不支持): 不支持设定消息的显示时间，由系统自动管理消息的创建时间。																																																										|
 |success	|Function		|否		|接口调用成功的回调函数																																																																																																				|
 |fail		|Function		|否		|接口调用失败的回调函数																																																																																																				|
-|complete	|Function		|否		|接口调用结束的回调函数（调用成功、失败都会执行）	
+|complete	|Function		|否		|接口调用结束的回调函数（调用成功、失败都会执行）
 
 
 **其他相关资源**
@@ -132,4 +132,4 @@ QQ小程序订阅消息文档：[https://q.qq.com/wiki/develop/miniprogram/frame
 
 华为快应用推送文档：[https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush)
 
-## 服务端API [详情参考](/uniCloud/uni-cloud-push/api)
+## 服务端API [详情参考](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api)

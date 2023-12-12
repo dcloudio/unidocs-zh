@@ -3,10 +3,10 @@
 uni-app和5+App提供了一批API，获取客户端一些与安全有关的信息。
 
 ::: warning
-更推荐使用[uni云端一体安全网络](/uniCloud/secure-network.md)，使用安全网络后将无需在使用本章节提供的API。
+更推荐使用[uni云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)，使用安全网络后将无需在使用本章节提供的API。
 :::
 
-### getSignature  
+### getSignature
 [plus.navigator.getSignature](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature)用于获取应用签名标识，可以判断App是否被重新签名。
 
 签名证书是对App开发者身份的唯一标识，如果程序未对签名证书进行校验，可能被反编译后进行二次打包使用其它签名证书重新签名。如重新签名的App可以正常启动，则可能导致App被仿冒盗版，影响其合法收入，甚至可能被添加钓鱼代码、病毒代码、恶意代码，导致用户敏感信息泄露或者恶意攻击。
@@ -44,7 +44,7 @@ uni-app项目可以在App.vue的应用生命周期[onLaunch](https://uniapp.dclo
 > 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
 
 
-### isSimulator  
+### isSimulator
 [plus.navigator.isSimulator](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isSimulator)用于判断当前应用是否运行在模拟器中。
 
 iOS系统由于苹果限制了正式打包后不能在模拟器上运行，一般不存在这种情况；Android系统是开源的，底层代码都是公开的，因此市面上有很多Android模拟器，此问题比较严重。
@@ -56,7 +56,7 @@ iOS系统由于苹果限制了正式打包后不能在模拟器上运行，一�
   onLaunch: function(inf) {
       console.log('App Launch');
 // #ifdef APP-PLUS
-      // 模拟器检验  
+      // 模拟器检验
       if(plus.navigator.isSimulator()){
           //弹出提示框
           uni.showModal({
@@ -76,7 +76,7 @@ iOS系统由于苹果限制了正式打包后不能在模拟器上运行，一�
 > 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
 
 
-### isSetProxy  
+### isSetProxy
 [plus.networkinfo.isSetProxy](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy)用于判断当前应用网络环境是否设置代理。
 
 设置代理后所有网络传输的数据都会经过代理服务器，也就是说代理服务器可能看到所有传入内容，导致用户敏感信息泄露、业务服务器被恶意攻击等问题。当然在某些企业内部网络环境为了保证安全，访问公网可能需要设置代理，开发者需要考虑这种需求来决定是否限制应用正常运行。
@@ -102,7 +102,7 @@ iOS系统由于苹果限制了正式打包后不能在模拟器上运行，一�
 ### isRoot
 [plus.navigator.isRoot](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isRoot)用于判断当前应用运行的设备是否被root破解。
 
-> 注： 仅iOS平台支持，Android平台暂不支持  
+> 注： 仅iOS平台支持，Android平台暂不支持
 
 root破解（也叫越狱）是利用iOS系统的漏洞来破解系统安全机制，让任何应用可以获得系统级权限，从而对系统可以进行更灵活的自定义修改，譬如说修改字体、修改主题以及使用一些插件等。iOS系统设计了沙盒机制，限制应用只能使用自身的数据，root破解后则应用可以读取修改其它任何应用的数据，可能导致用户敏感信息泄露，甚至修改其它应用的数据或代码，恶意攻击正常App。
 
@@ -112,7 +112,7 @@ root破解（也叫越狱）是利用iOS系统的漏洞来破解系统安全机�
   onLaunch: function(inf) {
       console.log('App Launch');
 // #ifdef APP-PLUS
-      //ROOT检验  
+      //ROOT检验
       if(plus.navigator.isRoot()){
           //弹出提示框
           uni.showModal({

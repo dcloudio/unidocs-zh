@@ -18,7 +18,7 @@
 |[leftWindow](/collocation/pages?id=leftwindow)|Object|否|大屏左侧窗口|H5|
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
-|[uniIdRouter](/uniCloud/uni-id/summary.md#uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0|uni-app x 不支持|
+|[uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0|uni-app x 不支持|
 |entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序|
 
 以下是一个包含了所有配置选项的 `pages.json` ：
@@ -929,7 +929,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─components            
+┌─components
 │  └─comp-a
 │    └─comp-a.vue      符合easycom规范的组件
 └─uni_modules          [uni_module](/uni_modules)中符合easycom规范的组件
@@ -977,7 +977,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 - 考虑到编译速度，直接在`pages.json`内修改`easycom`不会触发重新编译，需要改动页面内容触发。
 - `easycom`只处理vue组件，不处理小程序专用组件（如微信的wxml格式组件）。不处理后缀为.nvue的组件。因为nvue页面引入的组件也是.vue组件。可以参考uni ui，使用vue后缀，同时兼容nvue页面。
 - `nvue`页面里引用`.vue`后缀的组件，会按照nvue方式使用原生渲染，其中不支持的css会被忽略掉。这种情况同样支持`easycom`。
-- `vue` 与 `uvue` 组件优先级，[详见](/uni-app-x/component/README.md#priority)。
+- `vue` 与 `uvue` 组件优先级，[详见](https://doc.dcloud.net.cn/uni-app-x/component/README.html#priority)。
 
 ### Bug & Tips@easycom_tips
 + HBuilderX 3.96 版本以下`uni-app x`项目，当页面文件名与`easycom`的组件名一样时，会渲染异常，可以通过调整页面文件名规避该Bug。

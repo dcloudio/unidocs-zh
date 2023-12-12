@@ -382,5 +382,15 @@
 
 <!-- UTSJSON.UTSAndroid.convert2AbsFullPath.compatibility -->
 
+### getFileProviderUri
+
+<!-- UTSJSON.UTSAndroid.getFileProviderUri.description -->
+
+<!-- UTSJSON.UTSAndroid.getFileProviderUri.param -->
+
+<!-- UTSJSON.UTSAndroid.getFileProviderUri.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getFileProviderUri.compatibility -->
+
 <!-- UTSJSON.UTSAndroid.tutorial -->
 

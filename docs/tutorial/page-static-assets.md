@@ -18,11 +18,8 @@
 **Notice**
 
 - `@`开头的绝对路径以及相对路径会经过 base64 转换规则校验
-- Absolute paths and relative paths starting with `@` will be checked by base64 conversion rules
-- 引入的静态资源在非 h5 平台，均不转为 base64。
-- The imported static resources are not converted to base64 on non-h5 platforms.
-- H5 平台，小于 4kb 的资源会被转换成 base64，其余不转。
-- On the H5 platform, resources smaller than 4kb will be converted to base64, and the rest will not be converted.
+- 引入的静态资源在非 web 平台，均不转为 base64。
+- web 平台，小于 4kb 的资源会被转换成 base64，其余不转。
 - 自`HBuilderX 2.6.6`起`template`内支持`@`开头路径引入静态资源，旧版本不支持此方式
 - From `HBuilderX 2.6.6`, `template` supports the introduction of static resources in the path starting with `@`, which is not supported by the old version.
 - App 平台自`HBuilderX 2.6.9`起`template`节点中引用静态资源文件时（如：图片），调整查找策略为【基于当前文件的路径搜索】，与其他平台保持一致
@@ -68,9 +65,7 @@ background-image: url(../../static/logo.png);
 - `@`开头的绝对路径以及相对路径会经过 base64 转换规则校验
 - Absolute paths and relative paths starting with `@` will be checked by base64 conversion rules
 - 不支持本地图片的平台，小于 40kb，一定会转 base64。（共四个平台 mp-weixin, mp-qq, mp-toutiao, app v2）
-- Platforms that do not support local images, less than 40kb, will be converted to base64. (A total of four platforms mp-weixin, mp-qq, mp-toutiao, app v2)
-- h5 平台，小于 4kb 会转 base64，超出 4kb 时不转。
-- For h5 platform, if it is less than 4kb, it will be converted to base64, and if it exceeds 4kb, it will not be converted.
+- web 平台，小于 4kb 会转 base64，超出 4kb 时不转。
 - 其余平台不会转 base64
 
 ### js/uts 引入静态资源
@@ -103,7 +98,7 @@ background-image: url(../../static/logo.png);
 
 ```
 
-而引入 index 下的 icons.png 不管是相对还是绝对路径，都无法显示，所以这时候需要在 js/uts 中 使用 import 来引入
+而引入 index 下的 icon.png 不管是相对还是绝对路径，都无法显示，所以这时候需要在 js/uts 中 使用 import 来引入
 
 ``` html
 <!-- /pages/index/index.vue -->
@@ -138,3 +133,9 @@ export default {
 - 在模板或者 `css` 文件使用 `static` 目录中的静态资源，无需特殊处理，可直接通过相对路径或者绝对路径直接引入。
 - 在 `js/uts` 文件使用静态资源，需要使用 `import` 来引入。
 - 不管在任何文件引入非 `static` 目中的静态资源，均需在 `js/uts` 文件使用 `import` 来引入。
+
+
+### 静态资源编译规则
+
+- 项目 `static` 目录下的静态资源，会被直接拷贝到编译后目录的 `static` 目录下。
+- 项目非 `static` 目录下的静态资源，被引用的资源会编译到 `assets` 目录下，并重新命名为 `原始名称+内容hash`,如：`logo.png` 会编译为类似 `logo.cfd8fa94.png` 的名称。如果该静态资源未被引用，则不会被编译器处理。

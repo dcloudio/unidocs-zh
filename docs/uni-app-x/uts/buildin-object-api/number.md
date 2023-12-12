@@ -27,6 +27,26 @@ console.log(financial(0.004));
 
 <!-- UTSJSON.Number.toFixed.compatibility -->
 
+### toString()
+
+<!-- UTSJSON.Number.toString.description -->
+
+<!-- UTSJSON.Number.toString.param -->
+
+<!-- UTSJSON.Number.toString.returnValue -->
+
+<!-- UTSJSON.Number.toString.compatibility -->
+
+### valueOf()
+
+<!-- UTSJSON.Number.valueOf.description -->
+
+<!-- UTSJSON.Number.valueOf.param -->
+
+<!-- UTSJSON.Number.valueOf.returnValue -->
+
+<!-- UTSJSON.Number.valueOf.compatibility -->
+
 ### toInt()
 
 <!-- UTSJSON.Number.toInt.description -->

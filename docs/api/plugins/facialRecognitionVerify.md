@@ -6,7 +6,7 @@ App平台端详细文档需另见：[业务介绍](https://doc.dcloud.net.cn/uni
 
 ### uni.getFacialRecognitionMetaInfo()
 
-uni.getFacialRecognitionMetaInfo是客户端API，获取实人认证设备信息，用于uniCloud云函数[getCertifyId](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html#get-certify-id)获取certifyId。
+uni.getFacialRecognitionMetaInfo是客户端API，获取实人认证设备信息，用于uniCloud云函数[getCertifyId](https://doc.dcloud.net.cn/uniCloud/frv/dev.html#get-certify-id)获取certifyId。
 
 App端API规范参考：[详情](https://doc.dcloud.net.cn/uniCloud/frv/dev.html#get-meta-info)
 

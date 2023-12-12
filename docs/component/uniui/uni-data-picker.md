@@ -17,7 +17,7 @@
 
 `<uni-data-picker>` 支持本地数据、云端静态数据(json)，uniCloud云数据库数据。
 
-`<uni-data-picker>` 可以通过JQL直连uniCloud云数据库，配套[DB Schema](https://uniapp.dcloud.net.cn/uniCloud/schema)，可在schema2code中自动生成前端页面，还支持服务器端校验。
+`<uni-data-picker>` 可以通过JQL直连uniCloud云数据库，配套[DB Schema](https://doc.dcloud.net.cn/uniCloud/schema)，可在schema2code中自动生成前端页面，还支持服务器端校验。
 
 在uniCloud数据表中新建表“uni-id-address”和“opendb-city-china”，这2个表的schema自带foreignKey关联。在“uni-id-address”表的表结构页面使用schema2code生成前端页面，会自动生成地址管理的维护页面，自动从“opendb-city-china”表包含的中国所有省市区信息里选择地址。
 
@@ -145,7 +145,7 @@
 |属性名| 类型|可选值|默认值| 说明|
 |:-:| :-:|:-:| :-:| :-:	|
 |v-model|String/ Number	| -|-|绑定数据|
-|spaceInfo|Object|-|-|服务空间配置，[详情](https://uniapp.dcloud.net.cn/uniCloud/init)|
+|spaceInfo|Object|-|-|服务空间配置，[详情](https://doc.dcloud.net.cn/uniCloud/init)|
 |localdata|Array|-|-|数据，[详情](https://gitee.com/dcloud/datacom)|
 |preload|Boolean| true/false |false|预加载数据|
 |readonly|Boolean| true/false |	false|是否禁用|
@@ -157,13 +157,13 @@
 |parent-field|String|-|-|分步查询时父字段名称|
 |collection|String|-|-|表名。支持输入多个表名，用 `,` 分割|
 |field|String|-|-|查询字段，多个字段用 `,` 分割|
-|where|String|-|-|查询条件，内容较多，另见jql文档：[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
+|where|String|-|-|查询条件，内容较多，另见jql文档：[详情](https://doc.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
 |orderby|String|-|-|排序字段及正序倒叙设置|
 |popup-title|String|||弹出层标题|
 |map|Object|-|{text:'text',value:'value'}|字段映射，将text/value映射到数据中的其他字段|
 
 ::: warning 注意
-`collection/where/orderby` 和 `<unicloud-db>` 的用法一致，[详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db)
+`collection/where/orderby` 和 `<unicloud-db>` 的用法一致，[详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db)
 :::
 
 

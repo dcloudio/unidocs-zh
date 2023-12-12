@@ -191,7 +191,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 	</a>
 </div>
 
-<!-- <a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style"><b>登登多邻国：</b></a> 外语学习者题库。其服务端整体基于[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)，前端包括PC和H5网站、微信小程序，均连接uniCloud。日请求量百万级。
+<!-- <a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style"><b>登登多邻国：</b></a> 外语学习者题库。其服务端整体基于[uniCloud](https://doc.dcloud.net.cn/uniCloud/README)，前端包括PC和H5网站、微信小程序，均连接uniCloud。日请求量百万级。
 <div style="display:flex;justify-content: space-around;">
 	<a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style barcode-view">
 		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-alicdn/bda036a0-c55f-11ea-b997-9918a5dda011.png" width="200"/>

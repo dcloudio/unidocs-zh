@@ -54,7 +54,7 @@ HBuilderX新版本中增加的模块在老版本可能不存在可视化配置�
 | Speech(语音输入) | Speech | 使用语音识别输入功能 | 需配置三方SDK，[详情](app-speech.md) | Android、iOS |
 | Statistic(统计) | Statistic | 使用三方统计功能 | 需配置三方SDK，[详情](app-statistic.md) | Android、iOS |
 | SQLite(数据库) | SQLite | 使用SQLite数据库功能 |  | Android、iOS |
-| uni云端一体安全网络 | - | 使用安全网络功能 | 需配置uniCloud，[详情](https://uniapp.dcloud.net.cn/uniCloud/secure-network) | Android、iOS |
+| uni云端一体安全网络 | - | 使用安全网络功能 | 需配置uniCloud，[详情](https://doc.dcloud.net.cn/uniCloud/secure-network) | Android、iOS |
 | VideoPlayer(视频播放) | VideoPlayer | 使用视频模板功能 |  | Android、iOS |
 | Android X5 Webview(腾讯TBS) | Webview-x5 | 使用腾讯X5 Webview内核 | [详情](app-android-x5.md) | Android |
 | iOS UIWebview | UIWebview | 使用UIWebview内核 | [详情](app-ios-uiwebview.md) | iOS |

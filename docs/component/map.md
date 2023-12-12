@@ -348,7 +348,7 @@ DCloud为开发者争取了福利，可优惠获取商业授权。如有需求�
 
 > 下载地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-map](https://ext.dcloud.net.cn/plugin?name=unicloud-map)
 
-> 文档地址：[https://uniapp.dcloud.net.cn/uniCloud/unicloud-map.html](https://uniapp.dcloud.net.cn/uniCloud/unicloud-map.html)
+> 文档地址：[https://doc.dcloud.net.cn/uniCloud/unicloud-map.html](https://doc.dcloud.net.cn/uniCloud/unicloud-map.html)
 
 **渲染静态POI运行效果图**
 

@@ -87,7 +87,7 @@ uni.login({
 ### 开通uni一键登录服务
 开发者需要登录[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-login/login-account)，申请开通一键登录服务。
 
-详细步骤参考：[一键登录服务开通指南](https://uniapp.dcloud.net.cn/uniCloud/uni-login/service)
+详细步骤参考：[一键登录服务开通指南](https://doc.dcloud.net.cn/uniCloud/uni-login/service)
 
 开通成功后会得到 apiKey、apiSecret。这2个信息，后续需要配置在uniCloud的云函数里。同时注意保密，这2个信息也是计费凭证。
 
@@ -103,9 +103,9 @@ uni.login({
 注意:
 **虽然一键登录需要uniCloud，但并不要求开发者把所有的后台服务都迁移到uniCloud**
 
-服务器API详见：[uniCloud云函数中使用一键登录](https://uniapp.dcloud.net.cn/uniCloud/uni-login/dev)
+服务器API详见：[uniCloud云函数中使用一键登录](https://doc.dcloud.net.cn/uniCloud/uni-login/dev)
 
-uniCloud产生的费用对于一键登陆可以忽略，[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-login/price)
+uniCloud产生的费用对于一键登陆可以忽略，[详见](https://doc.dcloud.net.cn/uniCloud/uni-login/price)
 
 ## 开发
 
@@ -426,7 +426,7 @@ exports.main = async (event, context) => {
   console.log(res); // res里包含手机号
   // 执行用户信息入库等操作，正常情况下不要把完整手机号返回给前端
   // 如果数据库在uniCloud上，可以直接入库
-  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
+  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://doc.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
   return {
     code: 0,
     message: '获取手机号成功'
@@ -488,7 +488,7 @@ exports.main = async(event) => {
   	openid: openid
   })
   console.log(res); // res里包含手机号
-  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
+  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://doc.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
 
   return {  // 不建议把完整手机号返回给前端
     code: 0,
@@ -650,7 +650,7 @@ exports.main = async(event) => {
 大多数情况 是因为部分特定设备，不支持双卡双待的网络环境。
 
 - **uniCloud费用贵不贵？**
-uniCloud产生的费用对于一键登陆可以忽略，[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-login/price)
+uniCloud产生的费用对于一键登陆可以忽略，[详见](https://doc.dcloud.net.cn/uniCloud/uni-login/price)
 
 - **使用有其他疑问**
 欢迎扫码加入 一键登录 微信交流群讨论：

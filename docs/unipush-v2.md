@@ -14,7 +14,7 @@
 在日常营销推广、促销活动等场景下（如双11大促、产品上新、重要资讯等），APP可对目标用户进行定向通知栏消息+应用内消息推送，吸引用户参与活动，提升日活。
 
 - 基于uniCloud的IM、聊天、客服、棋牌游戏交互等
-例如：DCloud基于`uni-push2`开发并开源了`uni-im`详情:[https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
+例如：DCloud基于`uni-push2`开发并开源了`uni-im`详情:[https://doc.dcloud.net.cn/uniCloud/uni-im.html](https://doc.dcloud.net.cn/uniCloud/uni-im.html)
 另外棋牌游戏等，需要客户端被动接收消息的需求都可以用`uni-push`实现。
 
 # 简介
@@ -97,11 +97,11 @@ uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而u
 
 可见价格之低，几乎可以忽略不计。
 
-一次消息推送 = 1次云函数请求 + 最高3次数据库查询（最常用的基于user_id推送仅需一次查询，详情参考：[推送接口查库详解](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html#%E6%8E%A8%E9%80%81%E6%8E%A5%E5%8F%A3%E6%9F%A5%E5%BA%93%E8%AF%A6%E8%A7%A3) )
+一次消息推送 = 1次云函数请求 + 最高3次数据库查询（最常用的基于user_id推送仅需一次查询，详情参考：[推送接口查库详解](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html#%E6%8E%A8%E9%80%81%E6%8E%A5%E5%8F%A3%E6%9F%A5%E5%BA%93%E8%AF%A6%E8%A7%A3) )
 
 即：最高(1 * 0.0133 + 3 * 0.015)/10000 = 0.00000583元/每次（注：给你的应用的所有注册用户群发消息算一次）
 
-详细的计费参考：[阿里云版uniCloud按量计费文档](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)
+详细的计费参考：[阿里云版uniCloud按量计费文档](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)
 
 # 常见问题
 有了uni-push，开发者不应该再使用其他push方案了。但我们发现很多开发者有误解，导致还在错误使用其他推送。
@@ -212,7 +212,7 @@ uni-push产品有2个入口：
 
 <img width="50%" style="max-width:260px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/WechatIMG589.jpeg"/>
 
-uni-app x有摇树机制，需要在代码中编写api调用，然后打包就会包含push模块。[详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest#treeShaking)
+uni-app x有摇树机制，需要在代码中编写api调用，然后打包就会包含push模块。[详见](https://doc.dcloud.net.cn/uni-app-x/manifest#treeShaking)
 
 #### 小程序中使用uni-push2.0的白名单配置@useinmp
 

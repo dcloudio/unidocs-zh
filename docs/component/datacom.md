@@ -115,7 +115,7 @@ datacom组件，对服务器数据规范、前端组件的数据输入和输出�
 - 设计更加清晰。服务器端给符合规范的数据，然后接受选择的结果数据。中间的ui交互无需关心。
 - 结合 [uni-forms](https://ext.dcloud.net.cn/plugin?id=2773) 组件，自动实现表单校验。
 - 搭配 uniCloud 的[unicloud-db组件](https://uniapp.dcloud.io/uniCloud/clientdb)，数据库查询结果直接绑定给`datacom组件`，服务器代码直接就不用写了
-- 搭配 uniCloud 的[schema2code页面生成系统](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)，数据库定义好schema，前端页面就不用写了，自动生成
+- 搭配 uniCloud 的[schema2code页面生成系统](https://doc.dcloud.net.cn/uniCloud/schema?id=autocode)，数据库定义好schema，前端页面就不用写了，自动生成
 - 互操作性。可以轻易的切换更好的组件
 
 举个例子，假使我们想实现一个城市选择的业务。
@@ -276,7 +276,7 @@ localdata的示例上文已经举例，下面来看下直接指定uniCloud云数
 	</script>
 ```
 
-collection表名、field字段名、where条件的写法，详见[clientDB组件文档](https://uniapp.dcloud.net.cn/uniCloud/uni-clientdb-component?id=%e5%b1%9e%e6%80%a7)
+collection表名、field字段名、where条件的写法，详见[clientDB组件文档](https://doc.dcloud.net.cn/uniCloud/uni-clientdb-component?id=%e5%b1%9e%e6%80%a7)
 
 当然，支持绑定uniCloud数据，对于datacom组件规范来说，是可选的。
 
@@ -374,12 +374,12 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 |spaceInfo					|Object     |				|服务空间信息，新增于`HBuilderX 3.2.11`。同uniCloud.init参数，参考：[uniCloud.init](https://doc.dcloud.net.cn/uniCloud/init.html?id=init-unicloud)|
 |collection					|String			|				|表名。支持输入多个表名，用 `,` 分割|
 |field						|String			|				|查询字段，多个字段用 `,` 分割|
-|where						|String			|				|查询条件，内容较多，另见jql文档：[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
+|where						|String			|				|查询条件，内容较多，另见jql文档：[详情](https://doc.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
 |orderby					|String			|				|排序字段及正序倒叙设置|
 |groupby					|String			|				|对数据进行分组|
 |group-field				|String			|				|对数据进行分组统计|
 |distinct					|Boolean		|	false		|是否对数据查询结果中重复的记录进行去重|
-|action						|string			|				|云端执行数据库查询的前或后，触发某个action函数操作，进行预处理或后处理，[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=%e4%ba%91%e7%ab%af%e9%83%a8%e5%88%86)。场景：前端无权操作的数据，比如阅读数+1|
+|action						|string			|				|云端执行数据库查询的前或后，触发某个action函数操作，进行预处理或后处理，[详情](https://doc.dcloud.net.cn/uniCloud/uni-clientDB?id=%e4%ba%91%e7%ab%af%e9%83%a8%e5%88%86)。场景：前端无权操作的数据，比如阅读数+1|
 |page-data					|String			|	add			|分页策略选择。值为 `add` 代表下一页的数据追加到之前的数据中，常用于滚动到底加载下一页；值为 `replace` 时则替换当前data数据，常用于PC式交互，列表底部有页码分页按钮|
 |page-current				|Number			|	0			|当前页|
 |page-size					|Number			|	20			|每页数据数量|

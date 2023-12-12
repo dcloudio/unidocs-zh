@@ -9,7 +9,7 @@ A和B要想被认为是同域，则必须有相同的协议（比如http和https
 
 # 如果前端要callfunction连接unicloud云函数
 
-在h5页面里callfunction会跨域，此时需在unicloud的web控制台配置域名白名单，被加白的域名可以跨域callfunction。详见：[https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
+在h5页面里callfunction会跨域，此时需在unicloud的web控制台配置域名白名单，被加白的域名可以跨域callfunction。详见：[https://doc.dcloud.net.cn/uniCloud/quickstart?id=useinh5](https://doc.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
 
 另外运行期间在HBuilderX的内置浏览器里是不存在跨域的。
 

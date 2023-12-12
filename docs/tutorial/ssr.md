@@ -25,8 +25,8 @@ uni-app 默认情况下，是在客户端中输出 Vue 组件，进行生成 DOM
 
 - 更多的服务器端负载。在 Node.js 中渲染完整的应用程序，显然会比仅仅提供静态文件的 server 更加大量占用 CPU 资源 (CPU-intensive - CPU 密集)，因此如果你预料在高流量环境 (high traffic) 下使用，请准备相应的服务器负载，并明智地采用缓存策略。
 
-幸运的是，以上问题，[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README) 均为您提供了解决方案
-- [unicloud-db](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db) 组件是 uniCloud 提供的一个数据库查询组件，内置支持SSR，开发者无需任何额外开发。
+幸运的是，以上问题，[uniCloud](https://doc.dcloud.net.cn/uniCloud/README) 均为您提供了解决方案
+- [unicloud-db](https://doc.dcloud.net.cn/uniCloud/unicloud-db) 组件是 uniCloud 提供的一个数据库查询组件，内置支持SSR，开发者无需任何额外开发。
 - uniCloud 云函数与静态托管，提供了弹性扩容、大并发承载、防DDoS攻击的世界最顶级的IT基础设施，通过 HBuilderX 可将 uni-app 项目一键部署为支持 SSR 的 h5 网站
 
 
@@ -182,10 +182,10 @@ cli创建的项目使用`npm run dev:h5:ssr`运行即可
 
 > **务必完成前置步骤之后再进行后续操作**
 
-1. 开通[uniCloud](https://unicloud.dcloud.net.cn)以及[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
-2. 云函数绑定自定义url化域名，参考文档：[云函数Url化](https://uniapp.dcloud.net.cn/uniCloud/http)，阿里云未绑定自定义域名会直接下载云函数返回的html页面无法在浏览器中展示
-3. 前端网页托管绑定自定义域名，参考文档：[前端网页托管配置域名](https://uniapp.dcloud.net.cn/uniCloud/hosting?id=domain)
-4. 将前两步部署的域名都配置在跨域配置内，即允许云函数跨域访问前端网页托管内的资源，也允许前端网页托管跨域访问云函数。参考文档：[H5中使用uniCloud的跨域处理](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
+1. 开通[uniCloud](https://unicloud.dcloud.net.cn)以及[前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting)
+2. 云函数绑定自定义url化域名，参考文档：[云函数Url化](https://doc.dcloud.net.cn/uniCloud/http)，阿里云未绑定自定义域名会直接下载云函数返回的html页面无法在浏览器中展示
+3. 前端网页托管绑定自定义域名，参考文档：[前端网页托管配置域名](https://doc.dcloud.net.cn/uniCloud/hosting?id=domain)
+4. 将前两步部署的域名都配置在跨域配置内，即允许云函数跨域访问前端网页托管内的资源，也允许前端网页托管跨域访问云函数。参考文档：[H5中使用uniCloud的跨域处理](https://doc.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
 5. 从插件市场导入[uni-ssr](https://ext.dcloud.net.cn/plugin?id=5338)到项目内
 
 **编译发行**
@@ -217,7 +217,7 @@ cli创建的项目使用`npm run dev:h5:ssr`运行即可
 
 	![自动部署](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
 	
-3. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
+3. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://doc.dcloud.net.cn/uniCloud/http)
 
 **手动发行部署**
 
@@ -248,7 +248,7 @@ cli创建的项目使用`npm run dev:h5:ssr`运行即可
   
   ![以ssr模式发行](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
   
-3. 部署静态资源到[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
+3. 部署静态资源到[前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting)
 
   将编译后的`dist/build/h5/client`中的资源上传至前端网页托管，推荐使用免费的阿里云服务空间
 
@@ -256,7 +256,7 @@ cli创建的项目使用`npm run dev:h5:ssr`运行即可
 
   将编译后的`dist/build/h5/server`目录拷贝至`uni-ssr`云函数根目录，并上传。
 
-5. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
+5. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://doc.dcloud.net.cn/uniCloud/http)
 
 
 #### 注意事项

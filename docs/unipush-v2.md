@@ -31,7 +31,11 @@
   （uni-push1.0仅支持使用传统服务器开发语言如php，未和客户端有效协同，流程比uni-push2.0繁琐）
 3. uni-push还自带一个web控制台。不写代码也可以在web页面发推送。uni-push1.0的web控制台在[dev.dcloud.net.cn](https://dev.dcloud.net.cn)。uni-push2.0的web控制台是开源的，属于uni-admin插件[详见](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)。
 
-4. 考虑到部分项目由于特殊原因不能通过uniCloud的云函数使用uni-push，开放支持：开发者拿到应用的appid和相关key直接通过[调用个推服务器](./unipush-v1.md#request_getui)推送消息。相关密钥获取方式：使用 HBuilder 账号登录 [开发者中心](https://dev.dcloud.net.cn)左侧菜单-`uni-push`-`uni-push 2.0（支持全端推送）`-`消息推送`-`应用配置`-`应用信息`
+4. 如果你的项目由于特殊原因不能通过uniCloud的云函数使用uni-push2.0，你希望直接通过调用个推服务器推送消息。在这种情况下：
+- uni-app项目，需要使用老版的 [uni-push1.0](./unipush-v1.md) 。相关密钥获取方式：登录[开发者中心](https://dev.dcloud.net.cn)左侧菜单->`uni-push`->`uni-push 2.0（支持全端推送）`->`消息推送`->`应用配置`->`应用信息`  
+- uni-app-x 项目，虽然只能使用 uni-push2.0，但支持在[开发者中心](https://dev.dcloud.net.cn)左侧菜单-`uni-push`->`uni-push 2.0（支持全端推送）`-> `厂商推送设置` 在顶端注意事项中，点击获取个推的MasterSecret
+
+请注意，直接调用个推服务器进行推送可能需要更多的配置和操作步骤，具体请参考[调用个推服务器](./unipush-v1.md#request_getui)的相关文档。
 
 ## 什么是push？
 push，指服务器主动向客户端发送消息的技术。无需客户端持续轮询服务器，即可获得即时数据。

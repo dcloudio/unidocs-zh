@@ -176,9 +176,7 @@ Cloud function templates have no special requirements for file naming, but when 
 - 当模板中包含一个或多个云函数时，不能只在插件中放入云函数目录，而需要完整的从项目根目录开始。如uniCloud/cloudfunctions/cf123。uniCloud可以接受-aliyun或-tcb 后缀（阿里云和腾讯云这两个目录也可以同时存在）；
 - When the template contains one or more cloud functions, you cannot just put the cloud function directory in the plug-in, but need to start from the project root directory completely. Such as uniCloud/cloudfunctions/cf123. uniCloud can accept -aliyun or -tcb suffix (the two directories of Aliyun and Tencent Cloud can also exist at the same time);
 - 云函数有效的入口文件为 index.js，插件包中必须包含至少一个以此命名的文件。
-- The valid entry file for cloud functions is index.js, and the plugin package must contain at least one file named after this.
-- 涉及账户管理的话，请使用[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
-- For account management, please use [uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
+- 涉及账户管理的话，请使用[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id)
 
 如果上传付费云函数插件，则必须选择要加密的云函数，否则插件试用者可以通过试用流程无限期使用你的插件而不需要付费。
 If you upload a paid cloud function plugin, you must select the cloud function you want to encrypt, otherwise plugin trial users can use your plugin indefinitely through the trial process without paying.
@@ -264,8 +262,7 @@ After using the [uniCloud admin basic framework](https://ext.dcloud.net.cn/plugi
 插件作者也可以按此文档提交插件，在插件市场的上传发布页面选择``uniCloud`` 分类的 ``Admin 插件`` 。
 Plugin authors can also submit plugins according to this document, and select ``Admin Plugins`` in the ``uniCloud`` category on the upload and release page of the Plugin Marketplace.
 
-因文档较长，请单独参阅：[uniCloud admin插件开发指南](https://uniapp.dcloud.net.cn/uniCloud/admin?id=admin-%e6%8f%92%e4%bb%b6%e5%bc%80%e5%8f%91)
-Due to the long document, please refer to: [uniCloud admin Plugin Development Guide](https://uniapp.dcloud.net.cn/uniCloud/admin?id=admin-%e6%8f%92%e4%bb%b6% e5%bc%80%e5%8f%91)
+因文档较长，请单独参阅：[uniCloud admin插件开发指南](https://doc.dcloud.net.cn/uniCloud/admin?id=admin-%e6%8f%92%e4%bb%b6%e5%bc%80%e5%8f%91)
 
 ### DB Schema及验证函数
 ### DB Schema and validation functions

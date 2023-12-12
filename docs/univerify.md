@@ -116,7 +116,7 @@ precondition:
 ### 开通uni一键登录服务
 开发者需要登录[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-login/login-account)，申请开通一键登录服务。
 
-详细步骤参考：[一键登录服务开通指南](https://uniapp.dcloud.net.cn/uniCloud/uni-login/service)
+详细步骤参考：[一键登录服务开通指南](https://doc.dcloud.net.cn/uniCloud/uni-login/service)
 
 开通成功后会得到 apiKey、apiSecret。这2个信息，后续需要配置在uniCloud的云函数里。同时注意保密，这2个信息也是计费凭证。
 After the activation is successful, you will get apiKey and apiSecret. These two pieces of information need to be configured in the cloud function of uniCloud later. At the same time, pay attention to confidentiality. These two pieces of information are also billing vouchers.
@@ -140,9 +140,9 @@ Notice:
 **虽然一键登录需要uniCloud，但并不要求开发者把所有的后台服务都迁移到uniCloud**
 **Although one-click login requires uniCloud, it does not require developers to migrate all background services to uniCloud**
 
-服务器API详见：[uniCloud云函数中使用一键登录](https://uniapp.dcloud.net.cn/uniCloud/uni-login/dev)
+服务器API详见：[uniCloud云函数中使用一键登录](https://doc.dcloud.net.cn/uniCloud/uni-login/dev)
 
-uniCloud产生的费用对于一键登陆可以忽略，[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-login/price)
+uniCloud产生的费用对于一键登陆可以忽略，[详见](https://doc.dcloud.net.cn/uniCloud/uni-login/price)
 
 ## 开发
 ## development
@@ -521,9 +521,7 @@ exports.main = async (event, context) => {
   // 执行用户信息入库等操作，正常情况下不要把完整手机号返回给前端
   // Perform operations such as user information storage. Under normal circumstances, do not return the full mobile phone number to the front end
   // 如果数据库在uniCloud上，可以直接入库
-  // If the database is on uniCloud, it can be stored directly
-  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
-  // If the database is not on uniCloud, you can use the uniCloud.httpclient API to pass the mobile phone number to the interface of other servers through http. For details, see: https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id =httpclient
+  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://doc.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
   return {
     code: 0,
     message: '获取手机号成功'
@@ -597,7 +595,7 @@ exports.main = async(event) => {
   	openid: openid
   })
   console.log(res); // res里包含手机号
-  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
+  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://doc.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
 
   return {  // 不建议把完整手机号返回给前端
     code: 0,
@@ -806,7 +804,7 @@ Dual SIM phones are authenticated with a SIM card with data traffic turned on.
 In most cases, it is because some specific devices do not support dual-card dual-standby network environment.
 
 - **uniCloud费用贵不贵？**
-uniCloud产生的费用对于一键登陆可以忽略，[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-login/price)
+uniCloud产生的费用对于一键登陆可以忽略，[详见](https://doc.dcloud.net.cn/uniCloud/uni-login/price)
 
 - **使用有其他疑问**
 - **Other questions about use**

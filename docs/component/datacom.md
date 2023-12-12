@@ -134,9 +134,7 @@ Regardless of the industry influence, there are many obvious benefits to develop
 - 结合 [uni-forms](https://ext.dcloud.net.cn/plugin?id=2773) 组件，自动实现表单校验。
 - Combined with the [uni-forms](https://ext.dcloud.net.cn/plugin?id=2773) component, form validation is automatically realized.
 - 搭配 uniCloud 的[unicloud-db组件](https://uniapp.dcloud.io/uniCloud/clientdb)，数据库查询结果直接绑定给`datacom组件`，服务器代码直接就不用写了
-- With uniCloud's [unicloud-db component](https://uniapp.dcloud.io/uniCloud/clientdb), if the database query results are directly bound to `datacom component`, the server code does not need to be written directly
-- 搭配 uniCloud 的[schema2code页面生成系统](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)，数据库定义好schema，前端页面就不用写了，自动生成
-- With uniCloud's [schema2code page generation system](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode), if the schema is defined in the database, the front-end page does not need to be written and is automatically generated
+- 搭配 uniCloud 的[schema2code页面生成系统](https://doc.dcloud.net.cn/uniCloud/schema?id=autocode)，数据库定义好schema，前端页面就不用写了，自动生成
 - 互操作性。可以轻易的切换更好的组件
 - Interoperability. It will be easy to switch to better components.
 
@@ -349,8 +347,7 @@ Examples of localdata have been given above. Let's move on to the writing mode o
 	</script>
 ```
 
-collection表名、field字段名、where条件的写法，详见[clientDB组件文档](https://uniapp.dcloud.net.cn/uniCloud/uni-clientdb-component?id=%e5%b1%9e%e6%80%a7)
-For the writing of collection table name, field name, and where condition, please refer to [clientDB component documentation](https://uniapp.dcloud.net.cn/uniCloud/uni-clientdb-component?id=%e5%b1%9e%e6%80%a7)
+collection表名、field字段名、where条件的写法，详见[clientDB组件文档](https://doc.dcloud.net.cn/uniCloud/uni-clientdb-component?id=%e5%b1%9e%e6%80%a7)
 
 当然，支持绑定uniCloud数据，对于datacom组件规范来说，是可选的。
 Of course, it supports the binding of uniCloud data, and it is optional for datacom component specification.
@@ -504,9 +501,7 @@ It is the same as the standard datacom component, except for localdata, the othe
 |collection					|String			|				|表名。支持输入多个表名，用 `,` 分割|
 | collection| String| | Table Name. Support input of multiple table names, separated by `,`|
 |field						|String			|				|查询字段，多个字段用 `,` 分割|
-| field| String| | Query field, multiple fields are separated by `,`|
-|where						|String			|				|查询条件，内容较多，另见jql文档：[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
-| where| String| | For more information about query conditions, see also jql document: [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
+|where						|String			|				|查询条件，内容较多，另见jql文档：[详情](https://doc.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
 |orderby					|String			|				|排序字段及正序倒叙设置|
 | orderby| String| | Sorting field and forward and reverse sequence settings|
 |groupby					|String			|				|对数据进行分组|
@@ -514,9 +509,7 @@ It is the same as the standard datacom component, except for localdata, the othe
 |group-field				|String			|				|对数据进行分组统计|
 | group-field| String| | Group data for statistics|
 |distinct					|Boolean		|	false		|是否对数据查询结果中重复的记录进行去重|
-| distinct| Boolean| false| Whether to remove duplicate records from the data query results|
-|action						|string			|				|云端执行数据库查询的前或后，触发某个action函数操作，进行预处理或后处理，[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=%e4%ba%91%e7%ab%af%e9%83%a8%e5%88%86)。场景：前端无权操作的数据，比如阅读数+1|
-| action| string| | Before or after the database query is executed in the cloud, an action function is triggered to perform pre-processing or post-processing, [Details](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=%e4%ba%91%e7%ab%af%e9%83%a8%e5%88%86). Scenario: data that the front-end has no right to operate, such as pageview +1|
+|action						|string			|				|云端执行数据库查询的前或后，触发某个action函数操作，进行预处理或后处理，[详情](https://doc.dcloud.net.cn/uniCloud/uni-clientDB?id=%e4%ba%91%e7%ab%af%e9%83%a8%e5%88%86)。场景：前端无权操作的数据，比如阅读数+1|
 |page-data					|String			|	add			|分页策略选择。值为 `add` 代表下一页的数据追加到之前的数据中，常用于滚动到底加载下一页；值为 `replace` 时则替换当前data数据，常用于PC式交互，列表底部有页码分页按钮|
 | page-data| String| add| Paging strategy selection. The value of `add` means that the data of the next page is appended to the previous data, which is often used to scroll to the bottom to load the next page; When the value is `replace`, it replaces the current data, which is often used for PC-style interaction. There is a paging button at the bottom of the list.|
 |page-current				|Number			|	0			|当前页|

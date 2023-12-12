@@ -39,10 +39,8 @@ There are some trade-offs when using server-side rendering (SSR):
 - 更多的服务器端负载。在 Node.js 中渲染完整的应用程序，显然会比仅仅提供静态文件的 server 更加大量占用 CPU 资源 (CPU-intensive - CPU 密集)，因此如果你预料在高流量环境 (high traffic) 下使用，请准备相应的服务器负载，并明智地采用缓存策略。
 - More server-side load. The fully rendered application in Node.js obviously takes up more CPU resources (CPU-intensive) than the server that only provides static files. Therefore, if you expect to use it in a high traffic environment, please prepare the corresponding server load and use the caching strategy wisely.
 
-幸运的是，以上问题，[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README) 均为您提供了解决方案
-Fortunately, [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README) provides you with solutions for the above problems.
-- [unicloud-db](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db) 组件是 uniCloud 提供的一个数据库查询组件，内置支持SSR，开发者无需任何额外开发。
-- The [unicloud-db](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db) component is a database query component provided by uniCloud, with built-in support for SSR, and developers do not need any additional development.
+幸运的是，以上问题，[uniCloud](https://doc.dcloud.net.cn/uniCloud/README) 均为您提供了解决方案
+- [unicloud-db](https://doc.dcloud.net.cn/uniCloud/unicloud-db) 组件是 uniCloud 提供的一个数据库查询组件，内置支持SSR，开发者无需任何额外开发。
 - uniCloud 云函数与静态托管，提供了弹性扩容、大并发承载、防DDoS攻击的世界最顶级的IT基础设施，通过 HBuilderX 可将 uni-app 项目一键部署为支持 SSR 的 h5 网站
 - The uniCloud cloud function and static hosting provide the world's top IT infrastructure with flexible capacity expansion, large concurrent load and anti-DDoS attack. Through HBuilderX, uni-app project can be deployed as an h5 website supporting SSR with one click.
 
@@ -233,14 +231,10 @@ Releasing ssr will get two parts: the cloud part and the static resource part. T
 > **务必完成前置步骤之后再进行后续操作**
 > **Be sure to complete the pre-step before proceeding with the subsequent operation**
 
-1. 开通[uniCloud](https://unicloud.dcloud.net.cn)以及[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
-1. Open [uniCloud](https://unicloud.dcloud.net.cn) and [Front-end web hosting](https://uniapp.dcloud.net.cn/uniCloud/hosting)
-2. 云函数绑定自定义url化域名，参考文档：[云函数Url化](https://uniapp.dcloud.net.cn/uniCloud/http)，阿里云未绑定自定义域名会直接下载云函数返回的html页面无法在浏览器中展示
-2. Cloud function binding custom urlized domain name, refer to the document: [Cloud Function Urlization](https://uniapp.dcloud.net.cn/uniCloud/http), Alibaba Cloud will download directly if the custom domain name is not bound The html page returned by the cloud function cannot be displayed in the browser
-3. 前端网页托管绑定自定义域名，参考文档：[前端网页托管配置域名](https://uniapp.dcloud.net.cn/uniCloud/hosting?id=domain)
-3. For front-end web hosting binding custom domain name, please refer to the document [Front-end web hosting configuration domain name](https://uniapp.dcloud.net.cn/uniCloud/hosting?id=domain)
-4. 将前两步部署的域名都配置在跨域配置内，即允许云函数跨域访问前端网页托管内的资源，也允许前端网页托管跨域访问云函数。参考文档：[H5中使用uniCloud的跨域处理](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
-4. Configure the domain names deployed in the first two steps in the cross-domain configuration, that is to say, cross-domain access from cloud functions to resources in front-end web hosting as well as cross-domain access from front-end web hosting to cloud functions are both allowed. Refer to the document [Cross-domain processing using uniCloud in H5](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
+1. 开通[uniCloud](https://unicloud.dcloud.net.cn)以及[前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting)
+2. 云函数绑定自定义url化域名，参考文档：[云函数Url化](https://doc.dcloud.net.cn/uniCloud/http)，阿里云未绑定自定义域名会直接下载云函数返回的html页面无法在浏览器中展示
+3. 前端网页托管绑定自定义域名，参考文档：[前端网页托管配置域名](https://doc.dcloud.net.cn/uniCloud/hosting?id=domain)
+4. 将前两步部署的域名都配置在跨域配置内，即允许云函数跨域访问前端网页托管内的资源，也允许前端网页托管跨域访问云函数。参考文档：[H5中使用uniCloud的跨域处理](https://doc.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
 5. 从插件市场导入[uni-ssr](https://ext.dcloud.net.cn/plugin?id=5338)到项目内
 5. Import [uni-ssr](https://ext.dcloud.net.cn/plugin?id=5338) from the plug-in market into the project
 
@@ -278,8 +272,7 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
 
 	![自动部署](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
 	
-3. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
-3. Configure the cloud function URL path of `uni-ssr`, please refer to the document: [Cloud function URLization](https://uniapp.dcloud.net.cn/uniCloud/http)
+3. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://doc.dcloud.net.cn/uniCloud/http)
 
 **手动发行部署**
 **Manual release and deployment**
@@ -315,8 +308,7 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
   
   ![以ssr模式发行](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
   
-3. 部署静态资源到[前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting)
-3. Deploy static resources to [Front-end web hosting](https://uniapp.dcloud.net.cn/uniCloud/hosting)
+3. 部署静态资源到[前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting)
 
   将编译后的`dist/build/h5/client`中的资源上传至前端网页托管，推荐使用免费的阿里云服务空间
   Upload the compiled resources in `dist/build/h5/client` to the front-end web hosting. The free Alibaba Cloud service space is recommended.
@@ -327,8 +319,7 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
   将编译后的`dist/build/h5/server`目录拷贝至`uni-ssr`云函数根目录，并上传。
   Copy the compiled `dist/build/h5/server` directory to the `uni-ssr` cloud function root directory and upload it.
 
-5. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://uniapp.dcloud.net.cn/uniCloud/http)
-5. To configure the URL path of the cloud function of `uni-ssr`, please refer to the document [URL normalization of cloud function](https://uniapp.dcloud.net.cn/uniCloud/http)
+5. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://doc.dcloud.net.cn/uniCloud/http)
 
 
 #### 注意事项

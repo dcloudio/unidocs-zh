@@ -67,9 +67,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 * 可以通过用户授权API来判断用户是否给应用授予相册或摄像头的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 * The user authorization API can be used to determine whether the user authorizes the application the access to the photo album or camera [https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 * App下如需进一步压缩视频大小，可以在插件市场搜索[视频压缩](http://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9)插件
-* If you need to further compress the video size under App, you can search for [Video Compression](http://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9) in the plug-in market
-* 如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile](https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile)
-* To upload to the cdn, you can use the uniCloud.uploadFile API, which provides free cdn for developers. See [https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile](https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile) for details
+* 如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://doc.dcloud.io/uniCloud/storage?id=uploadfile](https://doc.dcloud.io/uniCloud/storage?id=uploadfile)
 * 选择视频大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
 * Most of the videos are selected for uploading. uni ui encapsulates a more complete [uni-file-picker component](https://ext.dcloud.net.cn/plugin?id=4079). Files are selected and uploaded to uniCloud's free storage and cdn for one-stop integration. Highly recommended.
 * 部分浏览器中无法获取视频信息。
@@ -246,8 +244,7 @@ uni.chooseMedia({
 
 **Tips**
 
-* 如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile](https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile)
-* To upload to the cdn, you can use the uniCloud.uploadFile API, which provides free cdn for developers. See [https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile](https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile) for details
+* 如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://doc.dcloud.io/uniCloud/storage?id=uploadfile](https://doc.dcloud.io/uniCloud/storage?id=uploadfile)
 * 选择文件大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
 * Most of the selected files are for uploading, uni ui encapsulates a more complete [uni-file-picker component] (https://ext.dcloud.net.cn/plugin?id=4079), file selection, uploading to uniCloud is free One-stop integration in storage and cdn. Highly recommended.
 * 经开发者提醒，微信小程序ios真机可以选择的文件个数不能大于9，详见帖子[https://ask.dcloud.net.cn/question/115561](https://ask.dcloud.net.cn/question/115561)
@@ -429,8 +426,7 @@ Compressed video interface. Developers can specify the compression quality (qual
 App端有很多插件支持视频压缩，详见[插件市场](https://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9)
 Many plug-ins are available on the App side that support video compression. See.[Plug-in market](https://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9) for details
 
-压缩完毕后如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile](https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile)
-After the compression, if you want to upload it to the cdn, you can use the uniCloud.uploadFile API, which provides free cdn for developers. See [https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile](https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile) for details
+压缩完毕后如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://doc.dcloud.io/uniCloud/storage?id=uploadfile](https://doc.dcloud.io/uniCloud/storage?id=uploadfile)
 
 
 **OBJECT 参数说明**

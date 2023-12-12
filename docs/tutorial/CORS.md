@@ -16,8 +16,7 @@ Since uni-app is a standard front-end and back-end separation mode, if the front
 # 如果前端要callfunction连接unicloud云函数
 # If the front end wants to call function to connect to unicloud cloud function
 
-在h5页面里callfunction会跨域，此时需在unicloud的web控制台配置域名白名单，被加白的域名可以跨域callfunction。详见：[https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
-In the h5 page, the call function will be cross-domain. At this time, you need to configure the domain name whitelist in the web console of unicloud. The whitened domain name can be cross-domain call function. For details, see: [https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
+在h5页面里callfunction会跨域，此时需在unicloud的web控制台配置域名白名单，被加白的域名可以跨域callfunction。详见：[https://doc.dcloud.net.cn/uniCloud/quickstart?id=useinh5](https://doc.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
 
 另外运行期间在HBuilderX的内置浏览器里是不存在跨域的。
 In addition, there is no cross-domain in the built-in browser of HBuilderX during operation.

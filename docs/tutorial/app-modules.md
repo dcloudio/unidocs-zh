@@ -82,9 +82,7 @@ Manually add in "app-plus" -> "modules" in the "source view" of the project's ma
 | Statistic(统计) | Statistic | 使用三方统计功能 | 需配置三方SDK，[详情](app-statistic.md) | Android、iOS |
 | Statistic (statistics) | Statistic | Use the three-party statistical function | Need to configure the three-party SDK, [Details](app-statistic.md) | Android, iOS |
 | SQLite(数据库) | SQLite | 使用SQLite数据库功能 |  | Android、iOS |
-| SQLite (database) | SQLite | Use SQLite database features | | Android, iOS |
-| uni云端一体安全网络 | - | 使用安全网络功能 | 需配置uniCloud，[详情](https://uniapp.dcloud.net.cn/uniCloud/secure-network) | Android、iOS |
-| uni cloud integrated secure network | - | use secure network function | need to configure uniCloud, [Details](https://uniapp.dcloud.net.cn/uniCloud/secure-network) | Android, iOS |
+| uni云端一体安全网络 | - | 使用安全网络功能 | 需配置uniCloud，[详情](https://doc.dcloud.net.cn/uniCloud/secure-network) | Android、iOS |
 | VideoPlayer(视频播放) | VideoPlayer | 使用视频模板功能 |  | Android、iOS |
 | VideoPlayer (video playback) | VideoPlayer | Use video template function | | Android, iOS |
 | Android X5 Webview(腾讯TBS) | Webview-x5 | 使用腾讯X5 Webview内核 | [详情](app-android-x5.md) | Android |

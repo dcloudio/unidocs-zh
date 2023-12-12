@@ -51,7 +51,7 @@ Start the SOTER biometric authentication.
 注意：
 Notice:
 - App端指纹识别，Android平台从Android6.0起才提供了官方API，uni-app也是从Android6起支持。对于更低版本的安卓，某些rom私有的指纹识别API，uni-app并不支持。
-- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://uniapp.dcloud.net.cn/uniCloud/frv/intro.html](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
+- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://doc.dcloud.net.cn/uniCloud/frv/intro.html](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
 
 
 **OBJECT.success返回值说明**

@@ -14,7 +14,7 @@ DCloud在每次更新发版时，随着HBuilderX的升级，会一起发布uni-a
 
 在HBuilderX 3.9以前，采用的是3段式版本号规则，大版本、小版本、补丁版本，如3.8.12。
 
-这个版本号，在uni-app中使用[uni.getSystemInfo](https://uniapp.dcloud.net.cn/api/system/info.html)可以获得。具体属性是`uniRuntimeVersion`和`uniCompileVersion`，类型是字符串。
+这个版本号，在uni-app中使用[uni.getSystemInfo](../api/system/info.md)可以获得。具体属性是`uniRuntimeVersion`和`uniCompileVersion`，类型是字符串。
 
 在HBuilderX界面显示时，还会在末尾再增加一段发版日期，如3.8.12.20230817。上述api不会返回末段日期。
 
@@ -30,7 +30,7 @@ DCloud在每次更新发版时，随着HBuilderX的升级，会一起发布uni-a
 
 基于向下兼容的考虑，`uniRuntimeVersion`和`uniCompileVersion`仍然是字符串。
 
-但在uni-app x的[uni.getAppBaseInfo](https://uniapp.dcloud.net.cn/uni-app-x/api/getappbaseinfo.html)和[uni.getSystemInfo](https://uniapp.dcloud.net.cn/uni-app-x/api/getsysteminfo.html)中，
+但在uni-app x的[uni.getAppBaseInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-app-base-info.html)和[uni.getSystemInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-system-info.html)中，
 返回值新增了2个属性，`uniCompileVersionCode`和`uniRuntimeVersionCode`，这2个是数字类型，可以直接用于比较。
 
 另外，从HBuilderX 3.9起，条件编译也可以按版本号来编译，比如低版本编译成这样、高版本编译成另一个样子。这种条件编译也可以直接使用比较运算符来比较了。[详见](platform.md#uniVersion)

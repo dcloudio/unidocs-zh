@@ -17,7 +17,7 @@ It is also a user message push, the implementation principle is actually to cust
 In daily marketing promotion, promotional activities and other scenarios (such as the Double 11 promotion, new product launches, important information, etc.), the APP can send targeted notifications to target users + push in-app messages to attract users to participate in activities and improve daily activities.
 
 - 基于uniCloud的IM、聊天、客服、棋牌游戏交互等
-例如：DCloud基于`uni-push2`开发并开源了`uni-im`详情:[https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
+例如：DCloud基于`uni-push2`开发并开源了`uni-im`详情:[https://doc.dcloud.net.cn/uniCloud/uni-im.html](https://doc.dcloud.net.cn/uniCloud/uni-im.html)
 另外棋牌游戏等，需要客户端被动接收消息的需求都可以用`uni-push`实现。
 In addition, chess and card games and other requirements that require the client to passively receive messages can be implemented with `uni-push`.
 
@@ -131,12 +131,11 @@ uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而u
 可见价格之低，几乎可以忽略不计。
 It can be seen that the price is so low that it is almost negligible.
 
-一次消息推送 = 1次云函数请求 + 最高3次数据库查询（最常用的基于user_id推送仅需一次查询，详情参考：[推送接口查库详解](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html#%E6%8E%A8%E9%80%81%E6%8E%A5%E5%8F%A3%E6%9F%A5%E5%BA%93%E8%AF%A6%E8%A7%A3) )
+一次消息推送 = 1次云函数请求 + 最高3次数据库查询（最常用的基于user_id推送仅需一次查询，详情参考：[推送接口查库详解](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html#%E6%8E%A8%E9%80%81%E6%8E%A5%E5%8F%A3%E6%9F%A5%E5%BA%93%E8%AF%A6%E8%A7%A3) )
 
 即：最高(1 * 0.0133 + 3 * 0.015)/10000 = 0.00000583元/每次（注：给你的应用的所有注册用户群发消息算一次）
 
-详细的计费参考：[阿里云版uniCloud按量计费文档](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)
-Detailed billing reference: [Aliyun version uniCloud pay-as-you-go document](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)
+详细的计费参考：[阿里云版uniCloud按量计费文档](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)
 
 # 常见问题
 # common problem
@@ -289,7 +288,7 @@ After configuring in `manifest.json`, you need to recompile the project, that is
 
 <img width="50%" style="max-width:260px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/WechatIMG589.jpeg"/>
 
-uni-app x有摇树机制，需要在代码中编写api调用，然后打包就会包含push模块。[详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest#treeShaking)
+uni-app x有摇树机制，需要在代码中编写api调用，然后打包就会包含push模块。[详见](https://doc.dcloud.net.cn/uni-app-x/manifest#treeShaking)
 
 #### 小程序中使用uni-push2.0的白名单配置@useinmp
 #### Whitelist configuration @useinmp using uni-push2.0 in the applet

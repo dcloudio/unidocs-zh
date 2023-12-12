@@ -238,4 +238,4 @@ DCloud为开发者争取了福利，可优惠获取高德的商业授权。如�
 
 > 下载地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-city-select](https://ext.dcloud.net.cn/plugin?name=unicloud-city-select)
 
-> 文档地址：[https://uniapp.dcloud.net.cn/uniCloud/unicloud-city-select.html](https://uniapp.dcloud.net.cn/uniCloud/unicloud-city-select.html)
+> 文档地址：[https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html](https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html)

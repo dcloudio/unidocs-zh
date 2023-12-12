@@ -546,7 +546,7 @@ export default {
 
 ### 服务器回调说明
 
-#### 服务器回调基于 [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)
+#### 服务器回调基于 [uniCloud](https://doc.dcloud.net.cn/uniCloud/README)
 
 1. 由于多家广告商的回调和签名验证逻辑不同，开发者需要写很多逻辑，`uniCloud` 中的云函数 `uniAdCallback` 已抹平了差异，开发者按照统一的参数处理即可
 2. 开发者的服务器有可能响应慢或失去响应造成回调数据丢失, 使用 `uniCloud` 可以帮助开发者保存一份来自广告商服务器的回调数据到开发者的云数据中，以便开发者主动查询
@@ -558,7 +558,7 @@ export default {
 2. 在应用的广告位项上配置激励视频回调，可选择云函数或传统服务器
 3. 开通后将在选择的服务空间下自动部署一个加密云函数 `uniAdCallback`
 4. `uniAdCallback` 接收广告商服务器回调验证签名并抹平穿山甲/优量汇/快手参数差异，然后以以下方式回调
-- 业务在uniCloud：通过[callFunction](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
+- 业务在uniCloud：通过[callFunction](https://doc.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
 - 业务在传统服务器：以HTTP(GET)方式请求开发者配置的回调URL
 
 **提示**：2023/01/29 起，uni-ad Web控制台支持配置传统服务器地址，简化开通流程
@@ -599,7 +599,7 @@ sign = sha256(secret:transid)
 
 通过以下2种方式验证外部服务器与uniCloud安全通讯
 
-1. [uni-cloud-s2s](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)模块
+1. [uni-cloud-s2s](https://doc.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)模块
 2. 手动获取HTTP(GET)请求参数中的 `sign` 验证
 
 
@@ -643,7 +643,7 @@ sign = sha256(secret:transid)
 - plus.navigator.isRoot 判断设备是否被root或越狱 [规范](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isRoot)
 - plus.networkinfo.isSetProxy 判断设备的网络是否设置了代理 [规范](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy)
 4. 避免使用短信验证码来识别身份，推荐使用可信度更高的 [手机号一键登录](/univerify) 或 [微信登录](/api/plugins/login?id=login)
-5. 必要时使用[uni实人认证（活体检测）](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)
+5. 必要时使用[uni实人认证（活体检测）](https://doc.dcloud.net.cn/uniCloud/frv/dev.html)
 
 详细的安全方案，请仔细阅读[uni安全专题](/tutorial/safe.md)
 
@@ -660,7 +660,7 @@ sign = sha256(secret:transid)
 
 #### 流量费
 
-我们按照uniCloud官网列出的[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)规则，可以简单得出如下公式：
+我们按照uniCloud官网列出的[按量计费](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)规则，可以简单得出如下公式：
 
 - 云函数费用(业务系统在uniCloud)   = 资源使用量 * 0.000110592 + 调用次数 * 0.0133 / 10000
 - 云函数费用(业务系统不在uniCloud) = 资源使用量 * 0.000110592 + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8
@@ -709,7 +709,7 @@ sign = sha256(secret:transid)
 
 #### 总结
 
-1. 业务系统在[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)
+1. 业务系统在[uniCloud](https://doc.dcloud.net.cn/uniCloud/)
 
 |广告回调次数	|云函数费用(元)	|
 |:-:					|:-:						|
@@ -719,7 +719,7 @@ sign = sha256(secret:transid)
 |1000					|0.0081896			|
 |10000				|0.081896				|
 
-2. 业务系统不在[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)，包含出网流量费用
+2. 业务系统不在[uniCloud](https://doc.dcloud.net.cn/uniCloud/)，包含出网流量费用
 
 |广告回调次数	|云函数费用+出网流量费用(元)  |
 |:-:					|:-:												|

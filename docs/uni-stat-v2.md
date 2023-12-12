@@ -1408,8 +1408,7 @@ const db = uniCloud.database()
 db.collection('uni-stat-event-logs')
 ```
 
-不管是新上报的数据，还是[opendb](https://uniapp.dcloud.net.cn/uniCloud/opendb.html)的数据、或者开发者自己的业务数据库里的数据，都可以自己编写报表进行统计分析。
-Whether it is the newly reported data, the data of [opendb](https://uniapp.dcloud.net.cn/uniCloud/opendb.html), or the data in the developer's own business database, you can write your own report Statistical Analysis.
+不管是新上报的数据，还是[opendb](https://doc.dcloud.net.cn/uniCloud/opendb.html)的数据、或者开发者自己的业务数据库里的数据，都可以自己编写报表进行统计分析。
 
 与普通uni-app页面一样，新建页面，编写代码。
 Like ordinary uni-app pages, create a new page and write code.
@@ -1488,8 +1487,7 @@ exports.main = async (event, context) => {
 近期，uniCloud阿里云版开始正式商用，部分开发者对基于uniCloud的`uni统计`等云端一体业务，开始纠结，不清楚这些业务预计会花费多少钱，不清楚相比传统服务器而言，何种方案性价比更好。
 Recently, the uniCloud Alibaba Cloud version has been officially commercialized. Some developers have begun to struggle with cloud-integrated services such as `uni statistics' based on uniCloud. They don't know how much these services are expected to cost. The program is more cost-effective.
 
-本文尝试算细账、算总账，以阿里云[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，详细预测`uni统计`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择，无忧开发。
-This article tries to calculate the detailed accounts and the general ledger. Taking Aliyun [pay-as-you-go](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay) as an example, the detailed prediction of `uni statistics` will be Resource consumption and corresponding costs under different user scales help you choose wisely and develop worry-free.
+本文尝试算细账、算总账，以阿里云[按量计费](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，详细预测`uni统计`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择，无忧开发。
 
 本文主要分为三个部分：
 This article is mainly divided into three parts:
@@ -1528,8 +1526,7 @@ Next, we conduct cost assessments for different resources.
 启用`uni统计`后，你的每一个在线用户默认每10秒会请求一次`uni-stat-receiver`云函数（如果你的日活在1万以上，可以改成60秒，可以减少费用。时间间隔可在manifest.json内设置，如果用户一直停留在一个页面，那么此时不会重复上报）
 After enabling `uni statistics`, each of your online users will request the `uni-stat-receiver` cloud function every 10 seconds by default (if your DAU is more than 10,000, you can change it to 60 seconds, which can reduce the cost. Time The interval can be set in manifest.json, if the user stays on one page, it will not be reported repeatedly)
 
-我们按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)列出的按量计费规则，计算一下云函数的资源消耗。
-Let's calculate the resource consumption of cloud functions according to the pay-as-you-go rules listed on [uniCloud official website](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay).
+我们按照[uniCloud官网](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)列出的按量计费规则，计算一下云函数的资源消耗。
 
 |资源分类			|资源细项							|售价（元）	|
 |Resource classification |Resource details |Price (yuan) |
@@ -1661,8 +1658,7 @@ Since the `uni-stat-cron` cloud function only runs 24 times a day regardless of 
 ### 云数据库@cost-db
 ### cloud database @cost-db
 
-按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，云数据库费用 = `容量费用 + 读操作次数费用 + 写操作次数费用`，其中：
-According to [uniCloud official website](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay), cloud database fee = `capacity fee + read operation fee + write operation fee', where :
+按照[uniCloud官网](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，云数据库费用 = `容量费用 + 读操作次数费用 + 写操作次数费用`，其中：
 
 - 容量费用：数据库存储容量（单位为G） * 0.07
 - Capacity fee: database storage capacity (in G) * 0.07
@@ -1744,8 +1740,7 @@ It can be seen that when the daily activity is lower than 100,000, the cost redu
 `uni统计`需要和`uni-admin`配合使用，`uni-admin`需要部署在前端网页托管中。`uni-admin`主要是管理员使用，使用频次较少，流量也较低。
 `uni statistics` needs to be used in conjunction with `uni-admin`, and `uni-admin` needs to be deployed in the front-end web hosting. `uni-admin` is mainly used by administrators, with less frequent use and lower traffic.
 
-按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，前端网页托管费用 = `容量费 + 流量费`。
-According to [uniCloud official website](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay), the front-end web hosting fee = `capacity fee + traffic fee`.
+按照[uniCloud官网](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，前端网页托管费用 = `容量费 + 流量费`。
 
 #### 容量费
 #### Capacity Fee
@@ -1912,8 +1907,7 @@ Answer: Generally, you do not need to configure it yourself, but if the time-out
 
 ### 4. 如何创建或授权`uni统计`运营管理员账号
 
-答：参考[uni-admin 给系统创建多个登录账户并设置不同的权限](https://uniapp.dcloud.net.cn/uniCloud/admin.html#mutiladmin)
-A: Refer to [uni-admin creates multiple login accounts for the system and sets different permissions](https://uniapp.dcloud.net.cn/uniCloud/admin.html#mutiladmin)
+答：参考[uni-admin 给系统创建多个登录账户并设置不同的权限](https://doc.dcloud.net.cn/uniCloud/admin.html#mutiladmin)
 
 ### 5. 为什么总设备数比活跃设备数少？
 
@@ -1969,10 +1963,6 @@ Business App and admin are 2 projects. The business app is the collection end, a
 ## References
 
 不掌握如下文档，很难对 `uni统计2.0` 吃透和做二次开发
-Without mastering the following documents, it is difficult to understand and do secondary development of `uni statistics 2.0`
-- uni-admin文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/admin.html)
-- uni-admin documentation: [see details](https://uniapp.dcloud.net.cn/uniCloud/admin.html)
-- uni-id文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html)
-- uni-id documentation: [see details](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html)
-- opendb文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/opendb.html)
-- opendb documentation: [see details](https://uniapp.dcloud.net.cn/uniCloud/opendb.html)
+- uni-admin文档：[详见](https://doc.dcloud.net.cn/uniCloud/admin.html)
+- uni-id文档：[详见](https://doc.dcloud.net.cn/uniCloud/uni-id.html)
+- opendb文档：[详见](https://doc.dcloud.net.cn/uniCloud/opendb.html)

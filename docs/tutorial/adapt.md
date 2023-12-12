@@ -189,8 +189,7 @@ LeftWindow is more suitable for placing the navigation page. If there are many t
 leftWindow除了适用于手机应用适配大屏，也适用于重新开发的PC应用，尤其是PC Admin管理控制台。
 LeftWindow is not only suitable for mobile phone applications to be adapted to larger screen, but also suitable for redeveloping the PC applications, especially PC Admin management console.
 
-DCloud官方基于uni-app的pc版，推出了unicloud Admin：[https://uniapp.dcloud.net.cn/uniCloud/admin](https://uniapp.dcloud.net.cn/uniCloud/admin)
-DCloud officially launched unicloud Admin based on the pc version of uni-app: [https://uniapp.dcloud.net.cn/uniCloud/admin](https://uniapp.dcloud.net.cn/uniCloud/admin)
+DCloud官方基于uni-app的pc版，推出了unicloud Admin：[https://doc.dcloud.net.cn/uniCloud/admin](https://doc.dcloud.net.cn/uniCloud/admin)
 
 目前的leftWindow、rightWindow、topWindow 只支持web端。计划后续在Pad App上实现该配置。小程序无法支持该配置。
 The current leftWindow, rightWindow, and topWindow only support the web side. It is planned to implement this configuration on the Pad App in the future. The applet cannot support this configuration.

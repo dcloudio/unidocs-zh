@@ -30,7 +30,7 @@ uts adopts the same syntax specification as ts and supports most ES6 APIs.
 如需详细了解uts语法，另见[uts语法介绍](/uts/)
 
 uts语言，
-- 可以用来开发独立App，即[uni-app x](https://uniapp.dcloud.net.cn/uni-app-x/)；
+- 可以用来开发独立App，即[uni-app x](https://doc.dcloud.net.cn/uni-app-x/)；
 - 也可以用来开发插件，即uts插件。
 
 ### 什么是uts插件

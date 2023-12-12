@@ -115,7 +115,7 @@ number本身的使用很简单，但混入了平台专有数字类型后，会�
 **注意：**
 - Swift 中 Int 类型是根据平台动态的，在 32 位设备下等同于 Int32, 在64位设备下等同于 Int64。因此建议整型使用 Int, 除非必要，且在保证不会溢出的场景下才使用 Int32、Int64。
 - 同样，Swift 中的 UInt 类型也是根据平台动态的，在 32 位设备下等同于 UInt32, 在64位设备下等同于 UInt64。建议使用 UInt，非必要不使用 UInt32、UInt64。
-- Float16 在 iOS14.0 及以上系统上才能使用，使用时注意做系统版本号判断。[参考](../plugin/uts-uni-api.md#设备)
+- Float16 在 iOS14.0 及以上系统上才能使用，使用时注意做系统版本号判断。[参考](../../plugin/uts-uni-api.md#设备)
 - Float32 是 Float 的类型别名, 两者等价。
 - Float64 是 Double 的类型别名, 两者等价。
 
@@ -1563,7 +1563,7 @@ uvue文件中data中的json数据也涉及类型定义。此时注意：type定�
 
 大多数情况下，data里的json数据是空的，联网从服务器取到一段json字符串，然后再赋值并转type。
 
-由于篇幅较长，示例另见：[request教程](../uni-app-x/tutorial/request.md)
+由于篇幅较长，示例另见：[request教程](../tutorial/request.md)
 
 
 ### type 类型的遍历

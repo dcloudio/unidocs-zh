@@ -30,7 +30,7 @@ uts这门语言，有2个用途：
 
 从HBuilderX 3.9起，支持uni-app x项目。
 
-uni-app x 开发App时，输出的是纯原生的App（Android上就是kotlin的app），里面没有js引擎和webview。详见[uni-app x](../uni-app-x/)
+uni-app x 开发App时，输出的是纯原生的App（Android上就是kotlin的app），里面没有js引擎和webview。详见[uni-app x](../readme.md)
 
 也就是说，uts可以在uni-app中使用，也可以在uni-app x中使用。
 
@@ -104,7 +104,7 @@ str = "hello world"; // 报错，不允许重新赋值
 
 ```ts
 function test(score: number): boolean {
-	return (score>=60) 
+	return (score>=60)
 }
 test(61) // 返回true
 ```

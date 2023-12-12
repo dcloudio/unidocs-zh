@@ -86,4 +86,4 @@ function testArray<T extends Array<unknown>>(arg: T): T {
 
 > HBuilderX 3.9.0+ 支持通过特殊方式将泛型类型作为值使用（暂未开放），方法可以根据传入来动态决定返回类型。
 >
-> 这个未开放的泛型用法最常用的是在request api里，[详见](../uni-app-x/tutorial/request.md)
+> 这个未开放的泛型用法最常用的是在request api里，[详见](../tutorial/request.md)

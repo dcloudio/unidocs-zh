@@ -14,16 +14,14 @@ uni统计2 是开源、全端、云端一体、更适合uni-app的统计平台�
 体验系统：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)
 Experience system: [https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)
 
-注：uni统计内置在[uni-admin](/uniCloud/admin)中，体验系统的数据会定期重置。
-Note: uni statistics are built in [uni-admin](/uniCloud/admin), and the data of the experience system will be reset periodically.
+注：uni统计内置在[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)中，体验系统的数据会定期重置。
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/admin3.png)
 
 ## 产品特色
 ## feature of product
 
-无需开发，在`manifest`的 `uni统计` 中打勾并发行，在[uniCloud](/uniCloud/)服务空间部署[uni-admin](/uniCloud/admin)，即可查看报表。
-There is no need to develop, just tick and publish in the `uni statistics` of `manifest`, deploy [uni-admin](/uniCloud/admin) in the [uniCloud](/uniCloud/) service space, and you can view the report.
+无需开发，在`manifest`的 `uni统计` 中打勾并发行，在[uniCloud](https://doc.dcloud.net.cn/uniCloud/)服务空间部署[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)，即可查看报表。
 
 同时开发者也可以自定义打点数据、自定义展现报表。
 At the same time, developers can also customize the management data and customize the display report.
@@ -103,15 +101,12 @@ uni statistics goes deep into the bottom layer of uni-app and uniCloud framework
 - 兼容uni-app渠道包打包体系，自动识别渠道包
 - Compatible with the uni-app channel package packaging system, automatically identifying the channel package
 - 基于uni-id账户体系，自动出具注册用户（不是设备）的新增、活跃、留存报表
-- Based on the uni-id account system, automatically issue new, active and retained reports of registered users (not devices)
-- 兼容uniCloud [opendb规范](/uniCloud/opendb)，从服务器端统计各项数据
-- Compatible with uniCloud [opendb specification](/uniCloud/opendb), statistics various data from the server
+- 兼容uniCloud [opendb规范](https://doc.dcloud.net.cn/uniCloud/opendb)，从服务器端统计各项数据
 
 **7. 开放生态**
 **7. Open Ecosystem**
 
-uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
-The open source of uni statistics and based on the plug-in specification of [uni-admin](/uniCloud/admin) provides a plug-in mechanism, and more plug-in authors will provide various statistical plug-ins (such as e-commerce statistics, content statistics, etc.). See [Plugin Market](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
+uni统计的开源且基于[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
 **DCloud非常重视数据驱动开发者业务的增长，近期联合专业的大数据服务商<a href="https://www.sensorsdata.cn/" target="_blank">神策</a>和<a href="https://tj.aldwx.com/" target="_blank">阿拉丁</a>共同完善Uni统计2.0的产品模块和生态建设。
 **DCloud attaches great importance to the growth of data-driven developer business. Recently, it has cooperated with professional big data service providers <a href="https://www.sensorsdata.cn/" target="_blank">Sensors</a> and <a href="https://tj.aldwx.com/" target="_blank">Aladdin</a> will jointly improve the product modules and ecological construction of Uni Statistics 2.0.
@@ -314,7 +309,7 @@ In debug mode, the key information of the reported data will be printed to the c
 	usv: "0.0.1"
 	ut: "h5"
 	// ...
-} 
+}
 === 采集结束 ===
 
 // 数据上报成功
@@ -471,7 +466,7 @@ Before enabling the redis cache, you need to confirm whether the redis service h
 3. 重新上传部署数据`上报数据接收器（uni-stat-receiver）`、`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
 3. Re-upload the deployment data `Report data receiver (uni-stat-receiver)`, `Scheduled task cloud function (uni-stat-cron)` and `Configuration center (uni-config-center)`.
 
-::: preview 
+::: preview
 > 配置uni-stat-receiver的redis拓展库
 > Configure the redis extension library of uni-stat-receiver
 ``` javascript
@@ -486,7 +481,7 @@ Before enabling the redis cache, you need to confirm whether the redis service h
 		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容。如拷贝此配置项到package.json文件，切记去除注释。
 	}
 }
-``` 
+```
 > 配置uni-stat-cron的redis拓展库
 > Configure the redis extension library of uni-stat-cron
 ``` javascript
@@ -541,8 +536,7 @@ In order for the data collected by the client app to be correctly received and c
 
 ![关联前后台数据](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.08.51.png)
 
-### 错误解析 <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error 
-### Error parsing <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error
+### 错误解析 <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error
 
 > 此功能只支持 web平台、App平台、微信小程序平台
 > This function only supports web platform, App platform, WeChat MiniApp platform
@@ -1037,7 +1031,7 @@ In order to highlight the goal, only the folders and files related to uni statis
 ├── components                         # 自定义组件
 ├── js_sdk                             # js sdk
 │   └── uni-stat                       # uni统计相关工具方法
-│       └── util.js                      
+│       └── util.js
 ├── pages                              # 页面
 │   └── uni-stat                       # uni统计页面
 │       │── channel                    # 渠道（app）
@@ -1045,71 +1039,71 @@ In order to highlight the goal, only the folders and files related to uni statis
 │       │   └── fieldsMap.js           # 字段配置（下同）
 │       │── device                     # 设备统计
 │       │   │── activity               # 渠道/场景分析
-│       │   │   │── activity.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── activity.vue
+│       │   │   └── fieldsMap.js
 │       │   │── comparison             # 平台对比
-│       │   │   │── comparison.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── comparison.vue
+│       │   │   └── fieldsMap.js
 │       │   │── overview               # 今日概览
-│       │   │   │── overview.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── overview.vue
+│       │   │   └── fieldsMap.js
 │       │   │── retention              # 留存
-│       │   │   │── retention.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── retention.vue
+│       │   │   └── fieldsMap.js
 │       │   │── stickiness             # 粘性
-│       │   │   │── stickiness.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── stickiness.vue
+│       │   │   └── fieldsMap.js
 │       │   └── trend                  # 趋势分析
-│       │       │── trend.vue           
-│       │       └── fieldsMap.js        
+│       │       │── trend.vue
+│       │       └── fieldsMap.js
 │       │── error                      # 错误分析
-│       │   │── error.vue             
-│       │   └── fieldsMap.js            
+│       │   │── error.vue
+│       │   └── fieldsMap.js
 │       │── event                       # 事件分析
-│       │   │── event.vue             
-│       │   └── fieldsMap.js            
+│       │   │── event.vue
+│       │   └── fieldsMap.js
 │       │── index                       # 统计首页
-│       │   │── index.vue             
-│       │   └── fieldsMap.js            
+│       │   │── index.vue
+│       │   └── fieldsMap.js
 │       │── page-ent                    # 入口页
-│       │   │── page-ent.vue             
-│       │   └── fieldsMap.js            
+│       │   │── page-ent.vue
+│       │   └── fieldsMap.js
 │       │── page-res                    # 受访页
-│       │   │── page-res.vue             
-│       │   └── fieldsMap.js            
+│       │   │── page-res.vue
+│       │   └── fieldsMap.js
 │       │── pay-order                   # 支付统计
 │           │── funnel                  # 支付/漏斗分析
-│           │   │── funnel.vue      
-│           │   └── fieldsMap.js              
+│           │   │── funnel.vue
+│           │   └── fieldsMap.js
 │           │── list                    # 支付/订单明细
-│           │   │── list.vue      
+│           │   │── list.vue
 │           │── overview                # 支付/订单概况
-│           │   │── overview.vue      
-│           │   └── fieldsMap.js      
+│           │   │── overview.vue
+│           │   └── fieldsMap.js
 │           └── ranking                 # 支付/用户价值排行
-│               └── ranking.vue           
+│               └── ranking.vue
 │       │── scene                       # 场景值（小程序）
-│       │   │── scene.vue             
-│       │   └── fieldsMap.js            
+│       │   │── scene.vue
+│       │   └── fieldsMap.js
 │       └── user                        # 用户统计
 │           │── activity                # 渠道/场景分析
-│           │   │── activity.vue      
-│           │   └── fieldsMap.js    
+│           │   │── activity.vue
+│           │   └── fieldsMap.js
 │           │── comparison              # 平台对比
-│           │   │── comparison.vue      
-│           │   └── fieldsMap.js    
+│           │   │── comparison.vue
+│           │   └── fieldsMap.js
 │           │── overview                # 今日概览
-│           │   │── overview.vue      
-│           │   └── fieldsMap.js    
+│           │   │── overview.vue
+│           │   └── fieldsMap.js
 │           │── retention               # 留存
-│           │   │── retention.vue      
-│           │   └── fieldsMap.js    
+│           │   │── retention.vue
+│           │   └── fieldsMap.js
 │           │── stickiness              # 粘性
-│           │   │── stickiness.vue      
-│           │   └── fieldsMap.js    
+│           │   │── stickiness.vue
+│           │   └── fieldsMap.js
 │           └── trend                   # 趋势分析
-│               │── trend.vue           
-│               └── fieldsMap.js        
+│               │── trend.vue
+│               └── fieldsMap.js
 ├── static
 ├── store
 ├── admin.config.js
@@ -1373,8 +1367,7 @@ The currently configurable log types are:
 uni统计提供了基础的数据报表，如不能达到预期的数据采集，可以在客户端通过 `uni.report(eventKey,param)`  自由上报数据 ，并通过 uni-admin 增加页面 ，自行统计数据。
 uni statistics provides basic data reports. If the expected data collection cannot be achieved, you can freely report data through `uni.report(eventKey,param)` on the client side, and add pages through uni-admin to collect statistics by yourself.
 
-### 前端 uni.report 基础用法 
-### Basic usage of front-end uni.report
+### 前端 uni.report 基础用法
 
 这里列出 `uni.report(eventKey,param)` 的基本用法，完整`API`查看：[详情](https://uniapp.dcloud.io/api/other/report.html)
 The basic usage of `uni.report(eventKey,param)` is listed here, the complete `API` view: [Details](https://uniapp.dcloud.io/api/other/report.html)
@@ -1465,7 +1458,7 @@ exports.main = async (event, context) => {
 			//老版本表的数据
 			// data of the old version table
 			const oldVersionData = oldVersionDataRes.data[oldKey]
-			
+
 			//组装数据
 			//Assemble data
 			const newVersionData = {
@@ -1481,7 +1474,7 @@ exports.main = async (event, context) => {
 			await db.collection('opendb-app-versions').add(newVersionData)
 		}
 	}
-	
+
 	return true
 };
 ```
@@ -1611,9 +1604,8 @@ According to this, the monthly cost can be calculated as: 0.0032 * 30 ≈ 0.1, t
 同理，我们可推导出日活为1000、10000、10万的App，其`uni-stat-receiver`云函数每月费用如下表：
 In the same way, we can deduce that for apps with 1,000, 10,000, and 100,000 daily activities, the monthly cost of the `uni-stat-receiver` cloud function is as follows:
 
-|  日活	| 资源使用量计费（元/日）	|	调用次数计费（元/日）	|  出网流量计费（元/日）	| 日合计（元/日）	|  月合计（元/月）	|	
-| Daily Activity | Resource Usage Billing (Yuan/Day) | Call Times Billing (Yuan/Day) | Outbound Traffic Billing (Yuan/Day) | Daily Total (Yuan/Day) | Monthly Total (Yuan/Month) |
-| :----:| :-----------------:		|:-------------------:|:--------------------:	|:----------:		|:---------:			| 
+|  日活	| 资源使用量计费（元/日）	|	调用次数计费（元/日）	|  出网流量计费（元/日）	| 日合计（元/日）	|  月合计（元/月）	|
+| :----:| :-----------------:		|:-------------------:|:--------------------:	|:----------:		|:---------:			|
 |   100 |			0.001382					|			0.00133					|  0.000534							|    0.0032			|    0.10 				|
 |  1000	|			0.01382						|			0.0133					|  0.00534							|    0.0325			|    0.98  				|
 | 10000	|			0.1382						|			0.133						|  0.0534								|    0.3246			|    9.74					|
@@ -1657,8 +1649,7 @@ According to this, its monthly cost can be calculated as: 0.0014 * 30 ≈ 0.04, 
 In the same way, we can deduce that for apps with 1,000, 10,000, and 100,000 daily activities, the monthly cost of the `uni-stat-receiver` cloud function is as follows:
 
 |  日活	|  平均耗时（秒）	| 资源使用量计费（元/日）	|  调用次数计费（元/日）	|  出网流量计费（元/日）	|   日合计（元/日）	|  月合计（元/月）	|
-| Daily activity | Average time spent (seconds) | Resource usage billing (yuan/day) | Call times billing (yuan/day) | Outbound traffic billing (yuan/day) | Daily total (yuan/day) | Monthly total (yuan/month) |
-| :----:| :------:			|:-------------------:	|:-------------------:	|:-------------------:	|:---------:			| :--------:			| 
+| :----:| :------:			|:-------------------:	|:-------------------:	|:-------------------:	|:---------:			| :--------:			|
 |   100	|   1						|      0.001327					|       0.00003192			|  0										|   0.0014				|  0.04						|
 |  1000	|   3						|      0.003981					|       0.00003192			|  0										|   0.0040				|  0.12						|
 | 10000	|  30						|      0.039813					|       0.00003192			|  0										|   0.0398				|  1.19						|
@@ -1774,8 +1765,7 @@ The administrator logs in to `uni-admin` and browses the statistical data on the
 每月费用不到1分钱，可忽略。
 The monthly fee is less than 1 cent, which can be ignored.
 
-### 费用合并@cost-total 
-### Cost Consolidation @cost-total
+### 费用合并@cost-total
 
 细项对比完了，我们来合并看看，使用`uni统计`，每月到底需要花多少钱。
 After comparing the detailed items, let's combine them to see how much they need to spend per month using `uni statistics`.
@@ -1784,11 +1774,8 @@ After comparing the detailed items, let's combine them to see how much they need
 |Daily Active |Cloud Function (RMB/month) |Cloud Database (RMB/month) |Front-end Web Hosting (RMB/month) |Monthly Total (RMB/month) |
 | :--------:| :--------:		|:-----------:		|:-----------------:	|:---------------:|
 |   100	    |   0.14	  		|   0.42					|可忽略不计						|   0.56					|
-| 100 | 0.14 | 0.42 | Negligible | 0.56 |
-|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					| 
-| 1000 | 1.10 | 4.24 | Negligible | 5.34 |
-| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|  
-| 10000 | 10.93 | 42.38 | Negligible | 53.31 |
+|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					|
+| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|
 |100000		  | 100.97	 			| 423.85					|可忽略不计						| 524.82					|
 | 100000 | 100.97 | 423.85 | Negligible | 524.82 |
 
@@ -1862,11 +1849,8 @@ Looking back at the calculation table just now, assuming that the DAU is 10,000,
 |Daily Active |Cloud Function (RMB/month) |Cloud Database (RMB/month) |Front-end Web Hosting (RMB/month) |Monthly Total (RMB/month) |
 | :--------:| :--------:		|:-----------:		|:-----------------:	|:---------------:|
 |   100	    |   0.14	  		|   0.42					|可忽略不计						|   0.56					|
-| 100 | 0.14 | 0.42 | Negligible | 0.56 |
-|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					| 
-| 1000 | 1.10 | 4.24 | Negligible | 5.34 |
-| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|  
-| 10000 | 10.93 | 42.38 | Negligible | 53.31 |
+|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					|
+| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|
 |100000		  | 100.97	 			| 423.85					|可忽略不计						| 524.82					|
 | 100000 | 100.97 | 423.85 | Negligible | 524.82 |
 

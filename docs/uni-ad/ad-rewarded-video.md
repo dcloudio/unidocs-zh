@@ -619,14 +619,14 @@ sign = sha256(secret:transid)
 
 ### 微信小程序说明@callbackweixin
 
-3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id/summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
+3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
 
 
 #### 接入流程
 
-1. 项目使用了 [uni-id-co](/uniCloud/uni-id/summary.md#save-user-token) 并更新到 1.0.8+
-2. 使用 [uni-open-bridge](/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
-3. 配置 [安全网络](/uniCloud/secure-network.html)
+1. 项目使用了 [uni-id-co](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token) 并更新到 1.0.8+
+2. 使用 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
+3. 配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 
 
 #### 安全注意
@@ -636,7 +636,7 @@ sign = sha256(secret:transid)
 为了提升安全性，建议所有使用激励视频的开发者都要做如下工作来加强保护：
 1. 前端代码加密。涉及激励相关的，在manifest中配置好要加密的代码文件，打包后会自动加密相应文件。[详见](https://ask.dcloud.net.cn/article/36437)
 2. apk加固。即便前端代码加密，原生层引擎的java代码仍然可能被反编译，需要对apk加固。市面上很多加固服务，比如360加固、爱加密加固均可以自行选择。
-3. 使用uni云端一体安全网络，防止伪造客户端攻击。[详见](/uniCloud/secure-network.md)
+3. 使用uni云端一体安全网络，防止伪造客户端攻击。[详见](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 3. 使用如下安全类API，防止客户端被篡改
 - plus.navigator.getSignature 获取应用签名标识。结合在服务器端存放证书信息，可比对判断App的证书是否被重签 [规范](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature)
 - plus.navigator.isSimulator 判断App是否运行在模拟器环境 [规范](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isSimulator)

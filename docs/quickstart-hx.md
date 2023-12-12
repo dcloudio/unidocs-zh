@@ -59,19 +59,17 @@ If developers are accustomed to projects in node mode and are confused about the
 	<div align=center>
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/menurunapp.png"/>
 	</div>
-	
+
 	- 如手机或模拟器无法识别，请点击[常见故障排查指南](https://uniapp.dcloud.net.cn/tutorial/run/run-app-faq.html)。
 	- If the mobile phone or emulator cannot be recognized, please click [Common Troubleshooting Guide](https://uniapp.dcloud.net.cn/tutorial/run/run-app-faq.html).
   - 如需运行在苹果手机真机上，注意需使用自定义基座。[详见](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
-  - If you want to run on a real Apple phone, please note that you need to use a custom dock. [See details](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
-<!-- @ifdef ZH -->
 3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。
     <br/>
     <div align=center>
     	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/menurunminiapp.png"/>
     </div>
-    
+
     **注意**：如果是第一次使用，需要先配置小程序ide的相关路径，才能运行成功。如下图，需在输入框输入微信开发者工具的安装路径。
     <br/>
     <div align=center>
@@ -79,7 +77,7 @@ If developers are accustomed to projects in node mode and are confused about the
     </div>
 
     **注意**：微信开发者工具需要开启服务端口 在微信工具的设置->安全中。
-		
+
 4. 在支付宝小程序开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 支付宝小程序开发者工具，即可在支付宝小程序开发者工具里面体验uni-app。
     <br/>
     <div align=center>
@@ -164,9 +162,7 @@ iOS App packaging requires a certificate from Apple.
 **注意**
 **Notice**
 - `history` 模式发行需要后台配置支持，详见：[history 模式的后端配置](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
-- The release of `history` mode requires back-end configuration support. For details, please refer to [Back-end configuration of history mode](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90).
-- 打包后，推荐使用[前端网页托管服务](/uniCloud/hosting)，一键上传，自带CDN加速，无需购买虚拟机，无需安装nginx等；
-- After packaging, it is recommended to use [front-end web hosting service](/uniCloud/hosting), one-click upload, built-in CDN acceleration, no need to purchase a virtual machine, no need to install nginx, etc.;
+- 打包后，推荐使用[前端网页托管服务](https://doc.dcloud.net.cn/uniCloud/hosting)，一键上传，自带CDN加速，无需购买虚拟机，无需安装nginx等；
 - 若使用传统服务器部署，建议在服务器端开启 `gzip` 压缩。参考网上的分享：https://juejin.im/post/5af003286fb9a07aac24611b
 - If using traditional server deployment, it is recommended to enable `gzip` compression on the server side. Refer to the online sharing: https://juejin.im/post/5af003286fb9a07aac24611b
 

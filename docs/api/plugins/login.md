@@ -5,7 +5,7 @@ Log in
 uni.login是一个客户端API，统一封装了各个平台的各种常见的登录方式，包括App手机号一键登陆、三方登录（微信、微博、QQ、Apple、google、facebook）、各家小程序内置登录。
 uni.login is a client API that unifies and encapsulates various common login methods of various platforms, including one-click login with App mobile number, three-party login (WeChat, Weibo, QQ, Apple, Google, Facebook), various MiniApp built-in login.
 
-除了前端API，DCloud还提供了[uni-id](/uniCloud/uni-id/summary.md)，这是一个云端一体的、完整的、账户开源框架。不仅包括客户端API，还包括前端页面、服务器代码、管理后台等所有与登录账户有关的服务，包括短信验证码、密码加密存储、忘记密码、头像更新等所有常见账户相关功能。
+除了前端API，DCloud还提供了[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)，这是一个云端一体的、完整的、账户开源框架。不仅包括客户端API，还包括前端页面、服务器代码、管理后台等所有与登录账户有关的服务，包括短信验证码、密码加密存储、忘记密码、头像更新等所有常见账户相关功能。
 
 **平台差异说明**
 **Platform Difference Description**
@@ -50,7 +50,7 @@ For most login methods, you need to apply for the activation of related services
 * [Jingdong MiniApp login](https://mp-docs.jd.com/api/openInterface/login.html)
 
 #### web平台支持的登录方式
-Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](/uniCloud/uni-id/summary.md)
+Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)
 
 如不使用uni-id，微信内嵌浏览器运行H5版时，可通过js sdk实现微信登录，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
 If you don’t use uni-id, when the WeChat embedded browser runs the H5 version, you can log in to WeChat through js sdk, you need to introduce a separate js, [see details](https://ask.dcloud.net.cn/article /35380)
@@ -343,8 +343,7 @@ Get user information. An authorization window will pop up for each request, and 
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|
 
-**注意：** 
-**Notice:** 
+**注意：**
 
 - 如业务需获取用户头像昵称，可以使用[「头像昵称填写能力」](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/userProfile.html)（基础库 2.21.2 版本开始支持，覆盖iOS与安卓微信 8.0.16 以上版本）。
 - If the business needs to obtain user avatar nicknames, you can use ["Avatar Nickname Filling Ability"](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/userProfile.html) (Basic Library 2.21 .2 version starts to support, covering iOS and Android WeChat version 8.0.16 and above).

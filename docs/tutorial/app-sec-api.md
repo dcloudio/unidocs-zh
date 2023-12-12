@@ -3,10 +3,10 @@
 uni-app和5+App提供了一批API，获取客户端一些与安全有关的信息。
 
 ::: warning
-更推荐使用[uni云端一体安全网络](/uniCloud/secure-network.md)，使用安全网络后将无需在使用本章节提供的API。
+更推荐使用[uni云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)，使用安全网络后将无需在使用本章节提供的API。
 :::
 
-### getSignature  
+### getSignature
 [plus.navigator.getSignature](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature)用于获取应用签名标识，可以判断App是否被重新签名。
 [plus.navigator.getSignature](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature) is used to obtain the signature of the app, which can determine whether the app has been re-signed.
 
@@ -51,7 +51,7 @@ The uni-app project can be found in App.vue's application lifecycle [onLaunch](h
 > Tip: In order to prevent the js verification code from being decompiled and tampered with, it is recommended to put the signature verification code in a separate js file and configure [js/nvue file native confusion encryption](app-sec-confusion), or use apk for reinforcement processing
 
 
-### isSimulator  
+### isSimulator
 [plus.navigator.isSimulator](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isSimulator)用于判断当前应用是否运行在模拟器中。
 [plus.navigator.isSimulator](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isSimulator) is used to determine whether the current application is running in the simulator.
 
@@ -67,8 +67,7 @@ The following example is in App.vue's application lifecycle [onLaunch](https://u
   onLaunch: function(inf) {
       console.log('App Launch');
 // #ifdef APP-PLUS
-      // 模拟器检验  
-      // emulator check
+      // 模拟器检验
       if(plus.navigator.isSimulator()){
           //弹出提示框
           // pop up prompt box
@@ -91,7 +90,7 @@ In actual projects, this information can be submitted to the business server for
 > Tip: In order to prevent the js verification code from being decompiled and tampered with, it is recommended to put the signature verification code in a separate js file and configure [js/nvue file native confusion encryption](app-sec-confusion), or use apk for reinforcement processing
 
 
-### isSetProxy  
+### isSetProxy
 [plus.networkinfo.isSetProxy](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy)用于判断当前应用网络环境是否设置代理。
 [plus.networkinfo.isSetProxy](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy) is used to determine whether a proxy is set in the current application network environment.
 
@@ -122,8 +121,7 @@ You can submit whether the current network environment uses a proxy when the use
 [plus.navigator.isRoot](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isRoot)用于判断当前应用运行的设备是否被root破解。
 [plus.navigator.isRoot](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isRoot) is used to determine whether the device running the current application is rooted.
 
-> 注： 仅iOS平台支持，Android平台暂不支持  
-> Note: Only supported by iOS platform, not supported by Android platform
+> 注： 仅iOS平台支持，Android平台暂不支持
 
 root破解（也叫越狱）是利用iOS系统的漏洞来破解系统安全机制，让任何应用可以获得系统级权限，从而对系统可以进行更灵活的自定义修改，譬如说修改字体、修改主题以及使用一些插件等。iOS系统设计了沙盒机制，限制应用只能使用自身的数据，root破解后则应用可以读取修改其它任何应用的数据，可能导致用户敏感信息泄露，甚至修改其它应用的数据或代码，恶意攻击正常App。
 Root cracking (also called jailbreaking) is to use the vulnerabilities of the iOS system to crack the system security mechanism, so that any application can obtain system-level permissions, so that more flexible custom modifications can be made to the system, such as modifying fonts, modifying themes, and using some plug-ins etc. The iOS system has designed a sandbox mechanism to limit the application to only use its own data. After root cracking, the application can read and modify the data of any other application, which may lead to the leakage of user sensitive information, or even modify the data or code of other applications, malicious attacks. Normal App.
@@ -135,8 +133,7 @@ It is recommended to judge when the application is started. If it is running in 
   onLaunch: function(inf) {
       console.log('App Launch');
 // #ifdef APP-PLUS
-      //ROOT检验  
-      //ROOT test
+      //ROOT检验
       if(plus.navigator.isRoot()){
           //弹出提示框
           // pop up prompt box

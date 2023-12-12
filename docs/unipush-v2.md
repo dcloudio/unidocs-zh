@@ -3,28 +3,21 @@
 > 本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0，另见：[uni-push1.0](unipush-v1.html)
 
 # 应用场景
-# application scenarios
-以下功能可以用uni-push 实现  
-The following functions can be implemented with uni-push
-- 用户消息通知  
-- User message notification
+以下功能可以用uni-push 实现
+- 用户消息通知
 当 APP 用户相关状态或者系统功能状态变化时（如用户订单通知、交易提醒、物流通知、升级提醒、社交互动提醒等），可对用户进行及时告知，或者促使用户完成特定操作。
 When the relevant status of APP users or the status of system functions changes (such as user order notifications, transaction reminders, logistics notifications, upgrade reminders, social interaction reminders, etc.), users can be notified in time, or users can be prompted to complete specific operations.
 
-- 离线语音播报  
-- Offline voice broadcast
+- 离线语音播报
 它也是一种用户消息推送，实现原理其实是自定义通知提醒铃声
 It is also a user message push, the implementation principle is actually to customize the notification reminder ringtone
 
-- 营销促活通知  
-- Marketing promotion notice
+- 营销促活通知
 在日常营销推广、促销活动等场景下（如双11大促、产品上新、重要资讯等），APP可对目标用户进行定向通知栏消息+应用内消息推送，吸引用户参与活动，提升日活。
 In daily marketing promotion, promotional activities and other scenarios (such as the Double 11 promotion, new product launches, important information, etc.), the APP can send targeted notifications to target users + push in-app messages to attract users to participate in activities and improve daily activities.
 
-- 基于uniCloud的IM、聊天、客服、棋牌游戏交互等  
-- IM, chat, customer service, chess and card game interaction based on uniCloud
-例如：DCloud基于`uni-push2`开发并开源了`uni-im`详情:[https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)  
-For example: DCloud developed and open-sourced `uni-im` based on `uni-push2` Details: [https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud. net.cn/uniCloud/uni-im.html)
+- 基于uniCloud的IM、聊天、客服、棋牌游戏交互等
+例如：DCloud基于`uni-push2`开发并开源了`uni-im`详情:[https://uniapp.dcloud.net.cn/uniCloud/uni-im.html](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
 另外棋牌游戏等，需要客户端被动接收消息的需求都可以用`uni-push`实现。
 In addition, chess and card games and other requirements that require the client to passively receive messages can be implemented with `uni-push`.
 
@@ -36,7 +29,7 @@ In addition, chess and card games and other requirements that require the client
 
 1. 客户端方面，`uni-push2`支持App、web、小程序。
   * App端，内置了苹果、华为、小米、OPPO、VIVO、魅族、谷歌FCM等手机厂商的系统推送和个推第三方推送
-  * 小程序端，内置了socket在线推送。如需模板消息/订阅消息，另见[uni-subscribemsg](/uniCloud/uni-subscribemsg.md)
+  * 小程序端，内置了socket在线推送。如需模板消息/订阅消息，另见[uni-subscribemsg](https://doc.dcloud.net.cn/uniCloud/uni-subscribemsg.html)
   * web端，内置了socket在线推送
   （uni-push1仅支持app，且app必须包含个推原生sdk。uni-push2在app端如不需要厂商推送，只需在线推送，无需集成个推原生sdk）
 2. 服务端方面，`uni-push2`支持uniCloud云端一体，无需再编写复杂代码轻松完成push。
@@ -45,7 +38,7 @@ In addition, chess and card games and other requirements that require the client
 3. uni-push also comes with a web console. You can also send pushes on web pages without writing code. The web console of uni-push1.0 is at [dev.dcloud.net.cn](https://dev.dcloud.net.cn). The web console of uni-push2.0 is open source and belongs to the uni-admin plugin [see details](https://ext.dcloud.net.cn/plugin?name=uni-push-admin).
 
 4. 如果你的项目由于特殊原因不能通过uniCloud的云函数使用uni-push2.0，你希望直接通过调用个推服务器推送消息。在这种情况下：
-- uni-app项目，需要使用老版的 [uni-push1.0](./unipush-v1.md) 。相关密钥获取方式：登录[开发者中心](https://dev.dcloud.net.cn)左侧菜单->`uni-push`->`uni-push 2.0（支持全端推送）`->`消息推送`->`应用配置`->`应用信息`  
+- uni-app项目，需要使用老版的 [uni-push1.0](./unipush-v1.md) 。相关密钥获取方式：登录[开发者中心](https://dev.dcloud.net.cn)左侧菜单->`uni-push`->`uni-push 2.0（支持全端推送）`->`消息推送`->`应用配置`->`应用信息`
 - uni-app-x 项目，虽然只能使用 uni-push2.0，但支持在[开发者中心](https://dev.dcloud.net.cn)左侧菜单-`uni-push`->`uni-push 2.0（支持全端推送）`-> `厂商推送设置` 在顶端注意事项中，点击获取个推的MasterSecret
 
 请注意，直接调用个推服务器进行推送可能需要更多的配置和操作步骤，具体请参考[调用个推服务器](./unipush-v1.md#request_getui)的相关文档。
@@ -116,11 +109,9 @@ Summarize the functions provided by `uni-push`:
 4. web平台，目前提供了下行socket通道，后续会提供webnotification的封装。当标签卡在后台时（注意不是关闭时），仍然可以在屏幕上弹出通知栏。
 4. The web platform currently provides downlink socket channels, and will provide webnotification encapsulation in the future. When the tab is stuck in the background (note not closed), the notification bar can still pop up on the screen.
 5. 快应用平台，目前提供了下行socket通道，后续会提供离线push的封装
-5. The fast application platform currently provides downlink socket channels, and will provide offline push packaging in the future
-6. 一个[uni-admin](/uniCloud/admin)插件，开源的web控制台，无需编程，可视化界面发送push消息 [详见](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)
-6. A [uni-admin](/uniCloud/admin) plug-in, an open source web console, no programming required, and a visual interface to send push messages [see details](https://ext.dcloud.net.cn/plugin?name =uni-push-admin)
+6. 一个[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)插件，开源的web控制台，无需编程，可视化界面发送push消息 [详见](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)
 
-在[uni-starter](/uniCloud/uni-starter)里，还提供了app push权限判断、申请、开关设置，搭配使用可以大量降低开发工作量。
+在[uni-starter](https://doc.dcloud.net.cn/uniCloud/uni-starter)里，还提供了app push权限判断、申请、开关设置，搭配使用可以大量降低开发工作量。
 
 注意：app申请创建通知栏消息、web申请弹出通知，均会由操作系统或浏览器自动弹窗询问用户是否同意。小程序下需要手机用户主动发起订阅行为，才能送达消息。
 Note: The operating system or browser will automatically pop up a window to ask the user whether to agree or not. Under the applet, the mobile phone user needs to actively initiate the subscription behavior before the message can be delivered.
@@ -131,8 +122,7 @@ Note: The operating system or browser will automatically pop up a window to ask 
 ## uni-push2.0 使用uniCloud产生的费用说明@cost
 ## uni-push2.0 Description of the cost generated by using uniCloud @cost
 
-uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而uniCloud价格很实惠：  
-uni-push itself is free of charge, and it needs to rely on uniCloud cloud service in actual use, and the price of uniCloud is very affordable:
+uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而uniCloud价格很实惠：
 - 调用10000次云函数仅需0.0133元
 - It only costs 0.0133 yuan to call cloud functions 10,000 times
 - 调用10000次数据库查询仅需0.015元
@@ -141,11 +131,9 @@ uni-push itself is free of charge, and it needs to rely on uniCloud cloud servic
 可见价格之低，几乎可以忽略不计。
 It can be seen that the price is so low that it is almost negligible.
 
-一次消息推送 = 1次云函数请求 + 最高3次数据库查询（最常用的基于user_id推送仅需一次查询，详情参考：[推送接口查库详解](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html#%E6%8E%A8%E9%80%81%E6%8E%A5%E5%8F%A3%E6%9F%A5%E5%BA%93%E8%AF%A6%E8%A7%A3) )  
-A message push = 1 cloud function request + up to 3 database queries (the most commonly used push based on user_id only requires one query, for details, please refer to: [Detailed Explanation of Push Interface Database Search](https://uniapp.dcloud.net.cn/ uniCloud/uni-cloud-push/mate.html#%E6%8E%A8%E9%80%81%E6%8E%A5%E5%8F%A3%E6%9F%A5%E5%BA%93%E8 %AF%A6%E8%A7%A3) )
+一次消息推送 = 1次云函数请求 + 最高3次数据库查询（最常用的基于user_id推送仅需一次查询，详情参考：[推送接口查库详解](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html#%E6%8E%A8%E9%80%81%E6%8E%A5%E5%8F%A3%E6%9F%A5%E5%BA%93%E8%AF%A6%E8%A7%A3) )
 
-即：最高(1 * 0.0133 + 3 * 0.015)/10000 = 0.00000583元/每次（注：给你的应用的所有注册用户群发消息算一次）  
-That is: the highest (1 * 0.0133 + 3 * 0.015)/10000 = 0.00000583 yuan / each time (note: sending group messages to all registered users of your application counts as one time)
+即：最高(1 * 0.0133 + 3 * 0.015)/10000 = 0.00000583元/每次（注：给你的应用的所有注册用户群发消息算一次）
 
 详细的计费参考：[阿里云版uniCloud按量计费文档](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)
 Detailed billing reference: [Aliyun version uniCloud pay-as-you-go document](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)
@@ -178,9 +166,8 @@ With uni-push, developers should no longer use other push schemes. However, we f
 	答：能部分替代。uni-push客户端接收消息的通讯协议属于websocket；但业务服务端向uniPush服务发送消息用的是http通讯协议，会有1-2秒的延时。需要超低延迟的应用场景，如多人交互远程画板不合适。但对于普通的im消息、聊天、通知都没有问题。
 	A: Partial replacement is possible. The communication protocol used by the uni-push client to receive messages belongs to websocket; however, the service server uses the HTTP communication protocol to send messages to the uniPush service, and there will be a delay of 1-2 seconds. Application scenarios that require ultra-low latency, such as multi-person interactive remote drawing boards, are not suitable. But there is no problem with normal im messages, chats, notifications.
 
-- 5+app和wap2app支持uni-push2.0吗？  
-- Do 5+app and wap2app support uni-push2.0?
-	
+- 5+app和wap2app支持uni-push2.0吗？
+
 	答：暂不支持。
 	A: Not currently supported.
 
@@ -188,9 +175,7 @@ With uni-push, developers should no longer use other push schemes. However, we f
     <br/><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/support.jpg" width="250"/>
 
 # 快速上手
-# Quick start
-## 第一步：开通  
-## Step 1: Activate
+## 第一步：开通
 uni-push产品有2个入口：
 uni-push products have 2 entries:
 1. 通过 HBuilderX(3.5.1及其以上版本)进入
@@ -199,11 +184,10 @@ uni-push products have 2 entries:
 	打开 HBuilderX，双击项目中的 “manifest.json” 文件，选择“App 模块配置”，向下找到“Push(消息推送)”，勾选后，点击 “uniPush” 下面的配置链接。如下图所示：
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220525104554.jpg)
 2. 通过开发者中心进入
-2. Enter through the developer center
-	
+
 	使用 HBuilder 账号登录 [开发者中心](https://dev.dcloud.net.cn) ，登录后
 	会进入“uniPush”-“Uni Push 2.0（支持全端推送）”-“应用信息”，点击“当前应用”选择要操作的应用。
-	
+
 以上两种方式均可进入uniPush 应用开通界面。如下图所示：
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush2-info.jpg)
 
@@ -244,8 +228,7 @@ After the activation is completed, you can still modify the above information he
 开通App的完整流程较多，但开通web和小程序的流程比较简单，即开即用。可以快速将uni-app项目运行到浏览器或小程序体验。
 There are many complete processes for opening an app, but the process for opening a web and a small program is relatively simple, and it can be used immediately. A uni-app project can be quickly run into a browser or applet experience.
 
-## 第二步：配置  
-## Step 2: Configuration
+## 第二步：配置
 - iOS 平台还需要上传专用的推送证书
 - iOS platform also needs to upload a dedicated push certificate
 	+ 证书申请：如何获取推送证书请参考个推官方文档教程 [iOS证书配置指南](https://docs.getui.com/getui/mobile/ios/apns/)
@@ -337,14 +320,12 @@ According to the following table, set the socket legal domain name in the applet
 |wshzn.getui.net |5223（3.8.5新增）|
 
 
-### 客户端监听推送消息@listener  
-### The client listens for push messages @listener
+### 客户端监听推送消息@listener
 监听推送消息的代码，需要在收到推送消息之前被执行。所以应当写在应用一启动就会触发的[应用生命周期](https://uniapp.dcloud.io/collocation/App.html#applifecycle)`onLaunch`中。
 The code that listens for push messages needs to be executed before receiving push messages. So it should be written in the [application lifecycle](https://uniapp.dcloud.io/collocation/App.html#applifecycle)`onLaunch` that will be triggered as soon as the application starts.
 
 示例代码：
-Sample code:
-```js 
+```js
 //文件路径：项目根目录/App.vue
 //File path: project root directory/App.vue
 export default {
@@ -366,19 +347,15 @@ export default {
 > 先跟着示例代码简单体验，详细的uni.onPushMessage API介绍[详情参考](/api/plugins/push.html#onpushmessage)
 > Follow the sample code for a simple experience first, detailed uni.onPushMessage API introduction [details reference](/api/plugins/push.html#onpushmessage)
 
-**APP端真机运行注意:** 
-**Note for real machine operation on the APP side:**
+**APP端真机运行注意:**
 - 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。标准HBuilder运行基座无法使用。
-- If offline push is enabled, the client can listen to push messages only after the native app is packaged in the cloud. The standard HBuilder runtime base cannot be used.
-- 离线推送时，Android手机厂商通道推送[需设置消息渠道id](/uniCloud/uni-cloud-push/api.html#channel)，否则会被限制频次和静默推送(静音且需下拉系统通知栏才可见)
-- When offline push, the Android phone manufacturer channel push [need to set the message channel id](/uniCloud/uni-cloud-push/api.html#channel), otherwise it will be limited frequency and silent push (mute and need to pull down the system notification bar only visible)
+- 离线推送时，Android手机厂商通道推送[需设置消息渠道id](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html#channel)，否则会被限制频次和静默推送(静音且需下拉系统通知栏才可见)
 - 如果Android应用进入后台后（App未销毁），点击通知消息无法拉起App，请检查设备是否有禁止后台弹出界面，路径>>设置-应用管理-测试应用-权限管理-后台弹出界面，(一般是小米、oppo、
 - If the Android app enters the background (the App is not destroyed), and the app cannot be launched by clicking the notification message, please check whether the device has a pop-up interface that prohibits the background. Path >> Settings - Application Management - Test Application - Permission Management - Background pop-up interface, ( Usually millet, oppo,
 vivo设备)。
 vivo devices).
 
-### 获取客户端推送标识  
-### Get client push ID
+### 获取客户端推送标识
 假如我要给“张三”打电话，那就需要知道对方的电话标识，即电话号码是多少。
 If I want to call "Zhang San", I need to know the phone ID of the other party, that is, what the phone number is.
 同理，要给某个客户端推送消息，也需要知道该设备的客户端推送标识。
@@ -401,8 +378,7 @@ uni.getPushClientId({
 	}
 })
 ```
-## 第四步：服务端推送消息  
-## Step 4: Server push message
+## 第四步：服务端推送消息
 消息推送属于敏感操作，只能直接或间接由服务端触发。传统的三方push服务，需要开发者在服务端配置密钥或证书，根据服务器端文档签名获取token，再向相关URL接口发起网络请求......
 Message push is a sensitive operation that can only be triggered directly or indirectly by the server. The traditional three-party push service requires the developer to configure a key or certificate on the server side, obtain the token according to the server-side document signature, and then initiate a network request to the relevant URL interface...
 
@@ -452,7 +428,7 @@ const uniPush = uniCloud.getPushManager({appId:"__UNI__XXXXXX"}) //注意这里�
 exports.main = async (event, context) => {
 	return await uniPush.sendMessage({
 		"push_clientid": "xxx", 	//填写上一步在uni-app客户端获取到的客户端推送标识push_clientid
-		"title": "通知栏显示的标题",	
+		"title": "通知栏显示的标题",
 		"content": "通知栏显示的内容",
 		"payload": {
 			"text":"体验一下uni-push2.0"
@@ -463,8 +439,7 @@ exports.main = async (event, context) => {
 
 在云函数文件目录右键（或按快捷键ctrl + r）-> `运行-本地云函数`，此时你的客户端将收到推送消息（应用关闭时为通知栏消息，在线时代码监听到推送消息）
 
-> 先跟着示例代码简单体验一下，详细的uniPush.sendMessage API介绍[详情参考](/uniCloud/uni-cloud-push/api.html#uni-cloud-push)
-> First follow the sample code for a simple experience, detailed uniPush.sendMessage API introduction [details reference](/uniCloud/uni-cloud-push/api.html#uni-cloud-push)
+> 先跟着示例代码简单体验一下，详细的uniPush.sendMessage API介绍[详情参考](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html#uni-cloud-push)
 
 如果按步骤操作完毕，此时你运行起来的uni-app客户端就会打印出“收到推送消息：xxxx”。如遇异常，可以重新运行一遍。
 If the steps are completed, the uni-app client you run at this time will print out "Push message received: xxxx". In case of exception, you can run it again.
@@ -476,7 +451,7 @@ In the previous chapter, the message push based on the "client push identity" wa
 
 如果项目使用[uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577)，即可直接指定基于uni-id的`user_id`、`user_tag`，并可筛选设备的平台、登录信息是否有效等，执行推送消息。
 
-uni-id-pages已经内置：在登录账号、退出账号、切换账号、token续期、注销账号5个时机，管理uni-id-device表、opendb-device表与`user_id`、`push_clientid`、`platform`、`os_name`等字段的映射关系。[详情参考](/uniCloud/uni-cloud-push/mate)
+uni-id-pages已经内置：在登录账号、退出账号、切换账号、token续期、注销账号5个时机，管理uni-id-device表、opendb-device表与`user_id`、`push_clientid`、`platform`、`os_name`等字段的映射关系。[详情参考](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate)
 
 此外uni-push2.0 还提供了uni-admin中的web控制台[uni-push-admin](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)。包含消息推送、推送统计等功能，而且是开源的，可自定义。如图：
 

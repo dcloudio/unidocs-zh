@@ -47,10 +47,9 @@ Note: This is an asynchronous method and only supports uni-push2.0;
 |errMsg|String| 错误描述|
 | errMsg| String| error description|
 
-常见报错：   
-`getPushClientId:fail register fail: {\"errorCode\":1,\"errorMsg\":\"\"}`  
-请检查：  
-Check, please:  
+常见报错：
+`getPushClientId:fail register fail: {\"errorCode\":1,\"errorMsg\":\"\"}`
+请检查：
 1. 当前应用是否已开通uni-push2.0 [详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E5%BC%80%E9%80%9A)
 1. Whether the current application has activated uni-push2.0 [For details, please refer to](https://uniapp.dcloud.io/unipush-v2.html#%E7%AC%AC%E4%B8%80%E6%AD% A5-%E5%BC%80%E9%80%9A)
 2. 客户端对应平台是否已启用uni-push2.0[详情参考](https://uniapp.dcloud.io/unipush-v2.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%90%AF%E7%94%A8unipush2-0)
@@ -59,8 +58,7 @@ Check, please:
 3. HBuilderX3.5.1 App platform vue3 project starts for the first time and calls uni.getPushClientId. There is a problem that the cid may not be obtained. HBuilderX3.5.2 fixes this problem, please upgrade.
 
 示例代码：
-Sample code:
-```js 
+```js
 	uni.getPushClientId({
 		success: (res) => {
 			console.log(res.cid);
@@ -76,8 +74,7 @@ Sample code:
 启动监听推送消息事件
 Start listening to push message events
 代码示例：
-Code example:
-```js 
+```js
 uni.onPushMessage((res)=>{
 	console.log(res)
 })
@@ -146,9 +143,7 @@ Create a local notification bar message (supported from HBuilderX 3.5.2)
 |success	|Function		|否		|接口调用成功的回调函数																																																																																																				|
 | success | Function |No |Callback function for successful interface call |
 |fail		|Function		|否		|接口调用失败的回调函数																																																																																																				|
-| fail | Function | No | The callback function of interface call failure |
-|complete	|Function		|否		|接口调用结束的回调函数（调用成功、失败都会执行）	
-| complete | Function |No |The callback function for the end of the interface call (it will be executed when the call succeeds or fails)
+|complete	|Function		|否		|接口调用结束的回调函数（调用成功、失败都会执行）
 
 
 **其他相关资源**
@@ -191,5 +186,4 @@ QQ MiniApp subscription message document: [https://q.qq.com/wiki/develop/minipro
 华为快应用推送文档：[https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush)
 Huawei QuickApp push document: [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush)
 
-## 服务端API [详情参考](/uniCloud/uni-cloud-push/api)
-## Server API [Reference for details](/uniCloud/uni-cloud-push/api)
+## 服务端API [详情参考](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api)

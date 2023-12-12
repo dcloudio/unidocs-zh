@@ -70,10 +70,6 @@ const routerMap = {
   '/nvue-api': '/tutorial/nvue-api.html',
   '/nvue-css': '/tutorial/nvue-css.html',
 
-  '/uniCloud/database': '/uniCloud/clientdb.html',
-  '/uniCloud/uni-clientDB': '/uniCloud/clientdb.html',
-  '/uniCloud/uni-data-picker': '/component/uniui/uni-data-picker.html',
-  '/uniCloud/uni-push/introduction.html': '/unipush-v2.html',
   '/plugin/publish#pages-init': '/plugin/uni_modules.html#pages-init',
 
   '/tutorial/build/uni-app-publish-mp-weixin': '/tutorial/build/publish-mp-weixin-cli.html',
@@ -93,14 +89,9 @@ const routerMap = {
   '/m3w': '/uniCloud/uni-portal.html',
   '/tutorial/syntax-uts': '/uni-app-x/uts/',
 
-  '/uniCloud/uni-id-summary': '/uniCloud/uni-id/summary.html',
-  '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.html',
-  '/uniCloud/uni-id-common': '/uniCloud/uni-id/cloud-common.html',
-  '/uniCloud/uni-id': '/uniCloud/uni-id/old.html',
+  '/uniCloud/': 'https://doc.dcloud.net.cn/uniCloud/',
   '/uts/': '/uni-app-x/uts/',
-  '/uni-app-x/ext': '/uni-app-x/api/ext.html',
-  '/uni-app-x/pagesjson': '/uni-app-x/collocation/pagesjson.html',
-  '/uni-app-x/manifest': '/uni-app-x/collocation/manifest.html'
+  '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/'
 }
 
 export default ({ fullPath, path, hash }) => {

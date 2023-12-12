@@ -45,7 +45,7 @@
 * [ts/typescript 专题](/tutorial/typescript-subject.md)
 * [ts/typescript subject](/tutorial/typescript-subject.md)
 * [jsx/tsx 语法](/tutorial/syntax-jsx.md)
-* [uts语法](/uni-app-x/uts/)
+* [uts语法](https://doc.dcloud.net.cn/uni-app-x/uts/)
 * 编译器（条件编译）
 * Compiler (conditional compilation)
   * [什么是编译器](/tutorial/compiler.md)
@@ -63,9 +63,7 @@
   * [宽屏适配](/tutorial/adapt.md)
   * [Widescreen adaptation](/tutorial/adapt.md)
   * [SSR 服务端渲染](/tutorial/ssr.md)
-  * [SSR server rendering](/tutorial/ssr.md)
-  * [前端网页托管](/uniCloud/hosting.md)
-  * [Front-end web hosting](/uniCloud/hosting.md)
+  * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
 * App 专题
 * App topic
   * [nvue 原生渲染](/tutorial/nvue-outline.md)
@@ -193,8 +191,7 @@
     * [Google Play上架](/tutorial/android-gp.md)
     * [On Google Play](/tutorial/android-gp.md)
     * [App Store上架](/tutorial/ios-app-store.md)
-    * [App Store available](/tutorial/ios-app-store.md)
-  * [App升级](/uniCloud/upgrade-center.md)
+  * [App升级](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
 * 小程序专题
 * Small program topic
   * [组件与WXS](/tutorial/miniprogram-subject.md)
@@ -237,14 +234,14 @@
 	* [app 加固](/tutorial/app-security.md)
 	* [app 隐私合规检测](/tutorial/app-privacy-detect.md)
   * 网络安全
-    * [云端一体安全网络](/uniCloud/secure-network.md)
-    * [传统服务器与uniCloud安全通信](/uniCloud/uni-cloud-s2s.md)
+    * [云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
+    * [传统服务器与uniCloud安全通信](https://doc.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)
   * 身份安全
     * [app一键登录](/univerify.html)
-    * [app实人认证](/uniCloud/frv/intro.html)
-    * [图形验证码](/uniCloud/uni-captcha.html)
+    * [app实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
+    * [图形验证码](https://doc.dcloud.net.cn/uniCloud/uni-captcha.html)
   * 服务器安全
-    * [uniCloud ip防刷](/uniCloud/ip-filter.html)
+    * [uniCloud ip防刷](https://doc.dcloud.net.cn/uniCloud/ip-filter.html)
     * [内容安全审查](https://ext.dcloud.net.cn/plugin?id=5460)
 * [国际化专题](/tutorial/i18n.md)
 * [Internationalization Topics](/tutorial/i18n.md)

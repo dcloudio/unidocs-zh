@@ -342,7 +342,7 @@ Examples of localdata have been given above. Let's move on to the writing mode o
 	  export default {
 		data() {
 		  return {
-			
+
 		  };
 		},
 	  };
@@ -476,8 +476,7 @@ Here's a list of common selection components and their classification according 
 ### 使用mixinDatacom快速开发datacom@mixindatacom
 ### Use mixinDatacom to quickly develop datacom@mixindatacom
 
-> 版本要求：HBuilderX 3.1.0+ 
-> Version requirement: HBuilderX 3.1.0+
+> 版本要求：HBuilderX 3.1.0+
 
 开发一个支持localdata的datacom组件相对容易，但要开发支持云端数据的datacom组件，实现对collection、field、where等属性的解析，工作量还是不小的。
 It is relatively easy to develop a datacom component that supports localdata, but there will be a lot of work to develop a datacom component that supports cloud data and realize the analysis of collection, field, where and other attributes.
@@ -501,9 +500,7 @@ It is the same as the standard datacom component, except for localdata, the othe
 | Attribute name| Type| Defaults| Instruction|
 |:-:						| :-:			| :-:			| :-:	|
 |localdata					|Array			|				|本地数据，[详情](https://uniapp.dcloud.net.cn/component/datacom)|
-| localdata| Array| | Local data, [Details](https://uniapp.dcloud.net.cn/component/datacom)|
-|spaceInfo					|Object     |				|服务空间信息，新增于`HBuilderX 3.2.11`。同uniCloud.init参数，参考：[uniCloud.init](uniCloud/init.md?id=init-unicloud)|
-|spaceInfo |Object | |Service space information, added in `HBuilderX 3.2.11`. Same as uniCloud.init parameter, reference: [uniCloud.init](uniCloud/init.md?id=init-unicloud)|
+|spaceInfo					|Object     |				|服务空间信息，新增于`HBuilderX 3.2.11`。同uniCloud.init参数，参考：[uniCloud.init](https://doc.dcloud.net.cn/uniCloud/init.html?id=init-unicloud)|
 |collection					|String			|				|表名。支持输入多个表名，用 `,` 分割|
 | collection| String| | Table Name. Support input of multiple table names, separated by `,`|
 |field						|String			|				|查询字段，多个字段用 `,` 分割|
@@ -535,9 +532,7 @@ It is the same as the standard datacom component, except for localdata, the othe
 |startwith					|String			|	''			|`gettree`的第一层级条件，此初始条件可以省略，不传startWith时默认从最顶级开始查询|
 | startwith| String| ''| The first level condition of `gettree` can be omitted. If startWith is not sent, the query starts from the top level by default|
 |limitlevel					|Number			|	10			|`gettree`查询返回的树的最大层级。超过设定层级的节点不会返回。默认10级，最大15，最小1|
-| limitlevel| Number| 10| `gettree` queries the maximum level of the returned tree. If nodes beyond the set level, it will not return. level 10 by default, with level 15 as maximum and 1 as minimum|
-|foreign-key				|String			|	''			|手动指定使用的关联关系，HBuilderX 3.1.10+ [详情](/uniCloud/clientdb?id=lookup-foreign-key)|
-| foreign-key| String| ''| Manually specify the association relationship used by HBuilderX 3.1.10+, [Details](/uniCloud/clientdb?id=lookup-foreign-key)|
+|foreign-key				|String			|	''			|手动指定使用的关联关系，HBuilderX 3.1.10+ [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=lookup-foreign-key)|
 
 
 `uniCloud.mixinDatacom` 的data
@@ -660,8 +655,7 @@ For example, develop a datacom component named as uni-data-jql:
 ```
 
 
-- 方法2，使用 `mixinDatacomGet()` 
-- Method 2, use `mixinDatacomGet()`
+- 方法2，使用 `mixinDatacomGet()`
 
 需要多写些代码处理各种状态。如果`mixinDatacomEasyGet`的封装无法灵活满足你的需求，可以使用这种方式。
 Need to write more codes to handle various states. If the encapsulation of `mixinDatacomEasyGet` cannot meet your needs flexibly, you can use this method.

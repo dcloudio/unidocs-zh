@@ -383,6 +383,7 @@
 
 <!-- UTSJSON.UTSAndroid.tutorial -->
 
+
 ```ts
 // 使用外部应用打开项目内置图片资源
 let file = new File(UTSAndroid.getResourcePath("static/logo.png"))

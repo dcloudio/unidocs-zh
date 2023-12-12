@@ -394,3 +394,15 @@
 
 <!-- UTSJSON.UTSAndroid.tutorial -->
 
+```ts
+// 使用外部应用打开项目内置图片资源
+let file = new File(UTSAndroid.getResourcePath("static/logo.png"))
+const uri = UTSAndroid.getFileProviderUri(file)
+const intent = new Intent(Intent.ACTION_VIEW, uri)
+intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+const context = UTSAndroid.getUniActivity()!;
+context.startActivity(intent);
+
+```
+
+

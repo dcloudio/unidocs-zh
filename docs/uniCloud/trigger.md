@@ -125,8 +125,7 @@ Here are some Cron expressions and their associated meanings:
 使用定时触发器调用云函数时云函数会收到特定的参数。两个平台的参数如下：
 Cloud functions receive specific parameters when they are called using timed triggers. The parameters for the two platforms are as follows:
 
-**腾讯云**
-**Tencent Cloud**
+**腾讯云、支付宝小程序云**
 
 ```js
 {	
@@ -149,10 +148,6 @@ Cloud functions receive specific parameters when they are called using timed tri
   "Type":"Timer" //触发器类型，目前只有Timer
 }
 ```
-
-**支付宝小程序云**
-
-暂无入参
 
 `2023年7月14日起`阿里云入参对齐腾讯云，保留上述`triggerName`和`triggerTime`（不再推荐使用这两个属性），增加`Time`、`TriggerName`、`Type`。
 

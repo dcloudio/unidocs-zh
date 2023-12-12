@@ -274,17 +274,6 @@
 
 <!-- UTSJSON.UTSAndroid.rpx2px.compatibility -->
 
-
-### rpx2px(rpx:number) : number;
-
-<!-- UTSJSON.UTSAndroid.rpx2px.description -->
-
-<!-- UTSJSON.UTSAndroid.rpx2px.param -->
-
-<!-- UTSJSON.UTSAndroid.rpx2px.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.rpx2px.compatibility -->
-
 ### devicePX2px(devicePX:number) : number;
 
 <!-- UTSJSON.UTSAndroid.devicePX2px.description -->

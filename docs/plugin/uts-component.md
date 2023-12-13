@@ -898,6 +898,7 @@ We create a new helloView.nvue page in the uni-app project,
 Use the `uts-hello-view` tag directly, and define the text content of `buttonText` to see the effect.
 
 点击组件内置按钮，可以在控制台看到组件内部实现的日志输出
+
 点击`调用组件的方法`按钮，可以看到组件内置方法被调用
 
 

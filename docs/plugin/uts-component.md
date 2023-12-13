@@ -649,7 +649,7 @@ This chapter takes a minimalist component development as an example to introduce
 
 在HBuilder X 中选中Uni-App项目下 uni_modules目录
 
-todo  目前还没有创建界面
+![创建界面](https://native-res.dcloud.net.cn/images/uts/component/image0.png)
 
 
 这是创建后的目录结构

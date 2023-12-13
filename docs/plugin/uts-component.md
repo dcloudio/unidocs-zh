@@ -1318,7 +1318,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 
 ![](https://native-res.dcloud.net.cn/images/uts/component/lottie_use_file.jpg)
 
-引用自定义 uts-animation-view 组件，并编写测试用例
+引用自定义 `uts-animation-view` 组件，并编写测试用例
 
 ```
 <template>

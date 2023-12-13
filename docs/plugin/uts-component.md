@@ -580,7 +580,7 @@ NVUpdateStyles(styles: Map<String, any>){
 
 #### 创建插件
 
-在HBuilder X 中选中Uni-App项目下 uni_modules目录
+在HBuilder X 中选中Uni-App项目下 uni_modules目录,右键选择新建`uni_modules插件`
 
 ![创建界面](https://native-res.dcloud.net.cn/images/uts/component/image0.png)
 

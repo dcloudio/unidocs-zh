@@ -912,18 +912,23 @@ Use the `uts-hello-view` tag directly, and define the text content of `buttonTex
 </template>
 
 <script>
-  export default {
-      data() {
-          return {
-              
-          }
-      },
-      methods: {
-		  // 调用组件内的方法
-          callComponentMethod: function() {
-              this.$refs["helloView"].doSth("param doSth");
-          },
-      }
+	// uvue 页面需要使用下面的引入代码，nvue 不需要
+	// import { UtsHelloViewElement } from '@/uni_modules/uts-hello-component'
+  	export default {
+      	data() {
+			return {
+				
+			}
+		},
+		methods: {
+			// 调用组件内的方法
+			callComponentMethod: function() {
+				// nvue 页面调用方法
+				this.$refs["helloView"].doSth("param doSth");
+				// uvue 页面调用方法
+				// (this.$refs["helloView"] as UtsHelloViewElement).doSth('param doSth');
+			},
+		}
       
   }
 </script>

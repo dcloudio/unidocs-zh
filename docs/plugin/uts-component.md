@@ -1312,7 +1312,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 |`setRepeatMode`|function|	|设置动画的重复方式，RESTART：重新开始播放，REVERSE，反向播放|
 
 
-#### 使用`uts-animation-vie`组件
+#### 使用`uts-animation-view`组件
 
 在uni-app项目中新建 lottie/index.nvue 页面
 

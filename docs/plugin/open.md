@@ -32,9 +32,7 @@ After the DSP enters the DCloud open platform, it needs to configure what inform
 - DSP按照uniapp插件规范开发相关插件，并发布到[插件市场](https://ext.dcloud.net.cn)；
 - DSP develops relevant plug-ins according to the uniapp plug-in specification, and releases them to [Plug-in Market](https://ext.dcloud.net.cn);
 - 注册SDK产品，补充完善以下信息：
-- Register the SDK product and complete the following information:
-	- SDK支持的平台，如app-android, app-ios, mp-weixin等；
-	- Platforms supported by the SDK, such as app-android, app-ios, mp-weixin, etc.;
+	- SDK支持的平台，如`app-android`, `app-ios`, `mp-weixin`等；
 	- 各平台开通服务时，需要的应用信息字段（区分必填、选填；如应用名称、包名、证书摘要等）；
 	- Application information fields required when opening services on each platform (distinguish between mandatory and optional; such as application name, package name, certificate summary, etc.);
 	- 插件市场的插件ID（必填）；

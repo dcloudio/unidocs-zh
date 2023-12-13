@@ -97,7 +97,7 @@ uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而u
 
 可见价格之低，几乎可以忽略不计。
 
-一次消息推送 = 1次云函数请求 + 最高3次数据库查询（最常用的基于user_id推送仅需一次查询，详情参考：[推送接口查库详解](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html#%E6%8E%A8%E9%80%81%E6%8E%A5%E5%8F%A3%E6%9F%A5%E5%BA%93%E8%AF%A6%E8%A7%A3) )
+一次消息推送 = 1次云函数请求 + 最高3次数据库查询（最常用的基于user_id推送仅需一次查询，详情参考：[推送接口查库详解](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html#%E6%8E%A8%E9%80%81%E6%8E%A5%E5%8F%A3%E6%9F%A5%E5%BA%93%E8%AF%A6%E8%A7%A3)
 
 即：最高(1 * 0.0133 + 3 * 0.015)/10000 = 0.00000583元/每次（注：给你的应用的所有注册用户群发消息算一次）
 
@@ -212,7 +212,7 @@ uni-push产品有2个入口：
 
 <img width="50%" style="max-width:260px;" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/WechatIMG589.jpeg"/>
 
-uni-app x有摇树机制，需要在代码中编写api调用，然后打包就会包含push模块。[详见](https://doc.dcloud.net.cn/uni-app-x/manifest#treeShaking)
+uni-app x有摇树机制，需要在代码中编写api调用，然后打包就会包含push模块。[详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest#treeShaking)
 
 #### 小程序中使用uni-push2.0的白名单配置@useinmp
 

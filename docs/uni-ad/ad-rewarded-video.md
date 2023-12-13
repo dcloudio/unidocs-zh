@@ -546,7 +546,7 @@ export default {
 
 ### 服务器回调说明
 
-#### 服务器回调基于 [uniCloud](https://doc.dcloud.net.cn/uniCloud/README)
+#### 服务器回调基于 [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)
 
 1. 由于多家广告商的回调和签名验证逻辑不同，开发者需要写很多逻辑，`uniCloud` 中的云函数 `uniAdCallback` 已抹平了差异，开发者按照统一的参数处理即可
 2. 开发者的服务器有可能响应慢或失去响应造成回调数据丢失, 使用 `uniCloud` 可以帮助开发者保存一份来自广告商服务器的回调数据到开发者的云数据中，以便开发者主动查询

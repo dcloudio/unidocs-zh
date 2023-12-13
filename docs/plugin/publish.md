@@ -153,7 +153,7 @@ HBuilderX插件是安装在HBuilderX工具里的。是编辑器的插件，不�
 云函数模板对文件命名没有特殊要求，但制作插件压缩包时，需要注意以下几点：
 - 当模板中包含一个或多个云函数时，不能只在插件中放入云函数目录，而需要完整的从项目根目录开始。如uniCloud/cloudfunctions/cf123。uniCloud可以接受-aliyun或-tcb 后缀（阿里云和腾讯云这两个目录也可以同时存在）；
 - 云函数有效的入口文件为 index.js，插件包中必须包含至少一个以此命名的文件。
-- 涉及账户管理的话，请使用[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id)
+- 涉及账户管理的话，请使用[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
 
 如果上传付费云函数插件，则必须选择要加密的云函数，否则插件试用者可以通过试用流程无限期使用你的插件而不需要付费。
 
@@ -163,7 +163,7 @@ HBuilderX插件是安装在HBuilderX工具里的。是编辑器的插件，不�
 {
 	"uni_modules": {
 		"encrypt": [ // 配置要加密的文件，为插件包中真实存在且相对根目录的文件路径，需注意uniCloud目录的后缀需与项目一致
-			"uniCloud-aliyun/cloudfunctions/function/index.js" 
+			"uniCloud-aliyun/cloudfunctions/function/index.js"
 		],
 	}
 }
@@ -207,7 +207,7 @@ encrypt数组中可灵活配置uniCloud/cloudfunctions下云函数及公共模�
 - js_sdk、components、static等目录下的子目录及文件命名需要包含“-”
 - 不能包含根目录的 manifest.json、App.vue、main.js 等文件
 - 如需注册页面到项目的pages.json中，参考[uni_modules文档](uni_modules.md?id=pages-init)
- 
+
 ### 前后一体项目模板
 与uni-app前端项目模板目录结构基本一致，但是必须包含uniCloud相关目录（uniCloud-aliyun、uniCloud-tcb）
 

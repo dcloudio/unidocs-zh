@@ -126,7 +126,7 @@ open-type 为 feedback时：
 
 button组件属性中的size和type，属于预置样式，方便开发者使用。开发者也可以通过style和class来自定义样式。
 
-button虽然可以内嵌text组件，但不建议通过text组件来修改button样式，因为会导致hove-class不生效。尤其是uvue中样式不继承。建议直接在button组件的style或class属性编写样式。
+button虽然可以内嵌text组件，但不建议通过text组件来修改button样式，因为会导致hover-class不生效。尤其是uvue中样式不继承。建议直接在button组件的style或class属性编写样式。
 
 style和class的优先级，高于size和type属性。
 

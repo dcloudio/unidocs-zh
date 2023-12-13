@@ -597,8 +597,7 @@ Display the share button in the native menu of the applet
 |属性						|类型			|必填	|说明			|平台差异说明	|
 |Attribute |Type |Required |Description |Platform Difference Description |
 |:-							|:-				|:-		|:-							|:-						|
-|withShareTicket|Boolean	|否		|是否使用带 shareTicket 的转发，默认为 flase。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html)|微信小程序		|
-|withShareTicket|Boolean |No |Whether to use forwarding with shareTicket, default is false. [Details](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html)|WeChat Mini Program |
+|withShareTicket|Boolean	|否		|是否使用带 shareTicket 的转发，默认为 false。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html)|微信小程序		|
 |title					|String		|否		|分享标题			|百度小程序		|
 |title |String |No |Share title |Baidu Mini Program |
 |content				|String		|否		|分享内容						|百度小程序		|

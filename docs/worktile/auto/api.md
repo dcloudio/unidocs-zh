@@ -494,8 +494,7 @@ Parameter Description
 |字段|类型|必填|默认值|说明|
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
-|selector|string|是|-|选择器|
-| selector| string| Yes| \-| Selector|
+|selector|string|是|-|选择器(id、class、元素选择器)|
 
 示例代码：
 Sample code:
@@ -520,8 +519,7 @@ Parameter Description
 |字段|类型|必填|默认值|说明|
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
-|selector|string|是|-|选择器|
-| selector| string| Yes| \-| Selector|
+|selector|string|是|-|选择器(id、class、元素选择器)|
 
 该方法跟 $ 一样均无法选择自定义组件内的元素，请使用 element.$。
 Neither this method nor $ can select elements in custom components. Please use element.$.
@@ -732,8 +730,7 @@ Parameter Description
 |字段|类型|必填|默认值|说明|
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
-|selector|string|是|-|选择器|
-| selector| string| Yes| \-| Selector|
+|selector|string|是|-|选择器(id、class、元素选择器)|
 
 示例代码：
 Sample code:
@@ -759,8 +756,7 @@ Parameter Description
 |字段|类型|必填	|默认值|说明|
 | Field| Type| Required| Defaults| Instruction|
 |:-:|:-:|:-:|:-:|:-:|
-|selector|string|是|-|选择器|
-| selector| string| Yes| \-| Selector|
+|selector|string|是|-|选择器(id、class、元素选择器)|
 
 示例代码：
 Sample code:

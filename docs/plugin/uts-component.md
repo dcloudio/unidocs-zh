@@ -819,6 +819,7 @@ NVUpdateStyles(styles: Map<String, any>){
 直接使用`uts-hello-view`标签，并且定义`buttonText`文本内容即可看到效果。
 
 点击组件内置按钮，可以在控制台看到组件内部实现的日志输出
+
 点击`调用组件的方法`按钮，可以看到组件内置方法被调用
 
 

@@ -24,9 +24,7 @@ The code written by NJS needs to be packaged and released as an App installation
 Again, Native.js is not a js library. It does not need to download scripts introduced into the page, nor does it have a separate running environment like nodejs. The running environment of Native.js is integrated in 5+runtime and packaged with HBuilder. Your app or streaming app can use Native.js directly.
 
 ## 注意事项：
-## Precautions:
-Uni-app不支Native.js执行UI相关操作的API调用及webview相关API调用。将失效无法正常使用。Uni-app不推荐使用Native.js
-Uni-app does not support Native.js API calls for UI-related operations and webview-related API calls. will be invalid and cannot be used normally. Native.js is deprecated for Uni-app
+Uni-app不支持Native.js执行UI相关操作的API调用及webview相关API调用。将失效无法正常使用。Uni-app不推荐使用Native.js
 
 ### 技术要求
 ### skills requirement

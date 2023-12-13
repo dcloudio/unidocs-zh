@@ -17,7 +17,11 @@ module.exports = md => {
       if (src) {
         src = (insertComponent && ppConfig.EN ? '<md-translatedbygoogle />\n' : '') + translate(src)
       }
-      src = pp.preprocess(src, ppConfig)
+      try {
+        src = pp.preprocess(src, ppConfig)
+      } catch (error) {
+        debugger;
+      }
       return mdParse.bind(this)(src, env)
     }
   })(md.parse)

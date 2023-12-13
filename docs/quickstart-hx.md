@@ -63,7 +63,7 @@ If developers are accustomed to projects in node mode and are confused about the
 	- 如手机或模拟器无法识别，请点击[常见故障排查指南](https://uniapp.dcloud.net.cn/tutorial/run/run-app-faq.html)。
 	- If the mobile phone or emulator cannot be recognized, please click [Common Troubleshooting Guide](https://uniapp.dcloud.net.cn/tutorial/run/run-app-faq.html).
   - 如需运行在苹果手机真机上，注意需使用自定义基座。[详见](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
-
+<!-- @ifdef ZH -->
 3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。
     <br/>
     <div align=center>

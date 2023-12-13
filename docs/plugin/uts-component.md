@@ -647,7 +647,7 @@ This chapter takes a minimalist component development as an example to introduce
 #### 创建插件
 #### Create plugin
 
-在HBuilder X 中选中Uni-App项目下 uni_modules目录
+在HBuilder X 中选中Uni-App项目下 uni_modules目录,右键选择新建`uni_modules插件`
 
 ![创建界面](https://native-res.dcloud.net.cn/images/uts/component/image0.png)
 
@@ -1423,8 +1423,7 @@ The following properties and methods are provided externally
 |`setRepeatMode`| function| |Set animation repeat mode, RESTART: restart playback, REVERSE, reverse playback|
 
 
-#### 使用`uts-animation-vie`组件
-#### Using the `uts-animation-vie` component
+#### 使用`uts-animation-view`组件
 
 在uni-app项目中新建 lottie/index.nvue 页面
 Create a new lottie/index.nvue page in the uni-app project

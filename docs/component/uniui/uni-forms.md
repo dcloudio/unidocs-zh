@@ -548,7 +548,7 @@ export default {
 
 ### 表单校验时机说明
 
-`uni-forms 1.4.0` 后，只有 `uni-forms`上可以配置 `validateTrigger`，不在支持单独控制没个子表单的校验时机
+`uni-forms 1.4.0` 后，只有 `uni-forms`上可以配置 `validateTrigger`，不再支持单独控制每个子表单的校验时机
 
 如果需要子表单需要单独的校验时机，可以使用 `uni-forms-item` 的 `rules` 属性和 `onFieldChange` 配合
 ```html

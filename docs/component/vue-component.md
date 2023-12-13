@@ -16,7 +16,7 @@
 
 ### template
 
-`uni-app` 支持在 `template` 模板中嵌套 `<template/>` 和 `<block/>`，用来进行 [列表渲染](/tutorial/vue-basics.html#listrendering) 和 [条件渲染](/tutorial/vue-basics.html#condition)。
+`uni-app` 支持在 `template` 模板中嵌套 `<template/>` 和 `<block/>`，用来进行 [条件渲染](/tutorial/vue-basics.html#condition) 和 [列表渲染](/tutorial/vue-basics.html#listrendering)。
 
 `<template/>` 和 `<block/>` 并不是一个组件，它们仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。
 

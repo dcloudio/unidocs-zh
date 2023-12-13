@@ -1430,8 +1430,7 @@ Create a new lottie/index.nvue page in the uni-app project
 
 ![](https://native-res.dcloud.net.cn/images/uts/component/lottie_use_file.jpg)
 
-引用自定义 uts-animation-view 组件，并编写测试用例
-Reference the custom uts-animation-view component and write test cases
+引用自定义 `uts-animation-view` 组件，并编写测试用例
 
 ```
 <template>

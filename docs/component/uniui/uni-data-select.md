@@ -123,9 +123,7 @@ export default {
 |     label     |    String     |        |          |                              左侧标题                               |
 | label | String | | | Left title |
 |  placeholder  |    String     |   -    |  请选择  |                          输入框的提示文字                           |
-| placeholder | String | - | Please select | Prompt text for input box |
-|   emptyText   |    String     |   -    | 暂无数据 |                 没有数据时显示的文字 ，本地数据无效                 |
-| emptyText | String | - | No data | Text displayed when there is no data, local data is invalid |
+|   emptyTips   |    String     |   -    | 暂无数据 |                 没有数据时显示的文字 ，本地数据无效                 |
 
 #### DataCom Props
 

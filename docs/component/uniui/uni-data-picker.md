@@ -190,7 +190,7 @@ Create new tables "uni-id-address" and "opendb-city-china" in the uniCloud data 
 |collection|String|-|-|表名。支持输入多个表名，用 `,` 分割|
 |collection|String|-|-|Table name. Supports input of multiple table names, separated by `,`|
 |field|String|-|-|查询字段，多个字段用 `,` 分割|
-|where|String|-|-|查询条件，内容较多，另见jql文档：[详情](https://doc.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
+|where|String|-|-|查询条件，内容较多，另见jql文档：[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
 |orderby|String|-|-|排序字段及正序倒叙设置|
 |orderby|String|-|-|Order field and reverse order setting|
 |popup-title|String|||弹出层标题|
@@ -240,9 +240,8 @@ this.$refs.picker.show() // `picker` 为组件的 ref 名称
 
 ### DataPicker Slots
 
-|名称|说明|					
-|Name|Description|
-|:-:|:-:|						
+|名称|说明|
+|:-:|:-:|
 |default|覆盖显示框内容|
 |default|Override Display Box Contents|
 
@@ -272,7 +271,7 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 		</uni-section>
 	</view>
 </template>
-``` 
+```
 > Script
 ``` vue
 <script>
@@ -327,7 +326,7 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 		}
 	}
 </script>
-``` 
+```
 > Style
 ``` vue
 <style>

@@ -39,7 +39,7 @@ There are some trade-offs when using server-side rendering (SSR):
 - 更多的服务器端负载。在 Node.js 中渲染完整的应用程序，显然会比仅仅提供静态文件的 server 更加大量占用 CPU 资源 (CPU-intensive - CPU 密集)，因此如果你预料在高流量环境 (high traffic) 下使用，请准备相应的服务器负载，并明智地采用缓存策略。
 - More server-side load. The fully rendered application in Node.js obviously takes up more CPU resources (CPU-intensive) than the server that only provides static files. Therefore, if you expect to use it in a high traffic environment, please prepare the corresponding server load and use the caching strategy wisely.
 
-幸运的是，以上问题，[uniCloud](https://doc.dcloud.net.cn/uniCloud/README) 均为您提供了解决方案
+幸运的是，以上问题，[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README) 均为您提供了解决方案
 - [unicloud-db](https://doc.dcloud.net.cn/uniCloud/unicloud-db) 组件是 uniCloud 提供的一个数据库查询组件，内置支持SSR，开发者无需任何额外开发。
 - uniCloud 云函数与静态托管，提供了弹性扩容、大并发承载、防DDoS攻击的世界最顶级的IT基础设施，通过 HBuilderX 可将 uni-app 项目一键部署为支持 SSR 的 h5 网站
 - The uniCloud cloud function and static hosting provide the world's top IT infrastructure with flexible capacity expansion, large concurrent load and anti-DDoS attack. Through HBuilderX, uni-app project can be deployed as an h5 website supporting SSR with one click.
@@ -159,10 +159,10 @@ Example:
 	import createStore from './store'
 	export function createApp() {
 	  const app = createSSRApp(App)
-	  
+
 	  const store = createStore() // 创建 store
 	  app.use(store)
-	  
+
 	  return {
 		app,
 		store,// 必须返回 store
@@ -170,7 +170,7 @@ Example:
 	}
 
 	```
-	
+
 3. 在页面或组件中使用
 3. Use in pages or components
 
@@ -271,7 +271,7 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
 2. Through `HBuilderX` `Issuance Menu -> Website PC-Web or Mobile H5`, check `ssr`, check `Deploy compiled resources on uniCloud front-end web hosting`
 
 	![自动部署](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-img-02.png)
-	
+
 3. 配置`uni-ssr`的云函数URL化路径，请参考文档：[云函数URL化](https://doc.dcloud.net.cn/uniCloud/http)
 
 **手动发行部署**
@@ -298,16 +298,13 @@ Requires HBuilderX version `3.5.1` and above, supports deployment to Alibaba Clo
 	```
 
 2. 编译：
-2. Compilation:
-  
+
   cli工程：`npm run build:h5:ssr`或通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
-  cli project: `npm run build:h5:ssr` or by `HBuilderX 3.1.16 and above` of `Release Menu -> website PC-Web or mobile phone H5`, check `ssr`
-  
+
   非cli工程：通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
-  Non-cli project: by `Release Menu -> website PC-Web or mobile phone H5` of `HBuilderX 3.1.16 and above`, check `ssr`
-  
+
   ![以ssr模式发行](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
-  
+
 3. 部署静态资源到[前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting)
 
   将编译后的`dist/build/h5/client`中的资源上传至前端网页托管，推荐使用免费的阿里云服务空间

@@ -57,9 +57,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 **注意：**
 **Notice:**
 * sourceType 值在 H5 平台根据浏览器的不同而表现不同，一般不可限制仅使用相册，部分浏览器也无法限制是否使用相机。
-* The value of sourceType varies according to different browsers on the H5 platform. Generally, it is not restricted to use only the photo album, and some browsers cannot restrict whether to use the camera.
-* app安卓端选择的视频最大只支持180MB，如需突破该限制请使用原生插件https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9 
-* The maximum video selected by the Android side only supports 180MB. If you want to break this limit, please use the native plug-in https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9
+* app安卓端选择的视频最大只支持180MB，如需突破该限制请使用原生插件https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9
 * 文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。
 * The temporary path of the file can be used normally during this startup of the application. To save it for a long time, you need to call [uni.saveFile](api/file/file?id=savefile) actively, which will not be accessible until the next startup of the application.
 * camera 部分 Android 手机下由于系统 ROM 不支持无法生效，打开拍摄界面后可操作切换
@@ -67,7 +65,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 * 可以通过用户授权API来判断用户是否给应用授予相册或摄像头的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 * The user authorization API can be used to determine whether the user authorizes the application the access to the photo album or camera [https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 * App下如需进一步压缩视频大小，可以在插件市场搜索[视频压缩](http://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9)插件
-* 如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://doc.dcloud.io/uniCloud/storage?id=uploadfile](https://doc.dcloud.io/uniCloud/storage?id=uploadfile)
+* 如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://doc.dcloud.net.cn/uniCloud/storage?id=uploadfile](https://doc.dcloud.net.cn/uniCloud/storage?id=uploadfile)
 * 选择视频大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
 * Most of the videos are selected for uploading. uni ui encapsulates a more complete [uni-file-picker component](https://ext.dcloud.net.cn/plugin?id=4079). Files are selected and uploaded to uniCloud's free storage and cdn for one-stop integration. Highly recommended.
 * 部分浏览器中无法获取视频信息。
@@ -244,7 +242,7 @@ uni.chooseMedia({
 
 **Tips**
 
-* 如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://doc.dcloud.io/uniCloud/storage?id=uploadfile](https://doc.dcloud.io/uniCloud/storage?id=uploadfile)
+* 如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://doc.dcloud.net.cn/uniCloud/storage?id=uploadfile](https://doc.dcloud.net.cn/uniCloud/storage?id=uploadfile)
 * 选择文件大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
 * Most of the selected files are for uploading, uni ui encapsulates a more complete [uni-file-picker component] (https://ext.dcloud.net.cn/plugin?id=4079), file selection, uploading to uniCloud is free One-stop integration in storage and cdn. Highly recommended.
 * 经开发者提醒，微信小程序ios真机可以选择的文件个数不能大于9，详见帖子[https://ask.dcloud.net.cn/question/115561](https://ask.dcloud.net.cn/question/115561)
@@ -318,7 +316,7 @@ export default {
 				sourceType: ['camera'],
 				success: function (res) {
 					self.src = res.tempFilePath;
-					
+
 					uni.saveVideoToPhotosAlbum({
 						filePath: res.tempFilePath,
 						success: function () {
@@ -426,7 +424,7 @@ Compressed video interface. Developers can specify the compression quality (qual
 App端有很多插件支持视频压缩，详见[插件市场](https://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9)
 Many plug-ins are available on the App side that support video compression. See.[Plug-in market](https://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9) for details
 
-压缩完毕后如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://doc.dcloud.io/uniCloud/storage?id=uploadfile](https://doc.dcloud.io/uniCloud/storage?id=uploadfile)
+压缩完毕后如需上传到cdn，可使用uniCloud.uploadFile API，uniCloud提供了免费cdn给开发者使用，详见[https://doc.dcloud.net.cn/uniCloud/storage?id=uploadfile](https://doc.dcloud.net.cn/uniCloud/storage?id=uploadfile)
 
 
 **OBJECT 参数说明**

@@ -1964,5 +1964,5 @@ Business App and admin are 2 projects. The business app is the collection end, a
 
 不掌握如下文档，很难对 `uni统计2.0` 吃透和做二次开发
 - uni-admin文档：[详见](https://doc.dcloud.net.cn/uniCloud/admin.html)
-- uni-id文档：[详见](https://doc.dcloud.net.cn/uniCloud/uni-id.html)
+- uni-id文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html)
 - opendb文档：[详见](https://doc.dcloud.net.cn/uniCloud/opendb.html)

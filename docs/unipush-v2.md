@@ -200,7 +200,12 @@ uni-push产品有2个入口：
 
 以上两种方案各有优劣，方案一更加灵活；比如：客服功能，客户端接收到聊天消息时，应用如果已经打开聊天对话页面，就直接将监听到的推送内容，渲染到页面。如果应用未打开聊天页，则调用api创建“通知栏消息”提醒用户；此时你还可以执行一些其他逻辑，比如将tabBar的消息中心加红点等。方案二比较简便，客户端无需额外编写代码，自动创建通知栏消息；但仅适用于不关心客户端行为就创建“通知栏消息”的场景，如广告营销内容的推送等。
 
-### 客户端启用uniPush2.0
+#### 客户端类型@getuiPhoneType  
+个推的客户端类型是仅根据使用的sdk类型来判断的，分为两类：
+1. native sdk（在`manifest.json`->`APP 模块配置`->`uniPush 2.0`配置界面勾选离线推送时启用的 sdk），获取到的 cid 的 phoneType 为 APP 类型。
+2. jssdk（`manifest.json`->`APP 模块配置`->`uniPush 2.0`配置界面，仅勾选在线推送，未勾选离线推送时启用的 sdk），获取到的 cid 的 phoneType 均为小程序，而不管实际上你的客户端是 APP、小程序还是 web。
+
+### 客户端启用uni-push2.0
 
 操作步骤打开`manifest.json` - `App模块配置` - 中勾选`uniPush 2.0` - `重新编译项目`
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220525105852.jpg)

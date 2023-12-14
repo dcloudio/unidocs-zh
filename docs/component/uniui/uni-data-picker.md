@@ -1,4 +1,3 @@
-
 ::: tip 组件名：uni-data-picker
 ::: tip component name: uni-data-picker
 > 代码块： `uDataPicker`
@@ -134,8 +133,7 @@ Create new tables "uni-id-address" and "opendb-city-china" in the uniCloud data 
 ```
 
 
-### 自定义 Solt
-### Custom Solt
+### 自定义 Slot
 
 ```html
 <uni-data-picker v-slot:default="{data, error, options}" popup-title="请选择所在地区">
@@ -361,4 +359,3 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 :::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/data-picker/data-picker)
-[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/data-picker/data-picker)

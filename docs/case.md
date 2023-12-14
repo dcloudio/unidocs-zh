@@ -222,7 +222,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 	</a>
 </div>
 
-<!-- 
+<!--
 <a href="https://www.csdn.net/" target="_blank" class="clear-style"><b>CSDN：</b></a> 专业 IT 技术社区，致力于为中国软件开发者提供知识传播、在线学习、职业发展等全生命周期服务。
 <a href="https://www.csdn.net/" target="_blank" class="clear-style"><b>CSDN:</b></a> Professional IT technology community, dedicated to Chinese software developers provide full life cycle services such as knowledge dissemination, online learning, and career development.
 <div style="display:flex;justify-content: space-around;">
@@ -264,7 +264,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 	</a>
 </div>
 
-<!-- <a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style"><b>登登多邻国：</b></a> 外语学习者题库。其服务端整体基于[uniCloud](https://doc.dcloud.net.cn/uniCloud/README)，前端包括PC和H5网站、微信小程序，均连接uniCloud。日请求量百万级。
+<!-- <a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style"><b>登登多邻国：</b></a> 外语学习者题库。其服务端整体基于[uniCloud](https://doc.dcloud.net.cn/uniCloud/)，前端包括PC和H5网站、微信小程序，均连接uniCloud。日请求量百万级。
 <div style="display:flex;justify-content: space-around;">
 	<a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style barcode-view">
 		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-alicdn/bda036a0-c55f-11ea-b997-9918a5dda011.png" width="200"/>
@@ -386,8 +386,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **腾讯微回收手机回收：** 微信小程序搜索同名
 **Tencent Micro Recycling Mobile Phone Recycling:** Wechat MiniApp search with the same name
 
-**腾讯医生：** 微信小程序搜索同名、[H5](https://doctor.baike.qq.com/) 
-**Tencent Doctor:** Wechat MiniApp search for the same name, [H5](https://doctor.baike.qq.com/)
+**腾讯医生：** 微信小程序搜索同名、[H5](https://doctor.baike.qq.com/)
 
 **腾讯企业邮箱：** [H5](https://exmail.qq.com/qy_mina_logic/uniapp/h5)
 **Tencent Enterprise Mailbox:** [H5](https://exmail.qq.com/qy_mina_logic/uniapp/h5)
@@ -480,8 +479,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **Dangdang.com:** Wechat MiniApp search for "Dangdang Shopping", [H5](https://dh5.dangdang.com/)
 
 **太平洋汽车网：** H5，VR看车。需特定入口。
-**Pacific Automotive Network:** H5, VR car viewing. Specific entry is required.
-  
+
 <!-- **西祠胡同：** [App官网扫码下载](https://www.xici.net/)、[H5](https://3g.xici.net/) -->
 
 **极米：** [极米官方app](https://sj.qq.com/myapp/detail.htm?apkName=com.xgimi.zhushou&info=FB45015C23ACF368D22855D6C4964312)、[官网H5版](https://m.xgimi.com/)、微信小程序搜索“极米官方商城”、微信小程序搜索“极米care+”售后服务宣传
@@ -866,7 +864,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **Tianjin Public Security:** [App](https://a.app.qq.com/o/simple.jsp?pkgname=jnhyjt.tjgamsfwpt.tjga)
 
 
-<!-- 
+<!--
 
 **江西赣州民政局社会救助**[微信H5](http://gzshjz.ganzhou.gov.cn/h5gz/)
 **Jiangxi Ganzhou Civil Affairs Bureau Social Assistance**[WeChat H5](http://gzshjz.ganzhou.gov.cn/h5gz/)
@@ -880,8 +878,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **巴彦淖尔市家庭医生居民端：** [H5](http://jtys.bynrws.gov.cn:11111/)
 **Bayannur City family doctor resident terminal:** [H5](http://jtys.bynrws.gov.cn:11111/)
 
-**甘孜州卫健委：** [H5](http://syappht.wjw.gzz.gov.cn/) 
-**Garze Prefecture Health Commission:** [H5](http://syappht.wjw.gzz.gov.cn/)
+**甘孜州卫健委：** [H5](http://syappht.wjw.gzz.gov.cn/)
 
 **四川省医疗机构、医务人员、医疗行为信息监管平台：** [H5](http://jgapp.wjw.gzz.gov.cn/login.jsp)
 **Sichuan Provincial Medical Institutions, Medical Staff, Medical Behavior Information Supervision Platform:** [H5](http://jgapp.wjw.gzz.gov.cn/login.jsp)
@@ -918,8 +915,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **华莱士官方点餐：** 微信小程序搜同名
 **Wallace's official order:** Wechat MiniApp search for the same name
 
-**张亮麻辣烫：** 百度小程序搜索 “张亮麻辣烫” 
-**Zhang Liang Malatang:** Baidu MiniApp search "Zhang Liang Malatang"
+**张亮麻辣烫：** 百度小程序搜索 “张亮麻辣烫”
 
 **西贝骑手：** 西贝莜面村外卖骑手App
 **Xibei Rider:** Xibei Youmian Village Takeaway Rider App
@@ -1499,5 +1495,5 @@ href="https://user-images.githubusercontent.com/29654065/63156422-3cfdfc80-c047-
 		transform: rotate(45deg);
 		z-index: 12;
 	}
-	
+
 </style>

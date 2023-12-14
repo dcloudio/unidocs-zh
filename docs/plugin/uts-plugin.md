@@ -168,7 +168,8 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	├─mp-toutiao                  // 抖音小程序平台，可选
 │	├─mp-weixin                   // 微信小程序平台，可选
 │	├─mp-xhs                      // 小红书小程序平台（仅限vue2），可选
-│	├─index.d.ts                  // 插件能力声明，可选
+│	├─index.d.ts                  // 插件能力声明，可选，将废弃，推荐使用interface.uts
+│	├─interface.uts               // 声明插件对外暴露的API
 │	└─index.uts                   // 跨平台插件能力实现，可选
 └─package.json                    // 插件清单文件
 </code>
@@ -187,7 +188,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 2. 在插件根目录 index.uts 中写条件编译，import 分平台的文件
 3. 不写根目录的 index.uts，直接在分平台目录写 index.uts。不跨端时，比如只做一个 Android 插件，这样写比较简单
 
-index.d.ts 文件是对当前插件能力的**声明**，用于语法提示。它不是必写项。
+index.d.ts 文件是对当前插件能力的**声明**，用于语法提示。已不推荐使用，请使用interface.uts。
 
 因为 uts 写好后，HBuilderX 可以自动识别 uts api 并进行语法提示。它更多的用于后续 uts 插件加密时给予语法提示。
 
@@ -206,7 +207,7 @@ app-android 文件夹下存在Android平台原生配置，包括以下目录或�
 |res					|Android平台原生res资源目录				|
 |AndroidManifest.xml	|Android平台原生应用清单文件				|
 |config.json			|Android平台下的配置文件					|
-|index.uts				|主入口，index.d.ts声明的能力在Android平台下的实现	|
+|index.uts				|主入口，interface.uts/index.d.ts声明的能力在Android平台下的实现	|
 
 
 ##### assets  
@@ -344,7 +345,7 @@ app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
 |Info.plist			|iOS平台插件需要添加到原生工程Info.plist中的配置文件			|
 |UTS.entitlements	|iOS平台插件需要添加到原生工程 entitlements 文件中的配置文件		|
 |config.json		|iOS平台原生工程的配置文件									|
-|index.uts			|主入口，index.d.ts声明的能力在iOS平台下的实现				|
+|index.uts			|主入口，interface.uts/index.d.ts声明的能力在iOS平台下的实现				|
 
 ##### Frameworks 
 iOS平台插件依赖的三方framework存放目录，支持以下类型文件：

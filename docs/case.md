@@ -156,7 +156,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 	</a>
 </div>
 
-<!-- 
+<!--
 <a href="https://www.csdn.net/" target="_blank" class="clear-style"><b>CSDN：</b></a> 专业 IT 技术社区，致力于为中国软件开发者提供知识传播、在线学习、职业发展等全生命周期服务。
 <div style="display:flex;justify-content: space-around;">
 	<a href="javascript:;" target="_blank" class="clear-style barcode-view">
@@ -191,7 +191,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 	</a>
 </div>
 
-<!-- <a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style"><b>登登多邻国：</b></a> 外语学习者题库。其服务端整体基于[uniCloud](https://doc.dcloud.net.cn/uniCloud/README)，前端包括PC和H5网站、微信小程序，均连接uniCloud。日请求量百万级。
+<!-- <a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style"><b>登登多邻国：</b></a> 外语学习者题库。其服务端整体基于[uniCloud](https://doc.dcloud.net.cn/uniCloud/)，前端包括PC和H5网站、微信小程序，均连接uniCloud。日请求量百万级。
 <div style="display:flex;justify-content: space-around;">
 	<a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style barcode-view">
 		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-alicdn/bda036a0-c55f-11ea-b997-9918a5dda011.png" width="200"/>
@@ -289,7 +289,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **腾讯微回收手机回收：** 微信小程序搜索同名
 
-**腾讯医生：** 微信小程序搜索同名、[H5](https://doctor.baike.qq.com/) 
+**腾讯医生：** 微信小程序搜索同名、[H5](https://doctor.baike.qq.com/)
 
 **腾讯企业邮箱：** [H5](https://exmail.qq.com/qy_mina_logic/uniapp/h5)
 
@@ -356,7 +356,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **当当网：** 微信小程序搜索“当当购物”、[H5](https://dh5.dangdang.com/)
 
 **太平洋汽车网：** H5，VR看车。需特定入口。
-  
+
 <!-- **西祠胡同：** [App官网扫码下载](https://www.xici.net/)、[H5](https://3g.xici.net/) -->
 
 **极米：** [极米官方app](https://sj.qq.com/myapp/detail.htm?apkName=com.xgimi.zhushou&info=FB45015C23ACF368D22855D6C4964312)、[官网H5版](https://m.xgimi.com/)、微信小程序搜索“极米官方商城”、微信小程序搜索“极米care+”售后服务宣传
@@ -616,7 +616,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **天津公安：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=jnhyjt.tjgamsfwpt.tjga)
 
 
-<!-- 
+<!--
 
 **江西赣州民政局社会救助**[微信H5](http://gzshjz.ganzhou.gov.cn/h5gz/)
 
@@ -626,7 +626,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **巴彦淖尔市家庭医生居民端：** [H5](http://jtys.bynrws.gov.cn:11111/)
 
-**甘孜州卫健委：** [H5](http://syappht.wjw.gzz.gov.cn/) 
+**甘孜州卫健委：** [H5](http://syappht.wjw.gzz.gov.cn/)
 
 **四川省医疗机构、医务人员、医疗行为信息监管平台：** [H5](http://jgapp.wjw.gzz.gov.cn/login.jsp)
 
@@ -652,7 +652,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **华莱士官方点餐：** 微信小程序搜同名
 
-**张亮麻辣烫：** 百度小程序搜索 “张亮麻辣烫” 
+**张亮麻辣烫：** 百度小程序搜索 “张亮麻辣烫”
 
 **西贝骑手：** 西贝莜面村外卖骑手App
 
@@ -1050,5 +1050,5 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 		transform: rotate(45deg);
 		z-index: 12;
 	}
-	
+
 </style>

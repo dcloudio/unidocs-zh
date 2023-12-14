@@ -17,9 +17,7 @@ push is a usable but not dependable feature.
 Push推送通道不可依赖，Android rom厂商为了省电会禁止push进程开机自启、三方清理软件会杀掉push进程。不止是个推，所有非大厂的app，没有进入rom厂商和三方清理软件白名单的app，不管用哪个推送方案都可能会被杀。当然集成了小米推送后在小米手机上肯定不会被杀，但在其他平台被杀的概率可能更高。
 The Push channel cannot be relied upon. To save power, Android rom manufacturers will prohibit the push process from starting automatically, and the third-party cleaning software will kill the push process. It's not just a push, all apps from non-big manufacturers, apps that have not entered the whitelist of rom manufacturers and third-party cleanup software, may be killed no matter which push scheme is used. Of course, after integrating Xiaomi push, it will definitely not be killed on Xiaomi mobile phones, but the probability of being killed on other platforms may be higher.
 本质上推送是一个有利于开发商但却很容易造成用户骚扰和费电的功能，所以大多数主流app里的push的实际用处都是拉激活的非实时活动推送。必要时要补充发短信通知的方式。
-In essence, push is a function that is beneficial to developers but can easily cause user harassment and power consumption. Therefore, the actual use of push in most mainstream apps is pull-activated non-real-time activity push. If necessary, supplement the way of sending SMS notification.
-关于三方推送服务商，其实发展多年内后，技术、服务差距都不大，核心还在于用户量，因为集成的sdk越多，保活和看护机制越有效果。从个推、极光等公司在ipo时披露的数据来看，还是个推占据优势。
-Regarding the third-party push service providers, in fact, after many years of development, the gap between technology and services is not large, and the core lies in the number of users, because the more SDKs are integrated, the more effective the keep-alive and nursing mechanisms will be. Judging from the data disclosed by companies such as Getui and Jiguang at the IPO, Getui still has the advantage.
+关于三方推送服务商，其实发展多年后，技术、服务差距都不大，核心还在于用户量，因为集成的sdk越多，保活和看护机制越有效果。从个推、极光等公司在ipo时披露的数据来看，还是个推占据优势。
 - iOS平台
 - iOS platform
 手机用户有自主关闭APP推送的权利，如果被关闭自然无法收到push。

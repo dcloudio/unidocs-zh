@@ -208,7 +208,8 @@ The above is a default manifest file example, more description about package.jso
 │	├─mp-toutiao                  // 抖音小程序平台，可选
 │	├─mp-weixin                   // 微信小程序平台，可选
 │	├─mp-xhs                      // 小红书小程序平台（仅限vue2），可选
-│	├─index.d.ts                  // 插件能力声明，可选
+│	├─index.d.ts                  // 插件能力声明，可选，将废弃，推荐使用interface.uts
+│	├─interface.uts               // 声明插件对外暴露的API
 │	└─index.uts                   // 跨平台插件能力实现，可选
 └─package.json                    // 插件清单文件
 </code>
@@ -234,8 +235,7 @@ Developers have several ways to organize their code:
 3. 不写根目录的 index.uts，直接在分平台目录写 index.uts。不跨端时，比如只做一个 Android 插件，这样写比较简单
 3. Instead of writing index.uts in the root directory, write index.uts directly in the sub-platform directory. When not cross-terminal, such as only making an Android plug-in, it is relatively simple to write
 
-index.d.ts 文件是对当前插件能力的**声明**，用于语法提示。它不是必写项。
-The index.d.ts file is a **declaration** of the current plugin capabilities, used for syntax hints. It is not mandatory.
+index.d.ts 文件是对当前插件能力的**声明**，用于语法提示。已不推荐使用，请使用interface.uts。
 
 因为 uts 写好后，HBuilderX 可以自动识别 uts api 并进行语法提示。它更多的用于后续 uts 插件加密时给予语法提示。
 Because after the uts is written, HBuilderX can automatically recognize the uts api and provide syntax prompts. It is more used to give syntax hints when the subsequent uts plugin encrypts.
@@ -264,9 +264,7 @@ The native configuration of the Android platform exists in the app-android folde
 |AndroidManifest.xml	|Android平台原生应用清单文件				|
 |AndroidManifest.xml |Android platform native application manifest file |
 |config.json			|Android平台下的配置文件					|
-| config.json | Configuration file under Android platform |
-|index.uts				|主入口，index.d.ts声明的能力在Android平台下的实现	|
-| index.uts | The main entry, the realization of the capabilities declared by index.d.ts on the Android platform |
+|index.uts				|主入口，interface.uts/index.d.ts声明的能力在Android平台下的实现	|
 
 
 ##### assets  
@@ -436,9 +434,7 @@ There are iOS platform native configurations under the app-ios folder, including
 |UTS.entitlements	|iOS平台插件需要添加到原生工程 entitlements 文件中的配置文件		|
 | UTS.entitlements | The iOS platform plug-in needs to be added to the configuration file in the entitlements file of the native project |
 |config.json		|iOS平台原生工程的配置文件									|
-| config.json | Configuration file for iOS platform native projects |
-|index.uts			|主入口，index.d.ts声明的能力在iOS平台下的实现				|
-| index.uts |The main entry, the realization of the capabilities declared by index.d.ts on the iOS platform |
+|index.uts			|主入口，interface.uts/index.d.ts声明的能力在iOS平台下的实现				|
 
 ##### Frameworks 
 iOS平台插件依赖的三方framework存放目录，支持以下类型文件：

@@ -61,7 +61,8 @@ This directory clearly lists all the things this plugin needs to do: write uts o
 ├── uni_modules
 │   ├── uni-getbatteryinfo
 │   │   ├── changelog.md
-│   │   ├── index.d.ts // 类型声明，需要同时扩展 uni 声明当前注册的 API
+│   │   ├── index.d.ts // 类型声明，需要同时扩展 uni 声明当前注册的 API，将废弃，使用interface.uts代替
+│   │   ├── interface.uts  // 声明插件对外暴露的API及类型
 │   │   ├── package.json
 │   │   ├── readme.md
 │   │   └── utssdk // 在不同目录实现平台能力
@@ -161,7 +162,7 @@ Only uni's built-in api is upgraded along with HBuilder. Please remember the dif
 ├── uni_modules
 │   ├── uni-getbatteryinfo
 │   │   ├── changelog.md
-│   │   ├── index.d.ts // 类型声明，需要同时扩展 uni 声明当前注册的 API
+│   │   ├── interface.uts // 类型声明
 │   │   ├── package.json
 │   │   ├── readme.md
 │   │   └── utssdk // 在不同目录实现平台能力

@@ -25,7 +25,7 @@ iOS平台通用链接，必须与微信开放平台配置的一致，推荐使�
 
 ### 使用微信登录  
 1. 客户端调用api向微信请求授权，获取临时票据（code），向开发者业务服务器发起网络请求
-2. 业务服务器通过code + 仅保存在服务器的appsecret参数，向：微信开放平台接口发起网络请求[详情](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419317853&token=&lang=zh_CN)。
+2. 业务服务器通过code + 仅保存在服务器的appsecret参数，向：微信开放平台接口发起网络请求[详情](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Authorized_API_call_UnionID.html)。
 3. 业务服务器成功获取用户信息后，再依据unionid或openid查数据库的用户表并生成新token，并返回token给客户端
 4. 客户端得到token后，保存到storage完成登录。
 

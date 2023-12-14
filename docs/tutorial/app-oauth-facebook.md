@@ -78,8 +78,7 @@ var facebookOauth = null;
 plus.oauth.getServices(function(services) {
 	for (var i in services) {
 		var service = services[i];
-		// 获取微信登录对象 
-		// Get the WeChat login object
+        // 获取facebook登录对象
 		if (service.id == 'facebook') {
 			facebookOauth = service;
 			break;

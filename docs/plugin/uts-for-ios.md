@@ -208,6 +208,69 @@ lib.test()
 console.log(lib.version);
 ```
 
+#### 3.4.3 不包含 Modules 的 framework 使用说明@nomodules
+
+有些第三方的 SDK 使用 OC 语言开发，且产物 .framework 文件里不包含 Moudules 文件夹。这就造成该 SDK 不支持 use module 模式，不能直接在 Swift 文件中导入。
+这样的 SDK 不能直接被 uts 插件引用，需要做以下处理：
+
+##### 有源码的情况
+
+如果你有 SDK 的源码，那么有以下几种方法可以生成 Modules。
+以名称为 `TestSDK` 的 framework 为例：
+
++ 通过创建和 SDK 的 target 同名的头文件方式：
+	- 打开 XCode, 创建一个和 SDK target 同名的 `.h` 文件，如 `TestSDK.h`；
+	- 将需要暴露的 public 文件 导入到 `TestSDK.h` 中，如 `#import <TestSDK/TestA.h>`;
+	- 在 `target` -> `Build Phases` -> `Headers` 中将刚创建的 `TestSDK.h` 设置为 `public`;
+	- 重新编译 SDK, 编译后可以看到 Modules 已经生成。
+	
++ 通过自定义 Module Map 的方式：
+	- 打开 XCode, 在 `TestSDK` SDK 源码目录下创建 ` module.map.modulemap ` 文件；
+	- 在上述文件中键入下面代码中类似的内容，下述代码是以 `TestSDK` 为例，实践时需要改为自己的 SDK 和文件名；
+	- 在 `target` -> `Build Settings` -> `Module Map File` 设置 `Module Map File` 为 `$(PROJECT_DIR)/TestSDK/module.map.modulemap`;
+	- 重新编译 SDK, 编译后可以看到 Modules 已经生成。
+	
+```ts
+framework module TestSDK {
+    header "TestA.h"   //需要对外暴露的头文件，需要为 plubic 的文件
+	
+	header "TestB.h"  //需要对外暴露的头文件，需要为 plubic 的文件
+
+    export *
+}
+```
+
+##### 无源码的情况
+	
+如果使用的是第三方非开源的 SDK, 那么可以使用下面的方式来生成 Modules:
+以 `TestSDK` 为例：
+
++ 在 `TestSDK.framework` 文件夹下创建 `Modules` 文件夹；
++ 在 `Modules` 文件夹下创建 `module.modulemap` 文件；
++ 在上述文件中键入下述的代码(其中的 .h 文件都要是 TestSDK.framework -> Headers 文件夹里的头文件)。
++ 至此 TestSDK 就可以直接放在 uts 插件中使用了。
+
+> 注意： 
+> 实践时要将 `TestSDK` 改成你要操作的 SDK 名称，.h 文件也要改成你要暴露的头文件名字。
+
+```ts
+framework module TestSDK {
+	// 下面的.h 文件都要是 TestSDK.framework -> Headers 文件夹下的头文件
+    header "AClass.h"  
+    
+    header "BClass.h"
+    
+    header "CClass.h"
+    
+    header "DClass.h"
+    
+    export *
+}
+
+```
+
+
+
 ## 4 iOS 平台内置库 DCloudUTSFoundation
 > HBuilder X 3.6.11+ 版本支持
 
@@ -475,6 +538,16 @@ let action = new UIAlertAction(title="确认", style=UIAlertAction.Style.default
 })
 ```
 
+原生中有些方法的闭包参数是逃逸闭包，此时就要在闭包前面添加 `@escaping` 标记：
+
+```ts
+// 在闭包参数前添加@escaping
+function requestLocationPromise(@escaping completion: (res: boolean)=>void) {
+
+}
+```
+
+
 #### 5.1.10 target-action 方法
 
 uts 中调用原生中涉及 target-action 的方法时，比如给`UIButton`添加点击事件方法、注册通知中心事件方法时注意事项，
@@ -739,6 +812,6 @@ HBuilderX 目前写iOS uts 插件时部分语法提示会有缺失、参数类�
 ## 8 有关Swift语言创建的Framework和.a的Swift版本兼容性问题
 
 - 由于高版本XCode编译的Swift语言Framework动态库、静态库、.a库在低版本XCode上无法编译通过，因此存在Swift版本兼容性问题;
-- 目前打包机使用的XCode版本号是13.2.1，对应的Swift版本是5.5.2;
+- 目前打包机使用的XCode版本号是14.2，对应的Swift版本是5.7.2;
 - 请在编译Swift相关Framework和.a库时选择和打包机相同或者更低版本的XCode;
 - 选择比打包机更低版本XCode编译Swift库时请在Target->buildSettings设置Buid Libraries for Distribution 为Yes。

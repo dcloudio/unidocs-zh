@@ -4,6 +4,11 @@ let utsApiJson = {};
 let utsComJson = {};
 let utsUnicloudApiJson = {};
 let customTypeJson = {};
+let vueJson = {};
+let manifestJson = {};
+let pagesJson = {};
+let specialStringJson = {};
+let pageInstanceJson = {};
 try {
 	cssJson = require('../utils/cssJson.json');
 } catch (error) {}
@@ -22,6 +27,21 @@ try {
 try {
 	customTypeJson = require('../utils/customTypeJson.json');
 } catch (error) {}
+try {
+	vueJson = require('../utils/vueJson.json');
+} catch (error) {}
+try {
+	manifestJson = require('../utils/manifestJson.json');
+} catch (error) {}
+try {
+	pagesJson = require('../utils/pagesJson.json');
+} catch (error) {}
+try {
+	specialStringJson = require('../utils/specialStringJson.json');
+} catch (error) {}
+try {
+	pageInstanceJson = require('../utils/pageInstanceJson.json');
+} catch (error) {}
 
 
 function getRegExp(key) {
@@ -36,7 +56,7 @@ const getJSON = text => {
 			json: cssJson,
 		};
 	}
-	
+
 	match = text.match(getRegExp('UTSJSON'));
 	if (match) {
 		return {
@@ -44,7 +64,7 @@ const getJSON = text => {
 			json: utsJson,
 		};
 	}
-	
+
 	match = text.match(getRegExp('UTSAPIJSON'));
 	if (match) {
 		return {
@@ -74,6 +94,46 @@ const getJSON = text => {
 		return {
 			match,
 			json: customTypeJson,
+		};
+	}
+
+	match = text.match(getRegExp('VUEJSON'));
+	if (match) {
+		return {
+			match,
+			json: vueJson,
+		};
+	}
+
+	match = text.match(getRegExp('MANIFESTJSON'));
+	if (match) {
+		return {
+			match,
+			json: manifestJson,
+		};
+	}
+
+	match = text.match(getRegExp('PAGESJSON'));
+	if (match) {
+		return {
+			match,
+			json: pagesJson,
+		};
+	}
+
+	match = text.match(getRegExp('SPECIALSTRINGJSON'));
+	if (match) {
+		return {
+			match,
+			json: specialStringJson,
+		};
+	}
+
+	match = text.match(getRegExp('PAGEINSTANCE'));
+	if (match) {
+		return {
+			match,
+			json: pageInstanceJson,
 		};
 	}
 

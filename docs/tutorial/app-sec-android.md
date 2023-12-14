@@ -2,7 +2,7 @@
 
 首先我们需要理解漏洞风险并不代表真实存在安全漏洞，比如[WebView远程代码执行漏洞](#webview_jsinterface)，仅在Android4.2及以下版本系统存在，目前HBuilderX发现App最低要求版本Android4.4；比如[Activity、Service、Receiver等组件导出风险](#export)，有些功能依赖的组件必须设置为导出，实际上并不存在安全问题。而安全平台会把所有可能存在的漏洞或风险都列出来，很多安全问题都可能是误报或夸大了安全漏洞的隐患。
 
-**因此对于存在漏洞风险问题的基本解决方案是使用`APK加固`，推荐[uni安全加固](https://dev.dcloud.net.cn/uni_modules/uni-trade/pages/account/account?pcd=tcb_app_csdn_serv)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云**
+**因此对于存在漏洞风险问题的基本解决方案是使用`APK加固`，推荐[uni安全加固](/tutorial/app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云**
 
 如果加固还不能解决问题，或者安全平台要求加固前进行检测，请在[官方论坛ask](https://ask.dcloud.net.cn/explore/)发帖反馈，添加话题为“安全漏洞”、“安全检测”，上传完整安全检测报告及检测的apk文件。
 
@@ -78,41 +78,20 @@ HBuilderX3.1.14+版本已经将DCloud管理的代码中所有不需要被外部�
 - 个推SDK  
 UniPush模块用到个推SDK，内部功能涉及到CustomGTService、PushReceiver、GActivity、NotificationServic等组件都要求对外导出
 
-> 提示：如果您的项目因为三方SDK组件存在导出风险而无法通过安全检测则只能不使用相关的模块
-
 
 #### 应用签名未校验风险  
 **风险描述**  
 签名证书是对App开发者身份的唯一标识，如果程序未对签名证书进行校验，可能被反编译后进行二次打包使用其它签名证书重新签名。如重新签名的App可以正常启动，则可能导致App被仿冒盗版，影响其合法收入，甚至可能被添加钓鱼代码、病毒代码、恶意代码，导致用户敏感信息泄露或者恶意攻击。
 
 **修复方案**  
-HBuilderX3.0.0+版本新增[plus.navigator.getSignature](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature)方法获取Android平台签名证书的SHA-1指纹信息，在应用启动或运行时进行校验判断。
-
-可以在应用运行期间定时校验，以下是uni-app项目在App.vue的应用生命周期[onLaunch](https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f)中进行校验，示例如下：
-``` js
-  onLaunch: function(inf) {
-      console.log('App Launch');
-// #ifdef APP-PLUS
-      // 签名证书指纹检验
-      var sha1 = 'baad093a82829fb432a7b28cb4ccf0e9f37dae58';  //修改为自己应用签名证书SHA-1值，是全小写并且中间不包含“:”符号
-      if(sha1!=plus.navigator.getSignature()){
-        //证书不对时退出应用
-        plus.runtime.quit();
-      }
-// #endif
-  }
-
-```
-
-> 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
-
+对APK进行加固，推荐[uni安全加固](/tutorial/app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
 
 #### APK可被反编译后取得源代码风险  
 **风险描述**  
 说的打包为App的原生APK可以被反编译获取Java源代码。
 
 **修复方案**  
-对APK进行加固，推荐使用腾讯加固平台。
+对APK进行加固，推荐[uni安全加固](/tutorial/app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
 
 
 <a id="webview_jsinterface"/>
@@ -140,7 +119,7 @@ HBuilderX3.1.14+版本已修复此问题，在内部逻辑中使用的密钥全�
 SO文件为APK中包含的动态链接库文件，Android利用NDK技术将C/C++语言实现的核心代码编译为SO库文件供Java层调用。SO文件被破解可能导致应用的核心功能代码和算法泄露。攻击者利用核心功能与算法可轻易抓取到客户端的敏感数据，并对其解密，导致用户的隐私泄露或直接财产损失
 
 **修复方案**  
-建议使用专业安全加固平台对APK中的SO文件进行加固保护
+对APK中的SO文件进行加固保护,推荐[uni安全加固](/tutorial/app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
 
 #### Strandhogg漏洞
 **风险描述**  
@@ -175,3 +154,20 @@ StrandHogg之所以独特，是因为它无需进行植根即可启用复杂的�
 	}
 }
 ```
+
+#### 未配置网络安全属性漏洞
+**风险描述**  
+从Nougat(Android 7) 一个名为“Network Security Configuration'的新安全功能也随之而来。如果应用程序的 SDK高于或等于24，则只有系统证书才会被信任。Android Network Security Configuration 功能提供了一个简单的层，用来保护应用程序在未加密的明文中意外传输的敏感数据。可以针对特定域和特定应用配置这些设置。如缺少networkSecurityConfig 特性，应用程序将使用系统默认安全配置，致使应用程序在不安全的定制 ROM 上运行时可能遭受恶意网络攻击。
+
+**修复方案** 
+
++ 根据Android平台[网络安全配置文档](https://developer.android.google.cn/training/articles/security-config?hl=zh-cn)生成`network_security_config.xml`配置文件 
++ 通过HBuilderX实现networkSecurityConfig配置！参考[Android原生应用清单文件和资源文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
+	+ 将`network_security_config.xml`文件拷贝到应用资源`nativeResources\android\res\xml`目录下
+	+ 配置`AndroidManifest.xml`中application节点！添加networkSecurityConfig属性配置。配置参考如下：
+		```
+		<application android:networkSecurityConfig="@xml/network_security_config"
+		                        ... >
+		            ...
+		</application>
+		```

@@ -27,8 +27,7 @@
 - [全屏视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-fullscreen-video.html)
 - [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 - [沉浸视频流广告](https://uniapp.dcloud.net.cn/uni-ad/ad-draw.html)
-- [短视频内容联盟组件](https://uniapp.dcloud.net.cn/uni-ad/ad-content-page.html)
-- [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.html)
+- [短视频内容联盟](https://uniapp.dcloud.net.cn/uni-ad/ad-content-page.html)
 - [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
 
 #### 微信小程序
@@ -83,7 +82,6 @@ HBuilderX3.5.0+版本 uni-ad 激励视频广告支持实时竞价功能。
 - [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 - [沉浸视频流广告](https://uniapp.dcloud.net.cn/uni-ad/ad-draw.html)
 - [短视频内容联盟组件](https://uniapp.dcloud.net.cn/uni-ad/ad-content-page.html)
-- [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.html)
 - [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
 
 **错误码**

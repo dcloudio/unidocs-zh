@@ -158,7 +158,7 @@ plus.push.getClientInfoAsync((info) => {
 
 
 
-### 2.2 个推服务端 api 推送
+### 2.2 个推服务端 api 推送@request_getui
 
 #### 2.2.1 服务端消息下发流程（必读）
 

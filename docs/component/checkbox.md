@@ -12,12 +12,17 @@
 
 **属性说明**
 
-|属性名|类型|默认值|说明|
-|:-|:-|:-|:-|
-|value|String||``<checkbox>`` 标识，选中时触发 ``<checkbox-group>`` 的 change 事件，并携带 ``<checkbox>`` 的 value。|
-|disabled|Boolean|false|是否禁用|
-|checked|Boolean|false|当前是否选中，可用来设置默认选中|
-|color|Color||checkbox的颜色，同css的color|
+|属性名|类型|默认值|说明|平台差异说明|
+|:-|:-|:-|:-|:-|
+|value|String||``<checkbox>`` 标识，选中时触发 ``<checkbox-group>`` 的 change 事件，并携带 ``<checkbox>`` 的 value。||
+|disabled|Boolean|false|是否禁用||
+|checked|Boolean|false|当前是否选中，可用来设置默认选中||
+|color|Color||checkbox的颜色，同css的color||
+|backgroundColor|Color|#ffffff|checkbox默认的背景颜色|H5(3.99+)、App-Vue(3.99+)|
+|borderColor|Color|#d1d1d1|checkbox默认的边框颜色|H5(3.99+)、App-Vue(3.99+)|
+|activeBackgroundColor|Color|#ffffff|checkbox选中时的背景颜色，优先级大于color属性|H5(3.99+)、App-Vue(3.99+)|
+|activeBorderColor|Color|#d1d1d1|checkbox选中时的边框颜色|H5(3.99+)、App-Vue(3.99+)|
+|iconColor|Color|#007aff|checkbox的图标颜色|H5(3.99+)、App-Vue(3.99+)|
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/checkbox/checkbox)
  

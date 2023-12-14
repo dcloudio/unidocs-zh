@@ -1,3 +1,5 @@
+# 页面
+
 ## 页面简介
 
 uni-app项目中，一个页面就是一个符合`Vue SFC规范`的 vue 文件。
@@ -15,7 +17,9 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的 vue 文件�
 	
 	uni-app x 在app-android上，每个页面都是一个全屏activity，不支持透明。
 
-## 新建页面
+## 页面管理
+
+### 新建页面
 
 `uni-app`中的页面，默认保存在工程根目录下的`pages`目录下。
 
@@ -29,25 +33,29 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的 vue 文件�
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/pages-add-02.png" style="max-width:450px"></img>
 </div>
 
-新建页面时，可以选择`是否创建同名目录`。创建目录的意义在于，
+新建页面时，可以选择`是否创建同名目录`。创建目录的意义在于：
+
 - 如果你的页面较复杂，需要拆分多个附属的js、css、组件等文件，则使用目录归纳比较合适。
 - 如果只有一个页面文件，大可不必多放一层目录。
 
-## 删除页面
+### 删除页面
 
 删除页面时，需做两件工作：
+
 - 删除`.vue`文件、`.nvue`、`.uvue`文件
 - 删除`pages.json -> pages`列表项中的配置 （如使用HBuilderX删除页面，会在状态栏提醒删除pages.json对应内容，点击后会打开pages.json并定位到相关配置项）
 
-页面改名同理。
+### 页面改名
 
-## pages.json
+操作和删除页面同理，依次修改文件和 `pages.json`。
+
+### pages.json
 
 pages.json是工程的页面管理配置文件，包括：页面路由注册、页面参数配置（原生标题栏、下拉刷新...）、首页tabbar等众多功能。
 
 其篇幅较长，另见 [pages.json](../collocation/pages.md)
 
-## 应用首页
+### 设置应用首页
 
 `pages.json -> pages`配置项中的第一个页面，作为当前工程的首页（启动页）。
 
@@ -72,7 +80,11 @@ pages.json是工程的页面管理配置文件，包括：页面路由注册、�
 
 ## 页面内容构成
 
-uni-app 页面基于 vue 规范。一个页面内，有3个根节点标签 `<template>`、`<script>`、`<style>`，分别是模板组件区、脚本区、样式区。
+uni-app 页面基于 vue 规范。一个页面内，有3个根节点标签：
+
+- 模板组件区 `<template>`
+- 脚本区 `<script>`
+- 样式区 `<style>`
 
 ```html
 <template>
@@ -110,12 +122,14 @@ uni-app 页面基于 vue 规范。一个页面内，有3个根节点标签 `<tem
 ### template模板区
 
 template中文名为`模板`，它类似html的标签。但有2个区别：
-1. html中script和style是html的二级节点。但在vue文件中，template、script、style这3个是平级关系。
-2. html中写的是web标签，但vue的template中写的全都是vue组件，每个组件支持属性、事件、vue指令，还可以绑定vue的data数据。
 
-在vue2中，template的二级节点只能有一个节点，一般是在一个根view下继续写页面组件（如上示例代码）。
+1. html中 `script` 和 `style` 是 html 的二级节点。但在 vue 文件中，`template`、`script`、`style` 这3个是平级关系。
+2. html 中写的是 web 标签，但 vue 的 `template` 中写的全都是 vue 组件，每个组件支持属性、事件、 vue 指令，还可以绑定 vue 的 data 数据。
+
+在vue2中，`template` 的二级节点只能有一个节点，一般是在一个根 `view` 下继续写页面组件（如上示例代码）。
 
 但在vue3中，template可以有多个二级节点，省去一个层级，如下：
+
 ```html
 <template>
 	<view>
@@ -127,9 +141,11 @@ template中文名为`模板`，它类似html的标签。但有2个区别：
 </template>
 ```
 
-可以在manifest中切换使用vue2还是vue3（uni-app x中只支持vue3）
+可以在 `manifest` 中切换使用 Vue2 还是 Vue3。
 
-### script脚本区
+注意：`uni-app x` 中只支持 Vue3。
+
+### script 脚本区
 
 script中编写脚本，可以通过lang属性指定脚本语言。
 
@@ -141,16 +157,17 @@ script中编写脚本，可以通过lang属性指定脚本语言。
 </script>
 ```
 
-在vue的选项式（option）规范中，script下包含`export default {}`。（除了选项式，还有[组合式](vue3-composition-api.md)）
+在vue的选项式（option）规范中，script下包含 `export default {}`。除了选项式，还有 [组合式](vue3-composition-api.md) 写法。
 
-页面级的代码大多写在`export default {}`中。写在里面的代码，会随着页面关闭而关闭。
+页面级的代码大多写在 `export default {}` 中。写在里面的代码，会随着页面关闭而关闭。
 
-#### export default 外的代码
+#### `export default` 外的代码
 
-先来介绍写在`export default {}`外面的代码，一般有几种情况：
-1. import三方js/ts模块
-2. import非easycom的组件（一般组件推荐使用[easycom](../collocation/pages.md#easycom)，无需导入注册）
-3. 在ts/uts中，对data的类型进行type定义
+写在 `export default {}` 外面的代码，一般有几种情况：
+
+1. 引入第三方 js/ts 模块
+2. 引入非 easycom 的组件（一般组件推荐使用[easycom](../collocation/pages.md#easycom)，无需导入注册）
+3. 在 ts/uts 中，对 data 进行类型定义
 4. 定义作用域更大的变量
 
 ```html
@@ -180,18 +197,21 @@ script中编写脚本，可以通过lang属性指定脚本语言。
 </script>
 ```
 
-开发者应谨慎编写`export default {}`外面的代码，这里的代码有2个注意事项：
-1. 在应用启动时执行。也就是这里的代码执行时机是应用启动、而不是页面加载。如果这里的代码写的太复杂，会影响应用启动速度和内存占用。
-2. 不跟随页面关闭而回收。在外层的静态变量不会跟随页面关闭而回收。
+开发者应谨慎编写 `export default {}` 外面的代码，这里的代码有2个注意事项：
 
+1. 影响应用性能。这部分代码在应用启动时执行，而不是页面加载。如果这里的代码写的太复杂，会影响应用启动速度，占用更多内存。
+2. 不跟随组件、页面关闭而回收。在外层的静态变量不会跟随页面关闭而回收。如果必要你需要手动处理。比如 `beforeDestroy` 或 `destroyed` 生命周期进行处理。
 
 #### export default 里的代码
+
 `export default {}` 里的内容，是页面的主要逻辑代码。包括几部分：
-1. data：template模板中需要使用的数据。具体[另见](vue-basics.md#data)
-2. 页面生命周期：如页面加载、隐藏、关闭，具体[见下](#lifecycle)
+
+1. data：template模板中需要使用的数据。具体 [另见](vue-basics.md#data)
+2. 页面生命周期：如页面加载、隐藏、关闭，具体 [见下](#lifecycle)
 3. methods方法，如按钮点击、屏幕滚动
 
 如下页面代码的逻辑是：
+
 1. 在data中定义了`title`，初始值是"点我"
 2. 在页面中放置了一个button组件，按钮文字区使用`{{}}`模板写法，里面写`title`，把data里的`title`绑定到按钮的文字区，即按钮的初始文字是"点我"
 3. 按钮的点击事件`@click`，指向了methods里的一个方法`buttonClick`，点击按钮即触发这个方法的执行
@@ -240,12 +260,12 @@ style的写法与web的css基本相同。
 
 ## 页面生命周期@lifecycle
 
-``uni-app`` 页面除支持 Vue 组件生命周期外还支持下方页面生命周期函数，当以组合式 API 使用时，在 Vue2 和 Vue3 中存在一定区别，请分别参考：[Vue2 组合式 API 使用文档](/tutorial/vue-composition-api.html) 和 [Vue3 组合式 API 使用文档](/tutorial/vue3-composition-api.html)。
+`uni-app` 页面除支持 Vue 组件生命周期外还支持下方页面生命周期函数，当以组合式 API 使用时，在 Vue2 和 Vue3 中存在一定区别，请分别参考：[Vue2 组合式 API 使用文档](/tutorial/vue-composition-api.html) 和 [Vue3 组合式 API 使用文档](/tutorial/vue3-composition-api.html)。
 
 |函数名|说明|平台差异说明|最低版本|
 |:-|:-|:-|:-|
 |onInit|监听页面初始化，其参数同 onLoad 参数，为上个页面传递的数据，参数类型为 Object（用于页面传参），触发时机早于 onLoad|百度小程序|3.1.0+|
-|onLoad|监听页面加载，该钩子被调用时，响应式数据、计算属性、方法、侦听器、props、slots 已设置完成，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参），参考[示例](/api/router?id=navigateto)|||
+|onLoad|监听页面加载，该钩子被调用时，响应式数据、计算属性、方法、侦听器、props、slots 已设置完成，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参），参考[示例](/api/router?id=navigateto)。|||
 |onShow|监听页面显示，页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面|||
 |onReady|监听页面初次渲染完成，此时组件已挂载完成，DOM 树($el)已可用，注意如果渲染速度快，会在页面进入动画完成前触发|||
 |onHide|监听页面隐藏|||
@@ -272,7 +292,7 @@ style的写法与web的css基本相同。
 
 所以原生导航栏是最快显示的。页面背景色也应该在这里配置。
 
-2.根据页面template里的组件，创建dom。
+2. 根据页面template里的组件，创建dom。
 
 这里的dom创建仅包含第一批处理的静态dom。对于通过js/uts更新data然后通过v-for再创建的列表数据，不在第一批处理。
 
@@ -352,6 +372,12 @@ a页面刚进入时，会触发a页面的onShow。
 - 仅百度小程序基础库 3.260 以上支持 onInit 生命周期
 - 其他版本或平台可以同时使用 onLoad 生命周期进行兼容，注意避免重复执行相同逻辑
 - 不依赖页面传参的逻辑可以直接使用 created 生命周期替代
+
+### onLoad
+
+**注意**
+
+- `uni-app x android` 平台，如需获取 [activity 实例](plugin/uts-for-android.md#activity)，此时当前页面的 `activity 实例`并未创建完成，会获取到上一个页面的 `activity 实例`（首页会获取应用默认的 `activity 实例`）。如需获取当前页面的 `activity 实例`，应在 `onShow` 或 `onReady` 生命周期中获取。
 
 ### onReachBottom
 
@@ -491,16 +517,18 @@ app.doSomething() // 调用 App.vue methods 中的 doSomething 方法
 |page.$getAppWebview()|获取当前页面的webview对象实例|App|
 |page.route|获取当前页面的路由|&nbsp;|
 
-**注意：**\
-``getCurrentPages()``仅用于展示页面栈的情况，请勿修改页面栈，以免造成页面状态错误。\
+**注意：**
+
+`getCurrentPages()` 仅用于展示页面栈的情况，请勿修改页面栈，以免造成页面状态错误。\
 页面关闭时，对应页面实例会在页面栈中删除。
 
 Tips：
-* ``navigateTo``, ``redirectTo`` 只能打开非 tabBar 页面。
-* ``switchTab`` 只能打开 ``tabBar`` 页面。
-* ``reLaunch`` 可以打开任意页面。
-* 页面底部的 ``tabBar`` 由页面决定，即只要是定义为 ``tabBar`` 的页面，底部都有 ``tabBar``。
-* 不能在 ```App.vue``` 里面进行页面跳转。
+
+- `navigateTo`, `redirectTo` 只能打开非 tabBar 页面。
+- `switchTab` 只能打开 `tabBar` 页面。
+- `reLaunch`` 可以打开任意页面。
+- 页面底部的 `tabBar` 由页面决定，即只要是定义为 `tabBar` 的页面，底部都有 `tabBar`。
+- 不能在首页 `onReady` 之前进行页面跳转。
 
 ### $getAppWebview() @getappwebview
 
@@ -711,7 +739,7 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 
 ## 页面代码规范介绍 @template-block
 
-`uni-app` 支持在 template 模板中嵌套 `<template/>` 和 `<block/>`，用来进行 [列表渲染](/tutorial/vue-basics?id=listrendering) 和 [条件渲染](/tutorial/vue-basics?id=condition)。
+`uni-app` 支持在 template 模板中嵌套 `<template/>` 和 `<block/>`，用来进行 [条件渲染](/tutorial/vue-basics?id=condition) 和 [列表渲染](/tutorial/vue-basics?id=listrendering)。
 
 `<template/>` 和 `<block/>` 并不是一个组件，它们仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。
 

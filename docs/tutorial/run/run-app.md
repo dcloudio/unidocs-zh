@@ -148,7 +148,7 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/hx_select_base.jpg" style="zoom: 50%;" />
 
-注意：自定义运行基座是测试版，不可直接商用（使用自定义运行基座覆盖安装apk不会更新应用资源，并且有toast警告）。正式发版时需要按正常打包方式重新打包。
+注意：自定义运行基座必须在HBuilderX中真机运行使用，不可直接安装使用，启动时会弹出toast提示信息。正式发版时需要按正常打包方式重新打包。
 
 > HBuilderX 3.7.13起，MacOSX系统，App项目，支持运行自定义基座到iOS模拟器。[参考文档](https://uniapp.dcloud.net.cn/tutorial/run/run-custom-base-ios-simulator.html)
 

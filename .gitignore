@@ -3,3 +3,6 @@ docs/.vuepress/dist
 .DS_Store
 **/sitemap.xml
 docs-lite
+dist
+docs/.vuepress/.cache
+docs/.vuepress/.temp

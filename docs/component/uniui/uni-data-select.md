@@ -95,7 +95,7 @@ export default {
 |     clear     |    Boolean    |   -    |    -     |                         是否可以清空已选项                          |
 |     label     |    String     |        |          |                              左侧标题                               |
 |  placeholder  |    String     |   -    |  请选择  |                          输入框的提示文字                           |
-|   emptyText   |    String     |   -    | 暂无数据 |                 没有数据时显示的文字 ，本地数据无效                 |
+|   emptyTips   |    String     |   -    | 暂无数据 |                 没有数据时显示的文字 ，本地数据无效                 |
 
 #### DataCom Props
 

@@ -38,16 +38,6 @@ export const navbar = [
         link: '/api/'
       },
       {
-        text: 'UTS',
-        type: 'link',
-        link: '/uts/'
-      },
-      {
-        text: 'uni-app x',
-        type: 'link',
-        link: '/uni-app-x/'
-      },
-      {
         text: '插件',
         type: 'link',
         link: '/plugin/'
@@ -56,6 +46,11 @@ export const navbar = [
         text: '工程化',
         type: 'link',
         link: '/worktile/'
+      },
+      {
+        text: 'UTS',
+        type: 'link',
+        link: 'https://doc.dcloud.net.cn/uni-app-x/uts/'
       },
       {
         text: '其他规范',
@@ -138,9 +133,18 @@ export const navbar = [
     ]
   },
   {
+    text: 'uni-app x',
+    link: 'https://doc.dcloud.net.cn/uni-app-x/',
+    type: "link",
+    target: '_blank',
+    needOutbound: false
+  },
+  {
     text: 'uniCloud',
-    type: 'link',
-    link: '/uniCloud/'
+    link: 'https://doc.dcloud.net.cn/uniCloud/',
+    type: "link",
+    target: '_blank',
+    needOutbound: false
   },
   {
     text: 'HBuilder',

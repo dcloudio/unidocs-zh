@@ -91,7 +91,18 @@ const routerMap = {
   '/nvue-event': '/tutorial/nvue-event.html',
   '/use-html5plus': '/tutorial/use-html5plus.html',
   '/m3w': '/uniCloud/uni-portal.html',
-  '/tutorial/syntax-uts': '/uts/',
+  '/tutorial/syntax-uts': '/uni-app-x/uts/',
+
+  '/uniCloud/uni-id-summary': '/uniCloud/uni-id/summary.html',
+  '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.html',
+  '/uniCloud/uni-id-common': '/uniCloud/uni-id/cloud-common.html',
+  '/uniCloud/uni-id': '/uniCloud/uni-id/old.html',
+  '/uts/': '/uni-app-x/uts/',
+  '/uni-app-x/ext': '/uni-app-x/api/ext.html',
+  '/uni-app-x/pagesjson': '/uni-app-x/collocation/pagesjson.html',
+  '/uni-app-x/manifest': '/uni-app-x/collocation/manifest.html',
+  '/uniCloud/': 'https://doc.dcloud.net.cn/uniCloud/',
+  '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/'
 }
 
 export default ({ fullPath, path, hash }) => {
@@ -104,7 +115,7 @@ export default ({ fullPath, path, hash }) => {
     }
   }
 
-  const matchPath = routerMap[path]
+  const matchPath = routerMap[path] || routerMap[path.replace('.html', '')]
   if (matchPath) {
     return {
       path: matchPath,
@@ -120,4 +131,17 @@ export default ({ fullPath, path, hash }) => {
       replace: true
     }
   }
+
+  const routerMapKeys = Object.keys(routerMap)
+  let returnPathConfig = null
+  routerMapKeys.forEach(key => {
+    if (path.indexOf(key) === 0 && routerMap[key].indexOf(key) !== 0 && routerMap[key] !== path) {
+      return returnPathConfig = {
+        path: path.replace(key, routerMap[key]),
+        hash,
+        replace: true
+      }
+    }
+  })
+  if (returnPathConfig) return returnPathConfig
 }

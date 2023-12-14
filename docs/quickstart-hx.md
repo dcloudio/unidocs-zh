@@ -44,16 +44,16 @@ uni-app自带的模板有 默认的空项目模板、Hello uni-app 官方组件�
 	<div align=center>
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/menurunapp.png"/>
 	</div>
-	
+
 	- 如手机或模拟器无法识别，请点击[常见故障排查指南](https://uniapp.dcloud.net.cn/tutorial/run/run-app-faq.html)。
   - 如需运行在苹果手机真机上，注意需使用自定义基座。[详见](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
-	
+
 3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。
     <br/>
     <div align=center>
     	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/menurunminiapp.png"/>
     </div>
-    
+
     **注意**：如果是第一次使用，需要先配置小程序ide的相关路径，才能运行成功。如下图，需在输入框输入微信开发者工具的安装路径。
     <br/>
     <div align=center>
@@ -61,7 +61,7 @@ uni-app自带的模板有 默认的空项目模板、Hello uni-app 官方组件�
     </div>
 
     **注意**：微信开发者工具需要开启服务端口 在微信工具的设置->安全中。
-		
+
 4. 在支付宝小程序开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 支付宝小程序开发者工具，即可在支付宝小程序开发者工具里面体验uni-app。
     <br/>
     <div align=center>
@@ -129,7 +129,7 @@ iOS App打包需要向Apple申请证书。
 
 **注意**
 - `history` 模式发行需要后台配置支持，详见：[history 模式的后端配置](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
-- 打包后，推荐使用[前端网页托管服务](/uniCloud/hosting)，一键上传，自带CDN加速，无需购买虚拟机，无需安装nginx等；
+- 打包后，推荐使用[前端网页托管服务](https://doc.dcloud.net.cn/uniCloud/hosting)，一键上传，自带CDN加速，无需购买虚拟机，无需安装nginx等；
 - 若使用传统服务器部署，建议在服务器端开启 `gzip` 压缩。参考网上的分享：https://juejin.im/post/5af003286fb9a07aac24611b
 
 ### 发布为小程序

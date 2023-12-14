@@ -97,6 +97,21 @@ innerAudioContext.onError((res) => {
   console.log(res.errMsg);
   console.log(res.errCode);
 });
+
+
+**当出现-99错误时** 可以按照下面思路进行排查：
+
+```javascript
+// 多次会调用播放新的文件时，提前销毁实例，可避免-99错误
+if (innerAudioContext) {
+  try {
+    innerAudioContext.pause();
+    innerAudioContext.destroy()
+    innerAudioContext = null
+  } catch (e) {
+    //TODO handle the exception
+  }
+}
 ```
 
 **tips**

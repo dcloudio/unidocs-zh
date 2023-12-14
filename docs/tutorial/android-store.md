@@ -4,6 +4,8 @@
 
 根据以上规范要求，各大应用市场都加强应用的检测，要求应用必须符合相关政策，否则应用将有被通报或下架的风险。
 
+DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`服务，可在线申请获取详细检测报告，详见：[uni隐私合规检测](/uni-app-privacy-detect.md)
+
 ### APP因合规问题无法上架
 
 请认真的阅读以下步骤来检测自己的APP！有效的解决上架问题
@@ -30,7 +32,7 @@
 ### 隐私政策注意事项
 
 + 必须确保应用存在《隐私政策》，在应用首次启动时弹出提示并取得用户同意。
-+ 一定要配置使用`template`模式隐私与政策提示框 [详情参考](https://ask.dcloud.net.cn/article/36937)
++ 一定要配置使用`template`模式隐私与政策提示框 [详情参考](https://uniapp.dcloud.io/tutorial/app-privacy-android)
 + 必须在“隐私与政策”非常清楚、全面地说明（不要用可能收集、了解用户信息这种模糊不清晰的词语）收集用户个人信息的目的、方式和范围，用户个人信息包括但不限于mac地址、设备序列号、imei、imsi、软件安装列表、通讯录信息、短信信息等。
 + 如果反馈说有违规获取敏感信息行为，请查看[Android平台各功能模块隐私合规协议](https://ask.dcloud.net.cn/article/39484)各功能模块隐私协议。如果你集成了相关模块就一定要写入到app的隐私协议中。
 + 必须在《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发，添加如下协议：
@@ -213,6 +215,6 @@ HX3.6.1+版本 可以配置manifest.json配置checkPermissionDenied = true 校�
 
 
 #### 相关参考
-+ Android平台隐私与政策提示框配置方法：[https://ask.dcloud.net.cn/article/36937](https://ask.dcloud.net.cn/article/36937)
++ Android平台隐私与政策提示框配置方法：[https://uniapp.dcloud.io/tutorial/app-privacy-android](https://uniapp.dcloud.io/tutorial/app-privacy-android)
 + Android平台应用启动时读写手机存储、访问设备信息(如IMEI)等权限策略及提示信息：[https://ask.dcloud.net.cn/article/36549](https://ask.dcloud.net.cn/article/36549)
-+ Android平台配置权限参考：[https://ask.dcloud.net.cn/article/36982](https://ask.dcloud.net.cn/article/36982)
++ Android平台配置权限参考：[https://uniapp.dcloud.io/tutorial/app-permission-android](https://uniapp.dcloud.io/tutorial/app-permission-android)

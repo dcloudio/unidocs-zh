@@ -10,13 +10,13 @@ uni统计2 是开源、全端、云端一体、更适合uni-app的统计平台�
 
 体验系统：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)
 
-注：uni统计内置在[uni-admin](/uniCloud/admin)中，体验系统的数据会定期重置。
+注：uni统计内置在[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)中，体验系统的数据会定期重置。
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/admin3.png)
 
 ## 产品特色
 
-无需开发，在`manifest`的 `uni统计` 中打勾并发行，在[uniCloud](/uniCloud/)服务空间部署[uni-admin](/uniCloud/admin)，即可查看报表。
+无需开发，在`manifest`的 `uni统计` 中打勾并发行，在[uniCloud](https://doc.dcloud.net.cn/uniCloud/)服务空间部署[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)，即可查看报表。
 
 同时开发者也可以自定义打点数据、自定义展现报表。
 
@@ -67,11 +67,11 @@ uni统计深入uni-app和uniCloud框架底层，提供了众多其他统计平�
 - 自动捕获js错误，上报app端原生崩溃日志
 - 兼容uni-app渠道包打包体系，自动识别渠道包
 - 基于uni-id账户体系，自动出具注册用户（不是设备）的新增、活跃、留存报表
-- 兼容uniCloud [opendb规范](/uniCloud/opendb)，从服务器端统计各项数据
+- 兼容uniCloud [opendb规范](https://doc.dcloud.net.cn/uniCloud/opendb)，从服务器端统计各项数据
 
 **7. 开放生态**
 
-uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
+uni统计的开源且基于[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
 **DCloud非常重视数据驱动开发者业务的增长，近期联合专业的大数据服务商<a href="https://www.sensorsdata.cn/" target="_blank">神策</a>和<a href="https://tj.aldwx.com/" target="_blank">阿拉丁</a>共同完善Uni统计2.0的产品模块和生态建设。
 如果你对数据分析有任何需求，欢迎您填写<a href="https://sdmarketing.wjx.cn/vj/h2UFHnx.aspx" target="_blank">需求调研问卷</a>，我们会根据您的宝贵建议，在原有Uni统计产品的基础上，完成迭代更新。**
@@ -216,7 +216,7 @@ uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了�
 	usv: "0.0.1"
 	ut: "h5"
 	// ...
-} 
+}
 === 采集结束 ===
 
 // 数据上报成功
@@ -322,7 +322,7 @@ uni统计新增的文件主要包括：
 2. 分别在数据`上报数据接收器（uni-stat-receiver）`和`定时任务云函数（uni-stat-cron）`下的`package.json`文件中添加redis拓展库。
 3. 重新上传部署数据`上报数据接收器（uni-stat-receiver）`、`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
 
-::: preview 
+::: preview
 > 配置uni-stat-receiver的redis拓展库
 ``` javascript
 {
@@ -336,7 +336,7 @@ uni统计新增的文件主要包括：
 		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容。如拷贝此配置项到package.json文件，切记去除注释。
 	}
 }
-``` 
+```
 > 配置uni-stat-cron的redis拓展库
 ``` javascript
 {
@@ -385,7 +385,7 @@ uni统计新增的文件主要包括：
 
 ![关联前后台数据](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.08.51.png)
 
-### 错误解析 <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error 
+### 错误解析 <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error
 
 > 此功能只支持 web平台、App平台、微信小程序平台
 
@@ -708,7 +708,7 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 ├── components                         # 自定义组件
 ├── js_sdk                             # js sdk
 │   └── uni-stat                       # uni统计相关工具方法
-│       └── util.js                      
+│       └── util.js
 ├── pages                              # 页面
 │   └── uni-stat                       # uni统计页面
 │       │── channel                    # 渠道（app）
@@ -716,71 +716,71 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 │       │   └── fieldsMap.js           # 字段配置（下同）
 │       │── device                     # 设备统计
 │       │   │── activity               # 渠道/场景分析
-│       │   │   │── activity.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── activity.vue
+│       │   │   └── fieldsMap.js
 │       │   │── comparison             # 平台对比
-│       │   │   │── comparison.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── comparison.vue
+│       │   │   └── fieldsMap.js
 │       │   │── overview               # 今日概览
-│       │   │   │── overview.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── overview.vue
+│       │   │   └── fieldsMap.js
 │       │   │── retention              # 留存
-│       │   │   │── retention.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── retention.vue
+│       │   │   └── fieldsMap.js
 │       │   │── stickiness             # 粘性
-│       │   │   │── stickiness.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── stickiness.vue
+│       │   │   └── fieldsMap.js
 │       │   └── trend                  # 趋势分析
-│       │       │── trend.vue           
-│       │       └── fieldsMap.js        
+│       │       │── trend.vue
+│       │       └── fieldsMap.js
 │       │── error                      # 错误分析
-│       │   │── error.vue             
-│       │   └── fieldsMap.js            
+│       │   │── error.vue
+│       │   └── fieldsMap.js
 │       │── event                       # 事件分析
-│       │   │── event.vue             
-│       │   └── fieldsMap.js            
+│       │   │── event.vue
+│       │   └── fieldsMap.js
 │       │── index                       # 统计首页
-│       │   │── index.vue             
-│       │   └── fieldsMap.js            
+│       │   │── index.vue
+│       │   └── fieldsMap.js
 │       │── page-ent                    # 入口页
-│       │   │── page-ent.vue             
-│       │   └── fieldsMap.js            
+│       │   │── page-ent.vue
+│       │   └── fieldsMap.js
 │       │── page-res                    # 受访页
-│       │   │── page-res.vue             
-│       │   └── fieldsMap.js            
+│       │   │── page-res.vue
+│       │   └── fieldsMap.js
 │       │── pay-order                   # 支付统计
 │           │── funnel                  # 支付/漏斗分析
-│           │   │── funnel.vue      
-│           │   └── fieldsMap.js              
+│           │   │── funnel.vue
+│           │   └── fieldsMap.js
 │           │── list                    # 支付/订单明细
-│           │   │── list.vue      
+│           │   │── list.vue
 │           │── overview                # 支付/订单概况
-│           │   │── overview.vue      
-│           │   └── fieldsMap.js      
+│           │   │── overview.vue
+│           │   └── fieldsMap.js
 │           └── ranking                 # 支付/用户价值排行
-│               └── ranking.vue           
+│               └── ranking.vue
 │       │── scene                       # 场景值（小程序）
-│       │   │── scene.vue             
-│       │   └── fieldsMap.js            
+│       │   │── scene.vue
+│       │   └── fieldsMap.js
 │       └── user                        # 用户统计
 │           │── activity                # 渠道/场景分析
-│           │   │── activity.vue      
-│           │   └── fieldsMap.js    
+│           │   │── activity.vue
+│           │   └── fieldsMap.js
 │           │── comparison              # 平台对比
-│           │   │── comparison.vue      
-│           │   └── fieldsMap.js    
+│           │   │── comparison.vue
+│           │   └── fieldsMap.js
 │           │── overview                # 今日概览
-│           │   │── overview.vue      
-│           │   └── fieldsMap.js    
+│           │   │── overview.vue
+│           │   └── fieldsMap.js
 │           │── retention               # 留存
-│           │   │── retention.vue      
-│           │   └── fieldsMap.js    
+│           │   │── retention.vue
+│           │   └── fieldsMap.js
 │           │── stickiness              # 粘性
-│           │   │── stickiness.vue      
-│           │   └── fieldsMap.js    
+│           │   │── stickiness.vue
+│           │   └── fieldsMap.js
 │           └── trend                   # 趋势分析
-│               │── trend.vue           
-│               └── fieldsMap.js        
+│               │── trend.vue
+│               └── fieldsMap.js
 ├── static
 ├── store
 ├── admin.config.js
@@ -962,7 +962,7 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 ## 扩展和自定义方式
 uni统计提供了基础的数据报表，如不能达到预期的数据采集，可以在客户端通过 `uni.report(eventKey,param)`  自由上报数据 ，并通过 uni-admin 增加页面 ，自行统计数据。
 
-### 前端 uni.report 基础用法 
+### 前端 uni.report 基础用法
 
 这里列出 `uni.report(eventKey,param)` 的基本用法，完整`API`查看：[详情](https://uniapp.dcloud.io/api/other/report.html)
 
@@ -994,7 +994,7 @@ const db = uniCloud.database()
 db.collection('uni-stat-event-logs')
 ```
 
-不管是新上报的数据，还是[opendb](https://uniapp.dcloud.net.cn/uniCloud/opendb.html)的数据、或者开发者自己的业务数据库里的数据，都可以自己编写报表进行统计分析。
+不管是新上报的数据，还是[opendb](https://doc.dcloud.net.cn/uniCloud/opendb.html)的数据、或者开发者自己的业务数据库里的数据，都可以自己编写报表进行统计分析。
 
 与普通uni-app页面一样，新建页面，编写代码。
 
@@ -1032,7 +1032,7 @@ exports.main = async (event, context) => {
 		for (let oldKey in oldVersionDataRes.data) {
 			//老版本表的数据
 			const oldVersionData = oldVersionDataRes.data[oldKey]
-			
+
 			//组装数据
 			const newVersionData = {
 				_id: oldVersionData._id,//_id 两个表数据要保持一致
@@ -1047,7 +1047,7 @@ exports.main = async (event, context) => {
 			await db.collection('opendb-app-versions').add(newVersionData)
 		}
 	}
-	
+
 	return true
 };
 ```
@@ -1058,7 +1058,7 @@ exports.main = async (event, context) => {
 
 近期，uniCloud阿里云版开始正式商用，部分开发者对基于uniCloud的`uni统计`等云端一体业务，开始纠结，不清楚这些业务预计会花费多少钱，不清楚相比传统服务器而言，何种方案性价比更好。
 
-本文尝试算细账、算总账，以阿里云[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，详细预测`uni统计`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择，无忧开发。
+本文尝试算细账、算总账，以阿里云[按量计费](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，详细预测`uni统计`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择，无忧开发。
 
 本文主要分为三个部分：
 
@@ -1083,7 +1083,7 @@ exports.main = async (event, context) => {
 
 启用`uni统计`后，你的每一个在线用户默认每10秒会请求一次`uni-stat-receiver`云函数（如果你的日活在1万以上，可以改成60秒，可以减少费用。时间间隔可在manifest.json内设置，如果用户一直停留在一个页面，那么此时不会重复上报）
 
-我们按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)列出的按量计费规则，计算一下云函数的资源消耗。
+我们按照[uniCloud官网](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)列出的按量计费规则，计算一下云函数的资源消耗。
 
 |资源分类			|资源细项							|售价（元）	|
 |:-------:		|:----------------:		|:-------:	|
@@ -1131,8 +1131,8 @@ exports.main = async (event, context) => {
 
 同理，我们可推导出日活为1000、10000、10万的App，其`uni-stat-receiver`云函数每月费用如下表：
 
-|  日活	| 资源使用量计费（元/日）	|	调用次数计费（元/日）	|  出网流量计费（元/日）	| 日合计（元/日）	|  月合计（元/月）	|	
-| :----:| :-----------------:		|:-------------------:|:--------------------:	|:----------:		|:---------:			| 
+|  日活	| 资源使用量计费（元/日）	|	调用次数计费（元/日）	|  出网流量计费（元/日）	| 日合计（元/日）	|  月合计（元/月）	|
+| :----:| :-----------------:		|:-------------------:|:--------------------:	|:----------:		|:---------:			|
 |   100 |			0.001382					|			0.00133					|  0.000534							|    0.0032			|    0.10 				|
 |  1000	|			0.01382						|			0.0133					|  0.00534							|    0.0325			|    0.98  				|
 | 10000	|			0.1382						|			0.133						|  0.0534								|    0.3246			|    9.74					|
@@ -1166,7 +1166,7 @@ exports.main = async (event, context) => {
 同理，我们可推导出日活为1000、10000、10万的App，其`uni-stat-receiver`云函数每月费用如下表：
 
 |  日活	|  平均耗时（秒）	| 资源使用量计费（元/日）	|  调用次数计费（元/日）	|  出网流量计费（元/日）	|   日合计（元/日）	|  月合计（元/月）	|
-| :----:| :------:			|:-------------------:	|:-------------------:	|:-------------------:	|:---------:			| :--------:			| 
+| :----:| :------:			|:-------------------:	|:-------------------:	|:-------------------:	|:---------:			| :--------:			|
 |   100	|   1						|      0.001327					|       0.00003192			|  0										|   0.0014				|  0.04						|
 |  1000	|   3						|      0.003981					|       0.00003192			|  0										|   0.0040				|  0.12						|
 | 10000	|  30						|      0.039813					|       0.00003192			|  0										|   0.0398				|  1.19						|
@@ -1176,7 +1176,7 @@ exports.main = async (event, context) => {
 
 ### 云数据库@cost-db
 
-按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，云数据库费用 = `容量费用 + 读操作次数费用 + 写操作次数费用`，其中：
+按照[uniCloud官网](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，云数据库费用 = `容量费用 + 读操作次数费用 + 写操作次数费用`，其中：
 
 - 容量费用：数据库存储容量（单位为G） * 0.07
 - 读操作次数费用：读操作次数（万次） * 0.015
@@ -1235,7 +1235,7 @@ redis只影响数据库的读操作，通过官方统计示例项目使用redis�
 
 `uni统计`需要和`uni-admin`配合使用，`uni-admin`需要部署在前端网页托管中。`uni-admin`主要是管理员使用，使用频次较少，流量也较低。
 
-按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，前端网页托管费用 = `容量费 + 流量费`。
+按照[uniCloud官网](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，前端网页托管费用 = `容量费 + 流量费`。
 
 #### 容量费
 
@@ -1249,15 +1249,15 @@ redis只影响数据库的读操作，通过官方统计示例项目使用redis�
 
 每月费用不到1分钱，可忽略。
 
-### 费用合并@cost-total 
+### 费用合并@cost-total
 
 细项对比完了，我们来合并看看，使用`uni统计`，每月到底需要花多少钱。
 
 |日活		    |云函数（元/月）	|云数据库（元/月）	|前端网页托管	（元/月）	|  月合计（元/月）	|
 | :--------:| :--------:		|:-----------:		|:-----------------:	|:---------------:|
 |   100	    |   0.14	  		|   0.42					|可忽略不计						|   0.56					|
-|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					| 
-| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|  
+|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					|
+| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|
 |100000		  | 100.97	 			| 423.85					|可忽略不计						| 524.82					|
 
 ### uni统计 给你带来的收益
@@ -1307,8 +1307,8 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 |日活		    |云函数（元/月）	|云数据库（元/月）	|前端网页托管	（元/月）	|  月合计（元/月）	|
 | :--------:| :--------:		|:-----------:		|:-----------------:	|:---------------:|
 |   100	    |   0.14	  		|   0.42					|可忽略不计						|   0.56					|
-|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					| 
-| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|  
+|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					|
+| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|
 |100000		  | 100.97	 			| 423.85					|可忽略不计						| 524.82					|
 
 不重复制造轮子，聚焦业务，快速验证模式，实现商业增长，才应该是聪明工程师的追求。
@@ -1348,7 +1348,7 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 
 ### 4. 如何创建或授权`uni统计`运营管理员账号
 
-答：参考[uni-admin 给系统创建多个登录账户并设置不同的权限](https://uniapp.dcloud.net.cn/uniCloud/admin.html#mutiladmin)
+答：参考[uni-admin 给系统创建多个登录账户并设置不同的权限](https://doc.dcloud.net.cn/uniCloud/admin.html#mutiladmin)
 
 ### 5. 为什么总设备数比活跃设备数少？
 
@@ -1399,6 +1399,6 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 ## 参考资料
 
 不掌握如下文档，很难对 `uni统计2.0` 吃透和做二次开发
-- uni-admin文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/admin.html)
+- uni-admin文档：[详见](https://doc.dcloud.net.cn/uniCloud/admin.html)
 - uni-id文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html)
-- opendb文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/opendb.html)
+- opendb文档：[详见](https://doc.dcloud.net.cn/uniCloud/opendb.html)

@@ -115,7 +115,7 @@ datacom组件，对服务器数据规范、前端组件的数据输入和输出�
 - 设计更加清晰。服务器端给符合规范的数据，然后接受选择的结果数据。中间的ui交互无需关心。
 - 结合 [uni-forms](https://ext.dcloud.net.cn/plugin?id=2773) 组件，自动实现表单校验。
 - 搭配 uniCloud 的[unicloud-db组件](https://uniapp.dcloud.io/uniCloud/clientdb)，数据库查询结果直接绑定给`datacom组件`，服务器代码直接就不用写了
-- 搭配 uniCloud 的[schema2code页面生成系统](https://uniapp.dcloud.net.cn/uniCloud/schema?id=autocode)，数据库定义好schema，前端页面就不用写了，自动生成
+- 搭配 uniCloud 的[schema2code页面生成系统](https://doc.dcloud.net.cn/uniCloud/schema?id=autocode)，数据库定义好schema，前端页面就不用写了，自动生成
 - 互操作性。可以轻易的切换更好的组件
 
 举个例子，假使我们想实现一个城市选择的业务。
@@ -269,14 +269,14 @@ localdata的示例上文已经举例，下面来看下直接指定uniCloud云数
 	  export default {
 		data() {
 		  return {
-			
+
 		  };
 		},
 	  };
 	</script>
 ```
 
-collection表名、field字段名、where条件的写法，详见[clientDB组件文档](https://uniapp.dcloud.net.cn/uniCloud/uni-clientdb-component?id=%e5%b1%9e%e6%80%a7)
+collection表名、field字段名、where条件的写法，详见[clientDB组件文档](https://doc.dcloud.net.cn/uniCloud/uni-clientdb-component?id=%e5%b1%9e%e6%80%a7)
 
 当然，支持绑定uniCloud数据，对于datacom组件规范来说，是可选的。
 
@@ -354,7 +354,7 @@ datacom组件规范还要求支持绑定 value，且支持双向绑定，即：�
 
 ### 使用mixinDatacom快速开发datacom@mixindatacom
 
-> 版本要求：HBuilderX 3.1.0+ 
+> 版本要求：HBuilderX 3.1.0+
 
 开发一个支持localdata的datacom组件相对容易，但要开发支持云端数据的datacom组件，实现对collection、field、where等属性的解析，工作量还是不小的。
 
@@ -371,7 +371,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 |属性名						| 类型			| 	默认值		| 说明|
 |:-:						| :-:			| :-:			| :-:	|
 |localdata					|Array			|				|本地数据，[详情](https://uniapp.dcloud.net.cn/component/datacom)|
-|spaceInfo					|Object     |				|服务空间信息，新增于`HBuilderX 3.2.11`。同uniCloud.init参数，参考：[uniCloud.init](uniCloud/init.md?id=init-unicloud)|
+|spaceInfo					|Object     |				|服务空间信息，新增于`HBuilderX 3.2.11`。同uniCloud.init参数，参考：[uniCloud.init](https://doc.dcloud.net.cn/uniCloud/init.html?id=init-unicloud)|
 |collection					|String			|				|表名。支持输入多个表名，用 `,` 分割|
 |field						|String			|				|查询字段，多个字段用 `,` 分割|
 |where						|String			|				|查询条件，内容较多，另见jql文档：[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
@@ -388,7 +388,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 |gettree					|Boolean		|	false		|是否查询树状数据，默认 `false`|
 |startwith					|String			|	''			|`gettree`的第一层级条件，此初始条件可以省略，不传startWith时默认从最顶级开始查询|
 |limitlevel					|Number			|	10			|`gettree`查询返回的树的最大层级。超过设定层级的节点不会返回。默认10级，最大15，最小1|
-|foreign-key				|String			|	''			|手动指定使用的关联关系，HBuilderX 3.1.10+ [详情](/uniCloud/clientdb?id=lookup-foreign-key)|
+|foreign-key				|String			|	''			|手动指定使用的关联关系，HBuilderX 3.1.10+ [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=lookup-foreign-key)|
 
 
 `uniCloud.mixinDatacom` 的data
@@ -479,7 +479,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 ```
 
 
-- 方法2，使用 `mixinDatacomGet()` 
+- 方法2，使用 `mixinDatacomGet()`
 
 需要多写些代码处理各种状态。如果`mixinDatacomEasyGet`的封装无法灵活满足你的需求，可以使用这种方式。
 
@@ -574,6 +574,10 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 #### `uniCloud.mixinDatacom` 源码 @mixinDatacomsource
 为方便开发者理解mixinDatacom的工作原理，这里贴出mixinDatacom的源码：
 
+uni-app-x 3.99+ 开始支持
+
+::: preview
+> js
 ```js
 export default {
 	props: {
@@ -818,3 +822,321 @@ export default {
 	}
 }
 ```
+> uts
+```uts
+type SuccessCallback<T> = (res : T | null) => void | null
+type FailCallback = (err : any | null) => void | null
+type CompleteCallback = () => void | null
+
+export type MixinDatacomPaginationType = {
+  current : number,
+  size : number,
+  count : number
+}
+
+export type MixinDatacomGetOptions = {
+  collection ?: UTSJSONObject,
+  field ?: string,
+  orderBy ?: string,
+  where ?: any,
+  pageData ?: string,
+  pageCurrent ?: number,
+  pageSize ?: number,
+  getCount ?: boolean,
+  getTree ?: any,
+  getTreePath ?: UTSJSONObject,
+  startWith ?: string,
+  limitLevel ?: number,
+  groupBy ?: string,
+  groupField ?: string,
+  distinct ?: boolean,
+  pageIndistinct ?: boolean,
+  foreignKey ?: string,
+  loadtime ?: string,
+  manual ?: boolean
+}
+
+export type MixinDatacomEasyGetOptions = {
+  success ?: SuccessCallback<UniCloudDBGetResult>,
+  fail ?: FailCallback,
+  complete ?: CompleteCallback,
+}
+
+export const mixinDatacom = defineMixin({
+  slots: Object as SlotsType<{
+    default : {
+      data : Array<UTSJSONObject>,
+      loading : boolean,
+      hasMore : boolean,
+      pagination : MixinDatacomPaginationType,
+      error : UniCloudError | null
+    }
+  }>,
+  props: {
+    localdata: {
+      type: Array as PropType<Array<UTSJSONObject>>,
+      default: [] as Array<UTSJSONObject>
+    },
+    collection: {
+      type: Object,
+      default: ''
+    },
+    field: {
+      type: String,
+      default: ''
+    },
+    orderby: {
+      type: String,
+      default: ''
+    },
+    where: {
+      type: Object,
+      default: ''
+    },
+    pageData: {
+      type: String,
+      default: 'add'
+    },
+    pageCurrent: {
+      type: Number,
+      default: 1
+    },
+    pageSize: {
+      type: Number,
+      default: 20
+    },
+    getcount: {
+      type: Boolean,
+      default: false
+    },
+    gettree: {
+      type: Object,
+      default: ''
+    },
+    gettreepath: {
+      type: Boolean,
+      default: false
+    },
+    startwith: {
+      type: String,
+      default: ''
+    },
+    limitlevel: {
+      type: Number,
+      default: 10
+    },
+    groupby: {
+      type: String,
+      default: ''
+    },
+    groupField: {
+      type: String,
+      default: ''
+    },
+    distinct: {
+      type: Boolean,
+      default: false
+    },
+    pageIndistinct: {
+      type: Boolean,
+      default: false
+    },
+    foreignKey: {
+      type: String,
+      default: ''
+    },
+    loadtime: {
+      type: String,
+      default: 'auto'
+    },
+    manual: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      mixinDatacomResData: [] as Array<UTSJSONObject>, // 请求返回的数据，调用 loadData 后会更新
+      mixinDatacomLoading: false, // 网络请求状态
+      mixinDatacomHasMore: false, // 是否有更多数据
+      mixinDatacomPage: {
+        current: 1,
+        size: 20,
+        count: 0,
+      } as MixinDatacomPaginationType, // 分页信息，详情见 created 生命周期
+      mixinDatacomError: null as UniCloudError | null, // 请求出错时的错误消息
+    }
+  },
+  created() {
+    this.mixinDatacomPage.current = this.pageCurrent
+    this.mixinDatacomPage.size = this.pageSize
+
+    const PROPS_NAME = ['', '', 'collection', 'field', 'getcount', 'orderby', 'where', 'groupby', 'groupField', 'distinct']
+
+    this.$watch(
+      () : any => [
+        this.pageCurrent,
+        this.pageSize,
+        this.collection,
+        this.field,
+        this.getcount,
+        this.orderby,
+        this.where,
+        this.groupby,
+        this.groupField,
+        this.distinct
+      ],
+      (newValue : Array<any>, oldValue : Array<any>) => {
+        this.mixinDatacomPage.size = this.pageSize
+        if (newValue[0] !== oldValue[0]) {
+          this.mixinDatacomPage.current = this.pageCurrent
+        }
+
+        let needReset = false
+        let changed : Array<string> = []
+        for (let i = 2; i < newValue.length; i++) {
+          if (newValue[i] !== oldValue[i]) {
+            needReset = true
+            changed.push(PROPS_NAME[i])
+          }
+        }
+
+        this.onMixinDatacomPropsChange(needReset, changed)
+      }
+    )
+  },
+  methods: {
+    // props发生变化时被调用，在组件中覆盖此方法
+    // 非 pageCurrent，pageSize 改变时 needReset=true,需要重置数据
+    // changed，发生变化的属性名，类型为Array，例如 ['collection', 'action']
+    onMixinDatacomPropsChange(_ : boolean, changed : Array<string>) {
+    },
+    mixinDatacomEasyGet(options ?: MixinDatacomEasyGetOptions) {
+      if (this.mixinDatacomLoading) {
+        return
+      }
+
+      this.mixinDatacomLoading = true
+      this.mixinDatacomError = null
+
+      this.mixinDatacomGet(null).then((res : UniCloudDBGetResult) => {
+        const data = res.data
+        const count = res.count
+
+        if (this.getcount && count != null) {
+          this.mixinDatacomPage.count = count
+        }
+
+        this.mixinDatacomHasMore = !((count !== null) ? (this.mixinDatacomPage.current * this.mixinDatacomPage.size >= count) : (data.length < this.pageSize))
+        this.mixinDatacomResData = data
+
+        options?.success?.(res)
+      }).catch((err : any | null) => {
+        this.mixinDatacomError = err as UniCloudError
+        options?.fail?.(err)
+      }).finally(() => {
+        this.mixinDatacomLoading = false
+        options?.complete?.()
+      })
+    },
+    mixinDatacomGet(options ?: MixinDatacomGetOptions) : Promise<UniCloudDBGetResult> {
+      let db = uniCloud.databaseForJQL()
+
+      let collection = Array.isArray(this.collection) ? db.collection(...(this.collection as Array<any>)) : db.collection(this.collection)
+
+      let filter : UniCloudDBFilter | null = null
+      if (this.foreignKey.length > 0) {
+        filter = collection.foreignKey(this.foreignKey)
+      }
+
+      const where : any = options?.where ?? this.where
+      if (typeof where == 'string') {
+        const whereString = where as string
+        if (whereString.length > 0) {
+          filter = (filter != null) ? filter.where(where) : collection.where(where)
+        }
+      } else {
+        filter = (filter != null) ? filter.where(where) : collection.where(where)
+      }
+
+      let query : UniCloudDBQuery | null = null
+      if (this.field.length > 0) {
+        query = (filter != null) ? filter.field(this.field) : collection.field(this.field)
+      }
+      if (this.groupby.length > 0) {
+        if (query != null) {
+          query = query.groupBy(this.groupby)
+        } else if (filter != null) {
+          query = filter.groupBy(this.groupby)
+        }
+      }
+      if (this.groupField.length > 0) {
+        if (query != null) {
+          query = query.groupField(this.groupField)
+        } else if (filter != null) {
+          query = filter.groupField(this.groupField)
+        }
+      }
+      if (this.distinct == true) {
+        if (query != null) {
+          query = query.distinct(this.field)
+        } else if (filter != null) {
+          query = filter.distinct(this.field)
+        }
+      }
+      if (this.orderby.length > 0) {
+        if (query != null) {
+          query = query.orderBy(this.orderby)
+        } else if (filter != null) {
+          query = filter.orderBy(this.orderby)
+        }
+      }
+
+      const size = this.mixinDatacomPage.size
+      const current = this.mixinDatacomPage.current
+      if (query != null) {
+        query = query.skip(size * (current - 1)).limit(size)
+      } else if (filter != null) {
+        query = filter.skip(size * (current - 1)).limit(size)
+      } else {
+        query = collection.skip(size * (current - 1)).limit(size)
+      }
+
+      const getOptions = {}
+      const treeOptions = {
+        limitLevel: this.limitlevel,
+        startWith: this.startwith
+      }
+      const getCount : boolean = options?.getCount ?? this.getcount
+      if (this.getcount == true) {
+        getOptions['getCount'] = getCount
+      }
+
+      const getTree : any = options?.getTree ?? this.gettree
+      if (typeof getTree == 'string') {
+        const getTreeString = getTree as string
+        if (getTreeString.length > 0) {
+          getOptions['getTree'] = treeOptions
+        }
+      } else if (typeof getTree == 'object') {
+        getOptions['getTree'] = treeOptions
+      } else {
+        getOptions['getTree'] = getTree
+      }
+
+      const getTreePath = options?.getTreePath ?? this.gettreepath
+      if (typeof getTreePath == 'string') {
+        const getTreePathString = getTreePath as string
+        if (getTreePathString.length > 0) {
+          getOptions['getTreePath'] = getTreePath
+        }
+      } else {
+        getOptions['getTreePath'] = getTreePath
+      }
+
+      return query.get(getOptions)
+    }
+  }
+})
+```
+:::

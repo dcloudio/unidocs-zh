@@ -1,12 +1,12 @@
 # UTS插件介绍
 
-## 1 介绍
+## 介绍
 
 > HBuilderX 3.6+ 支持uts插件
 
 UTS插件开发官方QQ交流群：527828934 [点此加入](https://qm.qq.com/cgi-bin/qm/qr?k=3Z-cQCXGiTyThkrqufUNNw7TaJd2xEPb&jump_from=webapi&authKey=4UQdplol3kPLwlDfuSdYleE8JUHnJChC2+8HcuBavZq2q51iAkLdzT4Bupt4ZJZu)
 
-### 什么是uts
+### 什么是uts语言
 
 uts，全称 uni type script，统一、强类型、脚本语言。
 
@@ -20,19 +20,40 @@ uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
 如需详细了解uts语法，另见[uts语法介绍](/uts/)
 
+uts语言，
+- 可以用来开发独立App，即[uni-app x](https://doc.dcloud.net.cn/uni-app-x/)；
+- 也可以用来开发插件，即uts插件。
+
 ### 什么是uts插件
 
-现有的 uni-app，仍以js引擎为主。但从HBuilderX 3.6开始，uni-app 支持 uts 插件（3.6支持vue3编译器，3.6.8支持vue2编译器）。
+uts插件，指利用uts语法，操作原生的API（包括手机os的api或三方sdk），并封装成一个[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)插件，供前端调用。
 
-也就是 uts 的第一步不是完整开发一个独立的 app，而是作为 uni-app 的插件。后续 uts 会持续迭代，达到完整开发 app 的水平。
+- uni-app中，是js来调用uts插件。（HBuilderX 3.6支持vue3编译器，3.6.8支持vue2编译器）
+- uni-app x中，是uts来调用uts插件。（HBuilderX 3.9支持）
 
-uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 原生插件，也就是 Kotlin 和 Swift 开发的插件。
+也就是一个uts插件，可以同时支持uni-app和uni-app x。
 
-开发 uts 插件不需要熟悉 Kotlin 和 Swift 的语法，因为使用的是基于 ts 的语法。但需要熟悉 Android 和 iOS 的系统 API，否则无法调用原生能力。
+为了兼容全端，uts插件可以分目录写所有平台代码，也就是一个uts插件除了支持App的扩展，还可以支持web、小程序。
+
+比如这个uts插件，[电量](https://ext.dcloud.net.cn/plugin?id=9295)，其源码在[https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getbatteryinfo](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getbatteryinfo)，内部有多个目录（app-android、app-ios、web、mp-weixin、mp-alipay...），在非App目录也可以写js。
+
+这个电量插件在uni-app和uni-app x中均可以使用。
+
+uts插件分api和组件。这和uni-app的组件、api的概念是一样的。
+- api插件：uts插件扩展了api能力，在script里调用
+- 组件插件：uts插件扩展了界面组件，在template里调用。它是要内嵌在页面中。
+
+api插件也可以操作界面，但更多是独立的全屏窗口或弹出窗口。而不能嵌入在template中。
+
+比如lottie动画的uts插件，就是一个组件插件。[https://ext.dcloud.net.cn/plugin?id=10674](https://ext.dcloud.net.cn/plugin?id=10674)，其源码在[https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view](https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view)
 
 ![uts插件结构](https://native-res.dcloud.net.cn/images/uts/UTS%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE1.png)
 
 ### uts插件与uni原生语言插件的区别
+
+uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 原生插件。都是给app扩展原生能力。
+
+开发 uts 插件不需要熟悉 Kotlin 和 Swift 的语法，因为使用的是 uts语法。但需要熟悉 Android 和 iOS 的系统 API，至少需要知道什么原生能力在哪个API里。
 
 在 HBuilderX 3.6 以前，uni-app 在 App 侧只有一种原生插件，即用 java 或 Objective-C 开发的插件。
 
@@ -46,6 +67,7 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 |开发环境		|Android Studio/XCode		|HBuilderX|
 |打包方式		|外挂aar 等产出物			|编译时生成原生代码|
 |js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接 import，支持摇树优化|
+|支持项目类型	|uni-app					|uni-app和uni-app x|
 
 相对原生语言插件，uts插件的优势：
 
@@ -55,16 +77,17 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 4. uts 下前端和原生可以统一在 HBuilderX 中联调。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
 5. 插件市场的uts插件支持下载后自己固定版本。而付费的原生语言插件只能使用最新版。
 6. 插件市场的uts付费插件支持源码版销售和源码版权保护机制。而付费的原生语言插件不支持源码版销售。
+7. uts插件可同时支持uni-app和uni-app x。
 
 如果您是插件作者，可以了解更多uts插件和uni原生语言插件对插件作者的区别。[详见](https://uniapp.dcloud.net.cn/plugin/publish.html#utsdiff)
 
 ### uts插件和Native.js的区别
 
-- [Native.js](../tutorial/native-js.md) 运行在js上，通过反射调用os api。功能和性能都不及真正的原生
+- [Native.js](../tutorial/native-js.md) 运行在js上，通过反射调用os api。功能和性能都不及原生
 - uts 在 app 上不运行在 js 引擎里，是真正的原生。
 
 
-## 2 创建uts插件
+## 创建uts插件
 
 ### uts 插件目录结构
 
@@ -198,12 +221,13 @@ Android平台原生三方库目录，支持以下类型文件：
 - aar
 - so库
 
-如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但因为多个uts插件引用相同三方原生sdk时可能会产生冲突，所以如果sdk支持仓储，建议优先使用仓储配置，而不是直接把jar等文件放在libs目录。仓储配置参考config.json的[dependencies](#dependencies)。  
+如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但因为多个uts插件引用相同三方原生sdk时可能会产生冲突，所以如果sdk支持仓储，建议优先使用仓储配置，而不是直接把jar等文件放在libs目录。
+
+仓储配置参考config.json的[dependencies](#dependencies)。  
 
 如果使用的三方sdk包含了so库，保存到此目录时，需按Android的abi类型分目录保存。
 
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
-
 
 
 ##### res  
@@ -300,16 +324,13 @@ buildscript {
 
 **注意：**
 
-- Android平台原生配置需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+- Android平台原生配置（包括引入、变更三方sdk）均需提交云端打包才能生效，真机运行时需使用[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
 - HBuilderX 内置了android常见的依赖：内置依赖清单 ，开发者需要注意两点：
 
     1 内置清单中涉及的依赖，无需手动添加，即可直接使用
 
     2 请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
-
-
-
 
 #### iOS 平台原生配置
 
@@ -418,16 +439,15 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 	+ 有关 dependencies-pods 配置和 CocoaPods 使用的更多细节[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html)
 
 
-## 3 开发uts插件
+## 开发uts插件
 
-### 3.1 获取电量插件示例
+### 获取电量插件示例
 
 以获取电量为例，介绍`uts`插件开发步骤
 
-**首先在 `uni_modules` 目录下新建名为 uni-getbatteryinfo 的 uts 插件**
+**首先在 `uni_modules` 目录下新建名为 uts-getbatteryinfo 的 uts 插件**
 
 #### Android平台
-
 
 ![OSAPI示例](https://native-res.dcloud.net.cn/images/uts/uts_osapi_demo_1.jpg)
 
@@ -466,7 +486,8 @@ export function getBatteryCapacity(): string {
 
 ```ts
 
-import getBatteryCapacity from "@/uni_modules/uts-getbatteryinfo";
+import { getBatteryCapacity } from "@/uni_modules/uts-getbatteryinfo";
+
 console.log(getBatteryCapacity())
 
 ```
@@ -486,7 +507,7 @@ type GetBatteryInfoOptions = {
     complete?: (res: object) => void
 }
 
-export default function getBatteryInfo(options: GetBatteryInfoOptions) {
+export function getBatteryInfo(options: GetBatteryInfoOptions) {
     const context = UTSAndroid.getAppContext();
     if (context != null) {
         const manager = context.getSystemService(
@@ -497,7 +518,7 @@ export default function getBatteryInfo(options: GetBatteryInfoOptions) {
         );
         const res = {
             errCode: 0,
-            errSubject: "uni-getBatteryInfo",
+            errSubject: "uts-getbatteryinfo",
             errMsg: "getBatteryInfo:ok",
             level,
             isCharging: manager.isCharging()
@@ -507,7 +528,7 @@ export default function getBatteryInfo(options: GetBatteryInfoOptions) {
     } else {
         const res = {
 			errCode: 1001,
-			errSubject: "uni-getBatteryInfo",
+			errSubject: "uts-getbatteryinfo",
             errMsg: 'getBatteryInfo:fail getAppContext is null'
         }
         options.fail?.(res)
@@ -520,7 +541,7 @@ export default function getBatteryInfo(options: GetBatteryInfoOptions) {
 对应的使用代码需要调整为：
 
 ```ts
-import getBatteryInfo from "@/uni_modules/uts-getbatteryinfo";
+import {getBatteryInfo} from "@/uni_modules/uts-getbatteryinfo";
 
 getBatteryInfo({
 	success(res) {
@@ -608,13 +629,155 @@ export default function getBatteryLevel():number {
 至此，我们已经完成一个 iOS 平台上获取电量的原生能力封装。
 
 
-### 3.2 `uts`与`uni-app`环境数据交互说明
+### 应用程序生命周期函数监听@hooksClass
+	
+	
+> 特别注意：
+> 此功能在 HBuilderX 3.97+ 版本支持，HBuilderX 3.97 之前的版本不支持。
+
+#### iOS 平台
+
+在插件开发过程中，有时我们需要监听 APP 的生命周期函数来完成一些业务逻辑，比如在应用启动时初始化三方 SDK, 在收到推送消息时做消息的处理，在被 url scheme 唤醒时调用指定功能等等。
+
+在 iOS 平台可以通过自定义 class 遵循 `UTSiOSHookProxy` 协议的方式来实现对应用程序生命周期函数的监听。
+	
+
+> 注意：
+> 该自定义 class 需要 export, 否则不会参与编译。
+> 该自定义 class 会自动完成注册, 无需开发者进行额外注册。
+> `UTSiOSHookProxy` 协议中所有的 api 均是可选实现的，可以选择自己关心的 api 进行实现。
+> `UTSiOSHookProxy` 协议的定义[详见](https://uniapp.dcloud.net.cn/uts/UTSiOSHookProxy.html)
+
+> 监听推送相关回调特别注意：
+> 监听推送和本地通知相关的回调需要证书具备推送功能，正确配置 `aps-environment`，在打自定义基座时需要在 `manifest` 中勾选 `push` 模块，否则相关功能不会被打进基座内，对应回调也就不会触发（可以只勾选 push，而不选择具体 push 版本）。
+> 勾选 `push` 模块后，系统会自动进行推送的注册，如果不需要自动注册，请在 `manifest` 中将 `pushRegisterMode` 字段设置为 `manual`。详细配置[详见](https://uniapp.dcloud.net.cn/collocation/manifest-app.html)
+
+
+示例代码：
+
+```ts
+export class MyPluginClass implements UTSiOSHookProxy {
+	// uts 插件创建时的回调。
+	onCreate() {
+	}
+	// 应用正常启动时 (不包括已在后台转到前台的情况)的回调函数。
+	applicationDidFinishLaunchingWithOptions(application: UIApplication | null, launchOptions: Map<UIApplication.LaunchOptionsKey, any> | null = null): boolean {
+	    console.log("applicationDidFinishLaunchingWithOptions")
+	    return false
+	}
+	// 远程通知注册成功时的回调函数。（打自定义基座时需要勾选 push 模块）
+	didRegisterForRemoteNotifications(deviceToken: Data | null) {
+	        
+	}
+	// 远程通知注册失败时的回调函数。（打自定义基座时需要勾选 push 模块）
+	didFailToRegisterForRemoteNotifications(error: NSError | null) {       
+	        
+	}
+	// 应用收到远程通知时的回调函数。（打自定义基座时需要勾选 push 模块）
+	didReceiveRemoteNotification(userInfo: Map<AnyHashable, any> | null) {
+	        
+	}
+	// 应用收到本地通知时的回调函数。（打自定义基座时需要勾选 push 模块）
+	didReceiveLocalNotification(notification: UILocalNotification | null) {
+	        
+	}
+	// 通过 url scheme 方式唤起 app 时的回调函数。(iOS9 之前的系统回调此方法，iOS9 之后的系统请使用 applicationOpenURLOptions)
+	applicationHandleOpenURL(application: UIApplication | null, url: URL | null) : boolean {
+	    return true
+	}
+	// 通过 url scheme 方式唤起 app 时的回调函数。
+	applicationOpenURLOptions(app: UIApplication | null, url: URL, options: Map<UIApplication.OpenURLOptionsKey, any> | null = null) : boolean {
+	    return true
+	}
+	// 当应用从活动状态主动变为非活动状态的时的回调函数。
+	applicationWillResignActive(application: UIApplication | null) {
+	    console.log("applicationWillResignActive")
+	}
+	// 应用完全激活时的回调函数。
+	applicationDidBecomeActive(application: UIApplication | null) {
+
+	}   
+	// 应用程序进入后台时的回调函数。
+	applicationDidEnterBackground(application: UIApplication | null) {
+		console.log("did enter background")
+
+	}
+	// 当应用在后台状态，将要进入到前台运行时的回调函数。
+	applicationWillEnterForeground(application: UIApplication | null) {
+	    console.log("applicationWillEnterForeground")
+
+	}
+	// 应用程序的 main 函数。
+	applicationMain(argc: Int32, argv: UnsafeMutablePointer<UnsafeMutablePointer<CChar> | null>) {
+	    console.log("applicationMain")
+	}
+	// 当应用程序接收到与用户活动相关的数据时调用此方法，例如，当用户使用 Universal Link 唤起应用时。
+	applicationContinueUserActivityRestorationHandler(application: UIApplication | null, userActivity: NSUserActivity | null, restorationHandler: ((res: [any] | null) => void) | null = null) : boolean {
+	       
+	    return true
+	}
+}
+```
+	
+
+#### Android 平台
+
+Android平台部分三方SDK的初始化依赖Application的onCreate生命周期回调。所以UTS提供了UTSAndroidHookProxy接口。用于支持三方SDK初始化的代码实现。
+
+UTSAndroidHookProxy代码如下：
+
+```uts
+/**
+ * 安卓原应用初始化回调代理
+ * 注意：不支持调用uni api
+ */
+interface UTSAndroidHookProxy {
+    /**
+     * 安卓原生应用初始化
+     * @param application
+     */
+    fun onCreate(application: Application)
+}
+```
+
+开发者需要在插件代码中实现UTSAndroidHookProxy接口 示例如下：
+
+```uts
+export class AppHookProxy implements UTSAndroidHookProxy {
+  override onCreate(application: Application) {
+	//当前应用是否 取得用户同意隐私协议
+	android.util.Log.d("AppHookProxy", "AppHookProxy--onCreate---")
+	if(UTSAndroid.isPrivacyAgree()) {
+		//onCreate 初始化三方SDK
+		android.util.Log.d("AppHookProxy", "AppHookProxy--onCreate---isPrivacyAgree")
+	}
+  }
+}
+```
+
+以上代码，将会在`Application` 的`OnCreate`函数中被调用
+
+HelloUTS nativepage 插件增加了UTSAndroidHookProxy [源码示例](https://gitcode.net/dcloud/hello-uts/-/blob/dev/uni_modules/uts-nativepage/utssdk/app-android/index.uts)
+
+开发者使用HBuilder X 3.96 之后版本，提交云端打包自定义基座后，观察日志即可体验
+
+注意：
+
++ 由于UTSAndroidHookProxy初始化要早于uni所以不支持调用uni api
++ 一个插件只允许实现一个UTSAndroidHookProxy接口class！
++ onCreate回调后应尽可能的判断隐私合规是否同意再初始化，否则影响app上架
++ Android平台添加或修改UTSAndroidHookProxy实现代码需要重新提交云端打包才能生效
+
+
+
+
+### `uts`与`uni-app`环境数据交互说明
 
 
 UTS向uni-app传值，支持下列类型：
 
 
-1 TS基本数据类型： number,string,boolean 等
+1. TS基本数据类型： number,string,boolean 等
 ```ts
 // 基础类型-Number
 export function getPluginVersionNum(): number{
@@ -626,7 +789,7 @@ export function getPluginVersion(): string{
 }
 ```
 
-2 UTSJSONObjct 
+2. UTSJSONObjct 
 
 ```ts
 // UTSJSONObjct 示例
@@ -687,6 +850,18 @@ export function postUserInfo(user:UTSJSONObject){
 }
 ```
 
+需要注意的是，在声明为`any`类型的前提下, `uni-app` 环境中的 `Object` 在UTS环境中也会被转换为 `UTSJSONObjct`. 
+
+也就是说上面的代码同样可以写作
+
+```ts
+// UTSJSONObjct 数据类型示例-2
+export function postUserInfo(user:any){
+	console.log(user);
+}
+```
+
+
 ```js
 // uni-app 调用代码
 postUserInfo({
@@ -699,6 +874,9 @@ postUserInfo({
 });
 
 ```
+
+
+更多UTSJSONObject的用法，[详见](../uts/data-type.md#UTSJSONObject)
 
 遗留问题：
 
@@ -738,13 +916,15 @@ list1.forEach((item : any) => {
 这个问题，我们稍后会改进。
 
 
-## 4 前端使用插件
+## 前端使用插件
 
 虽然uts插件由uts语法开发，但前端引用插件并不要求一定需要ts，普通js即可引用uts插件。
 
 下面介绍两种常见的引入方式
 
  **泛型引用**
+
+> 在uni-app x上需3.91+
 
 作为一个对象全部import进来，然后通过点运算符调用这个对象的方法或属性。
 
@@ -760,17 +940,15 @@ UTSHello.getBatteryCapacity()
 
 需要特别注意的是，import UTS插件时，只能到插件的根目录，不能直接引入到最终的文件
 
-```
+```ts
 // 正确的写法
 import * as UTSHello from "../../../uni_modules/uts-osapi";
+```
 
-```
-```
+```ts
 // 错误的写法
 import * as UTSHello from "../../../uni_modules/uts-osapi/index.uts";
-
 ```
-
 
 
 **显性引用**
@@ -788,14 +966,13 @@ getBatteryCapacity()
 ```
 
 
-
-关于电量这个插件，插件市场已经提供好了现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+关于电量这个插件，插件市场已提供现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
 
 更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
 
-## 5 真机运行
+## 真机运行
 
-### 5.1 UTS支持真机运行
+### UTS支持真机运行
 
 **uts虽然是原生代码，但同样具有真机运行功能**
 
@@ -810,7 +987,7 @@ getBatteryCapacity()
 - HBuilderX 3.6.9以下版本，uts插件不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 - HBuilderX 3.6.9+，uts插件，支持本地编译和真机运行 [详情](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
 
-### 5.2 自定义基座
+### 自定义基座
 
 自定义基座支持uts插件。
 
@@ -824,15 +1001,16 @@ getBatteryCapacity()
 
 #### iOS平台  
 uts插件编译需要XCode环境，因此在mac电脑安装了XCode工具时支持直接使用标准基座真机运行。
+
 在windows电脑或者mac电脑没有安装XCode工具时，需要提交云端打包生成自定义基座后才能调用uts插件。
 
-### 5.3 debug断点调试
+### debug断点调试
 uts插件支持debug断点调试。
 
 - [Android debug教程](/tutorial/debug/uni-uts-debug.md)
 - [iOS debug教程](/tutorial/debug/uni-uts-debug-ios.md)
 
-### 5.4 遗留问题
+### 遗留问题
 
 截止到HBuilderX 3.6.9 时遗留事项：
 - Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台
@@ -840,10 +1018,9 @@ uts插件支持debug断点调试。
 遗留事项后续升级完善。
 
 
-## 6 云端打包
+## 云端打包
 
 正常支持云端打包。但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。  
-
 
 
 ## 常见问题
@@ -857,12 +1034,12 @@ uts插件支持debug断点调试。
 - 文件查找失败：'uts插件路径'
 
     vue2项目使用 uts 插件的最低版本要求是HBuilderX 3.6.8，低于此版本，编译时将报错。
-<!-- 
-- UTSCallback 已过时
 
-	HBuilderX 3.7.7开始，不再支持直接使用 UTSCallback 定义函数类型，当需要定义函数类型时，应定义为更具体的类型，如：`const callback:UTSCallback` 应调整为`const callback:()=>void`
+- UTSCallback 
+
+	HBuilderX 3.7.7开始，不推荐使用 UTSCallback 定义函数类型，当需要定义函数类型时，应定义为更具体的类型，如：`const callback:UTSCallback` 应调整为`const callback:()=>void`
 	如果您使用的是插件市场三方uts插件，可以检查更新插件最新版本
--->	
+
 ### Float类型传参
 
 android很多布局参数强制要求Float，但是ts中没有内置这种类型。可以使用下面的代码实现转换
@@ -879,7 +1056,7 @@ let longVal =  1000.0.toLong()
 
 ### 异步任务
 
-目前UTS 还不支持使用promise执行异步任务，类似场景可以使用setTimeOut
+目前 UTS 仅Android支持promise执行异步任务，iOS还不支持。类似场景可以使用setTimeOut。
 
 
 ### 匿名内部类
@@ -921,9 +1098,22 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 function connectWifi(option: WifiConnectOption,testName :string = "zhangsan") 
 ```
 
+### 在uni-app 1.0 上的导出限制
+
+UTS插件环境会被编译为原生语言环境，在android平台是kotlin.
+
+uni-app x 运行时，本身也是原生语言环境，即kotlin。同语言直接的调用是没有限制的，可以任意导出和使用 自定义对象/原生对象/类/方法。
+
+但是在uni-app 1.0 环境，**只能导出UTS中声明的自定义对象/类/方法，不能包含原生对象**
+
+这是因为 uni-app 1.0 本质上是类浏览器的js环境中，UTS中声明的对象是经过特殊处理的，每一个对象都有一个在Js中对应的实例，这样才能正常使用。
+
+其他的原生对象没有经过特殊处理，并不能在js环境中使用。
+
+
 ### 访问JSON对象属性
 
-`uts`环境中访问`JSON`对象的属性，不能用`user.age` 而要用 `user['age']`
+`uts`环境中访问`JSON`对象的属性，不能用`user.age` 而要用下标 `user['age']`
 
 ```ts
 
@@ -933,25 +1123,17 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 
 ```
 
-## 路线图
+如果想使用`.操作符`，需要参考uts的[type](../uts/data-type.md#type)
 
-uts是一个宏大工程，产品将分阶段发布。近期将陆续发布：
-1. uts插件中可陆续使用uni的各种api，比如uni.request（已上线部分，还在持续补充）
-2. 插件市场支持uts插件的加密和计费销售（已完成）
-3. 全新uvue页面，纯原生的视图组件构成的页面
-4. vue页面支持uts原生组件
-
-最终，uts不再是uni-app的插件，而是应用的主体。（现在是以js为主，uts作为插件存在，主引擎仍然在v8或jscore里）
-
-那时，即便是最复杂的应用，比如微信，也可以使用uts来开发，毫无功能和性能的影响。
-
+更多UTSJSONObject的用法，[详见](../uts/data-type.md#UTSJSONObject)
 
 ## 示例项目
 
 DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。
 
 插件市场提供了很多uts项目：
-- 电量获取封装插件，[详见](https://ext.dcloud.net.cn/plugin?id=9295)
-- 截屏监听插件，[详见](https://ext.dcloud.net.cn/plugin?id=9897)
+- API示例，调用os api，电量插件，[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+- API示例，调用三方sdk，腾讯定位插件，[详见](https://ext.dcloud.net.cn/plugin?id=14569)
+- 组件示例，调用三方sdk，lottie插件，[详见](https://ext.dcloud.net.cn/plugin?id=10674)
 
 更多uts插件见：[https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)

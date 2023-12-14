@@ -404,7 +404,7 @@ App nvue 3.6.9+ 支持
 ```
 
 
-## mapSearch 模块(仅app-nvue支持，Goolge地图不支持)
+### mapSearch 模块(仅app-nvue支持，Goolge地图不支持)
 
 #### reverseGeocode(Object,callback);@reverseGeocode
 > 反向地理编码

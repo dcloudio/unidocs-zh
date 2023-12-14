@@ -558,8 +558,10 @@ export default {
 2. 在应用的广告位项上配置激励视频回调，可选择云函数或传统服务器
 3. 开通后将在选择的服务空间下自动部署一个加密云函数 `uniAdCallback`
 4. `uniAdCallback` 接收广告商服务器回调验证签名并抹平穿山甲/优量汇/快手参数差异，然后以以下方式回调
-- 业务在uniCloud：通过[callFunction](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
-- 业务在传统服务器：以HTTP方式请求开发者配置的回调URL
+- 业务在uniCloud：通过[callFunction](https://doc.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
+- 业务在传统服务器：以HTTP(GET)方式请求开发者配置的回调URL
+
+**提示**：2023/01/29 起，uni-ad Web控制台支持配置传统服务器地址，简化开通流程
 
 注意：
 1. 新建的云函数名称不能使用 `uniAdCallback`
@@ -597,8 +599,8 @@ sign = sha256(secret:transid)
 
 通过以下2种方式验证外部服务器与uniCloud安全通讯
 
-1. [uni-cloud-s2s](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)模块
-2. 手动获取HTTP请求参数中的 `sign` 验证
+1. [uni-cloud-s2s](https://doc.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)模块
+2. 手动获取HTTP(GET)请求参数中的 `sign` 验证
 
 
 #### 开发者返回数据约定
@@ -609,79 +611,6 @@ sign = sha256(secret:transid)
 |:-|:-|:-|:-|
 |isValid|校验结果|Blean|判定结果，是否发放奖励，具体发放奖励由用户自己的业务系统决定|
 
-#### 开发者云函数
-
-示例代码
-
-```js
-'use strict';
-
-const crypto = require('crypto');
-
-const db = uniCloud.database();
-
-const collectionName = "ad-callback-log"; // 如果选择了腾讯云，需要手动预创建表
-
-class DB {
-
-  static save(data) {
-    return new DB().add(data);
-  }
-
-  add(data) {
-    const collection = db.collection(collectionName);
-    const data2 = Object.assign(data, {
-      ad_type: 0,
-      create_date: new Date()
-    })
-    return collection.add(data2);
-  }
-}
-
-exports.main = async (event, context) => {
-  //event为客户端上传的参数
-  console.log('event : ', event);
-
-  const {
-    path,
-    queryStringParameters
-  } = event;
-
-  const data = {
-    adpid: event.adpid,
-    platform: event.platform,
-    provider: event.provider,
-    trans_id: event.trans_id,
-    sign: event.sign,
-    user_id: event.user_id,
-    extra: event.extra
-  }
-
-  // 注意::必须验签请求来源
-  const secret = ""; // uni-ad Web控制台，找到广告位，点击配置激励视频，展开当前广告位项，可看到生成的 Security key
-  const trans_id = event.trans_id;
-  const sign2 = crypto.createHash('sha256').update(`${secret}:${trans_id}`).digest('hex');
-  if (event.sign !== sign2) {
-    return null;
-  }
-
-  // 可选将回调记录保存到uniCloud，避免用户服务器没有响应时有日志可查，如果选择了保存记录需要做定时清理日志，避免日志过多影响性能
-  // try {
-  //   await DB.save(data);
-  // } catch (e) {
-  //   console.log(e);
-  // }
-
-  // 开发者在此处处理自己的回调业务，需要返回值
-
-  return {
-    isValid: true
-  }
-};
-```
-
-提示：2023/01/29 起，uni-ad Web控制台支持配置传统服务器地址，简化开通流程
-
 ### 老用户升级@upgrade
 
 1. 在传统服务器增加[签名校验](/uni-ad/ad-rewarded-video.html#sign)
@@ -690,14 +619,14 @@ exports.main = async (event, context) => {
 
 ### 微信小程序说明@callbackweixin
 
-3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](/uniCloud/uni-id-summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
+3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
 
 
 #### 接入流程
 
-1. 项目使用了 [uni-id-co](/uniCloud/uni-id-summary.html#save-user-token) 并更新到 1.0.8+
-2. 使用 [uni-open-bridge](/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
-3. 配置 [安全网络](/uniCloud/secure-network.html)
+1. 项目使用了 [uni-id-co](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token) 并更新到 1.0.8+
+2. 使用 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
+3. 配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 
 
 #### 安全注意
@@ -707,14 +636,14 @@ exports.main = async (event, context) => {
 为了提升安全性，建议所有使用激励视频的开发者都要做如下工作来加强保护：
 1. 前端代码加密。涉及激励相关的，在manifest中配置好要加密的代码文件，打包后会自动加密相应文件。[详见](https://ask.dcloud.net.cn/article/36437)
 2. apk加固。即便前端代码加密，原生层引擎的java代码仍然可能被反编译，需要对apk加固。市面上很多加固服务，比如360加固、爱加密加固均可以自行选择。
-3. 使用uni云端一体安全网络，防止伪造客户端攻击。[详见](/uniCloud/secure-network.md)
+3. 使用uni云端一体安全网络，防止伪造客户端攻击。[详见](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 3. 使用如下安全类API，防止客户端被篡改
 - plus.navigator.getSignature 获取应用签名标识。结合在服务器端存放证书信息，可比对判断App的证书是否被重签 [规范](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature)
 - plus.navigator.isSimulator 判断App是否运行在模拟器环境 [规范](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isSimulator)
 - plus.navigator.isRoot 判断设备是否被root或越狱 [规范](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isRoot)
 - plus.networkinfo.isSetProxy 判断设备的网络是否设置了代理 [规范](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy)
 4. 避免使用短信验证码来识别身份，推荐使用可信度更高的 [手机号一键登录](/univerify) 或 [微信登录](/api/plugins/login?id=login)
-5. 必要时使用[uni实人认证（活体检测）](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html)
+5. 必要时使用[uni实人认证（活体检测）](https://doc.dcloud.net.cn/uniCloud/frv/dev.html)
 
 详细的安全方案，请仔细阅读[uni安全专题](/tutorial/safe.md)
 
@@ -731,7 +660,7 @@ exports.main = async (event, context) => {
 
 #### 流量费
 
-我们按照uniCloud官网列出的[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)规则，可以简单得出如下公式：
+我们按照uniCloud官网列出的[按量计费](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)规则，可以简单得出如下公式：
 
 - 云函数费用(业务系统在uniCloud)   = 资源使用量 * 0.000110592 + 调用次数 * 0.0133 / 10000
 - 云函数费用(业务系统不在uniCloud) = 资源使用量 * 0.000110592 + 调用次数 * 0.0133 / 10000 + 出网流量 * 0.8
@@ -780,7 +709,7 @@ exports.main = async (event, context) => {
 
 #### 总结
 
-1. 业务系统在[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)
+1. 业务系统在[uniCloud](https://doc.dcloud.net.cn/uniCloud/)
 
 |广告回调次数	|云函数费用(元)	|
 |:-:					|:-:						|
@@ -790,7 +719,7 @@ exports.main = async (event, context) => {
 |1000					|0.0081896			|
 |10000				|0.081896				|
 
-2. 业务系统不在[uniCloud](https://uniapp.dcloud.net.cn/uniCloud/)，包含出网流量费用
+2. 业务系统不在[uniCloud](https://doc.dcloud.net.cn/uniCloud/)，包含出网流量费用
 
 |广告回调次数	|云函数费用+出网流量费用(元)  |
 |:-:					|:-:												|

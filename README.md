@@ -7,7 +7,7 @@
 1. 右侧导航仅支持二级、三级、四级
 2. 文档如有标题，必须从一级或二级开始，不允许只有三级，没有二级的情况；也不允许先有三级、后有二级的情况；
 3. FAQ、注意事项、常见问题，要放在文档最下方，不要穿插在文档中间位置
-4. 容器书写方式，支持：`tip`、`warning`、`danger`、`details（在 IE / Edge 中不生效）` [详情](https://vuepress.vuejs.org/zh/guide/markdown.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%B9%E5%99%A8)：
+4. 容器书写方式，支持：`info`、`tip`、`warning`、`danger`、`details（在 IE / Edge 中不生效）` [详情](https://vuepress.vuejs.org/zh/guide/markdown.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%B9%E5%99%A8)：
     ```md
     ::: warning 注意
     - 认证凭证有效期为`30分钟`
@@ -51,12 +51,12 @@
     ```html
     <img class="zooming" src="xxx">
     ```
-11. md 支持书写属性。`#{`：左定界符，与 markdown 语法之间不能有空格；`}` 右定界符
+11. md 支持书写属性。`#{`：左定界符，与 markdown 语法之间不能有空格；`}` 右定界符 [详情](https://www.npmjs.com/package/markdown-it-attrs#ambiguity)
     ```md
     ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)#{.zooming data=abc width=100 height=100}
     ```
     渲染为：
-    
+
     ```html
     <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg" class="zooming" data="abc" width="100" height="100" />
     ```

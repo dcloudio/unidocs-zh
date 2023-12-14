@@ -26,7 +26,7 @@
   * [vue2 升 3 指南](/tutorial/migration-to-vue3.md)
 * [ts/typescript 专题](/tutorial/typescript-subject.md)
 * [jsx/tsx 语法](/tutorial/syntax-jsx.md)
-* [uts语法](/uts/)
+* [uts语法](https://doc.dcloud.net.cn/uni-app-x/uts/)
 * 编译器（条件编译）
   * [什么是编译器](/tutorial/compiler.md)
   * [条件编译处理多端差异](/tutorial/platform.md)
@@ -36,7 +36,7 @@
   * [跨域](/tutorial/CORS.md)
   * [宽屏适配](/tutorial/adapt.md)
   * [SSR 服务端渲染](/tutorial/ssr.md)
-  * [前端网页托管](/uniCloud/hosting.md)
+  * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
 * App 专题
   * [nvue 原生渲染](/tutorial/nvue-outline.md)
     * [综述](/tutorial/nvue-outline.md)
@@ -110,7 +110,7 @@
     * [未同意隐私政策模式运行](/tutorial/app-disagreemode.md)
     * [Google Play上架](/tutorial/android-gp.md)
     * [App Store上架](/tutorial/ios-app-store.md)
-  * [App升级](/uniCloud/upgrade-center.md)
+  * [App升级](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
 * 小程序专题
   * [组件与WXS](/tutorial/miniprogram-subject.md)
   * [使用小程序插件](/tutorial/mp-weixin-plugin.md)
@@ -138,17 +138,20 @@
     * [app js/nvue文件原生混淆加密](/tutorial/app-sec-confusion.md)
 	* [Android安全漏洞问题解决方案](/tutorial/app-sec-android.md)
     * [app 安全检测API](/tutorial/app-sec-api.md)
+	* [app 加固](/tutorial/app-security.md)
+	* [app 隐私合规检测](/tutorial/app-privacy-detect.md)
   * 网络安全
-    * [云端一体安全网络](/uniCloud/secure-network.md)
-    * [传统服务器与uniCloud安全通信](/uniCloud/uni-cloud-s2s.md)
+    * [云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
+    * [传统服务器与uniCloud安全通信](https://doc.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)
   * 身份安全
     * [app一键登录](/univerify.html)
-    * [app实人认证](/uniCloud/frv/intro.html)
-    * [图形验证码](/uniCloud/uni-captcha.html)
+    * [app实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
+    * [图形验证码](https://doc.dcloud.net.cn/uniCloud/uni-captcha.html)
   * 服务器安全
-    * [uniCloud ip防刷](/uniCloud/ip-filter.html)
+    * [uniCloud ip防刷](https://doc.dcloud.net.cn/uniCloud/ip-filter.html)
     * [内容安全审查](https://ext.dcloud.net.cn/plugin?id=5460)
 * [国际化专题](/tutorial/i18n.md)
 	* [国际化开发指南](/tutorial/i18n.md)
 	* [海外开发者使用指南](/tutorial/internationalization.md)
 * [暗黑主题](/tutorial/darkmode.md)
+* [版本](/tutorial/version.md)

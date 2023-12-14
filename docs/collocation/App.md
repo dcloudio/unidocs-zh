@@ -14,8 +14,8 @@
 
 |函数名|说明|平台兼容|
 |:-|:-|:-|
-|onLaunch|当``uni-app`` 初始化完成时触发（全局只触发一次）||
-|onShow|当 ``uni-app`` 启动，或从后台进入前台显示||
+|onLaunch|当``uni-app`` 初始化完成时触发（全局只触发一次），参数为应用启动参数，同 [uni.getLaunchOptionsSync](https://uniapp.dcloud.net.cn/api/getLaunchOptionsSync.html#getlaunchoptionssync) 的返回值||
+|onShow|当 ``uni-app`` 启动，或从后台进入前台显示，参数为应用启动参数，同 [uni.getLaunchOptionsSync](https://uniapp.dcloud.net.cn/api/getLaunchOptionsSync.html#getlaunchoptionssync) 的返回值||
 |onHide|当 ``uni-app`` 从前台进入后台||
 |onError|当 ``uni-app`` 报错时触发|app-uvue 不支持|
 |onUniNViewMessage|对 ``nvue`` 页面发送的数据进行监听，可参考 [nvue 向 vue 通讯](https://uniapp.dcloud.io/tutorial/nvue-api?id=communication)|app-uvue 不支持|
@@ -30,11 +30,13 @@
 <script>
 	// 只能在App.vue里监听应用的生命周期
 	export default {
-		onLaunch: function() {
+		onLaunch: function(options) {
 			console.log('App Launch')
+			console.log('应用启动路径：', options.path)
 		},
-		onShow: function() {
+		onShow: function(options) {
 			console.log('App Show')
+			console.log('应用启动路径：', options.path)
 		},
 		onHide: function() {
 			console.log('App Hide')
@@ -53,7 +55,7 @@
 
 ## globalData
 
-小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用（uni-app x不支持）。
+小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用。
 
 当然vue框架的全局变量，另有其他方式定义。
 

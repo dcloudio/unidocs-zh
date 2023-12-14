@@ -161,7 +161,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 
 |属性|类型|说明|
 |:-|:-|:-|
-|subPackages|Boolean|是否开启分包优化|
+|subPackages|Boolean|是否开启分包优化，目前仅 uni-app vue2 下生效|
 
 ```
 "app-plus": {
@@ -379,11 +379,17 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `we
                 "securityJsCode": "",
                 // 高德地图安全密钥代理服务器地址（HBuilderX 3.6.0+）https://lbs.amap.com/api/jsapi-v2/guide/abc/prepare
                 "serviceHost": "",
+            },
+            "bmap": {
+                // 百度地图秘钥（HBuilderX 3.99+）http://lbsyun.baidu.com/apiconsole/key#/home
+                "key": ""
             }
 		}
 	}
 }
 ```
+**注意**
+- 百度地图 vue2 项目暂不支持
 
 #### optimization
 
@@ -422,7 +428,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |requiredBackgroundModes|Array|微信小程序需要在后台使用的能力,[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#requiredbackgroundmodes)|
 |plugins|Object|使用到的插件，[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html)|
 |resizable|Boolean|在iPad上小程序是否支持屏幕旋转，默认关闭|
-|navigateToMiniProgramAppIdList|Array|需要跳转的小程序列表，[详见](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html)|
+|navigateToMiniProgramAppIdList|Array|需要跳转的小程序列表，[详见](https://developers.weixin.qq.com/minigame/dev/reference/configuration/app.html#navigateToMiniProgramAppIdList)|
 |permission|Object|微信小程序接口权限相关设置，比如申请位置权限必须填此处[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)|
 |workers|String|Worker 代码放置的目录。 [详见](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|
 |optimization|Object| 对微信小程序的优化配置 |
@@ -503,6 +509,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |lazyCodeLoading|String|是否开启代码按需执行。|
+|styleIsolation|String|组件样式隔离方式，默认值为 `apply-shared`，具体配置 [详见](https://opendocs.alipay.com/mini/framework/page-acss)。 uni-app 3.99+ 开始支持|
 
 ### mp-baidu
 

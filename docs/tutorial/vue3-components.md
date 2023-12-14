@@ -1692,8 +1692,6 @@ function (slotProps) {
 	</todo-list>
 ```
 
-**注意：`uni-app x` 暂不支持**
-
 ## 小程序不支持列表
 
 

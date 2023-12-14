@@ -1,5 +1,4 @@
 
-
 ::: tip 组件名：uni-card
 > 代码块： `uCard`
 
@@ -97,7 +96,6 @@
 |is-full|Boolean|false|卡片内容是否通栏，为true时将去除padding值|
 |is-shadow|Boolean|false	|卡片内容是否开启阴影|
 |shadow|String|0px 0px 3px 1px rgba(0, 0, 0, 0.08)	|卡片阴影,需符合 css 值|
-|border|Boolean|true	|卡片边框|
 |margin|String|10px|卡片外边距|
 |spacing|String|10px|卡片内边距|
 |padding|String|10px|卡片内容内边距|

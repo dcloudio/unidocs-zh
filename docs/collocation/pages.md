@@ -18,7 +18,7 @@
 |[leftWindow](/collocation/pages?id=leftwindow)|Object|否|大屏左侧窗口|H5|
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
-|[uniIdRouter](/uniCloud/uni-id-summary.md?id=uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0|uni-app x 不支持|
+|[uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0|uni-app x 不支持|
 |entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序|
 
 以下是一个包含了所有配置选项的 `pages.json` ：
@@ -281,7 +281,8 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |属性|类型|默认值|描述|
 |:-|:-|:-|:-|
 |path|String||配置页面路径|
-|style|Object||配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style)||
+|style|Object||配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style)|
+|needLogin|Boolean|false|是否需要登录才可访问|
 
 **Tips：**
 
@@ -431,7 +432,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |:-|:-|:-|:-|:-|
 |background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App (vue 页面需要将 body 背景色设为透明，uni-app x 不支持)|
 |titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App(uni-app x 不支持)、H5|
-|subNVues|Object||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+(uni-app x 不支持)|
+|subNVues|Array||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+(uni-app x 不支持)|
 |bounce|String||页面回弹效果，设置为 "none" 时关闭效果。|App-vue（nvue Android无页面级bounce效果，仅list、recycle-list、waterfall等滚动组件有bounce效果）|
 |popGesture|String|close|侧滑返回功能，可选值："close"（启用侧滑返回）、"none"（禁用侧滑返回）|App-iOS|
 |softinputNavBar|String|auto|iOS软键盘上完成工具栏的显示模式，设置为 "none" 时关闭工具栏。|App-iOS|
@@ -440,6 +441,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App(uni-app x 不支持)|
 |animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App(uni-app x 不支持)|
 |animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App(uni-app x 不支持)|
+
 **Tips**
 - `.nvue` 页面仅支持 `titleNView、pullToRefresh、scrollIndicator` 配置，其它配置项暂不支持
 
@@ -465,7 +467,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |coverage|String|"132px"|标题栏控件变化作用范围，仅在type值为transparent时有效，页面滚动时标题栏背景透明度将发生变化。 当页面滚动到指定偏移量时标题栏背景变为完全不透明。 支持百分比、像素值||
 |splitLine|Boolean |false|标题栏的底部分割线([SplitLineStyles](/collocation/pages?id=app-titleNView-splitLineStyles))，设置此属性则在标题栏控件的底部显示分割线，可配置颜色值及高度。 设置此属性值为undefined或null则隐藏分割线。 默认不显示底部分割线|2.6.6|
 |subtitleColor|String||副标题文字颜色，颜色值格式为"#RRGGBB"和"rgba(R,G,B,A)"，如"#FF0000"表示标题文字颜色为红色。 默认值与主标题文字颜色一致|2.6.6|
-|subtitleSize|String|"auto"|副标题文字字体大小，字体大小单位为像素，如"14px"表示字体大小为14像素，默认值为12像素。|2.6.6|
+|subtitleSize|String|"auto"|副标题文字字体大小，字体大小单位为像素，如"14px"表示字体大小为14像素，auto表示自动计算，约为12像素。|2.6.6|
 |subtitleOverflow|String|"ellipsis"|标题文字超出显示区域时处理方式，可取值： "clip" - 超出显示区域时内容裁剪； "ellipsis" - 超出显示区域时尾部显示省略标记（...）。|2.6.6|
 |subtitleText|String||副标题文字内容，设置副标后将显示两行标题，副标显示在主标题（titleText）下方。 注意：设置副标题后将居左显示|2.6.6|
 |titleIcon|String||标题图标，图标路径如"./img/t.png"，仅支持本地文件路径， 相对路径，相对于当前页面的host位置，固定宽高为逻辑像素值"34px"。 要求图片的宽高相同。 注意：设置标题图标后标题将居左显示。|2.6.6|
@@ -501,7 +503,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |fontWeight|String|normal|按钮上文字的粗细。可取值"normal"-标准字体、"bold"-加粗字体。|
 |fontSize|String||按钮上文字大小|
 |fontSrc|String||按钮上文字使用的字体文件路径。不支持网络地址，请统一使用本地地址。|
-|select|String|false|是否显示选择指示图标（向下箭头），常用于城市选择|
+|select|Boolean|false|是否显示选择指示图标（向下箭头），常用于城市选择|
 |text|String||按钮上显示的文字。使用字体图标时 unicode 字符表示必须 '\u' 开头，如 "\ue123"（注意不能写成"\e123"）。|
 |width|String|44px|按钮的宽度，可取值： "*px" - 逻辑像素值，如"10px"表示10逻辑像素值，不支持rpx。按钮的内容居中显示； "auto" - 自定计算宽度，根据内容自动调整按钮宽度|
 
@@ -854,7 +856,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 |属性|类型|默认值|描述|
 |:-|:-|:-|:-|
 |allowsBounceVertical|String|YES|是否允许向下拉拽。支持 YES / NO|
-|titleImage|String||导航栏图片地址（替换当前文字标题），内必须使用https的图片链接地址|
+|titleImage|String||导航栏图片地址（替换当前文字标题），必须使用https的图片链接地址|
 |transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|
 |titlePenetrate|String|NO|导航栏点击穿透|
 |showTitleLoading|String|NO|是否进入时显示导航栏的 loading。支持 YES / NO|
@@ -927,7 +929,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─components            
+┌─components
 │  └─comp-a
 │    └─comp-a.vue      符合easycom规范的组件
 └─uni_modules          [uni_module](/uni_modules)中符合easycom规范的组件
@@ -975,7 +977,10 @@ h5 平台下拉刷新动画，只有 circle 类型。
 - 考虑到编译速度，直接在`pages.json`内修改`easycom`不会触发重新编译，需要改动页面内容触发。
 - `easycom`只处理vue组件，不处理小程序专用组件（如微信的wxml格式组件）。不处理后缀为.nvue的组件。因为nvue页面引入的组件也是.vue组件。可以参考uni ui，使用vue后缀，同时兼容nvue页面。
 - `nvue`页面里引用`.vue`后缀的组件，会按照nvue方式使用原生渲染，其中不支持的css会被忽略掉。这种情况同样支持`easycom`。
-- `vue` 与 `uvue` 组件优先级，[详见](/uni-app-x/component/README.md#priority)。
+- `vue` 与 `uvue` 组件优先级，[详见](https://doc.dcloud.net.cn/uni-app-x/component/README.html#priority)。
+
+### Bug & Tips@easycom_tips
++ HBuilderX 3.96 版本以下`uni-app x`项目，当页面文件名与`easycom`的组件名一样时，会渲染异常，可以通过调整页面文件名规避该Bug。
 
 ## tabBar
 
@@ -1008,6 +1013,9 @@ h5 平台下拉刷新动画，只有 circle 类型。
 |height|String|否|50px|tabBar 默认高度|App 2.3.4+、H5 3.0.0+|
 |midButton|Object|否||中间按钮 仅在 list 项为偶数时有效|App 2.3.4+、H5 3.0.0+|
 |iconfontSrc|String|否||list设置 iconfont 属性时，需要指定字体文件路径 |App 3.4.4+、H5 3.5.3+|
+|backgroundImage|String|否||设置背景图片,优先级高于 backgroundColor |App|
+|backgroundRepeat|String|否||设置标题栏的背景图平铺方式，可取值："repeat" - 背景图片在垂直方向和水平方向平铺；"repeat-x" - 背景图片在水平方向平铺，垂直方向拉伸；"repeat-y" - 背景图片在垂直方向平铺，水平方向拉伸；"no-repeat" - 背景图片在垂直方向和水平方向都拉伸。 默认使用 "no-repeat"|App|
+|redDotColor|String|否||tabbar上红点颜色|App|
 
 其中 list 接收一个数组，数组中的每个项都是一个对象，其属性值如下：
 

@@ -1496,7 +1496,7 @@ arrayObj2.forEach(function(e:any){
 let mapObj = new Map<string,any>()
 mapObj.put("name","zhangsan")
 mapObj.put("age",12)
-mapObj.forEach(function(key:string,value:any){
+mapObj.forEach(function(value:any,key:string){
 	console.log(key)
 	console.log(value)
 })

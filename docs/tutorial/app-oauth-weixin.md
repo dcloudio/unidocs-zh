@@ -40,9 +40,7 @@ The iOS platform universal link must be consistent with the configuration of the
 ### 使用微信登录  
 ### Login with WeChat
 1. 客户端调用api向微信请求授权，获取临时票据（code），向开发者业务服务器发起网络请求
-1. The client calls the api to request authorization from WeChat, obtains a temporary ticket (code), and initiates a network request to the developer business server
-2. 业务服务器通过code + 仅保存在服务器的appsecret参数，向：微信开放平台接口发起网络请求[详情](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419317853&token=&lang=zh_CN)。
-2. The business server initiates a network request to: WeChat open platform interface through code + appsecret parameters saved only on the server [Details](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t= resource/res_list&verify=1&id=open1419317853&token=&lang=zh_CN).
+2. 业务服务器通过code + 仅保存在服务器的appsecret参数，向：微信开放平台接口发起网络请求[详情](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Authorized_API_call_UnionID.html)。
 3. 业务服务器成功获取用户信息后，再依据unionid或openid查数据库的用户表并生成新token，并返回token给客户端
 3. After the business server successfully obtains the user information, it checks the user table of the database according to the unionid or openid, generates a new token, and returns the token to the client
 4. 客户端得到token后，保存到storage完成登录。

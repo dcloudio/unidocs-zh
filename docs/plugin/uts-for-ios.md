@@ -460,6 +460,33 @@ let alert = new UIAlertController(title="提示", message="提示内容", prefer
 UIAlertController.Style.alert
 ```
 
+枚举在 swift 中可以定义关联类型，可在关联值中传递信息，但是在 ts 中没有这种语法，所以目前 uts 还暂不支持此种用法。
+
+```swift
+
+// 定义带关联值的枚举
+enum Barcode {
+    case upc(Int, Int, Int, Int)
+    case qrCode(String)
+}
+
+// 定义枚举值
+var productBarcode = Barcode.upc(8, 85909, 51226, 3)
+productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
+
+// 匹配
+switch productBarcode {
+case let .upc(numberSystem, manufacturer, product, check):
+    print("UPC : \(numberSystem), \(manufacturer), \(product), \(check).")
+case let .qrCode(productCode):
+    print("QR code: \(productCode).")
+}
+
+```
+
+如果遇到上述类型的枚举，且在三方库中无法改动的，可以在 Swift 文件中进行调用，然后把 该 Swift 文件打包在 framework 中供 uts 插件使用；
+如果上述类型的枚举定义在有源码的 swift 中时，可以将其定义成不包含关联值的枚举，然后使用合适的数据结构来表示关联值携带的信息。
+
 
 #### 5.1.6 类继承
 

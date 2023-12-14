@@ -1,5 +1,4 @@
 
-
 ::: tip 组件名：uni-card
 ::: tip component name: uni-card
 > 代码块： `uCard`
@@ -126,9 +125,6 @@ Use the `actions` slot to set the content of the card action bar, the example st
 |is-shadow|Boolean|false	|卡片内容是否开启阴影|
 |is-shadow|Boolean|false |Whether the shadow of the card content is enabled|
 |shadow|String|0px 0px 3px 1px rgba(0, 0, 0, 0.08)	|卡片阴影,需符合 css 值|
-|shadow|String|0px 0px 3px 1px rgba(0, 0, 0, 0.08) |Card shadow, it must conform to css value|
-|border|Boolean|true	|卡片边框|
-|border|Boolean|true |card border|
 |margin|String|10px|卡片外边距|
 |margin|String|10px|Card margins|
 |spacing|String|10px|卡片内边距|
@@ -383,4 +379,3 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 :::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/card/card)
-[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/card/card)

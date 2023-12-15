@@ -1,4 +1,4 @@
-#### editor
+# editor 组件
 
 富文本编辑器，可以对图片、文字格式进行编辑和混排。
 
@@ -14,13 +14,15 @@
 
 相关 api：[editorContext](/api/media/editor-context)
 
-**平台差异说明**
+## 平台差异说明
 
 |App					|H5			|微信小程序		|支付宝小程序|百度小程序		|抖音小程序、飞书小程序|QQ小程序		|快应用					|360小程序|快手小程序	|
 |:-:					|:-:		|:-:					|:-:		    |:-:					|:-:					|:-:				|:-:						|:-:			|:-:			|
 |2.0+，app-vue|2.4.5+	|基础库 2.7.0+|x						|需引入动态库[引入方式](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)					|x							|x				|x				|x				|x				|
 
 editor组件目前只有H5、App的vue页面、微信小程序、百度小程序支持，其他端平台自身未提供editor组件，只能使用web-view加载web页面，也可搜索[插件市场](https://ext.dcloud.net.cn/search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91) 获取简单的markdown富文本编辑器
+
+## 属性说明
 
 | 属性 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -35,18 +37,21 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 | @input | eventhandle |  | 否 | 编辑器内容改变时触发，detail = {html, text, delta} |
 | @statuschange | eventhandle |  | 否 | 通过 Context 方法改变编辑器内样式时触发，返回选区已设置的样式 |
 
+## HTML 标签和 style 内联样式支持情况
+
 编辑器内支持部分 HTML 标签和内联样式，不支持**class**和**id**
 
-#### 支持的标签
+
+### 支持的标签
 
 不满足的标签会被忽略，`<div>`会被转行为`<p>`储存。
 
 | 类型 | 节点 |平台差异说明 |
 | --- | --- |--- |
-| 行内元素 | `<span> <strong> <b> <ins> <em> <i> <u> <a> <del> <s> <sub> <sup> <img>` |其中`<ins>  <del> `百度小程序不支持 |
+| 行内元素 | `<span> <strong> <b> <ins> <em> <i> <u> <a> <del> <s> <sub> <sup> <img>` |其中`<ins> <del>` 百度小程序不支持 |
 | 块级元素 | `<br> <p> <h1> <h2> <h3> <h4> <h5> <h6> <hr> <ol> <ul> <li>` |其中`<br>`仅百度小程序支持、`<p>`百度小程序不支持|
 
-#### 支持的内联样式
+### 支持的内联样式
 
 内联样式仅能设置在行内元素或块级元素上，不能同时设置。例如 font-size` 归类为行内元素属性，在 p 标签上设置是无效的。
 
@@ -55,21 +60,20 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 | 块级样式 | `text-align` `direction` `margin` `margin-top` `margin-left` `margin-right` `margin-bottom` `padding` `padding-top` `padding-left` `padding-right` `padding-bottom` `line-height` `text-indent` |百度小程序仅支持`text-align、direction`|
 | 行内样式 | `font` `font-size` `font-style` `font-variant` `font-weight` `font-family` `letter-spacing` `text-decoration` `color` `background-color` |百度小程序仅支持`color、background-color`|
 
-**注意事项**
+## 注意事项
 
 * 插入的 html 中事件绑定会被移除
 * formats 中的 color 属性会统一以 hex 格式返回
 * 粘贴时仅纯文本内容会被拷贝进编辑器
 * 插入 html 到编辑器内时，编辑器会删除一些不必要的标签，以保证内容的统一。例如`<p><span>xxx</span></p>`会改写为`<p>xxx</p>`
 * 编辑器聚焦时页面会被上推，系统行为以保证编辑区可见
-* H5端会动态引入依赖 [quill.min.js](https://unpkg.com/quill@1.3.7/dist/quill.min.js)、[image-resize.min.js](https://unpkg.com/quill-image-resize-mp@3.0.1/image-resize.min.js)，依赖从 [unpkg.com](https://unpkg.com) 加载，如过依赖加载较慢或失败，可以从 [github.com](https://github.com/dcloudio/uni-app/tree/dev/src/core/view/components/editor/quill) 或者 [gitee.com](https://gitee.com/dcloud/uni-app/tree/dev/src/core/view/components/editor/quill) 下载下来放在自己的服务器或 CDN 服务商，相比自己的服务器或者其他 CDN 服务商更推荐的做法是开发者将将所有前端资源托管在 [uniCloud 前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html) ，然后在 [自定义模板](../collocation/manifest?id=h5-template) 的 `head` 标签内引入。
+* H5 端需要动态引入 [quill.min.js](https://unpkg.com/quill@1.3.7/dist/quill.min.js)、[image-resize.min.js](https://unpkg.com/quill-image-resize-mp@3.0.1/image-resize.min.js) 依赖，默认情况下浏览器会从 [unpkg.com](https://unpkg.com) 加载。如果依赖加载较慢或失败，uni-app 建议使用通过测试的 js 依赖保证效果一致，访问 [github.com](https://github.com/dcloudio/uni-app/tree/dev/src/core/view/components/editor/quill) 或者 [gitee.com](https://gitee.com/dcloud/uni-app/tree/dev/src/core/view/components/editor/quill) 选择下载。可以放入 `static` 目录进行托管，或者使用 CDN 服务商。为了保证服务的稳定性，推荐开发者将所有前端资源使用 [uniCloud 前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting.html) 服务进行托管，然后在 [自定义模板](../collocation/manifest?id=h5-template) 的 `head` 标签内引入相关 js 依赖。
 * 不能直接插入视频或者其他文件，编辑时可以采用视频封面或者文件缩略图占位，并在图片属性中保存视频信息，预览时读取附加信息再还原为视频或者其他文件操作。
 
 
 **示例代码** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/editor/editor)
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/editor/editor
-示例中css文件地址https://github.com/dcloudio/hello-uniapp/blob/master/pages/component/editor/editor-icon.css
 > Template
 ``` vue
 <template>
@@ -308,4 +312,4 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 ```
 :::
 
-一个完整的内容管理系统比较复杂，DCloud已提供好了现成的`uni-cms`，开源、免费、全端可用、功能完善，包括管理端和用户端。还内置了ai生成文章和广告变现功能。详见：[https://doc.dcloud.net.cn/uniCloud/uni-cms.html](https://doc.dcloud.net.cn/uniCloud/uni-cms.html)
+一个完整的内容管理系统 `Content Management System` 比较复杂，DCloud已提供好了现成的 `uni-cms`，开源、免费、全端可用、功能完善，包括管理端和用户端。还内置了 AI 生成文章和广告变现功能。详见：[https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)

@@ -177,8 +177,7 @@ uni-push产品有2个入口：
 ![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/ios.png)
 - APP手机厂商推送参数设置（可选，应用进程离线时推送通道）
 	![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/20220728173149.png)
-	uniPush集成并统一了各个手机厂商的系统级推送，目前支持魅族、OPPO、华为、小米、VIVO。如果需要使用厂商推送，需要先在各厂商开发者平台申请。详见[厂商推送应用创建配置流程](https://www.dcloud.io/docs/a/unipush/manufacturer.pdf)
-
+	uni-push集成并统一了各个手机厂商的系统级推送，目前支持魅族、OPPO、华为、小米、VIVO。如果需要使用厂商推送，需要先在各厂商开发者平台申请。详见[厂商推送应用创建配置流程](https://www.dcloud.io/docs/a/uni-push/manufacturer.pdf)
 
 ## 第三步：客户端操作
 ### 名词解释

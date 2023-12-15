@@ -73,7 +73,7 @@ background-image: url(../../static/logo.png);
 
 例：有如下目录结构 ，在static 和页面文件夹下分别有静态资源
 
-```base
+```text
 
 ├── pages                            
 │   └── index

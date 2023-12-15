@@ -1,5 +1,6 @@
-### 概述
-### Overview
+# package.json
+
+## uni-app 属性
 
 - 在开发web时，有时需要一套代码编译发布到不同的站点，比如主站和微信h5站。（注意不是一套代码内部自适应不同浏览器，是真的分离部署了不同的网站）
 - When developing the web, sometimes it is necessary to compile and publish a set of codes to different sites, such as the main site and WeChat h5 site. (Note that it is not a set of code that adapts to different browsers internally, it is really separate and deployed different websites)
@@ -10,7 +11,7 @@ uni-app 通过在`package.json`文件中增加`uni-app`扩展节点，可实现�
 uni-app A custom conditional compilation platform can be implemented by adding a `uni-app` extension node to the `package.json` file.
 
 扩展新的平台后，有3点影响：
-After expanding the new platform, there are 3 impacts:
+
 1. 可以在代码里编写自定义的条件编译，为这个新平台编写专用代码
 1. You can write custom conditional compilation in the code to write special code for this new platform
 2. 运行时可以执行面向新平台的编译运行
@@ -21,6 +22,7 @@ After expanding the new platform, there are 3 impacts:
 注意只能扩展web和小程序平台，不能扩展app打包。并且扩展小程序平台时只能基于指定的基准平台扩展子平台，不能扩展基准平台。基准平台详见下文。
 Note that only the web and applet platforms can be extended, and app packaging cannot be extended. In addition, when extending the Mini Program platform, only the sub-platform can be extended based on the specified benchmark platform, and the benchmark platform cannot be expanded. Benchmark platforms are detailed below.
 
+### 用法
 
 package.json扩展配置用法：
 package.json extension configuration usage:
@@ -47,8 +49,6 @@ package.json extension configuration usage:
         }    
     }
 }
-
-
 ```
 
 Tips：
@@ -62,8 +62,7 @@ Tips：
 - `vue-cli`需更新到最新版，HBuilderX需升级到 2.1.6+ 版本
 - `vue-cli` needs to be updated to the latest version, and HBuilderX needs to be upgraded to version 2.1.6+
 
-#### 示例：钉钉小程序
-#### Example: DingTalk applet
+### 示例：钉钉小程序
 
 如下是一个自定义钉钉小程序（MP-DINGTALK）的package.json示例配置（拷贝代码记得去掉注释）：
 The following is an example package.json configuration of a custom DingTalk applet (MP-DINGTALK) (remember to remove the comments when copying the code):
@@ -105,8 +104,8 @@ Developers can use `MP-DINGTALK` for conditional compilation in the code, as fol
 **Run and publish the project**
 
 `vue-cli`开发者可通过如下命令，启动钉钉小程序平台的编译：
-`vue-cli` developers can use the following command to start the compilation of the DingTalk applet platform:
-```
+
+```bash
 npm run dev:custom mp-dingtalk 
 npm run build:custom mp-dingtalk
 ```
@@ -114,17 +113,15 @@ npm run build:custom mp-dingtalk
 `HBuilderX`会根据`package.json`的扩展配置，在`运行`、`发行`菜单下，生成自定义菜单（钉钉小程序），开发者点击对应菜单编译运行即可，如下图：
 `HBuilderX` will generate a custom menu (DingTalk applet) under the `Run` and `Release` menus according to the extension configuration of `package.json`, the developer can click the corresponding menu to compile and run, as shown below:
 
-![](https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/package-dingding.png)
+![package dingding](https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/package-dingding.png)
 
 Tips：钉钉小程序编译目录依然是`mp-alipay`，需通过支付宝开发者工具，选择“钉钉小程序”，然后打开该目录进行预览及发布。
 Tips: The DingTalk applet compilation directory is still `mp-alipay`, you need to select "DingTalk applet" through the Alipay developer tool, and then open the directory for preview and release.
 
-#### 示例：微信服务号
-#### Example: WeChat service account
+### 示例：微信服务号
 
 如下是一个自定义微信服务号平台（H5-WEIXIN）的示例配置：
-The following is an example configuration of a custom WeChat service account platform (H5-WEIXIN):
- 
+
 ```json
 "uni-app": {
     "scripts": {
@@ -145,7 +142,7 @@ The following is an example configuration of a custom WeChat service account pla
 开发者可在代码块中使用`H5-WEIXIN`变量，如下：
 Developers can use the `H5-WEIXIN` variable in code blocks as follows:
 
-```
+```js
 // #ifdef H5
 H5平台通用代码（含微信服务号）
 // #endif
@@ -155,8 +152,8 @@ H5平台通用代码（含微信服务号）
 ```
 
 `vue-cli`开发者可通过如下命令，启动微信服务号平台（H5-WEIXIN）平台的编译：
-`vue-cli` developers can use the following command to start the compilation of the WeChat service account platform (H5-WEIXIN) platform:
-```
+
+```bash
 npm run dev:custom h5-weixin 
 npm run build:custom h5-weixin
 ```

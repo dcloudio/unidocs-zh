@@ -954,9 +954,11 @@ This chapter takes the lottie animation component as an example to introduce the
 #### 创建插件
 #### Create plugin
 
-在HBuilder X 中选中Uni-App项目下 uni_modules目录
 
-todo  目前还没有创建界面
+在HBuilder X 中选中Uni-App项目下 uni_modules目录,右键选择新建`uni_modules插件`
+
+![创建界面](https://native-res.dcloud.net.cn/images/uts/component/image0.png)
+
 
 这是创建后的目录结构
 This is the directory structure after creation

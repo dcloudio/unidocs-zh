@@ -1,5 +1,6 @@
-## 跨端兼容
-## Cross-platform compatibility
+# 条件编译处理多端差异
+
+## 为什么选择条件编译处理跨端兼容
 
 uni-app 已将常用的组件、API封装到框架中，开发者按照 uni-app 规范开发即可保证多平台兼容，大部分业务均可直接满足。
 
@@ -11,10 +12,9 @@ Each platform has its own characteristics, so there will be some situations that
 - 编译到不同的工程后二次修改，会让后续升级变的很麻烦。
 - 为每个平台重写，明明主业务逻辑又一样
 
-在 C 语言中，通过 #ifdef、#ifndef 的方式，为 windows、mac 等不同 os 编译不同的代码。
-In C language, different codes are compiled for windows , mac and other os, by means of #ifdef and #ifndef.
-``uni-app`` 参考这个思路，为 ``uni-app`` 提供了条件编译手段，在一个工程里优雅的完成了平台个性化实现。
-`uni-app` refers to this idea, provides a conditional compilation method for `uni-app`, and elegantly completes the platform personalized realization in a project.
+在 C 语言中，通过 `#ifdef`、`#ifndef` 的方式，为 Windows、Mac 等不同 OS 编译不同的代码。
+
+`uni-app` 团队参考这个思路，为 `uni-app` 提供了条件编译手段，在一个工程里优雅的完成了平台个性化实现。
 
 ## 条件编译@preprocessor
 ## Conditional compilation @preprocessor
@@ -22,21 +22,22 @@ In C language, different codes are compiled for windows , mac and other os, by m
 条件编译是用特殊的注释作为标记，在编译时根据这些特殊的注释，将注释里面的代码编译到不同平台。
 Conditional compilation is marked with special comments which are the basic of compiling the code inside these comments to different platforms during compilation.
 
-**写法：**
+### 使用方法
+
 以 `#ifdef` 或 `#ifndef` 加 `%PLATFORM%`  开头，以 `#endif` 结尾。
+
 * `#ifdef`：if defined 仅在某平台存在
 * `#ifndef`：if not defined 除了某平台均存在
 * `%PLATFORM%`：平台名称
 
 <table><thead><tr><th>条件编译写法</th><th>说明</th></tr></thead><tbody><tr><td><div class="code"><span class="token comment"><span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> APP-PLUS</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>仅出现在 App 平台下的代码</td></tr><tr><td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifndef</span><b style="color:#268BD2"> H5</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>除了 H5 平台，其它平台均存在的代码（注意if后面有个n）</td></tr><tr><td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> H5</b></span><span style="color:#859900;"> || </span><b style="color:#268BD2">MP-WEIXIN</b><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>在 H5 平台或微信小程序平台存在的代码（这里只有||，不可能出现&&，因为没有交集）</td></tr></tbody></table>
 
-
-<b style="color:#268BD2"> %PLATFORM%</b> **可取值如下：**
-<b style="color:#268BD2">%PLATFORM%</b> **The possible values are as follows:**
+**`%PLATFORM%`** 可取值：
 
 |值|生效条件|版本支持|
 |:-|:-|:-|
 |VUE3|uni-app js引擎版用于区分vue2和3，[详情](https://ask.dcloud.net.cn/article/37834) |HBuilderX 3.2.0+|
+|VUE2|uni-app js引擎版用于区分vue2和3，[详情](https://ask.dcloud.net.cn/article/37834) ||
 |UNI-APP-X|用于区分是否是uni-app x项目 [详情](#UNI-APP-X)|HBuilderX 3.9.0+|
 |uniVersion|用于区分编译器的版本 [详情](#uniVersion)|HBuilderX 3.9.0+|
 |APP|App||
@@ -60,8 +61,7 @@ Conditional compilation is marked with special comments which are the basic of c
 |QUICKAPP-WEBVIEW-UNION|快应用联盟||
 |QUICKAPP-WEBVIEW-HUAWEI|快应用华为||
 
-**支持的文件**
-**Supported files**
+支持的文件：
 
 * .vue/.nvue/.uvue
 * .js/.uts
@@ -166,7 +166,7 @@ For example, the following codes will appear on App and H5 platforms:
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/platform-5.png)
 
 ### 组件的条件编译
-### Conditional compilation of components
+
 <pre v-pre="" data-lang="html"><code class="lang-html code"><span class="token comment">&lt;!-- <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  %PLATFORM%</b> --&gt;</span>
 平台特有的组件
 ...
@@ -188,7 +188,7 @@ For example, the following public account follow components will only appear in 
 ````
 
 ### 样式的条件编译
-### Conditional Compilation of style
+
 <pre v-pre="" data-lang="css"><code class="lang-css code"><span class="token comment">/* <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2">  %PLATFORM% </b> */</span>
 平台特有样式
 ...
@@ -208,7 +208,7 @@ Wrong writing
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/platform-3.png)
 
 ### pages.json 的条件编译
-### Conditional compilation of pages.json
+
 下面的页面，只有运行至 App 时才会编译进去。
 The following pages will only be compiled when running to App.
 
@@ -222,7 +222,9 @@ For conditional compilation of json, if the key names of different platforms are
 
 ### static 目录的条件编译@static
 
-在不同平台，引用的静态资源可能也存在差异，通过 static 的条件编译可以解决此问题，static 目录下新建不同平台的专有目录，目录名称均为小写，
+这里也解释了 `static` 内的哪些目录是特殊的。
+
+在不同平台，引用的静态资源可能也存在差异，通过 static 的条件编译可以解决此问题，`static` 目录下新建不同平台的专有目录，目录名称均为 **小写**
 
 |目录名称	|说明					|版本支持		|
 |:-:		|:-:					|:-:			|
@@ -245,8 +247,7 @@ Static resources in a dedicated directory will only be compiled on a specific pl
 如以下目录结构，``a.png`` 只有在微信小程序平台才会编译进去，``b.png`` 在所有平台都会被编译。
 As shown in the following directory structure, ``a.png`` will only be compiled in the WeChat applet platform, and ``b.png`` will be compiled in all platforms.
 
-<pre v-pre="" data-lang="">
-	<code class="lang-" style="padding:0">
+```text
 ┌─static
 │  ├─mp-weixin
 │  │  └─a.png
@@ -255,8 +256,7 @@ As shown in the following directory structure, ``a.png`` will only be compiled i
 ├─App.vue
 ├─manifest.json
 └─pages.json
-	</code>
-</pre>
+```
 
 **注意**
 
@@ -316,6 +316,7 @@ Platform-specific API implementation
   :::
 
 ### 版本的条件编译@uniVersion
+
 > HBuilderX 3.9+
 
 插件作者的插件，需要适配各种插件使用者，使用者的uni-app版本，可能有很多。
@@ -372,10 +373,8 @@ Click **ifdef** or **endif** to quickly select the conditional compilation part;
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-012501.png)
 
-
-
 ### 注意
-### Notice
+
 * Android 和 iOS 平台不支持通过条件编译来区分，如果需要区分 Android、iOS 平台，请通过调用 uni.getSystemInfo 来获取平台信息。支持`ifios`、`ifAndroid`代码块，可方便编写判断。
 * It is not supported to distinguish Android and iOS platforms through conditional compilation. If you need to distinguish them, please call uni.getSystemInfo to get the platform information. Supports `ifios`, `ifAndroid` code blocks, which is convenient for writing and judging.
 * 有些跨端工具可以提供js的条件编译或多态，但这对于实际开发远远不够。uni-app不止是处理js，任何代码都可以多端条件编译，才能真正解决实际项目的跨端问题。另外所谓多态在实际开发中会造成大量冗余代码，很不利于复用和维护。举例，微信小程序主题色是绿色，而百度支付宝小程序是蓝色，你的应用想分平台适配颜色，只有条件编译是代码量最低、最容易维护的。

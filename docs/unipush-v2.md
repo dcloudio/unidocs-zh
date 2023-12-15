@@ -238,9 +238,7 @@ There are many complete processes for opening an app, but the process for openin
 - APP手机厂商推送参数设置（可选，应用进程离线时推送通道）
 - APP mobile phone manufacturer push parameter settings (optional, push channel when the application process is offline)
 	![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/20220728173149.png)
-	uniPush集成并统一了各个手机厂商的系统级推送，目前支持魅族、OPPO、华为、小米、VIVO。如果需要使用厂商推送，需要先在各厂商开发者平台申请。详见[厂商推送应用创建配置流程](https://www.dcloud.io/docs/a/unipush/manufacturer.pdf)
-	uniPush integrates and unifies the system-level push of various mobile phone manufacturers, and currently supports Meizu, OPPO, Huawei, Xiaomi, and VIVO. If you need to use manufacturer push, you need to apply on the developer platform of each manufacturer first. For details, see [Manufacturer Push Application Creation and Configuration Process](https://www.dcloud.io/docs/a/unipush/manufacturer.pdf)
-
+	uni-push集成并统一了各个手机厂商的系统级推送，目前支持魅族、OPPO、华为、小米、VIVO。如果需要使用厂商推送，需要先在各厂商开发者平台申请。详见[厂商推送应用创建配置流程](https://www.dcloud.io/docs/a/uni-push/manufacturer.pdf)
 
 ## 第三步：客户端操作
 ## Step 3: Client Operation

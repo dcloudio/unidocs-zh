@@ -182,6 +182,7 @@ debug模式下，启动应用会自动发起一次网络请求（调用`uni-id-c
 |--				|--																									|--					|
 |smsCode	|短信验证码登录																				|						|
 |username	|用户名密码登录																				|						|
+|univerify|[一键登录](../../uni-app-x/api/uni-verify.md)        |App 3.99+|
 
 ##### 配置示例
 ```js

@@ -912,8 +912,6 @@ Use the `uts-hello-view` tag directly, and define the text content of `buttonTex
 </template>
 
 <script>
-	// uvue 页面需要使用下面的引入代码，nvue 不需要
-	// import { UtsHelloViewElement } from '@/uni_modules/uts-hello-component'
   	export default {
       	data() {
 			return {

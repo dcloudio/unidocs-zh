@@ -3,8 +3,7 @@
 `manifest.json` 文件是应用的配置文件，用于指定应用的名称、图标、权限等。HBuilderX 创建的工程此文件在根目录，CLI 创建的工程此文件在 src 目录。
 The `manifest.json` file is the configuration file of the application, which is used to specify the name, icon, permissions, etc. of the application. The project created by HBuilderX has this file in the root directory, and the project created by CLI has this file in the src directory.
 
-### 配置项列表
-### List of configuration items
+## 配置项列表
 
 |属性|类型|默认值|描述|最低版本|
 |Attribute|Type|Default|Description|Minimum Version|
@@ -57,7 +56,7 @@ The `manifest.json` file is the configuration file of the application, which is 
 - 在本地打包时和热更新时，App版本和wgt应用资源版本将不再保持一致。此时通过[plus.runtime.version](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.version)可获取App版本，通过[plus.runtime.getProperty](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.getProperty)获取wgt资源版本。
 - When packaging locally and hot updating, the App version and the wgt application resource version will no longer be consistent. At this time, the App version can be obtained through [plus.runtime.version](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.version), and through [plus.runtime.getProperty](https ://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.getProperty) to get the wgt resource version.
 
-#### networkTimeout
+### networkTimeout
 
 各类网络请求的超时时间，单位均为毫秒。
 The timeout period of various network requests, in milliseconds.
@@ -77,8 +76,8 @@ The timeout period of various network requests, in milliseconds.
 自`HBuilderX 2.5.10`起，上述默认超时时间由6秒改为60秒，对齐微信小程序平台。
 Since `HBuilderX 2.5.10`, the above default timeout time has been changed from 6 seconds to 60 seconds to align with the WeChat MiniApp platform.
 
+### uniStatistics
 
-#### uniStatistics
 uni 统计配置项
 uni statistics configuration items
 
@@ -120,7 +119,6 @@ uni statistics configuration items
 |webView|Object|当系统webview低于指定版本时，会弹出提示。或者下载x5内核后继续启动，仅Android支持，[详情](/collocation/manifest?id=appwebview)|3.5.0+|
 | webView| Object|When the system webview is lower than the specified version, a prompt will pop up. Or continue to start after downloading the x5 kernel, only supported by Android, [Details](/collocation/manifest?id=appwebview)| 3.5.0+|
 
-
 PS：上表只列出了核心部分，App平台的配置其实非常多，完整内容请参考 [完整的 manifest.json](/collocation/manifest-app?id=full-manifest)。
 PS: The above table only lists the core parts. There are actually many configurations of the App platform. For the complete content, please refer to [Complete manifest.json](/collocation/manifest-app?id=full-manifest).
 
@@ -136,7 +134,6 @@ PS: The above table only lists the core parts. There are actually many configura
 - Some modules are default and do not need to be configured.
 - 微信小程序的 `appid` 等信息，需要配置在 `mp-weixin` 节点下。不要配置在 `app-plus`下。`sdkConfigs` 下出现的 `weixin` 节点，配置的是 App 的第三方 SDK 信息。
 - Information such as `appid` of the WeChat MiniApp needs to be configured under the `mp-weixin` node. Do not configure it under `app-plus`. The `weixin` node under `sdkConfigs` configures the third-party SDK information of the App.
-
 
 #### App Splashscreen@splashscreen
 
@@ -156,7 +153,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 The combination of alwaysShowBeforeRender and autoclose attributes can configure the following three strategies for closing the splash screen, [see](tutorial/app-splashscreen)
 
 **注意**
-**Notice**
+
 - 如果不配置自己的splash图，App端会默认把App的icon放到splash中
 - If you do not configure your own splash image, the app will put the icon of the app in the splash by default
 - splash只能是标准png，不要用jpg改名为png。也不支持gif等动画
@@ -168,8 +165,8 @@ The combination of alwaysShowBeforeRender and autoclose attributes can configure
 - Android的splash支持.9.png，[详见](tutorial/app-splashscreen?id=9png)
 - Android's splash support.9.png, [see](tutorial/app-splashscreen?id=9png)
 
-
 #### App Modules@modules
+
 模块选择是为了控制App的包体积，不需要的模块可以在打包时剔除。
 Module selection is to control the package size of the App, and unnecessary modules can be removed during packaging.
 
@@ -206,7 +203,7 @@ Module selection is to control the package size of the App, and unnecessary modu
 | VideoPlayer|Video Player|
 
 **注意**
-**Notice**
+
 - 仅App云打包生效。本地打包需自行在原生工程中配置。
 - Only App cloud packaging takes effect. Local packaging needs to be configured in the native project by itself.
 
@@ -263,12 +260,14 @@ Configure the following nodes in the manifest to start subcontracting on the App
 |:-|:-|:-|
 |subPackages|Boolean|是否开启分包优化，目前仅 uni-app vue2 下生效|
 
-```
-"app-plus": {
-  "optimization": {
-    "subPackages": true
-  },
-  "runmode" : "liberate" // 开启分包优化后，必须配置资源释放模式
+```json
+{
+  "app-plus": {
+    "optimization": {
+      "subPackages": true
+    },
+    "runmode" : "liberate" // 开启分包优化后，必须配置资源释放模式
+  }
 }
 ```
 
@@ -279,7 +278,7 @@ After starting the subpackage in the manifest, you need to configure specific su
 That is, once subcontracting is configured in pages.json, the MiniApp must take effect, and whether the app takes effect depends on whether it is enabled in the manifest.
 
 注意:
-Notice:
+
 * App开启分包后，每个分包单独编译成一个js文件(都包含在app内，不会联网下载)，当App首页是vue时，可减小启动加载文件大小，提升启动速度。
 * After the App opens subpackages, each subpackage is compiled into a separate js file (all included in the app and will not be downloaded online). When the App home page is vue, the size of the startup loading file can be reduced and the startup speed can be improved.
 * 首页是nvue时，分包不会提升启动速度，nvue本身启动速度就快于vue，也快于开启分包后的首页为vue的应用。如果追求极致启动速度，还是应该使用nvue做首页并在manifest开启fast模式。
@@ -287,8 +286,8 @@ Notice:
 * App页面较少时，分包对启动速度的优化不明显。
 * When the number of App pages is small, the optimization of the startup speed by subpackaging is not obvious.
 
-
 #### nvue@nvue
+
 `nvue` 页面布局初始设置
 `nvue` page layout initial setup
 
@@ -297,7 +296,6 @@ Notice:
 |:-|:-|:-|
 |flex-direction|String| flex 成员项的排列方向，支持项，row：从左到右； row-reverse：从右到左；column：从上到下；column-reverse：与 column 相反，默认值 column。|
 | flex-direction| String| Arrangement direction of flex member items, supporting items, row: from left to right; row-reverse: from right to left; column: from top to bottom; column-reverse: opposite to column, default value column. |
-
 
 #### webview@appwebview
 
@@ -333,7 +331,6 @@ x5 attribute description
 |allowDownloadWithoutWiFi|Boolean|false|是否允许用户在非WiFi网络时进行x5内核的下载。（如果为true，就不会显示用户确认的弹窗。false时，如果showTipsWithoutWifi为true，就会显示用户确认弹框；showTipsWithoutWifi为false时，不下载x5模块。）|
 | allowDownloadWithoutWiFi| Boolean| false|Whether to allow the user to download the x5 kernel when not on a WiFi network. (If it is true, the pop-up window for user confirmation will not be displayed. When it is false, if showTipsWithoutWifi is true, the user confirmation pop-up box will be displayed; when showTipsWithoutWifi is false, the x5 module will not be downloaded.) |
 
-
 webview示例
 webview example
 
@@ -356,13 +353,12 @@ webview example
 Tip: The vue3 vue page requires the minimum version of the Android system webview to be `64.0.3282.116`
 
 ### h5
+
 |属性|类型|说明|
 |Attribute|Type|Description|
 |:-|:-|:-|
 |title|String|页面标题，默认使用 manifest.json 的 name|
-| title| String|page title, the name in manifest.json is used by default|
-|template|String|index.html模板路径，相对于应用根目录，可定制生成的 html 代码。参考：[自定义模板](/collocation/manifest?id=h5-template)|
-| template| String| index.html template path, relative to the application root directory, can customize the generated html code. Reference: [Custom Template](/collocation/manifest?id=h5-template)|
+|template|String|index.html 模板路径，相对于应用根目录，可定制生成的 html 代码。参考：[自定义模板](/collocation/manifest?id=h5-template), Vue2 支持，Vue3 暂不支持|
 |router|Object|参考：[router](/collocation/manifest?id=h5-router)|
 | router| Object|Reference: [router](/collocation/manifest?id=h5-router)|
 |async|Object|参考：[async](/collocation/manifest?id=h5-async)|
@@ -377,7 +373,9 @@ Tip: The vue3 vue page requires the minimum version of the Android system webvie
 | uniStatistics| Object|[Whether to enable uni statistics in H5, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)||
 
 #### 自定义模板@h5-template
-#### Custom Template @h5-template
+
+> 目前 Vue2 支持， Vue3 暂不支持
+
 需要使用自定义模板的场景，通常有以下几种情况：
 Scenarios that require the use of custom templates usually have the following situations:
 
@@ -389,7 +387,7 @@ Scenarios that require the use of custom templates usually have the following si
 - Join Baidu statistics and other three-party js
 
 使用自定义模板时，1. 工程根目录下新建一个html文件；2. 复制下面的基本模板内容，到这个html文件，在此基础上修改meta和引入js；3. 在 `manifest.json->h5->template` 节点中关联这个html文件的路径。
-When using a custom template, 1. Create a new html file in the root directory of the project; 2. Copy the following basic template content to this html file, modify meta and import js on this basis; 3. In `manifest.json-> The path associated with this html file in the h5->template` node.
+
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -433,6 +431,7 @@ The H5 platform is a SPA single-page application. Common SEO information, that i
 But the era of SEO is changing, and now a more effective way is to use uni-app to release a version of Baidu MiniApp at the same time, which has a higher search weight. The H5 version of DCloud's ask community is also made by uni-app. At the same time, a Baidu MiniApp is released, which has a higher weight and a lot of searches from Baidu every day. It's a good case to speak for itself.
 
 #### router@h5-router
+
 |属性|类型|默认值|说明|
 |Attribute|Type|Default|Description|
 |:-|:-|:-|:-|
@@ -450,6 +449,7 @@ But the era of SEO is changing, and now a more effective way is to use uni-app t
 * The release of `history` mode requires background configuration support, see: [backend configuration of history mode](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90% 8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
 
 #### async@h5-async
+
 |属性|类型|默认值|说明|
 |Attribute|Type|Default|Description|
 |:-|:-|:-|:-|
@@ -463,6 +463,7 @@ But the era of SEO is changing, and now a more effective way is to use uni-app t
 | timeout| Number| 60000|page js loading timeout time (the component corresponding to error will be displayed after timeout)|
 
 #### devServer
+
 |属性|类型|默认值|说明|
 |Attribute|Type|Default|Description|
 |:-|:-|:-|:-|
@@ -476,6 +477,7 @@ But the era of SEO is changing, and now a more effective way is to use uni-app t
 Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `webpack` 的 [devServer](https://webpack.js.org/configuration/dev-server/)，`vue3` 实际上对应 `vite` 的 [server](https://cn.vitejs.dev/config/server-options.html#server-options)，鉴于 manifest 为 json 文件，故 `webpack.config.js->devServer` 及 `vite.config.js->server` 配置项下的简单类型属性均可在`manifest.json->h5->devServer`节点下配置，funciton 等复杂类型暂不支持。
 
 #### publicPath
+
 配置 publicPath 为 cdn 资源地址前缀，这样编译出来的 html 文件，引用的 js，css 路径会自动变成 cdn 上的地址。
 Configure publicPath as the prefix of the cdn resource address, so that the compiled html file, the referenced js, and css paths will automatically become the address on the cdn.
 
@@ -495,6 +497,7 @@ Result in index.html when publishing when no publicPath is configured:
 <script src=/h5/static/js/chunk-vendors.803ce52d.js></script>
 <script src=/h5/static/js/index.34e8497d.js>
 ```
+
 配置 publicPath 为 `https://www.cdn.com/h5/`（无效地址仅用作示例） 后，发布时 index.html 中的结果：
 After configuring publicPath to `https://www.cdn.com/h5/` (invalid address is just used as an example), the result in index.html when publishing:
 
@@ -504,7 +507,7 @@ After configuring publicPath to `https://www.cdn.com/h5/` (invalid address is ju
 ```
 
 **注意**
-**Notice**
+
 - 打包部署后，在服务器上开启 gzip 可以进一步压缩文件。具体的配置，可以参考网上的分享：https://juejin.im/post/5af003286fb9a07aac24611b
 - After packaging and deploying, enable gzip on the server to further compress the file. For specific configuration, please refer to the online sharing: https://juejin.im/post/5af003286fb9a07aac24611b
 
@@ -528,6 +531,7 @@ Map service provider SDK configuration, this item needs to be configured when us
 **example**
 
 ```json
+{
 "h5": {
 	"sdkConfigs": {
 		// 使用地图或位置相关功能必须填写其一
@@ -561,9 +565,8 @@ Map service provider SDK configuration, this item needs to be configured when us
 		}
 	}
 }
+}
 ```
-**注意**
-- 百度地图 vue2 项目暂不支持
 
 #### optimization
 
@@ -586,12 +589,14 @@ Map service provider SDK configuration, this item needs to be configured when us
 | enable| Boolean| false|whether to enable tree shaking optimization|
 
 **示例：**
-**Example:**
+
 ```json
-"h5": {
-    "optimization": {
-        "treeShaking": {
-            "enable": true
+{
+    "h5": {
+        "optimization": {
+            "treeShaking": {
+                "enable": true
+            }
         }
     }
 }
@@ -635,7 +640,6 @@ Tips: For treeshaking optimization (treeShaking) principle and optimization resu
 |requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#requiredPrivateInfos)|
 |lazyCodeLoading|String| 目前仅支持值 requiredComponents，代表开启小程序[按需注入](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|
 |lazyCodeLoading|String| support only requiredComponents，Represents opening the MiniApp [On-demand injection](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)feature，[Details](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|
-
 
 #### setting
 
@@ -686,9 +690,7 @@ If you need to use the cloud development of WeChat MiniApp, you need to configur
 After configuring the directory, you need to create a new `vue.config.js` in the project root directory to configure the corresponding file compilation rules
 
 ```javascript
-
 {
-
  plugins: [
      new CopyWebpackPlugin([
        {
@@ -698,7 +700,6 @@ After configuring the directory, you need to create a new `vue.config.js` in the
      ]),
    ],
 }
-
 ```
 
 ### mp-alipay
@@ -943,22 +944,23 @@ Taking the above subpackage as an example, the static files placed in the direct
 
 
 **manifest.json配置**
-**manifest.json configuration**
+
 ```json
-"quickapp-webview": {// 快应用通用配置
-  "icon": "/static/logo.png",
-  "package": "com.example.demo",
-  "versionName": "1.0.0",
-  "versionCode": 100
-},
-"quickapp-webview-union": {// 快应用联盟，目前仅支持 vivo、oppo
-  "minPlatformVersion": 1063 //最小平台支持
-},
-"quickapp-webview-huawei": {// 快应用华为
-  "minPlatformVersion": 1070 //最小平台支持
+{
+  "quickapp-webview": {// 快应用通用配置
+    "icon": "/static/logo.png",
+    "package": "com.example.demo",
+    "versionName": "1.0.0",
+    "versionCode": 100
+  },
+  "quickapp-webview-union": {// 快应用联盟，目前仅支持 vivo、oppo
+    "minPlatformVersion": 1063 //最小平台支持
+  },
+  "quickapp-webview-huawei": {// 快应用华为
+    "minPlatformVersion": 1070 //最小平台支持
+  }
 }
 ```
-
 
 ### FAQ
 Q：iOS 应用调用相机等权限时，弹出的提示语如何修改？

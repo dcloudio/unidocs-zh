@@ -1411,7 +1411,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 
 > v-model 会忽略所有表单元素的 `value`、`checked`、`selected` attribute 的初始值而总是将 Vue 实例的数据作为数据来源。你应该通过 JavaScript 在组件的 data 选项中声明初始值。
 
-在下面的示例中，输入框通过`v-model`绑定了`message`，用户在输入框里输入内容时，这个内容会实施赋值给`message`。当然在代码里为`message`赋值也会实时同步到界面上input里。这就是双向绑定。
+在下面的示例中，输入框通过`v-model`绑定了`message`，用户在输入框里输入内容时，这个内容会实时赋值给`message`。当然在代码里为`message`赋值也会实时同步到界面上input里。这就是双向绑定。
 
 ```html
 	<template>

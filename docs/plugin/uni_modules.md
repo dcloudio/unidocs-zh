@@ -1,9 +1,11 @@
 # uni_modules
 
 ### 什么是 uni_modules
-### What is uni_modules
+
 `uni_modules`是uni-app的插件模块化规范（HBuilderX 3.1.0+支持），通常是对一组js sdk、组件、页面、uniCloud云函数、公共模块等的封装，用于嵌入到uni-app项目中使用，也支持直接封装为项目模板。
 `uni_modules` is the plug-in modular specification of uni-app (supported by HBuilderRX 3.1.0+), which is usually the encapsulation of a group of js sdk, components, pages, uniCloud cloud functions, public modules, etc. It is used for embedding in uni-app projects, and also supports direct encapsulation as project templates.
+
+你可以简单理解，把一个项目的各种工程目录都挪到了一个uni_modules下，打包成了一个模块，这里面只要符合uni-app规范的文件都可以放。
 
 插件开发者，可以像开发uni-app项目一样编写一个`uni_modules`插件，并在HBuilderX中直接上传至[插件市场](https://ext.dcloud.net.cn/)。
 Plug-in developers can write a `uni_modules` plug-in just like developing a uni-app project, and upload it directly to the [plug-in market](https://ext.dcloud.net.cn/) in HBuilderX.
@@ -31,13 +33,13 @@ Why do we need to invent another `uni_modules` wheel after having `node_modules`
 5. `node_modules` placing is also supported in `uni_modules`, without forced rejection.
 
 与之前插件市场的普通插件相比，`uni_modules`有何优势？
-What are the advantages of `uni_modules` compared with ordinary plugins in the plugin market?
-1. 支持在HBuilderX里直接发布、更新、删除
-1. Support direct release, update and deletion in HBuilderX
+1. 支持在HBuilderX里直接发布、更新、删除。而无需在web界面操作。
 2. 支持依赖（在package.json中配置）
 2. Support dependencies (configured in package.json)
 3. 插件文件位置统一，不会造成下载一个插件，不知道给工程下多少个目录写入了多少个文件。删除插件时也可以一点删除
 3. If the location of the plug-in file is uniform, it will not cause the problem of downloading a plug-in but not knowing how many files are written to the number of directories under the project. When deleting the plug-in, you can delete it with one click
+
+`uni_modules`同时也是一种大型工程的模块分割方案。比如一个旅游应用，可以把机票、酒店、火车票、自由行等模块分拆成不同的`uni_modules`，由不同的部门来开发。
 
 ### 目录结构
 ### Directory structure

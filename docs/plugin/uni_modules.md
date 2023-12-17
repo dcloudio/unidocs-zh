@@ -1,7 +1,10 @@
 # uni_modules
 
 ### 什么是 uni_modules
+
 `uni_modules`是uni-app的插件模块化规范（HBuilderX 3.1.0+支持），通常是对一组js sdk、组件、页面、uniCloud云函数、公共模块等的封装，用于嵌入到uni-app项目中使用，也支持直接封装为项目模板。
+
+你可以简单理解，把一个项目的各种工程目录都挪到了一个uni_modules下，打包成了一个模块，这里面只要符合uni-app规范的文件都可以放。
 
 插件开发者，可以像开发uni-app项目一样编写一个`uni_modules`插件，并在HBuilderX中直接上传至[插件市场](https://ext.dcloud.net.cn/)。
 
@@ -19,9 +22,11 @@
 5. `uni_modules`里也支持放置`node_modules`，没有强行排斥。
 
 与之前插件市场的普通插件相比，`uni_modules`有何优势？
-1. 支持在HBuilderX里直接发布、更新、删除
+1. 支持在HBuilderX里直接发布、更新、删除。而无需在web界面操作。
 2. 支持依赖（在package.json中配置）
 3. 插件文件位置统一，不会造成下载一个插件，不知道给工程下多少个目录写入了多少个文件。删除插件时也可以一点删除
+
+`uni_modules`同时也是一种大型工程的模块分割方案。比如一个旅游应用，可以把机票、酒店、火车票、自由行等模块分拆成不同的`uni_modules`，由不同的部门来开发。
 
 ### 目录结构
 

@@ -16,8 +16,7 @@ The following are open source cases using ``uni-app``. We believe that there are
 - [uni-template-news](https://github.com/dcloudio/uni-template-news)：基于uni-app开发的新闻/资讯类App模板 -- by DCloud
 - [uni-template-news](https://github.com/dcloudio/uni-template-news): News/news app template developed based on uni-app -- by DCloud
 
-- [uni-app 开发资源汇总](https://github.com/aben1188/awesome-uni-app/blob/master/README.md)：uni-app 一站式学习资源/开发资源汇总 -- aben1188
-- [uni-app development resources summary](https://github.com/aben1188/awesome-uni-app/blob/master/README.md): uni-app one-stop learning resources/development resources summary -- aben1188
+- [uni-app 开发资源汇总](https://github.com/aben1188/awesome-uni-app/blob/master/README.html)：uni-app 一站式学习资源/开发资源汇总 -- aben1188
 
 - [colorUI for uni-app](https://ext.dcloud.net.cn/plugin?id=239)：colorUI官方维护的uni-app版本，酷炫漂亮的css库 -- by 文晓港
 - [colorUI for uni-app](https://ext.dcloud.net.cn/plugin?id=239): The uni-app version officially maintained by colorUI, a cool and beautiful css library -- by Wen Xiaogang
@@ -40,8 +39,7 @@ The following are open source cases using ``uni-app``. We believe that there are
 - [得推B2C商城](https://ext.dcloud.net.cn/plugin?id=187)：一套简洁的B2C商城，全部功能完善，用户、下单、注册 -- by 得推网络科技
 - [Detui B2C Mall](https://ext.dcloud.net.cn/plugin?id=187): A simple set of B2C mall with complete functions, users, ordering, registration--by Detui Network Technology
 
-- [商城类项目模版](https://ext.dcloud.net.cn/plugin?id=200)：漂亮的商城前端模板，可变背景导航栏、购物车、详情模板 -- by  MixR 
-- [Mall project template](https://ext.dcloud.net.cn/plugin?id=200): beautiful front-end template for mall, variable background navigation bar, shopping cart, details template -- by MixR
+- [商城类项目模版](https://ext.dcloud.net.cn/plugin?id=200)：漂亮的商城前端模板，可变背景导航栏、购物车、详情模板 -- by  MixR
 
 - [来客电商](http://www.laiketui.com/)：包含前后台的完整项目 -- by 来客电商
 - [Laike E-Commerce](http://www.laiketui.com/): Complete project including front and back office -- by Lai Ke E-Commerce
@@ -106,8 +104,7 @@ The following are open source cases using ``uni-app``. We believe that there are
 - [录音朗读fm](https://ext.dcloud.net.cn/plugin?id=1170)：类喜马拉雅FM -- by https://ext.dcloud.net.cn/publisher?id=217187
 - [Recording reading fm](https://ext.dcloud.net.cn/plugin?id=1170): Like Himalayan FM -- by https://ext.dcloud.net.cn/publisher?id=217187
 
-- [教育APP首页](http://ext.dcloud.net.cn/plugin?id=216)：教育APP首页 -- by snice 
-- [Education APP Home](http://ext.dcloud.net.cn/plugin?id=216): Education APP Home -- by snice
+- [教育APP首页](http://ext.dcloud.net.cn/plugin?id=216)：教育APP首页 -- by snice
 
 - [店滴餐饮](https://ext.dcloud.net.cn/plugin?id=1381)：饭店外卖系统 -- by http://www.wayfirer.com/
 - [Diandi Catering](https://ext.dcloud.net.cn/plugin?id=1381): restaurant food delivery system -- by http://www.wayfirer.com/

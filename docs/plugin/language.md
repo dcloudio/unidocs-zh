@@ -17,5 +17,4 @@ Refer to [HBuilderX Plug-in Internationalization](https://hx.dcloud.net.cn/Exten
 ├── package.nls.json
 └── package.nls.ja.json
 ```
-其中语言代码必须符合规范，[点击查看更多语言代码](https://github.com/dcloudio/hbuilderx-language-packs/blob/main/docs/localizations.md)
-The language code must comply with the specification, [click to view more language codes](https://github.com/dcloudio/hbuilderx-language-packs/blob/main/docs/localizations.md)
+其中语言代码必须符合规范，[点击查看更多语言代码](https://github.com/dcloudio/hbuilderx-language-packs/blob/main/docs/localizations.html)

@@ -1,7 +1,6 @@
 
 > 已经了解 Vue 2，只想了解 Vue 3 的新功能可以参阅[vue3新功能](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8%A7%88)！
-> Already know Vue 2, just want to know the new features of Vue 3, you can refer to [vue3 new features](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8 %A7%88)!
->  
+>
 > 已经有 Vue 2项目，需要适配 Vue 3 的可参阅[vue2 项目迁移 vue3](https://uniapp.dcloud.io/migration-to-vue3)！
 > There are already Vue 2 projects, and those that need to adapt to Vue 3 can be referred to [Vue2 project migration vue3](https://uniapp.dcloud.io/migration-to-vue3)!
 
@@ -149,8 +148,7 @@ Create and store custom components in the `components` directory under the root 
 ```
 
 2. `index.vue` 里可直接使用组件
-2. Components can be used directly in`index.vue`
- 
+
 
 ```html
 	<template>
@@ -189,7 +187,7 @@ The following two ways to import a corner label component library[https://ext.dc
 	<script>
 		import uniBadge from '@/components/uni-badge/uni-badge.vue';//1.导入组件（这步属于传统vue规范，但在uni-app的easycom下可以省略这步）
 		export default {
-			components:{uniBadge }//2.注册组件（这步属于传统vue规范，但在uni-app的easycom下可以省略这步） 
+			components:{uniBadge }//2.注册组件（这步属于传统vue规范，但在uni-app的easycom下可以省略这步）
 		}
 	</script>
 ```
@@ -354,7 +352,7 @@ Component is a very important part of the technology in `vue`.Components allow U
 	<!-- 动态赋予一个变量的值 -->
 	<!-- Dynamically assign the value of a variable -->
 	<blog-post :title="post.title"></blog-post>
-	
+
 	<!-- 动态赋予一个复杂表达式的值 -->
 	<!-- Dynamically assign the value of a complex expression -->
 	<blog-post :title="post.title + ' by ' + post.author.name"></blog-post>
@@ -431,7 +429,7 @@ In the two examples above, we happen to pass string values, but any type of valu
 	<!-- 这是一个 JavaScript 表达式而不是一个字符串。-->
 	<!-- this is a JavaScript expression rather than a string.  -->
 	<blog-post :author="{ name: 'Veronica',company: 'Veridian Dynamics'}"></blog-post>
- 
+
 	<!-- 用一个变量进行动态赋值。-->
 	<!-- Dynamically assign to the value of a variable. -->
 	<blog-post :author="post.author"></blog-post>
@@ -1426,8 +1424,7 @@ For `v-model` bindings with arguments, the generated prop name will be `arg + "M
 ### Slot Content
 
 
-Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 [Web Components 规范草案](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md)，将 `<slot>` 元素作为承载分发内容的出口。
-Vue implements a content distribution API inspired by the [Web Components spec draft](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md) (opens new window), using the `<slot>` element to serve as distribution outlets for content.
+Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 [Web Components 规范草案](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Slots-Proposal.html)，将 `<slot>` 元素作为承载分发内容的出口。
 
 
 它允许你像这样合成组件：

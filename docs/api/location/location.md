@@ -101,9 +101,7 @@ uni.getLocation({
   - `安卓手机` 在原生App内嵌H5时，无法定位需要原生App处理Webview。
   - `Android phone` cannot locate when the native app is embedded with H5, and the native app needs to process the Webview.
   - `移动端浏览器` 普遍仅支持GPS定位，在GPS信号弱的地方可能定位失败。
-  - `Mobile browser` generally only supports GPS positioning, and positioning may fail in places with weak GPS signals.
-  - `PC 设备` 使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败。
-  - When `PC device` uses the Chrome browser, the location information is obtained by connecting to the Google server, and domestic users may fail to obtain the location information.
+  - `PC 设备` 使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败，推荐使用Edge进行获取位置信息
   - 微信公众号可使用微信js sdk，[详见](https://ask.dcloud.net.cn/article/35380)
   - WeChat public account can use WeChat js sdk, [see details](https://ask.dcloud.net.cn/article/35380)
   - `2.9.9 版本以上`，优化 uni.getLocation 支持通过 IP 定位。默认通过 GPS 获取，如果获取失败，备选方案是通过 IP 定位获取，需填写三方地图服务平台的秘钥（key）。key配置：manifest.json ---> H5配置 ---> 定位和地图 ---> key。

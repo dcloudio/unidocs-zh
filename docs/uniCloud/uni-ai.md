@@ -762,4 +762,4 @@ uni-ai计费网关支持调用minimax、微软azure openai ChatGPT3.5的对话�
 
 ## 交流群
 
-更多问题欢迎加入uni-ai官方交流群 qq群号:[699680439](https://qm.qq.com/cgi-bin/qm/qr?k=P_JoYXY56vNfb78uNHwwzqpODwl9e89B&jump_from=webapi&authKey=GDp321q9ZYW4V0ZQcejXikwMnNRs4KVBcQXMADs8lvC0hifSH9ORHsyERy6vO4bA)
+更多问题欢迎加入uni-ai的uni-im交流群 [点此加入](https://im.dcloud.net.cn/#/?joinGroup=658160ba3e585b555acebfd1)

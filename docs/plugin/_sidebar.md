@@ -2,12 +2,12 @@
 * [插件市场介绍](/plugin/plugin-ext-introduction.md)
 * [uni_modules](/plugin/uni_modules.md)
 * uts插件
-  * [uts插件开发入门](uts-plugin.md)
-  * [uts页面组件开发入门](uts-component.md)
-  * [uts中使用uni api](uts-uni-api.md)
-  * [Android平台uts开发指南](uts-for-android.md)
-  * [iOS平台uts开发指南](uts-for-ios.md)
-	* [使用CocoaPods依赖](uts-ios-cocoapods.md)
+  * [uts插件开发入门](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)
+  * [uts页面组件开发入门](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-component.html)
+  * [uts中使用uni api](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-uni-api.html)
+  * [Android平台uts开发指南](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html)
+  * [iOS平台uts开发指南](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-ios.html)
+  * [使用CocoaPods依赖](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-ios-cocoapods.html)
 * [原生语言插件](/plugin/native-plugin.md)
 * 插件作者专区
   * [发布插件](/plugin/publish.md)

@@ -37,7 +37,8 @@ export default {
   uniIm:[
     {
     	name: 'uni-im交流群',
-    	url: 'https://im.dcloud.net.cn/#/?joinGroup=658160eb3e585b555acebfd7'
+    	url: 'https://im.dcloud.net.cn/#/?joinGroup=658160eb3e585b555acebfd7',
+      imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/chat-icon-r.png'
     }
   ],
 	qq_group: [

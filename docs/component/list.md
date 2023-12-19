@@ -87,7 +87,7 @@ headerHeight|吸顶距离|Number|是|子list吸顶距离最外层滚动容器顶
 
 ```html
 <template>
-  <list ref="list">
+  <list ref="list" loadmoreoffset="100" @loadmore="loadmore">
     <cell v-for="num in lists">
       <text>{{num}}</text>
     </cell>
@@ -98,14 +98,19 @@ headerHeight|吸顶距离|Number|是|子list吸顶距离最外层滚动容器顶
   export default {
     data () {
       return {
-        lists: ['A', 'B', 'C', 'D', 'E']
+        lists: ['A', 'B', 'C', 'D', 'E','F','G','H','I','J']
       }
     },
     methods: {
         // 重置 loadmore
         resetLoadMore() {
             this.$refs["list"].resetLoadmore();
+        },
+        loadmore(){
+          console.log("loadmore事件触发");
+          this.lists.push('1');
         }
+        
     }
   }
 </script>

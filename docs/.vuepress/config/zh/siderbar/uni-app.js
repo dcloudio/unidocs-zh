@@ -26,7 +26,7 @@ export default {
 	}
 	],
 	codeHosting: [{
-		name: '码云',
+		name: 'Gitee',
 		url: 'https://gitee.com/dcloud/uni-app'
 	},
 	{
@@ -34,6 +34,12 @@ export default {
 		url: 'http://github.com/dcloudio/uni-app'
 	}
 	],
+  uniIm:[
+    {
+    	name: 'uni-im交流群',
+    	url: 'https://im.dcloud.net.cn/#/?joinGroup=658160eb3e585b555acebfd7'
+    }
+  ],
 	qq_group: [
 		{
 			"number": "531031261",

@@ -123,7 +123,7 @@ will be triggered immediately if the list scrolls to the bottom. You can load th
 
 ```html
 <template>
-  <list ref="list">
+  <list ref="list" loadmoreoffset="100" @loadmore="loadmore">
     <cell v-for="num in lists">
       <text>{{num}}</text>
     </cell>
@@ -134,7 +134,7 @@ will be triggered immediately if the list scrolls to the bottom. You can load th
   export default {
     data () {
       return {
-        lists: ['A', 'B', 'C', 'D', 'E']
+        lists: ['A', 'B', 'C', 'D', 'E','F','G','H','I','J']
       }
     },
     methods: {
@@ -142,7 +142,12 @@ will be triggered immediately if the list scrolls to the bottom. You can load th
         // Reset loadmore
         resetLoadMore() {
             this.$refs["list"].resetLoadmore();
+        },
+        loadmore(){
+          console.log("loadmore事件触发");
+          this.lists.push('1');
         }
+        
     }
   }
 </script>

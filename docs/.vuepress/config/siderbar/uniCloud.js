@@ -25,6 +25,13 @@ export default {
 			imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-tongji-icon.png'
 		}
 	],
+  uniIm:[
+    {
+    	name: 'uni-im交流群',
+    	url: 'https://im.dcloud.net.cn/#/?joinGroup=6581841e3e585b555acec05c',
+      imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/chat-icon.png'
+    }
+  ],
 	qq_group: [{
 			"number": "1012245137",
 			"state": 1,

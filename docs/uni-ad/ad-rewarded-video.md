@@ -619,17 +619,45 @@ sign = sha256(secret:transid)
 
 ### 微信小程序说明@callbackweixin
 
-3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
+3.6.8+ 支持微信小程序服务器回调
 
+依赖微信提供的安全网络，安全网络依赖微信提供的 `access_token` `session_key` `encrypt_key`
 
-#### 接入流程
+由于上面三个值之间存在时效和依赖关系，比较复杂，所以需要使用 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 来接管
+
+#### 接入流程(uni-id用户体系)
 
 1. 项目使用了 [uni-id-co](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token) 并更新到 1.0.8+
 2. 使用 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
 3. 配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 
+#### 接入流程(传统用户系统)
 
-#### 安全注意
+1. 配置 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据，详情如下:
+1.1 在 uni-id-config 中配置微信小程序的 `appid`、`appsecret`
+1.2 由 传统服务器通过 http 的方式主动将微信小程序的 `access_token` `session_key` 同步到 uni-open-bridge, `encrypt_key` 由 uni-open-bridge 自动向微信服务器获取
+
+2. 配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
+3. 在微信小程序客户端初始化安全网络并传递 openid，通过 uni.checkSession() 检查登录是否过期，过期后需要重新登录并由开发者服务器将 `session_key` 同步到 uni-open-bridge
+
+```html
+<script>
+  export default {
+    onLaunch: async function() {
+      // #ifdef MP-WEIXIN
+      // 调用自有服务、云函数进行微信登录或以其他方式获取 openid
+      // 通过调用 uni.login(), 获取 code，然后在服务器上请求微信服务器换取 openid, 获取的 code 只能使用一次
+      const openid = ''
+      await uniCloud.initSecureNetworkByWeixin({
+        openid: openid
+      })
+      // #endif
+    }
+  }
+</script>
+```
+
+### 安全注意
 
 由于激励视频对应着用户奖励，可能会遇到恶意刷激励奖励但实际上并不看广告的情况。此时广告平台不给结算，但开发者却可能把激励送出去。
 

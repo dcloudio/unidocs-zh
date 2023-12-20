@@ -203,7 +203,7 @@
 
 |选项	|类型	|说明	|
 |--	|--	|--	|
-|type	| `String` 、 `Number` 、 `Boolean` 、 `Array` 、 `Object` 、 `Date` 、 `Function` 、 `Symbol(uni-app x 不支持)` ，任何自定义构造函数、或上述内容组成的数组	|会检查一个 `prop` 是否是给定的类型，否则抛出警告，复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。	|
+|type	| `String` 、 `Number` 、 `Boolean` 、 `Array` 、 `Object` 、 `Date` 、 `Function` 、 `Symbol` ，任何自定义构造函数、或上述内容组成的数组	|会检查一个 `prop` 是否是给定的类型，否则抛出警告，复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。	|
 |default	|any	|为该 `prop` 指定一个默认值。如果该 `prop` 没有被传入，则换做用这个值。对象或数组的默认值必须从一个工厂函数返回。|
 |required	|Boolean	|定义该 `prop` 是否是必填项。|
 |validator	|Function	|自定义验证函数会将该 `prop` 的值作为唯一的参数代入。在非生产环境下，如果该函数返回一个 `false` 的值 (也就是验证失败)，一个控制台警告将会被抛出。|
@@ -674,8 +674,6 @@
 
 用于验证 `author` prop 的值是否是通过 `new Person` 创建的。
 
-**注意：uni-app x 暂不支持**
-
 ### Prop 的大小写命名
 
 
@@ -1009,8 +1007,6 @@
 	}
 ```
 
-**注意：uni-app x 暂不支持**
-
 ### v-model 参数
 
 
@@ -1163,8 +1159,6 @@
 		}
 	</script>
 ```
-
-**注意：uni-app x 暂不支持 capitalize 修饰符**
 
 ```html
 	<!-- 我是 my-component子组件-->
@@ -1590,18 +1584,6 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 [Web C
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/scoped-slot.png)
 
 在这个例子中，我们选择将包含所有插槽 `prop` 的对象命名为 `slotProps`，但你也可以使用任意你喜欢的名字。
-
-**注意：** `uni-app x` 中需要为作用域插槽指定类型，以 `todo-list` 组件为例，需要补充如下代码：
-
-```js
-	import { SlotsType } from 'vue'
-	export default {
-		slots: Object as SlotsType<{
-			default: { item: string }
-		}>
-	}
-```
-
 
 #### 独占默认插槽的缩写语法
 

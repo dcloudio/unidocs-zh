@@ -484,12 +484,6 @@ v-on 指令，它用于监听 `DOM` 事件。v-on缩写为‘ @ ’，下文简�
 	<!-- 缩写 -->
 	<view @click="doSomething">点击</view>
 ```
-**注意：`uni-app x` 中函数 `event` 参数需要显式指定类型**
-
-```html
-<view @click="(e: any) => foo(e)">event must has type</view>
-<view @click="foo($event as MouseEvent)">event must has type</view>
-```
 
 #### v-once
 
@@ -508,7 +502,6 @@ v-on 指令，它用于监听 `DOM` 事件。v-on缩写为‘ @ ’，下文简�
 		<text>{{msg}}</text>
 	</view>
 ```
-**注意：`uni-app x` 暂不支持**
 
 #### v-html
 
@@ -537,8 +530,6 @@ v-on 指令，它用于监听 `DOM` 事件。v-on缩写为‘ @ ’，下文简�
 		}
 	</script>
 ```
-
-**注意：`uni-app x` 暂不支持**
 
 ## Data 选项
 
@@ -1861,7 +1852,6 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 		}
 	</script>
 ```
-**注意：`uni-app x` 暂不支持**
 
 #### 监听对象中单个属性
 
@@ -1886,8 +1876,6 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 		}
 	}
 ```
-
-**注意：uni-app x 暂不支持**
 
 ### 计算属性 vs 侦听属性
 

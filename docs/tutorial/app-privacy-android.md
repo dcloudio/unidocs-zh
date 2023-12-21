@@ -57,7 +57,7 @@ DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`
   "message": "　　请你务必审慎阅读、充分理解“服务协议”和“隐私政策”各条款，包括但不限于：为了更好的向你提供服务，我们需要收集你的设备标识、操作日志等信息用于分析、优化应用性能。<br/>　　你可阅读<a href=\"\">《服务协议》</a>和<a href=\"\">《隐私政策》</a>了解详细信息。如果你同意，请点击下面按钮开始接受我们的服务。",
   "buttonAccept": "同意并接受",
   "buttonRefuse": "暂不同意",
-  "hrefLoader": "system|default",
+  "hrefLoader": "system",
   "backToExit":"false",
   "second": {
     "title": "确认提示",

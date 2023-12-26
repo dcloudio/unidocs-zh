@@ -11,8 +11,7 @@
 #### 3、[隐私政策展示内容](#content)
 #### 4、[查看uni-app(5+ App/Wap2App)集成功能模块补充隐私协议](#feature)
 
-<a id="update"></a>
-## 一、根据自身APP生产环境选择最新版本HbuilderX或SDK
+## 一、根据自身APP生产环境选择最新版本HbuilderX或SDK @update
 
 |打包方式		|推荐版本			|下载地址
 |----			|----				|----

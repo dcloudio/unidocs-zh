@@ -47,7 +47,7 @@ background-image: url(../../static/logo.png);
 
 **Tips**
 
-- 引入字体图标请参考，[字体图标](/tutorial/syntax-css.html#字体图标)
+- 引入字体图标请参考，[字体图标](/tutorial/syntax-css.md#字体图标)
 - `@`开头的绝对路径以及相对路径会经过 base64 转换规则校验
 - 不支持本地图片的平台，小于 40kb，一定会转 base64。（共四个平台 mp-weixin, mp-qq, mp-toutiao, app v2）
 - web 平台，小于 4kb 会转 base64，超出 4kb 时不转。

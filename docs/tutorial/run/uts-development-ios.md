@@ -4,7 +4,7 @@
 
 HBuilderX 3.6.9+，新增 uts插件 iOS平台 支持本地编译和真机运行，需要配置Xcode环境。
 
-安装[uts扩展插件](#uts扩展插件)和[Xcode](#Xcode环境配置)后，您在本地修改uts插件iOS平台代码，即可在本地编译并真机运行到iOS设备，而无需再提交代码到云端制作自定义基座。
+安装[uts扩展插件](#uts扩展插件)和[Xcode](#xcode环境配置)后，您在本地修改uts插件iOS平台代码，即可在本地编译并真机运行到iOS设备，而无需再提交代码到云端制作自定义基座。
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20221111172603.jpg" style="zoom: 45%" />
 

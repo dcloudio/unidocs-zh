@@ -61,7 +61,7 @@
 
 #### 参数说明  
 - 高德用户名  
-高德开放平台注册账号的用户名，获取方式参考“[高德开放平台用户名](#amapName)”章节
+高德开放平台注册账号的用户名，获取方式参考“[高德开放平台用户名](#amapname)”章节
 - appkey_android  
 [高德开放平台](https://lbs.amap.com/)为Android平台申请的Key
 - appkey_ios  

@@ -4,7 +4,7 @@
 
 ### 使用组合式API
 
-从 vue 包内导入并使用基础的组合式API，具体 API 可以参考：[Vue 官网](https://cn.vuejs.org/api/composition-api-setup.html)。从 @dcloudio/uni-app 包内导入 uni-app [应用生命周期](/collocation/App.html#applifecycle)及[页面的生命周期](/tutorial/page.html#lifecycle)。
+从 vue 包内导入并使用基础的组合式API，具体 API 可以参考：[Vue 官网](https://cn.vuejs.org/api/composition-api-setup.html)。从 @dcloudio/uni-app 包内导入 uni-app [应用生命周期](/collocation/App.md#applifecycle)及[页面的生命周期](/tutorial/page.md#lifecycle)。
 
   ```js
   import { defineComponent, ref } from 'vue'

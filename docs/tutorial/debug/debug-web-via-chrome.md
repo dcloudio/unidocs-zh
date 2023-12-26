@@ -33,7 +33,7 @@ uni-app web调试，依赖debug插件，弹窗提示安装依赖插件，请务�
 开启调试后，即可在HBuilderX左侧视图，看到调试视图，具体如下：
 
 **调试视图分为5部分：**
-- [调试工具栏](#DebugActions)
+- [调试工具栏](#debugactions)
 - 变量窗口 (`复制值`、`复制表达式`、`添加到监视`)
 - 监视窗口（包含`添加`/`编辑`/`删除`表达式，以及`复制值`）
 - 调用堆栈窗口
@@ -45,7 +45,7 @@ uni-app web调试，依赖debug插件，弹窗提示安装依赖插件，请务�
 
 ![](https://hx.dcloud.net.cn/static/snapshots/app/h5-debug/debug_toolbar.png)
 
-- [继续](#Continue) `F8`
+- [继续](#continue) `F8`
 - 下一步 `F10`
 - 进入 `F11`
 - 返回 `Shift+F11`

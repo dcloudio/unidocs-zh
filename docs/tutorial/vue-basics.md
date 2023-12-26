@@ -223,7 +223,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 相比Web平台， Vue.js 在 `uni-app` 中使用差异主要集中在两个方面：
 
-- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.html#applifecycle)及[页面的生命周期](/tutorial/page.html#lifecycle)。
+- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.md#applifecycle)及[页面的生命周期](/tutorial/page.md#lifecycle)。
 - 受限：相比 Web 平台，在小程序和 App 端部分功能支持不完善，具体见[兼容性列表](/vue3-api)。
 
 
@@ -1549,7 +1549,7 @@ Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据�
 
 ### 侦听器watch
 
-- 类型：{ [key: string]: string | Function | Object | Array }
+- 类型：{ [key: string]: string%20%7C%20Function%20%7C%20Object%20%7C%20Array%20%7D
 
 
 - 一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象。Vue 实例将会在实例化时调用 `$watch()` ，遍历 `watch` 对象的每一个 `property` 。

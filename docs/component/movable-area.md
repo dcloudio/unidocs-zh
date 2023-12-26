@@ -10,7 +10,7 @@
 
 当然也可以不拖动，而使用代码来触发`movable-view`在`movable-area`里的移动缩放。
 
-`movable-view`的规范另见[movable-view](/component/movable-view.html)。
+`movable-view`的规范另见[movable-view](/component/movable-view.md)。
 
 **平台差异说明**
 

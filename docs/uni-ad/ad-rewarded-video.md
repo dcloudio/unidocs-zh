@@ -613,7 +613,7 @@ sign = sha256(secret:transid)
 
 ### 老用户升级@upgrade
 
-1. 在传统服务器增加[签名校验](/uni-ad/ad-rewarded-video.html#sign)
+1. 在传统服务器增加[签名校验](/uni-ad/ad-rewarded-video.md#sign)
 2. 登陆 uni-ad [Web控制台](https://uniad.dcloud.net.cn/)，找到广告位对应的配置激励视频，选择 "业务在传统服务器" 并配置服务器HTTP地址
 
 
@@ -733,7 +733,7 @@ sign = sha256(secret:transid)
 
 注意
 1. 在实际业务中云函数费用可能会出现稍微偏高，如：开发者的服务器响应过慢时，广告商的服务器会重试，导致调用次数增加
-2. 业务系统不在uniCloud的费用采用服务器配置升级后的计算方式，[升级参考](/component/ad-rewarded-video.html#upgrade)
+2. 业务系统不在uniCloud的费用采用服务器配置升级后的计算方式，[升级参考](/component/ad-rewarded-video.md#upgrade)
 
 #### 总结
 

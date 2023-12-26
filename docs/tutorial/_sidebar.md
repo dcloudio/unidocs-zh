@@ -144,7 +144,7 @@
     * [云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
     * [传统服务器与uniCloud安全通信](https://doc.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)
   * 身份安全
-    * [app一键登录](/univerify.html)
+    * [app一键登录](/univerify.md)
     * [app实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
     * [图形验证码](https://doc.dcloud.net.cn/uniCloud/uni-captcha.html)
   * 服务器安全

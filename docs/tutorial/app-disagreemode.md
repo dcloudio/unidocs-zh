@@ -23,7 +23,7 @@
 > - **前提条件：HBuilderX更新到3.3.1及以上版本** 
 > - **第一步：原生隐私政策提示框[配置支持disagreeMode](#disagree)** 
 > - **第二步：[适配App的基本功能服务](#basic-services)，确保不要调用任何可能涉及“隐私政策”合规的API**
-> - **第三步：适配需要使用`非必要个人信息`的业务功能，在调用功能前[引导用户同意“隐私政策”协议](#showPrivacy)**
+> - **第三步：适配需要使用`非必要个人信息`的业务功能，在调用功能前[引导用户同意“隐私政策”协议](#showprivacy)**
 
 
 
@@ -62,7 +62,7 @@ Boolean类型，表示在disagreeMode模式是否加载uni原生插件，true表
 
 ### 适配App的基本功能服务
 
-disagreeMode表示用户未同意“隐私政策”，此时App仅提供基本功能服务，此模式下不能调用涉及隐私合规相关的API，如果调用了可能会因为读取隐私信息导致App无法通过合规检测，参考[disagreeMode模式限制uni API和组件](#limit-uni)及[disagreeMode模式限制5+ API](#limit-plus)。如果基本功能服务的页面需要需要调用到限制API，需先[判断是否运行在disagreeMode模式](#judge)，如果是的话需先[引导用户同意“隐私政策”协议](#showPrivacy)，用户同意隐私政策后再调用限制API。
+disagreeMode表示用户未同意“隐私政策”，此时App仅提供基本功能服务，此模式下不能调用涉及隐私合规相关的API，如果调用了可能会因为读取隐私信息导致App无法通过合规检测，参考[disagreeMode模式限制uni API和组件](#limit-uni)及[disagreeMode模式限制5+ API](#limit-plus)。如果基本功能服务的页面需要需要调用到限制API，需先[判断是否运行在disagreeMode模式](#judge)，如果是的话需先[引导用户同意“隐私政策”协议](#showprivacy)，用户同意隐私政策后再调用限制API。
 
 <a id="judge"></a>
 

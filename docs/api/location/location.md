@@ -104,7 +104,7 @@ uni.getLocation({
 
 **注意**
 - 因平台差异，如果SDK配置百度地图，需要设置 keyword，才能显示相关地点
-- [非 weex 编译模式](/collocation/manifest.html#app-plus)不支持百度地图
+- [非 weex 编译模式](/collocation/manifest.md#app-plus)不支持百度地图
 
 
 **success 返回参数说明**

@@ -4,7 +4,7 @@
 
 HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Gradle 仓储。
 
-运行带有uts插件的项目到Android设备，如果您遇到以下提示，请配置[运行环境](#Android环境配置)
+运行带有uts插件的项目到Android设备，如果您遇到以下提示，请配置[运行环境](#android环境配置)
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20221111173829.jpg" style="zoom: 50%;" />
 

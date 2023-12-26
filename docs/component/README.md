@@ -375,7 +375,7 @@ uni_module其实不止服务于组件，它可以服务于组件、js库、页�
 
 uni_module还支持云端一体的插件。
 
-uni_module有详细的专项文档，请另行查阅[uni_module规范](/plugin/uni_modules.html)。
+uni_module有详细的专项文档，请另行查阅[uni_module规范](/plugin/uni_modules.md)。
 
 ### uniCloud组件
 

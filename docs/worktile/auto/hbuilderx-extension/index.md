@@ -169,7 +169,7 @@ describe('test title', () => {
 });
 ```
 
-扩展：如上测试代码中，使用了`beforeAll`函数，它用于在所有测试之前执行。[了解jest更多钩子函数](#SetupTeardown)
+扩展：如上测试代码中，使用了`beforeAll`函数，它用于在所有测试之前执行。[了解jest更多钩子函数](#setupteardown)
 
 ## Setup and Teardown@SetupTeardown
 

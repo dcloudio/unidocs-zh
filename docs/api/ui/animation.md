@@ -43,7 +43,7 @@ var animation = uni.createAnimation({
 ```
 
 
-**animation**
+#### animation
 
 动画实例可以调用以下方法来描述动画，调用结束后会返回自身，支持链式调用的写法。
 

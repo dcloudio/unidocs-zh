@@ -44,24 +44,24 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
 	<div align=center>
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run-phone.png"/>
 	</div>
-	
+
 	如手机无法识别，请点击菜单运行-运行到手机或模拟器-真机运行常见故障排查指南。
 	注意目前开发App也需要安装微信开发者工具。
-	
+
 3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。
     <br/>
     <div align=center>
     	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni20190222-1.png"/>
     </div>
-    
+
     **注意：**如果是第一次使用，需要先配置小程序ide的相关路径，才能运行成功。如下图，需在输入框输入微信开发者工具的安装路径。 若HBuilderX不能正常启动微信开发者工具，需要开发者手动启动，然后将uni-app生成小程序工程的路径拷贝到微信开发者工具里面，在HBuilderX里面开发，在微信开发者工具里面就可看到实时的效果。
-    
+
     uni-app默认把项目编译到根目录的unpackage目录。
     <br/>
     <div align=center>
       <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/weixin-setting.png"/>
     </div>
-		
+
 4. 在支付宝小程序开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 支付宝小程序开发者工具，即可在支付宝小程序开发者工具里面体验uni-app。
     <br/>
     <div align=center>
@@ -73,7 +73,7 @@ uni-app自带的模板有 Hello uni-app ，是官方的组件和API示例。还�
     <div align=center>
     	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni20190222-2.png"/>
     </div>
- 
+
 6. 在抖音开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 抖音开发者工具，即可在抖音开发者工具里面体验uni-app。
     <br/>
     <div align=center>
@@ -112,7 +112,7 @@ HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行�
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/runtool.png"/>
 </div>
 
-如需调试，可参考：[uni-app调试](/snippet?id=使用-chrome-调试)
+如需调试，可参考：[uni-app调试](/tutorial/run-and-debug.md)
 
 ## 发布uni-app
 
@@ -324,7 +324,7 @@ HBuilderX 2.7.10+ 版支持
 * dev 和 build 模式的区别：
   1. dev 模式有 SourceMap 可以方便的进行断点调试；
   2. build 模式会将代码进行压缩，体积更小更适合发布为正式版应用；
-  3. 进行 [环境判断](/frame?id=运行环境判断) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
+  3. 进行 [环境判断](/worktile/running-env.md#判断平台) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
 
 ## 使用cli创建项目和使用HBuilderX可视化界面创建项目有什么区别
 
@@ -334,7 +334,7 @@ HBuilderX 2.7.10+ 版支持
 * HBuilderX可视化界面创建的项目，编译器在HBuilderX的安装目录下的plugin目录，随着HBuilderX的升级会自动升级编译器。
 * 已经使用``cli``创建的项目，如果想继续在HBuilderX里使用，可以把工程拖到HBuilderX中。注意如果是把整个项目拖入HBuilderX，则编译时走的是项目下的编译器。如果是把src目录拖入到HBuilderX中，则走的是HBuilderX安装目录下plugin目录下的编译器。
 * ``cli``版如果想安装less、scss、ts等编译器，需自己手动npm安装。在HBuilderX的插件管理界面安装无效，那个只作用于HBuilderX创建的项目。
- 
+
 #### 开发工具的区别
 * ``cli``创建的项目，内置了d.ts，同其他常规npm库一样，可在[vscode](https://ask.dcloud.net.cn/article/36286)、[webstorm](https://ask.dcloud.net.cn/article/36307)等支持d.ts的开发工具里正常开发并有语法提示。
 * 使用HBuilderX创建的项目不带d.ts，HBuilderX内置了uni-app语法提示库。如需把HBuilderX创建的项目在其他编辑器打开并且补充d.ts，可以在项目下先执行 ``npm init``，然后``npm i @types/uni-app -D``，来补充d.ts。

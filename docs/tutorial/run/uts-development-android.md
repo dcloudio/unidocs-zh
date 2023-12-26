@@ -4,7 +4,7 @@
 
 HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Gradle 仓储。
 
-运行带有uts插件的项目到Android设备，如果您遇到以下提示，请配置[运行环境](#android环境配置)
+运行带有uts插件的项目到Android设备，如果您遇到以下提示，请配置[运行环境](#环境配置)
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20221111173829.jpg" style="zoom: 50%;" />
 
@@ -26,7 +26,7 @@ HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Grad
 1. 点击图标1的下载地址进入下载页面。如图所示，点击红圈部分下载工具包。
 
  ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gradle.png)
- 
+
 2. 将步骤1下载的内容解压后，找到bin目录下的执行脚本，填入图标3处。
 
 **注意** mac为`%解压路径%/bin/gradle`；window为`%解压路径%\bin\gradle.bat`。
@@ -48,7 +48,7 @@ HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Grad
 1. 如图所示，根据平台下载Command line tools only。
 
 ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/sdk.png)
- 
+
 2. 下载解压后通过`%解压目录%/bin/sdkmanager脚本安装build-tools和platforms
 ```
 sdkmanager --sdk_root=%sdk路径% --install "build-tools;30.0.0"

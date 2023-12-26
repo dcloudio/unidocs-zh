@@ -16,7 +16,7 @@
 1. 本插件支持`uni-app普通项目`和`uniapp-cli项目`。uniapp-cli项目，运行自动化测试，需要在当前项目下安装自动化测试依赖。
 2. Windows电脑不支持运行测试到`ios手机`。
 3. MacOSX电脑，仅支持运行测试到`iOS模拟器`，不支持ios真机，测试iOS模拟器，需要电脑装安装XCode。
-4. 运行测试到H5，仅支持`chrome`浏览器，不支持其它浏览器。 
+4. 运行测试到H5，仅支持`chrome`浏览器，不支持其它浏览器。
 5. 运行测试到Android手机，如果HBuilderX仅检测到一个android设备，`直接`运行测试到当前已连接设备。`多个`设备时，会弹窗要求选择手机。
 6. node: 当本机未安装node时，将使用HBuilderX`内置node`运行测试。反之，本机安装了node，则使用本机的node。
 7. 运行测试到微信小程序，必须在manifest.json内，配置微信小程序 appid。如果微信开发者工具无法成功打开项目，首次请手动打开。
@@ -33,7 +33,7 @@
 
 ## 测试环境安装@env
 
-**插件依赖：** 
+**插件依赖：**
 
 - H5、微信、ios、android自动化测试依赖`puppeteer`、`adbkit`、`node-simctl`、`jest`、`playwright`，运行插件时，如果未安装此依赖，将会弹窗自动安装。
 - `注意`：本插件0.0.3版本及以下，node: 当本机未安装node时，将使用HBuilderX内置的node运行测试。反之，本机安装了node，则使用本机的node。
@@ -50,7 +50,7 @@ uni-app普通项目，`初始化测试环境`或`运行测试`时，如果未安
 
 如下图所示，项目管理器，选中项目，右键菜单【初始化测试环境】
 
-注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](../../auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
+注意：安装环境依赖时，如果检测到项目下不存在测试配置文件 `env.js` 和[jest.config.js](../../auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/env_install.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 
@@ -92,7 +92,7 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 
 ### 选择设备@select-devices
 
-> 如果无法获取到设备信息，请[参考](tutorial/run/run-app-faq.md)
+> 如果无法获取到设备信息，请[参考](/tutorial/run/run-app-faq.md)
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-test-select-device.jpg" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
 

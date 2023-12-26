@@ -59,9 +59,9 @@ uni.hideToast();
 ```
 
 
-### uni.showLoading(OBJECT)
+### uni.showLoading(OBJECT)@showloading
 
-显示 loading 提示框, 需主动调用 [uni.hideLoading](api/ui/prompt?id=hideloading) 才能关闭提示框。
+显示 loading 提示框, 需主动调用 [uni.hideLoading](#hideloading) 才能关闭提示框。
 
 **OBJECT参数说明**
 
@@ -81,7 +81,7 @@ uni.showLoading({
 });
 ```
 
-### uni.hideLoading()
+### uni.hideLoading()@hideloading
 
 隐藏 loading 提示框。
 
@@ -97,7 +97,7 @@ setTimeout(function () {
 }, 2000);
 ```
 
-### uni.showModal(OBJECT)
+### uni.showModal(OBJECT)@showmodal
 
 显示模态弹窗，可以只有一个确定按钮，也可以同时有确定和取消按钮。类似于一个API整合了 html 中：alert、confirm。
 

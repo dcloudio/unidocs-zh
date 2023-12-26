@@ -28,10 +28,10 @@ uni-app内置了`weex`，`weex`的原生插件或ui库均可使用。注意`weex
 （但为了全端使用，仍然建议减少对dom库的依赖，在`uni-app`的插件市场可寻找全端兼容的库来替代）
 
 - App端支持各种调用原生能力的方式
-1. 支持 原生[混合开发](hybrid)
+1. 支持 原生[混合开发](/hybrid.md)
 2. 支持 比小程序能力更多的[plus JSAPI](http://www.html5plus.org/doc/h5p.html)
 3. 支持 [Native.js](https://ask.dcloud.net.cn/docs/#//ask.dcloud.net.cn/article/88) 直接调用原生api
-4. 支持 [uts插件](uts-plugin.md)
+4. 支持 [uts插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)
 5. 支持 [原生语言插件](native-plugin.md)
 
 

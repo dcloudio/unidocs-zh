@@ -92,7 +92,7 @@ splash（启动封面）是App必然存在的、不可取消的。
 |autoclose|Boolean|true|是否自动关闭启动界面，仅当alwaysShowBeforeRender设置为false时生效，如果需要[手动关闭](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.closeSplashscreen)启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
 |waiting|Boolean|true|是否在程序启动界面显示等待圈或雪花||
 
-alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关闭启动界面（splash）策略，[详见](tutorial/app-splashscreen)
+alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关闭启动界面（splash）策略，[详见](../tutorial/app-splashscreen.md)
 
 **注意**
 
@@ -100,7 +100,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 - splash只能是标准png，不要用jpg改名为png。也不支持gif等动画
 - 相关改动，云打包生效，真机运行不生效。本地打包需自行在原生工程中配置
 - App启动图中iOS的MAX等大屏设备的splash图若不配，会导致iOS认为此App没有为MAX优化，App将无法全屏，四周会有黑边
-- Android的splash支持.9.png，[详见](tutorial/app-splashscreen?id=9png)
+- Android的splash支持.9.png，[详见](../tutorial/app-splashscreen.md#9png)
 
 #### App Modules@modules
 

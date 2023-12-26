@@ -18,7 +18,7 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 - [苹果登录（Sign in with Apple）](/tutorial/app-oauth-apple.md)
 - [微信登录](/tutorial/app-oauth-weixin.md)
 - [QQ登录](/tutorial/app-oauth-qq.md)
-- [新浪微博登录](/tutorial/app-oauth-sina.md)
+- [新浪微博登录](/tutorial/app-oauth-weibo.md)
 - [Google登录](/tutorial/app-oauth-google.md)
 - [Facebook登录](/tutorial/app-oauth-facebook.md)
 

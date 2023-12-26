@@ -669,7 +669,7 @@ uni.addInterceptor({
 
 | API                                                                         | 说明              |
 | :-------------------------------------------------------------------------- | :---------------- |
-| [uni.requireNativePlugin](/api/extend/native-plugin?id=requirenativeplugin) | 引入 App 原生插件 |
+| [uni.requireNativePlugin](/plugin/native-plugin.md#requirenativeplugin) | 引入 App 原生插件 |
 
 ### 其他
 

@@ -100,7 +100,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 - splash只能是标准png，不要用jpg改名为png。也不支持gif等动画
 - 相关改动，云打包生效，真机运行不生效。本地打包需自行在原生工程中配置
 - App启动图中iOS的MAX等大屏设备的splash图若不配，会导致iOS认为此App没有为MAX优化，App将无法全屏，四周会有黑边
-- Android的splash支持.9.png，[详见](../tutorial/app-splashscreen.md#9png)
+- Android的splash支持.9.png，[详见](../tutorial/app-splashscreen.md#_9png)
 
 #### App Modules@modules
 

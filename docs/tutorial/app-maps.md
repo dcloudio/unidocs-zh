@@ -2,7 +2,7 @@ App端地图模块封装了市场上主流的三方地图SDK，提供JS API统�
 
 |项目类型|API|
 |:-|:-|
-|uni-app|[uni.getLocation(OBJECT)](https://uniapp.dcloud.io/api/location/location?id=getlocation)、[uni.chooseLocation(OBJECT)](https://uniapp.dcloud.io/api/location/location?id=chooselocation)、[uni.openLocation(OBJECT)](https://uniapp.dcloud.io/api/location/open-location?id=openlocation)、[uni.createMapContext(mapId,this)](api/location/map?id=createmapcontext)、[map](/component/map.md)组件|
+|uni-app|[uni.getLocation(OBJECT)](https://uniapp.dcloud.io/api/location/location?id=getlocation)、[uni.chooseLocation(OBJECT)](https://uniapp.dcloud.io/api/location/location?id=chooselocation)、[uni.openLocation(OBJECT)](https://uniapp.dcloud.io/api/location/open-location?id=openlocation)、[uni.createMapContext(mapId,this)](/api/location/map.md#createmapcontext)、[map](/component/map.md)组件|
 |5+App/Wap2App|[plus.maps.*](https://www.html5plus.org/doc/zh_cn/maps.html)
 
 使用地图功能需在项目manifest.json的“App模块配置”中勾选“Maps(地图)”，并根据项目实际情况勾选使用的三方地图SDK：

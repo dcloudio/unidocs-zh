@@ -138,9 +138,8 @@ adb: failed to install android_debug.apk: Failure [INSTALL_FAILED_NO_MATCHING_AB
 使用Android Studio自带的x86模拟器，将不包含x86 cpu类型的apk拖到模拟器安装时会弹出如下提示框：
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-error.png)
 
-<a id="nox86"/>
 
-#### HBuilderx2.7.0+ 云端打包默认CPU类型不再包含x86
+#### HBuilderx2.7.0+ 云端打包默认CPU类型不再包含x86@nox86
 目前市面上常见的手机都是使用ARM处理器，很少有设备使用x86处理器，因此从HBuilderX2.7.0开始云端打包调整为默认不再包含x86的CPU类型，减少apk包大小：
 - uni-app项目
   基础功能apk减少5M+，使用的三方SDK及uni原生插件越多，减少的包尺寸越大，具体值取决于其包含的x86类型的so库大小

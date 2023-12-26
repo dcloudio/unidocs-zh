@@ -70,8 +70,7 @@ HBuilderX中打开项目的manifest.json文件，在“App图标配置”中可�
 |ipad|对象，参考[iPad图标源码参数](#ipad)|iPad设备程序图标|
 |appstore|String|App Store图标路径，分辨率要求1024x1024|
 
-<a id="iphone"/>
-iPhone图标源码参数
+##### iPhone图标源码参数@iphone
 
 |属性名称|类型|说明|
 |:-|:-|:-|
@@ -84,8 +83,7 @@ iPhone图标源码参数
 |notification@2x|String|iOS7+设备通知栏图标，分辨率要求40x40|
 |notification@3x|String|iOS7+设备通知栏图标，分辨率要求60x60|
 
-<a id="ipad"/>
-iPad图标源码参数
+##### iPad图标源码参数@ipad
 
 |属性名称|类型|说明|
 |:-|:-|:-|

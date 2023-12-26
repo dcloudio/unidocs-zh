@@ -19,23 +19,21 @@
 |HbuilderX打包	|`HbuilderX3.2.15+`	|【[HbuilderX下载地址](https://www.dcloud.io/hbuilderx.html)】
 |离线打包      	|`3.2.15+`         	|【[离线打包SDK下载地址](https://nativesupport.dcloud.net.cn/AppDocs/download/android)】
 
-<a id="check"></a>
-## 二、隐私弹窗配置检测
+## 二、隐私弹窗配置检测@check
 
 #### 1 .检查uni-app项目目录下是否含有androidPrivacy.json文件 没有请查[参考文档](https://ask.dcloud.net.cn/article/36937)添加配置！
 #### 2 .查看androidPrivacy.json文件中`prompt`配置值域是不是`template`。[参考文档](https://ask.dcloud.net.cn/article/36937)
 		```
-		//androidPrivacy.json  
-		{    
-		"version": "1",      
-		"prompt": "template",    
-		"title": "服务协议和隐私政策",    
-		"message": "..."  
+		//androidPrivacy.json
+		{
+		"version": "1",
+		"prompt": "template",
+		"title": "服务协议和隐私政策",
+		"message": "..."
 		}
 		```
 
-<a id="content"></a>
-## 三、隐私政策展示内容
+## 三、隐私政策展示内容@content
 
 ### 务必在APP《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发
 
@@ -93,8 +91,8 @@ android.permission.GET_TASKS
   </tr>
 </table>
 
-<a id="feature"></a>
-## 四、查看uni-app(5+ App/Wap2App)集成模块补充隐私协议
+
+## 四、查看uni-app(5+ App/Wap2App)集成模块补充隐私协议@feature
 
 #### 查看uni-app(5+ App/Wap2App)应用功能模块
 

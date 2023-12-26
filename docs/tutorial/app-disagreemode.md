@@ -74,10 +74,7 @@ if(plus.runtime.isAgreePrivacy()) {
 
 plus.runtime.isAgreePrivacy()返回为true表示用户已经同意隐私政策，调用相关被限制的API；返回false表示用户没有同意隐私政策，运行运行在disagreeMode模式，不能调用相关被限制的API。
 
-
-<a id="limit-uni"></a>
-
-#### disagreeMode模式限制uni API和组件
+#### disagreeMode模式限制uni API和组件@limit-uni
 
 在disagreeMode模式下不要使用以下uni API及组件，否则影响应用商店上架合规检测！
 
@@ -120,9 +117,7 @@ plus.runtime.isAgreePrivacy()返回为true表示用户已经同意隐私政策�
 * barcode
 * map
 
-<a id="limit-plus"/>
-
-#### disagreeMode模式限制plus API
+#### disagreeMode模式限制plus API@limit-plus
 
 在disagreeMode模式下不要使用以下5+ API，否则影响应用商店上架合规检测！
 

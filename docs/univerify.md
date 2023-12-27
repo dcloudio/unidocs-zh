@@ -417,8 +417,8 @@ exports.main = async (event, context) => {
   const res = await uniCloud.getPhoneNumber({
   	appid: '_UNI_ABCDEFG', // 替换成自己开通一键登录的应用的DCloud appid
   	provider: 'univerify',
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
+  	apiKey: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
+  	apiSecret: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
   	access_token: event.access_token,
   	openid: event.openid
   })
@@ -482,8 +482,8 @@ exports.main = async(event) => {
   const res = await uniCloud.getPhoneNumber({
   	provider: 'univerify',
     appid: 'xxx', // DCloud appid，不同于callFunction方式调用，使用云函数Url化需要传递DCloud appid参数！！！
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在在uniCloud控制台开通一键登录服务并获取apiSecret
+  	apiKey: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
+  	apiSecret: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
   	access_token: access_token,
   	openid: openid
   })
@@ -558,8 +558,8 @@ exports.main = async(event) => {
   const res = await uniCloud.getPhoneNumber({
   	provider: 'univerify',
     appid: 'xxx', // DCloud appid，不同于callFunction方式调用，使用云函数Url化需要传递DCloud appid参数
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
+  	apiKey: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
+  	apiSecret: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
   	access_token: access_token,
   	openid: openid
   })

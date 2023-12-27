@@ -113,9 +113,6 @@ module.exports = merge({
     )
   },
   patterns: ['**/!(_sidebar).md', '**/*.vue'],
-  plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions]
-  ],
   /**
    *
    * @param {string} path path: js 资源文件路径

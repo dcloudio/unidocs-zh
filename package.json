@@ -33,7 +33,7 @@
     "markdown-it-raw-table": "^1.0.0",
     "markdown-it-task-lists": "^2.1.1",
     "vuepress-plugin-named-chunks": "^1.1.4",
-    "vuepress-theme-uni-app-test": "^1.4.3"
+    "vuepress-theme-uni-app-test": "^1.4.4"
   },
   "dependencies": {
     "@docsearch/js": "^3.1.0",

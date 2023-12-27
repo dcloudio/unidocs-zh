@@ -73,7 +73,7 @@ uni.getLocation({
   - 定位 和 map 是两个东西。通过 `getLocation` 得到位置坐标后，可以在任意map地图上展示，比如定位使用高德，地图使用 google 的 webview 版地图。如果坐标系不同时，注意转换坐标系。
   - 如果使用 `web-view` 加载地图，无需在manifest里配地图的sdk配置。
   - 持续定位方案：iOS端可以申请持续定位权限，[参考](https://ask.dcloud.net.cn/article/12569)。Android如果进程被杀，代码无法执行，可以在插件市场搜索[保活](https://ext.dcloud.net.cn/search?q=%E4%BF%9D%E6%B4%BB&cat1=5)相关原生语言插件避免App被系统杀死。即使使用了原生语言插件保活，也很容易被杀，此时可以使用[unipush](https://uniapp.dcloud.net.cn/unipush-v2.html) ，通过推送消息提示用户激活App
-  - `3.3.0 版本以上` 优化系统定位模块，可不使用三方定位SDK的进行高精度定位，具体参考：[系统定位](app/geolocation)。
+  - `3.3.0 版本以上` 优化系统定位模块，可不使用三方定位SDK的进行高精度定位，具体参考：[系统定位](/app/geolocation)。
   - 鸿蒙系统 不支持系统定位，需要配置三方sdk，比如高德，同时设置坐标系参数为 `type: 'gcj02'`
   - 如需使用腾讯定位sdk，可下载[腾讯定位插件](https://ext.dcloud.net.cn/plugin?id=14569)，在插件中配置key打包后生效，腾讯定位是[ext api插件](../../api/extapi.md)引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。
 - `小程序平台`
@@ -104,7 +104,7 @@ uni.getLocation({
 
 **注意**
 - 因平台差异，如果SDK配置百度地图，需要设置 keyword，才能显示相关地点
-- [非 weex 编译模式](/collocation/manifest.html#app-plus)不支持百度地图
+- [非 weex 编译模式](/collocation/manifest.md#app-plus)不支持百度地图
 
 
 **success 返回参数说明**
@@ -143,7 +143,7 @@ uni.chooseLocation({
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
-DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
+DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
 

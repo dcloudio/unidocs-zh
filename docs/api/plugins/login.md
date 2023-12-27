@@ -18,7 +18,7 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 - [苹果登录（Sign in with Apple）](/tutorial/app-oauth-apple.md)
 - [微信登录](/tutorial/app-oauth-weixin.md)
 - [QQ登录](/tutorial/app-oauth-qq.md)
-- [新浪微博登录](/tutorial/app-oauth-sina.md)
+- [新浪微博登录](/tutorial/app-oauth-weibo.md)
 - [Google登录](/tutorial/app-oauth-google.md)
 - [Facebook登录](/tutorial/app-oauth-facebook.md)
 
@@ -75,7 +75,7 @@ uni.login({
 
 #### 注意事项
 - 百度小程序平台需要在button组件的@login事件后再调用 uni.login ，[详见](https://smartprogram.baidu.com/docs/develop/function/login/),否则会返回“请登录”的错误信息，建议在@login事件中调用。
-- uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getLoginCode) 替代 uni.login 解决。
+- uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getlogincode) 替代 uni.login 解决。
 - 京东小程序IDE 暂时不支持此uni.login()，请用真机查看；IDE调用，只能返回模拟数据 code为200。
 
 ### uni.getLoginCode(OBJECT)@getLoginCode
@@ -135,7 +135,7 @@ uni.login({
 **注意：**
 - 微信小程序端，在用户未授权过的情况下调用此接口，不会出现授权弹窗，会直接进入 fail 回调（详见[《微信小程序公告》](https://developers.weixin.qq.com/community/develop/doc/0000a26e1aca6012e896a517556c01)）。在用户已授权的情况下调用此接口，可成功获取用户信息。
 - 京东小程序端，在用户未授权，调用该接口将直接报错。用户已经授权过，可使用该接口直接获取用户信息，不会弹二次授权框
-- 抖音小程序此接口将逐步废弃，请切换使用[uni.getUserProfile](#getUserProfile)。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-info)
+- 抖音小程序此接口将逐步废弃，请切换使用[uni.getUserProfile](#getuserprofile)。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-info)
 
 **OBJECT 参数说明**
 

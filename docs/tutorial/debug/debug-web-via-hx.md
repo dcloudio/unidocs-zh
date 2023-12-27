@@ -22,4 +22,4 @@ HBuilder中有2种断点调试方案，一种是使用浏览器自带的调试�
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/syncbreakpoint.jpg)
 
-关于另一种使用HBuilderX的调试控制台的方案，[另见](h5-debug.md)
+关于另一种使用HBuilderX的调试控制台的方案，[另见](/tutorial/debug/debug-web-via-chrome.md#h5-debug)

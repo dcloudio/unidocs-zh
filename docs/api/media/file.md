@@ -34,7 +34,7 @@
 - sourceType 值在 H5 平台根据浏览器的不同而表现不同，一般不可限制仅使用相册，部分浏览器也无法限制是否使用相机。
 - extension暂只支持文件后缀名，例如`['.zip','.exe','.js']`，不支持`application/msword`等类似值
 
-**注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。**
+**注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](/api/file/file.md#savefile)，在应用下次启动时才能访问得到。**
 
 **OBJECT.type 的合法值**
 

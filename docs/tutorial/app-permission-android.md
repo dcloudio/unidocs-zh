@@ -4,7 +4,7 @@
 Android平台云端打包使用的权限包括以下几个方面：  
 - 默认使用的权限，不做任何配置云端打包自动包含的权限，参考[默认使用的权限](#default)  
 - App使用模块依赖的权限，也包含模块依赖三方SDK需要的权限，参考[App模块需要的权限](#modules)  
-- manifest.json中配置额外添加的权限，参考[App配置添加权限](#app_permissions)  
+- manifest.json中配置额外添加的权限，参考[App配置添加权限](#app-permissions)  
 - App原生插件依赖的权限  
 
 如果希望去掉以上添加的某个权限，请参考[移除Android权限](app-nativeresource-android.md#removepermissions)操作。  

@@ -296,7 +296,7 @@ export default {
 |arrowIconPath|更换箭头图标	|已支持				|Android不支持 iOS支持		|
 
 
-**map 组件相关操作的 JS API**：[uni.createMapContext](api/location/map?id=createmapcontext)
+**map 组件相关操作的 JS API**：[uni.createMapContext](../api/location/map.md#createmapcontext)
 
 nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/37901](https://ask.dcloud.net.cn/article/37901)
 

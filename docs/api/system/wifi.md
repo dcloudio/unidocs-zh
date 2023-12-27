@@ -95,7 +95,7 @@
 
 |属性		|类型				|说明			|
 |--			|---				|--				|
-|wifiList	|Array<[WifiInfo](#WifiInfo)>	|Wi-Fi 列表数据	|
+|wifiList	|Array<[WifiInfo](#wifiinfo)>	|Wi-Fi 列表数据	|
 
 **平台差异说明**
 
@@ -155,7 +155,7 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 
 |属性	|类型		|说明		|
 |---	|---		|---		|
-|wifi	|[WifiInfo](#WifiInfo)	|Wi-Fi 信息	|
+|wifi	|[WifiInfo](#wifiinfo)	|Wi-Fi 信息	|
 
 **平台差异说明**
 
@@ -190,7 +190,7 @@ onWifiConnected 传入的监听函数。不传此参数则移除所有监听函�
 
 |属性	|类型		|说明		|
 |---	|---		|---		|
-|wifi	|[WifiInfo](#WifiInfo)	|只包含 SSID 属性的 WifiInfo 对象	|
+|wifi	|[WifiInfo](#wifiinfo)	|只包含 SSID 属性的 WifiInfo 对象	|
 
 **平台差异说明**
 

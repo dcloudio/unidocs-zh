@@ -1,6 +1,6 @@
 ## 工程简介
 
-一个 uni-app 工程，就是一个 Vue 项目，你可以通过 HBuilderX 或 cli 方式快速创建 uni-app 工程，详见：[快速上手](/quickstart-hx.html)。
+一个 uni-app 工程，就是一个 Vue 项目，你可以通过 HBuilderX 或 cli 方式快速创建 uni-app 工程，详见：[快速上手](/quickstart-hx.md)。
 
 ## 目录结构
 
@@ -60,7 +60,7 @@ uni-app编译器根据pages.json扫描需要编译的页面，并根据页面引
 
 - static目录和App原生资源目录有关系吗？
 
-uni-app支持App原生资源目录nativeResources，下面有assets、res等目录，[详见](app-nativeresource-android.md#nativeResources)。但和static目录没有关系。
+uni-app支持App原生资源目录nativeResources，下面有assets、res等目录，[详见](app-nativeresource-android.md#nativeresources)。但和static目录没有关系。
 
 static目录下的文件，在app第一次启动时，解压到了app的外部存储目录（external-path）。（uni-app x 从3.99+不再解压）
 

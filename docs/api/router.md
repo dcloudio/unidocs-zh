@@ -7,7 +7,7 @@
 |参数|类型|必填|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
 |url|String|是||需要跳转的应用内非 tabBar 的页面的路径 , 路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2'，path为下一个页面的路径，下一个页面的onLoad函数可得到传递的参数| |
-|animationType|String|否|pop-in|窗口显示的动画效果，详见：[窗口动画](api/router?id=animation)|App|
+|animationType|String|否|pop-in|窗口显示的动画效果，详见：[窗口动画](#animation)|App|
 |animationDuration|Number|否|300|窗口动画持续时间，单位为 ms|App|
 |events|Object|否||页面间通信接口，用于监听被打开页面发送到当前页面的数据。2.8.9+ 开始支持。||
 |success|Function|否||接口调用成功的回调函数||
@@ -22,7 +22,7 @@
 
 |属性|类型|说明|
 |:-|:-|:-|
-|eventChannel|[EventChannel](api/router?id=event-channel)|和被打开页面进行通信|
+|eventChannel|[EventChannel](#event-channel)|和被打开页面进行通信|
 
 
 **示例**
@@ -200,7 +200,7 @@ uni.switchTab({
 |参数|类型|必填|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
 |delta|Number|否|1|返回的页面数，如果 delta 大于现有页面数，则返回到首页。||
-|animationType|String|否|pop-out|窗口关闭的动画效果，详见：[窗口动画](api/router?id=animation)|App|
+|animationType|String|否|pop-out|窗口关闭的动画效果，详见：[窗口动画](#animation)|App|
 |animationDuration|Number|否|300|窗口关闭动画的持续时间，单位为 ms|App|
 |success|Function|否||接口调用成功的回调函数||
 |fail|Function|否||接口调用失败的回调函数||

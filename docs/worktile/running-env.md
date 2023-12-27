@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === 'production') {
 平台判断有 2 种场景，一种是在编译期判断，一种是在运行期判断。
 
 - 编译期判断
-  编译期判断，即条件编译，不同平台在编译出包后已经是不同的代码。详见：[条件编译](/platform)
+  编译期判断，即条件编译，不同平台在编译出包后已经是不同的代码。详见：[条件编译](/tutorial/platform.md)
 
 ```javascript
 // #ifdef H5

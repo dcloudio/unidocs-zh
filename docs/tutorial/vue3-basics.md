@@ -3,8 +3,7 @@
 
 
 > 已经了解 Vue2，只想了解 Vue3 新功能可以参阅[vue3新功能](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8%A7%88)！
-> Already know Vue2, just want to know the new features of Vue3, you can refer to [vue3 new features](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8%A7% 88)!
->  
+>
 > 已经有 Vue2 项目，需要适配 Vue3 的可参阅[vue2 项目迁移 vue3](https://uniapp.dcloud.io/tutorial/migration-to-vue3)！
 > If you already have a Vue2 project and need to adapt to Vue3, please refer to [vue2 project migration vue3](https://uniapp.dcloud.io/tutorial/migration-to-vue3)!
 
@@ -89,18 +88,18 @@ If you know html, js, then this chapter will let you quickly understand uni-app 
 - Before a `html`large node, there `script`and `style`nodes;
 
 ```html
-	<!DOCTYPE html>  
-	<html>  
-		<head>  
-			<meta charset="utf-8" />  
-			<title></title>  
-			<script type="text/javascript">  
-			</script>  
-			<style type="text/css">  
-			</style>  
-		</head>  
-		<body>  
-		</body>  
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8" />
+			<title></title>
+			<script type="text/javascript">
+			</script>
+			<style type="text/css">
+			</style>
+		</head>
+		<body>
+		</body>
 	</html>
 ```
 
@@ -109,16 +108,16 @@ If you know html, js, then this chapter will let you quickly understand uni-app 
 - Now `template` is a first-level node, used to write tag components, `script` and `style` are parallel first-level nodes, that is, there are 3 first-level nodes. This is called [vue single file component specification sfc](vue3-components.md).
 
 ```html
-	<template>  
-		<view>  
-		注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。  
-		</view>  
-	</template>  
-	<script>  
-		export default {  
-		}  
-	</script>  
-	<style>  
+	<template>
+		<view>
+		注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。
+		</view>
+	</template>
+	<script>
+		export default {
+		}
+	</script>
+	<style>
 	</style>
 ```
 
@@ -130,7 +129,7 @@ If you know html, js, then this chapter will let you quickly understand uni-app 
 - In the past, external js and css were introduced through script src and link href;
 
 ```html
-	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>  
+	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 ```
 
@@ -146,9 +145,9 @@ There is a tool class `util.js` in the `common` directory of hello uni-app. You 
 
 
 ```html
-	<script>  
-		var util = require('../../../common/util.js');  //require这个js模块  
-		var formatedPlayTime = util.formatTime(playTime); //调用js模块的方法  
+	<script>
+		var util = require('../../../common/util.js');  //require这个js模块
+		var formatedPlayTime = util.formatTime(playTime); //调用js模块的方法
 	</script>
 ```
 
@@ -156,11 +155,11 @@ There is a tool class `util.js` in the `common` directory of hello uni-app. You 
 And in this `util.js`, the previous `function` should be packaged as a module method and exported (exports). Only exported methods and properties can be called externally, and those not exported belong to internal functions and variables of the module. This is the module specification for es6.
 
 ```js
-	function formatTime(time) {  
-		return time;//这里没写逻辑  
-	}  
-	module.exports = {  
-		formatTime: formatTime  
+	function formatTime(time) {
+		return time;//这里没写逻辑
+	}
+	module.exports = {
+		formatTime: formatTime
 	}
 ```
 
@@ -169,12 +168,10 @@ And in this `util.js`, the previous `function` should be packaged as a module me
 Of course, there are some advanced usages, such as renaming when exporting
 
 ```js
-	// 直接使用js模块的属性。在hello uni-app有示例 
-	// Directly use the properties of the js module. There are examples in hello uni-app
-	var dateUtils = require('../../../common/util.js').dateUtils; 
+	// 直接使用js模块的属性。在hello uni-app有示例
+	var dateUtils = require('../../../common/util.js').dateUtils;
 	// 将js导入并重命名为echarts，然后使用echarts.来继续执行方法。在hello uni-app有示例
-	// Import and rename js to echarts, and then use echarts to continue executing the method. There are examples in hello uni-app
-	import * as echarts from '/components/echarts/echarts.simple.min.js'; 
+	import * as echarts from '/components/echarts/echarts.simple.min.js';
 ```
 
 **css外部文件导入**。全局样式，在根目录下的 `app.vue` 里写入，每个页面都会加载 `app.vue` 里的样式。
@@ -182,11 +179,11 @@ Of course, there are some advanced usages, such as renaming when exporting
 
 
 ```html
-	<style>  
-		@import "./common/uni.css";  
-		.uni-hello-text{  
-			color:#7A7E83;  
-		}  
+	<style>
+		@import "./common/uni.css";
+		.uni-hello-text{
+			color:#7A7E83;
+		}
 	</style>
 ```
 
@@ -218,12 +215,12 @@ So what is the difference between a label and a component, isn't it all surround
 - 以前script里随便写js变量和function
 - In the past, just write js variables and functions in the script
 ```html
-<script type="text/javascript">  
-	var a; 
-	function funa () {  
-		  
+<script type="text/javascript">
+	var a;
+	function funa () {
+
 	}
-</script> 
+</script>
 ```
 
 - 现在script里默认有export default，在里面写data、事件和method
@@ -241,33 +238,33 @@ So what is the difference between a label and a component, isn't it all surround
 	* The methods to be called in the template need to be written under `methods`. Each method also needs to be separated by a comma. There is no need to use the `function` statement, as long as the function written under `methods` can be called in the template. Similarly, typing the `vmethods` code block in HBuilderX can also generate the corresponding structure.
 
 ```html
-<template>  
-		<view>  
+<template>
+		<view>
 			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->
 			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->
-		</view>  
-	</template> 
+		</view>
+	</template>
 <script>
 	var globalvar = 1
 	function globalfun(){}
-	export default {  
-		data() {  
-			return {  
-				textvalue:"123",  
-				buttontype:"primary"  
-			};  
-		},  
-		onLoad() {  
+	export default {
+		data() {
+			return {
+				textvalue:"123",
+				buttontype:"primary"
+			};
+		},
+		onLoad() {
 			globalvar = 2
 			globalfun()
 			this.textvalue="456"//这里修改textvalue的值
-		},  
-		methods: {  
-			changetextvalue() {  
+		},
+		methods: {
+			changetextvalue() {
 				this.textvalue="789"//这里修改textvalue的值
-			}  
-		}  
-	}  
+			}
+		}
+	}
 </script>
 ```
 
@@ -278,22 +275,22 @@ In the above example, the variable globalvar and function globalfun defined in t
 - In the previous DOM operation, if you want to change the display content of a DOM element, such as the display text of a view: set the id to the view, then get the DOM element through the selector in js, and then perform assignment operations through js to modify the DOM element Attribute or value.
 
 ```html
-	<html>  
-		<head>  
-			<script type="text/javascript">  
-				document.addEventListener("DOMContentLoaded",function () {  
-					document.getElementById("spana").innerText="456"  
-				})  
-				function changetextvalue () {  
-					document.getElementById("spana").innerText="789"  
-				}  
-			</script>  
-		</head>  
-		<body>  
-			<span id="spana">123</span>  
-			<button type="button" onclick="changetextvalue()">修改为789</button>  
-		</body>  
-	</html>  
+	<html>
+		<head>
+			<script type="text/javascript">
+				document.addEventListener("DOMContentLoaded",function () {
+					document.getElementById("spana").innerText="456"
+				})
+				function changetextvalue () {
+					document.getElementById("spana").innerText="789"
+				}
+			</script>
+		</head>
+		<body>
+			<span id="spana">123</span>
+			<button type="button" onclick="changetextvalue()">修改为789</button>
+		</body>
+	</html>
 ```
 
 
@@ -306,29 +303,29 @@ In the above example, the variable globalvar and function globalfun defined in t
 
 
 ```html
-	<template>  
-		<view>  
-			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->  
-			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->  
-		</view>  
-	</template>  
-	<script>  
-		export default {  
-			data() {  
-				return {  
-					textvalue:"123",  
-					buttontype:"primary"  
-				};  
-			},  
-			onLoad() {  
-				this.textvalue="456"//这里修改textvalue的值，其实123都来不及显示就变成了456  
-			},  
-			methods: {  
-				changetextvalue() {  
-					this.textvalue="789"//这里修改textvalue的值，页面自动刷新为789  
-				}  
-			}  
-		}  
+	<template>
+		<view>
+			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->
+			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->
+		</view>
+	</template>
+	<script>
+		export default {
+			data() {
+				return {
+					textvalue:"123",
+					buttontype:"primary"
+				};
+			},
+			onLoad() {
+				this.textvalue="456"//这里修改textvalue的值，其实123都来不及显示就变成了456
+			},
+			methods: {
+				changetextvalue() {
+					this.textvalue="789"//这里修改textvalue的值，页面自动刷新为789
+				}
+			}
+		}
 	</script>
 ```
 
@@ -347,8 +344,8 @@ In the above example, the variable globalvar and function globalfun defined in t
 相比Web平台， Vue.js 在 `uni-app` 中使用差异主要集中在两个方面：
 Compared with the Web platform, the differences in the use of Vue.js in `uni-app` are mainly concentrated in two aspects:
 
-- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.html#applifecycle)及[页面的生命周期](/tutorial/page.html#lifecycle)。
-- 受限：相比 Web 平台，在小程序和 App 端部分功能支持不完善，具体见[兼容性列表](/vue3-api)。
+- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.md#applifecycle)及[页面的生命周期](/tutorial/page.md#lifecycle)。
+- 受限：相比 Web 平台，在小程序和 App 端部分功能支持不完善，具体见[兼容性列表](./vue3-api)。
 
 [uni-app 项目支持 vue 3.0介绍，及升级指南](https://ask.dcloud.net.cn/article/37834)
 [Introduction and upgrade guide for uni-app project support vue 3.0](https://ask.dcloud.net.cn/article/37834)
@@ -538,7 +535,7 @@ These expressions will be evaluated as JavaScript in the data scope of the curre
 > - `JSON`
 > - `Intl`
 > - `BigInt`
-> 
+>
 > 你不应该在模板表达式中试图访问用户定义的全局变量。
 > You should not attempt to access user defined globals in template expressions.
 
@@ -570,7 +567,7 @@ To dynamically bind one or more attributes, `v-bind` is abbreviated to ` : ', an
 	<!-- 缩写 -->
 	<!-- short -->
 	<image :src="imgUrl"></image>
-	
+
 	<button v-bind:disabled="isButtonDisabled">Button</button>
 ```
 
@@ -588,17 +585,10 @@ v-on directive, which listens to DOM events。v-on is abbreviated as '@':
 
 ```html
 	<!-- 完整语法 -->
-	<!-- full -->
-	<view v-on:click="doSomething">点击</view>	
+	<view v-on:click="doSomething">点击</view>
 	<!-- 缩写 -->
 	<!-- short -->
 	<view @click="doSomething">点击</view>
-```
-**注意：`uni-app x` 中函数 `event` 参数需要显式指定类型**
-
-```html
-<view @click="(e: any) => foo(e)">event must has type</view>
-<view @click="foo($event as MouseEvent)">event must has type</view>
 ```
 
 #### v-once
@@ -623,7 +613,6 @@ Unlike front-end framework in understanding the client in order to achieve a log
 		<text>{{msg}}</text>
 	</view>
 ```
-**注意：`uni-app x` 暂不支持**
 
 #### v-html
 
@@ -657,8 +646,6 @@ Cross-end rich text processing scheme can be found in: [https://ask.dcloud.net.c
 		}
 	</script>
 ```
-
-**注意：`uni-app x` 暂不支持**
 
 ## Data 选项
 ## Data options
@@ -1271,8 +1258,7 @@ It is recommended to provide a key attribute with v-for whenever possible, unles
 - Children of the same common parent must have unique keys. Duplicate keys will cause render errors.
 
 > 不要使用对象或数组之类的非基本类型值作为 v-for 的 key。请用字符串或数值类型的值。
-> Don't use non-primitive values like objects and arrays as v-for keys. Use string or numeric values instead.
-> 
+>
 > 如不提供 :key，会报一个 `warning`， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。
 > If you do not provide: key, one will be reported `warning`. If you know that the list is static or you don't need to pay attention to its order, you can choose to ignore it.
 
@@ -1802,8 +1788,7 @@ It is recommended to use `uni-app`: [Form component](https://uniapp.dcloud.io/co
 Each computed property contains a `getter` function and a `setter` function, which is read by default using the `getter` function. The `this` context of all `getter` and `setter` functions is automatically bound to the Vue instance.
 
 
-#### 计算属性的 getter 
-#### Getter of Calculated attribute
+#### 计算属性的 getter
 
 
 模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。例如，有一个嵌套数组对象：
@@ -2171,7 +2156,6 @@ To also detect nested value changes inside Objects, you need to pass in `deep: t
 		}
 	</script>
 ```
-**注意：`uni-app x` 暂不支持**
 
 #### 监听对象中单个属性
 #### listen to the single attribute in an object
@@ -2198,8 +2182,6 @@ If you don't want to listen to other values in `obj`, just want to listen to the
 		}
 	}
 ```
-
-**注意：uni-app x 暂不支持**
 
 ### 计算属性 vs 侦听属性
 ### Computed vs Watched Property

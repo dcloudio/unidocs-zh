@@ -32,5 +32,4 @@ Right-click on the source code, you can synchronize the breakpoint to the debugg
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/syncbreakpoint.jpg)
 
-关于另一种使用HBuilderX的调试控制台的方案，[另见](h5-debug.md)
-For another solution using HBuilderX's debug console, [see also](h5-debug.md)
+关于另一种使用HBuilderX的调试控制台的方案，[另见](/tutorial/debug/debug-web-via-chrome.md#h5-debug)

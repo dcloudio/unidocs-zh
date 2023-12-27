@@ -27,7 +27,7 @@ mapContext
 
 |方法|参数|说明|平台差异说明|
 |:-|:-|:-|:-|
-|getCenterLocation|OBJECT|获取当前地图中心的经纬度，返回的是 gcj02 坐标系，可以用于 [uni.openLocation](api/location/location?id=getlocation)||
+|getCenterLocation|OBJECT|获取当前地图中心的经纬度，返回的是 gcj02 坐标系，可以用于 [uni.openLocation](/api/location/location.md#getlocation)||
 |moveToLocation|OBJECT|将地图中心移动到当前定位点，需要配合map组件的show-location使用||
 |translateMarker|OBJECT|平移marker，带动画|app-nvue 2.1.5+、微信小程序带动画、抖音、支付宝、京东、百度、QQ小程序|
 |includePoints|OBJECT|缩放视野展示所有经纬度|app-nvue 2.1.5+、微信、抖音、支付宝、京东、百度、快手、QQ小程序|
@@ -724,6 +724,6 @@ poiList|Array.&lt;poiObject&gt;|POI information array
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
-DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
+DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

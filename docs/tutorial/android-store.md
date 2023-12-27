@@ -7,7 +7,7 @@ In order to effectively manage the phenomenon of compulsory authorization of app
 根据以上规范要求，各大应用市场都加强应用的检测，要求应用必须符合相关政策，否则应用将有被通报或下架的风险。
 According to the above specification requirements, all major application markets have strengthened the detection of applications, requiring applications to comply with relevant policies, otherwise the application will be at risk of being notified or removed from the shelves.
 
-DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`服务，可在线申请获取详细检测报告，详见：[uni隐私合规检测](/uni-app-privacy-detect.md)
+DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`服务，可在线申请获取详细检测报告，详见：[uni隐私合规检测](/tutorial/app-privacy-detect.md)
 
 ### APP因合规问题无法上架
 ### APP cannot be launched due to compliance issues
@@ -27,10 +27,10 @@ Please read the following steps carefully to test your APP! Effectively solve li
 + Be sure to use `template` mode when configuring privacy popups. Otherwise, the application market will not be available. The privacy pop-up window implemented by the application itself does not work either. Be sure to use the privacy popup provided by uni and use the `template` mode remember!
   ```json
   //androidPrivacy.json
-  {  
-    "version": "1",    
-    "prompt": "template",  
-    "title": "服务协议和隐私政策",  
+  {
+    "version": "1",
+    "prompt": "template",
+    "title": "服务协议和隐私政策",
     "message": "..."
    }
   ```
@@ -53,8 +53,7 @@ Please read the following steps carefully to test your APP! Effectively solve li
 + 如果反馈说有违规获取敏感信息行为，请查看[Android平台各功能模块隐私合规协议](https://ask.dcloud.net.cn/article/39484)各功能模块隐私协议。如果你集成了相关模块就一定要写入到app的隐私协议中。
 + If you report that you have violated regulations to obtain sensitive information, please check the [Privacy Compliance Agreement of Each Functional Module of the Android Platform](https://ask.dcloud.net.cn/article/39484) Privacy Agreement of each functional module. If you integrate related modules, you must write it into the app's privacy agreement.
 + 必须在《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发，添加如下协议：
-+ You must inform users in the "Privacy Policy" that your app is developed based on DCloud uni-app (5+ App/Wap2App), and add the following protocol:
-  
+
   `我们的产品基于DCloud uni-app(5+ App/Wap2App)开发，应用运行期间需要收集您的设备唯一识别码（IMEI/android ID/DEVICE_ID/IDFA、SIM 卡 IMSI 信息、OAID）以提供统计分析服务，并通过应用启动数据及异常错误日志分析改进性能和用户体验，为用户提供更好的服务。`
   `Our product is developed based on DCloud uni-app (5+ App/Wap2App), during the running of the application, you need to collect your device unique identification code (IMEI/android ID/DEVICE_ID/IDFA, SIM card IMSI information, OAID) to provide statistical analysis Service, and improve performance and user experience through application startup data and exception error log analysis, to provide users with better services. `
 

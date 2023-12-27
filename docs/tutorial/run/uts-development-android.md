@@ -7,8 +7,7 @@
 HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Gradle 仓储。
 HBuilderX 3.6.9+, new uts plug-in Android platform real machine operation supports three-party Gradle storage.
 
-运行带有uts插件的项目到Android设备，如果您遇到以下提示，请配置[运行环境](#Android环境配置)
-Run the project with the uts plug-in to the Android device, if you encounter the following prompts, please configure [running environment](#Android environment configuration)
+运行带有uts插件的项目到Android设备，如果您遇到以下提示，请配置[运行环境](#环境配置)
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20221111173829.jpg" style="zoom: 50%;" />
 
@@ -37,7 +36,7 @@ When you run the project with the uts plugin to the Android device, the [uts dev
 1. Click the download link in icon 1 to enter the download page. As shown in the figure, click the red circled part to download the toolkit.
 
  ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gradle.png)
- 
+
 2. 将步骤1下载的内容解压后，找到bin目录下的执行脚本，填入图标3处。
 2. After decompressing the content downloaded in step 1, find the execution script in the bin directory, and fill in icon 3.
 
@@ -69,7 +68,7 @@ Click the download address of icon 2 to enter the Android official website, whic
 1. As shown in the figure, download Command line tools only according to the platform.
 
 ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/sdk.png)
- 
+
 2. 下载解压后通过`%解压目录%/bin/sdkmanager脚本安装build-tools和platforms
 2. After downloading and decompressing, install build-tools and platforms through `%decompression directory%/bin/sdkmanager script
 ```

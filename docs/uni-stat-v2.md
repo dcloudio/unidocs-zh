@@ -75,7 +75,7 @@ Uni statistics support sourcemap, which can intuitively understand which line of
 - 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id.html)）
 - Registered user statistics (based on [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id.html))
 - 页面统计
-- Page Statistics
+- 内容统计
 - 新增、活跃、留存、跳出率分析
 - New, active, retained, bounce rate analysis
 - 渠道分析：辅助渠道推广
@@ -1071,6 +1071,11 @@ In order to highlight the goal, only the folders and files related to uni statis
 │       │── page-res                    # 受访页
 │       │   │── page-res.vue
 │       │   └── fieldsMap.js
+│       │── page-content                # 内容统计
+│       │   │── page-content.vue
+│       │   └── fieldsMap.js
+│       │── page-rule                   # 页面规则
+│       │   │── page-rule.vue
 │       │── pay-order                   # 支付统计
 │           │── funnel                  # 支付/漏斗分析
 │           │   │── funnel.vue
@@ -1168,6 +1173,8 @@ Note: The uni statistics common module depends on the uniCloud configuration cen
 │   │   │── index.js                    # 入口文件，提供对外访问模块
 │   │   │── loyalty.js                  # 设备/用户忠诚度（粘性）统计模型，统计设备/用户的粘性，粘性判断依据为：访问时长和访问页面数量
 │   │   │── page.js                     # 页面模型，提供应用的页面字典
+│   │   │── pageDetail.js               # 页面内容模型，提供页面规则匹配到的页面详情字典
+│   │   │── pageDetailResult.js         # 页面内容统计模型，汇总统计页面内容的访问设备、时长、分享等数据
 │   │   │── pageLog.js                  # 页面日志模型，记录上报的页面访问日志
 │   │   │── pageResult.js               # 页面结果统计模型，统计汇总页面访问日志中的数据
 │   │   │── platform.js                 # 应用平台模型，提供应用的平台字典
@@ -1198,29 +1205,19 @@ Note: After modifying the uni statistics configuration items, you need to re-upl
 **基础参数**
 **Basic parameters**
 
-|配置项				|默认值		|说明																																																|
-|Configuration |Default |Description |
-| :--------:		|:---------:|:-------------------:																																												|
-|  debug			|  false	|开启调试模式 true: 开启，false:关闭，开启后会产生大量日志，生产环境请关闭。																														|
-| debug | false | Enable debug mode true: enable, false: disable, a lot of logs will be generated after opening, please disable the production environment. |
-|  redis			|  false	|开启redis缓存，开启后可以降低数据库查询压力，提升uni统计性能，可按需决定是否开启。[开启方法](#开启redis缓存)																					|
-| redYes | false | Enable the redis cache, which can reduce database query pressure and improve uni statistics performance. You can decide whether to enable it on demand. [Open method](#%E5%BC%80%E5%90%AFredis%E7%BC%93%E5%AD%98) |
-|  cachetime		|  604800	|redis缓存有效期，单位秒。																																											|
-| cachetime | 604800 | Redis cache validity period, in seconds. |
-|  sessionExpireTime|  1800		|会话过期时间，该配置用来判断当前会话是否已过期，一般情况下无需修改此项。																															|
-| sessionExpireTime| 1800 | Session expiration time, this configuration is used to determine whether the current session has expired. Generally, it is not necessary to modify this item. |
-|  realtimeStat		|  true		|开启实时统计，true: 开启，false:关闭，开启后会每小时统计一次，数据库读写次数会增多，可按需决定是否开启。																							|
-| realtimeStat | true | Enable real-time statistics, true: enabled, false: disabled. After it is enabled, statistics will be counted every hour, and the number of database reads and writes will increase. You can decide whether to enable it as needed. |
+|配置项				|默认值		|说明																																																		|
+| :--------:		|:---------:|:-------------------:																																														|
+|  debug			|  false	|开启调试模式 true: 开启，false:关闭，开启后会产生大量日志，生产环境请关闭。																																		|
+|  redis			|  false	|开启redis缓存，开启后可以降低数据库查询压力，提升uni统计性能，可按需决定是否开启。[开启方法](#开启redis缓存)																										|
+|  cachetime		|  604800	|redis缓存有效期，单位秒。																																													|
+|  sessionExpireTime|  1800		|会话过期时间，该配置用来判断当前会话是否已过期，一般情况下无需修改此项。																																			|
+|  realtimeStat		|  true		|开启实时统计，true: 开启，false:关闭，开启后会每小时统计一次，数据库读写次数会增多，可按需决定是否开启。																											|
 |  cronMin			|  false	|开启分钟级定时任务，true: 开启，false:关闭。开启后定时任务将细分到分钟级执行，分摊数据计算压力，适合应用日活较大或有特殊需求的用户群体。具体的开启方法见[设置定时任务云函数的触发周期](#设置定时任务云函数的触发周期)。	|
-| cronMin | false | Enable minute-level scheduled tasks, true: enable, false: disable. After opening, the scheduled tasks will be subdivided into minute-level execution, and the data calculation pressure will be distributed, which is suitable for user groups with large daily activities or special needs. For the specific opening method, see [Set the trigger period of the cloud function of the scheduled task](#%E8%AE%BE%E7%BD%AE%E5%AE%9A%E6%97%B6%E4%BB%BB%E5% 8A%A1%E4%BA%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%A7%A6%E5%8F%91%E5%91%A8%E6%9C% 9F). |
-|  cron				|  -		|用于配置定时任务触发时间，详情见下方[定时任务配置说明](#定时任务配置说明)。																														|
-| cron | - | is used to configure the trigger time of scheduled tasks. For details, see the following [Scheduled Task Configuration Instructions](#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9 %85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E). |
-|  batchInsertNum	|  5000		|当有批量写入操作时，限制单次写入数据库的最大条数。为防止写入超时，最大值为5000条。																													|
-| batchInsertNum | 5000 | When there are batch write operations, limit the maximum number of records written to the database at one time. To prevent write timeouts, the maximum value is 5000 entries. |
-|  errorCheck		|  -		|错误检测，此项用于在规定时间内限制相同的错误日志写入数据库，防止有高频错误产生时造成大量的数据库写入操作。[详情](#错误检测配置说明)																|
-| errorCheck | - |Error detection, this item is used to limit the same error log to be written to the database within a specified time, to prevent a large number of database write operations caused by high-frequency errors. [Details](#%E9%94%99%E8%AF%AF%E6%A3%80%E6%B5%8B%E9%85%8D%E7%BD%AE%E8%AF%B4%E6% 98%8E) |
-|  cleanLog			|  -		|日志清理，此项用于配置定时清理过期的日志，减少数据库数据的存储量，提升uni统计性能。[详情](#日志清理配置说明)																						|
-| cleanLog | - |Log cleaning, this item is used to configure regular cleaning of expired logs, reduce the storage capacity of database data, and improve uni statistics performance. [Details](#%E6%97%A5%E5%BF%97%E6%B8%85%E7%90%86%E9%85%8D%E7%BD%AE%E8%AF%B4%E6% 98%8E) |
+|  cron				|  -		|用于配置定时任务触发时间，详情见下方[定时任务配置说明](#定时任务配置说明)。																																		|
+|  pageDetailStat	|  false	|开启页面内容统计 true: 开启，false:关闭，开启后会产生大量日志，请按需开启。uni-admin	2.4.0起支持配置此项。																										|
+|  batchInsertNum	|  5000		|当有批量写入操作时，限制单次写入数据库的最大条数。为防止写入超时，最大值为5000条。																																|
+|  errorCheck		|  -		|错误检测，此项用于在规定时间内限制相同的错误日志写入数据库，防止有高频错误产生时造成大量的数据库写入操作。[详情](#错误检测配置说明)																					|
+|  cleanLog			|  -		|日志清理，此项用于配置定时清理过期的日志，减少数据库数据的存储量，提升uni统计性能。[详情](#日志清理配置说明)																										|
 
 
 #### 定时任务配置说明
@@ -1283,6 +1280,9 @@ The current types of scheduled tasks are (`The content in brackets below indicat
 - `page`: page data statistics, statistical dimensions include:
   - 日统计，默认`每天上午3点（20分钟）`触发，统计前一天的页面数据
   - Daily statistics, the default is triggered at 3:00 a.m. (20 minutes) every day, and the page data of the previous day is counted
+
+- `page-detail`：页面内容统计，统计维度包括：
+  - 日统计，默认`每天上午7点（10分钟）`触发，统计前一天的页面内容数据
 
 - `event`：事件数据统计，统计维度包括：
 - `event`: Event data statistics, statistical dimensions include:
@@ -1419,6 +1419,8 @@ When registering the left menu in `uni-admin`, you need to refer to the document
 ## 版本升级 @upgrade
 ## Version upgrade @upgrade
 
+### 升级到1.9.0+ 版本@upgrade1
+
 `uni-admin1.9.0`版本开始（对应`HBuilderX 3.5.1`），`uni统计`和`uni升级中心`复用相同的应用版本表（即`opendb-app-versions`表） ，废弃原来的`uni-stat-app-versions`表。
 `uni-admin1.9.0` version starts (corresponding to `HBuilderX 3.5.1`), `uni statistics` and `uni uni-upgrade-center center` reuse the same application version table (ie `opendb-app-versions` table), discard the original The `uni-stat-app-versions` table.
 
@@ -1477,6 +1479,30 @@ exports.main = async (event, context) => {
 	return true
 };
 ```
+
+### 升级到2.4.0+ 含内容统计的版本@upgrade2
+
+`uni-admin2.4.0` 版本开始，新增了内容统计，可以通过设置页面规则进行内容统计。内容统计模块默认处于关闭状态，开启内容统计后会增加大量的数据库读写次数，请按需开启。开启内容统计的方式，可参考[公共模块配置项说明](#公共模块配置项说明)。
+
+**演示图**
+
+内容统计
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-admin/447.png)
+
+页面规则
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-admin/448.png)
+
+设置页面规则
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-admin/449.png)
+
+**注意**
+
+如果升级uni-admin后，你的uni统计没有出现内容统计的菜单，则点击菜单管理里的【更新内置菜单】按钮即可（需uni-admin版本>=2.4.0）
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-admin/450.png)
 
 ## uni统计2.0费用评测@cost
 ## uni statistics 2.0 cost evaluation @cost
@@ -1958,6 +1984,10 @@ Business App and admin are 2 projects. The business app is the collection end, a
 ```
 
 **第三步：前往菜单管理，对每一个uni统计的页面（包含子页面）设置下权限 `READ_UNI_STAT`（菜单只有拥有对应权限才会显示）**
+
+### 8. 某统计项突然没有数据怎么办？
+
+答：首先登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)，检查在出现问题的统计项配置的时间点(参考：[定时任务配置说明](#定时任务配置说明))，`uni-stat-cron`云函数的运行日志，如果运行日志前面的状态标识是灰色的，代表云函数运行超时了，此时在云函数详情中将`uni-stat-cron`云函数的超时时间设置到最大值即可。如果运行日志的状态标识是绿色的，则需要检查日志内容是否有报错，然后根据报错内容做出调整。
 
 ## 参考资料
 ## References

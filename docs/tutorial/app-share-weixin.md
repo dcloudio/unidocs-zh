@@ -1,5 +1,4 @@
-### 开通  
-### Open
+### 开通
 - 登录[微信开放平台](https://open.weixin.qq.com/)，添加移动应用并提交审核，审核通过后可获取应用ID（AppID）
 - Log in to the [WeChat Open Platform](https://open.weixin.qq.com/), add a mobile application and submit it for review. After the review, you can get the App ID (AppID)
 - 在应用详情中确认已获取`分享到朋友圈`、`分享给朋友`等接口
@@ -12,17 +11,14 @@ For more information, please refer to the official WeChat document [Share and Fa
 
 
 
-### 配置  
-### Configuration
+### 配置
 打开项目的manifest.json文件，在“App模块配置”项的“Share(分享)”下，勾选“微信分享”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/share/weixin-manifest.png)
 
-- appid  
-微信开放平台申请应用的AppID值  
-AppID value of WeChat open platform application application
-- UniversalLinks  
-iOS平台通用链接，必须与微信开放平台配置的一致，推荐使用[一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links.html)  
-The iOS platform universal link must be consistent with the configuration of the WeChat open platform. It is recommended to use [Generate iOS Universal Links with One Click](https://uniapp.dcloud.io/api/plugins/universal-links.html)
+- appid
+微信开放平台申请应用的AppID值
+- UniversalLinks
+iOS平台通用链接，必须与微信开放平台配置的一致，推荐使用[一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links.html)
 
 
 **注意**
@@ -33,24 +29,17 @@ The iOS platform universal link must be consistent with the configuration of the
 - The configuration parameters need to be submitted to the cloud to be packaged to take effect. Please use the [custom debugging base] when the real machine is running (https://ask.dcloud.net.cn/article/35115)
 
 
-### 使用微信分享  
-### Share using WeChat
+### 使用微信分享
 
-- uni-app项目  
-- uni-app project
-调用 [uni.share(OBJECT)](api/plugins/share#share) 发起分享操作，OBJECT参数中provider属性值固定为`weixin`
-Call [uni.share(OBJECT)](api/plugins/share#share) to initiate a share operation. The value of the provider attribute in the OBJECT parameter is fixed to `weixin`
-- 5+ App项目  
-- 5+ App items
-调用 [plus.share.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices) 获取分享服务对象 [ShareService](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService), 再调用其 [send](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.send) 方法发送分享消息  
-Call [plus.share.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices) to get the sharing service object [ShareService](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService), then call its [send](https://www.html5plus.org/doc/zh_cn/share.html#plus.share. ShareService.send) method to send share message
+- uni-app项目
+调用 [uni.share(OBJECT)](/api/plugins/share.md#share) 发起分享操作，OBJECT参数中provider属性值固定为`weixin`
+- 5+ App项目
+调用 [plus.share.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices) 获取分享服务对象 [ShareService](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService), 再调用其 [send](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.send) 方法发送分享消息
 
 
-#### 示例代码  
-#### Sample code
-- uni-app项目  
-- uni-app project
-``` js  
+#### 示例代码
+- uni-app项目
+``` js
 uni.share({
 	provider: "weixin",
 	scene: "WXSceneSession",
@@ -63,17 +52,15 @@ uni.share({
 		console.log("fail:" + JSON.stringify(err));
 	}
 });
-```  
+```
 
-- 5+ App项目  
-- 5+ App items
-``` js  
+- 5+ App项目
+``` js
 var weixinShare = null;
 plus.share.getServices(function(services) {
 	for (var i in services) {
 		var service = services[i];
-		// 获取微信分享对象 
-		// Get WeChat sharing object
+		// 获取微信分享对象
 		if (service.id == 'weixin') {
 			weixinShare = service;
 			break;
@@ -82,11 +69,9 @@ plus.share.getServices(function(services) {
 	weixinShare.send( {
 		content: '我正在使用HBuilderX开发App，赶紧跟我一起来体验！'
 	}, function(){
-		// 分享成功 
-		// share successfully
+		// 分享成功
 	}, function(err) {
-    // 分享操作失败  
-    // share operation failed
+    // 分享操作失败
     // err.code是错误码
     // err.code is the error code
 	})

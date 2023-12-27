@@ -293,14 +293,14 @@ The browser kernels of various MiniApp are different, which may cause css compat
 2. 自定义组件渲染差异
 2. Custom component rendering differences
 
-微信（可以使用[virtualHost](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)配置）/QQ/百度/抖音这四家小程序，自定义组件在渲染时会比App/H5端多一级节点，在写样式时需要注意：
+微信（可以使用[virtualHost](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)配置）/QQ/百度/抖音这四家小程序，自定义组件在渲染时会比App/H5端多一级节点，在写样式时需要注意：
 
 * 使用`flex`布局时，直接给自定义组件的父元素设置为`display:flex`不能影响到自定义组件内部的根节点，需要设置当前自定义组件为`display:flex`才可以。
 * When using `flex` layout, directly setting the parent element of the custom component to `display:flex` will not affect the root node inside the custom component, you need to set the current custom component to `display:flex`.
 * 在自定义组件内部设置根元素高度为100%，不能撑满自定义组件父元素。需要同时设置当前自定义组件高度为100%才可以。
 * Set the root element height to 100% inside the custom component, which cannot fill the parent element of the custom component. It is necessary to set the height of the current custom component to 100% at the same time.
 
-支付宝小程序默认启用了[virtualHost](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)配置不会插入节点，一般不存在如上问题。
+支付宝小程序默认启用了[virtualHost](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)配置不会插入节点，一般不存在如上问题。
 
 #### vendor.js 过大的处理方式
 #### Vendor.js too large processing method

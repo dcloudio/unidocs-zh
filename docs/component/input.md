@@ -86,9 +86,7 @@ The input in the html specification is not only an input box, but also radio, ch
 **Tips**
 
 - `input` 事件处理函数可以直接 return 一个字符串，将替换输入框的内容。仅微信小程序支持。
-- The `input` event handler can directly return a string, which will replace the content of the input box. Only supported by WeChat MiniApp.
-- 如果遇到 value 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.html#componentsolutions)
-- If you encounter the problem that the value attribute setting does not take effect, please refer to: [Solutions for component attribute setting not taking effect](/tutorial/vue-api.html#componentsolutions)
+- 如果遇到 value 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.md#componentsolutions)
 - `input` 组件上有默认的 `min-height` 样式，如果 `min-height` 的值大于 `height` 的值那么 `height` 样式无效。
 - There is a default `min-height` style on the `input` component, if the value of `min-height` is greater than the value of `height` then the `height` style will be invalid.
 - H5 暂未支持动态切换，请使用 `v-if`进行整体切换。
@@ -276,9 +274,7 @@ Configuration method, configure style in pages.json
 - 小程序端在 input 聚焦期间，避免使用 css 动画。
 -Avoid using css animations during input focus on the MiniApp side.
 - H5平台只能在用户交互时修改 focus 生效。
-- The H5 platform can only modify the focus to take effect when the user interacts.
-- 如果遇到 focus 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.html#componentsolutions)
-- If you encounter the problem that the focus attribute setting does not take effect, please refer to: [Solutions for component attribute setting not taking effect](/tutorial/vue-api.html#componentsolutions)
+- 如果遇到 focus 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.md#componentsolutions)
 - 如需禁止点击其他位置收起键盘的默认行为，可以监听`touch`事件并使用`prevent`修饰符（仅支持App、H5，其他平台可以通过设置`focus`来使输入框重新获取焦点），例如在确认按钮上使用：```@touchend.prevent="onTap"```
 - If you want to prohibit the default behavior of clicking other positions to close the keyboard, you can listen to the `touch` event and use the `prevent` modifier (only App, H5 is supported, other platforms can set `focus` to make the input box regain focus) , such as using on the confirm button: ```@touchend.prevent="onTap"```
 

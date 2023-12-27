@@ -1,7 +1,5 @@
 ::: warning 注意  
-::: warning attention
- 您正在浏览的是老版uni-push1.0的文档。推荐升级到[uni-push2.0](unipush-v2.html)
- You are browsing the documentation of the old version of uni-push1.0. It is recommended to upgrade to [uni-push2.0](unipush-v2.html)
+ 您正在浏览的是老版uni-push1.0的文档。推荐升级到[uni-push2.0](unipush-v2.md)
 :::
 
 > 从HBuilderX 2.0.3 起，uni-app、5+App、wap2app均支持UniPush  

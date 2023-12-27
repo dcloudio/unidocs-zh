@@ -687,8 +687,7 @@ It is recommended to use `uni.$on` , `uni.$emit` for page communication, and the
 ##### 步骤：
 ##### Step:
 
-1. 在 `vue` 里使用 `plus.webview.postMessageToUniNView(data,nvueId)` 发送消息，`data` 为 `JSON` 格式（键值对的值仅支持String），`nvueId` 为 `nvue` 所在 webview 的 id，webview的 id 获取方式参考：[$getAppWebview()](/tutorial/page.html#getappwebview)。
-1. Use `plus.webview.postMessageToUniNView(data,nvueId)` to send messages in `vue`, `data` is in `JSON` format (the value of key-value pair only supports String), `nvueId` is where `nvue` is located The id of the webview, the method of obtaining the id of the webview, please refer to: [$getAppWebview()](/tutorial/page.html#getappwebview).
+1. 在 `vue` 里使用 `plus.webview.postMessageToUniNView(data,nvueId)` 发送消息，`data` 为 `JSON` 格式（键值对的值仅支持String），`nvueId` 为 `nvue` 所在 webview 的 id，webview的 id 获取方式参考：[$getAppWebview()](/tutorial/page.md#getappwebview)。
 2. 在 `nvue` 里引用 `globalEvent` 模块监听 `plusMessage` 事件，如下： 
 2. In `nvue`, refer to the `globalEvent` module to listen to the `plusMessage` event, as follows:
 

@@ -13,8 +13,7 @@ A complete `cli` scaffolding is provided to create, run, and distribute `uni-app
 
 ## uni cli
 
-### [环境安装](/quickstart-cli.html#install-vue-cli)
-### [Environment installation](/quickstart-cli.html#install-vue-cli)
+### [环境安装](/quickstart-cli.md#install-vue-cli)
 
 ### 编译运行
 ### compile and run

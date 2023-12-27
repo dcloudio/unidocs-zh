@@ -35,8 +35,7 @@ After debugging is enabled, you can see the debugging view in the left view of H
 调试视图分为5部分:
 The debug view is divided into 5 parts:
 
-- [调试工具栏](#DebugActions)
-- [Debug Toolbar](#DebugActions)
+- [调试工具栏](#debugactions)
 - 变量窗口 (`复制值`、`复制表达式`、`添加到监视`)
 - Variables window (`Copy value`, `Copy expression`, `Add to watch`)
 - 监视窗口（包含`添加`/`编辑`/`删除`表达式，以及`复制值`）

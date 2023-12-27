@@ -2,8 +2,7 @@
 # uni-app自动化测试@about
 # uni-app automated testing @about
 
-uni-app提供了一批[API](/collocation/auto/api)，这些API可以操控uni-app应用，包括运行、跳转页面、触发点击等，并可以获取页面元素状态、进行截图，从而实现对uni-app项目进行自动化测试的目的。
-uni-app provides a batch of [API](/collocation/auto/api), these APIs can control the uni-app application, including running, jumping pages, triggering clicks, etc., and can obtain the status of page elements and take screenshots, so as to To achieve the purpose of automated testing of uni-app projects.
+uni-app提供了一批[API](./api.md)，这些API可以操控uni-app应用，包括运行、跳转页面、触发点击等，并可以获取页面元素状态、进行截图，从而实现对uni-app项目进行自动化测试的目的。
 
 本功能使用到了业内常见的测试库如jest（MIT协议）。
 This function uses the common test libraries in the industry such as jest (MIT protocol).
@@ -12,9 +11,7 @@ This function uses the common test libraries in the industry such as jest (MIT p
 Recommended usage: after R&D submits the source code to the version library, the continuous integration system automatically pulls the source code and automatically runs the automated test.
 
 ### 特性@features
-### Features @features
-开发者可以利用[API](/collocation/auto/api)做以下事情：
-Developers can use [API](/collocation/auto/api) to do the following:
+开发者可以利用[API](./api.md)做以下事情：
 
 * 控制跳转到指定页面
 * Control the jump to a specified page
@@ -37,8 +34,7 @@ Developers can use [API](/collocation/auto/api) to do the following:
 
 ### CLI
 
-如果您想在`终端命令行`进行自动化测试、或使用持续集成进行测试，请使用uni-app [CLI](https://uniapp.dcloud.net.cn/quickstart?id=_2-通过vue-cli命令行) 工程，[CLI项目自动化测试教程](/collocation/auto/uniapp-cli-project)
-If you want to automate testing in `terminal command line`, or use continuous integration for testing, please use uni-app [CLI](https://uniapp.dcloud.net.cn/quickstart?id=_2-via vue- cli command line) project, [CLI project automation test tutorial](/collocation/auto/uniapp-cli-project)
+如果您想在`终端命令行`进行自动化测试、或使用持续集成进行测试，请使用uni-app [CLI](https://uniapp.dcloud.net.cn/quickstart?id=_2-通过vue-cli命令行) 工程，[CLI项目自动化测试教程](uniapp-cli-project.md)
 
 ### 测试插件@descriptions
 ### Test plugin @descriptions

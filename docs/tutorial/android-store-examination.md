@@ -20,9 +20,7 @@ In order to help developers avoid compliance risks, a privacy protocol self-insp
 #### 4、[查看uni-app(5+ App/Wap2App)集成功能模块补充隐私协议](#feature)
 #### 4. [View uni-app (5+ App/Wap2App) integrated function module supplementary privacy agreement](#feature)
 
-<a id="update"></a>
-## 一、根据自身APP生产环境选择最新版本HbuilderX或SDK
-## 1. Select the latest version of HbuilderX or SDK according to your own APP production environment
+## 一、根据自身APP生产环境选择最新版本HbuilderX或SDK @update
 
 |打包方式		|推荐版本			|下载地址
 |Packaging |Recommended Version |Download
@@ -32,27 +30,23 @@ In order to help developers avoid compliance risks, a privacy protocol self-insp
 |离线打包      	|`3.2.15+`         	|【[离线打包SDK下载地址](https://nativesupport.dcloud.net.cn/AppDocs/download/android)】
 |Offline packaging |`3.2.15+` |[[Offline packaging SDK download address](https://nativesupport.dcloud.net.cn/AppDocs/download/android)]
 
-<a id="check"></a>
-## 二、隐私弹窗配置检测
-## 2. Privacy pop-up configuration detection
+## 二、隐私弹窗配置检测@check
 
 #### 1 .检查uni-app项目目录下是否含有androidPrivacy.json文件 没有请查[参考文档](https://ask.dcloud.net.cn/article/36937)添加配置！
 #### 1. Check whether there is an androidPrivacy.json file in the uni-app project directory. If not, please check the [Reference Document](https://ask.dcloud.net.cn/article/36937) to add the configuration!
 #### 2 .查看androidPrivacy.json文件中`prompt`配置值域是不是`template`。[参考文档](https://ask.dcloud.net.cn/article/36937)
 #### 2. Check whether the `prompt` configuration value field in the androidPrivacy.json file is `template`. [Reference document](https://ask.dcloud.net.cn/article/36937)
 		```
-		//androidPrivacy.json  
-		{    
-		"version": "1",      
-		"prompt": "template",    
-		"title": "服务协议和隐私政策",    
-		"message": "..."  
+		//androidPrivacy.json
+		{
+		"version": "1",
+		"prompt": "template",
+		"title": "服务协议和隐私政策",
+		"message": "..."
 		}
 		```
 
-<a id="content"></a>
-## 三、隐私政策展示内容
-## 3. Privacy Policy Display Content
+## 三、隐私政策展示内容@content
 
 ### 务必在APP《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发
 ### Be sure to inform users in the APP "Privacy Policy" that your app is developed based on DCloud uni-app (5+ App/Wap2App)
@@ -127,9 +121,8 @@ android.permission.GET_TASKS
   </tr>
 </table>
 
-<a id="feature"></a>
-## 四、查看uni-app(5+ App/Wap2App)集成模块补充隐私协议
-## 4. View uni-app (5+ App/Wap2App) integrated module supplementary privacy agreement
+
+## 四、查看uni-app(5+ App/Wap2App)集成模块补充隐私协议@feature
 
 #### 查看uni-app(5+ App/Wap2App)应用功能模块
 #### View uni-app (5+ App/Wap2App) application function module

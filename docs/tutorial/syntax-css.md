@@ -5,7 +5,7 @@
 uni-app 有 vue 页面、nvue 页面、uvue页面。
 - vue 页面是 webview 渲染的
 - app-nvue 页面是原生渲染的，其样式比 web 会限制更多，另见[nvue的css](/tutorial/nvue-css)
-- app-uvue 页面是原生渲染的，是 web 的css子集，另见[uvue的css](../uni-app-x/css/readme.md)
+- app-uvue 页面是原生渲染的，是 web 的css子集，另见[uvue的css](https://doc.dcloud.net.cn/uni-app-x/css/)
 
 uni-app 的 css 与 web 的 css 基本一致。本文没有讲解 css 的用法。在你了解 web 的 css 的基础之上，本文讲述一些样式相关的注意事项。
 The css of uni-app is basically the same as the css of web. This article does not explain the usage of css. Based on your understanding of css for the web, this article describes some style-related considerations.
@@ -182,7 +182,7 @@ Currently supported selectors are:
 - `page` is equivalent to the `body` node, for example:
 
   ```css
-  <!-- 设置页面背景颜色，使用 scoped 会导致失效 -- > 
+  <!-- 设置页面背景颜色，使用 scoped 会导致失效 -- >
 	page {
   	background-color: #ccc;
   }

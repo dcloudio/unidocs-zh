@@ -56,5 +56,4 @@ The `easycom` mechanism of `uni-app` further optimizes the reference of componen
 在 uni-app 项目中，页面引用组件和组件引用组件的方式都是一样的（可以理解为：页面是一种特殊的组件），均支持通过 `easycom` 方式直接引用。
 In the uni-app project, the page reference component and the component reference component are the same way (it can be understood as: page is a special component), both support direct reference through `easycom`.
 
-easycom 规范详细介绍，参考：[easycom](/collocation/pages.html#easycom)
-For a detailed introduction to the easycom specification, refer to: [easycom](/collocation/pages.html#easycom)
+easycom 规范详细介绍，参考：[easycom](/collocation/pages.md#easycom)

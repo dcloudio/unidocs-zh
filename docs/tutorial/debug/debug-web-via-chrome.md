@@ -49,9 +49,7 @@ Open the file to be debugged, right-click or double-click on the js or ts code l
 After enabling debugging, you can see the debugging view in the left view of HBuilderX, as follows:
 
 **调试视图分为5部分：**
-**The debug view is divided into 5 sections:**
-- [调试工具栏](#DebugActions)
-- [Debug Toolbar](#DebugActions)
+- [调试工具栏](#debugactions)
 - 变量窗口 (`复制值`、`复制表达式`、`添加到监视`)
 - Variable window (`Copy Value`, `Copy Expression`, `Add to Watch`)
 - 监视窗口（包含`添加`/`编辑`/`删除`表达式，以及`复制值`）
@@ -68,8 +66,7 @@ After enabling debugging, you can see the debugging view in the left view of HBu
 
 ![](https://hx.dcloud.net.cn/static/snapshots/app/h5-debug/debug_toolbar.png)
 
-- [继续](#Continue) `F8`
-- [continue](#Continue) `F8`
+- [继续](#continue) `F8`
 - 下一步 `F10`
 - Next `F10`
 - 进入 `F11`

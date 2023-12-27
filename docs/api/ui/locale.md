@@ -30,8 +30,7 @@ Set current language
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |3.2.5+|3.2.5+|3.4.14+|3.4.14+|3.4.14+|3.4.14+|3.4.14+|3.4.14+|3.4.14+|3.4.14+|3.4.14+|
 
-仅可设置为框架内置语言与[自定义扩展的语言](/tutorial/i18n.html#uni-framework)，遵循 BCP47 规范。
-Can only be set to the framework built-in language and [custom extended language](/tutorial/i18n.html#uni-framework), following the BCP47 specification.
+仅可设置为框架内置语言与[自定义扩展的语言](/tutorial/i18n.md#uni-framework)，遵循 BCP47 规范。
 
 **参数说明**
 **Parameter Description**

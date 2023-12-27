@@ -38,13 +38,13 @@ Conditional compilation is marked with special comments which are the basic of c
 |:-|:-|:-|
 |VUE3|uni-app js引擎版用于区分vue2和3，[详情](https://ask.dcloud.net.cn/article/37834) |HBuilderX 3.2.0+|
 |VUE2|uni-app js引擎版用于区分vue2和3，[详情](https://ask.dcloud.net.cn/article/37834) ||
-|UNI-APP-X|用于区分是否是uni-app x项目 [详情](#UNI-APP-X)|HBuilderX 3.9.0+|
-|uniVersion|用于区分编译器的版本 [详情](#uniVersion)|HBuilderX 3.9.0+|
+|UNI-APP-X|用于区分是否是uni-app x项目 [详情](#uni-app-x)|HBuilderX 3.9.0+|
+|uniVersion|用于区分编译器的版本 [详情](#universion)|HBuilderX 3.9.0+|
 |APP|App||
 |APP-PLUS|uni-app js引擎版编译为App时||
 |APP-PLUS-NVUE或APP-NVUE|App nvue 页面||
-|APP-ANDROID|App Android 平台 [详情](#UTS)||
-|APP-IOS|App iOS 平台 [详情](#UTS)||
+|APP-ANDROID|App Android 平台 [详情](#uts)||
+|APP-IOS|App iOS 平台 [详情](#uts)||
 |H5|H5（推荐使用 `WEB`）||
 |WEB|web（同`H5`）|HBuilderX 3.6.3+|
 |MP-WEIXIN|微信小程序||

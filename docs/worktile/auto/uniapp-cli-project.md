@@ -73,18 +73,14 @@ Note: Since v3.0.0, `Puppeteer` starts to depend on Node 10.18.1+, `Puppeteer` o
 2. 根据API编写测试的js代码，参考测试用例
 2. Write the test js code according to the API, refer to the test case
 API文档见：[https://uniapp.dcloud.io/collocation/auto/api](https://uniapp.dcloud.io/collocation/auto/api)
-API documentation see: [https://uniapp.dcloud.io/collocation/auto/api](https://uniapp.dcloud.io/collocation/auto/api)
-测试文件目录配置见 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
-See [jest.config.js](collocation/auto/quick-start?id=jestconfigjs) for test file directory configuration
+测试文件目录配置见 [jest.config.js](./quick-start.md#jestconfigjs)
 
-3. 运行测试
-3. Run the test
+1. 运行测试
 ```shell
 npm run test:h5
 ```
 
-4. 测试结果
-4. Test Results
+1. 测试结果
 ```js
 >> cross-env UNI_PLATFORM=h5 jest -i
 ...
@@ -94,8 +90,7 @@ Snapshots:   0 total
 Time:        14.995s, estimated 16s
 ```
 
-更多配置参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
-More configuration reference [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+更多配置参考 [jest.config.js](./quick-start.md#jestconfigjs)
 
 
 ### App-Android测试流程
@@ -104,8 +99,7 @@ More configuration reference [jest.config.js](collocation/auto/quick-start?id=je
 1. 配置全局 `adb` 环境变量
 1. Configure the global `adb` environment variable
 
-2. 配置 `Hbuilder` 调试基座/自定义基座 `android_base.apk` 目录，参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
-2. Configure the `Hbuilder` debug base/custom base `android_base.apk` directory, refer to [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+2. 配置 `Hbuilder` 调试基座/自定义基座 `android_base.apk` 目录，参考 [jest.config.js](./quick-start.md#jestconfigjs)
 
 3. 创建 `cli` 工程/现有 `cli` 工程
 3. Create `cli` project/existing `cli` project
@@ -137,11 +131,9 @@ Currently only supports iOS simulator (requires mac to install xcode)
 npm install node-simctl --save-dev
 ```
 
-2. 配置模拟器id，参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
-2. Configure the simulator id, refer to [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+2. 配置模拟器id，参考 [jest.config.js](./quick-start.md#jestconfigjs)
 
-3. 配置 `Hbuilder` 调试基座/自定义基座 `Pandora_simulator.app` 目录，参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
-3. Configure the `Hbuilder` debug base/custom base `Pandora_simulator.app` directory, refer to [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+3. 配置 `Hbuilder` 调试基座/自定义基座 `Pandora_simulator.app` 目录，参考 [jest.config.js](./quick-start.md#jestconfigjs)
 
 4. 编写测试代码，参考测试用例
 4. Write test code and refer to test cases

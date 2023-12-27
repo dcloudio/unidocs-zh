@@ -24,8 +24,7 @@ Functions (modules) using the so library in HBuilder/HBuilderX
 - Android X5 Webview（腾讯TBS）：腾讯X5内核，**注意：不支持x86**
 - Android X5 Webview (Tencent TBS): Tencent X5 kernel, **Note: x86 is not supported**
 
-> HBuilderX2.7.0+ 调整 云端打包默认不再包含 x86 CPU类型库，减少apk包体积[详情](id=nox86)  
-> HBuilderX2.7.0+ adjustment Cloud package no longer includes x86 CPU type library by default, reducing the size of apk package [Details](id=nox86)
+> HBuilderX2.7.0+ 调整 云端打包默认不再包含 x86 CPU类型库，减少apk包体积[详情](#nox86)
 > HBuilderX2.1.5+ 开始支持Android平台的新增适配64位CPU类型，云端打包支持配置App支持的CPU类型
 > HBuilderX2.1.5+ began to support the new 64-bit CPU type for Android platform, and cloud package supports configuration of CPU types supported by App
 > 满足Google Play从2019年8月1日起上传的App必需支持64位CPU的要求。
@@ -47,7 +46,7 @@ The 8th generation, 64-bit ARM processor (ARM64-bit), the newly released devices
 少部分平板使用x86，AS模拟器中选了intel x86时使用x86处理器，以及其它常用三方模拟器通常使用x86
 A small number of tablets use x86, when intel x86 is selected in the AS simulator, the x86 processor is used, and other commonly used third-party simulators usually use x86
 
->不支持64位x86指令cpu，即不支持x86_64  
+>不支持64位x86指令cpu，即不支持x86_64
 
 **注意：不勾选x86在模拟器上可能无法正常运行，以下是常见模拟器是否需要包含x86的情况**
 **Note: If x86 is not checked, it may not work properly on the emulator. The following are common emulators that need to include x86**
@@ -81,23 +80,18 @@ A small number of tablets use x86, when intel x86 is selected in the AS simulato
   Not tested and verified, it is recommended to include x86 to ensure normal operation in the simulator
 
 
-### 配置支持的CPU类型  
-### Configure supported CPU types
-**可视化界面配置**  
-**Visual interface configuration**
+### 配置支持的CPU类型
+**可视化界面配置**
 打开项目的manifest.json文件，在 “App常用其它设置” -> “Android设置” -> “支持CPU类型” 项中勾选需要支持的CPU类型：
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-manifest.png)
 
-**源码视图配置**  
-**Source view configuration**
+**源码视图配置**
 打开项目的manifest.json文件，切换到“源码视图”，根据项目类型进行配置
 Open the manifest.json file of the project, switch to the "source view", and configure according to the project type
 
-- uni-app项目  
-- uni-app project
+- uni-app项目
 在 "app-plus"->"distribute"->"android" 节点的 abiFilters 属性配置支持的CPU类型，示例如下：
-Configure the supported CPU types in the abiFilters attribute of the "app-plus"->"distribute"->"android" node, for example:
-``` js  
+``` js
   "app-plus": {
     "distribute": {
       "android": {
@@ -120,8 +114,7 @@ Configure the supported CPU types in the abiFilters attribute of the "app-plus"-
 使用Android studio打开Android原生项目，打开对应项目的build.gradle文件。
 Use Android studio to open the Android native project and open the build.gradle file of the corresponding project.
 在Android -> defaultConfig下添加支持的CPU类型，如下示例：
-Add the supported CPU types under Android -> defaultConfig, as shown in the following example:
-``` 
+```
 defaultConfig{
 	ndk {
     abiFilters 'arm64-v8a','armeabi-v7a'
@@ -132,9 +125,9 @@ defaultConfig{
 **注意：离线打包仅支持arm64-v8a、armeabi-v7a、x86三种类型，建议根据自己需求选择打包的CPU类型**
 **Note: Offline packaging only supports three types: arm64-v8a, armeabi-v7a, and x86. It is recommended to choose the type of CPU packaged according to your needs**
 
-### 默认值@default  
-- HBuilderX3.92及以下版本，默认值为armeabi-v7a  
-- HBuilderX3.93及以上版本，为了充分发挥CPU性能，默认值调整为arm64-v8a。解决在部分华为鸿蒙新设备（如Mate60、Mate X5等）应用启动慢的问题。  
+### 默认值@default
+- HBuilderX3.92及以下版本，默认值为armeabi-v7a
+- HBuilderX3.93及以上版本，为了充分发挥CPU性能，默认值调整为arm64-v8a。解决在部分华为鸿蒙新设备（如Mate60、Mate X5等）应用启动慢的问题。
 
 
 ### CPU类型选择建议
@@ -142,45 +135,38 @@ defaultConfig{
 ARM64位（arm64-v8a）CPU可以兼容ARM32的指令，也就是说只选择armeabi-v7a类型的so库也可以在64位手机上运行，只是没有完全发挥CPU的性能。
 ARM64-bit (arm64-v8a) CPU is compatible with ARM32 instructions, that is to say, only the so library of type armeabi-v7a can also run on 64-bit mobile phones, but it does not fully utilize the performance of the CPU.
 选择支持的CPU类型时请参考以下建议：
-- 如果不在意apk大小，三种CPU类型都勾选  
-- 如果要尽量发挥新设备性能，选择arm64-v8a  
-- 如果在意apk大小，选择armeabi-v7a（几乎在所有ARM指令的所有设备上都可正常运行）  
-- 如果想兼容性能和apk大小，建议选择armeabi-v7a、arm64-v8a  
-- 如果要兼容一些平板和模拟器，选择armeabi-v7a、x86  
-不是所有模拟都仅支持x86指令，如雷电（4.x）、MuMu等模拟器也是支持ARM指令。  
+- 如果不在意apk大小，三种CPU类型都勾选
+- 如果要尽量发挥新设备性能，选择arm64-v8a
+- 如果在意apk大小，选择armeabi-v7a（几乎在所有ARM指令的所有设备上都可正常运行）
+- 如果想兼容性能和apk大小，建议选择armeabi-v7a、arm64-v8a
+- 如果要兼容一些平板和模拟器，选择armeabi-v7a、x86
+不是所有模拟都仅支持x86指令，如雷电（4.x）、MuMu等模拟器也是支持ARM指令。
 
 
 ### 查看apk支持的CPU类型
-### Check the CPU types supported by apk
-使用解压工具打开apk，在lib目录下可以查看到支持的CPU类型，如下图所示：  
+使用解压工具打开apk，在lib目录下可以查看到支持的CPU类型，如下图所示：
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-apk.png)
 
 
-### 常见问题  
+### 常见问题
 
-#### 在部分华为鸿蒙设备上启动应用慢的问题  
-部分华为新设备（Mate60、Mate X5等）使用的芯片运行32位应用时只能跑在小核上，相当于限制的CPU的性能，如果应用只包含armeabi-v7a会导致应用启动速度非常慢。需要勾选arm64-v8a来解决此问题。  
+#### 在部分华为鸿蒙设备上启动应用慢的问题
+部分华为新设备（Mate60、Mate X5等）使用的芯片运行32位应用时只能跑在小核上，相当于限制的CPU的性能，如果应用只包含armeabi-v7a会导致应用启动速度非常慢。需要勾选arm64-v8a来解决此问题。
 为了适配更多的新设备，建议开发者尽量勾选arm64-v8a。
 
 #### CPU类型配置了x86，云端打包后缺没有包含x86
 #### The CPU type is configured with x86, and the cloud package does not include x86
 如果勾选了不支持x86的内置模块或uni原生插件，云端打包后不会包含x86
-If you check the built-in modules that do not support x86 or uni native plug-ins, x86 will not be included after cloud packaging
-- 不支持x86的内置模块  
-- Built-in modules that do not support x86
+- 不支持x86的内置模块
   + Android X5 Webview（腾讯TBS）
-  + Android X5 Webview (Tencent TBS)
-- uni原生插件  
-- uni native plugin
+- uni原生插件
   + 云端插件可以在插件页面详情页面的“平台兼容性”中查看兼容的CPU类型
   + For cloud plugins, you can check the compatible CPU types in the "Platform Compatibility" of the plugin details page
   + 内地插件可以在[package.json查看abis属性配置](https://nativesupport.dcloud.net.cn/NativePlugin/course/package?id=abis)
   + Mainland plug-ins can view the abis attribute configuration in [package.json](https://nativesupport.dcloud.net.cn/NativePlugin/course/package?id=abis)
 
 #### 上架Google Play市场对CPU类型的要求
-#### CPU type requirements for listing on Google Play Market
-提交Google Play时要求支持64位，建议选择"armeabi-v7a"和"arm64-v8a"两个即可，也可以只选择"arm64-v8a"。  
-When submitting to Google Play, it is required to support 64-bit. It is recommended to select "armeabi-v7a" and "arm64-v8a", or you can only select "arm64-v8a".
+提交Google Play时要求支持64位，建议选择"armeabi-v7a"和"arm64-v8a"两个即可，也可以只选择"arm64-v8a"。
 
 **注意：不要勾选"x86"**
 **Note: Do not check "x86"**
@@ -196,13 +182,11 @@ Performing Streamed Install
 adb: failed to install android_debug.apk: Failure [INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]
 ```
 
-使用Android Studio自带的x86模拟器，将不包含x86 cpu类型的apk拖到模拟器安装时会弹出如下提示框：  
+使用Android Studio自带的x86模拟器，将不包含x86 cpu类型的apk拖到模拟器安装时会弹出如下提示框：
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-error.png)
 
-<a id="nox86"/>
 
-#### HBuilderx2.7.0+ 云端打包默认CPU类型不再包含x86
-#### HBuilderx2.7.0+ cloud package default CPU type no longer includes x86
+#### HBuilderx2.7.0+ 云端打包默认CPU类型不再包含x86@nox86
 目前市面上常见的手机都是使用ARM处理器，很少有设备使用x86处理器，因此从HBuilderX2.7.0开始云端打包调整为默认不再包含x86的CPU类型，减少apk包大小：
 At present, common mobile phones on the market use ARM processors, and few devices use x86 processors. Therefore, starting from HBuilderX2.7.0, cloud packaging is adjusted to no longer contain x86 CPU types by default, reducing the size of the apk package:
 - uni-app项目

@@ -4,7 +4,7 @@ The App-side Share module encapsulates the mainstream three-party sharing SDK in
 |项目类型|API|
 |Project Type|API|
 |:-|:-|
-|uni-app|[uni.share(OBJECT)](api/plugins/share#share)、[uni.shareWithSystem(OBJECT)](api/plugins/share#sharewithsystem)|
+|uni-app|[uni.share(OBJECT)](/api/plugins/share.md#share)、[uni.shareWithSystem(OBJECT)](/api/plugins/share.md#sharewithsystem)|
 |5+App/Wap2App|[plus.share.*](https://www.html5plus.org/doc/zh_cn/share.html)
 
 uni-app项目中，官方提供了封装好的[uni-share](https://ext.dcloud.net.cn/plugin?id=4860)插件方便开发者使用。
@@ -26,12 +26,8 @@ The basic process of using the sharing function:
 - Call the API in the App project for sharing operations
 
 支持的三方分享平台：
-Supported third-party sharing platforms:
-- [微信分享](tutorial/app-share-weixin)  
-- [WeChat Share](tutorial/app-share-weixin)
-- [QQ分享](tutorial/app-share-qq)  
-- [QQ Share](tutorial/app-share-qq)
-- [新浪微博分享](tutorial/app-share-sina)  
-- [Sina Weibo Share](tutorial/app-share-sina)
+- [微信分享](./app-share-weixin.md)
+- [QQ分享](./app-share-qq.md)
+- [新浪微博分享](./app-share-weibo.md)
 
 

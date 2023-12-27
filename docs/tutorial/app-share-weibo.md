@@ -1,33 +1,24 @@
-### 开通  
-### Open
-- 登录[新浪微博开放平台](http://open.weibo.com/)，打开 “移动应用 MOBILE” 页面  
-- Log in to the [Sina Weibo Open Platform](http://open.weibo.com/) and open the “Mobile Application MOBILE” page
-- 在页面中选择 “立即接入”，根据提示填写信息创建应用  
-- Select "Access Now" on the page, and fill in the information to create an application according to the prompts
-- 创建成功后，在 “我的应用” 中点击应用，可以在应用详情页面   
-- After the creation is successful, click the application in "My Application", you can view the application details page
-- 在应用详情页面的 “应用信息” -> “基本信息” 中可获取 App Key，点击编辑可设置iOS平台的通用链接（UniversalLink）  
-- You can get the App Key in "App Info" -> "Basic Info" on the app details page, click Edit to set the UniversalLink for the iOS platform
+### 开通
+- 登录[新浪微博开放平台](http://open.weibo.com/)，打开 “移动应用 MOBILE” 页面
+- 在页面中选择 “立即接入”，根据提示填写信息创建应用
+- 创建成功后，在 “我的应用” 中点击应用，可以在应用详情页面
+- 在应用详情页面的 “应用信息” -> “基本信息” 中可获取 App Key，点击编辑可设置iOS平台的通用链接（UniversalLink）
 
 更多信息详见新浪微博官方文档 [移动应用接入](https://open.weibo.com/wiki/Connect/login)
 For more information, please refer to the official Sina Weibo document [Mobile Application Access](https://open.weibo.com/wiki/Connect/login)
 
 
 
-### 配置  
-### Configuration
+### 配置
 打开项目的manifest.json文件，在“App模块配置”项的“Share(分享)”下，勾选“新浪微博分享”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/share/sina-manifest.png)
 
-- appkey  
-新浪微博开放平台申请应用的AppKey值  
-Sina Weibo open platform to apply for the AppKey value of the application
-- redirect_url  
-新浪微博开放平台申请应用中设置的回调页  
-The callback page set in the Sina Weibo open platform application application
-- UniversalLinks  
-iOS平台通用链接，必须与新浪微博开放平台配置的一致，推荐使用[一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links.html)  
-The iOS platform universal link must be consistent with the configuration of the Sina Weibo open platform. It is recommended to use [One-click to generate iOS universal links](https://uniapp.dcloud.io/api/plugins/universal-links.html)
+- appkey
+新浪微博开放平台申请应用的AppKey值
+- redirect_url
+新浪微博开放平台申请应用中设置的回调页
+- UniversalLinks
+iOS平台通用链接，必须与新浪微博开放平台配置的一致，推荐使用[一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links.html)
 
 
 **注意**
@@ -38,24 +29,17 @@ The iOS platform universal link must be consistent with the configuration of the
 - The configuration parameters need to be submitted to the cloud to be packaged to take effect. Please use the [custom debugging base] when the real machine is running (https://ask.dcloud.net.cn/article/35115)
 
 
-### 使用新浪微博分享  
-### Share using Sina Weibo
+### 使用新浪微博分享
 
-- uni-app项目  
-- uni-app project
-调用 [uni.share(OBJECT)](api/plugins/share#share) 发起分享操作，OBJECT参数中provider属性值固定为`sinaweibo`
-Call [uni.share(OBJECT)](api/plugins/share#share) to initiate a share operation. The value of the provider attribute in the OBJECT parameter is fixed to `sinaweibo`
-- 5+ App项目  
-- 5+ App items
-调用 [plus.share.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices) 获取分享服务对象 [ShareService](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService), 再调用其 [send](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.send) 方法发送分享消息  
-Call [plus.share.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices) to get the sharing service object [ShareService](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService), then call its [send](https://www.html5plus.org/doc/zh_cn/share.html#plus.share. ShareService.send) method to send share message
+- uni-app项目
+调用 [uni.share(OBJECT)](/api/plugins/share.md#share) 发起分享操作，OBJECT参数中provider属性值固定为`sinaweibo`
+- 5+ App项目
+调用 [plus.share.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices) 获取分享服务对象 [ShareService](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService), 再调用其 [send](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.send) 方法发送分享消息
 
 
-#### 示例代码  
-#### Sample code
-- uni-app项目  
-- uni-app project
-``` js  
+#### 示例代码
+- uni-app项目
+``` js
 uni.share({
     provider: 'sinaweibo',
 	summary: "我正在使用HBuilderX开发uni-app，赶紧跟我一起来体验！",
@@ -66,17 +50,15 @@ uni.share({
 		console.log("fail:" + JSON.stringify(err));
 	}
 });
-```  
+```
 
-- 5+ App项目  
-- 5+ App items
-``` js  
+- 5+ App项目
+``` js
 var weiboShare = null;
 plus.share.getServices(function(services) {
 	for (var i in services) {
 		var service = services[i];
-		// 获取微博分享对象 
-		// Get Weibo sharing object
+		// 获取微博分享对象
 		if (service.id == 'sinaweibo') {
 			weiboShare = service;
 			break;
@@ -85,11 +67,9 @@ plus.share.getServices(function(services) {
 	weiboShare.send( {
 		content: '我正在使用HBuilderX开发App，赶紧跟我一起来体验！'
 	}, function(){
-		// 分享成功 
-		// share successfully
+		// 分享成功
 	}, function(err) {
-    // 分享操作失败  
-    // share operation failed
+    // 分享操作失败
     // err.code是错误码
     // err.code is the error code
 	})

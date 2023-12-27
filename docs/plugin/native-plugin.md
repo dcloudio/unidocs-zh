@@ -1,8 +1,7 @@
 uni-app在App侧的原生扩展插件，支持使用java、object-c等原生语言编写。
 The native extension plug-in of uni-app on the App side supports writing in native languages such as java and object-c.
 
-从HBuilderX 3.6起，新增支持了使用uts来开发原生插件。文档另见[uts插件](uts-plugin.md)
-Since HBuilderX 3.6, the use of uts to develop native plugins has been added. Documentation see also [uts plugin](uts-plugin.md)
+从HBuilderX 3.6起，新增支持了使用uts来开发原生插件。文档另见[uts插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)
 
 为了和uts插件区别，之前的`App原生插件`，改名为`App原生语言插件`。
 In order to distinguish it from the uts plugin, the previous `App native plugin` has been renamed to the `App native language plugin`.
@@ -21,7 +20,7 @@ Platform difference description: App
 自 HBuilderX 1.4 版本起，uni-app 支持引入原生插件，使用方式如下：
 Since HBuilderX version 1.4, uni-app supports the introduction of native plugins, which are used as follows:
 
-```js 
+```js
 	const PluginName = uni.requireNativePlugin(PluginName); // PluginName 为原生插件名称
 ```
 
@@ -51,7 +50,7 @@ Example:
 ``` html
 	<template>
 		<view>
-			<text class="my-iconfont">&#xe85c;</text>	
+			<text class="my-iconfont">&#xe85c;</text>
 		</view>
 	</template>
 	<script>
@@ -77,8 +76,7 @@ Example:
 
 
 
-非内置原生插件，分为 [本地插件](/api/extend/native-plugin?id=本地插件非内置原生插件) 和 [云端插件](/api/extend/native-plugin?id=云端插件非内置原生插件) 。集成原生插件后，需要提交云端打包或制作自定义基座运行才会生效。
-Non-built-in native plug-ins are divided into [Local plug-ins](/api/extend/native-plugin?id=%E6%9C%AC%E5%9C%B0%E6%8F%92%E4%BB%B6%E9%9D%9E%E5%86%85%E7%BD%AE%E5%8E%9F%E7%94%9F%E6%8F%92%E4%BB%B6) and [Cloud plug-ins](/api/extend/native-plugin?id=%E4%BA%91%E7%AB%AF%E6%8F%92%E4%BB%B6%E9%9D%9E%E5%86%85%E7%BD%AE%E5%8E%9F%E7%94%9F%E6%8F%92%E4%BB%B6). After integrating the native plug-ins, you need to submit to cloud side for packaging or make a custom base to take effect.
+非内置原生插件，分为 [本地插件](/plugin/native-plugin.md#本地插件-非内置原生插件) 和 [云端插件](/plugin/native-plugin.md#云端插件-非内置原生插件) 。集成原生插件后，需要提交云端打包或制作自定义基座运行才会生效。
 
 ### 本地插件(非内置原生插件)
 ### Local plug-ins (non-internal native plug-ins)
@@ -125,8 +123,7 @@ Follow "manifest.json -> App native plug-in configuration -> select local plug-i
 Introduce this native plug-in in vue page or nvue page.
 
 使用uni.requireNativePlugin的api，参数为插件的id。
-Use the API of uni.requireNativePlugin, with the parameter set as the id of the plug-in.
-```js 
+```js
 	const dcRichAlert = uni.requireNativePlugin('DCloud-RichAlert')
 ```
 
@@ -213,8 +210,7 @@ const dcRichAlert = uni.requireNativePlugin('DCloud-RichAlert')
 使用自定义基座开发调试uni-app原生插件后，不可直接将自定义基座apk作为正式版发布。
 After developing and debugging the uni-app native plug-in on the custom base, the custom base apk cannot be directly released as the final version.
 应该重新提交云端打包（不能勾选“自定义基座”）生成正式版本。
-You should resubmit to the cloud side for packaging (the "Custom Base" should be unchecked) to generate the final version.
-  
+
 
 
 #### 注意事项

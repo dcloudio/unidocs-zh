@@ -56,8 +56,7 @@ This API is mainly used to select non-media files. For media files, there are th
 - extension暂只支持文件后缀名，例如`['.zip','.exe','.js']`，不支持`application/msword`等类似值
 - extension only supports file extensions temporarily, such as `['.zip','.exe','.js']`, instead of `application/msword` and similar values
 
-**注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。**
-**Note: The temporary path of the file can be used normally during this startup of the application. To save it for a long time, you need to call [uni.saveFile](api/file/file?id=savefile) actively, which will not be accessible until the next startup of the application.**
+**注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](/api/file/file.md#savefile)，在应用下次启动时才能访问得到。**
 
 **OBJECT.type 的合法值**
 **Legal values of OBJECT.type.**

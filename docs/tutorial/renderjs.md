@@ -86,9 +86,7 @@ In the same way, libraries such as `f2` and `threejs` can all be used in this wa
 * 不要直接引用大型类库，推荐通过动态创建 script 方式引用。
 * Do not directly reference large class libraries, it is recommended to reference by dynamically creating scripts.
 * 可以使用 vue 组件的生命周期(不支持 beforeDestroy、destroyed、beforeUnmount、unmounted)，不可以使用 App、Page 的生命周期
-* The life cycle of vue components can be used (beforeDestroy, destroyed, beforeUnmount, unmounted are not supported), and the life cycle of App and Page cannot be used
-* 视图层和逻辑层通讯方式与 [WXS](/tutorial/miniprogram-subject.html#wxs) 一致，另外可以通过 this.$ownerInstance 获取当前组件的 ComponentDescriptor 实例。
-* The communication method between the view layer and the logic layer is consistent with [WXS](/tutorial/miniprogram-subject.html#wxs). In addition, the ComponentDescriptor instance of the current component can be obtained through this.$ownerInstance.
+* 视图层和逻辑层通讯方式与 [WXS](/tutorial/miniprogram-subject.md#wxs) 一致，另外可以通过 this.$ownerInstance 获取当前组件的 ComponentDescriptor 实例。
 * 注意逻辑层给数据时最好一次性给到渲染层，而不是不停从逻辑层向渲染层发消息，那样还是会产生逻辑层和视图层的多次通信，还是会卡
 * Note that when the logic layer gives data to the rendering layer, it is best to give it to the rendering layer at one time, instead of constantly sending messages from the logic layer to the rendering layer, which will still cause multiple communications between the logic layer and the view layer, or will be stuck
 * 观测更新的数据在视图层可以直接访问到。

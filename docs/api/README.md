@@ -629,9 +629,9 @@ uni.addInterceptor({
 
 | API                                                                  | 说明                                                     |
 | :------------------------------------------------------------------- | :------------------------------------------------------- |
-| [uni.hideKeyboard](/api/key.html#hidekeyboard)                       | 隐藏已经显示的软键盘，如果软键盘没有显示则不做任何操作。 |
-| [uni.onKeyboardHeightChange](/api/key.html#onkeyboardheightchange)   | 监听键盘高度变化                                         |
-| [uni.offKeyboardHeightChange](/api/key.html#offkeyboardheightchange) | 取消监听键盘高度变化事件                                 |
+| [uni.hideKeyboard](/api/key.md#hidekeyboard)                       | 隐藏已经显示的软键盘，如果软键盘没有显示则不做任何操作。 |
+| [uni.onKeyboardHeightChange](/api/key.md#onkeyboardheightchange)   | 监听键盘高度变化                                         |
+| [uni.offKeyboardHeightChange](/api/key.md#offkeyboardheightchange) | 取消监听键盘高度变化事件                                 |
 | [uni.getSelectedTextRange](/api/key?id=getselectedtextrange)         | 在 input、textarea 等 focus 之后，获取输入框的光标位置   |
 
 ### 第三方服务
@@ -659,17 +659,17 @@ uni.addInterceptor({
 
 | API                                             | 说明                                                             |
 | :---------------------------------------------- | :--------------------------------------------------------------- |
-| [激励视频广告](/api/a-d/rewarded-video.html)    | 激励视频广告，是 cpm 收益最高的广告形式                          |
-| [全屏视频广告](/api/a-d/full-screen-video.html) | 全屏视频广告                                                     |
-| [内容联盟广告](/api/a-d/content-page.html)      | 内容联盟广告                                                     |
-| [插屏广告](/api/a-d/interstitial.html)          | 插屏广告                                                         |
-| [互动游戏](/api/a-d/interactive.html)           | 互动游戏是 DCloud 联合三方服务商为开发者提供新的广告场景增值服务 |
+| [激励视频广告](/api/a-d/rewarded-video.md)    | 激励视频广告，是 cpm 收益最高的广告形式                          |
+| [全屏视频广告](/api/a-d/full-screen-video.md) | 全屏视频广告                                                     |
+| [内容联盟广告](/api/a-d/content-page.md)      | 内容联盟广告                                                     |
+| [插屏广告](/api/a-d/interstitial.md)          | 插屏广告                                                         |
+| [互动游戏](/api/a-d/interactive.md)           | 互动游戏是 DCloud 联合三方服务商为开发者提供新的广告场景增值服务 |
 
 ### 平台扩展
 
 | API                                                                         | 说明              |
 | :-------------------------------------------------------------------------- | :---------------- |
-| [uni.requireNativePlugin](/api/extend/native-plugin?id=requirenativeplugin) | 引入 App 原生插件 |
+| [uni.requireNativePlugin](/plugin/native-plugin.md#requirenativeplugin) | 引入 App 原生插件 |
 
 ### 其他
 

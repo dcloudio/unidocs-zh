@@ -135,8 +135,7 @@ Obtain the listener function of the Wi-Fi list data event
 |属性		|类型				|说明			|
 |Property |Type |Description |
 |--			|---				|--				|
-|wifiList	|Array<[WifiInfo](#WifiInfo)>	|Wi-Fi 列表数据	|
-| wifiList | Array<[WifiInfo](#WifiInfo)> | Wi-Fi list data |
+|wifiList	|Array<[WifiInfo](#wifiinfo)>	|Wi-Fi 列表数据	|
 
 **平台差异说明**
 **Platform Difference Description**
@@ -218,8 +217,7 @@ Listener function for events connected to Wi-Fi
 |属性	|类型		|说明		|
 |Property |Type |Description |
 |---	|---		|---		|
-|wifi	|[WifiInfo](#WifiInfo)	|Wi-Fi 信息	|
-| wifi |[WifiInfo](#WifiInfo) | Wi-Fi Information |
+|wifi	|[WifiInfo](#wifiinfo)	|Wi-Fi 信息	|
 
 **平台差异说明**
 **Platform Difference Description**
@@ -264,8 +262,7 @@ Listener function for events connected to Wi-Fi
 |属性	|类型		|说明		|
 |Property |Type |Description |
 |---	|---		|---		|
-|wifi	|[WifiInfo](#WifiInfo)	|只包含 SSID 属性的 WifiInfo 对象	|
-| wifi |[WifiInfo](#WifiInfo) |A WifiInfo object containing only SSID properties|
+|wifi	|[WifiInfo](#wifiinfo)	|只包含 SSID 属性的 WifiInfo 对象	|
 
 **平台差异说明**
 **Platform Difference Description**

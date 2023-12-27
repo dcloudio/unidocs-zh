@@ -34,7 +34,7 @@
 |@refresherabort		|EventHandle|		|自定义下拉刷新被中止|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
 
 使用竖向滚动时，需要给 ``<scroll-view>`` 一个固定高度，通过 css 设置 height；使用横向滚动时，需要给``<scroll-view>``添加``white-space: nowrap;``样式。
- 
+
 ## 示例
 
 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/scroll-view/scroll-view)
@@ -63,7 +63,7 @@
 			<view @tap="goTop" class="uni-link uni-center uni-common-mt">
 				点击这里返回顶部
 			</view>
-		
+
 			<view class="uni-title uni-common-mt">
 				Horizontal Scroll
 				<text>\n横向滚动</text>
@@ -203,7 +203,7 @@
 
 ```
 :::
- 
+
 ## webview中使用scroll-view的注意@webviewtips
 
 - 原生组件嵌套问题
@@ -214,10 +214,10 @@
 	* 如果您一定要在webview中实现区域长列表，建议使用三方如better-scroll组件，或者插件市场搜索 [虚拟列表](https://ext.dcloud.net.cn/search?q=%E8%99%9A%E6%8B%9F%E5%88%97%E8%A1%A8)，这些专业组件实现了dom复用，即便列表很长也不会创建很多dom。
 - 下拉刷新问题
 	* webview渲染时，建议使用页面级的原生下拉刷新，性能更好。如一定要在webview中自定义下拉刷新，建议插件市场搜索[虚拟列表](https://ext.dcloud.net.cn/search?q=%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0)，这些专业组件使用wxs、renderjs等技术避免通信阻塞。
-- scroll-view是区域滚动，不会触发页面滚动，无法触发pages.json配置的下拉刷新、页面触底onReachBottomDistance、titleNView的transparent透明渐变。但在app-uvue下，scroll-view如果是页面顶级节点，则等同于页面滚动。[详见](uni-app-x/css/README.md#pagescroll)
+- scroll-view是区域滚动，不会触发页面滚动，无法触发pages.json配置的下拉刷新、页面触底onReachBottomDistance、titleNView的transparent透明渐变。但在app-uvue下，scroll-view如果是页面顶级节点，则等同于页面滚动。[详见](https://doc.dcloud.net.cn/uni-app-x/css/#pagescroll)
 - webview渲染时，scroll-view的滚动条设置，可通过css的-webkit-scrollbar自定义，包括隐藏滚动条。
 
-在app-uvue中，其实没有页面级滚动，scroll-view也不存在原生组件层级、下拉刷新性能问题。但app-uvue里使用长列表，请务必使用list-view组件，这个组件内置了recycle-view机制，不管列表多长，都可以通过回收不显示的列表来保证高性能。[详见](list-view.md)
+在app-uvue中，其实没有页面级滚动，scroll-view也不存在原生组件层级、下拉刷新性能问题。但app-uvue里使用长列表，请务必使用list-view组件，这个组件内置了recycle-view机制，不管列表多长，都可以通过回收不显示的列表来保证高性能。[详见](list.md)
 
 ## 其他注意事项
 - scroll-into-view 的优先级高于 scroll-top。

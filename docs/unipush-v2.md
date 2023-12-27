@@ -1,6 +1,6 @@
 # uni-push2统一推送
 
-> 本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0，另见：[uni-push1.0](unipush-v1.html)
+> 本文为uni-push2.0（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的uniPush1.0，另见：[uni-push1.0](unipush-v1.md)
 
 # 应用场景
 以下功能可以用uni-push 实现
@@ -41,7 +41,7 @@ In addition, chess and card games and other requirements that require the client
 - uni-app项目，需要使用老版的 [uni-push1.0](./unipush-v1.md) 。相关密钥获取方式：登录[开发者中心](https://dev.dcloud.net.cn)左侧菜单->`uni-push`->`uni-push 2.0（支持全端推送）`->`消息推送`->`应用配置`->`应用信息`
 - uni-app-x 项目，虽然只能使用 uni-push2.0，但支持在[开发者中心](https://dev.dcloud.net.cn)左侧菜单-`uni-push`->`uni-push 2.0（支持全端推送）`-> `厂商推送设置` 在顶端注意事项中，点击获取个推的MasterSecret
 
-请注意，直接调用个推服务器进行推送可能需要更多的配置和操作步骤，具体请参考[调用个推服务器](./unipush-v1.md#request_getui)的相关文档。
+请注意，直接调用个推服务器进行推送可能需要更多的配置和操作步骤，具体请参考[调用个推服务器](./unipush-v1.md#request-getui)的相关文档。
 
 ## 什么是push？
 ## What is push?
@@ -271,7 +271,7 @@ If you want to remind the user through the "notification bar message" when the a
 以上两种方案各有优劣，方案一更加灵活；比如：客服功能，客户端接收到聊天消息时，应用如果已经打开聊天对话页面，就直接将监听到的推送内容，渲染到页面。如果应用未打开聊天页，则调用api创建“通知栏消息”提醒用户；此时你还可以执行一些其他逻辑，比如将tabBar的消息中心加红点等。方案二比较简便，客户端无需额外编写代码，自动创建通知栏消息；但仅适用于不关心客户端行为就创建“通知栏消息”的场景，如广告营销内容的推送等。
 The above two solutions have their own advantages and disadvantages, and the first solution is more flexible; for example, in the customer service function, when the client receives a chat message, if the application has already opened the chat dialog page, it will directly render the monitored push content to the page. If the app does not open the chat page, call the api to create a "notification bar message" to remind the user; at this time, you can also perform some other logic, such as adding a red dot to the message center of the tabBar. Option 2 is relatively simple. The client does not need to write additional code to automatically create notification bar messages; but it is only suitable for scenarios where "notification bar messages" are created without caring about client behavior, such as the push of advertising and marketing content.
 
-#### 客户端类型@getuiPhoneType  
+#### 客户端类型@getuiPhoneType
 个推的客户端类型是仅根据使用的sdk类型来判断的，分为两类：
 1. native sdk（在`manifest.json`->`APP 模块配置`->`uniPush 2.0`配置界面勾选离线推送时启用的 sdk），获取到的 cid 的 phoneType 为 APP 类型。
 2. jssdk（`manifest.json`->`APP 模块配置`->`uniPush 2.0`配置界面，仅勾选在线推送，未勾选离线推送时启用的 sdk），获取到的 cid 的 phoneType 均为小程序，而不管实际上你的客户端是 APP、小程序还是 web。
@@ -345,8 +345,7 @@ export default {
 }
 ```
 
-> 先跟着示例代码简单体验，详细的uni.onPushMessage API介绍[详情参考](/api/plugins/push.html#onpushmessage)
-> Follow the sample code for a simple experience first, detailed uni.onPushMessage API introduction [details reference](/api/plugins/push.html#onpushmessage)
+> 先跟着示例代码简单体验，详细的uni.onPushMessage API介绍[详情参考](/api/plugins/push.md#onpushmessage)
 
 **APP端真机运行注意:**
 - 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。标准HBuilder运行基座无法使用。
@@ -450,9 +449,13 @@ If the steps are completed, the uni-app client you run at this time will print o
 上一章，演示了基于“客户端推送标识”的消息推送，仅为方便理解和体验；在业务开发中，通常是指定消息的接收人，而不是某个设备。
 In the previous chapter, the message push based on the "client push identity" was demonstrated, which is only for the convenience of understanding and experience; in business development, the recipient of the message is usually specified, not a certain device.
 
-如果项目使用[uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577)，即可直接指定基于uni-id的`user_id`、`user_tag`，并可筛选设备的平台、登录信息是否有效等，执行推送消息。
+如果项目使用[uni-id-pages](https://ext.dcloud.net.cn/plugin?id=8577)或 [uni-id-pages-x](https://ext.dcloud.net.cn/plugin?name=uni-id-pages-x)，即可直接指定基于uni-id的user_id、user_tag，并可筛选设备的平台、登录信息是否有效等，执行推送消息。
 
-uni-id-pages已经内置：在登录账号、退出账号、切换账号、token续期、注销账号5个时机，管理uni-id-device表、opendb-device表与`user_id`、`push_clientid`、`platform`、`os_name`等字段的映射关系。[详情参考](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate)
+uni-id-pages/uni-id-pages-x 已经内置了：在登录账号、退出账号、切换账号、token续期、注销账号5个时机，管理uni-id-device表、opendb-device表与user_id、push_clientid、platform、os_name等字段的映射关系。[详情参考](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html)
+
+::: warning 注意
+  以上内置逻辑，在uni-id-pages下，会自动判断是否启用push模块自动执行；但uni-id-pages-x下，需手动在:`/uni_modules/uni-id-pages-x/init.uts`导入 autoReportPushClientId 模块。
+:::
 
 此外uni-push2.0 还提供了uni-admin中的web控制台[uni-push-admin](https://ext.dcloud.net.cn/plugin?name=uni-push-admin)。包含消息推送、推送统计等功能，而且是开源的，可自定义。如图：
 

@@ -312,13 +312,9 @@ Rendering based on native engine is still a front-end technology stack, but it i
 7. 布局不能使用百分比、没有媒体查询。
 7. Layout cannot use percentage and there is no media query.
 8. nvue 切换横竖屏时可能导致样式出现问题，建议有 nvue 的页面锁定手机方向。
-8. When nvue switches the landscape and portrait screens, it may cause style problems, it is recommended to lock the direction of the mobile phone of the page when there is nvue.
-9. 支持的css有限，不过并不影响布局出你需要的界面，```flex```还是非常强大的。[详见](/nvue-css?id=flex)
-9. The supported css is limited, but it does not affect the layout of the interface you need. ```flex``` is still very powerful. [See details](/nvue-css?id=flex)
+9. 支持的css有限，不过并不影响布局出你需要的界面，```flex```还是非常强大的。[详见](./nvue-css.md#flex)
 10. 不支持背景图。但可以使用```image```组件和层级来实现类似web中的背景效果。因为原生开发本身也没有web这种背景图概念
-10. Background images are not supported. But you can use `image` components and levels to achieve background effects similar to those in the web. Because in native development, there is no such concept of background map like web.
-11. css选择器支持的比较少，只能使用 class 选择器。[详见](/nvue-css)
-11. Fewer styles are supported by the css selector, and only the class selector can be used. [See details](/nvue-css)
+11. css选择器支持的比较少，只能使用 class 选择器。[详见](./nvue-css.md)
 12. nvue 的各组件在安卓端默认是透明的，如果不设置```background-color```，可能会导致出现重影的问题。
 12. Each component of nvue is transparent by default on the Android side. If `background-color` is not set, ghosting problems may occur.
 13. ```class``` 进行绑定时只支持数组语法。
@@ -332,9 +328,7 @@ Rendering based on native engine is still a front-end technology stack, but it i
 17. 在 App.vue 中定义的全局js变量不会在 nvue 页面生效。```globalData```和```vuex```是生效的。
 17. The global js variables defined in App.vue will not take effect on the nvue page. `globalData` and `vuex` are effective.
 18. App.vue 中定义的全局css，对nvue和vue页面同时生效。如果全局css中有些css在nvue下不支持，编译时控制台会报警，建议把这些不支持的css包裹在[条件编译](https://uniapp.dcloud.io/platform)里，```APP-PLUS-NVUE```
-18. The global css defined in App.vue takes effect on both nvue and vue pages. If some CSS in the global CSS is not supported under nvue, the console will alarm when compiling. It is recommended to wrap these unsupported CSS in [conditional compilation](https://uniapp.dcloud.io/platform), ``` APP-PLUS-NVUE````
-19. 不能在 ```style``` 中引入字体文件，nvue 中字体图标的使用参考：[加载自定义字体](/nvue-api?id=addrule)。如果是本地字体，可以用```plus.io```的API转换路径。
-19. The font file cannot be imported in ``style``, the reference for the use of font icons in nvue: [Load custom font](/nvue-api?id=addrule). If it is a local font, you can use the ``plus.io`` API to convert the path.
+19. 不能在 ```style``` 中引入字体文件，nvue 中字体图标的使用参考：[加载自定义字体](./nvue-api.md#addrule)。如果是本地字体，可以用```plus.io```的API转换路径。
 20. 目前不支持在 nvue 页面使用 ```typescript/ts```。
 20. `typescript/ts` is currently not supported on the nvue page.
 21. nvue 页面关闭原生导航栏时，想要模拟状态栏，可以[参考文章](https://ask.dcloud.net.cn/article/35111)。但是，仍然强烈建议在nvue页面使用原生导航栏。nvue的渲染速度再快，也没有原生导航栏快。原生排版引擎解析```json```绘制原生导航栏耗时很少，而解析nvue的js绘制整个页面的耗时要大的多，尤其在新页面进入动画期间，对于复杂页面，没有原生导航栏会在动画期间产生整个屏幕的白屏或闪屏。

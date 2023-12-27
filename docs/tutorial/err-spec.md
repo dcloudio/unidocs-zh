@@ -98,7 +98,7 @@ Includes the following properties:
 Uni统一错误信息，用于统一各平台（端）错误信息  
 Uni unified error information, used to unify the error information of each platform (terminal)
 - errSubject
-	统一错误主题（模块）名称，字符串类型，存在多级模块时使用"::"分割，即"模块名称::二级模块名称"，参考[errSubject（模块/主题）名称](#errSubject)
+	统一错误主题（模块）名称，字符串类型，存在多级模块时使用"::"分割，即"模块名称::二级模块名称"，参考[errSubject（模块/主题）名称](#errsubject)
 - errCode  
 	统一错误码，数字类型，通常0表示成功，其它为错误码  
 	Unified error code, numeric type, usually 0 means success, others are error codes
@@ -179,7 +179,7 @@ new UniError(errSubject:string, errCode:number, errMsg:string)
 
 **参数**  
 - errSubject  
-统一错误主题（模块）名称，字符串类型，存在多级模块时使用"::"分割，即"模块名称::二级模块名称"，参考[errSubject（模块/主题）名称](#errSubject)  
+统一错误主题（模块）名称，字符串类型，存在多级模块时使用"::"分割，即"模块名称::二级模块名称"，参考[errSubject（模块/主题）名称](#errsubject)  
 - errCode  
 统一错误码，数字类型，通常0表示成功，其它为错误码  
 - errMsg  

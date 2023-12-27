@@ -19,7 +19,7 @@ It is similar to the **page management** part of `app.json` in the WeChat MiniAp
 |[easycom](/collocation/pages?id=easycom)| Object|No|Component automatic import rules|2.5.5+|
 |[tabBar](/collocation/pages?id=tabbar)|Object|否|设置底部 tab 的表现||
 |[condition](/collocation/pages?id=condition)|Object|否|启动模式配置||
-|[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置|H5、uni-app x 不支持|
+|[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置|H5 不支持|
 |[preloadRule](/collocation/pages?id=preloadrule)|Object|否|分包预下载规则|微信小程序|
 |[preloadRule](/collocation/pages?id=preloadrule)| Object|No|Subcontract preload rule|WeChat MiniApp|
 |[workers](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|String|否|`Worker` 代码放置的目录|微信小程序|
@@ -29,7 +29,7 @@ It is similar to the **page management** part of `app.json` in the WeChat MiniAp
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
 |[topWindow](/collocation/pages?id=topwindow)| Object|No|The top window of the large screen| H5|
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
-|[uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0|uni-app x 不支持|
+|[uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0||
 |entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序|
 
 以下是一个包含了所有配置选项的 `pages.json` ：
@@ -158,18 +158,17 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 |backgroundColor|HexColor|#ffffff|下拉显示出来的窗口的背景色|微信小程序|
 | backgroundColor| HexColor|#ffffff|The background color of the window displayed in the pull-down|WeChat MiniApp|
 |backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark / light|微信小程序|
-| backgroundTextStyle| String| dark|The style of drop-down loading, only supports dark/light|WeChat MiniApp|
-|enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.html#lifecycle)。||
-|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)|uni-app x 不支持|
+|enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.md#lifecycle)。||
+|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.md#lifecycle)||
 |backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorTop| HexColor|#ffffff|Background color of the top window (bounce area) | iOS only|
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
-|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、APP(uni-app x 不支持)|
-|transparentTitle|String|none|导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP(uni-app x 不支持)|
+|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、APP|
+|transparentTitle|String|none|导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP|
 |titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
-|pageOrientation|String|portrait|横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)|App 2.4.7+(uni-app x 不支持)、微信小程序、QQ小程序|
-|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)|App(uni-app x 不支持)|
-|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App(uni-app x 不支持)|
+|pageOrientation|String|portrait|横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)|App 2.4.7+、微信小程序、QQ小程序|
+|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)|App|
+|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
 | app-plus| Object||Set the specific style compiled to the App platform, the configuration items refer to the following [app-plus](/collocation/pages?id=app-plus)| App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
@@ -185,7 +184,7 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 |mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
 | mp-kuaishou| Object||Set the specific style compiled to mp-kuaishou platform| Kuaishou MiniApp|
 |mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
-|usingComponents|Object| |引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)|uni-app x 不支持|
+|usingComponents|Object| |引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.md#小程序自定义组件支持)||
 |renderingMode|String| |同层渲染，webrtc(实时音视频) 无法正常时尝试配置 seperated 强制关掉同层|微信小程序|
 | renderingMode| String| | Same-layer rendering, webrtc (real-time audio and video) cannot work normally, try to configure seperated to forcibly turn off the same layer |WeChat MiniApp|
 |leftWindow|Boolean|true|当存在 leftWindow 时，默认是否显示 leftWindow|H5|
@@ -403,20 +402,20 @@ The configuration items in the page will override the same configuration items i
 |navigationBarBackgroundColor|HexColor|#F8F8F8|导航栏背景颜色（同状态栏背景色）|APP与H5为#F8F8F8，小程序平台请参考相应小程序文档|
 |navigationBarTextStyle|String|black|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
 |navigationBarTitleText|String||导航栏标题文字内容||
-|navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)|uni-app x 不支持|
+|navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)||
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
 |disableScroll|Boolean|false|设置为 true 则页面整体不能上下滚动（bounce效果），只在页面配置中有效，在globalStyle中设置无效|微信小程序（iOS）、百度小程序（iOS）|
 |backgroundColor|HexColor|#ffffff|窗口的背景色|微信小程序、百度小程序、抖音小程序、飞书小程序、京东小程序|
-|backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light|uni-app x 不支持|
-|enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.html#lifecycle)。||
-|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.html#lifecycle)|uni-app x 不支持|
+|backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light||
+|enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.md#lifecycle)。||
+|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.md#lifecycle)||
 |backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorTop| HexColor|#ffffff|Background color of the top window (bounce area) | iOS only|
 |backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
 | backgroundColorBottom| HexColor|#ffffff|Background color of the bottom window (bounce area) | iOS only|
 |disableSwipeBack|Boolean|false|是否禁用滑动返回|App-iOS（3.4.0+）|
-|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、App(uni-app x 不支持)|
-|transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP(uni-app x 不支持)|
+|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、App|
+|transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP|
 |titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
 | titlePenetrate| String| NO|Click to penetrate the navigation bar|Alipay MiniApp, H5|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
@@ -436,7 +435,7 @@ The configuration items in the page will override the same configuration items i
 |mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
 | mp-kuaishou| Object||Set the specific style compiled to mp-kuaishou platform| Kuaishou MiniApp|
 |mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
-|usingComponents|Object||引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.html#小程序自定义组件支持)|App(uni-app x 不支持)、微信小程序、支付宝小程序、百度小程序、京东小程序|
+|usingComponents|Object||引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.md#小程序自定义组件支持)|App、微信小程序、支付宝小程序、百度小程序、京东小程序|
 |leftWindow|Boolean|true|当存在 leftWindow时，当前页面是否显示 leftWindow|H5|
 | leftWindow| Boolean| true|When leftWindow exists, whether the current page displays leftWindow| H5|
 |topWindow|Boolean|true|当存在 topWindow 时，当前页面是否显示 topWindow|H5|
@@ -479,9 +478,7 @@ The configuration items in the page will override the same configuration items i
 ### 自定义导航栏使用注意@customnav
 ### Custom navigation bar use attention @customnav
 当navigationStyle设为custom或titleNView设为false时，原生导航栏不显示，此时要注意几个问题：
-When navigationStyle is set to custom or titleNView is set to false, the native navigation bar is not displayed. At this time, several issues should be paid attention to:
-- 非H5端，手机顶部状态栏区域会被页面内容覆盖。这是因为窗体是沉浸式的原因，即全屏可写内容。uni-app提供了状态栏高度的css变量[--status-bar-height](/tutorial/syntax-css.html#css-变量)，如果需要把状态栏的位置从前景部分让出来，可写一个占位div，高度设为css变量。
-- For non-H5 terminals, the status bar area at the top of the mobile phone will be covered by the page content. This is because the form is immersive, i.e. full screen writable content. uni-app provides the css variable [--status-bar-height](/tutorial/syntax-css.html#css-%E5%8F%98%E9%87%8F) of the status bar height, if you need to put the status The position of the column is given away from the foreground part, and a placeholder div can be written, and the height is set to a css variable.
+- 非H5端，手机顶部状态栏区域会被页面内容覆盖。这是因为窗体是沉浸式的原因，即全屏可写内容。uni-app提供了状态栏高度的css变量[--status-bar-height](/tutorial/syntax-css.md#css-变量)，如果需要把状态栏的位置从前景部分让出来，可写一个占位div，高度设为css变量。
 ```html
 <template>
     <view>
@@ -535,19 +532,19 @@ Configure the specific style when compiling to the App platform, and some common
 |属性|类型|默认值|描述|平台兼容|
 |Properties|Type|Default|Description|Platform Compatibility|
 |:-|:-|:-|:-|:-|
-|background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App (vue 页面需要将 body 背景色设为透明，uni-app x 不支持)|
-|titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App(uni-app x 不支持)、H5|
-|subNVues|Array||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+(uni-app x 不支持)|
+|background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App (vue 页面需要将 body 背景色设为透明)|
+|titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App、H5|
+|subNVues|Array||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+|
 |bounce|String||页面回弹效果，设置为 "none" 时关闭效果。|App-vue（nvue Android无页面级bounce效果，仅list、recycle-list、waterfall等滚动组件有bounce效果）|
 | bounce| String|| page bounce effect, set to "none" to disable the effect. | App-vue (nvue Android has no page-level bounce effect, only list, recycle-list, waterfall and other scrolling components have bounce effect)|
 |popGesture|String|close|侧滑返回功能，可选值："close"（启用侧滑返回）、"none"（禁用侧滑返回）|App-iOS|
 | popGesture| String| close|Slide back function, optional values: "close" (enable slide back), "none" (disable slide back) | App-iOS|
 |softinputNavBar|String|auto|iOS软键盘上完成工具栏的显示模式，设置为 "none" 时关闭工具栏。|App-iOS|
-|softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App(uni-app x 不支持)|
-|pullToRefresh|Object||下拉刷新|App(uni-app x 不支持)|
-|scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App(uni-app x 不支持)|
-|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App(uni-app x 不支持)|
-|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App(uni-app x 不支持)|
+|softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App|
+|pullToRefresh|Object||下拉刷新|App|
+|scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App|
+|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App|
+|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App|
 
 **Tips**
 - `.nvue` 页面仅支持 `titleNView、pullToRefresh、scrollIndicator` 配置，其它配置项暂不支持
@@ -624,9 +621,7 @@ Configure the specific style when compiling to the App platform, and some common
 - `titleNView` 的 `type` 值为 `transparent` 时，App-nvue 2.4.4+ 支持
 - App-nvue 2.4.4+ supports when the `type` value of `titleNView` is `transparent`
 - 在 `titleNView` 配置 `buttons` 后，监听按钮的点击事件，vue 页面及 nvue 的weex编译模式参考：[uni.onNavigationBarButtonTap](/tutorial/nvue-outline?id=onnavigationbarbuttontap)
-- After configuring `buttons` in `titleNView`, listen to the click event of the button, refer to the weex compilation mode of the vue page and nvue: [uni.onNavigationBarButtonTap](/tutorial/nvue-outline?id=onnavigationbarbuttontap)
-- 在 `titleNView` 配置 `searchInput` 后，相关的事件监听参考：[onNavigationBarSearchInputChanged 等](/collocation/frame/lifecycle?id=页面生命周期)
-- After configuring `searchInput` in `titleNView`, related event monitoring reference: [onNavigationBarSearchInputChanged, etc.](/collocation/frame/lifecycle?id=%E9%A1%B5%E9%9D%A2%E7%94%9F% E5%91%BD%E5%91%A8%E6%9C%9F)
+- 在 `titleNView` 配置 `searchInput` 后，相关的事件监听参考：[onNavigationBarSearchInputChanged 等](/tutorial/page.md#lifecycle)
 - 可通过 `[<navigation-bar>(/component/navigation-bar)]` 配置
 - configurable via `[<navigation-bar>(/component/navigation-bar)]`
 - App下原生导航栏的按钮如果使用字体图标，注意检查字体库的名字（font-family）是否使用了默认的 iconfont，这个名字是保留字，不能作为外部引入的字体库的名字，需要调整为自定义的名称，否则无法显示。
@@ -745,8 +740,7 @@ searchInput can place a search box on the native navigation bar of titleNView. I
 
 **searchInput Tips**
 
-searchInput的点击输入框onNavigationBarSearchInputClicked、文本变化onNavigationBarSearchInputChanged、点击搜索按钮onNavigationBarSearchInputConfirmed等生命周期，见文档[页面生命周期](/tutorial/page.html#lifecycle)。
-For the life cycle of searchInput click input box onNavigationBarSearchInputClicked, text change onNavigationBarSearchInputChanged, click search button onNavigationBarSearchInputConfirmed, etc., see the document [Page Life Cycle](/tutorial/page.html#lifecycle).
+searchInput的点击输入框onNavigationBarSearchInputClicked、文本变化onNavigationBarSearchInputChanged、点击搜索按钮onNavigationBarSearchInputConfirmed等生命周期，见文档[页面生命周期](/tutorial/page.md#lifecycle)。
 - 在生命周期里通过参数e.text，可获取输入框内容。具体见hello uni-app中模板-顶部导航栏中的示例
 - In the life cycle, the content of the input box can be obtained through the parameter e.text. For details, see the template in hello uni-app - the example in the top navigation bar
 - 如需动态修改searchInput，或者获取searchInput的placehold，参考[uni-app动态修改App端导航栏](https://ask.dcloud.net.cn/article/35374)
@@ -1256,7 +1250,7 @@ Configure specific styles when compiling to the MP-ALIPAY platform
 ┌─components
 │  └─comp-a
 │    └─comp-a.vue      符合easycom规范的组件
-└─uni_modules          [uni_module](/uni_modules)中符合easycom规范的组件
+└─uni_modules          [uni_module](/plugin/uni_modules.md)中符合easycom规范的组件
    └─uni_modules
      └─uni-list
        └─components
@@ -1347,7 +1341,7 @@ Providing tabBar configuration in pages.json is not only to facilitate rapid dev
 |backgroundColor|HexColor|是||tab 的背景色||
 | backgroundColor| HexColor| is the background color of || tab||
 |borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white，也支持其他颜色值|App 2.3.4+ 、H5 3.0.0+|
-|blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持(uni-app x 不支持)、H5 3.0.0+（只有最新版浏览器才支持）|
+|blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持、H5 3.0.0+（只有最新版浏览器才支持）|
 |list|Array|是||tab 的列表，详见 list 属性说明，最少2个、最多5个 tab||
 | list| Array| is a list of || tabs, see the list property description for details, at least 2 and at most 5 tabs||
 |position|String|否|bottom|可选值 bottom、top|top 值仅微信小程序支持|
@@ -1525,9 +1519,7 @@ The startup mode configuration takes effect only during the development period, 
 |name|String|是|启动模式名称|
 |name| String|yes|boot mode name|
 |path|String|是|启动页面路径|
-|path| String|Yes|Path of startup page|
-|query|String|否|启动参数，可在页面的 [onLoad](/tutorial/page.html#lifecycle) 函数里获得|
-| query| String|No|Startup parameters, which can be obtained in the [onLoad](/tutorial/page.html#lifecycle) function of the page|
+|query|String|否|启动参数，可在页面的 [onLoad](/tutorial/page.md#lifecycle) 函数里获得|
 
 **注意：** 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
 **Note:** You can directly open the configuration page when running on the real machine in the app. You need to manually change the compilation mode in the WeChat developer tools, as shown in the figure below:

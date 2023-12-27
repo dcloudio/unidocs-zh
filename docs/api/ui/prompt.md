@@ -79,10 +79,9 @@ uni.hideToast();
 ```
 
 
-### uni.showLoading(OBJECT)
+### uni.showLoading(OBJECT)@showloading
 
-显示 loading 提示框, 需主动调用 [uni.hideLoading](api/ui/prompt?id=hideloading) 才能关闭提示框。
-If the loading prompt box is displayed, you must actively call [uni.hideLoading](api/ui/prompt?id=hideloading) to close the prompt box.
+显示 loading 提示框, 需主动调用 [uni.hideLoading](#hideloading) 才能关闭提示框。
 
 **OBJECT参数说明**
 **OBJECT parameter description**
@@ -108,7 +107,7 @@ uni.showLoading({
 });
 ```
 
-### uni.hideLoading()
+### uni.hideLoading()@hideloading
 
 隐藏 loading 提示框。
 Hide the loading prompt box.
@@ -126,7 +125,7 @@ setTimeout(function () {
 }, 2000);
 ```
 
-### uni.showModal(OBJECT)
+### uni.showModal(OBJECT)@showmodal
 
 显示模态弹窗，可以只有一个确定按钮，也可以同时有确定和取消按钮。类似于一个API整合了 html 中：alert、confirm。
 Display the modal pop-up window with only one OK button or both OK and Cancel buttons. Similar to an API integrating alert and confirm in html.

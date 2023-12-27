@@ -59,29 +59,27 @@ The template that comes with uni-app is Hello uni-app , which is the official co
 	<div align=center>
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run-phone.png"/>
 	</div>
-	
+
 	如手机无法识别，请点击菜单运行-运行到手机或模拟器-真机运行常见故障排查指南。
 	If the mobile phone cannot be recognized, please click the menu to run - run to mobile phone or emulator - common troubleshooting guide for real machine operation.
 	注意目前开发App也需要安装微信开发者工具。
-	Note that the current development of App also requires the installation of WeChat developer tools.
-	
+
 3. 在微信开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 微信开发者工具，即可在微信开发者工具里面体验uni-app。
 3. Run in WeChat Developer Tools: Enter the hello-uniapp project, click Run on the toolbar -> Run to Mini Program Simulator -> WeChat Developer Tools, you can experience uni-app in WeChat Developer Tools.
     <br/>
     <div align=center>
     	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni20190222-1.png"/>
     </div>
-    
+
     **注意：**如果是第一次使用，需要先配置小程序ide的相关路径，才能运行成功。如下图，需在输入框输入微信开发者工具的安装路径。 若HBuilderX不能正常启动微信开发者工具，需要开发者手动启动，然后将uni-app生成小程序工程的路径拷贝到微信开发者工具里面，在HBuilderX里面开发，在微信开发者工具里面就可看到实时的效果。
-    **Note:** If it is the first time to use, you need to configure the relevant path of the applet ide before it can run successfully. As shown in the figure below, you need to enter the installation path of the WeChat developer tool in the input box. If HBuilderX cannot start the WeChat developer tool normally, the developer needs to start it manually, and then copy the path of the uni-app to generate the applet project into the WeChat developer tool, develop it in HBuilderX, and you can see it in the WeChat developer tool real-time effects.
-    
+
     uni-app默认把项目编译到根目录的unpackage目录。
     uni-app compiles the project to the unpackage directory of the root directory by default.
     <br/>
     <div align=center>
       <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/weixin-setting.png"/>
     </div>
-		
+
 4. 在支付宝小程序开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 支付宝小程序开发者工具，即可在支付宝小程序开发者工具里面体验uni-app。
 4. Run in the Alipay applet developer tool: enter the hello-uniapp project, click Run on the toolbar -> run to the applet simulator -> Alipay applet developer tool, you can find it in the Alipay applet developer tool Experience uni-app.
     <br/>
@@ -95,7 +93,7 @@ The template that comes with uni-app is Hello uni-app , which is the official co
     <div align=center>
     	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni20190222-2.png"/>
     </div>
- 
+
 6. 在抖音开发者工具里运行：进入hello-uniapp项目，点击工具栏的运行 -> 运行到小程序模拟器 -> 抖音开发者工具，即可在抖音开发者工具里面体验uni-app。
     <br/>
     <div align=center>
@@ -141,8 +139,7 @@ HBuilderX also provides a quick run menu, you can quickly select the device to r
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/runtool.png"/>
 </div>
 
-如需调试，可参考：[uni-app调试](/snippet?id=使用-chrome-调试)
-For debugging, please refer to: [uni-app debugging](/snippet?id=%E4%BD%BF%E7%94%A8-chrome-%E8%B0%83%E8%AF%95)
+如需调试，可参考：[uni-app调试](/tutorial/run-and-debug.md)
 
 ## 发布uni-app
 ## Publish uni-app
@@ -440,9 +437,7 @@ Huawei Quick App Documentation - Mini Program Quick App [https://developer.huawe
   1. dev 模式有 SourceMap 可以方便的进行断点调试；
   1. In dev mode, there is SourceMap for easy breakpoint debugging;
   2. build 模式会将代码进行压缩，体积更小更适合发布为正式版应用；
-  2. The build mode will compress the code, which is smaller and more suitable for publishing as an official version of the application;
-  3. 进行 [环境判断](/frame?id=运行环境判断) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
-  3. Perform [environmental judgment](/frame?id=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%88%A4%E6%96%AD) , the value of process.env.NODE_ENV in dev mode is development, and the value of process.env.NODE_ENV in build mode is production.
+  3. 进行 [环境判断](/worktile/running-env.md#判断平台) 时，dev 模式 process.env.NODE_ENV 的值为 development，build 模式 process.env.NODE_ENV 的值为 production。
 
 ## 使用cli创建项目和使用HBuilderX可视化界面创建项目有什么区别
 ## What is the difference between creating a project using cli and creating a project using the HBuilderX visual interface
@@ -457,8 +452,7 @@ Huawei Quick App Documentation - Mini Program Quick App [https://developer.huawe
 * 已经使用``cli``创建的项目，如果想继续在HBuilderX里使用，可以把工程拖到HBuilderX中。注意如果是把整个项目拖入HBuilderX，则编译时走的是项目下的编译器。如果是把src目录拖入到HBuilderX中，则走的是HBuilderX安装目录下plugin目录下的编译器。
 * If you want to continue using the project created by ``cli`` in HBuilderX, you can drag the project to HBuilderX. Note that if the entire project is dragged into HBuilderX, the compiler under the project is used when compiling. If the src directory is dragged into HBuilderX, the compiler in the plugin directory under the HBuilderX installation directory is used.
 * ``cli``版如果想安装less、scss、ts等编译器，需自己手动npm安装。在HBuilderX的插件管理界面安装无效，那个只作用于HBuilderX创建的项目。
-* If you want to install less, scss, ts and other compilers in the ``cli`` version, you need to manually npm install it yourself. It is invalid to install in the plugin management interface of HBuilderX, that only works on the project created by HBuilderX.
- 
+
 #### 开发工具的区别
 #### Differences in development tools
 * ``cli``创建的项目，内置了d.ts，同其他常规npm库一样，可在[vscode](https://ask.dcloud.net.cn/article/36286)、[webstorm](https://ask.dcloud.net.cn/article/36307)等支持d.ts的开发工具里正常开发并有语法提示。

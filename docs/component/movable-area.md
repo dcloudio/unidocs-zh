@@ -15,8 +15,7 @@ That is, finger/mouse hold down `movable-view` to drag or pinch to zoom, but can
 当然也可以不拖动，而使用代码来触发`movable-view`在`movable-area`里的移动缩放。
 Of course, instead of dragging, you can use code to trigger the move and zoom of `movable-view` in `movable-area`.
 
-`movable-view`的规范另见[movable-view](/component/movable-view.html)。
-See also [movable-view](/component/movable-view.html) for the specification of `movable-view`.
+`movable-view`的规范另见[movable-view](/component/movable-view.md)。
 
 **平台差异说明**
 **Platform Difference Description**

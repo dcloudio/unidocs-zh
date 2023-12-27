@@ -1,7 +1,5 @@
-### 开通  
-### Open
-- 登录[腾讯开放平台](https://connect.qq.com/index.html)，打开 “应用管理” -> “移动应用” 页面  
-- Log in to the [Tencent Open Platform](https://connect.qq.com/index.html), open the "Application Management" -> "Mobile Application" page
+### 开通
+- 登录[腾讯开放平台](https://connect.qq.com/index.html)，打开 “应用管理” -> “移动应用” 页面
 - 在页面中选择 “创建应用” -> “创建移动应用”，根据提示填写信息创建应用
 - Select "Create App" -> "Create Mobile App" on the page, and fill in the information to create an app according to the prompts
 - 创建成功后，在应用详情中页面可以获取 APP ID
@@ -14,17 +12,14 @@ For more information, please refer to the official QQ document [Overview of Mobi
 
 
 
-### 配置  
-### Configuration
+### 配置
 打开项目的manifest.json文件，在“App模块配置”项的“Share(分享)”下，勾选“QQ分享”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/share/qq-manifest.png)
 
-- appid  
-QQ开放平台申请应用的AppID值  
-AppID value of the application applied by the QQ open platform
-- UniversalLinks  
-iOS平台通用链接，必须与QQ开放平台配置的一致，推荐使用[一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links.html)  
-The universal link of the iOS platform must be consistent with the configuration of the QQ open platform. It is recommended to use [Generate iOS universal link with one click](https://uniapp.dcloud.io/api/plugins/universal-links.html)
+- appid
+QQ开放平台申请应用的AppID值
+- UniversalLinks
+iOS平台通用链接，必须与QQ开放平台配置的一致，推荐使用[一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links.html)
 
 
 **注意**
@@ -35,24 +30,17 @@ The universal link of the iOS platform must be consistent with the configuration
 - The configuration parameters need to be submitted to the cloud to be packaged to take effect. Please use the [custom debugging base] when the real machine is running (https://ask.dcloud.net.cn/article/35115)
 
 
-### 使用QQ分享  
-### Share using QQ
+### 使用QQ分享
 
-- uni-app项目  
-- uni-app project
-调用 [uni.share(OBJECT)](api/plugins/share#share) 发起分享操作，OBJECT参数中provider属性值固定为`qq`
-Call [uni.share(OBJECT)](api/plugins/share#share) to initiate a share operation. The value of the provider attribute in the OBJECT parameter is fixed to `qq`
-- 5+ App项目  
-- 5+ App items
-调用 [plus.share.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices) 获取分享服务对象 [ShareService](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService), 再调用其 [send](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.send) 方法发送分享消息  
-Call [plus.share.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices) to get the sharing service object [ShareService](https:// www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService), then call its [send](https://www.html5plus.org/doc/zh_cn/share.html#plus.share. ShareService.send) method to send share message
+- uni-app项目
+调用 [uni.share(OBJECT)](/api/plugins/share.md#share) 发起分享操作，OBJECT参数中provider属性值固定为`qq`
+- 5+ App项目
+调用 [plus.share.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.getServices) 获取分享服务对象 [ShareService](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService), 再调用其 [send](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.send) 方法发送分享消息
 
 
-#### 示例代码  
-#### Sample code
-- uni-app项目  
-- uni-app project
-``` js  
+#### 示例代码
+- uni-app项目
+``` js
 uni.share({
     provider: 'qq',
 	summary: "我正在使用HBuilderX开发uni-app，赶紧跟我一起来体验！",
@@ -63,17 +51,15 @@ uni.share({
 		console.log("fail:" + JSON.stringify(err));
 	}
 });
-```  
+```
 
-- 5+ App项目  
-- 5+ App items
-``` js  
+- 5+ App项目
+``` js
 var qqShare = null;
 plus.share.getServices(function(services) {
 	for (var i in services) {
 		var service = services[i];
-		// 获取QQ分享对象 
-		// Get QQ share object
+		// 获取QQ分享对象
 		if (service.id == 'qq') {
 			qqShare = service;
 			break;
@@ -82,11 +68,9 @@ plus.share.getServices(function(services) {
 	qqShare.send( {
 		content: '我正在使用HBuilderX开发App，赶紧跟我一起来体验！'
 	}, function(){
-		// 分享成功 
-		// share successfully
+		// 分享成功
 	}, function(err) {
-    // 分享操作失败  
-    // share operation failed
+    // 分享操作失败
     // err.code是错误码
     // err.code is the error code
 	})

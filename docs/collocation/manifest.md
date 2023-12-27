@@ -41,9 +41,7 @@ The `manifest.json` file is the configuration file of the application, which is 
 |mp-lark|Object||[飞书小程序特有配置](/collocation/manifest?id=mp-lark)|3.2.12|
 | mp-lark| Object||[Special configuration of Feishu MiniApp](/collocation/manifest?id=mp-lark)| 3.2.12|
 |mp-qq|Object||[qq 小程序特有配置](/collocation/manifest?id=mp-qq)|2.1.0|
-| mp-qq| Object||[qq MiniApp specific configuration](/collocation/manifest?id=mp-qq)| 2.1.0|
-|mp-kuaishou|Object||[快手小程序特有配置](/collocation/manifest.html#mp-kuaishou)|3.2.2|
-| mp-kuaishou| Object||[Special configuration of Kuaishou MiniApp](/collocation/manifest.html#mp-kuaishou)| 3.2.2|
+|mp-kuaishou|Object||[快手小程序特有配置](/collocation/manifest.md#mp-kuaishou)|3.2.2|
 
 **Tips**
 
@@ -149,8 +147,7 @@ Splash (startup cover) is an inevitable existence of App and cannot be cancelled
 |waiting|Boolean|true|是否在程序启动界面显示等待圈或雪花||
 | waiting| Boolean| true|Whether to display the waiting circle or snowflake on the program startup interface||
 
-alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关闭启动界面（splash）策略，[详见](tutorial/app-splashscreen)
-The combination of alwaysShowBeforeRender and autoclose attributes can configure the following three strategies for closing the splash screen, [see](tutorial/app-splashscreen)
+alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关闭启动界面（splash）策略，[详见](../tutorial/app-splashscreen.md)
 
 **注意**
 
@@ -161,9 +158,7 @@ The combination of alwaysShowBeforeRender and autoclose attributes can configure
 - 相关改动，云打包生效，真机运行不生效。本地打包需自行在原生工程中配置
 - Relevant changes, cloud packaging takes effect, but real machine operation does not take effect. Local packaging needs to be configured in the native project by itself
 - App启动图中iOS的MAX等大屏设备的splash图若不配，会导致iOS认为此App没有为MAX优化，App将无法全屏，四周会有黑边
-- If the splash image of iOS MAX and other large-screen devices in the app startup image does not match, iOS will think that the app is not optimized for MAX, and the app will not be able to be full-screen, and there will be black borders around it
-- Android的splash支持.9.png，[详见](tutorial/app-splashscreen?id=9png)
-- Android's splash support.9.png, [see](tutorial/app-splashscreen?id=9png)
+- Android的splash支持.9.png，[详见](../tutorial/app-splashscreen.md#_9png)
 
 #### App Modules@modules
 
@@ -304,8 +299,7 @@ That is, once subcontracting is configured in pages.json, the MiniApp must take 
 当App代码使用了低版本webview不支持的语法时（比如使用了vue3），可以在manifest配置本属性，来指定最低运行的webview版本。
 When the App code uses a grammar that is not supported by a lower version of webview (such as using vue3), you can configure this property in the manifest to specify the minimum running webview version.
 
-当系统webview版本不符合需求时，uni-app引擎会自动弹框。同时开发者可以指定使用 x5引擎webview 来替代系统webview，以保障浏览器兼容性。详见[x5文档](/tutorial/app-android-x5.html)
-When the system webview version does not meet the requirements, the uni-app engine will automatically pop up the frame. At the same time, developers can specify to use the x5 engine webview to replace the system webview to ensure browser compatibility. See [x5 document](/tutorial/app-android-x5.html) for details
+当系统webview版本不符合需求时，uni-app引擎会自动弹框。同时开发者可以指定使用 x5引擎webview 来替代系统webview，以保障浏览器兼容性。详见[x5文档](/tutorial/app-android-x5.md)
 
 当你的应用强依赖x5时，比如需要vue页面的字体和tabbar等原生界面保持一致时，也可以在manifest配置本属性。
 When your application strongly relies on x5, for example, when you need to keep the font of the vue page consistent with native interfaces such as tabbar, you can also configure this property in the manifest.
@@ -633,8 +627,7 @@ Tips: For treeshaking optimization (treeShaking) principle and optimization resu
 |uniStatistics|Object|[微信小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 | uniStatistics| Object|[Whether to enable uni statistics in the WeChat MiniApp, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
-| scopedSlotsCompiler| String| Vue2 scoped slots compilation mode, supported from uni-app 3.1.19+, options: legacy, auto, augmented, default: auto|
-|mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
+|mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |embeddedAppIdList|Array|要半屏跳转的小程序appid。[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
 |requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#requiredPrivateInfos)|
@@ -722,7 +715,7 @@ After configuring the directory, you need to create a new `vue.config.js` in the
 |uniStatistics				|Object	|[支付宝小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 | uniStatistics | Object |[Whether the Alipay MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
-|mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
+|mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |lazyCodeLoading|String|是否开启代码按需执行。|
 |styleIsolation|String|组件样式隔离方式，默认值为 `apply-shared`，具体配置 [详见](https://opendocs.alipay.com/mini/framework/page-acss)。 uni-app 3.99+ 开始支持|

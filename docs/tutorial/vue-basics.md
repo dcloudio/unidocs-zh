@@ -80,18 +80,18 @@ Vue is a single-page application, which makes the page partially refresh, withou
 - Before a `html`large node, there `script`and `style`nodes;
 
 ```html
-	<!DOCTYPE html>  
-	<html>  
-		<head>  
-			<meta charset="utf-8" />  
-			<title></title>  
-			<script type="text/javascript">  
-			</script>  
-			<style type="text/css">  
-			</style>  
-		</head>  
-		<body>  
-		</body>  
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8" />
+			<title></title>
+			<script type="text/javascript">
+			</script>
+			<style type="text/css">
+			</style>
+		</head>
+		<body>
+		</body>
 	</html>
 ```
 
@@ -100,16 +100,16 @@ Vue is a single-page application, which makes the page partially refresh, withou
 - Now `template`is a node for writing tag components, `script`and `style`is a node in parallel, that is, there are three-level node.
 
 ```html
-	<template>  
-		<view>  
-		注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。  
-		</view>  
-	</template>  
-	<script>  
-		export default {  
-		}  
-	</script>  
-	<style>  
+	<template>
+		<view>
+		注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。
+		</view>
+	</template>
+	<script>
+		export default {
+		}
+	</script>
+	<style>
 	</style>
 ```
 
@@ -121,7 +121,7 @@ Vue is a single-page application, which makes the page partially refresh, withou
 - In the past, external js and css were introduced through script src and link href;
 
 ```html
-	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>  
+	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 ```
 
@@ -136,9 +136,9 @@ There is a tool class `util.js` in the `common` directory of hello uni-app. You 
 
 
 ```html
-	<script>  
-		var util = require('../../../common/util.js');  //require这个js模块  
-		var formatedPlayTime = util.formatTime(playTime); //调用js模块的方法  
+	<script>
+		var util = require('../../../common/util.js');  //require这个js模块
+		var formatedPlayTime = util.formatTime(playTime); //调用js模块的方法
 	</script>
 ```
 
@@ -146,11 +146,11 @@ There is a tool class `util.js` in the `common` directory of hello uni-app. You 
 In this `util.js`, the prior should `function`method for encapsulating as an object
 
 ```js
-	function formatTime(time) {  
-		return time;//这里没写逻辑  
-	}  
-	module.exports = {  
-		formatTime: formatTime  
+	function formatTime(time) {
+		return time;//这里没写逻辑
+	}
+	module.exports = {
+		formatTime: formatTime
 	}
 ```
 
@@ -159,12 +159,10 @@ In this `util.js`, the prior should `function`method for encapsulating as an obj
 Of course, there are some advanced usages
 
 ```js
-	// 直接使用js模块的属性。在hello uni-app有示例 
-	// Directly use the properties of the js module. There are examples in hello uni-app
-	var dateUtils = require('../../../common/util.js').dateUtils; 
-	// 将js导入并重命名为echarts，然后使用echarts.来继续执行方法。在hello uni-app有示例 
-	// Import js and rename it to echarts, then use echarts. to continue executing the method. There are examples in hello uni-app
-	import * as echarts from '/components/echarts/echarts.simple.min.js'; 
+	// 直接使用js模块的属性。在hello uni-app有示例
+	var dateUtils = require('../../../common/util.js').dateUtils;
+	// 将js导入并重命名为echarts，然后使用echarts.来继续执行方法。在hello uni-app有示例
+	import * as echarts from '/components/echarts/echarts.simple.min.js';
 ```
 
 **css外部文件导入**。全局样式，在根目录下的 `app.vue` 里写入，每个页面都会加载 `app.vue` 里的样式。
@@ -172,17 +170,16 @@ Of course, there are some advanced usages
 
 
 ```html
-	<style>  
-		@import "./common/uni.css";  
-		.uni-hello-text{  
-			color:#7A7E83;  
-		}  
+	<style>
+		@import "./common/uni.css";
+		.uni-hello-text{
+			color:#7A7E83;
+		}
 	</style>
 ```
 
 
-**另外，vue支持组件导入，可以更方便的封装一个包括界面、js、样式的库**。[详见](/vue-components.md)
-**In addition, Vue supports component import, which makes it easier to encapsulate a library that includes interface, js, and styles** [See](/vue-components.md).
+**另外，vue支持组件导入，可以更方便的封装一个包括界面、js、样式的库**。[详见](./vue-components.md)
 
 
 ### 组件/标签的变化
@@ -210,22 +207,22 @@ So what is the difference between a label and a component, isn't it all surround
 - In the previous DOM operation, if you want to change the display content of a DOM element, such as the display text of a view: set the id to the view, then get the DOM element through the selector in js, and then perform assignment operations through js to modify the DOM element Attribute or value.
 
 ```html
-	<html>  
-		<head>  
-			<script type="text/javascript">  
-				document.addEventListener("DOMContentLoaded",function () {  
-					document.getElementById("spana").innerText="456"  
-				})  
-				function changetextvalue () {  
-					document.getElementById("spana").innerText="789"  
-				}  
-			</script>  
-		</head>  
-		<body>  
-			<span id="spana">123</span>  
-			<button type="button" onclick="changetextvalue()">修改为789</button>  
-		</body>  
-	</html>  
+	<html>
+		<head>
+			<script type="text/javascript">
+				document.addEventListener("DOMContentLoaded",function () {
+					document.getElementById("spana").innerText="456"
+				})
+				function changetextvalue () {
+					document.getElementById("spana").innerText="789"
+				}
+			</script>
+		</head>
+		<body>
+			<span id="spana">123</span>
+			<button type="button" onclick="changetextvalue()">修改为789</button>
+		</body>
+	</html>
 ```
 
 
@@ -238,29 +235,29 @@ So what is the difference between a label and a component, isn't it all surround
 
 
 ```html
-	<template>  
-		<view>  
-			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->  
-			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->  
-		</view>  
-	</template>  
-	<script>  
-		export default {  
-			data() {  
-				return {  
-					textvalue:"123",  
-					buttontype:"primary"  
-				};  
-			},  
-			onLoad() {  
-				this.textvalue="456"//这里修改textvalue的值，其实123都来不及显示就变成了456  
-			},  
-			methods: {  
-				changetextvalue() {  
-					this.textvalue="789"//这里修改textvalue的值，页面自动刷新为789  
-				}  
-			}  
-		}  
+	<template>
+		<view>
+			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->
+			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->
+		</view>
+	</template>
+	<script>
+		export default {
+			data() {
+				return {
+					textvalue:"123",
+					buttontype:"primary"
+				};
+			},
+			onLoad() {
+				this.textvalue="456"//这里修改textvalue的值，其实123都来不及显示就变成了456
+			},
+			methods: {
+				changetextvalue() {
+					this.textvalue="789"//这里修改textvalue的值，页面自动刷新为789
+				}
+			}
+		}
 	</script>
 ```
 
@@ -275,8 +272,8 @@ So what is the difference between a label and a component, isn't it all surround
 相比Web平台， Vue.js 在 `uni-app` 中使用差异主要集中在两个方面：
 Compared with the Web platform, the differences in the use of Vue.js in `uni-app` are mainly concentrated in two aspects:
 
-- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.html#applifecycle)及[页面的生命周期](/tutorial/page.html#lifecycle)。
-- 受限：相比 Web 平台，在小程序和 App 端部分功能支持不完善，具体见[兼容性列表](/vue3-api)。
+- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.md#applifecycle)及[页面的生命周期](/tutorial/page.md#lifecycle)。
+- 受限：相比 Web 平台，在小程序和 App 端部分功能支持不完善，具体见[兼容性列表](./vue3-api)。
 
 
 
@@ -432,7 +429,7 @@ These expressions will be evaluated as JavaScript in the data scope of the owner
 > - `Set`
 > - `JSON`
 > - `Intl`
-> 
+>
 > 你不应该在模板表达式中试图访问用户定义的全局变量。
 > You should not attempt to access user-defined globals in template expressions.
 
@@ -475,11 +472,11 @@ Dynamically bind one or more attributes, or a component `prop`to the expression.
 	<!-- 缩写 -->
 	<!-- abbreviations -->
 	<image :src="imgUrl"></image>
-	
+
 	<!-- prop 绑定。“prop”必须在 my-component 中声明。-->
 	<!-- Prop binding. "Prop" must be declared in the my-component.-->
 	<my-component :prop="someThing"></my-component>
-	
+
 	<button v-bind:disabled="isButtonDisabled">Button</button>
 ```
 
@@ -496,8 +493,7 @@ The v-on instruction, which is used to monitor DOM events. v-on is abbreviated a
 
 ```html
 	<!-- 完整语法 -->
-	<!-- Complete syntax -->
-	<view v-on:click="doSomething">点击</view>	
+	<view v-on:click="doSomething">点击</view>
 	<!-- 缩写 -->
 	<!-- abbreviations -->
 	<view @click="doSomething">点击</view>
@@ -1563,8 +1559,7 @@ It is recommended to use `uni-app`: [Form component](https://uniapp.dcloud.io/co
 Each contains a calculated attribute `getter`and a `setter`default is to use `getter`to read. All `getter`and `setter`the `this`context is automatically bound instance Vue.
 
 
-#### 计算属性的 getter 
-#### Getter of computed property
+#### 计算属性的 getter
 
 
 在模板中绑定表达式是非常便利的，但是它们实际上只用于简单的操作。在模板中放入太多的逻辑会让模板过重且难以维护。例如：
@@ -1787,9 +1782,11 @@ The above code is imperative and repetitive. Compare it with the version of the 
 ### 侦听器watch
 ### Listener watch
 
-- 类型：{ [key: string]: string | Function | Object | Array }
-- Type：{ [key: string]: string | Function | Object | Array }
+- 类型
 
+	```ts
+	interface Watch { [key: string]: string | Function | Object | Array }
+	```
 
 - 一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象。Vue 实例将会在实例化时调用 `$watch()` ，遍历 `watch` 对象的每一个 `property` 。
 - For an object, the key is the expression to be observed, and the value is the corresponding callback function. The value can also be a method name, or an object containing options. Vue instance will be called upon instantiation `$watch()`, traversing `watch`each object `property`.

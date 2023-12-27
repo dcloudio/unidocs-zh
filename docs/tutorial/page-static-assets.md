@@ -60,8 +60,7 @@ background-image: url(../../static/logo.png);
 
 **Tips**
 
-- 引入字体图标请参考，[字体图标](/tutorial/syntax-css.html#字体图标)
-- For the introduction of font icons, please refer to [Font Icons](/tutorial/syntax-css.html#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87)
+- 引入字体图标请参考，[字体图标](/tutorial/syntax-css.md#字体图标)
 - `@`开头的绝对路径以及相对路径会经过 base64 转换规则校验
 - Absolute paths and relative paths starting with `@` will be checked by base64 conversion rules
 - 不支持本地图片的平台，小于 40kb，一定会转 base64。（共四个平台 mp-weixin, mp-qq, mp-toutiao, app v2）

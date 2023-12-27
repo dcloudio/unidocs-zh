@@ -33,29 +33,19 @@ At the same time, users are required to not read any personal information (inclu
 
 
 **注意：App要支持disagreeMode，需要根据业务进行适配**
-**Note: To support disagreeMode, the App needs to be adapted according to the business**
-> - **前提条件：HBuilderX更新到3.3.1及以上版本** 
-> - **Prerequisite: HBuilderX is updated to version 3.3.1 and above**
-> - **第一步：原生隐私政策提示框[配置支持disagreeMode](#disagree)** 
-> - **First step: Native privacy policy prompt box [Configure support disagreeMode](#disagree)**
+> - **前提条件：HBuilderX更新到3.3.1及以上版本**
+> - **第一步：原生隐私政策提示框[配置支持disagreeMode](#disagree)**
 > - **第二步：[适配App的基本功能服务](#basic-services)，确保不要调用任何可能涉及“隐私政策”合规的API**
-> - **Step 2: [Adapt the basic functional services of the App](#basic-services), make sure not to call any API that may involve "Privacy Policy" compliance**
-> - **第三步：适配需要使用`非必要个人信息`的业务功能，在调用功能前[引导用户同意“隐私政策”协议](#showPrivacy)**
-> - **Step 3: Adapt to business functions that require the use of `non-essential personal information`, before calling the function [guide the user to agree to the "Privacy Policy" agreement](#showPrivacy)**
+> - **第三步：适配需要使用`非必要个人信息`的业务功能，在调用功能前[引导用户同意“隐私政策”协议](#showprivacy)**
 
 
+### 配置支持disagreeMode@disagree
 
-<a id="disagree"></a>
-
-### 配置支持disagreeMode
-### Configure to support disagreeMode
-
-在HBuilderX中打开项目的原生隐私政策提示框配置文件[androidPrivacy.json](https://ask.dcloud.net.cn/article/36937)，添加`disagreeMode`配置设置`support`为true. 
-Open the project's native privacy policy prompt box configuration file [androidPrivacy.json](https://ask.dcloud.net.cn/article/36937) in HBuilderX, add the `disagreeMode` configuration setting `support` to true.
+在HBuilderX中打开项目的原生隐私政策提示框配置文件[androidPrivacy.json](https://ask.dcloud.net.cn/article/36937)，添加`disagreeMode`配置设置`support`为true.
 ```json
 {
 	"prompt": "template",
-	"buttonAccept": "同意并接受",  
+	"buttonAccept": "同意并接受",
 	"buttonRefuse": "基础功能模式",
 	"disagreeMode": {
     	"support": false,
@@ -67,12 +57,10 @@ Open the project's native privacy policy prompt box configuration file [androidP
 
 ```
 
-- support  
+- support
 Boolean类型，true表示开启disagreeMode；false表示不开启（用户不同意“隐私政策”则退出应用）。默认值为false。
-Boolean type, true means to open disagreeMode; false means not to open (the user does not agree to the "Privacy Policy" and exits the application). The default value is false.
-- loadNativePlugins  
-Boolean类型，表示在disagreeMode模式是否加载uni原生插件，true表示加载；false表示不加载（此时调用uni.requireNativePlugin加载插件扩展Module返回undefined，插件的扩展组件Component也无法使用）。默认值为true。  
-Boolean type, indicating whether to load the uni native plugin in disagreeMode mode, true means loading; false means not loading (in this case, calling uni.requireNativePlugin to load the plugin extension Module returns undefined, and the extension component Component of the plugin cannot be used). The default value is true.
+- loadNativePlugins
+Boolean类型，表示在disagreeMode模式是否加载uni原生插件，true表示加载；false表示不加载（此时调用uni.requireNativePlugin加载插件扩展Module返回undefined，插件的扩展组件Component也无法使用）。默认值为true。
 使用场景：在disagreeMode模式下如果因为使用uni原生插件不符合“隐私政策”合规检测，无法确定是哪个插件引起的，可以简单配置loadNativePlugins为false不加载所有原生插件。注意：配置为false需要在引导用户同意“隐私政策”后重启应用。
 Usage scenario: In disagreeMode mode, if the use of uni native plug-ins does not comply with the "Privacy Policy" compliance detection and cannot be determined which plug-in is causing the problem, you can simply configure loadNativePlugins to false to not load all native plug-ins. Note: Setting it to false requires restarting the application after guiding the user to agree to the "Privacy Policy".
 - visitorEntry
@@ -82,19 +70,11 @@ Whether to increase the display of the `Visitor Mode` button, which is used to e
 是否每次启动展示都展示隐私协议，默认为false。  注意此字段只有在配置了 support/visitorEntry 为true，即当前应用支持无权限模式的情况下的才会生效。如果用户没有配置support/visitorEntry 则延续原有的逻辑，每次打开都会展示隐私弹窗
 Whether to display the privacy agreement every time the display is started, the default is false. Note that this field will only take effect when support/visitorEntry is configured as true, that is, the current application supports permissionless mode. If the user does not configure support/visitorEntry, the original logic will continue, and a privacy pop-up window will be displayed every time it is opened
 
+### 适配App的基本功能服务@basic-services
 
-<a id="basic-services"></a>
+disagreeMode表示用户未同意“隐私政策”，此时App仅提供基本功能服务，此模式下不能调用涉及隐私合规相关的API，如果调用了可能会因为读取隐私信息导致App无法通过合规检测，参考[disagreeMode模式限制uni API和组件](#limit-uni)及[disagreeMode模式限制5+ API](#limit-plus)。如果基本功能服务的页面需要需要调用到限制API，需先[判断是否运行在disagreeMode模式](#judge)，如果是的话需先[引导用户同意“隐私政策”协议](#showprivacy)，用户同意隐私政策后再调用限制API。
 
-### 适配App的基本功能服务
-### Adapt to the basic functional services of the App
-
-disagreeMode表示用户未同意“隐私政策”，此时App仅提供基本功能服务，此模式下不能调用涉及隐私合规相关的API，如果调用了可能会因为读取隐私信息导致App无法通过合规检测，参考[disagreeMode模式限制uni API和组件](#limit-uni)及[disagreeMode模式限制5+ API](#limit-plus)。如果基本功能服务的页面需要需要调用到限制API，需先[判断是否运行在disagreeMode模式](#judge)，如果是的话需先[引导用户同意“隐私政策”协议](#showPrivacy)，用户同意隐私政策后再调用限制API。
-disagreeMode means that the user does not agree to the "Privacy Policy". At this time, the App only provides basic functional services. In this mode, APIs related to privacy compliance cannot be called. If it is called, the App may fail the compliance detection due to reading privacy information. See [disagreeMode mode limits uni APIs and components](#limit-uni) and [disagreeMode mode limits 5+ APIs](#limit-plus). If the page of the basic function service needs to call the restriction API, you must first [judg whether it is running in disagreeMode mode](#judge), if so, you must first [guide the user to agree to the "Privacy Policy" agreement](#showPrivacy), the user agrees Call the restriction API after the privacy policy.
-
-<a id="judge"></a>
-
-#### 判断是否运行在disagreeMode模式
-#### Determine whether to run in disagreeMode mode
+#### 判断是否运行在disagreeMode模式@judge
 
 可通过[plus.runtime.isAgreePrivacy](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.isAgreePrivacy)查询当前应用是否用户同意隐私政策可判断是否运行在disagreeMode模式，示例代码如下：
 You can use [plus.runtime.isAgreePrivacy](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.isAgreePrivacy) to check whether the user agrees to the privacy policy of the current application, and can determine whether it is running in disagreeMode mode. The sample code is as follows:
@@ -114,11 +94,7 @@ if(plus.runtime.isAgreePrivacy()) {
 plus.runtime.isAgreePrivacy()返回为true表示用户已经同意隐私政策，调用相关被限制的API；返回false表示用户没有同意隐私政策，运行运行在disagreeMode模式，不能调用相关被限制的API。
 plus.runtime.isAgreePrivacy() returns true to indicate that the user has agreed to the privacy policy and calls the relevant restricted APIs; returns false to indicate that the user does not agree to the privacy policy, runs in disagreeMode mode, and cannot call restricted APIs.
 
-
-<a id="limit-uni"></a>
-
-#### disagreeMode模式限制uni API和组件
-#### disagreeMode restricts uni APIs and components
+#### disagreeMode模式限制uni API和组件@limit-uni
 
 在disagreeMode模式下不要使用以下uni API及组件，否则影响应用商店上架合规检测！
 Do not use the following uni APIs and components in disagreeMode mode, otherwise it will affect the compliance detection of the app store!
@@ -163,10 +139,7 @@ Do not use the following uni APIs and components in disagreeMode mode, otherwise
 * barcode
 * map
 
-<a id="limit-plus"/>
-
-#### disagreeMode模式限制plus API
-#### disagreeMode mode limit plus API
+#### disagreeMode模式限制plus API@limit-plus
 
 在disagreeMode模式下不要使用以下5+ API，否则影响应用商店上架合规检测！
 Do not use the following 5+ APIs in disagreeMode mode, otherwise it will affect the compliance detection of the app store!
@@ -214,10 +187,7 @@ Do not use the following 5+ APIs in disagreeMode mode, otherwise it will affect 
 |Video|plus.video.createLivePusher, plus.video.LivePusher APIs related to push streaming are restricted and cannot be used
 
 
-<a id="showPrivacy"></a>
-
-### 引导用户同意“隐私政策”协议
-### Instruct the user to agree to the "Privacy Policy" agreement
+### 引导用户同意“隐私政策”协议@showPrivacy
 
 当用户在disagreeMode模式使用基本功能服务时，可能链接打开使用了限制API的业务功能，此时可调用[plus.runtime.showPrivacyDialog](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.showPrivacyDialog)弹出隐私政策协议框，引导用户同意隐私政策后再使用相关业务功能。示例代码如下：
 When the user uses the basic function service in disagreeMode mode, the link may open the business function that uses the restricted API. At this time, you can call [plus.runtime.showPrivacyDialog](https://www.html5plus.org/doc/zh_cn/runtime. html#plus.runtime.showPrivacyDialog) pops up a privacy policy agreement box, guiding users to agree to the privacy policy before using related business functions. The sample code is as follows:

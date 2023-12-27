@@ -5,8 +5,7 @@ If an app uses a third-party or social login service (e.g., Facebook login, Goog
 > HBuilderX 2.4.7+ version newly supports `Sign in with Apple`, Apple sign in is a newly added feature of **iOS13**, when your application uses a third-party login such as WeChat login, you also need to integrate Apple Login, otherwise submitting AppStore review will be rejected
 
 
-### 开通  
-### Open
+### 开通
 使用苹果登录首先需要在苹果开发者后台开启 App 的 `Sign In with Apple` 服务：
 To log in with Apple, you first need to enable the `Sign In with Apple` service of the App in the Apple developer background:
 - 登录到[苹果开发者后台](https://developer.apple.com/)
@@ -23,8 +22,7 @@ To log in with Apple, you first need to enable the `Sign In with Apple` service 
 
 
 
-### 配置  
-### Configuration
+### 配置
 打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“苹果登录（Sign in with Apple）”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-manifest.png)
 
@@ -37,20 +35,14 @@ To log in with Apple, you first need to enable the `Sign In with Apple` service 
 
 
 
-### 使用苹果登录  
-### Login with Apple
+### 使用苹果登录
 
-- uni-app项目  
-- uni-app project
-调用 [uni.login(OBJECT)](api/plugins/login?id=login) 发起授权登录，，调用 [uni.getUserInfo(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=getuserinfo) 获取用户信息，OBJECT参数中provider属性值固定为`apple`
-Call [uni.login(OBJECT)](api/plugins/login?id=login) to initiate authorized login, call [uni.getUserInfo(OBJECT)](https://uniapp.dcloud.io/api/plugins/login ?id=getuserinfo) to get user information, the value of the provider attribute in the OBJECT parameter is fixed to `apple`
-- 5+ App项目  
-- 5+ App items
-调用 [plus.oauth.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.getServices) 获取登录服务对象 [plus.oauth.AuthService](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService), 再调用其 [login](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService.login) 方法进行登录授权 
-Call [plus.oauth.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.getServices) to get the login service object [plus.oauth.AuthService]( https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService), then call its [login](https://www.html5plus.org/doc/zh_cn/oauth.html# plus.oauth.AuthService.login) method for login authorization
+- uni-app项目
+调用 [uni.login(OBJECT)](/api/plugins/login.md#login) 发起授权登录，，调用 [uni.getUserInfo(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=getuserinfo) 获取用户信息，OBJECT参数中provider属性值固定为`apple`
+- 5+ App项目
+调用 [plus.oauth.getServices(successCB,errorCB)](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.getServices) 获取登录服务对象 [plus.oauth.AuthService](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService), 再调用其 [login](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService.login) 方法进行登录授权
 
-#### 登录按钮样式  
-#### Login button style
+#### 登录按钮样式
 苹果对登录按钮样式有要求，请按照苹果要求统一设置登录按钮的样式，否则审核可能会被拒绝，注意以下事项：
 Apple has requirements for the style of the login button, please set the style of the login button uniformly according to Apple's requirements, otherwise the review may be rejected, pay attention to the following:
 - 按钮必须在显著的位置（避免滑动屏幕才能看到）
@@ -62,19 +54,16 @@ Apple has requirements for the style of the login button, please set the style o
 - 具体规则请参考苹果 [官方文档](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/)
 - For specific rules, please refer to Apple's [official document](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/)
 
-下面是原生端默认的几种按钮样式供大家参考（width:130pt, height:30pt, corner radius: 6pt）  
+下面是原生端默认的几种按钮样式供大家参考（width:130pt, height:30pt, corner radius: 6pt）
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-style-zh.png)
 
 
-#### 示例代码  
-#### Sample code
+#### 示例代码
 
-> 注：因为是 iOS13+ 系统才支持苹果登录，所以建议在App的界面入口判断下，只有 iOS13 才显示Apple登录的选项  
-> Note: Because the iOS13+ system only supports Apple login, it is recommended that only iOS13 display the option of Apple login under the judgment of the interface entry of the App.
+> 注：因为是 iOS13+ 系统才支持苹果登录，所以建议在App的界面入口判断下，只有 iOS13 才显示Apple登录的选项
 
-- uni-app项目  
-- uni-app project
-``` js  
+- uni-app项目
+``` js
 uni.login({
     provider: 'apple',
     success: function (loginRes) {
@@ -89,23 +78,20 @@ uni.login({
         })
     },
     fail: function (err) {
-        // 登录授权失败  
-        // Login authorization failed
+        // 登录授权失败
         // err.code错误码参考`授权失败错误码(code)说明`
         // err.code error code refer to `authorization failure error code (code) description`
     }
 });
-```  
+```
 
-- 5+ App项目  
-- 5+ App items
-``` js  
+- 5+ App项目
+``` js
 var appleOauth = null;
 plus.oauth.getServices(function(services) {
 	for (var i in services) {
 		var service = services[i];
-		// 获取苹果授权登录对象，苹果授权登录id 为 'apple' iOS13以下系统，不会返回苹果登录对应的 service  
-		// Get the Apple authorized login object, if the Apple authorized login id is 'apple' iOS13 or below, the service corresponding to Apple login will not be returned
+		// 获取苹果授权登录对象，苹果授权登录id 为 'apple' iOS13以下系统，不会返回苹果登录对应的 service
 		if (service.id == 'apple') {
 			appleOauth = service;
 			break;
@@ -119,13 +105,11 @@ plus.oauth.getServices(function(services) {
     // appleOauth.appleInfo中保存苹果登录认证完整数据，参考`appleInfo`说明
     // appleOauth.appleInfo saves the complete data of Apple login authentication, please refer to the description of `appleInfo`
 	}, function(err) {
-    // 登录授权失败  
-    // Login authorization failed
+    // 登录授权失败
     // err.code是错误码
     // err.code is the error code
 	}, {
-		// 默认只会请求用户名字信息，如需请求用户邮箱信息，需要设置 scope: 'email'  
-		// By default, only user name information is requested. To request user email information, you need to set scope: 'email'
+		// 默认只会请求用户名字信息，如需请求用户邮箱信息，需要设置 scope: 'email'
 		scope: 'email'
 	})
 }, function(err) {
@@ -136,7 +120,7 @@ plus.oauth.getServices(function(services) {
 
 
 
-**appleInfo**  
+**appleInfo**
 
 属性|类型|说明
 property|type|description

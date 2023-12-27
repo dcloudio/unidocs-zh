@@ -736,7 +736,7 @@ exports.main = async(event) => {
 | 30002 |  用户点击了其他登录方式  | 无 |
 | 30002 | User clicked on another login method | None |
 | 30003 |  用户关闭验证界面  | 无 |
-| 30004 |  其他错误  | [30004章节](#30004)自查或联系官方人员 |
+| 30004 |  其他错误  | [30004章节](#_30004)自查或联系官方人员 |
 | 30005 |  预登录失败  | 不具备一键登录的使用前提，设备不支持/未开启数据流量/其他原因 |
 | 30005 | Pre-login failed | There is no prerequisite for one-key login, the device does not support / data traffic is not enabled / other reasons |
 | 30006 |  一键登录失败  | 无 |

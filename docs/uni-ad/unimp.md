@@ -39,7 +39,7 @@
 
 2. 在广告位列表中点击新建广告位
 
-3. 必须开启[服务器回调](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#callback)，且响应正确的格式
+3. 激励视频广告位必须开启[服务器回调](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#callback)，且回调测试请求响应正确的格式。
 
 
 提示

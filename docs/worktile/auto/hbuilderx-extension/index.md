@@ -27,9 +27,7 @@ The main functions are:
 2. Windows电脑不支持运行测试到`ios手机`。
 2. Windows computers do not support running tests to `ios phone`.
 3. MacOSX电脑，仅支持运行测试到`iOS模拟器`，不支持ios真机，测试iOS模拟器，需要电脑装安装XCode。
-3. MacOSX computer, only supports running tests to `iOS simulator`, does not support ios real machine, to test iOS simulator, you need to install XCode on the computer.
-4. 运行测试到H5，仅支持`chrome`浏览器，不支持其它浏览器。 
-4. Run the test to H5, only `chrome` browser is supported, other browsers are not supported.
+4. 运行测试到H5，仅支持`chrome`浏览器，不支持其它浏览器。
 5. 运行测试到Android手机，如果HBuilderX仅检测到一个android设备，`直接`运行测试到当前已连接设备。`多个`设备时，会弹窗要求选择手机。
 5. Run the test to the Android phone, if HBuilderX detects only one android device, `directly` run the test to the currently connected device. When you have `multiple` devices, a pop-up window will ask you to select a phone.
 6. node: 当本机未安装node时，将使用HBuilderX`内置node`运行测试。反之，本机安装了node，则使用本机的node。
@@ -54,8 +52,7 @@ As shown in the figure below, in the plug-in market, enter the [plug-in details 
 ## 测试环境安装@env
 ## Test environment install @env
 
-**插件依赖：** 
-**Plugin dependencies:**
+**插件依赖：**
 
 - H5、微信、ios、android自动化测试依赖`puppeteer`、`adbkit`、`node-simctl`、`jest`、`playwright`，运行插件时，如果未安装此依赖，将会弹窗自动安装。
 - H5, WeChat, ios, android automated testing depends on `puppeteer`, `adbkit`, `node-simctl`, `jest`, `playwright`. When running the plugin, if this dependency is not installed, a pop-up window will be installed automatically.
@@ -81,7 +78,7 @@ For uni-app ordinary projects, when `initializing the test environment` or `runn
 如下图所示，项目管理器，选中项目，右键菜单【初始化测试环境】
 As shown in the figure below, the project manager, select the project, right-click menu [initialize the test environment]
 
-注意：安装环境依赖时，如果检测到项目下不存在测试配置文件[env.js](/docs/file/env)和[jest.config.js](../../auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
+注意：安装环境依赖时，如果检测到项目下不存在测试配置文件 `env.js` 和[jest.config.js](../../auto/quick-start?id=jestconfigjs)，则会自动创建测试配置文件。
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/env_install.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 
@@ -139,8 +136,7 @@ As shown in the figure below, when running the test, you can select the correspo
 ### 选择设备@select-devices
 ### Select devices @select-devices
 
-> 如果无法获取到设备信息，请[参考](tutorial/run/run-app-faq.md)
-> If the device information cannot be obtained, please [reference](tutorial/run/run-app-faq.md)
+> 如果无法获取到设备信息，请[参考](/tutorial/run/run-app-faq.md)
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-test-select-device.jpg" style="zoom: 45%;border: 1px solid #eee;border-radius: 5px;"/>
 
@@ -237,8 +233,7 @@ describe('test title', () => {
 });
 ```
 
-扩展：如上测试代码中，使用了`beforeAll`函数，它用于在所有测试之前执行。[了解jest更多钩子函数](#SetupTeardown)
-Extension: In the test code above, the `beforeAll` function is used, which is used to execute before all tests. [Learn more hook functions of jest](#SetupTeardown)
+扩展：如上测试代码中，使用了`beforeAll`函数，它用于在所有测试之前执行。[了解jest更多钩子函数](#setupteardown)
 
 ## Setup and Teardown@SetupTeardown
 

@@ -5,9 +5,7 @@ HBuilderX中打开项目的manifest.json文件，在“App图标配置”中可�
 If you do not use the automatic icon generation method, you can configure the icons for Android and iOS platforms according to the following documents.
 
 ### Android平台
-### Android Platform
-**注意事项**  
-**Precautions**  
+**注意事项**
 - 必须使用png格式，其它格式需要使用图片工具转换，注意不要直接将jpg等其它格式图片直接改名为png
 - The png format must be used. Other formats need to be converted using the picture tool. Be careful not to directly rename pictures in other formats such as jpg to png
 - 系统没有对图标分辨率进行限制，按照建议的分辨率配置即可
@@ -18,15 +16,12 @@ If you do not use the automatic icon generation method, you can configure the ic
 > 提示：可能有些特殊手机ROM对图标有所要求，提交相应应用市场时注意看是否有要求
 > Tip: Some special mobile phone ROMs may have requirements for icons, please pay attention to whether there are requirements when submitting the corresponding application market
 
-#### 云端打包  
-#### Cloud Packaging
-**可视化界面配置**  
-**Visual interface configuration**
+#### 云端打包
+**可视化界面配置**
 推荐在可视化界面操作配置，在“Android图标配置”下根据分辨率选择对应的图标：
 ![](https://native-res.dcloud.net.cn/images/uniapp/icons/android.png)
 
-**源码视图配置**  
-**Source view configuration**
+**源码视图配置**
 切换到源码视图界面，在 "app-plus"->"distribute"->"icons"->"android" 节点根据以下属性配置对应分辨率图标路径：
 Switch to the source view interface, and configure the corresponding resolution icon path in the "app-plus"->"distribute"->"icons"->"android" node according to the following attributes:
 
@@ -49,9 +44,8 @@ Switch to the source view interface, and configure the corresponding resolution 
 > 提示：5+ App项目源码视图节点为app->distribute->icons->android
 > Tip: 5+ App project source code view node is app->distribute->icons->android
 
-**默认图标**  
-**Default Icon**
-云端打包没有配置图标时将使用以下默认图标：  
+**默认图标**
+云端打包没有配置图标时将使用以下默认图标：
 ![](https://native-res.dcloud.net.cn/images/uniapp/icons/def-android.png)
 
 
@@ -63,9 +57,7 @@ Offline packaging needs to configure the application icon in the native project,
 
 
 ### iOS平台
-### iOS Platform
-**注意事项**  
-**Precautions**  
+**注意事项**
 - 必须使用png格式，其它格式需要使用图片工具转换，注意不要直接将jpg等其它格式图片直接改名为png
 - The png format must be used. Other formats need to be converted using the picture tool. Be careful not to directly rename pictures in other formats such as jpg to png
 - 图标必须是直角，不要使用圆角图标，使用圆角AppStore审核不会通过
@@ -78,27 +70,20 @@ Offline packaging needs to configure the application icon in the native project,
 更多应用图标相关信息，参考苹果官方说明：[https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/app-icon/](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/app-icon/)
 For more information about app icons, refer to Apple's official instructions: [https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/app-icon/](https://developer .apple.com/design/human-interface-guidelines/ios/icons-and-images/app-icon/)
 
-#### 云端打包  
-#### Cloud Packaging
-**可视化界面配置**  
-**Visual interface configuration**
+#### 云端打包
+**可视化界面配置**
 推荐在可视化界面操作配置，分别在“app store”、“iPhone图标配置”、“iPad图标配置”下根据分辨率选择对应的图标：
 ![](https://native-res.dcloud.net.cn/images/uniapp/icons/ios.png)
 
-- app store  
+- app store
 应用需要提交到AppStore上架审核是必须配置
-The application needs to be submitted to the AppStore for review, which is a must-configure
-- iPhone图标配置  
-- iPhone icon configuration
+- iPhone图标配置
 打包时勾选“支持iPhone”时必须配置
-It must be configured when "Support iPhone" is checked when packaging
-- iPad图标配置  
-- iPad icon configuration
+- iPad图标配置
 打包时勾选“支持iPad”是必须配置
 Checking "support iPad" when packaging is a must
 
-**源码视图配置**  
-**Source view configuration**
+**源码视图配置**
 切换到源码视图界面，在 "app-plus"->"distribute"->"icons"->"ios" 节点根据以下属性配置对应分辨率图标路径：
 Switch to the source code view interface, and configure the corresponding resolution icon path in the "app-plus"->"distribute"->"icons"->"ios" node according to the following properties:
 
@@ -112,9 +97,7 @@ Switch to the source code view interface, and configure the corresponding resolu
 |appstore|String|App Store图标路径，分辨率要求1024x1024|
 |appstore|String|App Store icon path, resolution 1024x1024|
 
-<a id="iphone"/>
-iPhone图标源码参数
-iPhone icon source code parameters
+##### iPhone图标源码参数@iphone
 
 |属性名称|类型|说明|
 |property name|type|description|
@@ -134,11 +117,8 @@ iPhone icon source code parameters
 |notification@2x|String|iOS7+设备通知栏图标，分辨率要求40x40|
 |notification@2x|String|iOS7+ device notification bar icon, resolution 40x40|
 |notification@3x|String|iOS7+设备通知栏图标，分辨率要求60x60|
-|notification@3x|String|iOS7+ device notification bar icon, resolution 60x60|
-                    
-<a id="ipad"/>
-iPad图标源码参数
-iPad icon source code parameters
+
+##### iPad图标源码参数@ipad
 
 |属性名称|类型|说明|
 |property name|type|description|
@@ -171,25 +151,18 @@ Offline packaging needs to configure the application icon in the native project,
 
 
 ### 常见问题
-### common problem
-#### iOS平台配置/更新图标后打包安装，图标显示不正确  
-#### After the iOS platform is configured/updated the icon is packaged and installed, the icon is displayed incorrectly
-**解决方案**  
-**solution**  
+#### iOS平台配置/更新图标后打包安装，图标显示不正确
+**解决方案**
 iOS系统会缓存应用图标，需要重启手机新图标才能生效
 The iOS system will cache the app icon, and you need to restart the phone for the new icon to take effect
 
-<a id="itms90717"/>
-
-#### 提交AppStore审核是报ITMS-90717错误
-#### Submitting AppStore review is reporting ITMS-90717 error
+#### 提交AppStore审核是报ITMS-90717错误@itms90717
 这是因为图片中包含透明信息，即alpha通道，完整错误提示如下：
 This is because the image contains transparent information, that is, the alpha channel. The complete error message is as follows:
 ```javascript
 ERROR ITMS-90717: "Invalid App Store Icon. The App Store Icon in the asset catalog in 'HBuilder.app' can't be transparent nor contain an alpha channel."
 ```
-**解决方案**  
-**solution**  
+**解决方案**
 生成png图标文件时去掉alpha通道，重新提交云端打包
 Remove the alpha channel when generating the png icon file, and resubmit the cloud package
 

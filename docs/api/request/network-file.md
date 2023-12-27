@@ -1,6 +1,6 @@
 ### uni.uploadFile(OBJECT)
 将本地资源上传到开发者服务器，客户端发起一个 ``POST`` 请求，其中 ``content-type`` 为 ``multipart/form-data``。
-如页面通过 [uni.chooseImage](api/media/image?id=chooseimage) 等接口获取到一个本地资源的临时文件路径后，可通过此接口将本地资源上传到指定服务器。另外选择和上传非图像、视频文件参考：[https://ask.dcloud.net.cn/article/35547](https://ask.dcloud.net.cn/article/35547)。
+如页面通过 [uni.chooseImage](/api/media/image.md#chooseimage) 等接口获取到一个本地资源的临时文件路径后，可通过此接口将本地资源上传到指定服务器。另外选择和上传非图像、视频文件参考：[https://ask.dcloud.net.cn/article/35547](https://ask.dcloud.net.cn/article/35547)。
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
 

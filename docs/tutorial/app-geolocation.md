@@ -9,7 +9,7 @@
 |项目类型|API|
 |Project Type|API|
 |:-|:-|
-|uni-app|[uni.getLocation(OBJECT)](api/location/location?id=getlocation)|
+|uni-app|[uni.getLocation(OBJECT)](/api/location/location.md#getlocation)|
 |5+ App/Wap2App|[plus.geolocation.*](https://www.html5plus.org/doc/zh_cn/geolocation.html)
 
 使用定位功能需在项目manifest.json的“App模块配置”中勾选“Geolocation(定位)”，并根据项目实际需求勾选使用的三方定位SDK：
@@ -17,7 +17,7 @@
 
 
 
-### 系统定位@system  
+### 系统定位@system
 
 > HBuilderX3.2.16开始独立出“系统定位”模块
 > HBuilderX3.2.16 began to separate out the "system location" module
@@ -74,18 +74,16 @@ Only latitude and longitude information can be obtained, and address information
 使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“高德定位”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/amap.png)
 
-#### 参数说明  
-- 高德用户名  
-高德开放平台注册账号的用户名，获取方式参考“[高德开放平台用户名](#amapName)”章节
-- appkey_android  
+#### 参数说明
+- 高德用户名
+高德开放平台注册账号的用户名，获取方式参考“[高德开放平台用户名](#amapname)”章节
+- appkey_android
 [高德开放平台](https://lbs.amap.com/)为Android平台申请的Key
-[Amap Open Platform](https://lbs.amap.com/) Key applied for Android platform
-- appkey_ios  
+- appkey_ios
 [高德开放平台](https://lbs.amap.com/)为iOS平台申请的Key
 [Amap Open Platform](https://lbs.amap.com/) Key applied for iOS platform
 
-**注意**  
-**Notice**  
+**注意**
 - 调用高德定位SDK提供的定位服务，仅支持gcj02坐标系，支持解析地址信息。
 - Calling the positioning service provided by the AutoNavi positioning SDK, it only supports the gcj02 coordinate system, and supports parsing address information.
 - 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
@@ -93,8 +91,8 @@ Only latitude and longitude information can be obtained, and address information
 - 本地离线打包参考[Android平台高德定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7%e5%ae%9a%e4%bd%8d)、[iOS平台高德定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7%e5%ae%9a%e4%bd%8d)
 - Local offline packaging reference [Android platform AutoNavi positioning module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7% e5%ae%9a%e4%bd%8d), [iOS Platform Geolocation Module Configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e9%ab% 98%e5%be%b7%e5%ae%9a%e4%bd%8d)
 
-#### 高德开放平台用户名@amapName  
-登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：  
+#### 高德开放平台用户名@amapName
+登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap_name.png)
 
 
@@ -106,17 +104,14 @@ Only latitude and longitude information can be obtained, and address information
 使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“高德定位”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/baidu.png)
 
-#### 参数说明  
-#### Parameter Description  
-- appkey_android  
+#### 参数说明
+- appkey_android
 [百度地图开放平台](https://lbsyun.baidu.com/)为Android平台申请的访问应用密钥
-[Baidu Map Open Platform](https://lbsyun.baidu.com/) Access application key applied for Android platform
-- appkey_ios  
+- appkey_ios
 [百度地图开放平台](https://lbsyun.baidu.com/)为iOS平台申请的访问应用密钥
 [Baidu Map Open Platform](https://lbsyun.baidu.com/) Access application key applied for the iOS platform
 
-**注意**  
-**Notice**  
+**注意**
 -调用百度定位SDK提供的定位服务，仅支持gcj02/bd09/bd09ll坐标系，支持解析地址信息。
 - Calling the positioning service provided by Baidu Positioning SDK, only supports gcj02/bd09/bd09ll coordinate system, and supports parsing address information.
 - 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)

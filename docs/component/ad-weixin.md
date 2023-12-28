@@ -51,8 +51,7 @@ Compared with WeChat's own traffic main advertisement, uni-ad developers can app
 uni-ad内置了安全防护策略，减少广告被刷风险
 uni-ad has built-in security protection strategies to reduce the risk of ads being brushed
 
-3.6.8+ 支持激励视频服务器安全回调，[详情](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)
-3.6.8+ Support rewarded video server security callback, [Details](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)
+3.6.8+ 支持激励视频服务器安全回调，[详情](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#callback)
 
 服务器回调用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，[uniCloud](https://doc.dcloud.net.cn/uniCloud/)服务器会访问配置的云函数，通知用户完成观看激励视频。
 相对来讲服务器回调将更加安全
@@ -90,20 +89,17 @@ Note: The WeChat applet platform does not provide test advertising space for the
 - banner/信息流广告
 - banner/feed advertisement
 
-详细开发文档地址：[https://uniapp.dcloud.io/component/ad](https://uniapp.dcloud.io/component/ad)
-Detailed development document address: [https://uniapp.dcloud.io/component/ad](https://uniapp.dcloud.io/component/ad)
+详细开发文档地址：[https://uniapp.dcloud.net.cn/uni-ad/ad-component.html](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
 
 - 激励视频广告
 - Rewarded video ads
 
-详细开发文档地址：[https://uniapp.dcloud.io/component/ad-rewarded-video](https://uniapp.dcloud.io/component/ad-rewarded-video)
-Detailed development document address: [https://uniapp.dcloud.io/component/ad-rewarded-video](https://uniapp.dcloud.io/component/ad-rewarded-video)
+详细开发文档地址：[https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
 
 - 插屏广告
 - Interstitial ads
 
-详细开发文档地址：[https://uniapp.dcloud.io/component/ad-interstitial](https://uniapp.dcloud.io/component/ad-interstitial)
-Detailed development document address: [https://uniapp.dcloud.io/component/ad-interstitial](https://uniapp.dcloud.io/component/ad-interstitial)
+详细开发文档地址：[https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 
 ## adpid和unit-id详解
 ## adpid and unit-id detailed

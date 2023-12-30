@@ -93,3 +93,5 @@ plus.payment.getChannels(function(channels){
 });
 ```
 
+**注意**
+- 支付宝沙箱环境需要额外配置，详情参考该[问答评论区](https://ask.dcloud.net.cn/article/35115)

@@ -106,6 +106,8 @@
     * [Android本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android)
     * [Android local offline packaging](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android)
     * [iOS本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios)
+  * [App 加固加固](app-security.md)
+  * [App 隐私合规检测](app-privacy-detect.md)
   * [App 上架注意](store.md)
     * [国内应用市场上架](android-store.md)
     * [Android平台隐私与政策提示框](app-privacy-android.md)
@@ -141,15 +143,15 @@
   * 客户端安全
     * [app js/nvue文件原生混淆加密](app-sec-confusion.md)
 	* [Android安全漏洞问题解决方案](app-sec-android.md)
-    * [app 安全检测API](app-sec-api.md)
-	* [app 加固](app-security.md)
-	* [app 隐私合规检测](app-privacy-detect.md)
+    * [App 安全检测API](app-sec-api.md)
+	* [App 加固加固](app-security.md)
+	* [App 隐私合规检测](app-privacy-detect.md)
   * 网络安全
     * [云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
     * [传统服务器与uniCloud安全通信](https://doc.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)
   * 身份安全
-    * [app一键登录](/univerify.md)
-    * [app实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
+    * [App一键登录](/univerify.md)
+    * [App实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
     * [图形验证码](https://doc.dcloud.net.cn/uniCloud/uni-captcha.html)
   * 服务器安全
     * [uniCloud ip防刷](https://doc.dcloud.net.cn/uniCloud/ip-filter.html)

@@ -155,7 +155,7 @@ export const navbar = [
   },
   {
     text: 'uni 小程序 sdk',
-    link: 'https://nativesupport.dcloud.net.cn/README',
+    link: 'https://nativesupport.dcloud.net.cn/',
     type: "link",
     target: '_blank',
     needOutbound: false

@@ -119,6 +119,7 @@
   * [开发小程序插件](mp-weixin-plugin-dev.md)
   * [一键上传微信平台](build/publish-mp-weixin-cli.md)
   * [小程序隐私协议](mp-weixin-user-privacy.md)
+* [备案专题](beian.md)
 * 运行和调试
   * [概述](run-and-debug.md)
   * [web平台：内置浏览器运行调试](debug/debug-web-via-hx.md)

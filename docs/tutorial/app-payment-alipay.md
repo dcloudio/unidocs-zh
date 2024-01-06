@@ -124,3 +124,5 @@ plus.payment.getChannels(function(channels){
 });
 ```
 
+**注意**
+- 支付宝沙箱应用需要切换到沙箱环境才能正常调起`支付宝客户端沙箱版`进行支付，切换方法参考该 [问答评论区](https://ask.dcloud.net.cn/question/85173)

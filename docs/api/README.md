@@ -41,11 +41,11 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
      ```js
       // 正常使用
-      const task = uni.connectSocket(
+      const task = uni.connectSocket({
        success(res){
         console.log(res)
        }
-      )
+      })
 
       // Promise 化
       uni.connectSocket().then(res => {

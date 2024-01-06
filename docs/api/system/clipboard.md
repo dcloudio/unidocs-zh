@@ -78,4 +78,5 @@ uni.getClipboardData({
 #### **Notice**
 
 - 设置剪贴板内容后，小程序平台会自动弹出轻提示；（微信小程序在成功回调success里设置toast可覆盖自带的轻提示）。App平台默认与小程序保持一致策略。如不希望在App平台弹出提示，可使用Native.js自行操作剪贴板，插件市场有封装好的示例[https://ext.dcloud.net.cn/plugin?id=712](https://ext.dcloud.net.cn/plugin?id=712)。也可以在设置剪切板后立即uni.hideToast()。
-- After setting the clipboard content, the applet platform will automatically pop up a light prompt; (the WeChat applet setting toast in the success callback success can override the built-in light prompt). The App platform maintains the same policy as the Mini Program by default. If you don’t want to pop up a prompt on the App platform, you can use Native.js to operate the clipboard by yourself. There are packaged examples in the plugin market [https://ext.dcloud.net.cn/plugin?id=712](https://ext.dcloud.net.cn/plugin?id=712] ext.dcloud.net.cn/plugin?id=712). It is also possible to uni.hideToast() immediately after setting the clipboard.
+
+- 如果小程序平台调用发现错误: setClipboardData:fail api scope is not declared in the privacy agreement, 原因是微信小程序于2023年9月15日更新剪切板为必须通过小程序后台配置用户隐私保护指引并审核通过后方可使用该API。

@@ -1,4 +1,3 @@
-
 ::: tip 组件名：uni-transition
 ::: tip component name: uni-transition
 > 代码块： `uTransition`
@@ -154,14 +153,12 @@ export default {
 	},
 	methods: {
 		run() {
-			// 同时右平移到 100px,旋转 360 读
-			// At the same time pan right to 100px, rotate 360 to read
+			// 同时右平移到 100px,旋转 360 度
 			this.$refs.ani.step({
 				translateX: '100px',
 				rotate: '360'
 			})
-			// 上面的动画执行完成后，等待200毫秒平移到 0px,旋转到 0 读
-			// After the above animation is executed, wait for 200 milliseconds to translate to 0px, rotate to 0 to read
+			// 上面的动画执行完成后，等待200毫秒平移到 0px,旋转到 0 度
 			this.$refs.ani.step({
 				translateX: '0px',
 				rotate: '0'
@@ -681,4 +678,3 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 :::
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/transition/transition)
-[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/transition/transition)

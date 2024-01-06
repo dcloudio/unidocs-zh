@@ -91,4 +91,38 @@ All [Universal Events](https://uniapp.dcloud.net.cn/tutorial/nvue-event.html) ar
 **注意**
 **Notice**
 - waterfall是区域滚动，不会触发页面滚动，无法触发pages.json配置的下拉刷新、页面触底onReachBottomDistance、titleNView的transparent透明渐变。
-- waterfall runs in area scrolling, which will not trigger page scrolling, and cannot trigger the pull-down refresh configured by pages.json, onReachBottomDistance, and the transparent gradient of titleNView.
+- 如出现waterfall列表下边大面积空白区域（多列和单列时的整体高度相同，多列展示没有高度自适应），那么可以将waterfall放到父容器下边，给父容器高度设置为窗口高度，除瀑布流展示的列表外，其他的组件都放在<header>中即可。
+示例代码如下：
+```html
+<template>
+  <waterfall column-count="2" column-width="auto" :style="{ height: windowHeight + 'px' }">
+    <header>
+      <!--轮播-->
+      <swiper class="swiper_banner">
+        ......
+      </swiper>
+      <!--广告位-->
+      <view class="ads_List_box">
+        ......
+      </view>
+    </header>
+    <!--瀑布流展示的商品列表-->
+    <cell v-for="num in lists" >
+      <text>{{num}}</text>
+    </cell>
+  </waterfall>
+</template>
+<script>
+  export default {
+    data () {
+      return {
+        lists: ['A', 'B', 'C', 'D', 'E'],
+        windowHeight: uni.getSystemInfoSync().windowHeight
+      }
+    }
+  }
+</script>
+
+<style></style>
+```
+<img src="https://ask.dcloud.net.cn/uploads/answer/20231103/7eca97560500b11a95f2014fdaea1281.png" />

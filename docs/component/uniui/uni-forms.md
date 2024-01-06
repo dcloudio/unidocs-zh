@@ -1,4 +1,3 @@
-
 ::: tip 组件名：uni-forms
 ::: tip component name: uni-forms
 > 代码块： `uForms`、`uni-forms-item`
@@ -150,9 +149,7 @@ Form validation can also directly use the `uniCloud web console` to automaticall
 
 
 ::: warning 注意
-::: warning attention
-- uni-forms 1.4.0 版本后，binddata 方法不在推荐，请使用 uni-forms-item 上的 onFieldChange 方法代替
-- After uni-forms version 1.4.0, the binddata method is no longer recommended, please use the onFieldChange method on uni-forms-item instead
+- uni-forms 1.4.0 版本后，binddata 方法不再推荐，请使用 uni-forms-item 上的 onFieldChange 方法代替
 :::
 
 **完整示例**

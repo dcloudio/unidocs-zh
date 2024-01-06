@@ -123,9 +123,7 @@ uni-list does not include pull-to-refresh and pull-up page-turning. Pull up and 
 ```
 
 ### 开启点击反馈和右侧箭头
-### Enable click feedback and right arrow
-- 设置 `clickable` 为 `true` ，则表示这是一个可点击的列表，会默认给一个点击效果，并可以监听 `click` 事件
-- Set `clickable` to `true` , it means that this is a clickable list, it will give a click effect by default, and can listen to the `click` event
+- 设置 `clickable` 为 `true` ，则表示这是一个可点击的列表，会默认给一个点击效果，并可以监听 `click` 事件，`click` 事件也在此绑定
 - 设置 `link` 属性，会自动开启点击反馈，并给列表右侧添加一个箭头
 - Setting the `link` property will automatically enable click feedback and add an arrow to the right side of the list
 - 设置 `to` 属性，可以跳转页面，`link` 的值表示跳转方式，如果不指定，默认为 `navigateTo`

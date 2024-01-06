@@ -9,7 +9,7 @@ Convert Base64 string to ArrayBuffer object
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|x|x|√|√|
+|√|√|√|x|x|√|√|√|
 
 **参数说明**
 **Parameter Description**

@@ -29,9 +29,7 @@ The input in the html specification is not only an input box, but also radio, ch
 |maxlength|Number|140|最大输入长度，设置为 -1 的时候不限制最大长度||
 | maxlength| Number| 140|Maximum input length, when set to -1, there is no limit to the maximum length||
 |cursor-spacing|Number|0|指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离|App、微信小程序、百度小程序、QQ小程序、京东小程序|
-| cursor-spacing| Number| 0| specifies the distance between the cursor and the keyboard, in px. Take the minimum value of the distance between the input and the bottom and the distance specified by cursor-spacing as the distance between the cursor and the keyboard | App, WeChat MiniApp, Baidu MiniApp, QQ MiniApp, JD MiniApp|
-|focus|Boolean|false|获取焦点。|在 H5 平台能否聚焦以及软键盘是否跟随弹出，取决于当前浏览器本身的实现。nvue 页面不支持，需使用组件的 focus()、blur() 方法控制焦点|
-| focus| Boolean| false| Get focus. |Whether it can be focused on the H5 platform and whether the soft keyboard pops up depends on the implementation of the current browser itself. The nvue page does not support it, you need to use the focus() and blur() methods of the component to control the focus|
+|focus|Boolean|false|获取焦点。|H5、App需要点击按钮获取焦点的，必须使用@touchend.prevent="onTap"阻止键盘收起默认事件才能获取焦点[关于软键盘弹出的逻辑说明](/component/input.html#关于软键盘弹出的逻辑说明)，小程序、nvue需使用组件的 focus()、blur() 方法控制焦点|
 |confirm-type|String|done|设置键盘右下角按钮的文字，仅在 type="text" 时生效。[有效值](#confirm-type)|微信小程序、App、H5、快手小程序、京东小程序|
 | confirm-type| String| done|Set the text of the button in the lower right corner of the keyboard, only valid when type="text". [Valid value](#confirm-type)|WeChat MiniApp, App, H5, Kuaishou MiniApp, Jingdong MiniApp|
 |confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|App(3.3.7+)、H5 (3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序|

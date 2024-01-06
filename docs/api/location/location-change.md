@@ -65,8 +65,7 @@ uni.onLocationChange(function (res) {
 ```
 ### uni.offLocationChange(FUNCTION CALLBACK)
 
-关闭监听实时位置变化，前后台都停止消息接收。
-Turn off the monitoring of real-time location changes, and both the front and back will stop receiving messages.
+移除实时地理位置变化事件的监听函数。
 
 **平台差异说明**
 **Platform Difference Description**

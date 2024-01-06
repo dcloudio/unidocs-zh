@@ -1659,8 +1659,7 @@ You can use the `v-model` directive to create two-way data bindings on form `inp
 > v-model 会忽略所有表单元素的 `value`、`checked`、`selected` attribute 的初始值而总是将 Vue 实例的数据作为数据来源。你应该通过 JavaScript 在组件的 data 选项中声明初始值。
 > v-model will ignore the initial `value`, `checked` or `selected` attributes found on any form elements. It will always treat the current active instance data as the source of truth. You should declare the initial value on the JavaScript side, inside the data option of your component.
 
-在下面的示例中，输入框通过`v-model`绑定了`message`，用户在输入框里输入内容时，这个内容会实施赋值给`message`。当然在代码里为`message`赋值也会实时同步到界面上input里。这就是双向绑定。
-In the following example, the input box is bound to `message` through `v-model`, and when the user enters content in the input box, the content will be assigned to `message`. Of course, assigning a value to `message` in the code will also be synchronized to the input on the interface in real time. This is two-way binding.
+在下面的示例中，输入框通过`v-model`绑定了`message`，用户在输入框里输入内容时，这个内容会实时赋值给`message`。当然在代码里为`message`赋值也会实时同步到界面上input里。这就是双向绑定。
 
 ```html
 	<template>

@@ -78,6 +78,7 @@ uni.chooseImage({
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |current|String/Number|详见下方说明|详见下方说明||
+|showmenu|Boolean|否|是否显示长按菜单，默认值为 true|微信小程序2.13.0|
 |urls|Array&lt;String&gt;|是|需要预览的图片链接列表||
 |indicator|String|否|图片指示器样式，可取值："default" - 底部圆点指示器； "number" - 顶部数字指示器； "none" - 不显示指示器。|App|
 |loop|Boolean|否|是否可循环预览，默认值为 false|App|

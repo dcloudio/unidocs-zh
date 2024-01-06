@@ -60,6 +60,47 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 | 块级样式 | `text-align` `direction` `margin` `margin-top` `margin-left` `margin-right` `margin-bottom` `padding` `padding-top` `padding-left` `padding-right` `padding-bottom` `line-height` `text-indent` |百度小程序仅支持`text-align、direction`|
 | 行内样式 | `font` `font-size` `font-style` `font-variant` `font-weight` `font-family` `letter-spacing` `text-decoration` `color` `background-color` |百度小程序仅支持`color、background-color`|
 
+## H5 使用最佳实践
+
+近期部分用户反馈访问 `unpkg` 失败，导致 `editor` 组件初始化异常。这里提供代码块，方便用户修改。
+
+### 方案一：自行托管 CDN 资源
+
+分别下载[quill.min.js](https://unpkg.com/quill@1.3.7/dist/quill.min.js)、[image-resize.min.js](https://unpkg.com/quill-image-resize-mp@3.0.1/image-resize.min.js)，放入 `static` 目录中。
+
+在 `index.html`(Vue 3)，或者 `public/index.html`(Vue2) 中在 `head` 之间添加 js
+
+```html
+<head>
+  <script src="/static/quill-1.3.7.min.js"></script>
+  <script src="/static/image-resize-3.0.1.min.js"></script>
+</head>
+```
+
+这样 `editor` 组件就可以正常使用了，代码逻辑中检测到有相关 `window.Quill` 变量，就不会从远程获取资源。
+
+### 方案二：从 npm 中处理资源
+
+方案一的解决思路是在 `window` 上进行挂载，同样，我们可以在项目入口 `main.js` 或者 `App.vue`中引用相关依赖即可。
+
+在项目中添加相关依赖：
+
+```bash
+npm i quill@1.3.7
+```
+
+在组件页面或者 `main.ts` 入口逻辑中，使用下面方案，注入依赖：
+
+```js
+// #ifdef H5
+import quill from "quill";
+window.Quill = quill;
+// #endif
+```
+
+相比方案一，方案二好处是依赖清晰，引用透明。如果你熟悉 `npm` 生态和构建流程，推荐方案二。
+
+
 ## 注意事项
 
 * 插入的 html 中事件绑定会被移除

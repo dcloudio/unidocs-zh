@@ -45,7 +45,7 @@ uni.onLocationChange(function (res) {
 ```
 ### uni.offLocationChange(FUNCTION CALLBACK)
 
-关闭监听实时位置变化，前后台都停止消息接收。
+移除实时地理位置变化事件的监听函数。
 
 **平台差异说明**
 

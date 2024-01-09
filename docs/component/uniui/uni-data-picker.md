@@ -178,9 +178,7 @@ Create new tables "uni-id-address" and "opendb-city-china" in the uniCloud data 
 |ellipsis|Boolean| true/false |	true|是否隐藏 tab 标签过长的文本|
 |ellipsYes|Boolean| true/false | true|whether to hide the long text of the tab label|
 |step-searh|Boolean| true/false |true|分步查询时，点击节点请求数据|
-|step-searh|Boolean| true/false |true|During step-by-step query, click the node to request data|
-|step-search-url|String|-|-|分步查询时，动态加载云端数据url格式，`https://xxx.com/{parentValue}`(当前版本暂不支持，下版支持)|
-|step-search-url|String|-|-|Dynamic loading of cloud data url format during step-by-step query, `https://xxx.com/{parentValue}` (current version does not support, the next version supports)|
+|step-search-url|String|-|-|分步查询时，动态加载云端数据url格式，`https://xxx.com/{parentValue}`(当前版本暂不支持)|
 |self-field|String|-|-|分步查询时当前字段名称|
 |self-field|String|-|-|Current field name during step-by-step query|
 |parent-field|String|-|-|分步查询时父字段名称|

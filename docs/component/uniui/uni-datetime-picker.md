@@ -186,7 +186,7 @@ If you just need to select the date and time separately, and don't need timestam
 |Event Name|Description|Return Value|
 |:-:|:-:|:-:|
 |change|确定日期时间时触发的事件，参数为当前选择的日期对象|单选返回日期字符串，如：'2010-02-3'；范围选返回日期字符串数组，如：['2020-10-1', '2021-4-1']|
-|change|The event triggered when the date and time are determined, the parameter is the currently selected date object |The single selection returns the date string, such as: '2010-02-3'; the range selection returns the date string array, such as: ['2020- 10-1', '2021-4-1']|
+|noChange|当传入含有空值时触发|
 |maskClick|点击遮罩层触发|-|
 |maskClick|Click on the mask layer to trigger|-|
 

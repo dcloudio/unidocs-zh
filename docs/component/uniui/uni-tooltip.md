@@ -22,7 +22,7 @@
 在 `template` 中使用组件
 
 ```html
-<uni-tooltip :content="tooltip显示的内容">
+<uni-tooltip :content="tooltip显示的内容" placement="left">
   <button>被包裹的组件</button>
 </uni-tooltip>
 ```
@@ -34,7 +34,7 @@
 |  属性名   |  类型  | 默认值 |                说明                 |
 | :-------: | :----: | :----: | :---------------------------------: |
 |   content    | String |        |             弹出层显示的内容              |
-| placement | String |  left  | Tooltip 的出现位置, 目前只支持 left |
+| placement | String |  left  | Tooltip 的出现位置, 支持 left,right,top,bottom |
 
 ### Tooltip Slots
 
@@ -62,12 +62,22 @@
     <uni-section title="基础用法" type="line" padding>
       <uni-tooltip content="提示文字" />
     </uni-section>
-    <uni-section title="插槽用法" type="line" padding>
-      <uni-tooltip content="提示文字">一段文字</uni-tooltip>
-    </uni-section>
-    <uni-section title="自定义弹层宽度" type="line" padding>
-      <uni-tooltip content="提示文字">一段文字</uni-tooltip>
-    </uni-section>
+    <uni-section title="自定义弹出层方向" type="line" padding>
+			<view class="direction-container">
+				<uni-tooltip content="示例文字" placement="top">
+					<view class="item">上</view>
+				</uni-tooltip>
+				<uni-tooltip class="item" content="示例文字" placement="bottom">
+					<view class="item">下</view>
+				</uni-tooltip>
+				<uni-tooltip class="item" content="示例文字" placement="left">
+					<view class="item">左</view>
+				</uni-tooltip>
+				<uni-tooltip class="item" content="示例文字" placement="right">
+					<view class="item">右</view>
+				</uni-tooltip>
+			</view>
+		</uni-section>
   </view>
 </template>
 
@@ -80,7 +90,25 @@
   };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+  .direction-container {
+		display: flex;
+		width: 100px;
+		margin: 0 auto;
+		flex-wrap: wrap;
+	}
+
+	.item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40px;
+		height: 40px;
+		background-color: #ebebeb;
+		border-radius: 10px;
+		margin: 5px;
+	}
+</style>
 ```
 
 :::

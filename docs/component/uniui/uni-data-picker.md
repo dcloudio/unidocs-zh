@@ -173,7 +173,7 @@
 |:-:| :-:|	:-:|
 |@change|EventHandle|选择完成时触发 {detail: {value}}|
 |@nodeclick|EventHandle| 节点被点击时触发|
-|@stepsearch|EventHandle| 动态加载节点数据前触发(当前版本暂不支持，下版支持)	|
+|@stepsearch|EventHandle| 动态加载节点数据前触发(当前版本暂不支持)	|
 |@popupopened|EventHandle| 弹出层弹出时触发|
 |@popupclosed|EventHandle| 弹出层关闭时触发|
 

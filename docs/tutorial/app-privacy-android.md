@@ -68,7 +68,7 @@ DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`
   "disagreeMode":{
     "support": false,
     "loadNativePlugins": false,
-    "visitorEntry": true,
+    "visitorEntry": false,
     "showAlways": false
   },
   "styles": {

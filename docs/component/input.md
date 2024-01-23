@@ -22,6 +22,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 |confirm-type|String|done|设置键盘右下角按钮的文字，仅在 type="text" 时生效。[有效值](#confirm-type)|微信小程序、App、H5、快手小程序、京东小程序|
 |confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|App(3.3.7+)、H5 (3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序|
 |cursor|Number||指定focus时的光标位置||
+|cursor-color|String||光标颜色|微信小程序 3.1.0+、H5(4.0+)、App-Vue(4.0+)|
 |selection-start|Number|-1|光标起始位置，自动聚集时有效，需与selection-end搭配使用||
 |selection-end|Number|-1|光标结束位置，自动聚集时有效，需与selection-start搭配使用||
 |adjust-position|Boolean|true|键盘弹起时，是否自动上推页面|App-Android（vue 页面 softinputMode 为 adjustResize 时无效，使用 x5 内核时无效）、微信小程序、百度小程序、QQ小程序、京东小程序|
@@ -51,6 +52,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 - 如果遇到 value 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.md#componentsolutions)
 - `input` 组件上有默认的 `min-height` 样式，如果 `min-height` 的值大于 `height` 的值那么 `height` 样式无效。
 - H5 暂未支持动态切换，请使用 `v-if`进行整体切换。
+- 微信小程序 `cursor-color` 属性在iOS下的格式为十六进制颜色值 #000000，安卓下只支持 default 和 green，Skyline 下无限制。
 
 ```html
         <!-- 错误写法 -->

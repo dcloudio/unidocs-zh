@@ -1,6 +1,6 @@
 ## 域名备案
 
-> 还没有自己的域名？[点此购买](https://market.aliyun.com/agents/yscdcloud#J_3368608030%5D)
+> 购买域名，委托代理备案服务等[点此前往](https://market.aliyun.com/agents/yscdcloud#J_3368608030%5D)
 
 需要进行域名备案的场景：
 - 云函数绑定自定义域名

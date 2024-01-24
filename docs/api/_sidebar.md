@@ -67,6 +67,7 @@
     * [uni.getAppAuthorizeSetting](system/getappauthorizesetting.md)
     * [uni.getSystemSetting](system/getsystemsetting.md)
     * [uni.openAppAuthorizeSetting](system/openappauthorizesetting.md)
+	* [uni.createRequestPermissionListener](system/create-request-permission-listener.md)
   * [内存](system/memory.md)
   * [网络状态](system/network.md)
   * [系统主题](system/theme.md)

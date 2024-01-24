@@ -178,7 +178,6 @@ Create new tables "uni-id-address" and "opendb-city-china" in the uniCloud data 
 |ellipsis|Boolean| true/false |	true|是否隐藏 tab 标签过长的文本|
 |ellipsYes|Boolean| true/false | true|whether to hide the long text of the tab label|
 |step-searh|Boolean| true/false |true|分步查询时，点击节点请求数据|
-|step-search-url|String|-|-|分步查询时，动态加载云端数据url格式，`https://xxx.com/{parentValue}`(当前版本暂不支持)|
 |self-field|String|-|-|分步查询时当前字段名称|
 |self-field|String|-|-|Current field name during step-by-step query|
 |parent-field|String|-|-|分步查询时父字段名称|
@@ -208,9 +207,6 @@ Create new tables "uni-id-address" and "opendb-city-china" in the uniCloud data 
 |@change|EventHandle|选择完成时触发 {detail: {value}}|
 |@change|EventHandle|Triggered when selection is complete {detail: {value}}|
 |@nodeclick|EventHandle| 节点被点击时触发|
-|@nodeclick|EventHandle| Fired when a node is clicked|
-|@stepsearch|EventHandle| 动态加载节点数据前触发(当前版本暂不支持，下版支持)	|
-|@stepsearch|EventHandle| Triggered before dynamically loading node data (not supported in the current version, supported in the next version) |
 |@popupopened|EventHandle| 弹出层弹出时触发|
 |@popupopened|EventHandle| Triggered when the popup layer pops up|
 |@popupclosed|EventHandle| 弹出层关闭时触发|

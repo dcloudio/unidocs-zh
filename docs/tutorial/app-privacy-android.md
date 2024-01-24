@@ -73,7 +73,7 @@ After checking, the androidPrivacy.json file will be automatically added to the 
   "disagreeMode":{
     "support": false,
     "loadNativePlugins": false,
-    "visitorEntry": true,
+    "visitorEntry": false,
     "showAlways": false
   },
   "styles": {

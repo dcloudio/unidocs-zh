@@ -100,10 +100,13 @@ Uni unified error information, used to unify the error information of each platf
 - errSubject
 	统一错误主题（模块）名称，字符串类型，存在多级模块时使用"::"分割，即"模块名称::二级模块名称"，参考[errSubject（模块/主题）名称](#errsubject)
 - errCode  
-	统一错误码，数字类型，通常0表示成功，其它为错误码  
-	Unified error code, numeric type, usually 0 means success, others are error codes
-	对于已经实现的API，继续保留现有errCode规范（保留向下兼容）  
-	For the APIs that have been implemented, continue to retain the existing errCode specification (keep backward compatibility)
+	统一错误码，数字类型，通常0表示成功，其它为错误码。\
+	对于已经实现的API，继续保留现有errCode规范（保留向下兼容）。\
+	错误码长度及规范参考微信小程序的[Errno错误码](https://developers.weixin.qq.com/miniprogram/dev/framework/usability/PublicErrno.html#%E9%94%99%E8%AF%AF%E7%A0%81%E5%88%97%E8%A1%A8)，使用 7 位数错误码，第 1 - 2 位标识 API 接口的一级类目，第 3 - 4 位标识 API 接口的二级类目，第 5 - 7 位表示具体的错误类型。
+	其他平台，与微信小程序相同的错误，错误码应尽量保持一致。定义平台专有错误码时，为了避免冲突，错误码的第 5 - 7 位按以下规则：  
+	+ App-Android端：使用7xx  
+	+ App-iOS端：使用8xx  
+	+ Web端：使用9xx  
 - errMsg  
 	统一错误描述信息，字符串类型，应准确描述引起的错误原因  
 	Unified error description information, string type, should accurately describe the cause of the error

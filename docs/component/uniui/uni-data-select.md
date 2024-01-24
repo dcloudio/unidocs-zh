@@ -72,7 +72,7 @@ After setting the `localdata` attribute, the component will render the correspon
 export default {
   data() {
     return {
-      value: 0,
+      value: 1,
       range: [
         { value: 0, text: "篮球" },
         { value: 1, text: "足球" },
@@ -114,8 +114,7 @@ export default {
 |    属性名     |     类型      | 可选值 |  默认值  |                                说明                                 |
 | property name | type | optional value | default value | description |
 | :-----------: | :-----------: | :----: | :------: | :-----------------------------------------------------------------: |
-| value/v-model | String/Number |   -    |    -     |                         已选择数据的 value 值                    |
-| value/v-model | String/Number | - | - | value of selected data |
+| value/v-model | String/Number |   -    |    -     |                         已选择数据的 value 值（当其值为0时不进行初始化赋值）                    |
 |   localdata   |     Array     |   -    |    -     |                           本地渲染数据                            |
 | localdata | Array | - | - | local rendering data |
 |     clear     |    Boolean    |   -    |    -     |                         是否可以清空已选项                          |

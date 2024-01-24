@@ -35,7 +35,7 @@ The input in the html specification is not only an input box, but also radio, ch
 |confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|App(3.3.7+)、H5 (3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序|
 | confirm-hold| Boolean| false|Whether to keep the keyboard closed when the button in the lower right corner of the keyboard is clicked| App (3.3.7+), H5 (3.3.7+), WeChat MiniApp, Alipay MiniApp, Baidu MiniApp, QQ MiniApp, Jingdong MiniApp|
 |cursor|Number||指定focus时的光标位置||
-| cursor| Number||Cursor position when focus is specified||
+|cursor-color|String||光标颜色|微信小程序 3.1.0+、H5(4.0+)、App-Vue(4.0+)|
 |selection-start|Number|-1|光标起始位置，自动聚集时有效，需与selection-end搭配使用||
 | selection-start| Number|-1|Cursor starting position, valid when auto-gathering, need to be used together with selection-end||
 |selection-end|Number|-1|光标结束位置，自动聚集时有效，需与selection-start搭配使用||
@@ -88,7 +88,7 @@ The input in the html specification is not only an input box, but also radio, ch
 - `input` 组件上有默认的 `min-height` 样式，如果 `min-height` 的值大于 `height` 的值那么 `height` 样式无效。
 - There is a default `min-height` style on the `input` component, if the value of `min-height` is greater than the value of `height` then the `height` style will be invalid.
 - H5 暂未支持动态切换，请使用 `v-if`进行整体切换。
-- H5 does not support dynamic switching yet, please use `v-if` for overall switching.
+- 微信小程序 `cursor-color` 属性在iOS下的格式为十六进制颜色值 #000000，安卓下只支持 default 和 green，Skyline 下无限制。
 
 ```html
         <!-- 错误写法 -->

@@ -38,11 +38,10 @@
         5. VIVO应用创建配置流程
         5. VIVO application creation configuration process
             1. 创建应用
-            1. Create an application
-            2. Create an app
-            3. 推送配置
-            3. Push configuration
-            4. Push configuration
+            2. 推送配置
+        六、荣耀应用创建配置流程
+            1. 创建应用
+            2. 推送配置
 
 
 ## 一、 华为应用创建配置流程
@@ -88,51 +87,6 @@ Log in to the [AppGallery Connect](https://developer.huawei.com/consumer/cn/serv
   ```
   https://thirdrcp-hz.getui.com/hw
   ```
-
- - HTTPS证书
- - HTTPS certificate
-
-    ```
-    -----BEGIN CERTIFICATE-----
-    MIIGqTCCBZGgAwIBAgIQAVdiWJ3ORoF7fDA5qyolZTANBgkqhkiG9w0BAQsFADBf
-    MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
-    d3cuZGlnaWNlcnQuY29tMR4wHAYDVQQDExVHZW9UcnVzdCBDTiBSU0EgQ0EgRzEw
-    HhcNMjIwNTE2MDAwMDAwWhcNMjMwNjE2MjM1OTU5WjB0MQswCQYDVQQGEwJDTjES
-    MBAGA1UECAwJ5rWZ5rGf55yBMRIwEAYDVQQHDAnmna3lt57luIIxJzAlBgNVBAoM
-    Huavj+aXpeS6kuWKqOiCoeS7veaciemZkOWFrOWPuDEUMBIGA1UEAwwLKi5nZXR1
-    aS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDAOvUwMLw5roP+
-    vQzEqdVfFQDg5viSUnevk31GhS7UkwNVKPJkdwBvuetOuki5NfJR9GxQAq0fk0Qq
-    15VHHnLYdgY/VSBSuFJZ8DbKD+/3LqVp6WW7HEEgPWbto04bgB2KOqkt/ws3bmso
-    NZsdHHAYb2pbOTO7ZW4VpZaiIppGeLvcFNcP1QwqpARiOGOUxz3q4OFSh8QWapV9
-    Y15LBrTdMid4Dzd+UNRqZJYWX0KdmD5VNK3obo+Wq2Rj0ktV1skPWWINo+ecvJDq
-    O82+6m8zF+G1nmz7ofVCGm261wXdAaFWS7gdh8MRuSFSVW0O+edXTx4Ez2mNMzQp
-    65PjJAxfAgMBAAGjggNKMIIDRjAfBgNVHSMEGDAWgBSRn14xFa4Qn61gwffBzKpI
-    NC8MJjAdBgNVHQ4EFgQUpYw0JXac0ld0vX8gP1le02rlQUAwIQYDVR0RBBowGIIL
-    Ki5nZXR1aS5jb22CCWdldHVpLmNvbTAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYw
-    FAYIKwYBBQUHAwEGCCsGAQUFBwMCMHUGA1UdHwRuMGwwNKAyoDCGLmh0dHA6Ly9j
-    cmwzLmRpZ2ljZXJ0LmNvbS9HZW9UcnVzdENOUlNBQ0FHMS5jcmwwNKAyoDCGLmh0
-    dHA6Ly9jcmw0LmRpZ2ljZXJ0LmNvbS9HZW9UcnVzdENOUlNBQ0FHMS5jcmwwPgYD
-    VR0gBDcwNTAzBgZngQwBAgIwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdp
-    Y2VydC5jb20vQ1BTMG8GCCsGAQUFBwEBBGMwYTAhBggrBgEFBQcwAYYVaHR0cDov
-    L29jc3AuZGNvY3NwLmNuMDwGCCsGAQUFBzAChjBodHRwOi8vY3JsLmRpZ2ljZXJ0
-    LWNuLmNvbS9HZW9UcnVzdENOUlNBQ0FHMS5jcnQwCQYDVR0TBAIwADCCAX0GCisG
-    AQQB1nkCBAIEggFtBIIBaQFnAHUA6D7Q2j71BjUy51covIlryQPTy9ERa+zraeF3
-    fW0GvW4AAAGAyt5DUAAABAMARjBEAiAsp7cSQHGTO8EF09x7mKga8eWF0UYq0JZ2
-    xQR4ubI87AIgK+zsAzAF7tFQ29fQGm/87wYEE8y1g5lhWqO+5vLUpg8AdwA1zxkb
-    v7FsV78PrUxtQsu7ticgJlHqP+Eq76gDwzvWTAAAAYDK3kOMAAAEAwBIMEYCIQDe
-    fomYJt4a0uSt2CE6pA1LePKCCobkCWbBriHSFgNPEwIhAPlyCWEPFkZ0sIV7rAEg
-    oZHuV77Xe58cSUIGm80UxS5sAHUAtz77JN+cTbp18jnFulj0bF38Qs96nzXEnh0J
-    gSXttJkAAAGAyt5DhwAABAMARjBEAiA+FlDj9Gmb8zbK+wHFlqkzjKLFqeSOH80F
-    Ndv/tgemaAIgFiGUdq3HTxNsdstCfBpK8UCN8ChNeI2O2msCHK8lU70wDQYJKoZI
-    hvcNAQELBQADggEBAHtbJKGJOfgJzvSfyvzPKcbYymhjIerPVX+HBAEqb2SX9f9M
-    qhvo89xsZTiT2dMSDLCvdEO2E5QWJZoTKmL3uY9BO6/4reoYvd8sGTjNU/spjZUR
-    hv1+79Xz9DTFtCYziBnPOv72t4iklZjpato1vJLHQ62f9BgQlYplMiZ1KZkmP5XA
-    my34lax7fg0SSz2GCmjKoNGkoCpvAl+TmJ+8IS0z6N/szZrmioDZT5Jp/lJ2U1fk
-    so3vAz19idF8P95yy2jRGg2IA8WdMnfxp8rv6HszdBoaKiMlSAYXU3mktRhedEz4
-    MUvq13jQmXo+vsN0eggEeUiFFHBHjlXs1g+b8bQ=
-    -----END CERTIFICATE-----
-    
-    ```
 
 
 ​    
@@ -298,3 +252,47 @@ Log in to the [AppGallery Connect](https://developer.huawei.com/consumer/cn/serv
 
   ![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/dcloud_vv.png)
 
+
+## 五、 荣耀应用创建配置流程
+### 1. 创建应用
+
+* 辅助推送启用条件：荣耀手机和平板，国内Magic UI 4.0及以上或者海外Magic UI 4.2及以上 ，具体参考 [文档](https://developer.hihonor.com/cn/kitdoc?category=%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1&kitId=11002&navigation=guides&docId=introduction.md&token=)
+* 登录荣耀开放平台 [地址](https://hnid-drcn.cloud.hihonor.com/CAS/portal/login.html?validated=true&themeName=blue&service=https%3A%2F%2Fhnid-drcn.cloud.hihonor.com%2FAMW%2Fportal%2FuserCenter%2Findex.html%3FthemeName%3Dblue%26loginChannel%3D7000700%26countryCode%3Dcn%26loginUrl%3Dhttps%253A%252F%252Fhnid-drcn.cloud.hihonor.com%252FCAS%252Fportal%252Flogin.html%26reqClientType%3D7%26lang%3Dzh-cn&loginChannel=7000700&reqClientType=7&lang=zh-cn&countryCode=cn)
+
+![img_vendor_honor1](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_honor1.jpg)
+
+* 登录以后，点击管理中心，弹出的界面需要认证，此处选择`企业/组织开发者` [认证说明](https://developer.hihonor.com/cn/doc/guides/100619#h1-1666272620039)
+
+![img_vendor_honor2](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_honor2.jpg)
+
+* 认证成功后，进入控制台，点击`应用服务`->`应用分发`
+
+![img_vendor_honor3](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_honor3.png)
+
+* 创建应用，填写应用信息
+
+![img_vendor_honor5](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_honor5.png)
+
+![img_vendor_honor6](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_honor6.png)
+
+* 应用创建完毕后，点击`应用服务`->`推送服务`
+
+![img_vendor_honor4](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_honor4.png)
+
+* 申请推送服务
+
+![img_vendor_honor7](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_honor7.png)
+
+* 填写推送服务信息（应用名称要选刚刚创建的应用）
+
+![img_vendor_honor8](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_honor8.jpg)
+
+* 创建完成后，点击`查看`，就可以得到荣耀推送的配置信息
+
+![img_vendor_honor9](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_honor9.jpg)
+
+### 2. 推送配置
+
+* 在开发者中心中填写荣耀参数。
+
+![img_vendor_honor8](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_honor10.jpg)

@@ -83,9 +83,9 @@ export default {
 | selected|Array|-| 打点，期待格式[{date: '2019-06-27', info: '签到', data: { custom: '自定义信息', name: '自定义消息头',xxx:xxx... }}]|
 |showMonth	|Boolean|true| 是否显示月份为背景|
 
-### Calendar Events
+### Calendar Methods
 
-|事件名|说明|返回值|
+|方法名|说明|返回值|
 |:-:|:-:|:-:|
 |open|弹出日历组件，`insert :false` 时生效|-|
 

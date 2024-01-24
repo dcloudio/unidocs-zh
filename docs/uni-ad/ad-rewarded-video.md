@@ -625,7 +625,9 @@ sign = sha256(secret:transid)
 
 由于上面三个值之间存在时效和依赖关系，比较复杂，所以需要使用 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 来接管
 
-注意：在微信小程序上需要配置 request 域名白名单，[详情](https://doc.dcloud.net.cn/uniCloud/publish.html)
+注意：
+1. 需要发行模式
+2. 需要配置 request 域名白名单，[详情](https://doc.dcloud.net.cn/uniCloud/publish.html)
 
 #### 接入流程(uni-id用户体系)
 

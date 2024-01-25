@@ -283,15 +283,6 @@ The above two solutions have their own advantages and disadvantages, and the fir
   > 注意：此时由于运行的标准基座中，不包含uni-push模块，如果运行会报错，不用着急继续往下操作  
   2. 点击菜单栏的【发行】-【原生APP-云打包】然后再弹出的窗口中勾选【制作自定义调试基座】- 点击【打包】  
   3. 打包成功后，点击菜单栏的【运行】-【运行到手机或模拟器】-【运行到 Android App 基座】然后再弹出的窗口中勾选【使用自定义基座运行】-【运行】  
-  4. HBuilderX 4.0起uni-app x支持编译到web端，在web端使用uni.getPushClientId方法需写成：
-  ``` js
-  uni.getPushClientId({
-    complete(e : any) {
-      console.log(e);
-    }
-  } as GetPushClientIdOptions)
-  // 其中 as GetPushClientIdOptions 不可省略
-  ```
   
   接下来即可使用 uni-push 相关客户端 api
 

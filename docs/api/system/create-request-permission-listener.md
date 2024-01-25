@@ -1,3 +1,9 @@
+### 监听权限申请
+
+uni-app 提供了`uni.createRequestPermissionListener()`监听应用权限的申请，开发者可以在弹出系统权限授权框的同时，同步告知权限申请的目的。
+
+解决华为应用市场审核时要求：`APP在调用终端权限时，应同步告知用户申请该权限的目的。`
+
 ### uni.createRequestPermissionListener()
 
 创建一个监听权限申请的 `RequestPermissionListener` 对象。

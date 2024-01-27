@@ -1,8 +1,13 @@
 ### 监听权限申请
 
-uni-app 提供了`uni.createRequestPermissionListener()`监听应用权限的申请，开发者可以在弹出系统权限授权框的同时，同步告知权限申请的目的。
+app-android平台，可使用本API监听应用权限申请确认框的弹出和关闭。不管是哪处的业务代码在申请权限，当弹出和关闭权限申请确认框时均会触发本监听事件。
 
-解决华为应用市场审核时要求：`APP在调用终端权限时，应同步告知用户申请该权限的目的。`
+华为应用市场审核时要求：`APP在调用终端权限时，应同步告知用户申请该权限的目的`。此时即可使用本API，在app.uvue里全局监听。
+
+创建监听对象后，返回RequestPermissionListener，然后调起其的onConfirm和onComplete。
+
+- 当权限申请的确认框在手机端弹出时，会触发onConfirm，回调中会以数组方式提供权限名称列表。
+- 当权限申请的确认框被用户关闭后，会触发onComplete
 
 ### uni.createRequestPermissionListener()
 
@@ -23,7 +28,7 @@ HBuilderX (4.0+) android 平台支持
 
 **示例**
 
-```javascript
+```vue
 <template>
 	<view>
 		<view class="permission-alert" id="permission-alert" :style="{'transform':isPermissionAlertShow ? 'translateY(0)':'translateY(-250rpx)'}">
@@ -88,7 +93,10 @@ HBuilderX (4.0+) android 平台支持
 </style>
 
 ```
+
 **Tips**
 
-+ 如果权限已经申请并且允许之后，`onConfirm`不会触发。
-+ 如果同时申请多个权限时，`onComplete`可能会触发多次。
+- 如果权限已经申请并且允许之后，`onConfirm`不会触发。
+- 如果同时申请多个权限时，`onComplete`可能会触发多次。
+- 权限列表参考：[https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)
+- 本API仅提供了权限申请监听，未提供全局弹窗

@@ -6,10 +6,12 @@
   "directories": {
     "doc": "docs"
   },
+  "type": "module",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs --no-cache",
-    "build-lite": "cross-env DOCS_LITE=true node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs-lite --no-cache"
+    "build-lite": "cross-env DOCS_LITE=true node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs-lite --no-cache",
+    "generate-ts": "node docs/.vuepress/generate-ts/index.mjs"
   },
   "repository": {
     "type": "git",

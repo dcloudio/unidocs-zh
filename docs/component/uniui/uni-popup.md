@@ -1,3 +1,4 @@
+# uni-popup 弹出层
 
 ::: tip 组件名：uni-popup
 > 代码块： `uPopup`
@@ -51,7 +52,7 @@ export default {
 
 而也有特例，需要我们主动去设置背景色，例如 `type = 'bottom'` 的时候 ，在异型屏中遇到了底部安全区问题（如 iphone 11），因为 `uni-popup`的主要内容避开了安全区（设置`safe-area:true`），导致底部的颜色我们无法自定义，这时候使用 `background-color` 就可以解决这个问题。 
 
-**示例**
+**底部弹窗示例**
 
 ```html
 <button @click="open">打开弹窗</button>
@@ -61,7 +62,7 @@ export default {
 ### 禁用打开动画
 在某些场景 ，可能不希望弹层有动画效果 ，只需要将 `animation` 属性设置为 `false` 即可以关闭动画。
 
-**示例**
+**居中弹窗示例**
 
 ```html
 <button @click="open">打开弹窗</button>
@@ -235,6 +236,7 @@ export default {
 |content|String|-|对话框内容，base模式下生效|
 |confirmText **[1.7.4新增]**|String|-|定义确定按钮文本|
 |cancelText **[1.7.4新增]**|String|-|定义取消按钮文本|
+|showClose **[1.8.5新增]**|Boolean|-|是否显示取消按钮|
 |value| String\Number|-|输入框默认值，input模式下生效|
 |placeholder|String|-|输入框提示文字，input模式下生效|
 |before-close|Boolean|false	| 是否拦截按钮事件，如为true，则不会关闭对话框，关闭需要手动执行 uni-popup 的 close 方法|
@@ -258,7 +260,7 @@ export default {
 
 将 `uni-popup` 的 `type` 属性改为 `share`，并引入对应组件即可使用 ，*该组件不支持单独使用*
 
-**示例**
+#### 示例
 
 ```html
 <uni-popup ref="popup" type="share">
@@ -279,7 +281,7 @@ export default {
 |:-:|:-:|:-:|
 |select|选择触发|e = {item,index}：所选参数|
 
-**Tips**
+#### 注意
 - share 分享组件，只是作为一个扩展示例，如果需要修改数据源，请到组件内修改
 
 
@@ -327,7 +329,7 @@ export default {
 
 ```
 
-**Tips**
+#### tips
 - h5 滚动穿透不需要处理 
 - wx、app 需要 使用 page-meta 组件配合阻止滚动穿透
 - 注意 page-meta 组件，一个页面只能存在一个
@@ -335,7 +337,7 @@ export default {
 
 
 
-## 示例
+#### 示例
 ::: warning 注意
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
 

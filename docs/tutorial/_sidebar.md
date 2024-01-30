@@ -91,6 +91,7 @@
       * [Android设置targetSdkVersion](app-android-targetsdkversion.md)
       * [Android设置CPU类型](app-android-abifilters.md)
       * [iOS设置UrlSchemes](app-ios-schemes.md)
+      * [iOS关联域（Associated Domains）](app-ios-capabilities.md#associateddomains)
       * [iOS应用访问白名单](app-ios-schemewhitelist.md)
       * [iOS后台运行能力](app-ios-uibackgroundmodes.md)
       * [iOS使用广告标识IDFA](app-ios-idfa.md)

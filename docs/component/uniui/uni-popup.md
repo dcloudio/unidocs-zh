@@ -313,6 +313,7 @@ export default {
 |confirmText **[1.7.4新增]**|String|-|定义确定按钮文本|
 |confirmText **[New in 1.7.4]**|String|-|Define the text of the confirm button|
 |cancelText **[1.7.4新增]**|String|-|定义取消按钮文本|
+|maxlength|**[1.8.6新增]**|Number|-|限制输入框字数（当mode="input"时生效）|
 |showClose **[1.8.5新增]**|Boolean|-|是否显示取消按钮|
 |value| String\Number|-|输入框默认值，input模式下生效|
 |value| String\Number|-|Default value of the input box, valid in input mode|

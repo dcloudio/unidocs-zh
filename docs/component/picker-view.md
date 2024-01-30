@@ -16,7 +16,7 @@
 |mask-bottom-style|String|设置蒙层下半部分的样式|仅 app-nvue（3.6.7+） 支持|
 |mask-class|String|设置蒙层的类名|app-nvue与抖音小程序与飞书小程序不支持|
 |immediate-change|Boolean|是否在手指松开时立即触发 change 事件。若不开启则会在滚动动画结束后触发 change 事件。|微信小程序 2.21.1|                                                                 
-|@change|EventHandle|当滚动选择，value 改变时触发 change 事件，event.detail = {value: value}；value为数组，表示 picker-view 内的 picker-view-column 当前选择的是第几项（下标从 0 开始）|&nbsp;|
+|@change|EventHandle|当滚动选择，value 改变时触发 change 事件，event.detail = {value: any}；value为数组，表示 picker-view 内的 picker-view-column 当前选择的是第几项（下标从 0 开始）|&nbsp;|
 |@pickstart|eventhandle|当滚动选择开始时候触发事件|微信小程序2.3.1、快手小程序|
 |@pickend|eventhandle|当滚动选择结束时候触发事件|微信小程序2.3.1、快手小程序|
 

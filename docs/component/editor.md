@@ -30,9 +30,9 @@ editor组件目前只有H5、App的vue页面、微信小程序、百度小程序
 | show-img-toolbar | boolean | false | 否 | 点击图片时显示工具栏控件 |
 | show-img-resize | boolean | false | 否 | 点击图片时显示修改尺寸控件 |
 | @ready | eventhandle |  | 否 | 编辑器初始化完成时触发 |
-| @focus | eventhandle |  | 否 | 编辑器聚焦时触发，event.detail = {html, text, delta} |
-| @blur | eventhandle |  | 否 | 编辑器失去焦点时触发，detail = {html, text, delta} |
-| @input | eventhandle |  | 否 | 编辑器内容改变时触发，detail = {html, text, delta} |
+| @focus | eventhandle |  | 否 | 编辑器聚焦时触发，event.detail = {html:string, text:string, delta: any[]} |
+| @blur | eventhandle |  | 否 | 编辑器失去焦点时触发，detail = {html:string, text:string, delta: any[]} |
+| @input | eventhandle |  | 否 | 编辑器内容改变时触发，detail = {html:string, text:string, delta: any[]} |
 | @statuschange | eventhandle |  | 否 | 通过 Context 方法改变编辑器内样式时触发，返回选区已设置的样式 |
 
 编辑器内支持部分 HTML 标签和内联样式，不支持**class**和**id**

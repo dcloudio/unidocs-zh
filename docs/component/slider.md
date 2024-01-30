@@ -16,8 +16,8 @@
 |block-size|Number|28|滑块的大小，取值范围为 12 - 28				
 |block-color|Color|#ffffff|滑块的颜色|
 |show-value|Boolean|false|是否显示当前 value|
-|@change|EventHandle||完成一次拖动后触发的事件，event.detail = {value: value}|
-|@changing|EventHandle||拖动过程中触发的事件，event.detail = {value: value}|
+|@change|EventHandle||完成一次拖动后触发的事件，event.detail = {value: number}|
+|@changing|EventHandle||拖动过程中触发的事件，event.detail = {value: number}|
 
 <!-- |color|Color|#e9e9e9|背景条的颜色（请使用 backgroundColor）|
 |selected-color|Color|#1aad19|已选择的颜色（请使用 activeColor）| -->
